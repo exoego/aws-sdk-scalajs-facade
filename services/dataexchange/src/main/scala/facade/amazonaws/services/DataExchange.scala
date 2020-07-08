@@ -7,28 +7,28 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object dataexchange {
-  type Arn                                            = String
-  type AssetName                                      = String
-  type Description                                    = String
-  type Id                                             = String
-  type ListOfAssetDestinationEntry                    = js.Array[AssetDestinationEntry]
-  type ListOfAssetEntry                               = js.Array[AssetEntry]
-  type ListOfAssetSourceEntry                         = js.Array[AssetSourceEntry]
-  type ListOfDataSetEntry                             = js.Array[DataSetEntry]
-  type ListOfJobEntry                                 = js.Array[JobEntry]
-  type ListOfJobError                                 = js.Array[JobError]
-  type ListOfRevisionEntry                            = js.Array[RevisionEntry]
-  type ListOf__string                                 = js.Array[__string]
-  type MapOf__string                                  = js.Dictionary[__string]
-  type MaxResults                                     = Int
-  type Name                                           = String
-  type NextToken                                      = String
-  type Timestamp                                      = js.Date
-  type __boolean                                      = Boolean
-  type __double                                       = Double
-  type __doubleMin0                                   = Double
-  type __string                                       = String
-  type __stringMin0Max16384                           = String
+  type Arn = String
+  type AssetName = String
+  type Description = String
+  type Id = String
+  type ListOfAssetDestinationEntry = js.Array[AssetDestinationEntry]
+  type ListOfAssetEntry = js.Array[AssetEntry]
+  type ListOfAssetSourceEntry = js.Array[AssetSourceEntry]
+  type ListOfDataSetEntry = js.Array[DataSetEntry]
+  type ListOfJobEntry = js.Array[JobEntry]
+  type ListOfJobError = js.Array[JobError]
+  type ListOfRevisionEntry = js.Array[RevisionEntry]
+  type ListOf__string = js.Array[__string]
+  type MapOf__string = js.Dictionary[__string]
+  type MaxResults = Int
+  type Name = String
+  type NextToken = String
+  type Timestamp = js.Date
+  type __boolean = Boolean
+  type __double = Double
+  type __doubleMin0 = Double
+  type __string = String
+  type __stringMin0Max16384 = String
   type __stringMin24Max24PatternAZaZ094AZaZ092AZaZ093 = String
 
   implicit final class DataExchangeOps(private val service: DataExchange) extends AnyVal {
@@ -85,28 +85,28 @@ package dataexchange {
   class DataExchange() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def cancelJob(params: CancelJobRequest): Request[js.Object]                                          = js.native
-    def createDataSet(params: CreateDataSetRequest): Request[CreateDataSetResponse]                      = js.native
-    def createJob(params: CreateJobRequest): Request[CreateJobResponse]                                  = js.native
-    def createRevision(params: CreateRevisionRequest): Request[CreateRevisionResponse]                   = js.native
-    def deleteAsset(params: DeleteAssetRequest): Request[js.Object]                                      = js.native
-    def deleteDataSet(params: DeleteDataSetRequest): Request[js.Object]                                  = js.native
-    def deleteRevision(params: DeleteRevisionRequest): Request[js.Object]                                = js.native
-    def getAsset(params: GetAssetRequest): Request[GetAssetResponse]                                     = js.native
-    def getDataSet(params: GetDataSetRequest): Request[GetDataSetResponse]                               = js.native
-    def getJob(params: GetJobRequest): Request[GetJobResponse]                                           = js.native
-    def getRevision(params: GetRevisionRequest): Request[GetRevisionResponse]                            = js.native
+    def cancelJob(params: CancelJobRequest): Request[js.Object] = js.native
+    def createDataSet(params: CreateDataSetRequest): Request[CreateDataSetResponse] = js.native
+    def createJob(params: CreateJobRequest): Request[CreateJobResponse] = js.native
+    def createRevision(params: CreateRevisionRequest): Request[CreateRevisionResponse] = js.native
+    def deleteAsset(params: DeleteAssetRequest): Request[js.Object] = js.native
+    def deleteDataSet(params: DeleteDataSetRequest): Request[js.Object] = js.native
+    def deleteRevision(params: DeleteRevisionRequest): Request[js.Object] = js.native
+    def getAsset(params: GetAssetRequest): Request[GetAssetResponse] = js.native
+    def getDataSet(params: GetDataSetRequest): Request[GetDataSetResponse] = js.native
+    def getJob(params: GetJobRequest): Request[GetJobResponse] = js.native
+    def getRevision(params: GetRevisionRequest): Request[GetRevisionResponse] = js.native
     def listDataSetRevisions(params: ListDataSetRevisionsRequest): Request[ListDataSetRevisionsResponse] = js.native
-    def listDataSets(params: ListDataSetsRequest): Request[ListDataSetsResponse]                         = js.native
-    def listJobs(params: ListJobsRequest): Request[ListJobsResponse]                                     = js.native
-    def listRevisionAssets(params: ListRevisionAssetsRequest): Request[ListRevisionAssetsResponse]       = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]    = js.native
-    def startJob(params: StartJobRequest): Request[StartJobResponse]                                     = js.native
-    def tagResource(params: TagResourceRequest): Request[js.Object]                                      = js.native
-    def untagResource(params: UntagResourceRequest): Request[js.Object]                                  = js.native
-    def updateAsset(params: UpdateAssetRequest): Request[UpdateAssetResponse]                            = js.native
-    def updateDataSet(params: UpdateDataSetRequest): Request[UpdateDataSetResponse]                      = js.native
-    def updateRevision(params: UpdateRevisionRequest): Request[UpdateRevisionResponse]                   = js.native
+    def listDataSets(params: ListDataSetsRequest): Request[ListDataSetsResponse] = js.native
+    def listJobs(params: ListJobsRequest): Request[ListJobsResponse] = js.native
+    def listRevisionAssets(params: ListRevisionAssetsRequest): Request[ListRevisionAssetsResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def startJob(params: StartJobRequest): Request[StartJobResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
+    def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
+    def updateAsset(params: UpdateAssetRequest): Request[UpdateAssetResponse] = js.native
+    def updateDataSet(params: UpdateDataSetRequest): Request[UpdateDataSetResponse] = js.native
+    def updateRevision(params: UpdateRevisionRequest): Request[UpdateRevisionResponse] = js.native
   }
 
   /**
@@ -128,7 +128,7 @@ package dataexchange {
     ): AssetDestinationEntry = {
       val __obj = js.Dynamic.literal(
         "AssetId" -> AssetId.asInstanceOf[js.Any],
-        "Bucket"  -> Bucket.asInstanceOf[js.Any]
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
 
       Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
@@ -184,15 +184,15 @@ package dataexchange {
         SourceId: js.UndefOr[Id] = js.undefined
     ): AssetEntry = {
       val __obj = js.Dynamic.literal(
-        "Arn"          -> Arn.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "AssetDetails" -> AssetDetails.asInstanceOf[js.Any],
-        "AssetType"    -> AssetType.asInstanceOf[js.Any],
-        "CreatedAt"    -> CreatedAt.asInstanceOf[js.Any],
-        "DataSetId"    -> DataSetId.asInstanceOf[js.Any],
-        "Id"           -> Id.asInstanceOf[js.Any],
-        "Name"         -> Name.asInstanceOf[js.Any],
-        "RevisionId"   -> RevisionId.asInstanceOf[js.Any],
-        "UpdatedAt"    -> UpdatedAt.asInstanceOf[js.Any]
+        "AssetType" -> AssetType.asInstanceOf[js.Any],
+        "CreatedAt" -> CreatedAt.asInstanceOf[js.Any],
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "RevisionId" -> RevisionId.asInstanceOf[js.Any],
+        "UpdatedAt" -> UpdatedAt.asInstanceOf[js.Any]
       )
 
       SourceId.foreach(__v => __obj.updateDynamic("SourceId")(__v.asInstanceOf[js.Any]))
@@ -217,7 +217,7 @@ package dataexchange {
     ): AssetSourceEntry = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
+        "Key" -> Key.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AssetSourceEntry]
@@ -256,13 +256,13 @@ package dataexchange {
   @js.native
   sealed trait Code extends js.Any
   object Code extends js.Object {
-    val ACCESS_DENIED_EXCEPTION          = "ACCESS_DENIED_EXCEPTION".asInstanceOf[Code]
-    val INTERNAL_SERVER_EXCEPTION        = "INTERNAL_SERVER_EXCEPTION".asInstanceOf[Code]
-    val MALWARE_DETECTED                 = "MALWARE_DETECTED".asInstanceOf[Code]
-    val RESOURCE_NOT_FOUND_EXCEPTION     = "RESOURCE_NOT_FOUND_EXCEPTION".asInstanceOf[Code]
+    val ACCESS_DENIED_EXCEPTION = "ACCESS_DENIED_EXCEPTION".asInstanceOf[Code]
+    val INTERNAL_SERVER_EXCEPTION = "INTERNAL_SERVER_EXCEPTION".asInstanceOf[Code]
+    val MALWARE_DETECTED = "MALWARE_DETECTED".asInstanceOf[Code]
+    val RESOURCE_NOT_FOUND_EXCEPTION = "RESOURCE_NOT_FOUND_EXCEPTION".asInstanceOf[Code]
     val SERVICE_QUOTA_EXCEEDED_EXCEPTION = "SERVICE_QUOTA_EXCEEDED_EXCEPTION".asInstanceOf[Code]
-    val VALIDATION_EXCEPTION             = "VALIDATION_EXCEPTION".asInstanceOf[Code]
-    val MALWARE_SCAN_ENCRYPTED_FILE      = "MALWARE_SCAN_ENCRYPTED_FILE".asInstanceOf[Code]
+    val VALIDATION_EXCEPTION = "VALIDATION_EXCEPTION".asInstanceOf[Code]
+    val MALWARE_SCAN_ENCRYPTED_FILE = "MALWARE_SCAN_ENCRYPTED_FILE".asInstanceOf[Code]
 
     val values = js.Object.freeze(
       js.Array(
@@ -297,9 +297,9 @@ package dataexchange {
         Tags: js.UndefOr[MapOf__string] = js.undefined
     ): CreateDataSetRequest = {
       val __obj = js.Dynamic.literal(
-        "AssetType"   -> AssetType.asInstanceOf[js.Any],
+        "AssetType" -> AssetType.asInstanceOf[js.Any],
         "Description" -> Description.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -370,7 +370,7 @@ package dataexchange {
     ): CreateJobRequest = {
       val __obj = js.Dynamic.literal(
         "Details" -> Details.asInstanceOf[js.Any],
-        "Type"    -> Type.asInstanceOf[js.Any]
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateJobRequest]
@@ -513,14 +513,14 @@ package dataexchange {
         SourceId: js.UndefOr[Id] = js.undefined
     ): DataSetEntry = {
       val __obj = js.Dynamic.literal(
-        "Arn"         -> Arn.asInstanceOf[js.Any],
-        "AssetType"   -> AssetType.asInstanceOf[js.Any],
-        "CreatedAt"   -> CreatedAt.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "AssetType" -> AssetType.asInstanceOf[js.Any],
+        "CreatedAt" -> CreatedAt.asInstanceOf[js.Any],
         "Description" -> Description.asInstanceOf[js.Any],
-        "Id"          -> Id.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any],
-        "Origin"      -> Origin.asInstanceOf[js.Any],
-        "UpdatedAt"   -> UpdatedAt.asInstanceOf[js.Any]
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Origin" -> Origin.asInstanceOf[js.Any],
+        "UpdatedAt" -> UpdatedAt.asInstanceOf[js.Any]
       )
 
       OriginDetails.foreach(__v => __obj.updateDynamic("OriginDetails")(__v.asInstanceOf[js.Any]))
@@ -544,8 +544,8 @@ package dataexchange {
         RevisionId: __string
     ): DeleteAssetRequest = {
       val __obj = js.Dynamic.literal(
-        "AssetId"    -> AssetId.asInstanceOf[js.Any],
-        "DataSetId"  -> DataSetId.asInstanceOf[js.Any],
+        "AssetId" -> AssetId.asInstanceOf[js.Any],
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
         "RevisionId" -> RevisionId.asInstanceOf[js.Any]
       )
 
@@ -584,7 +584,7 @@ package dataexchange {
         RevisionId: __string
     ): DeleteRevisionRequest = {
       val __obj = js.Dynamic.literal(
-        "DataSetId"  -> DataSetId.asInstanceOf[js.Any],
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
         "RevisionId" -> RevisionId.asInstanceOf[js.Any]
       )
 
@@ -633,8 +633,8 @@ package dataexchange {
         RevisionId: Id
     ): ExportAssetToSignedUrlRequestDetails = {
       val __obj = js.Dynamic.literal(
-        "AssetId"    -> AssetId.asInstanceOf[js.Any],
-        "DataSetId"  -> DataSetId.asInstanceOf[js.Any],
+        "AssetId" -> AssetId.asInstanceOf[js.Any],
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
         "RevisionId" -> RevisionId.asInstanceOf[js.Any]
       )
 
@@ -664,8 +664,8 @@ package dataexchange {
         SignedUrlExpiresAt: js.UndefOr[Timestamp] = js.undefined
     ): ExportAssetToSignedUrlResponseDetails = {
       val __obj = js.Dynamic.literal(
-        "AssetId"    -> AssetId.asInstanceOf[js.Any],
-        "DataSetId"  -> DataSetId.asInstanceOf[js.Any],
+        "AssetId" -> AssetId.asInstanceOf[js.Any],
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
         "RevisionId" -> RevisionId.asInstanceOf[js.Any]
       )
 
@@ -696,8 +696,8 @@ package dataexchange {
     ): ExportAssetsToS3RequestDetails = {
       val __obj = js.Dynamic.literal(
         "AssetDestinations" -> AssetDestinations.asInstanceOf[js.Any],
-        "DataSetId"         -> DataSetId.asInstanceOf[js.Any],
-        "RevisionId"        -> RevisionId.asInstanceOf[js.Any]
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
+        "RevisionId" -> RevisionId.asInstanceOf[js.Any]
       )
 
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
@@ -726,8 +726,8 @@ package dataexchange {
     ): ExportAssetsToS3ResponseDetails = {
       val __obj = js.Dynamic.literal(
         "AssetDestinations" -> AssetDestinations.asInstanceOf[js.Any],
-        "DataSetId"         -> DataSetId.asInstanceOf[js.Any],
-        "RevisionId"        -> RevisionId.asInstanceOf[js.Any]
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
+        "RevisionId" -> RevisionId.asInstanceOf[js.Any]
       )
 
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
@@ -774,8 +774,8 @@ package dataexchange {
         RevisionId: __string
     ): GetAssetRequest = {
       val __obj = js.Dynamic.literal(
-        "AssetId"    -> AssetId.asInstanceOf[js.Any],
-        "DataSetId"  -> DataSetId.asInstanceOf[js.Any],
+        "AssetId" -> AssetId.asInstanceOf[js.Any],
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
         "RevisionId" -> RevisionId.asInstanceOf[js.Any]
       )
 
@@ -958,7 +958,7 @@ package dataexchange {
         RevisionId: __string
     ): GetRevisionRequest = {
       val __obj = js.Dynamic.literal(
-        "DataSetId"  -> DataSetId.asInstanceOf[js.Any],
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
         "RevisionId" -> RevisionId.asInstanceOf[js.Any]
       )
 
@@ -1044,9 +1044,9 @@ package dataexchange {
         RevisionId: Id
     ): ImportAssetFromSignedUrlRequestDetails = {
       val __obj = js.Dynamic.literal(
-        "AssetName"  -> AssetName.asInstanceOf[js.Any],
-        "DataSetId"  -> DataSetId.asInstanceOf[js.Any],
-        "Md5Hash"    -> Md5Hash.asInstanceOf[js.Any],
+        "AssetName" -> AssetName.asInstanceOf[js.Any],
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
+        "Md5Hash" -> Md5Hash.asInstanceOf[js.Any],
         "RevisionId" -> RevisionId.asInstanceOf[js.Any]
       )
 
@@ -1078,8 +1078,8 @@ package dataexchange {
         SignedUrlExpiresAt: js.UndefOr[Timestamp] = js.undefined
     ): ImportAssetFromSignedUrlResponseDetails = {
       val __obj = js.Dynamic.literal(
-        "AssetName"  -> AssetName.asInstanceOf[js.Any],
-        "DataSetId"  -> DataSetId.asInstanceOf[js.Any],
+        "AssetName" -> AssetName.asInstanceOf[js.Any],
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
         "RevisionId" -> RevisionId.asInstanceOf[js.Any]
       )
 
@@ -1109,8 +1109,8 @@ package dataexchange {
     ): ImportAssetsFromS3RequestDetails = {
       val __obj = js.Dynamic.literal(
         "AssetSources" -> AssetSources.asInstanceOf[js.Any],
-        "DataSetId"    -> DataSetId.asInstanceOf[js.Any],
-        "RevisionId"   -> RevisionId.asInstanceOf[js.Any]
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
+        "RevisionId" -> RevisionId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ImportAssetsFromS3RequestDetails]
@@ -1136,8 +1136,8 @@ package dataexchange {
     ): ImportAssetsFromS3ResponseDetails = {
       val __obj = js.Dynamic.literal(
         "AssetSources" -> AssetSources.asInstanceOf[js.Any],
-        "DataSetId"    -> DataSetId.asInstanceOf[js.Any],
-        "RevisionId"   -> RevisionId.asInstanceOf[js.Any]
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
+        "RevisionId" -> RevisionId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ImportAssetsFromS3ResponseDetails]
@@ -1172,12 +1172,12 @@ package dataexchange {
         Errors: js.UndefOr[ListOfJobError] = js.undefined
     ): JobEntry = {
       val __obj = js.Dynamic.literal(
-        "Arn"       -> Arn.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "CreatedAt" -> CreatedAt.asInstanceOf[js.Any],
-        "Details"   -> Details.asInstanceOf[js.Any],
-        "Id"        -> Id.asInstanceOf[js.Any],
-        "State"     -> State.asInstanceOf[js.Any],
-        "Type"      -> Type.asInstanceOf[js.Any],
+        "Details" -> Details.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "State" -> State.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any],
         "UpdatedAt" -> UpdatedAt.asInstanceOf[js.Any]
       )
 
@@ -1212,7 +1212,7 @@ package dataexchange {
         ResourceType: js.UndefOr[JobErrorResourceTypes] = js.undefined
     ): JobError = {
       val __obj = js.Dynamic.literal(
-        "Code"    -> Code.asInstanceOf[js.Any],
+        "Code" -> Code.asInstanceOf[js.Any],
         "Message" -> Message.asInstanceOf[js.Any]
       )
 
@@ -1232,7 +1232,7 @@ package dataexchange {
   sealed trait JobErrorLimitName extends js.Any
   object JobErrorLimitName extends js.Object {
     val `Assets per revision` = "Assets per revision".asInstanceOf[JobErrorLimitName]
-    val `Asset size in GB`    = "Asset size in GB".asInstanceOf[JobErrorLimitName]
+    val `Asset size in GB` = "Asset size in GB".asInstanceOf[JobErrorLimitName]
 
     val values = js.Object.freeze(js.Array(`Assets per revision`, `Asset size in GB`))
   }
@@ -1244,7 +1244,7 @@ package dataexchange {
   sealed trait JobErrorResourceTypes extends js.Any
   object JobErrorResourceTypes extends js.Object {
     val REVISION = "REVISION".asInstanceOf[JobErrorResourceTypes]
-    val ASSET    = "ASSET".asInstanceOf[JobErrorResourceTypes]
+    val ASSET = "ASSET".asInstanceOf[JobErrorResourceTypes]
 
     val values = js.Object.freeze(js.Array(REVISION, ASSET))
   }
@@ -1394,7 +1394,7 @@ package dataexchange {
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListRevisionAssetsRequest = {
       val __obj = js.Dynamic.literal(
-        "DataSetId"  -> DataSetId.asInstanceOf[js.Any],
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
         "RevisionId" -> RevisionId.asInstanceOf[js.Any]
       )
 
@@ -1463,7 +1463,7 @@ package dataexchange {
   @js.native
   sealed trait Origin extends js.Any
   object Origin extends js.Object {
-    val OWNED    = "OWNED".asInstanceOf[Origin]
+    val OWNED = "OWNED".asInstanceOf[Origin]
     val ENTITLED = "ENTITLED".asInstanceOf[Origin]
 
     val values = js.Object.freeze(js.Array(OWNED, ENTITLED))
@@ -1571,10 +1571,10 @@ package dataexchange {
         SourceId: js.UndefOr[Id] = js.undefined
     ): RevisionEntry = {
       val __obj = js.Dynamic.literal(
-        "Arn"       -> Arn.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "CreatedAt" -> CreatedAt.asInstanceOf[js.Any],
         "DataSetId" -> DataSetId.asInstanceOf[js.Any],
-        "Id"        -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "UpdatedAt" -> UpdatedAt.asInstanceOf[js.Any]
       )
 
@@ -1613,7 +1613,7 @@ package dataexchange {
   sealed trait ServerSideEncryptionTypes extends js.Any
   object ServerSideEncryptionTypes extends js.Object {
     val `aws:kms` = "aws:kms".asInstanceOf[ServerSideEncryptionTypes]
-    val AES256    = "AES256".asInstanceOf[ServerSideEncryptionTypes]
+    val AES256 = "AES256".asInstanceOf[ServerSideEncryptionTypes]
 
     val values = js.Object.freeze(js.Array(`aws:kms`, AES256))
   }
@@ -1652,12 +1652,12 @@ package dataexchange {
   @js.native
   sealed trait State extends js.Any
   object State extends js.Object {
-    val WAITING     = "WAITING".asInstanceOf[State]
+    val WAITING = "WAITING".asInstanceOf[State]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[State]
-    val ERROR       = "ERROR".asInstanceOf[State]
-    val COMPLETED   = "COMPLETED".asInstanceOf[State]
-    val CANCELLED   = "CANCELLED".asInstanceOf[State]
-    val TIMED_OUT   = "TIMED_OUT".asInstanceOf[State]
+    val ERROR = "ERROR".asInstanceOf[State]
+    val COMPLETED = "COMPLETED".asInstanceOf[State]
+    val CANCELLED = "CANCELLED".asInstanceOf[State]
+    val TIMED_OUT = "TIMED_OUT".asInstanceOf[State]
 
     val values = js.Object.freeze(js.Array(WAITING, IN_PROGRESS, ERROR, COMPLETED, CANCELLED, TIMED_OUT))
   }
@@ -1679,7 +1679,7 @@ package dataexchange {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -1689,10 +1689,10 @@ package dataexchange {
   @js.native
   sealed trait Type extends js.Any
   object Type extends js.Object {
-    val IMPORT_ASSETS_FROM_S3        = "IMPORT_ASSETS_FROM_S3".asInstanceOf[Type]
+    val IMPORT_ASSETS_FROM_S3 = "IMPORT_ASSETS_FROM_S3".asInstanceOf[Type]
     val IMPORT_ASSET_FROM_SIGNED_URL = "IMPORT_ASSET_FROM_SIGNED_URL".asInstanceOf[Type]
-    val EXPORT_ASSETS_TO_S3          = "EXPORT_ASSETS_TO_S3".asInstanceOf[Type]
-    val EXPORT_ASSET_TO_SIGNED_URL   = "EXPORT_ASSET_TO_SIGNED_URL".asInstanceOf[Type]
+    val EXPORT_ASSETS_TO_S3 = "EXPORT_ASSETS_TO_S3".asInstanceOf[Type]
+    val EXPORT_ASSET_TO_SIGNED_URL = "EXPORT_ASSET_TO_SIGNED_URL".asInstanceOf[Type]
 
     val values = js.Object.freeze(
       js.Array(IMPORT_ASSETS_FROM_S3, IMPORT_ASSET_FROM_SIGNED_URL, EXPORT_ASSETS_TO_S3, EXPORT_ASSET_TO_SIGNED_URL)
@@ -1713,7 +1713,7 @@ package dataexchange {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -1740,9 +1740,9 @@ package dataexchange {
         RevisionId: __string
     ): UpdateAssetRequest = {
       val __obj = js.Dynamic.literal(
-        "AssetId"    -> AssetId.asInstanceOf[js.Any],
-        "DataSetId"  -> DataSetId.asInstanceOf[js.Any],
-        "Name"       -> Name.asInstanceOf[js.Any],
+        "AssetId" -> AssetId.asInstanceOf[js.Any],
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "RevisionId" -> RevisionId.asInstanceOf[js.Any]
       )
 
@@ -1883,7 +1883,7 @@ package dataexchange {
         Finalized: js.UndefOr[__boolean] = js.undefined
     ): UpdateRevisionRequest = {
       val __obj = js.Dynamic.literal(
-        "DataSetId"  -> DataSetId.asInstanceOf[js.Any],
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
         "RevisionId" -> RevisionId.asInstanceOf[js.Any]
       )
 

@@ -7,26 +7,26 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object lexruntime {
-  type Accept                       = String
-  type AttributesString             = String
-  type BlobStream                   = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type BotAlias                     = String
-  type BotName                      = String
-  type ButtonTextStringWithLength   = String
-  type ButtonValueStringWithLength  = String
-  type HttpContentType              = String
-  type IntentName                   = String
+  type Accept = String
+  type AttributesString = String
+  type BlobStream = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type BotAlias = String
+  type BotName = String
+  type ButtonTextStringWithLength = String
+  type ButtonValueStringWithLength = String
+  type HttpContentType = String
+  type IntentName = String
   type IntentSummaryCheckpointLabel = String
-  type IntentSummaryList            = js.Array[IntentSummary]
-  type SentimentLabel               = String
-  type SentimentScore               = String
-  type StringMap                    = js.Dictionary[String]
-  type StringUrlWithLength          = String
-  type StringWithLength             = String
-  type Text                         = String
-  type UserId                       = String
-  type genericAttachmentList        = js.Array[GenericAttachment]
-  type listOfButtons                = js.Array[Button]
+  type IntentSummaryList = js.Array[IntentSummary]
+  type SentimentLabel = String
+  type SentimentScore = String
+  type StringMap = js.Dictionary[String]
+  type StringUrlWithLength = String
+  type StringWithLength = String
+  type Text = String
+  type UserId = String
+  type genericAttachmentList = js.Array[GenericAttachment]
+  type listOfButtons = js.Array[Button]
 
   implicit final class LexRuntimeOps(private val service: LexRuntime) extends AnyVal {
 
@@ -50,10 +50,10 @@ package lexruntime {
     def this(config: AWSConfig) = this()
 
     def deleteSession(params: DeleteSessionRequest): Request[DeleteSessionResponse] = js.native
-    def getSession(params: GetSessionRequest): Request[GetSessionResponse]          = js.native
-    def postContent(params: PostContentRequest): Request[PostContentResponse]       = js.native
-    def postText(params: PostTextRequest): Request[PostTextResponse]                = js.native
-    def putSession(params: PutSessionRequest): Request[PutSessionResponse]          = js.native
+    def getSession(params: GetSessionRequest): Request[GetSessionResponse] = js.native
+    def postContent(params: PostContentRequest): Request[PostContentResponse] = js.native
+    def postText(params: PostTextRequest): Request[PostTextResponse] = js.native
+    def putSession(params: PutSessionRequest): Request[PutSessionResponse] = js.native
   }
 
   /**
@@ -72,7 +72,7 @@ package lexruntime {
         value: ButtonValueStringWithLength
     ): Button = {
       val __obj = js.Dynamic.literal(
-        "text"  -> text.asInstanceOf[js.Any],
+        "text" -> text.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
 
@@ -83,9 +83,9 @@ package lexruntime {
   @js.native
   sealed trait ConfirmationStatus extends js.Any
   object ConfirmationStatus extends js.Object {
-    val None      = "None".asInstanceOf[ConfirmationStatus]
+    val None = "None".asInstanceOf[ConfirmationStatus]
     val Confirmed = "Confirmed".asInstanceOf[ConfirmationStatus]
-    val Denied    = "Denied".asInstanceOf[ConfirmationStatus]
+    val Denied = "Denied".asInstanceOf[ConfirmationStatus]
 
     val values = js.Object.freeze(js.Array(None, Confirmed, Denied))
   }
@@ -114,8 +114,8 @@ package lexruntime {
     ): DeleteSessionRequest = {
       val __obj = js.Dynamic.literal(
         "botAlias" -> botAlias.asInstanceOf[js.Any],
-        "botName"  -> botName.asInstanceOf[js.Any],
-        "userId"   -> userId.asInstanceOf[js.Any]
+        "botName" -> botName.asInstanceOf[js.Any],
+        "userId" -> userId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteSessionRequest]
@@ -189,11 +189,11 @@ package lexruntime {
   @js.native
   sealed trait DialogActionType extends js.Any
   object DialogActionType extends js.Object {
-    val ElicitIntent  = "ElicitIntent".asInstanceOf[DialogActionType]
+    val ElicitIntent = "ElicitIntent".asInstanceOf[DialogActionType]
     val ConfirmIntent = "ConfirmIntent".asInstanceOf[DialogActionType]
-    val ElicitSlot    = "ElicitSlot".asInstanceOf[DialogActionType]
-    val Close         = "Close".asInstanceOf[DialogActionType]
-    val Delegate      = "Delegate".asInstanceOf[DialogActionType]
+    val ElicitSlot = "ElicitSlot".asInstanceOf[DialogActionType]
+    val Close = "Close".asInstanceOf[DialogActionType]
+    val Delegate = "Delegate".asInstanceOf[DialogActionType]
 
     val values = js.Object.freeze(js.Array(ElicitIntent, ConfirmIntent, ElicitSlot, Close, Delegate))
   }
@@ -201,12 +201,12 @@ package lexruntime {
   @js.native
   sealed trait DialogState extends js.Any
   object DialogState extends js.Object {
-    val ElicitIntent        = "ElicitIntent".asInstanceOf[DialogState]
-    val ConfirmIntent       = "ConfirmIntent".asInstanceOf[DialogState]
-    val ElicitSlot          = "ElicitSlot".asInstanceOf[DialogState]
-    val Fulfilled           = "Fulfilled".asInstanceOf[DialogState]
+    val ElicitIntent = "ElicitIntent".asInstanceOf[DialogState]
+    val ConfirmIntent = "ConfirmIntent".asInstanceOf[DialogState]
+    val ElicitSlot = "ElicitSlot".asInstanceOf[DialogState]
+    val Fulfilled = "Fulfilled".asInstanceOf[DialogState]
     val ReadyForFulfillment = "ReadyForFulfillment".asInstanceOf[DialogState]
-    val Failed              = "Failed".asInstanceOf[DialogState]
+    val Failed = "Failed".asInstanceOf[DialogState]
 
     val values =
       js.Object.freeze(js.Array(ElicitIntent, ConfirmIntent, ElicitSlot, Fulfilled, ReadyForFulfillment, Failed))
@@ -215,8 +215,8 @@ package lexruntime {
   @js.native
   sealed trait FulfillmentState extends js.Any
   object FulfillmentState extends js.Object {
-    val Fulfilled           = "Fulfilled".asInstanceOf[FulfillmentState]
-    val Failed              = "Failed".asInstanceOf[FulfillmentState]
+    val Fulfilled = "Fulfilled".asInstanceOf[FulfillmentState]
+    val Failed = "Failed".asInstanceOf[FulfillmentState]
     val ReadyForFulfillment = "ReadyForFulfillment".asInstanceOf[FulfillmentState]
 
     val values = js.Object.freeze(js.Array(Fulfilled, Failed, ReadyForFulfillment))
@@ -271,8 +271,8 @@ package lexruntime {
     ): GetSessionRequest = {
       val __obj = js.Dynamic.literal(
         "botAlias" -> botAlias.asInstanceOf[js.Any],
-        "botName"  -> botName.asInstanceOf[js.Any],
-        "userId"   -> userId.asInstanceOf[js.Any]
+        "botName" -> botName.asInstanceOf[js.Any],
+        "userId" -> userId.asInstanceOf[js.Any]
       )
 
       checkpointLabelFilter.foreach(__v => __obj.updateDynamic("checkpointLabelFilter")(__v.asInstanceOf[js.Any]))
@@ -347,10 +347,10 @@ package lexruntime {
   @js.native
   sealed trait MessageFormatType extends js.Any
   object MessageFormatType extends js.Object {
-    val PlainText     = "PlainText".asInstanceOf[MessageFormatType]
+    val PlainText = "PlainText".asInstanceOf[MessageFormatType]
     val CustomPayload = "CustomPayload".asInstanceOf[MessageFormatType]
-    val SSML          = "SSML".asInstanceOf[MessageFormatType]
-    val Composite     = "Composite".asInstanceOf[MessageFormatType]
+    val SSML = "SSML".asInstanceOf[MessageFormatType]
+    val Composite = "Composite".asInstanceOf[MessageFormatType]
 
     val values = js.Object.freeze(js.Array(PlainText, CustomPayload, SSML, Composite))
   }
@@ -380,11 +380,11 @@ package lexruntime {
         sessionAttributes: js.UndefOr[AttributesString] = js.undefined
     ): PostContentRequest = {
       val __obj = js.Dynamic.literal(
-        "botAlias"    -> botAlias.asInstanceOf[js.Any],
-        "botName"     -> botName.asInstanceOf[js.Any],
+        "botAlias" -> botAlias.asInstanceOf[js.Any],
+        "botName" -> botName.asInstanceOf[js.Any],
         "contentType" -> contentType.asInstanceOf[js.Any],
         "inputStream" -> inputStream.asInstanceOf[js.Any],
-        "userId"      -> userId.asInstanceOf[js.Any]
+        "userId" -> userId.asInstanceOf[js.Any]
       )
 
       accept.foreach(__v => __obj.updateDynamic("accept")(__v.asInstanceOf[js.Any]))
@@ -464,10 +464,10 @@ package lexruntime {
         sessionAttributes: js.UndefOr[StringMap] = js.undefined
     ): PostTextRequest = {
       val __obj = js.Dynamic.literal(
-        "botAlias"  -> botAlias.asInstanceOf[js.Any],
-        "botName"   -> botName.asInstanceOf[js.Any],
+        "botAlias" -> botAlias.asInstanceOf[js.Any],
+        "botName" -> botName.asInstanceOf[js.Any],
         "inputText" -> inputText.asInstanceOf[js.Any],
-        "userId"    -> userId.asInstanceOf[js.Any]
+        "userId" -> userId.asInstanceOf[js.Any]
       )
 
       requestAttributes.foreach(__v => __obj.updateDynamic("requestAttributes")(__v.asInstanceOf[js.Any]))
@@ -543,8 +543,8 @@ package lexruntime {
     ): PutSessionRequest = {
       val __obj = js.Dynamic.literal(
         "botAlias" -> botAlias.asInstanceOf[js.Any],
-        "botName"  -> botName.asInstanceOf[js.Any],
-        "userId"   -> userId.asInstanceOf[js.Any]
+        "botName" -> botName.asInstanceOf[js.Any],
+        "userId" -> userId.asInstanceOf[js.Any]
       )
 
       accept.foreach(__v => __obj.updateDynamic("accept")(__v.asInstanceOf[js.Any]))

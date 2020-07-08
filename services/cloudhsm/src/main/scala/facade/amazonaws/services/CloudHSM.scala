@@ -7,37 +7,37 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object cloudhsm {
-  type AZ                     = String
-  type AZList                 = js.Array[AZ]
-  type Certificate            = String
+  type AZ = String
+  type AZList = js.Array[AZ]
+  type Certificate = String
   type CertificateFingerprint = String
-  type ClientArn              = String
-  type ClientLabel            = String
-  type ClientList             = js.Array[ClientArn]
-  type ClientToken            = String
-  type EniId                  = String
-  type ExternalId             = String
-  type HapgArn                = String
-  type HapgList               = js.Array[HapgArn]
-  type HsmArn                 = String
-  type HsmList                = js.Array[HsmArn]
-  type HsmSerialNumber        = String
-  type IamRoleArn             = String
-  type IpAddress              = String
-  type Label                  = String
-  type PaginationToken        = String
-  type PartitionArn           = String
-  type PartitionList          = js.Array[PartitionArn]
-  type PartitionSerial        = String
-  type PartitionSerialList    = js.Array[PartitionSerial]
-  type SshKey                 = String
-  type SubnetId               = String
-  type TagKey                 = String
-  type TagKeyList             = js.Array[TagKey]
-  type TagList                = js.Array[Tag]
-  type TagValue               = String
-  type Timestamp              = String
-  type VpcId                  = String
+  type ClientArn = String
+  type ClientLabel = String
+  type ClientList = js.Array[ClientArn]
+  type ClientToken = String
+  type EniId = String
+  type ExternalId = String
+  type HapgArn = String
+  type HapgList = js.Array[HapgArn]
+  type HsmArn = String
+  type HsmList = js.Array[HsmArn]
+  type HsmSerialNumber = String
+  type IamRoleArn = String
+  type IpAddress = String
+  type Label = String
+  type PaginationToken = String
+  type PartitionArn = String
+  type PartitionList = js.Array[PartitionArn]
+  type PartitionSerial = String
+  type PartitionSerialList = js.Array[PartitionSerial]
+  type SshKey = String
+  type SubnetId = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type Timestamp = String
+  type VpcId = String
 
   implicit final class CloudHSMOps(private val service: CloudHSM) extends AnyVal {
 
@@ -91,25 +91,25 @@ package cloudhsm {
   class CloudHSM() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def addTagsToResource(params: AddTagsToResourceRequest): Request[AddTagsToResourceResponse]       = js.native
-    def createHapg(params: CreateHapgRequest): Request[CreateHapgResponse]                            = js.native
-    def createHsm(params: CreateHsmRequest): Request[CreateHsmResponse]                               = js.native
-    def createLunaClient(params: CreateLunaClientRequest): Request[CreateLunaClientResponse]          = js.native
-    def deleteHapg(params: DeleteHapgRequest): Request[DeleteHapgResponse]                            = js.native
-    def deleteHsm(params: DeleteHsmRequest): Request[DeleteHsmResponse]                               = js.native
-    def deleteLunaClient(params: DeleteLunaClientRequest): Request[DeleteLunaClientResponse]          = js.native
-    def describeHapg(params: DescribeHapgRequest): Request[DescribeHapgResponse]                      = js.native
-    def describeHsm(params: DescribeHsmRequest): Request[DescribeHsmResponse]                         = js.native
-    def describeLunaClient(params: DescribeLunaClientRequest): Request[DescribeLunaClientResponse]    = js.native
-    def getConfig(params: GetConfigRequest): Request[GetConfigResponse]                               = js.native
-    def listAvailableZones(params: ListAvailableZonesRequest): Request[ListAvailableZonesResponse]    = js.native
-    def listHapgs(params: ListHapgsRequest): Request[ListHapgsResponse]                               = js.native
-    def listHsms(params: ListHsmsRequest): Request[ListHsmsResponse]                                  = js.native
-    def listLunaClients(params: ListLunaClientsRequest): Request[ListLunaClientsResponse]             = js.native
+    def addTagsToResource(params: AddTagsToResourceRequest): Request[AddTagsToResourceResponse] = js.native
+    def createHapg(params: CreateHapgRequest): Request[CreateHapgResponse] = js.native
+    def createHsm(params: CreateHsmRequest): Request[CreateHsmResponse] = js.native
+    def createLunaClient(params: CreateLunaClientRequest): Request[CreateLunaClientResponse] = js.native
+    def deleteHapg(params: DeleteHapgRequest): Request[DeleteHapgResponse] = js.native
+    def deleteHsm(params: DeleteHsmRequest): Request[DeleteHsmResponse] = js.native
+    def deleteLunaClient(params: DeleteLunaClientRequest): Request[DeleteLunaClientResponse] = js.native
+    def describeHapg(params: DescribeHapgRequest): Request[DescribeHapgResponse] = js.native
+    def describeHsm(params: DescribeHsmRequest): Request[DescribeHsmResponse] = js.native
+    def describeLunaClient(params: DescribeLunaClientRequest): Request[DescribeLunaClientResponse] = js.native
+    def getConfig(params: GetConfigRequest): Request[GetConfigResponse] = js.native
+    def listAvailableZones(params: ListAvailableZonesRequest): Request[ListAvailableZonesResponse] = js.native
+    def listHapgs(params: ListHapgsRequest): Request[ListHapgsResponse] = js.native
+    def listHsms(params: ListHsmsRequest): Request[ListHsmsResponse] = js.native
+    def listLunaClients(params: ListLunaClientsRequest): Request[ListLunaClientsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def modifyHapg(params: ModifyHapgRequest): Request[ModifyHapgResponse]                            = js.native
-    def modifyHsm(params: ModifyHsmRequest): Request[ModifyHsmResponse]                               = js.native
-    def modifyLunaClient(params: ModifyLunaClientRequest): Request[ModifyLunaClientResponse]          = js.native
+    def modifyHapg(params: ModifyHapgRequest): Request[ModifyHapgResponse] = js.native
+    def modifyHsm(params: ModifyHsmRequest): Request[ModifyHsmResponse] = js.native
+    def modifyLunaClient(params: ModifyLunaClientRequest): Request[ModifyLunaClientResponse] = js.native
     def removeTagsFromResource(params: RemoveTagsFromResourceRequest): Request[RemoveTagsFromResourceResponse] =
       js.native
   }
@@ -128,7 +128,7 @@ package cloudhsm {
     ): AddTagsToResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagList"     -> TagList.asInstanceOf[js.Any]
+        "TagList" -> TagList.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddTagsToResourceRequest]
@@ -171,7 +171,7 @@ package cloudhsm {
   @js.native
   sealed trait CloudHsmObjectState extends js.Any
   object CloudHsmObjectState extends js.Object {
-    val READY    = "READY".asInstanceOf[CloudHsmObjectState]
+    val READY = "READY".asInstanceOf[CloudHsmObjectState]
     val UPDATING = "UPDATING".asInstanceOf[CloudHsmObjectState]
     val DEGRADED = "DEGRADED".asInstanceOf[CloudHsmObjectState]
 
@@ -255,9 +255,9 @@ package cloudhsm {
         SyslogIp: js.UndefOr[IpAddress] = js.undefined
     ): CreateHsmRequest = {
       val __obj = js.Dynamic.literal(
-        "IamRoleArn"       -> IamRoleArn.asInstanceOf[js.Any],
-        "SshKey"           -> SshKey.asInstanceOf[js.Any],
-        "SubnetId"         -> SubnetId.asInstanceOf[js.Any],
+        "IamRoleArn" -> IamRoleArn.asInstanceOf[js.Any],
+        "SshKey" -> SshKey.asInstanceOf[js.Any],
+        "SubnetId" -> SubnetId.asInstanceOf[js.Any],
         "SubscriptionType" -> SubscriptionType.asInstanceOf[js.Any]
       )
 
@@ -678,9 +678,9 @@ package cloudhsm {
         HapgList: HapgList
     ): GetConfigRequest = {
       val __obj = js.Dynamic.literal(
-        "ClientArn"     -> ClientArn.asInstanceOf[js.Any],
+        "ClientArn" -> ClientArn.asInstanceOf[js.Any],
         "ClientVersion" -> ClientVersion.asInstanceOf[js.Any],
-        "HapgList"      -> HapgList.asInstanceOf[js.Any]
+        "HapgList" -> HapgList.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetConfigRequest]
@@ -712,13 +712,13 @@ package cloudhsm {
   @js.native
   sealed trait HsmStatus extends js.Any
   object HsmStatus extends js.Object {
-    val PENDING     = "PENDING".asInstanceOf[HsmStatus]
-    val RUNNING     = "RUNNING".asInstanceOf[HsmStatus]
-    val UPDATING    = "UPDATING".asInstanceOf[HsmStatus]
-    val SUSPENDED   = "SUSPENDED".asInstanceOf[HsmStatus]
+    val PENDING = "PENDING".asInstanceOf[HsmStatus]
+    val RUNNING = "RUNNING".asInstanceOf[HsmStatus]
+    val UPDATING = "UPDATING".asInstanceOf[HsmStatus]
+    val SUSPENDED = "SUSPENDED".asInstanceOf[HsmStatus]
     val TERMINATING = "TERMINATING".asInstanceOf[HsmStatus]
-    val TERMINATED  = "TERMINATED".asInstanceOf[HsmStatus]
-    val DEGRADED    = "DEGRADED".asInstanceOf[HsmStatus]
+    val TERMINATED = "TERMINATED".asInstanceOf[HsmStatus]
+    val DEGRADED = "DEGRADED".asInstanceOf[HsmStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, RUNNING, UPDATING, SUSPENDED, TERMINATING, TERMINATED, DEGRADED))
   }
@@ -1018,7 +1018,7 @@ package cloudhsm {
     ): ModifyLunaClientRequest = {
       val __obj = js.Dynamic.literal(
         "Certificate" -> Certificate.asInstanceOf[js.Any],
-        "ClientArn"   -> ClientArn.asInstanceOf[js.Any]
+        "ClientArn" -> ClientArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ModifyLunaClientRequest]
@@ -1055,7 +1055,7 @@ package cloudhsm {
     ): RemoveTagsFromResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeyList"  -> TagKeyList.asInstanceOf[js.Any]
+        "TagKeyList" -> TagKeyList.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RemoveTagsFromResourceRequest]
@@ -1109,7 +1109,7 @@ package cloudhsm {
         Value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 

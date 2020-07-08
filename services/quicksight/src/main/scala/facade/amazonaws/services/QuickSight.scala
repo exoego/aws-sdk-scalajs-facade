@@ -7,125 +7,125 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object quicksight {
-  type ActionList                     = js.Array[String]
-  type ActiveIAMPolicyAssignmentList  = js.Array[ActiveIAMPolicyAssignment]
-  type AliasName                      = String
-  type Arn                            = String
-  type AwsAccountId                   = String
-  type AwsAndAccountId                = String
-  type CalculatedColumnList           = js.Array[CalculatedColumn]
-  type Catalog                        = String
-  type ClusterId                      = String
-  type ColorList                      = js.Array[HexColor]
-  type ColumnGroupColumnSchemaList    = js.Array[ColumnGroupColumnSchema]
-  type ColumnGroupList                = js.Array[ColumnGroup]
-  type ColumnGroupName                = String
-  type ColumnGroupSchemaList          = js.Array[ColumnGroupSchema]
-  type ColumnId                       = String
-  type ColumnList                     = js.Array[ColumnName]
-  type ColumnName                     = String
-  type ColumnSchemaList               = js.Array[ColumnSchema]
-  type ColumnTagList                  = js.Array[ColumnTag]
-  type CopySourceArn                  = String
-  type CustomSqlName                  = String
-  type DashboardErrorList             = js.Array[DashboardError]
-  type DashboardName                  = String
-  type DashboardSearchFilterList      = js.Array[DashboardSearchFilter]
-  type DashboardSummaryList           = js.Array[DashboardSummary]
-  type DashboardVersionSummaryList    = js.Array[DashboardVersionSummary]
-  type DataSetArnsList                = js.Array[Arn]
-  type DataSetConfigurationList       = js.Array[DataSetConfiguration]
-  type DataSetName                    = String
-  type DataSetReferenceList           = js.Array[DataSetReference]
-  type DataSetSummaryList             = js.Array[DataSetSummary]
-  type DataSourceList                 = js.Array[DataSource]
-  type DataSourceParametersList       = js.Array[DataSourceParameters]
-  type Database                       = String
-  type DateTimeParameterList          = js.Array[DateTimeParameter]
-  type DecimalParameterList           = js.Array[DecimalParameter]
-  type Delimiter                      = String
-  type Domain                         = String
-  type DoubleList                     = js.Array[Double]
-  type EmbeddingUrl                   = String
-  type Expression                     = String
-  type GroupDescription               = String
-  type GroupList                      = js.Array[Group]
-  type GroupMemberList                = js.Array[GroupMember]
-  type GroupMemberName                = String
-  type GroupName                      = String
-  type HexColor                       = String
-  type Host                           = String
-  type IAMPolicyAssignmentName        = String
+  type ActionList = js.Array[String]
+  type ActiveIAMPolicyAssignmentList = js.Array[ActiveIAMPolicyAssignment]
+  type AliasName = String
+  type Arn = String
+  type AwsAccountId = String
+  type AwsAndAccountId = String
+  type CalculatedColumnList = js.Array[CalculatedColumn]
+  type Catalog = String
+  type ClusterId = String
+  type ColorList = js.Array[HexColor]
+  type ColumnGroupColumnSchemaList = js.Array[ColumnGroupColumnSchema]
+  type ColumnGroupList = js.Array[ColumnGroup]
+  type ColumnGroupName = String
+  type ColumnGroupSchemaList = js.Array[ColumnGroupSchema]
+  type ColumnId = String
+  type ColumnList = js.Array[ColumnName]
+  type ColumnName = String
+  type ColumnSchemaList = js.Array[ColumnSchema]
+  type ColumnTagList = js.Array[ColumnTag]
+  type CopySourceArn = String
+  type CustomSqlName = String
+  type DashboardErrorList = js.Array[DashboardError]
+  type DashboardName = String
+  type DashboardSearchFilterList = js.Array[DashboardSearchFilter]
+  type DashboardSummaryList = js.Array[DashboardSummary]
+  type DashboardVersionSummaryList = js.Array[DashboardVersionSummary]
+  type DataSetArnsList = js.Array[Arn]
+  type DataSetConfigurationList = js.Array[DataSetConfiguration]
+  type DataSetName = String
+  type DataSetReferenceList = js.Array[DataSetReference]
+  type DataSetSummaryList = js.Array[DataSetSummary]
+  type DataSourceList = js.Array[DataSource]
+  type DataSourceParametersList = js.Array[DataSourceParameters]
+  type Database = String
+  type DateTimeParameterList = js.Array[DateTimeParameter]
+  type DecimalParameterList = js.Array[DecimalParameter]
+  type Delimiter = String
+  type Domain = String
+  type DoubleList = js.Array[Double]
+  type EmbeddingUrl = String
+  type Expression = String
+  type GroupDescription = String
+  type GroupList = js.Array[Group]
+  type GroupMemberList = js.Array[GroupMember]
+  type GroupMemberName = String
+  type GroupName = String
+  type HexColor = String
+  type Host = String
+  type IAMPolicyAssignmentName = String
   type IAMPolicyAssignmentSummaryList = js.Array[IAMPolicyAssignmentSummary]
-  type IdentityMap                    = js.Dictionary[IdentityNameList]
-  type IdentityName                   = String
-  type IdentityNameList               = js.Array[IdentityName]
-  type IngestionId                    = String
-  type IngestionMaxResults            = Int
-  type Ingestions                     = js.Array[Ingestion]
-  type InputColumnList                = js.Array[InputColumn]
-  type InstanceId                     = String
-  type IntegerParameterList           = js.Array[IntegerParameter]
-  type LogicalTableAlias              = String
-  type LogicalTableId                 = String
-  type LogicalTableMap                = js.Dictionary[LogicalTable]
-  type LongList                       = js.Array[Double]
-  type MaxResults                     = Int
-  type Namespace                      = String
-  type NonEmptyString                 = String
-  type OnClause                       = String
-  type OptionalPort                   = Int
-  type OutputColumnList               = js.Array[OutputColumn]
-  type Password                       = String
-  type PhysicalTableId                = String
-  type PhysicalTableMap               = js.Dictionary[PhysicalTable]
-  type Port                           = Int
-  type PositiveInteger                = Int
-  type Principal                      = String
-  type ProjectedColumnList            = js.Array[String]
-  type Query                          = String
-  type RelationalTableName            = String
-  type RelationalTableSchema          = String
-  type ResourceId                     = String
-  type ResourceName                   = String
-  type ResourcePermissionList         = js.Array[ResourcePermission]
-  type RestrictiveResourceId          = String
-  type RoleSessionName                = String
-  type S3Bucket                       = String
-  type S3Key                          = String
-  type SessionLifetimeInMinutes       = Double
-  type SiteBaseUrl                    = String
-  type SqlQuery                       = String
-  type StatusCode                     = Int
-  type StringList                     = js.Array[String]
-  type StringParameterList            = js.Array[StringParameter]
-  type TagKey                         = String
-  type TagKeyList                     = js.Array[TagKey]
-  type TagList                        = js.Array[Tag]
-  type TagValue                       = String
-  type TemplateAliasList              = js.Array[TemplateAlias]
-  type TemplateErrorList              = js.Array[TemplateError]
-  type TemplateName                   = String
-  type TemplateSummaryList            = js.Array[TemplateSummary]
-  type TemplateVersionSummaryList     = js.Array[TemplateVersionSummary]
-  type ThemeAliasList                 = js.Array[ThemeAlias]
-  type ThemeErrorList                 = js.Array[ThemeError]
-  type ThemeName                      = String
-  type ThemeSummaryList               = js.Array[ThemeSummary]
-  type ThemeVersionSummaryList        = js.Array[ThemeVersionSummary]
-  type Timestamp                      = js.Date
-  type TimestampList                  = js.Array[Timestamp]
-  type TransformOperationList         = js.Array[TransformOperation]
-  type TypeCastFormat                 = String
-  type UpdateResourcePermissionList   = js.Array[ResourcePermission]
-  type UserList                       = js.Array[User]
-  type UserName                       = String
-  type Username                       = String
-  type VersionDescription             = String
-  type VersionNumber                  = Double
-  type Warehouse                      = String
-  type WorkGroup                      = String
-  type timestamp                      = js.Date
+  type IdentityMap = js.Dictionary[IdentityNameList]
+  type IdentityName = String
+  type IdentityNameList = js.Array[IdentityName]
+  type IngestionId = String
+  type IngestionMaxResults = Int
+  type Ingestions = js.Array[Ingestion]
+  type InputColumnList = js.Array[InputColumn]
+  type InstanceId = String
+  type IntegerParameterList = js.Array[IntegerParameter]
+  type LogicalTableAlias = String
+  type LogicalTableId = String
+  type LogicalTableMap = js.Dictionary[LogicalTable]
+  type LongList = js.Array[Double]
+  type MaxResults = Int
+  type Namespace = String
+  type NonEmptyString = String
+  type OnClause = String
+  type OptionalPort = Int
+  type OutputColumnList = js.Array[OutputColumn]
+  type Password = String
+  type PhysicalTableId = String
+  type PhysicalTableMap = js.Dictionary[PhysicalTable]
+  type Port = Int
+  type PositiveInteger = Int
+  type Principal = String
+  type ProjectedColumnList = js.Array[String]
+  type Query = String
+  type RelationalTableName = String
+  type RelationalTableSchema = String
+  type ResourceId = String
+  type ResourceName = String
+  type ResourcePermissionList = js.Array[ResourcePermission]
+  type RestrictiveResourceId = String
+  type RoleSessionName = String
+  type S3Bucket = String
+  type S3Key = String
+  type SessionLifetimeInMinutes = Double
+  type SiteBaseUrl = String
+  type SqlQuery = String
+  type StatusCode = Int
+  type StringList = js.Array[String]
+  type StringParameterList = js.Array[StringParameter]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type TemplateAliasList = js.Array[TemplateAlias]
+  type TemplateErrorList = js.Array[TemplateError]
+  type TemplateName = String
+  type TemplateSummaryList = js.Array[TemplateSummary]
+  type TemplateVersionSummaryList = js.Array[TemplateVersionSummary]
+  type ThemeAliasList = js.Array[ThemeAlias]
+  type ThemeErrorList = js.Array[ThemeError]
+  type ThemeName = String
+  type ThemeSummaryList = js.Array[ThemeSummary]
+  type ThemeVersionSummaryList = js.Array[ThemeVersionSummary]
+  type Timestamp = js.Date
+  type TimestampList = js.Array[Timestamp]
+  type TransformOperationList = js.Array[TransformOperation]
+  type TypeCastFormat = String
+  type UpdateResourcePermissionList = js.Array[ResourcePermission]
+  type UserList = js.Array[User]
+  type UserName = String
+  type Username = String
+  type VersionDescription = String
+  type VersionNumber = Double
+  type Warehouse = String
+  type WorkGroup = String
+  type timestamp = js.Date
 
   implicit final class QuickSightOps(private val service: QuickSight) extends AnyVal {
 
@@ -320,112 +320,112 @@ package quicksight {
   class QuickSight() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def cancelIngestion(params: CancelIngestionRequest): Request[CancelIngestionResponse]                   = js.native
-    def createDashboard(params: CreateDashboardRequest): Request[CreateDashboardResponse]                   = js.native
-    def createDataSet(params: CreateDataSetRequest): Request[CreateDataSetResponse]                         = js.native
-    def createDataSource(params: CreateDataSourceRequest): Request[CreateDataSourceResponse]                = js.native
-    def createGroup(params: CreateGroupRequest): Request[CreateGroupResponse]                               = js.native
+    def cancelIngestion(params: CancelIngestionRequest): Request[CancelIngestionResponse] = js.native
+    def createDashboard(params: CreateDashboardRequest): Request[CreateDashboardResponse] = js.native
+    def createDataSet(params: CreateDataSetRequest): Request[CreateDataSetResponse] = js.native
+    def createDataSource(params: CreateDataSourceRequest): Request[CreateDataSourceResponse] = js.native
+    def createGroup(params: CreateGroupRequest): Request[CreateGroupResponse] = js.native
     def createGroupMembership(params: CreateGroupMembershipRequest): Request[CreateGroupMembershipResponse] = js.native
     def createIAMPolicyAssignment(
         params: CreateIAMPolicyAssignmentRequest
-    ): Request[CreateIAMPolicyAssignmentResponse]                                                           = js.native
-    def createIngestion(params: CreateIngestionRequest): Request[CreateIngestionResponse]                   = js.native
-    def createTemplate(params: CreateTemplateRequest): Request[CreateTemplateResponse]                      = js.native
-    def createTemplateAlias(params: CreateTemplateAliasRequest): Request[CreateTemplateAliasResponse]       = js.native
-    def createTheme(params: CreateThemeRequest): Request[CreateThemeResponse]                               = js.native
-    def createThemeAlias(params: CreateThemeAliasRequest): Request[CreateThemeAliasResponse]                = js.native
-    def deleteDashboard(params: DeleteDashboardRequest): Request[DeleteDashboardResponse]                   = js.native
-    def deleteDataSet(params: DeleteDataSetRequest): Request[DeleteDataSetResponse]                         = js.native
-    def deleteDataSource(params: DeleteDataSourceRequest): Request[DeleteDataSourceResponse]                = js.native
-    def deleteGroup(params: DeleteGroupRequest): Request[DeleteGroupResponse]                               = js.native
+    ): Request[CreateIAMPolicyAssignmentResponse] = js.native
+    def createIngestion(params: CreateIngestionRequest): Request[CreateIngestionResponse] = js.native
+    def createTemplate(params: CreateTemplateRequest): Request[CreateTemplateResponse] = js.native
+    def createTemplateAlias(params: CreateTemplateAliasRequest): Request[CreateTemplateAliasResponse] = js.native
+    def createTheme(params: CreateThemeRequest): Request[CreateThemeResponse] = js.native
+    def createThemeAlias(params: CreateThemeAliasRequest): Request[CreateThemeAliasResponse] = js.native
+    def deleteDashboard(params: DeleteDashboardRequest): Request[DeleteDashboardResponse] = js.native
+    def deleteDataSet(params: DeleteDataSetRequest): Request[DeleteDataSetResponse] = js.native
+    def deleteDataSource(params: DeleteDataSourceRequest): Request[DeleteDataSourceResponse] = js.native
+    def deleteGroup(params: DeleteGroupRequest): Request[DeleteGroupResponse] = js.native
     def deleteGroupMembership(params: DeleteGroupMembershipRequest): Request[DeleteGroupMembershipResponse] = js.native
     def deleteIAMPolicyAssignment(
         params: DeleteIAMPolicyAssignmentRequest
-    ): Request[DeleteIAMPolicyAssignmentResponse]                                                     = js.native
-    def deleteTemplate(params: DeleteTemplateRequest): Request[DeleteTemplateResponse]                = js.native
+    ): Request[DeleteIAMPolicyAssignmentResponse] = js.native
+    def deleteTemplate(params: DeleteTemplateRequest): Request[DeleteTemplateResponse] = js.native
     def deleteTemplateAlias(params: DeleteTemplateAliasRequest): Request[DeleteTemplateAliasResponse] = js.native
-    def deleteTheme(params: DeleteThemeRequest): Request[DeleteThemeResponse]                         = js.native
-    def deleteThemeAlias(params: DeleteThemeAliasRequest): Request[DeleteThemeAliasResponse]          = js.native
-    def deleteUser(params: DeleteUserRequest): Request[DeleteUserResponse]                            = js.native
+    def deleteTheme(params: DeleteThemeRequest): Request[DeleteThemeResponse] = js.native
+    def deleteThemeAlias(params: DeleteThemeAliasRequest): Request[DeleteThemeAliasResponse] = js.native
+    def deleteUser(params: DeleteUserRequest): Request[DeleteUserResponse] = js.native
     def deleteUserByPrincipalId(params: DeleteUserByPrincipalIdRequest): Request[DeleteUserByPrincipalIdResponse] =
       js.native
     def describeDashboard(params: DescribeDashboardRequest): Request[DescribeDashboardResponse] = js.native
     def describeDashboardPermissions(
         params: DescribeDashboardPermissionsRequest
-    ): Request[DescribeDashboardPermissionsResponse]                                      = js.native
+    ): Request[DescribeDashboardPermissionsResponse] = js.native
     def describeDataSet(params: DescribeDataSetRequest): Request[DescribeDataSetResponse] = js.native
     def describeDataSetPermissions(
         params: DescribeDataSetPermissionsRequest
-    ): Request[DescribeDataSetPermissionsResponse]                                                 = js.native
+    ): Request[DescribeDataSetPermissionsResponse] = js.native
     def describeDataSource(params: DescribeDataSourceRequest): Request[DescribeDataSourceResponse] = js.native
     def describeDataSourcePermissions(
         params: DescribeDataSourcePermissionsRequest
-    ): Request[DescribeDataSourcePermissionsResponse]                               = js.native
+    ): Request[DescribeDataSourcePermissionsResponse] = js.native
     def describeGroup(params: DescribeGroupRequest): Request[DescribeGroupResponse] = js.native
     def describeIAMPolicyAssignment(
         params: DescribeIAMPolicyAssignmentRequest
-    ): Request[DescribeIAMPolicyAssignmentResponse]                                                         = js.native
-    def describeIngestion(params: DescribeIngestionRequest): Request[DescribeIngestionResponse]             = js.native
-    def describeTemplate(params: DescribeTemplateRequest): Request[DescribeTemplateResponse]                = js.native
+    ): Request[DescribeIAMPolicyAssignmentResponse] = js.native
+    def describeIngestion(params: DescribeIngestionRequest): Request[DescribeIngestionResponse] = js.native
+    def describeTemplate(params: DescribeTemplateRequest): Request[DescribeTemplateResponse] = js.native
     def describeTemplateAlias(params: DescribeTemplateAliasRequest): Request[DescribeTemplateAliasResponse] = js.native
     def describeTemplatePermissions(
         params: DescribeTemplatePermissionsRequest
-    ): Request[DescribeTemplatePermissionsResponse]                                                = js.native
-    def describeTheme(params: DescribeThemeRequest): Request[DescribeThemeResponse]                = js.native
+    ): Request[DescribeTemplatePermissionsResponse] = js.native
+    def describeTheme(params: DescribeThemeRequest): Request[DescribeThemeResponse] = js.native
     def describeThemeAlias(params: DescribeThemeAliasRequest): Request[DescribeThemeAliasResponse] = js.native
     def describeThemePermissions(params: DescribeThemePermissionsRequest): Request[DescribeThemePermissionsResponse] =
       js.native
-    def describeUser(params: DescribeUserRequest): Request[DescribeUserResponse]                            = js.native
-    def getDashboardEmbedUrl(params: GetDashboardEmbedUrlRequest): Request[GetDashboardEmbedUrlResponse]    = js.native
+    def describeUser(params: DescribeUserRequest): Request[DescribeUserResponse] = js.native
+    def getDashboardEmbedUrl(params: GetDashboardEmbedUrlRequest): Request[GetDashboardEmbedUrlResponse] = js.native
     def listDashboardVersions(params: ListDashboardVersionsRequest): Request[ListDashboardVersionsResponse] = js.native
-    def listDashboards(params: ListDashboardsRequest): Request[ListDashboardsResponse]                      = js.native
-    def listDataSets(params: ListDataSetsRequest): Request[ListDataSetsResponse]                            = js.native
-    def listDataSources(params: ListDataSourcesRequest): Request[ListDataSourcesResponse]                   = js.native
-    def listGroupMemberships(params: ListGroupMembershipsRequest): Request[ListGroupMembershipsResponse]    = js.native
-    def listGroups(params: ListGroupsRequest): Request[ListGroupsResponse]                                  = js.native
+    def listDashboards(params: ListDashboardsRequest): Request[ListDashboardsResponse] = js.native
+    def listDataSets(params: ListDataSetsRequest): Request[ListDataSetsResponse] = js.native
+    def listDataSources(params: ListDataSourcesRequest): Request[ListDataSourcesResponse] = js.native
+    def listGroupMemberships(params: ListGroupMembershipsRequest): Request[ListGroupMembershipsResponse] = js.native
+    def listGroups(params: ListGroupsRequest): Request[ListGroupsResponse] = js.native
     def listIAMPolicyAssignments(params: ListIAMPolicyAssignmentsRequest): Request[ListIAMPolicyAssignmentsResponse] =
       js.native
     def listIAMPolicyAssignmentsForUser(
         params: ListIAMPolicyAssignmentsForUserRequest
-    ): Request[ListIAMPolicyAssignmentsForUserResponse]                                                  = js.native
-    def listIngestions(params: ListIngestionsRequest): Request[ListIngestionsResponse]                   = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]    = js.native
-    def listTemplateAliases(params: ListTemplateAliasesRequest): Request[ListTemplateAliasesResponse]    = js.native
+    ): Request[ListIAMPolicyAssignmentsForUserResponse] = js.native
+    def listIngestions(params: ListIngestionsRequest): Request[ListIngestionsResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def listTemplateAliases(params: ListTemplateAliasesRequest): Request[ListTemplateAliasesResponse] = js.native
     def listTemplateVersions(params: ListTemplateVersionsRequest): Request[ListTemplateVersionsResponse] = js.native
-    def listTemplates(params: ListTemplatesRequest): Request[ListTemplatesResponse]                      = js.native
-    def listThemeAliases(params: ListThemeAliasesRequest): Request[ListThemeAliasesResponse]             = js.native
-    def listThemeVersions(params: ListThemeVersionsRequest): Request[ListThemeVersionsResponse]          = js.native
-    def listThemes(params: ListThemesRequest): Request[ListThemesResponse]                               = js.native
-    def listUserGroups(params: ListUserGroupsRequest): Request[ListUserGroupsResponse]                   = js.native
-    def listUsers(params: ListUsersRequest): Request[ListUsersResponse]                                  = js.native
-    def registerUser(params: RegisterUserRequest): Request[RegisterUserResponse]                         = js.native
-    def searchDashboards(params: SearchDashboardsRequest): Request[SearchDashboardsResponse]             = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                            = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                      = js.native
-    def updateDashboard(params: UpdateDashboardRequest): Request[UpdateDashboardResponse]                = js.native
+    def listTemplates(params: ListTemplatesRequest): Request[ListTemplatesResponse] = js.native
+    def listThemeAliases(params: ListThemeAliasesRequest): Request[ListThemeAliasesResponse] = js.native
+    def listThemeVersions(params: ListThemeVersionsRequest): Request[ListThemeVersionsResponse] = js.native
+    def listThemes(params: ListThemesRequest): Request[ListThemesResponse] = js.native
+    def listUserGroups(params: ListUserGroupsRequest): Request[ListUserGroupsResponse] = js.native
+    def listUsers(params: ListUsersRequest): Request[ListUsersResponse] = js.native
+    def registerUser(params: RegisterUserRequest): Request[RegisterUserResponse] = js.native
+    def searchDashboards(params: SearchDashboardsRequest): Request[SearchDashboardsResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateDashboard(params: UpdateDashboardRequest): Request[UpdateDashboardResponse] = js.native
     def updateDashboardPermissions(
         params: UpdateDashboardPermissionsRequest
     ): Request[UpdateDashboardPermissionsResponse] = js.native
     def updateDashboardPublishedVersion(
         params: UpdateDashboardPublishedVersionRequest
-    ): Request[UpdateDashboardPublishedVersionResponse]                             = js.native
+    ): Request[UpdateDashboardPublishedVersionResponse] = js.native
     def updateDataSet(params: UpdateDataSetRequest): Request[UpdateDataSetResponse] = js.native
     def updateDataSetPermissions(params: UpdateDataSetPermissionsRequest): Request[UpdateDataSetPermissionsResponse] =
       js.native
     def updateDataSource(params: UpdateDataSourceRequest): Request[UpdateDataSourceResponse] = js.native
     def updateDataSourcePermissions(
         params: UpdateDataSourcePermissionsRequest
-    ): Request[UpdateDataSourcePermissionsResponse]                           = js.native
+    ): Request[UpdateDataSourcePermissionsResponse] = js.native
     def updateGroup(params: UpdateGroupRequest): Request[UpdateGroupResponse] = js.native
     def updateIAMPolicyAssignment(
         params: UpdateIAMPolicyAssignmentRequest
-    ): Request[UpdateIAMPolicyAssignmentResponse]                                                     = js.native
-    def updateTemplate(params: UpdateTemplateRequest): Request[UpdateTemplateResponse]                = js.native
+    ): Request[UpdateIAMPolicyAssignmentResponse] = js.native
+    def updateTemplate(params: UpdateTemplateRequest): Request[UpdateTemplateResponse] = js.native
     def updateTemplateAlias(params: UpdateTemplateAliasRequest): Request[UpdateTemplateAliasResponse] = js.native
     def updateTemplatePermissions(
         params: UpdateTemplatePermissionsRequest
-    ): Request[UpdateTemplatePermissionsResponse]                                            = js.native
-    def updateTheme(params: UpdateThemeRequest): Request[UpdateThemeResponse]                = js.native
+    ): Request[UpdateTemplatePermissionsResponse] = js.native
+    def updateTheme(params: UpdateThemeRequest): Request[UpdateThemeResponse] = js.native
     def updateThemeAlias(params: UpdateThemeAliasRequest): Request[UpdateThemeAliasResponse] = js.native
     def updateThemePermissions(params: UpdateThemePermissionsRequest): Request[UpdateThemePermissionsResponse] =
       js.native
@@ -497,8 +497,8 @@ package quicksight {
   @js.native
   sealed trait AssignmentStatus extends js.Any
   object AssignmentStatus extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[AssignmentStatus]
-    val DRAFT    = "DRAFT".asInstanceOf[AssignmentStatus]
+    val ENABLED = "ENABLED".asInstanceOf[AssignmentStatus]
+    val DRAFT = "DRAFT".asInstanceOf[AssignmentStatus]
     val DISABLED = "DISABLED".asInstanceOf[AssignmentStatus]
 
     val values = js.Object.freeze(js.Array(ENABLED, DRAFT, DISABLED))
@@ -542,8 +542,8 @@ package quicksight {
     ): AuroraParameters = {
       val __obj = js.Dynamic.literal(
         "Database" -> Database.asInstanceOf[js.Any],
-        "Host"     -> Host.asInstanceOf[js.Any],
-        "Port"     -> Port.asInstanceOf[js.Any]
+        "Host" -> Host.asInstanceOf[js.Any],
+        "Port" -> Port.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AuroraParameters]
@@ -569,8 +569,8 @@ package quicksight {
     ): AuroraPostgreSqlParameters = {
       val __obj = js.Dynamic.literal(
         "Database" -> Database.asInstanceOf[js.Any],
-        "Host"     -> Host.asInstanceOf[js.Any],
-        "Port"     -> Port.asInstanceOf[js.Any]
+        "Host" -> Host.asInstanceOf[js.Any],
+        "Port" -> Port.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AuroraPostgreSqlParameters]
@@ -635,7 +635,7 @@ package quicksight {
         Expression: Expression
     ): CalculatedColumn = {
       val __obj = js.Dynamic.literal(
-        "ColumnId"   -> ColumnId.asInstanceOf[js.Any],
+        "ColumnId" -> ColumnId.asInstanceOf[js.Any],
         "ColumnName" -> ColumnName.asInstanceOf[js.Any],
         "Expression" -> Expression.asInstanceOf[js.Any]
       )
@@ -660,8 +660,8 @@ package quicksight {
     ): CancelIngestionRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "DataSetId"    -> DataSetId.asInstanceOf[js.Any],
-        "IngestionId"  -> IngestionId.asInstanceOf[js.Any]
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
+        "IngestionId" -> IngestionId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CancelIngestionRequest]
@@ -711,7 +711,7 @@ package quicksight {
         Format: js.UndefOr[TypeCastFormat] = js.undefined
     ): CastColumnTypeOperation = {
       val __obj = js.Dynamic.literal(
-        "ColumnName"    -> ColumnName.asInstanceOf[js.Any],
+        "ColumnName" -> ColumnName.asInstanceOf[js.Any],
         "NewColumnType" -> NewColumnType.asInstanceOf[js.Any]
       )
 
@@ -723,9 +723,9 @@ package quicksight {
   @js.native
   sealed trait ColumnDataType extends js.Any
   object ColumnDataType extends js.Object {
-    val STRING   = "STRING".asInstanceOf[ColumnDataType]
-    val INTEGER  = "INTEGER".asInstanceOf[ColumnDataType]
-    val DECIMAL  = "DECIMAL".asInstanceOf[ColumnDataType]
+    val STRING = "STRING".asInstanceOf[ColumnDataType]
+    val INTEGER = "INTEGER".asInstanceOf[ColumnDataType]
+    val DECIMAL = "DECIMAL".asInstanceOf[ColumnDataType]
     val DATETIME = "DATETIME".asInstanceOf[ColumnDataType]
 
     val values = js.Object.freeze(js.Array(STRING, INTEGER, DECIMAL, DATETIME))
@@ -888,8 +888,8 @@ package quicksight {
     ): CreateDashboardRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "DashboardId"  -> DashboardId.asInstanceOf[js.Any],
-        "Name"         -> Name.asInstanceOf[js.Any],
+        "DashboardId" -> DashboardId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "SourceEntity" -> SourceEntity.asInstanceOf[js.Any]
       )
 
@@ -963,10 +963,10 @@ package quicksight {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDataSetRequest = {
       val __obj = js.Dynamic.literal(
-        "AwsAccountId"     -> AwsAccountId.asInstanceOf[js.Any],
-        "DataSetId"        -> DataSetId.asInstanceOf[js.Any],
-        "ImportMode"       -> ImportMode.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any],
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
+        "ImportMode" -> ImportMode.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "PhysicalTableMap" -> PhysicalTableMap.asInstanceOf[js.Any]
       )
 
@@ -1043,8 +1043,8 @@ package quicksight {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "DataSourceId" -> DataSourceId.asInstanceOf[js.Any],
-        "Name"         -> Name.asInstanceOf[js.Any],
-        "Type"         -> Type.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       Credentials.foreach(__v => __obj.updateDynamic("Credentials")(__v.asInstanceOf[js.Any]))
@@ -1103,9 +1103,9 @@ package quicksight {
     ): CreateGroupMembershipRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "GroupName"    -> GroupName.asInstanceOf[js.Any],
-        "MemberName"   -> MemberName.asInstanceOf[js.Any],
-        "Namespace"    -> Namespace.asInstanceOf[js.Any]
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "MemberName" -> MemberName.asInstanceOf[js.Any],
+        "Namespace" -> Namespace.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateGroupMembershipRequest]
@@ -1155,8 +1155,8 @@ package quicksight {
     ): CreateGroupRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "GroupName"    -> GroupName.asInstanceOf[js.Any],
-        "Namespace"    -> Namespace.asInstanceOf[js.Any]
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "Namespace" -> Namespace.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -1210,10 +1210,10 @@ package quicksight {
         PolicyArn: js.UndefOr[Arn] = js.undefined
     ): CreateIAMPolicyAssignmentRequest = {
       val __obj = js.Dynamic.literal(
-        "AssignmentName"   -> AssignmentName.asInstanceOf[js.Any],
+        "AssignmentName" -> AssignmentName.asInstanceOf[js.Any],
         "AssignmentStatus" -> AssignmentStatus.asInstanceOf[js.Any],
-        "AwsAccountId"     -> AwsAccountId.asInstanceOf[js.Any],
-        "Namespace"        -> Namespace.asInstanceOf[js.Any]
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "Namespace" -> Namespace.asInstanceOf[js.Any]
       )
 
       Identities.foreach(__v => __obj.updateDynamic("Identities")(__v.asInstanceOf[js.Any]))
@@ -1272,8 +1272,8 @@ package quicksight {
     ): CreateIngestionRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "DataSetId"    -> DataSetId.asInstanceOf[js.Any],
-        "IngestionId"  -> IngestionId.asInstanceOf[js.Any]
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
+        "IngestionId" -> IngestionId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateIngestionRequest]
@@ -1325,9 +1325,9 @@ package quicksight {
         TemplateVersionNumber: VersionNumber
     ): CreateTemplateAliasRequest = {
       val __obj = js.Dynamic.literal(
-        "AliasName"             -> AliasName.asInstanceOf[js.Any],
-        "AwsAccountId"          -> AwsAccountId.asInstanceOf[js.Any],
-        "TemplateId"            -> TemplateId.asInstanceOf[js.Any],
+        "AliasName" -> AliasName.asInstanceOf[js.Any],
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "TemplateId" -> TemplateId.asInstanceOf[js.Any],
         "TemplateVersionNumber" -> TemplateVersionNumber.asInstanceOf[js.Any]
       )
 
@@ -1382,7 +1382,7 @@ package quicksight {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "SourceEntity" -> SourceEntity.asInstanceOf[js.Any],
-        "TemplateId"   -> TemplateId.asInstanceOf[js.Any]
+        "TemplateId" -> TemplateId.asInstanceOf[js.Any]
       )
 
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -1441,9 +1441,9 @@ package quicksight {
         ThemeVersionNumber: VersionNumber
     ): CreateThemeAliasRequest = {
       val __obj = js.Dynamic.literal(
-        "AliasName"          -> AliasName.asInstanceOf[js.Any],
-        "AwsAccountId"       -> AwsAccountId.asInstanceOf[js.Any],
-        "ThemeId"            -> ThemeId.asInstanceOf[js.Any],
+        "AliasName" -> AliasName.asInstanceOf[js.Any],
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "ThemeId" -> ThemeId.asInstanceOf[js.Any],
         "ThemeVersionNumber" -> ThemeVersionNumber.asInstanceOf[js.Any]
       )
 
@@ -1498,11 +1498,11 @@ package quicksight {
         VersionDescription: js.UndefOr[VersionDescription] = js.undefined
     ): CreateThemeRequest = {
       val __obj = js.Dynamic.literal(
-        "AwsAccountId"  -> AwsAccountId.asInstanceOf[js.Any],
-        "BaseThemeId"   -> BaseThemeId.asInstanceOf[js.Any],
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "BaseThemeId" -> BaseThemeId.asInstanceOf[js.Any],
         "Configuration" -> Configuration.asInstanceOf[js.Any],
-        "Name"          -> Name.asInstanceOf[js.Any],
-        "ThemeId"       -> ThemeId.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any],
+        "ThemeId" -> ThemeId.asInstanceOf[js.Any]
       )
 
       Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
@@ -1593,8 +1593,8 @@ package quicksight {
     ): CustomSql = {
       val __obj = js.Dynamic.literal(
         "DataSourceArn" -> DataSourceArn.asInstanceOf[js.Any],
-        "Name"          -> Name.asInstanceOf[js.Any],
-        "SqlQuery"      -> SqlQuery.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any],
+        "SqlQuery" -> SqlQuery.asInstanceOf[js.Any]
       )
 
       Columns.foreach(__v => __obj.updateDynamic("Columns")(__v.asInstanceOf[js.Any]))
@@ -1642,7 +1642,7 @@ package quicksight {
   @js.native
   sealed trait DashboardBehavior extends js.Any
   object DashboardBehavior extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[DashboardBehavior]
+    val ENABLED = "ENABLED".asInstanceOf[DashboardBehavior]
     val DISABLED = "DISABLED".asInstanceOf[DashboardBehavior]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -1673,16 +1673,16 @@ package quicksight {
   @js.native
   sealed trait DashboardErrorType extends js.Any
   object DashboardErrorType extends js.Object {
-    val ACCESS_DENIED                   = "ACCESS_DENIED".asInstanceOf[DashboardErrorType]
-    val SOURCE_NOT_FOUND                = "SOURCE_NOT_FOUND".asInstanceOf[DashboardErrorType]
-    val DATA_SET_NOT_FOUND              = "DATA_SET_NOT_FOUND".asInstanceOf[DashboardErrorType]
-    val INTERNAL_FAILURE                = "INTERNAL_FAILURE".asInstanceOf[DashboardErrorType]
-    val PARAMETER_VALUE_INCOMPATIBLE    = "PARAMETER_VALUE_INCOMPATIBLE".asInstanceOf[DashboardErrorType]
-    val PARAMETER_TYPE_INVALID          = "PARAMETER_TYPE_INVALID".asInstanceOf[DashboardErrorType]
-    val PARAMETER_NOT_FOUND             = "PARAMETER_NOT_FOUND".asInstanceOf[DashboardErrorType]
-    val COLUMN_TYPE_MISMATCH            = "COLUMN_TYPE_MISMATCH".asInstanceOf[DashboardErrorType]
+    val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[DashboardErrorType]
+    val SOURCE_NOT_FOUND = "SOURCE_NOT_FOUND".asInstanceOf[DashboardErrorType]
+    val DATA_SET_NOT_FOUND = "DATA_SET_NOT_FOUND".asInstanceOf[DashboardErrorType]
+    val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[DashboardErrorType]
+    val PARAMETER_VALUE_INCOMPATIBLE = "PARAMETER_VALUE_INCOMPATIBLE".asInstanceOf[DashboardErrorType]
+    val PARAMETER_TYPE_INVALID = "PARAMETER_TYPE_INVALID".asInstanceOf[DashboardErrorType]
+    val PARAMETER_NOT_FOUND = "PARAMETER_NOT_FOUND".asInstanceOf[DashboardErrorType]
+    val COLUMN_TYPE_MISMATCH = "COLUMN_TYPE_MISMATCH".asInstanceOf[DashboardErrorType]
     val COLUMN_GEOGRAPHIC_ROLE_MISMATCH = "COLUMN_GEOGRAPHIC_ROLE_MISMATCH".asInstanceOf[DashboardErrorType]
-    val COLUMN_REPLACEMENT_MISSING      = "COLUMN_REPLACEMENT_MISSING".asInstanceOf[DashboardErrorType]
+    val COLUMN_REPLACEMENT_MISSING = "COLUMN_REPLACEMENT_MISSING".asInstanceOf[DashboardErrorType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1795,7 +1795,7 @@ package quicksight {
         DataSetReferences: DataSetReferenceList
     ): DashboardSourceTemplate = {
       val __obj = js.Dynamic.literal(
-        "Arn"               -> Arn.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "DataSetReferences" -> DataSetReferences.asInstanceOf[js.Any]
       )
 
@@ -1843,7 +1843,7 @@ package quicksight {
   @js.native
   sealed trait DashboardUIState extends js.Any
   object DashboardUIState extends js.Object {
-    val EXPANDED  = "EXPANDED".asInstanceOf[DashboardUIState]
+    val EXPANDED = "EXPANDED".asInstanceOf[DashboardUIState]
     val COLLAPSED = "COLLAPSED".asInstanceOf[DashboardUIState]
 
     val values = js.Object.freeze(js.Array(EXPANDED, COLLAPSED))
@@ -2032,7 +2032,7 @@ package quicksight {
   @js.native
   sealed trait DataSetImportMode extends js.Any
   object DataSetImportMode extends js.Object {
-    val SPICE        = "SPICE".asInstanceOf[DataSetImportMode]
+    val SPICE = "SPICE".asInstanceOf[DataSetImportMode]
     val DIRECT_QUERY = "DIRECT_QUERY".asInstanceOf[DataSetImportMode]
 
     val values = js.Object.freeze(js.Array(SPICE, DIRECT_QUERY))
@@ -2054,7 +2054,7 @@ package quicksight {
         DataSetPlaceholder: NonEmptyString
     ): DataSetReference = {
       val __obj = js.Dynamic.literal(
-        "DataSetArn"         -> DataSetArn.asInstanceOf[js.Any],
+        "DataSetArn" -> DataSetArn.asInstanceOf[js.Any],
         "DataSetPlaceholder" -> DataSetPlaceholder.asInstanceOf[js.Any]
       )
 
@@ -2221,14 +2221,14 @@ package quicksight {
   @js.native
   sealed trait DataSourceErrorInfoType extends js.Any
   object DataSourceErrorInfoType extends js.Object {
-    val ACCESS_DENIED                = "ACCESS_DENIED".asInstanceOf[DataSourceErrorInfoType]
-    val COPY_SOURCE_NOT_FOUND        = "COPY_SOURCE_NOT_FOUND".asInstanceOf[DataSourceErrorInfoType]
-    val TIMEOUT                      = "TIMEOUT".asInstanceOf[DataSourceErrorInfoType]
+    val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[DataSourceErrorInfoType]
+    val COPY_SOURCE_NOT_FOUND = "COPY_SOURCE_NOT_FOUND".asInstanceOf[DataSourceErrorInfoType]
+    val TIMEOUT = "TIMEOUT".asInstanceOf[DataSourceErrorInfoType]
     val ENGINE_VERSION_NOT_SUPPORTED = "ENGINE_VERSION_NOT_SUPPORTED".asInstanceOf[DataSourceErrorInfoType]
-    val UNKNOWN_HOST                 = "UNKNOWN_HOST".asInstanceOf[DataSourceErrorInfoType]
-    val GENERIC_SQL_FAILURE          = "GENERIC_SQL_FAILURE".asInstanceOf[DataSourceErrorInfoType]
-    val CONFLICT                     = "CONFLICT".asInstanceOf[DataSourceErrorInfoType]
-    val UNKNOWN                      = "UNKNOWN".asInstanceOf[DataSourceErrorInfoType]
+    val UNKNOWN_HOST = "UNKNOWN_HOST".asInstanceOf[DataSourceErrorInfoType]
+    val GENERIC_SQL_FAILURE = "GENERIC_SQL_FAILURE".asInstanceOf[DataSourceErrorInfoType]
+    val CONFLICT = "CONFLICT".asInstanceOf[DataSourceErrorInfoType]
+    val UNKNOWN = "UNKNOWN".asInstanceOf[DataSourceErrorInfoType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2326,27 +2326,27 @@ package quicksight {
   @js.native
   sealed trait DataSourceType extends js.Any
   object DataSourceType extends js.Object {
-    val ADOBE_ANALYTICS      = "ADOBE_ANALYTICS".asInstanceOf[DataSourceType]
+    val ADOBE_ANALYTICS = "ADOBE_ANALYTICS".asInstanceOf[DataSourceType]
     val AMAZON_ELASTICSEARCH = "AMAZON_ELASTICSEARCH".asInstanceOf[DataSourceType]
-    val ATHENA               = "ATHENA".asInstanceOf[DataSourceType]
-    val AURORA               = "AURORA".asInstanceOf[DataSourceType]
-    val AURORA_POSTGRESQL    = "AURORA_POSTGRESQL".asInstanceOf[DataSourceType]
-    val AWS_IOT_ANALYTICS    = "AWS_IOT_ANALYTICS".asInstanceOf[DataSourceType]
-    val GITHUB               = "GITHUB".asInstanceOf[DataSourceType]
-    val JIRA                 = "JIRA".asInstanceOf[DataSourceType]
-    val MARIADB              = "MARIADB".asInstanceOf[DataSourceType]
-    val MYSQL                = "MYSQL".asInstanceOf[DataSourceType]
-    val POSTGRESQL           = "POSTGRESQL".asInstanceOf[DataSourceType]
-    val PRESTO               = "PRESTO".asInstanceOf[DataSourceType]
-    val REDSHIFT             = "REDSHIFT".asInstanceOf[DataSourceType]
-    val S3                   = "S3".asInstanceOf[DataSourceType]
-    val SALESFORCE           = "SALESFORCE".asInstanceOf[DataSourceType]
-    val SERVICENOW           = "SERVICENOW".asInstanceOf[DataSourceType]
-    val SNOWFLAKE            = "SNOWFLAKE".asInstanceOf[DataSourceType]
-    val SPARK                = "SPARK".asInstanceOf[DataSourceType]
-    val SQLSERVER            = "SQLSERVER".asInstanceOf[DataSourceType]
-    val TERADATA             = "TERADATA".asInstanceOf[DataSourceType]
-    val TWITTER              = "TWITTER".asInstanceOf[DataSourceType]
+    val ATHENA = "ATHENA".asInstanceOf[DataSourceType]
+    val AURORA = "AURORA".asInstanceOf[DataSourceType]
+    val AURORA_POSTGRESQL = "AURORA_POSTGRESQL".asInstanceOf[DataSourceType]
+    val AWS_IOT_ANALYTICS = "AWS_IOT_ANALYTICS".asInstanceOf[DataSourceType]
+    val GITHUB = "GITHUB".asInstanceOf[DataSourceType]
+    val JIRA = "JIRA".asInstanceOf[DataSourceType]
+    val MARIADB = "MARIADB".asInstanceOf[DataSourceType]
+    val MYSQL = "MYSQL".asInstanceOf[DataSourceType]
+    val POSTGRESQL = "POSTGRESQL".asInstanceOf[DataSourceType]
+    val PRESTO = "PRESTO".asInstanceOf[DataSourceType]
+    val REDSHIFT = "REDSHIFT".asInstanceOf[DataSourceType]
+    val S3 = "S3".asInstanceOf[DataSourceType]
+    val SALESFORCE = "SALESFORCE".asInstanceOf[DataSourceType]
+    val SERVICENOW = "SERVICENOW".asInstanceOf[DataSourceType]
+    val SNOWFLAKE = "SNOWFLAKE".asInstanceOf[DataSourceType]
+    val SPARK = "SPARK".asInstanceOf[DataSourceType]
+    val SQLSERVER = "SQLSERVER".asInstanceOf[DataSourceType]
+    val TERADATA = "TERADATA".asInstanceOf[DataSourceType]
+    val TWITTER = "TWITTER".asInstanceOf[DataSourceType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2391,7 +2391,7 @@ package quicksight {
         Values: TimestampList
     ): DateTimeParameter = {
       val __obj = js.Dynamic.literal(
-        "Name"   -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
@@ -2415,7 +2415,7 @@ package quicksight {
         Values: DoubleList
     ): DecimalParameter = {
       val __obj = js.Dynamic.literal(
-        "Name"   -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
@@ -2439,7 +2439,7 @@ package quicksight {
     ): DeleteDashboardRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "DashboardId"  -> DashboardId.asInstanceOf[js.Any]
+        "DashboardId" -> DashboardId.asInstanceOf[js.Any]
       )
 
       VersionNumber.foreach(__v => __obj.updateDynamic("VersionNumber")(__v.asInstanceOf[js.Any]))
@@ -2486,7 +2486,7 @@ package quicksight {
     ): DeleteDataSetRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "DataSetId"    -> DataSetId.asInstanceOf[js.Any]
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteDataSetRequest]
@@ -2582,9 +2582,9 @@ package quicksight {
     ): DeleteGroupMembershipRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "GroupName"    -> GroupName.asInstanceOf[js.Any],
-        "MemberName"   -> MemberName.asInstanceOf[js.Any],
-        "Namespace"    -> Namespace.asInstanceOf[js.Any]
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "MemberName" -> MemberName.asInstanceOf[js.Any],
+        "Namespace" -> Namespace.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteGroupMembershipRequest]
@@ -2626,8 +2626,8 @@ package quicksight {
     ): DeleteGroupRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "GroupName"    -> GroupName.asInstanceOf[js.Any],
-        "Namespace"    -> Namespace.asInstanceOf[js.Any]
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "Namespace" -> Namespace.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteGroupRequest]
@@ -2669,8 +2669,8 @@ package quicksight {
     ): DeleteIAMPolicyAssignmentRequest = {
       val __obj = js.Dynamic.literal(
         "AssignmentName" -> AssignmentName.asInstanceOf[js.Any],
-        "AwsAccountId"   -> AwsAccountId.asInstanceOf[js.Any],
-        "Namespace"      -> Namespace.asInstanceOf[js.Any]
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "Namespace" -> Namespace.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteIAMPolicyAssignmentRequest]
@@ -2714,9 +2714,9 @@ package quicksight {
         TemplateId: RestrictiveResourceId
     ): DeleteTemplateAliasRequest = {
       val __obj = js.Dynamic.literal(
-        "AliasName"    -> AliasName.asInstanceOf[js.Any],
+        "AliasName" -> AliasName.asInstanceOf[js.Any],
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "TemplateId"   -> TemplateId.asInstanceOf[js.Any]
+        "TemplateId" -> TemplateId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteTemplateAliasRequest]
@@ -2767,7 +2767,7 @@ package quicksight {
     ): DeleteTemplateRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "TemplateId"   -> TemplateId.asInstanceOf[js.Any]
+        "TemplateId" -> TemplateId.asInstanceOf[js.Any]
       )
 
       VersionNumber.foreach(__v => __obj.updateDynamic("VersionNumber")(__v.asInstanceOf[js.Any]))
@@ -2815,9 +2815,9 @@ package quicksight {
         ThemeId: RestrictiveResourceId
     ): DeleteThemeAliasRequest = {
       val __obj = js.Dynamic.literal(
-        "AliasName"    -> AliasName.asInstanceOf[js.Any],
+        "AliasName" -> AliasName.asInstanceOf[js.Any],
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "ThemeId"      -> ThemeId.asInstanceOf[js.Any]
+        "ThemeId" -> ThemeId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteThemeAliasRequest]
@@ -2868,7 +2868,7 @@ package quicksight {
     ): DeleteThemeRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "ThemeId"      -> ThemeId.asInstanceOf[js.Any]
+        "ThemeId" -> ThemeId.asInstanceOf[js.Any]
       )
 
       VersionNumber.foreach(__v => __obj.updateDynamic("VersionNumber")(__v.asInstanceOf[js.Any]))
@@ -2920,8 +2920,8 @@ package quicksight {
     ): DeleteUserByPrincipalIdRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "Namespace"    -> Namespace.asInstanceOf[js.Any],
-        "PrincipalId"  -> PrincipalId.asInstanceOf[js.Any]
+        "Namespace" -> Namespace.asInstanceOf[js.Any],
+        "PrincipalId" -> PrincipalId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteUserByPrincipalIdRequest]
@@ -2963,8 +2963,8 @@ package quicksight {
     ): DeleteUserRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "Namespace"    -> Namespace.asInstanceOf[js.Any],
-        "UserName"     -> UserName.asInstanceOf[js.Any]
+        "Namespace" -> Namespace.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteUserRequest]
@@ -3004,7 +3004,7 @@ package quicksight {
     ): DescribeDashboardPermissionsRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "DashboardId"  -> DashboardId.asInstanceOf[js.Any]
+        "DashboardId" -> DashboardId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeDashboardPermissionsRequest]
@@ -3057,7 +3057,7 @@ package quicksight {
     ): DescribeDashboardRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "DashboardId"  -> DashboardId.asInstanceOf[js.Any]
+        "DashboardId" -> DashboardId.asInstanceOf[js.Any]
       )
 
       AliasName.foreach(__v => __obj.updateDynamic("AliasName")(__v.asInstanceOf[js.Any]))
@@ -3102,7 +3102,7 @@ package quicksight {
     ): DescribeDataSetPermissionsRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "DataSetId"    -> DataSetId.asInstanceOf[js.Any]
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeDataSetPermissionsRequest]
@@ -3151,7 +3151,7 @@ package quicksight {
     ): DescribeDataSetRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "DataSetId"    -> DataSetId.asInstanceOf[js.Any]
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeDataSetRequest]
@@ -3288,8 +3288,8 @@ package quicksight {
     ): DescribeGroupRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "GroupName"    -> GroupName.asInstanceOf[js.Any],
-        "Namespace"    -> Namespace.asInstanceOf[js.Any]
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "Namespace" -> Namespace.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeGroupRequest]
@@ -3334,8 +3334,8 @@ package quicksight {
     ): DescribeIAMPolicyAssignmentRequest = {
       val __obj = js.Dynamic.literal(
         "AssignmentName" -> AssignmentName.asInstanceOf[js.Any],
-        "AwsAccountId"   -> AwsAccountId.asInstanceOf[js.Any],
-        "Namespace"      -> Namespace.asInstanceOf[js.Any]
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "Namespace" -> Namespace.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeIAMPolicyAssignmentRequest]
@@ -3380,8 +3380,8 @@ package quicksight {
     ): DescribeIngestionRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "DataSetId"    -> DataSetId.asInstanceOf[js.Any],
-        "IngestionId"  -> IngestionId.asInstanceOf[js.Any]
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
+        "IngestionId" -> IngestionId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeIngestionRequest]
@@ -3425,9 +3425,9 @@ package quicksight {
         TemplateId: RestrictiveResourceId
     ): DescribeTemplateAliasRequest = {
       val __obj = js.Dynamic.literal(
-        "AliasName"    -> AliasName.asInstanceOf[js.Any],
+        "AliasName" -> AliasName.asInstanceOf[js.Any],
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "TemplateId"   -> TemplateId.asInstanceOf[js.Any]
+        "TemplateId" -> TemplateId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeTemplateAliasRequest]
@@ -3470,7 +3470,7 @@ package quicksight {
     ): DescribeTemplatePermissionsRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "TemplateId"   -> TemplateId.asInstanceOf[js.Any]
+        "TemplateId" -> TemplateId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeTemplatePermissionsRequest]
@@ -3523,7 +3523,7 @@ package quicksight {
     ): DescribeTemplateRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "TemplateId"   -> TemplateId.asInstanceOf[js.Any]
+        "TemplateId" -> TemplateId.asInstanceOf[js.Any]
       )
 
       AliasName.foreach(__v => __obj.updateDynamic("AliasName")(__v.asInstanceOf[js.Any]))
@@ -3569,9 +3569,9 @@ package quicksight {
         ThemeId: RestrictiveResourceId
     ): DescribeThemeAliasRequest = {
       val __obj = js.Dynamic.literal(
-        "AliasName"    -> AliasName.asInstanceOf[js.Any],
+        "AliasName" -> AliasName.asInstanceOf[js.Any],
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "ThemeId"      -> ThemeId.asInstanceOf[js.Any]
+        "ThemeId" -> ThemeId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeThemeAliasRequest]
@@ -3614,7 +3614,7 @@ package quicksight {
     ): DescribeThemePermissionsRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "ThemeId"      -> ThemeId.asInstanceOf[js.Any]
+        "ThemeId" -> ThemeId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeThemePermissionsRequest]
@@ -3667,7 +3667,7 @@ package quicksight {
     ): DescribeThemeRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "ThemeId"      -> ThemeId.asInstanceOf[js.Any]
+        "ThemeId" -> ThemeId.asInstanceOf[js.Any]
       )
 
       AliasName.foreach(__v => __obj.updateDynamic("AliasName")(__v.asInstanceOf[js.Any]))
@@ -3714,8 +3714,8 @@ package quicksight {
     ): DescribeUserRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "Namespace"    -> Namespace.asInstanceOf[js.Any],
-        "UserName"     -> UserName.asInstanceOf[js.Any]
+        "Namespace" -> Namespace.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeUserRequest]
@@ -3788,10 +3788,10 @@ package quicksight {
   @js.native
   sealed trait FileFormat extends js.Any
   object FileFormat extends js.Object {
-    val CSV  = "CSV".asInstanceOf[FileFormat]
-    val TSV  = "TSV".asInstanceOf[FileFormat]
-    val CLF  = "CLF".asInstanceOf[FileFormat]
-    val ELF  = "ELF".asInstanceOf[FileFormat]
+    val CSV = "CSV".asInstanceOf[FileFormat]
+    val TSV = "TSV".asInstanceOf[FileFormat]
+    val CLF = "CLF".asInstanceOf[FileFormat]
+    val ELF = "ELF".asInstanceOf[FileFormat]
     val XLSX = "XLSX".asInstanceOf[FileFormat]
     val JSON = "JSON".asInstanceOf[FileFormat]
 
@@ -3845,9 +3845,9 @@ package quicksight {
         Name: ColumnGroupName
     ): GeoSpatialColumnGroup = {
       val __obj = js.Dynamic.literal(
-        "Columns"     -> Columns.asInstanceOf[js.Any],
+        "Columns" -> Columns.asInstanceOf[js.Any],
         "CountryCode" -> CountryCode.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GeoSpatialColumnGroup]
@@ -3865,13 +3865,13 @@ package quicksight {
   @js.native
   sealed trait GeoSpatialDataRole extends js.Any
   object GeoSpatialDataRole extends js.Object {
-    val COUNTRY   = "COUNTRY".asInstanceOf[GeoSpatialDataRole]
-    val STATE     = "STATE".asInstanceOf[GeoSpatialDataRole]
-    val COUNTY    = "COUNTY".asInstanceOf[GeoSpatialDataRole]
-    val CITY      = "CITY".asInstanceOf[GeoSpatialDataRole]
-    val POSTCODE  = "POSTCODE".asInstanceOf[GeoSpatialDataRole]
+    val COUNTRY = "COUNTRY".asInstanceOf[GeoSpatialDataRole]
+    val STATE = "STATE".asInstanceOf[GeoSpatialDataRole]
+    val COUNTY = "COUNTY".asInstanceOf[GeoSpatialDataRole]
+    val CITY = "CITY".asInstanceOf[GeoSpatialDataRole]
+    val POSTCODE = "POSTCODE".asInstanceOf[GeoSpatialDataRole]
     val LONGITUDE = "LONGITUDE".asInstanceOf[GeoSpatialDataRole]
-    val LATITUDE  = "LATITUDE".asInstanceOf[GeoSpatialDataRole]
+    val LATITUDE = "LATITUDE".asInstanceOf[GeoSpatialDataRole]
 
     val values = js.Object.freeze(js.Array(COUNTRY, STATE, COUNTY, CITY, POSTCODE, LONGITUDE, LATITUDE))
   }
@@ -3900,7 +3900,7 @@ package quicksight {
     ): GetDashboardEmbedUrlRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "DashboardId"  -> DashboardId.asInstanceOf[js.Any],
+        "DashboardId" -> DashboardId.asInstanceOf[js.Any],
         "IdentityType" -> IdentityType.asInstanceOf[js.Any]
       )
 
@@ -4062,7 +4062,7 @@ package quicksight {
   @js.native
   sealed trait IdentityType extends js.Any
   object IdentityType extends js.Object {
-    val IAM        = "IAM".asInstanceOf[IdentityType]
+    val IAM = "IAM".asInstanceOf[IdentityType]
     val QUICKSIGHT = "QUICKSIGHT".asInstanceOf[IdentityType]
 
     val values = js.Object.freeze(js.Array(IAM, QUICKSIGHT))
@@ -4102,8 +4102,8 @@ package quicksight {
         RowInfo: js.UndefOr[RowInfo] = js.undefined
     ): Ingestion = {
       val __obj = js.Dynamic.literal(
-        "Arn"             -> Arn.asInstanceOf[js.Any],
-        "CreatedTime"     -> CreatedTime.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "CreatedTime" -> CreatedTime.asInstanceOf[js.Any],
         "IngestionStatus" -> IngestionStatus.asInstanceOf[js.Any]
       )
 
@@ -4122,46 +4122,46 @@ package quicksight {
   @js.native
   sealed trait IngestionErrorType extends js.Any
   object IngestionErrorType extends js.Object {
-    val FAILURE_TO_ASSUME_ROLE             = "FAILURE_TO_ASSUME_ROLE".asInstanceOf[IngestionErrorType]
-    val INGESTION_SUPERSEDED               = "INGESTION_SUPERSEDED".asInstanceOf[IngestionErrorType]
-    val INGESTION_CANCELED                 = "INGESTION_CANCELED".asInstanceOf[IngestionErrorType]
-    val DATA_SET_DELETED                   = "DATA_SET_DELETED".asInstanceOf[IngestionErrorType]
-    val DATA_SET_NOT_SPICE                 = "DATA_SET_NOT_SPICE".asInstanceOf[IngestionErrorType]
-    val S3_UPLOADED_FILE_DELETED           = "S3_UPLOADED_FILE_DELETED".asInstanceOf[IngestionErrorType]
-    val S3_MANIFEST_ERROR                  = "S3_MANIFEST_ERROR".asInstanceOf[IngestionErrorType]
-    val DATA_TOLERANCE_EXCEPTION           = "DATA_TOLERANCE_EXCEPTION".asInstanceOf[IngestionErrorType]
-    val SPICE_TABLE_NOT_FOUND              = "SPICE_TABLE_NOT_FOUND".asInstanceOf[IngestionErrorType]
-    val DATA_SET_SIZE_LIMIT_EXCEEDED       = "DATA_SET_SIZE_LIMIT_EXCEEDED".asInstanceOf[IngestionErrorType]
-    val ROW_SIZE_LIMIT_EXCEEDED            = "ROW_SIZE_LIMIT_EXCEEDED".asInstanceOf[IngestionErrorType]
-    val ACCOUNT_CAPACITY_LIMIT_EXCEEDED    = "ACCOUNT_CAPACITY_LIMIT_EXCEEDED".asInstanceOf[IngestionErrorType]
-    val CUSTOMER_ERROR                     = "CUSTOMER_ERROR".asInstanceOf[IngestionErrorType]
-    val DATA_SOURCE_NOT_FOUND              = "DATA_SOURCE_NOT_FOUND".asInstanceOf[IngestionErrorType]
-    val IAM_ROLE_NOT_AVAILABLE             = "IAM_ROLE_NOT_AVAILABLE".asInstanceOf[IngestionErrorType]
-    val CONNECTION_FAILURE                 = "CONNECTION_FAILURE".asInstanceOf[IngestionErrorType]
-    val SQL_TABLE_NOT_FOUND                = "SQL_TABLE_NOT_FOUND".asInstanceOf[IngestionErrorType]
-    val PERMISSION_DENIED                  = "PERMISSION_DENIED".asInstanceOf[IngestionErrorType]
+    val FAILURE_TO_ASSUME_ROLE = "FAILURE_TO_ASSUME_ROLE".asInstanceOf[IngestionErrorType]
+    val INGESTION_SUPERSEDED = "INGESTION_SUPERSEDED".asInstanceOf[IngestionErrorType]
+    val INGESTION_CANCELED = "INGESTION_CANCELED".asInstanceOf[IngestionErrorType]
+    val DATA_SET_DELETED = "DATA_SET_DELETED".asInstanceOf[IngestionErrorType]
+    val DATA_SET_NOT_SPICE = "DATA_SET_NOT_SPICE".asInstanceOf[IngestionErrorType]
+    val S3_UPLOADED_FILE_DELETED = "S3_UPLOADED_FILE_DELETED".asInstanceOf[IngestionErrorType]
+    val S3_MANIFEST_ERROR = "S3_MANIFEST_ERROR".asInstanceOf[IngestionErrorType]
+    val DATA_TOLERANCE_EXCEPTION = "DATA_TOLERANCE_EXCEPTION".asInstanceOf[IngestionErrorType]
+    val SPICE_TABLE_NOT_FOUND = "SPICE_TABLE_NOT_FOUND".asInstanceOf[IngestionErrorType]
+    val DATA_SET_SIZE_LIMIT_EXCEEDED = "DATA_SET_SIZE_LIMIT_EXCEEDED".asInstanceOf[IngestionErrorType]
+    val ROW_SIZE_LIMIT_EXCEEDED = "ROW_SIZE_LIMIT_EXCEEDED".asInstanceOf[IngestionErrorType]
+    val ACCOUNT_CAPACITY_LIMIT_EXCEEDED = "ACCOUNT_CAPACITY_LIMIT_EXCEEDED".asInstanceOf[IngestionErrorType]
+    val CUSTOMER_ERROR = "CUSTOMER_ERROR".asInstanceOf[IngestionErrorType]
+    val DATA_SOURCE_NOT_FOUND = "DATA_SOURCE_NOT_FOUND".asInstanceOf[IngestionErrorType]
+    val IAM_ROLE_NOT_AVAILABLE = "IAM_ROLE_NOT_AVAILABLE".asInstanceOf[IngestionErrorType]
+    val CONNECTION_FAILURE = "CONNECTION_FAILURE".asInstanceOf[IngestionErrorType]
+    val SQL_TABLE_NOT_FOUND = "SQL_TABLE_NOT_FOUND".asInstanceOf[IngestionErrorType]
+    val PERMISSION_DENIED = "PERMISSION_DENIED".asInstanceOf[IngestionErrorType]
     val SSL_CERTIFICATE_VALIDATION_FAILURE = "SSL_CERTIFICATE_VALIDATION_FAILURE".asInstanceOf[IngestionErrorType]
-    val OAUTH_TOKEN_FAILURE                = "OAUTH_TOKEN_FAILURE".asInstanceOf[IngestionErrorType]
-    val SOURCE_API_LIMIT_EXCEEDED_FAILURE  = "SOURCE_API_LIMIT_EXCEEDED_FAILURE".asInstanceOf[IngestionErrorType]
-    val PASSWORD_AUTHENTICATION_FAILURE    = "PASSWORD_AUTHENTICATION_FAILURE".asInstanceOf[IngestionErrorType]
-    val SQL_SCHEMA_MISMATCH_ERROR          = "SQL_SCHEMA_MISMATCH_ERROR".asInstanceOf[IngestionErrorType]
-    val INVALID_DATE_FORMAT                = "INVALID_DATE_FORMAT".asInstanceOf[IngestionErrorType]
-    val INVALID_DATAPREP_SYNTAX            = "INVALID_DATAPREP_SYNTAX".asInstanceOf[IngestionErrorType]
-    val SOURCE_RESOURCE_LIMIT_EXCEEDED     = "SOURCE_RESOURCE_LIMIT_EXCEEDED".asInstanceOf[IngestionErrorType]
-    val SQL_INVALID_PARAMETER_VALUE        = "SQL_INVALID_PARAMETER_VALUE".asInstanceOf[IngestionErrorType]
-    val QUERY_TIMEOUT                      = "QUERY_TIMEOUT".asInstanceOf[IngestionErrorType]
-    val SQL_NUMERIC_OVERFLOW               = "SQL_NUMERIC_OVERFLOW".asInstanceOf[IngestionErrorType]
-    val UNRESOLVABLE_HOST                  = "UNRESOLVABLE_HOST".asInstanceOf[IngestionErrorType]
-    val UNROUTABLE_HOST                    = "UNROUTABLE_HOST".asInstanceOf[IngestionErrorType]
-    val SQL_EXCEPTION                      = "SQL_EXCEPTION".asInstanceOf[IngestionErrorType]
-    val S3_FILE_INACCESSIBLE               = "S3_FILE_INACCESSIBLE".asInstanceOf[IngestionErrorType]
-    val IOT_FILE_NOT_FOUND                 = "IOT_FILE_NOT_FOUND".asInstanceOf[IngestionErrorType]
-    val IOT_DATA_SET_FILE_EMPTY            = "IOT_DATA_SET_FILE_EMPTY".asInstanceOf[IngestionErrorType]
-    val INVALID_DATA_SOURCE_CONFIG         = "INVALID_DATA_SOURCE_CONFIG".asInstanceOf[IngestionErrorType]
-    val DATA_SOURCE_AUTH_FAILED            = "DATA_SOURCE_AUTH_FAILED".asInstanceOf[IngestionErrorType]
-    val DATA_SOURCE_CONNECTION_FAILED      = "DATA_SOURCE_CONNECTION_FAILED".asInstanceOf[IngestionErrorType]
-    val FAILURE_TO_PROCESS_JSON_FILE       = "FAILURE_TO_PROCESS_JSON_FILE".asInstanceOf[IngestionErrorType]
-    val INTERNAL_SERVICE_ERROR             = "INTERNAL_SERVICE_ERROR".asInstanceOf[IngestionErrorType]
+    val OAUTH_TOKEN_FAILURE = "OAUTH_TOKEN_FAILURE".asInstanceOf[IngestionErrorType]
+    val SOURCE_API_LIMIT_EXCEEDED_FAILURE = "SOURCE_API_LIMIT_EXCEEDED_FAILURE".asInstanceOf[IngestionErrorType]
+    val PASSWORD_AUTHENTICATION_FAILURE = "PASSWORD_AUTHENTICATION_FAILURE".asInstanceOf[IngestionErrorType]
+    val SQL_SCHEMA_MISMATCH_ERROR = "SQL_SCHEMA_MISMATCH_ERROR".asInstanceOf[IngestionErrorType]
+    val INVALID_DATE_FORMAT = "INVALID_DATE_FORMAT".asInstanceOf[IngestionErrorType]
+    val INVALID_DATAPREP_SYNTAX = "INVALID_DATAPREP_SYNTAX".asInstanceOf[IngestionErrorType]
+    val SOURCE_RESOURCE_LIMIT_EXCEEDED = "SOURCE_RESOURCE_LIMIT_EXCEEDED".asInstanceOf[IngestionErrorType]
+    val SQL_INVALID_PARAMETER_VALUE = "SQL_INVALID_PARAMETER_VALUE".asInstanceOf[IngestionErrorType]
+    val QUERY_TIMEOUT = "QUERY_TIMEOUT".asInstanceOf[IngestionErrorType]
+    val SQL_NUMERIC_OVERFLOW = "SQL_NUMERIC_OVERFLOW".asInstanceOf[IngestionErrorType]
+    val UNRESOLVABLE_HOST = "UNRESOLVABLE_HOST".asInstanceOf[IngestionErrorType]
+    val UNROUTABLE_HOST = "UNROUTABLE_HOST".asInstanceOf[IngestionErrorType]
+    val SQL_EXCEPTION = "SQL_EXCEPTION".asInstanceOf[IngestionErrorType]
+    val S3_FILE_INACCESSIBLE = "S3_FILE_INACCESSIBLE".asInstanceOf[IngestionErrorType]
+    val IOT_FILE_NOT_FOUND = "IOT_FILE_NOT_FOUND".asInstanceOf[IngestionErrorType]
+    val IOT_DATA_SET_FILE_EMPTY = "IOT_DATA_SET_FILE_EMPTY".asInstanceOf[IngestionErrorType]
+    val INVALID_DATA_SOURCE_CONFIG = "INVALID_DATA_SOURCE_CONFIG".asInstanceOf[IngestionErrorType]
+    val DATA_SOURCE_AUTH_FAILED = "DATA_SOURCE_AUTH_FAILED".asInstanceOf[IngestionErrorType]
+    val DATA_SOURCE_CONNECTION_FAILED = "DATA_SOURCE_CONNECTION_FAILED".asInstanceOf[IngestionErrorType]
+    val FAILURE_TO_PROCESS_JSON_FILE = "FAILURE_TO_PROCESS_JSON_FILE".asInstanceOf[IngestionErrorType]
+    val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[IngestionErrorType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -4212,7 +4212,7 @@ package quicksight {
   @js.native
   sealed trait IngestionRequestSource extends js.Any
   object IngestionRequestSource extends js.Object {
-    val MANUAL    = "MANUAL".asInstanceOf[IngestionRequestSource]
+    val MANUAL = "MANUAL".asInstanceOf[IngestionRequestSource]
     val SCHEDULED = "SCHEDULED".asInstanceOf[IngestionRequestSource]
 
     val values = js.Object.freeze(js.Array(MANUAL, SCHEDULED))
@@ -4221,10 +4221,10 @@ package quicksight {
   @js.native
   sealed trait IngestionRequestType extends js.Any
   object IngestionRequestType extends js.Object {
-    val INITIAL_INGESTION   = "INITIAL_INGESTION".asInstanceOf[IngestionRequestType]
-    val EDIT                = "EDIT".asInstanceOf[IngestionRequestType]
+    val INITIAL_INGESTION = "INITIAL_INGESTION".asInstanceOf[IngestionRequestType]
+    val EDIT = "EDIT".asInstanceOf[IngestionRequestType]
     val INCREMENTAL_REFRESH = "INCREMENTAL_REFRESH".asInstanceOf[IngestionRequestType]
-    val FULL_REFRESH        = "FULL_REFRESH".asInstanceOf[IngestionRequestType]
+    val FULL_REFRESH = "FULL_REFRESH".asInstanceOf[IngestionRequestType]
 
     val values = js.Object.freeze(js.Array(INITIAL_INGESTION, EDIT, INCREMENTAL_REFRESH, FULL_REFRESH))
   }
@@ -4233,11 +4233,11 @@ package quicksight {
   sealed trait IngestionStatus extends js.Any
   object IngestionStatus extends js.Object {
     val INITIALIZED = "INITIALIZED".asInstanceOf[IngestionStatus]
-    val QUEUED      = "QUEUED".asInstanceOf[IngestionStatus]
-    val RUNNING     = "RUNNING".asInstanceOf[IngestionStatus]
-    val FAILED      = "FAILED".asInstanceOf[IngestionStatus]
-    val COMPLETED   = "COMPLETED".asInstanceOf[IngestionStatus]
-    val CANCELLED   = "CANCELLED".asInstanceOf[IngestionStatus]
+    val QUEUED = "QUEUED".asInstanceOf[IngestionStatus]
+    val RUNNING = "RUNNING".asInstanceOf[IngestionStatus]
+    val FAILED = "FAILED".asInstanceOf[IngestionStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[IngestionStatus]
+    val CANCELLED = "CANCELLED".asInstanceOf[IngestionStatus]
 
     val values = js.Object.freeze(js.Array(INITIALIZED, QUEUED, RUNNING, FAILED, COMPLETED, CANCELLED))
   }
@@ -4269,13 +4269,13 @@ package quicksight {
   @js.native
   sealed trait InputColumnDataType extends js.Any
   object InputColumnDataType extends js.Object {
-    val STRING   = "STRING".asInstanceOf[InputColumnDataType]
-    val INTEGER  = "INTEGER".asInstanceOf[InputColumnDataType]
-    val DECIMAL  = "DECIMAL".asInstanceOf[InputColumnDataType]
+    val STRING = "STRING".asInstanceOf[InputColumnDataType]
+    val INTEGER = "INTEGER".asInstanceOf[InputColumnDataType]
+    val DECIMAL = "DECIMAL".asInstanceOf[InputColumnDataType]
     val DATETIME = "DATETIME".asInstanceOf[InputColumnDataType]
-    val BIT      = "BIT".asInstanceOf[InputColumnDataType]
-    val BOOLEAN  = "BOOLEAN".asInstanceOf[InputColumnDataType]
-    val JSON     = "JSON".asInstanceOf[InputColumnDataType]
+    val BIT = "BIT".asInstanceOf[InputColumnDataType]
+    val BOOLEAN = "BOOLEAN".asInstanceOf[InputColumnDataType]
+    val JSON = "JSON".asInstanceOf[InputColumnDataType]
 
     val values = js.Object.freeze(js.Array(STRING, INTEGER, DECIMAL, DATETIME, BIT, BOOLEAN, JSON))
   }
@@ -4296,7 +4296,7 @@ package quicksight {
         Values: LongList
     ): IntegerParameter = {
       val __obj = js.Dynamic.literal(
-        "Name"   -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
@@ -4345,10 +4345,10 @@ package quicksight {
         Type: JoinType
     ): JoinInstruction = {
       val __obj = js.Dynamic.literal(
-        "LeftOperand"  -> LeftOperand.asInstanceOf[js.Any],
-        "OnClause"     -> OnClause.asInstanceOf[js.Any],
+        "LeftOperand" -> LeftOperand.asInstanceOf[js.Any],
+        "OnClause" -> OnClause.asInstanceOf[js.Any],
         "RightOperand" -> RightOperand.asInstanceOf[js.Any],
-        "Type"         -> Type.asInstanceOf[js.Any]
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[JoinInstruction]
@@ -4360,7 +4360,7 @@ package quicksight {
   object JoinType extends js.Object {
     val INNER = "INNER".asInstanceOf[JoinType]
     val OUTER = "OUTER".asInstanceOf[JoinType]
-    val LEFT  = "LEFT".asInstanceOf[JoinType]
+    val LEFT = "LEFT".asInstanceOf[JoinType]
     val RIGHT = "RIGHT".asInstanceOf[JoinType]
 
     val values = js.Object.freeze(js.Array(INNER, OUTER, LEFT, RIGHT))
@@ -4384,7 +4384,7 @@ package quicksight {
     ): ListDashboardVersionsRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "DashboardId"  -> DashboardId.asInstanceOf[js.Any]
+        "DashboardId" -> DashboardId.asInstanceOf[js.Any]
       )
 
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
@@ -4587,8 +4587,8 @@ package quicksight {
     ): ListGroupMembershipsRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "GroupName"    -> GroupName.asInstanceOf[js.Any],
-        "Namespace"    -> Namespace.asInstanceOf[js.Any]
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "Namespace" -> Namespace.asInstanceOf[js.Any]
       )
 
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
@@ -4640,7 +4640,7 @@ package quicksight {
     ): ListGroupsRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "Namespace"    -> Namespace.asInstanceOf[js.Any]
+        "Namespace" -> Namespace.asInstanceOf[js.Any]
       )
 
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
@@ -4694,8 +4694,8 @@ package quicksight {
     ): ListIAMPolicyAssignmentsForUserRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "Namespace"    -> Namespace.asInstanceOf[js.Any],
-        "UserName"     -> UserName.asInstanceOf[js.Any]
+        "Namespace" -> Namespace.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
@@ -4749,7 +4749,7 @@ package quicksight {
     ): ListIAMPolicyAssignmentsRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "Namespace"    -> Namespace.asInstanceOf[js.Any]
+        "Namespace" -> Namespace.asInstanceOf[js.Any]
       )
 
       AssignmentStatus.foreach(__v => __obj.updateDynamic("AssignmentStatus")(__v.asInstanceOf[js.Any]))
@@ -4802,7 +4802,7 @@ package quicksight {
     ): ListIngestionsRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "DataSetId"    -> DataSetId.asInstanceOf[js.Any]
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any]
       )
 
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
@@ -4894,7 +4894,7 @@ package quicksight {
     ): ListTemplateAliasesRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "TemplateId"   -> TemplateId.asInstanceOf[js.Any]
+        "TemplateId" -> TemplateId.asInstanceOf[js.Any]
       )
 
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
@@ -4946,7 +4946,7 @@ package quicksight {
     ): ListTemplateVersionsRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "TemplateId"   -> TemplateId.asInstanceOf[js.Any]
+        "TemplateId" -> TemplateId.asInstanceOf[js.Any]
       )
 
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
@@ -5049,7 +5049,7 @@ package quicksight {
     ): ListThemeAliasesRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "ThemeId"      -> ThemeId.asInstanceOf[js.Any]
+        "ThemeId" -> ThemeId.asInstanceOf[js.Any]
       )
 
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
@@ -5101,7 +5101,7 @@ package quicksight {
     ): ListThemeVersionsRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "ThemeId"      -> ThemeId.asInstanceOf[js.Any]
+        "ThemeId" -> ThemeId.asInstanceOf[js.Any]
       )
 
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
@@ -5207,8 +5207,8 @@ package quicksight {
     ): ListUserGroupsRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "Namespace"    -> Namespace.asInstanceOf[js.Any],
-        "UserName"     -> UserName.asInstanceOf[js.Any]
+        "Namespace" -> Namespace.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
@@ -5260,7 +5260,7 @@ package quicksight {
     ): ListUsersRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "Namespace"    -> Namespace.asInstanceOf[js.Any]
+        "Namespace" -> Namespace.asInstanceOf[js.Any]
       )
 
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
@@ -5312,7 +5312,7 @@ package quicksight {
         DataTransforms: js.UndefOr[TransformOperationList] = js.undefined
     ): LogicalTable = {
       val __obj = js.Dynamic.literal(
-        "Alias"  -> Alias.asInstanceOf[js.Any],
+        "Alias" -> Alias.asInstanceOf[js.Any],
         "Source" -> Source.asInstanceOf[js.Any]
       )
 
@@ -5360,7 +5360,7 @@ package quicksight {
     ): ManifestFileLocation = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
+        "Key" -> Key.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ManifestFileLocation]
@@ -5405,8 +5405,8 @@ package quicksight {
     ): MariaDbParameters = {
       val __obj = js.Dynamic.literal(
         "Database" -> Database.asInstanceOf[js.Any],
-        "Host"     -> Host.asInstanceOf[js.Any],
-        "Port"     -> Port.asInstanceOf[js.Any]
+        "Host" -> Host.asInstanceOf[js.Any],
+        "Port" -> Port.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[MariaDbParameters]
@@ -5432,8 +5432,8 @@ package quicksight {
     ): MySqlParameters = {
       val __obj = js.Dynamic.literal(
         "Database" -> Database.asInstanceOf[js.Any],
-        "Host"     -> Host.asInstanceOf[js.Any],
-        "Port"     -> Port.asInstanceOf[js.Any]
+        "Host" -> Host.asInstanceOf[js.Any],
+        "Port" -> Port.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[MySqlParameters]
@@ -5534,8 +5534,8 @@ package quicksight {
     ): PostgreSqlParameters = {
       val __obj = js.Dynamic.literal(
         "Database" -> Database.asInstanceOf[js.Any],
-        "Host"     -> Host.asInstanceOf[js.Any],
-        "Port"     -> Port.asInstanceOf[js.Any]
+        "Host" -> Host.asInstanceOf[js.Any],
+        "Port" -> Port.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PostgreSqlParameters]
@@ -5561,8 +5561,8 @@ package quicksight {
     ): PrestoParameters = {
       val __obj = js.Dynamic.literal(
         "Catalog" -> Catalog.asInstanceOf[js.Any],
-        "Host"    -> Host.asInstanceOf[js.Any],
-        "Port"    -> Port.asInstanceOf[js.Any]
+        "Host" -> Host.asInstanceOf[js.Any],
+        "Port" -> Port.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PrestoParameters]
@@ -5606,7 +5606,7 @@ package quicksight {
         WaitingOnIngestion: String
     ): QueueInfo = {
       val __obj = js.Dynamic.literal(
-        "QueuedIngestion"    -> QueuedIngestion.asInstanceOf[js.Any],
+        "QueuedIngestion" -> QueuedIngestion.asInstanceOf[js.Any],
         "WaitingOnIngestion" -> WaitingOnIngestion.asInstanceOf[js.Any]
       )
 
@@ -5630,7 +5630,7 @@ package quicksight {
         InstanceId: InstanceId
     ): RdsParameters = {
       val __obj = js.Dynamic.literal(
-        "Database"   -> Database.asInstanceOf[js.Any],
+        "Database" -> Database.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
@@ -5694,10 +5694,10 @@ package quicksight {
     ): RegisterUserRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "Email"        -> Email.asInstanceOf[js.Any],
+        "Email" -> Email.asInstanceOf[js.Any],
         "IdentityType" -> IdentityType.asInstanceOf[js.Any],
-        "Namespace"    -> Namespace.asInstanceOf[js.Any],
-        "UserRole"     -> UserRole.asInstanceOf[js.Any]
+        "Namespace" -> Namespace.asInstanceOf[js.Any],
+        "UserRole" -> UserRole.asInstanceOf[js.Any]
       )
 
       IamArn.foreach(__v => __obj.updateDynamic("IamArn")(__v.asInstanceOf[js.Any]))
@@ -5753,8 +5753,8 @@ package quicksight {
     ): RelationalTable = {
       val __obj = js.Dynamic.literal(
         "DataSourceArn" -> DataSourceArn.asInstanceOf[js.Any],
-        "InputColumns"  -> InputColumns.asInstanceOf[js.Any],
-        "Name"          -> Name.asInstanceOf[js.Any]
+        "InputColumns" -> InputColumns.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       Schema.foreach(__v => __obj.updateDynamic("Schema")(__v.asInstanceOf[js.Any]))
@@ -5778,7 +5778,7 @@ package quicksight {
         NewColumnName: ColumnName
     ): RenameColumnOperation = {
       val __obj = js.Dynamic.literal(
-        "ColumnName"    -> ColumnName.asInstanceOf[js.Any],
+        "ColumnName" -> ColumnName.asInstanceOf[js.Any],
         "NewColumnName" -> NewColumnName.asInstanceOf[js.Any]
       )
 
@@ -5802,7 +5802,7 @@ package quicksight {
         Principal: Principal
     ): ResourcePermission = {
       val __obj = js.Dynamic.literal(
-        "Actions"   -> Actions.asInstanceOf[js.Any],
+        "Actions" -> Actions.asInstanceOf[js.Any],
         "Principal" -> Principal.asInstanceOf[js.Any]
       )
 
@@ -5814,11 +5814,11 @@ package quicksight {
   sealed trait ResourceStatus extends js.Any
   object ResourceStatus extends js.Object {
     val CREATION_IN_PROGRESS = "CREATION_IN_PROGRESS".asInstanceOf[ResourceStatus]
-    val CREATION_SUCCESSFUL  = "CREATION_SUCCESSFUL".asInstanceOf[ResourceStatus]
-    val CREATION_FAILED      = "CREATION_FAILED".asInstanceOf[ResourceStatus]
-    val UPDATE_IN_PROGRESS   = "UPDATE_IN_PROGRESS".asInstanceOf[ResourceStatus]
-    val UPDATE_SUCCESSFUL    = "UPDATE_SUCCESSFUL".asInstanceOf[ResourceStatus]
-    val UPDATE_FAILED        = "UPDATE_FAILED".asInstanceOf[ResourceStatus]
+    val CREATION_SUCCESSFUL = "CREATION_SUCCESSFUL".asInstanceOf[ResourceStatus]
+    val CREATION_FAILED = "CREATION_FAILED".asInstanceOf[ResourceStatus]
+    val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[ResourceStatus]
+    val UPDATE_SUCCESSFUL = "UPDATE_SUCCESSFUL".asInstanceOf[ResourceStatus]
+    val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[ResourceStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -5870,7 +5870,7 @@ package quicksight {
         PermissionPolicy: RowLevelPermissionPolicy
     ): RowLevelPermissionDataSet = {
       val __obj = js.Dynamic.literal(
-        "Arn"              -> Arn.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "PermissionPolicy" -> PermissionPolicy.asInstanceOf[js.Any]
       )
 
@@ -5882,7 +5882,7 @@ package quicksight {
   sealed trait RowLevelPermissionPolicy extends js.Any
   object RowLevelPermissionPolicy extends js.Object {
     val GRANT_ACCESS = "GRANT_ACCESS".asInstanceOf[RowLevelPermissionPolicy]
-    val DENY_ACCESS  = "DENY_ACCESS".asInstanceOf[RowLevelPermissionPolicy]
+    val DENY_ACCESS = "DENY_ACCESS".asInstanceOf[RowLevelPermissionPolicy]
 
     val values = js.Object.freeze(js.Array(GRANT_ACCESS, DENY_ACCESS))
   }
@@ -5927,7 +5927,7 @@ package quicksight {
     ): S3Source = {
       val __obj = js.Dynamic.literal(
         "DataSourceArn" -> DataSourceArn.asInstanceOf[js.Any],
-        "InputColumns"  -> InputColumns.asInstanceOf[js.Any]
+        "InputColumns" -> InputColumns.asInstanceOf[js.Any]
       )
 
       UploadSettings.foreach(__v => __obj.updateDynamic("UploadSettings")(__v.asInstanceOf[js.Any]))
@@ -5953,7 +5953,7 @@ package quicksight {
     ): SearchDashboardsRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "Filters"      -> Filters.asInstanceOf[js.Any]
+        "Filters" -> Filters.asInstanceOf[js.Any]
       )
 
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
@@ -6067,8 +6067,8 @@ package quicksight {
         Warehouse: Warehouse
     ): SnowflakeParameters = {
       val __obj = js.Dynamic.literal(
-        "Database"  -> Database.asInstanceOf[js.Any],
-        "Host"      -> Host.asInstanceOf[js.Any],
+        "Database" -> Database.asInstanceOf[js.Any],
+        "Host" -> Host.asInstanceOf[js.Any],
         "Warehouse" -> Warehouse.asInstanceOf[js.Any]
       )
 
@@ -6119,8 +6119,8 @@ package quicksight {
     ): SqlServerParameters = {
       val __obj = js.Dynamic.literal(
         "Database" -> Database.asInstanceOf[js.Any],
-        "Host"     -> Host.asInstanceOf[js.Any],
-        "Port"     -> Port.asInstanceOf[js.Any]
+        "Host" -> Host.asInstanceOf[js.Any],
+        "Port" -> Port.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[SqlServerParameters]
@@ -6162,7 +6162,7 @@ package quicksight {
         Values: StringList
     ): StringParameter = {
       val __obj = js.Dynamic.literal(
-        "Name"   -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
@@ -6186,7 +6186,7 @@ package quicksight {
         Value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -6211,7 +6211,7 @@ package quicksight {
     ): TagColumnOperation = {
       val __obj = js.Dynamic.literal(
         "ColumnName" -> ColumnName.asInstanceOf[js.Any],
-        "Tags"       -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagColumnOperation]
@@ -6232,7 +6232,7 @@ package quicksight {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -6343,9 +6343,9 @@ package quicksight {
   @js.native
   sealed trait TemplateErrorType extends js.Any
   object TemplateErrorType extends js.Object {
-    val SOURCE_NOT_FOUND   = "SOURCE_NOT_FOUND".asInstanceOf[TemplateErrorType]
+    val SOURCE_NOT_FOUND = "SOURCE_NOT_FOUND".asInstanceOf[TemplateErrorType]
     val DATA_SET_NOT_FOUND = "DATA_SET_NOT_FOUND".asInstanceOf[TemplateErrorType]
-    val INTERNAL_FAILURE   = "INTERNAL_FAILURE".asInstanceOf[TemplateErrorType]
+    val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[TemplateErrorType]
 
     val values = js.Object.freeze(js.Array(SOURCE_NOT_FOUND, DATA_SET_NOT_FOUND, INTERNAL_FAILURE))
   }
@@ -6366,7 +6366,7 @@ package quicksight {
         DataSetReferences: DataSetReferenceList
     ): TemplateSourceAnalysis = {
       val __obj = js.Dynamic.literal(
-        "Arn"               -> Arn.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "DataSetReferences" -> DataSetReferences.asInstanceOf[js.Any]
       )
 
@@ -6538,8 +6538,8 @@ package quicksight {
     ): TeradataParameters = {
       val __obj = js.Dynamic.literal(
         "Database" -> Database.asInstanceOf[js.Any],
-        "Host"     -> Host.asInstanceOf[js.Any],
-        "Port"     -> Port.asInstanceOf[js.Any]
+        "Host" -> Host.asInstanceOf[js.Any],
+        "Port" -> Port.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TeradataParameters]
@@ -6710,8 +6710,8 @@ package quicksight {
   sealed trait ThemeType extends js.Any
   object ThemeType extends js.Object {
     val QUICKSIGHT = "QUICKSIGHT".asInstanceOf[ThemeType]
-    val CUSTOM     = "CUSTOM".asInstanceOf[ThemeType]
-    val ALL        = "ALL".asInstanceOf[ThemeType]
+    val CUSTOM = "CUSTOM".asInstanceOf[ThemeType]
+    val ALL = "ALL".asInstanceOf[ThemeType]
 
     val values = js.Object.freeze(js.Array(QUICKSIGHT, CUSTOM, ALL))
   }
@@ -6879,7 +6879,7 @@ package quicksight {
     ): TwitterParameters = {
       val __obj = js.Dynamic.literal(
         "MaxRows" -> MaxRows.asInstanceOf[js.Any],
-        "Query"   -> Query.asInstanceOf[js.Any]
+        "Query" -> Query.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TwitterParameters]
@@ -6964,7 +6964,7 @@ package quicksight {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -7008,7 +7008,7 @@ package quicksight {
     ): UpdateDashboardPermissionsRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "DashboardId"  -> DashboardId.asInstanceOf[js.Any]
+        "DashboardId" -> DashboardId.asInstanceOf[js.Any]
       )
 
       GrantPermissions.foreach(__v => __obj.updateDynamic("GrantPermissions")(__v.asInstanceOf[js.Any]))
@@ -7060,8 +7060,8 @@ package quicksight {
         VersionNumber: VersionNumber
     ): UpdateDashboardPublishedVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "AwsAccountId"  -> AwsAccountId.asInstanceOf[js.Any],
-        "DashboardId"   -> DashboardId.asInstanceOf[js.Any],
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "DashboardId" -> DashboardId.asInstanceOf[js.Any],
         "VersionNumber" -> VersionNumber.asInstanceOf[js.Any]
       )
 
@@ -7120,8 +7120,8 @@ package quicksight {
     ): UpdateDashboardRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "DashboardId"  -> DashboardId.asInstanceOf[js.Any],
-        "Name"         -> Name.asInstanceOf[js.Any],
+        "DashboardId" -> DashboardId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "SourceEntity" -> SourceEntity.asInstanceOf[js.Any]
       )
 
@@ -7182,7 +7182,7 @@ package quicksight {
     ): UpdateDataSetPermissionsRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "DataSetId"    -> DataSetId.asInstanceOf[js.Any]
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any]
       )
 
       GrantPermissions.foreach(__v => __obj.updateDynamic("GrantPermissions")(__v.asInstanceOf[js.Any]))
@@ -7241,10 +7241,10 @@ package quicksight {
         RowLevelPermissionDataSet: js.UndefOr[RowLevelPermissionDataSet] = js.undefined
     ): UpdateDataSetRequest = {
       val __obj = js.Dynamic.literal(
-        "AwsAccountId"     -> AwsAccountId.asInstanceOf[js.Any],
-        "DataSetId"        -> DataSetId.asInstanceOf[js.Any],
-        "ImportMode"       -> ImportMode.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any],
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
+        "ImportMode" -> ImportMode.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "PhysicalTableMap" -> PhysicalTableMap.asInstanceOf[js.Any]
       )
 
@@ -7365,7 +7365,7 @@ package quicksight {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "DataSourceId" -> DataSourceId.asInstanceOf[js.Any],
-        "Name"         -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       Credentials.foreach(__v => __obj.updateDynamic("Credentials")(__v.asInstanceOf[js.Any]))
@@ -7422,8 +7422,8 @@ package quicksight {
     ): UpdateGroupRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "GroupName"    -> GroupName.asInstanceOf[js.Any],
-        "Namespace"    -> Namespace.asInstanceOf[js.Any]
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "Namespace" -> Namespace.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -7475,8 +7475,8 @@ package quicksight {
     ): UpdateIAMPolicyAssignmentRequest = {
       val __obj = js.Dynamic.literal(
         "AssignmentName" -> AssignmentName.asInstanceOf[js.Any],
-        "AwsAccountId"   -> AwsAccountId.asInstanceOf[js.Any],
-        "Namespace"      -> Namespace.asInstanceOf[js.Any]
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "Namespace" -> Namespace.asInstanceOf[js.Any]
       )
 
       AssignmentStatus.foreach(__v => __obj.updateDynamic("AssignmentStatus")(__v.asInstanceOf[js.Any]))
@@ -7537,9 +7537,9 @@ package quicksight {
         TemplateVersionNumber: VersionNumber
     ): UpdateTemplateAliasRequest = {
       val __obj = js.Dynamic.literal(
-        "AliasName"             -> AliasName.asInstanceOf[js.Any],
-        "AwsAccountId"          -> AwsAccountId.asInstanceOf[js.Any],
-        "TemplateId"            -> TemplateId.asInstanceOf[js.Any],
+        "AliasName" -> AliasName.asInstanceOf[js.Any],
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "TemplateId" -> TemplateId.asInstanceOf[js.Any],
         "TemplateVersionNumber" -> TemplateVersionNumber.asInstanceOf[js.Any]
       )
 
@@ -7587,7 +7587,7 @@ package quicksight {
     ): UpdateTemplatePermissionsRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "TemplateId"   -> TemplateId.asInstanceOf[js.Any]
+        "TemplateId" -> TemplateId.asInstanceOf[js.Any]
       )
 
       GrantPermissions.foreach(__v => __obj.updateDynamic("GrantPermissions")(__v.asInstanceOf[js.Any]))
@@ -7645,7 +7645,7 @@ package quicksight {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "SourceEntity" -> SourceEntity.asInstanceOf[js.Any],
-        "TemplateId"   -> TemplateId.asInstanceOf[js.Any]
+        "TemplateId" -> TemplateId.asInstanceOf[js.Any]
       )
 
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -7702,9 +7702,9 @@ package quicksight {
         ThemeVersionNumber: VersionNumber
     ): UpdateThemeAliasRequest = {
       val __obj = js.Dynamic.literal(
-        "AliasName"          -> AliasName.asInstanceOf[js.Any],
-        "AwsAccountId"       -> AwsAccountId.asInstanceOf[js.Any],
-        "ThemeId"            -> ThemeId.asInstanceOf[js.Any],
+        "AliasName" -> AliasName.asInstanceOf[js.Any],
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "ThemeId" -> ThemeId.asInstanceOf[js.Any],
         "ThemeVersionNumber" -> ThemeVersionNumber.asInstanceOf[js.Any]
       )
 
@@ -7752,7 +7752,7 @@ package quicksight {
     ): UpdateThemePermissionsRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "ThemeId"      -> ThemeId.asInstanceOf[js.Any]
+        "ThemeId" -> ThemeId.asInstanceOf[js.Any]
       )
 
       GrantPermissions.foreach(__v => __obj.updateDynamic("GrantPermissions")(__v.asInstanceOf[js.Any]))
@@ -7811,8 +7811,8 @@ package quicksight {
     ): UpdateThemeRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "BaseThemeId"  -> BaseThemeId.asInstanceOf[js.Any],
-        "ThemeId"      -> ThemeId.asInstanceOf[js.Any]
+        "BaseThemeId" -> BaseThemeId.asInstanceOf[js.Any],
+        "ThemeId" -> ThemeId.asInstanceOf[js.Any]
       )
 
       Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
@@ -7873,10 +7873,10 @@ package quicksight {
     ): UpdateUserRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "Email"        -> Email.asInstanceOf[js.Any],
-        "Namespace"    -> Namespace.asInstanceOf[js.Any],
-        "Role"         -> Role.asInstanceOf[js.Any],
-        "UserName"     -> UserName.asInstanceOf[js.Any]
+        "Email" -> Email.asInstanceOf[js.Any],
+        "Namespace" -> Namespace.asInstanceOf[js.Any],
+        "Role" -> Role.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateUserRequest]
@@ -7976,9 +7976,9 @@ package quicksight {
   @js.native
   sealed trait UserRole extends js.Any
   object UserRole extends js.Object {
-    val ADMIN             = "ADMIN".asInstanceOf[UserRole]
-    val AUTHOR            = "AUTHOR".asInstanceOf[UserRole]
-    val READER            = "READER".asInstanceOf[UserRole]
+    val ADMIN = "ADMIN".asInstanceOf[UserRole]
+    val AUTHOR = "AUTHOR".asInstanceOf[UserRole]
+    val READER = "READER".asInstanceOf[UserRole]
     val RESTRICTED_AUTHOR = "RESTRICTED_AUTHOR".asInstanceOf[UserRole]
     val RESTRICTED_READER = "RESTRICTED_READER".asInstanceOf[UserRole]
 

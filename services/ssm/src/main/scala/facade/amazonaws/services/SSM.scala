@@ -7,467 +7,467 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object ssm {
-  type Account                                              = String
-  type AccountId                                            = String
-  type AccountIdList                                        = js.Array[AccountId]
-  type AccountSharingInfoList                               = js.Array[AccountSharingInfo]
-  type Accounts                                             = js.Array[Account]
-  type ActivationCode                                       = String
-  type ActivationDescription                                = String
-  type ActivationId                                         = String
-  type ActivationList                                       = js.Array[Activation]
-  type AgentErrorCode                                       = String
-  type AggregatorSchemaOnly                                 = Boolean
-  type AllowedPattern                                       = String
-  type ApplyOnlyAtCronInterval                              = Boolean
-  type ApproveAfterDays                                     = Int
-  type AssociationDescriptionList                           = js.Array[AssociationDescription]
-  type AssociationExecutionFilterList                       = js.Array[AssociationExecutionFilter]
-  type AssociationExecutionFilterValue                      = String
-  type AssociationExecutionId                               = String
-  type AssociationExecutionTargetsFilterList                = js.Array[AssociationExecutionTargetsFilter]
-  type AssociationExecutionTargetsFilterValue               = String
-  type AssociationExecutionTargetsList                      = js.Array[AssociationExecutionTarget]
-  type AssociationExecutionsList                            = js.Array[AssociationExecution]
-  type AssociationFilterList                                = js.Array[AssociationFilter]
-  type AssociationFilterValue                               = String
-  type AssociationId                                        = String
-  type AssociationIdList                                    = js.Array[AssociationId]
-  type AssociationList                                      = js.Array[Association]
-  type AssociationName                                      = String
-  type AssociationResourceId                                = String
-  type AssociationResourceType                              = String
-  type AssociationStatusAggregatedCount                     = js.Dictionary[InstanceCount]
-  type AssociationVersion                                   = String
-  type AssociationVersionList                               = js.Array[AssociationVersionInfo]
-  type AttachmentContentList                                = js.Array[AttachmentContent]
-  type AttachmentHash                                       = String
-  type AttachmentIdentifier                                 = String
-  type AttachmentInformationList                            = js.Array[AttachmentInformation]
-  type AttachmentName                                       = String
-  type AttachmentUrl                                        = String
-  type AttachmentsSourceList                                = js.Array[AttachmentsSource]
-  type AttachmentsSourceValue                               = String
-  type AttachmentsSourceValues                              = js.Array[AttachmentsSourceValue]
-  type AttributeName                                        = String
-  type AttributeValue                                       = String
-  type AutomationActionName                                 = String
-  type AutomationExecutionFilterList                        = js.Array[AutomationExecutionFilter]
-  type AutomationExecutionFilterValue                       = String
-  type AutomationExecutionFilterValueList                   = js.Array[AutomationExecutionFilterValue]
-  type AutomationExecutionId                                = String
-  type AutomationExecutionMetadataList                      = js.Array[AutomationExecutionMetadata]
-  type AutomationParameterKey                               = String
-  type AutomationParameterMap                               = js.Dictionary[AutomationParameterValueList]
-  type AutomationParameterValue                             = String
-  type AutomationParameterValueList                         = js.Array[AutomationParameterValue]
-  type AutomationTargetParameterName                        = String
-  type BaselineDescription                                  = String
-  type BaselineId                                           = String
-  type BaselineName                                         = String
-  type BatchErrorMessage                                    = String
-  type CalendarNameOrARN                                    = String
-  type CalendarNameOrARNList                                = js.Array[CalendarNameOrARN]
-  type ClientToken                                          = String
-  type CloudWatchLogGroupName                               = String
-  type CloudWatchOutputEnabled                              = Boolean
-  type CommandFilterList                                    = js.Array[CommandFilter]
-  type CommandFilterValue                                   = String
-  type CommandId                                            = String
-  type CommandInvocationList                                = js.Array[CommandInvocation]
-  type CommandList                                          = js.Array[Command]
-  type CommandMaxResults                                    = Int
-  type CommandPluginList                                    = js.Array[CommandPlugin]
-  type CommandPluginName                                    = String
-  type CommandPluginOutput                                  = String
-  type Comment                                              = String
-  type CompletedCount                                       = Int
-  type ComplianceExecutionId                                = String
-  type ComplianceExecutionType                              = String
-  type ComplianceFilterValue                                = String
-  type ComplianceItemContentHash                            = String
-  type ComplianceItemDetails                                = js.Dictionary[AttributeValue]
-  type ComplianceItemEntryList                              = js.Array[ComplianceItemEntry]
-  type ComplianceItemId                                     = String
-  type ComplianceItemList                                   = js.Array[ComplianceItem]
-  type ComplianceItemTitle                                  = String
-  type ComplianceResourceId                                 = String
-  type ComplianceResourceIdList                             = js.Array[ComplianceResourceId]
-  type ComplianceResourceType                               = String
-  type ComplianceResourceTypeList                           = js.Array[ComplianceResourceType]
-  type ComplianceStringFilterKey                            = String
-  type ComplianceStringFilterList                           = js.Array[ComplianceStringFilter]
-  type ComplianceStringFilterValueList                      = js.Array[ComplianceFilterValue]
-  type ComplianceSummaryCount                               = Int
-  type ComplianceSummaryItemList                            = js.Array[ComplianceSummaryItem]
-  type ComplianceTypeName                                   = String
-  type ComputerName                                         = String
-  type ContentLength                                        = Double
-  type CreateAssociationBatchRequestEntries                 = js.Array[CreateAssociationBatchRequestEntry]
-  type CreatedDate                                          = js.Date
-  type DateTime                                             = js.Date
-  type DefaultBaseline                                      = Boolean
-  type DefaultInstanceName                                  = String
-  type DeliveryTimedOutCount                                = Int
-  type DescribeActivationsFilterList                        = js.Array[DescribeActivationsFilter]
-  type DescriptionInDocument                                = String
-  type DocumentARN                                          = String
-  type DocumentContent                                      = String
-  type DocumentFilterList                                   = js.Array[DocumentFilter]
-  type DocumentFilterValue                                  = String
-  type DocumentHash                                         = String
-  type DocumentIdentifierList                               = js.Array[DocumentIdentifier]
-  type DocumentKeyValuesFilterKey                           = String
-  type DocumentKeyValuesFilterList                          = js.Array[DocumentKeyValuesFilter]
-  type DocumentKeyValuesFilterValue                         = String
-  type DocumentKeyValuesFilterValues                        = js.Array[DocumentKeyValuesFilterValue]
-  type DocumentName                                         = String
-  type DocumentOwner                                        = String
-  type DocumentParameterDefaultValue                        = String
-  type DocumentParameterDescrption                          = String
-  type DocumentParameterList                                = js.Array[DocumentParameter]
-  type DocumentParameterName                                = String
-  type DocumentRequiresList                                 = js.Array[DocumentRequires]
-  type DocumentSchemaVersion                                = String
-  type DocumentSha1                                         = String
-  type DocumentStatusInformation                            = String
-  type DocumentVersion                                      = String
-  type DocumentVersionList                                  = js.Array[DocumentVersionInfo]
-  type DocumentVersionName                                  = String
-  type DocumentVersionNumber                                = String
-  type DryRun                                               = Boolean
-  type EffectiveInstanceAssociationMaxResults               = Int
-  type EffectivePatchList                                   = js.Array[EffectivePatch]
-  type ErrorCount                                           = Int
-  type ExecutionRoleName                                    = String
-  type ExpirationDate                                       = js.Date
-  type FailedCreateAssociationList                          = js.Array[FailedCreateAssociation]
-  type GetInventorySchemaMaxResults                         = Int
-  type GetParametersByPathMaxResults                        = Int
-  type IPAddress                                            = String
-  type ISO8601String                                        = String
-  type IamRole                                              = String
-  type IdempotencyToken                                     = String
-  type InstallOverrideList                                  = String
-  type InstanceAssociationExecutionSummary                  = String
-  type InstanceAssociationList                              = js.Array[InstanceAssociation]
-  type InstanceAssociationStatusAggregatedCount             = js.Dictionary[InstanceCount]
-  type InstanceAssociationStatusInfos                       = js.Array[InstanceAssociationStatusInfo]
-  type InstanceCount                                        = Int
-  type InstanceId                                           = String
-  type InstanceIdList                                       = js.Array[InstanceId]
-  type InstanceInformationFilterList                        = js.Array[InstanceInformationFilter]
-  type InstanceInformationFilterValue                       = String
-  type InstanceInformationFilterValueSet                    = js.Array[InstanceInformationFilterValue]
-  type InstanceInformationList                              = js.Array[InstanceInformation]
-  type InstanceInformationStringFilterKey                   = String
-  type InstanceInformationStringFilterList                  = js.Array[InstanceInformationStringFilter]
-  type InstancePatchStateFilterKey                          = String
-  type InstancePatchStateFilterList                         = js.Array[InstancePatchStateFilter]
-  type InstancePatchStateFilterValue                        = String
-  type InstancePatchStateFilterValues                       = js.Array[InstancePatchStateFilterValue]
-  type InstancePatchStateList                               = js.Array[InstancePatchState]
-  type InstancePatchStatesList                              = js.Array[InstancePatchState]
-  type InstanceTagName                                      = String
-  type InstancesCount                                       = Int
-  type InventoryAggregatorExpression                        = String
-  type InventoryAggregatorList                              = js.Array[InventoryAggregator]
-  type InventoryDeletionId                                  = String
-  type InventoryDeletionLastStatusMessage                   = String
-  type InventoryDeletionLastStatusUpdateTime                = js.Date
-  type InventoryDeletionStartTime                           = js.Date
-  type InventoryDeletionSummaryItems                        = js.Array[InventoryDeletionSummaryItem]
-  type InventoryDeletionsList                               = js.Array[InventoryDeletionStatusItem]
-  type InventoryFilterKey                                   = String
-  type InventoryFilterList                                  = js.Array[InventoryFilter]
-  type InventoryFilterValue                                 = String
-  type InventoryFilterValueList                             = js.Array[InventoryFilterValue]
-  type InventoryGroupList                                   = js.Array[InventoryGroup]
-  type InventoryGroupName                                   = String
-  type InventoryItemAttributeList                           = js.Array[InventoryItemAttribute]
-  type InventoryItemAttributeName                           = String
-  type InventoryItemCaptureTime                             = String
-  type InventoryItemContentContext                          = js.Dictionary[AttributeValue]
-  type InventoryItemContentHash                             = String
-  type InventoryItemEntry                                   = js.Dictionary[AttributeValue]
-  type InventoryItemEntryList                               = js.Array[InventoryItemEntry]
-  type InventoryItemList                                    = js.Array[InventoryItem]
-  type InventoryItemSchemaResultList                        = js.Array[InventoryItemSchema]
-  type InventoryItemSchemaVersion                           = String
-  type InventoryItemTypeName                                = String
-  type InventoryItemTypeNameFilter                          = String
-  type InventoryResultEntityId                              = String
-  type InventoryResultEntityList                            = js.Array[InventoryResultEntity]
-  type InventoryResultItemKey                               = String
-  type InventoryResultItemMap                               = js.Dictionary[InventoryResultItem]
-  type InventoryTypeDisplayName                             = String
-  type InvocationTraceOutput                                = String
-  type IsSubTypeSchema                                      = Boolean
-  type KeyList                                              = js.Array[TagKey]
-  type LastResourceDataSyncMessage                          = String
-  type LastResourceDataSyncTime                             = js.Date
-  type LastSuccessfulResourceDataSyncTime                   = js.Date
-  type MaintenanceWindowAllowUnassociatedTargets            = Boolean
-  type MaintenanceWindowCutoff                              = Int
-  type MaintenanceWindowDescription                         = String
-  type MaintenanceWindowDurationHours                       = Int
-  type MaintenanceWindowEnabled                             = Boolean
-  type MaintenanceWindowExecutionId                         = String
-  type MaintenanceWindowExecutionList                       = js.Array[MaintenanceWindowExecution]
-  type MaintenanceWindowExecutionStatusDetails              = String
-  type MaintenanceWindowExecutionTaskExecutionId            = String
-  type MaintenanceWindowExecutionTaskId                     = String
-  type MaintenanceWindowExecutionTaskIdList                 = js.Array[MaintenanceWindowExecutionTaskId]
-  type MaintenanceWindowExecutionTaskIdentityList           = js.Array[MaintenanceWindowExecutionTaskIdentity]
-  type MaintenanceWindowExecutionTaskInvocationId           = String
+  type Account = String
+  type AccountId = String
+  type AccountIdList = js.Array[AccountId]
+  type AccountSharingInfoList = js.Array[AccountSharingInfo]
+  type Accounts = js.Array[Account]
+  type ActivationCode = String
+  type ActivationDescription = String
+  type ActivationId = String
+  type ActivationList = js.Array[Activation]
+  type AgentErrorCode = String
+  type AggregatorSchemaOnly = Boolean
+  type AllowedPattern = String
+  type ApplyOnlyAtCronInterval = Boolean
+  type ApproveAfterDays = Int
+  type AssociationDescriptionList = js.Array[AssociationDescription]
+  type AssociationExecutionFilterList = js.Array[AssociationExecutionFilter]
+  type AssociationExecutionFilterValue = String
+  type AssociationExecutionId = String
+  type AssociationExecutionTargetsFilterList = js.Array[AssociationExecutionTargetsFilter]
+  type AssociationExecutionTargetsFilterValue = String
+  type AssociationExecutionTargetsList = js.Array[AssociationExecutionTarget]
+  type AssociationExecutionsList = js.Array[AssociationExecution]
+  type AssociationFilterList = js.Array[AssociationFilter]
+  type AssociationFilterValue = String
+  type AssociationId = String
+  type AssociationIdList = js.Array[AssociationId]
+  type AssociationList = js.Array[Association]
+  type AssociationName = String
+  type AssociationResourceId = String
+  type AssociationResourceType = String
+  type AssociationStatusAggregatedCount = js.Dictionary[InstanceCount]
+  type AssociationVersion = String
+  type AssociationVersionList = js.Array[AssociationVersionInfo]
+  type AttachmentContentList = js.Array[AttachmentContent]
+  type AttachmentHash = String
+  type AttachmentIdentifier = String
+  type AttachmentInformationList = js.Array[AttachmentInformation]
+  type AttachmentName = String
+  type AttachmentUrl = String
+  type AttachmentsSourceList = js.Array[AttachmentsSource]
+  type AttachmentsSourceValue = String
+  type AttachmentsSourceValues = js.Array[AttachmentsSourceValue]
+  type AttributeName = String
+  type AttributeValue = String
+  type AutomationActionName = String
+  type AutomationExecutionFilterList = js.Array[AutomationExecutionFilter]
+  type AutomationExecutionFilterValue = String
+  type AutomationExecutionFilterValueList = js.Array[AutomationExecutionFilterValue]
+  type AutomationExecutionId = String
+  type AutomationExecutionMetadataList = js.Array[AutomationExecutionMetadata]
+  type AutomationParameterKey = String
+  type AutomationParameterMap = js.Dictionary[AutomationParameterValueList]
+  type AutomationParameterValue = String
+  type AutomationParameterValueList = js.Array[AutomationParameterValue]
+  type AutomationTargetParameterName = String
+  type BaselineDescription = String
+  type BaselineId = String
+  type BaselineName = String
+  type BatchErrorMessage = String
+  type CalendarNameOrARN = String
+  type CalendarNameOrARNList = js.Array[CalendarNameOrARN]
+  type ClientToken = String
+  type CloudWatchLogGroupName = String
+  type CloudWatchOutputEnabled = Boolean
+  type CommandFilterList = js.Array[CommandFilter]
+  type CommandFilterValue = String
+  type CommandId = String
+  type CommandInvocationList = js.Array[CommandInvocation]
+  type CommandList = js.Array[Command]
+  type CommandMaxResults = Int
+  type CommandPluginList = js.Array[CommandPlugin]
+  type CommandPluginName = String
+  type CommandPluginOutput = String
+  type Comment = String
+  type CompletedCount = Int
+  type ComplianceExecutionId = String
+  type ComplianceExecutionType = String
+  type ComplianceFilterValue = String
+  type ComplianceItemContentHash = String
+  type ComplianceItemDetails = js.Dictionary[AttributeValue]
+  type ComplianceItemEntryList = js.Array[ComplianceItemEntry]
+  type ComplianceItemId = String
+  type ComplianceItemList = js.Array[ComplianceItem]
+  type ComplianceItemTitle = String
+  type ComplianceResourceId = String
+  type ComplianceResourceIdList = js.Array[ComplianceResourceId]
+  type ComplianceResourceType = String
+  type ComplianceResourceTypeList = js.Array[ComplianceResourceType]
+  type ComplianceStringFilterKey = String
+  type ComplianceStringFilterList = js.Array[ComplianceStringFilter]
+  type ComplianceStringFilterValueList = js.Array[ComplianceFilterValue]
+  type ComplianceSummaryCount = Int
+  type ComplianceSummaryItemList = js.Array[ComplianceSummaryItem]
+  type ComplianceTypeName = String
+  type ComputerName = String
+  type ContentLength = Double
+  type CreateAssociationBatchRequestEntries = js.Array[CreateAssociationBatchRequestEntry]
+  type CreatedDate = js.Date
+  type DateTime = js.Date
+  type DefaultBaseline = Boolean
+  type DefaultInstanceName = String
+  type DeliveryTimedOutCount = Int
+  type DescribeActivationsFilterList = js.Array[DescribeActivationsFilter]
+  type DescriptionInDocument = String
+  type DocumentARN = String
+  type DocumentContent = String
+  type DocumentFilterList = js.Array[DocumentFilter]
+  type DocumentFilterValue = String
+  type DocumentHash = String
+  type DocumentIdentifierList = js.Array[DocumentIdentifier]
+  type DocumentKeyValuesFilterKey = String
+  type DocumentKeyValuesFilterList = js.Array[DocumentKeyValuesFilter]
+  type DocumentKeyValuesFilterValue = String
+  type DocumentKeyValuesFilterValues = js.Array[DocumentKeyValuesFilterValue]
+  type DocumentName = String
+  type DocumentOwner = String
+  type DocumentParameterDefaultValue = String
+  type DocumentParameterDescrption = String
+  type DocumentParameterList = js.Array[DocumentParameter]
+  type DocumentParameterName = String
+  type DocumentRequiresList = js.Array[DocumentRequires]
+  type DocumentSchemaVersion = String
+  type DocumentSha1 = String
+  type DocumentStatusInformation = String
+  type DocumentVersion = String
+  type DocumentVersionList = js.Array[DocumentVersionInfo]
+  type DocumentVersionName = String
+  type DocumentVersionNumber = String
+  type DryRun = Boolean
+  type EffectiveInstanceAssociationMaxResults = Int
+  type EffectivePatchList = js.Array[EffectivePatch]
+  type ErrorCount = Int
+  type ExecutionRoleName = String
+  type ExpirationDate = js.Date
+  type FailedCreateAssociationList = js.Array[FailedCreateAssociation]
+  type GetInventorySchemaMaxResults = Int
+  type GetParametersByPathMaxResults = Int
+  type IPAddress = String
+  type ISO8601String = String
+  type IamRole = String
+  type IdempotencyToken = String
+  type InstallOverrideList = String
+  type InstanceAssociationExecutionSummary = String
+  type InstanceAssociationList = js.Array[InstanceAssociation]
+  type InstanceAssociationStatusAggregatedCount = js.Dictionary[InstanceCount]
+  type InstanceAssociationStatusInfos = js.Array[InstanceAssociationStatusInfo]
+  type InstanceCount = Int
+  type InstanceId = String
+  type InstanceIdList = js.Array[InstanceId]
+  type InstanceInformationFilterList = js.Array[InstanceInformationFilter]
+  type InstanceInformationFilterValue = String
+  type InstanceInformationFilterValueSet = js.Array[InstanceInformationFilterValue]
+  type InstanceInformationList = js.Array[InstanceInformation]
+  type InstanceInformationStringFilterKey = String
+  type InstanceInformationStringFilterList = js.Array[InstanceInformationStringFilter]
+  type InstancePatchStateFilterKey = String
+  type InstancePatchStateFilterList = js.Array[InstancePatchStateFilter]
+  type InstancePatchStateFilterValue = String
+  type InstancePatchStateFilterValues = js.Array[InstancePatchStateFilterValue]
+  type InstancePatchStateList = js.Array[InstancePatchState]
+  type InstancePatchStatesList = js.Array[InstancePatchState]
+  type InstanceTagName = String
+  type InstancesCount = Int
+  type InventoryAggregatorExpression = String
+  type InventoryAggregatorList = js.Array[InventoryAggregator]
+  type InventoryDeletionId = String
+  type InventoryDeletionLastStatusMessage = String
+  type InventoryDeletionLastStatusUpdateTime = js.Date
+  type InventoryDeletionStartTime = js.Date
+  type InventoryDeletionSummaryItems = js.Array[InventoryDeletionSummaryItem]
+  type InventoryDeletionsList = js.Array[InventoryDeletionStatusItem]
+  type InventoryFilterKey = String
+  type InventoryFilterList = js.Array[InventoryFilter]
+  type InventoryFilterValue = String
+  type InventoryFilterValueList = js.Array[InventoryFilterValue]
+  type InventoryGroupList = js.Array[InventoryGroup]
+  type InventoryGroupName = String
+  type InventoryItemAttributeList = js.Array[InventoryItemAttribute]
+  type InventoryItemAttributeName = String
+  type InventoryItemCaptureTime = String
+  type InventoryItemContentContext = js.Dictionary[AttributeValue]
+  type InventoryItemContentHash = String
+  type InventoryItemEntry = js.Dictionary[AttributeValue]
+  type InventoryItemEntryList = js.Array[InventoryItemEntry]
+  type InventoryItemList = js.Array[InventoryItem]
+  type InventoryItemSchemaResultList = js.Array[InventoryItemSchema]
+  type InventoryItemSchemaVersion = String
+  type InventoryItemTypeName = String
+  type InventoryItemTypeNameFilter = String
+  type InventoryResultEntityId = String
+  type InventoryResultEntityList = js.Array[InventoryResultEntity]
+  type InventoryResultItemKey = String
+  type InventoryResultItemMap = js.Dictionary[InventoryResultItem]
+  type InventoryTypeDisplayName = String
+  type InvocationTraceOutput = String
+  type IsSubTypeSchema = Boolean
+  type KeyList = js.Array[TagKey]
+  type LastResourceDataSyncMessage = String
+  type LastResourceDataSyncTime = js.Date
+  type LastSuccessfulResourceDataSyncTime = js.Date
+  type MaintenanceWindowAllowUnassociatedTargets = Boolean
+  type MaintenanceWindowCutoff = Int
+  type MaintenanceWindowDescription = String
+  type MaintenanceWindowDurationHours = Int
+  type MaintenanceWindowEnabled = Boolean
+  type MaintenanceWindowExecutionId = String
+  type MaintenanceWindowExecutionList = js.Array[MaintenanceWindowExecution]
+  type MaintenanceWindowExecutionStatusDetails = String
+  type MaintenanceWindowExecutionTaskExecutionId = String
+  type MaintenanceWindowExecutionTaskId = String
+  type MaintenanceWindowExecutionTaskIdList = js.Array[MaintenanceWindowExecutionTaskId]
+  type MaintenanceWindowExecutionTaskIdentityList = js.Array[MaintenanceWindowExecutionTaskIdentity]
+  type MaintenanceWindowExecutionTaskInvocationId = String
   type MaintenanceWindowExecutionTaskInvocationIdentityList = js.Array[MaintenanceWindowExecutionTaskInvocationIdentity]
-  type MaintenanceWindowExecutionTaskInvocationParameters   = String
-  type MaintenanceWindowFilterKey                           = String
-  type MaintenanceWindowFilterList                          = js.Array[MaintenanceWindowFilter]
-  type MaintenanceWindowFilterValue                         = String
-  type MaintenanceWindowFilterValues                        = js.Array[MaintenanceWindowFilterValue]
-  type MaintenanceWindowId                                  = String
-  type MaintenanceWindowIdentityList                        = js.Array[MaintenanceWindowIdentity]
-  type MaintenanceWindowLambdaClientContext                 = String
-  type MaintenanceWindowLambdaPayload                       = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type MaintenanceWindowLambdaQualifier                     = String
-  type MaintenanceWindowMaxResults                          = Int
-  type MaintenanceWindowName                                = String
-  type MaintenanceWindowOffset                              = Int
-  type MaintenanceWindowSchedule                            = String
-  type MaintenanceWindowSearchMaxResults                    = Int
-  type MaintenanceWindowStepFunctionsInput                  = String
-  type MaintenanceWindowStepFunctionsName                   = String
-  type MaintenanceWindowStringDateTime                      = String
-  type MaintenanceWindowTargetId                            = String
-  type MaintenanceWindowTargetList                          = js.Array[MaintenanceWindowTarget]
-  type MaintenanceWindowTaskArn                             = String
-  type MaintenanceWindowTaskId                              = String
-  type MaintenanceWindowTaskList                            = js.Array[MaintenanceWindowTask]
-  type MaintenanceWindowTaskParameterName                   = String
-  type MaintenanceWindowTaskParameterValue                  = String
-  type MaintenanceWindowTaskParameterValueList              = js.Array[MaintenanceWindowTaskParameterValue]
-  type MaintenanceWindowTaskParameters                      = js.Dictionary[MaintenanceWindowTaskParameterValueExpression]
-  type MaintenanceWindowTaskParametersList                  = js.Array[MaintenanceWindowTaskParameters]
-  type MaintenanceWindowTaskPriority                        = Int
-  type MaintenanceWindowTaskTargetId                        = String
-  type MaintenanceWindowTimezone                            = String
-  type MaintenanceWindowsForTargetList                      = js.Array[MaintenanceWindowIdentityForTarget]
-  type ManagedInstanceId                                    = String
-  type MaxConcurrency                                       = String
-  type MaxErrors                                            = String
-  type MaxResults                                           = Int
-  type MaxResultsEC2Compatible                              = Int
-  type NextToken                                            = String
-  type NormalStringMap                                      = js.Dictionary[String]
-  type NotificationArn                                      = String
-  type NotificationEventList                                = js.Array[NotificationEvent]
-  type OpsAggregatorList                                    = js.Array[OpsAggregator]
-  type OpsAggregatorType                                    = String
-  type OpsAggregatorValue                                   = String
-  type OpsAggregatorValueKey                                = String
-  type OpsAggregatorValueMap                                = js.Dictionary[OpsAggregatorValue]
-  type OpsDataAttributeName                                 = String
-  type OpsDataTypeName                                      = String
-  type OpsEntityId                                          = String
-  type OpsEntityItemCaptureTime                             = String
-  type OpsEntityItemEntry                                   = js.Dictionary[AttributeValue]
-  type OpsEntityItemEntryList                               = js.Array[OpsEntityItemEntry]
-  type OpsEntityItemKey                                     = String
-  type OpsEntityItemMap                                     = js.Dictionary[OpsEntityItem]
-  type OpsEntityList                                        = js.Array[OpsEntity]
-  type OpsFilterKey                                         = String
-  type OpsFilterList                                        = js.Array[OpsFilter]
-  type OpsFilterValue                                       = String
-  type OpsFilterValueList                                   = js.Array[OpsFilterValue]
-  type OpsItemCategory                                      = String
-  type OpsItemDataKey                                       = String
-  type OpsItemDataValueString                               = String
-  type OpsItemDescription                                   = String
-  type OpsItemFilterValue                                   = String
-  type OpsItemFilterValues                                  = js.Array[OpsItemFilterValue]
-  type OpsItemFilters                                       = js.Array[OpsItemFilter]
-  type OpsItemId                                            = String
-  type OpsItemMaxResults                                    = Int
-  type OpsItemNotifications                                 = js.Array[OpsItemNotification]
-  type OpsItemOperationalData                               = js.Dictionary[OpsItemDataValue]
-  type OpsItemOpsDataKeysList                               = js.Array[String]
-  type OpsItemPriority                                      = Int
-  type OpsItemSeverity                                      = String
-  type OpsItemSource                                        = String
-  type OpsItemSummaries                                     = js.Array[OpsItemSummary]
-  type OpsItemTitle                                         = String
-  type OpsResultAttributeList                               = js.Array[OpsResultAttribute]
-  type OutputSourceId                                       = String
-  type OutputSourceType                                     = String
-  type OwnerInformation                                     = String
-  type PSParameterName                                      = String
-  type PSParameterSelector                                  = String
-  type PSParameterValue                                     = String
-  type PSParameterVersion                                   = Double
-  type ParameterDataType                                    = String
-  type ParameterDescription                                 = String
-  type ParameterHistoryList                                 = js.Array[ParameterHistory]
-  type ParameterKeyId                                       = String
-  type ParameterLabel                                       = String
-  type ParameterLabelList                                   = js.Array[ParameterLabel]
-  type ParameterList                                        = js.Array[Parameter]
-  type ParameterMetadataList                                = js.Array[ParameterMetadata]
-  type ParameterName                                        = String
-  type ParameterNameList                                    = js.Array[PSParameterName]
-  type ParameterPolicies                                    = String
-  type ParameterPolicyList                                  = js.Array[ParameterInlinePolicy]
-  type ParameterStringFilterKey                             = String
-  type ParameterStringFilterList                            = js.Array[ParameterStringFilter]
-  type ParameterStringFilterValue                           = String
-  type ParameterStringFilterValueList                       = js.Array[ParameterStringFilterValue]
-  type ParameterStringQueryOption                           = String
-  type ParameterValue                                       = String
-  type ParameterValueList                                   = js.Array[ParameterValue]
-  type Parameters                                           = js.Dictionary[ParameterValueList]
-  type ParametersFilterList                                 = js.Array[ParametersFilter]
-  type ParametersFilterValue                                = String
-  type ParametersFilterValueList                            = js.Array[ParametersFilterValue]
-  type PatchBaselineIdentityList                            = js.Array[PatchBaselineIdentity]
-  type PatchBaselineMaxResults                              = Int
-  type PatchClassification                                  = String
-  type PatchComplianceDataList                              = js.Array[PatchComplianceData]
-  type PatchComplianceMaxResults                            = Int
-  type PatchContentUrl                                      = String
-  type PatchDescription                                     = String
-  type PatchFailedCount                                     = Int
-  type PatchFilterList                                      = js.Array[PatchFilter]
-  type PatchFilterValue                                     = String
-  type PatchFilterValueList                                 = js.Array[PatchFilterValue]
-  type PatchGroup                                           = String
-  type PatchGroupList                                       = js.Array[PatchGroup]
-  type PatchGroupPatchBaselineMappingList                   = js.Array[PatchGroupPatchBaselineMapping]
-  type PatchId                                              = String
-  type PatchIdList                                          = js.Array[PatchId]
-  type PatchInstalledCount                                  = Int
-  type PatchInstalledOtherCount                             = Int
-  type PatchInstalledPendingRebootCount                     = Int
-  type PatchInstalledRejectedCount                          = Int
-  type PatchKbNumber                                        = String
-  type PatchLanguage                                        = String
-  type PatchList                                            = js.Array[Patch]
-  type PatchMissingCount                                    = Int
-  type PatchMsrcNumber                                      = String
-  type PatchMsrcSeverity                                    = String
-  type PatchNotApplicableCount                              = Int
-  type PatchOrchestratorFilterKey                           = String
-  type PatchOrchestratorFilterList                          = js.Array[PatchOrchestratorFilter]
-  type PatchOrchestratorFilterValue                         = String
-  type PatchOrchestratorFilterValues                        = js.Array[PatchOrchestratorFilterValue]
-  type PatchProduct                                         = String
-  type PatchProductFamily                                   = String
-  type PatchPropertiesList                                  = js.Array[PatchPropertyEntry]
-  type PatchPropertyEntry                                   = js.Dictionary[AttributeValue]
-  type PatchRuleList                                        = js.Array[PatchRule]
-  type PatchSeverity                                        = String
-  type PatchSourceConfiguration                             = String
-  type PatchSourceList                                      = js.Array[PatchSource]
-  type PatchSourceName                                      = String
-  type PatchSourceProduct                                   = String
-  type PatchSourceProductList                               = js.Array[PatchSourceProduct]
-  type PatchStringDateTime                                  = String
-  type PatchTitle                                           = String
-  type PatchUnreportedNotApplicableCount                    = Int
-  type PatchVendor                                          = String
-  type PlatformTypeList                                     = js.Array[PlatformType]
-  type Product                                              = String
-  type PutInventoryMessage                                  = String
-  type Region                                               = String
-  type Regions                                              = js.Array[Region]
-  type RegistrationLimit                                    = Int
-  type RegistrationsCount                                   = Int
-  type RelatedOpsItems                                      = js.Array[RelatedOpsItem]
-  type RemainingCount                                       = Int
-  type ResourceComplianceSummaryItemList                    = js.Array[ResourceComplianceSummaryItem]
-  type ResourceCount                                        = Int
-  type ResourceCountByStatus                                = String
-  type ResourceDataSyncAWSKMSKeyARN                         = String
-  type ResourceDataSyncCreatedTime                          = js.Date
-  type ResourceDataSyncDestinationDataSharingType           = String
-  type ResourceDataSyncIncludeFutureRegions                 = Boolean
-  type ResourceDataSyncItemList                             = js.Array[ResourceDataSyncItem]
-  type ResourceDataSyncLastModifiedTime                     = js.Date
-  type ResourceDataSyncName                                 = String
-  type ResourceDataSyncOrganizationSourceType               = String
-  type ResourceDataSyncOrganizationalUnitId                 = String
-  type ResourceDataSyncOrganizationalUnitList               = js.Array[ResourceDataSyncOrganizationalUnit]
-  type ResourceDataSyncS3BucketName                         = String
-  type ResourceDataSyncS3Prefix                             = String
-  type ResourceDataSyncS3Region                             = String
-  type ResourceDataSyncSourceRegion                         = String
-  type ResourceDataSyncSourceRegionList                     = js.Array[ResourceDataSyncSourceRegion]
-  type ResourceDataSyncSourceType                           = String
-  type ResourceDataSyncState                                = String
-  type ResourceDataSyncType                                 = String
-  type ResourceId                                           = String
-  type ResponseCode                                         = Int
-  type ResultAttributeList                                  = js.Array[ResultAttribute]
-  type S3BucketName                                         = String
-  type S3KeyPrefix                                          = String
-  type S3Region                                             = String
-  type ScheduleExpression                                   = String
-  type ScheduledWindowExecutionList                         = js.Array[ScheduledWindowExecution]
-  type ServiceRole                                          = String
-  type ServiceSettingId                                     = String
-  type ServiceSettingValue                                  = String
-  type SessionDetails                                       = String
-  type SessionFilterList                                    = js.Array[SessionFilter]
-  type SessionFilterValue                                   = String
-  type SessionId                                            = String
-  type SessionList                                          = js.Array[Session]
-  type SessionManagerCloudWatchOutputUrl                    = String
-  type SessionManagerParameterName                          = String
-  type SessionManagerParameterValue                         = String
-  type SessionManagerParameterValueList                     = js.Array[SessionManagerParameterValue]
-  type SessionManagerParameters                             = js.Dictionary[SessionManagerParameterValueList]
-  type SessionManagerS3OutputUrl                            = String
-  type SessionMaxResults                                    = Int
-  type SessionOwner                                         = String
-  type SessionTarget                                        = String
-  type SharedDocumentVersion                                = String
-  type SnapshotDownloadUrl                                  = String
-  type SnapshotId                                           = String
-  type StandardErrorContent                                 = String
-  type StandardOutputContent                                = String
-  type StatusAdditionalInfo                                 = String
-  type StatusDetails                                        = String
-  type StatusMessage                                        = String
-  type StatusName                                           = String
-  type StepExecutionFilterList                              = js.Array[StepExecutionFilter]
-  type StepExecutionFilterValue                             = String
-  type StepExecutionFilterValueList                         = js.Array[StepExecutionFilterValue]
-  type StepExecutionList                                    = js.Array[StepExecution]
-  type StreamUrl                                            = String
-  type StringDateTime                                       = String
-  type StringList                                           = js.Array[String]
-  type TagKey                                               = String
-  type TagList                                              = js.Array[Tag]
-  type TagValue                                             = String
-  type TargetCount                                          = Int
-  type TargetKey                                            = String
-  type TargetLocations                                      = js.Array[TargetLocation]
-  type TargetMap                                            = js.Dictionary[TargetMapValueList]
-  type TargetMapKey                                         = String
-  type TargetMapValue                                       = String
-  type TargetMapValueList                                   = js.Array[TargetMapValue]
-  type TargetMaps                                           = js.Array[TargetMap]
-  type TargetParameterList                                  = js.Array[ParameterValue]
-  type TargetType                                           = String
-  type TargetValue                                          = String
-  type TargetValues                                         = js.Array[TargetValue]
-  type Targets                                              = js.Array[Target]
-  type TimeoutSeconds                                       = Int
-  type TokenValue                                           = String
-  type TotalCount                                           = Int
-  type Url                                                  = String
-  type ValidNextStep                                        = String
-  type ValidNextStepList                                    = js.Array[ValidNextStep]
-  type Version                                              = String
+  type MaintenanceWindowExecutionTaskInvocationParameters = String
+  type MaintenanceWindowFilterKey = String
+  type MaintenanceWindowFilterList = js.Array[MaintenanceWindowFilter]
+  type MaintenanceWindowFilterValue = String
+  type MaintenanceWindowFilterValues = js.Array[MaintenanceWindowFilterValue]
+  type MaintenanceWindowId = String
+  type MaintenanceWindowIdentityList = js.Array[MaintenanceWindowIdentity]
+  type MaintenanceWindowLambdaClientContext = String
+  type MaintenanceWindowLambdaPayload = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type MaintenanceWindowLambdaQualifier = String
+  type MaintenanceWindowMaxResults = Int
+  type MaintenanceWindowName = String
+  type MaintenanceWindowOffset = Int
+  type MaintenanceWindowSchedule = String
+  type MaintenanceWindowSearchMaxResults = Int
+  type MaintenanceWindowStepFunctionsInput = String
+  type MaintenanceWindowStepFunctionsName = String
+  type MaintenanceWindowStringDateTime = String
+  type MaintenanceWindowTargetId = String
+  type MaintenanceWindowTargetList = js.Array[MaintenanceWindowTarget]
+  type MaintenanceWindowTaskArn = String
+  type MaintenanceWindowTaskId = String
+  type MaintenanceWindowTaskList = js.Array[MaintenanceWindowTask]
+  type MaintenanceWindowTaskParameterName = String
+  type MaintenanceWindowTaskParameterValue = String
+  type MaintenanceWindowTaskParameterValueList = js.Array[MaintenanceWindowTaskParameterValue]
+  type MaintenanceWindowTaskParameters = js.Dictionary[MaintenanceWindowTaskParameterValueExpression]
+  type MaintenanceWindowTaskParametersList = js.Array[MaintenanceWindowTaskParameters]
+  type MaintenanceWindowTaskPriority = Int
+  type MaintenanceWindowTaskTargetId = String
+  type MaintenanceWindowTimezone = String
+  type MaintenanceWindowsForTargetList = js.Array[MaintenanceWindowIdentityForTarget]
+  type ManagedInstanceId = String
+  type MaxConcurrency = String
+  type MaxErrors = String
+  type MaxResults = Int
+  type MaxResultsEC2Compatible = Int
+  type NextToken = String
+  type NormalStringMap = js.Dictionary[String]
+  type NotificationArn = String
+  type NotificationEventList = js.Array[NotificationEvent]
+  type OpsAggregatorList = js.Array[OpsAggregator]
+  type OpsAggregatorType = String
+  type OpsAggregatorValue = String
+  type OpsAggregatorValueKey = String
+  type OpsAggregatorValueMap = js.Dictionary[OpsAggregatorValue]
+  type OpsDataAttributeName = String
+  type OpsDataTypeName = String
+  type OpsEntityId = String
+  type OpsEntityItemCaptureTime = String
+  type OpsEntityItemEntry = js.Dictionary[AttributeValue]
+  type OpsEntityItemEntryList = js.Array[OpsEntityItemEntry]
+  type OpsEntityItemKey = String
+  type OpsEntityItemMap = js.Dictionary[OpsEntityItem]
+  type OpsEntityList = js.Array[OpsEntity]
+  type OpsFilterKey = String
+  type OpsFilterList = js.Array[OpsFilter]
+  type OpsFilterValue = String
+  type OpsFilterValueList = js.Array[OpsFilterValue]
+  type OpsItemCategory = String
+  type OpsItemDataKey = String
+  type OpsItemDataValueString = String
+  type OpsItemDescription = String
+  type OpsItemFilterValue = String
+  type OpsItemFilterValues = js.Array[OpsItemFilterValue]
+  type OpsItemFilters = js.Array[OpsItemFilter]
+  type OpsItemId = String
+  type OpsItemMaxResults = Int
+  type OpsItemNotifications = js.Array[OpsItemNotification]
+  type OpsItemOperationalData = js.Dictionary[OpsItemDataValue]
+  type OpsItemOpsDataKeysList = js.Array[String]
+  type OpsItemPriority = Int
+  type OpsItemSeverity = String
+  type OpsItemSource = String
+  type OpsItemSummaries = js.Array[OpsItemSummary]
+  type OpsItemTitle = String
+  type OpsResultAttributeList = js.Array[OpsResultAttribute]
+  type OutputSourceId = String
+  type OutputSourceType = String
+  type OwnerInformation = String
+  type PSParameterName = String
+  type PSParameterSelector = String
+  type PSParameterValue = String
+  type PSParameterVersion = Double
+  type ParameterDataType = String
+  type ParameterDescription = String
+  type ParameterHistoryList = js.Array[ParameterHistory]
+  type ParameterKeyId = String
+  type ParameterLabel = String
+  type ParameterLabelList = js.Array[ParameterLabel]
+  type ParameterList = js.Array[Parameter]
+  type ParameterMetadataList = js.Array[ParameterMetadata]
+  type ParameterName = String
+  type ParameterNameList = js.Array[PSParameterName]
+  type ParameterPolicies = String
+  type ParameterPolicyList = js.Array[ParameterInlinePolicy]
+  type ParameterStringFilterKey = String
+  type ParameterStringFilterList = js.Array[ParameterStringFilter]
+  type ParameterStringFilterValue = String
+  type ParameterStringFilterValueList = js.Array[ParameterStringFilterValue]
+  type ParameterStringQueryOption = String
+  type ParameterValue = String
+  type ParameterValueList = js.Array[ParameterValue]
+  type Parameters = js.Dictionary[ParameterValueList]
+  type ParametersFilterList = js.Array[ParametersFilter]
+  type ParametersFilterValue = String
+  type ParametersFilterValueList = js.Array[ParametersFilterValue]
+  type PatchBaselineIdentityList = js.Array[PatchBaselineIdentity]
+  type PatchBaselineMaxResults = Int
+  type PatchClassification = String
+  type PatchComplianceDataList = js.Array[PatchComplianceData]
+  type PatchComplianceMaxResults = Int
+  type PatchContentUrl = String
+  type PatchDescription = String
+  type PatchFailedCount = Int
+  type PatchFilterList = js.Array[PatchFilter]
+  type PatchFilterValue = String
+  type PatchFilterValueList = js.Array[PatchFilterValue]
+  type PatchGroup = String
+  type PatchGroupList = js.Array[PatchGroup]
+  type PatchGroupPatchBaselineMappingList = js.Array[PatchGroupPatchBaselineMapping]
+  type PatchId = String
+  type PatchIdList = js.Array[PatchId]
+  type PatchInstalledCount = Int
+  type PatchInstalledOtherCount = Int
+  type PatchInstalledPendingRebootCount = Int
+  type PatchInstalledRejectedCount = Int
+  type PatchKbNumber = String
+  type PatchLanguage = String
+  type PatchList = js.Array[Patch]
+  type PatchMissingCount = Int
+  type PatchMsrcNumber = String
+  type PatchMsrcSeverity = String
+  type PatchNotApplicableCount = Int
+  type PatchOrchestratorFilterKey = String
+  type PatchOrchestratorFilterList = js.Array[PatchOrchestratorFilter]
+  type PatchOrchestratorFilterValue = String
+  type PatchOrchestratorFilterValues = js.Array[PatchOrchestratorFilterValue]
+  type PatchProduct = String
+  type PatchProductFamily = String
+  type PatchPropertiesList = js.Array[PatchPropertyEntry]
+  type PatchPropertyEntry = js.Dictionary[AttributeValue]
+  type PatchRuleList = js.Array[PatchRule]
+  type PatchSeverity = String
+  type PatchSourceConfiguration = String
+  type PatchSourceList = js.Array[PatchSource]
+  type PatchSourceName = String
+  type PatchSourceProduct = String
+  type PatchSourceProductList = js.Array[PatchSourceProduct]
+  type PatchStringDateTime = String
+  type PatchTitle = String
+  type PatchUnreportedNotApplicableCount = Int
+  type PatchVendor = String
+  type PlatformTypeList = js.Array[PlatformType]
+  type Product = String
+  type PutInventoryMessage = String
+  type Region = String
+  type Regions = js.Array[Region]
+  type RegistrationLimit = Int
+  type RegistrationsCount = Int
+  type RelatedOpsItems = js.Array[RelatedOpsItem]
+  type RemainingCount = Int
+  type ResourceComplianceSummaryItemList = js.Array[ResourceComplianceSummaryItem]
+  type ResourceCount = Int
+  type ResourceCountByStatus = String
+  type ResourceDataSyncAWSKMSKeyARN = String
+  type ResourceDataSyncCreatedTime = js.Date
+  type ResourceDataSyncDestinationDataSharingType = String
+  type ResourceDataSyncIncludeFutureRegions = Boolean
+  type ResourceDataSyncItemList = js.Array[ResourceDataSyncItem]
+  type ResourceDataSyncLastModifiedTime = js.Date
+  type ResourceDataSyncName = String
+  type ResourceDataSyncOrganizationSourceType = String
+  type ResourceDataSyncOrganizationalUnitId = String
+  type ResourceDataSyncOrganizationalUnitList = js.Array[ResourceDataSyncOrganizationalUnit]
+  type ResourceDataSyncS3BucketName = String
+  type ResourceDataSyncS3Prefix = String
+  type ResourceDataSyncS3Region = String
+  type ResourceDataSyncSourceRegion = String
+  type ResourceDataSyncSourceRegionList = js.Array[ResourceDataSyncSourceRegion]
+  type ResourceDataSyncSourceType = String
+  type ResourceDataSyncState = String
+  type ResourceDataSyncType = String
+  type ResourceId = String
+  type ResponseCode = Int
+  type ResultAttributeList = js.Array[ResultAttribute]
+  type S3BucketName = String
+  type S3KeyPrefix = String
+  type S3Region = String
+  type ScheduleExpression = String
+  type ScheduledWindowExecutionList = js.Array[ScheduledWindowExecution]
+  type ServiceRole = String
+  type ServiceSettingId = String
+  type ServiceSettingValue = String
+  type SessionDetails = String
+  type SessionFilterList = js.Array[SessionFilter]
+  type SessionFilterValue = String
+  type SessionId = String
+  type SessionList = js.Array[Session]
+  type SessionManagerCloudWatchOutputUrl = String
+  type SessionManagerParameterName = String
+  type SessionManagerParameterValue = String
+  type SessionManagerParameterValueList = js.Array[SessionManagerParameterValue]
+  type SessionManagerParameters = js.Dictionary[SessionManagerParameterValueList]
+  type SessionManagerS3OutputUrl = String
+  type SessionMaxResults = Int
+  type SessionOwner = String
+  type SessionTarget = String
+  type SharedDocumentVersion = String
+  type SnapshotDownloadUrl = String
+  type SnapshotId = String
+  type StandardErrorContent = String
+  type StandardOutputContent = String
+  type StatusAdditionalInfo = String
+  type StatusDetails = String
+  type StatusMessage = String
+  type StatusName = String
+  type StepExecutionFilterList = js.Array[StepExecutionFilter]
+  type StepExecutionFilterValue = String
+  type StepExecutionFilterValueList = js.Array[StepExecutionFilterValue]
+  type StepExecutionList = js.Array[StepExecution]
+  type StreamUrl = String
+  type StringDateTime = String
+  type StringList = js.Array[String]
+  type TagKey = String
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type TargetCount = Int
+  type TargetKey = String
+  type TargetLocations = js.Array[TargetLocation]
+  type TargetMap = js.Dictionary[TargetMapValueList]
+  type TargetMapKey = String
+  type TargetMapValue = String
+  type TargetMapValueList = js.Array[TargetMapValue]
+  type TargetMaps = js.Array[TargetMap]
+  type TargetParameterList = js.Array[ParameterValue]
+  type TargetType = String
+  type TargetValue = String
+  type TargetValues = js.Array[TargetValue]
+  type Targets = js.Array[Target]
+  type TimeoutSeconds = Int
+  type TokenValue = String
+  type TotalCount = Int
+  type Url = String
+  type ValidNextStep = String
+  type ValidNextStepList = js.Array[ValidNextStep]
+  type Version = String
 
   implicit final class SSMOps(private val service: SSM) extends AnyVal {
 
@@ -810,28 +810,28 @@ package ssm {
     def this(config: AWSConfig) = this()
 
     def addTagsToResource(params: AddTagsToResourceRequest): Request[AddTagsToResourceResult] = js.native
-    def cancelCommand(params: CancelCommandRequest): Request[CancelCommandResult]             = js.native
+    def cancelCommand(params: CancelCommandRequest): Request[CancelCommandResult] = js.native
     def cancelMaintenanceWindowExecution(
         params: CancelMaintenanceWindowExecutionRequest
-    ): Request[CancelMaintenanceWindowExecutionResult]                                                       = js.native
-    def createActivation(params: CreateActivationRequest): Request[CreateActivationResult]                   = js.native
-    def createAssociation(params: CreateAssociationRequest): Request[CreateAssociationResult]                = js.native
+    ): Request[CancelMaintenanceWindowExecutionResult] = js.native
+    def createActivation(params: CreateActivationRequest): Request[CreateActivationResult] = js.native
+    def createAssociation(params: CreateAssociationRequest): Request[CreateAssociationResult] = js.native
     def createAssociationBatch(params: CreateAssociationBatchRequest): Request[CreateAssociationBatchResult] = js.native
-    def createDocument(params: CreateDocumentRequest): Request[CreateDocumentResult]                         = js.native
+    def createDocument(params: CreateDocumentRequest): Request[CreateDocumentResult] = js.native
     def createMaintenanceWindow(params: CreateMaintenanceWindowRequest): Request[CreateMaintenanceWindowResult] =
       js.native
-    def createOpsItem(params: CreateOpsItemRequest): Request[CreateOpsItemResponse]                          = js.native
-    def createPatchBaseline(params: CreatePatchBaselineRequest): Request[CreatePatchBaselineResult]          = js.native
+    def createOpsItem(params: CreateOpsItemRequest): Request[CreateOpsItemResponse] = js.native
+    def createPatchBaseline(params: CreatePatchBaselineRequest): Request[CreatePatchBaselineResult] = js.native
     def createResourceDataSync(params: CreateResourceDataSyncRequest): Request[CreateResourceDataSyncResult] = js.native
-    def deleteActivation(params: DeleteActivationRequest): Request[DeleteActivationResult]                   = js.native
-    def deleteAssociation(params: DeleteAssociationRequest): Request[DeleteAssociationResult]                = js.native
-    def deleteDocument(params: DeleteDocumentRequest): Request[DeleteDocumentResult]                         = js.native
-    def deleteInventory(params: DeleteInventoryRequest): Request[DeleteInventoryResult]                      = js.native
+    def deleteActivation(params: DeleteActivationRequest): Request[DeleteActivationResult] = js.native
+    def deleteAssociation(params: DeleteAssociationRequest): Request[DeleteAssociationResult] = js.native
+    def deleteDocument(params: DeleteDocumentRequest): Request[DeleteDocumentResult] = js.native
+    def deleteInventory(params: DeleteInventoryRequest): Request[DeleteInventoryResult] = js.native
     def deleteMaintenanceWindow(params: DeleteMaintenanceWindowRequest): Request[DeleteMaintenanceWindowResult] =
       js.native
-    def deleteParameter(params: DeleteParameterRequest): Request[DeleteParameterResult]                      = js.native
-    def deleteParameters(params: DeleteParametersRequest): Request[DeleteParametersResult]                   = js.native
-    def deletePatchBaseline(params: DeletePatchBaselineRequest): Request[DeletePatchBaselineResult]          = js.native
+    def deleteParameter(params: DeleteParameterRequest): Request[DeleteParameterResult] = js.native
+    def deleteParameters(params: DeleteParametersRequest): Request[DeleteParametersResult] = js.native
+    def deletePatchBaseline(params: DeletePatchBaselineRequest): Request[DeletePatchBaselineResult] = js.native
     def deleteResourceDataSync(params: DeleteResourceDataSyncRequest): Request[DeleteResourceDataSyncResult] = js.native
     def deregisterManagedInstance(params: DeregisterManagedInstanceRequest): Request[DeregisterManagedInstanceResult] =
       js.native
@@ -843,7 +843,7 @@ package ssm {
     ): Request[DeregisterTargetFromMaintenanceWindowResult] = js.native
     def deregisterTaskFromMaintenanceWindow(
         params: DeregisterTaskFromMaintenanceWindowRequest
-    ): Request[DeregisterTaskFromMaintenanceWindowResult]                                           = js.native
+    ): Request[DeregisterTaskFromMaintenanceWindowResult] = js.native
     def describeActivations(params: DescribeActivationsRequest): Request[DescribeActivationsResult] = js.native
     def describeAssociation(params: DescribeAssociationRequest): Request[DescribeAssociationResult] = js.native
     def describeAssociationExecutionTargets(
@@ -910,28 +910,28 @@ package ssm {
     ): Request[DescribeMaintenanceWindowsResult] = js.native
     def describeMaintenanceWindowsForTarget(
         params: DescribeMaintenanceWindowsForTargetRequest
-    ): Request[DescribeMaintenanceWindowsForTargetResult]                                                    = js.native
-    def describeOpsItems(params: DescribeOpsItemsRequest): Request[DescribeOpsItemsResponse]                 = js.native
-    def describeParameters(params: DescribeParametersRequest): Request[DescribeParametersResult]             = js.native
+    ): Request[DescribeMaintenanceWindowsForTargetResult] = js.native
+    def describeOpsItems(params: DescribeOpsItemsRequest): Request[DescribeOpsItemsResponse] = js.native
+    def describeParameters(params: DescribeParametersRequest): Request[DescribeParametersResult] = js.native
     def describePatchBaselines(params: DescribePatchBaselinesRequest): Request[DescribePatchBaselinesResult] = js.native
     def describePatchGroupState(params: DescribePatchGroupStateRequest): Request[DescribePatchGroupStateResult] =
       js.native
     def describePatchGroups(params: DescribePatchGroupsRequest): Request[DescribePatchGroupsResult] = js.native
     def describePatchProperties(params: DescribePatchPropertiesRequest): Request[DescribePatchPropertiesResult] =
       js.native
-    def describeSessions(params: DescribeSessionsRequest): Request[DescribeSessionsResponse]                 = js.native
+    def describeSessions(params: DescribeSessionsRequest): Request[DescribeSessionsResponse] = js.native
     def getAutomationExecution(params: GetAutomationExecutionRequest): Request[GetAutomationExecutionResult] = js.native
-    def getCalendarState(params: GetCalendarStateRequest): Request[GetCalendarStateResponse]                 = js.native
-    def getCommandInvocation(params: GetCommandInvocationRequest): Request[GetCommandInvocationResult]       = js.native
-    def getConnectionStatus(params: GetConnectionStatusRequest): Request[GetConnectionStatusResponse]        = js.native
+    def getCalendarState(params: GetCalendarStateRequest): Request[GetCalendarStateResponse] = js.native
+    def getCommandInvocation(params: GetCommandInvocationRequest): Request[GetCommandInvocationResult] = js.native
+    def getConnectionStatus(params: GetConnectionStatusRequest): Request[GetConnectionStatusResponse] = js.native
     def getDefaultPatchBaseline(params: GetDefaultPatchBaselineRequest): Request[GetDefaultPatchBaselineResult] =
       js.native
     def getDeployablePatchSnapshotForInstance(
         params: GetDeployablePatchSnapshotForInstanceRequest
-    ): Request[GetDeployablePatchSnapshotForInstanceResult]                                            = js.native
-    def getDocument(params: GetDocumentRequest): Request[GetDocumentResult]                            = js.native
-    def getInventory(params: GetInventoryRequest): Request[GetInventoryResult]                         = js.native
-    def getInventorySchema(params: GetInventorySchemaRequest): Request[GetInventorySchemaResult]       = js.native
+    ): Request[GetDeployablePatchSnapshotForInstanceResult] = js.native
+    def getDocument(params: GetDocumentRequest): Request[GetDocumentResult] = js.native
+    def getInventory(params: GetInventoryRequest): Request[GetInventoryResult] = js.native
+    def getInventorySchema(params: GetInventorySchemaRequest): Request[GetInventorySchemaResult] = js.native
     def getMaintenanceWindow(params: GetMaintenanceWindowRequest): Request[GetMaintenanceWindowResult] = js.native
     def getMaintenanceWindowExecution(
         params: GetMaintenanceWindowExecutionRequest
@@ -944,39 +944,39 @@ package ssm {
     ): Request[GetMaintenanceWindowExecutionTaskInvocationResult] = js.native
     def getMaintenanceWindowTask(params: GetMaintenanceWindowTaskRequest): Request[GetMaintenanceWindowTaskResult] =
       js.native
-    def getOpsItem(params: GetOpsItemRequest): Request[GetOpsItemResponse]                          = js.native
-    def getOpsSummary(params: GetOpsSummaryRequest): Request[GetOpsSummaryResult]                   = js.native
-    def getParameter(params: GetParameterRequest): Request[GetParameterResult]                      = js.native
+    def getOpsItem(params: GetOpsItemRequest): Request[GetOpsItemResponse] = js.native
+    def getOpsSummary(params: GetOpsSummaryRequest): Request[GetOpsSummaryResult] = js.native
+    def getParameter(params: GetParameterRequest): Request[GetParameterResult] = js.native
     def getParameterHistory(params: GetParameterHistoryRequest): Request[GetParameterHistoryResult] = js.native
-    def getParameters(params: GetParametersRequest): Request[GetParametersResult]                   = js.native
+    def getParameters(params: GetParametersRequest): Request[GetParametersResult] = js.native
     def getParametersByPath(params: GetParametersByPathRequest): Request[GetParametersByPathResult] = js.native
-    def getPatchBaseline(params: GetPatchBaselineRequest): Request[GetPatchBaselineResult]          = js.native
+    def getPatchBaseline(params: GetPatchBaselineRequest): Request[GetPatchBaselineResult] = js.native
     def getPatchBaselineForPatchGroup(
         params: GetPatchBaselineForPatchGroupRequest
-    ): Request[GetPatchBaselineForPatchGroupResult]                                                       = js.native
-    def getServiceSetting(params: GetServiceSettingRequest): Request[GetServiceSettingResult]             = js.native
+    ): Request[GetPatchBaselineForPatchGroupResult] = js.native
+    def getServiceSetting(params: GetServiceSettingRequest): Request[GetServiceSettingResult] = js.native
     def labelParameterVersion(params: LabelParameterVersionRequest): Request[LabelParameterVersionResult] = js.native
     def listAssociationVersions(params: ListAssociationVersionsRequest): Request[ListAssociationVersionsResult] =
       js.native
-    def listAssociations(params: ListAssociationsRequest): Request[ListAssociationsResult]                   = js.native
+    def listAssociations(params: ListAssociationsRequest): Request[ListAssociationsResult] = js.native
     def listCommandInvocations(params: ListCommandInvocationsRequest): Request[ListCommandInvocationsResult] = js.native
-    def listCommands(params: ListCommandsRequest): Request[ListCommandsResult]                               = js.native
-    def listComplianceItems(params: ListComplianceItemsRequest): Request[ListComplianceItemsResult]          = js.native
+    def listCommands(params: ListCommandsRequest): Request[ListCommandsResult] = js.native
+    def listComplianceItems(params: ListComplianceItemsRequest): Request[ListComplianceItemsResult] = js.native
     def listComplianceSummaries(params: ListComplianceSummariesRequest): Request[ListComplianceSummariesResult] =
       js.native
     def listDocumentVersions(params: ListDocumentVersionsRequest): Request[ListDocumentVersionsResult] = js.native
-    def listDocuments(params: ListDocumentsRequest): Request[ListDocumentsResult]                      = js.native
+    def listDocuments(params: ListDocumentsRequest): Request[ListDocumentsResult] = js.native
     def listInventoryEntries(params: ListInventoryEntriesRequest): Request[ListInventoryEntriesResult] = js.native
     def listResourceComplianceSummaries(
         params: ListResourceComplianceSummariesRequest
-    ): Request[ListResourceComplianceSummariesResult]                                                  = js.native
+    ): Request[ListResourceComplianceSummariesResult] = js.native
     def listResourceDataSync(params: ListResourceDataSyncRequest): Request[ListResourceDataSyncResult] = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResult]    = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResult] = js.native
     def modifyDocumentPermission(params: ModifyDocumentPermissionRequest): Request[ModifyDocumentPermissionResponse] =
       js.native
     def putComplianceItems(params: PutComplianceItemsRequest): Request[PutComplianceItemsResult] = js.native
-    def putInventory(params: PutInventoryRequest): Request[PutInventoryResult]                   = js.native
-    def putParameter(params: PutParameterRequest): Request[PutParameterResult]                   = js.native
+    def putInventory(params: PutInventoryRequest): Request[PutInventoryResult] = js.native
+    def putParameter(params: PutParameterRequest): Request[PutParameterResult] = js.native
     def registerDefaultPatchBaseline(
         params: RegisterDefaultPatchBaselineRequest
     ): Request[RegisterDefaultPatchBaselineResult] = js.native
@@ -988,19 +988,19 @@ package ssm {
     ): Request[RegisterTargetWithMaintenanceWindowResult] = js.native
     def registerTaskWithMaintenanceWindow(
         params: RegisterTaskWithMaintenanceWindowRequest
-    ): Request[RegisterTaskWithMaintenanceWindowResult]                                                      = js.native
+    ): Request[RegisterTaskWithMaintenanceWindowResult] = js.native
     def removeTagsFromResource(params: RemoveTagsFromResourceRequest): Request[RemoveTagsFromResourceResult] = js.native
-    def resetServiceSetting(params: ResetServiceSettingRequest): Request[ResetServiceSettingResult]          = js.native
-    def resumeSession(params: ResumeSessionRequest): Request[ResumeSessionResponse]                          = js.native
-    def sendAutomationSignal(params: SendAutomationSignalRequest): Request[SendAutomationSignalResult]       = js.native
-    def sendCommand(params: SendCommandRequest): Request[SendCommandResult]                                  = js.native
-    def startAssociationsOnce(params: StartAssociationsOnceRequest): Request[StartAssociationsOnceResult]    = js.native
+    def resetServiceSetting(params: ResetServiceSettingRequest): Request[ResetServiceSettingResult] = js.native
+    def resumeSession(params: ResumeSessionRequest): Request[ResumeSessionResponse] = js.native
+    def sendAutomationSignal(params: SendAutomationSignalRequest): Request[SendAutomationSignalResult] = js.native
+    def sendCommand(params: SendCommandRequest): Request[SendCommandResult] = js.native
+    def startAssociationsOnce(params: StartAssociationsOnceRequest): Request[StartAssociationsOnceResult] = js.native
     def startAutomationExecution(params: StartAutomationExecutionRequest): Request[StartAutomationExecutionResult] =
       js.native
     def startSession(params: StartSessionRequest): Request[StartSessionResponse] = js.native
     def stopAutomationExecution(params: StopAutomationExecutionRequest): Request[StopAutomationExecutionResult] =
       js.native
-    def terminateSession(params: TerminateSessionRequest): Request[TerminateSessionResponse]  = js.native
+    def terminateSession(params: TerminateSessionRequest): Request[TerminateSessionResponse] = js.native
     def updateAssociation(params: UpdateAssociationRequest): Request[UpdateAssociationResult] = js.native
     def updateAssociationStatus(params: UpdateAssociationStatusRequest): Request[UpdateAssociationStatusResult] =
       js.native
@@ -1018,10 +1018,10 @@ package ssm {
     ): Request[UpdateMaintenanceWindowTaskResult] = js.native
     def updateManagedInstanceRole(params: UpdateManagedInstanceRoleRequest): Request[UpdateManagedInstanceRoleResult] =
       js.native
-    def updateOpsItem(params: UpdateOpsItemRequest): Request[UpdateOpsItemResponse]                          = js.native
-    def updatePatchBaseline(params: UpdatePatchBaselineRequest): Request[UpdatePatchBaselineResult]          = js.native
+    def updateOpsItem(params: UpdateOpsItemRequest): Request[UpdateOpsItemResponse] = js.native
+    def updatePatchBaseline(params: UpdatePatchBaselineRequest): Request[UpdatePatchBaselineResult] = js.native
     def updateResourceDataSync(params: UpdateResourceDataSyncRequest): Request[UpdateResourceDataSyncResult] = js.native
-    def updateServiceSetting(params: UpdateServiceSettingRequest): Request[UpdateServiceSettingResult]       = js.native
+    def updateServiceSetting(params: UpdateServiceSettingRequest): Request[UpdateServiceSettingResult] = js.native
   }
 
   /**
@@ -1107,9 +1107,9 @@ package ssm {
         Tags: TagList
     ): AddTagsToResourceRequest = {
       val __obj = js.Dynamic.literal(
-        "ResourceId"   -> ResourceId.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "ResourceType" -> ResourceType.asInstanceOf[js.Any],
-        "Tags"         -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddTagsToResourceRequest]
@@ -1178,10 +1178,10 @@ package ssm {
   @js.native
   sealed trait AssociationComplianceSeverity extends js.Any
   object AssociationComplianceSeverity extends js.Object {
-    val CRITICAL    = "CRITICAL".asInstanceOf[AssociationComplianceSeverity]
-    val HIGH        = "HIGH".asInstanceOf[AssociationComplianceSeverity]
-    val MEDIUM      = "MEDIUM".asInstanceOf[AssociationComplianceSeverity]
-    val LOW         = "LOW".asInstanceOf[AssociationComplianceSeverity]
+    val CRITICAL = "CRITICAL".asInstanceOf[AssociationComplianceSeverity]
+    val HIGH = "HIGH".asInstanceOf[AssociationComplianceSeverity]
+    val MEDIUM = "MEDIUM".asInstanceOf[AssociationComplianceSeverity]
+    val LOW = "LOW".asInstanceOf[AssociationComplianceSeverity]
     val UNSPECIFIED = "UNSPECIFIED".asInstanceOf[AssociationComplianceSeverity]
 
     val values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW, UNSPECIFIED))
@@ -1333,8 +1333,8 @@ package ssm {
         Value: AssociationExecutionFilterValue
     ): AssociationExecutionFilter = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
-        "Type"  -> Type.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -1346,7 +1346,7 @@ package ssm {
   sealed trait AssociationExecutionFilterKey extends js.Any
   object AssociationExecutionFilterKey extends js.Object {
     val ExecutionId = "ExecutionId".asInstanceOf[AssociationExecutionFilterKey]
-    val Status      = "Status".asInstanceOf[AssociationExecutionFilterKey]
+    val Status = "Status".asInstanceOf[AssociationExecutionFilterKey]
     val CreatedTime = "CreatedTime".asInstanceOf[AssociationExecutionFilterKey]
 
     val values = js.Object.freeze(js.Array(ExecutionId, Status, CreatedTime))
@@ -1411,7 +1411,7 @@ package ssm {
         Value: AssociationExecutionTargetsFilterValue
     ): AssociationExecutionTargetsFilter = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -1422,8 +1422,8 @@ package ssm {
   @js.native
   sealed trait AssociationExecutionTargetsFilterKey extends js.Any
   object AssociationExecutionTargetsFilterKey extends js.Object {
-    val Status       = "Status".asInstanceOf[AssociationExecutionTargetsFilterKey]
-    val ResourceId   = "ResourceId".asInstanceOf[AssociationExecutionTargetsFilterKey]
+    val Status = "Status".asInstanceOf[AssociationExecutionTargetsFilterKey]
+    val ResourceId = "ResourceId".asInstanceOf[AssociationExecutionTargetsFilterKey]
     val ResourceType = "ResourceType".asInstanceOf[AssociationExecutionTargetsFilterKey]
 
     val values = js.Object.freeze(js.Array(Status, ResourceId, ResourceType))
@@ -1445,7 +1445,7 @@ package ssm {
         value: AssociationFilterValue
     ): AssociationFilter = {
       val __obj = js.Dynamic.literal(
-        "key"   -> key.asInstanceOf[js.Any],
+        "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
 
@@ -1456,14 +1456,14 @@ package ssm {
   @js.native
   sealed trait AssociationFilterKey extends js.Any
   object AssociationFilterKey extends js.Object {
-    val InstanceId            = "InstanceId".asInstanceOf[AssociationFilterKey]
-    val Name                  = "Name".asInstanceOf[AssociationFilterKey]
-    val AssociationId         = "AssociationId".asInstanceOf[AssociationFilterKey]
+    val InstanceId = "InstanceId".asInstanceOf[AssociationFilterKey]
+    val Name = "Name".asInstanceOf[AssociationFilterKey]
+    val AssociationId = "AssociationId".asInstanceOf[AssociationFilterKey]
     val AssociationStatusName = "AssociationStatusName".asInstanceOf[AssociationFilterKey]
-    val LastExecutedBefore    = "LastExecutedBefore".asInstanceOf[AssociationFilterKey]
-    val LastExecutedAfter     = "LastExecutedAfter".asInstanceOf[AssociationFilterKey]
-    val AssociationName       = "AssociationName".asInstanceOf[AssociationFilterKey]
-    val ResourceGroupName     = "ResourceGroupName".asInstanceOf[AssociationFilterKey]
+    val LastExecutedBefore = "LastExecutedBefore".asInstanceOf[AssociationFilterKey]
+    val LastExecutedAfter = "LastExecutedAfter".asInstanceOf[AssociationFilterKey]
+    val AssociationName = "AssociationName".asInstanceOf[AssociationFilterKey]
+    val ResourceGroupName = "ResourceGroupName".asInstanceOf[AssociationFilterKey]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1482,8 +1482,8 @@ package ssm {
   @js.native
   sealed trait AssociationFilterOperatorType extends js.Any
   object AssociationFilterOperatorType extends js.Object {
-    val EQUAL        = "EQUAL".asInstanceOf[AssociationFilterOperatorType]
-    val LESS_THAN    = "LESS_THAN".asInstanceOf[AssociationFilterOperatorType]
+    val EQUAL = "EQUAL".asInstanceOf[AssociationFilterOperatorType]
+    val LESS_THAN = "LESS_THAN".asInstanceOf[AssociationFilterOperatorType]
     val GREATER_THAN = "GREATER_THAN".asInstanceOf[AssociationFilterOperatorType]
 
     val values = js.Object.freeze(js.Array(EQUAL, LESS_THAN, GREATER_THAN))
@@ -1536,9 +1536,9 @@ package ssm {
         AdditionalInfo: js.UndefOr[StatusAdditionalInfo] = js.undefined
     ): AssociationStatus = {
       val __obj = js.Dynamic.literal(
-        "Date"    -> Date.asInstanceOf[js.Any],
+        "Date" -> Date.asInstanceOf[js.Any],
         "Message" -> Message.asInstanceOf[js.Any],
-        "Name"    -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       AdditionalInfo.foreach(__v => __obj.updateDynamic("AdditionalInfo")(__v.asInstanceOf[js.Any]))
@@ -1551,7 +1551,7 @@ package ssm {
   object AssociationStatusName extends js.Object {
     val Pending = "Pending".asInstanceOf[AssociationStatusName]
     val Success = "Success".asInstanceOf[AssociationStatusName]
-    val Failed  = "Failed".asInstanceOf[AssociationStatusName]
+    val Failed = "Failed".asInstanceOf[AssociationStatusName]
 
     val values = js.Object.freeze(js.Array(Pending, Success, Failed))
   }
@@ -1559,7 +1559,7 @@ package ssm {
   @js.native
   sealed trait AssociationSyncCompliance extends js.Any
   object AssociationSyncCompliance extends js.Object {
-    val AUTO   = "AUTO".asInstanceOf[AssociationSyncCompliance]
+    val AUTO = "AUTO".asInstanceOf[AssociationSyncCompliance]
     val MANUAL = "MANUAL".asInstanceOf[AssociationSyncCompliance]
 
     val values = js.Object.freeze(js.Array(AUTO, MANUAL))
@@ -1712,8 +1712,8 @@ package ssm {
   @js.native
   sealed trait AttachmentsSourceKey extends js.Any
   object AttachmentsSourceKey extends js.Object {
-    val SourceUrl           = "SourceUrl".asInstanceOf[AttachmentsSourceKey]
-    val S3FileUrl           = "S3FileUrl".asInstanceOf[AttachmentsSourceKey]
+    val SourceUrl = "SourceUrl".asInstanceOf[AttachmentsSourceKey]
+    val S3FileUrl = "S3FileUrl".asInstanceOf[AttachmentsSourceKey]
     val AttachmentReference = "AttachmentReference".asInstanceOf[AttachmentsSourceKey]
 
     val values = js.Object.freeze(js.Array(SourceUrl, S3FileUrl, AttachmentReference))
@@ -1830,7 +1830,7 @@ package ssm {
         Values: AutomationExecutionFilterValueList
     ): AutomationExecutionFilter = {
       val __obj = js.Dynamic.literal(
-        "Key"    -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
@@ -1842,14 +1842,14 @@ package ssm {
   sealed trait AutomationExecutionFilterKey extends js.Any
   object AutomationExecutionFilterKey extends js.Object {
     val DocumentNamePrefix = "DocumentNamePrefix".asInstanceOf[AutomationExecutionFilterKey]
-    val ExecutionStatus    = "ExecutionStatus".asInstanceOf[AutomationExecutionFilterKey]
-    val ExecutionId        = "ExecutionId".asInstanceOf[AutomationExecutionFilterKey]
-    val ParentExecutionId  = "ParentExecutionId".asInstanceOf[AutomationExecutionFilterKey]
-    val CurrentAction      = "CurrentAction".asInstanceOf[AutomationExecutionFilterKey]
-    val StartTimeBefore    = "StartTimeBefore".asInstanceOf[AutomationExecutionFilterKey]
-    val StartTimeAfter     = "StartTimeAfter".asInstanceOf[AutomationExecutionFilterKey]
-    val AutomationType     = "AutomationType".asInstanceOf[AutomationExecutionFilterKey]
-    val TagKey             = "TagKey".asInstanceOf[AutomationExecutionFilterKey]
+    val ExecutionStatus = "ExecutionStatus".asInstanceOf[AutomationExecutionFilterKey]
+    val ExecutionId = "ExecutionId".asInstanceOf[AutomationExecutionFilterKey]
+    val ParentExecutionId = "ParentExecutionId".asInstanceOf[AutomationExecutionFilterKey]
+    val CurrentAction = "CurrentAction".asInstanceOf[AutomationExecutionFilterKey]
+    val StartTimeBefore = "StartTimeBefore".asInstanceOf[AutomationExecutionFilterKey]
+    val StartTimeAfter = "StartTimeAfter".asInstanceOf[AutomationExecutionFilterKey]
+    val AutomationType = "AutomationType".asInstanceOf[AutomationExecutionFilterKey]
+    val TagKey = "TagKey".asInstanceOf[AutomationExecutionFilterKey]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1955,14 +1955,14 @@ package ssm {
   @js.native
   sealed trait AutomationExecutionStatus extends js.Any
   object AutomationExecutionStatus extends js.Object {
-    val Pending    = "Pending".asInstanceOf[AutomationExecutionStatus]
+    val Pending = "Pending".asInstanceOf[AutomationExecutionStatus]
     val InProgress = "InProgress".asInstanceOf[AutomationExecutionStatus]
-    val Waiting    = "Waiting".asInstanceOf[AutomationExecutionStatus]
-    val Success    = "Success".asInstanceOf[AutomationExecutionStatus]
-    val TimedOut   = "TimedOut".asInstanceOf[AutomationExecutionStatus]
+    val Waiting = "Waiting".asInstanceOf[AutomationExecutionStatus]
+    val Success = "Success".asInstanceOf[AutomationExecutionStatus]
+    val TimedOut = "TimedOut".asInstanceOf[AutomationExecutionStatus]
     val Cancelling = "Cancelling".asInstanceOf[AutomationExecutionStatus]
-    val Cancelled  = "Cancelled".asInstanceOf[AutomationExecutionStatus]
-    val Failed     = "Failed".asInstanceOf[AutomationExecutionStatus]
+    val Cancelled = "Cancelled".asInstanceOf[AutomationExecutionStatus]
+    val Failed = "Failed".asInstanceOf[AutomationExecutionStatus]
 
     val values =
       js.Object.freeze(js.Array(Pending, InProgress, Waiting, Success, TimedOut, Cancelling, Cancelled, Failed))
@@ -1972,7 +1972,7 @@ package ssm {
   sealed trait AutomationType extends js.Any
   object AutomationType extends js.Object {
     val CrossAccount = "CrossAccount".asInstanceOf[AutomationType]
-    val Local        = "Local".asInstanceOf[AutomationType]
+    val Local = "Local".asInstanceOf[AutomationType]
 
     val values = js.Object.freeze(js.Array(CrossAccount, Local))
   }
@@ -1980,7 +1980,7 @@ package ssm {
   @js.native
   sealed trait CalendarState extends js.Any
   object CalendarState extends js.Object {
-    val OPEN   = "OPEN".asInstanceOf[CalendarState]
+    val OPEN = "OPEN".asInstanceOf[CalendarState]
     val CLOSED = "CLOSED".asInstanceOf[CalendarState]
 
     val values = js.Object.freeze(js.Array(OPEN, CLOSED))
@@ -2186,7 +2186,7 @@ package ssm {
         value: CommandFilterValue
     ): CommandFilter = {
       val __obj = js.Dynamic.literal(
-        "key"   -> key.asInstanceOf[js.Any],
+        "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
 
@@ -2197,11 +2197,11 @@ package ssm {
   @js.native
   sealed trait CommandFilterKey extends js.Any
   object CommandFilterKey extends js.Object {
-    val InvokedAfter   = "InvokedAfter".asInstanceOf[CommandFilterKey]
-    val InvokedBefore  = "InvokedBefore".asInstanceOf[CommandFilterKey]
-    val Status         = "Status".asInstanceOf[CommandFilterKey]
+    val InvokedAfter = "InvokedAfter".asInstanceOf[CommandFilterKey]
+    val InvokedBefore = "InvokedBefore".asInstanceOf[CommandFilterKey]
+    val Status = "Status".asInstanceOf[CommandFilterKey]
     val ExecutionStage = "ExecutionStage".asInstanceOf[CommandFilterKey]
-    val DocumentName   = "DocumentName".asInstanceOf[CommandFilterKey]
+    val DocumentName = "DocumentName".asInstanceOf[CommandFilterKey]
 
     val values = js.Object.freeze(js.Array(InvokedAfter, InvokedBefore, Status, ExecutionStage, DocumentName))
   }
@@ -2273,13 +2273,13 @@ package ssm {
   @js.native
   sealed trait CommandInvocationStatus extends js.Any
   object CommandInvocationStatus extends js.Object {
-    val Pending    = "Pending".asInstanceOf[CommandInvocationStatus]
+    val Pending = "Pending".asInstanceOf[CommandInvocationStatus]
     val InProgress = "InProgress".asInstanceOf[CommandInvocationStatus]
-    val Delayed    = "Delayed".asInstanceOf[CommandInvocationStatus]
-    val Success    = "Success".asInstanceOf[CommandInvocationStatus]
-    val Cancelled  = "Cancelled".asInstanceOf[CommandInvocationStatus]
-    val TimedOut   = "TimedOut".asInstanceOf[CommandInvocationStatus]
-    val Failed     = "Failed".asInstanceOf[CommandInvocationStatus]
+    val Delayed = "Delayed".asInstanceOf[CommandInvocationStatus]
+    val Success = "Success".asInstanceOf[CommandInvocationStatus]
+    val Cancelled = "Cancelled".asInstanceOf[CommandInvocationStatus]
+    val TimedOut = "TimedOut".asInstanceOf[CommandInvocationStatus]
+    val Failed = "Failed".asInstanceOf[CommandInvocationStatus]
     val Cancelling = "Cancelling".asInstanceOf[CommandInvocationStatus]
 
     val values =
@@ -2341,12 +2341,12 @@ package ssm {
   @js.native
   sealed trait CommandPluginStatus extends js.Any
   object CommandPluginStatus extends js.Object {
-    val Pending    = "Pending".asInstanceOf[CommandPluginStatus]
+    val Pending = "Pending".asInstanceOf[CommandPluginStatus]
     val InProgress = "InProgress".asInstanceOf[CommandPluginStatus]
-    val Success    = "Success".asInstanceOf[CommandPluginStatus]
-    val TimedOut   = "TimedOut".asInstanceOf[CommandPluginStatus]
-    val Cancelled  = "Cancelled".asInstanceOf[CommandPluginStatus]
-    val Failed     = "Failed".asInstanceOf[CommandPluginStatus]
+    val Success = "Success".asInstanceOf[CommandPluginStatus]
+    val TimedOut = "TimedOut".asInstanceOf[CommandPluginStatus]
+    val Cancelled = "Cancelled".asInstanceOf[CommandPluginStatus]
+    val Failed = "Failed".asInstanceOf[CommandPluginStatus]
 
     val values = js.Object.freeze(js.Array(Pending, InProgress, Success, TimedOut, Cancelled, Failed))
   }
@@ -2354,12 +2354,12 @@ package ssm {
   @js.native
   sealed trait CommandStatus extends js.Any
   object CommandStatus extends js.Object {
-    val Pending    = "Pending".asInstanceOf[CommandStatus]
+    val Pending = "Pending".asInstanceOf[CommandStatus]
     val InProgress = "InProgress".asInstanceOf[CommandStatus]
-    val Success    = "Success".asInstanceOf[CommandStatus]
-    val Cancelled  = "Cancelled".asInstanceOf[CommandStatus]
-    val Failed     = "Failed".asInstanceOf[CommandStatus]
-    val TimedOut   = "TimedOut".asInstanceOf[CommandStatus]
+    val Success = "Success".asInstanceOf[CommandStatus]
+    val Cancelled = "Cancelled".asInstanceOf[CommandStatus]
+    val Failed = "Failed".asInstanceOf[CommandStatus]
+    val TimedOut = "TimedOut".asInstanceOf[CommandStatus]
     val Cancelling = "Cancelling".asInstanceOf[CommandStatus]
 
     val values = js.Object.freeze(js.Array(Pending, InProgress, Success, Cancelled, Failed, TimedOut, Cancelling))
@@ -2458,7 +2458,7 @@ package ssm {
     ): ComplianceItemEntry = {
       val __obj = js.Dynamic.literal(
         "Severity" -> Severity.asInstanceOf[js.Any],
-        "Status"   -> Status.asInstanceOf[js.Any]
+        "Status" -> Status.asInstanceOf[js.Any]
       )
 
       Details.foreach(__v => __obj.updateDynamic("Details")(__v.asInstanceOf[js.Any]))
@@ -2471,10 +2471,10 @@ package ssm {
   @js.native
   sealed trait ComplianceQueryOperatorType extends js.Any
   object ComplianceQueryOperatorType extends js.Object {
-    val EQUAL        = "EQUAL".asInstanceOf[ComplianceQueryOperatorType]
-    val NOT_EQUAL    = "NOT_EQUAL".asInstanceOf[ComplianceQueryOperatorType]
-    val BEGIN_WITH   = "BEGIN_WITH".asInstanceOf[ComplianceQueryOperatorType]
-    val LESS_THAN    = "LESS_THAN".asInstanceOf[ComplianceQueryOperatorType]
+    val EQUAL = "EQUAL".asInstanceOf[ComplianceQueryOperatorType]
+    val NOT_EQUAL = "NOT_EQUAL".asInstanceOf[ComplianceQueryOperatorType]
+    val BEGIN_WITH = "BEGIN_WITH".asInstanceOf[ComplianceQueryOperatorType]
+    val LESS_THAN = "LESS_THAN".asInstanceOf[ComplianceQueryOperatorType]
     val GREATER_THAN = "GREATER_THAN".asInstanceOf[ComplianceQueryOperatorType]
 
     val values = js.Object.freeze(js.Array(EQUAL, NOT_EQUAL, BEGIN_WITH, LESS_THAN, GREATER_THAN))
@@ -2483,12 +2483,12 @@ package ssm {
   @js.native
   sealed trait ComplianceSeverity extends js.Any
   object ComplianceSeverity extends js.Object {
-    val CRITICAL      = "CRITICAL".asInstanceOf[ComplianceSeverity]
-    val HIGH          = "HIGH".asInstanceOf[ComplianceSeverity]
-    val MEDIUM        = "MEDIUM".asInstanceOf[ComplianceSeverity]
-    val LOW           = "LOW".asInstanceOf[ComplianceSeverity]
+    val CRITICAL = "CRITICAL".asInstanceOf[ComplianceSeverity]
+    val HIGH = "HIGH".asInstanceOf[ComplianceSeverity]
+    val MEDIUM = "MEDIUM".asInstanceOf[ComplianceSeverity]
+    val LOW = "LOW".asInstanceOf[ComplianceSeverity]
     val INFORMATIONAL = "INFORMATIONAL".asInstanceOf[ComplianceSeverity]
-    val UNSPECIFIED   = "UNSPECIFIED".asInstanceOf[ComplianceSeverity]
+    val UNSPECIFIED = "UNSPECIFIED".asInstanceOf[ComplianceSeverity]
 
     val values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED))
   }
@@ -2496,7 +2496,7 @@ package ssm {
   @js.native
   sealed trait ComplianceStatus extends js.Any
   object ComplianceStatus extends js.Object {
-    val COMPLIANT     = "COMPLIANT".asInstanceOf[ComplianceStatus]
+    val COMPLIANT = "COMPLIANT".asInstanceOf[ComplianceStatus]
     val NON_COMPLIANT = "NON_COMPLIANT".asInstanceOf[ComplianceStatus]
 
     val values = js.Object.freeze(js.Array(COMPLIANT, NON_COMPLIANT))
@@ -2556,7 +2556,7 @@ package ssm {
   sealed trait ComplianceUploadType extends js.Any
   object ComplianceUploadType extends js.Object {
     val COMPLETE = "COMPLETE".asInstanceOf[ComplianceUploadType]
-    val PARTIAL  = "PARTIAL".asInstanceOf[ComplianceUploadType]
+    val PARTIAL = "PARTIAL".asInstanceOf[ComplianceUploadType]
 
     val values = js.Object.freeze(js.Array(COMPLETE, PARTIAL))
   }
@@ -2586,7 +2586,7 @@ package ssm {
   @js.native
   sealed trait ConnectionStatus extends js.Any
   object ConnectionStatus extends js.Object {
-    val Connected    = "Connected".asInstanceOf[ConnectionStatus]
+    val Connected = "Connected".asInstanceOf[ConnectionStatus]
     val NotConnected = "NotConnected".asInstanceOf[ConnectionStatus]
 
     val values = js.Object.freeze(js.Array(Connected, NotConnected))
@@ -2846,7 +2846,7 @@ package ssm {
     ): CreateDocumentRequest = {
       val __obj = js.Dynamic.literal(
         "Content" -> Content.asInstanceOf[js.Any],
-        "Name"    -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       Attachments.foreach(__v => __obj.updateDynamic("Attachments")(__v.asInstanceOf[js.Any]))
@@ -2910,10 +2910,10 @@ package ssm {
     ): CreateMaintenanceWindowRequest = {
       val __obj = js.Dynamic.literal(
         "AllowUnassociatedTargets" -> AllowUnassociatedTargets.asInstanceOf[js.Any],
-        "Cutoff"                   -> Cutoff.asInstanceOf[js.Any],
-        "Duration"                 -> Duration.asInstanceOf[js.Any],
-        "Name"                     -> Name.asInstanceOf[js.Any],
-        "Schedule"                 -> Schedule.asInstanceOf[js.Any]
+        "Cutoff" -> Cutoff.asInstanceOf[js.Any],
+        "Duration" -> Duration.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Schedule" -> Schedule.asInstanceOf[js.Any]
       )
 
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
@@ -2973,8 +2973,8 @@ package ssm {
     ): CreateOpsItemRequest = {
       val __obj = js.Dynamic.literal(
         "Description" -> Description.asInstanceOf[js.Any],
-        "Source"      -> Source.asInstanceOf[js.Any],
-        "Title"       -> Title.asInstanceOf[js.Any]
+        "Source" -> Source.asInstanceOf[js.Any],
+        "Title" -> Title.asInstanceOf[js.Any]
       )
 
       Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
@@ -3529,7 +3529,7 @@ package ssm {
         Safe: js.UndefOr[Boolean] = js.undefined
     ): DeregisterTargetFromMaintenanceWindowRequest = {
       val __obj = js.Dynamic.literal(
-        "WindowId"       -> WindowId.asInstanceOf[js.Any],
+        "WindowId" -> WindowId.asInstanceOf[js.Any],
         "WindowTargetId" -> WindowTargetId.asInstanceOf[js.Any]
       )
 
@@ -3570,7 +3570,7 @@ package ssm {
         WindowTaskId: MaintenanceWindowTaskId
     ): DeregisterTaskFromMaintenanceWindowRequest = {
       val __obj = js.Dynamic.literal(
-        "WindowId"     -> WindowId.asInstanceOf[js.Any],
+        "WindowId" -> WindowId.asInstanceOf[js.Any],
         "WindowTaskId" -> WindowTaskId.asInstanceOf[js.Any]
       )
 
@@ -3622,9 +3622,9 @@ package ssm {
   @js.native
   sealed trait DescribeActivationsFilterKeys extends js.Any
   object DescribeActivationsFilterKeys extends js.Object {
-    val ActivationIds       = "ActivationIds".asInstanceOf[DescribeActivationsFilterKeys]
+    val ActivationIds = "ActivationIds".asInstanceOf[DescribeActivationsFilterKeys]
     val DefaultInstanceName = "DefaultInstanceName".asInstanceOf[DescribeActivationsFilterKeys]
-    val IamRole             = "IamRole".asInstanceOf[DescribeActivationsFilterKeys]
+    val IamRole = "IamRole".asInstanceOf[DescribeActivationsFilterKeys]
 
     val values = js.Object.freeze(js.Array(ActivationIds, DefaultInstanceName, IamRole))
   }
@@ -3690,7 +3690,7 @@ package ssm {
     ): DescribeAssociationExecutionTargetsRequest = {
       val __obj = js.Dynamic.literal(
         "AssociationId" -> AssociationId.asInstanceOf[js.Any],
-        "ExecutionId"   -> ExecutionId.asInstanceOf[js.Any]
+        "ExecutionId" -> ExecutionId.asInstanceOf[js.Any]
       )
 
       Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
@@ -3954,7 +3954,7 @@ package ssm {
         PermissionType: DocumentPermissionType
     ): DescribeDocumentPermissionRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"           -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "PermissionType" -> PermissionType.asInstanceOf[js.Any]
       )
 
@@ -4393,7 +4393,7 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeMaintenanceWindowExecutionTaskInvocationsRequest = {
       val __obj = js.Dynamic.literal(
-        "TaskId"            -> TaskId.asInstanceOf[js.Any],
+        "TaskId" -> TaskId.asInstanceOf[js.Any],
         "WindowExecutionId" -> WindowExecutionId.asInstanceOf[js.Any]
       )
 
@@ -4682,7 +4682,7 @@ package ssm {
     ): DescribeMaintenanceWindowsForTargetRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceType" -> ResourceType.asInstanceOf[js.Any],
-        "Targets"      -> Targets.asInstanceOf[js.Any]
+        "Targets" -> Targets.asInstanceOf[js.Any]
       )
 
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
@@ -5012,7 +5012,7 @@ package ssm {
     ): DescribePatchPropertiesRequest = {
       val __obj = js.Dynamic.literal(
         "OperatingSystem" -> OperatingSystem.asInstanceOf[js.Any],
-        "Property"        -> Property.asInstanceOf[js.Any]
+        "Property" -> Property.asInstanceOf[js.Any]
       )
 
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
@@ -5210,7 +5210,7 @@ package ssm {
         value: DocumentFilterValue
     ): DocumentFilter = {
       val __obj = js.Dynamic.literal(
-        "key"   -> key.asInstanceOf[js.Any],
+        "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
 
@@ -5221,10 +5221,10 @@ package ssm {
   @js.native
   sealed trait DocumentFilterKey extends js.Any
   object DocumentFilterKey extends js.Object {
-    val Name          = "Name".asInstanceOf[DocumentFilterKey]
-    val Owner         = "Owner".asInstanceOf[DocumentFilterKey]
+    val Name = "Name".asInstanceOf[DocumentFilterKey]
+    val Owner = "Owner".asInstanceOf[DocumentFilterKey]
     val PlatformTypes = "PlatformTypes".asInstanceOf[DocumentFilterKey]
-    val DocumentType  = "DocumentType".asInstanceOf[DocumentFilterKey]
+    val DocumentType = "DocumentType".asInstanceOf[DocumentFilterKey]
 
     val values = js.Object.freeze(js.Array(Name, Owner, PlatformTypes, DocumentType))
   }
@@ -5243,7 +5243,7 @@ package ssm {
   sealed trait DocumentHashType extends js.Any
   object DocumentHashType extends js.Object {
     val Sha256 = "Sha256".asInstanceOf[DocumentHashType]
-    val Sha1   = "Sha1".asInstanceOf[DocumentHashType]
+    val Sha1 = "Sha1".asInstanceOf[DocumentHashType]
 
     val values = js.Object.freeze(js.Array(Sha256, Sha1))
   }
@@ -5359,7 +5359,7 @@ package ssm {
   @js.native
   sealed trait DocumentParameterType extends js.Any
   object DocumentParameterType extends js.Object {
-    val String     = "String".asInstanceOf[DocumentParameterType]
+    val String = "String".asInstanceOf[DocumentParameterType]
     val StringList = "StringList".asInstanceOf[DocumentParameterType]
 
     val values = js.Object.freeze(js.Array(String, StringList))
@@ -5404,10 +5404,10 @@ package ssm {
   sealed trait DocumentStatus extends js.Any
   object DocumentStatus extends js.Object {
     val Creating = "Creating".asInstanceOf[DocumentStatus]
-    val Active   = "Active".asInstanceOf[DocumentStatus]
+    val Active = "Active".asInstanceOf[DocumentStatus]
     val Updating = "Updating".asInstanceOf[DocumentStatus]
     val Deleting = "Deleting".asInstanceOf[DocumentStatus]
-    val Failed   = "Failed".asInstanceOf[DocumentStatus]
+    val Failed = "Failed".asInstanceOf[DocumentStatus]
 
     val values = js.Object.freeze(js.Array(Creating, Active, Updating, Deleting, Failed))
   }
@@ -5415,15 +5415,15 @@ package ssm {
   @js.native
   sealed trait DocumentType extends js.Any
   object DocumentType extends js.Object {
-    val Command                        = "Command".asInstanceOf[DocumentType]
-    val Policy                         = "Policy".asInstanceOf[DocumentType]
-    val Automation                     = "Automation".asInstanceOf[DocumentType]
-    val Session                        = "Session".asInstanceOf[DocumentType]
-    val Package                        = "Package".asInstanceOf[DocumentType]
-    val ApplicationConfiguration       = "ApplicationConfiguration".asInstanceOf[DocumentType]
+    val Command = "Command".asInstanceOf[DocumentType]
+    val Policy = "Policy".asInstanceOf[DocumentType]
+    val Automation = "Automation".asInstanceOf[DocumentType]
+    val Session = "Session".asInstanceOf[DocumentType]
+    val Package = "Package".asInstanceOf[DocumentType]
+    val ApplicationConfiguration = "ApplicationConfiguration".asInstanceOf[DocumentType]
     val ApplicationConfigurationSchema = "ApplicationConfigurationSchema".asInstanceOf[DocumentType]
-    val DeploymentStrategy             = "DeploymentStrategy".asInstanceOf[DocumentType]
-    val ChangeCalendar                 = "ChangeCalendar".asInstanceOf[DocumentType]
+    val DeploymentStrategy = "DeploymentStrategy".asInstanceOf[DocumentType]
+    val ChangeCalendar = "ChangeCalendar".asInstanceOf[DocumentType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -5505,7 +5505,7 @@ package ssm {
   @js.native
   sealed trait ExecutionMode extends js.Any
   object ExecutionMode extends js.Object {
-    val Auto        = "Auto".asInstanceOf[ExecutionMode]
+    val Auto = "Auto".asInstanceOf[ExecutionMode]
     val Interactive = "Interactive".asInstanceOf[ExecutionMode]
 
     val values = js.Object.freeze(js.Array(Auto, Interactive))
@@ -5564,8 +5564,8 @@ package ssm {
   @js.native
   sealed trait Fault extends js.Any
   object Fault extends js.Object {
-    val Client  = "Client".asInstanceOf[Fault]
-    val Server  = "Server".asInstanceOf[Fault]
+    val Client = "Client".asInstanceOf[Fault]
+    val Server = "Server".asInstanceOf[Fault]
     val Unknown = "Unknown".asInstanceOf[Fault]
 
     val values = js.Object.freeze(js.Array(Client, Server, Unknown))
@@ -5663,7 +5663,7 @@ package ssm {
         PluginName: js.UndefOr[CommandPluginName] = js.undefined
     ): GetCommandInvocationRequest = {
       val __obj = js.Dynamic.literal(
-        "CommandId"  -> CommandId.asInstanceOf[js.Any],
+        "CommandId" -> CommandId.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
@@ -6082,8 +6082,8 @@ package ssm {
         WindowExecutionId: MaintenanceWindowExecutionId
     ): GetMaintenanceWindowExecutionTaskInvocationRequest = {
       val __obj = js.Dynamic.literal(
-        "InvocationId"      -> InvocationId.asInstanceOf[js.Any],
-        "TaskId"            -> TaskId.asInstanceOf[js.Any],
+        "InvocationId" -> InvocationId.asInstanceOf[js.Any],
+        "TaskId" -> TaskId.asInstanceOf[js.Any],
         "WindowExecutionId" -> WindowExecutionId.asInstanceOf[js.Any]
       )
 
@@ -6153,7 +6153,7 @@ package ssm {
         WindowExecutionId: MaintenanceWindowExecutionId
     ): GetMaintenanceWindowExecutionTaskRequest = {
       val __obj = js.Dynamic.literal(
-        "TaskId"            -> TaskId.asInstanceOf[js.Any],
+        "TaskId" -> TaskId.asInstanceOf[js.Any],
         "WindowExecutionId" -> WindowExecutionId.asInstanceOf[js.Any]
       )
 
@@ -6302,7 +6302,7 @@ package ssm {
         WindowTaskId: MaintenanceWindowTaskId
     ): GetMaintenanceWindowTaskRequest = {
       val __obj = js.Dynamic.literal(
-        "WindowId"     -> WindowId.asInstanceOf[js.Any],
+        "WindowId" -> WindowId.asInstanceOf[js.Any],
         "WindowTaskId" -> WindowTaskId.asInstanceOf[js.Any]
       )
 
@@ -7023,7 +7023,7 @@ package ssm {
         valueSet: InstanceInformationFilterValueSet
     ): InstanceInformationFilter = {
       val __obj = js.Dynamic.literal(
-        "key"      -> key.asInstanceOf[js.Any],
+        "key" -> key.asInstanceOf[js.Any],
         "valueSet" -> valueSet.asInstanceOf[js.Any]
       )
 
@@ -7034,13 +7034,13 @@ package ssm {
   @js.native
   sealed trait InstanceInformationFilterKey extends js.Any
   object InstanceInformationFilterKey extends js.Object {
-    val InstanceIds       = "InstanceIds".asInstanceOf[InstanceInformationFilterKey]
-    val AgentVersion      = "AgentVersion".asInstanceOf[InstanceInformationFilterKey]
-    val PingStatus        = "PingStatus".asInstanceOf[InstanceInformationFilterKey]
-    val PlatformTypes     = "PlatformTypes".asInstanceOf[InstanceInformationFilterKey]
-    val ActivationIds     = "ActivationIds".asInstanceOf[InstanceInformationFilterKey]
-    val IamRole           = "IamRole".asInstanceOf[InstanceInformationFilterKey]
-    val ResourceType      = "ResourceType".asInstanceOf[InstanceInformationFilterKey]
+    val InstanceIds = "InstanceIds".asInstanceOf[InstanceInformationFilterKey]
+    val AgentVersion = "AgentVersion".asInstanceOf[InstanceInformationFilterKey]
+    val PingStatus = "PingStatus".asInstanceOf[InstanceInformationFilterKey]
+    val PlatformTypes = "PlatformTypes".asInstanceOf[InstanceInformationFilterKey]
+    val ActivationIds = "ActivationIds".asInstanceOf[InstanceInformationFilterKey]
+    val IamRole = "IamRole".asInstanceOf[InstanceInformationFilterKey]
+    val ResourceType = "ResourceType".asInstanceOf[InstanceInformationFilterKey]
     val AssociationStatus = "AssociationStatus".asInstanceOf[InstanceInformationFilterKey]
 
     val values = js.Object.freeze(
@@ -7073,7 +7073,7 @@ package ssm {
         Values: InstanceInformationFilterValueSet
     ): InstanceInformationStringFilter = {
       val __obj = js.Dynamic.literal(
-        "Key"    -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
@@ -7131,12 +7131,12 @@ package ssm {
         UnreportedNotApplicableCount: js.UndefOr[PatchUnreportedNotApplicableCount] = js.undefined
     ): InstancePatchState = {
       val __obj = js.Dynamic.literal(
-        "BaselineId"         -> BaselineId.asInstanceOf[js.Any],
-        "InstanceId"         -> InstanceId.asInstanceOf[js.Any],
-        "Operation"          -> Operation.asInstanceOf[js.Any],
-        "OperationEndTime"   -> OperationEndTime.asInstanceOf[js.Any],
+        "BaselineId" -> BaselineId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "Operation" -> Operation.asInstanceOf[js.Any],
+        "OperationEndTime" -> OperationEndTime.asInstanceOf[js.Any],
         "OperationStartTime" -> OperationStartTime.asInstanceOf[js.Any],
-        "PatchGroup"         -> PatchGroup.asInstanceOf[js.Any]
+        "PatchGroup" -> PatchGroup.asInstanceOf[js.Any]
       )
 
       FailedCount.foreach(__v => __obj.updateDynamic("FailedCount")(__v.asInstanceOf[js.Any]))
@@ -7180,8 +7180,8 @@ package ssm {
         Values: InstancePatchStateFilterValues
     ): InstancePatchStateFilter = {
       val __obj = js.Dynamic.literal(
-        "Key"    -> Key.asInstanceOf[js.Any],
-        "Type"   -> Type.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
@@ -7192,9 +7192,9 @@ package ssm {
   @js.native
   sealed trait InstancePatchStateOperatorType extends js.Any
   object InstancePatchStateOperatorType extends js.Object {
-    val Equal       = "Equal".asInstanceOf[InstancePatchStateOperatorType]
-    val NotEqual    = "NotEqual".asInstanceOf[InstancePatchStateOperatorType]
-    val LessThan    = "LessThan".asInstanceOf[InstancePatchStateOperatorType]
+    val Equal = "Equal".asInstanceOf[InstancePatchStateOperatorType]
+    val NotEqual = "NotEqual".asInstanceOf[InstancePatchStateOperatorType]
+    val LessThan = "LessThan".asInstanceOf[InstancePatchStateOperatorType]
     val GreaterThan = "GreaterThan".asInstanceOf[InstancePatchStateOperatorType]
 
     val values = js.Object.freeze(js.Array(Equal, NotEqual, LessThan, GreaterThan))
@@ -7238,7 +7238,7 @@ package ssm {
   sealed trait InventoryDeletionStatus extends js.Any
   object InventoryDeletionStatus extends js.Object {
     val InProgress = "InProgress".asInstanceOf[InventoryDeletionStatus]
-    val Complete   = "Complete".asInstanceOf[InventoryDeletionStatus]
+    val Complete = "Complete".asInstanceOf[InventoryDeletionStatus]
 
     val values = js.Object.freeze(js.Array(InProgress, Complete))
   }
@@ -7348,7 +7348,7 @@ package ssm {
         Type: js.UndefOr[InventoryQueryOperatorType] = js.undefined
     ): InventoryFilter = {
       val __obj = js.Dynamic.literal(
-        "Key"    -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
@@ -7374,7 +7374,7 @@ package ssm {
     ): InventoryGroup = {
       val __obj = js.Dynamic.literal(
         "Filters" -> Filters.asInstanceOf[js.Any],
-        "Name"    -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[InventoryGroup]
@@ -7405,9 +7405,9 @@ package ssm {
         Context: js.UndefOr[InventoryItemContentContext] = js.undefined
     ): InventoryItem = {
       val __obj = js.Dynamic.literal(
-        "CaptureTime"   -> CaptureTime.asInstanceOf[js.Any],
+        "CaptureTime" -> CaptureTime.asInstanceOf[js.Any],
         "SchemaVersion" -> SchemaVersion.asInstanceOf[js.Any],
-        "TypeName"      -> TypeName.asInstanceOf[js.Any]
+        "TypeName" -> TypeName.asInstanceOf[js.Any]
       )
 
       Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
@@ -7434,7 +7434,7 @@ package ssm {
     ): InventoryItemAttribute = {
       val __obj = js.Dynamic.literal(
         "DataType" -> DataType.asInstanceOf[js.Any],
-        "Name"     -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[InventoryItemAttribute]
@@ -7462,7 +7462,7 @@ package ssm {
     ): InventoryItemSchema = {
       val __obj = js.Dynamic.literal(
         "Attributes" -> Attributes.asInstanceOf[js.Any],
-        "TypeName"   -> TypeName.asInstanceOf[js.Any]
+        "TypeName" -> TypeName.asInstanceOf[js.Any]
       )
 
       DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
@@ -7474,12 +7474,12 @@ package ssm {
   @js.native
   sealed trait InventoryQueryOperatorType extends js.Any
   object InventoryQueryOperatorType extends js.Object {
-    val Equal       = "Equal".asInstanceOf[InventoryQueryOperatorType]
-    val NotEqual    = "NotEqual".asInstanceOf[InventoryQueryOperatorType]
-    val BeginWith   = "BeginWith".asInstanceOf[InventoryQueryOperatorType]
-    val LessThan    = "LessThan".asInstanceOf[InventoryQueryOperatorType]
+    val Equal = "Equal".asInstanceOf[InventoryQueryOperatorType]
+    val NotEqual = "NotEqual".asInstanceOf[InventoryQueryOperatorType]
+    val BeginWith = "BeginWith".asInstanceOf[InventoryQueryOperatorType]
+    val LessThan = "LessThan".asInstanceOf[InventoryQueryOperatorType]
     val GreaterThan = "GreaterThan".asInstanceOf[InventoryQueryOperatorType]
-    val Exists      = "Exists".asInstanceOf[InventoryQueryOperatorType]
+    val Exists = "Exists".asInstanceOf[InventoryQueryOperatorType]
 
     val values = js.Object.freeze(js.Array(Equal, NotEqual, BeginWith, LessThan, GreaterThan, Exists))
   }
@@ -7528,9 +7528,9 @@ package ssm {
         ContentHash: js.UndefOr[InventoryItemContentHash] = js.undefined
     ): InventoryResultItem = {
       val __obj = js.Dynamic.literal(
-        "Content"       -> Content.asInstanceOf[js.Any],
+        "Content" -> Content.asInstanceOf[js.Any],
         "SchemaVersion" -> SchemaVersion.asInstanceOf[js.Any],
-        "TypeName"      -> TypeName.asInstanceOf[js.Any]
+        "TypeName" -> TypeName.asInstanceOf[js.Any]
       )
 
       CaptureTime.foreach(__v => __obj.updateDynamic("CaptureTime")(__v.asInstanceOf[js.Any]))
@@ -7543,7 +7543,7 @@ package ssm {
   sealed trait InventorySchemaDeleteOption extends js.Any
   object InventorySchemaDeleteOption extends js.Object {
     val DisableSchema = "DisableSchema".asInstanceOf[InventorySchemaDeleteOption]
-    val DeleteSchema  = "DeleteSchema".asInstanceOf[InventorySchemaDeleteOption]
+    val DeleteSchema = "DeleteSchema".asInstanceOf[InventorySchemaDeleteOption]
 
     val values = js.Object.freeze(js.Array(DisableSchema, DeleteSchema))
   }
@@ -7564,7 +7564,7 @@ package ssm {
     ): LabelParameterVersionRequest = {
       val __obj = js.Dynamic.literal(
         "Labels" -> Labels.asInstanceOf[js.Any],
-        "Name"   -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       ParameterVersion.foreach(__v => __obj.updateDynamic("ParameterVersion")(__v.asInstanceOf[js.Any]))
@@ -7595,7 +7595,7 @@ package ssm {
   sealed trait LastResourceDataSyncStatus extends js.Any
   object LastResourceDataSyncStatus extends js.Object {
     val Successful = "Successful".asInstanceOf[LastResourceDataSyncStatus]
-    val Failed     = "Failed".asInstanceOf[LastResourceDataSyncStatus]
+    val Failed = "Failed".asInstanceOf[LastResourceDataSyncStatus]
     val InProgress = "InProgress".asInstanceOf[LastResourceDataSyncStatus]
 
     val values = js.Object.freeze(js.Array(Successful, Failed, InProgress))
@@ -7977,7 +7977,7 @@ package ssm {
     ): ListInventoryEntriesRequest = {
       val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
-        "TypeName"   -> TypeName.asInstanceOf[js.Any]
+        "TypeName" -> TypeName.asInstanceOf[js.Any]
       )
 
       Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
@@ -8115,7 +8115,7 @@ package ssm {
         ResourceType: ResourceTypeForTagging
     ): ListTagsForResourceRequest = {
       val __obj = js.Dynamic.literal(
-        "ResourceId"   -> ResourceId.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "ResourceType" -> ResourceType.asInstanceOf[js.Any]
       )
 
@@ -8160,7 +8160,7 @@ package ssm {
     ): LoggingInfo = {
       val __obj = js.Dynamic.literal(
         "S3BucketName" -> S3BucketName.asInstanceOf[js.Any],
-        "S3Region"     -> S3Region.asInstanceOf[js.Any]
+        "S3Region" -> S3Region.asInstanceOf[js.Any]
       )
 
       S3KeyPrefix.foreach(__v => __obj.updateDynamic("S3KeyPrefix")(__v.asInstanceOf[js.Any]))
@@ -8227,13 +8227,13 @@ package ssm {
   @js.native
   sealed trait MaintenanceWindowExecutionStatus extends js.Any
   object MaintenanceWindowExecutionStatus extends js.Object {
-    val PENDING             = "PENDING".asInstanceOf[MaintenanceWindowExecutionStatus]
-    val IN_PROGRESS         = "IN_PROGRESS".asInstanceOf[MaintenanceWindowExecutionStatus]
-    val SUCCESS             = "SUCCESS".asInstanceOf[MaintenanceWindowExecutionStatus]
-    val FAILED              = "FAILED".asInstanceOf[MaintenanceWindowExecutionStatus]
-    val TIMED_OUT           = "TIMED_OUT".asInstanceOf[MaintenanceWindowExecutionStatus]
-    val CANCELLING          = "CANCELLING".asInstanceOf[MaintenanceWindowExecutionStatus]
-    val CANCELLED           = "CANCELLED".asInstanceOf[MaintenanceWindowExecutionStatus]
+    val PENDING = "PENDING".asInstanceOf[MaintenanceWindowExecutionStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[MaintenanceWindowExecutionStatus]
+    val SUCCESS = "SUCCESS".asInstanceOf[MaintenanceWindowExecutionStatus]
+    val FAILED = "FAILED".asInstanceOf[MaintenanceWindowExecutionStatus]
+    val TIMED_OUT = "TIMED_OUT".asInstanceOf[MaintenanceWindowExecutionStatus]
+    val CANCELLING = "CANCELLING".asInstanceOf[MaintenanceWindowExecutionStatus]
+    val CANCELLED = "CANCELLED".asInstanceOf[MaintenanceWindowExecutionStatus]
     val SKIPPED_OVERLAPPING = "SKIPPED_OVERLAPPING".asInstanceOf[MaintenanceWindowExecutionStatus]
 
     val values = js.Object.freeze(
@@ -8462,7 +8462,7 @@ package ssm {
   @js.native
   sealed trait MaintenanceWindowResourceType extends js.Any
   object MaintenanceWindowResourceType extends js.Object {
-    val INSTANCE       = "INSTANCE".asInstanceOf[MaintenanceWindowResourceType]
+    val INSTANCE = "INSTANCE".asInstanceOf[MaintenanceWindowResourceType]
     val RESOURCE_GROUP = "RESOURCE_GROUP".asInstanceOf[MaintenanceWindowResourceType]
 
     val values = js.Object.freeze(js.Array(INSTANCE, RESOURCE_GROUP))
@@ -8691,10 +8691,10 @@ package ssm {
   @js.native
   sealed trait MaintenanceWindowTaskType extends js.Any
   object MaintenanceWindowTaskType extends js.Object {
-    val RUN_COMMAND    = "RUN_COMMAND".asInstanceOf[MaintenanceWindowTaskType]
-    val AUTOMATION     = "AUTOMATION".asInstanceOf[MaintenanceWindowTaskType]
+    val RUN_COMMAND = "RUN_COMMAND".asInstanceOf[MaintenanceWindowTaskType]
+    val AUTOMATION = "AUTOMATION".asInstanceOf[MaintenanceWindowTaskType]
     val STEP_FUNCTIONS = "STEP_FUNCTIONS".asInstanceOf[MaintenanceWindowTaskType]
-    val LAMBDA         = "LAMBDA".asInstanceOf[MaintenanceWindowTaskType]
+    val LAMBDA = "LAMBDA".asInstanceOf[MaintenanceWindowTaskType]
 
     val values = js.Object.freeze(js.Array(RUN_COMMAND, AUTOMATION, STEP_FUNCTIONS, LAMBDA))
   }
@@ -8718,7 +8718,7 @@ package ssm {
         SharedDocumentVersion: js.UndefOr[SharedDocumentVersion] = js.undefined
     ): ModifyDocumentPermissionRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"           -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "PermissionType" -> PermissionType.asInstanceOf[js.Any]
       )
 
@@ -8792,12 +8792,12 @@ package ssm {
   @js.native
   sealed trait NotificationEvent extends js.Any
   object NotificationEvent extends js.Object {
-    val All        = "All".asInstanceOf[NotificationEvent]
+    val All = "All".asInstanceOf[NotificationEvent]
     val InProgress = "InProgress".asInstanceOf[NotificationEvent]
-    val Success    = "Success".asInstanceOf[NotificationEvent]
-    val TimedOut   = "TimedOut".asInstanceOf[NotificationEvent]
-    val Cancelled  = "Cancelled".asInstanceOf[NotificationEvent]
-    val Failed     = "Failed".asInstanceOf[NotificationEvent]
+    val Success = "Success".asInstanceOf[NotificationEvent]
+    val TimedOut = "TimedOut".asInstanceOf[NotificationEvent]
+    val Cancelled = "Cancelled".asInstanceOf[NotificationEvent]
+    val Failed = "Failed".asInstanceOf[NotificationEvent]
 
     val values = js.Object.freeze(js.Array(All, InProgress, Success, TimedOut, Cancelled, Failed))
   }
@@ -8805,7 +8805,7 @@ package ssm {
   @js.native
   sealed trait NotificationType extends js.Any
   object NotificationType extends js.Object {
-    val Command    = "Command".asInstanceOf[NotificationType]
+    val Command = "Command".asInstanceOf[NotificationType]
     val Invocation = "Invocation".asInstanceOf[NotificationType]
 
     val values = js.Object.freeze(js.Array(Command, Invocation))
@@ -8814,15 +8814,15 @@ package ssm {
   @js.native
   sealed trait OperatingSystem extends js.Any
   object OperatingSystem extends js.Object {
-    val WINDOWS                 = "WINDOWS".asInstanceOf[OperatingSystem]
-    val AMAZON_LINUX            = "AMAZON_LINUX".asInstanceOf[OperatingSystem]
-    val AMAZON_LINUX_2          = "AMAZON_LINUX_2".asInstanceOf[OperatingSystem]
-    val UBUNTU                  = "UBUNTU".asInstanceOf[OperatingSystem]
+    val WINDOWS = "WINDOWS".asInstanceOf[OperatingSystem]
+    val AMAZON_LINUX = "AMAZON_LINUX".asInstanceOf[OperatingSystem]
+    val AMAZON_LINUX_2 = "AMAZON_LINUX_2".asInstanceOf[OperatingSystem]
+    val UBUNTU = "UBUNTU".asInstanceOf[OperatingSystem]
     val REDHAT_ENTERPRISE_LINUX = "REDHAT_ENTERPRISE_LINUX".asInstanceOf[OperatingSystem]
-    val SUSE                    = "SUSE".asInstanceOf[OperatingSystem]
-    val CENTOS                  = "CENTOS".asInstanceOf[OperatingSystem]
-    val ORACLE_LINUX            = "ORACLE_LINUX".asInstanceOf[OperatingSystem]
-    val DEBIAN                  = "DEBIAN".asInstanceOf[OperatingSystem]
+    val SUSE = "SUSE".asInstanceOf[OperatingSystem]
+    val CENTOS = "CENTOS".asInstanceOf[OperatingSystem]
+    val ORACLE_LINUX = "ORACLE_LINUX".asInstanceOf[OperatingSystem]
+    val DEBIAN = "DEBIAN".asInstanceOf[OperatingSystem]
 
     val values = js.Object.freeze(
       js.Array(
@@ -8935,7 +8935,7 @@ package ssm {
         Type: js.UndefOr[OpsFilterOperatorType] = js.undefined
     ): OpsFilter = {
       val __obj = js.Dynamic.literal(
-        "Key"    -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
@@ -8947,12 +8947,12 @@ package ssm {
   @js.native
   sealed trait OpsFilterOperatorType extends js.Any
   object OpsFilterOperatorType extends js.Object {
-    val Equal       = "Equal".asInstanceOf[OpsFilterOperatorType]
-    val NotEqual    = "NotEqual".asInstanceOf[OpsFilterOperatorType]
-    val BeginWith   = "BeginWith".asInstanceOf[OpsFilterOperatorType]
-    val LessThan    = "LessThan".asInstanceOf[OpsFilterOperatorType]
+    val Equal = "Equal".asInstanceOf[OpsFilterOperatorType]
+    val NotEqual = "NotEqual".asInstanceOf[OpsFilterOperatorType]
+    val BeginWith = "BeginWith".asInstanceOf[OpsFilterOperatorType]
+    val LessThan = "LessThan".asInstanceOf[OpsFilterOperatorType]
     val GreaterThan = "GreaterThan".asInstanceOf[OpsFilterOperatorType]
-    val Exists      = "Exists".asInstanceOf[OpsFilterOperatorType]
+    val Exists = "Exists".asInstanceOf[OpsFilterOperatorType]
 
     val values = js.Object.freeze(js.Array(Equal, NotEqual, BeginWith, LessThan, GreaterThan, Exists))
   }
@@ -9025,7 +9025,7 @@ package ssm {
   sealed trait OpsItemDataType extends js.Any
   object OpsItemDataType extends js.Object {
     val SearchableString = "SearchableString".asInstanceOf[OpsItemDataType]
-    val String           = "String".asInstanceOf[OpsItemDataType]
+    val String = "String".asInstanceOf[OpsItemDataType]
 
     val values = js.Object.freeze(js.Array(SearchableString, String))
   }
@@ -9070,9 +9070,9 @@ package ssm {
         Values: OpsItemFilterValues
     ): OpsItemFilter = {
       val __obj = js.Dynamic.literal(
-        "Key"      -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Operator" -> Operator.asInstanceOf[js.Any],
-        "Values"   -> Values.asInstanceOf[js.Any]
+        "Values" -> Values.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[OpsItemFilter]
@@ -9082,21 +9082,21 @@ package ssm {
   @js.native
   sealed trait OpsItemFilterKey extends js.Any
   object OpsItemFilterKey extends js.Object {
-    val Status               = "Status".asInstanceOf[OpsItemFilterKey]
-    val CreatedBy            = "CreatedBy".asInstanceOf[OpsItemFilterKey]
-    val Source               = "Source".asInstanceOf[OpsItemFilterKey]
-    val Priority             = "Priority".asInstanceOf[OpsItemFilterKey]
-    val Title                = "Title".asInstanceOf[OpsItemFilterKey]
-    val OpsItemId            = "OpsItemId".asInstanceOf[OpsItemFilterKey]
-    val CreatedTime          = "CreatedTime".asInstanceOf[OpsItemFilterKey]
-    val LastModifiedTime     = "LastModifiedTime".asInstanceOf[OpsItemFilterKey]
-    val OperationalData      = "OperationalData".asInstanceOf[OpsItemFilterKey]
-    val OperationalDataKey   = "OperationalDataKey".asInstanceOf[OpsItemFilterKey]
+    val Status = "Status".asInstanceOf[OpsItemFilterKey]
+    val CreatedBy = "CreatedBy".asInstanceOf[OpsItemFilterKey]
+    val Source = "Source".asInstanceOf[OpsItemFilterKey]
+    val Priority = "Priority".asInstanceOf[OpsItemFilterKey]
+    val Title = "Title".asInstanceOf[OpsItemFilterKey]
+    val OpsItemId = "OpsItemId".asInstanceOf[OpsItemFilterKey]
+    val CreatedTime = "CreatedTime".asInstanceOf[OpsItemFilterKey]
+    val LastModifiedTime = "LastModifiedTime".asInstanceOf[OpsItemFilterKey]
+    val OperationalData = "OperationalData".asInstanceOf[OpsItemFilterKey]
+    val OperationalDataKey = "OperationalDataKey".asInstanceOf[OpsItemFilterKey]
     val OperationalDataValue = "OperationalDataValue".asInstanceOf[OpsItemFilterKey]
-    val ResourceId           = "ResourceId".asInstanceOf[OpsItemFilterKey]
-    val AutomationId         = "AutomationId".asInstanceOf[OpsItemFilterKey]
-    val Category             = "Category".asInstanceOf[OpsItemFilterKey]
-    val Severity             = "Severity".asInstanceOf[OpsItemFilterKey]
+    val ResourceId = "ResourceId".asInstanceOf[OpsItemFilterKey]
+    val AutomationId = "AutomationId".asInstanceOf[OpsItemFilterKey]
+    val Category = "Category".asInstanceOf[OpsItemFilterKey]
+    val Severity = "Severity".asInstanceOf[OpsItemFilterKey]
 
     val values = js.Object.freeze(
       js.Array(
@@ -9122,10 +9122,10 @@ package ssm {
   @js.native
   sealed trait OpsItemFilterOperator extends js.Any
   object OpsItemFilterOperator extends js.Object {
-    val Equal       = "Equal".asInstanceOf[OpsItemFilterOperator]
-    val Contains    = "Contains".asInstanceOf[OpsItemFilterOperator]
+    val Equal = "Equal".asInstanceOf[OpsItemFilterOperator]
+    val Contains = "Contains".asInstanceOf[OpsItemFilterOperator]
     val GreaterThan = "GreaterThan".asInstanceOf[OpsItemFilterOperator]
-    val LessThan    = "LessThan".asInstanceOf[OpsItemFilterOperator]
+    val LessThan = "LessThan".asInstanceOf[OpsItemFilterOperator]
 
     val values = js.Object.freeze(js.Array(Equal, Contains, GreaterThan, LessThan))
   }
@@ -9152,9 +9152,9 @@ package ssm {
   @js.native
   sealed trait OpsItemStatus extends js.Any
   object OpsItemStatus extends js.Object {
-    val Open       = "Open".asInstanceOf[OpsItemStatus]
+    val Open = "Open".asInstanceOf[OpsItemStatus]
     val InProgress = "InProgress".asInstanceOf[OpsItemStatus]
-    val Resolved   = "Resolved".asInstanceOf[OpsItemStatus]
+    val Resolved = "Resolved".asInstanceOf[OpsItemStatus]
 
     val values = js.Object.freeze(js.Array(Open, InProgress, Resolved))
   }
@@ -9461,8 +9461,8 @@ package ssm {
   @js.native
   sealed trait ParameterTier extends js.Any
   object ParameterTier extends js.Object {
-    val Standard              = "Standard".asInstanceOf[ParameterTier]
-    val Advanced              = "Advanced".asInstanceOf[ParameterTier]
+    val Standard = "Standard".asInstanceOf[ParameterTier]
+    val Advanced = "Advanced".asInstanceOf[ParameterTier]
     val `Intelligent-Tiering` = "Intelligent-Tiering".asInstanceOf[ParameterTier]
 
     val values = js.Object.freeze(js.Array(Standard, Advanced, `Intelligent-Tiering`))
@@ -9471,8 +9471,8 @@ package ssm {
   @js.native
   sealed trait ParameterType extends js.Any
   object ParameterType extends js.Object {
-    val String       = "String".asInstanceOf[ParameterType]
-    val StringList   = "StringList".asInstanceOf[ParameterType]
+    val String = "String".asInstanceOf[ParameterType]
+    val StringList = "StringList".asInstanceOf[ParameterType]
     val SecureString = "SecureString".asInstanceOf[ParameterType]
 
     val values = js.Object.freeze(js.Array(String, StringList, SecureString))
@@ -9494,7 +9494,7 @@ package ssm {
         Values: ParametersFilterValueList
     ): ParametersFilter = {
       val __obj = js.Dynamic.literal(
-        "Key"    -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
@@ -9505,8 +9505,8 @@ package ssm {
   @js.native
   sealed trait ParametersFilterKey extends js.Any
   object ParametersFilterKey extends js.Object {
-    val Name  = "Name".asInstanceOf[ParametersFilterKey]
-    val Type  = "Type".asInstanceOf[ParametersFilterKey]
+    val Name = "Name".asInstanceOf[ParametersFilterKey]
+    val Type = "Type".asInstanceOf[ParametersFilterKey]
     val KeyId = "KeyId".asInstanceOf[ParametersFilterKey]
 
     val values = js.Object.freeze(js.Array(Name, Type, KeyId))
@@ -9571,7 +9571,7 @@ package ssm {
   sealed trait PatchAction extends js.Any
   object PatchAction extends js.Object {
     val ALLOW_AS_DEPENDENCY = "ALLOW_AS_DEPENDENCY".asInstanceOf[PatchAction]
-    val BLOCK               = "BLOCK".asInstanceOf[PatchAction]
+    val BLOCK = "BLOCK".asInstanceOf[PatchAction]
 
     val values = js.Object.freeze(js.Array(ALLOW_AS_DEPENDENCY, BLOCK))
   }
@@ -9632,11 +9632,11 @@ package ssm {
     ): PatchComplianceData = {
       val __obj = js.Dynamic.literal(
         "Classification" -> Classification.asInstanceOf[js.Any],
-        "InstalledTime"  -> InstalledTime.asInstanceOf[js.Any],
-        "KBId"           -> KBId.asInstanceOf[js.Any],
-        "Severity"       -> Severity.asInstanceOf[js.Any],
-        "State"          -> State.asInstanceOf[js.Any],
-        "Title"          -> Title.asInstanceOf[js.Any]
+        "InstalledTime" -> InstalledTime.asInstanceOf[js.Any],
+        "KBId" -> KBId.asInstanceOf[js.Any],
+        "Severity" -> Severity.asInstanceOf[js.Any],
+        "State" -> State.asInstanceOf[js.Any],
+        "Title" -> Title.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PatchComplianceData]
@@ -9646,13 +9646,13 @@ package ssm {
   @js.native
   sealed trait PatchComplianceDataState extends js.Any
   object PatchComplianceDataState extends js.Object {
-    val INSTALLED                = "INSTALLED".asInstanceOf[PatchComplianceDataState]
-    val INSTALLED_OTHER          = "INSTALLED_OTHER".asInstanceOf[PatchComplianceDataState]
+    val INSTALLED = "INSTALLED".asInstanceOf[PatchComplianceDataState]
+    val INSTALLED_OTHER = "INSTALLED_OTHER".asInstanceOf[PatchComplianceDataState]
     val INSTALLED_PENDING_REBOOT = "INSTALLED_PENDING_REBOOT".asInstanceOf[PatchComplianceDataState]
-    val INSTALLED_REJECTED       = "INSTALLED_REJECTED".asInstanceOf[PatchComplianceDataState]
-    val MISSING                  = "MISSING".asInstanceOf[PatchComplianceDataState]
-    val NOT_APPLICABLE           = "NOT_APPLICABLE".asInstanceOf[PatchComplianceDataState]
-    val FAILED                   = "FAILED".asInstanceOf[PatchComplianceDataState]
+    val INSTALLED_REJECTED = "INSTALLED_REJECTED".asInstanceOf[PatchComplianceDataState]
+    val MISSING = "MISSING".asInstanceOf[PatchComplianceDataState]
+    val NOT_APPLICABLE = "NOT_APPLICABLE".asInstanceOf[PatchComplianceDataState]
+    val FAILED = "FAILED".asInstanceOf[PatchComplianceDataState]
 
     val values = js.Object.freeze(
       js.Array(
@@ -9670,12 +9670,12 @@ package ssm {
   @js.native
   sealed trait PatchComplianceLevel extends js.Any
   object PatchComplianceLevel extends js.Object {
-    val CRITICAL      = "CRITICAL".asInstanceOf[PatchComplianceLevel]
-    val HIGH          = "HIGH".asInstanceOf[PatchComplianceLevel]
-    val MEDIUM        = "MEDIUM".asInstanceOf[PatchComplianceLevel]
-    val LOW           = "LOW".asInstanceOf[PatchComplianceLevel]
+    val CRITICAL = "CRITICAL".asInstanceOf[PatchComplianceLevel]
+    val HIGH = "HIGH".asInstanceOf[PatchComplianceLevel]
+    val MEDIUM = "MEDIUM".asInstanceOf[PatchComplianceLevel]
+    val LOW = "LOW".asInstanceOf[PatchComplianceLevel]
     val INFORMATIONAL = "INFORMATIONAL".asInstanceOf[PatchComplianceLevel]
-    val UNSPECIFIED   = "UNSPECIFIED".asInstanceOf[PatchComplianceLevel]
+    val UNSPECIFIED = "UNSPECIFIED".asInstanceOf[PatchComplianceLevel]
 
     val values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED))
   }
@@ -9683,8 +9683,8 @@ package ssm {
   @js.native
   sealed trait PatchDeploymentStatus extends js.Any
   object PatchDeploymentStatus extends js.Object {
-    val APPROVED          = "APPROVED".asInstanceOf[PatchDeploymentStatus]
-    val PENDING_APPROVAL  = "PENDING_APPROVAL".asInstanceOf[PatchDeploymentStatus]
+    val APPROVED = "APPROVED".asInstanceOf[PatchDeploymentStatus]
+    val PENDING_APPROVAL = "PENDING_APPROVAL".asInstanceOf[PatchDeploymentStatus]
     val EXPLICIT_APPROVED = "EXPLICIT_APPROVED".asInstanceOf[PatchDeploymentStatus]
     val EXPLICIT_REJECTED = "EXPLICIT_REJECTED".asInstanceOf[PatchDeploymentStatus]
 
@@ -9709,7 +9709,7 @@ package ssm {
         Values: PatchFilterValueList
     ): PatchFilter = {
       val __obj = js.Dynamic.literal(
-        "Key"    -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
@@ -9741,15 +9741,15 @@ package ssm {
   @js.native
   sealed trait PatchFilterKey extends js.Any
   object PatchFilterKey extends js.Object {
-    val PATCH_SET      = "PATCH_SET".asInstanceOf[PatchFilterKey]
-    val PRODUCT        = "PRODUCT".asInstanceOf[PatchFilterKey]
+    val PATCH_SET = "PATCH_SET".asInstanceOf[PatchFilterKey]
+    val PRODUCT = "PRODUCT".asInstanceOf[PatchFilterKey]
     val PRODUCT_FAMILY = "PRODUCT_FAMILY".asInstanceOf[PatchFilterKey]
     val CLASSIFICATION = "CLASSIFICATION".asInstanceOf[PatchFilterKey]
-    val MSRC_SEVERITY  = "MSRC_SEVERITY".asInstanceOf[PatchFilterKey]
-    val PATCH_ID       = "PATCH_ID".asInstanceOf[PatchFilterKey]
-    val SECTION        = "SECTION".asInstanceOf[PatchFilterKey]
-    val PRIORITY       = "PRIORITY".asInstanceOf[PatchFilterKey]
-    val SEVERITY       = "SEVERITY".asInstanceOf[PatchFilterKey]
+    val MSRC_SEVERITY = "MSRC_SEVERITY".asInstanceOf[PatchFilterKey]
+    val PATCH_ID = "PATCH_ID".asInstanceOf[PatchFilterKey]
+    val SECTION = "SECTION".asInstanceOf[PatchFilterKey]
+    val PRIORITY = "PRIORITY".asInstanceOf[PatchFilterKey]
+    val SEVERITY = "SEVERITY".asInstanceOf[PatchFilterKey]
 
     val values = js.Object.freeze(
       js.Array(PATCH_SET, PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID, SECTION, PRIORITY, SEVERITY)
@@ -9781,7 +9781,7 @@ package ssm {
   @js.native
   sealed trait PatchOperationType extends js.Any
   object PatchOperationType extends js.Object {
-    val Scan    = "Scan".asInstanceOf[PatchOperationType]
+    val Scan = "Scan".asInstanceOf[PatchOperationType]
     val Install = "Install".asInstanceOf[PatchOperationType]
 
     val values = js.Object.freeze(js.Array(Scan, Install))
@@ -9812,12 +9812,12 @@ package ssm {
   @js.native
   sealed trait PatchProperty extends js.Any
   object PatchProperty extends js.Object {
-    val PRODUCT        = "PRODUCT".asInstanceOf[PatchProperty]
+    val PRODUCT = "PRODUCT".asInstanceOf[PatchProperty]
     val PRODUCT_FAMILY = "PRODUCT_FAMILY".asInstanceOf[PatchProperty]
     val CLASSIFICATION = "CLASSIFICATION".asInstanceOf[PatchProperty]
-    val MSRC_SEVERITY  = "MSRC_SEVERITY".asInstanceOf[PatchProperty]
-    val PRIORITY       = "PRIORITY".asInstanceOf[PatchProperty]
-    val SEVERITY       = "SEVERITY".asInstanceOf[PatchProperty]
+    val MSRC_SEVERITY = "MSRC_SEVERITY".asInstanceOf[PatchProperty]
+    val PRIORITY = "PRIORITY".asInstanceOf[PatchProperty]
+    val SEVERITY = "SEVERITY".asInstanceOf[PatchProperty]
 
     val values = js.Object.freeze(js.Array(PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY, PRIORITY, SEVERITY))
   }
@@ -9879,7 +9879,7 @@ package ssm {
   @js.native
   sealed trait PatchSet extends js.Any
   object PatchSet extends js.Object {
-    val OS          = "OS".asInstanceOf[PatchSet]
+    val OS = "OS".asInstanceOf[PatchSet]
     val APPLICATION = "APPLICATION".asInstanceOf[PatchSet]
 
     val values = js.Object.freeze(js.Array(OS, APPLICATION))
@@ -9904,8 +9904,8 @@ package ssm {
     ): PatchSource = {
       val __obj = js.Dynamic.literal(
         "Configuration" -> Configuration.asInstanceOf[js.Any],
-        "Name"          -> Name.asInstanceOf[js.Any],
-        "Products"      -> Products.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Products" -> Products.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PatchSource]
@@ -9940,9 +9940,9 @@ package ssm {
   @js.native
   sealed trait PingStatus extends js.Any
   object PingStatus extends js.Object {
-    val Online         = "Online".asInstanceOf[PingStatus]
+    val Online = "Online".asInstanceOf[PingStatus]
     val ConnectionLost = "ConnectionLost".asInstanceOf[PingStatus]
-    val Inactive       = "Inactive".asInstanceOf[PingStatus]
+    val Inactive = "Inactive".asInstanceOf[PingStatus]
 
     val values = js.Object.freeze(js.Array(Online, ConnectionLost, Inactive))
   }
@@ -9951,7 +9951,7 @@ package ssm {
   sealed trait PlatformType extends js.Any
   object PlatformType extends js.Object {
     val Windows = "Windows".asInstanceOf[PlatformType]
-    val Linux   = "Linux".asInstanceOf[PlatformType]
+    val Linux = "Linux".asInstanceOf[PlatformType]
 
     val values = js.Object.freeze(js.Array(Windows, Linux))
   }
@@ -10010,11 +10010,11 @@ package ssm {
         UploadType: js.UndefOr[ComplianceUploadType] = js.undefined
     ): PutComplianceItemsRequest = {
       val __obj = js.Dynamic.literal(
-        "ComplianceType"   -> ComplianceType.asInstanceOf[js.Any],
+        "ComplianceType" -> ComplianceType.asInstanceOf[js.Any],
         "ExecutionSummary" -> ExecutionSummary.asInstanceOf[js.Any],
-        "Items"            -> Items.asInstanceOf[js.Any],
-        "ResourceId"       -> ResourceId.asInstanceOf[js.Any],
-        "ResourceType"     -> ResourceType.asInstanceOf[js.Any]
+        "Items" -> Items.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
+        "ResourceType" -> ResourceType.asInstanceOf[js.Any]
       )
 
       ItemContentHash.foreach(__v => __obj.updateDynamic("ItemContentHash")(__v.asInstanceOf[js.Any]))
@@ -10050,7 +10050,7 @@ package ssm {
     ): PutInventoryRequest = {
       val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
-        "Items"      -> Items.asInstanceOf[js.Any]
+        "Items" -> Items.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutInventoryRequest]
@@ -10104,7 +10104,7 @@ package ssm {
         Type: js.UndefOr[ParameterType] = js.undefined
     ): PutParameterRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"  -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -10144,7 +10144,7 @@ package ssm {
   sealed trait RebootOption extends js.Any
   object RebootOption extends js.Object {
     val RebootIfNeeded = "RebootIfNeeded".asInstanceOf[RebootOption]
-    val NoReboot       = "NoReboot".asInstanceOf[RebootOption]
+    val NoReboot = "NoReboot".asInstanceOf[RebootOption]
 
     val values = js.Object.freeze(js.Array(RebootIfNeeded, NoReboot))
   }
@@ -10247,8 +10247,8 @@ package ssm {
     ): RegisterTargetWithMaintenanceWindowRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceType" -> ResourceType.asInstanceOf[js.Any],
-        "Targets"      -> Targets.asInstanceOf[js.Any],
-        "WindowId"     -> WindowId.asInstanceOf[js.Any]
+        "Targets" -> Targets.asInstanceOf[js.Any],
+        "WindowId" -> WindowId.asInstanceOf[js.Any]
       )
 
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
@@ -10313,11 +10313,11 @@ package ssm {
     ): RegisterTaskWithMaintenanceWindowRequest = {
       val __obj = js.Dynamic.literal(
         "MaxConcurrency" -> MaxConcurrency.asInstanceOf[js.Any],
-        "MaxErrors"      -> MaxErrors.asInstanceOf[js.Any],
-        "Targets"        -> Targets.asInstanceOf[js.Any],
-        "TaskArn"        -> TaskArn.asInstanceOf[js.Any],
-        "TaskType"       -> TaskType.asInstanceOf[js.Any],
-        "WindowId"       -> WindowId.asInstanceOf[js.Any]
+        "MaxErrors" -> MaxErrors.asInstanceOf[js.Any],
+        "Targets" -> Targets.asInstanceOf[js.Any],
+        "TaskArn" -> TaskArn.asInstanceOf[js.Any],
+        "TaskType" -> TaskType.asInstanceOf[js.Any],
+        "WindowId" -> WindowId.asInstanceOf[js.Any]
       )
 
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
@@ -10384,9 +10384,9 @@ package ssm {
         TagKeys: KeyList
     ): RemoveTagsFromResourceRequest = {
       val __obj = js.Dynamic.literal(
-        "ResourceId"   -> ResourceId.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "ResourceType" -> ResourceType.asInstanceOf[js.Any],
-        "TagKeys"      -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RemoveTagsFromResourceRequest]
@@ -10643,7 +10643,7 @@ package ssm {
     ): ResourceDataSyncS3Destination = {
       val __obj = js.Dynamic.literal(
         "BucketName" -> BucketName.asInstanceOf[js.Any],
-        "Region"     -> Region.asInstanceOf[js.Any],
+        "Region" -> Region.asInstanceOf[js.Any],
         "SyncFormat" -> SyncFormat.asInstanceOf[js.Any]
       )
 
@@ -10683,7 +10683,7 @@ package ssm {
     ): ResourceDataSyncSource = {
       val __obj = js.Dynamic.literal(
         "SourceRegions" -> SourceRegions.asInstanceOf[js.Any],
-        "SourceType"    -> SourceType.asInstanceOf[js.Any]
+        "SourceType" -> SourceType.asInstanceOf[js.Any]
       )
 
       AwsOrganizationsSource.foreach(__v => __obj.updateDynamic("AwsOrganizationsSource")(__v.asInstanceOf[js.Any]))
@@ -10731,8 +10731,8 @@ package ssm {
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {
     val ManagedInstance = "ManagedInstance".asInstanceOf[ResourceType]
-    val Document        = "Document".asInstanceOf[ResourceType]
-    val EC2Instance     = "EC2Instance".asInstanceOf[ResourceType]
+    val Document = "Document".asInstanceOf[ResourceType]
+    val EC2Instance = "EC2Instance".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(js.Array(ManagedInstance, Document, EC2Instance))
   }
@@ -10740,12 +10740,12 @@ package ssm {
   @js.native
   sealed trait ResourceTypeForTagging extends js.Any
   object ResourceTypeForTagging extends js.Object {
-    val Document          = "Document".asInstanceOf[ResourceTypeForTagging]
-    val ManagedInstance   = "ManagedInstance".asInstanceOf[ResourceTypeForTagging]
+    val Document = "Document".asInstanceOf[ResourceTypeForTagging]
+    val ManagedInstance = "ManagedInstance".asInstanceOf[ResourceTypeForTagging]
     val MaintenanceWindow = "MaintenanceWindow".asInstanceOf[ResourceTypeForTagging]
-    val Parameter         = "Parameter".asInstanceOf[ResourceTypeForTagging]
-    val PatchBaseline     = "PatchBaseline".asInstanceOf[ResourceTypeForTagging]
-    val OpsItem           = "OpsItem".asInstanceOf[ResourceTypeForTagging]
+    val Parameter = "Parameter".asInstanceOf[ResourceTypeForTagging]
+    val PatchBaseline = "PatchBaseline".asInstanceOf[ResourceTypeForTagging]
+    val OpsItem = "OpsItem".asInstanceOf[ResourceTypeForTagging]
 
     val values =
       js.Object.freeze(js.Array(Document, ManagedInstance, MaintenanceWindow, Parameter, PatchBaseline, OpsItem))
@@ -10897,7 +10897,7 @@ package ssm {
     ): SendAutomationSignalRequest = {
       val __obj = js.Dynamic.literal(
         "AutomationExecutionId" -> AutomationExecutionId.asInstanceOf[js.Any],
-        "SignalType"            -> SignalType.asInstanceOf[js.Any]
+        "SignalType" -> SignalType.asInstanceOf[js.Any]
       )
 
       Payload.foreach(__v => __obj.updateDynamic("Payload")(__v.asInstanceOf[js.Any]))
@@ -11095,7 +11095,7 @@ package ssm {
         value: SessionFilterValue
     ): SessionFilter = {
       val __obj = js.Dynamic.literal(
-        "key"   -> key.asInstanceOf[js.Any],
+        "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
 
@@ -11106,11 +11106,11 @@ package ssm {
   @js.native
   sealed trait SessionFilterKey extends js.Any
   object SessionFilterKey extends js.Object {
-    val InvokedAfter  = "InvokedAfter".asInstanceOf[SessionFilterKey]
+    val InvokedAfter = "InvokedAfter".asInstanceOf[SessionFilterKey]
     val InvokedBefore = "InvokedBefore".asInstanceOf[SessionFilterKey]
-    val Target        = "Target".asInstanceOf[SessionFilterKey]
-    val Owner         = "Owner".asInstanceOf[SessionFilterKey]
-    val Status        = "Status".asInstanceOf[SessionFilterKey]
+    val Target = "Target".asInstanceOf[SessionFilterKey]
+    val Owner = "Owner".asInstanceOf[SessionFilterKey]
+    val Status = "Status".asInstanceOf[SessionFilterKey]
 
     val values = js.Object.freeze(js.Array(InvokedAfter, InvokedBefore, Target, Owner, Status))
   }
@@ -11140,7 +11140,7 @@ package ssm {
   @js.native
   sealed trait SessionState extends js.Any
   object SessionState extends js.Object {
-    val Active  = "Active".asInstanceOf[SessionState]
+    val Active = "Active".asInstanceOf[SessionState]
     val History = "History".asInstanceOf[SessionState]
 
     val values = js.Object.freeze(js.Array(Active, History))
@@ -11149,12 +11149,12 @@ package ssm {
   @js.native
   sealed trait SessionStatus extends js.Any
   object SessionStatus extends js.Object {
-    val Connected    = "Connected".asInstanceOf[SessionStatus]
-    val Connecting   = "Connecting".asInstanceOf[SessionStatus]
+    val Connected = "Connected".asInstanceOf[SessionStatus]
+    val Connecting = "Connecting".asInstanceOf[SessionStatus]
     val Disconnected = "Disconnected".asInstanceOf[SessionStatus]
-    val Terminated   = "Terminated".asInstanceOf[SessionStatus]
-    val Terminating  = "Terminating".asInstanceOf[SessionStatus]
-    val Failed       = "Failed".asInstanceOf[SessionStatus]
+    val Terminated = "Terminated".asInstanceOf[SessionStatus]
+    val Terminating = "Terminating".asInstanceOf[SessionStatus]
+    val Failed = "Failed".asInstanceOf[SessionStatus]
 
     val values = js.Object.freeze(js.Array(Connected, Connecting, Disconnected, Terminated, Terminating, Failed))
   }
@@ -11196,11 +11196,11 @@ package ssm {
   @js.native
   sealed trait SignalType extends js.Any
   object SignalType extends js.Object {
-    val Approve   = "Approve".asInstanceOf[SignalType]
-    val Reject    = "Reject".asInstanceOf[SignalType]
+    val Approve = "Approve".asInstanceOf[SignalType]
+    val Reject = "Reject".asInstanceOf[SignalType]
     val StartStep = "StartStep".asInstanceOf[SignalType]
-    val StopStep  = "StopStep".asInstanceOf[SignalType]
-    val Resume    = "Resume".asInstanceOf[SignalType]
+    val StopStep = "StopStep".asInstanceOf[SignalType]
+    val Resume = "Resume".asInstanceOf[SignalType]
 
     val values = js.Object.freeze(js.Array(Approve, Reject, StartStep, StopStep, Resume))
   }
@@ -11447,7 +11447,7 @@ package ssm {
         Values: StepExecutionFilterValueList
     ): StepExecutionFilter = {
       val __obj = js.Dynamic.literal(
-        "Key"    -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
@@ -11458,12 +11458,12 @@ package ssm {
   @js.native
   sealed trait StepExecutionFilterKey extends js.Any
   object StepExecutionFilterKey extends js.Object {
-    val StartTimeBefore     = "StartTimeBefore".asInstanceOf[StepExecutionFilterKey]
-    val StartTimeAfter      = "StartTimeAfter".asInstanceOf[StepExecutionFilterKey]
+    val StartTimeBefore = "StartTimeBefore".asInstanceOf[StepExecutionFilterKey]
+    val StartTimeAfter = "StartTimeAfter".asInstanceOf[StepExecutionFilterKey]
     val StepExecutionStatus = "StepExecutionStatus".asInstanceOf[StepExecutionFilterKey]
-    val StepExecutionId     = "StepExecutionId".asInstanceOf[StepExecutionFilterKey]
-    val StepName            = "StepName".asInstanceOf[StepExecutionFilterKey]
-    val Action              = "Action".asInstanceOf[StepExecutionFilterKey]
+    val StepExecutionId = "StepExecutionId".asInstanceOf[StepExecutionFilterKey]
+    val StepName = "StepName".asInstanceOf[StepExecutionFilterKey]
+    val Action = "Action".asInstanceOf[StepExecutionFilterKey]
 
     val values = js.Object.freeze(
       js.Array(StartTimeBefore, StartTimeAfter, StepExecutionStatus, StepExecutionId, StepName, Action)
@@ -11508,7 +11508,7 @@ package ssm {
   sealed trait StopType extends js.Any
   object StopType extends js.Object {
     val Complete = "Complete".asInstanceOf[StopType]
-    val Cancel   = "Cancel".asInstanceOf[StopType]
+    val Cancel = "Cancel".asInstanceOf[StopType]
 
     val values = js.Object.freeze(js.Array(Complete, Cancel))
   }
@@ -11529,7 +11529,7 @@ package ssm {
         Value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -11737,8 +11737,8 @@ package ssm {
     ): UpdateAssociationStatusRequest = {
       val __obj = js.Dynamic.literal(
         "AssociationStatus" -> AssociationStatus.asInstanceOf[js.Any],
-        "InstanceId"        -> InstanceId.asInstanceOf[js.Any],
-        "Name"              -> Name.asInstanceOf[js.Any]
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateAssociationStatusRequest]
@@ -11775,7 +11775,7 @@ package ssm {
     ): UpdateDocumentDefaultVersionRequest = {
       val __obj = js.Dynamic.literal(
         "DocumentVersion" -> DocumentVersion.asInstanceOf[js.Any],
-        "Name"            -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateDocumentDefaultVersionRequest]
@@ -11822,7 +11822,7 @@ package ssm {
     ): UpdateDocumentRequest = {
       val __obj = js.Dynamic.literal(
         "Content" -> Content.asInstanceOf[js.Any],
-        "Name"    -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       Attachments.foreach(__v => __obj.updateDynamic("Attachments")(__v.asInstanceOf[js.Any]))
@@ -11976,7 +11976,7 @@ package ssm {
         Targets: js.UndefOr[Targets] = js.undefined
     ): UpdateMaintenanceWindowTargetRequest = {
       val __obj = js.Dynamic.literal(
-        "WindowId"       -> WindowId.asInstanceOf[js.Any],
+        "WindowId" -> WindowId.asInstanceOf[js.Any],
         "WindowTargetId" -> WindowTargetId.asInstanceOf[js.Any]
       )
 
@@ -12057,7 +12057,7 @@ package ssm {
         TaskParameters: js.UndefOr[MaintenanceWindowTaskParameters] = js.undefined
     ): UpdateMaintenanceWindowTaskRequest = {
       val __obj = js.Dynamic.literal(
-        "WindowId"     -> WindowId.asInstanceOf[js.Any],
+        "WindowId" -> WindowId.asInstanceOf[js.Any],
         "WindowTaskId" -> WindowTaskId.asInstanceOf[js.Any]
       )
 
@@ -12142,7 +12142,7 @@ package ssm {
         InstanceId: ManagedInstanceId
     ): UpdateManagedInstanceRoleRequest = {
       val __obj = js.Dynamic.literal(
-        "IamRole"    -> IamRole.asInstanceOf[js.Any],
+        "IamRole" -> IamRole.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
@@ -12353,9 +12353,9 @@ package ssm {
         SyncType: ResourceDataSyncType
     ): UpdateResourceDataSyncRequest = {
       val __obj = js.Dynamic.literal(
-        "SyncName"   -> SyncName.asInstanceOf[js.Any],
+        "SyncName" -> SyncName.asInstanceOf[js.Any],
         "SyncSource" -> SyncSource.asInstanceOf[js.Any],
-        "SyncType"   -> SyncType.asInstanceOf[js.Any]
+        "SyncType" -> SyncType.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateResourceDataSyncRequest]
@@ -12391,7 +12391,7 @@ package ssm {
         SettingValue: ServiceSettingValue
     ): UpdateServiceSettingRequest = {
       val __obj = js.Dynamic.literal(
-        "SettingId"    -> SettingId.asInstanceOf[js.Any],
+        "SettingId" -> SettingId.asInstanceOf[js.Any],
         "SettingValue" -> SettingValue.asInstanceOf[js.Any]
       )
 

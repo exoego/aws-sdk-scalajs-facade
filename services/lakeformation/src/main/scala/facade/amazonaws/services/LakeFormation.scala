@@ -7,29 +7,29 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object lakeformation {
-  type BatchPermissionsFailureList      = js.Array[BatchPermissionsFailureEntry]
+  type BatchPermissionsFailureList = js.Array[BatchPermissionsFailureEntry]
   type BatchPermissionsRequestEntryList = js.Array[BatchPermissionsRequestEntry]
-  type CatalogIdString                  = String
-  type ColumnNames                      = js.Array[NameString]
-  type DataLakePrincipalList            = js.Array[DataLakePrincipal]
-  type DataLakePrincipalString          = String
-  type DescriptionString                = String
-  type FilterConditionList              = js.Array[FilterCondition]
-  type IAMRoleArn                       = String
-  type Identifier                       = String
-  type LastModifiedTimestamp            = js.Date
-  type NameString                       = String
-  type NullableBoolean                  = Boolean
-  type PageSize                         = Int
-  type PermissionList                   = js.Array[Permission]
-  type PrincipalPermissionsList         = js.Array[PrincipalPermissions]
+  type CatalogIdString = String
+  type ColumnNames = js.Array[NameString]
+  type DataLakePrincipalList = js.Array[DataLakePrincipal]
+  type DataLakePrincipalString = String
+  type DescriptionString = String
+  type FilterConditionList = js.Array[FilterCondition]
+  type IAMRoleArn = String
+  type Identifier = String
+  type LastModifiedTimestamp = js.Date
+  type NameString = String
+  type NullableBoolean = Boolean
+  type PageSize = Int
+  type PermissionList = js.Array[Permission]
+  type PrincipalPermissionsList = js.Array[PrincipalPermissions]
   type PrincipalResourcePermissionsList = js.Array[PrincipalResourcePermissions]
-  type ResourceArnString                = String
-  type ResourceInfoList                 = js.Array[ResourceInfo]
-  type StringValue                      = String
-  type StringValueList                  = js.Array[StringValue]
-  type Token                            = String
-  type TrustedResourceOwners            = js.Array[CatalogIdString]
+  type ResourceArnString = String
+  type ResourceInfoList = js.Array[ResourceInfo]
+  type StringValue = String
+  type StringValueList = js.Array[StringValue]
+  type Token = String
+  type TrustedResourceOwners = js.Array[CatalogIdString]
 
   implicit final class LakeFormationOps(private val service: LakeFormation) extends AnyVal {
 
@@ -75,19 +75,19 @@ package lakeformation {
     def batchGrantPermissions(params: BatchGrantPermissionsRequest): Request[BatchGrantPermissionsResponse] = js.native
     def batchRevokePermissions(params: BatchRevokePermissionsRequest): Request[BatchRevokePermissionsResponse] =
       js.native
-    def deregisterResource(params: DeregisterResourceRequest): Request[DeregisterResourceResponse]    = js.native
-    def describeResource(params: DescribeResourceRequest): Request[DescribeResourceResponse]          = js.native
+    def deregisterResource(params: DeregisterResourceRequest): Request[DeregisterResourceResponse] = js.native
+    def describeResource(params: DescribeResourceRequest): Request[DescribeResourceResponse] = js.native
     def getDataLakeSettings(params: GetDataLakeSettingsRequest): Request[GetDataLakeSettingsResponse] = js.native
     def getEffectivePermissionsForPath(
         params: GetEffectivePermissionsForPathRequest
-    ): Request[GetEffectivePermissionsForPathResponse]                                                = js.native
-    def grantPermissions(params: GrantPermissionsRequest): Request[GrantPermissionsResponse]          = js.native
-    def listPermissions(params: ListPermissionsRequest): Request[ListPermissionsResponse]             = js.native
-    def listResources(params: ListResourcesRequest): Request[ListResourcesResponse]                   = js.native
+    ): Request[GetEffectivePermissionsForPathResponse] = js.native
+    def grantPermissions(params: GrantPermissionsRequest): Request[GrantPermissionsResponse] = js.native
+    def listPermissions(params: ListPermissionsRequest): Request[ListPermissionsResponse] = js.native
+    def listResources(params: ListResourcesRequest): Request[ListResourcesResponse] = js.native
     def putDataLakeSettings(params: PutDataLakeSettingsRequest): Request[PutDataLakeSettingsResponse] = js.native
-    def registerResource(params: RegisterResourceRequest): Request[RegisterResourceResponse]          = js.native
-    def revokePermissions(params: RevokePermissionsRequest): Request[RevokePermissionsResponse]       = js.native
-    def updateResource(params: UpdateResourceRequest): Request[UpdateResourceResponse]                = js.native
+    def registerResource(params: RegisterResourceRequest): Request[RegisterResourceResponse] = js.native
+    def revokePermissions(params: RevokePermissionsRequest): Request[RevokePermissionsResponse] = js.native
+    def updateResource(params: UpdateResourceRequest): Request[UpdateResourceResponse] = js.native
   }
 
   @js.native
@@ -259,17 +259,17 @@ package lakeformation {
   @js.native
   sealed trait ComparisonOperator extends js.Any
   object ComparisonOperator extends js.Object {
-    val EQ           = "EQ".asInstanceOf[ComparisonOperator]
-    val NE           = "NE".asInstanceOf[ComparisonOperator]
-    val LE           = "LE".asInstanceOf[ComparisonOperator]
-    val LT           = "LT".asInstanceOf[ComparisonOperator]
-    val GE           = "GE".asInstanceOf[ComparisonOperator]
-    val GT           = "GT".asInstanceOf[ComparisonOperator]
-    val CONTAINS     = "CONTAINS".asInstanceOf[ComparisonOperator]
+    val EQ = "EQ".asInstanceOf[ComparisonOperator]
+    val NE = "NE".asInstanceOf[ComparisonOperator]
+    val LE = "LE".asInstanceOf[ComparisonOperator]
+    val LT = "LT".asInstanceOf[ComparisonOperator]
+    val GE = "GE".asInstanceOf[ComparisonOperator]
+    val GT = "GT".asInstanceOf[ComparisonOperator]
+    val CONTAINS = "CONTAINS".asInstanceOf[ComparisonOperator]
     val NOT_CONTAINS = "NOT_CONTAINS".asInstanceOf[ComparisonOperator]
-    val BEGINS_WITH  = "BEGINS_WITH".asInstanceOf[ComparisonOperator]
-    val IN           = "IN".asInstanceOf[ComparisonOperator]
-    val BETWEEN      = "BETWEEN".asInstanceOf[ComparisonOperator]
+    val BEGINS_WITH = "BEGINS_WITH".asInstanceOf[ComparisonOperator]
+    val IN = "IN".asInstanceOf[ComparisonOperator]
+    val BETWEEN = "BETWEEN".asInstanceOf[ComparisonOperator]
 
     val values = js.Object.freeze(js.Array(EQ, NE, LE, LT, GE, GT, CONTAINS, NOT_CONTAINS, BEGINS_WITH, IN, BETWEEN))
   }
@@ -298,9 +298,9 @@ package lakeformation {
   @js.native
   sealed trait DataLakeResourceType extends js.Any
   object DataLakeResourceType extends js.Object {
-    val CATALOG       = "CATALOG".asInstanceOf[DataLakeResourceType]
-    val DATABASE      = "DATABASE".asInstanceOf[DataLakeResourceType]
-    val TABLE         = "TABLE".asInstanceOf[DataLakeResourceType]
+    val CATALOG = "CATALOG".asInstanceOf[DataLakeResourceType]
+    val DATABASE = "DATABASE".asInstanceOf[DataLakeResourceType]
+    val TABLE = "TABLE".asInstanceOf[DataLakeResourceType]
     val DATA_LOCATION = "DATA_LOCATION".asInstanceOf[DataLakeResourceType]
 
     val values = js.Object.freeze(js.Array(CATALOG, DATABASE, TABLE, DATA_LOCATION))
@@ -476,8 +476,8 @@ package lakeformation {
   @js.native
   sealed trait FieldNameString extends js.Any
   object FieldNameString extends js.Object {
-    val RESOURCE_ARN  = "RESOURCE_ARN".asInstanceOf[FieldNameString]
-    val ROLE_ARN      = "ROLE_ARN".asInstanceOf[FieldNameString]
+    val RESOURCE_ARN = "RESOURCE_ARN".asInstanceOf[FieldNameString]
+    val ROLE_ARN = "ROLE_ARN".asInstanceOf[FieldNameString]
     val LAST_MODIFIED = "LAST_MODIFIED".asInstanceOf[FieldNameString]
 
     val values = js.Object.freeze(js.Array(RESOURCE_ARN, ROLE_ARN, LAST_MODIFIED))
@@ -606,8 +606,8 @@ package lakeformation {
     ): GrantPermissionsRequest = {
       val __obj = js.Dynamic.literal(
         "Permissions" -> Permissions.asInstanceOf[js.Any],
-        "Principal"   -> Principal.asInstanceOf[js.Any],
-        "Resource"    -> Resource.asInstanceOf[js.Any]
+        "Principal" -> Principal.asInstanceOf[js.Any],
+        "Resource" -> Resource.asInstanceOf[js.Any]
       )
 
       CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
@@ -727,15 +727,15 @@ package lakeformation {
   @js.native
   sealed trait Permission extends js.Any
   object Permission extends js.Object {
-    val ALL                  = "ALL".asInstanceOf[Permission]
-    val SELECT               = "SELECT".asInstanceOf[Permission]
-    val ALTER                = "ALTER".asInstanceOf[Permission]
-    val DROP                 = "DROP".asInstanceOf[Permission]
-    val DELETE               = "DELETE".asInstanceOf[Permission]
-    val INSERT               = "INSERT".asInstanceOf[Permission]
-    val DESCRIBE             = "DESCRIBE".asInstanceOf[Permission]
-    val CREATE_DATABASE      = "CREATE_DATABASE".asInstanceOf[Permission]
-    val CREATE_TABLE         = "CREATE_TABLE".asInstanceOf[Permission]
+    val ALL = "ALL".asInstanceOf[Permission]
+    val SELECT = "SELECT".asInstanceOf[Permission]
+    val ALTER = "ALTER".asInstanceOf[Permission]
+    val DROP = "DROP".asInstanceOf[Permission]
+    val DELETE = "DELETE".asInstanceOf[Permission]
+    val INSERT = "INSERT".asInstanceOf[Permission]
+    val DESCRIBE = "DESCRIBE".asInstanceOf[Permission]
+    val CREATE_DATABASE = "CREATE_DATABASE".asInstanceOf[Permission]
+    val CREATE_TABLE = "CREATE_TABLE".asInstanceOf[Permission]
     val DATA_LOCATION_ACCESS = "DATA_LOCATION_ACCESS".asInstanceOf[Permission]
 
     val values = js.Object.freeze(
@@ -942,8 +942,8 @@ package lakeformation {
     ): RevokePermissionsRequest = {
       val __obj = js.Dynamic.literal(
         "Permissions" -> Permissions.asInstanceOf[js.Any],
-        "Principal"   -> Principal.asInstanceOf[js.Any],
-        "Resource"    -> Resource.asInstanceOf[js.Any]
+        "Principal" -> Principal.asInstanceOf[js.Any],
+        "Resource" -> Resource.asInstanceOf[js.Any]
       )
 
       CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
@@ -1037,7 +1037,7 @@ package lakeformation {
     ): TableWithColumnsResource = {
       val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
-        "Name"         -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
@@ -1061,7 +1061,7 @@ package lakeformation {
     ): UpdateResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "RoleArn"     -> RoleArn.asInstanceOf[js.Any]
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateResourceRequest]

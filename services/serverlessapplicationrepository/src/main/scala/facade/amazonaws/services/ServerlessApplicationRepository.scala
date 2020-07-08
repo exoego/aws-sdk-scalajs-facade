@@ -7,20 +7,20 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object serverlessapplicationrepository {
-  type MaxItems                             = Int
-  type __boolean                            = Boolean
-  type __integer                            = Int
+  type MaxItems = Int
+  type __boolean = Boolean
+  type __integer = Int
   type __listOfApplicationDependencySummary = js.Array[ApplicationDependencySummary]
-  type __listOfApplicationPolicyStatement   = js.Array[ApplicationPolicyStatement]
-  type __listOfApplicationSummary           = js.Array[ApplicationSummary]
-  type __listOfCapability                   = js.Array[Capability]
-  type __listOfParameterDefinition          = js.Array[ParameterDefinition]
-  type __listOfParameterValue               = js.Array[ParameterValue]
-  type __listOfRollbackTrigger              = js.Array[RollbackTrigger]
-  type __listOfTag                          = js.Array[Tag]
-  type __listOfVersionSummary               = js.Array[VersionSummary]
-  type __listOf__string                     = js.Array[__string]
-  type __string                             = String
+  type __listOfApplicationPolicyStatement = js.Array[ApplicationPolicyStatement]
+  type __listOfApplicationSummary = js.Array[ApplicationSummary]
+  type __listOfCapability = js.Array[Capability]
+  type __listOfParameterDefinition = js.Array[ParameterDefinition]
+  type __listOfParameterValue = js.Array[ParameterValue]
+  type __listOfRollbackTrigger = js.Array[RollbackTrigger]
+  type __listOfTag = js.Array[Tag]
+  type __listOfVersionSummary = js.Array[VersionSummary]
+  type __listOf__string = js.Array[__string]
+  type __string = String
 
   implicit final class ServerlessApplicationRepositoryOps(private val service: ServerlessApplicationRepository)
       extends AnyVal {
@@ -76,9 +76,9 @@ package serverlessapplicationrepository {
     ): Request[CreateCloudFormationChangeSetResponse] = js.native
     def createCloudFormationTemplate(
         params: CreateCloudFormationTemplateRequest
-    ): Request[CreateCloudFormationTemplateResponse]                                                     = js.native
-    def deleteApplication(params: DeleteApplicationRequest): Request[js.Object]                          = js.native
-    def getApplication(params: GetApplicationRequest): Request[GetApplicationResponse]                   = js.native
+    ): Request[CreateCloudFormationTemplateResponse] = js.native
+    def deleteApplication(params: DeleteApplicationRequest): Request[js.Object] = js.native
+    def getApplication(params: GetApplicationRequest): Request[GetApplicationResponse] = js.native
     def getApplicationPolicy(params: GetApplicationPolicyRequest): Request[GetApplicationPolicyResponse] = js.native
     def getCloudFormationTemplate(
         params: GetCloudFormationTemplateRequest
@@ -88,10 +88,10 @@ package serverlessapplicationrepository {
     ): Request[ListApplicationDependenciesResponse] = js.native
     def listApplicationVersions(params: ListApplicationVersionsRequest): Request[ListApplicationVersionsResponse] =
       js.native
-    def listApplications(params: ListApplicationsRequest): Request[ListApplicationsResponse]             = js.native
+    def listApplications(params: ListApplicationsRequest): Request[ListApplicationsResponse] = js.native
     def putApplicationPolicy(params: PutApplicationPolicyRequest): Request[PutApplicationPolicyResponse] = js.native
-    def unshareApplication(params: UnshareApplicationRequest): Request[js.Object]                        = js.native
-    def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResponse]          = js.native
+    def unshareApplication(params: UnshareApplicationRequest): Request[js.Object] = js.native
+    def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResponse] = js.native
   }
 
   /**
@@ -110,7 +110,7 @@ package serverlessapplicationrepository {
         SemanticVersion: __string
     ): ApplicationDependencySummary = {
       val __obj = js.Dynamic.literal(
-        "ApplicationId"   -> ApplicationId.asInstanceOf[js.Any],
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "SemanticVersion" -> SemanticVersion.asInstanceOf[js.Any]
       )
 
@@ -138,7 +138,7 @@ package serverlessapplicationrepository {
         StatementId: js.UndefOr[__string] = js.undefined
     ): ApplicationPolicyStatement = {
       val __obj = js.Dynamic.literal(
-        "Actions"    -> Actions.asInstanceOf[js.Any],
+        "Actions" -> Actions.asInstanceOf[js.Any],
         "Principals" -> Principals.asInstanceOf[js.Any]
       )
 
@@ -177,9 +177,9 @@ package serverlessapplicationrepository {
     ): ApplicationSummary = {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "Author"        -> Author.asInstanceOf[js.Any],
-        "Description"   -> Description.asInstanceOf[js.Any],
-        "Name"          -> Name.asInstanceOf[js.Any]
+        "Author" -> Author.asInstanceOf[js.Any],
+        "Description" -> Description.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
@@ -196,9 +196,9 @@ package serverlessapplicationrepository {
   @js.native
   sealed trait Capability extends js.Any
   object Capability extends js.Object {
-    val CAPABILITY_IAM             = "CAPABILITY_IAM".asInstanceOf[Capability]
-    val CAPABILITY_NAMED_IAM       = "CAPABILITY_NAMED_IAM".asInstanceOf[Capability]
-    val CAPABILITY_AUTO_EXPAND     = "CAPABILITY_AUTO_EXPAND".asInstanceOf[Capability]
+    val CAPABILITY_IAM = "CAPABILITY_IAM".asInstanceOf[Capability]
+    val CAPABILITY_NAMED_IAM = "CAPABILITY_NAMED_IAM".asInstanceOf[Capability]
+    val CAPABILITY_AUTO_EXPAND = "CAPABILITY_AUTO_EXPAND".asInstanceOf[Capability]
     val CAPABILITY_RESOURCE_POLICY = "CAPABILITY_RESOURCE_POLICY".asInstanceOf[Capability]
 
     val values = js.Object.freeze(
@@ -245,9 +245,9 @@ package serverlessapplicationrepository {
         TemplateUrl: js.UndefOr[__string] = js.undefined
     ): CreateApplicationRequest = {
       val __obj = js.Dynamic.literal(
-        "Author"      -> Author.asInstanceOf[js.Any],
+        "Author" -> Author.asInstanceOf[js.Any],
         "Description" -> Description.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       HomePageUrl.foreach(__v => __obj.updateDynamic("HomePageUrl")(__v.asInstanceOf[js.Any]))
@@ -339,7 +339,7 @@ package serverlessapplicationrepository {
         TemplateUrl: js.UndefOr[__string] = js.undefined
     ): CreateApplicationVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "ApplicationId"   -> ApplicationId.asInstanceOf[js.Any],
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "SemanticVersion" -> SemanticVersion.asInstanceOf[js.Any]
       )
 
@@ -427,7 +427,7 @@ package serverlessapplicationrepository {
     ): CreateCloudFormationChangeSetRequest = {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "StackName"     -> StackName.asInstanceOf[js.Any]
+        "StackName" -> StackName.asInstanceOf[js.Any]
       )
 
       Capabilities.foreach(__v => __obj.updateDynamic("Capabilities")(__v.asInstanceOf[js.Any]))
@@ -664,7 +664,7 @@ package serverlessapplicationrepository {
     ): GetCloudFormationTemplateRequest = {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "TemplateId"    -> TemplateId.asInstanceOf[js.Any]
+        "TemplateId" -> TemplateId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetCloudFormationTemplateRequest]
@@ -870,7 +870,7 @@ package serverlessapplicationrepository {
         Type: js.UndefOr[__string] = js.undefined
     ): ParameterDefinition = {
       val __obj = js.Dynamic.literal(
-        "Name"                  -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "ReferencedByResources" -> ReferencedByResources.asInstanceOf[js.Any]
       )
 
@@ -905,7 +905,7 @@ package serverlessapplicationrepository {
         Value: __string
     ): ParameterValue = {
       val __obj = js.Dynamic.literal(
-        "Name"  -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -927,7 +927,7 @@ package serverlessapplicationrepository {
     ): PutApplicationPolicyRequest = {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "Statements"    -> Statements.asInstanceOf[js.Any]
+        "Statements" -> Statements.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutApplicationPolicyRequest]
@@ -990,7 +990,7 @@ package serverlessapplicationrepository {
         Type: __string
     ): RollbackTrigger = {
       val __obj = js.Dynamic.literal(
-        "Arn"  -> Arn.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
@@ -1002,8 +1002,8 @@ package serverlessapplicationrepository {
   sealed trait Status extends js.Any
   object Status extends js.Object {
     val PREPARING = "PREPARING".asInstanceOf[Status]
-    val ACTIVE    = "ACTIVE".asInstanceOf[Status]
-    val EXPIRED   = "EXPIRED".asInstanceOf[Status]
+    val ACTIVE = "ACTIVE".asInstanceOf[Status]
+    val EXPIRED = "EXPIRED".asInstanceOf[Status]
 
     val values = js.Object.freeze(js.Array(PREPARING, ACTIVE, EXPIRED))
   }
@@ -1025,7 +1025,7 @@ package serverlessapplicationrepository {
         Value: __string
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -1046,7 +1046,7 @@ package serverlessapplicationrepository {
         OrganizationId: __string
     ): UnshareApplicationRequest = {
       val __obj = js.Dynamic.literal(
-        "ApplicationId"  -> ApplicationId.asInstanceOf[js.Any],
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
 
@@ -1172,13 +1172,13 @@ package serverlessapplicationrepository {
         SourceCodeUrl: js.UndefOr[__string] = js.undefined
     ): Version = {
       val __obj = js.Dynamic.literal(
-        "ApplicationId"        -> ApplicationId.asInstanceOf[js.Any],
-        "CreationTime"         -> CreationTime.asInstanceOf[js.Any],
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
         "ParameterDefinitions" -> ParameterDefinitions.asInstanceOf[js.Any],
         "RequiredCapabilities" -> RequiredCapabilities.asInstanceOf[js.Any],
-        "ResourcesSupported"   -> ResourcesSupported.asInstanceOf[js.Any],
-        "SemanticVersion"      -> SemanticVersion.asInstanceOf[js.Any],
-        "TemplateUrl"          -> TemplateUrl.asInstanceOf[js.Any]
+        "ResourcesSupported" -> ResourcesSupported.asInstanceOf[js.Any],
+        "SemanticVersion" -> SemanticVersion.asInstanceOf[js.Any],
+        "TemplateUrl" -> TemplateUrl.asInstanceOf[js.Any]
       )
 
       SourceCodeArchiveUrl.foreach(__v => __obj.updateDynamic("SourceCodeArchiveUrl")(__v.asInstanceOf[js.Any]))
@@ -1207,8 +1207,8 @@ package serverlessapplicationrepository {
         SourceCodeUrl: js.UndefOr[__string] = js.undefined
     ): VersionSummary = {
       val __obj = js.Dynamic.literal(
-        "ApplicationId"   -> ApplicationId.asInstanceOf[js.Any],
-        "CreationTime"    -> CreationTime.asInstanceOf[js.Any],
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
         "SemanticVersion" -> SemanticVersion.asInstanceOf[js.Any]
       )
 

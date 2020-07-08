@@ -7,30 +7,30 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object kafka {
-  type MaxResults                     = Int
-  type __blob                         = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type __boolean                      = Boolean
-  type __double                       = Double
-  type __integer                      = Int
-  type __integerMin1Max15             = Int
-  type __integerMin1Max16384          = Int
-  type __listOfBrokerEBSVolumeInfo    = js.Array[BrokerEBSVolumeInfo]
-  type __listOfClusterInfo            = js.Array[ClusterInfo]
-  type __listOfClusterOperationInfo   = js.Array[ClusterOperationInfo]
-  type __listOfClusterOperationStep   = js.Array[ClusterOperationStep]
+  type MaxResults = Int
+  type __blob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type __boolean = Boolean
+  type __double = Double
+  type __integer = Int
+  type __integerMin1Max15 = Int
+  type __integerMin1Max16384 = Int
+  type __listOfBrokerEBSVolumeInfo = js.Array[BrokerEBSVolumeInfo]
+  type __listOfClusterInfo = js.Array[ClusterInfo]
+  type __listOfClusterOperationInfo = js.Array[ClusterOperationInfo]
+  type __listOfClusterOperationStep = js.Array[ClusterOperationStep]
   type __listOfCompatibleKafkaVersion = js.Array[CompatibleKafkaVersion]
-  type __listOfConfiguration          = js.Array[Configuration]
-  type __listOfConfigurationRevision  = js.Array[ConfigurationRevision]
-  type __listOfKafkaVersion           = js.Array[KafkaVersion]
-  type __listOfNodeInfo               = js.Array[NodeInfo]
-  type __listOf__string               = js.Array[__string]
-  type __long                         = Double
-  type __mapOf__string                = js.Dictionary[__string]
-  type __string                       = String
-  type __stringMin1Max128             = String
-  type __stringMin1Max64              = String
-  type __stringMin5Max32              = String
-  type __timestampIso8601             = js.Date
+  type __listOfConfiguration = js.Array[Configuration]
+  type __listOfConfigurationRevision = js.Array[ConfigurationRevision]
+  type __listOfKafkaVersion = js.Array[KafkaVersion]
+  type __listOfNodeInfo = js.Array[NodeInfo]
+  type __listOf__string = js.Array[__string]
+  type __long = Double
+  type __mapOf__string = js.Dictionary[__string]
+  type __string = String
+  type __stringMin1Max128 = String
+  type __stringMin1Max64 = String
+  type __stringMin5Max32 = String
+  type __timestampIso8601 = js.Date
 
   implicit final class KafkaOps(private val service: Kafka) extends AnyVal {
 
@@ -97,39 +97,39 @@ package kafka {
   class Kafka() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createCluster(params: CreateClusterRequest): Request[CreateClusterResponse]                   = js.native
+    def createCluster(params: CreateClusterRequest): Request[CreateClusterResponse] = js.native
     def createConfiguration(params: CreateConfigurationRequest): Request[CreateConfigurationResponse] = js.native
-    def deleteCluster(params: DeleteClusterRequest): Request[DeleteClusterResponse]                   = js.native
-    def describeCluster(params: DescribeClusterRequest): Request[DescribeClusterResponse]             = js.native
+    def deleteCluster(params: DeleteClusterRequest): Request[DeleteClusterResponse] = js.native
+    def describeCluster(params: DescribeClusterRequest): Request[DescribeClusterResponse] = js.native
     def describeClusterOperation(params: DescribeClusterOperationRequest): Request[DescribeClusterOperationResponse] =
       js.native
     def describeConfiguration(params: DescribeConfigurationRequest): Request[DescribeConfigurationResponse] = js.native
     def describeConfigurationRevision(
         params: DescribeConfigurationRevisionRequest
-    ): Request[DescribeConfigurationRevisionResponse]                                                 = js.native
+    ): Request[DescribeConfigurationRevisionResponse] = js.native
     def getBootstrapBrokers(params: GetBootstrapBrokersRequest): Request[GetBootstrapBrokersResponse] = js.native
     def getCompatibleKafkaVersions(
         params: GetCompatibleKafkaVersionsRequest
-    ): Request[GetCompatibleKafkaVersionsResponse]                                                          = js.native
+    ): Request[GetCompatibleKafkaVersionsResponse] = js.native
     def listClusterOperations(params: ListClusterOperationsRequest): Request[ListClusterOperationsResponse] = js.native
-    def listClusters(params: ListClustersRequest): Request[ListClustersResponse]                            = js.native
+    def listClusters(params: ListClustersRequest): Request[ListClustersResponse] = js.native
     def listConfigurationRevisions(
         params: ListConfigurationRevisionsRequest
-    ): Request[ListConfigurationRevisionsResponse]                                                    = js.native
-    def listConfigurations(params: ListConfigurationsRequest): Request[ListConfigurationsResponse]    = js.native
-    def listKafkaVersions(params: ListKafkaVersionsRequest): Request[ListKafkaVersionsResponse]       = js.native
-    def listNodes(params: ListNodesRequest): Request[ListNodesResponse]                               = js.native
+    ): Request[ListConfigurationRevisionsResponse] = js.native
+    def listConfigurations(params: ListConfigurationsRequest): Request[ListConfigurationsResponse] = js.native
+    def listKafkaVersions(params: ListKafkaVersionsRequest): Request[ListKafkaVersionsResponse] = js.native
+    def listNodes(params: ListNodesRequest): Request[ListNodesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def tagResource(params: TagResourceRequest): Request[js.Object]                                   = js.native
-    def untagResource(params: UntagResourceRequest): Request[js.Object]                               = js.native
-    def updateBrokerCount(params: UpdateBrokerCountRequest): Request[UpdateBrokerCountResponse]       = js.native
+    def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
+    def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
+    def updateBrokerCount(params: UpdateBrokerCountRequest): Request[UpdateBrokerCountResponse] = js.native
     def updateBrokerStorage(params: UpdateBrokerStorageRequest): Request[UpdateBrokerStorageResponse] = js.native
     def updateClusterConfiguration(
         params: UpdateClusterConfigurationRequest
     ): Request[UpdateClusterConfigurationResponse] = js.native
     def updateClusterKafkaVersion(
         params: UpdateClusterKafkaVersionRequest
-    ): Request[UpdateClusterKafkaVersionResponse]                                            = js.native
+    ): Request[UpdateClusterKafkaVersionResponse] = js.native
     def updateMonitoring(params: UpdateMonitoringRequest): Request[UpdateMonitoringResponse] = js.native
   }
 
@@ -162,7 +162,7 @@ package kafka {
     ): BrokerEBSVolumeInfo = {
       val __obj = js.Dynamic.literal(
         "KafkaBrokerNodeId" -> KafkaBrokerNodeId.asInstanceOf[js.Any],
-        "VolumeSizeGB"      -> VolumeSizeGB.asInstanceOf[js.Any]
+        "VolumeSizeGB" -> VolumeSizeGB.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[BrokerEBSVolumeInfo]
@@ -214,7 +214,7 @@ package kafka {
     ): BrokerNodeGroupInfo = {
       val __obj = js.Dynamic.literal(
         "ClientSubnets" -> ClientSubnets.asInstanceOf[js.Any],
-        "InstanceType"  -> InstanceType.asInstanceOf[js.Any]
+        "InstanceType" -> InstanceType.asInstanceOf[js.Any]
       )
 
       BrokerAZDistribution.foreach(__v => __obj.updateDynamic("BrokerAZDistribution")(__v.asInstanceOf[js.Any]))
@@ -310,9 +310,9 @@ package kafka {
   @js.native
   sealed trait ClientBroker extends js.Any
   object ClientBroker extends js.Object {
-    val TLS           = "TLS".asInstanceOf[ClientBroker]
+    val TLS = "TLS".asInstanceOf[ClientBroker]
     val TLS_PLAINTEXT = "TLS_PLAINTEXT".asInstanceOf[ClientBroker]
-    val PLAINTEXT     = "PLAINTEXT".asInstanceOf[ClientBroker]
+    val PLAINTEXT = "PLAINTEXT".asInstanceOf[ClientBroker]
 
     val values = js.Object.freeze(js.Array(TLS, TLS_PLAINTEXT, PLAINTEXT))
   }
@@ -503,11 +503,11 @@ package kafka {
   @js.native
   sealed trait ClusterState extends js.Any
   object ClusterState extends js.Object {
-    val ACTIVE   = "ACTIVE".asInstanceOf[ClusterState]
+    val ACTIVE = "ACTIVE".asInstanceOf[ClusterState]
     val CREATING = "CREATING".asInstanceOf[ClusterState]
     val UPDATING = "UPDATING".asInstanceOf[ClusterState]
     val DELETING = "DELETING".asInstanceOf[ClusterState]
-    val FAILED   = "FAILED".asInstanceOf[ClusterState]
+    val FAILED = "FAILED".asInstanceOf[ClusterState]
 
     val values = js.Object.freeze(js.Array(ACTIVE, CREATING, UPDATING, DELETING, FAILED))
   }
@@ -558,12 +558,12 @@ package kafka {
         Name: __string
     ): Configuration = {
       val __obj = js.Dynamic.literal(
-        "Arn"            -> Arn.asInstanceOf[js.Any],
-        "CreationTime"   -> CreationTime.asInstanceOf[js.Any],
-        "Description"    -> Description.asInstanceOf[js.Any],
-        "KafkaVersions"  -> KafkaVersions.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "Description" -> Description.asInstanceOf[js.Any],
+        "KafkaVersions" -> KafkaVersions.asInstanceOf[js.Any],
         "LatestRevision" -> LatestRevision.asInstanceOf[js.Any],
-        "Name"           -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[Configuration]
@@ -586,7 +586,7 @@ package kafka {
         Revision: __long
     ): ConfigurationInfo = {
       val __obj = js.Dynamic.literal(
-        "Arn"      -> Arn.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "Revision" -> Revision.asInstanceOf[js.Any]
       )
 
@@ -613,7 +613,7 @@ package kafka {
     ): ConfigurationRevision = {
       val __obj = js.Dynamic.literal(
         "CreationTime" -> CreationTime.asInstanceOf[js.Any],
-        "Revision"     -> Revision.asInstanceOf[js.Any]
+        "Revision" -> Revision.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -653,8 +653,8 @@ package kafka {
     ): CreateClusterRequest = {
       val __obj = js.Dynamic.literal(
         "BrokerNodeGroupInfo" -> BrokerNodeGroupInfo.asInstanceOf[js.Any],
-        "ClusterName"         -> ClusterName.asInstanceOf[js.Any],
-        "KafkaVersion"        -> KafkaVersion.asInstanceOf[js.Any],
+        "ClusterName" -> ClusterName.asInstanceOf[js.Any],
+        "KafkaVersion" -> KafkaVersion.asInstanceOf[js.Any],
         "NumberOfBrokerNodes" -> NumberOfBrokerNodes.asInstanceOf[js.Any]
       )
 
@@ -708,7 +708,7 @@ package kafka {
         KafkaVersions: js.UndefOr[__listOf__string] = js.undefined
     ): CreateConfigurationRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"             -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "ServerProperties" -> ServerProperties.asInstanceOf[js.Any]
       )
 
@@ -913,7 +913,7 @@ package kafka {
         Revision: __long
     ): DescribeConfigurationRevisionRequest = {
       val __obj = js.Dynamic.literal(
-        "Arn"      -> Arn.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "Revision" -> Revision.asInstanceOf[js.Any]
       )
 
@@ -1039,8 +1039,8 @@ package kafka {
   @js.native
   sealed trait EnhancedMonitoring extends js.Any
   object EnhancedMonitoring extends js.Object {
-    val DEFAULT              = "DEFAULT".asInstanceOf[EnhancedMonitoring]
-    val PER_BROKER           = "PER_BROKER".asInstanceOf[EnhancedMonitoring]
+    val DEFAULT = "DEFAULT".asInstanceOf[EnhancedMonitoring]
+    val PER_BROKER = "PER_BROKER".asInstanceOf[EnhancedMonitoring]
     val PER_TOPIC_PER_BROKER = "PER_TOPIC_PER_BROKER".asInstanceOf[EnhancedMonitoring]
 
     val values = js.Object.freeze(js.Array(DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER))
@@ -1222,7 +1222,7 @@ package kafka {
   @js.native
   sealed trait KafkaVersionStatus extends js.Any
   object KafkaVersionStatus extends js.Object {
-    val ACTIVE     = "ACTIVE".asInstanceOf[KafkaVersionStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[KafkaVersionStatus]
     val DEPRECATED = "DEPRECATED".asInstanceOf[KafkaVersionStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, DEPRECATED))
@@ -1812,7 +1812,7 @@ package kafka {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -1854,7 +1854,7 @@ package kafka {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -1876,8 +1876,8 @@ package kafka {
         TargetNumberOfBrokerNodes: __integerMin1Max15
     ): UpdateBrokerCountRequest = {
       val __obj = js.Dynamic.literal(
-        "ClusterArn"                -> ClusterArn.asInstanceOf[js.Any],
-        "CurrentVersion"            -> CurrentVersion.asInstanceOf[js.Any],
+        "ClusterArn" -> ClusterArn.asInstanceOf[js.Any],
+        "CurrentVersion" -> CurrentVersion.asInstanceOf[js.Any],
         "TargetNumberOfBrokerNodes" -> TargetNumberOfBrokerNodes.asInstanceOf[js.Any]
       )
 
@@ -1919,8 +1919,8 @@ package kafka {
         TargetBrokerEBSVolumeInfo: __listOfBrokerEBSVolumeInfo
     ): UpdateBrokerStorageRequest = {
       val __obj = js.Dynamic.literal(
-        "ClusterArn"                -> ClusterArn.asInstanceOf[js.Any],
-        "CurrentVersion"            -> CurrentVersion.asInstanceOf[js.Any],
+        "ClusterArn" -> ClusterArn.asInstanceOf[js.Any],
+        "CurrentVersion" -> CurrentVersion.asInstanceOf[js.Any],
         "TargetBrokerEBSVolumeInfo" -> TargetBrokerEBSVolumeInfo.asInstanceOf[js.Any]
       )
 
@@ -1962,9 +1962,9 @@ package kafka {
         CurrentVersion: __string
     ): UpdateClusterConfigurationRequest = {
       val __obj = js.Dynamic.literal(
-        "ClusterArn"        -> ClusterArn.asInstanceOf[js.Any],
+        "ClusterArn" -> ClusterArn.asInstanceOf[js.Any],
         "ConfigurationInfo" -> ConfigurationInfo.asInstanceOf[js.Any],
-        "CurrentVersion"    -> CurrentVersion.asInstanceOf[js.Any]
+        "CurrentVersion" -> CurrentVersion.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateClusterConfigurationRequest]
@@ -2007,8 +2007,8 @@ package kafka {
         ConfigurationInfo: js.UndefOr[ConfigurationInfo] = js.undefined
     ): UpdateClusterKafkaVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "ClusterArn"         -> ClusterArn.asInstanceOf[js.Any],
-        "CurrentVersion"     -> CurrentVersion.asInstanceOf[js.Any],
+        "ClusterArn" -> ClusterArn.asInstanceOf[js.Any],
+        "CurrentVersion" -> CurrentVersion.asInstanceOf[js.Any],
         "TargetKafkaVersion" -> TargetKafkaVersion.asInstanceOf[js.Any]
       )
 
@@ -2058,7 +2058,7 @@ package kafka {
         OpenMonitoring: js.UndefOr[OpenMonitoringInfo] = js.undefined
     ): UpdateMonitoringRequest = {
       val __obj = js.Dynamic.literal(
-        "ClusterArn"     -> ClusterArn.asInstanceOf[js.Any],
+        "ClusterArn" -> ClusterArn.asInstanceOf[js.Any],
         "CurrentVersion" -> CurrentVersion.asInstanceOf[js.Any]
       )
 

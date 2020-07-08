@@ -7,79 +7,79 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object applicationinsights {
-  type AffectedResource                       = String
-  type AmazonResourceName                     = String
-  type ApplicationComponentList               = js.Array[ApplicationComponent]
-  type ApplicationInfoList                    = js.Array[ApplicationInfo]
-  type CWEMonitorEnabled                      = Boolean
-  type CloudWatchEventDetailType              = String
-  type CloudWatchEventId                      = String
-  type CodeDeployApplication                  = String
-  type CodeDeployDeploymentGroup              = String
-  type CodeDeployDeploymentId                 = String
-  type CodeDeployInstanceGroupId              = String
-  type CodeDeployState                        = String
-  type ComponentConfiguration                 = String
-  type ComponentName                          = String
-  type ConfigurationEventDetail               = String
-  type ConfigurationEventList                 = js.Array[ConfigurationEvent]
+  type AffectedResource = String
+  type AmazonResourceName = String
+  type ApplicationComponentList = js.Array[ApplicationComponent]
+  type ApplicationInfoList = js.Array[ApplicationInfo]
+  type CWEMonitorEnabled = Boolean
+  type CloudWatchEventDetailType = String
+  type CloudWatchEventId = String
+  type CodeDeployApplication = String
+  type CodeDeployDeploymentGroup = String
+  type CodeDeployDeploymentId = String
+  type CodeDeployInstanceGroupId = String
+  type CodeDeployState = String
+  type ComponentConfiguration = String
+  type ComponentName = String
+  type ConfigurationEventDetail = String
+  type ConfigurationEventList = js.Array[ConfigurationEvent]
   type ConfigurationEventMonitoredResourceARN = String
-  type ConfigurationEventResourceName         = String
-  type ConfigurationEventTime                 = js.Date
-  type Ec2State                               = String
-  type EndTime                                = js.Date
-  type Feedback                               = js.Dictionary[FeedbackValue]
-  type HealthEventArn                         = String
-  type HealthEventDescription                 = String
-  type HealthEventTypeCategory                = String
-  type HealthEventTypeCode                    = String
-  type HealthService                          = String
-  type Insights                               = String
-  type LifeCycle                              = String
-  type LineTime                               = js.Date
-  type LogGroup                               = String
-  type LogPatternList                         = js.Array[LogPattern]
-  type LogPatternName                         = String
-  type LogPatternRank                         = Int
-  type LogPatternRegex                        = String
-  type LogPatternSetList                      = js.Array[LogPatternSetName]
-  type LogPatternSetName                      = String
-  type LogText                                = String
-  type MaxEntities                            = Int
-  type MetricName                             = String
-  type MetricNamespace                        = String
-  type Monitor                                = Boolean
-  type NewComponentName                       = String
-  type ObservationId                          = String
-  type ObservationList                        = js.Array[Observation]
-  type OpsCenterEnabled                       = Boolean
-  type OpsItemSNSTopicArn                     = String
-  type PaginationToken                        = String
-  type ProblemId                              = String
-  type ProblemList                            = js.Array[Problem]
-  type Remarks                                = String
-  type RemoveSNSTopic                         = Boolean
-  type ResourceARN                            = String
-  type ResourceGroupName                      = String
-  type ResourceList                           = js.Array[ResourceARN]
-  type ResourceType                           = String
-  type SourceARN                              = String
-  type SourceType                             = String
-  type StartTime                              = js.Date
-  type TagKey                                 = String
-  type TagKeyList                             = js.Array[TagKey]
-  type TagList                                = js.Array[Tag]
-  type TagValue                               = String
-  type Title                                  = String
-  type Unit                                   = String
-  type Value                                  = Double
-  type XRayErrorPercent                       = Int
-  type XRayFaultPercent                       = Int
-  type XRayNodeName                           = String
-  type XRayNodeType                           = String
-  type XRayRequestAverageLatency              = Double
-  type XRayRequestCount                       = Int
-  type XRayThrottlePercent                    = Int
+  type ConfigurationEventResourceName = String
+  type ConfigurationEventTime = js.Date
+  type Ec2State = String
+  type EndTime = js.Date
+  type Feedback = js.Dictionary[FeedbackValue]
+  type HealthEventArn = String
+  type HealthEventDescription = String
+  type HealthEventTypeCategory = String
+  type HealthEventTypeCode = String
+  type HealthService = String
+  type Insights = String
+  type LifeCycle = String
+  type LineTime = js.Date
+  type LogGroup = String
+  type LogPatternList = js.Array[LogPattern]
+  type LogPatternName = String
+  type LogPatternRank = Int
+  type LogPatternRegex = String
+  type LogPatternSetList = js.Array[LogPatternSetName]
+  type LogPatternSetName = String
+  type LogText = String
+  type MaxEntities = Int
+  type MetricName = String
+  type MetricNamespace = String
+  type Monitor = Boolean
+  type NewComponentName = String
+  type ObservationId = String
+  type ObservationList = js.Array[Observation]
+  type OpsCenterEnabled = Boolean
+  type OpsItemSNSTopicArn = String
+  type PaginationToken = String
+  type ProblemId = String
+  type ProblemList = js.Array[Problem]
+  type Remarks = String
+  type RemoveSNSTopic = Boolean
+  type ResourceARN = String
+  type ResourceGroupName = String
+  type ResourceList = js.Array[ResourceARN]
+  type ResourceType = String
+  type SourceARN = String
+  type SourceType = String
+  type StartTime = js.Date
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type Title = String
+  type Unit = String
+  type Value = Double
+  type XRayErrorPercent = Int
+  type XRayFaultPercent = Int
+  type XRayNodeName = String
+  type XRayNodeType = String
+  type XRayRequestAverageLatency = Double
+  type XRayRequestCount = Int
+  type XRayThrottlePercent = Int
 
   implicit final class ApplicationInsightsOps(private val service: ApplicationInsights) extends AnyVal {
 
@@ -153,41 +153,41 @@ package applicationinsights {
   class ApplicationInsights() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createApplication(params: CreateApplicationRequest): Request[CreateApplicationResponse]       = js.native
-    def createComponent(params: CreateComponentRequest): Request[CreateComponentResponse]             = js.native
-    def createLogPattern(params: CreateLogPatternRequest): Request[CreateLogPatternResponse]          = js.native
-    def deleteApplication(params: DeleteApplicationRequest): Request[DeleteApplicationResponse]       = js.native
-    def deleteComponent(params: DeleteComponentRequest): Request[DeleteComponentResponse]             = js.native
-    def deleteLogPattern(params: DeleteLogPatternRequest): Request[DeleteLogPatternResponse]          = js.native
+    def createApplication(params: CreateApplicationRequest): Request[CreateApplicationResponse] = js.native
+    def createComponent(params: CreateComponentRequest): Request[CreateComponentResponse] = js.native
+    def createLogPattern(params: CreateLogPatternRequest): Request[CreateLogPatternResponse] = js.native
+    def deleteApplication(params: DeleteApplicationRequest): Request[DeleteApplicationResponse] = js.native
+    def deleteComponent(params: DeleteComponentRequest): Request[DeleteComponentResponse] = js.native
+    def deleteLogPattern(params: DeleteLogPatternRequest): Request[DeleteLogPatternResponse] = js.native
     def describeApplication(params: DescribeApplicationRequest): Request[DescribeApplicationResponse] = js.native
-    def describeComponent(params: DescribeComponentRequest): Request[DescribeComponentResponse]       = js.native
+    def describeComponent(params: DescribeComponentRequest): Request[DescribeComponentResponse] = js.native
     def describeComponentConfiguration(
         params: DescribeComponentConfigurationRequest
     ): Request[DescribeComponentConfigurationResponse] = js.native
     def describeComponentConfigurationRecommendation(
         params: DescribeComponentConfigurationRecommendationRequest
-    ): Request[DescribeComponentConfigurationRecommendationResponse]                                  = js.native
-    def describeLogPattern(params: DescribeLogPatternRequest): Request[DescribeLogPatternResponse]    = js.native
+    ): Request[DescribeComponentConfigurationRecommendationResponse] = js.native
+    def describeLogPattern(params: DescribeLogPatternRequest): Request[DescribeLogPatternResponse] = js.native
     def describeObservation(params: DescribeObservationRequest): Request[DescribeObservationResponse] = js.native
-    def describeProblem(params: DescribeProblemRequest): Request[DescribeProblemResponse]             = js.native
+    def describeProblem(params: DescribeProblemRequest): Request[DescribeProblemResponse] = js.native
     def describeProblemObservations(
         params: DescribeProblemObservationsRequest
-    ): Request[DescribeProblemObservationsResponse]                                          = js.native
+    ): Request[DescribeProblemObservationsResponse] = js.native
     def listApplications(params: ListApplicationsRequest): Request[ListApplicationsResponse] = js.native
-    def listComponents(params: ListComponentsRequest): Request[ListComponentsResponse]       = js.native
+    def listComponents(params: ListComponentsRequest): Request[ListComponentsResponse] = js.native
     def listConfigurationHistory(params: ListConfigurationHistoryRequest): Request[ListConfigurationHistoryResponse] =
       js.native
-    def listLogPatternSets(params: ListLogPatternSetsRequest): Request[ListLogPatternSetsResponse]    = js.native
-    def listLogPatterns(params: ListLogPatternsRequest): Request[ListLogPatternsResponse]             = js.native
-    def listProblems(params: ListProblemsRequest): Request[ListProblemsResponse]                      = js.native
+    def listLogPatternSets(params: ListLogPatternSetsRequest): Request[ListLogPatternSetsResponse] = js.native
+    def listLogPatterns(params: ListLogPatternsRequest): Request[ListLogPatternsResponse] = js.native
+    def listProblems(params: ListProblemsRequest): Request[ListProblemsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
-    def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResponse]       = js.native
-    def updateComponent(params: UpdateComponentRequest): Request[UpdateComponentResponse]             = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResponse] = js.native
+    def updateComponent(params: UpdateComponentRequest): Request[UpdateComponentResponse] = js.native
     def updateComponentConfiguration(
         params: UpdateComponentConfigurationRequest
-    ): Request[UpdateComponentConfigurationResponse]                                         = js.native
+    ): Request[UpdateComponentConfigurationResponse] = js.native
     def updateLogPattern(params: UpdateLogPatternRequest): Request[UpdateLogPatternResponse] = js.native
   }
 
@@ -256,9 +256,9 @@ package applicationinsights {
   @js.native
   sealed trait CloudWatchEventSource extends js.Any
   object CloudWatchEventSource extends js.Object {
-    val EC2         = "EC2".asInstanceOf[CloudWatchEventSource]
+    val EC2 = "EC2".asInstanceOf[CloudWatchEventSource]
     val CODE_DEPLOY = "CODE_DEPLOY".asInstanceOf[CloudWatchEventSource]
-    val HEALTH      = "HEALTH".asInstanceOf[CloudWatchEventSource]
+    val HEALTH = "HEALTH".asInstanceOf[CloudWatchEventSource]
 
     val values = js.Object.freeze(js.Array(EC2, CODE_DEPLOY, HEALTH))
   }
@@ -301,8 +301,8 @@ package applicationinsights {
   sealed trait ConfigurationEventResourceType extends js.Any
   object ConfigurationEventResourceType extends js.Object {
     val CLOUDWATCH_ALARM = "CLOUDWATCH_ALARM".asInstanceOf[ConfigurationEventResourceType]
-    val CLOUDFORMATION   = "CLOUDFORMATION".asInstanceOf[ConfigurationEventResourceType]
-    val SSM_ASSOCIATION  = "SSM_ASSOCIATION".asInstanceOf[ConfigurationEventResourceType]
+    val CLOUDFORMATION = "CLOUDFORMATION".asInstanceOf[ConfigurationEventResourceType]
+    val SSM_ASSOCIATION = "SSM_ASSOCIATION".asInstanceOf[ConfigurationEventResourceType]
 
     val values = js.Object.freeze(js.Array(CLOUDWATCH_ALARM, CLOUDFORMATION, SSM_ASSOCIATION))
   }
@@ -310,8 +310,8 @@ package applicationinsights {
   @js.native
   sealed trait ConfigurationEventStatus extends js.Any
   object ConfigurationEventStatus extends js.Object {
-    val INFO  = "INFO".asInstanceOf[ConfigurationEventStatus]
-    val WARN  = "WARN".asInstanceOf[ConfigurationEventStatus]
+    val INFO = "INFO".asInstanceOf[ConfigurationEventStatus]
+    val WARN = "WARN".asInstanceOf[ConfigurationEventStatus]
     val ERROR = "ERROR".asInstanceOf[ConfigurationEventStatus]
 
     val values = js.Object.freeze(js.Array(INFO, WARN, ERROR))
@@ -378,9 +378,9 @@ package applicationinsights {
         ResourceList: ResourceList
     ): CreateComponentRequest = {
       val __obj = js.Dynamic.literal(
-        "ComponentName"     -> ComponentName.asInstanceOf[js.Any],
+        "ComponentName" -> ComponentName.asInstanceOf[js.Any],
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any],
-        "ResourceList"      -> ResourceList.asInstanceOf[js.Any]
+        "ResourceList" -> ResourceList.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateComponentRequest]
@@ -419,10 +419,10 @@ package applicationinsights {
         ResourceGroupName: ResourceGroupName
     ): CreateLogPatternRequest = {
       val __obj = js.Dynamic.literal(
-        "Pattern"           -> Pattern.asInstanceOf[js.Any],
-        "PatternName"       -> PatternName.asInstanceOf[js.Any],
-        "PatternSetName"    -> PatternSetName.asInstanceOf[js.Any],
-        "Rank"              -> Rank.asInstanceOf[js.Any],
+        "Pattern" -> Pattern.asInstanceOf[js.Any],
+        "PatternName" -> PatternName.asInstanceOf[js.Any],
+        "PatternSetName" -> PatternSetName.asInstanceOf[js.Any],
+        "Rank" -> Rank.asInstanceOf[js.Any],
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
 
@@ -493,7 +493,7 @@ package applicationinsights {
         ResourceGroupName: ResourceGroupName
     ): DeleteComponentRequest = {
       val __obj = js.Dynamic.literal(
-        "ComponentName"     -> ComponentName.asInstanceOf[js.Any],
+        "ComponentName" -> ComponentName.asInstanceOf[js.Any],
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
 
@@ -529,8 +529,8 @@ package applicationinsights {
         ResourceGroupName: ResourceGroupName
     ): DeleteLogPatternRequest = {
       val __obj = js.Dynamic.literal(
-        "PatternName"       -> PatternName.asInstanceOf[js.Any],
-        "PatternSetName"    -> PatternSetName.asInstanceOf[js.Any],
+        "PatternName" -> PatternName.asInstanceOf[js.Any],
+        "PatternSetName" -> PatternSetName.asInstanceOf[js.Any],
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
 
@@ -600,9 +600,9 @@ package applicationinsights {
         Tier: Tier
     ): DescribeComponentConfigurationRecommendationRequest = {
       val __obj = js.Dynamic.literal(
-        "ComponentName"     -> ComponentName.asInstanceOf[js.Any],
+        "ComponentName" -> ComponentName.asInstanceOf[js.Any],
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any],
-        "Tier"              -> Tier.asInstanceOf[js.Any]
+        "Tier" -> Tier.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeComponentConfigurationRecommendationRequest]
@@ -638,7 +638,7 @@ package applicationinsights {
         ResourceGroupName: ResourceGroupName
     ): DescribeComponentConfigurationRequest = {
       val __obj = js.Dynamic.literal(
-        "ComponentName"     -> ComponentName.asInstanceOf[js.Any],
+        "ComponentName" -> ComponentName.asInstanceOf[js.Any],
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
 
@@ -681,7 +681,7 @@ package applicationinsights {
         ResourceGroupName: ResourceGroupName
     ): DescribeComponentRequest = {
       val __obj = js.Dynamic.literal(
-        "ComponentName"     -> ComponentName.asInstanceOf[js.Any],
+        "ComponentName" -> ComponentName.asInstanceOf[js.Any],
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
 
@@ -723,8 +723,8 @@ package applicationinsights {
         ResourceGroupName: ResourceGroupName
     ): DescribeLogPatternRequest = {
       val __obj = js.Dynamic.literal(
-        "PatternName"       -> PatternName.asInstanceOf[js.Any],
-        "PatternSetName"    -> PatternSetName.asInstanceOf[js.Any],
+        "PatternName" -> PatternName.asInstanceOf[js.Any],
+        "PatternSetName" -> PatternSetName.asInstanceOf[js.Any],
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
 
@@ -865,8 +865,8 @@ package applicationinsights {
   sealed trait FeedbackValue extends js.Any
   object FeedbackValue extends js.Object {
     val NOT_SPECIFIED = "NOT_SPECIFIED".asInstanceOf[FeedbackValue]
-    val USEFUL        = "USEFUL".asInstanceOf[FeedbackValue]
-    val NOT_USEFUL    = "NOT_USEFUL".asInstanceOf[FeedbackValue]
+    val USEFUL = "USEFUL".asInstanceOf[FeedbackValue]
+    val NOT_USEFUL = "NOT_USEFUL".asInstanceOf[FeedbackValue]
 
     val values = js.Object.freeze(js.Array(NOT_SPECIFIED, USEFUL, NOT_USEFUL))
   }
@@ -1182,8 +1182,8 @@ package applicationinsights {
   sealed trait LogFilter extends js.Any
   object LogFilter extends js.Object {
     val ERROR = "ERROR".asInstanceOf[LogFilter]
-    val WARN  = "WARN".asInstanceOf[LogFilter]
-    val INFO  = "INFO".asInstanceOf[LogFilter]
+    val WARN = "WARN".asInstanceOf[LogFilter]
+    val INFO = "INFO".asInstanceOf[LogFilter]
 
     val values = js.Object.freeze(js.Array(ERROR, WARN, INFO))
   }
@@ -1410,9 +1410,9 @@ package applicationinsights {
   @js.native
   sealed trait SeverityLevel extends js.Any
   object SeverityLevel extends js.Object {
-    val Low    = "Low".asInstanceOf[SeverityLevel]
+    val Low = "Low".asInstanceOf[SeverityLevel]
     val Medium = "Medium".asInstanceOf[SeverityLevel]
-    val High   = "High".asInstanceOf[SeverityLevel]
+    val High = "High".asInstanceOf[SeverityLevel]
 
     val values = js.Object.freeze(js.Array(Low, Medium, High))
   }
@@ -1420,9 +1420,9 @@ package applicationinsights {
   @js.native
   sealed trait Status extends js.Any
   object Status extends js.Object {
-    val IGNORE   = "IGNORE".asInstanceOf[Status]
+    val IGNORE = "IGNORE".asInstanceOf[Status]
     val RESOLVED = "RESOLVED".asInstanceOf[Status]
-    val PENDING  = "PENDING".asInstanceOf[Status]
+    val PENDING = "PENDING".asInstanceOf[Status]
 
     val values = js.Object.freeze(js.Array(IGNORE, RESOLVED, PENDING))
   }
@@ -1447,7 +1447,7 @@ package applicationinsights {
         Value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -1469,7 +1469,7 @@ package applicationinsights {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -1492,11 +1492,11 @@ package applicationinsights {
   @js.native
   sealed trait Tier extends js.Any
   object Tier extends js.Object {
-    val DEFAULT        = "DEFAULT".asInstanceOf[Tier]
-    val DOT_NET_CORE   = "DOT_NET_CORE".asInstanceOf[Tier]
+    val DEFAULT = "DEFAULT".asInstanceOf[Tier]
+    val DOT_NET_CORE = "DOT_NET_CORE".asInstanceOf[Tier]
     val DOT_NET_WORKER = "DOT_NET_WORKER".asInstanceOf[Tier]
-    val DOT_NET_WEB    = "DOT_NET_WEB".asInstanceOf[Tier]
-    val SQL_SERVER     = "SQL_SERVER".asInstanceOf[Tier]
+    val DOT_NET_WEB = "DOT_NET_WEB".asInstanceOf[Tier]
+    val SQL_SERVER = "SQL_SERVER".asInstanceOf[Tier]
 
     val values = js.Object.freeze(js.Array(DEFAULT, DOT_NET_CORE, DOT_NET_WORKER, DOT_NET_WEB, SQL_SERVER))
   }
@@ -1515,7 +1515,7 @@ package applicationinsights {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -1600,7 +1600,7 @@ package applicationinsights {
         Tier: js.UndefOr[Tier] = js.undefined
     ): UpdateComponentConfigurationRequest = {
       val __obj = js.Dynamic.literal(
-        "ComponentName"     -> ComponentName.asInstanceOf[js.Any],
+        "ComponentName" -> ComponentName.asInstanceOf[js.Any],
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
 
@@ -1641,7 +1641,7 @@ package applicationinsights {
         ResourceList: js.UndefOr[ResourceList] = js.undefined
     ): UpdateComponentRequest = {
       val __obj = js.Dynamic.literal(
-        "ComponentName"     -> ComponentName.asInstanceOf[js.Any],
+        "ComponentName" -> ComponentName.asInstanceOf[js.Any],
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
 
@@ -1683,8 +1683,8 @@ package applicationinsights {
         Rank: js.UndefOr[LogPatternRank] = js.undefined
     ): UpdateLogPatternRequest = {
       val __obj = js.Dynamic.literal(
-        "PatternName"       -> PatternName.asInstanceOf[js.Any],
-        "PatternSetName"    -> PatternSetName.asInstanceOf[js.Any],
+        "PatternName" -> PatternName.asInstanceOf[js.Any],
+        "PatternSetName" -> PatternSetName.asInstanceOf[js.Any],
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
 

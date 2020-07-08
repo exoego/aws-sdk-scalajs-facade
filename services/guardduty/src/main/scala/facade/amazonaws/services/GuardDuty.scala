@@ -7,55 +7,55 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object guardduty {
-  type AccountDetails            = js.Array[AccountDetail]
-  type AccountId                 = String
-  type AccountIds                = js.Array[AccountId]
-  type AdminAccounts             = js.Array[AdminAccount]
-  type ClientToken               = String
-  type CountBySeverity           = js.Dictionary[Int]
-  type Criterion                 = js.Dictionary[Condition]
-  type Destinations              = js.Array[Destination]
-  type DetectorId                = String
-  type DetectorIds               = js.Array[DetectorId]
-  type Email                     = String
-  type Eq                        = js.Array[String]
-  type Equals                    = js.Array[String]
-  type FilterDescription         = String
-  type FilterName                = String
-  type FilterNames               = js.Array[FilterName]
-  type FilterRank                = Int
-  type FindingId                 = String
-  type FindingIds                = js.Array[FindingId]
-  type FindingStatisticTypes     = js.Array[FindingStatisticType]
-  type FindingType               = String
-  type FindingTypes              = js.Array[FindingType]
-  type Findings                  = js.Array[Finding]
-  type GuardDutyArn              = String
-  type Invitations               = js.Array[Invitation]
-  type IpSetIds                  = js.Array[String]
-  type Ipv6Addresses             = js.Array[String]
-  type Location                  = String
-  type MaxResults                = Int
-  type Members                   = js.Array[Member]
-  type Name                      = String
-  type Neq                       = js.Array[String]
-  type NetworkInterfaces         = js.Array[NetworkInterface]
-  type NotEquals                 = js.Array[String]
-  type PortProbeDetails          = js.Array[PortProbeDetail]
-  type PrivateIpAddresses        = js.Array[PrivateIpAddressDetails]
-  type ProductCodes              = js.Array[ProductCode]
-  type S3BucketDetails           = js.Array[S3BucketDetail]
-  type SecurityGroups            = js.Array[SecurityGroup]
-  type TagKey                    = String
-  type TagKeyList                = js.Array[TagKey]
-  type TagMap                    = js.Dictionary[TagValue]
-  type TagValue                  = String
-  type Tags                      = js.Array[Tag]
-  type ThreatIntelSetIds         = js.Array[String]
+  type AccountDetails = js.Array[AccountDetail]
+  type AccountId = String
+  type AccountIds = js.Array[AccountId]
+  type AdminAccounts = js.Array[AdminAccount]
+  type ClientToken = String
+  type CountBySeverity = js.Dictionary[Int]
+  type Criterion = js.Dictionary[Condition]
+  type Destinations = js.Array[Destination]
+  type DetectorId = String
+  type DetectorIds = js.Array[DetectorId]
+  type Email = String
+  type Eq = js.Array[String]
+  type Equals = js.Array[String]
+  type FilterDescription = String
+  type FilterName = String
+  type FilterNames = js.Array[FilterName]
+  type FilterRank = Int
+  type FindingId = String
+  type FindingIds = js.Array[FindingId]
+  type FindingStatisticTypes = js.Array[FindingStatisticType]
+  type FindingType = String
+  type FindingTypes = js.Array[FindingType]
+  type Findings = js.Array[Finding]
+  type GuardDutyArn = String
+  type Invitations = js.Array[Invitation]
+  type IpSetIds = js.Array[String]
+  type Ipv6Addresses = js.Array[String]
+  type Location = String
+  type MaxResults = Int
+  type Members = js.Array[Member]
+  type Name = String
+  type Neq = js.Array[String]
+  type NetworkInterfaces = js.Array[NetworkInterface]
+  type NotEquals = js.Array[String]
+  type PortProbeDetails = js.Array[PortProbeDetail]
+  type PrivateIpAddresses = js.Array[PrivateIpAddressDetails]
+  type ProductCodes = js.Array[ProductCode]
+  type S3BucketDetails = js.Array[S3BucketDetail]
+  type SecurityGroups = js.Array[SecurityGroup]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagMap = js.Dictionary[TagValue]
+  type TagValue = String
+  type Tags = js.Array[Tag]
+  type ThreatIntelSetIds = js.Array[String]
   type ThreatIntelligenceDetails = js.Array[ThreatIntelligenceDetail]
-  type ThreatNames               = js.Array[String]
-  type Timestamp                 = js.Date
-  type UnprocessedAccounts       = js.Array[UnprocessedAccount]
+  type ThreatNames = js.Array[String]
+  type Timestamp = js.Date
+  type UnprocessedAccounts = js.Array[UnprocessedAccount]
 
   implicit final class GuardDutyOps(private val service: GuardDuty) extends AnyVal {
 
@@ -198,25 +198,25 @@ package guardduty {
     def this(config: AWSConfig) = this()
 
     def acceptInvitation(params: AcceptInvitationRequest): Request[AcceptInvitationResponse] = js.native
-    def archiveFindings(params: ArchiveFindingsRequest): Request[ArchiveFindingsResponse]    = js.native
-    def createDetector(params: CreateDetectorRequest): Request[CreateDetectorResponse]       = js.native
-    def createFilter(params: CreateFilterRequest): Request[CreateFilterResponse]             = js.native
-    def createIPSet(params: CreateIPSetRequest): Request[CreateIPSetResponse]                = js.native
-    def createMembers(params: CreateMembersRequest): Request[CreateMembersResponse]          = js.native
+    def archiveFindings(params: ArchiveFindingsRequest): Request[ArchiveFindingsResponse] = js.native
+    def createDetector(params: CreateDetectorRequest): Request[CreateDetectorResponse] = js.native
+    def createFilter(params: CreateFilterRequest): Request[CreateFilterResponse] = js.native
+    def createIPSet(params: CreateIPSetRequest): Request[CreateIPSetResponse] = js.native
+    def createMembers(params: CreateMembersRequest): Request[CreateMembersResponse] = js.native
     def createPublishingDestination(
         params: CreatePublishingDestinationRequest
-    ): Request[CreatePublishingDestinationResponse]                                                      = js.native
+    ): Request[CreatePublishingDestinationResponse] = js.native
     def createSampleFindings(params: CreateSampleFindingsRequest): Request[CreateSampleFindingsResponse] = js.native
     def createThreatIntelSet(params: CreateThreatIntelSetRequest): Request[CreateThreatIntelSetResponse] = js.native
-    def declineInvitations(params: DeclineInvitationsRequest): Request[DeclineInvitationsResponse]       = js.native
-    def deleteDetector(params: DeleteDetectorRequest): Request[DeleteDetectorResponse]                   = js.native
-    def deleteFilter(params: DeleteFilterRequest): Request[DeleteFilterResponse]                         = js.native
-    def deleteIPSet(params: DeleteIPSetRequest): Request[DeleteIPSetResponse]                            = js.native
-    def deleteInvitations(params: DeleteInvitationsRequest): Request[DeleteInvitationsResponse]          = js.native
-    def deleteMembers(params: DeleteMembersRequest): Request[DeleteMembersResponse]                      = js.native
+    def declineInvitations(params: DeclineInvitationsRequest): Request[DeclineInvitationsResponse] = js.native
+    def deleteDetector(params: DeleteDetectorRequest): Request[DeleteDetectorResponse] = js.native
+    def deleteFilter(params: DeleteFilterRequest): Request[DeleteFilterResponse] = js.native
+    def deleteIPSet(params: DeleteIPSetRequest): Request[DeleteIPSetResponse] = js.native
+    def deleteInvitations(params: DeleteInvitationsRequest): Request[DeleteInvitationsResponse] = js.native
+    def deleteMembers(params: DeleteMembersRequest): Request[DeleteMembersResponse] = js.native
     def deletePublishingDestination(
         params: DeletePublishingDestinationRequest
-    ): Request[DeletePublishingDestinationResponse]                                                      = js.native
+    ): Request[DeletePublishingDestinationResponse] = js.native
     def deleteThreatIntelSet(params: DeleteThreatIntelSetRequest): Request[DeleteThreatIntelSetResponse] = js.native
     def describeOrganizationConfiguration(
         params: DescribeOrganizationConfigurationRequest
@@ -229,43 +229,43 @@ package guardduty {
     ): Request[DisableOrganizationAdminAccountResponse] = js.native
     def disassociateFromMasterAccount(
         params: DisassociateFromMasterAccountRequest
-    ): Request[DisassociateFromMasterAccountResponse]                                                 = js.native
+    ): Request[DisassociateFromMasterAccountResponse] = js.native
     def disassociateMembers(params: DisassociateMembersRequest): Request[DisassociateMembersResponse] = js.native
     def enableOrganizationAdminAccount(
         params: EnableOrganizationAdminAccountRequest
-    ): Request[EnableOrganizationAdminAccountResponse]                                                      = js.native
-    def getDetector(params: GetDetectorRequest): Request[GetDetectorResponse]                               = js.native
-    def getFilter(params: GetFilterRequest): Request[GetFilterResponse]                                     = js.native
-    def getFindings(params: GetFindingsRequest): Request[GetFindingsResponse]                               = js.native
+    ): Request[EnableOrganizationAdminAccountResponse] = js.native
+    def getDetector(params: GetDetectorRequest): Request[GetDetectorResponse] = js.native
+    def getFilter(params: GetFilterRequest): Request[GetFilterResponse] = js.native
+    def getFindings(params: GetFindingsRequest): Request[GetFindingsResponse] = js.native
     def getFindingsStatistics(params: GetFindingsStatisticsRequest): Request[GetFindingsStatisticsResponse] = js.native
-    def getIPSet(params: GetIPSetRequest): Request[GetIPSetResponse]                                        = js.native
-    def getInvitationsCount(params: GetInvitationsCountRequest): Request[GetInvitationsCountResponse]       = js.native
-    def getMasterAccount(params: GetMasterAccountRequest): Request[GetMasterAccountResponse]                = js.native
-    def getMembers(params: GetMembersRequest): Request[GetMembersResponse]                                  = js.native
-    def getThreatIntelSet(params: GetThreatIntelSetRequest): Request[GetThreatIntelSetResponse]             = js.native
-    def inviteMembers(params: InviteMembersRequest): Request[InviteMembersResponse]                         = js.native
-    def listDetectors(params: ListDetectorsRequest): Request[ListDetectorsResponse]                         = js.native
-    def listFilters(params: ListFiltersRequest): Request[ListFiltersResponse]                               = js.native
-    def listFindings(params: ListFindingsRequest): Request[ListFindingsResponse]                            = js.native
-    def listIPSets(params: ListIPSetsRequest): Request[ListIPSetsResponse]                                  = js.native
-    def listInvitations(params: ListInvitationsRequest): Request[ListInvitationsResponse]                   = js.native
-    def listMembers(params: ListMembersRequest): Request[ListMembersResponse]                               = js.native
+    def getIPSet(params: GetIPSetRequest): Request[GetIPSetResponse] = js.native
+    def getInvitationsCount(params: GetInvitationsCountRequest): Request[GetInvitationsCountResponse] = js.native
+    def getMasterAccount(params: GetMasterAccountRequest): Request[GetMasterAccountResponse] = js.native
+    def getMembers(params: GetMembersRequest): Request[GetMembersResponse] = js.native
+    def getThreatIntelSet(params: GetThreatIntelSetRequest): Request[GetThreatIntelSetResponse] = js.native
+    def inviteMembers(params: InviteMembersRequest): Request[InviteMembersResponse] = js.native
+    def listDetectors(params: ListDetectorsRequest): Request[ListDetectorsResponse] = js.native
+    def listFilters(params: ListFiltersRequest): Request[ListFiltersResponse] = js.native
+    def listFindings(params: ListFindingsRequest): Request[ListFindingsResponse] = js.native
+    def listIPSets(params: ListIPSetsRequest): Request[ListIPSetsResponse] = js.native
+    def listInvitations(params: ListInvitationsRequest): Request[ListInvitationsResponse] = js.native
+    def listMembers(params: ListMembersRequest): Request[ListMembersResponse] = js.native
     def listOrganizationAdminAccounts(
         params: ListOrganizationAdminAccountsRequest
     ): Request[ListOrganizationAdminAccountsResponse] = js.native
     def listPublishingDestinations(
         params: ListPublishingDestinationsRequest
-    ): Request[ListPublishingDestinationsResponse]                                                    = js.native
+    ): Request[ListPublishingDestinationsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listThreatIntelSets(params: ListThreatIntelSetsRequest): Request[ListThreatIntelSetsResponse] = js.native
     def startMonitoringMembers(params: StartMonitoringMembersRequest): Request[StartMonitoringMembersResponse] =
       js.native
     def stopMonitoringMembers(params: StopMonitoringMembersRequest): Request[StopMonitoringMembersResponse] = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                               = js.native
-    def unarchiveFindings(params: UnarchiveFindingsRequest): Request[UnarchiveFindingsResponse]             = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                         = js.native
-    def updateDetector(params: UpdateDetectorRequest): Request[UpdateDetectorResponse]                      = js.native
-    def updateFilter(params: UpdateFilterRequest): Request[UpdateFilterResponse]                            = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def unarchiveFindings(params: UnarchiveFindingsRequest): Request[UnarchiveFindingsResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateDetector(params: UpdateDetectorRequest): Request[UpdateDetectorResponse] = js.native
+    def updateFilter(params: UpdateFilterRequest): Request[UpdateFilterResponse] = js.native
     def updateFindingsFeedback(params: UpdateFindingsFeedbackRequest): Request[UpdateFindingsFeedbackResponse] =
       js.native
     def updateIPSet(params: UpdateIPSetRequest): Request[UpdateIPSetResponse] = js.native
@@ -274,7 +274,7 @@ package guardduty {
     ): Request[UpdateOrganizationConfigurationResponse] = js.native
     def updatePublishingDestination(
         params: UpdatePublishingDestinationRequest
-    ): Request[UpdatePublishingDestinationResponse]                                                      = js.native
+    ): Request[UpdatePublishingDestinationResponse] = js.native
     def updateThreatIntelSet(params: UpdateThreatIntelSetRequest): Request[UpdateThreatIntelSetResponse] = js.native
   }
 
@@ -293,9 +293,9 @@ package guardduty {
         MasterId: String
     ): AcceptInvitationRequest = {
       val __obj = js.Dynamic.literal(
-        "DetectorId"   -> DetectorId.asInstanceOf[js.Any],
+        "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "InvitationId" -> InvitationId.asInstanceOf[js.Any],
-        "MasterId"     -> MasterId.asInstanceOf[js.Any]
+        "MasterId" -> MasterId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AcceptInvitationRequest]
@@ -382,7 +382,7 @@ package guardduty {
     ): AccountDetail = {
       val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "Email"     -> Email.asInstanceOf[js.Any]
+        "Email" -> Email.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AccountDetail]
@@ -464,7 +464,7 @@ package guardduty {
   @js.native
   sealed trait AdminStatus extends js.Any
   object AdminStatus extends js.Object {
-    val ENABLED             = "ENABLED".asInstanceOf[AdminStatus]
+    val ENABLED = "ENABLED".asInstanceOf[AdminStatus]
     val DISABLE_IN_PROGRESS = "DISABLE_IN_PROGRESS".asInstanceOf[AdminStatus]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLE_IN_PROGRESS))
@@ -773,9 +773,9 @@ package guardduty {
         Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateFilterRequest = {
       val __obj = js.Dynamic.literal(
-        "DetectorId"      -> DetectorId.asInstanceOf[js.Any],
+        "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "FindingCriteria" -> FindingCriteria.asInstanceOf[js.Any],
-        "Name"            -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
@@ -828,11 +828,11 @@ package guardduty {
         Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateIPSetRequest = {
       val __obj = js.Dynamic.literal(
-        "Activate"   -> Activate.asInstanceOf[js.Any],
+        "Activate" -> Activate.asInstanceOf[js.Any],
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
-        "Format"     -> Format.asInstanceOf[js.Any],
-        "Location"   -> Location.asInstanceOf[js.Any],
-        "Name"       -> Name.asInstanceOf[js.Any]
+        "Format" -> Format.asInstanceOf[js.Any],
+        "Location" -> Location.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
@@ -873,7 +873,7 @@ package guardduty {
     ): CreateMembersRequest = {
       val __obj = js.Dynamic.literal(
         "AccountDetails" -> AccountDetails.asInstanceOf[js.Any],
-        "DetectorId"     -> DetectorId.asInstanceOf[js.Any]
+        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateMembersRequest]
@@ -916,8 +916,8 @@ package guardduty {
     ): CreatePublishingDestinationRequest = {
       val __obj = js.Dynamic.literal(
         "DestinationProperties" -> DestinationProperties.asInstanceOf[js.Any],
-        "DestinationType"       -> DestinationType.asInstanceOf[js.Any],
-        "DetectorId"            -> DetectorId.asInstanceOf[js.Any]
+        "DestinationType" -> DestinationType.asInstanceOf[js.Any],
+        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
 
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
@@ -1000,11 +1000,11 @@ package guardduty {
         Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateThreatIntelSetRequest = {
       val __obj = js.Dynamic.literal(
-        "Activate"   -> Activate.asInstanceOf[js.Any],
+        "Activate" -> Activate.asInstanceOf[js.Any],
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
-        "Format"     -> Format.asInstanceOf[js.Any],
-        "Location"   -> Location.asInstanceOf[js.Any],
-        "Name"       -> Name.asInstanceOf[js.Any]
+        "Format" -> Format.asInstanceOf[js.Any],
+        "Location" -> Location.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
@@ -1168,7 +1168,7 @@ package guardduty {
     ): DeleteIPSetRequest = {
       val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
-        "IpSetId"    -> IpSetId.asInstanceOf[js.Any]
+        "IpSetId" -> IpSetId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteIPSetRequest]
@@ -1277,7 +1277,7 @@ package guardduty {
     ): DeletePublishingDestinationRequest = {
       val __obj = js.Dynamic.literal(
         "DestinationId" -> DestinationId.asInstanceOf[js.Any],
-        "DetectorId"    -> DetectorId.asInstanceOf[js.Any]
+        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeletePublishingDestinationRequest]
@@ -1310,7 +1310,7 @@ package guardduty {
         ThreatIntelSetId: String
     ): DeleteThreatIntelSetRequest = {
       val __obj = js.Dynamic.literal(
-        "DetectorId"       -> DetectorId.asInstanceOf[js.Any],
+        "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "ThreatIntelSetId" -> ThreatIntelSetId.asInstanceOf[js.Any]
       )
 
@@ -1362,7 +1362,7 @@ package guardduty {
         MemberAccountLimitReached: Boolean
     ): DescribeOrganizationConfigurationResponse = {
       val __obj = js.Dynamic.literal(
-        "AutoEnable"                -> AutoEnable.asInstanceOf[js.Any],
+        "AutoEnable" -> AutoEnable.asInstanceOf[js.Any],
         "MemberAccountLimitReached" -> MemberAccountLimitReached.asInstanceOf[js.Any]
       )
 
@@ -1384,7 +1384,7 @@ package guardduty {
     ): DescribePublishingDestinationRequest = {
       val __obj = js.Dynamic.literal(
         "DestinationId" -> DestinationId.asInstanceOf[js.Any],
-        "DetectorId"    -> DetectorId.asInstanceOf[js.Any]
+        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribePublishingDestinationRequest]
@@ -1410,11 +1410,11 @@ package guardduty {
         Status: PublishingStatus
     ): DescribePublishingDestinationResponse = {
       val __obj = js.Dynamic.literal(
-        "DestinationId"                   -> DestinationId.asInstanceOf[js.Any],
-        "DestinationProperties"           -> DestinationProperties.asInstanceOf[js.Any],
-        "DestinationType"                 -> DestinationType.asInstanceOf[js.Any],
+        "DestinationId" -> DestinationId.asInstanceOf[js.Any],
+        "DestinationProperties" -> DestinationProperties.asInstanceOf[js.Any],
+        "DestinationType" -> DestinationType.asInstanceOf[js.Any],
         "PublishingFailureStartTimestamp" -> PublishingFailureStartTimestamp.asInstanceOf[js.Any],
-        "Status"                          -> Status.asInstanceOf[js.Any]
+        "Status" -> Status.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribePublishingDestinationResponse]
@@ -1439,9 +1439,9 @@ package guardduty {
         Status: PublishingStatus
     ): Destination = {
       val __obj = js.Dynamic.literal(
-        "DestinationId"   -> DestinationId.asInstanceOf[js.Any],
+        "DestinationId" -> DestinationId.asInstanceOf[js.Any],
         "DestinationType" -> DestinationType.asInstanceOf[js.Any],
-        "Status"          -> Status.asInstanceOf[js.Any]
+        "Status" -> Status.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[Destination]
@@ -1481,7 +1481,7 @@ package guardduty {
   @js.native
   sealed trait DetectorStatus extends js.Any
   object DetectorStatus extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[DetectorStatus]
+    val ENABLED = "ENABLED".asInstanceOf[DetectorStatus]
     val DISABLED = "DISABLED".asInstanceOf[DetectorStatus]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -1681,7 +1681,7 @@ package guardduty {
   @js.native
   sealed trait Feedback extends js.Any
   object Feedback extends js.Object {
-    val USEFUL     = "USEFUL".asInstanceOf[Feedback]
+    val USEFUL = "USEFUL".asInstanceOf[Feedback]
     val NOT_USEFUL = "NOT_USEFUL".asInstanceOf[Feedback]
 
     val values = js.Object.freeze(js.Array(USEFUL, NOT_USEFUL))
@@ -1690,7 +1690,7 @@ package guardduty {
   @js.native
   sealed trait FilterAction extends js.Any
   object FilterAction extends js.Object {
-    val NOOP    = "NOOP".asInstanceOf[FilterAction]
+    val NOOP = "NOOP".asInstanceOf[FilterAction]
     val ARCHIVE = "ARCHIVE".asInstanceOf[FilterAction]
 
     val values = js.Object.freeze(js.Array(NOOP, ARCHIVE))
@@ -1738,16 +1738,16 @@ package guardduty {
         Title: js.UndefOr[String] = js.undefined
     ): Finding = {
       val __obj = js.Dynamic.literal(
-        "AccountId"     -> AccountId.asInstanceOf[js.Any],
-        "Arn"           -> Arn.asInstanceOf[js.Any],
-        "CreatedAt"     -> CreatedAt.asInstanceOf[js.Any],
-        "Id"            -> Id.asInstanceOf[js.Any],
-        "Region"        -> Region.asInstanceOf[js.Any],
-        "Resource"      -> Resource.asInstanceOf[js.Any],
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "CreatedAt" -> CreatedAt.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Region" -> Region.asInstanceOf[js.Any],
+        "Resource" -> Resource.asInstanceOf[js.Any],
         "SchemaVersion" -> SchemaVersion.asInstanceOf[js.Any],
-        "Severity"      -> Severity.asInstanceOf[js.Any],
-        "Type"          -> Type.asInstanceOf[js.Any],
-        "UpdatedAt"     -> UpdatedAt.asInstanceOf[js.Any]
+        "Severity" -> Severity.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any],
+        "UpdatedAt" -> UpdatedAt.asInstanceOf[js.Any]
       )
 
       Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
@@ -1782,8 +1782,8 @@ package guardduty {
   sealed trait FindingPublishingFrequency extends js.Any
   object FindingPublishingFrequency extends js.Object {
     val FIFTEEN_MINUTES = "FIFTEEN_MINUTES".asInstanceOf[FindingPublishingFrequency]
-    val ONE_HOUR        = "ONE_HOUR".asInstanceOf[FindingPublishingFrequency]
-    val SIX_HOURS       = "SIX_HOURS".asInstanceOf[FindingPublishingFrequency]
+    val ONE_HOUR = "ONE_HOUR".asInstanceOf[FindingPublishingFrequency]
+    val SIX_HOURS = "SIX_HOURS".asInstanceOf[FindingPublishingFrequency]
 
     val values = js.Object.freeze(js.Array(FIFTEEN_MINUTES, ONE_HOUR, SIX_HOURS))
   }
@@ -1877,7 +1877,7 @@ package guardduty {
     ): GetDetectorResponse = {
       val __obj = js.Dynamic.literal(
         "ServiceRole" -> ServiceRole.asInstanceOf[js.Any],
-        "Status"      -> Status.asInstanceOf[js.Any]
+        "Status" -> Status.asInstanceOf[js.Any]
       )
 
       CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
@@ -1932,9 +1932,9 @@ package guardduty {
         Tags: js.UndefOr[TagMap] = js.undefined
     ): GetFilterResponse = {
       val __obj = js.Dynamic.literal(
-        "Action"          -> Action.asInstanceOf[js.Any],
+        "Action" -> Action.asInstanceOf[js.Any],
         "FindingCriteria" -> FindingCriteria.asInstanceOf[js.Any],
-        "Name"            -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -2001,7 +2001,7 @@ package guardduty {
         FindingCriteria: js.UndefOr[FindingCriteria] = js.undefined
     ): GetFindingsStatisticsRequest = {
       val __obj = js.Dynamic.literal(
-        "DetectorId"            -> DetectorId.asInstanceOf[js.Any],
+        "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "FindingStatisticTypes" -> FindingStatisticTypes.asInstanceOf[js.Any]
       )
 
@@ -2042,7 +2042,7 @@ package guardduty {
     ): GetIPSetRequest = {
       val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
-        "IpSetId"    -> IpSetId.asInstanceOf[js.Any]
+        "IpSetId" -> IpSetId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetIPSetRequest]
@@ -2068,10 +2068,10 @@ package guardduty {
         Tags: js.UndefOr[TagMap] = js.undefined
     ): GetIPSetResponse = {
       val __obj = js.Dynamic.literal(
-        "Format"   -> Format.asInstanceOf[js.Any],
+        "Format" -> Format.asInstanceOf[js.Any],
         "Location" -> Location.asInstanceOf[js.Any],
-        "Name"     -> Name.asInstanceOf[js.Any],
-        "Status"   -> Status.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -2178,7 +2178,7 @@ package guardduty {
         UnprocessedAccounts: UnprocessedAccounts
     ): GetMembersResponse = {
       val __obj = js.Dynamic.literal(
-        "Members"             -> Members.asInstanceOf[js.Any],
+        "Members" -> Members.asInstanceOf[js.Any],
         "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
       )
 
@@ -2199,7 +2199,7 @@ package guardduty {
         ThreatIntelSetId: String
     ): GetThreatIntelSetRequest = {
       val __obj = js.Dynamic.literal(
-        "DetectorId"       -> DetectorId.asInstanceOf[js.Any],
+        "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "ThreatIntelSetId" -> ThreatIntelSetId.asInstanceOf[js.Any]
       )
 
@@ -2226,10 +2226,10 @@ package guardduty {
         Tags: js.UndefOr[TagMap] = js.undefined
     ): GetThreatIntelSetResponse = {
       val __obj = js.Dynamic.literal(
-        "Format"   -> Format.asInstanceOf[js.Any],
+        "Format" -> Format.asInstanceOf[js.Any],
         "Location" -> Location.asInstanceOf[js.Any],
-        "Name"     -> Name.asInstanceOf[js.Any],
-        "Status"   -> Status.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -2390,12 +2390,12 @@ package guardduty {
   @js.native
   sealed trait IpSetFormat extends js.Any
   object IpSetFormat extends js.Object {
-    val TXT         = "TXT".asInstanceOf[IpSetFormat]
-    val STIX        = "STIX".asInstanceOf[IpSetFormat]
-    val OTX_CSV     = "OTX_CSV".asInstanceOf[IpSetFormat]
+    val TXT = "TXT".asInstanceOf[IpSetFormat]
+    val STIX = "STIX".asInstanceOf[IpSetFormat]
+    val OTX_CSV = "OTX_CSV".asInstanceOf[IpSetFormat]
     val ALIEN_VAULT = "ALIEN_VAULT".asInstanceOf[IpSetFormat]
     val PROOF_POINT = "PROOF_POINT".asInstanceOf[IpSetFormat]
-    val FIRE_EYE    = "FIRE_EYE".asInstanceOf[IpSetFormat]
+    val FIRE_EYE = "FIRE_EYE".asInstanceOf[IpSetFormat]
 
     val values = js.Object.freeze(js.Array(TXT, STIX, OTX_CSV, ALIEN_VAULT, PROOF_POINT, FIRE_EYE))
   }
@@ -2403,13 +2403,13 @@ package guardduty {
   @js.native
   sealed trait IpSetStatus extends js.Any
   object IpSetStatus extends js.Object {
-    val INACTIVE       = "INACTIVE".asInstanceOf[IpSetStatus]
-    val ACTIVATING     = "ACTIVATING".asInstanceOf[IpSetStatus]
-    val ACTIVE         = "ACTIVE".asInstanceOf[IpSetStatus]
-    val DEACTIVATING   = "DEACTIVATING".asInstanceOf[IpSetStatus]
-    val ERROR          = "ERROR".asInstanceOf[IpSetStatus]
+    val INACTIVE = "INACTIVE".asInstanceOf[IpSetStatus]
+    val ACTIVATING = "ACTIVATING".asInstanceOf[IpSetStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[IpSetStatus]
+    val DEACTIVATING = "DEACTIVATING".asInstanceOf[IpSetStatus]
+    val ERROR = "ERROR".asInstanceOf[IpSetStatus]
     val DELETE_PENDING = "DELETE_PENDING".asInstanceOf[IpSetStatus]
-    val DELETED        = "DELETED".asInstanceOf[IpSetStatus]
+    val DELETED = "DELETED".asInstanceOf[IpSetStatus]
 
     val values = js.Object.freeze(js.Array(INACTIVE, ACTIVATING, ACTIVE, DEACTIVATING, ERROR, DELETE_PENDING, DELETED))
   }
@@ -2936,11 +2936,11 @@ package guardduty {
         InvitedAt: js.UndefOr[String] = js.undefined
     ): Member = {
       val __obj = js.Dynamic.literal(
-        "AccountId"          -> AccountId.asInstanceOf[js.Any],
-        "Email"              -> Email.asInstanceOf[js.Any],
-        "MasterId"           -> MasterId.asInstanceOf[js.Any],
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Email" -> Email.asInstanceOf[js.Any],
+        "MasterId" -> MasterId.asInstanceOf[js.Any],
         "RelationshipStatus" -> RelationshipStatus.asInstanceOf[js.Any],
-        "UpdatedAt"          -> UpdatedAt.asInstanceOf[js.Any]
+        "UpdatedAt" -> UpdatedAt.asInstanceOf[js.Any]
       )
 
       DetectorId.foreach(__v => __obj.updateDynamic("DetectorId")(__v.asInstanceOf[js.Any]))
@@ -3035,7 +3035,7 @@ package guardduty {
   @js.native
   sealed trait OrderBy extends js.Any
   object OrderBy extends js.Object {
-    val ASC  = "ASC".asInstanceOf[OrderBy]
+    val ASC = "ASC".asInstanceOf[OrderBy]
     val DESC = "DESC".asInstanceOf[OrderBy]
 
     val values = js.Object.freeze(js.Array(ASC, DESC))
@@ -3227,7 +3227,7 @@ package guardduty {
   sealed trait PublishingStatus extends js.Any
   object PublishingStatus extends js.Object {
     val PENDING_VERIFICATION = "PENDING_VERIFICATION".asInstanceOf[PublishingStatus]
-    val PUBLISHING           = "PUBLISHING".asInstanceOf[PublishingStatus]
+    val PUBLISHING = "PUBLISHING".asInstanceOf[PublishingStatus]
     val UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY =
       "UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY".asInstanceOf[PublishingStatus]
     val STOPPED = "STOPPED".asInstanceOf[PublishingStatus]
@@ -3560,7 +3560,7 @@ package guardduty {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -3583,12 +3583,12 @@ package guardduty {
   @js.native
   sealed trait ThreatIntelSetFormat extends js.Any
   object ThreatIntelSetFormat extends js.Object {
-    val TXT         = "TXT".asInstanceOf[ThreatIntelSetFormat]
-    val STIX        = "STIX".asInstanceOf[ThreatIntelSetFormat]
-    val OTX_CSV     = "OTX_CSV".asInstanceOf[ThreatIntelSetFormat]
+    val TXT = "TXT".asInstanceOf[ThreatIntelSetFormat]
+    val STIX = "STIX".asInstanceOf[ThreatIntelSetFormat]
+    val OTX_CSV = "OTX_CSV".asInstanceOf[ThreatIntelSetFormat]
     val ALIEN_VAULT = "ALIEN_VAULT".asInstanceOf[ThreatIntelSetFormat]
     val PROOF_POINT = "PROOF_POINT".asInstanceOf[ThreatIntelSetFormat]
-    val FIRE_EYE    = "FIRE_EYE".asInstanceOf[ThreatIntelSetFormat]
+    val FIRE_EYE = "FIRE_EYE".asInstanceOf[ThreatIntelSetFormat]
 
     val values = js.Object.freeze(js.Array(TXT, STIX, OTX_CSV, ALIEN_VAULT, PROOF_POINT, FIRE_EYE))
   }
@@ -3596,13 +3596,13 @@ package guardduty {
   @js.native
   sealed trait ThreatIntelSetStatus extends js.Any
   object ThreatIntelSetStatus extends js.Object {
-    val INACTIVE       = "INACTIVE".asInstanceOf[ThreatIntelSetStatus]
-    val ACTIVATING     = "ACTIVATING".asInstanceOf[ThreatIntelSetStatus]
-    val ACTIVE         = "ACTIVE".asInstanceOf[ThreatIntelSetStatus]
-    val DEACTIVATING   = "DEACTIVATING".asInstanceOf[ThreatIntelSetStatus]
-    val ERROR          = "ERROR".asInstanceOf[ThreatIntelSetStatus]
+    val INACTIVE = "INACTIVE".asInstanceOf[ThreatIntelSetStatus]
+    val ACTIVATING = "ACTIVATING".asInstanceOf[ThreatIntelSetStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[ThreatIntelSetStatus]
+    val DEACTIVATING = "DEACTIVATING".asInstanceOf[ThreatIntelSetStatus]
+    val ERROR = "ERROR".asInstanceOf[ThreatIntelSetStatus]
     val DELETE_PENDING = "DELETE_PENDING".asInstanceOf[ThreatIntelSetStatus]
-    val DELETED        = "DELETED".asInstanceOf[ThreatIntelSetStatus]
+    val DELETED = "DELETED".asInstanceOf[ThreatIntelSetStatus]
 
     val values = js.Object.freeze(js.Array(INACTIVE, ACTIVATING, ACTIVE, DEACTIVATING, ERROR, DELETE_PENDING, DELETED))
   }
@@ -3680,7 +3680,7 @@ package guardduty {
     ): UnprocessedAccount = {
       val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "Result"    -> Result.asInstanceOf[js.Any]
+        "Result" -> Result.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UnprocessedAccount]
@@ -3701,7 +3701,7 @@ package guardduty {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -3829,7 +3829,7 @@ package guardduty {
     ): UpdateFindingsFeedbackRequest = {
       val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
-        "Feedback"   -> Feedback.asInstanceOf[js.Any],
+        "Feedback" -> Feedback.asInstanceOf[js.Any],
         "FindingIds" -> FindingIds.asInstanceOf[js.Any]
       )
 
@@ -3871,7 +3871,7 @@ package guardduty {
     ): UpdateIPSetRequest = {
       val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
-        "IpSetId"    -> IpSetId.asInstanceOf[js.Any]
+        "IpSetId" -> IpSetId.asInstanceOf[js.Any]
       )
 
       Activate.foreach(__v => __obj.updateDynamic("Activate")(__v.asInstanceOf[js.Any]))
@@ -3944,7 +3944,7 @@ package guardduty {
     ): UpdatePublishingDestinationRequest = {
       val __obj = js.Dynamic.literal(
         "DestinationId" -> DestinationId.asInstanceOf[js.Any],
-        "DetectorId"    -> DetectorId.asInstanceOf[js.Any]
+        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
 
       DestinationProperties.foreach(__v => __obj.updateDynamic("DestinationProperties")(__v.asInstanceOf[js.Any]))
@@ -3984,7 +3984,7 @@ package guardduty {
         Name: js.UndefOr[Name] = js.undefined
     ): UpdateThreatIntelSetRequest = {
       val __obj = js.Dynamic.literal(
-        "DetectorId"       -> DetectorId.asInstanceOf[js.Any],
+        "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "ThreatIntelSetId" -> ThreatIntelSetId.asInstanceOf[js.Any]
       )
 

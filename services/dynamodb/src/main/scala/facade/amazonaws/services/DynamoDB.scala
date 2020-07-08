@@ -7,138 +7,138 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object dynamodb {
-  type ArchivalReason                                    = String
-  type AttributeDefinitions                              = js.Array[AttributeDefinition]
-  type AttributeMap                                      = js.Dictionary[AttributeValue]
-  type AttributeName                                     = String
-  type AttributeNameList                                 = js.Array[AttributeName]
-  type AttributeUpdates                                  = js.Dictionary[AttributeValueUpdate]
-  type AttributeValueList                                = js.Array[AttributeValue]
-  type AutoScalingPolicyDescriptionList                  = js.Array[AutoScalingPolicyDescription]
-  type AutoScalingPolicyName                             = String
-  type AutoScalingRoleArn                                = String
-  type Backfilling                                       = Boolean
-  type BackupArn                                         = String
-  type BackupCreationDateTime                            = js.Date
-  type BackupName                                        = String
-  type BackupSizeBytes                                   = Double
-  type BackupSummaries                                   = js.Array[BackupSummary]
-  type BackupsInputLimit                                 = Int
-  type BatchGetRequestMap                                = js.Dictionary[KeysAndAttributes]
-  type BatchGetResponseMap                               = js.Dictionary[ItemList]
-  type BatchWriteItemRequestMap                          = js.Dictionary[WriteRequests]
-  type BinaryAttributeValue                              = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type BinarySetAttributeValue                           = js.Array[BinaryAttributeValue]
-  type BooleanAttributeValue                             = Boolean
-  type BooleanObject                                     = Boolean
-  type ClientRequestToken                                = String
-  type ConditionExpression                               = String
-  type ConsistentRead                                    = Boolean
-  type ConsumedCapacityMultiple                          = js.Array[ConsumedCapacity]
-  type ConsumedCapacityUnits                             = Double
-  type ContributorInsightsRule                           = String
-  type ContributorInsightsRuleList                       = js.Array[ContributorInsightsRule]
-  type ContributorInsightsSummaries                      = js.Array[ContributorInsightsSummary]
-  type Date                                              = js.Date
-  type Endpoints                                         = js.Array[Endpoint]
-  type ExceptionDescription                              = String
-  type ExceptionName                                     = String
-  type ExpectedAttributeMap                              = js.Dictionary[ExpectedAttributeValue]
-  type ExpressionAttributeNameMap                        = js.Dictionary[AttributeName]
-  type ExpressionAttributeNameVariable                   = String
-  type ExpressionAttributeValueMap                       = js.Dictionary[AttributeValue]
-  type ExpressionAttributeValueVariable                  = String
-  type FilterConditionMap                                = js.Dictionary[Condition]
-  type GlobalSecondaryIndexAutoScalingUpdateList         = js.Array[GlobalSecondaryIndexAutoScalingUpdate]
-  type GlobalSecondaryIndexDescriptionList               = js.Array[GlobalSecondaryIndexDescription]
-  type GlobalSecondaryIndexList                          = js.Array[GlobalSecondaryIndex]
-  type GlobalSecondaryIndexUpdateList                    = js.Array[GlobalSecondaryIndexUpdate]
-  type GlobalSecondaryIndexes                            = js.Array[GlobalSecondaryIndexInfo]
-  type GlobalTableArnString                              = String
+  type ArchivalReason = String
+  type AttributeDefinitions = js.Array[AttributeDefinition]
+  type AttributeMap = js.Dictionary[AttributeValue]
+  type AttributeName = String
+  type AttributeNameList = js.Array[AttributeName]
+  type AttributeUpdates = js.Dictionary[AttributeValueUpdate]
+  type AttributeValueList = js.Array[AttributeValue]
+  type AutoScalingPolicyDescriptionList = js.Array[AutoScalingPolicyDescription]
+  type AutoScalingPolicyName = String
+  type AutoScalingRoleArn = String
+  type Backfilling = Boolean
+  type BackupArn = String
+  type BackupCreationDateTime = js.Date
+  type BackupName = String
+  type BackupSizeBytes = Double
+  type BackupSummaries = js.Array[BackupSummary]
+  type BackupsInputLimit = Int
+  type BatchGetRequestMap = js.Dictionary[KeysAndAttributes]
+  type BatchGetResponseMap = js.Dictionary[ItemList]
+  type BatchWriteItemRequestMap = js.Dictionary[WriteRequests]
+  type BinaryAttributeValue = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type BinarySetAttributeValue = js.Array[BinaryAttributeValue]
+  type BooleanAttributeValue = Boolean
+  type BooleanObject = Boolean
+  type ClientRequestToken = String
+  type ConditionExpression = String
+  type ConsistentRead = Boolean
+  type ConsumedCapacityMultiple = js.Array[ConsumedCapacity]
+  type ConsumedCapacityUnits = Double
+  type ContributorInsightsRule = String
+  type ContributorInsightsRuleList = js.Array[ContributorInsightsRule]
+  type ContributorInsightsSummaries = js.Array[ContributorInsightsSummary]
+  type Date = js.Date
+  type Endpoints = js.Array[Endpoint]
+  type ExceptionDescription = String
+  type ExceptionName = String
+  type ExpectedAttributeMap = js.Dictionary[ExpectedAttributeValue]
+  type ExpressionAttributeNameMap = js.Dictionary[AttributeName]
+  type ExpressionAttributeNameVariable = String
+  type ExpressionAttributeValueMap = js.Dictionary[AttributeValue]
+  type ExpressionAttributeValueVariable = String
+  type FilterConditionMap = js.Dictionary[Condition]
+  type GlobalSecondaryIndexAutoScalingUpdateList = js.Array[GlobalSecondaryIndexAutoScalingUpdate]
+  type GlobalSecondaryIndexDescriptionList = js.Array[GlobalSecondaryIndexDescription]
+  type GlobalSecondaryIndexList = js.Array[GlobalSecondaryIndex]
+  type GlobalSecondaryIndexUpdateList = js.Array[GlobalSecondaryIndexUpdate]
+  type GlobalSecondaryIndexes = js.Array[GlobalSecondaryIndexInfo]
+  type GlobalTableArnString = String
   type GlobalTableGlobalSecondaryIndexSettingsUpdateList = js.Array[GlobalTableGlobalSecondaryIndexSettingsUpdate]
-  type GlobalTableList                                   = js.Array[GlobalTable]
-  type IndexName                                         = String
-  type IntegerObject                                     = Int
-  type ItemCollectionKeyAttributeMap                     = js.Dictionary[AttributeValue]
-  type ItemCollectionMetricsMultiple                     = js.Array[ItemCollectionMetrics]
-  type ItemCollectionMetricsPerTable                     = js.Dictionary[ItemCollectionMetricsMultiple]
-  type ItemCollectionSizeEstimateBound                   = Double
-  type ItemCollectionSizeEstimateRange                   = js.Array[ItemCollectionSizeEstimateBound]
-  type ItemCount                                         = Double
-  type ItemList                                          = js.Array[AttributeMap]
-  type ItemResponseList                                  = js.Array[ItemResponse]
-  type KMSMasterKeyArn                                   = String
-  type KMSMasterKeyId                                    = String
-  type Key                                               = js.Dictionary[AttributeValue]
-  type KeyConditions                                     = js.Dictionary[Condition]
-  type KeyExpression                                     = String
-  type KeyList                                           = js.Array[Key]
-  type KeySchema                                         = js.Array[KeySchemaElement]
-  type KeySchemaAttributeName                            = String
-  type LastUpdateDateTime                                = js.Date
-  type ListAttributeValue                                = js.Array[AttributeValue]
-  type ListContributorInsightsLimit                      = Int
-  type ListTablesInputLimit                              = Int
-  type LocalSecondaryIndexDescriptionList                = js.Array[LocalSecondaryIndexDescription]
-  type LocalSecondaryIndexList                           = js.Array[LocalSecondaryIndex]
-  type LocalSecondaryIndexes                             = js.Array[LocalSecondaryIndexInfo]
-  type MapAttributeValue                                 = js.Dictionary[AttributeValue]
-  type NextTokenString                                   = String
-  type NonKeyAttributeName                               = String
-  type NonKeyAttributeNameList                           = js.Array[NonKeyAttributeName]
-  type NonNegativeLongObject                             = Double
-  type NullAttributeValue                                = Boolean
-  type NumberAttributeValue                              = String
-  type NumberSetAttributeValue                           = js.Array[NumberAttributeValue]
-  type PositiveIntegerObject                             = Int
-  type PositiveLongObject                                = Double
-  type ProjectionExpression                              = String
-  type PutItemInputAttributeMap                          = js.Dictionary[AttributeValue]
-  type RegionName                                        = String
-  type ReplicaAutoScalingDescriptionList                 = js.Array[ReplicaAutoScalingDescription]
-  type ReplicaAutoScalingUpdateList                      = js.Array[ReplicaAutoScalingUpdate]
-  type ReplicaDescriptionList                            = js.Array[ReplicaDescription]
+  type GlobalTableList = js.Array[GlobalTable]
+  type IndexName = String
+  type IntegerObject = Int
+  type ItemCollectionKeyAttributeMap = js.Dictionary[AttributeValue]
+  type ItemCollectionMetricsMultiple = js.Array[ItemCollectionMetrics]
+  type ItemCollectionMetricsPerTable = js.Dictionary[ItemCollectionMetricsMultiple]
+  type ItemCollectionSizeEstimateBound = Double
+  type ItemCollectionSizeEstimateRange = js.Array[ItemCollectionSizeEstimateBound]
+  type ItemCount = Double
+  type ItemList = js.Array[AttributeMap]
+  type ItemResponseList = js.Array[ItemResponse]
+  type KMSMasterKeyArn = String
+  type KMSMasterKeyId = String
+  type Key = js.Dictionary[AttributeValue]
+  type KeyConditions = js.Dictionary[Condition]
+  type KeyExpression = String
+  type KeyList = js.Array[Key]
+  type KeySchema = js.Array[KeySchemaElement]
+  type KeySchemaAttributeName = String
+  type LastUpdateDateTime = js.Date
+  type ListAttributeValue = js.Array[AttributeValue]
+  type ListContributorInsightsLimit = Int
+  type ListTablesInputLimit = Int
+  type LocalSecondaryIndexDescriptionList = js.Array[LocalSecondaryIndexDescription]
+  type LocalSecondaryIndexList = js.Array[LocalSecondaryIndex]
+  type LocalSecondaryIndexes = js.Array[LocalSecondaryIndexInfo]
+  type MapAttributeValue = js.Dictionary[AttributeValue]
+  type NextTokenString = String
+  type NonKeyAttributeName = String
+  type NonKeyAttributeNameList = js.Array[NonKeyAttributeName]
+  type NonNegativeLongObject = Double
+  type NullAttributeValue = Boolean
+  type NumberAttributeValue = String
+  type NumberSetAttributeValue = js.Array[NumberAttributeValue]
+  type PositiveIntegerObject = Int
+  type PositiveLongObject = Double
+  type ProjectionExpression = String
+  type PutItemInputAttributeMap = js.Dictionary[AttributeValue]
+  type RegionName = String
+  type ReplicaAutoScalingDescriptionList = js.Array[ReplicaAutoScalingDescription]
+  type ReplicaAutoScalingUpdateList = js.Array[ReplicaAutoScalingUpdate]
+  type ReplicaDescriptionList = js.Array[ReplicaDescription]
   type ReplicaGlobalSecondaryIndexAutoScalingDescriptionList =
     js.Array[ReplicaGlobalSecondaryIndexAutoScalingDescription]
-  type ReplicaGlobalSecondaryIndexAutoScalingUpdateList   = js.Array[ReplicaGlobalSecondaryIndexAutoScalingUpdate]
-  type ReplicaGlobalSecondaryIndexDescriptionList         = js.Array[ReplicaGlobalSecondaryIndexDescription]
-  type ReplicaGlobalSecondaryIndexList                    = js.Array[ReplicaGlobalSecondaryIndex]
+  type ReplicaGlobalSecondaryIndexAutoScalingUpdateList = js.Array[ReplicaGlobalSecondaryIndexAutoScalingUpdate]
+  type ReplicaGlobalSecondaryIndexDescriptionList = js.Array[ReplicaGlobalSecondaryIndexDescription]
+  type ReplicaGlobalSecondaryIndexList = js.Array[ReplicaGlobalSecondaryIndex]
   type ReplicaGlobalSecondaryIndexSettingsDescriptionList = js.Array[ReplicaGlobalSecondaryIndexSettingsDescription]
-  type ReplicaGlobalSecondaryIndexSettingsUpdateList      = js.Array[ReplicaGlobalSecondaryIndexSettingsUpdate]
-  type ReplicaList                                        = js.Array[Replica]
-  type ReplicaSettingsDescriptionList                     = js.Array[ReplicaSettingsDescription]
-  type ReplicaSettingsUpdateList                          = js.Array[ReplicaSettingsUpdate]
-  type ReplicaStatusDescription                           = String
-  type ReplicaStatusPercentProgress                       = String
-  type ReplicaUpdateList                                  = js.Array[ReplicaUpdate]
-  type ReplicationGroupUpdateList                         = js.Array[ReplicationGroupUpdate]
-  type ResourceArnString                                  = String
-  type RestoreInProgress                                  = Boolean
-  type SSEEnabled                                         = Boolean
-  type ScanSegment                                        = Int
-  type ScanTotalSegments                                  = Int
-  type SecondaryIndexesCapacityMap                        = js.Dictionary[Capacity]
-  type StreamArn                                          = String
-  type StreamEnabled                                      = Boolean
-  type StringAttributeValue                               = String
-  type StringSetAttributeValue                            = js.Array[StringAttributeValue]
-  type TableArn                                           = String
-  type TableCreationDateTime                              = js.Date
-  type TableId                                            = String
-  type TableName                                          = String
-  type TableNameList                                      = js.Array[TableName]
-  type TagKeyList                                         = js.Array[TagKeyString]
-  type TagKeyString                                       = String
-  type TagList                                            = js.Array[Tag]
-  type TagValueString                                     = String
-  type TimeRangeLowerBound                                = js.Date
-  type TimeRangeUpperBound                                = js.Date
-  type TimeToLiveAttributeName                            = String
-  type TimeToLiveEnabled                                  = Boolean
-  type TransactGetItemList                                = js.Array[TransactGetItem]
-  type TransactWriteItemList                              = js.Array[TransactWriteItem]
-  type UpdateExpression                                   = String
-  type WriteRequests                                      = js.Array[WriteRequest]
+  type ReplicaGlobalSecondaryIndexSettingsUpdateList = js.Array[ReplicaGlobalSecondaryIndexSettingsUpdate]
+  type ReplicaList = js.Array[Replica]
+  type ReplicaSettingsDescriptionList = js.Array[ReplicaSettingsDescription]
+  type ReplicaSettingsUpdateList = js.Array[ReplicaSettingsUpdate]
+  type ReplicaStatusDescription = String
+  type ReplicaStatusPercentProgress = String
+  type ReplicaUpdateList = js.Array[ReplicaUpdate]
+  type ReplicationGroupUpdateList = js.Array[ReplicationGroupUpdate]
+  type ResourceArnString = String
+  type RestoreInProgress = Boolean
+  type SSEEnabled = Boolean
+  type ScanSegment = Int
+  type ScanTotalSegments = Int
+  type SecondaryIndexesCapacityMap = js.Dictionary[Capacity]
+  type StreamArn = String
+  type StreamEnabled = Boolean
+  type StringAttributeValue = String
+  type StringSetAttributeValue = js.Array[StringAttributeValue]
+  type TableArn = String
+  type TableCreationDateTime = js.Date
+  type TableId = String
+  type TableName = String
+  type TableNameList = js.Array[TableName]
+  type TagKeyList = js.Array[TagKeyString]
+  type TagKeyString = String
+  type TagList = js.Array[Tag]
+  type TagValueString = String
+  type TimeRangeLowerBound = js.Date
+  type TimeRangeUpperBound = js.Date
+  type TimeToLiveAttributeName = String
+  type TimeToLiveEnabled = Boolean
+  type TransactGetItemList = js.Array[TransactGetItem]
+  type TransactWriteItemList = js.Array[TransactWriteItem]
+  type UpdateExpression = String
+  type WriteRequests = js.Array[WriteRequest]
 
   implicit final class DynamoDBOps(private val service: DynamoDB) extends AnyVal {
 
@@ -196,13 +196,13 @@ package object dynamodb {
     @inline def listTagsOfResourceFuture(params: ListTagsOfResourceInput): Future[ListTagsOfResourceOutput] =
       service.listTagsOfResource(params).promise().toFuture
     @inline def putItemFuture(params: PutItemInput): Future[PutItemOutput] = service.putItem(params).promise().toFuture
-    @inline def queryFuture(params: QueryInput): Future[QueryOutput]       = service.query(params).promise().toFuture
+    @inline def queryFuture(params: QueryInput): Future[QueryOutput] = service.query(params).promise().toFuture
     @inline def restoreTableFromBackupFuture(
         params: RestoreTableFromBackupInput
     ): Future[RestoreTableFromBackupOutput] = service.restoreTableFromBackup(params).promise().toFuture
     @inline def restoreTableToPointInTimeFuture(
         params: RestoreTableToPointInTimeInput
-    ): Future[RestoreTableToPointInTimeOutput]                    = service.restoreTableToPointInTime(params).promise().toFuture
+    ): Future[RestoreTableToPointInTimeOutput] = service.restoreTableToPointInTime(params).promise().toFuture
     @inline def scanFuture(params: ScanInput): Future[ScanOutput] = service.scan(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceInput): Future[js.Object] =
       service.tagResource(params).promise().toFuture
@@ -241,48 +241,48 @@ package dynamodb {
   class DynamoDB() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def batchGetItem(params: BatchGetItemInput): Request[BatchGetItemOutput]                = js.native
-    def batchWriteItem(params: BatchWriteItemInput): Request[BatchWriteItemOutput]          = js.native
-    def createBackup(params: CreateBackupInput): Request[CreateBackupOutput]                = js.native
+    def batchGetItem(params: BatchGetItemInput): Request[BatchGetItemOutput] = js.native
+    def batchWriteItem(params: BatchWriteItemInput): Request[BatchWriteItemOutput] = js.native
+    def createBackup(params: CreateBackupInput): Request[CreateBackupOutput] = js.native
     def createGlobalTable(params: CreateGlobalTableInput): Request[CreateGlobalTableOutput] = js.native
-    def createTable(params: CreateTableInput): Request[CreateTableOutput]                   = js.native
-    def deleteBackup(params: DeleteBackupInput): Request[DeleteBackupOutput]                = js.native
-    def deleteItem(params: DeleteItemInput): Request[DeleteItemOutput]                      = js.native
-    def deleteTable(params: DeleteTableInput): Request[DeleteTableOutput]                   = js.native
-    def describeBackup(params: DescribeBackupInput): Request[DescribeBackupOutput]          = js.native
+    def createTable(params: CreateTableInput): Request[CreateTableOutput] = js.native
+    def deleteBackup(params: DeleteBackupInput): Request[DeleteBackupOutput] = js.native
+    def deleteItem(params: DeleteItemInput): Request[DeleteItemOutput] = js.native
+    def deleteTable(params: DeleteTableInput): Request[DeleteTableOutput] = js.native
+    def describeBackup(params: DescribeBackupInput): Request[DescribeBackupOutput] = js.native
     def describeContinuousBackups(params: DescribeContinuousBackupsInput): Request[DescribeContinuousBackupsOutput] =
       js.native
     def describeContributorInsights(
         params: DescribeContributorInsightsInput
-    ): Request[DescribeContributorInsightsOutput]                                                 = js.native
-    def describeEndpoints(params: DescribeEndpointsRequest): Request[DescribeEndpointsResponse]   = js.native
+    ): Request[DescribeContributorInsightsOutput] = js.native
+    def describeEndpoints(params: DescribeEndpointsRequest): Request[DescribeEndpointsResponse] = js.native
     def describeGlobalTable(params: DescribeGlobalTableInput): Request[DescribeGlobalTableOutput] = js.native
     def describeGlobalTableSettings(
         params: DescribeGlobalTableSettingsInput
-    ): Request[DescribeGlobalTableSettingsOutput]                                  = js.native
+    ): Request[DescribeGlobalTableSettingsOutput] = js.native
     def describeLimits(params: DescribeLimitsInput): Request[DescribeLimitsOutput] = js.native
-    def describeTable(params: DescribeTableInput): Request[DescribeTableOutput]    = js.native
+    def describeTable(params: DescribeTableInput): Request[DescribeTableOutput] = js.native
     def describeTableReplicaAutoScaling(
         params: DescribeTableReplicaAutoScalingInput
-    ): Request[DescribeTableReplicaAutoScalingOutput]                                          = js.native
+    ): Request[DescribeTableReplicaAutoScalingOutput] = js.native
     def describeTimeToLive(params: DescribeTimeToLiveInput): Request[DescribeTimeToLiveOutput] = js.native
-    def getItem(params: GetItemInput): Request[GetItemOutput]                                  = js.native
-    def listBackups(params: ListBackupsInput): Request[ListBackupsOutput]                      = js.native
+    def getItem(params: GetItemInput): Request[GetItemOutput] = js.native
+    def listBackups(params: ListBackupsInput): Request[ListBackupsOutput] = js.native
     def listContributorInsights(params: ListContributorInsightsInput): Request[ListContributorInsightsOutput] =
       js.native
-    def listGlobalTables(params: ListGlobalTablesInput): Request[ListGlobalTablesOutput]                   = js.native
-    def listTables(params: ListTablesInput): Request[ListTablesOutput]                                     = js.native
-    def listTagsOfResource(params: ListTagsOfResourceInput): Request[ListTagsOfResourceOutput]             = js.native
-    def putItem(params: PutItemInput): Request[PutItemOutput]                                              = js.native
-    def query(params: QueryInput): Request[QueryOutput]                                                    = js.native
+    def listGlobalTables(params: ListGlobalTablesInput): Request[ListGlobalTablesOutput] = js.native
+    def listTables(params: ListTablesInput): Request[ListTablesOutput] = js.native
+    def listTagsOfResource(params: ListTagsOfResourceInput): Request[ListTagsOfResourceOutput] = js.native
+    def putItem(params: PutItemInput): Request[PutItemOutput] = js.native
+    def query(params: QueryInput): Request[QueryOutput] = js.native
     def restoreTableFromBackup(params: RestoreTableFromBackupInput): Request[RestoreTableFromBackupOutput] = js.native
     def restoreTableToPointInTime(params: RestoreTableToPointInTimeInput): Request[RestoreTableToPointInTimeOutput] =
       js.native
-    def scan(params: ScanInput): Request[ScanOutput]                                           = js.native
-    def tagResource(params: TagResourceInput): Request[js.Object]                              = js.native
-    def transactGetItems(params: TransactGetItemsInput): Request[TransactGetItemsOutput]       = js.native
+    def scan(params: ScanInput): Request[ScanOutput] = js.native
+    def tagResource(params: TagResourceInput): Request[js.Object] = js.native
+    def transactGetItems(params: TransactGetItemsInput): Request[TransactGetItemsOutput] = js.native
     def transactWriteItems(params: TransactWriteItemsInput): Request[TransactWriteItemsOutput] = js.native
-    def untagResource(params: UntagResourceInput): Request[js.Object]                          = js.native
+    def untagResource(params: UntagResourceInput): Request[js.Object] = js.native
     def updateContinuousBackups(params: UpdateContinuousBackupsInput): Request[UpdateContinuousBackupsOutput] =
       js.native
     def updateContributorInsights(params: UpdateContributorInsightsInput): Request[UpdateContributorInsightsOutput] =
@@ -290,11 +290,11 @@ package dynamodb {
     def updateGlobalTable(params: UpdateGlobalTableInput): Request[UpdateGlobalTableOutput] = js.native
     def updateGlobalTableSettings(params: UpdateGlobalTableSettingsInput): Request[UpdateGlobalTableSettingsOutput] =
       js.native
-    def updateItem(params: UpdateItemInput): Request[UpdateItemOutput]    = js.native
+    def updateItem(params: UpdateItemInput): Request[UpdateItemOutput] = js.native
     def updateTable(params: UpdateTableInput): Request[UpdateTableOutput] = js.native
     def updateTableReplicaAutoScaling(
         params: UpdateTableReplicaAutoScalingInput
-    ): Request[UpdateTableReplicaAutoScalingOutput]                                      = js.native
+    ): Request[UpdateTableReplicaAutoScalingOutput] = js.native
     def updateTimeToLive(params: UpdateTimeToLiveInput): Request[UpdateTimeToLiveOutput] = js.native
   }
 
@@ -326,8 +326,8 @@ package dynamodb {
   @js.native
   sealed trait AttributeAction extends js.Any
   object AttributeAction extends js.Object {
-    val ADD    = "ADD".asInstanceOf[AttributeAction]
-    val PUT    = "PUT".asInstanceOf[AttributeAction]
+    val ADD = "ADD".asInstanceOf[AttributeAction]
+    val PUT = "PUT".asInstanceOf[AttributeAction]
     val DELETE = "DELETE".asInstanceOf[AttributeAction]
 
     val values = js.Object.freeze(js.Array(ADD, PUT, DELETE))
@@ -404,8 +404,8 @@ package dynamodb {
       __obj.asInstanceOf[AttributeValue]
     }
     def S(value: StringAttributeValue): AttributeValue = js.Dynamic.literal("S" -> value).asInstanceOf[AttributeValue]
-    def NFromInt(value: Int): AttributeValue           = js.Dynamic.literal("N" -> value.toString).asInstanceOf[AttributeValue]
-    def NFromLong(value: Long): AttributeValue         = js.Dynamic.literal("N" -> value.toString).asInstanceOf[AttributeValue]
+    def NFromInt(value: Int): AttributeValue = js.Dynamic.literal("N" -> value.toString).asInstanceOf[AttributeValue]
+    def NFromLong(value: Long): AttributeValue = js.Dynamic.literal("N" -> value.toString).asInstanceOf[AttributeValue]
     def NFromDouble(value: Double): AttributeValue =
       js.Dynamic.literal("N" -> value.toString).asInstanceOf[AttributeValue]
     def NFromBigInt(value: BigInt): AttributeValue =
@@ -700,11 +700,11 @@ package dynamodb {
         BackupSizeBytes: js.UndefOr[BackupSizeBytes] = js.undefined
     ): BackupDetails = {
       val __obj = js.Dynamic.literal(
-        "BackupArn"              -> BackupArn.asInstanceOf[js.Any],
+        "BackupArn" -> BackupArn.asInstanceOf[js.Any],
         "BackupCreationDateTime" -> BackupCreationDateTime.asInstanceOf[js.Any],
-        "BackupName"             -> BackupName.asInstanceOf[js.Any],
-        "BackupStatus"           -> BackupStatus.asInstanceOf[js.Any],
-        "BackupType"             -> BackupType.asInstanceOf[js.Any]
+        "BackupName" -> BackupName.asInstanceOf[js.Any],
+        "BackupStatus" -> BackupStatus.asInstanceOf[js.Any],
+        "BackupType" -> BackupType.asInstanceOf[js.Any]
       )
 
       BackupExpiryDateTime.foreach(__v => __obj.updateDynamic("BackupExpiryDateTime")(__v.asInstanceOf[js.Any]))
@@ -716,8 +716,8 @@ package dynamodb {
   @js.native
   sealed trait BackupStatus extends js.Any
   object BackupStatus extends js.Object {
-    val CREATING  = "CREATING".asInstanceOf[BackupStatus]
-    val DELETED   = "DELETED".asInstanceOf[BackupStatus]
+    val CREATING = "CREATING".asInstanceOf[BackupStatus]
+    val DELETED = "DELETED".asInstanceOf[BackupStatus]
     val AVAILABLE = "AVAILABLE".asInstanceOf[BackupStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, DELETED, AVAILABLE))
@@ -772,8 +772,8 @@ package dynamodb {
   @js.native
   sealed trait BackupType extends js.Any
   object BackupType extends js.Object {
-    val USER       = "USER".asInstanceOf[BackupType]
-    val SYSTEM     = "SYSTEM".asInstanceOf[BackupType]
+    val USER = "USER".asInstanceOf[BackupType]
+    val SYSTEM = "SYSTEM".asInstanceOf[BackupType]
     val AWS_BACKUP = "AWS_BACKUP".asInstanceOf[BackupType]
 
     val values = js.Object.freeze(js.Array(USER, SYSTEM, AWS_BACKUP))
@@ -782,10 +782,10 @@ package dynamodb {
   @js.native
   sealed trait BackupTypeFilter extends js.Any
   object BackupTypeFilter extends js.Object {
-    val USER       = "USER".asInstanceOf[BackupTypeFilter]
-    val SYSTEM     = "SYSTEM".asInstanceOf[BackupTypeFilter]
+    val USER = "USER".asInstanceOf[BackupTypeFilter]
+    val SYSTEM = "SYSTEM".asInstanceOf[BackupTypeFilter]
     val AWS_BACKUP = "AWS_BACKUP".asInstanceOf[BackupTypeFilter]
-    val ALL        = "ALL".asInstanceOf[BackupTypeFilter]
+    val ALL = "ALL".asInstanceOf[BackupTypeFilter]
 
     val values = js.Object.freeze(js.Array(USER, SYSTEM, AWS_BACKUP, ALL))
   }
@@ -896,7 +896,7 @@ package dynamodb {
   @js.native
   sealed trait BillingMode extends js.Any
   object BillingMode extends js.Object {
-    val PROVISIONED     = "PROVISIONED".asInstanceOf[BillingMode]
+    val PROVISIONED = "PROVISIONED".asInstanceOf[BillingMode]
     val PAY_PER_REQUEST = "PAY_PER_REQUEST".asInstanceOf[BillingMode]
 
     val values = js.Object.freeze(js.Array(PROVISIONED, PAY_PER_REQUEST))
@@ -954,19 +954,19 @@ package dynamodb {
   @js.native
   sealed trait ComparisonOperator extends js.Any
   object ComparisonOperator extends js.Object {
-    val EQ           = "EQ".asInstanceOf[ComparisonOperator]
-    val NE           = "NE".asInstanceOf[ComparisonOperator]
-    val IN           = "IN".asInstanceOf[ComparisonOperator]
-    val LE           = "LE".asInstanceOf[ComparisonOperator]
-    val LT           = "LT".asInstanceOf[ComparisonOperator]
-    val GE           = "GE".asInstanceOf[ComparisonOperator]
-    val GT           = "GT".asInstanceOf[ComparisonOperator]
-    val BETWEEN      = "BETWEEN".asInstanceOf[ComparisonOperator]
-    val NOT_NULL     = "NOT_NULL".asInstanceOf[ComparisonOperator]
-    val NULL         = "NULL".asInstanceOf[ComparisonOperator]
-    val CONTAINS     = "CONTAINS".asInstanceOf[ComparisonOperator]
+    val EQ = "EQ".asInstanceOf[ComparisonOperator]
+    val NE = "NE".asInstanceOf[ComparisonOperator]
+    val IN = "IN".asInstanceOf[ComparisonOperator]
+    val LE = "LE".asInstanceOf[ComparisonOperator]
+    val LT = "LT".asInstanceOf[ComparisonOperator]
+    val GE = "GE".asInstanceOf[ComparisonOperator]
+    val GT = "GT".asInstanceOf[ComparisonOperator]
+    val BETWEEN = "BETWEEN".asInstanceOf[ComparisonOperator]
+    val NOT_NULL = "NOT_NULL".asInstanceOf[ComparisonOperator]
+    val NULL = "NULL".asInstanceOf[ComparisonOperator]
+    val CONTAINS = "CONTAINS".asInstanceOf[ComparisonOperator]
     val NOT_CONTAINS = "NOT_CONTAINS".asInstanceOf[ComparisonOperator]
-    val BEGINS_WITH  = "BEGINS_WITH".asInstanceOf[ComparisonOperator]
+    val BEGINS_WITH = "BEGINS_WITH".asInstanceOf[ComparisonOperator]
 
     val values = js.Object.freeze(
       js.Array(EQ, NE, IN, LE, LT, GE, GT, BETWEEN, NOT_NULL, NULL, CONTAINS, NOT_CONTAINS, BEGINS_WITH)
@@ -1026,8 +1026,8 @@ package dynamodb {
     ): ConditionCheck = {
       val __obj = js.Dynamic.literal(
         "ConditionExpression" -> ConditionExpression.asInstanceOf[js.Any],
-        "Key"                 -> Key.asInstanceOf[js.Any],
-        "TableName"           -> TableName.asInstanceOf[js.Any]
+        "Key" -> Key.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
       ExpressionAttributeNames.foreach(__v => __obj.updateDynamic("ExpressionAttributeNames")(__v.asInstanceOf[js.Any]))
@@ -1045,7 +1045,7 @@ package dynamodb {
   sealed trait ConditionalOperator extends js.Any
   object ConditionalOperator extends js.Object {
     val AND = "AND".asInstanceOf[ConditionalOperator]
-    val OR  = "OR".asInstanceOf[ConditionalOperator]
+    val OR = "OR".asInstanceOf[ConditionalOperator]
 
     val values = js.Object.freeze(js.Array(AND, OR))
   }
@@ -1116,7 +1116,7 @@ package dynamodb {
   @js.native
   sealed trait ContinuousBackupsStatus extends js.Any
   object ContinuousBackupsStatus extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[ContinuousBackupsStatus]
+    val ENABLED = "ENABLED".asInstanceOf[ContinuousBackupsStatus]
     val DISABLED = "DISABLED".asInstanceOf[ContinuousBackupsStatus]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -1125,7 +1125,7 @@ package dynamodb {
   @js.native
   sealed trait ContributorInsightsAction extends js.Any
   object ContributorInsightsAction extends js.Object {
-    val ENABLE  = "ENABLE".asInstanceOf[ContributorInsightsAction]
+    val ENABLE = "ENABLE".asInstanceOf[ContributorInsightsAction]
     val DISABLE = "DISABLE".asInstanceOf[ContributorInsightsAction]
 
     val values = js.Object.freeze(js.Array(ENABLE, DISABLE))
@@ -1134,11 +1134,11 @@ package dynamodb {
   @js.native
   sealed trait ContributorInsightsStatus extends js.Any
   object ContributorInsightsStatus extends js.Object {
-    val ENABLING  = "ENABLING".asInstanceOf[ContributorInsightsStatus]
-    val ENABLED   = "ENABLED".asInstanceOf[ContributorInsightsStatus]
+    val ENABLING = "ENABLING".asInstanceOf[ContributorInsightsStatus]
+    val ENABLED = "ENABLED".asInstanceOf[ContributorInsightsStatus]
     val DISABLING = "DISABLING".asInstanceOf[ContributorInsightsStatus]
-    val DISABLED  = "DISABLED".asInstanceOf[ContributorInsightsStatus]
-    val FAILED    = "FAILED".asInstanceOf[ContributorInsightsStatus]
+    val DISABLED = "DISABLED".asInstanceOf[ContributorInsightsStatus]
+    val FAILED = "FAILED".asInstanceOf[ContributorInsightsStatus]
 
     val values = js.Object.freeze(js.Array(ENABLING, ENABLED, DISABLING, DISABLED, FAILED))
   }
@@ -1184,7 +1184,7 @@ package dynamodb {
     ): CreateBackupInput = {
       val __obj = js.Dynamic.literal(
         "BackupName" -> BackupName.asInstanceOf[js.Any],
-        "TableName"  -> TableName.asInstanceOf[js.Any]
+        "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateBackupInput]
@@ -1227,8 +1227,8 @@ package dynamodb {
         ProvisionedThroughput: js.UndefOr[ProvisionedThroughput] = js.undefined
     ): CreateGlobalSecondaryIndexAction = {
       val __obj = js.Dynamic.literal(
-        "IndexName"  -> IndexName.asInstanceOf[js.Any],
-        "KeySchema"  -> KeySchema.asInstanceOf[js.Any],
+        "IndexName" -> IndexName.asInstanceOf[js.Any],
+        "KeySchema" -> KeySchema.asInstanceOf[js.Any],
         "Projection" -> Projection.asInstanceOf[js.Any]
       )
 
@@ -1250,7 +1250,7 @@ package dynamodb {
         ReplicationGroup: ReplicaList
     ): CreateGlobalTableInput = {
       val __obj = js.Dynamic.literal(
-        "GlobalTableName"  -> GlobalTableName.asInstanceOf[js.Any],
+        "GlobalTableName" -> GlobalTableName.asInstanceOf[js.Any],
         "ReplicationGroup" -> ReplicationGroup.asInstanceOf[js.Any]
       )
 
@@ -1360,8 +1360,8 @@ package dynamodb {
     ): CreateTableInput = {
       val __obj = js.Dynamic.literal(
         "AttributeDefinitions" -> AttributeDefinitions.asInstanceOf[js.Any],
-        "KeySchema"            -> KeySchema.asInstanceOf[js.Any],
-        "TableName"            -> TableName.asInstanceOf[js.Any]
+        "KeySchema" -> KeySchema.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
       BillingMode.foreach(__v => __obj.updateDynamic("BillingMode")(__v.asInstanceOf[js.Any]))
@@ -1418,7 +1418,7 @@ package dynamodb {
         ReturnValuesOnConditionCheckFailure: js.UndefOr[ReturnValuesOnConditionCheckFailure] = js.undefined
     ): Delete = {
       val __obj = js.Dynamic.literal(
-        "Key"       -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
@@ -1521,7 +1521,7 @@ package dynamodb {
         ReturnValues: js.UndefOr[ReturnValue] = js.undefined
     ): DeleteItemInput = {
       val __obj = js.Dynamic.literal(
-        "Key"       -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
@@ -2075,7 +2075,7 @@ package dynamodb {
         CachePeriodInMinutes: Double
     ): Endpoint = {
       val __obj = js.Dynamic.literal(
-        "Address"              -> Address.asInstanceOf[js.Any],
+        "Address" -> Address.asInstanceOf[js.Any],
         "CachePeriodInMinutes" -> CachePeriodInMinutes.asInstanceOf[js.Any]
       )
 
@@ -2156,7 +2156,7 @@ package dynamodb {
         ProjectionExpression: js.UndefOr[ProjectionExpression] = js.undefined
     ): Get = {
       val __obj = js.Dynamic.literal(
-        "Key"       -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
@@ -2192,7 +2192,7 @@ package dynamodb {
         ReturnConsumedCapacity: js.UndefOr[ReturnConsumedCapacity] = js.undefined
     ): GetItemInput = {
       val __obj = js.Dynamic.literal(
-        "Key"       -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
@@ -2247,8 +2247,8 @@ package dynamodb {
         ProvisionedThroughput: js.UndefOr[ProvisionedThroughput] = js.undefined
     ): GlobalSecondaryIndex = {
       val __obj = js.Dynamic.literal(
-        "IndexName"  -> IndexName.asInstanceOf[js.Any],
-        "KeySchema"  -> KeySchema.asInstanceOf[js.Any],
+        "IndexName" -> IndexName.asInstanceOf[js.Any],
+        "KeySchema" -> KeySchema.asInstanceOf[js.Any],
         "Projection" -> Projection.asInstanceOf[js.Any]
       )
 
@@ -2468,7 +2468,7 @@ package dynamodb {
   sealed trait GlobalTableStatus extends js.Any
   object GlobalTableStatus extends js.Object {
     val CREATING = "CREATING".asInstanceOf[GlobalTableStatus]
-    val ACTIVE   = "ACTIVE".asInstanceOf[GlobalTableStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[GlobalTableStatus]
     val DELETING = "DELETING".asInstanceOf[GlobalTableStatus]
     val UPDATING = "UPDATING".asInstanceOf[GlobalTableStatus]
 
@@ -2481,7 +2481,7 @@ package dynamodb {
     val CREATING = "CREATING".asInstanceOf[IndexStatus]
     val UPDATING = "UPDATING".asInstanceOf[IndexStatus]
     val DELETING = "DELETING".asInstanceOf[IndexStatus]
-    val ACTIVE   = "ACTIVE".asInstanceOf[IndexStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[IndexStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, ACTIVE))
   }
@@ -2546,7 +2546,7 @@ package dynamodb {
     ): KeySchemaElement = {
       val __obj = js.Dynamic.literal(
         "AttributeName" -> AttributeName.asInstanceOf[js.Any],
-        "KeyType"       -> KeyType.asInstanceOf[js.Any]
+        "KeyType" -> KeyType.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[KeySchemaElement]
@@ -2556,7 +2556,7 @@ package dynamodb {
   @js.native
   sealed trait KeyType extends js.Any
   object KeyType extends js.Object {
-    val HASH  = "HASH".asInstanceOf[KeyType]
+    val HASH = "HASH".asInstanceOf[KeyType]
     val RANGE = "RANGE".asInstanceOf[KeyType]
 
     val values = js.Object.freeze(js.Array(HASH, RANGE))
@@ -2836,8 +2836,8 @@ package dynamodb {
         Projection: Projection
     ): LocalSecondaryIndex = {
       val __obj = js.Dynamic.literal(
-        "IndexName"  -> IndexName.asInstanceOf[js.Any],
-        "KeySchema"  -> KeySchema.asInstanceOf[js.Any],
+        "IndexName" -> IndexName.asInstanceOf[js.Any],
+        "KeySchema" -> KeySchema.asInstanceOf[js.Any],
         "Projection" -> Projection.asInstanceOf[js.Any]
       )
 
@@ -2957,7 +2957,7 @@ package dynamodb {
   @js.native
   sealed trait PointInTimeRecoveryStatus extends js.Any
   object PointInTimeRecoveryStatus extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[PointInTimeRecoveryStatus]
+    val ENABLED = "ENABLED".asInstanceOf[PointInTimeRecoveryStatus]
     val DISABLED = "DISABLED".asInstanceOf[PointInTimeRecoveryStatus]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -2988,9 +2988,9 @@ package dynamodb {
   @js.native
   sealed trait ProjectionType extends js.Any
   object ProjectionType extends js.Object {
-    val ALL       = "ALL".asInstanceOf[ProjectionType]
+    val ALL = "ALL".asInstanceOf[ProjectionType]
     val KEYS_ONLY = "KEYS_ONLY".asInstanceOf[ProjectionType]
-    val INCLUDE   = "INCLUDE".asInstanceOf[ProjectionType]
+    val INCLUDE = "INCLUDE".asInstanceOf[ProjectionType]
 
     val values = js.Object.freeze(js.Array(ALL, KEYS_ONLY, INCLUDE))
   }
@@ -3012,7 +3012,7 @@ package dynamodb {
         WriteCapacityUnits: PositiveLongObject
     ): ProvisionedThroughput = {
       val __obj = js.Dynamic.literal(
-        "ReadCapacityUnits"  -> ReadCapacityUnits.asInstanceOf[js.Any],
+        "ReadCapacityUnits" -> ReadCapacityUnits.asInstanceOf[js.Any],
         "WriteCapacityUnits" -> WriteCapacityUnits.asInstanceOf[js.Any]
       )
 
@@ -3094,7 +3094,7 @@ package dynamodb {
         ReturnValuesOnConditionCheckFailure: js.UndefOr[ReturnValuesOnConditionCheckFailure] = js.undefined
     ): Put = {
       val __obj = js.Dynamic.literal(
-        "Item"      -> Item.asInstanceOf[js.Any],
+        "Item" -> Item.asInstanceOf[js.Any],
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
@@ -3142,7 +3142,7 @@ package dynamodb {
         ReturnValues: js.UndefOr[ReturnValue] = js.undefined
     ): PutItemInput = {
       val __obj = js.Dynamic.literal(
-        "Item"      -> Item.asInstanceOf[js.Any],
+        "Item" -> Item.asInstanceOf[js.Any],
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
@@ -3712,11 +3712,11 @@ package dynamodb {
   @js.native
   sealed trait ReplicaStatus extends js.Any
   object ReplicaStatus extends js.Object {
-    val CREATING        = "CREATING".asInstanceOf[ReplicaStatus]
+    val CREATING = "CREATING".asInstanceOf[ReplicaStatus]
     val CREATION_FAILED = "CREATION_FAILED".asInstanceOf[ReplicaStatus]
-    val UPDATING        = "UPDATING".asInstanceOf[ReplicaStatus]
-    val DELETING        = "DELETING".asInstanceOf[ReplicaStatus]
-    val ACTIVE          = "ACTIVE".asInstanceOf[ReplicaStatus]
+    val UPDATING = "UPDATING".asInstanceOf[ReplicaStatus]
+    val DELETING = "DELETING".asInstanceOf[ReplicaStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[ReplicaStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, CREATION_FAILED, UPDATING, DELETING, ACTIVE))
   }
@@ -3794,7 +3794,7 @@ package dynamodb {
         SourceTableArn: js.UndefOr[TableArn] = js.undefined
     ): RestoreSummary = {
       val __obj = js.Dynamic.literal(
-        "RestoreDateTime"   -> RestoreDateTime.asInstanceOf[js.Any],
+        "RestoreDateTime" -> RestoreDateTime.asInstanceOf[js.Any],
         "RestoreInProgress" -> RestoreInProgress.asInstanceOf[js.Any]
       )
 
@@ -3827,7 +3827,7 @@ package dynamodb {
         SSESpecificationOverride: js.UndefOr[SSESpecification] = js.undefined
     ): RestoreTableFromBackupInput = {
       val __obj = js.Dynamic.literal(
-        "BackupArn"       -> BackupArn.asInstanceOf[js.Any],
+        "BackupArn" -> BackupArn.asInstanceOf[js.Any],
         "TargetTableName" -> TargetTableName.asInstanceOf[js.Any]
       )
 
@@ -3940,8 +3940,8 @@ package dynamodb {
   sealed trait ReturnConsumedCapacity extends js.Any
   object ReturnConsumedCapacity extends js.Object {
     val INDEXES = "INDEXES".asInstanceOf[ReturnConsumedCapacity]
-    val TOTAL   = "TOTAL".asInstanceOf[ReturnConsumedCapacity]
-    val NONE    = "NONE".asInstanceOf[ReturnConsumedCapacity]
+    val TOTAL = "TOTAL".asInstanceOf[ReturnConsumedCapacity]
+    val NONE = "NONE".asInstanceOf[ReturnConsumedCapacity]
 
     val values = js.Object.freeze(js.Array(INDEXES, TOTAL, NONE))
   }
@@ -3958,10 +3958,10 @@ package dynamodb {
   @js.native
   sealed trait ReturnValue extends js.Any
   object ReturnValue extends js.Object {
-    val NONE        = "NONE".asInstanceOf[ReturnValue]
-    val ALL_OLD     = "ALL_OLD".asInstanceOf[ReturnValue]
+    val NONE = "NONE".asInstanceOf[ReturnValue]
+    val ALL_OLD = "ALL_OLD".asInstanceOf[ReturnValue]
     val UPDATED_OLD = "UPDATED_OLD".asInstanceOf[ReturnValue]
-    val ALL_NEW     = "ALL_NEW".asInstanceOf[ReturnValue]
+    val ALL_NEW = "ALL_NEW".asInstanceOf[ReturnValue]
     val UPDATED_NEW = "UPDATED_NEW".asInstanceOf[ReturnValue]
 
     val values = js.Object.freeze(js.Array(NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW))
@@ -3971,7 +3971,7 @@ package dynamodb {
   sealed trait ReturnValuesOnConditionCheckFailure extends js.Any
   object ReturnValuesOnConditionCheckFailure extends js.Object {
     val ALL_OLD = "ALL_OLD".asInstanceOf[ReturnValuesOnConditionCheckFailure]
-    val NONE    = "NONE".asInstanceOf[ReturnValuesOnConditionCheckFailure]
+    val NONE = "NONE".asInstanceOf[ReturnValuesOnConditionCheckFailure]
 
     val values = js.Object.freeze(js.Array(ALL_OLD, NONE))
   }
@@ -4034,11 +4034,11 @@ package dynamodb {
   @js.native
   sealed trait SSEStatus extends js.Any
   object SSEStatus extends js.Object {
-    val ENABLING  = "ENABLING".asInstanceOf[SSEStatus]
-    val ENABLED   = "ENABLED".asInstanceOf[SSEStatus]
+    val ENABLING = "ENABLING".asInstanceOf[SSEStatus]
+    val ENABLED = "ENABLED".asInstanceOf[SSEStatus]
     val DISABLING = "DISABLING".asInstanceOf[SSEStatus]
-    val DISABLED  = "DISABLED".asInstanceOf[SSEStatus]
-    val UPDATING  = "UPDATING".asInstanceOf[SSEStatus]
+    val DISABLED = "DISABLED".asInstanceOf[SSEStatus]
+    val UPDATING = "UPDATING".asInstanceOf[SSEStatus]
 
     val values = js.Object.freeze(js.Array(ENABLING, ENABLED, DISABLING, DISABLED, UPDATING))
   }
@@ -4047,7 +4047,7 @@ package dynamodb {
   sealed trait SSEType extends js.Any
   object SSEType extends js.Object {
     val AES256 = "AES256".asInstanceOf[SSEType]
-    val KMS    = "KMS".asInstanceOf[SSEType]
+    val KMS = "KMS".asInstanceOf[SSEType]
 
     val values = js.Object.freeze(js.Array(AES256, KMS))
   }
@@ -4164,10 +4164,10 @@ package dynamodb {
   @js.native
   sealed trait Select extends js.Any
   object Select extends js.Object {
-    val ALL_ATTRIBUTES           = "ALL_ATTRIBUTES".asInstanceOf[Select]
+    val ALL_ATTRIBUTES = "ALL_ATTRIBUTES".asInstanceOf[Select]
     val ALL_PROJECTED_ATTRIBUTES = "ALL_PROJECTED_ATTRIBUTES".asInstanceOf[Select]
-    val SPECIFIC_ATTRIBUTES      = "SPECIFIC_ATTRIBUTES".asInstanceOf[Select]
-    val COUNT                    = "COUNT".asInstanceOf[Select]
+    val SPECIFIC_ATTRIBUTES = "SPECIFIC_ATTRIBUTES".asInstanceOf[Select]
+    val COUNT = "COUNT".asInstanceOf[Select]
 
     val values = js.Object.freeze(js.Array(ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT))
   }
@@ -4202,11 +4202,11 @@ package dynamodb {
         TableSizeBytes: js.UndefOr[Double] = js.undefined
     ): SourceTableDetails = {
       val __obj = js.Dynamic.literal(
-        "KeySchema"             -> KeySchema.asInstanceOf[js.Any],
+        "KeySchema" -> KeySchema.asInstanceOf[js.Any],
         "ProvisionedThroughput" -> ProvisionedThroughput.asInstanceOf[js.Any],
         "TableCreationDateTime" -> TableCreationDateTime.asInstanceOf[js.Any],
-        "TableId"               -> TableId.asInstanceOf[js.Any],
-        "TableName"             -> TableName.asInstanceOf[js.Any]
+        "TableId" -> TableId.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
       BillingMode.foreach(__v => __obj.updateDynamic("BillingMode")(__v.asInstanceOf[js.Any]))
@@ -4275,10 +4275,10 @@ package dynamodb {
   @js.native
   sealed trait StreamViewType extends js.Any
   object StreamViewType extends js.Object {
-    val NEW_IMAGE          = "NEW_IMAGE".asInstanceOf[StreamViewType]
-    val OLD_IMAGE          = "OLD_IMAGE".asInstanceOf[StreamViewType]
+    val NEW_IMAGE = "NEW_IMAGE".asInstanceOf[StreamViewType]
+    val OLD_IMAGE = "OLD_IMAGE".asInstanceOf[StreamViewType]
     val NEW_AND_OLD_IMAGES = "NEW_AND_OLD_IMAGES".asInstanceOf[StreamViewType]
-    val KEYS_ONLY          = "KEYS_ONLY".asInstanceOf[StreamViewType]
+    val KEYS_ONLY = "KEYS_ONLY".asInstanceOf[StreamViewType]
 
     val values = js.Object.freeze(js.Array(NEW_IMAGE, OLD_IMAGE, NEW_AND_OLD_IMAGES, KEYS_ONLY))
   }
@@ -4390,13 +4390,13 @@ package dynamodb {
   @js.native
   sealed trait TableStatus extends js.Any
   object TableStatus extends js.Object {
-    val CREATING                            = "CREATING".asInstanceOf[TableStatus]
-    val UPDATING                            = "UPDATING".asInstanceOf[TableStatus]
-    val DELETING                            = "DELETING".asInstanceOf[TableStatus]
-    val ACTIVE                              = "ACTIVE".asInstanceOf[TableStatus]
+    val CREATING = "CREATING".asInstanceOf[TableStatus]
+    val UPDATING = "UPDATING".asInstanceOf[TableStatus]
+    val DELETING = "DELETING".asInstanceOf[TableStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[TableStatus]
     val INACCESSIBLE_ENCRYPTION_CREDENTIALS = "INACCESSIBLE_ENCRYPTION_CREDENTIALS".asInstanceOf[TableStatus]
-    val ARCHIVING                           = "ARCHIVING".asInstanceOf[TableStatus]
-    val ARCHIVED                            = "ARCHIVED".asInstanceOf[TableStatus]
+    val ARCHIVING = "ARCHIVING".asInstanceOf[TableStatus]
+    val ARCHIVED = "ARCHIVED".asInstanceOf[TableStatus]
 
     val values = js.Object.freeze(
       js.Array(CREATING, UPDATING, DELETING, ACTIVE, INACCESSIBLE_ENCRYPTION_CREDENTIALS, ARCHIVING, ARCHIVED)
@@ -4421,7 +4421,7 @@ package dynamodb {
         Value: TagValueString
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -4443,7 +4443,7 @@ package dynamodb {
     ): TagResourceInput = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceInput]
@@ -4489,7 +4489,7 @@ package dynamodb {
     ): TimeToLiveSpecification = {
       val __obj = js.Dynamic.literal(
         "AttributeName" -> AttributeName.asInstanceOf[js.Any],
-        "Enabled"       -> Enabled.asInstanceOf[js.Any]
+        "Enabled" -> Enabled.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TimeToLiveSpecification]
@@ -4499,10 +4499,10 @@ package dynamodb {
   @js.native
   sealed trait TimeToLiveStatus extends js.Any
   object TimeToLiveStatus extends js.Object {
-    val ENABLING  = "ENABLING".asInstanceOf[TimeToLiveStatus]
+    val ENABLING = "ENABLING".asInstanceOf[TimeToLiveStatus]
     val DISABLING = "DISABLING".asInstanceOf[TimeToLiveStatus]
-    val ENABLED   = "ENABLED".asInstanceOf[TimeToLiveStatus]
-    val DISABLED  = "DISABLED".asInstanceOf[TimeToLiveStatus]
+    val ENABLED = "ENABLED".asInstanceOf[TimeToLiveStatus]
+    val DISABLED = "DISABLED".asInstanceOf[TimeToLiveStatus]
 
     val values = js.Object.freeze(js.Array(ENABLING, DISABLING, ENABLED, DISABLED))
   }
@@ -4658,7 +4658,7 @@ package dynamodb {
     ): UntagResourceInput = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceInput]
@@ -4691,8 +4691,8 @@ package dynamodb {
         ReturnValuesOnConditionCheckFailure: js.UndefOr[ReturnValuesOnConditionCheckFailure] = js.undefined
     ): Update = {
       val __obj = js.Dynamic.literal(
-        "Key"              -> Key.asInstanceOf[js.Any],
-        "TableName"        -> TableName.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any],
         "UpdateExpression" -> UpdateExpression.asInstanceOf[js.Any]
       )
 
@@ -4722,7 +4722,7 @@ package dynamodb {
     ): UpdateContinuousBackupsInput = {
       val __obj = js.Dynamic.literal(
         "PointInTimeRecoverySpecification" -> PointInTimeRecoverySpecification.asInstanceOf[js.Any],
-        "TableName"                        -> TableName.asInstanceOf[js.Any]
+        "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateContinuousBackupsInput]
@@ -4763,7 +4763,7 @@ package dynamodb {
     ): UpdateContributorInsightsInput = {
       val __obj = js.Dynamic.literal(
         "ContributorInsightsAction" -> ContributorInsightsAction.asInstanceOf[js.Any],
-        "TableName"                 -> TableName.asInstanceOf[js.Any]
+        "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
       IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
@@ -4811,7 +4811,7 @@ package dynamodb {
         ProvisionedThroughput: ProvisionedThroughput
     ): UpdateGlobalSecondaryIndexAction = {
       val __obj = js.Dynamic.literal(
-        "IndexName"             -> IndexName.asInstanceOf[js.Any],
+        "IndexName" -> IndexName.asInstanceOf[js.Any],
         "ProvisionedThroughput" -> ProvisionedThroughput.asInstanceOf[js.Any]
       )
 
@@ -4833,7 +4833,7 @@ package dynamodb {
     ): UpdateGlobalTableInput = {
       val __obj = js.Dynamic.literal(
         "GlobalTableName" -> GlobalTableName.asInstanceOf[js.Any],
-        "ReplicaUpdates"  -> ReplicaUpdates.asInstanceOf[js.Any]
+        "ReplicaUpdates" -> ReplicaUpdates.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateGlobalTableInput]
@@ -4952,7 +4952,7 @@ package dynamodb {
         UpdateExpression: js.UndefOr[UpdateExpression] = js.undefined
     ): UpdateItemInput = {
       val __obj = js.Dynamic.literal(
-        "Key"       -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
@@ -5159,7 +5159,7 @@ package dynamodb {
         TimeToLiveSpecification: TimeToLiveSpecification
     ): UpdateTimeToLiveInput = {
       val __obj = js.Dynamic.literal(
-        "TableName"               -> TableName.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any],
         "TimeToLiveSpecification" -> TimeToLiveSpecification.asInstanceOf[js.Any]
       )
 

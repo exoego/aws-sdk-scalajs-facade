@@ -7,28 +7,28 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object ram {
-  type DateTime                       = js.Date
-  type MaxResults                     = Int
-  type PermissionArnList              = js.Array[String]
-  type Policy                         = String
-  type PolicyList                     = js.Array[Policy]
-  type PrincipalArnOrIdList           = js.Array[String]
-  type PrincipalList                  = js.Array[Principal]
-  type ResourceArnList                = js.Array[String]
-  type ResourceList                   = js.Array[Resource]
-  type ResourceShareArnList           = js.Array[String]
-  type ResourceShareAssociationList   = js.Array[ResourceShareAssociation]
+  type DateTime = js.Date
+  type MaxResults = Int
+  type PermissionArnList = js.Array[String]
+  type Policy = String
+  type PolicyList = js.Array[Policy]
+  type PrincipalArnOrIdList = js.Array[String]
+  type PrincipalList = js.Array[Principal]
+  type ResourceArnList = js.Array[String]
+  type ResourceList = js.Array[Resource]
+  type ResourceShareArnList = js.Array[String]
+  type ResourceShareAssociationList = js.Array[ResourceShareAssociation]
   type ResourceShareInvitationArnList = js.Array[String]
-  type ResourceShareInvitationList    = js.Array[ResourceShareInvitation]
-  type ResourceShareList              = js.Array[ResourceShare]
-  type ResourceSharePermissionList    = js.Array[ResourceSharePermissionSummary]
+  type ResourceShareInvitationList = js.Array[ResourceShareInvitation]
+  type ResourceShareList = js.Array[ResourceShare]
+  type ResourceSharePermissionList = js.Array[ResourceSharePermissionSummary]
   type ServiceNameAndResourceTypeList = js.Array[ServiceNameAndResourceType]
-  type TagFilters                     = js.Array[TagFilter]
-  type TagKey                         = String
-  type TagKeyList                     = js.Array[TagKey]
-  type TagList                        = js.Array[Tag]
-  type TagValue                       = String
-  type TagValueList                   = js.Array[TagValue]
+  type TagFilters = js.Array[TagFilter]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type TagValueList = js.Array[TagValue]
 
   implicit final class RAMOps(private val service: RAM) extends AnyVal {
 
@@ -113,7 +113,7 @@ package ram {
       js.native
     def associateResourceSharePermission(
         params: AssociateResourceSharePermissionRequest
-    ): Request[AssociateResourceSharePermissionResponse]                                              = js.native
+    ): Request[AssociateResourceSharePermissionResponse] = js.native
     def createResourceShare(params: CreateResourceShareRequest): Request[CreateResourceShareResponse] = js.native
     def deleteResourceShare(params: DeleteResourceShareRequest): Request[DeleteResourceShareResponse] = js.native
     def disassociateResourceShare(
@@ -124,34 +124,34 @@ package ram {
     ): Request[DisassociateResourceSharePermissionResponse] = js.native
     def enableSharingWithAwsOrganization(
         params: EnableSharingWithAwsOrganizationRequest
-    ): Request[EnableSharingWithAwsOrganizationResponse]                                              = js.native
-    def getPermission(params: GetPermissionRequest): Request[GetPermissionResponse]                   = js.native
+    ): Request[EnableSharingWithAwsOrganizationResponse] = js.native
+    def getPermission(params: GetPermissionRequest): Request[GetPermissionResponse] = js.native
     def getResourcePolicies(params: GetResourcePoliciesRequest): Request[GetResourcePoliciesResponse] = js.native
     def getResourceShareAssociations(
         params: GetResourceShareAssociationsRequest
     ): Request[GetResourceShareAssociationsResponse] = js.native
     def getResourceShareInvitations(
         params: GetResourceShareInvitationsRequest
-    ): Request[GetResourceShareInvitationsResponse]                                             = js.native
+    ): Request[GetResourceShareInvitationsResponse] = js.native
     def getResourceShares(params: GetResourceSharesRequest): Request[GetResourceSharesResponse] = js.native
     def listPendingInvitationResources(
         params: ListPendingInvitationResourcesRequest
-    ): Request[ListPendingInvitationResourcesResponse]                                    = js.native
+    ): Request[ListPendingInvitationResourcesResponse] = js.native
     def listPermissions(params: ListPermissionsRequest): Request[ListPermissionsResponse] = js.native
-    def listPrincipals(params: ListPrincipalsRequest): Request[ListPrincipalsResponse]    = js.native
+    def listPrincipals(params: ListPrincipalsRequest): Request[ListPrincipalsResponse] = js.native
     def listResourceSharePermissions(
         params: ListResourceSharePermissionsRequest
-    ): Request[ListResourceSharePermissionsResponse]                                            = js.native
+    ): Request[ListResourceSharePermissionsResponse] = js.native
     def listResourceTypes(params: ListResourceTypesRequest): Request[ListResourceTypesResponse] = js.native
-    def listResources(params: ListResourcesRequest): Request[ListResourcesResponse]             = js.native
+    def listResources(params: ListResourcesRequest): Request[ListResourcesResponse] = js.native
     def promoteResourceShareCreatedFromPolicy(
         params: PromoteResourceShareCreatedFromPolicyRequest
     ): Request[PromoteResourceShareCreatedFromPolicyResponse] = js.native
     def rejectResourceShareInvitation(
         params: RejectResourceShareInvitationRequest
-    ): Request[RejectResourceShareInvitationResponse]                                                 = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
+    ): Request[RejectResourceShareInvitationResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateResourceShare(params: UpdateResourceShareRequest): Request[UpdateResourceShareResponse] = js.native
   }
 
@@ -212,7 +212,7 @@ package ram {
         replace: js.UndefOr[Boolean] = js.undefined
     ): AssociateResourceSharePermissionRequest = {
       val __obj = js.Dynamic.literal(
-        "permissionArn"    -> permissionArn.asInstanceOf[js.Any],
+        "permissionArn" -> permissionArn.asInstanceOf[js.Any],
         "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any]
       )
 
@@ -399,7 +399,7 @@ package ram {
         clientToken: js.UndefOr[String] = js.undefined
     ): DisassociateResourceSharePermissionRequest = {
       val __obj = js.Dynamic.literal(
-        "permissionArn"    -> permissionArn.asInstanceOf[js.Any],
+        "permissionArn" -> permissionArn.asInstanceOf[js.Any],
         "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any]
       )
 
@@ -1168,7 +1168,7 @@ package ram {
   @js.native
   sealed trait ResourceOwner extends js.Any
   object ResourceOwner extends js.Object {
-    val SELF             = "SELF".asInstanceOf[ResourceOwner]
+    val SELF = "SELF".asInstanceOf[ResourceOwner]
     val `OTHER-ACCOUNTS` = "OTHER-ACCOUNTS".asInstanceOf[ResourceOwner]
 
     val values = js.Object.freeze(js.Array(SELF, `OTHER-ACCOUNTS`))
@@ -1266,11 +1266,11 @@ package ram {
   @js.native
   sealed trait ResourceShareAssociationStatus extends js.Any
   object ResourceShareAssociationStatus extends js.Object {
-    val ASSOCIATING    = "ASSOCIATING".asInstanceOf[ResourceShareAssociationStatus]
-    val ASSOCIATED     = "ASSOCIATED".asInstanceOf[ResourceShareAssociationStatus]
-    val FAILED         = "FAILED".asInstanceOf[ResourceShareAssociationStatus]
+    val ASSOCIATING = "ASSOCIATING".asInstanceOf[ResourceShareAssociationStatus]
+    val ASSOCIATED = "ASSOCIATED".asInstanceOf[ResourceShareAssociationStatus]
+    val FAILED = "FAILED".asInstanceOf[ResourceShareAssociationStatus]
     val DISASSOCIATING = "DISASSOCIATING".asInstanceOf[ResourceShareAssociationStatus]
-    val DISASSOCIATED  = "DISASSOCIATED".asInstanceOf[ResourceShareAssociationStatus]
+    val DISASSOCIATED = "DISASSOCIATED".asInstanceOf[ResourceShareAssociationStatus]
 
     val values = js.Object.freeze(js.Array(ASSOCIATING, ASSOCIATED, FAILED, DISASSOCIATING, DISASSOCIATED))
   }
@@ -1279,7 +1279,7 @@ package ram {
   sealed trait ResourceShareAssociationType extends js.Any
   object ResourceShareAssociationType extends js.Object {
     val PRINCIPAL = "PRINCIPAL".asInstanceOf[ResourceShareAssociationType]
-    val RESOURCE  = "RESOURCE".asInstanceOf[ResourceShareAssociationType]
+    val RESOURCE = "RESOURCE".asInstanceOf[ResourceShareAssociationType]
 
     val values = js.Object.freeze(js.Array(PRINCIPAL, RESOURCE))
   }
@@ -1287,9 +1287,9 @@ package ram {
   @js.native
   sealed trait ResourceShareFeatureSet extends js.Any
   object ResourceShareFeatureSet extends js.Object {
-    val CREATED_FROM_POLICY   = "CREATED_FROM_POLICY".asInstanceOf[ResourceShareFeatureSet]
+    val CREATED_FROM_POLICY = "CREATED_FROM_POLICY".asInstanceOf[ResourceShareFeatureSet]
     val PROMOTING_TO_STANDARD = "PROMOTING_TO_STANDARD".asInstanceOf[ResourceShareFeatureSet]
-    val STANDARD              = "STANDARD".asInstanceOf[ResourceShareFeatureSet]
+    val STANDARD = "STANDARD".asInstanceOf[ResourceShareFeatureSet]
 
     val values = js.Object.freeze(js.Array(CREATED_FROM_POLICY, PROMOTING_TO_STANDARD, STANDARD))
   }
@@ -1341,10 +1341,10 @@ package ram {
   @js.native
   sealed trait ResourceShareInvitationStatus extends js.Any
   object ResourceShareInvitationStatus extends js.Object {
-    val PENDING  = "PENDING".asInstanceOf[ResourceShareInvitationStatus]
+    val PENDING = "PENDING".asInstanceOf[ResourceShareInvitationStatus]
     val ACCEPTED = "ACCEPTED".asInstanceOf[ResourceShareInvitationStatus]
     val REJECTED = "REJECTED".asInstanceOf[ResourceShareInvitationStatus]
-    val EXPIRED  = "EXPIRED".asInstanceOf[ResourceShareInvitationStatus]
+    val EXPIRED = "EXPIRED".asInstanceOf[ResourceShareInvitationStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, ACCEPTED, REJECTED, EXPIRED))
   }
@@ -1432,11 +1432,11 @@ package ram {
   @js.native
   sealed trait ResourceShareStatus extends js.Any
   object ResourceShareStatus extends js.Object {
-    val PENDING  = "PENDING".asInstanceOf[ResourceShareStatus]
-    val ACTIVE   = "ACTIVE".asInstanceOf[ResourceShareStatus]
-    val FAILED   = "FAILED".asInstanceOf[ResourceShareStatus]
+    val PENDING = "PENDING".asInstanceOf[ResourceShareStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[ResourceShareStatus]
+    val FAILED = "FAILED".asInstanceOf[ResourceShareStatus]
     val DELETING = "DELETING".asInstanceOf[ResourceShareStatus]
-    val DELETED  = "DELETED".asInstanceOf[ResourceShareStatus]
+    val DELETED = "DELETED".asInstanceOf[ResourceShareStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, ACTIVE, FAILED, DELETING, DELETED))
   }
@@ -1444,11 +1444,11 @@ package ram {
   @js.native
   sealed trait ResourceStatus extends js.Any
   object ResourceStatus extends js.Object {
-    val AVAILABLE                   = "AVAILABLE".asInstanceOf[ResourceStatus]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[ResourceStatus]
     val ZONAL_RESOURCE_INACCESSIBLE = "ZONAL_RESOURCE_INACCESSIBLE".asInstanceOf[ResourceStatus]
-    val LIMIT_EXCEEDED              = "LIMIT_EXCEEDED".asInstanceOf[ResourceStatus]
-    val UNAVAILABLE                 = "UNAVAILABLE".asInstanceOf[ResourceStatus]
-    val PENDING                     = "PENDING".asInstanceOf[ResourceStatus]
+    val LIMIT_EXCEEDED = "LIMIT_EXCEEDED".asInstanceOf[ResourceStatus]
+    val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[ResourceStatus]
+    val PENDING = "PENDING".asInstanceOf[ResourceStatus]
 
     val values =
       js.Object.freeze(js.Array(AVAILABLE, ZONAL_RESOURCE_INACCESSIBLE, LIMIT_EXCEEDED, UNAVAILABLE, PENDING))
@@ -1534,7 +1534,7 @@ package ram {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any],
-        "tags"             -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -1568,7 +1568,7 @@ package ram {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any],
-        "tagKeys"          -> tagKeys.asInstanceOf[js.Any]
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]

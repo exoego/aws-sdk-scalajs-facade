@@ -7,113 +7,113 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object cloudwatch {
-  type ActionPrefix                      = String
-  type ActionsEnabled                    = Boolean
-  type AlarmArn                          = String
-  type AlarmDescription                  = String
-  type AlarmHistoryItems                 = js.Array[AlarmHistoryItem]
-  type AlarmName                         = String
-  type AlarmNamePrefix                   = String
-  type AlarmNames                        = js.Array[AlarmName]
-  type AlarmRule                         = String
-  type AlarmTypes                        = js.Array[AlarmType]
-  type AmazonResourceName                = String
+  type ActionPrefix = String
+  type ActionsEnabled = Boolean
+  type AlarmArn = String
+  type AlarmDescription = String
+  type AlarmHistoryItems = js.Array[AlarmHistoryItem]
+  type AlarmName = String
+  type AlarmNamePrefix = String
+  type AlarmNames = js.Array[AlarmName]
+  type AlarmRule = String
+  type AlarmTypes = js.Array[AlarmType]
+  type AmazonResourceName = String
   type AnomalyDetectorExcludedTimeRanges = js.Array[Range]
-  type AnomalyDetectorMetricStat         = String
-  type AnomalyDetectorMetricTimezone     = String
-  type AnomalyDetectors                  = js.Array[AnomalyDetector]
-  type BatchFailures                     = js.Array[PartialFailure]
-  type CompositeAlarms                   = js.Array[CompositeAlarm]
-  type Counts                            = js.Array[DatapointValue]
-  type DashboardArn                      = String
-  type DashboardBody                     = String
-  type DashboardEntries                  = js.Array[DashboardEntry]
-  type DashboardName                     = String
-  type DashboardNamePrefix               = String
-  type DashboardNames                    = js.Array[DashboardName]
-  type DashboardValidationMessages       = js.Array[DashboardValidationMessage]
-  type DataPath                          = String
-  type DatapointValue                    = Double
-  type DatapointValueMap                 = js.Dictionary[DatapointValue]
-  type DatapointValues                   = js.Array[DatapointValue]
-  type Datapoints                        = js.Array[Datapoint]
-  type DatapointsToAlarm                 = Int
-  type DimensionFilters                  = js.Array[DimensionFilter]
-  type DimensionName                     = String
-  type DimensionValue                    = String
-  type Dimensions                        = js.Array[Dimension]
-  type EvaluateLowSampleCountPercentile  = String
-  type EvaluationPeriods                 = Int
-  type ExceptionType                     = String
-  type ExtendedStatistic                 = String
-  type ExtendedStatistics                = js.Array[ExtendedStatistic]
-  type FailureCode                       = String
-  type FailureDescription                = String
-  type FailureResource                   = String
-  type GetMetricDataMaxDatapoints        = Int
-  type HistoryData                       = String
-  type HistorySummary                    = String
-  type InsightRuleAggregationStatistic   = String
-  type InsightRuleContributorDatapoints  = js.Array[InsightRuleContributorDatapoint]
-  type InsightRuleContributorKey         = String
-  type InsightRuleContributorKeyLabel    = String
-  type InsightRuleContributorKeyLabels   = js.Array[InsightRuleContributorKeyLabel]
-  type InsightRuleContributorKeys        = js.Array[InsightRuleContributorKey]
-  type InsightRuleContributors           = js.Array[InsightRuleContributor]
-  type InsightRuleDefinition             = String
-  type InsightRuleMaxResults             = Int
-  type InsightRuleMetricDatapoints       = js.Array[InsightRuleMetricDatapoint]
-  type InsightRuleMetricList             = js.Array[InsightRuleMetricName]
-  type InsightRuleMetricName             = String
-  type InsightRuleName                   = String
-  type InsightRuleNames                  = js.Array[InsightRuleName]
-  type InsightRuleOrderBy                = String
-  type InsightRuleSchema                 = String
-  type InsightRuleState                  = String
-  type InsightRuleUnboundDouble          = Double
-  type InsightRuleUnboundInteger         = Int
-  type InsightRuleUnboundLong            = Double
-  type InsightRules                      = js.Array[InsightRule]
-  type LastModified                      = js.Date
-  type MaxRecords                        = Int
-  type MaxReturnedResultsCount           = Int
-  type Message                           = String
-  type MessageDataCode                   = String
-  type MessageDataValue                  = String
-  type MetricAlarms                      = js.Array[MetricAlarm]
-  type MetricData                        = js.Array[MetricDatum]
-  type MetricDataQueries                 = js.Array[MetricDataQuery]
-  type MetricDataResultMessages          = js.Array[MessageData]
-  type MetricDataResults                 = js.Array[MetricDataResult]
-  type MetricExpression                  = String
-  type MetricId                          = String
-  type MetricLabel                       = String
-  type MetricName                        = String
-  type MetricWidget                      = String
-  type MetricWidgetImage                 = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type Metrics                           = js.Array[Metric]
-  type Namespace                         = String
-  type NextToken                         = String
-  type OutputFormat                      = String
-  type Period                            = Int
-  type ResourceList                      = js.Array[ResourceName]
-  type ResourceName                      = String
-  type ReturnData                        = Boolean
-  type Size                              = Double
-  type Stat                              = String
-  type StateReason                       = String
-  type StateReasonData                   = String
-  type Statistics                        = js.Array[Statistic]
-  type StorageResolution                 = Int
-  type TagKey                            = String
-  type TagKeyList                        = js.Array[TagKey]
-  type TagList                           = js.Array[Tag]
-  type TagValue                          = String
-  type Threshold                         = Double
-  type Timestamp                         = js.Date
-  type Timestamps                        = js.Array[Timestamp]
-  type TreatMissingData                  = String
-  type Values                            = js.Array[DatapointValue]
+  type AnomalyDetectorMetricStat = String
+  type AnomalyDetectorMetricTimezone = String
+  type AnomalyDetectors = js.Array[AnomalyDetector]
+  type BatchFailures = js.Array[PartialFailure]
+  type CompositeAlarms = js.Array[CompositeAlarm]
+  type Counts = js.Array[DatapointValue]
+  type DashboardArn = String
+  type DashboardBody = String
+  type DashboardEntries = js.Array[DashboardEntry]
+  type DashboardName = String
+  type DashboardNamePrefix = String
+  type DashboardNames = js.Array[DashboardName]
+  type DashboardValidationMessages = js.Array[DashboardValidationMessage]
+  type DataPath = String
+  type DatapointValue = Double
+  type DatapointValueMap = js.Dictionary[DatapointValue]
+  type DatapointValues = js.Array[DatapointValue]
+  type Datapoints = js.Array[Datapoint]
+  type DatapointsToAlarm = Int
+  type DimensionFilters = js.Array[DimensionFilter]
+  type DimensionName = String
+  type DimensionValue = String
+  type Dimensions = js.Array[Dimension]
+  type EvaluateLowSampleCountPercentile = String
+  type EvaluationPeriods = Int
+  type ExceptionType = String
+  type ExtendedStatistic = String
+  type ExtendedStatistics = js.Array[ExtendedStatistic]
+  type FailureCode = String
+  type FailureDescription = String
+  type FailureResource = String
+  type GetMetricDataMaxDatapoints = Int
+  type HistoryData = String
+  type HistorySummary = String
+  type InsightRuleAggregationStatistic = String
+  type InsightRuleContributorDatapoints = js.Array[InsightRuleContributorDatapoint]
+  type InsightRuleContributorKey = String
+  type InsightRuleContributorKeyLabel = String
+  type InsightRuleContributorKeyLabels = js.Array[InsightRuleContributorKeyLabel]
+  type InsightRuleContributorKeys = js.Array[InsightRuleContributorKey]
+  type InsightRuleContributors = js.Array[InsightRuleContributor]
+  type InsightRuleDefinition = String
+  type InsightRuleMaxResults = Int
+  type InsightRuleMetricDatapoints = js.Array[InsightRuleMetricDatapoint]
+  type InsightRuleMetricList = js.Array[InsightRuleMetricName]
+  type InsightRuleMetricName = String
+  type InsightRuleName = String
+  type InsightRuleNames = js.Array[InsightRuleName]
+  type InsightRuleOrderBy = String
+  type InsightRuleSchema = String
+  type InsightRuleState = String
+  type InsightRuleUnboundDouble = Double
+  type InsightRuleUnboundInteger = Int
+  type InsightRuleUnboundLong = Double
+  type InsightRules = js.Array[InsightRule]
+  type LastModified = js.Date
+  type MaxRecords = Int
+  type MaxReturnedResultsCount = Int
+  type Message = String
+  type MessageDataCode = String
+  type MessageDataValue = String
+  type MetricAlarms = js.Array[MetricAlarm]
+  type MetricData = js.Array[MetricDatum]
+  type MetricDataQueries = js.Array[MetricDataQuery]
+  type MetricDataResultMessages = js.Array[MessageData]
+  type MetricDataResults = js.Array[MetricDataResult]
+  type MetricExpression = String
+  type MetricId = String
+  type MetricLabel = String
+  type MetricName = String
+  type MetricWidget = String
+  type MetricWidgetImage = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type Metrics = js.Array[Metric]
+  type Namespace = String
+  type NextToken = String
+  type OutputFormat = String
+  type Period = Int
+  type ResourceList = js.Array[ResourceName]
+  type ResourceName = String
+  type ReturnData = Boolean
+  type Size = Double
+  type Stat = String
+  type StateReason = String
+  type StateReasonData = String
+  type Statistics = js.Array[Statistic]
+  type StorageResolution = Int
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type Threshold = Double
+  type Timestamp = js.Date
+  type Timestamps = js.Array[Timestamp]
+  type TreatMissingData = String
+  type Values = js.Array[DatapointValue]
 
   implicit final class CloudWatchOps(private val service: CloudWatch) extends AnyVal {
 
@@ -188,38 +188,38 @@ package cloudwatch {
   class CloudWatch() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def deleteAlarms(params: DeleteAlarmsInput): Request[js.Object]                                     = js.native
+    def deleteAlarms(params: DeleteAlarmsInput): Request[js.Object] = js.native
     def deleteAnomalyDetector(params: DeleteAnomalyDetectorInput): Request[DeleteAnomalyDetectorOutput] = js.native
-    def deleteDashboards(params: DeleteDashboardsInput): Request[DeleteDashboardsOutput]                = js.native
-    def deleteInsightRules(params: DeleteInsightRulesInput): Request[DeleteInsightRulesOutput]          = js.native
-    def describeAlarmHistory(params: DescribeAlarmHistoryInput): Request[DescribeAlarmHistoryOutput]    = js.native
-    def describeAlarms(params: DescribeAlarmsInput): Request[DescribeAlarmsOutput]                      = js.native
+    def deleteDashboards(params: DeleteDashboardsInput): Request[DeleteDashboardsOutput] = js.native
+    def deleteInsightRules(params: DeleteInsightRulesInput): Request[DeleteInsightRulesOutput] = js.native
+    def describeAlarmHistory(params: DescribeAlarmHistoryInput): Request[DescribeAlarmHistoryOutput] = js.native
+    def describeAlarms(params: DescribeAlarmsInput): Request[DescribeAlarmsOutput] = js.native
     def describeAlarmsForMetric(params: DescribeAlarmsForMetricInput): Request[DescribeAlarmsForMetricOutput] =
       js.native
     def describeAnomalyDetectors(params: DescribeAnomalyDetectorsInput): Request[DescribeAnomalyDetectorsOutput] =
       js.native
     def describeInsightRules(params: DescribeInsightRulesInput): Request[DescribeInsightRulesOutput] = js.native
-    def disableAlarmActions(params: DisableAlarmActionsInput): Request[js.Object]                    = js.native
-    def disableInsightRules(params: DisableInsightRulesInput): Request[DisableInsightRulesOutput]    = js.native
-    def enableAlarmActions(params: EnableAlarmActionsInput): Request[js.Object]                      = js.native
-    def enableInsightRules(params: EnableInsightRulesInput): Request[EnableInsightRulesOutput]       = js.native
-    def getDashboard(params: GetDashboardInput): Request[GetDashboardOutput]                         = js.native
+    def disableAlarmActions(params: DisableAlarmActionsInput): Request[js.Object] = js.native
+    def disableInsightRules(params: DisableInsightRulesInput): Request[DisableInsightRulesOutput] = js.native
+    def enableAlarmActions(params: EnableAlarmActionsInput): Request[js.Object] = js.native
+    def enableInsightRules(params: EnableInsightRulesInput): Request[EnableInsightRulesOutput] = js.native
+    def getDashboard(params: GetDashboardInput): Request[GetDashboardOutput] = js.native
     def getInsightRuleReport(params: GetInsightRuleReportInput): Request[GetInsightRuleReportOutput] = js.native
-    def getMetricData(params: GetMetricDataInput): Request[GetMetricDataOutput]                      = js.native
-    def getMetricStatistics(params: GetMetricStatisticsInput): Request[GetMetricStatisticsOutput]    = js.native
+    def getMetricData(params: GetMetricDataInput): Request[GetMetricDataOutput] = js.native
+    def getMetricStatistics(params: GetMetricStatisticsInput): Request[GetMetricStatisticsOutput] = js.native
     def getMetricWidgetImage(params: GetMetricWidgetImageInput): Request[GetMetricWidgetImageOutput] = js.native
-    def listDashboards(params: ListDashboardsInput): Request[ListDashboardsOutput]                   = js.native
-    def listMetrics(params: ListMetricsInput): Request[ListMetricsOutput]                            = js.native
-    def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput]    = js.native
-    def putAnomalyDetector(params: PutAnomalyDetectorInput): Request[PutAnomalyDetectorOutput]       = js.native
-    def putCompositeAlarm(params: PutCompositeAlarmInput): Request[js.Object]                        = js.native
-    def putDashboard(params: PutDashboardInput): Request[PutDashboardOutput]                         = js.native
-    def putInsightRule(params: PutInsightRuleInput): Request[PutInsightRuleOutput]                   = js.native
-    def putMetricAlarm(params: PutMetricAlarmInput): Request[js.Object]                              = js.native
-    def putMetricData(params: PutMetricDataInput): Request[js.Object]                                = js.native
-    def setAlarmState(params: SetAlarmStateInput): Request[js.Object]                                = js.native
-    def tagResource(params: TagResourceInput): Request[TagResourceOutput]                            = js.native
-    def untagResource(params: UntagResourceInput): Request[UntagResourceOutput]                      = js.native
+    def listDashboards(params: ListDashboardsInput): Request[ListDashboardsOutput] = js.native
+    def listMetrics(params: ListMetricsInput): Request[ListMetricsOutput] = js.native
+    def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput] = js.native
+    def putAnomalyDetector(params: PutAnomalyDetectorInput): Request[PutAnomalyDetectorOutput] = js.native
+    def putCompositeAlarm(params: PutCompositeAlarmInput): Request[js.Object] = js.native
+    def putDashboard(params: PutDashboardInput): Request[PutDashboardOutput] = js.native
+    def putInsightRule(params: PutInsightRuleInput): Request[PutInsightRuleOutput] = js.native
+    def putMetricAlarm(params: PutMetricAlarmInput): Request[js.Object] = js.native
+    def putMetricData(params: PutMetricDataInput): Request[js.Object] = js.native
+    def setAlarmState(params: SetAlarmStateInput): Request[js.Object] = js.native
+    def tagResource(params: TagResourceInput): Request[TagResourceOutput] = js.native
+    def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
   }
 
   /**
@@ -260,7 +260,7 @@ package cloudwatch {
   sealed trait AlarmType extends js.Any
   object AlarmType extends js.Object {
     val CompositeAlarm = "CompositeAlarm".asInstanceOf[AlarmType]
-    val MetricAlarm    = "MetricAlarm".asInstanceOf[AlarmType]
+    val MetricAlarm = "MetricAlarm".asInstanceOf[AlarmType]
 
     val values = js.Object.freeze(js.Array(CompositeAlarm, MetricAlarm))
   }
@@ -324,9 +324,9 @@ package cloudwatch {
   @js.native
   sealed trait AnomalyDetectorStateValue extends js.Any
   object AnomalyDetectorStateValue extends js.Object {
-    val PENDING_TRAINING          = "PENDING_TRAINING".asInstanceOf[AnomalyDetectorStateValue]
+    val PENDING_TRAINING = "PENDING_TRAINING".asInstanceOf[AnomalyDetectorStateValue]
     val TRAINED_INSUFFICIENT_DATA = "TRAINED_INSUFFICIENT_DATA".asInstanceOf[AnomalyDetectorStateValue]
-    val TRAINED                   = "TRAINED".asInstanceOf[AnomalyDetectorStateValue]
+    val TRAINED = "TRAINED".asInstanceOf[AnomalyDetectorStateValue]
 
     val values = js.Object.freeze(js.Array(PENDING_TRAINING, TRAINED_INSUFFICIENT_DATA, TRAINED))
   }
@@ -335,12 +335,12 @@ package cloudwatch {
   sealed trait ComparisonOperator extends js.Any
   object ComparisonOperator extends js.Object {
     val GreaterThanOrEqualToThreshold = "GreaterThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
-    val GreaterThanThreshold          = "GreaterThanThreshold".asInstanceOf[ComparisonOperator]
-    val LessThanThreshold             = "LessThanThreshold".asInstanceOf[ComparisonOperator]
-    val LessThanOrEqualToThreshold    = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
+    val GreaterThanThreshold = "GreaterThanThreshold".asInstanceOf[ComparisonOperator]
+    val LessThanThreshold = "LessThanThreshold".asInstanceOf[ComparisonOperator]
+    val LessThanOrEqualToThreshold = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
     val LessThanLowerOrGreaterThanUpperThreshold =
       "LessThanLowerOrGreaterThanUpperThreshold".asInstanceOf[ComparisonOperator]
-    val LessThanLowerThreshold    = "LessThanLowerThreshold".asInstanceOf[ComparisonOperator]
+    val LessThanLowerThreshold = "LessThanLowerThreshold".asInstanceOf[ComparisonOperator]
     val GreaterThanUpperThreshold = "GreaterThanUpperThreshold".asInstanceOf[ComparisonOperator]
 
     val values = js.Object.freeze(
@@ -539,8 +539,8 @@ package cloudwatch {
     ): DeleteAnomalyDetectorInput = {
       val __obj = js.Dynamic.literal(
         "MetricName" -> MetricName.asInstanceOf[js.Any],
-        "Namespace"  -> Namespace.asInstanceOf[js.Any],
-        "Stat"       -> Stat.asInstanceOf[js.Any]
+        "Namespace" -> Namespace.asInstanceOf[js.Any],
+        "Stat" -> Stat.asInstanceOf[js.Any]
       )
 
       Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
@@ -706,7 +706,7 @@ package cloudwatch {
     ): DescribeAlarmsForMetricInput = {
       val __obj = js.Dynamic.literal(
         "MetricName" -> MetricName.asInstanceOf[js.Any],
-        "Namespace"  -> Namespace.asInstanceOf[js.Any]
+        "Namespace" -> Namespace.asInstanceOf[js.Any]
       )
 
       Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
@@ -897,7 +897,7 @@ package cloudwatch {
         Value: DimensionValue
     ): Dimension = {
       val __obj = js.Dynamic.literal(
-        "Name"  -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -1096,9 +1096,9 @@ package cloudwatch {
         OrderBy: js.UndefOr[InsightRuleOrderBy] = js.undefined
     ): GetInsightRuleReportInput = {
       val __obj = js.Dynamic.literal(
-        "EndTime"   -> EndTime.asInstanceOf[js.Any],
-        "Period"    -> Period.asInstanceOf[js.Any],
-        "RuleName"  -> RuleName.asInstanceOf[js.Any],
+        "EndTime" -> EndTime.asInstanceOf[js.Any],
+        "Period" -> Period.asInstanceOf[js.Any],
+        "RuleName" -> RuleName.asInstanceOf[js.Any],
         "StartTime" -> StartTime.asInstanceOf[js.Any]
       )
 
@@ -1161,9 +1161,9 @@ package cloudwatch {
         ScanBy: js.UndefOr[ScanBy] = js.undefined
     ): GetMetricDataInput = {
       val __obj = js.Dynamic.literal(
-        "EndTime"           -> EndTime.asInstanceOf[js.Any],
+        "EndTime" -> EndTime.asInstanceOf[js.Any],
         "MetricDataQueries" -> MetricDataQueries.asInstanceOf[js.Any],
-        "StartTime"         -> StartTime.asInstanceOf[js.Any]
+        "StartTime" -> StartTime.asInstanceOf[js.Any]
       )
 
       MaxDatapoints.foreach(__v => __obj.updateDynamic("MaxDatapoints")(__v.asInstanceOf[js.Any]))
@@ -1222,11 +1222,11 @@ package cloudwatch {
         Unit: js.UndefOr[StandardUnit] = js.undefined
     ): GetMetricStatisticsInput = {
       val __obj = js.Dynamic.literal(
-        "EndTime"    -> EndTime.asInstanceOf[js.Any],
+        "EndTime" -> EndTime.asInstanceOf[js.Any],
         "MetricName" -> MetricName.asInstanceOf[js.Any],
-        "Namespace"  -> Namespace.asInstanceOf[js.Any],
-        "Period"     -> Period.asInstanceOf[js.Any],
-        "StartTime"  -> StartTime.asInstanceOf[js.Any]
+        "Namespace" -> Namespace.asInstanceOf[js.Any],
+        "Period" -> Period.asInstanceOf[js.Any],
+        "StartTime" -> StartTime.asInstanceOf[js.Any]
       )
 
       Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
@@ -1297,8 +1297,8 @@ package cloudwatch {
   sealed trait HistoryItemType extends js.Any
   object HistoryItemType extends js.Object {
     val ConfigurationUpdate = "ConfigurationUpdate".asInstanceOf[HistoryItemType]
-    val StateUpdate         = "StateUpdate".asInstanceOf[HistoryItemType]
-    val Action              = "Action".asInstanceOf[HistoryItemType]
+    val StateUpdate = "StateUpdate".asInstanceOf[HistoryItemType]
+    val Action = "Action".asInstanceOf[HistoryItemType]
 
     val values = js.Object.freeze(js.Array(ConfigurationUpdate, StateUpdate, Action))
   }
@@ -1324,9 +1324,9 @@ package cloudwatch {
     ): InsightRule = {
       val __obj = js.Dynamic.literal(
         "Definition" -> Definition.asInstanceOf[js.Any],
-        "Name"       -> Name.asInstanceOf[js.Any],
-        "Schema"     -> Schema.asInstanceOf[js.Any],
-        "State"      -> State.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Schema" -> Schema.asInstanceOf[js.Any],
+        "State" -> State.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[InsightRule]
@@ -1354,8 +1354,8 @@ package cloudwatch {
     ): InsightRuleContributor = {
       val __obj = js.Dynamic.literal(
         "ApproximateAggregateValue" -> ApproximateAggregateValue.asInstanceOf[js.Any],
-        "Datapoints"                -> Datapoints.asInstanceOf[js.Any],
-        "Keys"                      -> Keys.asInstanceOf[js.Any]
+        "Datapoints" -> Datapoints.asInstanceOf[js.Any],
+        "Keys" -> Keys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[InsightRuleContributor]
@@ -1380,7 +1380,7 @@ package cloudwatch {
     ): InsightRuleContributorDatapoint = {
       val __obj = js.Dynamic.literal(
         "ApproximateValue" -> ApproximateValue.asInstanceOf[js.Any],
-        "Timestamp"        -> Timestamp.asInstanceOf[js.Any]
+        "Timestamp" -> Timestamp.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[InsightRuleContributorDatapoint]
@@ -1835,7 +1835,7 @@ package cloudwatch {
       val __obj = js.Dynamic.literal(
         "Metric" -> Metric.asInstanceOf[js.Any],
         "Period" -> Period.asInstanceOf[js.Any],
-        "Stat"   -> Stat.asInstanceOf[js.Any]
+        "Stat" -> Stat.asInstanceOf[js.Any]
       )
 
       Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
@@ -1891,8 +1891,8 @@ package cloudwatch {
     ): PutAnomalyDetectorInput = {
       val __obj = js.Dynamic.literal(
         "MetricName" -> MetricName.asInstanceOf[js.Any],
-        "Namespace"  -> Namespace.asInstanceOf[js.Any],
-        "Stat"       -> Stat.asInstanceOf[js.Any]
+        "Namespace" -> Namespace.asInstanceOf[js.Any],
+        "Stat" -> Stat.asInstanceOf[js.Any]
       )
 
       Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
@@ -2010,7 +2010,7 @@ package cloudwatch {
     ): PutInsightRuleInput = {
       val __obj = js.Dynamic.literal(
         "RuleDefinition" -> RuleDefinition.asInstanceOf[js.Any],
-        "RuleName"       -> RuleName.asInstanceOf[js.Any]
+        "RuleName" -> RuleName.asInstanceOf[js.Any]
       )
 
       RuleState.foreach(__v => __obj.updateDynamic("RuleState")(__v.asInstanceOf[js.Any]))
@@ -2085,9 +2085,9 @@ package cloudwatch {
         Unit: js.UndefOr[StandardUnit] = js.undefined
     ): PutMetricAlarmInput = {
       val __obj = js.Dynamic.literal(
-        "AlarmName"          -> AlarmName.asInstanceOf[js.Any],
+        "AlarmName" -> AlarmName.asInstanceOf[js.Any],
         "ComparisonOperator" -> ComparisonOperator.asInstanceOf[js.Any],
-        "EvaluationPeriods"  -> EvaluationPeriods.asInstanceOf[js.Any]
+        "EvaluationPeriods" -> EvaluationPeriods.asInstanceOf[js.Any]
       )
 
       ActionsEnabled.foreach(__v => __obj.updateDynamic("ActionsEnabled")(__v.asInstanceOf[js.Any]))
@@ -2129,7 +2129,7 @@ package cloudwatch {
     ): PutMetricDataInput = {
       val __obj = js.Dynamic.literal(
         "MetricData" -> MetricData.asInstanceOf[js.Any],
-        "Namespace"  -> Namespace.asInstanceOf[js.Any]
+        "Namespace" -> Namespace.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutMetricDataInput]
@@ -2152,7 +2152,7 @@ package cloudwatch {
         StartTime: Timestamp
     ): Range = {
       val __obj = js.Dynamic.literal(
-        "EndTime"   -> EndTime.asInstanceOf[js.Any],
+        "EndTime" -> EndTime.asInstanceOf[js.Any],
         "StartTime" -> StartTime.asInstanceOf[js.Any]
       )
 
@@ -2164,7 +2164,7 @@ package cloudwatch {
   sealed trait ScanBy extends js.Any
   object ScanBy extends js.Object {
     val TimestampDescending = "TimestampDescending".asInstanceOf[ScanBy]
-    val TimestampAscending  = "TimestampAscending".asInstanceOf[ScanBy]
+    val TimestampAscending = "TimestampAscending".asInstanceOf[ScanBy]
 
     val values = js.Object.freeze(js.Array(TimestampDescending, TimestampAscending))
   }
@@ -2186,9 +2186,9 @@ package cloudwatch {
         StateReasonData: js.UndefOr[StateReasonData] = js.undefined
     ): SetAlarmStateInput = {
       val __obj = js.Dynamic.literal(
-        "AlarmName"   -> AlarmName.asInstanceOf[js.Any],
+        "AlarmName" -> AlarmName.asInstanceOf[js.Any],
         "StateReason" -> StateReason.asInstanceOf[js.Any],
-        "StateValue"  -> StateValue.asInstanceOf[js.Any]
+        "StateValue" -> StateValue.asInstanceOf[js.Any]
       )
 
       StateReasonData.foreach(__v => __obj.updateDynamic("StateReasonData")(__v.asInstanceOf[js.Any]))
@@ -2199,33 +2199,33 @@ package cloudwatch {
   @js.native
   sealed trait StandardUnit extends js.Any
   object StandardUnit extends js.Object {
-    val Seconds            = "Seconds".asInstanceOf[StandardUnit]
-    val Microseconds       = "Microseconds".asInstanceOf[StandardUnit]
-    val Milliseconds       = "Milliseconds".asInstanceOf[StandardUnit]
-    val Bytes              = "Bytes".asInstanceOf[StandardUnit]
-    val Kilobytes          = "Kilobytes".asInstanceOf[StandardUnit]
-    val Megabytes          = "Megabytes".asInstanceOf[StandardUnit]
-    val Gigabytes          = "Gigabytes".asInstanceOf[StandardUnit]
-    val Terabytes          = "Terabytes".asInstanceOf[StandardUnit]
-    val Bits               = "Bits".asInstanceOf[StandardUnit]
-    val Kilobits           = "Kilobits".asInstanceOf[StandardUnit]
-    val Megabits           = "Megabits".asInstanceOf[StandardUnit]
-    val Gigabits           = "Gigabits".asInstanceOf[StandardUnit]
-    val Terabits           = "Terabits".asInstanceOf[StandardUnit]
-    val Percent            = "Percent".asInstanceOf[StandardUnit]
-    val Count              = "Count".asInstanceOf[StandardUnit]
-    val `Bytes/Second`     = "Bytes/Second".asInstanceOf[StandardUnit]
+    val Seconds = "Seconds".asInstanceOf[StandardUnit]
+    val Microseconds = "Microseconds".asInstanceOf[StandardUnit]
+    val Milliseconds = "Milliseconds".asInstanceOf[StandardUnit]
+    val Bytes = "Bytes".asInstanceOf[StandardUnit]
+    val Kilobytes = "Kilobytes".asInstanceOf[StandardUnit]
+    val Megabytes = "Megabytes".asInstanceOf[StandardUnit]
+    val Gigabytes = "Gigabytes".asInstanceOf[StandardUnit]
+    val Terabytes = "Terabytes".asInstanceOf[StandardUnit]
+    val Bits = "Bits".asInstanceOf[StandardUnit]
+    val Kilobits = "Kilobits".asInstanceOf[StandardUnit]
+    val Megabits = "Megabits".asInstanceOf[StandardUnit]
+    val Gigabits = "Gigabits".asInstanceOf[StandardUnit]
+    val Terabits = "Terabits".asInstanceOf[StandardUnit]
+    val Percent = "Percent".asInstanceOf[StandardUnit]
+    val Count = "Count".asInstanceOf[StandardUnit]
+    val `Bytes/Second` = "Bytes/Second".asInstanceOf[StandardUnit]
     val `Kilobytes/Second` = "Kilobytes/Second".asInstanceOf[StandardUnit]
     val `Megabytes/Second` = "Megabytes/Second".asInstanceOf[StandardUnit]
     val `Gigabytes/Second` = "Gigabytes/Second".asInstanceOf[StandardUnit]
     val `Terabytes/Second` = "Terabytes/Second".asInstanceOf[StandardUnit]
-    val `Bits/Second`      = "Bits/Second".asInstanceOf[StandardUnit]
-    val `Kilobits/Second`  = "Kilobits/Second".asInstanceOf[StandardUnit]
-    val `Megabits/Second`  = "Megabits/Second".asInstanceOf[StandardUnit]
-    val `Gigabits/Second`  = "Gigabits/Second".asInstanceOf[StandardUnit]
-    val `Terabits/Second`  = "Terabits/Second".asInstanceOf[StandardUnit]
-    val `Count/Second`     = "Count/Second".asInstanceOf[StandardUnit]
-    val None               = "None".asInstanceOf[StandardUnit]
+    val `Bits/Second` = "Bits/Second".asInstanceOf[StandardUnit]
+    val `Kilobits/Second` = "Kilobits/Second".asInstanceOf[StandardUnit]
+    val `Megabits/Second` = "Megabits/Second".asInstanceOf[StandardUnit]
+    val `Gigabits/Second` = "Gigabits/Second".asInstanceOf[StandardUnit]
+    val `Terabits/Second` = "Terabits/Second".asInstanceOf[StandardUnit]
+    val `Count/Second` = "Count/Second".asInstanceOf[StandardUnit]
+    val None = "None".asInstanceOf[StandardUnit]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2263,8 +2263,8 @@ package cloudwatch {
   @js.native
   sealed trait StateValue extends js.Any
   object StateValue extends js.Object {
-    val OK                = "OK".asInstanceOf[StateValue]
-    val ALARM             = "ALARM".asInstanceOf[StateValue]
+    val OK = "OK".asInstanceOf[StateValue]
+    val ALARM = "ALARM".asInstanceOf[StateValue]
     val INSUFFICIENT_DATA = "INSUFFICIENT_DATA".asInstanceOf[StateValue]
 
     val values = js.Object.freeze(js.Array(OK, ALARM, INSUFFICIENT_DATA))
@@ -2274,10 +2274,10 @@ package cloudwatch {
   sealed trait Statistic extends js.Any
   object Statistic extends js.Object {
     val SampleCount = "SampleCount".asInstanceOf[Statistic]
-    val Average     = "Average".asInstanceOf[Statistic]
-    val Sum         = "Sum".asInstanceOf[Statistic]
-    val Minimum     = "Minimum".asInstanceOf[Statistic]
-    val Maximum     = "Maximum".asInstanceOf[Statistic]
+    val Average = "Average".asInstanceOf[Statistic]
+    val Sum = "Sum".asInstanceOf[Statistic]
+    val Minimum = "Minimum".asInstanceOf[Statistic]
+    val Maximum = "Maximum".asInstanceOf[Statistic]
 
     val values = js.Object.freeze(js.Array(SampleCount, Average, Sum, Minimum, Maximum))
   }
@@ -2302,10 +2302,10 @@ package cloudwatch {
         Sum: DatapointValue
     ): StatisticSet = {
       val __obj = js.Dynamic.literal(
-        "Maximum"     -> Maximum.asInstanceOf[js.Any],
-        "Minimum"     -> Minimum.asInstanceOf[js.Any],
+        "Maximum" -> Maximum.asInstanceOf[js.Any],
+        "Minimum" -> Minimum.asInstanceOf[js.Any],
         "SampleCount" -> SampleCount.asInstanceOf[js.Any],
-        "Sum"         -> Sum.asInstanceOf[js.Any]
+        "Sum" -> Sum.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[StatisticSet]
@@ -2315,9 +2315,9 @@ package cloudwatch {
   @js.native
   sealed trait StatusCode extends js.Any
   object StatusCode extends js.Object {
-    val Complete      = "Complete".asInstanceOf[StatusCode]
+    val Complete = "Complete".asInstanceOf[StatusCode]
     val InternalError = "InternalError".asInstanceOf[StatusCode]
-    val PartialData   = "PartialData".asInstanceOf[StatusCode]
+    val PartialData = "PartialData".asInstanceOf[StatusCode]
 
     val values = js.Object.freeze(js.Array(Complete, InternalError, PartialData))
   }
@@ -2338,7 +2338,7 @@ package cloudwatch {
         Value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -2360,7 +2360,7 @@ package cloudwatch {
     ): TagResourceInput = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceInput]
@@ -2394,7 +2394,7 @@ package cloudwatch {
     ): UntagResourceInput = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceInput]

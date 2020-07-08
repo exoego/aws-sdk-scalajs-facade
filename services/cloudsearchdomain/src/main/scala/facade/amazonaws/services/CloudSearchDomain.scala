@@ -7,34 +7,34 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object cloudsearchdomain {
-  type Adds                    = Double
-  type Blob                    = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type BucketList              = js.Array[Bucket]
-  type Cursor                  = String
-  type Deletes                 = Double
+  type Adds = Double
+  type Blob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type BucketList = js.Array[Bucket]
+  type Cursor = String
+  type Deletes = Double
   type DocumentServiceWarnings = js.Array[DocumentServiceWarning]
-  type Expr                    = String
-  type Exprs                   = js.Dictionary[String]
-  type Facet                   = String
-  type Facets                  = js.Dictionary[BucketInfo]
-  type FieldValue              = js.Array[String]
-  type Fields                  = js.Dictionary[FieldValue]
-  type FilterQuery             = String
-  type Highlight               = String
-  type Highlights              = js.Dictionary[String]
-  type HitList                 = js.Array[Hit]
-  type Partial                 = Boolean
-  type Query                   = String
-  type QueryOptions            = String
-  type Return                  = String
-  type Size                    = Double
-  type Sort                    = String
-  type Start                   = Double
-  type Stat                    = String
-  type Stats                   = js.Dictionary[FieldStats]
-  type Suggester               = String
-  type Suggestions             = js.Array[SuggestionMatch]
-  type SuggestionsSize         = Double
+  type Expr = String
+  type Exprs = js.Dictionary[String]
+  type Facet = String
+  type Facets = js.Dictionary[BucketInfo]
+  type FieldValue = js.Array[String]
+  type Fields = js.Dictionary[FieldValue]
+  type FilterQuery = String
+  type Highlight = String
+  type Highlights = js.Dictionary[String]
+  type HitList = js.Array[Hit]
+  type Partial = Boolean
+  type Query = String
+  type QueryOptions = String
+  type Return = String
+  type Size = Double
+  type Sort = String
+  type Start = Double
+  type Stat = String
+  type Stats = js.Dictionary[FieldStats]
+  type Suggester = String
+  type Suggestions = js.Array[SuggestionMatch]
+  type SuggestionsSize = Double
 
   implicit final class CloudSearchDomainOps(private val service: CloudSearchDomain) extends AnyVal {
 
@@ -52,8 +52,8 @@ package cloudsearchdomain {
   class CloudSearchDomain() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def search(params: SearchRequest): Request[SearchResponse]                            = js.native
-    def suggest(params: SuggestRequest): Request[SuggestResponse]                         = js.native
+    def search(params: SearchRequest): Request[SearchResponse] = js.native
+    def suggest(params: SuggestRequest): Request[SuggestResponse] = js.native
     def uploadDocuments(params: UploadDocumentsRequest): Request[UploadDocumentsResponse] = js.native
   }
 
@@ -102,7 +102,7 @@ package cloudsearchdomain {
   sealed trait ContentType extends js.Any
   object ContentType extends js.Object {
     val `application/json` = "application/json".asInstanceOf[ContentType]
-    val `application/xml`  = "application/xml".asInstanceOf[ContentType]
+    val `application/xml` = "application/xml".asInstanceOf[ContentType]
 
     val values = js.Object.freeze(js.Array(`application/json`, `application/xml`))
   }
@@ -234,10 +234,10 @@ package cloudsearchdomain {
   @js.native
   sealed trait QueryParser extends js.Any
   object QueryParser extends js.Object {
-    val simple     = "simple".asInstanceOf[QueryParser]
+    val simple = "simple".asInstanceOf[QueryParser]
     val structured = "structured".asInstanceOf[QueryParser]
-    val lucene     = "lucene".asInstanceOf[QueryParser]
-    val dismax     = "dismax".asInstanceOf[QueryParser]
+    val lucene = "lucene".asInstanceOf[QueryParser]
+    val dismax = "dismax".asInstanceOf[QueryParser]
 
     val values = js.Object.freeze(js.Array(simple, structured, lucene, dismax))
   }
@@ -403,7 +403,7 @@ package cloudsearchdomain {
         size: js.UndefOr[SuggestionsSize] = js.undefined
     ): SuggestRequest = {
       val __obj = js.Dynamic.literal(
-        "query"     -> query.asInstanceOf[js.Any],
+        "query" -> query.asInstanceOf[js.Any],
         "suggester" -> suggester.asInstanceOf[js.Any]
       )
 
@@ -498,7 +498,7 @@ package cloudsearchdomain {
     ): UploadDocumentsRequest = {
       val __obj = js.Dynamic.literal(
         "contentType" -> contentType.asInstanceOf[js.Any],
-        "documents"   -> documents.asInstanceOf[js.Any]
+        "documents" -> documents.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UploadDocumentsRequest]

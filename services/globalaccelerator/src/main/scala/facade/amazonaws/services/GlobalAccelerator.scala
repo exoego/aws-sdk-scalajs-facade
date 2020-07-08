@@ -7,33 +7,33 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object globalaccelerator {
-  type Accelerators               = js.Array[Accelerator]
-  type ByoipCidrEvents            = js.Array[ByoipCidrEvent]
-  type ByoipCidrs                 = js.Array[ByoipCidr]
-  type EndpointConfigurations     = js.Array[EndpointConfiguration]
-  type EndpointDescriptions       = js.Array[EndpointDescription]
-  type EndpointGroups             = js.Array[EndpointGroup]
-  type EndpointWeight             = Int
-  type GenericBoolean             = Boolean
-  type GenericString              = String
+  type Accelerators = js.Array[Accelerator]
+  type ByoipCidrEvents = js.Array[ByoipCidrEvent]
+  type ByoipCidrs = js.Array[ByoipCidr]
+  type EndpointConfigurations = js.Array[EndpointConfiguration]
+  type EndpointDescriptions = js.Array[EndpointDescription]
+  type EndpointGroups = js.Array[EndpointGroup]
+  type EndpointWeight = Int
+  type GenericBoolean = Boolean
+  type GenericString = String
   type HealthCheckIntervalSeconds = Int
-  type HealthCheckPort            = Int
-  type IdempotencyToken           = String
-  type IpAddress                  = String
-  type IpAddresses                = js.Array[IpAddress]
-  type IpSets                     = js.Array[IpSet]
-  type Listeners                  = js.Array[Listener]
-  type MaxResults                 = Int
-  type PortNumber                 = Int
-  type PortRanges                 = js.Array[PortRange]
-  type ResourceArn                = String
-  type TagKey                     = String
-  type TagKeys                    = js.Array[TagKey]
-  type TagValue                   = String
-  type Tags                       = js.Array[Tag]
-  type ThresholdCount             = Int
-  type Timestamp                  = js.Date
-  type TrafficDialPercentage      = Float
+  type HealthCheckPort = Int
+  type IdempotencyToken = String
+  type IpAddress = String
+  type IpAddresses = js.Array[IpAddress]
+  type IpSets = js.Array[IpSet]
+  type Listeners = js.Array[Listener]
+  type MaxResults = Int
+  type PortNumber = Int
+  type PortRanges = js.Array[PortRange]
+  type ResourceArn = String
+  type TagKey = String
+  type TagKeys = js.Array[TagKey]
+  type TagValue = String
+  type Tags = js.Array[Tag]
+  type ThresholdCount = Int
+  type Timestamp = js.Date
+  type TrafficDialPercentage = Float
 
   implicit final class GlobalAcceleratorOps(private val service: GlobalAccelerator) extends AnyVal {
 
@@ -99,35 +99,35 @@ package globalaccelerator {
   class GlobalAccelerator() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def advertiseByoipCidr(params: AdvertiseByoipCidrRequest): Request[AdvertiseByoipCidrResponse]       = js.native
-    def createAccelerator(params: CreateAcceleratorRequest): Request[CreateAcceleratorResponse]          = js.native
-    def createEndpointGroup(params: CreateEndpointGroupRequest): Request[CreateEndpointGroupResponse]    = js.native
-    def createListener(params: CreateListenerRequest): Request[CreateListenerResponse]                   = js.native
-    def deleteAccelerator(params: DeleteAcceleratorRequest): Request[js.Object]                          = js.native
-    def deleteEndpointGroup(params: DeleteEndpointGroupRequest): Request[js.Object]                      = js.native
-    def deleteListener(params: DeleteListenerRequest): Request[js.Object]                                = js.native
+    def advertiseByoipCidr(params: AdvertiseByoipCidrRequest): Request[AdvertiseByoipCidrResponse] = js.native
+    def createAccelerator(params: CreateAcceleratorRequest): Request[CreateAcceleratorResponse] = js.native
+    def createEndpointGroup(params: CreateEndpointGroupRequest): Request[CreateEndpointGroupResponse] = js.native
+    def createListener(params: CreateListenerRequest): Request[CreateListenerResponse] = js.native
+    def deleteAccelerator(params: DeleteAcceleratorRequest): Request[js.Object] = js.native
+    def deleteEndpointGroup(params: DeleteEndpointGroupRequest): Request[js.Object] = js.native
+    def deleteListener(params: DeleteListenerRequest): Request[js.Object] = js.native
     def deprovisionByoipCidr(params: DeprovisionByoipCidrRequest): Request[DeprovisionByoipCidrResponse] = js.native
-    def describeAccelerator(params: DescribeAcceleratorRequest): Request[DescribeAcceleratorResponse]    = js.native
+    def describeAccelerator(params: DescribeAcceleratorRequest): Request[DescribeAcceleratorResponse] = js.native
     def describeAcceleratorAttributes(
         params: DescribeAcceleratorAttributesRequest
-    ): Request[DescribeAcceleratorAttributesResponse]                                                       = js.native
+    ): Request[DescribeAcceleratorAttributesResponse] = js.native
     def describeEndpointGroup(params: DescribeEndpointGroupRequest): Request[DescribeEndpointGroupResponse] = js.native
-    def describeListener(params: DescribeListenerRequest): Request[DescribeListenerResponse]                = js.native
-    def listAccelerators(params: ListAcceleratorsRequest): Request[ListAcceleratorsResponse]                = js.native
-    def listByoipCidrs(params: ListByoipCidrsRequest): Request[ListByoipCidrsResponse]                      = js.native
-    def listEndpointGroups(params: ListEndpointGroupsRequest): Request[ListEndpointGroupsResponse]          = js.native
-    def listListeners(params: ListListenersRequest): Request[ListListenersResponse]                         = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
-    def provisionByoipCidr(params: ProvisionByoipCidrRequest): Request[ProvisionByoipCidrResponse]          = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                               = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                         = js.native
-    def updateAccelerator(params: UpdateAcceleratorRequest): Request[UpdateAcceleratorResponse]             = js.native
+    def describeListener(params: DescribeListenerRequest): Request[DescribeListenerResponse] = js.native
+    def listAccelerators(params: ListAcceleratorsRequest): Request[ListAcceleratorsResponse] = js.native
+    def listByoipCidrs(params: ListByoipCidrsRequest): Request[ListByoipCidrsResponse] = js.native
+    def listEndpointGroups(params: ListEndpointGroupsRequest): Request[ListEndpointGroupsResponse] = js.native
+    def listListeners(params: ListListenersRequest): Request[ListListenersResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def provisionByoipCidr(params: ProvisionByoipCidrRequest): Request[ProvisionByoipCidrResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateAccelerator(params: UpdateAcceleratorRequest): Request[UpdateAcceleratorResponse] = js.native
     def updateAcceleratorAttributes(
         params: UpdateAcceleratorAttributesRequest
-    ): Request[UpdateAcceleratorAttributesResponse]                                                   = js.native
+    ): Request[UpdateAcceleratorAttributesResponse] = js.native
     def updateEndpointGroup(params: UpdateEndpointGroupRequest): Request[UpdateEndpointGroupResponse] = js.native
-    def updateListener(params: UpdateListenerRequest): Request[UpdateListenerResponse]                = js.native
-    def withdrawByoipCidr(params: WithdrawByoipCidrRequest): Request[WithdrawByoipCidrResponse]       = js.native
+    def updateListener(params: UpdateListenerRequest): Request[UpdateListenerResponse] = js.native
+    def withdrawByoipCidr(params: WithdrawByoipCidrRequest): Request[WithdrawByoipCidrResponse] = js.native
   }
 
   /**
@@ -201,7 +201,7 @@ package globalaccelerator {
   @js.native
   sealed trait AcceleratorStatus extends js.Any
   object AcceleratorStatus extends js.Object {
-    val DEPLOYED    = "DEPLOYED".asInstanceOf[AcceleratorStatus]
+    val DEPLOYED = "DEPLOYED".asInstanceOf[AcceleratorStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AcceleratorStatus]
 
     val values = js.Object.freeze(js.Array(DEPLOYED, IN_PROGRESS))
@@ -303,17 +303,17 @@ package globalaccelerator {
   @js.native
   sealed trait ByoipCidrState extends js.Any
   object ByoipCidrState extends js.Object {
-    val PENDING_PROVISIONING   = "PENDING_PROVISIONING".asInstanceOf[ByoipCidrState]
-    val READY                  = "READY".asInstanceOf[ByoipCidrState]
-    val PENDING_ADVERTISING    = "PENDING_ADVERTISING".asInstanceOf[ByoipCidrState]
-    val ADVERTISING            = "ADVERTISING".asInstanceOf[ByoipCidrState]
-    val PENDING_WITHDRAWING    = "PENDING_WITHDRAWING".asInstanceOf[ByoipCidrState]
+    val PENDING_PROVISIONING = "PENDING_PROVISIONING".asInstanceOf[ByoipCidrState]
+    val READY = "READY".asInstanceOf[ByoipCidrState]
+    val PENDING_ADVERTISING = "PENDING_ADVERTISING".asInstanceOf[ByoipCidrState]
+    val ADVERTISING = "ADVERTISING".asInstanceOf[ByoipCidrState]
+    val PENDING_WITHDRAWING = "PENDING_WITHDRAWING".asInstanceOf[ByoipCidrState]
     val PENDING_DEPROVISIONING = "PENDING_DEPROVISIONING".asInstanceOf[ByoipCidrState]
-    val DEPROVISIONED          = "DEPROVISIONED".asInstanceOf[ByoipCidrState]
-    val FAILED_PROVISION       = "FAILED_PROVISION".asInstanceOf[ByoipCidrState]
-    val FAILED_ADVERTISING     = "FAILED_ADVERTISING".asInstanceOf[ByoipCidrState]
-    val FAILED_WITHDRAW        = "FAILED_WITHDRAW".asInstanceOf[ByoipCidrState]
-    val FAILED_DEPROVISION     = "FAILED_DEPROVISION".asInstanceOf[ByoipCidrState]
+    val DEPROVISIONED = "DEPROVISIONED".asInstanceOf[ByoipCidrState]
+    val FAILED_PROVISION = "FAILED_PROVISION".asInstanceOf[ByoipCidrState]
+    val FAILED_ADVERTISING = "FAILED_ADVERTISING".asInstanceOf[ByoipCidrState]
+    val FAILED_WITHDRAW = "FAILED_WITHDRAW".asInstanceOf[ByoipCidrState]
+    val FAILED_DEPROVISION = "FAILED_DEPROVISION".asInstanceOf[ByoipCidrState]
 
     val values = js.Object.freeze(
       js.Array(
@@ -349,7 +349,7 @@ package globalaccelerator {
         Signature: GenericString
     ): CidrAuthorizationContext = {
       val __obj = js.Dynamic.literal(
-        "Message"   -> Message.asInstanceOf[js.Any],
+        "Message" -> Message.asInstanceOf[js.Any],
         "Signature" -> Signature.asInstanceOf[js.Any]
       )
 
@@ -360,7 +360,7 @@ package globalaccelerator {
   @js.native
   sealed trait ClientAffinity extends js.Any
   object ClientAffinity extends js.Object {
-    val NONE      = "NONE".asInstanceOf[ClientAffinity]
+    val NONE = "NONE".asInstanceOf[ClientAffinity]
     val SOURCE_IP = "SOURCE_IP".asInstanceOf[ClientAffinity]
 
     val values = js.Object.freeze(js.Array(NONE, SOURCE_IP))
@@ -388,7 +388,7 @@ package globalaccelerator {
     ): CreateAcceleratorRequest = {
       val __obj = js.Dynamic.literal(
         "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
@@ -445,8 +445,8 @@ package globalaccelerator {
     ): CreateEndpointGroupRequest = {
       val __obj = js.Dynamic.literal(
         "EndpointGroupRegion" -> EndpointGroupRegion.asInstanceOf[js.Any],
-        "IdempotencyToken"    -> IdempotencyToken.asInstanceOf[js.Any],
-        "ListenerArn"         -> ListenerArn.asInstanceOf[js.Any]
+        "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
+        "ListenerArn" -> ListenerArn.asInstanceOf[js.Any]
       )
 
       EndpointConfigurations.foreach(__v => __obj.updateDynamic("EndpointConfigurations")(__v.asInstanceOf[js.Any]))
@@ -497,10 +497,10 @@ package globalaccelerator {
         ClientAffinity: js.UndefOr[ClientAffinity] = js.undefined
     ): CreateListenerRequest = {
       val __obj = js.Dynamic.literal(
-        "AcceleratorArn"   -> AcceleratorArn.asInstanceOf[js.Any],
+        "AcceleratorArn" -> AcceleratorArn.asInstanceOf[js.Any],
         "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
-        "PortRanges"       -> PortRanges.asInstanceOf[js.Any],
-        "Protocol"         -> Protocol.asInstanceOf[js.Any]
+        "PortRanges" -> PortRanges.asInstanceOf[js.Any],
+        "Protocol" -> Protocol.asInstanceOf[js.Any]
       )
 
       ClientAffinity.foreach(__v => __obj.updateDynamic("ClientAffinity")(__v.asInstanceOf[js.Any]))
@@ -856,8 +856,8 @@ package globalaccelerator {
   @js.native
   sealed trait HealthCheckProtocol extends js.Any
   object HealthCheckProtocol extends js.Object {
-    val TCP   = "TCP".asInstanceOf[HealthCheckProtocol]
-    val HTTP  = "HTTP".asInstanceOf[HealthCheckProtocol]
+    val TCP = "TCP".asInstanceOf[HealthCheckProtocol]
+    val HTTP = "HTTP".asInstanceOf[HealthCheckProtocol]
     val HTTPS = "HTTPS".asInstanceOf[HealthCheckProtocol]
 
     val values = js.Object.freeze(js.Array(TCP, HTTP, HTTPS))
@@ -866,8 +866,8 @@ package globalaccelerator {
   @js.native
   sealed trait HealthState extends js.Any
   object HealthState extends js.Object {
-    val INITIAL   = "INITIAL".asInstanceOf[HealthState]
-    val HEALTHY   = "HEALTHY".asInstanceOf[HealthState]
+    val INITIAL = "INITIAL".asInstanceOf[HealthState]
+    val HEALTHY = "HEALTHY".asInstanceOf[HealthState]
     val UNHEALTHY = "UNHEALTHY".asInstanceOf[HealthState]
 
     val values = js.Object.freeze(js.Array(INITIAL, HEALTHY, UNHEALTHY))
@@ -1171,7 +1171,7 @@ package globalaccelerator {
         CidrAuthorizationContext: CidrAuthorizationContext
     ): ProvisionByoipCidrRequest = {
       val __obj = js.Dynamic.literal(
-        "Cidr"                     -> Cidr.asInstanceOf[js.Any],
+        "Cidr" -> Cidr.asInstanceOf[js.Any],
         "CidrAuthorizationContext" -> CidrAuthorizationContext.asInstanceOf[js.Any]
       )
 
@@ -1211,7 +1211,7 @@ package globalaccelerator {
         Value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -1233,7 +1233,7 @@ package globalaccelerator {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -1267,7 +1267,7 @@ package globalaccelerator {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]

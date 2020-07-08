@@ -7,83 +7,83 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object devicefarm {
-  type AWSAccountNumber                   = String
-  type AccountsCleanup                    = Boolean
-  type AmazonResourceName                 = String
-  type AmazonResourceNames                = js.Array[AmazonResourceName]
-  type AndroidPaths                       = js.Array[String]
-  type AppPackagesCleanup                 = Boolean
-  type Artifacts                          = js.Array[Artifact]
-  type ClientId                           = String
-  type ContentType                        = String
-  type DateTime                           = js.Date
-  type DeviceFarmArn                      = String
-  type DeviceFilterValues                 = js.Array[String]
-  type DeviceFilters                      = js.Array[DeviceFilter]
-  type DeviceHostPaths                    = js.Array[String]
-  type DeviceInstances                    = js.Array[DeviceInstance]
-  type DevicePoolCompatibilityResults     = js.Array[DevicePoolCompatibilityResult]
-  type DevicePools                        = js.Array[DevicePool]
-  type Devices                            = js.Array[Device]
-  type Filter                             = String
-  type HostAddress                        = String
-  type IncompatibilityMessages            = js.Array[IncompatibilityMessage]
-  type InstanceLabels                     = js.Array[String]
-  type InstanceProfiles                   = js.Array[InstanceProfile]
-  type IosPaths                           = js.Array[String]
-  type JobTimeoutMinutes                  = Int
-  type Jobs                               = js.Array[Job]
-  type MaxPageSize                        = Int
-  type MaxSlotMap                         = js.Dictionary[Int]
-  type Message                            = String
-  type Metadata                           = String
-  type Name                               = String
-  type NetworkProfiles                    = js.Array[NetworkProfile]
-  type OfferingIdentifier                 = String
-  type OfferingPromotionIdentifier        = String
-  type OfferingPromotions                 = js.Array[OfferingPromotion]
-  type OfferingStatusMap                  = js.Dictionary[OfferingStatus]
-  type OfferingTransactions               = js.Array[OfferingTransaction]
-  type Offerings                          = js.Array[Offering]
-  type PackageIds                         = js.Array[String]
-  type PaginationToken                    = String
-  type PercentInteger                     = Int
-  type Problems                           = js.Array[Problem]
-  type Projects                           = js.Array[Project]
-  type PurchasedDevicesMap                = js.Dictionary[Int]
-  type RecurringCharges                   = js.Array[RecurringCharge]
-  type RemoteAccessSessions               = js.Array[RemoteAccessSession]
-  type ResourceDescription                = String
-  type ResourceId                         = String
-  type ResourceName                       = String
-  type Rules                              = js.Array[Rule]
-  type Runs                               = js.Array[Run]
-  type Samples                            = js.Array[Sample]
-  type ServiceDnsName                     = String
-  type SkipAppResign                      = Boolean
-  type SshPublicKey                       = String
-  type Suites                             = js.Array[Suite]
-  type TagKey                             = String
-  type TagKeyList                         = js.Array[TagKey]
-  type TagList                            = js.Array[Tag]
-  type TagValue                           = String
-  type TestGridProjects                   = js.Array[TestGridProject]
-  type TestGridSessionActions             = js.Array[TestGridSessionAction]
-  type TestGridSessionArtifacts           = js.Array[TestGridSessionArtifact]
-  type TestGridSessions                   = js.Array[TestGridSession]
-  type TestGridUrlExpiresInSecondsInput   = Int
-  type TestParameters                     = js.Dictionary[String]
-  type Tests                              = js.Array[Test]
-  type TransactionIdentifier              = String
-  type URL                                = String
-  type UniqueProblems                     = js.Array[UniqueProblem]
+  type AWSAccountNumber = String
+  type AccountsCleanup = Boolean
+  type AmazonResourceName = String
+  type AmazonResourceNames = js.Array[AmazonResourceName]
+  type AndroidPaths = js.Array[String]
+  type AppPackagesCleanup = Boolean
+  type Artifacts = js.Array[Artifact]
+  type ClientId = String
+  type ContentType = String
+  type DateTime = js.Date
+  type DeviceFarmArn = String
+  type DeviceFilterValues = js.Array[String]
+  type DeviceFilters = js.Array[DeviceFilter]
+  type DeviceHostPaths = js.Array[String]
+  type DeviceInstances = js.Array[DeviceInstance]
+  type DevicePoolCompatibilityResults = js.Array[DevicePoolCompatibilityResult]
+  type DevicePools = js.Array[DevicePool]
+  type Devices = js.Array[Device]
+  type Filter = String
+  type HostAddress = String
+  type IncompatibilityMessages = js.Array[IncompatibilityMessage]
+  type InstanceLabels = js.Array[String]
+  type InstanceProfiles = js.Array[InstanceProfile]
+  type IosPaths = js.Array[String]
+  type JobTimeoutMinutes = Int
+  type Jobs = js.Array[Job]
+  type MaxPageSize = Int
+  type MaxSlotMap = js.Dictionary[Int]
+  type Message = String
+  type Metadata = String
+  type Name = String
+  type NetworkProfiles = js.Array[NetworkProfile]
+  type OfferingIdentifier = String
+  type OfferingPromotionIdentifier = String
+  type OfferingPromotions = js.Array[OfferingPromotion]
+  type OfferingStatusMap = js.Dictionary[OfferingStatus]
+  type OfferingTransactions = js.Array[OfferingTransaction]
+  type Offerings = js.Array[Offering]
+  type PackageIds = js.Array[String]
+  type PaginationToken = String
+  type PercentInteger = Int
+  type Problems = js.Array[Problem]
+  type Projects = js.Array[Project]
+  type PurchasedDevicesMap = js.Dictionary[Int]
+  type RecurringCharges = js.Array[RecurringCharge]
+  type RemoteAccessSessions = js.Array[RemoteAccessSession]
+  type ResourceDescription = String
+  type ResourceId = String
+  type ResourceName = String
+  type Rules = js.Array[Rule]
+  type Runs = js.Array[Run]
+  type Samples = js.Array[Sample]
+  type ServiceDnsName = String
+  type SkipAppResign = Boolean
+  type SshPublicKey = String
+  type Suites = js.Array[Suite]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type TestGridProjects = js.Array[TestGridProject]
+  type TestGridSessionActions = js.Array[TestGridSessionAction]
+  type TestGridSessionArtifacts = js.Array[TestGridSessionArtifact]
+  type TestGridSessions = js.Array[TestGridSession]
+  type TestGridUrlExpiresInSecondsInput = Int
+  type TestParameters = js.Dictionary[String]
+  type Tests = js.Array[Test]
+  type TransactionIdentifier = String
+  type URL = String
+  type UniqueProblems = js.Array[UniqueProblem]
   type UniqueProblemsByExecutionResultMap = js.Dictionary[UniqueProblems]
-  type Uploads                            = js.Array[Upload]
-  type VPCEConfigurationDescription       = String
-  type VPCEConfigurationName              = String
-  type VPCEConfigurations                 = js.Array[VPCEConfiguration]
-  type VPCEServiceName                    = String
-  type VideoCapture                       = Boolean
+  type Uploads = js.Array[Upload]
+  type VPCEConfigurationDescription = String
+  type VPCEConfigurationName = String
+  type VPCEConfigurations = js.Array[VPCEConfiguration]
+  type VPCEServiceName = String
+  type VideoCapture = Boolean
 
   implicit final class DeviceFarmOps(private val service: DeviceFarm) extends AnyVal {
 
@@ -149,7 +149,7 @@ package object devicefarm {
       service.getProject(params).promise().toFuture
     @inline def getRemoteAccessSessionFuture(
         params: GetRemoteAccessSessionRequest
-    ): Future[GetRemoteAccessSessionResult]                               = service.getRemoteAccessSession(params).promise().toFuture
+    ): Future[GetRemoteAccessSessionResult] = service.getRemoteAccessSession(params).promise().toFuture
     @inline def getRunFuture(params: GetRunRequest): Future[GetRunResult] = service.getRun(params).promise().toFuture
     @inline def getSuiteFuture(params: GetSuiteRequest): Future[GetSuiteResult] =
       service.getSuite(params).promise().toFuture
@@ -263,97 +263,97 @@ package devicefarm {
   class DeviceFarm() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createDevicePool(params: CreateDevicePoolRequest): Request[CreateDevicePoolResult]                = js.native
+    def createDevicePool(params: CreateDevicePoolRequest): Request[CreateDevicePoolResult] = js.native
     def createInstanceProfile(params: CreateInstanceProfileRequest): Request[CreateInstanceProfileResult] = js.native
-    def createNetworkProfile(params: CreateNetworkProfileRequest): Request[CreateNetworkProfileResult]    = js.native
-    def createProject(params: CreateProjectRequest): Request[CreateProjectResult]                         = js.native
+    def createNetworkProfile(params: CreateNetworkProfileRequest): Request[CreateNetworkProfileResult] = js.native
+    def createProject(params: CreateProjectRequest): Request[CreateProjectResult] = js.native
     def createRemoteAccessSession(params: CreateRemoteAccessSessionRequest): Request[CreateRemoteAccessSessionResult] =
       js.native
     def createTestGridProject(params: CreateTestGridProjectRequest): Request[CreateTestGridProjectResult] = js.native
-    def createTestGridUrl(params: CreateTestGridUrlRequest): Request[CreateTestGridUrlResult]             = js.native
-    def createUpload(params: CreateUploadRequest): Request[CreateUploadResult]                            = js.native
+    def createTestGridUrl(params: CreateTestGridUrlRequest): Request[CreateTestGridUrlResult] = js.native
+    def createUpload(params: CreateUploadRequest): Request[CreateUploadResult] = js.native
     def createVPCEConfiguration(params: CreateVPCEConfigurationRequest): Request[CreateVPCEConfigurationResult] =
       js.native
-    def deleteDevicePool(params: DeleteDevicePoolRequest): Request[DeleteDevicePoolResult]                = js.native
+    def deleteDevicePool(params: DeleteDevicePoolRequest): Request[DeleteDevicePoolResult] = js.native
     def deleteInstanceProfile(params: DeleteInstanceProfileRequest): Request[DeleteInstanceProfileResult] = js.native
-    def deleteNetworkProfile(params: DeleteNetworkProfileRequest): Request[DeleteNetworkProfileResult]    = js.native
-    def deleteProject(params: DeleteProjectRequest): Request[DeleteProjectResult]                         = js.native
+    def deleteNetworkProfile(params: DeleteNetworkProfileRequest): Request[DeleteNetworkProfileResult] = js.native
+    def deleteProject(params: DeleteProjectRequest): Request[DeleteProjectResult] = js.native
     def deleteRemoteAccessSession(params: DeleteRemoteAccessSessionRequest): Request[DeleteRemoteAccessSessionResult] =
       js.native
-    def deleteRun(params: DeleteRunRequest): Request[DeleteRunResult]                                     = js.native
+    def deleteRun(params: DeleteRunRequest): Request[DeleteRunResult] = js.native
     def deleteTestGridProject(params: DeleteTestGridProjectRequest): Request[DeleteTestGridProjectResult] = js.native
-    def deleteUpload(params: DeleteUploadRequest): Request[DeleteUploadResult]                            = js.native
+    def deleteUpload(params: DeleteUploadRequest): Request[DeleteUploadResult] = js.native
     def deleteVPCEConfiguration(params: DeleteVPCEConfigurationRequest): Request[DeleteVPCEConfigurationResult] =
       js.native
     def getAccountSettings(params: GetAccountSettingsRequest): Request[GetAccountSettingsResult] = js.native
-    def getDevice(params: GetDeviceRequest): Request[GetDeviceResult]                            = js.native
-    def getDeviceInstance(params: GetDeviceInstanceRequest): Request[GetDeviceInstanceResult]    = js.native
-    def getDevicePool(params: GetDevicePoolRequest): Request[GetDevicePoolResult]                = js.native
+    def getDevice(params: GetDeviceRequest): Request[GetDeviceResult] = js.native
+    def getDeviceInstance(params: GetDeviceInstanceRequest): Request[GetDeviceInstanceResult] = js.native
+    def getDevicePool(params: GetDevicePoolRequest): Request[GetDevicePoolResult] = js.native
     def getDevicePoolCompatibility(
         params: GetDevicePoolCompatibilityRequest
-    ): Request[GetDevicePoolCompatibilityResult]                                                             = js.native
-    def getInstanceProfile(params: GetInstanceProfileRequest): Request[GetInstanceProfileResult]             = js.native
-    def getJob(params: GetJobRequest): Request[GetJobResult]                                                 = js.native
-    def getNetworkProfile(params: GetNetworkProfileRequest): Request[GetNetworkProfileResult]                = js.native
-    def getOfferingStatus(params: GetOfferingStatusRequest): Request[GetOfferingStatusResult]                = js.native
-    def getProject(params: GetProjectRequest): Request[GetProjectResult]                                     = js.native
+    ): Request[GetDevicePoolCompatibilityResult] = js.native
+    def getInstanceProfile(params: GetInstanceProfileRequest): Request[GetInstanceProfileResult] = js.native
+    def getJob(params: GetJobRequest): Request[GetJobResult] = js.native
+    def getNetworkProfile(params: GetNetworkProfileRequest): Request[GetNetworkProfileResult] = js.native
+    def getOfferingStatus(params: GetOfferingStatusRequest): Request[GetOfferingStatusResult] = js.native
+    def getProject(params: GetProjectRequest): Request[GetProjectResult] = js.native
     def getRemoteAccessSession(params: GetRemoteAccessSessionRequest): Request[GetRemoteAccessSessionResult] = js.native
-    def getRun(params: GetRunRequest): Request[GetRunResult]                                                 = js.native
-    def getSuite(params: GetSuiteRequest): Request[GetSuiteResult]                                           = js.native
-    def getTest(params: GetTestRequest): Request[GetTestResult]                                              = js.native
-    def getTestGridProject(params: GetTestGridProjectRequest): Request[GetTestGridProjectResult]             = js.native
-    def getTestGridSession(params: GetTestGridSessionRequest): Request[GetTestGridSessionResult]             = js.native
-    def getUpload(params: GetUploadRequest): Request[GetUploadResult]                                        = js.native
-    def getVPCEConfiguration(params: GetVPCEConfigurationRequest): Request[GetVPCEConfigurationResult]       = js.native
+    def getRun(params: GetRunRequest): Request[GetRunResult] = js.native
+    def getSuite(params: GetSuiteRequest): Request[GetSuiteResult] = js.native
+    def getTest(params: GetTestRequest): Request[GetTestResult] = js.native
+    def getTestGridProject(params: GetTestGridProjectRequest): Request[GetTestGridProjectResult] = js.native
+    def getTestGridSession(params: GetTestGridSessionRequest): Request[GetTestGridSessionResult] = js.native
+    def getUpload(params: GetUploadRequest): Request[GetUploadResult] = js.native
+    def getVPCEConfiguration(params: GetVPCEConfigurationRequest): Request[GetVPCEConfigurationResult] = js.native
     def installToRemoteAccessSession(
         params: InstallToRemoteAccessSessionRequest
-    ): Request[InstallToRemoteAccessSessionResult]                                                           = js.native
-    def listArtifacts(params: ListArtifactsRequest): Request[ListArtifactsResult]                            = js.native
-    def listDeviceInstances(params: ListDeviceInstancesRequest): Request[ListDeviceInstancesResult]          = js.native
-    def listDevicePools(params: ListDevicePoolsRequest): Request[ListDevicePoolsResult]                      = js.native
-    def listDevices(params: ListDevicesRequest): Request[ListDevicesResult]                                  = js.native
-    def listInstanceProfiles(params: ListInstanceProfilesRequest): Request[ListInstanceProfilesResult]       = js.native
-    def listJobs(params: ListJobsRequest): Request[ListJobsResult]                                           = js.native
-    def listNetworkProfiles(params: ListNetworkProfilesRequest): Request[ListNetworkProfilesResult]          = js.native
+    ): Request[InstallToRemoteAccessSessionResult] = js.native
+    def listArtifacts(params: ListArtifactsRequest): Request[ListArtifactsResult] = js.native
+    def listDeviceInstances(params: ListDeviceInstancesRequest): Request[ListDeviceInstancesResult] = js.native
+    def listDevicePools(params: ListDevicePoolsRequest): Request[ListDevicePoolsResult] = js.native
+    def listDevices(params: ListDevicesRequest): Request[ListDevicesResult] = js.native
+    def listInstanceProfiles(params: ListInstanceProfilesRequest): Request[ListInstanceProfilesResult] = js.native
+    def listJobs(params: ListJobsRequest): Request[ListJobsResult] = js.native
+    def listNetworkProfiles(params: ListNetworkProfilesRequest): Request[ListNetworkProfilesResult] = js.native
     def listOfferingPromotions(params: ListOfferingPromotionsRequest): Request[ListOfferingPromotionsResult] = js.native
     def listOfferingTransactions(params: ListOfferingTransactionsRequest): Request[ListOfferingTransactionsResult] =
       js.native
     def listOfferings(params: ListOfferingsRequest): Request[ListOfferingsResult] = js.native
-    def listProjects(params: ListProjectsRequest): Request[ListProjectsResult]    = js.native
+    def listProjects(params: ListProjectsRequest): Request[ListProjectsResult] = js.native
     def listRemoteAccessSessions(params: ListRemoteAccessSessionsRequest): Request[ListRemoteAccessSessionsResult] =
       js.native
-    def listRuns(params: ListRunsRequest): Request[ListRunsResult]                                     = js.native
-    def listSamples(params: ListSamplesRequest): Request[ListSamplesResult]                            = js.native
-    def listSuites(params: ListSuitesRequest): Request[ListSuitesResult]                               = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]  = js.native
+    def listRuns(params: ListRunsRequest): Request[ListRunsResult] = js.native
+    def listSamples(params: ListSamplesRequest): Request[ListSamplesResult] = js.native
+    def listSuites(params: ListSuitesRequest): Request[ListSuitesResult] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listTestGridProjects(params: ListTestGridProjectsRequest): Request[ListTestGridProjectsResult] = js.native
     def listTestGridSessionActions(
         params: ListTestGridSessionActionsRequest
     ): Request[ListTestGridSessionActionsResult] = js.native
     def listTestGridSessionArtifacts(
         params: ListTestGridSessionArtifactsRequest
-    ): Request[ListTestGridSessionArtifactsResult]                                                           = js.native
-    def listTestGridSessions(params: ListTestGridSessionsRequest): Request[ListTestGridSessionsResult]       = js.native
-    def listTests(params: ListTestsRequest): Request[ListTestsResult]                                        = js.native
-    def listUniqueProblems(params: ListUniqueProblemsRequest): Request[ListUniqueProblemsResult]             = js.native
-    def listUploads(params: ListUploadsRequest): Request[ListUploadsResult]                                  = js.native
+    ): Request[ListTestGridSessionArtifactsResult] = js.native
+    def listTestGridSessions(params: ListTestGridSessionsRequest): Request[ListTestGridSessionsResult] = js.native
+    def listTests(params: ListTestsRequest): Request[ListTestsResult] = js.native
+    def listUniqueProblems(params: ListUniqueProblemsRequest): Request[ListUniqueProblemsResult] = js.native
+    def listUploads(params: ListUploadsRequest): Request[ListUploadsResult] = js.native
     def listVPCEConfigurations(params: ListVPCEConfigurationsRequest): Request[ListVPCEConfigurationsResult] = js.native
-    def purchaseOffering(params: PurchaseOfferingRequest): Request[PurchaseOfferingResult]                   = js.native
-    def renewOffering(params: RenewOfferingRequest): Request[RenewOfferingResult]                            = js.native
-    def scheduleRun(params: ScheduleRunRequest): Request[ScheduleRunResult]                                  = js.native
-    def stopJob(params: StopJobRequest): Request[StopJobResult]                                              = js.native
+    def purchaseOffering(params: PurchaseOfferingRequest): Request[PurchaseOfferingResult] = js.native
+    def renewOffering(params: RenewOfferingRequest): Request[RenewOfferingResult] = js.native
+    def scheduleRun(params: ScheduleRunRequest): Request[ScheduleRunResult] = js.native
+    def stopJob(params: StopJobRequest): Request[StopJobResult] = js.native
     def stopRemoteAccessSession(params: StopRemoteAccessSessionRequest): Request[StopRemoteAccessSessionResult] =
       js.native
-    def stopRun(params: StopRunRequest): Request[StopRunResult]                                           = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                             = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                       = js.native
-    def updateDeviceInstance(params: UpdateDeviceInstanceRequest): Request[UpdateDeviceInstanceResult]    = js.native
-    def updateDevicePool(params: UpdateDevicePoolRequest): Request[UpdateDevicePoolResult]                = js.native
+    def stopRun(params: StopRunRequest): Request[StopRunResult] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateDeviceInstance(params: UpdateDeviceInstanceRequest): Request[UpdateDeviceInstanceResult] = js.native
+    def updateDevicePool(params: UpdateDevicePoolRequest): Request[UpdateDevicePoolResult] = js.native
     def updateInstanceProfile(params: UpdateInstanceProfileRequest): Request[UpdateInstanceProfileResult] = js.native
-    def updateNetworkProfile(params: UpdateNetworkProfileRequest): Request[UpdateNetworkProfileResult]    = js.native
-    def updateProject(params: UpdateProjectRequest): Request[UpdateProjectResult]                         = js.native
+    def updateNetworkProfile(params: UpdateNetworkProfileRequest): Request[UpdateNetworkProfileResult] = js.native
+    def updateProject(params: UpdateProjectRequest): Request[UpdateProjectResult] = js.native
     def updateTestGridProject(params: UpdateTestGridProjectRequest): Request[UpdateTestGridProjectResult] = js.native
-    def updateUpload(params: UpdateUploadRequest): Request[UpdateUploadResult]                            = js.native
+    def updateUpload(params: UpdateUploadRequest): Request[UpdateUploadResult] = js.native
     def updateVPCEConfiguration(params: UpdateVPCEConfigurationRequest): Request[UpdateVPCEConfigurationResult] =
       js.native
   }
@@ -435,8 +435,8 @@ package devicefarm {
   sealed trait ArtifactCategory extends js.Any
   object ArtifactCategory extends js.Object {
     val SCREENSHOT = "SCREENSHOT".asInstanceOf[ArtifactCategory]
-    val FILE       = "FILE".asInstanceOf[ArtifactCategory]
-    val LOG        = "LOG".asInstanceOf[ArtifactCategory]
+    val FILE = "FILE".asInstanceOf[ArtifactCategory]
+    val LOG = "LOG".asInstanceOf[ArtifactCategory]
 
     val values = js.Object.freeze(js.Array(SCREENSHOT, FILE, LOG))
   }
@@ -444,34 +444,34 @@ package devicefarm {
   @js.native
   sealed trait ArtifactType extends js.Any
   object ArtifactType extends js.Object {
-    val UNKNOWN                  = "UNKNOWN".asInstanceOf[ArtifactType]
-    val SCREENSHOT               = "SCREENSHOT".asInstanceOf[ArtifactType]
-    val DEVICE_LOG               = "DEVICE_LOG".asInstanceOf[ArtifactType]
-    val MESSAGE_LOG              = "MESSAGE_LOG".asInstanceOf[ArtifactType]
-    val VIDEO_LOG                = "VIDEO_LOG".asInstanceOf[ArtifactType]
-    val RESULT_LOG               = "RESULT_LOG".asInstanceOf[ArtifactType]
-    val SERVICE_LOG              = "SERVICE_LOG".asInstanceOf[ArtifactType]
-    val WEBKIT_LOG               = "WEBKIT_LOG".asInstanceOf[ArtifactType]
-    val INSTRUMENTATION_OUTPUT   = "INSTRUMENTATION_OUTPUT".asInstanceOf[ArtifactType]
-    val EXERCISER_MONKEY_OUTPUT  = "EXERCISER_MONKEY_OUTPUT".asInstanceOf[ArtifactType]
-    val CALABASH_JSON_OUTPUT     = "CALABASH_JSON_OUTPUT".asInstanceOf[ArtifactType]
-    val CALABASH_PRETTY_OUTPUT   = "CALABASH_PRETTY_OUTPUT".asInstanceOf[ArtifactType]
+    val UNKNOWN = "UNKNOWN".asInstanceOf[ArtifactType]
+    val SCREENSHOT = "SCREENSHOT".asInstanceOf[ArtifactType]
+    val DEVICE_LOG = "DEVICE_LOG".asInstanceOf[ArtifactType]
+    val MESSAGE_LOG = "MESSAGE_LOG".asInstanceOf[ArtifactType]
+    val VIDEO_LOG = "VIDEO_LOG".asInstanceOf[ArtifactType]
+    val RESULT_LOG = "RESULT_LOG".asInstanceOf[ArtifactType]
+    val SERVICE_LOG = "SERVICE_LOG".asInstanceOf[ArtifactType]
+    val WEBKIT_LOG = "WEBKIT_LOG".asInstanceOf[ArtifactType]
+    val INSTRUMENTATION_OUTPUT = "INSTRUMENTATION_OUTPUT".asInstanceOf[ArtifactType]
+    val EXERCISER_MONKEY_OUTPUT = "EXERCISER_MONKEY_OUTPUT".asInstanceOf[ArtifactType]
+    val CALABASH_JSON_OUTPUT = "CALABASH_JSON_OUTPUT".asInstanceOf[ArtifactType]
+    val CALABASH_PRETTY_OUTPUT = "CALABASH_PRETTY_OUTPUT".asInstanceOf[ArtifactType]
     val CALABASH_STANDARD_OUTPUT = "CALABASH_STANDARD_OUTPUT".asInstanceOf[ArtifactType]
     val CALABASH_JAVA_XML_OUTPUT = "CALABASH_JAVA_XML_OUTPUT".asInstanceOf[ArtifactType]
-    val AUTOMATION_OUTPUT        = "AUTOMATION_OUTPUT".asInstanceOf[ArtifactType]
-    val APPIUM_SERVER_OUTPUT     = "APPIUM_SERVER_OUTPUT".asInstanceOf[ArtifactType]
-    val APPIUM_JAVA_OUTPUT       = "APPIUM_JAVA_OUTPUT".asInstanceOf[ArtifactType]
-    val APPIUM_JAVA_XML_OUTPUT   = "APPIUM_JAVA_XML_OUTPUT".asInstanceOf[ArtifactType]
-    val APPIUM_PYTHON_OUTPUT     = "APPIUM_PYTHON_OUTPUT".asInstanceOf[ArtifactType]
+    val AUTOMATION_OUTPUT = "AUTOMATION_OUTPUT".asInstanceOf[ArtifactType]
+    val APPIUM_SERVER_OUTPUT = "APPIUM_SERVER_OUTPUT".asInstanceOf[ArtifactType]
+    val APPIUM_JAVA_OUTPUT = "APPIUM_JAVA_OUTPUT".asInstanceOf[ArtifactType]
+    val APPIUM_JAVA_XML_OUTPUT = "APPIUM_JAVA_XML_OUTPUT".asInstanceOf[ArtifactType]
+    val APPIUM_PYTHON_OUTPUT = "APPIUM_PYTHON_OUTPUT".asInstanceOf[ArtifactType]
     val APPIUM_PYTHON_XML_OUTPUT = "APPIUM_PYTHON_XML_OUTPUT".asInstanceOf[ArtifactType]
-    val EXPLORER_EVENT_LOG       = "EXPLORER_EVENT_LOG".asInstanceOf[ArtifactType]
-    val EXPLORER_SUMMARY_LOG     = "EXPLORER_SUMMARY_LOG".asInstanceOf[ArtifactType]
+    val EXPLORER_EVENT_LOG = "EXPLORER_EVENT_LOG".asInstanceOf[ArtifactType]
+    val EXPLORER_SUMMARY_LOG = "EXPLORER_SUMMARY_LOG".asInstanceOf[ArtifactType]
     val APPLICATION_CRASH_REPORT = "APPLICATION_CRASH_REPORT".asInstanceOf[ArtifactType]
-    val XCTEST_LOG               = "XCTEST_LOG".asInstanceOf[ArtifactType]
-    val VIDEO                    = "VIDEO".asInstanceOf[ArtifactType]
-    val CUSTOMER_ARTIFACT        = "CUSTOMER_ARTIFACT".asInstanceOf[ArtifactType]
-    val CUSTOMER_ARTIFACT_LOG    = "CUSTOMER_ARTIFACT_LOG".asInstanceOf[ArtifactType]
-    val TESTSPEC_OUTPUT          = "TESTSPEC_OUTPUT".asInstanceOf[ArtifactType]
+    val XCTEST_LOG = "XCTEST_LOG".asInstanceOf[ArtifactType]
+    val VIDEO = "VIDEO".asInstanceOf[ArtifactType]
+    val CUSTOMER_ARTIFACT = "CUSTOMER_ARTIFACT".asInstanceOf[ArtifactType]
+    val CUSTOMER_ARTIFACT_LOG = "CUSTOMER_ARTIFACT_LOG".asInstanceOf[ArtifactType]
+    val TESTSPEC_OUTPUT = "TESTSPEC_OUTPUT".asInstanceOf[ArtifactType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -510,7 +510,7 @@ package devicefarm {
   @js.native
   sealed trait BillingMethod extends js.Any
   object BillingMethod extends js.Object {
-    val METERED   = "METERED".asInstanceOf[BillingMethod]
+    val METERED = "METERED".asInstanceOf[BillingMethod]
     val UNMETERED = "UNMETERED".asInstanceOf[BillingMethod]
 
     val values = js.Object.freeze(js.Array(METERED, UNMETERED))
@@ -600,9 +600,9 @@ package devicefarm {
         maxDevices: js.UndefOr[Int] = js.undefined
     ): CreateDevicePoolRequest = {
       val __obj = js.Dynamic.literal(
-        "name"       -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "projectArn" -> projectArn.asInstanceOf[js.Any],
-        "rules"      -> rules.asInstanceOf[js.Any]
+        "rules" -> rules.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
@@ -711,7 +711,7 @@ package devicefarm {
         uplinkLossPercent: js.UndefOr[PercentInteger] = js.undefined
     ): CreateNetworkProfileRequest = {
       val __obj = js.Dynamic.literal(
-        "name"       -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "projectArn" -> projectArn.asInstanceOf[js.Any]
       )
 
@@ -846,7 +846,7 @@ package devicefarm {
         sshPublicKey: js.UndefOr[SshPublicKey] = js.undefined
     ): CreateRemoteAccessSessionRequest = {
       val __obj = js.Dynamic.literal(
-        "deviceArn"  -> deviceArn.asInstanceOf[js.Any],
+        "deviceArn" -> deviceArn.asInstanceOf[js.Any],
         "projectArn" -> projectArn.asInstanceOf[js.Any]
       )
 
@@ -934,7 +934,7 @@ package devicefarm {
     ): CreateTestGridUrlRequest = {
       val __obj = js.Dynamic.literal(
         "expiresInSeconds" -> expiresInSeconds.asInstanceOf[js.Any],
-        "projectArn"       -> projectArn.asInstanceOf[js.Any]
+        "projectArn" -> projectArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateTestGridUrlRequest]
@@ -980,9 +980,9 @@ package devicefarm {
         contentType: js.UndefOr[ContentType] = js.undefined
     ): CreateUploadRequest = {
       val __obj = js.Dynamic.literal(
-        "name"       -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "projectArn" -> projectArn.asInstanceOf[js.Any],
-        "type"       -> `type`.asInstanceOf[js.Any]
+        "type" -> `type`.asInstanceOf[js.Any]
       )
 
       contentType.foreach(__v => __obj.updateDynamic("contentType")(__v.asInstanceOf[js.Any]))
@@ -1026,9 +1026,9 @@ package devicefarm {
         vpceConfigurationDescription: js.UndefOr[VPCEConfigurationDescription] = js.undefined
     ): CreateVPCEConfigurationRequest = {
       val __obj = js.Dynamic.literal(
-        "serviceDnsName"        -> serviceDnsName.asInstanceOf[js.Any],
+        "serviceDnsName" -> serviceDnsName.asInstanceOf[js.Any],
         "vpceConfigurationName" -> vpceConfigurationName.asInstanceOf[js.Any],
-        "vpceServiceName"       -> vpceServiceName.asInstanceOf[js.Any]
+        "vpceServiceName" -> vpceServiceName.asInstanceOf[js.Any]
       )
 
       vpceConfigurationDescription.foreach(__v =>
@@ -1480,19 +1480,19 @@ package devicefarm {
   @js.native
   sealed trait DeviceAttribute extends js.Any
   object DeviceAttribute extends js.Object {
-    val ARN                   = "ARN".asInstanceOf[DeviceAttribute]
-    val PLATFORM              = "PLATFORM".asInstanceOf[DeviceAttribute]
-    val FORM_FACTOR           = "FORM_FACTOR".asInstanceOf[DeviceAttribute]
-    val MANUFACTURER          = "MANUFACTURER".asInstanceOf[DeviceAttribute]
+    val ARN = "ARN".asInstanceOf[DeviceAttribute]
+    val PLATFORM = "PLATFORM".asInstanceOf[DeviceAttribute]
+    val FORM_FACTOR = "FORM_FACTOR".asInstanceOf[DeviceAttribute]
+    val MANUFACTURER = "MANUFACTURER".asInstanceOf[DeviceAttribute]
     val REMOTE_ACCESS_ENABLED = "REMOTE_ACCESS_ENABLED".asInstanceOf[DeviceAttribute]
-    val REMOTE_DEBUG_ENABLED  = "REMOTE_DEBUG_ENABLED".asInstanceOf[DeviceAttribute]
-    val APPIUM_VERSION        = "APPIUM_VERSION".asInstanceOf[DeviceAttribute]
-    val INSTANCE_ARN          = "INSTANCE_ARN".asInstanceOf[DeviceAttribute]
-    val INSTANCE_LABELS       = "INSTANCE_LABELS".asInstanceOf[DeviceAttribute]
-    val FLEET_TYPE            = "FLEET_TYPE".asInstanceOf[DeviceAttribute]
-    val OS_VERSION            = "OS_VERSION".asInstanceOf[DeviceAttribute]
-    val MODEL                 = "MODEL".asInstanceOf[DeviceAttribute]
-    val AVAILABILITY          = "AVAILABILITY".asInstanceOf[DeviceAttribute]
+    val REMOTE_DEBUG_ENABLED = "REMOTE_DEBUG_ENABLED".asInstanceOf[DeviceAttribute]
+    val APPIUM_VERSION = "APPIUM_VERSION".asInstanceOf[DeviceAttribute]
+    val INSTANCE_ARN = "INSTANCE_ARN".asInstanceOf[DeviceAttribute]
+    val INSTANCE_LABELS = "INSTANCE_LABELS".asInstanceOf[DeviceAttribute]
+    val FLEET_TYPE = "FLEET_TYPE".asInstanceOf[DeviceAttribute]
+    val OS_VERSION = "OS_VERSION".asInstanceOf[DeviceAttribute]
+    val MODEL = "MODEL".asInstanceOf[DeviceAttribute]
+    val AVAILABILITY = "AVAILABILITY".asInstanceOf[DeviceAttribute]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1517,9 +1517,9 @@ package devicefarm {
   sealed trait DeviceAvailability extends js.Any
   object DeviceAvailability extends js.Object {
     val TEMPORARY_NOT_AVAILABLE = "TEMPORARY_NOT_AVAILABLE".asInstanceOf[DeviceAvailability]
-    val BUSY                    = "BUSY".asInstanceOf[DeviceAvailability]
-    val AVAILABLE               = "AVAILABLE".asInstanceOf[DeviceAvailability]
-    val HIGHLY_AVAILABLE        = "HIGHLY_AVAILABLE".asInstanceOf[DeviceAvailability]
+    val BUSY = "BUSY".asInstanceOf[DeviceAvailability]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[DeviceAvailability]
+    val HIGHLY_AVAILABLE = "HIGHLY_AVAILABLE".asInstanceOf[DeviceAvailability]
 
     val values = js.Object.freeze(js.Array(TEMPORARY_NOT_AVAILABLE, BUSY, AVAILABLE, HIGHLY_AVAILABLE))
   }
@@ -1553,18 +1553,18 @@ package devicefarm {
   @js.native
   sealed trait DeviceFilterAttribute extends js.Any
   object DeviceFilterAttribute extends js.Object {
-    val ARN                   = "ARN".asInstanceOf[DeviceFilterAttribute]
-    val PLATFORM              = "PLATFORM".asInstanceOf[DeviceFilterAttribute]
-    val OS_VERSION            = "OS_VERSION".asInstanceOf[DeviceFilterAttribute]
-    val MODEL                 = "MODEL".asInstanceOf[DeviceFilterAttribute]
-    val AVAILABILITY          = "AVAILABILITY".asInstanceOf[DeviceFilterAttribute]
-    val FORM_FACTOR           = "FORM_FACTOR".asInstanceOf[DeviceFilterAttribute]
-    val MANUFACTURER          = "MANUFACTURER".asInstanceOf[DeviceFilterAttribute]
+    val ARN = "ARN".asInstanceOf[DeviceFilterAttribute]
+    val PLATFORM = "PLATFORM".asInstanceOf[DeviceFilterAttribute]
+    val OS_VERSION = "OS_VERSION".asInstanceOf[DeviceFilterAttribute]
+    val MODEL = "MODEL".asInstanceOf[DeviceFilterAttribute]
+    val AVAILABILITY = "AVAILABILITY".asInstanceOf[DeviceFilterAttribute]
+    val FORM_FACTOR = "FORM_FACTOR".asInstanceOf[DeviceFilterAttribute]
+    val MANUFACTURER = "MANUFACTURER".asInstanceOf[DeviceFilterAttribute]
     val REMOTE_ACCESS_ENABLED = "REMOTE_ACCESS_ENABLED".asInstanceOf[DeviceFilterAttribute]
-    val REMOTE_DEBUG_ENABLED  = "REMOTE_DEBUG_ENABLED".asInstanceOf[DeviceFilterAttribute]
-    val INSTANCE_ARN          = "INSTANCE_ARN".asInstanceOf[DeviceFilterAttribute]
-    val INSTANCE_LABELS       = "INSTANCE_LABELS".asInstanceOf[DeviceFilterAttribute]
-    val FLEET_TYPE            = "FLEET_TYPE".asInstanceOf[DeviceFilterAttribute]
+    val REMOTE_DEBUG_ENABLED = "REMOTE_DEBUG_ENABLED".asInstanceOf[DeviceFilterAttribute]
+    val INSTANCE_ARN = "INSTANCE_ARN".asInstanceOf[DeviceFilterAttribute]
+    val INSTANCE_LABELS = "INSTANCE_LABELS".asInstanceOf[DeviceFilterAttribute]
+    val FLEET_TYPE = "FLEET_TYPE".asInstanceOf[DeviceFilterAttribute]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1587,7 +1587,7 @@ package devicefarm {
   @js.native
   sealed trait DeviceFormFactor extends js.Any
   object DeviceFormFactor extends js.Object {
-    val PHONE  = "PHONE".asInstanceOf[DeviceFormFactor]
+    val PHONE = "PHONE".asInstanceOf[DeviceFormFactor]
     val TABLET = "TABLET".asInstanceOf[DeviceFormFactor]
 
     val values = js.Object.freeze(js.Array(PHONE, TABLET))
@@ -1656,7 +1656,7 @@ package devicefarm {
   sealed trait DevicePlatform extends js.Any
   object DevicePlatform extends js.Object {
     val ANDROID = "ANDROID".asInstanceOf[DevicePlatform]
-    val IOS     = "IOS".asInstanceOf[DevicePlatform]
+    val IOS = "IOS".asInstanceOf[DevicePlatform]
 
     val values = js.Object.freeze(js.Array(ANDROID, IOS))
   }
@@ -1745,7 +1745,7 @@ package devicefarm {
         maxDevices: Int
     ): DeviceSelectionConfiguration = {
       val __obj = js.Dynamic.literal(
-        "filters"    -> filters.asInstanceOf[js.Any],
+        "filters" -> filters.asInstanceOf[js.Any],
         "maxDevices" -> maxDevices.asInstanceOf[js.Any]
       )
 
@@ -1813,9 +1813,9 @@ package devicefarm {
   sealed trait ExecutionResult extends js.Any
   object ExecutionResult extends js.Object {
     val PENDING = "PENDING".asInstanceOf[ExecutionResult]
-    val PASSED  = "PASSED".asInstanceOf[ExecutionResult]
-    val WARNED  = "WARNED".asInstanceOf[ExecutionResult]
-    val FAILED  = "FAILED".asInstanceOf[ExecutionResult]
+    val PASSED = "PASSED".asInstanceOf[ExecutionResult]
+    val WARNED = "WARNED".asInstanceOf[ExecutionResult]
+    val FAILED = "FAILED".asInstanceOf[ExecutionResult]
     val SKIPPED = "SKIPPED".asInstanceOf[ExecutionResult]
     val ERRORED = "ERRORED".asInstanceOf[ExecutionResult]
     val STOPPED = "STOPPED".asInstanceOf[ExecutionResult]
@@ -1826,7 +1826,7 @@ package devicefarm {
   @js.native
   sealed trait ExecutionResultCode extends js.Any
   object ExecutionResultCode extends js.Object {
-    val PARSING_FAILED            = "PARSING_FAILED".asInstanceOf[ExecutionResultCode]
+    val PARSING_FAILED = "PARSING_FAILED".asInstanceOf[ExecutionResultCode]
     val VPC_ENDPOINT_SETUP_FAILED = "VPC_ENDPOINT_SETUP_FAILED".asInstanceOf[ExecutionResultCode]
 
     val values = js.Object.freeze(js.Array(PARSING_FAILED, VPC_ENDPOINT_SETUP_FAILED))
@@ -1835,15 +1835,15 @@ package devicefarm {
   @js.native
   sealed trait ExecutionStatus extends js.Any
   object ExecutionStatus extends js.Object {
-    val PENDING             = "PENDING".asInstanceOf[ExecutionStatus]
+    val PENDING = "PENDING".asInstanceOf[ExecutionStatus]
     val PENDING_CONCURRENCY = "PENDING_CONCURRENCY".asInstanceOf[ExecutionStatus]
-    val PENDING_DEVICE      = "PENDING_DEVICE".asInstanceOf[ExecutionStatus]
-    val PROCESSING          = "PROCESSING".asInstanceOf[ExecutionStatus]
-    val SCHEDULING          = "SCHEDULING".asInstanceOf[ExecutionStatus]
-    val PREPARING           = "PREPARING".asInstanceOf[ExecutionStatus]
-    val RUNNING             = "RUNNING".asInstanceOf[ExecutionStatus]
-    val COMPLETED           = "COMPLETED".asInstanceOf[ExecutionStatus]
-    val STOPPING            = "STOPPING".asInstanceOf[ExecutionStatus]
+    val PENDING_DEVICE = "PENDING_DEVICE".asInstanceOf[ExecutionStatus]
+    val PROCESSING = "PROCESSING".asInstanceOf[ExecutionStatus]
+    val SCHEDULING = "SCHEDULING".asInstanceOf[ExecutionStatus]
+    val PREPARING = "PREPARING".asInstanceOf[ExecutionStatus]
+    val RUNNING = "RUNNING".asInstanceOf[ExecutionStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[ExecutionStatus]
+    val STOPPING = "STOPPING".asInstanceOf[ExecutionStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2600,7 +2600,7 @@ package devicefarm {
         remoteAccessSessionArn: AmazonResourceName
     ): InstallToRemoteAccessSessionRequest = {
       val __obj = js.Dynamic.literal(
-        "appArn"                 -> appArn.asInstanceOf[js.Any],
+        "appArn" -> appArn.asInstanceOf[js.Any],
         "remoteAccessSessionArn" -> remoteAccessSessionArn.asInstanceOf[js.Any]
       )
 
@@ -2666,9 +2666,9 @@ package devicefarm {
   @js.native
   sealed trait InstanceStatus extends js.Any
   object InstanceStatus extends js.Object {
-    val IN_USE        = "IN_USE".asInstanceOf[InstanceStatus]
-    val PREPARING     = "PREPARING".asInstanceOf[InstanceStatus]
-    val AVAILABLE     = "AVAILABLE".asInstanceOf[InstanceStatus]
+    val IN_USE = "IN_USE".asInstanceOf[InstanceStatus]
+    val PREPARING = "PREPARING".asInstanceOf[InstanceStatus]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[InstanceStatus]
     val NOT_AVAILABLE = "NOT_AVAILABLE".asInstanceOf[InstanceStatus]
 
     val values = js.Object.freeze(js.Array(IN_USE, PREPARING, AVAILABLE, NOT_AVAILABLE))
@@ -2678,8 +2678,8 @@ package devicefarm {
   sealed trait InteractionMode extends js.Any
   object InteractionMode extends js.Object {
     val INTERACTIVE = "INTERACTIVE".asInstanceOf[InteractionMode]
-    val NO_VIDEO    = "NO_VIDEO".asInstanceOf[InteractionMode]
-    val VIDEO_ONLY  = "VIDEO_ONLY".asInstanceOf[InteractionMode]
+    val NO_VIDEO = "NO_VIDEO".asInstanceOf[InteractionMode]
+    val VIDEO_ONLY = "VIDEO_ONLY".asInstanceOf[InteractionMode]
 
     val values = js.Object.freeze(js.Array(INTERACTIVE, NO_VIDEO, VIDEO_ONLY))
   }
@@ -2763,7 +2763,7 @@ package devicefarm {
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListArtifactsRequest = {
       val __obj = js.Dynamic.literal(
-        "arn"  -> arn.asInstanceOf[js.Any],
+        "arn" -> arn.asInstanceOf[js.Any],
         "type" -> `type`.asInstanceOf[js.Any]
       )
 
@@ -3815,7 +3815,7 @@ package devicefarm {
         longitude: Double
     ): Location = {
       val __obj = js.Dynamic.literal(
-        "latitude"  -> latitude.asInstanceOf[js.Any],
+        "latitude" -> latitude.asInstanceOf[js.Any],
         "longitude" -> longitude.asInstanceOf[js.Any]
       )
 
@@ -4022,8 +4022,8 @@ package devicefarm {
   sealed trait OfferingTransactionType extends js.Any
   object OfferingTransactionType extends js.Object {
     val PURCHASE = "PURCHASE".asInstanceOf[OfferingTransactionType]
-    val RENEW    = "RENEW".asInstanceOf[OfferingTransactionType]
-    val SYSTEM   = "SYSTEM".asInstanceOf[OfferingTransactionType]
+    val RENEW = "RENEW".asInstanceOf[OfferingTransactionType]
+    val SYSTEM = "SYSTEM".asInstanceOf[OfferingTransactionType]
 
     val values = js.Object.freeze(js.Array(PURCHASE, RENEW, SYSTEM))
   }
@@ -4395,14 +4395,14 @@ package devicefarm {
   @js.native
   sealed trait RuleOperator extends js.Any
   object RuleOperator extends js.Object {
-    val EQUALS                 = "EQUALS".asInstanceOf[RuleOperator]
-    val LESS_THAN              = "LESS_THAN".asInstanceOf[RuleOperator]
-    val LESS_THAN_OR_EQUALS    = "LESS_THAN_OR_EQUALS".asInstanceOf[RuleOperator]
-    val GREATER_THAN           = "GREATER_THAN".asInstanceOf[RuleOperator]
+    val EQUALS = "EQUALS".asInstanceOf[RuleOperator]
+    val LESS_THAN = "LESS_THAN".asInstanceOf[RuleOperator]
+    val LESS_THAN_OR_EQUALS = "LESS_THAN_OR_EQUALS".asInstanceOf[RuleOperator]
+    val GREATER_THAN = "GREATER_THAN".asInstanceOf[RuleOperator]
     val GREATER_THAN_OR_EQUALS = "GREATER_THAN_OR_EQUALS".asInstanceOf[RuleOperator]
-    val IN                     = "IN".asInstanceOf[RuleOperator]
-    val NOT_IN                 = "NOT_IN".asInstanceOf[RuleOperator]
-    val CONTAINS               = "CONTAINS".asInstanceOf[RuleOperator]
+    val IN = "IN".asInstanceOf[RuleOperator]
+    val NOT_IN = "NOT_IN".asInstanceOf[RuleOperator]
+    val CONTAINS = "CONTAINS".asInstanceOf[RuleOperator]
 
     val values = js.Object.freeze(
       js.Array(EQUALS, LESS_THAN, LESS_THAN_OR_EQUALS, GREATER_THAN, GREATER_THAN_OR_EQUALS, IN, NOT_IN, CONTAINS)
@@ -4546,20 +4546,20 @@ package devicefarm {
   @js.native
   sealed trait SampleType extends js.Any
   object SampleType extends js.Object {
-    val CPU                 = "CPU".asInstanceOf[SampleType]
-    val MEMORY              = "MEMORY".asInstanceOf[SampleType]
-    val THREADS             = "THREADS".asInstanceOf[SampleType]
-    val RX_RATE             = "RX_RATE".asInstanceOf[SampleType]
-    val TX_RATE             = "TX_RATE".asInstanceOf[SampleType]
-    val RX                  = "RX".asInstanceOf[SampleType]
-    val TX                  = "TX".asInstanceOf[SampleType]
-    val NATIVE_FRAMES       = "NATIVE_FRAMES".asInstanceOf[SampleType]
-    val NATIVE_FPS          = "NATIVE_FPS".asInstanceOf[SampleType]
+    val CPU = "CPU".asInstanceOf[SampleType]
+    val MEMORY = "MEMORY".asInstanceOf[SampleType]
+    val THREADS = "THREADS".asInstanceOf[SampleType]
+    val RX_RATE = "RX_RATE".asInstanceOf[SampleType]
+    val TX_RATE = "TX_RATE".asInstanceOf[SampleType]
+    val RX = "RX".asInstanceOf[SampleType]
+    val TX = "TX".asInstanceOf[SampleType]
+    val NATIVE_FRAMES = "NATIVE_FRAMES".asInstanceOf[SampleType]
+    val NATIVE_FPS = "NATIVE_FPS".asInstanceOf[SampleType]
     val NATIVE_MIN_DRAWTIME = "NATIVE_MIN_DRAWTIME".asInstanceOf[SampleType]
     val NATIVE_AVG_DRAWTIME = "NATIVE_AVG_DRAWTIME".asInstanceOf[SampleType]
     val NATIVE_MAX_DRAWTIME = "NATIVE_MAX_DRAWTIME".asInstanceOf[SampleType]
-    val OPENGL_FRAMES       = "OPENGL_FRAMES".asInstanceOf[SampleType]
-    val OPENGL_FPS          = "OPENGL_FPS".asInstanceOf[SampleType]
+    val OPENGL_FRAMES = "OPENGL_FRAMES".asInstanceOf[SampleType]
+    val OPENGL_FPS = "OPENGL_FPS".asInstanceOf[SampleType]
     val OPENGL_MIN_DRAWTIME = "OPENGL_MIN_DRAWTIME".asInstanceOf[SampleType]
     val OPENGL_AVG_DRAWTIME = "OPENGL_AVG_DRAWTIME".asInstanceOf[SampleType]
     val OPENGL_MAX_DRAWTIME = "OPENGL_MAX_DRAWTIME".asInstanceOf[SampleType]
@@ -4659,7 +4659,7 @@ package devicefarm {
     ): ScheduleRunRequest = {
       val __obj = js.Dynamic.literal(
         "projectArn" -> projectArn.asInstanceOf[js.Any],
-        "test"       -> test.asInstanceOf[js.Any]
+        "test" -> test.asInstanceOf[js.Any]
       )
 
       appArn.foreach(__v => __obj.updateDynamic("appArn")(__v.asInstanceOf[js.Any]))
@@ -4905,7 +4905,7 @@ package devicefarm {
         Value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -4927,7 +4927,7 @@ package devicefarm {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -5120,7 +5120,7 @@ package devicefarm {
   sealed trait TestGridSessionArtifactCategory extends js.Any
   object TestGridSessionArtifactCategory extends js.Object {
     val VIDEO = "VIDEO".asInstanceOf[TestGridSessionArtifactCategory]
-    val LOG   = "LOG".asInstanceOf[TestGridSessionArtifactCategory]
+    val LOG = "LOG".asInstanceOf[TestGridSessionArtifactCategory]
 
     val values = js.Object.freeze(js.Array(VIDEO, LOG))
   }
@@ -5128,8 +5128,8 @@ package devicefarm {
   @js.native
   sealed trait TestGridSessionArtifactType extends js.Any
   object TestGridSessionArtifactType extends js.Object {
-    val UNKNOWN      = "UNKNOWN".asInstanceOf[TestGridSessionArtifactType]
-    val VIDEO        = "VIDEO".asInstanceOf[TestGridSessionArtifactType]
+    val UNKNOWN = "UNKNOWN".asInstanceOf[TestGridSessionArtifactType]
+    val VIDEO = "VIDEO".asInstanceOf[TestGridSessionArtifactType]
     val SELENIUM_LOG = "SELENIUM_LOG".asInstanceOf[TestGridSessionArtifactType]
 
     val values = js.Object.freeze(js.Array(UNKNOWN, VIDEO, SELENIUM_LOG))
@@ -5138,8 +5138,8 @@ package devicefarm {
   @js.native
   sealed trait TestGridSessionStatus extends js.Any
   object TestGridSessionStatus extends js.Object {
-    val ACTIVE  = "ACTIVE".asInstanceOf[TestGridSessionStatus]
-    val CLOSED  = "CLOSED".asInstanceOf[TestGridSessionStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[TestGridSessionStatus]
+    val CLOSED = "CLOSED".asInstanceOf[TestGridSessionStatus]
     val ERRORED = "ERRORED".asInstanceOf[TestGridSessionStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, CLOSED, ERRORED))
@@ -5148,27 +5148,27 @@ package devicefarm {
   @js.native
   sealed trait TestType extends js.Any
   object TestType extends js.Object {
-    val BUILTIN_FUZZ            = "BUILTIN_FUZZ".asInstanceOf[TestType]
-    val BUILTIN_EXPLORER        = "BUILTIN_EXPLORER".asInstanceOf[TestType]
+    val BUILTIN_FUZZ = "BUILTIN_FUZZ".asInstanceOf[TestType]
+    val BUILTIN_EXPLORER = "BUILTIN_EXPLORER".asInstanceOf[TestType]
     val WEB_PERFORMANCE_PROFILE = "WEB_PERFORMANCE_PROFILE".asInstanceOf[TestType]
-    val APPIUM_JAVA_JUNIT       = "APPIUM_JAVA_JUNIT".asInstanceOf[TestType]
-    val APPIUM_JAVA_TESTNG      = "APPIUM_JAVA_TESTNG".asInstanceOf[TestType]
-    val APPIUM_PYTHON           = "APPIUM_PYTHON".asInstanceOf[TestType]
-    val APPIUM_NODE             = "APPIUM_NODE".asInstanceOf[TestType]
-    val APPIUM_RUBY             = "APPIUM_RUBY".asInstanceOf[TestType]
-    val APPIUM_WEB_JAVA_JUNIT   = "APPIUM_WEB_JAVA_JUNIT".asInstanceOf[TestType]
-    val APPIUM_WEB_JAVA_TESTNG  = "APPIUM_WEB_JAVA_TESTNG".asInstanceOf[TestType]
-    val APPIUM_WEB_PYTHON       = "APPIUM_WEB_PYTHON".asInstanceOf[TestType]
-    val APPIUM_WEB_NODE         = "APPIUM_WEB_NODE".asInstanceOf[TestType]
-    val APPIUM_WEB_RUBY         = "APPIUM_WEB_RUBY".asInstanceOf[TestType]
-    val CALABASH                = "CALABASH".asInstanceOf[TestType]
-    val INSTRUMENTATION         = "INSTRUMENTATION".asInstanceOf[TestType]
-    val UIAUTOMATION            = "UIAUTOMATION".asInstanceOf[TestType]
-    val UIAUTOMATOR             = "UIAUTOMATOR".asInstanceOf[TestType]
-    val XCTEST                  = "XCTEST".asInstanceOf[TestType]
-    val XCTEST_UI               = "XCTEST_UI".asInstanceOf[TestType]
-    val REMOTE_ACCESS_RECORD    = "REMOTE_ACCESS_RECORD".asInstanceOf[TestType]
-    val REMOTE_ACCESS_REPLAY    = "REMOTE_ACCESS_REPLAY".asInstanceOf[TestType]
+    val APPIUM_JAVA_JUNIT = "APPIUM_JAVA_JUNIT".asInstanceOf[TestType]
+    val APPIUM_JAVA_TESTNG = "APPIUM_JAVA_TESTNG".asInstanceOf[TestType]
+    val APPIUM_PYTHON = "APPIUM_PYTHON".asInstanceOf[TestType]
+    val APPIUM_NODE = "APPIUM_NODE".asInstanceOf[TestType]
+    val APPIUM_RUBY = "APPIUM_RUBY".asInstanceOf[TestType]
+    val APPIUM_WEB_JAVA_JUNIT = "APPIUM_WEB_JAVA_JUNIT".asInstanceOf[TestType]
+    val APPIUM_WEB_JAVA_TESTNG = "APPIUM_WEB_JAVA_TESTNG".asInstanceOf[TestType]
+    val APPIUM_WEB_PYTHON = "APPIUM_WEB_PYTHON".asInstanceOf[TestType]
+    val APPIUM_WEB_NODE = "APPIUM_WEB_NODE".asInstanceOf[TestType]
+    val APPIUM_WEB_RUBY = "APPIUM_WEB_RUBY".asInstanceOf[TestType]
+    val CALABASH = "CALABASH".asInstanceOf[TestType]
+    val INSTRUMENTATION = "INSTRUMENTATION".asInstanceOf[TestType]
+    val UIAUTOMATION = "UIAUTOMATION".asInstanceOf[TestType]
+    val UIAUTOMATOR = "UIAUTOMATOR".asInstanceOf[TestType]
+    val XCTEST = "XCTEST".asInstanceOf[TestType]
+    val XCTEST_UI = "XCTEST_UI".asInstanceOf[TestType]
+    val REMOTE_ACCESS_RECORD = "REMOTE_ACCESS_RECORD".asInstanceOf[TestType]
+    val REMOTE_ACCESS_REPLAY = "REMOTE_ACCESS_REPLAY".asInstanceOf[TestType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -5255,7 +5255,7 @@ package devicefarm {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -5724,9 +5724,9 @@ package devicefarm {
   sealed trait UploadStatus extends js.Any
   object UploadStatus extends js.Object {
     val INITIALIZED = "INITIALIZED".asInstanceOf[UploadStatus]
-    val PROCESSING  = "PROCESSING".asInstanceOf[UploadStatus]
-    val SUCCEEDED   = "SUCCEEDED".asInstanceOf[UploadStatus]
-    val FAILED      = "FAILED".asInstanceOf[UploadStatus]
+    val PROCESSING = "PROCESSING".asInstanceOf[UploadStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[UploadStatus]
+    val FAILED = "FAILED".asInstanceOf[UploadStatus]
 
     val values = js.Object.freeze(js.Array(INITIALIZED, PROCESSING, SUCCEEDED, FAILED))
   }
@@ -5734,38 +5734,38 @@ package devicefarm {
   @js.native
   sealed trait UploadType extends js.Any
   object UploadType extends js.Object {
-    val ANDROID_APP                         = "ANDROID_APP".asInstanceOf[UploadType]
-    val IOS_APP                             = "IOS_APP".asInstanceOf[UploadType]
-    val WEB_APP                             = "WEB_APP".asInstanceOf[UploadType]
-    val EXTERNAL_DATA                       = "EXTERNAL_DATA".asInstanceOf[UploadType]
-    val APPIUM_JAVA_JUNIT_TEST_PACKAGE      = "APPIUM_JAVA_JUNIT_TEST_PACKAGE".asInstanceOf[UploadType]
-    val APPIUM_JAVA_TESTNG_TEST_PACKAGE     = "APPIUM_JAVA_TESTNG_TEST_PACKAGE".asInstanceOf[UploadType]
-    val APPIUM_PYTHON_TEST_PACKAGE          = "APPIUM_PYTHON_TEST_PACKAGE".asInstanceOf[UploadType]
-    val APPIUM_NODE_TEST_PACKAGE            = "APPIUM_NODE_TEST_PACKAGE".asInstanceOf[UploadType]
-    val APPIUM_RUBY_TEST_PACKAGE            = "APPIUM_RUBY_TEST_PACKAGE".asInstanceOf[UploadType]
-    val APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE  = "APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE".asInstanceOf[UploadType]
+    val ANDROID_APP = "ANDROID_APP".asInstanceOf[UploadType]
+    val IOS_APP = "IOS_APP".asInstanceOf[UploadType]
+    val WEB_APP = "WEB_APP".asInstanceOf[UploadType]
+    val EXTERNAL_DATA = "EXTERNAL_DATA".asInstanceOf[UploadType]
+    val APPIUM_JAVA_JUNIT_TEST_PACKAGE = "APPIUM_JAVA_JUNIT_TEST_PACKAGE".asInstanceOf[UploadType]
+    val APPIUM_JAVA_TESTNG_TEST_PACKAGE = "APPIUM_JAVA_TESTNG_TEST_PACKAGE".asInstanceOf[UploadType]
+    val APPIUM_PYTHON_TEST_PACKAGE = "APPIUM_PYTHON_TEST_PACKAGE".asInstanceOf[UploadType]
+    val APPIUM_NODE_TEST_PACKAGE = "APPIUM_NODE_TEST_PACKAGE".asInstanceOf[UploadType]
+    val APPIUM_RUBY_TEST_PACKAGE = "APPIUM_RUBY_TEST_PACKAGE".asInstanceOf[UploadType]
+    val APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE = "APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE".asInstanceOf[UploadType]
     val APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE = "APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE".asInstanceOf[UploadType]
-    val APPIUM_WEB_PYTHON_TEST_PACKAGE      = "APPIUM_WEB_PYTHON_TEST_PACKAGE".asInstanceOf[UploadType]
-    val APPIUM_WEB_NODE_TEST_PACKAGE        = "APPIUM_WEB_NODE_TEST_PACKAGE".asInstanceOf[UploadType]
-    val APPIUM_WEB_RUBY_TEST_PACKAGE        = "APPIUM_WEB_RUBY_TEST_PACKAGE".asInstanceOf[UploadType]
-    val CALABASH_TEST_PACKAGE               = "CALABASH_TEST_PACKAGE".asInstanceOf[UploadType]
-    val INSTRUMENTATION_TEST_PACKAGE        = "INSTRUMENTATION_TEST_PACKAGE".asInstanceOf[UploadType]
-    val UIAUTOMATION_TEST_PACKAGE           = "UIAUTOMATION_TEST_PACKAGE".asInstanceOf[UploadType]
-    val UIAUTOMATOR_TEST_PACKAGE            = "UIAUTOMATOR_TEST_PACKAGE".asInstanceOf[UploadType]
-    val XCTEST_TEST_PACKAGE                 = "XCTEST_TEST_PACKAGE".asInstanceOf[UploadType]
-    val XCTEST_UI_TEST_PACKAGE              = "XCTEST_UI_TEST_PACKAGE".asInstanceOf[UploadType]
-    val APPIUM_JAVA_JUNIT_TEST_SPEC         = "APPIUM_JAVA_JUNIT_TEST_SPEC".asInstanceOf[UploadType]
-    val APPIUM_JAVA_TESTNG_TEST_SPEC        = "APPIUM_JAVA_TESTNG_TEST_SPEC".asInstanceOf[UploadType]
-    val APPIUM_PYTHON_TEST_SPEC             = "APPIUM_PYTHON_TEST_SPEC".asInstanceOf[UploadType]
-    val APPIUM_NODE_TEST_SPEC               = "APPIUM_NODE_TEST_SPEC".asInstanceOf[UploadType]
-    val APPIUM_RUBY_TEST_SPEC               = "APPIUM_RUBY_TEST_SPEC".asInstanceOf[UploadType]
-    val APPIUM_WEB_JAVA_JUNIT_TEST_SPEC     = "APPIUM_WEB_JAVA_JUNIT_TEST_SPEC".asInstanceOf[UploadType]
-    val APPIUM_WEB_JAVA_TESTNG_TEST_SPEC    = "APPIUM_WEB_JAVA_TESTNG_TEST_SPEC".asInstanceOf[UploadType]
-    val APPIUM_WEB_PYTHON_TEST_SPEC         = "APPIUM_WEB_PYTHON_TEST_SPEC".asInstanceOf[UploadType]
-    val APPIUM_WEB_NODE_TEST_SPEC           = "APPIUM_WEB_NODE_TEST_SPEC".asInstanceOf[UploadType]
-    val APPIUM_WEB_RUBY_TEST_SPEC           = "APPIUM_WEB_RUBY_TEST_SPEC".asInstanceOf[UploadType]
-    val INSTRUMENTATION_TEST_SPEC           = "INSTRUMENTATION_TEST_SPEC".asInstanceOf[UploadType]
-    val XCTEST_UI_TEST_SPEC                 = "XCTEST_UI_TEST_SPEC".asInstanceOf[UploadType]
+    val APPIUM_WEB_PYTHON_TEST_PACKAGE = "APPIUM_WEB_PYTHON_TEST_PACKAGE".asInstanceOf[UploadType]
+    val APPIUM_WEB_NODE_TEST_PACKAGE = "APPIUM_WEB_NODE_TEST_PACKAGE".asInstanceOf[UploadType]
+    val APPIUM_WEB_RUBY_TEST_PACKAGE = "APPIUM_WEB_RUBY_TEST_PACKAGE".asInstanceOf[UploadType]
+    val CALABASH_TEST_PACKAGE = "CALABASH_TEST_PACKAGE".asInstanceOf[UploadType]
+    val INSTRUMENTATION_TEST_PACKAGE = "INSTRUMENTATION_TEST_PACKAGE".asInstanceOf[UploadType]
+    val UIAUTOMATION_TEST_PACKAGE = "UIAUTOMATION_TEST_PACKAGE".asInstanceOf[UploadType]
+    val UIAUTOMATOR_TEST_PACKAGE = "UIAUTOMATOR_TEST_PACKAGE".asInstanceOf[UploadType]
+    val XCTEST_TEST_PACKAGE = "XCTEST_TEST_PACKAGE".asInstanceOf[UploadType]
+    val XCTEST_UI_TEST_PACKAGE = "XCTEST_UI_TEST_PACKAGE".asInstanceOf[UploadType]
+    val APPIUM_JAVA_JUNIT_TEST_SPEC = "APPIUM_JAVA_JUNIT_TEST_SPEC".asInstanceOf[UploadType]
+    val APPIUM_JAVA_TESTNG_TEST_SPEC = "APPIUM_JAVA_TESTNG_TEST_SPEC".asInstanceOf[UploadType]
+    val APPIUM_PYTHON_TEST_SPEC = "APPIUM_PYTHON_TEST_SPEC".asInstanceOf[UploadType]
+    val APPIUM_NODE_TEST_SPEC = "APPIUM_NODE_TEST_SPEC".asInstanceOf[UploadType]
+    val APPIUM_RUBY_TEST_SPEC = "APPIUM_RUBY_TEST_SPEC".asInstanceOf[UploadType]
+    val APPIUM_WEB_JAVA_JUNIT_TEST_SPEC = "APPIUM_WEB_JAVA_JUNIT_TEST_SPEC".asInstanceOf[UploadType]
+    val APPIUM_WEB_JAVA_TESTNG_TEST_SPEC = "APPIUM_WEB_JAVA_TESTNG_TEST_SPEC".asInstanceOf[UploadType]
+    val APPIUM_WEB_PYTHON_TEST_SPEC = "APPIUM_WEB_PYTHON_TEST_SPEC".asInstanceOf[UploadType]
+    val APPIUM_WEB_NODE_TEST_SPEC = "APPIUM_WEB_NODE_TEST_SPEC".asInstanceOf[UploadType]
+    val APPIUM_WEB_RUBY_TEST_SPEC = "APPIUM_WEB_RUBY_TEST_SPEC".asInstanceOf[UploadType]
+    val INSTRUMENTATION_TEST_SPEC = "INSTRUMENTATION_TEST_SPEC".asInstanceOf[UploadType]
+    val XCTEST_UI_TEST_SPEC = "XCTEST_UI_TEST_SPEC".asInstanceOf[UploadType]
 
     val values = js.Object.freeze(
       js.Array(

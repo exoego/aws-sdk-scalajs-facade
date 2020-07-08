@@ -7,62 +7,62 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object iotevents {
-  type Actions                       = js.Array[Action]
-  type AmazonResourceName            = String
-  type AssetId                       = String
-  type AssetPropertyAlias            = String
-  type AssetPropertyBooleanValue     = String
-  type AssetPropertyDoubleValue      = String
-  type AssetPropertyEntryId          = String
-  type AssetPropertyId               = String
-  type AssetPropertyIntegerValue     = String
-  type AssetPropertyOffsetInNanos    = String
-  type AssetPropertyQuality          = String
-  type AssetPropertyStringValue      = String
-  type AssetPropertyTimeInSeconds    = String
-  type AttributeJsonPath             = String
-  type Attributes                    = js.Array[Attribute]
-  type Condition                     = String
-  type ContentExpression             = String
-  type DeliveryStreamName            = String
-  type DetectorDebugOptions          = js.Array[DetectorDebugOption]
-  type DetectorModelArn              = String
-  type DetectorModelDescription      = String
-  type DetectorModelName             = String
-  type DetectorModelSummaries        = js.Array[DetectorModelSummary]
-  type DetectorModelVersion          = String
+  type Actions = js.Array[Action]
+  type AmazonResourceName = String
+  type AssetId = String
+  type AssetPropertyAlias = String
+  type AssetPropertyBooleanValue = String
+  type AssetPropertyDoubleValue = String
+  type AssetPropertyEntryId = String
+  type AssetPropertyId = String
+  type AssetPropertyIntegerValue = String
+  type AssetPropertyOffsetInNanos = String
+  type AssetPropertyQuality = String
+  type AssetPropertyStringValue = String
+  type AssetPropertyTimeInSeconds = String
+  type AttributeJsonPath = String
+  type Attributes = js.Array[Attribute]
+  type Condition = String
+  type ContentExpression = String
+  type DeliveryStreamName = String
+  type DetectorDebugOptions = js.Array[DetectorDebugOption]
+  type DetectorModelArn = String
+  type DetectorModelDescription = String
+  type DetectorModelName = String
+  type DetectorModelSummaries = js.Array[DetectorModelSummary]
+  type DetectorModelVersion = String
   type DetectorModelVersionSummaries = js.Array[DetectorModelVersionSummary]
-  type DynamoKeyField                = String
-  type DynamoKeyType                 = String
-  type DynamoKeyValue                = String
-  type DynamoOperation               = String
-  type DynamoTableName               = String
-  type EventName                     = String
-  type Events                        = js.Array[Event]
-  type FirehoseSeparator             = String
-  type InputArn                      = String
-  type InputDescription              = String
-  type InputName                     = String
-  type InputSummaries                = js.Array[InputSummary]
-  type KeyValue                      = String
-  type LoggingEnabled                = Boolean
-  type MQTTTopic                     = String
-  type MaxResults                    = Int
-  type NextToken                     = String
-  type QueueUrl                      = String
-  type Seconds                       = Int
-  type StateName                     = String
-  type States                        = js.Array[State]
-  type TagKey                        = String
-  type TagKeys                       = js.Array[TagKey]
-  type TagValue                      = String
-  type Tags                          = js.Array[Tag]
-  type TimerName                     = String
-  type Timestamp                     = js.Date
-  type TransitionEvents              = js.Array[TransitionEvent]
-  type UseBase64                     = Boolean
-  type VariableName                  = String
-  type VariableValue                 = String
+  type DynamoKeyField = String
+  type DynamoKeyType = String
+  type DynamoKeyValue = String
+  type DynamoOperation = String
+  type DynamoTableName = String
+  type EventName = String
+  type Events = js.Array[Event]
+  type FirehoseSeparator = String
+  type InputArn = String
+  type InputDescription = String
+  type InputName = String
+  type InputSummaries = js.Array[InputSummary]
+  type KeyValue = String
+  type LoggingEnabled = Boolean
+  type MQTTTopic = String
+  type MaxResults = Int
+  type NextToken = String
+  type QueueUrl = String
+  type Seconds = Int
+  type StateName = String
+  type States = js.Array[State]
+  type TagKey = String
+  type TagKeys = js.Array[TagKey]
+  type TagValue = String
+  type Tags = js.Array[Tag]
+  type TimerName = String
+  type Timestamp = js.Date
+  type TransitionEvents = js.Array[TransitionEvent]
+  type UseBase64 = Boolean
+  type VariableName = String
+  type VariableValue = String
 
   implicit final class IoTEventsOps(private val service: IoTEvents) extends AnyVal {
 
@@ -110,25 +110,25 @@ package iotevents {
   class IoTEvents() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createDetectorModel(params: CreateDetectorModelRequest): Request[CreateDetectorModelResponse]       = js.native
-    def createInput(params: CreateInputRequest): Request[CreateInputResponse]                               = js.native
-    def deleteDetectorModel(params: DeleteDetectorModelRequest): Request[DeleteDetectorModelResponse]       = js.native
-    def deleteInput(params: DeleteInputRequest): Request[DeleteInputResponse]                               = js.native
+    def createDetectorModel(params: CreateDetectorModelRequest): Request[CreateDetectorModelResponse] = js.native
+    def createInput(params: CreateInputRequest): Request[CreateInputResponse] = js.native
+    def deleteDetectorModel(params: DeleteDetectorModelRequest): Request[DeleteDetectorModelResponse] = js.native
+    def deleteInput(params: DeleteInputRequest): Request[DeleteInputResponse] = js.native
     def describeDetectorModel(params: DescribeDetectorModelRequest): Request[DescribeDetectorModelResponse] = js.native
-    def describeInput(params: DescribeInputRequest): Request[DescribeInputResponse]                         = js.native
+    def describeInput(params: DescribeInputRequest): Request[DescribeInputResponse] = js.native
     def describeLoggingOptions(params: DescribeLoggingOptionsRequest): Request[DescribeLoggingOptionsResponse] =
       js.native
     def listDetectorModelVersions(
         params: ListDetectorModelVersionsRequest
-    ): Request[ListDetectorModelVersionsResponse]                                                     = js.native
-    def listDetectorModels(params: ListDetectorModelsRequest): Request[ListDetectorModelsResponse]    = js.native
-    def listInputs(params: ListInputsRequest): Request[ListInputsResponse]                            = js.native
+    ): Request[ListDetectorModelVersionsResponse] = js.native
+    def listDetectorModels(params: ListDetectorModelsRequest): Request[ListDetectorModelsResponse] = js.native
+    def listInputs(params: ListInputsRequest): Request[ListInputsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def putLoggingOptions(params: PutLoggingOptionsRequest): Request[js.Object]                       = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
+    def putLoggingOptions(params: PutLoggingOptionsRequest): Request[js.Object] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateDetectorModel(params: UpdateDetectorModelRequest): Request[UpdateDetectorModelResponse] = js.native
-    def updateInput(params: UpdateInputRequest): Request[UpdateInputResponse]                         = js.native
+    def updateInput(params: UpdateInputRequest): Request[UpdateInputResponse] = js.native
   }
 
   /**
@@ -344,8 +344,8 @@ package iotevents {
     ): CreateDetectorModelRequest = {
       val __obj = js.Dynamic.literal(
         "detectorModelDefinition" -> detectorModelDefinition.asInstanceOf[js.Any],
-        "detectorModelName"       -> detectorModelName.asInstanceOf[js.Any],
-        "roleArn"                 -> roleArn.asInstanceOf[js.Any]
+        "detectorModelName" -> detectorModelName.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
       detectorModelDescription.foreach(__v => __obj.updateDynamic("detectorModelDescription")(__v.asInstanceOf[js.Any]))
@@ -392,7 +392,7 @@ package iotevents {
     ): CreateInputRequest = {
       val __obj = js.Dynamic.literal(
         "inputDefinition" -> inputDefinition.asInstanceOf[js.Any],
-        "inputName"       -> inputName.asInstanceOf[js.Any]
+        "inputName" -> inputName.asInstanceOf[js.Any]
       )
 
       inputDescription.foreach(__v => __obj.updateDynamic("inputDescription")(__v.asInstanceOf[js.Any]))
@@ -690,7 +690,7 @@ package iotevents {
     ): DetectorModelDefinition = {
       val __obj = js.Dynamic.literal(
         "initialStateName" -> initialStateName.asInstanceOf[js.Any],
-        "states"           -> states.asInstanceOf[js.Any]
+        "states" -> states.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DetectorModelDefinition]
@@ -725,13 +725,13 @@ package iotevents {
   @js.native
   sealed trait DetectorModelVersionStatus extends js.Any
   object DetectorModelVersionStatus extends js.Object {
-    val ACTIVE     = "ACTIVE".asInstanceOf[DetectorModelVersionStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[DetectorModelVersionStatus]
     val ACTIVATING = "ACTIVATING".asInstanceOf[DetectorModelVersionStatus]
-    val INACTIVE   = "INACTIVE".asInstanceOf[DetectorModelVersionStatus]
+    val INACTIVE = "INACTIVE".asInstanceOf[DetectorModelVersionStatus]
     val DEPRECATED = "DEPRECATED".asInstanceOf[DetectorModelVersionStatus]
-    val DRAFT      = "DRAFT".asInstanceOf[DetectorModelVersionStatus]
-    val PAUSED     = "PAUSED".asInstanceOf[DetectorModelVersionStatus]
-    val FAILED     = "FAILED".asInstanceOf[DetectorModelVersionStatus]
+    val DRAFT = "DRAFT".asInstanceOf[DetectorModelVersionStatus]
+    val PAUSED = "PAUSED".asInstanceOf[DetectorModelVersionStatus]
+    val FAILED = "FAILED".asInstanceOf[DetectorModelVersionStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, ACTIVATING, INACTIVE, DEPRECATED, DRAFT, PAUSED, FAILED))
   }
@@ -817,7 +817,7 @@ package iotevents {
       val __obj = js.Dynamic.literal(
         "hashKeyField" -> hashKeyField.asInstanceOf[js.Any],
         "hashKeyValue" -> hashKeyValue.asInstanceOf[js.Any],
-        "tableName"    -> tableName.asInstanceOf[js.Any]
+        "tableName" -> tableName.asInstanceOf[js.Any]
       )
 
       hashKeyType.foreach(__v => __obj.updateDynamic("hashKeyType")(__v.asInstanceOf[js.Any]))
@@ -860,7 +860,7 @@ package iotevents {
   @js.native
   sealed trait EvaluationMethod extends js.Any
   object EvaluationMethod extends js.Object {
-    val BATCH  = "BATCH".asInstanceOf[EvaluationMethod]
+    val BATCH = "BATCH".asInstanceOf[EvaluationMethod]
     val SERIAL = "SERIAL".asInstanceOf[EvaluationMethod]
 
     val values = js.Object.freeze(js.Array(BATCH, SERIAL))
@@ -966,11 +966,11 @@ package iotevents {
         inputDescription: js.UndefOr[InputDescription] = js.undefined
     ): InputConfiguration = {
       val __obj = js.Dynamic.literal(
-        "creationTime"   -> creationTime.asInstanceOf[js.Any],
-        "inputArn"       -> inputArn.asInstanceOf[js.Any],
-        "inputName"      -> inputName.asInstanceOf[js.Any],
+        "creationTime" -> creationTime.asInstanceOf[js.Any],
+        "inputArn" -> inputArn.asInstanceOf[js.Any],
+        "inputName" -> inputName.asInstanceOf[js.Any],
         "lastUpdateTime" -> lastUpdateTime.asInstanceOf[js.Any],
-        "status"         -> status.asInstanceOf[js.Any]
+        "status" -> status.asInstanceOf[js.Any]
       )
 
       inputDescription.foreach(__v => __obj.updateDynamic("inputDescription")(__v.asInstanceOf[js.Any]))
@@ -1004,7 +1004,7 @@ package iotevents {
   object InputStatus extends js.Object {
     val CREATING = "CREATING".asInstanceOf[InputStatus]
     val UPDATING = "UPDATING".asInstanceOf[InputStatus]
-    val ACTIVE   = "ACTIVE".asInstanceOf[InputStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[InputStatus]
     val DELETING = "DELETING".asInstanceOf[InputStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, UPDATING, ACTIVE, DELETING))
@@ -1313,7 +1313,7 @@ package iotevents {
   sealed trait LoggingLevel extends js.Any
   object LoggingLevel extends js.Object {
     val ERROR = "ERROR".asInstanceOf[LoggingLevel]
-    val INFO  = "INFO".asInstanceOf[LoggingLevel]
+    val INFO = "INFO".asInstanceOf[LoggingLevel]
     val DEBUG = "DEBUG".asInstanceOf[LoggingLevel]
 
     val values = js.Object.freeze(js.Array(ERROR, INFO, DEBUG))
@@ -1340,7 +1340,7 @@ package iotevents {
     ): LoggingOptions = {
       val __obj = js.Dynamic.literal(
         "enabled" -> enabled.asInstanceOf[js.Any],
-        "level"   -> level.asInstanceOf[js.Any],
+        "level" -> level.asInstanceOf[js.Any],
         "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
@@ -1427,7 +1427,7 @@ package iotevents {
     ): Payload = {
       val __obj = js.Dynamic.literal(
         "contentExpression" -> contentExpression.asInstanceOf[js.Any],
-        "type"              -> `type`.asInstanceOf[js.Any]
+        "type" -> `type`.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[Payload]
@@ -1438,7 +1438,7 @@ package iotevents {
   sealed trait PayloadType extends js.Any
   object PayloadType extends js.Object {
     val STRING = "STRING".asInstanceOf[PayloadType]
-    val JSON   = "JSON".asInstanceOf[PayloadType]
+    val JSON = "JSON".asInstanceOf[PayloadType]
 
     val values = js.Object.freeze(js.Array(STRING, JSON))
   }
@@ -1549,7 +1549,7 @@ package iotevents {
         variableName: VariableName
     ): SetVariableAction = {
       val __obj = js.Dynamic.literal(
-        "value"        -> value.asInstanceOf[js.Any],
+        "value" -> value.asInstanceOf[js.Any],
         "variableName" -> variableName.asInstanceOf[js.Any]
       )
 
@@ -1630,7 +1630,7 @@ package iotevents {
         value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "key"   -> key.asInstanceOf[js.Any],
+        "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
 
@@ -1652,7 +1652,7 @@ package iotevents {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -1716,7 +1716,7 @@ package iotevents {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -1756,8 +1756,8 @@ package iotevents {
     ): UpdateDetectorModelRequest = {
       val __obj = js.Dynamic.literal(
         "detectorModelDefinition" -> detectorModelDefinition.asInstanceOf[js.Any],
-        "detectorModelName"       -> detectorModelName.asInstanceOf[js.Any],
-        "roleArn"                 -> roleArn.asInstanceOf[js.Any]
+        "detectorModelName" -> detectorModelName.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
       detectorModelDescription.foreach(__v => __obj.updateDynamic("detectorModelDescription")(__v.asInstanceOf[js.Any]))
@@ -1800,7 +1800,7 @@ package iotevents {
     ): UpdateInputRequest = {
       val __obj = js.Dynamic.literal(
         "inputDefinition" -> inputDefinition.asInstanceOf[js.Any],
-        "inputName"       -> inputName.asInstanceOf[js.Any]
+        "inputName" -> inputName.asInstanceOf[js.Any]
       )
 
       inputDescription.foreach(__v => __obj.updateDynamic("inputDescription")(__v.asInstanceOf[js.Any]))

@@ -7,65 +7,65 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object cloudwatchevents {
-  type AccountId                        = String
-  type Action                           = String
-  type Arn                              = String
-  type ErrorCode                        = String
-  type ErrorMessage                     = String
-  type EventBusList                     = js.Array[EventBus]
-  type EventBusName                     = String
-  type EventId                          = String
-  type EventPattern                     = String
-  type EventResource                    = String
-  type EventResourceList                = js.Array[EventResource]
-  type EventSourceList                  = js.Array[EventSource]
-  type EventSourceName                  = String
-  type EventSourceNamePrefix            = String
-  type EventTime                        = js.Date
-  type InputTransformerPathKey          = String
-  type LimitMax100                      = Int
-  type LimitMin1                        = Int
-  type ManagedBy                        = String
-  type MessageGroupId                   = String
-  type NextToken                        = String
-  type NonPartnerEventBusName           = String
-  type PartnerEventSourceAccountList    = js.Array[PartnerEventSourceAccount]
-  type PartnerEventSourceList           = js.Array[PartnerEventSource]
-  type PartnerEventSourceNamePrefix     = String
-  type Principal                        = String
-  type PutEventsRequestEntryList        = js.Array[PutEventsRequestEntry]
-  type PutEventsResultEntryList         = js.Array[PutEventsResultEntry]
+  type AccountId = String
+  type Action = String
+  type Arn = String
+  type ErrorCode = String
+  type ErrorMessage = String
+  type EventBusList = js.Array[EventBus]
+  type EventBusName = String
+  type EventId = String
+  type EventPattern = String
+  type EventResource = String
+  type EventResourceList = js.Array[EventResource]
+  type EventSourceList = js.Array[EventSource]
+  type EventSourceName = String
+  type EventSourceNamePrefix = String
+  type EventTime = js.Date
+  type InputTransformerPathKey = String
+  type LimitMax100 = Int
+  type LimitMin1 = Int
+  type ManagedBy = String
+  type MessageGroupId = String
+  type NextToken = String
+  type NonPartnerEventBusName = String
+  type PartnerEventSourceAccountList = js.Array[PartnerEventSourceAccount]
+  type PartnerEventSourceList = js.Array[PartnerEventSource]
+  type PartnerEventSourceNamePrefix = String
+  type Principal = String
+  type PutEventsRequestEntryList = js.Array[PutEventsRequestEntry]
+  type PutEventsResultEntryList = js.Array[PutEventsResultEntry]
   type PutPartnerEventsRequestEntryList = js.Array[PutPartnerEventsRequestEntry]
-  type PutPartnerEventsResultEntryList  = js.Array[PutPartnerEventsResultEntry]
-  type PutTargetsResultEntryList        = js.Array[PutTargetsResultEntry]
-  type RemoveTargetsResultEntryList     = js.Array[RemoveTargetsResultEntry]
-  type RoleArn                          = String
-  type RuleArn                          = String
-  type RuleDescription                  = String
-  type RuleName                         = String
-  type RuleNameList                     = js.Array[RuleName]
-  type RuleResponseList                 = js.Array[Rule]
-  type RunCommandTargetKey              = String
-  type RunCommandTargetValue            = String
-  type RunCommandTargetValues           = js.Array[RunCommandTargetValue]
-  type RunCommandTargets                = js.Array[RunCommandTarget]
-  type ScheduleExpression               = String
-  type StatementId                      = String
-  type StringList                       = js.Array[String]
-  type TagKey                           = String
-  type TagKeyList                       = js.Array[TagKey]
-  type TagList                          = js.Array[Tag]
-  type TagValue                         = String
-  type TargetArn                        = String
-  type TargetId                         = String
-  type TargetIdList                     = js.Array[TargetId]
-  type TargetInput                      = String
-  type TargetInputPath                  = String
-  type TargetList                       = js.Array[Target]
-  type TargetPartitionKeyPath           = String
-  type Timestamp                        = js.Date
-  type TransformerInput                 = String
-  type TransformerPaths                 = js.Dictionary[TargetInputPath]
+  type PutPartnerEventsResultEntryList = js.Array[PutPartnerEventsResultEntry]
+  type PutTargetsResultEntryList = js.Array[PutTargetsResultEntry]
+  type RemoveTargetsResultEntryList = js.Array[RemoveTargetsResultEntry]
+  type RoleArn = String
+  type RuleArn = String
+  type RuleDescription = String
+  type RuleName = String
+  type RuleNameList = js.Array[RuleName]
+  type RuleResponseList = js.Array[Rule]
+  type RunCommandTargetKey = String
+  type RunCommandTargetValue = String
+  type RunCommandTargetValues = js.Array[RunCommandTargetValue]
+  type RunCommandTargets = js.Array[RunCommandTarget]
+  type ScheduleExpression = String
+  type StatementId = String
+  type StringList = js.Array[String]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type TargetArn = String
+  type TargetId = String
+  type TargetIdList = js.Array[TargetId]
+  type TargetInput = String
+  type TargetInputPath = String
+  type TargetList = js.Array[Target]
+  type TargetPartitionKeyPath = String
+  type Timestamp = js.Date
+  type TransformerInput = String
+  type TransformerPaths = js.Dictionary[TargetInputPath]
 
   implicit final class CloudWatchEventsOps(private val service: CloudWatchEvents) extends AnyVal {
 
@@ -146,23 +146,23 @@ package cloudwatchevents {
   class CloudWatchEvents() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def activateEventSource(params: ActivateEventSourceRequest): Request[js.Object]    = js.native
+    def activateEventSource(params: ActivateEventSourceRequest): Request[js.Object] = js.native
     def createEventBus(params: CreateEventBusRequest): Request[CreateEventBusResponse] = js.native
     def createPartnerEventSource(params: CreatePartnerEventSourceRequest): Request[CreatePartnerEventSourceResponse] =
       js.native
-    def deactivateEventSource(params: DeactivateEventSourceRequest): Request[js.Object]               = js.native
-    def deleteEventBus(params: DeleteEventBusRequest): Request[js.Object]                             = js.native
-    def deletePartnerEventSource(params: DeletePartnerEventSourceRequest): Request[js.Object]         = js.native
-    def deleteRule(params: DeleteRuleRequest): Request[js.Object]                                     = js.native
-    def describeEventBus(params: DescribeEventBusRequest): Request[DescribeEventBusResponse]          = js.native
+    def deactivateEventSource(params: DeactivateEventSourceRequest): Request[js.Object] = js.native
+    def deleteEventBus(params: DeleteEventBusRequest): Request[js.Object] = js.native
+    def deletePartnerEventSource(params: DeletePartnerEventSourceRequest): Request[js.Object] = js.native
+    def deleteRule(params: DeleteRuleRequest): Request[js.Object] = js.native
+    def describeEventBus(params: DescribeEventBusRequest): Request[DescribeEventBusResponse] = js.native
     def describeEventSource(params: DescribeEventSourceRequest): Request[DescribeEventSourceResponse] = js.native
     def describePartnerEventSource(
         params: DescribePartnerEventSourceRequest
-    ): Request[DescribePartnerEventSourceResponse]                                           = js.native
-    def describeRule(params: DescribeRuleRequest): Request[DescribeRuleResponse]             = js.native
-    def disableRule(params: DisableRuleRequest): Request[js.Object]                          = js.native
-    def enableRule(params: EnableRuleRequest): Request[js.Object]                            = js.native
-    def listEventBuses(params: ListEventBusesRequest): Request[ListEventBusesResponse]       = js.native
+    ): Request[DescribePartnerEventSourceResponse] = js.native
+    def describeRule(params: DescribeRuleRequest): Request[DescribeRuleResponse] = js.native
+    def disableRule(params: DisableRuleRequest): Request[js.Object] = js.native
+    def enableRule(params: EnableRuleRequest): Request[js.Object] = js.native
+    def listEventBuses(params: ListEventBusesRequest): Request[ListEventBusesResponse] = js.native
     def listEventSources(params: ListEventSourcesRequest): Request[ListEventSourcesResponse] = js.native
     def listPartnerEventSourceAccounts(
         params: ListPartnerEventSourceAccountsRequest
@@ -170,19 +170,19 @@ package cloudwatchevents {
     def listPartnerEventSources(params: ListPartnerEventSourcesRequest): Request[ListPartnerEventSourcesResponse] =
       js.native
     def listRuleNamesByTarget(params: ListRuleNamesByTargetRequest): Request[ListRuleNamesByTargetResponse] = js.native
-    def listRules(params: ListRulesRequest): Request[ListRulesResponse]                                     = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
-    def listTargetsByRule(params: ListTargetsByRuleRequest): Request[ListTargetsByRuleResponse]             = js.native
-    def putEvents(params: PutEventsRequest): Request[PutEventsResponse]                                     = js.native
-    def putPartnerEvents(params: PutPartnerEventsRequest): Request[PutPartnerEventsResponse]                = js.native
-    def putPermission(params: PutPermissionRequest): Request[js.Object]                                     = js.native
-    def putRule(params: PutRuleRequest): Request[PutRuleResponse]                                           = js.native
-    def putTargets(params: PutTargetsRequest): Request[PutTargetsResponse]                                  = js.native
-    def removePermission(params: RemovePermissionRequest): Request[js.Object]                               = js.native
-    def removeTargets(params: RemoveTargetsRequest): Request[RemoveTargetsResponse]                         = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                               = js.native
-    def testEventPattern(params: TestEventPatternRequest): Request[TestEventPatternResponse]                = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                         = js.native
+    def listRules(params: ListRulesRequest): Request[ListRulesResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def listTargetsByRule(params: ListTargetsByRuleRequest): Request[ListTargetsByRuleResponse] = js.native
+    def putEvents(params: PutEventsRequest): Request[PutEventsResponse] = js.native
+    def putPartnerEvents(params: PutPartnerEventsRequest): Request[PutPartnerEventsResponse] = js.native
+    def putPermission(params: PutPermissionRequest): Request[js.Object] = js.native
+    def putRule(params: PutRuleRequest): Request[PutRuleResponse] = js.native
+    def putTargets(params: PutTargetsRequest): Request[PutTargetsResponse] = js.native
+    def removePermission(params: RemovePermissionRequest): Request[js.Object] = js.native
+    def removeTargets(params: RemoveTargetsRequest): Request[RemoveTargetsResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def testEventPattern(params: TestEventPatternRequest): Request[TestEventPatternResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
   }
 
   @js.native
@@ -206,7 +206,7 @@ package cloudwatchevents {
   @js.native
   sealed trait AssignPublicIp extends js.Any
   object AssignPublicIp extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[AssignPublicIp]
+    val ENABLED = "ENABLED".asInstanceOf[AssignPublicIp]
     val DISABLED = "DISABLED".asInstanceOf[AssignPublicIp]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -279,7 +279,7 @@ package cloudwatchevents {
     ): BatchParameters = {
       val __obj = js.Dynamic.literal(
         "JobDefinition" -> JobDefinition.asInstanceOf[js.Any],
-        "JobName"       -> JobName.asInstanceOf[js.Any]
+        "JobName" -> JobName.asInstanceOf[js.Any]
       )
 
       ArrayProperties.foreach(__v => __obj.updateDynamic("ArrayProperties")(__v.asInstanceOf[js.Any]))
@@ -326,8 +326,8 @@ package cloudwatchevents {
         Value: String
     ): Condition = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
-        "Type"  -> Type.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -389,7 +389,7 @@ package cloudwatchevents {
     ): CreatePartnerEventSourceRequest = {
       val __obj = js.Dynamic.literal(
         "Account" -> Account.asInstanceOf[js.Any],
-        "Name"    -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreatePartnerEventSourceRequest]
@@ -462,7 +462,7 @@ package cloudwatchevents {
     ): DeletePartnerEventSourceRequest = {
       val __obj = js.Dynamic.literal(
         "Account" -> Account.asInstanceOf[js.Any],
-        "Name"    -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeletePartnerEventSourceRequest]
@@ -819,7 +819,7 @@ package cloudwatchevents {
   sealed trait EventSourceState extends js.Any
   object EventSourceState extends js.Object {
     val PENDING = "PENDING".asInstanceOf[EventSourceState]
-    val ACTIVE  = "ACTIVE".asInstanceOf[EventSourceState]
+    val ACTIVE = "ACTIVE".asInstanceOf[EventSourceState]
     val DELETED = "DELETED".asInstanceOf[EventSourceState]
 
     val values = js.Object.freeze(js.Array(PENDING, ACTIVE, DELETED))
@@ -873,7 +873,7 @@ package cloudwatchevents {
   @js.native
   sealed trait LaunchType extends js.Any
   object LaunchType extends js.Object {
-    val EC2     = "EC2".asInstanceOf[LaunchType]
+    val EC2 = "EC2".asInstanceOf[LaunchType]
     val FARGATE = "FARGATE".asInstanceOf[LaunchType]
 
     val values = js.Object.freeze(js.Array(EC2, FARGATE))
@@ -1496,8 +1496,8 @@ package cloudwatchevents {
         EventBusName: js.UndefOr[NonPartnerEventBusName] = js.undefined
     ): PutPermissionRequest = {
       val __obj = js.Dynamic.literal(
-        "Action"      -> Action.asInstanceOf[js.Any],
-        "Principal"   -> Principal.asInstanceOf[js.Any],
+        "Action" -> Action.asInstanceOf[js.Any],
+        "Principal" -> Principal.asInstanceOf[js.Any],
         "StatementId" -> StatementId.asInstanceOf[js.Any]
       )
 
@@ -1577,7 +1577,7 @@ package cloudwatchevents {
         EventBusName: js.UndefOr[EventBusName] = js.undefined
     ): PutTargetsRequest = {
       val __obj = js.Dynamic.literal(
-        "Rule"    -> Rule.asInstanceOf[js.Any],
+        "Rule" -> Rule.asInstanceOf[js.Any],
         "Targets" -> Targets.asInstanceOf[js.Any]
       )
 
@@ -1668,7 +1668,7 @@ package cloudwatchevents {
         Force: js.UndefOr[Boolean] = js.undefined
     ): RemoveTargetsRequest = {
       val __obj = js.Dynamic.literal(
-        "Ids"  -> Ids.asInstanceOf[js.Any],
+        "Ids" -> Ids.asInstanceOf[js.Any],
         "Rule" -> Rule.asInstanceOf[js.Any]
       )
 
@@ -1768,7 +1768,7 @@ package cloudwatchevents {
   @js.native
   sealed trait RuleState extends js.Any
   object RuleState extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[RuleState]
+    val ENABLED = "ENABLED".asInstanceOf[RuleState]
     val DISABLED = "DISABLED".asInstanceOf[RuleState]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -1811,7 +1811,7 @@ package cloudwatchevents {
         Values: RunCommandTargetValues
     ): RunCommandTarget = {
       val __obj = js.Dynamic.literal(
-        "Key"    -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
@@ -1854,7 +1854,7 @@ package cloudwatchevents {
         Value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -1876,7 +1876,7 @@ package cloudwatchevents {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -1932,7 +1932,7 @@ package cloudwatchevents {
     ): Target = {
       val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any],
-        "Id"  -> Id.asInstanceOf[js.Any]
+        "Id" -> Id.asInstanceOf[js.Any]
       )
 
       BatchParameters.foreach(__v => __obj.updateDynamic("BatchParameters")(__v.asInstanceOf[js.Any]))
@@ -1961,7 +1961,7 @@ package cloudwatchevents {
         EventPattern: EventPattern
     ): TestEventPatternRequest = {
       val __obj = js.Dynamic.literal(
-        "Event"        -> Event.asInstanceOf[js.Any],
+        "Event" -> Event.asInstanceOf[js.Any],
         "EventPattern" -> EventPattern.asInstanceOf[js.Any]
       )
 
@@ -1999,7 +1999,7 @@ package cloudwatchevents {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]

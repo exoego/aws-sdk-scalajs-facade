@@ -7,29 +7,29 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object codestarconnections {
-  type AccountId          = String
+  type AccountId = String
   type AmazonResourceName = String
-  type ConnectionArn      = String
-  type ConnectionList     = js.Array[Connection]
-  type ConnectionName     = String
-  type HostArn            = String
-  type HostList           = js.Array[Host]
-  type HostName           = String
-  type HostStatus         = String
-  type HostStatusMessage  = String
-  type MaxResults         = Int
-  type NextToken          = String
-  type SecurityGroupId    = String
-  type SecurityGroupIds   = js.Array[SecurityGroupId]
-  type SubnetId           = String
-  type SubnetIds          = js.Array[SubnetId]
-  type TagKey             = String
-  type TagKeyList         = js.Array[TagKey]
-  type TagList            = js.Array[Tag]
-  type TagValue           = String
-  type TlsCertificate     = String
-  type Url                = String
-  type VpcId              = String
+  type ConnectionArn = String
+  type ConnectionList = js.Array[Connection]
+  type ConnectionName = String
+  type HostArn = String
+  type HostList = js.Array[Host]
+  type HostName = String
+  type HostStatus = String
+  type HostStatusMessage = String
+  type MaxResults = Int
+  type NextToken = String
+  type SecurityGroupId = String
+  type SecurityGroupIds = js.Array[SecurityGroupId]
+  type SubnetId = String
+  type SubnetIds = js.Array[SubnetId]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type TlsCertificate = String
+  type Url = String
+  type VpcId = String
 
   implicit final class CodeStarconnectionsOps(private val service: CodeStarconnections) extends AnyVal {
 
@@ -63,17 +63,17 @@ package codestarconnections {
   class CodeStarconnections() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createConnection(params: CreateConnectionInput): Request[CreateConnectionOutput]          = js.native
-    def createHost(params: CreateHostInput): Request[CreateHostOutput]                            = js.native
-    def deleteConnection(params: DeleteConnectionInput): Request[DeleteConnectionOutput]          = js.native
-    def deleteHost(params: DeleteHostInput): Request[DeleteHostOutput]                            = js.native
-    def getConnection(params: GetConnectionInput): Request[GetConnectionOutput]                   = js.native
-    def getHost(params: GetHostInput): Request[GetHostOutput]                                     = js.native
-    def listConnections(params: ListConnectionsInput): Request[ListConnectionsOutput]             = js.native
-    def listHosts(params: ListHostsInput): Request[ListHostsOutput]                               = js.native
+    def createConnection(params: CreateConnectionInput): Request[CreateConnectionOutput] = js.native
+    def createHost(params: CreateHostInput): Request[CreateHostOutput] = js.native
+    def deleteConnection(params: DeleteConnectionInput): Request[DeleteConnectionOutput] = js.native
+    def deleteHost(params: DeleteHostInput): Request[DeleteHostOutput] = js.native
+    def getConnection(params: GetConnectionInput): Request[GetConnectionOutput] = js.native
+    def getHost(params: GetHostInput): Request[GetHostOutput] = js.native
+    def listConnections(params: ListConnectionsInput): Request[ListConnectionsOutput] = js.native
+    def listHosts(params: ListHostsInput): Request[ListHostsOutput] = js.native
     def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput] = js.native
-    def tagResource(params: TagResourceInput): Request[TagResourceOutput]                         = js.native
-    def untagResource(params: UntagResourceInput): Request[UntagResourceOutput]                   = js.native
+    def tagResource(params: TagResourceInput): Request[TagResourceOutput] = js.native
+    def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
   }
 
   /**
@@ -114,9 +114,9 @@ package codestarconnections {
   @js.native
   sealed trait ConnectionStatus extends js.Any
   object ConnectionStatus extends js.Object {
-    val PENDING   = "PENDING".asInstanceOf[ConnectionStatus]
+    val PENDING = "PENDING".asInstanceOf[ConnectionStatus]
     val AVAILABLE = "AVAILABLE".asInstanceOf[ConnectionStatus]
-    val ERROR     = "ERROR".asInstanceOf[ConnectionStatus]
+    val ERROR = "ERROR".asInstanceOf[ConnectionStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, ERROR))
   }
@@ -186,9 +186,9 @@ package codestarconnections {
         VpcConfiguration: js.UndefOr[VpcConfiguration] = js.undefined
     ): CreateHostInput = {
       val __obj = js.Dynamic.literal(
-        "Name"             -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "ProviderEndpoint" -> ProviderEndpoint.asInstanceOf[js.Any],
-        "ProviderType"     -> ProviderType.asInstanceOf[js.Any]
+        "ProviderType" -> ProviderType.asInstanceOf[js.Any]
       )
 
       VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
@@ -512,7 +512,7 @@ package codestarconnections {
   @js.native
   sealed trait ProviderType extends js.Any
   object ProviderType extends js.Object {
-    val Bitbucket              = "Bitbucket".asInstanceOf[ProviderType]
+    val Bitbucket = "Bitbucket".asInstanceOf[ProviderType]
     val GitHubEnterpriseServer = "GitHubEnterpriseServer".asInstanceOf[ProviderType]
 
     val values = js.Object.freeze(js.Array(Bitbucket, GitHubEnterpriseServer))
@@ -535,7 +535,7 @@ package codestarconnections {
         Value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -557,7 +557,7 @@ package codestarconnections {
     ): TagResourceInput = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceInput]
@@ -591,7 +591,7 @@ package codestarconnections {
     ): UntagResourceInput = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceInput]
@@ -632,8 +632,8 @@ package codestarconnections {
     ): VpcConfiguration = {
       val __obj = js.Dynamic.literal(
         "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any],
-        "SubnetIds"        -> SubnetIds.asInstanceOf[js.Any],
-        "VpcId"            -> VpcId.asInstanceOf[js.Any]
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any],
+        "VpcId" -> VpcId.asInstanceOf[js.Any]
       )
 
       TlsCertificate.foreach(__v => __obj.updateDynamic("TlsCertificate")(__v.asInstanceOf[js.Any]))

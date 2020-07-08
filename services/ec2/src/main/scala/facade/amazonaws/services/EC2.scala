@@ -7,613 +7,613 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object ec2 {
-  type AccountAttributeList                             = js.Array[AccountAttribute]
-  type AccountAttributeNameStringList                   = js.Array[AccountAttributeName]
-  type AccountAttributeValueList                        = js.Array[AccountAttributeValue]
-  type ActiveInstanceSet                                = js.Array[ActiveInstance]
-  type AddPrefixListEntries                             = js.Array[AddPrefixListEntry]
-  type AddressList                                      = js.Array[Address]
-  type AllocationId                                     = String
-  type AllocationIdList                                 = js.Array[AllocationId]
-  type AllowedPrincipalSet                              = js.Array[AllowedPrincipal]
-  type ArchitectureTypeList                             = js.Array[ArchitectureType]
-  type AssignedPrivateIpAddressList                     = js.Array[AssignedPrivateIpAddress]
-  type AssociatedTargetNetworkSet                       = js.Array[AssociatedTargetNetwork]
-  type AssociationIdList                                = js.Array[IamInstanceProfileAssociationId]
-  type AuthorizationRuleSet                             = js.Array[AuthorizationRule]
-  type AutoRecoveryFlag                                 = Boolean
-  type AvailabilityZoneList                             = js.Array[AvailabilityZone]
-  type AvailabilityZoneMessageList                      = js.Array[AvailabilityZoneMessage]
-  type AvailabilityZoneStringList                       = js.Array[String]
-  type AvailableInstanceCapacityList                    = js.Array[InstanceCapacity]
-  type BareMetalFlag                                    = Boolean
-  type BaselineBandwidthInMbps                          = Int
-  type BaselineIops                                     = Int
-  type BaselineThroughputInMBps                         = Double
-  type BillingProductList                               = js.Array[String]
-  type Blob                                             = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type BlockDeviceMappingList                           = js.Array[BlockDeviceMapping]
-  type BlockDeviceMappingRequestList                    = js.Array[BlockDeviceMapping]
-  type BundleId                                         = String
-  type BundleIdStringList                               = js.Array[BundleId]
-  type BundleTaskList                                   = js.Array[BundleTask]
-  type BurstablePerformanceFlag                         = Boolean
-  type ByoipCidrSet                                     = js.Array[ByoipCidr]
-  type CancelSpotFleetRequestsErrorSet                  = js.Array[CancelSpotFleetRequestsErrorItem]
-  type CancelSpotFleetRequestsSuccessSet                = js.Array[CancelSpotFleetRequestsSuccessItem]
-  type CancelledSpotInstanceRequestList                 = js.Array[CancelledSpotInstanceRequest]
-  type CapacityReservationId                            = String
-  type CapacityReservationIdSet                         = js.Array[CapacityReservationId]
-  type CapacityReservationSet                           = js.Array[CapacityReservation]
-  type CidrBlockSet                                     = js.Array[CidrBlock]
-  type ClassicLinkDnsSupportList                        = js.Array[ClassicLinkDnsSupport]
-  type ClassicLinkInstanceList                          = js.Array[ClassicLinkInstance]
-  type ClassicLoadBalancers                             = js.Array[ClassicLoadBalancer]
-  type ClientVpnAssociationId                           = String
-  type ClientVpnAuthenticationList                      = js.Array[ClientVpnAuthentication]
-  type ClientVpnAuthenticationRequestList               = js.Array[ClientVpnAuthenticationRequest]
-  type ClientVpnConnectionSet                           = js.Array[ClientVpnConnection]
-  type ClientVpnEndpointId                              = String
-  type ClientVpnEndpointIdList                          = js.Array[ClientVpnEndpointId]
-  type ClientVpnRouteSet                                = js.Array[ClientVpnRoute]
-  type ClientVpnSecurityGroupIdSet                      = js.Array[SecurityGroupId]
-  type CoipAddressUsageSet                              = js.Array[CoipAddressUsage]
-  type CoipPoolId                                       = String
-  type CoipPoolIdSet                                    = js.Array[CoipPoolId]
-  type CoipPoolMaxResults                               = Int
-  type CoipPoolSet                                      = js.Array[CoipPool]
-  type ConnectionNotificationId                         = String
-  type ConnectionNotificationSet                        = js.Array[ConnectionNotification]
-  type ConversionIdStringList                           = js.Array[ConversionTaskId]
-  type ConversionTaskId                                 = String
-  type CoreCount                                        = Int
-  type CoreCountList                                    = js.Array[CoreCount]
-  type CreateFleetErrorsSet                             = js.Array[CreateFleetError]
-  type CreateFleetInstancesSet                          = js.Array[CreateFleetInstance]
-  type CreateVolumePermissionList                       = js.Array[CreateVolumePermission]
-  type CurrentGenerationFlag                            = Boolean
-  type CustomerGatewayId                                = String
-  type CustomerGatewayIdStringList                      = js.Array[CustomerGatewayId]
-  type CustomerGatewayList                              = js.Array[CustomerGateway]
-  type DITMaxResults                                    = Int
-  type DITOMaxResults                                   = Int
-  type DateTime                                         = js.Date
-  type DedicatedHostFlag                                = Boolean
-  type DedicatedHostId                                  = String
-  type DefaultingDhcpOptionsId                          = String
-  type DeleteFleetErrorSet                              = js.Array[DeleteFleetErrorItem]
-  type DeleteFleetSuccessSet                            = js.Array[DeleteFleetSuccessItem]
-  type DeleteLaunchTemplateVersionsResponseErrorSet     = js.Array[DeleteLaunchTemplateVersionsResponseErrorItem]
-  type DeleteLaunchTemplateVersionsResponseSuccessSet   = js.Array[DeleteLaunchTemplateVersionsResponseSuccessItem]
-  type DeleteQueuedReservedInstancesIdList              = js.Array[ReservationId]
-  type DescribeByoipCidrsMaxResults                     = Int
-  type DescribeCapacityReservationsMaxResults           = Int
-  type DescribeClassicLinkInstancesMaxResults           = Int
-  type DescribeClientVpnAuthorizationRulesMaxResults    = Int
-  type DescribeClientVpnConnectionsMaxResults           = Int
-  type DescribeClientVpnEndpointMaxResults              = Int
-  type DescribeClientVpnRoutesMaxResults                = Int
-  type DescribeClientVpnTargetNetworksMaxResults        = Int
-  type DescribeConversionTaskList                       = js.Array[ConversionTask]
-  type DescribeDhcpOptionsMaxResults                    = Int
-  type DescribeEgressOnlyInternetGatewaysMaxResults     = Int
-  type DescribeElasticGpusMaxResults                    = Int
-  type DescribeExportImageTasksMaxResults               = Int
-  type DescribeFastSnapshotRestoreSuccessSet            = js.Array[DescribeFastSnapshotRestoreSuccessItem]
-  type DescribeFastSnapshotRestoresMaxResults           = Int
-  type DescribeFleetsErrorSet                           = js.Array[DescribeFleetError]
-  type DescribeFleetsInstancesSet                       = js.Array[DescribeFleetsInstances]
-  type DescribeFpgaImagesMaxResults                     = Int
-  type DescribeHostReservationsMaxResults               = Int
+  type AccountAttributeList = js.Array[AccountAttribute]
+  type AccountAttributeNameStringList = js.Array[AccountAttributeName]
+  type AccountAttributeValueList = js.Array[AccountAttributeValue]
+  type ActiveInstanceSet = js.Array[ActiveInstance]
+  type AddPrefixListEntries = js.Array[AddPrefixListEntry]
+  type AddressList = js.Array[Address]
+  type AllocationId = String
+  type AllocationIdList = js.Array[AllocationId]
+  type AllowedPrincipalSet = js.Array[AllowedPrincipal]
+  type ArchitectureTypeList = js.Array[ArchitectureType]
+  type AssignedPrivateIpAddressList = js.Array[AssignedPrivateIpAddress]
+  type AssociatedTargetNetworkSet = js.Array[AssociatedTargetNetwork]
+  type AssociationIdList = js.Array[IamInstanceProfileAssociationId]
+  type AuthorizationRuleSet = js.Array[AuthorizationRule]
+  type AutoRecoveryFlag = Boolean
+  type AvailabilityZoneList = js.Array[AvailabilityZone]
+  type AvailabilityZoneMessageList = js.Array[AvailabilityZoneMessage]
+  type AvailabilityZoneStringList = js.Array[String]
+  type AvailableInstanceCapacityList = js.Array[InstanceCapacity]
+  type BareMetalFlag = Boolean
+  type BaselineBandwidthInMbps = Int
+  type BaselineIops = Int
+  type BaselineThroughputInMBps = Double
+  type BillingProductList = js.Array[String]
+  type Blob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type BlockDeviceMappingList = js.Array[BlockDeviceMapping]
+  type BlockDeviceMappingRequestList = js.Array[BlockDeviceMapping]
+  type BundleId = String
+  type BundleIdStringList = js.Array[BundleId]
+  type BundleTaskList = js.Array[BundleTask]
+  type BurstablePerformanceFlag = Boolean
+  type ByoipCidrSet = js.Array[ByoipCidr]
+  type CancelSpotFleetRequestsErrorSet = js.Array[CancelSpotFleetRequestsErrorItem]
+  type CancelSpotFleetRequestsSuccessSet = js.Array[CancelSpotFleetRequestsSuccessItem]
+  type CancelledSpotInstanceRequestList = js.Array[CancelledSpotInstanceRequest]
+  type CapacityReservationId = String
+  type CapacityReservationIdSet = js.Array[CapacityReservationId]
+  type CapacityReservationSet = js.Array[CapacityReservation]
+  type CidrBlockSet = js.Array[CidrBlock]
+  type ClassicLinkDnsSupportList = js.Array[ClassicLinkDnsSupport]
+  type ClassicLinkInstanceList = js.Array[ClassicLinkInstance]
+  type ClassicLoadBalancers = js.Array[ClassicLoadBalancer]
+  type ClientVpnAssociationId = String
+  type ClientVpnAuthenticationList = js.Array[ClientVpnAuthentication]
+  type ClientVpnAuthenticationRequestList = js.Array[ClientVpnAuthenticationRequest]
+  type ClientVpnConnectionSet = js.Array[ClientVpnConnection]
+  type ClientVpnEndpointId = String
+  type ClientVpnEndpointIdList = js.Array[ClientVpnEndpointId]
+  type ClientVpnRouteSet = js.Array[ClientVpnRoute]
+  type ClientVpnSecurityGroupIdSet = js.Array[SecurityGroupId]
+  type CoipAddressUsageSet = js.Array[CoipAddressUsage]
+  type CoipPoolId = String
+  type CoipPoolIdSet = js.Array[CoipPoolId]
+  type CoipPoolMaxResults = Int
+  type CoipPoolSet = js.Array[CoipPool]
+  type ConnectionNotificationId = String
+  type ConnectionNotificationSet = js.Array[ConnectionNotification]
+  type ConversionIdStringList = js.Array[ConversionTaskId]
+  type ConversionTaskId = String
+  type CoreCount = Int
+  type CoreCountList = js.Array[CoreCount]
+  type CreateFleetErrorsSet = js.Array[CreateFleetError]
+  type CreateFleetInstancesSet = js.Array[CreateFleetInstance]
+  type CreateVolumePermissionList = js.Array[CreateVolumePermission]
+  type CurrentGenerationFlag = Boolean
+  type CustomerGatewayId = String
+  type CustomerGatewayIdStringList = js.Array[CustomerGatewayId]
+  type CustomerGatewayList = js.Array[CustomerGateway]
+  type DITMaxResults = Int
+  type DITOMaxResults = Int
+  type DateTime = js.Date
+  type DedicatedHostFlag = Boolean
+  type DedicatedHostId = String
+  type DefaultingDhcpOptionsId = String
+  type DeleteFleetErrorSet = js.Array[DeleteFleetErrorItem]
+  type DeleteFleetSuccessSet = js.Array[DeleteFleetSuccessItem]
+  type DeleteLaunchTemplateVersionsResponseErrorSet = js.Array[DeleteLaunchTemplateVersionsResponseErrorItem]
+  type DeleteLaunchTemplateVersionsResponseSuccessSet = js.Array[DeleteLaunchTemplateVersionsResponseSuccessItem]
+  type DeleteQueuedReservedInstancesIdList = js.Array[ReservationId]
+  type DescribeByoipCidrsMaxResults = Int
+  type DescribeCapacityReservationsMaxResults = Int
+  type DescribeClassicLinkInstancesMaxResults = Int
+  type DescribeClientVpnAuthorizationRulesMaxResults = Int
+  type DescribeClientVpnConnectionsMaxResults = Int
+  type DescribeClientVpnEndpointMaxResults = Int
+  type DescribeClientVpnRoutesMaxResults = Int
+  type DescribeClientVpnTargetNetworksMaxResults = Int
+  type DescribeConversionTaskList = js.Array[ConversionTask]
+  type DescribeDhcpOptionsMaxResults = Int
+  type DescribeEgressOnlyInternetGatewaysMaxResults = Int
+  type DescribeElasticGpusMaxResults = Int
+  type DescribeExportImageTasksMaxResults = Int
+  type DescribeFastSnapshotRestoreSuccessSet = js.Array[DescribeFastSnapshotRestoreSuccessItem]
+  type DescribeFastSnapshotRestoresMaxResults = Int
+  type DescribeFleetsErrorSet = js.Array[DescribeFleetError]
+  type DescribeFleetsInstancesSet = js.Array[DescribeFleetsInstances]
+  type DescribeFpgaImagesMaxResults = Int
+  type DescribeHostReservationsMaxResults = Int
   type DescribeIamInstanceProfileAssociationsMaxResults = Int
-  type DescribeInstanceCreditSpecificationsMaxResults   = Int
-  type DescribeInternetGatewaysMaxResults               = Int
-  type DescribeLaunchTemplatesMaxResults                = Int
-  type DescribeMovingAddressesMaxResults                = Int
-  type DescribeNatGatewaysMaxResults                    = Int
-  type DescribeNetworkAclsMaxResults                    = Int
-  type DescribeNetworkInterfacePermissionsMaxResults    = Int
-  type DescribeNetworkInterfacesMaxResults              = Int
-  type DescribePrincipalIdFormatMaxResults              = Int
-  type DescribeRouteTablesMaxResults                    = Int
-  type DescribeScheduledInstanceAvailabilityMaxResults  = Int
-  type DescribeSecurityGroupsMaxResults                 = Int
-  type DescribeSpotFleetInstancesMaxResults             = Int
-  type DescribeSpotFleetRequestHistoryMaxResults        = Int
-  type DescribeStaleSecurityGroupsMaxResults            = Int
-  type DescribeStaleSecurityGroupsNextToken             = String
-  type DescribeSubnetsMaxResults                        = Int
-  type DescribeVpcClassicLinkDnsSupportMaxResults       = Int
-  type DescribeVpcClassicLinkDnsSupportNextToken        = String
-  type DescribeVpcPeeringConnectionsMaxResults          = Int
-  type DescribeVpcsMaxResults                           = Int
-  type DhcpConfigurationList                            = js.Array[DhcpConfiguration]
-  type DhcpConfigurationValueList                       = js.Array[AttributeValue]
-  type DhcpOptionsId                                    = String
-  type DhcpOptionsIdStringList                          = js.Array[DhcpOptionsId]
-  type DhcpOptionsList                                  = js.Array[DhcpOptions]
-  type DisableFastSnapshotRestoreErrorSet               = js.Array[DisableFastSnapshotRestoreErrorItem]
-  type DisableFastSnapshotRestoreStateErrorSet          = js.Array[DisableFastSnapshotRestoreStateErrorItem]
-  type DisableFastSnapshotRestoreSuccessSet             = js.Array[DisableFastSnapshotRestoreSuccessItem]
-  type DiskCount                                        = Int
-  type DiskImageList                                    = js.Array[DiskImage]
-  type DiskInfoList                                     = js.Array[DiskInfo]
-  type DiskSize                                         = Double
-  type DnsEntrySet                                      = js.Array[DnsEntry]
-  type EfaSupportedFlag                                 = Boolean
-  type EgressOnlyInternetGatewayId                      = String
-  type EgressOnlyInternetGatewayIdList                  = js.Array[EgressOnlyInternetGatewayId]
-  type EgressOnlyInternetGatewayList                    = js.Array[EgressOnlyInternetGateway]
-  type ElasticGpuAssociationList                        = js.Array[ElasticGpuAssociation]
-  type ElasticGpuId                                     = String
-  type ElasticGpuIdSet                                  = js.Array[ElasticGpuId]
-  type ElasticGpuSet                                    = js.Array[ElasticGpus]
-  type ElasticGpuSpecificationList                      = js.Array[ElasticGpuSpecification]
-  type ElasticGpuSpecificationResponseList              = js.Array[ElasticGpuSpecificationResponse]
-  type ElasticGpuSpecifications                         = js.Array[ElasticGpuSpecification]
-  type ElasticInferenceAcceleratorAssociationList       = js.Array[ElasticInferenceAcceleratorAssociation]
-  type ElasticInferenceAcceleratorCount                 = Int
-  type ElasticInferenceAccelerators                     = js.Array[ElasticInferenceAccelerator]
-  type ElasticIpAssociationId                           = String
-  type EnableFastSnapshotRestoreErrorSet                = js.Array[EnableFastSnapshotRestoreErrorItem]
-  type EnableFastSnapshotRestoreStateErrorSet           = js.Array[EnableFastSnapshotRestoreStateErrorItem]
-  type EnableFastSnapshotRestoreSuccessSet              = js.Array[EnableFastSnapshotRestoreSuccessItem]
-  type EndpointSet                                      = js.Array[ClientVpnEndpoint]
-  type ErrorSet                                         = js.Array[ValidationError]
-  type ExecutableByStringList                           = js.Array[String]
-  type ExportImageTaskId                                = String
-  type ExportImageTaskIdList                            = js.Array[ExportImageTaskId]
-  type ExportImageTaskList                              = js.Array[ExportImageTask]
-  type ExportTaskId                                     = String
-  type ExportTaskIdStringList                           = js.Array[ExportTaskId]
-  type ExportTaskList                                   = js.Array[ExportTask]
-  type ExportVmTaskId                                   = String
-  type FailedQueuedPurchaseDeletionSet                  = js.Array[FailedQueuedPurchaseDeletion]
-  type FilterList                                       = js.Array[Filter]
-  type FleetId                                          = String
-  type FleetIdSet                                       = js.Array[FleetId]
-  type FleetLaunchTemplateConfigList                    = js.Array[FleetLaunchTemplateConfig]
-  type FleetLaunchTemplateConfigListRequest             = js.Array[FleetLaunchTemplateConfigRequest]
-  type FleetLaunchTemplateOverridesList                 = js.Array[FleetLaunchTemplateOverrides]
-  type FleetLaunchTemplateOverridesListRequest          = js.Array[FleetLaunchTemplateOverridesRequest]
-  type FleetSet                                         = js.Array[FleetData]
-  type FlowLogIdList                                    = js.Array[VpcFlowLogId]
-  type FlowLogResourceId                                = String
-  type FlowLogResourceIds                               = js.Array[FlowLogResourceId]
-  type FlowLogSet                                       = js.Array[FlowLog]
-  type FpgaDeviceCount                                  = Int
-  type FpgaDeviceInfoList                               = js.Array[FpgaDeviceInfo]
-  type FpgaDeviceManufacturerName                       = String
-  type FpgaDeviceMemorySize                             = Int
-  type FpgaDeviceName                                   = String
-  type FpgaImageId                                      = String
-  type FpgaImageIdList                                  = js.Array[FpgaImageId]
-  type FpgaImageList                                    = js.Array[FpgaImage]
-  type FreeTierEligibleFlag                             = Boolean
-  type GetCapacityReservationUsageRequestMaxResults     = Int
-  type GetManagedPrefixListAssociationsMaxResults       = Int
-  type GpuDeviceCount                                   = Int
-  type GpuDeviceInfoList                                = js.Array[GpuDeviceInfo]
-  type GpuDeviceManufacturerName                        = String
-  type GpuDeviceMemorySize                              = Int
-  type GpuDeviceName                                    = String
-  type GroupIdStringList                                = js.Array[String]
-  type GroupIdentifierList                              = js.Array[GroupIdentifier]
-  type GroupIdentifierSet                               = js.Array[SecurityGroupIdentifier]
-  type GroupIds                                         = js.Array[SecurityGroupId]
-  type GroupNameStringList                              = js.Array[SecurityGroupName]
-  type HibernationFlag                                  = Boolean
-  type HistoryRecordSet                                 = js.Array[HistoryRecordEntry]
-  type HistoryRecords                                   = js.Array[HistoryRecord]
-  type HostInstanceList                                 = js.Array[HostInstance]
-  type HostList                                         = js.Array[Host]
-  type HostOfferingSet                                  = js.Array[HostOffering]
-  type HostReservationId                                = String
-  type HostReservationIdSet                             = js.Array[HostReservationId]
-  type HostReservationSet                               = js.Array[HostReservation]
-  type IKEVersionsList                                  = js.Array[IKEVersionsListValue]
-  type IKEVersionsRequestList                           = js.Array[IKEVersionsRequestListValue]
-  type IamInstanceProfileAssociationId                  = String
-  type IamInstanceProfileAssociationSet                 = js.Array[IamInstanceProfileAssociation]
-  type IdFormatList                                     = js.Array[IdFormat]
-  type ImageDiskContainerList                           = js.Array[ImageDiskContainer]
-  type ImageId                                          = String
-  type ImageIdStringList                                = js.Array[ImageId]
-  type ImageList                                        = js.Array[Image]
-  type ImportImageLicenseSpecificationListRequest       = js.Array[ImportImageLicenseConfigurationRequest]
-  type ImportImageLicenseSpecificationListResponse      = js.Array[ImportImageLicenseConfigurationResponse]
-  type ImportImageTaskId                                = String
-  type ImportImageTaskList                              = js.Array[ImportImageTask]
-  type ImportInstanceVolumeDetailSet                    = js.Array[ImportInstanceVolumeDetailItem]
-  type ImportSnapshotTaskId                             = String
-  type ImportSnapshotTaskIdList                         = js.Array[ImportSnapshotTaskId]
-  type ImportSnapshotTaskList                           = js.Array[ImportSnapshotTask]
-  type ImportTaskId                                     = String
-  type ImportTaskIdList                                 = js.Array[ImportImageTaskId]
-  type InferenceDeviceCount                             = Int
-  type InferenceDeviceInfoList                          = js.Array[InferenceDeviceInfo]
-  type InferenceDeviceManufacturerName                  = String
-  type InferenceDeviceName                              = String
-  type InstanceBlockDeviceMappingList                   = js.Array[InstanceBlockDeviceMapping]
-  type InstanceBlockDeviceMappingSpecificationList      = js.Array[InstanceBlockDeviceMappingSpecification]
-  type InstanceCountList                                = js.Array[InstanceCount]
-  type InstanceCreditSpecificationList                  = js.Array[InstanceCreditSpecification]
-  type InstanceCreditSpecificationListRequest           = js.Array[InstanceCreditSpecificationRequest]
-  type InstanceEventId                                  = String
-  type InstanceId                                       = String
-  type InstanceIdSet                                    = js.Array[String]
-  type InstanceIdStringList                             = js.Array[InstanceId]
-  type InstanceIdsSet                                   = js.Array[InstanceId]
-  type InstanceIpv6AddressList                          = js.Array[InstanceIpv6Address]
-  type InstanceIpv6AddressListRequest                   = js.Array[InstanceIpv6AddressRequest]
-  type InstanceList                                     = js.Array[Instance]
-  type InstanceMonitoringList                           = js.Array[InstanceMonitoring]
-  type InstanceNetworkInterfaceList                     = js.Array[InstanceNetworkInterface]
-  type InstanceNetworkInterfaceSpecificationList        = js.Array[InstanceNetworkInterfaceSpecification]
-  type InstancePrivateIpAddressList                     = js.Array[InstancePrivateIpAddress]
-  type InstanceStateChangeList                          = js.Array[InstanceStateChange]
-  type InstanceStatusDetailsList                        = js.Array[InstanceStatusDetails]
-  type InstanceStatusEventList                          = js.Array[InstanceStatusEvent]
-  type InstanceStatusList                               = js.Array[InstanceStatus]
-  type InstanceStorageFlag                              = Boolean
-  type InstanceTagKeySet                                = js.Array[String]
-  type InstanceTypeInfoList                             = js.Array[InstanceTypeInfo]
-  type InstanceTypeList                                 = js.Array[InstanceType]
-  type InstanceTypeOfferingsList                        = js.Array[InstanceTypeOffering]
-  type InstanceUsageSet                                 = js.Array[InstanceUsage]
-  type InternetGatewayAttachmentList                    = js.Array[InternetGatewayAttachment]
-  type InternetGatewayId                                = String
-  type InternetGatewayIdList                            = js.Array[InternetGatewayId]
-  type InternetGatewayList                              = js.Array[InternetGateway]
-  type IpPermissionList                                 = js.Array[IpPermission]
-  type IpRangeList                                      = js.Array[IpRange]
-  type IpRanges                                         = js.Array[String]
-  type Ipv4PoolEc2Id                                    = String
-  type Ipv6Address                                      = String
-  type Ipv6AddressList                                  = js.Array[String]
-  type Ipv6CidrAssociationSet                           = js.Array[Ipv6CidrAssociation]
-  type Ipv6CidrBlockSet                                 = js.Array[Ipv6CidrBlock]
-  type Ipv6Flag                                         = Boolean
-  type Ipv6PoolEc2Id                                    = String
-  type Ipv6PoolIdList                                   = js.Array[Ipv6PoolEc2Id]
-  type Ipv6PoolMaxResults                               = Int
-  type Ipv6PoolSet                                      = js.Array[Ipv6Pool]
-  type Ipv6RangeList                                    = js.Array[Ipv6Range]
-  type KernelId                                         = String
-  type KeyNameStringList                                = js.Array[KeyPairName]
-  type KeyPairId                                        = String
-  type KeyPairIdStringList                              = js.Array[KeyPairId]
-  type KeyPairList                                      = js.Array[KeyPairInfo]
-  type KeyPairName                                      = String
-  type KmsKeyId                                         = String
-  type LaunchPermissionList                             = js.Array[LaunchPermission]
-  type LaunchSpecsList                                  = js.Array[SpotFleetLaunchSpecification]
-  type LaunchTemplateBlockDeviceMappingList             = js.Array[LaunchTemplateBlockDeviceMapping]
-  type LaunchTemplateBlockDeviceMappingRequestList      = js.Array[LaunchTemplateBlockDeviceMappingRequest]
-  type LaunchTemplateConfigList                         = js.Array[LaunchTemplateConfig]
-  type LaunchTemplateElasticInferenceAcceleratorCount   = Int
-  type LaunchTemplateElasticInferenceAcceleratorList    = js.Array[LaunchTemplateElasticInferenceAccelerator]
+  type DescribeInstanceCreditSpecificationsMaxResults = Int
+  type DescribeInternetGatewaysMaxResults = Int
+  type DescribeLaunchTemplatesMaxResults = Int
+  type DescribeMovingAddressesMaxResults = Int
+  type DescribeNatGatewaysMaxResults = Int
+  type DescribeNetworkAclsMaxResults = Int
+  type DescribeNetworkInterfacePermissionsMaxResults = Int
+  type DescribeNetworkInterfacesMaxResults = Int
+  type DescribePrincipalIdFormatMaxResults = Int
+  type DescribeRouteTablesMaxResults = Int
+  type DescribeScheduledInstanceAvailabilityMaxResults = Int
+  type DescribeSecurityGroupsMaxResults = Int
+  type DescribeSpotFleetInstancesMaxResults = Int
+  type DescribeSpotFleetRequestHistoryMaxResults = Int
+  type DescribeStaleSecurityGroupsMaxResults = Int
+  type DescribeStaleSecurityGroupsNextToken = String
+  type DescribeSubnetsMaxResults = Int
+  type DescribeVpcClassicLinkDnsSupportMaxResults = Int
+  type DescribeVpcClassicLinkDnsSupportNextToken = String
+  type DescribeVpcPeeringConnectionsMaxResults = Int
+  type DescribeVpcsMaxResults = Int
+  type DhcpConfigurationList = js.Array[DhcpConfiguration]
+  type DhcpConfigurationValueList = js.Array[AttributeValue]
+  type DhcpOptionsId = String
+  type DhcpOptionsIdStringList = js.Array[DhcpOptionsId]
+  type DhcpOptionsList = js.Array[DhcpOptions]
+  type DisableFastSnapshotRestoreErrorSet = js.Array[DisableFastSnapshotRestoreErrorItem]
+  type DisableFastSnapshotRestoreStateErrorSet = js.Array[DisableFastSnapshotRestoreStateErrorItem]
+  type DisableFastSnapshotRestoreSuccessSet = js.Array[DisableFastSnapshotRestoreSuccessItem]
+  type DiskCount = Int
+  type DiskImageList = js.Array[DiskImage]
+  type DiskInfoList = js.Array[DiskInfo]
+  type DiskSize = Double
+  type DnsEntrySet = js.Array[DnsEntry]
+  type EfaSupportedFlag = Boolean
+  type EgressOnlyInternetGatewayId = String
+  type EgressOnlyInternetGatewayIdList = js.Array[EgressOnlyInternetGatewayId]
+  type EgressOnlyInternetGatewayList = js.Array[EgressOnlyInternetGateway]
+  type ElasticGpuAssociationList = js.Array[ElasticGpuAssociation]
+  type ElasticGpuId = String
+  type ElasticGpuIdSet = js.Array[ElasticGpuId]
+  type ElasticGpuSet = js.Array[ElasticGpus]
+  type ElasticGpuSpecificationList = js.Array[ElasticGpuSpecification]
+  type ElasticGpuSpecificationResponseList = js.Array[ElasticGpuSpecificationResponse]
+  type ElasticGpuSpecifications = js.Array[ElasticGpuSpecification]
+  type ElasticInferenceAcceleratorAssociationList = js.Array[ElasticInferenceAcceleratorAssociation]
+  type ElasticInferenceAcceleratorCount = Int
+  type ElasticInferenceAccelerators = js.Array[ElasticInferenceAccelerator]
+  type ElasticIpAssociationId = String
+  type EnableFastSnapshotRestoreErrorSet = js.Array[EnableFastSnapshotRestoreErrorItem]
+  type EnableFastSnapshotRestoreStateErrorSet = js.Array[EnableFastSnapshotRestoreStateErrorItem]
+  type EnableFastSnapshotRestoreSuccessSet = js.Array[EnableFastSnapshotRestoreSuccessItem]
+  type EndpointSet = js.Array[ClientVpnEndpoint]
+  type ErrorSet = js.Array[ValidationError]
+  type ExecutableByStringList = js.Array[String]
+  type ExportImageTaskId = String
+  type ExportImageTaskIdList = js.Array[ExportImageTaskId]
+  type ExportImageTaskList = js.Array[ExportImageTask]
+  type ExportTaskId = String
+  type ExportTaskIdStringList = js.Array[ExportTaskId]
+  type ExportTaskList = js.Array[ExportTask]
+  type ExportVmTaskId = String
+  type FailedQueuedPurchaseDeletionSet = js.Array[FailedQueuedPurchaseDeletion]
+  type FilterList = js.Array[Filter]
+  type FleetId = String
+  type FleetIdSet = js.Array[FleetId]
+  type FleetLaunchTemplateConfigList = js.Array[FleetLaunchTemplateConfig]
+  type FleetLaunchTemplateConfigListRequest = js.Array[FleetLaunchTemplateConfigRequest]
+  type FleetLaunchTemplateOverridesList = js.Array[FleetLaunchTemplateOverrides]
+  type FleetLaunchTemplateOverridesListRequest = js.Array[FleetLaunchTemplateOverridesRequest]
+  type FleetSet = js.Array[FleetData]
+  type FlowLogIdList = js.Array[VpcFlowLogId]
+  type FlowLogResourceId = String
+  type FlowLogResourceIds = js.Array[FlowLogResourceId]
+  type FlowLogSet = js.Array[FlowLog]
+  type FpgaDeviceCount = Int
+  type FpgaDeviceInfoList = js.Array[FpgaDeviceInfo]
+  type FpgaDeviceManufacturerName = String
+  type FpgaDeviceMemorySize = Int
+  type FpgaDeviceName = String
+  type FpgaImageId = String
+  type FpgaImageIdList = js.Array[FpgaImageId]
+  type FpgaImageList = js.Array[FpgaImage]
+  type FreeTierEligibleFlag = Boolean
+  type GetCapacityReservationUsageRequestMaxResults = Int
+  type GetManagedPrefixListAssociationsMaxResults = Int
+  type GpuDeviceCount = Int
+  type GpuDeviceInfoList = js.Array[GpuDeviceInfo]
+  type GpuDeviceManufacturerName = String
+  type GpuDeviceMemorySize = Int
+  type GpuDeviceName = String
+  type GroupIdStringList = js.Array[String]
+  type GroupIdentifierList = js.Array[GroupIdentifier]
+  type GroupIdentifierSet = js.Array[SecurityGroupIdentifier]
+  type GroupIds = js.Array[SecurityGroupId]
+  type GroupNameStringList = js.Array[SecurityGroupName]
+  type HibernationFlag = Boolean
+  type HistoryRecordSet = js.Array[HistoryRecordEntry]
+  type HistoryRecords = js.Array[HistoryRecord]
+  type HostInstanceList = js.Array[HostInstance]
+  type HostList = js.Array[Host]
+  type HostOfferingSet = js.Array[HostOffering]
+  type HostReservationId = String
+  type HostReservationIdSet = js.Array[HostReservationId]
+  type HostReservationSet = js.Array[HostReservation]
+  type IKEVersionsList = js.Array[IKEVersionsListValue]
+  type IKEVersionsRequestList = js.Array[IKEVersionsRequestListValue]
+  type IamInstanceProfileAssociationId = String
+  type IamInstanceProfileAssociationSet = js.Array[IamInstanceProfileAssociation]
+  type IdFormatList = js.Array[IdFormat]
+  type ImageDiskContainerList = js.Array[ImageDiskContainer]
+  type ImageId = String
+  type ImageIdStringList = js.Array[ImageId]
+  type ImageList = js.Array[Image]
+  type ImportImageLicenseSpecificationListRequest = js.Array[ImportImageLicenseConfigurationRequest]
+  type ImportImageLicenseSpecificationListResponse = js.Array[ImportImageLicenseConfigurationResponse]
+  type ImportImageTaskId = String
+  type ImportImageTaskList = js.Array[ImportImageTask]
+  type ImportInstanceVolumeDetailSet = js.Array[ImportInstanceVolumeDetailItem]
+  type ImportSnapshotTaskId = String
+  type ImportSnapshotTaskIdList = js.Array[ImportSnapshotTaskId]
+  type ImportSnapshotTaskList = js.Array[ImportSnapshotTask]
+  type ImportTaskId = String
+  type ImportTaskIdList = js.Array[ImportImageTaskId]
+  type InferenceDeviceCount = Int
+  type InferenceDeviceInfoList = js.Array[InferenceDeviceInfo]
+  type InferenceDeviceManufacturerName = String
+  type InferenceDeviceName = String
+  type InstanceBlockDeviceMappingList = js.Array[InstanceBlockDeviceMapping]
+  type InstanceBlockDeviceMappingSpecificationList = js.Array[InstanceBlockDeviceMappingSpecification]
+  type InstanceCountList = js.Array[InstanceCount]
+  type InstanceCreditSpecificationList = js.Array[InstanceCreditSpecification]
+  type InstanceCreditSpecificationListRequest = js.Array[InstanceCreditSpecificationRequest]
+  type InstanceEventId = String
+  type InstanceId = String
+  type InstanceIdSet = js.Array[String]
+  type InstanceIdStringList = js.Array[InstanceId]
+  type InstanceIdsSet = js.Array[InstanceId]
+  type InstanceIpv6AddressList = js.Array[InstanceIpv6Address]
+  type InstanceIpv6AddressListRequest = js.Array[InstanceIpv6AddressRequest]
+  type InstanceList = js.Array[Instance]
+  type InstanceMonitoringList = js.Array[InstanceMonitoring]
+  type InstanceNetworkInterfaceList = js.Array[InstanceNetworkInterface]
+  type InstanceNetworkInterfaceSpecificationList = js.Array[InstanceNetworkInterfaceSpecification]
+  type InstancePrivateIpAddressList = js.Array[InstancePrivateIpAddress]
+  type InstanceStateChangeList = js.Array[InstanceStateChange]
+  type InstanceStatusDetailsList = js.Array[InstanceStatusDetails]
+  type InstanceStatusEventList = js.Array[InstanceStatusEvent]
+  type InstanceStatusList = js.Array[InstanceStatus]
+  type InstanceStorageFlag = Boolean
+  type InstanceTagKeySet = js.Array[String]
+  type InstanceTypeInfoList = js.Array[InstanceTypeInfo]
+  type InstanceTypeList = js.Array[InstanceType]
+  type InstanceTypeOfferingsList = js.Array[InstanceTypeOffering]
+  type InstanceUsageSet = js.Array[InstanceUsage]
+  type InternetGatewayAttachmentList = js.Array[InternetGatewayAttachment]
+  type InternetGatewayId = String
+  type InternetGatewayIdList = js.Array[InternetGatewayId]
+  type InternetGatewayList = js.Array[InternetGateway]
+  type IpPermissionList = js.Array[IpPermission]
+  type IpRangeList = js.Array[IpRange]
+  type IpRanges = js.Array[String]
+  type Ipv4PoolEc2Id = String
+  type Ipv6Address = String
+  type Ipv6AddressList = js.Array[String]
+  type Ipv6CidrAssociationSet = js.Array[Ipv6CidrAssociation]
+  type Ipv6CidrBlockSet = js.Array[Ipv6CidrBlock]
+  type Ipv6Flag = Boolean
+  type Ipv6PoolEc2Id = String
+  type Ipv6PoolIdList = js.Array[Ipv6PoolEc2Id]
+  type Ipv6PoolMaxResults = Int
+  type Ipv6PoolSet = js.Array[Ipv6Pool]
+  type Ipv6RangeList = js.Array[Ipv6Range]
+  type KernelId = String
+  type KeyNameStringList = js.Array[KeyPairName]
+  type KeyPairId = String
+  type KeyPairIdStringList = js.Array[KeyPairId]
+  type KeyPairList = js.Array[KeyPairInfo]
+  type KeyPairName = String
+  type KmsKeyId = String
+  type LaunchPermissionList = js.Array[LaunchPermission]
+  type LaunchSpecsList = js.Array[SpotFleetLaunchSpecification]
+  type LaunchTemplateBlockDeviceMappingList = js.Array[LaunchTemplateBlockDeviceMapping]
+  type LaunchTemplateBlockDeviceMappingRequestList = js.Array[LaunchTemplateBlockDeviceMappingRequest]
+  type LaunchTemplateConfigList = js.Array[LaunchTemplateConfig]
+  type LaunchTemplateElasticInferenceAcceleratorCount = Int
+  type LaunchTemplateElasticInferenceAcceleratorList = js.Array[LaunchTemplateElasticInferenceAccelerator]
   type LaunchTemplateElasticInferenceAcceleratorResponseList =
     js.Array[LaunchTemplateElasticInferenceAcceleratorResponse]
-  type LaunchTemplateId           = String
+  type LaunchTemplateId = String
   type LaunchTemplateIdStringList = js.Array[LaunchTemplateId]
   type LaunchTemplateInstanceNetworkInterfaceSpecificationList =
     js.Array[LaunchTemplateInstanceNetworkInterfaceSpecification]
   type LaunchTemplateInstanceNetworkInterfaceSpecificationRequestList =
     js.Array[LaunchTemplateInstanceNetworkInterfaceSpecificationRequest]
-  type LaunchTemplateLicenseList                                = js.Array[LaunchTemplateLicenseConfiguration]
-  type LaunchTemplateLicenseSpecificationListRequest            = js.Array[LaunchTemplateLicenseConfigurationRequest]
-  type LaunchTemplateName                                       = String
-  type LaunchTemplateNameStringList                             = js.Array[LaunchTemplateName]
-  type LaunchTemplateOverridesList                              = js.Array[LaunchTemplateOverrides]
-  type LaunchTemplateSet                                        = js.Array[LaunchTemplate]
-  type LaunchTemplateTagSpecificationList                       = js.Array[LaunchTemplateTagSpecification]
-  type LaunchTemplateTagSpecificationRequestList                = js.Array[LaunchTemplateTagSpecificationRequest]
-  type LaunchTemplateVersionSet                                 = js.Array[LaunchTemplateVersion]
-  type LicenseList                                              = js.Array[LicenseConfiguration]
-  type LicenseSpecificationListRequest                          = js.Array[LicenseConfigurationRequest]
-  type LoadPermissionList                                       = js.Array[LoadPermission]
-  type LoadPermissionListRequest                                = js.Array[LoadPermissionRequest]
-  type LocalGatewayId                                           = String
-  type LocalGatewayIdSet                                        = js.Array[LocalGatewayId]
-  type LocalGatewayMaxResults                                   = Int
-  type LocalGatewayRouteList                                    = js.Array[LocalGatewayRoute]
-  type LocalGatewayRouteTableIdSet                              = js.Array[LocalGatewayRoutetableId]
-  type LocalGatewayRouteTableSet                                = js.Array[LocalGatewayRouteTable]
+  type LaunchTemplateLicenseList = js.Array[LaunchTemplateLicenseConfiguration]
+  type LaunchTemplateLicenseSpecificationListRequest = js.Array[LaunchTemplateLicenseConfigurationRequest]
+  type LaunchTemplateName = String
+  type LaunchTemplateNameStringList = js.Array[LaunchTemplateName]
+  type LaunchTemplateOverridesList = js.Array[LaunchTemplateOverrides]
+  type LaunchTemplateSet = js.Array[LaunchTemplate]
+  type LaunchTemplateTagSpecificationList = js.Array[LaunchTemplateTagSpecification]
+  type LaunchTemplateTagSpecificationRequestList = js.Array[LaunchTemplateTagSpecificationRequest]
+  type LaunchTemplateVersionSet = js.Array[LaunchTemplateVersion]
+  type LicenseList = js.Array[LicenseConfiguration]
+  type LicenseSpecificationListRequest = js.Array[LicenseConfigurationRequest]
+  type LoadPermissionList = js.Array[LoadPermission]
+  type LoadPermissionListRequest = js.Array[LoadPermissionRequest]
+  type LocalGatewayId = String
+  type LocalGatewayIdSet = js.Array[LocalGatewayId]
+  type LocalGatewayMaxResults = Int
+  type LocalGatewayRouteList = js.Array[LocalGatewayRoute]
+  type LocalGatewayRouteTableIdSet = js.Array[LocalGatewayRoutetableId]
+  type LocalGatewayRouteTableSet = js.Array[LocalGatewayRouteTable]
   type LocalGatewayRouteTableVirtualInterfaceGroupAssociationId = String
   type LocalGatewayRouteTableVirtualInterfaceGroupAssociationIdSet =
     js.Array[LocalGatewayRouteTableVirtualInterfaceGroupAssociationId]
   type LocalGatewayRouteTableVirtualInterfaceGroupAssociationSet =
     js.Array[LocalGatewayRouteTableVirtualInterfaceGroupAssociation]
-  type LocalGatewayRouteTableVpcAssociationId            = String
-  type LocalGatewayRouteTableVpcAssociationIdSet         = js.Array[LocalGatewayRouteTableVpcAssociationId]
-  type LocalGatewayRouteTableVpcAssociationSet           = js.Array[LocalGatewayRouteTableVpcAssociation]
-  type LocalGatewayRoutetableId                          = String
-  type LocalGatewaySet                                   = js.Array[LocalGateway]
-  type LocalGatewayVirtualInterfaceGroupId               = String
-  type LocalGatewayVirtualInterfaceGroupIdSet            = js.Array[LocalGatewayVirtualInterfaceGroupId]
-  type LocalGatewayVirtualInterfaceGroupSet              = js.Array[LocalGatewayVirtualInterfaceGroup]
-  type LocalGatewayVirtualInterfaceId                    = String
-  type LocalGatewayVirtualInterfaceIdSet                 = js.Array[LocalGatewayVirtualInterfaceId]
-  type LocalGatewayVirtualInterfaceSet                   = js.Array[LocalGatewayVirtualInterface]
-  type Location                                          = String
-  type ManagedPrefixListSet                              = js.Array[ManagedPrefixList]
-  type MaxIpv4AddrPerInterface                           = Int
-  type MaxIpv6AddrPerInterface                           = Int
-  type MaxNetworkInterfaces                              = Int
-  type MaxResults                                        = Int
-  type MaximumBandwidthInMbps                            = Int
-  type MaximumIops                                       = Int
-  type MaximumThroughputInMBps                           = Double
-  type MemorySize                                        = Double
-  type MillisecondDateTime                               = js.Date
-  type MovingAddressStatusSet                            = js.Array[MovingAddressStatus]
-  type NatGatewayAddressList                             = js.Array[NatGatewayAddress]
-  type NatGatewayId                                      = String
-  type NatGatewayIdStringList                            = js.Array[NatGatewayId]
-  type NatGatewayList                                    = js.Array[NatGateway]
-  type NetworkAclAssociationId                           = String
-  type NetworkAclAssociationList                         = js.Array[NetworkAclAssociation]
-  type NetworkAclEntryList                               = js.Array[NetworkAclEntry]
-  type NetworkAclId                                      = String
-  type NetworkAclIdStringList                            = js.Array[NetworkAclId]
-  type NetworkAclList                                    = js.Array[NetworkAcl]
-  type NetworkInterfaceAttachmentId                      = String
-  type NetworkInterfaceId                                = String
-  type NetworkInterfaceIdList                            = js.Array[NetworkInterfaceId]
-  type NetworkInterfaceIpv6AddressesList                 = js.Array[NetworkInterfaceIpv6Address]
-  type NetworkInterfaceList                              = js.Array[NetworkInterface]
-  type NetworkInterfacePermissionId                      = String
-  type NetworkInterfacePermissionIdList                  = js.Array[NetworkInterfacePermissionId]
-  type NetworkInterfacePermissionList                    = js.Array[NetworkInterfacePermission]
-  type NetworkInterfacePrivateIpAddressList              = js.Array[NetworkInterfacePrivateIpAddress]
-  type NetworkPerformance                                = String
-  type NewDhcpConfigurationList                          = js.Array[NewDhcpConfiguration]
-  type NextToken                                         = String
-  type OccurrenceDayRequestSet                           = js.Array[Int]
-  type OccurrenceDaySet                                  = js.Array[Int]
-  type OfferingId                                        = String
-  type OwnerStringList                                   = js.Array[String]
-  type Phase1DHGroupNumbersList                          = js.Array[Phase1DHGroupNumbersListValue]
-  type Phase1DHGroupNumbersRequestList                   = js.Array[Phase1DHGroupNumbersRequestListValue]
-  type Phase1EncryptionAlgorithmsList                    = js.Array[Phase1EncryptionAlgorithmsListValue]
-  type Phase1EncryptionAlgorithmsRequestList             = js.Array[Phase1EncryptionAlgorithmsRequestListValue]
-  type Phase1IntegrityAlgorithmsList                     = js.Array[Phase1IntegrityAlgorithmsListValue]
-  type Phase1IntegrityAlgorithmsRequestList              = js.Array[Phase1IntegrityAlgorithmsRequestListValue]
-  type Phase2DHGroupNumbersList                          = js.Array[Phase2DHGroupNumbersListValue]
-  type Phase2DHGroupNumbersRequestList                   = js.Array[Phase2DHGroupNumbersRequestListValue]
-  type Phase2EncryptionAlgorithmsList                    = js.Array[Phase2EncryptionAlgorithmsListValue]
-  type Phase2EncryptionAlgorithmsRequestList             = js.Array[Phase2EncryptionAlgorithmsRequestListValue]
-  type Phase2IntegrityAlgorithmsList                     = js.Array[Phase2IntegrityAlgorithmsListValue]
-  type Phase2IntegrityAlgorithmsRequestList              = js.Array[Phase2IntegrityAlgorithmsRequestListValue]
-  type PlacementGroupId                                  = String
-  type PlacementGroupIdStringList                        = js.Array[PlacementGroupId]
-  type PlacementGroupList                                = js.Array[PlacementGroup]
-  type PlacementGroupName                                = String
-  type PlacementGroupStrategyList                        = js.Array[PlacementGroupStrategy]
-  type PlacementGroupStringList                          = js.Array[PlacementGroupName]
-  type PoolCidrBlocksSet                                 = js.Array[PoolCidrBlock]
-  type PoolMaxResults                                    = Int
-  type PrefixListAssociationSet                          = js.Array[PrefixListAssociation]
-  type PrefixListEntrySet                                = js.Array[PrefixListEntry]
-  type PrefixListIdList                                  = js.Array[PrefixListId]
-  type PrefixListIdSet                                   = js.Array[String]
-  type PrefixListMaxResults                              = Int
-  type PrefixListResourceId                              = String
-  type PrefixListResourceIdStringList                    = js.Array[PrefixListResourceId]
-  type PrefixListSet                                     = js.Array[PrefixList]
-  type PriceScheduleList                                 = js.Array[PriceSchedule]
-  type PriceScheduleSpecificationList                    = js.Array[PriceScheduleSpecification]
-  type PricingDetailsList                                = js.Array[PricingDetail]
-  type PrincipalIdFormatList                             = js.Array[PrincipalIdFormat]
-  type PrivateIpAddressConfigSet                         = js.Array[ScheduledInstancesPrivateIpAddressConfig]
-  type PrivateIpAddressSpecificationList                 = js.Array[PrivateIpAddressSpecification]
-  type PrivateIpAddressStringList                        = js.Array[String]
-  type ProcessorSustainedClockSpeed                      = Double
-  type ProductCodeList                                   = js.Array[ProductCode]
-  type ProductCodeStringList                             = js.Array[String]
-  type ProductDescriptionList                            = js.Array[String]
-  type PropagatingVgwList                                = js.Array[PropagatingVgw]
-  type PublicIpStringList                                = js.Array[String]
-  type PublicIpv4PoolIdStringList                        = js.Array[Ipv4PoolEc2Id]
-  type PublicIpv4PoolRangeSet                            = js.Array[PublicIpv4PoolRange]
-  type PublicIpv4PoolSet                                 = js.Array[PublicIpv4Pool]
-  type PurchaseRequestSet                                = js.Array[PurchaseRequest]
-  type PurchaseSet                                       = js.Array[Purchase]
-  type PurchasedScheduledInstanceSet                     = js.Array[ScheduledInstance]
-  type RamdiskId                                         = String
-  type ReasonCodesList                                   = js.Array[ReportInstanceReasonCodes]
-  type RecurringChargesList                              = js.Array[RecurringCharge]
-  type RegionList                                        = js.Array[Region]
-  type RegionNameStringList                              = js.Array[String]
-  type RemovePrefixListEntries                           = js.Array[RemovePrefixListEntry]
-  type RequestHostIdList                                 = js.Array[DedicatedHostId]
-  type RequestHostIdSet                                  = js.Array[DedicatedHostId]
-  type RequestInstanceTypeList                           = js.Array[InstanceType]
+  type LocalGatewayRouteTableVpcAssociationId = String
+  type LocalGatewayRouteTableVpcAssociationIdSet = js.Array[LocalGatewayRouteTableVpcAssociationId]
+  type LocalGatewayRouteTableVpcAssociationSet = js.Array[LocalGatewayRouteTableVpcAssociation]
+  type LocalGatewayRoutetableId = String
+  type LocalGatewaySet = js.Array[LocalGateway]
+  type LocalGatewayVirtualInterfaceGroupId = String
+  type LocalGatewayVirtualInterfaceGroupIdSet = js.Array[LocalGatewayVirtualInterfaceGroupId]
+  type LocalGatewayVirtualInterfaceGroupSet = js.Array[LocalGatewayVirtualInterfaceGroup]
+  type LocalGatewayVirtualInterfaceId = String
+  type LocalGatewayVirtualInterfaceIdSet = js.Array[LocalGatewayVirtualInterfaceId]
+  type LocalGatewayVirtualInterfaceSet = js.Array[LocalGatewayVirtualInterface]
+  type Location = String
+  type ManagedPrefixListSet = js.Array[ManagedPrefixList]
+  type MaxIpv4AddrPerInterface = Int
+  type MaxIpv6AddrPerInterface = Int
+  type MaxNetworkInterfaces = Int
+  type MaxResults = Int
+  type MaximumBandwidthInMbps = Int
+  type MaximumIops = Int
+  type MaximumThroughputInMBps = Double
+  type MemorySize = Double
+  type MillisecondDateTime = js.Date
+  type MovingAddressStatusSet = js.Array[MovingAddressStatus]
+  type NatGatewayAddressList = js.Array[NatGatewayAddress]
+  type NatGatewayId = String
+  type NatGatewayIdStringList = js.Array[NatGatewayId]
+  type NatGatewayList = js.Array[NatGateway]
+  type NetworkAclAssociationId = String
+  type NetworkAclAssociationList = js.Array[NetworkAclAssociation]
+  type NetworkAclEntryList = js.Array[NetworkAclEntry]
+  type NetworkAclId = String
+  type NetworkAclIdStringList = js.Array[NetworkAclId]
+  type NetworkAclList = js.Array[NetworkAcl]
+  type NetworkInterfaceAttachmentId = String
+  type NetworkInterfaceId = String
+  type NetworkInterfaceIdList = js.Array[NetworkInterfaceId]
+  type NetworkInterfaceIpv6AddressesList = js.Array[NetworkInterfaceIpv6Address]
+  type NetworkInterfaceList = js.Array[NetworkInterface]
+  type NetworkInterfacePermissionId = String
+  type NetworkInterfacePermissionIdList = js.Array[NetworkInterfacePermissionId]
+  type NetworkInterfacePermissionList = js.Array[NetworkInterfacePermission]
+  type NetworkInterfacePrivateIpAddressList = js.Array[NetworkInterfacePrivateIpAddress]
+  type NetworkPerformance = String
+  type NewDhcpConfigurationList = js.Array[NewDhcpConfiguration]
+  type NextToken = String
+  type OccurrenceDayRequestSet = js.Array[Int]
+  type OccurrenceDaySet = js.Array[Int]
+  type OfferingId = String
+  type OwnerStringList = js.Array[String]
+  type Phase1DHGroupNumbersList = js.Array[Phase1DHGroupNumbersListValue]
+  type Phase1DHGroupNumbersRequestList = js.Array[Phase1DHGroupNumbersRequestListValue]
+  type Phase1EncryptionAlgorithmsList = js.Array[Phase1EncryptionAlgorithmsListValue]
+  type Phase1EncryptionAlgorithmsRequestList = js.Array[Phase1EncryptionAlgorithmsRequestListValue]
+  type Phase1IntegrityAlgorithmsList = js.Array[Phase1IntegrityAlgorithmsListValue]
+  type Phase1IntegrityAlgorithmsRequestList = js.Array[Phase1IntegrityAlgorithmsRequestListValue]
+  type Phase2DHGroupNumbersList = js.Array[Phase2DHGroupNumbersListValue]
+  type Phase2DHGroupNumbersRequestList = js.Array[Phase2DHGroupNumbersRequestListValue]
+  type Phase2EncryptionAlgorithmsList = js.Array[Phase2EncryptionAlgorithmsListValue]
+  type Phase2EncryptionAlgorithmsRequestList = js.Array[Phase2EncryptionAlgorithmsRequestListValue]
+  type Phase2IntegrityAlgorithmsList = js.Array[Phase2IntegrityAlgorithmsListValue]
+  type Phase2IntegrityAlgorithmsRequestList = js.Array[Phase2IntegrityAlgorithmsRequestListValue]
+  type PlacementGroupId = String
+  type PlacementGroupIdStringList = js.Array[PlacementGroupId]
+  type PlacementGroupList = js.Array[PlacementGroup]
+  type PlacementGroupName = String
+  type PlacementGroupStrategyList = js.Array[PlacementGroupStrategy]
+  type PlacementGroupStringList = js.Array[PlacementGroupName]
+  type PoolCidrBlocksSet = js.Array[PoolCidrBlock]
+  type PoolMaxResults = Int
+  type PrefixListAssociationSet = js.Array[PrefixListAssociation]
+  type PrefixListEntrySet = js.Array[PrefixListEntry]
+  type PrefixListIdList = js.Array[PrefixListId]
+  type PrefixListIdSet = js.Array[String]
+  type PrefixListMaxResults = Int
+  type PrefixListResourceId = String
+  type PrefixListResourceIdStringList = js.Array[PrefixListResourceId]
+  type PrefixListSet = js.Array[PrefixList]
+  type PriceScheduleList = js.Array[PriceSchedule]
+  type PriceScheduleSpecificationList = js.Array[PriceScheduleSpecification]
+  type PricingDetailsList = js.Array[PricingDetail]
+  type PrincipalIdFormatList = js.Array[PrincipalIdFormat]
+  type PrivateIpAddressConfigSet = js.Array[ScheduledInstancesPrivateIpAddressConfig]
+  type PrivateIpAddressSpecificationList = js.Array[PrivateIpAddressSpecification]
+  type PrivateIpAddressStringList = js.Array[String]
+  type ProcessorSustainedClockSpeed = Double
+  type ProductCodeList = js.Array[ProductCode]
+  type ProductCodeStringList = js.Array[String]
+  type ProductDescriptionList = js.Array[String]
+  type PropagatingVgwList = js.Array[PropagatingVgw]
+  type PublicIpStringList = js.Array[String]
+  type PublicIpv4PoolIdStringList = js.Array[Ipv4PoolEc2Id]
+  type PublicIpv4PoolRangeSet = js.Array[PublicIpv4PoolRange]
+  type PublicIpv4PoolSet = js.Array[PublicIpv4Pool]
+  type PurchaseRequestSet = js.Array[PurchaseRequest]
+  type PurchaseSet = js.Array[Purchase]
+  type PurchasedScheduledInstanceSet = js.Array[ScheduledInstance]
+  type RamdiskId = String
+  type ReasonCodesList = js.Array[ReportInstanceReasonCodes]
+  type RecurringChargesList = js.Array[RecurringCharge]
+  type RegionList = js.Array[Region]
+  type RegionNameStringList = js.Array[String]
+  type RemovePrefixListEntries = js.Array[RemovePrefixListEntry]
+  type RequestHostIdList = js.Array[DedicatedHostId]
+  type RequestHostIdSet = js.Array[DedicatedHostId]
+  type RequestInstanceTypeList = js.Array[InstanceType]
   type RequestSpotLaunchSpecificationSecurityGroupIdList = js.Array[SecurityGroupId]
-  type RequestSpotLaunchSpecificationSecurityGroupList   = js.Array[SecurityGroupName]
-  type ReservationId                                     = String
-  type ReservationList                                   = js.Array[Reservation]
-  type ReservedInstanceIdSet                             = js.Array[ReservationId]
-  type ReservedInstanceReservationValueSet               = js.Array[ReservedInstanceReservationValue]
-  type ReservedInstancesConfigurationList                = js.Array[ReservedInstancesConfiguration]
-  type ReservedInstancesIdStringList                     = js.Array[ReservationId]
-  type ReservedInstancesList                             = js.Array[ReservedInstances]
-  type ReservedInstancesListingId                        = String
-  type ReservedInstancesListingList                      = js.Array[ReservedInstancesListing]
-  type ReservedInstancesModificationId                   = String
-  type ReservedInstancesModificationIdStringList         = js.Array[ReservedInstancesModificationId]
-  type ReservedInstancesModificationList                 = js.Array[ReservedInstancesModification]
-  type ReservedInstancesModificationResultList           = js.Array[ReservedInstancesModificationResult]
-  type ReservedInstancesOfferingId                       = String
-  type ReservedInstancesOfferingIdStringList             = js.Array[ReservedInstancesOfferingId]
-  type ReservedInstancesOfferingList                     = js.Array[ReservedInstancesOffering]
-  type ReservedIntancesIds                               = js.Array[ReservedInstancesId]
-  type ResourceArn                                       = String
-  type ResourceIdList                                    = js.Array[TaggableResourceId]
-  type ResourceList                                      = js.Array[String]
-  type ResponseHostIdList                                = js.Array[String]
-  type ResponseHostIdSet                                 = js.Array[String]
-  type RestorableByStringList                            = js.Array[String]
-  type RootDeviceTypeList                                = js.Array[RootDeviceType]
-  type RouteGatewayId                                    = String
-  type RouteList                                         = js.Array[Route]
-  type RouteTableAssociationId                           = String
-  type RouteTableAssociationList                         = js.Array[RouteTableAssociation]
-  type RouteTableId                                      = String
-  type RouteTableIdStringList                            = js.Array[RouteTableId]
-  type RouteTableList                                    = js.Array[RouteTable]
-  type ScheduledInstanceAvailabilitySet                  = js.Array[ScheduledInstanceAvailability]
-  type ScheduledInstanceId                               = String
-  type ScheduledInstanceIdRequestSet                     = js.Array[ScheduledInstanceId]
-  type ScheduledInstanceSet                              = js.Array[ScheduledInstance]
-  type ScheduledInstancesBlockDeviceMappingSet           = js.Array[ScheduledInstancesBlockDeviceMapping]
-  type ScheduledInstancesIpv6AddressList                 = js.Array[ScheduledInstancesIpv6Address]
-  type ScheduledInstancesNetworkInterfaceSet             = js.Array[ScheduledInstancesNetworkInterface]
-  type ScheduledInstancesSecurityGroupIdSet              = js.Array[SecurityGroupId]
-  type SecurityGroupId                                   = String
-  type SecurityGroupIdStringList                         = js.Array[SecurityGroupId]
-  type SecurityGroupList                                 = js.Array[SecurityGroup]
-  type SecurityGroupName                                 = String
-  type SecurityGroupReferences                           = js.Array[SecurityGroupReference]
-  type SecurityGroupStringList                           = js.Array[SecurityGroupName]
-  type SensitiveUserData                                 = String
-  type ServiceConfigurationSet                           = js.Array[ServiceConfiguration]
-  type ServiceDetailSet                                  = js.Array[ServiceDetail]
-  type ServiceTypeDetailSet                              = js.Array[ServiceTypeDetail]
-  type SnapshotDetailList                                = js.Array[SnapshotDetail]
-  type SnapshotId                                        = String
-  type SnapshotIdStringList                              = js.Array[SnapshotId]
-  type SnapshotList                                      = js.Array[Snapshot]
-  type SnapshotSet                                       = js.Array[SnapshotInfo]
-  type SpotFleetRequestConfigSet                         = js.Array[SpotFleetRequestConfig]
-  type SpotFleetRequestId                                = String
-  type SpotFleetRequestIdList                            = js.Array[SpotFleetRequestId]
-  type SpotFleetTagSpecificationList                     = js.Array[SpotFleetTagSpecification]
-  type SpotInstanceRequestId                             = String
-  type SpotInstanceRequestIdList                         = js.Array[SpotInstanceRequestId]
-  type SpotInstanceRequestList                           = js.Array[SpotInstanceRequest]
-  type SpotPriceHistoryList                              = js.Array[SpotPrice]
-  type StaleIpPermissionSet                              = js.Array[StaleIpPermission]
-  type StaleSecurityGroupSet                             = js.Array[StaleSecurityGroup]
-  type SubnetAssociationList                             = js.Array[SubnetAssociation]
-  type SubnetCidrAssociationId                           = String
-  type SubnetId                                          = String
-  type SubnetIdStringList                                = js.Array[SubnetId]
-  type SubnetIpv6CidrBlockAssociationSet                 = js.Array[SubnetIpv6CidrBlockAssociation]
-  type SubnetList                                        = js.Array[Subnet]
-  type SuccessfulInstanceCreditSpecificationSet          = js.Array[SuccessfulInstanceCreditSpecificationItem]
-  type SuccessfulQueuedPurchaseDeletionSet               = js.Array[SuccessfulQueuedPurchaseDeletion]
-  type TagDescriptionList                                = js.Array[TagDescription]
-  type TagList                                           = js.Array[Tag]
-  type TagSpecificationList                              = js.Array[TagSpecification]
-  type TaggableResourceId                                = String
-  type TargetConfigurationRequestSet                     = js.Array[TargetConfigurationRequest]
-  type TargetGroups                                      = js.Array[TargetGroup]
-  type TargetNetworkSet                                  = js.Array[TargetNetwork]
-  type TargetReservationValueSet                         = js.Array[TargetReservationValue]
-  type TerminateConnectionStatusSet                      = js.Array[TerminateConnectionStatus]
-  type ThreadsPerCore                                    = Int
-  type ThreadsPerCoreList                                = js.Array[ThreadsPerCore]
-  type TrafficMirrorFilterId                             = String
-  type TrafficMirrorFilterIdList                         = js.Array[TrafficMirrorFilterId]
-  type TrafficMirrorFilterRuleFieldList                  = js.Array[TrafficMirrorFilterRuleField]
-  type TrafficMirrorFilterRuleId                         = String
-  type TrafficMirrorFilterRuleList                       = js.Array[TrafficMirrorFilterRule]
-  type TrafficMirrorFilterSet                            = js.Array[TrafficMirrorFilter]
-  type TrafficMirrorNetworkServiceList                   = js.Array[TrafficMirrorNetworkService]
-  type TrafficMirrorSessionFieldList                     = js.Array[TrafficMirrorSessionField]
-  type TrafficMirrorSessionId                            = String
-  type TrafficMirrorSessionIdList                        = js.Array[TrafficMirrorSessionId]
-  type TrafficMirrorSessionSet                           = js.Array[TrafficMirrorSession]
-  type TrafficMirrorTargetId                             = String
-  type TrafficMirrorTargetIdList                         = js.Array[TrafficMirrorTargetId]
-  type TrafficMirrorTargetSet                            = js.Array[TrafficMirrorTarget]
-  type TrafficMirroringMaxResults                        = Int
-  type TransitAssociationGatewayId                       = String
-  type TransitGatewayAttachmentId                        = String
-  type TransitGatewayAttachmentIdStringList              = js.Array[TransitGatewayAttachmentId]
-  type TransitGatewayAttachmentList                      = js.Array[TransitGatewayAttachment]
-  type TransitGatewayAttachmentPropagationList           = js.Array[TransitGatewayAttachmentPropagation]
-  type TransitGatewayId                                  = String
-  type TransitGatewayIdStringList                        = js.Array[TransitGatewayId]
-  type TransitGatewayList                                = js.Array[TransitGateway]
-  type TransitGatewayMaxResults                          = Int
-  type TransitGatewayMulticastDomainAssociationList      = js.Array[TransitGatewayMulticastDomainAssociation]
-  type TransitGatewayMulticastDomainId                   = String
-  type TransitGatewayMulticastDomainIdStringList         = js.Array[TransitGatewayMulticastDomainId]
-  type TransitGatewayMulticastDomainList                 = js.Array[TransitGatewayMulticastDomain]
-  type TransitGatewayMulticastGroupList                  = js.Array[TransitGatewayMulticastGroup]
-  type TransitGatewayNetworkInterfaceIdList              = js.Array[NetworkInterfaceId]
-  type TransitGatewayPeeringAttachmentList               = js.Array[TransitGatewayPeeringAttachment]
-  type TransitGatewayRouteAttachmentList                 = js.Array[TransitGatewayRouteAttachment]
-  type TransitGatewayRouteList                           = js.Array[TransitGatewayRoute]
-  type TransitGatewayRouteTableAssociationList           = js.Array[TransitGatewayRouteTableAssociation]
-  type TransitGatewayRouteTableId                        = String
-  type TransitGatewayRouteTableIdStringList              = js.Array[TransitGatewayRouteTableId]
-  type TransitGatewayRouteTableList                      = js.Array[TransitGatewayRouteTable]
-  type TransitGatewayRouteTablePropagationList           = js.Array[TransitGatewayRouteTablePropagation]
-  type TransitGatewaySubnetIdList                        = js.Array[SubnetId]
-  type TransitGatewayVpcAttachmentList                   = js.Array[TransitGatewayVpcAttachment]
-  type TunnelOptionsList                                 = js.Array[TunnelOption]
-  type UnsuccessfulInstanceCreditSpecificationSet        = js.Array[UnsuccessfulInstanceCreditSpecificationItem]
-  type UnsuccessfulItemList                              = js.Array[UnsuccessfulItem]
-  type UnsuccessfulItemSet                               = js.Array[UnsuccessfulItem]
-  type UsageClassTypeList                                = js.Array[UsageClassType]
-  type UserGroupStringList                               = js.Array[String]
-  type UserIdGroupPairList                               = js.Array[UserIdGroupPair]
-  type UserIdGroupPairSet                                = js.Array[UserIdGroupPair]
-  type UserIdStringList                                  = js.Array[String]
-  type VCpuCount                                         = Int
-  type ValueStringList                                   = js.Array[String]
-  type VersionDescription                                = String
-  type VersionStringList                                 = js.Array[String]
-  type VgwTelemetryList                                  = js.Array[VgwTelemetry]
-  type VirtualizationTypeList                            = js.Array[VirtualizationType]
-  type VolumeAttachmentList                              = js.Array[VolumeAttachment]
-  type VolumeId                                          = String
-  type VolumeIdStringList                                = js.Array[VolumeId]
-  type VolumeList                                        = js.Array[Volume]
-  type VolumeModificationList                            = js.Array[VolumeModification]
-  type VolumeStatusActionsList                           = js.Array[VolumeStatusAction]
-  type VolumeStatusAttachmentStatusList                  = js.Array[VolumeStatusAttachmentStatus]
-  type VolumeStatusDetailsList                           = js.Array[VolumeStatusDetails]
-  type VolumeStatusEventsList                            = js.Array[VolumeStatusEvent]
-  type VolumeStatusList                                  = js.Array[VolumeStatusItem]
-  type VpcAttachmentList                                 = js.Array[VpcAttachment]
-  type VpcCidrAssociationId                              = String
-  type VpcCidrBlockAssociationSet                        = js.Array[VpcCidrBlockAssociation]
-  type VpcClassicLinkIdList                              = js.Array[VpcId]
-  type VpcClassicLinkList                                = js.Array[VpcClassicLink]
-  type VpcEndpointConnectionSet                          = js.Array[VpcEndpointConnection]
-  type VpcEndpointId                                     = String
-  type VpcEndpointIdList                                 = js.Array[VpcEndpointId]
-  type VpcEndpointRouteTableIdList                       = js.Array[RouteTableId]
-  type VpcEndpointSecurityGroupIdList                    = js.Array[SecurityGroupId]
-  type VpcEndpointServiceId                              = String
-  type VpcEndpointServiceIdList                          = js.Array[VpcEndpointServiceId]
-  type VpcEndpointSet                                    = js.Array[VpcEndpoint]
-  type VpcEndpointSubnetIdList                           = js.Array[SubnetId]
-  type VpcFlowLogId                                      = String
-  type VpcId                                             = String
-  type VpcIdStringList                                   = js.Array[VpcId]
-  type VpcIpv6CidrBlockAssociationSet                    = js.Array[VpcIpv6CidrBlockAssociation]
-  type VpcList                                           = js.Array[Vpc]
-  type VpcPeeringConnectionId                            = String
-  type VpcPeeringConnectionIdList                        = js.Array[VpcPeeringConnectionId]
-  type VpcPeeringConnectionList                          = js.Array[VpcPeeringConnection]
-  type VpnConnectionId                                   = String
-  type VpnConnectionIdStringList                         = js.Array[VpnConnectionId]
-  type VpnConnectionList                                 = js.Array[VpnConnection]
-  type VpnGatewayId                                      = String
-  type VpnGatewayIdStringList                            = js.Array[VpnGatewayId]
-  type VpnGatewayList                                    = js.Array[VpnGateway]
-  type VpnStaticRouteList                                = js.Array[VpnStaticRoute]
-  type VpnTunnelOptionsSpecificationsList                = js.Array[VpnTunnelOptionsSpecification]
-  type ZoneIdStringList                                  = js.Array[String]
-  type ZoneNameStringList                                = js.Array[String]
-  type totalFpgaMemory                                   = Int
-  type totalGpuMemory                                    = Int
+  type RequestSpotLaunchSpecificationSecurityGroupList = js.Array[SecurityGroupName]
+  type ReservationId = String
+  type ReservationList = js.Array[Reservation]
+  type ReservedInstanceIdSet = js.Array[ReservationId]
+  type ReservedInstanceReservationValueSet = js.Array[ReservedInstanceReservationValue]
+  type ReservedInstancesConfigurationList = js.Array[ReservedInstancesConfiguration]
+  type ReservedInstancesIdStringList = js.Array[ReservationId]
+  type ReservedInstancesList = js.Array[ReservedInstances]
+  type ReservedInstancesListingId = String
+  type ReservedInstancesListingList = js.Array[ReservedInstancesListing]
+  type ReservedInstancesModificationId = String
+  type ReservedInstancesModificationIdStringList = js.Array[ReservedInstancesModificationId]
+  type ReservedInstancesModificationList = js.Array[ReservedInstancesModification]
+  type ReservedInstancesModificationResultList = js.Array[ReservedInstancesModificationResult]
+  type ReservedInstancesOfferingId = String
+  type ReservedInstancesOfferingIdStringList = js.Array[ReservedInstancesOfferingId]
+  type ReservedInstancesOfferingList = js.Array[ReservedInstancesOffering]
+  type ReservedIntancesIds = js.Array[ReservedInstancesId]
+  type ResourceArn = String
+  type ResourceIdList = js.Array[TaggableResourceId]
+  type ResourceList = js.Array[String]
+  type ResponseHostIdList = js.Array[String]
+  type ResponseHostIdSet = js.Array[String]
+  type RestorableByStringList = js.Array[String]
+  type RootDeviceTypeList = js.Array[RootDeviceType]
+  type RouteGatewayId = String
+  type RouteList = js.Array[Route]
+  type RouteTableAssociationId = String
+  type RouteTableAssociationList = js.Array[RouteTableAssociation]
+  type RouteTableId = String
+  type RouteTableIdStringList = js.Array[RouteTableId]
+  type RouteTableList = js.Array[RouteTable]
+  type ScheduledInstanceAvailabilitySet = js.Array[ScheduledInstanceAvailability]
+  type ScheduledInstanceId = String
+  type ScheduledInstanceIdRequestSet = js.Array[ScheduledInstanceId]
+  type ScheduledInstanceSet = js.Array[ScheduledInstance]
+  type ScheduledInstancesBlockDeviceMappingSet = js.Array[ScheduledInstancesBlockDeviceMapping]
+  type ScheduledInstancesIpv6AddressList = js.Array[ScheduledInstancesIpv6Address]
+  type ScheduledInstancesNetworkInterfaceSet = js.Array[ScheduledInstancesNetworkInterface]
+  type ScheduledInstancesSecurityGroupIdSet = js.Array[SecurityGroupId]
+  type SecurityGroupId = String
+  type SecurityGroupIdStringList = js.Array[SecurityGroupId]
+  type SecurityGroupList = js.Array[SecurityGroup]
+  type SecurityGroupName = String
+  type SecurityGroupReferences = js.Array[SecurityGroupReference]
+  type SecurityGroupStringList = js.Array[SecurityGroupName]
+  type SensitiveUserData = String
+  type ServiceConfigurationSet = js.Array[ServiceConfiguration]
+  type ServiceDetailSet = js.Array[ServiceDetail]
+  type ServiceTypeDetailSet = js.Array[ServiceTypeDetail]
+  type SnapshotDetailList = js.Array[SnapshotDetail]
+  type SnapshotId = String
+  type SnapshotIdStringList = js.Array[SnapshotId]
+  type SnapshotList = js.Array[Snapshot]
+  type SnapshotSet = js.Array[SnapshotInfo]
+  type SpotFleetRequestConfigSet = js.Array[SpotFleetRequestConfig]
+  type SpotFleetRequestId = String
+  type SpotFleetRequestIdList = js.Array[SpotFleetRequestId]
+  type SpotFleetTagSpecificationList = js.Array[SpotFleetTagSpecification]
+  type SpotInstanceRequestId = String
+  type SpotInstanceRequestIdList = js.Array[SpotInstanceRequestId]
+  type SpotInstanceRequestList = js.Array[SpotInstanceRequest]
+  type SpotPriceHistoryList = js.Array[SpotPrice]
+  type StaleIpPermissionSet = js.Array[StaleIpPermission]
+  type StaleSecurityGroupSet = js.Array[StaleSecurityGroup]
+  type SubnetAssociationList = js.Array[SubnetAssociation]
+  type SubnetCidrAssociationId = String
+  type SubnetId = String
+  type SubnetIdStringList = js.Array[SubnetId]
+  type SubnetIpv6CidrBlockAssociationSet = js.Array[SubnetIpv6CidrBlockAssociation]
+  type SubnetList = js.Array[Subnet]
+  type SuccessfulInstanceCreditSpecificationSet = js.Array[SuccessfulInstanceCreditSpecificationItem]
+  type SuccessfulQueuedPurchaseDeletionSet = js.Array[SuccessfulQueuedPurchaseDeletion]
+  type TagDescriptionList = js.Array[TagDescription]
+  type TagList = js.Array[Tag]
+  type TagSpecificationList = js.Array[TagSpecification]
+  type TaggableResourceId = String
+  type TargetConfigurationRequestSet = js.Array[TargetConfigurationRequest]
+  type TargetGroups = js.Array[TargetGroup]
+  type TargetNetworkSet = js.Array[TargetNetwork]
+  type TargetReservationValueSet = js.Array[TargetReservationValue]
+  type TerminateConnectionStatusSet = js.Array[TerminateConnectionStatus]
+  type ThreadsPerCore = Int
+  type ThreadsPerCoreList = js.Array[ThreadsPerCore]
+  type TrafficMirrorFilterId = String
+  type TrafficMirrorFilterIdList = js.Array[TrafficMirrorFilterId]
+  type TrafficMirrorFilterRuleFieldList = js.Array[TrafficMirrorFilterRuleField]
+  type TrafficMirrorFilterRuleId = String
+  type TrafficMirrorFilterRuleList = js.Array[TrafficMirrorFilterRule]
+  type TrafficMirrorFilterSet = js.Array[TrafficMirrorFilter]
+  type TrafficMirrorNetworkServiceList = js.Array[TrafficMirrorNetworkService]
+  type TrafficMirrorSessionFieldList = js.Array[TrafficMirrorSessionField]
+  type TrafficMirrorSessionId = String
+  type TrafficMirrorSessionIdList = js.Array[TrafficMirrorSessionId]
+  type TrafficMirrorSessionSet = js.Array[TrafficMirrorSession]
+  type TrafficMirrorTargetId = String
+  type TrafficMirrorTargetIdList = js.Array[TrafficMirrorTargetId]
+  type TrafficMirrorTargetSet = js.Array[TrafficMirrorTarget]
+  type TrafficMirroringMaxResults = Int
+  type TransitAssociationGatewayId = String
+  type TransitGatewayAttachmentId = String
+  type TransitGatewayAttachmentIdStringList = js.Array[TransitGatewayAttachmentId]
+  type TransitGatewayAttachmentList = js.Array[TransitGatewayAttachment]
+  type TransitGatewayAttachmentPropagationList = js.Array[TransitGatewayAttachmentPropagation]
+  type TransitGatewayId = String
+  type TransitGatewayIdStringList = js.Array[TransitGatewayId]
+  type TransitGatewayList = js.Array[TransitGateway]
+  type TransitGatewayMaxResults = Int
+  type TransitGatewayMulticastDomainAssociationList = js.Array[TransitGatewayMulticastDomainAssociation]
+  type TransitGatewayMulticastDomainId = String
+  type TransitGatewayMulticastDomainIdStringList = js.Array[TransitGatewayMulticastDomainId]
+  type TransitGatewayMulticastDomainList = js.Array[TransitGatewayMulticastDomain]
+  type TransitGatewayMulticastGroupList = js.Array[TransitGatewayMulticastGroup]
+  type TransitGatewayNetworkInterfaceIdList = js.Array[NetworkInterfaceId]
+  type TransitGatewayPeeringAttachmentList = js.Array[TransitGatewayPeeringAttachment]
+  type TransitGatewayRouteAttachmentList = js.Array[TransitGatewayRouteAttachment]
+  type TransitGatewayRouteList = js.Array[TransitGatewayRoute]
+  type TransitGatewayRouteTableAssociationList = js.Array[TransitGatewayRouteTableAssociation]
+  type TransitGatewayRouteTableId = String
+  type TransitGatewayRouteTableIdStringList = js.Array[TransitGatewayRouteTableId]
+  type TransitGatewayRouteTableList = js.Array[TransitGatewayRouteTable]
+  type TransitGatewayRouteTablePropagationList = js.Array[TransitGatewayRouteTablePropagation]
+  type TransitGatewaySubnetIdList = js.Array[SubnetId]
+  type TransitGatewayVpcAttachmentList = js.Array[TransitGatewayVpcAttachment]
+  type TunnelOptionsList = js.Array[TunnelOption]
+  type UnsuccessfulInstanceCreditSpecificationSet = js.Array[UnsuccessfulInstanceCreditSpecificationItem]
+  type UnsuccessfulItemList = js.Array[UnsuccessfulItem]
+  type UnsuccessfulItemSet = js.Array[UnsuccessfulItem]
+  type UsageClassTypeList = js.Array[UsageClassType]
+  type UserGroupStringList = js.Array[String]
+  type UserIdGroupPairList = js.Array[UserIdGroupPair]
+  type UserIdGroupPairSet = js.Array[UserIdGroupPair]
+  type UserIdStringList = js.Array[String]
+  type VCpuCount = Int
+  type ValueStringList = js.Array[String]
+  type VersionDescription = String
+  type VersionStringList = js.Array[String]
+  type VgwTelemetryList = js.Array[VgwTelemetry]
+  type VirtualizationTypeList = js.Array[VirtualizationType]
+  type VolumeAttachmentList = js.Array[VolumeAttachment]
+  type VolumeId = String
+  type VolumeIdStringList = js.Array[VolumeId]
+  type VolumeList = js.Array[Volume]
+  type VolumeModificationList = js.Array[VolumeModification]
+  type VolumeStatusActionsList = js.Array[VolumeStatusAction]
+  type VolumeStatusAttachmentStatusList = js.Array[VolumeStatusAttachmentStatus]
+  type VolumeStatusDetailsList = js.Array[VolumeStatusDetails]
+  type VolumeStatusEventsList = js.Array[VolumeStatusEvent]
+  type VolumeStatusList = js.Array[VolumeStatusItem]
+  type VpcAttachmentList = js.Array[VpcAttachment]
+  type VpcCidrAssociationId = String
+  type VpcCidrBlockAssociationSet = js.Array[VpcCidrBlockAssociation]
+  type VpcClassicLinkIdList = js.Array[VpcId]
+  type VpcClassicLinkList = js.Array[VpcClassicLink]
+  type VpcEndpointConnectionSet = js.Array[VpcEndpointConnection]
+  type VpcEndpointId = String
+  type VpcEndpointIdList = js.Array[VpcEndpointId]
+  type VpcEndpointRouteTableIdList = js.Array[RouteTableId]
+  type VpcEndpointSecurityGroupIdList = js.Array[SecurityGroupId]
+  type VpcEndpointServiceId = String
+  type VpcEndpointServiceIdList = js.Array[VpcEndpointServiceId]
+  type VpcEndpointSet = js.Array[VpcEndpoint]
+  type VpcEndpointSubnetIdList = js.Array[SubnetId]
+  type VpcFlowLogId = String
+  type VpcId = String
+  type VpcIdStringList = js.Array[VpcId]
+  type VpcIpv6CidrBlockAssociationSet = js.Array[VpcIpv6CidrBlockAssociation]
+  type VpcList = js.Array[Vpc]
+  type VpcPeeringConnectionId = String
+  type VpcPeeringConnectionIdList = js.Array[VpcPeeringConnectionId]
+  type VpcPeeringConnectionList = js.Array[VpcPeeringConnection]
+  type VpnConnectionId = String
+  type VpnConnectionIdStringList = js.Array[VpnConnectionId]
+  type VpnConnectionList = js.Array[VpnConnection]
+  type VpnGatewayId = String
+  type VpnGatewayIdStringList = js.Array[VpnGatewayId]
+  type VpnGatewayList = js.Array[VpnGateway]
+  type VpnStaticRouteList = js.Array[VpnStaticRoute]
+  type VpnTunnelOptionsSpecificationsList = js.Array[VpnTunnelOptionsSpecification]
+  type ZoneIdStringList = js.Array[String]
+  type ZoneNameStringList = js.Array[String]
+  type totalFpgaMemory = Int
+  type totalGpuMemory = Int
 
   implicit final class EC2Ops(private val service: EC2) extends AnyVal {
 
@@ -1779,24 +1779,24 @@ package ec2 {
     ): Request[AcceptVpcEndpointConnectionsResult] = js.native
     def acceptVpcPeeringConnection(
         params: AcceptVpcPeeringConnectionRequest
-    ): Request[AcceptVpcPeeringConnectionResult]                                                 = js.native
+    ): Request[AcceptVpcPeeringConnectionResult] = js.native
     def advertiseByoipCidr(params: AdvertiseByoipCidrRequest): Request[AdvertiseByoipCidrResult] = js.native
-    def allocateAddress(params: AllocateAddressRequest): Request[AllocateAddressResult]          = js.native
-    def allocateHosts(params: AllocateHostsRequest): Request[AllocateHostsResult]                = js.native
+    def allocateAddress(params: AllocateAddressRequest): Request[AllocateAddressResult] = js.native
+    def allocateHosts(params: AllocateHostsRequest): Request[AllocateHostsResult] = js.native
     def applySecurityGroupsToClientVpnTargetNetwork(
         params: ApplySecurityGroupsToClientVpnTargetNetworkRequest
-    ): Request[ApplySecurityGroupsToClientVpnTargetNetworkResult]                                   = js.native
+    ): Request[ApplySecurityGroupsToClientVpnTargetNetworkResult] = js.native
     def assignIpv6Addresses(params: AssignIpv6AddressesRequest): Request[AssignIpv6AddressesResult] = js.native
     def assignPrivateIpAddresses(params: AssignPrivateIpAddressesRequest): Request[AssignPrivateIpAddressesResult] =
       js.native
     def associateAddress(params: AssociateAddressRequest): Request[AssociateAddressResult] = js.native
     def associateClientVpnTargetNetwork(
         params: AssociateClientVpnTargetNetworkRequest
-    ): Request[AssociateClientVpnTargetNetworkResult]                                 = js.native
+    ): Request[AssociateClientVpnTargetNetworkResult] = js.native
     def associateDhcpOptions(params: AssociateDhcpOptionsRequest): Request[js.Object] = js.native
     def associateIamInstanceProfile(
         params: AssociateIamInstanceProfileRequest
-    ): Request[AssociateIamInstanceProfileResult]                                                   = js.native
+    ): Request[AssociateIamInstanceProfileResult] = js.native
     def associateRouteTable(params: AssociateRouteTableRequest): Request[AssociateRouteTableResult] = js.native
     def associateSubnetCidrBlock(params: AssociateSubnetCidrBlockRequest): Request[AssociateSubnetCidrBlockResult] =
       js.native
@@ -1805,23 +1805,23 @@ package ec2 {
     ): Request[AssociateTransitGatewayMulticastDomainResult] = js.native
     def associateTransitGatewayRouteTable(
         params: AssociateTransitGatewayRouteTableRequest
-    ): Request[AssociateTransitGatewayRouteTableResult]                                                      = js.native
-    def associateVpcCidrBlock(params: AssociateVpcCidrBlockRequest): Request[AssociateVpcCidrBlockResult]    = js.native
-    def attachClassicLinkVpc(params: AttachClassicLinkVpcRequest): Request[AttachClassicLinkVpcResult]       = js.native
-    def attachInternetGateway(params: AttachInternetGatewayRequest): Request[js.Object]                      = js.native
+    ): Request[AssociateTransitGatewayRouteTableResult] = js.native
+    def associateVpcCidrBlock(params: AssociateVpcCidrBlockRequest): Request[AssociateVpcCidrBlockResult] = js.native
+    def attachClassicLinkVpc(params: AttachClassicLinkVpcRequest): Request[AttachClassicLinkVpcResult] = js.native
+    def attachInternetGateway(params: AttachInternetGatewayRequest): Request[js.Object] = js.native
     def attachNetworkInterface(params: AttachNetworkInterfaceRequest): Request[AttachNetworkInterfaceResult] = js.native
-    def attachVolume(params: AttachVolumeRequest): Request[VolumeAttachment]                                 = js.native
-    def attachVpnGateway(params: AttachVpnGatewayRequest): Request[AttachVpnGatewayResult]                   = js.native
+    def attachVolume(params: AttachVolumeRequest): Request[VolumeAttachment] = js.native
+    def attachVpnGateway(params: AttachVpnGatewayRequest): Request[AttachVpnGatewayResult] = js.native
     def authorizeClientVpnIngress(params: AuthorizeClientVpnIngressRequest): Request[AuthorizeClientVpnIngressResult] =
       js.native
-    def authorizeSecurityGroupEgress(params: AuthorizeSecurityGroupEgressRequest): Request[js.Object]   = js.native
+    def authorizeSecurityGroupEgress(params: AuthorizeSecurityGroupEgressRequest): Request[js.Object] = js.native
     def authorizeSecurityGroupIngress(params: AuthorizeSecurityGroupIngressRequest): Request[js.Object] = js.native
-    def bundleInstance(params: BundleInstanceRequest): Request[BundleInstanceResult]                    = js.native
-    def cancelBundleTask(params: CancelBundleTaskRequest): Request[CancelBundleTaskResult]              = js.native
+    def bundleInstance(params: BundleInstanceRequest): Request[BundleInstanceResult] = js.native
+    def cancelBundleTask(params: CancelBundleTaskRequest): Request[CancelBundleTaskResult] = js.native
     def cancelCapacityReservation(params: CancelCapacityReservationRequest): Request[CancelCapacityReservationResult] =
       js.native
-    def cancelConversionTask(params: CancelConversionRequest): Request[js.Object]          = js.native
-    def cancelExportTask(params: CancelExportTaskRequest): Request[js.Object]              = js.native
+    def cancelConversionTask(params: CancelConversionRequest): Request[js.Object] = js.native
+    def cancelExportTask(params: CancelExportTaskRequest): Request[js.Object] = js.native
     def cancelImportTask(params: CancelImportTaskRequest): Request[CancelImportTaskResult] = js.native
     def cancelReservedInstancesListing(
         params: CancelReservedInstancesListingRequest
@@ -1830,32 +1830,32 @@ package ec2 {
       js.native
     def cancelSpotInstanceRequests(
         params: CancelSpotInstanceRequestsRequest
-    ): Request[CancelSpotInstanceRequestsResult]                                                             = js.native
+    ): Request[CancelSpotInstanceRequestsResult] = js.native
     def confirmProductInstance(params: ConfirmProductInstanceRequest): Request[ConfirmProductInstanceResult] = js.native
-    def copyFpgaImage(params: CopyFpgaImageRequest): Request[CopyFpgaImageResult]                            = js.native
-    def copyImage(params: CopyImageRequest): Request[CopyImageResult]                                        = js.native
-    def copySnapshot(params: CopySnapshotRequest): Request[CopySnapshotResult]                               = js.native
+    def copyFpgaImage(params: CopyFpgaImageRequest): Request[CopyFpgaImageResult] = js.native
+    def copyImage(params: CopyImageRequest): Request[CopyImageResult] = js.native
+    def copySnapshot(params: CopySnapshotRequest): Request[CopySnapshotResult] = js.native
     def createCapacityReservation(params: CreateCapacityReservationRequest): Request[CreateCapacityReservationResult] =
       js.native
     def createClientVpnEndpoint(params: CreateClientVpnEndpointRequest): Request[CreateClientVpnEndpointResult] =
       js.native
-    def createClientVpnRoute(params: CreateClientVpnRouteRequest): Request[CreateClientVpnRouteResult]    = js.native
+    def createClientVpnRoute(params: CreateClientVpnRouteRequest): Request[CreateClientVpnRouteResult] = js.native
     def createCustomerGateway(params: CreateCustomerGatewayRequest): Request[CreateCustomerGatewayResult] = js.native
-    def createDefaultSubnet(params: CreateDefaultSubnetRequest): Request[CreateDefaultSubnetResult]       = js.native
-    def createDefaultVpc(params: CreateDefaultVpcRequest): Request[CreateDefaultVpcResult]                = js.native
-    def createDhcpOptions(params: CreateDhcpOptionsRequest): Request[CreateDhcpOptionsResult]             = js.native
+    def createDefaultSubnet(params: CreateDefaultSubnetRequest): Request[CreateDefaultSubnetResult] = js.native
+    def createDefaultVpc(params: CreateDefaultVpcRequest): Request[CreateDefaultVpcResult] = js.native
+    def createDhcpOptions(params: CreateDhcpOptionsRequest): Request[CreateDhcpOptionsResult] = js.native
     def createEgressOnlyInternetGateway(
         params: CreateEgressOnlyInternetGatewayRequest
-    ): Request[CreateEgressOnlyInternetGatewayResult]                                   = js.native
-    def createFleet(params: CreateFleetRequest): Request[CreateFleetResult]             = js.native
-    def createFlowLogs(params: CreateFlowLogsRequest): Request[CreateFlowLogsResult]    = js.native
+    ): Request[CreateEgressOnlyInternetGatewayResult] = js.native
+    def createFleet(params: CreateFleetRequest): Request[CreateFleetResult] = js.native
+    def createFlowLogs(params: CreateFlowLogsRequest): Request[CreateFlowLogsResult] = js.native
     def createFpgaImage(params: CreateFpgaImageRequest): Request[CreateFpgaImageResult] = js.native
-    def createImage(params: CreateImageRequest): Request[CreateImageResult]             = js.native
+    def createImage(params: CreateImageRequest): Request[CreateImageResult] = js.native
     def createInstanceExportTask(params: CreateInstanceExportTaskRequest): Request[CreateInstanceExportTaskResult] =
       js.native
     def createInternetGateway(params: CreateInternetGatewayRequest): Request[CreateInternetGatewayResult] = js.native
-    def createKeyPair(params: CreateKeyPairRequest): Request[KeyPair]                                     = js.native
-    def createLaunchTemplate(params: CreateLaunchTemplateRequest): Request[CreateLaunchTemplateResult]    = js.native
+    def createKeyPair(params: CreateKeyPairRequest): Request[KeyPair] = js.native
+    def createLaunchTemplate(params: CreateLaunchTemplateRequest): Request[CreateLaunchTemplateResult] = js.native
     def createLaunchTemplateVersion(
         params: CreateLaunchTemplateVersionRequest
     ): Request[CreateLaunchTemplateVersionResult] = js.native
@@ -1866,27 +1866,27 @@ package ec2 {
     ): Request[CreateLocalGatewayRouteTableVpcAssociationResult] = js.native
     def createManagedPrefixList(params: CreateManagedPrefixListRequest): Request[CreateManagedPrefixListResult] =
       js.native
-    def createNatGateway(params: CreateNatGatewayRequest): Request[CreateNatGatewayResult]                   = js.native
-    def createNetworkAcl(params: CreateNetworkAclRequest): Request[CreateNetworkAclResult]                   = js.native
-    def createNetworkAclEntry(params: CreateNetworkAclEntryRequest): Request[js.Object]                      = js.native
+    def createNatGateway(params: CreateNatGatewayRequest): Request[CreateNatGatewayResult] = js.native
+    def createNetworkAcl(params: CreateNetworkAclRequest): Request[CreateNetworkAclResult] = js.native
+    def createNetworkAclEntry(params: CreateNetworkAclEntryRequest): Request[js.Object] = js.native
     def createNetworkInterface(params: CreateNetworkInterfaceRequest): Request[CreateNetworkInterfaceResult] = js.native
     def createNetworkInterfacePermission(
         params: CreateNetworkInterfacePermissionRequest
-    ): Request[CreateNetworkInterfacePermissionResult]                                                 = js.native
+    ): Request[CreateNetworkInterfacePermissionResult] = js.native
     def createPlacementGroup(params: CreatePlacementGroupRequest): Request[CreatePlacementGroupResult] = js.native
     def createReservedInstancesListing(
         params: CreateReservedInstancesListingRequest
-    ): Request[CreateReservedInstancesListingResult]                                                = js.native
-    def createRoute(params: CreateRouteRequest): Request[CreateRouteResult]                         = js.native
-    def createRouteTable(params: CreateRouteTableRequest): Request[CreateRouteTableResult]          = js.native
+    ): Request[CreateReservedInstancesListingResult] = js.native
+    def createRoute(params: CreateRouteRequest): Request[CreateRouteResult] = js.native
+    def createRouteTable(params: CreateRouteTableRequest): Request[CreateRouteTableResult] = js.native
     def createSecurityGroup(params: CreateSecurityGroupRequest): Request[CreateSecurityGroupResult] = js.native
-    def createSnapshot(params: CreateSnapshotRequest): Request[Snapshot]                            = js.native
-    def createSnapshots(params: CreateSnapshotsRequest): Request[CreateSnapshotsResult]             = js.native
+    def createSnapshot(params: CreateSnapshotRequest): Request[Snapshot] = js.native
+    def createSnapshots(params: CreateSnapshotsRequest): Request[CreateSnapshotsResult] = js.native
     def createSpotDatafeedSubscription(
         params: CreateSpotDatafeedSubscriptionRequest
-    ): Request[CreateSpotDatafeedSubscriptionResult]                           = js.native
+    ): Request[CreateSpotDatafeedSubscriptionResult] = js.native
     def createSubnet(params: CreateSubnetRequest): Request[CreateSubnetResult] = js.native
-    def createTags(params: CreateTagsRequest): Request[js.Object]              = js.native
+    def createTags(params: CreateTagsRequest): Request[js.Object] = js.native
     def createTrafficMirrorFilter(params: CreateTrafficMirrorFilterRequest): Request[CreateTrafficMirrorFilterResult] =
       js.native
     def createTrafficMirrorFilterRule(
@@ -1911,9 +1911,9 @@ package ec2 {
     ): Request[CreateTransitGatewayRouteTableResult] = js.native
     def createTransitGatewayVpcAttachment(
         params: CreateTransitGatewayVpcAttachmentRequest
-    ): Request[CreateTransitGatewayVpcAttachmentResult]                                       = js.native
-    def createVolume(params: CreateVolumeRequest): Request[Volume]                            = js.native
-    def createVpc(params: CreateVpcRequest): Request[CreateVpcResult]                         = js.native
+    ): Request[CreateTransitGatewayVpcAttachmentResult] = js.native
+    def createVolume(params: CreateVolumeRequest): Request[Volume] = js.native
+    def createVpc(params: CreateVpcRequest): Request[CreateVpcResult] = js.native
     def createVpcEndpoint(params: CreateVpcEndpointRequest): Request[CreateVpcEndpointResult] = js.native
     def createVpcEndpointConnectionNotification(
         params: CreateVpcEndpointConnectionNotificationRequest
@@ -1923,23 +1923,23 @@ package ec2 {
     ): Request[CreateVpcEndpointServiceConfigurationResult] = js.native
     def createVpcPeeringConnection(
         params: CreateVpcPeeringConnectionRequest
-    ): Request[CreateVpcPeeringConnectionResult]                                                    = js.native
+    ): Request[CreateVpcPeeringConnectionResult] = js.native
     def createVpnConnection(params: CreateVpnConnectionRequest): Request[CreateVpnConnectionResult] = js.native
-    def createVpnConnectionRoute(params: CreateVpnConnectionRouteRequest): Request[js.Object]       = js.native
-    def createVpnGateway(params: CreateVpnGatewayRequest): Request[CreateVpnGatewayResult]          = js.native
+    def createVpnConnectionRoute(params: CreateVpnConnectionRouteRequest): Request[js.Object] = js.native
+    def createVpnGateway(params: CreateVpnGatewayRequest): Request[CreateVpnGatewayResult] = js.native
     def deleteClientVpnEndpoint(params: DeleteClientVpnEndpointRequest): Request[DeleteClientVpnEndpointResult] =
       js.native
     def deleteClientVpnRoute(params: DeleteClientVpnRouteRequest): Request[DeleteClientVpnRouteResult] = js.native
-    def deleteCustomerGateway(params: DeleteCustomerGatewayRequest): Request[js.Object]                = js.native
-    def deleteDhcpOptions(params: DeleteDhcpOptionsRequest): Request[js.Object]                        = js.native
+    def deleteCustomerGateway(params: DeleteCustomerGatewayRequest): Request[js.Object] = js.native
+    def deleteDhcpOptions(params: DeleteDhcpOptionsRequest): Request[js.Object] = js.native
     def deleteEgressOnlyInternetGateway(
         params: DeleteEgressOnlyInternetGatewayRequest
-    ): Request[DeleteEgressOnlyInternetGatewayResult]                                                  = js.native
-    def deleteFleets(params: DeleteFleetsRequest): Request[DeleteFleetsResult]                         = js.native
-    def deleteFlowLogs(params: DeleteFlowLogsRequest): Request[DeleteFlowLogsResult]                   = js.native
-    def deleteFpgaImage(params: DeleteFpgaImageRequest): Request[DeleteFpgaImageResult]                = js.native
-    def deleteInternetGateway(params: DeleteInternetGatewayRequest): Request[js.Object]                = js.native
-    def deleteKeyPair(params: DeleteKeyPairRequest): Request[js.Object]                                = js.native
+    ): Request[DeleteEgressOnlyInternetGatewayResult] = js.native
+    def deleteFleets(params: DeleteFleetsRequest): Request[DeleteFleetsResult] = js.native
+    def deleteFlowLogs(params: DeleteFlowLogsRequest): Request[DeleteFlowLogsResult] = js.native
+    def deleteFpgaImage(params: DeleteFpgaImageRequest): Request[DeleteFpgaImageResult] = js.native
+    def deleteInternetGateway(params: DeleteInternetGatewayRequest): Request[js.Object] = js.native
+    def deleteKeyPair(params: DeleteKeyPairRequest): Request[js.Object] = js.native
     def deleteLaunchTemplate(params: DeleteLaunchTemplateRequest): Request[DeleteLaunchTemplateResult] = js.native
     def deleteLaunchTemplateVersions(
         params: DeleteLaunchTemplateVersionsRequest
@@ -1952,23 +1952,23 @@ package ec2 {
     def deleteManagedPrefixList(params: DeleteManagedPrefixListRequest): Request[DeleteManagedPrefixListResult] =
       js.native
     def deleteNatGateway(params: DeleteNatGatewayRequest): Request[DeleteNatGatewayResult] = js.native
-    def deleteNetworkAcl(params: DeleteNetworkAclRequest): Request[js.Object]              = js.native
-    def deleteNetworkAclEntry(params: DeleteNetworkAclEntryRequest): Request[js.Object]    = js.native
-    def deleteNetworkInterface(params: DeleteNetworkInterfaceRequest): Request[js.Object]  = js.native
+    def deleteNetworkAcl(params: DeleteNetworkAclRequest): Request[js.Object] = js.native
+    def deleteNetworkAclEntry(params: DeleteNetworkAclEntryRequest): Request[js.Object] = js.native
+    def deleteNetworkInterface(params: DeleteNetworkInterfaceRequest): Request[js.Object] = js.native
     def deleteNetworkInterfacePermission(
         params: DeleteNetworkInterfacePermissionRequest
-    ): Request[DeleteNetworkInterfacePermissionResult]                                = js.native
+    ): Request[DeleteNetworkInterfacePermissionResult] = js.native
     def deletePlacementGroup(params: DeletePlacementGroupRequest): Request[js.Object] = js.native
     def deleteQueuedReservedInstances(
         params: DeleteQueuedReservedInstancesRequest
-    ): Request[DeleteQueuedReservedInstancesResult]                                                       = js.native
-    def deleteRoute(params: DeleteRouteRequest): Request[js.Object]                                       = js.native
-    def deleteRouteTable(params: DeleteRouteTableRequest): Request[js.Object]                             = js.native
-    def deleteSecurityGroup(params: DeleteSecurityGroupRequest): Request[js.Object]                       = js.native
-    def deleteSnapshot(params: DeleteSnapshotRequest): Request[js.Object]                                 = js.native
+    ): Request[DeleteQueuedReservedInstancesResult] = js.native
+    def deleteRoute(params: DeleteRouteRequest): Request[js.Object] = js.native
+    def deleteRouteTable(params: DeleteRouteTableRequest): Request[js.Object] = js.native
+    def deleteSecurityGroup(params: DeleteSecurityGroupRequest): Request[js.Object] = js.native
+    def deleteSnapshot(params: DeleteSnapshotRequest): Request[js.Object] = js.native
     def deleteSpotDatafeedSubscription(params: DeleteSpotDatafeedSubscriptionRequest): Request[js.Object] = js.native
-    def deleteSubnet(params: DeleteSubnetRequest): Request[js.Object]                                     = js.native
-    def deleteTags(params: DeleteTagsRequest): Request[js.Object]                                         = js.native
+    def deleteSubnet(params: DeleteSubnetRequest): Request[js.Object] = js.native
+    def deleteTags(params: DeleteTagsRequest): Request[js.Object] = js.native
     def deleteTrafficMirrorFilter(params: DeleteTrafficMirrorFilterRequest): Request[DeleteTrafficMirrorFilterResult] =
       js.native
     def deleteTrafficMirrorFilterRule(
@@ -1993,24 +1993,24 @@ package ec2 {
     ): Request[DeleteTransitGatewayRouteTableResult] = js.native
     def deleteTransitGatewayVpcAttachment(
         params: DeleteTransitGatewayVpcAttachmentRequest
-    ): Request[DeleteTransitGatewayVpcAttachmentResult]               = js.native
+    ): Request[DeleteTransitGatewayVpcAttachmentResult] = js.native
     def deleteVolume(params: DeleteVolumeRequest): Request[js.Object] = js.native
-    def deleteVpc(params: DeleteVpcRequest): Request[js.Object]       = js.native
+    def deleteVpc(params: DeleteVpcRequest): Request[js.Object] = js.native
     def deleteVpcEndpointConnectionNotifications(
         params: DeleteVpcEndpointConnectionNotificationsRequest
     ): Request[DeleteVpcEndpointConnectionNotificationsResult] = js.native
     def deleteVpcEndpointServiceConfigurations(
         params: DeleteVpcEndpointServiceConfigurationsRequest
-    ): Request[DeleteVpcEndpointServiceConfigurationsResult]                                     = js.native
+    ): Request[DeleteVpcEndpointServiceConfigurationsResult] = js.native
     def deleteVpcEndpoints(params: DeleteVpcEndpointsRequest): Request[DeleteVpcEndpointsResult] = js.native
     def deleteVpcPeeringConnection(
         params: DeleteVpcPeeringConnectionRequest
-    ): Request[DeleteVpcPeeringConnectionResult]                                                       = js.native
-    def deleteVpnConnection(params: DeleteVpnConnectionRequest): Request[js.Object]                    = js.native
-    def deleteVpnConnectionRoute(params: DeleteVpnConnectionRouteRequest): Request[js.Object]          = js.native
-    def deleteVpnGateway(params: DeleteVpnGatewayRequest): Request[js.Object]                          = js.native
+    ): Request[DeleteVpcPeeringConnectionResult] = js.native
+    def deleteVpnConnection(params: DeleteVpnConnectionRequest): Request[js.Object] = js.native
+    def deleteVpnConnectionRoute(params: DeleteVpnConnectionRouteRequest): Request[js.Object] = js.native
+    def deleteVpnGateway(params: DeleteVpnGatewayRequest): Request[js.Object] = js.native
     def deprovisionByoipCidr(params: DeprovisionByoipCidrRequest): Request[DeprovisionByoipCidrResult] = js.native
-    def deregisterImage(params: DeregisterImageRequest): Request[js.Object]                            = js.native
+    def deregisterImage(params: DeregisterImageRequest): Request[js.Object] = js.native
     def deregisterInstanceEventNotificationAttributes(
         params: DeregisterInstanceEventNotificationAttributesRequest
     ): Request[DeregisterInstanceEventNotificationAttributesResult] = js.native
@@ -2028,7 +2028,7 @@ package ec2 {
     def describeAvailabilityZones(params: DescribeAvailabilityZonesRequest): Request[DescribeAvailabilityZonesResult] =
       js.native
     def describeBundleTasks(params: DescribeBundleTasksRequest): Request[DescribeBundleTasksResult] = js.native
-    def describeByoipCidrs(params: DescribeByoipCidrsRequest): Request[DescribeByoipCidrsResult]    = js.native
+    def describeByoipCidrs(params: DescribeByoipCidrsRequest): Request[DescribeByoipCidrsResult] = js.native
     def describeCapacityReservations(
         params: DescribeCapacityReservationsRequest
     ): Request[DescribeCapacityReservationsResult] = js.native
@@ -2048,7 +2048,7 @@ package ec2 {
       js.native
     def describeClientVpnTargetNetworks(
         params: DescribeClientVpnTargetNetworksRequest
-    ): Request[DescribeClientVpnTargetNetworksResult]                                         = js.native
+    ): Request[DescribeClientVpnTargetNetworksResult] = js.native
     def describeCoipPools(params: DescribeCoipPoolsRequest): Request[DescribeCoipPoolsResult] = js.native
     def describeConversionTasks(params: DescribeConversionTasksRequest): Request[DescribeConversionTasksResult] =
       js.native
@@ -2057,21 +2057,21 @@ package ec2 {
     def describeDhcpOptions(params: DescribeDhcpOptionsRequest): Request[DescribeDhcpOptionsResult] = js.native
     def describeEgressOnlyInternetGateways(
         params: DescribeEgressOnlyInternetGatewaysRequest
-    ): Request[DescribeEgressOnlyInternetGatewaysResult]                                            = js.native
+    ): Request[DescribeEgressOnlyInternetGatewaysResult] = js.native
     def describeElasticGpus(params: DescribeElasticGpusRequest): Request[DescribeElasticGpusResult] = js.native
     def describeExportImageTasks(params: DescribeExportImageTasksRequest): Request[DescribeExportImageTasksResult] =
       js.native
     def describeExportTasks(params: DescribeExportTasksRequest): Request[DescribeExportTasksResult] = js.native
     def describeFastSnapshotRestores(
         params: DescribeFastSnapshotRestoresRequest
-    ): Request[DescribeFastSnapshotRestoresResult]                                                           = js.native
-    def describeFleetHistory(params: DescribeFleetHistoryRequest): Request[DescribeFleetHistoryResult]       = js.native
+    ): Request[DescribeFastSnapshotRestoresResult] = js.native
+    def describeFleetHistory(params: DescribeFleetHistoryRequest): Request[DescribeFleetHistoryResult] = js.native
     def describeFleetInstances(params: DescribeFleetInstancesRequest): Request[DescribeFleetInstancesResult] = js.native
-    def describeFleets(params: DescribeFleetsRequest): Request[DescribeFleetsResult]                         = js.native
-    def describeFlowLogs(params: DescribeFlowLogsRequest): Request[DescribeFlowLogsResult]                   = js.native
+    def describeFleets(params: DescribeFleetsRequest): Request[DescribeFleetsResult] = js.native
+    def describeFlowLogs(params: DescribeFlowLogsRequest): Request[DescribeFlowLogsResult] = js.native
     def describeFpgaImageAttribute(
         params: DescribeFpgaImageAttributeRequest
-    ): Request[DescribeFpgaImageAttributeResult]                                                 = js.native
+    ): Request[DescribeFpgaImageAttributeResult] = js.native
     def describeFpgaImages(params: DescribeFpgaImagesRequest): Request[DescribeFpgaImagesResult] = js.native
     def describeHostReservationOfferings(
         params: DescribeHostReservationOfferingsRequest
@@ -2081,34 +2081,34 @@ package ec2 {
     def describeHosts(params: DescribeHostsRequest): Request[DescribeHostsResult] = js.native
     def describeIamInstanceProfileAssociations(
         params: DescribeIamInstanceProfileAssociationsRequest
-    ): Request[DescribeIamInstanceProfileAssociationsResult]                               = js.native
+    ): Request[DescribeIamInstanceProfileAssociationsResult] = js.native
     def describeIdFormat(params: DescribeIdFormatRequest): Request[DescribeIdFormatResult] = js.native
     def describeIdentityIdFormat(params: DescribeIdentityIdFormatRequest): Request[DescribeIdentityIdFormatResult] =
       js.native
     def describeImageAttribute(params: DescribeImageAttributeRequest): Request[ImageAttribute] = js.native
-    def describeImages(params: DescribeImagesRequest): Request[DescribeImagesResult]           = js.native
+    def describeImages(params: DescribeImagesRequest): Request[DescribeImagesResult] = js.native
     def describeImportImageTasks(params: DescribeImportImageTasksRequest): Request[DescribeImportImageTasksResult] =
       js.native
     def describeImportSnapshotTasks(
         params: DescribeImportSnapshotTasksRequest
-    ): Request[DescribeImportSnapshotTasksResult]                                                       = js.native
+    ): Request[DescribeImportSnapshotTasksResult] = js.native
     def describeInstanceAttribute(params: DescribeInstanceAttributeRequest): Request[InstanceAttribute] = js.native
     def describeInstanceCreditSpecifications(
         params: DescribeInstanceCreditSpecificationsRequest
     ): Request[DescribeInstanceCreditSpecificationsResult] = js.native
     def describeInstanceEventNotificationAttributes(
         params: DescribeInstanceEventNotificationAttributesRequest
-    ): Request[DescribeInstanceEventNotificationAttributesResult]                                            = js.native
+    ): Request[DescribeInstanceEventNotificationAttributesResult] = js.native
     def describeInstanceStatus(params: DescribeInstanceStatusRequest): Request[DescribeInstanceStatusResult] = js.native
     def describeInstanceTypeOfferings(
         params: DescribeInstanceTypeOfferingsRequest
-    ): Request[DescribeInstanceTypeOfferingsResult]                                                       = js.native
+    ): Request[DescribeInstanceTypeOfferingsResult] = js.native
     def describeInstanceTypes(params: DescribeInstanceTypesRequest): Request[DescribeInstanceTypesResult] = js.native
-    def describeInstances(params: DescribeInstancesRequest): Request[DescribeInstancesResult]             = js.native
+    def describeInstances(params: DescribeInstancesRequest): Request[DescribeInstancesResult] = js.native
     def describeInternetGateways(params: DescribeInternetGatewaysRequest): Request[DescribeInternetGatewaysResult] =
       js.native
     def describeIpv6Pools(params: DescribeIpv6PoolsRequest): Request[DescribeIpv6PoolsResult] = js.native
-    def describeKeyPairs(params: DescribeKeyPairsRequest): Request[DescribeKeyPairsResult]    = js.native
+    def describeKeyPairs(params: DescribeKeyPairsRequest): Request[DescribeKeyPairsResult] = js.native
     def describeLaunchTemplateVersions(
         params: DescribeLaunchTemplateVersionsRequest
     ): Request[DescribeLaunchTemplateVersionsResult] = js.native
@@ -2128,7 +2128,7 @@ package ec2 {
     ): Request[DescribeLocalGatewayVirtualInterfaceGroupsResult] = js.native
     def describeLocalGatewayVirtualInterfaces(
         params: DescribeLocalGatewayVirtualInterfacesRequest
-    ): Request[DescribeLocalGatewayVirtualInterfacesResult]                                               = js.native
+    ): Request[DescribeLocalGatewayVirtualInterfacesResult] = js.native
     def describeLocalGateways(params: DescribeLocalGatewaysRequest): Request[DescribeLocalGatewaysResult] = js.native
     def describeManagedPrefixLists(
         params: DescribeManagedPrefixListsRequest
@@ -2163,7 +2163,7 @@ package ec2 {
     ): Request[DescribeReservedInstancesModificationsResult] = js.native
     def describeReservedInstancesOfferings(
         params: DescribeReservedInstancesOfferingsRequest
-    ): Request[DescribeReservedInstancesOfferingsResult]                                            = js.native
+    ): Request[DescribeReservedInstancesOfferingsResult] = js.native
     def describeRouteTables(params: DescribeRouteTablesRequest): Request[DescribeRouteTablesResult] = js.native
     def describeScheduledInstanceAvailability(
         params: DescribeScheduledInstanceAvailabilityRequest
@@ -2173,7 +2173,7 @@ package ec2 {
     ): Request[DescribeScheduledInstancesResult] = js.native
     def describeSecurityGroupReferences(
         params: DescribeSecurityGroupReferencesRequest
-    ): Request[DescribeSecurityGroupReferencesResult]                                                        = js.native
+    ): Request[DescribeSecurityGroupReferencesResult] = js.native
     def describeSecurityGroups(params: DescribeSecurityGroupsRequest): Request[DescribeSecurityGroupsResult] = js.native
     def describeSnapshotAttribute(params: DescribeSnapshotAttributeRequest): Request[DescribeSnapshotAttributeResult] =
       js.native
@@ -2197,9 +2197,9 @@ package ec2 {
       js.native
     def describeStaleSecurityGroups(
         params: DescribeStaleSecurityGroupsRequest
-    ): Request[DescribeStaleSecurityGroupsResult]                                       = js.native
+    ): Request[DescribeStaleSecurityGroupsResult] = js.native
     def describeSubnets(params: DescribeSubnetsRequest): Request[DescribeSubnetsResult] = js.native
-    def describeTags(params: DescribeTagsRequest): Request[DescribeTagsResult]          = js.native
+    def describeTags(params: DescribeTagsRequest): Request[DescribeTagsResult] = js.native
     def describeTrafficMirrorFilters(
         params: DescribeTrafficMirrorFiltersRequest
     ): Request[DescribeTrafficMirrorFiltersResult] = js.native
@@ -2229,11 +2229,11 @@ package ec2 {
     def describeVolumeAttribute(params: DescribeVolumeAttributeRequest): Request[DescribeVolumeAttributeResult] =
       js.native
     def describeVolumeStatus(params: DescribeVolumeStatusRequest): Request[DescribeVolumeStatusResult] = js.native
-    def describeVolumes(params: DescribeVolumesRequest): Request[DescribeVolumesResult]                = js.native
+    def describeVolumes(params: DescribeVolumesRequest): Request[DescribeVolumesResult] = js.native
     def describeVolumesModifications(
         params: DescribeVolumesModificationsRequest
-    ): Request[DescribeVolumesModificationsResult]                                                           = js.native
-    def describeVpcAttribute(params: DescribeVpcAttributeRequest): Request[DescribeVpcAttributeResult]       = js.native
+    ): Request[DescribeVolumesModificationsResult] = js.native
+    def describeVpcAttribute(params: DescribeVpcAttributeRequest): Request[DescribeVpcAttributeResult] = js.native
     def describeVpcClassicLink(params: DescribeVpcClassicLinkRequest): Request[DescribeVpcClassicLinkResult] = js.native
     def describeVpcClassicLinkDnsSupport(
         params: DescribeVpcClassicLinkDnsSupportRequest
@@ -2252,19 +2252,19 @@ package ec2 {
     ): Request[DescribeVpcEndpointServicePermissionsResult] = js.native
     def describeVpcEndpointServices(
         params: DescribeVpcEndpointServicesRequest
-    ): Request[DescribeVpcEndpointServicesResult]                                                      = js.native
+    ): Request[DescribeVpcEndpointServicesResult] = js.native
     def describeVpcEndpoints(params: DescribeVpcEndpointsRequest): Request[DescribeVpcEndpointsResult] = js.native
     def describeVpcPeeringConnections(
         params: DescribeVpcPeeringConnectionsRequest
-    ): Request[DescribeVpcPeeringConnectionsResult]                                                          = js.native
-    def describeVpcs(params: DescribeVpcsRequest): Request[DescribeVpcsResult]                               = js.native
+    ): Request[DescribeVpcPeeringConnectionsResult] = js.native
+    def describeVpcs(params: DescribeVpcsRequest): Request[DescribeVpcsResult] = js.native
     def describeVpnConnections(params: DescribeVpnConnectionsRequest): Request[DescribeVpnConnectionsResult] = js.native
-    def describeVpnGateways(params: DescribeVpnGatewaysRequest): Request[DescribeVpnGatewaysResult]          = js.native
-    def detachClassicLinkVpc(params: DetachClassicLinkVpcRequest): Request[DetachClassicLinkVpcResult]       = js.native
-    def detachInternetGateway(params: DetachInternetGatewayRequest): Request[js.Object]                      = js.native
-    def detachNetworkInterface(params: DetachNetworkInterfaceRequest): Request[js.Object]                    = js.native
-    def detachVolume(params: DetachVolumeRequest): Request[VolumeAttachment]                                 = js.native
-    def detachVpnGateway(params: DetachVpnGatewayRequest): Request[js.Object]                                = js.native
+    def describeVpnGateways(params: DescribeVpnGatewaysRequest): Request[DescribeVpnGatewaysResult] = js.native
+    def detachClassicLinkVpc(params: DetachClassicLinkVpcRequest): Request[DetachClassicLinkVpcResult] = js.native
+    def detachInternetGateway(params: DetachInternetGatewayRequest): Request[js.Object] = js.native
+    def detachNetworkInterface(params: DetachNetworkInterfaceRequest): Request[js.Object] = js.native
+    def detachVolume(params: DetachVolumeRequest): Request[VolumeAttachment] = js.native
+    def detachVpnGateway(params: DetachVpnGatewayRequest): Request[js.Object] = js.native
     def disableEbsEncryptionByDefault(
         params: DisableEbsEncryptionByDefaultRequest
     ): Request[DisableEbsEncryptionByDefaultResult] = js.native
@@ -2273,19 +2273,19 @@ package ec2 {
     ): Request[DisableFastSnapshotRestoresResult] = js.native
     def disableTransitGatewayRouteTablePropagation(
         params: DisableTransitGatewayRouteTablePropagationRequest
-    ): Request[DisableTransitGatewayRouteTablePropagationResult]                                          = js.native
-    def disableVgwRoutePropagation(params: DisableVgwRoutePropagationRequest): Request[js.Object]         = js.native
+    ): Request[DisableTransitGatewayRouteTablePropagationResult] = js.native
+    def disableVgwRoutePropagation(params: DisableVgwRoutePropagationRequest): Request[js.Object] = js.native
     def disableVpcClassicLink(params: DisableVpcClassicLinkRequest): Request[DisableVpcClassicLinkResult] = js.native
     def disableVpcClassicLinkDnsSupport(
         params: DisableVpcClassicLinkDnsSupportRequest
-    ): Request[DisableVpcClassicLinkDnsSupportResult]                               = js.native
+    ): Request[DisableVpcClassicLinkDnsSupportResult] = js.native
     def disassociateAddress(params: DisassociateAddressRequest): Request[js.Object] = js.native
     def disassociateClientVpnTargetNetwork(
         params: DisassociateClientVpnTargetNetworkRequest
     ): Request[DisassociateClientVpnTargetNetworkResult] = js.native
     def disassociateIamInstanceProfile(
         params: DisassociateIamInstanceProfileRequest
-    ): Request[DisassociateIamInstanceProfileResult]                                      = js.native
+    ): Request[DisassociateIamInstanceProfileResult] = js.native
     def disassociateRouteTable(params: DisassociateRouteTableRequest): Request[js.Object] = js.native
     def disassociateSubnetCidrBlock(
         params: DisassociateSubnetCidrBlockRequest
@@ -2306,9 +2306,9 @@ package ec2 {
     ): Request[EnableFastSnapshotRestoresResult] = js.native
     def enableTransitGatewayRouteTablePropagation(
         params: EnableTransitGatewayRouteTablePropagationRequest
-    ): Request[EnableTransitGatewayRouteTablePropagationResult]                                        = js.native
-    def enableVgwRoutePropagation(params: EnableVgwRoutePropagationRequest): Request[js.Object]        = js.native
-    def enableVolumeIO(params: EnableVolumeIORequest): Request[js.Object]                              = js.native
+    ): Request[EnableTransitGatewayRouteTablePropagationResult] = js.native
+    def enableVgwRoutePropagation(params: EnableVgwRoutePropagationRequest): Request[js.Object] = js.native
+    def enableVolumeIO(params: EnableVolumeIORequest): Request[js.Object] = js.native
     def enableVpcClassicLink(params: EnableVpcClassicLinkRequest): Request[EnableVpcClassicLinkResult] = js.native
     def enableVpcClassicLinkDnsSupport(
         params: EnableVpcClassicLinkDnsSupportRequest
@@ -2318,7 +2318,7 @@ package ec2 {
     ): Request[ExportClientVpnClientCertificateRevocationListResult] = js.native
     def exportClientVpnClientConfiguration(
         params: ExportClientVpnClientConfigurationRequest
-    ): Request[ExportClientVpnClientConfigurationResult]                    = js.native
+    ): Request[ExportClientVpnClientConfigurationResult] = js.native
     def exportImage(params: ExportImageRequest): Request[ExportImageResult] = js.native
     def exportTransitGatewayRoutes(
         params: ExportTransitGatewayRoutesRequest
@@ -2328,26 +2328,26 @@ package ec2 {
     ): Request[GetAssociatedIpv6PoolCidrsResult] = js.native
     def getCapacityReservationUsage(
         params: GetCapacityReservationUsageRequest
-    ): Request[GetCapacityReservationUsageResult]                                                      = js.native
-    def getCoipPoolUsage(params: GetCoipPoolUsageRequest): Request[GetCoipPoolUsageResult]             = js.native
-    def getConsoleOutput(params: GetConsoleOutputRequest): Request[GetConsoleOutputResult]             = js.native
+    ): Request[GetCapacityReservationUsageResult] = js.native
+    def getCoipPoolUsage(params: GetCoipPoolUsageRequest): Request[GetCoipPoolUsageResult] = js.native
+    def getConsoleOutput(params: GetConsoleOutputRequest): Request[GetConsoleOutputResult] = js.native
     def getConsoleScreenshot(params: GetConsoleScreenshotRequest): Request[GetConsoleScreenshotResult] = js.native
     def getDefaultCreditSpecification(
         params: GetDefaultCreditSpecificationRequest
-    ): Request[GetDefaultCreditSpecificationResult]                                                       = js.native
+    ): Request[GetDefaultCreditSpecificationResult] = js.native
     def getEbsDefaultKmsKeyId(params: GetEbsDefaultKmsKeyIdRequest): Request[GetEbsDefaultKmsKeyIdResult] = js.native
     def getEbsEncryptionByDefault(params: GetEbsEncryptionByDefaultRequest): Request[GetEbsEncryptionByDefaultResult] =
       js.native
     def getHostReservationPurchasePreview(
         params: GetHostReservationPurchasePreviewRequest
-    ): Request[GetHostReservationPurchasePreviewResult]                                                   = js.native
+    ): Request[GetHostReservationPurchasePreviewResult] = js.native
     def getLaunchTemplateData(params: GetLaunchTemplateDataRequest): Request[GetLaunchTemplateDataResult] = js.native
     def getManagedPrefixListAssociations(
         params: GetManagedPrefixListAssociationsRequest
     ): Request[GetManagedPrefixListAssociationsResult] = js.native
     def getManagedPrefixListEntries(
         params: GetManagedPrefixListEntriesRequest
-    ): Request[GetManagedPrefixListEntriesResult]                                       = js.native
+    ): Request[GetManagedPrefixListEntriesResult] = js.native
     def getPasswordData(params: GetPasswordDataRequest): Request[GetPasswordDataResult] = js.native
     def getReservedInstancesExchangeQuote(
         params: GetReservedInstancesExchangeQuoteRequest
@@ -2366,12 +2366,12 @@ package ec2 {
     ): Request[GetTransitGatewayRouteTablePropagationsResult] = js.native
     def importClientVpnClientCertificateRevocationList(
         params: ImportClientVpnClientCertificateRevocationListRequest
-    ): Request[ImportClientVpnClientCertificateRevocationListResult]                 = js.native
-    def importImage(params: ImportImageRequest): Request[ImportImageResult]          = js.native
+    ): Request[ImportClientVpnClientCertificateRevocationListResult] = js.native
+    def importImage(params: ImportImageRequest): Request[ImportImageResult] = js.native
     def importInstance(params: ImportInstanceRequest): Request[ImportInstanceResult] = js.native
-    def importKeyPair(params: ImportKeyPairRequest): Request[ImportKeyPairResult]    = js.native
+    def importKeyPair(params: ImportKeyPairRequest): Request[ImportKeyPairResult] = js.native
     def importSnapshot(params: ImportSnapshotRequest): Request[ImportSnapshotResult] = js.native
-    def importVolume(params: ImportVolumeRequest): Request[ImportVolumeResult]       = js.native
+    def importVolume(params: ImportVolumeRequest): Request[ImportVolumeResult] = js.native
     def modifyAvailabilityZoneGroup(
         params: ModifyAvailabilityZoneGroupRequest
     ): Request[ModifyAvailabilityZoneGroupResult] = js.native
@@ -2387,10 +2387,10 @@ package ec2 {
     def modifyFleet(params: ModifyFleetRequest): Request[ModifyFleetResult] = js.native
     def modifyFpgaImageAttribute(params: ModifyFpgaImageAttributeRequest): Request[ModifyFpgaImageAttributeResult] =
       js.native
-    def modifyHosts(params: ModifyHostsRequest): Request[ModifyHostsResult]                 = js.native
-    def modifyIdFormat(params: ModifyIdFormatRequest): Request[js.Object]                   = js.native
-    def modifyIdentityIdFormat(params: ModifyIdentityIdFormatRequest): Request[js.Object]   = js.native
-    def modifyImageAttribute(params: ModifyImageAttributeRequest): Request[js.Object]       = js.native
+    def modifyHosts(params: ModifyHostsRequest): Request[ModifyHostsResult] = js.native
+    def modifyIdFormat(params: ModifyIdFormatRequest): Request[js.Object] = js.native
+    def modifyIdentityIdFormat(params: ModifyIdentityIdFormatRequest): Request[js.Object] = js.native
+    def modifyImageAttribute(params: ModifyImageAttributeRequest): Request[js.Object] = js.native
     def modifyInstanceAttribute(params: ModifyInstanceAttributeRequest): Request[js.Object] = js.native
     def modifyInstanceCapacityReservationAttributes(
         params: ModifyInstanceCapacityReservationAttributesRequest
@@ -2427,10 +2427,10 @@ package ec2 {
     ): Request[ModifyTrafficMirrorSessionResult] = js.native
     def modifyTransitGatewayVpcAttachment(
         params: ModifyTransitGatewayVpcAttachmentRequest
-    ): Request[ModifyTransitGatewayVpcAttachmentResult]                                       = js.native
-    def modifyVolume(params: ModifyVolumeRequest): Request[ModifyVolumeResult]                = js.native
-    def modifyVolumeAttribute(params: ModifyVolumeAttributeRequest): Request[js.Object]       = js.native
-    def modifyVpcAttribute(params: ModifyVpcAttributeRequest): Request[js.Object]             = js.native
+    ): Request[ModifyTransitGatewayVpcAttachmentResult] = js.native
+    def modifyVolume(params: ModifyVolumeRequest): Request[ModifyVolumeResult] = js.native
+    def modifyVolumeAttribute(params: ModifyVolumeAttributeRequest): Request[js.Object] = js.native
+    def modifyVpcAttribute(params: ModifyVpcAttributeRequest): Request[js.Object] = js.native
     def modifyVpcEndpoint(params: ModifyVpcEndpointRequest): Request[ModifyVpcEndpointResult] = js.native
     def modifyVpcEndpointConnectionNotification(
         params: ModifyVpcEndpointConnectionNotificationRequest
@@ -2443,16 +2443,16 @@ package ec2 {
     ): Request[ModifyVpcEndpointServicePermissionsResult] = js.native
     def modifyVpcPeeringConnectionOptions(
         params: ModifyVpcPeeringConnectionOptionsRequest
-    ): Request[ModifyVpcPeeringConnectionOptionsResult]                                             = js.native
-    def modifyVpcTenancy(params: ModifyVpcTenancyRequest): Request[ModifyVpcTenancyResult]          = js.native
+    ): Request[ModifyVpcPeeringConnectionOptionsResult] = js.native
+    def modifyVpcTenancy(params: ModifyVpcTenancyRequest): Request[ModifyVpcTenancyResult] = js.native
     def modifyVpnConnection(params: ModifyVpnConnectionRequest): Request[ModifyVpnConnectionResult] = js.native
     def modifyVpnTunnelCertificate(
         params: ModifyVpnTunnelCertificateRequest
-    ): Request[ModifyVpnTunnelCertificateResult]                                                             = js.native
+    ): Request[ModifyVpnTunnelCertificateResult] = js.native
     def modifyVpnTunnelOptions(params: ModifyVpnTunnelOptionsRequest): Request[ModifyVpnTunnelOptionsResult] = js.native
-    def monitorInstances(params: MonitorInstancesRequest): Request[MonitorInstancesResult]                   = js.native
-    def moveAddressToVpc(params: MoveAddressToVpcRequest): Request[MoveAddressToVpcResult]                   = js.native
-    def provisionByoipCidr(params: ProvisionByoipCidrRequest): Request[ProvisionByoipCidrResult]             = js.native
+    def monitorInstances(params: MonitorInstancesRequest): Request[MonitorInstancesResult] = js.native
+    def moveAddressToVpc(params: MoveAddressToVpcRequest): Request[MoveAddressToVpcResult] = js.native
+    def provisionByoipCidr(params: ProvisionByoipCidrRequest): Request[ProvisionByoipCidrResult] = js.native
     def purchaseHostReservation(params: PurchaseHostReservationRequest): Request[PurchaseHostReservationResult] =
       js.native
     def purchaseReservedInstancesOffering(
@@ -2460,8 +2460,8 @@ package ec2 {
     ): Request[PurchaseReservedInstancesOfferingResult] = js.native
     def purchaseScheduledInstances(
         params: PurchaseScheduledInstancesRequest
-    ): Request[PurchaseScheduledInstancesResult]                                  = js.native
-    def rebootInstances(params: RebootInstancesRequest): Request[js.Object]       = js.native
+    ): Request[PurchaseScheduledInstancesResult] = js.native
+    def rebootInstances(params: RebootInstancesRequest): Request[js.Object] = js.native
     def registerImage(params: RegisterImageRequest): Request[RegisterImageResult] = js.native
     def registerInstanceEventNotificationAttributes(
         params: RegisterInstanceEventNotificationAttributesRequest
@@ -2483,44 +2483,44 @@ package ec2 {
     ): Request[RejectVpcEndpointConnectionsResult] = js.native
     def rejectVpcPeeringConnection(
         params: RejectVpcPeeringConnectionRequest
-    ): Request[RejectVpcPeeringConnectionResult]                               = js.native
-    def releaseAddress(params: ReleaseAddressRequest): Request[js.Object]      = js.native
+    ): Request[RejectVpcPeeringConnectionResult] = js.native
+    def releaseAddress(params: ReleaseAddressRequest): Request[js.Object] = js.native
     def releaseHosts(params: ReleaseHostsRequest): Request[ReleaseHostsResult] = js.native
     def replaceIamInstanceProfileAssociation(
         params: ReplaceIamInstanceProfileAssociationRequest
     ): Request[ReplaceIamInstanceProfileAssociationResult] = js.native
     def replaceNetworkAclAssociation(
         params: ReplaceNetworkAclAssociationRequest
-    ): Request[ReplaceNetworkAclAssociationResult]                                        = js.native
+    ): Request[ReplaceNetworkAclAssociationResult] = js.native
     def replaceNetworkAclEntry(params: ReplaceNetworkAclEntryRequest): Request[js.Object] = js.native
-    def replaceRoute(params: ReplaceRouteRequest): Request[js.Object]                     = js.native
+    def replaceRoute(params: ReplaceRouteRequest): Request[js.Object] = js.native
     def replaceRouteTableAssociation(
         params: ReplaceRouteTableAssociationRequest
     ): Request[ReplaceRouteTableAssociationResult] = js.native
     def replaceTransitGatewayRoute(
         params: ReplaceTransitGatewayRouteRequest
-    ): Request[ReplaceTransitGatewayRouteResult]                                                       = js.native
-    def reportInstanceStatus(params: ReportInstanceStatusRequest): Request[js.Object]                  = js.native
-    def requestSpotFleet(params: RequestSpotFleetRequest): Request[RequestSpotFleetResponse]           = js.native
+    ): Request[ReplaceTransitGatewayRouteResult] = js.native
+    def reportInstanceStatus(params: ReportInstanceStatusRequest): Request[js.Object] = js.native
+    def requestSpotFleet(params: RequestSpotFleetRequest): Request[RequestSpotFleetResponse] = js.native
     def requestSpotInstances(params: RequestSpotInstancesRequest): Request[RequestSpotInstancesResult] = js.native
     def resetEbsDefaultKmsKeyId(params: ResetEbsDefaultKmsKeyIdRequest): Request[ResetEbsDefaultKmsKeyIdResult] =
       js.native
     def resetFpgaImageAttribute(params: ResetFpgaImageAttributeRequest): Request[ResetFpgaImageAttributeResult] =
       js.native
-    def resetImageAttribute(params: ResetImageAttributeRequest): Request[js.Object]                       = js.native
-    def resetInstanceAttribute(params: ResetInstanceAttributeRequest): Request[js.Object]                 = js.native
+    def resetImageAttribute(params: ResetImageAttributeRequest): Request[js.Object] = js.native
+    def resetInstanceAttribute(params: ResetInstanceAttributeRequest): Request[js.Object] = js.native
     def resetNetworkInterfaceAttribute(params: ResetNetworkInterfaceAttributeRequest): Request[js.Object] = js.native
-    def resetSnapshotAttribute(params: ResetSnapshotAttributeRequest): Request[js.Object]                 = js.native
+    def resetSnapshotAttribute(params: ResetSnapshotAttributeRequest): Request[js.Object] = js.native
     def restoreAddressToClassic(params: RestoreAddressToClassicRequest): Request[RestoreAddressToClassicResult] =
       js.native
     def restoreManagedPrefixListVersion(
         params: RestoreManagedPrefixListVersionRequest
-    ): Request[RestoreManagedPrefixListVersionResult]                                                        = js.native
+    ): Request[RestoreManagedPrefixListVersionResult] = js.native
     def revokeClientVpnIngress(params: RevokeClientVpnIngressRequest): Request[RevokeClientVpnIngressResult] = js.native
-    def revokeSecurityGroupEgress(params: RevokeSecurityGroupEgressRequest): Request[js.Object]              = js.native
-    def revokeSecurityGroupIngress(params: RevokeSecurityGroupIngressRequest): Request[js.Object]            = js.native
-    def runInstances(params: RunInstancesRequest): Request[Reservation]                                      = js.native
-    def runScheduledInstances(params: RunScheduledInstancesRequest): Request[RunScheduledInstancesResult]    = js.native
+    def revokeSecurityGroupEgress(params: RevokeSecurityGroupEgressRequest): Request[js.Object] = js.native
+    def revokeSecurityGroupIngress(params: RevokeSecurityGroupIngressRequest): Request[js.Object] = js.native
+    def runInstances(params: RunInstancesRequest): Request[Reservation] = js.native
+    def runScheduledInstances(params: RunScheduledInstancesRequest): Request[RunScheduledInstancesResult] = js.native
     def searchLocalGatewayRoutes(params: SearchLocalGatewayRoutesRequest): Request[SearchLocalGatewayRoutesResult] =
       js.native
     def searchTransitGatewayMulticastGroups(
@@ -2528,26 +2528,26 @@ package ec2 {
     ): Request[SearchTransitGatewayMulticastGroupsResult] = js.native
     def searchTransitGatewayRoutes(
         params: SearchTransitGatewayRoutesRequest
-    ): Request[SearchTransitGatewayRoutesResult]                                            = js.native
+    ): Request[SearchTransitGatewayRoutesResult] = js.native
     def sendDiagnosticInterrupt(params: SendDiagnosticInterruptRequest): Request[js.Object] = js.native
-    def startInstances(params: StartInstancesRequest): Request[StartInstancesResult]        = js.native
+    def startInstances(params: StartInstancesRequest): Request[StartInstancesResult] = js.native
     def startVpcEndpointServicePrivateDnsVerification(
         params: StartVpcEndpointServicePrivateDnsVerificationRequest
-    ): Request[StartVpcEndpointServicePrivateDnsVerificationResult]               = js.native
+    ): Request[StartVpcEndpointServicePrivateDnsVerificationResult] = js.native
     def stopInstances(params: StopInstancesRequest): Request[StopInstancesResult] = js.native
     def terminateClientVpnConnections(
         params: TerminateClientVpnConnectionsRequest
-    ): Request[TerminateClientVpnConnectionsResult]                                                       = js.native
-    def terminateInstances(params: TerminateInstancesRequest): Request[TerminateInstancesResult]          = js.native
+    ): Request[TerminateClientVpnConnectionsResult] = js.native
+    def terminateInstances(params: TerminateInstancesRequest): Request[TerminateInstancesResult] = js.native
     def unassignIpv6Addresses(params: UnassignIpv6AddressesRequest): Request[UnassignIpv6AddressesResult] = js.native
-    def unassignPrivateIpAddresses(params: UnassignPrivateIpAddressesRequest): Request[js.Object]         = js.native
-    def unmonitorInstances(params: UnmonitorInstancesRequest): Request[UnmonitorInstancesResult]          = js.native
+    def unassignPrivateIpAddresses(params: UnassignPrivateIpAddressesRequest): Request[js.Object] = js.native
+    def unmonitorInstances(params: UnmonitorInstancesRequest): Request[UnmonitorInstancesResult] = js.native
     def updateSecurityGroupRuleDescriptionsEgress(
         params: UpdateSecurityGroupRuleDescriptionsEgressRequest
     ): Request[UpdateSecurityGroupRuleDescriptionsEgressResult] = js.native
     def updateSecurityGroupRuleDescriptionsIngress(
         params: UpdateSecurityGroupRuleDescriptionsIngressRequest
-    ): Request[UpdateSecurityGroupRuleDescriptionsIngressResult]                              = js.native
+    ): Request[UpdateSecurityGroupRuleDescriptionsIngressResult] = js.native
     def withdrawByoipCidr(params: WithdrawByoipCidrRequest): Request[WithdrawByoipCidrResult] = js.native
   }
 
@@ -2690,7 +2690,7 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): AcceptVpcEndpointConnectionsRequest = {
       val __obj = js.Dynamic.literal(
-        "ServiceId"      -> ServiceId.asInstanceOf[js.Any],
+        "ServiceId" -> ServiceId.asInstanceOf[js.Any],
         "VpcEndpointIds" -> VpcEndpointIds.asInstanceOf[js.Any]
       )
 
@@ -2776,7 +2776,7 @@ package ec2 {
   sealed trait AccountAttributeName extends js.Any
   object AccountAttributeName extends js.Object {
     val `supported-platforms` = "supported-platforms".asInstanceOf[AccountAttributeName]
-    val `default-vpc`         = "default-vpc".asInstanceOf[AccountAttributeName]
+    val `default-vpc` = "default-vpc".asInstanceOf[AccountAttributeName]
 
     val values = js.Object.freeze(js.Array(`supported-platforms`, `default-vpc`))
   }
@@ -2831,10 +2831,10 @@ package ec2 {
   @js.native
   sealed trait ActivityStatus extends js.Any
   object ActivityStatus extends js.Object {
-    val error               = "error".asInstanceOf[ActivityStatus]
+    val error = "error".asInstanceOf[ActivityStatus]
     val pending_fulfillment = "pending_fulfillment".asInstanceOf[ActivityStatus]
     val pending_termination = "pending_termination".asInstanceOf[ActivityStatus]
-    val fulfilled           = "fulfilled".asInstanceOf[ActivityStatus]
+    val fulfilled = "fulfilled".asInstanceOf[ActivityStatus]
 
     val values = js.Object.freeze(js.Array(error, pending_fulfillment, pending_termination, fulfilled))
   }
@@ -2959,7 +2959,7 @@ package ec2 {
   sealed trait Affinity extends js.Any
   object Affinity extends js.Object {
     val default = "default".asInstanceOf[Affinity]
-    val host    = "host".asInstanceOf[Affinity]
+    val host = "host".asInstanceOf[Affinity]
 
     val values = js.Object.freeze(js.Array(default, host))
   }
@@ -3055,7 +3055,7 @@ package ec2 {
     ): AllocateHostsRequest = {
       val __obj = js.Dynamic.literal(
         "AvailabilityZone" -> AvailabilityZone.asInstanceOf[js.Any],
-        "Quantity"         -> Quantity.asInstanceOf[js.Any]
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
       )
 
       AutoPlacement.foreach(__v => __obj.updateDynamic("AutoPlacement")(__v.asInstanceOf[js.Any]))
@@ -3090,12 +3090,12 @@ package ec2 {
   @js.native
   sealed trait AllocationState extends js.Any
   object AllocationState extends js.Object {
-    val available                    = "available".asInstanceOf[AllocationState]
-    val `under-assessment`           = "under-assessment".asInstanceOf[AllocationState]
-    val `permanent-failure`          = "permanent-failure".asInstanceOf[AllocationState]
-    val released                     = "released".asInstanceOf[AllocationState]
+    val available = "available".asInstanceOf[AllocationState]
+    val `under-assessment` = "under-assessment".asInstanceOf[AllocationState]
+    val `permanent-failure` = "permanent-failure".asInstanceOf[AllocationState]
+    val released = "released".asInstanceOf[AllocationState]
     val `released-permanent-failure` = "released-permanent-failure".asInstanceOf[AllocationState]
-    val pending                      = "pending".asInstanceOf[AllocationState]
+    val pending = "pending".asInstanceOf[AllocationState]
 
     val values = js.Object.freeze(
       js.Array(available, `under-assessment`, `permanent-failure`, released, `released-permanent-failure`, pending)
@@ -3105,8 +3105,8 @@ package ec2 {
   @js.native
   sealed trait AllocationStrategy extends js.Any
   object AllocationStrategy extends js.Object {
-    val lowestPrice       = "lowestPrice".asInstanceOf[AllocationStrategy]
-    val diversified       = "diversified".asInstanceOf[AllocationStrategy]
+    val lowestPrice = "lowestPrice".asInstanceOf[AllocationStrategy]
+    val diversified = "diversified".asInstanceOf[AllocationStrategy]
     val capacityOptimized = "capacityOptimized".asInstanceOf[AllocationStrategy]
 
     val values = js.Object.freeze(js.Array(lowestPrice, diversified, capacityOptimized))
@@ -3137,7 +3137,7 @@ package ec2 {
   @js.native
   sealed trait AllowsMultipleInstanceTypes extends js.Any
   object AllowsMultipleInstanceTypes extends js.Object {
-    val on  = "on".asInstanceOf[AllowsMultipleInstanceTypes]
+    val on = "on".asInstanceOf[AllowsMultipleInstanceTypes]
     val off = "off".asInstanceOf[AllowsMultipleInstanceTypes]
 
     val values = js.Object.freeze(js.Array(on, off))
@@ -3161,8 +3161,8 @@ package ec2 {
     ): ApplySecurityGroupsToClientVpnTargetNetworkRequest = {
       val __obj = js.Dynamic.literal(
         "ClientVpnEndpointId" -> ClientVpnEndpointId.asInstanceOf[js.Any],
-        "SecurityGroupIds"    -> SecurityGroupIds.asInstanceOf[js.Any],
-        "VpcId"               -> VpcId.asInstanceOf[js.Any]
+        "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any],
+        "VpcId" -> VpcId.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -3189,9 +3189,9 @@ package ec2 {
   @js.native
   sealed trait ArchitectureType extends js.Any
   object ArchitectureType extends js.Object {
-    val i386   = "i386".asInstanceOf[ArchitectureType]
+    val i386 = "i386".asInstanceOf[ArchitectureType]
     val x86_64 = "x86_64".asInstanceOf[ArchitectureType]
-    val arm64  = "arm64".asInstanceOf[ArchitectureType]
+    val arm64 = "arm64".asInstanceOf[ArchitectureType]
 
     val values = js.Object.freeze(js.Array(i386, x86_64, arm64))
   }
@@ -3199,9 +3199,9 @@ package ec2 {
   @js.native
   sealed trait ArchitectureValues extends js.Any
   object ArchitectureValues extends js.Object {
-    val i386   = "i386".asInstanceOf[ArchitectureValues]
+    val i386 = "i386".asInstanceOf[ArchitectureValues]
     val x86_64 = "x86_64".asInstanceOf[ArchitectureValues]
-    val arm64  = "arm64".asInstanceOf[ArchitectureValues]
+    val arm64 = "arm64".asInstanceOf[ArchitectureValues]
 
     val values = js.Object.freeze(js.Array(i386, x86_64, arm64))
   }
@@ -3389,7 +3389,7 @@ package ec2 {
     ): AssociateClientVpnTargetNetworkRequest = {
       val __obj = js.Dynamic.literal(
         "ClientVpnEndpointId" -> ClientVpnEndpointId.asInstanceOf[js.Any],
-        "SubnetId"            -> SubnetId.asInstanceOf[js.Any]
+        "SubnetId" -> SubnetId.asInstanceOf[js.Any]
       )
 
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
@@ -3433,7 +3433,7 @@ package ec2 {
     ): AssociateDhcpOptionsRequest = {
       val __obj = js.Dynamic.literal(
         "DhcpOptionsId" -> DhcpOptionsId.asInstanceOf[js.Any],
-        "VpcId"         -> VpcId.asInstanceOf[js.Any]
+        "VpcId" -> VpcId.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -3455,7 +3455,7 @@ package ec2 {
     ): AssociateIamInstanceProfileRequest = {
       val __obj = js.Dynamic.literal(
         "IamInstanceProfile" -> IamInstanceProfile.asInstanceOf[js.Any],
-        "InstanceId"         -> InstanceId.asInstanceOf[js.Any]
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AssociateIamInstanceProfileRequest]
@@ -3540,7 +3540,7 @@ package ec2 {
     ): AssociateSubnetCidrBlockRequest = {
       val __obj = js.Dynamic.literal(
         "Ipv6CidrBlock" -> Ipv6CidrBlock.asInstanceOf[js.Any],
-        "SubnetId"      -> SubnetId.asInstanceOf[js.Any]
+        "SubnetId" -> SubnetId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AssociateSubnetCidrBlockRequest]
@@ -3765,11 +3765,11 @@ package ec2 {
   @js.native
   sealed trait AssociationStatusCode extends js.Any
   object AssociationStatusCode extends js.Object {
-    val associating          = "associating".asInstanceOf[AssociationStatusCode]
-    val associated           = "associated".asInstanceOf[AssociationStatusCode]
+    val associating = "associating".asInstanceOf[AssociationStatusCode]
+    val associated = "associated".asInstanceOf[AssociationStatusCode]
     val `association-failed` = "association-failed".asInstanceOf[AssociationStatusCode]
-    val disassociating       = "disassociating".asInstanceOf[AssociationStatusCode]
-    val disassociated        = "disassociated".asInstanceOf[AssociationStatusCode]
+    val disassociating = "disassociating".asInstanceOf[AssociationStatusCode]
+    val disassociated = "disassociated".asInstanceOf[AssociationStatusCode]
 
     val values =
       js.Object.freeze(js.Array(associating, associated, `association-failed`, disassociating, disassociated))
@@ -3792,9 +3792,9 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): AttachClassicLinkVpcRequest = {
       val __obj = js.Dynamic.literal(
-        "Groups"     -> Groups.asInstanceOf[js.Any],
+        "Groups" -> Groups.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
-        "VpcId"      -> VpcId.asInstanceOf[js.Any]
+        "VpcId" -> VpcId.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -3834,7 +3834,7 @@ package ec2 {
     ): AttachInternetGatewayRequest = {
       val __obj = js.Dynamic.literal(
         "InternetGatewayId" -> InternetGatewayId.asInstanceOf[js.Any],
-        "VpcId"             -> VpcId.asInstanceOf[js.Any]
+        "VpcId" -> VpcId.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -3862,8 +3862,8 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): AttachNetworkInterfaceRequest = {
       val __obj = js.Dynamic.literal(
-        "DeviceIndex"        -> DeviceIndex.asInstanceOf[js.Any],
-        "InstanceId"         -> InstanceId.asInstanceOf[js.Any],
+        "DeviceIndex" -> DeviceIndex.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "NetworkInterfaceId" -> NetworkInterfaceId.asInstanceOf[js.Any]
       )
 
@@ -3908,9 +3908,9 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): AttachVolumeRequest = {
       val __obj = js.Dynamic.literal(
-        "Device"     -> Device.asInstanceOf[js.Any],
+        "Device" -> Device.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
-        "VolumeId"   -> VolumeId.asInstanceOf[js.Any]
+        "VolumeId" -> VolumeId.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -3936,7 +3936,7 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): AttachVpnGatewayRequest = {
       val __obj = js.Dynamic.literal(
-        "VpcId"        -> VpcId.asInstanceOf[js.Any],
+        "VpcId" -> VpcId.asInstanceOf[js.Any],
         "VpnGatewayId" -> VpnGatewayId.asInstanceOf[js.Any]
       )
 
@@ -3968,9 +3968,9 @@ package ec2 {
   sealed trait AttachmentStatus extends js.Any
   object AttachmentStatus extends js.Object {
     val attaching = "attaching".asInstanceOf[AttachmentStatus]
-    val attached  = "attached".asInstanceOf[AttachmentStatus]
+    val attached = "attached".asInstanceOf[AttachmentStatus]
     val detaching = "detaching".asInstanceOf[AttachmentStatus]
-    val detached  = "detached".asInstanceOf[AttachmentStatus]
+    val detached = "detached".asInstanceOf[AttachmentStatus]
 
     val values = js.Object.freeze(js.Array(attaching, attached, detaching, detached))
   }
@@ -4071,7 +4071,7 @@ package ec2 {
     ): AuthorizeClientVpnIngressRequest = {
       val __obj = js.Dynamic.literal(
         "ClientVpnEndpointId" -> ClientVpnEndpointId.asInstanceOf[js.Any],
-        "TargetNetworkCidr"   -> TargetNetworkCidr.asInstanceOf[js.Any]
+        "TargetNetworkCidr" -> TargetNetworkCidr.asInstanceOf[js.Any]
       )
 
       AccessGroupId.foreach(__v => __obj.updateDynamic("AccessGroupId")(__v.asInstanceOf[js.Any]))
@@ -4191,7 +4191,7 @@ package ec2 {
   @js.native
   sealed trait AutoAcceptSharedAttachmentsValue extends js.Any
   object AutoAcceptSharedAttachmentsValue extends js.Object {
-    val enable  = "enable".asInstanceOf[AutoAcceptSharedAttachmentsValue]
+    val enable = "enable".asInstanceOf[AutoAcceptSharedAttachmentsValue]
     val disable = "disable".asInstanceOf[AutoAcceptSharedAttachmentsValue]
 
     val values = js.Object.freeze(js.Array(enable, disable))
@@ -4200,7 +4200,7 @@ package ec2 {
   @js.native
   sealed trait AutoPlacement extends js.Any
   object AutoPlacement extends js.Object {
-    val on  = "on".asInstanceOf[AutoPlacement]
+    val on = "on".asInstanceOf[AutoPlacement]
     val off = "off".asInstanceOf[AutoPlacement]
 
     val values = js.Object.freeze(js.Array(on, off))
@@ -4278,8 +4278,8 @@ package ec2 {
   sealed trait AvailabilityZoneOptInStatus extends js.Any
   object AvailabilityZoneOptInStatus extends js.Object {
     val `opt-in-not-required` = "opt-in-not-required".asInstanceOf[AvailabilityZoneOptInStatus]
-    val `opted-in`            = "opted-in".asInstanceOf[AvailabilityZoneOptInStatus]
-    val `not-opted-in`        = "not-opted-in".asInstanceOf[AvailabilityZoneOptInStatus]
+    val `opted-in` = "opted-in".asInstanceOf[AvailabilityZoneOptInStatus]
+    val `not-opted-in` = "not-opted-in".asInstanceOf[AvailabilityZoneOptInStatus]
 
     val values = js.Object.freeze(js.Array(`opt-in-not-required`, `opted-in`, `not-opted-in`))
   }
@@ -4287,9 +4287,9 @@ package ec2 {
   @js.native
   sealed trait AvailabilityZoneState extends js.Any
   object AvailabilityZoneState extends js.Object {
-    val available   = "available".asInstanceOf[AvailabilityZoneState]
+    val available = "available".asInstanceOf[AvailabilityZoneState]
     val information = "information".asInstanceOf[AvailabilityZoneState]
-    val impaired    = "impaired".asInstanceOf[AvailabilityZoneState]
+    val impaired = "impaired".asInstanceOf[AvailabilityZoneState]
     val unavailable = "unavailable".asInstanceOf[AvailabilityZoneState]
 
     val values = js.Object.freeze(js.Array(available, information, impaired, unavailable))
@@ -4322,13 +4322,13 @@ package ec2 {
   @js.native
   sealed trait BatchState extends js.Any
   object BatchState extends js.Object {
-    val submitted             = "submitted".asInstanceOf[BatchState]
-    val active                = "active".asInstanceOf[BatchState]
-    val cancelled             = "cancelled".asInstanceOf[BatchState]
-    val failed                = "failed".asInstanceOf[BatchState]
-    val cancelled_running     = "cancelled_running".asInstanceOf[BatchState]
+    val submitted = "submitted".asInstanceOf[BatchState]
+    val active = "active".asInstanceOf[BatchState]
+    val cancelled = "cancelled".asInstanceOf[BatchState]
+    val failed = "failed".asInstanceOf[BatchState]
+    val cancelled_running = "cancelled_running".asInstanceOf[BatchState]
     val cancelled_terminating = "cancelled_terminating".asInstanceOf[BatchState]
-    val modifying             = "modifying".asInstanceOf[BatchState]
+    val modifying = "modifying".asInstanceOf[BatchState]
 
     val values = js.Object.freeze(
       js.Array(submitted, active, cancelled, failed, cancelled_running, cancelled_terminating, modifying)
@@ -4398,7 +4398,7 @@ package ec2 {
     ): BundleInstanceRequest = {
       val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
-        "Storage"    -> Storage.asInstanceOf[js.Any]
+        "Storage" -> Storage.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -4490,13 +4490,13 @@ package ec2 {
   @js.native
   sealed trait BundleTaskState extends js.Any
   object BundleTaskState extends js.Object {
-    val pending                = "pending".asInstanceOf[BundleTaskState]
+    val pending = "pending".asInstanceOf[BundleTaskState]
     val `waiting-for-shutdown` = "waiting-for-shutdown".asInstanceOf[BundleTaskState]
-    val bundling               = "bundling".asInstanceOf[BundleTaskState]
-    val storing                = "storing".asInstanceOf[BundleTaskState]
-    val cancelling             = "cancelling".asInstanceOf[BundleTaskState]
-    val complete               = "complete".asInstanceOf[BundleTaskState]
-    val failed                 = "failed".asInstanceOf[BundleTaskState]
+    val bundling = "bundling".asInstanceOf[BundleTaskState]
+    val storing = "storing".asInstanceOf[BundleTaskState]
+    val cancelling = "cancelling".asInstanceOf[BundleTaskState]
+    val complete = "complete".asInstanceOf[BundleTaskState]
+    val failed = "failed".asInstanceOf[BundleTaskState]
 
     val values =
       js.Object.freeze(js.Array(pending, `waiting-for-shutdown`, bundling, storing, cancelling, complete, failed))
@@ -4533,13 +4533,13 @@ package ec2 {
   @js.native
   sealed trait ByoipCidrState extends js.Any
   object ByoipCidrState extends js.Object {
-    val advertised                              = "advertised".asInstanceOf[ByoipCidrState]
-    val deprovisioned                           = "deprovisioned".asInstanceOf[ByoipCidrState]
-    val `failed-deprovision`                    = "failed-deprovision".asInstanceOf[ByoipCidrState]
-    val `failed-provision`                      = "failed-provision".asInstanceOf[ByoipCidrState]
-    val `pending-deprovision`                   = "pending-deprovision".asInstanceOf[ByoipCidrState]
-    val `pending-provision`                     = "pending-provision".asInstanceOf[ByoipCidrState]
-    val provisioned                             = "provisioned".asInstanceOf[ByoipCidrState]
+    val advertised = "advertised".asInstanceOf[ByoipCidrState]
+    val deprovisioned = "deprovisioned".asInstanceOf[ByoipCidrState]
+    val `failed-deprovision` = "failed-deprovision".asInstanceOf[ByoipCidrState]
+    val `failed-provision` = "failed-provision".asInstanceOf[ByoipCidrState]
+    val `pending-deprovision` = "pending-deprovision".asInstanceOf[ByoipCidrState]
+    val `pending-provision` = "pending-provision".asInstanceOf[ByoipCidrState]
+    val provisioned = "provisioned".asInstanceOf[ByoipCidrState]
     val `provisioned-not-publicly-advertisable` = "provisioned-not-publicly-advertisable".asInstanceOf[ByoipCidrState]
 
     val values = js.Object.freeze(
@@ -4559,10 +4559,10 @@ package ec2 {
   @js.native
   sealed trait CancelBatchErrorCode extends js.Any
   object CancelBatchErrorCode extends js.Object {
-    val fleetRequestIdDoesNotExist        = "fleetRequestIdDoesNotExist".asInstanceOf[CancelBatchErrorCode]
-    val fleetRequestIdMalformed           = "fleetRequestIdMalformed".asInstanceOf[CancelBatchErrorCode]
+    val fleetRequestIdDoesNotExist = "fleetRequestIdDoesNotExist".asInstanceOf[CancelBatchErrorCode]
+    val fleetRequestIdMalformed = "fleetRequestIdMalformed".asInstanceOf[CancelBatchErrorCode]
     val fleetRequestNotInCancellableState = "fleetRequestNotInCancellableState".asInstanceOf[CancelBatchErrorCode]
-    val unexpectedError                   = "unexpectedError".asInstanceOf[CancelBatchErrorCode]
+    val unexpectedError = "unexpectedError".asInstanceOf[CancelBatchErrorCode]
 
     val values = js.Object.freeze(
       js.Array(fleetRequestIdDoesNotExist, fleetRequestIdMalformed, fleetRequestNotInCancellableState, unexpectedError)
@@ -4840,7 +4840,7 @@ package ec2 {
     ): CancelSpotFleetRequestsRequest = {
       val __obj = js.Dynamic.literal(
         "SpotFleetRequestIds" -> SpotFleetRequestIds.asInstanceOf[js.Any],
-        "TerminateInstances"  -> TerminateInstances.asInstanceOf[js.Any]
+        "TerminateInstances" -> TerminateInstances.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -4904,9 +4904,9 @@ package ec2 {
   @js.native
   sealed trait CancelSpotInstanceRequestState extends js.Any
   object CancelSpotInstanceRequestState extends js.Object {
-    val active    = "active".asInstanceOf[CancelSpotInstanceRequestState]
-    val open      = "open".asInstanceOf[CancelSpotInstanceRequestState]
-    val closed    = "closed".asInstanceOf[CancelSpotInstanceRequestState]
+    val active = "active".asInstanceOf[CancelSpotInstanceRequestState]
+    val open = "open".asInstanceOf[CancelSpotInstanceRequestState]
+    val closed = "closed".asInstanceOf[CancelSpotInstanceRequestState]
     val cancelled = "cancelled".asInstanceOf[CancelSpotInstanceRequestState]
     val completed = "completed".asInstanceOf[CancelSpotInstanceRequestState]
 
@@ -5053,11 +5053,11 @@ package ec2 {
   @js.native
   sealed trait CapacityReservationInstancePlatform extends js.Any
   object CapacityReservationInstancePlatform extends js.Object {
-    val `Linux/UNIX`               = "Linux/UNIX".asInstanceOf[CapacityReservationInstancePlatform]
+    val `Linux/UNIX` = "Linux/UNIX".asInstanceOf[CapacityReservationInstancePlatform]
     val `Red Hat Enterprise Linux` = "Red Hat Enterprise Linux".asInstanceOf[CapacityReservationInstancePlatform]
-    val `SUSE Linux`               = "SUSE Linux".asInstanceOf[CapacityReservationInstancePlatform]
-    val Windows                    = "Windows".asInstanceOf[CapacityReservationInstancePlatform]
-    val `Windows with SQL Server`  = "Windows with SQL Server".asInstanceOf[CapacityReservationInstancePlatform]
+    val `SUSE Linux` = "SUSE Linux".asInstanceOf[CapacityReservationInstancePlatform]
+    val Windows = "Windows".asInstanceOf[CapacityReservationInstancePlatform]
+    val `Windows with SQL Server` = "Windows with SQL Server".asInstanceOf[CapacityReservationInstancePlatform]
     val `Windows with SQL Server Enterprise` =
       "Windows with SQL Server Enterprise".asInstanceOf[CapacityReservationInstancePlatform]
     val `Windows with SQL Server Standard` =
@@ -5195,11 +5195,11 @@ package ec2 {
   @js.native
   sealed trait CapacityReservationState extends js.Any
   object CapacityReservationState extends js.Object {
-    val active    = "active".asInstanceOf[CapacityReservationState]
-    val expired   = "expired".asInstanceOf[CapacityReservationState]
+    val active = "active".asInstanceOf[CapacityReservationState]
+    val expired = "expired".asInstanceOf[CapacityReservationState]
     val cancelled = "cancelled".asInstanceOf[CapacityReservationState]
-    val pending   = "pending".asInstanceOf[CapacityReservationState]
-    val failed    = "failed".asInstanceOf[CapacityReservationState]
+    val pending = "pending".asInstanceOf[CapacityReservationState]
+    val failed = "failed".asInstanceOf[CapacityReservationState]
 
     val values = js.Object.freeze(js.Array(active, expired, cancelled, pending, failed))
   }
@@ -5245,7 +5245,7 @@ package ec2 {
   @js.native
   sealed trait CapacityReservationTenancy extends js.Any
   object CapacityReservationTenancy extends js.Object {
-    val default   = "default".asInstanceOf[CapacityReservationTenancy]
+    val default = "default".asInstanceOf[CapacityReservationTenancy]
     val dedicated = "dedicated".asInstanceOf[CapacityReservationTenancy]
 
     val values = js.Object.freeze(js.Array(default, dedicated))
@@ -5309,7 +5309,7 @@ package ec2 {
         Signature: String
     ): CidrAuthorizationContext = {
       val __obj = js.Dynamic.literal(
-        "Message"   -> Message.asInstanceOf[js.Any],
+        "Message" -> Message.asInstanceOf[js.Any],
         "Signature" -> Signature.asInstanceOf[js.Any]
       )
 
@@ -5450,7 +5450,7 @@ package ec2 {
   sealed trait ClientCertificateRevocationListStatusCode extends js.Any
   object ClientCertificateRevocationListStatusCode extends js.Object {
     val pending = "pending".asInstanceOf[ClientCertificateRevocationListStatusCode]
-    val active  = "active".asInstanceOf[ClientCertificateRevocationListStatusCode]
+    val active = "active".asInstanceOf[ClientCertificateRevocationListStatusCode]
 
     val values = js.Object.freeze(js.Array(pending, active))
   }
@@ -5578,9 +5578,9 @@ package ec2 {
   sealed trait ClientVpnAuthorizationRuleStatusCode extends js.Any
   object ClientVpnAuthorizationRuleStatusCode extends js.Object {
     val authorizing = "authorizing".asInstanceOf[ClientVpnAuthorizationRuleStatusCode]
-    val active      = "active".asInstanceOf[ClientVpnAuthorizationRuleStatusCode]
-    val failed      = "failed".asInstanceOf[ClientVpnAuthorizationRuleStatusCode]
-    val revoking    = "revoking".asInstanceOf[ClientVpnAuthorizationRuleStatusCode]
+    val active = "active".asInstanceOf[ClientVpnAuthorizationRuleStatusCode]
+    val failed = "failed".asInstanceOf[ClientVpnAuthorizationRuleStatusCode]
+    val revoking = "revoking".asInstanceOf[ClientVpnAuthorizationRuleStatusCode]
 
     val values = js.Object.freeze(js.Array(authorizing, active, failed, revoking))
   }
@@ -5667,10 +5667,10 @@ package ec2 {
   @js.native
   sealed trait ClientVpnConnectionStatusCode extends js.Any
   object ClientVpnConnectionStatusCode extends js.Object {
-    val active                = "active".asInstanceOf[ClientVpnConnectionStatusCode]
+    val active = "active".asInstanceOf[ClientVpnConnectionStatusCode]
     val `failed-to-terminate` = "failed-to-terminate".asInstanceOf[ClientVpnConnectionStatusCode]
-    val terminating           = "terminating".asInstanceOf[ClientVpnConnectionStatusCode]
-    val terminated            = "terminated".asInstanceOf[ClientVpnConnectionStatusCode]
+    val terminating = "terminating".asInstanceOf[ClientVpnConnectionStatusCode]
+    val terminated = "terminated".asInstanceOf[ClientVpnConnectionStatusCode]
 
     val values = js.Object.freeze(js.Array(active, `failed-to-terminate`, terminating, terminated))
   }
@@ -5774,9 +5774,9 @@ package ec2 {
   sealed trait ClientVpnEndpointStatusCode extends js.Any
   object ClientVpnEndpointStatusCode extends js.Object {
     val `pending-associate` = "pending-associate".asInstanceOf[ClientVpnEndpointStatusCode]
-    val available           = "available".asInstanceOf[ClientVpnEndpointStatusCode]
-    val deleting            = "deleting".asInstanceOf[ClientVpnEndpointStatusCode]
-    val deleted             = "deleted".asInstanceOf[ClientVpnEndpointStatusCode]
+    val available = "available".asInstanceOf[ClientVpnEndpointStatusCode]
+    val deleting = "deleting".asInstanceOf[ClientVpnEndpointStatusCode]
+    val deleted = "deleted".asInstanceOf[ClientVpnEndpointStatusCode]
 
     val values = js.Object.freeze(js.Array(`pending-associate`, available, deleting, deleted))
   }
@@ -5844,8 +5844,8 @@ package ec2 {
   sealed trait ClientVpnRouteStatusCode extends js.Any
   object ClientVpnRouteStatusCode extends js.Object {
     val creating = "creating".asInstanceOf[ClientVpnRouteStatusCode]
-    val active   = "active".asInstanceOf[ClientVpnRouteStatusCode]
-    val failed   = "failed".asInstanceOf[ClientVpnRouteStatusCode]
+    val active = "active".asInstanceOf[ClientVpnRouteStatusCode]
+    val failed = "failed".asInstanceOf[ClientVpnRouteStatusCode]
     val deleting = "deleting".asInstanceOf[ClientVpnRouteStatusCode]
 
     val values = js.Object.freeze(js.Array(creating, active, failed, deleting))
@@ -5922,7 +5922,7 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): ConfirmProductInstanceRequest = {
       val __obj = js.Dynamic.literal(
-        "InstanceId"  -> InstanceId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "ProductCode" -> ProductCode.asInstanceOf[js.Any]
       )
 
@@ -6046,7 +6046,7 @@ package ec2 {
   @js.native
   sealed trait ConnectionNotificationState extends js.Any
   object ConnectionNotificationState extends js.Object {
-    val Enabled  = "Enabled".asInstanceOf[ConnectionNotificationState]
+    val Enabled = "Enabled".asInstanceOf[ConnectionNotificationState]
     val Disabled = "Disabled".asInstanceOf[ConnectionNotificationState]
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
@@ -6108,10 +6108,10 @@ package ec2 {
   @js.native
   sealed trait ConversionTaskState extends js.Any
   object ConversionTaskState extends js.Object {
-    val active     = "active".asInstanceOf[ConversionTaskState]
+    val active = "active".asInstanceOf[ConversionTaskState]
     val cancelling = "cancelling".asInstanceOf[ConversionTaskState]
-    val cancelled  = "cancelled".asInstanceOf[ConversionTaskState]
-    val completed  = "completed".asInstanceOf[ConversionTaskState]
+    val cancelled = "cancelled".asInstanceOf[ConversionTaskState]
+    val completed = "completed".asInstanceOf[ConversionTaskState]
 
     val values = js.Object.freeze(js.Array(active, cancelling, cancelled, completed))
   }
@@ -6138,7 +6138,7 @@ package ec2 {
     ): CopyFpgaImageRequest = {
       val __obj = js.Dynamic.literal(
         "SourceFpgaImageId" -> SourceFpgaImageId.asInstanceOf[js.Any],
-        "SourceRegion"      -> SourceRegion.asInstanceOf[js.Any]
+        "SourceRegion" -> SourceRegion.asInstanceOf[js.Any]
       )
 
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
@@ -6193,9 +6193,9 @@ package ec2 {
         KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
     ): CopyImageRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"          -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "SourceImageId" -> SourceImageId.asInstanceOf[js.Any],
-        "SourceRegion"  -> SourceRegion.asInstanceOf[js.Any]
+        "SourceRegion" -> SourceRegion.asInstanceOf[js.Any]
       )
 
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
@@ -6253,7 +6253,7 @@ package ec2 {
         TagSpecifications: js.UndefOr[TagSpecificationList] = js.undefined
     ): CopySnapshotRequest = {
       val __obj = js.Dynamic.literal(
-        "SourceRegion"     -> SourceRegion.asInstanceOf[js.Any],
+        "SourceRegion" -> SourceRegion.asInstanceOf[js.Any],
         "SourceSnapshotId" -> SourceSnapshotId.asInstanceOf[js.Any]
       )
 
@@ -6376,9 +6376,9 @@ package ec2 {
         Tenancy: js.UndefOr[CapacityReservationTenancy] = js.undefined
     ): CreateCapacityReservationRequest = {
       val __obj = js.Dynamic.literal(
-        "InstanceCount"    -> InstanceCount.asInstanceOf[js.Any],
+        "InstanceCount" -> InstanceCount.asInstanceOf[js.Any],
         "InstancePlatform" -> InstancePlatform.asInstanceOf[js.Any],
-        "InstanceType"     -> InstanceType.asInstanceOf[js.Any]
+        "InstanceType" -> InstanceType.asInstanceOf[js.Any]
       )
 
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
@@ -6450,9 +6450,9 @@ package ec2 {
     ): CreateClientVpnEndpointRequest = {
       val __obj = js.Dynamic.literal(
         "AuthenticationOptions" -> AuthenticationOptions.asInstanceOf[js.Any],
-        "ClientCidrBlock"       -> ClientCidrBlock.asInstanceOf[js.Any],
-        "ConnectionLogOptions"  -> ConnectionLogOptions.asInstanceOf[js.Any],
-        "ServerCertificateArn"  -> ServerCertificateArn.asInstanceOf[js.Any]
+        "ClientCidrBlock" -> ClientCidrBlock.asInstanceOf[js.Any],
+        "ConnectionLogOptions" -> ConnectionLogOptions.asInstanceOf[js.Any],
+        "ServerCertificateArn" -> ServerCertificateArn.asInstanceOf[js.Any]
       )
 
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
@@ -6512,9 +6512,9 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): CreateClientVpnRouteRequest = {
       val __obj = js.Dynamic.literal(
-        "ClientVpnEndpointId"  -> ClientVpnEndpointId.asInstanceOf[js.Any],
+        "ClientVpnEndpointId" -> ClientVpnEndpointId.asInstanceOf[js.Any],
         "DestinationCidrBlock" -> DestinationCidrBlock.asInstanceOf[js.Any],
-        "TargetVpcSubnetId"    -> TargetVpcSubnetId.asInstanceOf[js.Any]
+        "TargetVpcSubnetId" -> TargetVpcSubnetId.asInstanceOf[js.Any]
       )
 
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
@@ -6565,7 +6565,7 @@ package ec2 {
     ): CreateCustomerGatewayRequest = {
       val __obj = js.Dynamic.literal(
         "BgpAsn" -> BgpAsn.asInstanceOf[js.Any],
-        "Type"   -> Type.asInstanceOf[js.Any]
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       CertificateArn.foreach(__v => __obj.updateDynamic("CertificateArn")(__v.asInstanceOf[js.Any]))
@@ -6850,7 +6850,7 @@ package ec2 {
         ValidUntil: js.UndefOr[DateTime] = js.undefined
     ): CreateFleetRequest = {
       val __obj = js.Dynamic.literal(
-        "LaunchTemplateConfigs"       -> LaunchTemplateConfigs.asInstanceOf[js.Any],
+        "LaunchTemplateConfigs" -> LaunchTemplateConfigs.asInstanceOf[js.Any],
         "TargetCapacitySpecification" -> TargetCapacitySpecification.asInstanceOf[js.Any]
       )
 
@@ -6930,9 +6930,9 @@ package ec2 {
         TagSpecifications: js.UndefOr[TagSpecificationList] = js.undefined
     ): CreateFlowLogsRequest = {
       val __obj = js.Dynamic.literal(
-        "ResourceIds"  -> ResourceIds.asInstanceOf[js.Any],
+        "ResourceIds" -> ResourceIds.asInstanceOf[js.Any],
         "ResourceType" -> ResourceType.asInstanceOf[js.Any],
-        "TrafficType"  -> TrafficType.asInstanceOf[js.Any]
+        "TrafficType" -> TrafficType.asInstanceOf[js.Any]
       )
 
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
@@ -7047,7 +7047,7 @@ package ec2 {
     ): CreateImageRequest = {
       val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
-        "Name"       -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       BlockDeviceMappings.foreach(__v => __obj.updateDynamic("BlockDeviceMappings")(__v.asInstanceOf[js.Any]))
@@ -7303,8 +7303,8 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): CreateLocalGatewayRouteRequest = {
       val __obj = js.Dynamic.literal(
-        "DestinationCidrBlock"                -> DestinationCidrBlock.asInstanceOf[js.Any],
-        "LocalGatewayRouteTableId"            -> LocalGatewayRouteTableId.asInstanceOf[js.Any],
+        "DestinationCidrBlock" -> DestinationCidrBlock.asInstanceOf[js.Any],
+        "LocalGatewayRouteTableId" -> LocalGatewayRouteTableId.asInstanceOf[js.Any],
         "LocalGatewayVirtualInterfaceGroupId" -> LocalGatewayVirtualInterfaceGroupId.asInstanceOf[js.Any]
       )
 
@@ -7347,7 +7347,7 @@ package ec2 {
     ): CreateLocalGatewayRouteTableVpcAssociationRequest = {
       val __obj = js.Dynamic.literal(
         "LocalGatewayRouteTableId" -> LocalGatewayRouteTableId.asInstanceOf[js.Any],
-        "VpcId"                    -> VpcId.asInstanceOf[js.Any]
+        "VpcId" -> VpcId.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -7397,8 +7397,8 @@ package ec2 {
         TagSpecifications: js.UndefOr[TagSpecificationList] = js.undefined
     ): CreateManagedPrefixListRequest = {
       val __obj = js.Dynamic.literal(
-        "AddressFamily"  -> AddressFamily.asInstanceOf[js.Any],
-        "MaxEntries"     -> MaxEntries.asInstanceOf[js.Any],
+        "AddressFamily" -> AddressFamily.asInstanceOf[js.Any],
+        "MaxEntries" -> MaxEntries.asInstanceOf[js.Any],
         "PrefixListName" -> PrefixListName.asInstanceOf[js.Any]
       )
 
@@ -7446,7 +7446,7 @@ package ec2 {
     ): CreateNatGatewayRequest = {
       val __obj = js.Dynamic.literal(
         "AllocationId" -> AllocationId.asInstanceOf[js.Any],
-        "SubnetId"     -> SubnetId.asInstanceOf[js.Any]
+        "SubnetId" -> SubnetId.asInstanceOf[js.Any]
       )
 
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
@@ -7504,11 +7504,11 @@ package ec2 {
         PortRange: js.UndefOr[PortRange] = js.undefined
     ): CreateNetworkAclEntryRequest = {
       val __obj = js.Dynamic.literal(
-        "Egress"       -> Egress.asInstanceOf[js.Any],
+        "Egress" -> Egress.asInstanceOf[js.Any],
         "NetworkAclId" -> NetworkAclId.asInstanceOf[js.Any],
-        "Protocol"     -> Protocol.asInstanceOf[js.Any],
-        "RuleAction"   -> RuleAction.asInstanceOf[js.Any],
-        "RuleNumber"   -> RuleNumber.asInstanceOf[js.Any]
+        "Protocol" -> Protocol.asInstanceOf[js.Any],
+        "RuleAction" -> RuleAction.asInstanceOf[js.Any],
+        "RuleNumber" -> RuleNumber.asInstanceOf[js.Any]
       )
 
       CidrBlock.foreach(__v => __obj.updateDynamic("CidrBlock")(__v.asInstanceOf[js.Any]))
@@ -7583,7 +7583,7 @@ package ec2 {
     ): CreateNetworkInterfacePermissionRequest = {
       val __obj = js.Dynamic.literal(
         "NetworkInterfaceId" -> NetworkInterfaceId.asInstanceOf[js.Any],
-        "Permission"         -> Permission.asInstanceOf[js.Any]
+        "Permission" -> Permission.asInstanceOf[js.Any]
       )
 
       AwsAccountId.foreach(__v => __obj.updateDynamic("AwsAccountId")(__v.asInstanceOf[js.Any]))
@@ -7748,9 +7748,9 @@ package ec2 {
         ReservedInstancesId: ReservationId
     ): CreateReservedInstancesListingRequest = {
       val __obj = js.Dynamic.literal(
-        "ClientToken"         -> ClientToken.asInstanceOf[js.Any],
-        "InstanceCount"       -> InstanceCount.asInstanceOf[js.Any],
-        "PriceSchedules"      -> PriceSchedules.asInstanceOf[js.Any],
+        "ClientToken" -> ClientToken.asInstanceOf[js.Any],
+        "InstanceCount" -> InstanceCount.asInstanceOf[js.Any],
+        "PriceSchedules" -> PriceSchedules.asInstanceOf[js.Any],
         "ReservedInstancesId" -> ReservedInstancesId.asInstanceOf[js.Any]
       )
 
@@ -7908,7 +7908,7 @@ package ec2 {
     ): CreateSecurityGroupRequest = {
       val __obj = js.Dynamic.literal(
         "Description" -> Description.asInstanceOf[js.Any],
-        "GroupName"   -> GroupName.asInstanceOf[js.Any]
+        "GroupName" -> GroupName.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -8082,7 +8082,7 @@ package ec2 {
     ): CreateSubnetRequest = {
       val __obj = js.Dynamic.literal(
         "CidrBlock" -> CidrBlock.asInstanceOf[js.Any],
-        "VpcId"     -> VpcId.asInstanceOf[js.Any]
+        "VpcId" -> VpcId.asInstanceOf[js.Any]
       )
 
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
@@ -8127,7 +8127,7 @@ package ec2 {
     ): CreateTagsRequest = {
       val __obj = js.Dynamic.literal(
         "Resources" -> Resources.asInstanceOf[js.Any],
-        "Tags"      -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -8212,11 +8212,11 @@ package ec2 {
         SourcePortRange: js.UndefOr[TrafficMirrorPortRangeRequest] = js.undefined
     ): CreateTrafficMirrorFilterRuleRequest = {
       val __obj = js.Dynamic.literal(
-        "DestinationCidrBlock"  -> DestinationCidrBlock.asInstanceOf[js.Any],
-        "RuleAction"            -> RuleAction.asInstanceOf[js.Any],
-        "RuleNumber"            -> RuleNumber.asInstanceOf[js.Any],
-        "SourceCidrBlock"       -> SourceCidrBlock.asInstanceOf[js.Any],
-        "TrafficDirection"      -> TrafficDirection.asInstanceOf[js.Any],
+        "DestinationCidrBlock" -> DestinationCidrBlock.asInstanceOf[js.Any],
+        "RuleAction" -> RuleAction.asInstanceOf[js.Any],
+        "RuleNumber" -> RuleNumber.asInstanceOf[js.Any],
+        "SourceCidrBlock" -> SourceCidrBlock.asInstanceOf[js.Any],
+        "TrafficDirection" -> TrafficDirection.asInstanceOf[js.Any],
         "TrafficMirrorFilterId" -> TrafficMirrorFilterId.asInstanceOf[js.Any]
       )
 
@@ -8278,8 +8278,8 @@ package ec2 {
         VirtualNetworkId: js.UndefOr[Int] = js.undefined
     ): CreateTrafficMirrorSessionRequest = {
       val __obj = js.Dynamic.literal(
-        "NetworkInterfaceId"    -> NetworkInterfaceId.asInstanceOf[js.Any],
-        "SessionNumber"         -> SessionNumber.asInstanceOf[js.Any],
+        "NetworkInterfaceId" -> NetworkInterfaceId.asInstanceOf[js.Any],
+        "SessionNumber" -> SessionNumber.asInstanceOf[js.Any],
         "TrafficMirrorFilterId" -> TrafficMirrorFilterId.asInstanceOf[js.Any],
         "TrafficMirrorTargetId" -> TrafficMirrorTargetId.asInstanceOf[js.Any]
       )
@@ -8426,10 +8426,10 @@ package ec2 {
         TagSpecifications: js.UndefOr[TagSpecificationList] = js.undefined
     ): CreateTransitGatewayPeeringAttachmentRequest = {
       val __obj = js.Dynamic.literal(
-        "PeerAccountId"        -> PeerAccountId.asInstanceOf[js.Any],
-        "PeerRegion"           -> PeerRegion.asInstanceOf[js.Any],
+        "PeerAccountId" -> PeerAccountId.asInstanceOf[js.Any],
+        "PeerRegion" -> PeerRegion.asInstanceOf[js.Any],
         "PeerTransitGatewayId" -> PeerTransitGatewayId.asInstanceOf[js.Any],
-        "TransitGatewayId"     -> TransitGatewayId.asInstanceOf[js.Any]
+        "TransitGatewayId" -> TransitGatewayId.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -8516,7 +8516,7 @@ package ec2 {
         TransitGatewayAttachmentId: js.UndefOr[TransitGatewayAttachmentId] = js.undefined
     ): CreateTransitGatewayRouteRequest = {
       val __obj = js.Dynamic.literal(
-        "DestinationCidrBlock"       -> DestinationCidrBlock.asInstanceOf[js.Any],
+        "DestinationCidrBlock" -> DestinationCidrBlock.asInstanceOf[js.Any],
         "TransitGatewayRouteTableId" -> TransitGatewayRouteTableId.asInstanceOf[js.Any]
       )
 
@@ -8606,9 +8606,9 @@ package ec2 {
         TagSpecifications: js.UndefOr[TagSpecificationList] = js.undefined
     ): CreateTransitGatewayVpcAttachmentRequest = {
       val __obj = js.Dynamic.literal(
-        "SubnetIds"        -> SubnetIds.asInstanceOf[js.Any],
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any],
         "TransitGatewayId" -> TransitGatewayId.asInstanceOf[js.Any],
-        "VpcId"            -> VpcId.asInstanceOf[js.Any]
+        "VpcId" -> VpcId.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -8771,7 +8771,7 @@ package ec2 {
         VpcEndpointId: js.UndefOr[VpcEndpointId] = js.undefined
     ): CreateVpcEndpointConnectionNotificationRequest = {
       val __obj = js.Dynamic.literal(
-        "ConnectionEvents"          -> ConnectionEvents.asInstanceOf[js.Any],
+        "ConnectionEvents" -> ConnectionEvents.asInstanceOf[js.Any],
         "ConnectionNotificationArn" -> ConnectionNotificationArn.asInstanceOf[js.Any]
       )
 
@@ -8837,7 +8837,7 @@ package ec2 {
     ): CreateVpcEndpointRequest = {
       val __obj = js.Dynamic.literal(
         "ServiceName" -> ServiceName.asInstanceOf[js.Any],
-        "VpcId"       -> VpcId.asInstanceOf[js.Any]
+        "VpcId" -> VpcId.asInstanceOf[js.Any]
       )
 
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
@@ -9055,7 +9055,7 @@ package ec2 {
     ): CreateVpnConnectionRequest = {
       val __obj = js.Dynamic.literal(
         "CustomerGatewayId" -> CustomerGatewayId.asInstanceOf[js.Any],
-        "Type"              -> Type.asInstanceOf[js.Any]
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -9102,7 +9102,7 @@ package ec2 {
     ): CreateVpnConnectionRouteRequest = {
       val __obj = js.Dynamic.literal(
         "DestinationCidrBlock" -> DestinationCidrBlock.asInstanceOf[js.Any],
-        "VpnConnectionId"      -> VpnConnectionId.asInstanceOf[js.Any]
+        "VpnConnectionId" -> VpnConnectionId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateVpnConnectionRouteRequest]
@@ -9249,7 +9249,7 @@ package ec2 {
   @js.native
   sealed trait DatafeedSubscriptionState extends js.Any
   object DatafeedSubscriptionState extends js.Object {
-    val Active   = "Active".asInstanceOf[DatafeedSubscriptionState]
+    val Active = "Active".asInstanceOf[DatafeedSubscriptionState]
     val Inactive = "Inactive".asInstanceOf[DatafeedSubscriptionState]
 
     val values = js.Object.freeze(js.Array(Active, Inactive))
@@ -9258,7 +9258,7 @@ package ec2 {
   @js.native
   sealed trait DefaultRouteTableAssociationValue extends js.Any
   object DefaultRouteTableAssociationValue extends js.Object {
-    val enable  = "enable".asInstanceOf[DefaultRouteTableAssociationValue]
+    val enable = "enable".asInstanceOf[DefaultRouteTableAssociationValue]
     val disable = "disable".asInstanceOf[DefaultRouteTableAssociationValue]
 
     val values = js.Object.freeze(js.Array(enable, disable))
@@ -9267,7 +9267,7 @@ package ec2 {
   @js.native
   sealed trait DefaultRouteTablePropagationValue extends js.Any
   object DefaultRouteTablePropagationValue extends js.Object {
-    val enable  = "enable".asInstanceOf[DefaultRouteTablePropagationValue]
+    val enable = "enable".asInstanceOf[DefaultRouteTablePropagationValue]
     val disable = "disable".asInstanceOf[DefaultRouteTablePropagationValue]
 
     val values = js.Object.freeze(js.Array(enable, disable))
@@ -9276,7 +9276,7 @@ package ec2 {
   @js.native
   sealed trait DefaultTargetCapacityType extends js.Any
   object DefaultTargetCapacityType extends js.Object {
-    val spot        = "spot".asInstanceOf[DefaultTargetCapacityType]
+    val spot = "spot".asInstanceOf[DefaultTargetCapacityType]
     val `on-demand` = "on-demand".asInstanceOf[DefaultTargetCapacityType]
 
     val values = js.Object.freeze(js.Array(spot, `on-demand`))
@@ -9336,7 +9336,7 @@ package ec2 {
         TargetVpcSubnetId: js.UndefOr[SubnetId] = js.undefined
     ): DeleteClientVpnRouteRequest = {
       val __obj = js.Dynamic.literal(
-        "ClientVpnEndpointId"  -> ClientVpnEndpointId.asInstanceOf[js.Any],
+        "ClientVpnEndpointId" -> ClientVpnEndpointId.asInstanceOf[js.Any],
         "DestinationCidrBlock" -> DestinationCidrBlock.asInstanceOf[js.Any]
       )
 
@@ -9469,10 +9469,10 @@ package ec2 {
   @js.native
   sealed trait DeleteFleetErrorCode extends js.Any
   object DeleteFleetErrorCode extends js.Object {
-    val fleetIdDoesNotExist      = "fleetIdDoesNotExist".asInstanceOf[DeleteFleetErrorCode]
-    val fleetIdMalformed         = "fleetIdMalformed".asInstanceOf[DeleteFleetErrorCode]
+    val fleetIdDoesNotExist = "fleetIdDoesNotExist".asInstanceOf[DeleteFleetErrorCode]
+    val fleetIdMalformed = "fleetIdMalformed".asInstanceOf[DeleteFleetErrorCode]
     val fleetNotInDeletableState = "fleetNotInDeletableState".asInstanceOf[DeleteFleetErrorCode]
-    val unexpectedError          = "unexpectedError".asInstanceOf[DeleteFleetErrorCode]
+    val unexpectedError = "unexpectedError".asInstanceOf[DeleteFleetErrorCode]
 
     val values =
       js.Object.freeze(js.Array(fleetIdDoesNotExist, fleetIdMalformed, fleetNotInDeletableState, unexpectedError))
@@ -9540,7 +9540,7 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): DeleteFleetsRequest = {
       val __obj = js.Dynamic.literal(
-        "FleetIds"           -> FleetIds.asInstanceOf[js.Any],
+        "FleetIds" -> FleetIds.asInstanceOf[js.Any],
         "TerminateInstances" -> TerminateInstances.asInstanceOf[js.Any]
       )
 
@@ -9845,7 +9845,7 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): DeleteLocalGatewayRouteRequest = {
       val __obj = js.Dynamic.literal(
-        "DestinationCidrBlock"     -> DestinationCidrBlock.asInstanceOf[js.Any],
+        "DestinationCidrBlock" -> DestinationCidrBlock.asInstanceOf[js.Any],
         "LocalGatewayRouteTableId" -> LocalGatewayRouteTableId.asInstanceOf[js.Any]
       )
 
@@ -10000,9 +10000,9 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): DeleteNetworkAclEntryRequest = {
       val __obj = js.Dynamic.literal(
-        "Egress"       -> Egress.asInstanceOf[js.Any],
+        "Egress" -> Egress.asInstanceOf[js.Any],
         "NetworkAclId" -> NetworkAclId.asInstanceOf[js.Any],
-        "RuleNumber"   -> RuleNumber.asInstanceOf[js.Any]
+        "RuleNumber" -> RuleNumber.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -10640,7 +10640,7 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): DeleteTransitGatewayRouteRequest = {
       val __obj = js.Dynamic.literal(
-        "DestinationCidrBlock"       -> DestinationCidrBlock.asInstanceOf[js.Any],
+        "DestinationCidrBlock" -> DestinationCidrBlock.asInstanceOf[js.Any],
         "TransitGatewayRouteTableId" -> TransitGatewayRouteTableId.asInstanceOf[js.Any]
       )
 
@@ -10978,7 +10978,7 @@ package ec2 {
     ): DeleteVpnConnectionRouteRequest = {
       val __obj = js.Dynamic.literal(
         "DestinationCidrBlock" -> DestinationCidrBlock.asInstanceOf[js.Any],
-        "VpnConnectionId"      -> VpnConnectionId.asInstanceOf[js.Any]
+        "VpnConnectionId" -> VpnConnectionId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteVpnConnectionRouteRequest]
@@ -12293,7 +12293,7 @@ package ec2 {
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeFleetHistoryRequest = {
       val __obj = js.Dynamic.literal(
-        "FleetId"   -> FleetId.asInstanceOf[js.Any],
+        "FleetId" -> FleetId.asInstanceOf[js.Any],
         "StartTime" -> StartTime.asInstanceOf[js.Any]
       )
 
@@ -12527,7 +12527,7 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): DescribeFpgaImageAttributeRequest = {
       val __obj = js.Dynamic.literal(
-        "Attribute"   -> Attribute.asInstanceOf[js.Any],
+        "Attribute" -> Attribute.asInstanceOf[js.Any],
         "FpgaImageId" -> FpgaImageId.asInstanceOf[js.Any]
       )
 
@@ -12874,7 +12874,7 @@ package ec2 {
     ): DescribeImageAttributeRequest = {
       val __obj = js.Dynamic.literal(
         "Attribute" -> Attribute.asInstanceOf[js.Any],
-        "ImageId"   -> ImageId.asInstanceOf[js.Any]
+        "ImageId" -> ImageId.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -13035,7 +13035,7 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): DescribeInstanceAttributeRequest = {
       val __obj = js.Dynamic.literal(
-        "Attribute"  -> Attribute.asInstanceOf[js.Any],
+        "Attribute" -> Attribute.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
@@ -14753,7 +14753,7 @@ package ec2 {
     ): DescribeScheduledInstanceAvailabilityRequest = {
       val __obj = js.Dynamic.literal(
         "FirstSlotStartTimeRange" -> FirstSlotStartTimeRange.asInstanceOf[js.Any],
-        "Recurrence"              -> Recurrence.asInstanceOf[js.Any]
+        "Recurrence" -> Recurrence.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -14950,7 +14950,7 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): DescribeSnapshotAttributeRequest = {
       val __obj = js.Dynamic.literal(
-        "Attribute"  -> Attribute.asInstanceOf[js.Any],
+        "Attribute" -> Attribute.asInstanceOf[js.Any],
         "SnapshotId" -> SnapshotId.asInstanceOf[js.Any]
       )
 
@@ -15152,7 +15152,7 @@ package ec2 {
     ): DescribeSpotFleetRequestHistoryRequest = {
       val __obj = js.Dynamic.literal(
         "SpotFleetRequestId" -> SpotFleetRequestId.asInstanceOf[js.Any],
-        "StartTime"          -> StartTime.asInstanceOf[js.Any]
+        "StartTime" -> StartTime.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -15958,7 +15958,7 @@ package ec2 {
     ): DescribeVolumeAttributeRequest = {
       val __obj = js.Dynamic.literal(
         "Attribute" -> Attribute.asInstanceOf[js.Any],
-        "VolumeId"  -> VolumeId.asInstanceOf[js.Any]
+        "VolumeId" -> VolumeId.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -16145,7 +16145,7 @@ package ec2 {
     ): DescribeVpcAttributeRequest = {
       val __obj = js.Dynamic.literal(
         "Attribute" -> Attribute.asInstanceOf[js.Any],
-        "VpcId"     -> VpcId.asInstanceOf[js.Any]
+        "VpcId" -> VpcId.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -16750,7 +16750,7 @@ package ec2 {
     ): DetachClassicLinkVpcRequest = {
       val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
-        "VpcId"      -> VpcId.asInstanceOf[js.Any]
+        "VpcId" -> VpcId.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -16790,7 +16790,7 @@ package ec2 {
     ): DetachInternetGatewayRequest = {
       val __obj = js.Dynamic.literal(
         "InternetGatewayId" -> InternetGatewayId.asInstanceOf[js.Any],
-        "VpcId"             -> VpcId.asInstanceOf[js.Any]
+        "VpcId" -> VpcId.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -16873,7 +16873,7 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): DetachVpnGatewayRequest = {
       val __obj = js.Dynamic.literal(
-        "VpcId"        -> VpcId.asInstanceOf[js.Any],
+        "VpcId" -> VpcId.asInstanceOf[js.Any],
         "VpnGatewayId" -> VpnGatewayId.asInstanceOf[js.Any]
       )
 
@@ -16885,7 +16885,7 @@ package ec2 {
   @js.native
   sealed trait DeviceType extends js.Any
   object DeviceType extends js.Object {
-    val ebs              = "ebs".asInstanceOf[DeviceType]
+    val ebs = "ebs".asInstanceOf[DeviceType]
     val `instance-store` = "instance-store".asInstanceOf[DeviceType]
 
     val values = js.Object.freeze(js.Array(ebs, `instance-store`))
@@ -17229,7 +17229,7 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): DisableVgwRoutePropagationRequest = {
       val __obj = js.Dynamic.literal(
-        "GatewayId"    -> GatewayId.asInstanceOf[js.Any],
+        "GatewayId" -> GatewayId.asInstanceOf[js.Any],
         "RouteTableId" -> RouteTableId.asInstanceOf[js.Any]
       )
 
@@ -17344,7 +17344,7 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): DisassociateClientVpnTargetNetworkRequest = {
       val __obj = js.Dynamic.literal(
-        "AssociationId"       -> AssociationId.asInstanceOf[js.Any],
+        "AssociationId" -> AssociationId.asInstanceOf[js.Any],
         "ClientVpnEndpointId" -> ClientVpnEndpointId.asInstanceOf[js.Any]
       )
 
@@ -17662,8 +17662,8 @@ package ec2 {
         ImportManifestUrl: String
     ): DiskImageDetail = {
       val __obj = js.Dynamic.literal(
-        "Bytes"             -> Bytes.asInstanceOf[js.Any],
-        "Format"            -> Format.asInstanceOf[js.Any],
+        "Bytes" -> Bytes.asInstanceOf[js.Any],
+        "Format" -> Format.asInstanceOf[js.Any],
         "ImportManifestUrl" -> ImportManifestUrl.asInstanceOf[js.Any]
       )
 
@@ -17675,8 +17675,8 @@ package ec2 {
   sealed trait DiskImageFormat extends js.Any
   object DiskImageFormat extends js.Object {
     val VMDK = "VMDK".asInstanceOf[DiskImageFormat]
-    val RAW  = "RAW".asInstanceOf[DiskImageFormat]
-    val VHD  = "VHD".asInstanceOf[DiskImageFormat]
+    val RAW = "RAW".asInstanceOf[DiskImageFormat]
+    val VHD = "VHD".asInstanceOf[DiskImageFormat]
 
     val values = js.Object.freeze(js.Array(VMDK, RAW, VHD))
   }
@@ -17763,8 +17763,8 @@ package ec2 {
   sealed trait DnsNameState extends js.Any
   object DnsNameState extends js.Object {
     val pendingVerification = "pendingVerification".asInstanceOf[DnsNameState]
-    val verified            = "verified".asInstanceOf[DnsNameState]
-    val failed              = "failed".asInstanceOf[DnsNameState]
+    val verified = "verified".asInstanceOf[DnsNameState]
+    val failed = "failed".asInstanceOf[DnsNameState]
 
     val values = js.Object.freeze(js.Array(pendingVerification, verified, failed))
   }
@@ -17794,7 +17794,7 @@ package ec2 {
   @js.native
   sealed trait DnsSupportValue extends js.Any
   object DnsSupportValue extends js.Object {
-    val enable  = "enable".asInstanceOf[DnsSupportValue]
+    val enable = "enable".asInstanceOf[DnsSupportValue]
     val disable = "disable".asInstanceOf[DnsSupportValue]
 
     val values = js.Object.freeze(js.Array(enable, disable))
@@ -17803,7 +17803,7 @@ package ec2 {
   @js.native
   sealed trait DomainType extends js.Any
   object DomainType extends js.Object {
-    val vpc      = "vpc".asInstanceOf[DomainType]
+    val vpc = "vpc".asInstanceOf[DomainType]
     val standard = "standard".asInstanceOf[DomainType]
 
     val values = js.Object.freeze(js.Array(vpc, standard))
@@ -17850,7 +17850,7 @@ package ec2 {
   sealed trait EbsEncryptionSupport extends js.Any
   object EbsEncryptionSupport extends js.Object {
     val unsupported = "unsupported".asInstanceOf[EbsEncryptionSupport]
-    val supported   = "supported".asInstanceOf[EbsEncryptionSupport]
+    val supported = "supported".asInstanceOf[EbsEncryptionSupport]
 
     val values = js.Object.freeze(js.Array(unsupported, supported))
   }
@@ -17937,8 +17937,8 @@ package ec2 {
   sealed trait EbsNvmeSupport extends js.Any
   object EbsNvmeSupport extends js.Object {
     val unsupported = "unsupported".asInstanceOf[EbsNvmeSupport]
-    val supported   = "supported".asInstanceOf[EbsNvmeSupport]
-    val required    = "required".asInstanceOf[EbsNvmeSupport]
+    val supported = "supported".asInstanceOf[EbsNvmeSupport]
+    val required = "required".asInstanceOf[EbsNvmeSupport]
 
     val values = js.Object.freeze(js.Array(unsupported, supported, required))
   }
@@ -17981,8 +17981,8 @@ package ec2 {
   sealed trait EbsOptimizedSupport extends js.Any
   object EbsOptimizedSupport extends js.Object {
     val unsupported = "unsupported".asInstanceOf[EbsOptimizedSupport]
-    val supported   = "supported".asInstanceOf[EbsOptimizedSupport]
-    val default     = "default".asInstanceOf[EbsOptimizedSupport]
+    val supported = "supported".asInstanceOf[EbsOptimizedSupport]
+    val default = "default".asInstanceOf[EbsOptimizedSupport]
 
     val values = js.Object.freeze(js.Array(unsupported, supported, default))
   }
@@ -18116,7 +18116,7 @@ package ec2 {
   @js.native
   sealed trait ElasticGpuStatus extends js.Any
   object ElasticGpuStatus extends js.Object {
-    val OK       = "OK".asInstanceOf[ElasticGpuStatus]
+    val OK = "OK".asInstanceOf[ElasticGpuStatus]
     val IMPAIRED = "IMPAIRED".asInstanceOf[ElasticGpuStatus]
 
     val values = js.Object.freeze(js.Array(OK, IMPAIRED))
@@ -18223,8 +18223,8 @@ package ec2 {
   sealed trait EnaSupport extends js.Any
   object EnaSupport extends js.Object {
     val unsupported = "unsupported".asInstanceOf[EnaSupport]
-    val supported   = "supported".asInstanceOf[EnaSupport]
-    val required    = "required".asInstanceOf[EnaSupport]
+    val supported = "supported".asInstanceOf[EnaSupport]
+    val required = "required".asInstanceOf[EnaSupport]
 
     val values = js.Object.freeze(js.Array(unsupported, supported, required))
   }
@@ -18479,7 +18479,7 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): EnableVgwRoutePropagationRequest = {
       val __obj = js.Dynamic.literal(
-        "GatewayId"    -> GatewayId.asInstanceOf[js.Any],
+        "GatewayId" -> GatewayId.asInstanceOf[js.Any],
         "RouteTableId" -> RouteTableId.asInstanceOf[js.Any]
       )
 
@@ -18582,7 +18582,7 @@ package ec2 {
   sealed trait EndDateType extends js.Any
   object EndDateType extends js.Object {
     val unlimited = "unlimited".asInstanceOf[EndDateType]
-    val limited   = "limited".asInstanceOf[EndDateType]
+    val limited = "limited".asInstanceOf[EndDateType]
 
     val values = js.Object.freeze(js.Array(unlimited, limited))
   }
@@ -18590,11 +18590,11 @@ package ec2 {
   @js.native
   sealed trait EventCode extends js.Any
   object EventCode extends js.Object {
-    val `instance-reboot`     = "instance-reboot".asInstanceOf[EventCode]
-    val `system-reboot`       = "system-reboot".asInstanceOf[EventCode]
-    val `system-maintenance`  = "system-maintenance".asInstanceOf[EventCode]
+    val `instance-reboot` = "instance-reboot".asInstanceOf[EventCode]
+    val `system-reboot` = "system-reboot".asInstanceOf[EventCode]
+    val `system-maintenance` = "system-maintenance".asInstanceOf[EventCode]
     val `instance-retirement` = "instance-retirement".asInstanceOf[EventCode]
-    val `instance-stop`       = "instance-stop".asInstanceOf[EventCode]
+    val `instance-stop` = "instance-stop".asInstanceOf[EventCode]
 
     val values = js.Object.freeze(
       js.Array(`instance-reboot`, `system-reboot`, `system-maintenance`, `instance-retirement`, `instance-stop`)
@@ -18629,10 +18629,10 @@ package ec2 {
   @js.native
   sealed trait EventType extends js.Any
   object EventType extends js.Object {
-    val instanceChange     = "instanceChange".asInstanceOf[EventType]
+    val instanceChange = "instanceChange".asInstanceOf[EventType]
     val fleetRequestChange = "fleetRequestChange".asInstanceOf[EventType]
-    val error              = "error".asInstanceOf[EventType]
-    val information        = "information".asInstanceOf[EventType]
+    val error = "error".asInstanceOf[EventType]
+    val information = "information".asInstanceOf[EventType]
 
     val values = js.Object.freeze(js.Array(instanceChange, fleetRequestChange, error, information))
   }
@@ -18641,7 +18641,7 @@ package ec2 {
   sealed trait ExcessCapacityTerminationPolicy extends js.Any
   object ExcessCapacityTerminationPolicy extends js.Object {
     val noTermination = "noTermination".asInstanceOf[ExcessCapacityTerminationPolicy]
-    val default       = "default".asInstanceOf[ExcessCapacityTerminationPolicy]
+    val default = "default".asInstanceOf[ExcessCapacityTerminationPolicy]
 
     val values = js.Object.freeze(js.Array(noTermination, default))
   }
@@ -18728,8 +18728,8 @@ package ec2 {
   @js.native
   sealed trait ExportEnvironment extends js.Any
   object ExportEnvironment extends js.Object {
-    val citrix    = "citrix".asInstanceOf[ExportEnvironment]
-    val vmware    = "vmware".asInstanceOf[ExportEnvironment]
+    val citrix = "citrix".asInstanceOf[ExportEnvironment]
+    val vmware = "vmware".asInstanceOf[ExportEnvironment]
     val microsoft = "microsoft".asInstanceOf[ExportEnvironment]
 
     val values = js.Object.freeze(js.Array(citrix, vmware, microsoft))
@@ -18760,8 +18760,8 @@ package ec2 {
         TagSpecifications: js.UndefOr[TagSpecificationList] = js.undefined
     ): ExportImageRequest = {
       val __obj = js.Dynamic.literal(
-        "DiskImageFormat"  -> DiskImageFormat.asInstanceOf[js.Any],
-        "ImageId"          -> ImageId.asInstanceOf[js.Any],
+        "DiskImageFormat" -> DiskImageFormat.asInstanceOf[js.Any],
+        "ImageId" -> ImageId.asInstanceOf[js.Any],
         "S3ExportLocation" -> S3ExportLocation.asInstanceOf[js.Any]
       )
 
@@ -18943,10 +18943,10 @@ package ec2 {
   @js.native
   sealed trait ExportTaskState extends js.Any
   object ExportTaskState extends js.Object {
-    val active     = "active".asInstanceOf[ExportTaskState]
+    val active = "active".asInstanceOf[ExportTaskState]
     val cancelling = "cancelling".asInstanceOf[ExportTaskState]
-    val cancelled  = "cancelled".asInstanceOf[ExportTaskState]
-    val completed  = "completed".asInstanceOf[ExportTaskState]
+    val cancelled = "cancelled".asInstanceOf[ExportTaskState]
+    val completed = "completed".asInstanceOf[ExportTaskState]
 
     val values = js.Object.freeze(js.Array(active, cancelling, cancelled, completed))
   }
@@ -19024,7 +19024,7 @@ package ec2 {
         Filters: js.UndefOr[FilterList] = js.undefined
     ): ExportTransitGatewayRoutesRequest = {
       val __obj = js.Dynamic.literal(
-        "S3Bucket"                   -> S3Bucket.asInstanceOf[js.Any],
+        "S3Bucket" -> S3Bucket.asInstanceOf[js.Any],
         "TransitGatewayRouteTableId" -> TransitGatewayRouteTableId.asInstanceOf[js.Any]
       )
 
@@ -19075,11 +19075,11 @@ package ec2 {
   @js.native
   sealed trait FastSnapshotRestoreStateCode extends js.Any
   object FastSnapshotRestoreStateCode extends js.Object {
-    val enabling   = "enabling".asInstanceOf[FastSnapshotRestoreStateCode]
+    val enabling = "enabling".asInstanceOf[FastSnapshotRestoreStateCode]
     val optimizing = "optimizing".asInstanceOf[FastSnapshotRestoreStateCode]
-    val enabled    = "enabled".asInstanceOf[FastSnapshotRestoreStateCode]
-    val disabling  = "disabling".asInstanceOf[FastSnapshotRestoreStateCode]
-    val disabled   = "disabled".asInstanceOf[FastSnapshotRestoreStateCode]
+    val enabled = "enabled".asInstanceOf[FastSnapshotRestoreStateCode]
+    val disabling = "disabling".asInstanceOf[FastSnapshotRestoreStateCode]
+    val disabled = "disabled".asInstanceOf[FastSnapshotRestoreStateCode]
 
     val values = js.Object.freeze(js.Array(enabling, optimizing, enabled, disabling, disabled))
   }
@@ -19157,10 +19157,10 @@ package ec2 {
   @js.native
   sealed trait FleetActivityStatus extends js.Any
   object FleetActivityStatus extends js.Object {
-    val error               = "error".asInstanceOf[FleetActivityStatus]
+    val error = "error".asInstanceOf[FleetActivityStatus]
     val pending_fulfillment = "pending_fulfillment".asInstanceOf[FleetActivityStatus]
     val pending_termination = "pending_termination".asInstanceOf[FleetActivityStatus]
-    val fulfilled           = "fulfilled".asInstanceOf[FleetActivityStatus]
+    val fulfilled = "fulfilled".asInstanceOf[FleetActivityStatus]
 
     val values = js.Object.freeze(js.Array(error, pending_fulfillment, pending_termination, fulfilled))
   }
@@ -19264,8 +19264,8 @@ package ec2 {
   sealed trait FleetEventType extends js.Any
   object FleetEventType extends js.Object {
     val `instance-change` = "instance-change".asInstanceOf[FleetEventType]
-    val `fleet-change`    = "fleet-change".asInstanceOf[FleetEventType]
-    val `service-error`   = "service-error".asInstanceOf[FleetEventType]
+    val `fleet-change` = "fleet-change".asInstanceOf[FleetEventType]
+    val `service-error` = "service-error".asInstanceOf[FleetEventType]
 
     val values = js.Object.freeze(js.Array(`instance-change`, `fleet-change`, `service-error`))
   }
@@ -19274,7 +19274,7 @@ package ec2 {
   sealed trait FleetExcessCapacityTerminationPolicy extends js.Any
   object FleetExcessCapacityTerminationPolicy extends js.Object {
     val `no-termination` = "no-termination".asInstanceOf[FleetExcessCapacityTerminationPolicy]
-    val termination      = "termination".asInstanceOf[FleetExcessCapacityTerminationPolicy]
+    val termination = "termination".asInstanceOf[FleetExcessCapacityTerminationPolicy]
 
     val values = js.Object.freeze(js.Array(`no-termination`, termination))
   }
@@ -19455,7 +19455,7 @@ package ec2 {
   sealed trait FleetOnDemandAllocationStrategy extends js.Any
   object FleetOnDemandAllocationStrategy extends js.Object {
     val `lowest-price` = "lowest-price".asInstanceOf[FleetOnDemandAllocationStrategy]
-    val prioritized    = "prioritized".asInstanceOf[FleetOnDemandAllocationStrategy]
+    val prioritized = "prioritized".asInstanceOf[FleetOnDemandAllocationStrategy]
 
     val values = js.Object.freeze(js.Array(`lowest-price`, prioritized))
   }
@@ -19463,13 +19463,13 @@ package ec2 {
   @js.native
   sealed trait FleetStateCode extends js.Any
   object FleetStateCode extends js.Object {
-    val submitted           = "submitted".asInstanceOf[FleetStateCode]
-    val active              = "active".asInstanceOf[FleetStateCode]
-    val deleted             = "deleted".asInstanceOf[FleetStateCode]
-    val failed              = "failed".asInstanceOf[FleetStateCode]
-    val deleted_running     = "deleted_running".asInstanceOf[FleetStateCode]
+    val submitted = "submitted".asInstanceOf[FleetStateCode]
+    val active = "active".asInstanceOf[FleetStateCode]
+    val deleted = "deleted".asInstanceOf[FleetStateCode]
+    val failed = "failed".asInstanceOf[FleetStateCode]
+    val deleted_running = "deleted_running".asInstanceOf[FleetStateCode]
     val deleted_terminating = "deleted_terminating".asInstanceOf[FleetStateCode]
-    val modifying           = "modifying".asInstanceOf[FleetStateCode]
+    val modifying = "modifying".asInstanceOf[FleetStateCode]
 
     val values =
       js.Object.freeze(js.Array(submitted, active, deleted, failed, deleted_running, deleted_terminating, modifying))
@@ -19478,9 +19478,9 @@ package ec2 {
   @js.native
   sealed trait FleetType extends js.Any
   object FleetType extends js.Object {
-    val request  = "request".asInstanceOf[FleetType]
+    val request = "request".asInstanceOf[FleetType]
     val maintain = "maintain".asInstanceOf[FleetType]
-    val instant  = "instant".asInstanceOf[FleetType]
+    val instant = "instant".asInstanceOf[FleetType]
 
     val values = js.Object.freeze(js.Array(request, maintain, instant))
   }
@@ -19546,8 +19546,8 @@ package ec2 {
   @js.native
   sealed trait FlowLogsResourceType extends js.Any
   object FlowLogsResourceType extends js.Object {
-    val VPC              = "VPC".asInstanceOf[FlowLogsResourceType]
-    val Subnet           = "Subnet".asInstanceOf[FlowLogsResourceType]
+    val VPC = "VPC".asInstanceOf[FlowLogsResourceType]
+    val Subnet = "Subnet".asInstanceOf[FlowLogsResourceType]
     val NetworkInterface = "NetworkInterface".asInstanceOf[FlowLogsResourceType]
 
     val values = js.Object.freeze(js.Array(VPC, Subnet, NetworkInterface))
@@ -19695,10 +19695,10 @@ package ec2 {
   @js.native
   sealed trait FpgaImageAttributeName extends js.Any
   object FpgaImageAttributeName extends js.Object {
-    val description    = "description".asInstanceOf[FpgaImageAttributeName]
-    val name           = "name".asInstanceOf[FpgaImageAttributeName]
+    val description = "description".asInstanceOf[FpgaImageAttributeName]
+    val name = "name".asInstanceOf[FpgaImageAttributeName]
     val loadPermission = "loadPermission".asInstanceOf[FpgaImageAttributeName]
-    val productCodes   = "productCodes".asInstanceOf[FpgaImageAttributeName]
+    val productCodes = "productCodes".asInstanceOf[FpgaImageAttributeName]
 
     val values = js.Object.freeze(js.Array(description, name, loadPermission, productCodes))
   }
@@ -19728,9 +19728,9 @@ package ec2 {
   @js.native
   sealed trait FpgaImageStateCode extends js.Any
   object FpgaImageStateCode extends js.Object {
-    val pending     = "pending".asInstanceOf[FpgaImageStateCode]
-    val failed      = "failed".asInstanceOf[FpgaImageStateCode]
-    val available   = "available".asInstanceOf[FpgaImageStateCode]
+    val pending = "pending".asInstanceOf[FpgaImageStateCode]
+    val failed = "failed".asInstanceOf[FpgaImageStateCode]
+    val available = "available".asInstanceOf[FpgaImageStateCode]
     val unavailable = "unavailable".asInstanceOf[FpgaImageStateCode]
 
     val values = js.Object.freeze(js.Array(pending, failed, available, unavailable))
@@ -20130,7 +20130,7 @@ package ec2 {
         OfferingId: OfferingId
     ): GetHostReservationPurchasePreviewRequest = {
       val __obj = js.Dynamic.literal(
-        "HostIdSet"  -> HostIdSet.asInstanceOf[js.Any],
+        "HostIdSet" -> HostIdSet.asInstanceOf[js.Any],
         "OfferingId" -> OfferingId.asInstanceOf[js.Any]
       )
 
@@ -20964,7 +20964,7 @@ package ec2 {
   @js.native
   sealed trait HostRecovery extends js.Any
   object HostRecovery extends js.Object {
-    val on  = "on".asInstanceOf[HostRecovery]
+    val on = "on".asInstanceOf[HostRecovery]
     val off = "off".asInstanceOf[HostRecovery]
 
     val values = js.Object.freeze(js.Array(on, off))
@@ -21032,7 +21032,7 @@ package ec2 {
   sealed trait HostTenancy extends js.Any
   object HostTenancy extends js.Object {
     val dedicated = "dedicated".asInstanceOf[HostTenancy]
-    val host      = "host".asInstanceOf[HostTenancy]
+    val host = "host".asInstanceOf[HostTenancy]
 
     val values = js.Object.freeze(js.Array(dedicated, host))
   }
@@ -21149,10 +21149,10 @@ package ec2 {
   @js.native
   sealed trait IamInstanceProfileAssociationState extends js.Any
   object IamInstanceProfileAssociationState extends js.Object {
-    val associating    = "associating".asInstanceOf[IamInstanceProfileAssociationState]
-    val associated     = "associated".asInstanceOf[IamInstanceProfileAssociationState]
+    val associating = "associating".asInstanceOf[IamInstanceProfileAssociationState]
+    val associated = "associated".asInstanceOf[IamInstanceProfileAssociationState]
     val disassociating = "disassociating".asInstanceOf[IamInstanceProfileAssociationState]
-    val disassociated  = "disassociated".asInstanceOf[IamInstanceProfileAssociationState]
+    val disassociated = "disassociated".asInstanceOf[IamInstanceProfileAssociationState]
 
     val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated))
   }
@@ -21363,13 +21363,13 @@ package ec2 {
   @js.native
   sealed trait ImageAttributeName extends js.Any
   object ImageAttributeName extends js.Object {
-    val description        = "description".asInstanceOf[ImageAttributeName]
-    val kernel             = "kernel".asInstanceOf[ImageAttributeName]
-    val ramdisk            = "ramdisk".asInstanceOf[ImageAttributeName]
-    val launchPermission   = "launchPermission".asInstanceOf[ImageAttributeName]
-    val productCodes       = "productCodes".asInstanceOf[ImageAttributeName]
+    val description = "description".asInstanceOf[ImageAttributeName]
+    val kernel = "kernel".asInstanceOf[ImageAttributeName]
+    val ramdisk = "ramdisk".asInstanceOf[ImageAttributeName]
+    val launchPermission = "launchPermission".asInstanceOf[ImageAttributeName]
+    val productCodes = "productCodes".asInstanceOf[ImageAttributeName]
     val blockDeviceMapping = "blockDeviceMapping".asInstanceOf[ImageAttributeName]
-    val sriovNetSupport    = "sriovNetSupport".asInstanceOf[ImageAttributeName]
+    val sriovNetSupport = "sriovNetSupport".asInstanceOf[ImageAttributeName]
 
     val values = js.Object.freeze(
       js.Array(description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping, sriovNetSupport)
@@ -21413,13 +21413,13 @@ package ec2 {
   @js.native
   sealed trait ImageState extends js.Any
   object ImageState extends js.Object {
-    val pending      = "pending".asInstanceOf[ImageState]
-    val available    = "available".asInstanceOf[ImageState]
-    val invalid      = "invalid".asInstanceOf[ImageState]
+    val pending = "pending".asInstanceOf[ImageState]
+    val available = "available".asInstanceOf[ImageState]
+    val invalid = "invalid".asInstanceOf[ImageState]
     val deregistered = "deregistered".asInstanceOf[ImageState]
-    val transient    = "transient".asInstanceOf[ImageState]
-    val failed       = "failed".asInstanceOf[ImageState]
-    val error        = "error".asInstanceOf[ImageState]
+    val transient = "transient".asInstanceOf[ImageState]
+    val failed = "failed".asInstanceOf[ImageState]
+    val error = "error".asInstanceOf[ImageState]
 
     val values = js.Object.freeze(js.Array(pending, available, invalid, deregistered, transient, failed, error))
   }
@@ -21428,7 +21428,7 @@ package ec2 {
   sealed trait ImageTypeValues extends js.Any
   object ImageTypeValues extends js.Object {
     val machine = "machine".asInstanceOf[ImageTypeValues]
-    val kernel  = "kernel".asInstanceOf[ImageTypeValues]
+    val kernel = "kernel".asInstanceOf[ImageTypeValues]
     val ramdisk = "ramdisk".asInstanceOf[ImageTypeValues]
 
     val values = js.Object.freeze(js.Array(machine, kernel, ramdisk))
@@ -21450,7 +21450,7 @@ package ec2 {
     ): ImportClientVpnClientCertificateRevocationListRequest = {
       val __obj = js.Dynamic.literal(
         "CertificateRevocationList" -> CertificateRevocationList.asInstanceOf[js.Any],
-        "ClientVpnEndpointId"       -> ClientVpnEndpointId.asInstanceOf[js.Any]
+        "ClientVpnEndpointId" -> ClientVpnEndpointId.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -21865,7 +21865,7 @@ package ec2 {
         TagSpecifications: js.UndefOr[TagSpecificationList] = js.undefined
     ): ImportKeyPairRequest = {
       val __obj = js.Dynamic.literal(
-        "KeyName"           -> KeyName.asInstanceOf[js.Any],
+        "KeyName" -> KeyName.asInstanceOf[js.Any],
         "PublicKeyMaterial" -> PublicKeyMaterial.asInstanceOf[js.Any]
       )
 
@@ -22013,8 +22013,8 @@ package ec2 {
     ): ImportVolumeRequest = {
       val __obj = js.Dynamic.literal(
         "AvailabilityZone" -> AvailabilityZone.asInstanceOf[js.Any],
-        "Image"            -> Image.asInstanceOf[js.Any],
-        "Volume"           -> Volume.asInstanceOf[js.Any]
+        "Image" -> Image.asInstanceOf[js.Any],
+        "Volume" -> Volume.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -22341,20 +22341,20 @@ package ec2 {
   @js.native
   sealed trait InstanceAttributeName extends js.Any
   object InstanceAttributeName extends js.Object {
-    val instanceType                      = "instanceType".asInstanceOf[InstanceAttributeName]
-    val kernel                            = "kernel".asInstanceOf[InstanceAttributeName]
-    val ramdisk                           = "ramdisk".asInstanceOf[InstanceAttributeName]
-    val userData                          = "userData".asInstanceOf[InstanceAttributeName]
-    val disableApiTermination             = "disableApiTermination".asInstanceOf[InstanceAttributeName]
+    val instanceType = "instanceType".asInstanceOf[InstanceAttributeName]
+    val kernel = "kernel".asInstanceOf[InstanceAttributeName]
+    val ramdisk = "ramdisk".asInstanceOf[InstanceAttributeName]
+    val userData = "userData".asInstanceOf[InstanceAttributeName]
+    val disableApiTermination = "disableApiTermination".asInstanceOf[InstanceAttributeName]
     val instanceInitiatedShutdownBehavior = "instanceInitiatedShutdownBehavior".asInstanceOf[InstanceAttributeName]
-    val rootDeviceName                    = "rootDeviceName".asInstanceOf[InstanceAttributeName]
-    val blockDeviceMapping                = "blockDeviceMapping".asInstanceOf[InstanceAttributeName]
-    val productCodes                      = "productCodes".asInstanceOf[InstanceAttributeName]
-    val sourceDestCheck                   = "sourceDestCheck".asInstanceOf[InstanceAttributeName]
-    val groupSet                          = "groupSet".asInstanceOf[InstanceAttributeName]
-    val ebsOptimized                      = "ebsOptimized".asInstanceOf[InstanceAttributeName]
-    val sriovNetSupport                   = "sriovNetSupport".asInstanceOf[InstanceAttributeName]
-    val enaSupport                        = "enaSupport".asInstanceOf[InstanceAttributeName]
+    val rootDeviceName = "rootDeviceName".asInstanceOf[InstanceAttributeName]
+    val blockDeviceMapping = "blockDeviceMapping".asInstanceOf[InstanceAttributeName]
+    val productCodes = "productCodes".asInstanceOf[InstanceAttributeName]
+    val sourceDestCheck = "sourceDestCheck".asInstanceOf[InstanceAttributeName]
+    val groupSet = "groupSet".asInstanceOf[InstanceAttributeName]
+    val ebsOptimized = "ebsOptimized".asInstanceOf[InstanceAttributeName]
+    val sriovNetSupport = "sriovNetSupport".asInstanceOf[InstanceAttributeName]
+    val enaSupport = "enaSupport".asInstanceOf[InstanceAttributeName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -22564,7 +22564,7 @@ package ec2 {
   @js.native
   sealed trait InstanceHealthStatus extends js.Any
   object InstanceHealthStatus extends js.Object {
-    val healthy   = "healthy".asInstanceOf[InstanceHealthStatus]
+    val healthy = "healthy".asInstanceOf[InstanceHealthStatus]
     val unhealthy = "unhealthy".asInstanceOf[InstanceHealthStatus]
 
     val values = js.Object.freeze(js.Array(healthy, unhealthy))
@@ -22574,7 +22574,7 @@ package ec2 {
   sealed trait InstanceInterruptionBehavior extends js.Any
   object InstanceInterruptionBehavior extends js.Object {
     val hibernate = "hibernate".asInstanceOf[InstanceInterruptionBehavior]
-    val stop      = "stop".asInstanceOf[InstanceInterruptionBehavior]
+    val stop = "stop".asInstanceOf[InstanceInterruptionBehavior]
     val terminate = "terminate".asInstanceOf[InstanceInterruptionBehavior]
 
     val values = js.Object.freeze(js.Array(hibernate, stop, terminate))
@@ -22621,7 +22621,7 @@ package ec2 {
   @js.native
   sealed trait InstanceLifecycle extends js.Any
   object InstanceLifecycle extends js.Object {
-    val spot        = "spot".asInstanceOf[InstanceLifecycle]
+    val spot = "spot".asInstanceOf[InstanceLifecycle]
     val `on-demand` = "on-demand".asInstanceOf[InstanceLifecycle]
 
     val values = js.Object.freeze(js.Array(spot, `on-demand`))
@@ -22630,7 +22630,7 @@ package ec2 {
   @js.native
   sealed trait InstanceLifecycleType extends js.Any
   object InstanceLifecycleType extends js.Object {
-    val spot      = "spot".asInstanceOf[InstanceLifecycleType]
+    val spot = "spot".asInstanceOf[InstanceLifecycleType]
     val scheduled = "scheduled".asInstanceOf[InstanceLifecycleType]
 
     val values = js.Object.freeze(js.Array(spot, scheduled))
@@ -22661,7 +22661,7 @@ package ec2 {
   @js.native
   sealed trait InstanceMatchCriteria extends js.Any
   object InstanceMatchCriteria extends js.Object {
-    val open     = "open".asInstanceOf[InstanceMatchCriteria]
+    val open = "open".asInstanceOf[InstanceMatchCriteria]
     val targeted = "targeted".asInstanceOf[InstanceMatchCriteria]
 
     val values = js.Object.freeze(js.Array(open, targeted))
@@ -22671,7 +22671,7 @@ package ec2 {
   sealed trait InstanceMetadataEndpointState extends js.Any
   object InstanceMetadataEndpointState extends js.Object {
     val disabled = "disabled".asInstanceOf[InstanceMetadataEndpointState]
-    val enabled  = "enabled".asInstanceOf[InstanceMetadataEndpointState]
+    val enabled = "enabled".asInstanceOf[InstanceMetadataEndpointState]
 
     val values = js.Object.freeze(js.Array(disabled, enabled))
   }
@@ -23037,12 +23037,12 @@ package ec2 {
   @js.native
   sealed trait InstanceStateName extends js.Any
   object InstanceStateName extends js.Object {
-    val pending         = "pending".asInstanceOf[InstanceStateName]
-    val running         = "running".asInstanceOf[InstanceStateName]
+    val pending = "pending".asInstanceOf[InstanceStateName]
+    val running = "running".asInstanceOf[InstanceStateName]
     val `shutting-down` = "shutting-down".asInstanceOf[InstanceStateName]
-    val terminated      = "terminated".asInstanceOf[InstanceStateName]
-    val stopping        = "stopping".asInstanceOf[InstanceStateName]
-    val stopped         = "stopped".asInstanceOf[InstanceStateName]
+    val terminated = "terminated".asInstanceOf[InstanceStateName]
+    val stopping = "stopping".asInstanceOf[InstanceStateName]
+    val stopped = "stopped".asInstanceOf[InstanceStateName]
 
     val values = js.Object.freeze(js.Array(pending, running, `shutting-down`, terminated, stopping, stopped))
   }
@@ -23212,313 +23212,313 @@ package ec2 {
   @js.native
   sealed trait InstanceType extends js.Any
   object InstanceType extends js.Object {
-    val `t1.micro`      = "t1.micro".asInstanceOf[InstanceType]
-    val `t2.nano`       = "t2.nano".asInstanceOf[InstanceType]
-    val `t2.micro`      = "t2.micro".asInstanceOf[InstanceType]
-    val `t2.small`      = "t2.small".asInstanceOf[InstanceType]
-    val `t2.medium`     = "t2.medium".asInstanceOf[InstanceType]
-    val `t2.large`      = "t2.large".asInstanceOf[InstanceType]
-    val `t2.xlarge`     = "t2.xlarge".asInstanceOf[InstanceType]
-    val `t2.2xlarge`    = "t2.2xlarge".asInstanceOf[InstanceType]
-    val `t3.nano`       = "t3.nano".asInstanceOf[InstanceType]
-    val `t3.micro`      = "t3.micro".asInstanceOf[InstanceType]
-    val `t3.small`      = "t3.small".asInstanceOf[InstanceType]
-    val `t3.medium`     = "t3.medium".asInstanceOf[InstanceType]
-    val `t3.large`      = "t3.large".asInstanceOf[InstanceType]
-    val `t3.xlarge`     = "t3.xlarge".asInstanceOf[InstanceType]
-    val `t3.2xlarge`    = "t3.2xlarge".asInstanceOf[InstanceType]
-    val `t3a.nano`      = "t3a.nano".asInstanceOf[InstanceType]
-    val `t3a.micro`     = "t3a.micro".asInstanceOf[InstanceType]
-    val `t3a.small`     = "t3a.small".asInstanceOf[InstanceType]
-    val `t3a.medium`    = "t3a.medium".asInstanceOf[InstanceType]
-    val `t3a.large`     = "t3a.large".asInstanceOf[InstanceType]
-    val `t3a.xlarge`    = "t3a.xlarge".asInstanceOf[InstanceType]
-    val `t3a.2xlarge`   = "t3a.2xlarge".asInstanceOf[InstanceType]
-    val `m1.small`      = "m1.small".asInstanceOf[InstanceType]
-    val `m1.medium`     = "m1.medium".asInstanceOf[InstanceType]
-    val `m1.large`      = "m1.large".asInstanceOf[InstanceType]
-    val `m1.xlarge`     = "m1.xlarge".asInstanceOf[InstanceType]
-    val `m3.medium`     = "m3.medium".asInstanceOf[InstanceType]
-    val `m3.large`      = "m3.large".asInstanceOf[InstanceType]
-    val `m3.xlarge`     = "m3.xlarge".asInstanceOf[InstanceType]
-    val `m3.2xlarge`    = "m3.2xlarge".asInstanceOf[InstanceType]
-    val `m4.large`      = "m4.large".asInstanceOf[InstanceType]
-    val `m4.xlarge`     = "m4.xlarge".asInstanceOf[InstanceType]
-    val `m4.2xlarge`    = "m4.2xlarge".asInstanceOf[InstanceType]
-    val `m4.4xlarge`    = "m4.4xlarge".asInstanceOf[InstanceType]
-    val `m4.10xlarge`   = "m4.10xlarge".asInstanceOf[InstanceType]
-    val `m4.16xlarge`   = "m4.16xlarge".asInstanceOf[InstanceType]
-    val `m2.xlarge`     = "m2.xlarge".asInstanceOf[InstanceType]
-    val `m2.2xlarge`    = "m2.2xlarge".asInstanceOf[InstanceType]
-    val `m2.4xlarge`    = "m2.4xlarge".asInstanceOf[InstanceType]
-    val `cr1.8xlarge`   = "cr1.8xlarge".asInstanceOf[InstanceType]
-    val `r3.large`      = "r3.large".asInstanceOf[InstanceType]
-    val `r3.xlarge`     = "r3.xlarge".asInstanceOf[InstanceType]
-    val `r3.2xlarge`    = "r3.2xlarge".asInstanceOf[InstanceType]
-    val `r3.4xlarge`    = "r3.4xlarge".asInstanceOf[InstanceType]
-    val `r3.8xlarge`    = "r3.8xlarge".asInstanceOf[InstanceType]
-    val `r4.large`      = "r4.large".asInstanceOf[InstanceType]
-    val `r4.xlarge`     = "r4.xlarge".asInstanceOf[InstanceType]
-    val `r4.2xlarge`    = "r4.2xlarge".asInstanceOf[InstanceType]
-    val `r4.4xlarge`    = "r4.4xlarge".asInstanceOf[InstanceType]
-    val `r4.8xlarge`    = "r4.8xlarge".asInstanceOf[InstanceType]
-    val `r4.16xlarge`   = "r4.16xlarge".asInstanceOf[InstanceType]
-    val `r5.large`      = "r5.large".asInstanceOf[InstanceType]
-    val `r5.xlarge`     = "r5.xlarge".asInstanceOf[InstanceType]
-    val `r5.2xlarge`    = "r5.2xlarge".asInstanceOf[InstanceType]
-    val `r5.4xlarge`    = "r5.4xlarge".asInstanceOf[InstanceType]
-    val `r5.8xlarge`    = "r5.8xlarge".asInstanceOf[InstanceType]
-    val `r5.12xlarge`   = "r5.12xlarge".asInstanceOf[InstanceType]
-    val `r5.16xlarge`   = "r5.16xlarge".asInstanceOf[InstanceType]
-    val `r5.24xlarge`   = "r5.24xlarge".asInstanceOf[InstanceType]
-    val `r5.metal`      = "r5.metal".asInstanceOf[InstanceType]
-    val `r5a.large`     = "r5a.large".asInstanceOf[InstanceType]
-    val `r5a.xlarge`    = "r5a.xlarge".asInstanceOf[InstanceType]
-    val `r5a.2xlarge`   = "r5a.2xlarge".asInstanceOf[InstanceType]
-    val `r5a.4xlarge`   = "r5a.4xlarge".asInstanceOf[InstanceType]
-    val `r5a.8xlarge`   = "r5a.8xlarge".asInstanceOf[InstanceType]
-    val `r5a.12xlarge`  = "r5a.12xlarge".asInstanceOf[InstanceType]
-    val `r5a.16xlarge`  = "r5a.16xlarge".asInstanceOf[InstanceType]
-    val `r5a.24xlarge`  = "r5a.24xlarge".asInstanceOf[InstanceType]
-    val `r5d.large`     = "r5d.large".asInstanceOf[InstanceType]
-    val `r5d.xlarge`    = "r5d.xlarge".asInstanceOf[InstanceType]
-    val `r5d.2xlarge`   = "r5d.2xlarge".asInstanceOf[InstanceType]
-    val `r5d.4xlarge`   = "r5d.4xlarge".asInstanceOf[InstanceType]
-    val `r5d.8xlarge`   = "r5d.8xlarge".asInstanceOf[InstanceType]
-    val `r5d.12xlarge`  = "r5d.12xlarge".asInstanceOf[InstanceType]
-    val `r5d.16xlarge`  = "r5d.16xlarge".asInstanceOf[InstanceType]
-    val `r5d.24xlarge`  = "r5d.24xlarge".asInstanceOf[InstanceType]
-    val `r5d.metal`     = "r5d.metal".asInstanceOf[InstanceType]
-    val `r5ad.large`    = "r5ad.large".asInstanceOf[InstanceType]
-    val `r5ad.xlarge`   = "r5ad.xlarge".asInstanceOf[InstanceType]
-    val `r5ad.2xlarge`  = "r5ad.2xlarge".asInstanceOf[InstanceType]
-    val `r5ad.4xlarge`  = "r5ad.4xlarge".asInstanceOf[InstanceType]
-    val `r5ad.8xlarge`  = "r5ad.8xlarge".asInstanceOf[InstanceType]
+    val `t1.micro` = "t1.micro".asInstanceOf[InstanceType]
+    val `t2.nano` = "t2.nano".asInstanceOf[InstanceType]
+    val `t2.micro` = "t2.micro".asInstanceOf[InstanceType]
+    val `t2.small` = "t2.small".asInstanceOf[InstanceType]
+    val `t2.medium` = "t2.medium".asInstanceOf[InstanceType]
+    val `t2.large` = "t2.large".asInstanceOf[InstanceType]
+    val `t2.xlarge` = "t2.xlarge".asInstanceOf[InstanceType]
+    val `t2.2xlarge` = "t2.2xlarge".asInstanceOf[InstanceType]
+    val `t3.nano` = "t3.nano".asInstanceOf[InstanceType]
+    val `t3.micro` = "t3.micro".asInstanceOf[InstanceType]
+    val `t3.small` = "t3.small".asInstanceOf[InstanceType]
+    val `t3.medium` = "t3.medium".asInstanceOf[InstanceType]
+    val `t3.large` = "t3.large".asInstanceOf[InstanceType]
+    val `t3.xlarge` = "t3.xlarge".asInstanceOf[InstanceType]
+    val `t3.2xlarge` = "t3.2xlarge".asInstanceOf[InstanceType]
+    val `t3a.nano` = "t3a.nano".asInstanceOf[InstanceType]
+    val `t3a.micro` = "t3a.micro".asInstanceOf[InstanceType]
+    val `t3a.small` = "t3a.small".asInstanceOf[InstanceType]
+    val `t3a.medium` = "t3a.medium".asInstanceOf[InstanceType]
+    val `t3a.large` = "t3a.large".asInstanceOf[InstanceType]
+    val `t3a.xlarge` = "t3a.xlarge".asInstanceOf[InstanceType]
+    val `t3a.2xlarge` = "t3a.2xlarge".asInstanceOf[InstanceType]
+    val `m1.small` = "m1.small".asInstanceOf[InstanceType]
+    val `m1.medium` = "m1.medium".asInstanceOf[InstanceType]
+    val `m1.large` = "m1.large".asInstanceOf[InstanceType]
+    val `m1.xlarge` = "m1.xlarge".asInstanceOf[InstanceType]
+    val `m3.medium` = "m3.medium".asInstanceOf[InstanceType]
+    val `m3.large` = "m3.large".asInstanceOf[InstanceType]
+    val `m3.xlarge` = "m3.xlarge".asInstanceOf[InstanceType]
+    val `m3.2xlarge` = "m3.2xlarge".asInstanceOf[InstanceType]
+    val `m4.large` = "m4.large".asInstanceOf[InstanceType]
+    val `m4.xlarge` = "m4.xlarge".asInstanceOf[InstanceType]
+    val `m4.2xlarge` = "m4.2xlarge".asInstanceOf[InstanceType]
+    val `m4.4xlarge` = "m4.4xlarge".asInstanceOf[InstanceType]
+    val `m4.10xlarge` = "m4.10xlarge".asInstanceOf[InstanceType]
+    val `m4.16xlarge` = "m4.16xlarge".asInstanceOf[InstanceType]
+    val `m2.xlarge` = "m2.xlarge".asInstanceOf[InstanceType]
+    val `m2.2xlarge` = "m2.2xlarge".asInstanceOf[InstanceType]
+    val `m2.4xlarge` = "m2.4xlarge".asInstanceOf[InstanceType]
+    val `cr1.8xlarge` = "cr1.8xlarge".asInstanceOf[InstanceType]
+    val `r3.large` = "r3.large".asInstanceOf[InstanceType]
+    val `r3.xlarge` = "r3.xlarge".asInstanceOf[InstanceType]
+    val `r3.2xlarge` = "r3.2xlarge".asInstanceOf[InstanceType]
+    val `r3.4xlarge` = "r3.4xlarge".asInstanceOf[InstanceType]
+    val `r3.8xlarge` = "r3.8xlarge".asInstanceOf[InstanceType]
+    val `r4.large` = "r4.large".asInstanceOf[InstanceType]
+    val `r4.xlarge` = "r4.xlarge".asInstanceOf[InstanceType]
+    val `r4.2xlarge` = "r4.2xlarge".asInstanceOf[InstanceType]
+    val `r4.4xlarge` = "r4.4xlarge".asInstanceOf[InstanceType]
+    val `r4.8xlarge` = "r4.8xlarge".asInstanceOf[InstanceType]
+    val `r4.16xlarge` = "r4.16xlarge".asInstanceOf[InstanceType]
+    val `r5.large` = "r5.large".asInstanceOf[InstanceType]
+    val `r5.xlarge` = "r5.xlarge".asInstanceOf[InstanceType]
+    val `r5.2xlarge` = "r5.2xlarge".asInstanceOf[InstanceType]
+    val `r5.4xlarge` = "r5.4xlarge".asInstanceOf[InstanceType]
+    val `r5.8xlarge` = "r5.8xlarge".asInstanceOf[InstanceType]
+    val `r5.12xlarge` = "r5.12xlarge".asInstanceOf[InstanceType]
+    val `r5.16xlarge` = "r5.16xlarge".asInstanceOf[InstanceType]
+    val `r5.24xlarge` = "r5.24xlarge".asInstanceOf[InstanceType]
+    val `r5.metal` = "r5.metal".asInstanceOf[InstanceType]
+    val `r5a.large` = "r5a.large".asInstanceOf[InstanceType]
+    val `r5a.xlarge` = "r5a.xlarge".asInstanceOf[InstanceType]
+    val `r5a.2xlarge` = "r5a.2xlarge".asInstanceOf[InstanceType]
+    val `r5a.4xlarge` = "r5a.4xlarge".asInstanceOf[InstanceType]
+    val `r5a.8xlarge` = "r5a.8xlarge".asInstanceOf[InstanceType]
+    val `r5a.12xlarge` = "r5a.12xlarge".asInstanceOf[InstanceType]
+    val `r5a.16xlarge` = "r5a.16xlarge".asInstanceOf[InstanceType]
+    val `r5a.24xlarge` = "r5a.24xlarge".asInstanceOf[InstanceType]
+    val `r5d.large` = "r5d.large".asInstanceOf[InstanceType]
+    val `r5d.xlarge` = "r5d.xlarge".asInstanceOf[InstanceType]
+    val `r5d.2xlarge` = "r5d.2xlarge".asInstanceOf[InstanceType]
+    val `r5d.4xlarge` = "r5d.4xlarge".asInstanceOf[InstanceType]
+    val `r5d.8xlarge` = "r5d.8xlarge".asInstanceOf[InstanceType]
+    val `r5d.12xlarge` = "r5d.12xlarge".asInstanceOf[InstanceType]
+    val `r5d.16xlarge` = "r5d.16xlarge".asInstanceOf[InstanceType]
+    val `r5d.24xlarge` = "r5d.24xlarge".asInstanceOf[InstanceType]
+    val `r5d.metal` = "r5d.metal".asInstanceOf[InstanceType]
+    val `r5ad.large` = "r5ad.large".asInstanceOf[InstanceType]
+    val `r5ad.xlarge` = "r5ad.xlarge".asInstanceOf[InstanceType]
+    val `r5ad.2xlarge` = "r5ad.2xlarge".asInstanceOf[InstanceType]
+    val `r5ad.4xlarge` = "r5ad.4xlarge".asInstanceOf[InstanceType]
+    val `r5ad.8xlarge` = "r5ad.8xlarge".asInstanceOf[InstanceType]
     val `r5ad.12xlarge` = "r5ad.12xlarge".asInstanceOf[InstanceType]
     val `r5ad.16xlarge` = "r5ad.16xlarge".asInstanceOf[InstanceType]
     val `r5ad.24xlarge` = "r5ad.24xlarge".asInstanceOf[InstanceType]
-    val `r6g.metal`     = "r6g.metal".asInstanceOf[InstanceType]
-    val `r6g.medium`    = "r6g.medium".asInstanceOf[InstanceType]
-    val `r6g.large`     = "r6g.large".asInstanceOf[InstanceType]
-    val `r6g.xlarge`    = "r6g.xlarge".asInstanceOf[InstanceType]
-    val `r6g.2xlarge`   = "r6g.2xlarge".asInstanceOf[InstanceType]
-    val `r6g.4xlarge`   = "r6g.4xlarge".asInstanceOf[InstanceType]
-    val `r6g.8xlarge`   = "r6g.8xlarge".asInstanceOf[InstanceType]
-    val `r6g.12xlarge`  = "r6g.12xlarge".asInstanceOf[InstanceType]
-    val `r6g.16xlarge`  = "r6g.16xlarge".asInstanceOf[InstanceType]
-    val `x1.16xlarge`   = "x1.16xlarge".asInstanceOf[InstanceType]
-    val `x1.32xlarge`   = "x1.32xlarge".asInstanceOf[InstanceType]
-    val `x1e.xlarge`    = "x1e.xlarge".asInstanceOf[InstanceType]
-    val `x1e.2xlarge`   = "x1e.2xlarge".asInstanceOf[InstanceType]
-    val `x1e.4xlarge`   = "x1e.4xlarge".asInstanceOf[InstanceType]
-    val `x1e.8xlarge`   = "x1e.8xlarge".asInstanceOf[InstanceType]
-    val `x1e.16xlarge`  = "x1e.16xlarge".asInstanceOf[InstanceType]
-    val `x1e.32xlarge`  = "x1e.32xlarge".asInstanceOf[InstanceType]
-    val `i2.xlarge`     = "i2.xlarge".asInstanceOf[InstanceType]
-    val `i2.2xlarge`    = "i2.2xlarge".asInstanceOf[InstanceType]
-    val `i2.4xlarge`    = "i2.4xlarge".asInstanceOf[InstanceType]
-    val `i2.8xlarge`    = "i2.8xlarge".asInstanceOf[InstanceType]
-    val `i3.large`      = "i3.large".asInstanceOf[InstanceType]
-    val `i3.xlarge`     = "i3.xlarge".asInstanceOf[InstanceType]
-    val `i3.2xlarge`    = "i3.2xlarge".asInstanceOf[InstanceType]
-    val `i3.4xlarge`    = "i3.4xlarge".asInstanceOf[InstanceType]
-    val `i3.8xlarge`    = "i3.8xlarge".asInstanceOf[InstanceType]
-    val `i3.16xlarge`   = "i3.16xlarge".asInstanceOf[InstanceType]
-    val `i3.metal`      = "i3.metal".asInstanceOf[InstanceType]
-    val `i3en.large`    = "i3en.large".asInstanceOf[InstanceType]
-    val `i3en.xlarge`   = "i3en.xlarge".asInstanceOf[InstanceType]
-    val `i3en.2xlarge`  = "i3en.2xlarge".asInstanceOf[InstanceType]
-    val `i3en.3xlarge`  = "i3en.3xlarge".asInstanceOf[InstanceType]
-    val `i3en.6xlarge`  = "i3en.6xlarge".asInstanceOf[InstanceType]
+    val `r6g.metal` = "r6g.metal".asInstanceOf[InstanceType]
+    val `r6g.medium` = "r6g.medium".asInstanceOf[InstanceType]
+    val `r6g.large` = "r6g.large".asInstanceOf[InstanceType]
+    val `r6g.xlarge` = "r6g.xlarge".asInstanceOf[InstanceType]
+    val `r6g.2xlarge` = "r6g.2xlarge".asInstanceOf[InstanceType]
+    val `r6g.4xlarge` = "r6g.4xlarge".asInstanceOf[InstanceType]
+    val `r6g.8xlarge` = "r6g.8xlarge".asInstanceOf[InstanceType]
+    val `r6g.12xlarge` = "r6g.12xlarge".asInstanceOf[InstanceType]
+    val `r6g.16xlarge` = "r6g.16xlarge".asInstanceOf[InstanceType]
+    val `x1.16xlarge` = "x1.16xlarge".asInstanceOf[InstanceType]
+    val `x1.32xlarge` = "x1.32xlarge".asInstanceOf[InstanceType]
+    val `x1e.xlarge` = "x1e.xlarge".asInstanceOf[InstanceType]
+    val `x1e.2xlarge` = "x1e.2xlarge".asInstanceOf[InstanceType]
+    val `x1e.4xlarge` = "x1e.4xlarge".asInstanceOf[InstanceType]
+    val `x1e.8xlarge` = "x1e.8xlarge".asInstanceOf[InstanceType]
+    val `x1e.16xlarge` = "x1e.16xlarge".asInstanceOf[InstanceType]
+    val `x1e.32xlarge` = "x1e.32xlarge".asInstanceOf[InstanceType]
+    val `i2.xlarge` = "i2.xlarge".asInstanceOf[InstanceType]
+    val `i2.2xlarge` = "i2.2xlarge".asInstanceOf[InstanceType]
+    val `i2.4xlarge` = "i2.4xlarge".asInstanceOf[InstanceType]
+    val `i2.8xlarge` = "i2.8xlarge".asInstanceOf[InstanceType]
+    val `i3.large` = "i3.large".asInstanceOf[InstanceType]
+    val `i3.xlarge` = "i3.xlarge".asInstanceOf[InstanceType]
+    val `i3.2xlarge` = "i3.2xlarge".asInstanceOf[InstanceType]
+    val `i3.4xlarge` = "i3.4xlarge".asInstanceOf[InstanceType]
+    val `i3.8xlarge` = "i3.8xlarge".asInstanceOf[InstanceType]
+    val `i3.16xlarge` = "i3.16xlarge".asInstanceOf[InstanceType]
+    val `i3.metal` = "i3.metal".asInstanceOf[InstanceType]
+    val `i3en.large` = "i3en.large".asInstanceOf[InstanceType]
+    val `i3en.xlarge` = "i3en.xlarge".asInstanceOf[InstanceType]
+    val `i3en.2xlarge` = "i3en.2xlarge".asInstanceOf[InstanceType]
+    val `i3en.3xlarge` = "i3en.3xlarge".asInstanceOf[InstanceType]
+    val `i3en.6xlarge` = "i3en.6xlarge".asInstanceOf[InstanceType]
     val `i3en.12xlarge` = "i3en.12xlarge".asInstanceOf[InstanceType]
     val `i3en.24xlarge` = "i3en.24xlarge".asInstanceOf[InstanceType]
-    val `i3en.metal`    = "i3en.metal".asInstanceOf[InstanceType]
-    val `hi1.4xlarge`   = "hi1.4xlarge".asInstanceOf[InstanceType]
-    val `hs1.8xlarge`   = "hs1.8xlarge".asInstanceOf[InstanceType]
-    val `c1.medium`     = "c1.medium".asInstanceOf[InstanceType]
-    val `c1.xlarge`     = "c1.xlarge".asInstanceOf[InstanceType]
-    val `c3.large`      = "c3.large".asInstanceOf[InstanceType]
-    val `c3.xlarge`     = "c3.xlarge".asInstanceOf[InstanceType]
-    val `c3.2xlarge`    = "c3.2xlarge".asInstanceOf[InstanceType]
-    val `c3.4xlarge`    = "c3.4xlarge".asInstanceOf[InstanceType]
-    val `c3.8xlarge`    = "c3.8xlarge".asInstanceOf[InstanceType]
-    val `c4.large`      = "c4.large".asInstanceOf[InstanceType]
-    val `c4.xlarge`     = "c4.xlarge".asInstanceOf[InstanceType]
-    val `c4.2xlarge`    = "c4.2xlarge".asInstanceOf[InstanceType]
-    val `c4.4xlarge`    = "c4.4xlarge".asInstanceOf[InstanceType]
-    val `c4.8xlarge`    = "c4.8xlarge".asInstanceOf[InstanceType]
-    val `c5.large`      = "c5.large".asInstanceOf[InstanceType]
-    val `c5.xlarge`     = "c5.xlarge".asInstanceOf[InstanceType]
-    val `c5.2xlarge`    = "c5.2xlarge".asInstanceOf[InstanceType]
-    val `c5.4xlarge`    = "c5.4xlarge".asInstanceOf[InstanceType]
-    val `c5.9xlarge`    = "c5.9xlarge".asInstanceOf[InstanceType]
-    val `c5.12xlarge`   = "c5.12xlarge".asInstanceOf[InstanceType]
-    val `c5.18xlarge`   = "c5.18xlarge".asInstanceOf[InstanceType]
-    val `c5.24xlarge`   = "c5.24xlarge".asInstanceOf[InstanceType]
-    val `c5.metal`      = "c5.metal".asInstanceOf[InstanceType]
-    val `c5a.large`     = "c5a.large".asInstanceOf[InstanceType]
-    val `c5a.xlarge`    = "c5a.xlarge".asInstanceOf[InstanceType]
-    val `c5a.2xlarge`   = "c5a.2xlarge".asInstanceOf[InstanceType]
-    val `c5a.4xlarge`   = "c5a.4xlarge".asInstanceOf[InstanceType]
-    val `c5a.8xlarge`   = "c5a.8xlarge".asInstanceOf[InstanceType]
-    val `c5a.12xlarge`  = "c5a.12xlarge".asInstanceOf[InstanceType]
-    val `c5a.16xlarge`  = "c5a.16xlarge".asInstanceOf[InstanceType]
-    val `c5a.24xlarge`  = "c5a.24xlarge".asInstanceOf[InstanceType]
-    val `c5d.large`     = "c5d.large".asInstanceOf[InstanceType]
-    val `c5d.xlarge`    = "c5d.xlarge".asInstanceOf[InstanceType]
-    val `c5d.2xlarge`   = "c5d.2xlarge".asInstanceOf[InstanceType]
-    val `c5d.4xlarge`   = "c5d.4xlarge".asInstanceOf[InstanceType]
-    val `c5d.9xlarge`   = "c5d.9xlarge".asInstanceOf[InstanceType]
-    val `c5d.12xlarge`  = "c5d.12xlarge".asInstanceOf[InstanceType]
-    val `c5d.18xlarge`  = "c5d.18xlarge".asInstanceOf[InstanceType]
-    val `c5d.24xlarge`  = "c5d.24xlarge".asInstanceOf[InstanceType]
-    val `c5d.metal`     = "c5d.metal".asInstanceOf[InstanceType]
-    val `c5n.large`     = "c5n.large".asInstanceOf[InstanceType]
-    val `c5n.xlarge`    = "c5n.xlarge".asInstanceOf[InstanceType]
-    val `c5n.2xlarge`   = "c5n.2xlarge".asInstanceOf[InstanceType]
-    val `c5n.4xlarge`   = "c5n.4xlarge".asInstanceOf[InstanceType]
-    val `c5n.9xlarge`   = "c5n.9xlarge".asInstanceOf[InstanceType]
-    val `c5n.18xlarge`  = "c5n.18xlarge".asInstanceOf[InstanceType]
-    val `c6g.metal`     = "c6g.metal".asInstanceOf[InstanceType]
-    val `c6g.medium`    = "c6g.medium".asInstanceOf[InstanceType]
-    val `c6g.large`     = "c6g.large".asInstanceOf[InstanceType]
-    val `c6g.xlarge`    = "c6g.xlarge".asInstanceOf[InstanceType]
-    val `c6g.2xlarge`   = "c6g.2xlarge".asInstanceOf[InstanceType]
-    val `c6g.4xlarge`   = "c6g.4xlarge".asInstanceOf[InstanceType]
-    val `c6g.8xlarge`   = "c6g.8xlarge".asInstanceOf[InstanceType]
-    val `c6g.12xlarge`  = "c6g.12xlarge".asInstanceOf[InstanceType]
-    val `c6g.16xlarge`  = "c6g.16xlarge".asInstanceOf[InstanceType]
-    val `cc1.4xlarge`   = "cc1.4xlarge".asInstanceOf[InstanceType]
-    val `cc2.8xlarge`   = "cc2.8xlarge".asInstanceOf[InstanceType]
-    val `g2.2xlarge`    = "g2.2xlarge".asInstanceOf[InstanceType]
-    val `g2.8xlarge`    = "g2.8xlarge".asInstanceOf[InstanceType]
-    val `g3.4xlarge`    = "g3.4xlarge".asInstanceOf[InstanceType]
-    val `g3.8xlarge`    = "g3.8xlarge".asInstanceOf[InstanceType]
-    val `g3.16xlarge`   = "g3.16xlarge".asInstanceOf[InstanceType]
-    val `g3s.xlarge`    = "g3s.xlarge".asInstanceOf[InstanceType]
-    val `g4dn.xlarge`   = "g4dn.xlarge".asInstanceOf[InstanceType]
-    val `g4dn.2xlarge`  = "g4dn.2xlarge".asInstanceOf[InstanceType]
-    val `g4dn.4xlarge`  = "g4dn.4xlarge".asInstanceOf[InstanceType]
-    val `g4dn.8xlarge`  = "g4dn.8xlarge".asInstanceOf[InstanceType]
+    val `i3en.metal` = "i3en.metal".asInstanceOf[InstanceType]
+    val `hi1.4xlarge` = "hi1.4xlarge".asInstanceOf[InstanceType]
+    val `hs1.8xlarge` = "hs1.8xlarge".asInstanceOf[InstanceType]
+    val `c1.medium` = "c1.medium".asInstanceOf[InstanceType]
+    val `c1.xlarge` = "c1.xlarge".asInstanceOf[InstanceType]
+    val `c3.large` = "c3.large".asInstanceOf[InstanceType]
+    val `c3.xlarge` = "c3.xlarge".asInstanceOf[InstanceType]
+    val `c3.2xlarge` = "c3.2xlarge".asInstanceOf[InstanceType]
+    val `c3.4xlarge` = "c3.4xlarge".asInstanceOf[InstanceType]
+    val `c3.8xlarge` = "c3.8xlarge".asInstanceOf[InstanceType]
+    val `c4.large` = "c4.large".asInstanceOf[InstanceType]
+    val `c4.xlarge` = "c4.xlarge".asInstanceOf[InstanceType]
+    val `c4.2xlarge` = "c4.2xlarge".asInstanceOf[InstanceType]
+    val `c4.4xlarge` = "c4.4xlarge".asInstanceOf[InstanceType]
+    val `c4.8xlarge` = "c4.8xlarge".asInstanceOf[InstanceType]
+    val `c5.large` = "c5.large".asInstanceOf[InstanceType]
+    val `c5.xlarge` = "c5.xlarge".asInstanceOf[InstanceType]
+    val `c5.2xlarge` = "c5.2xlarge".asInstanceOf[InstanceType]
+    val `c5.4xlarge` = "c5.4xlarge".asInstanceOf[InstanceType]
+    val `c5.9xlarge` = "c5.9xlarge".asInstanceOf[InstanceType]
+    val `c5.12xlarge` = "c5.12xlarge".asInstanceOf[InstanceType]
+    val `c5.18xlarge` = "c5.18xlarge".asInstanceOf[InstanceType]
+    val `c5.24xlarge` = "c5.24xlarge".asInstanceOf[InstanceType]
+    val `c5.metal` = "c5.metal".asInstanceOf[InstanceType]
+    val `c5a.large` = "c5a.large".asInstanceOf[InstanceType]
+    val `c5a.xlarge` = "c5a.xlarge".asInstanceOf[InstanceType]
+    val `c5a.2xlarge` = "c5a.2xlarge".asInstanceOf[InstanceType]
+    val `c5a.4xlarge` = "c5a.4xlarge".asInstanceOf[InstanceType]
+    val `c5a.8xlarge` = "c5a.8xlarge".asInstanceOf[InstanceType]
+    val `c5a.12xlarge` = "c5a.12xlarge".asInstanceOf[InstanceType]
+    val `c5a.16xlarge` = "c5a.16xlarge".asInstanceOf[InstanceType]
+    val `c5a.24xlarge` = "c5a.24xlarge".asInstanceOf[InstanceType]
+    val `c5d.large` = "c5d.large".asInstanceOf[InstanceType]
+    val `c5d.xlarge` = "c5d.xlarge".asInstanceOf[InstanceType]
+    val `c5d.2xlarge` = "c5d.2xlarge".asInstanceOf[InstanceType]
+    val `c5d.4xlarge` = "c5d.4xlarge".asInstanceOf[InstanceType]
+    val `c5d.9xlarge` = "c5d.9xlarge".asInstanceOf[InstanceType]
+    val `c5d.12xlarge` = "c5d.12xlarge".asInstanceOf[InstanceType]
+    val `c5d.18xlarge` = "c5d.18xlarge".asInstanceOf[InstanceType]
+    val `c5d.24xlarge` = "c5d.24xlarge".asInstanceOf[InstanceType]
+    val `c5d.metal` = "c5d.metal".asInstanceOf[InstanceType]
+    val `c5n.large` = "c5n.large".asInstanceOf[InstanceType]
+    val `c5n.xlarge` = "c5n.xlarge".asInstanceOf[InstanceType]
+    val `c5n.2xlarge` = "c5n.2xlarge".asInstanceOf[InstanceType]
+    val `c5n.4xlarge` = "c5n.4xlarge".asInstanceOf[InstanceType]
+    val `c5n.9xlarge` = "c5n.9xlarge".asInstanceOf[InstanceType]
+    val `c5n.18xlarge` = "c5n.18xlarge".asInstanceOf[InstanceType]
+    val `c6g.metal` = "c6g.metal".asInstanceOf[InstanceType]
+    val `c6g.medium` = "c6g.medium".asInstanceOf[InstanceType]
+    val `c6g.large` = "c6g.large".asInstanceOf[InstanceType]
+    val `c6g.xlarge` = "c6g.xlarge".asInstanceOf[InstanceType]
+    val `c6g.2xlarge` = "c6g.2xlarge".asInstanceOf[InstanceType]
+    val `c6g.4xlarge` = "c6g.4xlarge".asInstanceOf[InstanceType]
+    val `c6g.8xlarge` = "c6g.8xlarge".asInstanceOf[InstanceType]
+    val `c6g.12xlarge` = "c6g.12xlarge".asInstanceOf[InstanceType]
+    val `c6g.16xlarge` = "c6g.16xlarge".asInstanceOf[InstanceType]
+    val `cc1.4xlarge` = "cc1.4xlarge".asInstanceOf[InstanceType]
+    val `cc2.8xlarge` = "cc2.8xlarge".asInstanceOf[InstanceType]
+    val `g2.2xlarge` = "g2.2xlarge".asInstanceOf[InstanceType]
+    val `g2.8xlarge` = "g2.8xlarge".asInstanceOf[InstanceType]
+    val `g3.4xlarge` = "g3.4xlarge".asInstanceOf[InstanceType]
+    val `g3.8xlarge` = "g3.8xlarge".asInstanceOf[InstanceType]
+    val `g3.16xlarge` = "g3.16xlarge".asInstanceOf[InstanceType]
+    val `g3s.xlarge` = "g3s.xlarge".asInstanceOf[InstanceType]
+    val `g4dn.xlarge` = "g4dn.xlarge".asInstanceOf[InstanceType]
+    val `g4dn.2xlarge` = "g4dn.2xlarge".asInstanceOf[InstanceType]
+    val `g4dn.4xlarge` = "g4dn.4xlarge".asInstanceOf[InstanceType]
+    val `g4dn.8xlarge` = "g4dn.8xlarge".asInstanceOf[InstanceType]
     val `g4dn.12xlarge` = "g4dn.12xlarge".asInstanceOf[InstanceType]
     val `g4dn.16xlarge` = "g4dn.16xlarge".asInstanceOf[InstanceType]
-    val `g4dn.metal`    = "g4dn.metal".asInstanceOf[InstanceType]
-    val `cg1.4xlarge`   = "cg1.4xlarge".asInstanceOf[InstanceType]
-    val `p2.xlarge`     = "p2.xlarge".asInstanceOf[InstanceType]
-    val `p2.8xlarge`    = "p2.8xlarge".asInstanceOf[InstanceType]
-    val `p2.16xlarge`   = "p2.16xlarge".asInstanceOf[InstanceType]
-    val `p3.2xlarge`    = "p3.2xlarge".asInstanceOf[InstanceType]
-    val `p3.8xlarge`    = "p3.8xlarge".asInstanceOf[InstanceType]
-    val `p3.16xlarge`   = "p3.16xlarge".asInstanceOf[InstanceType]
+    val `g4dn.metal` = "g4dn.metal".asInstanceOf[InstanceType]
+    val `cg1.4xlarge` = "cg1.4xlarge".asInstanceOf[InstanceType]
+    val `p2.xlarge` = "p2.xlarge".asInstanceOf[InstanceType]
+    val `p2.8xlarge` = "p2.8xlarge".asInstanceOf[InstanceType]
+    val `p2.16xlarge` = "p2.16xlarge".asInstanceOf[InstanceType]
+    val `p3.2xlarge` = "p3.2xlarge".asInstanceOf[InstanceType]
+    val `p3.8xlarge` = "p3.8xlarge".asInstanceOf[InstanceType]
+    val `p3.16xlarge` = "p3.16xlarge".asInstanceOf[InstanceType]
     val `p3dn.24xlarge` = "p3dn.24xlarge".asInstanceOf[InstanceType]
-    val `d2.xlarge`     = "d2.xlarge".asInstanceOf[InstanceType]
-    val `d2.2xlarge`    = "d2.2xlarge".asInstanceOf[InstanceType]
-    val `d2.4xlarge`    = "d2.4xlarge".asInstanceOf[InstanceType]
-    val `d2.8xlarge`    = "d2.8xlarge".asInstanceOf[InstanceType]
-    val `f1.2xlarge`    = "f1.2xlarge".asInstanceOf[InstanceType]
-    val `f1.4xlarge`    = "f1.4xlarge".asInstanceOf[InstanceType]
-    val `f1.16xlarge`   = "f1.16xlarge".asInstanceOf[InstanceType]
-    val `m5.large`      = "m5.large".asInstanceOf[InstanceType]
-    val `m5.xlarge`     = "m5.xlarge".asInstanceOf[InstanceType]
-    val `m5.2xlarge`    = "m5.2xlarge".asInstanceOf[InstanceType]
-    val `m5.4xlarge`    = "m5.4xlarge".asInstanceOf[InstanceType]
-    val `m5.8xlarge`    = "m5.8xlarge".asInstanceOf[InstanceType]
-    val `m5.12xlarge`   = "m5.12xlarge".asInstanceOf[InstanceType]
-    val `m5.16xlarge`   = "m5.16xlarge".asInstanceOf[InstanceType]
-    val `m5.24xlarge`   = "m5.24xlarge".asInstanceOf[InstanceType]
-    val `m5.metal`      = "m5.metal".asInstanceOf[InstanceType]
-    val `m5a.large`     = "m5a.large".asInstanceOf[InstanceType]
-    val `m5a.xlarge`    = "m5a.xlarge".asInstanceOf[InstanceType]
-    val `m5a.2xlarge`   = "m5a.2xlarge".asInstanceOf[InstanceType]
-    val `m5a.4xlarge`   = "m5a.4xlarge".asInstanceOf[InstanceType]
-    val `m5a.8xlarge`   = "m5a.8xlarge".asInstanceOf[InstanceType]
-    val `m5a.12xlarge`  = "m5a.12xlarge".asInstanceOf[InstanceType]
-    val `m5a.16xlarge`  = "m5a.16xlarge".asInstanceOf[InstanceType]
-    val `m5a.24xlarge`  = "m5a.24xlarge".asInstanceOf[InstanceType]
-    val `m5d.large`     = "m5d.large".asInstanceOf[InstanceType]
-    val `m5d.xlarge`    = "m5d.xlarge".asInstanceOf[InstanceType]
-    val `m5d.2xlarge`   = "m5d.2xlarge".asInstanceOf[InstanceType]
-    val `m5d.4xlarge`   = "m5d.4xlarge".asInstanceOf[InstanceType]
-    val `m5d.8xlarge`   = "m5d.8xlarge".asInstanceOf[InstanceType]
-    val `m5d.12xlarge`  = "m5d.12xlarge".asInstanceOf[InstanceType]
-    val `m5d.16xlarge`  = "m5d.16xlarge".asInstanceOf[InstanceType]
-    val `m5d.24xlarge`  = "m5d.24xlarge".asInstanceOf[InstanceType]
-    val `m5d.metal`     = "m5d.metal".asInstanceOf[InstanceType]
-    val `m5ad.large`    = "m5ad.large".asInstanceOf[InstanceType]
-    val `m5ad.xlarge`   = "m5ad.xlarge".asInstanceOf[InstanceType]
-    val `m5ad.2xlarge`  = "m5ad.2xlarge".asInstanceOf[InstanceType]
-    val `m5ad.4xlarge`  = "m5ad.4xlarge".asInstanceOf[InstanceType]
-    val `m5ad.8xlarge`  = "m5ad.8xlarge".asInstanceOf[InstanceType]
+    val `d2.xlarge` = "d2.xlarge".asInstanceOf[InstanceType]
+    val `d2.2xlarge` = "d2.2xlarge".asInstanceOf[InstanceType]
+    val `d2.4xlarge` = "d2.4xlarge".asInstanceOf[InstanceType]
+    val `d2.8xlarge` = "d2.8xlarge".asInstanceOf[InstanceType]
+    val `f1.2xlarge` = "f1.2xlarge".asInstanceOf[InstanceType]
+    val `f1.4xlarge` = "f1.4xlarge".asInstanceOf[InstanceType]
+    val `f1.16xlarge` = "f1.16xlarge".asInstanceOf[InstanceType]
+    val `m5.large` = "m5.large".asInstanceOf[InstanceType]
+    val `m5.xlarge` = "m5.xlarge".asInstanceOf[InstanceType]
+    val `m5.2xlarge` = "m5.2xlarge".asInstanceOf[InstanceType]
+    val `m5.4xlarge` = "m5.4xlarge".asInstanceOf[InstanceType]
+    val `m5.8xlarge` = "m5.8xlarge".asInstanceOf[InstanceType]
+    val `m5.12xlarge` = "m5.12xlarge".asInstanceOf[InstanceType]
+    val `m5.16xlarge` = "m5.16xlarge".asInstanceOf[InstanceType]
+    val `m5.24xlarge` = "m5.24xlarge".asInstanceOf[InstanceType]
+    val `m5.metal` = "m5.metal".asInstanceOf[InstanceType]
+    val `m5a.large` = "m5a.large".asInstanceOf[InstanceType]
+    val `m5a.xlarge` = "m5a.xlarge".asInstanceOf[InstanceType]
+    val `m5a.2xlarge` = "m5a.2xlarge".asInstanceOf[InstanceType]
+    val `m5a.4xlarge` = "m5a.4xlarge".asInstanceOf[InstanceType]
+    val `m5a.8xlarge` = "m5a.8xlarge".asInstanceOf[InstanceType]
+    val `m5a.12xlarge` = "m5a.12xlarge".asInstanceOf[InstanceType]
+    val `m5a.16xlarge` = "m5a.16xlarge".asInstanceOf[InstanceType]
+    val `m5a.24xlarge` = "m5a.24xlarge".asInstanceOf[InstanceType]
+    val `m5d.large` = "m5d.large".asInstanceOf[InstanceType]
+    val `m5d.xlarge` = "m5d.xlarge".asInstanceOf[InstanceType]
+    val `m5d.2xlarge` = "m5d.2xlarge".asInstanceOf[InstanceType]
+    val `m5d.4xlarge` = "m5d.4xlarge".asInstanceOf[InstanceType]
+    val `m5d.8xlarge` = "m5d.8xlarge".asInstanceOf[InstanceType]
+    val `m5d.12xlarge` = "m5d.12xlarge".asInstanceOf[InstanceType]
+    val `m5d.16xlarge` = "m5d.16xlarge".asInstanceOf[InstanceType]
+    val `m5d.24xlarge` = "m5d.24xlarge".asInstanceOf[InstanceType]
+    val `m5d.metal` = "m5d.metal".asInstanceOf[InstanceType]
+    val `m5ad.large` = "m5ad.large".asInstanceOf[InstanceType]
+    val `m5ad.xlarge` = "m5ad.xlarge".asInstanceOf[InstanceType]
+    val `m5ad.2xlarge` = "m5ad.2xlarge".asInstanceOf[InstanceType]
+    val `m5ad.4xlarge` = "m5ad.4xlarge".asInstanceOf[InstanceType]
+    val `m5ad.8xlarge` = "m5ad.8xlarge".asInstanceOf[InstanceType]
     val `m5ad.12xlarge` = "m5ad.12xlarge".asInstanceOf[InstanceType]
     val `m5ad.16xlarge` = "m5ad.16xlarge".asInstanceOf[InstanceType]
     val `m5ad.24xlarge` = "m5ad.24xlarge".asInstanceOf[InstanceType]
-    val `h1.2xlarge`    = "h1.2xlarge".asInstanceOf[InstanceType]
-    val `h1.4xlarge`    = "h1.4xlarge".asInstanceOf[InstanceType]
-    val `h1.8xlarge`    = "h1.8xlarge".asInstanceOf[InstanceType]
-    val `h1.16xlarge`   = "h1.16xlarge".asInstanceOf[InstanceType]
-    val `z1d.large`     = "z1d.large".asInstanceOf[InstanceType]
-    val `z1d.xlarge`    = "z1d.xlarge".asInstanceOf[InstanceType]
-    val `z1d.2xlarge`   = "z1d.2xlarge".asInstanceOf[InstanceType]
-    val `z1d.3xlarge`   = "z1d.3xlarge".asInstanceOf[InstanceType]
-    val `z1d.6xlarge`   = "z1d.6xlarge".asInstanceOf[InstanceType]
-    val `z1d.12xlarge`  = "z1d.12xlarge".asInstanceOf[InstanceType]
-    val `z1d.metal`     = "z1d.metal".asInstanceOf[InstanceType]
-    val `u-6tb1.metal`  = "u-6tb1.metal".asInstanceOf[InstanceType]
-    val `u-9tb1.metal`  = "u-9tb1.metal".asInstanceOf[InstanceType]
+    val `h1.2xlarge` = "h1.2xlarge".asInstanceOf[InstanceType]
+    val `h1.4xlarge` = "h1.4xlarge".asInstanceOf[InstanceType]
+    val `h1.8xlarge` = "h1.8xlarge".asInstanceOf[InstanceType]
+    val `h1.16xlarge` = "h1.16xlarge".asInstanceOf[InstanceType]
+    val `z1d.large` = "z1d.large".asInstanceOf[InstanceType]
+    val `z1d.xlarge` = "z1d.xlarge".asInstanceOf[InstanceType]
+    val `z1d.2xlarge` = "z1d.2xlarge".asInstanceOf[InstanceType]
+    val `z1d.3xlarge` = "z1d.3xlarge".asInstanceOf[InstanceType]
+    val `z1d.6xlarge` = "z1d.6xlarge".asInstanceOf[InstanceType]
+    val `z1d.12xlarge` = "z1d.12xlarge".asInstanceOf[InstanceType]
+    val `z1d.metal` = "z1d.metal".asInstanceOf[InstanceType]
+    val `u-6tb1.metal` = "u-6tb1.metal".asInstanceOf[InstanceType]
+    val `u-9tb1.metal` = "u-9tb1.metal".asInstanceOf[InstanceType]
     val `u-12tb1.metal` = "u-12tb1.metal".asInstanceOf[InstanceType]
     val `u-18tb1.metal` = "u-18tb1.metal".asInstanceOf[InstanceType]
     val `u-24tb1.metal` = "u-24tb1.metal".asInstanceOf[InstanceType]
-    val `a1.medium`     = "a1.medium".asInstanceOf[InstanceType]
-    val `a1.large`      = "a1.large".asInstanceOf[InstanceType]
-    val `a1.xlarge`     = "a1.xlarge".asInstanceOf[InstanceType]
-    val `a1.2xlarge`    = "a1.2xlarge".asInstanceOf[InstanceType]
-    val `a1.4xlarge`    = "a1.4xlarge".asInstanceOf[InstanceType]
-    val `a1.metal`      = "a1.metal".asInstanceOf[InstanceType]
-    val `m5dn.large`    = "m5dn.large".asInstanceOf[InstanceType]
-    val `m5dn.xlarge`   = "m5dn.xlarge".asInstanceOf[InstanceType]
-    val `m5dn.2xlarge`  = "m5dn.2xlarge".asInstanceOf[InstanceType]
-    val `m5dn.4xlarge`  = "m5dn.4xlarge".asInstanceOf[InstanceType]
-    val `m5dn.8xlarge`  = "m5dn.8xlarge".asInstanceOf[InstanceType]
+    val `a1.medium` = "a1.medium".asInstanceOf[InstanceType]
+    val `a1.large` = "a1.large".asInstanceOf[InstanceType]
+    val `a1.xlarge` = "a1.xlarge".asInstanceOf[InstanceType]
+    val `a1.2xlarge` = "a1.2xlarge".asInstanceOf[InstanceType]
+    val `a1.4xlarge` = "a1.4xlarge".asInstanceOf[InstanceType]
+    val `a1.metal` = "a1.metal".asInstanceOf[InstanceType]
+    val `m5dn.large` = "m5dn.large".asInstanceOf[InstanceType]
+    val `m5dn.xlarge` = "m5dn.xlarge".asInstanceOf[InstanceType]
+    val `m5dn.2xlarge` = "m5dn.2xlarge".asInstanceOf[InstanceType]
+    val `m5dn.4xlarge` = "m5dn.4xlarge".asInstanceOf[InstanceType]
+    val `m5dn.8xlarge` = "m5dn.8xlarge".asInstanceOf[InstanceType]
     val `m5dn.12xlarge` = "m5dn.12xlarge".asInstanceOf[InstanceType]
     val `m5dn.16xlarge` = "m5dn.16xlarge".asInstanceOf[InstanceType]
     val `m5dn.24xlarge` = "m5dn.24xlarge".asInstanceOf[InstanceType]
-    val `m5n.large`     = "m5n.large".asInstanceOf[InstanceType]
-    val `m5n.xlarge`    = "m5n.xlarge".asInstanceOf[InstanceType]
-    val `m5n.2xlarge`   = "m5n.2xlarge".asInstanceOf[InstanceType]
-    val `m5n.4xlarge`   = "m5n.4xlarge".asInstanceOf[InstanceType]
-    val `m5n.8xlarge`   = "m5n.8xlarge".asInstanceOf[InstanceType]
-    val `m5n.12xlarge`  = "m5n.12xlarge".asInstanceOf[InstanceType]
-    val `m5n.16xlarge`  = "m5n.16xlarge".asInstanceOf[InstanceType]
-    val `m5n.24xlarge`  = "m5n.24xlarge".asInstanceOf[InstanceType]
-    val `r5dn.large`    = "r5dn.large".asInstanceOf[InstanceType]
-    val `r5dn.xlarge`   = "r5dn.xlarge".asInstanceOf[InstanceType]
-    val `r5dn.2xlarge`  = "r5dn.2xlarge".asInstanceOf[InstanceType]
-    val `r5dn.4xlarge`  = "r5dn.4xlarge".asInstanceOf[InstanceType]
-    val `r5dn.8xlarge`  = "r5dn.8xlarge".asInstanceOf[InstanceType]
+    val `m5n.large` = "m5n.large".asInstanceOf[InstanceType]
+    val `m5n.xlarge` = "m5n.xlarge".asInstanceOf[InstanceType]
+    val `m5n.2xlarge` = "m5n.2xlarge".asInstanceOf[InstanceType]
+    val `m5n.4xlarge` = "m5n.4xlarge".asInstanceOf[InstanceType]
+    val `m5n.8xlarge` = "m5n.8xlarge".asInstanceOf[InstanceType]
+    val `m5n.12xlarge` = "m5n.12xlarge".asInstanceOf[InstanceType]
+    val `m5n.16xlarge` = "m5n.16xlarge".asInstanceOf[InstanceType]
+    val `m5n.24xlarge` = "m5n.24xlarge".asInstanceOf[InstanceType]
+    val `r5dn.large` = "r5dn.large".asInstanceOf[InstanceType]
+    val `r5dn.xlarge` = "r5dn.xlarge".asInstanceOf[InstanceType]
+    val `r5dn.2xlarge` = "r5dn.2xlarge".asInstanceOf[InstanceType]
+    val `r5dn.4xlarge` = "r5dn.4xlarge".asInstanceOf[InstanceType]
+    val `r5dn.8xlarge` = "r5dn.8xlarge".asInstanceOf[InstanceType]
     val `r5dn.12xlarge` = "r5dn.12xlarge".asInstanceOf[InstanceType]
     val `r5dn.16xlarge` = "r5dn.16xlarge".asInstanceOf[InstanceType]
     val `r5dn.24xlarge` = "r5dn.24xlarge".asInstanceOf[InstanceType]
-    val `r5n.large`     = "r5n.large".asInstanceOf[InstanceType]
-    val `r5n.xlarge`    = "r5n.xlarge".asInstanceOf[InstanceType]
-    val `r5n.2xlarge`   = "r5n.2xlarge".asInstanceOf[InstanceType]
-    val `r5n.4xlarge`   = "r5n.4xlarge".asInstanceOf[InstanceType]
-    val `r5n.8xlarge`   = "r5n.8xlarge".asInstanceOf[InstanceType]
-    val `r5n.12xlarge`  = "r5n.12xlarge".asInstanceOf[InstanceType]
-    val `r5n.16xlarge`  = "r5n.16xlarge".asInstanceOf[InstanceType]
-    val `r5n.24xlarge`  = "r5n.24xlarge".asInstanceOf[InstanceType]
-    val `inf1.xlarge`   = "inf1.xlarge".asInstanceOf[InstanceType]
-    val `inf1.2xlarge`  = "inf1.2xlarge".asInstanceOf[InstanceType]
-    val `inf1.6xlarge`  = "inf1.6xlarge".asInstanceOf[InstanceType]
+    val `r5n.large` = "r5n.large".asInstanceOf[InstanceType]
+    val `r5n.xlarge` = "r5n.xlarge".asInstanceOf[InstanceType]
+    val `r5n.2xlarge` = "r5n.2xlarge".asInstanceOf[InstanceType]
+    val `r5n.4xlarge` = "r5n.4xlarge".asInstanceOf[InstanceType]
+    val `r5n.8xlarge` = "r5n.8xlarge".asInstanceOf[InstanceType]
+    val `r5n.12xlarge` = "r5n.12xlarge".asInstanceOf[InstanceType]
+    val `r5n.16xlarge` = "r5n.16xlarge".asInstanceOf[InstanceType]
+    val `r5n.24xlarge` = "r5n.24xlarge".asInstanceOf[InstanceType]
+    val `inf1.xlarge` = "inf1.xlarge".asInstanceOf[InstanceType]
+    val `inf1.2xlarge` = "inf1.2xlarge".asInstanceOf[InstanceType]
+    val `inf1.6xlarge` = "inf1.6xlarge".asInstanceOf[InstanceType]
     val `inf1.24xlarge` = "inf1.24xlarge".asInstanceOf[InstanceType]
-    val `m6g.metal`     = "m6g.metal".asInstanceOf[InstanceType]
-    val `m6g.medium`    = "m6g.medium".asInstanceOf[InstanceType]
-    val `m6g.large`     = "m6g.large".asInstanceOf[InstanceType]
-    val `m6g.xlarge`    = "m6g.xlarge".asInstanceOf[InstanceType]
-    val `m6g.2xlarge`   = "m6g.2xlarge".asInstanceOf[InstanceType]
-    val `m6g.4xlarge`   = "m6g.4xlarge".asInstanceOf[InstanceType]
-    val `m6g.8xlarge`   = "m6g.8xlarge".asInstanceOf[InstanceType]
-    val `m6g.12xlarge`  = "m6g.12xlarge".asInstanceOf[InstanceType]
-    val `m6g.16xlarge`  = "m6g.16xlarge".asInstanceOf[InstanceType]
+    val `m6g.metal` = "m6g.metal".asInstanceOf[InstanceType]
+    val `m6g.medium` = "m6g.medium".asInstanceOf[InstanceType]
+    val `m6g.large` = "m6g.large".asInstanceOf[InstanceType]
+    val `m6g.xlarge` = "m6g.xlarge".asInstanceOf[InstanceType]
+    val `m6g.2xlarge` = "m6g.2xlarge".asInstanceOf[InstanceType]
+    val `m6g.4xlarge` = "m6g.4xlarge".asInstanceOf[InstanceType]
+    val `m6g.8xlarge` = "m6g.8xlarge".asInstanceOf[InstanceType]
+    val `m6g.12xlarge` = "m6g.12xlarge".asInstanceOf[InstanceType]
+    val `m6g.16xlarge` = "m6g.16xlarge".asInstanceOf[InstanceType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -23837,7 +23837,7 @@ package ec2 {
   sealed trait InstanceTypeHypervisor extends js.Any
   object InstanceTypeHypervisor extends js.Object {
     val nitro = "nitro".asInstanceOf[InstanceTypeHypervisor]
-    val xen   = "xen".asInstanceOf[InstanceTypeHypervisor]
+    val xen = "xen".asInstanceOf[InstanceTypeHypervisor]
 
     val values = js.Object.freeze(js.Array(nitro, xen))
   }
@@ -23982,7 +23982,7 @@ package ec2 {
   sealed trait InterfacePermissionType extends js.Any
   object InterfacePermissionType extends js.Object {
     val `INSTANCE-ATTACH` = "INSTANCE-ATTACH".asInstanceOf[InterfacePermissionType]
-    val `EIP-ASSOCIATE`   = "EIP-ASSOCIATE".asInstanceOf[InterfacePermissionType]
+    val `EIP-ASSOCIATE` = "EIP-ASSOCIATE".asInstanceOf[InterfacePermissionType]
 
     val values = js.Object.freeze(js.Array(`INSTANCE-ATTACH`, `EIP-ASSOCIATE`))
   }
@@ -24190,7 +24190,7 @@ package ec2 {
   @js.native
   sealed trait Ipv6SupportValue extends js.Any
   object Ipv6SupportValue extends js.Object {
-    val enable  = "enable".asInstanceOf[Ipv6SupportValue]
+    val enable = "enable".asInstanceOf[Ipv6SupportValue]
     val disable = "disable".asInstanceOf[Ipv6SupportValue]
 
     val values = js.Object.freeze(js.Array(enable, disable))
@@ -24742,12 +24742,12 @@ package ec2 {
   @js.native
   sealed trait LaunchTemplateErrorCode extends js.Any
   object LaunchTemplateErrorCode extends js.Object {
-    val launchTemplateIdDoesNotExist      = "launchTemplateIdDoesNotExist".asInstanceOf[LaunchTemplateErrorCode]
-    val launchTemplateIdMalformed         = "launchTemplateIdMalformed".asInstanceOf[LaunchTemplateErrorCode]
-    val launchTemplateNameDoesNotExist    = "launchTemplateNameDoesNotExist".asInstanceOf[LaunchTemplateErrorCode]
-    val launchTemplateNameMalformed       = "launchTemplateNameMalformed".asInstanceOf[LaunchTemplateErrorCode]
+    val launchTemplateIdDoesNotExist = "launchTemplateIdDoesNotExist".asInstanceOf[LaunchTemplateErrorCode]
+    val launchTemplateIdMalformed = "launchTemplateIdMalformed".asInstanceOf[LaunchTemplateErrorCode]
+    val launchTemplateNameDoesNotExist = "launchTemplateNameDoesNotExist".asInstanceOf[LaunchTemplateErrorCode]
+    val launchTemplateNameMalformed = "launchTemplateNameMalformed".asInstanceOf[LaunchTemplateErrorCode]
     val launchTemplateVersionDoesNotExist = "launchTemplateVersionDoesNotExist".asInstanceOf[LaunchTemplateErrorCode]
-    val unexpectedError                   = "unexpectedError".asInstanceOf[LaunchTemplateErrorCode]
+    val unexpectedError = "unexpectedError".asInstanceOf[LaunchTemplateErrorCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -24900,7 +24900,7 @@ package ec2 {
   sealed trait LaunchTemplateInstanceMetadataEndpointState extends js.Any
   object LaunchTemplateInstanceMetadataEndpointState extends js.Object {
     val disabled = "disabled".asInstanceOf[LaunchTemplateInstanceMetadataEndpointState]
-    val enabled  = "enabled".asInstanceOf[LaunchTemplateInstanceMetadataEndpointState]
+    val enabled = "enabled".asInstanceOf[LaunchTemplateInstanceMetadataEndpointState]
 
     val values = js.Object.freeze(js.Array(disabled, enabled))
   }
@@ -25488,9 +25488,9 @@ package ec2 {
   sealed trait ListingState extends js.Any
   object ListingState extends js.Object {
     val available = "available".asInstanceOf[ListingState]
-    val sold      = "sold".asInstanceOf[ListingState]
+    val sold = "sold".asInstanceOf[ListingState]
     val cancelled = "cancelled".asInstanceOf[ListingState]
-    val pending   = "pending".asInstanceOf[ListingState]
+    val pending = "pending".asInstanceOf[ListingState]
 
     val values = js.Object.freeze(js.Array(available, sold, cancelled, pending))
   }
@@ -25498,10 +25498,10 @@ package ec2 {
   @js.native
   sealed trait ListingStatus extends js.Any
   object ListingStatus extends js.Object {
-    val active    = "active".asInstanceOf[ListingStatus]
-    val pending   = "pending".asInstanceOf[ListingStatus]
+    val active = "active".asInstanceOf[ListingStatus]
+    val pending = "pending".asInstanceOf[ListingStatus]
     val cancelled = "cancelled".asInstanceOf[ListingStatus]
-    val closed    = "closed".asInstanceOf[ListingStatus]
+    val closed = "closed".asInstanceOf[ListingStatus]
 
     val values = js.Object.freeze(js.Array(active, pending, cancelled, closed))
   }
@@ -25663,11 +25663,11 @@ package ec2 {
   @js.native
   sealed trait LocalGatewayRouteState extends js.Any
   object LocalGatewayRouteState extends js.Object {
-    val pending   = "pending".asInstanceOf[LocalGatewayRouteState]
-    val active    = "active".asInstanceOf[LocalGatewayRouteState]
+    val pending = "pending".asInstanceOf[LocalGatewayRouteState]
+    val active = "active".asInstanceOf[LocalGatewayRouteState]
     val blackhole = "blackhole".asInstanceOf[LocalGatewayRouteState]
-    val deleting  = "deleting".asInstanceOf[LocalGatewayRouteState]
-    val deleted   = "deleted".asInstanceOf[LocalGatewayRouteState]
+    val deleting = "deleting".asInstanceOf[LocalGatewayRouteState]
+    val deleted = "deleted".asInstanceOf[LocalGatewayRouteState]
 
     val values = js.Object.freeze(js.Array(pending, active, blackhole, deleting, deleted))
   }
@@ -25784,7 +25784,7 @@ package ec2 {
   @js.native
   sealed trait LocalGatewayRouteType extends js.Any
   object LocalGatewayRouteType extends js.Object {
-    val static     = "static".asInstanceOf[LocalGatewayRouteType]
+    val static = "static".asInstanceOf[LocalGatewayRouteType]
     val propagated = "propagated".asInstanceOf[LocalGatewayRouteType]
 
     val values = js.Object.freeze(js.Array(static, propagated))
@@ -25867,8 +25867,8 @@ package ec2 {
   @js.native
   sealed trait LocationType extends js.Any
   object LocationType extends js.Object {
-    val region                 = "region".asInstanceOf[LocationType]
-    val `availability-zone`    = "availability-zone".asInstanceOf[LocationType]
+    val region = "region".asInstanceOf[LocationType]
+    val `availability-zone` = "availability-zone".asInstanceOf[LocationType]
     val `availability-zone-id` = "availability-zone-id".asInstanceOf[LocationType]
 
     val values = js.Object.freeze(js.Array(region, `availability-zone`, `availability-zone-id`))
@@ -25878,7 +25878,7 @@ package ec2 {
   sealed trait LogDestinationType extends js.Any
   object LogDestinationType extends js.Object {
     val `cloud-watch-logs` = "cloud-watch-logs".asInstanceOf[LogDestinationType]
-    val s3                 = "s3".asInstanceOf[LogDestinationType]
+    val s3 = "s3".asInstanceOf[LogDestinationType]
 
     val values = js.Object.freeze(js.Array(`cloud-watch-logs`, s3))
   }
@@ -25941,7 +25941,7 @@ package ec2 {
   sealed trait MembershipType extends js.Any
   object MembershipType extends js.Object {
     val static = "static".asInstanceOf[MembershipType]
-    val igmp   = "igmp".asInstanceOf[MembershipType]
+    val igmp = "igmp".asInstanceOf[MembershipType]
 
     val values = js.Object.freeze(js.Array(static, igmp))
   }
@@ -25980,7 +25980,7 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): ModifyAvailabilityZoneGroupRequest = {
       val __obj = js.Dynamic.literal(
-        "GroupName"   -> GroupName.asInstanceOf[js.Any],
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
         "OptInStatus" -> OptInStatus.asInstanceOf[js.Any]
       )
 
@@ -26008,7 +26008,7 @@ package ec2 {
   @js.native
   sealed trait ModifyAvailabilityZoneOptInStatus extends js.Any
   object ModifyAvailabilityZoneOptInStatus extends js.Object {
-    val `opted-in`     = "opted-in".asInstanceOf[ModifyAvailabilityZoneOptInStatus]
+    val `opted-in` = "opted-in".asInstanceOf[ModifyAvailabilityZoneOptInStatus]
     val `not-opted-in` = "not-opted-in".asInstanceOf[ModifyAvailabilityZoneOptInStatus]
 
     val values = js.Object.freeze(js.Array(`opted-in`, `not-opted-in`))
@@ -26136,7 +26136,7 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): ModifyDefaultCreditSpecificationRequest = {
       val __obj = js.Dynamic.literal(
-        "CpuCredits"     -> CpuCredits.asInstanceOf[js.Any],
+        "CpuCredits" -> CpuCredits.asInstanceOf[js.Any],
         "InstanceFamily" -> InstanceFamily.asInstanceOf[js.Any]
       )
 
@@ -26217,7 +26217,7 @@ package ec2 {
         ExcessCapacityTerminationPolicy: js.UndefOr[FleetExcessCapacityTerminationPolicy] = js.undefined
     ): ModifyFleetRequest = {
       val __obj = js.Dynamic.literal(
-        "FleetId"                     -> FleetId.asInstanceOf[js.Any],
+        "FleetId" -> FleetId.asInstanceOf[js.Any],
         "TargetCapacitySpecification" -> TargetCapacitySpecification.asInstanceOf[js.Any]
       )
 
@@ -26368,7 +26368,7 @@ package ec2 {
         UseLongIds: Boolean
     ): ModifyIdFormatRequest = {
       val __obj = js.Dynamic.literal(
-        "Resource"   -> Resource.asInstanceOf[js.Any],
+        "Resource" -> Resource.asInstanceOf[js.Any],
         "UseLongIds" -> UseLongIds.asInstanceOf[js.Any]
       )
 
@@ -26392,8 +26392,8 @@ package ec2 {
     ): ModifyIdentityIdFormatRequest = {
       val __obj = js.Dynamic.literal(
         "PrincipalArn" -> PrincipalArn.asInstanceOf[js.Any],
-        "Resource"     -> Resource.asInstanceOf[js.Any],
-        "UseLongIds"   -> UseLongIds.asInstanceOf[js.Any]
+        "Resource" -> Resource.asInstanceOf[js.Any],
+        "UseLongIds" -> UseLongIds.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ModifyIdentityIdFormatRequest]
@@ -26529,7 +26529,7 @@ package ec2 {
     ): ModifyInstanceCapacityReservationAttributesRequest = {
       val __obj = js.Dynamic.literal(
         "CapacityReservationSpecification" -> CapacityReservationSpecification.asInstanceOf[js.Any],
-        "InstanceId"                       -> InstanceId.asInstanceOf[js.Any]
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -26618,8 +26618,8 @@ package ec2 {
     ): ModifyInstanceEventStartTimeRequest = {
       val __obj = js.Dynamic.literal(
         "InstanceEventId" -> InstanceEventId.asInstanceOf[js.Any],
-        "InstanceId"      -> InstanceId.asInstanceOf[js.Any],
-        "NotBefore"       -> NotBefore.asInstanceOf[js.Any]
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "NotBefore" -> NotBefore.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -27655,7 +27655,7 @@ package ec2 {
     ): ModifyVpcTenancyRequest = {
       val __obj = js.Dynamic.literal(
         "InstanceTenancy" -> InstanceTenancy.asInstanceOf[js.Any],
-        "VpcId"           -> VpcId.asInstanceOf[js.Any]
+        "VpcId" -> VpcId.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -27740,7 +27740,7 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): ModifyVpnTunnelCertificateRequest = {
       val __obj = js.Dynamic.literal(
-        "VpnConnectionId"           -> VpnConnectionId.asInstanceOf[js.Any],
+        "VpnConnectionId" -> VpnConnectionId.asInstanceOf[js.Any],
         "VpnTunnelOutsideIpAddress" -> VpnTunnelOutsideIpAddress.asInstanceOf[js.Any]
       )
 
@@ -27782,8 +27782,8 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): ModifyVpnTunnelOptionsRequest = {
       val __obj = js.Dynamic.literal(
-        "TunnelOptions"             -> TunnelOptions.asInstanceOf[js.Any],
-        "VpnConnectionId"           -> VpnConnectionId.asInstanceOf[js.Any],
+        "TunnelOptions" -> TunnelOptions.asInstanceOf[js.Any],
+        "VpnConnectionId" -> VpnConnectionId.asInstanceOf[js.Any],
         "VpnTunnelOutsideIpAddress" -> VpnTunnelOutsideIpAddress.asInstanceOf[js.Any]
       )
 
@@ -27936,10 +27936,10 @@ package ec2 {
   @js.native
   sealed trait MonitoringState extends js.Any
   object MonitoringState extends js.Object {
-    val disabled  = "disabled".asInstanceOf[MonitoringState]
+    val disabled = "disabled".asInstanceOf[MonitoringState]
     val disabling = "disabling".asInstanceOf[MonitoringState]
-    val enabled   = "enabled".asInstanceOf[MonitoringState]
-    val pending   = "pending".asInstanceOf[MonitoringState]
+    val enabled = "enabled".asInstanceOf[MonitoringState]
+    val pending = "pending".asInstanceOf[MonitoringState]
 
     val values = js.Object.freeze(js.Array(disabled, disabling, enabled, pending))
   }
@@ -27987,7 +27987,7 @@ package ec2 {
   @js.native
   sealed trait MoveStatus extends js.Any
   object MoveStatus extends js.Object {
-    val movingToVpc        = "movingToVpc".asInstanceOf[MoveStatus]
+    val movingToVpc = "movingToVpc".asInstanceOf[MoveStatus]
     val restoringToClassic = "restoringToClassic".asInstanceOf[MoveStatus]
 
     val values = js.Object.freeze(js.Array(movingToVpc, restoringToClassic))
@@ -28018,7 +28018,7 @@ package ec2 {
   @js.native
   sealed trait MulticastSupportValue extends js.Any
   object MulticastSupportValue extends js.Object {
-    val enable  = "enable".asInstanceOf[MulticastSupportValue]
+    val enable = "enable".asInstanceOf[MulticastSupportValue]
     val disable = "disable".asInstanceOf[MulticastSupportValue]
 
     val values = js.Object.freeze(js.Array(enable, disable))
@@ -28104,11 +28104,11 @@ package ec2 {
   @js.native
   sealed trait NatGatewayState extends js.Any
   object NatGatewayState extends js.Object {
-    val pending   = "pending".asInstanceOf[NatGatewayState]
-    val failed    = "failed".asInstanceOf[NatGatewayState]
+    val pending = "pending".asInstanceOf[NatGatewayState]
+    val failed = "failed".asInstanceOf[NatGatewayState]
     val available = "available".asInstanceOf[NatGatewayState]
-    val deleting  = "deleting".asInstanceOf[NatGatewayState]
-    val deleted   = "deleted".asInstanceOf[NatGatewayState]
+    val deleting = "deleting".asInstanceOf[NatGatewayState]
+    val deleted = "deleted".asInstanceOf[NatGatewayState]
 
     val values = js.Object.freeze(js.Array(pending, failed, available, deleting, deleted))
   }
@@ -28428,10 +28428,10 @@ package ec2 {
   @js.native
   sealed trait NetworkInterfaceAttribute extends js.Any
   object NetworkInterfaceAttribute extends js.Object {
-    val description     = "description".asInstanceOf[NetworkInterfaceAttribute]
-    val groupSet        = "groupSet".asInstanceOf[NetworkInterfaceAttribute]
+    val description = "description".asInstanceOf[NetworkInterfaceAttribute]
+    val groupSet = "groupSet".asInstanceOf[NetworkInterfaceAttribute]
     val sourceDestCheck = "sourceDestCheck".asInstanceOf[NetworkInterfaceAttribute]
-    val attachment      = "attachment".asInstanceOf[NetworkInterfaceAttribute]
+    val attachment = "attachment".asInstanceOf[NetworkInterfaceAttribute]
 
     val values = js.Object.freeze(js.Array(description, groupSet, sourceDestCheck, attachment))
   }
@@ -28524,10 +28524,10 @@ package ec2 {
   @js.native
   sealed trait NetworkInterfacePermissionStateCode extends js.Any
   object NetworkInterfacePermissionStateCode extends js.Object {
-    val pending  = "pending".asInstanceOf[NetworkInterfacePermissionStateCode]
-    val granted  = "granted".asInstanceOf[NetworkInterfacePermissionStateCode]
+    val pending = "pending".asInstanceOf[NetworkInterfacePermissionStateCode]
+    val granted = "granted".asInstanceOf[NetworkInterfacePermissionStateCode]
     val revoking = "revoking".asInstanceOf[NetworkInterfacePermissionStateCode]
-    val revoked  = "revoked".asInstanceOf[NetworkInterfacePermissionStateCode]
+    val revoked = "revoked".asInstanceOf[NetworkInterfacePermissionStateCode]
 
     val values = js.Object.freeze(js.Array(pending, granted, revoking, revoked))
   }
@@ -28563,11 +28563,11 @@ package ec2 {
   @js.native
   sealed trait NetworkInterfaceStatus extends js.Any
   object NetworkInterfaceStatus extends js.Object {
-    val available  = "available".asInstanceOf[NetworkInterfaceStatus]
+    val available = "available".asInstanceOf[NetworkInterfaceStatus]
     val associated = "associated".asInstanceOf[NetworkInterfaceStatus]
-    val attaching  = "attaching".asInstanceOf[NetworkInterfaceStatus]
-    val `in-use`   = "in-use".asInstanceOf[NetworkInterfaceStatus]
-    val detaching  = "detaching".asInstanceOf[NetworkInterfaceStatus]
+    val attaching = "attaching".asInstanceOf[NetworkInterfaceStatus]
+    val `in-use` = "in-use".asInstanceOf[NetworkInterfaceStatus]
+    val detaching = "detaching".asInstanceOf[NetworkInterfaceStatus]
 
     val values = js.Object.freeze(js.Array(available, associated, attaching, `in-use`, detaching))
   }
@@ -28575,9 +28575,9 @@ package ec2 {
   @js.native
   sealed trait NetworkInterfaceType extends js.Any
   object NetworkInterfaceType extends js.Object {
-    val interface  = "interface".asInstanceOf[NetworkInterfaceType]
+    val interface = "interface".asInstanceOf[NetworkInterfaceType]
     val natGateway = "natGateway".asInstanceOf[NetworkInterfaceType]
-    val efa        = "efa".asInstanceOf[NetworkInterfaceType]
+    val efa = "efa".asInstanceOf[NetworkInterfaceType]
 
     val values = js.Object.freeze(js.Array(interface, natGateway, efa))
   }
@@ -28604,7 +28604,7 @@ package ec2 {
   @js.native
   sealed trait OfferingClassType extends js.Any
   object OfferingClassType extends js.Object {
-    val standard    = "standard".asInstanceOf[OfferingClassType]
+    val standard = "standard".asInstanceOf[OfferingClassType]
     val convertible = "convertible".asInstanceOf[OfferingClassType]
 
     val values = js.Object.freeze(js.Array(standard, convertible))
@@ -28613,12 +28613,12 @@ package ec2 {
   @js.native
   sealed trait OfferingTypeValues extends js.Any
   object OfferingTypeValues extends js.Object {
-    val `Heavy Utilization`  = "Heavy Utilization".asInstanceOf[OfferingTypeValues]
+    val `Heavy Utilization` = "Heavy Utilization".asInstanceOf[OfferingTypeValues]
     val `Medium Utilization` = "Medium Utilization".asInstanceOf[OfferingTypeValues]
-    val `Light Utilization`  = "Light Utilization".asInstanceOf[OfferingTypeValues]
-    val `No Upfront`         = "No Upfront".asInstanceOf[OfferingTypeValues]
-    val `Partial Upfront`    = "Partial Upfront".asInstanceOf[OfferingTypeValues]
-    val `All Upfront`        = "All Upfront".asInstanceOf[OfferingTypeValues]
+    val `Light Utilization` = "Light Utilization".asInstanceOf[OfferingTypeValues]
+    val `No Upfront` = "No Upfront".asInstanceOf[OfferingTypeValues]
+    val `Partial Upfront` = "Partial Upfront".asInstanceOf[OfferingTypeValues]
+    val `All Upfront` = "All Upfront".asInstanceOf[OfferingTypeValues]
 
     val values = js.Object.freeze(
       js.Array(
@@ -28716,7 +28716,7 @@ package ec2 {
   @js.native
   sealed trait OperationType extends js.Any
   object OperationType extends js.Object {
-    val add    = "add".asInstanceOf[OperationType]
+    val add = "add".asInstanceOf[OperationType]
     val remove = "remove".asInstanceOf[OperationType]
 
     val values = js.Object.freeze(js.Array(add, remove))
@@ -28725,9 +28725,9 @@ package ec2 {
   @js.native
   sealed trait PaymentOption extends js.Any
   object PaymentOption extends js.Object {
-    val AllUpfront     = "AllUpfront".asInstanceOf[PaymentOption]
+    val AllUpfront = "AllUpfront".asInstanceOf[PaymentOption]
     val PartialUpfront = "PartialUpfront".asInstanceOf[PaymentOption]
-    val NoUpfront      = "NoUpfront".asInstanceOf[PaymentOption]
+    val NoUpfront = "NoUpfront".asInstanceOf[PaymentOption]
 
     val values = js.Object.freeze(js.Array(AllUpfront, PartialUpfront, NoUpfront))
   }
@@ -29201,10 +29201,10 @@ package ec2 {
   @js.native
   sealed trait PlacementGroupState extends js.Any
   object PlacementGroupState extends js.Object {
-    val pending   = "pending".asInstanceOf[PlacementGroupState]
+    val pending = "pending".asInstanceOf[PlacementGroupState]
     val available = "available".asInstanceOf[PlacementGroupState]
-    val deleting  = "deleting".asInstanceOf[PlacementGroupState]
-    val deleted   = "deleted".asInstanceOf[PlacementGroupState]
+    val deleting = "deleting".asInstanceOf[PlacementGroupState]
+    val deleted = "deleted".asInstanceOf[PlacementGroupState]
 
     val values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
   }
@@ -29212,9 +29212,9 @@ package ec2 {
   @js.native
   sealed trait PlacementGroupStrategy extends js.Any
   object PlacementGroupStrategy extends js.Object {
-    val cluster   = "cluster".asInstanceOf[PlacementGroupStrategy]
+    val cluster = "cluster".asInstanceOf[PlacementGroupStrategy]
     val partition = "partition".asInstanceOf[PlacementGroupStrategy]
-    val spread    = "spread".asInstanceOf[PlacementGroupStrategy]
+    val spread = "spread".asInstanceOf[PlacementGroupStrategy]
 
     val values = js.Object.freeze(js.Array(cluster, partition, spread))
   }
@@ -29241,8 +29241,8 @@ package ec2 {
   @js.native
   sealed trait PlacementStrategy extends js.Any
   object PlacementStrategy extends js.Object {
-    val cluster   = "cluster".asInstanceOf[PlacementStrategy]
-    val spread    = "spread".asInstanceOf[PlacementStrategy]
+    val cluster = "cluster".asInstanceOf[PlacementStrategy]
+    val spread = "spread".asInstanceOf[PlacementStrategy]
     val partition = "partition".asInstanceOf[PlacementStrategy]
 
     val values = js.Object.freeze(js.Array(cluster, spread, partition))
@@ -29391,18 +29391,18 @@ package ec2 {
   @js.native
   sealed trait PrefixListState extends js.Any
   object PrefixListState extends js.Object {
-    val `create-in-progress`  = "create-in-progress".asInstanceOf[PrefixListState]
-    val `create-complete`     = "create-complete".asInstanceOf[PrefixListState]
-    val `create-failed`       = "create-failed".asInstanceOf[PrefixListState]
-    val `modify-in-progress`  = "modify-in-progress".asInstanceOf[PrefixListState]
-    val `modify-complete`     = "modify-complete".asInstanceOf[PrefixListState]
-    val `modify-failed`       = "modify-failed".asInstanceOf[PrefixListState]
+    val `create-in-progress` = "create-in-progress".asInstanceOf[PrefixListState]
+    val `create-complete` = "create-complete".asInstanceOf[PrefixListState]
+    val `create-failed` = "create-failed".asInstanceOf[PrefixListState]
+    val `modify-in-progress` = "modify-in-progress".asInstanceOf[PrefixListState]
+    val `modify-complete` = "modify-complete".asInstanceOf[PrefixListState]
+    val `modify-failed` = "modify-failed".asInstanceOf[PrefixListState]
     val `restore-in-progress` = "restore-in-progress".asInstanceOf[PrefixListState]
-    val `restore-complete`    = "restore-complete".asInstanceOf[PrefixListState]
-    val `restore-failed`      = "restore-failed".asInstanceOf[PrefixListState]
-    val `delete-in-progress`  = "delete-in-progress".asInstanceOf[PrefixListState]
-    val `delete-complete`     = "delete-complete".asInstanceOf[PrefixListState]
-    val `delete-failed`       = "delete-failed".asInstanceOf[PrefixListState]
+    val `restore-complete` = "restore-complete".asInstanceOf[PrefixListState]
+    val `restore-failed` = "restore-failed".asInstanceOf[PrefixListState]
+    val `delete-in-progress` = "delete-in-progress".asInstanceOf[PrefixListState]
+    val `delete-complete` = "delete-complete".asInstanceOf[PrefixListState]
+    val `delete-failed` = "delete-failed".asInstanceOf[PrefixListState]
 
     val values = js.Object.freeze(
       js.Array(
@@ -29522,12 +29522,12 @@ package ec2 {
   @js.native
   sealed trait PrincipalType extends js.Any
   object PrincipalType extends js.Object {
-    val All              = "All".asInstanceOf[PrincipalType]
-    val Service          = "Service".asInstanceOf[PrincipalType]
+    val All = "All".asInstanceOf[PrincipalType]
+    val Service = "Service".asInstanceOf[PrincipalType]
     val OrganizationUnit = "OrganizationUnit".asInstanceOf[PrincipalType]
-    val Account          = "Account".asInstanceOf[PrincipalType]
-    val User             = "User".asInstanceOf[PrincipalType]
-    val Role             = "Role".asInstanceOf[PrincipalType]
+    val Account = "Account".asInstanceOf[PrincipalType]
+    val User = "User".asInstanceOf[PrincipalType]
+    val Role = "Role".asInstanceOf[PrincipalType]
 
     val values = js.Object.freeze(js.Array(All, Service, OrganizationUnit, Account, User, Role))
   }
@@ -29629,7 +29629,7 @@ package ec2 {
   @js.native
   sealed trait ProductCodeValues extends js.Any
   object ProductCodeValues extends js.Object {
-    val devpay      = "devpay".asInstanceOf[ProductCodeValues]
+    val devpay = "devpay".asInstanceOf[ProductCodeValues]
     val marketplace = "marketplace".asInstanceOf[ProductCodeValues]
 
     val values = js.Object.freeze(js.Array(devpay, marketplace))
@@ -29862,7 +29862,7 @@ package ec2 {
         TagSpecifications: js.UndefOr[TagSpecificationList] = js.undefined
     ): PurchaseHostReservationRequest = {
       val __obj = js.Dynamic.literal(
-        "HostIdSet"  -> HostIdSet.asInstanceOf[js.Any],
+        "HostIdSet" -> HostIdSet.asInstanceOf[js.Any],
         "OfferingId" -> OfferingId.asInstanceOf[js.Any]
       )
 
@@ -29948,7 +29948,7 @@ package ec2 {
         PurchaseTime: js.UndefOr[DateTime] = js.undefined
     ): PurchaseReservedInstancesOfferingRequest = {
       val __obj = js.Dynamic.literal(
-        "InstanceCount"               -> InstanceCount.asInstanceOf[js.Any],
+        "InstanceCount" -> InstanceCount.asInstanceOf[js.Any],
         "ReservedInstancesOfferingId" -> ReservedInstancesOfferingId.asInstanceOf[js.Any]
       )
 
@@ -30027,10 +30027,10 @@ package ec2 {
   @js.native
   sealed trait RIProductDescription extends js.Any
   object RIProductDescription extends js.Object {
-    val `Linux/UNIX`              = "Linux/UNIX".asInstanceOf[RIProductDescription]
+    val `Linux/UNIX` = "Linux/UNIX".asInstanceOf[RIProductDescription]
     val `Linux/UNIX (Amazon VPC)` = "Linux/UNIX (Amazon VPC)".asInstanceOf[RIProductDescription]
-    val Windows                   = "Windows".asInstanceOf[RIProductDescription]
-    val `Windows (Amazon VPC)`    = "Windows (Amazon VPC)".asInstanceOf[RIProductDescription]
+    val Windows = "Windows".asInstanceOf[RIProductDescription]
+    val `Windows (Amazon VPC)` = "Windows (Amazon VPC)".asInstanceOf[RIProductDescription]
 
     val values = js.Object.freeze(js.Array(`Linux/UNIX`, `Linux/UNIX (Amazon VPC)`, Windows, `Windows (Amazon VPC)`))
   }
@@ -30427,7 +30427,7 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): RejectVpcEndpointConnectionsRequest = {
       val __obj = js.Dynamic.literal(
-        "ServiceId"      -> ServiceId.asInstanceOf[js.Any],
+        "ServiceId" -> ServiceId.asInstanceOf[js.Any],
         "VpcEndpointIds" -> VpcEndpointIds.asInstanceOf[js.Any]
       )
 
@@ -30585,7 +30585,7 @@ package ec2 {
         IamInstanceProfile: IamInstanceProfileSpecification
     ): ReplaceIamInstanceProfileAssociationRequest = {
       val __obj = js.Dynamic.literal(
-        "AssociationId"      -> AssociationId.asInstanceOf[js.Any],
+        "AssociationId" -> AssociationId.asInstanceOf[js.Any],
         "IamInstanceProfile" -> IamInstanceProfile.asInstanceOf[js.Any]
       )
 
@@ -30627,7 +30627,7 @@ package ec2 {
     ): ReplaceNetworkAclAssociationRequest = {
       val __obj = js.Dynamic.literal(
         "AssociationId" -> AssociationId.asInstanceOf[js.Any],
-        "NetworkAclId"  -> NetworkAclId.asInstanceOf[js.Any]
+        "NetworkAclId" -> NetworkAclId.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -30680,11 +30680,11 @@ package ec2 {
         PortRange: js.UndefOr[PortRange] = js.undefined
     ): ReplaceNetworkAclEntryRequest = {
       val __obj = js.Dynamic.literal(
-        "Egress"       -> Egress.asInstanceOf[js.Any],
+        "Egress" -> Egress.asInstanceOf[js.Any],
         "NetworkAclId" -> NetworkAclId.asInstanceOf[js.Any],
-        "Protocol"     -> Protocol.asInstanceOf[js.Any],
-        "RuleAction"   -> RuleAction.asInstanceOf[js.Any],
-        "RuleNumber"   -> RuleNumber.asInstanceOf[js.Any]
+        "Protocol" -> Protocol.asInstanceOf[js.Any],
+        "RuleAction" -> RuleAction.asInstanceOf[js.Any],
+        "RuleNumber" -> RuleNumber.asInstanceOf[js.Any]
       )
 
       CidrBlock.foreach(__v => __obj.updateDynamic("CidrBlock")(__v.asInstanceOf[js.Any]))
@@ -30771,7 +30771,7 @@ package ec2 {
     ): ReplaceRouteTableAssociationRequest = {
       val __obj = js.Dynamic.literal(
         "AssociationId" -> AssociationId.asInstanceOf[js.Any],
-        "RouteTableId"  -> RouteTableId.asInstanceOf[js.Any]
+        "RouteTableId" -> RouteTableId.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -30817,7 +30817,7 @@ package ec2 {
         TransitGatewayAttachmentId: js.UndefOr[TransitGatewayAttachmentId] = js.undefined
     ): ReplaceTransitGatewayRouteRequest = {
       val __obj = js.Dynamic.literal(
-        "DestinationCidrBlock"       -> DestinationCidrBlock.asInstanceOf[js.Any],
+        "DestinationCidrBlock" -> DestinationCidrBlock.asInstanceOf[js.Any],
         "TransitGatewayRouteTableId" -> TransitGatewayRouteTableId.asInstanceOf[js.Any]
       )
 
@@ -30849,15 +30849,15 @@ package ec2 {
   @js.native
   sealed trait ReportInstanceReasonCodes extends js.Any
   object ReportInstanceReasonCodes extends js.Object {
-    val `instance-stuck-in-state`    = "instance-stuck-in-state".asInstanceOf[ReportInstanceReasonCodes]
-    val unresponsive                 = "unresponsive".asInstanceOf[ReportInstanceReasonCodes]
-    val `not-accepting-credentials`  = "not-accepting-credentials".asInstanceOf[ReportInstanceReasonCodes]
-    val `password-not-available`     = "password-not-available".asInstanceOf[ReportInstanceReasonCodes]
-    val `performance-network`        = "performance-network".asInstanceOf[ReportInstanceReasonCodes]
+    val `instance-stuck-in-state` = "instance-stuck-in-state".asInstanceOf[ReportInstanceReasonCodes]
+    val unresponsive = "unresponsive".asInstanceOf[ReportInstanceReasonCodes]
+    val `not-accepting-credentials` = "not-accepting-credentials".asInstanceOf[ReportInstanceReasonCodes]
+    val `password-not-available` = "password-not-available".asInstanceOf[ReportInstanceReasonCodes]
+    val `performance-network` = "performance-network".asInstanceOf[ReportInstanceReasonCodes]
     val `performance-instance-store` = "performance-instance-store".asInstanceOf[ReportInstanceReasonCodes]
-    val `performance-ebs-volume`     = "performance-ebs-volume".asInstanceOf[ReportInstanceReasonCodes]
-    val `performance-other`          = "performance-other".asInstanceOf[ReportInstanceReasonCodes]
-    val other                        = "other".asInstanceOf[ReportInstanceReasonCodes]
+    val `performance-ebs-volume` = "performance-ebs-volume".asInstanceOf[ReportInstanceReasonCodes]
+    val `performance-other` = "performance-other".asInstanceOf[ReportInstanceReasonCodes]
+    val other = "other".asInstanceOf[ReportInstanceReasonCodes]
 
     val values = js.Object.freeze(
       js.Array(
@@ -30897,9 +30897,9 @@ package ec2 {
         StartTime: js.UndefOr[DateTime] = js.undefined
     ): ReportInstanceStatusRequest = {
       val __obj = js.Dynamic.literal(
-        "Instances"   -> Instances.asInstanceOf[js.Any],
+        "Instances" -> Instances.asInstanceOf[js.Any],
         "ReasonCodes" -> ReasonCodes.asInstanceOf[js.Any],
-        "Status"      -> Status.asInstanceOf[js.Any]
+        "Status" -> Status.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -30913,7 +30913,7 @@ package ec2 {
   @js.native
   sealed trait ReportStatusType extends js.Any
   object ReportStatusType extends js.Object {
-    val ok       = "ok".asInstanceOf[ReportStatusType]
+    val ok = "ok".asInstanceOf[ReportStatusType]
     val impaired = "impaired".asInstanceOf[ReportStatusType]
 
     val values = js.Object.freeze(js.Array(ok, impaired))
@@ -31235,9 +31235,9 @@ package ec2 {
   sealed trait ReservationState extends js.Any
   object ReservationState extends js.Object {
     val `payment-pending` = "payment-pending".asInstanceOf[ReservationState]
-    val `payment-failed`  = "payment-failed".asInstanceOf[ReservationState]
-    val active            = "active".asInstanceOf[ReservationState]
-    val retired           = "retired".asInstanceOf[ReservationState]
+    val `payment-failed` = "payment-failed".asInstanceOf[ReservationState]
+    val active = "active".asInstanceOf[ReservationState]
+    val retired = "retired".asInstanceOf[ReservationState]
 
     val values = js.Object.freeze(js.Array(`payment-pending`, `payment-failed`, active, retired))
   }
@@ -31315,11 +31315,11 @@ package ec2 {
   sealed trait ReservedInstanceState extends js.Any
   object ReservedInstanceState extends js.Object {
     val `payment-pending` = "payment-pending".asInstanceOf[ReservedInstanceState]
-    val active            = "active".asInstanceOf[ReservedInstanceState]
-    val `payment-failed`  = "payment-failed".asInstanceOf[ReservedInstanceState]
-    val retired           = "retired".asInstanceOf[ReservedInstanceState]
-    val queued            = "queued".asInstanceOf[ReservedInstanceState]
-    val `queued-deleted`  = "queued-deleted".asInstanceOf[ReservedInstanceState]
+    val active = "active".asInstanceOf[ReservedInstanceState]
+    val `payment-failed` = "payment-failed".asInstanceOf[ReservedInstanceState]
+    val retired = "retired".asInstanceOf[ReservedInstanceState]
+    val queued = "queued".asInstanceOf[ReservedInstanceState]
+    val `queued-deleted` = "queued-deleted".asInstanceOf[ReservedInstanceState]
 
     val values =
       js.Object.freeze(js.Array(`payment-pending`, active, `payment-failed`, retired, queued, `queued-deleted`))
@@ -31730,7 +31730,7 @@ package ec2 {
     ): ResetImageAttributeRequest = {
       val __obj = js.Dynamic.literal(
         "Attribute" -> Attribute.asInstanceOf[js.Any],
-        "ImageId"   -> ImageId.asInstanceOf[js.Any]
+        "ImageId" -> ImageId.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -31753,7 +31753,7 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): ResetInstanceAttributeRequest = {
       val __obj = js.Dynamic.literal(
-        "Attribute"  -> Attribute.asInstanceOf[js.Any],
+        "Attribute" -> Attribute.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
@@ -31804,7 +31804,7 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): ResetSnapshotAttributeRequest = {
       val __obj = js.Dynamic.literal(
-        "Attribute"  -> Attribute.asInstanceOf[js.Any],
+        "Attribute" -> Attribute.asInstanceOf[js.Any],
         "SnapshotId" -> SnapshotId.asInstanceOf[js.Any]
       )
 
@@ -31816,50 +31816,50 @@ package ec2 {
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {
-    val `client-vpn-endpoint`  = "client-vpn-endpoint".asInstanceOf[ResourceType]
-    val `customer-gateway`     = "customer-gateway".asInstanceOf[ResourceType]
-    val `dedicated-host`       = "dedicated-host".asInstanceOf[ResourceType]
-    val `dhcp-options`         = "dhcp-options".asInstanceOf[ResourceType]
-    val `elastic-ip`           = "elastic-ip".asInstanceOf[ResourceType]
-    val `elastic-gpu`          = "elastic-gpu".asInstanceOf[ResourceType]
-    val `export-image-task`    = "export-image-task".asInstanceOf[ResourceType]
+    val `client-vpn-endpoint` = "client-vpn-endpoint".asInstanceOf[ResourceType]
+    val `customer-gateway` = "customer-gateway".asInstanceOf[ResourceType]
+    val `dedicated-host` = "dedicated-host".asInstanceOf[ResourceType]
+    val `dhcp-options` = "dhcp-options".asInstanceOf[ResourceType]
+    val `elastic-ip` = "elastic-ip".asInstanceOf[ResourceType]
+    val `elastic-gpu` = "elastic-gpu".asInstanceOf[ResourceType]
+    val `export-image-task` = "export-image-task".asInstanceOf[ResourceType]
     val `export-instance-task` = "export-instance-task".asInstanceOf[ResourceType]
-    val fleet                  = "fleet".asInstanceOf[ResourceType]
-    val `fpga-image`           = "fpga-image".asInstanceOf[ResourceType]
-    val `host-reservation`     = "host-reservation".asInstanceOf[ResourceType]
-    val image                  = "image".asInstanceOf[ResourceType]
-    val `import-image-task`    = "import-image-task".asInstanceOf[ResourceType]
+    val fleet = "fleet".asInstanceOf[ResourceType]
+    val `fpga-image` = "fpga-image".asInstanceOf[ResourceType]
+    val `host-reservation` = "host-reservation".asInstanceOf[ResourceType]
+    val image = "image".asInstanceOf[ResourceType]
+    val `import-image-task` = "import-image-task".asInstanceOf[ResourceType]
     val `import-snapshot-task` = "import-snapshot-task".asInstanceOf[ResourceType]
-    val instance               = "instance".asInstanceOf[ResourceType]
-    val `internet-gateway`     = "internet-gateway".asInstanceOf[ResourceType]
-    val `key-pair`             = "key-pair".asInstanceOf[ResourceType]
-    val `launch-template`      = "launch-template".asInstanceOf[ResourceType]
+    val instance = "instance".asInstanceOf[ResourceType]
+    val `internet-gateway` = "internet-gateway".asInstanceOf[ResourceType]
+    val `key-pair` = "key-pair".asInstanceOf[ResourceType]
+    val `launch-template` = "launch-template".asInstanceOf[ResourceType]
     val `local-gateway-route-table-vpc-association` =
       "local-gateway-route-table-vpc-association".asInstanceOf[ResourceType]
-    val natgateway                         = "natgateway".asInstanceOf[ResourceType]
-    val `network-acl`                      = "network-acl".asInstanceOf[ResourceType]
-    val `network-interface`                = "network-interface".asInstanceOf[ResourceType]
-    val `placement-group`                  = "placement-group".asInstanceOf[ResourceType]
-    val `reserved-instances`               = "reserved-instances".asInstanceOf[ResourceType]
-    val `route-table`                      = "route-table".asInstanceOf[ResourceType]
-    val `security-group`                   = "security-group".asInstanceOf[ResourceType]
-    val snapshot                           = "snapshot".asInstanceOf[ResourceType]
-    val `spot-fleet-request`               = "spot-fleet-request".asInstanceOf[ResourceType]
-    val `spot-instances-request`           = "spot-instances-request".asInstanceOf[ResourceType]
-    val subnet                             = "subnet".asInstanceOf[ResourceType]
-    val `traffic-mirror-filter`            = "traffic-mirror-filter".asInstanceOf[ResourceType]
-    val `traffic-mirror-session`           = "traffic-mirror-session".asInstanceOf[ResourceType]
-    val `traffic-mirror-target`            = "traffic-mirror-target".asInstanceOf[ResourceType]
-    val `transit-gateway`                  = "transit-gateway".asInstanceOf[ResourceType]
-    val `transit-gateway-attachment`       = "transit-gateway-attachment".asInstanceOf[ResourceType]
+    val natgateway = "natgateway".asInstanceOf[ResourceType]
+    val `network-acl` = "network-acl".asInstanceOf[ResourceType]
+    val `network-interface` = "network-interface".asInstanceOf[ResourceType]
+    val `placement-group` = "placement-group".asInstanceOf[ResourceType]
+    val `reserved-instances` = "reserved-instances".asInstanceOf[ResourceType]
+    val `route-table` = "route-table".asInstanceOf[ResourceType]
+    val `security-group` = "security-group".asInstanceOf[ResourceType]
+    val snapshot = "snapshot".asInstanceOf[ResourceType]
+    val `spot-fleet-request` = "spot-fleet-request".asInstanceOf[ResourceType]
+    val `spot-instances-request` = "spot-instances-request".asInstanceOf[ResourceType]
+    val subnet = "subnet".asInstanceOf[ResourceType]
+    val `traffic-mirror-filter` = "traffic-mirror-filter".asInstanceOf[ResourceType]
+    val `traffic-mirror-session` = "traffic-mirror-session".asInstanceOf[ResourceType]
+    val `traffic-mirror-target` = "traffic-mirror-target".asInstanceOf[ResourceType]
+    val `transit-gateway` = "transit-gateway".asInstanceOf[ResourceType]
+    val `transit-gateway-attachment` = "transit-gateway-attachment".asInstanceOf[ResourceType]
     val `transit-gateway-multicast-domain` = "transit-gateway-multicast-domain".asInstanceOf[ResourceType]
-    val `transit-gateway-route-table`      = "transit-gateway-route-table".asInstanceOf[ResourceType]
-    val volume                             = "volume".asInstanceOf[ResourceType]
-    val vpc                                = "vpc".asInstanceOf[ResourceType]
-    val `vpc-peering-connection`           = "vpc-peering-connection".asInstanceOf[ResourceType]
-    val `vpn-connection`                   = "vpn-connection".asInstanceOf[ResourceType]
-    val `vpn-gateway`                      = "vpn-gateway".asInstanceOf[ResourceType]
-    val `vpc-flow-log`                     = "vpc-flow-log".asInstanceOf[ResourceType]
+    val `transit-gateway-route-table` = "transit-gateway-route-table".asInstanceOf[ResourceType]
+    val volume = "volume".asInstanceOf[ResourceType]
+    val vpc = "vpc".asInstanceOf[ResourceType]
+    val `vpc-peering-connection` = "vpc-peering-connection".asInstanceOf[ResourceType]
+    val `vpn-connection` = "vpn-connection".asInstanceOf[ResourceType]
+    val `vpn-gateway` = "vpn-gateway".asInstanceOf[ResourceType]
+    val `vpc-flow-log` = "vpc-flow-log".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -32090,8 +32090,8 @@ package ec2 {
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): RestoreManagedPrefixListVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "CurrentVersion"  -> CurrentVersion.asInstanceOf[js.Any],
-        "PrefixListId"    -> PrefixListId.asInstanceOf[js.Any],
+        "CurrentVersion" -> CurrentVersion.asInstanceOf[js.Any],
+        "PrefixListId" -> PrefixListId.asInstanceOf[js.Any],
         "PreviousVersion" -> PreviousVersion.asInstanceOf[js.Any]
       )
 
@@ -32136,7 +32136,7 @@ package ec2 {
     ): RevokeClientVpnIngressRequest = {
       val __obj = js.Dynamic.literal(
         "ClientVpnEndpointId" -> ClientVpnEndpointId.asInstanceOf[js.Any],
-        "TargetNetworkCidr"   -> TargetNetworkCidr.asInstanceOf[js.Any]
+        "TargetNetworkCidr" -> TargetNetworkCidr.asInstanceOf[js.Any]
       )
 
       AccessGroupId.foreach(__v => __obj.updateDynamic("AccessGroupId")(__v.asInstanceOf[js.Any]))
@@ -32254,7 +32254,7 @@ package ec2 {
   @js.native
   sealed trait RootDeviceType extends js.Any
   object RootDeviceType extends js.Object {
-    val ebs              = "ebs".asInstanceOf[RootDeviceType]
+    val ebs = "ebs".asInstanceOf[RootDeviceType]
     val `instance-store` = "instance-store".asInstanceOf[RootDeviceType]
 
     val values = js.Object.freeze(js.Array(ebs, `instance-store`))
@@ -32323,8 +32323,8 @@ package ec2 {
   @js.native
   sealed trait RouteOrigin extends js.Any
   object RouteOrigin extends js.Object {
-    val CreateRouteTable          = "CreateRouteTable".asInstanceOf[RouteOrigin]
-    val CreateRoute               = "CreateRoute".asInstanceOf[RouteOrigin]
+    val CreateRouteTable = "CreateRouteTable".asInstanceOf[RouteOrigin]
+    val CreateRoute = "CreateRoute".asInstanceOf[RouteOrigin]
     val EnableVgwRoutePropagation = "EnableVgwRoutePropagation".asInstanceOf[RouteOrigin]
 
     val values = js.Object.freeze(js.Array(CreateRouteTable, CreateRoute, EnableVgwRoutePropagation))
@@ -32333,7 +32333,7 @@ package ec2 {
   @js.native
   sealed trait RouteState extends js.Any
   object RouteState extends js.Object {
-    val active    = "active".asInstanceOf[RouteState]
+    val active = "active".asInstanceOf[RouteState]
     val blackhole = "blackhole".asInstanceOf[RouteState]
 
     val values = js.Object.freeze(js.Array(active, blackhole))
@@ -32435,11 +32435,11 @@ package ec2 {
   @js.native
   sealed trait RouteTableAssociationStateCode extends js.Any
   object RouteTableAssociationStateCode extends js.Object {
-    val associating    = "associating".asInstanceOf[RouteTableAssociationStateCode]
-    val associated     = "associated".asInstanceOf[RouteTableAssociationStateCode]
+    val associating = "associating".asInstanceOf[RouteTableAssociationStateCode]
+    val associated = "associated".asInstanceOf[RouteTableAssociationStateCode]
     val disassociating = "disassociating".asInstanceOf[RouteTableAssociationStateCode]
-    val disassociated  = "disassociated".asInstanceOf[RouteTableAssociationStateCode]
-    val failed         = "failed".asInstanceOf[RouteTableAssociationStateCode]
+    val disassociated = "disassociated".asInstanceOf[RouteTableAssociationStateCode]
+    val failed = "failed".asInstanceOf[RouteTableAssociationStateCode]
 
     val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated, failed))
   }
@@ -32448,7 +32448,7 @@ package ec2 {
   sealed trait RuleAction extends js.Any
   object RuleAction extends js.Object {
     val allow = "allow".asInstanceOf[RuleAction]
-    val deny  = "deny".asInstanceOf[RuleAction]
+    val deny = "deny".asInstanceOf[RuleAction]
 
     val values = js.Object.freeze(js.Array(allow, deny))
   }
@@ -33168,7 +33168,7 @@ package ec2 {
         NextToken: js.UndefOr[String] = js.undefined
     ): SearchLocalGatewayRoutesRequest = {
       val __obj = js.Dynamic.literal(
-        "Filters"                  -> Filters.asInstanceOf[js.Any],
+        "Filters" -> Filters.asInstanceOf[js.Any],
         "LocalGatewayRouteTableId" -> LocalGatewayRouteTableId.asInstanceOf[js.Any]
       )
 
@@ -33264,7 +33264,7 @@ package ec2 {
         MaxResults: js.UndefOr[TransitGatewayMaxResults] = js.undefined
     ): SearchTransitGatewayRoutesRequest = {
       val __obj = js.Dynamic.literal(
-        "Filters"                    -> Filters.asInstanceOf[js.Any],
+        "Filters" -> Filters.asInstanceOf[js.Any],
         "TransitGatewayRouteTableId" -> TransitGatewayRouteTableId.asInstanceOf[js.Any]
       )
 
@@ -33516,11 +33516,11 @@ package ec2 {
   @js.native
   sealed trait ServiceState extends js.Any
   object ServiceState extends js.Object {
-    val Pending   = "Pending".asInstanceOf[ServiceState]
+    val Pending = "Pending".asInstanceOf[ServiceState]
     val Available = "Available".asInstanceOf[ServiceState]
-    val Deleting  = "Deleting".asInstanceOf[ServiceState]
-    val Deleted   = "Deleted".asInstanceOf[ServiceState]
-    val Failed    = "Failed".asInstanceOf[ServiceState]
+    val Deleting = "Deleting".asInstanceOf[ServiceState]
+    val Deleted = "Deleted".asInstanceOf[ServiceState]
+    val Failed = "Failed".asInstanceOf[ServiceState]
 
     val values = js.Object.freeze(js.Array(Pending, Available, Deleting, Deleted, Failed))
   }
@@ -33529,7 +33529,7 @@ package ec2 {
   sealed trait ServiceType extends js.Any
   object ServiceType extends js.Object {
     val Interface = "Interface".asInstanceOf[ServiceType]
-    val Gateway   = "Gateway".asInstanceOf[ServiceType]
+    val Gateway = "Gateway".asInstanceOf[ServiceType]
 
     val values = js.Object.freeze(js.Array(Interface, Gateway))
   }
@@ -33556,7 +33556,7 @@ package ec2 {
   @js.native
   sealed trait ShutdownBehavior extends js.Any
   object ShutdownBehavior extends js.Object {
-    val stop      = "stop".asInstanceOf[ShutdownBehavior]
+    val stop = "stop".asInstanceOf[ShutdownBehavior]
     val terminate = "terminate".asInstanceOf[ShutdownBehavior]
 
     val values = js.Object.freeze(js.Array(stop, terminate))
@@ -33579,7 +33579,7 @@ package ec2 {
     ): SlotDateTimeRangeRequest = {
       val __obj = js.Dynamic.literal(
         "EarliestTime" -> EarliestTime.asInstanceOf[js.Any],
-        "LatestTime"   -> LatestTime.asInstanceOf[js.Any]
+        "LatestTime" -> LatestTime.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[SlotDateTimeRangeRequest]
@@ -33669,7 +33669,7 @@ package ec2 {
   @js.native
   sealed trait SnapshotAttributeName extends js.Any
   object SnapshotAttributeName extends js.Object {
-    val productCodes           = "productCodes".asInstanceOf[SnapshotAttributeName]
+    val productCodes = "productCodes".asInstanceOf[SnapshotAttributeName]
     val createVolumePermission = "createVolumePermission".asInstanceOf[SnapshotAttributeName]
 
     val values = js.Object.freeze(js.Array(productCodes, createVolumePermission))
@@ -33798,9 +33798,9 @@ package ec2 {
   @js.native
   sealed trait SnapshotState extends js.Any
   object SnapshotState extends js.Object {
-    val pending   = "pending".asInstanceOf[SnapshotState]
+    val pending = "pending".asInstanceOf[SnapshotState]
     val completed = "completed".asInstanceOf[SnapshotState]
-    val error     = "error".asInstanceOf[SnapshotState]
+    val error = "error".asInstanceOf[SnapshotState]
 
     val values = js.Object.freeze(js.Array(pending, completed, error))
   }
@@ -33857,8 +33857,8 @@ package ec2 {
   @js.native
   sealed trait SpotAllocationStrategy extends js.Any
   object SpotAllocationStrategy extends js.Object {
-    val `lowest-price`       = "lowest-price".asInstanceOf[SpotAllocationStrategy]
-    val diversified          = "diversified".asInstanceOf[SpotAllocationStrategy]
+    val `lowest-price` = "lowest-price".asInstanceOf[SpotAllocationStrategy]
+    val diversified = "diversified".asInstanceOf[SpotAllocationStrategy]
     val `capacity-optimized` = "capacity-optimized".asInstanceOf[SpotAllocationStrategy]
 
     val values = js.Object.freeze(js.Array(`lowest-price`, diversified, `capacity-optimized`))
@@ -34076,7 +34076,7 @@ package ec2 {
         ValidUntil: js.UndefOr[DateTime] = js.undefined
     ): SpotFleetRequestConfigData = {
       val __obj = js.Dynamic.literal(
-        "IamFleetRole"   -> IamFleetRole.asInstanceOf[js.Any],
+        "IamFleetRole" -> IamFleetRole.asInstanceOf[js.Any],
         "TargetCapacity" -> TargetCapacity.asInstanceOf[js.Any]
       )
 
@@ -34143,7 +34143,7 @@ package ec2 {
   sealed trait SpotInstanceInterruptionBehavior extends js.Any
   object SpotInstanceInterruptionBehavior extends js.Object {
     val hibernate = "hibernate".asInstanceOf[SpotInstanceInterruptionBehavior]
-    val stop      = "stop".asInstanceOf[SpotInstanceInterruptionBehavior]
+    val stop = "stop".asInstanceOf[SpotInstanceInterruptionBehavior]
     val terminate = "terminate".asInstanceOf[SpotInstanceInterruptionBehavior]
 
     val values = js.Object.freeze(js.Array(hibernate, stop, terminate))
@@ -34227,11 +34227,11 @@ package ec2 {
   @js.native
   sealed trait SpotInstanceState extends js.Any
   object SpotInstanceState extends js.Object {
-    val open      = "open".asInstanceOf[SpotInstanceState]
-    val active    = "active".asInstanceOf[SpotInstanceState]
-    val closed    = "closed".asInstanceOf[SpotInstanceState]
+    val open = "open".asInstanceOf[SpotInstanceState]
+    val active = "active".asInstanceOf[SpotInstanceState]
+    val closed = "closed".asInstanceOf[SpotInstanceState]
     val cancelled = "cancelled".asInstanceOf[SpotInstanceState]
-    val failed    = "failed".asInstanceOf[SpotInstanceState]
+    val failed = "failed".asInstanceOf[SpotInstanceState]
 
     val values = js.Object.freeze(js.Array(open, active, closed, cancelled, failed))
   }
@@ -34608,13 +34608,13 @@ package ec2 {
   sealed trait State extends js.Any
   object State extends js.Object {
     val PendingAcceptance = "PendingAcceptance".asInstanceOf[State]
-    val Pending           = "Pending".asInstanceOf[State]
-    val Available         = "Available".asInstanceOf[State]
-    val Deleting          = "Deleting".asInstanceOf[State]
-    val Deleted           = "Deleted".asInstanceOf[State]
-    val Rejected          = "Rejected".asInstanceOf[State]
-    val Failed            = "Failed".asInstanceOf[State]
-    val Expired           = "Expired".asInstanceOf[State]
+    val Pending = "Pending".asInstanceOf[State]
+    val Available = "Available".asInstanceOf[State]
+    val Deleting = "Deleting".asInstanceOf[State]
+    val Deleted = "Deleted".asInstanceOf[State]
+    val Rejected = "Rejected".asInstanceOf[State]
+    val Failed = "Failed".asInstanceOf[State]
+    val Expired = "Expired".asInstanceOf[State]
 
     val values =
       js.Object.freeze(js.Array(PendingAcceptance, Pending, Available, Deleting, Deleted, Rejected, Failed, Expired))
@@ -34646,8 +34646,8 @@ package ec2 {
   sealed trait Status extends js.Any
   object Status extends js.Object {
     val MoveInProgress = "MoveInProgress".asInstanceOf[Status]
-    val InVpc          = "InVpc".asInstanceOf[Status]
-    val InClassic      = "InClassic".asInstanceOf[Status]
+    val InVpc = "InVpc".asInstanceOf[Status]
+    val InClassic = "InClassic".asInstanceOf[Status]
 
     val values = js.Object.freeze(js.Array(MoveInProgress, InVpc, InClassic))
   }
@@ -34663,10 +34663,10 @@ package ec2 {
   @js.native
   sealed trait StatusType extends js.Any
   object StatusType extends js.Object {
-    val passed              = "passed".asInstanceOf[StatusType]
-    val failed              = "failed".asInstanceOf[StatusType]
+    val passed = "passed".asInstanceOf[StatusType]
+    val failed = "failed".asInstanceOf[StatusType]
     val `insufficient-data` = "insufficient-data".asInstanceOf[StatusType]
-    val initializing        = "initializing".asInstanceOf[StatusType]
+    val initializing = "initializing".asInstanceOf[StatusType]
 
     val values = js.Object.freeze(js.Array(passed, failed, `insufficient-data`, initializing))
   }
@@ -34875,12 +34875,12 @@ package ec2 {
   @js.native
   sealed trait SubnetCidrBlockStateCode extends js.Any
   object SubnetCidrBlockStateCode extends js.Object {
-    val associating    = "associating".asInstanceOf[SubnetCidrBlockStateCode]
-    val associated     = "associated".asInstanceOf[SubnetCidrBlockStateCode]
+    val associating = "associating".asInstanceOf[SubnetCidrBlockStateCode]
+    val associated = "associated".asInstanceOf[SubnetCidrBlockStateCode]
     val disassociating = "disassociating".asInstanceOf[SubnetCidrBlockStateCode]
-    val disassociated  = "disassociated".asInstanceOf[SubnetCidrBlockStateCode]
-    val failing        = "failing".asInstanceOf[SubnetCidrBlockStateCode]
-    val failed         = "failed".asInstanceOf[SubnetCidrBlockStateCode]
+    val disassociated = "disassociated".asInstanceOf[SubnetCidrBlockStateCode]
+    val failing = "failing".asInstanceOf[SubnetCidrBlockStateCode]
+    val failed = "failed".asInstanceOf[SubnetCidrBlockStateCode]
 
     val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated, failing, failed))
   }
@@ -34913,7 +34913,7 @@ package ec2 {
   @js.native
   sealed trait SubnetState extends js.Any
   object SubnetState extends js.Object {
-    val pending   = "pending".asInstanceOf[SubnetState]
+    val pending = "pending".asInstanceOf[SubnetState]
     val available = "available".asInstanceOf[SubnetState]
 
     val values = js.Object.freeze(js.Array(pending, available))
@@ -34960,11 +34960,11 @@ package ec2 {
   @js.native
   sealed trait SummaryStatus extends js.Any
   object SummaryStatus extends js.Object {
-    val ok                  = "ok".asInstanceOf[SummaryStatus]
-    val impaired            = "impaired".asInstanceOf[SummaryStatus]
+    val ok = "ok".asInstanceOf[SummaryStatus]
+    val impaired = "impaired".asInstanceOf[SummaryStatus]
     val `insufficient-data` = "insufficient-data".asInstanceOf[SummaryStatus]
-    val `not-applicable`    = "not-applicable".asInstanceOf[SummaryStatus]
-    val initializing        = "initializing".asInstanceOf[SummaryStatus]
+    val `not-applicable` = "not-applicable".asInstanceOf[SummaryStatus]
+    val initializing = "initializing".asInstanceOf[SummaryStatus]
 
     val values = js.Object.freeze(js.Array(ok, impaired, `insufficient-data`, `not-applicable`, initializing))
   }
@@ -35248,7 +35248,7 @@ package ec2 {
   @js.native
   sealed trait TelemetryStatus extends js.Any
   object TelemetryStatus extends js.Object {
-    val UP   = "UP".asInstanceOf[TelemetryStatus]
+    val UP = "UP".asInstanceOf[TelemetryStatus]
     val DOWN = "DOWN".asInstanceOf[TelemetryStatus]
 
     val values = js.Object.freeze(js.Array(UP, DOWN))
@@ -35257,9 +35257,9 @@ package ec2 {
   @js.native
   sealed trait Tenancy extends js.Any
   object Tenancy extends js.Object {
-    val default   = "default".asInstanceOf[Tenancy]
+    val default = "default".asInstanceOf[Tenancy]
     val dedicated = "dedicated".asInstanceOf[Tenancy]
-    val host      = "host".asInstanceOf[Tenancy]
+    val host = "host".asInstanceOf[Tenancy]
 
     val values = js.Object.freeze(js.Array(default, dedicated, host))
   }
@@ -35379,7 +35379,7 @@ package ec2 {
   sealed trait TrafficDirection extends js.Any
   object TrafficDirection extends js.Object {
     val ingress = "ingress".asInstanceOf[TrafficDirection]
-    val egress  = "egress".asInstanceOf[TrafficDirection]
+    val egress = "egress".asInstanceOf[TrafficDirection]
 
     val values = js.Object.freeze(js.Array(ingress, egress))
   }
@@ -35473,9 +35473,9 @@ package ec2 {
   sealed trait TrafficMirrorFilterRuleField extends js.Any
   object TrafficMirrorFilterRuleField extends js.Object {
     val `destination-port-range` = "destination-port-range".asInstanceOf[TrafficMirrorFilterRuleField]
-    val `source-port-range`      = "source-port-range".asInstanceOf[TrafficMirrorFilterRuleField]
-    val protocol                 = "protocol".asInstanceOf[TrafficMirrorFilterRuleField]
-    val description              = "description".asInstanceOf[TrafficMirrorFilterRuleField]
+    val `source-port-range` = "source-port-range".asInstanceOf[TrafficMirrorFilterRuleField]
+    val protocol = "protocol".asInstanceOf[TrafficMirrorFilterRuleField]
+    val description = "description".asInstanceOf[TrafficMirrorFilterRuleField]
 
     val values = js.Object.freeze(js.Array(`destination-port-range`, `source-port-range`, protocol, description))
   }
@@ -35590,8 +35590,8 @@ package ec2 {
   @js.native
   sealed trait TrafficMirrorSessionField extends js.Any
   object TrafficMirrorSessionField extends js.Object {
-    val `packet-length`      = "packet-length".asInstanceOf[TrafficMirrorSessionField]
-    val description          = "description".asInstanceOf[TrafficMirrorSessionField]
+    val `packet-length` = "packet-length".asInstanceOf[TrafficMirrorSessionField]
+    val description = "description".asInstanceOf[TrafficMirrorSessionField]
     val `virtual-network-id` = "virtual-network-id".asInstanceOf[TrafficMirrorSessionField]
 
     val values = js.Object.freeze(js.Array(`packet-length`, description, `virtual-network-id`))
@@ -35637,7 +35637,7 @@ package ec2 {
   @js.native
   sealed trait TrafficMirrorTargetType extends js.Any
   object TrafficMirrorTargetType extends js.Object {
-    val `network-interface`     = "network-interface".asInstanceOf[TrafficMirrorTargetType]
+    val `network-interface` = "network-interface".asInstanceOf[TrafficMirrorTargetType]
     val `network-load-balancer` = "network-load-balancer".asInstanceOf[TrafficMirrorTargetType]
 
     val values = js.Object.freeze(js.Array(`network-interface`, `network-load-balancer`))
@@ -35648,7 +35648,7 @@ package ec2 {
   object TrafficType extends js.Object {
     val ACCEPT = "ACCEPT".asInstanceOf[TrafficType]
     val REJECT = "REJECT".asInstanceOf[TrafficType]
-    val ALL    = "ALL".asInstanceOf[TrafficType]
+    val ALL = "ALL".asInstanceOf[TrafficType]
 
     val values = js.Object.freeze(js.Array(ACCEPT, REJECT, ALL))
   }
@@ -35731,10 +35731,10 @@ package ec2 {
   @js.native
   sealed trait TransitGatewayAssociationState extends js.Any
   object TransitGatewayAssociationState extends js.Object {
-    val associating    = "associating".asInstanceOf[TransitGatewayAssociationState]
-    val associated     = "associated".asInstanceOf[TransitGatewayAssociationState]
+    val associating = "associating".asInstanceOf[TransitGatewayAssociationState]
+    val associated = "associated".asInstanceOf[TransitGatewayAssociationState]
     val disassociating = "disassociating".asInstanceOf[TransitGatewayAssociationState]
-    val disassociated  = "disassociated".asInstanceOf[TransitGatewayAssociationState]
+    val disassociated = "disassociated".asInstanceOf[TransitGatewayAssociationState]
 
     val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated))
   }
@@ -35838,10 +35838,10 @@ package ec2 {
   @js.native
   sealed trait TransitGatewayAttachmentResourceType extends js.Any
   object TransitGatewayAttachmentResourceType extends js.Object {
-    val vpc                      = "vpc".asInstanceOf[TransitGatewayAttachmentResourceType]
-    val vpn                      = "vpn".asInstanceOf[TransitGatewayAttachmentResourceType]
+    val vpc = "vpc".asInstanceOf[TransitGatewayAttachmentResourceType]
+    val vpn = "vpn".asInstanceOf[TransitGatewayAttachmentResourceType]
     val `direct-connect-gateway` = "direct-connect-gateway".asInstanceOf[TransitGatewayAttachmentResourceType]
-    val `tgw-peering`            = "tgw-peering".asInstanceOf[TransitGatewayAttachmentResourceType]
+    val `tgw-peering` = "tgw-peering".asInstanceOf[TransitGatewayAttachmentResourceType]
 
     val values = js.Object.freeze(js.Array(vpc, vpn, `direct-connect-gateway`, `tgw-peering`))
   }
@@ -35849,18 +35849,18 @@ package ec2 {
   @js.native
   sealed trait TransitGatewayAttachmentState extends js.Any
   object TransitGatewayAttachmentState extends js.Object {
-    val initiating        = "initiating".asInstanceOf[TransitGatewayAttachmentState]
+    val initiating = "initiating".asInstanceOf[TransitGatewayAttachmentState]
     val pendingAcceptance = "pendingAcceptance".asInstanceOf[TransitGatewayAttachmentState]
-    val rollingBack       = "rollingBack".asInstanceOf[TransitGatewayAttachmentState]
-    val pending           = "pending".asInstanceOf[TransitGatewayAttachmentState]
-    val available         = "available".asInstanceOf[TransitGatewayAttachmentState]
-    val modifying         = "modifying".asInstanceOf[TransitGatewayAttachmentState]
-    val deleting          = "deleting".asInstanceOf[TransitGatewayAttachmentState]
-    val deleted           = "deleted".asInstanceOf[TransitGatewayAttachmentState]
-    val failed            = "failed".asInstanceOf[TransitGatewayAttachmentState]
-    val rejected          = "rejected".asInstanceOf[TransitGatewayAttachmentState]
-    val rejecting         = "rejecting".asInstanceOf[TransitGatewayAttachmentState]
-    val failing           = "failing".asInstanceOf[TransitGatewayAttachmentState]
+    val rollingBack = "rollingBack".asInstanceOf[TransitGatewayAttachmentState]
+    val pending = "pending".asInstanceOf[TransitGatewayAttachmentState]
+    val available = "available".asInstanceOf[TransitGatewayAttachmentState]
+    val modifying = "modifying".asInstanceOf[TransitGatewayAttachmentState]
+    val deleting = "deleting".asInstanceOf[TransitGatewayAttachmentState]
+    val deleted = "deleted".asInstanceOf[TransitGatewayAttachmentState]
+    val failed = "failed".asInstanceOf[TransitGatewayAttachmentState]
+    val rejected = "rejected".asInstanceOf[TransitGatewayAttachmentState]
+    val rejecting = "rejecting".asInstanceOf[TransitGatewayAttachmentState]
+    val failing = "failing".asInstanceOf[TransitGatewayAttachmentState]
 
     val values = js.Object.freeze(
       js.Array(
@@ -35883,10 +35883,10 @@ package ec2 {
   @js.native
   sealed trait TransitGatewayMulitcastDomainAssociationState extends js.Any
   object TransitGatewayMulitcastDomainAssociationState extends js.Object {
-    val associating    = "associating".asInstanceOf[TransitGatewayMulitcastDomainAssociationState]
-    val associated     = "associated".asInstanceOf[TransitGatewayMulitcastDomainAssociationState]
+    val associating = "associating".asInstanceOf[TransitGatewayMulitcastDomainAssociationState]
+    val associated = "associated".asInstanceOf[TransitGatewayMulitcastDomainAssociationState]
     val disassociating = "disassociating".asInstanceOf[TransitGatewayMulitcastDomainAssociationState]
-    val disassociated  = "disassociated".asInstanceOf[TransitGatewayMulitcastDomainAssociationState]
+    val disassociated = "disassociated".asInstanceOf[TransitGatewayMulitcastDomainAssociationState]
 
     val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated))
   }
@@ -36050,10 +36050,10 @@ package ec2 {
   @js.native
   sealed trait TransitGatewayMulticastDomainState extends js.Any
   object TransitGatewayMulticastDomainState extends js.Object {
-    val pending   = "pending".asInstanceOf[TransitGatewayMulticastDomainState]
+    val pending = "pending".asInstanceOf[TransitGatewayMulticastDomainState]
     val available = "available".asInstanceOf[TransitGatewayMulticastDomainState]
-    val deleting  = "deleting".asInstanceOf[TransitGatewayMulticastDomainState]
-    val deleted   = "deleted".asInstanceOf[TransitGatewayMulticastDomainState]
+    val deleting = "deleting".asInstanceOf[TransitGatewayMulticastDomainState]
+    val deleted = "deleted".asInstanceOf[TransitGatewayMulticastDomainState]
 
     val values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
   }
@@ -36294,10 +36294,10 @@ package ec2 {
   @js.native
   sealed trait TransitGatewayPropagationState extends js.Any
   object TransitGatewayPropagationState extends js.Object {
-    val enabling  = "enabling".asInstanceOf[TransitGatewayPropagationState]
-    val enabled   = "enabled".asInstanceOf[TransitGatewayPropagationState]
+    val enabling = "enabling".asInstanceOf[TransitGatewayPropagationState]
+    val enabled = "enabled".asInstanceOf[TransitGatewayPropagationState]
     val disabling = "disabling".asInstanceOf[TransitGatewayPropagationState]
-    val disabled  = "disabled".asInstanceOf[TransitGatewayPropagationState]
+    val disabled = "disabled".asInstanceOf[TransitGatewayPropagationState]
 
     val values = js.Object.freeze(js.Array(enabling, enabled, disabling, disabled))
   }
@@ -36405,11 +36405,11 @@ package ec2 {
   @js.native
   sealed trait TransitGatewayRouteState extends js.Any
   object TransitGatewayRouteState extends js.Object {
-    val pending   = "pending".asInstanceOf[TransitGatewayRouteState]
-    val active    = "active".asInstanceOf[TransitGatewayRouteState]
+    val pending = "pending".asInstanceOf[TransitGatewayRouteState]
+    val active = "active".asInstanceOf[TransitGatewayRouteState]
     val blackhole = "blackhole".asInstanceOf[TransitGatewayRouteState]
-    val deleting  = "deleting".asInstanceOf[TransitGatewayRouteState]
-    val deleted   = "deleted".asInstanceOf[TransitGatewayRouteState]
+    val deleting = "deleting".asInstanceOf[TransitGatewayRouteState]
+    val deleted = "deleted".asInstanceOf[TransitGatewayRouteState]
 
     val values = js.Object.freeze(js.Array(pending, active, blackhole, deleting, deleted))
   }
@@ -36520,10 +36520,10 @@ package ec2 {
   @js.native
   sealed trait TransitGatewayRouteTableState extends js.Any
   object TransitGatewayRouteTableState extends js.Object {
-    val pending   = "pending".asInstanceOf[TransitGatewayRouteTableState]
+    val pending = "pending".asInstanceOf[TransitGatewayRouteTableState]
     val available = "available".asInstanceOf[TransitGatewayRouteTableState]
-    val deleting  = "deleting".asInstanceOf[TransitGatewayRouteTableState]
-    val deleted   = "deleted".asInstanceOf[TransitGatewayRouteTableState]
+    val deleting = "deleting".asInstanceOf[TransitGatewayRouteTableState]
+    val deleted = "deleted".asInstanceOf[TransitGatewayRouteTableState]
 
     val values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
   }
@@ -36531,7 +36531,7 @@ package ec2 {
   @js.native
   sealed trait TransitGatewayRouteType extends js.Any
   object TransitGatewayRouteType extends js.Object {
-    val static     = "static".asInstanceOf[TransitGatewayRouteType]
+    val static = "static".asInstanceOf[TransitGatewayRouteType]
     val propagated = "propagated".asInstanceOf[TransitGatewayRouteType]
 
     val values = js.Object.freeze(js.Array(static, propagated))
@@ -36540,11 +36540,11 @@ package ec2 {
   @js.native
   sealed trait TransitGatewayState extends js.Any
   object TransitGatewayState extends js.Object {
-    val pending   = "pending".asInstanceOf[TransitGatewayState]
+    val pending = "pending".asInstanceOf[TransitGatewayState]
     val available = "available".asInstanceOf[TransitGatewayState]
     val modifying = "modifying".asInstanceOf[TransitGatewayState]
-    val deleting  = "deleting".asInstanceOf[TransitGatewayState]
-    val deleted   = "deleted".asInstanceOf[TransitGatewayState]
+    val deleting = "deleting".asInstanceOf[TransitGatewayState]
+    val deleted = "deleted".asInstanceOf[TransitGatewayState]
 
     val values = js.Object.freeze(js.Array(pending, available, modifying, deleting, deleted))
   }
@@ -36710,7 +36710,7 @@ package ec2 {
         NetworkInterfaceId: NetworkInterfaceId
     ): UnassignIpv6AddressesRequest = {
       val __obj = js.Dynamic.literal(
-        "Ipv6Addresses"      -> Ipv6Addresses.asInstanceOf[js.Any],
+        "Ipv6Addresses" -> Ipv6Addresses.asInstanceOf[js.Any],
         "NetworkInterfaceId" -> NetworkInterfaceId.asInstanceOf[js.Any]
       )
 
@@ -36764,8 +36764,8 @@ package ec2 {
   @js.native
   sealed trait UnlimitedSupportedInstanceFamily extends js.Any
   object UnlimitedSupportedInstanceFamily extends js.Object {
-    val t2  = "t2".asInstanceOf[UnlimitedSupportedInstanceFamily]
-    val t3  = "t3".asInstanceOf[UnlimitedSupportedInstanceFamily]
+    val t2 = "t2".asInstanceOf[UnlimitedSupportedInstanceFamily]
+    val t3 = "t3".asInstanceOf[UnlimitedSupportedInstanceFamily]
     val t3a = "t3a".asInstanceOf[UnlimitedSupportedInstanceFamily]
 
     val values = js.Object.freeze(js.Array(t2, t3, t3a))
@@ -37006,7 +37006,7 @@ package ec2 {
   @js.native
   sealed trait UsageClassType extends js.Any
   object UsageClassType extends js.Object {
-    val spot        = "spot".asInstanceOf[UsageClassType]
+    val spot = "spot".asInstanceOf[UsageClassType]
     val `on-demand` = "on-demand".asInstanceOf[UsageClassType]
 
     val values = js.Object.freeze(js.Array(spot, `on-demand`))
@@ -37221,7 +37221,7 @@ package ec2 {
   @js.native
   sealed trait VirtualizationType extends js.Any
   object VirtualizationType extends js.Object {
-    val hvm         = "hvm".asInstanceOf[VirtualizationType]
+    val hvm = "hvm".asInstanceOf[VirtualizationType]
     val paravirtual = "paravirtual".asInstanceOf[VirtualizationType]
 
     val values = js.Object.freeze(js.Array(hvm, paravirtual))
@@ -37326,10 +37326,10 @@ package ec2 {
   sealed trait VolumeAttachmentState extends js.Any
   object VolumeAttachmentState extends js.Object {
     val attaching = "attaching".asInstanceOf[VolumeAttachmentState]
-    val attached  = "attached".asInstanceOf[VolumeAttachmentState]
+    val attached = "attached".asInstanceOf[VolumeAttachmentState]
     val detaching = "detaching".asInstanceOf[VolumeAttachmentState]
-    val detached  = "detached".asInstanceOf[VolumeAttachmentState]
-    val busy      = "busy".asInstanceOf[VolumeAttachmentState]
+    val detached = "detached".asInstanceOf[VolumeAttachmentState]
+    val busy = "busy".asInstanceOf[VolumeAttachmentState]
 
     val values = js.Object.freeze(js.Array(attaching, attached, detaching, detached, busy))
   }
@@ -37420,10 +37420,10 @@ package ec2 {
   @js.native
   sealed trait VolumeModificationState extends js.Any
   object VolumeModificationState extends js.Object {
-    val modifying  = "modifying".asInstanceOf[VolumeModificationState]
+    val modifying = "modifying".asInstanceOf[VolumeModificationState]
     val optimizing = "optimizing".asInstanceOf[VolumeModificationState]
-    val completed  = "completed".asInstanceOf[VolumeModificationState]
-    val failed     = "failed".asInstanceOf[VolumeModificationState]
+    val completed = "completed".asInstanceOf[VolumeModificationState]
+    val failed = "failed".asInstanceOf[VolumeModificationState]
 
     val values = js.Object.freeze(js.Array(modifying, optimizing, completed, failed))
   }
@@ -37431,12 +37431,12 @@ package ec2 {
   @js.native
   sealed trait VolumeState extends js.Any
   object VolumeState extends js.Object {
-    val creating  = "creating".asInstanceOf[VolumeState]
+    val creating = "creating".asInstanceOf[VolumeState]
     val available = "available".asInstanceOf[VolumeState]
-    val `in-use`  = "in-use".asInstanceOf[VolumeState]
-    val deleting  = "deleting".asInstanceOf[VolumeState]
-    val deleted   = "deleted".asInstanceOf[VolumeState]
-    val error     = "error".asInstanceOf[VolumeState]
+    val `in-use` = "in-use".asInstanceOf[VolumeState]
+    val deleting = "deleting".asInstanceOf[VolumeState]
+    val deleted = "deleted".asInstanceOf[VolumeState]
+    val error = "error".asInstanceOf[VolumeState]
 
     val values = js.Object.freeze(js.Array(creating, available, `in-use`, deleting, deleted, error))
   }
@@ -37572,8 +37572,8 @@ package ec2 {
   @js.native
   sealed trait VolumeStatusInfoStatus extends js.Any
   object VolumeStatusInfoStatus extends js.Object {
-    val ok                  = "ok".asInstanceOf[VolumeStatusInfoStatus]
-    val impaired            = "impaired".asInstanceOf[VolumeStatusInfoStatus]
+    val ok = "ok".asInstanceOf[VolumeStatusInfoStatus]
+    val impaired = "impaired".asInstanceOf[VolumeStatusInfoStatus]
     val `insufficient-data` = "insufficient-data".asInstanceOf[VolumeStatusInfoStatus]
 
     val values = js.Object.freeze(js.Array(ok, impaired, `insufficient-data`))
@@ -37619,7 +37619,7 @@ package ec2 {
   @js.native
   sealed trait VolumeStatusName extends js.Any
   object VolumeStatusName extends js.Object {
-    val `io-enabled`     = "io-enabled".asInstanceOf[VolumeStatusName]
+    val `io-enabled` = "io-enabled".asInstanceOf[VolumeStatusName]
     val `io-performance` = "io-performance".asInstanceOf[VolumeStatusName]
 
     val values = js.Object.freeze(js.Array(`io-enabled`, `io-performance`))
@@ -37629,10 +37629,10 @@ package ec2 {
   sealed trait VolumeType extends js.Any
   object VolumeType extends js.Object {
     val standard = "standard".asInstanceOf[VolumeType]
-    val io1      = "io1".asInstanceOf[VolumeType]
-    val gp2      = "gp2".asInstanceOf[VolumeType]
-    val sc1      = "sc1".asInstanceOf[VolumeType]
-    val st1      = "st1".asInstanceOf[VolumeType]
+    val io1 = "io1".asInstanceOf[VolumeType]
+    val gp2 = "gp2".asInstanceOf[VolumeType]
+    val sc1 = "sc1".asInstanceOf[VolumeType]
+    val st1 = "st1".asInstanceOf[VolumeType]
 
     val values = js.Object.freeze(js.Array(standard, io1, gp2, sc1, st1))
   }
@@ -37710,7 +37710,7 @@ package ec2 {
   @js.native
   sealed trait VpcAttributeName extends js.Any
   object VpcAttributeName extends js.Object {
-    val enableDnsSupport   = "enableDnsSupport".asInstanceOf[VpcAttributeName]
+    val enableDnsSupport = "enableDnsSupport".asInstanceOf[VpcAttributeName]
     val enableDnsHostnames = "enableDnsHostnames".asInstanceOf[VpcAttributeName]
 
     val values = js.Object.freeze(js.Array(enableDnsSupport, enableDnsHostnames))
@@ -37766,12 +37766,12 @@ package ec2 {
   @js.native
   sealed trait VpcCidrBlockStateCode extends js.Any
   object VpcCidrBlockStateCode extends js.Object {
-    val associating    = "associating".asInstanceOf[VpcCidrBlockStateCode]
-    val associated     = "associated".asInstanceOf[VpcCidrBlockStateCode]
+    val associating = "associating".asInstanceOf[VpcCidrBlockStateCode]
+    val associated = "associated".asInstanceOf[VpcCidrBlockStateCode]
     val disassociating = "disassociating".asInstanceOf[VpcCidrBlockStateCode]
-    val disassociated  = "disassociated".asInstanceOf[VpcCidrBlockStateCode]
-    val failing        = "failing".asInstanceOf[VpcCidrBlockStateCode]
-    val failed         = "failed".asInstanceOf[VpcCidrBlockStateCode]
+    val disassociated = "disassociated".asInstanceOf[VpcCidrBlockStateCode]
+    val failing = "failing".asInstanceOf[VpcCidrBlockStateCode]
+    val failed = "failed".asInstanceOf[VpcCidrBlockStateCode]
 
     val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated, failing, failed))
   }
@@ -37909,7 +37909,7 @@ package ec2 {
   sealed trait VpcEndpointType extends js.Any
   object VpcEndpointType extends js.Object {
     val Interface = "Interface".asInstanceOf[VpcEndpointType]
-    val Gateway   = "Gateway".asInstanceOf[VpcEndpointType]
+    val Gateway = "Gateway".asInstanceOf[VpcEndpointType]
 
     val values = js.Object.freeze(js.Array(Interface, Gateway))
   }
@@ -38037,13 +38037,13 @@ package ec2 {
   object VpcPeeringConnectionStateReasonCode extends js.Object {
     val `initiating-request` = "initiating-request".asInstanceOf[VpcPeeringConnectionStateReasonCode]
     val `pending-acceptance` = "pending-acceptance".asInstanceOf[VpcPeeringConnectionStateReasonCode]
-    val active               = "active".asInstanceOf[VpcPeeringConnectionStateReasonCode]
-    val deleted              = "deleted".asInstanceOf[VpcPeeringConnectionStateReasonCode]
-    val rejected             = "rejected".asInstanceOf[VpcPeeringConnectionStateReasonCode]
-    val failed               = "failed".asInstanceOf[VpcPeeringConnectionStateReasonCode]
-    val expired              = "expired".asInstanceOf[VpcPeeringConnectionStateReasonCode]
-    val provisioning         = "provisioning".asInstanceOf[VpcPeeringConnectionStateReasonCode]
-    val deleting             = "deleting".asInstanceOf[VpcPeeringConnectionStateReasonCode]
+    val active = "active".asInstanceOf[VpcPeeringConnectionStateReasonCode]
+    val deleted = "deleted".asInstanceOf[VpcPeeringConnectionStateReasonCode]
+    val rejected = "rejected".asInstanceOf[VpcPeeringConnectionStateReasonCode]
+    val failed = "failed".asInstanceOf[VpcPeeringConnectionStateReasonCode]
+    val expired = "expired".asInstanceOf[VpcPeeringConnectionStateReasonCode]
+    val provisioning = "provisioning".asInstanceOf[VpcPeeringConnectionStateReasonCode]
+    val deleting = "deleting".asInstanceOf[VpcPeeringConnectionStateReasonCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -38100,7 +38100,7 @@ package ec2 {
   @js.native
   sealed trait VpcState extends js.Any
   object VpcState extends js.Object {
-    val pending   = "pending".asInstanceOf[VpcState]
+    val pending = "pending".asInstanceOf[VpcState]
     val available = "available".asInstanceOf[VpcState]
 
     val values = js.Object.freeze(js.Array(pending, available))
@@ -38221,7 +38221,7 @@ package ec2 {
   @js.native
   sealed trait VpnEcmpSupportValue extends js.Any
   object VpnEcmpSupportValue extends js.Object {
-    val enable  = "enable".asInstanceOf[VpnEcmpSupportValue]
+    val enable = "enable".asInstanceOf[VpnEcmpSupportValue]
     val disable = "disable".asInstanceOf[VpnEcmpSupportValue]
 
     val values = js.Object.freeze(js.Array(enable, disable))
@@ -38275,10 +38275,10 @@ package ec2 {
   @js.native
   sealed trait VpnState extends js.Any
   object VpnState extends js.Object {
-    val pending   = "pending".asInstanceOf[VpnState]
+    val pending = "pending".asInstanceOf[VpnState]
     val available = "available".asInstanceOf[VpnState]
-    val deleting  = "deleting".asInstanceOf[VpnState]
-    val deleted   = "deleted".asInstanceOf[VpnState]
+    val deleting = "deleting".asInstanceOf[VpnState]
+    val deleted = "deleted".asInstanceOf[VpnState]
 
     val values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
   }
@@ -38426,7 +38426,7 @@ package ec2 {
   sealed trait scope extends js.Any
   object scope extends js.Object {
     val `Availability Zone` = "Availability Zone".asInstanceOf[scope]
-    val Region              = "Region".asInstanceOf[scope]
+    val Region = "Region".asInstanceOf[scope]
 
     val values = js.Object.freeze(js.Array(`Availability Zone`, Region))
   }

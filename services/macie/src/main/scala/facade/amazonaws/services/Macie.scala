@@ -7,17 +7,17 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object macie {
-  type AWSAccountId                    = String
-  type BucketName                      = String
-  type ErrorCode                       = String
-  type ExceptionMessage                = String
-  type FailedS3Resources               = js.Array[FailedS3Resource]
-  type MaxResults                      = Int
-  type MemberAccounts                  = js.Array[MemberAccount]
-  type NextToken                       = String
-  type Prefix                          = String
-  type S3Resources                     = js.Array[S3Resource]
-  type S3ResourcesClassification       = js.Array[S3ResourceClassification]
+  type AWSAccountId = String
+  type BucketName = String
+  type ErrorCode = String
+  type ExceptionMessage = String
+  type FailedS3Resources = js.Array[FailedS3Resource]
+  type MaxResults = Int
+  type MemberAccounts = js.Array[MemberAccount]
+  type NextToken = String
+  type Prefix = String
+  type S3Resources = js.Array[S3Resource]
+  type S3ResourcesClassification = js.Array[S3ResourceClassification]
   type S3ResourcesClassificationUpdate = js.Array[S3ResourceClassificationUpdate]
 
   implicit final class MacieOps(private val service: Macie) extends AnyVal {
@@ -46,14 +46,14 @@ package macie {
   class Macie() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def associateMemberAccount(params: AssociateMemberAccountRequest): Request[js.Object]              = js.native
+    def associateMemberAccount(params: AssociateMemberAccountRequest): Request[js.Object] = js.native
     def associateS3Resources(params: AssociateS3ResourcesRequest): Request[AssociateS3ResourcesResult] = js.native
-    def disassociateMemberAccount(params: DisassociateMemberAccountRequest): Request[js.Object]        = js.native
+    def disassociateMemberAccount(params: DisassociateMemberAccountRequest): Request[js.Object] = js.native
     def disassociateS3Resources(params: DisassociateS3ResourcesRequest): Request[DisassociateS3ResourcesResult] =
       js.native
     def listMemberAccounts(params: ListMemberAccountsRequest): Request[ListMemberAccountsResult] = js.native
-    def listS3Resources(params: ListS3ResourcesRequest): Request[ListS3ResourcesResult]          = js.native
-    def updateS3Resources(params: UpdateS3ResourcesRequest): Request[UpdateS3ResourcesResult]    = js.native
+    def listS3Resources(params: ListS3ResourcesRequest): Request[ListS3ResourcesResult] = js.native
+    def updateS3Resources(params: UpdateS3ResourcesRequest): Request[UpdateS3ResourcesResult] = js.native
   }
 
   @js.native
@@ -128,7 +128,7 @@ package macie {
     ): ClassificationType = {
       val __obj = js.Dynamic.literal(
         "continuous" -> continuous.asInstanceOf[js.Any],
-        "oneTime"    -> oneTime.asInstanceOf[js.Any]
+        "oneTime" -> oneTime.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ClassificationType]
@@ -394,7 +394,7 @@ package macie {
         prefix: js.UndefOr[Prefix] = js.undefined
     ): S3ResourceClassification = {
       val __obj = js.Dynamic.literal(
-        "bucketName"         -> bucketName.asInstanceOf[js.Any],
+        "bucketName" -> bucketName.asInstanceOf[js.Any],
         "classificationType" -> classificationType.asInstanceOf[js.Any]
       )
 
@@ -421,7 +421,7 @@ package macie {
         prefix: js.UndefOr[Prefix] = js.undefined
     ): S3ResourceClassificationUpdate = {
       val __obj = js.Dynamic.literal(
-        "bucketName"               -> bucketName.asInstanceOf[js.Any],
+        "bucketName" -> bucketName.asInstanceOf[js.Any],
         "classificationTypeUpdate" -> classificationTypeUpdate.asInstanceOf[js.Any]
       )
 

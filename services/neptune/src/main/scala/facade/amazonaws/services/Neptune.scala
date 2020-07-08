@@ -7,57 +7,57 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object neptune {
-  type AttributeValueList                  = js.Array[String]
-  type AvailabilityZoneList                = js.Array[AvailabilityZone]
-  type AvailabilityZones                   = js.Array[String]
-  type BooleanOptional                     = Boolean
-  type DBClusterList                       = js.Array[DBCluster]
-  type DBClusterMemberList                 = js.Array[DBClusterMember]
-  type DBClusterOptionGroupMemberships     = js.Array[DBClusterOptionGroupStatus]
-  type DBClusterParameterGroupList         = js.Array[DBClusterParameterGroup]
-  type DBClusterRoles                      = js.Array[DBClusterRole]
-  type DBClusterSnapshotAttributeList      = js.Array[DBClusterSnapshotAttribute]
-  type DBClusterSnapshotList               = js.Array[DBClusterSnapshot]
-  type DBEngineVersionList                 = js.Array[DBEngineVersion]
-  type DBInstanceList                      = js.Array[DBInstance]
-  type DBInstanceStatusInfoList            = js.Array[DBInstanceStatusInfo]
-  type DBParameterGroupList                = js.Array[DBParameterGroup]
-  type DBParameterGroupStatusList          = js.Array[DBParameterGroupStatus]
-  type DBSecurityGroupMembershipList       = js.Array[DBSecurityGroupMembership]
-  type DBSecurityGroupNameList             = js.Array[String]
-  type DBSubnetGroups                      = js.Array[DBSubnetGroup]
-  type DomainMembershipList                = js.Array[DomainMembership]
-  type DoubleOptional                      = Double
-  type DoubleRangeList                     = js.Array[DoubleRange]
-  type EventCategoriesList                 = js.Array[String]
-  type EventCategoriesMapList              = js.Array[EventCategoriesMap]
-  type EventList                           = js.Array[Event]
-  type EventSubscriptionsList              = js.Array[EventSubscription]
-  type FilterList                          = js.Array[Filter]
-  type FilterValueList                     = js.Array[String]
-  type IntegerOptional                     = Int
-  type KeyList                             = js.Array[String]
-  type LogTypeList                         = js.Array[String]
-  type OptionGroupMembershipList           = js.Array[OptionGroupMembership]
-  type OrderableDBInstanceOptionsList      = js.Array[OrderableDBInstanceOption]
-  type ParametersList                      = js.Array[Parameter]
-  type PendingMaintenanceActionDetails     = js.Array[PendingMaintenanceAction]
-  type PendingMaintenanceActions           = js.Array[ResourcePendingMaintenanceActions]
-  type RangeList                           = js.Array[Range]
-  type ReadReplicaDBClusterIdentifierList  = js.Array[String]
+  type AttributeValueList = js.Array[String]
+  type AvailabilityZoneList = js.Array[AvailabilityZone]
+  type AvailabilityZones = js.Array[String]
+  type BooleanOptional = Boolean
+  type DBClusterList = js.Array[DBCluster]
+  type DBClusterMemberList = js.Array[DBClusterMember]
+  type DBClusterOptionGroupMemberships = js.Array[DBClusterOptionGroupStatus]
+  type DBClusterParameterGroupList = js.Array[DBClusterParameterGroup]
+  type DBClusterRoles = js.Array[DBClusterRole]
+  type DBClusterSnapshotAttributeList = js.Array[DBClusterSnapshotAttribute]
+  type DBClusterSnapshotList = js.Array[DBClusterSnapshot]
+  type DBEngineVersionList = js.Array[DBEngineVersion]
+  type DBInstanceList = js.Array[DBInstance]
+  type DBInstanceStatusInfoList = js.Array[DBInstanceStatusInfo]
+  type DBParameterGroupList = js.Array[DBParameterGroup]
+  type DBParameterGroupStatusList = js.Array[DBParameterGroupStatus]
+  type DBSecurityGroupMembershipList = js.Array[DBSecurityGroupMembership]
+  type DBSecurityGroupNameList = js.Array[String]
+  type DBSubnetGroups = js.Array[DBSubnetGroup]
+  type DomainMembershipList = js.Array[DomainMembership]
+  type DoubleOptional = Double
+  type DoubleRangeList = js.Array[DoubleRange]
+  type EventCategoriesList = js.Array[String]
+  type EventCategoriesMapList = js.Array[EventCategoriesMap]
+  type EventList = js.Array[Event]
+  type EventSubscriptionsList = js.Array[EventSubscription]
+  type FilterList = js.Array[Filter]
+  type FilterValueList = js.Array[String]
+  type IntegerOptional = Int
+  type KeyList = js.Array[String]
+  type LogTypeList = js.Array[String]
+  type OptionGroupMembershipList = js.Array[OptionGroupMembership]
+  type OrderableDBInstanceOptionsList = js.Array[OrderableDBInstanceOption]
+  type ParametersList = js.Array[Parameter]
+  type PendingMaintenanceActionDetails = js.Array[PendingMaintenanceAction]
+  type PendingMaintenanceActions = js.Array[ResourcePendingMaintenanceActions]
+  type RangeList = js.Array[Range]
+  type ReadReplicaDBClusterIdentifierList = js.Array[String]
   type ReadReplicaDBInstanceIdentifierList = js.Array[String]
-  type ReadReplicaIdentifierList           = js.Array[String]
-  type SourceIdsList                       = js.Array[String]
-  type SubnetIdentifierList                = js.Array[String]
-  type SubnetList                          = js.Array[Subnet]
-  type SupportedCharacterSetsList          = js.Array[CharacterSet]
-  type SupportedTimezonesList              = js.Array[Timezone]
-  type TStamp                              = js.Date
-  type TagList                             = js.Array[Tag]
-  type ValidStorageOptionsList             = js.Array[ValidStorageOptions]
-  type ValidUpgradeTargetList              = js.Array[UpgradeTarget]
-  type VpcSecurityGroupIdList              = js.Array[String]
-  type VpcSecurityGroupMembershipList      = js.Array[VpcSecurityGroupMembership]
+  type ReadReplicaIdentifierList = js.Array[String]
+  type SourceIdsList = js.Array[String]
+  type SubnetIdentifierList = js.Array[String]
+  type SubnetList = js.Array[Subnet]
+  type SupportedCharacterSetsList = js.Array[CharacterSet]
+  type SupportedTimezonesList = js.Array[Timezone]
+  type TStamp = js.Date
+  type TagList = js.Array[Tag]
+  type ValidStorageOptionsList = js.Array[ValidStorageOptions]
+  type ValidUpgradeTargetList = js.Array[UpgradeTarget]
+  type VpcSecurityGroupIdList = js.Array[String]
+  type VpcSecurityGroupMembershipList = js.Array[VpcSecurityGroupMembership]
 
   implicit final class NeptuneOps(private val service: Neptune) extends AnyVal {
 
@@ -228,34 +228,34 @@ package neptune {
     def addRoleToDBCluster(params: AddRoleToDBClusterMessage): Request[js.Object] = js.native
     def addSourceIdentifierToSubscription(
         params: AddSourceIdentifierToSubscriptionMessage
-    ): Request[AddSourceIdentifierToSubscriptionResult]                         = js.native
+    ): Request[AddSourceIdentifierToSubscriptionResult] = js.native
     def addTagsToResource(params: AddTagsToResourceMessage): Request[js.Object] = js.native
     def applyPendingMaintenanceAction(
         params: ApplyPendingMaintenanceActionMessage
     ): Request[ApplyPendingMaintenanceActionResult] = js.native
     def copyDBClusterParameterGroup(
         params: CopyDBClusterParameterGroupMessage
-    ): Request[CopyDBClusterParameterGroupResult]                                                         = js.native
+    ): Request[CopyDBClusterParameterGroupResult] = js.native
     def copyDBClusterSnapshot(params: CopyDBClusterSnapshotMessage): Request[CopyDBClusterSnapshotResult] = js.native
-    def copyDBParameterGroup(params: CopyDBParameterGroupMessage): Request[CopyDBParameterGroupResult]    = js.native
-    def createDBCluster(params: CreateDBClusterMessage): Request[CreateDBClusterResult]                   = js.native
+    def copyDBParameterGroup(params: CopyDBParameterGroupMessage): Request[CopyDBParameterGroupResult] = js.native
+    def createDBCluster(params: CreateDBClusterMessage): Request[CreateDBClusterResult] = js.native
     def createDBClusterParameterGroup(
         params: CreateDBClusterParameterGroupMessage
     ): Request[CreateDBClusterParameterGroupResult] = js.native
     def createDBClusterSnapshot(params: CreateDBClusterSnapshotMessage): Request[CreateDBClusterSnapshotResult] =
       js.native
-    def createDBInstance(params: CreateDBInstanceMessage): Request[CreateDBInstanceResult]                   = js.native
+    def createDBInstance(params: CreateDBInstanceMessage): Request[CreateDBInstanceResult] = js.native
     def createDBParameterGroup(params: CreateDBParameterGroupMessage): Request[CreateDBParameterGroupResult] = js.native
-    def createDBSubnetGroup(params: CreateDBSubnetGroupMessage): Request[CreateDBSubnetGroupResult]          = js.native
+    def createDBSubnetGroup(params: CreateDBSubnetGroupMessage): Request[CreateDBSubnetGroupResult] = js.native
     def createEventSubscription(params: CreateEventSubscriptionMessage): Request[CreateEventSubscriptionResult] =
       js.native
-    def deleteDBCluster(params: DeleteDBClusterMessage): Request[DeleteDBClusterResult]                 = js.native
+    def deleteDBCluster(params: DeleteDBClusterMessage): Request[DeleteDBClusterResult] = js.native
     def deleteDBClusterParameterGroup(params: DeleteDBClusterParameterGroupMessage): Request[js.Object] = js.native
     def deleteDBClusterSnapshot(params: DeleteDBClusterSnapshotMessage): Request[DeleteDBClusterSnapshotResult] =
       js.native
     def deleteDBInstance(params: DeleteDBInstanceMessage): Request[DeleteDBInstanceResult] = js.native
-    def deleteDBParameterGroup(params: DeleteDBParameterGroupMessage): Request[js.Object]  = js.native
-    def deleteDBSubnetGroup(params: DeleteDBSubnetGroupMessage): Request[js.Object]        = js.native
+    def deleteDBParameterGroup(params: DeleteDBParameterGroupMessage): Request[js.Object] = js.native
+    def deleteDBSubnetGroup(params: DeleteDBSubnetGroupMessage): Request[js.Object] = js.native
     def deleteEventSubscription(params: DeleteEventSubscriptionMessage): Request[DeleteEventSubscriptionResult] =
       js.native
     def describeDBClusterParameterGroups(
@@ -269,19 +269,19 @@ package neptune {
     ): Request[DescribeDBClusterSnapshotAttributesResult] = js.native
     def describeDBClusterSnapshots(params: DescribeDBClusterSnapshotsMessage): Request[DBClusterSnapshotMessage] =
       js.native
-    def describeDBClusters(params: DescribeDBClustersMessage): Request[DBClusterMessage]                   = js.native
+    def describeDBClusters(params: DescribeDBClustersMessage): Request[DBClusterMessage] = js.native
     def describeDBEngineVersions(params: DescribeDBEngineVersionsMessage): Request[DBEngineVersionMessage] = js.native
-    def describeDBInstances(params: DescribeDBInstancesMessage): Request[DBInstanceMessage]                = js.native
+    def describeDBInstances(params: DescribeDBInstancesMessage): Request[DBInstanceMessage] = js.native
     def describeDBParameterGroups(params: DescribeDBParameterGroupsMessage): Request[DBParameterGroupsMessage] =
       js.native
-    def describeDBParameters(params: DescribeDBParametersMessage): Request[DBParameterGroupDetails]  = js.native
+    def describeDBParameters(params: DescribeDBParametersMessage): Request[DBParameterGroupDetails] = js.native
     def describeDBSubnetGroups(params: DescribeDBSubnetGroupsMessage): Request[DBSubnetGroupMessage] = js.native
     def describeEngineDefaultClusterParameters(
         params: DescribeEngineDefaultClusterParametersMessage
     ): Request[DescribeEngineDefaultClusterParametersResult] = js.native
     def describeEngineDefaultParameters(
         params: DescribeEngineDefaultParametersMessage
-    ): Request[DescribeEngineDefaultParametersResult]                                                    = js.native
+    ): Request[DescribeEngineDefaultParametersResult] = js.native
     def describeEventCategories(params: DescribeEventCategoriesMessage): Request[EventCategoriesMessage] = js.native
     def describeEventSubscriptions(params: DescribeEventSubscriptionsMessage): Request[EventSubscriptionsMessage] =
       js.native
@@ -294,42 +294,42 @@ package neptune {
     ): Request[PendingMaintenanceActionsMessage] = js.native
     def describeValidDBInstanceModifications(
         params: DescribeValidDBInstanceModificationsMessage
-    ): Request[DescribeValidDBInstanceModificationsResult]                                    = js.native
+    ): Request[DescribeValidDBInstanceModificationsResult] = js.native
     def failoverDBCluster(params: FailoverDBClusterMessage): Request[FailoverDBClusterResult] = js.native
-    def listTagsForResource(params: ListTagsForResourceMessage): Request[TagListMessage]      = js.native
-    def modifyDBCluster(params: ModifyDBClusterMessage): Request[ModifyDBClusterResult]       = js.native
+    def listTagsForResource(params: ListTagsForResourceMessage): Request[TagListMessage] = js.native
+    def modifyDBCluster(params: ModifyDBClusterMessage): Request[ModifyDBClusterResult] = js.native
     def modifyDBClusterParameterGroup(
         params: ModifyDBClusterParameterGroupMessage
     ): Request[DBClusterParameterGroupNameMessage] = js.native
     def modifyDBClusterSnapshotAttribute(
         params: ModifyDBClusterSnapshotAttributeMessage
-    ): Request[ModifyDBClusterSnapshotAttributeResult]                                                      = js.native
-    def modifyDBInstance(params: ModifyDBInstanceMessage): Request[ModifyDBInstanceResult]                  = js.native
+    ): Request[ModifyDBClusterSnapshotAttributeResult] = js.native
+    def modifyDBInstance(params: ModifyDBInstanceMessage): Request[ModifyDBInstanceResult] = js.native
     def modifyDBParameterGroup(params: ModifyDBParameterGroupMessage): Request[DBParameterGroupNameMessage] = js.native
-    def modifyDBSubnetGroup(params: ModifyDBSubnetGroupMessage): Request[ModifyDBSubnetGroupResult]         = js.native
+    def modifyDBSubnetGroup(params: ModifyDBSubnetGroupMessage): Request[ModifyDBSubnetGroupResult] = js.native
     def modifyEventSubscription(params: ModifyEventSubscriptionMessage): Request[ModifyEventSubscriptionResult] =
       js.native
     def promoteReadReplicaDBCluster(
         params: PromoteReadReplicaDBClusterMessage
-    ): Request[PromoteReadReplicaDBClusterResult]                                           = js.native
-    def rebootDBInstance(params: RebootDBInstanceMessage): Request[RebootDBInstanceResult]  = js.native
+    ): Request[PromoteReadReplicaDBClusterResult] = js.native
+    def rebootDBInstance(params: RebootDBInstanceMessage): Request[RebootDBInstanceResult] = js.native
     def removeRoleFromDBCluster(params: RemoveRoleFromDBClusterMessage): Request[js.Object] = js.native
     def removeSourceIdentifierFromSubscription(
         params: RemoveSourceIdentifierFromSubscriptionMessage
-    ): Request[RemoveSourceIdentifierFromSubscriptionResult]                              = js.native
+    ): Request[RemoveSourceIdentifierFromSubscriptionResult] = js.native
     def removeTagsFromResource(params: RemoveTagsFromResourceMessage): Request[js.Object] = js.native
     def resetDBClusterParameterGroup(
         params: ResetDBClusterParameterGroupMessage
-    ): Request[DBClusterParameterGroupNameMessage]                                                        = js.native
+    ): Request[DBClusterParameterGroupNameMessage] = js.native
     def resetDBParameterGroup(params: ResetDBParameterGroupMessage): Request[DBParameterGroupNameMessage] = js.native
     def restoreDBClusterFromSnapshot(
         params: RestoreDBClusterFromSnapshotMessage
     ): Request[RestoreDBClusterFromSnapshotResult] = js.native
     def restoreDBClusterToPointInTime(
         params: RestoreDBClusterToPointInTimeMessage
-    ): Request[RestoreDBClusterToPointInTimeResult]                                  = js.native
+    ): Request[RestoreDBClusterToPointInTimeResult] = js.native
     def startDBCluster(params: StartDBClusterMessage): Request[StartDBClusterResult] = js.native
-    def stopDBCluster(params: StopDBClusterMessage): Request[StopDBClusterResult]    = js.native
+    def stopDBCluster(params: StopDBClusterMessage): Request[StopDBClusterResult] = js.native
   }
 
   @js.native
@@ -346,7 +346,7 @@ package neptune {
     ): AddRoleToDBClusterMessage = {
       val __obj = js.Dynamic.literal(
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "RoleArn"             -> RoleArn.asInstanceOf[js.Any]
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddRoleToDBClusterMessage]
@@ -404,7 +404,7 @@ package neptune {
     ): AddTagsToResourceMessage = {
       val __obj = js.Dynamic.literal(
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
-        "Tags"         -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddTagsToResourceMessage]
@@ -414,7 +414,7 @@ package neptune {
   @js.native
   sealed trait ApplyMethod extends js.Any
   object ApplyMethod extends js.Object {
-    val immediate        = "immediate".asInstanceOf[ApplyMethod]
+    val immediate = "immediate".asInstanceOf[ApplyMethod]
     val `pending-reboot` = "pending-reboot".asInstanceOf[ApplyMethod]
 
     val values = js.Object.freeze(js.Array(immediate, `pending-reboot`))
@@ -435,8 +435,8 @@ package neptune {
         ResourceIdentifier: String
     ): ApplyPendingMaintenanceActionMessage = {
       val __obj = js.Dynamic.literal(
-        "ApplyAction"        -> ApplyAction.asInstanceOf[js.Any],
-        "OptInType"          -> OptInType.asInstanceOf[js.Any],
+        "ApplyAction" -> ApplyAction.asInstanceOf[js.Any],
+        "OptInType" -> OptInType.asInstanceOf[js.Any],
         "ResourceIdentifier" -> ResourceIdentifier.asInstanceOf[js.Any]
       )
 
@@ -543,9 +543,9 @@ package neptune {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CopyDBClusterParameterGroupMessage = {
       val __obj = js.Dynamic.literal(
-        "SourceDBClusterParameterGroupIdentifier"  -> SourceDBClusterParameterGroupIdentifier.asInstanceOf[js.Any],
+        "SourceDBClusterParameterGroupIdentifier" -> SourceDBClusterParameterGroupIdentifier.asInstanceOf[js.Any],
         "TargetDBClusterParameterGroupDescription" -> TargetDBClusterParameterGroupDescription.asInstanceOf[js.Any],
-        "TargetDBClusterParameterGroupIdentifier"  -> TargetDBClusterParameterGroupIdentifier.asInstanceOf[js.Any]
+        "TargetDBClusterParameterGroupIdentifier" -> TargetDBClusterParameterGroupIdentifier.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -635,9 +635,9 @@ package neptune {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CopyDBParameterGroupMessage = {
       val __obj = js.Dynamic.literal(
-        "SourceDBParameterGroupIdentifier"  -> SourceDBParameterGroupIdentifier.asInstanceOf[js.Any],
+        "SourceDBParameterGroupIdentifier" -> SourceDBParameterGroupIdentifier.asInstanceOf[js.Any],
         "TargetDBParameterGroupDescription" -> TargetDBParameterGroupDescription.asInstanceOf[js.Any],
-        "TargetDBParameterGroupIdentifier"  -> TargetDBParameterGroupIdentifier.asInstanceOf[js.Any]
+        "TargetDBParameterGroupIdentifier" -> TargetDBParameterGroupIdentifier.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -719,7 +719,7 @@ package neptune {
     ): CreateDBClusterMessage = {
       val __obj = js.Dynamic.literal(
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "Engine"              -> Engine.asInstanceOf[js.Any]
+        "Engine" -> Engine.asInstanceOf[js.Any]
       )
 
       AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
@@ -776,8 +776,8 @@ package neptune {
     ): CreateDBClusterParameterGroupMessage = {
       val __obj = js.Dynamic.literal(
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any],
-        "DBParameterGroupFamily"      -> DBParameterGroupFamily.asInstanceOf[js.Any],
-        "Description"                 -> Description.asInstanceOf[js.Any]
+        "DBParameterGroupFamily" -> DBParameterGroupFamily.asInstanceOf[js.Any],
+        "Description" -> Description.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -832,7 +832,7 @@ package neptune {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDBClusterSnapshotMessage = {
       val __obj = js.Dynamic.literal(
-        "DBClusterIdentifier"         -> DBClusterIdentifier.asInstanceOf[js.Any],
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any]
       )
 
@@ -952,9 +952,9 @@ package neptune {
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): CreateDBInstanceMessage = {
       val __obj = js.Dynamic.literal(
-        "DBInstanceClass"      -> DBInstanceClass.asInstanceOf[js.Any],
+        "DBInstanceClass" -> DBInstanceClass.asInstanceOf[js.Any],
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
-        "Engine"               -> Engine.asInstanceOf[js.Any]
+        "Engine" -> Engine.asInstanceOf[js.Any]
       )
 
       AllocatedStorage.foreach(__v => __obj.updateDynamic("AllocatedStorage")(__v.asInstanceOf[js.Any]))
@@ -1045,8 +1045,8 @@ package neptune {
     ): CreateDBParameterGroupMessage = {
       val __obj = js.Dynamic.literal(
         "DBParameterGroupFamily" -> DBParameterGroupFamily.asInstanceOf[js.Any],
-        "DBParameterGroupName"   -> DBParameterGroupName.asInstanceOf[js.Any],
-        "Description"            -> Description.asInstanceOf[js.Any]
+        "DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any],
+        "Description" -> Description.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -1088,8 +1088,8 @@ package neptune {
     ): CreateDBSubnetGroupMessage = {
       val __obj = js.Dynamic.literal(
         "DBSubnetGroupDescription" -> DBSubnetGroupDescription.asInstanceOf[js.Any],
-        "DBSubnetGroupName"        -> DBSubnetGroupName.asInstanceOf[js.Any],
-        "SubnetIds"                -> SubnetIds.asInstanceOf[js.Any]
+        "DBSubnetGroupName" -> DBSubnetGroupName.asInstanceOf[js.Any],
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -1136,7 +1136,7 @@ package neptune {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateEventSubscriptionMessage = {
       val __obj = js.Dynamic.literal(
-        "SnsTopicArn"      -> SnsTopicArn.asInstanceOf[js.Any],
+        "SnsTopicArn" -> SnsTopicArn.asInstanceOf[js.Any],
         "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
       )
 
@@ -3230,7 +3230,7 @@ package neptune {
         Values: FilterValueList
     ): Filter = {
       val __obj = js.Dynamic.literal(
-        "Name"   -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
@@ -3341,7 +3341,7 @@ package neptune {
     ): ModifyDBClusterParameterGroupMessage = {
       val __obj = js.Dynamic.literal(
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any],
-        "Parameters"                  -> Parameters.asInstanceOf[js.Any]
+        "Parameters" -> Parameters.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ModifyDBClusterParameterGroupMessage]
@@ -3381,7 +3381,7 @@ package neptune {
         ValuesToRemove: js.UndefOr[AttributeValueList] = js.undefined
     ): ModifyDBClusterSnapshotAttributeMessage = {
       val __obj = js.Dynamic.literal(
-        "AttributeName"               -> AttributeName.asInstanceOf[js.Any],
+        "AttributeName" -> AttributeName.asInstanceOf[js.Any],
         "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any]
       )
 
@@ -3575,7 +3575,7 @@ package neptune {
     ): ModifyDBParameterGroupMessage = {
       val __obj = js.Dynamic.literal(
         "DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any],
-        "Parameters"           -> Parameters.asInstanceOf[js.Any]
+        "Parameters" -> Parameters.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ModifyDBParameterGroupMessage]
@@ -3598,7 +3598,7 @@ package neptune {
     ): ModifyDBSubnetGroupMessage = {
       val __obj = js.Dynamic.literal(
         "DBSubnetGroupName" -> DBSubnetGroupName.asInstanceOf[js.Any],
-        "SubnetIds"         -> SubnetIds.asInstanceOf[js.Any]
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any]
       )
 
       DBSubnetGroupDescription.foreach(__v => __obj.updateDynamic("DBSubnetGroupDescription")(__v.asInstanceOf[js.Any]))
@@ -4089,7 +4089,7 @@ package neptune {
     ): RemoveRoleFromDBClusterMessage = {
       val __obj = js.Dynamic.literal(
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "RoleArn"             -> RoleArn.asInstanceOf[js.Any]
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RemoveRoleFromDBClusterMessage]
@@ -4147,7 +4147,7 @@ package neptune {
     ): RemoveTagsFromResourceMessage = {
       val __obj = js.Dynamic.literal(
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
-        "TagKeys"      -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RemoveTagsFromResourceMessage]
@@ -4268,8 +4268,8 @@ package neptune {
     ): RestoreDBClusterFromSnapshotMessage = {
       val __obj = js.Dynamic.literal(
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "Engine"              -> Engine.asInstanceOf[js.Any],
-        "SnapshotIdentifier"  -> SnapshotIdentifier.asInstanceOf[js.Any]
+        "Engine" -> Engine.asInstanceOf[js.Any],
+        "SnapshotIdentifier" -> SnapshotIdentifier.asInstanceOf[js.Any]
       )
 
       AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
@@ -4350,7 +4350,7 @@ package neptune {
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): RestoreDBClusterToPointInTimeMessage = {
       val __obj = js.Dynamic.literal(
-        "DBClusterIdentifier"       -> DBClusterIdentifier.asInstanceOf[js.Any],
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "SourceDBClusterIdentifier" -> SourceDBClusterIdentifier.asInstanceOf[js.Any]
       )
 
@@ -4396,11 +4396,11 @@ package neptune {
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType extends js.Object {
-    val `db-instance`         = "db-instance".asInstanceOf[SourceType]
-    val `db-parameter-group`  = "db-parameter-group".asInstanceOf[SourceType]
-    val `db-security-group`   = "db-security-group".asInstanceOf[SourceType]
-    val `db-snapshot`         = "db-snapshot".asInstanceOf[SourceType]
-    val `db-cluster`          = "db-cluster".asInstanceOf[SourceType]
+    val `db-instance` = "db-instance".asInstanceOf[SourceType]
+    val `db-parameter-group` = "db-parameter-group".asInstanceOf[SourceType]
+    val `db-security-group` = "db-security-group".asInstanceOf[SourceType]
+    val `db-snapshot` = "db-snapshot".asInstanceOf[SourceType]
+    val `db-cluster` = "db-cluster".asInstanceOf[SourceType]
     val `db-cluster-snapshot` = "db-cluster-snapshot".asInstanceOf[SourceType]
 
     val values = js.Object.freeze(

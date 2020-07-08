@@ -7,58 +7,58 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object athena {
-  type AmazonResourceName              = String
-  type BoxedBoolean                    = Boolean
-  type BytesScannedCutoffValue         = Double
-  type CatalogNameString               = String
-  type ColumnInfoList                  = js.Array[ColumnInfo]
-  type ColumnList                      = js.Array[Column]
-  type CommentString                   = String
-  type DataCatalogSummaryList          = js.Array[DataCatalogSummary]
-  type DatabaseList                    = js.Array[Database]
-  type DatabaseString                  = String
-  type Date                            = js.Date
-  type DescriptionString               = String
-  type ErrorCode                       = String
-  type ErrorMessage                    = String
-  type ExpressionString                = String
-  type IdempotencyToken                = String
-  type KeyString                       = String
-  type MaxDataCatalogsCount            = Int
-  type MaxDatabasesCount               = Int
-  type MaxNamedQueriesCount            = Int
-  type MaxQueryExecutionsCount         = Int
-  type MaxQueryResults                 = Int
-  type MaxTableMetadataCount           = Int
-  type MaxTagsCount                    = Int
-  type MaxWorkGroupsCount              = Int
-  type NameString                      = String
-  type NamedQueryId                    = String
-  type NamedQueryIdList                = js.Array[NamedQueryId]
-  type NamedQueryList                  = js.Array[NamedQuery]
-  type ParametersMap                   = js.Dictionary[ParametersMapValue]
-  type ParametersMapValue              = String
-  type QueryExecutionId                = String
-  type QueryExecutionIdList            = js.Array[QueryExecutionId]
-  type QueryExecutionList              = js.Array[QueryExecution]
-  type QueryString                     = String
-  type RowList                         = js.Array[Row]
-  type TableMetadataList               = js.Array[TableMetadata]
-  type TableTypeString                 = String
-  type TagKey                          = String
-  type TagKeyList                      = js.Array[TagKey]
-  type TagList                         = js.Array[Tag]
-  type TagValue                        = String
-  type Timestamp                       = js.Date
-  type Token                           = String
-  type TypeString                      = String
-  type UnprocessedNamedQueryIdList     = js.Array[UnprocessedNamedQueryId]
+  type AmazonResourceName = String
+  type BoxedBoolean = Boolean
+  type BytesScannedCutoffValue = Double
+  type CatalogNameString = String
+  type ColumnInfoList = js.Array[ColumnInfo]
+  type ColumnList = js.Array[Column]
+  type CommentString = String
+  type DataCatalogSummaryList = js.Array[DataCatalogSummary]
+  type DatabaseList = js.Array[Database]
+  type DatabaseString = String
+  type Date = js.Date
+  type DescriptionString = String
+  type ErrorCode = String
+  type ErrorMessage = String
+  type ExpressionString = String
+  type IdempotencyToken = String
+  type KeyString = String
+  type MaxDataCatalogsCount = Int
+  type MaxDatabasesCount = Int
+  type MaxNamedQueriesCount = Int
+  type MaxQueryExecutionsCount = Int
+  type MaxQueryResults = Int
+  type MaxTableMetadataCount = Int
+  type MaxTagsCount = Int
+  type MaxWorkGroupsCount = Int
+  type NameString = String
+  type NamedQueryId = String
+  type NamedQueryIdList = js.Array[NamedQueryId]
+  type NamedQueryList = js.Array[NamedQuery]
+  type ParametersMap = js.Dictionary[ParametersMapValue]
+  type ParametersMapValue = String
+  type QueryExecutionId = String
+  type QueryExecutionIdList = js.Array[QueryExecutionId]
+  type QueryExecutionList = js.Array[QueryExecution]
+  type QueryString = String
+  type RowList = js.Array[Row]
+  type TableMetadataList = js.Array[TableMetadata]
+  type TableTypeString = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type Timestamp = js.Date
+  type Token = String
+  type TypeString = String
+  type UnprocessedNamedQueryIdList = js.Array[UnprocessedNamedQueryId]
   type UnprocessedQueryExecutionIdList = js.Array[UnprocessedQueryExecutionId]
-  type WorkGroupDescriptionString      = String
-  type WorkGroupName                   = String
-  type WorkGroupsList                  = js.Array[WorkGroupSummary]
-  type datumList                       = js.Array[Datum]
-  type datumString                     = String
+  type WorkGroupDescriptionString = String
+  type WorkGroupName = String
+  type WorkGroupsList = js.Array[WorkGroupSummary]
+  type datumList = js.Array[Datum]
+  type datumString = String
 
   implicit final class AthenaOps(private val service: Athena) extends AnyVal {
 
@@ -128,34 +128,34 @@ package athena {
   class Athena() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def batchGetNamedQuery(params: BatchGetNamedQueryInput): Request[BatchGetNamedQueryOutput]             = js.native
+    def batchGetNamedQuery(params: BatchGetNamedQueryInput): Request[BatchGetNamedQueryOutput] = js.native
     def batchGetQueryExecution(params: BatchGetQueryExecutionInput): Request[BatchGetQueryExecutionOutput] = js.native
-    def createDataCatalog(params: CreateDataCatalogInput): Request[CreateDataCatalogOutput]                = js.native
-    def createNamedQuery(params: CreateNamedQueryInput): Request[CreateNamedQueryOutput]                   = js.native
-    def createWorkGroup(params: CreateWorkGroupInput): Request[CreateWorkGroupOutput]                      = js.native
-    def deleteDataCatalog(params: DeleteDataCatalogInput): Request[DeleteDataCatalogOutput]                = js.native
-    def deleteNamedQuery(params: DeleteNamedQueryInput): Request[DeleteNamedQueryOutput]                   = js.native
-    def deleteWorkGroup(params: DeleteWorkGroupInput): Request[DeleteWorkGroupOutput]                      = js.native
-    def getDataCatalog(params: GetDataCatalogInput): Request[GetDataCatalogOutput]                         = js.native
-    def getDatabase(params: GetDatabaseInput): Request[GetDatabaseOutput]                                  = js.native
-    def getNamedQuery(params: GetNamedQueryInput): Request[GetNamedQueryOutput]                            = js.native
-    def getQueryExecution(params: GetQueryExecutionInput): Request[GetQueryExecutionOutput]                = js.native
-    def getQueryResults(params: GetQueryResultsInput): Request[GetQueryResultsOutput]                      = js.native
-    def getTableMetadata(params: GetTableMetadataInput): Request[GetTableMetadataOutput]                   = js.native
-    def getWorkGroup(params: GetWorkGroupInput): Request[GetWorkGroupOutput]                               = js.native
-    def listDataCatalogs(params: ListDataCatalogsInput): Request[ListDataCatalogsOutput]                   = js.native
-    def listDatabases(params: ListDatabasesInput): Request[ListDatabasesOutput]                            = js.native
-    def listNamedQueries(params: ListNamedQueriesInput): Request[ListNamedQueriesOutput]                   = js.native
-    def listQueryExecutions(params: ListQueryExecutionsInput): Request[ListQueryExecutionsOutput]          = js.native
-    def listTableMetadata(params: ListTableMetadataInput): Request[ListTableMetadataOutput]                = js.native
-    def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput]          = js.native
-    def listWorkGroups(params: ListWorkGroupsInput): Request[ListWorkGroupsOutput]                         = js.native
-    def startQueryExecution(params: StartQueryExecutionInput): Request[StartQueryExecutionOutput]          = js.native
-    def stopQueryExecution(params: StopQueryExecutionInput): Request[StopQueryExecutionOutput]             = js.native
-    def tagResource(params: TagResourceInput): Request[TagResourceOutput]                                  = js.native
-    def untagResource(params: UntagResourceInput): Request[UntagResourceOutput]                            = js.native
-    def updateDataCatalog(params: UpdateDataCatalogInput): Request[UpdateDataCatalogOutput]                = js.native
-    def updateWorkGroup(params: UpdateWorkGroupInput): Request[UpdateWorkGroupOutput]                      = js.native
+    def createDataCatalog(params: CreateDataCatalogInput): Request[CreateDataCatalogOutput] = js.native
+    def createNamedQuery(params: CreateNamedQueryInput): Request[CreateNamedQueryOutput] = js.native
+    def createWorkGroup(params: CreateWorkGroupInput): Request[CreateWorkGroupOutput] = js.native
+    def deleteDataCatalog(params: DeleteDataCatalogInput): Request[DeleteDataCatalogOutput] = js.native
+    def deleteNamedQuery(params: DeleteNamedQueryInput): Request[DeleteNamedQueryOutput] = js.native
+    def deleteWorkGroup(params: DeleteWorkGroupInput): Request[DeleteWorkGroupOutput] = js.native
+    def getDataCatalog(params: GetDataCatalogInput): Request[GetDataCatalogOutput] = js.native
+    def getDatabase(params: GetDatabaseInput): Request[GetDatabaseOutput] = js.native
+    def getNamedQuery(params: GetNamedQueryInput): Request[GetNamedQueryOutput] = js.native
+    def getQueryExecution(params: GetQueryExecutionInput): Request[GetQueryExecutionOutput] = js.native
+    def getQueryResults(params: GetQueryResultsInput): Request[GetQueryResultsOutput] = js.native
+    def getTableMetadata(params: GetTableMetadataInput): Request[GetTableMetadataOutput] = js.native
+    def getWorkGroup(params: GetWorkGroupInput): Request[GetWorkGroupOutput] = js.native
+    def listDataCatalogs(params: ListDataCatalogsInput): Request[ListDataCatalogsOutput] = js.native
+    def listDatabases(params: ListDatabasesInput): Request[ListDatabasesOutput] = js.native
+    def listNamedQueries(params: ListNamedQueriesInput): Request[ListNamedQueriesOutput] = js.native
+    def listQueryExecutions(params: ListQueryExecutionsInput): Request[ListQueryExecutionsOutput] = js.native
+    def listTableMetadata(params: ListTableMetadataInput): Request[ListTableMetadataOutput] = js.native
+    def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput] = js.native
+    def listWorkGroups(params: ListWorkGroupsInput): Request[ListWorkGroupsOutput] = js.native
+    def startQueryExecution(params: StartQueryExecutionInput): Request[StartQueryExecutionOutput] = js.native
+    def stopQueryExecution(params: StopQueryExecutionInput): Request[StopQueryExecutionOutput] = js.native
+    def tagResource(params: TagResourceInput): Request[TagResourceOutput] = js.native
+    def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
+    def updateDataCatalog(params: UpdateDataCatalogInput): Request[UpdateDataCatalogOutput] = js.native
+    def updateWorkGroup(params: UpdateWorkGroupInput): Request[UpdateWorkGroupOutput] = js.native
   }
 
   @js.native
@@ -314,7 +314,7 @@ package athena {
   object ColumnNullable extends js.Object {
     val NOT_NULL = "NOT_NULL".asInstanceOf[ColumnNullable]
     val NULLABLE = "NULLABLE".asInstanceOf[ColumnNullable]
-    val UNKNOWN  = "UNKNOWN".asInstanceOf[ColumnNullable]
+    val UNKNOWN = "UNKNOWN".asInstanceOf[ColumnNullable]
 
     val values = js.Object.freeze(js.Array(NOT_NULL, NULLABLE, UNKNOWN))
   }
@@ -383,8 +383,8 @@ package athena {
         WorkGroup: js.UndefOr[WorkGroupName] = js.undefined
     ): CreateNamedQueryInput = {
       val __obj = js.Dynamic.literal(
-        "Database"    -> Database.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any],
+        "Database" -> Database.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "QueryString" -> QueryString.asInstanceOf[js.Any]
       )
 
@@ -507,8 +507,8 @@ package athena {
   sealed trait DataCatalogType extends js.Any
   object DataCatalogType extends js.Object {
     val LAMBDA = "LAMBDA".asInstanceOf[DataCatalogType]
-    val GLUE   = "GLUE".asInstanceOf[DataCatalogType]
-    val HIVE   = "HIVE".asInstanceOf[DataCatalogType]
+    val GLUE = "GLUE".asInstanceOf[DataCatalogType]
+    val HIVE = "HIVE".asInstanceOf[DataCatalogType]
 
     val values = js.Object.freeze(js.Array(LAMBDA, GLUE, HIVE))
   }
@@ -682,7 +682,7 @@ package athena {
   @js.native
   sealed trait EncryptionOption extends js.Any
   object EncryptionOption extends js.Object {
-    val SSE_S3  = "SSE_S3".asInstanceOf[EncryptionOption]
+    val SSE_S3 = "SSE_S3".asInstanceOf[EncryptionOption]
     val SSE_KMS = "SSE_KMS".asInstanceOf[EncryptionOption]
     val CSE_KMS = "CSE_KMS".asInstanceOf[EncryptionOption]
 
@@ -736,7 +736,7 @@ package athena {
         DatabaseName: NameString
     ): GetDatabaseInput = {
       val __obj = js.Dynamic.literal(
-        "CatalogName"  -> CatalogName.asInstanceOf[js.Any],
+        "CatalogName" -> CatalogName.asInstanceOf[js.Any],
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any]
       )
 
@@ -889,9 +889,9 @@ package athena {
         TableName: NameString
     ): GetTableMetadataInput = {
       val __obj = js.Dynamic.literal(
-        "CatalogName"  -> CatalogName.asInstanceOf[js.Any],
+        "CatalogName" -> CatalogName.asInstanceOf[js.Any],
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
-        "TableName"    -> TableName.asInstanceOf[js.Any]
+        "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetTableMetadataInput]
@@ -1130,7 +1130,7 @@ package athena {
         NextToken: js.UndefOr[Token] = js.undefined
     ): ListTableMetadataInput = {
       val __obj = js.Dynamic.literal(
-        "CatalogName"  -> CatalogName.asInstanceOf[js.Any],
+        "CatalogName" -> CatalogName.asInstanceOf[js.Any],
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any]
       )
 
@@ -1265,8 +1265,8 @@ package athena {
         WorkGroup: js.UndefOr[WorkGroupName] = js.undefined
     ): NamedQuery = {
       val __obj = js.Dynamic.literal(
-        "Database"    -> Database.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any],
+        "Database" -> Database.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "QueryString" -> QueryString.asInstanceOf[js.Any]
       )
 
@@ -1342,10 +1342,10 @@ package athena {
   @js.native
   sealed trait QueryExecutionState extends js.Any
   object QueryExecutionState extends js.Object {
-    val QUEUED    = "QUEUED".asInstanceOf[QueryExecutionState]
-    val RUNNING   = "RUNNING".asInstanceOf[QueryExecutionState]
+    val QUEUED = "QUEUED".asInstanceOf[QueryExecutionState]
+    val RUNNING = "RUNNING".asInstanceOf[QueryExecutionState]
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[QueryExecutionState]
-    val FAILED    = "FAILED".asInstanceOf[QueryExecutionState]
+    val FAILED = "FAILED".asInstanceOf[QueryExecutionState]
     val CANCELLED = "CANCELLED".asInstanceOf[QueryExecutionState]
 
     val values = js.Object.freeze(js.Array(QUEUED, RUNNING, SUCCEEDED, FAILED, CANCELLED))
@@ -1585,8 +1585,8 @@ package athena {
   @js.native
   sealed trait StatementType extends js.Any
   object StatementType extends js.Object {
-    val DDL     = "DDL".asInstanceOf[StatementType]
-    val DML     = "DML".asInstanceOf[StatementType]
+    val DDL = "DDL".asInstanceOf[StatementType]
+    val DML = "DML".asInstanceOf[StatementType]
     val UTILITY = "UTILITY".asInstanceOf[StatementType]
 
     val values = js.Object.freeze(js.Array(DDL, DML, UTILITY))
@@ -1698,7 +1698,7 @@ package athena {
     ): TagResourceInput = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceInput]
@@ -1782,7 +1782,7 @@ package athena {
     ): UntagResourceInput = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceInput]
@@ -1999,7 +1999,7 @@ package athena {
   @js.native
   sealed trait WorkGroupState extends js.Any
   object WorkGroupState extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[WorkGroupState]
+    val ENABLED = "ENABLED".asInstanceOf[WorkGroupState]
     val DISABLED = "DISABLED".asInstanceOf[WorkGroupState]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))

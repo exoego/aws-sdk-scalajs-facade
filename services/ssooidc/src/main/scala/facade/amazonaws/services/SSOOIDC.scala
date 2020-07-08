@@ -7,24 +7,24 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object ssooidc {
-  type AccessToken         = String
-  type AuthCode            = String
-  type ClientId            = String
-  type ClientName          = String
-  type ClientSecret        = String
-  type ClientType          = String
-  type DeviceCode          = String
+  type AccessToken = String
+  type AuthCode = String
+  type ClientId = String
+  type ClientName = String
+  type ClientSecret = String
+  type ClientType = String
+  type DeviceCode = String
   type ExpirationInSeconds = Int
-  type GrantType           = String
-  type IdToken             = String
-  type IntervalInSeconds   = Int
-  type LongTimeStampType   = Double
-  type RefreshToken        = String
-  type Scope               = String
-  type Scopes              = js.Array[Scope]
-  type TokenType           = String
-  type URI                 = String
-  type UserCode            = String
+  type GrantType = String
+  type IdToken = String
+  type IntervalInSeconds = Int
+  type LongTimeStampType = Double
+  type RefreshToken = String
+  type Scope = String
+  type Scopes = js.Array[Scope]
+  type TokenType = String
+  type URI = String
+  type UserCode = String
 
   implicit final class SSOOIDCOps(private val service: SSOOIDC) extends AnyVal {
 
@@ -44,7 +44,7 @@ package ssooidc {
   class SSOOIDC() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createToken(params: CreateTokenRequest): Request[CreateTokenResponse]          = js.native
+    def createToken(params: CreateTokenRequest): Request[CreateTokenResponse] = js.native
     def registerClient(params: RegisterClientRequest): Request[RegisterClientResponse] = js.native
     def startDeviceAuthorization(params: StartDeviceAuthorizationRequest): Request[StartDeviceAuthorizationResponse] =
       js.native
@@ -75,10 +75,10 @@ package ssooidc {
         scope: js.UndefOr[Scopes] = js.undefined
     ): CreateTokenRequest = {
       val __obj = js.Dynamic.literal(
-        "clientId"     -> clientId.asInstanceOf[js.Any],
+        "clientId" -> clientId.asInstanceOf[js.Any],
         "clientSecret" -> clientSecret.asInstanceOf[js.Any],
-        "deviceCode"   -> deviceCode.asInstanceOf[js.Any],
-        "grantType"    -> grantType.asInstanceOf[js.Any]
+        "deviceCode" -> deviceCode.asInstanceOf[js.Any],
+        "grantType" -> grantType.asInstanceOf[js.Any]
       )
 
       code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
@@ -187,9 +187,9 @@ package ssooidc {
         startUrl: URI
     ): StartDeviceAuthorizationRequest = {
       val __obj = js.Dynamic.literal(
-        "clientId"     -> clientId.asInstanceOf[js.Any],
+        "clientId" -> clientId.asInstanceOf[js.Any],
         "clientSecret" -> clientSecret.asInstanceOf[js.Any],
-        "startUrl"     -> startUrl.asInstanceOf[js.Any]
+        "startUrl" -> startUrl.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[StartDeviceAuthorizationRequest]

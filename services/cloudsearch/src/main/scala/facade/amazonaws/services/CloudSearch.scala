@@ -7,37 +7,37 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object cloudsearch {
-  type APIVersion               = String
-  type ARN                      = String
+  type APIVersion = String
+  type ARN = String
   type AnalysisSchemeStatusList = js.Array[AnalysisSchemeStatus]
-  type DomainId                 = String
-  type DomainName               = String
-  type DomainNameList           = js.Array[DomainName]
-  type DomainNameMap            = js.Dictionary[APIVersion]
-  type DomainStatusList         = js.Array[DomainStatus]
-  type DynamicFieldName         = String
-  type DynamicFieldNameList     = js.Array[DynamicFieldName]
-  type ExpressionStatusList     = js.Array[ExpressionStatus]
-  type ExpressionValue          = String
-  type FieldName                = String
-  type FieldNameCommaList       = String
-  type FieldNameList            = js.Array[FieldName]
-  type FieldValue               = String
-  type IndexFieldStatusList     = js.Array[IndexFieldStatus]
-  type InstanceCount            = Int
-  type MaximumPartitionCount    = Int
-  type MaximumReplicationCount  = Int
-  type MultiAZ                  = Boolean
-  type PartitionCount           = Int
-  type PolicyDocument           = String
-  type SearchInstanceType       = String
-  type ServiceUrl               = String
-  type StandardName             = String
-  type StandardNameList         = js.Array[StandardName]
-  type SuggesterStatusList      = js.Array[SuggesterStatus]
-  type UIntValue                = Int
-  type UpdateTimestamp          = js.Date
-  type Word                     = String
+  type DomainId = String
+  type DomainName = String
+  type DomainNameList = js.Array[DomainName]
+  type DomainNameMap = js.Dictionary[APIVersion]
+  type DomainStatusList = js.Array[DomainStatus]
+  type DynamicFieldName = String
+  type DynamicFieldNameList = js.Array[DynamicFieldName]
+  type ExpressionStatusList = js.Array[ExpressionStatus]
+  type ExpressionValue = String
+  type FieldName = String
+  type FieldNameCommaList = String
+  type FieldNameList = js.Array[FieldName]
+  type FieldValue = String
+  type IndexFieldStatusList = js.Array[IndexFieldStatus]
+  type InstanceCount = Int
+  type MaximumPartitionCount = Int
+  type MaximumReplicationCount = Int
+  type MultiAZ = Boolean
+  type PartitionCount = Int
+  type PolicyDocument = String
+  type SearchInstanceType = String
+  type ServiceUrl = String
+  type StandardName = String
+  type StandardNameList = js.Array[StandardName]
+  type SuggesterStatusList = js.Array[SuggesterStatus]
+  type UIntValue = Int
+  type UpdateTimestamp = js.Date
+  type Word = String
 
   implicit final class CloudSearchOps(private val service: CloudSearch) extends AnyVal {
 
@@ -110,17 +110,17 @@ package cloudsearch {
   class CloudSearch() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def buildSuggesters(params: BuildSuggestersRequest): Request[BuildSuggestersResponse]                = js.native
-    def createDomain(params: CreateDomainRequest): Request[CreateDomainResponse]                         = js.native
+    def buildSuggesters(params: BuildSuggestersRequest): Request[BuildSuggestersResponse] = js.native
+    def createDomain(params: CreateDomainRequest): Request[CreateDomainResponse] = js.native
     def defineAnalysisScheme(params: DefineAnalysisSchemeRequest): Request[DefineAnalysisSchemeResponse] = js.native
-    def defineExpression(params: DefineExpressionRequest): Request[DefineExpressionResponse]             = js.native
-    def defineIndexField(params: DefineIndexFieldRequest): Request[DefineIndexFieldResponse]             = js.native
-    def defineSuggester(params: DefineSuggesterRequest): Request[DefineSuggesterResponse]                = js.native
+    def defineExpression(params: DefineExpressionRequest): Request[DefineExpressionResponse] = js.native
+    def defineIndexField(params: DefineIndexFieldRequest): Request[DefineIndexFieldResponse] = js.native
+    def defineSuggester(params: DefineSuggesterRequest): Request[DefineSuggesterResponse] = js.native
     def deleteAnalysisScheme(params: DeleteAnalysisSchemeRequest): Request[DeleteAnalysisSchemeResponse] = js.native
-    def deleteDomain(params: DeleteDomainRequest): Request[DeleteDomainResponse]                         = js.native
-    def deleteExpression(params: DeleteExpressionRequest): Request[DeleteExpressionResponse]             = js.native
-    def deleteIndexField(params: DeleteIndexFieldRequest): Request[DeleteIndexFieldResponse]             = js.native
-    def deleteSuggester(params: DeleteSuggesterRequest): Request[DeleteSuggesterResponse]                = js.native
+    def deleteDomain(params: DeleteDomainRequest): Request[DeleteDomainResponse] = js.native
+    def deleteExpression(params: DeleteExpressionRequest): Request[DeleteExpressionResponse] = js.native
+    def deleteIndexField(params: DeleteIndexFieldRequest): Request[DeleteIndexFieldResponse] = js.native
+    def deleteSuggester(params: DeleteSuggesterRequest): Request[DeleteSuggesterResponse] = js.native
     def describeAnalysisSchemes(params: DescribeAnalysisSchemesRequest): Request[DescribeAnalysisSchemesResponse] =
       js.native
     def describeAvailabilityOptions(
@@ -128,8 +128,8 @@ package cloudsearch {
     ): Request[DescribeAvailabilityOptionsResponse] = js.native
     def describeDomainEndpointOptions(
         params: DescribeDomainEndpointOptionsRequest
-    ): Request[DescribeDomainEndpointOptionsResponse]                                                 = js.native
-    def describeDomains(params: DescribeDomainsRequest): Request[DescribeDomainsResponse]             = js.native
+    ): Request[DescribeDomainEndpointOptionsResponse] = js.native
+    def describeDomains(params: DescribeDomainsRequest): Request[DescribeDomainsResponse] = js.native
     def describeExpressions(params: DescribeExpressionsRequest): Request[DescribeExpressionsResponse] = js.native
     def describeIndexFields(params: DescribeIndexFieldsRequest): Request[DescribeIndexFieldsResponse] = js.native
     def describeScalingParameters(
@@ -137,10 +137,10 @@ package cloudsearch {
     ): Request[DescribeScalingParametersResponse] = js.native
     def describeServiceAccessPolicies(
         params: DescribeServiceAccessPoliciesRequest
-    ): Request[DescribeServiceAccessPoliciesResponse]                                              = js.native
+    ): Request[DescribeServiceAccessPoliciesResponse] = js.native
     def describeSuggesters(params: DescribeSuggestersRequest): Request[DescribeSuggestersResponse] = js.native
-    def indexDocuments(params: IndexDocumentsRequest): Request[IndexDocumentsResponse]             = js.native
-    def listDomainNames(): Request[ListDomainNamesResponse]                                        = js.native
+    def indexDocuments(params: IndexDocumentsRequest): Request[IndexDocumentsResponse] = js.native
+    def listDomainNames(): Request[ListDomainNamesResponse] = js.native
     def updateAvailabilityOptions(
         params: UpdateAvailabilityOptionsRequest
     ): Request[UpdateAvailabilityOptionsResponse] = js.native
@@ -171,7 +171,7 @@ package cloudsearch {
     ): AccessPoliciesStatus = {
       val __obj = js.Dynamic.literal(
         "Options" -> Options.asInstanceOf[js.Any],
-        "Status"  -> Status.asInstanceOf[js.Any]
+        "Status" -> Status.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AccessPoliciesStatus]
@@ -181,10 +181,10 @@ package cloudsearch {
   @js.native
   sealed trait AlgorithmicStemming extends js.Any
   object AlgorithmicStemming extends js.Object {
-    val none    = "none".asInstanceOf[AlgorithmicStemming]
+    val none = "none".asInstanceOf[AlgorithmicStemming]
     val minimal = "minimal".asInstanceOf[AlgorithmicStemming]
-    val light   = "light".asInstanceOf[AlgorithmicStemming]
-    val full    = "full".asInstanceOf[AlgorithmicStemming]
+    val light = "light".asInstanceOf[AlgorithmicStemming]
+    val full = "full".asInstanceOf[AlgorithmicStemming]
 
     val values = js.Object.freeze(js.Array(none, minimal, light, full))
   }
@@ -241,7 +241,7 @@ package cloudsearch {
     ): AnalysisScheme = {
       val __obj = js.Dynamic.literal(
         "AnalysisSchemeLanguage" -> AnalysisSchemeLanguage.asInstanceOf[js.Any],
-        "AnalysisSchemeName"     -> AnalysisSchemeName.asInstanceOf[js.Any]
+        "AnalysisSchemeName" -> AnalysisSchemeName.asInstanceOf[js.Any]
       )
 
       AnalysisOptions.foreach(__v => __obj.updateDynamic("AnalysisOptions")(__v.asInstanceOf[js.Any]))
@@ -255,39 +255,39 @@ package cloudsearch {
   @js.native
   sealed trait AnalysisSchemeLanguage extends js.Any
   object AnalysisSchemeLanguage extends js.Object {
-    val ar        = "ar".asInstanceOf[AnalysisSchemeLanguage]
-    val bg        = "bg".asInstanceOf[AnalysisSchemeLanguage]
-    val ca        = "ca".asInstanceOf[AnalysisSchemeLanguage]
-    val cs        = "cs".asInstanceOf[AnalysisSchemeLanguage]
-    val da        = "da".asInstanceOf[AnalysisSchemeLanguage]
-    val de        = "de".asInstanceOf[AnalysisSchemeLanguage]
-    val el        = "el".asInstanceOf[AnalysisSchemeLanguage]
-    val en        = "en".asInstanceOf[AnalysisSchemeLanguage]
-    val es        = "es".asInstanceOf[AnalysisSchemeLanguage]
-    val eu        = "eu".asInstanceOf[AnalysisSchemeLanguage]
-    val fa        = "fa".asInstanceOf[AnalysisSchemeLanguage]
-    val fi        = "fi".asInstanceOf[AnalysisSchemeLanguage]
-    val fr        = "fr".asInstanceOf[AnalysisSchemeLanguage]
-    val ga        = "ga".asInstanceOf[AnalysisSchemeLanguage]
-    val gl        = "gl".asInstanceOf[AnalysisSchemeLanguage]
-    val he        = "he".asInstanceOf[AnalysisSchemeLanguage]
-    val hi        = "hi".asInstanceOf[AnalysisSchemeLanguage]
-    val hu        = "hu".asInstanceOf[AnalysisSchemeLanguage]
-    val hy        = "hy".asInstanceOf[AnalysisSchemeLanguage]
-    val id        = "id".asInstanceOf[AnalysisSchemeLanguage]
-    val it        = "it".asInstanceOf[AnalysisSchemeLanguage]
-    val ja        = "ja".asInstanceOf[AnalysisSchemeLanguage]
-    val ko        = "ko".asInstanceOf[AnalysisSchemeLanguage]
-    val lv        = "lv".asInstanceOf[AnalysisSchemeLanguage]
-    val mul       = "mul".asInstanceOf[AnalysisSchemeLanguage]
-    val nl        = "nl".asInstanceOf[AnalysisSchemeLanguage]
-    val no        = "no".asInstanceOf[AnalysisSchemeLanguage]
-    val pt        = "pt".asInstanceOf[AnalysisSchemeLanguage]
-    val ro        = "ro".asInstanceOf[AnalysisSchemeLanguage]
-    val ru        = "ru".asInstanceOf[AnalysisSchemeLanguage]
-    val sv        = "sv".asInstanceOf[AnalysisSchemeLanguage]
-    val th        = "th".asInstanceOf[AnalysisSchemeLanguage]
-    val tr        = "tr".asInstanceOf[AnalysisSchemeLanguage]
+    val ar = "ar".asInstanceOf[AnalysisSchemeLanguage]
+    val bg = "bg".asInstanceOf[AnalysisSchemeLanguage]
+    val ca = "ca".asInstanceOf[AnalysisSchemeLanguage]
+    val cs = "cs".asInstanceOf[AnalysisSchemeLanguage]
+    val da = "da".asInstanceOf[AnalysisSchemeLanguage]
+    val de = "de".asInstanceOf[AnalysisSchemeLanguage]
+    val el = "el".asInstanceOf[AnalysisSchemeLanguage]
+    val en = "en".asInstanceOf[AnalysisSchemeLanguage]
+    val es = "es".asInstanceOf[AnalysisSchemeLanguage]
+    val eu = "eu".asInstanceOf[AnalysisSchemeLanguage]
+    val fa = "fa".asInstanceOf[AnalysisSchemeLanguage]
+    val fi = "fi".asInstanceOf[AnalysisSchemeLanguage]
+    val fr = "fr".asInstanceOf[AnalysisSchemeLanguage]
+    val ga = "ga".asInstanceOf[AnalysisSchemeLanguage]
+    val gl = "gl".asInstanceOf[AnalysisSchemeLanguage]
+    val he = "he".asInstanceOf[AnalysisSchemeLanguage]
+    val hi = "hi".asInstanceOf[AnalysisSchemeLanguage]
+    val hu = "hu".asInstanceOf[AnalysisSchemeLanguage]
+    val hy = "hy".asInstanceOf[AnalysisSchemeLanguage]
+    val id = "id".asInstanceOf[AnalysisSchemeLanguage]
+    val it = "it".asInstanceOf[AnalysisSchemeLanguage]
+    val ja = "ja".asInstanceOf[AnalysisSchemeLanguage]
+    val ko = "ko".asInstanceOf[AnalysisSchemeLanguage]
+    val lv = "lv".asInstanceOf[AnalysisSchemeLanguage]
+    val mul = "mul".asInstanceOf[AnalysisSchemeLanguage]
+    val nl = "nl".asInstanceOf[AnalysisSchemeLanguage]
+    val no = "no".asInstanceOf[AnalysisSchemeLanguage]
+    val pt = "pt".asInstanceOf[AnalysisSchemeLanguage]
+    val ro = "ro".asInstanceOf[AnalysisSchemeLanguage]
+    val ru = "ru".asInstanceOf[AnalysisSchemeLanguage]
+    val sv = "sv".asInstanceOf[AnalysisSchemeLanguage]
+    val th = "th".asInstanceOf[AnalysisSchemeLanguage]
+    val tr = "tr".asInstanceOf[AnalysisSchemeLanguage]
     val `zh-Hans` = "zh-Hans".asInstanceOf[AnalysisSchemeLanguage]
     val `zh-Hant` = "zh-Hant".asInstanceOf[AnalysisSchemeLanguage]
 
@@ -349,7 +349,7 @@ package cloudsearch {
     ): AnalysisSchemeStatus = {
       val __obj = js.Dynamic.literal(
         "Options" -> Options.asInstanceOf[js.Any],
-        "Status"  -> Status.asInstanceOf[js.Any]
+        "Status" -> Status.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AnalysisSchemeStatus]
@@ -373,7 +373,7 @@ package cloudsearch {
     ): AvailabilityOptionsStatus = {
       val __obj = js.Dynamic.literal(
         "Options" -> Options.asInstanceOf[js.Any],
-        "Status"  -> Status.asInstanceOf[js.Any]
+        "Status" -> Status.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AvailabilityOptionsStatus]
@@ -542,7 +542,7 @@ package cloudsearch {
     ): DefineAnalysisSchemeRequest = {
       val __obj = js.Dynamic.literal(
         "AnalysisScheme" -> AnalysisScheme.asInstanceOf[js.Any],
-        "DomainName"     -> DomainName.asInstanceOf[js.Any]
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DefineAnalysisSchemeRequest]
@@ -677,7 +677,7 @@ package cloudsearch {
     ): DefineSuggesterRequest = {
       val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any],
-        "Suggester"  -> Suggester.asInstanceOf[js.Any]
+        "Suggester" -> Suggester.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DefineSuggesterRequest]
@@ -722,7 +722,7 @@ package cloudsearch {
     ): DeleteAnalysisSchemeRequest = {
       val __obj = js.Dynamic.literal(
         "AnalysisSchemeName" -> AnalysisSchemeName.asInstanceOf[js.Any],
-        "DomainName"         -> DomainName.asInstanceOf[js.Any]
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteAnalysisSchemeRequest]
@@ -806,7 +806,7 @@ package cloudsearch {
         ExpressionName: StandardName
     ): DeleteExpressionRequest = {
       val __obj = js.Dynamic.literal(
-        "DomainName"     -> DomainName.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
         "ExpressionName" -> ExpressionName.asInstanceOf[js.Any]
       )
 
@@ -851,7 +851,7 @@ package cloudsearch {
         IndexFieldName: DynamicFieldName
     ): DeleteIndexFieldRequest = {
       val __obj = js.Dynamic.literal(
-        "DomainName"     -> DomainName.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
         "IndexFieldName" -> IndexFieldName.asInstanceOf[js.Any]
       )
 
@@ -896,7 +896,7 @@ package cloudsearch {
         SuggesterName: StandardName
     ): DeleteSuggesterRequest = {
       val __obj = js.Dynamic.literal(
-        "DomainName"    -> DomainName.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
         "SuggesterName" -> SuggesterName.asInstanceOf[js.Any]
       )
 
@@ -1396,7 +1396,7 @@ package cloudsearch {
     ): DomainEndpointOptionsStatus = {
       val __obj = js.Dynamic.literal(
         "Options" -> Options.asInstanceOf[js.Any],
-        "Status"  -> Status.asInstanceOf[js.Any]
+        "Status" -> Status.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DomainEndpointOptionsStatus]
@@ -1441,8 +1441,8 @@ package cloudsearch {
         SearchService: js.UndefOr[ServiceEndpoint] = js.undefined
     ): DomainStatus = {
       val __obj = js.Dynamic.literal(
-        "DomainId"               -> DomainId.asInstanceOf[js.Any],
-        "DomainName"             -> DomainName.asInstanceOf[js.Any],
+        "DomainId" -> DomainId.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
         "RequiresIndexDocuments" -> RequiresIndexDocuments.asInstanceOf[js.Any]
       )
 
@@ -1541,7 +1541,7 @@ package cloudsearch {
         ExpressionValue: ExpressionValue
     ): Expression = {
       val __obj = js.Dynamic.literal(
-        "ExpressionName"  -> ExpressionName.asInstanceOf[js.Any],
+        "ExpressionName" -> ExpressionName.asInstanceOf[js.Any],
         "ExpressionValue" -> ExpressionValue.asInstanceOf[js.Any]
       )
 
@@ -1566,7 +1566,7 @@ package cloudsearch {
     ): ExpressionStatus = {
       val __obj = js.Dynamic.literal(
         "Options" -> Options.asInstanceOf[js.Any],
-        "Status"  -> Status.asInstanceOf[js.Any]
+        "Status" -> Status.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ExpressionStatus]
@@ -1687,7 +1687,7 @@ package cloudsearch {
     ): IndexFieldStatus = {
       val __obj = js.Dynamic.literal(
         "Options" -> Options.asInstanceOf[js.Any],
-        "Status"  -> Status.asInstanceOf[js.Any]
+        "Status" -> Status.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[IndexFieldStatus]
@@ -1700,17 +1700,17 @@ package cloudsearch {
   @js.native
   sealed trait IndexFieldType extends js.Any
   object IndexFieldType extends js.Object {
-    val int             = "int".asInstanceOf[IndexFieldType]
-    val double          = "double".asInstanceOf[IndexFieldType]
-    val literal         = "literal".asInstanceOf[IndexFieldType]
-    val text            = "text".asInstanceOf[IndexFieldType]
-    val date            = "date".asInstanceOf[IndexFieldType]
-    val latlon          = "latlon".asInstanceOf[IndexFieldType]
-    val `int-array`     = "int-array".asInstanceOf[IndexFieldType]
-    val `double-array`  = "double-array".asInstanceOf[IndexFieldType]
+    val int = "int".asInstanceOf[IndexFieldType]
+    val double = "double".asInstanceOf[IndexFieldType]
+    val literal = "literal".asInstanceOf[IndexFieldType]
+    val text = "text".asInstanceOf[IndexFieldType]
+    val date = "date".asInstanceOf[IndexFieldType]
+    val latlon = "latlon".asInstanceOf[IndexFieldType]
+    val `int-array` = "int-array".asInstanceOf[IndexFieldType]
+    val `double-array` = "double-array".asInstanceOf[IndexFieldType]
     val `literal-array` = "literal-array".asInstanceOf[IndexFieldType]
-    val `text-array`    = "text-array".asInstanceOf[IndexFieldType]
-    val `date-array`    = "date-array".asInstanceOf[IndexFieldType]
+    val `text-array` = "text-array".asInstanceOf[IndexFieldType]
+    val `date-array` = "date-array".asInstanceOf[IndexFieldType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1841,7 +1841,7 @@ package cloudsearch {
         MaximumReplicationCount: MaximumReplicationCount
     ): Limits = {
       val __obj = js.Dynamic.literal(
-        "MaximumPartitionCount"   -> MaximumPartitionCount.asInstanceOf[js.Any],
+        "MaximumPartitionCount" -> MaximumPartitionCount.asInstanceOf[js.Any],
         "MaximumReplicationCount" -> MaximumReplicationCount.asInstanceOf[js.Any]
       )
 
@@ -1944,9 +1944,9 @@ package cloudsearch {
   sealed trait OptionState extends js.Any
   object OptionState extends js.Object {
     val RequiresIndexDocuments = "RequiresIndexDocuments".asInstanceOf[OptionState]
-    val Processing             = "Processing".asInstanceOf[OptionState]
-    val Active                 = "Active".asInstanceOf[OptionState]
-    val FailedToValidate       = "FailedToValidate".asInstanceOf[OptionState]
+    val Processing = "Processing".asInstanceOf[OptionState]
+    val Active = "Active".asInstanceOf[OptionState]
+    val FailedToValidate = "FailedToValidate".asInstanceOf[OptionState]
 
     val values = js.Object.freeze(js.Array(RequiresIndexDocuments, Processing, Active, FailedToValidate))
   }
@@ -1974,8 +1974,8 @@ package cloudsearch {
     ): OptionStatus = {
       val __obj = js.Dynamic.literal(
         "CreationDate" -> CreationDate.asInstanceOf[js.Any],
-        "State"        -> State.asInstanceOf[js.Any],
-        "UpdateDate"   -> UpdateDate.asInstanceOf[js.Any]
+        "State" -> State.asInstanceOf[js.Any],
+        "UpdateDate" -> UpdateDate.asInstanceOf[js.Any]
       )
 
       PendingDeletion.foreach(__v => __obj.updateDynamic("PendingDeletion")(__v.asInstanceOf[js.Any]))
@@ -1990,13 +1990,13 @@ package cloudsearch {
   @js.native
   sealed trait PartitionInstanceType extends js.Any
   object PartitionInstanceType extends js.Object {
-    val `search.m1.small`   = "search.m1.small".asInstanceOf[PartitionInstanceType]
-    val `search.m1.large`   = "search.m1.large".asInstanceOf[PartitionInstanceType]
-    val `search.m2.xlarge`  = "search.m2.xlarge".asInstanceOf[PartitionInstanceType]
+    val `search.m1.small` = "search.m1.small".asInstanceOf[PartitionInstanceType]
+    val `search.m1.large` = "search.m1.large".asInstanceOf[PartitionInstanceType]
+    val `search.m2.xlarge` = "search.m2.xlarge".asInstanceOf[PartitionInstanceType]
     val `search.m2.2xlarge` = "search.m2.2xlarge".asInstanceOf[PartitionInstanceType]
-    val `search.m3.medium`  = "search.m3.medium".asInstanceOf[PartitionInstanceType]
-    val `search.m3.large`   = "search.m3.large".asInstanceOf[PartitionInstanceType]
-    val `search.m3.xlarge`  = "search.m3.xlarge".asInstanceOf[PartitionInstanceType]
+    val `search.m3.medium` = "search.m3.medium".asInstanceOf[PartitionInstanceType]
+    val `search.m3.large` = "search.m3.large".asInstanceOf[PartitionInstanceType]
+    val `search.m3.xlarge` = "search.m3.xlarge".asInstanceOf[PartitionInstanceType]
     val `search.m3.2xlarge` = "search.m3.2xlarge".asInstanceOf[PartitionInstanceType]
 
     val values = js.Object.freeze(
@@ -2055,7 +2055,7 @@ package cloudsearch {
     ): ScalingParametersStatus = {
       val __obj = js.Dynamic.literal(
         "Options" -> Options.asInstanceOf[js.Any],
-        "Status"  -> Status.asInstanceOf[js.Any]
+        "Status" -> Status.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ScalingParametersStatus]
@@ -2098,7 +2098,7 @@ package cloudsearch {
     ): Suggester = {
       val __obj = js.Dynamic.literal(
         "DocumentSuggesterOptions" -> DocumentSuggesterOptions.asInstanceOf[js.Any],
-        "SuggesterName"            -> SuggesterName.asInstanceOf[js.Any]
+        "SuggesterName" -> SuggesterName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[Suggester]
@@ -2109,7 +2109,7 @@ package cloudsearch {
   sealed trait SuggesterFuzzyMatching extends js.Any
   object SuggesterFuzzyMatching extends js.Object {
     val none = "none".asInstanceOf[SuggesterFuzzyMatching]
-    val low  = "low".asInstanceOf[SuggesterFuzzyMatching]
+    val low = "low".asInstanceOf[SuggesterFuzzyMatching]
     val high = "high".asInstanceOf[SuggesterFuzzyMatching]
 
     val values = js.Object.freeze(js.Array(none, low, high))
@@ -2132,7 +2132,7 @@ package cloudsearch {
     ): SuggesterStatus = {
       val __obj = js.Dynamic.literal(
         "Options" -> Options.asInstanceOf[js.Any],
-        "Status"  -> Status.asInstanceOf[js.Any]
+        "Status" -> Status.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[SuggesterStatus]
@@ -2233,7 +2233,7 @@ package cloudsearch {
     ): UpdateAvailabilityOptionsRequest = {
       val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any],
-        "MultiAZ"    -> MultiAZ.asInstanceOf[js.Any]
+        "MultiAZ" -> MultiAZ.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateAvailabilityOptionsRequest]
@@ -2276,7 +2276,7 @@ package cloudsearch {
     ): UpdateDomainEndpointOptionsRequest = {
       val __obj = js.Dynamic.literal(
         "DomainEndpointOptions" -> DomainEndpointOptions.asInstanceOf[js.Any],
-        "DomainName"            -> DomainName.asInstanceOf[js.Any]
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateDomainEndpointOptionsRequest]
@@ -2318,7 +2318,7 @@ package cloudsearch {
         ScalingParameters: ScalingParameters
     ): UpdateScalingParametersRequest = {
       val __obj = js.Dynamic.literal(
-        "DomainName"        -> DomainName.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
         "ScalingParameters" -> ScalingParameters.asInstanceOf[js.Any]
       )
 
@@ -2364,7 +2364,7 @@ package cloudsearch {
     ): UpdateServiceAccessPoliciesRequest = {
       val __obj = js.Dynamic.literal(
         "AccessPolicies" -> AccessPolicies.asInstanceOf[js.Any],
-        "DomainName"     -> DomainName.asInstanceOf[js.Any]
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateServiceAccessPoliciesRequest]

@@ -7,47 +7,47 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object codeguruprofiler {
-  type AgentParameters            = js.Dictionary[String]
-  type AgentProfile               = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type AggregatedProfile          = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type Anomalies                  = js.Array[Anomaly]
-  type AnomalyInstanceId          = String
-  type AnomalyInstances           = js.Array[AnomalyInstance]
-  type ChannelId                  = String
-  type ChannelUri                 = String
-  type Channels                   = js.Array[Channel]
-  type ClientToken                = String
-  type EventPublishers            = js.Array[EventPublisher]
-  type FindingsReportId           = String
-  type FindingsReportSummaries    = js.Array[FindingsReportSummary]
-  type FleetInstanceId            = String
-  type FrameMetricData            = js.Array[FrameMetricDatum]
-  type FrameMetricValues          = js.Array[Double]
-  type FrameMetrics               = js.Array[FrameMetric]
-  type ListOfTimestamps           = js.Array[TimestampStructure]
-  type Locale                     = String
-  type Matches                    = js.Array[Match]
-  type MaxDepth                   = Int
-  type MaxResults                 = Int
-  type Metadata                   = js.Dictionary[String]
-  type PaginationToken            = String
-  type Percentage                 = Double
-  type Period                     = String
-  type Principal                  = String
-  type Principals                 = js.Array[Principal]
-  type ProfileTimes               = js.Array[ProfileTime]
-  type ProfilingGroupArn          = String
+  type AgentParameters = js.Dictionary[String]
+  type AgentProfile = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type AggregatedProfile = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type Anomalies = js.Array[Anomaly]
+  type AnomalyInstanceId = String
+  type AnomalyInstances = js.Array[AnomalyInstance]
+  type ChannelId = String
+  type ChannelUri = String
+  type Channels = js.Array[Channel]
+  type ClientToken = String
+  type EventPublishers = js.Array[EventPublisher]
+  type FindingsReportId = String
+  type FindingsReportSummaries = js.Array[FindingsReportSummary]
+  type FleetInstanceId = String
+  type FrameMetricData = js.Array[FrameMetricDatum]
+  type FrameMetricValues = js.Array[Double]
+  type FrameMetrics = js.Array[FrameMetric]
+  type ListOfTimestamps = js.Array[TimestampStructure]
+  type Locale = String
+  type Matches = js.Array[Match]
+  type MaxDepth = Int
+  type MaxResults = Int
+  type Metadata = js.Dictionary[String]
+  type PaginationToken = String
+  type Percentage = Double
+  type Period = String
+  type Principal = String
+  type Principals = js.Array[Principal]
+  type ProfileTimes = js.Array[ProfileTime]
+  type ProfilingGroupArn = String
   type ProfilingGroupDescriptions = js.Array[ProfilingGroupDescription]
-  type ProfilingGroupName         = String
-  type ProfilingGroupNames        = js.Array[ProfilingGroupName]
-  type Recommendations            = js.Array[Recommendation]
-  type RevisionId                 = String
-  type Strings                    = js.Array[String]
-  type TargetFrame                = js.Array[String]
-  type TargetFrames               = js.Array[TargetFrame]
-  type ThreadStates               = js.Array[String]
-  type Timestamp                  = js.Date
-  type UnprocessedEndTimeMap      = js.Dictionary[ListOfTimestamps]
+  type ProfilingGroupName = String
+  type ProfilingGroupNames = js.Array[ProfilingGroupName]
+  type Recommendations = js.Array[Recommendation]
+  type RevisionId = String
+  type Strings = js.Array[String]
+  type TargetFrame = js.Array[String]
+  type TargetFrames = js.Array[TargetFrame]
+  type ThreadStates = js.Array[String]
+  type Timestamp = js.Date
+  type UnprocessedEndTimeMap = js.Dictionary[ListOfTimestamps]
 
   implicit final class CodeGuruProfilerOps(private val service: CodeGuruProfiler) extends AnyVal {
 
@@ -111,7 +111,7 @@ package codeguruprofiler {
       js.native
     def batchGetFrameMetricData(params: BatchGetFrameMetricDataRequest): Request[BatchGetFrameMetricDataResponse] =
       js.native
-    def configureAgent(params: ConfigureAgentRequest): Request[ConfigureAgentResponse]                   = js.native
+    def configureAgent(params: ConfigureAgentRequest): Request[ConfigureAgentResponse] = js.native
     def createProfilingGroup(params: CreateProfilingGroupRequest): Request[CreateProfilingGroupResponse] = js.native
     def deleteProfilingGroup(params: DeleteProfilingGroupRequest): Request[DeleteProfilingGroupResponse] = js.native
     def describeProfilingGroup(params: DescribeProfilingGroupRequest): Request[DescribeProfilingGroupResponse] =
@@ -121,20 +121,20 @@ package codeguruprofiler {
     ): Request[GetFindingsReportAccountSummaryResponse] = js.native
     def getNotificationConfiguration(
         params: GetNotificationConfigurationRequest
-    ): Request[GetNotificationConfigurationResponse]                                                  = js.native
-    def getPolicy(params: GetPolicyRequest): Request[GetPolicyResponse]                               = js.native
-    def getProfile(params: GetProfileRequest): Request[GetProfileResponse]                            = js.native
-    def getRecommendations(params: GetRecommendationsRequest): Request[GetRecommendationsResponse]    = js.native
+    ): Request[GetNotificationConfigurationResponse] = js.native
+    def getPolicy(params: GetPolicyRequest): Request[GetPolicyResponse] = js.native
+    def getProfile(params: GetProfileRequest): Request[GetProfileResponse] = js.native
+    def getRecommendations(params: GetRecommendationsRequest): Request[GetRecommendationsResponse] = js.native
     def listFindingsReports(params: ListFindingsReportsRequest): Request[ListFindingsReportsResponse] = js.native
-    def listProfileTimes(params: ListProfileTimesRequest): Request[ListProfileTimesResponse]          = js.native
+    def listProfileTimes(params: ListProfileTimesRequest): Request[ListProfileTimesResponse] = js.native
     def listProfilingGroups(params: ListProfilingGroupsRequest): Request[ListProfilingGroupsResponse] = js.native
-    def postAgentProfile(params: PostAgentProfileRequest): Request[PostAgentProfileResponse]          = js.native
-    def putPermission(params: PutPermissionRequest): Request[PutPermissionResponse]                   = js.native
+    def postAgentProfile(params: PostAgentProfileRequest): Request[PostAgentProfileResponse] = js.native
+    def putPermission(params: PutPermissionRequest): Request[PutPermissionResponse] = js.native
     def removeNotificationChannel(
         params: RemoveNotificationChannelRequest
-    ): Request[RemoveNotificationChannelResponse]                                                        = js.native
-    def removePermission(params: RemovePermissionRequest): Request[RemovePermissionResponse]             = js.native
-    def submitFeedback(params: SubmitFeedbackRequest): Request[SubmitFeedbackResponse]                   = js.native
+    ): Request[RemoveNotificationChannelResponse] = js.native
+    def removePermission(params: RemovePermissionRequest): Request[RemovePermissionResponse] = js.native
+    def submitFeedback(params: SubmitFeedbackRequest): Request[SubmitFeedbackResponse] = js.native
     def updateProfilingGroup(params: UpdateProfilingGroupRequest): Request[UpdateProfilingGroupResponse] = js.native
   }
 
@@ -162,7 +162,7 @@ package codeguruprofiler {
         profilingGroupName: ProfilingGroupName
     ): AddNotificationChannelsRequest = {
       val __obj = js.Dynamic.literal(
-        "channels"           -> channels.asInstanceOf[js.Any],
+        "channels" -> channels.asInstanceOf[js.Any],
         "profilingGroupName" -> profilingGroupName.asInstanceOf[js.Any]
       )
 
@@ -210,7 +210,7 @@ package codeguruprofiler {
     ): AgentConfiguration = {
       val __obj = js.Dynamic.literal(
         "periodInSeconds" -> periodInSeconds.asInstanceOf[js.Any],
-        "shouldProfile"   -> shouldProfile.asInstanceOf[js.Any]
+        "shouldProfile" -> shouldProfile.asInstanceOf[js.Any]
       )
 
       agentParameters.foreach(__v => __obj.updateDynamic("agentParameters")(__v.asInstanceOf[js.Any]))
@@ -242,12 +242,12 @@ package codeguruprofiler {
   @js.native
   sealed trait AgentParameterField extends js.Any
   object AgentParameterField extends js.Object {
-    val MaxStackDepth           = "MaxStackDepth".asInstanceOf[AgentParameterField]
+    val MaxStackDepth = "MaxStackDepth".asInstanceOf[AgentParameterField]
     val MemoryUsageLimitPercent = "MemoryUsageLimitPercent".asInstanceOf[AgentParameterField]
     val MinimumTimeForReportingInMilliseconds =
       "MinimumTimeForReportingInMilliseconds".asInstanceOf[AgentParameterField]
     val ReportingIntervalInMilliseconds = "ReportingIntervalInMilliseconds".asInstanceOf[AgentParameterField]
-    val SamplingIntervalInMilliseconds  = "SamplingIntervalInMilliseconds".asInstanceOf[AgentParameterField]
+    val SamplingIntervalInMilliseconds = "SamplingIntervalInMilliseconds".asInstanceOf[AgentParameterField]
 
     val values = js.Object.freeze(
       js.Array(
@@ -285,7 +285,7 @@ package codeguruprofiler {
   @js.native
   sealed trait AggregationPeriod extends js.Any
   object AggregationPeriod extends js.Object {
-    val P1D  = "P1D".asInstanceOf[AggregationPeriod]
+    val P1D = "P1D".asInstanceOf[AggregationPeriod]
     val PT1H = "PT1H".asInstanceOf[AggregationPeriod]
     val PT5M = "PT5M".asInstanceOf[AggregationPeriod]
 
@@ -311,8 +311,8 @@ package codeguruprofiler {
     ): Anomaly = {
       val __obj = js.Dynamic.literal(
         "instances" -> instances.asInstanceOf[js.Any],
-        "metric"    -> metric.asInstanceOf[js.Any],
-        "reason"    -> reason.asInstanceOf[js.Any]
+        "metric" -> metric.asInstanceOf[js.Any],
+        "reason" -> reason.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[Anomaly]
@@ -339,7 +339,7 @@ package codeguruprofiler {
         userFeedback: js.UndefOr[UserFeedback] = js.undefined
     ): AnomalyInstance = {
       val __obj = js.Dynamic.literal(
-        "id"        -> id.asInstanceOf[js.Any],
+        "id" -> id.asInstanceOf[js.Any],
         "startTime" -> startTime.asInstanceOf[js.Any]
       )
 
@@ -409,11 +409,11 @@ package codeguruprofiler {
         unprocessedEndTimes: UnprocessedEndTimeMap
     ): BatchGetFrameMetricDataResponse = {
       val __obj = js.Dynamic.literal(
-        "endTime"             -> endTime.asInstanceOf[js.Any],
-        "endTimes"            -> endTimes.asInstanceOf[js.Any],
-        "frameMetricData"     -> frameMetricData.asInstanceOf[js.Any],
-        "resolution"          -> resolution.asInstanceOf[js.Any],
-        "startTime"           -> startTime.asInstanceOf[js.Any],
+        "endTime" -> endTime.asInstanceOf[js.Any],
+        "endTimes" -> endTimes.asInstanceOf[js.Any],
+        "frameMetricData" -> frameMetricData.asInstanceOf[js.Any],
+        "resolution" -> resolution.asInstanceOf[js.Any],
+        "startTime" -> startTime.asInstanceOf[js.Any],
         "unprocessedEndTimes" -> unprocessedEndTimes.asInstanceOf[js.Any]
       )
 
@@ -440,7 +440,7 @@ package codeguruprofiler {
     ): Channel = {
       val __obj = js.Dynamic.literal(
         "eventPublishers" -> eventPublishers.asInstanceOf[js.Any],
-        "uri"             -> uri.asInstanceOf[js.Any]
+        "uri" -> uri.asInstanceOf[js.Any]
       )
 
       id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
@@ -452,7 +452,7 @@ package codeguruprofiler {
   sealed trait ComputePlatform extends js.Any
   object ComputePlatform extends js.Object {
     val AWSLambda = "AWSLambda".asInstanceOf[ComputePlatform]
-    val Default   = "Default".asInstanceOf[ComputePlatform]
+    val Default = "Default".asInstanceOf[ComputePlatform]
 
     val values = js.Object.freeze(js.Array(AWSLambda, Default))
   }
@@ -525,7 +525,7 @@ package codeguruprofiler {
         computePlatform: js.UndefOr[ComputePlatform] = js.undefined
     ): CreateProfilingGroupRequest = {
       val __obj = js.Dynamic.literal(
-        "clientToken"        -> clientToken.asInstanceOf[js.Any],
+        "clientToken" -> clientToken.asInstanceOf[js.Any],
         "profilingGroupName" -> profilingGroupName.asInstanceOf[js.Any]
       )
 
@@ -701,9 +701,9 @@ package codeguruprofiler {
         `type`: MetricType
     ): FrameMetric = {
       val __obj = js.Dynamic.literal(
-        "frameName"    -> frameName.asInstanceOf[js.Any],
+        "frameName" -> frameName.asInstanceOf[js.Any],
         "threadStates" -> threadStates.asInstanceOf[js.Any],
-        "type"         -> `type`.asInstanceOf[js.Any]
+        "type" -> `type`.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[FrameMetric]
@@ -727,7 +727,7 @@ package codeguruprofiler {
     ): FrameMetricDatum = {
       val __obj = js.Dynamic.literal(
         "frameMetric" -> frameMetric.asInstanceOf[js.Any],
-        "values"      -> values.asInstanceOf[js.Any]
+        "values" -> values.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[FrameMetricDatum]
@@ -862,7 +862,7 @@ package codeguruprofiler {
         revisionId: RevisionId
     ): GetPolicyResponse = {
       val __obj = js.Dynamic.literal(
-        "policy"     -> policy.asInstanceOf[js.Any],
+        "policy" -> policy.asInstanceOf[js.Any],
         "revisionId" -> revisionId.asInstanceOf[js.Any]
       )
 
@@ -925,7 +925,7 @@ package codeguruprofiler {
     ): GetProfileResponse = {
       val __obj = js.Dynamic.literal(
         "contentType" -> contentType.asInstanceOf[js.Any],
-        "profile"     -> profile.asInstanceOf[js.Any]
+        "profile" -> profile.asInstanceOf[js.Any]
       )
 
       contentEncoding.foreach(__v => __obj.updateDynamic("contentEncoding")(__v.asInstanceOf[js.Any]))
@@ -953,9 +953,9 @@ package codeguruprofiler {
         locale: js.UndefOr[Locale] = js.undefined
     ): GetRecommendationsRequest = {
       val __obj = js.Dynamic.literal(
-        "endTime"            -> endTime.asInstanceOf[js.Any],
+        "endTime" -> endTime.asInstanceOf[js.Any],
         "profilingGroupName" -> profilingGroupName.asInstanceOf[js.Any],
-        "startTime"          -> startTime.asInstanceOf[js.Any]
+        "startTime" -> startTime.asInstanceOf[js.Any]
       )
 
       locale.foreach(__v => __obj.updateDynamic("locale")(__v.asInstanceOf[js.Any]))
@@ -985,11 +985,11 @@ package codeguruprofiler {
         recommendations: Recommendations
     ): GetRecommendationsResponse = {
       val __obj = js.Dynamic.literal(
-        "anomalies"          -> anomalies.asInstanceOf[js.Any],
-        "profileEndTime"     -> profileEndTime.asInstanceOf[js.Any],
-        "profileStartTime"   -> profileStartTime.asInstanceOf[js.Any],
+        "anomalies" -> anomalies.asInstanceOf[js.Any],
+        "profileEndTime" -> profileEndTime.asInstanceOf[js.Any],
+        "profileStartTime" -> profileStartTime.asInstanceOf[js.Any],
         "profilingGroupName" -> profilingGroupName.asInstanceOf[js.Any],
-        "recommendations"    -> recommendations.asInstanceOf[js.Any]
+        "recommendations" -> recommendations.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetRecommendationsResponse]
@@ -1020,9 +1020,9 @@ package codeguruprofiler {
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListFindingsReportsRequest = {
       val __obj = js.Dynamic.literal(
-        "endTime"            -> endTime.asInstanceOf[js.Any],
+        "endTime" -> endTime.asInstanceOf[js.Any],
         "profilingGroupName" -> profilingGroupName.asInstanceOf[js.Any],
-        "startTime"          -> startTime.asInstanceOf[js.Any]
+        "startTime" -> startTime.asInstanceOf[js.Any]
       )
 
       dailyReportsOnly.foreach(__v => __obj.updateDynamic("dailyReportsOnly")(__v.asInstanceOf[js.Any]))
@@ -1082,10 +1082,10 @@ package codeguruprofiler {
         orderBy: js.UndefOr[OrderBy] = js.undefined
     ): ListProfileTimesRequest = {
       val __obj = js.Dynamic.literal(
-        "endTime"            -> endTime.asInstanceOf[js.Any],
-        "period"             -> period.asInstanceOf[js.Any],
+        "endTime" -> endTime.asInstanceOf[js.Any],
+        "period" -> period.asInstanceOf[js.Any],
         "profilingGroupName" -> profilingGroupName.asInstanceOf[js.Any],
-        "startTime"          -> startTime.asInstanceOf[js.Any]
+        "startTime" -> startTime.asInstanceOf[js.Any]
       )
 
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
@@ -1199,11 +1199,11 @@ package codeguruprofiler {
   @js.native
   sealed trait MetadataField extends js.Any
   object MetadataField extends js.Object {
-    val AgentId               = "AgentId".asInstanceOf[MetadataField]
-    val AwsRequestId          = "AwsRequestId".asInstanceOf[MetadataField]
-    val ComputePlatform       = "ComputePlatform".asInstanceOf[MetadataField]
-    val ExecutionEnvironment  = "ExecutionEnvironment".asInstanceOf[MetadataField]
-    val LambdaFunctionArn     = "LambdaFunctionArn".asInstanceOf[MetadataField]
+    val AgentId = "AgentId".asInstanceOf[MetadataField]
+    val AwsRequestId = "AwsRequestId".asInstanceOf[MetadataField]
+    val ComputePlatform = "ComputePlatform".asInstanceOf[MetadataField]
+    val ExecutionEnvironment = "ExecutionEnvironment".asInstanceOf[MetadataField]
+    val LambdaFunctionArn = "LambdaFunctionArn".asInstanceOf[MetadataField]
     val LambdaMemoryLimitInMB = "LambdaMemoryLimitInMB".asInstanceOf[MetadataField]
     val LambdaPreviousExecutionTimeInMilliseconds =
       "LambdaPreviousExecutionTimeInMilliseconds".asInstanceOf[MetadataField]
@@ -1244,9 +1244,9 @@ package codeguruprofiler {
         `type`: MetricType
     ): Metric = {
       val __obj = js.Dynamic.literal(
-        "frameName"    -> frameName.asInstanceOf[js.Any],
+        "frameName" -> frameName.asInstanceOf[js.Any],
         "threadStates" -> threadStates.asInstanceOf[js.Any],
-        "type"         -> `type`.asInstanceOf[js.Any]
+        "type" -> `type`.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[Metric]
@@ -1283,7 +1283,7 @@ package codeguruprofiler {
   @js.native
   sealed trait OrderBy extends js.Any
   object OrderBy extends js.Object {
-    val TimestampAscending  = "TimestampAscending".asInstanceOf[OrderBy]
+    val TimestampAscending = "TimestampAscending".asInstanceOf[OrderBy]
     val TimestampDescending = "TimestampDescending".asInstanceOf[OrderBy]
 
     val values = js.Object.freeze(js.Array(TimestampAscending, TimestampDescending))
@@ -1346,8 +1346,8 @@ package codeguruprofiler {
         profileToken: js.UndefOr[ClientToken] = js.undefined
     ): PostAgentProfileRequest = {
       val __obj = js.Dynamic.literal(
-        "agentProfile"       -> agentProfile.asInstanceOf[js.Any],
-        "contentType"        -> contentType.asInstanceOf[js.Any],
+        "agentProfile" -> agentProfile.asInstanceOf[js.Any],
+        "contentType" -> contentType.asInstanceOf[js.Any],
         "profilingGroupName" -> profilingGroupName.asInstanceOf[js.Any]
       )
 
@@ -1477,8 +1477,8 @@ package codeguruprofiler {
         revisionId: js.UndefOr[RevisionId] = js.undefined
     ): PutPermissionRequest = {
       val __obj = js.Dynamic.literal(
-        "actionGroup"        -> actionGroup.asInstanceOf[js.Any],
-        "principals"         -> principals.asInstanceOf[js.Any],
+        "actionGroup" -> actionGroup.asInstanceOf[js.Any],
+        "principals" -> principals.asInstanceOf[js.Any],
         "profilingGroupName" -> profilingGroupName.asInstanceOf[js.Any]
       )
 
@@ -1503,7 +1503,7 @@ package codeguruprofiler {
         revisionId: RevisionId
     ): PutPermissionResponse = {
       val __obj = js.Dynamic.literal(
-        "policy"     -> policy.asInstanceOf[js.Any],
+        "policy" -> policy.asInstanceOf[js.Any],
         "revisionId" -> revisionId.asInstanceOf[js.Any]
       )
 
@@ -1536,11 +1536,11 @@ package codeguruprofiler {
     ): Recommendation = {
       val __obj = js.Dynamic.literal(
         "allMatchesCount" -> allMatchesCount.asInstanceOf[js.Any],
-        "allMatchesSum"   -> allMatchesSum.asInstanceOf[js.Any],
-        "endTime"         -> endTime.asInstanceOf[js.Any],
-        "pattern"         -> pattern.asInstanceOf[js.Any],
-        "startTime"       -> startTime.asInstanceOf[js.Any],
-        "topMatches"      -> topMatches.asInstanceOf[js.Any]
+        "allMatchesSum" -> allMatchesSum.asInstanceOf[js.Any],
+        "endTime" -> endTime.asInstanceOf[js.Any],
+        "pattern" -> pattern.asInstanceOf[js.Any],
+        "startTime" -> startTime.asInstanceOf[js.Any],
+        "topMatches" -> topMatches.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[Recommendation]
@@ -1563,7 +1563,7 @@ package codeguruprofiler {
         profilingGroupName: ProfilingGroupName
     ): RemoveNotificationChannelRequest = {
       val __obj = js.Dynamic.literal(
-        "channelId"          -> channelId.asInstanceOf[js.Any],
+        "channelId" -> channelId.asInstanceOf[js.Any],
         "profilingGroupName" -> profilingGroupName.asInstanceOf[js.Any]
       )
 
@@ -1610,9 +1610,9 @@ package codeguruprofiler {
         revisionId: RevisionId
     ): RemovePermissionRequest = {
       val __obj = js.Dynamic.literal(
-        "actionGroup"        -> actionGroup.asInstanceOf[js.Any],
+        "actionGroup" -> actionGroup.asInstanceOf[js.Any],
         "profilingGroupName" -> profilingGroupName.asInstanceOf[js.Any],
-        "revisionId"         -> revisionId.asInstanceOf[js.Any]
+        "revisionId" -> revisionId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RemovePermissionRequest]
@@ -1635,7 +1635,7 @@ package codeguruprofiler {
         revisionId: RevisionId
     ): RemovePermissionResponse = {
       val __obj = js.Dynamic.literal(
-        "policy"     -> policy.asInstanceOf[js.Any],
+        "policy" -> policy.asInstanceOf[js.Any],
         "revisionId" -> revisionId.asInstanceOf[js.Any]
       )
 
@@ -1663,9 +1663,9 @@ package codeguruprofiler {
         comment: js.UndefOr[String] = js.undefined
     ): SubmitFeedbackRequest = {
       val __obj = js.Dynamic.literal(
-        "anomalyInstanceId"  -> anomalyInstanceId.asInstanceOf[js.Any],
+        "anomalyInstanceId" -> anomalyInstanceId.asInstanceOf[js.Any],
         "profilingGroupName" -> profilingGroupName.asInstanceOf[js.Any],
-        "type"               -> `type`.asInstanceOf[js.Any]
+        "type" -> `type`.asInstanceOf[js.Any]
       )
 
       comment.foreach(__v => __obj.updateDynamic("comment")(__v.asInstanceOf[js.Any]))
@@ -1727,7 +1727,7 @@ package codeguruprofiler {
     ): UpdateProfilingGroupRequest = {
       val __obj = js.Dynamic.literal(
         "agentOrchestrationConfig" -> agentOrchestrationConfig.asInstanceOf[js.Any],
-        "profilingGroupName"       -> profilingGroupName.asInstanceOf[js.Any]
+        "profilingGroupName" -> profilingGroupName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateProfilingGroupRequest]

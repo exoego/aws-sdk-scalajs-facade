@@ -23,16 +23,16 @@ class AttributeValueMapperTest extends AnyFunSuite {
   test("AttributeValueTypeMap") {
     val attributeValue = AttributeValueTypeMap(
       js.Dictionary(
-        "name"  -> AttributeValue.S("john"),
-        "age"   -> AttributeValue.NFromInt(1),
+        "name" -> AttributeValue.S("john"),
+        "age" -> AttributeValue.NFromInt(1),
         "isFoo" -> AttributeValue.BOOL(true)
       )
     )
     assert(
       attributeValue === AttributeValue.M(
         js.Dictionary(
-          "name"  -> AttributeValue.S("john"),
-          "age"   -> AttributeValue.NFromInt(1),
+          "name" -> AttributeValue.S("john"),
+          "age" -> AttributeValue.NFromInt(1),
           "isFoo" -> AttributeValue.BOOL(true)
         )
       )

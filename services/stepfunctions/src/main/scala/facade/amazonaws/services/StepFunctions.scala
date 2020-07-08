@@ -7,34 +7,34 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object stepfunctions {
-  type ActivityList            = js.Array[ActivityListItem]
-  type Arn                     = String
-  type ConnectorParameters     = String
-  type Definition              = String
-  type EventId                 = Double
-  type ExecutionList           = js.Array[ExecutionListItem]
-  type HistoryEventList        = js.Array[HistoryEvent]
-  type Identity                = String
-  type IncludeExecutionData    = Boolean
+  type ActivityList = js.Array[ActivityListItem]
+  type Arn = String
+  type ConnectorParameters = String
+  type Definition = String
+  type EventId = Double
+  type ExecutionList = js.Array[ExecutionListItem]
+  type HistoryEventList = js.Array[HistoryEvent]
+  type Identity = String
+  type IncludeExecutionData = Boolean
   type ListExecutionsPageToken = String
-  type LogDestinationList      = js.Array[LogDestination]
-  type Name                    = String
-  type PageSize                = Int
-  type PageToken               = String
-  type ReverseOrder            = Boolean
-  type SensitiveCause          = String
-  type SensitiveData           = String
-  type SensitiveDataJobInput   = String
-  type SensitiveError          = String
-  type StateMachineList        = js.Array[StateMachineListItem]
-  type TagKey                  = String
-  type TagKeyList              = js.Array[TagKey]
-  type TagList                 = js.Array[Tag]
-  type TagValue                = String
-  type TaskToken               = String
-  type TimeoutInSeconds        = Double
-  type Timestamp               = js.Date
-  type UnsignedInteger         = Int
+  type LogDestinationList = js.Array[LogDestination]
+  type Name = String
+  type PageSize = Int
+  type PageToken = String
+  type ReverseOrder = Boolean
+  type SensitiveCause = String
+  type SensitiveData = String
+  type SensitiveDataJobInput = String
+  type SensitiveError = String
+  type StateMachineList = js.Array[StateMachineListItem]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type TaskToken = String
+  type TimeoutInSeconds = Double
+  type Timestamp = js.Date
+  type UnsignedInteger = Int
 
   implicit final class StepFunctionsOps(private val service: StepFunctions) extends AnyVal {
 
@@ -93,30 +93,30 @@ package stepfunctions {
   class StepFunctions() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createActivity(params: CreateActivityInput): Request[CreateActivityOutput]                   = js.native
-    def createStateMachine(params: CreateStateMachineInput): Request[CreateStateMachineOutput]       = js.native
-    def deleteActivity(params: DeleteActivityInput): Request[DeleteActivityOutput]                   = js.native
-    def deleteStateMachine(params: DeleteStateMachineInput): Request[DeleteStateMachineOutput]       = js.native
-    def describeActivity(params: DescribeActivityInput): Request[DescribeActivityOutput]             = js.native
-    def describeExecution(params: DescribeExecutionInput): Request[DescribeExecutionOutput]          = js.native
+    def createActivity(params: CreateActivityInput): Request[CreateActivityOutput] = js.native
+    def createStateMachine(params: CreateStateMachineInput): Request[CreateStateMachineOutput] = js.native
+    def deleteActivity(params: DeleteActivityInput): Request[DeleteActivityOutput] = js.native
+    def deleteStateMachine(params: DeleteStateMachineInput): Request[DeleteStateMachineOutput] = js.native
+    def describeActivity(params: DescribeActivityInput): Request[DescribeActivityOutput] = js.native
+    def describeExecution(params: DescribeExecutionInput): Request[DescribeExecutionOutput] = js.native
     def describeStateMachine(params: DescribeStateMachineInput): Request[DescribeStateMachineOutput] = js.native
     def describeStateMachineForExecution(
         params: DescribeStateMachineForExecutionInput
-    ): Request[DescribeStateMachineForExecutionOutput]                                            = js.native
-    def getActivityTask(params: GetActivityTaskInput): Request[GetActivityTaskOutput]             = js.native
+    ): Request[DescribeStateMachineForExecutionOutput] = js.native
+    def getActivityTask(params: GetActivityTaskInput): Request[GetActivityTaskOutput] = js.native
     def getExecutionHistory(params: GetExecutionHistoryInput): Request[GetExecutionHistoryOutput] = js.native
-    def listActivities(params: ListActivitiesInput): Request[ListActivitiesOutput]                = js.native
-    def listExecutions(params: ListExecutionsInput): Request[ListExecutionsOutput]                = js.native
-    def listStateMachines(params: ListStateMachinesInput): Request[ListStateMachinesOutput]       = js.native
+    def listActivities(params: ListActivitiesInput): Request[ListActivitiesOutput] = js.native
+    def listExecutions(params: ListExecutionsInput): Request[ListExecutionsOutput] = js.native
+    def listStateMachines(params: ListStateMachinesInput): Request[ListStateMachinesOutput] = js.native
     def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput] = js.native
-    def sendTaskFailure(params: SendTaskFailureInput): Request[SendTaskFailureOutput]             = js.native
-    def sendTaskHeartbeat(params: SendTaskHeartbeatInput): Request[SendTaskHeartbeatOutput]       = js.native
-    def sendTaskSuccess(params: SendTaskSuccessInput): Request[SendTaskSuccessOutput]             = js.native
-    def startExecution(params: StartExecutionInput): Request[StartExecutionOutput]                = js.native
-    def stopExecution(params: StopExecutionInput): Request[StopExecutionOutput]                   = js.native
-    def tagResource(params: TagResourceInput): Request[TagResourceOutput]                         = js.native
-    def untagResource(params: UntagResourceInput): Request[UntagResourceOutput]                   = js.native
-    def updateStateMachine(params: UpdateStateMachineInput): Request[UpdateStateMachineOutput]    = js.native
+    def sendTaskFailure(params: SendTaskFailureInput): Request[SendTaskFailureOutput] = js.native
+    def sendTaskHeartbeat(params: SendTaskHeartbeatInput): Request[SendTaskHeartbeatOutput] = js.native
+    def sendTaskSuccess(params: SendTaskSuccessInput): Request[SendTaskSuccessOutput] = js.native
+    def startExecution(params: StartExecutionInput): Request[StartExecutionOutput] = js.native
+    def stopExecution(params: StopExecutionInput): Request[StopExecutionOutput] = js.native
+    def tagResource(params: TagResourceInput): Request[TagResourceOutput] = js.native
+    def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
+    def updateStateMachine(params: UpdateStateMachineInput): Request[UpdateStateMachineOutput] = js.native
   }
 
   /**
@@ -159,9 +159,9 @@ package stepfunctions {
         name: Name
     ): ActivityListItem = {
       val __obj = js.Dynamic.literal(
-        "activityArn"  -> activityArn.asInstanceOf[js.Any],
+        "activityArn" -> activityArn.asInstanceOf[js.Any],
         "creationDate" -> creationDate.asInstanceOf[js.Any],
-        "name"         -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ActivityListItem]
@@ -333,7 +333,7 @@ package stepfunctions {
         creationDate: Timestamp
     ): CreateActivityOutput = {
       val __obj = js.Dynamic.literal(
-        "activityArn"  -> activityArn.asInstanceOf[js.Any],
+        "activityArn" -> activityArn.asInstanceOf[js.Any],
         "creationDate" -> creationDate.asInstanceOf[js.Any]
       )
 
@@ -363,8 +363,8 @@ package stepfunctions {
     ): CreateStateMachineInput = {
       val __obj = js.Dynamic.literal(
         "definition" -> definition.asInstanceOf[js.Any],
-        "name"       -> name.asInstanceOf[js.Any],
-        "roleArn"    -> roleArn.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
       loggingConfiguration.foreach(__v => __obj.updateDynamic("loggingConfiguration")(__v.asInstanceOf[js.Any]))
@@ -387,7 +387,7 @@ package stepfunctions {
         stateMachineArn: Arn
     ): CreateStateMachineOutput = {
       val __obj = js.Dynamic.literal(
-        "creationDate"    -> creationDate.asInstanceOf[js.Any],
+        "creationDate" -> creationDate.asInstanceOf[js.Any],
         "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any]
       )
 
@@ -490,9 +490,9 @@ package stepfunctions {
         name: Name
     ): DescribeActivityOutput = {
       val __obj = js.Dynamic.literal(
-        "activityArn"  -> activityArn.asInstanceOf[js.Any],
+        "activityArn" -> activityArn.asInstanceOf[js.Any],
         "creationDate" -> creationDate.asInstanceOf[js.Any],
-        "name"         -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeActivityOutput]
@@ -542,11 +542,11 @@ package stepfunctions {
         stopDate: js.UndefOr[Timestamp] = js.undefined
     ): DescribeExecutionOutput = {
       val __obj = js.Dynamic.literal(
-        "executionArn"    -> executionArn.asInstanceOf[js.Any],
-        "input"           -> input.asInstanceOf[js.Any],
-        "startDate"       -> startDate.asInstanceOf[js.Any],
+        "executionArn" -> executionArn.asInstanceOf[js.Any],
+        "input" -> input.asInstanceOf[js.Any],
+        "startDate" -> startDate.asInstanceOf[js.Any],
         "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any],
-        "status"          -> status.asInstanceOf[js.Any]
+        "status" -> status.asInstanceOf[js.Any]
       )
 
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
@@ -595,11 +595,11 @@ package stepfunctions {
         loggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined
     ): DescribeStateMachineForExecutionOutput = {
       val __obj = js.Dynamic.literal(
-        "definition"      -> definition.asInstanceOf[js.Any],
-        "name"            -> name.asInstanceOf[js.Any],
-        "roleArn"         -> roleArn.asInstanceOf[js.Any],
+        "definition" -> definition.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
         "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any],
-        "updateDate"      -> updateDate.asInstanceOf[js.Any]
+        "updateDate" -> updateDate.asInstanceOf[js.Any]
       )
 
       loggingConfiguration.foreach(__v => __obj.updateDynamic("loggingConfiguration")(__v.asInstanceOf[js.Any]))
@@ -650,12 +650,12 @@ package stepfunctions {
         status: js.UndefOr[StateMachineStatus] = js.undefined
     ): DescribeStateMachineOutput = {
       val __obj = js.Dynamic.literal(
-        "creationDate"    -> creationDate.asInstanceOf[js.Any],
-        "definition"      -> definition.asInstanceOf[js.Any],
-        "name"            -> name.asInstanceOf[js.Any],
-        "roleArn"         -> roleArn.asInstanceOf[js.Any],
+        "creationDate" -> creationDate.asInstanceOf[js.Any],
+        "definition" -> definition.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
         "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any],
-        "type"            -> `type`.asInstanceOf[js.Any]
+        "type" -> `type`.asInstanceOf[js.Any]
       )
 
       loggingConfiguration.foreach(__v => __obj.updateDynamic("loggingConfiguration")(__v.asInstanceOf[js.Any]))
@@ -732,11 +732,11 @@ package stepfunctions {
         stopDate: js.UndefOr[Timestamp] = js.undefined
     ): ExecutionListItem = {
       val __obj = js.Dynamic.literal(
-        "executionArn"    -> executionArn.asInstanceOf[js.Any],
-        "name"            -> name.asInstanceOf[js.Any],
-        "startDate"       -> startDate.asInstanceOf[js.Any],
+        "executionArn" -> executionArn.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "startDate" -> startDate.asInstanceOf[js.Any],
         "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any],
-        "status"          -> status.asInstanceOf[js.Any]
+        "status" -> status.asInstanceOf[js.Any]
       )
 
       stopDate.foreach(__v => __obj.updateDynamic("stopDate")(__v.asInstanceOf[js.Any]))
@@ -769,11 +769,11 @@ package stepfunctions {
   @js.native
   sealed trait ExecutionStatus extends js.Any
   object ExecutionStatus extends js.Object {
-    val RUNNING   = "RUNNING".asInstanceOf[ExecutionStatus]
+    val RUNNING = "RUNNING".asInstanceOf[ExecutionStatus]
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[ExecutionStatus]
-    val FAILED    = "FAILED".asInstanceOf[ExecutionStatus]
+    val FAILED = "FAILED".asInstanceOf[ExecutionStatus]
     val TIMED_OUT = "TIMED_OUT".asInstanceOf[ExecutionStatus]
-    val ABORTED   = "ABORTED".asInstanceOf[ExecutionStatus]
+    val ABORTED = "ABORTED".asInstanceOf[ExecutionStatus]
 
     val values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, FAILED, TIMED_OUT, ABORTED))
   }
@@ -991,9 +991,9 @@ package stepfunctions {
         taskTimedOutEventDetails: js.UndefOr[TaskTimedOutEventDetails] = js.undefined
     ): HistoryEvent = {
       val __obj = js.Dynamic.literal(
-        "id"        -> id.asInstanceOf[js.Any],
+        "id" -> id.asInstanceOf[js.Any],
         "timestamp" -> timestamp.asInstanceOf[js.Any],
-        "type"      -> `type`.asInstanceOf[js.Any]
+        "type" -> `type`.asInstanceOf[js.Any]
       )
 
       activityFailedEventDetails.foreach(__v =>
@@ -1090,61 +1090,61 @@ package stepfunctions {
   @js.native
   sealed trait HistoryEventType extends js.Any
   object HistoryEventType extends js.Object {
-    val ActivityFailed               = "ActivityFailed".asInstanceOf[HistoryEventType]
-    val ActivityScheduled            = "ActivityScheduled".asInstanceOf[HistoryEventType]
-    val ActivityScheduleFailed       = "ActivityScheduleFailed".asInstanceOf[HistoryEventType]
-    val ActivityStarted              = "ActivityStarted".asInstanceOf[HistoryEventType]
-    val ActivitySucceeded            = "ActivitySucceeded".asInstanceOf[HistoryEventType]
-    val ActivityTimedOut             = "ActivityTimedOut".asInstanceOf[HistoryEventType]
-    val ChoiceStateEntered           = "ChoiceStateEntered".asInstanceOf[HistoryEventType]
-    val ChoiceStateExited            = "ChoiceStateExited".asInstanceOf[HistoryEventType]
-    val ExecutionAborted             = "ExecutionAborted".asInstanceOf[HistoryEventType]
-    val ExecutionFailed              = "ExecutionFailed".asInstanceOf[HistoryEventType]
-    val ExecutionStarted             = "ExecutionStarted".asInstanceOf[HistoryEventType]
-    val ExecutionSucceeded           = "ExecutionSucceeded".asInstanceOf[HistoryEventType]
-    val ExecutionTimedOut            = "ExecutionTimedOut".asInstanceOf[HistoryEventType]
-    val FailStateEntered             = "FailStateEntered".asInstanceOf[HistoryEventType]
-    val LambdaFunctionFailed         = "LambdaFunctionFailed".asInstanceOf[HistoryEventType]
-    val LambdaFunctionScheduled      = "LambdaFunctionScheduled".asInstanceOf[HistoryEventType]
+    val ActivityFailed = "ActivityFailed".asInstanceOf[HistoryEventType]
+    val ActivityScheduled = "ActivityScheduled".asInstanceOf[HistoryEventType]
+    val ActivityScheduleFailed = "ActivityScheduleFailed".asInstanceOf[HistoryEventType]
+    val ActivityStarted = "ActivityStarted".asInstanceOf[HistoryEventType]
+    val ActivitySucceeded = "ActivitySucceeded".asInstanceOf[HistoryEventType]
+    val ActivityTimedOut = "ActivityTimedOut".asInstanceOf[HistoryEventType]
+    val ChoiceStateEntered = "ChoiceStateEntered".asInstanceOf[HistoryEventType]
+    val ChoiceStateExited = "ChoiceStateExited".asInstanceOf[HistoryEventType]
+    val ExecutionAborted = "ExecutionAborted".asInstanceOf[HistoryEventType]
+    val ExecutionFailed = "ExecutionFailed".asInstanceOf[HistoryEventType]
+    val ExecutionStarted = "ExecutionStarted".asInstanceOf[HistoryEventType]
+    val ExecutionSucceeded = "ExecutionSucceeded".asInstanceOf[HistoryEventType]
+    val ExecutionTimedOut = "ExecutionTimedOut".asInstanceOf[HistoryEventType]
+    val FailStateEntered = "FailStateEntered".asInstanceOf[HistoryEventType]
+    val LambdaFunctionFailed = "LambdaFunctionFailed".asInstanceOf[HistoryEventType]
+    val LambdaFunctionScheduled = "LambdaFunctionScheduled".asInstanceOf[HistoryEventType]
     val LambdaFunctionScheduleFailed = "LambdaFunctionScheduleFailed".asInstanceOf[HistoryEventType]
-    val LambdaFunctionStarted        = "LambdaFunctionStarted".asInstanceOf[HistoryEventType]
-    val LambdaFunctionStartFailed    = "LambdaFunctionStartFailed".asInstanceOf[HistoryEventType]
-    val LambdaFunctionSucceeded      = "LambdaFunctionSucceeded".asInstanceOf[HistoryEventType]
-    val LambdaFunctionTimedOut       = "LambdaFunctionTimedOut".asInstanceOf[HistoryEventType]
-    val MapIterationAborted          = "MapIterationAborted".asInstanceOf[HistoryEventType]
-    val MapIterationFailed           = "MapIterationFailed".asInstanceOf[HistoryEventType]
-    val MapIterationStarted          = "MapIterationStarted".asInstanceOf[HistoryEventType]
-    val MapIterationSucceeded        = "MapIterationSucceeded".asInstanceOf[HistoryEventType]
-    val MapStateAborted              = "MapStateAborted".asInstanceOf[HistoryEventType]
-    val MapStateEntered              = "MapStateEntered".asInstanceOf[HistoryEventType]
-    val MapStateExited               = "MapStateExited".asInstanceOf[HistoryEventType]
-    val MapStateFailed               = "MapStateFailed".asInstanceOf[HistoryEventType]
-    val MapStateStarted              = "MapStateStarted".asInstanceOf[HistoryEventType]
-    val MapStateSucceeded            = "MapStateSucceeded".asInstanceOf[HistoryEventType]
-    val ParallelStateAborted         = "ParallelStateAborted".asInstanceOf[HistoryEventType]
-    val ParallelStateEntered         = "ParallelStateEntered".asInstanceOf[HistoryEventType]
-    val ParallelStateExited          = "ParallelStateExited".asInstanceOf[HistoryEventType]
-    val ParallelStateFailed          = "ParallelStateFailed".asInstanceOf[HistoryEventType]
-    val ParallelStateStarted         = "ParallelStateStarted".asInstanceOf[HistoryEventType]
-    val ParallelStateSucceeded       = "ParallelStateSucceeded".asInstanceOf[HistoryEventType]
-    val PassStateEntered             = "PassStateEntered".asInstanceOf[HistoryEventType]
-    val PassStateExited              = "PassStateExited".asInstanceOf[HistoryEventType]
-    val SucceedStateEntered          = "SucceedStateEntered".asInstanceOf[HistoryEventType]
-    val SucceedStateExited           = "SucceedStateExited".asInstanceOf[HistoryEventType]
-    val TaskFailed                   = "TaskFailed".asInstanceOf[HistoryEventType]
-    val TaskScheduled                = "TaskScheduled".asInstanceOf[HistoryEventType]
-    val TaskStarted                  = "TaskStarted".asInstanceOf[HistoryEventType]
-    val TaskStartFailed              = "TaskStartFailed".asInstanceOf[HistoryEventType]
-    val TaskStateAborted             = "TaskStateAborted".asInstanceOf[HistoryEventType]
-    val TaskStateEntered             = "TaskStateEntered".asInstanceOf[HistoryEventType]
-    val TaskStateExited              = "TaskStateExited".asInstanceOf[HistoryEventType]
-    val TaskSubmitFailed             = "TaskSubmitFailed".asInstanceOf[HistoryEventType]
-    val TaskSubmitted                = "TaskSubmitted".asInstanceOf[HistoryEventType]
-    val TaskSucceeded                = "TaskSucceeded".asInstanceOf[HistoryEventType]
-    val TaskTimedOut                 = "TaskTimedOut".asInstanceOf[HistoryEventType]
-    val WaitStateAborted             = "WaitStateAborted".asInstanceOf[HistoryEventType]
-    val WaitStateEntered             = "WaitStateEntered".asInstanceOf[HistoryEventType]
-    val WaitStateExited              = "WaitStateExited".asInstanceOf[HistoryEventType]
+    val LambdaFunctionStarted = "LambdaFunctionStarted".asInstanceOf[HistoryEventType]
+    val LambdaFunctionStartFailed = "LambdaFunctionStartFailed".asInstanceOf[HistoryEventType]
+    val LambdaFunctionSucceeded = "LambdaFunctionSucceeded".asInstanceOf[HistoryEventType]
+    val LambdaFunctionTimedOut = "LambdaFunctionTimedOut".asInstanceOf[HistoryEventType]
+    val MapIterationAborted = "MapIterationAborted".asInstanceOf[HistoryEventType]
+    val MapIterationFailed = "MapIterationFailed".asInstanceOf[HistoryEventType]
+    val MapIterationStarted = "MapIterationStarted".asInstanceOf[HistoryEventType]
+    val MapIterationSucceeded = "MapIterationSucceeded".asInstanceOf[HistoryEventType]
+    val MapStateAborted = "MapStateAborted".asInstanceOf[HistoryEventType]
+    val MapStateEntered = "MapStateEntered".asInstanceOf[HistoryEventType]
+    val MapStateExited = "MapStateExited".asInstanceOf[HistoryEventType]
+    val MapStateFailed = "MapStateFailed".asInstanceOf[HistoryEventType]
+    val MapStateStarted = "MapStateStarted".asInstanceOf[HistoryEventType]
+    val MapStateSucceeded = "MapStateSucceeded".asInstanceOf[HistoryEventType]
+    val ParallelStateAborted = "ParallelStateAborted".asInstanceOf[HistoryEventType]
+    val ParallelStateEntered = "ParallelStateEntered".asInstanceOf[HistoryEventType]
+    val ParallelStateExited = "ParallelStateExited".asInstanceOf[HistoryEventType]
+    val ParallelStateFailed = "ParallelStateFailed".asInstanceOf[HistoryEventType]
+    val ParallelStateStarted = "ParallelStateStarted".asInstanceOf[HistoryEventType]
+    val ParallelStateSucceeded = "ParallelStateSucceeded".asInstanceOf[HistoryEventType]
+    val PassStateEntered = "PassStateEntered".asInstanceOf[HistoryEventType]
+    val PassStateExited = "PassStateExited".asInstanceOf[HistoryEventType]
+    val SucceedStateEntered = "SucceedStateEntered".asInstanceOf[HistoryEventType]
+    val SucceedStateExited = "SucceedStateExited".asInstanceOf[HistoryEventType]
+    val TaskFailed = "TaskFailed".asInstanceOf[HistoryEventType]
+    val TaskScheduled = "TaskScheduled".asInstanceOf[HistoryEventType]
+    val TaskStarted = "TaskStarted".asInstanceOf[HistoryEventType]
+    val TaskStartFailed = "TaskStartFailed".asInstanceOf[HistoryEventType]
+    val TaskStateAborted = "TaskStateAborted".asInstanceOf[HistoryEventType]
+    val TaskStateEntered = "TaskStateEntered".asInstanceOf[HistoryEventType]
+    val TaskStateExited = "TaskStateExited".asInstanceOf[HistoryEventType]
+    val TaskSubmitFailed = "TaskSubmitFailed".asInstanceOf[HistoryEventType]
+    val TaskSubmitted = "TaskSubmitted".asInstanceOf[HistoryEventType]
+    val TaskSucceeded = "TaskSucceeded".asInstanceOf[HistoryEventType]
+    val TaskTimedOut = "TaskTimedOut".asInstanceOf[HistoryEventType]
+    val WaitStateAborted = "WaitStateAborted".asInstanceOf[HistoryEventType]
+    val WaitStateEntered = "WaitStateEntered".asInstanceOf[HistoryEventType]
+    val WaitStateExited = "WaitStateExited".asInstanceOf[HistoryEventType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1525,10 +1525,10 @@ package stepfunctions {
   @js.native
   sealed trait LogLevel extends js.Any
   object LogLevel extends js.Object {
-    val ALL   = "ALL".asInstanceOf[LogLevel]
+    val ALL = "ALL".asInstanceOf[LogLevel]
     val ERROR = "ERROR".asInstanceOf[LogLevel]
     val FATAL = "FATAL".asInstanceOf[LogLevel]
-    val OFF   = "OFF".asInstanceOf[LogLevel]
+    val OFF = "OFF".asInstanceOf[LogLevel]
 
     val values = js.Object.freeze(js.Array(ALL, ERROR, FATAL, OFF))
   }
@@ -1680,7 +1680,7 @@ package stepfunctions {
         taskToken: TaskToken
     ): SendTaskSuccessInput = {
       val __obj = js.Dynamic.literal(
-        "output"    -> output.asInstanceOf[js.Any],
+        "output" -> output.asInstanceOf[js.Any],
         "taskToken" -> taskToken.asInstanceOf[js.Any]
       )
 
@@ -1739,7 +1739,7 @@ package stepfunctions {
     ): StartExecutionOutput = {
       val __obj = js.Dynamic.literal(
         "executionArn" -> executionArn.asInstanceOf[js.Any],
-        "startDate"    -> startDate.asInstanceOf[js.Any]
+        "startDate" -> startDate.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[StartExecutionOutput]
@@ -1814,10 +1814,10 @@ package stepfunctions {
         `type`: StateMachineType
     ): StateMachineListItem = {
       val __obj = js.Dynamic.literal(
-        "creationDate"    -> creationDate.asInstanceOf[js.Any],
-        "name"            -> name.asInstanceOf[js.Any],
+        "creationDate" -> creationDate.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any],
-        "type"            -> `type`.asInstanceOf[js.Any]
+        "type" -> `type`.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[StateMachineListItem]
@@ -1827,7 +1827,7 @@ package stepfunctions {
   @js.native
   sealed trait StateMachineStatus extends js.Any
   object StateMachineStatus extends js.Object {
-    val ACTIVE   = "ACTIVE".asInstanceOf[StateMachineStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[StateMachineStatus]
     val DELETING = "DELETING".asInstanceOf[StateMachineStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, DELETING))
@@ -1837,7 +1837,7 @@ package stepfunctions {
   sealed trait StateMachineType extends js.Any
   object StateMachineType extends js.Object {
     val STANDARD = "STANDARD".asInstanceOf[StateMachineType]
-    val EXPRESS  = "EXPRESS".asInstanceOf[StateMachineType]
+    val EXPRESS = "EXPRESS".asInstanceOf[StateMachineType]
 
     val values = js.Object.freeze(js.Array(STANDARD, EXPRESS))
   }
@@ -1922,7 +1922,7 @@ package stepfunctions {
     ): TagResourceInput = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceInput]
@@ -1962,7 +1962,7 @@ package stepfunctions {
         error: js.UndefOr[SensitiveError] = js.undefined
     ): TaskFailedEventDetails = {
       val __obj = js.Dynamic.literal(
-        "resource"     -> resource.asInstanceOf[js.Any],
+        "resource" -> resource.asInstanceOf[js.Any],
         "resourceType" -> resourceType.asInstanceOf[js.Any]
       )
 
@@ -1994,9 +1994,9 @@ package stepfunctions {
         timeoutInSeconds: js.UndefOr[TimeoutInSeconds] = js.undefined
     ): TaskScheduledEventDetails = {
       val __obj = js.Dynamic.literal(
-        "parameters"   -> parameters.asInstanceOf[js.Any],
-        "region"       -> region.asInstanceOf[js.Any],
-        "resource"     -> resource.asInstanceOf[js.Any],
+        "parameters" -> parameters.asInstanceOf[js.Any],
+        "region" -> region.asInstanceOf[js.Any],
+        "resource" -> resource.asInstanceOf[js.Any],
         "resourceType" -> resourceType.asInstanceOf[js.Any]
       )
 
@@ -2025,7 +2025,7 @@ package stepfunctions {
         error: js.UndefOr[SensitiveError] = js.undefined
     ): TaskStartFailedEventDetails = {
       val __obj = js.Dynamic.literal(
-        "resource"     -> resource.asInstanceOf[js.Any],
+        "resource" -> resource.asInstanceOf[js.Any],
         "resourceType" -> resourceType.asInstanceOf[js.Any]
       )
 
@@ -2051,7 +2051,7 @@ package stepfunctions {
         resourceType: Name
     ): TaskStartedEventDetails = {
       val __obj = js.Dynamic.literal(
-        "resource"     -> resource.asInstanceOf[js.Any],
+        "resource" -> resource.asInstanceOf[js.Any],
         "resourceType" -> resourceType.asInstanceOf[js.Any]
       )
 
@@ -2079,7 +2079,7 @@ package stepfunctions {
         error: js.UndefOr[SensitiveError] = js.undefined
     ): TaskSubmitFailedEventDetails = {
       val __obj = js.Dynamic.literal(
-        "resource"     -> resource.asInstanceOf[js.Any],
+        "resource" -> resource.asInstanceOf[js.Any],
         "resourceType" -> resourceType.asInstanceOf[js.Any]
       )
 
@@ -2107,7 +2107,7 @@ package stepfunctions {
         output: js.UndefOr[SensitiveData] = js.undefined
     ): TaskSubmittedEventDetails = {
       val __obj = js.Dynamic.literal(
-        "resource"     -> resource.asInstanceOf[js.Any],
+        "resource" -> resource.asInstanceOf[js.Any],
         "resourceType" -> resourceType.asInstanceOf[js.Any]
       )
 
@@ -2134,7 +2134,7 @@ package stepfunctions {
         output: js.UndefOr[SensitiveData] = js.undefined
     ): TaskSucceededEventDetails = {
       val __obj = js.Dynamic.literal(
-        "resource"     -> resource.asInstanceOf[js.Any],
+        "resource" -> resource.asInstanceOf[js.Any],
         "resourceType" -> resourceType.asInstanceOf[js.Any]
       )
 
@@ -2163,7 +2163,7 @@ package stepfunctions {
         error: js.UndefOr[SensitiveError] = js.undefined
     ): TaskTimedOutEventDetails = {
       val __obj = js.Dynamic.literal(
-        "resource"     -> resource.asInstanceOf[js.Any],
+        "resource" -> resource.asInstanceOf[js.Any],
         "resourceType" -> resourceType.asInstanceOf[js.Any]
       )
 
@@ -2187,7 +2187,7 @@ package stepfunctions {
     ): UntagResourceInput = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceInput]

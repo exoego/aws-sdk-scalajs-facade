@@ -7,55 +7,55 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object s3control {
-  type AccessPointList             = js.Array[AccessPoint]
-  type AccessPointName             = String
-  type AccountId                   = String
-  type BucketName                  = String
-  type ConfirmationRequired        = Boolean
-  type CreationDate                = js.Date
-  type FunctionArnString           = String
-  type IAMRoleArn                  = String
-  type IsPublic                    = Boolean
-  type JobArn                      = String
-  type JobCreationTime             = js.Date
-  type JobFailureCode              = String
-  type JobFailureList              = js.Array[JobFailure]
-  type JobFailureReason            = String
-  type JobId                       = String
-  type JobListDescriptorList       = js.Array[JobListDescriptor]
-  type JobManifestFieldList        = js.Array[JobManifestFieldName]
-  type JobNumberOfTasksFailed      = Double
-  type JobNumberOfTasksSucceeded   = Double
-  type JobPriority                 = Int
-  type JobStatusList               = js.Array[JobStatus]
-  type JobStatusUpdateReason       = String
-  type JobTerminationDate          = js.Date
-  type JobTotalNumberOfTasks       = Double
-  type KmsKeyArnString             = String
-  type MaxLength1024String         = String
-  type MaxResults                  = Int
+  type AccessPointList = js.Array[AccessPoint]
+  type AccessPointName = String
+  type AccountId = String
+  type BucketName = String
+  type ConfirmationRequired = Boolean
+  type CreationDate = js.Date
+  type FunctionArnString = String
+  type IAMRoleArn = String
+  type IsPublic = Boolean
+  type JobArn = String
+  type JobCreationTime = js.Date
+  type JobFailureCode = String
+  type JobFailureList = js.Array[JobFailure]
+  type JobFailureReason = String
+  type JobId = String
+  type JobListDescriptorList = js.Array[JobListDescriptor]
+  type JobManifestFieldList = js.Array[JobManifestFieldName]
+  type JobNumberOfTasksFailed = Double
+  type JobNumberOfTasksSucceeded = Double
+  type JobPriority = Int
+  type JobStatusList = js.Array[JobStatus]
+  type JobStatusUpdateReason = String
+  type JobTerminationDate = js.Date
+  type JobTotalNumberOfTasks = Double
+  type KmsKeyArnString = String
+  type MaxLength1024String = String
+  type MaxResults = Int
   type NonEmptyMaxLength1024String = String
   type NonEmptyMaxLength2048String = String
-  type NonEmptyMaxLength256String  = String
-  type NonEmptyMaxLength64String   = String
-  type Policy                      = String
-  type ReportPrefixString          = String
-  type S3BucketArnString           = String
-  type S3ContentLength             = Double
-  type S3ExpirationInDays          = Int
-  type S3GrantList                 = js.Array[S3Grant]
-  type S3KeyArnString              = String
-  type S3ObjectVersionId           = String
-  type S3TagSet                    = js.Array[S3Tag]
-  type S3UserMetadata              = js.Dictionary[MaxLength1024String]
-  type Setting                     = Boolean
-  type StringForNextToken          = String
-  type SuspendedCause              = String
-  type SuspendedDate               = js.Date
-  type TagKeyString                = String
-  type TagValueString              = String
-  type TimeStamp                   = js.Date
-  type VpcId                       = String
+  type NonEmptyMaxLength256String = String
+  type NonEmptyMaxLength64String = String
+  type Policy = String
+  type ReportPrefixString = String
+  type S3BucketArnString = String
+  type S3ContentLength = Double
+  type S3ExpirationInDays = Int
+  type S3GrantList = js.Array[S3Grant]
+  type S3KeyArnString = String
+  type S3ObjectVersionId = String
+  type S3TagSet = js.Array[S3Tag]
+  type S3UserMetadata = js.Dictionary[MaxLength1024String]
+  type Setting = Boolean
+  type StringForNextToken = String
+  type SuspendedCause = String
+  type SuspendedDate = js.Date
+  type TagKeyString = String
+  type TagValueString = String
+  type TimeStamp = js.Date
+  type VpcId = String
 
   implicit final class S3ControlOps(private val service: S3Control) extends AnyVal {
 
@@ -107,27 +107,27 @@ package s3control {
   class S3Control() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createAccessPoint(params: CreateAccessPointRequest): Request[js.Object]                        = js.native
-    def createJob(params: CreateJobRequest): Request[CreateJobResult]                                  = js.native
-    def deleteAccessPoint(params: DeleteAccessPointRequest): Request[js.Object]                        = js.native
-    def deleteAccessPointPolicy(params: DeleteAccessPointPolicyRequest): Request[js.Object]            = js.native
-    def deleteJobTagging(params: DeleteJobTaggingRequest): Request[DeleteJobTaggingResult]             = js.native
-    def deletePublicAccessBlock(params: DeletePublicAccessBlockRequest): Request[js.Object]            = js.native
-    def describeJob(params: DescribeJobRequest): Request[DescribeJobResult]                            = js.native
-    def getAccessPoint(params: GetAccessPointRequest): Request[GetAccessPointResult]                   = js.native
+    def createAccessPoint(params: CreateAccessPointRequest): Request[js.Object] = js.native
+    def createJob(params: CreateJobRequest): Request[CreateJobResult] = js.native
+    def deleteAccessPoint(params: DeleteAccessPointRequest): Request[js.Object] = js.native
+    def deleteAccessPointPolicy(params: DeleteAccessPointPolicyRequest): Request[js.Object] = js.native
+    def deleteJobTagging(params: DeleteJobTaggingRequest): Request[DeleteJobTaggingResult] = js.native
+    def deletePublicAccessBlock(params: DeletePublicAccessBlockRequest): Request[js.Object] = js.native
+    def describeJob(params: DescribeJobRequest): Request[DescribeJobResult] = js.native
+    def getAccessPoint(params: GetAccessPointRequest): Request[GetAccessPointResult] = js.native
     def getAccessPointPolicy(params: GetAccessPointPolicyRequest): Request[GetAccessPointPolicyResult] = js.native
     def getAccessPointPolicyStatus(
         params: GetAccessPointPolicyStatusRequest
-    ): Request[GetAccessPointPolicyStatusResult]                                                       = js.native
-    def getJobTagging(params: GetJobTaggingRequest): Request[GetJobTaggingResult]                      = js.native
+    ): Request[GetAccessPointPolicyStatusResult] = js.native
+    def getJobTagging(params: GetJobTaggingRequest): Request[GetJobTaggingResult] = js.native
     def getPublicAccessBlock(params: GetPublicAccessBlockRequest): Request[GetPublicAccessBlockOutput] = js.native
-    def listAccessPoints(params: ListAccessPointsRequest): Request[ListAccessPointsResult]             = js.native
-    def listJobs(params: ListJobsRequest): Request[ListJobsResult]                                     = js.native
-    def putAccessPointPolicy(params: PutAccessPointPolicyRequest): Request[js.Object]                  = js.native
-    def putJobTagging(params: PutJobTaggingRequest): Request[PutJobTaggingResult]                      = js.native
-    def putPublicAccessBlock(params: PutPublicAccessBlockRequest): Request[js.Object]                  = js.native
-    def updateJobPriority(params: UpdateJobPriorityRequest): Request[UpdateJobPriorityResult]          = js.native
-    def updateJobStatus(params: UpdateJobStatusRequest): Request[UpdateJobStatusResult]                = js.native
+    def listAccessPoints(params: ListAccessPointsRequest): Request[ListAccessPointsResult] = js.native
+    def listJobs(params: ListJobsRequest): Request[ListJobsResult] = js.native
+    def putAccessPointPolicy(params: PutAccessPointPolicyRequest): Request[js.Object] = js.native
+    def putJobTagging(params: PutJobTaggingRequest): Request[PutJobTaggingResult] = js.native
+    def putPublicAccessBlock(params: PutPublicAccessBlockRequest): Request[js.Object] = js.native
+    def updateJobPriority(params: UpdateJobPriorityRequest): Request[UpdateJobPriorityResult] = js.native
+    def updateJobStatus(params: UpdateJobStatusRequest): Request[UpdateJobStatusResult] = js.native
   }
 
   /**
@@ -150,8 +150,8 @@ package s3control {
         VpcConfiguration: js.UndefOr[VpcConfiguration] = js.undefined
     ): AccessPoint = {
       val __obj = js.Dynamic.literal(
-        "Bucket"        -> Bucket.asInstanceOf[js.Any],
-        "Name"          -> Name.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "NetworkOrigin" -> NetworkOrigin.asInstanceOf[js.Any]
       )
 
@@ -180,8 +180,8 @@ package s3control {
     ): CreateAccessPointRequest = {
       val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "Bucket"    -> Bucket.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any]
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       PublicAccessBlockConfiguration.foreach(__v =>
@@ -221,13 +221,13 @@ package s3control {
         Tags: js.UndefOr[S3TagSet] = js.undefined
     ): CreateJobRequest = {
       val __obj = js.Dynamic.literal(
-        "AccountId"          -> AccountId.asInstanceOf[js.Any],
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
         "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any],
-        "Manifest"           -> Manifest.asInstanceOf[js.Any],
-        "Operation"          -> Operation.asInstanceOf[js.Any],
-        "Priority"           -> Priority.asInstanceOf[js.Any],
-        "Report"             -> Report.asInstanceOf[js.Any],
-        "RoleArn"            -> RoleArn.asInstanceOf[js.Any]
+        "Manifest" -> Manifest.asInstanceOf[js.Any],
+        "Operation" -> Operation.asInstanceOf[js.Any],
+        "Priority" -> Priority.asInstanceOf[js.Any],
+        "Report" -> Report.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
       ConfirmationRequired.foreach(__v => __obj.updateDynamic("ConfirmationRequired")(__v.asInstanceOf[js.Any]))
@@ -267,7 +267,7 @@ package s3control {
     ): DeleteAccessPointPolicyRequest = {
       val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteAccessPointPolicyRequest]
@@ -288,7 +288,7 @@ package s3control {
     ): DeleteAccessPointRequest = {
       val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteAccessPointRequest]
@@ -309,7 +309,7 @@ package s3control {
     ): DeleteJobTaggingRequest = {
       val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "JobId"     -> JobId.asInstanceOf[js.Any]
+        "JobId" -> JobId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteJobTaggingRequest]
@@ -361,7 +361,7 @@ package s3control {
     ): DescribeJobRequest = {
       val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "JobId"     -> JobId.asInstanceOf[js.Any]
+        "JobId" -> JobId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeJobRequest]
@@ -398,7 +398,7 @@ package s3control {
     ): GetAccessPointPolicyRequest = {
       val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetAccessPointPolicyRequest]
@@ -435,7 +435,7 @@ package s3control {
     ): GetAccessPointPolicyStatusRequest = {
       val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetAccessPointPolicyStatusRequest]
@@ -472,7 +472,7 @@ package s3control {
     ): GetAccessPointRequest = {
       val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetAccessPointRequest]
@@ -526,7 +526,7 @@ package s3control {
     ): GetJobTaggingRequest = {
       val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "JobId"     -> JobId.asInstanceOf[js.Any]
+        "JobId" -> JobId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetJobTaggingRequest]
@@ -731,7 +731,7 @@ package s3control {
     ): JobManifest = {
       val __obj = js.Dynamic.literal(
         "Location" -> Location.asInstanceOf[js.Any],
-        "Spec"     -> Spec.asInstanceOf[js.Any]
+        "Spec" -> Spec.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[JobManifest]
@@ -741,9 +741,9 @@ package s3control {
   @js.native
   sealed trait JobManifestFieldName extends js.Any
   object JobManifestFieldName extends js.Object {
-    val Ignore    = "Ignore".asInstanceOf[JobManifestFieldName]
-    val Bucket    = "Bucket".asInstanceOf[JobManifestFieldName]
-    val Key       = "Key".asInstanceOf[JobManifestFieldName]
+    val Ignore = "Ignore".asInstanceOf[JobManifestFieldName]
+    val Bucket = "Bucket".asInstanceOf[JobManifestFieldName]
+    val Key = "Key".asInstanceOf[JobManifestFieldName]
     val VersionId = "VersionId".asInstanceOf[JobManifestFieldName]
 
     val values = js.Object.freeze(js.Array(Ignore, Bucket, Key, VersionId))
@@ -776,7 +776,7 @@ package s3control {
         ObjectVersionId: js.UndefOr[S3ObjectVersionId] = js.undefined
     ): JobManifestLocation = {
       val __obj = js.Dynamic.literal(
-        "ETag"      -> ETag.asInstanceOf[js.Any],
+        "ETag" -> ETag.asInstanceOf[js.Any],
         "ObjectArn" -> ObjectArn.asInstanceOf[js.Any]
       )
 
@@ -915,7 +915,7 @@ package s3control {
   @js.native
   sealed trait JobReportScope extends js.Any
   object JobReportScope extends js.Object {
-    val AllTasks        = "AllTasks".asInstanceOf[JobReportScope]
+    val AllTasks = "AllTasks".asInstanceOf[JobReportScope]
     val FailedTasksOnly = "FailedTasksOnly".asInstanceOf[JobReportScope]
 
     val values = js.Object.freeze(js.Array(AllTasks, FailedTasksOnly))
@@ -924,19 +924,19 @@ package s3control {
   @js.native
   sealed trait JobStatus extends js.Any
   object JobStatus extends js.Object {
-    val Active     = "Active".asInstanceOf[JobStatus]
-    val Cancelled  = "Cancelled".asInstanceOf[JobStatus]
+    val Active = "Active".asInstanceOf[JobStatus]
+    val Cancelled = "Cancelled".asInstanceOf[JobStatus]
     val Cancelling = "Cancelling".asInstanceOf[JobStatus]
-    val Complete   = "Complete".asInstanceOf[JobStatus]
+    val Complete = "Complete".asInstanceOf[JobStatus]
     val Completing = "Completing".asInstanceOf[JobStatus]
-    val Failed     = "Failed".asInstanceOf[JobStatus]
-    val Failing    = "Failing".asInstanceOf[JobStatus]
-    val New        = "New".asInstanceOf[JobStatus]
-    val Paused     = "Paused".asInstanceOf[JobStatus]
-    val Pausing    = "Pausing".asInstanceOf[JobStatus]
-    val Preparing  = "Preparing".asInstanceOf[JobStatus]
-    val Ready      = "Ready".asInstanceOf[JobStatus]
-    val Suspended  = "Suspended".asInstanceOf[JobStatus]
+    val Failed = "Failed".asInstanceOf[JobStatus]
+    val Failing = "Failing".asInstanceOf[JobStatus]
+    val New = "New".asInstanceOf[JobStatus]
+    val Paused = "Paused".asInstanceOf[JobStatus]
+    val Pausing = "Pausing".asInstanceOf[JobStatus]
+    val Preparing = "Preparing".asInstanceOf[JobStatus]
+    val Ready = "Ready".asInstanceOf[JobStatus]
+    val Suspended = "Suspended".asInstanceOf[JobStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1072,7 +1072,7 @@ package s3control {
   sealed trait NetworkOrigin extends js.Any
   object NetworkOrigin extends js.Object {
     val Internet = "Internet".asInstanceOf[NetworkOrigin]
-    val VPC      = "VPC".asInstanceOf[NetworkOrigin]
+    val VPC = "VPC".asInstanceOf[NetworkOrigin]
 
     val values = js.Object.freeze(js.Array(Internet, VPC))
   }
@@ -1080,13 +1080,13 @@ package s3control {
   @js.native
   sealed trait OperationName extends js.Any
   object OperationName extends js.Object {
-    val LambdaInvoke            = "LambdaInvoke".asInstanceOf[OperationName]
-    val S3PutObjectCopy         = "S3PutObjectCopy".asInstanceOf[OperationName]
-    val S3PutObjectAcl          = "S3PutObjectAcl".asInstanceOf[OperationName]
-    val S3PutObjectTagging      = "S3PutObjectTagging".asInstanceOf[OperationName]
+    val LambdaInvoke = "LambdaInvoke".asInstanceOf[OperationName]
+    val S3PutObjectCopy = "S3PutObjectCopy".asInstanceOf[OperationName]
+    val S3PutObjectAcl = "S3PutObjectAcl".asInstanceOf[OperationName]
+    val S3PutObjectTagging = "S3PutObjectTagging".asInstanceOf[OperationName]
     val S3InitiateRestoreObject = "S3InitiateRestoreObject".asInstanceOf[OperationName]
-    val S3PutObjectLegalHold    = "S3PutObjectLegalHold".asInstanceOf[OperationName]
-    val S3PutObjectRetention    = "S3PutObjectRetention".asInstanceOf[OperationName]
+    val S3PutObjectLegalHold = "S3PutObjectLegalHold".asInstanceOf[OperationName]
+    val S3PutObjectRetention = "S3PutObjectRetention".asInstanceOf[OperationName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1164,8 +1164,8 @@ package s3control {
     ): PutAccessPointPolicyRequest = {
       val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any],
-        "Policy"    -> Policy.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Policy" -> Policy.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutAccessPointPolicyRequest]
@@ -1188,8 +1188,8 @@ package s3control {
     ): PutJobTaggingRequest = {
       val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "JobId"     -> JobId.asInstanceOf[js.Any],
-        "Tags"      -> Tags.asInstanceOf[js.Any]
+        "JobId" -> JobId.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutJobTaggingRequest]
@@ -1222,7 +1222,7 @@ package s3control {
         PublicAccessBlockConfiguration: PublicAccessBlockConfiguration
     ): PutPublicAccessBlockRequest = {
       val __obj = js.Dynamic.literal(
-        "AccountId"                      -> AccountId.asInstanceOf[js.Any],
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
         "PublicAccessBlockConfiguration" -> PublicAccessBlockConfiguration.asInstanceOf[js.Any]
       )
 
@@ -1234,7 +1234,7 @@ package s3control {
   sealed trait RequestedJobStatus extends js.Any
   object RequestedJobStatus extends js.Object {
     val Cancelled = "Cancelled".asInstanceOf[RequestedJobStatus]
-    val Ready     = "Ready".asInstanceOf[RequestedJobStatus]
+    val Ready = "Ready".asInstanceOf[RequestedJobStatus]
 
     val values = js.Object.freeze(js.Array(Cancelled, Ready))
   }
@@ -1288,12 +1288,12 @@ package s3control {
   @js.native
   sealed trait S3CannedAccessControlList extends js.Any
   object S3CannedAccessControlList extends js.Object {
-    val `private`                   = "private".asInstanceOf[S3CannedAccessControlList]
-    val `public-read`               = "public-read".asInstanceOf[S3CannedAccessControlList]
-    val `public-read-write`         = "public-read-write".asInstanceOf[S3CannedAccessControlList]
-    val `aws-exec-read`             = "aws-exec-read".asInstanceOf[S3CannedAccessControlList]
-    val `authenticated-read`        = "authenticated-read".asInstanceOf[S3CannedAccessControlList]
-    val `bucket-owner-read`         = "bucket-owner-read".asInstanceOf[S3CannedAccessControlList]
+    val `private` = "private".asInstanceOf[S3CannedAccessControlList]
+    val `public-read` = "public-read".asInstanceOf[S3CannedAccessControlList]
+    val `public-read-write` = "public-read-write".asInstanceOf[S3CannedAccessControlList]
+    val `aws-exec-read` = "aws-exec-read".asInstanceOf[S3CannedAccessControlList]
+    val `authenticated-read` = "authenticated-read".asInstanceOf[S3CannedAccessControlList]
+    val `bucket-owner-read` = "bucket-owner-read".asInstanceOf[S3CannedAccessControlList]
     val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[S3CannedAccessControlList]
 
     val values = js.Object.freeze(
@@ -1382,7 +1382,7 @@ package s3control {
   @js.native
   sealed trait S3GlacierJobTier extends js.Any
   object S3GlacierJobTier extends js.Object {
-    val BULK     = "BULK".asInstanceOf[S3GlacierJobTier]
+    val BULK = "BULK".asInstanceOf[S3GlacierJobTier]
     val STANDARD = "STANDARD".asInstanceOf[S3GlacierJobTier]
 
     val values = js.Object.freeze(js.Array(BULK, STANDARD))
@@ -1438,9 +1438,9 @@ package s3control {
   @js.native
   sealed trait S3GranteeTypeIdentifier extends js.Any
   object S3GranteeTypeIdentifier extends js.Object {
-    val id           = "id".asInstanceOf[S3GranteeTypeIdentifier]
+    val id = "id".asInstanceOf[S3GranteeTypeIdentifier]
     val emailAddress = "emailAddress".asInstanceOf[S3GranteeTypeIdentifier]
-    val uri          = "uri".asInstanceOf[S3GranteeTypeIdentifier]
+    val uri = "uri".asInstanceOf[S3GranteeTypeIdentifier]
 
     val values = js.Object.freeze(js.Array(id, emailAddress, uri))
   }
@@ -1470,7 +1470,7 @@ package s3control {
   @js.native
   sealed trait S3MetadataDirective extends js.Any
   object S3MetadataDirective extends js.Object {
-    val COPY    = "COPY".asInstanceOf[S3MetadataDirective]
+    val COPY = "COPY".asInstanceOf[S3MetadataDirective]
     val REPLACE = "REPLACE".asInstanceOf[S3MetadataDirective]
 
     val values = js.Object.freeze(js.Array(COPY, REPLACE))
@@ -1501,7 +1501,7 @@ package s3control {
   sealed trait S3ObjectLockLegalHoldStatus extends js.Any
   object S3ObjectLockLegalHoldStatus extends js.Object {
     val OFF = "OFF".asInstanceOf[S3ObjectLockLegalHoldStatus]
-    val ON  = "ON".asInstanceOf[S3ObjectLockLegalHoldStatus]
+    val ON = "ON".asInstanceOf[S3ObjectLockLegalHoldStatus]
 
     val values = js.Object.freeze(js.Array(OFF, ON))
   }
@@ -1599,10 +1599,10 @@ package s3control {
   sealed trait S3Permission extends js.Any
   object S3Permission extends js.Object {
     val FULL_CONTROL = "FULL_CONTROL".asInstanceOf[S3Permission]
-    val READ         = "READ".asInstanceOf[S3Permission]
-    val WRITE        = "WRITE".asInstanceOf[S3Permission]
-    val READ_ACP     = "READ_ACP".asInstanceOf[S3Permission]
-    val WRITE_ACP    = "WRITE_ACP".asInstanceOf[S3Permission]
+    val READ = "READ".asInstanceOf[S3Permission]
+    val WRITE = "WRITE".asInstanceOf[S3Permission]
+    val READ_ACP = "READ_ACP".asInstanceOf[S3Permission]
+    val WRITE_ACP = "WRITE_ACP".asInstanceOf[S3Permission]
 
     val values = js.Object.freeze(js.Array(FULL_CONTROL, READ, WRITE, READ_ACP, WRITE_ACP))
   }
@@ -1633,7 +1633,7 @@ package s3control {
   sealed trait S3SSEAlgorithm extends js.Any
   object S3SSEAlgorithm extends js.Object {
     val AES256 = "AES256".asInstanceOf[S3SSEAlgorithm]
-    val KMS    = "KMS".asInstanceOf[S3SSEAlgorithm]
+    val KMS = "KMS".asInstanceOf[S3SSEAlgorithm]
 
     val values = js.Object.freeze(js.Array(AES256, KMS))
   }
@@ -1726,12 +1726,12 @@ package s3control {
   @js.native
   sealed trait S3StorageClass extends js.Any
   object S3StorageClass extends js.Object {
-    val STANDARD            = "STANDARD".asInstanceOf[S3StorageClass]
-    val STANDARD_IA         = "STANDARD_IA".asInstanceOf[S3StorageClass]
-    val ONEZONE_IA          = "ONEZONE_IA".asInstanceOf[S3StorageClass]
-    val GLACIER             = "GLACIER".asInstanceOf[S3StorageClass]
+    val STANDARD = "STANDARD".asInstanceOf[S3StorageClass]
+    val STANDARD_IA = "STANDARD_IA".asInstanceOf[S3StorageClass]
+    val ONEZONE_IA = "ONEZONE_IA".asInstanceOf[S3StorageClass]
+    val GLACIER = "GLACIER".asInstanceOf[S3StorageClass]
     val INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[S3StorageClass]
-    val DEEP_ARCHIVE        = "DEEP_ARCHIVE".asInstanceOf[S3StorageClass]
+    val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[S3StorageClass]
 
     val values =
       js.Object.freeze(js.Array(STANDARD, STANDARD_IA, ONEZONE_IA, GLACIER, INTELLIGENT_TIERING, DEEP_ARCHIVE))
@@ -1753,7 +1753,7 @@ package s3control {
         Value: TagValueString
     ): S3Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -1777,8 +1777,8 @@ package s3control {
     ): UpdateJobPriorityRequest = {
       val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "JobId"     -> JobId.asInstanceOf[js.Any],
-        "Priority"  -> Priority.asInstanceOf[js.Any]
+        "JobId" -> JobId.asInstanceOf[js.Any],
+        "Priority" -> Priority.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateJobPriorityRequest]
@@ -1798,7 +1798,7 @@ package s3control {
         Priority: JobPriority
     ): UpdateJobPriorityResult = {
       val __obj = js.Dynamic.literal(
-        "JobId"    -> JobId.asInstanceOf[js.Any],
+        "JobId" -> JobId.asInstanceOf[js.Any],
         "Priority" -> Priority.asInstanceOf[js.Any]
       )
 
@@ -1823,8 +1823,8 @@ package s3control {
         StatusUpdateReason: js.UndefOr[JobStatusUpdateReason] = js.undefined
     ): UpdateJobStatusRequest = {
       val __obj = js.Dynamic.literal(
-        "AccountId"          -> AccountId.asInstanceOf[js.Any],
-        "JobId"              -> JobId.asInstanceOf[js.Any],
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "JobId" -> JobId.asInstanceOf[js.Any],
         "RequestedJobStatus" -> RequestedJobStatus.asInstanceOf[js.Any]
       )
 

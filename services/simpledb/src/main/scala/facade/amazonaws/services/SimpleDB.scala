@@ -7,14 +7,14 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object simpledb {
-  type AttributeList            = js.Array[Attribute]
-  type AttributeNameList        = js.Array[String]
-  type DeletableAttributeList   = js.Array[DeletableAttribute]
-  type DeletableItemList        = js.Array[DeletableItem]
-  type DomainNameList           = js.Array[String]
-  type ItemList                 = js.Array[Item]
+  type AttributeList = js.Array[Attribute]
+  type AttributeNameList = js.Array[String]
+  type DeletableAttributeList = js.Array[DeletableAttribute]
+  type DeletableItemList = js.Array[DeletableItem]
+  type DomainNameList = js.Array[String]
+  type ItemList = js.Array[Item]
   type ReplaceableAttributeList = js.Array[ReplaceableAttribute]
-  type ReplaceableItemList      = js.Array[ReplaceableItem]
+  type ReplaceableItemList = js.Array[ReplaceableItem]
 
   implicit final class SimpleDBOps(private val service: SimpleDB) extends AnyVal {
 
@@ -47,15 +47,15 @@ package simpledb {
     def this(config: AWSConfig) = this()
 
     def batchDeleteAttributes(params: BatchDeleteAttributesRequest): Request[js.Object] = js.native
-    def batchPutAttributes(params: BatchPutAttributesRequest): Request[js.Object]       = js.native
-    def createDomain(params: CreateDomainRequest): Request[js.Object]                   = js.native
-    def deleteAttributes(params: DeleteAttributesRequest): Request[js.Object]           = js.native
-    def deleteDomain(params: DeleteDomainRequest): Request[js.Object]                   = js.native
-    def domainMetadata(params: DomainMetadataRequest): Request[DomainMetadataResult]    = js.native
-    def getAttributes(params: GetAttributesRequest): Request[GetAttributesResult]       = js.native
-    def listDomains(params: ListDomainsRequest): Request[ListDomainsResult]             = js.native
-    def putAttributes(params: PutAttributesRequest): Request[js.Object]                 = js.native
-    def select(params: SelectRequest): Request[SelectResult]                            = js.native
+    def batchPutAttributes(params: BatchPutAttributesRequest): Request[js.Object] = js.native
+    def createDomain(params: CreateDomainRequest): Request[js.Object] = js.native
+    def deleteAttributes(params: DeleteAttributesRequest): Request[js.Object] = js.native
+    def deleteDomain(params: DeleteDomainRequest): Request[js.Object] = js.native
+    def domainMetadata(params: DomainMetadataRequest): Request[DomainMetadataResult] = js.native
+    def getAttributes(params: GetAttributesRequest): Request[GetAttributesResult] = js.native
+    def listDomains(params: ListDomainsRequest): Request[ListDomainsResult] = js.native
+    def putAttributes(params: PutAttributesRequest): Request[js.Object] = js.native
+    def select(params: SelectRequest): Request[SelectResult] = js.native
   }
 
   /**
@@ -77,7 +77,7 @@ package simpledb {
         AlternateValueEncoding: js.UndefOr[String] = js.undefined
     ): Attribute = {
       val __obj = js.Dynamic.literal(
-        "Name"  -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -109,7 +109,7 @@ package simpledb {
     ): BatchDeleteAttributesRequest = {
       val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any],
-        "Items"      -> Items.asInstanceOf[js.Any]
+        "Items" -> Items.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[BatchDeleteAttributesRequest]
@@ -130,7 +130,7 @@ package simpledb {
     ): BatchPutAttributesRequest = {
       val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any],
-        "Items"      -> Items.asInstanceOf[js.Any]
+        "Items" -> Items.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[BatchPutAttributesRequest]
@@ -217,7 +217,7 @@ package simpledb {
     ): DeleteAttributesRequest = {
       val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any],
-        "ItemName"   -> ItemName.asInstanceOf[js.Any]
+        "ItemName" -> ItemName.asInstanceOf[js.Any]
       )
 
       Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
@@ -322,7 +322,7 @@ package simpledb {
     ): GetAttributesRequest = {
       val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any],
-        "ItemName"   -> ItemName.asInstanceOf[js.Any]
+        "ItemName" -> ItemName.asInstanceOf[js.Any]
       )
 
       AttributeNames.foreach(__v => __obj.updateDynamic("AttributeNames")(__v.asInstanceOf[js.Any]))
@@ -405,7 +405,7 @@ package simpledb {
     ): Item = {
       val __obj = js.Dynamic.literal(
         "Attributes" -> Attributes.asInstanceOf[js.Any],
-        "Name"       -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       AlternateNameEncoding.foreach(__v => __obj.updateDynamic("AlternateNameEncoding")(__v.asInstanceOf[js.Any]))
@@ -534,7 +534,7 @@ package simpledb {
       val __obj = js.Dynamic.literal(
         "Attributes" -> Attributes.asInstanceOf[js.Any],
         "DomainName" -> DomainName.asInstanceOf[js.Any],
-        "ItemName"   -> ItemName.asInstanceOf[js.Any]
+        "ItemName" -> ItemName.asInstanceOf[js.Any]
       )
 
       Expected.foreach(__v => __obj.updateDynamic("Expected")(__v.asInstanceOf[js.Any]))
@@ -559,7 +559,7 @@ package simpledb {
         Replace: js.UndefOr[Boolean] = js.undefined
     ): ReplaceableAttribute = {
       val __obj = js.Dynamic.literal(
-        "Name"  -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -584,7 +584,7 @@ package simpledb {
     ): ReplaceableItem = {
       val __obj = js.Dynamic.literal(
         "Attributes" -> Attributes.asInstanceOf[js.Any],
-        "Name"       -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ReplaceableItem]

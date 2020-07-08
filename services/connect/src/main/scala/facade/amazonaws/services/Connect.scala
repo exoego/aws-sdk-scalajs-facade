@@ -7,76 +7,76 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object connect {
-  type ARN                             = String
-  type AfterContactWorkTimeLimit       = Int
-  type AgentFirstName                  = String
-  type AgentLastName                   = String
-  type AgentUsername                   = String
-  type AttributeName                   = String
-  type AttributeValue                  = String
-  type Attributes                      = js.Dictionary[AttributeValue]
-  type AutoAccept                      = Boolean
-  type Channels                        = js.Array[Channel]
-  type ChatContent                     = String
-  type ChatContentType                 = String
-  type ClientToken                     = String
-  type ContactFlowId                   = String
-  type ContactFlowName                 = String
-  type ContactFlowSummaryList          = js.Array[ContactFlowSummary]
-  type ContactFlowTypes                = js.Array[ContactFlowType]
-  type ContactId                       = String
-  type CurrentMetricDataCollections    = js.Array[CurrentMetricData]
-  type CurrentMetricResults            = js.Array[CurrentMetricResult]
-  type CurrentMetrics                  = js.Array[CurrentMetric]
-  type DirectoryUserId                 = String
-  type DisplayName                     = String
-  type Email                           = String
-  type Groupings                       = js.Array[Grouping]
-  type HierarchyGroupId                = String
-  type HierarchyGroupName              = String
-  type HierarchyGroupSummaryList       = js.Array[HierarchyGroupSummary]
-  type HierarchyLevelId                = String
-  type HierarchyLevelName              = String
+  type ARN = String
+  type AfterContactWorkTimeLimit = Int
+  type AgentFirstName = String
+  type AgentLastName = String
+  type AgentUsername = String
+  type AttributeName = String
+  type AttributeValue = String
+  type Attributes = js.Dictionary[AttributeValue]
+  type AutoAccept = Boolean
+  type Channels = js.Array[Channel]
+  type ChatContent = String
+  type ChatContentType = String
+  type ClientToken = String
+  type ContactFlowId = String
+  type ContactFlowName = String
+  type ContactFlowSummaryList = js.Array[ContactFlowSummary]
+  type ContactFlowTypes = js.Array[ContactFlowType]
+  type ContactId = String
+  type CurrentMetricDataCollections = js.Array[CurrentMetricData]
+  type CurrentMetricResults = js.Array[CurrentMetricResult]
+  type CurrentMetrics = js.Array[CurrentMetric]
+  type DirectoryUserId = String
+  type DisplayName = String
+  type Email = String
+  type Groupings = js.Array[Grouping]
+  type HierarchyGroupId = String
+  type HierarchyGroupName = String
+  type HierarchyGroupSummaryList = js.Array[HierarchyGroupSummary]
+  type HierarchyLevelId = String
+  type HierarchyLevelName = String
   type HistoricalMetricDataCollections = js.Array[HistoricalMetricData]
-  type HistoricalMetricResults         = js.Array[HistoricalMetricResult]
-  type HistoricalMetrics               = js.Array[HistoricalMetric]
-  type HoursOfOperationId              = String
-  type HoursOfOperationName            = String
-  type HoursOfOperationSummaryList     = js.Array[HoursOfOperationSummary]
-  type InstanceId                      = String
-  type MaxResult100                    = Int
-  type MaxResult1000                   = Int
-  type NextToken                       = String
-  type ParticipantId                   = String
-  type ParticipantToken                = String
-  type Password                        = String
-  type PhoneNumber                     = String
-  type PhoneNumberCountryCodes         = js.Array[PhoneNumberCountryCode]
-  type PhoneNumberId                   = String
-  type PhoneNumberSummaryList          = js.Array[PhoneNumberSummary]
-  type PhoneNumberTypes                = js.Array[PhoneNumberType]
-  type QueueId                         = String
-  type QueueName                       = String
-  type QueueSummaryList                = js.Array[QueueSummary]
-  type QueueTypes                      = js.Array[QueueType]
-  type Queues                          = js.Array[QueueId]
-  type RoutingProfileId                = String
-  type RoutingProfileName              = String
-  type RoutingProfileSummaryList       = js.Array[RoutingProfileSummary]
-  type SecurityProfileId               = String
-  type SecurityProfileIds              = js.Array[SecurityProfileId]
-  type SecurityProfileName             = String
-  type SecurityProfileSummaryList      = js.Array[SecurityProfileSummary]
-  type SecurityToken                   = String
-  type TagKey                          = String
-  type TagKeyList                      = js.Array[TagKey]
-  type TagMap                          = js.Dictionary[TagValue]
-  type TagValue                        = String
-  type ThresholdValue                  = Double
-  type UserId                          = String
-  type UserSummaryList                 = js.Array[UserSummary]
-  type Value                           = Double
-  type timestamp                       = js.Date
+  type HistoricalMetricResults = js.Array[HistoricalMetricResult]
+  type HistoricalMetrics = js.Array[HistoricalMetric]
+  type HoursOfOperationId = String
+  type HoursOfOperationName = String
+  type HoursOfOperationSummaryList = js.Array[HoursOfOperationSummary]
+  type InstanceId = String
+  type MaxResult100 = Int
+  type MaxResult1000 = Int
+  type NextToken = String
+  type ParticipantId = String
+  type ParticipantToken = String
+  type Password = String
+  type PhoneNumber = String
+  type PhoneNumberCountryCodes = js.Array[PhoneNumberCountryCode]
+  type PhoneNumberId = String
+  type PhoneNumberSummaryList = js.Array[PhoneNumberSummary]
+  type PhoneNumberTypes = js.Array[PhoneNumberType]
+  type QueueId = String
+  type QueueName = String
+  type QueueSummaryList = js.Array[QueueSummary]
+  type QueueTypes = js.Array[QueueType]
+  type Queues = js.Array[QueueId]
+  type RoutingProfileId = String
+  type RoutingProfileName = String
+  type RoutingProfileSummaryList = js.Array[RoutingProfileSummary]
+  type SecurityProfileId = String
+  type SecurityProfileIds = js.Array[SecurityProfileId]
+  type SecurityProfileName = String
+  type SecurityProfileSummaryList = js.Array[SecurityProfileSummary]
+  type SecurityToken = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagMap = js.Dictionary[TagValue]
+  type TagValue = String
+  type ThresholdValue = Double
+  type UserId = String
+  type UserSummaryList = js.Array[UserSummary]
+  type Value = Double
+  type timestamp = js.Date
 
   implicit final class ConnectOps(private val service: Connect) extends AnyVal {
 
@@ -154,42 +154,42 @@ package connect {
   class Connect() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createUser(params: CreateUserRequest): Request[CreateUserResponse]       = js.native
-    def deleteUser(params: DeleteUserRequest): Request[js.Object]                = js.native
+    def createUser(params: CreateUserRequest): Request[CreateUserResponse] = js.native
+    def deleteUser(params: DeleteUserRequest): Request[js.Object] = js.native
     def describeUser(params: DescribeUserRequest): Request[DescribeUserResponse] = js.native
     def describeUserHierarchyGroup(
         params: DescribeUserHierarchyGroupRequest
     ): Request[DescribeUserHierarchyGroupResponse] = js.native
     def describeUserHierarchyStructure(
         params: DescribeUserHierarchyStructureRequest
-    ): Request[DescribeUserHierarchyStructureResponse]                                                      = js.native
-    def getContactAttributes(params: GetContactAttributesRequest): Request[GetContactAttributesResponse]    = js.native
-    def getCurrentMetricData(params: GetCurrentMetricDataRequest): Request[GetCurrentMetricDataResponse]    = js.native
-    def getFederationToken(params: GetFederationTokenRequest): Request[GetFederationTokenResponse]          = js.native
-    def getMetricData(params: GetMetricDataRequest): Request[GetMetricDataResponse]                         = js.native
-    def listContactFlows(params: ListContactFlowsRequest): Request[ListContactFlowsResponse]                = js.native
+    ): Request[DescribeUserHierarchyStructureResponse] = js.native
+    def getContactAttributes(params: GetContactAttributesRequest): Request[GetContactAttributesResponse] = js.native
+    def getCurrentMetricData(params: GetCurrentMetricDataRequest): Request[GetCurrentMetricDataResponse] = js.native
+    def getFederationToken(params: GetFederationTokenRequest): Request[GetFederationTokenResponse] = js.native
+    def getMetricData(params: GetMetricDataRequest): Request[GetMetricDataResponse] = js.native
+    def listContactFlows(params: ListContactFlowsRequest): Request[ListContactFlowsResponse] = js.native
     def listHoursOfOperations(params: ListHoursOfOperationsRequest): Request[ListHoursOfOperationsResponse] = js.native
-    def listPhoneNumbers(params: ListPhoneNumbersRequest): Request[ListPhoneNumbersResponse]                = js.native
-    def listQueues(params: ListQueuesRequest): Request[ListQueuesResponse]                                  = js.native
-    def listRoutingProfiles(params: ListRoutingProfilesRequest): Request[ListRoutingProfilesResponse]       = js.native
-    def listSecurityProfiles(params: ListSecurityProfilesRequest): Request[ListSecurityProfilesResponse]    = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
+    def listPhoneNumbers(params: ListPhoneNumbersRequest): Request[ListPhoneNumbersResponse] = js.native
+    def listQueues(params: ListQueuesRequest): Request[ListQueuesResponse] = js.native
+    def listRoutingProfiles(params: ListRoutingProfilesRequest): Request[ListRoutingProfilesResponse] = js.native
+    def listSecurityProfiles(params: ListSecurityProfilesRequest): Request[ListSecurityProfilesResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listUserHierarchyGroups(params: ListUserHierarchyGroupsRequest): Request[ListUserHierarchyGroupsResponse] =
       js.native
-    def listUsers(params: ListUsersRequest): Request[ListUsersResponse]                      = js.native
+    def listUsers(params: ListUsersRequest): Request[ListUsersResponse] = js.native
     def startChatContact(params: StartChatContactRequest): Request[StartChatContactResponse] = js.native
     def startOutboundVoiceContact(
         params: StartOutboundVoiceContactRequest
-    ): Request[StartOutboundVoiceContactResponse]                             = js.native
+    ): Request[StartOutboundVoiceContactResponse] = js.native
     def stopContact(params: StopContactRequest): Request[StopContactResponse] = js.native
-    def tagResource(params: TagResourceRequest): Request[js.Object]           = js.native
-    def untagResource(params: UntagResourceRequest): Request[js.Object]       = js.native
+    def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
+    def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateContactAttributes(params: UpdateContactAttributesRequest): Request[UpdateContactAttributesResponse] =
       js.native
-    def updateUserHierarchy(params: UpdateUserHierarchyRequest): Request[js.Object]               = js.native
-    def updateUserIdentityInfo(params: UpdateUserIdentityInfoRequest): Request[js.Object]         = js.native
-    def updateUserPhoneConfig(params: UpdateUserPhoneConfigRequest): Request[js.Object]           = js.native
-    def updateUserRoutingProfile(params: UpdateUserRoutingProfileRequest): Request[js.Object]     = js.native
+    def updateUserHierarchy(params: UpdateUserHierarchyRequest): Request[js.Object] = js.native
+    def updateUserIdentityInfo(params: UpdateUserIdentityInfoRequest): Request[js.Object] = js.native
+    def updateUserPhoneConfig(params: UpdateUserPhoneConfigRequest): Request[js.Object] = js.native
+    def updateUserRoutingProfile(params: UpdateUserRoutingProfileRequest): Request[js.Object] = js.native
     def updateUserSecurityProfiles(params: UpdateUserSecurityProfilesRequest): Request[js.Object] = js.native
   }
 
@@ -197,7 +197,7 @@ package connect {
   sealed trait Channel extends js.Any
   object Channel extends js.Object {
     val VOICE = "VOICE".asInstanceOf[Channel]
-    val CHAT  = "CHAT".asInstanceOf[Channel]
+    val CHAT = "CHAT".asInstanceOf[Channel]
 
     val values = js.Object.freeze(js.Array(VOICE, CHAT))
   }
@@ -218,7 +218,7 @@ package connect {
         ContentType: ChatContentType
     ): ChatMessage = {
       val __obj = js.Dynamic.literal(
-        "Content"     -> Content.asInstanceOf[js.Any],
+        "Content" -> Content.asInstanceOf[js.Any],
         "ContentType" -> ContentType.asInstanceOf[js.Any]
       )
 
@@ -265,15 +265,15 @@ package connect {
   @js.native
   sealed trait ContactFlowType extends js.Any
   object ContactFlowType extends js.Object {
-    val CONTACT_FLOW     = "CONTACT_FLOW".asInstanceOf[ContactFlowType]
-    val CUSTOMER_QUEUE   = "CUSTOMER_QUEUE".asInstanceOf[ContactFlowType]
-    val CUSTOMER_HOLD    = "CUSTOMER_HOLD".asInstanceOf[ContactFlowType]
+    val CONTACT_FLOW = "CONTACT_FLOW".asInstanceOf[ContactFlowType]
+    val CUSTOMER_QUEUE = "CUSTOMER_QUEUE".asInstanceOf[ContactFlowType]
+    val CUSTOMER_HOLD = "CUSTOMER_HOLD".asInstanceOf[ContactFlowType]
     val CUSTOMER_WHISPER = "CUSTOMER_WHISPER".asInstanceOf[ContactFlowType]
-    val AGENT_HOLD       = "AGENT_HOLD".asInstanceOf[ContactFlowType]
-    val AGENT_WHISPER    = "AGENT_WHISPER".asInstanceOf[ContactFlowType]
+    val AGENT_HOLD = "AGENT_HOLD".asInstanceOf[ContactFlowType]
+    val AGENT_WHISPER = "AGENT_WHISPER".asInstanceOf[ContactFlowType]
     val OUTBOUND_WHISPER = "OUTBOUND_WHISPER".asInstanceOf[ContactFlowType]
-    val AGENT_TRANSFER   = "AGENT_TRANSFER".asInstanceOf[ContactFlowType]
-    val QUEUE_TRANSFER   = "QUEUE_TRANSFER".asInstanceOf[ContactFlowType]
+    val AGENT_TRANSFER = "AGENT_TRANSFER".asInstanceOf[ContactFlowType]
+    val QUEUE_TRANSFER = "QUEUE_TRANSFER".asInstanceOf[ContactFlowType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -319,11 +319,11 @@ package connect {
         Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateUserRequest = {
       val __obj = js.Dynamic.literal(
-        "InstanceId"         -> InstanceId.asInstanceOf[js.Any],
-        "PhoneConfig"        -> PhoneConfig.asInstanceOf[js.Any],
-        "RoutingProfileId"   -> RoutingProfileId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "PhoneConfig" -> PhoneConfig.asInstanceOf[js.Any],
+        "RoutingProfileId" -> RoutingProfileId.asInstanceOf[js.Any],
         "SecurityProfileIds" -> SecurityProfileIds.asInstanceOf[js.Any],
-        "Username"           -> Username.asInstanceOf[js.Any]
+        "Username" -> Username.asInstanceOf[js.Any]
       )
 
       DirectoryUserId.foreach(__v => __obj.updateDynamic("DirectoryUserId")(__v.asInstanceOf[js.Any]))
@@ -432,19 +432,19 @@ package connect {
   @js.native
   sealed trait CurrentMetricName extends js.Any
   object CurrentMetricName extends js.Object {
-    val AGENTS_ONLINE             = "AGENTS_ONLINE".asInstanceOf[CurrentMetricName]
-    val AGENTS_AVAILABLE          = "AGENTS_AVAILABLE".asInstanceOf[CurrentMetricName]
-    val AGENTS_ON_CALL            = "AGENTS_ON_CALL".asInstanceOf[CurrentMetricName]
-    val AGENTS_NON_PRODUCTIVE     = "AGENTS_NON_PRODUCTIVE".asInstanceOf[CurrentMetricName]
+    val AGENTS_ONLINE = "AGENTS_ONLINE".asInstanceOf[CurrentMetricName]
+    val AGENTS_AVAILABLE = "AGENTS_AVAILABLE".asInstanceOf[CurrentMetricName]
+    val AGENTS_ON_CALL = "AGENTS_ON_CALL".asInstanceOf[CurrentMetricName]
+    val AGENTS_NON_PRODUCTIVE = "AGENTS_NON_PRODUCTIVE".asInstanceOf[CurrentMetricName]
     val AGENTS_AFTER_CONTACT_WORK = "AGENTS_AFTER_CONTACT_WORK".asInstanceOf[CurrentMetricName]
-    val AGENTS_ERROR              = "AGENTS_ERROR".asInstanceOf[CurrentMetricName]
-    val AGENTS_STAFFED            = "AGENTS_STAFFED".asInstanceOf[CurrentMetricName]
-    val CONTACTS_IN_QUEUE         = "CONTACTS_IN_QUEUE".asInstanceOf[CurrentMetricName]
-    val OLDEST_CONTACT_AGE        = "OLDEST_CONTACT_AGE".asInstanceOf[CurrentMetricName]
-    val CONTACTS_SCHEDULED        = "CONTACTS_SCHEDULED".asInstanceOf[CurrentMetricName]
-    val AGENTS_ON_CONTACT         = "AGENTS_ON_CONTACT".asInstanceOf[CurrentMetricName]
-    val SLOTS_ACTIVE              = "SLOTS_ACTIVE".asInstanceOf[CurrentMetricName]
-    val SLOTS_AVAILABLE           = "SLOTS_AVAILABLE".asInstanceOf[CurrentMetricName]
+    val AGENTS_ERROR = "AGENTS_ERROR".asInstanceOf[CurrentMetricName]
+    val AGENTS_STAFFED = "AGENTS_STAFFED".asInstanceOf[CurrentMetricName]
+    val CONTACTS_IN_QUEUE = "CONTACTS_IN_QUEUE".asInstanceOf[CurrentMetricName]
+    val OLDEST_CONTACT_AGE = "OLDEST_CONTACT_AGE".asInstanceOf[CurrentMetricName]
+    val CONTACTS_SCHEDULED = "CONTACTS_SCHEDULED".asInstanceOf[CurrentMetricName]
+    val AGENTS_ON_CONTACT = "AGENTS_ON_CONTACT".asInstanceOf[CurrentMetricName]
+    val SLOTS_ACTIVE = "SLOTS_ACTIVE".asInstanceOf[CurrentMetricName]
+    val SLOTS_AVAILABLE = "SLOTS_AVAILABLE".asInstanceOf[CurrentMetricName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -501,7 +501,7 @@ package connect {
     ): DeleteUserRequest = {
       val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
-        "UserId"     -> UserId.asInstanceOf[js.Any]
+        "UserId" -> UserId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteUserRequest]
@@ -522,7 +522,7 @@ package connect {
     ): DescribeUserHierarchyGroupRequest = {
       val __obj = js.Dynamic.literal(
         "HierarchyGroupId" -> HierarchyGroupId.asInstanceOf[js.Any],
-        "InstanceId"       -> InstanceId.asInstanceOf[js.Any]
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeUserHierarchyGroupRequest]
@@ -593,7 +593,7 @@ package connect {
     ): DescribeUserRequest = {
       val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
-        "UserId"     -> UserId.asInstanceOf[js.Any]
+        "UserId" -> UserId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeUserRequest]
@@ -674,7 +674,7 @@ package connect {
     ): GetContactAttributesRequest = {
       val __obj = js.Dynamic.literal(
         "InitialContactId" -> InitialContactId.asInstanceOf[js.Any],
-        "InstanceId"       -> InstanceId.asInstanceOf[js.Any]
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetContactAttributesRequest]
@@ -719,8 +719,8 @@ package connect {
     ): GetCurrentMetricDataRequest = {
       val __obj = js.Dynamic.literal(
         "CurrentMetrics" -> CurrentMetrics.asInstanceOf[js.Any],
-        "Filters"        -> Filters.asInstanceOf[js.Any],
-        "InstanceId"     -> InstanceId.asInstanceOf[js.Any]
+        "Filters" -> Filters.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
       Groupings.foreach(__v => __obj.updateDynamic("Groupings")(__v.asInstanceOf[js.Any]))
@@ -811,11 +811,11 @@ package connect {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetMetricDataRequest = {
       val __obj = js.Dynamic.literal(
-        "EndTime"           -> EndTime.asInstanceOf[js.Any],
-        "Filters"           -> Filters.asInstanceOf[js.Any],
+        "EndTime" -> EndTime.asInstanceOf[js.Any],
+        "Filters" -> Filters.asInstanceOf[js.Any],
         "HistoricalMetrics" -> HistoricalMetrics.asInstanceOf[js.Any],
-        "InstanceId"        -> InstanceId.asInstanceOf[js.Any],
-        "StartTime"         -> StartTime.asInstanceOf[js.Any]
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "StartTime" -> StartTime.asInstanceOf[js.Any]
       )
 
       Groupings.foreach(__v => __obj.updateDynamic("Groupings")(__v.asInstanceOf[js.Any]))
@@ -847,7 +847,7 @@ package connect {
   @js.native
   sealed trait Grouping extends js.Any
   object Grouping extends js.Object {
-    val QUEUE   = "QUEUE".asInstanceOf[Grouping]
+    val QUEUE = "QUEUE".asInstanceOf[Grouping]
     val CHANNEL = "CHANNEL".asInstanceOf[Grouping]
 
     val values = js.Object.freeze(js.Array(QUEUE, CHANNEL))
@@ -1052,31 +1052,31 @@ package connect {
   @js.native
   sealed trait HistoricalMetricName extends js.Any
   object HistoricalMetricName extends js.Object {
-    val CONTACTS_QUEUED                     = "CONTACTS_QUEUED".asInstanceOf[HistoricalMetricName]
-    val CONTACTS_HANDLED                    = "CONTACTS_HANDLED".asInstanceOf[HistoricalMetricName]
-    val CONTACTS_ABANDONED                  = "CONTACTS_ABANDONED".asInstanceOf[HistoricalMetricName]
-    val CONTACTS_CONSULTED                  = "CONTACTS_CONSULTED".asInstanceOf[HistoricalMetricName]
-    val CONTACTS_AGENT_HUNG_UP_FIRST        = "CONTACTS_AGENT_HUNG_UP_FIRST".asInstanceOf[HistoricalMetricName]
-    val CONTACTS_HANDLED_INCOMING           = "CONTACTS_HANDLED_INCOMING".asInstanceOf[HistoricalMetricName]
-    val CONTACTS_HANDLED_OUTBOUND           = "CONTACTS_HANDLED_OUTBOUND".asInstanceOf[HistoricalMetricName]
-    val CONTACTS_HOLD_ABANDONS              = "CONTACTS_HOLD_ABANDONS".asInstanceOf[HistoricalMetricName]
-    val CONTACTS_TRANSFERRED_IN             = "CONTACTS_TRANSFERRED_IN".asInstanceOf[HistoricalMetricName]
-    val CONTACTS_TRANSFERRED_OUT            = "CONTACTS_TRANSFERRED_OUT".asInstanceOf[HistoricalMetricName]
-    val CONTACTS_TRANSFERRED_IN_FROM_QUEUE  = "CONTACTS_TRANSFERRED_IN_FROM_QUEUE".asInstanceOf[HistoricalMetricName]
+    val CONTACTS_QUEUED = "CONTACTS_QUEUED".asInstanceOf[HistoricalMetricName]
+    val CONTACTS_HANDLED = "CONTACTS_HANDLED".asInstanceOf[HistoricalMetricName]
+    val CONTACTS_ABANDONED = "CONTACTS_ABANDONED".asInstanceOf[HistoricalMetricName]
+    val CONTACTS_CONSULTED = "CONTACTS_CONSULTED".asInstanceOf[HistoricalMetricName]
+    val CONTACTS_AGENT_HUNG_UP_FIRST = "CONTACTS_AGENT_HUNG_UP_FIRST".asInstanceOf[HistoricalMetricName]
+    val CONTACTS_HANDLED_INCOMING = "CONTACTS_HANDLED_INCOMING".asInstanceOf[HistoricalMetricName]
+    val CONTACTS_HANDLED_OUTBOUND = "CONTACTS_HANDLED_OUTBOUND".asInstanceOf[HistoricalMetricName]
+    val CONTACTS_HOLD_ABANDONS = "CONTACTS_HOLD_ABANDONS".asInstanceOf[HistoricalMetricName]
+    val CONTACTS_TRANSFERRED_IN = "CONTACTS_TRANSFERRED_IN".asInstanceOf[HistoricalMetricName]
+    val CONTACTS_TRANSFERRED_OUT = "CONTACTS_TRANSFERRED_OUT".asInstanceOf[HistoricalMetricName]
+    val CONTACTS_TRANSFERRED_IN_FROM_QUEUE = "CONTACTS_TRANSFERRED_IN_FROM_QUEUE".asInstanceOf[HistoricalMetricName]
     val CONTACTS_TRANSFERRED_OUT_FROM_QUEUE = "CONTACTS_TRANSFERRED_OUT_FROM_QUEUE".asInstanceOf[HistoricalMetricName]
-    val CONTACTS_MISSED                     = "CONTACTS_MISSED".asInstanceOf[HistoricalMetricName]
-    val CALLBACK_CONTACTS_HANDLED           = "CALLBACK_CONTACTS_HANDLED".asInstanceOf[HistoricalMetricName]
-    val API_CONTACTS_HANDLED                = "API_CONTACTS_HANDLED".asInstanceOf[HistoricalMetricName]
-    val OCCUPANCY                           = "OCCUPANCY".asInstanceOf[HistoricalMetricName]
-    val HANDLE_TIME                         = "HANDLE_TIME".asInstanceOf[HistoricalMetricName]
-    val AFTER_CONTACT_WORK_TIME             = "AFTER_CONTACT_WORK_TIME".asInstanceOf[HistoricalMetricName]
-    val QUEUED_TIME                         = "QUEUED_TIME".asInstanceOf[HistoricalMetricName]
-    val ABANDON_TIME                        = "ABANDON_TIME".asInstanceOf[HistoricalMetricName]
-    val QUEUE_ANSWER_TIME                   = "QUEUE_ANSWER_TIME".asInstanceOf[HistoricalMetricName]
-    val HOLD_TIME                           = "HOLD_TIME".asInstanceOf[HistoricalMetricName]
-    val INTERACTION_TIME                    = "INTERACTION_TIME".asInstanceOf[HistoricalMetricName]
-    val INTERACTION_AND_HOLD_TIME           = "INTERACTION_AND_HOLD_TIME".asInstanceOf[HistoricalMetricName]
-    val SERVICE_LEVEL                       = "SERVICE_LEVEL".asInstanceOf[HistoricalMetricName]
+    val CONTACTS_MISSED = "CONTACTS_MISSED".asInstanceOf[HistoricalMetricName]
+    val CALLBACK_CONTACTS_HANDLED = "CALLBACK_CONTACTS_HANDLED".asInstanceOf[HistoricalMetricName]
+    val API_CONTACTS_HANDLED = "API_CONTACTS_HANDLED".asInstanceOf[HistoricalMetricName]
+    val OCCUPANCY = "OCCUPANCY".asInstanceOf[HistoricalMetricName]
+    val HANDLE_TIME = "HANDLE_TIME".asInstanceOf[HistoricalMetricName]
+    val AFTER_CONTACT_WORK_TIME = "AFTER_CONTACT_WORK_TIME".asInstanceOf[HistoricalMetricName]
+    val QUEUED_TIME = "QUEUED_TIME".asInstanceOf[HistoricalMetricName]
+    val ABANDON_TIME = "ABANDON_TIME".asInstanceOf[HistoricalMetricName]
+    val QUEUE_ANSWER_TIME = "QUEUE_ANSWER_TIME".asInstanceOf[HistoricalMetricName]
+    val HOLD_TIME = "HOLD_TIME".asInstanceOf[HistoricalMetricName]
+    val INTERACTION_TIME = "INTERACTION_TIME".asInstanceOf[HistoricalMetricName]
+    val INTERACTION_AND_HOLD_TIME = "INTERACTION_AND_HOLD_TIME".asInstanceOf[HistoricalMetricName]
+    val SERVICE_LEVEL = "SERVICE_LEVEL".asInstanceOf[HistoricalMetricName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2094,7 +2094,7 @@ package connect {
   sealed trait PhoneNumberType extends js.Any
   object PhoneNumberType extends js.Object {
     val TOLL_FREE = "TOLL_FREE".asInstanceOf[PhoneNumberType]
-    val DID       = "DID".asInstanceOf[PhoneNumberType]
+    val DID = "DID".asInstanceOf[PhoneNumberType]
 
     val values = js.Object.freeze(js.Array(TOLL_FREE, DID))
   }
@@ -2162,7 +2162,7 @@ package connect {
   sealed trait QueueType extends js.Any
   object QueueType extends js.Object {
     val STANDARD = "STANDARD".asInstanceOf[QueueType]
-    val AGENT    = "AGENT".asInstanceOf[QueueType]
+    val AGENT = "AGENT".asInstanceOf[QueueType]
 
     val values = js.Object.freeze(js.Array(STANDARD, AGENT))
   }
@@ -2238,8 +2238,8 @@ package connect {
         InitialMessage: js.UndefOr[ChatMessage] = js.undefined
     ): StartChatContactRequest = {
       val __obj = js.Dynamic.literal(
-        "ContactFlowId"      -> ContactFlowId.asInstanceOf[js.Any],
-        "InstanceId"         -> InstanceId.asInstanceOf[js.Any],
+        "ContactFlowId" -> ContactFlowId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "ParticipantDetails" -> ParticipantDetails.asInstanceOf[js.Any]
       )
 
@@ -2295,9 +2295,9 @@ package connect {
         SourcePhoneNumber: js.UndefOr[PhoneNumber] = js.undefined
     ): StartOutboundVoiceContactRequest = {
       val __obj = js.Dynamic.literal(
-        "ContactFlowId"          -> ContactFlowId.asInstanceOf[js.Any],
+        "ContactFlowId" -> ContactFlowId.asInstanceOf[js.Any],
         "DestinationPhoneNumber" -> DestinationPhoneNumber.asInstanceOf[js.Any],
-        "InstanceId"             -> InstanceId.asInstanceOf[js.Any]
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
       Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
@@ -2347,7 +2347,7 @@ package connect {
         InstanceId: InstanceId
     ): StopContactRequest = {
       val __obj = js.Dynamic.literal(
-        "ContactId"  -> ContactId.asInstanceOf[js.Any],
+        "ContactId" -> ContactId.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
@@ -2382,7 +2382,7 @@ package connect {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -2415,7 +2415,7 @@ package connect {
   sealed trait Unit extends js.Any
   object Unit extends js.Object {
     val SECONDS = "SECONDS".asInstanceOf[Unit]
-    val COUNT   = "COUNT".asInstanceOf[Unit]
+    val COUNT = "COUNT".asInstanceOf[Unit]
     val PERCENT = "PERCENT".asInstanceOf[Unit]
 
     val values = js.Object.freeze(js.Array(SECONDS, COUNT, PERCENT))
@@ -2435,7 +2435,7 @@ package connect {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -2457,9 +2457,9 @@ package connect {
         InstanceId: InstanceId
     ): UpdateContactAttributesRequest = {
       val __obj = js.Dynamic.literal(
-        "Attributes"       -> Attributes.asInstanceOf[js.Any],
+        "Attributes" -> Attributes.asInstanceOf[js.Any],
         "InitialContactId" -> InitialContactId.asInstanceOf[js.Any],
-        "InstanceId"       -> InstanceId.asInstanceOf[js.Any]
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateContactAttributesRequest]
@@ -2495,7 +2495,7 @@ package connect {
     ): UpdateUserHierarchyRequest = {
       val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
-        "UserId"     -> UserId.asInstanceOf[js.Any]
+        "UserId" -> UserId.asInstanceOf[js.Any]
       )
 
       HierarchyGroupId.foreach(__v => __obj.updateDynamic("HierarchyGroupId")(__v.asInstanceOf[js.Any]))
@@ -2519,8 +2519,8 @@ package connect {
     ): UpdateUserIdentityInfoRequest = {
       val __obj = js.Dynamic.literal(
         "IdentityInfo" -> IdentityInfo.asInstanceOf[js.Any],
-        "InstanceId"   -> InstanceId.asInstanceOf[js.Any],
-        "UserId"       -> UserId.asInstanceOf[js.Any]
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "UserId" -> UserId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateUserIdentityInfoRequest]
@@ -2542,9 +2542,9 @@ package connect {
         UserId: UserId
     ): UpdateUserPhoneConfigRequest = {
       val __obj = js.Dynamic.literal(
-        "InstanceId"  -> InstanceId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "PhoneConfig" -> PhoneConfig.asInstanceOf[js.Any],
-        "UserId"      -> UserId.asInstanceOf[js.Any]
+        "UserId" -> UserId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateUserPhoneConfigRequest]
@@ -2566,9 +2566,9 @@ package connect {
         UserId: UserId
     ): UpdateUserRoutingProfileRequest = {
       val __obj = js.Dynamic.literal(
-        "InstanceId"       -> InstanceId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "RoutingProfileId" -> RoutingProfileId.asInstanceOf[js.Any],
-        "UserId"           -> UserId.asInstanceOf[js.Any]
+        "UserId" -> UserId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateUserRoutingProfileRequest]
@@ -2590,9 +2590,9 @@ package connect {
         UserId: UserId
     ): UpdateUserSecurityProfilesRequest = {
       val __obj = js.Dynamic.literal(
-        "InstanceId"         -> InstanceId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "SecurityProfileIds" -> SecurityProfileIds.asInstanceOf[js.Any],
-        "UserId"             -> UserId.asInstanceOf[js.Any]
+        "UserId" -> UserId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateUserSecurityProfilesRequest]

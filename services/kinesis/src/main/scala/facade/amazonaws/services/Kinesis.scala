@@ -7,46 +7,46 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object kinesis {
-  type BooleanObject                 = Boolean
-  type ConsumerARN                   = String
-  type ConsumerCountObject           = Int
-  type ConsumerList                  = js.Array[Consumer]
-  type ConsumerName                  = String
-  type Data                          = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type DescribeStreamInputLimit      = Int
-  type EnhancedMonitoringList        = js.Array[EnhancedMetrics]
-  type ErrorCode                     = String
-  type ErrorMessage                  = String
-  type GetRecordsInputLimit          = Int
-  type HashKey                       = String
-  type KeyId                         = String
-  type ListShardsInputLimit          = Int
+  type BooleanObject = Boolean
+  type ConsumerARN = String
+  type ConsumerCountObject = Int
+  type ConsumerList = js.Array[Consumer]
+  type ConsumerName = String
+  type Data = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type DescribeStreamInputLimit = Int
+  type EnhancedMonitoringList = js.Array[EnhancedMetrics]
+  type ErrorCode = String
+  type ErrorMessage = String
+  type GetRecordsInputLimit = Int
+  type HashKey = String
+  type KeyId = String
+  type ListShardsInputLimit = Int
   type ListStreamConsumersInputLimit = Int
-  type ListStreamsInputLimit         = Int
-  type ListTagsForStreamInputLimit   = Int
-  type MetricsNameList               = js.Array[MetricsName]
-  type MillisBehindLatest            = Double
-  type NextToken                     = String
-  type PartitionKey                  = String
-  type PositiveIntegerObject         = Int
-  type PutRecordsRequestEntryList    = js.Array[PutRecordsRequestEntry]
-  type PutRecordsResultEntryList     = js.Array[PutRecordsResultEntry]
-  type RecordList                    = js.Array[Record]
-  type RetentionPeriodHours          = Int
-  type SequenceNumber                = String
-  type ShardCountObject              = Int
-  type ShardId                       = String
-  type ShardIterator                 = String
-  type ShardList                     = js.Array[Shard]
-  type StreamARN                     = String
-  type StreamName                    = String
-  type StreamNameList                = js.Array[StreamName]
-  type TagKey                        = String
-  type TagKeyList                    = js.Array[TagKey]
-  type TagList                       = js.Array[Tag]
-  type TagMap                        = js.Dictionary[TagValue]
-  type TagValue                      = String
-  type Timestamp                     = js.Date
+  type ListStreamsInputLimit = Int
+  type ListTagsForStreamInputLimit = Int
+  type MetricsNameList = js.Array[MetricsName]
+  type MillisBehindLatest = Double
+  type NextToken = String
+  type PartitionKey = String
+  type PositiveIntegerObject = Int
+  type PutRecordsRequestEntryList = js.Array[PutRecordsRequestEntry]
+  type PutRecordsResultEntryList = js.Array[PutRecordsResultEntry]
+  type RecordList = js.Array[Record]
+  type RetentionPeriodHours = Int
+  type SequenceNumber = String
+  type ShardCountObject = Int
+  type ShardId = String
+  type ShardIterator = String
+  type ShardList = js.Array[Shard]
+  type StreamARN = String
+  type StreamName = String
+  type StreamNameList = js.Array[StreamName]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagMap = js.Dictionary[TagValue]
+  type TagValue = String
+  type Timestamp = js.Date
 
   implicit final class KinesisOps(private val service: Kinesis) extends AnyVal {
 
@@ -117,33 +117,33 @@ package kinesis {
   class Kinesis() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def addTagsToStream(params: AddTagsToStreamInput): Request[js.Object]                                    = js.native
-    def createStream(params: CreateStreamInput): Request[js.Object]                                          = js.native
-    def decreaseStreamRetentionPeriod(params: DecreaseStreamRetentionPeriodInput): Request[js.Object]        = js.native
-    def deleteStream(params: DeleteStreamInput): Request[js.Object]                                          = js.native
-    def deregisterStreamConsumer(params: DeregisterStreamConsumerInput): Request[js.Object]                  = js.native
-    def describeLimits(params: DescribeLimitsInput): Request[DescribeLimitsOutput]                           = js.native
-    def describeStream(params: DescribeStreamInput): Request[DescribeStreamOutput]                           = js.native
-    def describeStreamConsumer(params: DescribeStreamConsumerInput): Request[DescribeStreamConsumerOutput]   = js.native
-    def describeStreamSummary(params: DescribeStreamSummaryInput): Request[DescribeStreamSummaryOutput]      = js.native
+    def addTagsToStream(params: AddTagsToStreamInput): Request[js.Object] = js.native
+    def createStream(params: CreateStreamInput): Request[js.Object] = js.native
+    def decreaseStreamRetentionPeriod(params: DecreaseStreamRetentionPeriodInput): Request[js.Object] = js.native
+    def deleteStream(params: DeleteStreamInput): Request[js.Object] = js.native
+    def deregisterStreamConsumer(params: DeregisterStreamConsumerInput): Request[js.Object] = js.native
+    def describeLimits(params: DescribeLimitsInput): Request[DescribeLimitsOutput] = js.native
+    def describeStream(params: DescribeStreamInput): Request[DescribeStreamOutput] = js.native
+    def describeStreamConsumer(params: DescribeStreamConsumerInput): Request[DescribeStreamConsumerOutput] = js.native
+    def describeStreamSummary(params: DescribeStreamSummaryInput): Request[DescribeStreamSummaryOutput] = js.native
     def disableEnhancedMonitoring(params: DisableEnhancedMonitoringInput): Request[EnhancedMonitoringOutput] = js.native
-    def enableEnhancedMonitoring(params: EnableEnhancedMonitoringInput): Request[EnhancedMonitoringOutput]   = js.native
-    def getRecords(params: GetRecordsInput): Request[GetRecordsOutput]                                       = js.native
-    def getShardIterator(params: GetShardIteratorInput): Request[GetShardIteratorOutput]                     = js.native
-    def increaseStreamRetentionPeriod(params: IncreaseStreamRetentionPeriodInput): Request[js.Object]        = js.native
-    def listShards(params: ListShardsInput): Request[ListShardsOutput]                                       = js.native
-    def listStreamConsumers(params: ListStreamConsumersInput): Request[ListStreamConsumersOutput]            = js.native
-    def listStreams(params: ListStreamsInput): Request[ListStreamsOutput]                                    = js.native
-    def listTagsForStream(params: ListTagsForStreamInput): Request[ListTagsForStreamOutput]                  = js.native
-    def mergeShards(params: MergeShardsInput): Request[js.Object]                                            = js.native
-    def putRecord(params: PutRecordInput): Request[PutRecordOutput]                                          = js.native
-    def putRecords(params: PutRecordsInput): Request[PutRecordsOutput]                                       = js.native
-    def registerStreamConsumer(params: RegisterStreamConsumerInput): Request[RegisterStreamConsumerOutput]   = js.native
-    def removeTagsFromStream(params: RemoveTagsFromStreamInput): Request[js.Object]                          = js.native
-    def splitShard(params: SplitShardInput): Request[js.Object]                                              = js.native
-    def startStreamEncryption(params: StartStreamEncryptionInput): Request[js.Object]                        = js.native
-    def stopStreamEncryption(params: StopStreamEncryptionInput): Request[js.Object]                          = js.native
-    def updateShardCount(params: UpdateShardCountInput): Request[UpdateShardCountOutput]                     = js.native
+    def enableEnhancedMonitoring(params: EnableEnhancedMonitoringInput): Request[EnhancedMonitoringOutput] = js.native
+    def getRecords(params: GetRecordsInput): Request[GetRecordsOutput] = js.native
+    def getShardIterator(params: GetShardIteratorInput): Request[GetShardIteratorOutput] = js.native
+    def increaseStreamRetentionPeriod(params: IncreaseStreamRetentionPeriodInput): Request[js.Object] = js.native
+    def listShards(params: ListShardsInput): Request[ListShardsOutput] = js.native
+    def listStreamConsumers(params: ListStreamConsumersInput): Request[ListStreamConsumersOutput] = js.native
+    def listStreams(params: ListStreamsInput): Request[ListStreamsOutput] = js.native
+    def listTagsForStream(params: ListTagsForStreamInput): Request[ListTagsForStreamOutput] = js.native
+    def mergeShards(params: MergeShardsInput): Request[js.Object] = js.native
+    def putRecord(params: PutRecordInput): Request[PutRecordOutput] = js.native
+    def putRecords(params: PutRecordsInput): Request[PutRecordsOutput] = js.native
+    def registerStreamConsumer(params: RegisterStreamConsumerInput): Request[RegisterStreamConsumerOutput] = js.native
+    def removeTagsFromStream(params: RemoveTagsFromStreamInput): Request[js.Object] = js.native
+    def splitShard(params: SplitShardInput): Request[js.Object] = js.native
+    def startStreamEncryption(params: StartStreamEncryptionInput): Request[js.Object] = js.native
+    def stopStreamEncryption(params: StopStreamEncryptionInput): Request[js.Object] = js.native
+    def updateShardCount(params: UpdateShardCountInput): Request[UpdateShardCountOutput] = js.native
   }
 
   /**
@@ -163,7 +163,7 @@ package kinesis {
     ): AddTagsToStreamInput = {
       val __obj = js.Dynamic.literal(
         "StreamName" -> StreamName.asInstanceOf[js.Any],
-        "Tags"       -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddTagsToStreamInput]
@@ -190,10 +190,10 @@ package kinesis {
         ConsumerStatus: ConsumerStatus
     ): Consumer = {
       val __obj = js.Dynamic.literal(
-        "ConsumerARN"               -> ConsumerARN.asInstanceOf[js.Any],
+        "ConsumerARN" -> ConsumerARN.asInstanceOf[js.Any],
         "ConsumerCreationTimestamp" -> ConsumerCreationTimestamp.asInstanceOf[js.Any],
-        "ConsumerName"              -> ConsumerName.asInstanceOf[js.Any],
-        "ConsumerStatus"            -> ConsumerStatus.asInstanceOf[js.Any]
+        "ConsumerName" -> ConsumerName.asInstanceOf[js.Any],
+        "ConsumerStatus" -> ConsumerStatus.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[Consumer]
@@ -222,11 +222,11 @@ package kinesis {
         StreamARN: StreamARN
     ): ConsumerDescription = {
       val __obj = js.Dynamic.literal(
-        "ConsumerARN"               -> ConsumerARN.asInstanceOf[js.Any],
+        "ConsumerARN" -> ConsumerARN.asInstanceOf[js.Any],
         "ConsumerCreationTimestamp" -> ConsumerCreationTimestamp.asInstanceOf[js.Any],
-        "ConsumerName"              -> ConsumerName.asInstanceOf[js.Any],
-        "ConsumerStatus"            -> ConsumerStatus.asInstanceOf[js.Any],
-        "StreamARN"                 -> StreamARN.asInstanceOf[js.Any]
+        "ConsumerName" -> ConsumerName.asInstanceOf[js.Any],
+        "ConsumerStatus" -> ConsumerStatus.asInstanceOf[js.Any],
+        "StreamARN" -> StreamARN.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ConsumerDescription]
@@ -238,7 +238,7 @@ package kinesis {
   object ConsumerStatus extends js.Object {
     val CREATING = "CREATING".asInstanceOf[ConsumerStatus]
     val DELETING = "DELETING".asInstanceOf[ConsumerStatus]
-    val ACTIVE   = "ACTIVE".asInstanceOf[ConsumerStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[ConsumerStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, DELETING, ACTIVE))
   }
@@ -284,7 +284,7 @@ package kinesis {
     ): DecreaseStreamRetentionPeriodInput = {
       val __obj = js.Dynamic.literal(
         "RetentionPeriodHours" -> RetentionPeriodHours.asInstanceOf[js.Any],
-        "StreamName"           -> StreamName.asInstanceOf[js.Any]
+        "StreamName" -> StreamName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DecreaseStreamRetentionPeriodInput]
@@ -364,7 +364,7 @@ package kinesis {
     ): DescribeLimitsOutput = {
       val __obj = js.Dynamic.literal(
         "OpenShardCount" -> OpenShardCount.asInstanceOf[js.Any],
-        "ShardLimit"     -> ShardLimit.asInstanceOf[js.Any]
+        "ShardLimit" -> ShardLimit.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeLimitsOutput]
@@ -512,7 +512,7 @@ package kinesis {
     ): DisableEnhancedMonitoringInput = {
       val __obj = js.Dynamic.literal(
         "ShardLevelMetrics" -> ShardLevelMetrics.asInstanceOf[js.Any],
-        "StreamName"        -> StreamName.asInstanceOf[js.Any]
+        "StreamName" -> StreamName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DisableEnhancedMonitoringInput]
@@ -536,7 +536,7 @@ package kinesis {
     ): EnableEnhancedMonitoringInput = {
       val __obj = js.Dynamic.literal(
         "ShardLevelMetrics" -> ShardLevelMetrics.asInstanceOf[js.Any],
-        "StreamName"        -> StreamName.asInstanceOf[js.Any]
+        "StreamName" -> StreamName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[EnableEnhancedMonitoringInput]
@@ -547,7 +547,7 @@ package kinesis {
   sealed trait EncryptionType extends js.Any
   object EncryptionType extends js.Object {
     val NONE = "NONE".asInstanceOf[EncryptionType]
-    val KMS  = "KMS".asInstanceOf[EncryptionType]
+    val KMS = "KMS".asInstanceOf[EncryptionType]
 
     val values = js.Object.freeze(js.Array(NONE, KMS))
   }
@@ -685,9 +685,9 @@ package kinesis {
         Timestamp: js.UndefOr[Timestamp] = js.undefined
     ): GetShardIteratorInput = {
       val __obj = js.Dynamic.literal(
-        "ShardId"           -> ShardId.asInstanceOf[js.Any],
+        "ShardId" -> ShardId.asInstanceOf[js.Any],
         "ShardIteratorType" -> ShardIteratorType.asInstanceOf[js.Any],
-        "StreamName"        -> StreamName.asInstanceOf[js.Any]
+        "StreamName" -> StreamName.asInstanceOf[js.Any]
       )
 
       StartingSequenceNumber.foreach(__v => __obj.updateDynamic("StartingSequenceNumber")(__v.asInstanceOf[js.Any]))
@@ -731,7 +731,7 @@ package kinesis {
         StartingHashKey: HashKey
     ): HashKeyRange = {
       val __obj = js.Dynamic.literal(
-        "EndingHashKey"   -> EndingHashKey.asInstanceOf[js.Any],
+        "EndingHashKey" -> EndingHashKey.asInstanceOf[js.Any],
         "StartingHashKey" -> StartingHashKey.asInstanceOf[js.Any]
       )
 
@@ -756,7 +756,7 @@ package kinesis {
     ): IncreaseStreamRetentionPeriodInput = {
       val __obj = js.Dynamic.literal(
         "RetentionPeriodHours" -> RetentionPeriodHours.asInstanceOf[js.Any],
-        "StreamName"           -> StreamName.asInstanceOf[js.Any]
+        "StreamName" -> StreamName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[IncreaseStreamRetentionPeriodInput]
@@ -964,7 +964,7 @@ package kinesis {
     ): ListStreamsOutput = {
       val __obj = js.Dynamic.literal(
         "HasMoreStreams" -> HasMoreStreams.asInstanceOf[js.Any],
-        "StreamNames"    -> StreamNames.asInstanceOf[js.Any]
+        "StreamNames" -> StreamNames.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ListStreamsOutput]
@@ -1015,7 +1015,7 @@ package kinesis {
     ): ListTagsForStreamOutput = {
       val __obj = js.Dynamic.literal(
         "HasMoreTags" -> HasMoreTags.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ListTagsForStreamOutput]
@@ -1041,8 +1041,8 @@ package kinesis {
     ): MergeShardsInput = {
       val __obj = js.Dynamic.literal(
         "AdjacentShardToMerge" -> AdjacentShardToMerge.asInstanceOf[js.Any],
-        "ShardToMerge"         -> ShardToMerge.asInstanceOf[js.Any],
-        "StreamName"           -> StreamName.asInstanceOf[js.Any]
+        "ShardToMerge" -> ShardToMerge.asInstanceOf[js.Any],
+        "StreamName" -> StreamName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[MergeShardsInput]
@@ -1052,14 +1052,14 @@ package kinesis {
   @js.native
   sealed trait MetricsName extends js.Any
   object MetricsName extends js.Object {
-    val IncomingBytes                      = "IncomingBytes".asInstanceOf[MetricsName]
-    val IncomingRecords                    = "IncomingRecords".asInstanceOf[MetricsName]
-    val OutgoingBytes                      = "OutgoingBytes".asInstanceOf[MetricsName]
-    val OutgoingRecords                    = "OutgoingRecords".asInstanceOf[MetricsName]
+    val IncomingBytes = "IncomingBytes".asInstanceOf[MetricsName]
+    val IncomingRecords = "IncomingRecords".asInstanceOf[MetricsName]
+    val OutgoingBytes = "OutgoingBytes".asInstanceOf[MetricsName]
+    val OutgoingRecords = "OutgoingRecords".asInstanceOf[MetricsName]
     val WriteProvisionedThroughputExceeded = "WriteProvisionedThroughputExceeded".asInstanceOf[MetricsName]
-    val ReadProvisionedThroughputExceeded  = "ReadProvisionedThroughputExceeded".asInstanceOf[MetricsName]
-    val IteratorAgeMilliseconds            = "IteratorAgeMilliseconds".asInstanceOf[MetricsName]
-    val ALL                                = "ALL".asInstanceOf[MetricsName]
+    val ReadProvisionedThroughputExceeded = "ReadProvisionedThroughputExceeded".asInstanceOf[MetricsName]
+    val IteratorAgeMilliseconds = "IteratorAgeMilliseconds".asInstanceOf[MetricsName]
+    val ALL = "ALL".asInstanceOf[MetricsName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1105,9 +1105,9 @@ package kinesis {
         SequenceNumberForOrdering: js.UndefOr[SequenceNumber] = js.undefined
     ): PutRecordInput = {
       val __obj = js.Dynamic.literal(
-        "Data"         -> Data.asInstanceOf[js.Any],
+        "Data" -> Data.asInstanceOf[js.Any],
         "PartitionKey" -> PartitionKey.asInstanceOf[js.Any],
-        "StreamName"   -> StreamName.asInstanceOf[js.Any]
+        "StreamName" -> StreamName.asInstanceOf[js.Any]
       )
 
       ExplicitHashKey.foreach(__v => __obj.updateDynamic("ExplicitHashKey")(__v.asInstanceOf[js.Any]))
@@ -1137,7 +1137,7 @@ package kinesis {
     ): PutRecordOutput = {
       val __obj = js.Dynamic.literal(
         "SequenceNumber" -> SequenceNumber.asInstanceOf[js.Any],
-        "ShardId"        -> ShardId.asInstanceOf[js.Any]
+        "ShardId" -> ShardId.asInstanceOf[js.Any]
       )
 
       EncryptionType.foreach(__v => __obj.updateDynamic("EncryptionType")(__v.asInstanceOf[js.Any]))
@@ -1161,7 +1161,7 @@ package kinesis {
         StreamName: StreamName
     ): PutRecordsInput = {
       val __obj = js.Dynamic.literal(
-        "Records"    -> Records.asInstanceOf[js.Any],
+        "Records" -> Records.asInstanceOf[js.Any],
         "StreamName" -> StreamName.asInstanceOf[js.Any]
       )
 
@@ -1214,7 +1214,7 @@ package kinesis {
         ExplicitHashKey: js.UndefOr[HashKey] = js.undefined
     ): PutRecordsRequestEntry = {
       val __obj = js.Dynamic.literal(
-        "Data"         -> Data.asInstanceOf[js.Any],
+        "Data" -> Data.asInstanceOf[js.Any],
         "PartitionKey" -> PartitionKey.asInstanceOf[js.Any]
       )
 
@@ -1273,8 +1273,8 @@ package kinesis {
         EncryptionType: js.UndefOr[EncryptionType] = js.undefined
     ): Record = {
       val __obj = js.Dynamic.literal(
-        "Data"           -> Data.asInstanceOf[js.Any],
-        "PartitionKey"   -> PartitionKey.asInstanceOf[js.Any],
+        "Data" -> Data.asInstanceOf[js.Any],
+        "PartitionKey" -> PartitionKey.asInstanceOf[js.Any],
         "SequenceNumber" -> SequenceNumber.asInstanceOf[js.Any]
       )
 
@@ -1300,7 +1300,7 @@ package kinesis {
     ): RegisterStreamConsumerInput = {
       val __obj = js.Dynamic.literal(
         "ConsumerName" -> ConsumerName.asInstanceOf[js.Any],
-        "StreamARN"    -> StreamARN.asInstanceOf[js.Any]
+        "StreamARN" -> StreamARN.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RegisterStreamConsumerInput]
@@ -1342,7 +1342,7 @@ package kinesis {
     ): RemoveTagsFromStreamInput = {
       val __obj = js.Dynamic.literal(
         "StreamName" -> StreamName.asInstanceOf[js.Any],
-        "TagKeys"    -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RemoveTagsFromStreamInput]
@@ -1419,9 +1419,9 @@ package kinesis {
         ParentShardId: js.UndefOr[ShardId] = js.undefined
     ): Shard = {
       val __obj = js.Dynamic.literal(
-        "HashKeyRange"        -> HashKeyRange.asInstanceOf[js.Any],
+        "HashKeyRange" -> HashKeyRange.asInstanceOf[js.Any],
         "SequenceNumberRange" -> SequenceNumberRange.asInstanceOf[js.Any],
-        "ShardId"             -> ShardId.asInstanceOf[js.Any]
+        "ShardId" -> ShardId.asInstanceOf[js.Any]
       )
 
       AdjacentParentShardId.foreach(__v => __obj.updateDynamic("AdjacentParentShardId")(__v.asInstanceOf[js.Any]))
@@ -1433,11 +1433,11 @@ package kinesis {
   @js.native
   sealed trait ShardIteratorType extends js.Any
   object ShardIteratorType extends js.Object {
-    val AT_SEQUENCE_NUMBER    = "AT_SEQUENCE_NUMBER".asInstanceOf[ShardIteratorType]
+    val AT_SEQUENCE_NUMBER = "AT_SEQUENCE_NUMBER".asInstanceOf[ShardIteratorType]
     val AFTER_SEQUENCE_NUMBER = "AFTER_SEQUENCE_NUMBER".asInstanceOf[ShardIteratorType]
-    val TRIM_HORIZON          = "TRIM_HORIZON".asInstanceOf[ShardIteratorType]
-    val LATEST                = "LATEST".asInstanceOf[ShardIteratorType]
-    val AT_TIMESTAMP          = "AT_TIMESTAMP".asInstanceOf[ShardIteratorType]
+    val TRIM_HORIZON = "TRIM_HORIZON".asInstanceOf[ShardIteratorType]
+    val LATEST = "LATEST".asInstanceOf[ShardIteratorType]
+    val AT_TIMESTAMP = "AT_TIMESTAMP".asInstanceOf[ShardIteratorType]
 
     val values =
       js.Object.freeze(js.Array(AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER, TRIM_HORIZON, LATEST, AT_TIMESTAMP))
@@ -1462,8 +1462,8 @@ package kinesis {
     ): SplitShardInput = {
       val __obj = js.Dynamic.literal(
         "NewStartingHashKey" -> NewStartingHashKey.asInstanceOf[js.Any],
-        "ShardToSplit"       -> ShardToSplit.asInstanceOf[js.Any],
-        "StreamName"         -> StreamName.asInstanceOf[js.Any]
+        "ShardToSplit" -> ShardToSplit.asInstanceOf[js.Any],
+        "StreamName" -> StreamName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[SplitShardInput]
@@ -1486,8 +1486,8 @@ package kinesis {
     ): StartStreamEncryptionInput = {
       val __obj = js.Dynamic.literal(
         "EncryptionType" -> EncryptionType.asInstanceOf[js.Any],
-        "KeyId"          -> KeyId.asInstanceOf[js.Any],
-        "StreamName"     -> StreamName.asInstanceOf[js.Any]
+        "KeyId" -> KeyId.asInstanceOf[js.Any],
+        "StreamName" -> StreamName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[StartStreamEncryptionInput]
@@ -1534,8 +1534,8 @@ package kinesis {
     ): StopStreamEncryptionInput = {
       val __obj = js.Dynamic.literal(
         "EncryptionType" -> EncryptionType.asInstanceOf[js.Any],
-        "KeyId"          -> KeyId.asInstanceOf[js.Any],
-        "StreamName"     -> StreamName.asInstanceOf[js.Any]
+        "KeyId" -> KeyId.asInstanceOf[js.Any],
+        "StreamName" -> StreamName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[StopStreamEncryptionInput]
@@ -1574,14 +1574,14 @@ package kinesis {
         KeyId: js.UndefOr[KeyId] = js.undefined
     ): StreamDescription = {
       val __obj = js.Dynamic.literal(
-        "EnhancedMonitoring"      -> EnhancedMonitoring.asInstanceOf[js.Any],
-        "HasMoreShards"           -> HasMoreShards.asInstanceOf[js.Any],
-        "RetentionPeriodHours"    -> RetentionPeriodHours.asInstanceOf[js.Any],
-        "Shards"                  -> Shards.asInstanceOf[js.Any],
-        "StreamARN"               -> StreamARN.asInstanceOf[js.Any],
+        "EnhancedMonitoring" -> EnhancedMonitoring.asInstanceOf[js.Any],
+        "HasMoreShards" -> HasMoreShards.asInstanceOf[js.Any],
+        "RetentionPeriodHours" -> RetentionPeriodHours.asInstanceOf[js.Any],
+        "Shards" -> Shards.asInstanceOf[js.Any],
+        "StreamARN" -> StreamARN.asInstanceOf[js.Any],
         "StreamCreationTimestamp" -> StreamCreationTimestamp.asInstanceOf[js.Any],
-        "StreamName"              -> StreamName.asInstanceOf[js.Any],
-        "StreamStatus"            -> StreamStatus.asInstanceOf[js.Any]
+        "StreamName" -> StreamName.asInstanceOf[js.Any],
+        "StreamStatus" -> StreamStatus.asInstanceOf[js.Any]
       )
 
       EncryptionType.foreach(__v => __obj.updateDynamic("EncryptionType")(__v.asInstanceOf[js.Any]))
@@ -1622,13 +1622,13 @@ package kinesis {
         KeyId: js.UndefOr[KeyId] = js.undefined
     ): StreamDescriptionSummary = {
       val __obj = js.Dynamic.literal(
-        "EnhancedMonitoring"      -> EnhancedMonitoring.asInstanceOf[js.Any],
-        "OpenShardCount"          -> OpenShardCount.asInstanceOf[js.Any],
-        "RetentionPeriodHours"    -> RetentionPeriodHours.asInstanceOf[js.Any],
-        "StreamARN"               -> StreamARN.asInstanceOf[js.Any],
+        "EnhancedMonitoring" -> EnhancedMonitoring.asInstanceOf[js.Any],
+        "OpenShardCount" -> OpenShardCount.asInstanceOf[js.Any],
+        "RetentionPeriodHours" -> RetentionPeriodHours.asInstanceOf[js.Any],
+        "StreamARN" -> StreamARN.asInstanceOf[js.Any],
         "StreamCreationTimestamp" -> StreamCreationTimestamp.asInstanceOf[js.Any],
-        "StreamName"              -> StreamName.asInstanceOf[js.Any],
-        "StreamStatus"            -> StreamStatus.asInstanceOf[js.Any]
+        "StreamName" -> StreamName.asInstanceOf[js.Any],
+        "StreamStatus" -> StreamStatus.asInstanceOf[js.Any]
       )
 
       ConsumerCount.foreach(__v => __obj.updateDynamic("ConsumerCount")(__v.asInstanceOf[js.Any]))
@@ -1643,7 +1643,7 @@ package kinesis {
   object StreamStatus extends js.Object {
     val CREATING = "CREATING".asInstanceOf[StreamStatus]
     val DELETING = "DELETING".asInstanceOf[StreamStatus]
-    val ACTIVE   = "ACTIVE".asInstanceOf[StreamStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[StreamStatus]
     val UPDATING = "UPDATING".asInstanceOf[StreamStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, DELETING, ACTIVE, UPDATING))
@@ -1668,8 +1668,8 @@ package kinesis {
     ): SubscribeToShardEvent = {
       val __obj = js.Dynamic.literal(
         "ContinuationSequenceNumber" -> ContinuationSequenceNumber.asInstanceOf[js.Any],
-        "MillisBehindLatest"         -> MillisBehindLatest.asInstanceOf[js.Any],
-        "Records"                    -> Records.asInstanceOf[js.Any]
+        "MillisBehindLatest" -> MillisBehindLatest.asInstanceOf[js.Any],
+        "Records" -> Records.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[SubscribeToShardEvent]
@@ -1709,8 +1709,8 @@ package kinesis {
         StartingPosition: StartingPosition
     ): SubscribeToShardInput = {
       val __obj = js.Dynamic.literal(
-        "ConsumerARN"      -> ConsumerARN.asInstanceOf[js.Any],
-        "ShardId"          -> ShardId.asInstanceOf[js.Any],
+        "ConsumerARN" -> ConsumerARN.asInstanceOf[js.Any],
+        "ShardId" -> ShardId.asInstanceOf[js.Any],
         "StartingPosition" -> StartingPosition.asInstanceOf[js.Any]
       )
 
@@ -1775,8 +1775,8 @@ package kinesis {
         TargetShardCount: PositiveIntegerObject
     ): UpdateShardCountInput = {
       val __obj = js.Dynamic.literal(
-        "ScalingType"      -> ScalingType.asInstanceOf[js.Any],
-        "StreamName"       -> StreamName.asInstanceOf[js.Any],
+        "ScalingType" -> ScalingType.asInstanceOf[js.Any],
+        "StreamName" -> StreamName.asInstanceOf[js.Any],
         "TargetShardCount" -> TargetShardCount.asInstanceOf[js.Any]
       )
 

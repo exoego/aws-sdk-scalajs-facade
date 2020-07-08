@@ -7,19 +7,19 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object sso {
-  type AccessKeyType           = String
-  type AccessTokenType         = String
-  type AccountIdType           = String
-  type AccountListType         = js.Array[AccountInfo]
-  type AccountNameType         = String
-  type EmailAddressType        = String
+  type AccessKeyType = String
+  type AccessTokenType = String
+  type AccountIdType = String
+  type AccountListType = js.Array[AccountInfo]
+  type AccountNameType = String
+  type EmailAddressType = String
   type ExpirationTimestampType = Double
-  type MaxResultType           = Int
-  type NextTokenType           = String
-  type RoleListType            = js.Array[RoleInfo]
-  type RoleNameType            = String
-  type SecretAccessKeyType     = String
-  type SessionTokenType        = String
+  type MaxResultType = Int
+  type NextTokenType = String
+  type RoleListType = js.Array[RoleInfo]
+  type RoleNameType = String
+  type SecretAccessKeyType = String
+  type SessionTokenType = String
 
   implicit final class SSOOps(private val service: SSO) extends AnyVal {
 
@@ -40,9 +40,9 @@ package sso {
     def this(config: AWSConfig) = this()
 
     def getRoleCredentials(params: GetRoleCredentialsRequest): Request[GetRoleCredentialsResponse] = js.native
-    def listAccountRoles(params: ListAccountRolesRequest): Request[ListAccountRolesResponse]       = js.native
-    def listAccounts(params: ListAccountsRequest): Request[ListAccountsResponse]                   = js.native
-    def logout(params: LogoutRequest): Request[js.Object]                                          = js.native
+    def listAccountRoles(params: ListAccountRolesRequest): Request[ListAccountRolesResponse] = js.native
+    def listAccounts(params: ListAccountsRequest): Request[ListAccountsResponse] = js.native
+    def logout(params: LogoutRequest): Request[js.Object] = js.native
   }
 
   /**
@@ -86,8 +86,8 @@ package sso {
     ): GetRoleCredentialsRequest = {
       val __obj = js.Dynamic.literal(
         "accessToken" -> accessToken.asInstanceOf[js.Any],
-        "accountId"   -> accountId.asInstanceOf[js.Any],
-        "roleName"    -> roleName.asInstanceOf[js.Any]
+        "accountId" -> accountId.asInstanceOf[js.Any],
+        "roleName" -> roleName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetRoleCredentialsRequest]
@@ -128,7 +128,7 @@ package sso {
     ): ListAccountRolesRequest = {
       val __obj = js.Dynamic.literal(
         "accessToken" -> accessToken.asInstanceOf[js.Any],
-        "accountId"   -> accountId.asInstanceOf[js.Any]
+        "accountId" -> accountId.asInstanceOf[js.Any]
       )
 
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))

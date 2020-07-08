@@ -7,32 +7,32 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object groundstation {
-  type ConfigArn                 = String
-  type ConfigList                = js.Array[ConfigListItem]
-  type ContactList               = js.Array[ContactData]
-  type DataflowEdge              = js.Array[ConfigArn]
-  type DataflowEdgeList          = js.Array[DataflowEdge]
-  type DataflowEndpointGroupArn  = String
+  type ConfigArn = String
+  type ConfigList = js.Array[ConfigListItem]
+  type ContactList = js.Array[ContactData]
+  type DataflowEdge = js.Array[ConfigArn]
+  type DataflowEdgeList = js.Array[DataflowEdge]
+  type DataflowEndpointGroupArn = String
   type DataflowEndpointGroupList = js.Array[DataflowEndpointListItem]
-  type DurationInSeconds         = Int
-  type EndpointDetailsList       = js.Array[EndpointDetails]
-  type GroundStationIdList       = js.Array[String]
-  type GroundStationList         = js.Array[GroundStationData]
-  type JsonString                = String
-  type MissionProfileArn         = String
-  type MissionProfileList        = js.Array[MissionProfileListItem]
-  type RoleArn                   = String
-  type SafeName                  = String
-  type SatelliteList             = js.Array[SatelliteListItem]
-  type SecurityGroupIdList       = js.Array[String]
-  type StatusList                = js.Array[ContactStatus]
-  type SubnetList                = js.Array[String]
-  type TagKeys                   = js.Array[String]
-  type TagsMap                   = js.Dictionary[String]
-  type Timestamp                 = js.Date
-  type Uuid                      = String
-  type noradSatelliteID          = Int
-  type satelliteArn              = String
+  type DurationInSeconds = Int
+  type EndpointDetailsList = js.Array[EndpointDetails]
+  type GroundStationIdList = js.Array[String]
+  type GroundStationList = js.Array[GroundStationData]
+  type JsonString = String
+  type MissionProfileArn = String
+  type MissionProfileList = js.Array[MissionProfileListItem]
+  type RoleArn = String
+  type SafeName = String
+  type SatelliteList = js.Array[SatelliteListItem]
+  type SecurityGroupIdList = js.Array[String]
+  type StatusList = js.Array[ContactStatus]
+  type SubnetList = js.Array[String]
+  type TagKeys = js.Array[String]
+  type TagsMap = js.Dictionary[String]
+  type Timestamp = js.Date
+  type Uuid = String
+  type noradSatelliteID = Int
+  type satelliteArn = String
 
   implicit final class GroundStationOps(private val service: GroundStation) extends AnyVal {
 
@@ -100,44 +100,44 @@ package groundstation {
     def this(config: AWSConfig) = this()
 
     def cancelContact(params: CancelContactRequest): Request[ContactIdResponse] = js.native
-    def createConfig(params: CreateConfigRequest): Request[ConfigIdResponse]    = js.native
+    def createConfig(params: CreateConfigRequest): Request[ConfigIdResponse] = js.native
     def createDataflowEndpointGroup(
         params: CreateDataflowEndpointGroupRequest
-    ): Request[DataflowEndpointGroupIdResponse]                                                      = js.native
+    ): Request[DataflowEndpointGroupIdResponse] = js.native
     def createMissionProfile(params: CreateMissionProfileRequest): Request[MissionProfileIdResponse] = js.native
-    def deleteConfig(params: DeleteConfigRequest): Request[ConfigIdResponse]                         = js.native
+    def deleteConfig(params: DeleteConfigRequest): Request[ConfigIdResponse] = js.native
     def deleteDataflowEndpointGroup(
         params: DeleteDataflowEndpointGroupRequest
-    ): Request[DataflowEndpointGroupIdResponse]                                                      = js.native
+    ): Request[DataflowEndpointGroupIdResponse] = js.native
     def deleteMissionProfile(params: DeleteMissionProfileRequest): Request[MissionProfileIdResponse] = js.native
-    def describeContact(params: DescribeContactRequest): Request[DescribeContactResponse]            = js.native
-    def getConfig(params: GetConfigRequest): Request[GetConfigResponse]                              = js.native
+    def describeContact(params: DescribeContactRequest): Request[DescribeContactResponse] = js.native
+    def getConfig(params: GetConfigRequest): Request[GetConfigResponse] = js.native
     def getDataflowEndpointGroup(params: GetDataflowEndpointGroupRequest): Request[GetDataflowEndpointGroupResponse] =
       js.native
-    def getMinuteUsage(params: GetMinuteUsageRequest): Request[GetMinuteUsageResponse]          = js.native
+    def getMinuteUsage(params: GetMinuteUsageRequest): Request[GetMinuteUsageResponse] = js.native
     def getMissionProfile(params: GetMissionProfileRequest): Request[GetMissionProfileResponse] = js.native
-    def getSatellite(params: GetSatelliteRequest): Request[GetSatelliteResponse]                = js.native
-    def listConfigs(params: ListConfigsRequest): Request[ListConfigsResponse]                   = js.native
-    def listContacts(params: ListContactsRequest): Request[ListContactsResponse]                = js.native
+    def getSatellite(params: GetSatelliteRequest): Request[GetSatelliteResponse] = js.native
+    def listConfigs(params: ListConfigsRequest): Request[ListConfigsResponse] = js.native
+    def listContacts(params: ListContactsRequest): Request[ListContactsResponse] = js.native
     def listDataflowEndpointGroups(
         params: ListDataflowEndpointGroupsRequest
-    ): Request[ListDataflowEndpointGroupsResponse]                                                    = js.native
-    def listGroundStations(params: ListGroundStationsRequest): Request[ListGroundStationsResponse]    = js.native
+    ): Request[ListDataflowEndpointGroupsResponse] = js.native
+    def listGroundStations(params: ListGroundStationsRequest): Request[ListGroundStationsResponse] = js.native
     def listMissionProfiles(params: ListMissionProfilesRequest): Request[ListMissionProfilesResponse] = js.native
-    def listSatellites(params: ListSatellitesRequest): Request[ListSatellitesResponse]                = js.native
+    def listSatellites(params: ListSatellitesRequest): Request[ListSatellitesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def reserveContact(params: ReserveContactRequest): Request[ContactIdResponse]                     = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
-    def updateConfig(params: UpdateConfigRequest): Request[ConfigIdResponse]                          = js.native
-    def updateMissionProfile(params: UpdateMissionProfileRequest): Request[MissionProfileIdResponse]  = js.native
+    def reserveContact(params: ReserveContactRequest): Request[ContactIdResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateConfig(params: UpdateConfigRequest): Request[ConfigIdResponse] = js.native
+    def updateMissionProfile(params: UpdateMissionProfileRequest): Request[MissionProfileIdResponse] = js.native
   }
 
   @js.native
   sealed trait AngleUnits extends js.Any
   object AngleUnits extends js.Object {
     val DEGREE_ANGLE = "DEGREE_ANGLE".asInstanceOf[AngleUnits]
-    val RADIAN       = "RADIAN".asInstanceOf[AngleUnits]
+    val RADIAN = "RADIAN".asInstanceOf[AngleUnits]
 
     val values = js.Object.freeze(js.Array(DEGREE_ANGLE, RADIAN))
   }
@@ -181,9 +181,9 @@ package groundstation {
         spectrumConfig: SpectrumConfig
     ): AntennaDownlinkDemodDecodeConfig = {
       val __obj = js.Dynamic.literal(
-        "decodeConfig"       -> decodeConfig.asInstanceOf[js.Any],
+        "decodeConfig" -> decodeConfig.asInstanceOf[js.Any],
         "demodulationConfig" -> demodulationConfig.asInstanceOf[js.Any],
-        "spectrumConfig"     -> spectrumConfig.asInstanceOf[js.Any]
+        "spectrumConfig" -> spectrumConfig.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AntennaDownlinkDemodDecodeConfig]
@@ -207,7 +207,7 @@ package groundstation {
     ): AntennaUplinkConfig = {
       val __obj = js.Dynamic.literal(
         "spectrumConfig" -> spectrumConfig.asInstanceOf[js.Any],
-        "targetEirp"     -> targetEirp.asInstanceOf[js.Any]
+        "targetEirp" -> targetEirp.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AntennaUplinkConfig]
@@ -248,12 +248,12 @@ package groundstation {
   @js.native
   sealed trait ConfigCapabilityType extends js.Any
   object ConfigCapabilityType extends js.Object {
-    val `antenna-downlink`              = "antenna-downlink".asInstanceOf[ConfigCapabilityType]
+    val `antenna-downlink` = "antenna-downlink".asInstanceOf[ConfigCapabilityType]
     val `antenna-downlink-demod-decode` = "antenna-downlink-demod-decode".asInstanceOf[ConfigCapabilityType]
-    val `antenna-uplink`                = "antenna-uplink".asInstanceOf[ConfigCapabilityType]
-    val `dataflow-endpoint`             = "dataflow-endpoint".asInstanceOf[ConfigCapabilityType]
-    val tracking                        = "tracking".asInstanceOf[ConfigCapabilityType]
-    val `uplink-echo`                   = "uplink-echo".asInstanceOf[ConfigCapabilityType]
+    val `antenna-uplink` = "antenna-uplink".asInstanceOf[ConfigCapabilityType]
+    val `dataflow-endpoint` = "dataflow-endpoint".asInstanceOf[ConfigCapabilityType]
+    val tracking = "tracking".asInstanceOf[ConfigCapabilityType]
+    val `uplink-echo` = "uplink-echo".asInstanceOf[ConfigCapabilityType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -434,18 +434,18 @@ package groundstation {
   @js.native
   sealed trait ContactStatus extends js.Any
   object ContactStatus extends js.Object {
-    val AVAILABLE          = "AVAILABLE".asInstanceOf[ContactStatus]
-    val AWS_CANCELLED      = "AWS_CANCELLED".asInstanceOf[ContactStatus]
-    val CANCELLED          = "CANCELLED".asInstanceOf[ContactStatus]
-    val CANCELLING         = "CANCELLING".asInstanceOf[ContactStatus]
-    val COMPLETED          = "COMPLETED".asInstanceOf[ContactStatus]
-    val FAILED             = "FAILED".asInstanceOf[ContactStatus]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[ContactStatus]
+    val AWS_CANCELLED = "AWS_CANCELLED".asInstanceOf[ContactStatus]
+    val CANCELLED = "CANCELLED".asInstanceOf[ContactStatus]
+    val CANCELLING = "CANCELLING".asInstanceOf[ContactStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[ContactStatus]
+    val FAILED = "FAILED".asInstanceOf[ContactStatus]
     val FAILED_TO_SCHEDULE = "FAILED_TO_SCHEDULE".asInstanceOf[ContactStatus]
-    val PASS               = "PASS".asInstanceOf[ContactStatus]
-    val POSTPASS           = "POSTPASS".asInstanceOf[ContactStatus]
-    val PREPASS            = "PREPASS".asInstanceOf[ContactStatus]
-    val SCHEDULED          = "SCHEDULED".asInstanceOf[ContactStatus]
-    val SCHEDULING         = "SCHEDULING".asInstanceOf[ContactStatus]
+    val PASS = "PASS".asInstanceOf[ContactStatus]
+    val POSTPASS = "POSTPASS".asInstanceOf[ContactStatus]
+    val PREPASS = "PREPASS".asInstanceOf[ContactStatus]
+    val SCHEDULED = "SCHEDULED".asInstanceOf[ContactStatus]
+    val SCHEDULING = "SCHEDULING".asInstanceOf[ContactStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -484,7 +484,7 @@ package groundstation {
     ): CreateConfigRequest = {
       val __obj = js.Dynamic.literal(
         "configData" -> configData.asInstanceOf[js.Any],
-        "name"       -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -542,10 +542,10 @@ package groundstation {
         tags: js.UndefOr[TagsMap] = js.undefined
     ): CreateMissionProfileRequest = {
       val __obj = js.Dynamic.literal(
-        "dataflowEdges"                       -> dataflowEdges.asInstanceOf[js.Any],
+        "dataflowEdges" -> dataflowEdges.asInstanceOf[js.Any],
         "minimumViableContactDurationSeconds" -> minimumViableContactDurationSeconds.asInstanceOf[js.Any],
-        "name"                                -> name.asInstanceOf[js.Any],
-        "trackingConfigArn"                   -> trackingConfigArn.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any],
+        "trackingConfigArn" -> trackingConfigArn.asInstanceOf[js.Any]
       )
 
       contactPostPassDurationSeconds.foreach(__v =>
@@ -563,8 +563,8 @@ package groundstation {
   sealed trait Criticality extends js.Any
   object Criticality extends js.Object {
     val PREFERRED = "PREFERRED".asInstanceOf[Criticality]
-    val REMOVED   = "REMOVED".asInstanceOf[Criticality]
-    val REQUIRED  = "REQUIRED".asInstanceOf[Criticality]
+    val REMOVED = "REMOVED".asInstanceOf[Criticality]
+    val REQUIRED = "REQUIRED".asInstanceOf[Criticality]
 
     val values = js.Object.freeze(js.Array(PREFERRED, REMOVED, REQUIRED))
   }
@@ -696,7 +696,7 @@ package groundstation {
         configType: ConfigCapabilityType
     ): DeleteConfigRequest = {
       val __obj = js.Dynamic.literal(
-        "configId"   -> configId.asInstanceOf[js.Any],
+        "configId" -> configId.asInstanceOf[js.Any],
         "configType" -> configType.asInstanceOf[js.Any]
       )
 
@@ -891,7 +891,7 @@ package groundstation {
         value: Double
     ): Elevation = {
       val __obj = js.Dynamic.literal(
-        "unit"  -> unit.asInstanceOf[js.Any],
+        "unit" -> unit.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
 
@@ -924,11 +924,11 @@ package groundstation {
   @js.native
   sealed trait EndpointStatus extends js.Any
   object EndpointStatus extends js.Object {
-    val created  = "created".asInstanceOf[EndpointStatus]
+    val created = "created".asInstanceOf[EndpointStatus]
     val creating = "creating".asInstanceOf[EndpointStatus]
-    val deleted  = "deleted".asInstanceOf[EndpointStatus]
+    val deleted = "deleted".asInstanceOf[EndpointStatus]
     val deleting = "deleting".asInstanceOf[EndpointStatus]
-    val failed   = "failed".asInstanceOf[EndpointStatus]
+    val failed = "failed".asInstanceOf[EndpointStatus]
 
     val values = js.Object.freeze(js.Array(created, creating, deleted, deleting, failed))
   }
@@ -1007,7 +1007,7 @@ package groundstation {
         configType: ConfigCapabilityType
     ): GetConfigRequest = {
       val __obj = js.Dynamic.literal(
-        "configId"   -> configId.asInstanceOf[js.Any],
+        "configId" -> configId.asInstanceOf[js.Any],
         "configType" -> configType.asInstanceOf[js.Any]
       )
 
@@ -1039,10 +1039,10 @@ package groundstation {
         tags: js.UndefOr[TagsMap] = js.undefined
     ): GetConfigResponse = {
       val __obj = js.Dynamic.literal(
-        "configArn"  -> configArn.asInstanceOf[js.Any],
+        "configArn" -> configArn.asInstanceOf[js.Any],
         "configData" -> configData.asInstanceOf[js.Any],
-        "configId"   -> configId.asInstanceOf[js.Any],
-        "name"       -> name.asInstanceOf[js.Any]
+        "configId" -> configId.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       configType.foreach(__v => __obj.updateDynamic("configType")(__v.asInstanceOf[js.Any]))
@@ -1117,7 +1117,7 @@ package groundstation {
     ): GetMinuteUsageRequest = {
       val __obj = js.Dynamic.literal(
         "month" -> month.asInstanceOf[js.Any],
-        "year"  -> year.asInstanceOf[js.Any]
+        "year" -> year.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetMinuteUsageRequest]
@@ -1380,8 +1380,8 @@ package groundstation {
         satelliteArn: js.UndefOr[satelliteArn] = js.undefined
     ): ListContactsRequest = {
       val __obj = js.Dynamic.literal(
-        "endTime"    -> endTime.asInstanceOf[js.Any],
-        "startTime"  -> startTime.asInstanceOf[js.Any],
+        "endTime" -> endTime.asInstanceOf[js.Any],
+        "startTime" -> startTime.asInstanceOf[js.Any],
         "statusList" -> statusList.asInstanceOf[js.Any]
       )
 
@@ -1687,8 +1687,8 @@ package groundstation {
   @js.native
   sealed trait Polarization extends js.Any
   object Polarization extends js.Object {
-    val LEFT_HAND  = "LEFT_HAND".asInstanceOf[Polarization]
-    val NONE       = "NONE".asInstanceOf[Polarization]
+    val LEFT_HAND = "LEFT_HAND".asInstanceOf[Polarization]
+    val NONE = "NONE".asInstanceOf[Polarization]
     val RIGHT_HAND = "RIGHT_HAND".asInstanceOf[Polarization]
 
     val values = js.Object.freeze(js.Array(LEFT_HAND, NONE, RIGHT_HAND))
@@ -1718,11 +1718,11 @@ package groundstation {
         tags: js.UndefOr[TagsMap] = js.undefined
     ): ReserveContactRequest = {
       val __obj = js.Dynamic.literal(
-        "endTime"           -> endTime.asInstanceOf[js.Any],
-        "groundStation"     -> groundStation.asInstanceOf[js.Any],
+        "endTime" -> endTime.asInstanceOf[js.Any],
+        "groundStation" -> groundStation.asInstanceOf[js.Any],
         "missionProfileArn" -> missionProfileArn.asInstanceOf[js.Any],
-        "satelliteArn"      -> satelliteArn.asInstanceOf[js.Any],
-        "startTime"         -> startTime.asInstanceOf[js.Any]
+        "satelliteArn" -> satelliteArn.asInstanceOf[js.Any],
+        "startTime" -> startTime.asInstanceOf[js.Any]
       )
 
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -1776,9 +1776,9 @@ package groundstation {
         subnetIds: SubnetList
     ): SecurityDetails = {
       val __obj = js.Dynamic.literal(
-        "roleArn"          -> roleArn.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
         "securityGroupIds" -> securityGroupIds.asInstanceOf[js.Any],
-        "subnetIds"        -> subnetIds.asInstanceOf[js.Any]
+        "subnetIds" -> subnetIds.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[SecurityDetails]
@@ -1827,7 +1827,7 @@ package groundstation {
         polarization: js.UndefOr[Polarization] = js.undefined
     ): SpectrumConfig = {
       val __obj = js.Dynamic.literal(
-        "bandwidth"       -> bandwidth.asInstanceOf[js.Any],
+        "bandwidth" -> bandwidth.asInstanceOf[js.Any],
         "centerFrequency" -> centerFrequency.asInstanceOf[js.Any]
       )
 
@@ -1853,7 +1853,7 @@ package groundstation {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -1914,7 +1914,7 @@ package groundstation {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -1958,9 +1958,9 @@ package groundstation {
     ): UpdateConfigRequest = {
       val __obj = js.Dynamic.literal(
         "configData" -> configData.asInstanceOf[js.Any],
-        "configId"   -> configId.asInstanceOf[js.Any],
+        "configId" -> configId.asInstanceOf[js.Any],
         "configType" -> configType.asInstanceOf[js.Any],
-        "name"       -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateConfigRequest]
@@ -2030,7 +2030,7 @@ package groundstation {
     ): UplinkEchoConfig = {
       val __obj = js.Dynamic.literal(
         "antennaUplinkConfigArn" -> antennaUplinkConfigArn.asInstanceOf[js.Any],
-        "enabled"                -> enabled.asInstanceOf[js.Any]
+        "enabled" -> enabled.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UplinkEchoConfig]

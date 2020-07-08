@@ -7,62 +7,62 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object wafv2 {
-  type Action                     = String
-  type CapacityUnit               = Double
-  type ConsumedCapacity           = Double
-  type Country                    = String
-  type CountryCodes               = js.Array[CountryCode]
-  type EntityDescription          = String
-  type EntityId                   = String
-  type EntityName                 = String
-  type ExcludedRules              = js.Array[ExcludedRule]
-  type FieldToMatchData           = String
-  type FirewallManagerRuleGroups  = js.Array[FirewallManagerRuleGroup]
-  type HTTPHeaders                = js.Array[HTTPHeader]
-  type HTTPMethod                 = String
-  type HTTPVersion                = String
-  type HeaderName                 = String
-  type HeaderValue                = String
-  type IPAddress                  = String
-  type IPAddresses                = js.Array[IPAddress]
-  type IPSetSummaries             = js.Array[IPSetSummary]
-  type IPString                   = String
-  type ListMaxItems               = Double
-  type LockToken                  = String
-  type LogDestinationConfigs      = js.Array[ResourceArn]
-  type LoggingConfigurations      = js.Array[LoggingConfiguration]
-  type ManagedRuleGroupSummaries  = js.Array[ManagedRuleGroupSummary]
-  type MetricName                 = String
-  type NextMarker                 = String
-  type PaginationLimit            = Int
-  type PolicyString               = String
-  type PopulationSize             = Double
-  type RateLimit                  = Double
-  type RedactedFields             = js.Array[FieldToMatch]
-  type RegexPatternSetSummaries   = js.Array[RegexPatternSetSummary]
-  type RegexPatternString         = String
-  type RegularExpressionList      = js.Array[Regex]
-  type ResourceArn                = String
-  type ResourceArns               = js.Array[ResourceArn]
-  type RuleGroupSummaries         = js.Array[RuleGroupSummary]
-  type RulePriority               = Int
-  type RuleSummaries              = js.Array[RuleSummary]
-  type Rules                      = js.Array[Rule]
-  type SampleWeight               = Double
-  type SampledHTTPRequests        = js.Array[SampledHTTPRequest]
-  type SearchString               = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type Size                       = Double
-  type Statements                 = js.Array[Statement]
-  type TagKey                     = String
-  type TagKeyList                 = js.Array[TagKey]
-  type TagList                    = js.Array[Tag]
-  type TagValue                   = String
+  type Action = String
+  type CapacityUnit = Double
+  type ConsumedCapacity = Double
+  type Country = String
+  type CountryCodes = js.Array[CountryCode]
+  type EntityDescription = String
+  type EntityId = String
+  type EntityName = String
+  type ExcludedRules = js.Array[ExcludedRule]
+  type FieldToMatchData = String
+  type FirewallManagerRuleGroups = js.Array[FirewallManagerRuleGroup]
+  type HTTPHeaders = js.Array[HTTPHeader]
+  type HTTPMethod = String
+  type HTTPVersion = String
+  type HeaderName = String
+  type HeaderValue = String
+  type IPAddress = String
+  type IPAddresses = js.Array[IPAddress]
+  type IPSetSummaries = js.Array[IPSetSummary]
+  type IPString = String
+  type ListMaxItems = Double
+  type LockToken = String
+  type LogDestinationConfigs = js.Array[ResourceArn]
+  type LoggingConfigurations = js.Array[LoggingConfiguration]
+  type ManagedRuleGroupSummaries = js.Array[ManagedRuleGroupSummary]
+  type MetricName = String
+  type NextMarker = String
+  type PaginationLimit = Int
+  type PolicyString = String
+  type PopulationSize = Double
+  type RateLimit = Double
+  type RedactedFields = js.Array[FieldToMatch]
+  type RegexPatternSetSummaries = js.Array[RegexPatternSetSummary]
+  type RegexPatternString = String
+  type RegularExpressionList = js.Array[Regex]
+  type ResourceArn = String
+  type ResourceArns = js.Array[ResourceArn]
+  type RuleGroupSummaries = js.Array[RuleGroupSummary]
+  type RulePriority = Int
+  type RuleSummaries = js.Array[RuleSummary]
+  type Rules = js.Array[Rule]
+  type SampleWeight = Double
+  type SampledHTTPRequests = js.Array[SampledHTTPRequest]
+  type SearchString = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type Size = Double
+  type Statements = js.Array[Statement]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
   type TextTransformationPriority = Int
-  type TextTransformations        = js.Array[TextTransformation]
-  type Timestamp                  = js.Date
-  type URIString                  = String
-  type VendorName                 = String
-  type WebACLSummaries            = js.Array[WebACLSummary]
+  type TextTransformations = js.Array[TextTransformation]
+  type Timestamp = js.Date
+  type URIString = String
+  type VendorName = String
+  type WebACLSummaries = js.Array[WebACLSummary]
 
   implicit final class WAFv2Ops(private val service: WAFv2) extends AnyVal {
 
@@ -171,15 +171,15 @@ package wafv2 {
   class WAFv2() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def associateWebACL(params: AssociateWebACLRequest): Request[AssociateWebACLResponse]                   = js.native
-    def checkCapacity(params: CheckCapacityRequest): Request[CheckCapacityResponse]                         = js.native
-    def createIPSet(params: CreateIPSetRequest): Request[CreateIPSetResponse]                               = js.native
+    def associateWebACL(params: AssociateWebACLRequest): Request[AssociateWebACLResponse] = js.native
+    def checkCapacity(params: CheckCapacityRequest): Request[CheckCapacityResponse] = js.native
+    def createIPSet(params: CreateIPSetRequest): Request[CreateIPSetResponse] = js.native
     def createRegexPatternSet(params: CreateRegexPatternSetRequest): Request[CreateRegexPatternSetResponse] = js.native
-    def createRuleGroup(params: CreateRuleGroupRequest): Request[CreateRuleGroupResponse]                   = js.native
-    def createWebACL(params: CreateWebACLRequest): Request[CreateWebACLResponse]                            = js.native
+    def createRuleGroup(params: CreateRuleGroupRequest): Request[CreateRuleGroupResponse] = js.native
+    def createWebACL(params: CreateWebACLRequest): Request[CreateWebACLResponse] = js.native
     def deleteFirewallManagerRuleGroups(
         params: DeleteFirewallManagerRuleGroupsRequest
-    ): Request[DeleteFirewallManagerRuleGroupsResponse]                       = js.native
+    ): Request[DeleteFirewallManagerRuleGroupsResponse] = js.native
     def deleteIPSet(params: DeleteIPSetRequest): Request[DeleteIPSetResponse] = js.native
     def deleteLoggingConfiguration(
         params: DeleteLoggingConfigurationRequest
@@ -187,45 +187,45 @@ package wafv2 {
     def deletePermissionPolicy(params: DeletePermissionPolicyRequest): Request[DeletePermissionPolicyResponse] =
       js.native
     def deleteRegexPatternSet(params: DeleteRegexPatternSetRequest): Request[DeleteRegexPatternSetResponse] = js.native
-    def deleteRuleGroup(params: DeleteRuleGroupRequest): Request[DeleteRuleGroupResponse]                   = js.native
-    def deleteWebACL(params: DeleteWebACLRequest): Request[DeleteWebACLResponse]                            = js.native
+    def deleteRuleGroup(params: DeleteRuleGroupRequest): Request[DeleteRuleGroupResponse] = js.native
+    def deleteWebACL(params: DeleteWebACLRequest): Request[DeleteWebACLResponse] = js.native
     def describeManagedRuleGroup(params: DescribeManagedRuleGroupRequest): Request[DescribeManagedRuleGroupResponse] =
       js.native
     def disassociateWebACL(params: DisassociateWebACLRequest): Request[DisassociateWebACLResponse] = js.native
-    def getIPSet(params: GetIPSetRequest): Request[GetIPSetResponse]                               = js.native
+    def getIPSet(params: GetIPSetRequest): Request[GetIPSetResponse] = js.native
     def getLoggingConfiguration(params: GetLoggingConfigurationRequest): Request[GetLoggingConfigurationResponse] =
       js.native
     def getPermissionPolicy(params: GetPermissionPolicyRequest): Request[GetPermissionPolicyResponse] = js.native
     def getRateBasedStatementManagedKeys(
         params: GetRateBasedStatementManagedKeysRequest
-    ): Request[GetRateBasedStatementManagedKeysResponse]                                                 = js.native
-    def getRegexPatternSet(params: GetRegexPatternSetRequest): Request[GetRegexPatternSetResponse]       = js.native
-    def getRuleGroup(params: GetRuleGroupRequest): Request[GetRuleGroupResponse]                         = js.native
-    def getSampledRequests(params: GetSampledRequestsRequest): Request[GetSampledRequestsResponse]       = js.native
-    def getWebACL(params: GetWebACLRequest): Request[GetWebACLResponse]                                  = js.native
+    ): Request[GetRateBasedStatementManagedKeysResponse] = js.native
+    def getRegexPatternSet(params: GetRegexPatternSetRequest): Request[GetRegexPatternSetResponse] = js.native
+    def getRuleGroup(params: GetRuleGroupRequest): Request[GetRuleGroupResponse] = js.native
+    def getSampledRequests(params: GetSampledRequestsRequest): Request[GetSampledRequestsResponse] = js.native
+    def getWebACL(params: GetWebACLRequest): Request[GetWebACLResponse] = js.native
     def getWebACLForResource(params: GetWebACLForResourceRequest): Request[GetWebACLForResourceResponse] = js.native
     def listAvailableManagedRuleGroups(
         params: ListAvailableManagedRuleGroupsRequest
-    ): Request[ListAvailableManagedRuleGroupsResponse]                     = js.native
+    ): Request[ListAvailableManagedRuleGroupsResponse] = js.native
     def listIPSets(params: ListIPSetsRequest): Request[ListIPSetsResponse] = js.native
     def listLoggingConfigurations(
         params: ListLoggingConfigurationsRequest
-    ): Request[ListLoggingConfigurationsResponse]                                                        = js.native
+    ): Request[ListLoggingConfigurationsResponse] = js.native
     def listRegexPatternSets(params: ListRegexPatternSetsRequest): Request[ListRegexPatternSetsResponse] = js.native
     def listResourcesForWebACL(params: ListResourcesForWebACLRequest): Request[ListResourcesForWebACLResponse] =
       js.native
-    def listRuleGroups(params: ListRuleGroupsRequest): Request[ListRuleGroupsResponse]                = js.native
+    def listRuleGroups(params: ListRuleGroupsRequest): Request[ListRuleGroupsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def listWebACLs(params: ListWebACLsRequest): Request[ListWebACLsResponse]                         = js.native
+    def listWebACLs(params: ListWebACLsRequest): Request[ListWebACLsResponse] = js.native
     def putLoggingConfiguration(params: PutLoggingConfigurationRequest): Request[PutLoggingConfigurationResponse] =
       js.native
-    def putPermissionPolicy(params: PutPermissionPolicyRequest): Request[PutPermissionPolicyResponse]       = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                               = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                         = js.native
-    def updateIPSet(params: UpdateIPSetRequest): Request[UpdateIPSetResponse]                               = js.native
+    def putPermissionPolicy(params: PutPermissionPolicyRequest): Request[PutPermissionPolicyResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateIPSet(params: UpdateIPSetRequest): Request[UpdateIPSetResponse] = js.native
     def updateRegexPatternSet(params: UpdateRegexPatternSetRequest): Request[UpdateRegexPatternSetResponse] = js.native
-    def updateRuleGroup(params: UpdateRuleGroupRequest): Request[UpdateRuleGroupResponse]                   = js.native
-    def updateWebACL(params: UpdateWebACLRequest): Request[UpdateWebACLResponse]                            = js.native
+    def updateRuleGroup(params: UpdateRuleGroupRequest): Request[UpdateRuleGroupResponse] = js.native
+    def updateWebACL(params: UpdateWebACLRequest): Request[UpdateWebACLResponse] = js.native
   }
 
   /**
@@ -300,7 +300,7 @@ package wafv2 {
     ): AssociateWebACLRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "WebACLArn"   -> WebACLArn.asInstanceOf[js.Any]
+        "WebACLArn" -> WebACLArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AssociateWebACLRequest]
@@ -377,10 +377,10 @@ package wafv2 {
         TextTransformations: TextTransformations
     ): ByteMatchStatement = {
       val __obj = js.Dynamic.literal(
-        "FieldToMatch"         -> FieldToMatch.asInstanceOf[js.Any],
+        "FieldToMatch" -> FieldToMatch.asInstanceOf[js.Any],
         "PositionalConstraint" -> PositionalConstraint.asInstanceOf[js.Any],
-        "SearchString"         -> SearchString.asInstanceOf[js.Any],
-        "TextTransformations"  -> TextTransformations.asInstanceOf[js.Any]
+        "SearchString" -> SearchString.asInstanceOf[js.Any],
+        "TextTransformations" -> TextTransformations.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ByteMatchStatement]
@@ -984,10 +984,10 @@ package wafv2 {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateIPSetRequest = {
       val __obj = js.Dynamic.literal(
-        "Addresses"        -> Addresses.asInstanceOf[js.Any],
+        "Addresses" -> Addresses.asInstanceOf[js.Any],
         "IPAddressVersion" -> IPAddressVersion.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any],
-        "Scope"            -> Scope.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Scope" -> Scope.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -1031,9 +1031,9 @@ package wafv2 {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateRegexPatternSetRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"                  -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "RegularExpressionList" -> RegularExpressionList.asInstanceOf[js.Any],
-        "Scope"                 -> Scope.asInstanceOf[js.Any]
+        "Scope" -> Scope.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -1081,9 +1081,9 @@ package wafv2 {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateRuleGroupRequest = {
       val __obj = js.Dynamic.literal(
-        "Capacity"         -> Capacity.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any],
-        "Scope"            -> Scope.asInstanceOf[js.Any],
+        "Capacity" -> Capacity.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Scope" -> Scope.asInstanceOf[js.Any],
         "VisibilityConfig" -> VisibilityConfig.asInstanceOf[js.Any]
       )
 
@@ -1133,9 +1133,9 @@ package wafv2 {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateWebACLRequest = {
       val __obj = js.Dynamic.literal(
-        "DefaultAction"    -> DefaultAction.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any],
-        "Scope"            -> Scope.asInstanceOf[js.Any],
+        "DefaultAction" -> DefaultAction.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Scope" -> Scope.asInstanceOf[js.Any],
         "VisibilityConfig" -> VisibilityConfig.asInstanceOf[js.Any]
       )
 
@@ -1198,7 +1198,7 @@ package wafv2 {
         WebACLLockToken: LockToken
     ): DeleteFirewallManagerRuleGroupsRequest = {
       val __obj = js.Dynamic.literal(
-        "WebACLArn"       -> WebACLArn.asInstanceOf[js.Any],
+        "WebACLArn" -> WebACLArn.asInstanceOf[js.Any],
         "WebACLLockToken" -> WebACLLockToken.asInstanceOf[js.Any]
       )
 
@@ -1239,10 +1239,10 @@ package wafv2 {
         Scope: Scope
     ): DeleteIPSetRequest = {
       val __obj = js.Dynamic.literal(
-        "Id"        -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "LockToken" -> LockToken.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any],
-        "Scope"     -> Scope.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Scope" -> Scope.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteIPSetRequest]
@@ -1341,10 +1341,10 @@ package wafv2 {
         Scope: Scope
     ): DeleteRegexPatternSetRequest = {
       val __obj = js.Dynamic.literal(
-        "Id"        -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "LockToken" -> LockToken.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any],
-        "Scope"     -> Scope.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Scope" -> Scope.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteRegexPatternSetRequest]
@@ -1381,10 +1381,10 @@ package wafv2 {
         Scope: Scope
     ): DeleteRuleGroupRequest = {
       val __obj = js.Dynamic.literal(
-        "Id"        -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "LockToken" -> LockToken.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any],
-        "Scope"     -> Scope.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Scope" -> Scope.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteRuleGroupRequest]
@@ -1421,10 +1421,10 @@ package wafv2 {
         Scope: Scope
     ): DeleteWebACLRequest = {
       val __obj = js.Dynamic.literal(
-        "Id"        -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "LockToken" -> LockToken.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any],
-        "Scope"     -> Scope.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Scope" -> Scope.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteWebACLRequest]
@@ -1459,8 +1459,8 @@ package wafv2 {
         VendorName: VendorName
     ): DescribeManagedRuleGroupRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"       -> Name.asInstanceOf[js.Any],
-        "Scope"      -> Scope.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Scope" -> Scope.asInstanceOf[js.Any],
         "VendorName" -> VendorName.asInstanceOf[js.Any]
       )
 
@@ -1601,10 +1601,10 @@ package wafv2 {
     ): FirewallManagerRuleGroup = {
       val __obj = js.Dynamic.literal(
         "FirewallManagerStatement" -> FirewallManagerStatement.asInstanceOf[js.Any],
-        "Name"                     -> Name.asInstanceOf[js.Any],
-        "OverrideAction"           -> OverrideAction.asInstanceOf[js.Any],
-        "Priority"                 -> Priority.asInstanceOf[js.Any],
-        "VisibilityConfig"         -> VisibilityConfig.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any],
+        "OverrideAction" -> OverrideAction.asInstanceOf[js.Any],
+        "Priority" -> Priority.asInstanceOf[js.Any],
+        "VisibilityConfig" -> VisibilityConfig.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[FirewallManagerRuleGroup]
@@ -1672,8 +1672,8 @@ package wafv2 {
         Scope: Scope
     ): GetIPSetRequest = {
       val __obj = js.Dynamic.literal(
-        "Id"    -> Id.asInstanceOf[js.Any],
-        "Name"  -> Name.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Scope" -> Scope.asInstanceOf[js.Any]
       )
 
@@ -1785,9 +1785,9 @@ package wafv2 {
         WebACLName: EntityName
     ): GetRateBasedStatementManagedKeysRequest = {
       val __obj = js.Dynamic.literal(
-        "RuleName"   -> RuleName.asInstanceOf[js.Any],
-        "Scope"      -> Scope.asInstanceOf[js.Any],
-        "WebACLId"   -> WebACLId.asInstanceOf[js.Any],
+        "RuleName" -> RuleName.asInstanceOf[js.Any],
+        "Scope" -> Scope.asInstanceOf[js.Any],
+        "WebACLId" -> WebACLId.asInstanceOf[js.Any],
         "WebACLName" -> WebACLName.asInstanceOf[js.Any]
       )
 
@@ -1829,8 +1829,8 @@ package wafv2 {
         Scope: Scope
     ): GetRegexPatternSetRequest = {
       val __obj = js.Dynamic.literal(
-        "Id"    -> Id.asInstanceOf[js.Any],
-        "Name"  -> Name.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Scope" -> Scope.asInstanceOf[js.Any]
       )
 
@@ -1872,8 +1872,8 @@ package wafv2 {
         Scope: Scope
     ): GetRuleGroupRequest = {
       val __obj = js.Dynamic.literal(
-        "Id"    -> Id.asInstanceOf[js.Any],
-        "Name"  -> Name.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Scope" -> Scope.asInstanceOf[js.Any]
       )
 
@@ -1919,11 +1919,11 @@ package wafv2 {
         WebAclArn: ResourceArn
     ): GetSampledRequestsRequest = {
       val __obj = js.Dynamic.literal(
-        "MaxItems"       -> MaxItems.asInstanceOf[js.Any],
+        "MaxItems" -> MaxItems.asInstanceOf[js.Any],
         "RuleMetricName" -> RuleMetricName.asInstanceOf[js.Any],
-        "Scope"          -> Scope.asInstanceOf[js.Any],
-        "TimeWindow"     -> TimeWindow.asInstanceOf[js.Any],
-        "WebAclArn"      -> WebAclArn.asInstanceOf[js.Any]
+        "Scope" -> Scope.asInstanceOf[js.Any],
+        "TimeWindow" -> TimeWindow.asInstanceOf[js.Any],
+        "WebAclArn" -> WebAclArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetSampledRequestsRequest]
@@ -2001,8 +2001,8 @@ package wafv2 {
         Scope: Scope
     ): GetWebACLRequest = {
       val __obj = js.Dynamic.literal(
-        "Id"    -> Id.asInstanceOf[js.Any],
-        "Name"  -> Name.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Scope" -> Scope.asInstanceOf[js.Any]
       )
 
@@ -2122,11 +2122,11 @@ package wafv2 {
         Description: js.UndefOr[EntityDescription] = js.undefined
     ): IPSet = {
       val __obj = js.Dynamic.literal(
-        "ARN"              -> ARN.asInstanceOf[js.Any],
-        "Addresses"        -> Addresses.asInstanceOf[js.Any],
+        "ARN" -> ARN.asInstanceOf[js.Any],
+        "Addresses" -> Addresses.asInstanceOf[js.Any],
         "IPAddressVersion" -> IPAddressVersion.asInstanceOf[js.Any],
-        "Id"               -> Id.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any]
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -2545,7 +2545,7 @@ package wafv2 {
     ): LoggingConfiguration = {
       val __obj = js.Dynamic.literal(
         "LogDestinationConfigs" -> LogDestinationConfigs.asInstanceOf[js.Any],
-        "ResourceArn"           -> ResourceArn.asInstanceOf[js.Any]
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
       RedactedFields.foreach(__v => __obj.updateDynamic("RedactedFields")(__v.asInstanceOf[js.Any]))
@@ -2573,7 +2573,7 @@ package wafv2 {
         ExcludedRules: js.UndefOr[ExcludedRules] = js.undefined
     ): ManagedRuleGroupStatement = {
       val __obj = js.Dynamic.literal(
-        "Name"       -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "VendorName" -> VendorName.asInstanceOf[js.Any]
       )
 
@@ -2717,10 +2717,10 @@ package wafv2 {
   @js.native
   sealed trait PositionalConstraint extends js.Any
   object PositionalConstraint extends js.Object {
-    val EXACTLY       = "EXACTLY".asInstanceOf[PositionalConstraint]
-    val STARTS_WITH   = "STARTS_WITH".asInstanceOf[PositionalConstraint]
-    val ENDS_WITH     = "ENDS_WITH".asInstanceOf[PositionalConstraint]
-    val CONTAINS      = "CONTAINS".asInstanceOf[PositionalConstraint]
+    val EXACTLY = "EXACTLY".asInstanceOf[PositionalConstraint]
+    val STARTS_WITH = "STARTS_WITH".asInstanceOf[PositionalConstraint]
+    val ENDS_WITH = "ENDS_WITH".asInstanceOf[PositionalConstraint]
+    val CONTAINS = "CONTAINS".asInstanceOf[PositionalConstraint]
     val CONTAINS_WORD = "CONTAINS_WORD".asInstanceOf[PositionalConstraint]
 
     val values = js.Object.freeze(js.Array(EXACTLY, STARTS_WITH, ENDS_WITH, CONTAINS, CONTAINS_WORD))
@@ -2773,7 +2773,7 @@ package wafv2 {
         ResourceArn: ResourceArn
     ): PutPermissionPolicyRequest = {
       val __obj = js.Dynamic.literal(
-        "Policy"      -> Policy.asInstanceOf[js.Any],
+        "Policy" -> Policy.asInstanceOf[js.Any],
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -2838,7 +2838,7 @@ package wafv2 {
     ): RateBasedStatement = {
       val __obj = js.Dynamic.literal(
         "AggregateKeyType" -> AggregateKeyType.asInstanceOf[js.Any],
-        "Limit"            -> Limit.asInstanceOf[js.Any]
+        "Limit" -> Limit.asInstanceOf[js.Any]
       )
 
       ScopeDownStatement.foreach(__v => __obj.updateDynamic("ScopeDownStatement")(__v.asInstanceOf[js.Any]))
@@ -2950,8 +2950,8 @@ package wafv2 {
         TextTransformations: TextTransformations
     ): RegexPatternSetReferenceStatement = {
       val __obj = js.Dynamic.literal(
-        "ARN"                 -> ARN.asInstanceOf[js.Any],
-        "FieldToMatch"        -> FieldToMatch.asInstanceOf[js.Any],
+        "ARN" -> ARN.asInstanceOf[js.Any],
+        "FieldToMatch" -> FieldToMatch.asInstanceOf[js.Any],
         "TextTransformations" -> TextTransformations.asInstanceOf[js.Any]
       )
 
@@ -2995,7 +2995,7 @@ package wafv2 {
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {
     val APPLICATION_LOAD_BALANCER = "APPLICATION_LOAD_BALANCER".asInstanceOf[ResourceType]
-    val API_GATEWAY               = "API_GATEWAY".asInstanceOf[ResourceType]
+    val API_GATEWAY = "API_GATEWAY".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(js.Array(APPLICATION_LOAD_BALANCER, API_GATEWAY))
   }
@@ -3025,9 +3025,9 @@ package wafv2 {
         OverrideAction: js.UndefOr[OverrideAction] = js.undefined
     ): Rule = {
       val __obj = js.Dynamic.literal(
-        "Name"             -> Name.asInstanceOf[js.Any],
-        "Priority"         -> Priority.asInstanceOf[js.Any],
-        "Statement"        -> Statement.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Priority" -> Priority.asInstanceOf[js.Any],
+        "Statement" -> Statement.asInstanceOf[js.Any],
         "VisibilityConfig" -> VisibilityConfig.asInstanceOf[js.Any]
       )
 
@@ -3090,10 +3090,10 @@ package wafv2 {
         Rules: js.UndefOr[Rules] = js.undefined
     ): RuleGroup = {
       val __obj = js.Dynamic.literal(
-        "ARN"              -> ARN.asInstanceOf[js.Any],
-        "Capacity"         -> Capacity.asInstanceOf[js.Any],
-        "Id"               -> Id.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any],
+        "ARN" -> ARN.asInstanceOf[js.Any],
+        "Capacity" -> Capacity.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "VisibilityConfig" -> VisibilityConfig.asInstanceOf[js.Any]
       )
 
@@ -3208,7 +3208,7 @@ package wafv2 {
     ): SampledHTTPRequest = {
       val __obj = js.Dynamic.literal(
         "Request" -> Request.asInstanceOf[js.Any],
-        "Weight"  -> Weight.asInstanceOf[js.Any]
+        "Weight" -> Weight.asInstanceOf[js.Any]
       )
 
       Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
@@ -3222,7 +3222,7 @@ package wafv2 {
   sealed trait Scope extends js.Any
   object Scope extends js.Object {
     val CLOUDFRONT = "CLOUDFRONT".asInstanceOf[Scope]
-    val REGIONAL   = "REGIONAL".asInstanceOf[Scope]
+    val REGIONAL = "REGIONAL".asInstanceOf[Scope]
 
     val values = js.Object.freeze(js.Array(CLOUDFRONT, REGIONAL))
   }
@@ -3295,9 +3295,9 @@ package wafv2 {
         TextTransformations: TextTransformations
     ): SizeConstraintStatement = {
       val __obj = js.Dynamic.literal(
-        "ComparisonOperator"  -> ComparisonOperator.asInstanceOf[js.Any],
-        "FieldToMatch"        -> FieldToMatch.asInstanceOf[js.Any],
-        "Size"                -> Size.asInstanceOf[js.Any],
+        "ComparisonOperator" -> ComparisonOperator.asInstanceOf[js.Any],
+        "FieldToMatch" -> FieldToMatch.asInstanceOf[js.Any],
+        "Size" -> Size.asInstanceOf[js.Any],
         "TextTransformations" -> TextTransformations.asInstanceOf[js.Any]
       )
 
@@ -3322,7 +3322,7 @@ package wafv2 {
         TextTransformations: TextTransformations
     ): SqliMatchStatement = {
       val __obj = js.Dynamic.literal(
-        "FieldToMatch"        -> FieldToMatch.asInstanceOf[js.Any],
+        "FieldToMatch" -> FieldToMatch.asInstanceOf[js.Any],
         "TextTransformations" -> TextTransformations.asInstanceOf[js.Any]
       )
 
@@ -3409,7 +3409,7 @@ package wafv2 {
         Value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -3454,7 +3454,7 @@ package wafv2 {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -3492,7 +3492,7 @@ package wafv2 {
     ): TextTransformation = {
       val __obj = js.Dynamic.literal(
         "Priority" -> Priority.asInstanceOf[js.Any],
-        "Type"     -> Type.asInstanceOf[js.Any]
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TextTransformation]
@@ -3502,12 +3502,12 @@ package wafv2 {
   @js.native
   sealed trait TextTransformationType extends js.Any
   object TextTransformationType extends js.Object {
-    val NONE                 = "NONE".asInstanceOf[TextTransformationType]
+    val NONE = "NONE".asInstanceOf[TextTransformationType]
     val COMPRESS_WHITE_SPACE = "COMPRESS_WHITE_SPACE".asInstanceOf[TextTransformationType]
-    val HTML_ENTITY_DECODE   = "HTML_ENTITY_DECODE".asInstanceOf[TextTransformationType]
-    val LOWERCASE            = "LOWERCASE".asInstanceOf[TextTransformationType]
-    val CMD_LINE             = "CMD_LINE".asInstanceOf[TextTransformationType]
-    val URL_DECODE           = "URL_DECODE".asInstanceOf[TextTransformationType]
+    val HTML_ENTITY_DECODE = "HTML_ENTITY_DECODE".asInstanceOf[TextTransformationType]
+    val LOWERCASE = "LOWERCASE".asInstanceOf[TextTransformationType]
+    val CMD_LINE = "CMD_LINE".asInstanceOf[TextTransformationType]
+    val URL_DECODE = "URL_DECODE".asInstanceOf[TextTransformationType]
 
     val values =
       js.Object.freeze(js.Array(NONE, COMPRESS_WHITE_SPACE, HTML_ENTITY_DECODE, LOWERCASE, CMD_LINE, URL_DECODE))
@@ -3531,7 +3531,7 @@ package wafv2 {
         StartTime: Timestamp
     ): TimeWindow = {
       val __obj = js.Dynamic.literal(
-        "EndTime"   -> EndTime.asInstanceOf[js.Any],
+        "EndTime" -> EndTime.asInstanceOf[js.Any],
         "StartTime" -> StartTime.asInstanceOf[js.Any]
       )
 
@@ -3553,7 +3553,7 @@ package wafv2 {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -3595,10 +3595,10 @@ package wafv2 {
     ): UpdateIPSetRequest = {
       val __obj = js.Dynamic.literal(
         "Addresses" -> Addresses.asInstanceOf[js.Any],
-        "Id"        -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "LockToken" -> LockToken.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any],
-        "Scope"     -> Scope.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Scope" -> Scope.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -3643,11 +3643,11 @@ package wafv2 {
         Description: js.UndefOr[EntityDescription] = js.undefined
     ): UpdateRegexPatternSetRequest = {
       val __obj = js.Dynamic.literal(
-        "Id"                    -> Id.asInstanceOf[js.Any],
-        "LockToken"             -> LockToken.asInstanceOf[js.Any],
-        "Name"                  -> Name.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "LockToken" -> LockToken.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "RegularExpressionList" -> RegularExpressionList.asInstanceOf[js.Any],
-        "Scope"                 -> Scope.asInstanceOf[js.Any]
+        "Scope" -> Scope.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -3694,10 +3694,10 @@ package wafv2 {
         Rules: js.UndefOr[Rules] = js.undefined
     ): UpdateRuleGroupRequest = {
       val __obj = js.Dynamic.literal(
-        "Id"               -> Id.asInstanceOf[js.Any],
-        "LockToken"        -> LockToken.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any],
-        "Scope"            -> Scope.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "LockToken" -> LockToken.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Scope" -> Scope.asInstanceOf[js.Any],
         "VisibilityConfig" -> VisibilityConfig.asInstanceOf[js.Any]
       )
 
@@ -3748,11 +3748,11 @@ package wafv2 {
         Rules: js.UndefOr[Rules] = js.undefined
     ): UpdateWebACLRequest = {
       val __obj = js.Dynamic.literal(
-        "DefaultAction"    -> DefaultAction.asInstanceOf[js.Any],
-        "Id"               -> Id.asInstanceOf[js.Any],
-        "LockToken"        -> LockToken.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any],
-        "Scope"            -> Scope.asInstanceOf[js.Any],
+        "DefaultAction" -> DefaultAction.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "LockToken" -> LockToken.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Scope" -> Scope.asInstanceOf[js.Any],
         "VisibilityConfig" -> VisibilityConfig.asInstanceOf[js.Any]
       )
 
@@ -3816,8 +3816,8 @@ package wafv2 {
     ): VisibilityConfig = {
       val __obj = js.Dynamic.literal(
         "CloudWatchMetricsEnabled" -> CloudWatchMetricsEnabled.asInstanceOf[js.Any],
-        "MetricName"               -> MetricName.asInstanceOf[js.Any],
-        "SampledRequestsEnabled"   -> SampledRequestsEnabled.asInstanceOf[js.Any]
+        "MetricName" -> MetricName.asInstanceOf[js.Any],
+        "SampledRequestsEnabled" -> SampledRequestsEnabled.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[VisibilityConfig]
@@ -3859,10 +3859,10 @@ package wafv2 {
         Rules: js.UndefOr[Rules] = js.undefined
     ): WebACL = {
       val __obj = js.Dynamic.literal(
-        "ARN"              -> ARN.asInstanceOf[js.Any],
-        "DefaultAction"    -> DefaultAction.asInstanceOf[js.Any],
-        "Id"               -> Id.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any],
+        "ARN" -> ARN.asInstanceOf[js.Any],
+        "DefaultAction" -> DefaultAction.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "VisibilityConfig" -> VisibilityConfig.asInstanceOf[js.Any]
       )
 
@@ -3929,7 +3929,7 @@ package wafv2 {
         TextTransformations: TextTransformations
     ): XssMatchStatement = {
       val __obj = js.Dynamic.literal(
-        "FieldToMatch"        -> FieldToMatch.asInstanceOf[js.Any],
+        "FieldToMatch" -> FieldToMatch.asInstanceOf[js.Any],
         "TextTransformations" -> TextTransformations.asInstanceOf[js.Any]
       )
 

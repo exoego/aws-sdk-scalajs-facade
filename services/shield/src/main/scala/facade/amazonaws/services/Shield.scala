@@ -7,36 +7,36 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object shield {
-  type AttackId                    = String
-  type AttackProperties            = js.Array[AttackProperty]
-  type AttackSummaries             = js.Array[AttackSummary]
-  type AttackTimestamp             = js.Date
+  type AttackId = String
+  type AttackProperties = js.Array[AttackProperty]
+  type AttackSummaries = js.Array[AttackSummary]
+  type AttackTimestamp = js.Date
   type AttackVectorDescriptionList = js.Array[AttackVectorDescription]
-  type ContactNotes                = String
-  type DurationInSeconds           = Double
-  type EmailAddress                = String
-  type EmergencyContactList        = js.Array[EmergencyContact]
-  type HealthCheckArn              = String
-  type HealthCheckId               = String
-  type HealthCheckIds              = js.Array[HealthCheckId]
-  type Limits                      = js.Array[Limit]
-  type LogBucket                   = String
-  type LogBucketList               = js.Array[LogBucket]
-  type MaxResults                  = Int
-  type MitigationList              = js.Array[Mitigation]
-  type PhoneNumber                 = String
-  type ProtectionId                = String
-  type ProtectionName              = String
-  type Protections                 = js.Array[Protection]
-  type ResourceArn                 = String
-  type ResourceArnFilterList       = js.Array[ResourceArn]
-  type RoleArn                     = String
-  type SubResourceSummaryList      = js.Array[SubResourceSummary]
-  type SummarizedAttackVectorList  = js.Array[SummarizedAttackVector]
-  type SummarizedCounterList       = js.Array[SummarizedCounter]
-  type Timestamp                   = js.Date
-  type Token                       = String
-  type TopContributors             = js.Array[Contributor]
+  type ContactNotes = String
+  type DurationInSeconds = Double
+  type EmailAddress = String
+  type EmergencyContactList = js.Array[EmergencyContact]
+  type HealthCheckArn = String
+  type HealthCheckId = String
+  type HealthCheckIds = js.Array[HealthCheckId]
+  type Limits = js.Array[Limit]
+  type LogBucket = String
+  type LogBucketList = js.Array[LogBucket]
+  type MaxResults = Int
+  type MitigationList = js.Array[Mitigation]
+  type PhoneNumber = String
+  type ProtectionId = String
+  type ProtectionName = String
+  type Protections = js.Array[Protection]
+  type ResourceArn = String
+  type ResourceArnFilterList = js.Array[ResourceArn]
+  type RoleArn = String
+  type SubResourceSummaryList = js.Array[SubResourceSummary]
+  type SummarizedAttackVectorList = js.Array[SummarizedAttackVector]
+  type SummarizedCounterList = js.Array[SummarizedCounter]
+  type Timestamp = js.Date
+  type Token = String
+  type TopContributors = js.Array[Contributor]
 
   implicit final class ShieldOps(private val service: Shield) extends AnyVal {
 
@@ -105,20 +105,20 @@ package shield {
     def this(config: AWSConfig) = this()
 
     def associateDRTLogBucket(params: AssociateDRTLogBucketRequest): Request[AssociateDRTLogBucketResponse] = js.native
-    def associateDRTRole(params: AssociateDRTRoleRequest): Request[AssociateDRTRoleResponse]                = js.native
-    def associateHealthCheck(params: AssociateHealthCheckRequest): Request[AssociateHealthCheckResponse]    = js.native
+    def associateDRTRole(params: AssociateDRTRoleRequest): Request[AssociateDRTRoleResponse] = js.native
+    def associateHealthCheck(params: AssociateHealthCheckRequest): Request[AssociateHealthCheckResponse] = js.native
     def associateProactiveEngagementDetails(
         params: AssociateProactiveEngagementDetailsRequest
-    ): Request[AssociateProactiveEngagementDetailsResponse]                                        = js.native
-    def createProtection(params: CreateProtectionRequest): Request[CreateProtectionResponse]       = js.native
+    ): Request[AssociateProactiveEngagementDetailsResponse] = js.native
+    def createProtection(params: CreateProtectionRequest): Request[CreateProtectionResponse] = js.native
     def createSubscription(params: CreateSubscriptionRequest): Request[CreateSubscriptionResponse] = js.native
-    def deleteProtection(params: DeleteProtectionRequest): Request[DeleteProtectionResponse]       = js.native
-    def describeAttack(params: DescribeAttackRequest): Request[DescribeAttackResponse]             = js.native
-    def describeDRTAccess(params: DescribeDRTAccessRequest): Request[DescribeDRTAccessResponse]    = js.native
+    def deleteProtection(params: DeleteProtectionRequest): Request[DeleteProtectionResponse] = js.native
+    def describeAttack(params: DescribeAttackRequest): Request[DescribeAttackResponse] = js.native
+    def describeDRTAccess(params: DescribeDRTAccessRequest): Request[DescribeDRTAccessResponse] = js.native
     def describeEmergencyContactSettings(
         params: DescribeEmergencyContactSettingsRequest
-    ): Request[DescribeEmergencyContactSettingsResponse]                                                 = js.native
-    def describeProtection(params: DescribeProtectionRequest): Request[DescribeProtectionResponse]       = js.native
+    ): Request[DescribeEmergencyContactSettingsResponse] = js.native
+    def describeProtection(params: DescribeProtectionRequest): Request[DescribeProtectionResponse] = js.native
     def describeSubscription(params: DescribeSubscriptionRequest): Request[DescribeSubscriptionResponse] = js.native
     def disableProactiveEngagement(
         params: DisableProactiveEngagementRequest
@@ -130,13 +130,13 @@ package shield {
       js.native
     def enableProactiveEngagement(
         params: EnableProactiveEngagementRequest
-    ): Request[EnableProactiveEngagementResponse]                                                        = js.native
+    ): Request[EnableProactiveEngagementResponse] = js.native
     def getSubscriptionState(params: GetSubscriptionStateRequest): Request[GetSubscriptionStateResponse] = js.native
-    def listAttacks(params: ListAttacksRequest): Request[ListAttacksResponse]                            = js.native
-    def listProtections(params: ListProtectionsRequest): Request[ListProtectionsResponse]                = js.native
+    def listAttacks(params: ListAttacksRequest): Request[ListAttacksResponse] = js.native
+    def listProtections(params: ListProtectionsRequest): Request[ListProtectionsResponse] = js.native
     def updateEmergencyContactSettings(
         params: UpdateEmergencyContactSettingsRequest
-    ): Request[UpdateEmergencyContactSettingsResponse]                                             = js.native
+    ): Request[UpdateEmergencyContactSettingsResponse] = js.native
     def updateSubscription(params: UpdateSubscriptionRequest): Request[UpdateSubscriptionResponse] = js.native
     @deprecated("Deprecated in AWS SDK", "forever") def deleteSubscription(
         params: DeleteSubscriptionRequest
@@ -219,7 +219,7 @@ package shield {
     ): AssociateHealthCheckRequest = {
       val __obj = js.Dynamic.literal(
         "HealthCheckArn" -> HealthCheckArn.asInstanceOf[js.Any],
-        "ProtectionId"   -> ProtectionId.asInstanceOf[js.Any]
+        "ProtectionId" -> ProtectionId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AssociateHealthCheckRequest]
@@ -313,7 +313,7 @@ package shield {
   @js.native
   sealed trait AttackLayer extends js.Any
   object AttackLayer extends js.Object {
-    val NETWORK     = "NETWORK".asInstanceOf[AttackLayer]
+    val NETWORK = "NETWORK".asInstanceOf[AttackLayer]
     val APPLICATION = "APPLICATION".asInstanceOf[AttackLayer]
 
     val values = js.Object.freeze(js.Array(NETWORK, APPLICATION))
@@ -353,14 +353,14 @@ package shield {
   @js.native
   sealed trait AttackPropertyIdentifier extends js.Any
   object AttackPropertyIdentifier extends js.Object {
-    val DESTINATION_URL              = "DESTINATION_URL".asInstanceOf[AttackPropertyIdentifier]
-    val REFERRER                     = "REFERRER".asInstanceOf[AttackPropertyIdentifier]
-    val SOURCE_ASN                   = "SOURCE_ASN".asInstanceOf[AttackPropertyIdentifier]
-    val SOURCE_COUNTRY               = "SOURCE_COUNTRY".asInstanceOf[AttackPropertyIdentifier]
-    val SOURCE_IP_ADDRESS            = "SOURCE_IP_ADDRESS".asInstanceOf[AttackPropertyIdentifier]
-    val SOURCE_USER_AGENT            = "SOURCE_USER_AGENT".asInstanceOf[AttackPropertyIdentifier]
+    val DESTINATION_URL = "DESTINATION_URL".asInstanceOf[AttackPropertyIdentifier]
+    val REFERRER = "REFERRER".asInstanceOf[AttackPropertyIdentifier]
+    val SOURCE_ASN = "SOURCE_ASN".asInstanceOf[AttackPropertyIdentifier]
+    val SOURCE_COUNTRY = "SOURCE_COUNTRY".asInstanceOf[AttackPropertyIdentifier]
+    val SOURCE_IP_ADDRESS = "SOURCE_IP_ADDRESS".asInstanceOf[AttackPropertyIdentifier]
+    val SOURCE_USER_AGENT = "SOURCE_USER_AGENT".asInstanceOf[AttackPropertyIdentifier]
     val WORDPRESS_PINGBACK_REFLECTOR = "WORDPRESS_PINGBACK_REFLECTOR".asInstanceOf[AttackPropertyIdentifier]
-    val WORDPRESS_PINGBACK_SOURCE    = "WORDPRESS_PINGBACK_SOURCE".asInstanceOf[AttackPropertyIdentifier]
+    val WORDPRESS_PINGBACK_SOURCE = "WORDPRESS_PINGBACK_SOURCE".asInstanceOf[AttackPropertyIdentifier]
 
     val values = js.Object.freeze(
       js.Array(
@@ -431,7 +431,7 @@ package shield {
   @js.native
   sealed trait AutoRenew extends js.Any
   object AutoRenew extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[AutoRenew]
+    val ENABLED = "ENABLED".asInstanceOf[AutoRenew]
     val DISABLED = "DISABLED".asInstanceOf[AutoRenew]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -472,7 +472,7 @@ package shield {
         ResourceArn: ResourceArn
     ): CreateProtectionRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"        -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -837,7 +837,7 @@ package shield {
     ): DisassociateHealthCheckRequest = {
       val __obj = js.Dynamic.literal(
         "HealthCheckArn" -> HealthCheckArn.asInstanceOf[js.Any],
-        "ProtectionId"   -> ProtectionId.asInstanceOf[js.Any]
+        "ProtectionId" -> ProtectionId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DisassociateHealthCheckRequest]
@@ -1070,9 +1070,9 @@ package shield {
   @js.native
   sealed trait ProactiveEngagementStatus extends js.Any
   object ProactiveEngagementStatus extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[ProactiveEngagementStatus]
+    val ENABLED = "ENABLED".asInstanceOf[ProactiveEngagementStatus]
     val DISABLED = "DISABLED".asInstanceOf[ProactiveEngagementStatus]
-    val PENDING  = "PENDING".asInstanceOf[ProactiveEngagementStatus]
+    val PENDING = "PENDING".asInstanceOf[ProactiveEngagementStatus]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED, PENDING))
   }
@@ -1136,7 +1136,7 @@ package shield {
   @js.native
   sealed trait SubResourceType extends js.Any
   object SubResourceType extends js.Object {
-    val IP  = "IP".asInstanceOf[SubResourceType]
+    val IP = "IP".asInstanceOf[SubResourceType]
     val URL = "URL".asInstanceOf[SubResourceType]
 
     val values = js.Object.freeze(js.Array(IP, URL))
@@ -1181,7 +1181,7 @@ package shield {
   @js.native
   sealed trait SubscriptionState extends js.Any
   object SubscriptionState extends js.Object {
-    val ACTIVE   = "ACTIVE".asInstanceOf[SubscriptionState]
+    val ACTIVE = "ACTIVE".asInstanceOf[SubscriptionState]
     val INACTIVE = "INACTIVE".asInstanceOf[SubscriptionState]
 
     val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
@@ -1270,9 +1270,9 @@ package shield {
   @js.native
   sealed trait Unit extends js.Any
   object Unit extends js.Object {
-    val BITS     = "BITS".asInstanceOf[Unit]
-    val BYTES    = "BYTES".asInstanceOf[Unit]
-    val PACKETS  = "PACKETS".asInstanceOf[Unit]
+    val BITS = "BITS".asInstanceOf[Unit]
+    val BYTES = "BYTES".asInstanceOf[Unit]
+    val PACKETS = "PACKETS".asInstanceOf[Unit]
     val REQUESTS = "REQUESTS".asInstanceOf[Unit]
 
     val values = js.Object.freeze(js.Array(BITS, BYTES, PACKETS, REQUESTS))

@@ -7,24 +7,24 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object budgetsservice {
-  type AccountId                       = String
-  type BudgetName                      = String
-  type BudgetedAndActualAmountsList    = js.Array[BudgetedAndActualAmounts]
-  type Budgets                         = js.Array[Budget]
-  type CostFilters                     = js.Dictionary[DimensionValues]
-  type DimensionValues                 = js.Array[GenericString]
-  type GenericString                   = String
-  type GenericTimestamp                = js.Date
-  type MaxResults                      = Int
-  type NotificationThreshold           = Double
+  type AccountId = String
+  type BudgetName = String
+  type BudgetedAndActualAmountsList = js.Array[BudgetedAndActualAmounts]
+  type Budgets = js.Array[Budget]
+  type CostFilters = js.Dictionary[DimensionValues]
+  type DimensionValues = js.Array[GenericString]
+  type GenericString = String
+  type GenericTimestamp = js.Date
+  type MaxResults = Int
+  type NotificationThreshold = Double
   type NotificationWithSubscribersList = js.Array[NotificationWithSubscribers]
-  type Notifications                   = js.Array[Notification]
-  type NullableBoolean                 = Boolean
-  type NumericValue                    = String
-  type PlannedBudgetLimits             = js.Dictionary[Spend]
-  type SubscriberAddress               = String
-  type Subscribers                     = js.Array[Subscriber]
-  type UnitValue                       = String
+  type Notifications = js.Array[Notification]
+  type NullableBoolean = Boolean
+  type NumericValue = String
+  type PlannedBudgetLimits = js.Dictionary[Spend]
+  type SubscriberAddress = String
+  type Subscribers = js.Array[Subscriber]
+  type UnitValue = String
 
   implicit final class BudgetsServiceOps(private val service: BudgetsService) extends AnyVal {
 
@@ -71,26 +71,26 @@ package budgetsservice {
   class BudgetsService() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createBudget(params: CreateBudgetRequest): Request[CreateBudgetResponse]                   = js.native
+    def createBudget(params: CreateBudgetRequest): Request[CreateBudgetResponse] = js.native
     def createNotification(params: CreateNotificationRequest): Request[CreateNotificationResponse] = js.native
-    def createSubscriber(params: CreateSubscriberRequest): Request[CreateSubscriberResponse]       = js.native
-    def deleteBudget(params: DeleteBudgetRequest): Request[DeleteBudgetResponse]                   = js.native
+    def createSubscriber(params: CreateSubscriberRequest): Request[CreateSubscriberResponse] = js.native
+    def deleteBudget(params: DeleteBudgetRequest): Request[DeleteBudgetResponse] = js.native
     def deleteNotification(params: DeleteNotificationRequest): Request[DeleteNotificationResponse] = js.native
-    def deleteSubscriber(params: DeleteSubscriberRequest): Request[DeleteSubscriberResponse]       = js.native
-    def describeBudget(params: DescribeBudgetRequest): Request[DescribeBudgetResponse]             = js.native
+    def deleteSubscriber(params: DeleteSubscriberRequest): Request[DeleteSubscriberResponse] = js.native
+    def describeBudget(params: DescribeBudgetRequest): Request[DescribeBudgetResponse] = js.native
     def describeBudgetPerformanceHistory(
         params: DescribeBudgetPerformanceHistoryRequest
-    ): Request[DescribeBudgetPerformanceHistoryResponse]                                  = js.native
+    ): Request[DescribeBudgetPerformanceHistoryResponse] = js.native
     def describeBudgets(params: DescribeBudgetsRequest): Request[DescribeBudgetsResponse] = js.native
     def describeNotificationsForBudget(
         params: DescribeNotificationsForBudgetRequest
     ): Request[DescribeNotificationsForBudgetResponse] = js.native
     def describeSubscribersForNotification(
         params: DescribeSubscribersForNotificationRequest
-    ): Request[DescribeSubscribersForNotificationResponse]                                         = js.native
-    def updateBudget(params: UpdateBudgetRequest): Request[UpdateBudgetResponse]                   = js.native
+    ): Request[DescribeSubscribersForNotificationResponse] = js.native
+    def updateBudget(params: UpdateBudgetRequest): Request[UpdateBudgetResponse] = js.native
     def updateNotification(params: UpdateNotificationRequest): Request[UpdateNotificationResponse] = js.native
-    def updateSubscriber(params: UpdateSubscriberRequest): Request[UpdateSubscriberResponse]       = js.native
+    def updateSubscriber(params: UpdateSubscriberRequest): Request[UpdateSubscriberResponse] = js.native
   }
 
   /**
@@ -129,7 +129,7 @@ package budgetsservice {
       val __obj = js.Dynamic.literal(
         "BudgetName" -> BudgetName.asInstanceOf[js.Any],
         "BudgetType" -> BudgetType.asInstanceOf[js.Any],
-        "TimeUnit"   -> TimeUnit.asInstanceOf[js.Any]
+        "TimeUnit" -> TimeUnit.asInstanceOf[js.Any]
       )
 
       BudgetLimit.foreach(__v => __obj.updateDynamic("BudgetLimit")(__v.asInstanceOf[js.Any]))
@@ -186,12 +186,12 @@ package budgetsservice {
   @js.native
   sealed trait BudgetType extends js.Any
   object BudgetType extends js.Object {
-    val USAGE                     = "USAGE".asInstanceOf[BudgetType]
-    val COST                      = "COST".asInstanceOf[BudgetType]
-    val RI_UTILIZATION            = "RI_UTILIZATION".asInstanceOf[BudgetType]
-    val RI_COVERAGE               = "RI_COVERAGE".asInstanceOf[BudgetType]
+    val USAGE = "USAGE".asInstanceOf[BudgetType]
+    val COST = "COST".asInstanceOf[BudgetType]
+    val RI_UTILIZATION = "RI_UTILIZATION".asInstanceOf[BudgetType]
+    val RI_COVERAGE = "RI_COVERAGE".asInstanceOf[BudgetType]
     val SAVINGS_PLANS_UTILIZATION = "SAVINGS_PLANS_UTILIZATION".asInstanceOf[BudgetType]
-    val SAVINGS_PLANS_COVERAGE    = "SAVINGS_PLANS_COVERAGE".asInstanceOf[BudgetType]
+    val SAVINGS_PLANS_COVERAGE = "SAVINGS_PLANS_COVERAGE".asInstanceOf[BudgetType]
 
     val values = js.Object.freeze(
       js.Array(USAGE, COST, RI_UTILIZATION, RI_COVERAGE, SAVINGS_PLANS_UTILIZATION, SAVINGS_PLANS_COVERAGE)
@@ -256,8 +256,8 @@ package budgetsservice {
   sealed trait ComparisonOperator extends js.Any
   object ComparisonOperator extends js.Object {
     val GREATER_THAN = "GREATER_THAN".asInstanceOf[ComparisonOperator]
-    val LESS_THAN    = "LESS_THAN".asInstanceOf[ComparisonOperator]
-    val EQUAL_TO     = "EQUAL_TO".asInstanceOf[ComparisonOperator]
+    val LESS_THAN = "LESS_THAN".asInstanceOf[ComparisonOperator]
+    val EQUAL_TO = "EQUAL_TO".asInstanceOf[ComparisonOperator]
 
     val values = js.Object.freeze(js.Array(GREATER_THAN, LESS_THAN, EQUAL_TO))
   }
@@ -331,7 +331,7 @@ package budgetsservice {
     ): CreateBudgetRequest = {
       val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "Budget"    -> Budget.asInstanceOf[js.Any]
+        "Budget" -> Budget.asInstanceOf[js.Any]
       )
 
       NotificationsWithSubscribers.foreach(__v =>
@@ -377,10 +377,10 @@ package budgetsservice {
         Subscribers: Subscribers
     ): CreateNotificationRequest = {
       val __obj = js.Dynamic.literal(
-        "AccountId"    -> AccountId.asInstanceOf[js.Any],
-        "BudgetName"   -> BudgetName.asInstanceOf[js.Any],
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "BudgetName" -> BudgetName.asInstanceOf[js.Any],
         "Notification" -> Notification.asInstanceOf[js.Any],
-        "Subscribers"  -> Subscribers.asInstanceOf[js.Any]
+        "Subscribers" -> Subscribers.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateNotificationRequest]
@@ -423,10 +423,10 @@ package budgetsservice {
         Subscriber: Subscriber
     ): CreateSubscriberRequest = {
       val __obj = js.Dynamic.literal(
-        "AccountId"    -> AccountId.asInstanceOf[js.Any],
-        "BudgetName"   -> BudgetName.asInstanceOf[js.Any],
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "BudgetName" -> BudgetName.asInstanceOf[js.Any],
         "Notification" -> Notification.asInstanceOf[js.Any],
-        "Subscriber"   -> Subscriber.asInstanceOf[js.Any]
+        "Subscriber" -> Subscriber.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateSubscriberRequest]
@@ -465,7 +465,7 @@ package budgetsservice {
         BudgetName: BudgetName
     ): DeleteBudgetRequest = {
       val __obj = js.Dynamic.literal(
-        "AccountId"  -> AccountId.asInstanceOf[js.Any],
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
         "BudgetName" -> BudgetName.asInstanceOf[js.Any]
       )
 
@@ -507,8 +507,8 @@ package budgetsservice {
         Notification: Notification
     ): DeleteNotificationRequest = {
       val __obj = js.Dynamic.literal(
-        "AccountId"    -> AccountId.asInstanceOf[js.Any],
-        "BudgetName"   -> BudgetName.asInstanceOf[js.Any],
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "BudgetName" -> BudgetName.asInstanceOf[js.Any],
         "Notification" -> Notification.asInstanceOf[js.Any]
       )
 
@@ -552,10 +552,10 @@ package budgetsservice {
         Subscriber: Subscriber
     ): DeleteSubscriberRequest = {
       val __obj = js.Dynamic.literal(
-        "AccountId"    -> AccountId.asInstanceOf[js.Any],
-        "BudgetName"   -> BudgetName.asInstanceOf[js.Any],
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "BudgetName" -> BudgetName.asInstanceOf[js.Any],
         "Notification" -> Notification.asInstanceOf[js.Any],
-        "Subscriber"   -> Subscriber.asInstanceOf[js.Any]
+        "Subscriber" -> Subscriber.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteSubscriberRequest]
@@ -597,7 +597,7 @@ package budgetsservice {
         TimePeriod: js.UndefOr[TimePeriod] = js.undefined
     ): DescribeBudgetPerformanceHistoryRequest = {
       val __obj = js.Dynamic.literal(
-        "AccountId"  -> AccountId.asInstanceOf[js.Any],
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
         "BudgetName" -> BudgetName.asInstanceOf[js.Any]
       )
 
@@ -643,7 +643,7 @@ package budgetsservice {
         BudgetName: BudgetName
     ): DescribeBudgetRequest = {
       val __obj = js.Dynamic.literal(
-        "AccountId"  -> AccountId.asInstanceOf[js.Any],
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
         "BudgetName" -> BudgetName.asInstanceOf[js.Any]
       )
 
@@ -739,7 +739,7 @@ package budgetsservice {
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): DescribeNotificationsForBudgetRequest = {
       val __obj = js.Dynamic.literal(
-        "AccountId"  -> AccountId.asInstanceOf[js.Any],
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
         "BudgetName" -> BudgetName.asInstanceOf[js.Any]
       )
 
@@ -793,8 +793,8 @@ package budgetsservice {
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): DescribeSubscribersForNotificationRequest = {
       val __obj = js.Dynamic.literal(
-        "AccountId"    -> AccountId.asInstanceOf[js.Any],
-        "BudgetName"   -> BudgetName.asInstanceOf[js.Any],
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "BudgetName" -> BudgetName.asInstanceOf[js.Any],
         "Notification" -> Notification.asInstanceOf[js.Any]
       )
 
@@ -855,8 +855,8 @@ package budgetsservice {
     ): Notification = {
       val __obj = js.Dynamic.literal(
         "ComparisonOperator" -> ComparisonOperator.asInstanceOf[js.Any],
-        "NotificationType"   -> NotificationType.asInstanceOf[js.Any],
-        "Threshold"          -> Threshold.asInstanceOf[js.Any]
+        "NotificationType" -> NotificationType.asInstanceOf[js.Any],
+        "Threshold" -> Threshold.asInstanceOf[js.Any]
       )
 
       NotificationState.foreach(__v => __obj.updateDynamic("NotificationState")(__v.asInstanceOf[js.Any]))
@@ -868,7 +868,7 @@ package budgetsservice {
   @js.native
   sealed trait NotificationState extends js.Any
   object NotificationState extends js.Object {
-    val OK    = "OK".asInstanceOf[NotificationState]
+    val OK = "OK".asInstanceOf[NotificationState]
     val ALARM = "ALARM".asInstanceOf[NotificationState]
 
     val values = js.Object.freeze(js.Array(OK, ALARM))
@@ -880,7 +880,7 @@ package budgetsservice {
   @js.native
   sealed trait NotificationType extends js.Any
   object NotificationType extends js.Object {
-    val ACTUAL     = "ACTUAL".asInstanceOf[NotificationType]
+    val ACTUAL = "ACTUAL".asInstanceOf[NotificationType]
     val FORECASTED = "FORECASTED".asInstanceOf[NotificationType]
 
     val values = js.Object.freeze(js.Array(ACTUAL, FORECASTED))
@@ -903,7 +903,7 @@ package budgetsservice {
     ): NotificationWithSubscribers = {
       val __obj = js.Dynamic.literal(
         "Notification" -> Notification.asInstanceOf[js.Any],
-        "Subscribers"  -> Subscribers.asInstanceOf[js.Any]
+        "Subscribers" -> Subscribers.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[NotificationWithSubscribers]
@@ -930,7 +930,7 @@ package budgetsservice {
     ): Spend = {
       val __obj = js.Dynamic.literal(
         "Amount" -> Amount.asInstanceOf[js.Any],
-        "Unit"   -> Unit.asInstanceOf[js.Any]
+        "Unit" -> Unit.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[Spend]
@@ -956,7 +956,7 @@ package budgetsservice {
         SubscriptionType: SubscriptionType
     ): Subscriber = {
       val __obj = js.Dynamic.literal(
-        "Address"          -> Address.asInstanceOf[js.Any],
+        "Address" -> Address.asInstanceOf[js.Any],
         "SubscriptionType" -> SubscriptionType.asInstanceOf[js.Any]
       )
 
@@ -970,7 +970,7 @@ package budgetsservice {
   @js.native
   sealed trait SubscriptionType extends js.Any
   object SubscriptionType extends js.Object {
-    val SNS   = "SNS".asInstanceOf[SubscriptionType]
+    val SNS = "SNS".asInstanceOf[SubscriptionType]
     val EMAIL = "EMAIL".asInstanceOf[SubscriptionType]
 
     val values = js.Object.freeze(js.Array(SNS, EMAIL))
@@ -982,7 +982,7 @@ package budgetsservice {
   @js.native
   sealed trait ThresholdType extends js.Any
   object ThresholdType extends js.Object {
-    val PERCENTAGE     = "PERCENTAGE".asInstanceOf[ThresholdType]
+    val PERCENTAGE = "PERCENTAGE".asInstanceOf[ThresholdType]
     val ABSOLUTE_VALUE = "ABSOLUTE_VALUE".asInstanceOf[ThresholdType]
 
     val values = js.Object.freeze(js.Array(PERCENTAGE, ABSOLUTE_VALUE))
@@ -1016,10 +1016,10 @@ package budgetsservice {
   @js.native
   sealed trait TimeUnit extends js.Any
   object TimeUnit extends js.Object {
-    val DAILY     = "DAILY".asInstanceOf[TimeUnit]
-    val MONTHLY   = "MONTHLY".asInstanceOf[TimeUnit]
+    val DAILY = "DAILY".asInstanceOf[TimeUnit]
+    val MONTHLY = "MONTHLY".asInstanceOf[TimeUnit]
     val QUARTERLY = "QUARTERLY".asInstanceOf[TimeUnit]
-    val ANNUALLY  = "ANNUALLY".asInstanceOf[TimeUnit]
+    val ANNUALLY = "ANNUALLY".asInstanceOf[TimeUnit]
 
     val values = js.Object.freeze(js.Array(DAILY, MONTHLY, QUARTERLY, ANNUALLY))
   }
@@ -1084,8 +1084,8 @@ package budgetsservice {
         OldNotification: Notification
     ): UpdateNotificationRequest = {
       val __obj = js.Dynamic.literal(
-        "AccountId"       -> AccountId.asInstanceOf[js.Any],
-        "BudgetName"      -> BudgetName.asInstanceOf[js.Any],
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "BudgetName" -> BudgetName.asInstanceOf[js.Any],
         "NewNotification" -> NewNotification.asInstanceOf[js.Any],
         "OldNotification" -> OldNotification.asInstanceOf[js.Any]
       )
@@ -1132,10 +1132,10 @@ package budgetsservice {
         OldSubscriber: Subscriber
     ): UpdateSubscriberRequest = {
       val __obj = js.Dynamic.literal(
-        "AccountId"     -> AccountId.asInstanceOf[js.Any],
-        "BudgetName"    -> BudgetName.asInstanceOf[js.Any],
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "BudgetName" -> BudgetName.asInstanceOf[js.Any],
         "NewSubscriber" -> NewSubscriber.asInstanceOf[js.Any],
-        "Notification"  -> Notification.asInstanceOf[js.Any],
+        "Notification" -> Notification.asInstanceOf[js.Any],
         "OldSubscriber" -> OldSubscriber.asInstanceOf[js.Any]
       )
 

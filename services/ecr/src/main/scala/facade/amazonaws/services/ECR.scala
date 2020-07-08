@@ -7,68 +7,68 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object ecr {
-  type Arn                                 = String
-  type AttributeKey                        = String
-  type AttributeList                       = js.Array[Attribute]
-  type AttributeValue                      = String
-  type AuthorizationDataList               = js.Array[AuthorizationData]
-  type Base64                              = String
-  type BatchedOperationLayerDigest         = String
-  type BatchedOperationLayerDigestList     = js.Array[BatchedOperationLayerDigest]
-  type CreationTimestamp                   = js.Date
-  type EvaluationTimestamp                 = js.Date
-  type ExpirationTimestamp                 = js.Date
-  type FindingDescription                  = String
-  type FindingName                         = String
-  type FindingSeverityCounts               = js.Dictionary[SeverityCount]
-  type ForceFlag                           = Boolean
+  type Arn = String
+  type AttributeKey = String
+  type AttributeList = js.Array[Attribute]
+  type AttributeValue = String
+  type AuthorizationDataList = js.Array[AuthorizationData]
+  type Base64 = String
+  type BatchedOperationLayerDigest = String
+  type BatchedOperationLayerDigestList = js.Array[BatchedOperationLayerDigest]
+  type CreationTimestamp = js.Date
+  type EvaluationTimestamp = js.Date
+  type ExpirationTimestamp = js.Date
+  type FindingDescription = String
+  type FindingName = String
+  type FindingSeverityCounts = js.Dictionary[SeverityCount]
+  type ForceFlag = Boolean
   type GetAuthorizationTokenRegistryIdList = js.Array[RegistryId]
-  type ImageCount                          = Int
-  type ImageDetailList                     = js.Array[ImageDetail]
-  type ImageDigest                         = String
-  type ImageFailureList                    = js.Array[ImageFailure]
-  type ImageFailureReason                  = String
-  type ImageIdentifierList                 = js.Array[ImageIdentifier]
-  type ImageList                           = js.Array[Image]
-  type ImageManifest                       = String
-  type ImageScanFindingList                = js.Array[ImageScanFinding]
-  type ImageSizeInBytes                    = Double
-  type ImageTag                            = String
-  type ImageTagList                        = js.Array[ImageTag]
-  type LayerDigest                         = String
-  type LayerDigestList                     = js.Array[LayerDigest]
-  type LayerFailureList                    = js.Array[LayerFailure]
-  type LayerFailureReason                  = String
-  type LayerList                           = js.Array[Layer]
-  type LayerPartBlob                       = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type LayerSizeInBytes                    = Double
-  type LifecyclePolicyPreviewResultList    = js.Array[LifecyclePolicyPreviewResult]
-  type LifecyclePolicyRulePriority         = Int
-  type LifecyclePolicyText                 = String
-  type LifecyclePreviewMaxResults          = Int
-  type MaxResults                          = Int
-  type MediaType                           = String
-  type MediaTypeList                       = js.Array[MediaType]
-  type NextToken                           = String
-  type PartSize                            = Double
-  type ProxyEndpoint                       = String
-  type PushTimestamp                       = js.Date
-  type RegistryId                          = String
-  type RepositoryList                      = js.Array[Repository]
-  type RepositoryName                      = String
-  type RepositoryNameList                  = js.Array[RepositoryName]
-  type RepositoryPolicyText                = String
-  type ScanOnPushFlag                      = Boolean
-  type ScanStatusDescription               = String
-  type ScanTimestamp                       = js.Date
-  type SeverityCount                       = Int
-  type TagKey                              = String
-  type TagKeyList                          = js.Array[TagKey]
-  type TagList                             = js.Array[Tag]
-  type TagValue                            = String
-  type UploadId                            = String
-  type Url                                 = String
-  type VulnerabilitySourceUpdateTimestamp  = js.Date
+  type ImageCount = Int
+  type ImageDetailList = js.Array[ImageDetail]
+  type ImageDigest = String
+  type ImageFailureList = js.Array[ImageFailure]
+  type ImageFailureReason = String
+  type ImageIdentifierList = js.Array[ImageIdentifier]
+  type ImageList = js.Array[Image]
+  type ImageManifest = String
+  type ImageScanFindingList = js.Array[ImageScanFinding]
+  type ImageSizeInBytes = Double
+  type ImageTag = String
+  type ImageTagList = js.Array[ImageTag]
+  type LayerDigest = String
+  type LayerDigestList = js.Array[LayerDigest]
+  type LayerFailureList = js.Array[LayerFailure]
+  type LayerFailureReason = String
+  type LayerList = js.Array[Layer]
+  type LayerPartBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type LayerSizeInBytes = Double
+  type LifecyclePolicyPreviewResultList = js.Array[LifecyclePolicyPreviewResult]
+  type LifecyclePolicyRulePriority = Int
+  type LifecyclePolicyText = String
+  type LifecyclePreviewMaxResults = Int
+  type MaxResults = Int
+  type MediaType = String
+  type MediaTypeList = js.Array[MediaType]
+  type NextToken = String
+  type PartSize = Double
+  type ProxyEndpoint = String
+  type PushTimestamp = js.Date
+  type RegistryId = String
+  type RepositoryList = js.Array[Repository]
+  type RepositoryName = String
+  type RepositoryNameList = js.Array[RepositoryName]
+  type RepositoryPolicyText = String
+  type ScanOnPushFlag = Boolean
+  type ScanStatusDescription = String
+  type ScanTimestamp = js.Date
+  type SeverityCount = Int
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type UploadId = String
+  type Url = String
+  type VulnerabilitySourceUpdateTimestamp = js.Date
 
   implicit final class ECROps(private val service: ECR) extends AnyVal {
 
@@ -151,44 +151,44 @@ package ecr {
 
     def batchCheckLayerAvailability(
         params: BatchCheckLayerAvailabilityRequest
-    ): Request[BatchCheckLayerAvailabilityResponse]                                                         = js.native
-    def batchDeleteImage(params: BatchDeleteImageRequest): Request[BatchDeleteImageResponse]                = js.native
-    def batchGetImage(params: BatchGetImageRequest): Request[BatchGetImageResponse]                         = js.native
-    def completeLayerUpload(params: CompleteLayerUploadRequest): Request[CompleteLayerUploadResponse]       = js.native
-    def createRepository(params: CreateRepositoryRequest): Request[CreateRepositoryResponse]                = js.native
+    ): Request[BatchCheckLayerAvailabilityResponse] = js.native
+    def batchDeleteImage(params: BatchDeleteImageRequest): Request[BatchDeleteImageResponse] = js.native
+    def batchGetImage(params: BatchGetImageRequest): Request[BatchGetImageResponse] = js.native
+    def completeLayerUpload(params: CompleteLayerUploadRequest): Request[CompleteLayerUploadResponse] = js.native
+    def createRepository(params: CreateRepositoryRequest): Request[CreateRepositoryResponse] = js.native
     def deleteLifecyclePolicy(params: DeleteLifecyclePolicyRequest): Request[DeleteLifecyclePolicyResponse] = js.native
-    def deleteRepository(params: DeleteRepositoryRequest): Request[DeleteRepositoryResponse]                = js.native
+    def deleteRepository(params: DeleteRepositoryRequest): Request[DeleteRepositoryResponse] = js.native
     def deleteRepositoryPolicy(params: DeleteRepositoryPolicyRequest): Request[DeleteRepositoryPolicyResponse] =
       js.native
     def describeImageScanFindings(
         params: DescribeImageScanFindingsRequest
-    ): Request[DescribeImageScanFindingsResponse]                                                           = js.native
-    def describeImages(params: DescribeImagesRequest): Request[DescribeImagesResponse]                      = js.native
-    def describeRepositories(params: DescribeRepositoriesRequest): Request[DescribeRepositoriesResponse]    = js.native
+    ): Request[DescribeImageScanFindingsResponse] = js.native
+    def describeImages(params: DescribeImagesRequest): Request[DescribeImagesResponse] = js.native
+    def describeRepositories(params: DescribeRepositoriesRequest): Request[DescribeRepositoriesResponse] = js.native
     def getAuthorizationToken(params: GetAuthorizationTokenRequest): Request[GetAuthorizationTokenResponse] = js.native
     def getDownloadUrlForLayer(params: GetDownloadUrlForLayerRequest): Request[GetDownloadUrlForLayerResponse] =
       js.native
     def getLifecyclePolicy(params: GetLifecyclePolicyRequest): Request[GetLifecyclePolicyResponse] = js.native
     def getLifecyclePolicyPreview(
         params: GetLifecyclePolicyPreviewRequest
-    ): Request[GetLifecyclePolicyPreviewResponse]                                                     = js.native
+    ): Request[GetLifecyclePolicyPreviewResponse] = js.native
     def getRepositoryPolicy(params: GetRepositoryPolicyRequest): Request[GetRepositoryPolicyResponse] = js.native
     def initiateLayerUpload(params: InitiateLayerUploadRequest): Request[InitiateLayerUploadResponse] = js.native
-    def listImages(params: ListImagesRequest): Request[ListImagesResponse]                            = js.native
+    def listImages(params: ListImagesRequest): Request[ListImagesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def putImage(params: PutImageRequest): Request[PutImageResponse]                                  = js.native
+    def putImage(params: PutImageRequest): Request[PutImageResponse] = js.native
     def putImageScanningConfiguration(
         params: PutImageScanningConfigurationRequest
-    ): Request[PutImageScanningConfigurationResponse]                                                       = js.native
+    ): Request[PutImageScanningConfigurationResponse] = js.native
     def putImageTagMutability(params: PutImageTagMutabilityRequest): Request[PutImageTagMutabilityResponse] = js.native
-    def putLifecyclePolicy(params: PutLifecyclePolicyRequest): Request[PutLifecyclePolicyResponse]          = js.native
-    def setRepositoryPolicy(params: SetRepositoryPolicyRequest): Request[SetRepositoryPolicyResponse]       = js.native
-    def startImageScan(params: StartImageScanRequest): Request[StartImageScanResponse]                      = js.native
+    def putLifecyclePolicy(params: PutLifecyclePolicyRequest): Request[PutLifecyclePolicyResponse] = js.native
+    def setRepositoryPolicy(params: SetRepositoryPolicyRequest): Request[SetRepositoryPolicyResponse] = js.native
+    def startImageScan(params: StartImageScanRequest): Request[StartImageScanResponse] = js.native
     def startLifecyclePolicyPreview(
         params: StartLifecyclePolicyPreviewRequest
-    ): Request[StartLifecyclePolicyPreviewResponse]                                       = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]             = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]       = js.native
+    ): Request[StartLifecyclePolicyPreviewResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def uploadLayerPart(params: UploadLayerPartRequest): Request[UploadLayerPartResponse] = js.native
   }
 
@@ -256,7 +256,7 @@ package ecr {
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): BatchCheckLayerAvailabilityRequest = {
       val __obj = js.Dynamic.literal(
-        "layerDigests"   -> layerDigests.asInstanceOf[js.Any],
+        "layerDigests" -> layerDigests.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
@@ -302,7 +302,7 @@ package ecr {
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): BatchDeleteImageRequest = {
       val __obj = js.Dynamic.literal(
-        "imageIds"       -> imageIds.asInstanceOf[js.Any],
+        "imageIds" -> imageIds.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
@@ -347,7 +347,7 @@ package ecr {
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): BatchGetImageRequest = {
       val __obj = js.Dynamic.literal(
-        "imageIds"       -> imageIds.asInstanceOf[js.Any],
+        "imageIds" -> imageIds.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
@@ -393,9 +393,9 @@ package ecr {
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): CompleteLayerUploadRequest = {
       val __obj = js.Dynamic.literal(
-        "layerDigests"   -> layerDigests.asInstanceOf[js.Any],
+        "layerDigests" -> layerDigests.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
-        "uploadId"       -> uploadId.asInstanceOf[js.Any]
+        "uploadId" -> uploadId.asInstanceOf[js.Any]
       )
 
       registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
@@ -621,7 +621,7 @@ package ecr {
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): DescribeImageScanFindingsRequest = {
       val __obj = js.Dynamic.literal(
-        "imageId"        -> imageId.asInstanceOf[js.Any],
+        "imageId" -> imageId.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
@@ -782,11 +782,11 @@ package ecr {
   sealed trait FindingSeverity extends js.Any
   object FindingSeverity extends js.Object {
     val INFORMATIONAL = "INFORMATIONAL".asInstanceOf[FindingSeverity]
-    val LOW           = "LOW".asInstanceOf[FindingSeverity]
-    val MEDIUM        = "MEDIUM".asInstanceOf[FindingSeverity]
-    val HIGH          = "HIGH".asInstanceOf[FindingSeverity]
-    val CRITICAL      = "CRITICAL".asInstanceOf[FindingSeverity]
-    val UNDEFINED     = "UNDEFINED".asInstanceOf[FindingSeverity]
+    val LOW = "LOW".asInstanceOf[FindingSeverity]
+    val MEDIUM = "MEDIUM".asInstanceOf[FindingSeverity]
+    val HIGH = "HIGH".asInstanceOf[FindingSeverity]
+    val CRITICAL = "CRITICAL".asInstanceOf[FindingSeverity]
+    val UNDEFINED = "UNDEFINED".asInstanceOf[FindingSeverity]
 
     val values = js.Object.freeze(js.Array(INFORMATIONAL, LOW, MEDIUM, HIGH, CRITICAL, UNDEFINED))
   }
@@ -838,7 +838,7 @@ package ecr {
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): GetDownloadUrlForLayerRequest = {
       val __obj = js.Dynamic.literal(
-        "layerDigest"    -> layerDigest.asInstanceOf[js.Any],
+        "layerDigest" -> layerDigest.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
@@ -1129,11 +1129,11 @@ package ecr {
   @js.native
   sealed trait ImageFailureCode extends js.Any
   object ImageFailureCode extends js.Object {
-    val InvalidImageDigest            = "InvalidImageDigest".asInstanceOf[ImageFailureCode]
-    val InvalidImageTag               = "InvalidImageTag".asInstanceOf[ImageFailureCode]
-    val ImageTagDoesNotMatchDigest    = "ImageTagDoesNotMatchDigest".asInstanceOf[ImageFailureCode]
-    val ImageNotFound                 = "ImageNotFound".asInstanceOf[ImageFailureCode]
-    val MissingDigestAndTag           = "MissingDigestAndTag".asInstanceOf[ImageFailureCode]
+    val InvalidImageDigest = "InvalidImageDigest".asInstanceOf[ImageFailureCode]
+    val InvalidImageTag = "InvalidImageTag".asInstanceOf[ImageFailureCode]
+    val ImageTagDoesNotMatchDigest = "ImageTagDoesNotMatchDigest".asInstanceOf[ImageFailureCode]
+    val ImageNotFound = "ImageNotFound".asInstanceOf[ImageFailureCode]
+    val MissingDigestAndTag = "MissingDigestAndTag".asInstanceOf[ImageFailureCode]
     val ImageReferencedByManifestList = "ImageReferencedByManifestList".asInstanceOf[ImageFailureCode]
 
     val values = js.Object.freeze(
@@ -1302,7 +1302,7 @@ package ecr {
   @js.native
   sealed trait ImageTagMutability extends js.Any
   object ImageTagMutability extends js.Object {
-    val MUTABLE   = "MUTABLE".asInstanceOf[ImageTagMutability]
+    val MUTABLE = "MUTABLE".asInstanceOf[ImageTagMutability]
     val IMMUTABLE = "IMMUTABLE".asInstanceOf[ImageTagMutability]
 
     val values = js.Object.freeze(js.Array(MUTABLE, IMMUTABLE))
@@ -1379,7 +1379,7 @@ package ecr {
   @js.native
   sealed trait LayerAvailability extends js.Any
   object LayerAvailability extends js.Object {
-    val AVAILABLE   = "AVAILABLE".asInstanceOf[LayerAvailability]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[LayerAvailability]
     val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[LayerAvailability]
 
     val values = js.Object.freeze(js.Array(AVAILABLE, UNAVAILABLE))
@@ -1473,9 +1473,9 @@ package ecr {
   sealed trait LifecyclePolicyPreviewStatus extends js.Any
   object LifecyclePolicyPreviewStatus extends js.Object {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[LifecyclePolicyPreviewStatus]
-    val COMPLETE    = "COMPLETE".asInstanceOf[LifecyclePolicyPreviewStatus]
-    val EXPIRED     = "EXPIRED".asInstanceOf[LifecyclePolicyPreviewStatus]
-    val FAILED      = "FAILED".asInstanceOf[LifecyclePolicyPreviewStatus]
+    val COMPLETE = "COMPLETE".asInstanceOf[LifecyclePolicyPreviewStatus]
+    val EXPIRED = "EXPIRED".asInstanceOf[LifecyclePolicyPreviewStatus]
+    val FAILED = "FAILED".asInstanceOf[LifecyclePolicyPreviewStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETE, EXPIRED, FAILED))
   }
@@ -1641,7 +1641,7 @@ package ecr {
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): PutImageRequest = {
       val __obj = js.Dynamic.literal(
-        "imageManifest"  -> imageManifest.asInstanceOf[js.Any],
+        "imageManifest" -> imageManifest.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
@@ -1685,7 +1685,7 @@ package ecr {
     ): PutImageScanningConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "imageScanningConfiguration" -> imageScanningConfiguration.asInstanceOf[js.Any],
-        "repositoryName"             -> repositoryName.asInstanceOf[js.Any]
+        "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
       registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
@@ -1733,7 +1733,7 @@ package ecr {
     ): PutImageTagMutabilityRequest = {
       val __obj = js.Dynamic.literal(
         "imageTagMutability" -> imageTagMutability.asInstanceOf[js.Any],
-        "repositoryName"     -> repositoryName.asInstanceOf[js.Any]
+        "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
       registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
@@ -1779,7 +1779,7 @@ package ecr {
     ): PutLifecyclePolicyRequest = {
       val __obj = js.Dynamic.literal(
         "lifecyclePolicyText" -> lifecyclePolicyText.asInstanceOf[js.Any],
-        "repositoryName"      -> repositoryName.asInstanceOf[js.Any]
+        "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
       registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
@@ -1852,8 +1852,8 @@ package ecr {
   sealed trait ScanStatus extends js.Any
   object ScanStatus extends js.Object {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ScanStatus]
-    val COMPLETE    = "COMPLETE".asInstanceOf[ScanStatus]
-    val FAILED      = "FAILED".asInstanceOf[ScanStatus]
+    val COMPLETE = "COMPLETE".asInstanceOf[ScanStatus]
+    val FAILED = "FAILED".asInstanceOf[ScanStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETE, FAILED))
   }
@@ -1875,7 +1875,7 @@ package ecr {
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): SetRepositoryPolicyRequest = {
       val __obj = js.Dynamic.literal(
-        "policyText"     -> policyText.asInstanceOf[js.Any],
+        "policyText" -> policyText.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
@@ -1922,7 +1922,7 @@ package ecr {
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): StartImageScanRequest = {
       val __obj = js.Dynamic.literal(
-        "imageId"        -> imageId.asInstanceOf[js.Any],
+        "imageId" -> imageId.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
@@ -2041,7 +2041,7 @@ package ecr {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -2064,9 +2064,9 @@ package ecr {
   @js.native
   sealed trait TagStatus extends js.Any
   object TagStatus extends js.Object {
-    val TAGGED   = "TAGGED".asInstanceOf[TagStatus]
+    val TAGGED = "TAGGED".asInstanceOf[TagStatus]
     val UNTAGGED = "UNTAGGED".asInstanceOf[TagStatus]
-    val ANY      = "ANY".asInstanceOf[TagStatus]
+    val ANY = "ANY".asInstanceOf[TagStatus]
 
     val values = js.Object.freeze(js.Array(TAGGED, UNTAGGED, ANY))
   }
@@ -2085,7 +2085,7 @@ package ecr {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -2126,11 +2126,11 @@ package ecr {
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): UploadLayerPartRequest = {
       val __obj = js.Dynamic.literal(
-        "layerPartBlob"  -> layerPartBlob.asInstanceOf[js.Any],
-        "partFirstByte"  -> partFirstByte.asInstanceOf[js.Any],
-        "partLastByte"   -> partLastByte.asInstanceOf[js.Any],
+        "layerPartBlob" -> layerPartBlob.asInstanceOf[js.Any],
+        "partFirstByte" -> partFirstByte.asInstanceOf[js.Any],
+        "partLastByte" -> partLastByte.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
-        "uploadId"       -> uploadId.asInstanceOf[js.Any]
+        "uploadId" -> uploadId.asInstanceOf[js.Any]
       )
 
       registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))

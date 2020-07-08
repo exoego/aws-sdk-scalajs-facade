@@ -7,67 +7,67 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object elasticache {
-  type AllowedNodeGroupId                  = String
-  type AvailabilityZonesList               = js.Array[String]
-  type BooleanOptional                     = Boolean
-  type CacheClusterIdList                  = js.Array[String]
-  type CacheClusterList                    = js.Array[CacheCluster]
-  type CacheEngineVersionList              = js.Array[CacheEngineVersion]
-  type CacheNodeIdsList                    = js.Array[String]
-  type CacheNodeList                       = js.Array[CacheNode]
+  type AllowedNodeGroupId = String
+  type AvailabilityZonesList = js.Array[String]
+  type BooleanOptional = Boolean
+  type CacheClusterIdList = js.Array[String]
+  type CacheClusterList = js.Array[CacheCluster]
+  type CacheEngineVersionList = js.Array[CacheEngineVersion]
+  type CacheNodeIdsList = js.Array[String]
+  type CacheNodeList = js.Array[CacheNode]
   type CacheNodeTypeSpecificParametersList = js.Array[CacheNodeTypeSpecificParameter]
-  type CacheNodeTypeSpecificValueList      = js.Array[CacheNodeTypeSpecificValue]
-  type CacheNodeUpdateStatusList           = js.Array[CacheNodeUpdateStatus]
-  type CacheParameterGroupList             = js.Array[CacheParameterGroup]
-  type CacheSecurityGroupMembershipList    = js.Array[CacheSecurityGroupMembership]
-  type CacheSecurityGroupNameList          = js.Array[String]
-  type CacheSecurityGroups                 = js.Array[CacheSecurityGroup]
-  type CacheSubnetGroups                   = js.Array[CacheSubnetGroup]
-  type ClusterIdList                       = js.Array[String]
-  type CustomerNodeEndpointList            = js.Array[CustomerNodeEndpoint]
-  type EC2SecurityGroupList                = js.Array[EC2SecurityGroup]
-  type EventList                           = js.Array[Event]
-  type GlobalNodeGroupIdList               = js.Array[String]
-  type GlobalNodeGroupList                 = js.Array[GlobalNodeGroup]
-  type GlobalReplicationGroupList          = js.Array[GlobalReplicationGroup]
-  type GlobalReplicationGroupMemberList    = js.Array[GlobalReplicationGroupMember]
-  type IntegerOptional                     = Int
-  type KeyList                             = js.Array[String]
-  type NodeGroupConfigurationList          = js.Array[NodeGroupConfiguration]
-  type NodeGroupList                       = js.Array[NodeGroup]
-  type NodeGroupMemberList                 = js.Array[NodeGroupMember]
-  type NodeGroupMemberUpdateStatusList     = js.Array[NodeGroupMemberUpdateStatus]
-  type NodeGroupUpdateStatusList           = js.Array[NodeGroupUpdateStatus]
-  type NodeGroupsToRemoveList              = js.Array[AllowedNodeGroupId]
-  type NodeGroupsToRetainList              = js.Array[AllowedNodeGroupId]
-  type NodeSnapshotList                    = js.Array[NodeSnapshot]
-  type NodeTypeList                        = js.Array[String]
-  type ParameterNameValueList              = js.Array[ParameterNameValue]
-  type ParametersList                      = js.Array[Parameter]
-  type PreferredAvailabilityZoneList       = js.Array[String]
-  type ProcessedUpdateActionList           = js.Array[ProcessedUpdateAction]
-  type RecurringChargeList                 = js.Array[RecurringCharge]
-  type RegionalConfigurationList           = js.Array[RegionalConfiguration]
-  type RemoveReplicasList                  = js.Array[String]
-  type ReplicaConfigurationList            = js.Array[ConfigureShard]
-  type ReplicationGroupIdList              = js.Array[String]
-  type ReplicationGroupList                = js.Array[ReplicationGroup]
-  type ReservedCacheNodeList               = js.Array[ReservedCacheNode]
-  type ReservedCacheNodesOfferingList      = js.Array[ReservedCacheNodesOffering]
-  type ReshardingConfigurationList         = js.Array[ReshardingConfiguration]
-  type SecurityGroupIdsList                = js.Array[String]
-  type SecurityGroupMembershipList         = js.Array[SecurityGroupMembership]
-  type ServiceUpdateList                   = js.Array[ServiceUpdate]
-  type ServiceUpdateStatusList             = js.Array[ServiceUpdateStatus]
-  type SnapshotArnsList                    = js.Array[String]
-  type SnapshotList                        = js.Array[Snapshot]
-  type SubnetIdentifierList                = js.Array[String]
-  type SubnetList                          = js.Array[Subnet]
-  type TStamp                              = js.Date
-  type TagList                             = js.Array[Tag]
-  type UnprocessedUpdateActionList         = js.Array[UnprocessedUpdateAction]
-  type UpdateActionList                    = js.Array[UpdateAction]
-  type UpdateActionStatusList              = js.Array[UpdateActionStatus]
+  type CacheNodeTypeSpecificValueList = js.Array[CacheNodeTypeSpecificValue]
+  type CacheNodeUpdateStatusList = js.Array[CacheNodeUpdateStatus]
+  type CacheParameterGroupList = js.Array[CacheParameterGroup]
+  type CacheSecurityGroupMembershipList = js.Array[CacheSecurityGroupMembership]
+  type CacheSecurityGroupNameList = js.Array[String]
+  type CacheSecurityGroups = js.Array[CacheSecurityGroup]
+  type CacheSubnetGroups = js.Array[CacheSubnetGroup]
+  type ClusterIdList = js.Array[String]
+  type CustomerNodeEndpointList = js.Array[CustomerNodeEndpoint]
+  type EC2SecurityGroupList = js.Array[EC2SecurityGroup]
+  type EventList = js.Array[Event]
+  type GlobalNodeGroupIdList = js.Array[String]
+  type GlobalNodeGroupList = js.Array[GlobalNodeGroup]
+  type GlobalReplicationGroupList = js.Array[GlobalReplicationGroup]
+  type GlobalReplicationGroupMemberList = js.Array[GlobalReplicationGroupMember]
+  type IntegerOptional = Int
+  type KeyList = js.Array[String]
+  type NodeGroupConfigurationList = js.Array[NodeGroupConfiguration]
+  type NodeGroupList = js.Array[NodeGroup]
+  type NodeGroupMemberList = js.Array[NodeGroupMember]
+  type NodeGroupMemberUpdateStatusList = js.Array[NodeGroupMemberUpdateStatus]
+  type NodeGroupUpdateStatusList = js.Array[NodeGroupUpdateStatus]
+  type NodeGroupsToRemoveList = js.Array[AllowedNodeGroupId]
+  type NodeGroupsToRetainList = js.Array[AllowedNodeGroupId]
+  type NodeSnapshotList = js.Array[NodeSnapshot]
+  type NodeTypeList = js.Array[String]
+  type ParameterNameValueList = js.Array[ParameterNameValue]
+  type ParametersList = js.Array[Parameter]
+  type PreferredAvailabilityZoneList = js.Array[String]
+  type ProcessedUpdateActionList = js.Array[ProcessedUpdateAction]
+  type RecurringChargeList = js.Array[RecurringCharge]
+  type RegionalConfigurationList = js.Array[RegionalConfiguration]
+  type RemoveReplicasList = js.Array[String]
+  type ReplicaConfigurationList = js.Array[ConfigureShard]
+  type ReplicationGroupIdList = js.Array[String]
+  type ReplicationGroupList = js.Array[ReplicationGroup]
+  type ReservedCacheNodeList = js.Array[ReservedCacheNode]
+  type ReservedCacheNodesOfferingList = js.Array[ReservedCacheNodesOffering]
+  type ReshardingConfigurationList = js.Array[ReshardingConfiguration]
+  type SecurityGroupIdsList = js.Array[String]
+  type SecurityGroupMembershipList = js.Array[SecurityGroupMembership]
+  type ServiceUpdateList = js.Array[ServiceUpdate]
+  type ServiceUpdateStatusList = js.Array[ServiceUpdateStatus]
+  type SnapshotArnsList = js.Array[String]
+  type SnapshotList = js.Array[Snapshot]
+  type SubnetIdentifierList = js.Array[String]
+  type SubnetList = js.Array[Subnet]
+  type TStamp = js.Date
+  type TagList = js.Array[Tag]
+  type UnprocessedUpdateActionList = js.Array[UnprocessedUpdateAction]
+  type UpdateActionList = js.Array[UpdateAction]
+  type UpdateActionStatusList = js.Array[UpdateActionStatus]
 
   implicit final class ElastiCacheOps(private val service: ElastiCache) extends AnyVal {
 
@@ -241,12 +241,12 @@ package elasticache {
     def addTagsToResource(params: AddTagsToResourceMessage): Request[TagListMessage] = js.native
     def authorizeCacheSecurityGroupIngress(
         params: AuthorizeCacheSecurityGroupIngressMessage
-    ): Request[AuthorizeCacheSecurityGroupIngressResult]                                                   = js.native
+    ): Request[AuthorizeCacheSecurityGroupIngressResult] = js.native
     def batchApplyUpdateAction(params: BatchApplyUpdateActionMessage): Request[UpdateActionResultsMessage] = js.native
-    def batchStopUpdateAction(params: BatchStopUpdateActionMessage): Request[UpdateActionResultsMessage]   = js.native
-    def completeMigration(params: CompleteMigrationMessage): Request[CompleteMigrationResponse]            = js.native
-    def copySnapshot(params: CopySnapshotMessage): Request[CopySnapshotResult]                             = js.native
-    def createCacheCluster(params: CreateCacheClusterMessage): Request[CreateCacheClusterResult]           = js.native
+    def batchStopUpdateAction(params: BatchStopUpdateActionMessage): Request[UpdateActionResultsMessage] = js.native
+    def completeMigration(params: CompleteMigrationMessage): Request[CompleteMigrationResponse] = js.native
+    def copySnapshot(params: CopySnapshotMessage): Request[CopySnapshotResult] = js.native
+    def createCacheCluster(params: CreateCacheClusterMessage): Request[CreateCacheClusterResult] = js.native
     def createCacheParameterGroup(params: CreateCacheParameterGroupMessage): Request[CreateCacheParameterGroupResult] =
       js.native
     def createCacheSecurityGroup(params: CreateCacheSecurityGroupMessage): Request[CreateCacheSecurityGroupResult] =
@@ -254,28 +254,28 @@ package elasticache {
     def createCacheSubnetGroup(params: CreateCacheSubnetGroupMessage): Request[CreateCacheSubnetGroupResult] = js.native
     def createGlobalReplicationGroup(
         params: CreateGlobalReplicationGroupMessage
-    ): Request[CreateGlobalReplicationGroupResult]                                                           = js.native
+    ): Request[CreateGlobalReplicationGroupResult] = js.native
     def createReplicationGroup(params: CreateReplicationGroupMessage): Request[CreateReplicationGroupResult] = js.native
-    def createSnapshot(params: CreateSnapshotMessage): Request[CreateSnapshotResult]                         = js.native
+    def createSnapshot(params: CreateSnapshotMessage): Request[CreateSnapshotResult] = js.native
     def decreaseNodeGroupsInGlobalReplicationGroup(
         params: DecreaseNodeGroupsInGlobalReplicationGroupMessage
-    ): Request[DecreaseNodeGroupsInGlobalReplicationGroupResult]                                       = js.native
+    ): Request[DecreaseNodeGroupsInGlobalReplicationGroupResult] = js.native
     def decreaseReplicaCount(params: DecreaseReplicaCountMessage): Request[DecreaseReplicaCountResult] = js.native
-    def deleteCacheCluster(params: DeleteCacheClusterMessage): Request[DeleteCacheClusterResult]       = js.native
-    def deleteCacheParameterGroup(params: DeleteCacheParameterGroupMessage): Request[js.Object]        = js.native
-    def deleteCacheSecurityGroup(params: DeleteCacheSecurityGroupMessage): Request[js.Object]          = js.native
-    def deleteCacheSubnetGroup(params: DeleteCacheSubnetGroupMessage): Request[js.Object]              = js.native
+    def deleteCacheCluster(params: DeleteCacheClusterMessage): Request[DeleteCacheClusterResult] = js.native
+    def deleteCacheParameterGroup(params: DeleteCacheParameterGroupMessage): Request[js.Object] = js.native
+    def deleteCacheSecurityGroup(params: DeleteCacheSecurityGroupMessage): Request[js.Object] = js.native
+    def deleteCacheSubnetGroup(params: DeleteCacheSubnetGroupMessage): Request[js.Object] = js.native
     def deleteGlobalReplicationGroup(
         params: DeleteGlobalReplicationGroupMessage
-    ): Request[DeleteGlobalReplicationGroupResult]                                                           = js.native
+    ): Request[DeleteGlobalReplicationGroupResult] = js.native
     def deleteReplicationGroup(params: DeleteReplicationGroupMessage): Request[DeleteReplicationGroupResult] = js.native
-    def deleteSnapshot(params: DeleteSnapshotMessage): Request[DeleteSnapshotResult]                         = js.native
-    def describeCacheClusters(params: DescribeCacheClustersMessage): Request[CacheClusterMessage]            = js.native
+    def deleteSnapshot(params: DeleteSnapshotMessage): Request[DeleteSnapshotResult] = js.native
+    def describeCacheClusters(params: DescribeCacheClustersMessage): Request[CacheClusterMessage] = js.native
     def describeCacheEngineVersions(params: DescribeCacheEngineVersionsMessage): Request[CacheEngineVersionMessage] =
       js.native
     def describeCacheParameterGroups(
         params: DescribeCacheParameterGroupsMessage
-    ): Request[CacheParameterGroupsMessage]                                                                  = js.native
+    ): Request[CacheParameterGroupsMessage] = js.native
     def describeCacheParameters(params: DescribeCacheParametersMessage): Request[CacheParameterGroupDetails] = js.native
     def describeCacheSecurityGroups(params: DescribeCacheSecurityGroupsMessage): Request[CacheSecurityGroupMessage] =
       js.native
@@ -283,7 +283,7 @@ package elasticache {
       js.native
     def describeEngineDefaultParameters(
         params: DescribeEngineDefaultParametersMessage
-    ): Request[DescribeEngineDefaultParametersResult]                         = js.native
+    ): Request[DescribeEngineDefaultParametersResult] = js.native
     def describeEvents(params: DescribeEventsMessage): Request[EventsMessage] = js.native
     def describeGlobalReplicationGroups(
         params: DescribeGlobalReplicationGroupsMessage
@@ -294,10 +294,10 @@ package elasticache {
       js.native
     def describeReservedCacheNodesOfferings(
         params: DescribeReservedCacheNodesOfferingsMessage
-    ): Request[ReservedCacheNodesOfferingMessage]                                                     = js.native
+    ): Request[ReservedCacheNodesOfferingMessage] = js.native
     def describeServiceUpdates(params: DescribeServiceUpdatesMessage): Request[ServiceUpdatesMessage] = js.native
-    def describeSnapshots(params: DescribeSnapshotsMessage): Request[DescribeSnapshotsListMessage]    = js.native
-    def describeUpdateActions(params: DescribeUpdateActionsMessage): Request[UpdateActionsMessage]    = js.native
+    def describeSnapshots(params: DescribeSnapshotsMessage): Request[DescribeSnapshotsListMessage] = js.native
+    def describeUpdateActions(params: DescribeUpdateActionsMessage): Request[UpdateActionsMessage] = js.native
     def disassociateGlobalReplicationGroup(
         params: DisassociateGlobalReplicationGroupMessage
     ): Request[DisassociateGlobalReplicationGroupResult] = js.native
@@ -306,19 +306,19 @@ package elasticache {
     ): Request[FailoverGlobalReplicationGroupResult] = js.native
     def increaseNodeGroupsInGlobalReplicationGroup(
         params: IncreaseNodeGroupsInGlobalReplicationGroupMessage
-    ): Request[IncreaseNodeGroupsInGlobalReplicationGroupResult]                                       = js.native
+    ): Request[IncreaseNodeGroupsInGlobalReplicationGroupResult] = js.native
     def increaseReplicaCount(params: IncreaseReplicaCountMessage): Request[IncreaseReplicaCountResult] = js.native
     def listAllowedNodeTypeModifications(
         params: ListAllowedNodeTypeModificationsMessage
-    ): Request[AllowedNodeTypeModificationsMessage]                                              = js.native
-    def listTagsForResource(params: ListTagsForResourceMessage): Request[TagListMessage]         = js.native
+    ): Request[AllowedNodeTypeModificationsMessage] = js.native
+    def listTagsForResource(params: ListTagsForResourceMessage): Request[TagListMessage] = js.native
     def modifyCacheCluster(params: ModifyCacheClusterMessage): Request[ModifyCacheClusterResult] = js.native
     def modifyCacheParameterGroup(params: ModifyCacheParameterGroupMessage): Request[CacheParameterGroupNameMessage] =
       js.native
     def modifyCacheSubnetGroup(params: ModifyCacheSubnetGroupMessage): Request[ModifyCacheSubnetGroupResult] = js.native
     def modifyGlobalReplicationGroup(
         params: ModifyGlobalReplicationGroupMessage
-    ): Request[ModifyGlobalReplicationGroupResult]                                                           = js.native
+    ): Request[ModifyGlobalReplicationGroupResult] = js.native
     def modifyReplicationGroup(params: ModifyReplicationGroupMessage): Request[ModifyReplicationGroupResult] = js.native
     def modifyReplicationGroupShardConfiguration(
         params: ModifyReplicationGroupShardConfigurationMessage
@@ -328,23 +328,23 @@ package elasticache {
     ): Request[PurchaseReservedCacheNodesOfferingResult] = js.native
     def rebalanceSlotsInGlobalReplicationGroup(
         params: RebalanceSlotsInGlobalReplicationGroupMessage
-    ): Request[RebalanceSlotsInGlobalReplicationGroupResult]                                     = js.native
+    ): Request[RebalanceSlotsInGlobalReplicationGroupResult] = js.native
     def rebootCacheCluster(params: RebootCacheClusterMessage): Request[RebootCacheClusterResult] = js.native
-    def removeTagsFromResource(params: RemoveTagsFromResourceMessage): Request[TagListMessage]   = js.native
+    def removeTagsFromResource(params: RemoveTagsFromResourceMessage): Request[TagListMessage] = js.native
     def resetCacheParameterGroup(params: ResetCacheParameterGroupMessage): Request[CacheParameterGroupNameMessage] =
       js.native
     def revokeCacheSecurityGroupIngress(
         params: RevokeCacheSecurityGroupIngressMessage
-    ): Request[RevokeCacheSecurityGroupIngressResult]                                  = js.native
+    ): Request[RevokeCacheSecurityGroupIngressResult] = js.native
     def startMigration(params: StartMigrationMessage): Request[StartMigrationResponse] = js.native
-    def testFailover(params: TestFailoverMessage): Request[TestFailoverResult]         = js.native
+    def testFailover(params: TestFailoverMessage): Request[TestFailoverResult] = js.native
   }
 
   @js.native
   sealed trait AZMode extends js.Any
   object AZMode extends js.Object {
     val `single-az` = "single-az".asInstanceOf[AZMode]
-    val `cross-az`  = "cross-az".asInstanceOf[AZMode]
+    val `cross-az` = "cross-az".asInstanceOf[AZMode]
 
     val values = js.Object.freeze(js.Array(`single-az`, `cross-az`))
   }
@@ -366,7 +366,7 @@ package elasticache {
     ): AddTagsToResourceMessage = {
       val __obj = js.Dynamic.literal(
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
-        "Tags"         -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddTagsToResourceMessage]
@@ -398,7 +398,7 @@ package elasticache {
   @js.native
   sealed trait AuthTokenUpdateStatus extends js.Any
   object AuthTokenUpdateStatus extends js.Object {
-    val SETTING  = "SETTING".asInstanceOf[AuthTokenUpdateStatus]
+    val SETTING = "SETTING".asInstanceOf[AuthTokenUpdateStatus]
     val ROTATING = "ROTATING".asInstanceOf[AuthTokenUpdateStatus]
 
     val values = js.Object.freeze(js.Array(SETTING, ROTATING))
@@ -407,7 +407,7 @@ package elasticache {
   @js.native
   sealed trait AuthTokenUpdateStrategyType extends js.Any
   object AuthTokenUpdateStrategyType extends js.Object {
-    val SET    = "SET".asInstanceOf[AuthTokenUpdateStrategyType]
+    val SET = "SET".asInstanceOf[AuthTokenUpdateStrategyType]
     val ROTATE = "ROTATE".asInstanceOf[AuthTokenUpdateStrategyType]
 
     val values = js.Object.freeze(js.Array(SET, ROTATE))
@@ -431,8 +431,8 @@ package elasticache {
         EC2SecurityGroupOwnerId: String
     ): AuthorizeCacheSecurityGroupIngressMessage = {
       val __obj = js.Dynamic.literal(
-        "CacheSecurityGroupName"  -> CacheSecurityGroupName.asInstanceOf[js.Any],
-        "EC2SecurityGroupName"    -> EC2SecurityGroupName.asInstanceOf[js.Any],
+        "CacheSecurityGroupName" -> CacheSecurityGroupName.asInstanceOf[js.Any],
+        "EC2SecurityGroupName" -> EC2SecurityGroupName.asInstanceOf[js.Any],
         "EC2SecurityGroupOwnerId" -> EC2SecurityGroupOwnerId.asInstanceOf[js.Any]
       )
 
@@ -459,9 +459,9 @@ package elasticache {
   @js.native
   sealed trait AutomaticFailoverStatus extends js.Any
   object AutomaticFailoverStatus extends js.Object {
-    val enabled   = "enabled".asInstanceOf[AutomaticFailoverStatus]
-    val disabled  = "disabled".asInstanceOf[AutomaticFailoverStatus]
-    val enabling  = "enabling".asInstanceOf[AutomaticFailoverStatus]
+    val enabled = "enabled".asInstanceOf[AutomaticFailoverStatus]
+    val disabled = "disabled".asInstanceOf[AutomaticFailoverStatus]
+    val enabling = "enabling".asInstanceOf[AutomaticFailoverStatus]
     val disabling = "disabling".asInstanceOf[AutomaticFailoverStatus]
 
     val values = js.Object.freeze(js.Array(enabled, disabled, enabling, disabling))
@@ -1158,7 +1158,7 @@ package elasticache {
   @js.native
   sealed trait ChangeType extends js.Any
   object ChangeType extends js.Object {
-    val immediate         = "immediate".asInstanceOf[ChangeType]
+    val immediate = "immediate".asInstanceOf[ChangeType]
     val `requires-reboot` = "requires-reboot".asInstanceOf[ChangeType]
 
     val values = js.Object.freeze(js.Array(immediate, `requires-reboot`))
@@ -1220,7 +1220,7 @@ package elasticache {
     ): ConfigureShard = {
       val __obj = js.Dynamic.literal(
         "NewReplicaCount" -> NewReplicaCount.asInstanceOf[js.Any],
-        "NodeGroupId"     -> NodeGroupId.asInstanceOf[js.Any]
+        "NodeGroupId" -> NodeGroupId.asInstanceOf[js.Any]
       )
 
       PreferredAvailabilityZones.foreach(__v =>
@@ -1404,8 +1404,8 @@ package elasticache {
     ): CreateCacheParameterGroupMessage = {
       val __obj = js.Dynamic.literal(
         "CacheParameterGroupFamily" -> CacheParameterGroupFamily.asInstanceOf[js.Any],
-        "CacheParameterGroupName"   -> CacheParameterGroupName.asInstanceOf[js.Any],
-        "Description"               -> Description.asInstanceOf[js.Any]
+        "CacheParameterGroupName" -> CacheParameterGroupName.asInstanceOf[js.Any],
+        "Description" -> Description.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateCacheParameterGroupMessage]
@@ -1445,7 +1445,7 @@ package elasticache {
     ): CreateCacheSecurityGroupMessage = {
       val __obj = js.Dynamic.literal(
         "CacheSecurityGroupName" -> CacheSecurityGroupName.asInstanceOf[js.Any],
-        "Description"            -> Description.asInstanceOf[js.Any]
+        "Description" -> Description.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateCacheSecurityGroupMessage]
@@ -1487,8 +1487,8 @@ package elasticache {
     ): CreateCacheSubnetGroupMessage = {
       val __obj = js.Dynamic.literal(
         "CacheSubnetGroupDescription" -> CacheSubnetGroupDescription.asInstanceOf[js.Any],
-        "CacheSubnetGroupName"        -> CacheSubnetGroupName.asInstanceOf[js.Any],
-        "SubnetIds"                   -> SubnetIds.asInstanceOf[js.Any]
+        "CacheSubnetGroupName" -> CacheSubnetGroupName.asInstanceOf[js.Any],
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateCacheSubnetGroupMessage]
@@ -1527,7 +1527,7 @@ package elasticache {
     ): CreateGlobalReplicationGroupMessage = {
       val __obj = js.Dynamic.literal(
         "GlobalReplicationGroupIdSuffix" -> GlobalReplicationGroupIdSuffix.asInstanceOf[js.Any],
-        "PrimaryReplicationGroupId"      -> PrimaryReplicationGroupId.asInstanceOf[js.Any]
+        "PrimaryReplicationGroupId" -> PrimaryReplicationGroupId.asInstanceOf[js.Any]
       )
 
       GlobalReplicationGroupDescription.foreach(__v =>
@@ -1628,7 +1628,7 @@ package elasticache {
     ): CreateReplicationGroupMessage = {
       val __obj = js.Dynamic.literal(
         "ReplicationGroupDescription" -> ReplicationGroupDescription.asInstanceOf[js.Any],
-        "ReplicationGroupId"          -> ReplicationGroupId.asInstanceOf[js.Any]
+        "ReplicationGroupId" -> ReplicationGroupId.asInstanceOf[js.Any]
       )
 
       AtRestEncryptionEnabled.foreach(__v => __obj.updateDynamic("AtRestEncryptionEnabled")(__v.asInstanceOf[js.Any]))
@@ -1769,9 +1769,9 @@ package elasticache {
         GlobalNodeGroupsToRetain: js.UndefOr[GlobalNodeGroupIdList] = js.undefined
     ): DecreaseNodeGroupsInGlobalReplicationGroupMessage = {
       val __obj = js.Dynamic.literal(
-        "ApplyImmediately"         -> ApplyImmediately.asInstanceOf[js.Any],
+        "ApplyImmediately" -> ApplyImmediately.asInstanceOf[js.Any],
         "GlobalReplicationGroupId" -> GlobalReplicationGroupId.asInstanceOf[js.Any],
-        "NodeGroupCount"           -> NodeGroupCount.asInstanceOf[js.Any]
+        "NodeGroupCount" -> NodeGroupCount.asInstanceOf[js.Any]
       )
 
       GlobalNodeGroupsToRemove.foreach(__v => __obj.updateDynamic("GlobalNodeGroupsToRemove")(__v.asInstanceOf[js.Any]))
@@ -1815,7 +1815,7 @@ package elasticache {
         ReplicasToRemove: js.UndefOr[RemoveReplicasList] = js.undefined
     ): DecreaseReplicaCountMessage = {
       val __obj = js.Dynamic.literal(
-        "ApplyImmediately"   -> ApplyImmediately.asInstanceOf[js.Any],
+        "ApplyImmediately" -> ApplyImmediately.asInstanceOf[js.Any],
         "ReplicationGroupId" -> ReplicationGroupId.asInstanceOf[js.Any]
       )
 
@@ -1958,7 +1958,7 @@ package elasticache {
         RetainPrimaryReplicationGroup: Boolean
     ): DeleteGlobalReplicationGroupMessage = {
       val __obj = js.Dynamic.literal(
-        "GlobalReplicationGroupId"      -> GlobalReplicationGroupId.asInstanceOf[js.Any],
+        "GlobalReplicationGroupId" -> GlobalReplicationGroupId.asInstanceOf[js.Any],
         "RetainPrimaryReplicationGroup" -> RetainPrimaryReplicationGroup.asInstanceOf[js.Any]
       )
 
@@ -2611,8 +2611,8 @@ package elasticache {
     ): DisassociateGlobalReplicationGroupMessage = {
       val __obj = js.Dynamic.literal(
         "GlobalReplicationGroupId" -> GlobalReplicationGroupId.asInstanceOf[js.Any],
-        "ReplicationGroupId"       -> ReplicationGroupId.asInstanceOf[js.Any],
-        "ReplicationGroupRegion"   -> ReplicationGroupRegion.asInstanceOf[js.Any]
+        "ReplicationGroupId" -> ReplicationGroupId.asInstanceOf[js.Any],
+        "ReplicationGroupRegion" -> ReplicationGroupRegion.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DisassociateGlobalReplicationGroupMessage]
@@ -2779,8 +2779,8 @@ package elasticache {
         PrimaryReplicationGroupId: String
     ): FailoverGlobalReplicationGroupMessage = {
       val __obj = js.Dynamic.literal(
-        "GlobalReplicationGroupId"  -> GlobalReplicationGroupId.asInstanceOf[js.Any],
-        "PrimaryRegion"             -> PrimaryRegion.asInstanceOf[js.Any],
+        "GlobalReplicationGroupId" -> GlobalReplicationGroupId.asInstanceOf[js.Any],
+        "PrimaryRegion" -> PrimaryRegion.asInstanceOf[js.Any],
         "PrimaryReplicationGroupId" -> PrimaryReplicationGroupId.asInstanceOf[js.Any]
       )
 
@@ -2956,9 +2956,9 @@ package elasticache {
         RegionalConfigurations: js.UndefOr[RegionalConfigurationList] = js.undefined
     ): IncreaseNodeGroupsInGlobalReplicationGroupMessage = {
       val __obj = js.Dynamic.literal(
-        "ApplyImmediately"         -> ApplyImmediately.asInstanceOf[js.Any],
+        "ApplyImmediately" -> ApplyImmediately.asInstanceOf[js.Any],
         "GlobalReplicationGroupId" -> GlobalReplicationGroupId.asInstanceOf[js.Any],
-        "NodeGroupCount"           -> NodeGroupCount.asInstanceOf[js.Any]
+        "NodeGroupCount" -> NodeGroupCount.asInstanceOf[js.Any]
       )
 
       RegionalConfigurations.foreach(__v => __obj.updateDynamic("RegionalConfigurations")(__v.asInstanceOf[js.Any]))
@@ -2999,7 +2999,7 @@ package elasticache {
         ReplicaConfiguration: js.UndefOr[ReplicaConfigurationList] = js.undefined
     ): IncreaseReplicaCountMessage = {
       val __obj = js.Dynamic.literal(
-        "ApplyImmediately"   -> ApplyImmediately.asInstanceOf[js.Any],
+        "ApplyImmediately" -> ApplyImmediately.asInstanceOf[js.Any],
         "ReplicationGroupId" -> ReplicationGroupId.asInstanceOf[js.Any]
       )
 
@@ -3178,7 +3178,7 @@ package elasticache {
     ): ModifyCacheParameterGroupMessage = {
       val __obj = js.Dynamic.literal(
         "CacheParameterGroupName" -> CacheParameterGroupName.asInstanceOf[js.Any],
-        "ParameterNameValues"     -> ParameterNameValues.asInstanceOf[js.Any]
+        "ParameterNameValues" -> ParameterNameValues.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ModifyCacheParameterGroupMessage]
@@ -3251,7 +3251,7 @@ package elasticache {
         GlobalReplicationGroupDescription: js.UndefOr[String] = js.undefined
     ): ModifyGlobalReplicationGroupMessage = {
       val __obj = js.Dynamic.literal(
-        "ApplyImmediately"         -> ApplyImmediately.asInstanceOf[js.Any],
+        "ApplyImmediately" -> ApplyImmediately.asInstanceOf[js.Any],
         "GlobalReplicationGroupId" -> GlobalReplicationGroupId.asInstanceOf[js.Any]
       )
 
@@ -3406,8 +3406,8 @@ package elasticache {
         ReshardingConfiguration: js.UndefOr[ReshardingConfigurationList] = js.undefined
     ): ModifyReplicationGroupShardConfigurationMessage = {
       val __obj = js.Dynamic.literal(
-        "ApplyImmediately"   -> ApplyImmediately.asInstanceOf[js.Any],
-        "NodeGroupCount"     -> NodeGroupCount.asInstanceOf[js.Any],
+        "ApplyImmediately" -> ApplyImmediately.asInstanceOf[js.Any],
+        "NodeGroupCount" -> NodeGroupCount.asInstanceOf[js.Any],
         "ReplicationGroupId" -> ReplicationGroupId.asInstanceOf[js.Any]
       )
 
@@ -3437,7 +3437,7 @@ package elasticache {
   @js.native
   sealed trait MultiAZStatus extends js.Any
   object MultiAZStatus extends js.Object {
-    val enabled  = "enabled".asInstanceOf[MultiAZStatus]
+    val enabled = "enabled".asInstanceOf[MultiAZStatus]
     val disabled = "disabled".asInstanceOf[MultiAZStatus]
 
     val values = js.Object.freeze(js.Array(enabled, disabled))
@@ -3650,7 +3650,7 @@ package elasticache {
   @js.native
   sealed trait NodeUpdateInitiatedBy extends js.Any
   object NodeUpdateInitiatedBy extends js.Object {
-    val system   = "system".asInstanceOf[NodeUpdateInitiatedBy]
+    val system = "system".asInstanceOf[NodeUpdateInitiatedBy]
     val customer = "customer".asInstanceOf[NodeUpdateInitiatedBy]
 
     val values = js.Object.freeze(js.Array(system, customer))
@@ -3659,12 +3659,12 @@ package elasticache {
   @js.native
   sealed trait NodeUpdateStatus extends js.Any
   object NodeUpdateStatus extends js.Object {
-    val `not-applied`      = "not-applied".asInstanceOf[NodeUpdateStatus]
+    val `not-applied` = "not-applied".asInstanceOf[NodeUpdateStatus]
     val `waiting-to-start` = "waiting-to-start".asInstanceOf[NodeUpdateStatus]
-    val `in-progress`      = "in-progress".asInstanceOf[NodeUpdateStatus]
-    val stopping           = "stopping".asInstanceOf[NodeUpdateStatus]
-    val stopped            = "stopped".asInstanceOf[NodeUpdateStatus]
-    val complete           = "complete".asInstanceOf[NodeUpdateStatus]
+    val `in-progress` = "in-progress".asInstanceOf[NodeUpdateStatus]
+    val stopping = "stopping".asInstanceOf[NodeUpdateStatus]
+    val stopped = "stopped".asInstanceOf[NodeUpdateStatus]
+    val complete = "complete".asInstanceOf[NodeUpdateStatus]
 
     val values =
       js.Object.freeze(js.Array(`not-applied`, `waiting-to-start`, `in-progress`, stopping, stopped, complete))
@@ -3760,7 +3760,7 @@ package elasticache {
   @js.native
   sealed trait PendingAutomaticFailoverStatus extends js.Any
   object PendingAutomaticFailoverStatus extends js.Object {
-    val enabled  = "enabled".asInstanceOf[PendingAutomaticFailoverStatus]
+    val enabled = "enabled".asInstanceOf[PendingAutomaticFailoverStatus]
     val disabled = "disabled".asInstanceOf[PendingAutomaticFailoverStatus]
 
     val values = js.Object.freeze(js.Array(enabled, disabled))
@@ -3881,7 +3881,7 @@ package elasticache {
         GlobalReplicationGroupId: String
     ): RebalanceSlotsInGlobalReplicationGroupMessage = {
       val __obj = js.Dynamic.literal(
-        "ApplyImmediately"         -> ApplyImmediately.asInstanceOf[js.Any],
+        "ApplyImmediately" -> ApplyImmediately.asInstanceOf[js.Any],
         "GlobalReplicationGroupId" -> GlobalReplicationGroupId.asInstanceOf[js.Any]
       )
 
@@ -3921,7 +3921,7 @@ package elasticache {
         CacheNodeIdsToReboot: CacheNodeIdsList
     ): RebootCacheClusterMessage = {
       val __obj = js.Dynamic.literal(
-        "CacheClusterId"       -> CacheClusterId.asInstanceOf[js.Any],
+        "CacheClusterId" -> CacheClusterId.asInstanceOf[js.Any],
         "CacheNodeIdsToReboot" -> CacheNodeIdsToReboot.asInstanceOf[js.Any]
       )
 
@@ -3985,8 +3985,8 @@ package elasticache {
         ReshardingConfiguration: ReshardingConfigurationList
     ): RegionalConfiguration = {
       val __obj = js.Dynamic.literal(
-        "ReplicationGroupId"      -> ReplicationGroupId.asInstanceOf[js.Any],
-        "ReplicationGroupRegion"  -> ReplicationGroupRegion.asInstanceOf[js.Any],
+        "ReplicationGroupId" -> ReplicationGroupId.asInstanceOf[js.Any],
+        "ReplicationGroupRegion" -> ReplicationGroupRegion.asInstanceOf[js.Any],
         "ReshardingConfiguration" -> ReshardingConfiguration.asInstanceOf[js.Any]
       )
 
@@ -4011,7 +4011,7 @@ package elasticache {
     ): RemoveTagsFromResourceMessage = {
       val __obj = js.Dynamic.literal(
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
-        "TagKeys"      -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RemoveTagsFromResourceMessage]
@@ -4384,8 +4384,8 @@ package elasticache {
         EC2SecurityGroupOwnerId: String
     ): RevokeCacheSecurityGroupIngressMessage = {
       val __obj = js.Dynamic.literal(
-        "CacheSecurityGroupName"  -> CacheSecurityGroupName.asInstanceOf[js.Any],
-        "EC2SecurityGroupName"    -> EC2SecurityGroupName.asInstanceOf[js.Any],
+        "CacheSecurityGroupName" -> CacheSecurityGroupName.asInstanceOf[js.Any],
+        "EC2SecurityGroupName" -> EC2SecurityGroupName.asInstanceOf[js.Any],
         "EC2SecurityGroupOwnerId" -> EC2SecurityGroupOwnerId.asInstanceOf[js.Any]
       )
 
@@ -4490,10 +4490,10 @@ package elasticache {
   @js.native
   sealed trait ServiceUpdateSeverity extends js.Any
   object ServiceUpdateSeverity extends js.Object {
-    val critical  = "critical".asInstanceOf[ServiceUpdateSeverity]
+    val critical = "critical".asInstanceOf[ServiceUpdateSeverity]
     val important = "important".asInstanceOf[ServiceUpdateSeverity]
-    val medium    = "medium".asInstanceOf[ServiceUpdateSeverity]
-    val low       = "low".asInstanceOf[ServiceUpdateSeverity]
+    val medium = "medium".asInstanceOf[ServiceUpdateSeverity]
+    val low = "low".asInstanceOf[ServiceUpdateSeverity]
 
     val values = js.Object.freeze(js.Array(critical, important, medium, low))
   }
@@ -4503,7 +4503,7 @@ package elasticache {
   object ServiceUpdateStatus extends js.Object {
     val available = "available".asInstanceOf[ServiceUpdateStatus]
     val cancelled = "cancelled".asInstanceOf[ServiceUpdateStatus]
-    val expired   = "expired".asInstanceOf[ServiceUpdateStatus]
+    val expired = "expired".asInstanceOf[ServiceUpdateStatus]
 
     val values = js.Object.freeze(js.Array(available, cancelled, expired))
   }
@@ -4538,8 +4538,8 @@ package elasticache {
   @js.native
   sealed trait SlaMet extends js.Any
   object SlaMet extends js.Object {
-    val yes   = "yes".asInstanceOf[SlaMet]
-    val no    = "no".asInstanceOf[SlaMet]
+    val yes = "yes".asInstanceOf[SlaMet]
+    val no = "no".asInstanceOf[SlaMet]
     val `n/a` = "n/a".asInstanceOf[SlaMet]
 
     val values = js.Object.freeze(js.Array(yes, no, `n/a`))
@@ -4667,11 +4667,11 @@ package elasticache {
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType extends js.Object {
-    val `cache-cluster`         = "cache-cluster".asInstanceOf[SourceType]
+    val `cache-cluster` = "cache-cluster".asInstanceOf[SourceType]
     val `cache-parameter-group` = "cache-parameter-group".asInstanceOf[SourceType]
-    val `cache-security-group`  = "cache-security-group".asInstanceOf[SourceType]
-    val `cache-subnet-group`    = "cache-subnet-group".asInstanceOf[SourceType]
-    val `replication-group`     = "replication-group".asInstanceOf[SourceType]
+    val `cache-security-group` = "cache-security-group".asInstanceOf[SourceType]
+    val `cache-subnet-group` = "cache-subnet-group".asInstanceOf[SourceType]
+    val `replication-group` = "replication-group".asInstanceOf[SourceType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -4698,7 +4698,7 @@ package elasticache {
     ): StartMigrationMessage = {
       val __obj = js.Dynamic.literal(
         "CustomerNodeEndpointList" -> CustomerNodeEndpointList.asInstanceOf[js.Any],
-        "ReplicationGroupId"       -> ReplicationGroupId.asInstanceOf[js.Any]
+        "ReplicationGroupId" -> ReplicationGroupId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[StartMigrationMessage]
@@ -4797,7 +4797,7 @@ package elasticache {
         ReplicationGroupId: String
     ): TestFailoverMessage = {
       val __obj = js.Dynamic.literal(
-        "NodeGroupId"        -> NodeGroupId.asInstanceOf[js.Any],
+        "NodeGroupId" -> NodeGroupId.asInstanceOf[js.Any],
         "ReplicationGroupId" -> ReplicationGroupId.asInstanceOf[js.Any]
       )
 
@@ -4969,15 +4969,15 @@ package elasticache {
   @js.native
   sealed trait UpdateActionStatus extends js.Any
   object UpdateActionStatus extends js.Object {
-    val `not-applied`      = "not-applied".asInstanceOf[UpdateActionStatus]
+    val `not-applied` = "not-applied".asInstanceOf[UpdateActionStatus]
     val `waiting-to-start` = "waiting-to-start".asInstanceOf[UpdateActionStatus]
-    val `in-progress`      = "in-progress".asInstanceOf[UpdateActionStatus]
-    val stopping           = "stopping".asInstanceOf[UpdateActionStatus]
-    val stopped            = "stopped".asInstanceOf[UpdateActionStatus]
-    val complete           = "complete".asInstanceOf[UpdateActionStatus]
-    val scheduling         = "scheduling".asInstanceOf[UpdateActionStatus]
-    val scheduled          = "scheduled".asInstanceOf[UpdateActionStatus]
-    val `not-applicable`   = "not-applicable".asInstanceOf[UpdateActionStatus]
+    val `in-progress` = "in-progress".asInstanceOf[UpdateActionStatus]
+    val stopping = "stopping".asInstanceOf[UpdateActionStatus]
+    val stopped = "stopped".asInstanceOf[UpdateActionStatus]
+    val complete = "complete".asInstanceOf[UpdateActionStatus]
+    val scheduling = "scheduling".asInstanceOf[UpdateActionStatus]
+    val scheduled = "scheduled".asInstanceOf[UpdateActionStatus]
+    val `not-applicable` = "not-applicable".asInstanceOf[UpdateActionStatus]
 
     val values = js.Object.freeze(
       js.Array(

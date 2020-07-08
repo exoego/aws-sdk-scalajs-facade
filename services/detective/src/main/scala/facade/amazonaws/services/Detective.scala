@@ -7,20 +7,20 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object detective {
-  type AccountId              = String
-  type AccountIdList          = js.Array[AccountId]
-  type AccountList            = js.Array[Account]
-  type EmailAddress           = String
-  type EmailMessage           = String
-  type GraphArn               = String
-  type GraphList              = js.Array[Graph]
-  type MemberDetailList       = js.Array[MemberDetail]
-  type MemberResultsLimit     = Int
-  type PaginationToken        = String
-  type Percentage             = Double
-  type Timestamp              = js.Date
+  type AccountId = String
+  type AccountIdList = js.Array[AccountId]
+  type AccountList = js.Array[Account]
+  type EmailAddress = String
+  type EmailMessage = String
+  type GraphArn = String
+  type GraphList = js.Array[Graph]
+  type MemberDetailList = js.Array[MemberDetail]
+  type MemberResultsLimit = Int
+  type PaginationToken = String
+  type Percentage = Double
+  type Timestamp = js.Date
   type UnprocessedAccountList = js.Array[UnprocessedAccount]
-  type UnprocessedReason      = String
+  type UnprocessedReason = String
 
   implicit final class DetectiveOps(private val service: Detective) extends AnyVal {
 
@@ -56,18 +56,18 @@ package detective {
   class Detective() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def acceptInvitation(params: AcceptInvitationRequest): Request[js.Object]             = js.native
-    def createGraph(): Request[CreateGraphResponse]                                       = js.native
-    def createMembers(params: CreateMembersRequest): Request[CreateMembersResponse]       = js.native
-    def deleteGraph(params: DeleteGraphRequest): Request[js.Object]                       = js.native
-    def deleteMembers(params: DeleteMembersRequest): Request[DeleteMembersResponse]       = js.native
+    def acceptInvitation(params: AcceptInvitationRequest): Request[js.Object] = js.native
+    def createGraph(): Request[CreateGraphResponse] = js.native
+    def createMembers(params: CreateMembersRequest): Request[CreateMembersResponse] = js.native
+    def deleteGraph(params: DeleteGraphRequest): Request[js.Object] = js.native
+    def deleteMembers(params: DeleteMembersRequest): Request[DeleteMembersResponse] = js.native
     def disassociateMembership(params: DisassociateMembershipRequest): Request[js.Object] = js.native
-    def getMembers(params: GetMembersRequest): Request[GetMembersResponse]                = js.native
-    def listGraphs(params: ListGraphsRequest): Request[ListGraphsResponse]                = js.native
+    def getMembers(params: GetMembersRequest): Request[GetMembersResponse] = js.native
+    def listGraphs(params: ListGraphsRequest): Request[ListGraphsResponse] = js.native
     def listInvitations(params: ListInvitationsRequest): Request[ListInvitationsResponse] = js.native
-    def listMembers(params: ListMembersRequest): Request[ListMembersResponse]             = js.native
-    def rejectInvitation(params: RejectInvitationRequest): Request[js.Object]             = js.native
-    def startMonitoringMember(params: StartMonitoringMemberRequest): Request[js.Object]   = js.native
+    def listMembers(params: ListMembersRequest): Request[ListMembersResponse] = js.native
+    def rejectInvitation(params: RejectInvitationRequest): Request[js.Object] = js.native
+    def startMonitoringMember(params: StartMonitoringMemberRequest): Request[js.Object] = js.native
   }
 
   @js.native
@@ -104,7 +104,7 @@ package detective {
         EmailAddress: EmailAddress
     ): Account = {
       val __obj = js.Dynamic.literal(
-        "AccountId"    -> AccountId.asInstanceOf[js.Any],
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
         "EmailAddress" -> EmailAddress.asInstanceOf[js.Any]
       )
 
@@ -203,7 +203,7 @@ package detective {
     ): DeleteMembersRequest = {
       val __obj = js.Dynamic.literal(
         "AccountIds" -> AccountIds.asInstanceOf[js.Any],
-        "GraphArn"   -> GraphArn.asInstanceOf[js.Any]
+        "GraphArn" -> GraphArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteMembersRequest]
@@ -261,7 +261,7 @@ package detective {
     ): GetMembersRequest = {
       val __obj = js.Dynamic.literal(
         "AccountIds" -> AccountIds.asInstanceOf[js.Any],
-        "GraphArn"   -> GraphArn.asInstanceOf[js.Any]
+        "GraphArn" -> GraphArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetMembersRequest]
@@ -482,7 +482,7 @@ package detective {
   sealed trait MemberDisabledReason extends js.Any
   object MemberDisabledReason extends js.Object {
     val VOLUME_TOO_HIGH = "VOLUME_TOO_HIGH".asInstanceOf[MemberDisabledReason]
-    val VOLUME_UNKNOWN  = "VOLUME_UNKNOWN".asInstanceOf[MemberDisabledReason]
+    val VOLUME_UNKNOWN = "VOLUME_UNKNOWN".asInstanceOf[MemberDisabledReason]
 
     val values = js.Object.freeze(js.Array(VOLUME_TOO_HIGH, VOLUME_UNKNOWN))
   }
@@ -490,11 +490,11 @@ package detective {
   @js.native
   sealed trait MemberStatus extends js.Any
   object MemberStatus extends js.Object {
-    val INVITED                  = "INVITED".asInstanceOf[MemberStatus]
+    val INVITED = "INVITED".asInstanceOf[MemberStatus]
     val VERIFICATION_IN_PROGRESS = "VERIFICATION_IN_PROGRESS".asInstanceOf[MemberStatus]
-    val VERIFICATION_FAILED      = "VERIFICATION_FAILED".asInstanceOf[MemberStatus]
-    val ENABLED                  = "ENABLED".asInstanceOf[MemberStatus]
-    val ACCEPTED_BUT_DISABLED    = "ACCEPTED_BUT_DISABLED".asInstanceOf[MemberStatus]
+    val VERIFICATION_FAILED = "VERIFICATION_FAILED".asInstanceOf[MemberStatus]
+    val ENABLED = "ENABLED".asInstanceOf[MemberStatus]
+    val ACCEPTED_BUT_DISABLED = "ACCEPTED_BUT_DISABLED".asInstanceOf[MemberStatus]
 
     val values =
       js.Object.freeze(js.Array(INVITED, VERIFICATION_IN_PROGRESS, VERIFICATION_FAILED, ENABLED, ACCEPTED_BUT_DISABLED))
@@ -532,7 +532,7 @@ package detective {
     ): StartMonitoringMemberRequest = {
       val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "GraphArn"  -> GraphArn.asInstanceOf[js.Any]
+        "GraphArn" -> GraphArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[StartMonitoringMemberRequest]

@@ -7,41 +7,41 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object dlm {
-  type AvailabilityZone           = String
-  type AvailabilityZoneList       = js.Array[AvailabilityZone]
-  type CmkArn                     = String
-  type CopyTags                   = Boolean
-  type CopyTagsNullable           = Boolean
-  type Count                      = Int
-  type CronExpression             = String
-  type CrossRegionCopyRules       = js.Array[CrossRegionCopyRule]
-  type Encrypted                  = Boolean
-  type ExcludeBootVolume          = Boolean
-  type ExecutionRoleArn           = String
-  type Interval                   = Int
+  type AvailabilityZone = String
+  type AvailabilityZoneList = js.Array[AvailabilityZone]
+  type CmkArn = String
+  type CopyTags = Boolean
+  type CopyTagsNullable = Boolean
+  type Count = Int
+  type CronExpression = String
+  type CrossRegionCopyRules = js.Array[CrossRegionCopyRule]
+  type Encrypted = Boolean
+  type ExcludeBootVolume = Boolean
+  type ExecutionRoleArn = String
+  type Interval = Int
   type LifecyclePolicySummaryList = js.Array[LifecyclePolicySummary]
-  type PolicyArn                  = String
-  type PolicyDescription          = String
-  type PolicyId                   = String
-  type PolicyIdList               = js.Array[PolicyId]
-  type ResourceTypeValuesList     = js.Array[ResourceTypeValues]
-  type ScheduleList               = js.Array[Schedule]
-  type ScheduleName               = String
-  type StatusMessage              = String
-  type TagFilter                  = String
-  type TagKey                     = String
-  type TagKeyList                 = js.Array[TagKey]
-  type TagMap                     = js.Dictionary[TagValue]
-  type TagValue                   = String
-  type TagsToAddFilterList        = js.Array[TagFilter]
-  type TagsToAddList              = js.Array[Tag]
-  type TargetRegion               = String
-  type TargetTagList              = js.Array[Tag]
-  type TargetTagsFilterList       = js.Array[TagFilter]
-  type Time                       = String
-  type TimesList                  = js.Array[Time]
-  type Timestamp                  = js.Date
-  type VariableTagsList           = js.Array[Tag]
+  type PolicyArn = String
+  type PolicyDescription = String
+  type PolicyId = String
+  type PolicyIdList = js.Array[PolicyId]
+  type ResourceTypeValuesList = js.Array[ResourceTypeValues]
+  type ScheduleList = js.Array[Schedule]
+  type ScheduleName = String
+  type StatusMessage = String
+  type TagFilter = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagMap = js.Dictionary[TagValue]
+  type TagValue = String
+  type TagsToAddFilterList = js.Array[TagFilter]
+  type TagsToAddList = js.Array[Tag]
+  type TargetRegion = String
+  type TargetTagList = js.Array[Tag]
+  type TargetTagsFilterList = js.Array[TagFilter]
+  type Time = String
+  type TimesList = js.Array[Time]
+  type Timestamp = js.Date
+  type VariableTagsList = js.Array[Tag]
 
   implicit final class DLMOps(private val service: DLM) extends AnyVal {
 
@@ -75,11 +75,11 @@ package dlm {
 
     def createLifecyclePolicy(params: CreateLifecyclePolicyRequest): Request[CreateLifecyclePolicyResponse] = js.native
     def deleteLifecyclePolicy(params: DeleteLifecyclePolicyRequest): Request[DeleteLifecyclePolicyResponse] = js.native
-    def getLifecyclePolicies(params: GetLifecyclePoliciesRequest): Request[GetLifecyclePoliciesResponse]    = js.native
-    def getLifecyclePolicy(params: GetLifecyclePolicyRequest): Request[GetLifecyclePolicyResponse]          = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                               = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                         = js.native
+    def getLifecyclePolicies(params: GetLifecyclePoliciesRequest): Request[GetLifecyclePoliciesResponse] = js.native
+    def getLifecyclePolicy(params: GetLifecyclePolicyRequest): Request[GetLifecyclePolicyResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateLifecyclePolicy(params: UpdateLifecyclePolicyRequest): Request[UpdateLifecyclePolicyResponse] = js.native
   }
 
@@ -102,10 +102,10 @@ package dlm {
         Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateLifecyclePolicyRequest = {
       val __obj = js.Dynamic.literal(
-        "Description"      -> Description.asInstanceOf[js.Any],
+        "Description" -> Description.asInstanceOf[js.Any],
         "ExecutionRoleArn" -> ExecutionRoleArn.asInstanceOf[js.Any],
-        "PolicyDetails"    -> PolicyDetails.asInstanceOf[js.Any],
-        "State"            -> State.asInstanceOf[js.Any]
+        "PolicyDetails" -> PolicyDetails.asInstanceOf[js.Any],
+        "State" -> State.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -202,7 +202,7 @@ package dlm {
         RetainRule: js.UndefOr[CrossRegionCopyRetainRule] = js.undefined
     ): CrossRegionCopyRule = {
       val __obj = js.Dynamic.literal(
-        "Encrypted"    -> Encrypted.asInstanceOf[js.Any],
+        "Encrypted" -> Encrypted.asInstanceOf[js.Any],
         "TargetRegion" -> TargetRegion.asInstanceOf[js.Any]
       )
 
@@ -355,9 +355,9 @@ package dlm {
   @js.native
   sealed trait GettablePolicyStateValues extends js.Any
   object GettablePolicyStateValues extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[GettablePolicyStateValues]
+    val ENABLED = "ENABLED".asInstanceOf[GettablePolicyStateValues]
     val DISABLED = "DISABLED".asInstanceOf[GettablePolicyStateValues]
-    val ERROR    = "ERROR".asInstanceOf[GettablePolicyStateValues]
+    val ERROR = "ERROR".asInstanceOf[GettablePolicyStateValues]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED, ERROR))
   }
@@ -539,7 +539,7 @@ package dlm {
   @js.native
   sealed trait ResourceTypeValues extends js.Any
   object ResourceTypeValues extends js.Object {
-    val VOLUME   = "VOLUME".asInstanceOf[ResourceTypeValues]
+    val VOLUME = "VOLUME".asInstanceOf[ResourceTypeValues]
     val INSTANCE = "INSTANCE".asInstanceOf[ResourceTypeValues]
 
     val values = js.Object.freeze(js.Array(VOLUME, INSTANCE))
@@ -573,10 +573,10 @@ package dlm {
   @js.native
   sealed trait RetentionIntervalUnitValues extends js.Any
   object RetentionIntervalUnitValues extends js.Object {
-    val DAYS   = "DAYS".asInstanceOf[RetentionIntervalUnitValues]
-    val WEEKS  = "WEEKS".asInstanceOf[RetentionIntervalUnitValues]
+    val DAYS = "DAYS".asInstanceOf[RetentionIntervalUnitValues]
+    val WEEKS = "WEEKS".asInstanceOf[RetentionIntervalUnitValues]
     val MONTHS = "MONTHS".asInstanceOf[RetentionIntervalUnitValues]
-    val YEARS  = "YEARS".asInstanceOf[RetentionIntervalUnitValues]
+    val YEARS = "YEARS".asInstanceOf[RetentionIntervalUnitValues]
 
     val values = js.Object.freeze(js.Array(DAYS, WEEKS, MONTHS, YEARS))
   }
@@ -624,7 +624,7 @@ package dlm {
   @js.native
   sealed trait SettablePolicyStateValues extends js.Any
   object SettablePolicyStateValues extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[SettablePolicyStateValues]
+    val ENABLED = "ENABLED".asInstanceOf[SettablePolicyStateValues]
     val DISABLED = "DISABLED".asInstanceOf[SettablePolicyStateValues]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -646,7 +646,7 @@ package dlm {
         Value: String
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -668,7 +668,7 @@ package dlm {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -702,7 +702,7 @@ package dlm {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]

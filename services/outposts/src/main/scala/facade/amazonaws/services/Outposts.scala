@@ -7,24 +7,24 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object outposts {
-  type AccountId                  = String
-  type AvailabilityZone           = String
-  type AvailabilityZoneId         = String
-  type InstanceType               = String
+  type AccountId = String
+  type AvailabilityZone = String
+  type AvailabilityZoneId = String
+  type InstanceType = String
   type InstanceTypeListDefinition = js.Array[InstanceTypeItem]
-  type LifeCycleStatus            = String
-  type MaxResults1000             = Int
-  type OutpostArn                 = String
-  type OutpostDescription         = String
-  type OutpostId                  = String
-  type OutpostName                = String
-  type OwnerId                    = String
-  type SiteDescription            = String
-  type SiteId                     = String
-  type SiteName                   = String
-  type Token                      = String
-  type outpostListDefinition      = js.Array[Outpost]
-  type siteListDefinition         = js.Array[Site]
+  type LifeCycleStatus = String
+  type MaxResults1000 = Int
+  type OutpostArn = String
+  type OutpostDescription = String
+  type OutpostId = String
+  type OutpostName = String
+  type OwnerId = String
+  type SiteDescription = String
+  type SiteId = String
+  type SiteName = String
+  type Token = String
+  type outpostListDefinition = js.Array[Outpost]
+  type siteListDefinition = js.Array[Site]
 
   implicit final class OutpostsOps(private val service: Outposts) extends AnyVal {
 
@@ -54,12 +54,12 @@ package outposts {
 
     def createOutpost(params: CreateOutpostInput): Request[CreateOutpostOutput] = js.native
     def deleteOutpost(params: DeleteOutpostInput): Request[DeleteOutpostOutput] = js.native
-    def deleteSite(params: DeleteSiteInput): Request[DeleteSiteOutput]          = js.native
-    def getOutpost(params: GetOutpostInput): Request[GetOutpostOutput]          = js.native
+    def deleteSite(params: DeleteSiteInput): Request[DeleteSiteOutput] = js.native
+    def getOutpost(params: GetOutpostInput): Request[GetOutpostOutput] = js.native
     def getOutpostInstanceTypes(params: GetOutpostInstanceTypesInput): Request[GetOutpostInstanceTypesOutput] =
       js.native
     def listOutposts(params: ListOutpostsInput): Request[ListOutpostsOutput] = js.native
-    def listSites(params: ListSitesInput): Request[ListSitesOutput]          = js.native
+    def listSites(params: ListSitesInput): Request[ListSitesOutput] = js.native
   }
 
   @js.native

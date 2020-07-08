@@ -7,60 +7,60 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object savingsplans {
-  type Amount                              = String
-  type ClientToken                         = String
-  type CurrencyList                        = js.Array[CurrencyCode]
-  type DurationsList                       = js.Array[SavingsPlansDuration]
-  type EC2InstanceFamily                   = String
-  type FilterValuesList                    = js.Array[JsonSafeFilterValueString]
-  type JsonSafeFilterValueString           = String
-  type ListOfStrings                       = js.Array[String]
-  type MaxResults                          = Int
-  type PageSize                            = Int
-  type PaginationToken                     = String
-  type Region                              = String
-  type SavingsPlanArn                      = String
-  type SavingsPlanArnList                  = js.Array[SavingsPlanArn]
-  type SavingsPlanDescription              = String
-  type SavingsPlanDescriptionsList         = js.Array[SavingsPlanDescription]
-  type SavingsPlanFilterList               = js.Array[SavingsPlanFilter]
-  type SavingsPlanId                       = String
-  type SavingsPlanIdList                   = js.Array[SavingsPlanId]
-  type SavingsPlanList                     = js.Array[SavingsPlan]
-  type SavingsPlanOfferingFiltersList      = js.Array[SavingsPlanOfferingFilterElement]
-  type SavingsPlanOfferingId               = String
-  type SavingsPlanOfferingPropertyList     = js.Array[SavingsPlanOfferingProperty]
-  type SavingsPlanOfferingRateFiltersList  = js.Array[SavingsPlanOfferingRateFilterElement]
+  type Amount = String
+  type ClientToken = String
+  type CurrencyList = js.Array[CurrencyCode]
+  type DurationsList = js.Array[SavingsPlansDuration]
+  type EC2InstanceFamily = String
+  type FilterValuesList = js.Array[JsonSafeFilterValueString]
+  type JsonSafeFilterValueString = String
+  type ListOfStrings = js.Array[String]
+  type MaxResults = Int
+  type PageSize = Int
+  type PaginationToken = String
+  type Region = String
+  type SavingsPlanArn = String
+  type SavingsPlanArnList = js.Array[SavingsPlanArn]
+  type SavingsPlanDescription = String
+  type SavingsPlanDescriptionsList = js.Array[SavingsPlanDescription]
+  type SavingsPlanFilterList = js.Array[SavingsPlanFilter]
+  type SavingsPlanId = String
+  type SavingsPlanIdList = js.Array[SavingsPlanId]
+  type SavingsPlanList = js.Array[SavingsPlan]
+  type SavingsPlanOfferingFiltersList = js.Array[SavingsPlanOfferingFilterElement]
+  type SavingsPlanOfferingId = String
+  type SavingsPlanOfferingPropertyList = js.Array[SavingsPlanOfferingProperty]
+  type SavingsPlanOfferingRateFiltersList = js.Array[SavingsPlanOfferingRateFilterElement]
   type SavingsPlanOfferingRatePropertyList = js.Array[SavingsPlanOfferingRateProperty]
-  type SavingsPlanOfferingRatesList        = js.Array[SavingsPlanOfferingRate]
-  type SavingsPlanOfferingsList            = js.Array[SavingsPlanOffering]
-  type SavingsPlanOperation                = String
-  type SavingsPlanOperationList            = js.Array[SavingsPlanOperation]
-  type SavingsPlanPaymentOptionList        = js.Array[SavingsPlanPaymentOption]
-  type SavingsPlanProductTypeList          = js.Array[SavingsPlanProductType]
-  type SavingsPlanRateFilterList           = js.Array[SavingsPlanRateFilter]
-  type SavingsPlanRateList                 = js.Array[SavingsPlanRate]
-  type SavingsPlanRateOperation            = String
-  type SavingsPlanRateOperationList        = js.Array[SavingsPlanRateOperation]
-  type SavingsPlanRatePricePerUnit         = String
-  type SavingsPlanRatePropertyList         = js.Array[SavingsPlanRateProperty]
-  type SavingsPlanRateServiceCodeList      = js.Array[SavingsPlanRateServiceCode]
-  type SavingsPlanRateUsageType            = String
-  type SavingsPlanRateUsageTypeList        = js.Array[SavingsPlanRateUsageType]
-  type SavingsPlanServiceCode              = String
-  type SavingsPlanServiceCodeList          = js.Array[SavingsPlanServiceCode]
-  type SavingsPlanStateList                = js.Array[SavingsPlanState]
-  type SavingsPlanTypeList                 = js.Array[SavingsPlanType]
-  type SavingsPlanUsageType                = String
-  type SavingsPlanUsageTypeList            = js.Array[SavingsPlanUsageType]
-  type SavingsPlansDuration                = Double
-  type TagKey                              = String
-  type TagKeyList                          = js.Array[TagKey]
-  type TagMap                              = js.Dictionary[TagValue]
-  type TagValue                            = String
-  type TermDurationInSeconds               = Double
-  type UUID                                = String
-  type UUIDs                               = js.Array[UUID]
+  type SavingsPlanOfferingRatesList = js.Array[SavingsPlanOfferingRate]
+  type SavingsPlanOfferingsList = js.Array[SavingsPlanOffering]
+  type SavingsPlanOperation = String
+  type SavingsPlanOperationList = js.Array[SavingsPlanOperation]
+  type SavingsPlanPaymentOptionList = js.Array[SavingsPlanPaymentOption]
+  type SavingsPlanProductTypeList = js.Array[SavingsPlanProductType]
+  type SavingsPlanRateFilterList = js.Array[SavingsPlanRateFilter]
+  type SavingsPlanRateList = js.Array[SavingsPlanRate]
+  type SavingsPlanRateOperation = String
+  type SavingsPlanRateOperationList = js.Array[SavingsPlanRateOperation]
+  type SavingsPlanRatePricePerUnit = String
+  type SavingsPlanRatePropertyList = js.Array[SavingsPlanRateProperty]
+  type SavingsPlanRateServiceCodeList = js.Array[SavingsPlanRateServiceCode]
+  type SavingsPlanRateUsageType = String
+  type SavingsPlanRateUsageTypeList = js.Array[SavingsPlanRateUsageType]
+  type SavingsPlanServiceCode = String
+  type SavingsPlanServiceCodeList = js.Array[SavingsPlanServiceCode]
+  type SavingsPlanStateList = js.Array[SavingsPlanState]
+  type SavingsPlanTypeList = js.Array[SavingsPlanType]
+  type SavingsPlanUsageType = String
+  type SavingsPlanUsageTypeList = js.Array[SavingsPlanUsageType]
+  type SavingsPlansDuration = Double
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagMap = js.Dictionary[TagValue]
+  type TagValue = String
+  type TermDurationInSeconds = Double
+  type UUID = String
+  type UUIDs = js.Array[UUID]
 
   implicit final class SavingsPlansOps(private val service: SavingsPlans) extends AnyVal {
 
@@ -102,10 +102,10 @@ package savingsplans {
     ): Request[DescribeSavingsPlansOfferingRatesResponse] = js.native
     def describeSavingsPlansOfferings(
         params: DescribeSavingsPlansOfferingsRequest
-    ): Request[DescribeSavingsPlansOfferingsResponse]                                                 = js.native
+    ): Request[DescribeSavingsPlansOfferingsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
   }
 
   @js.native
@@ -127,7 +127,7 @@ package savingsplans {
         upfrontPaymentAmount: js.UndefOr[Amount] = js.undefined
     ): CreateSavingsPlanRequest = {
       val __obj = js.Dynamic.literal(
-        "commitment"            -> commitment.asInstanceOf[js.Any],
+        "commitment" -> commitment.asInstanceOf[js.Any],
         "savingsPlanOfferingId" -> savingsPlanOfferingId.asInstanceOf[js.Any]
       )
 
@@ -609,7 +609,7 @@ package savingsplans {
   @js.native
   sealed trait SavingsPlanOfferingFilterAttribute extends js.Any
   object SavingsPlanOfferingFilterAttribute extends js.Object {
-    val region         = "region".asInstanceOf[SavingsPlanOfferingFilterAttribute]
+    val region = "region".asInstanceOf[SavingsPlanOfferingFilterAttribute]
     val instanceFamily = "instanceFamily".asInstanceOf[SavingsPlanOfferingFilterAttribute]
 
     val values = js.Object.freeze(js.Array(region, instanceFamily))
@@ -662,7 +662,7 @@ package savingsplans {
   @js.native
   sealed trait SavingsPlanOfferingPropertyKey extends js.Any
   object SavingsPlanOfferingPropertyKey extends js.Object {
-    val region         = "region".asInstanceOf[SavingsPlanOfferingPropertyKey]
+    val region = "region".asInstanceOf[SavingsPlanOfferingPropertyKey]
     val instanceFamily = "instanceFamily".asInstanceOf[SavingsPlanOfferingPropertyKey]
 
     val values = js.Object.freeze(js.Array(region, instanceFamily))
@@ -755,9 +755,9 @@ package savingsplans {
   @js.native
   sealed trait SavingsPlanPaymentOption extends js.Any
   object SavingsPlanPaymentOption extends js.Object {
-    val `All Upfront`     = "All Upfront".asInstanceOf[SavingsPlanPaymentOption]
+    val `All Upfront` = "All Upfront".asInstanceOf[SavingsPlanPaymentOption]
     val `Partial Upfront` = "Partial Upfront".asInstanceOf[SavingsPlanPaymentOption]
-    val `No Upfront`      = "No Upfront".asInstanceOf[SavingsPlanPaymentOption]
+    val `No Upfront` = "No Upfront".asInstanceOf[SavingsPlanPaymentOption]
 
     val values = js.Object.freeze(js.Array(`All Upfront`, `Partial Upfront`, `No Upfront`))
   }
@@ -765,9 +765,9 @@ package savingsplans {
   @js.native
   sealed trait SavingsPlanProductType extends js.Any
   object SavingsPlanProductType extends js.Object {
-    val EC2     = "EC2".asInstanceOf[SavingsPlanProductType]
+    val EC2 = "EC2".asInstanceOf[SavingsPlanProductType]
     val Fargate = "Fargate".asInstanceOf[SavingsPlanProductType]
-    val Lambda  = "Lambda".asInstanceOf[SavingsPlanProductType]
+    val Lambda = "Lambda".asInstanceOf[SavingsPlanProductType]
 
     val values = js.Object.freeze(js.Array(EC2, Fargate, Lambda))
   }
@@ -837,12 +837,12 @@ package savingsplans {
   @js.native
   sealed trait SavingsPlanRateFilterAttribute extends js.Any
   object SavingsPlanRateFilterAttribute extends js.Object {
-    val region             = "region".asInstanceOf[SavingsPlanRateFilterAttribute]
-    val instanceFamily     = "instanceFamily".asInstanceOf[SavingsPlanRateFilterAttribute]
-    val instanceType       = "instanceType".asInstanceOf[SavingsPlanRateFilterAttribute]
+    val region = "region".asInstanceOf[SavingsPlanRateFilterAttribute]
+    val instanceFamily = "instanceFamily".asInstanceOf[SavingsPlanRateFilterAttribute]
+    val instanceType = "instanceType".asInstanceOf[SavingsPlanRateFilterAttribute]
     val productDescription = "productDescription".asInstanceOf[SavingsPlanRateFilterAttribute]
-    val tenancy            = "tenancy".asInstanceOf[SavingsPlanRateFilterAttribute]
-    val productId          = "productId".asInstanceOf[SavingsPlanRateFilterAttribute]
+    val tenancy = "tenancy".asInstanceOf[SavingsPlanRateFilterAttribute]
+    val productId = "productId".asInstanceOf[SavingsPlanRateFilterAttribute]
 
     val values =
       js.Object.freeze(js.Array(region, instanceFamily, instanceType, productDescription, tenancy, productId))
@@ -851,14 +851,14 @@ package savingsplans {
   @js.native
   sealed trait SavingsPlanRateFilterName extends js.Any
   object SavingsPlanRateFilterName extends js.Object {
-    val region             = "region".asInstanceOf[SavingsPlanRateFilterName]
-    val instanceType       = "instanceType".asInstanceOf[SavingsPlanRateFilterName]
+    val region = "region".asInstanceOf[SavingsPlanRateFilterName]
+    val instanceType = "instanceType".asInstanceOf[SavingsPlanRateFilterName]
     val productDescription = "productDescription".asInstanceOf[SavingsPlanRateFilterName]
-    val tenancy            = "tenancy".asInstanceOf[SavingsPlanRateFilterName]
-    val productType        = "productType".asInstanceOf[SavingsPlanRateFilterName]
-    val serviceCode        = "serviceCode".asInstanceOf[SavingsPlanRateFilterName]
-    val usageType          = "usageType".asInstanceOf[SavingsPlanRateFilterName]
-    val operation          = "operation".asInstanceOf[SavingsPlanRateFilterName]
+    val tenancy = "tenancy".asInstanceOf[SavingsPlanRateFilterName]
+    val productType = "productType".asInstanceOf[SavingsPlanRateFilterName]
+    val serviceCode = "serviceCode".asInstanceOf[SavingsPlanRateFilterName]
+    val usageType = "usageType".asInstanceOf[SavingsPlanRateFilterName]
+    val operation = "operation".asInstanceOf[SavingsPlanRateFilterName]
 
     val values = js.Object.freeze(
       js.Array(region, instanceType, productDescription, tenancy, productType, serviceCode, usageType, operation)
@@ -890,11 +890,11 @@ package savingsplans {
   @js.native
   sealed trait SavingsPlanRatePropertyKey extends js.Any
   object SavingsPlanRatePropertyKey extends js.Object {
-    val region             = "region".asInstanceOf[SavingsPlanRatePropertyKey]
-    val instanceType       = "instanceType".asInstanceOf[SavingsPlanRatePropertyKey]
-    val instanceFamily     = "instanceFamily".asInstanceOf[SavingsPlanRatePropertyKey]
+    val region = "region".asInstanceOf[SavingsPlanRatePropertyKey]
+    val instanceType = "instanceType".asInstanceOf[SavingsPlanRatePropertyKey]
+    val instanceFamily = "instanceFamily".asInstanceOf[SavingsPlanRatePropertyKey]
     val productDescription = "productDescription".asInstanceOf[SavingsPlanRatePropertyKey]
-    val tenancy            = "tenancy".asInstanceOf[SavingsPlanRatePropertyKey]
+    val tenancy = "tenancy".asInstanceOf[SavingsPlanRatePropertyKey]
 
     val values = js.Object.freeze(js.Array(region, instanceType, instanceFamily, productDescription, tenancy))
   }
@@ -912,9 +912,9 @@ package savingsplans {
   @js.native
   sealed trait SavingsPlanRateUnit extends js.Any
   object SavingsPlanRateUnit extends js.Object {
-    val Hrs                = "Hrs".asInstanceOf[SavingsPlanRateUnit]
+    val Hrs = "Hrs".asInstanceOf[SavingsPlanRateUnit]
     val `Lambda-GB-Second` = "Lambda-GB-Second".asInstanceOf[SavingsPlanRateUnit]
-    val Request            = "Request".asInstanceOf[SavingsPlanRateUnit]
+    val Request = "Request".asInstanceOf[SavingsPlanRateUnit]
 
     val values = js.Object.freeze(js.Array(Hrs, `Lambda-GB-Second`, Request))
   }
@@ -923,9 +923,9 @@ package savingsplans {
   sealed trait SavingsPlanState extends js.Any
   object SavingsPlanState extends js.Object {
     val `payment-pending` = "payment-pending".asInstanceOf[SavingsPlanState]
-    val `payment-failed`  = "payment-failed".asInstanceOf[SavingsPlanState]
-    val active            = "active".asInstanceOf[SavingsPlanState]
-    val retired           = "retired".asInstanceOf[SavingsPlanState]
+    val `payment-failed` = "payment-failed".asInstanceOf[SavingsPlanState]
+    val active = "active".asInstanceOf[SavingsPlanState]
+    val retired = "retired".asInstanceOf[SavingsPlanState]
 
     val values = js.Object.freeze(js.Array(`payment-pending`, `payment-failed`, active, retired))
   }
@@ -933,7 +933,7 @@ package savingsplans {
   @js.native
   sealed trait SavingsPlanType extends js.Any
   object SavingsPlanType extends js.Object {
-    val Compute     = "Compute".asInstanceOf[SavingsPlanType]
+    val Compute = "Compute".asInstanceOf[SavingsPlanType]
     val EC2Instance = "EC2Instance".asInstanceOf[SavingsPlanType]
 
     val values = js.Object.freeze(js.Array(Compute, EC2Instance))
@@ -942,15 +942,15 @@ package savingsplans {
   @js.native
   sealed trait SavingsPlansFilterName extends js.Any
   object SavingsPlansFilterName extends js.Object {
-    val region                = "region".asInstanceOf[SavingsPlansFilterName]
+    val region = "region".asInstanceOf[SavingsPlansFilterName]
     val `ec2-instance-family` = "ec2-instance-family".asInstanceOf[SavingsPlansFilterName]
-    val commitment            = "commitment".asInstanceOf[SavingsPlansFilterName]
-    val upfront               = "upfront".asInstanceOf[SavingsPlansFilterName]
-    val term                  = "term".asInstanceOf[SavingsPlansFilterName]
-    val `savings-plan-type`   = "savings-plan-type".asInstanceOf[SavingsPlansFilterName]
-    val `payment-option`      = "payment-option".asInstanceOf[SavingsPlansFilterName]
-    val start                 = "start".asInstanceOf[SavingsPlansFilterName]
-    val end                   = "end".asInstanceOf[SavingsPlansFilterName]
+    val commitment = "commitment".asInstanceOf[SavingsPlansFilterName]
+    val upfront = "upfront".asInstanceOf[SavingsPlansFilterName]
+    val term = "term".asInstanceOf[SavingsPlansFilterName]
+    val `savings-plan-type` = "savings-plan-type".asInstanceOf[SavingsPlansFilterName]
+    val `payment-option` = "payment-option".asInstanceOf[SavingsPlansFilterName]
+    val start = "start".asInstanceOf[SavingsPlansFilterName]
+    val end = "end".asInstanceOf[SavingsPlansFilterName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -981,7 +981,7 @@ package savingsplans {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -1015,7 +1015,7 @@ package savingsplans {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]

@@ -7,66 +7,66 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object machinelearning {
-  type AwsUserArn                      = String
-  type BatchPredictions                = js.Array[BatchPrediction]
-  type ComparatorValue                 = String
-  type ComputeStatistics               = Boolean
-  type DataRearrangement               = String
-  type DataSchema                      = String
-  type DataSources                     = js.Array[DataSource]
-  type DetailsMap                      = js.Dictionary[DetailsValue]
-  type DetailsValue                    = String
-  type EDPPipelineId                   = String
-  type EDPResourceRole                 = String
-  type EDPSecurityGroupId              = String
-  type EDPSecurityGroupIds             = js.Array[EDPSecurityGroupId]
-  type EDPServiceRole                  = String
-  type EDPSubnetId                     = String
-  type EntityId                        = String
-  type EntityName                      = String
-  type EpochTime                       = js.Date
-  type ErrorCode                       = Int
-  type ErrorMessage                    = String
-  type Evaluations                     = js.Array[Evaluation]
-  type IntegerType                     = Int
-  type Label                           = String
-  type LongType                        = Double
-  type MLModelName                     = String
-  type MLModels                        = js.Array[MLModel]
-  type Message                         = String
-  type PageLimit                       = Int
-  type PerformanceMetricsProperties    = js.Dictionary[PerformanceMetricsPropertyValue]
-  type PerformanceMetricsPropertyKey   = String
+  type AwsUserArn = String
+  type BatchPredictions = js.Array[BatchPrediction]
+  type ComparatorValue = String
+  type ComputeStatistics = Boolean
+  type DataRearrangement = String
+  type DataSchema = String
+  type DataSources = js.Array[DataSource]
+  type DetailsMap = js.Dictionary[DetailsValue]
+  type DetailsValue = String
+  type EDPPipelineId = String
+  type EDPResourceRole = String
+  type EDPSecurityGroupId = String
+  type EDPSecurityGroupIds = js.Array[EDPSecurityGroupId]
+  type EDPServiceRole = String
+  type EDPSubnetId = String
+  type EntityId = String
+  type EntityName = String
+  type EpochTime = js.Date
+  type ErrorCode = Int
+  type ErrorMessage = String
+  type Evaluations = js.Array[Evaluation]
+  type IntegerType = Int
+  type Label = String
+  type LongType = Double
+  type MLModelName = String
+  type MLModels = js.Array[MLModel]
+  type Message = String
+  type PageLimit = Int
+  type PerformanceMetricsProperties = js.Dictionary[PerformanceMetricsPropertyValue]
+  type PerformanceMetricsPropertyKey = String
   type PerformanceMetricsPropertyValue = String
-  type PresignedS3Url                  = String
-  type RDSDatabaseName                 = String
-  type RDSDatabasePassword             = String
-  type RDSDatabaseUsername             = String
-  type RDSInstanceIdentifier           = String
-  type RDSSelectSqlQuery               = String
-  type Recipe                          = String
-  type Record                          = js.Dictionary[VariableValue]
-  type RedshiftClusterIdentifier       = String
-  type RedshiftDatabaseName            = String
-  type RedshiftDatabasePassword        = String
-  type RedshiftDatabaseUsername        = String
-  type RedshiftSelectSqlQuery          = String
-  type RoleARN                         = String
-  type S3Url                           = String
-  type ScoreThreshold                  = Float
-  type ScoreValue                      = Float
-  type ScoreValuePerLabelMap           = js.Dictionary[ScoreValue]
-  type StringType                      = String
-  type TagKey                          = String
-  type TagKeyList                      = js.Array[TagKey]
-  type TagList                         = js.Array[Tag]
-  type TagValue                        = String
-  type TrainingParameters              = js.Dictionary[StringType]
-  type VariableName                    = String
-  type VariableValue                   = String
-  type Verbose                         = Boolean
-  type VipURL                          = String
-  type floatLabel                      = Float
+  type PresignedS3Url = String
+  type RDSDatabaseName = String
+  type RDSDatabasePassword = String
+  type RDSDatabaseUsername = String
+  type RDSInstanceIdentifier = String
+  type RDSSelectSqlQuery = String
+  type Recipe = String
+  type Record = js.Dictionary[VariableValue]
+  type RedshiftClusterIdentifier = String
+  type RedshiftDatabaseName = String
+  type RedshiftDatabasePassword = String
+  type RedshiftDatabaseUsername = String
+  type RedshiftSelectSqlQuery = String
+  type RoleARN = String
+  type S3Url = String
+  type ScoreThreshold = Float
+  type ScoreValue = Float
+  type ScoreValuePerLabelMap = js.Dictionary[ScoreValue]
+  type StringType = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type TrainingParameters = js.Dictionary[StringType]
+  type VariableName = String
+  type VariableValue = String
+  type Verbose = Boolean
+  type VipURL = String
+  type floatLabel = Float
 
   implicit final class MachineLearningOps(private val service: MachineLearning) extends AnyVal {
 
@@ -139,38 +139,38 @@ package machinelearning {
   class MachineLearning() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def addTags(params: AddTagsInput): Request[AddTagsOutput]                                           = js.native
+    def addTags(params: AddTagsInput): Request[AddTagsOutput] = js.native
     def createBatchPrediction(params: CreateBatchPredictionInput): Request[CreateBatchPredictionOutput] = js.native
     def createDataSourceFromRDS(params: CreateDataSourceFromRDSInput): Request[CreateDataSourceFromRDSOutput] =
       js.native
     def createDataSourceFromRedshift(
         params: CreateDataSourceFromRedshiftInput
-    ): Request[CreateDataSourceFromRedshiftOutput]                                                         = js.native
+    ): Request[CreateDataSourceFromRedshiftOutput] = js.native
     def createDataSourceFromS3(params: CreateDataSourceFromS3Input): Request[CreateDataSourceFromS3Output] = js.native
-    def createEvaluation(params: CreateEvaluationInput): Request[CreateEvaluationOutput]                   = js.native
-    def createMLModel(params: CreateMLModelInput): Request[CreateMLModelOutput]                            = js.native
+    def createEvaluation(params: CreateEvaluationInput): Request[CreateEvaluationOutput] = js.native
+    def createMLModel(params: CreateMLModelInput): Request[CreateMLModelOutput] = js.native
     def createRealtimeEndpoint(params: CreateRealtimeEndpointInput): Request[CreateRealtimeEndpointOutput] = js.native
-    def deleteBatchPrediction(params: DeleteBatchPredictionInput): Request[DeleteBatchPredictionOutput]    = js.native
-    def deleteDataSource(params: DeleteDataSourceInput): Request[DeleteDataSourceOutput]                   = js.native
-    def deleteEvaluation(params: DeleteEvaluationInput): Request[DeleteEvaluationOutput]                   = js.native
-    def deleteMLModel(params: DeleteMLModelInput): Request[DeleteMLModelOutput]                            = js.native
+    def deleteBatchPrediction(params: DeleteBatchPredictionInput): Request[DeleteBatchPredictionOutput] = js.native
+    def deleteDataSource(params: DeleteDataSourceInput): Request[DeleteDataSourceOutput] = js.native
+    def deleteEvaluation(params: DeleteEvaluationInput): Request[DeleteEvaluationOutput] = js.native
+    def deleteMLModel(params: DeleteMLModelInput): Request[DeleteMLModelOutput] = js.native
     def deleteRealtimeEndpoint(params: DeleteRealtimeEndpointInput): Request[DeleteRealtimeEndpointOutput] = js.native
-    def deleteTags(params: DeleteTagsInput): Request[DeleteTagsOutput]                                     = js.native
+    def deleteTags(params: DeleteTagsInput): Request[DeleteTagsOutput] = js.native
     def describeBatchPredictions(params: DescribeBatchPredictionsInput): Request[DescribeBatchPredictionsOutput] =
       js.native
-    def describeDataSources(params: DescribeDataSourcesInput): Request[DescribeDataSourcesOutput]       = js.native
-    def describeEvaluations(params: DescribeEvaluationsInput): Request[DescribeEvaluationsOutput]       = js.native
-    def describeMLModels(params: DescribeMLModelsInput): Request[DescribeMLModelsOutput]                = js.native
-    def describeTags(params: DescribeTagsInput): Request[DescribeTagsOutput]                            = js.native
-    def getBatchPrediction(params: GetBatchPredictionInput): Request[GetBatchPredictionOutput]          = js.native
-    def getDataSource(params: GetDataSourceInput): Request[GetDataSourceOutput]                         = js.native
-    def getEvaluation(params: GetEvaluationInput): Request[GetEvaluationOutput]                         = js.native
-    def getMLModel(params: GetMLModelInput): Request[GetMLModelOutput]                                  = js.native
-    def predict(params: PredictInput): Request[PredictOutput]                                           = js.native
+    def describeDataSources(params: DescribeDataSourcesInput): Request[DescribeDataSourcesOutput] = js.native
+    def describeEvaluations(params: DescribeEvaluationsInput): Request[DescribeEvaluationsOutput] = js.native
+    def describeMLModels(params: DescribeMLModelsInput): Request[DescribeMLModelsOutput] = js.native
+    def describeTags(params: DescribeTagsInput): Request[DescribeTagsOutput] = js.native
+    def getBatchPrediction(params: GetBatchPredictionInput): Request[GetBatchPredictionOutput] = js.native
+    def getDataSource(params: GetDataSourceInput): Request[GetDataSourceOutput] = js.native
+    def getEvaluation(params: GetEvaluationInput): Request[GetEvaluationOutput] = js.native
+    def getMLModel(params: GetMLModelInput): Request[GetMLModelOutput] = js.native
+    def predict(params: PredictInput): Request[PredictOutput] = js.native
     def updateBatchPrediction(params: UpdateBatchPredictionInput): Request[UpdateBatchPredictionOutput] = js.native
-    def updateDataSource(params: UpdateDataSourceInput): Request[UpdateDataSourceOutput]                = js.native
-    def updateEvaluation(params: UpdateEvaluationInput): Request[UpdateEvaluationOutput]                = js.native
-    def updateMLModel(params: UpdateMLModelInput): Request[UpdateMLModelOutput]                         = js.native
+    def updateDataSource(params: UpdateDataSourceInput): Request[UpdateDataSourceOutput] = js.native
+    def updateEvaluation(params: UpdateEvaluationInput): Request[UpdateEvaluationOutput] = js.native
+    def updateMLModel(params: UpdateMLModelInput): Request[UpdateMLModelOutput] = js.native
   }
 
   @js.native
@@ -188,9 +188,9 @@ package machinelearning {
         Tags: TagList
     ): AddTagsInput = {
       val __obj = js.Dynamic.literal(
-        "ResourceId"   -> ResourceId.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "ResourceType" -> ResourceType.asInstanceOf[js.Any],
-        "Tags"         -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddTagsInput]
@@ -312,14 +312,14 @@ package machinelearning {
   @js.native
   sealed trait BatchPredictionFilterVariable extends js.Any
   object BatchPredictionFilterVariable extends js.Object {
-    val CreatedAt     = "CreatedAt".asInstanceOf[BatchPredictionFilterVariable]
+    val CreatedAt = "CreatedAt".asInstanceOf[BatchPredictionFilterVariable]
     val LastUpdatedAt = "LastUpdatedAt".asInstanceOf[BatchPredictionFilterVariable]
-    val Status        = "Status".asInstanceOf[BatchPredictionFilterVariable]
-    val Name          = "Name".asInstanceOf[BatchPredictionFilterVariable]
-    val IAMUser       = "IAMUser".asInstanceOf[BatchPredictionFilterVariable]
-    val MLModelId     = "MLModelId".asInstanceOf[BatchPredictionFilterVariable]
-    val DataSourceId  = "DataSourceId".asInstanceOf[BatchPredictionFilterVariable]
-    val DataURI       = "DataURI".asInstanceOf[BatchPredictionFilterVariable]
+    val Status = "Status".asInstanceOf[BatchPredictionFilterVariable]
+    val Name = "Name".asInstanceOf[BatchPredictionFilterVariable]
+    val IAMUser = "IAMUser".asInstanceOf[BatchPredictionFilterVariable]
+    val MLModelId = "MLModelId".asInstanceOf[BatchPredictionFilterVariable]
+    val DataSourceId = "DataSourceId".asInstanceOf[BatchPredictionFilterVariable]
+    val DataURI = "DataURI".asInstanceOf[BatchPredictionFilterVariable]
 
     val values =
       js.Object.freeze(js.Array(CreatedAt, LastUpdatedAt, Status, Name, IAMUser, MLModelId, DataSourceId, DataURI))
@@ -345,9 +345,9 @@ package machinelearning {
     ): CreateBatchPredictionInput = {
       val __obj = js.Dynamic.literal(
         "BatchPredictionDataSourceId" -> BatchPredictionDataSourceId.asInstanceOf[js.Any],
-        "BatchPredictionId"           -> BatchPredictionId.asInstanceOf[js.Any],
-        "MLModelId"                   -> MLModelId.asInstanceOf[js.Any],
-        "OutputUri"                   -> OutputUri.asInstanceOf[js.Any]
+        "BatchPredictionId" -> BatchPredictionId.asInstanceOf[js.Any],
+        "MLModelId" -> MLModelId.asInstanceOf[js.Any],
+        "OutputUri" -> OutputUri.asInstanceOf[js.Any]
       )
 
       BatchPredictionName.foreach(__v => __obj.updateDynamic("BatchPredictionName")(__v.asInstanceOf[js.Any]))
@@ -395,8 +395,8 @@ package machinelearning {
     ): CreateDataSourceFromRDSInput = {
       val __obj = js.Dynamic.literal(
         "DataSourceId" -> DataSourceId.asInstanceOf[js.Any],
-        "RDSData"      -> RDSData.asInstanceOf[js.Any],
-        "RoleARN"      -> RoleARN.asInstanceOf[js.Any]
+        "RDSData" -> RDSData.asInstanceOf[js.Any],
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any]
       )
 
       ComputeStatistics.foreach(__v => __obj.updateDynamic("ComputeStatistics")(__v.asInstanceOf[js.Any]))
@@ -445,8 +445,8 @@ package machinelearning {
     ): CreateDataSourceFromRedshiftInput = {
       val __obj = js.Dynamic.literal(
         "DataSourceId" -> DataSourceId.asInstanceOf[js.Any],
-        "DataSpec"     -> DataSpec.asInstanceOf[js.Any],
-        "RoleARN"      -> RoleARN.asInstanceOf[js.Any]
+        "DataSpec" -> DataSpec.asInstanceOf[js.Any],
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any]
       )
 
       ComputeStatistics.foreach(__v => __obj.updateDynamic("ComputeStatistics")(__v.asInstanceOf[js.Any]))
@@ -493,7 +493,7 @@ package machinelearning {
     ): CreateDataSourceFromS3Input = {
       val __obj = js.Dynamic.literal(
         "DataSourceId" -> DataSourceId.asInstanceOf[js.Any],
-        "DataSpec"     -> DataSpec.asInstanceOf[js.Any]
+        "DataSpec" -> DataSpec.asInstanceOf[js.Any]
       )
 
       ComputeStatistics.foreach(__v => __obj.updateDynamic("ComputeStatistics")(__v.asInstanceOf[js.Any]))
@@ -540,8 +540,8 @@ package machinelearning {
     ): CreateEvaluationInput = {
       val __obj = js.Dynamic.literal(
         "EvaluationDataSourceId" -> EvaluationDataSourceId.asInstanceOf[js.Any],
-        "EvaluationId"           -> EvaluationId.asInstanceOf[js.Any],
-        "MLModelId"              -> MLModelId.asInstanceOf[js.Any]
+        "EvaluationId" -> EvaluationId.asInstanceOf[js.Any],
+        "MLModelId" -> MLModelId.asInstanceOf[js.Any]
       )
 
       EvaluationName.foreach(__v => __obj.updateDynamic("EvaluationName")(__v.asInstanceOf[js.Any]))
@@ -592,8 +592,8 @@ package machinelearning {
         RecipeUri: js.UndefOr[S3Url] = js.undefined
     ): CreateMLModelInput = {
       val __obj = js.Dynamic.literal(
-        "MLModelId"            -> MLModelId.asInstanceOf[js.Any],
-        "MLModelType"          -> MLModelType.asInstanceOf[js.Any],
+        "MLModelId" -> MLModelId.asInstanceOf[js.Any],
+        "MLModelType" -> MLModelType.asInstanceOf[js.Any],
         "TrainingDataSourceId" -> TrainingDataSourceId.asInstanceOf[js.Any]
       )
 
@@ -751,12 +751,12 @@ package machinelearning {
   @js.native
   sealed trait DataSourceFilterVariable extends js.Any
   object DataSourceFilterVariable extends js.Object {
-    val CreatedAt      = "CreatedAt".asInstanceOf[DataSourceFilterVariable]
-    val LastUpdatedAt  = "LastUpdatedAt".asInstanceOf[DataSourceFilterVariable]
-    val Status         = "Status".asInstanceOf[DataSourceFilterVariable]
-    val Name           = "Name".asInstanceOf[DataSourceFilterVariable]
+    val CreatedAt = "CreatedAt".asInstanceOf[DataSourceFilterVariable]
+    val LastUpdatedAt = "LastUpdatedAt".asInstanceOf[DataSourceFilterVariable]
+    val Status = "Status".asInstanceOf[DataSourceFilterVariable]
+    val Name = "Name".asInstanceOf[DataSourceFilterVariable]
     val DataLocationS3 = "DataLocationS3".asInstanceOf[DataSourceFilterVariable]
-    val IAMUser        = "IAMUser".asInstanceOf[DataSourceFilterVariable]
+    val IAMUser = "IAMUser".asInstanceOf[DataSourceFilterVariable]
 
     val values = js.Object.freeze(js.Array(CreatedAt, LastUpdatedAt, Status, Name, DataLocationS3, IAMUser))
   }
@@ -968,9 +968,9 @@ package machinelearning {
         TagKeys: TagKeyList
     ): DeleteTagsInput = {
       val __obj = js.Dynamic.literal(
-        "ResourceId"   -> ResourceId.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "ResourceType" -> ResourceType.asInstanceOf[js.Any],
-        "TagKeys"      -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteTagsInput]
@@ -1284,7 +1284,7 @@ package machinelearning {
         ResourceType: TaggableResourceType
     ): DescribeTagsInput = {
       val __obj = js.Dynamic.literal(
-        "ResourceId"   -> ResourceId.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "ResourceType" -> ResourceType.asInstanceOf[js.Any]
       )
 
@@ -1324,7 +1324,7 @@ package machinelearning {
   sealed trait DetailsAttributes extends js.Any
   object DetailsAttributes extends js.Object {
     val PredictiveModelType = "PredictiveModelType".asInstanceOf[DetailsAttributes]
-    val Algorithm           = "Algorithm".asInstanceOf[DetailsAttributes]
+    val Algorithm = "Algorithm".asInstanceOf[DetailsAttributes]
 
     val values = js.Object.freeze(js.Array(PredictiveModelType, Algorithm))
   }
@@ -1340,11 +1340,11 @@ package machinelearning {
   @js.native
   sealed trait EntityStatus extends js.Any
   object EntityStatus extends js.Object {
-    val PENDING    = "PENDING".asInstanceOf[EntityStatus]
+    val PENDING = "PENDING".asInstanceOf[EntityStatus]
     val INPROGRESS = "INPROGRESS".asInstanceOf[EntityStatus]
-    val FAILED     = "FAILED".asInstanceOf[EntityStatus]
-    val COMPLETED  = "COMPLETED".asInstanceOf[EntityStatus]
-    val DELETED    = "DELETED".asInstanceOf[EntityStatus]
+    val FAILED = "FAILED".asInstanceOf[EntityStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[EntityStatus]
+    val DELETED = "DELETED".asInstanceOf[EntityStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, INPROGRESS, FAILED, COMPLETED, DELETED))
   }
@@ -1421,14 +1421,14 @@ package machinelearning {
   @js.native
   sealed trait EvaluationFilterVariable extends js.Any
   object EvaluationFilterVariable extends js.Object {
-    val CreatedAt     = "CreatedAt".asInstanceOf[EvaluationFilterVariable]
+    val CreatedAt = "CreatedAt".asInstanceOf[EvaluationFilterVariable]
     val LastUpdatedAt = "LastUpdatedAt".asInstanceOf[EvaluationFilterVariable]
-    val Status        = "Status".asInstanceOf[EvaluationFilterVariable]
-    val Name          = "Name".asInstanceOf[EvaluationFilterVariable]
-    val IAMUser       = "IAMUser".asInstanceOf[EvaluationFilterVariable]
-    val MLModelId     = "MLModelId".asInstanceOf[EvaluationFilterVariable]
-    val DataSourceId  = "DataSourceId".asInstanceOf[EvaluationFilterVariable]
-    val DataURI       = "DataURI".asInstanceOf[EvaluationFilterVariable]
+    val Status = "Status".asInstanceOf[EvaluationFilterVariable]
+    val Name = "Name".asInstanceOf[EvaluationFilterVariable]
+    val IAMUser = "IAMUser".asInstanceOf[EvaluationFilterVariable]
+    val MLModelId = "MLModelId".asInstanceOf[EvaluationFilterVariable]
+    val DataSourceId = "DataSourceId".asInstanceOf[EvaluationFilterVariable]
+    val DataURI = "DataURI".asInstanceOf[EvaluationFilterVariable]
 
     val values =
       js.Object.freeze(js.Array(CreatedAt, LastUpdatedAt, Status, Name, IAMUser, MLModelId, DataSourceId, DataURI))
@@ -1919,16 +1919,16 @@ package machinelearning {
   @js.native
   sealed trait MLModelFilterVariable extends js.Any
   object MLModelFilterVariable extends js.Object {
-    val CreatedAt              = "CreatedAt".asInstanceOf[MLModelFilterVariable]
-    val LastUpdatedAt          = "LastUpdatedAt".asInstanceOf[MLModelFilterVariable]
-    val Status                 = "Status".asInstanceOf[MLModelFilterVariable]
-    val Name                   = "Name".asInstanceOf[MLModelFilterVariable]
-    val IAMUser                = "IAMUser".asInstanceOf[MLModelFilterVariable]
-    val TrainingDataSourceId   = "TrainingDataSourceId".asInstanceOf[MLModelFilterVariable]
+    val CreatedAt = "CreatedAt".asInstanceOf[MLModelFilterVariable]
+    val LastUpdatedAt = "LastUpdatedAt".asInstanceOf[MLModelFilterVariable]
+    val Status = "Status".asInstanceOf[MLModelFilterVariable]
+    val Name = "Name".asInstanceOf[MLModelFilterVariable]
+    val IAMUser = "IAMUser".asInstanceOf[MLModelFilterVariable]
+    val TrainingDataSourceId = "TrainingDataSourceId".asInstanceOf[MLModelFilterVariable]
     val RealtimeEndpointStatus = "RealtimeEndpointStatus".asInstanceOf[MLModelFilterVariable]
-    val MLModelType            = "MLModelType".asInstanceOf[MLModelFilterVariable]
-    val Algorithm              = "Algorithm".asInstanceOf[MLModelFilterVariable]
-    val TrainingDataURI        = "TrainingDataURI".asInstanceOf[MLModelFilterVariable]
+    val MLModelType = "MLModelType".asInstanceOf[MLModelFilterVariable]
+    val Algorithm = "Algorithm".asInstanceOf[MLModelFilterVariable]
+    val TrainingDataURI = "TrainingDataURI".asInstanceOf[MLModelFilterVariable]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1950,7 +1950,7 @@ package machinelearning {
   sealed trait MLModelType extends js.Any
   object MLModelType extends js.Object {
     val REGRESSION = "REGRESSION".asInstanceOf[MLModelType]
-    val BINARY     = "BINARY".asInstanceOf[MLModelType]
+    val BINARY = "BINARY".asInstanceOf[MLModelType]
     val MULTICLASS = "MULTICLASS".asInstanceOf[MLModelType]
 
     val values = js.Object.freeze(js.Array(REGRESSION, BINARY, MULTICLASS))
@@ -1994,9 +1994,9 @@ package machinelearning {
         Record: Record
     ): PredictInput = {
       val __obj = js.Dynamic.literal(
-        "MLModelId"       -> MLModelId.asInstanceOf[js.Any],
+        "MLModelId" -> MLModelId.asInstanceOf[js.Any],
         "PredictEndpoint" -> PredictEndpoint.asInstanceOf[js.Any],
-        "Record"          -> Record.asInstanceOf[js.Any]
+        "Record" -> Record.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PredictInput]
@@ -2095,12 +2095,12 @@ package machinelearning {
       val __obj = js.Dynamic.literal(
         "DatabaseCredentials" -> DatabaseCredentials.asInstanceOf[js.Any],
         "DatabaseInformation" -> DatabaseInformation.asInstanceOf[js.Any],
-        "ResourceRole"        -> ResourceRole.asInstanceOf[js.Any],
-        "S3StagingLocation"   -> S3StagingLocation.asInstanceOf[js.Any],
-        "SecurityGroupIds"    -> SecurityGroupIds.asInstanceOf[js.Any],
-        "SelectSqlQuery"      -> SelectSqlQuery.asInstanceOf[js.Any],
-        "ServiceRole"         -> ServiceRole.asInstanceOf[js.Any],
-        "SubnetId"            -> SubnetId.asInstanceOf[js.Any]
+        "ResourceRole" -> ResourceRole.asInstanceOf[js.Any],
+        "S3StagingLocation" -> S3StagingLocation.asInstanceOf[js.Any],
+        "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any],
+        "SelectSqlQuery" -> SelectSqlQuery.asInstanceOf[js.Any],
+        "ServiceRole" -> ServiceRole.asInstanceOf[js.Any],
+        "SubnetId" -> SubnetId.asInstanceOf[js.Any]
       )
 
       DataRearrangement.foreach(__v => __obj.updateDynamic("DataRearrangement")(__v.asInstanceOf[js.Any]))
@@ -2126,7 +2126,7 @@ package machinelearning {
         InstanceIdentifier: RDSInstanceIdentifier
     ): RDSDatabase = {
       val __obj = js.Dynamic.literal(
-        "DatabaseName"       -> DatabaseName.asInstanceOf[js.Any],
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
         "InstanceIdentifier" -> InstanceIdentifier.asInstanceOf[js.Any]
       )
 
@@ -2223,10 +2223,10 @@ package machinelearning {
   @js.native
   sealed trait RealtimeEndpointStatus extends js.Any
   object RealtimeEndpointStatus extends js.Object {
-    val NONE     = "NONE".asInstanceOf[RealtimeEndpointStatus]
-    val READY    = "READY".asInstanceOf[RealtimeEndpointStatus]
+    val NONE = "NONE".asInstanceOf[RealtimeEndpointStatus]
+    val READY = "READY".asInstanceOf[RealtimeEndpointStatus]
     val UPDATING = "UPDATING".asInstanceOf[RealtimeEndpointStatus]
-    val FAILED   = "FAILED".asInstanceOf[RealtimeEndpointStatus]
+    val FAILED = "FAILED".asInstanceOf[RealtimeEndpointStatus]
 
     val values = js.Object.freeze(js.Array(NONE, READY, UPDATING, FAILED))
   }
@@ -2259,8 +2259,8 @@ package machinelearning {
       val __obj = js.Dynamic.literal(
         "DatabaseCredentials" -> DatabaseCredentials.asInstanceOf[js.Any],
         "DatabaseInformation" -> DatabaseInformation.asInstanceOf[js.Any],
-        "S3StagingLocation"   -> S3StagingLocation.asInstanceOf[js.Any],
-        "SelectSqlQuery"      -> SelectSqlQuery.asInstanceOf[js.Any]
+        "S3StagingLocation" -> S3StagingLocation.asInstanceOf[js.Any],
+        "SelectSqlQuery" -> SelectSqlQuery.asInstanceOf[js.Any]
       )
 
       DataRearrangement.foreach(__v => __obj.updateDynamic("DataRearrangement")(__v.asInstanceOf[js.Any]))
@@ -2287,7 +2287,7 @@ package machinelearning {
     ): RedshiftDatabase = {
       val __obj = js.Dynamic.literal(
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
-        "DatabaseName"      -> DatabaseName.asInstanceOf[js.Any]
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RedshiftDatabase]
@@ -2427,9 +2427,9 @@ package machinelearning {
   sealed trait TaggableResourceType extends js.Any
   object TaggableResourceType extends js.Object {
     val BatchPrediction = "BatchPrediction".asInstanceOf[TaggableResourceType]
-    val DataSource      = "DataSource".asInstanceOf[TaggableResourceType]
-    val Evaluation      = "Evaluation".asInstanceOf[TaggableResourceType]
-    val MLModel         = "MLModel".asInstanceOf[TaggableResourceType]
+    val DataSource = "DataSource".asInstanceOf[TaggableResourceType]
+    val Evaluation = "Evaluation".asInstanceOf[TaggableResourceType]
+    val MLModel = "MLModel".asInstanceOf[TaggableResourceType]
 
     val values = js.Object.freeze(js.Array(BatchPrediction, DataSource, Evaluation, MLModel))
   }
@@ -2447,7 +2447,7 @@ package machinelearning {
         BatchPredictionName: EntityName
     ): UpdateBatchPredictionInput = {
       val __obj = js.Dynamic.literal(
-        "BatchPredictionId"   -> BatchPredictionId.asInstanceOf[js.Any],
+        "BatchPredictionId" -> BatchPredictionId.asInstanceOf[js.Any],
         "BatchPredictionName" -> BatchPredictionName.asInstanceOf[js.Any]
       )
 
@@ -2488,7 +2488,7 @@ package machinelearning {
         DataSourceName: EntityName
     ): UpdateDataSourceInput = {
       val __obj = js.Dynamic.literal(
-        "DataSourceId"   -> DataSourceId.asInstanceOf[js.Any],
+        "DataSourceId" -> DataSourceId.asInstanceOf[js.Any],
         "DataSourceName" -> DataSourceName.asInstanceOf[js.Any]
       )
 
@@ -2529,7 +2529,7 @@ package machinelearning {
         EvaluationName: EntityName
     ): UpdateEvaluationInput = {
       val __obj = js.Dynamic.literal(
-        "EvaluationId"   -> EvaluationId.asInstanceOf[js.Any],
+        "EvaluationId" -> EvaluationId.asInstanceOf[js.Any],
         "EvaluationName" -> EvaluationName.asInstanceOf[js.Any]
       )
 

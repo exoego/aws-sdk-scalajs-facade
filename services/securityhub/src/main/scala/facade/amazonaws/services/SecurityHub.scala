@@ -7,83 +7,83 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object securityhub {
-  type AccountDetailsList                         = js.Array[AccountDetails]
-  type AccountId                                  = String
-  type AccountIdList                              = js.Array[NonEmptyString]
-  type ActionTargetList                           = js.Array[ActionTarget]
-  type ArnList                                    = js.Array[NonEmptyString]
-  type AvailabilityZones                          = js.Array[AvailabilityZone]
-  type AwsCloudFrontDistributionOriginItemList    = js.Array[AwsCloudFrontDistributionOriginItem]
-  type AwsEc2NetworkInterfaceSecurityGroupList    = js.Array[AwsEc2NetworkInterfaceSecurityGroup]
-  type AwsEc2SecurityGroupIpPermissionList        = js.Array[AwsEc2SecurityGroupIpPermission]
-  type AwsEc2SecurityGroupIpRangeList             = js.Array[AwsEc2SecurityGroupIpRange]
-  type AwsEc2SecurityGroupIpv6RangeList           = js.Array[AwsEc2SecurityGroupIpv6Range]
-  type AwsEc2SecurityGroupPrefixListIdList        = js.Array[AwsEc2SecurityGroupPrefixListId]
-  type AwsEc2SecurityGroupUserIdGroupPairList     = js.Array[AwsEc2SecurityGroupUserIdGroupPair]
-  type AwsEc2VolumeAttachmentList                 = js.Array[AwsEc2VolumeAttachment]
-  type AwsIamRoleAssumeRolePolicyDocument         = String
-  type AwsLambdaFunctionLayerList                 = js.Array[AwsLambdaFunctionLayer]
-  type AwsLambdaLayerVersionNumber                = Double
-  type AwsRdsDbInstanceAssociatedRoles            = js.Array[AwsRdsDbInstanceAssociatedRole]
-  type AwsRdsDbInstanceVpcSecurityGroups          = js.Array[AwsRdsDbInstanceVpcSecurityGroup]
-  type AwsS3BucketServerSideEncryptionRules       = js.Array[AwsS3BucketServerSideEncryptionRule]
-  type AwsSecurityFindingIdentifierList           = js.Array[AwsSecurityFindingIdentifier]
-  type AwsSecurityFindingList                     = js.Array[AwsSecurityFinding]
-  type AwsSnsTopicSubscriptionList                = js.Array[AwsSnsTopicSubscription]
-  type AwsWafWebAclRuleList                       = js.Array[AwsWafWebAclRule]
+  type AccountDetailsList = js.Array[AccountDetails]
+  type AccountId = String
+  type AccountIdList = js.Array[NonEmptyString]
+  type ActionTargetList = js.Array[ActionTarget]
+  type ArnList = js.Array[NonEmptyString]
+  type AvailabilityZones = js.Array[AvailabilityZone]
+  type AwsCloudFrontDistributionOriginItemList = js.Array[AwsCloudFrontDistributionOriginItem]
+  type AwsEc2NetworkInterfaceSecurityGroupList = js.Array[AwsEc2NetworkInterfaceSecurityGroup]
+  type AwsEc2SecurityGroupIpPermissionList = js.Array[AwsEc2SecurityGroupIpPermission]
+  type AwsEc2SecurityGroupIpRangeList = js.Array[AwsEc2SecurityGroupIpRange]
+  type AwsEc2SecurityGroupIpv6RangeList = js.Array[AwsEc2SecurityGroupIpv6Range]
+  type AwsEc2SecurityGroupPrefixListIdList = js.Array[AwsEc2SecurityGroupPrefixListId]
+  type AwsEc2SecurityGroupUserIdGroupPairList = js.Array[AwsEc2SecurityGroupUserIdGroupPair]
+  type AwsEc2VolumeAttachmentList = js.Array[AwsEc2VolumeAttachment]
+  type AwsIamRoleAssumeRolePolicyDocument = String
+  type AwsLambdaFunctionLayerList = js.Array[AwsLambdaFunctionLayer]
+  type AwsLambdaLayerVersionNumber = Double
+  type AwsRdsDbInstanceAssociatedRoles = js.Array[AwsRdsDbInstanceAssociatedRole]
+  type AwsRdsDbInstanceVpcSecurityGroups = js.Array[AwsRdsDbInstanceVpcSecurityGroup]
+  type AwsS3BucketServerSideEncryptionRules = js.Array[AwsS3BucketServerSideEncryptionRule]
+  type AwsSecurityFindingIdentifierList = js.Array[AwsSecurityFindingIdentifier]
+  type AwsSecurityFindingList = js.Array[AwsSecurityFinding]
+  type AwsSnsTopicSubscriptionList = js.Array[AwsSnsTopicSubscription]
+  type AwsWafWebAclRuleList = js.Array[AwsWafWebAclRule]
   type BatchUpdateFindingsUnprocessedFindingsList = js.Array[BatchUpdateFindingsUnprocessedFinding]
-  type CategoryList                               = js.Array[NonEmptyString]
-  type CidrBlockAssociationList                   = js.Array[CidrBlockAssociation]
-  type CvssList                                   = js.Array[Cvss]
-  type DateFilterList                             = js.Array[DateFilter]
-  type FieldMap                                   = js.Dictionary[NonEmptyString]
-  type ImportFindingsErrorList                    = js.Array[ImportFindingsError]
-  type InsightList                                = js.Array[Insight]
-  type InsightResultValueList                     = js.Array[InsightResultValue]
-  type IntegrationTypeList                        = js.Array[IntegrationType]
-  type InvitationList                             = js.Array[Invitation]
-  type IpFilterList                               = js.Array[IpFilter]
-  type Ipv6CidrBlockAssociationList               = js.Array[Ipv6CidrBlockAssociation]
-  type KeywordFilterList                          = js.Array[KeywordFilter]
-  type MalwareList                                = js.Array[Malware]
-  type MapFilterList                              = js.Array[MapFilter]
-  type MaxResults                                 = Int
-  type MemberList                                 = js.Array[Member]
-  type NetworkPathList                            = js.Array[NetworkPathComponent]
-  type NextToken                                  = String
-  type NonEmptyString                             = String
-  type NonEmptyStringList                         = js.Array[NonEmptyString]
-  type NumberFilterList                           = js.Array[NumberFilter]
-  type PortRangeList                              = js.Array[PortRange]
-  type ProductSubscriptionArnList                 = js.Array[NonEmptyString]
-  type ProductsList                               = js.Array[Product]
-  type RatioScale                                 = Int
-  type RelatedFindingList                         = js.Array[RelatedFinding]
-  type RelatedRequirementsList                    = js.Array[NonEmptyString]
-  type ResourceArn                                = String
-  type ResourceList                               = js.Array[Resource]
-  type ResultList                                 = js.Array[Result]
-  type SecurityGroups                             = js.Array[NonEmptyString]
-  type SoftwarePackageList                        = js.Array[SoftwarePackage]
-  type SortCriteria                               = js.Array[SortCriterion]
-  type Standards                                  = js.Array[Standard]
-  type StandardsControls                          = js.Array[StandardsControl]
-  type StandardsInputParameterMap                 = js.Dictionary[NonEmptyString]
-  type StandardsSubscriptionArns                  = js.Array[NonEmptyString]
-  type StandardsSubscriptionRequests              = js.Array[StandardsSubscriptionRequest]
-  type StandardsSubscriptions                     = js.Array[StandardsSubscription]
-  type StatusReasonsList                          = js.Array[StatusReason]
-  type StringFilterList                           = js.Array[StringFilter]
-  type StringList                                 = js.Array[NonEmptyString]
-  type TagKey                                     = String
-  type TagKeyList                                 = js.Array[TagKey]
-  type TagMap                                     = js.Dictionary[TagValue]
-  type TagValue                                   = String
-  type ThreatIntelIndicatorList                   = js.Array[ThreatIntelIndicator]
-  type Timestamp                                  = js.Date
-  type TypeList                                   = js.Array[NonEmptyString]
-  type VulnerabilityList                          = js.Array[Vulnerability]
-  type WafExcludedRuleList                        = js.Array[WafExcludedRule]
+  type CategoryList = js.Array[NonEmptyString]
+  type CidrBlockAssociationList = js.Array[CidrBlockAssociation]
+  type CvssList = js.Array[Cvss]
+  type DateFilterList = js.Array[DateFilter]
+  type FieldMap = js.Dictionary[NonEmptyString]
+  type ImportFindingsErrorList = js.Array[ImportFindingsError]
+  type InsightList = js.Array[Insight]
+  type InsightResultValueList = js.Array[InsightResultValue]
+  type IntegrationTypeList = js.Array[IntegrationType]
+  type InvitationList = js.Array[Invitation]
+  type IpFilterList = js.Array[IpFilter]
+  type Ipv6CidrBlockAssociationList = js.Array[Ipv6CidrBlockAssociation]
+  type KeywordFilterList = js.Array[KeywordFilter]
+  type MalwareList = js.Array[Malware]
+  type MapFilterList = js.Array[MapFilter]
+  type MaxResults = Int
+  type MemberList = js.Array[Member]
+  type NetworkPathList = js.Array[NetworkPathComponent]
+  type NextToken = String
+  type NonEmptyString = String
+  type NonEmptyStringList = js.Array[NonEmptyString]
+  type NumberFilterList = js.Array[NumberFilter]
+  type PortRangeList = js.Array[PortRange]
+  type ProductSubscriptionArnList = js.Array[NonEmptyString]
+  type ProductsList = js.Array[Product]
+  type RatioScale = Int
+  type RelatedFindingList = js.Array[RelatedFinding]
+  type RelatedRequirementsList = js.Array[NonEmptyString]
+  type ResourceArn = String
+  type ResourceList = js.Array[Resource]
+  type ResultList = js.Array[Result]
+  type SecurityGroups = js.Array[NonEmptyString]
+  type SoftwarePackageList = js.Array[SoftwarePackage]
+  type SortCriteria = js.Array[SortCriterion]
+  type Standards = js.Array[Standard]
+  type StandardsControls = js.Array[StandardsControl]
+  type StandardsInputParameterMap = js.Dictionary[NonEmptyString]
+  type StandardsSubscriptionArns = js.Array[NonEmptyString]
+  type StandardsSubscriptionRequests = js.Array[StandardsSubscriptionRequest]
+  type StandardsSubscriptions = js.Array[StandardsSubscription]
+  type StatusReasonsList = js.Array[StatusReason]
+  type StringFilterList = js.Array[StringFilter]
+  type StringList = js.Array[NonEmptyString]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagMap = js.Dictionary[TagValue]
+  type TagValue = String
+  type ThreatIntelIndicatorList = js.Array[ThreatIntelIndicator]
+  type Timestamp = js.Date
+  type TypeList = js.Array[NonEmptyString]
+  type VulnerabilityList = js.Array[Vulnerability]
+  type WafExcludedRuleList = js.Array[WafExcludedRule]
 
   implicit final class SecurityHubOps(private val service: SecurityHub) extends AnyVal {
 
@@ -190,57 +190,57 @@ package securityhub {
   class SecurityHub() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def acceptInvitation(params: AcceptInvitationRequest): Request[AcceptInvitationResponse]                = js.native
+    def acceptInvitation(params: AcceptInvitationRequest): Request[AcceptInvitationResponse] = js.native
     def batchDisableStandards(params: BatchDisableStandardsRequest): Request[BatchDisableStandardsResponse] = js.native
-    def batchEnableStandards(params: BatchEnableStandardsRequest): Request[BatchEnableStandardsResponse]    = js.native
-    def batchImportFindings(params: BatchImportFindingsRequest): Request[BatchImportFindingsResponse]       = js.native
-    def batchUpdateFindings(params: BatchUpdateFindingsRequest): Request[BatchUpdateFindingsResponse]       = js.native
-    def createActionTarget(params: CreateActionTargetRequest): Request[CreateActionTargetResponse]          = js.native
-    def createInsight(params: CreateInsightRequest): Request[CreateInsightResponse]                         = js.native
-    def createMembers(params: CreateMembersRequest): Request[CreateMembersResponse]                         = js.native
-    def declineInvitations(params: DeclineInvitationsRequest): Request[DeclineInvitationsResponse]          = js.native
-    def deleteActionTarget(params: DeleteActionTargetRequest): Request[DeleteActionTargetResponse]          = js.native
-    def deleteInsight(params: DeleteInsightRequest): Request[DeleteInsightResponse]                         = js.native
-    def deleteInvitations(params: DeleteInvitationsRequest): Request[DeleteInvitationsResponse]             = js.native
-    def deleteMembers(params: DeleteMembersRequest): Request[DeleteMembersResponse]                         = js.native
+    def batchEnableStandards(params: BatchEnableStandardsRequest): Request[BatchEnableStandardsResponse] = js.native
+    def batchImportFindings(params: BatchImportFindingsRequest): Request[BatchImportFindingsResponse] = js.native
+    def batchUpdateFindings(params: BatchUpdateFindingsRequest): Request[BatchUpdateFindingsResponse] = js.native
+    def createActionTarget(params: CreateActionTargetRequest): Request[CreateActionTargetResponse] = js.native
+    def createInsight(params: CreateInsightRequest): Request[CreateInsightResponse] = js.native
+    def createMembers(params: CreateMembersRequest): Request[CreateMembersResponse] = js.native
+    def declineInvitations(params: DeclineInvitationsRequest): Request[DeclineInvitationsResponse] = js.native
+    def deleteActionTarget(params: DeleteActionTargetRequest): Request[DeleteActionTargetResponse] = js.native
+    def deleteInsight(params: DeleteInsightRequest): Request[DeleteInsightResponse] = js.native
+    def deleteInvitations(params: DeleteInvitationsRequest): Request[DeleteInvitationsResponse] = js.native
+    def deleteMembers(params: DeleteMembersRequest): Request[DeleteMembersResponse] = js.native
     def describeActionTargets(params: DescribeActionTargetsRequest): Request[DescribeActionTargetsResponse] = js.native
-    def describeHub(params: DescribeHubRequest): Request[DescribeHubResponse]                               = js.native
-    def describeProducts(params: DescribeProductsRequest): Request[DescribeProductsResponse]                = js.native
-    def describeStandards(params: DescribeStandardsRequest): Request[DescribeStandardsResponse]             = js.native
+    def describeHub(params: DescribeHubRequest): Request[DescribeHubResponse] = js.native
+    def describeProducts(params: DescribeProductsRequest): Request[DescribeProductsResponse] = js.native
+    def describeStandards(params: DescribeStandardsRequest): Request[DescribeStandardsResponse] = js.native
     def describeStandardsControls(
         params: DescribeStandardsControlsRequest
     ): Request[DescribeStandardsControlsResponse] = js.native
     def disableImportFindingsForProduct(
         params: DisableImportFindingsForProductRequest
-    ): Request[DisableImportFindingsForProductResponse]                                            = js.native
+    ): Request[DisableImportFindingsForProductResponse] = js.native
     def disableSecurityHub(params: DisableSecurityHubRequest): Request[DisableSecurityHubResponse] = js.native
     def disassociateFromMasterAccount(
         params: DisassociateFromMasterAccountRequest
-    ): Request[DisassociateFromMasterAccountResponse]                                                 = js.native
+    ): Request[DisassociateFromMasterAccountResponse] = js.native
     def disassociateMembers(params: DisassociateMembersRequest): Request[DisassociateMembersResponse] = js.native
     def enableImportFindingsForProduct(
         params: EnableImportFindingsForProductRequest
-    ): Request[EnableImportFindingsForProductResponse]                                                = js.native
-    def enableSecurityHub(params: EnableSecurityHubRequest): Request[EnableSecurityHubResponse]       = js.native
+    ): Request[EnableImportFindingsForProductResponse] = js.native
+    def enableSecurityHub(params: EnableSecurityHubRequest): Request[EnableSecurityHubResponse] = js.native
     def getEnabledStandards(params: GetEnabledStandardsRequest): Request[GetEnabledStandardsResponse] = js.native
-    def getFindings(params: GetFindingsRequest): Request[GetFindingsResponse]                         = js.native
-    def getInsightResults(params: GetInsightResultsRequest): Request[GetInsightResultsResponse]       = js.native
-    def getInsights(params: GetInsightsRequest): Request[GetInsightsResponse]                         = js.native
+    def getFindings(params: GetFindingsRequest): Request[GetFindingsResponse] = js.native
+    def getInsightResults(params: GetInsightResultsRequest): Request[GetInsightResultsResponse] = js.native
+    def getInsights(params: GetInsightsRequest): Request[GetInsightsResponse] = js.native
     def getInvitationsCount(params: GetInvitationsCountRequest): Request[GetInvitationsCountResponse] = js.native
-    def getMasterAccount(params: GetMasterAccountRequest): Request[GetMasterAccountResponse]          = js.native
-    def getMembers(params: GetMembersRequest): Request[GetMembersResponse]                            = js.native
-    def inviteMembers(params: InviteMembersRequest): Request[InviteMembersResponse]                   = js.native
+    def getMasterAccount(params: GetMasterAccountRequest): Request[GetMasterAccountResponse] = js.native
+    def getMembers(params: GetMembersRequest): Request[GetMembersResponse] = js.native
+    def inviteMembers(params: InviteMembersRequest): Request[InviteMembersResponse] = js.native
     def listEnabledProductsForImport(
         params: ListEnabledProductsForImportRequest
-    ): Request[ListEnabledProductsForImportResponse]                                                  = js.native
-    def listInvitations(params: ListInvitationsRequest): Request[ListInvitationsResponse]             = js.native
-    def listMembers(params: ListMembersRequest): Request[ListMembersResponse]                         = js.native
+    ): Request[ListEnabledProductsForImportResponse] = js.native
+    def listInvitations(params: ListInvitationsRequest): Request[ListInvitationsResponse] = js.native
+    def listMembers(params: ListMembersRequest): Request[ListMembersResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
-    def updateActionTarget(params: UpdateActionTargetRequest): Request[UpdateActionTargetResponse]    = js.native
-    def updateFindings(params: UpdateFindingsRequest): Request[UpdateFindingsResponse]                = js.native
-    def updateInsight(params: UpdateInsightRequest): Request[UpdateInsightResponse]                   = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateActionTarget(params: UpdateActionTargetRequest): Request[UpdateActionTargetResponse] = js.native
+    def updateFindings(params: UpdateFindingsRequest): Request[UpdateFindingsResponse] = js.native
+    def updateInsight(params: UpdateInsightRequest): Request[UpdateInsightResponse] = js.native
     def updateStandardsControl(params: UpdateStandardsControlRequest): Request[UpdateStandardsControlResponse] =
       js.native
   }
@@ -259,7 +259,7 @@ package securityhub {
     ): AcceptInvitationRequest = {
       val __obj = js.Dynamic.literal(
         "InvitationId" -> InvitationId.asInstanceOf[js.Any],
-        "MasterId"     -> MasterId.asInstanceOf[js.Any]
+        "MasterId" -> MasterId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AcceptInvitationRequest]
@@ -320,8 +320,8 @@ package securityhub {
     ): ActionTarget = {
       val __obj = js.Dynamic.literal(
         "ActionTargetArn" -> ActionTargetArn.asInstanceOf[js.Any],
-        "Description"     -> Description.asInstanceOf[js.Any],
-        "Name"            -> Name.asInstanceOf[js.Any]
+        "Description" -> Description.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ActionTarget]
@@ -1236,7 +1236,7 @@ package securityhub {
   @js.native
   sealed trait AwsIamAccessKeyStatus extends js.Any
   object AwsIamAccessKeyStatus extends js.Object {
-    val Active   = "Active".asInstanceOf[AwsIamAccessKeyStatus]
+    val Active = "Active".asInstanceOf[AwsIamAccessKeyStatus]
     val Inactive = "Inactive".asInstanceOf[AwsIamAccessKeyStatus]
 
     val values = js.Object.freeze(js.Array(Active, Inactive))
@@ -1915,18 +1915,18 @@ package securityhub {
         WorkflowState: js.UndefOr[WorkflowState] = js.undefined
     ): AwsSecurityFinding = {
       val __obj = js.Dynamic.literal(
-        "AwsAccountId"  -> AwsAccountId.asInstanceOf[js.Any],
-        "CreatedAt"     -> CreatedAt.asInstanceOf[js.Any],
-        "Description"   -> Description.asInstanceOf[js.Any],
-        "GeneratorId"   -> GeneratorId.asInstanceOf[js.Any],
-        "Id"            -> Id.asInstanceOf[js.Any],
-        "ProductArn"    -> ProductArn.asInstanceOf[js.Any],
-        "Resources"     -> Resources.asInstanceOf[js.Any],
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "CreatedAt" -> CreatedAt.asInstanceOf[js.Any],
+        "Description" -> Description.asInstanceOf[js.Any],
+        "GeneratorId" -> GeneratorId.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "ProductArn" -> ProductArn.asInstanceOf[js.Any],
+        "Resources" -> Resources.asInstanceOf[js.Any],
         "SchemaVersion" -> SchemaVersion.asInstanceOf[js.Any],
-        "Severity"      -> Severity.asInstanceOf[js.Any],
-        "Title"         -> Title.asInstanceOf[js.Any],
-        "Types"         -> Types.asInstanceOf[js.Any],
-        "UpdatedAt"     -> UpdatedAt.asInstanceOf[js.Any]
+        "Severity" -> Severity.asInstanceOf[js.Any],
+        "Title" -> Title.asInstanceOf[js.Any],
+        "Types" -> Types.asInstanceOf[js.Any],
+        "UpdatedAt" -> UpdatedAt.asInstanceOf[js.Any]
       )
 
       Compliance.foreach(__v => __obj.updateDynamic("Compliance")(__v.asInstanceOf[js.Any]))
@@ -2282,7 +2282,7 @@ package securityhub {
         ProductArn: NonEmptyString
     ): AwsSecurityFindingIdentifier = {
       val __obj = js.Dynamic.literal(
-        "Id"         -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "ProductArn" -> ProductArn.asInstanceOf[js.Any]
       )
 
@@ -2533,7 +2533,7 @@ package securityhub {
         FailedFindings: js.UndefOr[ImportFindingsErrorList] = js.undefined
     ): BatchImportFindingsResponse = {
       val __obj = js.Dynamic.literal(
-        "FailedCount"  -> FailedCount.asInstanceOf[js.Any],
+        "FailedCount" -> FailedCount.asInstanceOf[js.Any],
         "SuccessCount" -> SuccessCount.asInstanceOf[js.Any]
       )
 
@@ -2600,7 +2600,7 @@ package securityhub {
         UnprocessedFindings: BatchUpdateFindingsUnprocessedFindingsList
     ): BatchUpdateFindingsResponse = {
       val __obj = js.Dynamic.literal(
-        "ProcessedFindings"   -> ProcessedFindings.asInstanceOf[js.Any],
+        "ProcessedFindings" -> ProcessedFindings.asInstanceOf[js.Any],
         "UnprocessedFindings" -> UnprocessedFindings.asInstanceOf[js.Any]
       )
 
@@ -2626,8 +2626,8 @@ package securityhub {
         FindingIdentifier: AwsSecurityFindingIdentifier
     ): BatchUpdateFindingsUnprocessedFinding = {
       val __obj = js.Dynamic.literal(
-        "ErrorCode"         -> ErrorCode.asInstanceOf[js.Any],
-        "ErrorMessage"      -> ErrorMessage.asInstanceOf[js.Any],
+        "ErrorCode" -> ErrorCode.asInstanceOf[js.Any],
+        "ErrorMessage" -> ErrorMessage.asInstanceOf[js.Any],
         "FindingIdentifier" -> FindingIdentifier.asInstanceOf[js.Any]
       )
 
@@ -2688,9 +2688,9 @@ package securityhub {
   @js.native
   sealed trait ComplianceStatus extends js.Any
   object ComplianceStatus extends js.Object {
-    val PASSED        = "PASSED".asInstanceOf[ComplianceStatus]
-    val WARNING       = "WARNING".asInstanceOf[ComplianceStatus]
-    val FAILED        = "FAILED".asInstanceOf[ComplianceStatus]
+    val PASSED = "PASSED".asInstanceOf[ComplianceStatus]
+    val WARNING = "WARNING".asInstanceOf[ComplianceStatus]
+    val FAILED = "FAILED".asInstanceOf[ComplianceStatus]
     val NOT_AVAILABLE = "NOT_AVAILABLE".asInstanceOf[ComplianceStatus]
 
     val values = js.Object.freeze(js.Array(PASSED, WARNING, FAILED, NOT_AVAILABLE))
@@ -2727,7 +2727,7 @@ package securityhub {
   @js.native
   sealed trait ControlStatus extends js.Any
   object ControlStatus extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[ControlStatus]
+    val ENABLED = "ENABLED".asInstanceOf[ControlStatus]
     val DISABLED = "DISABLED".asInstanceOf[ControlStatus]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -2749,8 +2749,8 @@ package securityhub {
     ): CreateActionTargetRequest = {
       val __obj = js.Dynamic.literal(
         "Description" -> Description.asInstanceOf[js.Any],
-        "Id"          -> Id.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any]
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateActionTargetRequest]
@@ -2790,9 +2790,9 @@ package securityhub {
         Name: NonEmptyString
     ): CreateInsightRequest = {
       val __obj = js.Dynamic.literal(
-        "Filters"          -> Filters.asInstanceOf[js.Any],
+        "Filters" -> Filters.asInstanceOf[js.Any],
         "GroupByAttribute" -> GroupByAttribute.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateInsightRequest]
@@ -3759,9 +3759,9 @@ package securityhub {
         Id: NonEmptyString
     ): ImportFindingsError = {
       val __obj = js.Dynamic.literal(
-        "ErrorCode"    -> ErrorCode.asInstanceOf[js.Any],
+        "ErrorCode" -> ErrorCode.asInstanceOf[js.Any],
         "ErrorMessage" -> ErrorMessage.asInstanceOf[js.Any],
-        "Id"           -> Id.asInstanceOf[js.Any]
+        "Id" -> Id.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ImportFindingsError]
@@ -3788,10 +3788,10 @@ package securityhub {
         Name: NonEmptyString
     ): Insight = {
       val __obj = js.Dynamic.literal(
-        "Filters"          -> Filters.asInstanceOf[js.Any],
+        "Filters" -> Filters.asInstanceOf[js.Any],
         "GroupByAttribute" -> GroupByAttribute.asInstanceOf[js.Any],
-        "InsightArn"       -> InsightArn.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any]
+        "InsightArn" -> InsightArn.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[Insight]
@@ -3814,7 +3814,7 @@ package securityhub {
         GroupByAttributeValue: NonEmptyString
     ): InsightResultValue = {
       val __obj = js.Dynamic.literal(
-        "Count"                 -> Count.asInstanceOf[js.Any],
+        "Count" -> Count.asInstanceOf[js.Any],
         "GroupByAttributeValue" -> GroupByAttributeValue.asInstanceOf[js.Any]
       )
 
@@ -3841,8 +3841,8 @@ package securityhub {
     ): InsightResults = {
       val __obj = js.Dynamic.literal(
         "GroupByAttribute" -> GroupByAttribute.asInstanceOf[js.Any],
-        "InsightArn"       -> InsightArn.asInstanceOf[js.Any],
-        "ResultValues"     -> ResultValues.asInstanceOf[js.Any]
+        "InsightArn" -> InsightArn.asInstanceOf[js.Any],
+        "ResultValues" -> ResultValues.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[InsightResults]
@@ -3852,7 +3852,7 @@ package securityhub {
   @js.native
   sealed trait IntegrationType extends js.Any
   object IntegrationType extends js.Object {
-    val SEND_FINDINGS_TO_SECURITY_HUB      = "SEND_FINDINGS_TO_SECURITY_HUB".asInstanceOf[IntegrationType]
+    val SEND_FINDINGS_TO_SECURITY_HUB = "SEND_FINDINGS_TO_SECURITY_HUB".asInstanceOf[IntegrationType]
     val RECEIVE_FINDINGS_FROM_SECURITY_HUB = "RECEIVE_FINDINGS_FROM_SECURITY_HUB".asInstanceOf[IntegrationType]
 
     val values = js.Object.freeze(js.Array(SEND_FINDINGS_TO_SECURITY_HUB, RECEIVE_FINDINGS_FROM_SECURITY_HUB))
@@ -4187,9 +4187,9 @@ package securityhub {
   @js.native
   sealed trait MalwareState extends js.Any
   object MalwareState extends js.Object {
-    val OBSERVED       = "OBSERVED".asInstanceOf[MalwareState]
+    val OBSERVED = "OBSERVED".asInstanceOf[MalwareState]
     val REMOVAL_FAILED = "REMOVAL_FAILED".asInstanceOf[MalwareState]
-    val REMOVED        = "REMOVED".asInstanceOf[MalwareState]
+    val REMOVED = "REMOVED".asInstanceOf[MalwareState]
 
     val values = js.Object.freeze(js.Array(OBSERVED, REMOVAL_FAILED, REMOVED))
   }
@@ -4197,21 +4197,21 @@ package securityhub {
   @js.native
   sealed trait MalwareType extends js.Any
   object MalwareType extends js.Object {
-    val ADWARE               = "ADWARE".asInstanceOf[MalwareType]
-    val BLENDED_THREAT       = "BLENDED_THREAT".asInstanceOf[MalwareType]
-    val BOTNET_AGENT         = "BOTNET_AGENT".asInstanceOf[MalwareType]
-    val COIN_MINER           = "COIN_MINER".asInstanceOf[MalwareType]
-    val EXPLOIT_KIT          = "EXPLOIT_KIT".asInstanceOf[MalwareType]
-    val KEYLOGGER            = "KEYLOGGER".asInstanceOf[MalwareType]
-    val MACRO                = "MACRO".asInstanceOf[MalwareType]
+    val ADWARE = "ADWARE".asInstanceOf[MalwareType]
+    val BLENDED_THREAT = "BLENDED_THREAT".asInstanceOf[MalwareType]
+    val BOTNET_AGENT = "BOTNET_AGENT".asInstanceOf[MalwareType]
+    val COIN_MINER = "COIN_MINER".asInstanceOf[MalwareType]
+    val EXPLOIT_KIT = "EXPLOIT_KIT".asInstanceOf[MalwareType]
+    val KEYLOGGER = "KEYLOGGER".asInstanceOf[MalwareType]
+    val MACRO = "MACRO".asInstanceOf[MalwareType]
     val POTENTIALLY_UNWANTED = "POTENTIALLY_UNWANTED".asInstanceOf[MalwareType]
-    val SPYWARE              = "SPYWARE".asInstanceOf[MalwareType]
-    val RANSOMWARE           = "RANSOMWARE".asInstanceOf[MalwareType]
-    val REMOTE_ACCESS        = "REMOTE_ACCESS".asInstanceOf[MalwareType]
-    val ROOTKIT              = "ROOTKIT".asInstanceOf[MalwareType]
-    val TROJAN               = "TROJAN".asInstanceOf[MalwareType]
-    val VIRUS                = "VIRUS".asInstanceOf[MalwareType]
-    val WORM                 = "WORM".asInstanceOf[MalwareType]
+    val SPYWARE = "SPYWARE".asInstanceOf[MalwareType]
+    val RANSOMWARE = "RANSOMWARE".asInstanceOf[MalwareType]
+    val REMOTE_ACCESS = "REMOTE_ACCESS".asInstanceOf[MalwareType]
+    val ROOTKIT = "ROOTKIT".asInstanceOf[MalwareType]
+    val TROJAN = "TROJAN".asInstanceOf[MalwareType]
+    val VIRUS = "VIRUS".asInstanceOf[MalwareType]
+    val WORM = "WORM".asInstanceOf[MalwareType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -4356,7 +4356,7 @@ package securityhub {
   @js.native
   sealed trait NetworkDirection extends js.Any
   object NetworkDirection extends js.Object {
-    val IN  = "IN".asInstanceOf[NetworkDirection]
+    val IN = "IN".asInstanceOf[NetworkDirection]
     val OUT = "OUT".asInstanceOf[NetworkDirection]
 
     val values = js.Object.freeze(js.Array(IN, OUT))
@@ -4455,7 +4455,7 @@ package securityhub {
         UpdatedBy: NonEmptyString
     ): Note = {
       val __obj = js.Dynamic.literal(
-        "Text"      -> Text.asInstanceOf[js.Any],
+        "Text" -> Text.asInstanceOf[js.Any],
         "UpdatedAt" -> UpdatedAt.asInstanceOf[js.Any],
         "UpdatedBy" -> UpdatedBy.asInstanceOf[js.Any]
       )
@@ -4480,7 +4480,7 @@ package securityhub {
         UpdatedBy: NonEmptyString
     ): NoteUpdate = {
       val __obj = js.Dynamic.literal(
-        "Text"      -> Text.asInstanceOf[js.Any],
+        "Text" -> Text.asInstanceOf[js.Any],
         "UpdatedBy" -> UpdatedBy.asInstanceOf[js.Any]
       )
 
@@ -4516,8 +4516,8 @@ package securityhub {
   @js.native
   sealed trait Partition extends js.Any
   object Partition extends js.Object {
-    val aws          = "aws".asInstanceOf[Partition]
-    val `aws-cn`     = "aws-cn".asInstanceOf[Partition]
+    val aws = "aws".asInstanceOf[Partition]
+    val `aws-cn` = "aws-cn".asInstanceOf[Partition]
     val `aws-us-gov` = "aws-us-gov".asInstanceOf[Partition]
 
     val values = js.Object.freeze(js.Array(aws, `aws-cn`, `aws-us-gov`))
@@ -4651,7 +4651,7 @@ package securityhub {
   @js.native
   sealed trait RecordState extends js.Any
   object RecordState extends js.Object {
-    val ACTIVE   = "ACTIVE".asInstanceOf[RecordState]
+    val ACTIVE = "ACTIVE".asInstanceOf[RecordState]
     val ARCHIVED = "ARCHIVED".asInstanceOf[RecordState]
 
     val values = js.Object.freeze(js.Array(ACTIVE, ARCHIVED))
@@ -4673,7 +4673,7 @@ package securityhub {
         ProductArn: NonEmptyString
     ): RelatedFinding = {
       val __obj = js.Dynamic.literal(
-        "Id"         -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "ProductArn" -> ProductArn.asInstanceOf[js.Any]
       )
 
@@ -4724,7 +4724,7 @@ package securityhub {
         Tags: js.UndefOr[FieldMap] = js.undefined
     ): Resource = {
       val __obj = js.Dynamic.literal(
-        "Id"   -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
@@ -4882,10 +4882,10 @@ package securityhub {
   sealed trait SeverityLabel extends js.Any
   object SeverityLabel extends js.Object {
     val INFORMATIONAL = "INFORMATIONAL".asInstanceOf[SeverityLabel]
-    val LOW           = "LOW".asInstanceOf[SeverityLabel]
-    val MEDIUM        = "MEDIUM".asInstanceOf[SeverityLabel]
-    val HIGH          = "HIGH".asInstanceOf[SeverityLabel]
-    val CRITICAL      = "CRITICAL".asInstanceOf[SeverityLabel]
+    val LOW = "LOW".asInstanceOf[SeverityLabel]
+    val MEDIUM = "MEDIUM".asInstanceOf[SeverityLabel]
+    val HIGH = "HIGH".asInstanceOf[SeverityLabel]
+    val CRITICAL = "CRITICAL".asInstanceOf[SeverityLabel]
 
     val values = js.Object.freeze(js.Array(INFORMATIONAL, LOW, MEDIUM, HIGH, CRITICAL))
   }
@@ -4893,9 +4893,9 @@ package securityhub {
   @js.native
   sealed trait SeverityRating extends js.Any
   object SeverityRating extends js.Object {
-    val LOW      = "LOW".asInstanceOf[SeverityRating]
-    val MEDIUM   = "MEDIUM".asInstanceOf[SeverityRating]
-    val HIGH     = "HIGH".asInstanceOf[SeverityRating]
+    val LOW = "LOW".asInstanceOf[SeverityRating]
+    val MEDIUM = "MEDIUM".asInstanceOf[SeverityRating]
+    val HIGH = "HIGH".asInstanceOf[SeverityRating]
     val CRITICAL = "CRITICAL".asInstanceOf[SeverityRating]
 
     val values = js.Object.freeze(js.Array(LOW, MEDIUM, HIGH, CRITICAL))
@@ -4982,7 +4982,7 @@ package securityhub {
   @js.native
   sealed trait SortOrder extends js.Any
   object SortOrder extends js.Object {
-    val asc  = "asc".asInstanceOf[SortOrder]
+    val asc = "asc".asInstanceOf[SortOrder]
     val desc = "desc".asInstanceOf[SortOrder]
 
     val values = js.Object.freeze(js.Array(asc, desc))
@@ -5065,10 +5065,10 @@ package securityhub {
   @js.native
   sealed trait StandardsStatus extends js.Any
   object StandardsStatus extends js.Object {
-    val PENDING    = "PENDING".asInstanceOf[StandardsStatus]
-    val READY      = "READY".asInstanceOf[StandardsStatus]
-    val FAILED     = "FAILED".asInstanceOf[StandardsStatus]
-    val DELETING   = "DELETING".asInstanceOf[StandardsStatus]
+    val PENDING = "PENDING".asInstanceOf[StandardsStatus]
+    val READY = "READY".asInstanceOf[StandardsStatus]
+    val FAILED = "FAILED".asInstanceOf[StandardsStatus]
+    val DELETING = "DELETING".asInstanceOf[StandardsStatus]
     val INCOMPLETE = "INCOMPLETE".asInstanceOf[StandardsStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, READY, FAILED, DELETING, INCOMPLETE))
@@ -5094,9 +5094,9 @@ package securityhub {
         StandardsSubscriptionArn: NonEmptyString
     ): StandardsSubscription = {
       val __obj = js.Dynamic.literal(
-        "StandardsArn"             -> StandardsArn.asInstanceOf[js.Any],
-        "StandardsInput"           -> StandardsInput.asInstanceOf[js.Any],
-        "StandardsStatus"          -> StandardsStatus.asInstanceOf[js.Any],
+        "StandardsArn" -> StandardsArn.asInstanceOf[js.Any],
+        "StandardsInput" -> StandardsInput.asInstanceOf[js.Any],
+        "StandardsStatus" -> StandardsStatus.asInstanceOf[js.Any],
         "StandardsSubscriptionArn" -> StandardsSubscriptionArn.asInstanceOf[js.Any]
       )
 
@@ -5197,7 +5197,7 @@ package securityhub {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -5254,12 +5254,12 @@ package securityhub {
   @js.native
   sealed trait ThreatIntelIndicatorCategory extends js.Any
   object ThreatIntelIndicatorCategory extends js.Object {
-    val BACKDOOR            = "BACKDOOR".asInstanceOf[ThreatIntelIndicatorCategory]
-    val CARD_STEALER        = "CARD_STEALER".asInstanceOf[ThreatIntelIndicatorCategory]
+    val BACKDOOR = "BACKDOOR".asInstanceOf[ThreatIntelIndicatorCategory]
+    val CARD_STEALER = "CARD_STEALER".asInstanceOf[ThreatIntelIndicatorCategory]
     val COMMAND_AND_CONTROL = "COMMAND_AND_CONTROL".asInstanceOf[ThreatIntelIndicatorCategory]
-    val DROP_SITE           = "DROP_SITE".asInstanceOf[ThreatIntelIndicatorCategory]
-    val EXPLOIT_SITE        = "EXPLOIT_SITE".asInstanceOf[ThreatIntelIndicatorCategory]
-    val KEYLOGGER           = "KEYLOGGER".asInstanceOf[ThreatIntelIndicatorCategory]
+    val DROP_SITE = "DROP_SITE".asInstanceOf[ThreatIntelIndicatorCategory]
+    val EXPLOIT_SITE = "EXPLOIT_SITE".asInstanceOf[ThreatIntelIndicatorCategory]
+    val KEYLOGGER = "KEYLOGGER".asInstanceOf[ThreatIntelIndicatorCategory]
 
     val values =
       js.Object.freeze(js.Array(BACKDOOR, CARD_STEALER, COMMAND_AND_CONTROL, DROP_SITE, EXPLOIT_SITE, KEYLOGGER))
@@ -5268,17 +5268,17 @@ package securityhub {
   @js.native
   sealed trait ThreatIntelIndicatorType extends js.Any
   object ThreatIntelIndicatorType extends js.Object {
-    val DOMAIN        = "DOMAIN".asInstanceOf[ThreatIntelIndicatorType]
+    val DOMAIN = "DOMAIN".asInstanceOf[ThreatIntelIndicatorType]
     val EMAIL_ADDRESS = "EMAIL_ADDRESS".asInstanceOf[ThreatIntelIndicatorType]
-    val HASH_MD5      = "HASH_MD5".asInstanceOf[ThreatIntelIndicatorType]
-    val HASH_SHA1     = "HASH_SHA1".asInstanceOf[ThreatIntelIndicatorType]
-    val HASH_SHA256   = "HASH_SHA256".asInstanceOf[ThreatIntelIndicatorType]
-    val HASH_SHA512   = "HASH_SHA512".asInstanceOf[ThreatIntelIndicatorType]
-    val IPV4_ADDRESS  = "IPV4_ADDRESS".asInstanceOf[ThreatIntelIndicatorType]
-    val IPV6_ADDRESS  = "IPV6_ADDRESS".asInstanceOf[ThreatIntelIndicatorType]
-    val MUTEX         = "MUTEX".asInstanceOf[ThreatIntelIndicatorType]
-    val PROCESS       = "PROCESS".asInstanceOf[ThreatIntelIndicatorType]
-    val URL           = "URL".asInstanceOf[ThreatIntelIndicatorType]
+    val HASH_MD5 = "HASH_MD5".asInstanceOf[ThreatIntelIndicatorType]
+    val HASH_SHA1 = "HASH_SHA1".asInstanceOf[ThreatIntelIndicatorType]
+    val HASH_SHA256 = "HASH_SHA256".asInstanceOf[ThreatIntelIndicatorType]
+    val HASH_SHA512 = "HASH_SHA512".asInstanceOf[ThreatIntelIndicatorType]
+    val IPV4_ADDRESS = "IPV4_ADDRESS".asInstanceOf[ThreatIntelIndicatorType]
+    val IPV6_ADDRESS = "IPV6_ADDRESS".asInstanceOf[ThreatIntelIndicatorType]
+    val MUTEX = "MUTEX".asInstanceOf[ThreatIntelIndicatorType]
+    val PROCESS = "PROCESS".asInstanceOf[ThreatIntelIndicatorType]
+    val URL = "URL".asInstanceOf[ThreatIntelIndicatorType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -5311,7 +5311,7 @@ package securityhub {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -5485,9 +5485,9 @@ package securityhub {
   @js.native
   sealed trait VerificationState extends js.Any
   object VerificationState extends js.Object {
-    val UNKNOWN         = "UNKNOWN".asInstanceOf[VerificationState]
-    val TRUE_POSITIVE   = "TRUE_POSITIVE".asInstanceOf[VerificationState]
-    val FALSE_POSITIVE  = "FALSE_POSITIVE".asInstanceOf[VerificationState]
+    val UNKNOWN = "UNKNOWN".asInstanceOf[VerificationState]
+    val TRUE_POSITIVE = "TRUE_POSITIVE".asInstanceOf[VerificationState]
+    val FALSE_POSITIVE = "FALSE_POSITIVE".asInstanceOf[VerificationState]
     val BENIGN_POSITIVE = "BENIGN_POSITIVE".asInstanceOf[VerificationState]
 
     val values = js.Object.freeze(js.Array(UNKNOWN, TRUE_POSITIVE, FALSE_POSITIVE, BENIGN_POSITIVE))
@@ -5642,11 +5642,11 @@ package securityhub {
   @js.native
   sealed trait WorkflowState extends js.Any
   object WorkflowState extends js.Object {
-    val NEW         = "NEW".asInstanceOf[WorkflowState]
-    val ASSIGNED    = "ASSIGNED".asInstanceOf[WorkflowState]
+    val NEW = "NEW".asInstanceOf[WorkflowState]
+    val ASSIGNED = "ASSIGNED".asInstanceOf[WorkflowState]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[WorkflowState]
-    val DEFERRED    = "DEFERRED".asInstanceOf[WorkflowState]
-    val RESOLVED    = "RESOLVED".asInstanceOf[WorkflowState]
+    val DEFERRED = "DEFERRED".asInstanceOf[WorkflowState]
+    val RESOLVED = "RESOLVED".asInstanceOf[WorkflowState]
 
     val values = js.Object.freeze(js.Array(NEW, ASSIGNED, IN_PROGRESS, DEFERRED, RESOLVED))
   }
@@ -5654,9 +5654,9 @@ package securityhub {
   @js.native
   sealed trait WorkflowStatus extends js.Any
   object WorkflowStatus extends js.Object {
-    val NEW        = "NEW".asInstanceOf[WorkflowStatus]
-    val NOTIFIED   = "NOTIFIED".asInstanceOf[WorkflowStatus]
-    val RESOLVED   = "RESOLVED".asInstanceOf[WorkflowStatus]
+    val NEW = "NEW".asInstanceOf[WorkflowStatus]
+    val NOTIFIED = "NOTIFIED".asInstanceOf[WorkflowStatus]
+    val RESOLVED = "RESOLVED".asInstanceOf[WorkflowStatus]
     val SUPPRESSED = "SUPPRESSED".asInstanceOf[WorkflowStatus]
 
     val values = js.Object.freeze(js.Array(NEW, NOTIFIED, RESOLVED, SUPPRESSED))

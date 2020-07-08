@@ -7,16 +7,16 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object forecastquery {
-  type Arn            = String
-  type AttributeName  = String
+  type Arn = String
+  type AttributeName = String
   type AttributeValue = String
-  type DateTime       = String
-  type Filters        = js.Dictionary[AttributeValue]
-  type NextToken      = String
-  type Predictions    = js.Dictionary[TimeSeries]
-  type Statistic      = String
-  type TimeSeries     = js.Array[DataPoint]
-  type Timestamp      = String
+  type DateTime = String
+  type Filters = js.Dictionary[AttributeValue]
+  type NextToken = String
+  type Predictions = js.Dictionary[TimeSeries]
+  type Statistic = String
+  type TimeSeries = js.Array[DataPoint]
+  type Timestamp = String
 
   implicit final class ForecastQueryOps(private val service: ForecastQuery) extends AnyVal {
 
@@ -94,7 +94,7 @@ package forecastquery {
         StartDate: js.UndefOr[DateTime] = js.undefined
     ): QueryForecastRequest = {
       val __obj = js.Dynamic.literal(
-        "Filters"     -> Filters.asInstanceOf[js.Any],
+        "Filters" -> Filters.asInstanceOf[js.Any],
         "ForecastArn" -> ForecastArn.asInstanceOf[js.Any]
       )
 

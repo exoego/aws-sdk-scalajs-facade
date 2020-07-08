@@ -7,37 +7,37 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object fms {
-  type AWSAccountId               = String
-  type ComplianceViolators        = js.Array[ComplianceViolator]
-  type CustomerPolicyScopeId      = String
-  type CustomerPolicyScopeIdList  = js.Array[CustomerPolicyScopeId]
-  type CustomerPolicyScopeMap     = js.Dictionary[CustomerPolicyScopeIdList]
-  type DetailedInfo               = String
-  type EvaluationResults          = js.Array[EvaluationResult]
-  type IssueInfoMap               = js.Dictionary[DetailedInfo]
-  type ManagedServiceData         = String
-  type MemberAccounts             = js.Array[AWSAccountId]
-  type PaginationMaxResults       = Int
-  type PaginationToken            = String
+  type AWSAccountId = String
+  type ComplianceViolators = js.Array[ComplianceViolator]
+  type CustomerPolicyScopeId = String
+  type CustomerPolicyScopeIdList = js.Array[CustomerPolicyScopeId]
+  type CustomerPolicyScopeMap = js.Dictionary[CustomerPolicyScopeIdList]
+  type DetailedInfo = String
+  type EvaluationResults = js.Array[EvaluationResult]
+  type IssueInfoMap = js.Dictionary[DetailedInfo]
+  type ManagedServiceData = String
+  type MemberAccounts = js.Array[AWSAccountId]
+  type PaginationMaxResults = Int
+  type PaginationToken = String
   type PolicyComplianceStatusList = js.Array[PolicyComplianceStatus]
-  type PolicyId                   = String
-  type PolicySummaryList          = js.Array[PolicySummary]
-  type PolicyUpdateToken          = String
-  type ProtectionData             = String
-  type ResourceArn                = String
-  type ResourceCount              = Double
-  type ResourceId                 = String
-  type ResourceName               = String
-  type ResourceTagKey             = String
-  type ResourceTagValue           = String
-  type ResourceTags               = js.Array[ResourceTag]
-  type ResourceType               = String
-  type ResourceTypeList           = js.Array[ResourceType]
-  type TagKey                     = String
-  type TagKeyList                 = js.Array[TagKey]
-  type TagList                    = js.Array[Tag]
-  type TagValue                   = String
-  type TimeStamp                  = js.Date
+  type PolicyId = String
+  type PolicySummaryList = js.Array[PolicySummary]
+  type PolicyUpdateToken = String
+  type ProtectionData = String
+  type ResourceArn = String
+  type ResourceCount = Double
+  type ResourceId = String
+  type ResourceName = String
+  type ResourceTagKey = String
+  type ResourceTagValue = String
+  type ResourceTags = js.Array[ResourceTag]
+  type ResourceType = String
+  type ResourceTypeList = js.Array[ResourceType]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type TimeStamp = js.Date
 
   implicit final class FMSOps(private val service: FMS) extends AnyVal {
 
@@ -85,34 +85,34 @@ package fms {
   class FMS() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def associateAdminAccount(params: AssociateAdminAccountRequest): Request[js.Object]               = js.native
-    def deleteNotificationChannel(params: DeleteNotificationChannelRequest): Request[js.Object]       = js.native
-    def deletePolicy(params: DeletePolicyRequest): Request[js.Object]                                 = js.native
-    def disassociateAdminAccount(params: DisassociateAdminAccountRequest): Request[js.Object]         = js.native
-    def getAdminAccount(params: GetAdminAccountRequest): Request[GetAdminAccountResponse]             = js.native
+    def associateAdminAccount(params: AssociateAdminAccountRequest): Request[js.Object] = js.native
+    def deleteNotificationChannel(params: DeleteNotificationChannelRequest): Request[js.Object] = js.native
+    def deletePolicy(params: DeletePolicyRequest): Request[js.Object] = js.native
+    def disassociateAdminAccount(params: DisassociateAdminAccountRequest): Request[js.Object] = js.native
+    def getAdminAccount(params: GetAdminAccountRequest): Request[GetAdminAccountResponse] = js.native
     def getComplianceDetail(params: GetComplianceDetailRequest): Request[GetComplianceDetailResponse] = js.native
     def getNotificationChannel(params: GetNotificationChannelRequest): Request[GetNotificationChannelResponse] =
       js.native
-    def getPolicy(params: GetPolicyRequest): Request[GetPolicyResponse]                                  = js.native
-    def getProtectionStatus(params: GetProtectionStatusRequest): Request[GetProtectionStatusResponse]    = js.native
+    def getPolicy(params: GetPolicyRequest): Request[GetPolicyResponse] = js.native
+    def getProtectionStatus(params: GetProtectionStatusRequest): Request[GetProtectionStatusResponse] = js.native
     def listComplianceStatus(params: ListComplianceStatusRequest): Request[ListComplianceStatusResponse] = js.native
-    def listMemberAccounts(params: ListMemberAccountsRequest): Request[ListMemberAccountsResponse]       = js.native
-    def listPolicies(params: ListPoliciesRequest): Request[ListPoliciesResponse]                         = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]    = js.native
-    def putNotificationChannel(params: PutNotificationChannelRequest): Request[js.Object]                = js.native
-    def putPolicy(params: PutPolicyRequest): Request[PutPolicyResponse]                                  = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                            = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                      = js.native
+    def listMemberAccounts(params: ListMemberAccountsRequest): Request[ListMemberAccountsResponse] = js.native
+    def listPolicies(params: ListPoliciesRequest): Request[ListPoliciesResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def putNotificationChannel(params: PutNotificationChannelRequest): Request[js.Object] = js.native
+    def putPolicy(params: PutPolicyRequest): Request[PutPolicyResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
   }
 
   @js.native
   sealed trait AccountRoleStatus extends js.Any
   object AccountRoleStatus extends js.Object {
-    val READY            = "READY".asInstanceOf[AccountRoleStatus]
-    val CREATING         = "CREATING".asInstanceOf[AccountRoleStatus]
+    val READY = "READY".asInstanceOf[AccountRoleStatus]
+    val CREATING = "CREATING".asInstanceOf[AccountRoleStatus]
     val PENDING_DELETION = "PENDING_DELETION".asInstanceOf[AccountRoleStatus]
-    val DELETING         = "DELETING".asInstanceOf[AccountRoleStatus]
-    val DELETED          = "DELETED".asInstanceOf[AccountRoleStatus]
+    val DELETING = "DELETING".asInstanceOf[AccountRoleStatus]
+    val DELETED = "DELETED".asInstanceOf[AccountRoleStatus]
 
     val values = js.Object.freeze(js.Array(READY, CREATING, PENDING_DELETION, DELETING, DELETED))
   }
@@ -163,7 +163,7 @@ package fms {
   @js.native
   sealed trait CustomerPolicyScopeIdType extends js.Any
   object CustomerPolicyScopeIdType extends js.Object {
-    val ACCOUNT  = "ACCOUNT".asInstanceOf[CustomerPolicyScopeIdType]
+    val ACCOUNT = "ACCOUNT".asInstanceOf[CustomerPolicyScopeIdType]
     val ORG_UNIT = "ORG_UNIT".asInstanceOf[CustomerPolicyScopeIdType]
 
     val values = js.Object.freeze(js.Array(ACCOUNT, ORG_UNIT))
@@ -206,10 +206,10 @@ package fms {
   @js.native
   sealed trait DependentServiceName extends js.Any
   object DependentServiceName extends js.Object {
-    val AWSCONFIG          = "AWSCONFIG".asInstanceOf[DependentServiceName]
-    val AWSWAF             = "AWSWAF".asInstanceOf[DependentServiceName]
+    val AWSCONFIG = "AWSCONFIG".asInstanceOf[DependentServiceName]
+    val AWSWAF = "AWSWAF".asInstanceOf[DependentServiceName]
     val AWSSHIELD_ADVANCED = "AWSSHIELD_ADVANCED".asInstanceOf[DependentServiceName]
-    val AWSVPC             = "AWSVPC".asInstanceOf[DependentServiceName]
+    val AWSVPC = "AWSVPC".asInstanceOf[DependentServiceName]
 
     val values = js.Object.freeze(js.Array(AWSCONFIG, AWSWAF, AWSSHIELD_ADVANCED, AWSVPC))
   }
@@ -298,7 +298,7 @@ package fms {
     ): GetComplianceDetailRequest = {
       val __obj = js.Dynamic.literal(
         "MemberAccount" -> MemberAccount.asInstanceOf[js.Any],
-        "PolicyId"      -> PolicyId.asInstanceOf[js.Any]
+        "PolicyId" -> PolicyId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetComplianceDetailRequest]
@@ -637,10 +637,10 @@ package fms {
         ResourceTypeList: js.UndefOr[ResourceTypeList] = js.undefined
     ): Policy = {
       val __obj = js.Dynamic.literal(
-        "ExcludeResourceTags"       -> ExcludeResourceTags.asInstanceOf[js.Any],
-        "PolicyName"                -> PolicyName.asInstanceOf[js.Any],
-        "RemediationEnabled"        -> RemediationEnabled.asInstanceOf[js.Any],
-        "ResourceType"              -> ResourceType.asInstanceOf[js.Any],
+        "ExcludeResourceTags" -> ExcludeResourceTags.asInstanceOf[js.Any],
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
+        "RemediationEnabled" -> RemediationEnabled.asInstanceOf[js.Any],
+        "ResourceType" -> ResourceType.asInstanceOf[js.Any],
         "SecurityServicePolicyData" -> SecurityServicePolicyData.asInstanceOf[js.Any]
       )
 
@@ -731,7 +731,7 @@ package fms {
   @js.native
   sealed trait PolicyComplianceStatusType extends js.Any
   object PolicyComplianceStatusType extends js.Object {
-    val COMPLIANT     = "COMPLIANT".asInstanceOf[PolicyComplianceStatusType]
+    val COMPLIANT = "COMPLIANT".asInstanceOf[PolicyComplianceStatusType]
     val NON_COMPLIANT = "NON_COMPLIANT".asInstanceOf[PolicyComplianceStatusType]
 
     val values = js.Object.freeze(js.Array(COMPLIANT, NON_COMPLIANT))
@@ -883,12 +883,12 @@ package fms {
   @js.native
   sealed trait SecurityServiceType extends js.Any
   object SecurityServiceType extends js.Object {
-    val WAF                           = "WAF".asInstanceOf[SecurityServiceType]
-    val WAFV2                         = "WAFV2".asInstanceOf[SecurityServiceType]
-    val SHIELD_ADVANCED               = "SHIELD_ADVANCED".asInstanceOf[SecurityServiceType]
-    val SECURITY_GROUPS_COMMON        = "SECURITY_GROUPS_COMMON".asInstanceOf[SecurityServiceType]
+    val WAF = "WAF".asInstanceOf[SecurityServiceType]
+    val WAFV2 = "WAFV2".asInstanceOf[SecurityServiceType]
+    val SHIELD_ADVANCED = "SHIELD_ADVANCED".asInstanceOf[SecurityServiceType]
+    val SECURITY_GROUPS_COMMON = "SECURITY_GROUPS_COMMON".asInstanceOf[SecurityServiceType]
     val SECURITY_GROUPS_CONTENT_AUDIT = "SECURITY_GROUPS_CONTENT_AUDIT".asInstanceOf[SecurityServiceType]
-    val SECURITY_GROUPS_USAGE_AUDIT   = "SECURITY_GROUPS_USAGE_AUDIT".asInstanceOf[SecurityServiceType]
+    val SECURITY_GROUPS_USAGE_AUDIT = "SECURITY_GROUPS_USAGE_AUDIT".asInstanceOf[SecurityServiceType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -918,7 +918,7 @@ package fms {
         Value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -940,7 +940,7 @@ package fms {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagList"     -> TagList.asInstanceOf[js.Any]
+        "TagList" -> TagList.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -974,7 +974,7 @@ package fms {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -997,16 +997,16 @@ package fms {
   @js.native
   sealed trait ViolationReason extends js.Any
   object ViolationReason extends js.Object {
-    val WEB_ACL_MISSING_RULE_GROUP         = "WEB_ACL_MISSING_RULE_GROUP".asInstanceOf[ViolationReason]
-    val RESOURCE_MISSING_WEB_ACL           = "RESOURCE_MISSING_WEB_ACL".asInstanceOf[ViolationReason]
-    val RESOURCE_INCORRECT_WEB_ACL         = "RESOURCE_INCORRECT_WEB_ACL".asInstanceOf[ViolationReason]
+    val WEB_ACL_MISSING_RULE_GROUP = "WEB_ACL_MISSING_RULE_GROUP".asInstanceOf[ViolationReason]
+    val RESOURCE_MISSING_WEB_ACL = "RESOURCE_MISSING_WEB_ACL".asInstanceOf[ViolationReason]
+    val RESOURCE_INCORRECT_WEB_ACL = "RESOURCE_INCORRECT_WEB_ACL".asInstanceOf[ViolationReason]
     val RESOURCE_MISSING_SHIELD_PROTECTION = "RESOURCE_MISSING_SHIELD_PROTECTION".asInstanceOf[ViolationReason]
     val RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION =
       "RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION".asInstanceOf[ViolationReason]
-    val RESOURCE_MISSING_SECURITY_GROUP        = "RESOURCE_MISSING_SECURITY_GROUP".asInstanceOf[ViolationReason]
+    val RESOURCE_MISSING_SECURITY_GROUP = "RESOURCE_MISSING_SECURITY_GROUP".asInstanceOf[ViolationReason]
     val RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP = "RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP".asInstanceOf[ViolationReason]
-    val SECURITY_GROUP_UNUSED                  = "SECURITY_GROUP_UNUSED".asInstanceOf[ViolationReason]
-    val SECURITY_GROUP_REDUNDANT               = "SECURITY_GROUP_REDUNDANT".asInstanceOf[ViolationReason]
+    val SECURITY_GROUP_UNUSED = "SECURITY_GROUP_UNUSED".asInstanceOf[ViolationReason]
+    val SECURITY_GROUP_REDUNDANT = "SECURITY_GROUP_REDUNDANT".asInstanceOf[ViolationReason]
 
     val values = js.Object.freeze(
       js.Array(

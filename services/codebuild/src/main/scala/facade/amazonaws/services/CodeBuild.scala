@@ -7,53 +7,53 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object codebuild {
-  type BuildArtifactsList             = js.Array[BuildArtifacts]
-  type BuildIds                       = js.Array[NonEmptyString]
-  type BuildPhases                    = js.Array[BuildPhase]
-  type BuildReportArns                = js.Array[String]
-  type Builds                         = js.Array[Build]
-  type BuildsNotDeleted               = js.Array[BuildNotDeleted]
-  type EnvironmentImages              = js.Array[EnvironmentImage]
-  type EnvironmentLanguages           = js.Array[EnvironmentLanguage]
-  type EnvironmentPlatforms           = js.Array[EnvironmentPlatform]
-  type EnvironmentVariables           = js.Array[EnvironmentVariable]
-  type ExportedEnvironmentVariables   = js.Array[ExportedEnvironmentVariable]
-  type FilterGroup                    = js.Array[WebhookFilter]
-  type FilterGroups                   = js.Array[FilterGroup]
-  type GitCloneDepth                  = Int
-  type ImageVersions                  = js.Array[String]
-  type KeyInput                       = String
-  type NonEmptyString                 = String
-  type PageSize                       = Int
-  type PhaseContexts                  = js.Array[PhaseContext]
-  type ProjectArns                    = js.Array[NonEmptyString]
-  type ProjectArtifactsList           = js.Array[ProjectArtifacts]
-  type ProjectCacheModes              = js.Array[CacheMode]
-  type ProjectDescription             = String
-  type ProjectFileSystemLocations     = js.Array[ProjectFileSystemLocation]
-  type ProjectName                    = String
-  type ProjectNames                   = js.Array[NonEmptyString]
+  type BuildArtifactsList = js.Array[BuildArtifacts]
+  type BuildIds = js.Array[NonEmptyString]
+  type BuildPhases = js.Array[BuildPhase]
+  type BuildReportArns = js.Array[String]
+  type Builds = js.Array[Build]
+  type BuildsNotDeleted = js.Array[BuildNotDeleted]
+  type EnvironmentImages = js.Array[EnvironmentImage]
+  type EnvironmentLanguages = js.Array[EnvironmentLanguage]
+  type EnvironmentPlatforms = js.Array[EnvironmentPlatform]
+  type EnvironmentVariables = js.Array[EnvironmentVariable]
+  type ExportedEnvironmentVariables = js.Array[ExportedEnvironmentVariable]
+  type FilterGroup = js.Array[WebhookFilter]
+  type FilterGroups = js.Array[FilterGroup]
+  type GitCloneDepth = Int
+  type ImageVersions = js.Array[String]
+  type KeyInput = String
+  type NonEmptyString = String
+  type PageSize = Int
+  type PhaseContexts = js.Array[PhaseContext]
+  type ProjectArns = js.Array[NonEmptyString]
+  type ProjectArtifactsList = js.Array[ProjectArtifacts]
+  type ProjectCacheModes = js.Array[CacheMode]
+  type ProjectDescription = String
+  type ProjectFileSystemLocations = js.Array[ProjectFileSystemLocation]
+  type ProjectName = String
+  type ProjectNames = js.Array[NonEmptyString]
   type ProjectSecondarySourceVersions = js.Array[ProjectSourceVersion]
-  type ProjectSources                 = js.Array[ProjectSource]
-  type Projects                       = js.Array[Project]
-  type ReportArns                     = js.Array[NonEmptyString]
-  type ReportGroupArns                = js.Array[NonEmptyString]
-  type ReportGroupName                = String
-  type ReportGroups                   = js.Array[ReportGroup]
-  type ReportStatusCounts             = js.Dictionary[WrapperInt]
-  type Reports                        = js.Array[Report]
-  type SecurityGroupIds               = js.Array[NonEmptyString]
-  type SensitiveNonEmptyString        = String
-  type SourceCredentialsInfos         = js.Array[SourceCredentialsInfo]
-  type Subnets                        = js.Array[NonEmptyString]
-  type TagList                        = js.Array[Tag]
-  type TestCases                      = js.Array[TestCase]
-  type TimeOut                        = Int
-  type Timestamp                      = js.Date
-  type ValueInput                     = String
-  type WrapperBoolean                 = Boolean
-  type WrapperInt                     = Int
-  type WrapperLong                    = Double
+  type ProjectSources = js.Array[ProjectSource]
+  type Projects = js.Array[Project]
+  type ReportArns = js.Array[NonEmptyString]
+  type ReportGroupArns = js.Array[NonEmptyString]
+  type ReportGroupName = String
+  type ReportGroups = js.Array[ReportGroup]
+  type ReportStatusCounts = js.Dictionary[WrapperInt]
+  type Reports = js.Array[Report]
+  type SecurityGroupIds = js.Array[NonEmptyString]
+  type SensitiveNonEmptyString = String
+  type SourceCredentialsInfos = js.Array[SourceCredentialsInfo]
+  type Subnets = js.Array[NonEmptyString]
+  type TagList = js.Array[Tag]
+  type TestCases = js.Array[TestCase]
+  type TimeOut = Int
+  type Timestamp = js.Date
+  type ValueInput = String
+  type WrapperBoolean = Boolean
+  type WrapperInt = Int
+  type WrapperLong = Double
 
   implicit final class CodeBuildOps(private val service: CodeBuild) extends AnyVal {
 
@@ -140,51 +140,51 @@ package codebuild {
   class CodeBuild() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def batchDeleteBuilds(params: BatchDeleteBuildsInput): Request[BatchDeleteBuildsOutput]          = js.native
-    def batchGetBuilds(params: BatchGetBuildsInput): Request[BatchGetBuildsOutput]                   = js.native
-    def batchGetProjects(params: BatchGetProjectsInput): Request[BatchGetProjectsOutput]             = js.native
+    def batchDeleteBuilds(params: BatchDeleteBuildsInput): Request[BatchDeleteBuildsOutput] = js.native
+    def batchGetBuilds(params: BatchGetBuildsInput): Request[BatchGetBuildsOutput] = js.native
+    def batchGetProjects(params: BatchGetProjectsInput): Request[BatchGetProjectsOutput] = js.native
     def batchGetReportGroups(params: BatchGetReportGroupsInput): Request[BatchGetReportGroupsOutput] = js.native
-    def batchGetReports(params: BatchGetReportsInput): Request[BatchGetReportsOutput]                = js.native
-    def createProject(params: CreateProjectInput): Request[CreateProjectOutput]                      = js.native
-    def createReportGroup(params: CreateReportGroupInput): Request[CreateReportGroupOutput]          = js.native
-    def createWebhook(params: CreateWebhookInput): Request[CreateWebhookOutput]                      = js.native
-    def deleteProject(params: DeleteProjectInput): Request[DeleteProjectOutput]                      = js.native
-    def deleteReport(params: DeleteReportInput): Request[DeleteReportOutput]                         = js.native
-    def deleteReportGroup(params: DeleteReportGroupInput): Request[DeleteReportGroupOutput]          = js.native
+    def batchGetReports(params: BatchGetReportsInput): Request[BatchGetReportsOutput] = js.native
+    def createProject(params: CreateProjectInput): Request[CreateProjectOutput] = js.native
+    def createReportGroup(params: CreateReportGroupInput): Request[CreateReportGroupOutput] = js.native
+    def createWebhook(params: CreateWebhookInput): Request[CreateWebhookOutput] = js.native
+    def deleteProject(params: DeleteProjectInput): Request[DeleteProjectOutput] = js.native
+    def deleteReport(params: DeleteReportInput): Request[DeleteReportOutput] = js.native
+    def deleteReportGroup(params: DeleteReportGroupInput): Request[DeleteReportGroupOutput] = js.native
     def deleteResourcePolicy(params: DeleteResourcePolicyInput): Request[DeleteResourcePolicyOutput] = js.native
     def deleteSourceCredentials(params: DeleteSourceCredentialsInput): Request[DeleteSourceCredentialsOutput] =
       js.native
-    def deleteWebhook(params: DeleteWebhookInput): Request[DeleteWebhookOutput]             = js.native
+    def deleteWebhook(params: DeleteWebhookInput): Request[DeleteWebhookOutput] = js.native
     def describeTestCases(params: DescribeTestCasesInput): Request[DescribeTestCasesOutput] = js.native
     def getResourcePolicy(params: GetResourcePolicyInput): Request[GetResourcePolicyOutput] = js.native
     def importSourceCredentials(params: ImportSourceCredentialsInput): Request[ImportSourceCredentialsOutput] =
       js.native
     def invalidateProjectCache(params: InvalidateProjectCacheInput): Request[InvalidateProjectCacheOutput] = js.native
-    def listBuilds(params: ListBuildsInput): Request[ListBuildsOutput]                                     = js.native
-    def listBuildsForProject(params: ListBuildsForProjectInput): Request[ListBuildsForProjectOutput]       = js.native
+    def listBuilds(params: ListBuildsInput): Request[ListBuildsOutput] = js.native
+    def listBuildsForProject(params: ListBuildsForProjectInput): Request[ListBuildsForProjectOutput] = js.native
     def listCuratedEnvironmentImages(
         params: ListCuratedEnvironmentImagesInput
-    ): Request[ListCuratedEnvironmentImagesOutput]                                       = js.native
-    def listProjects(params: ListProjectsInput): Request[ListProjectsOutput]             = js.native
+    ): Request[ListCuratedEnvironmentImagesOutput] = js.native
+    def listProjects(params: ListProjectsInput): Request[ListProjectsOutput] = js.native
     def listReportGroups(params: ListReportGroupsInput): Request[ListReportGroupsOutput] = js.native
-    def listReports(params: ListReportsInput): Request[ListReportsOutput]                = js.native
+    def listReports(params: ListReportsInput): Request[ListReportsOutput] = js.native
     def listReportsForReportGroup(params: ListReportsForReportGroupInput): Request[ListReportsForReportGroupOutput] =
       js.native
-    def listSharedProjects(params: ListSharedProjectsInput): Request[ListSharedProjectsOutput]             = js.native
+    def listSharedProjects(params: ListSharedProjectsInput): Request[ListSharedProjectsOutput] = js.native
     def listSharedReportGroups(params: ListSharedReportGroupsInput): Request[ListSharedReportGroupsOutput] = js.native
-    def listSourceCredentials(params: ListSourceCredentialsInput): Request[ListSourceCredentialsOutput]    = js.native
-    def putResourcePolicy(params: PutResourcePolicyInput): Request[PutResourcePolicyOutput]                = js.native
-    def startBuild(params: StartBuildInput): Request[StartBuildOutput]                                     = js.native
-    def stopBuild(params: StopBuildInput): Request[StopBuildOutput]                                        = js.native
-    def updateProject(params: UpdateProjectInput): Request[UpdateProjectOutput]                            = js.native
-    def updateReportGroup(params: UpdateReportGroupInput): Request[UpdateReportGroupOutput]                = js.native
-    def updateWebhook(params: UpdateWebhookInput): Request[UpdateWebhookOutput]                            = js.native
+    def listSourceCredentials(params: ListSourceCredentialsInput): Request[ListSourceCredentialsOutput] = js.native
+    def putResourcePolicy(params: PutResourcePolicyInput): Request[PutResourcePolicyOutput] = js.native
+    def startBuild(params: StartBuildInput): Request[StartBuildOutput] = js.native
+    def stopBuild(params: StopBuildInput): Request[StopBuildOutput] = js.native
+    def updateProject(params: UpdateProjectInput): Request[UpdateProjectOutput] = js.native
+    def updateReportGroup(params: UpdateReportGroupInput): Request[UpdateReportGroupOutput] = js.native
+    def updateWebhook(params: UpdateWebhookInput): Request[UpdateWebhookOutput] = js.native
   }
 
   @js.native
   sealed trait ArtifactNamespace extends js.Any
   object ArtifactNamespace extends js.Object {
-    val NONE     = "NONE".asInstanceOf[ArtifactNamespace]
+    val NONE = "NONE".asInstanceOf[ArtifactNamespace]
     val BUILD_ID = "BUILD_ID".asInstanceOf[ArtifactNamespace]
 
     val values = js.Object.freeze(js.Array(NONE, BUILD_ID))
@@ -194,7 +194,7 @@ package codebuild {
   sealed trait ArtifactPackaging extends js.Any
   object ArtifactPackaging extends js.Object {
     val NONE = "NONE".asInstanceOf[ArtifactPackaging]
-    val ZIP  = "ZIP".asInstanceOf[ArtifactPackaging]
+    val ZIP = "ZIP".asInstanceOf[ArtifactPackaging]
 
     val values = js.Object.freeze(js.Array(NONE, ZIP))
   }
@@ -203,7 +203,7 @@ package codebuild {
   sealed trait ArtifactsType extends js.Any
   object ArtifactsType extends js.Object {
     val CODEPIPELINE = "CODEPIPELINE".asInstanceOf[ArtifactsType]
-    val S3           = "S3".asInstanceOf[ArtifactsType]
+    val S3 = "S3".asInstanceOf[ArtifactsType]
     val NO_ARTIFACTS = "NO_ARTIFACTS".asInstanceOf[ArtifactsType]
 
     val values = js.Object.freeze(js.Array(CODEPIPELINE, S3, NO_ARTIFACTS))
@@ -212,8 +212,8 @@ package codebuild {
   @js.native
   sealed trait AuthType extends js.Any
   object AuthType extends js.Object {
-    val OAUTH                 = "OAUTH".asInstanceOf[AuthType]
-    val BASIC_AUTH            = "BASIC_AUTH".asInstanceOf[AuthType]
+    val OAUTH = "OAUTH".asInstanceOf[AuthType]
+    val BASIC_AUTH = "BASIC_AUTH".asInstanceOf[AuthType]
     val PERSONAL_ACCESS_TOKEN = "PERSONAL_ACCESS_TOKEN".asInstanceOf[AuthType]
 
     val values = js.Object.freeze(js.Array(OAUTH, BASIC_AUTH, PERSONAL_ACCESS_TOKEN))
@@ -605,17 +605,17 @@ package codebuild {
   @js.native
   sealed trait BuildPhaseType extends js.Any
   object BuildPhaseType extends js.Object {
-    val SUBMITTED        = "SUBMITTED".asInstanceOf[BuildPhaseType]
-    val QUEUED           = "QUEUED".asInstanceOf[BuildPhaseType]
-    val PROVISIONING     = "PROVISIONING".asInstanceOf[BuildPhaseType]
-    val DOWNLOAD_SOURCE  = "DOWNLOAD_SOURCE".asInstanceOf[BuildPhaseType]
-    val INSTALL          = "INSTALL".asInstanceOf[BuildPhaseType]
-    val PRE_BUILD        = "PRE_BUILD".asInstanceOf[BuildPhaseType]
-    val BUILD            = "BUILD".asInstanceOf[BuildPhaseType]
-    val POST_BUILD       = "POST_BUILD".asInstanceOf[BuildPhaseType]
+    val SUBMITTED = "SUBMITTED".asInstanceOf[BuildPhaseType]
+    val QUEUED = "QUEUED".asInstanceOf[BuildPhaseType]
+    val PROVISIONING = "PROVISIONING".asInstanceOf[BuildPhaseType]
+    val DOWNLOAD_SOURCE = "DOWNLOAD_SOURCE".asInstanceOf[BuildPhaseType]
+    val INSTALL = "INSTALL".asInstanceOf[BuildPhaseType]
+    val PRE_BUILD = "PRE_BUILD".asInstanceOf[BuildPhaseType]
+    val BUILD = "BUILD".asInstanceOf[BuildPhaseType]
+    val POST_BUILD = "POST_BUILD".asInstanceOf[BuildPhaseType]
     val UPLOAD_ARTIFACTS = "UPLOAD_ARTIFACTS".asInstanceOf[BuildPhaseType]
-    val FINALIZING       = "FINALIZING".asInstanceOf[BuildPhaseType]
-    val COMPLETED        = "COMPLETED".asInstanceOf[BuildPhaseType]
+    val FINALIZING = "FINALIZING".asInstanceOf[BuildPhaseType]
+    val COMPLETED = "COMPLETED".asInstanceOf[BuildPhaseType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -660,8 +660,8 @@ package codebuild {
   sealed trait CacheMode extends js.Any
   object CacheMode extends js.Object {
     val LOCAL_DOCKER_LAYER_CACHE = "LOCAL_DOCKER_LAYER_CACHE".asInstanceOf[CacheMode]
-    val LOCAL_SOURCE_CACHE       = "LOCAL_SOURCE_CACHE".asInstanceOf[CacheMode]
-    val LOCAL_CUSTOM_CACHE       = "LOCAL_CUSTOM_CACHE".asInstanceOf[CacheMode]
+    val LOCAL_SOURCE_CACHE = "LOCAL_SOURCE_CACHE".asInstanceOf[CacheMode]
+    val LOCAL_CUSTOM_CACHE = "LOCAL_CUSTOM_CACHE".asInstanceOf[CacheMode]
 
     val values = js.Object.freeze(js.Array(LOCAL_DOCKER_LAYER_CACHE, LOCAL_SOURCE_CACHE, LOCAL_CUSTOM_CACHE))
   }
@@ -670,8 +670,8 @@ package codebuild {
   sealed trait CacheType extends js.Any
   object CacheType extends js.Object {
     val NO_CACHE = "NO_CACHE".asInstanceOf[CacheType]
-    val S3       = "S3".asInstanceOf[CacheType]
-    val LOCAL    = "LOCAL".asInstanceOf[CacheType]
+    val S3 = "S3".asInstanceOf[CacheType]
+    val LOCAL = "LOCAL".asInstanceOf[CacheType]
 
     val values = js.Object.freeze(js.Array(NO_CACHE, S3, LOCAL))
   }
@@ -706,9 +706,9 @@ package codebuild {
   @js.native
   sealed trait ComputeType extends js.Any
   object ComputeType extends js.Object {
-    val BUILD_GENERAL1_SMALL   = "BUILD_GENERAL1_SMALL".asInstanceOf[ComputeType]
-    val BUILD_GENERAL1_MEDIUM  = "BUILD_GENERAL1_MEDIUM".asInstanceOf[ComputeType]
-    val BUILD_GENERAL1_LARGE   = "BUILD_GENERAL1_LARGE".asInstanceOf[ComputeType]
+    val BUILD_GENERAL1_SMALL = "BUILD_GENERAL1_SMALL".asInstanceOf[ComputeType]
+    val BUILD_GENERAL1_MEDIUM = "BUILD_GENERAL1_MEDIUM".asInstanceOf[ComputeType]
+    val BUILD_GENERAL1_LARGE = "BUILD_GENERAL1_LARGE".asInstanceOf[ComputeType]
     val BUILD_GENERAL1_2XLARGE = "BUILD_GENERAL1_2XLARGE".asInstanceOf[ComputeType]
 
     val values = js.Object.freeze(
@@ -763,11 +763,11 @@ package codebuild {
         vpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): CreateProjectInput = {
       val __obj = js.Dynamic.literal(
-        "artifacts"   -> artifacts.asInstanceOf[js.Any],
+        "artifacts" -> artifacts.asInstanceOf[js.Any],
         "environment" -> environment.asInstanceOf[js.Any],
-        "name"        -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "serviceRole" -> serviceRole.asInstanceOf[js.Any],
-        "source"      -> source.asInstanceOf[js.Any]
+        "source" -> source.asInstanceOf[js.Any]
       )
 
       badgeEnabled.foreach(__v => __obj.updateDynamic("badgeEnabled")(__v.asInstanceOf[js.Any]))
@@ -822,8 +822,8 @@ package codebuild {
     ): CreateReportGroupInput = {
       val __obj = js.Dynamic.literal(
         "exportConfig" -> exportConfig.asInstanceOf[js.Any],
-        "name"         -> name.asInstanceOf[js.Any],
-        "type"         -> `type`.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
       )
 
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -1202,10 +1202,10 @@ package codebuild {
   @js.native
   sealed trait EnvironmentType extends js.Any
   object EnvironmentType extends js.Object {
-    val WINDOWS_CONTAINER   = "WINDOWS_CONTAINER".asInstanceOf[EnvironmentType]
-    val LINUX_CONTAINER     = "LINUX_CONTAINER".asInstanceOf[EnvironmentType]
+    val WINDOWS_CONTAINER = "WINDOWS_CONTAINER".asInstanceOf[EnvironmentType]
+    val LINUX_CONTAINER = "LINUX_CONTAINER".asInstanceOf[EnvironmentType]
     val LINUX_GPU_CONTAINER = "LINUX_GPU_CONTAINER".asInstanceOf[EnvironmentType]
-    val ARM_CONTAINER       = "ARM_CONTAINER".asInstanceOf[EnvironmentType]
+    val ARM_CONTAINER = "ARM_CONTAINER".asInstanceOf[EnvironmentType]
 
     val values = js.Object.freeze(js.Array(WINDOWS_CONTAINER, LINUX_CONTAINER, LINUX_GPU_CONTAINER, ARM_CONTAINER))
   }
@@ -1228,7 +1228,7 @@ package codebuild {
         `type`: js.UndefOr[EnvironmentVariableType] = js.undefined
     ): EnvironmentVariable = {
       val __obj = js.Dynamic.literal(
-        "name"  -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
 
@@ -1240,7 +1240,7 @@ package codebuild {
   @js.native
   sealed trait EnvironmentVariableType extends js.Any
   object EnvironmentVariableType extends js.Object {
-    val PLAINTEXT       = "PLAINTEXT".asInstanceOf[EnvironmentVariableType]
+    val PLAINTEXT = "PLAINTEXT".asInstanceOf[EnvironmentVariableType]
     val PARAMETER_STORE = "PARAMETER_STORE".asInstanceOf[EnvironmentVariableType]
     val SECRETS_MANAGER = "SECRETS_MANAGER".asInstanceOf[EnvironmentVariableType]
 
@@ -1335,7 +1335,7 @@ package codebuild {
   @js.native
   sealed trait ImagePullCredentialsType extends js.Any
   object ImagePullCredentialsType extends js.Object {
-    val CODEBUILD    = "CODEBUILD".asInstanceOf[ImagePullCredentialsType]
+    val CODEBUILD = "CODEBUILD".asInstanceOf[ImagePullCredentialsType]
     val SERVICE_ROLE = "SERVICE_ROLE".asInstanceOf[ImagePullCredentialsType]
 
     val values = js.Object.freeze(js.Array(CODEBUILD, SERVICE_ROLE))
@@ -1360,9 +1360,9 @@ package codebuild {
         username: js.UndefOr[NonEmptyString] = js.undefined
     ): ImportSourceCredentialsInput = {
       val __obj = js.Dynamic.literal(
-        "authType"   -> authType.asInstanceOf[js.Any],
+        "authType" -> authType.asInstanceOf[js.Any],
         "serverType" -> serverType.asInstanceOf[js.Any],
-        "token"      -> token.asInstanceOf[js.Any]
+        "token" -> token.asInstanceOf[js.Any]
       )
 
       shouldOverwrite.foreach(__v => __obj.updateDynamic("shouldOverwrite")(__v.asInstanceOf[js.Any]))
@@ -1421,16 +1421,16 @@ package codebuild {
   @js.native
   sealed trait LanguageType extends js.Any
   object LanguageType extends js.Object {
-    val JAVA    = "JAVA".asInstanceOf[LanguageType]
-    val PYTHON  = "PYTHON".asInstanceOf[LanguageType]
+    val JAVA = "JAVA".asInstanceOf[LanguageType]
+    val PYTHON = "PYTHON".asInstanceOf[LanguageType]
     val NODE_JS = "NODE_JS".asInstanceOf[LanguageType]
-    val RUBY    = "RUBY".asInstanceOf[LanguageType]
-    val GOLANG  = "GOLANG".asInstanceOf[LanguageType]
-    val DOCKER  = "DOCKER".asInstanceOf[LanguageType]
+    val RUBY = "RUBY".asInstanceOf[LanguageType]
+    val GOLANG = "GOLANG".asInstanceOf[LanguageType]
+    val DOCKER = "DOCKER".asInstanceOf[LanguageType]
     val ANDROID = "ANDROID".asInstanceOf[LanguageType]
-    val DOTNET  = "DOTNET".asInstanceOf[LanguageType]
-    val BASE    = "BASE".asInstanceOf[LanguageType]
-    val PHP     = "PHP".asInstanceOf[LanguageType]
+    val DOTNET = "DOTNET".asInstanceOf[LanguageType]
+    val BASE = "BASE".asInstanceOf[LanguageType]
+    val PHP = "PHP".asInstanceOf[LanguageType]
 
     val values = js.Object.freeze(js.Array(JAVA, PYTHON, NODE_JS, RUBY, GOLANG, DOCKER, ANDROID, DOTNET, BASE, PHP))
   }
@@ -1865,7 +1865,7 @@ package codebuild {
   @js.native
   sealed trait LogsConfigStatusType extends js.Any
   object LogsConfigStatusType extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[LogsConfigStatusType]
+    val ENABLED = "ENABLED".asInstanceOf[LogsConfigStatusType]
     val DISABLED = "DISABLED".asInstanceOf[LogsConfigStatusType]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -1958,9 +1958,9 @@ package codebuild {
   @js.native
   sealed trait PlatformType extends js.Any
   object PlatformType extends js.Object {
-    val DEBIAN         = "DEBIAN".asInstanceOf[PlatformType]
-    val AMAZON_LINUX   = "AMAZON_LINUX".asInstanceOf[PlatformType]
-    val UBUNTU         = "UBUNTU".asInstanceOf[PlatformType]
+    val DEBIAN = "DEBIAN".asInstanceOf[PlatformType]
+    val AMAZON_LINUX = "AMAZON_LINUX".asInstanceOf[PlatformType]
+    val UBUNTU = "UBUNTU".asInstanceOf[PlatformType]
     val WINDOWS_SERVER = "WINDOWS_SERVER".asInstanceOf[PlatformType]
 
     val values = js.Object.freeze(js.Array(DEBIAN, AMAZON_LINUX, UBUNTU, WINDOWS_SERVER))
@@ -2174,8 +2174,8 @@ package codebuild {
     ): ProjectEnvironment = {
       val __obj = js.Dynamic.literal(
         "computeType" -> computeType.asInstanceOf[js.Any],
-        "image"       -> image.asInstanceOf[js.Any],
-        "type"        -> `type`.asInstanceOf[js.Any]
+        "image" -> image.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
       )
 
       certificate.foreach(__v => __obj.updateDynamic("certificate")(__v.asInstanceOf[js.Any]))
@@ -2221,8 +2221,8 @@ package codebuild {
   @js.native
   sealed trait ProjectSortByType extends js.Any
   object ProjectSortByType extends js.Object {
-    val NAME               = "NAME".asInstanceOf[ProjectSortByType]
-    val CREATED_TIME       = "CREATED_TIME".asInstanceOf[ProjectSortByType]
+    val NAME = "NAME".asInstanceOf[ProjectSortByType]
+    val CREATED_TIME = "CREATED_TIME".asInstanceOf[ProjectSortByType]
     val LAST_MODIFIED_TIME = "LAST_MODIFIED_TIME".asInstanceOf[ProjectSortByType]
 
     val values = js.Object.freeze(js.Array(NAME, CREATED_TIME, LAST_MODIFIED_TIME))
@@ -2293,7 +2293,7 @@ package codebuild {
     ): ProjectSourceVersion = {
       val __obj = js.Dynamic.literal(
         "sourceIdentifier" -> sourceIdentifier.asInstanceOf[js.Any],
-        "sourceVersion"    -> sourceVersion.asInstanceOf[js.Any]
+        "sourceVersion" -> sourceVersion.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ProjectSourceVersion]
@@ -2313,7 +2313,7 @@ package codebuild {
         resourceArn: NonEmptyString
     ): PutResourcePolicyInput = {
       val __obj = js.Dynamic.literal(
-        "policy"      -> policy.asInstanceOf[js.Any],
+        "policy" -> policy.asInstanceOf[js.Any],
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
 
@@ -2356,7 +2356,7 @@ package codebuild {
         credentialProvider: CredentialProviderType
     ): RegistryCredential = {
       val __obj = js.Dynamic.literal(
-        "credential"         -> credential.asInstanceOf[js.Any],
+        "credential" -> credential.asInstanceOf[js.Any],
         "credentialProvider" -> credentialProvider.asInstanceOf[js.Any]
       )
 
@@ -2438,7 +2438,7 @@ package codebuild {
   @js.native
   sealed trait ReportExportConfigType extends js.Any
   object ReportExportConfigType extends js.Object {
-    val S3        = "S3".asInstanceOf[ReportExportConfigType]
+    val S3 = "S3".asInstanceOf[ReportExportConfigType]
     val NO_EXPORT = "NO_EXPORT".asInstanceOf[ReportExportConfigType]
 
     val values = js.Object.freeze(js.Array(S3, NO_EXPORT))
@@ -2503,8 +2503,8 @@ package codebuild {
   @js.native
   sealed trait ReportGroupSortByType extends js.Any
   object ReportGroupSortByType extends js.Object {
-    val NAME               = "NAME".asInstanceOf[ReportGroupSortByType]
-    val CREATED_TIME       = "CREATED_TIME".asInstanceOf[ReportGroupSortByType]
+    val NAME = "NAME".asInstanceOf[ReportGroupSortByType]
+    val CREATED_TIME = "CREATED_TIME".asInstanceOf[ReportGroupSortByType]
     val LAST_MODIFIED_TIME = "LAST_MODIFIED_TIME".asInstanceOf[ReportGroupSortByType]
 
     val values = js.Object.freeze(js.Array(NAME, CREATED_TIME, LAST_MODIFIED_TIME))
@@ -2513,7 +2513,7 @@ package codebuild {
   @js.native
   sealed trait ReportPackagingType extends js.Any
   object ReportPackagingType extends js.Object {
-    val ZIP  = "ZIP".asInstanceOf[ReportPackagingType]
+    val ZIP = "ZIP".asInstanceOf[ReportPackagingType]
     val NONE = "NONE".asInstanceOf[ReportPackagingType]
 
     val values = js.Object.freeze(js.Array(ZIP, NONE))
@@ -2523,10 +2523,10 @@ package codebuild {
   sealed trait ReportStatusType extends js.Any
   object ReportStatusType extends js.Object {
     val GENERATING = "GENERATING".asInstanceOf[ReportStatusType]
-    val SUCCEEDED  = "SUCCEEDED".asInstanceOf[ReportStatusType]
-    val FAILED     = "FAILED".asInstanceOf[ReportStatusType]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[ReportStatusType]
+    val FAILED = "FAILED".asInstanceOf[ReportStatusType]
     val INCOMPLETE = "INCOMPLETE".asInstanceOf[ReportStatusType]
-    val DELETING   = "DELETING".asInstanceOf[ReportStatusType]
+    val DELETING = "DELETING".asInstanceOf[ReportStatusType]
 
     val values = js.Object.freeze(js.Array(GENERATING, SUCCEEDED, FAILED, INCOMPLETE, DELETING))
   }
@@ -2600,8 +2600,8 @@ package codebuild {
   @js.native
   sealed trait ServerType extends js.Any
   object ServerType extends js.Object {
-    val GITHUB            = "GITHUB".asInstanceOf[ServerType]
-    val BITBUCKET         = "BITBUCKET".asInstanceOf[ServerType]
+    val GITHUB = "GITHUB".asInstanceOf[ServerType]
+    val BITBUCKET = "BITBUCKET".asInstanceOf[ServerType]
     val GITHUB_ENTERPRISE = "GITHUB_ENTERPRISE".asInstanceOf[ServerType]
 
     val values = js.Object.freeze(js.Array(GITHUB, BITBUCKET, GITHUB_ENTERPRISE))
@@ -2610,7 +2610,7 @@ package codebuild {
   @js.native
   sealed trait SharedResourceSortByType extends js.Any
   object SharedResourceSortByType extends js.Object {
-    val ARN           = "ARN".asInstanceOf[SharedResourceSortByType]
+    val ARN = "ARN".asInstanceOf[SharedResourceSortByType]
     val MODIFIED_TIME = "MODIFIED_TIME".asInstanceOf[SharedResourceSortByType]
 
     val values = js.Object.freeze(js.Array(ARN, MODIFIED_TIME))
@@ -2619,7 +2619,7 @@ package codebuild {
   @js.native
   sealed trait SortOrderType extends js.Any
   object SortOrderType extends js.Object {
-    val ASCENDING  = "ASCENDING".asInstanceOf[SortOrderType]
+    val ASCENDING = "ASCENDING".asInstanceOf[SortOrderType]
     val DESCENDING = "DESCENDING".asInstanceOf[SortOrderType]
 
     val values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
@@ -2686,13 +2686,13 @@ package codebuild {
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType extends js.Object {
-    val CODECOMMIT        = "CODECOMMIT".asInstanceOf[SourceType]
-    val CODEPIPELINE      = "CODEPIPELINE".asInstanceOf[SourceType]
-    val GITHUB            = "GITHUB".asInstanceOf[SourceType]
-    val S3                = "S3".asInstanceOf[SourceType]
-    val BITBUCKET         = "BITBUCKET".asInstanceOf[SourceType]
+    val CODECOMMIT = "CODECOMMIT".asInstanceOf[SourceType]
+    val CODEPIPELINE = "CODEPIPELINE".asInstanceOf[SourceType]
+    val GITHUB = "GITHUB".asInstanceOf[SourceType]
+    val S3 = "S3".asInstanceOf[SourceType]
+    val BITBUCKET = "BITBUCKET".asInstanceOf[SourceType]
     val GITHUB_ENTERPRISE = "GITHUB_ENTERPRISE".asInstanceOf[SourceType]
-    val NO_SOURCE         = "NO_SOURCE".asInstanceOf[SourceType]
+    val NO_SOURCE = "NO_SOURCE".asInstanceOf[SourceType]
 
     val values =
       js.Object.freeze(js.Array(CODECOMMIT, CODEPIPELINE, GITHUB, S3, BITBUCKET, GITHUB_ENTERPRISE, NO_SOURCE))
@@ -2840,12 +2840,12 @@ package codebuild {
   @js.native
   sealed trait StatusType extends js.Any
   object StatusType extends js.Object {
-    val SUCCEEDED   = "SUCCEEDED".asInstanceOf[StatusType]
-    val FAILED      = "FAILED".asInstanceOf[StatusType]
-    val FAULT       = "FAULT".asInstanceOf[StatusType]
-    val TIMED_OUT   = "TIMED_OUT".asInstanceOf[StatusType]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[StatusType]
+    val FAILED = "FAILED".asInstanceOf[StatusType]
+    val FAULT = "FAULT".asInstanceOf[StatusType]
+    val TIMED_OUT = "TIMED_OUT".asInstanceOf[StatusType]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[StatusType]
-    val STOPPED     = "STOPPED".asInstanceOf[StatusType]
+    val STOPPED = "STOPPED".asInstanceOf[StatusType]
 
     val values = js.Object.freeze(js.Array(SUCCEEDED, FAILED, FAULT, TIMED_OUT, IN_PROGRESS, STOPPED))
   }
@@ -2985,8 +2985,8 @@ package codebuild {
     ): TestReportSummary = {
       val __obj = js.Dynamic.literal(
         "durationInNanoSeconds" -> durationInNanoSeconds.asInstanceOf[js.Any],
-        "statusCounts"          -> statusCounts.asInstanceOf[js.Any],
-        "total"                 -> total.asInstanceOf[js.Any]
+        "statusCounts" -> statusCounts.asInstanceOf[js.Any],
+        "total" -> total.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TestReportSummary]
@@ -3242,7 +3242,7 @@ package codebuild {
     ): WebhookFilter = {
       val __obj = js.Dynamic.literal(
         "pattern" -> pattern.asInstanceOf[js.Any],
-        "type"    -> `type`.asInstanceOf[js.Any]
+        "type" -> `type`.asInstanceOf[js.Any]
       )
 
       excludeMatchedPattern.foreach(__v => __obj.updateDynamic("excludeMatchedPattern")(__v.asInstanceOf[js.Any]))
@@ -3253,12 +3253,12 @@ package codebuild {
   @js.native
   sealed trait WebhookFilterType extends js.Any
   object WebhookFilterType extends js.Object {
-    val EVENT            = "EVENT".asInstanceOf[WebhookFilterType]
-    val BASE_REF         = "BASE_REF".asInstanceOf[WebhookFilterType]
-    val HEAD_REF         = "HEAD_REF".asInstanceOf[WebhookFilterType]
+    val EVENT = "EVENT".asInstanceOf[WebhookFilterType]
+    val BASE_REF = "BASE_REF".asInstanceOf[WebhookFilterType]
+    val HEAD_REF = "HEAD_REF".asInstanceOf[WebhookFilterType]
     val ACTOR_ACCOUNT_ID = "ACTOR_ACCOUNT_ID".asInstanceOf[WebhookFilterType]
-    val FILE_PATH        = "FILE_PATH".asInstanceOf[WebhookFilterType]
-    val COMMIT_MESSAGE   = "COMMIT_MESSAGE".asInstanceOf[WebhookFilterType]
+    val FILE_PATH = "FILE_PATH".asInstanceOf[WebhookFilterType]
+    val COMMIT_MESSAGE = "COMMIT_MESSAGE".asInstanceOf[WebhookFilterType]
 
     val values = js.Object.freeze(js.Array(EVENT, BASE_REF, HEAD_REF, ACTOR_ACCOUNT_ID, FILE_PATH, COMMIT_MESSAGE))
   }

@@ -7,14 +7,14 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object pricing {
-  type AttributeNameList  = js.Array[String]
+  type AttributeNameList = js.Array[String]
   type AttributeValueList = js.Array[AttributeValue]
-  type BoxedInteger       = Int
-  type Filters            = js.Array[Filter]
-  type PriceList          = js.Array[PriceListItemJSON]
-  type PriceListItemJSON  = String
-  type ServiceList        = js.Array[Service]
-  type errorMessage       = String
+  type BoxedInteger = Int
+  type Filters = js.Array[Filter]
+  type PriceList = js.Array[PriceListItemJSON]
+  type PriceListItemJSON = String
+  type ServiceList = js.Array[Service]
+  type errorMessage = String
 
   implicit final class PricingOps(private val service: Pricing) extends AnyVal {
 
@@ -33,9 +33,9 @@ package pricing {
   class Pricing() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def describeServices(params: DescribeServicesRequest): Request[DescribeServicesResponse]       = js.native
+    def describeServices(params: DescribeServicesRequest): Request[DescribeServicesResponse] = js.native
     def getAttributeValues(params: GetAttributeValuesRequest): Request[GetAttributeValuesResponse] = js.native
-    def getProducts(params: GetProductsRequest): Request[GetProductsResponse]                      = js.native
+    def getProducts(params: GetProductsRequest): Request[GetProductsResponse] = js.native
   }
 
   /**
@@ -131,7 +131,7 @@ package pricing {
     ): Filter = {
       val __obj = js.Dynamic.literal(
         "Field" -> Field.asInstanceOf[js.Any],
-        "Type"  -> Type.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -165,7 +165,7 @@ package pricing {
     ): GetAttributeValuesRequest = {
       val __obj = js.Dynamic.literal(
         "AttributeName" -> AttributeName.asInstanceOf[js.Any],
-        "ServiceCode"   -> ServiceCode.asInstanceOf[js.Any]
+        "ServiceCode" -> ServiceCode.asInstanceOf[js.Any]
       )
 
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))

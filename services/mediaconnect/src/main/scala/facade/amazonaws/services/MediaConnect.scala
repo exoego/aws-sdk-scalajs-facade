@@ -7,21 +7,21 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object mediaconnect {
-  type MaxResults                      = Int
-  type __integer                       = Int
-  type __listOfAddOutputRequest        = js.Array[AddOutputRequest]
-  type __listOfEntitlement             = js.Array[Entitlement]
+  type MaxResults = Int
+  type __integer = Int
+  type __listOfAddOutputRequest = js.Array[AddOutputRequest]
+  type __listOfEntitlement = js.Array[Entitlement]
   type __listOfGrantEntitlementRequest = js.Array[GrantEntitlementRequest]
-  type __listOfListedEntitlement       = js.Array[ListedEntitlement]
-  type __listOfListedFlow              = js.Array[ListedFlow]
-  type __listOfOutput                  = js.Array[Output]
-  type __listOfSetSourceRequest        = js.Array[SetSourceRequest]
-  type __listOfSource                  = js.Array[Source]
-  type __listOfVpcInterface            = js.Array[VpcInterface]
-  type __listOfVpcInterfaceRequest     = js.Array[VpcInterfaceRequest]
-  type __listOf__string                = js.Array[__string]
-  type __mapOf__string                 = js.Dictionary[__string]
-  type __string                        = String
+  type __listOfListedEntitlement = js.Array[ListedEntitlement]
+  type __listOfListedFlow = js.Array[ListedFlow]
+  type __listOfOutput = js.Array[Output]
+  type __listOfSetSourceRequest = js.Array[SetSourceRequest]
+  type __listOfSource = js.Array[Source]
+  type __listOfVpcInterface = js.Array[VpcInterface]
+  type __listOfVpcInterfaceRequest = js.Array[VpcInterfaceRequest]
+  type __listOf__string = js.Array[__string]
+  type __mapOf__string = js.Dictionary[__string]
+  type __string = String
 
   implicit final class MediaConnectOps(private val service: MediaConnect) extends AnyVal {
 
@@ -82,29 +82,29 @@ package mediaconnect {
   class MediaConnect() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def addFlowOutputs(params: AddFlowOutputsRequest): Request[AddFlowOutputsResponse]                      = js.native
-    def addFlowSources(params: AddFlowSourcesRequest): Request[AddFlowSourcesResponse]                      = js.native
-    def addFlowVpcInterfaces(params: AddFlowVpcInterfacesRequest): Request[AddFlowVpcInterfacesResponse]    = js.native
-    def createFlow(params: CreateFlowRequest): Request[CreateFlowResponse]                                  = js.native
-    def deleteFlow(params: DeleteFlowRequest): Request[DeleteFlowResponse]                                  = js.native
-    def describeFlow(params: DescribeFlowRequest): Request[DescribeFlowResponse]                            = js.native
+    def addFlowOutputs(params: AddFlowOutputsRequest): Request[AddFlowOutputsResponse] = js.native
+    def addFlowSources(params: AddFlowSourcesRequest): Request[AddFlowSourcesResponse] = js.native
+    def addFlowVpcInterfaces(params: AddFlowVpcInterfacesRequest): Request[AddFlowVpcInterfacesResponse] = js.native
+    def createFlow(params: CreateFlowRequest): Request[CreateFlowResponse] = js.native
+    def deleteFlow(params: DeleteFlowRequest): Request[DeleteFlowResponse] = js.native
+    def describeFlow(params: DescribeFlowRequest): Request[DescribeFlowResponse] = js.native
     def grantFlowEntitlements(params: GrantFlowEntitlementsRequest): Request[GrantFlowEntitlementsResponse] = js.native
-    def listEntitlements(params: ListEntitlementsRequest): Request[ListEntitlementsResponse]                = js.native
-    def listFlows(params: ListFlowsRequest): Request[ListFlowsResponse]                                     = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
-    def removeFlowOutput(params: RemoveFlowOutputRequest): Request[RemoveFlowOutputResponse]                = js.native
-    def removeFlowSource(params: RemoveFlowSourceRequest): Request[RemoveFlowSourceResponse]                = js.native
+    def listEntitlements(params: ListEntitlementsRequest): Request[ListEntitlementsResponse] = js.native
+    def listFlows(params: ListFlowsRequest): Request[ListFlowsResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def removeFlowOutput(params: RemoveFlowOutputRequest): Request[RemoveFlowOutputResponse] = js.native
+    def removeFlowSource(params: RemoveFlowSourceRequest): Request[RemoveFlowSourceResponse] = js.native
     def removeFlowVpcInterface(params: RemoveFlowVpcInterfaceRequest): Request[RemoveFlowVpcInterfaceResponse] =
       js.native
     def revokeFlowEntitlement(params: RevokeFlowEntitlementRequest): Request[RevokeFlowEntitlementResponse] = js.native
-    def startFlow(params: StartFlowRequest): Request[StartFlowResponse]                                     = js.native
-    def stopFlow(params: StopFlowRequest): Request[StopFlowResponse]                                        = js.native
-    def tagResource(params: TagResourceRequest): Request[js.Object]                                         = js.native
-    def untagResource(params: UntagResourceRequest): Request[js.Object]                                     = js.native
-    def updateFlow(params: UpdateFlowRequest): Request[UpdateFlowResponse]                                  = js.native
+    def startFlow(params: StartFlowRequest): Request[StartFlowResponse] = js.native
+    def stopFlow(params: StopFlowRequest): Request[StopFlowResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
+    def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
+    def updateFlow(params: UpdateFlowRequest): Request[UpdateFlowResponse] = js.native
     def updateFlowEntitlement(params: UpdateFlowEntitlementRequest): Request[UpdateFlowEntitlementResponse] = js.native
-    def updateFlowOutput(params: UpdateFlowOutputRequest): Request[UpdateFlowOutputResponse]                = js.native
-    def updateFlowSource(params: UpdateFlowSourceRequest): Request[UpdateFlowSourceResponse]                = js.native
+    def updateFlowOutput(params: UpdateFlowOutputRequest): Request[UpdateFlowOutputResponse] = js.native
+    def updateFlowSource(params: UpdateFlowSourceRequest): Request[UpdateFlowSourceResponse] = js.native
   }
 
   /**
@@ -209,7 +209,7 @@ package mediaconnect {
         VpcInterfaces: __listOfVpcInterfaceRequest
     ): AddFlowVpcInterfacesRequest = {
       val __obj = js.Dynamic.literal(
-        "FlowArn"       -> FlowArn.asInstanceOf[js.Any],
+        "FlowArn" -> FlowArn.asInstanceOf[js.Any],
         "VpcInterfaces" -> VpcInterfaces.asInstanceOf[js.Any]
       )
 
@@ -463,7 +463,7 @@ package mediaconnect {
     ): Encryption = {
       val __obj = js.Dynamic.literal(
         "Algorithm" -> Algorithm.asInstanceOf[js.Any],
-        "RoleArn"   -> RoleArn.asInstanceOf[js.Any]
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
       ConstantInitializationVector.foreach(__v =>
@@ -504,8 +504,8 @@ package mediaconnect {
     ): Entitlement = {
       val __obj = js.Dynamic.literal(
         "EntitlementArn" -> EntitlementArn.asInstanceOf[js.Any],
-        "Name"           -> Name.asInstanceOf[js.Any],
-        "Subscribers"    -> Subscribers.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Subscribers" -> Subscribers.asInstanceOf[js.Any]
       )
 
       DataTransferSubscriberFeePercent.foreach(__v =>
@@ -576,12 +576,12 @@ package mediaconnect {
     ): Flow = {
       val __obj = js.Dynamic.literal(
         "AvailabilityZone" -> AvailabilityZone.asInstanceOf[js.Any],
-        "Entitlements"     -> Entitlements.asInstanceOf[js.Any],
-        "FlowArn"          -> FlowArn.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any],
-        "Outputs"          -> Outputs.asInstanceOf[js.Any],
-        "Source"           -> Source.asInstanceOf[js.Any],
-        "Status"           -> Status.asInstanceOf[js.Any]
+        "Entitlements" -> Entitlements.asInstanceOf[js.Any],
+        "FlowArn" -> FlowArn.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Outputs" -> Outputs.asInstanceOf[js.Any],
+        "Source" -> Source.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -645,7 +645,7 @@ package mediaconnect {
     ): GrantFlowEntitlementsRequest = {
       val __obj = js.Dynamic.literal(
         "Entitlements" -> Entitlements.asInstanceOf[js.Any],
-        "FlowArn"      -> FlowArn.asInstanceOf[js.Any]
+        "FlowArn" -> FlowArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GrantFlowEntitlementsRequest]
@@ -674,7 +674,7 @@ package mediaconnect {
   @js.native
   sealed trait KeyType extends js.Any
   object KeyType extends js.Object {
-    val speke        = "speke".asInstanceOf[KeyType]
+    val speke = "speke".asInstanceOf[KeyType]
     val `static-key` = "static-key".asInstanceOf[KeyType]
 
     val values = js.Object.freeze(js.Array(speke, `static-key`))
@@ -808,7 +808,7 @@ package mediaconnect {
         DataTransferSubscriberFeePercent: js.UndefOr[__integer] = js.undefined
     ): ListedEntitlement = {
       val __obj = js.Dynamic.literal(
-        "EntitlementArn"  -> EntitlementArn.asInstanceOf[js.Any],
+        "EntitlementArn" -> EntitlementArn.asInstanceOf[js.Any],
         "EntitlementName" -> EntitlementName.asInstanceOf[js.Any]
       )
 
@@ -844,11 +844,11 @@ package mediaconnect {
     ): ListedFlow = {
       val __obj = js.Dynamic.literal(
         "AvailabilityZone" -> AvailabilityZone.asInstanceOf[js.Any],
-        "Description"      -> Description.asInstanceOf[js.Any],
-        "FlowArn"          -> FlowArn.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any],
-        "SourceType"       -> SourceType.asInstanceOf[js.Any],
-        "Status"           -> Status.asInstanceOf[js.Any]
+        "Description" -> Description.asInstanceOf[js.Any],
+        "FlowArn" -> FlowArn.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "SourceType" -> SourceType.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ListedFlow]
@@ -910,7 +910,7 @@ package mediaconnect {
         VpcInterfaceAttachment: js.UndefOr[VpcInterfaceAttachment] = js.undefined
     ): Output = {
       val __obj = js.Dynamic.literal(
-        "Name"      -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "OutputArn" -> OutputArn.asInstanceOf[js.Any]
       )
 
@@ -933,10 +933,10 @@ package mediaconnect {
   sealed trait Protocol extends js.Any
   object Protocol extends js.Object {
     val `zixi-push` = "zixi-push".asInstanceOf[Protocol]
-    val `rtp-fec`   = "rtp-fec".asInstanceOf[Protocol]
-    val rtp         = "rtp".asInstanceOf[Protocol]
+    val `rtp-fec` = "rtp-fec".asInstanceOf[Protocol]
+    val rtp = "rtp".asInstanceOf[Protocol]
     val `zixi-pull` = "zixi-pull".asInstanceOf[Protocol]
-    val rist        = "rist".asInstanceOf[Protocol]
+    val rist = "rist".asInstanceOf[Protocol]
 
     val values = js.Object.freeze(js.Array(`zixi-push`, `rtp-fec`, rtp, `zixi-pull`, rist))
   }
@@ -954,7 +954,7 @@ package mediaconnect {
         OutputArn: __string
     ): RemoveFlowOutputRequest = {
       val __obj = js.Dynamic.literal(
-        "FlowArn"   -> FlowArn.asInstanceOf[js.Any],
+        "FlowArn" -> FlowArn.asInstanceOf[js.Any],
         "OutputArn" -> OutputArn.asInstanceOf[js.Any]
       )
 
@@ -994,7 +994,7 @@ package mediaconnect {
         SourceArn: __string
     ): RemoveFlowSourceRequest = {
       val __obj = js.Dynamic.literal(
-        "FlowArn"   -> FlowArn.asInstanceOf[js.Any],
+        "FlowArn" -> FlowArn.asInstanceOf[js.Any],
         "SourceArn" -> SourceArn.asInstanceOf[js.Any]
       )
 
@@ -1034,7 +1034,7 @@ package mediaconnect {
         VpcInterfaceName: __string
     ): RemoveFlowVpcInterfaceRequest = {
       val __obj = js.Dynamic.literal(
-        "FlowArn"          -> FlowArn.asInstanceOf[js.Any],
+        "FlowArn" -> FlowArn.asInstanceOf[js.Any],
         "VpcInterfaceName" -> VpcInterfaceName.asInstanceOf[js.Any]
       )
 
@@ -1080,7 +1080,7 @@ package mediaconnect {
     ): RevokeFlowEntitlementRequest = {
       val __obj = js.Dynamic.literal(
         "EntitlementArn" -> EntitlementArn.asInstanceOf[js.Any],
-        "FlowArn"        -> FlowArn.asInstanceOf[js.Any]
+        "FlowArn" -> FlowArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RevokeFlowEntitlementRequest]
@@ -1189,7 +1189,7 @@ package mediaconnect {
         WhitelistCidr: js.UndefOr[__string] = js.undefined
     ): Source = {
       val __obj = js.Dynamic.literal(
-        "Name"      -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "SourceArn" -> SourceArn.asInstanceOf[js.Any]
       )
 
@@ -1211,7 +1211,7 @@ package mediaconnect {
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType extends js.Object {
-    val OWNED    = "OWNED".asInstanceOf[SourceType]
+    val OWNED = "OWNED".asInstanceOf[SourceType]
     val ENTITLED = "ENTITLED".asInstanceOf[SourceType]
 
     val values = js.Object.freeze(js.Array(OWNED, ENTITLED))
@@ -1257,7 +1257,7 @@ package mediaconnect {
   @js.native
   sealed trait State extends js.Any
   object State extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[State]
+    val ENABLED = "ENABLED".asInstanceOf[State]
     val DISABLED = "DISABLED".asInstanceOf[State]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -1266,13 +1266,13 @@ package mediaconnect {
   @js.native
   sealed trait Status extends js.Any
   object Status extends js.Object {
-    val STANDBY  = "STANDBY".asInstanceOf[Status]
-    val ACTIVE   = "ACTIVE".asInstanceOf[Status]
+    val STANDBY = "STANDBY".asInstanceOf[Status]
+    val ACTIVE = "ACTIVE".asInstanceOf[Status]
     val UPDATING = "UPDATING".asInstanceOf[Status]
     val DELETING = "DELETING".asInstanceOf[Status]
     val STARTING = "STARTING".asInstanceOf[Status]
     val STOPPING = "STOPPING".asInstanceOf[Status]
-    val ERROR    = "ERROR".asInstanceOf[Status]
+    val ERROR = "ERROR".asInstanceOf[Status]
 
     val values = js.Object.freeze(js.Array(STANDBY, ACTIVE, UPDATING, DELETING, STARTING, STOPPING, ERROR))
   }
@@ -1331,7 +1331,7 @@ package mediaconnect {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -1391,7 +1391,7 @@ package mediaconnect {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -1488,7 +1488,7 @@ package mediaconnect {
     ): UpdateFlowEntitlementRequest = {
       val __obj = js.Dynamic.literal(
         "EntitlementArn" -> EntitlementArn.asInstanceOf[js.Any],
-        "FlowArn"        -> FlowArn.asInstanceOf[js.Any]
+        "FlowArn" -> FlowArn.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -1555,7 +1555,7 @@ package mediaconnect {
         VpcInterfaceAttachment: js.UndefOr[VpcInterfaceAttachment] = js.undefined
     ): UpdateFlowOutputRequest = {
       val __obj = js.Dynamic.literal(
-        "FlowArn"   -> FlowArn.asInstanceOf[js.Any],
+        "FlowArn" -> FlowArn.asInstanceOf[js.Any],
         "OutputArn" -> OutputArn.asInstanceOf[js.Any]
       )
 
@@ -1669,7 +1669,7 @@ package mediaconnect {
         WhitelistCidr: js.UndefOr[__string] = js.undefined
     ): UpdateFlowSourceRequest = {
       val __obj = js.Dynamic.literal(
-        "FlowArn"   -> FlowArn.asInstanceOf[js.Any],
+        "FlowArn" -> FlowArn.asInstanceOf[js.Any],
         "SourceArn" -> SourceArn.asInstanceOf[js.Any]
       )
 
@@ -1728,11 +1728,11 @@ package mediaconnect {
         SubnetId: __string
     ): VpcInterface = {
       val __obj = js.Dynamic.literal(
-        "Name"                -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "NetworkInterfaceIds" -> NetworkInterfaceIds.asInstanceOf[js.Any],
-        "RoleArn"             -> RoleArn.asInstanceOf[js.Any],
-        "SecurityGroupIds"    -> SecurityGroupIds.asInstanceOf[js.Any],
-        "SubnetId"            -> SubnetId.asInstanceOf[js.Any]
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
+        "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any],
+        "SubnetId" -> SubnetId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[VpcInterface]
@@ -1778,10 +1778,10 @@ package mediaconnect {
         SubnetId: __string
     ): VpcInterfaceRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"             -> Name.asInstanceOf[js.Any],
-        "RoleArn"          -> RoleArn.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
         "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any],
-        "SubnetId"         -> SubnetId.asInstanceOf[js.Any]
+        "SubnetId" -> SubnetId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[VpcInterfaceRequest]

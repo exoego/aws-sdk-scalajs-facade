@@ -7,39 +7,39 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object codegurureviewer {
-  type Arn                             = String
-  type AssociationId                   = String
-  type ClientRequestToken              = String
-  type CodeReviewSummaries             = js.Array[CodeReviewSummary]
-  type CommitId                        = String
-  type ConnectionArn                   = String
-  type FilePath                        = String
-  type FindingsCount                   = Double
-  type JobStates                       = js.Array[JobState]
-  type LineNumber                      = Int
-  type ListCodeReviewsMaxResults       = Int
-  type MaxResults                      = Int
-  type MeteredLinesOfCodeCount         = Double
-  type Name                            = String
-  type Names                           = js.Array[Name]
-  type NextToken                       = String
-  type Owner                           = String
-  type Owners                          = js.Array[Owner]
-  type ProviderTypes                   = js.Array[ProviderType]
-  type PullRequestId                   = String
-  type Reactions                       = js.Array[Reaction]
+  type Arn = String
+  type AssociationId = String
+  type ClientRequestToken = String
+  type CodeReviewSummaries = js.Array[CodeReviewSummary]
+  type CommitId = String
+  type ConnectionArn = String
+  type FilePath = String
+  type FindingsCount = Double
+  type JobStates = js.Array[JobState]
+  type LineNumber = Int
+  type ListCodeReviewsMaxResults = Int
+  type MaxResults = Int
+  type MeteredLinesOfCodeCount = Double
+  type Name = String
+  type Names = js.Array[Name]
+  type NextToken = String
+  type Owner = String
+  type Owners = js.Array[Owner]
+  type ProviderTypes = js.Array[ProviderType]
+  type PullRequestId = String
+  type Reactions = js.Array[Reaction]
   type RecommendationFeedbackSummaries = js.Array[RecommendationFeedbackSummary]
-  type RecommendationId                = String
-  type RecommendationIds               = js.Array[RecommendationId]
-  type RecommendationSummaries         = js.Array[RecommendationSummary]
-  type RepositoryAssociationStates     = js.Array[RepositoryAssociationState]
-  type RepositoryAssociationSummaries  = js.Array[RepositoryAssociationSummary]
-  type RepositoryNames                 = js.Array[Name]
-  type StateReason                     = String
-  type Text                            = String
-  type TimeStamp                       = js.Date
-  type UserId                          = String
-  type UserIds                         = js.Array[UserId]
+  type RecommendationId = String
+  type RecommendationIds = js.Array[RecommendationId]
+  type RecommendationSummaries = js.Array[RecommendationSummary]
+  type RepositoryAssociationStates = js.Array[RepositoryAssociationState]
+  type RepositoryAssociationSummaries = js.Array[RepositoryAssociationSummary]
+  type RepositoryNames = js.Array[Name]
+  type StateReason = String
+  type Text = String
+  type TimeStamp = js.Date
+  type UserId = String
+  type UserIds = js.Array[UserId]
 
   implicit final class CodeGuruReviewerOps(private val service: CodeGuruReviewer) extends AnyVal {
 
@@ -80,7 +80,7 @@ package codegurureviewer {
     def this(config: AWSConfig) = this()
 
     def associateRepository(params: AssociateRepositoryRequest): Request[AssociateRepositoryResponse] = js.native
-    def describeCodeReview(params: DescribeCodeReviewRequest): Request[DescribeCodeReviewResponse]    = js.native
+    def describeCodeReview(params: DescribeCodeReviewRequest): Request[DescribeCodeReviewResponse] = js.native
     def describeRecommendationFeedback(
         params: DescribeRecommendationFeedbackRequest
     ): Request[DescribeRecommendationFeedbackResponse] = js.native
@@ -92,7 +92,7 @@ package codegurureviewer {
     def listCodeReviews(params: ListCodeReviewsRequest): Request[ListCodeReviewsResponse] = js.native
     def listRecommendationFeedback(
         params: ListRecommendationFeedbackRequest
-    ): Request[ListRecommendationFeedbackResponse]                                                    = js.native
+    ): Request[ListRecommendationFeedbackResponse] = js.native
     def listRecommendations(params: ListRecommendationsRequest): Request[ListRecommendationsResponse] = js.native
     def listRepositoryAssociations(
         params: ListRepositoryAssociationsRequest
@@ -335,7 +335,7 @@ package codegurureviewer {
         UserId: js.UndefOr[UserId] = js.undefined
     ): DescribeRecommendationFeedbackRequest = {
       val __obj = js.Dynamic.literal(
-        "CodeReviewArn"    -> CodeReviewArn.asInstanceOf[js.Any],
+        "CodeReviewArn" -> CodeReviewArn.asInstanceOf[js.Any],
         "RecommendationId" -> RecommendationId.asInstanceOf[js.Any]
       )
 
@@ -432,9 +432,9 @@ package codegurureviewer {
   sealed trait JobState extends js.Any
   object JobState extends js.Object {
     val Completed = "Completed".asInstanceOf[JobState]
-    val Pending   = "Pending".asInstanceOf[JobState]
-    val Failed    = "Failed".asInstanceOf[JobState]
-    val Deleting  = "Deleting".asInstanceOf[JobState]
+    val Pending = "Pending".asInstanceOf[JobState]
+    val Failed = "Failed".asInstanceOf[JobState]
+    val Deleting = "Deleting".asInstanceOf[JobState]
 
     val values = js.Object.freeze(js.Array(Completed, Pending, Failed, Deleting))
   }
@@ -684,9 +684,9 @@ package codegurureviewer {
   @js.native
   sealed trait ProviderType extends js.Any
   object ProviderType extends js.Object {
-    val CodeCommit             = "CodeCommit".asInstanceOf[ProviderType]
-    val GitHub                 = "GitHub".asInstanceOf[ProviderType]
-    val Bitbucket              = "Bitbucket".asInstanceOf[ProviderType]
+    val CodeCommit = "CodeCommit".asInstanceOf[ProviderType]
+    val GitHub = "GitHub".asInstanceOf[ProviderType]
+    val Bitbucket = "Bitbucket".asInstanceOf[ProviderType]
     val GitHubEnterpriseServer = "GitHubEnterpriseServer".asInstanceOf[ProviderType]
 
     val values = js.Object.freeze(js.Array(CodeCommit, GitHub, Bitbucket, GitHubEnterpriseServer))
@@ -707,8 +707,8 @@ package codegurureviewer {
         RecommendationId: RecommendationId
     ): PutRecommendationFeedbackRequest = {
       val __obj = js.Dynamic.literal(
-        "CodeReviewArn"    -> CodeReviewArn.asInstanceOf[js.Any],
-        "Reactions"        -> Reactions.asInstanceOf[js.Any],
+        "CodeReviewArn" -> CodeReviewArn.asInstanceOf[js.Any],
+        "Reactions" -> Reactions.asInstanceOf[js.Any],
         "RecommendationId" -> RecommendationId.asInstanceOf[js.Any]
       )
 
@@ -732,7 +732,7 @@ package codegurureviewer {
   @js.native
   sealed trait Reaction extends js.Any
   object Reaction extends js.Object {
-    val ThumbsUp   = "ThumbsUp".asInstanceOf[Reaction]
+    val ThumbsUp = "ThumbsUp".asInstanceOf[Reaction]
     val ThumbsDown = "ThumbsDown".asInstanceOf[Reaction]
 
     val values = js.Object.freeze(js.Array(ThumbsUp, ThumbsDown))
@@ -902,9 +902,9 @@ package codegurureviewer {
   @js.native
   sealed trait RepositoryAssociationState extends js.Any
   object RepositoryAssociationState extends js.Object {
-    val Associated     = "Associated".asInstanceOf[RepositoryAssociationState]
-    val Associating    = "Associating".asInstanceOf[RepositoryAssociationState]
-    val Failed         = "Failed".asInstanceOf[RepositoryAssociationState]
+    val Associated = "Associated".asInstanceOf[RepositoryAssociationState]
+    val Associating = "Associating".asInstanceOf[RepositoryAssociationState]
+    val Failed = "Failed".asInstanceOf[RepositoryAssociationState]
     val Disassociating = "Disassociating".asInstanceOf[RepositoryAssociationState]
 
     val values = js.Object.freeze(js.Array(Associated, Associating, Failed, Disassociating))
@@ -988,8 +988,8 @@ package codegurureviewer {
     ): ThirdPartySourceRepository = {
       val __obj = js.Dynamic.literal(
         "ConnectionArn" -> ConnectionArn.asInstanceOf[js.Any],
-        "Name"          -> Name.asInstanceOf[js.Any],
-        "Owner"         -> Owner.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Owner" -> Owner.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ThirdPartySourceRepository]

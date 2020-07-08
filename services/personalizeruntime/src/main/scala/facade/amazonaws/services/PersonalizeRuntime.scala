@@ -7,16 +7,16 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object personalizeruntime {
-  type Arn            = String
-  type AttributeName  = String
+  type Arn = String
+  type AttributeName = String
   type AttributeValue = String
-  type Context        = js.Dictionary[AttributeValue]
-  type InputList      = js.Array[ItemID]
-  type ItemID         = String
-  type ItemList       = js.Array[PredictedItem]
-  type NumResults     = Int
-  type Score          = Double
-  type UserID         = String
+  type Context = js.Dictionary[AttributeValue]
+  type InputList = js.Array[ItemID]
+  type ItemID = String
+  type ItemList = js.Array[PredictedItem]
+  type NumResults = Int
+  type Score = Double
+  type UserID = String
 
   implicit final class PersonalizeRuntimeOps(private val service: PersonalizeRuntime) extends AnyVal {
 
@@ -57,8 +57,8 @@ package personalizeruntime {
     ): GetPersonalizedRankingRequest = {
       val __obj = js.Dynamic.literal(
         "campaignArn" -> campaignArn.asInstanceOf[js.Any],
-        "inputList"   -> inputList.asInstanceOf[js.Any],
-        "userId"      -> userId.asInstanceOf[js.Any]
+        "inputList" -> inputList.asInstanceOf[js.Any],
+        "userId" -> userId.asInstanceOf[js.Any]
       )
 
       context.foreach(__v => __obj.updateDynamic("context")(__v.asInstanceOf[js.Any]))

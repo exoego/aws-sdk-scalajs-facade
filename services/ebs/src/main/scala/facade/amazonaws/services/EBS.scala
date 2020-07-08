@@ -7,19 +7,19 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object ebs {
-  type BlockData     = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type BlockIndex    = Int
-  type BlockSize     = Int
-  type BlockToken    = String
-  type Blocks        = js.Array[Block]
+  type BlockData = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type BlockIndex = Int
+  type BlockSize = Int
+  type BlockToken = String
+  type Blocks = js.Array[Block]
   type ChangedBlocks = js.Array[ChangedBlock]
-  type Checksum      = String
-  type DataLength    = Int
-  type MaxResults    = Int
-  type PageToken     = String
-  type SnapshotId    = String
-  type TimeStamp     = js.Date
-  type VolumeSize    = Double
+  type Checksum = String
+  type DataLength = Int
+  type MaxResults = Int
+  type PageToken = String
+  type SnapshotId = String
+  type TimeStamp = js.Date
+  type VolumeSize = Double
 
   implicit final class EBSOps(private val service: EBS) extends AnyVal {
 
@@ -38,8 +38,8 @@ package ebs {
   class EBS() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def getSnapshotBlock(params: GetSnapshotBlockRequest): Request[GetSnapshotBlockResponse]       = js.native
-    def listChangedBlocks(params: ListChangedBlocksRequest): Request[ListChangedBlocksResponse]    = js.native
+    def getSnapshotBlock(params: GetSnapshotBlockRequest): Request[GetSnapshotBlockResponse] = js.native
+    def listChangedBlocks(params: ListChangedBlocksRequest): Request[ListChangedBlocksResponse] = js.native
     def listSnapshotBlocks(params: ListSnapshotBlocksRequest): Request[ListSnapshotBlocksResponse] = js.native
   }
 

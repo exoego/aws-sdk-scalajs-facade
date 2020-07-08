@@ -7,43 +7,43 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object sns {
-  type ActionsList                = js.Array[action]
-  type AmazonResourceName         = String
-  type Binary                     = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type DelegatesList              = js.Array[delegate]
-  type ListOfEndpoints            = js.Array[Endpoint]
+  type ActionsList = js.Array[action]
+  type AmazonResourceName = String
+  type Binary = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type DelegatesList = js.Array[delegate]
+  type ListOfEndpoints = js.Array[Endpoint]
   type ListOfPlatformApplications = js.Array[PlatformApplication]
-  type ListString                 = js.Array[String]
-  type MapStringToString          = js.Dictionary[String]
-  type MessageAttributeMap        = js.Dictionary[MessageAttributeValue]
-  type PhoneNumber                = String
-  type PhoneNumberList            = js.Array[PhoneNumber]
-  type SubscriptionAttributesMap  = js.Dictionary[attributeValue]
-  type SubscriptionsList          = js.Array[Subscription]
-  type TagKey                     = String
-  type TagKeyList                 = js.Array[TagKey]
-  type TagList                    = js.Array[Tag]
-  type TagValue                   = String
-  type TopicAttributesMap         = js.Dictionary[attributeValue]
-  type TopicsList                 = js.Array[Topic]
-  type account                    = String
-  type action                     = String
-  type attributeName              = String
-  type attributeValue             = String
-  type authenticateOnUnsubscribe  = String
-  type delegate                   = String
-  type endpoint                   = String
-  type label                      = String
-  type message                    = String
-  type messageId                  = String
-  type messageStructure           = String
-  type nextToken                  = String
-  type protocol                   = String
-  type subject                    = String
-  type subscriptionARN            = String
-  type token                      = String
-  type topicARN                   = String
-  type topicName                  = String
+  type ListString = js.Array[String]
+  type MapStringToString = js.Dictionary[String]
+  type MessageAttributeMap = js.Dictionary[MessageAttributeValue]
+  type PhoneNumber = String
+  type PhoneNumberList = js.Array[PhoneNumber]
+  type SubscriptionAttributesMap = js.Dictionary[attributeValue]
+  type SubscriptionsList = js.Array[Subscription]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type TopicAttributesMap = js.Dictionary[attributeValue]
+  type TopicsList = js.Array[Topic]
+  type account = String
+  type action = String
+  type attributeName = String
+  type attributeValue = String
+  type authenticateOnUnsubscribe = String
+  type delegate = String
+  type endpoint = String
+  type label = String
+  type message = String
+  type messageId = String
+  type messageStructure = String
+  type nextToken = String
+  type protocol = String
+  type subject = String
+  type subscriptionARN = String
+  type token = String
+  type topicARN = String
+  type topicName = String
 
   implicit final class SNSOps(private val service: SNS) extends AnyVal {
 
@@ -136,19 +136,19 @@ package sns {
     def addPermission(params: AddPermissionInput): Request[js.Object] = js.native
     def checkIfPhoneNumberIsOptedOut(
         params: CheckIfPhoneNumberIsOptedOutInput
-    ): Request[CheckIfPhoneNumberIsOptedOutResponse]                                                = js.native
+    ): Request[CheckIfPhoneNumberIsOptedOutResponse] = js.native
     def confirmSubscription(params: ConfirmSubscriptionInput): Request[ConfirmSubscriptionResponse] = js.native
     def createPlatformApplication(params: CreatePlatformApplicationInput): Request[CreatePlatformApplicationResponse] =
       js.native
-    def createPlatformEndpoint(params: CreatePlatformEndpointInput): Request[CreateEndpointResponse]      = js.native
-    def createTopic(params: CreateTopicInput): Request[CreateTopicResponse]                               = js.native
-    def deleteEndpoint(params: DeleteEndpointInput): Request[js.Object]                                   = js.native
-    def deletePlatformApplication(params: DeletePlatformApplicationInput): Request[js.Object]             = js.native
-    def deleteTopic(params: DeleteTopicInput): Request[js.Object]                                         = js.native
+    def createPlatformEndpoint(params: CreatePlatformEndpointInput): Request[CreateEndpointResponse] = js.native
+    def createTopic(params: CreateTopicInput): Request[CreateTopicResponse] = js.native
+    def deleteEndpoint(params: DeleteEndpointInput): Request[js.Object] = js.native
+    def deletePlatformApplication(params: DeletePlatformApplicationInput): Request[js.Object] = js.native
+    def deleteTopic(params: DeleteTopicInput): Request[js.Object] = js.native
     def getEndpointAttributes(params: GetEndpointAttributesInput): Request[GetEndpointAttributesResponse] = js.native
     def getPlatformApplicationAttributes(
         params: GetPlatformApplicationAttributesInput
-    ): Request[GetPlatformApplicationAttributesResponse]                                   = js.native
+    ): Request[GetPlatformApplicationAttributesResponse] = js.native
     def getSMSAttributes(params: GetSMSAttributesInput): Request[GetSMSAttributesResponse] = js.native
     def getSubscriptionAttributes(params: GetSubscriptionAttributesInput): Request[GetSubscriptionAttributesResponse] =
       js.native
@@ -163,20 +163,20 @@ package sns {
     def listSubscriptions(params: ListSubscriptionsInput): Request[ListSubscriptionsResponse] = js.native
     def listSubscriptionsByTopic(params: ListSubscriptionsByTopicInput): Request[ListSubscriptionsByTopicResponse] =
       js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
-    def listTopics(params: ListTopicsInput): Request[ListTopicsResponse]                                    = js.native
-    def optInPhoneNumber(params: OptInPhoneNumberInput): Request[OptInPhoneNumberResponse]                  = js.native
-    def publish(params: PublishInput): Request[PublishResponse]                                             = js.native
-    def removePermission(params: RemovePermissionInput): Request[js.Object]                                 = js.native
-    def setEndpointAttributes(params: SetEndpointAttributesInput): Request[js.Object]                       = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def listTopics(params: ListTopicsInput): Request[ListTopicsResponse] = js.native
+    def optInPhoneNumber(params: OptInPhoneNumberInput): Request[OptInPhoneNumberResponse] = js.native
+    def publish(params: PublishInput): Request[PublishResponse] = js.native
+    def removePermission(params: RemovePermissionInput): Request[js.Object] = js.native
+    def setEndpointAttributes(params: SetEndpointAttributesInput): Request[js.Object] = js.native
     def setPlatformApplicationAttributes(params: SetPlatformApplicationAttributesInput): Request[js.Object] = js.native
-    def setSMSAttributes(params: SetSMSAttributesInput): Request[SetSMSAttributesResponse]                  = js.native
-    def setSubscriptionAttributes(params: SetSubscriptionAttributesInput): Request[js.Object]               = js.native
-    def setTopicAttributes(params: SetTopicAttributesInput): Request[js.Object]                             = js.native
-    def subscribe(params: SubscribeInput): Request[SubscribeResponse]                                       = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                               = js.native
-    def unsubscribe(params: UnsubscribeInput): Request[js.Object]                                           = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                         = js.native
+    def setSMSAttributes(params: SetSMSAttributesInput): Request[SetSMSAttributesResponse] = js.native
+    def setSubscriptionAttributes(params: SetSubscriptionAttributesInput): Request[js.Object] = js.native
+    def setTopicAttributes(params: SetTopicAttributesInput): Request[js.Object] = js.native
+    def subscribe(params: SubscribeInput): Request[SubscribeResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def unsubscribe(params: UnsubscribeInput): Request[js.Object] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
   }
 
   @js.native
@@ -197,9 +197,9 @@ package sns {
     ): AddPermissionInput = {
       val __obj = js.Dynamic.literal(
         "AWSAccountId" -> AWSAccountId.asInstanceOf[js.Any],
-        "ActionName"   -> ActionName.asInstanceOf[js.Any],
-        "Label"        -> Label.asInstanceOf[js.Any],
-        "TopicArn"     -> TopicArn.asInstanceOf[js.Any]
+        "ActionName" -> ActionName.asInstanceOf[js.Any],
+        "Label" -> Label.asInstanceOf[js.Any],
+        "TopicArn" -> TopicArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddPermissionInput]
@@ -264,7 +264,7 @@ package sns {
         AuthenticateOnUnsubscribe: js.UndefOr[authenticateOnUnsubscribe] = js.undefined
     ): ConfirmSubscriptionInput = {
       val __obj = js.Dynamic.literal(
-        "Token"    -> Token.asInstanceOf[js.Any],
+        "Token" -> Token.asInstanceOf[js.Any],
         "TopicArn" -> TopicArn.asInstanceOf[js.Any]
       )
 
@@ -332,8 +332,8 @@ package sns {
     ): CreatePlatformApplicationInput = {
       val __obj = js.Dynamic.literal(
         "Attributes" -> Attributes.asInstanceOf[js.Any],
-        "Name"       -> Name.asInstanceOf[js.Any],
-        "Platform"   -> Platform.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Platform" -> Platform.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreatePlatformApplicationInput]
@@ -380,7 +380,7 @@ package sns {
     ): CreatePlatformEndpointInput = {
       val __obj = js.Dynamic.literal(
         "PlatformApplicationArn" -> PlatformApplicationArn.asInstanceOf[js.Any],
-        "Token"                  -> Token.asInstanceOf[js.Any]
+        "Token" -> Token.asInstanceOf[js.Any]
       )
 
       Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
@@ -1163,7 +1163,7 @@ package sns {
         TopicArn: topicARN
     ): RemovePermissionInput = {
       val __obj = js.Dynamic.literal(
-        "Label"    -> Label.asInstanceOf[js.Any],
+        "Label" -> Label.asInstanceOf[js.Any],
         "TopicArn" -> TopicArn.asInstanceOf[js.Any]
       )
 
@@ -1187,7 +1187,7 @@ package sns {
         EndpointArn: String
     ): SetEndpointAttributesInput = {
       val __obj = js.Dynamic.literal(
-        "Attributes"  -> Attributes.asInstanceOf[js.Any],
+        "Attributes" -> Attributes.asInstanceOf[js.Any],
         "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]
       )
 
@@ -1211,7 +1211,7 @@ package sns {
         PlatformApplicationArn: String
     ): SetPlatformApplicationAttributesInput = {
       val __obj = js.Dynamic.literal(
-        "Attributes"             -> Attributes.asInstanceOf[js.Any],
+        "Attributes" -> Attributes.asInstanceOf[js.Any],
         "PlatformApplicationArn" -> PlatformApplicationArn.asInstanceOf[js.Any]
       )
 
@@ -1274,7 +1274,7 @@ package sns {
         AttributeValue: js.UndefOr[attributeValue] = js.undefined
     ): SetSubscriptionAttributesInput = {
       val __obj = js.Dynamic.literal(
-        "AttributeName"   -> AttributeName.asInstanceOf[js.Any],
+        "AttributeName" -> AttributeName.asInstanceOf[js.Any],
         "SubscriptionArn" -> SubscriptionArn.asInstanceOf[js.Any]
       )
 
@@ -1302,7 +1302,7 @@ package sns {
     ): SetTopicAttributesInput = {
       val __obj = js.Dynamic.literal(
         "AttributeName" -> AttributeName.asInstanceOf[js.Any],
-        "TopicArn"      -> TopicArn.asInstanceOf[js.Any]
+        "TopicArn" -> TopicArn.asInstanceOf[js.Any]
       )
 
       AttributeValue.foreach(__v => __obj.updateDynamic("AttributeValue")(__v.asInstanceOf[js.Any]))
@@ -1409,7 +1409,7 @@ package sns {
         Value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -1431,7 +1431,7 @@ package sns {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -1505,7 +1505,7 @@ package sns {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]

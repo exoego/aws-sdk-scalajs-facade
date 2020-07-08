@@ -7,44 +7,44 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object servicediscovery {
-  type AmazonResourceName      = String
-  type Arn                     = String
-  type AttrKey                 = String
-  type AttrValue               = String
-  type Attributes              = js.Dictionary[AttrValue]
-  type Code                    = String
-  type DiscoverMaxResults      = Int
-  type DnsRecordList           = js.Array[DnsRecord]
-  type FailureThreshold        = Int
-  type FilterValue             = String
-  type FilterValues            = js.Array[FilterValue]
+  type AmazonResourceName = String
+  type Arn = String
+  type AttrKey = String
+  type AttrValue = String
+  type Attributes = js.Dictionary[AttrValue]
+  type Code = String
+  type DiscoverMaxResults = Int
+  type DnsRecordList = js.Array[DnsRecord]
+  type FailureThreshold = Int
+  type FilterValue = String
+  type FilterValues = js.Array[FilterValue]
   type HttpInstanceSummaryList = js.Array[HttpInstanceSummary]
   type InstanceHealthStatusMap = js.Dictionary[HealthStatus]
-  type InstanceIdList          = js.Array[ResourceId]
-  type InstanceSummaryList     = js.Array[InstanceSummary]
-  type MaxResults              = Int
-  type Message                 = String
-  type NamespaceFilters        = js.Array[NamespaceFilter]
-  type NamespaceName           = String
-  type NamespaceSummariesList  = js.Array[NamespaceSummary]
-  type NextToken               = String
-  type OperationFilters        = js.Array[OperationFilter]
-  type OperationId             = String
-  type OperationSummaryList    = js.Array[OperationSummary]
-  type OperationTargetsMap     = js.Dictionary[ResourceId]
-  type RecordTTL               = Double
-  type ResourceCount           = Int
-  type ResourceDescription     = String
-  type ResourceId              = String
-  type ResourcePath            = String
-  type ServiceFilters          = js.Array[ServiceFilter]
-  type ServiceName             = String
-  type ServiceSummariesList    = js.Array[ServiceSummary]
-  type TagKey                  = String
-  type TagKeyList              = js.Array[TagKey]
-  type TagList                 = js.Array[Tag]
-  type TagValue                = String
-  type Timestamp               = js.Date
+  type InstanceIdList = js.Array[ResourceId]
+  type InstanceSummaryList = js.Array[InstanceSummary]
+  type MaxResults = Int
+  type Message = String
+  type NamespaceFilters = js.Array[NamespaceFilter]
+  type NamespaceName = String
+  type NamespaceSummariesList = js.Array[NamespaceSummary]
+  type NextToken = String
+  type OperationFilters = js.Array[OperationFilter]
+  type OperationId = String
+  type OperationSummaryList = js.Array[OperationSummary]
+  type OperationTargetsMap = js.Dictionary[ResourceId]
+  type RecordTTL = Double
+  type ResourceCount = Int
+  type ResourceDescription = String
+  type ResourceId = String
+  type ResourcePath = String
+  type ServiceFilters = js.Array[ServiceFilter]
+  type ServiceName = String
+  type ServiceSummariesList = js.Array[ServiceSummary]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type Timestamp = js.Date
 
   implicit final class ServiceDiscoveryOps(private val service: ServiceDiscovery) extends AnyVal {
 
@@ -113,25 +113,25 @@ package servicediscovery {
     ): Request[CreatePrivateDnsNamespaceResponse] = js.native
     def createPublicDnsNamespace(params: CreatePublicDnsNamespaceRequest): Request[CreatePublicDnsNamespaceResponse] =
       js.native
-    def createService(params: CreateServiceRequest): Request[CreateServiceResponse]                = js.native
-    def deleteNamespace(params: DeleteNamespaceRequest): Request[DeleteNamespaceResponse]          = js.native
-    def deleteService(params: DeleteServiceRequest): Request[DeleteServiceResponse]                = js.native
+    def createService(params: CreateServiceRequest): Request[CreateServiceResponse] = js.native
+    def deleteNamespace(params: DeleteNamespaceRequest): Request[DeleteNamespaceResponse] = js.native
+    def deleteService(params: DeleteServiceRequest): Request[DeleteServiceResponse] = js.native
     def deregisterInstance(params: DeregisterInstanceRequest): Request[DeregisterInstanceResponse] = js.native
-    def discoverInstances(params: DiscoverInstancesRequest): Request[DiscoverInstancesResponse]    = js.native
-    def getInstance(params: GetInstanceRequest): Request[GetInstanceResponse]                      = js.native
+    def discoverInstances(params: DiscoverInstancesRequest): Request[DiscoverInstancesResponse] = js.native
+    def getInstance(params: GetInstanceRequest): Request[GetInstanceResponse] = js.native
     def getInstancesHealthStatus(params: GetInstancesHealthStatusRequest): Request[GetInstancesHealthStatusResponse] =
       js.native
-    def getNamespace(params: GetNamespaceRequest): Request[GetNamespaceResponse]                      = js.native
-    def getOperation(params: GetOperationRequest): Request[GetOperationResponse]                      = js.native
-    def getService(params: GetServiceRequest): Request[GetServiceResponse]                            = js.native
-    def listInstances(params: ListInstancesRequest): Request[ListInstancesResponse]                   = js.native
-    def listNamespaces(params: ListNamespacesRequest): Request[ListNamespacesResponse]                = js.native
-    def listOperations(params: ListOperationsRequest): Request[ListOperationsResponse]                = js.native
-    def listServices(params: ListServicesRequest): Request[ListServicesResponse]                      = js.native
+    def getNamespace(params: GetNamespaceRequest): Request[GetNamespaceResponse] = js.native
+    def getOperation(params: GetOperationRequest): Request[GetOperationResponse] = js.native
+    def getService(params: GetServiceRequest): Request[GetServiceResponse] = js.native
+    def listInstances(params: ListInstancesRequest): Request[ListInstancesResponse] = js.native
+    def listNamespaces(params: ListNamespacesRequest): Request[ListNamespacesResponse] = js.native
+    def listOperations(params: ListOperationsRequest): Request[ListOperationsResponse] = js.native
+    def listServices(params: ListServicesRequest): Request[ListServicesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def registerInstance(params: RegisterInstanceRequest): Request[RegisterInstanceResponse]          = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
+    def registerInstance(params: RegisterInstanceRequest): Request[RegisterInstanceResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateInstanceCustomHealthStatus(params: UpdateInstanceCustomHealthStatusRequest): Request[js.Object] =
       js.native
     def updateService(params: UpdateServiceRequest): Request[UpdateServiceResponse] = js.native
@@ -200,7 +200,7 @@ package servicediscovery {
     ): CreatePrivateDnsNamespaceRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any],
-        "Vpc"  -> Vpc.asInstanceOf[js.Any]
+        "Vpc" -> Vpc.asInstanceOf[js.Any]
       )
 
       CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
@@ -327,7 +327,7 @@ package servicediscovery {
   @js.native
   sealed trait CustomHealthStatus extends js.Any
   object CustomHealthStatus extends js.Object {
-    val HEALTHY   = "HEALTHY".asInstanceOf[CustomHealthStatus]
+    val HEALTHY = "HEALTHY".asInstanceOf[CustomHealthStatus]
     val UNHEALTHY = "UNHEALTHY".asInstanceOf[CustomHealthStatus]
 
     val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY))
@@ -412,7 +412,7 @@ package servicediscovery {
     ): DeregisterInstanceRequest = {
       val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
-        "ServiceId"  -> ServiceId.asInstanceOf[js.Any]
+        "ServiceId" -> ServiceId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeregisterInstanceRequest]
@@ -455,7 +455,7 @@ package servicediscovery {
     ): DiscoverInstancesRequest = {
       val __obj = js.Dynamic.literal(
         "NamespaceName" -> NamespaceName.asInstanceOf[js.Any],
-        "ServiceName"   -> ServiceName.asInstanceOf[js.Any]
+        "ServiceName" -> ServiceName.asInstanceOf[js.Any]
       )
 
       HealthStatus.foreach(__v => __obj.updateDynamic("HealthStatus")(__v.asInstanceOf[js.Any]))
@@ -564,7 +564,7 @@ package servicediscovery {
         Type: RecordType
     ): DnsRecord = {
       val __obj = js.Dynamic.literal(
-        "TTL"  -> TTL.asInstanceOf[js.Any],
+        "TTL" -> TTL.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
@@ -575,8 +575,8 @@ package servicediscovery {
   @js.native
   sealed trait FilterCondition extends js.Any
   object FilterCondition extends js.Object {
-    val EQ      = "EQ".asInstanceOf[FilterCondition]
-    val IN      = "IN".asInstanceOf[FilterCondition]
+    val EQ = "EQ".asInstanceOf[FilterCondition]
+    val IN = "IN".asInstanceOf[FilterCondition]
     val BETWEEN = "BETWEEN".asInstanceOf[FilterCondition]
 
     val values = js.Object.freeze(js.Array(EQ, IN, BETWEEN))
@@ -596,7 +596,7 @@ package servicediscovery {
     ): GetInstanceRequest = {
       val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
-        "ServiceId"  -> ServiceId.asInstanceOf[js.Any]
+        "ServiceId" -> ServiceId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetInstanceRequest]
@@ -849,9 +849,9 @@ package servicediscovery {
   @js.native
   sealed trait HealthCheckType extends js.Any
   object HealthCheckType extends js.Object {
-    val HTTP  = "HTTP".asInstanceOf[HealthCheckType]
+    val HTTP = "HTTP".asInstanceOf[HealthCheckType]
     val HTTPS = "HTTPS".asInstanceOf[HealthCheckType]
-    val TCP   = "TCP".asInstanceOf[HealthCheckType]
+    val TCP = "TCP".asInstanceOf[HealthCheckType]
 
     val values = js.Object.freeze(js.Array(HTTP, HTTPS, TCP))
   }
@@ -859,9 +859,9 @@ package servicediscovery {
   @js.native
   sealed trait HealthStatus extends js.Any
   object HealthStatus extends js.Object {
-    val HEALTHY   = "HEALTHY".asInstanceOf[HealthStatus]
+    val HEALTHY = "HEALTHY".asInstanceOf[HealthStatus]
     val UNHEALTHY = "UNHEALTHY".asInstanceOf[HealthStatus]
-    val UNKNOWN   = "UNKNOWN".asInstanceOf[HealthStatus]
+    val UNKNOWN = "UNKNOWN".asInstanceOf[HealthStatus]
 
     val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY, UNKNOWN))
   }
@@ -869,9 +869,9 @@ package servicediscovery {
   @js.native
   sealed trait HealthStatusFilter extends js.Any
   object HealthStatusFilter extends js.Object {
-    val HEALTHY   = "HEALTHY".asInstanceOf[HealthStatusFilter]
+    val HEALTHY = "HEALTHY".asInstanceOf[HealthStatusFilter]
     val UNHEALTHY = "UNHEALTHY".asInstanceOf[HealthStatusFilter]
-    val ALL       = "ALL".asInstanceOf[HealthStatusFilter]
+    val ALL = "ALL".asInstanceOf[HealthStatusFilter]
 
     val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY, ALL))
   }
@@ -1236,7 +1236,7 @@ package servicediscovery {
         Condition: js.UndefOr[FilterCondition] = js.undefined
     ): NamespaceFilter = {
       val __obj = js.Dynamic.literal(
-        "Name"   -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
@@ -1318,9 +1318,9 @@ package servicediscovery {
   @js.native
   sealed trait NamespaceType extends js.Any
   object NamespaceType extends js.Object {
-    val DNS_PUBLIC  = "DNS_PUBLIC".asInstanceOf[NamespaceType]
+    val DNS_PUBLIC = "DNS_PUBLIC".asInstanceOf[NamespaceType]
     val DNS_PRIVATE = "DNS_PRIVATE".asInstanceOf[NamespaceType]
-    val HTTP        = "HTTP".asInstanceOf[NamespaceType]
+    val HTTP = "HTTP".asInstanceOf[NamespaceType]
 
     val values = js.Object.freeze(js.Array(DNS_PUBLIC, DNS_PRIVATE, HTTP))
   }
@@ -1383,7 +1383,7 @@ package servicediscovery {
         Condition: js.UndefOr[FilterCondition] = js.undefined
     ): OperationFilter = {
       val __obj = js.Dynamic.literal(
-        "Name"   -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
@@ -1396,10 +1396,10 @@ package servicediscovery {
   sealed trait OperationFilterName extends js.Any
   object OperationFilterName extends js.Object {
     val NAMESPACE_ID = "NAMESPACE_ID".asInstanceOf[OperationFilterName]
-    val SERVICE_ID   = "SERVICE_ID".asInstanceOf[OperationFilterName]
-    val STATUS       = "STATUS".asInstanceOf[OperationFilterName]
-    val TYPE         = "TYPE".asInstanceOf[OperationFilterName]
-    val UPDATE_DATE  = "UPDATE_DATE".asInstanceOf[OperationFilterName]
+    val SERVICE_ID = "SERVICE_ID".asInstanceOf[OperationFilterName]
+    val STATUS = "STATUS".asInstanceOf[OperationFilterName]
+    val TYPE = "TYPE".asInstanceOf[OperationFilterName]
+    val UPDATE_DATE = "UPDATE_DATE".asInstanceOf[OperationFilterName]
 
     val values = js.Object.freeze(js.Array(NAMESPACE_ID, SERVICE_ID, STATUS, TYPE, UPDATE_DATE))
   }
@@ -1408,9 +1408,9 @@ package servicediscovery {
   sealed trait OperationStatus extends js.Any
   object OperationStatus extends js.Object {
     val SUBMITTED = "SUBMITTED".asInstanceOf[OperationStatus]
-    val PENDING   = "PENDING".asInstanceOf[OperationStatus]
-    val SUCCESS   = "SUCCESS".asInstanceOf[OperationStatus]
-    val FAIL      = "FAIL".asInstanceOf[OperationStatus]
+    val PENDING = "PENDING".asInstanceOf[OperationStatus]
+    val SUCCESS = "SUCCESS".asInstanceOf[OperationStatus]
+    val FAIL = "FAIL".asInstanceOf[OperationStatus]
 
     val values = js.Object.freeze(js.Array(SUBMITTED, PENDING, SUCCESS, FAIL))
   }
@@ -1441,8 +1441,8 @@ package servicediscovery {
   sealed trait OperationTargetType extends js.Any
   object OperationTargetType extends js.Object {
     val NAMESPACE = "NAMESPACE".asInstanceOf[OperationTargetType]
-    val SERVICE   = "SERVICE".asInstanceOf[OperationTargetType]
-    val INSTANCE  = "INSTANCE".asInstanceOf[OperationTargetType]
+    val SERVICE = "SERVICE".asInstanceOf[OperationTargetType]
+    val INSTANCE = "INSTANCE".asInstanceOf[OperationTargetType]
 
     val values = js.Object.freeze(js.Array(NAMESPACE, SERVICE, INSTANCE))
   }
@@ -1450,10 +1450,10 @@ package servicediscovery {
   @js.native
   sealed trait OperationType extends js.Any
   object OperationType extends js.Object {
-    val CREATE_NAMESPACE    = "CREATE_NAMESPACE".asInstanceOf[OperationType]
-    val DELETE_NAMESPACE    = "DELETE_NAMESPACE".asInstanceOf[OperationType]
-    val UPDATE_SERVICE      = "UPDATE_SERVICE".asInstanceOf[OperationType]
-    val REGISTER_INSTANCE   = "REGISTER_INSTANCE".asInstanceOf[OperationType]
+    val CREATE_NAMESPACE = "CREATE_NAMESPACE".asInstanceOf[OperationType]
+    val DELETE_NAMESPACE = "DELETE_NAMESPACE".asInstanceOf[OperationType]
+    val UPDATE_SERVICE = "UPDATE_SERVICE".asInstanceOf[OperationType]
+    val REGISTER_INSTANCE = "REGISTER_INSTANCE".asInstanceOf[OperationType]
     val DEREGISTER_INSTANCE = "DEREGISTER_INSTANCE".asInstanceOf[OperationType]
 
     val values = js.Object.freeze(
@@ -1464,9 +1464,9 @@ package servicediscovery {
   @js.native
   sealed trait RecordType extends js.Any
   object RecordType extends js.Object {
-    val SRV   = "SRV".asInstanceOf[RecordType]
-    val A     = "A".asInstanceOf[RecordType]
-    val AAAA  = "AAAA".asInstanceOf[RecordType]
+    val SRV = "SRV".asInstanceOf[RecordType]
+    val A = "A".asInstanceOf[RecordType]
+    val AAAA = "AAAA".asInstanceOf[RecordType]
     val CNAME = "CNAME".asInstanceOf[RecordType]
 
     val values = js.Object.freeze(js.Array(SRV, A, AAAA, CNAME))
@@ -1491,7 +1491,7 @@ package servicediscovery {
       val __obj = js.Dynamic.literal(
         "Attributes" -> Attributes.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
-        "ServiceId"  -> ServiceId.asInstanceOf[js.Any]
+        "ServiceId" -> ServiceId.asInstanceOf[js.Any]
       )
 
       CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
@@ -1519,7 +1519,7 @@ package servicediscovery {
   sealed trait RoutingPolicy extends js.Any
   object RoutingPolicy extends js.Object {
     val MULTIVALUE = "MULTIVALUE".asInstanceOf[RoutingPolicy]
-    val WEIGHTED   = "WEIGHTED".asInstanceOf[RoutingPolicy]
+    val WEIGHTED = "WEIGHTED".asInstanceOf[RoutingPolicy]
 
     val values = js.Object.freeze(js.Array(MULTIVALUE, WEIGHTED))
   }
@@ -1616,7 +1616,7 @@ package servicediscovery {
         Condition: js.UndefOr[FilterCondition] = js.undefined
     ): ServiceFilter = {
       val __obj = js.Dynamic.literal(
-        "Name"   -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
@@ -1692,7 +1692,7 @@ package servicediscovery {
         Value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -1714,7 +1714,7 @@ package servicediscovery {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -1748,7 +1748,7 @@ package servicediscovery {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -1784,8 +1784,8 @@ package servicediscovery {
     ): UpdateInstanceCustomHealthStatusRequest = {
       val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
-        "ServiceId"  -> ServiceId.asInstanceOf[js.Any],
-        "Status"     -> Status.asInstanceOf[js.Any]
+        "ServiceId" -> ServiceId.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateInstanceCustomHealthStatusRequest]
@@ -1805,7 +1805,7 @@ package servicediscovery {
         Service: ServiceChange
     ): UpdateServiceRequest = {
       val __obj = js.Dynamic.literal(
-        "Id"      -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "Service" -> Service.asInstanceOf[js.Any]
       )
 

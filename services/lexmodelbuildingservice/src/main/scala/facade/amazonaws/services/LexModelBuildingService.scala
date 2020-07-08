@@ -7,74 +7,74 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object lexmodelbuildingservice {
-  type AliasName                   = String
-  type AliasNameOrListAll          = String
-  type AmazonResourceName          = String
-  type Blob                        = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type BotAliasMetadataList        = js.Array[BotAliasMetadata]
-  type BotChannelAssociationList   = js.Array[BotChannelAssociation]
-  type BotChannelName              = String
-  type BotMetadataList             = js.Array[BotMetadata]
-  type BotName                     = String
-  type BotVersions                 = js.Array[Version]
-  type BuiltinIntentMetadataList   = js.Array[BuiltinIntentMetadata]
-  type BuiltinIntentSignature      = String
-  type BuiltinIntentSlotList       = js.Array[BuiltinIntentSlot]
+  type AliasName = String
+  type AliasNameOrListAll = String
+  type AmazonResourceName = String
+  type Blob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type BotAliasMetadataList = js.Array[BotAliasMetadata]
+  type BotChannelAssociationList = js.Array[BotChannelAssociation]
+  type BotChannelName = String
+  type BotMetadataList = js.Array[BotMetadata]
+  type BotName = String
+  type BotVersions = js.Array[Version]
+  type BuiltinIntentMetadataList = js.Array[BuiltinIntentMetadata]
+  type BuiltinIntentSignature = String
+  type BuiltinIntentSlotList = js.Array[BuiltinIntentSlot]
   type BuiltinSlotTypeMetadataList = js.Array[BuiltinSlotTypeMetadata]
-  type BuiltinSlotTypeSignature    = String
-  type ChannelConfigurationMap     = js.Dictionary[String]
-  type ContentString               = String
-  type Count                       = Int
+  type BuiltinSlotTypeSignature = String
+  type ChannelConfigurationMap = js.Dictionary[String]
+  type ContentString = String
+  type Count = Int
   type CustomOrBuiltinSlotTypeName = String
-  type Description                 = String
-  type EnumerationValues           = js.Array[EnumerationValue]
-  type GroupNumber                 = Int
-  type IamRoleArn                  = String
-  type IntentList                  = js.Array[Intent]
-  type IntentMetadataList          = js.Array[IntentMetadata]
-  type IntentName                  = String
-  type IntentUtteranceList         = js.Array[Utterance]
-  type KendraIndexArn              = String
-  type KmsKeyArn                   = String
-  type LambdaARN                   = String
-  type ListOfUtterance             = js.Array[UtteranceData]
-  type ListsOfUtterances           = js.Array[UtteranceList]
-  type LocaleList                  = js.Array[Locale]
-  type LogSettingsRequestList      = js.Array[LogSettingsRequest]
-  type LogSettingsResponseList     = js.Array[LogSettingsResponse]
-  type MaxResults                  = Int
-  type MessageList                 = js.Array[Message]
-  type MessageVersion              = String
-  type Name                        = String
-  type NextToken                   = String
-  type NumericalVersion            = String
-  type Priority                    = Int
-  type PromptMaxAttempts           = Int
-  type QueryFilterString           = String
-  type RegexPattern                = String
-  type ResourceArn                 = String
-  type ResourcePrefix              = String
-  type ResponseCard                = String
-  type SessionTTL                  = Int
-  type SlotList                    = js.Array[Slot]
-  type SlotName                    = String
-  type SlotTypeConfigurations      = js.Array[SlotTypeConfiguration]
-  type SlotTypeMetadataList        = js.Array[SlotTypeMetadata]
-  type SlotTypeName                = String
-  type SlotUtteranceList           = js.Array[Utterance]
-  type StringList                  = js.Array[String]
-  type SynonymList                 = js.Array[Value]
-  type TagKey                      = String
-  type TagKeyList                  = js.Array[TagKey]
-  type TagList                     = js.Array[Tag]
-  type TagValue                    = String
-  type Timestamp                   = js.Date
-  type UserId                      = String
-  type Utterance                   = String
-  type UtteranceString             = String
-  type Value                       = String
-  type Version                     = String
-  type roleArn                     = String
+  type Description = String
+  type EnumerationValues = js.Array[EnumerationValue]
+  type GroupNumber = Int
+  type IamRoleArn = String
+  type IntentList = js.Array[Intent]
+  type IntentMetadataList = js.Array[IntentMetadata]
+  type IntentName = String
+  type IntentUtteranceList = js.Array[Utterance]
+  type KendraIndexArn = String
+  type KmsKeyArn = String
+  type LambdaARN = String
+  type ListOfUtterance = js.Array[UtteranceData]
+  type ListsOfUtterances = js.Array[UtteranceList]
+  type LocaleList = js.Array[Locale]
+  type LogSettingsRequestList = js.Array[LogSettingsRequest]
+  type LogSettingsResponseList = js.Array[LogSettingsResponse]
+  type MaxResults = Int
+  type MessageList = js.Array[Message]
+  type MessageVersion = String
+  type Name = String
+  type NextToken = String
+  type NumericalVersion = String
+  type Priority = Int
+  type PromptMaxAttempts = Int
+  type QueryFilterString = String
+  type RegexPattern = String
+  type ResourceArn = String
+  type ResourcePrefix = String
+  type ResponseCard = String
+  type SessionTTL = Int
+  type SlotList = js.Array[Slot]
+  type SlotName = String
+  type SlotTypeConfigurations = js.Array[SlotTypeConfiguration]
+  type SlotTypeMetadataList = js.Array[SlotTypeMetadata]
+  type SlotTypeName = String
+  type SlotUtteranceList = js.Array[Utterance]
+  type StringList = js.Array[String]
+  type SynonymList = js.Array[Value]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type Timestamp = js.Date
+  type UserId = String
+  type Utterance = String
+  type UtteranceString = String
+  type Value = String
+  type Version = String
+  type roleArn = String
 
   implicit final class LexModelBuildingServiceOps(private val service: LexModelBuildingService) extends AnyVal {
 
@@ -112,7 +112,7 @@ package object lexmodelbuildingservice {
     ): Future[GetBotChannelAssociationResponse] = service.getBotChannelAssociation(params).promise().toFuture
     @inline def getBotChannelAssociationsFuture(
         params: GetBotChannelAssociationsRequest
-    ): Future[GetBotChannelAssociationsResponse]                            = service.getBotChannelAssociations(params).promise().toFuture
+    ): Future[GetBotChannelAssociationsResponse] = service.getBotChannelAssociations(params).promise().toFuture
     @inline def getBotFuture(params: GetBotRequest): Future[GetBotResponse] = service.getBot(params).promise().toFuture
     @inline def getBotVersionsFuture(params: GetBotVersionsRequest): Future[GetBotVersionsResponse] =
       service.getBotVersions(params).promise().toFuture
@@ -166,48 +166,48 @@ package lexmodelbuildingservice {
   class LexModelBuildingService() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createBotVersion(params: CreateBotVersionRequest): Request[CreateBotVersionResponse]                = js.native
-    def createIntentVersion(params: CreateIntentVersionRequest): Request[CreateIntentVersionResponse]       = js.native
+    def createBotVersion(params: CreateBotVersionRequest): Request[CreateBotVersionResponse] = js.native
+    def createIntentVersion(params: CreateIntentVersionRequest): Request[CreateIntentVersionResponse] = js.native
     def createSlotTypeVersion(params: CreateSlotTypeVersionRequest): Request[CreateSlotTypeVersionResponse] = js.native
-    def deleteBot(params: DeleteBotRequest): Request[js.Object]                                             = js.native
-    def deleteBotAlias(params: DeleteBotAliasRequest): Request[js.Object]                                   = js.native
-    def deleteBotChannelAssociation(params: DeleteBotChannelAssociationRequest): Request[js.Object]         = js.native
-    def deleteBotVersion(params: DeleteBotVersionRequest): Request[js.Object]                               = js.native
-    def deleteIntent(params: DeleteIntentRequest): Request[js.Object]                                       = js.native
-    def deleteIntentVersion(params: DeleteIntentVersionRequest): Request[js.Object]                         = js.native
-    def deleteSlotType(params: DeleteSlotTypeRequest): Request[js.Object]                                   = js.native
-    def deleteSlotTypeVersion(params: DeleteSlotTypeVersionRequest): Request[js.Object]                     = js.native
-    def deleteUtterances(params: DeleteUtterancesRequest): Request[js.Object]                               = js.native
-    def getBot(params: GetBotRequest): Request[GetBotResponse]                                              = js.native
-    def getBotAlias(params: GetBotAliasRequest): Request[GetBotAliasResponse]                               = js.native
-    def getBotAliases(params: GetBotAliasesRequest): Request[GetBotAliasesResponse]                         = js.native
+    def deleteBot(params: DeleteBotRequest): Request[js.Object] = js.native
+    def deleteBotAlias(params: DeleteBotAliasRequest): Request[js.Object] = js.native
+    def deleteBotChannelAssociation(params: DeleteBotChannelAssociationRequest): Request[js.Object] = js.native
+    def deleteBotVersion(params: DeleteBotVersionRequest): Request[js.Object] = js.native
+    def deleteIntent(params: DeleteIntentRequest): Request[js.Object] = js.native
+    def deleteIntentVersion(params: DeleteIntentVersionRequest): Request[js.Object] = js.native
+    def deleteSlotType(params: DeleteSlotTypeRequest): Request[js.Object] = js.native
+    def deleteSlotTypeVersion(params: DeleteSlotTypeVersionRequest): Request[js.Object] = js.native
+    def deleteUtterances(params: DeleteUtterancesRequest): Request[js.Object] = js.native
+    def getBot(params: GetBotRequest): Request[GetBotResponse] = js.native
+    def getBotAlias(params: GetBotAliasRequest): Request[GetBotAliasResponse] = js.native
+    def getBotAliases(params: GetBotAliasesRequest): Request[GetBotAliasesResponse] = js.native
     def getBotChannelAssociation(params: GetBotChannelAssociationRequest): Request[GetBotChannelAssociationResponse] =
       js.native
     def getBotChannelAssociations(
         params: GetBotChannelAssociationsRequest
-    ): Request[GetBotChannelAssociationsResponse]                                                     = js.native
-    def getBotVersions(params: GetBotVersionsRequest): Request[GetBotVersionsResponse]                = js.native
-    def getBots(params: GetBotsRequest): Request[GetBotsResponse]                                     = js.native
-    def getBuiltinIntent(params: GetBuiltinIntentRequest): Request[GetBuiltinIntentResponse]          = js.native
-    def getBuiltinIntents(params: GetBuiltinIntentsRequest): Request[GetBuiltinIntentsResponse]       = js.native
+    ): Request[GetBotChannelAssociationsResponse] = js.native
+    def getBotVersions(params: GetBotVersionsRequest): Request[GetBotVersionsResponse] = js.native
+    def getBots(params: GetBotsRequest): Request[GetBotsResponse] = js.native
+    def getBuiltinIntent(params: GetBuiltinIntentRequest): Request[GetBuiltinIntentResponse] = js.native
+    def getBuiltinIntents(params: GetBuiltinIntentsRequest): Request[GetBuiltinIntentsResponse] = js.native
     def getBuiltinSlotTypes(params: GetBuiltinSlotTypesRequest): Request[GetBuiltinSlotTypesResponse] = js.native
-    def getExport(params: GetExportRequest): Request[GetExportResponse]                               = js.native
-    def getImport(params: GetImportRequest): Request[GetImportResponse]                               = js.native
-    def getIntent(params: GetIntentRequest): Request[GetIntentResponse]                               = js.native
-    def getIntentVersions(params: GetIntentVersionsRequest): Request[GetIntentVersionsResponse]       = js.native
-    def getIntents(params: GetIntentsRequest): Request[GetIntentsResponse]                            = js.native
-    def getSlotType(params: GetSlotTypeRequest): Request[GetSlotTypeResponse]                         = js.native
+    def getExport(params: GetExportRequest): Request[GetExportResponse] = js.native
+    def getImport(params: GetImportRequest): Request[GetImportResponse] = js.native
+    def getIntent(params: GetIntentRequest): Request[GetIntentResponse] = js.native
+    def getIntentVersions(params: GetIntentVersionsRequest): Request[GetIntentVersionsResponse] = js.native
+    def getIntents(params: GetIntentsRequest): Request[GetIntentsResponse] = js.native
+    def getSlotType(params: GetSlotTypeRequest): Request[GetSlotTypeResponse] = js.native
     def getSlotTypeVersions(params: GetSlotTypeVersionsRequest): Request[GetSlotTypeVersionsResponse] = js.native
-    def getSlotTypes(params: GetSlotTypesRequest): Request[GetSlotTypesResponse]                      = js.native
-    def getUtterancesView(params: GetUtterancesViewRequest): Request[GetUtterancesViewResponse]       = js.native
+    def getSlotTypes(params: GetSlotTypesRequest): Request[GetSlotTypesResponse] = js.native
+    def getUtterancesView(params: GetUtterancesViewRequest): Request[GetUtterancesViewResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def putBot(params: PutBotRequest): Request[PutBotResponse]                                        = js.native
-    def putBotAlias(params: PutBotAliasRequest): Request[PutBotAliasResponse]                         = js.native
-    def putIntent(params: PutIntentRequest): Request[PutIntentResponse]                               = js.native
-    def putSlotType(params: PutSlotTypeRequest): Request[PutSlotTypeResponse]                         = js.native
-    def startImport(params: StartImportRequest): Request[StartImportResponse]                         = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
+    def putBot(params: PutBotRequest): Request[PutBotResponse] = js.native
+    def putBotAlias(params: PutBotAliasRequest): Request[PutBotAliasResponse] = js.native
+    def putIntent(params: PutIntentRequest): Request[PutIntentResponse] = js.native
+    def putSlotType(params: PutSlotTypeRequest): Request[PutSlotTypeResponse] = js.native
+    def startImport(params: StartImportRequest): Request[StartImportResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
   }
 
   /**
@@ -394,8 +394,8 @@ package lexmodelbuildingservice {
   sealed trait ChannelStatus extends js.Any
   object ChannelStatus extends js.Object {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ChannelStatus]
-    val CREATED     = "CREATED".asInstanceOf[ChannelStatus]
-    val FAILED      = "FAILED".asInstanceOf[ChannelStatus]
+    val CREATED = "CREATED".asInstanceOf[ChannelStatus]
+    val FAILED = "FAILED".asInstanceOf[ChannelStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, CREATED, FAILED))
   }
@@ -403,10 +403,10 @@ package lexmodelbuildingservice {
   @js.native
   sealed trait ChannelType extends js.Any
   object ChannelType extends js.Object {
-    val Facebook     = "Facebook".asInstanceOf[ChannelType]
-    val Slack        = "Slack".asInstanceOf[ChannelType]
+    val Facebook = "Facebook".asInstanceOf[ChannelType]
+    val Slack = "Slack".asInstanceOf[ChannelType]
     val `Twilio-Sms` = "Twilio-Sms".asInstanceOf[ChannelType]
-    val Kik          = "Kik".asInstanceOf[ChannelType]
+    val Kik = "Kik".asInstanceOf[ChannelType]
 
     val values = js.Object.freeze(js.Array(Facebook, Slack, `Twilio-Sms`, Kik))
   }
@@ -428,7 +428,7 @@ package lexmodelbuildingservice {
     ): CodeHook = {
       val __obj = js.Dynamic.literal(
         "messageVersion" -> messageVersion.asInstanceOf[js.Any],
-        "uri"            -> uri.asInstanceOf[js.Any]
+        "uri" -> uri.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CodeHook]
@@ -438,8 +438,8 @@ package lexmodelbuildingservice {
   @js.native
   sealed trait ContentType extends js.Any
   object ContentType extends js.Object {
-    val PlainText     = "PlainText".asInstanceOf[ContentType]
-    val SSML          = "SSML".asInstanceOf[ContentType]
+    val PlainText = "PlainText".asInstanceOf[ContentType]
+    val SSML = "SSML".asInstanceOf[ContentType]
     val CustomPayload = "CustomPayload".asInstanceOf[ContentType]
 
     val values = js.Object.freeze(js.Array(PlainText, SSML, CustomPayload))
@@ -461,7 +461,7 @@ package lexmodelbuildingservice {
         logSettings: LogSettingsRequestList
     ): ConversationLogsRequest = {
       val __obj = js.Dynamic.literal(
-        "iamRoleArn"  -> iamRoleArn.asInstanceOf[js.Any],
+        "iamRoleArn" -> iamRoleArn.asInstanceOf[js.Any],
         "logSettings" -> logSettings.asInstanceOf[js.Any]
       )
 
@@ -733,7 +733,7 @@ package lexmodelbuildingservice {
     ): DeleteBotAliasRequest = {
       val __obj = js.Dynamic.literal(
         "botName" -> botName.asInstanceOf[js.Any],
-        "name"    -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteBotAliasRequest]
@@ -756,8 +756,8 @@ package lexmodelbuildingservice {
     ): DeleteBotChannelAssociationRequest = {
       val __obj = js.Dynamic.literal(
         "botAlias" -> botAlias.asInstanceOf[js.Any],
-        "botName"  -> botName.asInstanceOf[js.Any],
-        "name"     -> name.asInstanceOf[js.Any]
+        "botName" -> botName.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteBotChannelAssociationRequest]
@@ -795,7 +795,7 @@ package lexmodelbuildingservice {
         version: NumericalVersion
     ): DeleteBotVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "name"    -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "version" -> version.asInstanceOf[js.Any]
       )
 
@@ -834,7 +834,7 @@ package lexmodelbuildingservice {
         version: NumericalVersion
     ): DeleteIntentVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "name"    -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "version" -> version.asInstanceOf[js.Any]
       )
 
@@ -873,7 +873,7 @@ package lexmodelbuildingservice {
         version: NumericalVersion
     ): DeleteSlotTypeVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "name"    -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "version" -> version.asInstanceOf[js.Any]
       )
 
@@ -895,7 +895,7 @@ package lexmodelbuildingservice {
     ): DeleteUtterancesRequest = {
       val __obj = js.Dynamic.literal(
         "botName" -> botName.asInstanceOf[js.Any],
-        "userId"  -> userId.asInstanceOf[js.Any]
+        "userId" -> userId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteUtterancesRequest]
@@ -906,7 +906,7 @@ package lexmodelbuildingservice {
   sealed trait Destination extends js.Any
   object Destination extends js.Object {
     val CLOUDWATCH_LOGS = "CLOUDWATCH_LOGS".asInstanceOf[Destination]
-    val S3              = "S3".asInstanceOf[Destination]
+    val S3 = "S3".asInstanceOf[Destination]
 
     val values = js.Object.freeze(js.Array(CLOUDWATCH_LOGS, S3))
   }
@@ -943,8 +943,8 @@ package lexmodelbuildingservice {
   sealed trait ExportStatus extends js.Any
   object ExportStatus extends js.Object {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ExportStatus]
-    val READY       = "READY".asInstanceOf[ExportStatus]
-    val FAILED      = "FAILED".asInstanceOf[ExportStatus]
+    val READY = "READY".asInstanceOf[ExportStatus]
+    val FAILED = "FAILED".asInstanceOf[ExportStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, READY, FAILED))
   }
@@ -953,7 +953,7 @@ package lexmodelbuildingservice {
   sealed trait ExportType extends js.Any
   object ExportType extends js.Object {
     val ALEXA_SKILLS_KIT = "ALEXA_SKILLS_KIT".asInstanceOf[ExportType]
-    val LEX              = "LEX".asInstanceOf[ExportType]
+    val LEX = "LEX".asInstanceOf[ExportType]
 
     val values = js.Object.freeze(js.Array(ALEXA_SKILLS_KIT, LEX))
   }
@@ -974,7 +974,7 @@ package lexmodelbuildingservice {
         rejectionStatement: Statement
     ): FollowUpPrompt = {
       val __obj = js.Dynamic.literal(
-        "prompt"             -> prompt.asInstanceOf[js.Any],
+        "prompt" -> prompt.asInstanceOf[js.Any],
         "rejectionStatement" -> rejectionStatement.asInstanceOf[js.Any]
       )
 
@@ -1013,7 +1013,7 @@ package lexmodelbuildingservice {
   sealed trait FulfillmentActivityType extends js.Any
   object FulfillmentActivityType extends js.Object {
     val ReturnIntent = "ReturnIntent".asInstanceOf[FulfillmentActivityType]
-    val CodeHook     = "CodeHook".asInstanceOf[FulfillmentActivityType]
+    val CodeHook = "CodeHook".asInstanceOf[FulfillmentActivityType]
 
     val values = js.Object.freeze(js.Array(ReturnIntent, CodeHook))
   }
@@ -1032,7 +1032,7 @@ package lexmodelbuildingservice {
     ): GetBotAliasRequest = {
       val __obj = js.Dynamic.literal(
         "botName" -> botName.asInstanceOf[js.Any],
-        "name"    -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetBotAliasRequest]
@@ -1138,8 +1138,8 @@ package lexmodelbuildingservice {
     ): GetBotChannelAssociationRequest = {
       val __obj = js.Dynamic.literal(
         "botAlias" -> botAlias.asInstanceOf[js.Any],
-        "botName"  -> botName.asInstanceOf[js.Any],
-        "name"     -> name.asInstanceOf[js.Any]
+        "botName" -> botName.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetBotChannelAssociationRequest]
@@ -1206,7 +1206,7 @@ package lexmodelbuildingservice {
     ): GetBotChannelAssociationsRequest = {
       val __obj = js.Dynamic.literal(
         "botAlias" -> botAlias.asInstanceOf[js.Any],
-        "botName"  -> botName.asInstanceOf[js.Any]
+        "botName" -> botName.asInstanceOf[js.Any]
       )
 
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
@@ -1248,7 +1248,7 @@ package lexmodelbuildingservice {
         versionOrAlias: String
     ): GetBotRequest = {
       val __obj = js.Dynamic.literal(
-        "name"           -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "versionOrAlias" -> versionOrAlias.asInstanceOf[js.Any]
       )
 
@@ -1546,10 +1546,10 @@ package lexmodelbuildingservice {
         version: NumericalVersion
     ): GetExportRequest = {
       val __obj = js.Dynamic.literal(
-        "exportType"   -> exportType.asInstanceOf[js.Any],
-        "name"         -> name.asInstanceOf[js.Any],
+        "exportType" -> exportType.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "resourceType" -> resourceType.asInstanceOf[js.Any],
-        "version"      -> version.asInstanceOf[js.Any]
+        "version" -> version.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetExportRequest]
@@ -1655,7 +1655,7 @@ package lexmodelbuildingservice {
         version: Version
     ): GetIntentRequest = {
       val __obj = js.Dynamic.literal(
-        "name"    -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "version" -> version.asInstanceOf[js.Any]
       )
 
@@ -1821,7 +1821,7 @@ package lexmodelbuildingservice {
         version: Version
     ): GetSlotTypeRequest = {
       val __obj = js.Dynamic.literal(
-        "name"    -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "version" -> version.asInstanceOf[js.Any]
       )
 
@@ -1971,9 +1971,9 @@ package lexmodelbuildingservice {
         statusType: StatusType
     ): GetUtterancesViewRequest = {
       val __obj = js.Dynamic.literal(
-        "botName"     -> botName.asInstanceOf[js.Any],
+        "botName" -> botName.asInstanceOf[js.Any],
         "botVersions" -> botVersions.asInstanceOf[js.Any],
-        "statusType"  -> statusType.asInstanceOf[js.Any]
+        "statusType" -> statusType.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetUtterancesViewRequest]
@@ -2003,8 +2003,8 @@ package lexmodelbuildingservice {
   sealed trait ImportStatus extends js.Any
   object ImportStatus extends js.Object {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ImportStatus]
-    val COMPLETE    = "COMPLETE".asInstanceOf[ImportStatus]
-    val FAILED      = "FAILED".asInstanceOf[ImportStatus]
+    val COMPLETE = "COMPLETE".asInstanceOf[ImportStatus]
+    val FAILED = "FAILED".asInstanceOf[ImportStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETE, FAILED))
   }
@@ -2025,7 +2025,7 @@ package lexmodelbuildingservice {
         intentVersion: Version
     ): Intent = {
       val __obj = js.Dynamic.literal(
-        "intentName"    -> intentName.asInstanceOf[js.Any],
+        "intentName" -> intentName.asInstanceOf[js.Any],
         "intentVersion" -> intentVersion.asInstanceOf[js.Any]
       )
 
@@ -2083,7 +2083,7 @@ package lexmodelbuildingservice {
     ): KendraConfiguration = {
       val __obj = js.Dynamic.literal(
         "kendraIndex" -> kendraIndex.asInstanceOf[js.Any],
-        "role"        -> role.asInstanceOf[js.Any]
+        "role" -> role.asInstanceOf[js.Any]
       )
 
       queryFilterString.foreach(__v => __obj.updateDynamic("queryFilterString")(__v.asInstanceOf[js.Any]))
@@ -2156,7 +2156,7 @@ package lexmodelbuildingservice {
     ): LogSettingsRequest = {
       val __obj = js.Dynamic.literal(
         "destination" -> destination.asInstanceOf[js.Any],
-        "logType"     -> logType.asInstanceOf[js.Any],
+        "logType" -> logType.asInstanceOf[js.Any],
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
 
@@ -2200,7 +2200,7 @@ package lexmodelbuildingservice {
   sealed trait LogType extends js.Any
   object LogType extends js.Object {
     val AUDIO = "AUDIO".asInstanceOf[LogType]
-    val TEXT  = "TEXT".asInstanceOf[LogType]
+    val TEXT = "TEXT".asInstanceOf[LogType]
 
     val values = js.Object.freeze(js.Array(AUDIO, TEXT))
   }
@@ -2232,7 +2232,7 @@ package lexmodelbuildingservice {
         groupNumber: js.UndefOr[GroupNumber] = js.undefined
     ): Message = {
       val __obj = js.Dynamic.literal(
-        "content"     -> content.asInstanceOf[js.Any],
+        "content" -> content.asInstanceOf[js.Any],
         "contentType" -> contentType.asInstanceOf[js.Any]
       )
 
@@ -2244,7 +2244,7 @@ package lexmodelbuildingservice {
   @js.native
   sealed trait ObfuscationSetting extends js.Any
   object ObfuscationSetting extends js.Object {
-    val NONE                = "NONE".asInstanceOf[ObfuscationSetting]
+    val NONE = "NONE".asInstanceOf[ObfuscationSetting]
     val DEFAULT_OBFUSCATION = "DEFAULT_OBFUSCATION".asInstanceOf[ObfuscationSetting]
 
     val values = js.Object.freeze(js.Array(NONE, DEFAULT_OBFUSCATION))
@@ -2253,7 +2253,7 @@ package lexmodelbuildingservice {
   @js.native
   sealed trait ProcessBehavior extends js.Any
   object ProcessBehavior extends js.Object {
-    val SAVE  = "SAVE".asInstanceOf[ProcessBehavior]
+    val SAVE = "SAVE".asInstanceOf[ProcessBehavior]
     val BUILD = "BUILD".asInstanceOf[ProcessBehavior]
 
     val values = js.Object.freeze(js.Array(SAVE, BUILD))
@@ -2278,7 +2278,7 @@ package lexmodelbuildingservice {
     ): Prompt = {
       val __obj = js.Dynamic.literal(
         "maxAttempts" -> maxAttempts.asInstanceOf[js.Any],
-        "messages"    -> messages.asInstanceOf[js.Any]
+        "messages" -> messages.asInstanceOf[js.Any]
       )
 
       responseCard.foreach(__v => __obj.updateDynamic("responseCard")(__v.asInstanceOf[js.Any]))
@@ -2309,9 +2309,9 @@ package lexmodelbuildingservice {
         tags: js.UndefOr[TagList] = js.undefined
     ): PutBotAliasRequest = {
       val __obj = js.Dynamic.literal(
-        "botName"    -> botName.asInstanceOf[js.Any],
+        "botName" -> botName.asInstanceOf[js.Any],
         "botVersion" -> botVersion.asInstanceOf[js.Any],
-        "name"       -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
@@ -2400,8 +2400,8 @@ package lexmodelbuildingservice {
     ): PutBotRequest = {
       val __obj = js.Dynamic.literal(
         "childDirected" -> childDirected.asInstanceOf[js.Any],
-        "locale"        -> locale.asInstanceOf[js.Any],
-        "name"          -> name.asInstanceOf[js.Any]
+        "locale" -> locale.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       abortStatement.foreach(__v => __obj.updateDynamic("abortStatement")(__v.asInstanceOf[js.Any]))
@@ -2695,8 +2695,8 @@ package lexmodelbuildingservice {
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {
-    val BOT       = "BOT".asInstanceOf[ResourceType]
-    val INTENT    = "INTENT".asInstanceOf[ResourceType]
+    val BOT = "BOT".asInstanceOf[ResourceType]
+    val INTENT = "INTENT".asInstanceOf[ResourceType]
     val SLOT_TYPE = "SLOT_TYPE".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(js.Array(BOT, INTENT, SLOT_TYPE))
@@ -2734,7 +2734,7 @@ package lexmodelbuildingservice {
         valueElicitationPrompt: js.UndefOr[Prompt] = js.undefined
     ): Slot = {
       val __obj = js.Dynamic.literal(
-        "name"           -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "slotConstraint" -> slotConstraint.asInstanceOf[js.Any]
       )
 
@@ -2857,8 +2857,8 @@ package lexmodelbuildingservice {
     ): StartImportRequest = {
       val __obj = js.Dynamic.literal(
         "mergeStrategy" -> mergeStrategy.asInstanceOf[js.Any],
-        "payload"       -> payload.asInstanceOf[js.Any],
-        "resourceType"  -> resourceType.asInstanceOf[js.Any]
+        "payload" -> payload.asInstanceOf[js.Any],
+        "resourceType" -> resourceType.asInstanceOf[js.Any]
       )
 
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -2927,11 +2927,11 @@ package lexmodelbuildingservice {
   @js.native
   sealed trait Status extends js.Any
   object Status extends js.Object {
-    val BUILDING            = "BUILDING".asInstanceOf[Status]
-    val READY               = "READY".asInstanceOf[Status]
+    val BUILDING = "BUILDING".asInstanceOf[Status]
+    val READY = "READY".asInstanceOf[Status]
     val READY_BASIC_TESTING = "READY_BASIC_TESTING".asInstanceOf[Status]
-    val FAILED              = "FAILED".asInstanceOf[Status]
-    val NOT_BUILT           = "NOT_BUILT".asInstanceOf[Status]
+    val FAILED = "FAILED".asInstanceOf[Status]
+    val NOT_BUILT = "NOT_BUILT".asInstanceOf[Status]
 
     val values = js.Object.freeze(js.Array(BUILDING, READY, READY_BASIC_TESTING, FAILED, NOT_BUILT))
   }
@@ -2940,7 +2940,7 @@ package lexmodelbuildingservice {
   sealed trait StatusType extends js.Any
   object StatusType extends js.Object {
     val Detected = "Detected".asInstanceOf[StatusType]
-    val Missed   = "Missed".asInstanceOf[StatusType]
+    val Missed = "Missed".asInstanceOf[StatusType]
 
     val values = js.Object.freeze(js.Array(Detected, Missed))
   }
@@ -2961,7 +2961,7 @@ package lexmodelbuildingservice {
         value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "key"   -> key.asInstanceOf[js.Any],
+        "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
 
@@ -2983,7 +2983,7 @@ package lexmodelbuildingservice {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -3017,7 +3017,7 @@ package lexmodelbuildingservice {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]

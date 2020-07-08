@@ -7,90 +7,90 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object inspector {
-  type AddRemoveAttributesFindingArnList     = js.Array[Arn]
-  type AgentHealthCodeList                   = js.Array[AgentHealthCode]
-  type AgentHealthList                       = js.Array[AgentHealth]
-  type AgentId                               = String
-  type AgentIdList                           = js.Array[AgentId]
-  type AgentPreviewList                      = js.Array[AgentPreview]
-  type AgentVersion                          = String
-  type AmiId                                 = String
-  type Arn                                   = String
-  type ArnCount                              = Int
-  type AssessmentRulesPackageArnList         = js.Array[Arn]
-  type AssessmentRunAgentList                = js.Array[AssessmentRunAgent]
-  type AssessmentRunDuration                 = Int
-  type AssessmentRunFindingCounts            = js.Dictionary[FindingCount]
-  type AssessmentRunList                     = js.Array[AssessmentRun]
-  type AssessmentRunName                     = String
-  type AssessmentRunNotificationList         = js.Array[AssessmentRunNotification]
-  type AssessmentRunStateChangeList          = js.Array[AssessmentRunStateChange]
-  type AssessmentRunStateList                = js.Array[AssessmentRunState]
-  type AssessmentTargetList                  = js.Array[AssessmentTarget]
-  type AssessmentTargetName                  = String
-  type AssessmentTemplateList                = js.Array[AssessmentTemplate]
-  type AssessmentTemplateName                = String
+  type AddRemoveAttributesFindingArnList = js.Array[Arn]
+  type AgentHealthCodeList = js.Array[AgentHealthCode]
+  type AgentHealthList = js.Array[AgentHealth]
+  type AgentId = String
+  type AgentIdList = js.Array[AgentId]
+  type AgentPreviewList = js.Array[AgentPreview]
+  type AgentVersion = String
+  type AmiId = String
+  type Arn = String
+  type ArnCount = Int
+  type AssessmentRulesPackageArnList = js.Array[Arn]
+  type AssessmentRunAgentList = js.Array[AssessmentRunAgent]
+  type AssessmentRunDuration = Int
+  type AssessmentRunFindingCounts = js.Dictionary[FindingCount]
+  type AssessmentRunList = js.Array[AssessmentRun]
+  type AssessmentRunName = String
+  type AssessmentRunNotificationList = js.Array[AssessmentRunNotification]
+  type AssessmentRunStateChangeList = js.Array[AssessmentRunStateChange]
+  type AssessmentRunStateList = js.Array[AssessmentRunState]
+  type AssessmentTargetList = js.Array[AssessmentTarget]
+  type AssessmentTargetName = String
+  type AssessmentTemplateList = js.Array[AssessmentTemplate]
+  type AssessmentTemplateName = String
   type AssessmentTemplateRulesPackageArnList = js.Array[Arn]
-  type AttributeKey                          = String
-  type AttributeList                         = js.Array[Attribute]
-  type AttributeValue                        = String
-  type AutoScalingGroup                      = String
-  type AutoScalingGroupList                  = js.Array[AutoScalingGroup]
-  type BatchDescribeArnList                  = js.Array[Arn]
-  type BatchDescribeExclusionsArnList        = js.Array[Arn]
-  type EventSubscriptionList                 = js.Array[EventSubscription]
-  type ExclusionMap                          = js.Dictionary[Exclusion]
-  type ExclusionPreviewList                  = js.Array[ExclusionPreview]
-  type FailedItems                           = js.Dictionary[FailedItemDetails]
-  type FilterRulesPackageArnList             = js.Array[Arn]
-  type FindingCount                          = Int
-  type FindingId                             = String
-  type FindingList                           = js.Array[Finding]
-  type Hostname                              = String
-  type IocConfidence                         = Int
-  type Ipv4Address                           = String
-  type Ipv4AddressList                       = js.Array[Ipv4Address]
-  type Ipv6Addresses                         = js.Array[Text]
-  type KernelVersion                         = String
-  type ListEventSubscriptionsMaxResults      = Int
-  type ListMaxResults                        = Int
-  type ListParentArnList                     = js.Array[Arn]
-  type ListReturnedArnList                   = js.Array[Arn]
-  type Message                               = String
-  type MessageType                           = String
-  type NamePattern                           = String
-  type NetworkInterfaces                     = js.Array[NetworkInterface]
-  type NumericSeverity                       = Double
-  type NumericVersion                        = Int
-  type OperatingSystem                       = String
-  type PaginationToken                       = String
-  type PreviewAgentsMaxResults               = Int
-  type PrivateIpAddresses                    = js.Array[PrivateIp]
-  type ProviderName                          = String
-  type ResourceGroupList                     = js.Array[ResourceGroup]
-  type ResourceGroupTags                     = js.Array[ResourceGroupTag]
-  type RuleName                              = String
-  type RuleNameList                          = js.Array[RuleName]
-  type RulesPackageList                      = js.Array[RulesPackage]
-  type RulesPackageName                      = String
-  type ScopeList                             = js.Array[Scope]
-  type ScopeValue                            = String
-  type SecurityGroups                        = js.Array[SecurityGroup]
-  type ServiceName                           = String
-  type SeverityList                          = js.Array[Severity]
-  type SubscriptionList                      = js.Array[Subscription]
-  type TagKey                                = String
-  type TagList                               = js.Array[Tag]
-  type TagValue                              = String
-  type Tags                                  = js.Array[Tag]
-  type TelemetryMetadataList                 = js.Array[TelemetryMetadata]
-  type Text                                  = String
-  type Timestamp                             = js.Date
-  type UUID                                  = String
-  type Url                                   = String
-  type UserAttributeKeyList                  = js.Array[AttributeKey]
-  type UserAttributeList                     = js.Array[Attribute]
-  type Version                               = String
+  type AttributeKey = String
+  type AttributeList = js.Array[Attribute]
+  type AttributeValue = String
+  type AutoScalingGroup = String
+  type AutoScalingGroupList = js.Array[AutoScalingGroup]
+  type BatchDescribeArnList = js.Array[Arn]
+  type BatchDescribeExclusionsArnList = js.Array[Arn]
+  type EventSubscriptionList = js.Array[EventSubscription]
+  type ExclusionMap = js.Dictionary[Exclusion]
+  type ExclusionPreviewList = js.Array[ExclusionPreview]
+  type FailedItems = js.Dictionary[FailedItemDetails]
+  type FilterRulesPackageArnList = js.Array[Arn]
+  type FindingCount = Int
+  type FindingId = String
+  type FindingList = js.Array[Finding]
+  type Hostname = String
+  type IocConfidence = Int
+  type Ipv4Address = String
+  type Ipv4AddressList = js.Array[Ipv4Address]
+  type Ipv6Addresses = js.Array[Text]
+  type KernelVersion = String
+  type ListEventSubscriptionsMaxResults = Int
+  type ListMaxResults = Int
+  type ListParentArnList = js.Array[Arn]
+  type ListReturnedArnList = js.Array[Arn]
+  type Message = String
+  type MessageType = String
+  type NamePattern = String
+  type NetworkInterfaces = js.Array[NetworkInterface]
+  type NumericSeverity = Double
+  type NumericVersion = Int
+  type OperatingSystem = String
+  type PaginationToken = String
+  type PreviewAgentsMaxResults = Int
+  type PrivateIpAddresses = js.Array[PrivateIp]
+  type ProviderName = String
+  type ResourceGroupList = js.Array[ResourceGroup]
+  type ResourceGroupTags = js.Array[ResourceGroupTag]
+  type RuleName = String
+  type RuleNameList = js.Array[RuleName]
+  type RulesPackageList = js.Array[RulesPackage]
+  type RulesPackageName = String
+  type ScopeList = js.Array[Scope]
+  type ScopeValue = String
+  type SecurityGroups = js.Array[SecurityGroup]
+  type ServiceName = String
+  type SeverityList = js.Array[Severity]
+  type SubscriptionList = js.Array[Subscription]
+  type TagKey = String
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type Tags = js.Array[Tag]
+  type TelemetryMetadataList = js.Array[TelemetryMetadata]
+  type Text = String
+  type Timestamp = js.Date
+  type UUID = String
+  type Url = String
+  type UserAttributeKeyList = js.Array[AttributeKey]
+  type UserAttributeList = js.Array[Attribute]
+  type Version = String
 
   implicit final class InspectorOps(private val service: Inspector) extends AnyVal {
 
@@ -200,9 +200,9 @@ package inspector {
     def createExclusionsPreview(params: CreateExclusionsPreviewRequest): Request[CreateExclusionsPreviewResponse] =
       js.native
     def createResourceGroup(params: CreateResourceGroupRequest): Request[CreateResourceGroupResponse] = js.native
-    def deleteAssessmentRun(params: DeleteAssessmentRunRequest): Request[js.Object]                   = js.native
-    def deleteAssessmentTarget(params: DeleteAssessmentTargetRequest): Request[js.Object]             = js.native
-    def deleteAssessmentTemplate(params: DeleteAssessmentTemplateRequest): Request[js.Object]         = js.native
+    def deleteAssessmentRun(params: DeleteAssessmentRunRequest): Request[js.Object] = js.native
+    def deleteAssessmentTarget(params: DeleteAssessmentTargetRequest): Request[js.Object] = js.native
+    def deleteAssessmentTemplate(params: DeleteAssessmentTemplateRequest): Request[js.Object] = js.native
     def describeAssessmentRuns(params: DescribeAssessmentRunsRequest): Request[DescribeAssessmentRunsResponse] =
       js.native
     def describeAssessmentTargets(
@@ -210,39 +210,39 @@ package inspector {
     ): Request[DescribeAssessmentTargetsResponse] = js.native
     def describeAssessmentTemplates(
         params: DescribeAssessmentTemplatesRequest
-    ): Request[DescribeAssessmentTemplatesResponse]                                                = js.native
-    def describeCrossAccountAccessRole(): Request[DescribeCrossAccountAccessRoleResponse]          = js.native
+    ): Request[DescribeAssessmentTemplatesResponse] = js.native
+    def describeCrossAccountAccessRole(): Request[DescribeCrossAccountAccessRoleResponse] = js.native
     def describeExclusions(params: DescribeExclusionsRequest): Request[DescribeExclusionsResponse] = js.native
-    def describeFindings(params: DescribeFindingsRequest): Request[DescribeFindingsResponse]       = js.native
+    def describeFindings(params: DescribeFindingsRequest): Request[DescribeFindingsResponse] = js.native
     def describeResourceGroups(params: DescribeResourceGroupsRequest): Request[DescribeResourceGroupsResponse] =
       js.native
     def describeRulesPackages(params: DescribeRulesPackagesRequest): Request[DescribeRulesPackagesResponse] = js.native
-    def getAssessmentReport(params: GetAssessmentReportRequest): Request[GetAssessmentReportResponse]       = js.native
-    def getExclusionsPreview(params: GetExclusionsPreviewRequest): Request[GetExclusionsPreviewResponse]    = js.native
-    def getTelemetryMetadata(params: GetTelemetryMetadataRequest): Request[GetTelemetryMetadataResponse]    = js.native
+    def getAssessmentReport(params: GetAssessmentReportRequest): Request[GetAssessmentReportResponse] = js.native
+    def getExclusionsPreview(params: GetExclusionsPreviewRequest): Request[GetExclusionsPreviewResponse] = js.native
+    def getTelemetryMetadata(params: GetTelemetryMetadataRequest): Request[GetTelemetryMetadataResponse] = js.native
     def listAssessmentRunAgents(params: ListAssessmentRunAgentsRequest): Request[ListAssessmentRunAgentsResponse] =
       js.native
-    def listAssessmentRuns(params: ListAssessmentRunsRequest): Request[ListAssessmentRunsResponse]          = js.native
+    def listAssessmentRuns(params: ListAssessmentRunsRequest): Request[ListAssessmentRunsResponse] = js.native
     def listAssessmentTargets(params: ListAssessmentTargetsRequest): Request[ListAssessmentTargetsResponse] = js.native
     def listAssessmentTemplates(params: ListAssessmentTemplatesRequest): Request[ListAssessmentTemplatesResponse] =
       js.native
     def listEventSubscriptions(params: ListEventSubscriptionsRequest): Request[ListEventSubscriptionsResponse] =
       js.native
-    def listExclusions(params: ListExclusionsRequest): Request[ListExclusionsResponse]                    = js.native
-    def listFindings(params: ListFindingsRequest): Request[ListFindingsResponse]                          = js.native
-    def listRulesPackages(params: ListRulesPackagesRequest): Request[ListRulesPackagesResponse]           = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]     = js.native
-    def previewAgents(params: PreviewAgentsRequest): Request[PreviewAgentsResponse]                       = js.native
+    def listExclusions(params: ListExclusionsRequest): Request[ListExclusionsResponse] = js.native
+    def listFindings(params: ListFindingsRequest): Request[ListFindingsResponse] = js.native
+    def listRulesPackages(params: ListRulesPackagesRequest): Request[ListRulesPackagesResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def previewAgents(params: PreviewAgentsRequest): Request[PreviewAgentsResponse] = js.native
     def registerCrossAccountAccessRole(params: RegisterCrossAccountAccessRoleRequest): Request[js.Object] = js.native
     def removeAttributesFromFindings(
         params: RemoveAttributesFromFindingsRequest
-    ): Request[RemoveAttributesFromFindingsResponse]                                               = js.native
-    def setTagsForResource(params: SetTagsForResourceRequest): Request[js.Object]                  = js.native
+    ): Request[RemoveAttributesFromFindingsResponse] = js.native
+    def setTagsForResource(params: SetTagsForResourceRequest): Request[js.Object] = js.native
     def startAssessmentRun(params: StartAssessmentRunRequest): Request[StartAssessmentRunResponse] = js.native
-    def stopAssessmentRun(params: StopAssessmentRunRequest): Request[js.Object]                    = js.native
-    def subscribeToEvent(params: SubscribeToEventRequest): Request[js.Object]                      = js.native
-    def unsubscribeFromEvent(params: UnsubscribeFromEventRequest): Request[js.Object]              = js.native
-    def updateAssessmentTarget(params: UpdateAssessmentTargetRequest): Request[js.Object]          = js.native
+    def stopAssessmentRun(params: StopAssessmentRunRequest): Request[js.Object] = js.native
+    def subscribeToEvent(params: SubscribeToEventRequest): Request[js.Object] = js.native
+    def unsubscribeFromEvent(params: UnsubscribeFromEventRequest): Request[js.Object] = js.native
+    def updateAssessmentTarget(params: UpdateAssessmentTargetRequest): Request[js.Object] = js.native
   }
 
   @js.native
@@ -258,7 +258,7 @@ package inspector {
         findingArns: AddRemoveAttributesFindingArnList
     ): AddAttributesToFindingsRequest = {
       val __obj = js.Dynamic.literal(
-        "attributes"  -> attributes.asInstanceOf[js.Any],
+        "attributes" -> attributes.asInstanceOf[js.Any],
         "findingArns" -> findingArns.asInstanceOf[js.Any]
       )
 
@@ -301,7 +301,7 @@ package inspector {
     ): AgentFilter = {
       val __obj = js.Dynamic.literal(
         "agentHealthCodes" -> agentHealthCodes.asInstanceOf[js.Any],
-        "agentHealths"     -> agentHealths.asInstanceOf[js.Any]
+        "agentHealths" -> agentHealths.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AgentFilter]
@@ -311,9 +311,9 @@ package inspector {
   @js.native
   sealed trait AgentHealth extends js.Any
   object AgentHealth extends js.Object {
-    val HEALTHY   = "HEALTHY".asInstanceOf[AgentHealth]
+    val HEALTHY = "HEALTHY".asInstanceOf[AgentHealth]
     val UNHEALTHY = "UNHEALTHY".asInstanceOf[AgentHealth]
-    val UNKNOWN   = "UNKNOWN".asInstanceOf[AgentHealth]
+    val UNKNOWN = "UNKNOWN".asInstanceOf[AgentHealth]
 
     val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY, UNKNOWN))
   }
@@ -321,12 +321,12 @@ package inspector {
   @js.native
   sealed trait AgentHealthCode extends js.Any
   object AgentHealthCode extends js.Object {
-    val IDLE      = "IDLE".asInstanceOf[AgentHealthCode]
-    val RUNNING   = "RUNNING".asInstanceOf[AgentHealthCode]
-    val SHUTDOWN  = "SHUTDOWN".asInstanceOf[AgentHealthCode]
+    val IDLE = "IDLE".asInstanceOf[AgentHealthCode]
+    val RUNNING = "RUNNING".asInstanceOf[AgentHealthCode]
+    val SHUTDOWN = "SHUTDOWN".asInstanceOf[AgentHealthCode]
     val UNHEALTHY = "UNHEALTHY".asInstanceOf[AgentHealthCode]
     val THROTTLED = "THROTTLED".asInstanceOf[AgentHealthCode]
-    val UNKNOWN   = "UNKNOWN".asInstanceOf[AgentHealthCode]
+    val UNKNOWN = "UNKNOWN".asInstanceOf[AgentHealthCode]
 
     val values = js.Object.freeze(js.Array(IDLE, RUNNING, SHUTDOWN, UNHEALTHY, THROTTLED, UNKNOWN))
   }
@@ -416,18 +416,18 @@ package inspector {
         startedAt: js.UndefOr[Timestamp] = js.undefined
     ): AssessmentRun = {
       val __obj = js.Dynamic.literal(
-        "arn"                       -> arn.asInstanceOf[js.Any],
-        "assessmentTemplateArn"     -> assessmentTemplateArn.asInstanceOf[js.Any],
-        "createdAt"                 -> createdAt.asInstanceOf[js.Any],
-        "dataCollected"             -> dataCollected.asInstanceOf[js.Any],
-        "durationInSeconds"         -> durationInSeconds.asInstanceOf[js.Any],
-        "findingCounts"             -> findingCounts.asInstanceOf[js.Any],
-        "name"                      -> name.asInstanceOf[js.Any],
-        "notifications"             -> notifications.asInstanceOf[js.Any],
-        "rulesPackageArns"          -> rulesPackageArns.asInstanceOf[js.Any],
-        "state"                     -> state.asInstanceOf[js.Any],
-        "stateChangedAt"            -> stateChangedAt.asInstanceOf[js.Any],
-        "stateChanges"              -> stateChanges.asInstanceOf[js.Any],
+        "arn" -> arn.asInstanceOf[js.Any],
+        "assessmentTemplateArn" -> assessmentTemplateArn.asInstanceOf[js.Any],
+        "createdAt" -> createdAt.asInstanceOf[js.Any],
+        "dataCollected" -> dataCollected.asInstanceOf[js.Any],
+        "durationInSeconds" -> durationInSeconds.asInstanceOf[js.Any],
+        "findingCounts" -> findingCounts.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "notifications" -> notifications.asInstanceOf[js.Any],
+        "rulesPackageArns" -> rulesPackageArns.asInstanceOf[js.Any],
+        "state" -> state.asInstanceOf[js.Any],
+        "stateChangedAt" -> stateChangedAt.asInstanceOf[js.Any],
+        "stateChanges" -> stateChanges.asInstanceOf[js.Any],
         "userAttributesForFindings" -> userAttributesForFindings.asInstanceOf[js.Any]
       )
 
@@ -463,10 +463,10 @@ package inspector {
         autoScalingGroup: js.UndefOr[AutoScalingGroup] = js.undefined
     ): AssessmentRunAgent = {
       val __obj = js.Dynamic.literal(
-        "agentHealth"       -> agentHealth.asInstanceOf[js.Any],
-        "agentHealthCode"   -> agentHealthCode.asInstanceOf[js.Any],
-        "agentId"           -> agentId.asInstanceOf[js.Any],
-        "assessmentRunArn"  -> assessmentRunArn.asInstanceOf[js.Any],
+        "agentHealth" -> agentHealth.asInstanceOf[js.Any],
+        "agentHealthCode" -> agentHealthCode.asInstanceOf[js.Any],
+        "agentId" -> agentId.asInstanceOf[js.Any],
+        "assessmentRunArn" -> assessmentRunArn.asInstanceOf[js.Any],
         "telemetryMetadata" -> telemetryMetadata.asInstanceOf[js.Any]
       )
 
@@ -537,7 +537,7 @@ package inspector {
         snsTopicArn: js.UndefOr[Arn] = js.undefined
     ): AssessmentRunNotification = {
       val __obj = js.Dynamic.literal(
-        "date"  -> date.asInstanceOf[js.Any],
+        "date" -> date.asInstanceOf[js.Any],
         "error" -> error.asInstanceOf[js.Any],
         "event" -> event.asInstanceOf[js.Any]
       )
@@ -552,10 +552,10 @@ package inspector {
   @js.native
   sealed trait AssessmentRunNotificationSnsStatusCode extends js.Any
   object AssessmentRunNotificationSnsStatusCode extends js.Object {
-    val SUCCESS              = "SUCCESS".asInstanceOf[AssessmentRunNotificationSnsStatusCode]
+    val SUCCESS = "SUCCESS".asInstanceOf[AssessmentRunNotificationSnsStatusCode]
     val TOPIC_DOES_NOT_EXIST = "TOPIC_DOES_NOT_EXIST".asInstanceOf[AssessmentRunNotificationSnsStatusCode]
-    val ACCESS_DENIED        = "ACCESS_DENIED".asInstanceOf[AssessmentRunNotificationSnsStatusCode]
-    val INTERNAL_ERROR       = "INTERNAL_ERROR".asInstanceOf[AssessmentRunNotificationSnsStatusCode]
+    val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[AssessmentRunNotificationSnsStatusCode]
+    val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[AssessmentRunNotificationSnsStatusCode]
 
     val values = js.Object.freeze(js.Array(SUCCESS, TOPIC_DOES_NOT_EXIST, ACCESS_DENIED, INTERNAL_ERROR))
   }
@@ -563,19 +563,19 @@ package inspector {
   @js.native
   sealed trait AssessmentRunState extends js.Any
   object AssessmentRunState extends js.Object {
-    val CREATED                           = "CREATED".asInstanceOf[AssessmentRunState]
-    val START_DATA_COLLECTION_PENDING     = "START_DATA_COLLECTION_PENDING".asInstanceOf[AssessmentRunState]
+    val CREATED = "CREATED".asInstanceOf[AssessmentRunState]
+    val START_DATA_COLLECTION_PENDING = "START_DATA_COLLECTION_PENDING".asInstanceOf[AssessmentRunState]
     val START_DATA_COLLECTION_IN_PROGRESS = "START_DATA_COLLECTION_IN_PROGRESS".asInstanceOf[AssessmentRunState]
-    val COLLECTING_DATA                   = "COLLECTING_DATA".asInstanceOf[AssessmentRunState]
-    val STOP_DATA_COLLECTION_PENDING      = "STOP_DATA_COLLECTION_PENDING".asInstanceOf[AssessmentRunState]
-    val DATA_COLLECTED                    = "DATA_COLLECTED".asInstanceOf[AssessmentRunState]
-    val START_EVALUATING_RULES_PENDING    = "START_EVALUATING_RULES_PENDING".asInstanceOf[AssessmentRunState]
-    val EVALUATING_RULES                  = "EVALUATING_RULES".asInstanceOf[AssessmentRunState]
-    val FAILED                            = "FAILED".asInstanceOf[AssessmentRunState]
-    val ERROR                             = "ERROR".asInstanceOf[AssessmentRunState]
-    val COMPLETED                         = "COMPLETED".asInstanceOf[AssessmentRunState]
-    val COMPLETED_WITH_ERRORS             = "COMPLETED_WITH_ERRORS".asInstanceOf[AssessmentRunState]
-    val CANCELED                          = "CANCELED".asInstanceOf[AssessmentRunState]
+    val COLLECTING_DATA = "COLLECTING_DATA".asInstanceOf[AssessmentRunState]
+    val STOP_DATA_COLLECTION_PENDING = "STOP_DATA_COLLECTION_PENDING".asInstanceOf[AssessmentRunState]
+    val DATA_COLLECTED = "DATA_COLLECTED".asInstanceOf[AssessmentRunState]
+    val START_EVALUATING_RULES_PENDING = "START_EVALUATING_RULES_PENDING".asInstanceOf[AssessmentRunState]
+    val EVALUATING_RULES = "EVALUATING_RULES".asInstanceOf[AssessmentRunState]
+    val FAILED = "FAILED".asInstanceOf[AssessmentRunState]
+    val ERROR = "ERROR".asInstanceOf[AssessmentRunState]
+    val COMPLETED = "COMPLETED".asInstanceOf[AssessmentRunState]
+    val COMPLETED_WITH_ERRORS = "COMPLETED_WITH_ERRORS".asInstanceOf[AssessmentRunState]
+    val CANCELED = "CANCELED".asInstanceOf[AssessmentRunState]
 
     val values = js.Object.freeze(
       js.Array(
@@ -612,7 +612,7 @@ package inspector {
         stateChangedAt: Timestamp
     ): AssessmentRunStateChange = {
       val __obj = js.Dynamic.literal(
-        "state"          -> state.asInstanceOf[js.Any],
+        "state" -> state.asInstanceOf[js.Any],
         "stateChangedAt" -> stateChangedAt.asInstanceOf[js.Any]
       )
 
@@ -642,9 +642,9 @@ package inspector {
         resourceGroupArn: js.UndefOr[Arn] = js.undefined
     ): AssessmentTarget = {
       val __obj = js.Dynamic.literal(
-        "arn"       -> arn.asInstanceOf[js.Any],
+        "arn" -> arn.asInstanceOf[js.Any],
         "createdAt" -> createdAt.asInstanceOf[js.Any],
-        "name"      -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "updatedAt" -> updatedAt.asInstanceOf[js.Any]
       )
 
@@ -704,13 +704,13 @@ package inspector {
         lastAssessmentRunArn: js.UndefOr[Arn] = js.undefined
     ): AssessmentTemplate = {
       val __obj = js.Dynamic.literal(
-        "arn"                       -> arn.asInstanceOf[js.Any],
-        "assessmentRunCount"        -> assessmentRunCount.asInstanceOf[js.Any],
-        "assessmentTargetArn"       -> assessmentTargetArn.asInstanceOf[js.Any],
-        "createdAt"                 -> createdAt.asInstanceOf[js.Any],
-        "durationInSeconds"         -> durationInSeconds.asInstanceOf[js.Any],
-        "name"                      -> name.asInstanceOf[js.Any],
-        "rulesPackageArns"          -> rulesPackageArns.asInstanceOf[js.Any],
+        "arn" -> arn.asInstanceOf[js.Any],
+        "assessmentRunCount" -> assessmentRunCount.asInstanceOf[js.Any],
+        "assessmentTargetArn" -> assessmentTargetArn.asInstanceOf[js.Any],
+        "createdAt" -> createdAt.asInstanceOf[js.Any],
+        "durationInSeconds" -> durationInSeconds.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "rulesPackageArns" -> rulesPackageArns.asInstanceOf[js.Any],
         "userAttributesForFindings" -> userAttributesForFindings.asInstanceOf[js.Any]
       )
 
@@ -876,10 +876,10 @@ package inspector {
         userAttributesForFindings: js.UndefOr[UserAttributeList] = js.undefined
     ): CreateAssessmentTemplateRequest = {
       val __obj = js.Dynamic.literal(
-        "assessmentTargetArn"    -> assessmentTargetArn.asInstanceOf[js.Any],
+        "assessmentTargetArn" -> assessmentTargetArn.asInstanceOf[js.Any],
         "assessmentTemplateName" -> assessmentTemplateName.asInstanceOf[js.Any],
-        "durationInSeconds"      -> durationInSeconds.asInstanceOf[js.Any],
-        "rulesPackageArns"       -> rulesPackageArns.asInstanceOf[js.Any]
+        "durationInSeconds" -> durationInSeconds.asInstanceOf[js.Any],
+        "rulesPackageArns" -> rulesPackageArns.asInstanceOf[js.Any]
       )
 
       userAttributesForFindings.foreach(__v =>
@@ -1065,7 +1065,7 @@ package inspector {
     ): DescribeAssessmentRunsResponse = {
       val __obj = js.Dynamic.literal(
         "assessmentRuns" -> assessmentRuns.asInstanceOf[js.Any],
-        "failedItems"    -> failedItems.asInstanceOf[js.Any]
+        "failedItems" -> failedItems.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeAssessmentRunsResponse]
@@ -1104,7 +1104,7 @@ package inspector {
     ): DescribeAssessmentTargetsResponse = {
       val __obj = js.Dynamic.literal(
         "assessmentTargets" -> assessmentTargets.asInstanceOf[js.Any],
-        "failedItems"       -> failedItems.asInstanceOf[js.Any]
+        "failedItems" -> failedItems.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeAssessmentTargetsResponse]
@@ -1143,7 +1143,7 @@ package inspector {
     ): DescribeAssessmentTemplatesResponse = {
       val __obj = js.Dynamic.literal(
         "assessmentTemplates" -> assessmentTemplates.asInstanceOf[js.Any],
-        "failedItems"         -> failedItems.asInstanceOf[js.Any]
+        "failedItems" -> failedItems.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeAssessmentTemplatesResponse]
@@ -1166,8 +1166,8 @@ package inspector {
     ): DescribeCrossAccountAccessRoleResponse = {
       val __obj = js.Dynamic.literal(
         "registeredAt" -> registeredAt.asInstanceOf[js.Any],
-        "roleArn"      -> roleArn.asInstanceOf[js.Any],
-        "valid"        -> valid.asInstanceOf[js.Any]
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
+        "valid" -> valid.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeCrossAccountAccessRoleResponse]
@@ -1208,7 +1208,7 @@ package inspector {
         failedItems: FailedItems
     ): DescribeExclusionsResponse = {
       val __obj = js.Dynamic.literal(
-        "exclusions"  -> exclusions.asInstanceOf[js.Any],
+        "exclusions" -> exclusions.asInstanceOf[js.Any],
         "failedItems" -> failedItems.asInstanceOf[js.Any]
       )
 
@@ -1251,7 +1251,7 @@ package inspector {
     ): DescribeFindingsResponse = {
       val __obj = js.Dynamic.literal(
         "failedItems" -> failedItems.asInstanceOf[js.Any],
-        "findings"    -> findings.asInstanceOf[js.Any]
+        "findings" -> findings.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeFindingsResponse]
@@ -1289,7 +1289,7 @@ package inspector {
         resourceGroups: ResourceGroupList
     ): DescribeResourceGroupsResponse = {
       val __obj = js.Dynamic.literal(
-        "failedItems"    -> failedItems.asInstanceOf[js.Any],
+        "failedItems" -> failedItems.asInstanceOf[js.Any],
         "resourceGroups" -> resourceGroups.asInstanceOf[js.Any]
       )
 
@@ -1331,7 +1331,7 @@ package inspector {
         rulesPackages: RulesPackageList
     ): DescribeRulesPackagesResponse = {
       val __obj = js.Dynamic.literal(
-        "failedItems"   -> failedItems.asInstanceOf[js.Any],
+        "failedItems" -> failedItems.asInstanceOf[js.Any],
         "rulesPackages" -> rulesPackages.asInstanceOf[js.Any]
       )
 
@@ -1377,7 +1377,7 @@ package inspector {
         subscribedAt: Timestamp
     ): EventSubscription = {
       val __obj = js.Dynamic.literal(
-        "event"        -> event.asInstanceOf[js.Any],
+        "event" -> event.asInstanceOf[js.Any],
         "subscribedAt" -> subscribedAt.asInstanceOf[js.Any]
       )
 
@@ -1409,11 +1409,11 @@ package inspector {
         attributes: js.UndefOr[AttributeList] = js.undefined
     ): Exclusion = {
       val __obj = js.Dynamic.literal(
-        "arn"            -> arn.asInstanceOf[js.Any],
-        "description"    -> description.asInstanceOf[js.Any],
+        "arn" -> arn.asInstanceOf[js.Any],
+        "description" -> description.asInstanceOf[js.Any],
         "recommendation" -> recommendation.asInstanceOf[js.Any],
-        "scopes"         -> scopes.asInstanceOf[js.Any],
-        "title"          -> title.asInstanceOf[js.Any]
+        "scopes" -> scopes.asInstanceOf[js.Any],
+        "title" -> title.asInstanceOf[js.Any]
       )
 
       attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
@@ -1443,10 +1443,10 @@ package inspector {
         attributes: js.UndefOr[AttributeList] = js.undefined
     ): ExclusionPreview = {
       val __obj = js.Dynamic.literal(
-        "description"    -> description.asInstanceOf[js.Any],
+        "description" -> description.asInstanceOf[js.Any],
         "recommendation" -> recommendation.asInstanceOf[js.Any],
-        "scopes"         -> scopes.asInstanceOf[js.Any],
-        "title"          -> title.asInstanceOf[js.Any]
+        "scopes" -> scopes.asInstanceOf[js.Any],
+        "title" -> title.asInstanceOf[js.Any]
       )
 
       attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
@@ -1471,7 +1471,7 @@ package inspector {
     ): FailedItemDetails = {
       val __obj = js.Dynamic.literal(
         "failureCode" -> failureCode.asInstanceOf[js.Any],
-        "retryable"   -> retryable.asInstanceOf[js.Any]
+        "retryable" -> retryable.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[FailedItemDetails]
@@ -1481,12 +1481,12 @@ package inspector {
   @js.native
   sealed trait FailedItemErrorCode extends js.Any
   object FailedItemErrorCode extends js.Object {
-    val INVALID_ARN         = "INVALID_ARN".asInstanceOf[FailedItemErrorCode]
-    val DUPLICATE_ARN       = "DUPLICATE_ARN".asInstanceOf[FailedItemErrorCode]
+    val INVALID_ARN = "INVALID_ARN".asInstanceOf[FailedItemErrorCode]
+    val DUPLICATE_ARN = "DUPLICATE_ARN".asInstanceOf[FailedItemErrorCode]
     val ITEM_DOES_NOT_EXIST = "ITEM_DOES_NOT_EXIST".asInstanceOf[FailedItemErrorCode]
-    val ACCESS_DENIED       = "ACCESS_DENIED".asInstanceOf[FailedItemErrorCode]
-    val LIMIT_EXCEEDED      = "LIMIT_EXCEEDED".asInstanceOf[FailedItemErrorCode]
-    val INTERNAL_ERROR      = "INTERNAL_ERROR".asInstanceOf[FailedItemErrorCode]
+    val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[FailedItemErrorCode]
+    val LIMIT_EXCEEDED = "LIMIT_EXCEEDED".asInstanceOf[FailedItemErrorCode]
+    val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[FailedItemErrorCode]
 
     val values = js.Object.freeze(
       js.Array(INVALID_ARN, DUPLICATE_ARN, ITEM_DOES_NOT_EXIST, ACCESS_DENIED, LIMIT_EXCEEDED, INTERNAL_ERROR)
@@ -1541,10 +1541,10 @@ package inspector {
         title: js.UndefOr[Text] = js.undefined
     ): Finding = {
       val __obj = js.Dynamic.literal(
-        "arn"            -> arn.asInstanceOf[js.Any],
-        "attributes"     -> attributes.asInstanceOf[js.Any],
-        "createdAt"      -> createdAt.asInstanceOf[js.Any],
-        "updatedAt"      -> updatedAt.asInstanceOf[js.Any],
+        "arn" -> arn.asInstanceOf[js.Any],
+        "attributes" -> attributes.asInstanceOf[js.Any],
+        "createdAt" -> createdAt.asInstanceOf[js.Any],
+        "updatedAt" -> updatedAt.asInstanceOf[js.Any],
         "userAttributes" -> userAttributes.asInstanceOf[js.Any]
       )
 
@@ -1622,7 +1622,7 @@ package inspector {
       val __obj = js.Dynamic.literal(
         "assessmentRunArn" -> assessmentRunArn.asInstanceOf[js.Any],
         "reportFileFormat" -> reportFileFormat.asInstanceOf[js.Any],
-        "reportType"       -> reportType.asInstanceOf[js.Any]
+        "reportType" -> reportType.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetAssessmentReportRequest]
@@ -1670,7 +1670,7 @@ package inspector {
     ): GetExclusionsPreviewRequest = {
       val __obj = js.Dynamic.literal(
         "assessmentTemplateArn" -> assessmentTemplateArn.asInstanceOf[js.Any],
-        "previewToken"          -> previewToken.asInstanceOf[js.Any]
+        "previewToken" -> previewToken.asInstanceOf[js.Any]
       )
 
       locale.foreach(__v => __obj.updateDynamic("locale")(__v.asInstanceOf[js.Any]))
@@ -1743,11 +1743,11 @@ package inspector {
   @js.native
   sealed trait InspectorEvent extends js.Any
   object InspectorEvent extends js.Object {
-    val ASSESSMENT_RUN_STARTED       = "ASSESSMENT_RUN_STARTED".asInstanceOf[InspectorEvent]
-    val ASSESSMENT_RUN_COMPLETED     = "ASSESSMENT_RUN_COMPLETED".asInstanceOf[InspectorEvent]
+    val ASSESSMENT_RUN_STARTED = "ASSESSMENT_RUN_STARTED".asInstanceOf[InspectorEvent]
+    val ASSESSMENT_RUN_COMPLETED = "ASSESSMENT_RUN_COMPLETED".asInstanceOf[InspectorEvent]
     val ASSESSMENT_RUN_STATE_CHANGED = "ASSESSMENT_RUN_STATE_CHANGED".asInstanceOf[InspectorEvent]
-    val FINDING_REPORTED             = "FINDING_REPORTED".asInstanceOf[InspectorEvent]
-    val OTHER                        = "OTHER".asInstanceOf[InspectorEvent]
+    val FINDING_REPORTED = "FINDING_REPORTED".asInstanceOf[InspectorEvent]
+    val OTHER = "OTHER".asInstanceOf[InspectorEvent]
 
     val values = js.Object.freeze(
       js.Array(ASSESSMENT_RUN_STARTED, ASSESSMENT_RUN_COMPLETED, ASSESSMENT_RUN_STATE_CHANGED, FINDING_REPORTED, OTHER)
@@ -2277,7 +2277,7 @@ package inspector {
   sealed trait PreviewStatus extends js.Any
   object PreviewStatus extends js.Object {
     val WORK_IN_PROGRESS = "WORK_IN_PROGRESS".asInstanceOf[PreviewStatus]
-    val COMPLETED        = "COMPLETED".asInstanceOf[PreviewStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[PreviewStatus]
 
     val values = js.Object.freeze(js.Array(WORK_IN_PROGRESS, COMPLETED))
   }
@@ -2336,7 +2336,7 @@ package inspector {
     ): RemoveAttributesFromFindingsRequest = {
       val __obj = js.Dynamic.literal(
         "attributeKeys" -> attributeKeys.asInstanceOf[js.Any],
-        "findingArns"   -> findingArns.asInstanceOf[js.Any]
+        "findingArns" -> findingArns.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RemoveAttributesFromFindingsRequest]
@@ -2365,7 +2365,7 @@ package inspector {
   sealed trait ReportFileFormat extends js.Any
   object ReportFileFormat extends js.Object {
     val HTML = "HTML".asInstanceOf[ReportFileFormat]
-    val PDF  = "PDF".asInstanceOf[ReportFileFormat]
+    val PDF = "PDF".asInstanceOf[ReportFileFormat]
 
     val values = js.Object.freeze(js.Array(HTML, PDF))
   }
@@ -2374,8 +2374,8 @@ package inspector {
   sealed trait ReportStatus extends js.Any
   object ReportStatus extends js.Object {
     val WORK_IN_PROGRESS = "WORK_IN_PROGRESS".asInstanceOf[ReportStatus]
-    val FAILED           = "FAILED".asInstanceOf[ReportStatus]
-    val COMPLETED        = "COMPLETED".asInstanceOf[ReportStatus]
+    val FAILED = "FAILED".asInstanceOf[ReportStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[ReportStatus]
 
     val values = js.Object.freeze(js.Array(WORK_IN_PROGRESS, FAILED, COMPLETED))
   }
@@ -2384,7 +2384,7 @@ package inspector {
   sealed trait ReportType extends js.Any
   object ReportType extends js.Object {
     val FINDING = "FINDING".asInstanceOf[ReportType]
-    val FULL    = "FULL".asInstanceOf[ReportType]
+    val FULL = "FULL".asInstanceOf[ReportType]
 
     val values = js.Object.freeze(js.Array(FINDING, FULL))
   }
@@ -2407,9 +2407,9 @@ package inspector {
         tags: ResourceGroupTags
     ): ResourceGroup = {
       val __obj = js.Dynamic.literal(
-        "arn"       -> arn.asInstanceOf[js.Any],
+        "arn" -> arn.asInstanceOf[js.Any],
         "createdAt" -> createdAt.asInstanceOf[js.Any],
-        "tags"      -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ResourceGroup]
@@ -2462,10 +2462,10 @@ package inspector {
         description: js.UndefOr[Text] = js.undefined
     ): RulesPackage = {
       val __obj = js.Dynamic.literal(
-        "arn"      -> arn.asInstanceOf[js.Any],
-        "name"     -> name.asInstanceOf[js.Any],
+        "arn" -> arn.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "provider" -> provider.asInstanceOf[js.Any],
-        "version"  -> version.asInstanceOf[js.Any]
+        "version" -> version.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
@@ -2498,7 +2498,7 @@ package inspector {
   @js.native
   sealed trait ScopeType extends js.Any
   object ScopeType extends js.Object {
-    val INSTANCE_ID       = "INSTANCE_ID".asInstanceOf[ScopeType]
+    val INSTANCE_ID = "INSTANCE_ID".asInstanceOf[ScopeType]
     val RULES_PACKAGE_ARN = "RULES_PACKAGE_ARN".asInstanceOf[ScopeType]
 
     val values = js.Object.freeze(js.Array(INSTANCE_ID, RULES_PACKAGE_ARN))
@@ -2550,11 +2550,11 @@ package inspector {
   @js.native
   sealed trait Severity extends js.Any
   object Severity extends js.Object {
-    val Low           = "Low".asInstanceOf[Severity]
-    val Medium        = "Medium".asInstanceOf[Severity]
-    val High          = "High".asInstanceOf[Severity]
+    val Low = "Low".asInstanceOf[Severity]
+    val Medium = "Medium".asInstanceOf[Severity]
+    val High = "High".asInstanceOf[Severity]
     val Informational = "Informational".asInstanceOf[Severity]
-    val Undefined     = "Undefined".asInstanceOf[Severity]
+    val Undefined = "Undefined".asInstanceOf[Severity]
 
     val values = js.Object.freeze(js.Array(Low, Medium, High, Informational, Undefined))
   }
@@ -2602,7 +2602,7 @@ package inspector {
   sealed trait StopAction extends js.Any
   object StopAction extends js.Object {
     val START_EVALUATION = "START_EVALUATION".asInstanceOf[StopAction]
-    val SKIP_EVALUATION  = "SKIP_EVALUATION".asInstanceOf[StopAction]
+    val SKIP_EVALUATION = "SKIP_EVALUATION".asInstanceOf[StopAction]
 
     val values = js.Object.freeze(js.Array(START_EVALUATION, SKIP_EVALUATION))
   }
@@ -2643,9 +2643,9 @@ package inspector {
         topicArn: Arn
     ): SubscribeToEventRequest = {
       val __obj = js.Dynamic.literal(
-        "event"       -> event.asInstanceOf[js.Any],
+        "event" -> event.asInstanceOf[js.Any],
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "topicArn"    -> topicArn.asInstanceOf[js.Any]
+        "topicArn" -> topicArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[SubscribeToEventRequest]
@@ -2671,8 +2671,8 @@ package inspector {
     ): Subscription = {
       val __obj = js.Dynamic.literal(
         "eventSubscriptions" -> eventSubscriptions.asInstanceOf[js.Any],
-        "resourceArn"        -> resourceArn.asInstanceOf[js.Any],
-        "topicArn"           -> topicArn.asInstanceOf[js.Any]
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "topicArn" -> topicArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[Subscription]
@@ -2721,7 +2721,7 @@ package inspector {
         dataSize: js.UndefOr[Double] = js.undefined
     ): TelemetryMetadata = {
       val __obj = js.Dynamic.literal(
-        "count"       -> count.asInstanceOf[js.Any],
+        "count" -> count.asInstanceOf[js.Any],
         "messageType" -> messageType.asInstanceOf[js.Any]
       )
 
@@ -2767,9 +2767,9 @@ package inspector {
         topicArn: Arn
     ): UnsubscribeFromEventRequest = {
       val __obj = js.Dynamic.literal(
-        "event"       -> event.asInstanceOf[js.Any],
+        "event" -> event.asInstanceOf[js.Any],
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "topicArn"    -> topicArn.asInstanceOf[js.Any]
+        "topicArn" -> topicArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UnsubscribeFromEventRequest]
@@ -2791,7 +2791,7 @@ package inspector {
         resourceGroupArn: js.UndefOr[Arn] = js.undefined
     ): UpdateAssessmentTargetRequest = {
       val __obj = js.Dynamic.literal(
-        "assessmentTargetArn"  -> assessmentTargetArn.asInstanceOf[js.Any],
+        "assessmentTargetArn" -> assessmentTargetArn.asInstanceOf[js.Any],
         "assessmentTargetName" -> assessmentTargetName.asInstanceOf[js.Any]
       )
 

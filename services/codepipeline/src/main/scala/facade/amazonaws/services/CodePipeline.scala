@@ -7,113 +7,113 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object codepipeline {
-  type AWSRegionName                          = String
-  type AccessKeyId                            = String
-  type AccountId                              = String
-  type ActionConfigurationKey                 = String
-  type ActionConfigurationMap                 = js.Dictionary[ActionConfigurationValue]
-  type ActionConfigurationPropertyList        = js.Array[ActionConfigurationProperty]
-  type ActionConfigurationQueryableValue      = String
-  type ActionConfigurationValue               = String
-  type ActionExecutionDetailList              = js.Array[ActionExecutionDetail]
-  type ActionExecutionId                      = String
-  type ActionExecutionToken                   = String
-  type ActionName                             = String
-  type ActionNamespace                        = String
-  type ActionProvider                         = String
-  type ActionRunOrder                         = Int
-  type ActionStateList                        = js.Array[ActionState]
-  type ActionTypeList                         = js.Array[ActionType]
-  type ApprovalSummary                        = String
-  type ApprovalToken                          = String
-  type ArtifactDetailList                     = js.Array[ArtifactDetail]
-  type ArtifactList                           = js.Array[Artifact]
-  type ArtifactName                           = String
-  type ArtifactRevisionList                   = js.Array[ArtifactRevision]
-  type ArtifactStoreLocation                  = String
-  type ArtifactStoreMap                       = js.Dictionary[ArtifactStore]
-  type BlockerName                            = String
-  type ClientId                               = String
-  type ClientRequestToken                     = String
-  type ClientToken                            = String
-  type Code                                   = String
-  type ContinuationToken                      = String
-  type Description                            = String
-  type DisabledReason                         = String
-  type Enabled                                = Boolean
-  type EncryptionKeyId                        = String
-  type ExecutionId                            = String
-  type ExecutionSummary                       = String
-  type ExternalExecutionId                    = String
-  type ExternalExecutionSummary               = String
-  type InputArtifactList                      = js.Array[InputArtifact]
-  type JobId                                  = String
-  type JobList                                = js.Array[Job]
-  type JsonPath                               = String
-  type LastChangedAt                          = js.Date
-  type LastChangedBy                          = String
-  type LastUpdatedBy                          = String
-  type MatchEquals                            = String
-  type MaxBatchSize                           = Int
-  type MaxResults                             = Int
-  type MaximumArtifactCount                   = Int
-  type Message                                = String
-  type MinimumArtifactCount                   = Int
-  type NextToken                              = String
-  type Nonce                                  = String
-  type OutputArtifactList                     = js.Array[OutputArtifact]
-  type OutputVariablesKey                     = String
-  type OutputVariablesMap                     = js.Dictionary[OutputVariablesValue]
-  type OutputVariablesValue                   = String
-  type Percentage                             = Int
-  type PipelineArn                            = String
-  type PipelineExecutionId                    = String
-  type PipelineExecutionSummaryList           = js.Array[PipelineExecutionSummary]
-  type PipelineList                           = js.Array[PipelineSummary]
-  type PipelineName                           = String
-  type PipelineStageDeclarationList           = js.Array[StageDeclaration]
-  type PipelineVersion                        = Int
-  type QueryParamMap                          = js.Dictionary[ActionConfigurationQueryableValue]
-  type ResolvedActionConfigurationMap         = js.Dictionary[String]
-  type ResourceArn                            = String
-  type Revision                               = String
-  type RevisionChangeIdentifier               = String
-  type RevisionSummary                        = String
-  type RoleArn                                = String
-  type S3Bucket                               = String
-  type S3BucketName                           = String
-  type S3Key                                  = String
-  type S3ObjectKey                            = String
-  type SecretAccessKey                        = String
-  type SessionToken                           = String
-  type SourceRevisionList                     = js.Array[SourceRevision]
-  type StageActionDeclarationList             = js.Array[ActionDeclaration]
-  type StageBlockerDeclarationList            = js.Array[BlockerDeclaration]
-  type StageName                              = String
-  type StageStateList                         = js.Array[StageState]
-  type StopPipelineExecutionReason            = String
-  type TagKey                                 = String
-  type TagKeyList                             = js.Array[TagKey]
-  type TagList                                = js.Array[Tag]
-  type TagValue                               = String
-  type ThirdPartyJobId                        = String
-  type ThirdPartyJobList                      = js.Array[ThirdPartyJob]
-  type Time                                   = js.Date
-  type Timestamp                              = js.Date
-  type TriggerDetail                          = String
-  type Url                                    = String
-  type UrlTemplate                            = String
-  type Version                                = String
-  type WebhookArn                             = String
+  type AWSRegionName = String
+  type AccessKeyId = String
+  type AccountId = String
+  type ActionConfigurationKey = String
+  type ActionConfigurationMap = js.Dictionary[ActionConfigurationValue]
+  type ActionConfigurationPropertyList = js.Array[ActionConfigurationProperty]
+  type ActionConfigurationQueryableValue = String
+  type ActionConfigurationValue = String
+  type ActionExecutionDetailList = js.Array[ActionExecutionDetail]
+  type ActionExecutionId = String
+  type ActionExecutionToken = String
+  type ActionName = String
+  type ActionNamespace = String
+  type ActionProvider = String
+  type ActionRunOrder = Int
+  type ActionStateList = js.Array[ActionState]
+  type ActionTypeList = js.Array[ActionType]
+  type ApprovalSummary = String
+  type ApprovalToken = String
+  type ArtifactDetailList = js.Array[ArtifactDetail]
+  type ArtifactList = js.Array[Artifact]
+  type ArtifactName = String
+  type ArtifactRevisionList = js.Array[ArtifactRevision]
+  type ArtifactStoreLocation = String
+  type ArtifactStoreMap = js.Dictionary[ArtifactStore]
+  type BlockerName = String
+  type ClientId = String
+  type ClientRequestToken = String
+  type ClientToken = String
+  type Code = String
+  type ContinuationToken = String
+  type Description = String
+  type DisabledReason = String
+  type Enabled = Boolean
+  type EncryptionKeyId = String
+  type ExecutionId = String
+  type ExecutionSummary = String
+  type ExternalExecutionId = String
+  type ExternalExecutionSummary = String
+  type InputArtifactList = js.Array[InputArtifact]
+  type JobId = String
+  type JobList = js.Array[Job]
+  type JsonPath = String
+  type LastChangedAt = js.Date
+  type LastChangedBy = String
+  type LastUpdatedBy = String
+  type MatchEquals = String
+  type MaxBatchSize = Int
+  type MaxResults = Int
+  type MaximumArtifactCount = Int
+  type Message = String
+  type MinimumArtifactCount = Int
+  type NextToken = String
+  type Nonce = String
+  type OutputArtifactList = js.Array[OutputArtifact]
+  type OutputVariablesKey = String
+  type OutputVariablesMap = js.Dictionary[OutputVariablesValue]
+  type OutputVariablesValue = String
+  type Percentage = Int
+  type PipelineArn = String
+  type PipelineExecutionId = String
+  type PipelineExecutionSummaryList = js.Array[PipelineExecutionSummary]
+  type PipelineList = js.Array[PipelineSummary]
+  type PipelineName = String
+  type PipelineStageDeclarationList = js.Array[StageDeclaration]
+  type PipelineVersion = Int
+  type QueryParamMap = js.Dictionary[ActionConfigurationQueryableValue]
+  type ResolvedActionConfigurationMap = js.Dictionary[String]
+  type ResourceArn = String
+  type Revision = String
+  type RevisionChangeIdentifier = String
+  type RevisionSummary = String
+  type RoleArn = String
+  type S3Bucket = String
+  type S3BucketName = String
+  type S3Key = String
+  type S3ObjectKey = String
+  type SecretAccessKey = String
+  type SessionToken = String
+  type SourceRevisionList = js.Array[SourceRevision]
+  type StageActionDeclarationList = js.Array[ActionDeclaration]
+  type StageBlockerDeclarationList = js.Array[BlockerDeclaration]
+  type StageName = String
+  type StageStateList = js.Array[StageState]
+  type StopPipelineExecutionReason = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type ThirdPartyJobId = String
+  type ThirdPartyJobList = js.Array[ThirdPartyJob]
+  type Time = js.Date
+  type Timestamp = js.Date
+  type TriggerDetail = String
+  type Url = String
+  type UrlTemplate = String
+  type Version = String
+  type WebhookArn = String
   type WebhookAuthConfigurationAllowedIPRange = String
-  type WebhookAuthConfigurationSecretToken    = String
-  type WebhookErrorCode                       = String
-  type WebhookErrorMessage                    = String
-  type WebhookFilters                         = js.Array[WebhookFilterRule]
-  type WebhookLastTriggered                   = js.Date
-  type WebhookList                            = js.Array[ListWebhookItem]
-  type WebhookName                            = String
-  type WebhookUrl                             = String
+  type WebhookAuthConfigurationSecretToken = String
+  type WebhookErrorCode = String
+  type WebhookErrorMessage = String
+  type WebhookFilters = js.Array[WebhookFilterRule]
+  type WebhookLastTriggered = js.Date
+  type WebhookList = js.Array[ListWebhookItem]
+  type WebhookName = String
+  type WebhookUrl = String
 
   implicit final class CodePipelineOps(private val service: CodePipeline) extends AnyVal {
 
@@ -212,45 +212,45 @@ package codepipeline {
     def acknowledgeThirdPartyJob(params: AcknowledgeThirdPartyJobInput): Request[AcknowledgeThirdPartyJobOutput] =
       js.native
     def createCustomActionType(params: CreateCustomActionTypeInput): Request[CreateCustomActionTypeOutput] = js.native
-    def createPipeline(params: CreatePipelineInput): Request[CreatePipelineOutput]                         = js.native
-    def deleteCustomActionType(params: DeleteCustomActionTypeInput): Request[js.Object]                    = js.native
-    def deletePipeline(params: DeletePipelineInput): Request[js.Object]                                    = js.native
-    def deleteWebhook(params: DeleteWebhookInput): Request[DeleteWebhookOutput]                            = js.native
+    def createPipeline(params: CreatePipelineInput): Request[CreatePipelineOutput] = js.native
+    def deleteCustomActionType(params: DeleteCustomActionTypeInput): Request[js.Object] = js.native
+    def deletePipeline(params: DeletePipelineInput): Request[js.Object] = js.native
+    def deleteWebhook(params: DeleteWebhookInput): Request[DeleteWebhookOutput] = js.native
     def deregisterWebhookWithThirdParty(
         params: DeregisterWebhookWithThirdPartyInput
-    ): Request[DeregisterWebhookWithThirdPartyOutput]                                                = js.native
-    def disableStageTransition(params: DisableStageTransitionInput): Request[js.Object]              = js.native
-    def enableStageTransition(params: EnableStageTransitionInput): Request[js.Object]                = js.native
-    def getJobDetails(params: GetJobDetailsInput): Request[GetJobDetailsOutput]                      = js.native
-    def getPipeline(params: GetPipelineInput): Request[GetPipelineOutput]                            = js.native
+    ): Request[DeregisterWebhookWithThirdPartyOutput] = js.native
+    def disableStageTransition(params: DisableStageTransitionInput): Request[js.Object] = js.native
+    def enableStageTransition(params: EnableStageTransitionInput): Request[js.Object] = js.native
+    def getJobDetails(params: GetJobDetailsInput): Request[GetJobDetailsOutput] = js.native
+    def getPipeline(params: GetPipelineInput): Request[GetPipelineOutput] = js.native
     def getPipelineExecution(params: GetPipelineExecutionInput): Request[GetPipelineExecutionOutput] = js.native
-    def getPipelineState(params: GetPipelineStateInput): Request[GetPipelineStateOutput]             = js.native
+    def getPipelineState(params: GetPipelineStateInput): Request[GetPipelineStateOutput] = js.native
     def getThirdPartyJobDetails(params: GetThirdPartyJobDetailsInput): Request[GetThirdPartyJobDetailsOutput] =
       js.native
-    def listActionExecutions(params: ListActionExecutionsInput): Request[ListActionExecutionsOutput]       = js.native
-    def listActionTypes(params: ListActionTypesInput): Request[ListActionTypesOutput]                      = js.native
+    def listActionExecutions(params: ListActionExecutionsInput): Request[ListActionExecutionsOutput] = js.native
+    def listActionTypes(params: ListActionTypesInput): Request[ListActionTypesOutput] = js.native
     def listPipelineExecutions(params: ListPipelineExecutionsInput): Request[ListPipelineExecutionsOutput] = js.native
-    def listPipelines(params: ListPipelinesInput): Request[ListPipelinesOutput]                            = js.native
-    def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput]          = js.native
-    def listWebhooks(params: ListWebhooksInput): Request[ListWebhooksOutput]                               = js.native
-    def pollForJobs(params: PollForJobsInput): Request[PollForJobsOutput]                                  = js.native
-    def pollForThirdPartyJobs(params: PollForThirdPartyJobsInput): Request[PollForThirdPartyJobsOutput]    = js.native
-    def putActionRevision(params: PutActionRevisionInput): Request[PutActionRevisionOutput]                = js.native
-    def putApprovalResult(params: PutApprovalResultInput): Request[PutApprovalResultOutput]                = js.native
-    def putJobFailureResult(params: PutJobFailureResultInput): Request[js.Object]                          = js.native
-    def putJobSuccessResult(params: PutJobSuccessResultInput): Request[js.Object]                          = js.native
-    def putThirdPartyJobFailureResult(params: PutThirdPartyJobFailureResultInput): Request[js.Object]      = js.native
-    def putThirdPartyJobSuccessResult(params: PutThirdPartyJobSuccessResultInput): Request[js.Object]      = js.native
-    def putWebhook(params: PutWebhookInput): Request[PutWebhookOutput]                                     = js.native
+    def listPipelines(params: ListPipelinesInput): Request[ListPipelinesOutput] = js.native
+    def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput] = js.native
+    def listWebhooks(params: ListWebhooksInput): Request[ListWebhooksOutput] = js.native
+    def pollForJobs(params: PollForJobsInput): Request[PollForJobsOutput] = js.native
+    def pollForThirdPartyJobs(params: PollForThirdPartyJobsInput): Request[PollForThirdPartyJobsOutput] = js.native
+    def putActionRevision(params: PutActionRevisionInput): Request[PutActionRevisionOutput] = js.native
+    def putApprovalResult(params: PutApprovalResultInput): Request[PutApprovalResultOutput] = js.native
+    def putJobFailureResult(params: PutJobFailureResultInput): Request[js.Object] = js.native
+    def putJobSuccessResult(params: PutJobSuccessResultInput): Request[js.Object] = js.native
+    def putThirdPartyJobFailureResult(params: PutThirdPartyJobFailureResultInput): Request[js.Object] = js.native
+    def putThirdPartyJobSuccessResult(params: PutThirdPartyJobSuccessResultInput): Request[js.Object] = js.native
+    def putWebhook(params: PutWebhookInput): Request[PutWebhookOutput] = js.native
     def registerWebhookWithThirdParty(
         params: RegisterWebhookWithThirdPartyInput
-    ): Request[RegisterWebhookWithThirdPartyOutput]                                                        = js.native
-    def retryStageExecution(params: RetryStageExecutionInput): Request[RetryStageExecutionOutput]          = js.native
+    ): Request[RegisterWebhookWithThirdPartyOutput] = js.native
+    def retryStageExecution(params: RetryStageExecutionInput): Request[RetryStageExecutionOutput] = js.native
     def startPipelineExecution(params: StartPipelineExecutionInput): Request[StartPipelineExecutionOutput] = js.native
-    def stopPipelineExecution(params: StopPipelineExecutionInput): Request[StopPipelineExecutionOutput]    = js.native
-    def tagResource(params: TagResourceInput): Request[TagResourceOutput]                                  = js.native
-    def untagResource(params: UntagResourceInput): Request[UntagResourceOutput]                            = js.native
-    def updatePipeline(params: UpdatePipelineInput): Request[UpdatePipelineOutput]                         = js.native
+    def stopPipelineExecution(params: StopPipelineExecutionInput): Request[StopPipelineExecutionOutput] = js.native
+    def tagResource(params: TagResourceInput): Request[TagResourceOutput] = js.native
+    def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
+    def updatePipeline(params: UpdatePipelineInput): Request[UpdatePipelineOutput] = js.native
   }
 
   /**
@@ -271,9 +271,9 @@ package codepipeline {
         sessionToken: SessionToken
     ): AWSSessionCredentials = {
       val __obj = js.Dynamic.literal(
-        "accessKeyId"     -> accessKeyId.asInstanceOf[js.Any],
+        "accessKeyId" -> accessKeyId.asInstanceOf[js.Any],
         "secretAccessKey" -> secretAccessKey.asInstanceOf[js.Any],
-        "sessionToken"    -> sessionToken.asInstanceOf[js.Any]
+        "sessionToken" -> sessionToken.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AWSSessionCredentials]
@@ -342,8 +342,8 @@ package codepipeline {
     ): AcknowledgeThirdPartyJobInput = {
       val __obj = js.Dynamic.literal(
         "clientToken" -> clientToken.asInstanceOf[js.Any],
-        "jobId"       -> jobId.asInstanceOf[js.Any],
-        "nonce"       -> nonce.asInstanceOf[js.Any]
+        "jobId" -> jobId.asInstanceOf[js.Any],
+        "nonce" -> nonce.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AcknowledgeThirdPartyJobInput]
@@ -372,11 +372,11 @@ package codepipeline {
   @js.native
   sealed trait ActionCategory extends js.Any
   object ActionCategory extends js.Object {
-    val Source   = "Source".asInstanceOf[ActionCategory]
-    val Build    = "Build".asInstanceOf[ActionCategory]
-    val Deploy   = "Deploy".asInstanceOf[ActionCategory]
-    val Test     = "Test".asInstanceOf[ActionCategory]
-    val Invoke   = "Invoke".asInstanceOf[ActionCategory]
+    val Source = "Source".asInstanceOf[ActionCategory]
+    val Build = "Build".asInstanceOf[ActionCategory]
+    val Deploy = "Deploy".asInstanceOf[ActionCategory]
+    val Test = "Test".asInstanceOf[ActionCategory]
+    val Invoke = "Invoke".asInstanceOf[ActionCategory]
     val Approval = "Approval".asInstanceOf[ActionCategory]
 
     val values = js.Object.freeze(js.Array(Source, Build, Deploy, Test, Invoke, Approval))
@@ -427,10 +427,10 @@ package codepipeline {
         `type`: js.UndefOr[ActionConfigurationPropertyType] = js.undefined
     ): ActionConfigurationProperty = {
       val __obj = js.Dynamic.literal(
-        "key"      -> key.asInstanceOf[js.Any],
-        "name"     -> name.asInstanceOf[js.Any],
+        "key" -> key.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "required" -> required.asInstanceOf[js.Any],
-        "secret"   -> secret.asInstanceOf[js.Any]
+        "secret" -> secret.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
@@ -443,8 +443,8 @@ package codepipeline {
   @js.native
   sealed trait ActionConfigurationPropertyType extends js.Any
   object ActionConfigurationPropertyType extends js.Object {
-    val String  = "String".asInstanceOf[ActionConfigurationPropertyType]
-    val Number  = "Number".asInstanceOf[ActionConfigurationPropertyType]
+    val String = "String".asInstanceOf[ActionConfigurationPropertyType]
+    val Number = "Number".asInstanceOf[ActionConfigurationPropertyType]
     val Boolean = "Boolean".asInstanceOf[ActionConfigurationPropertyType]
 
     val values = js.Object.freeze(js.Array(String, Number, Boolean))
@@ -503,7 +503,7 @@ package codepipeline {
     ): ActionDeclaration = {
       val __obj = js.Dynamic.literal(
         "actionTypeId" -> actionTypeId.asInstanceOf[js.Any],
-        "name"         -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
@@ -716,9 +716,9 @@ package codepipeline {
   sealed trait ActionExecutionStatus extends js.Any
   object ActionExecutionStatus extends js.Object {
     val InProgress = "InProgress".asInstanceOf[ActionExecutionStatus]
-    val Abandoned  = "Abandoned".asInstanceOf[ActionExecutionStatus]
-    val Succeeded  = "Succeeded".asInstanceOf[ActionExecutionStatus]
-    val Failed     = "Failed".asInstanceOf[ActionExecutionStatus]
+    val Abandoned = "Abandoned".asInstanceOf[ActionExecutionStatus]
+    val Succeeded = "Succeeded".asInstanceOf[ActionExecutionStatus]
+    val Failed = "Failed".asInstanceOf[ActionExecutionStatus]
 
     val values = js.Object.freeze(js.Array(InProgress, Abandoned, Succeeded, Failed))
   }
@@ -726,9 +726,9 @@ package codepipeline {
   @js.native
   sealed trait ActionOwner extends js.Any
   object ActionOwner extends js.Object {
-    val AWS        = "AWS".asInstanceOf[ActionOwner]
+    val AWS = "AWS".asInstanceOf[ActionOwner]
     val ThirdParty = "ThirdParty".asInstanceOf[ActionOwner]
-    val Custom     = "Custom".asInstanceOf[ActionOwner]
+    val Custom = "Custom".asInstanceOf[ActionOwner]
 
     val values = js.Object.freeze(js.Array(AWS, ThirdParty, Custom))
   }
@@ -751,9 +751,9 @@ package codepipeline {
         revisionId: Revision
     ): ActionRevision = {
       val __obj = js.Dynamic.literal(
-        "created"          -> created.asInstanceOf[js.Any],
+        "created" -> created.asInstanceOf[js.Any],
         "revisionChangeId" -> revisionChangeId.asInstanceOf[js.Any],
-        "revisionId"       -> revisionId.asInstanceOf[js.Any]
+        "revisionId" -> revisionId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ActionRevision]
@@ -813,8 +813,8 @@ package codepipeline {
         settings: js.UndefOr[ActionTypeSettings] = js.undefined
     ): ActionType = {
       val __obj = js.Dynamic.literal(
-        "id"                    -> id.asInstanceOf[js.Any],
-        "inputArtifactDetails"  -> inputArtifactDetails.asInstanceOf[js.Any],
+        "id" -> id.asInstanceOf[js.Any],
+        "inputArtifactDetails" -> inputArtifactDetails.asInstanceOf[js.Any],
         "outputArtifactDetails" -> outputArtifactDetails.asInstanceOf[js.Any]
       )
 
@@ -847,9 +847,9 @@ package codepipeline {
     ): ActionTypeId = {
       val __obj = js.Dynamic.literal(
         "category" -> category.asInstanceOf[js.Any],
-        "owner"    -> owner.asInstanceOf[js.Any],
+        "owner" -> owner.asInstanceOf[js.Any],
         "provider" -> provider.asInstanceOf[js.Any],
-        "version"  -> version.asInstanceOf[js.Any]
+        "version" -> version.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ActionTypeId]
@@ -902,7 +902,7 @@ package codepipeline {
         summary: ApprovalSummary
     ): ApprovalResult = {
       val __obj = js.Dynamic.literal(
-        "status"  -> status.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any],
         "summary" -> summary.asInstanceOf[js.Any]
       )
 
@@ -1075,7 +1075,7 @@ package codepipeline {
     ): ArtifactStore = {
       val __obj = js.Dynamic.literal(
         "location" -> location.asInstanceOf[js.Any],
-        "type"     -> `type`.asInstanceOf[js.Any]
+        "type" -> `type`.asInstanceOf[js.Any]
       )
 
       encryptionKey.foreach(__v => __obj.updateDynamic("encryptionKey")(__v.asInstanceOf[js.Any]))
@@ -1151,11 +1151,11 @@ package codepipeline {
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateCustomActionTypeInput = {
       val __obj = js.Dynamic.literal(
-        "category"              -> category.asInstanceOf[js.Any],
-        "inputArtifactDetails"  -> inputArtifactDetails.asInstanceOf[js.Any],
+        "category" -> category.asInstanceOf[js.Any],
+        "inputArtifactDetails" -> inputArtifactDetails.asInstanceOf[js.Any],
         "outputArtifactDetails" -> outputArtifactDetails.asInstanceOf[js.Any],
-        "provider"              -> provider.asInstanceOf[js.Any],
-        "version"               -> version.asInstanceOf[js.Any]
+        "provider" -> provider.asInstanceOf[js.Any],
+        "version" -> version.asInstanceOf[js.Any]
       )
 
       configurationProperties.foreach(__v => __obj.updateDynamic("configurationProperties")(__v.asInstanceOf[js.Any]))
@@ -1256,7 +1256,7 @@ package codepipeline {
     ): CurrentRevision = {
       val __obj = js.Dynamic.literal(
         "changeIdentifier" -> changeIdentifier.asInstanceOf[js.Any],
-        "revision"         -> revision.asInstanceOf[js.Any]
+        "revision" -> revision.asInstanceOf[js.Any]
       )
 
       created.foreach(__v => __obj.updateDynamic("created")(__v.asInstanceOf[js.Any]))
@@ -1285,7 +1285,7 @@ package codepipeline {
       val __obj = js.Dynamic.literal(
         "category" -> category.asInstanceOf[js.Any],
         "provider" -> provider.asInstanceOf[js.Any],
-        "version"  -> version.asInstanceOf[js.Any]
+        "version" -> version.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteCustomActionTypeInput]
@@ -1393,9 +1393,9 @@ package codepipeline {
         transitionType: StageTransitionType
     ): DisableStageTransitionInput = {
       val __obj = js.Dynamic.literal(
-        "pipelineName"   -> pipelineName.asInstanceOf[js.Any],
-        "reason"         -> reason.asInstanceOf[js.Any],
-        "stageName"      -> stageName.asInstanceOf[js.Any],
+        "pipelineName" -> pipelineName.asInstanceOf[js.Any],
+        "reason" -> reason.asInstanceOf[js.Any],
+        "stageName" -> stageName.asInstanceOf[js.Any],
         "transitionType" -> transitionType.asInstanceOf[js.Any]
       )
 
@@ -1421,8 +1421,8 @@ package codepipeline {
         transitionType: StageTransitionType
     ): EnableStageTransitionInput = {
       val __obj = js.Dynamic.literal(
-        "pipelineName"   -> pipelineName.asInstanceOf[js.Any],
-        "stageName"      -> stageName.asInstanceOf[js.Any],
+        "pipelineName" -> pipelineName.asInstanceOf[js.Any],
+        "stageName" -> stageName.asInstanceOf[js.Any],
         "transitionType" -> transitionType.asInstanceOf[js.Any]
       )
 
@@ -1446,7 +1446,7 @@ package codepipeline {
         `type`: EncryptionKeyType
     ): EncryptionKey = {
       val __obj = js.Dynamic.literal(
-        "id"   -> id.asInstanceOf[js.Any],
+        "id" -> id.asInstanceOf[js.Any],
         "type" -> `type`.asInstanceOf[js.Any]
       )
 
@@ -1550,7 +1550,7 @@ package codepipeline {
     ): FailureDetails = {
       val __obj = js.Dynamic.literal(
         "message" -> message.asInstanceOf[js.Any],
-        "type"    -> `type`.asInstanceOf[js.Any]
+        "type" -> `type`.asInstanceOf[js.Any]
       )
 
       externalExecutionId.foreach(__v => __obj.updateDynamic("externalExecutionId")(__v.asInstanceOf[js.Any]))
@@ -1561,12 +1561,12 @@ package codepipeline {
   @js.native
   sealed trait FailureType extends js.Any
   object FailureType extends js.Object {
-    val JobFailed           = "JobFailed".asInstanceOf[FailureType]
-    val ConfigurationError  = "ConfigurationError".asInstanceOf[FailureType]
-    val PermissionError     = "PermissionError".asInstanceOf[FailureType]
-    val RevisionOutOfSync   = "RevisionOutOfSync".asInstanceOf[FailureType]
+    val JobFailed = "JobFailed".asInstanceOf[FailureType]
+    val ConfigurationError = "ConfigurationError".asInstanceOf[FailureType]
+    val PermissionError = "PermissionError".asInstanceOf[FailureType]
+    val RevisionOutOfSync = "RevisionOutOfSync".asInstanceOf[FailureType]
     val RevisionUnavailable = "RevisionUnavailable".asInstanceOf[FailureType]
-    val SystemUnavailable   = "SystemUnavailable".asInstanceOf[FailureType]
+    val SystemUnavailable = "SystemUnavailable".asInstanceOf[FailureType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1637,7 +1637,7 @@ package codepipeline {
     ): GetPipelineExecutionInput = {
       val __obj = js.Dynamic.literal(
         "pipelineExecutionId" -> pipelineExecutionId.asInstanceOf[js.Any],
-        "pipelineName"        -> pipelineName.asInstanceOf[js.Any]
+        "pipelineName" -> pipelineName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetPipelineExecutionInput]
@@ -1778,7 +1778,7 @@ package codepipeline {
     ): GetThirdPartyJobDetailsInput = {
       val __obj = js.Dynamic.literal(
         "clientToken" -> clientToken.asInstanceOf[js.Any],
-        "jobId"       -> jobId.asInstanceOf[js.Any]
+        "jobId" -> jobId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetThirdPartyJobDetailsInput]
@@ -1921,13 +1921,13 @@ package codepipeline {
   @js.native
   sealed trait JobStatus extends js.Any
   object JobStatus extends js.Object {
-    val Created    = "Created".asInstanceOf[JobStatus]
-    val Queued     = "Queued".asInstanceOf[JobStatus]
+    val Created = "Created".asInstanceOf[JobStatus]
+    val Queued = "Queued".asInstanceOf[JobStatus]
     val Dispatched = "Dispatched".asInstanceOf[JobStatus]
     val InProgress = "InProgress".asInstanceOf[JobStatus]
-    val TimedOut   = "TimedOut".asInstanceOf[JobStatus]
-    val Succeeded  = "Succeeded".asInstanceOf[JobStatus]
-    val Failed     = "Failed".asInstanceOf[JobStatus]
+    val TimedOut = "TimedOut".asInstanceOf[JobStatus]
+    val Succeeded = "Succeeded".asInstanceOf[JobStatus]
+    val Failed = "Failed".asInstanceOf[JobStatus]
 
     val values = js.Object.freeze(js.Array(Created, Queued, Dispatched, InProgress, TimedOut, Succeeded, Failed))
   }
@@ -2186,7 +2186,7 @@ package codepipeline {
     ): ListWebhookItem = {
       val __obj = js.Dynamic.literal(
         "definition" -> definition.asInstanceOf[js.Any],
-        "url"        -> url.asInstanceOf[js.Any]
+        "url" -> url.asInstanceOf[js.Any]
       )
 
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
@@ -2314,9 +2314,9 @@ package codepipeline {
         version: js.UndefOr[PipelineVersion] = js.undefined
     ): PipelineDeclaration = {
       val __obj = js.Dynamic.literal(
-        "name"    -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "roleArn" -> roleArn.asInstanceOf[js.Any],
-        "stages"  -> stages.asInstanceOf[js.Any]
+        "stages" -> stages.asInstanceOf[js.Any]
       )
 
       artifactStore.foreach(__v => __obj.updateDynamic("artifactStore")(__v.asInstanceOf[js.Any]))
@@ -2361,11 +2361,11 @@ package codepipeline {
   sealed trait PipelineExecutionStatus extends js.Any
   object PipelineExecutionStatus extends js.Object {
     val InProgress = "InProgress".asInstanceOf[PipelineExecutionStatus]
-    val Stopped    = "Stopped".asInstanceOf[PipelineExecutionStatus]
-    val Stopping   = "Stopping".asInstanceOf[PipelineExecutionStatus]
-    val Succeeded  = "Succeeded".asInstanceOf[PipelineExecutionStatus]
+    val Stopped = "Stopped".asInstanceOf[PipelineExecutionStatus]
+    val Stopping = "Stopping".asInstanceOf[PipelineExecutionStatus]
+    val Succeeded = "Succeeded".asInstanceOf[PipelineExecutionStatus]
     val Superseded = "Superseded".asInstanceOf[PipelineExecutionStatus]
-    val Failed     = "Failed".asInstanceOf[PipelineExecutionStatus]
+    val Failed = "Failed".asInstanceOf[PipelineExecutionStatus]
 
     val values = js.Object.freeze(js.Array(InProgress, Stopped, Stopping, Succeeded, Superseded, Failed))
   }
@@ -2569,10 +2569,10 @@ package codepipeline {
         stageName: StageName
     ): PutActionRevisionInput = {
       val __obj = js.Dynamic.literal(
-        "actionName"     -> actionName.asInstanceOf[js.Any],
+        "actionName" -> actionName.asInstanceOf[js.Any],
         "actionRevision" -> actionRevision.asInstanceOf[js.Any],
-        "pipelineName"   -> pipelineName.asInstanceOf[js.Any],
-        "stageName"      -> stageName.asInstanceOf[js.Any]
+        "pipelineName" -> pipelineName.asInstanceOf[js.Any],
+        "stageName" -> stageName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutActionRevisionInput]
@@ -2623,11 +2623,11 @@ package codepipeline {
         token: ApprovalToken
     ): PutApprovalResultInput = {
       val __obj = js.Dynamic.literal(
-        "actionName"   -> actionName.asInstanceOf[js.Any],
+        "actionName" -> actionName.asInstanceOf[js.Any],
         "pipelineName" -> pipelineName.asInstanceOf[js.Any],
-        "result"       -> result.asInstanceOf[js.Any],
-        "stageName"    -> stageName.asInstanceOf[js.Any],
-        "token"        -> token.asInstanceOf[js.Any]
+        "result" -> result.asInstanceOf[js.Any],
+        "stageName" -> stageName.asInstanceOf[js.Any],
+        "token" -> token.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutApprovalResultInput]
@@ -2670,7 +2670,7 @@ package codepipeline {
     ): PutJobFailureResultInput = {
       val __obj = js.Dynamic.literal(
         "failureDetails" -> failureDetails.asInstanceOf[js.Any],
-        "jobId"          -> jobId.asInstanceOf[js.Any]
+        "jobId" -> jobId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutJobFailureResultInput]
@@ -2728,9 +2728,9 @@ package codepipeline {
         jobId: ThirdPartyJobId
     ): PutThirdPartyJobFailureResultInput = {
       val __obj = js.Dynamic.literal(
-        "clientToken"    -> clientToken.asInstanceOf[js.Any],
+        "clientToken" -> clientToken.asInstanceOf[js.Any],
         "failureDetails" -> failureDetails.asInstanceOf[js.Any],
-        "jobId"          -> jobId.asInstanceOf[js.Any]
+        "jobId" -> jobId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutThirdPartyJobFailureResultInput]
@@ -2760,7 +2760,7 @@ package codepipeline {
     ): PutThirdPartyJobSuccessResultInput = {
       val __obj = js.Dynamic.literal(
         "clientToken" -> clientToken.asInstanceOf[js.Any],
-        "jobId"       -> jobId.asInstanceOf[js.Any]
+        "jobId" -> jobId.asInstanceOf[js.Any]
       )
 
       continuationToken.foreach(__v => __obj.updateDynamic("continuationToken")(__v.asInstanceOf[js.Any]))
@@ -2857,9 +2857,9 @@ package codepipeline {
     ): RetryStageExecutionInput = {
       val __obj = js.Dynamic.literal(
         "pipelineExecutionId" -> pipelineExecutionId.asInstanceOf[js.Any],
-        "pipelineName"        -> pipelineName.asInstanceOf[js.Any],
-        "retryMode"           -> retryMode.asInstanceOf[js.Any],
-        "stageName"           -> stageName.asInstanceOf[js.Any]
+        "pipelineName" -> pipelineName.asInstanceOf[js.Any],
+        "retryMode" -> retryMode.asInstanceOf[js.Any],
+        "stageName" -> stageName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RetryStageExecutionInput]
@@ -2902,7 +2902,7 @@ package codepipeline {
     ): S3ArtifactLocation = {
       val __obj = js.Dynamic.literal(
         "bucketName" -> bucketName.asInstanceOf[js.Any],
-        "objectKey"  -> objectKey.asInstanceOf[js.Any]
+        "objectKey" -> objectKey.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[S3ArtifactLocation]
@@ -2999,7 +2999,7 @@ package codepipeline {
     ): StageDeclaration = {
       val __obj = js.Dynamic.literal(
         "actions" -> actions.asInstanceOf[js.Any],
-        "name"    -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       blockers.foreach(__v => __obj.updateDynamic("blockers")(__v.asInstanceOf[js.Any]))
@@ -3024,7 +3024,7 @@ package codepipeline {
     ): StageExecution = {
       val __obj = js.Dynamic.literal(
         "pipelineExecutionId" -> pipelineExecutionId.asInstanceOf[js.Any],
-        "status"              -> status.asInstanceOf[js.Any]
+        "status" -> status.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[StageExecution]
@@ -3035,10 +3035,10 @@ package codepipeline {
   sealed trait StageExecutionStatus extends js.Any
   object StageExecutionStatus extends js.Object {
     val InProgress = "InProgress".asInstanceOf[StageExecutionStatus]
-    val Failed     = "Failed".asInstanceOf[StageExecutionStatus]
-    val Stopped    = "Stopped".asInstanceOf[StageExecutionStatus]
-    val Stopping   = "Stopping".asInstanceOf[StageExecutionStatus]
-    val Succeeded  = "Succeeded".asInstanceOf[StageExecutionStatus]
+    val Failed = "Failed".asInstanceOf[StageExecutionStatus]
+    val Stopped = "Stopped".asInstanceOf[StageExecutionStatus]
+    val Stopping = "Stopping".asInstanceOf[StageExecutionStatus]
+    val Succeeded = "Succeeded".asInstanceOf[StageExecutionStatus]
 
     val values = js.Object.freeze(js.Array(InProgress, Failed, Stopped, Stopping, Succeeded))
   }
@@ -3082,7 +3082,7 @@ package codepipeline {
   @js.native
   sealed trait StageTransitionType extends js.Any
   object StageTransitionType extends js.Object {
-    val Inbound  = "Inbound".asInstanceOf[StageTransitionType]
+    val Inbound = "Inbound".asInstanceOf[StageTransitionType]
     val Outbound = "Outbound".asInstanceOf[StageTransitionType]
 
     val values = js.Object.freeze(js.Array(Inbound, Outbound))
@@ -3168,7 +3168,7 @@ package codepipeline {
     ): StopPipelineExecutionInput = {
       val __obj = js.Dynamic.literal(
         "pipelineExecutionId" -> pipelineExecutionId.asInstanceOf[js.Any],
-        "pipelineName"        -> pipelineName.asInstanceOf[js.Any]
+        "pipelineName" -> pipelineName.asInstanceOf[js.Any]
       )
 
       abandon.foreach(__v => __obj.updateDynamic("abandon")(__v.asInstanceOf[js.Any]))
@@ -3209,7 +3209,7 @@ package codepipeline {
         value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "key"   -> key.asInstanceOf[js.Any],
+        "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
 
@@ -3231,7 +3231,7 @@ package codepipeline {
     ): TagResourceInput = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceInput]
@@ -3369,12 +3369,12 @@ package codepipeline {
   @js.native
   sealed trait TriggerType extends js.Any
   object TriggerType extends js.Object {
-    val CreatePipeline         = "CreatePipeline".asInstanceOf[TriggerType]
+    val CreatePipeline = "CreatePipeline".asInstanceOf[TriggerType]
     val StartPipelineExecution = "StartPipelineExecution".asInstanceOf[TriggerType]
-    val PollForSourceChanges   = "PollForSourceChanges".asInstanceOf[TriggerType]
-    val Webhook                = "Webhook".asInstanceOf[TriggerType]
-    val CloudWatchEvent        = "CloudWatchEvent".asInstanceOf[TriggerType]
-    val PutActionRevision      = "PutActionRevision".asInstanceOf[TriggerType]
+    val PollForSourceChanges = "PollForSourceChanges".asInstanceOf[TriggerType]
+    val Webhook = "Webhook".asInstanceOf[TriggerType]
+    val CloudWatchEvent = "CloudWatchEvent".asInstanceOf[TriggerType]
+    val PutActionRevision = "PutActionRevision".asInstanceOf[TriggerType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3402,7 +3402,7 @@ package codepipeline {
     ): UntagResourceInput = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceInput]
@@ -3487,8 +3487,8 @@ package codepipeline {
   @js.native
   sealed trait WebhookAuthenticationType extends js.Any
   object WebhookAuthenticationType extends js.Object {
-    val GITHUB_HMAC     = "GITHUB_HMAC".asInstanceOf[WebhookAuthenticationType]
-    val IP              = "IP".asInstanceOf[WebhookAuthenticationType]
+    val GITHUB_HMAC = "GITHUB_HMAC".asInstanceOf[WebhookAuthenticationType]
+    val IP = "IP".asInstanceOf[WebhookAuthenticationType]
     val UNAUTHENTICATED = "UNAUTHENTICATED".asInstanceOf[WebhookAuthenticationType]
 
     val values = js.Object.freeze(js.Array(GITHUB_HMAC, IP, UNAUTHENTICATED))
@@ -3518,12 +3518,12 @@ package codepipeline {
         targetPipeline: PipelineName
     ): WebhookDefinition = {
       val __obj = js.Dynamic.literal(
-        "authentication"              -> authentication.asInstanceOf[js.Any],
+        "authentication" -> authentication.asInstanceOf[js.Any],
         "authenticationConfiguration" -> authenticationConfiguration.asInstanceOf[js.Any],
-        "filters"                     -> filters.asInstanceOf[js.Any],
-        "name"                        -> name.asInstanceOf[js.Any],
-        "targetAction"                -> targetAction.asInstanceOf[js.Any],
-        "targetPipeline"              -> targetPipeline.asInstanceOf[js.Any]
+        "filters" -> filters.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "targetAction" -> targetAction.asInstanceOf[js.Any],
+        "targetPipeline" -> targetPipeline.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[WebhookDefinition]

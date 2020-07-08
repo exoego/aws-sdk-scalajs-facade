@@ -7,42 +7,42 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object resourcegroupstaggingapi {
-  type AmazonResourceType             = String
-  type ComplianceStatus               = Boolean
-  type ErrorMessage                   = String
-  type ExcludeCompliantResources      = Boolean
-  type FailedResourcesMap             = js.Dictionary[FailureInfo]
-  type GroupBy                        = js.Array[GroupByAttribute]
-  type IncludeComplianceDetails       = Boolean
-  type LastUpdated                    = String
+  type AmazonResourceType = String
+  type ComplianceStatus = Boolean
+  type ErrorMessage = String
+  type ExcludeCompliantResources = Boolean
+  type FailedResourcesMap = js.Dictionary[FailureInfo]
+  type GroupBy = js.Array[GroupByAttribute]
+  type IncludeComplianceDetails = Boolean
+  type LastUpdated = String
   type MaxResultsGetComplianceSummary = Int
-  type NonCompliantResources          = Double
-  type PaginationToken                = String
-  type Region                         = String
-  type RegionFilterList               = js.Array[Region]
-  type ResourceARN                    = String
-  type ResourceARNList                = js.Array[ResourceARN]
-  type ResourceTagMappingList         = js.Array[ResourceTagMapping]
-  type ResourceTypeFilterList         = js.Array[AmazonResourceType]
-  type ResourcesPerPage               = Int
-  type S3Bucket                       = String
-  type S3Location                     = String
-  type Status                         = String
-  type StatusCode                     = Int
-  type SummaryList                    = js.Array[Summary]
-  type TagFilterList                  = js.Array[TagFilter]
-  type TagKey                         = String
-  type TagKeyFilterList               = js.Array[TagKey]
-  type TagKeyList                     = js.Array[TagKey]
-  type TagKeyListForUntag             = js.Array[TagKey]
-  type TagList                        = js.Array[Tag]
-  type TagMap                         = js.Dictionary[TagValue]
-  type TagValue                       = String
-  type TagValueList                   = js.Array[TagValue]
-  type TagValuesOutputList            = js.Array[TagValue]
-  type TagsPerPage                    = Int
-  type TargetId                       = String
-  type TargetIdFilterList             = js.Array[TargetId]
+  type NonCompliantResources = Double
+  type PaginationToken = String
+  type Region = String
+  type RegionFilterList = js.Array[Region]
+  type ResourceARN = String
+  type ResourceARNList = js.Array[ResourceARN]
+  type ResourceTagMappingList = js.Array[ResourceTagMapping]
+  type ResourceTypeFilterList = js.Array[AmazonResourceType]
+  type ResourcesPerPage = Int
+  type S3Bucket = String
+  type S3Location = String
+  type Status = String
+  type StatusCode = Int
+  type SummaryList = js.Array[Summary]
+  type TagFilterList = js.Array[TagFilter]
+  type TagKey = String
+  type TagKeyFilterList = js.Array[TagKey]
+  type TagKeyList = js.Array[TagKey]
+  type TagKeyListForUntag = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagMap = js.Dictionary[TagValue]
+  type TagValue = String
+  type TagValueList = js.Array[TagValue]
+  type TagValuesOutputList = js.Array[TagValue]
+  type TagsPerPage = Int
+  type TargetId = String
+  type TargetIdFilterList = js.Array[TargetId]
 
   implicit final class ResourceGroupsTaggingAPIOps(private val service: ResourceGroupsTaggingAPI) extends AnyVal {
 
@@ -73,13 +73,13 @@ package resourcegroupstaggingapi {
     def this(config: AWSConfig) = this()
 
     def describeReportCreation(params: DescribeReportCreationInput): Request[DescribeReportCreationOutput] = js.native
-    def getComplianceSummary(params: GetComplianceSummaryInput): Request[GetComplianceSummaryOutput]       = js.native
-    def getResources(params: GetResourcesInput): Request[GetResourcesOutput]                               = js.native
-    def getTagKeys(params: GetTagKeysInput): Request[GetTagKeysOutput]                                     = js.native
-    def getTagValues(params: GetTagValuesInput): Request[GetTagValuesOutput]                               = js.native
-    def startReportCreation(params: StartReportCreationInput): Request[StartReportCreationOutput]          = js.native
-    def tagResources(params: TagResourcesInput): Request[TagResourcesOutput]                               = js.native
-    def untagResources(params: UntagResourcesInput): Request[UntagResourcesOutput]                         = js.native
+    def getComplianceSummary(params: GetComplianceSummaryInput): Request[GetComplianceSummaryOutput] = js.native
+    def getResources(params: GetResourcesInput): Request[GetResourcesOutput] = js.native
+    def getTagKeys(params: GetTagKeysInput): Request[GetTagKeysOutput] = js.native
+    def getTagValues(params: GetTagValuesInput): Request[GetTagValuesOutput] = js.native
+    def startReportCreation(params: StartReportCreationInput): Request[StartReportCreationOutput] = js.native
+    def tagResources(params: TagResourcesInput): Request[TagResourcesOutput] = js.native
+    def untagResources(params: UntagResourcesInput): Request[UntagResourcesOutput] = js.native
   }
 
   /**
@@ -147,7 +147,7 @@ package resourcegroupstaggingapi {
   @js.native
   sealed trait ErrorCode extends js.Any
   object ErrorCode extends js.Object {
-    val InternalServiceException  = "InternalServiceException".asInstanceOf[ErrorCode]
+    val InternalServiceException = "InternalServiceException".asInstanceOf[ErrorCode]
     val InvalidParameterException = "InvalidParameterException".asInstanceOf[ErrorCode]
 
     val values = js.Object.freeze(js.Array(InternalServiceException, InvalidParameterException))
@@ -368,8 +368,8 @@ package resourcegroupstaggingapi {
   @js.native
   sealed trait GroupByAttribute extends js.Any
   object GroupByAttribute extends js.Object {
-    val TARGET_ID     = "TARGET_ID".asInstanceOf[GroupByAttribute]
-    val REGION        = "REGION".asInstanceOf[GroupByAttribute]
+    val TARGET_ID = "TARGET_ID".asInstanceOf[GroupByAttribute]
+    val REGION = "REGION".asInstanceOf[GroupByAttribute]
     val RESOURCE_TYPE = "RESOURCE_TYPE".asInstanceOf[GroupByAttribute]
 
     val values = js.Object.freeze(js.Array(TARGET_ID, REGION, RESOURCE_TYPE))
@@ -481,7 +481,7 @@ package resourcegroupstaggingapi {
         Value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -525,7 +525,7 @@ package resourcegroupstaggingapi {
     ): TagResourcesInput = {
       val __obj = js.Dynamic.literal(
         "ResourceARNList" -> ResourceARNList.asInstanceOf[js.Any],
-        "Tags"            -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourcesInput]
@@ -552,8 +552,8 @@ package resourcegroupstaggingapi {
   sealed trait TargetIdType extends js.Any
   object TargetIdType extends js.Object {
     val ACCOUNT = "ACCOUNT".asInstanceOf[TargetIdType]
-    val OU      = "OU".asInstanceOf[TargetIdType]
-    val ROOT    = "ROOT".asInstanceOf[TargetIdType]
+    val OU = "OU".asInstanceOf[TargetIdType]
+    val ROOT = "ROOT".asInstanceOf[TargetIdType]
 
     val values = js.Object.freeze(js.Array(ACCOUNT, OU, ROOT))
   }
@@ -572,7 +572,7 @@ package resourcegroupstaggingapi {
     ): UntagResourcesInput = {
       val __obj = js.Dynamic.literal(
         "ResourceARNList" -> ResourceARNList.asInstanceOf[js.Any],
-        "TagKeys"         -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourcesInput]

@@ -7,16 +7,16 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object qldbsession {
-  type CommitDigest        = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type IonBinary           = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type IonText             = String
-  type LedgerName          = String
-  type PageToken           = String
-  type SessionToken        = String
-  type Statement           = String
+  type CommitDigest = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type IonBinary = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type IonText = String
+  type LedgerName = String
+  type PageToken = String
+  type SessionToken = String
+  type Statement = String
   type StatementParameters = js.Array[ValueHolder]
-  type TransactionId       = String
-  type ValueHolders        = js.Array[ValueHolder]
+  type TransactionId = String
+  type ValueHolders = js.Array[ValueHolder]
 
   implicit final class QLDBSessionOps(private val service: QLDBSession) extends AnyVal {
 
@@ -82,7 +82,7 @@ package qldbsession {
         TransactionId: TransactionId
     ): CommitTransactionRequest = {
       val __obj = js.Dynamic.literal(
-        "CommitDigest"  -> CommitDigest.asInstanceOf[js.Any],
+        "CommitDigest" -> CommitDigest.asInstanceOf[js.Any],
         "TransactionId" -> TransactionId.asInstanceOf[js.Any]
       )
 
@@ -162,7 +162,7 @@ package qldbsession {
         Parameters: js.UndefOr[StatementParameters] = js.undefined
     ): ExecuteStatementRequest = {
       val __obj = js.Dynamic.literal(
-        "Statement"     -> Statement.asInstanceOf[js.Any],
+        "Statement" -> Statement.asInstanceOf[js.Any],
         "TransactionId" -> TransactionId.asInstanceOf[js.Any]
       )
 

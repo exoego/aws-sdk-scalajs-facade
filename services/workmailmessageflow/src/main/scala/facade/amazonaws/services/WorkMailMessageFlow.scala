@@ -8,7 +8,7 @@ import facade.amazonaws._
 
 package object workmailmessageflow {
   type messageContentBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type messageIdType      = String
+  type messageIdType = String
 
   implicit final class WorkMailMessageFlowOps(private val service: WorkMailMessageFlow) extends AnyVal {
 

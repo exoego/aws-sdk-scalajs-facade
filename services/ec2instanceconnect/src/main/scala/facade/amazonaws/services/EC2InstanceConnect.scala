@@ -8,11 +8,11 @@ import facade.amazonaws._
 
 package object ec2instanceconnect {
   type AvailabilityZone = String
-  type InstanceId       = String
-  type InstanceOSUser   = String
-  type RequestId        = String
-  type SSHPublicKey     = String
-  type Success          = Boolean
+  type InstanceId = String
+  type InstanceOSUser = String
+  type RequestId = String
+  type SSHPublicKey = String
+  type Success = Boolean
 
   implicit final class EC2InstanceConnectOps(private val service: EC2InstanceConnect) extends AnyVal {
 
@@ -48,9 +48,9 @@ package ec2instanceconnect {
     ): SendSSHPublicKeyRequest = {
       val __obj = js.Dynamic.literal(
         "AvailabilityZone" -> AvailabilityZone.asInstanceOf[js.Any],
-        "InstanceId"       -> InstanceId.asInstanceOf[js.Any],
-        "InstanceOSUser"   -> InstanceOSUser.asInstanceOf[js.Any],
-        "SSHPublicKey"     -> SSHPublicKey.asInstanceOf[js.Any]
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "InstanceOSUser" -> InstanceOSUser.asInstanceOf[js.Any],
+        "SSHPublicKey" -> SSHPublicKey.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[SendSSHPublicKeyRequest]

@@ -9,111 +9,111 @@ import facade.amazonaws._
 package object codedeploy {
   @deprecated("AdditionalDeploymentStatusInfo is deprecated, use DeploymentStatusMessageList instead.", "forever")
   type AdditionalDeploymentStatusInfo = String
-  type AlarmList                      = js.Array[Alarm]
-  type AlarmName                      = String
-  type ApplicationId                  = String
-  type ApplicationName                = String
-  type ApplicationsInfoList           = js.Array[ApplicationInfo]
-  type ApplicationsList               = js.Array[ApplicationName]
-  type Arn                            = String
-  type AutoRollbackEventsList         = js.Array[AutoRollbackEvent]
-  type AutoScalingGroupHook           = String
-  type AutoScalingGroupList           = js.Array[AutoScalingGroup]
-  type AutoScalingGroupName           = String
-  type AutoScalingGroupNameList       = js.Array[AutoScalingGroupName]
-  type CloudFormationResourceType     = String
-  type CommitId                       = String
-  type DeploymentConfigId             = String
-  type DeploymentConfigName           = String
-  type DeploymentConfigsList          = js.Array[DeploymentConfigName]
-  type DeploymentGroupId              = String
-  type DeploymentGroupInfoList        = js.Array[DeploymentGroupInfo]
-  type DeploymentGroupName            = String
-  type DeploymentGroupsList           = js.Array[DeploymentGroupName]
-  type DeploymentId                   = String
-  type DeploymentStatusList           = js.Array[DeploymentStatus]
-  type DeploymentStatusMessageList    = js.Array[ErrorMessage]
-  type DeploymentTargetList           = js.Array[DeploymentTarget]
-  type DeploymentsInfoList            = js.Array[DeploymentInfo]
-  type DeploymentsList                = js.Array[DeploymentId]
-  type Description                    = String
-  type Duration                       = Int
-  type EC2TagFilterList               = js.Array[EC2TagFilter]
-  type EC2TagSetList                  = js.Array[EC2TagFilterList]
-  type ECSClusterName                 = String
-  type ECSServiceList                 = js.Array[ECSService]
-  type ECSServiceName                 = String
-  type ECSTaskSetCount                = Double
-  type ECSTaskSetIdentifier           = String
-  type ECSTaskSetList                 = js.Array[ECSTaskSet]
-  type ECSTaskSetStatus               = String
-  type ELBInfoList                    = js.Array[ELBInfo]
-  type ELBName                        = String
-  type ETag                           = String
-  type ErrorMessage                   = String
-  type ExternalId                     = String
-  type FilterValue                    = String
-  type FilterValueList                = js.Array[FilterValue]
-  type GitHubAccountTokenName         = String
-  type GitHubAccountTokenNameList     = js.Array[GitHubAccountTokenName]
-  type IamSessionArn                  = String
-  type IamUserArn                     = String
-  type InstanceArn                    = String
-  type InstanceCount                  = Double
-  type InstanceId                     = String
-  type InstanceInfoList               = js.Array[InstanceInfo]
-  type InstanceName                   = String
-  type InstanceNameList               = js.Array[InstanceName]
-  type InstanceStatusList             = js.Array[InstanceStatus]
-  type InstanceSummaryList            = js.Array[InstanceSummary]
-  type InstanceTypeList               = js.Array[InstanceType]
-  type InstancesList                  = js.Array[InstanceId]
-  type Key                            = String
-  type LambdaFunctionAlias            = String
-  type LambdaFunctionName             = String
-  type LifecycleEventHookExecutionId  = String
-  type LifecycleEventList             = js.Array[LifecycleEvent]
-  type LifecycleEventName             = String
-  type LifecycleMessage               = String
-  type ListenerArn                    = String
-  type ListenerArnList                = js.Array[ListenerArn]
-  type LogTail                        = String
-  type Message                        = String
-  type MinimumHealthyHostsValue       = Int
-  type NextToken                      = String
-  type NullableBoolean                = Boolean
-  type OnPremisesTagSetList           = js.Array[TagFilterList]
-  type Percentage                     = Int
-  type RawStringContent               = String
-  type RawStringSha256                = String
-  type Repository                     = String
-  type RevisionInfoList               = js.Array[RevisionInfo]
-  type RevisionLocationList           = js.Array[RevisionLocation]
-  type Role                           = String
-  type S3Bucket                       = String
-  type S3Key                          = String
-  type ScriptName                     = String
-  type TagFilterList                  = js.Array[TagFilter]
-  type TagKeyList                     = js.Array[Key]
-  type TagList                        = js.Array[Tag]
-  type TargetArn                      = String
-  type TargetFilters                  = js.Dictionary[FilterValueList]
-  type TargetGroupInfoList            = js.Array[TargetGroupInfo]
-  type TargetGroupName                = String
-  type TargetGroupPairInfoList        = js.Array[TargetGroupPairInfo]
-  type TargetId                       = String
-  type TargetIdList                   = js.Array[TargetId]
-  type Time                           = js.Date
-  type Timestamp                      = js.Date
-  type TrafficWeight                  = Double
-  type TriggerConfigList              = js.Array[TriggerConfig]
-  type TriggerEventTypeList           = js.Array[TriggerEventType]
-  type TriggerName                    = String
-  type TriggerTargetArn               = String
-  type Value                          = String
-  type Version                        = String
-  type VersionId                      = String
-  type WaitTimeInMins                 = Int
+  type AlarmList = js.Array[Alarm]
+  type AlarmName = String
+  type ApplicationId = String
+  type ApplicationName = String
+  type ApplicationsInfoList = js.Array[ApplicationInfo]
+  type ApplicationsList = js.Array[ApplicationName]
+  type Arn = String
+  type AutoRollbackEventsList = js.Array[AutoRollbackEvent]
+  type AutoScalingGroupHook = String
+  type AutoScalingGroupList = js.Array[AutoScalingGroup]
+  type AutoScalingGroupName = String
+  type AutoScalingGroupNameList = js.Array[AutoScalingGroupName]
+  type CloudFormationResourceType = String
+  type CommitId = String
+  type DeploymentConfigId = String
+  type DeploymentConfigName = String
+  type DeploymentConfigsList = js.Array[DeploymentConfigName]
+  type DeploymentGroupId = String
+  type DeploymentGroupInfoList = js.Array[DeploymentGroupInfo]
+  type DeploymentGroupName = String
+  type DeploymentGroupsList = js.Array[DeploymentGroupName]
+  type DeploymentId = String
+  type DeploymentStatusList = js.Array[DeploymentStatus]
+  type DeploymentStatusMessageList = js.Array[ErrorMessage]
+  type DeploymentTargetList = js.Array[DeploymentTarget]
+  type DeploymentsInfoList = js.Array[DeploymentInfo]
+  type DeploymentsList = js.Array[DeploymentId]
+  type Description = String
+  type Duration = Int
+  type EC2TagFilterList = js.Array[EC2TagFilter]
+  type EC2TagSetList = js.Array[EC2TagFilterList]
+  type ECSClusterName = String
+  type ECSServiceList = js.Array[ECSService]
+  type ECSServiceName = String
+  type ECSTaskSetCount = Double
+  type ECSTaskSetIdentifier = String
+  type ECSTaskSetList = js.Array[ECSTaskSet]
+  type ECSTaskSetStatus = String
+  type ELBInfoList = js.Array[ELBInfo]
+  type ELBName = String
+  type ETag = String
+  type ErrorMessage = String
+  type ExternalId = String
+  type FilterValue = String
+  type FilterValueList = js.Array[FilterValue]
+  type GitHubAccountTokenName = String
+  type GitHubAccountTokenNameList = js.Array[GitHubAccountTokenName]
+  type IamSessionArn = String
+  type IamUserArn = String
+  type InstanceArn = String
+  type InstanceCount = Double
+  type InstanceId = String
+  type InstanceInfoList = js.Array[InstanceInfo]
+  type InstanceName = String
+  type InstanceNameList = js.Array[InstanceName]
+  type InstanceStatusList = js.Array[InstanceStatus]
+  type InstanceSummaryList = js.Array[InstanceSummary]
+  type InstanceTypeList = js.Array[InstanceType]
+  type InstancesList = js.Array[InstanceId]
+  type Key = String
+  type LambdaFunctionAlias = String
+  type LambdaFunctionName = String
+  type LifecycleEventHookExecutionId = String
+  type LifecycleEventList = js.Array[LifecycleEvent]
+  type LifecycleEventName = String
+  type LifecycleMessage = String
+  type ListenerArn = String
+  type ListenerArnList = js.Array[ListenerArn]
+  type LogTail = String
+  type Message = String
+  type MinimumHealthyHostsValue = Int
+  type NextToken = String
+  type NullableBoolean = Boolean
+  type OnPremisesTagSetList = js.Array[TagFilterList]
+  type Percentage = Int
+  type RawStringContent = String
+  type RawStringSha256 = String
+  type Repository = String
+  type RevisionInfoList = js.Array[RevisionInfo]
+  type RevisionLocationList = js.Array[RevisionLocation]
+  type Role = String
+  type S3Bucket = String
+  type S3Key = String
+  type ScriptName = String
+  type TagFilterList = js.Array[TagFilter]
+  type TagKeyList = js.Array[Key]
+  type TagList = js.Array[Tag]
+  type TargetArn = String
+  type TargetFilters = js.Dictionary[FilterValueList]
+  type TargetGroupInfoList = js.Array[TargetGroupInfo]
+  type TargetGroupName = String
+  type TargetGroupPairInfoList = js.Array[TargetGroupPairInfo]
+  type TargetId = String
+  type TargetIdList = js.Array[TargetId]
+  type Time = js.Date
+  type Timestamp = js.Date
+  type TrafficWeight = Double
+  type TriggerConfigList = js.Array[TriggerConfig]
+  type TriggerEventTypeList = js.Array[TriggerEventType]
+  type TriggerName = String
+  type TriggerTargetArn = String
+  type Value = String
+  type Version = String
+  type VersionId = String
+  type WaitTimeInMins = Int
 
   implicit final class CodeDeployOps(private val service: CodeDeploy) extends AnyVal {
 
@@ -229,7 +229,7 @@ package codedeploy {
     def addTagsToOnPremisesInstances(params: AddTagsToOnPremisesInstancesInput): Request[js.Object] = js.native
     def batchGetApplicationRevisions(
         params: BatchGetApplicationRevisionsInput
-    ): Request[BatchGetApplicationRevisionsOutput]                                                   = js.native
+    ): Request[BatchGetApplicationRevisionsOutput] = js.native
     def batchGetApplications(params: BatchGetApplicationsInput): Request[BatchGetApplicationsOutput] = js.native
     def batchGetDeploymentGroups(params: BatchGetDeploymentGroupsInput): Request[BatchGetDeploymentGroupsOutput] =
       js.native
@@ -238,35 +238,35 @@ package codedeploy {
     def batchGetDeployments(params: BatchGetDeploymentsInput): Request[BatchGetDeploymentsOutput] = js.native
     def batchGetOnPremisesInstances(
         params: BatchGetOnPremisesInstancesInput
-    ): Request[BatchGetOnPremisesInstancesOutput]                                                          = js.native
-    def continueDeployment(params: ContinueDeploymentInput): Request[js.Object]                            = js.native
-    def createApplication(params: CreateApplicationInput): Request[CreateApplicationOutput]                = js.native
-    def createDeployment(params: CreateDeploymentInput): Request[CreateDeploymentOutput]                   = js.native
+    ): Request[BatchGetOnPremisesInstancesOutput] = js.native
+    def continueDeployment(params: ContinueDeploymentInput): Request[js.Object] = js.native
+    def createApplication(params: CreateApplicationInput): Request[CreateApplicationOutput] = js.native
+    def createDeployment(params: CreateDeploymentInput): Request[CreateDeploymentOutput] = js.native
     def createDeploymentConfig(params: CreateDeploymentConfigInput): Request[CreateDeploymentConfigOutput] = js.native
-    def createDeploymentGroup(params: CreateDeploymentGroupInput): Request[CreateDeploymentGroupOutput]    = js.native
-    def deleteApplication(params: DeleteApplicationInput): Request[js.Object]                              = js.native
-    def deleteDeploymentConfig(params: DeleteDeploymentConfigInput): Request[js.Object]                    = js.native
-    def deleteDeploymentGroup(params: DeleteDeploymentGroupInput): Request[DeleteDeploymentGroupOutput]    = js.native
+    def createDeploymentGroup(params: CreateDeploymentGroupInput): Request[CreateDeploymentGroupOutput] = js.native
+    def deleteApplication(params: DeleteApplicationInput): Request[js.Object] = js.native
+    def deleteDeploymentConfig(params: DeleteDeploymentConfigInput): Request[js.Object] = js.native
+    def deleteDeploymentGroup(params: DeleteDeploymentGroupInput): Request[DeleteDeploymentGroupOutput] = js.native
     def deleteGitHubAccountToken(params: DeleteGitHubAccountTokenInput): Request[DeleteGitHubAccountTokenOutput] =
       js.native
     def deleteResourcesByExternalId(
         params: DeleteResourcesByExternalIdInput
-    ): Request[DeleteResourcesByExternalIdOutput]                                                          = js.native
-    def deregisterOnPremisesInstance(params: DeregisterOnPremisesInstanceInput): Request[js.Object]        = js.native
-    def getApplication(params: GetApplicationInput): Request[GetApplicationOutput]                         = js.native
+    ): Request[DeleteResourcesByExternalIdOutput] = js.native
+    def deregisterOnPremisesInstance(params: DeregisterOnPremisesInstanceInput): Request[js.Object] = js.native
+    def getApplication(params: GetApplicationInput): Request[GetApplicationOutput] = js.native
     def getApplicationRevision(params: GetApplicationRevisionInput): Request[GetApplicationRevisionOutput] = js.native
-    def getDeployment(params: GetDeploymentInput): Request[GetDeploymentOutput]                            = js.native
-    def getDeploymentConfig(params: GetDeploymentConfigInput): Request[GetDeploymentConfigOutput]          = js.native
-    def getDeploymentGroup(params: GetDeploymentGroupInput): Request[GetDeploymentGroupOutput]             = js.native
-    def getDeploymentTarget(params: GetDeploymentTargetInput): Request[GetDeploymentTargetOutput]          = js.native
-    def getOnPremisesInstance(params: GetOnPremisesInstanceInput): Request[GetOnPremisesInstanceOutput]    = js.native
+    def getDeployment(params: GetDeploymentInput): Request[GetDeploymentOutput] = js.native
+    def getDeploymentConfig(params: GetDeploymentConfigInput): Request[GetDeploymentConfigOutput] = js.native
+    def getDeploymentGroup(params: GetDeploymentGroupInput): Request[GetDeploymentGroupOutput] = js.native
+    def getDeploymentTarget(params: GetDeploymentTargetInput): Request[GetDeploymentTargetOutput] = js.native
+    def getOnPremisesInstance(params: GetOnPremisesInstanceInput): Request[GetOnPremisesInstanceOutput] = js.native
     def listApplicationRevisions(params: ListApplicationRevisionsInput): Request[ListApplicationRevisionsOutput] =
       js.native
-    def listApplications(params: ListApplicationsInput): Request[ListApplicationsOutput]                = js.native
+    def listApplications(params: ListApplicationsInput): Request[ListApplicationsOutput] = js.native
     def listDeploymentConfigs(params: ListDeploymentConfigsInput): Request[ListDeploymentConfigsOutput] = js.native
-    def listDeploymentGroups(params: ListDeploymentGroupsInput): Request[ListDeploymentGroupsOutput]    = js.native
+    def listDeploymentGroups(params: ListDeploymentGroupsInput): Request[ListDeploymentGroupsOutput] = js.native
     def listDeploymentTargets(params: ListDeploymentTargetsInput): Request[ListDeploymentTargetsOutput] = js.native
-    def listDeployments(params: ListDeploymentsInput): Request[ListDeploymentsOutput]                   = js.native
+    def listDeployments(params: ListDeploymentsInput): Request[ListDeploymentsOutput] = js.native
     def listGitHubAccountTokenNames(
         params: ListGitHubAccountTokenNamesInput
     ): Request[ListGitHubAccountTokenNamesOutput] = js.native
@@ -275,15 +275,15 @@ package codedeploy {
     def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput] = js.native
     def putLifecycleEventHookExecutionStatus(
         params: PutLifecycleEventHookExecutionStatusInput
-    ): Request[PutLifecycleEventHookExecutionStatusOutput]                                        = js.native
+    ): Request[PutLifecycleEventHookExecutionStatusOutput] = js.native
     def registerApplicationRevision(params: RegisterApplicationRevisionInput): Request[js.Object] = js.native
-    def registerOnPremisesInstance(params: RegisterOnPremisesInstanceInput): Request[js.Object]   = js.native
+    def registerOnPremisesInstance(params: RegisterOnPremisesInstanceInput): Request[js.Object] = js.native
     def removeTagsFromOnPremisesInstances(params: RemoveTagsFromOnPremisesInstancesInput): Request[js.Object] =
       js.native
-    def stopDeployment(params: StopDeploymentInput): Request[StopDeploymentOutput]                      = js.native
-    def tagResource(params: TagResourceInput): Request[TagResourceOutput]                               = js.native
-    def untagResource(params: UntagResourceInput): Request[UntagResourceOutput]                         = js.native
-    def updateApplication(params: UpdateApplicationInput): Request[js.Object]                           = js.native
+    def stopDeployment(params: StopDeploymentInput): Request[StopDeploymentOutput] = js.native
+    def tagResource(params: TagResourceInput): Request[TagResourceOutput] = js.native
+    def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
+    def updateApplication(params: UpdateApplicationInput): Request[js.Object] = js.native
     def updateDeploymentGroup(params: UpdateDeploymentGroupInput): Request[UpdateDeploymentGroupOutput] = js.native
     @deprecated(
       "This operation is deprecated, use BatchGetDeploymentTargets instead.",
@@ -323,7 +323,7 @@ package codedeploy {
     ): AddTagsToOnPremisesInstancesInput = {
       val __obj = js.Dynamic.literal(
         "instanceNames" -> instanceNames.asInstanceOf[js.Any],
-        "tags"          -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddTagsToOnPremisesInstancesInput]
@@ -433,9 +433,9 @@ package codedeploy {
   @js.native
   sealed trait ApplicationRevisionSortBy extends js.Any
   object ApplicationRevisionSortBy extends js.Object {
-    val registerTime  = "registerTime".asInstanceOf[ApplicationRevisionSortBy]
+    val registerTime = "registerTime".asInstanceOf[ApplicationRevisionSortBy]
     val firstUsedTime = "firstUsedTime".asInstanceOf[ApplicationRevisionSortBy]
-    val lastUsedTime  = "lastUsedTime".asInstanceOf[ApplicationRevisionSortBy]
+    val lastUsedTime = "lastUsedTime".asInstanceOf[ApplicationRevisionSortBy]
 
     val values = js.Object.freeze(js.Array(registerTime, firstUsedTime, lastUsedTime))
   }
@@ -465,8 +465,8 @@ package codedeploy {
   @js.native
   sealed trait AutoRollbackEvent extends js.Any
   object AutoRollbackEvent extends js.Object {
-    val DEPLOYMENT_FAILURE         = "DEPLOYMENT_FAILURE".asInstanceOf[AutoRollbackEvent]
-    val DEPLOYMENT_STOP_ON_ALARM   = "DEPLOYMENT_STOP_ON_ALARM".asInstanceOf[AutoRollbackEvent]
+    val DEPLOYMENT_FAILURE = "DEPLOYMENT_FAILURE".asInstanceOf[AutoRollbackEvent]
+    val DEPLOYMENT_STOP_ON_ALARM = "DEPLOYMENT_STOP_ON_ALARM".asInstanceOf[AutoRollbackEvent]
     val DEPLOYMENT_STOP_ON_REQUEST = "DEPLOYMENT_STOP_ON_REQUEST".asInstanceOf[AutoRollbackEvent]
 
     val values = js.Object.freeze(js.Array(DEPLOYMENT_FAILURE, DEPLOYMENT_STOP_ON_ALARM, DEPLOYMENT_STOP_ON_REQUEST))
@@ -511,7 +511,7 @@ package codedeploy {
     ): BatchGetApplicationRevisionsInput = {
       val __obj = js.Dynamic.literal(
         "applicationName" -> applicationName.asInstanceOf[js.Any],
-        "revisions"       -> revisions.asInstanceOf[js.Any]
+        "revisions" -> revisions.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[BatchGetApplicationRevisionsInput]
@@ -599,7 +599,7 @@ package codedeploy {
         deploymentGroupNames: DeploymentGroupsList
     ): BatchGetDeploymentGroupsInput = {
       val __obj = js.Dynamic.literal(
-        "applicationName"      -> applicationName.asInstanceOf[js.Any],
+        "applicationName" -> applicationName.asInstanceOf[js.Any],
         "deploymentGroupNames" -> deploymentGroupNames.asInstanceOf[js.Any]
       )
 
@@ -646,7 +646,7 @@ package codedeploy {
     ): BatchGetDeploymentInstancesInput = {
       val __obj = js.Dynamic.literal(
         "deploymentId" -> deploymentId.asInstanceOf[js.Any],
-        "instanceIds"  -> instanceIds.asInstanceOf[js.Any]
+        "instanceIds" -> instanceIds.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[BatchGetDeploymentInstancesInput]
@@ -846,9 +846,9 @@ package codedeploy {
   @js.native
   sealed trait BundleType extends js.Any
   object BundleType extends js.Object {
-    val tar  = "tar".asInstanceOf[BundleType]
-    val tgz  = "tgz".asInstanceOf[BundleType]
-    val zip  = "zip".asInstanceOf[BundleType]
+    val tar = "tar".asInstanceOf[BundleType]
+    val tgz = "tgz".asInstanceOf[BundleType]
+    val zip = "zip".asInstanceOf[BundleType]
     val YAML = "YAML".asInstanceOf[BundleType]
     val JSON = "JSON".asInstanceOf[BundleType]
 
@@ -897,7 +897,7 @@ package codedeploy {
   object ComputePlatform extends js.Object {
     val Server = "Server".asInstanceOf[ComputePlatform]
     val Lambda = "Lambda".asInstanceOf[ComputePlatform]
-    val ECS    = "ECS".asInstanceOf[ComputePlatform]
+    val ECS = "ECS".asInstanceOf[ComputePlatform]
 
     val values = js.Object.freeze(js.Array(Server, Lambda, ECS))
   }
@@ -1062,9 +1062,9 @@ package codedeploy {
         triggerConfigurations: js.UndefOr[TriggerConfigList] = js.undefined
     ): CreateDeploymentGroupInput = {
       val __obj = js.Dynamic.literal(
-        "applicationName"     -> applicationName.asInstanceOf[js.Any],
+        "applicationName" -> applicationName.asInstanceOf[js.Any],
         "deploymentGroupName" -> deploymentGroupName.asInstanceOf[js.Any],
-        "serviceRoleArn"      -> serviceRoleArn.asInstanceOf[js.Any]
+        "serviceRoleArn" -> serviceRoleArn.asInstanceOf[js.Any]
       )
 
       alarmConfiguration.foreach(__v => __obj.updateDynamic("alarmConfiguration")(__v.asInstanceOf[js.Any]))
@@ -1241,7 +1241,7 @@ package codedeploy {
         deploymentGroupName: DeploymentGroupName
     ): DeleteDeploymentGroupInput = {
       val __obj = js.Dynamic.literal(
-        "applicationName"     -> applicationName.asInstanceOf[js.Any],
+        "applicationName" -> applicationName.asInstanceOf[js.Any],
         "deploymentGroupName" -> deploymentGroupName.asInstanceOf[js.Any]
       )
 
@@ -1372,11 +1372,11 @@ package codedeploy {
   @js.native
   sealed trait DeploymentCreator extends js.Any
   object DeploymentCreator extends js.Object {
-    val user                   = "user".asInstanceOf[DeploymentCreator]
-    val autoscaling            = "autoscaling".asInstanceOf[DeploymentCreator]
-    val codeDeployRollback     = "codeDeployRollback".asInstanceOf[DeploymentCreator]
-    val CodeDeploy             = "CodeDeploy".asInstanceOf[DeploymentCreator]
-    val CloudFormation         = "CloudFormation".asInstanceOf[DeploymentCreator]
+    val user = "user".asInstanceOf[DeploymentCreator]
+    val autoscaling = "autoscaling".asInstanceOf[DeploymentCreator]
+    val codeDeployRollback = "codeDeployRollback".asInstanceOf[DeploymentCreator]
+    val CodeDeploy = "CodeDeploy".asInstanceOf[DeploymentCreator]
+    val CloudFormation = "CloudFormation".asInstanceOf[DeploymentCreator]
     val CloudFormationRollback = "CloudFormationRollback".asInstanceOf[DeploymentCreator]
 
     val values = js.Object.freeze(
@@ -1584,7 +1584,7 @@ package codedeploy {
   @js.native
   sealed trait DeploymentOption extends js.Any
   object DeploymentOption extends js.Object {
-    val WITH_TRAFFIC_CONTROL    = "WITH_TRAFFIC_CONTROL".asInstanceOf[DeploymentOption]
+    val WITH_TRAFFIC_CONTROL = "WITH_TRAFFIC_CONTROL".asInstanceOf[DeploymentOption]
     val WITHOUT_TRAFFIC_CONTROL = "WITHOUT_TRAFFIC_CONTROL".asInstanceOf[DeploymentOption]
 
     val values = js.Object.freeze(js.Array(WITH_TRAFFIC_CONTROL, WITHOUT_TRAFFIC_CONTROL))
@@ -1628,7 +1628,7 @@ package codedeploy {
   sealed trait DeploymentReadyAction extends js.Any
   object DeploymentReadyAction extends js.Object {
     val CONTINUE_DEPLOYMENT = "CONTINUE_DEPLOYMENT".asInstanceOf[DeploymentReadyAction]
-    val STOP_DEPLOYMENT     = "STOP_DEPLOYMENT".asInstanceOf[DeploymentReadyAction]
+    val STOP_DEPLOYMENT = "STOP_DEPLOYMENT".asInstanceOf[DeploymentReadyAction]
 
     val values = js.Object.freeze(js.Array(CONTINUE_DEPLOYMENT, STOP_DEPLOYMENT))
   }
@@ -1658,14 +1658,14 @@ package codedeploy {
   @js.native
   sealed trait DeploymentStatus extends js.Any
   object DeploymentStatus extends js.Object {
-    val Created    = "Created".asInstanceOf[DeploymentStatus]
-    val Queued     = "Queued".asInstanceOf[DeploymentStatus]
+    val Created = "Created".asInstanceOf[DeploymentStatus]
+    val Queued = "Queued".asInstanceOf[DeploymentStatus]
     val InProgress = "InProgress".asInstanceOf[DeploymentStatus]
-    val Baking     = "Baking".asInstanceOf[DeploymentStatus]
-    val Succeeded  = "Succeeded".asInstanceOf[DeploymentStatus]
-    val Failed     = "Failed".asInstanceOf[DeploymentStatus]
-    val Stopped    = "Stopped".asInstanceOf[DeploymentStatus]
-    val Ready      = "Ready".asInstanceOf[DeploymentStatus]
+    val Baking = "Baking".asInstanceOf[DeploymentStatus]
+    val Succeeded = "Succeeded".asInstanceOf[DeploymentStatus]
+    val Failed = "Failed".asInstanceOf[DeploymentStatus]
+    val Stopped = "Stopped".asInstanceOf[DeploymentStatus]
+    val Ready = "Ready".asInstanceOf[DeploymentStatus]
 
     val values = js.Object.freeze(js.Array(Created, Queued, InProgress, Baking, Succeeded, Failed, Stopped, Ready))
   }
@@ -1726,9 +1726,9 @@ package codedeploy {
   @js.native
   sealed trait DeploymentTargetType extends js.Any
   object DeploymentTargetType extends js.Object {
-    val InstanceTarget       = "InstanceTarget".asInstanceOf[DeploymentTargetType]
-    val LambdaTarget         = "LambdaTarget".asInstanceOf[DeploymentTargetType]
-    val ECSTarget            = "ECSTarget".asInstanceOf[DeploymentTargetType]
+    val InstanceTarget = "InstanceTarget".asInstanceOf[DeploymentTargetType]
+    val LambdaTarget = "LambdaTarget".asInstanceOf[DeploymentTargetType]
+    val ECSTarget = "ECSTarget".asInstanceOf[DeploymentTargetType]
     val CloudFormationTarget = "CloudFormationTarget".asInstanceOf[DeploymentTargetType]
 
     val values = js.Object.freeze(js.Array(InstanceTarget, LambdaTarget, ECSTarget, CloudFormationTarget))
@@ -1737,7 +1737,7 @@ package codedeploy {
   @js.native
   sealed trait DeploymentType extends js.Any
   object DeploymentType extends js.Object {
-    val IN_PLACE   = "IN_PLACE".asInstanceOf[DeploymentType]
+    val IN_PLACE = "IN_PLACE".asInstanceOf[DeploymentType]
     val BLUE_GREEN = "BLUE_GREEN".asInstanceOf[DeploymentType]
 
     val values = js.Object.freeze(js.Array(IN_PLACE, BLUE_GREEN))
@@ -1746,7 +1746,7 @@ package codedeploy {
   @js.native
   sealed trait DeploymentWaitType extends js.Any
   object DeploymentWaitType extends js.Object {
-    val READY_WAIT       = "READY_WAIT".asInstanceOf[DeploymentWaitType]
+    val READY_WAIT = "READY_WAIT".asInstanceOf[DeploymentWaitType]
     val TERMINATION_WAIT = "TERMINATION_WAIT".asInstanceOf[DeploymentWaitType]
 
     val values = js.Object.freeze(js.Array(READY_WAIT, TERMINATION_WAIT))
@@ -1829,8 +1829,8 @@ package codedeploy {
   @js.native
   sealed trait EC2TagFilterType extends js.Any
   object EC2TagFilterType extends js.Object {
-    val KEY_ONLY      = "KEY_ONLY".asInstanceOf[EC2TagFilterType]
-    val VALUE_ONLY    = "VALUE_ONLY".asInstanceOf[EC2TagFilterType]
+    val KEY_ONLY = "KEY_ONLY".asInstanceOf[EC2TagFilterType]
+    val VALUE_ONLY = "VALUE_ONLY".asInstanceOf[EC2TagFilterType]
     val KEY_AND_VALUE = "KEY_AND_VALUE".asInstanceOf[EC2TagFilterType]
 
     val values = js.Object.freeze(js.Array(KEY_ONLY, VALUE_ONLY, KEY_AND_VALUE))
@@ -1976,40 +1976,40 @@ package codedeploy {
   @js.native
   sealed trait ErrorCode extends js.Any
   object ErrorCode extends js.Object {
-    val AGENT_ISSUE                         = "AGENT_ISSUE".asInstanceOf[ErrorCode]
-    val ALARM_ACTIVE                        = "ALARM_ACTIVE".asInstanceOf[ErrorCode]
-    val APPLICATION_MISSING                 = "APPLICATION_MISSING".asInstanceOf[ErrorCode]
-    val AUTOSCALING_VALIDATION_ERROR        = "AUTOSCALING_VALIDATION_ERROR".asInstanceOf[ErrorCode]
-    val AUTO_SCALING_CONFIGURATION          = "AUTO_SCALING_CONFIGURATION".asInstanceOf[ErrorCode]
-    val AUTO_SCALING_IAM_ROLE_PERMISSIONS   = "AUTO_SCALING_IAM_ROLE_PERMISSIONS".asInstanceOf[ErrorCode]
+    val AGENT_ISSUE = "AGENT_ISSUE".asInstanceOf[ErrorCode]
+    val ALARM_ACTIVE = "ALARM_ACTIVE".asInstanceOf[ErrorCode]
+    val APPLICATION_MISSING = "APPLICATION_MISSING".asInstanceOf[ErrorCode]
+    val AUTOSCALING_VALIDATION_ERROR = "AUTOSCALING_VALIDATION_ERROR".asInstanceOf[ErrorCode]
+    val AUTO_SCALING_CONFIGURATION = "AUTO_SCALING_CONFIGURATION".asInstanceOf[ErrorCode]
+    val AUTO_SCALING_IAM_ROLE_PERMISSIONS = "AUTO_SCALING_IAM_ROLE_PERMISSIONS".asInstanceOf[ErrorCode]
     val CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND = "CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND".asInstanceOf[ErrorCode]
-    val CUSTOMER_APPLICATION_UNHEALTHY      = "CUSTOMER_APPLICATION_UNHEALTHY".asInstanceOf[ErrorCode]
-    val DEPLOYMENT_GROUP_MISSING            = "DEPLOYMENT_GROUP_MISSING".asInstanceOf[ErrorCode]
-    val ECS_UPDATE_ERROR                    = "ECS_UPDATE_ERROR".asInstanceOf[ErrorCode]
-    val ELASTIC_LOAD_BALANCING_INVALID      = "ELASTIC_LOAD_BALANCING_INVALID".asInstanceOf[ErrorCode]
-    val ELB_INVALID_INSTANCE                = "ELB_INVALID_INSTANCE".asInstanceOf[ErrorCode]
-    val HEALTH_CONSTRAINTS                  = "HEALTH_CONSTRAINTS".asInstanceOf[ErrorCode]
-    val HEALTH_CONSTRAINTS_INVALID          = "HEALTH_CONSTRAINTS_INVALID".asInstanceOf[ErrorCode]
-    val HOOK_EXECUTION_FAILURE              = "HOOK_EXECUTION_FAILURE".asInstanceOf[ErrorCode]
-    val IAM_ROLE_MISSING                    = "IAM_ROLE_MISSING".asInstanceOf[ErrorCode]
-    val IAM_ROLE_PERMISSIONS                = "IAM_ROLE_PERMISSIONS".asInstanceOf[ErrorCode]
-    val INTERNAL_ERROR                      = "INTERNAL_ERROR".asInstanceOf[ErrorCode]
-    val INVALID_ECS_SERVICE                 = "INVALID_ECS_SERVICE".asInstanceOf[ErrorCode]
-    val INVALID_LAMBDA_CONFIGURATION        = "INVALID_LAMBDA_CONFIGURATION".asInstanceOf[ErrorCode]
-    val INVALID_LAMBDA_FUNCTION             = "INVALID_LAMBDA_FUNCTION".asInstanceOf[ErrorCode]
-    val INVALID_REVISION                    = "INVALID_REVISION".asInstanceOf[ErrorCode]
-    val MANUAL_STOP                         = "MANUAL_STOP".asInstanceOf[ErrorCode]
+    val CUSTOMER_APPLICATION_UNHEALTHY = "CUSTOMER_APPLICATION_UNHEALTHY".asInstanceOf[ErrorCode]
+    val DEPLOYMENT_GROUP_MISSING = "DEPLOYMENT_GROUP_MISSING".asInstanceOf[ErrorCode]
+    val ECS_UPDATE_ERROR = "ECS_UPDATE_ERROR".asInstanceOf[ErrorCode]
+    val ELASTIC_LOAD_BALANCING_INVALID = "ELASTIC_LOAD_BALANCING_INVALID".asInstanceOf[ErrorCode]
+    val ELB_INVALID_INSTANCE = "ELB_INVALID_INSTANCE".asInstanceOf[ErrorCode]
+    val HEALTH_CONSTRAINTS = "HEALTH_CONSTRAINTS".asInstanceOf[ErrorCode]
+    val HEALTH_CONSTRAINTS_INVALID = "HEALTH_CONSTRAINTS_INVALID".asInstanceOf[ErrorCode]
+    val HOOK_EXECUTION_FAILURE = "HOOK_EXECUTION_FAILURE".asInstanceOf[ErrorCode]
+    val IAM_ROLE_MISSING = "IAM_ROLE_MISSING".asInstanceOf[ErrorCode]
+    val IAM_ROLE_PERMISSIONS = "IAM_ROLE_PERMISSIONS".asInstanceOf[ErrorCode]
+    val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[ErrorCode]
+    val INVALID_ECS_SERVICE = "INVALID_ECS_SERVICE".asInstanceOf[ErrorCode]
+    val INVALID_LAMBDA_CONFIGURATION = "INVALID_LAMBDA_CONFIGURATION".asInstanceOf[ErrorCode]
+    val INVALID_LAMBDA_FUNCTION = "INVALID_LAMBDA_FUNCTION".asInstanceOf[ErrorCode]
+    val INVALID_REVISION = "INVALID_REVISION".asInstanceOf[ErrorCode]
+    val MANUAL_STOP = "MANUAL_STOP".asInstanceOf[ErrorCode]
     val MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION =
       "MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION".asInstanceOf[ErrorCode]
-    val MISSING_ELB_INFORMATION      = "MISSING_ELB_INFORMATION".asInstanceOf[ErrorCode]
-    val MISSING_GITHUB_TOKEN         = "MISSING_GITHUB_TOKEN".asInstanceOf[ErrorCode]
-    val NO_EC2_SUBSCRIPTION          = "NO_EC2_SUBSCRIPTION".asInstanceOf[ErrorCode]
-    val NO_INSTANCES                 = "NO_INSTANCES".asInstanceOf[ErrorCode]
-    val OVER_MAX_INSTANCES           = "OVER_MAX_INSTANCES".asInstanceOf[ErrorCode]
-    val RESOURCE_LIMIT_EXCEEDED      = "RESOURCE_LIMIT_EXCEEDED".asInstanceOf[ErrorCode]
-    val REVISION_MISSING             = "REVISION_MISSING".asInstanceOf[ErrorCode]
-    val THROTTLED                    = "THROTTLED".asInstanceOf[ErrorCode]
-    val TIMEOUT                      = "TIMEOUT".asInstanceOf[ErrorCode]
+    val MISSING_ELB_INFORMATION = "MISSING_ELB_INFORMATION".asInstanceOf[ErrorCode]
+    val MISSING_GITHUB_TOKEN = "MISSING_GITHUB_TOKEN".asInstanceOf[ErrorCode]
+    val NO_EC2_SUBSCRIPTION = "NO_EC2_SUBSCRIPTION".asInstanceOf[ErrorCode]
+    val NO_INSTANCES = "NO_INSTANCES".asInstanceOf[ErrorCode]
+    val OVER_MAX_INSTANCES = "OVER_MAX_INSTANCES".asInstanceOf[ErrorCode]
+    val RESOURCE_LIMIT_EXCEEDED = "RESOURCE_LIMIT_EXCEEDED".asInstanceOf[ErrorCode]
+    val REVISION_MISSING = "REVISION_MISSING".asInstanceOf[ErrorCode]
+    val THROTTLED = "THROTTLED".asInstanceOf[ErrorCode]
+    val TIMEOUT = "TIMEOUT".asInstanceOf[ErrorCode]
     val CLOUDFORMATION_STACK_FAILURE = "CLOUDFORMATION_STACK_FAILURE".asInstanceOf[ErrorCode]
 
     val values = js.Object.freeze(
@@ -2077,9 +2077,9 @@ package codedeploy {
   @js.native
   sealed trait FileExistsBehavior extends js.Any
   object FileExistsBehavior extends js.Object {
-    val DISALLOW  = "DISALLOW".asInstanceOf[FileExistsBehavior]
+    val DISALLOW = "DISALLOW".asInstanceOf[FileExistsBehavior]
     val OVERWRITE = "OVERWRITE".asInstanceOf[FileExistsBehavior]
-    val RETAIN    = "RETAIN".asInstanceOf[FileExistsBehavior]
+    val RETAIN = "RETAIN".asInstanceOf[FileExistsBehavior]
 
     val values = js.Object.freeze(js.Array(DISALLOW, OVERWRITE, RETAIN))
   }
@@ -2172,7 +2172,7 @@ package codedeploy {
     ): GetApplicationRevisionInput = {
       val __obj = js.Dynamic.literal(
         "applicationName" -> applicationName.asInstanceOf[js.Any],
-        "revision"        -> revision.asInstanceOf[js.Any]
+        "revision" -> revision.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetApplicationRevisionInput]
@@ -2260,7 +2260,7 @@ package codedeploy {
         deploymentGroupName: DeploymentGroupName
     ): GetDeploymentGroupInput = {
       val __obj = js.Dynamic.literal(
-        "applicationName"     -> applicationName.asInstanceOf[js.Any],
+        "applicationName" -> applicationName.asInstanceOf[js.Any],
         "deploymentGroupName" -> deploymentGroupName.asInstanceOf[js.Any]
       )
 
@@ -2325,7 +2325,7 @@ package codedeploy {
     ): GetDeploymentInstanceInput = {
       val __obj = js.Dynamic.literal(
         "deploymentId" -> deploymentId.asInstanceOf[js.Any],
-        "instanceId"   -> instanceId.asInstanceOf[js.Any]
+        "instanceId" -> instanceId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetDeploymentInstanceInput]
@@ -2470,7 +2470,7 @@ package codedeploy {
   @js.native
   sealed trait GreenFleetProvisioningAction extends js.Any
   object GreenFleetProvisioningAction extends js.Object {
-    val DISCOVER_EXISTING       = "DISCOVER_EXISTING".asInstanceOf[GreenFleetProvisioningAction]
+    val DISCOVER_EXISTING = "DISCOVER_EXISTING".asInstanceOf[GreenFleetProvisioningAction]
     val COPY_AUTO_SCALING_GROUP = "COPY_AUTO_SCALING_GROUP".asInstanceOf[GreenFleetProvisioningAction]
 
     val values = js.Object.freeze(js.Array(DISCOVER_EXISTING, COPY_AUTO_SCALING_GROUP))
@@ -2498,7 +2498,7 @@ package codedeploy {
   @js.native
   sealed trait InstanceAction extends js.Any
   object InstanceAction extends js.Object {
-    val TERMINATE  = "TERMINATE".asInstanceOf[InstanceAction]
+    val TERMINATE = "TERMINATE".asInstanceOf[InstanceAction]
     val KEEP_ALIVE = "KEEP_ALIVE".asInstanceOf[InstanceAction]
 
     val values = js.Object.freeze(js.Array(TERMINATE, KEEP_ALIVE))
@@ -2545,13 +2545,13 @@ package codedeploy {
   @js.native
   sealed trait InstanceStatus extends js.Any
   object InstanceStatus extends js.Object {
-    val Pending    = "Pending".asInstanceOf[InstanceStatus]
+    val Pending = "Pending".asInstanceOf[InstanceStatus]
     val InProgress = "InProgress".asInstanceOf[InstanceStatus]
-    val Succeeded  = "Succeeded".asInstanceOf[InstanceStatus]
-    val Failed     = "Failed".asInstanceOf[InstanceStatus]
-    val Skipped    = "Skipped".asInstanceOf[InstanceStatus]
-    val Unknown    = "Unknown".asInstanceOf[InstanceStatus]
-    val Ready      = "Ready".asInstanceOf[InstanceStatus]
+    val Succeeded = "Succeeded".asInstanceOf[InstanceStatus]
+    val Failed = "Failed".asInstanceOf[InstanceStatus]
+    val Skipped = "Skipped".asInstanceOf[InstanceStatus]
+    val Unknown = "Unknown".asInstanceOf[InstanceStatus]
+    val Ready = "Ready".asInstanceOf[InstanceStatus]
 
     val values = js.Object.freeze(js.Array(Pending, InProgress, Succeeded, Failed, Skipped, Unknown, Ready))
   }
@@ -2631,7 +2631,7 @@ package codedeploy {
   @js.native
   sealed trait InstanceType extends js.Any
   object InstanceType extends js.Object {
-    val Blue  = "Blue".asInstanceOf[InstanceType]
+    val Blue = "Blue".asInstanceOf[InstanceType]
     val Green = "Green".asInstanceOf[InstanceType]
 
     val values = js.Object.freeze(js.Array(Blue, Green))
@@ -2736,12 +2736,12 @@ package codedeploy {
   @js.native
   sealed trait LifecycleErrorCode extends js.Any
   object LifecycleErrorCode extends js.Object {
-    val Success             = "Success".asInstanceOf[LifecycleErrorCode]
-    val ScriptMissing       = "ScriptMissing".asInstanceOf[LifecycleErrorCode]
+    val Success = "Success".asInstanceOf[LifecycleErrorCode]
+    val ScriptMissing = "ScriptMissing".asInstanceOf[LifecycleErrorCode]
     val ScriptNotExecutable = "ScriptNotExecutable".asInstanceOf[LifecycleErrorCode]
-    val ScriptTimedOut      = "ScriptTimedOut".asInstanceOf[LifecycleErrorCode]
-    val ScriptFailed        = "ScriptFailed".asInstanceOf[LifecycleErrorCode]
-    val UnknownError        = "UnknownError".asInstanceOf[LifecycleErrorCode]
+    val ScriptTimedOut = "ScriptTimedOut".asInstanceOf[LifecycleErrorCode]
+    val ScriptFailed = "ScriptFailed".asInstanceOf[LifecycleErrorCode]
+    val UnknownError = "UnknownError".asInstanceOf[LifecycleErrorCode]
 
     val values = js.Object.freeze(
       js.Array(Success, ScriptMissing, ScriptNotExecutable, ScriptTimedOut, ScriptFailed, UnknownError)
@@ -2782,12 +2782,12 @@ package codedeploy {
   @js.native
   sealed trait LifecycleEventStatus extends js.Any
   object LifecycleEventStatus extends js.Object {
-    val Pending    = "Pending".asInstanceOf[LifecycleEventStatus]
+    val Pending = "Pending".asInstanceOf[LifecycleEventStatus]
     val InProgress = "InProgress".asInstanceOf[LifecycleEventStatus]
-    val Succeeded  = "Succeeded".asInstanceOf[LifecycleEventStatus]
-    val Failed     = "Failed".asInstanceOf[LifecycleEventStatus]
-    val Skipped    = "Skipped".asInstanceOf[LifecycleEventStatus]
-    val Unknown    = "Unknown".asInstanceOf[LifecycleEventStatus]
+    val Succeeded = "Succeeded".asInstanceOf[LifecycleEventStatus]
+    val Failed = "Failed".asInstanceOf[LifecycleEventStatus]
+    val Skipped = "Skipped".asInstanceOf[LifecycleEventStatus]
+    val Unknown = "Unknown".asInstanceOf[LifecycleEventStatus]
 
     val values = js.Object.freeze(js.Array(Pending, InProgress, Succeeded, Failed, Skipped, Unknown))
   }
@@ -3226,7 +3226,7 @@ package codedeploy {
   object ListStateFilterAction extends js.Object {
     val include = "include".asInstanceOf[ListStateFilterAction]
     val exclude = "exclude".asInstanceOf[ListStateFilterAction]
-    val ignore  = "ignore".asInstanceOf[ListStateFilterAction]
+    val ignore = "ignore".asInstanceOf[ListStateFilterAction]
 
     val values = js.Object.freeze(js.Array(include, exclude, ignore))
   }
@@ -3321,7 +3321,7 @@ package codedeploy {
   @js.native
   sealed trait MinimumHealthyHostsType extends js.Any
   object MinimumHealthyHostsType extends js.Object {
-    val HOST_COUNT    = "HOST_COUNT".asInstanceOf[MinimumHealthyHostsType]
+    val HOST_COUNT = "HOST_COUNT".asInstanceOf[MinimumHealthyHostsType]
     val FLEET_PERCENT = "FLEET_PERCENT".asInstanceOf[MinimumHealthyHostsType]
 
     val values = js.Object.freeze(js.Array(HOST_COUNT, FLEET_PERCENT))
@@ -3430,7 +3430,7 @@ package codedeploy {
     ): RegisterApplicationRevisionInput = {
       val __obj = js.Dynamic.literal(
         "applicationName" -> applicationName.asInstanceOf[js.Any],
-        "revision"        -> revision.asInstanceOf[js.Any]
+        "revision" -> revision.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
@@ -3468,7 +3468,7 @@ package codedeploy {
   @js.native
   sealed trait RegistrationStatus extends js.Any
   object RegistrationStatus extends js.Object {
-    val Registered   = "Registered".asInstanceOf[RegistrationStatus]
+    val Registered = "Registered".asInstanceOf[RegistrationStatus]
     val Deregistered = "Deregistered".asInstanceOf[RegistrationStatus]
 
     val values = js.Object.freeze(js.Array(Registered, Deregistered))
@@ -3491,7 +3491,7 @@ package codedeploy {
     ): RemoveTagsFromOnPremisesInstancesInput = {
       val __obj = js.Dynamic.literal(
         "instanceNames" -> instanceNames.asInstanceOf[js.Any],
-        "tags"          -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RemoveTagsFromOnPremisesInstancesInput]
@@ -3554,9 +3554,9 @@ package codedeploy {
   @js.native
   sealed trait RevisionLocationType extends js.Any
   object RevisionLocationType extends js.Object {
-    val S3             = "S3".asInstanceOf[RevisionLocationType]
-    val GitHub         = "GitHub".asInstanceOf[RevisionLocationType]
-    val String         = "String".asInstanceOf[RevisionLocationType]
+    val S3 = "S3".asInstanceOf[RevisionLocationType]
+    val GitHub = "GitHub".asInstanceOf[RevisionLocationType]
+    val String = "String".asInstanceOf[RevisionLocationType]
     val AppSpecContent = "AppSpecContent".asInstanceOf[RevisionLocationType]
 
     val values = js.Object.freeze(js.Array(S3, GitHub, String, AppSpecContent))
@@ -3639,7 +3639,7 @@ package codedeploy {
   @js.native
   sealed trait SortOrder extends js.Any
   object SortOrder extends js.Object {
-    val ascending  = "ascending".asInstanceOf[SortOrder]
+    val ascending = "ascending".asInstanceOf[SortOrder]
     val descending = "descending".asInstanceOf[SortOrder]
 
     val values = js.Object.freeze(js.Array(ascending, descending))
@@ -3694,7 +3694,7 @@ package codedeploy {
   @js.native
   sealed trait StopStatus extends js.Any
   object StopStatus extends js.Object {
-    val Pending   = "Pending".asInstanceOf[StopStatus]
+    val Pending = "Pending".asInstanceOf[StopStatus]
     val Succeeded = "Succeeded".asInstanceOf[StopStatus]
 
     val values = js.Object.freeze(js.Array(Pending, Succeeded))
@@ -3750,8 +3750,8 @@ package codedeploy {
   @js.native
   sealed trait TagFilterType extends js.Any
   object TagFilterType extends js.Object {
-    val KEY_ONLY      = "KEY_ONLY".asInstanceOf[TagFilterType]
-    val VALUE_ONLY    = "VALUE_ONLY".asInstanceOf[TagFilterType]
+    val KEY_ONLY = "KEY_ONLY".asInstanceOf[TagFilterType]
+    val VALUE_ONLY = "VALUE_ONLY".asInstanceOf[TagFilterType]
     val KEY_AND_VALUE = "KEY_AND_VALUE".asInstanceOf[TagFilterType]
 
     val values = js.Object.freeze(js.Array(KEY_ONLY, VALUE_ONLY, KEY_AND_VALUE))
@@ -3771,7 +3771,7 @@ package codedeploy {
     ): TagResourceInput = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceInput]
@@ -3794,7 +3794,7 @@ package codedeploy {
   @js.native
   sealed trait TargetFilterName extends js.Any
   object TargetFilterName extends js.Object {
-    val TargetStatus        = "TargetStatus".asInstanceOf[TargetFilterName]
+    val TargetStatus = "TargetStatus".asInstanceOf[TargetFilterName]
     val ServerInstanceLabel = "ServerInstanceLabel".asInstanceOf[TargetFilterName]
 
     val values = js.Object.freeze(js.Array(TargetStatus, ServerInstanceLabel))
@@ -3872,7 +3872,7 @@ package codedeploy {
   @js.native
   sealed trait TargetLabel extends js.Any
   object TargetLabel extends js.Object {
-    val Blue  = "Blue".asInstanceOf[TargetLabel]
+    val Blue = "Blue".asInstanceOf[TargetLabel]
     val Green = "Green".asInstanceOf[TargetLabel]
 
     val values = js.Object.freeze(js.Array(Blue, Green))
@@ -3881,13 +3881,13 @@ package codedeploy {
   @js.native
   sealed trait TargetStatus extends js.Any
   object TargetStatus extends js.Object {
-    val Pending    = "Pending".asInstanceOf[TargetStatus]
+    val Pending = "Pending".asInstanceOf[TargetStatus]
     val InProgress = "InProgress".asInstanceOf[TargetStatus]
-    val Succeeded  = "Succeeded".asInstanceOf[TargetStatus]
-    val Failed     = "Failed".asInstanceOf[TargetStatus]
-    val Skipped    = "Skipped".asInstanceOf[TargetStatus]
-    val Unknown    = "Unknown".asInstanceOf[TargetStatus]
-    val Ready      = "Ready".asInstanceOf[TargetStatus]
+    val Succeeded = "Succeeded".asInstanceOf[TargetStatus]
+    val Failed = "Failed".asInstanceOf[TargetStatus]
+    val Skipped = "Skipped".asInstanceOf[TargetStatus]
+    val Unknown = "Unknown".asInstanceOf[TargetStatus]
+    val Ready = "Ready".asInstanceOf[TargetStatus]
 
     val values = js.Object.freeze(js.Array(Pending, InProgress, Succeeded, Failed, Skipped, Unknown, Ready))
   }
@@ -4007,7 +4007,7 @@ package codedeploy {
   object TrafficRoutingType extends js.Object {
     val TimeBasedCanary = "TimeBasedCanary".asInstanceOf[TrafficRoutingType]
     val TimeBasedLinear = "TimeBasedLinear".asInstanceOf[TrafficRoutingType]
-    val AllAtOnce       = "AllAtOnce".asInstanceOf[TrafficRoutingType]
+    val AllAtOnce = "AllAtOnce".asInstanceOf[TrafficRoutingType]
 
     val values = js.Object.freeze(js.Array(TimeBasedCanary, TimeBasedLinear, AllAtOnce))
   }
@@ -4040,16 +4040,16 @@ package codedeploy {
   @js.native
   sealed trait TriggerEventType extends js.Any
   object TriggerEventType extends js.Object {
-    val DeploymentStart    = "DeploymentStart".asInstanceOf[TriggerEventType]
-    val DeploymentSuccess  = "DeploymentSuccess".asInstanceOf[TriggerEventType]
-    val DeploymentFailure  = "DeploymentFailure".asInstanceOf[TriggerEventType]
-    val DeploymentStop     = "DeploymentStop".asInstanceOf[TriggerEventType]
+    val DeploymentStart = "DeploymentStart".asInstanceOf[TriggerEventType]
+    val DeploymentSuccess = "DeploymentSuccess".asInstanceOf[TriggerEventType]
+    val DeploymentFailure = "DeploymentFailure".asInstanceOf[TriggerEventType]
+    val DeploymentStop = "DeploymentStop".asInstanceOf[TriggerEventType]
     val DeploymentRollback = "DeploymentRollback".asInstanceOf[TriggerEventType]
-    val DeploymentReady    = "DeploymentReady".asInstanceOf[TriggerEventType]
-    val InstanceStart      = "InstanceStart".asInstanceOf[TriggerEventType]
-    val InstanceSuccess    = "InstanceSuccess".asInstanceOf[TriggerEventType]
-    val InstanceFailure    = "InstanceFailure".asInstanceOf[TriggerEventType]
-    val InstanceReady      = "InstanceReady".asInstanceOf[TriggerEventType]
+    val DeploymentReady = "DeploymentReady".asInstanceOf[TriggerEventType]
+    val InstanceStart = "InstanceStart".asInstanceOf[TriggerEventType]
+    val InstanceSuccess = "InstanceSuccess".asInstanceOf[TriggerEventType]
+    val InstanceFailure = "InstanceFailure".asInstanceOf[TriggerEventType]
+    val InstanceReady = "InstanceReady".asInstanceOf[TriggerEventType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -4081,7 +4081,7 @@ package codedeploy {
     ): UntagResourceInput = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceInput]
@@ -4169,7 +4169,7 @@ package codedeploy {
         triggerConfigurations: js.UndefOr[TriggerConfigList] = js.undefined
     ): UpdateDeploymentGroupInput = {
       val __obj = js.Dynamic.literal(
-        "applicationName"            -> applicationName.asInstanceOf[js.Any],
+        "applicationName" -> applicationName.asInstanceOf[js.Any],
         "currentDeploymentGroupName" -> currentDeploymentGroupName.asInstanceOf[js.Any]
       )
 

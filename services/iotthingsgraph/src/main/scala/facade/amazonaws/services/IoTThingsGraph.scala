@@ -7,57 +7,57 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object iotthingsgraph {
-  type Arn                         = String
-  type DefinitionText              = String
-  type DependencyRevisions         = js.Array[DependencyRevision]
-  type DeprecateExistingEntities   = Boolean
-  type Enabled                     = Boolean
-  type EntityDescriptions          = js.Array[EntityDescription]
-  type EntityFilterValue           = String
-  type EntityFilterValues          = js.Array[EntityFilterValue]
-  type EntityFilters               = js.Array[EntityFilter]
-  type EntityTypes                 = js.Array[EntityType]
-  type FlowExecutionId             = String
-  type FlowExecutionMessageId      = String
+  type Arn = String
+  type DefinitionText = String
+  type DependencyRevisions = js.Array[DependencyRevision]
+  type DeprecateExistingEntities = Boolean
+  type Enabled = Boolean
+  type EntityDescriptions = js.Array[EntityDescription]
+  type EntityFilterValue = String
+  type EntityFilterValues = js.Array[EntityFilterValue]
+  type EntityFilters = js.Array[EntityFilter]
+  type EntityTypes = js.Array[EntityType]
+  type FlowExecutionId = String
+  type FlowExecutionMessageId = String
   type FlowExecutionMessagePayload = String
-  type FlowExecutionMessages       = js.Array[FlowExecutionMessage]
-  type FlowExecutionSummaries      = js.Array[FlowExecutionSummary]
-  type FlowTemplateFilterValue     = String
-  type FlowTemplateFilterValues    = js.Array[FlowTemplateFilterValue]
-  type FlowTemplateFilters         = js.Array[FlowTemplateFilter]
-  type FlowTemplateSummaries       = js.Array[FlowTemplateSummary]
-  type GreengrassDeploymentId      = String
-  type GreengrassGroupId           = String
-  type GreengrassGroupVersionId    = String
-  type GroupName                   = String
-  type MaxResults                  = Int
-  type NamespaceName               = String
-  type NextToken                   = String
-  type ResourceArn                 = String
-  type RoleArn                     = String
-  type S3BucketName                = String
-  type StringList                  = js.Array[String]
-  type SyncWithPublicNamespace     = Boolean
-  type SystemInstanceFilterValue   = String
-  type SystemInstanceFilterValues  = js.Array[SystemInstanceFilterValue]
-  type SystemInstanceFilters       = js.Array[SystemInstanceFilter]
-  type SystemInstanceSummaries     = js.Array[SystemInstanceSummary]
-  type SystemTemplateFilterValue   = String
-  type SystemTemplateFilterValues  = js.Array[SystemTemplateFilterValue]
-  type SystemTemplateFilters       = js.Array[SystemTemplateFilter]
-  type SystemTemplateSummaries     = js.Array[SystemTemplateSummary]
-  type TagKey                      = String
-  type TagKeyList                  = js.Array[TagKey]
-  type TagList                     = js.Array[Tag]
-  type TagValue                    = String
-  type ThingArn                    = String
-  type ThingName                   = String
-  type Things                      = js.Array[Thing]
-  type Timestamp                   = js.Date
-  type UploadId                    = String
-  type Urn                         = String
-  type Urns                        = js.Array[Urn]
-  type Version                     = Double
+  type FlowExecutionMessages = js.Array[FlowExecutionMessage]
+  type FlowExecutionSummaries = js.Array[FlowExecutionSummary]
+  type FlowTemplateFilterValue = String
+  type FlowTemplateFilterValues = js.Array[FlowTemplateFilterValue]
+  type FlowTemplateFilters = js.Array[FlowTemplateFilter]
+  type FlowTemplateSummaries = js.Array[FlowTemplateSummary]
+  type GreengrassDeploymentId = String
+  type GreengrassGroupId = String
+  type GreengrassGroupVersionId = String
+  type GroupName = String
+  type MaxResults = Int
+  type NamespaceName = String
+  type NextToken = String
+  type ResourceArn = String
+  type RoleArn = String
+  type S3BucketName = String
+  type StringList = js.Array[String]
+  type SyncWithPublicNamespace = Boolean
+  type SystemInstanceFilterValue = String
+  type SystemInstanceFilterValues = js.Array[SystemInstanceFilterValue]
+  type SystemInstanceFilters = js.Array[SystemInstanceFilter]
+  type SystemInstanceSummaries = js.Array[SystemInstanceSummary]
+  type SystemTemplateFilterValue = String
+  type SystemTemplateFilterValues = js.Array[SystemTemplateFilterValue]
+  type SystemTemplateFilters = js.Array[SystemTemplateFilter]
+  type SystemTemplateSummaries = js.Array[SystemTemplateSummary]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type ThingArn = String
+  type ThingName = String
+  type Things = js.Array[Thing]
+  type Timestamp = js.Date
+  type UploadId = String
+  type Urn = String
+  type Urns = js.Array[Urn]
+  type Version = Double
 
   implicit final class IoTThingsGraphOps(private val service: IoTThingsGraph) extends AnyVal {
 
@@ -154,49 +154,49 @@ package iotthingsgraph {
 
     def associateEntityToThing(params: AssociateEntityToThingRequest): Request[AssociateEntityToThingResponse] =
       js.native
-    def createFlowTemplate(params: CreateFlowTemplateRequest): Request[CreateFlowTemplateResponse]          = js.native
-    def createSystemInstance(params: CreateSystemInstanceRequest): Request[CreateSystemInstanceResponse]    = js.native
-    def createSystemTemplate(params: CreateSystemTemplateRequest): Request[CreateSystemTemplateResponse]    = js.native
-    def deleteFlowTemplate(params: DeleteFlowTemplateRequest): Request[DeleteFlowTemplateResponse]          = js.native
-    def deleteNamespace(params: DeleteNamespaceRequest): Request[DeleteNamespaceResponse]                   = js.native
-    def deleteSystemInstance(params: DeleteSystemInstanceRequest): Request[DeleteSystemInstanceResponse]    = js.native
-    def deleteSystemTemplate(params: DeleteSystemTemplateRequest): Request[DeleteSystemTemplateResponse]    = js.native
-    def deploySystemInstance(params: DeploySystemInstanceRequest): Request[DeploySystemInstanceResponse]    = js.native
+    def createFlowTemplate(params: CreateFlowTemplateRequest): Request[CreateFlowTemplateResponse] = js.native
+    def createSystemInstance(params: CreateSystemInstanceRequest): Request[CreateSystemInstanceResponse] = js.native
+    def createSystemTemplate(params: CreateSystemTemplateRequest): Request[CreateSystemTemplateResponse] = js.native
+    def deleteFlowTemplate(params: DeleteFlowTemplateRequest): Request[DeleteFlowTemplateResponse] = js.native
+    def deleteNamespace(params: DeleteNamespaceRequest): Request[DeleteNamespaceResponse] = js.native
+    def deleteSystemInstance(params: DeleteSystemInstanceRequest): Request[DeleteSystemInstanceResponse] = js.native
+    def deleteSystemTemplate(params: DeleteSystemTemplateRequest): Request[DeleteSystemTemplateResponse] = js.native
+    def deploySystemInstance(params: DeploySystemInstanceRequest): Request[DeploySystemInstanceResponse] = js.native
     def deprecateFlowTemplate(params: DeprecateFlowTemplateRequest): Request[DeprecateFlowTemplateResponse] = js.native
     def deprecateSystemTemplate(params: DeprecateSystemTemplateRequest): Request[DeprecateSystemTemplateResponse] =
       js.native
     def describeNamespace(params: DescribeNamespaceRequest): Request[DescribeNamespaceResponse] = js.native
     def dissociateEntityFromThing(
         params: DissociateEntityFromThingRequest
-    ): Request[DissociateEntityFromThingResponse]                                         = js.native
-    def getEntities(params: GetEntitiesRequest): Request[GetEntitiesResponse]             = js.native
+    ): Request[DissociateEntityFromThingResponse] = js.native
+    def getEntities(params: GetEntitiesRequest): Request[GetEntitiesResponse] = js.native
     def getFlowTemplate(params: GetFlowTemplateRequest): Request[GetFlowTemplateResponse] = js.native
     def getFlowTemplateRevisions(params: GetFlowTemplateRevisionsRequest): Request[GetFlowTemplateRevisionsResponse] =
       js.native
     def getNamespaceDeletionStatus(
         params: GetNamespaceDeletionStatusRequest
-    ): Request[GetNamespaceDeletionStatusResponse]                                              = js.native
+    ): Request[GetNamespaceDeletionStatusResponse] = js.native
     def getSystemInstance(params: GetSystemInstanceRequest): Request[GetSystemInstanceResponse] = js.native
     def getSystemTemplate(params: GetSystemTemplateRequest): Request[GetSystemTemplateResponse] = js.native
     def getSystemTemplateRevisions(
         params: GetSystemTemplateRevisionsRequest
-    ): Request[GetSystemTemplateRevisionsResponse]                                        = js.native
+    ): Request[GetSystemTemplateRevisionsResponse] = js.native
     def getUploadStatus(params: GetUploadStatusRequest): Request[GetUploadStatusResponse] = js.native
     def listFlowExecutionMessages(
         params: ListFlowExecutionMessagesRequest
-    ): Request[ListFlowExecutionMessagesResponse]                                                           = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
-    def searchEntities(params: SearchEntitiesRequest): Request[SearchEntitiesResponse]                      = js.native
-    def searchFlowExecutions(params: SearchFlowExecutionsRequest): Request[SearchFlowExecutionsResponse]    = js.native
-    def searchFlowTemplates(params: SearchFlowTemplatesRequest): Request[SearchFlowTemplatesResponse]       = js.native
+    ): Request[ListFlowExecutionMessagesResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def searchEntities(params: SearchEntitiesRequest): Request[SearchEntitiesResponse] = js.native
+    def searchFlowExecutions(params: SearchFlowExecutionsRequest): Request[SearchFlowExecutionsResponse] = js.native
+    def searchFlowTemplates(params: SearchFlowTemplatesRequest): Request[SearchFlowTemplatesResponse] = js.native
     def searchSystemInstances(params: SearchSystemInstancesRequest): Request[SearchSystemInstancesResponse] = js.native
     def searchSystemTemplates(params: SearchSystemTemplatesRequest): Request[SearchSystemTemplatesResponse] = js.native
-    def searchThings(params: SearchThingsRequest): Request[SearchThingsResponse]                            = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                               = js.native
+    def searchThings(params: SearchThingsRequest): Request[SearchThingsResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def undeploySystemInstance(params: UndeploySystemInstanceRequest): Request[UndeploySystemInstanceResponse] =
       js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                      = js.native
-    def updateFlowTemplate(params: UpdateFlowTemplateRequest): Request[UpdateFlowTemplateResponse]       = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateFlowTemplate(params: UpdateFlowTemplateRequest): Request[UpdateFlowTemplateResponse] = js.native
     def updateSystemTemplate(params: UpdateSystemTemplateRequest): Request[UpdateSystemTemplateResponse] = js.native
     def uploadEntityDefinitions(params: UploadEntityDefinitionsRequest): Request[UploadEntityDefinitionsResponse] =
       js.native
@@ -217,7 +217,7 @@ package iotthingsgraph {
         namespaceVersion: js.UndefOr[Version] = js.undefined
     ): AssociateEntityToThingRequest = {
       val __obj = js.Dynamic.literal(
-        "entityId"  -> entityId.asInstanceOf[js.Any],
+        "entityId" -> entityId.asInstanceOf[js.Any],
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
 
@@ -302,7 +302,7 @@ package iotthingsgraph {
     ): CreateSystemInstanceRequest = {
       val __obj = js.Dynamic.literal(
         "definition" -> definition.asInstanceOf[js.Any],
-        "target"     -> target.asInstanceOf[js.Any]
+        "target" -> target.asInstanceOf[js.Any]
       )
 
       flowActionsRoleArn.foreach(__v => __obj.updateDynamic("flowActionsRoleArn")(__v.asInstanceOf[js.Any]))
@@ -386,7 +386,7 @@ package iotthingsgraph {
     ): DefinitionDocument = {
       val __obj = js.Dynamic.literal(
         "language" -> language.asInstanceOf[js.Any],
-        "text"     -> text.asInstanceOf[js.Any]
+        "text" -> text.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DefinitionDocument]
@@ -587,7 +587,7 @@ package iotthingsgraph {
   sealed trait DeploymentTarget extends js.Any
   object DeploymentTarget extends js.Object {
     val GREENGRASS = "GREENGRASS".asInstanceOf[DeploymentTarget]
-    val CLOUD      = "CLOUD".asInstanceOf[DeploymentTarget]
+    val CLOUD = "CLOUD".asInstanceOf[DeploymentTarget]
 
     val values = js.Object.freeze(js.Array(GREENGRASS, CLOUD))
   }
@@ -712,7 +712,7 @@ package iotthingsgraph {
     ): DissociateEntityFromThingRequest = {
       val __obj = js.Dynamic.literal(
         "entityType" -> entityType.asInstanceOf[js.Any],
-        "thingName"  -> thingName.asInstanceOf[js.Any]
+        "thingName" -> thingName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DissociateEntityFromThingRequest]
@@ -788,9 +788,9 @@ package iotthingsgraph {
   @js.native
   sealed trait EntityFilterName extends js.Any
   object EntityFilterName extends js.Object {
-    val NAME                 = "NAME".asInstanceOf[EntityFilterName]
-    val NAMESPACE            = "NAMESPACE".asInstanceOf[EntityFilterName]
-    val SEMANTIC_TYPE_PATH   = "SEMANTIC_TYPE_PATH".asInstanceOf[EntityFilterName]
+    val NAME = "NAME".asInstanceOf[EntityFilterName]
+    val NAMESPACE = "NAMESPACE".asInstanceOf[EntityFilterName]
+    val SEMANTIC_TYPE_PATH = "SEMANTIC_TYPE_PATH".asInstanceOf[EntityFilterName]
     val REFERENCED_ENTITY_ID = "REFERENCED_ENTITY_ID".asInstanceOf[EntityFilterName]
 
     val values = js.Object.freeze(js.Array(NAME, NAMESPACE, SEMANTIC_TYPE_PATH, REFERENCED_ENTITY_ID))
@@ -799,16 +799,16 @@ package iotthingsgraph {
   @js.native
   sealed trait EntityType extends js.Any
   object EntityType extends js.Object {
-    val DEVICE       = "DEVICE".asInstanceOf[EntityType]
-    val SERVICE      = "SERVICE".asInstanceOf[EntityType]
+    val DEVICE = "DEVICE".asInstanceOf[EntityType]
+    val SERVICE = "SERVICE".asInstanceOf[EntityType]
     val DEVICE_MODEL = "DEVICE_MODEL".asInstanceOf[EntityType]
-    val CAPABILITY   = "CAPABILITY".asInstanceOf[EntityType]
-    val STATE        = "STATE".asInstanceOf[EntityType]
-    val ACTION       = "ACTION".asInstanceOf[EntityType]
-    val EVENT        = "EVENT".asInstanceOf[EntityType]
-    val PROPERTY     = "PROPERTY".asInstanceOf[EntityType]
-    val MAPPING      = "MAPPING".asInstanceOf[EntityType]
-    val ENUM         = "ENUM".asInstanceOf[EntityType]
+    val CAPABILITY = "CAPABILITY".asInstanceOf[EntityType]
+    val STATE = "STATE".asInstanceOf[EntityType]
+    val ACTION = "ACTION".asInstanceOf[EntityType]
+    val EVENT = "EVENT".asInstanceOf[EntityType]
+    val PROPERTY = "PROPERTY".asInstanceOf[EntityType]
+    val MAPPING = "MAPPING".asInstanceOf[EntityType]
+    val ENUM = "ENUM".asInstanceOf[EntityType]
 
     val values = js.Object.freeze(
       js.Array(DEVICE, SERVICE, DEVICE_MODEL, CAPABILITY, STATE, ACTION, EVENT, PROPERTY, MAPPING, ENUM)
@@ -818,23 +818,23 @@ package iotthingsgraph {
   @js.native
   sealed trait FlowExecutionEventType extends js.Any
   object FlowExecutionEventType extends js.Object {
-    val EXECUTION_STARTED              = "EXECUTION_STARTED".asInstanceOf[FlowExecutionEventType]
-    val EXECUTION_FAILED               = "EXECUTION_FAILED".asInstanceOf[FlowExecutionEventType]
-    val EXECUTION_ABORTED              = "EXECUTION_ABORTED".asInstanceOf[FlowExecutionEventType]
-    val EXECUTION_SUCCEEDED            = "EXECUTION_SUCCEEDED".asInstanceOf[FlowExecutionEventType]
-    val STEP_STARTED                   = "STEP_STARTED".asInstanceOf[FlowExecutionEventType]
-    val STEP_FAILED                    = "STEP_FAILED".asInstanceOf[FlowExecutionEventType]
-    val STEP_SUCCEEDED                 = "STEP_SUCCEEDED".asInstanceOf[FlowExecutionEventType]
-    val ACTIVITY_SCHEDULED             = "ACTIVITY_SCHEDULED".asInstanceOf[FlowExecutionEventType]
-    val ACTIVITY_STARTED               = "ACTIVITY_STARTED".asInstanceOf[FlowExecutionEventType]
-    val ACTIVITY_FAILED                = "ACTIVITY_FAILED".asInstanceOf[FlowExecutionEventType]
-    val ACTIVITY_SUCCEEDED             = "ACTIVITY_SUCCEEDED".asInstanceOf[FlowExecutionEventType]
-    val START_FLOW_EXECUTION_TASK      = "START_FLOW_EXECUTION_TASK".asInstanceOf[FlowExecutionEventType]
+    val EXECUTION_STARTED = "EXECUTION_STARTED".asInstanceOf[FlowExecutionEventType]
+    val EXECUTION_FAILED = "EXECUTION_FAILED".asInstanceOf[FlowExecutionEventType]
+    val EXECUTION_ABORTED = "EXECUTION_ABORTED".asInstanceOf[FlowExecutionEventType]
+    val EXECUTION_SUCCEEDED = "EXECUTION_SUCCEEDED".asInstanceOf[FlowExecutionEventType]
+    val STEP_STARTED = "STEP_STARTED".asInstanceOf[FlowExecutionEventType]
+    val STEP_FAILED = "STEP_FAILED".asInstanceOf[FlowExecutionEventType]
+    val STEP_SUCCEEDED = "STEP_SUCCEEDED".asInstanceOf[FlowExecutionEventType]
+    val ACTIVITY_SCHEDULED = "ACTIVITY_SCHEDULED".asInstanceOf[FlowExecutionEventType]
+    val ACTIVITY_STARTED = "ACTIVITY_STARTED".asInstanceOf[FlowExecutionEventType]
+    val ACTIVITY_FAILED = "ACTIVITY_FAILED".asInstanceOf[FlowExecutionEventType]
+    val ACTIVITY_SUCCEEDED = "ACTIVITY_SUCCEEDED".asInstanceOf[FlowExecutionEventType]
+    val START_FLOW_EXECUTION_TASK = "START_FLOW_EXECUTION_TASK".asInstanceOf[FlowExecutionEventType]
     val SCHEDULE_NEXT_READY_STEPS_TASK = "SCHEDULE_NEXT_READY_STEPS_TASK".asInstanceOf[FlowExecutionEventType]
-    val THING_ACTION_TASK              = "THING_ACTION_TASK".asInstanceOf[FlowExecutionEventType]
-    val THING_ACTION_TASK_FAILED       = "THING_ACTION_TASK_FAILED".asInstanceOf[FlowExecutionEventType]
-    val THING_ACTION_TASK_SUCCEEDED    = "THING_ACTION_TASK_SUCCEEDED".asInstanceOf[FlowExecutionEventType]
-    val ACKNOWLEDGE_TASK_MESSAGE       = "ACKNOWLEDGE_TASK_MESSAGE".asInstanceOf[FlowExecutionEventType]
+    val THING_ACTION_TASK = "THING_ACTION_TASK".asInstanceOf[FlowExecutionEventType]
+    val THING_ACTION_TASK_FAILED = "THING_ACTION_TASK_FAILED".asInstanceOf[FlowExecutionEventType]
+    val THING_ACTION_TASK_SUCCEEDED = "THING_ACTION_TASK_SUCCEEDED".asInstanceOf[FlowExecutionEventType]
+    val ACKNOWLEDGE_TASK_MESSAGE = "ACKNOWLEDGE_TASK_MESSAGE".asInstanceOf[FlowExecutionEventType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -890,10 +890,10 @@ package iotthingsgraph {
   @js.native
   sealed trait FlowExecutionStatus extends js.Any
   object FlowExecutionStatus extends js.Object {
-    val RUNNING   = "RUNNING".asInstanceOf[FlowExecutionStatus]
-    val ABORTED   = "ABORTED".asInstanceOf[FlowExecutionStatus]
+    val RUNNING = "RUNNING".asInstanceOf[FlowExecutionStatus]
+    val ABORTED = "ABORTED".asInstanceOf[FlowExecutionStatus]
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[FlowExecutionStatus]
-    val FAILED    = "FAILED".asInstanceOf[FlowExecutionStatus]
+    val FAILED = "FAILED".asInstanceOf[FlowExecutionStatus]
 
     val values = js.Object.freeze(js.Array(RUNNING, ABORTED, SUCCEEDED, FAILED))
   }
@@ -975,7 +975,7 @@ package iotthingsgraph {
         value: FlowTemplateFilterValues
     ): FlowTemplateFilter = {
       val __obj = js.Dynamic.literal(
-        "name"  -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
 
@@ -1332,8 +1332,8 @@ package iotthingsgraph {
         namespaceVersion: js.UndefOr[Version] = js.undefined
     ): GetUploadStatusResponse = {
       val __obj = js.Dynamic.literal(
-        "createdDate"  -> createdDate.asInstanceOf[js.Any],
-        "uploadId"     -> uploadId.asInstanceOf[js.Any],
+        "createdDate" -> createdDate.asInstanceOf[js.Any],
+        "uploadId" -> uploadId.asInstanceOf[js.Any],
         "uploadStatus" -> uploadStatus.asInstanceOf[js.Any]
       )
 
@@ -1457,8 +1457,8 @@ package iotthingsgraph {
   sealed trait NamespaceDeletionStatus extends js.Any
   object NamespaceDeletionStatus extends js.Object {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[NamespaceDeletionStatus]
-    val SUCCEEDED   = "SUCCEEDED".asInstanceOf[NamespaceDeletionStatus]
-    val FAILED      = "FAILED".asInstanceOf[NamespaceDeletionStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[NamespaceDeletionStatus]
+    val FAILED = "FAILED".asInstanceOf[NamespaceDeletionStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED))
   }
@@ -1744,14 +1744,14 @@ package iotthingsgraph {
   @js.native
   sealed trait SystemInstanceDeploymentStatus extends js.Any
   object SystemInstanceDeploymentStatus extends js.Object {
-    val NOT_DEPLOYED         = "NOT_DEPLOYED".asInstanceOf[SystemInstanceDeploymentStatus]
-    val BOOTSTRAP            = "BOOTSTRAP".asInstanceOf[SystemInstanceDeploymentStatus]
-    val DEPLOY_IN_PROGRESS   = "DEPLOY_IN_PROGRESS".asInstanceOf[SystemInstanceDeploymentStatus]
-    val DEPLOYED_IN_TARGET   = "DEPLOYED_IN_TARGET".asInstanceOf[SystemInstanceDeploymentStatus]
+    val NOT_DEPLOYED = "NOT_DEPLOYED".asInstanceOf[SystemInstanceDeploymentStatus]
+    val BOOTSTRAP = "BOOTSTRAP".asInstanceOf[SystemInstanceDeploymentStatus]
+    val DEPLOY_IN_PROGRESS = "DEPLOY_IN_PROGRESS".asInstanceOf[SystemInstanceDeploymentStatus]
+    val DEPLOYED_IN_TARGET = "DEPLOYED_IN_TARGET".asInstanceOf[SystemInstanceDeploymentStatus]
     val UNDEPLOY_IN_PROGRESS = "UNDEPLOY_IN_PROGRESS".asInstanceOf[SystemInstanceDeploymentStatus]
-    val FAILED               = "FAILED".asInstanceOf[SystemInstanceDeploymentStatus]
-    val PENDING_DELETE       = "PENDING_DELETE".asInstanceOf[SystemInstanceDeploymentStatus]
-    val DELETED_IN_TARGET    = "DELETED_IN_TARGET".asInstanceOf[SystemInstanceDeploymentStatus]
+    val FAILED = "FAILED".asInstanceOf[SystemInstanceDeploymentStatus]
+    val PENDING_DELETE = "PENDING_DELETE".asInstanceOf[SystemInstanceDeploymentStatus]
+    val DELETED_IN_TARGET = "DELETED_IN_TARGET".asInstanceOf[SystemInstanceDeploymentStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1833,8 +1833,8 @@ package iotthingsgraph {
   @js.native
   sealed trait SystemInstanceFilterName extends js.Any
   object SystemInstanceFilterName extends js.Object {
-    val SYSTEM_TEMPLATE_ID    = "SYSTEM_TEMPLATE_ID".asInstanceOf[SystemInstanceFilterName]
-    val STATUS                = "STATUS".asInstanceOf[SystemInstanceFilterName]
+    val SYSTEM_TEMPLATE_ID = "SYSTEM_TEMPLATE_ID".asInstanceOf[SystemInstanceFilterName]
+    val STATUS = "STATUS".asInstanceOf[SystemInstanceFilterName]
     val GREENGRASS_GROUP_NAME = "GREENGRASS_GROUP_NAME".asInstanceOf[SystemInstanceFilterName]
 
     val values = js.Object.freeze(js.Array(SYSTEM_TEMPLATE_ID, STATUS, GREENGRASS_GROUP_NAME))
@@ -1926,7 +1926,7 @@ package iotthingsgraph {
         value: SystemTemplateFilterValues
     ): SystemTemplateFilter = {
       val __obj = js.Dynamic.literal(
-        "name"  -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
 
@@ -1986,7 +1986,7 @@ package iotthingsgraph {
         value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "key"   -> key.asInstanceOf[js.Any],
+        "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
 
@@ -2008,7 +2008,7 @@ package iotthingsgraph {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -2096,7 +2096,7 @@ package iotthingsgraph {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -2132,7 +2132,7 @@ package iotthingsgraph {
     ): UpdateFlowTemplateRequest = {
       val __obj = js.Dynamic.literal(
         "definition" -> definition.asInstanceOf[js.Any],
-        "id"         -> id.asInstanceOf[js.Any]
+        "id" -> id.asInstanceOf[js.Any]
       )
 
       compatibleNamespaceVersion.foreach(__v =>
@@ -2174,7 +2174,7 @@ package iotthingsgraph {
     ): UpdateSystemTemplateRequest = {
       val __obj = js.Dynamic.literal(
         "definition" -> definition.asInstanceOf[js.Any],
-        "id"         -> id.asInstanceOf[js.Any]
+        "id" -> id.asInstanceOf[js.Any]
       )
 
       compatibleNamespaceVersion.foreach(__v =>
@@ -2246,8 +2246,8 @@ package iotthingsgraph {
   sealed trait UploadStatus extends js.Any
   object UploadStatus extends js.Object {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[UploadStatus]
-    val SUCCEEDED   = "SUCCEEDED".asInstanceOf[UploadStatus]
-    val FAILED      = "FAILED".asInstanceOf[UploadStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[UploadStatus]
+    val FAILED = "FAILED".asInstanceOf[UploadStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED))
   }

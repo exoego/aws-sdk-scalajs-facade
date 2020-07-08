@@ -8,59 +8,59 @@ import facade.amazonaws._
 
 package object health {
   type DescribeAffectedEntitiesForOrganizationFailedSet = js.Array[OrganizationAffectedEntitiesErrorItem]
-  type DescribeEventDetailsFailedSet                    = js.Array[EventDetailsErrorItem]
-  type DescribeEventDetailsForOrganizationFailedSet     = js.Array[OrganizationEventDetailsErrorItem]
+  type DescribeEventDetailsFailedSet = js.Array[EventDetailsErrorItem]
+  type DescribeEventDetailsForOrganizationFailedSet = js.Array[OrganizationEventDetailsErrorItem]
   type DescribeEventDetailsForOrganizationSuccessfulSet = js.Array[OrganizationEventDetails]
-  type DescribeEventDetailsSuccessfulSet                = js.Array[EventDetails]
-  type EntityAggregateList                              = js.Array[EntityAggregate]
-  type EntityList                                       = js.Array[AffectedEntity]
-  type EventAggregateList                               = js.Array[EventAggregate]
-  type EventArnsList                                    = js.Array[eventArn]
-  type EventList                                        = js.Array[Event]
-  type EventTypeCategoryList                            = js.Array[eventTypeCategory]
-  type EventTypeCodeList                                = js.Array[eventTypeCode]
-  type EventTypeList                                    = js.Array[EventType]
-  type OrganizationEntityFiltersList                    = js.Array[EventAccountFilter]
-  type OrganizationEventDetailFiltersList               = js.Array[EventAccountFilter]
-  type OrganizationEventList                            = js.Array[OrganizationEvent]
-  type accountId                                        = String
-  type affectedAccountsList                             = js.Array[accountId]
-  type aggregateValue                                   = String
-  type availabilityZone                                 = String
-  type availabilityZones                                = js.Array[availabilityZone]
-  type awsAccountIdsList                                = js.Array[accountId]
-  type count                                            = Int
-  type dateTimeRangeList                                = js.Array[DateTimeRange]
-  type entityArn                                        = String
-  type entityArnList                                    = js.Array[entityArn]
-  type entityStatusCodeList                             = js.Array[entityStatusCode]
-  type entityUrl                                        = String
-  type entityValue                                      = String
-  type entityValueList                                  = js.Array[entityValue]
-  type eventArn                                         = String
-  type eventArnList                                     = js.Array[eventArn]
-  type eventDescription                                 = String
-  type eventMetadata                                    = js.Dictionary[metadataValue]
-  type eventStatusCodeList                              = js.Array[eventStatusCode]
-  type eventType                                        = String
-  type eventTypeCategoryList                            = js.Array[eventTypeCategory]
-  type eventTypeCode                                    = String
-  type eventTypeList                                    = js.Array[eventType]
-  type healthServiceAccessStatusForOrganization         = String
-  type locale                                           = String
-  type maxResults                                       = Int
-  type metadataKey                                      = String
-  type metadataValue                                    = String
-  type nextToken                                        = String
-  type region                                           = String
-  type regionList                                       = js.Array[region]
-  type service                                          = String
-  type serviceList                                      = js.Array[service]
-  type tagFilter                                        = js.Array[tagSet]
-  type tagKey                                           = String
-  type tagSet                                           = js.Dictionary[tagValue]
-  type tagValue                                         = String
-  type timestamp                                        = js.Date
+  type DescribeEventDetailsSuccessfulSet = js.Array[EventDetails]
+  type EntityAggregateList = js.Array[EntityAggregate]
+  type EntityList = js.Array[AffectedEntity]
+  type EventAggregateList = js.Array[EventAggregate]
+  type EventArnsList = js.Array[eventArn]
+  type EventList = js.Array[Event]
+  type EventTypeCategoryList = js.Array[eventTypeCategory]
+  type EventTypeCodeList = js.Array[eventTypeCode]
+  type EventTypeList = js.Array[EventType]
+  type OrganizationEntityFiltersList = js.Array[EventAccountFilter]
+  type OrganizationEventDetailFiltersList = js.Array[EventAccountFilter]
+  type OrganizationEventList = js.Array[OrganizationEvent]
+  type accountId = String
+  type affectedAccountsList = js.Array[accountId]
+  type aggregateValue = String
+  type availabilityZone = String
+  type availabilityZones = js.Array[availabilityZone]
+  type awsAccountIdsList = js.Array[accountId]
+  type count = Int
+  type dateTimeRangeList = js.Array[DateTimeRange]
+  type entityArn = String
+  type entityArnList = js.Array[entityArn]
+  type entityStatusCodeList = js.Array[entityStatusCode]
+  type entityUrl = String
+  type entityValue = String
+  type entityValueList = js.Array[entityValue]
+  type eventArn = String
+  type eventArnList = js.Array[eventArn]
+  type eventDescription = String
+  type eventMetadata = js.Dictionary[metadataValue]
+  type eventStatusCodeList = js.Array[eventStatusCode]
+  type eventType = String
+  type eventTypeCategoryList = js.Array[eventTypeCategory]
+  type eventTypeCode = String
+  type eventTypeList = js.Array[eventType]
+  type healthServiceAccessStatusForOrganization = String
+  type locale = String
+  type maxResults = Int
+  type metadataKey = String
+  type metadataValue = String
+  type nextToken = String
+  type region = String
+  type regionList = js.Array[region]
+  type service = String
+  type serviceList = js.Array[service]
+  type tagFilter = js.Array[tagSet]
+  type tagKey = String
+  type tagSet = js.Dictionary[tagValue]
+  type tagValue = String
+  type timestamp = js.Date
 
   implicit final class HealthOps(private val service: Health) extends AnyVal {
 
@@ -125,16 +125,16 @@ package health {
     def describeEventDetails(params: DescribeEventDetailsRequest): Request[DescribeEventDetailsResponse] = js.native
     def describeEventDetailsForOrganization(
         params: DescribeEventDetailsForOrganizationRequest
-    ): Request[DescribeEventDetailsForOrganizationResponse]                                        = js.native
+    ): Request[DescribeEventDetailsForOrganizationResponse] = js.native
     def describeEventTypes(params: DescribeEventTypesRequest): Request[DescribeEventTypesResponse] = js.native
-    def describeEvents(params: DescribeEventsRequest): Request[DescribeEventsResponse]             = js.native
+    def describeEvents(params: DescribeEventsRequest): Request[DescribeEventsResponse] = js.native
     def describeEventsForOrganization(
         params: DescribeEventsForOrganizationRequest
     ): Request[DescribeEventsForOrganizationResponse] = js.native
     def describeHealthServiceStatusForOrganization(): Request[DescribeHealthServiceStatusForOrganizationResponse] =
       js.native
     def disableHealthServiceAccessForOrganization(): Request[js.Object] = js.native
-    def enableHealthServiceAccessForOrganization(): Request[js.Object]  = js.native
+    def enableHealthServiceAccessForOrganization(): Request[js.Object] = js.native
   }
 
   /**
@@ -1157,9 +1157,9 @@ package health {
   @js.native
   sealed trait entityStatusCode extends js.Any
   object entityStatusCode extends js.Object {
-    val IMPAIRED   = "IMPAIRED".asInstanceOf[entityStatusCode]
+    val IMPAIRED = "IMPAIRED".asInstanceOf[entityStatusCode]
     val UNIMPAIRED = "UNIMPAIRED".asInstanceOf[entityStatusCode]
-    val UNKNOWN    = "UNKNOWN".asInstanceOf[entityStatusCode]
+    val UNKNOWN = "UNKNOWN".asInstanceOf[entityStatusCode]
 
     val values = js.Object.freeze(js.Array(IMPAIRED, UNIMPAIRED, UNKNOWN))
   }
@@ -1175,9 +1175,9 @@ package health {
   @js.native
   sealed trait eventScopeCode extends js.Any
   object eventScopeCode extends js.Object {
-    val PUBLIC           = "PUBLIC".asInstanceOf[eventScopeCode]
+    val PUBLIC = "PUBLIC".asInstanceOf[eventScopeCode]
     val ACCOUNT_SPECIFIC = "ACCOUNT_SPECIFIC".asInstanceOf[eventScopeCode]
-    val NONE             = "NONE".asInstanceOf[eventScopeCode]
+    val NONE = "NONE".asInstanceOf[eventScopeCode]
 
     val values = js.Object.freeze(js.Array(PUBLIC, ACCOUNT_SPECIFIC, NONE))
   }
@@ -1185,8 +1185,8 @@ package health {
   @js.native
   sealed trait eventStatusCode extends js.Any
   object eventStatusCode extends js.Object {
-    val open     = "open".asInstanceOf[eventStatusCode]
-    val closed   = "closed".asInstanceOf[eventStatusCode]
+    val open = "open".asInstanceOf[eventStatusCode]
+    val closed = "closed".asInstanceOf[eventStatusCode]
     val upcoming = "upcoming".asInstanceOf[eventStatusCode]
 
     val values = js.Object.freeze(js.Array(open, closed, upcoming))
@@ -1195,10 +1195,10 @@ package health {
   @js.native
   sealed trait eventTypeCategory extends js.Any
   object eventTypeCategory extends js.Object {
-    val issue               = "issue".asInstanceOf[eventTypeCategory]
+    val issue = "issue".asInstanceOf[eventTypeCategory]
     val accountNotification = "accountNotification".asInstanceOf[eventTypeCategory]
-    val scheduledChange     = "scheduledChange".asInstanceOf[eventTypeCategory]
-    val investigation       = "investigation".asInstanceOf[eventTypeCategory]
+    val scheduledChange = "scheduledChange".asInstanceOf[eventTypeCategory]
+    val investigation = "investigation".asInstanceOf[eventTypeCategory]
 
     val values = js.Object.freeze(js.Array(issue, accountNotification, scheduledChange, investigation))
   }

@@ -7,12 +7,12 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object sagemakerruntime {
-  type BodyBlob               = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type BodyBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type CustomAttributesHeader = String
-  type EndpointName           = String
-  type Header                 = String
-  type TargetModelHeader      = String
-  type TargetVariantHeader    = String
+  type EndpointName = String
+  type Header = String
+  type TargetModelHeader = String
+  type TargetVariantHeader = String
 
   implicit final class SageMakerRuntimeOps(private val service: SageMakerRuntime) extends AnyVal {
 
@@ -53,7 +53,7 @@ package sagemakerruntime {
         TargetVariant: js.UndefOr[TargetVariantHeader] = js.undefined
     ): InvokeEndpointInput = {
       val __obj = js.Dynamic.literal(
-        "Body"         -> Body.asInstanceOf[js.Any],
+        "Body" -> Body.asInstanceOf[js.Any],
         "EndpointName" -> EndpointName.asInstanceOf[js.Any]
       )
 

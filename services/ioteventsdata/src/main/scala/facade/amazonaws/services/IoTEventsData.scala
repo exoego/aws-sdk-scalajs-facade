@@ -7,30 +7,30 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object ioteventsdata {
-  type BatchPutMessageErrorEntries     = js.Array[BatchPutMessageErrorEntry]
+  type BatchPutMessageErrorEntries = js.Array[BatchPutMessageErrorEntry]
   type BatchUpdateDetectorErrorEntries = js.Array[BatchUpdateDetectorErrorEntry]
-  type DetectorModelName               = String
-  type DetectorModelVersion            = String
-  type DetectorSummaries               = js.Array[DetectorSummary]
-  type ErrorMessage                    = String
-  type InputName                       = String
-  type KeyValue                        = String
-  type MaxResults                      = Int
-  type MessageId                       = String
-  type Messages                        = js.Array[Message]
-  type NextToken                       = String
-  type Payload                         = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type Seconds                         = Int
-  type StateName                       = String
-  type TimerDefinitions                = js.Array[TimerDefinition]
-  type TimerName                       = String
-  type Timers                          = js.Array[Timer]
-  type Timestamp                       = js.Date
-  type UpdateDetectorRequests          = js.Array[UpdateDetectorRequest]
-  type VariableDefinitions             = js.Array[VariableDefinition]
-  type VariableName                    = String
-  type VariableValue                   = String
-  type Variables                       = js.Array[Variable]
+  type DetectorModelName = String
+  type DetectorModelVersion = String
+  type DetectorSummaries = js.Array[DetectorSummary]
+  type ErrorMessage = String
+  type InputName = String
+  type KeyValue = String
+  type MaxResults = Int
+  type MessageId = String
+  type Messages = js.Array[Message]
+  type NextToken = String
+  type Payload = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type Seconds = Int
+  type StateName = String
+  type TimerDefinitions = js.Array[TimerDefinition]
+  type TimerName = String
+  type Timers = js.Array[Timer]
+  type Timestamp = js.Date
+  type UpdateDetectorRequests = js.Array[UpdateDetectorRequest]
+  type VariableDefinitions = js.Array[VariableDefinition]
+  type VariableName = String
+  type VariableValue = String
+  type Variables = js.Array[Variable]
 
   implicit final class IoTEventsDataOps(private val service: IoTEventsData) extends AnyVal {
 
@@ -51,10 +51,10 @@ package ioteventsdata {
   class IoTEventsData() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def batchPutMessage(params: BatchPutMessageRequest): Request[BatchPutMessageResponse]             = js.native
+    def batchPutMessage(params: BatchPutMessageRequest): Request[BatchPutMessageResponse] = js.native
     def batchUpdateDetector(params: BatchUpdateDetectorRequest): Request[BatchUpdateDetectorResponse] = js.native
-    def describeDetector(params: DescribeDetectorRequest): Request[DescribeDetectorResponse]          = js.native
-    def listDetectors(params: ListDetectorsRequest): Request[ListDetectorsResponse]                   = js.native
+    def describeDetector(params: DescribeDetectorRequest): Request[DescribeDetectorResponse] = js.native
+    def listDetectors(params: ListDetectorsRequest): Request[ListDetectorsResponse] = js.native
   }
 
   /**
@@ -269,7 +269,7 @@ package ioteventsdata {
     ): DetectorState = {
       val __obj = js.Dynamic.literal(
         "stateName" -> stateName.asInstanceOf[js.Any],
-        "timers"    -> timers.asInstanceOf[js.Any],
+        "timers" -> timers.asInstanceOf[js.Any],
         "variables" -> variables.asInstanceOf[js.Any]
       )
 
@@ -296,7 +296,7 @@ package ioteventsdata {
     ): DetectorStateDefinition = {
       val __obj = js.Dynamic.literal(
         "stateName" -> stateName.asInstanceOf[js.Any],
-        "timers"    -> timers.asInstanceOf[js.Any],
+        "timers" -> timers.asInstanceOf[js.Any],
         "variables" -> variables.asInstanceOf[js.Any]
       )
 
@@ -360,11 +360,11 @@ package ioteventsdata {
   @js.native
   sealed trait ErrorCode extends js.Any
   object ErrorCode extends js.Object {
-    val ResourceNotFoundException   = "ResourceNotFoundException".asInstanceOf[ErrorCode]
-    val InvalidRequestException     = "InvalidRequestException".asInstanceOf[ErrorCode]
-    val InternalFailureException    = "InternalFailureException".asInstanceOf[ErrorCode]
+    val ResourceNotFoundException = "ResourceNotFoundException".asInstanceOf[ErrorCode]
+    val InvalidRequestException = "InvalidRequestException".asInstanceOf[ErrorCode]
+    val InternalFailureException = "InternalFailureException".asInstanceOf[ErrorCode]
     val ServiceUnavailableException = "ServiceUnavailableException".asInstanceOf[ErrorCode]
-    val ThrottlingException         = "ThrottlingException".asInstanceOf[ErrorCode]
+    val ThrottlingException = "ThrottlingException".asInstanceOf[ErrorCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -443,7 +443,7 @@ package ioteventsdata {
       val __obj = js.Dynamic.literal(
         "inputName" -> inputName.asInstanceOf[js.Any],
         "messageId" -> messageId.asInstanceOf[js.Any],
-        "payload"   -> payload.asInstanceOf[js.Any]
+        "payload" -> payload.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[Message]
@@ -466,7 +466,7 @@ package ioteventsdata {
         timestamp: Timestamp
     ): Timer = {
       val __obj = js.Dynamic.literal(
-        "name"      -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "timestamp" -> timestamp.asInstanceOf[js.Any]
       )
 
@@ -490,7 +490,7 @@ package ioteventsdata {
         seconds: Seconds
     ): TimerDefinition = {
       val __obj = js.Dynamic.literal(
-        "name"    -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "seconds" -> seconds.asInstanceOf[js.Any]
       )
 
@@ -519,8 +519,8 @@ package ioteventsdata {
     ): UpdateDetectorRequest = {
       val __obj = js.Dynamic.literal(
         "detectorModelName" -> detectorModelName.asInstanceOf[js.Any],
-        "messageId"         -> messageId.asInstanceOf[js.Any],
-        "state"             -> state.asInstanceOf[js.Any]
+        "messageId" -> messageId.asInstanceOf[js.Any],
+        "state" -> state.asInstanceOf[js.Any]
       )
 
       keyValue.foreach(__v => __obj.updateDynamic("keyValue")(__v.asInstanceOf[js.Any]))
@@ -544,7 +544,7 @@ package ioteventsdata {
         value: VariableValue
     ): Variable = {
       val __obj = js.Dynamic.literal(
-        "name"  -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
 
@@ -568,7 +568,7 @@ package ioteventsdata {
         value: VariableValue
     ): VariableDefinition = {
       val __obj = js.Dynamic.literal(
-        "name"  -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
 

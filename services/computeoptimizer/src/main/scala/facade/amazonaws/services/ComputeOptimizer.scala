@@ -7,67 +7,67 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object computeoptimizer {
-  type AccountId                             = String
-  type AccountIds                            = js.Array[AccountId]
-  type AutoScalingGroupArn                   = String
-  type AutoScalingGroupArns                  = js.Array[AutoScalingGroupArn]
-  type AutoScalingGroupName                  = String
+  type AccountId = String
+  type AccountIds = js.Array[AccountId]
+  type AutoScalingGroupArn = String
+  type AutoScalingGroupArns = js.Array[AutoScalingGroupArn]
+  type AutoScalingGroupName = String
   type AutoScalingGroupRecommendationOptions = js.Array[AutoScalingGroupRecommendationOption]
-  type AutoScalingGroupRecommendations       = js.Array[AutoScalingGroupRecommendation]
-  type Code                                  = String
-  type CreationTimestamp                     = js.Date
-  type CurrentInstanceType                   = String
-  type DesiredCapacity                       = Int
-  type DestinationBucket                     = String
-  type DestinationKey                        = String
-  type DestinationKeyPrefix                  = String
-  type ExportableAutoScalingGroupFields      = js.Array[ExportableAutoScalingGroupField]
-  type ExportableInstanceFields              = js.Array[ExportableInstanceField]
-  type FailureReason                         = String
-  type FilterValue                           = String
-  type FilterValues                          = js.Array[FilterValue]
-  type Filters                               = js.Array[Filter]
-  type GetRecommendationErrors               = js.Array[GetRecommendationError]
-  type Identifier                            = String
-  type IncludeMemberAccounts                 = Boolean
-  type InstanceArn                           = String
-  type InstanceArns                          = js.Array[InstanceArn]
-  type InstanceName                          = String
-  type InstanceRecommendations               = js.Array[InstanceRecommendation]
-  type InstanceType                          = String
-  type JobFilters                            = js.Array[JobFilter]
-  type JobId                                 = String
-  type JobIds                                = js.Array[JobId]
-  type LastRefreshTimestamp                  = js.Date
-  type LastUpdatedTimestamp                  = js.Date
-  type LookBackPeriodInDays                  = Double
-  type MaxResults                            = Int
-  type MaxSize                               = Int
-  type MemberAccountsEnrolled                = Boolean
-  type Message                               = String
-  type MetadataKey                           = String
-  type MetricValue                           = Double
-  type MetricValues                          = js.Array[MetricValue]
-  type MinSize                               = Int
-  type NextToken                             = String
-  type PerformanceRisk                       = Double
-  type Period                                = Int
-  type ProjectedMetrics                      = js.Array[ProjectedMetric]
-  type ProjectedUtilizationMetrics           = js.Array[UtilizationMetric]
-  type Rank                                  = Int
-  type RecommendationExportJobs              = js.Array[RecommendationExportJob]
-  type RecommendationOptions                 = js.Array[InstanceRecommendationOption]
-  type RecommendationSourceArn               = String
-  type RecommendationSources                 = js.Array[RecommendationSource]
-  type RecommendationSummaries               = js.Array[RecommendationSummary]
-  type RecommendedInstanceType               = String
-  type RecommendedOptionProjectedMetrics     = js.Array[RecommendedOptionProjectedMetric]
-  type StatusReason                          = String
-  type Summaries                             = js.Array[Summary]
-  type SummaryValue                          = Double
-  type Timestamp                             = js.Date
-  type Timestamps                            = js.Array[Timestamp]
-  type UtilizationMetrics                    = js.Array[UtilizationMetric]
+  type AutoScalingGroupRecommendations = js.Array[AutoScalingGroupRecommendation]
+  type Code = String
+  type CreationTimestamp = js.Date
+  type CurrentInstanceType = String
+  type DesiredCapacity = Int
+  type DestinationBucket = String
+  type DestinationKey = String
+  type DestinationKeyPrefix = String
+  type ExportableAutoScalingGroupFields = js.Array[ExportableAutoScalingGroupField]
+  type ExportableInstanceFields = js.Array[ExportableInstanceField]
+  type FailureReason = String
+  type FilterValue = String
+  type FilterValues = js.Array[FilterValue]
+  type Filters = js.Array[Filter]
+  type GetRecommendationErrors = js.Array[GetRecommendationError]
+  type Identifier = String
+  type IncludeMemberAccounts = Boolean
+  type InstanceArn = String
+  type InstanceArns = js.Array[InstanceArn]
+  type InstanceName = String
+  type InstanceRecommendations = js.Array[InstanceRecommendation]
+  type InstanceType = String
+  type JobFilters = js.Array[JobFilter]
+  type JobId = String
+  type JobIds = js.Array[JobId]
+  type LastRefreshTimestamp = js.Date
+  type LastUpdatedTimestamp = js.Date
+  type LookBackPeriodInDays = Double
+  type MaxResults = Int
+  type MaxSize = Int
+  type MemberAccountsEnrolled = Boolean
+  type Message = String
+  type MetadataKey = String
+  type MetricValue = Double
+  type MetricValues = js.Array[MetricValue]
+  type MinSize = Int
+  type NextToken = String
+  type PerformanceRisk = Double
+  type Period = Int
+  type ProjectedMetrics = js.Array[ProjectedMetric]
+  type ProjectedUtilizationMetrics = js.Array[UtilizationMetric]
+  type Rank = Int
+  type RecommendationExportJobs = js.Array[RecommendationExportJob]
+  type RecommendationOptions = js.Array[InstanceRecommendationOption]
+  type RecommendationSourceArn = String
+  type RecommendationSources = js.Array[RecommendationSource]
+  type RecommendationSummaries = js.Array[RecommendationSummary]
+  type RecommendedInstanceType = String
+  type RecommendedOptionProjectedMetrics = js.Array[RecommendedOptionProjectedMetric]
+  type StatusReason = String
+  type Summaries = js.Array[Summary]
+  type SummaryValue = Double
+  type Timestamp = js.Date
+  type Timestamps = js.Array[Timestamp]
+  type UtilizationMetrics = js.Array[UtilizationMetric]
 
   implicit final class ComputeOptimizerOps(private val service: ComputeOptimizer) extends AnyVal {
 
@@ -128,7 +128,7 @@ package computeoptimizer {
     ): Request[GetEC2InstanceRecommendationsResponse] = js.native
     def getEC2RecommendationProjectedMetrics(
         params: GetEC2RecommendationProjectedMetricsRequest
-    ): Request[GetEC2RecommendationProjectedMetricsResponse]                                          = js.native
+    ): Request[GetEC2RecommendationProjectedMetricsResponse] = js.native
     def getEnrollmentStatus(params: GetEnrollmentStatusRequest): Request[GetEnrollmentStatusResponse] = js.native
     def getRecommendationSummaries(
         params: GetRecommendationSummariesRequest
@@ -408,10 +408,10 @@ package computeoptimizer {
   @js.native
   sealed trait ExportableAutoScalingGroupField extends js.Any
   object ExportableAutoScalingGroupField extends js.Object {
-    val AccountId                    = "AccountId".asInstanceOf[ExportableAutoScalingGroupField]
-    val AutoScalingGroupArn          = "AutoScalingGroupArn".asInstanceOf[ExportableAutoScalingGroupField]
-    val AutoScalingGroupName         = "AutoScalingGroupName".asInstanceOf[ExportableAutoScalingGroupField]
-    val Finding                      = "Finding".asInstanceOf[ExportableAutoScalingGroupField]
+    val AccountId = "AccountId".asInstanceOf[ExportableAutoScalingGroupField]
+    val AutoScalingGroupArn = "AutoScalingGroupArn".asInstanceOf[ExportableAutoScalingGroupField]
+    val AutoScalingGroupName = "AutoScalingGroupName".asInstanceOf[ExportableAutoScalingGroupField]
+    val Finding = "Finding".asInstanceOf[ExportableAutoScalingGroupField]
     val UtilizationMetricsCpuMaximum = "UtilizationMetricsCpuMaximum".asInstanceOf[ExportableAutoScalingGroupField]
     val UtilizationMetricsMemoryMaximum =
       "UtilizationMetricsMemoryMaximum".asInstanceOf[ExportableAutoScalingGroupField]
@@ -422,13 +422,13 @@ package computeoptimizer {
       "CurrentConfigurationDesiredCapacity".asInstanceOf[ExportableAutoScalingGroupField]
     val CurrentConfigurationMinSize = "CurrentConfigurationMinSize".asInstanceOf[ExportableAutoScalingGroupField]
     val CurrentConfigurationMaxSize = "CurrentConfigurationMaxSize".asInstanceOf[ExportableAutoScalingGroupField]
-    val CurrentOnDemandPrice        = "CurrentOnDemandPrice".asInstanceOf[ExportableAutoScalingGroupField]
+    val CurrentOnDemandPrice = "CurrentOnDemandPrice".asInstanceOf[ExportableAutoScalingGroupField]
     val CurrentStandardOneYearNoUpfrontReservedPrice =
       "CurrentStandardOneYearNoUpfrontReservedPrice".asInstanceOf[ExportableAutoScalingGroupField]
     val CurrentStandardThreeYearNoUpfrontReservedPrice =
       "CurrentStandardThreeYearNoUpfrontReservedPrice".asInstanceOf[ExportableAutoScalingGroupField]
-    val CurrentVCpus   = "CurrentVCpus".asInstanceOf[ExportableAutoScalingGroupField]
-    val CurrentMemory  = "CurrentMemory".asInstanceOf[ExportableAutoScalingGroupField]
+    val CurrentVCpus = "CurrentVCpus".asInstanceOf[ExportableAutoScalingGroupField]
+    val CurrentMemory = "CurrentMemory".asInstanceOf[ExportableAutoScalingGroupField]
     val CurrentStorage = "CurrentStorage".asInstanceOf[ExportableAutoScalingGroupField]
     val CurrentNetwork = "CurrentNetwork".asInstanceOf[ExportableAutoScalingGroupField]
     val RecommendationOptionsConfigurationInstanceType =
@@ -451,11 +451,11 @@ package computeoptimizer {
       "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice".asInstanceOf[ExportableAutoScalingGroupField]
     val RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice =
       "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice".asInstanceOf[ExportableAutoScalingGroupField]
-    val RecommendationOptionsVcpus   = "RecommendationOptionsVcpus".asInstanceOf[ExportableAutoScalingGroupField]
-    val RecommendationOptionsMemory  = "RecommendationOptionsMemory".asInstanceOf[ExportableAutoScalingGroupField]
+    val RecommendationOptionsVcpus = "RecommendationOptionsVcpus".asInstanceOf[ExportableAutoScalingGroupField]
+    val RecommendationOptionsMemory = "RecommendationOptionsMemory".asInstanceOf[ExportableAutoScalingGroupField]
     val RecommendationOptionsStorage = "RecommendationOptionsStorage".asInstanceOf[ExportableAutoScalingGroupField]
     val RecommendationOptionsNetwork = "RecommendationOptionsNetwork".asInstanceOf[ExportableAutoScalingGroupField]
-    val LastRefreshTimestamp         = "LastRefreshTimestamp".asInstanceOf[ExportableAutoScalingGroupField]
+    val LastRefreshTimestamp = "LastRefreshTimestamp".asInstanceOf[ExportableAutoScalingGroupField]
 
     val values = js.Object.freeze(
       js.Array(
@@ -499,23 +499,23 @@ package computeoptimizer {
   @js.native
   sealed trait ExportableInstanceField extends js.Any
   object ExportableInstanceField extends js.Object {
-    val AccountId                       = "AccountId".asInstanceOf[ExportableInstanceField]
-    val InstanceArn                     = "InstanceArn".asInstanceOf[ExportableInstanceField]
-    val InstanceName                    = "InstanceName".asInstanceOf[ExportableInstanceField]
-    val Finding                         = "Finding".asInstanceOf[ExportableInstanceField]
-    val LookbackPeriodInDays            = "LookbackPeriodInDays".asInstanceOf[ExportableInstanceField]
-    val CurrentInstanceType             = "CurrentInstanceType".asInstanceOf[ExportableInstanceField]
-    val UtilizationMetricsCpuMaximum    = "UtilizationMetricsCpuMaximum".asInstanceOf[ExportableInstanceField]
+    val AccountId = "AccountId".asInstanceOf[ExportableInstanceField]
+    val InstanceArn = "InstanceArn".asInstanceOf[ExportableInstanceField]
+    val InstanceName = "InstanceName".asInstanceOf[ExportableInstanceField]
+    val Finding = "Finding".asInstanceOf[ExportableInstanceField]
+    val LookbackPeriodInDays = "LookbackPeriodInDays".asInstanceOf[ExportableInstanceField]
+    val CurrentInstanceType = "CurrentInstanceType".asInstanceOf[ExportableInstanceField]
+    val UtilizationMetricsCpuMaximum = "UtilizationMetricsCpuMaximum".asInstanceOf[ExportableInstanceField]
     val UtilizationMetricsMemoryMaximum = "UtilizationMetricsMemoryMaximum".asInstanceOf[ExportableInstanceField]
-    val CurrentOnDemandPrice            = "CurrentOnDemandPrice".asInstanceOf[ExportableInstanceField]
+    val CurrentOnDemandPrice = "CurrentOnDemandPrice".asInstanceOf[ExportableInstanceField]
     val CurrentStandardOneYearNoUpfrontReservedPrice =
       "CurrentStandardOneYearNoUpfrontReservedPrice".asInstanceOf[ExportableInstanceField]
     val CurrentStandardThreeYearNoUpfrontReservedPrice =
       "CurrentStandardThreeYearNoUpfrontReservedPrice".asInstanceOf[ExportableInstanceField]
-    val CurrentVCpus                      = "CurrentVCpus".asInstanceOf[ExportableInstanceField]
-    val CurrentMemory                     = "CurrentMemory".asInstanceOf[ExportableInstanceField]
-    val CurrentStorage                    = "CurrentStorage".asInstanceOf[ExportableInstanceField]
-    val CurrentNetwork                    = "CurrentNetwork".asInstanceOf[ExportableInstanceField]
+    val CurrentVCpus = "CurrentVCpus".asInstanceOf[ExportableInstanceField]
+    val CurrentMemory = "CurrentMemory".asInstanceOf[ExportableInstanceField]
+    val CurrentStorage = "CurrentStorage".asInstanceOf[ExportableInstanceField]
+    val CurrentNetwork = "CurrentNetwork".asInstanceOf[ExportableInstanceField]
     val RecommendationOptionsInstanceType = "RecommendationOptionsInstanceType".asInstanceOf[ExportableInstanceField]
     val RecommendationOptionsProjectedUtilizationMetricsCpuMaximum =
       "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum".asInstanceOf[ExportableInstanceField]
@@ -523,10 +523,10 @@ package computeoptimizer {
       "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum".asInstanceOf[ExportableInstanceField]
     val RecommendationOptionsPerformanceRisk =
       "RecommendationOptionsPerformanceRisk".asInstanceOf[ExportableInstanceField]
-    val RecommendationOptionsVcpus         = "RecommendationOptionsVcpus".asInstanceOf[ExportableInstanceField]
-    val RecommendationOptionsMemory        = "RecommendationOptionsMemory".asInstanceOf[ExportableInstanceField]
-    val RecommendationOptionsStorage       = "RecommendationOptionsStorage".asInstanceOf[ExportableInstanceField]
-    val RecommendationOptionsNetwork       = "RecommendationOptionsNetwork".asInstanceOf[ExportableInstanceField]
+    val RecommendationOptionsVcpus = "RecommendationOptionsVcpus".asInstanceOf[ExportableInstanceField]
+    val RecommendationOptionsMemory = "RecommendationOptionsMemory".asInstanceOf[ExportableInstanceField]
+    val RecommendationOptionsStorage = "RecommendationOptionsStorage".asInstanceOf[ExportableInstanceField]
+    val RecommendationOptionsNetwork = "RecommendationOptionsNetwork".asInstanceOf[ExportableInstanceField]
     val RecommendationOptionsOnDemandPrice = "RecommendationOptionsOnDemandPrice".asInstanceOf[ExportableInstanceField]
     val RecommendationOptionsStandardOneYearNoUpfrontReservedPrice =
       "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice".asInstanceOf[ExportableInstanceField]
@@ -606,7 +606,7 @@ package computeoptimizer {
   @js.native
   sealed trait FilterName extends js.Any
   object FilterName extends js.Object {
-    val Finding                  = "Finding".asInstanceOf[FilterName]
+    val Finding = "Finding".asInstanceOf[FilterName]
     val RecommendationSourceType = "RecommendationSourceType".asInstanceOf[FilterName]
 
     val values = js.Object.freeze(js.Array(Finding, RecommendationSourceType))
@@ -616,9 +616,9 @@ package computeoptimizer {
   sealed trait Finding extends js.Any
   object Finding extends js.Object {
     val Underprovisioned = "Underprovisioned".asInstanceOf[Finding]
-    val Overprovisioned  = "Overprovisioned".asInstanceOf[Finding]
-    val Optimized        = "Optimized".asInstanceOf[Finding]
-    val NotOptimized     = "NotOptimized".asInstanceOf[Finding]
+    val Overprovisioned = "Overprovisioned".asInstanceOf[Finding]
+    val Optimized = "Optimized".asInstanceOf[Finding]
+    val NotOptimized = "NotOptimized".asInstanceOf[Finding]
 
     val values = js.Object.freeze(js.Array(Underprovisioned, Overprovisioned, Optimized, NotOptimized))
   }
@@ -744,11 +744,11 @@ package computeoptimizer {
         stat: MetricStatistic
     ): GetEC2RecommendationProjectedMetricsRequest = {
       val __obj = js.Dynamic.literal(
-        "endTime"     -> endTime.asInstanceOf[js.Any],
+        "endTime" -> endTime.asInstanceOf[js.Any],
         "instanceArn" -> instanceArn.asInstanceOf[js.Any],
-        "period"      -> period.asInstanceOf[js.Any],
-        "startTime"   -> startTime.asInstanceOf[js.Any],
-        "stat"        -> stat.asInstanceOf[js.Any]
+        "period" -> period.asInstanceOf[js.Any],
+        "startTime" -> startTime.asInstanceOf[js.Any],
+        "stat" -> stat.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetEC2RecommendationProjectedMetricsRequest]
@@ -978,7 +978,7 @@ package computeoptimizer {
   sealed trait JobFilterName extends js.Any
   object JobFilterName extends js.Object {
     val ResourceType = "ResourceType".asInstanceOf[JobFilterName]
-    val JobStatus    = "JobStatus".asInstanceOf[JobFilterName]
+    val JobStatus = "JobStatus".asInstanceOf[JobFilterName]
 
     val values = js.Object.freeze(js.Array(ResourceType, JobStatus))
   }
@@ -986,10 +986,10 @@ package computeoptimizer {
   @js.native
   sealed trait JobStatus extends js.Any
   object JobStatus extends js.Object {
-    val Queued     = "Queued".asInstanceOf[JobStatus]
+    val Queued = "Queued".asInstanceOf[JobStatus]
     val InProgress = "InProgress".asInstanceOf[JobStatus]
-    val Complete   = "Complete".asInstanceOf[JobStatus]
-    val Failed     = "Failed".asInstanceOf[JobStatus]
+    val Complete = "Complete".asInstanceOf[JobStatus]
+    val Failed = "Failed".asInstanceOf[JobStatus]
 
     val values = js.Object.freeze(js.Array(Queued, InProgress, Complete, Failed))
   }
@@ -997,7 +997,7 @@ package computeoptimizer {
   @js.native
   sealed trait MetricName extends js.Any
   object MetricName extends js.Object {
-    val Cpu    = "Cpu".asInstanceOf[MetricName]
+    val Cpu = "Cpu".asInstanceOf[MetricName]
     val Memory = "Memory".asInstanceOf[MetricName]
 
     val values = js.Object.freeze(js.Array(Cpu, Memory))
@@ -1101,7 +1101,7 @@ package computeoptimizer {
   @js.native
   sealed trait RecommendationSourceType extends js.Any
   object RecommendationSourceType extends js.Object {
-    val Ec2Instance      = "Ec2Instance".asInstanceOf[RecommendationSourceType]
+    val Ec2Instance = "Ec2Instance".asInstanceOf[RecommendationSourceType]
     val AutoScalingGroup = "AutoScalingGroup".asInstanceOf[RecommendationSourceType]
 
     val values = js.Object.freeze(js.Array(Ec2Instance, AutoScalingGroup))
@@ -1162,7 +1162,7 @@ package computeoptimizer {
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {
-    val Ec2Instance      = "Ec2Instance".asInstanceOf[ResourceType]
+    val Ec2Instance = "Ec2Instance".asInstanceOf[ResourceType]
     val AutoScalingGroup = "AutoScalingGroup".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(js.Array(Ec2Instance, AutoScalingGroup))
@@ -1219,10 +1219,10 @@ package computeoptimizer {
   @js.native
   sealed trait Status extends js.Any
   object Status extends js.Object {
-    val Active   = "Active".asInstanceOf[Status]
+    val Active = "Active".asInstanceOf[Status]
     val Inactive = "Inactive".asInstanceOf[Status]
-    val Pending  = "Pending".asInstanceOf[Status]
-    val Failed   = "Failed".asInstanceOf[Status]
+    val Pending = "Pending".asInstanceOf[Status]
+    val Failed = "Failed".asInstanceOf[Status]
 
     val values = js.Object.freeze(js.Array(Active, Inactive, Pending, Failed))
   }

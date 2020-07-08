@@ -8,48 +8,48 @@ import facade.amazonaws._
 
 package object secretsmanager {
   type AutomaticallyRotateAfterDaysType = Double
-  type BooleanType                      = Boolean
-  type ClientRequestTokenType           = String
-  type CreatedDateType                  = js.Date
-  type DeletedDateType                  = js.Date
-  type DeletionDateType                 = js.Date
-  type DescriptionType                  = String
-  type ExcludeCharactersType            = String
-  type ExcludeLowercaseType             = Boolean
-  type ExcludeNumbersType               = Boolean
-  type ExcludePunctuationType           = Boolean
-  type ExcludeUppercaseType             = Boolean
-  type IncludeSpaceType                 = Boolean
-  type KmsKeyIdType                     = String
-  type LastAccessedDateType             = js.Date
-  type LastChangedDateType              = js.Date
-  type LastRotatedDateType              = js.Date
-  type MaxResultsType                   = Int
-  type NameType                         = String
-  type NextTokenType                    = String
-  type NonEmptyResourcePolicyType       = String
-  type OwningServiceType                = String
-  type PasswordLengthType               = Double
-  type RandomPasswordType               = String
-  type RecoveryWindowInDaysType         = Double
-  type RequireEachIncludedTypeType      = Boolean
-  type RotationEnabledType              = Boolean
-  type RotationLambdaARNType            = String
-  type SecretARNType                    = String
-  type SecretBinaryType                 = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type SecretIdType                     = String
-  type SecretListType                   = js.Array[SecretListEntry]
-  type SecretNameType                   = String
-  type SecretStringType                 = String
-  type SecretVersionIdType              = String
-  type SecretVersionStageType           = String
-  type SecretVersionStagesType          = js.Array[SecretVersionStageType]
-  type SecretVersionsListType           = js.Array[SecretVersionsListEntry]
-  type SecretVersionsToStagesMapType    = js.Dictionary[SecretVersionStagesType]
-  type TagKeyListType                   = js.Array[TagKeyType]
-  type TagKeyType                       = String
-  type TagListType                      = js.Array[Tag]
-  type TagValueType                     = String
+  type BooleanType = Boolean
+  type ClientRequestTokenType = String
+  type CreatedDateType = js.Date
+  type DeletedDateType = js.Date
+  type DeletionDateType = js.Date
+  type DescriptionType = String
+  type ExcludeCharactersType = String
+  type ExcludeLowercaseType = Boolean
+  type ExcludeNumbersType = Boolean
+  type ExcludePunctuationType = Boolean
+  type ExcludeUppercaseType = Boolean
+  type IncludeSpaceType = Boolean
+  type KmsKeyIdType = String
+  type LastAccessedDateType = js.Date
+  type LastChangedDateType = js.Date
+  type LastRotatedDateType = js.Date
+  type MaxResultsType = Int
+  type NameType = String
+  type NextTokenType = String
+  type NonEmptyResourcePolicyType = String
+  type OwningServiceType = String
+  type PasswordLengthType = Double
+  type RandomPasswordType = String
+  type RecoveryWindowInDaysType = Double
+  type RequireEachIncludedTypeType = Boolean
+  type RotationEnabledType = Boolean
+  type RotationLambdaARNType = String
+  type SecretARNType = String
+  type SecretBinaryType = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type SecretIdType = String
+  type SecretListType = js.Array[SecretListEntry]
+  type SecretNameType = String
+  type SecretStringType = String
+  type SecretVersionIdType = String
+  type SecretVersionStageType = String
+  type SecretVersionStagesType = js.Array[SecretVersionStageType]
+  type SecretVersionsListType = js.Array[SecretVersionsListEntry]
+  type SecretVersionsToStagesMapType = js.Dictionary[SecretVersionStagesType]
+  type TagKeyListType = js.Array[TagKeyType]
+  type TagKeyType = String
+  type TagListType = js.Array[Tag]
+  type TagValueType = String
 
   implicit final class SecretsManagerOps(private val service: SecretsManager) extends AnyVal {
 
@@ -99,23 +99,23 @@ package secretsmanager {
   class SecretsManager() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def cancelRotateSecret(params: CancelRotateSecretRequest): Request[CancelRotateSecretResponse]       = js.native
-    def createSecret(params: CreateSecretRequest): Request[CreateSecretResponse]                         = js.native
+    def cancelRotateSecret(params: CancelRotateSecretRequest): Request[CancelRotateSecretResponse] = js.native
+    def createSecret(params: CreateSecretRequest): Request[CreateSecretResponse] = js.native
     def deleteResourcePolicy(params: DeleteResourcePolicyRequest): Request[DeleteResourcePolicyResponse] = js.native
-    def deleteSecret(params: DeleteSecretRequest): Request[DeleteSecretResponse]                         = js.native
-    def describeSecret(params: DescribeSecretRequest): Request[DescribeSecretResponse]                   = js.native
-    def getRandomPassword(params: GetRandomPasswordRequest): Request[GetRandomPasswordResponse]          = js.native
-    def getResourcePolicy(params: GetResourcePolicyRequest): Request[GetResourcePolicyResponse]          = js.native
-    def getSecretValue(params: GetSecretValueRequest): Request[GetSecretValueResponse]                   = js.native
+    def deleteSecret(params: DeleteSecretRequest): Request[DeleteSecretResponse] = js.native
+    def describeSecret(params: DescribeSecretRequest): Request[DescribeSecretResponse] = js.native
+    def getRandomPassword(params: GetRandomPasswordRequest): Request[GetRandomPasswordResponse] = js.native
+    def getResourcePolicy(params: GetResourcePolicyRequest): Request[GetResourcePolicyResponse] = js.native
+    def getSecretValue(params: GetSecretValueRequest): Request[GetSecretValueResponse] = js.native
     def listSecretVersionIds(params: ListSecretVersionIdsRequest): Request[ListSecretVersionIdsResponse] = js.native
-    def listSecrets(params: ListSecretsRequest): Request[ListSecretsResponse]                            = js.native
-    def putResourcePolicy(params: PutResourcePolicyRequest): Request[PutResourcePolicyResponse]          = js.native
-    def putSecretValue(params: PutSecretValueRequest): Request[PutSecretValueResponse]                   = js.native
-    def restoreSecret(params: RestoreSecretRequest): Request[RestoreSecretResponse]                      = js.native
-    def rotateSecret(params: RotateSecretRequest): Request[RotateSecretResponse]                         = js.native
-    def tagResource(params: TagResourceRequest): Request[js.Object]                                      = js.native
-    def untagResource(params: UntagResourceRequest): Request[js.Object]                                  = js.native
-    def updateSecret(params: UpdateSecretRequest): Request[UpdateSecretResponse]                         = js.native
+    def listSecrets(params: ListSecretsRequest): Request[ListSecretsResponse] = js.native
+    def putResourcePolicy(params: PutResourcePolicyRequest): Request[PutResourcePolicyResponse] = js.native
+    def putSecretValue(params: PutSecretValueRequest): Request[PutSecretValueResponse] = js.native
+    def restoreSecret(params: RestoreSecretRequest): Request[RestoreSecretResponse] = js.native
+    def rotateSecret(params: RotateSecretRequest): Request[RotateSecretResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
+    def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
+    def updateSecret(params: UpdateSecretRequest): Request[UpdateSecretResponse] = js.native
     def updateSecretVersionStage(params: UpdateSecretVersionStageRequest): Request[UpdateSecretVersionStageResponse] =
       js.native
   }
@@ -631,7 +631,7 @@ package secretsmanager {
     ): PutResourcePolicyRequest = {
       val __obj = js.Dynamic.literal(
         "ResourcePolicy" -> ResourcePolicy.asInstanceOf[js.Any],
-        "SecretId"       -> SecretId.asInstanceOf[js.Any]
+        "SecretId" -> SecretId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutResourcePolicyRequest]
@@ -939,7 +939,7 @@ package secretsmanager {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "SecretId" -> SecretId.asInstanceOf[js.Any],
-        "Tags"     -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -960,7 +960,7 @@ package secretsmanager {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "SecretId" -> SecretId.asInstanceOf[js.Any],
-        "TagKeys"  -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -1039,7 +1039,7 @@ package secretsmanager {
         RemoveFromVersionId: js.UndefOr[SecretVersionIdType] = js.undefined
     ): UpdateSecretVersionStageRequest = {
       val __obj = js.Dynamic.literal(
-        "SecretId"     -> SecretId.asInstanceOf[js.Any],
+        "SecretId" -> SecretId.asInstanceOf[js.Any],
         "VersionStage" -> VersionStage.asInstanceOf[js.Any]
       )
 

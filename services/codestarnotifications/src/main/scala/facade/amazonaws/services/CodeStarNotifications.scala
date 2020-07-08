@@ -7,38 +7,38 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object codestarnotifications {
-  type ClientRequestToken               = String
-  type CreatedTimestamp                 = js.Date
-  type EventTypeBatch                   = js.Array[EventTypeSummary]
-  type EventTypeId                      = String
-  type EventTypeIds                     = js.Array[EventTypeId]
-  type EventTypeName                    = String
-  type ForceUnsubscribeAll              = Boolean
-  type LastModifiedTimestamp            = js.Date
-  type ListEventTypesFilterValue        = String
-  type ListEventTypesFilters            = js.Array[ListEventTypesFilter]
+  type ClientRequestToken = String
+  type CreatedTimestamp = js.Date
+  type EventTypeBatch = js.Array[EventTypeSummary]
+  type EventTypeId = String
+  type EventTypeIds = js.Array[EventTypeId]
+  type EventTypeName = String
+  type ForceUnsubscribeAll = Boolean
+  type LastModifiedTimestamp = js.Date
+  type ListEventTypesFilterValue = String
+  type ListEventTypesFilters = js.Array[ListEventTypesFilter]
   type ListNotificationRulesFilterValue = String
-  type ListNotificationRulesFilters     = js.Array[ListNotificationRulesFilter]
-  type ListTargetsFilterValue           = String
-  type ListTargetsFilters               = js.Array[ListTargetsFilter]
-  type MaxResults                       = Int
-  type NextToken                        = String
-  type NotificationRuleArn              = String
-  type NotificationRuleBatch            = js.Array[NotificationRuleSummary]
-  type NotificationRuleCreatedBy        = String
-  type NotificationRuleId               = String
-  type NotificationRuleName             = String
-  type NotificationRuleResource         = String
-  type ResourceType                     = String
-  type ServiceName                      = String
-  type TagKey                           = String
-  type TagKeys                          = js.Array[TagKey]
-  type TagValue                         = String
-  type Tags                             = js.Dictionary[TagValue]
-  type TargetAddress                    = String
-  type TargetType                       = String
-  type Targets                          = js.Array[Target]
-  type TargetsBatch                     = js.Array[TargetSummary]
+  type ListNotificationRulesFilters = js.Array[ListNotificationRulesFilter]
+  type ListTargetsFilterValue = String
+  type ListTargetsFilters = js.Array[ListTargetsFilter]
+  type MaxResults = Int
+  type NextToken = String
+  type NotificationRuleArn = String
+  type NotificationRuleBatch = js.Array[NotificationRuleSummary]
+  type NotificationRuleCreatedBy = String
+  type NotificationRuleId = String
+  type NotificationRuleName = String
+  type NotificationRuleResource = String
+  type ResourceType = String
+  type ServiceName = String
+  type TagKey = String
+  type TagKeys = js.Array[TagKey]
+  type TagValue = String
+  type Tags = js.Dictionary[TagValue]
+  type TargetAddress = String
+  type TargetType = String
+  type Targets = js.Array[Target]
+  type TargetsBatch = js.Array[TargetSummary]
 
   implicit final class CodeStarNotificationsOps(private val service: CodeStarNotifications) extends AnyVal {
 
@@ -83,17 +83,17 @@ package codestarnotifications {
 
     def createNotificationRule(params: CreateNotificationRuleRequest): Request[CreateNotificationRuleResult] = js.native
     def deleteNotificationRule(params: DeleteNotificationRuleRequest): Request[DeleteNotificationRuleResult] = js.native
-    def deleteTarget(params: DeleteTargetRequest): Request[DeleteTargetResult]                               = js.native
+    def deleteTarget(params: DeleteTargetRequest): Request[DeleteTargetResult] = js.native
     def describeNotificationRule(params: DescribeNotificationRuleRequest): Request[DescribeNotificationRuleResult] =
       js.native
-    def listEventTypes(params: ListEventTypesRequest): Request[ListEventTypesResult]                         = js.native
-    def listNotificationRules(params: ListNotificationRulesRequest): Request[ListNotificationRulesResult]    = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResult]          = js.native
-    def listTargets(params: ListTargetsRequest): Request[ListTargetsResult]                                  = js.native
-    def subscribe(params: SubscribeRequest): Request[SubscribeResult]                                        = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResult]                                  = js.native
-    def unsubscribe(params: UnsubscribeRequest): Request[UnsubscribeResult]                                  = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResult]                            = js.native
+    def listEventTypes(params: ListEventTypesRequest): Request[ListEventTypesResult] = js.native
+    def listNotificationRules(params: ListNotificationRulesRequest): Request[ListNotificationRulesResult] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResult] = js.native
+    def listTargets(params: ListTargetsRequest): Request[ListTargetsResult] = js.native
+    def subscribe(params: SubscribeRequest): Request[SubscribeResult] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResult] = js.native
+    def unsubscribe(params: UnsubscribeRequest): Request[UnsubscribeResult] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResult] = js.native
     def updateNotificationRule(params: UpdateNotificationRuleRequest): Request[UpdateNotificationRuleResult] = js.native
   }
 
@@ -122,11 +122,11 @@ package codestarnotifications {
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateNotificationRuleRequest = {
       val __obj = js.Dynamic.literal(
-        "DetailType"   -> DetailType.asInstanceOf[js.Any],
+        "DetailType" -> DetailType.asInstanceOf[js.Any],
         "EventTypeIds" -> EventTypeIds.asInstanceOf[js.Any],
-        "Name"         -> Name.asInstanceOf[js.Any],
-        "Resource"     -> Resource.asInstanceOf[js.Any],
-        "Targets"      -> Targets.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Resource" -> Resource.asInstanceOf[js.Any],
+        "Targets" -> Targets.asInstanceOf[js.Any]
       )
 
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
@@ -290,7 +290,7 @@ package codestarnotifications {
   sealed trait DetailType extends js.Any
   object DetailType extends js.Object {
     val BASIC = "BASIC".asInstanceOf[DetailType]
-    val FULL  = "FULL".asInstanceOf[DetailType]
+    val FULL = "FULL".asInstanceOf[DetailType]
 
     val values = js.Object.freeze(js.Array(BASIC, FULL))
   }
@@ -339,7 +339,7 @@ package codestarnotifications {
         Value: ListEventTypesFilterValue
     ): ListEventTypesFilter = {
       val __obj = js.Dynamic.literal(
-        "Name"  -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -351,7 +351,7 @@ package codestarnotifications {
   sealed trait ListEventTypesFilterName extends js.Any
   object ListEventTypesFilterName extends js.Object {
     val RESOURCE_TYPE = "RESOURCE_TYPE".asInstanceOf[ListEventTypesFilterName]
-    val SERVICE_NAME  = "SERVICE_NAME".asInstanceOf[ListEventTypesFilterName]
+    val SERVICE_NAME = "SERVICE_NAME".asInstanceOf[ListEventTypesFilterName]
 
     val values = js.Object.freeze(js.Array(RESOURCE_TYPE, SERVICE_NAME))
   }
@@ -413,7 +413,7 @@ package codestarnotifications {
         Value: ListNotificationRulesFilterValue
     ): ListNotificationRulesFilter = {
       val __obj = js.Dynamic.literal(
-        "Name"  -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -424,9 +424,9 @@ package codestarnotifications {
   @js.native
   sealed trait ListNotificationRulesFilterName extends js.Any
   object ListNotificationRulesFilterName extends js.Object {
-    val EVENT_TYPE_ID  = "EVENT_TYPE_ID".asInstanceOf[ListNotificationRulesFilterName]
-    val CREATED_BY     = "CREATED_BY".asInstanceOf[ListNotificationRulesFilterName]
-    val RESOURCE       = "RESOURCE".asInstanceOf[ListNotificationRulesFilterName]
+    val EVENT_TYPE_ID = "EVENT_TYPE_ID".asInstanceOf[ListNotificationRulesFilterName]
+    val CREATED_BY = "CREATED_BY".asInstanceOf[ListNotificationRulesFilterName]
+    val RESOURCE = "RESOURCE".asInstanceOf[ListNotificationRulesFilterName]
     val TARGET_ADDRESS = "TARGET_ADDRESS".asInstanceOf[ListNotificationRulesFilterName]
 
     val values = js.Object.freeze(js.Array(EVENT_TYPE_ID, CREATED_BY, RESOURCE, TARGET_ADDRESS))
@@ -523,7 +523,7 @@ package codestarnotifications {
         Value: ListTargetsFilterValue
     ): ListTargetsFilter = {
       val __obj = js.Dynamic.literal(
-        "Name"  -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -534,9 +534,9 @@ package codestarnotifications {
   @js.native
   sealed trait ListTargetsFilterName extends js.Any
   object ListTargetsFilterName extends js.Object {
-    val TARGET_TYPE    = "TARGET_TYPE".asInstanceOf[ListTargetsFilterName]
+    val TARGET_TYPE = "TARGET_TYPE".asInstanceOf[ListTargetsFilterName]
     val TARGET_ADDRESS = "TARGET_ADDRESS".asInstanceOf[ListTargetsFilterName]
-    val TARGET_STATUS  = "TARGET_STATUS".asInstanceOf[ListTargetsFilterName]
+    val TARGET_STATUS = "TARGET_STATUS".asInstanceOf[ListTargetsFilterName]
 
     val values = js.Object.freeze(js.Array(TARGET_TYPE, TARGET_ADDRESS, TARGET_STATUS))
   }
@@ -585,7 +585,7 @@ package codestarnotifications {
   @js.native
   sealed trait NotificationRuleStatus extends js.Any
   object NotificationRuleStatus extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[NotificationRuleStatus]
+    val ENABLED = "ENABLED".asInstanceOf[NotificationRuleStatus]
     val DISABLED = "DISABLED".asInstanceOf[NotificationRuleStatus]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -628,7 +628,7 @@ package codestarnotifications {
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined
     ): SubscribeRequest = {
       val __obj = js.Dynamic.literal(
-        "Arn"    -> Arn.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "Target" -> Target.asInstanceOf[js.Any]
       )
 
@@ -666,7 +666,7 @@ package codestarnotifications {
         Tags: Tags
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
-        "Arn"  -> Arn.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
@@ -715,10 +715,10 @@ package codestarnotifications {
   @js.native
   sealed trait TargetStatus extends js.Any
   object TargetStatus extends js.Object {
-    val PENDING     = "PENDING".asInstanceOf[TargetStatus]
-    val ACTIVE      = "ACTIVE".asInstanceOf[TargetStatus]
+    val PENDING = "PENDING".asInstanceOf[TargetStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[TargetStatus]
     val UNREACHABLE = "UNREACHABLE".asInstanceOf[TargetStatus]
-    val INACTIVE    = "INACTIVE".asInstanceOf[TargetStatus]
+    val INACTIVE = "INACTIVE".asInstanceOf[TargetStatus]
     val DEACTIVATED = "DEACTIVATED".asInstanceOf[TargetStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, ACTIVE, UNREACHABLE, INACTIVE, DEACTIVATED))
@@ -762,7 +762,7 @@ package codestarnotifications {
         TargetAddress: TargetAddress
     ): UnsubscribeRequest = {
       val __obj = js.Dynamic.literal(
-        "Arn"           -> Arn.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "TargetAddress" -> TargetAddress.asInstanceOf[js.Any]
       )
 
@@ -801,7 +801,7 @@ package codestarnotifications {
         TagKeys: TagKeys
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
-        "Arn"     -> Arn.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 

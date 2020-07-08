@@ -7,43 +7,43 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object dms {
-  type AccountQuotaList                        = js.Array[AccountQuota]
-  type AvailabilityZonesList                   = js.Array[String]
-  type BooleanOptional                         = Boolean
-  type CertificateList                         = js.Array[Certificate]
-  type CertificateWallet                       = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type ConnectionList                          = js.Array[Connection]
-  type EndpointList                            = js.Array[Endpoint]
-  type EventCategoriesList                     = js.Array[String]
-  type EventCategoryGroupList                  = js.Array[EventCategoryGroup]
-  type EventList                               = js.Array[Event]
-  type EventSubscriptionsList                  = js.Array[EventSubscription]
-  type FilterList                              = js.Array[Filter]
-  type FilterValueList                         = js.Array[String]
-  type IntegerOptional                         = Int
-  type KeyList                                 = js.Array[String]
-  type OrderableReplicationInstanceList        = js.Array[OrderableReplicationInstance]
-  type PendingMaintenanceActionDetails         = js.Array[PendingMaintenanceAction]
-  type PendingMaintenanceActions               = js.Array[ResourcePendingMaintenanceActions]
-  type ReplicationInstanceList                 = js.Array[ReplicationInstance]
+  type AccountQuotaList = js.Array[AccountQuota]
+  type AvailabilityZonesList = js.Array[String]
+  type BooleanOptional = Boolean
+  type CertificateList = js.Array[Certificate]
+  type CertificateWallet = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type ConnectionList = js.Array[Connection]
+  type EndpointList = js.Array[Endpoint]
+  type EventCategoriesList = js.Array[String]
+  type EventCategoryGroupList = js.Array[EventCategoryGroup]
+  type EventList = js.Array[Event]
+  type EventSubscriptionsList = js.Array[EventSubscription]
+  type FilterList = js.Array[Filter]
+  type FilterValueList = js.Array[String]
+  type IntegerOptional = Int
+  type KeyList = js.Array[String]
+  type OrderableReplicationInstanceList = js.Array[OrderableReplicationInstance]
+  type PendingMaintenanceActionDetails = js.Array[PendingMaintenanceAction]
+  type PendingMaintenanceActions = js.Array[ResourcePendingMaintenanceActions]
+  type ReplicationInstanceList = js.Array[ReplicationInstance]
   type ReplicationInstancePrivateIpAddressList = js.Array[String]
-  type ReplicationInstancePublicIpAddressList  = js.Array[String]
-  type ReplicationInstanceTaskLogsList         = js.Array[ReplicationInstanceTaskLog]
-  type ReplicationSubnetGroups                 = js.Array[ReplicationSubnetGroup]
-  type ReplicationTaskAssessmentResultList     = js.Array[ReplicationTaskAssessmentResult]
-  type ReplicationTaskList                     = js.Array[ReplicationTask]
-  type SchemaList                              = js.Array[String]
-  type SecretString                            = String
-  type SourceIdsList                           = js.Array[String]
-  type SubnetIdentifierList                    = js.Array[String]
-  type SubnetList                              = js.Array[Subnet]
-  type SupportedEndpointTypeList               = js.Array[SupportedEndpointType]
-  type TStamp                                  = js.Date
-  type TableListToReload                       = js.Array[TableToReload]
-  type TableStatisticsList                     = js.Array[TableStatistics]
-  type TagList                                 = js.Array[Tag]
-  type VpcSecurityGroupIdList                  = js.Array[String]
-  type VpcSecurityGroupMembershipList          = js.Array[VpcSecurityGroupMembership]
+  type ReplicationInstancePublicIpAddressList = js.Array[String]
+  type ReplicationInstanceTaskLogsList = js.Array[ReplicationInstanceTaskLog]
+  type ReplicationSubnetGroups = js.Array[ReplicationSubnetGroup]
+  type ReplicationTaskAssessmentResultList = js.Array[ReplicationTaskAssessmentResult]
+  type ReplicationTaskList = js.Array[ReplicationTask]
+  type SchemaList = js.Array[String]
+  type SecretString = String
+  type SourceIdsList = js.Array[String]
+  type SubnetIdentifierList = js.Array[String]
+  type SubnetList = js.Array[Subnet]
+  type SupportedEndpointTypeList = js.Array[SupportedEndpointType]
+  type TStamp = js.Date
+  type TableListToReload = js.Array[TableToReload]
+  type TableStatisticsList = js.Array[TableStatistics]
+  type TagList = js.Array[Tag]
+  type VpcSecurityGroupIdList = js.Array[String]
+  type VpcSecurityGroupMembershipList = js.Array[VpcSecurityGroupMembership]
 
   implicit final class DMSOps(private val service: DMS) extends AnyVal {
 
@@ -188,7 +188,7 @@ package dms {
     def addTagsToResource(params: AddTagsToResourceMessage): Request[AddTagsToResourceResponse] = js.native
     def applyPendingMaintenanceAction(
         params: ApplyPendingMaintenanceActionMessage
-    ): Request[ApplyPendingMaintenanceActionResponse]                                  = js.native
+    ): Request[ApplyPendingMaintenanceActionResponse] = js.native
     def createEndpoint(params: CreateEndpointMessage): Request[CreateEndpointResponse] = js.native
     def createEventSubscription(params: CreateEventSubscriptionMessage): Request[CreateEventSubscriptionResponse] =
       js.native
@@ -197,11 +197,11 @@ package dms {
     ): Request[CreateReplicationInstanceResponse] = js.native
     def createReplicationSubnetGroup(
         params: CreateReplicationSubnetGroupMessage
-    ): Request[CreateReplicationSubnetGroupResponse]                                                        = js.native
+    ): Request[CreateReplicationSubnetGroupResponse] = js.native
     def createReplicationTask(params: CreateReplicationTaskMessage): Request[CreateReplicationTaskResponse] = js.native
-    def deleteCertificate(params: DeleteCertificateMessage): Request[DeleteCertificateResponse]             = js.native
-    def deleteConnection(params: DeleteConnectionMessage): Request[DeleteConnectionResponse]                = js.native
-    def deleteEndpoint(params: DeleteEndpointMessage): Request[DeleteEndpointResponse]                      = js.native
+    def deleteCertificate(params: DeleteCertificateMessage): Request[DeleteCertificateResponse] = js.native
+    def deleteConnection(params: DeleteConnectionMessage): Request[DeleteConnectionResponse] = js.native
+    def deleteEndpoint(params: DeleteEndpointMessage): Request[DeleteEndpointResponse] = js.native
     def deleteEventSubscription(params: DeleteEventSubscriptionMessage): Request[DeleteEventSubscriptionResponse] =
       js.native
     def deleteReplicationInstance(
@@ -209,20 +209,20 @@ package dms {
     ): Request[DeleteReplicationInstanceResponse] = js.native
     def deleteReplicationSubnetGroup(
         params: DeleteReplicationSubnetGroupMessage
-    ): Request[DeleteReplicationSubnetGroupResponse]                                                        = js.native
+    ): Request[DeleteReplicationSubnetGroupResponse] = js.native
     def deleteReplicationTask(params: DeleteReplicationTaskMessage): Request[DeleteReplicationTaskResponse] = js.native
     def describeAccountAttributes(
         params: DescribeAccountAttributesMessage
-    ): Request[DescribeAccountAttributesResponse]                                                           = js.native
-    def describeCertificates(params: DescribeCertificatesMessage): Request[DescribeCertificatesResponse]    = js.native
-    def describeConnections(params: DescribeConnectionsMessage): Request[DescribeConnectionsResponse]       = js.native
+    ): Request[DescribeAccountAttributesResponse] = js.native
+    def describeCertificates(params: DescribeCertificatesMessage): Request[DescribeCertificatesResponse] = js.native
+    def describeConnections(params: DescribeConnectionsMessage): Request[DescribeConnectionsResponse] = js.native
     def describeEndpointTypes(params: DescribeEndpointTypesMessage): Request[DescribeEndpointTypesResponse] = js.native
-    def describeEndpoints(params: DescribeEndpointsMessage): Request[DescribeEndpointsResponse]             = js.native
+    def describeEndpoints(params: DescribeEndpointsMessage): Request[DescribeEndpointsResponse] = js.native
     def describeEventCategories(params: DescribeEventCategoriesMessage): Request[DescribeEventCategoriesResponse] =
       js.native
     def describeEventSubscriptions(
         params: DescribeEventSubscriptionsMessage
-    ): Request[DescribeEventSubscriptionsResponse]                                     = js.native
+    ): Request[DescribeEventSubscriptionsResponse] = js.native
     def describeEvents(params: DescribeEventsMessage): Request[DescribeEventsResponse] = js.native
     def describeOrderableReplicationInstances(
         params: DescribeOrderableReplicationInstancesMessage
@@ -250,9 +250,9 @@ package dms {
     def describeSchemas(params: DescribeSchemasMessage): Request[DescribeSchemasResponse] = js.native
     def describeTableStatistics(params: DescribeTableStatisticsMessage): Request[DescribeTableStatisticsResponse] =
       js.native
-    def importCertificate(params: ImportCertificateMessage): Request[ImportCertificateResponse]       = js.native
+    def importCertificate(params: ImportCertificateMessage): Request[ImportCertificateResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceMessage): Request[ListTagsForResourceResponse] = js.native
-    def modifyEndpoint(params: ModifyEndpointMessage): Request[ModifyEndpointResponse]                = js.native
+    def modifyEndpoint(params: ModifyEndpointMessage): Request[ModifyEndpointResponse] = js.native
     def modifyEventSubscription(params: ModifyEventSubscriptionMessage): Request[ModifyEventSubscriptionResponse] =
       js.native
     def modifyReplicationInstance(
@@ -260,21 +260,21 @@ package dms {
     ): Request[ModifyReplicationInstanceResponse] = js.native
     def modifyReplicationSubnetGroup(
         params: ModifyReplicationSubnetGroupMessage
-    ): Request[ModifyReplicationSubnetGroupResponse]                                                        = js.native
+    ): Request[ModifyReplicationSubnetGroupResponse] = js.native
     def modifyReplicationTask(params: ModifyReplicationTaskMessage): Request[ModifyReplicationTaskResponse] = js.native
     def rebootReplicationInstance(
         params: RebootReplicationInstanceMessage
-    ): Request[RebootReplicationInstanceResponse]                                      = js.native
+    ): Request[RebootReplicationInstanceResponse] = js.native
     def refreshSchemas(params: RefreshSchemasMessage): Request[RefreshSchemasResponse] = js.native
-    def reloadTables(params: ReloadTablesMessage): Request[ReloadTablesResponse]       = js.native
+    def reloadTables(params: ReloadTablesMessage): Request[ReloadTablesResponse] = js.native
     def removeTagsFromResource(params: RemoveTagsFromResourceMessage): Request[RemoveTagsFromResourceResponse] =
       js.native
     def startReplicationTask(params: StartReplicationTaskMessage): Request[StartReplicationTaskResponse] = js.native
     def startReplicationTaskAssessment(
         params: StartReplicationTaskAssessmentMessage
-    ): Request[StartReplicationTaskAssessmentResponse]                                                = js.native
+    ): Request[StartReplicationTaskAssessmentResponse] = js.native
     def stopReplicationTask(params: StopReplicationTaskMessage): Request[StopReplicationTaskResponse] = js.native
-    def testConnection(params: TestConnectionMessage): Request[TestConnectionResponse]                = js.native
+    def testConnection(params: TestConnectionMessage): Request[TestConnectionResponse] = js.native
   }
 
   /**
@@ -319,7 +319,7 @@ package dms {
     ): AddTagsToResourceMessage = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddTagsToResourceMessage]
@@ -360,8 +360,8 @@ package dms {
         ReplicationInstanceArn: String
     ): ApplyPendingMaintenanceActionMessage = {
       val __obj = js.Dynamic.literal(
-        "ApplyAction"            -> ApplyAction.asInstanceOf[js.Any],
-        "OptInType"              -> OptInType.asInstanceOf[js.Any],
+        "ApplyAction" -> ApplyAction.asInstanceOf[js.Any],
+        "OptInType" -> OptInType.asInstanceOf[js.Any],
         "ReplicationInstanceArn" -> ReplicationInstanceArn.asInstanceOf[js.Any]
       )
 
@@ -393,8 +393,8 @@ package dms {
   @js.native
   sealed trait AuthMechanismValue extends js.Any
   object AuthMechanismValue extends js.Object {
-    val default     = "default".asInstanceOf[AuthMechanismValue]
-    val mongodb_cr  = "mongodb_cr".asInstanceOf[AuthMechanismValue]
+    val default = "default".asInstanceOf[AuthMechanismValue]
+    val mongodb_cr = "mongodb_cr".asInstanceOf[AuthMechanismValue]
     val scram_sha_1 = "scram_sha_1".asInstanceOf[AuthMechanismValue]
 
     val values = js.Object.freeze(js.Array(default, mongodb_cr, scram_sha_1))
@@ -403,7 +403,7 @@ package dms {
   @js.native
   sealed trait AuthTypeValue extends js.Any
   object AuthTypeValue extends js.Object {
-    val no       = "no".asInstanceOf[AuthTypeValue]
+    val no = "no".asInstanceOf[AuthTypeValue]
     val password = "password".asInstanceOf[AuthTypeValue]
 
     val values = js.Object.freeze(js.Array(no, password))
@@ -580,8 +580,8 @@ package dms {
     ): CreateEndpointMessage = {
       val __obj = js.Dynamic.literal(
         "EndpointIdentifier" -> EndpointIdentifier.asInstanceOf[js.Any],
-        "EndpointType"       -> EndpointType.asInstanceOf[js.Any],
-        "EngineName"         -> EngineName.asInstanceOf[js.Any]
+        "EndpointType" -> EndpointType.asInstanceOf[js.Any],
+        "EngineName" -> EngineName.asInstanceOf[js.Any]
       )
 
       CertificateArn.foreach(__v => __obj.updateDynamic("CertificateArn")(__v.asInstanceOf[js.Any]))
@@ -656,7 +656,7 @@ package dms {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateEventSubscriptionMessage = {
       val __obj = js.Dynamic.literal(
-        "SnsTopicArn"      -> SnsTopicArn.asInstanceOf[js.Any],
+        "SnsTopicArn" -> SnsTopicArn.asInstanceOf[js.Any],
         "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
       )
 
@@ -728,7 +728,7 @@ package dms {
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): CreateReplicationInstanceMessage = {
       val __obj = js.Dynamic.literal(
-        "ReplicationInstanceClass"      -> ReplicationInstanceClass.asInstanceOf[js.Any],
+        "ReplicationInstanceClass" -> ReplicationInstanceClass.asInstanceOf[js.Any],
         "ReplicationInstanceIdentifier" -> ReplicationInstanceIdentifier.asInstanceOf[js.Any]
       )
 
@@ -792,8 +792,8 @@ package dms {
     ): CreateReplicationSubnetGroupMessage = {
       val __obj = js.Dynamic.literal(
         "ReplicationSubnetGroupDescription" -> ReplicationSubnetGroupDescription.asInstanceOf[js.Any],
-        "ReplicationSubnetGroupIdentifier"  -> ReplicationSubnetGroupIdentifier.asInstanceOf[js.Any],
-        "SubnetIds"                         -> SubnetIds.asInstanceOf[js.Any]
+        "ReplicationSubnetGroupIdentifier" -> ReplicationSubnetGroupIdentifier.asInstanceOf[js.Any],
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -856,12 +856,12 @@ package dms {
         TaskData: js.UndefOr[String] = js.undefined
     ): CreateReplicationTaskMessage = {
       val __obj = js.Dynamic.literal(
-        "MigrationType"             -> MigrationType.asInstanceOf[js.Any],
-        "ReplicationInstanceArn"    -> ReplicationInstanceArn.asInstanceOf[js.Any],
+        "MigrationType" -> MigrationType.asInstanceOf[js.Any],
+        "ReplicationInstanceArn" -> ReplicationInstanceArn.asInstanceOf[js.Any],
         "ReplicationTaskIdentifier" -> ReplicationTaskIdentifier.asInstanceOf[js.Any],
-        "SourceEndpointArn"         -> SourceEndpointArn.asInstanceOf[js.Any],
-        "TableMappings"             -> TableMappings.asInstanceOf[js.Any],
-        "TargetEndpointArn"         -> TargetEndpointArn.asInstanceOf[js.Any]
+        "SourceEndpointArn" -> SourceEndpointArn.asInstanceOf[js.Any],
+        "TableMappings" -> TableMappings.asInstanceOf[js.Any],
+        "TargetEndpointArn" -> TargetEndpointArn.asInstanceOf[js.Any]
       )
 
       CdcStartPosition.foreach(__v => __obj.updateDynamic("CdcStartPosition")(__v.asInstanceOf[js.Any]))
@@ -896,7 +896,7 @@ package dms {
   @js.native
   sealed trait DataFormatValue extends js.Any
   object DataFormatValue extends js.Object {
-    val csv     = "csv".asInstanceOf[DataFormatValue]
+    val csv = "csv".asInstanceOf[DataFormatValue]
     val parquet = "parquet".asInstanceOf[DataFormatValue]
 
     val values = js.Object.freeze(js.Array(csv, parquet))
@@ -952,7 +952,7 @@ package dms {
         ReplicationInstanceArn: String
     ): DeleteConnectionMessage = {
       val __obj = js.Dynamic.literal(
-        "EndpointArn"            -> EndpointArn.asInstanceOf[js.Any],
+        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any],
         "ReplicationInstanceArn" -> ReplicationInstanceArn.asInstanceOf[js.Any]
       )
 
@@ -2041,9 +2041,9 @@ package dms {
   @js.native
   sealed trait DmsSslModeValue extends js.Any
   object DmsSslModeValue extends js.Object {
-    val none          = "none".asInstanceOf[DmsSslModeValue]
-    val require       = "require".asInstanceOf[DmsSslModeValue]
-    val `verify-ca`   = "verify-ca".asInstanceOf[DmsSslModeValue]
+    val none = "none".asInstanceOf[DmsSslModeValue]
+    val require = "require".asInstanceOf[DmsSslModeValue]
+    val `verify-ca` = "verify-ca".asInstanceOf[DmsSslModeValue]
     val `verify-full` = "verify-full".asInstanceOf[DmsSslModeValue]
 
     val values = js.Object.freeze(js.Array(none, require, `verify-ca`, `verify-full`))
@@ -2112,7 +2112,7 @@ package dms {
         FullLoadErrorPercentage: js.UndefOr[IntegerOptional] = js.undefined
     ): ElasticsearchSettings = {
       val __obj = js.Dynamic.literal(
-        "EndpointUri"          -> EndpointUri.asInstanceOf[js.Any],
+        "EndpointUri" -> EndpointUri.asInstanceOf[js.Any],
         "ServiceAccessRoleArn" -> ServiceAccessRoleArn.asInstanceOf[js.Any]
       )
 
@@ -2125,9 +2125,9 @@ package dms {
   @js.native
   sealed trait EncodingTypeValue extends js.Any
   object EncodingTypeValue extends js.Object {
-    val plain              = "plain".asInstanceOf[EncodingTypeValue]
+    val plain = "plain".asInstanceOf[EncodingTypeValue]
     val `plain-dictionary` = "plain-dictionary".asInstanceOf[EncodingTypeValue]
-    val `rle-dictionary`   = "rle-dictionary".asInstanceOf[EncodingTypeValue]
+    val `rle-dictionary` = "rle-dictionary".asInstanceOf[EncodingTypeValue]
 
     val values = js.Object.freeze(js.Array(plain, `plain-dictionary`, `rle-dictionary`))
   }
@@ -2135,7 +2135,7 @@ package dms {
   @js.native
   sealed trait EncryptionModeValue extends js.Any
   object EncryptionModeValue extends js.Object {
-    val `sse-s3`  = "sse-s3".asInstanceOf[EncryptionModeValue]
+    val `sse-s3` = "sse-s3".asInstanceOf[EncryptionModeValue]
     val `sse-kms` = "sse-kms".asInstanceOf[EncryptionModeValue]
 
     val values = js.Object.freeze(js.Array(`sse-s3`, `sse-kms`))
@@ -2353,7 +2353,7 @@ package dms {
         Values: FilterValueList
     ): Filter = {
       val __obj = js.Dynamic.literal(
-        "Name"   -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
@@ -2515,7 +2515,7 @@ package dms {
   @js.native
   sealed trait MessageFormatValue extends js.Any
   object MessageFormatValue extends js.Object {
-    val json               = "json".asInstanceOf[MessageFormatValue]
+    val json = "json".asInstanceOf[MessageFormatValue]
     val `json-unformatted` = "json-unformatted".asInstanceOf[MessageFormatValue]
 
     val values = js.Object.freeze(js.Array(json, `json-unformatted`))
@@ -2524,8 +2524,8 @@ package dms {
   @js.native
   sealed trait MigrationTypeValue extends js.Any
   object MigrationTypeValue extends js.Object {
-    val `full-load`         = "full-load".asInstanceOf[MigrationTypeValue]
-    val cdc                 = "cdc".asInstanceOf[MigrationTypeValue]
+    val `full-load` = "full-load".asInstanceOf[MigrationTypeValue]
+    val cdc = "cdc".asInstanceOf[MigrationTypeValue]
     val `full-load-and-cdc` = "full-load-and-cdc".asInstanceOf[MigrationTypeValue]
 
     val values = js.Object.freeze(js.Array(`full-load`, cdc, `full-load-and-cdc`))
@@ -2784,7 +2784,7 @@ package dms {
     ): ModifyReplicationSubnetGroupMessage = {
       val __obj = js.Dynamic.literal(
         "ReplicationSubnetGroupIdentifier" -> ReplicationSubnetGroupIdentifier.asInstanceOf[js.Any],
-        "SubnetIds"                        -> SubnetIds.asInstanceOf[js.Any]
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any]
       )
 
       ReplicationSubnetGroupDescription.foreach(__v =>
@@ -2958,7 +2958,7 @@ package dms {
     ): NeptuneSettings = {
       val __obj = js.Dynamic.literal(
         "S3BucketFolder" -> S3BucketFolder.asInstanceOf[js.Any],
-        "S3BucketName"   -> S3BucketName.asInstanceOf[js.Any]
+        "S3BucketName" -> S3BucketName.asInstanceOf[js.Any]
       )
 
       ErrorRetryDuration.foreach(__v => __obj.updateDynamic("ErrorRetryDuration")(__v.asInstanceOf[js.Any]))
@@ -2974,7 +2974,7 @@ package dms {
   sealed trait NestingLevelValue extends js.Any
   object NestingLevelValue extends js.Object {
     val none = "none".asInstanceOf[NestingLevelValue]
-    val one  = "one".asInstanceOf[NestingLevelValue]
+    val one = "one".asInstanceOf[NestingLevelValue]
 
     val values = js.Object.freeze(js.Array(none, one))
   }
@@ -3213,7 +3213,7 @@ package dms {
         ReplicationInstanceArn: String
     ): RefreshSchemasMessage = {
       val __obj = js.Dynamic.literal(
-        "EndpointArn"            -> EndpointArn.asInstanceOf[js.Any],
+        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any],
         "ReplicationInstanceArn" -> ReplicationInstanceArn.asInstanceOf[js.Any]
       )
 
@@ -3275,7 +3275,7 @@ package dms {
   sealed trait RefreshSchemasStatusTypeValue extends js.Any
   object RefreshSchemasStatusTypeValue extends js.Object {
     val successful = "successful".asInstanceOf[RefreshSchemasStatusTypeValue]
-    val failed     = "failed".asInstanceOf[RefreshSchemasStatusTypeValue]
+    val failed = "failed".asInstanceOf[RefreshSchemasStatusTypeValue]
     val refreshing = "refreshing".asInstanceOf[RefreshSchemasStatusTypeValue]
 
     val values = js.Object.freeze(js.Array(successful, failed, refreshing))
@@ -3292,7 +3292,7 @@ package dms {
   @js.native
   sealed trait ReloadOptionValue extends js.Any
   object ReloadOptionValue extends js.Object {
-    val `data-reload`   = "data-reload".asInstanceOf[ReloadOptionValue]
+    val `data-reload` = "data-reload".asInstanceOf[ReloadOptionValue]
     val `validate-only` = "validate-only".asInstanceOf[ReloadOptionValue]
 
     val values = js.Object.freeze(js.Array(`data-reload`, `validate-only`))
@@ -3314,7 +3314,7 @@ package dms {
     ): ReloadTablesMessage = {
       val __obj = js.Dynamic.literal(
         "ReplicationTaskArn" -> ReplicationTaskArn.asInstanceOf[js.Any],
-        "TablesToReload"     -> TablesToReload.asInstanceOf[js.Any]
+        "TablesToReload" -> TablesToReload.asInstanceOf[js.Any]
       )
 
       ReloadOption.foreach(__v => __obj.updateDynamic("ReloadOption")(__v.asInstanceOf[js.Any]))
@@ -3355,7 +3355,7 @@ package dms {
     ): RemoveTagsFromResourceMessage = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RemoveTagsFromResourceMessage]
@@ -3919,7 +3919,7 @@ package dms {
         CdcStopPosition: js.UndefOr[String] = js.undefined
     ): StartReplicationTaskMessage = {
       val __obj = js.Dynamic.literal(
-        "ReplicationTaskArn"       -> ReplicationTaskArn.asInstanceOf[js.Any],
+        "ReplicationTaskArn" -> ReplicationTaskArn.asInstanceOf[js.Any],
         "StartReplicationTaskType" -> StartReplicationTaskType.asInstanceOf[js.Any]
       )
 
@@ -3954,7 +3954,7 @@ package dms {
   object StartReplicationTaskTypeValue extends js.Object {
     val `start-replication` = "start-replication".asInstanceOf[StartReplicationTaskTypeValue]
     val `resume-processing` = "resume-processing".asInstanceOf[StartReplicationTaskTypeValue]
-    val `reload-target`     = "reload-target".asInstanceOf[StartReplicationTaskTypeValue]
+    val `reload-target` = "reload-target".asInstanceOf[StartReplicationTaskTypeValue]
 
     val values = js.Object.freeze(js.Array(`start-replication`, `resume-processing`, `reload-target`))
   }
@@ -4197,7 +4197,7 @@ package dms {
         ReplicationInstanceArn: String
     ): TestConnectionMessage = {
       val __obj = js.Dynamic.literal(
-        "EndpointArn"            -> EndpointArn.asInstanceOf[js.Any],
+        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any],
         "ReplicationInstanceArn" -> ReplicationInstanceArn.asInstanceOf[js.Any]
       )
 

@@ -8,23 +8,23 @@ import facade.amazonaws._
 
 package object iotjobsdataplane {
   type ApproximateSecondsBeforeTimedOut = Double
-  type DescribeJobExecutionJobId        = String
-  type DetailsKey                       = String
-  type DetailsMap                       = js.Dictionary[DetailsValue]
-  type DetailsValue                     = String
-  type ExecutionNumber                  = Double
-  type ExpectedVersion                  = Double
-  type IncludeExecutionState            = Boolean
-  type IncludeJobDocument               = Boolean
-  type JobDocument                      = String
-  type JobExecutionSummaryList          = js.Array[JobExecutionSummary]
-  type JobId                            = String
-  type LastUpdatedAt                    = Double
-  type QueuedAt                         = Double
-  type StartedAt                        = Double
-  type StepTimeoutInMinutes             = Double
-  type ThingName                        = String
-  type VersionNumber                    = Double
+  type DescribeJobExecutionJobId = String
+  type DetailsKey = String
+  type DetailsMap = js.Dictionary[DetailsValue]
+  type DetailsValue = String
+  type ExecutionNumber = Double
+  type ExpectedVersion = Double
+  type IncludeExecutionState = Boolean
+  type IncludeJobDocument = Boolean
+  type JobDocument = String
+  type JobExecutionSummaryList = js.Array[JobExecutionSummary]
+  type JobId = String
+  type LastUpdatedAt = Double
+  type QueuedAt = Double
+  type StartedAt = Double
+  type StepTimeoutInMinutes = Double
+  type ThingName = String
+  type VersionNumber = Double
 
   implicit final class IoTJobsDataPlaneOps(private val service: IoTJobsDataPlane) extends AnyVal {
 
@@ -52,7 +52,7 @@ package iotjobsdataplane {
       js.native
     def startNextPendingJobExecution(
         params: StartNextPendingJobExecutionRequest
-    ): Request[StartNextPendingJobExecutionResponse]                                               = js.native
+    ): Request[StartNextPendingJobExecutionResponse] = js.native
     def updateJobExecution(params: UpdateJobExecutionRequest): Request[UpdateJobExecutionResponse] = js.native
   }
 
@@ -73,7 +73,7 @@ package iotjobsdataplane {
         includeJobDocument: js.UndefOr[IncludeJobDocument] = js.undefined
     ): DescribeJobExecutionRequest = {
       val __obj = js.Dynamic.literal(
-        "jobId"     -> jobId.asInstanceOf[js.Any],
+        "jobId" -> jobId.asInstanceOf[js.Any],
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
 
@@ -215,14 +215,14 @@ package iotjobsdataplane {
   @js.native
   sealed trait JobExecutionStatus extends js.Any
   object JobExecutionStatus extends js.Object {
-    val QUEUED      = "QUEUED".asInstanceOf[JobExecutionStatus]
+    val QUEUED = "QUEUED".asInstanceOf[JobExecutionStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobExecutionStatus]
-    val SUCCEEDED   = "SUCCEEDED".asInstanceOf[JobExecutionStatus]
-    val FAILED      = "FAILED".asInstanceOf[JobExecutionStatus]
-    val TIMED_OUT   = "TIMED_OUT".asInstanceOf[JobExecutionStatus]
-    val REJECTED    = "REJECTED".asInstanceOf[JobExecutionStatus]
-    val REMOVED     = "REMOVED".asInstanceOf[JobExecutionStatus]
-    val CANCELED    = "CANCELED".asInstanceOf[JobExecutionStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[JobExecutionStatus]
+    val FAILED = "FAILED".asInstanceOf[JobExecutionStatus]
+    val TIMED_OUT = "TIMED_OUT".asInstanceOf[JobExecutionStatus]
+    val REJECTED = "REJECTED".asInstanceOf[JobExecutionStatus]
+    val REMOVED = "REMOVED".asInstanceOf[JobExecutionStatus]
+    val CANCELED = "CANCELED".asInstanceOf[JobExecutionStatus]
 
     val values =
       js.Object.freeze(js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED))
@@ -329,8 +329,8 @@ package iotjobsdataplane {
         stepTimeoutInMinutes: js.UndefOr[StepTimeoutInMinutes] = js.undefined
     ): UpdateJobExecutionRequest = {
       val __obj = js.Dynamic.literal(
-        "jobId"     -> jobId.asInstanceOf[js.Any],
-        "status"    -> status.asInstanceOf[js.Any],
+        "jobId" -> jobId.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any],
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
 

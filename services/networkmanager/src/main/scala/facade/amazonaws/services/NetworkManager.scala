@@ -8,19 +8,19 @@ import facade.amazonaws._
 
 package object networkmanager {
   type CustomerGatewayAssociationList = js.Array[CustomerGatewayAssociation]
-  type DateTime                       = js.Date
-  type DeviceList                     = js.Array[Device]
-  type GlobalNetworkList              = js.Array[GlobalNetwork]
-  type LinkAssociationList            = js.Array[LinkAssociation]
-  type LinkList                       = js.Array[Link]
-  type MaxResults                     = Int
-  type ResourceARN                    = String
-  type SiteList                       = js.Array[Site]
-  type StringList                     = js.Array[String]
-  type TagKey                         = String
-  type TagKeyList                     = js.Array[TagKey]
-  type TagList                        = js.Array[Tag]
-  type TagValue                       = String
+  type DateTime = js.Date
+  type DeviceList = js.Array[Device]
+  type GlobalNetworkList = js.Array[GlobalNetwork]
+  type LinkAssociationList = js.Array[LinkAssociation]
+  type LinkList = js.Array[Link]
+  type MaxResults = Int
+  type ResourceARN = String
+  type SiteList = js.Array[Site]
+  type StringList = js.Array[String]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
   type TransitGatewayRegistrationList = js.Array[TransitGatewayRegistration]
 
   implicit final class NetworkManagerOps(private val service: NetworkManager) extends AnyVal {
@@ -101,42 +101,42 @@ package networkmanager {
 
     def associateCustomerGateway(params: AssociateCustomerGatewayRequest): Request[AssociateCustomerGatewayResponse] =
       js.native
-    def associateLink(params: AssociateLinkRequest): Request[AssociateLinkResponse]                   = js.native
-    def createDevice(params: CreateDeviceRequest): Request[CreateDeviceResponse]                      = js.native
+    def associateLink(params: AssociateLinkRequest): Request[AssociateLinkResponse] = js.native
+    def createDevice(params: CreateDeviceRequest): Request[CreateDeviceResponse] = js.native
     def createGlobalNetwork(params: CreateGlobalNetworkRequest): Request[CreateGlobalNetworkResponse] = js.native
-    def createLink(params: CreateLinkRequest): Request[CreateLinkResponse]                            = js.native
-    def createSite(params: CreateSiteRequest): Request[CreateSiteResponse]                            = js.native
-    def deleteDevice(params: DeleteDeviceRequest): Request[DeleteDeviceResponse]                      = js.native
+    def createLink(params: CreateLinkRequest): Request[CreateLinkResponse] = js.native
+    def createSite(params: CreateSiteRequest): Request[CreateSiteResponse] = js.native
+    def deleteDevice(params: DeleteDeviceRequest): Request[DeleteDeviceResponse] = js.native
     def deleteGlobalNetwork(params: DeleteGlobalNetworkRequest): Request[DeleteGlobalNetworkResponse] = js.native
-    def deleteLink(params: DeleteLinkRequest): Request[DeleteLinkResponse]                            = js.native
-    def deleteSite(params: DeleteSiteRequest): Request[DeleteSiteResponse]                            = js.native
+    def deleteLink(params: DeleteLinkRequest): Request[DeleteLinkResponse] = js.native
+    def deleteSite(params: DeleteSiteRequest): Request[DeleteSiteResponse] = js.native
     def deregisterTransitGateway(params: DeregisterTransitGatewayRequest): Request[DeregisterTransitGatewayResponse] =
       js.native
     def describeGlobalNetworks(params: DescribeGlobalNetworksRequest): Request[DescribeGlobalNetworksResponse] =
       js.native
     def disassociateCustomerGateway(
         params: DisassociateCustomerGatewayRequest
-    ): Request[DisassociateCustomerGatewayResponse]                                          = js.native
+    ): Request[DisassociateCustomerGatewayResponse] = js.native
     def disassociateLink(params: DisassociateLinkRequest): Request[DisassociateLinkResponse] = js.native
     def getCustomerGatewayAssociations(
         params: GetCustomerGatewayAssociationsRequest
-    ): Request[GetCustomerGatewayAssociationsResponse]                                                = js.native
-    def getDevices(params: GetDevicesRequest): Request[GetDevicesResponse]                            = js.native
+    ): Request[GetCustomerGatewayAssociationsResponse] = js.native
+    def getDevices(params: GetDevicesRequest): Request[GetDevicesResponse] = js.native
     def getLinkAssociations(params: GetLinkAssociationsRequest): Request[GetLinkAssociationsResponse] = js.native
-    def getLinks(params: GetLinksRequest): Request[GetLinksResponse]                                  = js.native
-    def getSites(params: GetSitesRequest): Request[GetSitesResponse]                                  = js.native
+    def getLinks(params: GetLinksRequest): Request[GetLinksResponse] = js.native
+    def getSites(params: GetSitesRequest): Request[GetSitesResponse] = js.native
     def getTransitGatewayRegistrations(
         params: GetTransitGatewayRegistrationsRequest
-    ): Request[GetTransitGatewayRegistrationsResponse]                                                = js.native
+    ): Request[GetTransitGatewayRegistrationsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def registerTransitGateway(params: RegisterTransitGatewayRequest): Request[RegisterTransitGatewayResponse] =
       js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
-    def updateDevice(params: UpdateDeviceRequest): Request[UpdateDeviceResponse]                      = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateDevice(params: UpdateDeviceRequest): Request[UpdateDeviceResponse] = js.native
     def updateGlobalNetwork(params: UpdateGlobalNetworkRequest): Request[UpdateGlobalNetworkResponse] = js.native
-    def updateLink(params: UpdateLinkRequest): Request[UpdateLinkResponse]                            = js.native
-    def updateSite(params: UpdateSiteRequest): Request[UpdateSiteResponse]                            = js.native
+    def updateLink(params: UpdateLinkRequest): Request[UpdateLinkResponse] = js.native
+    def updateSite(params: UpdateSiteRequest): Request[UpdateSiteResponse] = js.native
   }
 
   @js.native
@@ -157,8 +157,8 @@ package networkmanager {
     ): AssociateCustomerGatewayRequest = {
       val __obj = js.Dynamic.literal(
         "CustomerGatewayArn" -> CustomerGatewayArn.asInstanceOf[js.Any],
-        "DeviceId"           -> DeviceId.asInstanceOf[js.Any],
-        "GlobalNetworkId"    -> GlobalNetworkId.asInstanceOf[js.Any]
+        "DeviceId" -> DeviceId.asInstanceOf[js.Any],
+        "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any]
       )
 
       LinkId.foreach(__v => __obj.updateDynamic("LinkId")(__v.asInstanceOf[js.Any]))
@@ -199,9 +199,9 @@ package networkmanager {
         LinkId: String
     ): AssociateLinkRequest = {
       val __obj = js.Dynamic.literal(
-        "DeviceId"        -> DeviceId.asInstanceOf[js.Any],
+        "DeviceId" -> DeviceId.asInstanceOf[js.Any],
         "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any],
-        "LinkId"          -> LinkId.asInstanceOf[js.Any]
+        "LinkId" -> LinkId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AssociateLinkRequest]
@@ -362,9 +362,9 @@ package networkmanager {
         Type: js.UndefOr[String] = js.undefined
     ): CreateLinkRequest = {
       val __obj = js.Dynamic.literal(
-        "Bandwidth"       -> Bandwidth.asInstanceOf[js.Any],
+        "Bandwidth" -> Bandwidth.asInstanceOf[js.Any],
         "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any],
-        "SiteId"          -> SiteId.asInstanceOf[js.Any]
+        "SiteId" -> SiteId.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -468,10 +468,10 @@ package networkmanager {
   @js.native
   sealed trait CustomerGatewayAssociationState extends js.Any
   object CustomerGatewayAssociationState extends js.Object {
-    val PENDING   = "PENDING".asInstanceOf[CustomerGatewayAssociationState]
+    val PENDING = "PENDING".asInstanceOf[CustomerGatewayAssociationState]
     val AVAILABLE = "AVAILABLE".asInstanceOf[CustomerGatewayAssociationState]
-    val DELETING  = "DELETING".asInstanceOf[CustomerGatewayAssociationState]
-    val DELETED   = "DELETED".asInstanceOf[CustomerGatewayAssociationState]
+    val DELETING = "DELETING".asInstanceOf[CustomerGatewayAssociationState]
+    val DELETED = "DELETED".asInstanceOf[CustomerGatewayAssociationState]
 
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, DELETED))
   }
@@ -489,7 +489,7 @@ package networkmanager {
         GlobalNetworkId: String
     ): DeleteDeviceRequest = {
       val __obj = js.Dynamic.literal(
-        "DeviceId"        -> DeviceId.asInstanceOf[js.Any],
+        "DeviceId" -> DeviceId.asInstanceOf[js.Any],
         "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any]
       )
 
@@ -561,7 +561,7 @@ package networkmanager {
     ): DeleteLinkRequest = {
       val __obj = js.Dynamic.literal(
         "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any],
-        "LinkId"          -> LinkId.asInstanceOf[js.Any]
+        "LinkId" -> LinkId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteLinkRequest]
@@ -598,7 +598,7 @@ package networkmanager {
     ): DeleteSiteRequest = {
       val __obj = js.Dynamic.literal(
         "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any],
-        "SiteId"          -> SiteId.asInstanceOf[js.Any]
+        "SiteId" -> SiteId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteSiteRequest]
@@ -634,7 +634,7 @@ package networkmanager {
         TransitGatewayArn: String
     ): DeregisterTransitGatewayRequest = {
       val __obj = js.Dynamic.literal(
-        "GlobalNetworkId"   -> GlobalNetworkId.asInstanceOf[js.Any],
+        "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any],
         "TransitGatewayArn" -> TransitGatewayArn.asInstanceOf[js.Any]
       )
 
@@ -759,10 +759,10 @@ package networkmanager {
   @js.native
   sealed trait DeviceState extends js.Any
   object DeviceState extends js.Object {
-    val PENDING   = "PENDING".asInstanceOf[DeviceState]
+    val PENDING = "PENDING".asInstanceOf[DeviceState]
     val AVAILABLE = "AVAILABLE".asInstanceOf[DeviceState]
-    val DELETING  = "DELETING".asInstanceOf[DeviceState]
-    val UPDATING  = "UPDATING".asInstanceOf[DeviceState]
+    val DELETING = "DELETING".asInstanceOf[DeviceState]
+    val UPDATING = "UPDATING".asInstanceOf[DeviceState]
 
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, UPDATING))
   }
@@ -781,7 +781,7 @@ package networkmanager {
     ): DisassociateCustomerGatewayRequest = {
       val __obj = js.Dynamic.literal(
         "CustomerGatewayArn" -> CustomerGatewayArn.asInstanceOf[js.Any],
-        "GlobalNetworkId"    -> GlobalNetworkId.asInstanceOf[js.Any]
+        "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DisassociateCustomerGatewayRequest]
@@ -821,9 +821,9 @@ package networkmanager {
         LinkId: String
     ): DisassociateLinkRequest = {
       val __obj = js.Dynamic.literal(
-        "DeviceId"        -> DeviceId.asInstanceOf[js.Any],
+        "DeviceId" -> DeviceId.asInstanceOf[js.Any],
         "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any],
-        "LinkId"          -> LinkId.asInstanceOf[js.Any]
+        "LinkId" -> LinkId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DisassociateLinkRequest]
@@ -1178,10 +1178,10 @@ package networkmanager {
   @js.native
   sealed trait GlobalNetworkState extends js.Any
   object GlobalNetworkState extends js.Object {
-    val PENDING   = "PENDING".asInstanceOf[GlobalNetworkState]
+    val PENDING = "PENDING".asInstanceOf[GlobalNetworkState]
     val AVAILABLE = "AVAILABLE".asInstanceOf[GlobalNetworkState]
-    val DELETING  = "DELETING".asInstanceOf[GlobalNetworkState]
-    val UPDATING  = "UPDATING".asInstanceOf[GlobalNetworkState]
+    val DELETING = "DELETING".asInstanceOf[GlobalNetworkState]
+    val UPDATING = "UPDATING".asInstanceOf[GlobalNetworkState]
 
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, UPDATING))
   }
@@ -1266,10 +1266,10 @@ package networkmanager {
   @js.native
   sealed trait LinkAssociationState extends js.Any
   object LinkAssociationState extends js.Object {
-    val PENDING   = "PENDING".asInstanceOf[LinkAssociationState]
+    val PENDING = "PENDING".asInstanceOf[LinkAssociationState]
     val AVAILABLE = "AVAILABLE".asInstanceOf[LinkAssociationState]
-    val DELETING  = "DELETING".asInstanceOf[LinkAssociationState]
-    val DELETED   = "DELETED".asInstanceOf[LinkAssociationState]
+    val DELETING = "DELETING".asInstanceOf[LinkAssociationState]
+    val DELETED = "DELETED".asInstanceOf[LinkAssociationState]
 
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, DELETED))
   }
@@ -1277,10 +1277,10 @@ package networkmanager {
   @js.native
   sealed trait LinkState extends js.Any
   object LinkState extends js.Object {
-    val PENDING   = "PENDING".asInstanceOf[LinkState]
+    val PENDING = "PENDING".asInstanceOf[LinkState]
     val AVAILABLE = "AVAILABLE".asInstanceOf[LinkState]
-    val DELETING  = "DELETING".asInstanceOf[LinkState]
-    val UPDATING  = "UPDATING".asInstanceOf[LinkState]
+    val DELETING = "DELETING".asInstanceOf[LinkState]
+    val UPDATING = "UPDATING".asInstanceOf[LinkState]
 
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, UPDATING))
   }
@@ -1357,7 +1357,7 @@ package networkmanager {
         TransitGatewayArn: String
     ): RegisterTransitGatewayRequest = {
       val __obj = js.Dynamic.literal(
-        "GlobalNetworkId"   -> GlobalNetworkId.asInstanceOf[js.Any],
+        "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any],
         "TransitGatewayArn" -> TransitGatewayArn.asInstanceOf[js.Any]
       )
 
@@ -1426,10 +1426,10 @@ package networkmanager {
   @js.native
   sealed trait SiteState extends js.Any
   object SiteState extends js.Object {
-    val PENDING   = "PENDING".asInstanceOf[SiteState]
+    val PENDING = "PENDING".asInstanceOf[SiteState]
     val AVAILABLE = "AVAILABLE".asInstanceOf[SiteState]
-    val DELETING  = "DELETING".asInstanceOf[SiteState]
-    val UPDATING  = "UPDATING".asInstanceOf[SiteState]
+    val DELETING = "DELETING".asInstanceOf[SiteState]
+    val UPDATING = "UPDATING".asInstanceOf[SiteState]
 
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, UPDATING))
   }
@@ -1470,7 +1470,7 @@ package networkmanager {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -1518,11 +1518,11 @@ package networkmanager {
   @js.native
   sealed trait TransitGatewayRegistrationState extends js.Any
   object TransitGatewayRegistrationState extends js.Object {
-    val PENDING   = "PENDING".asInstanceOf[TransitGatewayRegistrationState]
+    val PENDING = "PENDING".asInstanceOf[TransitGatewayRegistrationState]
     val AVAILABLE = "AVAILABLE".asInstanceOf[TransitGatewayRegistrationState]
-    val DELETING  = "DELETING".asInstanceOf[TransitGatewayRegistrationState]
-    val DELETED   = "DELETED".asInstanceOf[TransitGatewayRegistrationState]
-    val FAILED    = "FAILED".asInstanceOf[TransitGatewayRegistrationState]
+    val DELETING = "DELETING".asInstanceOf[TransitGatewayRegistrationState]
+    val DELETED = "DELETED".asInstanceOf[TransitGatewayRegistrationState]
+    val FAILED = "FAILED".asInstanceOf[TransitGatewayRegistrationState]
 
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, DELETED, FAILED))
   }
@@ -1563,7 +1563,7 @@ package networkmanager {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -1610,7 +1610,7 @@ package networkmanager {
         Vendor: js.UndefOr[String] = js.undefined
     ): UpdateDeviceRequest = {
       val __obj = js.Dynamic.literal(
-        "DeviceId"        -> DeviceId.asInstanceOf[js.Any],
+        "DeviceId" -> DeviceId.asInstanceOf[js.Any],
         "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any]
       )
 
@@ -1700,7 +1700,7 @@ package networkmanager {
     ): UpdateLinkRequest = {
       val __obj = js.Dynamic.literal(
         "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any],
-        "LinkId"          -> LinkId.asInstanceOf[js.Any]
+        "LinkId" -> LinkId.asInstanceOf[js.Any]
       )
 
       Bandwidth.foreach(__v => __obj.updateDynamic("Bandwidth")(__v.asInstanceOf[js.Any]))
@@ -1745,7 +1745,7 @@ package networkmanager {
     ): UpdateSiteRequest = {
       val __obj = js.Dynamic.literal(
         "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any],
-        "SiteId"          -> SiteId.asInstanceOf[js.Any]
+        "SiteId" -> SiteId.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))

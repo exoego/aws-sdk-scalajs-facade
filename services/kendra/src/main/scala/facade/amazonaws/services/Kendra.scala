@@ -7,104 +7,104 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object kendra {
-  type AdditionalResultAttributeList                     = js.Array[AdditionalResultAttribute]
-  type AmazonResourceName                                = String
-  type AttributeFilterList                               = js.Array[AttributeFilter]
-  type BatchDeleteDocumentResponseFailedDocuments        = js.Array[BatchDeleteDocumentResponseFailedDocument]
-  type BatchPutDocumentResponseFailedDocuments           = js.Array[BatchPutDocumentResponseFailedDocument]
-  type Blob                                              = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type ChangeDetectingColumns                            = js.Array[ColumnName]
-  type ClickFeedbackList                                 = js.Array[ClickFeedback]
-  type ClientTokenName                                   = String
-  type ColumnName                                        = String
-  type DataSourceDateFieldFormat                         = String
-  type DataSourceFieldName                               = String
-  type DataSourceId                                      = String
-  type DataSourceInclusionsExclusionsStrings             = js.Array[DataSourceInclusionsExclusionsStringsMember]
-  type DataSourceInclusionsExclusionsStringsMember       = String
-  type DataSourceName                                    = String
-  type DataSourceSummaryList                             = js.Array[DataSourceSummary]
-  type DataSourceSyncJobHistoryList                      = js.Array[DataSourceSyncJob]
-  type DataSourceSyncJobId                               = String
-  type DataSourceToIndexFieldMappingList                 = js.Array[DataSourceToIndexFieldMapping]
-  type DatabaseHost                                      = String
-  type DatabaseName                                      = String
-  type DatabasePort                                      = Int
-  type Description                                       = String
-  type DocumentAttributeKey                              = String
-  type DocumentAttributeKeyList                          = js.Array[DocumentAttributeKey]
-  type DocumentAttributeList                             = js.Array[DocumentAttribute]
-  type DocumentAttributeStringListValue                  = js.Array[String]
-  type DocumentAttributeStringValue                      = String
-  type DocumentAttributeValueCountPairList               = js.Array[DocumentAttributeValueCountPair]
-  type DocumentId                                        = String
-  type DocumentIdList                                    = js.Array[DocumentId]
-  type DocumentList                                      = js.Array[Document]
-  type DocumentMetadataBoolean                           = Boolean
-  type DocumentMetadataConfigurationList                 = js.Array[DocumentMetadataConfiguration]
-  type DocumentMetadataConfigurationName                 = String
-  type Duration                                          = String
-  type ErrorMessage                                      = String
-  type FacetList                                         = js.Array[Facet]
-  type FacetResultList                                   = js.Array[FacetResult]
-  type FaqId                                             = String
-  type FaqName                                           = String
-  type FaqSummaryItems                                   = js.Array[FaqSummary]
-  type HighlightList                                     = js.Array[Highlight]
-  type Importance                                        = Int
-  type IndexConfigurationSummaryList                     = js.Array[IndexConfigurationSummary]
-  type IndexFieldName                                    = String
-  type IndexId                                           = String
-  type IndexName                                         = String
-  type IndexedQuestionAnswersCount                       = Int
-  type IndexedTextBytes                                  = Double
-  type IndexedTextDocumentsCount                         = Int
-  type KmsKeyId                                          = String
+  type AdditionalResultAttributeList = js.Array[AdditionalResultAttribute]
+  type AmazonResourceName = String
+  type AttributeFilterList = js.Array[AttributeFilter]
+  type BatchDeleteDocumentResponseFailedDocuments = js.Array[BatchDeleteDocumentResponseFailedDocument]
+  type BatchPutDocumentResponseFailedDocuments = js.Array[BatchPutDocumentResponseFailedDocument]
+  type Blob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type ChangeDetectingColumns = js.Array[ColumnName]
+  type ClickFeedbackList = js.Array[ClickFeedback]
+  type ClientTokenName = String
+  type ColumnName = String
+  type DataSourceDateFieldFormat = String
+  type DataSourceFieldName = String
+  type DataSourceId = String
+  type DataSourceInclusionsExclusionsStrings = js.Array[DataSourceInclusionsExclusionsStringsMember]
+  type DataSourceInclusionsExclusionsStringsMember = String
+  type DataSourceName = String
+  type DataSourceSummaryList = js.Array[DataSourceSummary]
+  type DataSourceSyncJobHistoryList = js.Array[DataSourceSyncJob]
+  type DataSourceSyncJobId = String
+  type DataSourceToIndexFieldMappingList = js.Array[DataSourceToIndexFieldMapping]
+  type DatabaseHost = String
+  type DatabaseName = String
+  type DatabasePort = Int
+  type Description = String
+  type DocumentAttributeKey = String
+  type DocumentAttributeKeyList = js.Array[DocumentAttributeKey]
+  type DocumentAttributeList = js.Array[DocumentAttribute]
+  type DocumentAttributeStringListValue = js.Array[String]
+  type DocumentAttributeStringValue = String
+  type DocumentAttributeValueCountPairList = js.Array[DocumentAttributeValueCountPair]
+  type DocumentId = String
+  type DocumentIdList = js.Array[DocumentId]
+  type DocumentList = js.Array[Document]
+  type DocumentMetadataBoolean = Boolean
+  type DocumentMetadataConfigurationList = js.Array[DocumentMetadataConfiguration]
+  type DocumentMetadataConfigurationName = String
+  type Duration = String
+  type ErrorMessage = String
+  type FacetList = js.Array[Facet]
+  type FacetResultList = js.Array[FacetResult]
+  type FaqId = String
+  type FaqName = String
+  type FaqSummaryItems = js.Array[FaqSummary]
+  type HighlightList = js.Array[Highlight]
+  type Importance = Int
+  type IndexConfigurationSummaryList = js.Array[IndexConfigurationSummary]
+  type IndexFieldName = String
+  type IndexId = String
+  type IndexName = String
+  type IndexedQuestionAnswersCount = Int
+  type IndexedTextBytes = Double
+  type IndexedTextDocumentsCount = Int
+  type KmsKeyId = String
   type MaxResultsIntegerForListDataSourceSyncJobsRequest = Int
-  type MaxResultsIntegerForListDataSourcesRequest        = Int
-  type MaxResultsIntegerForListFaqsRequest               = Int
-  type MaxResultsIntegerForListIndicesRequest            = Int
-  type MetricValue                                       = String
-  type NextToken                                         = String
-  type OneDriveUser                                      = String
-  type OneDriveUserList                                  = js.Array[OneDriveUser]
-  type PrincipalList                                     = js.Array[Principal]
-  type PrincipalName                                     = String
-  type QueryCapacityUnit                                 = Int
-  type QueryId                                           = String
-  type QueryResultItemList                               = js.Array[QueryResultItem]
-  type QueryText                                         = String
-  type RelevanceFeedbackList                             = js.Array[RelevanceFeedback]
-  type ResultId                                          = String
-  type RoleArn                                           = String
-  type S3BucketName                                      = String
-  type S3ObjectKey                                       = String
-  type SalesforceChatterFeedIncludeFilterTypes           = js.Array[SalesforceChatterFeedIncludeFilterType]
+  type MaxResultsIntegerForListDataSourcesRequest = Int
+  type MaxResultsIntegerForListFaqsRequest = Int
+  type MaxResultsIntegerForListIndicesRequest = Int
+  type MetricValue = String
+  type NextToken = String
+  type OneDriveUser = String
+  type OneDriveUserList = js.Array[OneDriveUser]
+  type PrincipalList = js.Array[Principal]
+  type PrincipalName = String
+  type QueryCapacityUnit = Int
+  type QueryId = String
+  type QueryResultItemList = js.Array[QueryResultItem]
+  type QueryText = String
+  type RelevanceFeedbackList = js.Array[RelevanceFeedback]
+  type ResultId = String
+  type RoleArn = String
+  type S3BucketName = String
+  type S3ObjectKey = String
+  type SalesforceChatterFeedIncludeFilterTypes = js.Array[SalesforceChatterFeedIncludeFilterType]
   type SalesforceCustomKnowledgeArticleTypeConfigurationList =
     js.Array[SalesforceCustomKnowledgeArticleTypeConfiguration]
-  type SalesforceCustomKnowledgeArticleTypeName  = String
-  type SalesforceKnowledgeArticleStateList       = js.Array[SalesforceKnowledgeArticleState]
+  type SalesforceCustomKnowledgeArticleTypeName = String
+  type SalesforceKnowledgeArticleStateList = js.Array[SalesforceKnowledgeArticleState]
   type SalesforceStandardObjectConfigurationList = js.Array[SalesforceStandardObjectConfiguration]
-  type ScanSchedule                              = String
-  type SecretArn                                 = String
-  type SecurityGroupIdList                       = js.Array[VpcSecurityGroupId]
-  type ServiceNowHostUrl                         = String
-  type SharePointUrlList                         = js.Array[Url]
-  type StorageCapacityUnit                       = Int
-  type SubnetId                                  = String
-  type SubnetIdList                              = js.Array[SubnetId]
-  type TableName                                 = String
-  type TagKey                                    = String
-  type TagKeyList                                = js.Array[TagKey]
-  type TagList                                   = js.Array[Tag]
-  type TagValue                                  = String
-  type TenantDomain                              = String
-  type Timestamp                                 = js.Date
-  type Title                                     = String
-  type Url                                       = String
-  type ValueImportanceMap                        = js.Dictionary[Importance]
-  type ValueImportanceMapKey                     = String
-  type VpcSecurityGroupId                        = String
+  type ScanSchedule = String
+  type SecretArn = String
+  type SecurityGroupIdList = js.Array[VpcSecurityGroupId]
+  type ServiceNowHostUrl = String
+  type SharePointUrlList = js.Array[Url]
+  type StorageCapacityUnit = Int
+  type SubnetId = String
+  type SubnetIdList = js.Array[SubnetId]
+  type TableName = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type TenantDomain = String
+  type Timestamp = js.Date
+  type Title = String
+  type Url = String
+  type ValueImportanceMap = js.Dictionary[Importance]
+  type ValueImportanceMapKey = String
+  type VpcSecurityGroupId = String
 
   implicit final class KendraOps(private val service: Kendra) extends AnyVal {
 
@@ -167,31 +167,31 @@ package kendra {
     def this(config: AWSConfig) = this()
 
     def batchDeleteDocument(params: BatchDeleteDocumentRequest): Request[BatchDeleteDocumentResponse] = js.native
-    def batchPutDocument(params: BatchPutDocumentRequest): Request[BatchPutDocumentResponse]          = js.native
-    def createDataSource(params: CreateDataSourceRequest): Request[CreateDataSourceResponse]          = js.native
-    def createFaq(params: CreateFaqRequest): Request[CreateFaqResponse]                               = js.native
-    def createIndex(params: CreateIndexRequest): Request[CreateIndexResponse]                         = js.native
-    def deleteDataSource(params: DeleteDataSourceRequest): Request[js.Object]                         = js.native
-    def deleteFaq(params: DeleteFaqRequest): Request[js.Object]                                       = js.native
-    def deleteIndex(params: DeleteIndexRequest): Request[js.Object]                                   = js.native
-    def describeDataSource(params: DescribeDataSourceRequest): Request[DescribeDataSourceResponse]    = js.native
-    def describeFaq(params: DescribeFaqRequest): Request[DescribeFaqResponse]                         = js.native
-    def describeIndex(params: DescribeIndexRequest): Request[DescribeIndexResponse]                   = js.native
+    def batchPutDocument(params: BatchPutDocumentRequest): Request[BatchPutDocumentResponse] = js.native
+    def createDataSource(params: CreateDataSourceRequest): Request[CreateDataSourceResponse] = js.native
+    def createFaq(params: CreateFaqRequest): Request[CreateFaqResponse] = js.native
+    def createIndex(params: CreateIndexRequest): Request[CreateIndexResponse] = js.native
+    def deleteDataSource(params: DeleteDataSourceRequest): Request[js.Object] = js.native
+    def deleteFaq(params: DeleteFaqRequest): Request[js.Object] = js.native
+    def deleteIndex(params: DeleteIndexRequest): Request[js.Object] = js.native
+    def describeDataSource(params: DescribeDataSourceRequest): Request[DescribeDataSourceResponse] = js.native
+    def describeFaq(params: DescribeFaqRequest): Request[DescribeFaqResponse] = js.native
+    def describeIndex(params: DescribeIndexRequest): Request[DescribeIndexResponse] = js.native
     def listDataSourceSyncJobs(params: ListDataSourceSyncJobsRequest): Request[ListDataSourceSyncJobsResponse] =
       js.native
-    def listDataSources(params: ListDataSourcesRequest): Request[ListDataSourcesResponse]             = js.native
-    def listFaqs(params: ListFaqsRequest): Request[ListFaqsResponse]                                  = js.native
-    def listIndices(params: ListIndicesRequest): Request[ListIndicesResponse]                         = js.native
+    def listDataSources(params: ListDataSourcesRequest): Request[ListDataSourcesResponse] = js.native
+    def listFaqs(params: ListFaqsRequest): Request[ListFaqsResponse] = js.native
+    def listIndices(params: ListIndicesRequest): Request[ListIndicesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def query(params: QueryRequest): Request[QueryResult]                                             = js.native
+    def query(params: QueryRequest): Request[QueryResult] = js.native
     def startDataSourceSyncJob(params: StartDataSourceSyncJobRequest): Request[StartDataSourceSyncJobResponse] =
       js.native
     def stopDataSourceSyncJob(params: StopDataSourceSyncJobRequest): Request[js.Object] = js.native
-    def submitFeedback(params: SubmitFeedbackRequest): Request[js.Object]               = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]           = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]     = js.native
-    def updateDataSource(params: UpdateDataSourceRequest): Request[js.Object]           = js.native
-    def updateIndex(params: UpdateIndexRequest): Request[js.Object]                     = js.native
+    def submitFeedback(params: SubmitFeedbackRequest): Request[js.Object] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateDataSource(params: UpdateDataSourceRequest): Request[js.Object] = js.native
+    def updateIndex(params: UpdateIndexRequest): Request[js.Object] = js.native
   }
 
   /**
@@ -252,8 +252,8 @@ package kendra {
         ValueType: AdditionalResultAttributeValueType
     ): AdditionalResultAttribute = {
       val __obj = js.Dynamic.literal(
-        "Key"       -> Key.asInstanceOf[js.Any],
-        "Value"     -> Value.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any],
         "ValueType" -> ValueType.asInstanceOf[js.Any]
       )
 
@@ -355,7 +355,7 @@ package kendra {
     ): BatchDeleteDocumentRequest = {
       val __obj = js.Dynamic.literal(
         "DocumentIdList" -> DocumentIdList.asInstanceOf[js.Any],
-        "IndexId"        -> IndexId.asInstanceOf[js.Any]
+        "IndexId" -> IndexId.asInstanceOf[js.Any]
       )
 
       DataSourceSyncJobMetricTarget.foreach(__v =>
@@ -422,7 +422,7 @@ package kendra {
     ): BatchPutDocumentRequest = {
       val __obj = js.Dynamic.literal(
         "Documents" -> Documents.asInstanceOf[js.Any],
-        "IndexId"   -> IndexId.asInstanceOf[js.Any]
+        "IndexId" -> IndexId.asInstanceOf[js.Any]
       )
 
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
@@ -487,7 +487,7 @@ package kendra {
         StorageCapacityUnits: StorageCapacityUnit
     ): CapacityUnitsConfiguration = {
       val __obj = js.Dynamic.literal(
-        "QueryCapacityUnits"   -> QueryCapacityUnits.asInstanceOf[js.Any],
+        "QueryCapacityUnits" -> QueryCapacityUnits.asInstanceOf[js.Any],
         "StorageCapacityUnits" -> StorageCapacityUnits.asInstanceOf[js.Any]
       )
 
@@ -512,7 +512,7 @@ package kendra {
     ): ClickFeedback = {
       val __obj = js.Dynamic.literal(
         "ClickTime" -> ClickTime.asInstanceOf[js.Any],
-        "ResultId"  -> ResultId.asInstanceOf[js.Any]
+        "ResultId" -> ResultId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ClickFeedback]
@@ -543,7 +543,7 @@ package kendra {
       val __obj = js.Dynamic.literal(
         "ChangeDetectingColumns" -> ChangeDetectingColumns.asInstanceOf[js.Any],
         "DocumentDataColumnName" -> DocumentDataColumnName.asInstanceOf[js.Any],
-        "DocumentIdColumnName"   -> DocumentIdColumnName.asInstanceOf[js.Any]
+        "DocumentIdColumnName" -> DocumentIdColumnName.asInstanceOf[js.Any]
       )
 
       DocumentTitleColumnName.foreach(__v => __obj.updateDynamic("DocumentTitleColumnName")(__v.asInstanceOf[js.Any]))
@@ -577,8 +577,8 @@ package kendra {
         "DatabaseHost" -> DatabaseHost.asInstanceOf[js.Any],
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
         "DatabasePort" -> DatabasePort.asInstanceOf[js.Any],
-        "SecretArn"    -> SecretArn.asInstanceOf[js.Any],
-        "TableName"    -> TableName.asInstanceOf[js.Any]
+        "SecretArn" -> SecretArn.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ConnectionConfiguration]
@@ -588,11 +588,11 @@ package kendra {
   @js.native
   sealed trait ContentType extends js.Any
   object ContentType extends js.Object {
-    val PDF        = "PDF".asInstanceOf[ContentType]
-    val HTML       = "HTML".asInstanceOf[ContentType]
-    val MS_WORD    = "MS_WORD".asInstanceOf[ContentType]
+    val PDF = "PDF".asInstanceOf[ContentType]
+    val HTML = "HTML".asInstanceOf[ContentType]
+    val MS_WORD = "MS_WORD".asInstanceOf[ContentType]
     val PLAIN_TEXT = "PLAIN_TEXT".asInstanceOf[ContentType]
-    val PPT        = "PPT".asInstanceOf[ContentType]
+    val PPT = "PPT".asInstanceOf[ContentType]
 
     val values = js.Object.freeze(js.Array(PDF, HTML, MS_WORD, PLAIN_TEXT, PPT))
   }
@@ -623,10 +623,10 @@ package kendra {
     ): CreateDataSourceRequest = {
       val __obj = js.Dynamic.literal(
         "Configuration" -> Configuration.asInstanceOf[js.Any],
-        "IndexId"       -> IndexId.asInstanceOf[js.Any],
-        "Name"          -> Name.asInstanceOf[js.Any],
-        "RoleArn"       -> RoleArn.asInstanceOf[js.Any],
-        "Type"          -> Type.asInstanceOf[js.Any]
+        "IndexId" -> IndexId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -676,9 +676,9 @@ package kendra {
     ): CreateFaqRequest = {
       val __obj = js.Dynamic.literal(
         "IndexId" -> IndexId.asInstanceOf[js.Any],
-        "Name"    -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "RoleArn" -> RoleArn.asInstanceOf[js.Any],
-        "S3Path"  -> S3Path.asInstanceOf[js.Any]
+        "S3Path" -> S3Path.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -726,7 +726,7 @@ package kendra {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateIndexRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"    -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
@@ -796,9 +796,9 @@ package kendra {
   object DataSourceStatus extends js.Object {
     val CREATING = "CREATING".asInstanceOf[DataSourceStatus]
     val DELETING = "DELETING".asInstanceOf[DataSourceStatus]
-    val FAILED   = "FAILED".asInstanceOf[DataSourceStatus]
+    val FAILED = "FAILED".asInstanceOf[DataSourceStatus]
     val UPDATING = "UPDATING".asInstanceOf[DataSourceStatus]
-    val ACTIVE   = "ACTIVE".asInstanceOf[DataSourceStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[DataSourceStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, DELETING, FAILED, UPDATING, ACTIVE))
   }
@@ -893,7 +893,7 @@ package kendra {
         DataSourceSyncJobId: DataSourceSyncJobId
     ): DataSourceSyncJobMetricTarget = {
       val __obj = js.Dynamic.literal(
-        "DataSourceId"        -> DataSourceId.asInstanceOf[js.Any],
+        "DataSourceId" -> DataSourceId.asInstanceOf[js.Any],
         "DataSourceSyncJobId" -> DataSourceSyncJobId.asInstanceOf[js.Any]
       )
 
@@ -935,12 +935,12 @@ package kendra {
   @js.native
   sealed trait DataSourceSyncJobStatus extends js.Any
   object DataSourceSyncJobStatus extends js.Object {
-    val FAILED           = "FAILED".asInstanceOf[DataSourceSyncJobStatus]
-    val SUCCEEDED        = "SUCCEEDED".asInstanceOf[DataSourceSyncJobStatus]
-    val SYNCING          = "SYNCING".asInstanceOf[DataSourceSyncJobStatus]
-    val INCOMPLETE       = "INCOMPLETE".asInstanceOf[DataSourceSyncJobStatus]
-    val STOPPING         = "STOPPING".asInstanceOf[DataSourceSyncJobStatus]
-    val ABORTED          = "ABORTED".asInstanceOf[DataSourceSyncJobStatus]
+    val FAILED = "FAILED".asInstanceOf[DataSourceSyncJobStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[DataSourceSyncJobStatus]
+    val SYNCING = "SYNCING".asInstanceOf[DataSourceSyncJobStatus]
+    val INCOMPLETE = "INCOMPLETE".asInstanceOf[DataSourceSyncJobStatus]
+    val STOPPING = "STOPPING".asInstanceOf[DataSourceSyncJobStatus]
+    val ABORTED = "ABORTED".asInstanceOf[DataSourceSyncJobStatus]
     val SYNCING_INDEXING = "SYNCING_INDEXING".asInstanceOf[DataSourceSyncJobStatus]
 
     val values = js.Object.freeze(js.Array(FAILED, SUCCEEDED, SYNCING, INCOMPLETE, STOPPING, ABORTED, SYNCING_INDEXING))
@@ -965,7 +965,7 @@ package kendra {
     ): DataSourceToIndexFieldMapping = {
       val __obj = js.Dynamic.literal(
         "DataSourceFieldName" -> DataSourceFieldName.asInstanceOf[js.Any],
-        "IndexFieldName"      -> IndexFieldName.asInstanceOf[js.Any]
+        "IndexFieldName" -> IndexFieldName.asInstanceOf[js.Any]
       )
 
       DateFieldFormat.foreach(__v => __obj.updateDynamic("DateFieldFormat")(__v.asInstanceOf[js.Any]))
@@ -976,11 +976,11 @@ package kendra {
   @js.native
   sealed trait DataSourceType extends js.Any
   object DataSourceType extends js.Object {
-    val S3         = "S3".asInstanceOf[DataSourceType]
+    val S3 = "S3".asInstanceOf[DataSourceType]
     val SHAREPOINT = "SHAREPOINT".asInstanceOf[DataSourceType]
-    val DATABASE   = "DATABASE".asInstanceOf[DataSourceType]
+    val DATABASE = "DATABASE".asInstanceOf[DataSourceType]
     val SALESFORCE = "SALESFORCE".asInstanceOf[DataSourceType]
-    val ONEDRIVE   = "ONEDRIVE".asInstanceOf[DataSourceType]
+    val ONEDRIVE = "ONEDRIVE".asInstanceOf[DataSourceType]
     val SERVICENOW = "SERVICENOW".asInstanceOf[DataSourceType]
 
     val values = js.Object.freeze(js.Array(S3, SHAREPOINT, DATABASE, SALESFORCE, ONEDRIVE, SERVICENOW))
@@ -1003,7 +1003,7 @@ package kendra {
     ): DataSourceVpcConfiguration = {
       val __obj = js.Dynamic.literal(
         "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any],
-        "SubnetIds"        -> SubnetIds.asInstanceOf[js.Any]
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DataSourceVpcConfiguration]
@@ -1032,9 +1032,9 @@ package kendra {
         VpcConfiguration: js.UndefOr[DataSourceVpcConfiguration] = js.undefined
     ): DatabaseConfiguration = {
       val __obj = js.Dynamic.literal(
-        "ColumnConfiguration"     -> ColumnConfiguration.asInstanceOf[js.Any],
+        "ColumnConfiguration" -> ColumnConfiguration.asInstanceOf[js.Any],
         "ConnectionConfiguration" -> ConnectionConfiguration.asInstanceOf[js.Any],
-        "DatabaseEngineType"      -> DatabaseEngineType.asInstanceOf[js.Any]
+        "DatabaseEngineType" -> DatabaseEngineType.asInstanceOf[js.Any]
       )
 
       AclConfiguration.foreach(__v => __obj.updateDynamic("AclConfiguration")(__v.asInstanceOf[js.Any]))
@@ -1046,10 +1046,10 @@ package kendra {
   @js.native
   sealed trait DatabaseEngineType extends js.Any
   object DatabaseEngineType extends js.Object {
-    val RDS_AURORA_MYSQL      = "RDS_AURORA_MYSQL".asInstanceOf[DatabaseEngineType]
+    val RDS_AURORA_MYSQL = "RDS_AURORA_MYSQL".asInstanceOf[DatabaseEngineType]
     val RDS_AURORA_POSTGRESQL = "RDS_AURORA_POSTGRESQL".asInstanceOf[DatabaseEngineType]
-    val RDS_MYSQL             = "RDS_MYSQL".asInstanceOf[DatabaseEngineType]
-    val RDS_POSTGRESQL        = "RDS_POSTGRESQL".asInstanceOf[DatabaseEngineType]
+    val RDS_MYSQL = "RDS_MYSQL".asInstanceOf[DatabaseEngineType]
+    val RDS_POSTGRESQL = "RDS_POSTGRESQL".asInstanceOf[DatabaseEngineType]
 
     val values = js.Object.freeze(js.Array(RDS_AURORA_MYSQL, RDS_AURORA_POSTGRESQL, RDS_MYSQL, RDS_POSTGRESQL))
   }
@@ -1067,7 +1067,7 @@ package kendra {
         IndexId: IndexId
     ): DeleteDataSourceRequest = {
       val __obj = js.Dynamic.literal(
-        "Id"      -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "IndexId" -> IndexId.asInstanceOf[js.Any]
       )
 
@@ -1088,7 +1088,7 @@ package kendra {
         IndexId: IndexId
     ): DeleteFaqRequest = {
       val __obj = js.Dynamic.literal(
-        "Id"      -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "IndexId" -> IndexId.asInstanceOf[js.Any]
       )
 
@@ -1127,7 +1127,7 @@ package kendra {
         IndexId: IndexId
     ): DescribeDataSourceRequest = {
       val __obj = js.Dynamic.literal(
-        "Id"      -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "IndexId" -> IndexId.asInstanceOf[js.Any]
       )
 
@@ -1197,7 +1197,7 @@ package kendra {
         IndexId: IndexId
     ): DescribeFaqRequest = {
       val __obj = js.Dynamic.literal(
-        "Id"      -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "IndexId" -> IndexId.asInstanceOf[js.Any]
       )
 
@@ -1377,7 +1377,7 @@ package kendra {
         Value: DocumentAttributeValue
     ): DocumentAttribute = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -1438,10 +1438,10 @@ package kendra {
   @js.native
   sealed trait DocumentAttributeValueType extends js.Any
   object DocumentAttributeValueType extends js.Object {
-    val STRING_VALUE      = "STRING_VALUE".asInstanceOf[DocumentAttributeValueType]
+    val STRING_VALUE = "STRING_VALUE".asInstanceOf[DocumentAttributeValueType]
     val STRING_LIST_VALUE = "STRING_LIST_VALUE".asInstanceOf[DocumentAttributeValueType]
-    val LONG_VALUE        = "LONG_VALUE".asInstanceOf[DocumentAttributeValueType]
-    val DATE_VALUE        = "DATE_VALUE".asInstanceOf[DocumentAttributeValueType]
+    val LONG_VALUE = "LONG_VALUE".asInstanceOf[DocumentAttributeValueType]
+    val DATE_VALUE = "DATE_VALUE".asInstanceOf[DocumentAttributeValueType]
 
     val values = js.Object.freeze(js.Array(STRING_VALUE, STRING_LIST_VALUE, LONG_VALUE, DATE_VALUE))
   }
@@ -1498,7 +1498,7 @@ package kendra {
   @js.native
   sealed trait ErrorCode extends js.Any
   object ErrorCode extends js.Object {
-    val InternalError  = "InternalError".asInstanceOf[ErrorCode]
+    val InternalError = "InternalError".asInstanceOf[ErrorCode]
     val InvalidRequest = "InvalidRequest".asInstanceOf[ErrorCode]
 
     val values = js.Object.freeze(js.Array(InternalError, InvalidRequest))
@@ -1573,9 +1573,9 @@ package kendra {
   object FaqStatus extends js.Object {
     val CREATING = "CREATING".asInstanceOf[FaqStatus]
     val UPDATING = "UPDATING".asInstanceOf[FaqStatus]
-    val ACTIVE   = "ACTIVE".asInstanceOf[FaqStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[FaqStatus]
     val DELETING = "DELETING".asInstanceOf[FaqStatus]
-    val FAILED   = "FAILED".asInstanceOf[FaqStatus]
+    val FAILED = "FAILED".asInstanceOf[FaqStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, UPDATING, ACTIVE, DELETING, FAILED))
   }
@@ -1630,7 +1630,7 @@ package kendra {
     ): Highlight = {
       val __obj = js.Dynamic.literal(
         "BeginOffset" -> BeginOffset.asInstanceOf[js.Any],
-        "EndOffset"   -> EndOffset.asInstanceOf[js.Any]
+        "EndOffset" -> EndOffset.asInstanceOf[js.Any]
       )
 
       TopAnswer.foreach(__v => __obj.updateDynamic("TopAnswer")(__v.asInstanceOf[js.Any]))
@@ -1663,7 +1663,7 @@ package kendra {
     ): IndexConfigurationSummary = {
       val __obj = js.Dynamic.literal(
         "CreatedAt" -> CreatedAt.asInstanceOf[js.Any],
-        "Status"    -> Status.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any],
         "UpdatedAt" -> UpdatedAt.asInstanceOf[js.Any]
       )
 
@@ -1677,7 +1677,7 @@ package kendra {
   @js.native
   sealed trait IndexEdition extends js.Any
   object IndexEdition extends js.Object {
-    val DEVELOPER_EDITION  = "DEVELOPER_EDITION".asInstanceOf[IndexEdition]
+    val DEVELOPER_EDITION = "DEVELOPER_EDITION".asInstanceOf[IndexEdition]
     val ENTERPRISE_EDITION = "ENTERPRISE_EDITION".asInstanceOf[IndexEdition]
 
     val values = js.Object.freeze(js.Array(DEVELOPER_EDITION, ENTERPRISE_EDITION))
@@ -1699,7 +1699,7 @@ package kendra {
         TextDocumentStatistics: TextDocumentStatistics
     ): IndexStatistics = {
       val __obj = js.Dynamic.literal(
-        "FaqStatistics"          -> FaqStatistics.asInstanceOf[js.Any],
+        "FaqStatistics" -> FaqStatistics.asInstanceOf[js.Any],
         "TextDocumentStatistics" -> TextDocumentStatistics.asInstanceOf[js.Any]
       )
 
@@ -1710,11 +1710,11 @@ package kendra {
   @js.native
   sealed trait IndexStatus extends js.Any
   object IndexStatus extends js.Object {
-    val CREATING        = "CREATING".asInstanceOf[IndexStatus]
-    val ACTIVE          = "ACTIVE".asInstanceOf[IndexStatus]
-    val DELETING        = "DELETING".asInstanceOf[IndexStatus]
-    val FAILED          = "FAILED".asInstanceOf[IndexStatus]
-    val UPDATING        = "UPDATING".asInstanceOf[IndexStatus]
+    val CREATING = "CREATING".asInstanceOf[IndexStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[IndexStatus]
+    val DELETING = "DELETING".asInstanceOf[IndexStatus]
+    val FAILED = "FAILED".asInstanceOf[IndexStatus]
+    val UPDATING = "UPDATING".asInstanceOf[IndexStatus]
     val SYSTEM_UPDATING = "SYSTEM_UPDATING".asInstanceOf[IndexStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, FAILED, UPDATING, SYSTEM_UPDATING))
@@ -1741,7 +1741,7 @@ package kendra {
         StatusFilter: js.UndefOr[DataSourceSyncJobStatus] = js.undefined
     ): ListDataSourceSyncJobsRequest = {
       val __obj = js.Dynamic.literal(
-        "Id"      -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "IndexId" -> IndexId.asInstanceOf[js.Any]
       )
 
@@ -1957,8 +1957,8 @@ package kendra {
     ): OneDriveConfiguration = {
       val __obj = js.Dynamic.literal(
         "OneDriveUsers" -> OneDriveUsers.asInstanceOf[js.Any],
-        "SecretArn"     -> SecretArn.asInstanceOf[js.Any],
-        "TenantDomain"  -> TenantDomain.asInstanceOf[js.Any]
+        "SecretArn" -> SecretArn.asInstanceOf[js.Any],
+        "TenantDomain" -> TenantDomain.asInstanceOf[js.Any]
       )
 
       ExclusionPatterns.foreach(__v => __obj.updateDynamic("ExclusionPatterns")(__v.asInstanceOf[js.Any]))
@@ -1993,7 +1993,7 @@ package kendra {
   @js.native
   sealed trait Order extends js.Any
   object Order extends js.Object {
-    val ASCENDING  = "ASCENDING".asInstanceOf[Order]
+    val ASCENDING = "ASCENDING".asInstanceOf[Order]
     val DESCENDING = "DESCENDING".asInstanceOf[Order]
 
     val values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
@@ -2018,8 +2018,8 @@ package kendra {
     ): Principal = {
       val __obj = js.Dynamic.literal(
         "Access" -> Access.asInstanceOf[js.Any],
-        "Name"   -> Name.asInstanceOf[js.Any],
-        "Type"   -> Type.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[Principal]
@@ -2029,7 +2029,7 @@ package kendra {
   @js.native
   sealed trait PrincipalType extends js.Any
   object PrincipalType extends js.Object {
-    val USER  = "USER".asInstanceOf[PrincipalType]
+    val USER = "USER".asInstanceOf[PrincipalType]
     val GROUP = "GROUP".asInstanceOf[PrincipalType]
 
     val values = js.Object.freeze(js.Array(USER, GROUP))
@@ -2060,7 +2060,7 @@ package kendra {
         RequestedDocumentAttributes: js.UndefOr[DocumentAttributeKeyList] = js.undefined
     ): QueryRequest = {
       val __obj = js.Dynamic.literal(
-        "IndexId"   -> IndexId.asInstanceOf[js.Any],
+        "IndexId" -> IndexId.asInstanceOf[js.Any],
         "QueryText" -> QueryText.asInstanceOf[js.Any]
       )
 
@@ -2145,9 +2145,9 @@ package kendra {
   @js.native
   sealed trait QueryResultType extends js.Any
   object QueryResultType extends js.Object {
-    val DOCUMENT        = "DOCUMENT".asInstanceOf[QueryResultType]
+    val DOCUMENT = "DOCUMENT".asInstanceOf[QueryResultType]
     val QUESTION_ANSWER = "QUESTION_ANSWER".asInstanceOf[QueryResultType]
-    val ANSWER          = "ANSWER".asInstanceOf[QueryResultType]
+    val ANSWER = "ANSWER".asInstanceOf[QueryResultType]
 
     val values = js.Object.freeze(js.Array(DOCUMENT, QUESTION_ANSWER, ANSWER))
   }
@@ -2156,7 +2156,7 @@ package kendra {
   sealed trait ReadAccessType extends js.Any
   object ReadAccessType extends js.Object {
     val ALLOW = "ALLOW".asInstanceOf[ReadAccessType]
-    val DENY  = "DENY".asInstanceOf[ReadAccessType]
+    val DENY = "DENY".asInstanceOf[ReadAccessType]
 
     val values = js.Object.freeze(js.Array(ALLOW, DENY))
   }
@@ -2209,7 +2209,7 @@ package kendra {
     ): RelevanceFeedback = {
       val __obj = js.Dynamic.literal(
         "RelevanceValue" -> RelevanceValue.asInstanceOf[js.Any],
-        "ResultId"       -> ResultId.asInstanceOf[js.Any]
+        "ResultId" -> ResultId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RelevanceFeedback]
@@ -2219,7 +2219,7 @@ package kendra {
   @js.native
   sealed trait RelevanceType extends js.Any
   object RelevanceType extends js.Object {
-    val RELEVANT     = "RELEVANT".asInstanceOf[RelevanceType]
+    val RELEVANT = "RELEVANT".asInstanceOf[RelevanceType]
     val NOT_RELEVANT = "NOT_RELEVANT".asInstanceOf[RelevanceType]
 
     val values = js.Object.freeze(js.Array(RELEVANT, NOT_RELEVANT))
@@ -2279,7 +2279,7 @@ package kendra {
     ): S3Path = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
+        "Key" -> Key.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[S3Path]
@@ -2319,7 +2319,7 @@ package kendra {
   @js.native
   sealed trait SalesforceChatterFeedIncludeFilterType extends js.Any
   object SalesforceChatterFeedIncludeFilterType extends js.Object {
-    val ACTIVE_USER   = "ACTIVE_USER".asInstanceOf[SalesforceChatterFeedIncludeFilterType]
+    val ACTIVE_USER = "ACTIVE_USER".asInstanceOf[SalesforceChatterFeedIncludeFilterType]
     val STANDARD_USER = "STANDARD_USER".asInstanceOf[SalesforceChatterFeedIncludeFilterType]
 
     val values = js.Object.freeze(js.Array(ACTIVE_USER, STANDARD_USER))
@@ -2402,7 +2402,7 @@ package kendra {
     ): SalesforceCustomKnowledgeArticleTypeConfiguration = {
       val __obj = js.Dynamic.literal(
         "DocumentDataFieldName" -> DocumentDataFieldName.asInstanceOf[js.Any],
-        "Name"                  -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       DocumentTitleFieldName.foreach(__v => __obj.updateDynamic("DocumentTitleFieldName")(__v.asInstanceOf[js.Any]))
@@ -2447,9 +2447,9 @@ package kendra {
   @js.native
   sealed trait SalesforceKnowledgeArticleState extends js.Any
   object SalesforceKnowledgeArticleState extends js.Object {
-    val DRAFT     = "DRAFT".asInstanceOf[SalesforceKnowledgeArticleState]
+    val DRAFT = "DRAFT".asInstanceOf[SalesforceKnowledgeArticleState]
     val PUBLISHED = "PUBLISHED".asInstanceOf[SalesforceKnowledgeArticleState]
-    val ARCHIVED  = "ARCHIVED".asInstanceOf[SalesforceKnowledgeArticleState]
+    val ARCHIVED = "ARCHIVED".asInstanceOf[SalesforceKnowledgeArticleState]
 
     val values = js.Object.freeze(js.Array(DRAFT, PUBLISHED, ARCHIVED))
   }
@@ -2524,7 +2524,7 @@ package kendra {
     ): SalesforceStandardObjectConfiguration = {
       val __obj = js.Dynamic.literal(
         "DocumentDataFieldName" -> DocumentDataFieldName.asInstanceOf[js.Any],
-        "Name"                  -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       DocumentTitleFieldName.foreach(__v => __obj.updateDynamic("DocumentTitleFieldName")(__v.asInstanceOf[js.Any]))
@@ -2536,23 +2536,23 @@ package kendra {
   @js.native
   sealed trait SalesforceStandardObjectName extends js.Any
   object SalesforceStandardObjectName extends js.Object {
-    val ACCOUNT     = "ACCOUNT".asInstanceOf[SalesforceStandardObjectName]
-    val CAMPAIGN    = "CAMPAIGN".asInstanceOf[SalesforceStandardObjectName]
-    val CASE        = "CASE".asInstanceOf[SalesforceStandardObjectName]
-    val CONTACT     = "CONTACT".asInstanceOf[SalesforceStandardObjectName]
-    val CONTRACT    = "CONTRACT".asInstanceOf[SalesforceStandardObjectName]
-    val DOCUMENT    = "DOCUMENT".asInstanceOf[SalesforceStandardObjectName]
-    val GROUP       = "GROUP".asInstanceOf[SalesforceStandardObjectName]
-    val IDEA        = "IDEA".asInstanceOf[SalesforceStandardObjectName]
-    val LEAD        = "LEAD".asInstanceOf[SalesforceStandardObjectName]
+    val ACCOUNT = "ACCOUNT".asInstanceOf[SalesforceStandardObjectName]
+    val CAMPAIGN = "CAMPAIGN".asInstanceOf[SalesforceStandardObjectName]
+    val CASE = "CASE".asInstanceOf[SalesforceStandardObjectName]
+    val CONTACT = "CONTACT".asInstanceOf[SalesforceStandardObjectName]
+    val CONTRACT = "CONTRACT".asInstanceOf[SalesforceStandardObjectName]
+    val DOCUMENT = "DOCUMENT".asInstanceOf[SalesforceStandardObjectName]
+    val GROUP = "GROUP".asInstanceOf[SalesforceStandardObjectName]
+    val IDEA = "IDEA".asInstanceOf[SalesforceStandardObjectName]
+    val LEAD = "LEAD".asInstanceOf[SalesforceStandardObjectName]
     val OPPORTUNITY = "OPPORTUNITY".asInstanceOf[SalesforceStandardObjectName]
-    val PARTNER     = "PARTNER".asInstanceOf[SalesforceStandardObjectName]
-    val PRICEBOOK   = "PRICEBOOK".asInstanceOf[SalesforceStandardObjectName]
-    val PRODUCT     = "PRODUCT".asInstanceOf[SalesforceStandardObjectName]
-    val PROFILE     = "PROFILE".asInstanceOf[SalesforceStandardObjectName]
-    val SOLUTION    = "SOLUTION".asInstanceOf[SalesforceStandardObjectName]
-    val TASK        = "TASK".asInstanceOf[SalesforceStandardObjectName]
-    val USER        = "USER".asInstanceOf[SalesforceStandardObjectName]
+    val PARTNER = "PARTNER".asInstanceOf[SalesforceStandardObjectName]
+    val PRICEBOOK = "PRICEBOOK".asInstanceOf[SalesforceStandardObjectName]
+    val PRODUCT = "PRODUCT".asInstanceOf[SalesforceStandardObjectName]
+    val PROFILE = "PROFILE".asInstanceOf[SalesforceStandardObjectName]
+    val SOLUTION = "SOLUTION".asInstanceOf[SalesforceStandardObjectName]
+    val TASK = "TASK".asInstanceOf[SalesforceStandardObjectName]
+    val USER = "USER".asInstanceOf[SalesforceStandardObjectName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2652,8 +2652,8 @@ package kendra {
         ServiceCatalogConfiguration: js.UndefOr[ServiceNowServiceCatalogConfiguration] = js.undefined
     ): ServiceNowConfiguration = {
       val __obj = js.Dynamic.literal(
-        "HostUrl"                -> HostUrl.asInstanceOf[js.Any],
-        "SecretArn"              -> SecretArn.asInstanceOf[js.Any],
+        "HostUrl" -> HostUrl.asInstanceOf[js.Any],
+        "SecretArn" -> SecretArn.asInstanceOf[js.Any],
         "ServiceNowBuildVersion" -> ServiceNowBuildVersion.asInstanceOf[js.Any]
       )
 
@@ -2779,9 +2779,9 @@ package kendra {
         VpcConfiguration: js.UndefOr[DataSourceVpcConfiguration] = js.undefined
     ): SharePointConfiguration = {
       val __obj = js.Dynamic.literal(
-        "SecretArn"         -> SecretArn.asInstanceOf[js.Any],
+        "SecretArn" -> SecretArn.asInstanceOf[js.Any],
         "SharePointVersion" -> SharePointVersion.asInstanceOf[js.Any],
-        "Urls"              -> Urls.asInstanceOf[js.Any]
+        "Urls" -> Urls.asInstanceOf[js.Any]
       )
 
       CrawlAttachments.foreach(__v => __obj.updateDynamic("CrawlAttachments")(__v.asInstanceOf[js.Any]))
@@ -2816,7 +2816,7 @@ package kendra {
         IndexId: IndexId
     ): StartDataSourceSyncJobRequest = {
       val __obj = js.Dynamic.literal(
-        "Id"      -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "IndexId" -> IndexId.asInstanceOf[js.Any]
       )
 
@@ -2853,7 +2853,7 @@ package kendra {
         IndexId: IndexId
     ): StopDataSourceSyncJobRequest = {
       val __obj = js.Dynamic.literal(
-        "Id"      -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "IndexId" -> IndexId.asInstanceOf[js.Any]
       )
 
@@ -2904,7 +2904,7 @@ package kendra {
         Value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -2926,7 +2926,7 @@ package kendra {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -2962,7 +2962,7 @@ package kendra {
         IndexedTextDocumentsCount: IndexedTextDocumentsCount
     ): TextDocumentStatistics = {
       val __obj = js.Dynamic.literal(
-        "IndexedTextBytes"          -> IndexedTextBytes.asInstanceOf[js.Any],
+        "IndexedTextBytes" -> IndexedTextBytes.asInstanceOf[js.Any],
         "IndexedTextDocumentsCount" -> IndexedTextDocumentsCount.asInstanceOf[js.Any]
       )
 
@@ -3028,7 +3028,7 @@ package kendra {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -3071,7 +3071,7 @@ package kendra {
         Schedule: js.UndefOr[ScanSchedule] = js.undefined
     ): UpdateDataSourceRequest = {
       val __obj = js.Dynamic.literal(
-        "Id"      -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "IndexId" -> IndexId.asInstanceOf[js.Any]
       )
 

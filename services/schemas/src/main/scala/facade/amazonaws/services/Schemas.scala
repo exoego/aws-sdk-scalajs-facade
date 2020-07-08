@@ -7,25 +7,25 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object schemas {
-  type Body                                        = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type GetDiscoveredSchemaVersionItemInput         = String
-  type Tags                                        = js.Dictionary[__string]
-  type __integer                                   = Int
-  type __listOfDiscovererSummary                   = js.Array[DiscovererSummary]
+  type Body = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type GetDiscoveredSchemaVersionItemInput = String
+  type Tags = js.Dictionary[__string]
+  type __integer = Int
+  type __listOfDiscovererSummary = js.Array[DiscovererSummary]
   type __listOfGetDiscoveredSchemaVersionItemInput = js.Array[GetDiscoveredSchemaVersionItemInput]
-  type __listOfRegistrySummary                     = js.Array[RegistrySummary]
-  type __listOfSchemaSummary                       = js.Array[SchemaSummary]
-  type __listOfSchemaVersionSummary                = js.Array[SchemaVersionSummary]
-  type __listOfSearchSchemaSummary                 = js.Array[SearchSchemaSummary]
-  type __listOfSearchSchemaVersionSummary          = js.Array[SearchSchemaVersionSummary]
-  type __listOf__string                            = js.Array[__string]
-  type __long                                      = Double
-  type __string                                    = String
-  type __stringMin0Max256                          = String
-  type __stringMin0Max36                           = String
-  type __stringMin1Max100000                       = String
-  type __stringMin20Max1600                        = String
-  type __timestampIso8601                          = js.Date
+  type __listOfRegistrySummary = js.Array[RegistrySummary]
+  type __listOfSchemaSummary = js.Array[SchemaSummary]
+  type __listOfSchemaVersionSummary = js.Array[SchemaVersionSummary]
+  type __listOfSearchSchemaSummary = js.Array[SearchSchemaSummary]
+  type __listOfSearchSchemaVersionSummary = js.Array[SearchSchemaVersionSummary]
+  type __listOf__string = js.Array[__string]
+  type __long = Double
+  type __string = String
+  type __stringMin0Max256 = String
+  type __stringMin0Max36 = String
+  type __stringMin1Max100000 = String
+  type __stringMin20Max1600 = String
+  type __timestampIso8601 = js.Date
 
   implicit final class SchemasOps(private val service: Schemas) extends AnyVal {
 
@@ -98,44 +98,44 @@ package schemas {
   class Schemas() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createDiscoverer(params: CreateDiscovererRequest): Request[CreateDiscovererResponse]             = js.native
-    def createRegistry(params: CreateRegistryRequest): Request[CreateRegistryResponse]                   = js.native
-    def createSchema(params: CreateSchemaRequest): Request[CreateSchemaResponse]                         = js.native
-    def deleteDiscoverer(params: DeleteDiscovererRequest): Request[js.Object]                            = js.native
-    def deleteRegistry(params: DeleteRegistryRequest): Request[js.Object]                                = js.native
-    def deleteResourcePolicy(params: DeleteResourcePolicyRequest): Request[js.Object]                    = js.native
-    def deleteSchema(params: DeleteSchemaRequest): Request[js.Object]                                    = js.native
-    def deleteSchemaVersion(params: DeleteSchemaVersionRequest): Request[js.Object]                      = js.native
-    def describeCodeBinding(params: DescribeCodeBindingRequest): Request[DescribeCodeBindingResponse]    = js.native
-    def describeDiscoverer(params: DescribeDiscovererRequest): Request[DescribeDiscovererResponse]       = js.native
-    def describeRegistry(params: DescribeRegistryRequest): Request[DescribeRegistryResponse]             = js.native
-    def describeSchema(params: DescribeSchemaRequest): Request[DescribeSchemaResponse]                   = js.native
+    def createDiscoverer(params: CreateDiscovererRequest): Request[CreateDiscovererResponse] = js.native
+    def createRegistry(params: CreateRegistryRequest): Request[CreateRegistryResponse] = js.native
+    def createSchema(params: CreateSchemaRequest): Request[CreateSchemaResponse] = js.native
+    def deleteDiscoverer(params: DeleteDiscovererRequest): Request[js.Object] = js.native
+    def deleteRegistry(params: DeleteRegistryRequest): Request[js.Object] = js.native
+    def deleteResourcePolicy(params: DeleteResourcePolicyRequest): Request[js.Object] = js.native
+    def deleteSchema(params: DeleteSchemaRequest): Request[js.Object] = js.native
+    def deleteSchemaVersion(params: DeleteSchemaVersionRequest): Request[js.Object] = js.native
+    def describeCodeBinding(params: DescribeCodeBindingRequest): Request[DescribeCodeBindingResponse] = js.native
+    def describeDiscoverer(params: DescribeDiscovererRequest): Request[DescribeDiscovererResponse] = js.native
+    def describeRegistry(params: DescribeRegistryRequest): Request[DescribeRegistryResponse] = js.native
+    def describeSchema(params: DescribeSchemaRequest): Request[DescribeSchemaResponse] = js.native
     def getCodeBindingSource(params: GetCodeBindingSourceRequest): Request[GetCodeBindingSourceResponse] = js.native
-    def getDiscoveredSchema(params: GetDiscoveredSchemaRequest): Request[GetDiscoveredSchemaResponse]    = js.native
-    def getResourcePolicy(params: GetResourcePolicyRequest): Request[GetResourcePolicyResponse]          = js.native
-    def listDiscoverers(params: ListDiscoverersRequest): Request[ListDiscoverersResponse]                = js.native
-    def listRegistries(params: ListRegistriesRequest): Request[ListRegistriesResponse]                   = js.native
-    def listSchemaVersions(params: ListSchemaVersionsRequest): Request[ListSchemaVersionsResponse]       = js.native
-    def listSchemas(params: ListSchemasRequest): Request[ListSchemasResponse]                            = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]    = js.native
-    def putCodeBinding(params: PutCodeBindingRequest): Request[PutCodeBindingResponse]                   = js.native
-    def putResourcePolicy(params: PutResourcePolicyRequest): Request[PutResourcePolicyResponse]          = js.native
-    def searchSchemas(params: SearchSchemasRequest): Request[SearchSchemasResponse]                      = js.native
-    def startDiscoverer(params: StartDiscovererRequest): Request[StartDiscovererResponse]                = js.native
-    def stopDiscoverer(params: StopDiscovererRequest): Request[StopDiscovererResponse]                   = js.native
-    def tagResource(params: TagResourceRequest): Request[js.Object]                                      = js.native
-    def untagResource(params: UntagResourceRequest): Request[js.Object]                                  = js.native
-    def updateDiscoverer(params: UpdateDiscovererRequest): Request[UpdateDiscovererResponse]             = js.native
-    def updateRegistry(params: UpdateRegistryRequest): Request[UpdateRegistryResponse]                   = js.native
-    def updateSchema(params: UpdateSchemaRequest): Request[UpdateSchemaResponse]                         = js.native
+    def getDiscoveredSchema(params: GetDiscoveredSchemaRequest): Request[GetDiscoveredSchemaResponse] = js.native
+    def getResourcePolicy(params: GetResourcePolicyRequest): Request[GetResourcePolicyResponse] = js.native
+    def listDiscoverers(params: ListDiscoverersRequest): Request[ListDiscoverersResponse] = js.native
+    def listRegistries(params: ListRegistriesRequest): Request[ListRegistriesResponse] = js.native
+    def listSchemaVersions(params: ListSchemaVersionsRequest): Request[ListSchemaVersionsResponse] = js.native
+    def listSchemas(params: ListSchemasRequest): Request[ListSchemasResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def putCodeBinding(params: PutCodeBindingRequest): Request[PutCodeBindingResponse] = js.native
+    def putResourcePolicy(params: PutResourcePolicyRequest): Request[PutResourcePolicyResponse] = js.native
+    def searchSchemas(params: SearchSchemasRequest): Request[SearchSchemasResponse] = js.native
+    def startDiscoverer(params: StartDiscovererRequest): Request[StartDiscovererResponse] = js.native
+    def stopDiscoverer(params: StopDiscovererRequest): Request[StopDiscovererResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
+    def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
+    def updateDiscoverer(params: UpdateDiscovererRequest): Request[UpdateDiscovererResponse] = js.native
+    def updateRegistry(params: UpdateRegistryRequest): Request[UpdateRegistryResponse] = js.native
+    def updateSchema(params: UpdateSchemaRequest): Request[UpdateSchemaResponse] = js.native
   }
 
   @js.native
   sealed trait CodeGenerationStatus extends js.Any
   object CodeGenerationStatus extends js.Object {
     val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[CodeGenerationStatus]
-    val CREATE_COMPLETE    = "CREATE_COMPLETE".asInstanceOf[CodeGenerationStatus]
-    val CREATE_FAILED      = "CREATE_FAILED".asInstanceOf[CodeGenerationStatus]
+    val CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[CodeGenerationStatus]
+    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[CodeGenerationStatus]
 
     val values = js.Object.freeze(js.Array(CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED))
   }
@@ -267,10 +267,10 @@ package schemas {
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateSchemaRequest = {
       val __obj = js.Dynamic.literal(
-        "Content"      -> Content.asInstanceOf[js.Any],
+        "Content" -> Content.asInstanceOf[js.Any],
         "RegistryName" -> RegistryName.asInstanceOf[js.Any],
-        "SchemaName"   -> SchemaName.asInstanceOf[js.Any],
-        "Type"         -> Type.asInstanceOf[js.Any]
+        "SchemaName" -> SchemaName.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -382,7 +382,7 @@ package schemas {
     ): DeleteSchemaRequest = {
       val __obj = js.Dynamic.literal(
         "RegistryName" -> RegistryName.asInstanceOf[js.Any],
-        "SchemaName"   -> SchemaName.asInstanceOf[js.Any]
+        "SchemaName" -> SchemaName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteSchemaRequest]
@@ -404,8 +404,8 @@ package schemas {
         SchemaVersion: __string
     ): DeleteSchemaVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "RegistryName"  -> RegistryName.asInstanceOf[js.Any],
-        "SchemaName"    -> SchemaName.asInstanceOf[js.Any],
+        "RegistryName" -> RegistryName.asInstanceOf[js.Any],
+        "SchemaName" -> SchemaName.asInstanceOf[js.Any],
         "SchemaVersion" -> SchemaVersion.asInstanceOf[js.Any]
       )
 
@@ -430,9 +430,9 @@ package schemas {
         SchemaVersion: js.UndefOr[__string] = js.undefined
     ): DescribeCodeBindingRequest = {
       val __obj = js.Dynamic.literal(
-        "Language"     -> Language.asInstanceOf[js.Any],
+        "Language" -> Language.asInstanceOf[js.Any],
         "RegistryName" -> RegistryName.asInstanceOf[js.Any],
-        "SchemaName"   -> SchemaName.asInstanceOf[js.Any]
+        "SchemaName" -> SchemaName.asInstanceOf[js.Any]
       )
 
       SchemaVersion.foreach(__v => __obj.updateDynamic("SchemaVersion")(__v.asInstanceOf[js.Any]))
@@ -573,7 +573,7 @@ package schemas {
     ): DescribeSchemaRequest = {
       val __obj = js.Dynamic.literal(
         "RegistryName" -> RegistryName.asInstanceOf[js.Any],
-        "SchemaName"   -> SchemaName.asInstanceOf[js.Any]
+        "SchemaName" -> SchemaName.asInstanceOf[js.Any]
       )
 
       SchemaVersion.foreach(__v => __obj.updateDynamic("SchemaVersion")(__v.asInstanceOf[js.Any]))
@@ -675,9 +675,9 @@ package schemas {
         SchemaVersion: js.UndefOr[__string] = js.undefined
     ): GetCodeBindingSourceRequest = {
       val __obj = js.Dynamic.literal(
-        "Language"     -> Language.asInstanceOf[js.Any],
+        "Language" -> Language.asInstanceOf[js.Any],
         "RegistryName" -> RegistryName.asInstanceOf[js.Any],
-        "SchemaName"   -> SchemaName.asInstanceOf[js.Any]
+        "SchemaName" -> SchemaName.asInstanceOf[js.Any]
       )
 
       SchemaVersion.foreach(__v => __obj.updateDynamic("SchemaVersion")(__v.asInstanceOf[js.Any]))
@@ -715,7 +715,7 @@ package schemas {
     ): GetDiscoveredSchemaRequest = {
       val __obj = js.Dynamic.literal(
         "Events" -> Events.asInstanceOf[js.Any],
-        "Type"   -> Type.asInstanceOf[js.Any]
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetDiscoveredSchemaRequest]
@@ -879,7 +879,7 @@ package schemas {
     ): ListSchemaVersionsRequest = {
       val __obj = js.Dynamic.literal(
         "RegistryName" -> RegistryName.asInstanceOf[js.Any],
-        "SchemaName"   -> SchemaName.asInstanceOf[js.Any]
+        "SchemaName" -> SchemaName.asInstanceOf[js.Any]
       )
 
       Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
@@ -1004,9 +1004,9 @@ package schemas {
         SchemaVersion: js.UndefOr[__string] = js.undefined
     ): PutCodeBindingRequest = {
       val __obj = js.Dynamic.literal(
-        "Language"     -> Language.asInstanceOf[js.Any],
+        "Language" -> Language.asInstanceOf[js.Any],
         "RegistryName" -> RegistryName.asInstanceOf[js.Any],
-        "SchemaName"   -> SchemaName.asInstanceOf[js.Any]
+        "SchemaName" -> SchemaName.asInstanceOf[js.Any]
       )
 
       SchemaVersion.foreach(__v => __obj.updateDynamic("SchemaVersion")(__v.asInstanceOf[js.Any]))
@@ -1221,7 +1221,7 @@ package schemas {
         NextToken: js.UndefOr[__string] = js.undefined
     ): SearchSchemasRequest = {
       val __obj = js.Dynamic.literal(
-        "Keywords"     -> Keywords.asInstanceOf[js.Any],
+        "Keywords" -> Keywords.asInstanceOf[js.Any],
         "RegistryName" -> RegistryName.asInstanceOf[js.Any]
       )
 
@@ -1340,7 +1340,7 @@ package schemas {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -1369,7 +1369,7 @@ package schemas {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -1499,7 +1499,7 @@ package schemas {
     ): UpdateSchemaRequest = {
       val __obj = js.Dynamic.literal(
         "RegistryName" -> RegistryName.asInstanceOf[js.Any],
-        "SchemaName"   -> SchemaName.asInstanceOf[js.Any]
+        "SchemaName" -> SchemaName.asInstanceOf[js.Any]
       )
 
       ClientTokenId.foreach(__v => __obj.updateDynamic("ClientTokenId")(__v.asInstanceOf[js.Any]))

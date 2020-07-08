@@ -7,58 +7,58 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object apigatewayv2 {
-  type Arn                                    = String
-  type AuthorizationScopes                    = js.Array[StringWithLengthBetween1And64]
-  type CorsHeaderList                         = js.Array[__string]
-  type CorsMethodList                         = js.Array[StringWithLengthBetween1And64]
-  type CorsOriginList                         = js.Array[__string]
-  type DomainNameConfigurations               = js.Array[DomainNameConfiguration]
-  type ExportedApi                            = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type Id                                     = String
-  type IdentitySourceList                     = js.Array[__string]
-  type IntegerWithLengthBetween0And3600       = Int
-  type IntegerWithLengthBetween50And30000     = Int
+  type Arn = String
+  type AuthorizationScopes = js.Array[StringWithLengthBetween1And64]
+  type CorsHeaderList = js.Array[__string]
+  type CorsMethodList = js.Array[StringWithLengthBetween1And64]
+  type CorsOriginList = js.Array[__string]
+  type DomainNameConfigurations = js.Array[DomainNameConfiguration]
+  type ExportedApi = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type Id = String
+  type IdentitySourceList = js.Array[__string]
+  type IntegerWithLengthBetween0And3600 = Int
+  type IntegerWithLengthBetween50And30000 = Int
   type IntegerWithLengthBetweenMinus1And86400 = Int
-  type IntegrationParameters                  = js.Dictionary[StringWithLengthBetween1And512]
-  type NextToken                              = String
-  type RouteModels                            = js.Dictionary[StringWithLengthBetween1And128]
-  type RouteParameters                        = js.Dictionary[ParameterConstraints]
-  type RouteSettingsMap                       = js.Dictionary[RouteSettings]
-  type SecurityGroupIdList                    = js.Array[__string]
-  type SelectionExpression                    = String
-  type SelectionKey                           = String
-  type StageVariablesMap                      = js.Dictionary[StringWithLengthBetween0And2048]
-  type StringWithLengthBetween0And1024        = String
-  type StringWithLengthBetween0And2048        = String
-  type StringWithLengthBetween0And32K         = String
-  type StringWithLengthBetween1And1024        = String
-  type StringWithLengthBetween1And128         = String
-  type StringWithLengthBetween1And1600        = String
-  type StringWithLengthBetween1And256         = String
-  type StringWithLengthBetween1And512         = String
-  type StringWithLengthBetween1And64          = String
-  type SubnetIdList                           = js.Array[__string]
-  type Tags                                   = js.Dictionary[StringWithLengthBetween1And1600]
-  type TemplateMap                            = js.Dictionary[StringWithLengthBetween0And32K]
-  type UriWithLengthBetween1And2048           = String
-  type __boolean                              = Boolean
-  type __double                               = Double
-  type __integer                              = Int
-  type __listOfApi                            = js.Array[Api]
-  type __listOfApiMapping                     = js.Array[ApiMapping]
-  type __listOfAuthorizer                     = js.Array[Authorizer]
-  type __listOfDeployment                     = js.Array[Deployment]
-  type __listOfDomainName                     = js.Array[DomainName]
-  type __listOfIntegration                    = js.Array[Integration]
-  type __listOfIntegrationResponse            = js.Array[IntegrationResponse]
-  type __listOfModel                          = js.Array[Model]
-  type __listOfRoute                          = js.Array[Route]
-  type __listOfRouteResponse                  = js.Array[RouteResponse]
-  type __listOfStage                          = js.Array[Stage]
-  type __listOfVpcLink                        = js.Array[VpcLink]
-  type __listOf__string                       = js.Array[__string]
-  type __string                               = String
-  type __timestampIso8601                     = js.Date
+  type IntegrationParameters = js.Dictionary[StringWithLengthBetween1And512]
+  type NextToken = String
+  type RouteModels = js.Dictionary[StringWithLengthBetween1And128]
+  type RouteParameters = js.Dictionary[ParameterConstraints]
+  type RouteSettingsMap = js.Dictionary[RouteSettings]
+  type SecurityGroupIdList = js.Array[__string]
+  type SelectionExpression = String
+  type SelectionKey = String
+  type StageVariablesMap = js.Dictionary[StringWithLengthBetween0And2048]
+  type StringWithLengthBetween0And1024 = String
+  type StringWithLengthBetween0And2048 = String
+  type StringWithLengthBetween0And32K = String
+  type StringWithLengthBetween1And1024 = String
+  type StringWithLengthBetween1And128 = String
+  type StringWithLengthBetween1And1600 = String
+  type StringWithLengthBetween1And256 = String
+  type StringWithLengthBetween1And512 = String
+  type StringWithLengthBetween1And64 = String
+  type SubnetIdList = js.Array[__string]
+  type Tags = js.Dictionary[StringWithLengthBetween1And1600]
+  type TemplateMap = js.Dictionary[StringWithLengthBetween0And32K]
+  type UriWithLengthBetween1And2048 = String
+  type __boolean = Boolean
+  type __double = Double
+  type __integer = Int
+  type __listOfApi = js.Array[Api]
+  type __listOfApiMapping = js.Array[ApiMapping]
+  type __listOfAuthorizer = js.Array[Authorizer]
+  type __listOfDeployment = js.Array[Deployment]
+  type __listOfDomainName = js.Array[DomainName]
+  type __listOfIntegration = js.Array[Integration]
+  type __listOfIntegrationResponse = js.Array[IntegrationResponse]
+  type __listOfModel = js.Array[Model]
+  type __listOfRoute = js.Array[Route]
+  type __listOfRouteResponse = js.Array[RouteResponse]
+  type __listOfStage = js.Array[Stage]
+  type __listOfVpcLink = js.Array[VpcLink]
+  type __listOf__string = js.Array[__string]
+  type __string = String
+  type __timestampIso8601 = js.Date
 
   implicit final class ApiGatewayV2Ops(private val service: ApiGatewayV2) extends AnyVal {
 
@@ -216,83 +216,83 @@ package apigatewayv2 {
   class ApiGatewayV2() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createApi(params: CreateApiRequest): Request[CreateApiResponse]                       = js.native
-    def createApiMapping(params: CreateApiMappingRequest): Request[CreateApiMappingResponse]  = js.native
-    def createAuthorizer(params: CreateAuthorizerRequest): Request[CreateAuthorizerResponse]  = js.native
-    def createDeployment(params: CreateDeploymentRequest): Request[CreateDeploymentResponse]  = js.native
-    def createDomainName(params: CreateDomainNameRequest): Request[CreateDomainNameResponse]  = js.native
+    def createApi(params: CreateApiRequest): Request[CreateApiResponse] = js.native
+    def createApiMapping(params: CreateApiMappingRequest): Request[CreateApiMappingResponse] = js.native
+    def createAuthorizer(params: CreateAuthorizerRequest): Request[CreateAuthorizerResponse] = js.native
+    def createDeployment(params: CreateDeploymentRequest): Request[CreateDeploymentResponse] = js.native
+    def createDomainName(params: CreateDomainNameRequest): Request[CreateDomainNameResponse] = js.native
     def createIntegration(params: CreateIntegrationRequest): Request[CreateIntegrationResult] = js.native
     def createIntegrationResponse(
         params: CreateIntegrationResponseRequest
-    ): Request[CreateIntegrationResponseResponse]                                                     = js.native
-    def createModel(params: CreateModelRequest): Request[CreateModelResponse]                         = js.native
-    def createRoute(params: CreateRouteRequest): Request[CreateRouteResult]                           = js.native
+    ): Request[CreateIntegrationResponseResponse] = js.native
+    def createModel(params: CreateModelRequest): Request[CreateModelResponse] = js.native
+    def createRoute(params: CreateRouteRequest): Request[CreateRouteResult] = js.native
     def createRouteResponse(params: CreateRouteResponseRequest): Request[CreateRouteResponseResponse] = js.native
-    def createStage(params: CreateStageRequest): Request[CreateStageResponse]                         = js.native
-    def createVpcLink(params: CreateVpcLinkRequest): Request[CreateVpcLinkResponse]                   = js.native
-    def deleteAccessLogSettings(params: DeleteAccessLogSettingsRequest): Request[js.Object]           = js.native
-    def deleteApi(params: DeleteApiRequest): Request[js.Object]                                       = js.native
-    def deleteApiMapping(params: DeleteApiMappingRequest): Request[js.Object]                         = js.native
-    def deleteAuthorizer(params: DeleteAuthorizerRequest): Request[js.Object]                         = js.native
-    def deleteCorsConfiguration(params: DeleteCorsConfigurationRequest): Request[js.Object]           = js.native
-    def deleteDeployment(params: DeleteDeploymentRequest): Request[js.Object]                         = js.native
-    def deleteDomainName(params: DeleteDomainNameRequest): Request[js.Object]                         = js.native
-    def deleteIntegration(params: DeleteIntegrationRequest): Request[js.Object]                       = js.native
-    def deleteIntegrationResponse(params: DeleteIntegrationResponseRequest): Request[js.Object]       = js.native
-    def deleteModel(params: DeleteModelRequest): Request[js.Object]                                   = js.native
-    def deleteRoute(params: DeleteRouteRequest): Request[js.Object]                                   = js.native
-    def deleteRouteRequestParameter(params: DeleteRouteRequestParameterRequest): Request[js.Object]   = js.native
-    def deleteRouteResponse(params: DeleteRouteResponseRequest): Request[js.Object]                   = js.native
-    def deleteRouteSettings(params: DeleteRouteSettingsRequest): Request[js.Object]                   = js.native
-    def deleteStage(params: DeleteStageRequest): Request[js.Object]                                   = js.native
-    def deleteVpcLink(params: DeleteVpcLinkRequest): Request[DeleteVpcLinkResponse]                   = js.native
-    def exportApi(params: ExportApiRequest): Request[ExportApiResponse]                               = js.native
-    def getApi(params: GetApiRequest): Request[GetApiResponse]                                        = js.native
-    def getApiMapping(params: GetApiMappingRequest): Request[GetApiMappingResponse]                   = js.native
-    def getApiMappings(params: GetApiMappingsRequest): Request[GetApiMappingsResponse]                = js.native
-    def getApis(params: GetApisRequest): Request[GetApisResponse]                                     = js.native
-    def getAuthorizer(params: GetAuthorizerRequest): Request[GetAuthorizerResponse]                   = js.native
-    def getAuthorizers(params: GetAuthorizersRequest): Request[GetAuthorizersResponse]                = js.native
-    def getDeployment(params: GetDeploymentRequest): Request[GetDeploymentResponse]                   = js.native
-    def getDeployments(params: GetDeploymentsRequest): Request[GetDeploymentsResponse]                = js.native
-    def getDomainName(params: GetDomainNameRequest): Request[GetDomainNameResponse]                   = js.native
-    def getDomainNames(params: GetDomainNamesRequest): Request[GetDomainNamesResponse]                = js.native
-    def getIntegration(params: GetIntegrationRequest): Request[GetIntegrationResult]                  = js.native
+    def createStage(params: CreateStageRequest): Request[CreateStageResponse] = js.native
+    def createVpcLink(params: CreateVpcLinkRequest): Request[CreateVpcLinkResponse] = js.native
+    def deleteAccessLogSettings(params: DeleteAccessLogSettingsRequest): Request[js.Object] = js.native
+    def deleteApi(params: DeleteApiRequest): Request[js.Object] = js.native
+    def deleteApiMapping(params: DeleteApiMappingRequest): Request[js.Object] = js.native
+    def deleteAuthorizer(params: DeleteAuthorizerRequest): Request[js.Object] = js.native
+    def deleteCorsConfiguration(params: DeleteCorsConfigurationRequest): Request[js.Object] = js.native
+    def deleteDeployment(params: DeleteDeploymentRequest): Request[js.Object] = js.native
+    def deleteDomainName(params: DeleteDomainNameRequest): Request[js.Object] = js.native
+    def deleteIntegration(params: DeleteIntegrationRequest): Request[js.Object] = js.native
+    def deleteIntegrationResponse(params: DeleteIntegrationResponseRequest): Request[js.Object] = js.native
+    def deleteModel(params: DeleteModelRequest): Request[js.Object] = js.native
+    def deleteRoute(params: DeleteRouteRequest): Request[js.Object] = js.native
+    def deleteRouteRequestParameter(params: DeleteRouteRequestParameterRequest): Request[js.Object] = js.native
+    def deleteRouteResponse(params: DeleteRouteResponseRequest): Request[js.Object] = js.native
+    def deleteRouteSettings(params: DeleteRouteSettingsRequest): Request[js.Object] = js.native
+    def deleteStage(params: DeleteStageRequest): Request[js.Object] = js.native
+    def deleteVpcLink(params: DeleteVpcLinkRequest): Request[DeleteVpcLinkResponse] = js.native
+    def exportApi(params: ExportApiRequest): Request[ExportApiResponse] = js.native
+    def getApi(params: GetApiRequest): Request[GetApiResponse] = js.native
+    def getApiMapping(params: GetApiMappingRequest): Request[GetApiMappingResponse] = js.native
+    def getApiMappings(params: GetApiMappingsRequest): Request[GetApiMappingsResponse] = js.native
+    def getApis(params: GetApisRequest): Request[GetApisResponse] = js.native
+    def getAuthorizer(params: GetAuthorizerRequest): Request[GetAuthorizerResponse] = js.native
+    def getAuthorizers(params: GetAuthorizersRequest): Request[GetAuthorizersResponse] = js.native
+    def getDeployment(params: GetDeploymentRequest): Request[GetDeploymentResponse] = js.native
+    def getDeployments(params: GetDeploymentsRequest): Request[GetDeploymentsResponse] = js.native
+    def getDomainName(params: GetDomainNameRequest): Request[GetDomainNameResponse] = js.native
+    def getDomainNames(params: GetDomainNamesRequest): Request[GetDomainNamesResponse] = js.native
+    def getIntegration(params: GetIntegrationRequest): Request[GetIntegrationResult] = js.native
     def getIntegrationResponse(params: GetIntegrationResponseRequest): Request[GetIntegrationResponseResponse] =
       js.native
     def getIntegrationResponses(params: GetIntegrationResponsesRequest): Request[GetIntegrationResponsesResponse] =
       js.native
-    def getIntegrations(params: GetIntegrationsRequest): Request[GetIntegrationsResponse]       = js.native
-    def getModel(params: GetModelRequest): Request[GetModelResponse]                            = js.native
-    def getModelTemplate(params: GetModelTemplateRequest): Request[GetModelTemplateResponse]    = js.native
-    def getModels(params: GetModelsRequest): Request[GetModelsResponse]                         = js.native
-    def getRoute(params: GetRouteRequest): Request[GetRouteResult]                              = js.native
-    def getRouteResponse(params: GetRouteResponseRequest): Request[GetRouteResponseResponse]    = js.native
+    def getIntegrations(params: GetIntegrationsRequest): Request[GetIntegrationsResponse] = js.native
+    def getModel(params: GetModelRequest): Request[GetModelResponse] = js.native
+    def getModelTemplate(params: GetModelTemplateRequest): Request[GetModelTemplateResponse] = js.native
+    def getModels(params: GetModelsRequest): Request[GetModelsResponse] = js.native
+    def getRoute(params: GetRouteRequest): Request[GetRouteResult] = js.native
+    def getRouteResponse(params: GetRouteResponseRequest): Request[GetRouteResponseResponse] = js.native
     def getRouteResponses(params: GetRouteResponsesRequest): Request[GetRouteResponsesResponse] = js.native
-    def getRoutes(params: GetRoutesRequest): Request[GetRoutesResponse]                         = js.native
-    def getStage(params: GetStageRequest): Request[GetStageResponse]                            = js.native
-    def getStages(params: GetStagesRequest): Request[GetStagesResponse]                         = js.native
-    def getTags(params: GetTagsRequest): Request[GetTagsResponse]                               = js.native
-    def getVpcLink(params: GetVpcLinkRequest): Request[GetVpcLinkResponse]                      = js.native
-    def getVpcLinks(params: GetVpcLinksRequest): Request[GetVpcLinksResponse]                   = js.native
-    def importApi(params: ImportApiRequest): Request[ImportApiResponse]                         = js.native
-    def reimportApi(params: ReimportApiRequest): Request[ReimportApiResponse]                   = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                   = js.native
-    def untagResource(params: UntagResourceRequest): Request[js.Object]                         = js.native
-    def updateApi(params: UpdateApiRequest): Request[UpdateApiResponse]                         = js.native
-    def updateApiMapping(params: UpdateApiMappingRequest): Request[UpdateApiMappingResponse]    = js.native
-    def updateAuthorizer(params: UpdateAuthorizerRequest): Request[UpdateAuthorizerResponse]    = js.native
-    def updateDeployment(params: UpdateDeploymentRequest): Request[UpdateDeploymentResponse]    = js.native
-    def updateDomainName(params: UpdateDomainNameRequest): Request[UpdateDomainNameResponse]    = js.native
-    def updateIntegration(params: UpdateIntegrationRequest): Request[UpdateIntegrationResult]   = js.native
+    def getRoutes(params: GetRoutesRequest): Request[GetRoutesResponse] = js.native
+    def getStage(params: GetStageRequest): Request[GetStageResponse] = js.native
+    def getStages(params: GetStagesRequest): Request[GetStagesResponse] = js.native
+    def getTags(params: GetTagsRequest): Request[GetTagsResponse] = js.native
+    def getVpcLink(params: GetVpcLinkRequest): Request[GetVpcLinkResponse] = js.native
+    def getVpcLinks(params: GetVpcLinksRequest): Request[GetVpcLinksResponse] = js.native
+    def importApi(params: ImportApiRequest): Request[ImportApiResponse] = js.native
+    def reimportApi(params: ReimportApiRequest): Request[ReimportApiResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
+    def updateApi(params: UpdateApiRequest): Request[UpdateApiResponse] = js.native
+    def updateApiMapping(params: UpdateApiMappingRequest): Request[UpdateApiMappingResponse] = js.native
+    def updateAuthorizer(params: UpdateAuthorizerRequest): Request[UpdateAuthorizerResponse] = js.native
+    def updateDeployment(params: UpdateDeploymentRequest): Request[UpdateDeploymentResponse] = js.native
+    def updateDomainName(params: UpdateDomainNameRequest): Request[UpdateDomainNameResponse] = js.native
+    def updateIntegration(params: UpdateIntegrationRequest): Request[UpdateIntegrationResult] = js.native
     def updateIntegrationResponse(
         params: UpdateIntegrationResponseRequest
-    ): Request[UpdateIntegrationResponseResponse]                                                     = js.native
-    def updateModel(params: UpdateModelRequest): Request[UpdateModelResponse]                         = js.native
-    def updateRoute(params: UpdateRouteRequest): Request[UpdateRouteResult]                           = js.native
+    ): Request[UpdateIntegrationResponseResponse] = js.native
+    def updateModel(params: UpdateModelRequest): Request[UpdateModelResponse] = js.native
+    def updateRoute(params: UpdateRouteRequest): Request[UpdateRouteResult] = js.native
     def updateRouteResponse(params: UpdateRouteResponseRequest): Request[UpdateRouteResponseResponse] = js.native
-    def updateStage(params: UpdateStageRequest): Request[UpdateStageResponse]                         = js.native
-    def updateVpcLink(params: UpdateVpcLinkRequest): Request[UpdateVpcLinkResponse]                   = js.native
+    def updateStage(params: UpdateStageRequest): Request[UpdateStageResponse] = js.native
+    def updateVpcLink(params: UpdateVpcLinkRequest): Request[UpdateVpcLinkResponse] = js.native
   }
 
   /**
@@ -357,8 +357,8 @@ package apigatewayv2 {
         Warnings: js.UndefOr[__listOf__string] = js.undefined
     ): Api = {
       val __obj = js.Dynamic.literal(
-        "Name"                     -> Name.asInstanceOf[js.Any],
-        "ProtocolType"             -> ProtocolType.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "ProtocolType" -> ProtocolType.asInstanceOf[js.Any],
         "RouteSelectionExpression" -> RouteSelectionExpression.asInstanceOf[js.Any]
       )
 
@@ -415,10 +415,10 @@ package apigatewayv2 {
   @js.native
   sealed trait AuthorizationType extends js.Any
   object AuthorizationType extends js.Object {
-    val NONE    = "NONE".asInstanceOf[AuthorizationType]
+    val NONE = "NONE".asInstanceOf[AuthorizationType]
     val AWS_IAM = "AWS_IAM".asInstanceOf[AuthorizationType]
-    val CUSTOM  = "CUSTOM".asInstanceOf[AuthorizationType]
-    val JWT     = "JWT".asInstanceOf[AuthorizationType]
+    val CUSTOM = "CUSTOM".asInstanceOf[AuthorizationType]
+    val JWT = "JWT".asInstanceOf[AuthorizationType]
 
     val values = js.Object.freeze(js.Array(NONE, AWS_IAM, CUSTOM, JWT))
   }
@@ -479,7 +479,7 @@ package apigatewayv2 {
   sealed trait AuthorizerType extends js.Any
   object AuthorizerType extends js.Object {
     val REQUEST = "REQUEST".asInstanceOf[AuthorizerType]
-    val JWT     = "JWT".asInstanceOf[AuthorizerType]
+    val JWT = "JWT".asInstanceOf[AuthorizerType]
 
     val values = js.Object.freeze(js.Array(REQUEST, JWT))
   }
@@ -503,7 +503,7 @@ package apigatewayv2 {
   sealed trait ContentHandlingStrategy extends js.Any
   object ContentHandlingStrategy extends js.Object {
     val CONVERT_TO_BINARY = "CONVERT_TO_BINARY".asInstanceOf[ContentHandlingStrategy]
-    val CONVERT_TO_TEXT   = "CONVERT_TO_TEXT".asInstanceOf[ContentHandlingStrategy]
+    val CONVERT_TO_TEXT = "CONVERT_TO_TEXT".asInstanceOf[ContentHandlingStrategy]
 
     val values = js.Object.freeze(js.Array(CONVERT_TO_BINARY, CONVERT_TO_TEXT))
   }
@@ -562,9 +562,9 @@ package apigatewayv2 {
         ApiMappingKey: js.UndefOr[SelectionKey] = js.undefined
     ): CreateApiMappingRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"      -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "DomainName" -> DomainName.asInstanceOf[js.Any],
-        "Stage"      -> Stage.asInstanceOf[js.Any]
+        "Stage" -> Stage.asInstanceOf[js.Any]
       )
 
       ApiMappingKey.foreach(__v => __obj.updateDynamic("ApiMappingKey")(__v.asInstanceOf[js.Any]))
@@ -633,7 +633,7 @@ package apigatewayv2 {
         Version: js.UndefOr[StringWithLengthBetween1And64] = js.undefined
     ): CreateApiRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"         -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "ProtocolType" -> ProtocolType.asInstanceOf[js.Any]
       )
 
@@ -740,10 +740,10 @@ package apigatewayv2 {
         JwtConfiguration: js.UndefOr[JWTConfiguration] = js.undefined
     ): CreateAuthorizerRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"          -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "AuthorizerType" -> AuthorizerType.asInstanceOf[js.Any],
         "IdentitySource" -> IdentitySource.asInstanceOf[js.Any],
-        "Name"           -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       AuthorizerCredentialsArn.foreach(__v => __obj.updateDynamic("AuthorizerCredentialsArn")(__v.asInstanceOf[js.Any]))
@@ -959,7 +959,7 @@ package apigatewayv2 {
         TlsConfig: js.UndefOr[TlsConfigInput] = js.undefined
     ): CreateIntegrationRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"           -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "IntegrationType" -> IntegrationType.asInstanceOf[js.Any]
       )
 
@@ -1009,8 +1009,8 @@ package apigatewayv2 {
         TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined
     ): CreateIntegrationResponseRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"                  -> ApiId.asInstanceOf[js.Any],
-        "IntegrationId"          -> IntegrationId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
+        "IntegrationId" -> IntegrationId.asInstanceOf[js.Any],
         "IntegrationResponseKey" -> IntegrationResponseKey.asInstanceOf[js.Any]
       )
 
@@ -1150,8 +1150,8 @@ package apigatewayv2 {
         Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined
     ): CreateModelRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"  -> ApiId.asInstanceOf[js.Any],
-        "Name"   -> Name.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Schema" -> Schema.asInstanceOf[js.Any]
       )
 
@@ -1225,7 +1225,7 @@ package apigatewayv2 {
         Target: js.UndefOr[StringWithLengthBetween1And128] = js.undefined
     ): CreateRouteRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"    -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "RouteKey" -> RouteKey.asInstanceOf[js.Any]
       )
 
@@ -1269,8 +1269,8 @@ package apigatewayv2 {
         ResponseParameters: js.UndefOr[RouteParameters] = js.undefined
     ): CreateRouteResponseRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"            -> ApiId.asInstanceOf[js.Any],
-        "RouteId"          -> RouteId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
+        "RouteId" -> RouteId.asInstanceOf[js.Any],
         "RouteResponseKey" -> RouteResponseKey.asInstanceOf[js.Any]
       )
 
@@ -1397,7 +1397,7 @@ package apigatewayv2 {
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateStageRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"     -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "StageName" -> StageName.asInstanceOf[js.Any]
       )
 
@@ -1491,7 +1491,7 @@ package apigatewayv2 {
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateVpcLinkRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"      -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "SubnetIds" -> SubnetIds.asInstanceOf[js.Any]
       )
 
@@ -1554,7 +1554,7 @@ package apigatewayv2 {
         StageName: __string
     ): DeleteAccessLogSettingsRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"     -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "StageName" -> StageName.asInstanceOf[js.Any]
       )
 
@@ -1576,7 +1576,7 @@ package apigatewayv2 {
     ): DeleteApiMappingRequest = {
       val __obj = js.Dynamic.literal(
         "ApiMappingId" -> ApiMappingId.asInstanceOf[js.Any],
-        "DomainName"   -> DomainName.asInstanceOf[js.Any]
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteApiMappingRequest]
@@ -1614,7 +1614,7 @@ package apigatewayv2 {
         AuthorizerId: __string
     ): DeleteAuthorizerRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"        -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "AuthorizerId" -> AuthorizerId.asInstanceOf[js.Any]
       )
 
@@ -1653,7 +1653,7 @@ package apigatewayv2 {
         DeploymentId: __string
     ): DeleteDeploymentRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"        -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "DeploymentId" -> DeploymentId.asInstanceOf[js.Any]
       )
 
@@ -1692,7 +1692,7 @@ package apigatewayv2 {
         IntegrationId: __string
     ): DeleteIntegrationRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"         -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "IntegrationId" -> IntegrationId.asInstanceOf[js.Any]
       )
 
@@ -1715,8 +1715,8 @@ package apigatewayv2 {
         IntegrationResponseId: __string
     ): DeleteIntegrationResponseRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"                 -> ApiId.asInstanceOf[js.Any],
-        "IntegrationId"         -> IntegrationId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
+        "IntegrationId" -> IntegrationId.asInstanceOf[js.Any],
         "IntegrationResponseId" -> IntegrationResponseId.asInstanceOf[js.Any]
       )
 
@@ -1737,7 +1737,7 @@ package apigatewayv2 {
         ModelId: __string
     ): DeleteModelRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"   -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "ModelId" -> ModelId.asInstanceOf[js.Any]
       )
 
@@ -1758,7 +1758,7 @@ package apigatewayv2 {
         RouteId: __string
     ): DeleteRouteRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"   -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "RouteId" -> RouteId.asInstanceOf[js.Any]
       )
 
@@ -1781,9 +1781,9 @@ package apigatewayv2 {
         RouteId: __string
     ): DeleteRouteRequestParameterRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"               -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "RequestParameterKey" -> RequestParameterKey.asInstanceOf[js.Any],
-        "RouteId"             -> RouteId.asInstanceOf[js.Any]
+        "RouteId" -> RouteId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteRouteRequestParameterRequest]
@@ -1805,8 +1805,8 @@ package apigatewayv2 {
         RouteResponseId: __string
     ): DeleteRouteResponseRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"           -> ApiId.asInstanceOf[js.Any],
-        "RouteId"         -> RouteId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
+        "RouteId" -> RouteId.asInstanceOf[js.Any],
         "RouteResponseId" -> RouteResponseId.asInstanceOf[js.Any]
       )
 
@@ -1829,8 +1829,8 @@ package apigatewayv2 {
         StageName: __string
     ): DeleteRouteSettingsRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"     -> ApiId.asInstanceOf[js.Any],
-        "RouteKey"  -> RouteKey.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
+        "RouteKey" -> RouteKey.asInstanceOf[js.Any],
         "StageName" -> StageName.asInstanceOf[js.Any]
       )
 
@@ -1851,7 +1851,7 @@ package apigatewayv2 {
         StageName: __string
     ): DeleteStageRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"     -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "StageName" -> StageName.asInstanceOf[js.Any]
       )
 
@@ -1930,8 +1930,8 @@ package apigatewayv2 {
   @js.native
   sealed trait DeploymentStatus extends js.Any
   object DeploymentStatus extends js.Object {
-    val PENDING  = "PENDING".asInstanceOf[DeploymentStatus]
-    val FAILED   = "FAILED".asInstanceOf[DeploymentStatus]
+    val PENDING = "PENDING".asInstanceOf[DeploymentStatus]
+    val FAILED = "FAILED".asInstanceOf[DeploymentStatus]
     val DEPLOYED = "DEPLOYED".asInstanceOf[DeploymentStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, FAILED, DEPLOYED))
@@ -2019,7 +2019,7 @@ package apigatewayv2 {
   sealed trait DomainNameStatus extends js.Any
   object DomainNameStatus extends js.Object {
     val AVAILABLE = "AVAILABLE".asInstanceOf[DomainNameStatus]
-    val UPDATING  = "UPDATING".asInstanceOf[DomainNameStatus]
+    val UPDATING = "UPDATING".asInstanceOf[DomainNameStatus]
 
     val values = js.Object.freeze(js.Array(AVAILABLE, UPDATING))
   }
@@ -2031,7 +2031,7 @@ package apigatewayv2 {
   sealed trait EndpointType extends js.Any
   object EndpointType extends js.Object {
     val REGIONAL = "REGIONAL".asInstanceOf[EndpointType]
-    val EDGE     = "EDGE".asInstanceOf[EndpointType]
+    val EDGE = "EDGE".asInstanceOf[EndpointType]
 
     val values = js.Object.freeze(js.Array(REGIONAL, EDGE))
   }
@@ -2057,8 +2057,8 @@ package apigatewayv2 {
         StageName: js.UndefOr[__string] = js.undefined
     ): ExportApiRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"         -> ApiId.asInstanceOf[js.Any],
-        "OutputType"    -> OutputType.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
+        "OutputType" -> OutputType.asInstanceOf[js.Any],
         "Specification" -> Specification.asInstanceOf[js.Any]
       )
 
@@ -2099,7 +2099,7 @@ package apigatewayv2 {
     ): GetApiMappingRequest = {
       val __obj = js.Dynamic.literal(
         "ApiMappingId" -> ApiMappingId.asInstanceOf[js.Any],
-        "DomainName"   -> DomainName.asInstanceOf[js.Any]
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetApiMappingRequest]
@@ -2300,7 +2300,7 @@ package apigatewayv2 {
         AuthorizerId: __string
     ): GetAuthorizerRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"        -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "AuthorizerId" -> AuthorizerId.asInstanceOf[js.Any]
       )
 
@@ -2408,7 +2408,7 @@ package apigatewayv2 {
         DeploymentId: __string
     ): GetDeploymentRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"        -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "DeploymentId" -> DeploymentId.asInstanceOf[js.Any]
       )
 
@@ -2586,7 +2586,7 @@ package apigatewayv2 {
         IntegrationId: __string
     ): GetIntegrationRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"         -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "IntegrationId" -> IntegrationId.asInstanceOf[js.Any]
       )
 
@@ -2609,8 +2609,8 @@ package apigatewayv2 {
         IntegrationResponseId: __string
     ): GetIntegrationResponseRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"                 -> ApiId.asInstanceOf[js.Any],
-        "IntegrationId"         -> IntegrationId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
+        "IntegrationId" -> IntegrationId.asInstanceOf[js.Any],
         "IntegrationResponseId" -> IntegrationResponseId.asInstanceOf[js.Any]
       )
 
@@ -2668,7 +2668,7 @@ package apigatewayv2 {
         NextToken: js.UndefOr[__string] = js.undefined
     ): GetIntegrationResponsesRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"         -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "IntegrationId" -> IntegrationId.asInstanceOf[js.Any]
       )
 
@@ -2824,7 +2824,7 @@ package apigatewayv2 {
         ModelId: __string
     ): GetModelRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"   -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "ModelId" -> ModelId.asInstanceOf[js.Any]
       )
 
@@ -2873,7 +2873,7 @@ package apigatewayv2 {
         ModelId: __string
     ): GetModelTemplateRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"   -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "ModelId" -> ModelId.asInstanceOf[js.Any]
       )
 
@@ -2953,7 +2953,7 @@ package apigatewayv2 {
         RouteId: __string
     ): GetRouteRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"   -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "RouteId" -> RouteId.asInstanceOf[js.Any]
       )
 
@@ -2976,8 +2976,8 @@ package apigatewayv2 {
         RouteResponseId: __string
     ): GetRouteResponseRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"           -> ApiId.asInstanceOf[js.Any],
-        "RouteId"         -> RouteId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
+        "RouteId" -> RouteId.asInstanceOf[js.Any],
         "RouteResponseId" -> RouteResponseId.asInstanceOf[js.Any]
       )
 
@@ -3030,7 +3030,7 @@ package apigatewayv2 {
         NextToken: js.UndefOr[__string] = js.undefined
     ): GetRouteResponsesRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"   -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "RouteId" -> RouteId.asInstanceOf[js.Any]
       )
 
@@ -3169,7 +3169,7 @@ package apigatewayv2 {
         StageName: __string
     ): GetStageRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"     -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "StageName" -> StageName.asInstanceOf[js.Any]
       )
 
@@ -3608,11 +3608,11 @@ package apigatewayv2 {
   @js.native
   sealed trait IntegrationType extends js.Any
   object IntegrationType extends js.Object {
-    val AWS        = "AWS".asInstanceOf[IntegrationType]
-    val HTTP       = "HTTP".asInstanceOf[IntegrationType]
-    val MOCK       = "MOCK".asInstanceOf[IntegrationType]
+    val AWS = "AWS".asInstanceOf[IntegrationType]
+    val HTTP = "HTTP".asInstanceOf[IntegrationType]
+    val MOCK = "MOCK".asInstanceOf[IntegrationType]
     val HTTP_PROXY = "HTTP_PROXY".asInstanceOf[IntegrationType]
-    val AWS_PROXY  = "AWS_PROXY".asInstanceOf[IntegrationType]
+    val AWS_PROXY = "AWS_PROXY".asInstanceOf[IntegrationType]
 
     val values = js.Object.freeze(js.Array(AWS, HTTP, MOCK, HTTP_PROXY, AWS_PROXY))
   }
@@ -3646,8 +3646,8 @@ package apigatewayv2 {
   sealed trait LoggingLevel extends js.Any
   object LoggingLevel extends js.Object {
     val ERROR = "ERROR".asInstanceOf[LoggingLevel]
-    val INFO  = "INFO".asInstanceOf[LoggingLevel]
-    val OFF   = "OFF".asInstanceOf[LoggingLevel]
+    val INFO = "INFO".asInstanceOf[LoggingLevel]
+    val OFF = "OFF".asInstanceOf[LoggingLevel]
 
     val values = js.Object.freeze(js.Array(ERROR, INFO, OFF))
   }
@@ -3710,8 +3710,8 @@ package apigatewayv2 {
   @js.native
   sealed trait PassthroughBehavior extends js.Any
   object PassthroughBehavior extends js.Object {
-    val WHEN_NO_MATCH     = "WHEN_NO_MATCH".asInstanceOf[PassthroughBehavior]
-    val NEVER             = "NEVER".asInstanceOf[PassthroughBehavior]
+    val WHEN_NO_MATCH = "WHEN_NO_MATCH".asInstanceOf[PassthroughBehavior]
+    val NEVER = "NEVER".asInstanceOf[PassthroughBehavior]
     val WHEN_NO_TEMPLATES = "WHEN_NO_TEMPLATES".asInstanceOf[PassthroughBehavior]
 
     val values = js.Object.freeze(js.Array(WHEN_NO_MATCH, NEVER, WHEN_NO_TEMPLATES))
@@ -3724,7 +3724,7 @@ package apigatewayv2 {
   sealed trait ProtocolType extends js.Any
   object ProtocolType extends js.Object {
     val WEBSOCKET = "WEBSOCKET".asInstanceOf[ProtocolType]
-    val HTTP      = "HTTP".asInstanceOf[ProtocolType]
+    val HTTP = "HTTP".asInstanceOf[ProtocolType]
 
     val values = js.Object.freeze(js.Array(WEBSOCKET, HTTP))
   }
@@ -3749,7 +3749,7 @@ package apigatewayv2 {
     ): ReimportApiRequest = {
       val __obj = js.Dynamic.literal(
         "ApiId" -> ApiId.asInstanceOf[js.Any],
-        "Body"  -> Body.asInstanceOf[js.Any]
+        "Body" -> Body.asInstanceOf[js.Any]
       )
 
       Basepath.foreach(__v => __obj.updateDynamic("Basepath")(__v.asInstanceOf[js.Any]))
@@ -4101,7 +4101,7 @@ package apigatewayv2 {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -4130,9 +4130,9 @@ package apigatewayv2 {
         Stage: js.UndefOr[StringWithLengthBetween1And128] = js.undefined
     ): UpdateApiMappingRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"        -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "ApiMappingId" -> ApiMappingId.asInstanceOf[js.Any],
-        "DomainName"   -> DomainName.asInstanceOf[js.Any]
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
       ApiMappingKey.foreach(__v => __obj.updateDynamic("ApiMappingKey")(__v.asInstanceOf[js.Any]))
@@ -4308,7 +4308,7 @@ package apigatewayv2 {
         Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined
     ): UpdateAuthorizerRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"        -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "AuthorizerId" -> AuthorizerId.asInstanceOf[js.Any]
       )
 
@@ -4390,7 +4390,7 @@ package apigatewayv2 {
         Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined
     ): UpdateDeploymentRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"        -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "DeploymentId" -> DeploymentId.asInstanceOf[js.Any]
       )
 
@@ -4527,7 +4527,7 @@ package apigatewayv2 {
         TlsConfig: js.UndefOr[TlsConfigInput] = js.undefined
     ): UpdateIntegrationRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"         -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "IntegrationId" -> IntegrationId.asInstanceOf[js.Any]
       )
 
@@ -4580,8 +4580,8 @@ package apigatewayv2 {
         TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined
     ): UpdateIntegrationResponseRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"                 -> ApiId.asInstanceOf[js.Any],
-        "IntegrationId"         -> IntegrationId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
+        "IntegrationId" -> IntegrationId.asInstanceOf[js.Any],
         "IntegrationResponseId" -> IntegrationResponseId.asInstanceOf[js.Any]
       )
 
@@ -4724,7 +4724,7 @@ package apigatewayv2 {
         Schema: js.UndefOr[StringWithLengthBetween0And32K] = js.undefined
     ): UpdateModelRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"   -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "ModelId" -> ModelId.asInstanceOf[js.Any]
       )
 
@@ -4802,7 +4802,7 @@ package apigatewayv2 {
         Target: js.UndefOr[StringWithLengthBetween1And128] = js.undefined
     ): UpdateRouteRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"   -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "RouteId" -> RouteId.asInstanceOf[js.Any]
       )
 
@@ -4849,8 +4849,8 @@ package apigatewayv2 {
         RouteResponseKey: js.UndefOr[SelectionKey] = js.undefined
     ): UpdateRouteResponseRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"           -> ApiId.asInstanceOf[js.Any],
-        "RouteId"         -> RouteId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
+        "RouteId" -> RouteId.asInstanceOf[js.Any],
         "RouteResponseId" -> RouteResponseId.asInstanceOf[js.Any]
       )
 
@@ -4976,7 +4976,7 @@ package apigatewayv2 {
         StageVariables: js.UndefOr[StageVariablesMap] = js.undefined
     ): UpdateStageRequest = {
       val __obj = js.Dynamic.literal(
-        "ApiId"     -> ApiId.asInstanceOf[js.Any],
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
         "StageName" -> StageName.asInstanceOf[js.Any]
       )
 
@@ -5143,10 +5143,10 @@ package apigatewayv2 {
         VpcLinkVersion: js.UndefOr[VpcLinkVersion] = js.undefined
     ): VpcLink = {
       val __obj = js.Dynamic.literal(
-        "Name"             -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any],
-        "SubnetIds"        -> SubnetIds.asInstanceOf[js.Any],
-        "VpcLinkId"        -> VpcLinkId.asInstanceOf[js.Any]
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any],
+        "VpcLinkId" -> VpcLinkId.asInstanceOf[js.Any]
       )
 
       CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
@@ -5164,11 +5164,11 @@ package apigatewayv2 {
   @js.native
   sealed trait VpcLinkStatus extends js.Any
   object VpcLinkStatus extends js.Object {
-    val PENDING   = "PENDING".asInstanceOf[VpcLinkStatus]
+    val PENDING = "PENDING".asInstanceOf[VpcLinkStatus]
     val AVAILABLE = "AVAILABLE".asInstanceOf[VpcLinkStatus]
-    val DELETING  = "DELETING".asInstanceOf[VpcLinkStatus]
-    val FAILED    = "FAILED".asInstanceOf[VpcLinkStatus]
-    val INACTIVE  = "INACTIVE".asInstanceOf[VpcLinkStatus]
+    val DELETING = "DELETING".asInstanceOf[VpcLinkStatus]
+    val FAILED = "FAILED".asInstanceOf[VpcLinkStatus]
+    val INACTIVE = "INACTIVE".asInstanceOf[VpcLinkStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, FAILED, INACTIVE))
   }

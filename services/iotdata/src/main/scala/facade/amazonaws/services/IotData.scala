@@ -7,16 +7,16 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object iotdata {
-  type JsonDocument    = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type JsonDocument = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type NamedShadowList = js.Array[ShadowName]
-  type NextToken       = String
-  type PageSize        = Int
-  type Payload         = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type Qos             = Int
-  type ShadowName      = String
-  type ThingName       = String
-  type Timestamp       = Double
-  type Topic           = String
+  type NextToken = String
+  type PageSize = Int
+  type Payload = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type Qos = Int
+  type ShadowName = String
+  type ThingName = String
+  type Timestamp = Double
+  type Topic = String
 
   implicit final class IotDataOps(private val service: IotData) extends AnyVal {
 
@@ -26,7 +26,7 @@ package object iotdata {
       service.getThingShadow(params).promise().toFuture
     @inline def listNamedShadowsForThingFuture(
         params: ListNamedShadowsForThingRequest
-    ): Future[ListNamedShadowsForThingResponse]                          = service.listNamedShadowsForThing(params).promise().toFuture
+    ): Future[ListNamedShadowsForThingResponse] = service.listNamedShadowsForThing(params).promise().toFuture
     @inline def publishFuture(params: PublishRequest): Future[js.Object] = service.publish(params).promise().toFuture
     @inline def updateThingShadowFuture(params: UpdateThingShadowRequest): Future[UpdateThingShadowResponse] =
       service.updateThingShadow(params).promise().toFuture
@@ -40,10 +40,10 @@ package iotdata {
     def this(config: AWSConfig) = this()
 
     def deleteThingShadow(params: DeleteThingShadowRequest): Request[DeleteThingShadowResponse] = js.native
-    def getThingShadow(params: GetThingShadowRequest): Request[GetThingShadowResponse]          = js.native
+    def getThingShadow(params: GetThingShadowRequest): Request[GetThingShadowResponse] = js.native
     def listNamedShadowsForThing(params: ListNamedShadowsForThingRequest): Request[ListNamedShadowsForThingResponse] =
       js.native
-    def publish(params: PublishRequest): Request[js.Object]                                     = js.native
+    def publish(params: PublishRequest): Request[js.Object] = js.native
     def updateThingShadow(params: UpdateThingShadowRequest): Request[UpdateThingShadowResponse] = js.native
   }
 
@@ -226,7 +226,7 @@ package iotdata {
         shadowName: js.UndefOr[ShadowName] = js.undefined
     ): UpdateThingShadowRequest = {
       val __obj = js.Dynamic.literal(
-        "payload"   -> payload.asInstanceOf[js.Any],
+        "payload" -> payload.asInstanceOf[js.Any],
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
 

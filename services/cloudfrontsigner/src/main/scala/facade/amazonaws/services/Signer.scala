@@ -74,7 +74,7 @@ class IpAddress(
 
 @js.native
 trait SignerOptionsWithoutPolicy extends js.Object {
-  var url: String  = js.native
+  var url: String = js.native
   var expires: Int = js.native
 }
 
@@ -84,7 +84,7 @@ object SignerOptionsWithoutPolicy {
       expires: Int
   ): SignerOptionsWithoutPolicy = {
     val _fields = IndexedSeq[(String, js.Any)](
-      "url"     -> url.asInstanceOf[js.Any],
+      "url" -> url.asInstanceOf[js.Any],
       "expires" -> expires.asInstanceOf[js.Any]
     ).filter(_._2 != (js.undefined: js.Any))
 
@@ -94,9 +94,9 @@ object SignerOptionsWithoutPolicy {
 
 @js.native
 trait CustomPolicy extends js.Object {
-  var `CloudFront-Policy`: String      = js.native
+  var `CloudFront-Policy`: String = js.native
   var `CloudFront-Key-Pair-Id`: String = js.native
-  var `CloudFront-Signature`: String   = js.native
+  var `CloudFront-Signature`: String = js.native
 }
 
 object CustomPolicy {
@@ -106,9 +106,9 @@ object CustomPolicy {
       signature: String
   ): CustomPolicy = {
     val _fields = IndexedSeq[(String, js.Any)](
-      "CloudFront-Policy"      -> policy.asInstanceOf[js.Any],
+      "CloudFront-Policy" -> policy.asInstanceOf[js.Any],
       "CloudFront-Key-Pair-Id" -> keyPairId.asInstanceOf[js.Any],
-      "CloudFront-Signature"   -> signature.asInstanceOf[js.Any]
+      "CloudFront-Signature" -> signature.asInstanceOf[js.Any]
     ).filter(_._2 != (js.undefined: js.Any))
 
     js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CustomPolicy]
@@ -117,9 +117,9 @@ object CustomPolicy {
 
 @js.native
 trait CannedPolicy extends js.Object {
-  var `CloudFront-Expires`: Int        = js.native
+  var `CloudFront-Expires`: Int = js.native
   var `CloudFront-Key-Pair-Id`: String = js.native
-  var `CloudFront-Signature`: String   = js.native
+  var `CloudFront-Signature`: String = js.native
 }
 
 object CannedPolicy {
@@ -129,9 +129,9 @@ object CannedPolicy {
       signature: String
   ): CannedPolicy = {
     val _fields = IndexedSeq[(String, js.Any)](
-      "CloudFront-Expires"     -> expires.asInstanceOf[js.Any],
+      "CloudFront-Expires" -> expires.asInstanceOf[js.Any],
       "CloudFront-Key-Pair-Id" -> keyPairId.asInstanceOf[js.Any],
-      "CloudFront-Signature"   -> signature.asInstanceOf[js.Any]
+      "CloudFront-Signature" -> signature.asInstanceOf[js.Any]
     ).filter(_._2 != (js.undefined: js.Any))
 
     js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CannedPolicy]

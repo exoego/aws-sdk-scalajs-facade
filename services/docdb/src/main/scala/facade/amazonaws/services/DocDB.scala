@@ -7,40 +7,40 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object docdb {
-  type AttributeValueList              = js.Array[String]
-  type AvailabilityZoneList            = js.Array[AvailabilityZone]
-  type AvailabilityZones               = js.Array[String]
-  type BooleanOptional                 = Boolean
-  type CertificateList                 = js.Array[Certificate]
-  type DBClusterList                   = js.Array[DBCluster]
-  type DBClusterMemberList             = js.Array[DBClusterMember]
-  type DBClusterParameterGroupList     = js.Array[DBClusterParameterGroup]
-  type DBClusterRoles                  = js.Array[DBClusterRole]
-  type DBClusterSnapshotAttributeList  = js.Array[DBClusterSnapshotAttribute]
-  type DBClusterSnapshotList           = js.Array[DBClusterSnapshot]
-  type DBEngineVersionList             = js.Array[DBEngineVersion]
-  type DBInstanceList                  = js.Array[DBInstance]
-  type DBInstanceStatusInfoList        = js.Array[DBInstanceStatusInfo]
-  type DBSubnetGroups                  = js.Array[DBSubnetGroup]
-  type EventCategoriesList             = js.Array[String]
-  type EventCategoriesMapList          = js.Array[EventCategoriesMap]
-  type EventList                       = js.Array[Event]
-  type FilterList                      = js.Array[Filter]
-  type FilterValueList                 = js.Array[String]
-  type IntegerOptional                 = Int
-  type KeyList                         = js.Array[String]
-  type LogTypeList                     = js.Array[String]
-  type OrderableDBInstanceOptionsList  = js.Array[OrderableDBInstanceOption]
-  type ParametersList                  = js.Array[Parameter]
+  type AttributeValueList = js.Array[String]
+  type AvailabilityZoneList = js.Array[AvailabilityZone]
+  type AvailabilityZones = js.Array[String]
+  type BooleanOptional = Boolean
+  type CertificateList = js.Array[Certificate]
+  type DBClusterList = js.Array[DBCluster]
+  type DBClusterMemberList = js.Array[DBClusterMember]
+  type DBClusterParameterGroupList = js.Array[DBClusterParameterGroup]
+  type DBClusterRoles = js.Array[DBClusterRole]
+  type DBClusterSnapshotAttributeList = js.Array[DBClusterSnapshotAttribute]
+  type DBClusterSnapshotList = js.Array[DBClusterSnapshot]
+  type DBEngineVersionList = js.Array[DBEngineVersion]
+  type DBInstanceList = js.Array[DBInstance]
+  type DBInstanceStatusInfoList = js.Array[DBInstanceStatusInfo]
+  type DBSubnetGroups = js.Array[DBSubnetGroup]
+  type EventCategoriesList = js.Array[String]
+  type EventCategoriesMapList = js.Array[EventCategoriesMap]
+  type EventList = js.Array[Event]
+  type FilterList = js.Array[Filter]
+  type FilterValueList = js.Array[String]
+  type IntegerOptional = Int
+  type KeyList = js.Array[String]
+  type LogTypeList = js.Array[String]
+  type OrderableDBInstanceOptionsList = js.Array[OrderableDBInstanceOption]
+  type ParametersList = js.Array[Parameter]
   type PendingMaintenanceActionDetails = js.Array[PendingMaintenanceAction]
-  type PendingMaintenanceActions       = js.Array[ResourcePendingMaintenanceActions]
-  type SubnetIdentifierList            = js.Array[String]
-  type SubnetList                      = js.Array[Subnet]
-  type TStamp                          = js.Date
-  type TagList                         = js.Array[Tag]
-  type ValidUpgradeTargetList          = js.Array[UpgradeTarget]
-  type VpcSecurityGroupIdList          = js.Array[String]
-  type VpcSecurityGroupMembershipList  = js.Array[VpcSecurityGroupMembership]
+  type PendingMaintenanceActions = js.Array[ResourcePendingMaintenanceActions]
+  type SubnetIdentifierList = js.Array[String]
+  type SubnetList = js.Array[Subnet]
+  type TStamp = js.Date
+  type TagList = js.Array[Tag]
+  type ValidUpgradeTargetList = js.Array[UpgradeTarget]
+  type VpcSecurityGroupIdList = js.Array[String]
+  type VpcSecurityGroupMembershipList = js.Array[VpcSecurityGroupMembership]
 
   implicit final class DocDBOps(private val service: DocDB) extends AnyVal {
 
@@ -164,22 +164,22 @@ package docdb {
     ): Request[ApplyPendingMaintenanceActionResult] = js.native
     def copyDBClusterParameterGroup(
         params: CopyDBClusterParameterGroupMessage
-    ): Request[CopyDBClusterParameterGroupResult]                                                         = js.native
+    ): Request[CopyDBClusterParameterGroupResult] = js.native
     def copyDBClusterSnapshot(params: CopyDBClusterSnapshotMessage): Request[CopyDBClusterSnapshotResult] = js.native
-    def createDBCluster(params: CreateDBClusterMessage): Request[CreateDBClusterResult]                   = js.native
+    def createDBCluster(params: CreateDBClusterMessage): Request[CreateDBClusterResult] = js.native
     def createDBClusterParameterGroup(
         params: CreateDBClusterParameterGroupMessage
     ): Request[CreateDBClusterParameterGroupResult] = js.native
     def createDBClusterSnapshot(params: CreateDBClusterSnapshotMessage): Request[CreateDBClusterSnapshotResult] =
       js.native
-    def createDBInstance(params: CreateDBInstanceMessage): Request[CreateDBInstanceResult]              = js.native
-    def createDBSubnetGroup(params: CreateDBSubnetGroupMessage): Request[CreateDBSubnetGroupResult]     = js.native
-    def deleteDBCluster(params: DeleteDBClusterMessage): Request[DeleteDBClusterResult]                 = js.native
+    def createDBInstance(params: CreateDBInstanceMessage): Request[CreateDBInstanceResult] = js.native
+    def createDBSubnetGroup(params: CreateDBSubnetGroupMessage): Request[CreateDBSubnetGroupResult] = js.native
+    def deleteDBCluster(params: DeleteDBClusterMessage): Request[DeleteDBClusterResult] = js.native
     def deleteDBClusterParameterGroup(params: DeleteDBClusterParameterGroupMessage): Request[js.Object] = js.native
     def deleteDBClusterSnapshot(params: DeleteDBClusterSnapshotMessage): Request[DeleteDBClusterSnapshotResult] =
       js.native
-    def deleteDBInstance(params: DeleteDBInstanceMessage): Request[DeleteDBInstanceResult]     = js.native
-    def deleteDBSubnetGroup(params: DeleteDBSubnetGroupMessage): Request[js.Object]            = js.native
+    def deleteDBInstance(params: DeleteDBInstanceMessage): Request[DeleteDBInstanceResult] = js.native
+    def deleteDBSubnetGroup(params: DeleteDBSubnetGroupMessage): Request[js.Object] = js.native
     def describeCertificates(params: DescribeCertificatesMessage): Request[CertificateMessage] = js.native
     def describeDBClusterParameterGroups(
         params: DescribeDBClusterParameterGroupsMessage
@@ -192,34 +192,34 @@ package docdb {
     ): Request[DescribeDBClusterSnapshotAttributesResult] = js.native
     def describeDBClusterSnapshots(params: DescribeDBClusterSnapshotsMessage): Request[DBClusterSnapshotMessage] =
       js.native
-    def describeDBClusters(params: DescribeDBClustersMessage): Request[DBClusterMessage]                   = js.native
+    def describeDBClusters(params: DescribeDBClustersMessage): Request[DBClusterMessage] = js.native
     def describeDBEngineVersions(params: DescribeDBEngineVersionsMessage): Request[DBEngineVersionMessage] = js.native
-    def describeDBInstances(params: DescribeDBInstancesMessage): Request[DBInstanceMessage]                = js.native
-    def describeDBSubnetGroups(params: DescribeDBSubnetGroupsMessage): Request[DBSubnetGroupMessage]       = js.native
+    def describeDBInstances(params: DescribeDBInstancesMessage): Request[DBInstanceMessage] = js.native
+    def describeDBSubnetGroups(params: DescribeDBSubnetGroupsMessage): Request[DBSubnetGroupMessage] = js.native
     def describeEngineDefaultClusterParameters(
         params: DescribeEngineDefaultClusterParametersMessage
-    ): Request[DescribeEngineDefaultClusterParametersResult]                                             = js.native
+    ): Request[DescribeEngineDefaultClusterParametersResult] = js.native
     def describeEventCategories(params: DescribeEventCategoriesMessage): Request[EventCategoriesMessage] = js.native
-    def describeEvents(params: DescribeEventsMessage): Request[EventsMessage]                            = js.native
+    def describeEvents(params: DescribeEventsMessage): Request[EventsMessage] = js.native
     def describeOrderableDBInstanceOptions(
         params: DescribeOrderableDBInstanceOptionsMessage
     ): Request[OrderableDBInstanceOptionsMessage] = js.native
     def describePendingMaintenanceActions(
         params: DescribePendingMaintenanceActionsMessage
-    ): Request[PendingMaintenanceActionsMessage]                                              = js.native
+    ): Request[PendingMaintenanceActionsMessage] = js.native
     def failoverDBCluster(params: FailoverDBClusterMessage): Request[FailoverDBClusterResult] = js.native
-    def listTagsForResource(params: ListTagsForResourceMessage): Request[TagListMessage]      = js.native
-    def modifyDBCluster(params: ModifyDBClusterMessage): Request[ModifyDBClusterResult]       = js.native
+    def listTagsForResource(params: ListTagsForResourceMessage): Request[TagListMessage] = js.native
+    def modifyDBCluster(params: ModifyDBClusterMessage): Request[ModifyDBClusterResult] = js.native
     def modifyDBClusterParameterGroup(
         params: ModifyDBClusterParameterGroupMessage
     ): Request[DBClusterParameterGroupNameMessage] = js.native
     def modifyDBClusterSnapshotAttribute(
         params: ModifyDBClusterSnapshotAttributeMessage
-    ): Request[ModifyDBClusterSnapshotAttributeResult]                                              = js.native
-    def modifyDBInstance(params: ModifyDBInstanceMessage): Request[ModifyDBInstanceResult]          = js.native
+    ): Request[ModifyDBClusterSnapshotAttributeResult] = js.native
+    def modifyDBInstance(params: ModifyDBInstanceMessage): Request[ModifyDBInstanceResult] = js.native
     def modifyDBSubnetGroup(params: ModifyDBSubnetGroupMessage): Request[ModifyDBSubnetGroupResult] = js.native
-    def rebootDBInstance(params: RebootDBInstanceMessage): Request[RebootDBInstanceResult]          = js.native
-    def removeTagsFromResource(params: RemoveTagsFromResourceMessage): Request[js.Object]           = js.native
+    def rebootDBInstance(params: RebootDBInstanceMessage): Request[RebootDBInstanceResult] = js.native
+    def removeTagsFromResource(params: RemoveTagsFromResourceMessage): Request[js.Object] = js.native
     def resetDBClusterParameterGroup(
         params: ResetDBClusterParameterGroupMessage
     ): Request[DBClusterParameterGroupNameMessage] = js.native
@@ -228,9 +228,9 @@ package docdb {
     ): Request[RestoreDBClusterFromSnapshotResult] = js.native
     def restoreDBClusterToPointInTime(
         params: RestoreDBClusterToPointInTimeMessage
-    ): Request[RestoreDBClusterToPointInTimeResult]                                  = js.native
+    ): Request[RestoreDBClusterToPointInTimeResult] = js.native
     def startDBCluster(params: StartDBClusterMessage): Request[StartDBClusterResult] = js.native
-    def stopDBCluster(params: StopDBClusterMessage): Request[StopDBClusterResult]    = js.native
+    def stopDBCluster(params: StopDBClusterMessage): Request[StopDBClusterResult] = js.native
   }
 
   /**
@@ -250,7 +250,7 @@ package docdb {
     ): AddTagsToResourceMessage = {
       val __obj = js.Dynamic.literal(
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
-        "Tags"         -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddTagsToResourceMessage]
@@ -260,7 +260,7 @@ package docdb {
   @js.native
   sealed trait ApplyMethod extends js.Any
   object ApplyMethod extends js.Object {
-    val immediate        = "immediate".asInstanceOf[ApplyMethod]
+    val immediate = "immediate".asInstanceOf[ApplyMethod]
     val `pending-reboot` = "pending-reboot".asInstanceOf[ApplyMethod]
 
     val values = js.Object.freeze(js.Array(immediate, `pending-reboot`))
@@ -284,8 +284,8 @@ package docdb {
         ResourceIdentifier: String
     ): ApplyPendingMaintenanceActionMessage = {
       val __obj = js.Dynamic.literal(
-        "ApplyAction"        -> ApplyAction.asInstanceOf[js.Any],
-        "OptInType"          -> OptInType.asInstanceOf[js.Any],
+        "ApplyAction" -> ApplyAction.asInstanceOf[js.Any],
+        "OptInType" -> OptInType.asInstanceOf[js.Any],
         "ResourceIdentifier" -> ResourceIdentifier.asInstanceOf[js.Any]
       )
 
@@ -426,9 +426,9 @@ package docdb {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CopyDBClusterParameterGroupMessage = {
       val __obj = js.Dynamic.literal(
-        "SourceDBClusterParameterGroupIdentifier"  -> SourceDBClusterParameterGroupIdentifier.asInstanceOf[js.Any],
+        "SourceDBClusterParameterGroupIdentifier" -> SourceDBClusterParameterGroupIdentifier.asInstanceOf[js.Any],
         "TargetDBClusterParameterGroupDescription" -> TargetDBClusterParameterGroupDescription.asInstanceOf[js.Any],
-        "TargetDBClusterParameterGroupIdentifier"  -> TargetDBClusterParameterGroupIdentifier.asInstanceOf[js.Any]
+        "TargetDBClusterParameterGroupIdentifier" -> TargetDBClusterParameterGroupIdentifier.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -553,9 +553,9 @@ package docdb {
     ): CreateDBClusterMessage = {
       val __obj = js.Dynamic.literal(
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "Engine"              -> Engine.asInstanceOf[js.Any],
-        "MasterUserPassword"  -> MasterUserPassword.asInstanceOf[js.Any],
-        "MasterUsername"      -> MasterUsername.asInstanceOf[js.Any]
+        "Engine" -> Engine.asInstanceOf[js.Any],
+        "MasterUserPassword" -> MasterUserPassword.asInstanceOf[js.Any],
+        "MasterUsername" -> MasterUsername.asInstanceOf[js.Any]
       )
 
       AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
@@ -603,8 +603,8 @@ package docdb {
     ): CreateDBClusterParameterGroupMessage = {
       val __obj = js.Dynamic.literal(
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any],
-        "DBParameterGroupFamily"      -> DBParameterGroupFamily.asInstanceOf[js.Any],
-        "Description"                 -> Description.asInstanceOf[js.Any]
+        "DBParameterGroupFamily" -> DBParameterGroupFamily.asInstanceOf[js.Any],
+        "Description" -> Description.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -662,7 +662,7 @@ package docdb {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDBClusterSnapshotMessage = {
       val __obj = js.Dynamic.literal(
-        "DBClusterIdentifier"         -> DBClusterIdentifier.asInstanceOf[js.Any],
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any]
       )
 
@@ -717,10 +717,10 @@ package docdb {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDBInstanceMessage = {
       val __obj = js.Dynamic.literal(
-        "DBClusterIdentifier"  -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "DBInstanceClass"      -> DBInstanceClass.asInstanceOf[js.Any],
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
+        "DBInstanceClass" -> DBInstanceClass.asInstanceOf[js.Any],
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
-        "Engine"               -> Engine.asInstanceOf[js.Any]
+        "Engine" -> Engine.asInstanceOf[js.Any]
       )
 
       AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
@@ -771,8 +771,8 @@ package docdb {
     ): CreateDBSubnetGroupMessage = {
       val __obj = js.Dynamic.literal(
         "DBSubnetGroupDescription" -> DBSubnetGroupDescription.asInstanceOf[js.Any],
-        "DBSubnetGroupName"        -> DBSubnetGroupName.asInstanceOf[js.Any],
-        "SubnetIds"                -> SubnetIds.asInstanceOf[js.Any]
+        "DBSubnetGroupName" -> DBSubnetGroupName.asInstanceOf[js.Any],
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -2330,7 +2330,7 @@ package docdb {
         Values: FilterValueList
     ): Filter = {
       val __obj = js.Dynamic.literal(
-        "Name"   -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
@@ -2442,7 +2442,7 @@ package docdb {
     ): ModifyDBClusterParameterGroupMessage = {
       val __obj = js.Dynamic.literal(
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any],
-        "Parameters"                  -> Parameters.asInstanceOf[js.Any]
+        "Parameters" -> Parameters.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ModifyDBClusterParameterGroupMessage]
@@ -2485,7 +2485,7 @@ package docdb {
         ValuesToRemove: js.UndefOr[AttributeValueList] = js.undefined
     ): ModifyDBClusterSnapshotAttributeMessage = {
       val __obj = js.Dynamic.literal(
-        "AttributeName"               -> AttributeName.asInstanceOf[js.Any],
+        "AttributeName" -> AttributeName.asInstanceOf[js.Any],
         "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any]
       )
 
@@ -2592,7 +2592,7 @@ package docdb {
     ): ModifyDBSubnetGroupMessage = {
       val __obj = js.Dynamic.literal(
         "DBSubnetGroupName" -> DBSubnetGroupName.asInstanceOf[js.Any],
-        "SubnetIds"         -> SubnetIds.asInstanceOf[js.Any]
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any]
       )
 
       DBSubnetGroupDescription.foreach(__v => __obj.updateDynamic("DBSubnetGroupDescription")(__v.asInstanceOf[js.Any]))
@@ -2917,7 +2917,7 @@ package docdb {
     ): RemoveTagsFromResourceMessage = {
       val __obj = js.Dynamic.literal(
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
-        "TagKeys"      -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RemoveTagsFromResourceMessage]
@@ -3012,8 +3012,8 @@ package docdb {
     ): RestoreDBClusterFromSnapshotMessage = {
       val __obj = js.Dynamic.literal(
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "Engine"              -> Engine.asInstanceOf[js.Any],
-        "SnapshotIdentifier"  -> SnapshotIdentifier.asInstanceOf[js.Any]
+        "Engine" -> Engine.asInstanceOf[js.Any],
+        "SnapshotIdentifier" -> SnapshotIdentifier.asInstanceOf[js.Any]
       )
 
       AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
@@ -3081,7 +3081,7 @@ package docdb {
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): RestoreDBClusterToPointInTimeMessage = {
       val __obj = js.Dynamic.literal(
-        "DBClusterIdentifier"       -> DBClusterIdentifier.asInstanceOf[js.Any],
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "SourceDBClusterIdentifier" -> SourceDBClusterIdentifier.asInstanceOf[js.Any]
       )
 
@@ -3119,11 +3119,11 @@ package docdb {
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType extends js.Object {
-    val `db-instance`         = "db-instance".asInstanceOf[SourceType]
-    val `db-parameter-group`  = "db-parameter-group".asInstanceOf[SourceType]
-    val `db-security-group`   = "db-security-group".asInstanceOf[SourceType]
-    val `db-snapshot`         = "db-snapshot".asInstanceOf[SourceType]
-    val `db-cluster`          = "db-cluster".asInstanceOf[SourceType]
+    val `db-instance` = "db-instance".asInstanceOf[SourceType]
+    val `db-parameter-group` = "db-parameter-group".asInstanceOf[SourceType]
+    val `db-security-group` = "db-security-group".asInstanceOf[SourceType]
+    val `db-snapshot` = "db-snapshot".asInstanceOf[SourceType]
+    val `db-cluster` = "db-cluster".asInstanceOf[SourceType]
     val `db-cluster-snapshot` = "db-cluster-snapshot".asInstanceOf[SourceType]
 
     val values = js.Object.freeze(

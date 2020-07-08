@@ -7,110 +7,110 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object route53 {
-  type AWSAccountID                      = String
-  type AlarmName                         = String
-  type AliasHealthEnabled                = Boolean
-  type AssociateVPCComment               = String
-  type Changes                           = js.Array[Change]
-  type CheckerIpRanges                   = js.Array[IPAddressCidr]
-  type ChildHealthCheckList              = js.Array[HealthCheckId]
-  type CloudWatchLogsLogGroupArn         = String
-  type DNSName                           = String
-  type DNSRCode                          = String
-  type DelegationSetNameServers          = js.Array[DNSName]
-  type DelegationSets                    = js.Array[DelegationSet]
-  type DimensionField                    = String
-  type DimensionList                     = js.Array[Dimension]
-  type Disabled                          = Boolean
-  type DisassociateVPCComment            = String
-  type EnableSNI                         = Boolean
-  type EvaluationPeriods                 = Int
-  type FailureThreshold                  = Int
-  type FullyQualifiedDomainName          = String
-  type GeoLocationContinentCode          = String
-  type GeoLocationContinentName          = String
-  type GeoLocationCountryCode            = String
-  type GeoLocationCountryName            = String
-  type GeoLocationDetailsList            = js.Array[GeoLocationDetails]
-  type GeoLocationSubdivisionCode        = String
-  type GeoLocationSubdivisionName        = String
-  type HealthCheckCount                  = Double
-  type HealthCheckId                     = String
-  type HealthCheckNonce                  = String
-  type HealthCheckObservations           = js.Array[HealthCheckObservation]
-  type HealthCheckRegionList             = js.Array[HealthCheckRegion]
-  type HealthCheckVersion                = Double
-  type HealthChecks                      = js.Array[HealthCheck]
-  type HealthThreshold                   = Int
-  type HostedZoneCount                   = Double
-  type HostedZoneOwningService           = String
-  type HostedZoneRRSetCount              = Double
-  type HostedZoneSummaries               = js.Array[HostedZoneSummary]
-  type HostedZones                       = js.Array[HostedZone]
-  type IPAddress                         = String
-  type IPAddressCidr                     = String
-  type Inverted                          = Boolean
-  type IsPrivateZone                     = Boolean
-  type LimitValue                        = Double
-  type MaxResults                        = String
-  type MeasureLatency                    = Boolean
-  type Message                           = String
-  type MetricName                        = String
-  type Nameserver                        = String
-  type Namespace                         = String
-  type Nonce                             = String
-  type PageMarker                        = String
-  type PageMaxItems                      = String
-  type PageTruncated                     = Boolean
-  type PaginationToken                   = String
-  type Period                            = Int
-  type Port                              = Int
-  type QueryLoggingConfigId              = String
-  type QueryLoggingConfigs               = js.Array[QueryLoggingConfig]
-  type RData                             = String
-  type RecordData                        = js.Array[RecordDataEntry]
-  type RecordDataEntry                   = String
-  type RequestInterval                   = Int
-  type ResettableElementNameList         = js.Array[ResettableElementName]
-  type ResourceDescription               = String
-  type ResourceId                        = String
-  type ResourcePath                      = String
-  type ResourceRecordSetIdentifier       = String
+  type AWSAccountID = String
+  type AlarmName = String
+  type AliasHealthEnabled = Boolean
+  type AssociateVPCComment = String
+  type Changes = js.Array[Change]
+  type CheckerIpRanges = js.Array[IPAddressCidr]
+  type ChildHealthCheckList = js.Array[HealthCheckId]
+  type CloudWatchLogsLogGroupArn = String
+  type DNSName = String
+  type DNSRCode = String
+  type DelegationSetNameServers = js.Array[DNSName]
+  type DelegationSets = js.Array[DelegationSet]
+  type DimensionField = String
+  type DimensionList = js.Array[Dimension]
+  type Disabled = Boolean
+  type DisassociateVPCComment = String
+  type EnableSNI = Boolean
+  type EvaluationPeriods = Int
+  type FailureThreshold = Int
+  type FullyQualifiedDomainName = String
+  type GeoLocationContinentCode = String
+  type GeoLocationContinentName = String
+  type GeoLocationCountryCode = String
+  type GeoLocationCountryName = String
+  type GeoLocationDetailsList = js.Array[GeoLocationDetails]
+  type GeoLocationSubdivisionCode = String
+  type GeoLocationSubdivisionName = String
+  type HealthCheckCount = Double
+  type HealthCheckId = String
+  type HealthCheckNonce = String
+  type HealthCheckObservations = js.Array[HealthCheckObservation]
+  type HealthCheckRegionList = js.Array[HealthCheckRegion]
+  type HealthCheckVersion = Double
+  type HealthChecks = js.Array[HealthCheck]
+  type HealthThreshold = Int
+  type HostedZoneCount = Double
+  type HostedZoneOwningService = String
+  type HostedZoneRRSetCount = Double
+  type HostedZoneSummaries = js.Array[HostedZoneSummary]
+  type HostedZones = js.Array[HostedZone]
+  type IPAddress = String
+  type IPAddressCidr = String
+  type Inverted = Boolean
+  type IsPrivateZone = Boolean
+  type LimitValue = Double
+  type MaxResults = String
+  type MeasureLatency = Boolean
+  type Message = String
+  type MetricName = String
+  type Nameserver = String
+  type Namespace = String
+  type Nonce = String
+  type PageMarker = String
+  type PageMaxItems = String
+  type PageTruncated = Boolean
+  type PaginationToken = String
+  type Period = Int
+  type Port = Int
+  type QueryLoggingConfigId = String
+  type QueryLoggingConfigs = js.Array[QueryLoggingConfig]
+  type RData = String
+  type RecordData = js.Array[RecordDataEntry]
+  type RecordDataEntry = String
+  type RequestInterval = Int
+  type ResettableElementNameList = js.Array[ResettableElementName]
+  type ResourceDescription = String
+  type ResourceId = String
+  type ResourcePath = String
+  type ResourceRecordSetIdentifier = String
   type ResourceRecordSetMultiValueAnswer = Boolean
-  type ResourceRecordSetWeight           = Double
-  type ResourceRecordSets                = js.Array[ResourceRecordSet]
-  type ResourceRecords                   = js.Array[ResourceRecord]
-  type ResourceTagSetList                = js.Array[ResourceTagSet]
-  type ResourceURI                       = String
-  type SearchString                      = String
-  type ServicePrincipal                  = String
-  type Status                            = String
-  type SubnetMask                        = String
-  type TTL                               = Double
-  type TagKey                            = String
-  type TagKeyList                        = js.Array[TagKey]
-  type TagList                           = js.Array[Tag]
-  type TagResourceId                     = String
-  type TagResourceIdList                 = js.Array[TagResourceId]
-  type TagValue                          = String
-  type Threshold                         = Double
-  type TimeStamp                         = js.Date
-  type TrafficPolicies                   = js.Array[TrafficPolicy]
-  type TrafficPolicyComment              = String
-  type TrafficPolicyDocument             = String
-  type TrafficPolicyId                   = String
-  type TrafficPolicyInstanceCount        = Int
-  type TrafficPolicyInstanceId           = String
-  type TrafficPolicyInstanceState        = String
-  type TrafficPolicyInstances            = js.Array[TrafficPolicyInstance]
-  type TrafficPolicyName                 = String
-  type TrafficPolicySummaries            = js.Array[TrafficPolicySummary]
-  type TrafficPolicyVersion              = Int
-  type TrafficPolicyVersionMarker        = String
-  type TransportProtocol                 = String
-  type UsageCount                        = Double
-  type VPCId                             = String
-  type VPCs                              = js.Array[VPC]
+  type ResourceRecordSetWeight = Double
+  type ResourceRecordSets = js.Array[ResourceRecordSet]
+  type ResourceRecords = js.Array[ResourceRecord]
+  type ResourceTagSetList = js.Array[ResourceTagSet]
+  type ResourceURI = String
+  type SearchString = String
+  type ServicePrincipal = String
+  type Status = String
+  type SubnetMask = String
+  type TTL = Double
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagResourceId = String
+  type TagResourceIdList = js.Array[TagResourceId]
+  type TagValue = String
+  type Threshold = Double
+  type TimeStamp = js.Date
+  type TrafficPolicies = js.Array[TrafficPolicy]
+  type TrafficPolicyComment = String
+  type TrafficPolicyDocument = String
+  type TrafficPolicyId = String
+  type TrafficPolicyInstanceCount = Int
+  type TrafficPolicyInstanceId = String
+  type TrafficPolicyInstanceState = String
+  type TrafficPolicyInstances = js.Array[TrafficPolicyInstance]
+  type TrafficPolicyName = String
+  type TrafficPolicySummaries = js.Array[TrafficPolicySummary]
+  type TrafficPolicyVersion = Int
+  type TrafficPolicyVersionMarker = String
+  type TransportProtocol = String
+  type UsageCount = Double
+  type VPCId = String
+  type VPCs = js.Array[VPC]
 
   implicit final class Route53Ops(private val service: Route53) extends AnyVal {
 
@@ -280,13 +280,13 @@ package route53 {
     def changeResourceRecordSets(params: ChangeResourceRecordSetsRequest): Request[ChangeResourceRecordSetsResponse] =
       js.native
     def changeTagsForResource(params: ChangeTagsForResourceRequest): Request[ChangeTagsForResourceResponse] = js.native
-    def createHealthCheck(params: CreateHealthCheckRequest): Request[CreateHealthCheckResponse]             = js.native
-    def createHostedZone(params: CreateHostedZoneRequest): Request[CreateHostedZoneResponse]                = js.native
+    def createHealthCheck(params: CreateHealthCheckRequest): Request[CreateHealthCheckResponse] = js.native
+    def createHostedZone(params: CreateHostedZoneRequest): Request[CreateHostedZoneResponse] = js.native
     def createQueryLoggingConfig(params: CreateQueryLoggingConfigRequest): Request[CreateQueryLoggingConfigResponse] =
       js.native
     def createReusableDelegationSet(
         params: CreateReusableDelegationSetRequest
-    ): Request[CreateReusableDelegationSetResponse]                                                   = js.native
+    ): Request[CreateReusableDelegationSetResponse] = js.native
     def createTrafficPolicy(params: CreateTrafficPolicyRequest): Request[CreateTrafficPolicyResponse] = js.native
     def createTrafficPolicyInstance(
         params: CreateTrafficPolicyInstanceRequest
@@ -296,14 +296,14 @@ package route53 {
     ): Request[CreateTrafficPolicyVersionResponse] = js.native
     def createVPCAssociationAuthorization(
         params: CreateVPCAssociationAuthorizationRequest
-    ): Request[CreateVPCAssociationAuthorizationResponse]                                       = js.native
+    ): Request[CreateVPCAssociationAuthorizationResponse] = js.native
     def deleteHealthCheck(params: DeleteHealthCheckRequest): Request[DeleteHealthCheckResponse] = js.native
-    def deleteHostedZone(params: DeleteHostedZoneRequest): Request[DeleteHostedZoneResponse]    = js.native
+    def deleteHostedZone(params: DeleteHostedZoneRequest): Request[DeleteHostedZoneResponse] = js.native
     def deleteQueryLoggingConfig(params: DeleteQueryLoggingConfigRequest): Request[DeleteQueryLoggingConfigResponse] =
       js.native
     def deleteReusableDelegationSet(
         params: DeleteReusableDelegationSetRequest
-    ): Request[DeleteReusableDelegationSetResponse]                                                   = js.native
+    ): Request[DeleteReusableDelegationSetResponse] = js.native
     def deleteTrafficPolicy(params: DeleteTrafficPolicyRequest): Request[DeleteTrafficPolicyResponse] = js.native
     def deleteTrafficPolicyInstance(
         params: DeleteTrafficPolicyInstanceRequest
@@ -313,47 +313,47 @@ package route53 {
     ): Request[DeleteVPCAssociationAuthorizationResponse] = js.native
     def disassociateVPCFromHostedZone(
         params: DisassociateVPCFromHostedZoneRequest
-    ): Request[DisassociateVPCFromHostedZoneResponse]                                                 = js.native
-    def getAccountLimit(params: GetAccountLimitRequest): Request[GetAccountLimitResponse]             = js.native
-    def getChange(params: GetChangeRequest): Request[GetChangeResponse]                               = js.native
-    def getCheckerIpRanges(params: GetCheckerIpRangesRequest): Request[GetCheckerIpRangesResponse]    = js.native
-    def getGeoLocation(params: GetGeoLocationRequest): Request[GetGeoLocationResponse]                = js.native
-    def getHealthCheck(params: GetHealthCheckRequest): Request[GetHealthCheckResponse]                = js.native
+    ): Request[DisassociateVPCFromHostedZoneResponse] = js.native
+    def getAccountLimit(params: GetAccountLimitRequest): Request[GetAccountLimitResponse] = js.native
+    def getChange(params: GetChangeRequest): Request[GetChangeResponse] = js.native
+    def getCheckerIpRanges(params: GetCheckerIpRangesRequest): Request[GetCheckerIpRangesResponse] = js.native
+    def getGeoLocation(params: GetGeoLocationRequest): Request[GetGeoLocationResponse] = js.native
+    def getHealthCheck(params: GetHealthCheckRequest): Request[GetHealthCheckResponse] = js.native
     def getHealthCheckCount(params: GetHealthCheckCountRequest): Request[GetHealthCheckCountResponse] = js.native
     def getHealthCheckLastFailureReason(
         params: GetHealthCheckLastFailureReasonRequest
-    ): Request[GetHealthCheckLastFailureReasonResponse]                                                     = js.native
-    def getHealthCheckStatus(params: GetHealthCheckStatusRequest): Request[GetHealthCheckStatusResponse]    = js.native
-    def getHostedZone(params: GetHostedZoneRequest): Request[GetHostedZoneResponse]                         = js.native
-    def getHostedZoneCount(params: GetHostedZoneCountRequest): Request[GetHostedZoneCountResponse]          = js.native
-    def getHostedZoneLimit(params: GetHostedZoneLimitRequest): Request[GetHostedZoneLimitResponse]          = js.native
+    ): Request[GetHealthCheckLastFailureReasonResponse] = js.native
+    def getHealthCheckStatus(params: GetHealthCheckStatusRequest): Request[GetHealthCheckStatusResponse] = js.native
+    def getHostedZone(params: GetHostedZoneRequest): Request[GetHostedZoneResponse] = js.native
+    def getHostedZoneCount(params: GetHostedZoneCountRequest): Request[GetHostedZoneCountResponse] = js.native
+    def getHostedZoneLimit(params: GetHostedZoneLimitRequest): Request[GetHostedZoneLimitResponse] = js.native
     def getQueryLoggingConfig(params: GetQueryLoggingConfigRequest): Request[GetQueryLoggingConfigResponse] = js.native
     def getReusableDelegationSet(params: GetReusableDelegationSetRequest): Request[GetReusableDelegationSetResponse] =
       js.native
     def getReusableDelegationSetLimit(
         params: GetReusableDelegationSetLimitRequest
-    ): Request[GetReusableDelegationSetLimitResponse]                                        = js.native
+    ): Request[GetReusableDelegationSetLimitResponse] = js.native
     def getTrafficPolicy(params: GetTrafficPolicyRequest): Request[GetTrafficPolicyResponse] = js.native
     def getTrafficPolicyInstance(params: GetTrafficPolicyInstanceRequest): Request[GetTrafficPolicyInstanceResponse] =
       js.native
     def getTrafficPolicyInstanceCount(
         params: GetTrafficPolicyInstanceCountRequest
-    ): Request[GetTrafficPolicyInstanceCountResponse]                                                       = js.native
-    def listGeoLocations(params: ListGeoLocationsRequest): Request[ListGeoLocationsResponse]                = js.native
-    def listHealthChecks(params: ListHealthChecksRequest): Request[ListHealthChecksResponse]                = js.native
-    def listHostedZones(params: ListHostedZonesRequest): Request[ListHostedZonesResponse]                   = js.native
+    ): Request[GetTrafficPolicyInstanceCountResponse] = js.native
+    def listGeoLocations(params: ListGeoLocationsRequest): Request[ListGeoLocationsResponse] = js.native
+    def listHealthChecks(params: ListHealthChecksRequest): Request[ListHealthChecksResponse] = js.native
+    def listHostedZones(params: ListHostedZonesRequest): Request[ListHostedZonesResponse] = js.native
     def listHostedZonesByName(params: ListHostedZonesByNameRequest): Request[ListHostedZonesByNameResponse] = js.native
-    def listHostedZonesByVPC(params: ListHostedZonesByVPCRequest): Request[ListHostedZonesByVPCResponse]    = js.native
+    def listHostedZonesByVPC(params: ListHostedZonesByVPCRequest): Request[ListHostedZonesByVPCResponse] = js.native
     def listQueryLoggingConfigs(params: ListQueryLoggingConfigsRequest): Request[ListQueryLoggingConfigsResponse] =
       js.native
     def listResourceRecordSets(params: ListResourceRecordSetsRequest): Request[ListResourceRecordSetsResponse] =
       js.native
     def listReusableDelegationSets(
         params: ListReusableDelegationSetsRequest
-    ): Request[ListReusableDelegationSetsResponse]                                                       = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]    = js.native
+    ): Request[ListReusableDelegationSetsResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listTagsForResources(params: ListTagsForResourcesRequest): Request[ListTagsForResourcesResponse] = js.native
-    def listTrafficPolicies(params: ListTrafficPoliciesRequest): Request[ListTrafficPoliciesResponse]    = js.native
+    def listTrafficPolicies(params: ListTrafficPoliciesRequest): Request[ListTrafficPoliciesResponse] = js.native
     def listTrafficPolicyInstances(
         params: ListTrafficPolicyInstancesRequest
     ): Request[ListTrafficPolicyInstancesResponse] = js.native
@@ -368,8 +368,8 @@ package route53 {
     ): Request[ListTrafficPolicyVersionsResponse] = js.native
     def listVPCAssociationAuthorizations(
         params: ListVPCAssociationAuthorizationsRequest
-    ): Request[ListVPCAssociationAuthorizationsResponse]                                        = js.native
-    def testDNSAnswer(params: TestDNSAnswerRequest): Request[TestDNSAnswerResponse]             = js.native
+    ): Request[ListVPCAssociationAuthorizationsResponse] = js.native
+    def testDNSAnswer(params: TestDNSAnswerRequest): Request[TestDNSAnswerResponse] = js.native
     def updateHealthCheck(params: UpdateHealthCheckRequest): Request[UpdateHealthCheckResponse] = js.native
     def updateHostedZoneComment(params: UpdateHostedZoneCommentRequest): Request[UpdateHostedZoneCommentResponse] =
       js.native
@@ -397,7 +397,7 @@ package route53 {
         Value: LimitValue
     ): AccountLimit = {
       val __obj = js.Dynamic.literal(
-        "Type"  -> Type.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -408,11 +408,11 @@ package route53 {
   @js.native
   sealed trait AccountLimitType extends js.Any
   object AccountLimitType extends js.Object {
-    val MAX_HEALTH_CHECKS_BY_OWNER            = "MAX_HEALTH_CHECKS_BY_OWNER".asInstanceOf[AccountLimitType]
-    val MAX_HOSTED_ZONES_BY_OWNER             = "MAX_HOSTED_ZONES_BY_OWNER".asInstanceOf[AccountLimitType]
+    val MAX_HEALTH_CHECKS_BY_OWNER = "MAX_HEALTH_CHECKS_BY_OWNER".asInstanceOf[AccountLimitType]
+    val MAX_HOSTED_ZONES_BY_OWNER = "MAX_HOSTED_ZONES_BY_OWNER".asInstanceOf[AccountLimitType]
     val MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER = "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER".asInstanceOf[AccountLimitType]
     val MAX_REUSABLE_DELEGATION_SETS_BY_OWNER = "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER".asInstanceOf[AccountLimitType]
-    val MAX_TRAFFIC_POLICIES_BY_OWNER         = "MAX_TRAFFIC_POLICIES_BY_OWNER".asInstanceOf[AccountLimitType]
+    val MAX_TRAFFIC_POLICIES_BY_OWNER = "MAX_TRAFFIC_POLICIES_BY_OWNER".asInstanceOf[AccountLimitType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -441,7 +441,7 @@ package route53 {
         Region: CloudWatchRegion
     ): AlarmIdentifier = {
       val __obj = js.Dynamic.literal(
-        "Name"   -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Region" -> Region.asInstanceOf[js.Any]
       )
 
@@ -470,9 +470,9 @@ package route53 {
         HostedZoneId: ResourceId
     ): AliasTarget = {
       val __obj = js.Dynamic.literal(
-        "DNSName"              -> DNSName.asInstanceOf[js.Any],
+        "DNSName" -> DNSName.asInstanceOf[js.Any],
         "EvaluateTargetHealth" -> EvaluateTargetHealth.asInstanceOf[js.Any],
-        "HostedZoneId"         -> HostedZoneId.asInstanceOf[js.Any]
+        "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AliasTarget]
@@ -498,7 +498,7 @@ package route53 {
     ): AssociateVPCWithHostedZoneRequest = {
       val __obj = js.Dynamic.literal(
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
-        "VPC"          -> VPC.asInstanceOf[js.Any]
+        "VPC" -> VPC.asInstanceOf[js.Any]
       )
 
       Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
@@ -543,7 +543,7 @@ package route53 {
         ResourceRecordSet: ResourceRecordSet
     ): Change = {
       val __obj = js.Dynamic.literal(
-        "Action"            -> Action.asInstanceOf[js.Any],
+        "Action" -> Action.asInstanceOf[js.Any],
         "ResourceRecordSet" -> ResourceRecordSet.asInstanceOf[js.Any]
       )
 
@@ -605,8 +605,8 @@ package route53 {
         Comment: js.UndefOr[ResourceDescription] = js.undefined
     ): ChangeInfo = {
       val __obj = js.Dynamic.literal(
-        "Id"          -> Id.asInstanceOf[js.Any],
-        "Status"      -> Status.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any],
         "SubmittedAt" -> SubmittedAt.asInstanceOf[js.Any]
       )
 
@@ -631,7 +631,7 @@ package route53 {
         HostedZoneId: ResourceId
     ): ChangeResourceRecordSetsRequest = {
       val __obj = js.Dynamic.literal(
-        "ChangeBatch"  -> ChangeBatch.asInstanceOf[js.Any],
+        "ChangeBatch" -> ChangeBatch.asInstanceOf[js.Any],
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any]
       )
 
@@ -664,7 +664,7 @@ package route53 {
   sealed trait ChangeStatus extends js.Any
   object ChangeStatus extends js.Object {
     val PENDING = "PENDING".asInstanceOf[ChangeStatus]
-    val INSYNC  = "INSYNC".asInstanceOf[ChangeStatus]
+    val INSYNC = "INSYNC".asInstanceOf[ChangeStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, INSYNC))
   }
@@ -689,7 +689,7 @@ package route53 {
         RemoveTagKeys: js.UndefOr[TagKeyList] = js.undefined
     ): ChangeTagsForResourceRequest = {
       val __obj = js.Dynamic.literal(
-        "ResourceId"   -> ResourceId.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "ResourceType" -> ResourceType.asInstanceOf[js.Any]
       )
 
@@ -744,12 +744,12 @@ package route53 {
     ): CloudWatchAlarmConfiguration = {
       val __obj = js.Dynamic.literal(
         "ComparisonOperator" -> ComparisonOperator.asInstanceOf[js.Any],
-        "EvaluationPeriods"  -> EvaluationPeriods.asInstanceOf[js.Any],
-        "MetricName"         -> MetricName.asInstanceOf[js.Any],
-        "Namespace"          -> Namespace.asInstanceOf[js.Any],
-        "Period"             -> Period.asInstanceOf[js.Any],
-        "Statistic"          -> Statistic.asInstanceOf[js.Any],
-        "Threshold"          -> Threshold.asInstanceOf[js.Any]
+        "EvaluationPeriods" -> EvaluationPeriods.asInstanceOf[js.Any],
+        "MetricName" -> MetricName.asInstanceOf[js.Any],
+        "Namespace" -> Namespace.asInstanceOf[js.Any],
+        "Period" -> Period.asInstanceOf[js.Any],
+        "Statistic" -> Statistic.asInstanceOf[js.Any],
+        "Threshold" -> Threshold.asInstanceOf[js.Any]
       )
 
       Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
@@ -760,32 +760,32 @@ package route53 {
   @js.native
   sealed trait CloudWatchRegion extends js.Any
   object CloudWatchRegion extends js.Object {
-    val `us-east-1`      = "us-east-1".asInstanceOf[CloudWatchRegion]
-    val `us-east-2`      = "us-east-2".asInstanceOf[CloudWatchRegion]
-    val `us-west-1`      = "us-west-1".asInstanceOf[CloudWatchRegion]
-    val `us-west-2`      = "us-west-2".asInstanceOf[CloudWatchRegion]
-    val `ca-central-1`   = "ca-central-1".asInstanceOf[CloudWatchRegion]
-    val `eu-central-1`   = "eu-central-1".asInstanceOf[CloudWatchRegion]
-    val `eu-west-1`      = "eu-west-1".asInstanceOf[CloudWatchRegion]
-    val `eu-west-2`      = "eu-west-2".asInstanceOf[CloudWatchRegion]
-    val `eu-west-3`      = "eu-west-3".asInstanceOf[CloudWatchRegion]
-    val `ap-east-1`      = "ap-east-1".asInstanceOf[CloudWatchRegion]
-    val `me-south-1`     = "me-south-1".asInstanceOf[CloudWatchRegion]
-    val `ap-south-1`     = "ap-south-1".asInstanceOf[CloudWatchRegion]
+    val `us-east-1` = "us-east-1".asInstanceOf[CloudWatchRegion]
+    val `us-east-2` = "us-east-2".asInstanceOf[CloudWatchRegion]
+    val `us-west-1` = "us-west-1".asInstanceOf[CloudWatchRegion]
+    val `us-west-2` = "us-west-2".asInstanceOf[CloudWatchRegion]
+    val `ca-central-1` = "ca-central-1".asInstanceOf[CloudWatchRegion]
+    val `eu-central-1` = "eu-central-1".asInstanceOf[CloudWatchRegion]
+    val `eu-west-1` = "eu-west-1".asInstanceOf[CloudWatchRegion]
+    val `eu-west-2` = "eu-west-2".asInstanceOf[CloudWatchRegion]
+    val `eu-west-3` = "eu-west-3".asInstanceOf[CloudWatchRegion]
+    val `ap-east-1` = "ap-east-1".asInstanceOf[CloudWatchRegion]
+    val `me-south-1` = "me-south-1".asInstanceOf[CloudWatchRegion]
+    val `ap-south-1` = "ap-south-1".asInstanceOf[CloudWatchRegion]
     val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[CloudWatchRegion]
     val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[CloudWatchRegion]
     val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[CloudWatchRegion]
     val `ap-northeast-2` = "ap-northeast-2".asInstanceOf[CloudWatchRegion]
     val `ap-northeast-3` = "ap-northeast-3".asInstanceOf[CloudWatchRegion]
-    val `eu-north-1`     = "eu-north-1".asInstanceOf[CloudWatchRegion]
-    val `sa-east-1`      = "sa-east-1".asInstanceOf[CloudWatchRegion]
+    val `eu-north-1` = "eu-north-1".asInstanceOf[CloudWatchRegion]
+    val `sa-east-1` = "sa-east-1".asInstanceOf[CloudWatchRegion]
     val `cn-northwest-1` = "cn-northwest-1".asInstanceOf[CloudWatchRegion]
-    val `cn-north-1`     = "cn-north-1".asInstanceOf[CloudWatchRegion]
-    val `af-south-1`     = "af-south-1".asInstanceOf[CloudWatchRegion]
-    val `eu-south-1`     = "eu-south-1".asInstanceOf[CloudWatchRegion]
-    val `us-gov-west-1`  = "us-gov-west-1".asInstanceOf[CloudWatchRegion]
-    val `us-gov-east-1`  = "us-gov-east-1".asInstanceOf[CloudWatchRegion]
-    val `us-iso-east-1`  = "us-iso-east-1".asInstanceOf[CloudWatchRegion]
+    val `cn-north-1` = "cn-north-1".asInstanceOf[CloudWatchRegion]
+    val `af-south-1` = "af-south-1".asInstanceOf[CloudWatchRegion]
+    val `eu-south-1` = "eu-south-1".asInstanceOf[CloudWatchRegion]
+    val `us-gov-west-1` = "us-gov-west-1".asInstanceOf[CloudWatchRegion]
+    val `us-gov-east-1` = "us-gov-east-1".asInstanceOf[CloudWatchRegion]
+    val `us-iso-east-1` = "us-iso-east-1".asInstanceOf[CloudWatchRegion]
     val `us-isob-east-1` = "us-isob-east-1".asInstanceOf[CloudWatchRegion]
 
     val values = js.Object.freeze(
@@ -825,9 +825,9 @@ package route53 {
   sealed trait ComparisonOperator extends js.Any
   object ComparisonOperator extends js.Object {
     val GreaterThanOrEqualToThreshold = "GreaterThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
-    val GreaterThanThreshold          = "GreaterThanThreshold".asInstanceOf[ComparisonOperator]
-    val LessThanThreshold             = "LessThanThreshold".asInstanceOf[ComparisonOperator]
-    val LessThanOrEqualToThreshold    = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
+    val GreaterThanThreshold = "GreaterThanThreshold".asInstanceOf[ComparisonOperator]
+    val LessThanThreshold = "LessThanThreshold".asInstanceOf[ComparisonOperator]
+    val LessThanOrEqualToThreshold = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
 
     val values = js.Object.freeze(
       js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
@@ -850,7 +850,7 @@ package route53 {
         HealthCheckConfig: HealthCheckConfig
     ): CreateHealthCheckRequest = {
       val __obj = js.Dynamic.literal(
-        "CallerReference"   -> CallerReference.asInstanceOf[js.Any],
+        "CallerReference" -> CallerReference.asInstanceOf[js.Any],
         "HealthCheckConfig" -> HealthCheckConfig.asInstanceOf[js.Any]
       )
 
@@ -875,7 +875,7 @@ package route53 {
     ): CreateHealthCheckResponse = {
       val __obj = js.Dynamic.literal(
         "HealthCheck" -> HealthCheck.asInstanceOf[js.Any],
-        "Location"    -> Location.asInstanceOf[js.Any]
+        "Location" -> Location.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateHealthCheckResponse]
@@ -905,7 +905,7 @@ package route53 {
     ): CreateHostedZoneRequest = {
       val __obj = js.Dynamic.literal(
         "CallerReference" -> CallerReference.asInstanceOf[js.Any],
-        "Name"            -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       DelegationSetId.foreach(__v => __obj.updateDynamic("DelegationSetId")(__v.asInstanceOf[js.Any]))
@@ -937,10 +937,10 @@ package route53 {
         VPC: js.UndefOr[VPC] = js.undefined
     ): CreateHostedZoneResponse = {
       val __obj = js.Dynamic.literal(
-        "ChangeInfo"    -> ChangeInfo.asInstanceOf[js.Any],
+        "ChangeInfo" -> ChangeInfo.asInstanceOf[js.Any],
         "DelegationSet" -> DelegationSet.asInstanceOf[js.Any],
-        "HostedZone"    -> HostedZone.asInstanceOf[js.Any],
-        "Location"      -> Location.asInstanceOf[js.Any]
+        "HostedZone" -> HostedZone.asInstanceOf[js.Any],
+        "Location" -> Location.asInstanceOf[js.Any]
       )
 
       VPC.foreach(__v => __obj.updateDynamic("VPC")(__v.asInstanceOf[js.Any]))
@@ -962,7 +962,7 @@ package route53 {
     ): CreateQueryLoggingConfigRequest = {
       val __obj = js.Dynamic.literal(
         "CloudWatchLogsLogGroupArn" -> CloudWatchLogsLogGroupArn.asInstanceOf[js.Any],
-        "HostedZoneId"              -> HostedZoneId.asInstanceOf[js.Any]
+        "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateQueryLoggingConfigRequest]
@@ -982,7 +982,7 @@ package route53 {
         QueryLoggingConfig: QueryLoggingConfig
     ): CreateQueryLoggingConfigResponse = {
       val __obj = js.Dynamic.literal(
-        "Location"           -> Location.asInstanceOf[js.Any],
+        "Location" -> Location.asInstanceOf[js.Any],
         "QueryLoggingConfig" -> QueryLoggingConfig.asInstanceOf[js.Any]
       )
 
@@ -1025,7 +1025,7 @@ package route53 {
     ): CreateReusableDelegationSetResponse = {
       val __obj = js.Dynamic.literal(
         "DelegationSet" -> DelegationSet.asInstanceOf[js.Any],
-        "Location"      -> Location.asInstanceOf[js.Any]
+        "Location" -> Location.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateReusableDelegationSetResponse]
@@ -1054,10 +1054,10 @@ package route53 {
         TrafficPolicyVersion: TrafficPolicyVersion
     ): CreateTrafficPolicyInstanceRequest = {
       val __obj = js.Dynamic.literal(
-        "HostedZoneId"         -> HostedZoneId.asInstanceOf[js.Any],
-        "Name"                 -> Name.asInstanceOf[js.Any],
-        "TTL"                  -> TTL.asInstanceOf[js.Any],
-        "TrafficPolicyId"      -> TrafficPolicyId.asInstanceOf[js.Any],
+        "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "TTL" -> TTL.asInstanceOf[js.Any],
+        "TrafficPolicyId" -> TrafficPolicyId.asInstanceOf[js.Any],
         "TrafficPolicyVersion" -> TrafficPolicyVersion.asInstanceOf[js.Any]
       )
 
@@ -1081,7 +1081,7 @@ package route53 {
         TrafficPolicyInstance: TrafficPolicyInstance
     ): CreateTrafficPolicyInstanceResponse = {
       val __obj = js.Dynamic.literal(
-        "Location"              -> Location.asInstanceOf[js.Any],
+        "Location" -> Location.asInstanceOf[js.Any],
         "TrafficPolicyInstance" -> TrafficPolicyInstance.asInstanceOf[js.Any]
       )
 
@@ -1108,7 +1108,7 @@ package route53 {
     ): CreateTrafficPolicyRequest = {
       val __obj = js.Dynamic.literal(
         "Document" -> Document.asInstanceOf[js.Any],
-        "Name"     -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
@@ -1132,7 +1132,7 @@ package route53 {
         TrafficPolicy: TrafficPolicy
     ): CreateTrafficPolicyResponse = {
       val __obj = js.Dynamic.literal(
-        "Location"      -> Location.asInstanceOf[js.Any],
+        "Location" -> Location.asInstanceOf[js.Any],
         "TrafficPolicy" -> TrafficPolicy.asInstanceOf[js.Any]
       )
 
@@ -1159,7 +1159,7 @@ package route53 {
     ): CreateTrafficPolicyVersionRequest = {
       val __obj = js.Dynamic.literal(
         "Document" -> Document.asInstanceOf[js.Any],
-        "Id"       -> Id.asInstanceOf[js.Any]
+        "Id" -> Id.asInstanceOf[js.Any]
       )
 
       Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
@@ -1183,7 +1183,7 @@ package route53 {
         TrafficPolicy: TrafficPolicy
     ): CreateTrafficPolicyVersionResponse = {
       val __obj = js.Dynamic.literal(
-        "Location"      -> Location.asInstanceOf[js.Any],
+        "Location" -> Location.asInstanceOf[js.Any],
         "TrafficPolicy" -> TrafficPolicy.asInstanceOf[js.Any]
       )
 
@@ -1208,7 +1208,7 @@ package route53 {
     ): CreateVPCAssociationAuthorizationRequest = {
       val __obj = js.Dynamic.literal(
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
-        "VPC"          -> VPC.asInstanceOf[js.Any]
+        "VPC" -> VPC.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateVPCAssociationAuthorizationRequest]
@@ -1232,7 +1232,7 @@ package route53 {
     ): CreateVPCAssociationAuthorizationResponse = {
       val __obj = js.Dynamic.literal(
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
-        "VPC"          -> VPC.asInstanceOf[js.Any]
+        "VPC" -> VPC.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateVPCAssociationAuthorizationResponse]
@@ -1466,7 +1466,7 @@ package route53 {
         Version: TrafficPolicyVersion
     ): DeleteTrafficPolicyRequest = {
       val __obj = js.Dynamic.literal(
-        "Id"      -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "Version" -> Version.asInstanceOf[js.Any]
       )
 
@@ -1507,7 +1507,7 @@ package route53 {
     ): DeleteVPCAssociationAuthorizationRequest = {
       val __obj = js.Dynamic.literal(
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
-        "VPC"          -> VPC.asInstanceOf[js.Any]
+        "VPC" -> VPC.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteVPCAssociationAuthorizationRequest]
@@ -1546,7 +1546,7 @@ package route53 {
         Value: DimensionField
     ): Dimension = {
       val __obj = js.Dynamic.literal(
-        "Name"  -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -1573,7 +1573,7 @@ package route53 {
     ): DisassociateVPCFromHostedZoneRequest = {
       val __obj = js.Dynamic.literal(
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
-        "VPC"          -> VPC.asInstanceOf[js.Any]
+        "VPC" -> VPC.asInstanceOf[js.Any]
       )
 
       Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
@@ -2048,7 +2048,7 @@ package route53 {
     ): GetHostedZoneLimitRequest = {
       val __obj = js.Dynamic.literal(
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
-        "Type"         -> Type.asInstanceOf[js.Any]
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetHostedZoneLimitRequest]
@@ -2180,7 +2180,7 @@ package route53 {
     ): GetReusableDelegationSetLimitRequest = {
       val __obj = js.Dynamic.literal(
         "DelegationSetId" -> DelegationSetId.asInstanceOf[js.Any],
-        "Type"            -> Type.asInstanceOf[js.Any]
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetReusableDelegationSetLimitRequest]
@@ -2348,7 +2348,7 @@ package route53 {
         Version: TrafficPolicyVersion
     ): GetTrafficPolicyRequest = {
       val __obj = js.Dynamic.literal(
-        "Id"      -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "Version" -> Version.asInstanceOf[js.Any]
       )
 
@@ -2401,10 +2401,10 @@ package route53 {
         LinkedService: js.UndefOr[LinkedService] = js.undefined
     ): HealthCheck = {
       val __obj = js.Dynamic.literal(
-        "CallerReference"    -> CallerReference.asInstanceOf[js.Any],
-        "HealthCheckConfig"  -> HealthCheckConfig.asInstanceOf[js.Any],
+        "CallerReference" -> CallerReference.asInstanceOf[js.Any],
+        "HealthCheckConfig" -> HealthCheckConfig.asInstanceOf[js.Any],
         "HealthCheckVersion" -> HealthCheckVersion.asInstanceOf[js.Any],
-        "Id"                 -> Id.asInstanceOf[js.Any]
+        "Id" -> Id.asInstanceOf[js.Any]
       )
 
       CloudWatchAlarmConfiguration.foreach(__v =>
@@ -2514,14 +2514,14 @@ package route53 {
   @js.native
   sealed trait HealthCheckRegion extends js.Any
   object HealthCheckRegion extends js.Object {
-    val `us-east-1`      = "us-east-1".asInstanceOf[HealthCheckRegion]
-    val `us-west-1`      = "us-west-1".asInstanceOf[HealthCheckRegion]
-    val `us-west-2`      = "us-west-2".asInstanceOf[HealthCheckRegion]
-    val `eu-west-1`      = "eu-west-1".asInstanceOf[HealthCheckRegion]
+    val `us-east-1` = "us-east-1".asInstanceOf[HealthCheckRegion]
+    val `us-west-1` = "us-west-1".asInstanceOf[HealthCheckRegion]
+    val `us-west-2` = "us-west-2".asInstanceOf[HealthCheckRegion]
+    val `eu-west-1` = "eu-west-1".asInstanceOf[HealthCheckRegion]
     val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[HealthCheckRegion]
     val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[HealthCheckRegion]
     val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[HealthCheckRegion]
-    val `sa-east-1`      = "sa-east-1".asInstanceOf[HealthCheckRegion]
+    val `sa-east-1` = "sa-east-1".asInstanceOf[HealthCheckRegion]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2540,12 +2540,12 @@ package route53 {
   @js.native
   sealed trait HealthCheckType extends js.Any
   object HealthCheckType extends js.Object {
-    val HTTP              = "HTTP".asInstanceOf[HealthCheckType]
-    val HTTPS             = "HTTPS".asInstanceOf[HealthCheckType]
-    val HTTP_STR_MATCH    = "HTTP_STR_MATCH".asInstanceOf[HealthCheckType]
-    val HTTPS_STR_MATCH   = "HTTPS_STR_MATCH".asInstanceOf[HealthCheckType]
-    val TCP               = "TCP".asInstanceOf[HealthCheckType]
-    val CALCULATED        = "CALCULATED".asInstanceOf[HealthCheckType]
+    val HTTP = "HTTP".asInstanceOf[HealthCheckType]
+    val HTTPS = "HTTPS".asInstanceOf[HealthCheckType]
+    val HTTP_STR_MATCH = "HTTP_STR_MATCH".asInstanceOf[HealthCheckType]
+    val HTTPS_STR_MATCH = "HTTPS_STR_MATCH".asInstanceOf[HealthCheckType]
+    val TCP = "TCP".asInstanceOf[HealthCheckType]
+    val CALCULATED = "CALCULATED".asInstanceOf[HealthCheckType]
     val CLOUDWATCH_METRIC = "CLOUDWATCH_METRIC".asInstanceOf[HealthCheckType]
 
     val values =
@@ -2577,8 +2577,8 @@ package route53 {
     ): HostedZone = {
       val __obj = js.Dynamic.literal(
         "CallerReference" -> CallerReference.asInstanceOf[js.Any],
-        "Id"              -> Id.asInstanceOf[js.Any],
-        "Name"            -> Name.asInstanceOf[js.Any]
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       Config.foreach(__v => __obj.updateDynamic("Config")(__v.asInstanceOf[js.Any]))
@@ -2626,7 +2626,7 @@ package route53 {
         Value: LimitValue
     ): HostedZoneLimit = {
       val __obj = js.Dynamic.literal(
-        "Type"  -> Type.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -2637,7 +2637,7 @@ package route53 {
   @js.native
   sealed trait HostedZoneLimitType extends js.Any
   object HostedZoneLimitType extends js.Object {
-    val MAX_RRSETS_BY_ZONE          = "MAX_RRSETS_BY_ZONE".asInstanceOf[HostedZoneLimitType]
+    val MAX_RRSETS_BY_ZONE = "MAX_RRSETS_BY_ZONE".asInstanceOf[HostedZoneLimitType]
     val MAX_VPCS_ASSOCIATED_BY_ZONE = "MAX_VPCS_ASSOCIATED_BY_ZONE".asInstanceOf[HostedZoneLimitType]
 
     val values = js.Object.freeze(js.Array(MAX_RRSETS_BY_ZONE, MAX_VPCS_ASSOCIATED_BY_ZONE))
@@ -2684,8 +2684,8 @@ package route53 {
     ): HostedZoneSummary = {
       val __obj = js.Dynamic.literal(
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
-        "Name"         -> Name.asInstanceOf[js.Any],
-        "Owner"        -> Owner.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Owner" -> Owner.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[HostedZoneSummary]
@@ -2695,8 +2695,8 @@ package route53 {
   @js.native
   sealed trait InsufficientDataHealthStatus extends js.Any
   object InsufficientDataHealthStatus extends js.Object {
-    val Healthy         = "Healthy".asInstanceOf[InsufficientDataHealthStatus]
-    val Unhealthy       = "Unhealthy".asInstanceOf[InsufficientDataHealthStatus]
+    val Healthy = "Healthy".asInstanceOf[InsufficientDataHealthStatus]
+    val Unhealthy = "Unhealthy".asInstanceOf[InsufficientDataHealthStatus]
     val LastKnownStatus = "LastKnownStatus".asInstanceOf[InsufficientDataHealthStatus]
 
     val values = js.Object.freeze(js.Array(Healthy, Unhealthy, LastKnownStatus))
@@ -2777,8 +2777,8 @@ package route53 {
     ): ListGeoLocationsResponse = {
       val __obj = js.Dynamic.literal(
         "GeoLocationDetailsList" -> GeoLocationDetailsList.asInstanceOf[js.Any],
-        "IsTruncated"            -> IsTruncated.asInstanceOf[js.Any],
-        "MaxItems"               -> MaxItems.asInstanceOf[js.Any]
+        "IsTruncated" -> IsTruncated.asInstanceOf[js.Any],
+        "MaxItems" -> MaxItems.asInstanceOf[js.Any]
       )
 
       NextContinentCode.foreach(__v => __obj.updateDynamic("NextContinentCode")(__v.asInstanceOf[js.Any]))
@@ -2833,9 +2833,9 @@ package route53 {
     ): ListHealthChecksResponse = {
       val __obj = js.Dynamic.literal(
         "HealthChecks" -> HealthChecks.asInstanceOf[js.Any],
-        "IsTruncated"  -> IsTruncated.asInstanceOf[js.Any],
-        "Marker"       -> Marker.asInstanceOf[js.Any],
-        "MaxItems"     -> MaxItems.asInstanceOf[js.Any]
+        "IsTruncated" -> IsTruncated.asInstanceOf[js.Any],
+        "Marker" -> Marker.asInstanceOf[js.Any],
+        "MaxItems" -> MaxItems.asInstanceOf[js.Any]
       )
 
       NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
@@ -2896,7 +2896,7 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "HostedZones" -> HostedZones.asInstanceOf[js.Any],
         "IsTruncated" -> IsTruncated.asInstanceOf[js.Any],
-        "MaxItems"    -> MaxItems.asInstanceOf[js.Any]
+        "MaxItems" -> MaxItems.asInstanceOf[js.Any]
       )
 
       DNSName.foreach(__v => __obj.updateDynamic("DNSName")(__v.asInstanceOf[js.Any]))
@@ -2927,7 +2927,7 @@ package route53 {
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListHostedZonesByVPCRequest = {
       val __obj = js.Dynamic.literal(
-        "VPCId"     -> VPCId.asInstanceOf[js.Any],
+        "VPCId" -> VPCId.asInstanceOf[js.Any],
         "VPCRegion" -> VPCRegion.asInstanceOf[js.Any]
       )
 
@@ -2953,7 +2953,7 @@ package route53 {
     ): ListHostedZonesByVPCResponse = {
       val __obj = js.Dynamic.literal(
         "HostedZoneSummaries" -> HostedZoneSummaries.asInstanceOf[js.Any],
-        "MaxItems"            -> MaxItems.asInstanceOf[js.Any]
+        "MaxItems" -> MaxItems.asInstanceOf[js.Any]
       )
 
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
@@ -3007,8 +3007,8 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "HostedZones" -> HostedZones.asInstanceOf[js.Any],
         "IsTruncated" -> IsTruncated.asInstanceOf[js.Any],
-        "Marker"      -> Marker.asInstanceOf[js.Any],
-        "MaxItems"    -> MaxItems.asInstanceOf[js.Any]
+        "Marker" -> Marker.asInstanceOf[js.Any],
+        "MaxItems" -> MaxItems.asInstanceOf[js.Any]
       )
 
       NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
@@ -3116,8 +3116,8 @@ package route53 {
         NextRecordType: js.UndefOr[RRType] = js.undefined
     ): ListResourceRecordSetsResponse = {
       val __obj = js.Dynamic.literal(
-        "IsTruncated"        -> IsTruncated.asInstanceOf[js.Any],
-        "MaxItems"           -> MaxItems.asInstanceOf[js.Any],
+        "IsTruncated" -> IsTruncated.asInstanceOf[js.Any],
+        "MaxItems" -> MaxItems.asInstanceOf[js.Any],
         "ResourceRecordSets" -> ResourceRecordSets.asInstanceOf[js.Any]
       )
 
@@ -3173,9 +3173,9 @@ package route53 {
     ): ListReusableDelegationSetsResponse = {
       val __obj = js.Dynamic.literal(
         "DelegationSets" -> DelegationSets.asInstanceOf[js.Any],
-        "IsTruncated"    -> IsTruncated.asInstanceOf[js.Any],
-        "Marker"         -> Marker.asInstanceOf[js.Any],
-        "MaxItems"       -> MaxItems.asInstanceOf[js.Any]
+        "IsTruncated" -> IsTruncated.asInstanceOf[js.Any],
+        "Marker" -> Marker.asInstanceOf[js.Any],
+        "MaxItems" -> MaxItems.asInstanceOf[js.Any]
       )
 
       NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
@@ -3199,7 +3199,7 @@ package route53 {
         ResourceType: TagResourceType
     ): ListTagsForResourceRequest = {
       val __obj = js.Dynamic.literal(
-        "ResourceId"   -> ResourceId.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "ResourceType" -> ResourceType.asInstanceOf[js.Any]
       )
 
@@ -3244,7 +3244,7 @@ package route53 {
         ResourceType: TagResourceType
     ): ListTagsForResourcesRequest = {
       val __obj = js.Dynamic.literal(
-        "ResourceIds"  -> ResourceIds.asInstanceOf[js.Any],
+        "ResourceIds" -> ResourceIds.asInstanceOf[js.Any],
         "ResourceType" -> ResourceType.asInstanceOf[js.Any]
       )
 
@@ -3315,9 +3315,9 @@ package route53 {
         TrafficPolicySummaries: TrafficPolicySummaries
     ): ListTrafficPoliciesResponse = {
       val __obj = js.Dynamic.literal(
-        "IsTruncated"            -> IsTruncated.asInstanceOf[js.Any],
-        "MaxItems"               -> MaxItems.asInstanceOf[js.Any],
-        "TrafficPolicyIdMarker"  -> TrafficPolicyIdMarker.asInstanceOf[js.Any],
+        "IsTruncated" -> IsTruncated.asInstanceOf[js.Any],
+        "MaxItems" -> MaxItems.asInstanceOf[js.Any],
+        "TrafficPolicyIdMarker" -> TrafficPolicyIdMarker.asInstanceOf[js.Any],
         "TrafficPolicySummaries" -> TrafficPolicySummaries.asInstanceOf[js.Any]
       )
 
@@ -3381,8 +3381,8 @@ package route53 {
         TrafficPolicyInstanceTypeMarker: js.UndefOr[RRType] = js.undefined
     ): ListTrafficPolicyInstancesByHostedZoneResponse = {
       val __obj = js.Dynamic.literal(
-        "IsTruncated"            -> IsTruncated.asInstanceOf[js.Any],
-        "MaxItems"               -> MaxItems.asInstanceOf[js.Any],
+        "IsTruncated" -> IsTruncated.asInstanceOf[js.Any],
+        "MaxItems" -> MaxItems.asInstanceOf[js.Any],
         "TrafficPolicyInstances" -> TrafficPolicyInstances.asInstanceOf[js.Any]
       )
 
@@ -3420,7 +3420,7 @@ package route53 {
         TrafficPolicyInstanceTypeMarker: js.UndefOr[RRType] = js.undefined
     ): ListTrafficPolicyInstancesByPolicyRequest = {
       val __obj = js.Dynamic.literal(
-        "TrafficPolicyId"      -> TrafficPolicyId.asInstanceOf[js.Any],
+        "TrafficPolicyId" -> TrafficPolicyId.asInstanceOf[js.Any],
         "TrafficPolicyVersion" -> TrafficPolicyVersion.asInstanceOf[js.Any]
       )
 
@@ -3460,8 +3460,8 @@ package route53 {
         TrafficPolicyInstanceTypeMarker: js.UndefOr[RRType] = js.undefined
     ): ListTrafficPolicyInstancesByPolicyResponse = {
       val __obj = js.Dynamic.literal(
-        "IsTruncated"            -> IsTruncated.asInstanceOf[js.Any],
-        "MaxItems"               -> MaxItems.asInstanceOf[js.Any],
+        "IsTruncated" -> IsTruncated.asInstanceOf[js.Any],
+        "MaxItems" -> MaxItems.asInstanceOf[js.Any],
         "TrafficPolicyInstances" -> TrafficPolicyInstances.asInstanceOf[js.Any]
       )
 
@@ -3532,8 +3532,8 @@ package route53 {
         TrafficPolicyInstanceTypeMarker: js.UndefOr[RRType] = js.undefined
     ): ListTrafficPolicyInstancesResponse = {
       val __obj = js.Dynamic.literal(
-        "IsTruncated"            -> IsTruncated.asInstanceOf[js.Any],
-        "MaxItems"               -> MaxItems.asInstanceOf[js.Any],
+        "IsTruncated" -> IsTruncated.asInstanceOf[js.Any],
+        "MaxItems" -> MaxItems.asInstanceOf[js.Any],
         "TrafficPolicyInstances" -> TrafficPolicyInstances.asInstanceOf[js.Any]
       )
 
@@ -3597,9 +3597,9 @@ package route53 {
         TrafficPolicyVersionMarker: TrafficPolicyVersionMarker
     ): ListTrafficPolicyVersionsResponse = {
       val __obj = js.Dynamic.literal(
-        "IsTruncated"                -> IsTruncated.asInstanceOf[js.Any],
-        "MaxItems"                   -> MaxItems.asInstanceOf[js.Any],
-        "TrafficPolicies"            -> TrafficPolicies.asInstanceOf[js.Any],
+        "IsTruncated" -> IsTruncated.asInstanceOf[js.Any],
+        "MaxItems" -> MaxItems.asInstanceOf[js.Any],
+        "TrafficPolicies" -> TrafficPolicies.asInstanceOf[js.Any],
         "TrafficPolicyVersionMarker" -> TrafficPolicyVersionMarker.asInstanceOf[js.Any]
       )
 
@@ -3653,7 +3653,7 @@ package route53 {
     ): ListVPCAssociationAuthorizationsResponse = {
       val __obj = js.Dynamic.literal(
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
-        "VPCs"         -> VPCs.asInstanceOf[js.Any]
+        "VPCs" -> VPCs.asInstanceOf[js.Any]
       )
 
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
@@ -3680,8 +3680,8 @@ package route53 {
     ): QueryLoggingConfig = {
       val __obj = js.Dynamic.literal(
         "CloudWatchLogsLogGroupArn" -> CloudWatchLogsLogGroupArn.asInstanceOf[js.Any],
-        "HostedZoneId"              -> HostedZoneId.asInstanceOf[js.Any],
-        "Id"                        -> Id.asInstanceOf[js.Any]
+        "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[QueryLoggingConfig]
@@ -3691,18 +3691,18 @@ package route53 {
   @js.native
   sealed trait RRType extends js.Any
   object RRType extends js.Object {
-    val SOA   = "SOA".asInstanceOf[RRType]
-    val A     = "A".asInstanceOf[RRType]
-    val TXT   = "TXT".asInstanceOf[RRType]
-    val NS    = "NS".asInstanceOf[RRType]
+    val SOA = "SOA".asInstanceOf[RRType]
+    val A = "A".asInstanceOf[RRType]
+    val TXT = "TXT".asInstanceOf[RRType]
+    val NS = "NS".asInstanceOf[RRType]
     val CNAME = "CNAME".asInstanceOf[RRType]
-    val MX    = "MX".asInstanceOf[RRType]
+    val MX = "MX".asInstanceOf[RRType]
     val NAPTR = "NAPTR".asInstanceOf[RRType]
-    val PTR   = "PTR".asInstanceOf[RRType]
-    val SRV   = "SRV".asInstanceOf[RRType]
-    val SPF   = "SPF".asInstanceOf[RRType]
-    val AAAA  = "AAAA".asInstanceOf[RRType]
-    val CAA   = "CAA".asInstanceOf[RRType]
+    val PTR = "PTR".asInstanceOf[RRType]
+    val SRV = "SRV".asInstanceOf[RRType]
+    val SPF = "SPF".asInstanceOf[RRType]
+    val AAAA = "AAAA".asInstanceOf[RRType]
+    val CAA = "CAA".asInstanceOf[RRType]
 
     val values = js.Object.freeze(js.Array(SOA, A, TXT, NS, CNAME, MX, NAPTR, PTR, SRV, SPF, AAAA, CAA))
   }
@@ -3711,9 +3711,9 @@ package route53 {
   sealed trait ResettableElementName extends js.Any
   object ResettableElementName extends js.Object {
     val FullyQualifiedDomainName = "FullyQualifiedDomainName".asInstanceOf[ResettableElementName]
-    val Regions                  = "Regions".asInstanceOf[ResettableElementName]
-    val ResourcePath             = "ResourcePath".asInstanceOf[ResettableElementName]
-    val ChildHealthChecks        = "ChildHealthChecks".asInstanceOf[ResettableElementName]
+    val Regions = "Regions".asInstanceOf[ResettableElementName]
+    val ResourcePath = "ResourcePath".asInstanceOf[ResettableElementName]
+    val ChildHealthChecks = "ChildHealthChecks".asInstanceOf[ResettableElementName]
 
     val values = js.Object.freeze(js.Array(FullyQualifiedDomainName, Regions, ResourcePath, ChildHealthChecks))
   }
@@ -3801,7 +3801,7 @@ package route53 {
   @js.native
   sealed trait ResourceRecordSetFailover extends js.Any
   object ResourceRecordSetFailover extends js.Object {
-    val PRIMARY   = "PRIMARY".asInstanceOf[ResourceRecordSetFailover]
+    val PRIMARY = "PRIMARY".asInstanceOf[ResourceRecordSetFailover]
     val SECONDARY = "SECONDARY".asInstanceOf[ResourceRecordSetFailover]
 
     val values = js.Object.freeze(js.Array(PRIMARY, SECONDARY))
@@ -3810,29 +3810,29 @@ package route53 {
   @js.native
   sealed trait ResourceRecordSetRegion extends js.Any
   object ResourceRecordSetRegion extends js.Object {
-    val `us-east-1`      = "us-east-1".asInstanceOf[ResourceRecordSetRegion]
-    val `us-east-2`      = "us-east-2".asInstanceOf[ResourceRecordSetRegion]
-    val `us-west-1`      = "us-west-1".asInstanceOf[ResourceRecordSetRegion]
-    val `us-west-2`      = "us-west-2".asInstanceOf[ResourceRecordSetRegion]
-    val `ca-central-1`   = "ca-central-1".asInstanceOf[ResourceRecordSetRegion]
-    val `eu-west-1`      = "eu-west-1".asInstanceOf[ResourceRecordSetRegion]
-    val `eu-west-2`      = "eu-west-2".asInstanceOf[ResourceRecordSetRegion]
-    val `eu-west-3`      = "eu-west-3".asInstanceOf[ResourceRecordSetRegion]
-    val `eu-central-1`   = "eu-central-1".asInstanceOf[ResourceRecordSetRegion]
+    val `us-east-1` = "us-east-1".asInstanceOf[ResourceRecordSetRegion]
+    val `us-east-2` = "us-east-2".asInstanceOf[ResourceRecordSetRegion]
+    val `us-west-1` = "us-west-1".asInstanceOf[ResourceRecordSetRegion]
+    val `us-west-2` = "us-west-2".asInstanceOf[ResourceRecordSetRegion]
+    val `ca-central-1` = "ca-central-1".asInstanceOf[ResourceRecordSetRegion]
+    val `eu-west-1` = "eu-west-1".asInstanceOf[ResourceRecordSetRegion]
+    val `eu-west-2` = "eu-west-2".asInstanceOf[ResourceRecordSetRegion]
+    val `eu-west-3` = "eu-west-3".asInstanceOf[ResourceRecordSetRegion]
+    val `eu-central-1` = "eu-central-1".asInstanceOf[ResourceRecordSetRegion]
     val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[ResourceRecordSetRegion]
     val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[ResourceRecordSetRegion]
     val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[ResourceRecordSetRegion]
     val `ap-northeast-2` = "ap-northeast-2".asInstanceOf[ResourceRecordSetRegion]
     val `ap-northeast-3` = "ap-northeast-3".asInstanceOf[ResourceRecordSetRegion]
-    val `eu-north-1`     = "eu-north-1".asInstanceOf[ResourceRecordSetRegion]
-    val `sa-east-1`      = "sa-east-1".asInstanceOf[ResourceRecordSetRegion]
-    val `cn-north-1`     = "cn-north-1".asInstanceOf[ResourceRecordSetRegion]
+    val `eu-north-1` = "eu-north-1".asInstanceOf[ResourceRecordSetRegion]
+    val `sa-east-1` = "sa-east-1".asInstanceOf[ResourceRecordSetRegion]
+    val `cn-north-1` = "cn-north-1".asInstanceOf[ResourceRecordSetRegion]
     val `cn-northwest-1` = "cn-northwest-1".asInstanceOf[ResourceRecordSetRegion]
-    val `ap-east-1`      = "ap-east-1".asInstanceOf[ResourceRecordSetRegion]
-    val `me-south-1`     = "me-south-1".asInstanceOf[ResourceRecordSetRegion]
-    val `ap-south-1`     = "ap-south-1".asInstanceOf[ResourceRecordSetRegion]
-    val `af-south-1`     = "af-south-1".asInstanceOf[ResourceRecordSetRegion]
-    val `eu-south-1`     = "eu-south-1".asInstanceOf[ResourceRecordSetRegion]
+    val `ap-east-1` = "ap-east-1".asInstanceOf[ResourceRecordSetRegion]
+    val `me-south-1` = "me-south-1".asInstanceOf[ResourceRecordSetRegion]
+    val `ap-south-1` = "ap-south-1".asInstanceOf[ResourceRecordSetRegion]
+    val `af-south-1` = "af-south-1".asInstanceOf[ResourceRecordSetRegion]
+    val `eu-south-1` = "eu-south-1".asInstanceOf[ResourceRecordSetRegion]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3904,7 +3904,7 @@ package route53 {
         Value: LimitValue
     ): ReusableDelegationSetLimit = {
       val __obj = js.Dynamic.literal(
-        "Type"  -> Type.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -3924,11 +3924,11 @@ package route53 {
   @js.native
   sealed trait Statistic extends js.Any
   object Statistic extends js.Object {
-    val Average     = "Average".asInstanceOf[Statistic]
-    val Sum         = "Sum".asInstanceOf[Statistic]
+    val Average = "Average".asInstanceOf[Statistic]
+    val Sum = "Sum".asInstanceOf[Statistic]
     val SampleCount = "SampleCount".asInstanceOf[Statistic]
-    val Maximum     = "Maximum".asInstanceOf[Statistic]
-    val Minimum     = "Minimum".asInstanceOf[Statistic]
+    val Maximum = "Maximum".asInstanceOf[Statistic]
+    val Minimum = "Minimum".asInstanceOf[Statistic]
 
     val values = js.Object.freeze(js.Array(Average, Sum, SampleCount, Maximum, Minimum))
   }
@@ -3981,7 +3981,7 @@ package route53 {
   sealed trait TagResourceType extends js.Any
   object TagResourceType extends js.Object {
     val healthcheck = "healthcheck".asInstanceOf[TagResourceType]
-    val hostedzone  = "hostedzone".asInstanceOf[TagResourceType]
+    val hostedzone = "hostedzone".asInstanceOf[TagResourceType]
 
     val values = js.Object.freeze(js.Array(healthcheck, hostedzone))
   }
@@ -4011,8 +4011,8 @@ package route53 {
     ): TestDNSAnswerRequest = {
       val __obj = js.Dynamic.literal(
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
-        "RecordName"   -> RecordName.asInstanceOf[js.Any],
-        "RecordType"   -> RecordType.asInstanceOf[js.Any]
+        "RecordName" -> RecordName.asInstanceOf[js.Any],
+        "RecordType" -> RecordType.asInstanceOf[js.Any]
       )
 
       EDNS0ClientSubnetIP.foreach(__v => __obj.updateDynamic("EDNS0ClientSubnetIP")(__v.asInstanceOf[js.Any]))
@@ -4046,11 +4046,11 @@ package route53 {
         ResponseCode: DNSRCode
     ): TestDNSAnswerResponse = {
       val __obj = js.Dynamic.literal(
-        "Nameserver"   -> Nameserver.asInstanceOf[js.Any],
-        "Protocol"     -> Protocol.asInstanceOf[js.Any],
-        "RecordData"   -> RecordData.asInstanceOf[js.Any],
-        "RecordName"   -> RecordName.asInstanceOf[js.Any],
-        "RecordType"   -> RecordType.asInstanceOf[js.Any],
+        "Nameserver" -> Nameserver.asInstanceOf[js.Any],
+        "Protocol" -> Protocol.asInstanceOf[js.Any],
+        "RecordData" -> RecordData.asInstanceOf[js.Any],
+        "RecordName" -> RecordName.asInstanceOf[js.Any],
+        "RecordType" -> RecordType.asInstanceOf[js.Any],
         "ResponseCode" -> ResponseCode.asInstanceOf[js.Any]
       )
 
@@ -4083,10 +4083,10 @@ package route53 {
     ): TrafficPolicy = {
       val __obj = js.Dynamic.literal(
         "Document" -> Document.asInstanceOf[js.Any],
-        "Id"       -> Id.asInstanceOf[js.Any],
-        "Name"     -> Name.asInstanceOf[js.Any],
-        "Type"     -> Type.asInstanceOf[js.Any],
-        "Version"  -> Version.asInstanceOf[js.Any]
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any],
+        "Version" -> Version.asInstanceOf[js.Any]
       )
 
       Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
@@ -4124,14 +4124,14 @@ package route53 {
         TrafficPolicyVersion: TrafficPolicyVersion
     ): TrafficPolicyInstance = {
       val __obj = js.Dynamic.literal(
-        "HostedZoneId"         -> HostedZoneId.asInstanceOf[js.Any],
-        "Id"                   -> Id.asInstanceOf[js.Any],
-        "Message"              -> Message.asInstanceOf[js.Any],
-        "Name"                 -> Name.asInstanceOf[js.Any],
-        "State"                -> State.asInstanceOf[js.Any],
-        "TTL"                  -> TTL.asInstanceOf[js.Any],
-        "TrafficPolicyId"      -> TrafficPolicyId.asInstanceOf[js.Any],
-        "TrafficPolicyType"    -> TrafficPolicyType.asInstanceOf[js.Any],
+        "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Message" -> Message.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "State" -> State.asInstanceOf[js.Any],
+        "TTL" -> TTL.asInstanceOf[js.Any],
+        "TrafficPolicyId" -> TrafficPolicyId.asInstanceOf[js.Any],
+        "TrafficPolicyType" -> TrafficPolicyType.asInstanceOf[js.Any],
         "TrafficPolicyVersion" -> TrafficPolicyVersion.asInstanceOf[js.Any]
       )
 
@@ -4161,11 +4161,11 @@ package route53 {
         Type: RRType
     ): TrafficPolicySummary = {
       val __obj = js.Dynamic.literal(
-        "Id"                 -> Id.asInstanceOf[js.Any],
-        "LatestVersion"      -> LatestVersion.asInstanceOf[js.Any],
-        "Name"               -> Name.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "LatestVersion" -> LatestVersion.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "TrafficPolicyCount" -> TrafficPolicyCount.asInstanceOf[js.Any],
-        "Type"               -> Type.asInstanceOf[js.Any]
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TrafficPolicySummary]
@@ -4328,7 +4328,7 @@ package route53 {
     ): UpdateTrafficPolicyCommentRequest = {
       val __obj = js.Dynamic.literal(
         "Comment" -> Comment.asInstanceOf[js.Any],
-        "Id"      -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "Version" -> Version.asInstanceOf[js.Any]
       )
 
@@ -4377,9 +4377,9 @@ package route53 {
         TrafficPolicyVersion: TrafficPolicyVersion
     ): UpdateTrafficPolicyInstanceRequest = {
       val __obj = js.Dynamic.literal(
-        "Id"                   -> Id.asInstanceOf[js.Any],
-        "TTL"                  -> TTL.asInstanceOf[js.Any],
-        "TrafficPolicyId"      -> TrafficPolicyId.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "TTL" -> TTL.asInstanceOf[js.Any],
+        "TrafficPolicyId" -> TrafficPolicyId.asInstanceOf[js.Any],
         "TrafficPolicyVersion" -> TrafficPolicyVersion.asInstanceOf[js.Any]
       )
 
@@ -4433,32 +4433,32 @@ package route53 {
   @js.native
   sealed trait VPCRegion extends js.Any
   object VPCRegion extends js.Object {
-    val `us-east-1`      = "us-east-1".asInstanceOf[VPCRegion]
-    val `us-east-2`      = "us-east-2".asInstanceOf[VPCRegion]
-    val `us-west-1`      = "us-west-1".asInstanceOf[VPCRegion]
-    val `us-west-2`      = "us-west-2".asInstanceOf[VPCRegion]
-    val `eu-west-1`      = "eu-west-1".asInstanceOf[VPCRegion]
-    val `eu-west-2`      = "eu-west-2".asInstanceOf[VPCRegion]
-    val `eu-west-3`      = "eu-west-3".asInstanceOf[VPCRegion]
-    val `eu-central-1`   = "eu-central-1".asInstanceOf[VPCRegion]
-    val `ap-east-1`      = "ap-east-1".asInstanceOf[VPCRegion]
-    val `me-south-1`     = "me-south-1".asInstanceOf[VPCRegion]
-    val `us-gov-west-1`  = "us-gov-west-1".asInstanceOf[VPCRegion]
-    val `us-gov-east-1`  = "us-gov-east-1".asInstanceOf[VPCRegion]
-    val `us-iso-east-1`  = "us-iso-east-1".asInstanceOf[VPCRegion]
+    val `us-east-1` = "us-east-1".asInstanceOf[VPCRegion]
+    val `us-east-2` = "us-east-2".asInstanceOf[VPCRegion]
+    val `us-west-1` = "us-west-1".asInstanceOf[VPCRegion]
+    val `us-west-2` = "us-west-2".asInstanceOf[VPCRegion]
+    val `eu-west-1` = "eu-west-1".asInstanceOf[VPCRegion]
+    val `eu-west-2` = "eu-west-2".asInstanceOf[VPCRegion]
+    val `eu-west-3` = "eu-west-3".asInstanceOf[VPCRegion]
+    val `eu-central-1` = "eu-central-1".asInstanceOf[VPCRegion]
+    val `ap-east-1` = "ap-east-1".asInstanceOf[VPCRegion]
+    val `me-south-1` = "me-south-1".asInstanceOf[VPCRegion]
+    val `us-gov-west-1` = "us-gov-west-1".asInstanceOf[VPCRegion]
+    val `us-gov-east-1` = "us-gov-east-1".asInstanceOf[VPCRegion]
+    val `us-iso-east-1` = "us-iso-east-1".asInstanceOf[VPCRegion]
     val `us-isob-east-1` = "us-isob-east-1".asInstanceOf[VPCRegion]
     val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[VPCRegion]
     val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[VPCRegion]
-    val `ap-south-1`     = "ap-south-1".asInstanceOf[VPCRegion]
+    val `ap-south-1` = "ap-south-1".asInstanceOf[VPCRegion]
     val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[VPCRegion]
     val `ap-northeast-2` = "ap-northeast-2".asInstanceOf[VPCRegion]
     val `ap-northeast-3` = "ap-northeast-3".asInstanceOf[VPCRegion]
-    val `eu-north-1`     = "eu-north-1".asInstanceOf[VPCRegion]
-    val `sa-east-1`      = "sa-east-1".asInstanceOf[VPCRegion]
-    val `ca-central-1`   = "ca-central-1".asInstanceOf[VPCRegion]
-    val `cn-north-1`     = "cn-north-1".asInstanceOf[VPCRegion]
-    val `af-south-1`     = "af-south-1".asInstanceOf[VPCRegion]
-    val `eu-south-1`     = "eu-south-1".asInstanceOf[VPCRegion]
+    val `eu-north-1` = "eu-north-1".asInstanceOf[VPCRegion]
+    val `sa-east-1` = "sa-east-1".asInstanceOf[VPCRegion]
+    val `ca-central-1` = "ca-central-1".asInstanceOf[VPCRegion]
+    val `cn-north-1` = "cn-north-1".asInstanceOf[VPCRegion]
+    val `af-south-1` = "af-south-1".asInstanceOf[VPCRegion]
+    val `eu-south-1` = "eu-south-1".asInstanceOf[VPCRegion]
 
     val values = js.Object.freeze(
       js.Array(

@@ -7,48 +7,48 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object forecast {
-  type Arn                           = String
-  type ArnList                       = js.Array[Arn]
-  type CategoricalParameterRanges    = js.Array[CategoricalParameterRange]
-  type ContinuousParameterRanges     = js.Array[ContinuousParameterRange]
-  type DatasetGroups                 = js.Array[DatasetGroupSummary]
-  type DatasetImportJobs             = js.Array[DatasetImportJobSummary]
-  type Datasets                      = js.Array[DatasetSummary]
-  type ErrorMessage                  = String
+  type Arn = String
+  type ArnList = js.Array[Arn]
+  type CategoricalParameterRanges = js.Array[CategoricalParameterRange]
+  type ContinuousParameterRanges = js.Array[ContinuousParameterRange]
+  type DatasetGroups = js.Array[DatasetGroupSummary]
+  type DatasetImportJobs = js.Array[DatasetImportJobSummary]
+  type Datasets = js.Array[DatasetSummary]
+  type ErrorMessage = String
   type FeaturizationMethodParameters = js.Dictionary[ParameterValue]
-  type FeaturizationPipeline         = js.Array[FeaturizationMethod]
-  type Featurizations                = js.Array[Featurization]
-  type FieldStatistics               = js.Dictionary[Statistics]
-  type Filters                       = js.Array[Filter]
-  type ForecastDimensions            = js.Array[Name]
-  type ForecastExportJobs            = js.Array[ForecastExportJobSummary]
-  type ForecastType                  = String
-  type ForecastTypes                 = js.Array[ForecastType]
-  type Forecasts                     = js.Array[ForecastSummary]
-  type Frequency                     = String
-  type IntegerParameterRanges        = js.Array[IntegerParameterRange]
-  type KMSKeyArn                     = String
-  type MaxResults                    = Int
-  type Message                       = String
-  type Name                          = String
-  type NextToken                     = String
-  type ParameterKey                  = String
-  type ParameterValue                = String
-  type PredictorEvaluationResults    = js.Array[EvaluationResult]
-  type PredictorExecutions           = js.Array[PredictorExecution]
-  type Predictors                    = js.Array[PredictorSummary]
-  type S3Path                        = String
-  type SchemaAttributes              = js.Array[SchemaAttribute]
-  type Status                        = String
-  type SupplementaryFeatures         = js.Array[SupplementaryFeature]
-  type TestWindowDetails             = js.Array[TestWindowSummary]
-  type TestWindows                   = js.Array[WindowSummary]
-  type Timestamp                     = js.Date
-  type TimestampFormat               = String
-  type TrainingParameters            = js.Dictionary[ParameterValue]
-  type Value                         = String
-  type Values                        = js.Array[Value]
-  type WeightedQuantileLosses        = js.Array[WeightedQuantileLoss]
+  type FeaturizationPipeline = js.Array[FeaturizationMethod]
+  type Featurizations = js.Array[Featurization]
+  type FieldStatistics = js.Dictionary[Statistics]
+  type Filters = js.Array[Filter]
+  type ForecastDimensions = js.Array[Name]
+  type ForecastExportJobs = js.Array[ForecastExportJobSummary]
+  type ForecastType = String
+  type ForecastTypes = js.Array[ForecastType]
+  type Forecasts = js.Array[ForecastSummary]
+  type Frequency = String
+  type IntegerParameterRanges = js.Array[IntegerParameterRange]
+  type KMSKeyArn = String
+  type MaxResults = Int
+  type Message = String
+  type Name = String
+  type NextToken = String
+  type ParameterKey = String
+  type ParameterValue = String
+  type PredictorEvaluationResults = js.Array[EvaluationResult]
+  type PredictorExecutions = js.Array[PredictorExecution]
+  type Predictors = js.Array[PredictorSummary]
+  type S3Path = String
+  type SchemaAttributes = js.Array[SchemaAttribute]
+  type Status = String
+  type SupplementaryFeatures = js.Array[SupplementaryFeature]
+  type TestWindowDetails = js.Array[TestWindowSummary]
+  type TestWindows = js.Array[WindowSummary]
+  type Timestamp = js.Date
+  type TimestampFormat = String
+  type TrainingParameters = js.Dictionary[ParameterValue]
+  type Value = String
+  type Values = js.Array[Value]
+  type WeightedQuantileLosses = js.Array[WeightedQuantileLoss]
 
   implicit final class ForecastOps(private val service: Forecast) extends AnyVal {
 
@@ -119,46 +119,46 @@ package forecast {
   class Forecast() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createDataset(params: CreateDatasetRequest): Request[CreateDatasetResponse]                = js.native
+    def createDataset(params: CreateDatasetRequest): Request[CreateDatasetResponse] = js.native
     def createDatasetGroup(params: CreateDatasetGroupRequest): Request[CreateDatasetGroupResponse] = js.native
     def createDatasetImportJob(params: CreateDatasetImportJobRequest): Request[CreateDatasetImportJobResponse] =
       js.native
     def createForecast(params: CreateForecastRequest): Request[CreateForecastResponse] = js.native
     def createForecastExportJob(params: CreateForecastExportJobRequest): Request[CreateForecastExportJobResponse] =
       js.native
-    def createPredictor(params: CreatePredictorRequest): Request[CreatePredictorResponse]                = js.native
-    def deleteDataset(params: DeleteDatasetRequest): Request[js.Object]                                  = js.native
-    def deleteDatasetGroup(params: DeleteDatasetGroupRequest): Request[js.Object]                        = js.native
-    def deleteDatasetImportJob(params: DeleteDatasetImportJobRequest): Request[js.Object]                = js.native
-    def deleteForecast(params: DeleteForecastRequest): Request[js.Object]                                = js.native
-    def deleteForecastExportJob(params: DeleteForecastExportJobRequest): Request[js.Object]              = js.native
-    def deletePredictor(params: DeletePredictorRequest): Request[js.Object]                              = js.native
-    def describeDataset(params: DescribeDatasetRequest): Request[DescribeDatasetResponse]                = js.native
+    def createPredictor(params: CreatePredictorRequest): Request[CreatePredictorResponse] = js.native
+    def deleteDataset(params: DeleteDatasetRequest): Request[js.Object] = js.native
+    def deleteDatasetGroup(params: DeleteDatasetGroupRequest): Request[js.Object] = js.native
+    def deleteDatasetImportJob(params: DeleteDatasetImportJobRequest): Request[js.Object] = js.native
+    def deleteForecast(params: DeleteForecastRequest): Request[js.Object] = js.native
+    def deleteForecastExportJob(params: DeleteForecastExportJobRequest): Request[js.Object] = js.native
+    def deletePredictor(params: DeletePredictorRequest): Request[js.Object] = js.native
+    def describeDataset(params: DescribeDatasetRequest): Request[DescribeDatasetResponse] = js.native
     def describeDatasetGroup(params: DescribeDatasetGroupRequest): Request[DescribeDatasetGroupResponse] = js.native
     def describeDatasetImportJob(params: DescribeDatasetImportJobRequest): Request[DescribeDatasetImportJobResponse] =
       js.native
     def describeForecast(params: DescribeForecastRequest): Request[DescribeForecastResponse] = js.native
     def describeForecastExportJob(
         params: DescribeForecastExportJobRequest
-    ): Request[DescribeForecastExportJobResponse]                                                           = js.native
-    def describePredictor(params: DescribePredictorRequest): Request[DescribePredictorResponse]             = js.native
-    def getAccuracyMetrics(params: GetAccuracyMetricsRequest): Request[GetAccuracyMetricsResponse]          = js.native
-    def listDatasetGroups(params: ListDatasetGroupsRequest): Request[ListDatasetGroupsResponse]             = js.native
+    ): Request[DescribeForecastExportJobResponse] = js.native
+    def describePredictor(params: DescribePredictorRequest): Request[DescribePredictorResponse] = js.native
+    def getAccuracyMetrics(params: GetAccuracyMetricsRequest): Request[GetAccuracyMetricsResponse] = js.native
+    def listDatasetGroups(params: ListDatasetGroupsRequest): Request[ListDatasetGroupsResponse] = js.native
     def listDatasetImportJobs(params: ListDatasetImportJobsRequest): Request[ListDatasetImportJobsResponse] = js.native
-    def listDatasets(params: ListDatasetsRequest): Request[ListDatasetsResponse]                            = js.native
+    def listDatasets(params: ListDatasetsRequest): Request[ListDatasetsResponse] = js.native
     def listForecastExportJobs(params: ListForecastExportJobsRequest): Request[ListForecastExportJobsResponse] =
       js.native
-    def listForecasts(params: ListForecastsRequest): Request[ListForecastsResponse]                = js.native
-    def listPredictors(params: ListPredictorsRequest): Request[ListPredictorsResponse]             = js.native
+    def listForecasts(params: ListForecastsRequest): Request[ListForecastsResponse] = js.native
+    def listPredictors(params: ListPredictorsRequest): Request[ListPredictorsResponse] = js.native
     def updateDatasetGroup(params: UpdateDatasetGroupRequest): Request[UpdateDatasetGroupResponse] = js.native
   }
 
   @js.native
   sealed trait AttributeType extends js.Any
   object AttributeType extends js.Object {
-    val string    = "string".asInstanceOf[AttributeType]
-    val integer   = "integer".asInstanceOf[AttributeType]
-    val float     = "float".asInstanceOf[AttributeType]
+    val string = "string".asInstanceOf[AttributeType]
+    val integer = "integer".asInstanceOf[AttributeType]
+    val float = "float".asInstanceOf[AttributeType]
     val timestamp = "timestamp".asInstanceOf[AttributeType]
 
     val values = js.Object.freeze(js.Array(string, integer, float, timestamp))
@@ -180,7 +180,7 @@ package forecast {
         Values: Values
     ): CategoricalParameterRange = {
       val __obj = js.Dynamic.literal(
-        "Name"   -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
@@ -210,7 +210,7 @@ package forecast {
       val __obj = js.Dynamic.literal(
         "MaxValue" -> MaxValue.asInstanceOf[js.Any],
         "MinValue" -> MinValue.asInstanceOf[js.Any],
-        "Name"     -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       ScalingType.foreach(__v => __obj.updateDynamic("ScalingType")(__v.asInstanceOf[js.Any]))
@@ -234,7 +234,7 @@ package forecast {
     ): CreateDatasetGroupRequest = {
       val __obj = js.Dynamic.literal(
         "DatasetGroupName" -> DatasetGroupName.asInstanceOf[js.Any],
-        "Domain"           -> Domain.asInstanceOf[js.Any]
+        "Domain" -> Domain.asInstanceOf[js.Any]
       )
 
       DatasetArns.foreach(__v => __obj.updateDynamic("DatasetArns")(__v.asInstanceOf[js.Any]))
@@ -275,8 +275,8 @@ package forecast {
         TimestampFormat: js.UndefOr[TimestampFormat] = js.undefined
     ): CreateDatasetImportJobRequest = {
       val __obj = js.Dynamic.literal(
-        "DataSource"           -> DataSource.asInstanceOf[js.Any],
-        "DatasetArn"           -> DatasetArn.asInstanceOf[js.Any],
+        "DataSource" -> DataSource.asInstanceOf[js.Any],
+        "DatasetArn" -> DatasetArn.asInstanceOf[js.Any],
         "DatasetImportJobName" -> DatasetImportJobName.asInstanceOf[js.Any]
       )
 
@@ -324,8 +324,8 @@ package forecast {
       val __obj = js.Dynamic.literal(
         "DatasetName" -> DatasetName.asInstanceOf[js.Any],
         "DatasetType" -> DatasetType.asInstanceOf[js.Any],
-        "Domain"      -> Domain.asInstanceOf[js.Any],
-        "Schema"      -> Schema.asInstanceOf[js.Any]
+        "Domain" -> Domain.asInstanceOf[js.Any],
+        "Schema" -> Schema.asInstanceOf[js.Any]
       )
 
       DataFrequency.foreach(__v => __obj.updateDynamic("DataFrequency")(__v.asInstanceOf[js.Any]))
@@ -365,8 +365,8 @@ package forecast {
         ForecastExportJobName: Name
     ): CreateForecastExportJobRequest = {
       val __obj = js.Dynamic.literal(
-        "Destination"           -> Destination.asInstanceOf[js.Any],
-        "ForecastArn"           -> ForecastArn.asInstanceOf[js.Any],
+        "Destination" -> Destination.asInstanceOf[js.Any],
+        "ForecastArn" -> ForecastArn.asInstanceOf[js.Any],
         "ForecastExportJobName" -> ForecastExportJobName.asInstanceOf[js.Any]
       )
 
@@ -462,9 +462,9 @@ package forecast {
     ): CreatePredictorRequest = {
       val __obj = js.Dynamic.literal(
         "FeaturizationConfig" -> FeaturizationConfig.asInstanceOf[js.Any],
-        "ForecastHorizon"     -> ForecastHorizon.asInstanceOf[js.Any],
-        "InputDataConfig"     -> InputDataConfig.asInstanceOf[js.Any],
-        "PredictorName"       -> PredictorName.asInstanceOf[js.Any]
+        "ForecastHorizon" -> ForecastHorizon.asInstanceOf[js.Any],
+        "InputDataConfig" -> InputDataConfig.asInstanceOf[js.Any],
+        "PredictorName" -> PredictorName.asInstanceOf[js.Any]
       )
 
       AlgorithmArn.foreach(__v => __obj.updateDynamic("AlgorithmArn")(__v.asInstanceOf[js.Any]))
@@ -638,9 +638,9 @@ package forecast {
   @js.native
   sealed trait DatasetType extends js.Any
   object DatasetType extends js.Object {
-    val TARGET_TIME_SERIES  = "TARGET_TIME_SERIES".asInstanceOf[DatasetType]
+    val TARGET_TIME_SERIES = "TARGET_TIME_SERIES".asInstanceOf[DatasetType]
     val RELATED_TIME_SERIES = "RELATED_TIME_SERIES".asInstanceOf[DatasetType]
-    val ITEM_METADATA       = "ITEM_METADATA".asInstanceOf[DatasetType]
+    val ITEM_METADATA = "ITEM_METADATA".asInstanceOf[DatasetType]
 
     val values = js.Object.freeze(js.Array(TARGET_TIME_SERIES, RELATED_TIME_SERIES, ITEM_METADATA))
   }
@@ -1136,13 +1136,13 @@ package forecast {
   @js.native
   sealed trait Domain extends js.Any
   object Domain extends js.Object {
-    val RETAIL             = "RETAIL".asInstanceOf[Domain]
-    val CUSTOM             = "CUSTOM".asInstanceOf[Domain]
+    val RETAIL = "RETAIL".asInstanceOf[Domain]
+    val CUSTOM = "CUSTOM".asInstanceOf[Domain]
     val INVENTORY_PLANNING = "INVENTORY_PLANNING".asInstanceOf[Domain]
-    val EC2_CAPACITY       = "EC2_CAPACITY".asInstanceOf[Domain]
-    val WORK_FORCE         = "WORK_FORCE".asInstanceOf[Domain]
-    val WEB_TRAFFIC        = "WEB_TRAFFIC".asInstanceOf[Domain]
-    val METRICS            = "METRICS".asInstanceOf[Domain]
+    val EC2_CAPACITY = "EC2_CAPACITY".asInstanceOf[Domain]
+    val WORK_FORCE = "WORK_FORCE".asInstanceOf[Domain]
+    val WEB_TRAFFIC = "WEB_TRAFFIC".asInstanceOf[Domain]
+    val METRICS = "METRICS".asInstanceOf[Domain]
 
     val values =
       js.Object.freeze(js.Array(RETAIL, CUSTOM, INVENTORY_PLANNING, EC2_CAPACITY, WORK_FORCE, WEB_TRAFFIC, METRICS))
@@ -1165,7 +1165,7 @@ package forecast {
     ): EncryptionConfig = {
       val __obj = js.Dynamic.literal(
         "KMSKeyArn" -> KMSKeyArn.asInstanceOf[js.Any],
-        "RoleArn"   -> RoleArn.asInstanceOf[js.Any]
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[EncryptionConfig]
@@ -1219,7 +1219,7 @@ package forecast {
   @js.native
   sealed trait EvaluationType extends js.Any
   object EvaluationType extends js.Object {
-    val SUMMARY  = "SUMMARY".asInstanceOf[EvaluationType]
+    val SUMMARY = "SUMMARY".asInstanceOf[EvaluationType]
     val COMPUTED = "COMPUTED".asInstanceOf[EvaluationType]
 
     val values = js.Object.freeze(js.Array(SUMMARY, COMPUTED))
@@ -1344,8 +1344,8 @@ package forecast {
     ): Filter = {
       val __obj = js.Dynamic.literal(
         "Condition" -> Condition.asInstanceOf[js.Any],
-        "Key"       -> Key.asInstanceOf[js.Any],
-        "Value"     -> Value.asInstanceOf[js.Any]
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[Filter]
@@ -1355,7 +1355,7 @@ package forecast {
   @js.native
   sealed trait FilterConditionString extends js.Any
   object FilterConditionString extends js.Object {
-    val IS     = "IS".asInstanceOf[FilterConditionString]
+    val IS = "IS".asInstanceOf[FilterConditionString]
     val IS_NOT = "IS_NOT".asInstanceOf[FilterConditionString]
 
     val values = js.Object.freeze(js.Array(IS, IS_NOT))
@@ -1541,7 +1541,7 @@ package forecast {
       val __obj = js.Dynamic.literal(
         "MaxValue" -> MaxValue.asInstanceOf[js.Any],
         "MinValue" -> MinValue.asInstanceOf[js.Any],
-        "Name"     -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       ScalingType.foreach(__v => __obj.updateDynamic("ScalingType")(__v.asInstanceOf[js.Any]))
@@ -1936,7 +1936,7 @@ package forecast {
         KMSKeyArn: js.UndefOr[KMSKeyArn] = js.undefined
     ): S3Config = {
       val __obj = js.Dynamic.literal(
-        "Path"    -> Path.asInstanceOf[js.Any],
+        "Path" -> Path.asInstanceOf[js.Any],
         "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
@@ -1948,9 +1948,9 @@ package forecast {
   @js.native
   sealed trait ScalingType extends js.Any
   object ScalingType extends js.Object {
-    val Auto               = "Auto".asInstanceOf[ScalingType]
-    val Linear             = "Linear".asInstanceOf[ScalingType]
-    val Logarithmic        = "Logarithmic".asInstanceOf[ScalingType]
+    val Auto = "Auto".asInstanceOf[ScalingType]
+    val Linear = "Linear".asInstanceOf[ScalingType]
+    val Logarithmic = "Logarithmic".asInstanceOf[ScalingType]
     val ReverseLogarithmic = "ReverseLogarithmic".asInstanceOf[ScalingType]
 
     val values = js.Object.freeze(js.Array(Auto, Linear, Logarithmic, ReverseLogarithmic))
@@ -2054,7 +2054,7 @@ package forecast {
         Value: Value
     ): SupplementaryFeature = {
       val __obj = js.Dynamic.literal(
-        "Name"  -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -2103,7 +2103,7 @@ package forecast {
         DatasetGroupArn: Arn
     ): UpdateDatasetGroupRequest = {
       val __obj = js.Dynamic.literal(
-        "DatasetArns"     -> DatasetArns.asInstanceOf[js.Any],
+        "DatasetArns" -> DatasetArns.asInstanceOf[js.Any],
         "DatasetGroupArn" -> DatasetGroupArn.asInstanceOf[js.Any]
       )
 

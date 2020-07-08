@@ -7,28 +7,28 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object transcribeservice {
-  type DataAccessRoleArn                = String
-  type DateTime                         = js.Date
-  type FailureReason                    = String
-  type KMSKeyId                         = String
-  type MaxAlternatives                  = Int
-  type MaxResults                       = Int
-  type MaxSpeakers                      = Int
-  type MediaSampleRateHertz             = Int
+  type DataAccessRoleArn = String
+  type DateTime = js.Date
+  type FailureReason = String
+  type KMSKeyId = String
+  type MaxAlternatives = Int
+  type MaxResults = Int
+  type MaxSpeakers = Int
+  type MediaSampleRateHertz = Int
   type MedicalTranscriptionJobSummaries = js.Array[MedicalTranscriptionJobSummary]
-  type NextToken                        = String
-  type OutputBucketName                 = String
-  type Phrase                           = String
-  type Phrases                          = js.Array[Phrase]
-  type TranscriptionJobName             = String
-  type TranscriptionJobSummaries        = js.Array[TranscriptionJobSummary]
-  type Uri                              = String
-  type Vocabularies                     = js.Array[VocabularyInfo]
-  type VocabularyFilterName             = String
-  type VocabularyFilters                = js.Array[VocabularyFilterInfo]
-  type VocabularyName                   = String
-  type Word                             = String
-  type Words                            = js.Array[Word]
+  type NextToken = String
+  type OutputBucketName = String
+  type Phrase = String
+  type Phrases = js.Array[Phrase]
+  type TranscriptionJobName = String
+  type TranscriptionJobSummaries = js.Array[TranscriptionJobSummary]
+  type Uri = String
+  type Vocabularies = js.Array[VocabularyInfo]
+  type VocabularyFilterName = String
+  type VocabularyFilters = js.Array[VocabularyFilterInfo]
+  type VocabularyName = String
+  type Word = String
+  type Words = js.Array[Word]
 
   implicit final class TranscribeServiceOps(private val service: TranscribeService) extends AnyVal {
 
@@ -104,28 +104,28 @@ package transcribeservice {
     def createVocabularyFilter(params: CreateVocabularyFilterRequest): Request[CreateVocabularyFilterResponse] =
       js.native
     def deleteMedicalTranscriptionJob(params: DeleteMedicalTranscriptionJobRequest): Request[js.Object] = js.native
-    def deleteMedicalVocabulary(params: DeleteMedicalVocabularyRequest): Request[js.Object]             = js.native
-    def deleteTranscriptionJob(params: DeleteTranscriptionJobRequest): Request[js.Object]               = js.native
-    def deleteVocabulary(params: DeleteVocabularyRequest): Request[js.Object]                           = js.native
-    def deleteVocabularyFilter(params: DeleteVocabularyFilterRequest): Request[js.Object]               = js.native
+    def deleteMedicalVocabulary(params: DeleteMedicalVocabularyRequest): Request[js.Object] = js.native
+    def deleteTranscriptionJob(params: DeleteTranscriptionJobRequest): Request[js.Object] = js.native
+    def deleteVocabulary(params: DeleteVocabularyRequest): Request[js.Object] = js.native
+    def deleteVocabularyFilter(params: DeleteVocabularyFilterRequest): Request[js.Object] = js.native
     def getMedicalTranscriptionJob(
         params: GetMedicalTranscriptionJobRequest
-    ): Request[GetMedicalTranscriptionJobResponse]                                                       = js.native
+    ): Request[GetMedicalTranscriptionJobResponse] = js.native
     def getMedicalVocabulary(params: GetMedicalVocabularyRequest): Request[GetMedicalVocabularyResponse] = js.native
-    def getTranscriptionJob(params: GetTranscriptionJobRequest): Request[GetTranscriptionJobResponse]    = js.native
-    def getVocabulary(params: GetVocabularyRequest): Request[GetVocabularyResponse]                      = js.native
-    def getVocabularyFilter(params: GetVocabularyFilterRequest): Request[GetVocabularyFilterResponse]    = js.native
+    def getTranscriptionJob(params: GetTranscriptionJobRequest): Request[GetTranscriptionJobResponse] = js.native
+    def getVocabulary(params: GetVocabularyRequest): Request[GetVocabularyResponse] = js.native
+    def getVocabularyFilter(params: GetVocabularyFilterRequest): Request[GetVocabularyFilterResponse] = js.native
     def listMedicalTranscriptionJobs(
         params: ListMedicalTranscriptionJobsRequest
     ): Request[ListMedicalTranscriptionJobsResponse] = js.native
     def listMedicalVocabularies(params: ListMedicalVocabulariesRequest): Request[ListMedicalVocabulariesResponse] =
       js.native
     def listTranscriptionJobs(params: ListTranscriptionJobsRequest): Request[ListTranscriptionJobsResponse] = js.native
-    def listVocabularies(params: ListVocabulariesRequest): Request[ListVocabulariesResponse]                = js.native
+    def listVocabularies(params: ListVocabulariesRequest): Request[ListVocabulariesResponse] = js.native
     def listVocabularyFilters(params: ListVocabularyFiltersRequest): Request[ListVocabularyFiltersResponse] = js.native
     def startMedicalTranscriptionJob(
         params: StartMedicalTranscriptionJobRequest
-    ): Request[StartMedicalTranscriptionJobResponse]                                                        = js.native
+    ): Request[StartMedicalTranscriptionJobResponse] = js.native
     def startTranscriptionJob(params: StartTranscriptionJobRequest): Request[StartTranscriptionJobResponse] = js.native
     def updateMedicalVocabulary(params: UpdateMedicalVocabularyRequest): Request[UpdateMedicalVocabularyResponse] =
       js.native
@@ -151,7 +151,7 @@ package transcribeservice {
     ): ContentRedaction = {
       val __obj = js.Dynamic.literal(
         "RedactionOutput" -> RedactionOutput.asInstanceOf[js.Any],
-        "RedactionType"   -> RedactionType.asInstanceOf[js.Any]
+        "RedactionType" -> RedactionType.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ContentRedaction]
@@ -173,9 +173,9 @@ package transcribeservice {
         VocabularyName: VocabularyName
     ): CreateMedicalVocabularyRequest = {
       val __obj = js.Dynamic.literal(
-        "LanguageCode"      -> LanguageCode.asInstanceOf[js.Any],
+        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
         "VocabularyFileUri" -> VocabularyFileUri.asInstanceOf[js.Any],
-        "VocabularyName"    -> VocabularyName.asInstanceOf[js.Any]
+        "VocabularyName" -> VocabularyName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateMedicalVocabularyRequest]
@@ -227,7 +227,7 @@ package transcribeservice {
         Words: js.UndefOr[Words] = js.undefined
     ): CreateVocabularyFilterRequest = {
       val __obj = js.Dynamic.literal(
-        "LanguageCode"         -> LanguageCode.asInstanceOf[js.Any],
+        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
         "VocabularyFilterName" -> VocabularyFilterName.asInstanceOf[js.Any]
       )
 
@@ -276,7 +276,7 @@ package transcribeservice {
         VocabularyFileUri: js.UndefOr[Uri] = js.undefined
     ): CreateVocabularyRequest = {
       val __obj = js.Dynamic.literal(
-        "LanguageCode"   -> LanguageCode.asInstanceOf[js.Any],
+        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
         "VocabularyName" -> VocabularyName.asInstanceOf[js.Any]
       )
 
@@ -962,9 +962,9 @@ package transcribeservice {
   @js.native
   sealed trait MediaFormat extends js.Any
   object MediaFormat extends js.Object {
-    val mp3  = "mp3".asInstanceOf[MediaFormat]
-    val mp4  = "mp4".asInstanceOf[MediaFormat]
-    val wav  = "wav".asInstanceOf[MediaFormat]
+    val mp3 = "mp3".asInstanceOf[MediaFormat]
+    val mp4 = "mp4".asInstanceOf[MediaFormat]
+    val wav = "wav".asInstanceOf[MediaFormat]
     val flac = "flac".asInstanceOf[MediaFormat]
 
     val values = js.Object.freeze(js.Array(mp3, mp4, wav, flac))
@@ -1135,7 +1135,7 @@ package transcribeservice {
   sealed trait OutputLocationType extends js.Any
   object OutputLocationType extends js.Object {
     val CUSTOMER_BUCKET = "CUSTOMER_BUCKET".asInstanceOf[OutputLocationType]
-    val SERVICE_BUCKET  = "SERVICE_BUCKET".asInstanceOf[OutputLocationType]
+    val SERVICE_BUCKET = "SERVICE_BUCKET".asInstanceOf[OutputLocationType]
 
     val values = js.Object.freeze(js.Array(CUSTOMER_BUCKET, SERVICE_BUCKET))
   }
@@ -1143,7 +1143,7 @@ package transcribeservice {
   @js.native
   sealed trait RedactionOutput extends js.Any
   object RedactionOutput extends js.Object {
-    val redacted                = "redacted".asInstanceOf[RedactionOutput]
+    val redacted = "redacted".asInstanceOf[RedactionOutput]
     val redacted_and_unredacted = "redacted_and_unredacted".asInstanceOf[RedactionOutput]
 
     val values = js.Object.freeze(js.Array(redacted, redacted_and_unredacted))
@@ -1234,12 +1234,12 @@ package transcribeservice {
         Settings: js.UndefOr[MedicalTranscriptionSetting] = js.undefined
     ): StartMedicalTranscriptionJobRequest = {
       val __obj = js.Dynamic.literal(
-        "LanguageCode"                -> LanguageCode.asInstanceOf[js.Any],
-        "Media"                       -> Media.asInstanceOf[js.Any],
+        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
+        "Media" -> Media.asInstanceOf[js.Any],
         "MedicalTranscriptionJobName" -> MedicalTranscriptionJobName.asInstanceOf[js.Any],
-        "OutputBucketName"            -> OutputBucketName.asInstanceOf[js.Any],
-        "Specialty"                   -> Specialty.asInstanceOf[js.Any],
-        "Type"                        -> Type.asInstanceOf[js.Any]
+        "OutputBucketName" -> OutputBucketName.asInstanceOf[js.Any],
+        "Specialty" -> Specialty.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       MediaFormat.foreach(__v => __obj.updateDynamic("MediaFormat")(__v.asInstanceOf[js.Any]))
@@ -1295,8 +1295,8 @@ package transcribeservice {
         Settings: js.UndefOr[Settings] = js.undefined
     ): StartTranscriptionJobRequest = {
       val __obj = js.Dynamic.literal(
-        "LanguageCode"         -> LanguageCode.asInstanceOf[js.Any],
-        "Media"                -> Media.asInstanceOf[js.Any],
+        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
+        "Media" -> Media.asInstanceOf[js.Any],
         "TranscriptionJobName" -> TranscriptionJobName.asInstanceOf[js.Any]
       )
 
@@ -1412,10 +1412,10 @@ package transcribeservice {
   @js.native
   sealed trait TranscriptionJobStatus extends js.Any
   object TranscriptionJobStatus extends js.Object {
-    val QUEUED      = "QUEUED".asInstanceOf[TranscriptionJobStatus]
+    val QUEUED = "QUEUED".asInstanceOf[TranscriptionJobStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[TranscriptionJobStatus]
-    val FAILED      = "FAILED".asInstanceOf[TranscriptionJobStatus]
-    val COMPLETED   = "COMPLETED".asInstanceOf[TranscriptionJobStatus]
+    val FAILED = "FAILED".asInstanceOf[TranscriptionJobStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[TranscriptionJobStatus]
 
     val values = js.Object.freeze(js.Array(QUEUED, IN_PROGRESS, FAILED, COMPLETED))
   }
@@ -1467,7 +1467,7 @@ package transcribeservice {
   sealed trait Type extends js.Any
   object Type extends js.Object {
     val CONVERSATION = "CONVERSATION".asInstanceOf[Type]
-    val DICTATION    = "DICTATION".asInstanceOf[Type]
+    val DICTATION = "DICTATION".asInstanceOf[Type]
 
     val values = js.Object.freeze(js.Array(CONVERSATION, DICTATION))
   }
@@ -1487,7 +1487,7 @@ package transcribeservice {
         VocabularyFileUri: js.UndefOr[Uri] = js.undefined
     ): UpdateMedicalVocabularyRequest = {
       val __obj = js.Dynamic.literal(
-        "LanguageCode"   -> LanguageCode.asInstanceOf[js.Any],
+        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
         "VocabularyName" -> VocabularyName.asInstanceOf[js.Any]
       )
 
@@ -1584,7 +1584,7 @@ package transcribeservice {
         VocabularyFileUri: js.UndefOr[Uri] = js.undefined
     ): UpdateVocabularyRequest = {
       val __obj = js.Dynamic.literal(
-        "LanguageCode"   -> LanguageCode.asInstanceOf[js.Any],
+        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
         "VocabularyName" -> VocabularyName.asInstanceOf[js.Any]
       )
 
@@ -1648,7 +1648,7 @@ package transcribeservice {
   sealed trait VocabularyFilterMethod extends js.Any
   object VocabularyFilterMethod extends js.Object {
     val remove = "remove".asInstanceOf[VocabularyFilterMethod]
-    val mask   = "mask".asInstanceOf[VocabularyFilterMethod]
+    val mask = "mask".asInstanceOf[VocabularyFilterMethod]
 
     val values = js.Object.freeze(js.Array(remove, mask))
   }
@@ -1685,8 +1685,8 @@ package transcribeservice {
   sealed trait VocabularyState extends js.Any
   object VocabularyState extends js.Object {
     val PENDING = "PENDING".asInstanceOf[VocabularyState]
-    val READY   = "READY".asInstanceOf[VocabularyState]
-    val FAILED  = "FAILED".asInstanceOf[VocabularyState]
+    val READY = "READY".asInstanceOf[VocabularyState]
+    val FAILED = "FAILED".asInstanceOf[VocabularyState]
 
     val values = js.Object.freeze(js.Array(PENDING, READY, FAILED))
   }

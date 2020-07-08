@@ -7,47 +7,47 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object kms {
-  type AWSAccountIdType            = String
-  type AliasList                   = js.Array[AliasListEntry]
-  type AliasNameType               = String
-  type ArnType                     = String
-  type BooleanType                 = Boolean
-  type CiphertextType              = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type CloudHsmClusterIdType       = String
-  type CustomKeyStoreIdType        = String
-  type CustomKeyStoreNameType      = String
-  type CustomKeyStoresList         = js.Array[CustomKeyStoresListEntry]
-  type DateType                    = js.Date
-  type DescriptionType             = String
+  type AWSAccountIdType = String
+  type AliasList = js.Array[AliasListEntry]
+  type AliasNameType = String
+  type ArnType = String
+  type BooleanType = Boolean
+  type CiphertextType = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type CloudHsmClusterIdType = String
+  type CustomKeyStoreIdType = String
+  type CustomKeyStoreNameType = String
+  type CustomKeyStoresList = js.Array[CustomKeyStoresListEntry]
+  type DateType = js.Date
+  type DescriptionType = String
   type EncryptionAlgorithmSpecList = js.Array[EncryptionAlgorithmSpec]
-  type EncryptionContextKey        = String
-  type EncryptionContextType       = js.Dictionary[EncryptionContextValue]
-  type EncryptionContextValue      = String
-  type GrantIdType                 = String
-  type GrantList                   = js.Array[GrantListEntry]
-  type GrantNameType               = String
-  type GrantOperationList          = js.Array[GrantOperation]
-  type GrantTokenList              = js.Array[GrantTokenType]
-  type GrantTokenType              = String
-  type KeyIdType                   = String
-  type KeyList                     = js.Array[KeyListEntry]
-  type KeyStorePasswordType        = String
-  type LimitType                   = Int
-  type MarkerType                  = String
-  type NumberOfBytesType           = Int
-  type PendingWindowInDaysType     = Int
-  type PlaintextType               = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type PolicyNameList              = js.Array[PolicyNameType]
-  type PolicyNameType              = String
-  type PolicyType                  = String
-  type PrincipalIdType             = String
-  type PublicKeyType               = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type SigningAlgorithmSpecList    = js.Array[SigningAlgorithmSpec]
-  type TagKeyList                  = js.Array[TagKeyType]
-  type TagKeyType                  = String
-  type TagList                     = js.Array[Tag]
-  type TagValueType                = String
-  type TrustAnchorCertificateType  = String
+  type EncryptionContextKey = String
+  type EncryptionContextType = js.Dictionary[EncryptionContextValue]
+  type EncryptionContextValue = String
+  type GrantIdType = String
+  type GrantList = js.Array[GrantListEntry]
+  type GrantNameType = String
+  type GrantOperationList = js.Array[GrantOperation]
+  type GrantTokenList = js.Array[GrantTokenType]
+  type GrantTokenType = String
+  type KeyIdType = String
+  type KeyList = js.Array[KeyListEntry]
+  type KeyStorePasswordType = String
+  type LimitType = Int
+  type MarkerType = String
+  type NumberOfBytesType = Int
+  type PendingWindowInDaysType = Int
+  type PlaintextType = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type PolicyNameList = js.Array[PolicyNameType]
+  type PolicyNameType = String
+  type PolicyType = String
+  type PrincipalIdType = String
+  type PublicKeyType = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type SigningAlgorithmSpecList = js.Array[SigningAlgorithmSpec]
+  type TagKeyList = js.Array[TagKeyType]
+  type TagKeyType = String
+  type TagList = js.Array[Tag]
+  type TagValueType = String
+  type TrustAnchorCertificateType = String
 
   implicit final class KMSOps(private val service: KMS) extends AnyVal {
 
@@ -158,66 +158,66 @@ package kms {
   class KMS() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def cancelKeyDeletion(params: CancelKeyDeletionRequest): Request[CancelKeyDeletionResponse]             = js.native
+    def cancelKeyDeletion(params: CancelKeyDeletionRequest): Request[CancelKeyDeletionResponse] = js.native
     def connectCustomKeyStore(params: ConnectCustomKeyStoreRequest): Request[ConnectCustomKeyStoreResponse] = js.native
-    def createAlias(params: CreateAliasRequest): Request[js.Object]                                         = js.native
-    def createCustomKeyStore(params: CreateCustomKeyStoreRequest): Request[CreateCustomKeyStoreResponse]    = js.native
-    def createGrant(params: CreateGrantRequest): Request[CreateGrantResponse]                               = js.native
-    def createKey(params: CreateKeyRequest): Request[CreateKeyResponse]                                     = js.native
-    def decrypt(params: DecryptRequest): Request[DecryptResponse]                                           = js.native
-    def deleteAlias(params: DeleteAliasRequest): Request[js.Object]                                         = js.native
-    def deleteCustomKeyStore(params: DeleteCustomKeyStoreRequest): Request[DeleteCustomKeyStoreResponse]    = js.native
-    def deleteImportedKeyMaterial(params: DeleteImportedKeyMaterialRequest): Request[js.Object]             = js.native
+    def createAlias(params: CreateAliasRequest): Request[js.Object] = js.native
+    def createCustomKeyStore(params: CreateCustomKeyStoreRequest): Request[CreateCustomKeyStoreResponse] = js.native
+    def createGrant(params: CreateGrantRequest): Request[CreateGrantResponse] = js.native
+    def createKey(params: CreateKeyRequest): Request[CreateKeyResponse] = js.native
+    def decrypt(params: DecryptRequest): Request[DecryptResponse] = js.native
+    def deleteAlias(params: DeleteAliasRequest): Request[js.Object] = js.native
+    def deleteCustomKeyStore(params: DeleteCustomKeyStoreRequest): Request[DeleteCustomKeyStoreResponse] = js.native
+    def deleteImportedKeyMaterial(params: DeleteImportedKeyMaterialRequest): Request[js.Object] = js.native
     def describeCustomKeyStores(params: DescribeCustomKeyStoresRequest): Request[DescribeCustomKeyStoresResponse] =
       js.native
-    def describeKey(params: DescribeKeyRequest): Request[DescribeKeyResponse]     = js.native
-    def disableKey(params: DisableKeyRequest): Request[js.Object]                 = js.native
+    def describeKey(params: DescribeKeyRequest): Request[DescribeKeyResponse] = js.native
+    def disableKey(params: DisableKeyRequest): Request[js.Object] = js.native
     def disableKeyRotation(params: DisableKeyRotationRequest): Request[js.Object] = js.native
     def disconnectCustomKeyStore(params: DisconnectCustomKeyStoreRequest): Request[DisconnectCustomKeyStoreResponse] =
       js.native
-    def enableKey(params: EnableKeyRequest): Request[js.Object]                                       = js.native
-    def enableKeyRotation(params: EnableKeyRotationRequest): Request[js.Object]                       = js.native
-    def encrypt(params: EncryptRequest): Request[EncryptResponse]                                     = js.native
-    def generateDataKey(params: GenerateDataKeyRequest): Request[GenerateDataKeyResponse]             = js.native
+    def enableKey(params: EnableKeyRequest): Request[js.Object] = js.native
+    def enableKeyRotation(params: EnableKeyRotationRequest): Request[js.Object] = js.native
+    def encrypt(params: EncryptRequest): Request[EncryptResponse] = js.native
+    def generateDataKey(params: GenerateDataKeyRequest): Request[GenerateDataKeyResponse] = js.native
     def generateDataKeyPair(params: GenerateDataKeyPairRequest): Request[GenerateDataKeyPairResponse] = js.native
     def generateDataKeyPairWithoutPlaintext(
         params: GenerateDataKeyPairWithoutPlaintextRequest
     ): Request[GenerateDataKeyPairWithoutPlaintextResponse] = js.native
     def generateDataKeyWithoutPlaintext(
         params: GenerateDataKeyWithoutPlaintextRequest
-    ): Request[GenerateDataKeyWithoutPlaintextResponse]                                                  = js.native
-    def generateRandom(params: GenerateRandomRequest): Request[GenerateRandomResponse]                   = js.native
-    def getKeyPolicy(params: GetKeyPolicyRequest): Request[GetKeyPolicyResponse]                         = js.native
+    ): Request[GenerateDataKeyWithoutPlaintextResponse] = js.native
+    def generateRandom(params: GenerateRandomRequest): Request[GenerateRandomResponse] = js.native
+    def getKeyPolicy(params: GetKeyPolicyRequest): Request[GetKeyPolicyResponse] = js.native
     def getKeyRotationStatus(params: GetKeyRotationStatusRequest): Request[GetKeyRotationStatusResponse] = js.native
     def getParametersForImport(params: GetParametersForImportRequest): Request[GetParametersForImportResponse] =
       js.native
-    def getPublicKey(params: GetPublicKeyRequest): Request[GetPublicKeyResponse]                         = js.native
-    def importKeyMaterial(params: ImportKeyMaterialRequest): Request[ImportKeyMaterialResponse]          = js.native
-    def listAliases(params: ListAliasesRequest): Request[ListAliasesResponse]                            = js.native
-    def listGrants(params: ListGrantsRequest): Request[ListGrantsResponse]                               = js.native
-    def listKeyPolicies(params: ListKeyPoliciesRequest): Request[ListKeyPoliciesResponse]                = js.native
-    def listKeys(params: ListKeysRequest): Request[ListKeysResponse]                                     = js.native
-    def listResourceTags(params: ListResourceTagsRequest): Request[ListResourceTagsResponse]             = js.native
-    def listRetirableGrants(params: ListRetirableGrantsRequest): Request[ListGrantsResponse]             = js.native
-    def putKeyPolicy(params: PutKeyPolicyRequest): Request[js.Object]                                    = js.native
-    def reEncrypt(params: ReEncryptRequest): Request[ReEncryptResponse]                                  = js.native
-    def retireGrant(params: RetireGrantRequest): Request[js.Object]                                      = js.native
-    def revokeGrant(params: RevokeGrantRequest): Request[js.Object]                                      = js.native
-    def scheduleKeyDeletion(params: ScheduleKeyDeletionRequest): Request[ScheduleKeyDeletionResponse]    = js.native
-    def sign(params: SignRequest): Request[SignResponse]                                                 = js.native
-    def tagResource(params: TagResourceRequest): Request[js.Object]                                      = js.native
-    def untagResource(params: UntagResourceRequest): Request[js.Object]                                  = js.native
-    def updateAlias(params: UpdateAliasRequest): Request[js.Object]                                      = js.native
+    def getPublicKey(params: GetPublicKeyRequest): Request[GetPublicKeyResponse] = js.native
+    def importKeyMaterial(params: ImportKeyMaterialRequest): Request[ImportKeyMaterialResponse] = js.native
+    def listAliases(params: ListAliasesRequest): Request[ListAliasesResponse] = js.native
+    def listGrants(params: ListGrantsRequest): Request[ListGrantsResponse] = js.native
+    def listKeyPolicies(params: ListKeyPoliciesRequest): Request[ListKeyPoliciesResponse] = js.native
+    def listKeys(params: ListKeysRequest): Request[ListKeysResponse] = js.native
+    def listResourceTags(params: ListResourceTagsRequest): Request[ListResourceTagsResponse] = js.native
+    def listRetirableGrants(params: ListRetirableGrantsRequest): Request[ListGrantsResponse] = js.native
+    def putKeyPolicy(params: PutKeyPolicyRequest): Request[js.Object] = js.native
+    def reEncrypt(params: ReEncryptRequest): Request[ReEncryptResponse] = js.native
+    def retireGrant(params: RetireGrantRequest): Request[js.Object] = js.native
+    def revokeGrant(params: RevokeGrantRequest): Request[js.Object] = js.native
+    def scheduleKeyDeletion(params: ScheduleKeyDeletionRequest): Request[ScheduleKeyDeletionResponse] = js.native
+    def sign(params: SignRequest): Request[SignResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
+    def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
+    def updateAlias(params: UpdateAliasRequest): Request[js.Object] = js.native
     def updateCustomKeyStore(params: UpdateCustomKeyStoreRequest): Request[UpdateCustomKeyStoreResponse] = js.native
-    def updateKeyDescription(params: UpdateKeyDescriptionRequest): Request[js.Object]                    = js.native
-    def verify(params: VerifyRequest): Request[VerifyResponse]                                           = js.native
+    def updateKeyDescription(params: UpdateKeyDescriptionRequest): Request[js.Object] = js.native
+    def verify(params: VerifyRequest): Request[VerifyResponse] = js.native
   }
 
   @js.native
   sealed trait AlgorithmSpec extends js.Any
   object AlgorithmSpec extends js.Object {
-    val RSAES_PKCS1_V1_5   = "RSAES_PKCS1_V1_5".asInstanceOf[AlgorithmSpec]
-    val RSAES_OAEP_SHA_1   = "RSAES_OAEP_SHA_1".asInstanceOf[AlgorithmSpec]
+    val RSAES_PKCS1_V1_5 = "RSAES_PKCS1_V1_5".asInstanceOf[AlgorithmSpec]
+    val RSAES_OAEP_SHA_1 = "RSAES_OAEP_SHA_1".asInstanceOf[AlgorithmSpec]
     val RSAES_OAEP_SHA_256 = "RSAES_OAEP_SHA_256".asInstanceOf[AlgorithmSpec]
 
     val values = js.Object.freeze(js.Array(RSAES_PKCS1_V1_5, RSAES_OAEP_SHA_1, RSAES_OAEP_SHA_256))
@@ -316,15 +316,15 @@ package kms {
   @js.native
   sealed trait ConnectionErrorCodeType extends js.Any
   object ConnectionErrorCodeType extends js.Object {
-    val INVALID_CREDENTIALS        = "INVALID_CREDENTIALS".asInstanceOf[ConnectionErrorCodeType]
-    val CLUSTER_NOT_FOUND          = "CLUSTER_NOT_FOUND".asInstanceOf[ConnectionErrorCodeType]
-    val NETWORK_ERRORS             = "NETWORK_ERRORS".asInstanceOf[ConnectionErrorCodeType]
-    val INTERNAL_ERROR             = "INTERNAL_ERROR".asInstanceOf[ConnectionErrorCodeType]
+    val INVALID_CREDENTIALS = "INVALID_CREDENTIALS".asInstanceOf[ConnectionErrorCodeType]
+    val CLUSTER_NOT_FOUND = "CLUSTER_NOT_FOUND".asInstanceOf[ConnectionErrorCodeType]
+    val NETWORK_ERRORS = "NETWORK_ERRORS".asInstanceOf[ConnectionErrorCodeType]
+    val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[ConnectionErrorCodeType]
     val INSUFFICIENT_CLOUDHSM_HSMS = "INSUFFICIENT_CLOUDHSM_HSMS".asInstanceOf[ConnectionErrorCodeType]
-    val USER_LOCKED_OUT            = "USER_LOCKED_OUT".asInstanceOf[ConnectionErrorCodeType]
-    val USER_NOT_FOUND             = "USER_NOT_FOUND".asInstanceOf[ConnectionErrorCodeType]
-    val USER_LOGGED_IN             = "USER_LOGGED_IN".asInstanceOf[ConnectionErrorCodeType]
-    val SUBNET_NOT_FOUND           = "SUBNET_NOT_FOUND".asInstanceOf[ConnectionErrorCodeType]
+    val USER_LOCKED_OUT = "USER_LOCKED_OUT".asInstanceOf[ConnectionErrorCodeType]
+    val USER_NOT_FOUND = "USER_NOT_FOUND".asInstanceOf[ConnectionErrorCodeType]
+    val USER_LOGGED_IN = "USER_LOGGED_IN".asInstanceOf[ConnectionErrorCodeType]
+    val SUBNET_NOT_FOUND = "SUBNET_NOT_FOUND".asInstanceOf[ConnectionErrorCodeType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -344,10 +344,10 @@ package kms {
   @js.native
   sealed trait ConnectionStateType extends js.Any
   object ConnectionStateType extends js.Object {
-    val CONNECTED     = "CONNECTED".asInstanceOf[ConnectionStateType]
-    val CONNECTING    = "CONNECTING".asInstanceOf[ConnectionStateType]
-    val FAILED        = "FAILED".asInstanceOf[ConnectionStateType]
-    val DISCONNECTED  = "DISCONNECTED".asInstanceOf[ConnectionStateType]
+    val CONNECTED = "CONNECTED".asInstanceOf[ConnectionStateType]
+    val CONNECTING = "CONNECTING".asInstanceOf[ConnectionStateType]
+    val FAILED = "FAILED".asInstanceOf[ConnectionStateType]
+    val DISCONNECTED = "DISCONNECTED".asInstanceOf[ConnectionStateType]
     val DISCONNECTING = "DISCONNECTING".asInstanceOf[ConnectionStateType]
 
     val values = js.Object.freeze(js.Array(CONNECTED, CONNECTING, FAILED, DISCONNECTED, DISCONNECTING))
@@ -366,7 +366,7 @@ package kms {
         TargetKeyId: KeyIdType
     ): CreateAliasRequest = {
       val __obj = js.Dynamic.literal(
-        "AliasName"   -> AliasName.asInstanceOf[js.Any],
+        "AliasName" -> AliasName.asInstanceOf[js.Any],
         "TargetKeyId" -> TargetKeyId.asInstanceOf[js.Any]
       )
 
@@ -391,9 +391,9 @@ package kms {
         TrustAnchorCertificate: TrustAnchorCertificateType
     ): CreateCustomKeyStoreRequest = {
       val __obj = js.Dynamic.literal(
-        "CloudHsmClusterId"      -> CloudHsmClusterId.asInstanceOf[js.Any],
-        "CustomKeyStoreName"     -> CustomKeyStoreName.asInstanceOf[js.Any],
-        "KeyStorePassword"       -> KeyStorePassword.asInstanceOf[js.Any],
+        "CloudHsmClusterId" -> CloudHsmClusterId.asInstanceOf[js.Any],
+        "CustomKeyStoreName" -> CustomKeyStoreName.asInstanceOf[js.Any],
+        "KeyStorePassword" -> KeyStorePassword.asInstanceOf[js.Any],
         "TrustAnchorCertificate" -> TrustAnchorCertificate.asInstanceOf[js.Any]
       )
 
@@ -441,8 +441,8 @@ package kms {
     ): CreateGrantRequest = {
       val __obj = js.Dynamic.literal(
         "GranteePrincipal" -> GranteePrincipal.asInstanceOf[js.Any],
-        "KeyId"            -> KeyId.asInstanceOf[js.Any],
-        "Operations"       -> Operations.asInstanceOf[js.Any]
+        "KeyId" -> KeyId.asInstanceOf[js.Any],
+        "Operations" -> Operations.asInstanceOf[js.Any]
       )
 
       Constraints.foreach(__v => __obj.updateDynamic("Constraints")(__v.asInstanceOf[js.Any]))
@@ -567,13 +567,13 @@ package kms {
   @js.native
   sealed trait CustomerMasterKeySpec extends js.Any
   object CustomerMasterKeySpec extends js.Object {
-    val RSA_2048          = "RSA_2048".asInstanceOf[CustomerMasterKeySpec]
-    val RSA_3072          = "RSA_3072".asInstanceOf[CustomerMasterKeySpec]
-    val RSA_4096          = "RSA_4096".asInstanceOf[CustomerMasterKeySpec]
-    val ECC_NIST_P256     = "ECC_NIST_P256".asInstanceOf[CustomerMasterKeySpec]
-    val ECC_NIST_P384     = "ECC_NIST_P384".asInstanceOf[CustomerMasterKeySpec]
-    val ECC_NIST_P521     = "ECC_NIST_P521".asInstanceOf[CustomerMasterKeySpec]
-    val ECC_SECG_P256K1   = "ECC_SECG_P256K1".asInstanceOf[CustomerMasterKeySpec]
+    val RSA_2048 = "RSA_2048".asInstanceOf[CustomerMasterKeySpec]
+    val RSA_3072 = "RSA_3072".asInstanceOf[CustomerMasterKeySpec]
+    val RSA_4096 = "RSA_4096".asInstanceOf[CustomerMasterKeySpec]
+    val ECC_NIST_P256 = "ECC_NIST_P256".asInstanceOf[CustomerMasterKeySpec]
+    val ECC_NIST_P384 = "ECC_NIST_P384".asInstanceOf[CustomerMasterKeySpec]
+    val ECC_NIST_P521 = "ECC_NIST_P521".asInstanceOf[CustomerMasterKeySpec]
+    val ECC_SECG_P256K1 = "ECC_SECG_P256K1".asInstanceOf[CustomerMasterKeySpec]
     val SYMMETRIC_DEFAULT = "SYMMETRIC_DEFAULT".asInstanceOf[CustomerMasterKeySpec]
 
     val values = js.Object.freeze(
@@ -593,12 +593,12 @@ package kms {
   @js.native
   sealed trait DataKeyPairSpec extends js.Any
   object DataKeyPairSpec extends js.Object {
-    val RSA_2048        = "RSA_2048".asInstanceOf[DataKeyPairSpec]
-    val RSA_3072        = "RSA_3072".asInstanceOf[DataKeyPairSpec]
-    val RSA_4096        = "RSA_4096".asInstanceOf[DataKeyPairSpec]
-    val ECC_NIST_P256   = "ECC_NIST_P256".asInstanceOf[DataKeyPairSpec]
-    val ECC_NIST_P384   = "ECC_NIST_P384".asInstanceOf[DataKeyPairSpec]
-    val ECC_NIST_P521   = "ECC_NIST_P521".asInstanceOf[DataKeyPairSpec]
+    val RSA_2048 = "RSA_2048".asInstanceOf[DataKeyPairSpec]
+    val RSA_3072 = "RSA_3072".asInstanceOf[DataKeyPairSpec]
+    val RSA_4096 = "RSA_4096".asInstanceOf[DataKeyPairSpec]
+    val ECC_NIST_P256 = "ECC_NIST_P256".asInstanceOf[DataKeyPairSpec]
+    val ECC_NIST_P384 = "ECC_NIST_P384".asInstanceOf[DataKeyPairSpec]
+    val ECC_NIST_P521 = "ECC_NIST_P521".asInstanceOf[DataKeyPairSpec]
     val ECC_SECG_P256K1 = "ECC_SECG_P256K1".asInstanceOf[DataKeyPairSpec]
 
     val values = js.Object.freeze(
@@ -940,7 +940,7 @@ package kms {
         GrantTokens: js.UndefOr[GrantTokenList] = js.undefined
     ): EncryptRequest = {
       val __obj = js.Dynamic.literal(
-        "KeyId"     -> KeyId.asInstanceOf[js.Any],
+        "KeyId" -> KeyId.asInstanceOf[js.Any],
         "Plaintext" -> Plaintext.asInstanceOf[js.Any]
       )
 
@@ -976,8 +976,8 @@ package kms {
   @js.native
   sealed trait EncryptionAlgorithmSpec extends js.Any
   object EncryptionAlgorithmSpec extends js.Object {
-    val SYMMETRIC_DEFAULT  = "SYMMETRIC_DEFAULT".asInstanceOf[EncryptionAlgorithmSpec]
-    val RSAES_OAEP_SHA_1   = "RSAES_OAEP_SHA_1".asInstanceOf[EncryptionAlgorithmSpec]
+    val SYMMETRIC_DEFAULT = "SYMMETRIC_DEFAULT".asInstanceOf[EncryptionAlgorithmSpec]
+    val RSAES_OAEP_SHA_1 = "RSAES_OAEP_SHA_1".asInstanceOf[EncryptionAlgorithmSpec]
     val RSAES_OAEP_SHA_256 = "RSAES_OAEP_SHA_256".asInstanceOf[EncryptionAlgorithmSpec]
 
     val values = js.Object.freeze(js.Array(SYMMETRIC_DEFAULT, RSAES_OAEP_SHA_1, RSAES_OAEP_SHA_256))
@@ -986,7 +986,7 @@ package kms {
   @js.native
   sealed trait ExpirationModelType extends js.Any
   object ExpirationModelType extends js.Object {
-    val KEY_MATERIAL_EXPIRES         = "KEY_MATERIAL_EXPIRES".asInstanceOf[ExpirationModelType]
+    val KEY_MATERIAL_EXPIRES = "KEY_MATERIAL_EXPIRES".asInstanceOf[ExpirationModelType]
     val KEY_MATERIAL_DOES_NOT_EXPIRE = "KEY_MATERIAL_DOES_NOT_EXPIRE".asInstanceOf[ExpirationModelType]
 
     val values = js.Object.freeze(js.Array(KEY_MATERIAL_EXPIRES, KEY_MATERIAL_DOES_NOT_EXPIRE))
@@ -1009,7 +1009,7 @@ package kms {
         GrantTokens: js.UndefOr[GrantTokenList] = js.undefined
     ): GenerateDataKeyPairRequest = {
       val __obj = js.Dynamic.literal(
-        "KeyId"       -> KeyId.asInstanceOf[js.Any],
+        "KeyId" -> KeyId.asInstanceOf[js.Any],
         "KeyPairSpec" -> KeyPairSpec.asInstanceOf[js.Any]
       )
 
@@ -1064,7 +1064,7 @@ package kms {
         GrantTokens: js.UndefOr[GrantTokenList] = js.undefined
     ): GenerateDataKeyPairWithoutPlaintextRequest = {
       val __obj = js.Dynamic.literal(
-        "KeyId"       -> KeyId.asInstanceOf[js.Any],
+        "KeyId" -> KeyId.asInstanceOf[js.Any],
         "KeyPairSpec" -> KeyPairSpec.asInstanceOf[js.Any]
       )
 
@@ -1248,7 +1248,7 @@ package kms {
         PolicyName: PolicyNameType
     ): GetKeyPolicyRequest = {
       val __obj = js.Dynamic.literal(
-        "KeyId"      -> KeyId.asInstanceOf[js.Any],
+        "KeyId" -> KeyId.asInstanceOf[js.Any],
         "PolicyName" -> PolicyName.asInstanceOf[js.Any]
       )
 
@@ -1321,9 +1321,9 @@ package kms {
         WrappingKeySpec: WrappingKeySpec
     ): GetParametersForImportRequest = {
       val __obj = js.Dynamic.literal(
-        "KeyId"             -> KeyId.asInstanceOf[js.Any],
+        "KeyId" -> KeyId.asInstanceOf[js.Any],
         "WrappingAlgorithm" -> WrappingAlgorithm.asInstanceOf[js.Any],
-        "WrappingKeySpec"   -> WrappingKeySpec.asInstanceOf[js.Any]
+        "WrappingKeySpec" -> WrappingKeySpec.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetParametersForImportRequest]
@@ -1480,19 +1480,19 @@ package kms {
   @js.native
   sealed trait GrantOperation extends js.Any
   object GrantOperation extends js.Object {
-    val Decrypt                             = "Decrypt".asInstanceOf[GrantOperation]
-    val Encrypt                             = "Encrypt".asInstanceOf[GrantOperation]
-    val GenerateDataKey                     = "GenerateDataKey".asInstanceOf[GrantOperation]
-    val GenerateDataKeyWithoutPlaintext     = "GenerateDataKeyWithoutPlaintext".asInstanceOf[GrantOperation]
-    val ReEncryptFrom                       = "ReEncryptFrom".asInstanceOf[GrantOperation]
-    val ReEncryptTo                         = "ReEncryptTo".asInstanceOf[GrantOperation]
-    val Sign                                = "Sign".asInstanceOf[GrantOperation]
-    val Verify                              = "Verify".asInstanceOf[GrantOperation]
-    val GetPublicKey                        = "GetPublicKey".asInstanceOf[GrantOperation]
-    val CreateGrant                         = "CreateGrant".asInstanceOf[GrantOperation]
-    val RetireGrant                         = "RetireGrant".asInstanceOf[GrantOperation]
-    val DescribeKey                         = "DescribeKey".asInstanceOf[GrantOperation]
-    val GenerateDataKeyPair                 = "GenerateDataKeyPair".asInstanceOf[GrantOperation]
+    val Decrypt = "Decrypt".asInstanceOf[GrantOperation]
+    val Encrypt = "Encrypt".asInstanceOf[GrantOperation]
+    val GenerateDataKey = "GenerateDataKey".asInstanceOf[GrantOperation]
+    val GenerateDataKeyWithoutPlaintext = "GenerateDataKeyWithoutPlaintext".asInstanceOf[GrantOperation]
+    val ReEncryptFrom = "ReEncryptFrom".asInstanceOf[GrantOperation]
+    val ReEncryptTo = "ReEncryptTo".asInstanceOf[GrantOperation]
+    val Sign = "Sign".asInstanceOf[GrantOperation]
+    val Verify = "Verify".asInstanceOf[GrantOperation]
+    val GetPublicKey = "GetPublicKey".asInstanceOf[GrantOperation]
+    val CreateGrant = "CreateGrant".asInstanceOf[GrantOperation]
+    val RetireGrant = "RetireGrant".asInstanceOf[GrantOperation]
+    val DescribeKey = "DescribeKey".asInstanceOf[GrantOperation]
+    val GenerateDataKeyPair = "GenerateDataKeyPair".asInstanceOf[GrantOperation]
     val GenerateDataKeyPairWithoutPlaintext = "GenerateDataKeyPairWithoutPlaintext".asInstanceOf[GrantOperation]
 
     val values = js.Object.freeze(
@@ -1535,8 +1535,8 @@ package kms {
     ): ImportKeyMaterialRequest = {
       val __obj = js.Dynamic.literal(
         "EncryptedKeyMaterial" -> EncryptedKeyMaterial.asInstanceOf[js.Any],
-        "ImportToken"          -> ImportToken.asInstanceOf[js.Any],
-        "KeyId"                -> KeyId.asInstanceOf[js.Any]
+        "ImportToken" -> ImportToken.asInstanceOf[js.Any],
+        "KeyId" -> KeyId.asInstanceOf[js.Any]
       )
 
       ExpirationModel.foreach(__v => __obj.updateDynamic("ExpirationModel")(__v.asInstanceOf[js.Any]))
@@ -1583,7 +1583,7 @@ package kms {
   @js.native
   sealed trait KeyManagerType extends js.Any
   object KeyManagerType extends js.Object {
-    val AWS      = "AWS".asInstanceOf[KeyManagerType]
+    val AWS = "AWS".asInstanceOf[KeyManagerType]
     val CUSTOMER = "CUSTOMER".asInstanceOf[KeyManagerType]
 
     val values = js.Object.freeze(js.Array(AWS, CUSTOMER))
@@ -1665,11 +1665,11 @@ package kms {
   @js.native
   sealed trait KeyState extends js.Any
   object KeyState extends js.Object {
-    val Enabled         = "Enabled".asInstanceOf[KeyState]
-    val Disabled        = "Disabled".asInstanceOf[KeyState]
+    val Enabled = "Enabled".asInstanceOf[KeyState]
+    val Disabled = "Disabled".asInstanceOf[KeyState]
     val PendingDeletion = "PendingDeletion".asInstanceOf[KeyState]
-    val PendingImport   = "PendingImport".asInstanceOf[KeyState]
-    val Unavailable     = "Unavailable".asInstanceOf[KeyState]
+    val PendingImport = "PendingImport".asInstanceOf[KeyState]
+    val Unavailable = "Unavailable".asInstanceOf[KeyState]
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled, PendingDeletion, PendingImport, Unavailable))
   }
@@ -1677,7 +1677,7 @@ package kms {
   @js.native
   sealed trait KeyUsageType extends js.Any
   object KeyUsageType extends js.Object {
-    val SIGN_VERIFY     = "SIGN_VERIFY".asInstanceOf[KeyUsageType]
+    val SIGN_VERIFY = "SIGN_VERIFY".asInstanceOf[KeyUsageType]
     val ENCRYPT_DECRYPT = "ENCRYPT_DECRYPT".asInstanceOf[KeyUsageType]
 
     val values = js.Object.freeze(js.Array(SIGN_VERIFY, ENCRYPT_DECRYPT))
@@ -1933,7 +1933,7 @@ package kms {
   @js.native
   sealed trait MessageType extends js.Any
   object MessageType extends js.Object {
-    val RAW    = "RAW".asInstanceOf[MessageType]
+    val RAW = "RAW".asInstanceOf[MessageType]
     val DIGEST = "DIGEST".asInstanceOf[MessageType]
 
     val values = js.Object.freeze(js.Array(RAW, DIGEST))
@@ -1942,8 +1942,8 @@ package kms {
   @js.native
   sealed trait OriginType extends js.Any
   object OriginType extends js.Object {
-    val AWS_KMS      = "AWS_KMS".asInstanceOf[OriginType]
-    val EXTERNAL     = "EXTERNAL".asInstanceOf[OriginType]
+    val AWS_KMS = "AWS_KMS".asInstanceOf[OriginType]
+    val EXTERNAL = "EXTERNAL".asInstanceOf[OriginType]
     val AWS_CLOUDHSM = "AWS_CLOUDHSM".asInstanceOf[OriginType]
 
     val values = js.Object.freeze(js.Array(AWS_KMS, EXTERNAL, AWS_CLOUDHSM))
@@ -1966,8 +1966,8 @@ package kms {
         BypassPolicyLockoutSafetyCheck: js.UndefOr[BooleanType] = js.undefined
     ): PutKeyPolicyRequest = {
       val __obj = js.Dynamic.literal(
-        "KeyId"      -> KeyId.asInstanceOf[js.Any],
-        "Policy"     -> Policy.asInstanceOf[js.Any],
+        "KeyId" -> KeyId.asInstanceOf[js.Any],
+        "Policy" -> Policy.asInstanceOf[js.Any],
         "PolicyName" -> PolicyName.asInstanceOf[js.Any]
       )
 
@@ -2003,7 +2003,7 @@ package kms {
         SourceKeyId: js.UndefOr[KeyIdType] = js.undefined
     ): ReEncryptRequest = {
       val __obj = js.Dynamic.literal(
-        "CiphertextBlob"   -> CiphertextBlob.asInstanceOf[js.Any],
+        "CiphertextBlob" -> CiphertextBlob.asInstanceOf[js.Any],
         "DestinationKeyId" -> DestinationKeyId.asInstanceOf[js.Any]
       )
 
@@ -2091,7 +2091,7 @@ package kms {
     ): RevokeGrantRequest = {
       val __obj = js.Dynamic.literal(
         "GrantId" -> GrantId.asInstanceOf[js.Any],
-        "KeyId"   -> KeyId.asInstanceOf[js.Any]
+        "KeyId" -> KeyId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RevokeGrantRequest]
@@ -2157,8 +2157,8 @@ package kms {
         MessageType: js.UndefOr[MessageType] = js.undefined
     ): SignRequest = {
       val __obj = js.Dynamic.literal(
-        "KeyId"            -> KeyId.asInstanceOf[js.Any],
-        "Message"          -> Message.asInstanceOf[js.Any],
+        "KeyId" -> KeyId.asInstanceOf[js.Any],
+        "Message" -> Message.asInstanceOf[js.Any],
         "SigningAlgorithm" -> SigningAlgorithm.asInstanceOf[js.Any]
       )
 
@@ -2193,15 +2193,15 @@ package kms {
   @js.native
   sealed trait SigningAlgorithmSpec extends js.Any
   object SigningAlgorithmSpec extends js.Object {
-    val RSASSA_PSS_SHA_256        = "RSASSA_PSS_SHA_256".asInstanceOf[SigningAlgorithmSpec]
-    val RSASSA_PSS_SHA_384        = "RSASSA_PSS_SHA_384".asInstanceOf[SigningAlgorithmSpec]
-    val RSASSA_PSS_SHA_512        = "RSASSA_PSS_SHA_512".asInstanceOf[SigningAlgorithmSpec]
+    val RSASSA_PSS_SHA_256 = "RSASSA_PSS_SHA_256".asInstanceOf[SigningAlgorithmSpec]
+    val RSASSA_PSS_SHA_384 = "RSASSA_PSS_SHA_384".asInstanceOf[SigningAlgorithmSpec]
+    val RSASSA_PSS_SHA_512 = "RSASSA_PSS_SHA_512".asInstanceOf[SigningAlgorithmSpec]
     val RSASSA_PKCS1_V1_5_SHA_256 = "RSASSA_PKCS1_V1_5_SHA_256".asInstanceOf[SigningAlgorithmSpec]
     val RSASSA_PKCS1_V1_5_SHA_384 = "RSASSA_PKCS1_V1_5_SHA_384".asInstanceOf[SigningAlgorithmSpec]
     val RSASSA_PKCS1_V1_5_SHA_512 = "RSASSA_PKCS1_V1_5_SHA_512".asInstanceOf[SigningAlgorithmSpec]
-    val ECDSA_SHA_256             = "ECDSA_SHA_256".asInstanceOf[SigningAlgorithmSpec]
-    val ECDSA_SHA_384             = "ECDSA_SHA_384".asInstanceOf[SigningAlgorithmSpec]
-    val ECDSA_SHA_512             = "ECDSA_SHA_512".asInstanceOf[SigningAlgorithmSpec]
+    val ECDSA_SHA_256 = "ECDSA_SHA_256".asInstanceOf[SigningAlgorithmSpec]
+    val ECDSA_SHA_384 = "ECDSA_SHA_384".asInstanceOf[SigningAlgorithmSpec]
+    val ECDSA_SHA_512 = "ECDSA_SHA_512".asInstanceOf[SigningAlgorithmSpec]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2235,7 +2235,7 @@ package kms {
         TagValue: TagValueType
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "TagKey"   -> TagKey.asInstanceOf[js.Any],
+        "TagKey" -> TagKey.asInstanceOf[js.Any],
         "TagValue" -> TagValue.asInstanceOf[js.Any]
       )
 
@@ -2257,7 +2257,7 @@ package kms {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "KeyId" -> KeyId.asInstanceOf[js.Any],
-        "Tags"  -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -2277,7 +2277,7 @@ package kms {
         TagKeys: TagKeyList
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
-        "KeyId"   -> KeyId.asInstanceOf[js.Any],
+        "KeyId" -> KeyId.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
@@ -2298,7 +2298,7 @@ package kms {
         TargetKeyId: KeyIdType
     ): UpdateAliasRequest = {
       val __obj = js.Dynamic.literal(
-        "AliasName"   -> AliasName.asInstanceOf[js.Any],
+        "AliasName" -> AliasName.asInstanceOf[js.Any],
         "TargetKeyId" -> TargetKeyId.asInstanceOf[js.Any]
       )
 
@@ -2360,7 +2360,7 @@ package kms {
     ): UpdateKeyDescriptionRequest = {
       val __obj = js.Dynamic.literal(
         "Description" -> Description.asInstanceOf[js.Any],
-        "KeyId"       -> KeyId.asInstanceOf[js.Any]
+        "KeyId" -> KeyId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateKeyDescriptionRequest]
@@ -2388,9 +2388,9 @@ package kms {
         MessageType: js.UndefOr[MessageType] = js.undefined
     ): VerifyRequest = {
       val __obj = js.Dynamic.literal(
-        "KeyId"            -> KeyId.asInstanceOf[js.Any],
-        "Message"          -> Message.asInstanceOf[js.Any],
-        "Signature"        -> Signature.asInstanceOf[js.Any],
+        "KeyId" -> KeyId.asInstanceOf[js.Any],
+        "Message" -> Message.asInstanceOf[js.Any],
+        "Signature" -> Signature.asInstanceOf[js.Any],
         "SigningAlgorithm" -> SigningAlgorithm.asInstanceOf[js.Any]
       )
 

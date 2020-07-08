@@ -7,29 +7,29 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object marketplacecatalog {
-  type ARN                  = String
-  type Catalog              = String
+  type ARN = String
+  type Catalog = String
   type ChangeSetDescription = js.Array[ChangeSummary]
-  type ChangeSetName        = String
+  type ChangeSetName = String
   type ChangeSetSummaryList = js.Array[ChangeSetSummaryListItem]
-  type ChangeType           = String
-  type ClientRequestToken   = String
-  type DateTimeISO8601      = String
-  type EntitySummaryList    = js.Array[EntitySummary]
-  type EntityType           = String
-  type ErrorDetailList      = js.Array[ErrorDetail]
-  type FilterList           = js.Array[Filter]
-  type FilterName           = String
-  type Identifier           = String
-  type Json                 = String
-  type MaxResultInteger     = Int
-  type NextToken            = String
-  type RequestedChangeList  = js.Array[Change]
-  type ResourceId           = String
-  type ResourceIdList       = js.Array[ResourceId]
-  type SortBy               = String
-  type StringValue          = String
-  type ValueList            = js.Array[StringValue]
+  type ChangeType = String
+  type ClientRequestToken = String
+  type DateTimeISO8601 = String
+  type EntitySummaryList = js.Array[EntitySummary]
+  type EntityType = String
+  type ErrorDetailList = js.Array[ErrorDetail]
+  type FilterList = js.Array[Filter]
+  type FilterName = String
+  type Identifier = String
+  type Json = String
+  type MaxResultInteger = Int
+  type NextToken = String
+  type RequestedChangeList = js.Array[Change]
+  type ResourceId = String
+  type ResourceIdList = js.Array[ResourceId]
+  type SortBy = String
+  type StringValue = String
+  type ValueList = js.Array[StringValue]
 
   implicit final class MarketplaceCatalogOps(private val service: MarketplaceCatalog) extends AnyVal {
 
@@ -54,12 +54,12 @@ package marketplacecatalog {
   class MarketplaceCatalog() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def cancelChangeSet(params: CancelChangeSetRequest): Request[CancelChangeSetResponse]       = js.native
+    def cancelChangeSet(params: CancelChangeSetRequest): Request[CancelChangeSetResponse] = js.native
     def describeChangeSet(params: DescribeChangeSetRequest): Request[DescribeChangeSetResponse] = js.native
-    def describeEntity(params: DescribeEntityRequest): Request[DescribeEntityResponse]          = js.native
-    def listChangeSets(params: ListChangeSetsRequest): Request[ListChangeSetsResponse]          = js.native
-    def listEntities(params: ListEntitiesRequest): Request[ListEntitiesResponse]                = js.native
-    def startChangeSet(params: StartChangeSetRequest): Request[StartChangeSetResponse]          = js.native
+    def describeEntity(params: DescribeEntityRequest): Request[DescribeEntityResponse] = js.native
+    def listChangeSets(params: ListChangeSetsRequest): Request[ListChangeSetsResponse] = js.native
+    def listEntities(params: ListEntitiesRequest): Request[ListEntitiesResponse] = js.native
+    def startChangeSet(params: StartChangeSetRequest): Request[StartChangeSetResponse] = js.native
   }
 
   @js.native
@@ -75,7 +75,7 @@ package marketplacecatalog {
         ChangeSetId: ResourceId
     ): CancelChangeSetRequest = {
       val __obj = js.Dynamic.literal(
-        "Catalog"     -> Catalog.asInstanceOf[js.Any],
+        "Catalog" -> Catalog.asInstanceOf[js.Any],
         "ChangeSetId" -> ChangeSetId.asInstanceOf[js.Any]
       )
 
@@ -121,8 +121,8 @@ package marketplacecatalog {
     ): Change = {
       val __obj = js.Dynamic.literal(
         "ChangeType" -> ChangeType.asInstanceOf[js.Any],
-        "Details"    -> Details.asInstanceOf[js.Any],
-        "Entity"     -> Entity.asInstanceOf[js.Any]
+        "Details" -> Details.asInstanceOf[js.Any],
+        "Entity" -> Entity.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[Change]
@@ -170,10 +170,10 @@ package marketplacecatalog {
   sealed trait ChangeStatus extends js.Any
   object ChangeStatus extends js.Object {
     val PREPARING = "PREPARING".asInstanceOf[ChangeStatus]
-    val APPLYING  = "APPLYING".asInstanceOf[ChangeStatus]
+    val APPLYING = "APPLYING".asInstanceOf[ChangeStatus]
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[ChangeStatus]
     val CANCELLED = "CANCELLED".asInstanceOf[ChangeStatus]
-    val FAILED    = "FAILED".asInstanceOf[ChangeStatus]
+    val FAILED = "FAILED".asInstanceOf[ChangeStatus]
 
     val values = js.Object.freeze(js.Array(PREPARING, APPLYING, SUCCEEDED, CANCELLED, FAILED))
   }
@@ -219,7 +219,7 @@ package marketplacecatalog {
         ChangeSetId: ResourceId
     ): DescribeChangeSetRequest = {
       val __obj = js.Dynamic.literal(
-        "Catalog"     -> Catalog.asInstanceOf[js.Any],
+        "Catalog" -> Catalog.asInstanceOf[js.Any],
         "ChangeSetId" -> ChangeSetId.asInstanceOf[js.Any]
       )
 
@@ -277,7 +277,7 @@ package marketplacecatalog {
         EntityId: ResourceId
     ): DescribeEntityRequest = {
       val __obj = js.Dynamic.literal(
-        "Catalog"  -> Catalog.asInstanceOf[js.Any],
+        "Catalog" -> Catalog.asInstanceOf[js.Any],
         "EntityId" -> EntityId.asInstanceOf[js.Any]
       )
 
@@ -485,7 +485,7 @@ package marketplacecatalog {
         Sort: js.UndefOr[Sort] = js.undefined
     ): ListEntitiesRequest = {
       val __obj = js.Dynamic.literal(
-        "Catalog"    -> Catalog.asInstanceOf[js.Any],
+        "Catalog" -> Catalog.asInstanceOf[js.Any],
         "EntityType" -> EntityType.asInstanceOf[js.Any]
       )
 
@@ -541,7 +541,7 @@ package marketplacecatalog {
   @js.native
   sealed trait SortOrder extends js.Any
   object SortOrder extends js.Object {
-    val ASCENDING  = "ASCENDING".asInstanceOf[SortOrder]
+    val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
     val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
 
     val values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
@@ -564,7 +564,7 @@ package marketplacecatalog {
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined
     ): StartChangeSetRequest = {
       val __obj = js.Dynamic.literal(
-        "Catalog"   -> Catalog.asInstanceOf[js.Any],
+        "Catalog" -> Catalog.asInstanceOf[js.Any],
         "ChangeSet" -> ChangeSet.asInstanceOf[js.Any]
       )
 

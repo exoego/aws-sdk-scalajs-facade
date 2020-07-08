@@ -8,15 +8,15 @@ import facade.amazonaws._
 
 package object cur {
   type AdditionalArtifactList = js.Array[AdditionalArtifact]
-  type DeleteResponseMessage  = String
-  type GenericString          = String
-  type MaxResults             = Int
-  type RefreshClosedReports   = Boolean
-  type ReportDefinitionList   = js.Array[ReportDefinition]
-  type ReportName             = String
-  type S3Bucket               = String
-  type S3Prefix               = String
-  type SchemaElementList      = js.Array[SchemaElement]
+  type DeleteResponseMessage = String
+  type GenericString = String
+  type MaxResults = Int
+  type RefreshClosedReports = Boolean
+  type ReportDefinitionList = js.Array[ReportDefinition]
+  type ReportName = String
+  type S3Bucket = String
+  type S3Prefix = String
+  type SchemaElementList = js.Array[SchemaElement]
 
   implicit final class CUROps(private val service: CUR) extends AnyVal {
 
@@ -56,17 +56,17 @@ package cur {
   @js.native
   sealed trait AWSRegion extends js.Any
   object AWSRegion extends js.Object {
-    val `us-east-1`      = "us-east-1".asInstanceOf[AWSRegion]
-    val `us-west-1`      = "us-west-1".asInstanceOf[AWSRegion]
-    val `us-west-2`      = "us-west-2".asInstanceOf[AWSRegion]
-    val `eu-central-1`   = "eu-central-1".asInstanceOf[AWSRegion]
-    val `eu-west-1`      = "eu-west-1".asInstanceOf[AWSRegion]
+    val `us-east-1` = "us-east-1".asInstanceOf[AWSRegion]
+    val `us-west-1` = "us-west-1".asInstanceOf[AWSRegion]
+    val `us-west-2` = "us-west-2".asInstanceOf[AWSRegion]
+    val `eu-central-1` = "eu-central-1".asInstanceOf[AWSRegion]
+    val `eu-west-1` = "eu-west-1".asInstanceOf[AWSRegion]
     val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[AWSRegion]
     val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[AWSRegion]
     val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[AWSRegion]
-    val `eu-north-1`     = "eu-north-1".asInstanceOf[AWSRegion]
+    val `eu-north-1` = "eu-north-1".asInstanceOf[AWSRegion]
     val `ap-northeast-3` = "ap-northeast-3".asInstanceOf[AWSRegion]
-    val `ap-east-1`      = "ap-east-1".asInstanceOf[AWSRegion]
+    val `ap-east-1` = "ap-east-1".asInstanceOf[AWSRegion]
 
     val values = js.Object.freeze(
       js.Array(
@@ -91,9 +91,9 @@ package cur {
   @js.native
   sealed trait AdditionalArtifact extends js.Any
   object AdditionalArtifact extends js.Object {
-    val REDSHIFT   = "REDSHIFT".asInstanceOf[AdditionalArtifact]
+    val REDSHIFT = "REDSHIFT".asInstanceOf[AdditionalArtifact]
     val QUICKSIGHT = "QUICKSIGHT".asInstanceOf[AdditionalArtifact]
-    val ATHENA     = "ATHENA".asInstanceOf[AdditionalArtifact]
+    val ATHENA = "ATHENA".asInstanceOf[AdditionalArtifact]
 
     val values = js.Object.freeze(js.Array(REDSHIFT, QUICKSIGHT, ATHENA))
   }
@@ -104,8 +104,8 @@ package cur {
   @js.native
   sealed trait CompressionFormat extends js.Any
   object CompressionFormat extends js.Object {
-    val ZIP     = "ZIP".asInstanceOf[CompressionFormat]
-    val GZIP    = "GZIP".asInstanceOf[CompressionFormat]
+    val ZIP = "ZIP".asInstanceOf[CompressionFormat]
+    val GZIP = "GZIP".asInstanceOf[CompressionFormat]
     val Parquet = "Parquet".asInstanceOf[CompressionFormat]
 
     val values = js.Object.freeze(js.Array(ZIP, GZIP, Parquet))
@@ -207,7 +207,7 @@ package cur {
     ): ModifyReportDefinitionRequest = {
       val __obj = js.Dynamic.literal(
         "ReportDefinition" -> ReportDefinition.asInstanceOf[js.Any],
-        "ReportName"       -> ReportName.asInstanceOf[js.Any]
+        "ReportName" -> ReportName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ModifyReportDefinitionRequest]
@@ -299,13 +299,13 @@ package cur {
     ): ReportDefinition = {
       val __obj = js.Dynamic.literal(
         "AdditionalSchemaElements" -> AdditionalSchemaElements.asInstanceOf[js.Any],
-        "Compression"              -> Compression.asInstanceOf[js.Any],
-        "Format"                   -> Format.asInstanceOf[js.Any],
-        "ReportName"               -> ReportName.asInstanceOf[js.Any],
-        "S3Bucket"                 -> S3Bucket.asInstanceOf[js.Any],
-        "S3Prefix"                 -> S3Prefix.asInstanceOf[js.Any],
-        "S3Region"                 -> S3Region.asInstanceOf[js.Any],
-        "TimeUnit"                 -> TimeUnit.asInstanceOf[js.Any]
+        "Compression" -> Compression.asInstanceOf[js.Any],
+        "Format" -> Format.asInstanceOf[js.Any],
+        "ReportName" -> ReportName.asInstanceOf[js.Any],
+        "S3Bucket" -> S3Bucket.asInstanceOf[js.Any],
+        "S3Prefix" -> S3Prefix.asInstanceOf[js.Any],
+        "S3Region" -> S3Region.asInstanceOf[js.Any],
+        "TimeUnit" -> TimeUnit.asInstanceOf[js.Any]
       )
 
       AdditionalArtifacts.foreach(__v => __obj.updateDynamic("AdditionalArtifacts")(__v.asInstanceOf[js.Any]))
@@ -322,7 +322,7 @@ package cur {
   sealed trait ReportFormat extends js.Any
   object ReportFormat extends js.Object {
     val textORcsv = "textORcsv".asInstanceOf[ReportFormat]
-    val Parquet   = "Parquet".asInstanceOf[ReportFormat]
+    val Parquet = "Parquet".asInstanceOf[ReportFormat]
 
     val values = js.Object.freeze(js.Array(textORcsv, Parquet))
   }
@@ -331,7 +331,7 @@ package cur {
   sealed trait ReportVersioning extends js.Any
   object ReportVersioning extends js.Object {
     val CREATE_NEW_REPORT = "CREATE_NEW_REPORT".asInstanceOf[ReportVersioning]
-    val OVERWRITE_REPORT  = "OVERWRITE_REPORT".asInstanceOf[ReportVersioning]
+    val OVERWRITE_REPORT = "OVERWRITE_REPORT".asInstanceOf[ReportVersioning]
 
     val values = js.Object.freeze(js.Array(CREATE_NEW_REPORT, OVERWRITE_REPORT))
   }
@@ -354,7 +354,7 @@ package cur {
   sealed trait TimeUnit extends js.Any
   object TimeUnit extends js.Object {
     val HOURLY = "HOURLY".asInstanceOf[TimeUnit]
-    val DAILY  = "DAILY".asInstanceOf[TimeUnit]
+    val DAILY = "DAILY".asInstanceOf[TimeUnit]
 
     val values = js.Object.freeze(js.Array(HOURLY, DAILY))
   }

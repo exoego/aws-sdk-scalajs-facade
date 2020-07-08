@@ -7,85 +7,85 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object costexplorer {
-  type AmortizedRecurringFee                        = String
-  type AmortizedUpfrontFee                          = String
-  type Arn                                          = String
-  type AttributeType                                = String
-  type AttributeValue                               = String
-  type Attributes                                   = js.Dictionary[AttributeValue]
-  type CostCategoryMaxResults                       = Int
-  type CostCategoryName                             = String
-  type CostCategoryReferencesList                   = js.Array[CostCategoryReference]
-  type CostCategoryRulesList                        = js.Array[CostCategoryRule]
-  type CostCategoryValue                            = String
-  type CoverageHoursPercentage                      = String
-  type CoverageNormalizedUnitsPercentage            = String
-  type CoveragesByTime                              = js.Array[CoverageByTime]
-  type DimensionValuesWithAttributesList            = js.Array[DimensionValuesWithAttributes]
-  type Entity                                       = String
-  type Estimated                                    = Boolean
-  type Expressions                                  = js.Array[Expression]
-  type ForecastResultsByTime                        = js.Array[ForecastResult]
-  type GenericBoolean                               = Boolean
-  type GenericString                                = String
-  type GroupDefinitionKey                           = String
-  type GroupDefinitions                             = js.Array[GroupDefinition]
-  type Groups                                       = js.Array[Group]
-  type Key                                          = String
-  type Keys                                         = js.Array[Key]
-  type MatchOptions                                 = js.Array[MatchOption]
-  type MaxResults                                   = Int
-  type MetricAmount                                 = String
-  type MetricName                                   = String
-  type MetricNames                                  = js.Array[MetricName]
-  type MetricUnit                                   = String
-  type Metrics                                      = js.Dictionary[MetricValue]
-  type NetRISavings                                 = String
-  type NextPageToken                                = String
-  type NonNegativeInteger                           = Int
-  type OnDemandCost                                 = String
-  type OnDemandCostOfRIHoursUsed                    = String
-  type OnDemandHours                                = String
-  type OnDemandNormalizedUnits                      = String
-  type PageSize                                     = Int
-  type PredictionIntervalLevel                      = Int
-  type PurchasedHours                               = String
-  type PurchasedUnits                               = String
-  type ReservationCoverageGroups                    = js.Array[ReservationCoverageGroup]
-  type ReservationGroupKey                          = String
-  type ReservationGroupValue                        = String
-  type ReservationPurchaseRecommendationDetails     = js.Array[ReservationPurchaseRecommendationDetail]
-  type ReservationPurchaseRecommendations           = js.Array[ReservationPurchaseRecommendation]
-  type ReservationUtilizationGroups                 = js.Array[ReservationUtilizationGroup]
-  type ReservedHours                                = String
-  type ReservedNormalizedUnits                      = String
-  type ResultsByTime                                = js.Array[ResultByTime]
-  type RightsizingRecommendationList                = js.Array[RightsizingRecommendation]
-  type SavingsPlanArn                               = String
-  type SavingsPlansCoverages                        = js.Array[SavingsPlansCoverage]
+  type AmortizedRecurringFee = String
+  type AmortizedUpfrontFee = String
+  type Arn = String
+  type AttributeType = String
+  type AttributeValue = String
+  type Attributes = js.Dictionary[AttributeValue]
+  type CostCategoryMaxResults = Int
+  type CostCategoryName = String
+  type CostCategoryReferencesList = js.Array[CostCategoryReference]
+  type CostCategoryRulesList = js.Array[CostCategoryRule]
+  type CostCategoryValue = String
+  type CoverageHoursPercentage = String
+  type CoverageNormalizedUnitsPercentage = String
+  type CoveragesByTime = js.Array[CoverageByTime]
+  type DimensionValuesWithAttributesList = js.Array[DimensionValuesWithAttributes]
+  type Entity = String
+  type Estimated = Boolean
+  type Expressions = js.Array[Expression]
+  type ForecastResultsByTime = js.Array[ForecastResult]
+  type GenericBoolean = Boolean
+  type GenericString = String
+  type GroupDefinitionKey = String
+  type GroupDefinitions = js.Array[GroupDefinition]
+  type Groups = js.Array[Group]
+  type Key = String
+  type Keys = js.Array[Key]
+  type MatchOptions = js.Array[MatchOption]
+  type MaxResults = Int
+  type MetricAmount = String
+  type MetricName = String
+  type MetricNames = js.Array[MetricName]
+  type MetricUnit = String
+  type Metrics = js.Dictionary[MetricValue]
+  type NetRISavings = String
+  type NextPageToken = String
+  type NonNegativeInteger = Int
+  type OnDemandCost = String
+  type OnDemandCostOfRIHoursUsed = String
+  type OnDemandHours = String
+  type OnDemandNormalizedUnits = String
+  type PageSize = Int
+  type PredictionIntervalLevel = Int
+  type PurchasedHours = String
+  type PurchasedUnits = String
+  type ReservationCoverageGroups = js.Array[ReservationCoverageGroup]
+  type ReservationGroupKey = String
+  type ReservationGroupValue = String
+  type ReservationPurchaseRecommendationDetails = js.Array[ReservationPurchaseRecommendationDetail]
+  type ReservationPurchaseRecommendations = js.Array[ReservationPurchaseRecommendation]
+  type ReservationUtilizationGroups = js.Array[ReservationUtilizationGroup]
+  type ReservedHours = String
+  type ReservedNormalizedUnits = String
+  type ResultsByTime = js.Array[ResultByTime]
+  type RightsizingRecommendationList = js.Array[RightsizingRecommendation]
+  type SavingsPlanArn = String
+  type SavingsPlansCoverages = js.Array[SavingsPlansCoverage]
   type SavingsPlansPurchaseRecommendationDetailList = js.Array[SavingsPlansPurchaseRecommendationDetail]
-  type SavingsPlansUtilizationDetails               = js.Array[SavingsPlansUtilizationDetail]
-  type SavingsPlansUtilizationsByTime               = js.Array[SavingsPlansUtilizationByTime]
-  type SearchString                                 = String
-  type TagKey                                       = String
-  type TagList                                      = js.Array[Entity]
-  type TagValuesList                                = js.Array[TagValues]
-  type TargetInstancesList                          = js.Array[TargetInstance]
-  type TotalActualHours                             = String
-  type TotalActualUnits                             = String
-  type TotalAmortizedFee                            = String
-  type TotalPotentialRISavings                      = String
-  type TotalRunningHours                            = String
-  type TotalRunningNormalizedUnits                  = String
-  type UnusedHours                                  = String
-  type UnusedUnits                                  = String
-  type UtilizationPercentage                        = String
-  type UtilizationPercentageInUnits                 = String
-  type UtilizationsByTime                           = js.Array[UtilizationByTime]
-  type Value                                        = String
-  type Values                                       = js.Array[Value]
-  type YearMonthDay                                 = String
-  type ZonedDateTime                                = String
+  type SavingsPlansUtilizationDetails = js.Array[SavingsPlansUtilizationDetail]
+  type SavingsPlansUtilizationsByTime = js.Array[SavingsPlansUtilizationByTime]
+  type SearchString = String
+  type TagKey = String
+  type TagList = js.Array[Entity]
+  type TagValuesList = js.Array[TagValues]
+  type TargetInstancesList = js.Array[TargetInstance]
+  type TotalActualHours = String
+  type TotalActualUnits = String
+  type TotalAmortizedFee = String
+  type TotalPotentialRISavings = String
+  type TotalRunningHours = String
+  type TotalRunningNormalizedUnits = String
+  type UnusedHours = String
+  type UnusedUnits = String
+  type UtilizationPercentage = String
+  type UtilizationPercentageInUnits = String
+  type UtilizationsByTime = js.Array[UtilizationByTime]
+  type Value = String
+  type Values = js.Array[Value]
+  type YearMonthDay = String
+  type ZonedDateTime = String
 
   implicit final class CostExplorerOps(private val service: CostExplorer) extends AnyVal {
 
@@ -162,12 +162,12 @@ package costexplorer {
     ): Request[DeleteCostCategoryDefinitionResponse] = js.native
     def describeCostCategoryDefinition(
         params: DescribeCostCategoryDefinitionRequest
-    ): Request[DescribeCostCategoryDefinitionResponse]                                    = js.native
+    ): Request[DescribeCostCategoryDefinitionResponse] = js.native
     def getCostAndUsage(params: GetCostAndUsageRequest): Request[GetCostAndUsageResponse] = js.native
     def getCostAndUsageWithResources(
         params: GetCostAndUsageWithResourcesRequest
-    ): Request[GetCostAndUsageWithResourcesResponse]                                               = js.native
-    def getCostForecast(params: GetCostForecastRequest): Request[GetCostForecastResponse]          = js.native
+    ): Request[GetCostAndUsageWithResourcesResponse] = js.native
+    def getCostForecast(params: GetCostForecastRequest): Request[GetCostForecastResponse] = js.native
     def getDimensionValues(params: GetDimensionValuesRequest): Request[GetDimensionValuesResponse] = js.native
     def getReservationCoverage(params: GetReservationCoverageRequest): Request[GetReservationCoverageResponse] =
       js.native
@@ -190,8 +190,8 @@ package costexplorer {
     ): Request[GetSavingsPlansUtilizationResponse] = js.native
     def getSavingsPlansUtilizationDetails(
         params: GetSavingsPlansUtilizationDetailsRequest
-    ): Request[GetSavingsPlansUtilizationDetailsResponse]                                    = js.native
-    def getTags(params: GetTagsRequest): Request[GetTagsResponse]                            = js.native
+    ): Request[GetSavingsPlansUtilizationDetailsResponse] = js.native
+    def getTags(params: GetTagsRequest): Request[GetTagsResponse] = js.native
     def getUsageForecast(params: GetUsageForecastRequest): Request[GetUsageForecastResponse] = js.native
     def listCostCategoryDefinitions(
         params: ListCostCategoryDefinitionsRequest
@@ -204,7 +204,7 @@ package costexplorer {
   @js.native
   sealed trait AccountScope extends js.Any
   object AccountScope extends js.Object {
-    val PAYER  = "PAYER".asInstanceOf[AccountScope]
+    val PAYER = "PAYER".asInstanceOf[AccountScope]
     val LINKED = "LINKED".asInstanceOf[AccountScope]
 
     val values = js.Object.freeze(js.Array(PAYER, LINKED))
@@ -214,8 +214,8 @@ package costexplorer {
   sealed trait Context extends js.Any
   object Context extends js.Object {
     val COST_AND_USAGE = "COST_AND_USAGE".asInstanceOf[Context]
-    val RESERVATIONS   = "RESERVATIONS".asInstanceOf[Context]
-    val SAVINGS_PLANS  = "SAVINGS_PLANS".asInstanceOf[Context]
+    val RESERVATIONS = "RESERVATIONS".asInstanceOf[Context]
+    val SAVINGS_PLANS = "SAVINGS_PLANS".asInstanceOf[Context]
 
     val values = js.Object.freeze(js.Array(COST_AND_USAGE, RESERVATIONS, SAVINGS_PLANS))
   }
@@ -245,10 +245,10 @@ package costexplorer {
     ): CostCategory = {
       val __obj = js.Dynamic.literal(
         "CostCategoryArn" -> CostCategoryArn.asInstanceOf[js.Any],
-        "EffectiveStart"  -> EffectiveStart.asInstanceOf[js.Any],
-        "Name"            -> Name.asInstanceOf[js.Any],
-        "RuleVersion"     -> RuleVersion.asInstanceOf[js.Any],
-        "Rules"           -> Rules.asInstanceOf[js.Any]
+        "EffectiveStart" -> EffectiveStart.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "RuleVersion" -> RuleVersion.asInstanceOf[js.Any],
+        "Rules" -> Rules.asInstanceOf[js.Any]
       )
 
       EffectiveEnd.foreach(__v => __obj.updateDynamic("EffectiveEnd")(__v.asInstanceOf[js.Any]))
@@ -304,7 +304,7 @@ package costexplorer {
         Value: CostCategoryValue
     ): CostCategoryRule = {
       val __obj = js.Dynamic.literal(
-        "Rule"  -> Rule.asInstanceOf[js.Any],
+        "Rule" -> Rule.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -490,9 +490,9 @@ package costexplorer {
         Rules: CostCategoryRulesList
     ): CreateCostCategoryDefinitionRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"        -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "RuleVersion" -> RuleVersion.asInstanceOf[js.Any],
-        "Rules"       -> Rules.asInstanceOf[js.Any]
+        "Rules" -> Rules.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateCostCategoryDefinitionRequest]
@@ -588,7 +588,7 @@ package costexplorer {
         Start: YearMonthDay
     ): DateInterval = {
       val __obj = js.Dynamic.literal(
-        "End"   -> End.asInstanceOf[js.Any],
+        "End" -> End.asInstanceOf[js.Any],
         "Start" -> Start.asInstanceOf[js.Any]
       )
 
@@ -673,35 +673,35 @@ package costexplorer {
   @js.native
   sealed trait Dimension extends js.Any
   object Dimension extends js.Object {
-    val AZ                   = "AZ".asInstanceOf[Dimension]
-    val INSTANCE_TYPE        = "INSTANCE_TYPE".asInstanceOf[Dimension]
-    val LINKED_ACCOUNT       = "LINKED_ACCOUNT".asInstanceOf[Dimension]
-    val LINKED_ACCOUNT_NAME  = "LINKED_ACCOUNT_NAME".asInstanceOf[Dimension]
-    val OPERATION            = "OPERATION".asInstanceOf[Dimension]
-    val PURCHASE_TYPE        = "PURCHASE_TYPE".asInstanceOf[Dimension]
-    val REGION               = "REGION".asInstanceOf[Dimension]
-    val SERVICE              = "SERVICE".asInstanceOf[Dimension]
-    val SERVICE_CODE         = "SERVICE_CODE".asInstanceOf[Dimension]
-    val USAGE_TYPE           = "USAGE_TYPE".asInstanceOf[Dimension]
-    val USAGE_TYPE_GROUP     = "USAGE_TYPE_GROUP".asInstanceOf[Dimension]
-    val RECORD_TYPE          = "RECORD_TYPE".asInstanceOf[Dimension]
-    val OPERATING_SYSTEM     = "OPERATING_SYSTEM".asInstanceOf[Dimension]
-    val TENANCY              = "TENANCY".asInstanceOf[Dimension]
-    val SCOPE                = "SCOPE".asInstanceOf[Dimension]
-    val PLATFORM             = "PLATFORM".asInstanceOf[Dimension]
-    val SUBSCRIPTION_ID      = "SUBSCRIPTION_ID".asInstanceOf[Dimension]
-    val LEGAL_ENTITY_NAME    = "LEGAL_ENTITY_NAME".asInstanceOf[Dimension]
-    val DEPLOYMENT_OPTION    = "DEPLOYMENT_OPTION".asInstanceOf[Dimension]
-    val DATABASE_ENGINE      = "DATABASE_ENGINE".asInstanceOf[Dimension]
-    val CACHE_ENGINE         = "CACHE_ENGINE".asInstanceOf[Dimension]
+    val AZ = "AZ".asInstanceOf[Dimension]
+    val INSTANCE_TYPE = "INSTANCE_TYPE".asInstanceOf[Dimension]
+    val LINKED_ACCOUNT = "LINKED_ACCOUNT".asInstanceOf[Dimension]
+    val LINKED_ACCOUNT_NAME = "LINKED_ACCOUNT_NAME".asInstanceOf[Dimension]
+    val OPERATION = "OPERATION".asInstanceOf[Dimension]
+    val PURCHASE_TYPE = "PURCHASE_TYPE".asInstanceOf[Dimension]
+    val REGION = "REGION".asInstanceOf[Dimension]
+    val SERVICE = "SERVICE".asInstanceOf[Dimension]
+    val SERVICE_CODE = "SERVICE_CODE".asInstanceOf[Dimension]
+    val USAGE_TYPE = "USAGE_TYPE".asInstanceOf[Dimension]
+    val USAGE_TYPE_GROUP = "USAGE_TYPE_GROUP".asInstanceOf[Dimension]
+    val RECORD_TYPE = "RECORD_TYPE".asInstanceOf[Dimension]
+    val OPERATING_SYSTEM = "OPERATING_SYSTEM".asInstanceOf[Dimension]
+    val TENANCY = "TENANCY".asInstanceOf[Dimension]
+    val SCOPE = "SCOPE".asInstanceOf[Dimension]
+    val PLATFORM = "PLATFORM".asInstanceOf[Dimension]
+    val SUBSCRIPTION_ID = "SUBSCRIPTION_ID".asInstanceOf[Dimension]
+    val LEGAL_ENTITY_NAME = "LEGAL_ENTITY_NAME".asInstanceOf[Dimension]
+    val DEPLOYMENT_OPTION = "DEPLOYMENT_OPTION".asInstanceOf[Dimension]
+    val DATABASE_ENGINE = "DATABASE_ENGINE".asInstanceOf[Dimension]
+    val CACHE_ENGINE = "CACHE_ENGINE".asInstanceOf[Dimension]
     val INSTANCE_TYPE_FAMILY = "INSTANCE_TYPE_FAMILY".asInstanceOf[Dimension]
-    val BILLING_ENTITY       = "BILLING_ENTITY".asInstanceOf[Dimension]
-    val RESERVATION_ID       = "RESERVATION_ID".asInstanceOf[Dimension]
-    val RESOURCE_ID          = "RESOURCE_ID".asInstanceOf[Dimension]
-    val RIGHTSIZING_TYPE     = "RIGHTSIZING_TYPE".asInstanceOf[Dimension]
-    val SAVINGS_PLANS_TYPE   = "SAVINGS_PLANS_TYPE".asInstanceOf[Dimension]
-    val SAVINGS_PLAN_ARN     = "SAVINGS_PLAN_ARN".asInstanceOf[Dimension]
-    val PAYMENT_OPTION       = "PAYMENT_OPTION".asInstanceOf[Dimension]
+    val BILLING_ENTITY = "BILLING_ENTITY".asInstanceOf[Dimension]
+    val RESERVATION_ID = "RESERVATION_ID".asInstanceOf[Dimension]
+    val RESOURCE_ID = "RESOURCE_ID".asInstanceOf[Dimension]
+    val RIGHTSIZING_TYPE = "RIGHTSIZING_TYPE".asInstanceOf[Dimension]
+    val SAVINGS_PLANS_TYPE = "SAVINGS_PLANS_TYPE".asInstanceOf[Dimension]
+    val SAVINGS_PLAN_ARN = "SAVINGS_PLAN_ARN".asInstanceOf[Dimension]
+    val PAYMENT_OPTION = "PAYMENT_OPTION".asInstanceOf[Dimension]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1188,8 +1188,8 @@ package costexplorer {
     ): GetCostForecastRequest = {
       val __obj = js.Dynamic.literal(
         "Granularity" -> Granularity.asInstanceOf[js.Any],
-        "Metric"      -> Metric.asInstanceOf[js.Any],
-        "TimePeriod"  -> TimePeriod.asInstanceOf[js.Any]
+        "Metric" -> Metric.asInstanceOf[js.Any],
+        "TimePeriod" -> TimePeriod.asInstanceOf[js.Any]
       )
 
       Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
@@ -1236,7 +1236,7 @@ package costexplorer {
         SearchString: js.UndefOr[SearchString] = js.undefined
     ): GetDimensionValuesRequest = {
       val __obj = js.Dynamic.literal(
-        "Dimension"  -> Dimension.asInstanceOf[js.Any],
+        "Dimension" -> Dimension.asInstanceOf[js.Any],
         "TimePeriod" -> TimePeriod.asInstanceOf[js.Any]
       )
 
@@ -1265,8 +1265,8 @@ package costexplorer {
     ): GetDimensionValuesResponse = {
       val __obj = js.Dynamic.literal(
         "DimensionValues" -> DimensionValues.asInstanceOf[js.Any],
-        "ReturnSize"      -> ReturnSize.asInstanceOf[js.Any],
-        "TotalSize"       -> TotalSize.asInstanceOf[js.Any]
+        "ReturnSize" -> ReturnSize.asInstanceOf[js.Any],
+        "TotalSize" -> TotalSize.asInstanceOf[js.Any]
       )
 
       NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
@@ -1595,9 +1595,9 @@ package costexplorer {
     ): GetSavingsPlansPurchaseRecommendationRequest = {
       val __obj = js.Dynamic.literal(
         "LookbackPeriodInDays" -> LookbackPeriodInDays.asInstanceOf[js.Any],
-        "PaymentOption"        -> PaymentOption.asInstanceOf[js.Any],
-        "SavingsPlansType"     -> SavingsPlansType.asInstanceOf[js.Any],
-        "TermInYears"          -> TermInYears.asInstanceOf[js.Any]
+        "PaymentOption" -> PaymentOption.asInstanceOf[js.Any],
+        "SavingsPlansType" -> SavingsPlansType.asInstanceOf[js.Any],
+        "TermInYears" -> TermInYears.asInstanceOf[js.Any]
       )
 
       AccountScope.foreach(__v => __obj.updateDynamic("AccountScope")(__v.asInstanceOf[js.Any]))
@@ -1677,7 +1677,7 @@ package costexplorer {
     ): GetSavingsPlansUtilizationDetailsResponse = {
       val __obj = js.Dynamic.literal(
         "SavingsPlansUtilizationDetails" -> SavingsPlansUtilizationDetails.asInstanceOf[js.Any],
-        "TimePeriod"                     -> TimePeriod.asInstanceOf[js.Any]
+        "TimePeriod" -> TimePeriod.asInstanceOf[js.Any]
       )
 
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
@@ -1778,8 +1778,8 @@ package costexplorer {
     ): GetTagsResponse = {
       val __obj = js.Dynamic.literal(
         "ReturnSize" -> ReturnSize.asInstanceOf[js.Any],
-        "Tags"       -> Tags.asInstanceOf[js.Any],
-        "TotalSize"  -> TotalSize.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any],
+        "TotalSize" -> TotalSize.asInstanceOf[js.Any]
       )
 
       NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
@@ -1807,8 +1807,8 @@ package costexplorer {
     ): GetUsageForecastRequest = {
       val __obj = js.Dynamic.literal(
         "Granularity" -> Granularity.asInstanceOf[js.Any],
-        "Metric"      -> Metric.asInstanceOf[js.Any],
-        "TimePeriod"  -> TimePeriod.asInstanceOf[js.Any]
+        "Metric" -> Metric.asInstanceOf[js.Any],
+        "TimePeriod" -> TimePeriod.asInstanceOf[js.Any]
       )
 
       Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
@@ -1839,9 +1839,9 @@ package costexplorer {
   @js.native
   sealed trait Granularity extends js.Any
   object Granularity extends js.Object {
-    val DAILY   = "DAILY".asInstanceOf[Granularity]
+    val DAILY = "DAILY".asInstanceOf[Granularity]
     val MONTHLY = "MONTHLY".asInstanceOf[Granularity]
-    val HOURLY  = "HOURLY".asInstanceOf[Granularity]
+    val HOURLY = "HOURLY".asInstanceOf[Granularity]
 
     val values = js.Object.freeze(js.Array(DAILY, MONTHLY, HOURLY))
   }
@@ -1893,8 +1893,8 @@ package costexplorer {
   @js.native
   sealed trait GroupDefinitionType extends js.Any
   object GroupDefinitionType extends js.Object {
-    val DIMENSION     = "DIMENSION".asInstanceOf[GroupDefinitionType]
-    val TAG           = "TAG".asInstanceOf[GroupDefinitionType]
+    val DIMENSION = "DIMENSION".asInstanceOf[GroupDefinitionType]
+    val TAG = "TAG".asInstanceOf[GroupDefinitionType]
     val COST_CATEGORY = "COST_CATEGORY".asInstanceOf[GroupDefinitionType]
 
     val values = js.Object.freeze(js.Array(DIMENSION, TAG, COST_CATEGORY))
@@ -1977,9 +1977,9 @@ package costexplorer {
   @js.native
   sealed trait LookbackPeriodInDays extends js.Any
   object LookbackPeriodInDays extends js.Object {
-    val SEVEN_DAYS  = "SEVEN_DAYS".asInstanceOf[LookbackPeriodInDays]
+    val SEVEN_DAYS = "SEVEN_DAYS".asInstanceOf[LookbackPeriodInDays]
     val THIRTY_DAYS = "THIRTY_DAYS".asInstanceOf[LookbackPeriodInDays]
-    val SIXTY_DAYS  = "SIXTY_DAYS".asInstanceOf[LookbackPeriodInDays]
+    val SIXTY_DAYS = "SIXTY_DAYS".asInstanceOf[LookbackPeriodInDays]
 
     val values = js.Object.freeze(js.Array(SEVEN_DAYS, THIRTY_DAYS, SIXTY_DAYS))
   }
@@ -1987,11 +1987,11 @@ package costexplorer {
   @js.native
   sealed trait MatchOption extends js.Any
   object MatchOption extends js.Object {
-    val EQUALS           = "EQUALS".asInstanceOf[MatchOption]
-    val STARTS_WITH      = "STARTS_WITH".asInstanceOf[MatchOption]
-    val ENDS_WITH        = "ENDS_WITH".asInstanceOf[MatchOption]
-    val CONTAINS         = "CONTAINS".asInstanceOf[MatchOption]
-    val CASE_SENSITIVE   = "CASE_SENSITIVE".asInstanceOf[MatchOption]
+    val EQUALS = "EQUALS".asInstanceOf[MatchOption]
+    val STARTS_WITH = "STARTS_WITH".asInstanceOf[MatchOption]
+    val ENDS_WITH = "ENDS_WITH".asInstanceOf[MatchOption]
+    val CONTAINS = "CONTAINS".asInstanceOf[MatchOption]
+    val CASE_SENSITIVE = "CASE_SENSITIVE".asInstanceOf[MatchOption]
     val CASE_INSENSITIVE = "CASE_INSENSITIVE".asInstanceOf[MatchOption]
 
     val values = js.Object.freeze(js.Array(EQUALS, STARTS_WITH, ENDS_WITH, CONTAINS, CASE_SENSITIVE, CASE_INSENSITIVE))
@@ -2000,12 +2000,12 @@ package costexplorer {
   @js.native
   sealed trait Metric extends js.Any
   object Metric extends js.Object {
-    val BLENDED_COST            = "BLENDED_COST".asInstanceOf[Metric]
-    val UNBLENDED_COST          = "UNBLENDED_COST".asInstanceOf[Metric]
-    val AMORTIZED_COST          = "AMORTIZED_COST".asInstanceOf[Metric]
-    val NET_UNBLENDED_COST      = "NET_UNBLENDED_COST".asInstanceOf[Metric]
-    val NET_AMORTIZED_COST      = "NET_AMORTIZED_COST".asInstanceOf[Metric]
-    val USAGE_QUANTITY          = "USAGE_QUANTITY".asInstanceOf[Metric]
+    val BLENDED_COST = "BLENDED_COST".asInstanceOf[Metric]
+    val UNBLENDED_COST = "UNBLENDED_COST".asInstanceOf[Metric]
+    val AMORTIZED_COST = "AMORTIZED_COST".asInstanceOf[Metric]
+    val NET_UNBLENDED_COST = "NET_UNBLENDED_COST".asInstanceOf[Metric]
+    val NET_AMORTIZED_COST = "NET_AMORTIZED_COST".asInstanceOf[Metric]
+    val USAGE_QUANTITY = "USAGE_QUANTITY".asInstanceOf[Metric]
     val NORMALIZED_USAGE_AMOUNT = "NORMALIZED_USAGE_AMOUNT".asInstanceOf[Metric]
 
     val values = js.Object.freeze(
@@ -2065,7 +2065,7 @@ package costexplorer {
   @js.native
   sealed trait OfferingClass extends js.Any
   object OfferingClass extends js.Object {
-    val STANDARD    = "STANDARD".asInstanceOf[OfferingClass]
+    val STANDARD = "STANDARD".asInstanceOf[OfferingClass]
     val CONVERTIBLE = "CONVERTIBLE".asInstanceOf[OfferingClass]
 
     val values = js.Object.freeze(js.Array(STANDARD, CONVERTIBLE))
@@ -2074,12 +2074,12 @@ package costexplorer {
   @js.native
   sealed trait PaymentOption extends js.Any
   object PaymentOption extends js.Object {
-    val NO_UPFRONT         = "NO_UPFRONT".asInstanceOf[PaymentOption]
-    val PARTIAL_UPFRONT    = "PARTIAL_UPFRONT".asInstanceOf[PaymentOption]
-    val ALL_UPFRONT        = "ALL_UPFRONT".asInstanceOf[PaymentOption]
-    val LIGHT_UTILIZATION  = "LIGHT_UTILIZATION".asInstanceOf[PaymentOption]
+    val NO_UPFRONT = "NO_UPFRONT".asInstanceOf[PaymentOption]
+    val PARTIAL_UPFRONT = "PARTIAL_UPFRONT".asInstanceOf[PaymentOption]
+    val ALL_UPFRONT = "ALL_UPFRONT".asInstanceOf[PaymentOption]
+    val LIGHT_UTILIZATION = "LIGHT_UTILIZATION".asInstanceOf[PaymentOption]
     val MEDIUM_UTILIZATION = "MEDIUM_UTILIZATION".asInstanceOf[PaymentOption]
-    val HEAVY_UTILIZATION  = "HEAVY_UTILIZATION".asInstanceOf[PaymentOption]
+    val HEAVY_UTILIZATION = "HEAVY_UTILIZATION".asInstanceOf[PaymentOption]
 
     val values = js.Object.freeze(
       js.Array(NO_UPFRONT, PARTIAL_UPFRONT, ALL_UPFRONT, LIGHT_UTILIZATION, MEDIUM_UTILIZATION, HEAVY_UTILIZATION)
@@ -2132,7 +2132,7 @@ package costexplorer {
   @js.native
   sealed trait RecommendationTarget extends js.Any
   object RecommendationTarget extends js.Object {
-    val SAME_INSTANCE_FAMILY  = "SAME_INSTANCE_FAMILY".asInstanceOf[RecommendationTarget]
+    val SAME_INSTANCE_FAMILY = "SAME_INSTANCE_FAMILY".asInstanceOf[RecommendationTarget]
     val CROSS_INSTANCE_FAMILY = "CROSS_INSTANCE_FAMILY".asInstanceOf[RecommendationTarget]
 
     val values = js.Object.freeze(js.Array(SAME_INSTANCE_FAMILY, CROSS_INSTANCE_FAMILY))
@@ -2587,7 +2587,7 @@ package costexplorer {
         RecommendationTarget: RecommendationTarget
     ): RightsizingRecommendationConfiguration = {
       val __obj = js.Dynamic.literal(
-        "BenefitsConsidered"   -> BenefitsConsidered.asInstanceOf[js.Any],
+        "BenefitsConsidered" -> BenefitsConsidered.asInstanceOf[js.Any],
         "RecommendationTarget" -> RecommendationTarget.asInstanceOf[js.Any]
       )
 
@@ -2654,7 +2654,7 @@ package costexplorer {
   sealed trait RightsizingType extends js.Any
   object RightsizingType extends js.Object {
     val TERMINATE = "TERMINATE".asInstanceOf[RightsizingType]
-    val MODIFY    = "MODIFY".asInstanceOf[RightsizingType]
+    val MODIFY = "MODIFY".asInstanceOf[RightsizingType]
 
     val values = js.Object.freeze(js.Array(TERMINATE, MODIFY))
   }
@@ -3068,7 +3068,7 @@ package costexplorer {
         Savings: js.UndefOr[SavingsPlansSavings] = js.undefined
     ): SavingsPlansUtilizationByTime = {
       val __obj = js.Dynamic.literal(
-        "TimePeriod"  -> TimePeriod.asInstanceOf[js.Any],
+        "TimePeriod" -> TimePeriod.asInstanceOf[js.Any],
         "Utilization" -> Utilization.asInstanceOf[js.Any]
       )
 
@@ -3131,7 +3131,7 @@ package costexplorer {
   @js.native
   sealed trait SupportedSavingsPlansType extends js.Any
   object SupportedSavingsPlansType extends js.Object {
-    val COMPUTE_SP      = "COMPUTE_SP".asInstanceOf[SupportedSavingsPlansType]
+    val COMPUTE_SP = "COMPUTE_SP".asInstanceOf[SupportedSavingsPlansType]
     val EC2_INSTANCE_SP = "EC2_INSTANCE_SP".asInstanceOf[SupportedSavingsPlansType]
 
     val values = js.Object.freeze(js.Array(COMPUTE_SP, EC2_INSTANCE_SP))
@@ -3201,7 +3201,7 @@ package costexplorer {
   @js.native
   sealed trait TermInYears extends js.Any
   object TermInYears extends js.Object {
-    val ONE_YEAR    = "ONE_YEAR".asInstanceOf[TermInYears]
+    val ONE_YEAR = "ONE_YEAR".asInstanceOf[TermInYears]
     val THREE_YEARS = "THREE_YEARS".asInstanceOf[TermInYears]
 
     val values = js.Object.freeze(js.Array(ONE_YEAR, THREE_YEARS))
@@ -3245,8 +3245,8 @@ package costexplorer {
     ): UpdateCostCategoryDefinitionRequest = {
       val __obj = js.Dynamic.literal(
         "CostCategoryArn" -> CostCategoryArn.asInstanceOf[js.Any],
-        "RuleVersion"     -> RuleVersion.asInstanceOf[js.Any],
-        "Rules"           -> Rules.asInstanceOf[js.Any]
+        "RuleVersion" -> RuleVersion.asInstanceOf[js.Any],
+        "Rules" -> Rules.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateCostCategoryDefinitionRequest]

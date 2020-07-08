@@ -7,13 +7,13 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object mediatailor {
-  type __integer                      = Int
-  type __integerMin1                  = Int
-  type __integerMin1Max100            = Int
+  type __integer = Int
+  type __integerMin1 = Int
+  type __integerMin1Max100 = Int
   type __listOfPlaybackConfigurations = js.Array[PlaybackConfiguration]
-  type __listOf__string               = js.Array[__string]
-  type __mapOf__string                = js.Dictionary[__string]
-  type __string                       = String
+  type __listOf__string = js.Array[__string]
+  type __mapOf__string = js.Dictionary[__string]
+  type __string = String
 
   implicit final class MediaTailorOps(private val service: MediaTailor) extends AnyVal {
 
@@ -51,11 +51,11 @@ package mediatailor {
       js.native
     def listPlaybackConfigurations(
         params: ListPlaybackConfigurationsRequest
-    ): Request[ListPlaybackConfigurationsResponse]                                                    = js.native
+    ): Request[ListPlaybackConfigurationsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putPlaybackConfiguration(params: PutPlaybackConfigurationRequest): Request[PutPlaybackConfigurationResponse] =
       js.native
-    def tagResource(params: TagResourceRequest): Request[js.Object]     = js.native
+    def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
   }
 
@@ -402,7 +402,7 @@ package mediatailor {
   @js.native
   sealed trait Mode extends js.Any
   object Mode extends js.Object {
-    val OFF              = "OFF".asInstanceOf[Mode]
+    val OFF = "OFF".asInstanceOf[Mode]
     val BEHIND_LIVE_EDGE = "BEHIND_LIVE_EDGE".asInstanceOf[Mode]
 
     val values = js.Object.freeze(js.Array(OFF, BEHIND_LIVE_EDGE))
@@ -412,7 +412,7 @@ package mediatailor {
   sealed trait OriginManifestType extends js.Any
   object OriginManifestType extends js.Object {
     val SINGLE_PERIOD = "SINGLE_PERIOD".asInstanceOf[OriginManifestType]
-    val MULTI_PERIOD  = "MULTI_PERIOD".asInstanceOf[OriginManifestType]
+    val MULTI_PERIOD = "MULTI_PERIOD".asInstanceOf[OriginManifestType]
 
     val values = js.Object.freeze(js.Array(SINGLE_PERIOD, MULTI_PERIOD))
   }
@@ -612,7 +612,7 @@ package mediatailor {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -633,7 +633,7 @@ package mediatailor {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]

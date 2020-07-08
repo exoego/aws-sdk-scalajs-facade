@@ -7,27 +7,27 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object snowball {
-  type AddressId                  = String
-  type AddressList                = js.Array[Address]
-  type AmiId                      = String
-  type ClusterId                  = String
-  type ClusterListEntryList       = js.Array[ClusterListEntry]
-  type CompatibleImageList        = js.Array[CompatibleImage]
-  type Ec2AmiResourceList         = js.Array[Ec2AmiResource]
+  type AddressId = String
+  type AddressList = js.Array[Address]
+  type AmiId = String
+  type ClusterId = String
+  type ClusterListEntryList = js.Array[ClusterListEntry]
+  type CompatibleImageList = js.Array[CompatibleImage]
+  type Ec2AmiResourceList = js.Array[Ec2AmiResource]
   type EventTriggerDefinitionList = js.Array[EventTriggerDefinition]
-  type GSTIN                      = String
-  type JobId                      = String
-  type JobListEntryList           = js.Array[JobListEntry]
-  type JobMetadataList            = js.Array[JobMetadata]
-  type JobStateList               = js.Array[JobState]
-  type KmsKeyARN                  = String
-  type LambdaResourceList         = js.Array[LambdaResource]
-  type ListLimit                  = Int
-  type ResourceARN                = String
-  type RoleARN                    = String
-  type S3ResourceList             = js.Array[S3Resource]
-  type SnsTopicARN                = String
-  type Timestamp                  = js.Date
+  type GSTIN = String
+  type JobId = String
+  type JobListEntryList = js.Array[JobListEntry]
+  type JobMetadataList = js.Array[JobMetadata]
+  type JobStateList = js.Array[JobState]
+  type KmsKeyARN = String
+  type LambdaResourceList = js.Array[LambdaResource]
+  type ListLimit = Int
+  type ResourceARN = String
+  type RoleARN = String
+  type S3ResourceList = js.Array[S3Resource]
+  type SnsTopicARN = String
+  type Timestamp = js.Date
 
   implicit final class SnowballOps(private val service: Snowball) extends AnyVal {
 
@@ -78,25 +78,25 @@ package snowball {
   class Snowball() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def cancelCluster(params: CancelClusterRequest): Request[CancelClusterResult]                      = js.native
-    def cancelJob(params: CancelJobRequest): Request[CancelJobResult]                                  = js.native
-    def createAddress(params: CreateAddressRequest): Request[CreateAddressResult]                      = js.native
-    def createCluster(params: CreateClusterRequest): Request[CreateClusterResult]                      = js.native
-    def createJob(params: CreateJobRequest): Request[CreateJobResult]                                  = js.native
-    def describeAddress(params: DescribeAddressRequest): Request[DescribeAddressResult]                = js.native
-    def describeAddresses(params: DescribeAddressesRequest): Request[DescribeAddressesResult]          = js.native
-    def describeCluster(params: DescribeClusterRequest): Request[DescribeClusterResult]                = js.native
-    def describeJob(params: DescribeJobRequest): Request[DescribeJobResult]                            = js.native
-    def getJobManifest(params: GetJobManifestRequest): Request[GetJobManifestResult]                   = js.native
-    def getJobUnlockCode(params: GetJobUnlockCodeRequest): Request[GetJobUnlockCodeResult]             = js.native
-    def getSnowballUsage(params: GetSnowballUsageRequest): Request[GetSnowballUsageResult]             = js.native
-    def getSoftwareUpdates(params: GetSoftwareUpdatesRequest): Request[GetSoftwareUpdatesResult]       = js.native
-    def listClusterJobs(params: ListClusterJobsRequest): Request[ListClusterJobsResult]                = js.native
-    def listClusters(params: ListClustersRequest): Request[ListClustersResult]                         = js.native
+    def cancelCluster(params: CancelClusterRequest): Request[CancelClusterResult] = js.native
+    def cancelJob(params: CancelJobRequest): Request[CancelJobResult] = js.native
+    def createAddress(params: CreateAddressRequest): Request[CreateAddressResult] = js.native
+    def createCluster(params: CreateClusterRequest): Request[CreateClusterResult] = js.native
+    def createJob(params: CreateJobRequest): Request[CreateJobResult] = js.native
+    def describeAddress(params: DescribeAddressRequest): Request[DescribeAddressResult] = js.native
+    def describeAddresses(params: DescribeAddressesRequest): Request[DescribeAddressesResult] = js.native
+    def describeCluster(params: DescribeClusterRequest): Request[DescribeClusterResult] = js.native
+    def describeJob(params: DescribeJobRequest): Request[DescribeJobResult] = js.native
+    def getJobManifest(params: GetJobManifestRequest): Request[GetJobManifestResult] = js.native
+    def getJobUnlockCode(params: GetJobUnlockCodeRequest): Request[GetJobUnlockCodeResult] = js.native
+    def getSnowballUsage(params: GetSnowballUsageRequest): Request[GetSnowballUsageResult] = js.native
+    def getSoftwareUpdates(params: GetSoftwareUpdatesRequest): Request[GetSoftwareUpdatesResult] = js.native
+    def listClusterJobs(params: ListClusterJobsRequest): Request[ListClusterJobsResult] = js.native
+    def listClusters(params: ListClustersRequest): Request[ListClustersResult] = js.native
     def listCompatibleImages(params: ListCompatibleImagesRequest): Request[ListCompatibleImagesResult] = js.native
-    def listJobs(params: ListJobsRequest): Request[ListJobsResult]                                     = js.native
-    def updateCluster(params: UpdateClusterRequest): Request[UpdateClusterResult]                      = js.native
-    def updateJob(params: UpdateJobRequest): Request[UpdateJobResult]                                  = js.native
+    def listJobs(params: ListJobsRequest): Request[ListJobsResult] = js.native
+    def updateCluster(params: UpdateClusterRequest): Request[UpdateClusterResult] = js.native
+    def updateJob(params: UpdateJobRequest): Request[UpdateJobResult] = js.native
   }
 
   /**
@@ -309,10 +309,10 @@ package snowball {
   sealed trait ClusterState extends js.Any
   object ClusterState extends js.Object {
     val AwaitingQuorum = "AwaitingQuorum".asInstanceOf[ClusterState]
-    val Pending        = "Pending".asInstanceOf[ClusterState]
-    val InUse          = "InUse".asInstanceOf[ClusterState]
-    val Complete       = "Complete".asInstanceOf[ClusterState]
-    val Cancelled      = "Cancelled".asInstanceOf[ClusterState]
+    val Pending = "Pending".asInstanceOf[ClusterState]
+    val InUse = "InUse".asInstanceOf[ClusterState]
+    val Complete = "Complete".asInstanceOf[ClusterState]
+    val Cancelled = "Cancelled".asInstanceOf[ClusterState]
 
     val values = js.Object.freeze(js.Array(AwaitingQuorum, Pending, InUse, Complete, Cancelled))
   }
@@ -404,10 +404,10 @@ package snowball {
         TaxDocuments: js.UndefOr[TaxDocuments] = js.undefined
     ): CreateClusterRequest = {
       val __obj = js.Dynamic.literal(
-        "AddressId"      -> AddressId.asInstanceOf[js.Any],
-        "JobType"        -> JobType.asInstanceOf[js.Any],
-        "Resources"      -> Resources.asInstanceOf[js.Any],
-        "RoleARN"        -> RoleARN.asInstanceOf[js.Any],
+        "AddressId" -> AddressId.asInstanceOf[js.Any],
+        "JobType" -> JobType.asInstanceOf[js.Any],
+        "Resources" -> Resources.asInstanceOf[js.Any],
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any],
         "ShippingOption" -> ShippingOption.asInstanceOf[js.Any]
       )
 
@@ -1066,19 +1066,19 @@ package snowball {
   @js.native
   sealed trait JobState extends js.Any
   object JobState extends js.Object {
-    val New                    = "New".asInstanceOf[JobState]
-    val PreparingAppliance     = "PreparingAppliance".asInstanceOf[JobState]
-    val PreparingShipment      = "PreparingShipment".asInstanceOf[JobState]
-    val InTransitToCustomer    = "InTransitToCustomer".asInstanceOf[JobState]
-    val WithCustomer           = "WithCustomer".asInstanceOf[JobState]
-    val InTransitToAWS         = "InTransitToAWS".asInstanceOf[JobState]
+    val New = "New".asInstanceOf[JobState]
+    val PreparingAppliance = "PreparingAppliance".asInstanceOf[JobState]
+    val PreparingShipment = "PreparingShipment".asInstanceOf[JobState]
+    val InTransitToCustomer = "InTransitToCustomer".asInstanceOf[JobState]
+    val WithCustomer = "WithCustomer".asInstanceOf[JobState]
+    val InTransitToAWS = "InTransitToAWS".asInstanceOf[JobState]
     val WithAWSSortingFacility = "WithAWSSortingFacility".asInstanceOf[JobState]
-    val WithAWS                = "WithAWS".asInstanceOf[JobState]
-    val InProgress             = "InProgress".asInstanceOf[JobState]
-    val Complete               = "Complete".asInstanceOf[JobState]
-    val Cancelled              = "Cancelled".asInstanceOf[JobState]
-    val Listing                = "Listing".asInstanceOf[JobState]
-    val Pending                = "Pending".asInstanceOf[JobState]
+    val WithAWS = "WithAWS".asInstanceOf[JobState]
+    val InProgress = "InProgress".asInstanceOf[JobState]
+    val Complete = "Complete".asInstanceOf[JobState]
+    val Cancelled = "Cancelled".asInstanceOf[JobState]
+    val Listing = "Listing".asInstanceOf[JobState]
+    val Pending = "Pending".asInstanceOf[JobState]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1102,8 +1102,8 @@ package snowball {
   @js.native
   sealed trait JobType extends js.Any
   object JobType extends js.Object {
-    val IMPORT    = "IMPORT".asInstanceOf[JobType]
-    val EXPORT    = "EXPORT".asInstanceOf[JobType]
+    val IMPORT = "IMPORT".asInstanceOf[JobType]
+    val EXPORT = "EXPORT".asInstanceOf[JobType]
     val LOCAL_USE = "LOCAL_USE".asInstanceOf[JobType]
 
     val values = js.Object.freeze(js.Array(IMPORT, EXPORT, LOCAL_USE))
@@ -1409,9 +1409,9 @@ package snowball {
   sealed trait ShippingOption extends js.Any
   object ShippingOption extends js.Object {
     val SECOND_DAY = "SECOND_DAY".asInstanceOf[ShippingOption]
-    val NEXT_DAY   = "NEXT_DAY".asInstanceOf[ShippingOption]
-    val EXPRESS    = "EXPRESS".asInstanceOf[ShippingOption]
-    val STANDARD   = "STANDARD".asInstanceOf[ShippingOption]
+    val NEXT_DAY = "NEXT_DAY".asInstanceOf[ShippingOption]
+    val EXPRESS = "EXPRESS".asInstanceOf[ShippingOption]
+    val STANDARD = "STANDARD".asInstanceOf[ShippingOption]
 
     val values = js.Object.freeze(js.Array(SECOND_DAY, NEXT_DAY, EXPRESS, STANDARD))
   }
@@ -1419,12 +1419,12 @@ package snowball {
   @js.native
   sealed trait SnowballCapacity extends js.Any
   object SnowballCapacity extends js.Object {
-    val T50          = "T50".asInstanceOf[SnowballCapacity]
-    val T80          = "T80".asInstanceOf[SnowballCapacity]
-    val T100         = "T100".asInstanceOf[SnowballCapacity]
-    val T42          = "T42".asInstanceOf[SnowballCapacity]
-    val T98          = "T98".asInstanceOf[SnowballCapacity]
-    val T8           = "T8".asInstanceOf[SnowballCapacity]
+    val T50 = "T50".asInstanceOf[SnowballCapacity]
+    val T80 = "T80".asInstanceOf[SnowballCapacity]
+    val T100 = "T100".asInstanceOf[SnowballCapacity]
+    val T42 = "T42".asInstanceOf[SnowballCapacity]
+    val T98 = "T98".asInstanceOf[SnowballCapacity]
+    val T8 = "T8".asInstanceOf[SnowballCapacity]
     val NoPreference = "NoPreference".asInstanceOf[SnowballCapacity]
 
     val values = js.Object.freeze(js.Array(T50, T80, T100, T42, T98, T8, NoPreference))
@@ -1434,10 +1434,10 @@ package snowball {
   sealed trait SnowballType extends js.Any
   object SnowballType extends js.Object {
     val STANDARD = "STANDARD".asInstanceOf[SnowballType]
-    val EDGE     = "EDGE".asInstanceOf[SnowballType]
-    val EDGE_C   = "EDGE_C".asInstanceOf[SnowballType]
-    val EDGE_CG  = "EDGE_CG".asInstanceOf[SnowballType]
-    val EDGE_S   = "EDGE_S".asInstanceOf[SnowballType]
+    val EDGE = "EDGE".asInstanceOf[SnowballType]
+    val EDGE_C = "EDGE_C".asInstanceOf[SnowballType]
+    val EDGE_CG = "EDGE_CG".asInstanceOf[SnowballType]
+    val EDGE_S = "EDGE_S".asInstanceOf[SnowballType]
     val SNC1_HDD = "SNC1_HDD".asInstanceOf[SnowballType]
 
     val values = js.Object.freeze(js.Array(STANDARD, EDGE, EDGE_C, EDGE_CG, EDGE_S, SNC1_HDD))

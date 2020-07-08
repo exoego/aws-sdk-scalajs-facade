@@ -7,27 +7,27 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object accessanalyzer {
-  type ActionList             = js.Array[String]
-  type AnalyzedResourcesList  = js.Array[AnalyzedResourceSummary]
-  type AnalyzerArn            = String
-  type AnalyzersList          = js.Array[AnalyzerSummary]
-  type ArchiveRulesList       = js.Array[ArchiveRuleSummary]
-  type ConditionKeyMap        = js.Dictionary[String]
-  type FilterCriteriaMap      = js.Dictionary[Criterion]
-  type FindingId              = String
-  type FindingIdList          = js.Array[FindingId]
-  type FindingSourceList      = js.Array[FindingSource]
-  type FindingsList           = js.Array[FindingSummary]
+  type ActionList = js.Array[String]
+  type AnalyzedResourcesList = js.Array[AnalyzedResourceSummary]
+  type AnalyzerArn = String
+  type AnalyzersList = js.Array[AnalyzerSummary]
+  type ArchiveRulesList = js.Array[ArchiveRuleSummary]
+  type ConditionKeyMap = js.Dictionary[String]
+  type FilterCriteriaMap = js.Dictionary[Criterion]
+  type FindingId = String
+  type FindingIdList = js.Array[FindingId]
+  type FindingSourceList = js.Array[FindingSource]
+  type FindingsList = js.Array[FindingSummary]
   type InlineArchiveRulesList = js.Array[InlineArchiveRule]
-  type Name                   = String
-  type PrincipalMap           = js.Dictionary[String]
-  type ResourceArn            = String
-  type SharedViaList          = js.Array[String]
-  type TagKeys                = js.Array[String]
-  type TagsMap                = js.Dictionary[String]
-  type Timestamp              = js.Date
-  type Token                  = String
-  type ValueList              = js.Array[String]
+  type Name = String
+  type PrincipalMap = js.Dictionary[String]
+  type ResourceArn = String
+  type SharedViaList = js.Array[String]
+  type TagKeys = js.Array[String]
+  type TagsMap = js.Dictionary[String]
+  type Timestamp = js.Date
+  type Token = String
+  type ValueList = js.Array[String]
 
   implicit final class AccessAnalyzerOps(private val service: AccessAnalyzer) extends AnyVal {
 
@@ -77,24 +77,24 @@ package accessanalyzer {
   class AccessAnalyzer() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createAnalyzer(params: CreateAnalyzerRequest): Request[CreateAnalyzerResponse]                      = js.native
-    def createArchiveRule(params: CreateArchiveRuleRequest): Request[js.Object]                             = js.native
-    def deleteAnalyzer(params: DeleteAnalyzerRequest): Request[js.Object]                                   = js.native
-    def deleteArchiveRule(params: DeleteArchiveRuleRequest): Request[js.Object]                             = js.native
-    def getAnalyzedResource(params: GetAnalyzedResourceRequest): Request[GetAnalyzedResourceResponse]       = js.native
-    def getAnalyzer(params: GetAnalyzerRequest): Request[GetAnalyzerResponse]                               = js.native
-    def getArchiveRule(params: GetArchiveRuleRequest): Request[GetArchiveRuleResponse]                      = js.native
-    def getFinding(params: GetFindingRequest): Request[GetFindingResponse]                                  = js.native
+    def createAnalyzer(params: CreateAnalyzerRequest): Request[CreateAnalyzerResponse] = js.native
+    def createArchiveRule(params: CreateArchiveRuleRequest): Request[js.Object] = js.native
+    def deleteAnalyzer(params: DeleteAnalyzerRequest): Request[js.Object] = js.native
+    def deleteArchiveRule(params: DeleteArchiveRuleRequest): Request[js.Object] = js.native
+    def getAnalyzedResource(params: GetAnalyzedResourceRequest): Request[GetAnalyzedResourceResponse] = js.native
+    def getAnalyzer(params: GetAnalyzerRequest): Request[GetAnalyzerResponse] = js.native
+    def getArchiveRule(params: GetArchiveRuleRequest): Request[GetArchiveRuleResponse] = js.native
+    def getFinding(params: GetFindingRequest): Request[GetFindingResponse] = js.native
     def listAnalyzedResources(params: ListAnalyzedResourcesRequest): Request[ListAnalyzedResourcesResponse] = js.native
-    def listAnalyzers(params: ListAnalyzersRequest): Request[ListAnalyzersResponse]                         = js.native
-    def listArchiveRules(params: ListArchiveRulesRequest): Request[ListArchiveRulesResponse]                = js.native
-    def listFindings(params: ListFindingsRequest): Request[ListFindingsResponse]                            = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
-    def startResourceScan(params: StartResourceScanRequest): Request[js.Object]                             = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                               = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                         = js.native
-    def updateArchiveRule(params: UpdateArchiveRuleRequest): Request[js.Object]                             = js.native
-    def updateFindings(params: UpdateFindingsRequest): Request[js.Object]                                   = js.native
+    def listAnalyzers(params: ListAnalyzersRequest): Request[ListAnalyzersResponse] = js.native
+    def listArchiveRules(params: ListArchiveRulesRequest): Request[ListArchiveRulesResponse] = js.native
+    def listFindings(params: ListFindingsRequest): Request[ListFindingsResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def startResourceScan(params: StartResourceScanRequest): Request[js.Object] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateArchiveRule(params: UpdateArchiveRuleRequest): Request[js.Object] = js.native
+    def updateFindings(params: UpdateFindingsRequest): Request[js.Object] = js.native
   }
 
   /**
@@ -131,13 +131,13 @@ package accessanalyzer {
         status: js.UndefOr[FindingStatus] = js.undefined
     ): AnalyzedResource = {
       val __obj = js.Dynamic.literal(
-        "analyzedAt"           -> analyzedAt.asInstanceOf[js.Any],
-        "createdAt"            -> createdAt.asInstanceOf[js.Any],
-        "isPublic"             -> isPublic.asInstanceOf[js.Any],
-        "resourceArn"          -> resourceArn.asInstanceOf[js.Any],
+        "analyzedAt" -> analyzedAt.asInstanceOf[js.Any],
+        "createdAt" -> createdAt.asInstanceOf[js.Any],
+        "isPublic" -> isPublic.asInstanceOf[js.Any],
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "resourceOwnerAccount" -> resourceOwnerAccount.asInstanceOf[js.Any],
-        "resourceType"         -> resourceType.asInstanceOf[js.Any],
-        "updatedAt"            -> updatedAt.asInstanceOf[js.Any]
+        "resourceType" -> resourceType.asInstanceOf[js.Any],
+        "updatedAt" -> updatedAt.asInstanceOf[js.Any]
       )
 
       actions.foreach(__v => __obj.updateDynamic("actions")(__v.asInstanceOf[js.Any]))
@@ -166,9 +166,9 @@ package accessanalyzer {
         resourceType: ResourceType
     ): AnalyzedResourceSummary = {
       val __obj = js.Dynamic.literal(
-        "resourceArn"          -> resourceArn.asInstanceOf[js.Any],
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "resourceOwnerAccount" -> resourceOwnerAccount.asInstanceOf[js.Any],
-        "resourceType"         -> resourceType.asInstanceOf[js.Any]
+        "resourceType" -> resourceType.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AnalyzedResourceSummary]
@@ -178,10 +178,10 @@ package accessanalyzer {
   @js.native
   sealed trait AnalyzerStatus extends js.Any
   object AnalyzerStatus extends js.Object {
-    val ACTIVE   = "ACTIVE".asInstanceOf[AnalyzerStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[AnalyzerStatus]
     val CREATING = "CREATING".asInstanceOf[AnalyzerStatus]
     val DISABLED = "DISABLED".asInstanceOf[AnalyzerStatus]
-    val FAILED   = "FAILED".asInstanceOf[AnalyzerStatus]
+    val FAILED = "FAILED".asInstanceOf[AnalyzerStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, CREATING, DISABLED, FAILED))
   }
@@ -216,11 +216,11 @@ package accessanalyzer {
         tags: js.UndefOr[TagsMap] = js.undefined
     ): AnalyzerSummary = {
       val __obj = js.Dynamic.literal(
-        "arn"       -> arn.asInstanceOf[js.Any],
+        "arn" -> arn.asInstanceOf[js.Any],
         "createdAt" -> createdAt.asInstanceOf[js.Any],
-        "name"      -> name.asInstanceOf[js.Any],
-        "status"    -> status.asInstanceOf[js.Any],
-        "type"      -> `type`.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
       )
 
       lastResourceAnalyzed.foreach(__v => __obj.updateDynamic("lastResourceAnalyzed")(__v.asInstanceOf[js.Any]))
@@ -252,8 +252,8 @@ package accessanalyzer {
     ): ArchiveRuleSummary = {
       val __obj = js.Dynamic.literal(
         "createdAt" -> createdAt.asInstanceOf[js.Any],
-        "filter"    -> filter.asInstanceOf[js.Any],
-        "ruleName"  -> ruleName.asInstanceOf[js.Any],
+        "filter" -> filter.asInstanceOf[js.Any],
+        "ruleName" -> ruleName.asInstanceOf[js.Any],
         "updatedAt" -> updatedAt.asInstanceOf[js.Any]
       )
 
@@ -284,7 +284,7 @@ package accessanalyzer {
     ): CreateAnalyzerRequest = {
       val __obj = js.Dynamic.literal(
         "analyzerName" -> analyzerName.asInstanceOf[js.Any],
-        "type"         -> `type`.asInstanceOf[js.Any]
+        "type" -> `type`.asInstanceOf[js.Any]
       )
 
       archiveRules.foreach(__v => __obj.updateDynamic("archiveRules")(__v.asInstanceOf[js.Any]))
@@ -334,8 +334,8 @@ package accessanalyzer {
     ): CreateArchiveRuleRequest = {
       val __obj = js.Dynamic.literal(
         "analyzerName" -> analyzerName.asInstanceOf[js.Any],
-        "filter"       -> filter.asInstanceOf[js.Any],
-        "ruleName"     -> ruleName.asInstanceOf[js.Any]
+        "filter" -> filter.asInstanceOf[js.Any],
+        "ruleName" -> ruleName.asInstanceOf[js.Any]
       )
 
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
@@ -414,7 +414,7 @@ package accessanalyzer {
     ): DeleteArchiveRuleRequest = {
       val __obj = js.Dynamic.literal(
         "analyzerName" -> analyzerName.asInstanceOf[js.Any],
-        "ruleName"     -> ruleName.asInstanceOf[js.Any]
+        "ruleName" -> ruleName.asInstanceOf[js.Any]
       )
 
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
@@ -462,14 +462,14 @@ package accessanalyzer {
         sources: js.UndefOr[FindingSourceList] = js.undefined
     ): Finding = {
       val __obj = js.Dynamic.literal(
-        "analyzedAt"           -> analyzedAt.asInstanceOf[js.Any],
-        "condition"            -> condition.asInstanceOf[js.Any],
-        "createdAt"            -> createdAt.asInstanceOf[js.Any],
-        "id"                   -> id.asInstanceOf[js.Any],
+        "analyzedAt" -> analyzedAt.asInstanceOf[js.Any],
+        "condition" -> condition.asInstanceOf[js.Any],
+        "createdAt" -> createdAt.asInstanceOf[js.Any],
+        "id" -> id.asInstanceOf[js.Any],
         "resourceOwnerAccount" -> resourceOwnerAccount.asInstanceOf[js.Any],
-        "resourceType"         -> resourceType.asInstanceOf[js.Any],
-        "status"               -> status.asInstanceOf[js.Any],
-        "updatedAt"            -> updatedAt.asInstanceOf[js.Any]
+        "resourceType" -> resourceType.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any],
+        "updatedAt" -> updatedAt.asInstanceOf[js.Any]
       )
 
       action.foreach(__v => __obj.updateDynamic("action")(__v.asInstanceOf[js.Any]))
@@ -528,8 +528,8 @@ package accessanalyzer {
   @js.native
   sealed trait FindingSourceType extends js.Any
   object FindingSourceType extends js.Object {
-    val BUCKET_ACL      = "BUCKET_ACL".asInstanceOf[FindingSourceType]
-    val POLICY          = "POLICY".asInstanceOf[FindingSourceType]
+    val BUCKET_ACL = "BUCKET_ACL".asInstanceOf[FindingSourceType]
+    val POLICY = "POLICY".asInstanceOf[FindingSourceType]
     val S3_ACCESS_POINT = "S3_ACCESS_POINT".asInstanceOf[FindingSourceType]
 
     val values = js.Object.freeze(js.Array(BUCKET_ACL, POLICY, S3_ACCESS_POINT))
@@ -538,7 +538,7 @@ package accessanalyzer {
   @js.native
   sealed trait FindingStatus extends js.Any
   object FindingStatus extends js.Object {
-    val ACTIVE   = "ACTIVE".asInstanceOf[FindingStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[FindingStatus]
     val ARCHIVED = "ARCHIVED".asInstanceOf[FindingStatus]
     val RESOLVED = "RESOLVED".asInstanceOf[FindingStatus]
 
@@ -548,7 +548,7 @@ package accessanalyzer {
   @js.native
   sealed trait FindingStatusUpdate extends js.Any
   object FindingStatusUpdate extends js.Object {
-    val ACTIVE   = "ACTIVE".asInstanceOf[FindingStatusUpdate]
+    val ACTIVE = "ACTIVE".asInstanceOf[FindingStatusUpdate]
     val ARCHIVED = "ARCHIVED".asInstanceOf[FindingStatusUpdate]
 
     val values = js.Object.freeze(js.Array(ACTIVE, ARCHIVED))
@@ -594,14 +594,14 @@ package accessanalyzer {
         sources: js.UndefOr[FindingSourceList] = js.undefined
     ): FindingSummary = {
       val __obj = js.Dynamic.literal(
-        "analyzedAt"           -> analyzedAt.asInstanceOf[js.Any],
-        "condition"            -> condition.asInstanceOf[js.Any],
-        "createdAt"            -> createdAt.asInstanceOf[js.Any],
-        "id"                   -> id.asInstanceOf[js.Any],
+        "analyzedAt" -> analyzedAt.asInstanceOf[js.Any],
+        "condition" -> condition.asInstanceOf[js.Any],
+        "createdAt" -> createdAt.asInstanceOf[js.Any],
+        "id" -> id.asInstanceOf[js.Any],
         "resourceOwnerAccount" -> resourceOwnerAccount.asInstanceOf[js.Any],
-        "resourceType"         -> resourceType.asInstanceOf[js.Any],
-        "status"               -> status.asInstanceOf[js.Any],
-        "updatedAt"            -> updatedAt.asInstanceOf[js.Any]
+        "resourceType" -> resourceType.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any],
+        "updatedAt" -> updatedAt.asInstanceOf[js.Any]
       )
 
       action.foreach(__v => __obj.updateDynamic("action")(__v.asInstanceOf[js.Any]))
@@ -716,7 +716,7 @@ package accessanalyzer {
     ): GetArchiveRuleRequest = {
       val __obj = js.Dynamic.literal(
         "analyzerName" -> analyzerName.asInstanceOf[js.Any],
-        "ruleName"     -> ruleName.asInstanceOf[js.Any]
+        "ruleName" -> ruleName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetArchiveRuleRequest]
@@ -761,7 +761,7 @@ package accessanalyzer {
     ): GetFindingRequest = {
       val __obj = js.Dynamic.literal(
         "analyzerArn" -> analyzerArn.asInstanceOf[js.Any],
-        "id"          -> id.asInstanceOf[js.Any]
+        "id" -> id.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetFindingRequest]
@@ -803,7 +803,7 @@ package accessanalyzer {
         ruleName: Name
     ): InlineArchiveRule = {
       val __obj = js.Dynamic.literal(
-        "filter"   -> filter.asInstanceOf[js.Any],
+        "filter" -> filter.asInstanceOf[js.Any],
         "ruleName" -> ruleName.asInstanceOf[js.Any]
       )
 
@@ -1065,7 +1065,7 @@ package accessanalyzer {
   @js.native
   sealed trait OrderBy extends js.Any
   object OrderBy extends js.Object {
-    val ASC  = "ASC".asInstanceOf[OrderBy]
+    val ASC = "ASC".asInstanceOf[OrderBy]
     val DESC = "DESC".asInstanceOf[OrderBy]
 
     val values = js.Object.freeze(js.Array(ASC, DESC))
@@ -1074,10 +1074,10 @@ package accessanalyzer {
   @js.native
   sealed trait ReasonCode extends js.Any
   object ReasonCode extends js.Object {
-    val AWS_SERVICE_ACCESS_DISABLED          = "AWS_SERVICE_ACCESS_DISABLED".asInstanceOf[ReasonCode]
+    val AWS_SERVICE_ACCESS_DISABLED = "AWS_SERVICE_ACCESS_DISABLED".asInstanceOf[ReasonCode]
     val DELEGATED_ADMINISTRATOR_DEREGISTERED = "DELEGATED_ADMINISTRATOR_DEREGISTERED".asInstanceOf[ReasonCode]
-    val ORGANIZATION_DELETED                 = "ORGANIZATION_DELETED".asInstanceOf[ReasonCode]
-    val SERVICE_LINKED_ROLE_CREATION_FAILED  = "SERVICE_LINKED_ROLE_CREATION_FAILED".asInstanceOf[ReasonCode]
+    val ORGANIZATION_DELETED = "ORGANIZATION_DELETED".asInstanceOf[ReasonCode]
+    val SERVICE_LINKED_ROLE_CREATION_FAILED = "SERVICE_LINKED_ROLE_CREATION_FAILED".asInstanceOf[ReasonCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1092,12 +1092,12 @@ package accessanalyzer {
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {
-    val `AWS::IAM::Role`            = "AWS::IAM::Role".asInstanceOf[ResourceType]
-    val `AWS::KMS::Key`             = "AWS::KMS::Key".asInstanceOf[ResourceType]
-    val `AWS::Lambda::Function`     = "AWS::Lambda::Function".asInstanceOf[ResourceType]
+    val `AWS::IAM::Role` = "AWS::IAM::Role".asInstanceOf[ResourceType]
+    val `AWS::KMS::Key` = "AWS::KMS::Key".asInstanceOf[ResourceType]
+    val `AWS::Lambda::Function` = "AWS::Lambda::Function".asInstanceOf[ResourceType]
     val `AWS::Lambda::LayerVersion` = "AWS::Lambda::LayerVersion".asInstanceOf[ResourceType]
-    val `AWS::S3::Bucket`           = "AWS::S3::Bucket".asInstanceOf[ResourceType]
-    val `AWS::SQS::Queue`           = "AWS::SQS::Queue".asInstanceOf[ResourceType]
+    val `AWS::S3::Bucket` = "AWS::S3::Bucket".asInstanceOf[ResourceType]
+    val `AWS::SQS::Queue` = "AWS::SQS::Queue".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1195,7 +1195,7 @@ package accessanalyzer {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -1221,7 +1221,7 @@ package accessanalyzer {
   @js.native
   sealed trait Type extends js.Any
   object Type extends js.Object {
-    val ACCOUNT      = "ACCOUNT".asInstanceOf[Type]
+    val ACCOUNT = "ACCOUNT".asInstanceOf[Type]
     val ORGANIZATION = "ORGANIZATION".asInstanceOf[Type]
 
     val values = js.Object.freeze(js.Array(ACCOUNT, ORGANIZATION))
@@ -1244,7 +1244,7 @@ package accessanalyzer {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -1288,8 +1288,8 @@ package accessanalyzer {
     ): UpdateArchiveRuleRequest = {
       val __obj = js.Dynamic.literal(
         "analyzerName" -> analyzerName.asInstanceOf[js.Any],
-        "filter"       -> filter.asInstanceOf[js.Any],
-        "ruleName"     -> ruleName.asInstanceOf[js.Any]
+        "filter" -> filter.asInstanceOf[js.Any],
+        "ruleName" -> ruleName.asInstanceOf[js.Any]
       )
 
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
@@ -1320,7 +1320,7 @@ package accessanalyzer {
     ): UpdateFindingsRequest = {
       val __obj = js.Dynamic.literal(
         "analyzerArn" -> analyzerArn.asInstanceOf[js.Any],
-        "status"      -> status.asInstanceOf[js.Any]
+        "status" -> status.asInstanceOf[js.Any]
       )
 
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))

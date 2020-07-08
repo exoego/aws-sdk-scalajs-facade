@@ -7,40 +7,40 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object sts {
-  type Audience                  = String
-  type Issuer                    = String
-  type NameQualifier             = String
-  type SAMLAssertionType         = String
-  type Subject                   = String
-  type SubjectType               = String
-  type accessKeyIdType           = String
-  type accessKeySecretType       = String
-  type accountType               = String
-  type arnType                   = String
-  type assumedRoleIdType         = String
-  type clientTokenType           = String
-  type dateType                  = js.Date
-  type decodedMessageType        = String
-  type durationSecondsType       = Int
-  type encodedMessageType        = String
-  type externalIdType            = String
-  type federatedIdType           = String
-  type nonNegativeIntegerType    = Int
-  type policyDescriptorListType  = js.Array[PolicyDescriptorType]
-  type roleDurationSecondsType   = Int
-  type roleSessionNameType       = String
-  type serialNumberType          = String
+  type Audience = String
+  type Issuer = String
+  type NameQualifier = String
+  type SAMLAssertionType = String
+  type Subject = String
+  type SubjectType = String
+  type accessKeyIdType = String
+  type accessKeySecretType = String
+  type accountType = String
+  type arnType = String
+  type assumedRoleIdType = String
+  type clientTokenType = String
+  type dateType = js.Date
+  type decodedMessageType = String
+  type durationSecondsType = Int
+  type encodedMessageType = String
+  type externalIdType = String
+  type federatedIdType = String
+  type nonNegativeIntegerType = Int
+  type policyDescriptorListType = js.Array[PolicyDescriptorType]
+  type roleDurationSecondsType = Int
+  type roleSessionNameType = String
+  type serialNumberType = String
   type sessionPolicyDocumentType = String
-  type tagKeyListType            = js.Array[tagKeyType]
-  type tagKeyType                = String
-  type tagListType               = js.Array[Tag]
-  type tagValueType              = String
-  type tokenCodeType             = String
-  type tokenType                 = String
-  type urlType                   = String
-  type userIdType                = String
-  type userNameType              = String
-  type webIdentitySubjectType    = String
+  type tagKeyListType = js.Array[tagKeyType]
+  type tagKeyType = String
+  type tagListType = js.Array[Tag]
+  type tagValueType = String
+  type tokenCodeType = String
+  type tokenType = String
+  type urlType = String
+  type userIdType = String
+  type userNameType = String
+  type webIdentitySubjectType = String
 
   implicit final class STSOps(private val service: STS) extends AnyVal {
 
@@ -71,18 +71,18 @@ package sts {
   class STS() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def assumeRole(params: AssumeRoleRequest): Request[AssumeRoleResponse]                         = js.native
+    def assumeRole(params: AssumeRoleRequest): Request[AssumeRoleResponse] = js.native
     def assumeRoleWithSAML(params: AssumeRoleWithSAMLRequest): Request[AssumeRoleWithSAMLResponse] = js.native
     def assumeRoleWithWebIdentity(
         params: AssumeRoleWithWebIdentityRequest
     ): Request[AssumeRoleWithWebIdentityResponse] = js.native
     def decodeAuthorizationMessage(
         params: DecodeAuthorizationMessageRequest
-    ): Request[DecodeAuthorizationMessageResponse]                                                 = js.native
-    def getAccessKeyInfo(params: GetAccessKeyInfoRequest): Request[GetAccessKeyInfoResponse]       = js.native
-    def getCallerIdentity(params: GetCallerIdentityRequest): Request[GetCallerIdentityResponse]    = js.native
+    ): Request[DecodeAuthorizationMessageResponse] = js.native
+    def getAccessKeyInfo(params: GetAccessKeyInfoRequest): Request[GetAccessKeyInfoResponse] = js.native
+    def getCallerIdentity(params: GetCallerIdentityRequest): Request[GetCallerIdentityResponse] = js.native
     def getFederationToken(params: GetFederationTokenRequest): Request[GetFederationTokenResponse] = js.native
-    def getSessionToken(params: GetSessionTokenRequest): Request[GetSessionTokenResponse]          = js.native
+    def getSessionToken(params: GetSessionTokenRequest): Request[GetSessionTokenResponse] = js.native
   }
 
   @js.native
@@ -114,7 +114,7 @@ package sts {
         TransitiveTagKeys: js.UndefOr[tagKeyListType] = js.undefined
     ): AssumeRoleRequest = {
       val __obj = js.Dynamic.literal(
-        "RoleArn"         -> RoleArn.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
         "RoleSessionName" -> RoleSessionName.asInstanceOf[js.Any]
       )
 
@@ -176,8 +176,8 @@ package sts {
         PolicyArns: js.UndefOr[policyDescriptorListType] = js.undefined
     ): AssumeRoleWithSAMLRequest = {
       val __obj = js.Dynamic.literal(
-        "PrincipalArn"  -> PrincipalArn.asInstanceOf[js.Any],
-        "RoleArn"       -> RoleArn.asInstanceOf[js.Any],
+        "PrincipalArn" -> PrincipalArn.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
         "SAMLAssertion" -> SAMLAssertion.asInstanceOf[js.Any]
       )
 
@@ -251,8 +251,8 @@ package sts {
         ProviderId: js.UndefOr[urlType] = js.undefined
     ): AssumeRoleWithWebIdentityRequest = {
       val __obj = js.Dynamic.literal(
-        "RoleArn"          -> RoleArn.asInstanceOf[js.Any],
-        "RoleSessionName"  -> RoleSessionName.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
+        "RoleSessionName" -> RoleSessionName.asInstanceOf[js.Any],
         "WebIdentityToken" -> WebIdentityToken.asInstanceOf[js.Any]
       )
 
@@ -316,7 +316,7 @@ package sts {
         AssumedRoleId: assumedRoleIdType
     ): AssumedRoleUser = {
       val __obj = js.Dynamic.literal(
-        "Arn"           -> Arn.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "AssumedRoleId" -> AssumedRoleId.asInstanceOf[js.Any]
       )
 
@@ -344,10 +344,10 @@ package sts {
         SessionToken: tokenType
     ): Credentials = {
       val __obj = js.Dynamic.literal(
-        "AccessKeyId"     -> AccessKeyId.asInstanceOf[js.Any],
-        "Expiration"      -> Expiration.asInstanceOf[js.Any],
+        "AccessKeyId" -> AccessKeyId.asInstanceOf[js.Any],
+        "Expiration" -> Expiration.asInstanceOf[js.Any],
         "SecretAccessKey" -> SecretAccessKey.asInstanceOf[js.Any],
-        "SessionToken"    -> SessionToken.asInstanceOf[js.Any]
+        "SessionToken" -> SessionToken.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[Credentials]
@@ -407,7 +407,7 @@ package sts {
         FederatedUserId: federatedIdType
     ): FederatedUser = {
       val __obj = js.Dynamic.literal(
-        "Arn"             -> Arn.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "FederatedUserId" -> FederatedUserId.asInstanceOf[js.Any]
       )
 
@@ -618,7 +618,7 @@ package sts {
         Value: tagValueType
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 

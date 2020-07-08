@@ -8,23 +8,23 @@ import facade.amazonaws._
 
 package object iotsecuretunneling {
   type AmazonResourceName = String
-  type ClientAccessToken  = String
-  type DateType           = js.Date
-  type DeleteFlag         = Boolean
-  type Description        = String
-  type MaxResults         = Int
-  type NextToken          = String
-  type Service            = String
-  type ServiceList        = js.Array[Service]
-  type TagKey             = String
-  type TagKeyList         = js.Array[TagKey]
-  type TagList            = js.Array[Tag]
-  type TagValue           = String
-  type ThingName          = String
-  type TimeoutInMin       = Int
-  type TunnelArn          = String
-  type TunnelId           = String
-  type TunnelSummaryList  = js.Array[TunnelSummary]
+  type ClientAccessToken = String
+  type DateType = js.Date
+  type DeleteFlag = Boolean
+  type Description = String
+  type MaxResults = Int
+  type NextToken = String
+  type Service = String
+  type ServiceList = js.Array[Service]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type ThingName = String
+  type TimeoutInMin = Int
+  type TunnelArn = String
+  type TunnelId = String
+  type TunnelSummaryList = js.Array[TunnelSummary]
 
   implicit final class IoTSecureTunnelingOps(private val service: IoTSecureTunneling) extends AnyVal {
 
@@ -51,13 +51,13 @@ package iotsecuretunneling {
   class IoTSecureTunneling() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def closeTunnel(params: CloseTunnelRequest): Request[CloseTunnelResponse]                         = js.native
-    def describeTunnel(params: DescribeTunnelRequest): Request[DescribeTunnelResponse]                = js.native
+    def closeTunnel(params: CloseTunnelRequest): Request[CloseTunnelResponse] = js.native
+    def describeTunnel(params: DescribeTunnelRequest): Request[DescribeTunnelResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def listTunnels(params: ListTunnelsRequest): Request[ListTunnelsResponse]                         = js.native
-    def openTunnel(params: OpenTunnelRequest): Request[OpenTunnelResponse]                            = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
+    def listTunnels(params: ListTunnelsRequest): Request[ListTunnelsResponse] = js.native
+    def openTunnel(params: OpenTunnelRequest): Request[OpenTunnelResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
   }
 
   @js.native
@@ -119,7 +119,7 @@ package iotsecuretunneling {
   @js.native
   sealed trait ConnectionStatus extends js.Any
   object ConnectionStatus extends js.Object {
-    val CONNECTED    = "CONNECTED".asInstanceOf[ConnectionStatus]
+    val CONNECTED = "CONNECTED".asInstanceOf[ConnectionStatus]
     val DISCONNECTED = "DISCONNECTED".asInstanceOf[ConnectionStatus]
 
     val values = js.Object.freeze(js.Array(CONNECTED, DISCONNECTED))
@@ -175,7 +175,7 @@ package iotsecuretunneling {
         thingName: ThingName
     ): DestinationConfig = {
       val __obj = js.Dynamic.literal(
-        "services"  -> services.asInstanceOf[js.Any],
+        "services" -> services.asInstanceOf[js.Any],
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
 
@@ -324,7 +324,7 @@ package iotsecuretunneling {
         value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "key"   -> key.asInstanceOf[js.Any],
+        "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
 
@@ -346,7 +346,7 @@ package iotsecuretunneling {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -441,7 +441,7 @@ package iotsecuretunneling {
   @js.native
   sealed trait TunnelStatus extends js.Any
   object TunnelStatus extends js.Object {
-    val OPEN   = "OPEN".asInstanceOf[TunnelStatus]
+    val OPEN = "OPEN".asInstanceOf[TunnelStatus]
     val CLOSED = "CLOSED".asInstanceOf[TunnelStatus]
 
     val values = js.Object.freeze(js.Array(OPEN, CLOSED))
@@ -495,7 +495,7 @@ package iotsecuretunneling {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]

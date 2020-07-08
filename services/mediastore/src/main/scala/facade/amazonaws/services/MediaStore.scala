@@ -7,31 +7,31 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object mediastore {
-  type AllowedHeaders                = js.Array[Header]
-  type AllowedMethods                = js.Array[MethodName]
-  type AllowedOrigins                = js.Array[Origin]
-  type ContainerARN                  = String
+  type AllowedHeaders = js.Array[Header]
+  type AllowedMethods = js.Array[MethodName]
+  type AllowedOrigins = js.Array[Origin]
+  type ContainerARN = String
   type ContainerAccessLoggingEnabled = Boolean
-  type ContainerList                 = js.Array[Container]
-  type ContainerListLimit            = Int
-  type ContainerName                 = String
-  type ContainerPolicy               = String
-  type CorsPolicy                    = js.Array[CorsRule]
-  type Endpoint                      = String
-  type ExposeHeaders                 = js.Array[Header]
-  type Header                        = String
-  type LifecyclePolicy               = String
-  type MaxAgeSeconds                 = Int
-  type MetricPolicyRules             = js.Array[MetricPolicyRule]
-  type ObjectGroup                   = String
-  type ObjectGroupName               = String
-  type Origin                        = String
-  type PaginationToken               = String
-  type TagKey                        = String
-  type TagKeyList                    = js.Array[TagKey]
-  type TagList                       = js.Array[Tag]
-  type TagValue                      = String
-  type TimeStamp                     = js.Date
+  type ContainerList = js.Array[Container]
+  type ContainerListLimit = Int
+  type ContainerName = String
+  type ContainerPolicy = String
+  type CorsPolicy = js.Array[CorsRule]
+  type Endpoint = String
+  type ExposeHeaders = js.Array[Header]
+  type Header = String
+  type LifecyclePolicy = String
+  type MaxAgeSeconds = Int
+  type MetricPolicyRules = js.Array[MetricPolicyRule]
+  type ObjectGroup = String
+  type ObjectGroupName = String
+  type Origin = String
+  type PaginationToken = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type TimeStamp = js.Date
 
   implicit final class MediaStoreOps(private val service: MediaStore) extends AnyVal {
 
@@ -86,27 +86,27 @@ package mediastore {
   class MediaStore() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createContainer(params: CreateContainerInput): Request[CreateContainerOutput]                   = js.native
-    def deleteContainer(params: DeleteContainerInput): Request[DeleteContainerOutput]                   = js.native
+    def createContainer(params: CreateContainerInput): Request[CreateContainerOutput] = js.native
+    def deleteContainer(params: DeleteContainerInput): Request[DeleteContainerOutput] = js.native
     def deleteContainerPolicy(params: DeleteContainerPolicyInput): Request[DeleteContainerPolicyOutput] = js.native
-    def deleteCorsPolicy(params: DeleteCorsPolicyInput): Request[DeleteCorsPolicyOutput]                = js.native
+    def deleteCorsPolicy(params: DeleteCorsPolicyInput): Request[DeleteCorsPolicyOutput] = js.native
     def deleteLifecyclePolicy(params: DeleteLifecyclePolicyInput): Request[DeleteLifecyclePolicyOutput] = js.native
-    def deleteMetricPolicy(params: DeleteMetricPolicyInput): Request[DeleteMetricPolicyOutput]          = js.native
-    def describeContainer(params: DescribeContainerInput): Request[DescribeContainerOutput]             = js.native
-    def getContainerPolicy(params: GetContainerPolicyInput): Request[GetContainerPolicyOutput]          = js.native
-    def getCorsPolicy(params: GetCorsPolicyInput): Request[GetCorsPolicyOutput]                         = js.native
-    def getLifecyclePolicy(params: GetLifecyclePolicyInput): Request[GetLifecyclePolicyOutput]          = js.native
-    def getMetricPolicy(params: GetMetricPolicyInput): Request[GetMetricPolicyOutput]                   = js.native
-    def listContainers(params: ListContainersInput): Request[ListContainersOutput]                      = js.native
-    def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput]       = js.native
-    def putContainerPolicy(params: PutContainerPolicyInput): Request[PutContainerPolicyOutput]          = js.native
-    def putCorsPolicy(params: PutCorsPolicyInput): Request[PutCorsPolicyOutput]                         = js.native
-    def putLifecyclePolicy(params: PutLifecyclePolicyInput): Request[PutLifecyclePolicyOutput]          = js.native
-    def putMetricPolicy(params: PutMetricPolicyInput): Request[PutMetricPolicyOutput]                   = js.native
-    def startAccessLogging(params: StartAccessLoggingInput): Request[StartAccessLoggingOutput]          = js.native
-    def stopAccessLogging(params: StopAccessLoggingInput): Request[StopAccessLoggingOutput]             = js.native
-    def tagResource(params: TagResourceInput): Request[TagResourceOutput]                               = js.native
-    def untagResource(params: UntagResourceInput): Request[UntagResourceOutput]                         = js.native
+    def deleteMetricPolicy(params: DeleteMetricPolicyInput): Request[DeleteMetricPolicyOutput] = js.native
+    def describeContainer(params: DescribeContainerInput): Request[DescribeContainerOutput] = js.native
+    def getContainerPolicy(params: GetContainerPolicyInput): Request[GetContainerPolicyOutput] = js.native
+    def getCorsPolicy(params: GetCorsPolicyInput): Request[GetCorsPolicyOutput] = js.native
+    def getLifecyclePolicy(params: GetLifecyclePolicyInput): Request[GetLifecyclePolicyOutput] = js.native
+    def getMetricPolicy(params: GetMetricPolicyInput): Request[GetMetricPolicyOutput] = js.native
+    def listContainers(params: ListContainersInput): Request[ListContainersOutput] = js.native
+    def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput] = js.native
+    def putContainerPolicy(params: PutContainerPolicyInput): Request[PutContainerPolicyOutput] = js.native
+    def putCorsPolicy(params: PutCorsPolicyInput): Request[PutCorsPolicyOutput] = js.native
+    def putLifecyclePolicy(params: PutLifecyclePolicyInput): Request[PutLifecyclePolicyOutput] = js.native
+    def putMetricPolicy(params: PutMetricPolicyInput): Request[PutMetricPolicyOutput] = js.native
+    def startAccessLogging(params: StartAccessLoggingInput): Request[StartAccessLoggingOutput] = js.native
+    def stopAccessLogging(params: StopAccessLoggingInput): Request[StopAccessLoggingOutput] = js.native
+    def tagResource(params: TagResourceInput): Request[TagResourceOutput] = js.native
+    def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
   }
 
   /**
@@ -146,7 +146,7 @@ package mediastore {
   @js.native
   sealed trait ContainerLevelMetrics extends js.Any
   object ContainerLevelMetrics extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[ContainerLevelMetrics]
+    val ENABLED = "ENABLED".asInstanceOf[ContainerLevelMetrics]
     val DISABLED = "DISABLED".asInstanceOf[ContainerLevelMetrics]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -155,7 +155,7 @@ package mediastore {
   @js.native
   sealed trait ContainerStatus extends js.Any
   object ContainerStatus extends js.Object {
-    val ACTIVE   = "ACTIVE".asInstanceOf[ContainerStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[ContainerStatus]
     val CREATING = "CREATING".asInstanceOf[ContainerStatus]
     val DELETING = "DELETING".asInstanceOf[ContainerStatus]
 
@@ -642,10 +642,10 @@ package mediastore {
   @js.native
   sealed trait MethodName extends js.Any
   object MethodName extends js.Object {
-    val PUT    = "PUT".asInstanceOf[MethodName]
-    val GET    = "GET".asInstanceOf[MethodName]
+    val PUT = "PUT".asInstanceOf[MethodName]
+    val GET = "GET".asInstanceOf[MethodName]
     val DELETE = "DELETE".asInstanceOf[MethodName]
-    val HEAD   = "HEAD".asInstanceOf[MethodName]
+    val HEAD = "HEAD".asInstanceOf[MethodName]
 
     val values = js.Object.freeze(js.Array(PUT, GET, DELETE, HEAD))
   }
@@ -691,7 +691,7 @@ package mediastore {
         ObjectGroupName: ObjectGroupName
     ): MetricPolicyRule = {
       val __obj = js.Dynamic.literal(
-        "ObjectGroup"     -> ObjectGroup.asInstanceOf[js.Any],
+        "ObjectGroup" -> ObjectGroup.asInstanceOf[js.Any],
         "ObjectGroupName" -> ObjectGroupName.asInstanceOf[js.Any]
       )
 
@@ -713,7 +713,7 @@ package mediastore {
     ): PutContainerPolicyInput = {
       val __obj = js.Dynamic.literal(
         "ContainerName" -> ContainerName.asInstanceOf[js.Any],
-        "Policy"        -> Policy.asInstanceOf[js.Any]
+        "Policy" -> Policy.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutContainerPolicyInput]
@@ -747,7 +747,7 @@ package mediastore {
     ): PutCorsPolicyInput = {
       val __obj = js.Dynamic.literal(
         "ContainerName" -> ContainerName.asInstanceOf[js.Any],
-        "CorsPolicy"    -> CorsPolicy.asInstanceOf[js.Any]
+        "CorsPolicy" -> CorsPolicy.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutCorsPolicyInput]
@@ -780,7 +780,7 @@ package mediastore {
         LifecyclePolicy: LifecyclePolicy
     ): PutLifecyclePolicyInput = {
       val __obj = js.Dynamic.literal(
-        "ContainerName"   -> ContainerName.asInstanceOf[js.Any],
+        "ContainerName" -> ContainerName.asInstanceOf[js.Any],
         "LifecyclePolicy" -> LifecyclePolicy.asInstanceOf[js.Any]
       )
 
@@ -815,7 +815,7 @@ package mediastore {
     ): PutMetricPolicyInput = {
       val __obj = js.Dynamic.literal(
         "ContainerName" -> ContainerName.asInstanceOf[js.Any],
-        "MetricPolicy"  -> MetricPolicy.asInstanceOf[js.Any]
+        "MetricPolicy" -> MetricPolicy.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutMetricPolicyInput]
@@ -935,7 +935,7 @@ package mediastore {
     ): TagResourceInput = {
       val __obj = js.Dynamic.literal(
         "Resource" -> Resource.asInstanceOf[js.Any],
-        "Tags"     -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceInput]
@@ -969,7 +969,7 @@ package mediastore {
     ): UntagResourceInput = {
       val __obj = js.Dynamic.literal(
         "Resource" -> Resource.asInstanceOf[js.Any],
-        "TagKeys"  -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceInput]

@@ -7,39 +7,39 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object acmpca {
-  type AccountId                        = String
-  type ActionList                       = js.Array[ActionType]
-  type Arn                              = String
-  type AuditReportId                    = String
-  type CertificateAuthorities           = js.Array[CertificateAuthority]
-  type CertificateBody                  = String
-  type CertificateBodyBlob              = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type CertificateChain                 = String
-  type CertificateChainBlob             = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type CountryCodeString                = String
-  type CsrBlob                          = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type CsrBody                          = String
+  type AccountId = String
+  type ActionList = js.Array[ActionType]
+  type Arn = String
+  type AuditReportId = String
+  type CertificateAuthorities = js.Array[CertificateAuthority]
+  type CertificateBody = String
+  type CertificateBodyBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type CertificateChain = String
+  type CertificateChainBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type CountryCodeString = String
+  type CsrBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type CsrBody = String
   type DistinguishedNameQualifierString = String
-  type IdempotencyToken                 = String
-  type Integer1To5000                   = Int
-  type MaxResults                       = Int
-  type NextToken                        = String
-  type PermanentDeletionTimeInDays      = Int
-  type PermissionList                   = js.Array[Permission]
-  type PositiveLong                     = Double
-  type Principal                        = String
-  type String128                        = String
-  type String16                         = String
-  type String253                        = String
-  type String3                          = String
-  type String3To255                     = String
-  type String40                         = String
-  type String5                          = String
-  type String64                         = String
-  type TStamp                           = js.Date
-  type TagKey                           = String
-  type TagList                          = js.Array[Tag]
-  type TagValue                         = String
+  type IdempotencyToken = String
+  type Integer1To5000 = Int
+  type MaxResults = Int
+  type NextToken = String
+  type PermanentDeletionTimeInDays = Int
+  type PermissionList = js.Array[Permission]
+  type PositiveLong = Double
+  type Principal = String
+  type String128 = String
+  type String16 = String
+  type String253 = String
+  type String3 = String
+  type String3To255 = String
+  type String40 = String
+  type String5 = String
+  type String64 = String
+  type TStamp = js.Date
+  type TagKey = String
+  type TagList = js.Array[Tag]
+  type TagValue = String
 
   implicit final class ACMPCAOps(private val service: ACMPCA) extends AnyVal {
 
@@ -108,16 +108,16 @@ package acmpca {
     ): Request[CreateCertificateAuthorityResponse] = js.native
     def createCertificateAuthorityAuditReport(
         params: CreateCertificateAuthorityAuditReportRequest
-    ): Request[CreateCertificateAuthorityAuditReportResponse]                                     = js.native
-    def createPermission(params: CreatePermissionRequest): Request[js.Object]                     = js.native
+    ): Request[CreateCertificateAuthorityAuditReportResponse] = js.native
+    def createPermission(params: CreatePermissionRequest): Request[js.Object] = js.native
     def deleteCertificateAuthority(params: DeleteCertificateAuthorityRequest): Request[js.Object] = js.native
-    def deletePermission(params: DeletePermissionRequest): Request[js.Object]                     = js.native
+    def deletePermission(params: DeletePermissionRequest): Request[js.Object] = js.native
     def describeCertificateAuthority(
         params: DescribeCertificateAuthorityRequest
     ): Request[DescribeCertificateAuthorityResponse] = js.native
     def describeCertificateAuthorityAuditReport(
         params: DescribeCertificateAuthorityAuditReportRequest
-    ): Request[DescribeCertificateAuthorityAuditReportResponse]                        = js.native
+    ): Request[DescribeCertificateAuthorityAuditReportResponse] = js.native
     def getCertificate(params: GetCertificateRequest): Request[GetCertificateResponse] = js.native
     def getCertificateAuthorityCertificate(
         params: GetCertificateAuthorityCertificateRequest
@@ -127,18 +127,18 @@ package acmpca {
     ): Request[GetCertificateAuthorityCsrResponse] = js.native
     def importCertificateAuthorityCertificate(
         params: ImportCertificateAuthorityCertificateRequest
-    ): Request[js.Object]                                                                    = js.native
+    ): Request[js.Object] = js.native
     def issueCertificate(params: IssueCertificateRequest): Request[IssueCertificateResponse] = js.native
     def listCertificateAuthorities(
         params: ListCertificateAuthoritiesRequest
-    ): Request[ListCertificateAuthoritiesResponse]                                                  = js.native
-    def listPermissions(params: ListPermissionsRequest): Request[ListPermissionsResponse]           = js.native
-    def listTags(params: ListTagsRequest): Request[ListTagsResponse]                                = js.native
+    ): Request[ListCertificateAuthoritiesResponse] = js.native
+    def listPermissions(params: ListPermissionsRequest): Request[ListPermissionsResponse] = js.native
+    def listTags(params: ListTagsRequest): Request[ListTagsResponse] = js.native
     def restoreCertificateAuthority(params: RestoreCertificateAuthorityRequest): Request[js.Object] = js.native
-    def revokeCertificate(params: RevokeCertificateRequest): Request[js.Object]                     = js.native
-    def tagCertificateAuthority(params: TagCertificateAuthorityRequest): Request[js.Object]         = js.native
-    def untagCertificateAuthority(params: UntagCertificateAuthorityRequest): Request[js.Object]     = js.native
-    def updateCertificateAuthority(params: UpdateCertificateAuthorityRequest): Request[js.Object]   = js.native
+    def revokeCertificate(params: RevokeCertificateRequest): Request[js.Object] = js.native
+    def tagCertificateAuthority(params: TagCertificateAuthorityRequest): Request[js.Object] = js.native
+    def untagCertificateAuthority(params: UntagCertificateAuthorityRequest): Request[js.Object] = js.native
+    def updateCertificateAuthority(params: UpdateCertificateAuthorityRequest): Request[js.Object] = js.native
   }
 
   /**
@@ -205,8 +205,8 @@ package acmpca {
   sealed trait ActionType extends js.Any
   object ActionType extends js.Object {
     val IssueCertificate = "IssueCertificate".asInstanceOf[ActionType]
-    val GetCertificate   = "GetCertificate".asInstanceOf[ActionType]
-    val ListPermissions  = "ListPermissions".asInstanceOf[ActionType]
+    val GetCertificate = "GetCertificate".asInstanceOf[ActionType]
+    val ListPermissions = "ListPermissions".asInstanceOf[ActionType]
 
     val values = js.Object.freeze(js.Array(IssueCertificate, GetCertificate, ListPermissions))
   }
@@ -215,7 +215,7 @@ package acmpca {
   sealed trait AuditReportResponseFormat extends js.Any
   object AuditReportResponseFormat extends js.Object {
     val JSON = "JSON".asInstanceOf[AuditReportResponseFormat]
-    val CSV  = "CSV".asInstanceOf[AuditReportResponseFormat]
+    val CSV = "CSV".asInstanceOf[AuditReportResponseFormat]
 
     val values = js.Object.freeze(js.Array(JSON, CSV))
   }
@@ -224,8 +224,8 @@ package acmpca {
   sealed trait AuditReportStatus extends js.Any
   object AuditReportStatus extends js.Object {
     val CREATING = "CREATING".asInstanceOf[AuditReportStatus]
-    val SUCCESS  = "SUCCESS".asInstanceOf[AuditReportStatus]
-    val FAILED   = "FAILED".asInstanceOf[AuditReportStatus]
+    val SUCCESS = "SUCCESS".asInstanceOf[AuditReportStatus]
+    val FAILED = "FAILED".asInstanceOf[AuditReportStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, SUCCESS, FAILED))
   }
@@ -302,9 +302,9 @@ package acmpca {
         Subject: ASN1Subject
     ): CertificateAuthorityConfiguration = {
       val __obj = js.Dynamic.literal(
-        "KeyAlgorithm"     -> KeyAlgorithm.asInstanceOf[js.Any],
+        "KeyAlgorithm" -> KeyAlgorithm.asInstanceOf[js.Any],
         "SigningAlgorithm" -> SigningAlgorithm.asInstanceOf[js.Any],
-        "Subject"          -> Subject.asInstanceOf[js.Any]
+        "Subject" -> Subject.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CertificateAuthorityConfiguration]
@@ -314,13 +314,13 @@ package acmpca {
   @js.native
   sealed trait CertificateAuthorityStatus extends js.Any
   object CertificateAuthorityStatus extends js.Object {
-    val CREATING            = "CREATING".asInstanceOf[CertificateAuthorityStatus]
+    val CREATING = "CREATING".asInstanceOf[CertificateAuthorityStatus]
     val PENDING_CERTIFICATE = "PENDING_CERTIFICATE".asInstanceOf[CertificateAuthorityStatus]
-    val ACTIVE              = "ACTIVE".asInstanceOf[CertificateAuthorityStatus]
-    val DELETED             = "DELETED".asInstanceOf[CertificateAuthorityStatus]
-    val DISABLED            = "DISABLED".asInstanceOf[CertificateAuthorityStatus]
-    val EXPIRED             = "EXPIRED".asInstanceOf[CertificateAuthorityStatus]
-    val FAILED              = "FAILED".asInstanceOf[CertificateAuthorityStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[CertificateAuthorityStatus]
+    val DELETED = "DELETED".asInstanceOf[CertificateAuthorityStatus]
+    val DISABLED = "DISABLED".asInstanceOf[CertificateAuthorityStatus]
+    val EXPIRED = "EXPIRED".asInstanceOf[CertificateAuthorityStatus]
+    val FAILED = "FAILED".asInstanceOf[CertificateAuthorityStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, PENDING_CERTIFICATE, ACTIVE, DELETED, DISABLED, EXPIRED, FAILED))
   }
@@ -328,7 +328,7 @@ package acmpca {
   @js.native
   sealed trait CertificateAuthorityType extends js.Any
   object CertificateAuthorityType extends js.Object {
-    val ROOT        = "ROOT".asInstanceOf[CertificateAuthorityType]
+    val ROOT = "ROOT".asInstanceOf[CertificateAuthorityType]
     val SUBORDINATE = "SUBORDINATE".asInstanceOf[CertificateAuthorityType]
 
     val values = js.Object.freeze(js.Array(ROOT, SUBORDINATE))
@@ -350,8 +350,8 @@ package acmpca {
     ): CreateCertificateAuthorityAuditReportRequest = {
       val __obj = js.Dynamic.literal(
         "AuditReportResponseFormat" -> AuditReportResponseFormat.asInstanceOf[js.Any],
-        "CertificateAuthorityArn"   -> CertificateAuthorityArn.asInstanceOf[js.Any],
-        "S3BucketName"              -> S3BucketName.asInstanceOf[js.Any]
+        "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any],
+        "S3BucketName" -> S3BucketName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateCertificateAuthorityAuditReportRequest]
@@ -397,7 +397,7 @@ package acmpca {
     ): CreateCertificateAuthorityRequest = {
       val __obj = js.Dynamic.literal(
         "CertificateAuthorityConfiguration" -> CertificateAuthorityConfiguration.asInstanceOf[js.Any],
-        "CertificateAuthorityType"          -> CertificateAuthorityType.asInstanceOf[js.Any]
+        "CertificateAuthorityType" -> CertificateAuthorityType.asInstanceOf[js.Any]
       )
 
       IdempotencyToken.foreach(__v => __obj.updateDynamic("IdempotencyToken")(__v.asInstanceOf[js.Any]))
@@ -440,9 +440,9 @@ package acmpca {
         SourceAccount: js.UndefOr[AccountId] = js.undefined
     ): CreatePermissionRequest = {
       val __obj = js.Dynamic.literal(
-        "Actions"                 -> Actions.asInstanceOf[js.Any],
+        "Actions" -> Actions.asInstanceOf[js.Any],
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any],
-        "Principal"               -> Principal.asInstanceOf[js.Any]
+        "Principal" -> Principal.asInstanceOf[js.Any]
       )
 
       SourceAccount.foreach(__v => __obj.updateDynamic("SourceAccount")(__v.asInstanceOf[js.Any]))
@@ -538,7 +538,7 @@ package acmpca {
     ): DeletePermissionRequest = {
       val __obj = js.Dynamic.literal(
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any],
-        "Principal"               -> Principal.asInstanceOf[js.Any]
+        "Principal" -> Principal.asInstanceOf[js.Any]
       )
 
       SourceAccount.foreach(__v => __obj.updateDynamic("SourceAccount")(__v.asInstanceOf[js.Any]))
@@ -559,7 +559,7 @@ package acmpca {
         CertificateAuthorityArn: Arn
     ): DescribeCertificateAuthorityAuditReportRequest = {
       val __obj = js.Dynamic.literal(
-        "AuditReportId"           -> AuditReportId.asInstanceOf[js.Any],
+        "AuditReportId" -> AuditReportId.asInstanceOf[js.Any],
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any]
       )
 
@@ -629,9 +629,9 @@ package acmpca {
   @js.native
   sealed trait FailureReason extends js.Any
   object FailureReason extends js.Object {
-    val REQUEST_TIMED_OUT     = "REQUEST_TIMED_OUT".asInstanceOf[FailureReason]
+    val REQUEST_TIMED_OUT = "REQUEST_TIMED_OUT".asInstanceOf[FailureReason]
     val UNSUPPORTED_ALGORITHM = "UNSUPPORTED_ALGORITHM".asInstanceOf[FailureReason]
-    val OTHER                 = "OTHER".asInstanceOf[FailureReason]
+    val OTHER = "OTHER".asInstanceOf[FailureReason]
 
     val values = js.Object.freeze(js.Array(REQUEST_TIMED_OUT, UNSUPPORTED_ALGORITHM, OTHER))
   }
@@ -720,7 +720,7 @@ package acmpca {
         CertificateAuthorityArn: Arn
     ): GetCertificateRequest = {
       val __obj = js.Dynamic.literal(
-        "CertificateArn"          -> CertificateArn.asInstanceOf[js.Any],
+        "CertificateArn" -> CertificateArn.asInstanceOf[js.Any],
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any]
       )
 
@@ -762,7 +762,7 @@ package acmpca {
         CertificateChain: js.UndefOr[CertificateChainBlob] = js.undefined
     ): ImportCertificateAuthorityCertificateRequest = {
       val __obj = js.Dynamic.literal(
-        "Certificate"             -> Certificate.asInstanceOf[js.Any],
+        "Certificate" -> Certificate.asInstanceOf[js.Any],
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any]
       )
 
@@ -793,9 +793,9 @@ package acmpca {
     ): IssueCertificateRequest = {
       val __obj = js.Dynamic.literal(
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any],
-        "Csr"                     -> Csr.asInstanceOf[js.Any],
-        "SigningAlgorithm"        -> SigningAlgorithm.asInstanceOf[js.Any],
-        "Validity"                -> Validity.asInstanceOf[js.Any]
+        "Csr" -> Csr.asInstanceOf[js.Any],
+        "SigningAlgorithm" -> SigningAlgorithm.asInstanceOf[js.Any],
+        "Validity" -> Validity.asInstanceOf[js.Any]
       )
 
       IdempotencyToken.foreach(__v => __obj.updateDynamic("IdempotencyToken")(__v.asInstanceOf[js.Any]))
@@ -823,10 +823,10 @@ package acmpca {
   @js.native
   sealed trait KeyAlgorithm extends js.Any
   object KeyAlgorithm extends js.Object {
-    val RSA_2048      = "RSA_2048".asInstanceOf[KeyAlgorithm]
-    val RSA_4096      = "RSA_4096".asInstanceOf[KeyAlgorithm]
+    val RSA_2048 = "RSA_2048".asInstanceOf[KeyAlgorithm]
+    val RSA_4096 = "RSA_4096".asInstanceOf[KeyAlgorithm]
     val EC_prime256v1 = "EC_prime256v1".asInstanceOf[KeyAlgorithm]
-    val EC_secp384r1  = "EC_secp384r1".asInstanceOf[KeyAlgorithm]
+    val EC_secp384r1 = "EC_secp384r1".asInstanceOf[KeyAlgorithm]
 
     val values = js.Object.freeze(js.Array(RSA_2048, RSA_4096, EC_prime256v1, EC_secp384r1))
   }
@@ -1029,14 +1029,14 @@ package acmpca {
   @js.native
   sealed trait RevocationReason extends js.Any
   object RevocationReason extends js.Object {
-    val UNSPECIFIED                      = "UNSPECIFIED".asInstanceOf[RevocationReason]
-    val KEY_COMPROMISE                   = "KEY_COMPROMISE".asInstanceOf[RevocationReason]
+    val UNSPECIFIED = "UNSPECIFIED".asInstanceOf[RevocationReason]
+    val KEY_COMPROMISE = "KEY_COMPROMISE".asInstanceOf[RevocationReason]
     val CERTIFICATE_AUTHORITY_COMPROMISE = "CERTIFICATE_AUTHORITY_COMPROMISE".asInstanceOf[RevocationReason]
-    val AFFILIATION_CHANGED              = "AFFILIATION_CHANGED".asInstanceOf[RevocationReason]
-    val SUPERSEDED                       = "SUPERSEDED".asInstanceOf[RevocationReason]
-    val CESSATION_OF_OPERATION           = "CESSATION_OF_OPERATION".asInstanceOf[RevocationReason]
-    val PRIVILEGE_WITHDRAWN              = "PRIVILEGE_WITHDRAWN".asInstanceOf[RevocationReason]
-    val A_A_COMPROMISE                   = "A_A_COMPROMISE".asInstanceOf[RevocationReason]
+    val AFFILIATION_CHANGED = "AFFILIATION_CHANGED".asInstanceOf[RevocationReason]
+    val SUPERSEDED = "SUPERSEDED".asInstanceOf[RevocationReason]
+    val CESSATION_OF_OPERATION = "CESSATION_OF_OPERATION".asInstanceOf[RevocationReason]
+    val PRIVILEGE_WITHDRAWN = "PRIVILEGE_WITHDRAWN".asInstanceOf[RevocationReason]
+    val A_A_COMPROMISE = "A_A_COMPROMISE".asInstanceOf[RevocationReason]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1068,8 +1068,8 @@ package acmpca {
     ): RevokeCertificateRequest = {
       val __obj = js.Dynamic.literal(
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any],
-        "CertificateSerial"       -> CertificateSerial.asInstanceOf[js.Any],
-        "RevocationReason"        -> RevocationReason.asInstanceOf[js.Any]
+        "CertificateSerial" -> CertificateSerial.asInstanceOf[js.Any],
+        "RevocationReason" -> RevocationReason.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RevokeCertificateRequest]
@@ -1082,9 +1082,9 @@ package acmpca {
     val SHA256WITHECDSA = "SHA256WITHECDSA".asInstanceOf[SigningAlgorithm]
     val SHA384WITHECDSA = "SHA384WITHECDSA".asInstanceOf[SigningAlgorithm]
     val SHA512WITHECDSA = "SHA512WITHECDSA".asInstanceOf[SigningAlgorithm]
-    val SHA256WITHRSA   = "SHA256WITHRSA".asInstanceOf[SigningAlgorithm]
-    val SHA384WITHRSA   = "SHA384WITHRSA".asInstanceOf[SigningAlgorithm]
-    val SHA512WITHRSA   = "SHA512WITHRSA".asInstanceOf[SigningAlgorithm]
+    val SHA256WITHRSA = "SHA256WITHRSA".asInstanceOf[SigningAlgorithm]
+    val SHA384WITHRSA = "SHA384WITHRSA".asInstanceOf[SigningAlgorithm]
+    val SHA512WITHRSA = "SHA512WITHRSA".asInstanceOf[SigningAlgorithm]
 
     val values = js.Object.freeze(
       js.Array(SHA256WITHECDSA, SHA384WITHECDSA, SHA512WITHECDSA, SHA256WITHRSA, SHA384WITHRSA, SHA512WITHRSA)
@@ -1129,7 +1129,7 @@ package acmpca {
     ): TagCertificateAuthorityRequest = {
       val __obj = js.Dynamic.literal(
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any],
-        "Tags"                    -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagCertificateAuthorityRequest]
@@ -1150,7 +1150,7 @@ package acmpca {
     ): UntagCertificateAuthorityRequest = {
       val __obj = js.Dynamic.literal(
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any],
-        "Tags"                    -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagCertificateAuthorityRequest]
@@ -1197,7 +1197,7 @@ package acmpca {
         Value: PositiveLong
     ): Validity = {
       val __obj = js.Dynamic.literal(
-        "Type"  -> Type.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -1210,9 +1210,9 @@ package acmpca {
   object ValidityPeriodType extends js.Object {
     val END_DATE = "END_DATE".asInstanceOf[ValidityPeriodType]
     val ABSOLUTE = "ABSOLUTE".asInstanceOf[ValidityPeriodType]
-    val DAYS     = "DAYS".asInstanceOf[ValidityPeriodType]
-    val MONTHS   = "MONTHS".asInstanceOf[ValidityPeriodType]
-    val YEARS    = "YEARS".asInstanceOf[ValidityPeriodType]
+    val DAYS = "DAYS".asInstanceOf[ValidityPeriodType]
+    val MONTHS = "MONTHS".asInstanceOf[ValidityPeriodType]
+    val YEARS = "YEARS".asInstanceOf[ValidityPeriodType]
 
     val values = js.Object.freeze(js.Array(END_DATE, ABSOLUTE, DAYS, MONTHS, YEARS))
   }

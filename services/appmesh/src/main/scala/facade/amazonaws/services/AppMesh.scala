@@ -7,55 +7,55 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object appmesh {
-  type AccountId                         = String
-  type Arn                               = String
-  type AwsCloudMapInstanceAttributeKey   = String
+  type AccountId = String
+  type Arn = String
+  type AwsCloudMapInstanceAttributeKey = String
   type AwsCloudMapInstanceAttributeValue = String
-  type AwsCloudMapInstanceAttributes     = js.Array[AwsCloudMapInstanceAttribute]
-  type AwsCloudMapName                   = String
-  type Backends                          = js.Array[Backend]
-  type CertificateAuthorityArns          = js.Array[Arn]
-  type DurationValue                     = Double
-  type FilePath                          = String
-  type GrpcRetryPolicyEvents             = js.Array[GrpcRetryPolicyEvent]
-  type GrpcRouteMetadataList             = js.Array[GrpcRouteMetadata]
-  type HeaderMatch                       = String
-  type HeaderName                        = String
-  type HealthCheckIntervalMillis         = Double
-  type HealthCheckThreshold              = Int
-  type HealthCheckTimeoutMillis          = Double
-  type Hostname                          = String
-  type HttpRetryPolicyEvent              = String
-  type HttpRetryPolicyEvents             = js.Array[HttpRetryPolicyEvent]
-  type HttpRouteHeaders                  = js.Array[HttpRouteHeader]
-  type ListMeshesLimit                   = Int
-  type ListRoutesLimit                   = Int
-  type ListVirtualNodesLimit             = Int
-  type ListVirtualRoutersLimit           = Int
-  type ListVirtualServicesLimit          = Int
-  type Listeners                         = js.Array[Listener]
-  type MaxRetries                        = Double
-  type MeshList                          = js.Array[MeshRef]
-  type MethodName                        = String
-  type PercentInt                        = Int
-  type PortNumber                        = Int
-  type PortSet                           = js.Array[PortNumber]
-  type ResourceName                      = String
-  type RouteList                         = js.Array[RouteRef]
-  type RoutePriority                     = Int
-  type ServiceName                       = String
-  type TagKey                            = String
-  type TagKeyList                        = js.Array[TagKey]
-  type TagList                           = js.Array[TagRef]
-  type TagValue                          = String
-  type TagsLimit                         = Int
-  type TcpRetryPolicyEvents              = js.Array[TcpRetryPolicyEvent]
-  type Timestamp                         = js.Date
-  type VirtualNodeList                   = js.Array[VirtualNodeRef]
-  type VirtualRouterList                 = js.Array[VirtualRouterRef]
-  type VirtualRouterListeners            = js.Array[VirtualRouterListener]
-  type VirtualServiceList                = js.Array[VirtualServiceRef]
-  type WeightedTargets                   = js.Array[WeightedTarget]
+  type AwsCloudMapInstanceAttributes = js.Array[AwsCloudMapInstanceAttribute]
+  type AwsCloudMapName = String
+  type Backends = js.Array[Backend]
+  type CertificateAuthorityArns = js.Array[Arn]
+  type DurationValue = Double
+  type FilePath = String
+  type GrpcRetryPolicyEvents = js.Array[GrpcRetryPolicyEvent]
+  type GrpcRouteMetadataList = js.Array[GrpcRouteMetadata]
+  type HeaderMatch = String
+  type HeaderName = String
+  type HealthCheckIntervalMillis = Double
+  type HealthCheckThreshold = Int
+  type HealthCheckTimeoutMillis = Double
+  type Hostname = String
+  type HttpRetryPolicyEvent = String
+  type HttpRetryPolicyEvents = js.Array[HttpRetryPolicyEvent]
+  type HttpRouteHeaders = js.Array[HttpRouteHeader]
+  type ListMeshesLimit = Int
+  type ListRoutesLimit = Int
+  type ListVirtualNodesLimit = Int
+  type ListVirtualRoutersLimit = Int
+  type ListVirtualServicesLimit = Int
+  type Listeners = js.Array[Listener]
+  type MaxRetries = Double
+  type MeshList = js.Array[MeshRef]
+  type MethodName = String
+  type PercentInt = Int
+  type PortNumber = Int
+  type PortSet = js.Array[PortNumber]
+  type ResourceName = String
+  type RouteList = js.Array[RouteRef]
+  type RoutePriority = Int
+  type ServiceName = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[TagRef]
+  type TagValue = String
+  type TagsLimit = Int
+  type TcpRetryPolicyEvents = js.Array[TcpRetryPolicyEvent]
+  type Timestamp = js.Date
+  type VirtualNodeList = js.Array[VirtualNodeRef]
+  type VirtualRouterList = js.Array[VirtualRouterRef]
+  type VirtualRouterListeners = js.Array[VirtualRouterListener]
+  type VirtualServiceList = js.Array[VirtualServiceRef]
+  type WeightedTargets = js.Array[WeightedTarget]
 
   implicit final class AppMeshOps(private val service: AppMesh) extends AnyVal {
 
@@ -125,34 +125,34 @@ package appmesh {
   class AppMesh() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createMesh(params: CreateMeshInput): Request[CreateMeshOutput]                                     = js.native
-    def createRoute(params: CreateRouteInput): Request[CreateRouteOutput]                                  = js.native
-    def createVirtualNode(params: CreateVirtualNodeInput): Request[CreateVirtualNodeOutput]                = js.native
-    def createVirtualRouter(params: CreateVirtualRouterInput): Request[CreateVirtualRouterOutput]          = js.native
-    def createVirtualService(params: CreateVirtualServiceInput): Request[CreateVirtualServiceOutput]       = js.native
-    def deleteMesh(params: DeleteMeshInput): Request[DeleteMeshOutput]                                     = js.native
-    def deleteRoute(params: DeleteRouteInput): Request[DeleteRouteOutput]                                  = js.native
-    def deleteVirtualNode(params: DeleteVirtualNodeInput): Request[DeleteVirtualNodeOutput]                = js.native
-    def deleteVirtualRouter(params: DeleteVirtualRouterInput): Request[DeleteVirtualRouterOutput]          = js.native
-    def deleteVirtualService(params: DeleteVirtualServiceInput): Request[DeleteVirtualServiceOutput]       = js.native
-    def describeMesh(params: DescribeMeshInput): Request[DescribeMeshOutput]                               = js.native
-    def describeRoute(params: DescribeRouteInput): Request[DescribeRouteOutput]                            = js.native
-    def describeVirtualNode(params: DescribeVirtualNodeInput): Request[DescribeVirtualNodeOutput]          = js.native
-    def describeVirtualRouter(params: DescribeVirtualRouterInput): Request[DescribeVirtualRouterOutput]    = js.native
+    def createMesh(params: CreateMeshInput): Request[CreateMeshOutput] = js.native
+    def createRoute(params: CreateRouteInput): Request[CreateRouteOutput] = js.native
+    def createVirtualNode(params: CreateVirtualNodeInput): Request[CreateVirtualNodeOutput] = js.native
+    def createVirtualRouter(params: CreateVirtualRouterInput): Request[CreateVirtualRouterOutput] = js.native
+    def createVirtualService(params: CreateVirtualServiceInput): Request[CreateVirtualServiceOutput] = js.native
+    def deleteMesh(params: DeleteMeshInput): Request[DeleteMeshOutput] = js.native
+    def deleteRoute(params: DeleteRouteInput): Request[DeleteRouteOutput] = js.native
+    def deleteVirtualNode(params: DeleteVirtualNodeInput): Request[DeleteVirtualNodeOutput] = js.native
+    def deleteVirtualRouter(params: DeleteVirtualRouterInput): Request[DeleteVirtualRouterOutput] = js.native
+    def deleteVirtualService(params: DeleteVirtualServiceInput): Request[DeleteVirtualServiceOutput] = js.native
+    def describeMesh(params: DescribeMeshInput): Request[DescribeMeshOutput] = js.native
+    def describeRoute(params: DescribeRouteInput): Request[DescribeRouteOutput] = js.native
+    def describeVirtualNode(params: DescribeVirtualNodeInput): Request[DescribeVirtualNodeOutput] = js.native
+    def describeVirtualRouter(params: DescribeVirtualRouterInput): Request[DescribeVirtualRouterOutput] = js.native
     def describeVirtualService(params: DescribeVirtualServiceInput): Request[DescribeVirtualServiceOutput] = js.native
-    def listMeshes(params: ListMeshesInput): Request[ListMeshesOutput]                                     = js.native
-    def listRoutes(params: ListRoutesInput): Request[ListRoutesOutput]                                     = js.native
-    def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput]          = js.native
-    def listVirtualNodes(params: ListVirtualNodesInput): Request[ListVirtualNodesOutput]                   = js.native
-    def listVirtualRouters(params: ListVirtualRoutersInput): Request[ListVirtualRoutersOutput]             = js.native
-    def listVirtualServices(params: ListVirtualServicesInput): Request[ListVirtualServicesOutput]          = js.native
-    def tagResource(params: TagResourceInput): Request[TagResourceOutput]                                  = js.native
-    def untagResource(params: UntagResourceInput): Request[UntagResourceOutput]                            = js.native
-    def updateMesh(params: UpdateMeshInput): Request[UpdateMeshOutput]                                     = js.native
-    def updateRoute(params: UpdateRouteInput): Request[UpdateRouteOutput]                                  = js.native
-    def updateVirtualNode(params: UpdateVirtualNodeInput): Request[UpdateVirtualNodeOutput]                = js.native
-    def updateVirtualRouter(params: UpdateVirtualRouterInput): Request[UpdateVirtualRouterOutput]          = js.native
-    def updateVirtualService(params: UpdateVirtualServiceInput): Request[UpdateVirtualServiceOutput]       = js.native
+    def listMeshes(params: ListMeshesInput): Request[ListMeshesOutput] = js.native
+    def listRoutes(params: ListRoutesInput): Request[ListRoutesOutput] = js.native
+    def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput] = js.native
+    def listVirtualNodes(params: ListVirtualNodesInput): Request[ListVirtualNodesOutput] = js.native
+    def listVirtualRouters(params: ListVirtualRoutersInput): Request[ListVirtualRoutersOutput] = js.native
+    def listVirtualServices(params: ListVirtualServicesInput): Request[ListVirtualServicesOutput] = js.native
+    def tagResource(params: TagResourceInput): Request[TagResourceOutput] = js.native
+    def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
+    def updateMesh(params: UpdateMeshInput): Request[UpdateMeshOutput] = js.native
+    def updateRoute(params: UpdateRouteInput): Request[UpdateRouteOutput] = js.native
+    def updateVirtualNode(params: UpdateVirtualNodeInput): Request[UpdateVirtualNodeOutput] = js.native
+    def updateVirtualRouter(params: UpdateVirtualRouterInput): Request[UpdateVirtualRouterOutput] = js.native
+    def updateVirtualService(params: UpdateVirtualServiceInput): Request[UpdateVirtualServiceOutput] = js.native
   }
 
   /**
@@ -191,7 +191,7 @@ package appmesh {
         value: AwsCloudMapInstanceAttributeValue
     ): AwsCloudMapInstanceAttribute = {
       val __obj = js.Dynamic.literal(
-        "key"   -> key.asInstanceOf[js.Any],
+        "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
 
@@ -219,7 +219,7 @@ package appmesh {
     ): AwsCloudMapServiceDiscovery = {
       val __obj = js.Dynamic.literal(
         "namespaceName" -> namespaceName.asInstanceOf[js.Any],
-        "serviceName"   -> serviceName.asInstanceOf[js.Any]
+        "serviceName" -> serviceName.asInstanceOf[js.Any]
       )
 
       attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
@@ -386,9 +386,9 @@ package appmesh {
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateRouteInput = {
       val __obj = js.Dynamic.literal(
-        "meshName"          -> meshName.asInstanceOf[js.Any],
-        "routeName"         -> routeName.asInstanceOf[js.Any],
-        "spec"              -> spec.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "routeName" -> routeName.asInstanceOf[js.Any],
+        "spec" -> spec.asInstanceOf[js.Any],
         "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
       )
 
@@ -442,8 +442,8 @@ package appmesh {
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateVirtualNodeInput = {
       val __obj = js.Dynamic.literal(
-        "meshName"        -> meshName.asInstanceOf[js.Any],
-        "spec"            -> spec.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "spec" -> spec.asInstanceOf[js.Any],
         "virtualNodeName" -> virtualNodeName.asInstanceOf[js.Any]
       )
 
@@ -497,8 +497,8 @@ package appmesh {
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateVirtualRouterInput = {
       val __obj = js.Dynamic.literal(
-        "meshName"          -> meshName.asInstanceOf[js.Any],
-        "spec"              -> spec.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "spec" -> spec.asInstanceOf[js.Any],
         "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
       )
 
@@ -552,8 +552,8 @@ package appmesh {
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateVirtualServiceInput = {
       val __obj = js.Dynamic.literal(
-        "meshName"           -> meshName.asInstanceOf[js.Any],
-        "spec"               -> spec.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "spec" -> spec.asInstanceOf[js.Any],
         "virtualServiceName" -> virtualServiceName.asInstanceOf[js.Any]
       )
 
@@ -643,8 +643,8 @@ package appmesh {
         meshOwner: js.UndefOr[AccountId] = js.undefined
     ): DeleteRouteInput = {
       val __obj = js.Dynamic.literal(
-        "meshName"          -> meshName.asInstanceOf[js.Any],
-        "routeName"         -> routeName.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "routeName" -> routeName.asInstanceOf[js.Any],
         "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
       )
 
@@ -690,7 +690,7 @@ package appmesh {
         meshOwner: js.UndefOr[AccountId] = js.undefined
     ): DeleteVirtualNodeInput = {
       val __obj = js.Dynamic.literal(
-        "meshName"        -> meshName.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
         "virtualNodeName" -> virtualNodeName.asInstanceOf[js.Any]
       )
 
@@ -736,7 +736,7 @@ package appmesh {
         meshOwner: js.UndefOr[AccountId] = js.undefined
     ): DeleteVirtualRouterInput = {
       val __obj = js.Dynamic.literal(
-        "meshName"          -> meshName.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
         "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
       )
 
@@ -782,7 +782,7 @@ package appmesh {
         meshOwner: js.UndefOr[AccountId] = js.undefined
     ): DeleteVirtualServiceInput = {
       val __obj = js.Dynamic.literal(
-        "meshName"           -> meshName.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
         "virtualServiceName" -> virtualServiceName.asInstanceOf[js.Any]
       )
 
@@ -873,8 +873,8 @@ package appmesh {
         meshOwner: js.UndefOr[AccountId] = js.undefined
     ): DescribeRouteInput = {
       val __obj = js.Dynamic.literal(
-        "meshName"          -> meshName.asInstanceOf[js.Any],
-        "routeName"         -> routeName.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "routeName" -> routeName.asInstanceOf[js.Any],
         "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
       )
 
@@ -920,7 +920,7 @@ package appmesh {
         meshOwner: js.UndefOr[AccountId] = js.undefined
     ): DescribeVirtualNodeInput = {
       val __obj = js.Dynamic.literal(
-        "meshName"        -> meshName.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
         "virtualNodeName" -> virtualNodeName.asInstanceOf[js.Any]
       )
 
@@ -966,7 +966,7 @@ package appmesh {
         meshOwner: js.UndefOr[AccountId] = js.undefined
     ): DescribeVirtualRouterInput = {
       val __obj = js.Dynamic.literal(
-        "meshName"          -> meshName.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
         "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
       )
 
@@ -1012,7 +1012,7 @@ package appmesh {
         meshOwner: js.UndefOr[AccountId] = js.undefined
     ): DescribeVirtualServiceInput = {
       val __obj = js.Dynamic.literal(
-        "meshName"           -> meshName.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
         "virtualServiceName" -> virtualServiceName.asInstanceOf[js.Any]
       )
 
@@ -1089,7 +1089,7 @@ package appmesh {
   sealed trait DurationUnit extends js.Any
   object DurationUnit extends js.Object {
     val ms = "ms".asInstanceOf[DurationUnit]
-    val s  = "s".asInstanceOf[DurationUnit]
+    val s = "s".asInstanceOf[DurationUnit]
 
     val values = js.Object.freeze(js.Array(ms, s))
   }
@@ -1119,7 +1119,7 @@ package appmesh {
   sealed trait EgressFilterType extends js.Any
   object EgressFilterType extends js.Object {
     val ALLOW_ALL = "ALLOW_ALL".asInstanceOf[EgressFilterType]
-    val DROP_ALL  = "DROP_ALL".asInstanceOf[EgressFilterType]
+    val DROP_ALL = "DROP_ALL".asInstanceOf[EgressFilterType]
 
     val values = js.Object.freeze(js.Array(ALLOW_ALL, DROP_ALL))
   }
@@ -1167,7 +1167,7 @@ package appmesh {
         tcpRetryEvents: js.UndefOr[TcpRetryPolicyEvents] = js.undefined
     ): GrpcRetryPolicy = {
       val __obj = js.Dynamic.literal(
-        "maxRetries"      -> maxRetries.asInstanceOf[js.Any],
+        "maxRetries" -> maxRetries.asInstanceOf[js.Any],
         "perRetryTimeout" -> perRetryTimeout.asInstanceOf[js.Any]
       )
 
@@ -1181,11 +1181,11 @@ package appmesh {
   @js.native
   sealed trait GrpcRetryPolicyEvent extends js.Any
   object GrpcRetryPolicyEvent extends js.Object {
-    val cancelled            = "cancelled".asInstanceOf[GrpcRetryPolicyEvent]
-    val `deadline-exceeded`  = "deadline-exceeded".asInstanceOf[GrpcRetryPolicyEvent]
-    val internal             = "internal".asInstanceOf[GrpcRetryPolicyEvent]
+    val cancelled = "cancelled".asInstanceOf[GrpcRetryPolicyEvent]
+    val `deadline-exceeded` = "deadline-exceeded".asInstanceOf[GrpcRetryPolicyEvent]
+    val internal = "internal".asInstanceOf[GrpcRetryPolicyEvent]
     val `resource-exhausted` = "resource-exhausted".asInstanceOf[GrpcRetryPolicyEvent]
-    val unavailable          = "unavailable".asInstanceOf[GrpcRetryPolicyEvent]
+    val unavailable = "unavailable".asInstanceOf[GrpcRetryPolicyEvent]
 
     val values = js.Object.freeze(js.Array(cancelled, `deadline-exceeded`, internal, `resource-exhausted`, unavailable))
   }
@@ -1211,7 +1211,7 @@ package appmesh {
     ): GrpcRoute = {
       val __obj = js.Dynamic.literal(
         "action" -> action.asInstanceOf[js.Any],
-        "match"  -> `match`.asInstanceOf[js.Any]
+        "match" -> `match`.asInstanceOf[js.Any]
       )
 
       retryPolicy.foreach(__v => __obj.updateDynamic("retryPolicy")(__v.asInstanceOf[js.Any]))
@@ -1401,10 +1401,10 @@ package appmesh {
         port: js.UndefOr[PortNumber] = js.undefined
     ): HealthCheckPolicy = {
       val __obj = js.Dynamic.literal(
-        "healthyThreshold"   -> healthyThreshold.asInstanceOf[js.Any],
-        "intervalMillis"     -> intervalMillis.asInstanceOf[js.Any],
-        "protocol"           -> protocol.asInstanceOf[js.Any],
-        "timeoutMillis"      -> timeoutMillis.asInstanceOf[js.Any],
+        "healthyThreshold" -> healthyThreshold.asInstanceOf[js.Any],
+        "intervalMillis" -> intervalMillis.asInstanceOf[js.Any],
+        "protocol" -> protocol.asInstanceOf[js.Any],
+        "timeoutMillis" -> timeoutMillis.asInstanceOf[js.Any],
         "unhealthyThreshold" -> unhealthyThreshold.asInstanceOf[js.Any]
       )
 
@@ -1418,14 +1418,14 @@ package appmesh {
   sealed trait HttpMethod extends js.Any
   object HttpMethod extends js.Object {
     val CONNECT = "CONNECT".asInstanceOf[HttpMethod]
-    val DELETE  = "DELETE".asInstanceOf[HttpMethod]
-    val GET     = "GET".asInstanceOf[HttpMethod]
-    val HEAD    = "HEAD".asInstanceOf[HttpMethod]
+    val DELETE = "DELETE".asInstanceOf[HttpMethod]
+    val GET = "GET".asInstanceOf[HttpMethod]
+    val HEAD = "HEAD".asInstanceOf[HttpMethod]
     val OPTIONS = "OPTIONS".asInstanceOf[HttpMethod]
-    val PATCH   = "PATCH".asInstanceOf[HttpMethod]
-    val POST    = "POST".asInstanceOf[HttpMethod]
-    val PUT     = "PUT".asInstanceOf[HttpMethod]
-    val TRACE   = "TRACE".asInstanceOf[HttpMethod]
+    val PATCH = "PATCH".asInstanceOf[HttpMethod]
+    val POST = "POST".asInstanceOf[HttpMethod]
+    val PUT = "PUT".asInstanceOf[HttpMethod]
+    val TRACE = "TRACE".asInstanceOf[HttpMethod]
 
     val values = js.Object.freeze(js.Array(CONNECT, DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT, TRACE))
   }
@@ -1450,7 +1450,7 @@ package appmesh {
         tcpRetryEvents: js.UndefOr[TcpRetryPolicyEvents] = js.undefined
     ): HttpRetryPolicy = {
       val __obj = js.Dynamic.literal(
-        "maxRetries"      -> maxRetries.asInstanceOf[js.Any],
+        "maxRetries" -> maxRetries.asInstanceOf[js.Any],
         "perRetryTimeout" -> perRetryTimeout.asInstanceOf[js.Any]
       )
 
@@ -1481,7 +1481,7 @@ package appmesh {
     ): HttpRoute = {
       val __obj = js.Dynamic.literal(
         "action" -> action.asInstanceOf[js.Any],
-        "match"  -> `match`.asInstanceOf[js.Any]
+        "match" -> `match`.asInstanceOf[js.Any]
       )
 
       retryPolicy.foreach(__v => __obj.updateDynamic("retryPolicy")(__v.asInstanceOf[js.Any]))
@@ -1572,7 +1572,7 @@ package appmesh {
   @js.native
   sealed trait HttpScheme extends js.Any
   object HttpScheme extends js.Object {
-    val http  = "http".asInstanceOf[HttpScheme]
+    val http = "http".asInstanceOf[HttpScheme]
     val https = "https".asInstanceOf[HttpScheme]
 
     val values = js.Object.freeze(js.Array(http, https))
@@ -1662,7 +1662,7 @@ package appmesh {
         nextToken: js.UndefOr[String] = js.undefined
     ): ListRoutesInput = {
       val __obj = js.Dynamic.literal(
-        "meshName"          -> meshName.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
         "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
       )
 
@@ -1973,7 +1973,7 @@ package appmesh {
     ): ListenerTls = {
       val __obj = js.Dynamic.literal(
         "certificate" -> certificate.asInstanceOf[js.Any],
-        "mode"        -> mode.asInstanceOf[js.Any]
+        "mode" -> mode.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ListenerTls]
@@ -2041,7 +2041,7 @@ package appmesh {
     ): ListenerTlsFileCertificate = {
       val __obj = js.Dynamic.literal(
         "certificateChain" -> certificateChain.asInstanceOf[js.Any],
-        "privateKey"       -> privateKey.asInstanceOf[js.Any]
+        "privateKey" -> privateKey.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ListenerTlsFileCertificate]
@@ -2051,9 +2051,9 @@ package appmesh {
   @js.native
   sealed trait ListenerTlsMode extends js.Any
   object ListenerTlsMode extends js.Object {
-    val DISABLED   = "DISABLED".asInstanceOf[ListenerTlsMode]
+    val DISABLED = "DISABLED".asInstanceOf[ListenerTlsMode]
     val PERMISSIVE = "PERMISSIVE".asInstanceOf[ListenerTlsMode]
-    val STRICT     = "STRICT".asInstanceOf[ListenerTlsMode]
+    val STRICT = "STRICT".asInstanceOf[ListenerTlsMode]
 
     val values = js.Object.freeze(js.Array(DISABLED, PERMISSIVE, STRICT))
   }
@@ -2093,7 +2093,7 @@ package appmesh {
         start: Double
     ): MatchRange = {
       val __obj = js.Dynamic.literal(
-        "end"   -> end.asInstanceOf[js.Any],
+        "end" -> end.asInstanceOf[js.Any],
         "start" -> start.asInstanceOf[js.Any]
       )
 
@@ -2123,8 +2123,8 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "meshName" -> meshName.asInstanceOf[js.Any],
         "metadata" -> metadata.asInstanceOf[js.Any],
-        "spec"     -> spec.asInstanceOf[js.Any],
-        "status"   -> status.asInstanceOf[js.Any]
+        "spec" -> spec.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[MeshData]
@@ -2157,13 +2157,13 @@ package appmesh {
         version: Double
     ): MeshRef = {
       val __obj = js.Dynamic.literal(
-        "arn"           -> arn.asInstanceOf[js.Any],
-        "createdAt"     -> createdAt.asInstanceOf[js.Any],
+        "arn" -> arn.asInstanceOf[js.Any],
+        "createdAt" -> createdAt.asInstanceOf[js.Any],
         "lastUpdatedAt" -> lastUpdatedAt.asInstanceOf[js.Any],
-        "meshName"      -> meshName.asInstanceOf[js.Any],
-        "meshOwner"     -> meshOwner.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "meshOwner" -> meshOwner.asInstanceOf[js.Any],
         "resourceOwner" -> resourceOwner.asInstanceOf[js.Any],
-        "version"       -> version.asInstanceOf[js.Any]
+        "version" -> version.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[MeshRef]
@@ -2211,8 +2211,8 @@ package appmesh {
   @js.native
   sealed trait MeshStatusCode extends js.Any
   object MeshStatusCode extends js.Object {
-    val ACTIVE   = "ACTIVE".asInstanceOf[MeshStatusCode]
-    val DELETED  = "DELETED".asInstanceOf[MeshStatusCode]
+    val ACTIVE = "ACTIVE".asInstanceOf[MeshStatusCode]
+    val DELETED = "DELETED".asInstanceOf[MeshStatusCode]
     val INACTIVE = "INACTIVE".asInstanceOf[MeshStatusCode]
 
     val values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
@@ -2234,7 +2234,7 @@ package appmesh {
         protocol: PortProtocol
     ): PortMapping = {
       val __obj = js.Dynamic.literal(
-        "port"     -> port.asInstanceOf[js.Any],
+        "port" -> port.asInstanceOf[js.Any],
         "protocol" -> protocol.asInstanceOf[js.Any]
       )
 
@@ -2245,10 +2245,10 @@ package appmesh {
   @js.native
   sealed trait PortProtocol extends js.Any
   object PortProtocol extends js.Object {
-    val grpc  = "grpc".asInstanceOf[PortProtocol]
-    val http  = "http".asInstanceOf[PortProtocol]
+    val grpc = "grpc".asInstanceOf[PortProtocol]
+    val http = "http".asInstanceOf[PortProtocol]
     val http2 = "http2".asInstanceOf[PortProtocol]
-    val tcp   = "tcp".asInstanceOf[PortProtocol]
+    val tcp = "tcp".asInstanceOf[PortProtocol]
 
     val values = js.Object.freeze(js.Array(grpc, http, http2, tcp))
   }
@@ -2279,13 +2279,13 @@ package appmesh {
         version: Double
     ): ResourceMetadata = {
       val __obj = js.Dynamic.literal(
-        "arn"           -> arn.asInstanceOf[js.Any],
-        "createdAt"     -> createdAt.asInstanceOf[js.Any],
+        "arn" -> arn.asInstanceOf[js.Any],
+        "createdAt" -> createdAt.asInstanceOf[js.Any],
         "lastUpdatedAt" -> lastUpdatedAt.asInstanceOf[js.Any],
-        "meshOwner"     -> meshOwner.asInstanceOf[js.Any],
+        "meshOwner" -> meshOwner.asInstanceOf[js.Any],
         "resourceOwner" -> resourceOwner.asInstanceOf[js.Any],
-        "uid"           -> uid.asInstanceOf[js.Any],
-        "version"       -> version.asInstanceOf[js.Any]
+        "uid" -> uid.asInstanceOf[js.Any],
+        "version" -> version.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ResourceMetadata]
@@ -2316,11 +2316,11 @@ package appmesh {
         virtualRouterName: ResourceName
     ): RouteData = {
       val __obj = js.Dynamic.literal(
-        "meshName"          -> meshName.asInstanceOf[js.Any],
-        "metadata"          -> metadata.asInstanceOf[js.Any],
-        "routeName"         -> routeName.asInstanceOf[js.Any],
-        "spec"              -> spec.asInstanceOf[js.Any],
-        "status"            -> status.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "metadata" -> metadata.asInstanceOf[js.Any],
+        "routeName" -> routeName.asInstanceOf[js.Any],
+        "spec" -> spec.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any],
         "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
       )
 
@@ -2358,14 +2358,14 @@ package appmesh {
         virtualRouterName: ResourceName
     ): RouteRef = {
       val __obj = js.Dynamic.literal(
-        "arn"               -> arn.asInstanceOf[js.Any],
-        "createdAt"         -> createdAt.asInstanceOf[js.Any],
-        "lastUpdatedAt"     -> lastUpdatedAt.asInstanceOf[js.Any],
-        "meshName"          -> meshName.asInstanceOf[js.Any],
-        "meshOwner"         -> meshOwner.asInstanceOf[js.Any],
-        "resourceOwner"     -> resourceOwner.asInstanceOf[js.Any],
-        "routeName"         -> routeName.asInstanceOf[js.Any],
-        "version"           -> version.asInstanceOf[js.Any],
+        "arn" -> arn.asInstanceOf[js.Any],
+        "createdAt" -> createdAt.asInstanceOf[js.Any],
+        "lastUpdatedAt" -> lastUpdatedAt.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "meshOwner" -> meshOwner.asInstanceOf[js.Any],
+        "resourceOwner" -> resourceOwner.asInstanceOf[js.Any],
+        "routeName" -> routeName.asInstanceOf[js.Any],
+        "version" -> version.asInstanceOf[js.Any],
         "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
       )
 
@@ -2428,8 +2428,8 @@ package appmesh {
   @js.native
   sealed trait RouteStatusCode extends js.Any
   object RouteStatusCode extends js.Object {
-    val ACTIVE   = "ACTIVE".asInstanceOf[RouteStatusCode]
-    val DELETED  = "DELETED".asInstanceOf[RouteStatusCode]
+    val ACTIVE = "ACTIVE".asInstanceOf[RouteStatusCode]
+    val DELETED = "DELETED".asInstanceOf[RouteStatusCode]
     val INACTIVE = "INACTIVE".asInstanceOf[RouteStatusCode]
 
     val values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
@@ -2500,7 +2500,7 @@ package appmesh {
     ): TagResourceInput = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceInput]
@@ -2693,7 +2693,7 @@ package appmesh {
     ): UntagResourceInput = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceInput]
@@ -2784,9 +2784,9 @@ package appmesh {
         meshOwner: js.UndefOr[AccountId] = js.undefined
     ): UpdateRouteInput = {
       val __obj = js.Dynamic.literal(
-        "meshName"          -> meshName.asInstanceOf[js.Any],
-        "routeName"         -> routeName.asInstanceOf[js.Any],
-        "spec"              -> spec.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "routeName" -> routeName.asInstanceOf[js.Any],
+        "spec" -> spec.asInstanceOf[js.Any],
         "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
       )
 
@@ -2837,8 +2837,8 @@ package appmesh {
         meshOwner: js.UndefOr[AccountId] = js.undefined
     ): UpdateVirtualNodeInput = {
       val __obj = js.Dynamic.literal(
-        "meshName"        -> meshName.asInstanceOf[js.Any],
-        "spec"            -> spec.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "spec" -> spec.asInstanceOf[js.Any],
         "virtualNodeName" -> virtualNodeName.asInstanceOf[js.Any]
       )
 
@@ -2889,8 +2889,8 @@ package appmesh {
         meshOwner: js.UndefOr[AccountId] = js.undefined
     ): UpdateVirtualRouterInput = {
       val __obj = js.Dynamic.literal(
-        "meshName"          -> meshName.asInstanceOf[js.Any],
-        "spec"              -> spec.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "spec" -> spec.asInstanceOf[js.Any],
         "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
       )
 
@@ -2941,8 +2941,8 @@ package appmesh {
         meshOwner: js.UndefOr[AccountId] = js.undefined
     ): UpdateVirtualServiceInput = {
       val __obj = js.Dynamic.literal(
-        "meshName"           -> meshName.asInstanceOf[js.Any],
-        "spec"               -> spec.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "spec" -> spec.asInstanceOf[js.Any],
         "virtualServiceName" -> virtualServiceName.asInstanceOf[js.Any]
       )
 
@@ -2994,10 +2994,10 @@ package appmesh {
         virtualNodeName: ResourceName
     ): VirtualNodeData = {
       val __obj = js.Dynamic.literal(
-        "meshName"        -> meshName.asInstanceOf[js.Any],
-        "metadata"        -> metadata.asInstanceOf[js.Any],
-        "spec"            -> spec.asInstanceOf[js.Any],
-        "status"          -> status.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "metadata" -> metadata.asInstanceOf[js.Any],
+        "spec" -> spec.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any],
         "virtualNodeName" -> virtualNodeName.asInstanceOf[js.Any]
       )
 
@@ -3033,13 +3033,13 @@ package appmesh {
         virtualNodeName: ResourceName
     ): VirtualNodeRef = {
       val __obj = js.Dynamic.literal(
-        "arn"             -> arn.asInstanceOf[js.Any],
-        "createdAt"       -> createdAt.asInstanceOf[js.Any],
-        "lastUpdatedAt"   -> lastUpdatedAt.asInstanceOf[js.Any],
-        "meshName"        -> meshName.asInstanceOf[js.Any],
-        "meshOwner"       -> meshOwner.asInstanceOf[js.Any],
-        "resourceOwner"   -> resourceOwner.asInstanceOf[js.Any],
-        "version"         -> version.asInstanceOf[js.Any],
+        "arn" -> arn.asInstanceOf[js.Any],
+        "createdAt" -> createdAt.asInstanceOf[js.Any],
+        "lastUpdatedAt" -> lastUpdatedAt.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "meshOwner" -> meshOwner.asInstanceOf[js.Any],
+        "resourceOwner" -> resourceOwner.asInstanceOf[js.Any],
+        "version" -> version.asInstanceOf[js.Any],
         "virtualNodeName" -> virtualNodeName.asInstanceOf[js.Any]
       )
 
@@ -3123,8 +3123,8 @@ package appmesh {
   @js.native
   sealed trait VirtualNodeStatusCode extends js.Any
   object VirtualNodeStatusCode extends js.Object {
-    val ACTIVE   = "ACTIVE".asInstanceOf[VirtualNodeStatusCode]
-    val DELETED  = "DELETED".asInstanceOf[VirtualNodeStatusCode]
+    val ACTIVE = "ACTIVE".asInstanceOf[VirtualNodeStatusCode]
+    val DELETED = "DELETED".asInstanceOf[VirtualNodeStatusCode]
     val INACTIVE = "INACTIVE".asInstanceOf[VirtualNodeStatusCode]
 
     val values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
@@ -3152,10 +3152,10 @@ package appmesh {
         virtualRouterName: ResourceName
     ): VirtualRouterData = {
       val __obj = js.Dynamic.literal(
-        "meshName"          -> meshName.asInstanceOf[js.Any],
-        "metadata"          -> metadata.asInstanceOf[js.Any],
-        "spec"              -> spec.asInstanceOf[js.Any],
-        "status"            -> status.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "metadata" -> metadata.asInstanceOf[js.Any],
+        "spec" -> spec.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any],
         "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
       )
 
@@ -3212,13 +3212,13 @@ package appmesh {
         virtualRouterName: ResourceName
     ): VirtualRouterRef = {
       val __obj = js.Dynamic.literal(
-        "arn"               -> arn.asInstanceOf[js.Any],
-        "createdAt"         -> createdAt.asInstanceOf[js.Any],
-        "lastUpdatedAt"     -> lastUpdatedAt.asInstanceOf[js.Any],
-        "meshName"          -> meshName.asInstanceOf[js.Any],
-        "meshOwner"         -> meshOwner.asInstanceOf[js.Any],
-        "resourceOwner"     -> resourceOwner.asInstanceOf[js.Any],
-        "version"           -> version.asInstanceOf[js.Any],
+        "arn" -> arn.asInstanceOf[js.Any],
+        "createdAt" -> createdAt.asInstanceOf[js.Any],
+        "lastUpdatedAt" -> lastUpdatedAt.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "meshOwner" -> meshOwner.asInstanceOf[js.Any],
+        "resourceOwner" -> resourceOwner.asInstanceOf[js.Any],
+        "version" -> version.asInstanceOf[js.Any],
         "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
       )
 
@@ -3290,8 +3290,8 @@ package appmesh {
   @js.native
   sealed trait VirtualRouterStatusCode extends js.Any
   object VirtualRouterStatusCode extends js.Object {
-    val ACTIVE   = "ACTIVE".asInstanceOf[VirtualRouterStatusCode]
-    val DELETED  = "DELETED".asInstanceOf[VirtualRouterStatusCode]
+    val ACTIVE = "ACTIVE".asInstanceOf[VirtualRouterStatusCode]
+    val DELETED = "DELETED".asInstanceOf[VirtualRouterStatusCode]
     val INACTIVE = "INACTIVE".asInstanceOf[VirtualRouterStatusCode]
 
     val values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
@@ -3343,10 +3343,10 @@ package appmesh {
         virtualServiceName: ServiceName
     ): VirtualServiceData = {
       val __obj = js.Dynamic.literal(
-        "meshName"           -> meshName.asInstanceOf[js.Any],
-        "metadata"           -> metadata.asInstanceOf[js.Any],
-        "spec"               -> spec.asInstanceOf[js.Any],
-        "status"             -> status.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "metadata" -> metadata.asInstanceOf[js.Any],
+        "spec" -> spec.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any],
         "virtualServiceName" -> virtualServiceName.asInstanceOf[js.Any]
       )
 
@@ -3404,13 +3404,13 @@ package appmesh {
         virtualServiceName: ServiceName
     ): VirtualServiceRef = {
       val __obj = js.Dynamic.literal(
-        "arn"                -> arn.asInstanceOf[js.Any],
-        "createdAt"          -> createdAt.asInstanceOf[js.Any],
-        "lastUpdatedAt"      -> lastUpdatedAt.asInstanceOf[js.Any],
-        "meshName"           -> meshName.asInstanceOf[js.Any],
-        "meshOwner"          -> meshOwner.asInstanceOf[js.Any],
-        "resourceOwner"      -> resourceOwner.asInstanceOf[js.Any],
-        "version"            -> version.asInstanceOf[js.Any],
+        "arn" -> arn.asInstanceOf[js.Any],
+        "createdAt" -> createdAt.asInstanceOf[js.Any],
+        "lastUpdatedAt" -> lastUpdatedAt.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "meshOwner" -> meshOwner.asInstanceOf[js.Any],
+        "resourceOwner" -> resourceOwner.asInstanceOf[js.Any],
+        "version" -> version.asInstanceOf[js.Any],
         "virtualServiceName" -> virtualServiceName.asInstanceOf[js.Any]
       )
 
@@ -3461,8 +3461,8 @@ package appmesh {
   @js.native
   sealed trait VirtualServiceStatusCode extends js.Any
   object VirtualServiceStatusCode extends js.Object {
-    val ACTIVE   = "ACTIVE".asInstanceOf[VirtualServiceStatusCode]
-    val DELETED  = "DELETED".asInstanceOf[VirtualServiceStatusCode]
+    val ACTIVE = "ACTIVE".asInstanceOf[VirtualServiceStatusCode]
+    val DELETED = "DELETED".asInstanceOf[VirtualServiceStatusCode]
     val INACTIVE = "INACTIVE".asInstanceOf[VirtualServiceStatusCode]
 
     val values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
@@ -3488,7 +3488,7 @@ package appmesh {
     ): WeightedTarget = {
       val __obj = js.Dynamic.literal(
         "virtualNode" -> virtualNode.asInstanceOf[js.Any],
-        "weight"      -> weight.asInstanceOf[js.Any]
+        "weight" -> weight.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[WeightedTarget]

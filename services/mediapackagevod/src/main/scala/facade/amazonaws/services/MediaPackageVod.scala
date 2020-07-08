@@ -7,21 +7,21 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object mediapackagevod {
-  type MaxResults                      = Int
-  type Tags                            = js.Dictionary[__string]
-  type __boolean                       = Boolean
-  type __integer                       = Int
-  type __listOfAssetShallow            = js.Array[AssetShallow]
-  type __listOfDashManifest            = js.Array[DashManifest]
-  type __listOfEgressEndpoint          = js.Array[EgressEndpoint]
-  type __listOfHlsManifest             = js.Array[HlsManifest]
-  type __listOfMssManifest             = js.Array[MssManifest]
-  type __listOfPackagingConfiguration  = js.Array[PackagingConfiguration]
-  type __listOfPackagingGroup          = js.Array[PackagingGroup]
+  type MaxResults = Int
+  type Tags = js.Dictionary[__string]
+  type __boolean = Boolean
+  type __integer = Int
+  type __listOfAssetShallow = js.Array[AssetShallow]
+  type __listOfDashManifest = js.Array[DashManifest]
+  type __listOfEgressEndpoint = js.Array[EgressEndpoint]
+  type __listOfHlsManifest = js.Array[HlsManifest]
+  type __listOfMssManifest = js.Array[MssManifest]
+  type __listOfPackagingConfiguration = js.Array[PackagingConfiguration]
+  type __listOfPackagingGroup = js.Array[PackagingGroup]
   type __listOf__PeriodTriggersElement = js.Array[__PeriodTriggersElement]
-  type __listOf__string                = js.Array[__string]
-  type __mapOf__string                 = js.Dictionary[__string]
-  type __string                        = String
+  type __listOf__string = js.Array[__string]
+  type __mapOf__string = js.Dictionary[__string]
+  type __string = String
 
   implicit final class MediaPackageVodOps(private val service: MediaPackageVod) extends AnyVal {
 
@@ -75,14 +75,14 @@ package mediapackagevod {
     def createAsset(params: CreateAssetRequest): Request[CreateAssetResponse] = js.native
     def createPackagingConfiguration(
         params: CreatePackagingConfigurationRequest
-    ): Request[CreatePackagingConfigurationResponse]                                                     = js.native
+    ): Request[CreatePackagingConfigurationResponse] = js.native
     def createPackagingGroup(params: CreatePackagingGroupRequest): Request[CreatePackagingGroupResponse] = js.native
-    def deleteAsset(params: DeleteAssetRequest): Request[DeleteAssetResponse]                            = js.native
+    def deleteAsset(params: DeleteAssetRequest): Request[DeleteAssetResponse] = js.native
     def deletePackagingConfiguration(
         params: DeletePackagingConfigurationRequest
-    ): Request[DeletePackagingConfigurationResponse]                                                     = js.native
+    ): Request[DeletePackagingConfigurationResponse] = js.native
     def deletePackagingGroup(params: DeletePackagingGroupRequest): Request[DeletePackagingGroupResponse] = js.native
-    def describeAsset(params: DescribeAssetRequest): Request[DescribeAssetResponse]                      = js.native
+    def describeAsset(params: DescribeAssetRequest): Request[DescribeAssetResponse] = js.native
     def describePackagingConfiguration(
         params: DescribePackagingConfigurationRequest
     ): Request[DescribePackagingConfigurationResponse] = js.native
@@ -91,20 +91,20 @@ package mediapackagevod {
     def listAssets(params: ListAssetsRequest): Request[ListAssetsResponse] = js.native
     def listPackagingConfigurations(
         params: ListPackagingConfigurationsRequest
-    ): Request[ListPackagingConfigurationsResponse]                                                      = js.native
-    def listPackagingGroups(params: ListPackagingGroupsRequest): Request[ListPackagingGroupsResponse]    = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]    = js.native
-    def tagResource(params: TagResourceRequest): Request[js.Object]                                      = js.native
-    def untagResource(params: UntagResourceRequest): Request[js.Object]                                  = js.native
+    ): Request[ListPackagingConfigurationsResponse] = js.native
+    def listPackagingGroups(params: ListPackagingGroupsRequest): Request[ListPackagingGroupsResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
+    def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updatePackagingGroup(params: UpdatePackagingGroupRequest): Request[UpdatePackagingGroupResponse] = js.native
   }
 
   @js.native
   sealed trait AdMarkers extends js.Any
   object AdMarkers extends js.Object {
-    val NONE            = "NONE".asInstanceOf[AdMarkers]
+    val NONE = "NONE".asInstanceOf[AdMarkers]
     val SCTE35_ENHANCED = "SCTE35_ENHANCED".asInstanceOf[AdMarkers]
-    val PASSTHROUGH     = "PASSTHROUGH".asInstanceOf[AdMarkers]
+    val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[AdMarkers]
 
     val values = js.Object.freeze(js.Array(NONE, SCTE35_ENHANCED, PASSTHROUGH))
   }
@@ -166,7 +166,7 @@ package mediapackagevod {
     ): Authorization = {
       val __obj = js.Dynamic.literal(
         "CdnIdentifierSecret" -> CdnIdentifierSecret.asInstanceOf[js.Any],
-        "SecretsRoleArn"      -> SecretsRoleArn.asInstanceOf[js.Any]
+        "SecretsRoleArn" -> SecretsRoleArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[Authorization]
@@ -245,10 +245,10 @@ package mediapackagevod {
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateAssetRequest = {
       val __obj = js.Dynamic.literal(
-        "Id"               -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "PackagingGroupId" -> PackagingGroupId.asInstanceOf[js.Any],
-        "SourceArn"        -> SourceArn.asInstanceOf[js.Any],
-        "SourceRoleArn"    -> SourceRoleArn.asInstanceOf[js.Any]
+        "SourceArn" -> SourceArn.asInstanceOf[js.Any],
+        "SourceRoleArn" -> SourceRoleArn.asInstanceOf[js.Any]
       )
 
       ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
@@ -323,7 +323,7 @@ package mediapackagevod {
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreatePackagingConfigurationRequest = {
       val __obj = js.Dynamic.literal(
-        "Id"               -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "PackagingGroupId" -> PackagingGroupId.asInstanceOf[js.Any]
       )
 
@@ -790,7 +790,7 @@ package mediapackagevod {
   @js.native
   sealed trait EncryptionMethod extends js.Any
   object EncryptionMethod extends js.Object {
-    val AES_128    = "AES_128".asInstanceOf[EncryptionMethod]
+    val AES_128 = "AES_128".asInstanceOf[EncryptionMethod]
     val SAMPLE_AES = "SAMPLE_AES".asInstanceOf[EncryptionMethod]
 
     val values = js.Object.freeze(js.Array(AES_128, SAMPLE_AES))
@@ -1048,7 +1048,7 @@ package mediapackagevod {
   @js.native
   sealed trait ManifestLayout extends js.Any
   object ManifestLayout extends js.Object {
-    val FULL    = "FULL".asInstanceOf[ManifestLayout]
+    val FULL = "FULL".asInstanceOf[ManifestLayout]
     val COMPACT = "COMPACT".asInstanceOf[ManifestLayout]
 
     val values = js.Object.freeze(js.Array(FULL, COMPACT))
@@ -1198,7 +1198,7 @@ package mediapackagevod {
   @js.native
   sealed trait Profile extends js.Any
   object Profile extends js.Object {
-    val NONE      = "NONE".asInstanceOf[Profile]
+    val NONE = "NONE".asInstanceOf[Profile]
     val HBBTV_1_5 = "HBBTV_1_5".asInstanceOf[Profile]
 
     val values = js.Object.freeze(js.Array(NONE, HBBTV_1_5))
@@ -1208,7 +1208,7 @@ package mediapackagevod {
   sealed trait SegmentTemplateFormat extends js.Any
   object SegmentTemplateFormat extends js.Object {
     val NUMBER_WITH_TIMELINE = "NUMBER_WITH_TIMELINE".asInstanceOf[SegmentTemplateFormat]
-    val TIME_WITH_TIMELINE   = "TIME_WITH_TIMELINE".asInstanceOf[SegmentTemplateFormat]
+    val TIME_WITH_TIMELINE = "TIME_WITH_TIMELINE".asInstanceOf[SegmentTemplateFormat]
     val NUMBER_WITH_DURATION = "NUMBER_WITH_DURATION".asInstanceOf[SegmentTemplateFormat]
 
     val values = js.Object.freeze(js.Array(NUMBER_WITH_TIMELINE, TIME_WITH_TIMELINE, NUMBER_WITH_DURATION))
@@ -1232,9 +1232,9 @@ package mediapackagevod {
         Url: __string
     ): SpekeKeyProvider = {
       val __obj = js.Dynamic.literal(
-        "RoleArn"   -> RoleArn.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
         "SystemIds" -> SystemIds.asInstanceOf[js.Any],
-        "Url"       -> Url.asInstanceOf[js.Any]
+        "Url" -> Url.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[SpekeKeyProvider]
@@ -1244,8 +1244,8 @@ package mediapackagevod {
   @js.native
   sealed trait StreamOrder extends js.Any
   object StreamOrder extends js.Object {
-    val ORIGINAL                 = "ORIGINAL".asInstanceOf[StreamOrder]
-    val VIDEO_BITRATE_ASCENDING  = "VIDEO_BITRATE_ASCENDING".asInstanceOf[StreamOrder]
+    val ORIGINAL = "ORIGINAL".asInstanceOf[StreamOrder]
+    val VIDEO_BITRATE_ASCENDING = "VIDEO_BITRATE_ASCENDING".asInstanceOf[StreamOrder]
     val VIDEO_BITRATE_DESCENDING = "VIDEO_BITRATE_DESCENDING".asInstanceOf[StreamOrder]
 
     val values = js.Object.freeze(js.Array(ORIGINAL, VIDEO_BITRATE_ASCENDING, VIDEO_BITRATE_DESCENDING))
@@ -1290,7 +1290,7 @@ package mediapackagevod {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -1311,7 +1311,7 @@ package mediapackagevod {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]

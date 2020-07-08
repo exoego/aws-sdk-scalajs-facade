@@ -7,22 +7,22 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object connectparticipant {
-  type ChatContent            = String
-  type ChatContentType        = String
-  type ChatItemId             = String
-  type ClientToken            = String
-  type ConnectionTypeList     = js.Array[ConnectionType]
-  type ContactId              = String
-  type DisplayName            = String
-  type ISO8601Datetime        = String
-  type Instant                = String
-  type MaxResults             = Int
-  type MostRecent             = Int
-  type NextToken              = String
-  type ParticipantId          = String
-  type ParticipantToken       = String
+  type ChatContent = String
+  type ChatContentType = String
+  type ChatItemId = String
+  type ClientToken = String
+  type ConnectionTypeList = js.Array[ConnectionType]
+  type ContactId = String
+  type DisplayName = String
+  type ISO8601Datetime = String
+  type Instant = String
+  type MaxResults = Int
+  type MostRecent = Int
+  type NextToken = String
+  type ParticipantId = String
+  type ParticipantToken = String
   type PreSignedConnectionUrl = String
-  type Transcript             = js.Array[Item]
+  type Transcript = js.Array[Item]
 
   implicit final class ConnectParticipantOps(private val service: ConnectParticipant) extends AnyVal {
 
@@ -49,18 +49,18 @@ package connectparticipant {
 
     def createParticipantConnection(
         params: CreateParticipantConnectionRequest
-    ): Request[CreateParticipantConnectionResponse]                                                         = js.native
+    ): Request[CreateParticipantConnectionResponse] = js.native
     def disconnectParticipant(params: DisconnectParticipantRequest): Request[DisconnectParticipantResponse] = js.native
-    def getTranscript(params: GetTranscriptRequest): Request[GetTranscriptResponse]                         = js.native
-    def sendEvent(params: SendEventRequest): Request[SendEventResponse]                                     = js.native
-    def sendMessage(params: SendMessageRequest): Request[SendMessageResponse]                               = js.native
+    def getTranscript(params: GetTranscriptRequest): Request[GetTranscriptResponse] = js.native
+    def sendEvent(params: SendEventRequest): Request[SendEventResponse] = js.native
+    def sendMessage(params: SendMessageRequest): Request[SendMessageResponse] = js.native
   }
 
   @js.native
   sealed trait ChatItemType extends js.Any
   object ChatItemType extends js.Object {
-    val MESSAGE        = "MESSAGE".asInstanceOf[ChatItemType]
-    val EVENT          = "EVENT".asInstanceOf[ChatItemType]
+    val MESSAGE = "MESSAGE".asInstanceOf[ChatItemType]
+    val EVENT = "EVENT".asInstanceOf[ChatItemType]
     val CONNECTION_ACK = "CONNECTION_ACK".asInstanceOf[ChatItemType]
 
     val values = js.Object.freeze(js.Array(MESSAGE, EVENT, CONNECTION_ACK))
@@ -91,7 +91,7 @@ package connectparticipant {
   @js.native
   sealed trait ConnectionType extends js.Any
   object ConnectionType extends js.Object {
-    val WEBSOCKET              = "WEBSOCKET".asInstanceOf[ConnectionType]
+    val WEBSOCKET = "WEBSOCKET".asInstanceOf[ConnectionType]
     val CONNECTION_CREDENTIALS = "CONNECTION_CREDENTIALS".asInstanceOf[ConnectionType]
 
     val values = js.Object.freeze(js.Array(WEBSOCKET, CONNECTION_CREDENTIALS))
@@ -111,7 +111,7 @@ package connectparticipant {
     ): CreateParticipantConnectionRequest = {
       val __obj = js.Dynamic.literal(
         "ParticipantToken" -> ParticipantToken.asInstanceOf[js.Any],
-        "Type"             -> Type.asInstanceOf[js.Any]
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateParticipantConnectionRequest]
@@ -272,9 +272,9 @@ package connectparticipant {
   @js.native
   sealed trait ParticipantRole extends js.Any
   object ParticipantRole extends js.Object {
-    val AGENT    = "AGENT".asInstanceOf[ParticipantRole]
+    val AGENT = "AGENT".asInstanceOf[ParticipantRole]
     val CUSTOMER = "CUSTOMER".asInstanceOf[ParticipantRole]
-    val SYSTEM   = "SYSTEM".asInstanceOf[ParticipantRole]
+    val SYSTEM = "SYSTEM".asInstanceOf[ParticipantRole]
 
     val values = js.Object.freeze(js.Array(AGENT, CUSTOMER, SYSTEM))
   }
@@ -282,7 +282,7 @@ package connectparticipant {
   @js.native
   sealed trait ScanDirection extends js.Any
   object ScanDirection extends js.Object {
-    val FORWARD  = "FORWARD".asInstanceOf[ScanDirection]
+    val FORWARD = "FORWARD".asInstanceOf[ScanDirection]
     val BACKWARD = "BACKWARD".asInstanceOf[ScanDirection]
 
     val values = js.Object.freeze(js.Array(FORWARD, BACKWARD))
@@ -306,7 +306,7 @@ package connectparticipant {
     ): SendEventRequest = {
       val __obj = js.Dynamic.literal(
         "ConnectionToken" -> ConnectionToken.asInstanceOf[js.Any],
-        "ContentType"     -> ContentType.asInstanceOf[js.Any]
+        "ContentType" -> ContentType.asInstanceOf[js.Any]
       )
 
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
@@ -352,8 +352,8 @@ package connectparticipant {
     ): SendMessageRequest = {
       val __obj = js.Dynamic.literal(
         "ConnectionToken" -> ConnectionToken.asInstanceOf[js.Any],
-        "Content"         -> Content.asInstanceOf[js.Any],
-        "ContentType"     -> ContentType.asInstanceOf[js.Any]
+        "Content" -> Content.asInstanceOf[js.Any],
+        "ContentType" -> ContentType.asInstanceOf[js.Any]
       )
 
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
@@ -384,7 +384,7 @@ package connectparticipant {
   sealed trait SortKey extends js.Any
   object SortKey extends js.Object {
     val DESCENDING = "DESCENDING".asInstanceOf[SortKey]
-    val ASCENDING  = "ASCENDING".asInstanceOf[SortKey]
+    val ASCENDING = "ASCENDING".asInstanceOf[SortKey]
 
     val values = js.Object.freeze(js.Array(DESCENDING, ASCENDING))
   }

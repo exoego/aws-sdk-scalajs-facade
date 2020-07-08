@@ -7,31 +7,31 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object greengrass {
-  type BulkDeploymentResults                       = js.Array[BulkDeploymentResult]
-  type BulkDeployments                             = js.Array[BulkDeployment]
-  type Deployments                                 = js.Array[Deployment]
-  type ErrorDetails                                = js.Array[ErrorDetail]
-  type S3UrlSignerRole                             = String
-  type Tags                                        = js.Dictionary[__string]
-  type UpdateTargets                               = js.Array[__string]
-  type __boolean                                   = Boolean
-  type __integer                                   = Int
-  type __listOfConnectivityInfo                    = js.Array[ConnectivityInfo]
-  type __listOfConnector                           = js.Array[Connector]
-  type __listOfCore                                = js.Array[Core]
-  type __listOfDefinitionInformation               = js.Array[DefinitionInformation]
-  type __listOfDevice                              = js.Array[Device]
-  type __listOfFunction                            = js.Array[Function]
+  type BulkDeploymentResults = js.Array[BulkDeploymentResult]
+  type BulkDeployments = js.Array[BulkDeployment]
+  type Deployments = js.Array[Deployment]
+  type ErrorDetails = js.Array[ErrorDetail]
+  type S3UrlSignerRole = String
+  type Tags = js.Dictionary[__string]
+  type UpdateTargets = js.Array[__string]
+  type __boolean = Boolean
+  type __integer = Int
+  type __listOfConnectivityInfo = js.Array[ConnectivityInfo]
+  type __listOfConnector = js.Array[Connector]
+  type __listOfCore = js.Array[Core]
+  type __listOfDefinitionInformation = js.Array[DefinitionInformation]
+  type __listOfDevice = js.Array[Device]
+  type __listOfFunction = js.Array[Function]
   type __listOfGroupCertificateAuthorityProperties = js.Array[GroupCertificateAuthorityProperties]
-  type __listOfGroupInformation                    = js.Array[GroupInformation]
-  type __listOfLogger                              = js.Array[Logger]
-  type __listOfResource                            = js.Array[Resource]
-  type __listOfResourceAccessPolicy                = js.Array[ResourceAccessPolicy]
-  type __listOfSubscription                        = js.Array[Subscription]
-  type __listOfVersionInformation                  = js.Array[VersionInformation]
-  type __listOf__string                            = js.Array[__string]
-  type __mapOf__string                             = js.Dictionary[__string]
-  type __string                                    = String
+  type __listOfGroupInformation = js.Array[GroupInformation]
+  type __listOfLogger = js.Array[Logger]
+  type __listOfResource = js.Array[Resource]
+  type __listOfResourceAccessPolicy = js.Array[ResourceAccessPolicy]
+  type __listOfSubscription = js.Array[Subscription]
+  type __listOfVersionInformation = js.Array[VersionInformation]
+  type __listOf__string = js.Array[__string]
+  type __mapOf__string = js.Dictionary[__string]
+  type __string = String
 
   implicit final class GreengrassOps(private val service: Greengrass) extends AnyVal {
 
@@ -310,11 +310,11 @@ package greengrass {
     ): Request[CreateConnectorDefinitionResponse] = js.native
     def createConnectorDefinitionVersion(
         params: CreateConnectorDefinitionVersionRequest
-    ): Request[CreateConnectorDefinitionVersionResponse]                                                 = js.native
+    ): Request[CreateConnectorDefinitionVersionResponse] = js.native
     def createCoreDefinition(params: CreateCoreDefinitionRequest): Request[CreateCoreDefinitionResponse] = js.native
     def createCoreDefinitionVersion(
         params: CreateCoreDefinitionVersionRequest
-    ): Request[CreateCoreDefinitionVersionResponse]                                          = js.native
+    ): Request[CreateCoreDefinitionVersionResponse] = js.native
     def createDeployment(params: CreateDeploymentRequest): Request[CreateDeploymentResponse] = js.native
     def createDeviceDefinition(params: CreateDeviceDefinitionRequest): Request[CreateDeviceDefinitionResponse] =
       js.native
@@ -325,11 +325,11 @@ package greengrass {
       js.native
     def createFunctionDefinitionVersion(
         params: CreateFunctionDefinitionVersionRequest
-    ): Request[CreateFunctionDefinitionVersionResponse]                       = js.native
+    ): Request[CreateFunctionDefinitionVersionResponse] = js.native
     def createGroup(params: CreateGroupRequest): Request[CreateGroupResponse] = js.native
     def createGroupCertificateAuthority(
         params: CreateGroupCertificateAuthorityRequest
-    ): Request[CreateGroupCertificateAuthorityResponse]                                            = js.native
+    ): Request[CreateGroupCertificateAuthorityResponse] = js.native
     def createGroupVersion(params: CreateGroupVersionRequest): Request[CreateGroupVersionResponse] = js.native
     def createLoggerDefinition(params: CreateLoggerDefinitionRequest): Request[CreateLoggerDefinitionResponse] =
       js.native
@@ -351,7 +351,7 @@ package greengrass {
     ): Request[CreateSubscriptionDefinitionVersionResponse] = js.native
     def deleteConnectorDefinition(
         params: DeleteConnectorDefinitionRequest
-    ): Request[DeleteConnectorDefinitionResponse]                                                        = js.native
+    ): Request[DeleteConnectorDefinitionResponse] = js.native
     def deleteCoreDefinition(params: DeleteCoreDefinitionRequest): Request[DeleteCoreDefinitionResponse] = js.native
     def deleteDeviceDefinition(params: DeleteDeviceDefinitionRequest): Request[DeleteDeviceDefinitionResponse] =
       js.native
@@ -370,7 +370,7 @@ package greengrass {
     ): Request[DisassociateRoleFromGroupResponse] = js.native
     def disassociateServiceRoleFromAccount(
         params: DisassociateServiceRoleFromAccountRequest
-    ): Request[DisassociateServiceRoleFromAccountResponse]                                      = js.native
+    ): Request[DisassociateServiceRoleFromAccountResponse] = js.native
     def getAssociatedRole(params: GetAssociatedRoleRequest): Request[GetAssociatedRoleResponse] = js.native
     def getBulkDeploymentStatus(params: GetBulkDeploymentStatusRequest): Request[GetBulkDeploymentStatusResponse] =
       js.native
@@ -379,7 +379,7 @@ package greengrass {
       js.native
     def getConnectorDefinitionVersion(
         params: GetConnectorDefinitionVersionRequest
-    ): Request[GetConnectorDefinitionVersionResponse]                                           = js.native
+    ): Request[GetConnectorDefinitionVersionResponse] = js.native
     def getCoreDefinition(params: GetCoreDefinitionRequest): Request[GetCoreDefinitionResponse] = js.native
     def getCoreDefinitionVersion(params: GetCoreDefinitionVersionRequest): Request[GetCoreDefinitionVersionResponse] =
       js.native
@@ -387,23 +387,23 @@ package greengrass {
     def getDeviceDefinition(params: GetDeviceDefinitionRequest): Request[GetDeviceDefinitionResponse] = js.native
     def getDeviceDefinitionVersion(
         params: GetDeviceDefinitionVersionRequest
-    ): Request[GetDeviceDefinitionVersionResponse]                                                          = js.native
+    ): Request[GetDeviceDefinitionVersionResponse] = js.native
     def getFunctionDefinition(params: GetFunctionDefinitionRequest): Request[GetFunctionDefinitionResponse] = js.native
     def getFunctionDefinitionVersion(
         params: GetFunctionDefinitionVersionRequest
-    ): Request[GetFunctionDefinitionVersionResponse]                 = js.native
+    ): Request[GetFunctionDefinitionVersionResponse] = js.native
     def getGroup(params: GetGroupRequest): Request[GetGroupResponse] = js.native
     def getGroupCertificateAuthority(
         params: GetGroupCertificateAuthorityRequest
     ): Request[GetGroupCertificateAuthorityResponse] = js.native
     def getGroupCertificateConfiguration(
         params: GetGroupCertificateConfigurationRequest
-    ): Request[GetGroupCertificateConfigurationResponse]                                              = js.native
-    def getGroupVersion(params: GetGroupVersionRequest): Request[GetGroupVersionResponse]             = js.native
+    ): Request[GetGroupCertificateConfigurationResponse] = js.native
+    def getGroupVersion(params: GetGroupVersionRequest): Request[GetGroupVersionResponse] = js.native
     def getLoggerDefinition(params: GetLoggerDefinitionRequest): Request[GetLoggerDefinitionResponse] = js.native
     def getLoggerDefinitionVersion(
         params: GetLoggerDefinitionVersionRequest
-    ): Request[GetLoggerDefinitionVersionResponse]                                                          = js.native
+    ): Request[GetLoggerDefinitionVersionResponse] = js.native
     def getResourceDefinition(params: GetResourceDefinitionRequest): Request[GetResourceDefinitionResponse] = js.native
     def getResourceDefinitionVersion(
         params: GetResourceDefinitionVersionRequest
@@ -418,7 +418,7 @@ package greengrass {
     ): Request[GetSubscriptionDefinitionVersionResponse] = js.native
     def listBulkDeploymentDetailedReports(
         params: ListBulkDeploymentDetailedReportsRequest
-    ): Request[ListBulkDeploymentDetailedReportsResponse]                                             = js.native
+    ): Request[ListBulkDeploymentDetailedReportsResponse] = js.native
     def listBulkDeployments(params: ListBulkDeploymentsRequest): Request[ListBulkDeploymentsResponse] = js.native
     def listConnectorDefinitionVersions(
         params: ListConnectorDefinitionVersionsRequest
@@ -427,12 +427,12 @@ package greengrass {
       js.native
     def listCoreDefinitionVersions(
         params: ListCoreDefinitionVersionsRequest
-    ): Request[ListCoreDefinitionVersionsResponse]                                                    = js.native
+    ): Request[ListCoreDefinitionVersionsResponse] = js.native
     def listCoreDefinitions(params: ListCoreDefinitionsRequest): Request[ListCoreDefinitionsResponse] = js.native
-    def listDeployments(params: ListDeploymentsRequest): Request[ListDeploymentsResponse]             = js.native
+    def listDeployments(params: ListDeploymentsRequest): Request[ListDeploymentsResponse] = js.native
     def listDeviceDefinitionVersions(
         params: ListDeviceDefinitionVersionsRequest
-    ): Request[ListDeviceDefinitionVersionsResponse]                                                        = js.native
+    ): Request[ListDeviceDefinitionVersionsResponse] = js.native
     def listDeviceDefinitions(params: ListDeviceDefinitionsRequest): Request[ListDeviceDefinitionsResponse] = js.native
     def listFunctionDefinitionVersions(
         params: ListFunctionDefinitionVersionsRequest
@@ -441,12 +441,12 @@ package greengrass {
       js.native
     def listGroupCertificateAuthorities(
         params: ListGroupCertificateAuthoritiesRequest
-    ): Request[ListGroupCertificateAuthoritiesResponse]                                         = js.native
+    ): Request[ListGroupCertificateAuthoritiesResponse] = js.native
     def listGroupVersions(params: ListGroupVersionsRequest): Request[ListGroupVersionsResponse] = js.native
-    def listGroups(params: ListGroupsRequest): Request[ListGroupsResponse]                      = js.native
+    def listGroups(params: ListGroupsRequest): Request[ListGroupsResponse] = js.native
     def listLoggerDefinitionVersions(
         params: ListLoggerDefinitionVersionsRequest
-    ): Request[ListLoggerDefinitionVersionsResponse]                                                        = js.native
+    ): Request[ListLoggerDefinitionVersionsResponse] = js.native
     def listLoggerDefinitions(params: ListLoggerDefinitionsRequest): Request[ListLoggerDefinitionsResponse] = js.native
     def listResourceDefinitionVersions(
         params: ListResourceDefinitionVersionsRequest
@@ -458,18 +458,18 @@ package greengrass {
     ): Request[ListSubscriptionDefinitionVersionsResponse] = js.native
     def listSubscriptionDefinitions(
         params: ListSubscriptionDefinitionsRequest
-    ): Request[ListSubscriptionDefinitionsResponse]                                                   = js.native
+    ): Request[ListSubscriptionDefinitionsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def resetDeployments(params: ResetDeploymentsRequest): Request[ResetDeploymentsResponse]          = js.native
+    def resetDeployments(params: ResetDeploymentsRequest): Request[ResetDeploymentsResponse] = js.native
     def startBulkDeployment(params: StartBulkDeploymentRequest): Request[StartBulkDeploymentResponse] = js.native
-    def stopBulkDeployment(params: StopBulkDeploymentRequest): Request[StopBulkDeploymentResponse]    = js.native
-    def tagResource(params: TagResourceRequest): Request[js.Object]                                   = js.native
-    def untagResource(params: UntagResourceRequest): Request[js.Object]                               = js.native
+    def stopBulkDeployment(params: StopBulkDeploymentRequest): Request[StopBulkDeploymentResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
+    def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateConnectivityInfo(params: UpdateConnectivityInfoRequest): Request[UpdateConnectivityInfoResponse] =
       js.native
     def updateConnectorDefinition(
         params: UpdateConnectorDefinitionRequest
-    ): Request[UpdateConnectorDefinitionResponse]                                                        = js.native
+    ): Request[UpdateConnectorDefinitionResponse] = js.native
     def updateCoreDefinition(params: UpdateCoreDefinitionRequest): Request[UpdateCoreDefinitionResponse] = js.native
     def updateDeviceDefinition(params: UpdateDeviceDefinitionRequest): Request[UpdateDeviceDefinitionResponse] =
       js.native
@@ -656,11 +656,11 @@ package greengrass {
   sealed trait BulkDeploymentStatus extends js.Any
   object BulkDeploymentStatus extends js.Object {
     val Initializing = "Initializing".asInstanceOf[BulkDeploymentStatus]
-    val Running      = "Running".asInstanceOf[BulkDeploymentStatus]
-    val Completed    = "Completed".asInstanceOf[BulkDeploymentStatus]
-    val Stopping     = "Stopping".asInstanceOf[BulkDeploymentStatus]
-    val Stopped      = "Stopped".asInstanceOf[BulkDeploymentStatus]
-    val Failed       = "Failed".asInstanceOf[BulkDeploymentStatus]
+    val Running = "Running".asInstanceOf[BulkDeploymentStatus]
+    val Completed = "Completed".asInstanceOf[BulkDeploymentStatus]
+    val Stopping = "Stopping".asInstanceOf[BulkDeploymentStatus]
+    val Stopped = "Stopped".asInstanceOf[BulkDeploymentStatus]
+    val Failed = "Failed".asInstanceOf[BulkDeploymentStatus]
 
     val values = js.Object.freeze(js.Array(Initializing, Running, Completed, Stopping, Stopped, Failed))
   }
@@ -712,7 +712,7 @@ package greengrass {
     ): Connector = {
       val __obj = js.Dynamic.literal(
         "ConnectorArn" -> ConnectorArn.asInstanceOf[js.Any],
-        "Id"           -> Id.asInstanceOf[js.Any]
+        "Id" -> Id.asInstanceOf[js.Any]
       )
 
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
@@ -760,8 +760,8 @@ package greengrass {
     ): Core = {
       val __obj = js.Dynamic.literal(
         "CertificateArn" -> CertificateArn.asInstanceOf[js.Any],
-        "Id"             -> Id.asInstanceOf[js.Any],
-        "ThingArn"       -> ThingArn.asInstanceOf[js.Any]
+        "Id" -> Id.asInstanceOf[js.Any],
+        "ThingArn" -> ThingArn.asInstanceOf[js.Any]
       )
 
       SyncShadow.foreach(__v => __obj.updateDynamic("SyncShadow")(__v.asInstanceOf[js.Any]))
@@ -1027,7 +1027,7 @@ package greengrass {
     ): CreateDeploymentRequest = {
       val __obj = js.Dynamic.literal(
         "DeploymentType" -> DeploymentType.asInstanceOf[js.Any],
-        "GroupId"        -> GroupId.asInstanceOf[js.Any]
+        "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
 
       AmznClientToken.foreach(__v => __obj.updateDynamic("AmznClientToken")(__v.asInstanceOf[js.Any]))
@@ -1694,10 +1694,10 @@ package greengrass {
         UpdateAgentLogLevel: js.UndefOr[UpdateAgentLogLevel] = js.undefined
     ): CreateSoftwareUpdateJobRequest = {
       val __obj = js.Dynamic.literal(
-        "S3UrlSignerRole"              -> S3UrlSignerRole.asInstanceOf[js.Any],
-        "SoftwareToUpdate"             -> SoftwareToUpdate.asInstanceOf[js.Any],
-        "UpdateTargets"                -> UpdateTargets.asInstanceOf[js.Any],
-        "UpdateTargetsArchitecture"    -> UpdateTargetsArchitecture.asInstanceOf[js.Any],
+        "S3UrlSignerRole" -> S3UrlSignerRole.asInstanceOf[js.Any],
+        "SoftwareToUpdate" -> SoftwareToUpdate.asInstanceOf[js.Any],
+        "UpdateTargets" -> UpdateTargets.asInstanceOf[js.Any],
+        "UpdateTargetsArchitecture" -> UpdateTargetsArchitecture.asInstanceOf[js.Any],
         "UpdateTargetsOperatingSystem" -> UpdateTargetsOperatingSystem.asInstanceOf[js.Any]
       )
 
@@ -2162,9 +2162,9 @@ package greengrass {
   @js.native
   sealed trait DeploymentType extends js.Any
   object DeploymentType extends js.Object {
-    val NewDeployment        = "NewDeployment".asInstanceOf[DeploymentType]
-    val Redeployment         = "Redeployment".asInstanceOf[DeploymentType]
-    val ResetDeployment      = "ResetDeployment".asInstanceOf[DeploymentType]
+    val NewDeployment = "NewDeployment".asInstanceOf[DeploymentType]
+    val Redeployment = "Redeployment".asInstanceOf[DeploymentType]
+    val ResetDeployment = "ResetDeployment".asInstanceOf[DeploymentType]
     val ForceResetDeployment = "ForceResetDeployment".asInstanceOf[DeploymentType]
 
     val values = js.Object.freeze(js.Array(NewDeployment, Redeployment, ResetDeployment, ForceResetDeployment))
@@ -2191,8 +2191,8 @@ package greengrass {
     ): Device = {
       val __obj = js.Dynamic.literal(
         "CertificateArn" -> CertificateArn.asInstanceOf[js.Any],
-        "Id"             -> Id.asInstanceOf[js.Any],
-        "ThingArn"       -> ThingArn.asInstanceOf[js.Any]
+        "Id" -> Id.asInstanceOf[js.Any],
+        "ThingArn" -> ThingArn.asInstanceOf[js.Any]
       )
 
       SyncShadow.foreach(__v => __obj.updateDynamic("SyncShadow")(__v.asInstanceOf[js.Any]))
@@ -2286,7 +2286,7 @@ package greengrass {
   sealed trait EncodingType extends js.Any
   object EncodingType extends js.Object {
     val binary = "binary".asInstanceOf[EncodingType]
-    val json   = "json".asInstanceOf[EncodingType]
+    val json = "json".asInstanceOf[EncodingType]
 
     val values = js.Object.freeze(js.Array(binary, json))
   }
@@ -2497,7 +2497,7 @@ package greengrass {
   sealed trait FunctionIsolationMode extends js.Any
   object FunctionIsolationMode extends js.Object {
     val GreengrassContainer = "GreengrassContainer".asInstanceOf[FunctionIsolationMode]
-    val NoContainer         = "NoContainer".asInstanceOf[FunctionIsolationMode]
+    val NoContainer = "NoContainer".asInstanceOf[FunctionIsolationMode]
 
     val values = js.Object.freeze(js.Array(GreengrassContainer, NoContainer))
   }
@@ -2717,7 +2717,7 @@ package greengrass {
         NextToken: js.UndefOr[__string] = js.undefined
     ): GetConnectorDefinitionVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "ConnectorDefinitionId"        -> ConnectorDefinitionId.asInstanceOf[js.Any],
+        "ConnectorDefinitionId" -> ConnectorDefinitionId.asInstanceOf[js.Any],
         "ConnectorDefinitionVersionId" -> ConnectorDefinitionVersionId.asInstanceOf[js.Any]
       )
 
@@ -2825,7 +2825,7 @@ package greengrass {
         CoreDefinitionVersionId: __string
     ): GetCoreDefinitionVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "CoreDefinitionId"        -> CoreDefinitionId.asInstanceOf[js.Any],
+        "CoreDefinitionId" -> CoreDefinitionId.asInstanceOf[js.Any],
         "CoreDefinitionVersionId" -> CoreDefinitionVersionId.asInstanceOf[js.Any]
       )
 
@@ -2878,7 +2878,7 @@ package greengrass {
     ): GetDeploymentStatusRequest = {
       val __obj = js.Dynamic.literal(
         "DeploymentId" -> DeploymentId.asInstanceOf[js.Any],
-        "GroupId"      -> GroupId.asInstanceOf[js.Any]
+        "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetDeploymentStatusRequest]
@@ -2983,7 +2983,7 @@ package greengrass {
         NextToken: js.UndefOr[__string] = js.undefined
     ): GetDeviceDefinitionVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "DeviceDefinitionId"        -> DeviceDefinitionId.asInstanceOf[js.Any],
+        "DeviceDefinitionId" -> DeviceDefinitionId.asInstanceOf[js.Any],
         "DeviceDefinitionVersionId" -> DeviceDefinitionVersionId.asInstanceOf[js.Any]
       )
 
@@ -3093,7 +3093,7 @@ package greengrass {
         NextToken: js.UndefOr[__string] = js.undefined
     ): GetFunctionDefinitionVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "FunctionDefinitionId"        -> FunctionDefinitionId.asInstanceOf[js.Any],
+        "FunctionDefinitionId" -> FunctionDefinitionId.asInstanceOf[js.Any],
         "FunctionDefinitionVersionId" -> FunctionDefinitionVersionId.asInstanceOf[js.Any]
       )
 
@@ -3147,7 +3147,7 @@ package greengrass {
     ): GetGroupCertificateAuthorityRequest = {
       val __obj = js.Dynamic.literal(
         "CertificateAuthorityId" -> CertificateAuthorityId.asInstanceOf[js.Any],
-        "GroupId"                -> GroupId.asInstanceOf[js.Any]
+        "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetGroupCertificateAuthorityRequest]
@@ -3292,7 +3292,7 @@ package greengrass {
         GroupVersionId: __string
     ): GetGroupVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "GroupId"        -> GroupId.asInstanceOf[js.Any],
+        "GroupId" -> GroupId.asInstanceOf[js.Any],
         "GroupVersionId" -> GroupVersionId.asInstanceOf[js.Any]
       )
 
@@ -3398,7 +3398,7 @@ package greengrass {
         NextToken: js.UndefOr[__string] = js.undefined
     ): GetLoggerDefinitionVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "LoggerDefinitionId"        -> LoggerDefinitionId.asInstanceOf[js.Any],
+        "LoggerDefinitionId" -> LoggerDefinitionId.asInstanceOf[js.Any],
         "LoggerDefinitionVersionId" -> LoggerDefinitionVersionId.asInstanceOf[js.Any]
       )
 
@@ -3503,7 +3503,7 @@ package greengrass {
         ResourceDefinitionVersionId: __string
     ): GetResourceDefinitionVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "ResourceDefinitionId"        -> ResourceDefinitionId.asInstanceOf[js.Any],
+        "ResourceDefinitionId" -> ResourceDefinitionId.asInstanceOf[js.Any],
         "ResourceDefinitionVersionId" -> ResourceDefinitionVersionId.asInstanceOf[js.Any]
       )
 
@@ -3641,7 +3641,7 @@ package greengrass {
         NextToken: js.UndefOr[__string] = js.undefined
     ): GetSubscriptionDefinitionVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "SubscriptionDefinitionId"        -> SubscriptionDefinitionId.asInstanceOf[js.Any],
+        "SubscriptionDefinitionId" -> SubscriptionDefinitionId.asInstanceOf[js.Any],
         "SubscriptionDefinitionVersionId" -> SubscriptionDefinitionVersionId.asInstanceOf[js.Any]
       )
 
@@ -4727,9 +4727,9 @@ package greengrass {
     ): Logger = {
       val __obj = js.Dynamic.literal(
         "Component" -> Component.asInstanceOf[js.Any],
-        "Id"        -> Id.asInstanceOf[js.Any],
-        "Level"     -> Level.asInstanceOf[js.Any],
-        "Type"      -> Type.asInstanceOf[js.Any]
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Level" -> Level.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       Space.foreach(__v => __obj.updateDynamic("Space")(__v.asInstanceOf[js.Any]))
@@ -4741,7 +4741,7 @@ package greengrass {
   sealed trait LoggerComponent extends js.Any
   object LoggerComponent extends js.Object {
     val GreengrassSystem = "GreengrassSystem".asInstanceOf[LoggerComponent]
-    val Lambda           = "Lambda".asInstanceOf[LoggerComponent]
+    val Lambda = "Lambda".asInstanceOf[LoggerComponent]
 
     val values = js.Object.freeze(js.Array(GreengrassSystem, Lambda))
   }
@@ -4769,8 +4769,8 @@ package greengrass {
   sealed trait LoggerLevel extends js.Any
   object LoggerLevel extends js.Object {
     val DEBUG = "DEBUG".asInstanceOf[LoggerLevel]
-    val INFO  = "INFO".asInstanceOf[LoggerLevel]
-    val WARN  = "WARN".asInstanceOf[LoggerLevel]
+    val INFO = "INFO".asInstanceOf[LoggerLevel]
+    val WARN = "WARN".asInstanceOf[LoggerLevel]
     val ERROR = "ERROR".asInstanceOf[LoggerLevel]
     val FATAL = "FATAL".asInstanceOf[LoggerLevel]
 
@@ -4780,7 +4780,7 @@ package greengrass {
   @js.native
   sealed trait LoggerType extends js.Any
   object LoggerType extends js.Object {
-    val FileSystem    = "FileSystem".asInstanceOf[LoggerType]
+    val FileSystem = "FileSystem".asInstanceOf[LoggerType]
     val AWSCloudWatch = "AWSCloudWatch".asInstanceOf[LoggerType]
 
     val values = js.Object.freeze(js.Array(FileSystem, AWSCloudWatch))
@@ -4862,8 +4862,8 @@ package greengrass {
         ResourceDataContainer: ResourceDataContainer
     ): Resource = {
       val __obj = js.Dynamic.literal(
-        "Id"                    -> Id.asInstanceOf[js.Any],
-        "Name"                  -> Name.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "ResourceDataContainer" -> ResourceDataContainer.asInstanceOf[js.Any]
       )
 
@@ -4967,7 +4967,7 @@ package greengrass {
         GroupPermission: Permission
     ): ResourceDownloadOwnerSetting = {
       val __obj = js.Dynamic.literal(
-        "GroupOwner"      -> GroupOwner.asInstanceOf[js.Any],
+        "GroupOwner" -> GroupOwner.asInstanceOf[js.Any],
         "GroupPermission" -> GroupPermission.asInstanceOf[js.Any]
       )
 
@@ -5055,7 +5055,7 @@ package greengrass {
   @js.native
   sealed trait SoftwareToUpdate extends js.Any
   object SoftwareToUpdate extends js.Object {
-    val core      = "core".asInstanceOf[SoftwareToUpdate]
+    val core = "core".asInstanceOf[SoftwareToUpdate]
     val ota_agent = "ota_agent".asInstanceOf[SoftwareToUpdate]
 
     val values = js.Object.freeze(js.Array(core, ota_agent))
@@ -5079,7 +5079,7 @@ package greengrass {
     ): StartBulkDeploymentRequest = {
       val __obj = js.Dynamic.literal(
         "ExecutionRoleArn" -> ExecutionRoleArn.asInstanceOf[js.Any],
-        "InputFileUri"     -> InputFileUri.asInstanceOf[js.Any]
+        "InputFileUri" -> InputFileUri.asInstanceOf[js.Any]
       )
 
       AmznClientToken.foreach(__v => __obj.updateDynamic("AmznClientToken")(__v.asInstanceOf[js.Any]))
@@ -5158,10 +5158,10 @@ package greengrass {
         Target: __string
     ): Subscription = {
       val __obj = js.Dynamic.literal(
-        "Id"      -> Id.asInstanceOf[js.Any],
-        "Source"  -> Source.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Source" -> Source.asInstanceOf[js.Any],
         "Subject" -> Subject.asInstanceOf[js.Any],
-        "Target"  -> Target.asInstanceOf[js.Any]
+        "Target" -> Target.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[Subscription]
@@ -5225,7 +5225,7 @@ package greengrass {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -5238,14 +5238,14 @@ package greengrass {
   @js.native
   sealed trait UpdateAgentLogLevel extends js.Any
   object UpdateAgentLogLevel extends js.Object {
-    val NONE    = "NONE".asInstanceOf[UpdateAgentLogLevel]
-    val TRACE   = "TRACE".asInstanceOf[UpdateAgentLogLevel]
-    val DEBUG   = "DEBUG".asInstanceOf[UpdateAgentLogLevel]
+    val NONE = "NONE".asInstanceOf[UpdateAgentLogLevel]
+    val TRACE = "TRACE".asInstanceOf[UpdateAgentLogLevel]
+    val DEBUG = "DEBUG".asInstanceOf[UpdateAgentLogLevel]
     val VERBOSE = "VERBOSE".asInstanceOf[UpdateAgentLogLevel]
-    val INFO    = "INFO".asInstanceOf[UpdateAgentLogLevel]
-    val WARN    = "WARN".asInstanceOf[UpdateAgentLogLevel]
-    val ERROR   = "ERROR".asInstanceOf[UpdateAgentLogLevel]
-    val FATAL   = "FATAL".asInstanceOf[UpdateAgentLogLevel]
+    val INFO = "INFO".asInstanceOf[UpdateAgentLogLevel]
+    val WARN = "WARN".asInstanceOf[UpdateAgentLogLevel]
+    val ERROR = "ERROR".asInstanceOf[UpdateAgentLogLevel]
+    val FATAL = "FATAL".asInstanceOf[UpdateAgentLogLevel]
 
     val values = js.Object.freeze(js.Array(NONE, TRACE, DEBUG, VERBOSE, INFO, WARN, ERROR, FATAL))
   }
@@ -5620,9 +5620,9 @@ package greengrass {
   @js.native
   sealed trait UpdateTargetsArchitecture extends js.Any
   object UpdateTargetsArchitecture extends js.Object {
-    val armv6l  = "armv6l".asInstanceOf[UpdateTargetsArchitecture]
-    val armv7l  = "armv7l".asInstanceOf[UpdateTargetsArchitecture]
-    val x86_64  = "x86_64".asInstanceOf[UpdateTargetsArchitecture]
+    val armv6l = "armv6l".asInstanceOf[UpdateTargetsArchitecture]
+    val armv7l = "armv7l".asInstanceOf[UpdateTargetsArchitecture]
+    val x86_64 = "x86_64".asInstanceOf[UpdateTargetsArchitecture]
     val aarch64 = "aarch64".asInstanceOf[UpdateTargetsArchitecture]
 
     val values = js.Object.freeze(js.Array(armv6l, armv7l, x86_64, aarch64))
@@ -5634,10 +5634,10 @@ package greengrass {
   @js.native
   sealed trait UpdateTargetsOperatingSystem extends js.Any
   object UpdateTargetsOperatingSystem extends js.Object {
-    val ubuntu       = "ubuntu".asInstanceOf[UpdateTargetsOperatingSystem]
-    val raspbian     = "raspbian".asInstanceOf[UpdateTargetsOperatingSystem]
+    val ubuntu = "ubuntu".asInstanceOf[UpdateTargetsOperatingSystem]
+    val raspbian = "raspbian".asInstanceOf[UpdateTargetsOperatingSystem]
     val amazon_linux = "amazon_linux".asInstanceOf[UpdateTargetsOperatingSystem]
-    val openwrt      = "openwrt".asInstanceOf[UpdateTargetsOperatingSystem]
+    val openwrt = "openwrt".asInstanceOf[UpdateTargetsOperatingSystem]
 
     val values = js.Object.freeze(js.Array(ubuntu, raspbian, amazon_linux, openwrt))
   }

@@ -7,133 +7,133 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object storagegateway {
-  type ActivationKey                    = String
-  type AuditDestinationARN              = String
-  type Authentication                   = String
+  type ActivationKey = String
+  type AuditDestinationARN = String
+  type Authentication = String
   type AutomaticTapeCreationPolicyInfos = js.Array[AutomaticTapeCreationPolicyInfo]
-  type AutomaticTapeCreationRules       = js.Array[AutomaticTapeCreationRule]
-  type BandwidthDownloadRateLimit       = Double
-  type BandwidthType                    = String
-  type BandwidthUploadRateLimit         = Double
-  type CacheStaleTimeoutInSeconds       = Int
-  type CachediSCSIVolumes               = js.Array[CachediSCSIVolume]
-  type ChapCredentials                  = js.Array[ChapInfo]
-  type ChapSecret                       = String
-  type ClientToken                      = String
-  type CloudWatchLogGroupARN            = String
-  type CreatedDate                      = js.Date
-  type DayOfMonth                       = Int
-  type DayOfWeek                        = Int
-  type Description                      = String
-  type DeviceType                       = String
-  type DiskAllocationType               = String
-  type DiskAttribute                    = String
-  type DiskAttributeList                = js.Array[DiskAttribute]
-  type DiskId                           = String
-  type DiskIds                          = js.Array[DiskId]
-  type Disks                            = js.Array[Disk]
-  type DomainName                       = String
-  type DomainUserName                   = String
-  type DomainUserPassword               = String
-  type DoubleObject                     = Double
-  type Ec2InstanceId                    = String
-  type Ec2InstanceRegion                = String
-  type EndpointType                     = String
-  type FileShareARN                     = String
-  type FileShareARNList                 = js.Array[FileShareARN]
-  type FileShareClientList              = js.Array[IPV4AddressCIDR]
-  type FileShareId                      = String
-  type FileShareInfoList                = js.Array[FileShareInfo]
-  type FileShareName                    = String
-  type FileShareStatus                  = String
-  type FileShareUser                    = String
-  type FileShareUserList                = js.Array[FileShareUser]
-  type Folder                           = String
-  type FolderList                       = js.Array[Folder]
-  type GatewayARN                       = String
-  type GatewayId                        = String
-  type GatewayName                      = String
-  type GatewayNetworkInterfaces         = js.Array[NetworkInterface]
-  type GatewayOperationalState          = String
-  type GatewayState                     = String
-  type GatewayTimezone                  = String
-  type GatewayType                      = String
-  type Gateways                         = js.Array[GatewayInfo]
-  type Host                             = String
-  type Hosts                            = js.Array[Host]
-  type HourOfDay                        = Int
-  type IPV4AddressCIDR                  = String
-  type Initiator                        = String
-  type Initiators                       = js.Array[Initiator]
-  type IqnName                          = String
-  type KMSKey                           = String
-  type LastSoftwareUpdate               = String
-  type LocalConsolePassword             = String
-  type LocationARN                      = String
-  type Marker                           = String
-  type MediumChangerType                = String
-  type MinimumNumTapes                  = Int
-  type MinuteOfHour                     = Int
-  type NFSFileShareInfoList             = js.Array[NFSFileShareInfo]
-  type NetworkInterfaceId               = String
-  type NextUpdateAvailabilityDate       = String
-  type NotificationId                   = String
-  type NumTapesToCreate                 = Int
-  type OrganizationalUnit               = String
-  type Path                             = String
-  type PermissionId                     = Double
-  type PermissionMode                   = String
-  type PoolId                           = String
-  type PositiveIntObject                = Int
-  type RecurrenceInHours                = Int
-  type RegionId                         = String
-  type ResourceARN                      = String
-  type Role                             = String
-  type SMBFileShareInfoList             = js.Array[SMBFileShareInfo]
-  type SMBGuestPassword                 = String
-  type SnapshotDescription              = String
-  type SnapshotId                       = String
-  type Squash                           = String
-  type StorageClass                     = String
-  type StorediSCSIVolumes               = js.Array[StorediSCSIVolume]
-  type TagKey                           = String
-  type TagKeys                          = js.Array[TagKey]
-  type TagValue                         = String
-  type Tags                             = js.Array[Tag]
-  type TapeARN                          = String
-  type TapeARNs                         = js.Array[TapeARN]
-  type TapeArchiveStatus                = String
-  type TapeArchives                     = js.Array[TapeArchive]
-  type TapeBarcode                      = String
-  type TapeBarcodePrefix                = String
-  type TapeDriveType                    = String
-  type TapeInfos                        = js.Array[TapeInfo]
-  type TapeRecoveryPointInfos           = js.Array[TapeRecoveryPointInfo]
-  type TapeRecoveryPointStatus          = String
-  type TapeSize                         = Double
-  type TapeStatus                       = String
-  type TapeUsage                        = Double
-  type Tapes                            = js.Array[Tape]
-  type TargetARN                        = String
-  type TargetName                       = String
-  type Time                             = js.Date
-  type TimeoutInSeconds                 = Int
-  type VTLDeviceARN                     = String
-  type VTLDeviceARNs                    = js.Array[VTLDeviceARN]
-  type VTLDeviceProductIdentifier       = String
-  type VTLDeviceType                    = String
-  type VTLDeviceVendor                  = String
-  type VTLDevices                       = js.Array[VTLDevice]
-  type VolumeARN                        = String
-  type VolumeARNs                       = js.Array[VolumeARN]
-  type VolumeAttachmentStatus           = String
-  type VolumeId                         = String
-  type VolumeInfos                      = js.Array[VolumeInfo]
-  type VolumeRecoveryPointInfos         = js.Array[VolumeRecoveryPointInfo]
-  type VolumeStatus                     = String
-  type VolumeType                       = String
-  type VolumeUsedInBytes                = Double
-  type double                           = Double
+  type AutomaticTapeCreationRules = js.Array[AutomaticTapeCreationRule]
+  type BandwidthDownloadRateLimit = Double
+  type BandwidthType = String
+  type BandwidthUploadRateLimit = Double
+  type CacheStaleTimeoutInSeconds = Int
+  type CachediSCSIVolumes = js.Array[CachediSCSIVolume]
+  type ChapCredentials = js.Array[ChapInfo]
+  type ChapSecret = String
+  type ClientToken = String
+  type CloudWatchLogGroupARN = String
+  type CreatedDate = js.Date
+  type DayOfMonth = Int
+  type DayOfWeek = Int
+  type Description = String
+  type DeviceType = String
+  type DiskAllocationType = String
+  type DiskAttribute = String
+  type DiskAttributeList = js.Array[DiskAttribute]
+  type DiskId = String
+  type DiskIds = js.Array[DiskId]
+  type Disks = js.Array[Disk]
+  type DomainName = String
+  type DomainUserName = String
+  type DomainUserPassword = String
+  type DoubleObject = Double
+  type Ec2InstanceId = String
+  type Ec2InstanceRegion = String
+  type EndpointType = String
+  type FileShareARN = String
+  type FileShareARNList = js.Array[FileShareARN]
+  type FileShareClientList = js.Array[IPV4AddressCIDR]
+  type FileShareId = String
+  type FileShareInfoList = js.Array[FileShareInfo]
+  type FileShareName = String
+  type FileShareStatus = String
+  type FileShareUser = String
+  type FileShareUserList = js.Array[FileShareUser]
+  type Folder = String
+  type FolderList = js.Array[Folder]
+  type GatewayARN = String
+  type GatewayId = String
+  type GatewayName = String
+  type GatewayNetworkInterfaces = js.Array[NetworkInterface]
+  type GatewayOperationalState = String
+  type GatewayState = String
+  type GatewayTimezone = String
+  type GatewayType = String
+  type Gateways = js.Array[GatewayInfo]
+  type Host = String
+  type Hosts = js.Array[Host]
+  type HourOfDay = Int
+  type IPV4AddressCIDR = String
+  type Initiator = String
+  type Initiators = js.Array[Initiator]
+  type IqnName = String
+  type KMSKey = String
+  type LastSoftwareUpdate = String
+  type LocalConsolePassword = String
+  type LocationARN = String
+  type Marker = String
+  type MediumChangerType = String
+  type MinimumNumTapes = Int
+  type MinuteOfHour = Int
+  type NFSFileShareInfoList = js.Array[NFSFileShareInfo]
+  type NetworkInterfaceId = String
+  type NextUpdateAvailabilityDate = String
+  type NotificationId = String
+  type NumTapesToCreate = Int
+  type OrganizationalUnit = String
+  type Path = String
+  type PermissionId = Double
+  type PermissionMode = String
+  type PoolId = String
+  type PositiveIntObject = Int
+  type RecurrenceInHours = Int
+  type RegionId = String
+  type ResourceARN = String
+  type Role = String
+  type SMBFileShareInfoList = js.Array[SMBFileShareInfo]
+  type SMBGuestPassword = String
+  type SnapshotDescription = String
+  type SnapshotId = String
+  type Squash = String
+  type StorageClass = String
+  type StorediSCSIVolumes = js.Array[StorediSCSIVolume]
+  type TagKey = String
+  type TagKeys = js.Array[TagKey]
+  type TagValue = String
+  type Tags = js.Array[Tag]
+  type TapeARN = String
+  type TapeARNs = js.Array[TapeARN]
+  type TapeArchiveStatus = String
+  type TapeArchives = js.Array[TapeArchive]
+  type TapeBarcode = String
+  type TapeBarcodePrefix = String
+  type TapeDriveType = String
+  type TapeInfos = js.Array[TapeInfo]
+  type TapeRecoveryPointInfos = js.Array[TapeRecoveryPointInfo]
+  type TapeRecoveryPointStatus = String
+  type TapeSize = Double
+  type TapeStatus = String
+  type TapeUsage = Double
+  type Tapes = js.Array[Tape]
+  type TargetARN = String
+  type TargetName = String
+  type Time = js.Date
+  type TimeoutInSeconds = Int
+  type VTLDeviceARN = String
+  type VTLDeviceARNs = js.Array[VTLDeviceARN]
+  type VTLDeviceProductIdentifier = String
+  type VTLDeviceType = String
+  type VTLDeviceVendor = String
+  type VTLDevices = js.Array[VTLDevice]
+  type VolumeARN = String
+  type VolumeARNs = js.Array[VolumeARN]
+  type VolumeAttachmentStatus = String
+  type VolumeId = String
+  type VolumeInfos = js.Array[VolumeInfo]
+  type VolumeRecoveryPointInfos = js.Array[VolumeRecoveryPointInfo]
+  type VolumeStatus = String
+  type VolumeType = String
+  type VolumeUsedInBytes = Double
+  type double = Double
 
   implicit final class StorageGatewayOps(private val service: StorageGateway) extends AnyVal {
 
@@ -336,39 +336,39 @@ package storagegateway {
   class StorageGateway() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def activateGateway(params: ActivateGatewayInput): Request[ActivateGatewayOutput]       = js.native
-    def addCache(params: AddCacheInput): Request[AddCacheOutput]                            = js.native
+    def activateGateway(params: ActivateGatewayInput): Request[ActivateGatewayOutput] = js.native
+    def addCache(params: AddCacheInput): Request[AddCacheOutput] = js.native
     def addTagsToResource(params: AddTagsToResourceInput): Request[AddTagsToResourceOutput] = js.native
-    def addUploadBuffer(params: AddUploadBufferInput): Request[AddUploadBufferOutput]       = js.native
+    def addUploadBuffer(params: AddUploadBufferInput): Request[AddUploadBufferOutput] = js.native
     def addWorkingStorage(params: AddWorkingStorageInput): Request[AddWorkingStorageOutput] = js.native
-    def assignTapePool(params: AssignTapePoolInput): Request[AssignTapePoolOutput]          = js.native
-    def attachVolume(params: AttachVolumeInput): Request[AttachVolumeOutput]                = js.native
-    def cancelArchival(params: CancelArchivalInput): Request[CancelArchivalOutput]          = js.native
-    def cancelRetrieval(params: CancelRetrievalInput): Request[CancelRetrievalOutput]       = js.native
+    def assignTapePool(params: AssignTapePoolInput): Request[AssignTapePoolOutput] = js.native
+    def attachVolume(params: AttachVolumeInput): Request[AttachVolumeOutput] = js.native
+    def cancelArchival(params: CancelArchivalInput): Request[CancelArchivalOutput] = js.native
+    def cancelRetrieval(params: CancelRetrievalInput): Request[CancelRetrievalOutput] = js.native
     def createCachediSCSIVolume(params: CreateCachediSCSIVolumeInput): Request[CreateCachediSCSIVolumeOutput] =
       js.native
     def createNFSFileShare(params: CreateNFSFileShareInput): Request[CreateNFSFileShareOutput] = js.native
     def createSMBFileShare(params: CreateSMBFileShareInput): Request[CreateSMBFileShareOutput] = js.native
-    def createSnapshot(params: CreateSnapshotInput): Request[CreateSnapshotOutput]             = js.native
+    def createSnapshot(params: CreateSnapshotInput): Request[CreateSnapshotOutput] = js.native
     def createSnapshotFromVolumeRecoveryPoint(
         params: CreateSnapshotFromVolumeRecoveryPointInput
     ): Request[CreateSnapshotFromVolumeRecoveryPointOutput] = js.native
     def createStorediSCSIVolume(params: CreateStorediSCSIVolumeInput): Request[CreateStorediSCSIVolumeOutput] =
       js.native
     def createTapeWithBarcode(params: CreateTapeWithBarcodeInput): Request[CreateTapeWithBarcodeOutput] = js.native
-    def createTapes(params: CreateTapesInput): Request[CreateTapesOutput]                               = js.native
+    def createTapes(params: CreateTapesInput): Request[CreateTapesOutput] = js.native
     def deleteAutomaticTapeCreationPolicy(
         params: DeleteAutomaticTapeCreationPolicyInput
     ): Request[DeleteAutomaticTapeCreationPolicyOutput] = js.native
     def deleteBandwidthRateLimit(params: DeleteBandwidthRateLimitInput): Request[DeleteBandwidthRateLimitOutput] =
       js.native
-    def deleteChapCredentials(params: DeleteChapCredentialsInput): Request[DeleteChapCredentialsOutput]    = js.native
-    def deleteFileShare(params: DeleteFileShareInput): Request[DeleteFileShareOutput]                      = js.native
-    def deleteGateway(params: DeleteGatewayInput): Request[DeleteGatewayOutput]                            = js.native
+    def deleteChapCredentials(params: DeleteChapCredentialsInput): Request[DeleteChapCredentialsOutput] = js.native
+    def deleteFileShare(params: DeleteFileShareInput): Request[DeleteFileShareOutput] = js.native
+    def deleteGateway(params: DeleteGatewayInput): Request[DeleteGatewayOutput] = js.native
     def deleteSnapshotSchedule(params: DeleteSnapshotScheduleInput): Request[DeleteSnapshotScheduleOutput] = js.native
-    def deleteTape(params: DeleteTapeInput): Request[DeleteTapeOutput]                                     = js.native
-    def deleteTapeArchive(params: DeleteTapeArchiveInput): Request[DeleteTapeArchiveOutput]                = js.native
-    def deleteVolume(params: DeleteVolumeInput): Request[DeleteVolumeOutput]                               = js.native
+    def deleteTape(params: DeleteTapeInput): Request[DeleteTapeOutput] = js.native
+    def deleteTapeArchive(params: DeleteTapeArchiveInput): Request[DeleteTapeArchiveOutput] = js.native
+    def deleteVolume(params: DeleteVolumeInput): Request[DeleteVolumeOutput] = js.native
     def describeAvailabilityMonitorTest(
         params: DescribeAvailabilityMonitorTestInput
     ): Request[DescribeAvailabilityMonitorTestOutput] = js.native
@@ -383,10 +383,10 @@ package storagegateway {
       js.native
     def describeMaintenanceStartTime(
         params: DescribeMaintenanceStartTimeInput
-    ): Request[DescribeMaintenanceStartTimeOutput]                                                      = js.native
+    ): Request[DescribeMaintenanceStartTimeOutput] = js.native
     def describeNFSFileShares(params: DescribeNFSFileSharesInput): Request[DescribeNFSFileSharesOutput] = js.native
     def describeSMBFileShares(params: DescribeSMBFileSharesInput): Request[DescribeSMBFileSharesOutput] = js.native
-    def describeSMBSettings(params: DescribeSMBSettingsInput): Request[DescribeSMBSettingsOutput]       = js.native
+    def describeSMBSettings(params: DescribeSMBSettingsInput): Request[DescribeSMBSettingsOutput] = js.native
     def describeSnapshotSchedule(params: DescribeSnapshotScheduleInput): Request[DescribeSnapshotScheduleOutput] =
       js.native
     def describeStorediSCSIVolumes(params: DescribeStorediSCSIVolumesInput): Request[DescribeStorediSCSIVolumesOutput] =
@@ -394,39 +394,39 @@ package storagegateway {
     def describeTapeArchives(params: DescribeTapeArchivesInput): Request[DescribeTapeArchivesOutput] = js.native
     def describeTapeRecoveryPoints(params: DescribeTapeRecoveryPointsInput): Request[DescribeTapeRecoveryPointsOutput] =
       js.native
-    def describeTapes(params: DescribeTapesInput): Request[DescribeTapesOutput]                            = js.native
-    def describeUploadBuffer(params: DescribeUploadBufferInput): Request[DescribeUploadBufferOutput]       = js.native
-    def describeVTLDevices(params: DescribeVTLDevicesInput): Request[DescribeVTLDevicesOutput]             = js.native
+    def describeTapes(params: DescribeTapesInput): Request[DescribeTapesOutput] = js.native
+    def describeUploadBuffer(params: DescribeUploadBufferInput): Request[DescribeUploadBufferOutput] = js.native
+    def describeVTLDevices(params: DescribeVTLDevicesInput): Request[DescribeVTLDevicesOutput] = js.native
     def describeWorkingStorage(params: DescribeWorkingStorageInput): Request[DescribeWorkingStorageOutput] = js.native
-    def detachVolume(params: DetachVolumeInput): Request[DetachVolumeOutput]                               = js.native
-    def disableGateway(params: DisableGatewayInput): Request[DisableGatewayOutput]                         = js.native
-    def joinDomain(params: JoinDomainInput): Request[JoinDomainOutput]                                     = js.native
+    def detachVolume(params: DetachVolumeInput): Request[DetachVolumeOutput] = js.native
+    def disableGateway(params: DisableGatewayInput): Request[DisableGatewayOutput] = js.native
+    def joinDomain(params: JoinDomainInput): Request[JoinDomainOutput] = js.native
     def listAutomaticTapeCreationPolicies(
         params: ListAutomaticTapeCreationPoliciesInput
-    ): Request[ListAutomaticTapeCreationPoliciesOutput]                                              = js.native
-    def listFileShares(params: ListFileSharesInput): Request[ListFileSharesOutput]                   = js.native
-    def listGateways(params: ListGatewaysInput): Request[ListGatewaysOutput]                         = js.native
-    def listLocalDisks(params: ListLocalDisksInput): Request[ListLocalDisksOutput]                   = js.native
-    def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput]    = js.native
-    def listTapes(params: ListTapesInput): Request[ListTapesOutput]                                  = js.native
+    ): Request[ListAutomaticTapeCreationPoliciesOutput] = js.native
+    def listFileShares(params: ListFileSharesInput): Request[ListFileSharesOutput] = js.native
+    def listGateways(params: ListGatewaysInput): Request[ListGatewaysOutput] = js.native
+    def listLocalDisks(params: ListLocalDisksInput): Request[ListLocalDisksOutput] = js.native
+    def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput] = js.native
+    def listTapes(params: ListTapesInput): Request[ListTapesOutput] = js.native
     def listVolumeInitiators(params: ListVolumeInitiatorsInput): Request[ListVolumeInitiatorsOutput] = js.native
     def listVolumeRecoveryPoints(params: ListVolumeRecoveryPointsInput): Request[ListVolumeRecoveryPointsOutput] =
       js.native
-    def listVolumes(params: ListVolumesInput): Request[ListVolumesOutput]                                  = js.native
-    def notifyWhenUploaded(params: NotifyWhenUploadedInput): Request[NotifyWhenUploadedOutput]             = js.native
-    def refreshCache(params: RefreshCacheInput): Request[RefreshCacheOutput]                               = js.native
+    def listVolumes(params: ListVolumesInput): Request[ListVolumesOutput] = js.native
+    def notifyWhenUploaded(params: NotifyWhenUploadedInput): Request[NotifyWhenUploadedOutput] = js.native
+    def refreshCache(params: RefreshCacheInput): Request[RefreshCacheOutput] = js.native
     def removeTagsFromResource(params: RemoveTagsFromResourceInput): Request[RemoveTagsFromResourceOutput] = js.native
-    def resetCache(params: ResetCacheInput): Request[ResetCacheOutput]                                     = js.native
-    def retrieveTapeArchive(params: RetrieveTapeArchiveInput): Request[RetrieveTapeArchiveOutput]          = js.native
+    def resetCache(params: ResetCacheInput): Request[ResetCacheOutput] = js.native
+    def retrieveTapeArchive(params: RetrieveTapeArchiveInput): Request[RetrieveTapeArchiveOutput] = js.native
     def retrieveTapeRecoveryPoint(params: RetrieveTapeRecoveryPointInput): Request[RetrieveTapeRecoveryPointOutput] =
       js.native
     def setLocalConsolePassword(params: SetLocalConsolePasswordInput): Request[SetLocalConsolePasswordOutput] =
       js.native
     def setSMBGuestPassword(params: SetSMBGuestPasswordInput): Request[SetSMBGuestPasswordOutput] = js.native
-    def shutdownGateway(params: ShutdownGatewayInput): Request[ShutdownGatewayOutput]             = js.native
+    def shutdownGateway(params: ShutdownGatewayInput): Request[ShutdownGatewayOutput] = js.native
     def startAvailabilityMonitorTest(
         params: StartAvailabilityMonitorTestInput
-    ): Request[StartAvailabilityMonitorTestOutput]                           = js.native
+    ): Request[StartAvailabilityMonitorTestOutput] = js.native
     def startGateway(params: StartGatewayInput): Request[StartGatewayOutput] = js.native
     def updateAutomaticTapeCreationPolicy(
         params: UpdateAutomaticTapeCreationPolicyInput
@@ -445,7 +445,7 @@ package storagegateway {
     def updateSMBSecurityStrategy(params: UpdateSMBSecurityStrategyInput): Request[UpdateSMBSecurityStrategyOutput] =
       js.native
     def updateSnapshotSchedule(params: UpdateSnapshotScheduleInput): Request[UpdateSnapshotScheduleOutput] = js.native
-    def updateVTLDeviceType(params: UpdateVTLDeviceTypeInput): Request[UpdateVTLDeviceTypeOutput]          = js.native
+    def updateVTLDeviceType(params: UpdateVTLDeviceTypeInput): Request[UpdateVTLDeviceTypeOutput] = js.native
   }
 
   /**
@@ -483,9 +483,9 @@ package storagegateway {
         TapeDriveType: js.UndefOr[TapeDriveType] = js.undefined
     ): ActivateGatewayInput = {
       val __obj = js.Dynamic.literal(
-        "ActivationKey"   -> ActivationKey.asInstanceOf[js.Any],
-        "GatewayName"     -> GatewayName.asInstanceOf[js.Any],
-        "GatewayRegion"   -> GatewayRegion.asInstanceOf[js.Any],
+        "ActivationKey" -> ActivationKey.asInstanceOf[js.Any],
+        "GatewayName" -> GatewayName.asInstanceOf[js.Any],
+        "GatewayRegion" -> GatewayRegion.asInstanceOf[js.Any],
         "GatewayTimezone" -> GatewayTimezone.asInstanceOf[js.Any]
       )
 
@@ -522,11 +522,11 @@ package storagegateway {
   sealed trait ActiveDirectoryStatus extends js.Any
   object ActiveDirectoryStatus extends js.Object {
     val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[ActiveDirectoryStatus]
-    val DETACHED      = "DETACHED".asInstanceOf[ActiveDirectoryStatus]
-    val JOINED        = "JOINED".asInstanceOf[ActiveDirectoryStatus]
-    val JOINING       = "JOINING".asInstanceOf[ActiveDirectoryStatus]
+    val DETACHED = "DETACHED".asInstanceOf[ActiveDirectoryStatus]
+    val JOINED = "JOINED".asInstanceOf[ActiveDirectoryStatus]
+    val JOINING = "JOINING".asInstanceOf[ActiveDirectoryStatus]
     val NETWORK_ERROR = "NETWORK_ERROR".asInstanceOf[ActiveDirectoryStatus]
-    val TIMEOUT       = "TIMEOUT".asInstanceOf[ActiveDirectoryStatus]
+    val TIMEOUT = "TIMEOUT".asInstanceOf[ActiveDirectoryStatus]
     val UNKNOWN_ERROR = "UNKNOWN_ERROR".asInstanceOf[ActiveDirectoryStatus]
 
     val values =
@@ -546,7 +546,7 @@ package storagegateway {
         GatewayARN: GatewayARN
     ): AddCacheInput = {
       val __obj = js.Dynamic.literal(
-        "DiskIds"    -> DiskIds.asInstanceOf[js.Any],
+        "DiskIds" -> DiskIds.asInstanceOf[js.Any],
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
 
@@ -584,7 +584,7 @@ package storagegateway {
     ): AddTagsToResourceInput = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddTagsToResourceInput]
@@ -620,7 +620,7 @@ package storagegateway {
         GatewayARN: GatewayARN
     ): AddUploadBufferInput = {
       val __obj = js.Dynamic.literal(
-        "DiskIds"    -> DiskIds.asInstanceOf[js.Any],
+        "DiskIds" -> DiskIds.asInstanceOf[js.Any],
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
 
@@ -661,7 +661,7 @@ package storagegateway {
         GatewayARN: GatewayARN
     ): AddWorkingStorageInput = {
       val __obj = js.Dynamic.literal(
-        "DiskIds"    -> DiskIds.asInstanceOf[js.Any],
+        "DiskIds" -> DiskIds.asInstanceOf[js.Any],
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
 
@@ -701,7 +701,7 @@ package storagegateway {
         TapeARN: TapeARN
     ): AssignTapePoolInput = {
       val __obj = js.Dynamic.literal(
-        "PoolId"  -> PoolId.asInstanceOf[js.Any],
+        "PoolId" -> PoolId.asInstanceOf[js.Any],
         "TapeARN" -> TapeARN.asInstanceOf[js.Any]
       )
 
@@ -744,9 +744,9 @@ package storagegateway {
         TargetName: js.UndefOr[TargetName] = js.undefined
     ): AttachVolumeInput = {
       val __obj = js.Dynamic.literal(
-        "GatewayARN"         -> GatewayARN.asInstanceOf[js.Any],
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "NetworkInterfaceId" -> NetworkInterfaceId.asInstanceOf[js.Any],
-        "VolumeARN"          -> VolumeARN.asInstanceOf[js.Any]
+        "VolumeARN" -> VolumeARN.asInstanceOf[js.Any]
       )
 
       DiskId.foreach(__v => __obj.updateDynamic("DiskId")(__v.asInstanceOf[js.Any]))
@@ -818,10 +818,10 @@ package storagegateway {
         TapeSizeInBytes: TapeSize
     ): AutomaticTapeCreationRule = {
       val __obj = js.Dynamic.literal(
-        "MinimumNumTapes"   -> MinimumNumTapes.asInstanceOf[js.Any],
-        "PoolId"            -> PoolId.asInstanceOf[js.Any],
+        "MinimumNumTapes" -> MinimumNumTapes.asInstanceOf[js.Any],
+        "PoolId" -> PoolId.asInstanceOf[js.Any],
         "TapeBarcodePrefix" -> TapeBarcodePrefix.asInstanceOf[js.Any],
-        "TapeSizeInBytes"   -> TapeSizeInBytes.asInstanceOf[js.Any]
+        "TapeSizeInBytes" -> TapeSizeInBytes.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AutomaticTapeCreationRule]
@@ -832,8 +832,8 @@ package storagegateway {
   sealed trait AvailabilityMonitorTestStatus extends js.Any
   object AvailabilityMonitorTestStatus extends js.Object {
     val COMPLETE = "COMPLETE".asInstanceOf[AvailabilityMonitorTestStatus]
-    val FAILED   = "FAILED".asInstanceOf[AvailabilityMonitorTestStatus]
-    val PENDING  = "PENDING".asInstanceOf[AvailabilityMonitorTestStatus]
+    val FAILED = "FAILED".asInstanceOf[AvailabilityMonitorTestStatus]
+    val PENDING = "PENDING".asInstanceOf[AvailabilityMonitorTestStatus]
 
     val values = js.Object.freeze(js.Array(COMPLETE, FAILED, PENDING))
   }
@@ -928,7 +928,7 @@ package storagegateway {
     ): CancelArchivalInput = {
       val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
-        "TapeARN"    -> TapeARN.asInstanceOf[js.Any]
+        "TapeARN" -> TapeARN.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CancelArchivalInput]
@@ -965,7 +965,7 @@ package storagegateway {
     ): CancelRetrievalInput = {
       val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
-        "TapeARN"    -> TapeARN.asInstanceOf[js.Any]
+        "TapeARN" -> TapeARN.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CancelRetrievalInput]
@@ -992,7 +992,7 @@ package storagegateway {
   sealed trait CaseSensitivity extends js.Any
   object CaseSensitivity extends js.Object {
     val ClientSpecified = "ClientSpecified".asInstanceOf[CaseSensitivity]
-    val CaseSensitive   = "CaseSensitive".asInstanceOf[CaseSensitivity]
+    val CaseSensitive = "CaseSensitive".asInstanceOf[CaseSensitivity]
 
     val values = js.Object.freeze(js.Array(ClientSpecified, CaseSensitive))
   }
@@ -1058,11 +1058,11 @@ package storagegateway {
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateCachediSCSIVolumeInput = {
       val __obj = js.Dynamic.literal(
-        "ClientToken"        -> ClientToken.asInstanceOf[js.Any],
-        "GatewayARN"         -> GatewayARN.asInstanceOf[js.Any],
+        "ClientToken" -> ClientToken.asInstanceOf[js.Any],
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "NetworkInterfaceId" -> NetworkInterfaceId.asInstanceOf[js.Any],
-        "TargetName"         -> TargetName.asInstanceOf[js.Any],
-        "VolumeSizeInBytes"  -> VolumeSizeInBytes.asInstanceOf[js.Any]
+        "TargetName" -> TargetName.asInstanceOf[js.Any],
+        "VolumeSizeInBytes" -> VolumeSizeInBytes.asInstanceOf[js.Any]
       )
 
       KMSEncrypted.foreach(__v => __obj.updateDynamic("KMSEncrypted")(__v.asInstanceOf[js.Any]))
@@ -1137,9 +1137,9 @@ package storagegateway {
     ): CreateNFSFileShareInput = {
       val __obj = js.Dynamic.literal(
         "ClientToken" -> ClientToken.asInstanceOf[js.Any],
-        "GatewayARN"  -> GatewayARN.asInstanceOf[js.Any],
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "LocationARN" -> LocationARN.asInstanceOf[js.Any],
-        "Role"        -> Role.asInstanceOf[js.Any]
+        "Role" -> Role.asInstanceOf[js.Any]
       )
 
       CacheAttributes.foreach(__v => __obj.updateDynamic("CacheAttributes")(__v.asInstanceOf[js.Any]))
@@ -1227,9 +1227,9 @@ package storagegateway {
     ): CreateSMBFileShareInput = {
       val __obj = js.Dynamic.literal(
         "ClientToken" -> ClientToken.asInstanceOf[js.Any],
-        "GatewayARN"  -> GatewayARN.asInstanceOf[js.Any],
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "LocationARN" -> LocationARN.asInstanceOf[js.Any],
-        "Role"        -> Role.asInstanceOf[js.Any]
+        "Role" -> Role.asInstanceOf[js.Any]
       )
 
       AdminUserList.foreach(__v => __obj.updateDynamic("AdminUserList")(__v.asInstanceOf[js.Any]))
@@ -1285,7 +1285,7 @@ package storagegateway {
     ): CreateSnapshotFromVolumeRecoveryPointInput = {
       val __obj = js.Dynamic.literal(
         "SnapshotDescription" -> SnapshotDescription.asInstanceOf[js.Any],
-        "VolumeARN"           -> VolumeARN.asInstanceOf[js.Any]
+        "VolumeARN" -> VolumeARN.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -1336,7 +1336,7 @@ package storagegateway {
     ): CreateSnapshotInput = {
       val __obj = js.Dynamic.literal(
         "SnapshotDescription" -> SnapshotDescription.asInstanceOf[js.Any],
-        "VolumeARN"           -> VolumeARN.asInstanceOf[js.Any]
+        "VolumeARN" -> VolumeARN.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -1401,11 +1401,11 @@ package storagegateway {
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateStorediSCSIVolumeInput = {
       val __obj = js.Dynamic.literal(
-        "DiskId"               -> DiskId.asInstanceOf[js.Any],
-        "GatewayARN"           -> GatewayARN.asInstanceOf[js.Any],
-        "NetworkInterfaceId"   -> NetworkInterfaceId.asInstanceOf[js.Any],
+        "DiskId" -> DiskId.asInstanceOf[js.Any],
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
+        "NetworkInterfaceId" -> NetworkInterfaceId.asInstanceOf[js.Any],
         "PreserveExistingData" -> PreserveExistingData.asInstanceOf[js.Any],
-        "TargetName"           -> TargetName.asInstanceOf[js.Any]
+        "TargetName" -> TargetName.asInstanceOf[js.Any]
       )
 
       KMSEncrypted.foreach(__v => __obj.updateDynamic("KMSEncrypted")(__v.asInstanceOf[js.Any]))
@@ -1464,8 +1464,8 @@ package storagegateway {
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateTapeWithBarcodeInput = {
       val __obj = js.Dynamic.literal(
-        "GatewayARN"      -> GatewayARN.asInstanceOf[js.Any],
-        "TapeBarcode"     -> TapeBarcode.asInstanceOf[js.Any],
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
+        "TapeBarcode" -> TapeBarcode.asInstanceOf[js.Any],
         "TapeSizeInBytes" -> TapeSizeInBytes.asInstanceOf[js.Any]
       )
 
@@ -1523,11 +1523,11 @@ package storagegateway {
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateTapesInput = {
       val __obj = js.Dynamic.literal(
-        "ClientToken"       -> ClientToken.asInstanceOf[js.Any],
-        "GatewayARN"        -> GatewayARN.asInstanceOf[js.Any],
-        "NumTapesToCreate"  -> NumTapesToCreate.asInstanceOf[js.Any],
+        "ClientToken" -> ClientToken.asInstanceOf[js.Any],
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
+        "NumTapesToCreate" -> NumTapesToCreate.asInstanceOf[js.Any],
         "TapeBarcodePrefix" -> TapeBarcodePrefix.asInstanceOf[js.Any],
-        "TapeSizeInBytes"   -> TapeSizeInBytes.asInstanceOf[js.Any]
+        "TapeSizeInBytes" -> TapeSizeInBytes.asInstanceOf[js.Any]
       )
 
       KMSEncrypted.foreach(__v => __obj.updateDynamic("KMSEncrypted")(__v.asInstanceOf[js.Any]))
@@ -1609,7 +1609,7 @@ package storagegateway {
     ): DeleteBandwidthRateLimitInput = {
       val __obj = js.Dynamic.literal(
         "BandwidthType" -> BandwidthType.asInstanceOf[js.Any],
-        "GatewayARN"    -> GatewayARN.asInstanceOf[js.Any]
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteBandwidthRateLimitInput]
@@ -1654,7 +1654,7 @@ package storagegateway {
     ): DeleteChapCredentialsInput = {
       val __obj = js.Dynamic.literal(
         "InitiatorName" -> InitiatorName.asInstanceOf[js.Any],
-        "TargetARN"     -> TargetARN.asInstanceOf[js.Any]
+        "TargetARN" -> TargetARN.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteChapCredentialsInput]
@@ -1842,7 +1842,7 @@ package storagegateway {
     ): DeleteTapeInput = {
       val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
-        "TapeARN"    -> TapeARN.asInstanceOf[js.Any]
+        "TapeARN" -> TapeARN.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteTapeInput]
@@ -2982,11 +2982,11 @@ package storagegateway {
   @js.native
   sealed trait HostEnvironment extends js.Any
   object HostEnvironment extends js.Object {
-    val VMWARE    = "VMWARE".asInstanceOf[HostEnvironment]
+    val VMWARE = "VMWARE".asInstanceOf[HostEnvironment]
     val `HYPER-V` = "HYPER-V".asInstanceOf[HostEnvironment]
-    val EC2       = "EC2".asInstanceOf[HostEnvironment]
-    val KVM       = "KVM".asInstanceOf[HostEnvironment]
-    val OTHER     = "OTHER".asInstanceOf[HostEnvironment]
+    val EC2 = "EC2".asInstanceOf[HostEnvironment]
+    val KVM = "KVM".asInstanceOf[HostEnvironment]
+    val OTHER = "OTHER".asInstanceOf[HostEnvironment]
 
     val values = js.Object.freeze(js.Array(VMWARE, `HYPER-V`, EC2, KVM, OTHER))
   }
@@ -3016,8 +3016,8 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
-        "Password"   -> Password.asInstanceOf[js.Any],
-        "UserName"   -> UserName.asInstanceOf[js.Any]
+        "Password" -> Password.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       DomainControllers.foreach(__v => __obj.updateDynamic("DomainControllers")(__v.asInstanceOf[js.Any]))
@@ -3608,13 +3608,13 @@ package storagegateway {
   @js.native
   sealed trait ObjectACL extends js.Any
   object ObjectACL extends js.Object {
-    val `private`                   = "private".asInstanceOf[ObjectACL]
-    val `public-read`               = "public-read".asInstanceOf[ObjectACL]
-    val `public-read-write`         = "public-read-write".asInstanceOf[ObjectACL]
-    val `authenticated-read`        = "authenticated-read".asInstanceOf[ObjectACL]
-    val `bucket-owner-read`         = "bucket-owner-read".asInstanceOf[ObjectACL]
+    val `private` = "private".asInstanceOf[ObjectACL]
+    val `public-read` = "public-read".asInstanceOf[ObjectACL]
+    val `public-read-write` = "public-read-write".asInstanceOf[ObjectACL]
+    val `authenticated-read` = "authenticated-read".asInstanceOf[ObjectACL]
+    val `bucket-owner-read` = "bucket-owner-read".asInstanceOf[ObjectACL]
     val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[ObjectACL]
-    val `aws-exec-read`             = "aws-exec-read".asInstanceOf[ObjectACL]
+    val `aws-exec-read` = "aws-exec-read".asInstanceOf[ObjectACL]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3686,7 +3686,7 @@ package storagegateway {
     ): RemoveTagsFromResourceInput = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RemoveTagsFromResourceInput]
@@ -3757,7 +3757,7 @@ package storagegateway {
     ): RetrieveTapeArchiveInput = {
       val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
-        "TapeARN"    -> TapeARN.asInstanceOf[js.Any]
+        "TapeARN" -> TapeARN.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RetrieveTapeArchiveInput]
@@ -3794,7 +3794,7 @@ package storagegateway {
     ): RetrieveTapeRecoveryPointInput = {
       val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
-        "TapeARN"    -> TapeARN.asInstanceOf[js.Any]
+        "TapeARN" -> TapeARN.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RetrieveTapeRecoveryPointInput]
@@ -3908,8 +3908,8 @@ package storagegateway {
   @js.native
   sealed trait SMBSecurityStrategy extends js.Any
   object SMBSecurityStrategy extends js.Object {
-    val ClientSpecified     = "ClientSpecified".asInstanceOf[SMBSecurityStrategy]
-    val MandatorySigning    = "MandatorySigning".asInstanceOf[SMBSecurityStrategy]
+    val ClientSpecified = "ClientSpecified".asInstanceOf[SMBSecurityStrategy]
+    val MandatorySigning = "MandatorySigning".asInstanceOf[SMBSecurityStrategy]
     val MandatoryEncryption = "MandatoryEncryption".asInstanceOf[SMBSecurityStrategy]
 
     val values = js.Object.freeze(js.Array(ClientSpecified, MandatorySigning, MandatoryEncryption))
@@ -3928,7 +3928,7 @@ package storagegateway {
         LocalConsolePassword: LocalConsolePassword
     ): SetLocalConsolePasswordInput = {
       val __obj = js.Dynamic.literal(
-        "GatewayARN"           -> GatewayARN.asInstanceOf[js.Any],
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "LocalConsolePassword" -> LocalConsolePassword.asInstanceOf[js.Any]
       )
 
@@ -3966,7 +3966,7 @@ package storagegateway {
     ): SetSMBGuestPasswordInput = {
       val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
-        "Password"   -> Password.asInstanceOf[js.Any]
+        "Password" -> Password.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[SetSMBGuestPasswordInput]
@@ -4180,7 +4180,7 @@ package storagegateway {
         Value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -4356,7 +4356,7 @@ package storagegateway {
     ): UpdateAutomaticTapeCreationPolicyInput = {
       val __obj = js.Dynamic.literal(
         "AutomaticTapeCreationRules" -> AutomaticTapeCreationRules.asInstanceOf[js.Any],
-        "GatewayARN"                 -> GatewayARN.asInstanceOf[js.Any]
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateAutomaticTapeCreationPolicyInput]
@@ -4455,9 +4455,9 @@ package storagegateway {
         SecretToAuthenticateTarget: js.UndefOr[ChapSecret] = js.undefined
     ): UpdateChapCredentialsInput = {
       val __obj = js.Dynamic.literal(
-        "InitiatorName"                 -> InitiatorName.asInstanceOf[js.Any],
+        "InitiatorName" -> InitiatorName.asInstanceOf[js.Any],
         "SecretToAuthenticateInitiator" -> SecretToAuthenticateInitiator.asInstanceOf[js.Any],
-        "TargetARN"                     -> TargetARN.asInstanceOf[js.Any]
+        "TargetARN" -> TargetARN.asInstanceOf[js.Any]
       )
 
       SecretToAuthenticateTarget.foreach(__v =>
@@ -4604,8 +4604,8 @@ package storagegateway {
         DayOfWeek: js.UndefOr[DayOfWeek] = js.undefined
     ): UpdateMaintenanceStartTimeInput = {
       val __obj = js.Dynamic.literal(
-        "GatewayARN"   -> GatewayARN.asInstanceOf[js.Any],
-        "HourOfDay"    -> HourOfDay.asInstanceOf[js.Any],
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
+        "HourOfDay" -> HourOfDay.asInstanceOf[js.Any],
         "MinuteOfHour" -> MinuteOfHour.asInstanceOf[js.Any]
       )
 
@@ -4796,7 +4796,7 @@ package storagegateway {
         SMBSecurityStrategy: SMBSecurityStrategy
     ): UpdateSMBSecurityStrategyInput = {
       val __obj = js.Dynamic.literal(
-        "GatewayARN"          -> GatewayARN.asInstanceOf[js.Any],
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "SMBSecurityStrategy" -> SMBSecurityStrategy.asInstanceOf[js.Any]
       )
 
@@ -4847,8 +4847,8 @@ package storagegateway {
     ): UpdateSnapshotScheduleInput = {
       val __obj = js.Dynamic.literal(
         "RecurrenceInHours" -> RecurrenceInHours.asInstanceOf[js.Any],
-        "StartAt"           -> StartAt.asInstanceOf[js.Any],
-        "VolumeARN"         -> VolumeARN.asInstanceOf[js.Any]
+        "StartAt" -> StartAt.asInstanceOf[js.Any],
+        "VolumeARN" -> VolumeARN.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -4889,7 +4889,7 @@ package storagegateway {
         VTLDeviceARN: VTLDeviceARN
     ): UpdateVTLDeviceTypeInput = {
       val __obj = js.Dynamic.literal(
-        "DeviceType"   -> DeviceType.asInstanceOf[js.Any],
+        "DeviceType" -> DeviceType.asInstanceOf[js.Any],
         "VTLDeviceARN" -> VTLDeviceARN.asInstanceOf[js.Any]
       )
 

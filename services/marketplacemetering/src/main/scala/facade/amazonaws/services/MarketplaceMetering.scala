@@ -7,16 +7,16 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object marketplacemetering {
-  type CustomerIdentifier    = String
-  type NonEmptyString        = String
-  type Nonce                 = String
-  type ProductCode           = String
-  type Timestamp             = js.Date
-  type UsageDimension        = String
-  type UsageQuantity         = Int
-  type UsageRecordList       = js.Array[UsageRecord]
+  type CustomerIdentifier = String
+  type NonEmptyString = String
+  type Nonce = String
+  type ProductCode = String
+  type Timestamp = js.Date
+  type UsageDimension = String
+  type UsageQuantity = Int
+  type UsageRecordList = js.Array[UsageRecord]
   type UsageRecordResultList = js.Array[UsageRecordResult]
-  type VersionInteger        = Int
+  type VersionInteger = Int
 
   implicit final class MarketplaceMeteringOps(private val service: MarketplaceMetering) extends AnyVal {
 
@@ -38,8 +38,8 @@ package marketplacemetering {
     def this(config: AWSConfig) = this()
 
     def batchMeterUsage(params: BatchMeterUsageRequest): Request[BatchMeterUsageResult] = js.native
-    def meterUsage(params: MeterUsageRequest): Request[MeterUsageResult]                = js.native
-    def registerUsage(params: RegisterUsageRequest): Request[RegisterUsageResult]       = js.native
+    def meterUsage(params: MeterUsageRequest): Request[MeterUsageResult] = js.native
+    def registerUsage(params: RegisterUsageRequest): Request[RegisterUsageResult] = js.native
     def resolveCustomer(params: ResolveCustomerRequest): Request[ResolveCustomerResult] = js.native
   }
 
@@ -59,7 +59,7 @@ package marketplacemetering {
         UsageRecords: UsageRecordList
     ): BatchMeterUsageRequest = {
       val __obj = js.Dynamic.literal(
-        "ProductCode"  -> ProductCode.asInstanceOf[js.Any],
+        "ProductCode" -> ProductCode.asInstanceOf[js.Any],
         "UsageRecords" -> UsageRecords.asInstanceOf[js.Any]
       )
 
@@ -108,8 +108,8 @@ package marketplacemetering {
         UsageQuantity: js.UndefOr[UsageQuantity] = js.undefined
     ): MeterUsageRequest = {
       val __obj = js.Dynamic.literal(
-        "ProductCode"    -> ProductCode.asInstanceOf[js.Any],
-        "Timestamp"      -> Timestamp.asInstanceOf[js.Any],
+        "ProductCode" -> ProductCode.asInstanceOf[js.Any],
+        "Timestamp" -> Timestamp.asInstanceOf[js.Any],
         "UsageDimension" -> UsageDimension.asInstanceOf[js.Any]
       )
 
@@ -150,7 +150,7 @@ package marketplacemetering {
         Nonce: js.UndefOr[Nonce] = js.undefined
     ): RegisterUsageRequest = {
       val __obj = js.Dynamic.literal(
-        "ProductCode"      -> ProductCode.asInstanceOf[js.Any],
+        "ProductCode" -> ProductCode.asInstanceOf[js.Any],
         "PublicKeyVersion" -> PublicKeyVersion.asInstanceOf[js.Any]
       )
 
@@ -245,8 +245,8 @@ package marketplacemetering {
     ): UsageRecord = {
       val __obj = js.Dynamic.literal(
         "CustomerIdentifier" -> CustomerIdentifier.asInstanceOf[js.Any],
-        "Dimension"          -> Dimension.asInstanceOf[js.Any],
-        "Timestamp"          -> Timestamp.asInstanceOf[js.Any]
+        "Dimension" -> Dimension.asInstanceOf[js.Any],
+        "Timestamp" -> Timestamp.asInstanceOf[js.Any]
       )
 
       Quantity.foreach(__v => __obj.updateDynamic("Quantity")(__v.asInstanceOf[js.Any]))
@@ -282,9 +282,9 @@ package marketplacemetering {
   @js.native
   sealed trait UsageRecordResultStatus extends js.Any
   object UsageRecordResultStatus extends js.Object {
-    val Success               = "Success".asInstanceOf[UsageRecordResultStatus]
+    val Success = "Success".asInstanceOf[UsageRecordResultStatus]
     val CustomerNotSubscribed = "CustomerNotSubscribed".asInstanceOf[UsageRecordResultStatus]
-    val DuplicateRecord       = "DuplicateRecord".asInstanceOf[UsageRecordResultStatus]
+    val DuplicateRecord = "DuplicateRecord".asInstanceOf[UsageRecordResultStatus]
 
     val values = js.Object.freeze(js.Array(Success, CustomerNotSubscribed, DuplicateRecord))
   }

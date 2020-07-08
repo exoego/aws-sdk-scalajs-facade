@@ -7,104 +7,104 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object rds {
-  type AccountQuotaList                        = js.Array[AccountQuota]
-  type AttributeValueList                      = js.Array[String]
-  type AvailabilityZoneList                    = js.Array[AvailabilityZone]
-  type AvailabilityZones                       = js.Array[String]
-  type AvailableProcessorFeatureList           = js.Array[AvailableProcessorFeature]
-  type BooleanOptional                         = Boolean
-  type CertificateList                         = js.Array[Certificate]
-  type CustomAvailabilityZoneList              = js.Array[CustomAvailabilityZone]
-  type DBClusterBacktrackList                  = js.Array[DBClusterBacktrack]
-  type DBClusterEndpointList                   = js.Array[DBClusterEndpoint]
-  type DBClusterList                           = js.Array[DBCluster]
-  type DBClusterMemberList                     = js.Array[DBClusterMember]
-  type DBClusterOptionGroupMemberships         = js.Array[DBClusterOptionGroupStatus]
-  type DBClusterParameterGroupList             = js.Array[DBClusterParameterGroup]
-  type DBClusterRoles                          = js.Array[DBClusterRole]
-  type DBClusterSnapshotAttributeList          = js.Array[DBClusterSnapshotAttribute]
-  type DBClusterSnapshotList                   = js.Array[DBClusterSnapshot]
-  type DBEngineVersionList                     = js.Array[DBEngineVersion]
-  type DBInstanceAutomatedBackupList           = js.Array[DBInstanceAutomatedBackup]
-  type DBInstanceList                          = js.Array[DBInstance]
-  type DBInstanceRoles                         = js.Array[DBInstanceRole]
-  type DBInstanceStatusInfoList                = js.Array[DBInstanceStatusInfo]
-  type DBParameterGroupList                    = js.Array[DBParameterGroup]
-  type DBParameterGroupStatusList              = js.Array[DBParameterGroupStatus]
-  type DBProxyList                             = js.Array[DBProxy]
-  type DBSecurityGroupMembershipList           = js.Array[DBSecurityGroupMembership]
-  type DBSecurityGroupNameList                 = js.Array[String]
-  type DBSecurityGroups                        = js.Array[DBSecurityGroup]
-  type DBSnapshotAttributeList                 = js.Array[DBSnapshotAttribute]
-  type DBSnapshotList                          = js.Array[DBSnapshot]
-  type DBSubnetGroups                          = js.Array[DBSubnetGroup]
-  type DescribeDBLogFilesList                  = js.Array[DescribeDBLogFilesDetails]
-  type DomainMembershipList                    = js.Array[DomainMembership]
-  type DoubleOptional                          = Double
-  type DoubleRangeList                         = js.Array[DoubleRange]
-  type EC2SecurityGroupList                    = js.Array[EC2SecurityGroup]
-  type EngineModeList                          = js.Array[String]
-  type EventCategoriesList                     = js.Array[String]
-  type EventCategoriesMapList                  = js.Array[EventCategoriesMap]
-  type EventList                               = js.Array[Event]
-  type EventSubscriptionsList                  = js.Array[EventSubscription]
-  type ExportTasksList                         = js.Array[ExportTask]
-  type FeatureNameList                         = js.Array[String]
-  type FilterList                              = js.Array[Filter]
-  type FilterValueList                         = js.Array[String]
-  type GlobalClusterList                       = js.Array[GlobalCluster]
-  type GlobalClusterMemberList                 = js.Array[GlobalClusterMember]
-  type IPRangeList                             = js.Array[IPRange]
-  type InstallationMediaList                   = js.Array[InstallationMedia]
-  type IntegerOptional                         = Int
-  type KeyList                                 = js.Array[String]
-  type LogTypeList                             = js.Array[String]
-  type LongOptional                            = Double
-  type MaxRecords                              = Int
+  type AccountQuotaList = js.Array[AccountQuota]
+  type AttributeValueList = js.Array[String]
+  type AvailabilityZoneList = js.Array[AvailabilityZone]
+  type AvailabilityZones = js.Array[String]
+  type AvailableProcessorFeatureList = js.Array[AvailableProcessorFeature]
+  type BooleanOptional = Boolean
+  type CertificateList = js.Array[Certificate]
+  type CustomAvailabilityZoneList = js.Array[CustomAvailabilityZone]
+  type DBClusterBacktrackList = js.Array[DBClusterBacktrack]
+  type DBClusterEndpointList = js.Array[DBClusterEndpoint]
+  type DBClusterList = js.Array[DBCluster]
+  type DBClusterMemberList = js.Array[DBClusterMember]
+  type DBClusterOptionGroupMemberships = js.Array[DBClusterOptionGroupStatus]
+  type DBClusterParameterGroupList = js.Array[DBClusterParameterGroup]
+  type DBClusterRoles = js.Array[DBClusterRole]
+  type DBClusterSnapshotAttributeList = js.Array[DBClusterSnapshotAttribute]
+  type DBClusterSnapshotList = js.Array[DBClusterSnapshot]
+  type DBEngineVersionList = js.Array[DBEngineVersion]
+  type DBInstanceAutomatedBackupList = js.Array[DBInstanceAutomatedBackup]
+  type DBInstanceList = js.Array[DBInstance]
+  type DBInstanceRoles = js.Array[DBInstanceRole]
+  type DBInstanceStatusInfoList = js.Array[DBInstanceStatusInfo]
+  type DBParameterGroupList = js.Array[DBParameterGroup]
+  type DBParameterGroupStatusList = js.Array[DBParameterGroupStatus]
+  type DBProxyList = js.Array[DBProxy]
+  type DBSecurityGroupMembershipList = js.Array[DBSecurityGroupMembership]
+  type DBSecurityGroupNameList = js.Array[String]
+  type DBSecurityGroups = js.Array[DBSecurityGroup]
+  type DBSnapshotAttributeList = js.Array[DBSnapshotAttribute]
+  type DBSnapshotList = js.Array[DBSnapshot]
+  type DBSubnetGroups = js.Array[DBSubnetGroup]
+  type DescribeDBLogFilesList = js.Array[DescribeDBLogFilesDetails]
+  type DomainMembershipList = js.Array[DomainMembership]
+  type DoubleOptional = Double
+  type DoubleRangeList = js.Array[DoubleRange]
+  type EC2SecurityGroupList = js.Array[EC2SecurityGroup]
+  type EngineModeList = js.Array[String]
+  type EventCategoriesList = js.Array[String]
+  type EventCategoriesMapList = js.Array[EventCategoriesMap]
+  type EventList = js.Array[Event]
+  type EventSubscriptionsList = js.Array[EventSubscription]
+  type ExportTasksList = js.Array[ExportTask]
+  type FeatureNameList = js.Array[String]
+  type FilterList = js.Array[Filter]
+  type FilterValueList = js.Array[String]
+  type GlobalClusterList = js.Array[GlobalCluster]
+  type GlobalClusterMemberList = js.Array[GlobalClusterMember]
+  type IPRangeList = js.Array[IPRange]
+  type InstallationMediaList = js.Array[InstallationMedia]
+  type IntegerOptional = Int
+  type KeyList = js.Array[String]
+  type LogTypeList = js.Array[String]
+  type LongOptional = Double
+  type MaxRecords = Int
   type MinimumEngineVersionPerAllowedValueList = js.Array[MinimumEngineVersionPerAllowedValue]
-  type OptionConfigurationList                 = js.Array[OptionConfiguration]
-  type OptionGroupMembershipList               = js.Array[OptionGroupMembership]
-  type OptionGroupOptionSettingsList           = js.Array[OptionGroupOptionSetting]
-  type OptionGroupOptionVersionsList           = js.Array[OptionVersion]
-  type OptionGroupOptionsList                  = js.Array[OptionGroupOption]
-  type OptionGroupsList                        = js.Array[OptionGroup]
-  type OptionNamesList                         = js.Array[String]
-  type OptionSettingConfigurationList          = js.Array[OptionSetting]
-  type OptionSettingsList                      = js.Array[OptionSetting]
-  type OptionsConflictsWith                    = js.Array[String]
-  type OptionsDependedOn                       = js.Array[String]
-  type OptionsList                             = js.Array[Option]
-  type OrderableDBInstanceOptionsList          = js.Array[OrderableDBInstanceOption]
-  type ParametersList                          = js.Array[Parameter]
-  type PendingMaintenanceActionDetails         = js.Array[PendingMaintenanceAction]
-  type PendingMaintenanceActions               = js.Array[ResourcePendingMaintenanceActions]
-  type ProcessorFeatureList                    = js.Array[ProcessorFeature]
-  type RangeList                               = js.Array[Range]
-  type ReadReplicaDBClusterIdentifierList      = js.Array[String]
-  type ReadReplicaDBInstanceIdentifierList     = js.Array[String]
-  type ReadReplicaIdentifierList               = js.Array[String]
-  type ReadersArnList                          = js.Array[String]
-  type RecurringChargeList                     = js.Array[RecurringCharge]
-  type ReservedDBInstanceList                  = js.Array[ReservedDBInstance]
-  type ReservedDBInstancesOfferingList         = js.Array[ReservedDBInstancesOffering]
-  type SourceIdsList                           = js.Array[String]
-  type SourceRegionList                        = js.Array[SourceRegion]
-  type StringList                              = js.Array[String]
-  type StringSensitive                         = String
-  type SubnetIdentifierList                    = js.Array[String]
-  type SubnetList                              = js.Array[Subnet]
-  type SupportedCharacterSetsList              = js.Array[CharacterSet]
-  type SupportedTimezonesList                  = js.Array[Timezone]
-  type TStamp                                  = js.Date
-  type TagList                                 = js.Array[Tag]
-  type TargetGroupList                         = js.Array[DBProxyTargetGroup]
-  type TargetList                              = js.Array[DBProxyTarget]
-  type UserAuthConfigInfoList                  = js.Array[UserAuthConfigInfo]
-  type UserAuthConfigList                      = js.Array[UserAuthConfig]
-  type ValidStorageOptionsList                 = js.Array[ValidStorageOptions]
-  type ValidUpgradeTargetList                  = js.Array[UpgradeTarget]
-  type VpcSecurityGroupIdList                  = js.Array[String]
-  type VpcSecurityGroupMembershipList          = js.Array[VpcSecurityGroupMembership]
+  type OptionConfigurationList = js.Array[OptionConfiguration]
+  type OptionGroupMembershipList = js.Array[OptionGroupMembership]
+  type OptionGroupOptionSettingsList = js.Array[OptionGroupOptionSetting]
+  type OptionGroupOptionVersionsList = js.Array[OptionVersion]
+  type OptionGroupOptionsList = js.Array[OptionGroupOption]
+  type OptionGroupsList = js.Array[OptionGroup]
+  type OptionNamesList = js.Array[String]
+  type OptionSettingConfigurationList = js.Array[OptionSetting]
+  type OptionSettingsList = js.Array[OptionSetting]
+  type OptionsConflictsWith = js.Array[String]
+  type OptionsDependedOn = js.Array[String]
+  type OptionsList = js.Array[Option]
+  type OrderableDBInstanceOptionsList = js.Array[OrderableDBInstanceOption]
+  type ParametersList = js.Array[Parameter]
+  type PendingMaintenanceActionDetails = js.Array[PendingMaintenanceAction]
+  type PendingMaintenanceActions = js.Array[ResourcePendingMaintenanceActions]
+  type ProcessorFeatureList = js.Array[ProcessorFeature]
+  type RangeList = js.Array[Range]
+  type ReadReplicaDBClusterIdentifierList = js.Array[String]
+  type ReadReplicaDBInstanceIdentifierList = js.Array[String]
+  type ReadReplicaIdentifierList = js.Array[String]
+  type ReadersArnList = js.Array[String]
+  type RecurringChargeList = js.Array[RecurringCharge]
+  type ReservedDBInstanceList = js.Array[ReservedDBInstance]
+  type ReservedDBInstancesOfferingList = js.Array[ReservedDBInstancesOffering]
+  type SourceIdsList = js.Array[String]
+  type SourceRegionList = js.Array[SourceRegion]
+  type StringList = js.Array[String]
+  type StringSensitive = String
+  type SubnetIdentifierList = js.Array[String]
+  type SubnetList = js.Array[Subnet]
+  type SupportedCharacterSetsList = js.Array[CharacterSet]
+  type SupportedTimezonesList = js.Array[Timezone]
+  type TStamp = js.Date
+  type TagList = js.Array[Tag]
+  type TargetGroupList = js.Array[DBProxyTargetGroup]
+  type TargetList = js.Array[DBProxyTarget]
+  type UserAuthConfigInfoList = js.Array[UserAuthConfigInfo]
+  type UserAuthConfigList = js.Array[UserAuthConfig]
+  type ValidStorageOptionsList = js.Array[ValidStorageOptions]
+  type ValidUpgradeTargetList = js.Array[UpgradeTarget]
+  type VpcSecurityGroupIdList = js.Array[String]
+  type VpcSecurityGroupMembershipList = js.Array[VpcSecurityGroupMembership]
 
   implicit final class RDSOps(private val service: RDS) extends AnyVal {
 
@@ -450,31 +450,31 @@ package rds {
   class RDS() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def addRoleToDBCluster(params: AddRoleToDBClusterMessage): Request[js.Object]   = js.native
+    def addRoleToDBCluster(params: AddRoleToDBClusterMessage): Request[js.Object] = js.native
     def addRoleToDBInstance(params: AddRoleToDBInstanceMessage): Request[js.Object] = js.native
     def addSourceIdentifierToSubscription(
         params: AddSourceIdentifierToSubscriptionMessage
-    ): Request[AddSourceIdentifierToSubscriptionResult]                         = js.native
+    ): Request[AddSourceIdentifierToSubscriptionResult] = js.native
     def addTagsToResource(params: AddTagsToResourceMessage): Request[js.Object] = js.native
     def applyPendingMaintenanceAction(
         params: ApplyPendingMaintenanceActionMessage
     ): Request[ApplyPendingMaintenanceActionResult] = js.native
     def authorizeDBSecurityGroupIngress(
         params: AuthorizeDBSecurityGroupIngressMessage
-    ): Request[AuthorizeDBSecurityGroupIngressResult]                                      = js.native
+    ): Request[AuthorizeDBSecurityGroupIngressResult] = js.native
     def backtrackDBCluster(params: BacktrackDBClusterMessage): Request[DBClusterBacktrack] = js.native
-    def cancelExportTask(params: CancelExportTaskMessage): Request[ExportTask]             = js.native
+    def cancelExportTask(params: CancelExportTaskMessage): Request[ExportTask] = js.native
     def copyDBClusterParameterGroup(
         params: CopyDBClusterParameterGroupMessage
-    ): Request[CopyDBClusterParameterGroupResult]                                                         = js.native
+    ): Request[CopyDBClusterParameterGroupResult] = js.native
     def copyDBClusterSnapshot(params: CopyDBClusterSnapshotMessage): Request[CopyDBClusterSnapshotResult] = js.native
-    def copyDBParameterGroup(params: CopyDBParameterGroupMessage): Request[CopyDBParameterGroupResult]    = js.native
-    def copyDBSnapshot(params: CopyDBSnapshotMessage): Request[CopyDBSnapshotResult]                      = js.native
-    def copyOptionGroup(params: CopyOptionGroupMessage): Request[CopyOptionGroupResult]                   = js.native
+    def copyDBParameterGroup(params: CopyDBParameterGroupMessage): Request[CopyDBParameterGroupResult] = js.native
+    def copyDBSnapshot(params: CopyDBSnapshotMessage): Request[CopyDBSnapshotResult] = js.native
+    def copyOptionGroup(params: CopyOptionGroupMessage): Request[CopyOptionGroupResult] = js.native
     def createCustomAvailabilityZone(
         params: CreateCustomAvailabilityZoneMessage
-    ): Request[CreateCustomAvailabilityZoneResult]                                                  = js.native
-    def createDBCluster(params: CreateDBClusterMessage): Request[CreateDBClusterResult]             = js.native
+    ): Request[CreateCustomAvailabilityZoneResult] = js.native
+    def createDBCluster(params: CreateDBClusterMessage): Request[CreateDBClusterResult] = js.native
     def createDBClusterEndpoint(params: CreateDBClusterEndpointMessage): Request[DBClusterEndpoint] = js.native
     def createDBClusterParameterGroup(
         params: CreateDBClusterParameterGroupMessage
@@ -484,38 +484,38 @@ package rds {
     def createDBInstance(params: CreateDBInstanceMessage): Request[CreateDBInstanceResult] = js.native
     def createDBInstanceReadReplica(
         params: CreateDBInstanceReadReplicaMessage
-    ): Request[CreateDBInstanceReadReplicaResult]                                                            = js.native
+    ): Request[CreateDBInstanceReadReplicaResult] = js.native
     def createDBParameterGroup(params: CreateDBParameterGroupMessage): Request[CreateDBParameterGroupResult] = js.native
-    def createDBProxy(params: CreateDBProxyRequest): Request[CreateDBProxyResponse]                          = js.native
-    def createDBSecurityGroup(params: CreateDBSecurityGroupMessage): Request[CreateDBSecurityGroupResult]    = js.native
-    def createDBSnapshot(params: CreateDBSnapshotMessage): Request[CreateDBSnapshotResult]                   = js.native
-    def createDBSubnetGroup(params: CreateDBSubnetGroupMessage): Request[CreateDBSubnetGroupResult]          = js.native
+    def createDBProxy(params: CreateDBProxyRequest): Request[CreateDBProxyResponse] = js.native
+    def createDBSecurityGroup(params: CreateDBSecurityGroupMessage): Request[CreateDBSecurityGroupResult] = js.native
+    def createDBSnapshot(params: CreateDBSnapshotMessage): Request[CreateDBSnapshotResult] = js.native
+    def createDBSubnetGroup(params: CreateDBSubnetGroupMessage): Request[CreateDBSubnetGroupResult] = js.native
     def createEventSubscription(params: CreateEventSubscriptionMessage): Request[CreateEventSubscriptionResult] =
       js.native
     def createGlobalCluster(params: CreateGlobalClusterMessage): Request[CreateGlobalClusterResult] = js.native
-    def createOptionGroup(params: CreateOptionGroupMessage): Request[CreateOptionGroupResult]       = js.native
+    def createOptionGroup(params: CreateOptionGroupMessage): Request[CreateOptionGroupResult] = js.native
     def deleteCustomAvailabilityZone(
         params: DeleteCustomAvailabilityZoneMessage
-    ): Request[DeleteCustomAvailabilityZoneResult]                                                      = js.native
-    def deleteDBCluster(params: DeleteDBClusterMessage): Request[DeleteDBClusterResult]                 = js.native
-    def deleteDBClusterEndpoint(params: DeleteDBClusterEndpointMessage): Request[DBClusterEndpoint]     = js.native
+    ): Request[DeleteCustomAvailabilityZoneResult] = js.native
+    def deleteDBCluster(params: DeleteDBClusterMessage): Request[DeleteDBClusterResult] = js.native
+    def deleteDBClusterEndpoint(params: DeleteDBClusterEndpointMessage): Request[DBClusterEndpoint] = js.native
     def deleteDBClusterParameterGroup(params: DeleteDBClusterParameterGroupMessage): Request[js.Object] = js.native
     def deleteDBClusterSnapshot(params: DeleteDBClusterSnapshotMessage): Request[DeleteDBClusterSnapshotResult] =
       js.native
     def deleteDBInstance(params: DeleteDBInstanceMessage): Request[DeleteDBInstanceResult] = js.native
     def deleteDBInstanceAutomatedBackup(
         params: DeleteDBInstanceAutomatedBackupMessage
-    ): Request[DeleteDBInstanceAutomatedBackupResult]                                      = js.native
-    def deleteDBParameterGroup(params: DeleteDBParameterGroupMessage): Request[js.Object]  = js.native
-    def deleteDBProxy(params: DeleteDBProxyRequest): Request[DeleteDBProxyResponse]        = js.native
-    def deleteDBSecurityGroup(params: DeleteDBSecurityGroupMessage): Request[js.Object]    = js.native
+    ): Request[DeleteDBInstanceAutomatedBackupResult] = js.native
+    def deleteDBParameterGroup(params: DeleteDBParameterGroupMessage): Request[js.Object] = js.native
+    def deleteDBProxy(params: DeleteDBProxyRequest): Request[DeleteDBProxyResponse] = js.native
+    def deleteDBSecurityGroup(params: DeleteDBSecurityGroupMessage): Request[js.Object] = js.native
     def deleteDBSnapshot(params: DeleteDBSnapshotMessage): Request[DeleteDBSnapshotResult] = js.native
-    def deleteDBSubnetGroup(params: DeleteDBSubnetGroupMessage): Request[js.Object]        = js.native
+    def deleteDBSubnetGroup(params: DeleteDBSubnetGroupMessage): Request[js.Object] = js.native
     def deleteEventSubscription(params: DeleteEventSubscriptionMessage): Request[DeleteEventSubscriptionResult] =
       js.native
     def deleteGlobalCluster(params: DeleteGlobalClusterMessage): Request[DeleteGlobalClusterResult] = js.native
     def deleteInstallationMedia(params: DeleteInstallationMediaMessage): Request[InstallationMedia] = js.native
-    def deleteOptionGroup(params: DeleteOptionGroupMessage): Request[js.Object]                     = js.native
+    def deleteOptionGroup(params: DeleteOptionGroupMessage): Request[js.Object] = js.native
     def deregisterDBProxyTargets(params: DeregisterDBProxyTargetsRequest): Request[DeregisterDBProxyTargetsResponse] =
       js.native
     def describeAccountAttributes(params: DescribeAccountAttributesMessage): Request[AccountAttributesMessage] =
@@ -539,17 +539,17 @@ package rds {
     ): Request[DescribeDBClusterSnapshotAttributesResult] = js.native
     def describeDBClusterSnapshots(params: DescribeDBClusterSnapshotsMessage): Request[DBClusterSnapshotMessage] =
       js.native
-    def describeDBClusters(params: DescribeDBClustersMessage): Request[DBClusterMessage]                   = js.native
+    def describeDBClusters(params: DescribeDBClustersMessage): Request[DBClusterMessage] = js.native
     def describeDBEngineVersions(params: DescribeDBEngineVersionsMessage): Request[DBEngineVersionMessage] = js.native
     def describeDBInstanceAutomatedBackups(
         params: DescribeDBInstanceAutomatedBackupsMessage
-    ): Request[DBInstanceAutomatedBackupMessage]                                                   = js.native
-    def describeDBInstances(params: DescribeDBInstancesMessage): Request[DBInstanceMessage]        = js.native
+    ): Request[DBInstanceAutomatedBackupMessage] = js.native
+    def describeDBInstances(params: DescribeDBInstancesMessage): Request[DBInstanceMessage] = js.native
     def describeDBLogFiles(params: DescribeDBLogFilesMessage): Request[DescribeDBLogFilesResponse] = js.native
     def describeDBParameterGroups(params: DescribeDBParameterGroupsMessage): Request[DBParameterGroupsMessage] =
       js.native
     def describeDBParameters(params: DescribeDBParametersMessage): Request[DBParameterGroupDetails] = js.native
-    def describeDBProxies(params: DescribeDBProxiesRequest): Request[DescribeDBProxiesResponse]     = js.native
+    def describeDBProxies(params: DescribeDBProxiesRequest): Request[DescribeDBProxiesResponse] = js.native
     def describeDBProxyTargetGroups(
         params: DescribeDBProxyTargetGroupsRequest
     ): Request[DescribeDBProxyTargetGroupsResponse] = js.native
@@ -558,20 +558,20 @@ package rds {
     def describeDBSecurityGroups(params: DescribeDBSecurityGroupsMessage): Request[DBSecurityGroupMessage] = js.native
     def describeDBSnapshotAttributes(
         params: DescribeDBSnapshotAttributesMessage
-    ): Request[DescribeDBSnapshotAttributesResult]                                                   = js.native
-    def describeDBSnapshots(params: DescribeDBSnapshotsMessage): Request[DBSnapshotMessage]          = js.native
+    ): Request[DescribeDBSnapshotAttributesResult] = js.native
+    def describeDBSnapshots(params: DescribeDBSnapshotsMessage): Request[DBSnapshotMessage] = js.native
     def describeDBSubnetGroups(params: DescribeDBSubnetGroupsMessage): Request[DBSubnetGroupMessage] = js.native
     def describeEngineDefaultClusterParameters(
         params: DescribeEngineDefaultClusterParametersMessage
     ): Request[DescribeEngineDefaultClusterParametersResult] = js.native
     def describeEngineDefaultParameters(
         params: DescribeEngineDefaultParametersMessage
-    ): Request[DescribeEngineDefaultParametersResult]                                                    = js.native
+    ): Request[DescribeEngineDefaultParametersResult] = js.native
     def describeEventCategories(params: DescribeEventCategoriesMessage): Request[EventCategoriesMessage] = js.native
     def describeEventSubscriptions(params: DescribeEventSubscriptionsMessage): Request[EventSubscriptionsMessage] =
       js.native
-    def describeEvents(params: DescribeEventsMessage): Request[EventsMessage]                         = js.native
-    def describeExportTasks(params: DescribeExportTasksMessage): Request[ExportTasksMessage]          = js.native
+    def describeEvents(params: DescribeEventsMessage): Request[EventsMessage] = js.native
+    def describeExportTasks(params: DescribeExportTasksMessage): Request[ExportTasksMessage] = js.native
     def describeGlobalClusters(params: DescribeGlobalClustersMessage): Request[GlobalClustersMessage] = js.native
     def describeInstallationMedia(params: DescribeInstallationMediaMessage): Request[InstallationMediaMessage] =
       js.native
@@ -588,30 +588,30 @@ package rds {
       js.native
     def describeReservedDBInstancesOfferings(
         params: DescribeReservedDBInstancesOfferingsMessage
-    ): Request[ReservedDBInstancesOfferingMessage]                                                = js.native
+    ): Request[ReservedDBInstancesOfferingMessage] = js.native
     def describeSourceRegions(params: DescribeSourceRegionsMessage): Request[SourceRegionMessage] = js.native
     def describeValidDBInstanceModifications(
         params: DescribeValidDBInstanceModificationsMessage
     ): Request[DescribeValidDBInstanceModificationsResult] = js.native
     def downloadDBLogFilePortion(params: DownloadDBLogFilePortionMessage): Request[DownloadDBLogFilePortionDetails] =
       js.native
-    def failoverDBCluster(params: FailoverDBClusterMessage): Request[FailoverDBClusterResult]       = js.native
+    def failoverDBCluster(params: FailoverDBClusterMessage): Request[FailoverDBClusterResult] = js.native
     def importInstallationMedia(params: ImportInstallationMediaMessage): Request[InstallationMedia] = js.native
-    def listTagsForResource(params: ListTagsForResourceMessage): Request[TagListMessage]            = js.native
-    def modifyCertificates(params: ModifyCertificatesMessage): Request[ModifyCertificatesResult]    = js.native
+    def listTagsForResource(params: ListTagsForResourceMessage): Request[TagListMessage] = js.native
+    def modifyCertificates(params: ModifyCertificatesMessage): Request[ModifyCertificatesResult] = js.native
     def modifyCurrentDBClusterCapacity(params: ModifyCurrentDBClusterCapacityMessage): Request[DBClusterCapacityInfo] =
       js.native
-    def modifyDBCluster(params: ModifyDBClusterMessage): Request[ModifyDBClusterResult]             = js.native
+    def modifyDBCluster(params: ModifyDBClusterMessage): Request[ModifyDBClusterResult] = js.native
     def modifyDBClusterEndpoint(params: ModifyDBClusterEndpointMessage): Request[DBClusterEndpoint] = js.native
     def modifyDBClusterParameterGroup(
         params: ModifyDBClusterParameterGroupMessage
     ): Request[DBClusterParameterGroupNameMessage] = js.native
     def modifyDBClusterSnapshotAttribute(
         params: ModifyDBClusterSnapshotAttributeMessage
-    ): Request[ModifyDBClusterSnapshotAttributeResult]                                                      = js.native
-    def modifyDBInstance(params: ModifyDBInstanceMessage): Request[ModifyDBInstanceResult]                  = js.native
+    ): Request[ModifyDBClusterSnapshotAttributeResult] = js.native
+    def modifyDBInstance(params: ModifyDBInstanceMessage): Request[ModifyDBInstanceResult] = js.native
     def modifyDBParameterGroup(params: ModifyDBParameterGroupMessage): Request[DBParameterGroupNameMessage] = js.native
-    def modifyDBProxy(params: ModifyDBProxyRequest): Request[ModifyDBProxyResponse]                         = js.native
+    def modifyDBProxy(params: ModifyDBProxyRequest): Request[ModifyDBProxyResponse] = js.native
     def modifyDBProxyTargetGroup(params: ModifyDBProxyTargetGroupRequest): Request[ModifyDBProxyTargetGroupResponse] =
       js.native
     def modifyDBSnapshot(params: ModifyDBSnapshotMessage): Request[ModifyDBSnapshotResult] = js.native
@@ -621,29 +621,29 @@ package rds {
     def modifyEventSubscription(params: ModifyEventSubscriptionMessage): Request[ModifyEventSubscriptionResult] =
       js.native
     def modifyGlobalCluster(params: ModifyGlobalClusterMessage): Request[ModifyGlobalClusterResult] = js.native
-    def modifyOptionGroup(params: ModifyOptionGroupMessage): Request[ModifyOptionGroupResult]       = js.native
-    def promoteReadReplica(params: PromoteReadReplicaMessage): Request[PromoteReadReplicaResult]    = js.native
+    def modifyOptionGroup(params: ModifyOptionGroupMessage): Request[ModifyOptionGroupResult] = js.native
+    def promoteReadReplica(params: PromoteReadReplicaMessage): Request[PromoteReadReplicaResult] = js.native
     def promoteReadReplicaDBCluster(
         params: PromoteReadReplicaDBClusterMessage
     ): Request[PromoteReadReplicaDBClusterResult] = js.native
     def purchaseReservedDBInstancesOffering(
         params: PurchaseReservedDBInstancesOfferingMessage
-    ): Request[PurchaseReservedDBInstancesOfferingResult]                                  = js.native
+    ): Request[PurchaseReservedDBInstancesOfferingResult] = js.native
     def rebootDBInstance(params: RebootDBInstanceMessage): Request[RebootDBInstanceResult] = js.native
     def registerDBProxyTargets(params: RegisterDBProxyTargetsRequest): Request[RegisterDBProxyTargetsResponse] =
       js.native
     def removeFromGlobalCluster(params: RemoveFromGlobalClusterMessage): Request[RemoveFromGlobalClusterResult] =
       js.native
-    def removeRoleFromDBCluster(params: RemoveRoleFromDBClusterMessage): Request[js.Object]   = js.native
+    def removeRoleFromDBCluster(params: RemoveRoleFromDBClusterMessage): Request[js.Object] = js.native
     def removeRoleFromDBInstance(params: RemoveRoleFromDBInstanceMessage): Request[js.Object] = js.native
     def removeSourceIdentifierFromSubscription(
         params: RemoveSourceIdentifierFromSubscriptionMessage
-    ): Request[RemoveSourceIdentifierFromSubscriptionResult]                              = js.native
+    ): Request[RemoveSourceIdentifierFromSubscriptionResult] = js.native
     def removeTagsFromResource(params: RemoveTagsFromResourceMessage): Request[js.Object] = js.native
     def resetDBClusterParameterGroup(
         params: ResetDBClusterParameterGroupMessage
-    ): Request[DBClusterParameterGroupNameMessage]                                                           = js.native
-    def resetDBParameterGroup(params: ResetDBParameterGroupMessage): Request[DBParameterGroupNameMessage]    = js.native
+    ): Request[DBClusterParameterGroupNameMessage] = js.native
+    def resetDBParameterGroup(params: ResetDBParameterGroupMessage): Request[DBParameterGroupNameMessage] = js.native
     def restoreDBClusterFromS3(params: RestoreDBClusterFromS3Message): Request[RestoreDBClusterFromS3Result] = js.native
     def restoreDBClusterFromSnapshot(
         params: RestoreDBClusterFromSnapshotMessage
@@ -661,14 +661,14 @@ package rds {
     ): Request[RestoreDBInstanceToPointInTimeResult] = js.native
     def revokeDBSecurityGroupIngress(
         params: RevokeDBSecurityGroupIngressMessage
-    ): Request[RevokeDBSecurityGroupIngressResult]                                                    = js.native
+    ): Request[RevokeDBSecurityGroupIngressResult] = js.native
     def startActivityStream(params: StartActivityStreamRequest): Request[StartActivityStreamResponse] = js.native
-    def startDBCluster(params: StartDBClusterMessage): Request[StartDBClusterResult]                  = js.native
-    def startDBInstance(params: StartDBInstanceMessage): Request[StartDBInstanceResult]               = js.native
-    def startExportTask(params: StartExportTaskMessage): Request[ExportTask]                          = js.native
-    def stopActivityStream(params: StopActivityStreamRequest): Request[StopActivityStreamResponse]    = js.native
-    def stopDBCluster(params: StopDBClusterMessage): Request[StopDBClusterResult]                     = js.native
-    def stopDBInstance(params: StopDBInstanceMessage): Request[StopDBInstanceResult]                  = js.native
+    def startDBCluster(params: StartDBClusterMessage): Request[StartDBClusterResult] = js.native
+    def startDBInstance(params: StartDBInstanceMessage): Request[StartDBInstanceResult] = js.native
+    def startExportTask(params: StartExportTaskMessage): Request[ExportTask] = js.native
+    def stopActivityStream(params: StopActivityStreamRequest): Request[StopActivityStreamResponse] = js.native
+    def stopDBCluster(params: StopDBClusterMessage): Request[StopDBClusterResult] = js.native
+    def stopDBInstance(params: StopDBInstanceMessage): Request[StopDBInstanceResult] = js.native
   }
 
   /**
@@ -738,7 +738,7 @@ package rds {
   @js.native
   sealed trait ActivityStreamMode extends js.Any
   object ActivityStreamMode extends js.Object {
-    val sync  = "sync".asInstanceOf[ActivityStreamMode]
+    val sync = "sync".asInstanceOf[ActivityStreamMode]
     val async = "async".asInstanceOf[ActivityStreamMode]
 
     val values = js.Object.freeze(js.Array(sync, async))
@@ -747,9 +747,9 @@ package rds {
   @js.native
   sealed trait ActivityStreamStatus extends js.Any
   object ActivityStreamStatus extends js.Object {
-    val stopped  = "stopped".asInstanceOf[ActivityStreamStatus]
+    val stopped = "stopped".asInstanceOf[ActivityStreamStatus]
     val starting = "starting".asInstanceOf[ActivityStreamStatus]
-    val started  = "started".asInstanceOf[ActivityStreamStatus]
+    val started = "started".asInstanceOf[ActivityStreamStatus]
     val stopping = "stopping".asInstanceOf[ActivityStreamStatus]
 
     val values = js.Object.freeze(js.Array(stopped, starting, started, stopping))
@@ -771,7 +771,7 @@ package rds {
     ): AddRoleToDBClusterMessage = {
       val __obj = js.Dynamic.literal(
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "RoleArn"             -> RoleArn.asInstanceOf[js.Any]
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
       FeatureName.foreach(__v => __obj.updateDynamic("FeatureName")(__v.asInstanceOf[js.Any]))
@@ -795,8 +795,8 @@ package rds {
     ): AddRoleToDBInstanceMessage = {
       val __obj = js.Dynamic.literal(
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
-        "FeatureName"          -> FeatureName.asInstanceOf[js.Any],
-        "RoleArn"              -> RoleArn.asInstanceOf[js.Any]
+        "FeatureName" -> FeatureName.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddRoleToDBInstanceMessage]
@@ -860,7 +860,7 @@ package rds {
     ): AddTagsToResourceMessage = {
       val __obj = js.Dynamic.literal(
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
-        "Tags"         -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddTagsToResourceMessage]
@@ -870,7 +870,7 @@ package rds {
   @js.native
   sealed trait ApplyMethod extends js.Any
   object ApplyMethod extends js.Object {
-    val immediate        = "immediate".asInstanceOf[ApplyMethod]
+    val immediate = "immediate".asInstanceOf[ApplyMethod]
     val `pending-reboot` = "pending-reboot".asInstanceOf[ApplyMethod]
 
     val values = js.Object.freeze(js.Array(immediate, `pending-reboot`))
@@ -894,8 +894,8 @@ package rds {
         ResourceIdentifier: String
     ): ApplyPendingMaintenanceActionMessage = {
       val __obj = js.Dynamic.literal(
-        "ApplyAction"        -> ApplyAction.asInstanceOf[js.Any],
-        "OptInType"          -> OptInType.asInstanceOf[js.Any],
+        "ApplyAction" -> ApplyAction.asInstanceOf[js.Any],
+        "OptInType" -> OptInType.asInstanceOf[js.Any],
         "ResourceIdentifier" -> ResourceIdentifier.asInstanceOf[js.Any]
       )
 
@@ -1044,7 +1044,7 @@ package rds {
         UseEarliestTimeOnPointInTimeUnavailable: js.UndefOr[BooleanOptional] = js.undefined
     ): BacktrackDBClusterMessage = {
       val __obj = js.Dynamic.literal(
-        "BacktrackTo"         -> BacktrackTo.asInstanceOf[js.Any],
+        "BacktrackTo" -> BacktrackTo.asInstanceOf[js.Any],
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
       )
 
@@ -1266,9 +1266,9 @@ package rds {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CopyDBClusterParameterGroupMessage = {
       val __obj = js.Dynamic.literal(
-        "SourceDBClusterParameterGroupIdentifier"  -> SourceDBClusterParameterGroupIdentifier.asInstanceOf[js.Any],
+        "SourceDBClusterParameterGroupIdentifier" -> SourceDBClusterParameterGroupIdentifier.asInstanceOf[js.Any],
         "TargetDBClusterParameterGroupDescription" -> TargetDBClusterParameterGroupDescription.asInstanceOf[js.Any],
-        "TargetDBClusterParameterGroupIdentifier"  -> TargetDBClusterParameterGroupIdentifier.asInstanceOf[js.Any]
+        "TargetDBClusterParameterGroupIdentifier" -> TargetDBClusterParameterGroupIdentifier.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -1367,9 +1367,9 @@ package rds {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CopyDBParameterGroupMessage = {
       val __obj = js.Dynamic.literal(
-        "SourceDBParameterGroupIdentifier"  -> SourceDBParameterGroupIdentifier.asInstanceOf[js.Any],
+        "SourceDBParameterGroupIdentifier" -> SourceDBParameterGroupIdentifier.asInstanceOf[js.Any],
         "TargetDBParameterGroupDescription" -> TargetDBParameterGroupDescription.asInstanceOf[js.Any],
-        "TargetDBParameterGroupIdentifier"  -> TargetDBParameterGroupIdentifier.asInstanceOf[js.Any]
+        "TargetDBParameterGroupIdentifier" -> TargetDBParameterGroupIdentifier.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -1471,9 +1471,9 @@ package rds {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CopyOptionGroupMessage = {
       val __obj = js.Dynamic.literal(
-        "SourceOptionGroupIdentifier"  -> SourceOptionGroupIdentifier.asInstanceOf[js.Any],
+        "SourceOptionGroupIdentifier" -> SourceOptionGroupIdentifier.asInstanceOf[js.Any],
         "TargetOptionGroupDescription" -> TargetOptionGroupDescription.asInstanceOf[js.Any],
-        "TargetOptionGroupIdentifier"  -> TargetOptionGroupIdentifier.asInstanceOf[js.Any]
+        "TargetOptionGroupIdentifier" -> TargetOptionGroupIdentifier.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -1565,8 +1565,8 @@ package rds {
     ): CreateDBClusterEndpointMessage = {
       val __obj = js.Dynamic.literal(
         "DBClusterEndpointIdentifier" -> DBClusterEndpointIdentifier.asInstanceOf[js.Any],
-        "DBClusterIdentifier"         -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "EndpointType"                -> EndpointType.asInstanceOf[js.Any]
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
+        "EndpointType" -> EndpointType.asInstanceOf[js.Any]
       )
 
       ExcludedMembers.foreach(__v => __obj.updateDynamic("ExcludedMembers")(__v.asInstanceOf[js.Any]))
@@ -1657,7 +1657,7 @@ package rds {
     ): CreateDBClusterMessage = {
       val __obj = js.Dynamic.literal(
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "Engine"              -> Engine.asInstanceOf[js.Any]
+        "Engine" -> Engine.asInstanceOf[js.Any]
       )
 
       AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
@@ -1729,8 +1729,8 @@ package rds {
     ): CreateDBClusterParameterGroupMessage = {
       val __obj = js.Dynamic.literal(
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any],
-        "DBParameterGroupFamily"      -> DBParameterGroupFamily.asInstanceOf[js.Any],
-        "Description"                 -> Description.asInstanceOf[js.Any]
+        "DBParameterGroupFamily" -> DBParameterGroupFamily.asInstanceOf[js.Any],
+        "Description" -> Description.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -1788,7 +1788,7 @@ package rds {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDBClusterSnapshotMessage = {
       val __obj = js.Dynamic.literal(
-        "DBClusterIdentifier"         -> DBClusterIdentifier.asInstanceOf[js.Any],
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any]
       )
 
@@ -1917,9 +1917,9 @@ package rds {
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): CreateDBInstanceMessage = {
       val __obj = js.Dynamic.literal(
-        "DBInstanceClass"      -> DBInstanceClass.asInstanceOf[js.Any],
+        "DBInstanceClass" -> DBInstanceClass.asInstanceOf[js.Any],
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
-        "Engine"               -> Engine.asInstanceOf[js.Any]
+        "Engine" -> Engine.asInstanceOf[js.Any]
       )
 
       AllocatedStorage.foreach(__v => __obj.updateDynamic("AllocatedStorage")(__v.asInstanceOf[js.Any]))
@@ -2052,7 +2052,7 @@ package rds {
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): CreateDBInstanceReadReplicaMessage = {
       val __obj = js.Dynamic.literal(
-        "DBInstanceIdentifier"       -> DBInstanceIdentifier.asInstanceOf[js.Any],
+        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
         "SourceDBInstanceIdentifier" -> SourceDBInstanceIdentifier.asInstanceOf[js.Any]
       )
 
@@ -2154,8 +2154,8 @@ package rds {
     ): CreateDBParameterGroupMessage = {
       val __obj = js.Dynamic.literal(
         "DBParameterGroupFamily" -> DBParameterGroupFamily.asInstanceOf[js.Any],
-        "DBParameterGroupName"   -> DBParameterGroupName.asInstanceOf[js.Any],
-        "Description"            -> Description.asInstanceOf[js.Any]
+        "DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any],
+        "Description" -> Description.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -2208,10 +2208,10 @@ package rds {
         VpcSecurityGroupIds: js.UndefOr[StringList] = js.undefined
     ): CreateDBProxyRequest = {
       val __obj = js.Dynamic.literal(
-        "Auth"         -> Auth.asInstanceOf[js.Any],
-        "DBProxyName"  -> DBProxyName.asInstanceOf[js.Any],
+        "Auth" -> Auth.asInstanceOf[js.Any],
+        "DBProxyName" -> DBProxyName.asInstanceOf[js.Any],
         "EngineFamily" -> EngineFamily.asInstanceOf[js.Any],
-        "RoleArn"      -> RoleArn.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
         "VpcSubnetIds" -> VpcSubnetIds.asInstanceOf[js.Any]
       )
 
@@ -2259,7 +2259,7 @@ package rds {
     ): CreateDBSecurityGroupMessage = {
       val __obj = js.Dynamic.literal(
         "DBSecurityGroupDescription" -> DBSecurityGroupDescription.asInstanceOf[js.Any],
-        "DBSecurityGroupName"        -> DBSecurityGroupName.asInstanceOf[js.Any]
+        "DBSecurityGroupName" -> DBSecurityGroupName.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -2347,8 +2347,8 @@ package rds {
     ): CreateDBSubnetGroupMessage = {
       val __obj = js.Dynamic.literal(
         "DBSubnetGroupDescription" -> DBSubnetGroupDescription.asInstanceOf[js.Any],
-        "DBSubnetGroupName"        -> DBSubnetGroupName.asInstanceOf[js.Any],
-        "SubnetIds"                -> SubnetIds.asInstanceOf[js.Any]
+        "DBSubnetGroupName" -> DBSubnetGroupName.asInstanceOf[js.Any],
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -2398,7 +2398,7 @@ package rds {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateEventSubscriptionMessage = {
       val __obj = js.Dynamic.literal(
-        "SnsTopicArn"      -> SnsTopicArn.asInstanceOf[js.Any],
+        "SnsTopicArn" -> SnsTopicArn.asInstanceOf[js.Any],
         "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
       )
 
@@ -2501,10 +2501,10 @@ package rds {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateOptionGroupMessage = {
       val __obj = js.Dynamic.literal(
-        "EngineName"             -> EngineName.asInstanceOf[js.Any],
-        "MajorEngineVersion"     -> MajorEngineVersion.asInstanceOf[js.Any],
+        "EngineName" -> EngineName.asInstanceOf[js.Any],
+        "MajorEngineVersion" -> MajorEngineVersion.asInstanceOf[js.Any],
         "OptionGroupDescription" -> OptionGroupDescription.asInstanceOf[js.Any],
-        "OptionGroupName"        -> OptionGroupName.asInstanceOf[js.Any]
+        "OptionGroupName" -> OptionGroupName.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -3958,15 +3958,15 @@ package rds {
   @js.native
   sealed trait DBProxyStatus extends js.Any
   object DBProxyStatus extends js.Object {
-    val available                      = "available".asInstanceOf[DBProxyStatus]
-    val modifying                      = "modifying".asInstanceOf[DBProxyStatus]
-    val `incompatible-network`         = "incompatible-network".asInstanceOf[DBProxyStatus]
+    val available = "available".asInstanceOf[DBProxyStatus]
+    val modifying = "modifying".asInstanceOf[DBProxyStatus]
+    val `incompatible-network` = "incompatible-network".asInstanceOf[DBProxyStatus]
     val `insufficient-resource-limits` = "insufficient-resource-limits".asInstanceOf[DBProxyStatus]
-    val creating                       = "creating".asInstanceOf[DBProxyStatus]
-    val deleting                       = "deleting".asInstanceOf[DBProxyStatus]
-    val suspended                      = "suspended".asInstanceOf[DBProxyStatus]
-    val suspending                     = "suspending".asInstanceOf[DBProxyStatus]
-    val reactivating                   = "reactivating".asInstanceOf[DBProxyStatus]
+    val creating = "creating".asInstanceOf[DBProxyStatus]
+    val deleting = "deleting".asInstanceOf[DBProxyStatus]
+    val suspended = "suspended".asInstanceOf[DBProxyStatus]
+    val suspending = "suspending".asInstanceOf[DBProxyStatus]
+    val reactivating = "reactivating".asInstanceOf[DBProxyStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -6403,7 +6403,7 @@ package rds {
     ): DownloadDBLogFilePortionMessage = {
       val __obj = js.Dynamic.literal(
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
-        "LogFileName"          -> LogFileName.asInstanceOf[js.Any]
+        "LogFileName" -> LogFileName.asInstanceOf[js.Any]
       )
 
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
@@ -6500,7 +6500,7 @@ package rds {
   @js.native
   sealed trait EngineFamily extends js.Any
   object EngineFamily extends js.Object {
-    val MYSQL      = "MYSQL".asInstanceOf[EngineFamily]
+    val MYSQL = "MYSQL".asInstanceOf[EngineFamily]
     val POSTGRESQL = "POSTGRESQL".asInstanceOf[EngineFamily]
 
     val values = js.Object.freeze(js.Array(MYSQL, POSTGRESQL))
@@ -6818,7 +6818,7 @@ package rds {
         Values: FilterValueList
     ): Filter = {
       val __obj = js.Dynamic.literal(
-        "Name"   -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
@@ -6971,11 +6971,11 @@ package rds {
         OSInstallationMediaPath: String
     ): ImportInstallationMediaMessage = {
       val __obj = js.Dynamic.literal(
-        "CustomAvailabilityZoneId"    -> CustomAvailabilityZoneId.asInstanceOf[js.Any],
-        "Engine"                      -> Engine.asInstanceOf[js.Any],
+        "CustomAvailabilityZoneId" -> CustomAvailabilityZoneId.asInstanceOf[js.Any],
+        "Engine" -> Engine.asInstanceOf[js.Any],
         "EngineInstallationMediaPath" -> EngineInstallationMediaPath.asInstanceOf[js.Any],
-        "EngineVersion"               -> EngineVersion.asInstanceOf[js.Any],
-        "OSInstallationMediaPath"     -> OSInstallationMediaPath.asInstanceOf[js.Any]
+        "EngineVersion" -> EngineVersion.asInstanceOf[js.Any],
+        "OSInstallationMediaPath" -> OSInstallationMediaPath.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ImportInstallationMediaMessage]
@@ -7316,7 +7316,7 @@ package rds {
     ): ModifyDBClusterParameterGroupMessage = {
       val __obj = js.Dynamic.literal(
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any],
-        "Parameters"                  -> Parameters.asInstanceOf[js.Any]
+        "Parameters" -> Parameters.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ModifyDBClusterParameterGroupMessage]
@@ -7359,7 +7359,7 @@ package rds {
         ValuesToRemove: js.UndefOr[AttributeValueList] = js.undefined
     ): ModifyDBClusterSnapshotAttributeMessage = {
       val __obj = js.Dynamic.literal(
-        "AttributeName"               -> AttributeName.asInstanceOf[js.Any],
+        "AttributeName" -> AttributeName.asInstanceOf[js.Any],
         "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any]
       )
 
@@ -7580,7 +7580,7 @@ package rds {
     ): ModifyDBParameterGroupMessage = {
       val __obj = js.Dynamic.literal(
         "DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any],
-        "Parameters"           -> Parameters.asInstanceOf[js.Any]
+        "Parameters" -> Parameters.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ModifyDBParameterGroupMessage]
@@ -7659,7 +7659,7 @@ package rds {
         NewName: js.UndefOr[String] = js.undefined
     ): ModifyDBProxyTargetGroupRequest = {
       val __obj = js.Dynamic.literal(
-        "DBProxyName"     -> DBProxyName.asInstanceOf[js.Any],
+        "DBProxyName" -> DBProxyName.asInstanceOf[js.Any],
         "TargetGroupName" -> TargetGroupName.asInstanceOf[js.Any]
       )
 
@@ -7705,7 +7705,7 @@ package rds {
         ValuesToRemove: js.UndefOr[AttributeValueList] = js.undefined
     ): ModifyDBSnapshotAttributeMessage = {
       val __obj = js.Dynamic.literal(
-        "AttributeName"        -> AttributeName.asInstanceOf[js.Any],
+        "AttributeName" -> AttributeName.asInstanceOf[js.Any],
         "DBSnapshotIdentifier" -> DBSnapshotIdentifier.asInstanceOf[js.Any]
       )
 
@@ -7792,7 +7792,7 @@ package rds {
     ): ModifyDBSubnetGroupMessage = {
       val __obj = js.Dynamic.literal(
         "DBSubnetGroupName" -> DBSubnetGroupName.asInstanceOf[js.Any],
-        "SubnetIds"         -> SubnetIds.asInstanceOf[js.Any]
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any]
       )
 
       DBSubnetGroupDescription.foreach(__v => __obj.updateDynamic("DBSubnetGroupDescription")(__v.asInstanceOf[js.Any]))
@@ -9015,7 +9015,7 @@ package rds {
     ): RemoveRoleFromDBClusterMessage = {
       val __obj = js.Dynamic.literal(
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "RoleArn"             -> RoleArn.asInstanceOf[js.Any]
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
       FeatureName.foreach(__v => __obj.updateDynamic("FeatureName")(__v.asInstanceOf[js.Any]))
@@ -9039,8 +9039,8 @@ package rds {
     ): RemoveRoleFromDBInstanceMessage = {
       val __obj = js.Dynamic.literal(
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
-        "FeatureName"          -> FeatureName.asInstanceOf[js.Any],
-        "RoleArn"              -> RoleArn.asInstanceOf[js.Any]
+        "FeatureName" -> FeatureName.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RemoveRoleFromDBInstanceMessage]
@@ -9104,7 +9104,7 @@ package rds {
     ): RemoveTagsFromResourceMessage = {
       val __obj = js.Dynamic.literal(
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
-        "TagKeys"      -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RemoveTagsFromResourceMessage]
@@ -9421,12 +9421,12 @@ package rds {
     ): RestoreDBClusterFromS3Message = {
       val __obj = js.Dynamic.literal(
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "Engine"              -> Engine.asInstanceOf[js.Any],
-        "MasterUserPassword"  -> MasterUserPassword.asInstanceOf[js.Any],
-        "MasterUsername"      -> MasterUsername.asInstanceOf[js.Any],
-        "S3BucketName"        -> S3BucketName.asInstanceOf[js.Any],
-        "S3IngestionRoleArn"  -> S3IngestionRoleArn.asInstanceOf[js.Any],
-        "SourceEngine"        -> SourceEngine.asInstanceOf[js.Any],
+        "Engine" -> Engine.asInstanceOf[js.Any],
+        "MasterUserPassword" -> MasterUserPassword.asInstanceOf[js.Any],
+        "MasterUsername" -> MasterUsername.asInstanceOf[js.Any],
+        "S3BucketName" -> S3BucketName.asInstanceOf[js.Any],
+        "S3IngestionRoleArn" -> S3IngestionRoleArn.asInstanceOf[js.Any],
+        "SourceEngine" -> SourceEngine.asInstanceOf[js.Any],
         "SourceEngineVersion" -> SourceEngineVersion.asInstanceOf[js.Any]
       )
 
@@ -9538,8 +9538,8 @@ package rds {
     ): RestoreDBClusterFromSnapshotMessage = {
       val __obj = js.Dynamic.literal(
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "Engine"              -> Engine.asInstanceOf[js.Any],
-        "SnapshotIdentifier"  -> SnapshotIdentifier.asInstanceOf[js.Any]
+        "Engine" -> Engine.asInstanceOf[js.Any],
+        "SnapshotIdentifier" -> SnapshotIdentifier.asInstanceOf[js.Any]
       )
 
       AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
@@ -9637,7 +9637,7 @@ package rds {
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): RestoreDBClusterToPointInTimeMessage = {
       val __obj = js.Dynamic.literal(
-        "DBClusterIdentifier"       -> DBClusterIdentifier.asInstanceOf[js.Any],
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "SourceDBClusterIdentifier" -> SourceDBClusterIdentifier.asInstanceOf[js.Any]
       )
 
@@ -9903,13 +9903,13 @@ package rds {
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): RestoreDBInstanceFromS3Message = {
       val __obj = js.Dynamic.literal(
-        "DBInstanceClass"      -> DBInstanceClass.asInstanceOf[js.Any],
+        "DBInstanceClass" -> DBInstanceClass.asInstanceOf[js.Any],
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
-        "Engine"               -> Engine.asInstanceOf[js.Any],
-        "S3BucketName"         -> S3BucketName.asInstanceOf[js.Any],
-        "S3IngestionRoleArn"   -> S3IngestionRoleArn.asInstanceOf[js.Any],
-        "SourceEngine"         -> SourceEngine.asInstanceOf[js.Any],
-        "SourceEngineVersion"  -> SourceEngineVersion.asInstanceOf[js.Any]
+        "Engine" -> Engine.asInstanceOf[js.Any],
+        "S3BucketName" -> S3BucketName.asInstanceOf[js.Any],
+        "S3IngestionRoleArn" -> S3IngestionRoleArn.asInstanceOf[js.Any],
+        "SourceEngine" -> SourceEngine.asInstanceOf[js.Any],
+        "SourceEngineVersion" -> SourceEngineVersion.asInstanceOf[js.Any]
       )
 
       AllocatedStorage.foreach(__v => __obj.updateDynamic("AllocatedStorage")(__v.asInstanceOf[js.Any]))
@@ -10302,11 +10302,11 @@ package rds {
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType extends js.Object {
-    val `db-instance`         = "db-instance".asInstanceOf[SourceType]
-    val `db-parameter-group`  = "db-parameter-group".asInstanceOf[SourceType]
-    val `db-security-group`   = "db-security-group".asInstanceOf[SourceType]
-    val `db-snapshot`         = "db-snapshot".asInstanceOf[SourceType]
-    val `db-cluster`          = "db-cluster".asInstanceOf[SourceType]
+    val `db-instance` = "db-instance".asInstanceOf[SourceType]
+    val `db-parameter-group` = "db-parameter-group".asInstanceOf[SourceType]
+    val `db-security-group` = "db-security-group".asInstanceOf[SourceType]
+    val `db-snapshot` = "db-snapshot".asInstanceOf[SourceType]
+    val `db-cluster` = "db-cluster".asInstanceOf[SourceType]
     val `db-cluster-snapshot` = "db-cluster-snapshot".asInstanceOf[SourceType]
 
     val values = js.Object.freeze(
@@ -10338,8 +10338,8 @@ package rds {
         ApplyImmediately: js.UndefOr[BooleanOptional] = js.undefined
     ): StartActivityStreamRequest = {
       val __obj = js.Dynamic.literal(
-        "KmsKeyId"    -> KmsKeyId.asInstanceOf[js.Any],
-        "Mode"        -> Mode.asInstanceOf[js.Any],
+        "KmsKeyId" -> KmsKeyId.asInstanceOf[js.Any],
+        "Mode" -> Mode.asInstanceOf[js.Any],
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -10468,10 +10468,10 @@ package rds {
     ): StartExportTaskMessage = {
       val __obj = js.Dynamic.literal(
         "ExportTaskIdentifier" -> ExportTaskIdentifier.asInstanceOf[js.Any],
-        "IamRoleArn"           -> IamRoleArn.asInstanceOf[js.Any],
-        "KmsKeyId"             -> KmsKeyId.asInstanceOf[js.Any],
-        "S3BucketName"         -> S3BucketName.asInstanceOf[js.Any],
-        "SourceArn"            -> SourceArn.asInstanceOf[js.Any]
+        "IamRoleArn" -> IamRoleArn.asInstanceOf[js.Any],
+        "KmsKeyId" -> KmsKeyId.asInstanceOf[js.Any],
+        "S3BucketName" -> S3BucketName.asInstanceOf[js.Any],
+        "SourceArn" -> SourceArn.asInstanceOf[js.Any]
       )
 
       ExportOnly.foreach(__v => __obj.updateDynamic("ExportOnly")(__v.asInstanceOf[js.Any]))
@@ -10691,9 +10691,9 @@ package rds {
   @js.native
   sealed trait TargetHealthReason extends js.Any
   object TargetHealthReason extends js.Object {
-    val UNREACHABLE            = "UNREACHABLE".asInstanceOf[TargetHealthReason]
-    val CONNECTION_FAILED      = "CONNECTION_FAILED".asInstanceOf[TargetHealthReason]
-    val AUTH_FAILURE           = "AUTH_FAILURE".asInstanceOf[TargetHealthReason]
+    val UNREACHABLE = "UNREACHABLE".asInstanceOf[TargetHealthReason]
+    val CONNECTION_FAILED = "CONNECTION_FAILED".asInstanceOf[TargetHealthReason]
+    val AUTH_FAILURE = "AUTH_FAILURE".asInstanceOf[TargetHealthReason]
     val PENDING_PROXY_CAPACITY = "PENDING_PROXY_CAPACITY".asInstanceOf[TargetHealthReason]
 
     val values = js.Object.freeze(js.Array(UNREACHABLE, CONNECTION_FAILED, AUTH_FAILURE, PENDING_PROXY_CAPACITY))
@@ -10703,7 +10703,7 @@ package rds {
   sealed trait TargetState extends js.Any
   object TargetState extends js.Object {
     val REGISTERING = "REGISTERING".asInstanceOf[TargetState]
-    val AVAILABLE   = "AVAILABLE".asInstanceOf[TargetState]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[TargetState]
     val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[TargetState]
 
     val values = js.Object.freeze(js.Array(REGISTERING, AVAILABLE, UNAVAILABLE))
@@ -10712,9 +10712,9 @@ package rds {
   @js.native
   sealed trait TargetType extends js.Any
   object TargetType extends js.Object {
-    val RDS_INSTANCE            = "RDS_INSTANCE".asInstanceOf[TargetType]
+    val RDS_INSTANCE = "RDS_INSTANCE".asInstanceOf[TargetType]
     val RDS_SERVERLESS_ENDPOINT = "RDS_SERVERLESS_ENDPOINT".asInstanceOf[TargetType]
-    val TRACKED_CLUSTER         = "TRACKED_CLUSTER".asInstanceOf[TargetType]
+    val TRACKED_CLUSTER = "TRACKED_CLUSTER".asInstanceOf[TargetType]
 
     val values = js.Object.freeze(js.Array(RDS_INSTANCE, RDS_SERVERLESS_ENDPOINT, TRACKED_CLUSTER))
   }
@@ -10946,11 +10946,11 @@ package rds {
   @js.native
   sealed trait WriteForwardingStatus extends js.Any
   object WriteForwardingStatus extends js.Object {
-    val enabled   = "enabled".asInstanceOf[WriteForwardingStatus]
-    val disabled  = "disabled".asInstanceOf[WriteForwardingStatus]
-    val enabling  = "enabling".asInstanceOf[WriteForwardingStatus]
+    val enabled = "enabled".asInstanceOf[WriteForwardingStatus]
+    val disabled = "disabled".asInstanceOf[WriteForwardingStatus]
+    val enabling = "enabling".asInstanceOf[WriteForwardingStatus]
     val disabling = "disabling".asInstanceOf[WriteForwardingStatus]
-    val unknown   = "unknown".asInstanceOf[WriteForwardingStatus]
+    val unknown = "unknown".asInstanceOf[WriteForwardingStatus]
 
     val values = js.Object.freeze(js.Array(enabled, disabled, enabling, disabling, unknown))
   }

@@ -7,52 +7,52 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object frauddetector {
-  type BatchCreateVariableErrorList     = js.Array[BatchCreateVariableError]
-  type BatchGetVariableErrorList        = js.Array[BatchGetVariableError]
-  type CsvIndexToVariableMap            = js.Dictionary[String]
-  type DetectorList                     = js.Array[Detector]
-  type DetectorVersionMaxResults        = Int
-  type DetectorVersionSummaryList       = js.Array[DetectorVersionSummary]
-  type DetectorsMaxResults              = Int
-  type EventAttributeMap                = js.Dictionary[attributeValue]
+  type BatchCreateVariableErrorList = js.Array[BatchCreateVariableError]
+  type BatchGetVariableErrorList = js.Array[BatchGetVariableError]
+  type CsvIndexToVariableMap = js.Dictionary[String]
+  type DetectorList = js.Array[Detector]
+  type DetectorVersionMaxResults = Int
+  type DetectorVersionSummaryList = js.Array[DetectorVersionSummary]
+  type DetectorsMaxResults = Int
+  type EventAttributeMap = js.Dictionary[attributeValue]
   type ExternalModelEndpointDataBlobMap = js.Dictionary[ModelEndpointDataBlob]
-  type ExternalModelList                = js.Array[ExternalModel]
-  type ExternalModelsMaxResults         = Int
-  type IsOpaque                         = Boolean
-  type JsonKeyToVariableMap             = js.Dictionary[String]
-  type LabelMapper                      = js.Dictionary[ListOfStrings]
-  type ListOfModelScores                = js.Array[ModelScores]
-  type ListOfModelVersions              = js.Array[ModelVersion]
-  type ListOfRuleResults                = js.Array[RuleResult]
-  type ListOfStrings                    = js.Array[String]
-  type MaxResults                       = Int
-  type MetricsMap                       = js.Dictionary[String]
-  type ModelList                        = js.Array[Model]
-  type ModelPredictionMap               = js.Dictionary[Float]
-  type ModelVariableIndex               = Int
-  type ModelVariablesList               = js.Array[ModelVariable]
-  type ModelVersionDetailList           = js.Array[ModelVersionDetail]
-  type NameList                         = js.Array[String]
-  type NonEmptyListOfStrings            = js.Array[String]
-  type OutcomeList                      = js.Array[Outcome]
-  type OutcomesMaxResults               = Int
-  type RuleDetailList                   = js.Array[RuleDetail]
-  type RuleList                         = js.Array[Rule]
-  type RulesMaxResults                  = Int
-  type VariableEntryList                = js.Array[VariableEntry]
-  type VariableList                     = js.Array[Variable]
-  type VariablesMaxResults              = Int
-  type attributeKey                     = String
-  type attributeValue                   = String
-  type blob                             = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type contentType                      = String
-  type description                      = String
-  type iamRoleArn                       = String
-  type identifier                       = String
-  type nonEmptyString                   = String
-  type ruleExpression                   = String
-  type s3BucketLocation                 = String
-  type time                             = String
+  type ExternalModelList = js.Array[ExternalModel]
+  type ExternalModelsMaxResults = Int
+  type IsOpaque = Boolean
+  type JsonKeyToVariableMap = js.Dictionary[String]
+  type LabelMapper = js.Dictionary[ListOfStrings]
+  type ListOfModelScores = js.Array[ModelScores]
+  type ListOfModelVersions = js.Array[ModelVersion]
+  type ListOfRuleResults = js.Array[RuleResult]
+  type ListOfStrings = js.Array[String]
+  type MaxResults = Int
+  type MetricsMap = js.Dictionary[String]
+  type ModelList = js.Array[Model]
+  type ModelPredictionMap = js.Dictionary[Float]
+  type ModelVariableIndex = Int
+  type ModelVariablesList = js.Array[ModelVariable]
+  type ModelVersionDetailList = js.Array[ModelVersionDetail]
+  type NameList = js.Array[String]
+  type NonEmptyListOfStrings = js.Array[String]
+  type OutcomeList = js.Array[Outcome]
+  type OutcomesMaxResults = Int
+  type RuleDetailList = js.Array[RuleDetail]
+  type RuleList = js.Array[Rule]
+  type RulesMaxResults = Int
+  type VariableEntryList = js.Array[VariableEntry]
+  type VariableList = js.Array[Variable]
+  type VariablesMaxResults = Int
+  type attributeKey = String
+  type attributeValue = String
+  type blob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type contentType = String
+  type description = String
+  type iamRoleArn = String
+  type identifier = String
+  type nonEmptyString = String
+  type ruleExpression = String
+  type s3BucketLocation = String
+  type time = String
 
   implicit final class FraudDetectorOps(private val service: FraudDetector) extends AnyVal {
 
@@ -131,42 +131,42 @@ package frauddetector {
   class FraudDetector() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def batchCreateVariable(params: BatchCreateVariableRequest): Request[BatchCreateVariableResult]       = js.native
-    def batchGetVariable(params: BatchGetVariableRequest): Request[BatchGetVariableResult]                = js.native
+    def batchCreateVariable(params: BatchCreateVariableRequest): Request[BatchCreateVariableResult] = js.native
+    def batchGetVariable(params: BatchGetVariableRequest): Request[BatchGetVariableResult] = js.native
     def createDetectorVersion(params: CreateDetectorVersionRequest): Request[CreateDetectorVersionResult] = js.native
-    def createModelVersion(params: CreateModelVersionRequest): Request[CreateModelVersionResult]          = js.native
-    def createRule(params: CreateRuleRequest): Request[CreateRuleResult]                                  = js.native
-    def createVariable(params: CreateVariableRequest): Request[CreateVariableResult]                      = js.native
-    def deleteDetector(params: DeleteDetectorRequest): Request[DeleteDetectorResult]                      = js.native
+    def createModelVersion(params: CreateModelVersionRequest): Request[CreateModelVersionResult] = js.native
+    def createRule(params: CreateRuleRequest): Request[CreateRuleResult] = js.native
+    def createVariable(params: CreateVariableRequest): Request[CreateVariableResult] = js.native
+    def deleteDetector(params: DeleteDetectorRequest): Request[DeleteDetectorResult] = js.native
     def deleteDetectorVersion(params: DeleteDetectorVersionRequest): Request[DeleteDetectorVersionResult] = js.native
-    def deleteEvent(params: DeleteEventRequest): Request[DeleteEventResult]                               = js.native
-    def deleteRuleVersion(params: DeleteRuleVersionRequest): Request[DeleteRuleVersionResult]             = js.native
-    def describeDetector(params: DescribeDetectorRequest): Request[DescribeDetectorResult]                = js.native
+    def deleteEvent(params: DeleteEventRequest): Request[DeleteEventResult] = js.native
+    def deleteRuleVersion(params: DeleteRuleVersionRequest): Request[DeleteRuleVersionResult] = js.native
+    def describeDetector(params: DescribeDetectorRequest): Request[DescribeDetectorResult] = js.native
     def describeModelVersions(params: DescribeModelVersionsRequest): Request[DescribeModelVersionsResult] = js.native
-    def getDetectorVersion(params: GetDetectorVersionRequest): Request[GetDetectorVersionResult]          = js.native
-    def getDetectors(params: GetDetectorsRequest): Request[GetDetectorsResult]                            = js.native
-    def getExternalModels(params: GetExternalModelsRequest): Request[GetExternalModelsResult]             = js.native
-    def getModelVersion(params: GetModelVersionRequest): Request[GetModelVersionResult]                   = js.native
-    def getModels(params: GetModelsRequest): Request[GetModelsResult]                                     = js.native
-    def getOutcomes(params: GetOutcomesRequest): Request[GetOutcomesResult]                               = js.native
-    def getPrediction(params: GetPredictionRequest): Request[GetPredictionResult]                         = js.native
-    def getRules(params: GetRulesRequest): Request[GetRulesResult]                                        = js.native
-    def getVariables(params: GetVariablesRequest): Request[GetVariablesResult]                            = js.native
-    def putDetector(params: PutDetectorRequest): Request[PutDetectorResult]                               = js.native
-    def putExternalModel(params: PutExternalModelRequest): Request[PutExternalModelResult]                = js.native
-    def putModel(params: PutModelRequest): Request[PutModelResult]                                        = js.native
-    def putOutcome(params: PutOutcomeRequest): Request[PutOutcomeResult]                                  = js.native
+    def getDetectorVersion(params: GetDetectorVersionRequest): Request[GetDetectorVersionResult] = js.native
+    def getDetectors(params: GetDetectorsRequest): Request[GetDetectorsResult] = js.native
+    def getExternalModels(params: GetExternalModelsRequest): Request[GetExternalModelsResult] = js.native
+    def getModelVersion(params: GetModelVersionRequest): Request[GetModelVersionResult] = js.native
+    def getModels(params: GetModelsRequest): Request[GetModelsResult] = js.native
+    def getOutcomes(params: GetOutcomesRequest): Request[GetOutcomesResult] = js.native
+    def getPrediction(params: GetPredictionRequest): Request[GetPredictionResult] = js.native
+    def getRules(params: GetRulesRequest): Request[GetRulesResult] = js.native
+    def getVariables(params: GetVariablesRequest): Request[GetVariablesResult] = js.native
+    def putDetector(params: PutDetectorRequest): Request[PutDetectorResult] = js.native
+    def putExternalModel(params: PutExternalModelRequest): Request[PutExternalModelResult] = js.native
+    def putModel(params: PutModelRequest): Request[PutModelResult] = js.native
+    def putOutcome(params: PutOutcomeRequest): Request[PutOutcomeResult] = js.native
     def updateDetectorVersion(params: UpdateDetectorVersionRequest): Request[UpdateDetectorVersionResult] = js.native
     def updateDetectorVersionMetadata(
         params: UpdateDetectorVersionMetadataRequest
     ): Request[UpdateDetectorVersionMetadataResult] = js.native
     def updateDetectorVersionStatus(
         params: UpdateDetectorVersionStatusRequest
-    ): Request[UpdateDetectorVersionStatusResult]                                                = js.native
+    ): Request[UpdateDetectorVersionStatusResult] = js.native
     def updateModelVersion(params: UpdateModelVersionRequest): Request[UpdateModelVersionResult] = js.native
     def updateRuleMetadata(params: UpdateRuleMetadataRequest): Request[UpdateRuleMetadataResult] = js.native
-    def updateRuleVersion(params: UpdateRuleVersionRequest): Request[UpdateRuleVersionResult]    = js.native
-    def updateVariable(params: UpdateVariableRequest): Request[UpdateVariableResult]             = js.native
+    def updateRuleVersion(params: UpdateRuleVersionRequest): Request[UpdateRuleVersionResult] = js.native
+    def updateVariable(params: UpdateVariableRequest): Request[UpdateVariableResult] = js.native
   }
 
   /**
@@ -312,7 +312,7 @@ package frauddetector {
     ): CreateDetectorVersionRequest = {
       val __obj = js.Dynamic.literal(
         "detectorId" -> detectorId.asInstanceOf[js.Any],
-        "rules"      -> rules.asInstanceOf[js.Any]
+        "rules" -> rules.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
@@ -360,7 +360,7 @@ package frauddetector {
         description: js.UndefOr[description] = js.undefined
     ): CreateModelVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "modelId"   -> modelId.asInstanceOf[js.Any],
+        "modelId" -> modelId.asInstanceOf[js.Any],
         "modelType" -> modelType.asInstanceOf[js.Any]
       )
 
@@ -417,9 +417,9 @@ package frauddetector {
       val __obj = js.Dynamic.literal(
         "detectorId" -> detectorId.asInstanceOf[js.Any],
         "expression" -> expression.asInstanceOf[js.Any],
-        "language"   -> language.asInstanceOf[js.Any],
-        "outcomes"   -> outcomes.asInstanceOf[js.Any],
-        "ruleId"     -> ruleId.asInstanceOf[js.Any]
+        "language" -> language.asInstanceOf[js.Any],
+        "outcomes" -> outcomes.asInstanceOf[js.Any],
+        "ruleId" -> ruleId.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
@@ -464,10 +464,10 @@ package frauddetector {
         variableType: js.UndefOr[String] = js.undefined
     ): CreateVariableRequest = {
       val __obj = js.Dynamic.literal(
-        "dataSource"   -> dataSource.asInstanceOf[js.Any],
-        "dataType"     -> dataType.asInstanceOf[js.Any],
+        "dataSource" -> dataSource.asInstanceOf[js.Any],
+        "dataType" -> dataType.asInstanceOf[js.Any],
         "defaultValue" -> defaultValue.asInstanceOf[js.Any],
-        "name"         -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
@@ -492,8 +492,8 @@ package frauddetector {
   @js.native
   sealed trait DataSource extends js.Any
   object DataSource extends js.Object {
-    val EVENT                = "EVENT".asInstanceOf[DataSource]
-    val MODEL_SCORE          = "MODEL_SCORE".asInstanceOf[DataSource]
+    val EVENT = "EVENT".asInstanceOf[DataSource]
+    val MODEL_SCORE = "MODEL_SCORE".asInstanceOf[DataSource]
     val EXTERNAL_MODEL_SCORE = "EXTERNAL_MODEL_SCORE".asInstanceOf[DataSource]
 
     val values = js.Object.freeze(js.Array(EVENT, MODEL_SCORE, EXTERNAL_MODEL_SCORE))
@@ -502,9 +502,9 @@ package frauddetector {
   @js.native
   sealed trait DataType extends js.Any
   object DataType extends js.Object {
-    val STRING  = "STRING".asInstanceOf[DataType]
+    val STRING = "STRING".asInstanceOf[DataType]
     val INTEGER = "INTEGER".asInstanceOf[DataType]
-    val FLOAT   = "FLOAT".asInstanceOf[DataType]
+    val FLOAT = "FLOAT".asInstanceOf[DataType]
     val BOOLEAN = "BOOLEAN".asInstanceOf[DataType]
 
     val values = js.Object.freeze(js.Array(STRING, INTEGER, FLOAT, BOOLEAN))
@@ -554,7 +554,7 @@ package frauddetector {
         detectorVersionId: nonEmptyString
     ): DeleteDetectorVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "detectorId"        -> detectorId.asInstanceOf[js.Any],
+        "detectorId" -> detectorId.asInstanceOf[js.Any],
         "detectorVersionId" -> detectorVersionId.asInstanceOf[js.Any]
       )
 
@@ -621,8 +621,8 @@ package frauddetector {
         ruleVersion: nonEmptyString
     ): DeleteRuleVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "detectorId"  -> detectorId.asInstanceOf[js.Any],
-        "ruleId"      -> ruleId.asInstanceOf[js.Any],
+        "detectorId" -> detectorId.asInstanceOf[js.Any],
+        "ruleId" -> ruleId.asInstanceOf[js.Any],
         "ruleVersion" -> ruleVersion.asInstanceOf[js.Any]
       )
 
@@ -767,8 +767,8 @@ package frauddetector {
   @js.native
   sealed trait DetectorVersionStatus extends js.Any
   object DetectorVersionStatus extends js.Object {
-    val DRAFT    = "DRAFT".asInstanceOf[DetectorVersionStatus]
-    val ACTIVE   = "ACTIVE".asInstanceOf[DetectorVersionStatus]
+    val DRAFT = "DRAFT".asInstanceOf[DetectorVersionStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[DetectorVersionStatus]
     val INACTIVE = "INACTIVE".asInstanceOf[DetectorVersionStatus]
 
     val values = js.Object.freeze(js.Array(DRAFT, ACTIVE, INACTIVE))
@@ -855,7 +855,7 @@ package frauddetector {
         detectorVersionId: nonEmptyString
     ): GetDetectorVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "detectorId"        -> detectorId.asInstanceOf[js.Any],
+        "detectorId" -> detectorId.asInstanceOf[js.Any],
         "detectorVersionId" -> detectorVersionId.asInstanceOf[js.Any]
       )
 
@@ -1003,8 +1003,8 @@ package frauddetector {
         modelVersionNumber: nonEmptyString
     ): GetModelVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "modelId"            -> modelId.asInstanceOf[js.Any],
-        "modelType"          -> modelType.asInstanceOf[js.Any],
+        "modelId" -> modelId.asInstanceOf[js.Any],
+        "modelType" -> modelType.asInstanceOf[js.Any],
         "modelVersionNumber" -> modelVersionNumber.asInstanceOf[js.Any]
       )
 
@@ -1145,7 +1145,7 @@ package frauddetector {
     ): GetPredictionRequest = {
       val __obj = js.Dynamic.literal(
         "detectorId" -> detectorId.asInstanceOf[js.Any],
-        "eventId"    -> eventId.asInstanceOf[js.Any]
+        "eventId" -> eventId.asInstanceOf[js.Any]
       )
 
       detectorVersionId.foreach(__v => __obj.updateDynamic("detectorVersionId")(__v.asInstanceOf[js.Any]))
@@ -1285,7 +1285,7 @@ package frauddetector {
         labelMapper: LabelMapper
     ): LabelSchema = {
       val __obj = js.Dynamic.literal(
-        "labelKey"    -> labelKey.asInstanceOf[js.Any],
+        "labelKey" -> labelKey.asInstanceOf[js.Any],
         "labelMapper" -> labelMapper.asInstanceOf[js.Any]
       )
 
@@ -1366,7 +1366,7 @@ package frauddetector {
   @js.native
   sealed trait ModelEndpointStatus extends js.Any
   object ModelEndpointStatus extends js.Object {
-    val ASSOCIATED  = "ASSOCIATED".asInstanceOf[ModelEndpointStatus]
+    val ASSOCIATED = "ASSOCIATED".asInstanceOf[ModelEndpointStatus]
     val DISSOCIATED = "DISSOCIATED".asInstanceOf[ModelEndpointStatus]
 
     val values = js.Object.freeze(js.Array(ASSOCIATED, DISSOCIATED))
@@ -1405,7 +1405,7 @@ package frauddetector {
   @js.native
   sealed trait ModelInputDataFormat extends js.Any
   object ModelInputDataFormat extends js.Object {
-    val TEXT_CSV         = "TEXT_CSV".asInstanceOf[ModelInputDataFormat]
+    val TEXT_CSV = "TEXT_CSV".asInstanceOf[ModelInputDataFormat]
     val APPLICATION_JSON = "APPLICATION_JSON".asInstanceOf[ModelInputDataFormat]
 
     val values = js.Object.freeze(js.Array(TEXT_CSV, APPLICATION_JSON))
@@ -1441,7 +1441,7 @@ package frauddetector {
   @js.native
   sealed trait ModelOutputDataFormat extends js.Any
   object ModelOutputDataFormat extends js.Object {
-    val TEXT_CSV              = "TEXT_CSV".asInstanceOf[ModelOutputDataFormat]
+    val TEXT_CSV = "TEXT_CSV".asInstanceOf[ModelOutputDataFormat]
     val APPLICATION_JSONLINES = "APPLICATION_JSONLINES".asInstanceOf[ModelOutputDataFormat]
 
     val values = js.Object.freeze(js.Array(TEXT_CSV, APPLICATION_JSONLINES))
@@ -1527,8 +1527,8 @@ package frauddetector {
         modelVersionNumber: nonEmptyString
     ): ModelVersion = {
       val __obj = js.Dynamic.literal(
-        "modelId"            -> modelId.asInstanceOf[js.Any],
-        "modelType"          -> modelType.asInstanceOf[js.Any],
+        "modelId" -> modelId.asInstanceOf[js.Any],
+        "modelType" -> modelType.asInstanceOf[js.Any],
         "modelVersionNumber" -> modelVersionNumber.asInstanceOf[js.Any]
       )
 
@@ -1591,14 +1591,14 @@ package frauddetector {
   @js.native
   sealed trait ModelVersionStatus extends js.Any
   object ModelVersionStatus extends js.Object {
-    val TRAINING_IN_PROGRESS   = "TRAINING_IN_PROGRESS".asInstanceOf[ModelVersionStatus]
-    val TRAINING_COMPLETE      = "TRAINING_COMPLETE".asInstanceOf[ModelVersionStatus]
-    val ACTIVATE_REQUESTED     = "ACTIVATE_REQUESTED".asInstanceOf[ModelVersionStatus]
-    val ACTIVATE_IN_PROGRESS   = "ACTIVATE_IN_PROGRESS".asInstanceOf[ModelVersionStatus]
-    val ACTIVE                 = "ACTIVE".asInstanceOf[ModelVersionStatus]
+    val TRAINING_IN_PROGRESS = "TRAINING_IN_PROGRESS".asInstanceOf[ModelVersionStatus]
+    val TRAINING_COMPLETE = "TRAINING_COMPLETE".asInstanceOf[ModelVersionStatus]
+    val ACTIVATE_REQUESTED = "ACTIVATE_REQUESTED".asInstanceOf[ModelVersionStatus]
+    val ACTIVATE_IN_PROGRESS = "ACTIVATE_IN_PROGRESS".asInstanceOf[ModelVersionStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[ModelVersionStatus]
     val INACTIVATE_IN_PROGRESS = "INACTIVATE_IN_PROGRESS".asInstanceOf[ModelVersionStatus]
-    val INACTIVE               = "INACTIVE".asInstanceOf[ModelVersionStatus]
-    val ERROR                  = "ERROR".asInstanceOf[ModelVersionStatus]
+    val INACTIVE = "INACTIVE".asInstanceOf[ModelVersionStatus]
+    val ERROR = "ERROR".asInstanceOf[ModelVersionStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1697,12 +1697,12 @@ package frauddetector {
         role: Role
     ): PutExternalModelRequest = {
       val __obj = js.Dynamic.literal(
-        "inputConfiguration"  -> inputConfiguration.asInstanceOf[js.Any],
-        "modelEndpoint"       -> modelEndpoint.asInstanceOf[js.Any],
+        "inputConfiguration" -> inputConfiguration.asInstanceOf[js.Any],
+        "modelEndpoint" -> modelEndpoint.asInstanceOf[js.Any],
         "modelEndpointStatus" -> modelEndpointStatus.asInstanceOf[js.Any],
-        "modelSource"         -> modelSource.asInstanceOf[js.Any],
+        "modelSource" -> modelSource.asInstanceOf[js.Any],
         "outputConfiguration" -> outputConfiguration.asInstanceOf[js.Any],
-        "role"                -> role.asInstanceOf[js.Any]
+        "role" -> role.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutExternalModelRequest]
@@ -1743,10 +1743,10 @@ package frauddetector {
         description: js.UndefOr[description] = js.undefined
     ): PutModelRequest = {
       val __obj = js.Dynamic.literal(
-        "labelSchema"        -> labelSchema.asInstanceOf[js.Any],
-        "modelId"            -> modelId.asInstanceOf[js.Any],
-        "modelType"          -> modelType.asInstanceOf[js.Any],
-        "modelVariables"     -> modelVariables.asInstanceOf[js.Any],
+        "labelSchema" -> labelSchema.asInstanceOf[js.Any],
+        "modelId" -> modelId.asInstanceOf[js.Any],
+        "modelType" -> modelType.asInstanceOf[js.Any],
+        "modelVariables" -> modelVariables.asInstanceOf[js.Any],
         "trainingDataSource" -> trainingDataSource.asInstanceOf[js.Any]
       )
 
@@ -1818,7 +1818,7 @@ package frauddetector {
         name: String
     ): Role = {
       val __obj = js.Dynamic.literal(
-        "arn"  -> arn.asInstanceOf[js.Any],
+        "arn" -> arn.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any]
       )
 
@@ -1844,8 +1844,8 @@ package frauddetector {
         ruleVersion: nonEmptyString
     ): Rule = {
       val __obj = js.Dynamic.literal(
-        "detectorId"  -> detectorId.asInstanceOf[js.Any],
-        "ruleId"      -> ruleId.asInstanceOf[js.Any],
+        "detectorId" -> detectorId.asInstanceOf[js.Any],
+        "ruleId" -> ruleId.asInstanceOf[js.Any],
         "ruleVersion" -> ruleVersion.asInstanceOf[js.Any]
       )
 
@@ -1899,7 +1899,7 @@ package frauddetector {
   @js.native
   sealed trait RuleExecutionMode extends js.Any
   object RuleExecutionMode extends js.Object {
-    val ALL_MATCHED   = "ALL_MATCHED".asInstanceOf[RuleExecutionMode]
+    val ALL_MATCHED = "ALL_MATCHED".asInstanceOf[RuleExecutionMode]
     val FIRST_MATCHED = "FIRST_MATCHED".asInstanceOf[RuleExecutionMode]
 
     val values = js.Object.freeze(js.Array(ALL_MATCHED, FIRST_MATCHED))
@@ -1944,7 +1944,7 @@ package frauddetector {
     ): TrainingDataSource = {
       val __obj = js.Dynamic.literal(
         "dataAccessRoleArn" -> dataAccessRoleArn.asInstanceOf[js.Any],
-        "dataLocation"      -> dataLocation.asInstanceOf[js.Any]
+        "dataLocation" -> dataLocation.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TrainingDataSource]
@@ -1966,8 +1966,8 @@ package frauddetector {
         detectorVersionId: nonEmptyString
     ): UpdateDetectorVersionMetadataRequest = {
       val __obj = js.Dynamic.literal(
-        "description"       -> description.asInstanceOf[js.Any],
-        "detectorId"        -> detectorId.asInstanceOf[js.Any],
+        "description" -> description.asInstanceOf[js.Any],
+        "detectorId" -> detectorId.asInstanceOf[js.Any],
         "detectorVersionId" -> detectorVersionId.asInstanceOf[js.Any]
       )
 
@@ -2011,10 +2011,10 @@ package frauddetector {
         ruleExecutionMode: js.UndefOr[RuleExecutionMode] = js.undefined
     ): UpdateDetectorVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "detectorId"             -> detectorId.asInstanceOf[js.Any],
-        "detectorVersionId"      -> detectorVersionId.asInstanceOf[js.Any],
+        "detectorId" -> detectorId.asInstanceOf[js.Any],
+        "detectorVersionId" -> detectorVersionId.asInstanceOf[js.Any],
         "externalModelEndpoints" -> externalModelEndpoints.asInstanceOf[js.Any],
-        "rules"                  -> rules.asInstanceOf[js.Any]
+        "rules" -> rules.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
@@ -2052,9 +2052,9 @@ package frauddetector {
         status: DetectorVersionStatus
     ): UpdateDetectorVersionStatusRequest = {
       val __obj = js.Dynamic.literal(
-        "detectorId"        -> detectorId.asInstanceOf[js.Any],
+        "detectorId" -> detectorId.asInstanceOf[js.Any],
         "detectorVersionId" -> detectorVersionId.asInstanceOf[js.Any],
-        "status"            -> status.asInstanceOf[js.Any]
+        "status" -> status.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateDetectorVersionStatusRequest]
@@ -2093,11 +2093,11 @@ package frauddetector {
         status: ModelVersionStatus
     ): UpdateModelVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "description"        -> description.asInstanceOf[js.Any],
-        "modelId"            -> modelId.asInstanceOf[js.Any],
-        "modelType"          -> modelType.asInstanceOf[js.Any],
+        "description" -> description.asInstanceOf[js.Any],
+        "modelId" -> modelId.asInstanceOf[js.Any],
+        "modelType" -> modelType.asInstanceOf[js.Any],
         "modelVersionNumber" -> modelVersionNumber.asInstanceOf[js.Any],
-        "status"             -> status.asInstanceOf[js.Any]
+        "status" -> status.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateModelVersionRequest]
@@ -2131,7 +2131,7 @@ package frauddetector {
     ): UpdateRuleMetadataRequest = {
       val __obj = js.Dynamic.literal(
         "description" -> description.asInstanceOf[js.Any],
-        "rule"        -> rule.asInstanceOf[js.Any]
+        "rule" -> rule.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateRuleMetadataRequest]
@@ -2171,9 +2171,9 @@ package frauddetector {
     ): UpdateRuleVersionRequest = {
       val __obj = js.Dynamic.literal(
         "expression" -> expression.asInstanceOf[js.Any],
-        "language"   -> language.asInstanceOf[js.Any],
-        "outcomes"   -> outcomes.asInstanceOf[js.Any],
-        "rule"       -> rule.asInstanceOf[js.Any]
+        "language" -> language.asInstanceOf[js.Any],
+        "outcomes" -> outcomes.asInstanceOf[js.Any],
+        "rule" -> rule.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))

@@ -8,15 +8,15 @@ import facade.amazonaws._
 
 package object augmentedairuntime {
   type ContentClassifiers = js.Array[ContentClassifier]
-  type FailureReason      = String
-  type FlowDefinitionArn  = String
-  type HumanLoopArn       = String
-  type HumanLoopName      = String
+  type FailureReason = String
+  type FlowDefinitionArn = String
+  type HumanLoopArn = String
+  type HumanLoopName = String
   type HumanLoopSummaries = js.Array[HumanLoopSummary]
-  type InputContent       = String
-  type MaxResults         = Int
-  type NextToken          = String
-  type Timestamp          = js.Date
+  type InputContent = String
+  type MaxResults = Int
+  type NextToken = String
+  type Timestamp = js.Date
 
   implicit final class AugmentedAIRuntimeOps(private val service: AugmentedAIRuntime) extends AnyVal {
 
@@ -39,11 +39,11 @@ package augmentedairuntime {
   class AugmentedAIRuntime() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def deleteHumanLoop(params: DeleteHumanLoopRequest): Request[DeleteHumanLoopResponse]       = js.native
+    def deleteHumanLoop(params: DeleteHumanLoopRequest): Request[DeleteHumanLoopResponse] = js.native
     def describeHumanLoop(params: DescribeHumanLoopRequest): Request[DescribeHumanLoopResponse] = js.native
-    def listHumanLoops(params: ListHumanLoopsRequest): Request[ListHumanLoopsResponse]          = js.native
-    def startHumanLoop(params: StartHumanLoopRequest): Request[StartHumanLoopResponse]          = js.native
-    def stopHumanLoop(params: StopHumanLoopRequest): Request[StopHumanLoopResponse]             = js.native
+    def listHumanLoops(params: ListHumanLoopsRequest): Request[ListHumanLoopsResponse] = js.native
+    def startHumanLoop(params: StartHumanLoopRequest): Request[StartHumanLoopResponse] = js.native
+    def stopHumanLoop(params: StopHumanLoopRequest): Request[StopHumanLoopResponse] = js.native
   }
 
   @js.native
@@ -130,11 +130,11 @@ package augmentedairuntime {
         HumanLoopOutput: js.UndefOr[HumanLoopOutput] = js.undefined
     ): DescribeHumanLoopResponse = {
       val __obj = js.Dynamic.literal(
-        "CreationTime"      -> CreationTime.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
         "FlowDefinitionArn" -> FlowDefinitionArn.asInstanceOf[js.Any],
-        "HumanLoopArn"      -> HumanLoopArn.asInstanceOf[js.Any],
-        "HumanLoopName"     -> HumanLoopName.asInstanceOf[js.Any],
-        "HumanLoopStatus"   -> HumanLoopStatus.asInstanceOf[js.Any]
+        "HumanLoopArn" -> HumanLoopArn.asInstanceOf[js.Any],
+        "HumanLoopName" -> HumanLoopName.asInstanceOf[js.Any],
+        "HumanLoopStatus" -> HumanLoopStatus.asInstanceOf[js.Any]
       )
 
       FailureCode.foreach(__v => __obj.updateDynamic("FailureCode")(__v.asInstanceOf[js.Any]))
@@ -211,10 +211,10 @@ package augmentedairuntime {
   sealed trait HumanLoopStatus extends js.Any
   object HumanLoopStatus extends js.Object {
     val InProgress = "InProgress".asInstanceOf[HumanLoopStatus]
-    val Failed     = "Failed".asInstanceOf[HumanLoopStatus]
-    val Completed  = "Completed".asInstanceOf[HumanLoopStatus]
-    val Stopped    = "Stopped".asInstanceOf[HumanLoopStatus]
-    val Stopping   = "Stopping".asInstanceOf[HumanLoopStatus]
+    val Failed = "Failed".asInstanceOf[HumanLoopStatus]
+    val Completed = "Completed".asInstanceOf[HumanLoopStatus]
+    val Stopped = "Stopped".asInstanceOf[HumanLoopStatus]
+    val Stopping = "Stopping".asInstanceOf[HumanLoopStatus]
 
     val values = js.Object.freeze(js.Array(InProgress, Failed, Completed, Stopped, Stopping))
   }
@@ -307,7 +307,7 @@ package augmentedairuntime {
   @js.native
   sealed trait SortOrder extends js.Any
   object SortOrder extends js.Object {
-    val Ascending  = "Ascending".asInstanceOf[SortOrder]
+    val Ascending = "Ascending".asInstanceOf[SortOrder]
     val Descending = "Descending".asInstanceOf[SortOrder]
 
     val values = js.Object.freeze(js.Array(Ascending, Descending))
@@ -331,8 +331,8 @@ package augmentedairuntime {
     ): StartHumanLoopRequest = {
       val __obj = js.Dynamic.literal(
         "FlowDefinitionArn" -> FlowDefinitionArn.asInstanceOf[js.Any],
-        "HumanLoopInput"    -> HumanLoopInput.asInstanceOf[js.Any],
-        "HumanLoopName"     -> HumanLoopName.asInstanceOf[js.Any]
+        "HumanLoopInput" -> HumanLoopInput.asInstanceOf[js.Any],
+        "HumanLoopName" -> HumanLoopName.asInstanceOf[js.Any]
       )
 
       DataAttributes.foreach(__v => __obj.updateDynamic("DataAttributes")(__v.asInstanceOf[js.Any]))

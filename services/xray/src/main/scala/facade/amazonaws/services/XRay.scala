@@ -7,80 +7,80 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object xray {
-  type AliasList                       = js.Array[Alias]
-  type AliasNames                      = js.Array[String]
-  type AnnotationKey                   = String
-  type Annotations                     = js.Dictionary[ValuesWithServiceIds]
-  type AttributeKey                    = String
-  type AttributeMap                    = js.Dictionary[AttributeValue]
-  type AttributeValue                  = String
-  type BorrowCount                     = Int
-  type ClientID                        = String
-  type EC2InstanceId                   = String
-  type EdgeList                        = js.Array[Edge]
-  type EncryptionKeyId                 = String
-  type EntitySelectorExpression        = String
-  type ErrorRootCauseEntityPath        = js.Array[ErrorRootCauseEntity]
-  type ErrorRootCauseServices          = js.Array[ErrorRootCauseService]
-  type ErrorRootCauses                 = js.Array[ErrorRootCause]
-  type FaultRootCauseEntityPath        = js.Array[FaultRootCauseEntity]
-  type FaultRootCauseServices          = js.Array[FaultRootCauseService]
-  type FaultRootCauses                 = js.Array[FaultRootCause]
-  type FilterExpression                = String
-  type FixedRate                       = Double
-  type GetGroupsNextToken              = String
-  type GroupARN                        = String
-  type GroupName                       = String
-  type GroupSummaryList                = js.Array[GroupSummary]
-  type HTTPMethod                      = String
-  type Histogram                       = js.Array[HistogramEntry]
-  type Host                            = String
-  type Hostname                        = String
-  type NullableBoolean                 = Boolean
-  type NullableDouble                  = Double
-  type NullableInteger                 = Int
-  type NullableLong                    = Double
-  type Priority                        = Int
-  type RequestCount                    = Int
-  type ReservoirSize                   = Int
-  type ResourceARN                     = String
+  type AliasList = js.Array[Alias]
+  type AliasNames = js.Array[String]
+  type AnnotationKey = String
+  type Annotations = js.Dictionary[ValuesWithServiceIds]
+  type AttributeKey = String
+  type AttributeMap = js.Dictionary[AttributeValue]
+  type AttributeValue = String
+  type BorrowCount = Int
+  type ClientID = String
+  type EC2InstanceId = String
+  type EdgeList = js.Array[Edge]
+  type EncryptionKeyId = String
+  type EntitySelectorExpression = String
+  type ErrorRootCauseEntityPath = js.Array[ErrorRootCauseEntity]
+  type ErrorRootCauseServices = js.Array[ErrorRootCauseService]
+  type ErrorRootCauses = js.Array[ErrorRootCause]
+  type FaultRootCauseEntityPath = js.Array[FaultRootCauseEntity]
+  type FaultRootCauseServices = js.Array[FaultRootCauseService]
+  type FaultRootCauses = js.Array[FaultRootCause]
+  type FilterExpression = String
+  type FixedRate = Double
+  type GetGroupsNextToken = String
+  type GroupARN = String
+  type GroupName = String
+  type GroupSummaryList = js.Array[GroupSummary]
+  type HTTPMethod = String
+  type Histogram = js.Array[HistogramEntry]
+  type Host = String
+  type Hostname = String
+  type NullableBoolean = Boolean
+  type NullableDouble = Double
+  type NullableInteger = Int
+  type NullableLong = Double
+  type Priority = Int
+  type RequestCount = Int
+  type ReservoirSize = Int
+  type ResourceARN = String
   type ResponseTimeRootCauseEntityPath = js.Array[ResponseTimeRootCauseEntity]
-  type ResponseTimeRootCauseServices   = js.Array[ResponseTimeRootCauseService]
-  type ResponseTimeRootCauses          = js.Array[ResponseTimeRootCause]
-  type RootCauseExceptions             = js.Array[RootCauseException]
-  type RuleName                        = String
-  type SampledCount                    = Int
-  type SamplingRuleRecordList          = js.Array[SamplingRuleRecord]
-  type SamplingStatisticSummaryList    = js.Array[SamplingStatisticSummary]
-  type SamplingStatisticsDocumentList  = js.Array[SamplingStatisticsDocument]
-  type SamplingTargetDocumentList      = js.Array[SamplingTargetDocument]
-  type SegmentDocument                 = String
-  type SegmentId                       = String
-  type SegmentList                     = js.Array[Segment]
-  type ServiceIds                      = js.Array[ServiceId]
-  type ServiceList                     = js.Array[Service]
-  type ServiceName                     = String
-  type ServiceNames                    = js.Array[String]
-  type ServiceType                     = String
-  type TelemetryRecordList             = js.Array[TelemetryRecord]
+  type ResponseTimeRootCauseServices = js.Array[ResponseTimeRootCauseService]
+  type ResponseTimeRootCauses = js.Array[ResponseTimeRootCause]
+  type RootCauseExceptions = js.Array[RootCauseException]
+  type RuleName = String
+  type SampledCount = Int
+  type SamplingRuleRecordList = js.Array[SamplingRuleRecord]
+  type SamplingStatisticSummaryList = js.Array[SamplingStatisticSummary]
+  type SamplingStatisticsDocumentList = js.Array[SamplingStatisticsDocument]
+  type SamplingTargetDocumentList = js.Array[SamplingTargetDocument]
+  type SegmentDocument = String
+  type SegmentId = String
+  type SegmentList = js.Array[Segment]
+  type ServiceIds = js.Array[ServiceId]
+  type ServiceList = js.Array[Service]
+  type ServiceName = String
+  type ServiceNames = js.Array[String]
+  type ServiceType = String
+  type TelemetryRecordList = js.Array[TelemetryRecord]
   type TimeSeriesServiceStatisticsList = js.Array[TimeSeriesServiceStatistics]
-  type Timestamp                       = js.Date
-  type TraceAvailabilityZones          = js.Array[AvailabilityZoneDetail]
-  type TraceId                         = String
-  type TraceIdList                     = js.Array[TraceId]
-  type TraceInstanceIds                = js.Array[InstanceIdDetail]
-  type TraceList                       = js.Array[Trace]
-  type TraceResourceARNs               = js.Array[ResourceARNDetail]
-  type TraceSegmentDocument            = String
-  type TraceSegmentDocumentList        = js.Array[TraceSegmentDocument]
-  type TraceSummaryList                = js.Array[TraceSummary]
-  type TraceUsers                      = js.Array[TraceUser]
-  type URLPath                         = String
-  type UnprocessedStatisticsList       = js.Array[UnprocessedStatistics]
-  type UnprocessedTraceIdList          = js.Array[TraceId]
-  type UnprocessedTraceSegmentList     = js.Array[UnprocessedTraceSegment]
-  type ValuesWithServiceIds            = js.Array[ValueWithServiceIds]
-  type Version                         = Int
+  type Timestamp = js.Date
+  type TraceAvailabilityZones = js.Array[AvailabilityZoneDetail]
+  type TraceId = String
+  type TraceIdList = js.Array[TraceId]
+  type TraceInstanceIds = js.Array[InstanceIdDetail]
+  type TraceList = js.Array[Trace]
+  type TraceResourceARNs = js.Array[ResourceARNDetail]
+  type TraceSegmentDocument = String
+  type TraceSegmentDocumentList = js.Array[TraceSegmentDocument]
+  type TraceSummaryList = js.Array[TraceSummary]
+  type TraceUsers = js.Array[TraceUser]
+  type URLPath = String
+  type UnprocessedStatisticsList = js.Array[UnprocessedStatistics]
+  type UnprocessedTraceIdList = js.Array[TraceId]
+  type UnprocessedTraceSegmentList = js.Array[UnprocessedTraceSegment]
+  type ValuesWithServiceIds = js.Array[ValueWithServiceIds]
+  type Version = Int
 
   implicit final class XRayOps(private val service: XRay) extends AnyVal {
 
@@ -135,30 +135,30 @@ package xray {
   class XRay() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def batchGetTraces(params: BatchGetTracesRequest): Request[BatchGetTracesResult]                = js.native
-    def createGroup(params: CreateGroupRequest): Request[CreateGroupResult]                         = js.native
-    def createSamplingRule(params: CreateSamplingRuleRequest): Request[CreateSamplingRuleResult]    = js.native
-    def deleteGroup(params: DeleteGroupRequest): Request[DeleteGroupResult]                         = js.native
-    def deleteSamplingRule(params: DeleteSamplingRuleRequest): Request[DeleteSamplingRuleResult]    = js.native
+    def batchGetTraces(params: BatchGetTracesRequest): Request[BatchGetTracesResult] = js.native
+    def createGroup(params: CreateGroupRequest): Request[CreateGroupResult] = js.native
+    def createSamplingRule(params: CreateSamplingRuleRequest): Request[CreateSamplingRuleResult] = js.native
+    def deleteGroup(params: DeleteGroupRequest): Request[DeleteGroupResult] = js.native
+    def deleteSamplingRule(params: DeleteSamplingRuleRequest): Request[DeleteSamplingRuleResult] = js.native
     def getEncryptionConfig(params: GetEncryptionConfigRequest): Request[GetEncryptionConfigResult] = js.native
-    def getGroup(params: GetGroupRequest): Request[GetGroupResult]                                  = js.native
-    def getGroups(params: GetGroupsRequest): Request[GetGroupsResult]                               = js.native
-    def getSamplingRules(params: GetSamplingRulesRequest): Request[GetSamplingRulesResult]          = js.native
+    def getGroup(params: GetGroupRequest): Request[GetGroupResult] = js.native
+    def getGroups(params: GetGroupsRequest): Request[GetGroupsResult] = js.native
+    def getSamplingRules(params: GetSamplingRulesRequest): Request[GetSamplingRulesResult] = js.native
     def getSamplingStatisticSummaries(
         params: GetSamplingStatisticSummariesRequest
-    ): Request[GetSamplingStatisticSummariesResult]                                              = js.native
+    ): Request[GetSamplingStatisticSummariesResult] = js.native
     def getSamplingTargets(params: GetSamplingTargetsRequest): Request[GetSamplingTargetsResult] = js.native
-    def getServiceGraph(params: GetServiceGraphRequest): Request[GetServiceGraphResult]          = js.native
+    def getServiceGraph(params: GetServiceGraphRequest): Request[GetServiceGraphResult] = js.native
     def getTimeSeriesServiceStatistics(
         params: GetTimeSeriesServiceStatisticsRequest
-    ): Request[GetTimeSeriesServiceStatisticsResult]                                                = js.native
-    def getTraceGraph(params: GetTraceGraphRequest): Request[GetTraceGraphResult]                   = js.native
-    def getTraceSummaries(params: GetTraceSummariesRequest): Request[GetTraceSummariesResult]       = js.native
+    ): Request[GetTimeSeriesServiceStatisticsResult] = js.native
+    def getTraceGraph(params: GetTraceGraphRequest): Request[GetTraceGraphResult] = js.native
+    def getTraceSummaries(params: GetTraceSummariesRequest): Request[GetTraceSummariesResult] = js.native
     def putEncryptionConfig(params: PutEncryptionConfigRequest): Request[PutEncryptionConfigResult] = js.native
     def putTelemetryRecords(params: PutTelemetryRecordsRequest): Request[PutTelemetryRecordsResult] = js.native
-    def putTraceSegments(params: PutTraceSegmentsRequest): Request[PutTraceSegmentsResult]          = js.native
-    def updateGroup(params: UpdateGroupRequest): Request[UpdateGroupResult]                         = js.native
-    def updateSamplingRule(params: UpdateSamplingRuleRequest): Request[UpdateSamplingRuleResult]    = js.native
+    def putTraceSegments(params: PutTraceSegmentsRequest): Request[PutTraceSegmentsResult] = js.native
+    def updateGroup(params: UpdateGroupRequest): Request[UpdateGroupResult] = js.native
+    def updateSamplingRule(params: UpdateSamplingRuleRequest): Request[UpdateSamplingRuleResult] = js.native
   }
 
   /**
@@ -539,7 +539,7 @@ package xray {
   sealed trait EncryptionStatus extends js.Any
   object EncryptionStatus extends js.Object {
     val UPDATING = "UPDATING".asInstanceOf[EncryptionStatus]
-    val ACTIVE   = "ACTIVE".asInstanceOf[EncryptionStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[EncryptionStatus]
 
     val values = js.Object.freeze(js.Array(UPDATING, ACTIVE))
   }
@@ -548,7 +548,7 @@ package xray {
   sealed trait EncryptionType extends js.Any
   object EncryptionType extends js.Object {
     val NONE = "NONE".asInstanceOf[EncryptionType]
-    val KMS  = "KMS".asInstanceOf[EncryptionType]
+    val KMS = "KMS".asInstanceOf[EncryptionType]
 
     val values = js.Object.freeze(js.Array(NONE, KMS))
   }
@@ -992,7 +992,7 @@ package xray {
         NextToken: js.UndefOr[String] = js.undefined
     ): GetServiceGraphRequest = {
       val __obj = js.Dynamic.literal(
-        "EndTime"   -> EndTime.asInstanceOf[js.Any],
+        "EndTime" -> EndTime.asInstanceOf[js.Any],
         "StartTime" -> StartTime.asInstanceOf[js.Any]
       )
 
@@ -1054,7 +1054,7 @@ package xray {
         Period: js.UndefOr[NullableInteger] = js.undefined
     ): GetTimeSeriesServiceStatisticsRequest = {
       val __obj = js.Dynamic.literal(
-        "EndTime"   -> EndTime.asInstanceOf[js.Any],
+        "EndTime" -> EndTime.asInstanceOf[js.Any],
         "StartTime" -> StartTime.asInstanceOf[js.Any]
       )
 
@@ -1154,7 +1154,7 @@ package xray {
         TimeRangeType: js.UndefOr[TimeRangeType] = js.undefined
     ): GetTraceSummariesRequest = {
       val __obj = js.Dynamic.literal(
-        "EndTime"   -> EndTime.asInstanceOf[js.Any],
+        "EndTime" -> EndTime.asInstanceOf[js.Any],
         "StartTime" -> StartTime.asInstanceOf[js.Any]
       )
 
@@ -1585,16 +1585,16 @@ package xray {
         RuleName: js.UndefOr[RuleName] = js.undefined
     ): SamplingRule = {
       val __obj = js.Dynamic.literal(
-        "FixedRate"     -> FixedRate.asInstanceOf[js.Any],
-        "HTTPMethod"    -> HTTPMethod.asInstanceOf[js.Any],
-        "Host"          -> Host.asInstanceOf[js.Any],
-        "Priority"      -> Priority.asInstanceOf[js.Any],
+        "FixedRate" -> FixedRate.asInstanceOf[js.Any],
+        "HTTPMethod" -> HTTPMethod.asInstanceOf[js.Any],
+        "Host" -> Host.asInstanceOf[js.Any],
+        "Priority" -> Priority.asInstanceOf[js.Any],
         "ReservoirSize" -> ReservoirSize.asInstanceOf[js.Any],
-        "ResourceARN"   -> ResourceARN.asInstanceOf[js.Any],
-        "ServiceName"   -> ServiceName.asInstanceOf[js.Any],
-        "ServiceType"   -> ServiceType.asInstanceOf[js.Any],
-        "URLPath"       -> URLPath.asInstanceOf[js.Any],
-        "Version"       -> Version.asInstanceOf[js.Any]
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "ServiceName" -> ServiceName.asInstanceOf[js.Any],
+        "ServiceType" -> ServiceType.asInstanceOf[js.Any],
+        "URLPath" -> URLPath.asInstanceOf[js.Any],
+        "Version" -> Version.asInstanceOf[js.Any]
       )
 
       Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
@@ -1736,11 +1736,11 @@ package xray {
         BorrowCount: js.UndefOr[BorrowCount] = js.undefined
     ): SamplingStatisticsDocument = {
       val __obj = js.Dynamic.literal(
-        "ClientID"     -> ClientID.asInstanceOf[js.Any],
+        "ClientID" -> ClientID.asInstanceOf[js.Any],
         "RequestCount" -> RequestCount.asInstanceOf[js.Any],
-        "RuleName"     -> RuleName.asInstanceOf[js.Any],
+        "RuleName" -> RuleName.asInstanceOf[js.Any],
         "SampledCount" -> SampledCount.asInstanceOf[js.Any],
-        "Timestamp"    -> Timestamp.asInstanceOf[js.Any]
+        "Timestamp" -> Timestamp.asInstanceOf[js.Any]
       )
 
       BorrowCount.foreach(__v => __obj.updateDynamic("BorrowCount")(__v.asInstanceOf[js.Any]))
@@ -1774,7 +1774,7 @@ package xray {
   sealed trait SamplingStrategyName extends js.Any
   object SamplingStrategyName extends js.Object {
     val PartialScan = "PartialScan".asInstanceOf[SamplingStrategyName]
-    val FixedRate   = "FixedRate".asInstanceOf[SamplingStrategyName]
+    val FixedRate = "FixedRate".asInstanceOf[SamplingStrategyName]
 
     val values = js.Object.freeze(js.Array(PartialScan, FixedRate))
   }
@@ -1987,7 +1987,7 @@ package xray {
   sealed trait TimeRangeType extends js.Any
   object TimeRangeType extends js.Object {
     val TraceId = "TraceId".asInstanceOf[TimeRangeType]
-    val Event   = "Event".asInstanceOf[TimeRangeType]
+    val Event = "Event".asInstanceOf[TimeRangeType]
 
     val values = js.Object.freeze(js.Array(TraceId, Event))
   }

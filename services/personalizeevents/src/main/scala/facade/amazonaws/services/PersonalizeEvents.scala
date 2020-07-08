@@ -7,11 +7,11 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object personalizeevents {
-  type Date                = js.Date
-  type EventList           = js.Array[Event]
+  type Date = js.Date
+  type EventList = js.Array[Event]
   type EventPropertiesJSON = String
-  type StringType          = String
-  type UserId              = String
+  type StringType = String
+  type UserId = String
 
   implicit final class PersonalizeEventsOps(private val service: PersonalizeEvents) extends AnyVal {
 
@@ -49,9 +49,9 @@ package personalizeevents {
         eventId: js.UndefOr[StringType] = js.undefined
     ): Event = {
       val __obj = js.Dynamic.literal(
-        "eventType"  -> eventType.asInstanceOf[js.Any],
+        "eventType" -> eventType.asInstanceOf[js.Any],
         "properties" -> properties.asInstanceOf[js.Any],
-        "sentAt"     -> sentAt.asInstanceOf[js.Any]
+        "sentAt" -> sentAt.asInstanceOf[js.Any]
       )
 
       eventId.foreach(__v => __obj.updateDynamic("eventId")(__v.asInstanceOf[js.Any]))
@@ -76,8 +76,8 @@ package personalizeevents {
         userId: js.UndefOr[UserId] = js.undefined
     ): PutEventsRequest = {
       val __obj = js.Dynamic.literal(
-        "eventList"  -> eventList.asInstanceOf[js.Any],
-        "sessionId"  -> sessionId.asInstanceOf[js.Any],
+        "eventList" -> eventList.asInstanceOf[js.Any],
+        "sessionId" -> sessionId.asInstanceOf[js.Any],
         "trackingId" -> trackingId.asInstanceOf[js.Any]
       )
 

@@ -7,48 +7,48 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object workmail {
-  type AccessControlRuleAction      = String
+  type AccessControlRuleAction = String
   type AccessControlRuleDescription = String
-  type AccessControlRuleName        = String
-  type AccessControlRuleNameList    = js.Array[AccessControlRuleName]
-  type AccessControlRulesList       = js.Array[AccessControlRule]
-  type ActionsList                  = js.Array[AccessControlRuleAction]
-  type Aliases                      = js.Array[EmailAddress]
-  type AmazonResourceName           = String
-  type EmailAddress                 = String
-  type FolderConfigurations         = js.Array[FolderConfiguration]
-  type GroupName                    = String
-  type Groups                       = js.Array[Group]
-  type IpAddress                    = String
-  type IpRange                      = String
-  type IpRangeList                  = js.Array[IpRange]
-  type MailboxQuota                 = Int
-  type MailboxSize                  = Double
-  type MaxResults                   = Int
-  type Members                      = js.Array[Member]
-  type NextToken                    = String
-  type OrganizationId               = String
-  type OrganizationName             = String
-  type OrganizationSummaries        = js.Array[OrganizationSummary]
-  type Password                     = String
-  type PermissionValues             = js.Array[PermissionType]
-  type Permissions                  = js.Array[Permission]
-  type PolicyDescription            = String
-  type ResourceDelegates            = js.Array[Delegate]
-  type ResourceId                   = String
-  type ResourceName                 = String
-  type Resources                    = js.Array[Resource]
-  type RetentionPeriod              = Int
-  type ShortString                  = String
-  type TagKey                       = String
-  type TagKeyList                   = js.Array[TagKey]
-  type TagList                      = js.Array[Tag]
-  type TagValue                     = String
-  type Timestamp                    = js.Date
-  type UserIdList                   = js.Array[WorkMailIdentifier]
-  type UserName                     = String
-  type Users                        = js.Array[User]
-  type WorkMailIdentifier           = String
+  type AccessControlRuleName = String
+  type AccessControlRuleNameList = js.Array[AccessControlRuleName]
+  type AccessControlRulesList = js.Array[AccessControlRule]
+  type ActionsList = js.Array[AccessControlRuleAction]
+  type Aliases = js.Array[EmailAddress]
+  type AmazonResourceName = String
+  type EmailAddress = String
+  type FolderConfigurations = js.Array[FolderConfiguration]
+  type GroupName = String
+  type Groups = js.Array[Group]
+  type IpAddress = String
+  type IpRange = String
+  type IpRangeList = js.Array[IpRange]
+  type MailboxQuota = Int
+  type MailboxSize = Double
+  type MaxResults = Int
+  type Members = js.Array[Member]
+  type NextToken = String
+  type OrganizationId = String
+  type OrganizationName = String
+  type OrganizationSummaries = js.Array[OrganizationSummary]
+  type Password = String
+  type PermissionValues = js.Array[PermissionType]
+  type Permissions = js.Array[Permission]
+  type PolicyDescription = String
+  type ResourceDelegates = js.Array[Delegate]
+  type ResourceId = String
+  type ResourceName = String
+  type Resources = js.Array[Resource]
+  type RetentionPeriod = Int
+  type ShortString = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type Timestamp = js.Date
+  type UserIdList = js.Array[WorkMailIdentifier]
+  type UserName = String
+  type Users = js.Array[User]
+  type WorkMailIdentifier = String
 
   implicit final class WorkMailOps(private val service: WorkMail) extends AnyVal {
 
@@ -168,25 +168,25 @@ package workmail {
     ): Request[AssociateDelegateToResourceResponse] = js.native
     def associateMemberToGroup(params: AssociateMemberToGroupRequest): Request[AssociateMemberToGroupResponse] =
       js.native
-    def createAlias(params: CreateAliasRequest): Request[CreateAliasResponse]          = js.native
-    def createGroup(params: CreateGroupRequest): Request[CreateGroupResponse]          = js.native
+    def createAlias(params: CreateAliasRequest): Request[CreateAliasResponse] = js.native
+    def createGroup(params: CreateGroupRequest): Request[CreateGroupResponse] = js.native
     def createResource(params: CreateResourceRequest): Request[CreateResourceResponse] = js.native
-    def createUser(params: CreateUserRequest): Request[CreateUserResponse]             = js.native
+    def createUser(params: CreateUserRequest): Request[CreateUserResponse] = js.native
     def deleteAccessControlRule(params: DeleteAccessControlRuleRequest): Request[DeleteAccessControlRuleResponse] =
       js.native
     def deleteAlias(params: DeleteAliasRequest): Request[DeleteAliasResponse] = js.native
     def deleteGroup(params: DeleteGroupRequest): Request[DeleteGroupResponse] = js.native
     def deleteMailboxPermissions(params: DeleteMailboxPermissionsRequest): Request[DeleteMailboxPermissionsResponse] =
       js.native
-    def deleteResource(params: DeleteResourceRequest): Request[DeleteResourceResponse]                      = js.native
+    def deleteResource(params: DeleteResourceRequest): Request[DeleteResourceResponse] = js.native
     def deleteRetentionPolicy(params: DeleteRetentionPolicyRequest): Request[DeleteRetentionPolicyResponse] = js.native
-    def deleteUser(params: DeleteUserRequest): Request[DeleteUserResponse]                                  = js.native
+    def deleteUser(params: DeleteUserRequest): Request[DeleteUserResponse] = js.native
     def deregisterFromWorkMail(params: DeregisterFromWorkMailRequest): Request[DeregisterFromWorkMailResponse] =
       js.native
-    def describeGroup(params: DescribeGroupRequest): Request[DescribeGroupResponse]                      = js.native
+    def describeGroup(params: DescribeGroupRequest): Request[DescribeGroupResponse] = js.native
     def describeOrganization(params: DescribeOrganizationRequest): Request[DescribeOrganizationResponse] = js.native
-    def describeResource(params: DescribeResourceRequest): Request[DescribeResourceResponse]             = js.native
-    def describeUser(params: DescribeUserRequest): Request[DescribeUserResponse]                         = js.native
+    def describeResource(params: DescribeResourceRequest): Request[DescribeResourceResponse] = js.native
+    def describeUser(params: DescribeUserRequest): Request[DescribeUserResponse] = js.native
     def disassociateDelegateFromResource(
         params: DisassociateDelegateFromResourceRequest
     ): Request[DisassociateDelegateFromResourceResponse] = js.native
@@ -197,31 +197,31 @@ package workmail {
       js.native
     def getDefaultRetentionPolicy(
         params: GetDefaultRetentionPolicyRequest
-    ): Request[GetDefaultRetentionPolicyResponse]                                               = js.native
+    ): Request[GetDefaultRetentionPolicyResponse] = js.native
     def getMailboxDetails(params: GetMailboxDetailsRequest): Request[GetMailboxDetailsResponse] = js.native
     def listAccessControlRules(params: ListAccessControlRulesRequest): Request[ListAccessControlRulesResponse] =
       js.native
-    def listAliases(params: ListAliasesRequest): Request[ListAliasesResponse]                = js.native
+    def listAliases(params: ListAliasesRequest): Request[ListAliasesResponse] = js.native
     def listGroupMembers(params: ListGroupMembersRequest): Request[ListGroupMembersResponse] = js.native
-    def listGroups(params: ListGroupsRequest): Request[ListGroupsResponse]                   = js.native
+    def listGroups(params: ListGroupsRequest): Request[ListGroupsResponse] = js.native
     def listMailboxPermissions(params: ListMailboxPermissionsRequest): Request[ListMailboxPermissionsResponse] =
       js.native
-    def listOrganizations(params: ListOrganizationsRequest): Request[ListOrganizationsResponse]             = js.native
+    def listOrganizations(params: ListOrganizationsRequest): Request[ListOrganizationsResponse] = js.native
     def listResourceDelegates(params: ListResourceDelegatesRequest): Request[ListResourceDelegatesResponse] = js.native
-    def listResources(params: ListResourcesRequest): Request[ListResourcesResponse]                         = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
-    def listUsers(params: ListUsersRequest): Request[ListUsersResponse]                                     = js.native
-    def putAccessControlRule(params: PutAccessControlRuleRequest): Request[PutAccessControlRuleResponse]    = js.native
+    def listResources(params: ListResourcesRequest): Request[ListResourcesResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def listUsers(params: ListUsersRequest): Request[ListUsersResponse] = js.native
+    def putAccessControlRule(params: PutAccessControlRuleRequest): Request[PutAccessControlRuleResponse] = js.native
     def putMailboxPermissions(params: PutMailboxPermissionsRequest): Request[PutMailboxPermissionsResponse] = js.native
-    def putRetentionPolicy(params: PutRetentionPolicyRequest): Request[PutRetentionPolicyResponse]          = js.native
-    def registerToWorkMail(params: RegisterToWorkMailRequest): Request[RegisterToWorkMailResponse]          = js.native
-    def resetPassword(params: ResetPasswordRequest): Request[ResetPasswordResponse]                         = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                               = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                         = js.native
-    def updateMailboxQuota(params: UpdateMailboxQuotaRequest): Request[UpdateMailboxQuotaResponse]          = js.native
+    def putRetentionPolicy(params: PutRetentionPolicyRequest): Request[PutRetentionPolicyResponse] = js.native
+    def registerToWorkMail(params: RegisterToWorkMailRequest): Request[RegisterToWorkMailResponse] = js.native
+    def resetPassword(params: ResetPasswordRequest): Request[ResetPasswordResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateMailboxQuota(params: UpdateMailboxQuotaRequest): Request[UpdateMailboxQuotaResponse] = js.native
     def updatePrimaryEmailAddress(
         params: UpdatePrimaryEmailAddressRequest
-    ): Request[UpdatePrimaryEmailAddressResponse]                                      = js.native
+    ): Request[UpdatePrimaryEmailAddressResponse] = js.native
     def updateResource(params: UpdateResourceRequest): Request[UpdateResourceResponse] = js.native
   }
 
@@ -278,7 +278,7 @@ package workmail {
   sealed trait AccessControlRuleEffect extends js.Any
   object AccessControlRuleEffect extends js.Object {
     val ALLOW = "ALLOW".asInstanceOf[AccessControlRuleEffect]
-    val DENY  = "DENY".asInstanceOf[AccessControlRuleEffect]
+    val DENY = "DENY".asInstanceOf[AccessControlRuleEffect]
 
     val values = js.Object.freeze(js.Array(ALLOW, DENY))
   }
@@ -298,9 +298,9 @@ package workmail {
         ResourceId: ResourceId
     ): AssociateDelegateToResourceRequest = {
       val __obj = js.Dynamic.literal(
-        "EntityId"       -> EntityId.asInstanceOf[js.Any],
+        "EntityId" -> EntityId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "ResourceId"     -> ResourceId.asInstanceOf[js.Any]
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AssociateDelegateToResourceRequest]
@@ -335,8 +335,8 @@ package workmail {
         OrganizationId: OrganizationId
     ): AssociateMemberToGroupRequest = {
       val __obj = js.Dynamic.literal(
-        "GroupId"        -> GroupId.asInstanceOf[js.Any],
-        "MemberId"       -> MemberId.asInstanceOf[js.Any],
+        "GroupId" -> GroupId.asInstanceOf[js.Any],
+        "MemberId" -> MemberId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
 
@@ -401,8 +401,8 @@ package workmail {
         OrganizationId: OrganizationId
     ): CreateAliasRequest = {
       val __obj = js.Dynamic.literal(
-        "Alias"          -> Alias.asInstanceOf[js.Any],
-        "EntityId"       -> EntityId.asInstanceOf[js.Any],
+        "Alias" -> Alias.asInstanceOf[js.Any],
+        "EntityId" -> EntityId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
 
@@ -436,7 +436,7 @@ package workmail {
         OrganizationId: OrganizationId
     ): CreateGroupRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"           -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
 
@@ -475,9 +475,9 @@ package workmail {
         Type: ResourceType
     ): CreateResourceRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"           -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "Type"           -> Type.asInstanceOf[js.Any]
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateResourceRequest]
@@ -517,10 +517,10 @@ package workmail {
         Password: Password
     ): CreateUserRequest = {
       val __obj = js.Dynamic.literal(
-        "DisplayName"    -> DisplayName.asInstanceOf[js.Any],
-        "Name"           -> Name.asInstanceOf[js.Any],
+        "DisplayName" -> DisplayName.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "Password"       -> Password.asInstanceOf[js.Any]
+        "Password" -> Password.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateUserRequest]
@@ -559,7 +559,7 @@ package workmail {
         Type: MemberType
     ): Delegate = {
       val __obj = js.Dynamic.literal(
-        "Id"   -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
@@ -580,7 +580,7 @@ package workmail {
         OrganizationId: OrganizationId
     ): DeleteAccessControlRuleRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"           -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
 
@@ -616,8 +616,8 @@ package workmail {
         OrganizationId: OrganizationId
     ): DeleteAliasRequest = {
       val __obj = js.Dynamic.literal(
-        "Alias"          -> Alias.asInstanceOf[js.Any],
-        "EntityId"       -> EntityId.asInstanceOf[js.Any],
+        "Alias" -> Alias.asInstanceOf[js.Any],
+        "EntityId" -> EntityId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
 
@@ -651,7 +651,7 @@ package workmail {
         OrganizationId: OrganizationId
     ): DeleteGroupRequest = {
       val __obj = js.Dynamic.literal(
-        "GroupId"        -> GroupId.asInstanceOf[js.Any],
+        "GroupId" -> GroupId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
 
@@ -687,8 +687,8 @@ package workmail {
         OrganizationId: OrganizationId
     ): DeleteMailboxPermissionsRequest = {
       val __obj = js.Dynamic.literal(
-        "EntityId"       -> EntityId.asInstanceOf[js.Any],
-        "GranteeId"      -> GranteeId.asInstanceOf[js.Any],
+        "EntityId" -> EntityId.asInstanceOf[js.Any],
+        "GranteeId" -> GranteeId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
 
@@ -723,7 +723,7 @@ package workmail {
     ): DeleteResourceRequest = {
       val __obj = js.Dynamic.literal(
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "ResourceId"     -> ResourceId.asInstanceOf[js.Any]
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteResourceRequest]
@@ -756,7 +756,7 @@ package workmail {
         OrganizationId: OrganizationId
     ): DeleteRetentionPolicyRequest = {
       val __obj = js.Dynamic.literal(
-        "Id"             -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
 
@@ -791,7 +791,7 @@ package workmail {
     ): DeleteUserRequest = {
       val __obj = js.Dynamic.literal(
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "UserId"         -> UserId.asInstanceOf[js.Any]
+        "UserId" -> UserId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteUserRequest]
@@ -824,7 +824,7 @@ package workmail {
         OrganizationId: OrganizationId
     ): DeregisterFromWorkMailRequest = {
       val __obj = js.Dynamic.literal(
-        "EntityId"       -> EntityId.asInstanceOf[js.Any],
+        "EntityId" -> EntityId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
 
@@ -858,7 +858,7 @@ package workmail {
         OrganizationId: OrganizationId
     ): DescribeGroupRequest = {
       val __obj = js.Dynamic.literal(
-        "GroupId"        -> GroupId.asInstanceOf[js.Any],
+        "GroupId" -> GroupId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
 
@@ -969,7 +969,7 @@ package workmail {
     ): DescribeResourceRequest = {
       val __obj = js.Dynamic.literal(
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "ResourceId"     -> ResourceId.asInstanceOf[js.Any]
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeResourceRequest]
@@ -1027,7 +1027,7 @@ package workmail {
     ): DescribeUserRequest = {
       val __obj = js.Dynamic.literal(
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "UserId"         -> UserId.asInstanceOf[js.Any]
+        "UserId" -> UserId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeUserRequest]
@@ -1086,9 +1086,9 @@ package workmail {
         ResourceId: ResourceId
     ): DisassociateDelegateFromResourceRequest = {
       val __obj = js.Dynamic.literal(
-        "EntityId"       -> EntityId.asInstanceOf[js.Any],
+        "EntityId" -> EntityId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "ResourceId"     -> ResourceId.asInstanceOf[js.Any]
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DisassociateDelegateFromResourceRequest]
@@ -1123,8 +1123,8 @@ package workmail {
         OrganizationId: OrganizationId
     ): DisassociateMemberFromGroupRequest = {
       val __obj = js.Dynamic.literal(
-        "GroupId"        -> GroupId.asInstanceOf[js.Any],
-        "MemberId"       -> MemberId.asInstanceOf[js.Any],
+        "GroupId" -> GroupId.asInstanceOf[js.Any],
+        "MemberId" -> MemberId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
 
@@ -1148,9 +1148,9 @@ package workmail {
   @js.native
   sealed trait EntityState extends js.Any
   object EntityState extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[EntityState]
+    val ENABLED = "ENABLED".asInstanceOf[EntityState]
     val DISABLED = "DISABLED".asInstanceOf[EntityState]
-    val DELETED  = "DELETED".asInstanceOf[EntityState]
+    val DELETED = "DELETED".asInstanceOf[EntityState]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED, DELETED))
   }
@@ -1174,7 +1174,7 @@ package workmail {
     ): FolderConfiguration = {
       val __obj = js.Dynamic.literal(
         "Action" -> Action.asInstanceOf[js.Any],
-        "Name"   -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       Period.foreach(__v => __obj.updateDynamic("Period")(__v.asInstanceOf[js.Any]))
@@ -1185,11 +1185,11 @@ package workmail {
   @js.native
   sealed trait FolderName extends js.Any
   object FolderName extends js.Object {
-    val INBOX         = "INBOX".asInstanceOf[FolderName]
+    val INBOX = "INBOX".asInstanceOf[FolderName]
     val DELETED_ITEMS = "DELETED_ITEMS".asInstanceOf[FolderName]
-    val SENT_ITEMS    = "SENT_ITEMS".asInstanceOf[FolderName]
-    val DRAFTS        = "DRAFTS".asInstanceOf[FolderName]
-    val JUNK_EMAIL    = "JUNK_EMAIL".asInstanceOf[FolderName]
+    val SENT_ITEMS = "SENT_ITEMS".asInstanceOf[FolderName]
+    val DRAFTS = "DRAFTS".asInstanceOf[FolderName]
+    val JUNK_EMAIL = "JUNK_EMAIL".asInstanceOf[FolderName]
 
     val values = js.Object.freeze(js.Array(INBOX, DELETED_ITEMS, SENT_ITEMS, DRAFTS, JUNK_EMAIL))
   }
@@ -1211,10 +1211,10 @@ package workmail {
         UserId: WorkMailIdentifier
     ): GetAccessControlEffectRequest = {
       val __obj = js.Dynamic.literal(
-        "Action"         -> Action.asInstanceOf[js.Any],
-        "IpAddress"      -> IpAddress.asInstanceOf[js.Any],
+        "Action" -> Action.asInstanceOf[js.Any],
+        "IpAddress" -> IpAddress.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "UserId"         -> UserId.asInstanceOf[js.Any]
+        "UserId" -> UserId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetAccessControlEffectRequest]
@@ -1297,7 +1297,7 @@ package workmail {
     ): GetMailboxDetailsRequest = {
       val __obj = js.Dynamic.literal(
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "UserId"         -> UserId.asInstanceOf[js.Any]
+        "UserId" -> UserId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetMailboxDetailsRequest]
@@ -1408,7 +1408,7 @@ package workmail {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListAliasesRequest = {
       val __obj = js.Dynamic.literal(
-        "EntityId"       -> EntityId.asInstanceOf[js.Any],
+        "EntityId" -> EntityId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
 
@@ -1454,7 +1454,7 @@ package workmail {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListGroupMembersRequest = {
       val __obj = js.Dynamic.literal(
-        "GroupId"        -> GroupId.asInstanceOf[js.Any],
+        "GroupId" -> GroupId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
 
@@ -1543,7 +1543,7 @@ package workmail {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListMailboxPermissionsRequest = {
       val __obj = js.Dynamic.literal(
-        "EntityId"       -> EntityId.asInstanceOf[js.Any],
+        "EntityId" -> EntityId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
 
@@ -1628,7 +1628,7 @@ package workmail {
     ): ListResourceDelegatesRequest = {
       val __obj = js.Dynamic.literal(
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "ResourceId"     -> ResourceId.asInstanceOf[js.Any]
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
       )
 
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
@@ -1814,7 +1814,7 @@ package workmail {
   sealed trait MemberType extends js.Any
   object MemberType extends js.Object {
     val GROUP = "GROUP".asInstanceOf[MemberType]
-    val USER  = "USER".asInstanceOf[MemberType]
+    val USER = "USER".asInstanceOf[MemberType]
 
     val values = js.Object.freeze(js.Array(GROUP, USER))
   }
@@ -1865,8 +1865,8 @@ package workmail {
         PermissionValues: PermissionValues
     ): Permission = {
       val __obj = js.Dynamic.literal(
-        "GranteeId"        -> GranteeId.asInstanceOf[js.Any],
-        "GranteeType"      -> GranteeType.asInstanceOf[js.Any],
+        "GranteeId" -> GranteeId.asInstanceOf[js.Any],
+        "GranteeType" -> GranteeType.asInstanceOf[js.Any],
         "PermissionValues" -> PermissionValues.asInstanceOf[js.Any]
       )
 
@@ -1877,8 +1877,8 @@ package workmail {
   @js.native
   sealed trait PermissionType extends js.Any
   object PermissionType extends js.Object {
-    val FULL_ACCESS    = "FULL_ACCESS".asInstanceOf[PermissionType]
-    val SEND_AS        = "SEND_AS".asInstanceOf[PermissionType]
+    val FULL_ACCESS = "FULL_ACCESS".asInstanceOf[PermissionType]
+    val SEND_AS = "SEND_AS".asInstanceOf[PermissionType]
     val SEND_ON_BEHALF = "SEND_ON_BEHALF".asInstanceOf[PermissionType]
 
     val values = js.Object.freeze(js.Array(FULL_ACCESS, SEND_AS, SEND_ON_BEHALF))
@@ -1913,9 +1913,9 @@ package workmail {
         UserIds: js.UndefOr[UserIdList] = js.undefined
     ): PutAccessControlRuleRequest = {
       val __obj = js.Dynamic.literal(
-        "Description"    -> Description.asInstanceOf[js.Any],
-        "Effect"         -> Effect.asInstanceOf[js.Any],
-        "Name"           -> Name.asInstanceOf[js.Any],
+        "Description" -> Description.asInstanceOf[js.Any],
+        "Effect" -> Effect.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
 
@@ -1959,9 +1959,9 @@ package workmail {
         PermissionValues: PermissionValues
     ): PutMailboxPermissionsRequest = {
       val __obj = js.Dynamic.literal(
-        "EntityId"         -> EntityId.asInstanceOf[js.Any],
-        "GranteeId"        -> GranteeId.asInstanceOf[js.Any],
-        "OrganizationId"   -> OrganizationId.asInstanceOf[js.Any],
+        "EntityId" -> EntityId.asInstanceOf[js.Any],
+        "GranteeId" -> GranteeId.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
         "PermissionValues" -> PermissionValues.asInstanceOf[js.Any]
       )
 
@@ -2002,8 +2002,8 @@ package workmail {
     ): PutRetentionPolicyRequest = {
       val __obj = js.Dynamic.literal(
         "FolderConfigurations" -> FolderConfigurations.asInstanceOf[js.Any],
-        "Name"                 -> Name.asInstanceOf[js.Any],
-        "OrganizationId"       -> OrganizationId.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -2040,8 +2040,8 @@ package workmail {
         OrganizationId: OrganizationId
     ): RegisterToWorkMailRequest = {
       val __obj = js.Dynamic.literal(
-        "Email"          -> Email.asInstanceOf[js.Any],
-        "EntityId"       -> EntityId.asInstanceOf[js.Any],
+        "Email" -> Email.asInstanceOf[js.Any],
+        "EntityId" -> EntityId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
 
@@ -2078,8 +2078,8 @@ package workmail {
     ): ResetPasswordRequest = {
       val __obj = js.Dynamic.literal(
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "Password"       -> Password.asInstanceOf[js.Any],
-        "UserId"         -> UserId.asInstanceOf[js.Any]
+        "Password" -> Password.asInstanceOf[js.Any],
+        "UserId" -> UserId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ResetPasswordRequest]
@@ -2139,7 +2139,7 @@ package workmail {
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {
-    val ROOM      = "ROOM".asInstanceOf[ResourceType]
+    val ROOM = "ROOM".asInstanceOf[ResourceType]
     val EQUIPMENT = "EQUIPMENT".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(js.Array(ROOM, EQUIPMENT))
@@ -2148,8 +2148,8 @@ package workmail {
   @js.native
   sealed trait RetentionAction extends js.Any
   object RetentionAction extends js.Object {
-    val NONE               = "NONE".asInstanceOf[RetentionAction]
-    val DELETE             = "DELETE".asInstanceOf[RetentionAction]
+    val NONE = "NONE".asInstanceOf[RetentionAction]
+    val DELETE = "DELETE".asInstanceOf[RetentionAction]
     val PERMANENTLY_DELETE = "PERMANENTLY_DELETE".asInstanceOf[RetentionAction]
 
     val values = js.Object.freeze(js.Array(NONE, DELETE, PERMANENTLY_DELETE))
@@ -2171,7 +2171,7 @@ package workmail {
         Value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -2193,7 +2193,7 @@ package workmail {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -2227,7 +2227,7 @@ package workmail {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -2262,9 +2262,9 @@ package workmail {
         UserId: WorkMailIdentifier
     ): UpdateMailboxQuotaRequest = {
       val __obj = js.Dynamic.literal(
-        "MailboxQuota"   -> MailboxQuota.asInstanceOf[js.Any],
+        "MailboxQuota" -> MailboxQuota.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "UserId"         -> UserId.asInstanceOf[js.Any]
+        "UserId" -> UserId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateMailboxQuotaRequest]
@@ -2299,8 +2299,8 @@ package workmail {
         OrganizationId: OrganizationId
     ): UpdatePrimaryEmailAddressRequest = {
       val __obj = js.Dynamic.literal(
-        "Email"          -> Email.asInstanceOf[js.Any],
-        "EntityId"       -> EntityId.asInstanceOf[js.Any],
+        "Email" -> Email.asInstanceOf[js.Any],
+        "EntityId" -> EntityId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
 
@@ -2339,7 +2339,7 @@ package workmail {
     ): UpdateResourceRequest = {
       val __obj = js.Dynamic.literal(
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "ResourceId"     -> ResourceId.asInstanceOf[js.Any]
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
       )
 
       BookingOptions.foreach(__v => __obj.updateDynamic("BookingOptions")(__v.asInstanceOf[js.Any]))
@@ -2404,8 +2404,8 @@ package workmail {
   @js.native
   sealed trait UserRole extends js.Any
   object UserRole extends js.Object {
-    val USER        = "USER".asInstanceOf[UserRole]
-    val RESOURCE    = "RESOURCE".asInstanceOf[UserRole]
+    val USER = "USER".asInstanceOf[UserRole]
+    val RESOURCE = "RESOURCE".asInstanceOf[UserRole]
     val SYSTEM_USER = "SYSTEM_USER".asInstanceOf[UserRole]
 
     val values = js.Object.freeze(js.Array(USER, RESOURCE, SYSTEM_USER))

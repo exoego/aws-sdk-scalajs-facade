@@ -7,83 +7,83 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object workspaces {
-  type ARN                                 = String
-  type AccountModificationList             = js.Array[AccountModification]
-  type Alias                               = String
-  type BooleanObject                       = Boolean
-  type BundleId                            = String
-  type BundleIdList                        = js.Array[BundleId]
-  type BundleList                          = js.Array[WorkspaceBundle]
-  type BundleOwner                         = String
-  type ClientPropertiesList                = js.Array[ClientPropertiesResult]
-  type ComputerName                        = String
-  type DedicatedTenancyCidrRangeList       = js.Array[DedicatedTenancyManagementCidrRange]
+  type ARN = String
+  type AccountModificationList = js.Array[AccountModification]
+  type Alias = String
+  type BooleanObject = Boolean
+  type BundleId = String
+  type BundleIdList = js.Array[BundleId]
+  type BundleList = js.Array[WorkspaceBundle]
+  type BundleOwner = String
+  type ClientPropertiesList = js.Array[ClientPropertiesResult]
+  type ComputerName = String
+  type DedicatedTenancyCidrRangeList = js.Array[DedicatedTenancyManagementCidrRange]
   type DedicatedTenancyManagementCidrRange = String
-  type DefaultOu                           = String
-  type Description                         = String
-  type DirectoryId                         = String
-  type DirectoryIdList                     = js.Array[DirectoryId]
-  type DirectoryList                       = js.Array[WorkspaceDirectory]
-  type DirectoryName                       = String
-  type DnsIpAddresses                      = js.Array[IpAddress]
-  type Ec2ImageId                          = String
-  type ErrorType                           = String
-  type FailedCreateWorkspaceRequests       = js.Array[FailedCreateWorkspaceRequest]
-  type FailedRebootWorkspaceRequests       = js.Array[FailedWorkspaceChangeRequest]
-  type FailedRebuildWorkspaceRequests      = js.Array[FailedWorkspaceChangeRequest]
-  type FailedStartWorkspaceRequests        = js.Array[FailedWorkspaceChangeRequest]
-  type FailedStopWorkspaceRequests         = js.Array[FailedWorkspaceChangeRequest]
-  type FailedTerminateWorkspaceRequests    = js.Array[FailedWorkspaceChangeRequest]
-  type IpAddress                           = String
-  type IpGroupDesc                         = String
-  type IpGroupId                           = String
-  type IpGroupIdList                       = js.Array[IpGroupId]
-  type IpGroupName                         = String
-  type IpRevokedRuleList                   = js.Array[IpRule]
-  type IpRule                              = String
-  type IpRuleDesc                          = String
-  type IpRuleList                          = js.Array[IpRuleItem]
-  type Limit                               = Int
-  type ManagementCidrRangeConstraint       = String
-  type ManagementCidrRangeMaxResults       = Int
-  type ModificationStateList               = js.Array[ModificationState]
-  type NonEmptyString                      = String
-  type PaginationToken                     = String
-  type RebootWorkspaceRequests             = js.Array[RebootRequest]
-  type RebuildWorkspaceRequests            = js.Array[RebuildRequest]
-  type Region                              = String
-  type RegistrationCode                    = String
-  type ResourceIdList                      = js.Array[NonEmptyString]
-  type RootVolumeSizeGib                   = Int
+  type DefaultOu = String
+  type Description = String
+  type DirectoryId = String
+  type DirectoryIdList = js.Array[DirectoryId]
+  type DirectoryList = js.Array[WorkspaceDirectory]
+  type DirectoryName = String
+  type DnsIpAddresses = js.Array[IpAddress]
+  type Ec2ImageId = String
+  type ErrorType = String
+  type FailedCreateWorkspaceRequests = js.Array[FailedCreateWorkspaceRequest]
+  type FailedRebootWorkspaceRequests = js.Array[FailedWorkspaceChangeRequest]
+  type FailedRebuildWorkspaceRequests = js.Array[FailedWorkspaceChangeRequest]
+  type FailedStartWorkspaceRequests = js.Array[FailedWorkspaceChangeRequest]
+  type FailedStopWorkspaceRequests = js.Array[FailedWorkspaceChangeRequest]
+  type FailedTerminateWorkspaceRequests = js.Array[FailedWorkspaceChangeRequest]
+  type IpAddress = String
+  type IpGroupDesc = String
+  type IpGroupId = String
+  type IpGroupIdList = js.Array[IpGroupId]
+  type IpGroupName = String
+  type IpRevokedRuleList = js.Array[IpRule]
+  type IpRule = String
+  type IpRuleDesc = String
+  type IpRuleList = js.Array[IpRuleItem]
+  type Limit = Int
+  type ManagementCidrRangeConstraint = String
+  type ManagementCidrRangeMaxResults = Int
+  type ModificationStateList = js.Array[ModificationState]
+  type NonEmptyString = String
+  type PaginationToken = String
+  type RebootWorkspaceRequests = js.Array[RebootRequest]
+  type RebuildWorkspaceRequests = js.Array[RebuildRequest]
+  type Region = String
+  type RegistrationCode = String
+  type ResourceIdList = js.Array[NonEmptyString]
+  type RootVolumeSizeGib = Int
   type RunningModeAutoStopTimeoutInMinutes = Int
-  type SecurityGroupId                     = String
-  type SnapshotList                        = js.Array[Snapshot]
-  type StartWorkspaceRequests              = js.Array[StartRequest]
-  type StopWorkspaceRequests               = js.Array[StopRequest]
-  type SubnetId                            = String
-  type SubnetIds                           = js.Array[SubnetId]
-  type TagKey                              = String
-  type TagKeyList                          = js.Array[NonEmptyString]
-  type TagList                             = js.Array[Tag]
-  type TagValue                            = String
-  type TerminateWorkspaceRequests          = js.Array[TerminateRequest]
-  type Timestamp                           = js.Date
-  type UserName                            = String
-  type UserVolumeSizeGib                   = Int
-  type VolumeEncryptionKey                 = String
-  type WorkspaceConnectionStatusList       = js.Array[WorkspaceConnectionStatus]
-  type WorkspaceErrorCode                  = String
-  type WorkspaceId                         = String
-  type WorkspaceIdList                     = js.Array[WorkspaceId]
-  type WorkspaceImageDescription           = String
-  type WorkspaceImageErrorCode             = String
-  type WorkspaceImageId                    = String
-  type WorkspaceImageIdList                = js.Array[WorkspaceImageId]
-  type WorkspaceImageList                  = js.Array[WorkspaceImage]
-  type WorkspaceImageName                  = String
-  type WorkspaceList                       = js.Array[Workspace]
-  type WorkspaceRequestList                = js.Array[WorkspaceRequest]
-  type WorkspacesIpGroupsList              = js.Array[WorkspacesIpGroup]
+  type SecurityGroupId = String
+  type SnapshotList = js.Array[Snapshot]
+  type StartWorkspaceRequests = js.Array[StartRequest]
+  type StopWorkspaceRequests = js.Array[StopRequest]
+  type SubnetId = String
+  type SubnetIds = js.Array[SubnetId]
+  type TagKey = String
+  type TagKeyList = js.Array[NonEmptyString]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type TerminateWorkspaceRequests = js.Array[TerminateRequest]
+  type Timestamp = js.Date
+  type UserName = String
+  type UserVolumeSizeGib = Int
+  type VolumeEncryptionKey = String
+  type WorkspaceConnectionStatusList = js.Array[WorkspaceConnectionStatus]
+  type WorkspaceErrorCode = String
+  type WorkspaceId = String
+  type WorkspaceIdList = js.Array[WorkspaceId]
+  type WorkspaceImageDescription = String
+  type WorkspaceImageErrorCode = String
+  type WorkspaceImageId = String
+  type WorkspaceImageIdList = js.Array[WorkspaceImageId]
+  type WorkspaceImageList = js.Array[WorkspaceImage]
+  type WorkspaceImageName = String
+  type WorkspaceList = js.Array[Workspace]
+  type WorkspaceRequestList = js.Array[WorkspaceRequest]
+  type WorkspacesIpGroupsList = js.Array[WorkspacesIpGroup]
 
   implicit final class WorkSpacesOps(private val service: WorkSpaces) extends AnyVal {
 
@@ -197,18 +197,18 @@ package workspaces {
   class WorkSpaces() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def associateIpGroups(params: AssociateIpGroupsRequest): Request[AssociateIpGroupsResult]          = js.native
-    def authorizeIpRules(params: AuthorizeIpRulesRequest): Request[AuthorizeIpRulesResult]             = js.native
-    def copyWorkspaceImage(params: CopyWorkspaceImageRequest): Request[CopyWorkspaceImageResult]       = js.native
-    def createIpGroup(params: CreateIpGroupRequest): Request[CreateIpGroupResult]                      = js.native
-    def createTags(params: CreateTagsRequest): Request[CreateTagsResult]                               = js.native
-    def createWorkspaces(params: CreateWorkspacesRequest): Request[CreateWorkspacesResult]             = js.native
-    def deleteIpGroup(params: DeleteIpGroupRequest): Request[DeleteIpGroupResult]                      = js.native
-    def deleteTags(params: DeleteTagsRequest): Request[DeleteTagsResult]                               = js.native
+    def associateIpGroups(params: AssociateIpGroupsRequest): Request[AssociateIpGroupsResult] = js.native
+    def authorizeIpRules(params: AuthorizeIpRulesRequest): Request[AuthorizeIpRulesResult] = js.native
+    def copyWorkspaceImage(params: CopyWorkspaceImageRequest): Request[CopyWorkspaceImageResult] = js.native
+    def createIpGroup(params: CreateIpGroupRequest): Request[CreateIpGroupResult] = js.native
+    def createTags(params: CreateTagsRequest): Request[CreateTagsResult] = js.native
+    def createWorkspaces(params: CreateWorkspacesRequest): Request[CreateWorkspacesResult] = js.native
+    def deleteIpGroup(params: DeleteIpGroupRequest): Request[DeleteIpGroupResult] = js.native
+    def deleteTags(params: DeleteTagsRequest): Request[DeleteTagsResult] = js.native
     def deleteWorkspaceImage(params: DeleteWorkspaceImageRequest): Request[DeleteWorkspaceImageResult] = js.native
     def deregisterWorkspaceDirectory(
         params: DeregisterWorkspaceDirectoryRequest
-    ): Request[DeregisterWorkspaceDirectoryResult]                                      = js.native
+    ): Request[DeregisterWorkspaceDirectoryResult] = js.native
     def describeAccount(params: DescribeAccountRequest): Request[DescribeAccountResult] = js.native
     def describeAccountModifications(
         params: DescribeAccountModificationsRequest
@@ -216,7 +216,7 @@ package workspaces {
     def describeClientProperties(params: DescribeClientPropertiesRequest): Request[DescribeClientPropertiesResult] =
       js.native
     def describeIpGroups(params: DescribeIpGroupsRequest): Request[DescribeIpGroupsResult] = js.native
-    def describeTags(params: DescribeTagsRequest): Request[DescribeTagsResult]             = js.native
+    def describeTags(params: DescribeTagsRequest): Request[DescribeTagsResult] = js.native
     def describeWorkspaceBundles(params: DescribeWorkspaceBundlesRequest): Request[DescribeWorkspaceBundlesResult] =
       js.native
     def describeWorkspaceDirectories(
@@ -226,18 +226,18 @@ package workspaces {
       js.native
     def describeWorkspaceSnapshots(
         params: DescribeWorkspaceSnapshotsRequest
-    ): Request[DescribeWorkspaceSnapshotsResult]                                                 = js.native
+    ): Request[DescribeWorkspaceSnapshotsResult] = js.native
     def describeWorkspaces(params: DescribeWorkspacesRequest): Request[DescribeWorkspacesResult] = js.native
     def describeWorkspacesConnectionStatus(
         params: DescribeWorkspacesConnectionStatusRequest
-    ): Request[DescribeWorkspacesConnectionStatusResult]                                               = js.native
+    ): Request[DescribeWorkspacesConnectionStatusResult] = js.native
     def disassociateIpGroups(params: DisassociateIpGroupsRequest): Request[DisassociateIpGroupsResult] = js.native
     def importWorkspaceImage(params: ImportWorkspaceImageRequest): Request[ImportWorkspaceImageResult] = js.native
     def listAvailableManagementCidrRanges(
         params: ListAvailableManagementCidrRangesRequest
-    ): Request[ListAvailableManagementCidrRangesResult]                                                      = js.native
-    def migrateWorkspace(params: MigrateWorkspaceRequest): Request[MigrateWorkspaceResult]                   = js.native
-    def modifyAccount(params: ModifyAccountRequest): Request[ModifyAccountResult]                            = js.native
+    ): Request[ListAvailableManagementCidrRangesResult] = js.native
+    def migrateWorkspace(params: MigrateWorkspaceRequest): Request[MigrateWorkspaceResult] = js.native
+    def modifyAccount(params: ModifyAccountRequest): Request[ModifyAccountResult] = js.native
     def modifyClientProperties(params: ModifyClientPropertiesRequest): Request[ModifyClientPropertiesResult] = js.native
     def modifySelfservicePermissions(
         params: ModifySelfservicePermissionsRequest
@@ -251,16 +251,16 @@ package workspaces {
     def modifyWorkspaceProperties(params: ModifyWorkspacePropertiesRequest): Request[ModifyWorkspacePropertiesResult] =
       js.native
     def modifyWorkspaceState(params: ModifyWorkspaceStateRequest): Request[ModifyWorkspaceStateResult] = js.native
-    def rebootWorkspaces(params: RebootWorkspacesRequest): Request[RebootWorkspacesResult]             = js.native
-    def rebuildWorkspaces(params: RebuildWorkspacesRequest): Request[RebuildWorkspacesResult]          = js.native
+    def rebootWorkspaces(params: RebootWorkspacesRequest): Request[RebootWorkspacesResult] = js.native
+    def rebuildWorkspaces(params: RebuildWorkspacesRequest): Request[RebuildWorkspacesResult] = js.native
     def registerWorkspaceDirectory(
         params: RegisterWorkspaceDirectoryRequest
-    ): Request[RegisterWorkspaceDirectoryResult]                                                       = js.native
-    def restoreWorkspace(params: RestoreWorkspaceRequest): Request[RestoreWorkspaceResult]             = js.native
-    def revokeIpRules(params: RevokeIpRulesRequest): Request[RevokeIpRulesResult]                      = js.native
-    def startWorkspaces(params: StartWorkspacesRequest): Request[StartWorkspacesResult]                = js.native
-    def stopWorkspaces(params: StopWorkspacesRequest): Request[StopWorkspacesResult]                   = js.native
-    def terminateWorkspaces(params: TerminateWorkspacesRequest): Request[TerminateWorkspacesResult]    = js.native
+    ): Request[RegisterWorkspaceDirectoryResult] = js.native
+    def restoreWorkspace(params: RestoreWorkspaceRequest): Request[RestoreWorkspaceResult] = js.native
+    def revokeIpRules(params: RevokeIpRulesRequest): Request[RevokeIpRulesResult] = js.native
+    def startWorkspaces(params: StartWorkspacesRequest): Request[StartWorkspacesResult] = js.native
+    def stopWorkspaces(params: StopWorkspacesRequest): Request[StopWorkspacesResult] = js.native
+    def terminateWorkspaces(params: TerminateWorkspacesRequest): Request[TerminateWorkspacesResult] = js.native
     def updateRulesOfIpGroup(params: UpdateRulesOfIpGroupRequest): Request[UpdateRulesOfIpGroupResult] = js.native
   }
 
@@ -268,7 +268,7 @@ package workspaces {
   sealed trait AccessPropertyValue extends js.Any
   object AccessPropertyValue extends js.Object {
     val ALLOW = "ALLOW".asInstanceOf[AccessPropertyValue]
-    val DENY  = "DENY".asInstanceOf[AccessPropertyValue]
+    val DENY = "DENY".asInstanceOf[AccessPropertyValue]
 
     val values = js.Object.freeze(js.Array(ALLOW, DENY))
   }
@@ -323,7 +323,7 @@ package workspaces {
     ): AssociateIpGroupsRequest = {
       val __obj = js.Dynamic.literal(
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
-        "GroupIds"    -> GroupIds.asInstanceOf[js.Any]
+        "GroupIds" -> GroupIds.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AssociateIpGroupsRequest]
@@ -356,7 +356,7 @@ package workspaces {
         UserRules: IpRuleList
     ): AuthorizeIpRulesRequest = {
       val __obj = js.Dynamic.literal(
-        "GroupId"   -> GroupId.asInstanceOf[js.Any],
+        "GroupId" -> GroupId.asInstanceOf[js.Any],
         "UserRules" -> UserRules.asInstanceOf[js.Any]
       )
 
@@ -421,12 +421,12 @@ package workspaces {
   @js.native
   sealed trait Compute extends js.Any
   object Compute extends js.Object {
-    val VALUE       = "VALUE".asInstanceOf[Compute]
-    val STANDARD    = "STANDARD".asInstanceOf[Compute]
+    val VALUE = "VALUE".asInstanceOf[Compute]
+    val STANDARD = "STANDARD".asInstanceOf[Compute]
     val PERFORMANCE = "PERFORMANCE".asInstanceOf[Compute]
-    val POWER       = "POWER".asInstanceOf[Compute]
-    val GRAPHICS    = "GRAPHICS".asInstanceOf[Compute]
-    val POWERPRO    = "POWERPRO".asInstanceOf[Compute]
+    val POWER = "POWER".asInstanceOf[Compute]
+    val GRAPHICS = "GRAPHICS".asInstanceOf[Compute]
+    val POWERPRO = "POWERPRO".asInstanceOf[Compute]
     val GRAPHICSPRO = "GRAPHICSPRO".asInstanceOf[Compute]
 
     val values = js.Object.freeze(js.Array(VALUE, STANDARD, PERFORMANCE, POWER, GRAPHICS, POWERPRO, GRAPHICSPRO))
@@ -454,9 +454,9 @@ package workspaces {
   @js.native
   sealed trait ConnectionState extends js.Any
   object ConnectionState extends js.Object {
-    val CONNECTED    = "CONNECTED".asInstanceOf[ConnectionState]
+    val CONNECTED = "CONNECTED".asInstanceOf[ConnectionState]
     val DISCONNECTED = "DISCONNECTED".asInstanceOf[ConnectionState]
-    val UNKNOWN      = "UNKNOWN".asInstanceOf[ConnectionState]
+    val UNKNOWN = "UNKNOWN".asInstanceOf[ConnectionState]
 
     val values = js.Object.freeze(js.Array(CONNECTED, DISCONNECTED, UNKNOWN))
   }
@@ -480,9 +480,9 @@ package workspaces {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CopyWorkspaceImageRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"          -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "SourceImageId" -> SourceImageId.asInstanceOf[js.Any],
-        "SourceRegion"  -> SourceRegion.asInstanceOf[js.Any]
+        "SourceRegion" -> SourceRegion.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -564,7 +564,7 @@ package workspaces {
     ): CreateTagsRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "Tags"       -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateTagsRequest]
@@ -624,9 +624,9 @@ package workspaces {
   @js.native
   sealed trait DedicatedTenancyModificationStateEnum extends js.Any
   object DedicatedTenancyModificationStateEnum extends js.Object {
-    val PENDING   = "PENDING".asInstanceOf[DedicatedTenancyModificationStateEnum]
+    val PENDING = "PENDING".asInstanceOf[DedicatedTenancyModificationStateEnum]
     val COMPLETED = "COMPLETED".asInstanceOf[DedicatedTenancyModificationStateEnum]
-    val FAILED    = "FAILED".asInstanceOf[DedicatedTenancyModificationStateEnum]
+    val FAILED = "FAILED".asInstanceOf[DedicatedTenancyModificationStateEnum]
 
     val values = js.Object.freeze(js.Array(PENDING, COMPLETED, FAILED))
   }
@@ -642,7 +642,7 @@ package workspaces {
   @js.native
   sealed trait DedicatedTenancySupportResultEnum extends js.Any
   object DedicatedTenancySupportResultEnum extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[DedicatedTenancySupportResultEnum]
+    val ENABLED = "ENABLED".asInstanceOf[DedicatedTenancySupportResultEnum]
     val DISABLED = "DISABLED".asInstanceOf[DedicatedTenancySupportResultEnum]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -729,7 +729,7 @@ package workspaces {
     ): DeleteTagsRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "TagKeys"    -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteTagsRequest]
@@ -1253,7 +1253,7 @@ package workspaces {
     ): DisassociateIpGroupsRequest = {
       val __obj = js.Dynamic.literal(
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
-        "GroupIds"    -> GroupIds.asInstanceOf[js.Any]
+        "GroupIds" -> GroupIds.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DisassociateIpGroupsRequest]
@@ -1342,9 +1342,9 @@ package workspaces {
         Tags: js.UndefOr[TagList] = js.undefined
     ): ImportWorkspaceImageRequest = {
       val __obj = js.Dynamic.literal(
-        "Ec2ImageId"       -> Ec2ImageId.asInstanceOf[js.Any],
+        "Ec2ImageId" -> Ec2ImageId.asInstanceOf[js.Any],
         "ImageDescription" -> ImageDescription.asInstanceOf[js.Any],
-        "ImageName"        -> ImageName.asInstanceOf[js.Any],
+        "ImageName" -> ImageName.asInstanceOf[js.Any],
         "IngestionProcess" -> IngestionProcess.asInstanceOf[js.Any]
       )
 
@@ -1447,7 +1447,7 @@ package workspaces {
         SourceWorkspaceId: WorkspaceId
     ): MigrateWorkspaceRequest = {
       val __obj = js.Dynamic.literal(
-        "BundleId"          -> BundleId.asInstanceOf[js.Any],
+        "BundleId" -> BundleId.asInstanceOf[js.Any],
         "SourceWorkspaceId" -> SourceWorkspaceId.asInstanceOf[js.Any]
       )
 
@@ -1477,8 +1477,8 @@ package workspaces {
   @js.native
   sealed trait ModificationResourceEnum extends js.Any
   object ModificationResourceEnum extends js.Object {
-    val ROOT_VOLUME  = "ROOT_VOLUME".asInstanceOf[ModificationResourceEnum]
-    val USER_VOLUME  = "USER_VOLUME".asInstanceOf[ModificationResourceEnum]
+    val ROOT_VOLUME = "ROOT_VOLUME".asInstanceOf[ModificationResourceEnum]
+    val USER_VOLUME = "USER_VOLUME".asInstanceOf[ModificationResourceEnum]
     val COMPUTE_TYPE = "COMPUTE_TYPE".asInstanceOf[ModificationResourceEnum]
 
     val values = js.Object.freeze(js.Array(ROOT_VOLUME, USER_VOLUME, COMPUTE_TYPE))
@@ -1509,7 +1509,7 @@ package workspaces {
   @js.native
   sealed trait ModificationStateEnum extends js.Any
   object ModificationStateEnum extends js.Object {
-    val UPDATE_INITIATED   = "UPDATE_INITIATED".asInstanceOf[ModificationStateEnum]
+    val UPDATE_INITIATED = "UPDATE_INITIATED".asInstanceOf[ModificationStateEnum]
     val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[ModificationStateEnum]
 
     val values = js.Object.freeze(js.Array(UPDATE_INITIATED, UPDATE_IN_PROGRESS))
@@ -1563,7 +1563,7 @@ package workspaces {
     ): ModifyClientPropertiesRequest = {
       val __obj = js.Dynamic.literal(
         "ClientProperties" -> ClientProperties.asInstanceOf[js.Any],
-        "ResourceId"       -> ResourceId.asInstanceOf[js.Any]
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ModifyClientPropertiesRequest]
@@ -1596,7 +1596,7 @@ package workspaces {
         SelfservicePermissions: SelfservicePermissions
     ): ModifySelfservicePermissionsRequest = {
       val __obj = js.Dynamic.literal(
-        "ResourceId"             -> ResourceId.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "SelfservicePermissions" -> SelfservicePermissions.asInstanceOf[js.Any]
       )
 
@@ -1630,7 +1630,7 @@ package workspaces {
         WorkspaceAccessProperties: WorkspaceAccessProperties
     ): ModifyWorkspaceAccessPropertiesRequest = {
       val __obj = js.Dynamic.literal(
-        "ResourceId"                -> ResourceId.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "WorkspaceAccessProperties" -> WorkspaceAccessProperties.asInstanceOf[js.Any]
       )
 
@@ -1664,7 +1664,7 @@ package workspaces {
         WorkspaceCreationProperties: WorkspaceCreationProperties
     ): ModifyWorkspaceCreationPropertiesRequest = {
       val __obj = js.Dynamic.literal(
-        "ResourceId"                  -> ResourceId.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "WorkspaceCreationProperties" -> WorkspaceCreationProperties.asInstanceOf[js.Any]
       )
 
@@ -1698,7 +1698,7 @@ package workspaces {
         WorkspaceProperties: WorkspaceProperties
     ): ModifyWorkspacePropertiesRequest = {
       val __obj = js.Dynamic.literal(
-        "WorkspaceId"         -> WorkspaceId.asInstanceOf[js.Any],
+        "WorkspaceId" -> WorkspaceId.asInstanceOf[js.Any],
         "WorkspaceProperties" -> WorkspaceProperties.asInstanceOf[js.Any]
       )
 
@@ -1732,7 +1732,7 @@ package workspaces {
         WorkspaceState: TargetWorkspaceState
     ): ModifyWorkspaceStateRequest = {
       val __obj = js.Dynamic.literal(
-        "WorkspaceId"    -> WorkspaceId.asInstanceOf[js.Any],
+        "WorkspaceId" -> WorkspaceId.asInstanceOf[js.Any],
         "WorkspaceState" -> WorkspaceState.asInstanceOf[js.Any]
       )
 
@@ -1776,7 +1776,7 @@ package workspaces {
   sealed trait OperatingSystemType extends js.Any
   object OperatingSystemType extends js.Object {
     val WINDOWS = "WINDOWS".asInstanceOf[OperatingSystemType]
-    val LINUX   = "LINUX".asInstanceOf[OperatingSystemType]
+    val LINUX = "LINUX".asInstanceOf[OperatingSystemType]
 
     val values = js.Object.freeze(js.Array(WINDOWS, LINUX))
   }
@@ -1894,7 +1894,7 @@ package workspaces {
   @js.native
   sealed trait ReconnectEnum extends js.Any
   object ReconnectEnum extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[ReconnectEnum]
+    val ENABLED = "ENABLED".asInstanceOf[ReconnectEnum]
     val DISABLED = "DISABLED".asInstanceOf[ReconnectEnum]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -1921,7 +1921,7 @@ package workspaces {
         Tenancy: js.UndefOr[Tenancy] = js.undefined
     ): RegisterWorkspaceDirectoryRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryId"    -> DirectoryId.asInstanceOf[js.Any],
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "EnableWorkDocs" -> EnableWorkDocs.asInstanceOf[js.Any]
       )
 
@@ -1990,7 +1990,7 @@ package workspaces {
         UserRules: IpRevokedRuleList
     ): RevokeIpRulesRequest = {
       val __obj = js.Dynamic.literal(
-        "GroupId"   -> GroupId.asInstanceOf[js.Any],
+        "GroupId" -> GroupId.asInstanceOf[js.Any],
         "UserRules" -> UserRules.asInstanceOf[js.Any]
       )
 
@@ -2222,7 +2222,7 @@ package workspaces {
   @js.native
   sealed trait TargetWorkspaceState extends js.Any
   object TargetWorkspaceState extends js.Object {
-    val AVAILABLE         = "AVAILABLE".asInstanceOf[TargetWorkspaceState]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[TargetWorkspaceState]
     val ADMIN_MAINTENANCE = "ADMIN_MAINTENANCE".asInstanceOf[TargetWorkspaceState]
 
     val values = js.Object.freeze(js.Array(AVAILABLE, ADMIN_MAINTENANCE))
@@ -2232,7 +2232,7 @@ package workspaces {
   sealed trait Tenancy extends js.Any
   object Tenancy extends js.Object {
     val DEDICATED = "DEDICATED".asInstanceOf[Tenancy]
-    val SHARED    = "SHARED".asInstanceOf[Tenancy]
+    val SHARED = "SHARED".asInstanceOf[Tenancy]
 
     val values = js.Object.freeze(js.Array(DEDICATED, SHARED))
   }
@@ -2305,7 +2305,7 @@ package workspaces {
         UserRules: IpRuleList
     ): UpdateRulesOfIpGroupRequest = {
       val __obj = js.Dynamic.literal(
-        "GroupId"   -> GroupId.asInstanceOf[js.Any],
+        "GroupId" -> GroupId.asInstanceOf[js.Any],
         "UserRules" -> UserRules.asInstanceOf[js.Any]
       )
 
@@ -2626,11 +2626,11 @@ package workspaces {
   @js.native
   sealed trait WorkspaceDirectoryState extends js.Any
   object WorkspaceDirectoryState extends js.Object {
-    val REGISTERING   = "REGISTERING".asInstanceOf[WorkspaceDirectoryState]
-    val REGISTERED    = "REGISTERED".asInstanceOf[WorkspaceDirectoryState]
+    val REGISTERING = "REGISTERING".asInstanceOf[WorkspaceDirectoryState]
+    val REGISTERED = "REGISTERED".asInstanceOf[WorkspaceDirectoryState]
     val DEREGISTERING = "DEREGISTERING".asInstanceOf[WorkspaceDirectoryState]
-    val DEREGISTERED  = "DEREGISTERED".asInstanceOf[WorkspaceDirectoryState]
-    val ERROR         = "ERROR".asInstanceOf[WorkspaceDirectoryState]
+    val DEREGISTERED = "DEREGISTERED".asInstanceOf[WorkspaceDirectoryState]
+    val ERROR = "ERROR".asInstanceOf[WorkspaceDirectoryState]
 
     val values = js.Object.freeze(js.Array(REGISTERING, REGISTERED, DEREGISTERING, DEREGISTERED, ERROR))
   }
@@ -2638,7 +2638,7 @@ package workspaces {
   @js.native
   sealed trait WorkspaceDirectoryType extends js.Any
   object WorkspaceDirectoryType extends js.Object {
-    val SIMPLE_AD    = "SIMPLE_AD".asInstanceOf[WorkspaceDirectoryType]
+    val SIMPLE_AD = "SIMPLE_AD".asInstanceOf[WorkspaceDirectoryType]
     val AD_CONNECTOR = "AD_CONNECTOR".asInstanceOf[WorkspaceDirectoryType]
 
     val values = js.Object.freeze(js.Array(SIMPLE_AD, AD_CONNECTOR))
@@ -2687,8 +2687,8 @@ package workspaces {
   @js.native
   sealed trait WorkspaceImageIngestionProcess extends js.Any
   object WorkspaceImageIngestionProcess extends js.Object {
-    val BYOL_REGULAR     = "BYOL_REGULAR".asInstanceOf[WorkspaceImageIngestionProcess]
-    val BYOL_GRAPHICS    = "BYOL_GRAPHICS".asInstanceOf[WorkspaceImageIngestionProcess]
+    val BYOL_REGULAR = "BYOL_REGULAR".asInstanceOf[WorkspaceImageIngestionProcess]
+    val BYOL_GRAPHICS = "BYOL_GRAPHICS".asInstanceOf[WorkspaceImageIngestionProcess]
     val BYOL_GRAPHICSPRO = "BYOL_GRAPHICSPRO".asInstanceOf[WorkspaceImageIngestionProcess]
 
     val values = js.Object.freeze(js.Array(BYOL_REGULAR, BYOL_GRAPHICS, BYOL_GRAPHICSPRO))
@@ -2697,7 +2697,7 @@ package workspaces {
   @js.native
   sealed trait WorkspaceImageRequiredTenancy extends js.Any
   object WorkspaceImageRequiredTenancy extends js.Object {
-    val DEFAULT   = "DEFAULT".asInstanceOf[WorkspaceImageRequiredTenancy]
+    val DEFAULT = "DEFAULT".asInstanceOf[WorkspaceImageRequiredTenancy]
     val DEDICATED = "DEDICATED".asInstanceOf[WorkspaceImageRequiredTenancy]
 
     val values = js.Object.freeze(js.Array(DEFAULT, DEDICATED))
@@ -2707,8 +2707,8 @@ package workspaces {
   sealed trait WorkspaceImageState extends js.Any
   object WorkspaceImageState extends js.Object {
     val AVAILABLE = "AVAILABLE".asInstanceOf[WorkspaceImageState]
-    val PENDING   = "PENDING".asInstanceOf[WorkspaceImageState]
-    val ERROR     = "ERROR".asInstanceOf[WorkspaceImageState]
+    val PENDING = "PENDING".asInstanceOf[WorkspaceImageState]
+    val ERROR = "ERROR".asInstanceOf[WorkspaceImageState]
 
     val values = js.Object.freeze(js.Array(AVAILABLE, PENDING, ERROR))
   }
@@ -2774,9 +2774,9 @@ package workspaces {
         WorkspaceProperties: js.UndefOr[WorkspaceProperties] = js.undefined
     ): WorkspaceRequest = {
       val __obj = js.Dynamic.literal(
-        "BundleId"    -> BundleId.asInstanceOf[js.Any],
+        "BundleId" -> BundleId.asInstanceOf[js.Any],
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
-        "UserName"    -> UserName.asInstanceOf[js.Any]
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       RootVolumeEncryptionEnabled.foreach(__v =>
@@ -2795,23 +2795,23 @@ package workspaces {
   @js.native
   sealed trait WorkspaceState extends js.Any
   object WorkspaceState extends js.Object {
-    val PENDING           = "PENDING".asInstanceOf[WorkspaceState]
-    val AVAILABLE         = "AVAILABLE".asInstanceOf[WorkspaceState]
-    val IMPAIRED          = "IMPAIRED".asInstanceOf[WorkspaceState]
-    val UNHEALTHY         = "UNHEALTHY".asInstanceOf[WorkspaceState]
-    val REBOOTING         = "REBOOTING".asInstanceOf[WorkspaceState]
-    val STARTING          = "STARTING".asInstanceOf[WorkspaceState]
-    val REBUILDING        = "REBUILDING".asInstanceOf[WorkspaceState]
-    val RESTORING         = "RESTORING".asInstanceOf[WorkspaceState]
-    val MAINTENANCE       = "MAINTENANCE".asInstanceOf[WorkspaceState]
+    val PENDING = "PENDING".asInstanceOf[WorkspaceState]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[WorkspaceState]
+    val IMPAIRED = "IMPAIRED".asInstanceOf[WorkspaceState]
+    val UNHEALTHY = "UNHEALTHY".asInstanceOf[WorkspaceState]
+    val REBOOTING = "REBOOTING".asInstanceOf[WorkspaceState]
+    val STARTING = "STARTING".asInstanceOf[WorkspaceState]
+    val REBUILDING = "REBUILDING".asInstanceOf[WorkspaceState]
+    val RESTORING = "RESTORING".asInstanceOf[WorkspaceState]
+    val MAINTENANCE = "MAINTENANCE".asInstanceOf[WorkspaceState]
     val ADMIN_MAINTENANCE = "ADMIN_MAINTENANCE".asInstanceOf[WorkspaceState]
-    val TERMINATING       = "TERMINATING".asInstanceOf[WorkspaceState]
-    val TERMINATED        = "TERMINATED".asInstanceOf[WorkspaceState]
-    val SUSPENDED         = "SUSPENDED".asInstanceOf[WorkspaceState]
-    val UPDATING          = "UPDATING".asInstanceOf[WorkspaceState]
-    val STOPPING          = "STOPPING".asInstanceOf[WorkspaceState]
-    val STOPPED           = "STOPPED".asInstanceOf[WorkspaceState]
-    val ERROR             = "ERROR".asInstanceOf[WorkspaceState]
+    val TERMINATING = "TERMINATING".asInstanceOf[WorkspaceState]
+    val TERMINATED = "TERMINATED".asInstanceOf[WorkspaceState]
+    val SUSPENDED = "SUSPENDED".asInstanceOf[WorkspaceState]
+    val UPDATING = "UPDATING".asInstanceOf[WorkspaceState]
+    val STOPPING = "STOPPING".asInstanceOf[WorkspaceState]
+    val STOPPED = "STOPPED".asInstanceOf[WorkspaceState]
+    val ERROR = "ERROR".asInstanceOf[WorkspaceState]
 
     val values = js.Object.freeze(
       js.Array(

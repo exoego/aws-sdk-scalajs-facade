@@ -7,69 +7,69 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object personalize {
-  type AccountId                              = String
-  type Arn                                    = String
-  type ArnList                                = js.Array[Arn]
-  type AvroSchema                             = String
-  type BatchInferenceJobs                     = js.Array[BatchInferenceJobSummary]
-  type Campaigns                              = js.Array[CampaignSummary]
-  type CategoricalHyperParameterRanges        = js.Array[CategoricalHyperParameterRange]
-  type CategoricalValue                       = String
-  type CategoricalValues                      = js.Array[CategoricalValue]
-  type ContinuousHyperParameterRanges         = js.Array[ContinuousHyperParameterRange]
-  type ContinuousMaxValue                     = Double
-  type ContinuousMinValue                     = Double
-  type DatasetGroups                          = js.Array[DatasetGroupSummary]
-  type DatasetImportJobs                      = js.Array[DatasetImportJobSummary]
-  type DatasetType                            = String
-  type Datasets                               = js.Array[DatasetSummary]
-  type Date                                   = js.Date
+  type AccountId = String
+  type Arn = String
+  type ArnList = js.Array[Arn]
+  type AvroSchema = String
+  type BatchInferenceJobs = js.Array[BatchInferenceJobSummary]
+  type Campaigns = js.Array[CampaignSummary]
+  type CategoricalHyperParameterRanges = js.Array[CategoricalHyperParameterRange]
+  type CategoricalValue = String
+  type CategoricalValues = js.Array[CategoricalValue]
+  type ContinuousHyperParameterRanges = js.Array[ContinuousHyperParameterRange]
+  type ContinuousMaxValue = Double
+  type ContinuousMinValue = Double
+  type DatasetGroups = js.Array[DatasetGroupSummary]
+  type DatasetImportJobs = js.Array[DatasetImportJobSummary]
+  type DatasetType = String
+  type Datasets = js.Array[DatasetSummary]
+  type Date = js.Date
   type DefaultCategoricalHyperParameterRanges = js.Array[DefaultCategoricalHyperParameterRange]
-  type DefaultContinuousHyperParameterRanges  = js.Array[DefaultContinuousHyperParameterRange]
-  type DefaultIntegerHyperParameterRanges     = js.Array[DefaultIntegerHyperParameterRange]
-  type Description                            = String
-  type DockerURI                              = String
-  type EventTrackers                          = js.Array[EventTrackerSummary]
-  type EventType                              = String
-  type EventValueThreshold                    = String
-  type FailureReason                          = String
-  type FeatureTransformationParameters        = js.Dictionary[ParameterValue]
-  type FeaturizationParameters                = js.Dictionary[ParameterValue]
-  type FilterExpression                       = String
-  type Filters                                = js.Array[FilterSummary]
-  type HPOObjectiveType                       = String
-  type HPOResource                            = String
-  type HyperParameters                        = js.Dictionary[ParameterValue]
-  type IntegerHyperParameterRanges            = js.Array[IntegerHyperParameterRange]
-  type IntegerMaxValue                        = Int
-  type IntegerMinValue                        = Int
-  type KmsKeyArn                              = String
-  type MaxResults                             = Int
-  type MetricName                             = String
-  type MetricRegex                            = String
-  type MetricValue                            = Double
-  type Metrics                                = js.Dictionary[MetricValue]
-  type Name                                   = String
-  type NextToken                              = String
-  type NumBatchResults                        = Int
-  type ParameterName                          = String
-  type ParameterValue                         = String
-  type PerformAutoML                          = Boolean
-  type PerformHPO                             = Boolean
-  type RecipeType                             = String
-  type Recipes                                = js.Array[RecipeSummary]
-  type ResourceConfig                         = js.Dictionary[ParameterValue]
-  type RoleArn                                = String
-  type S3Location                             = String
-  type Schemas                                = js.Array[DatasetSchemaSummary]
-  type SolutionVersions                       = js.Array[SolutionVersionSummary]
-  type Solutions                              = js.Array[SolutionSummary]
-  type Status                                 = String
-  type TrackingId                             = String
-  type TrainingHours                          = Double
-  type TrainingInputMode                      = String
-  type TransactionsPerSecond                  = Int
-  type Tunable                                = Boolean
+  type DefaultContinuousHyperParameterRanges = js.Array[DefaultContinuousHyperParameterRange]
+  type DefaultIntegerHyperParameterRanges = js.Array[DefaultIntegerHyperParameterRange]
+  type Description = String
+  type DockerURI = String
+  type EventTrackers = js.Array[EventTrackerSummary]
+  type EventType = String
+  type EventValueThreshold = String
+  type FailureReason = String
+  type FeatureTransformationParameters = js.Dictionary[ParameterValue]
+  type FeaturizationParameters = js.Dictionary[ParameterValue]
+  type FilterExpression = String
+  type Filters = js.Array[FilterSummary]
+  type HPOObjectiveType = String
+  type HPOResource = String
+  type HyperParameters = js.Dictionary[ParameterValue]
+  type IntegerHyperParameterRanges = js.Array[IntegerHyperParameterRange]
+  type IntegerMaxValue = Int
+  type IntegerMinValue = Int
+  type KmsKeyArn = String
+  type MaxResults = Int
+  type MetricName = String
+  type MetricRegex = String
+  type MetricValue = Double
+  type Metrics = js.Dictionary[MetricValue]
+  type Name = String
+  type NextToken = String
+  type NumBatchResults = Int
+  type ParameterName = String
+  type ParameterValue = String
+  type PerformAutoML = Boolean
+  type PerformHPO = Boolean
+  type RecipeType = String
+  type Recipes = js.Array[RecipeSummary]
+  type ResourceConfig = js.Dictionary[ParameterValue]
+  type RoleArn = String
+  type S3Location = String
+  type Schemas = js.Array[DatasetSchemaSummary]
+  type SolutionVersions = js.Array[SolutionVersionSummary]
+  type Solutions = js.Array[SolutionSummary]
+  type Status = String
+  type TrackingId = String
+  type TrainingHours = Double
+  type TrainingInputMode = String
+  type TransactionsPerSecond = Int
+  type Tunable = Boolean
 
   implicit final class PersonalizeOps(private val service: Personalize) extends AnyVal {
 
@@ -179,56 +179,56 @@ package personalize {
 
     def createBatchInferenceJob(params: CreateBatchInferenceJobRequest): Request[CreateBatchInferenceJobResponse] =
       js.native
-    def createCampaign(params: CreateCampaignRequest): Request[CreateCampaignResponse]             = js.native
-    def createDataset(params: CreateDatasetRequest): Request[CreateDatasetResponse]                = js.native
+    def createCampaign(params: CreateCampaignRequest): Request[CreateCampaignResponse] = js.native
+    def createDataset(params: CreateDatasetRequest): Request[CreateDatasetResponse] = js.native
     def createDatasetGroup(params: CreateDatasetGroupRequest): Request[CreateDatasetGroupResponse] = js.native
     def createDatasetImportJob(params: CreateDatasetImportJobRequest): Request[CreateDatasetImportJobResponse] =
       js.native
-    def createEventTracker(params: CreateEventTrackerRequest): Request[CreateEventTrackerResponse]          = js.native
-    def createFilter(params: CreateFilterRequest): Request[CreateFilterResponse]                            = js.native
-    def createSchema(params: CreateSchemaRequest): Request[CreateSchemaResponse]                            = js.native
-    def createSolution(params: CreateSolutionRequest): Request[CreateSolutionResponse]                      = js.native
+    def createEventTracker(params: CreateEventTrackerRequest): Request[CreateEventTrackerResponse] = js.native
+    def createFilter(params: CreateFilterRequest): Request[CreateFilterResponse] = js.native
+    def createSchema(params: CreateSchemaRequest): Request[CreateSchemaResponse] = js.native
+    def createSolution(params: CreateSolutionRequest): Request[CreateSolutionResponse] = js.native
     def createSolutionVersion(params: CreateSolutionVersionRequest): Request[CreateSolutionVersionResponse] = js.native
-    def deleteCampaign(params: DeleteCampaignRequest): Request[js.Object]                                   = js.native
-    def deleteDataset(params: DeleteDatasetRequest): Request[js.Object]                                     = js.native
-    def deleteDatasetGroup(params: DeleteDatasetGroupRequest): Request[js.Object]                           = js.native
-    def deleteEventTracker(params: DeleteEventTrackerRequest): Request[js.Object]                           = js.native
-    def deleteFilter(params: DeleteFilterRequest): Request[js.Object]                                       = js.native
-    def deleteSchema(params: DeleteSchemaRequest): Request[js.Object]                                       = js.native
-    def deleteSolution(params: DeleteSolutionRequest): Request[js.Object]                                   = js.native
-    def describeAlgorithm(params: DescribeAlgorithmRequest): Request[DescribeAlgorithmResponse]             = js.native
+    def deleteCampaign(params: DeleteCampaignRequest): Request[js.Object] = js.native
+    def deleteDataset(params: DeleteDatasetRequest): Request[js.Object] = js.native
+    def deleteDatasetGroup(params: DeleteDatasetGroupRequest): Request[js.Object] = js.native
+    def deleteEventTracker(params: DeleteEventTrackerRequest): Request[js.Object] = js.native
+    def deleteFilter(params: DeleteFilterRequest): Request[js.Object] = js.native
+    def deleteSchema(params: DeleteSchemaRequest): Request[js.Object] = js.native
+    def deleteSolution(params: DeleteSolutionRequest): Request[js.Object] = js.native
+    def describeAlgorithm(params: DescribeAlgorithmRequest): Request[DescribeAlgorithmResponse] = js.native
     def describeBatchInferenceJob(
         params: DescribeBatchInferenceJobRequest
-    ): Request[DescribeBatchInferenceJobResponse]                                                        = js.native
-    def describeCampaign(params: DescribeCampaignRequest): Request[DescribeCampaignResponse]             = js.native
-    def describeDataset(params: DescribeDatasetRequest): Request[DescribeDatasetResponse]                = js.native
+    ): Request[DescribeBatchInferenceJobResponse] = js.native
+    def describeCampaign(params: DescribeCampaignRequest): Request[DescribeCampaignResponse] = js.native
+    def describeDataset(params: DescribeDatasetRequest): Request[DescribeDatasetResponse] = js.native
     def describeDatasetGroup(params: DescribeDatasetGroupRequest): Request[DescribeDatasetGroupResponse] = js.native
     def describeDatasetImportJob(params: DescribeDatasetImportJobRequest): Request[DescribeDatasetImportJobResponse] =
       js.native
     def describeEventTracker(params: DescribeEventTrackerRequest): Request[DescribeEventTrackerResponse] = js.native
     def describeFeatureTransformation(
         params: DescribeFeatureTransformationRequest
-    ): Request[DescribeFeatureTransformationResponse]                                        = js.native
-    def describeFilter(params: DescribeFilterRequest): Request[DescribeFilterResponse]       = js.native
-    def describeRecipe(params: DescribeRecipeRequest): Request[DescribeRecipeResponse]       = js.native
-    def describeSchema(params: DescribeSchemaRequest): Request[DescribeSchemaResponse]       = js.native
+    ): Request[DescribeFeatureTransformationResponse] = js.native
+    def describeFilter(params: DescribeFilterRequest): Request[DescribeFilterResponse] = js.native
+    def describeRecipe(params: DescribeRecipeRequest): Request[DescribeRecipeResponse] = js.native
+    def describeSchema(params: DescribeSchemaRequest): Request[DescribeSchemaResponse] = js.native
     def describeSolution(params: DescribeSolutionRequest): Request[DescribeSolutionResponse] = js.native
     def describeSolutionVersion(params: DescribeSolutionVersionRequest): Request[DescribeSolutionVersionResponse] =
       js.native
     def getSolutionMetrics(params: GetSolutionMetricsRequest): Request[GetSolutionMetricsResponse] = js.native
     def listBatchInferenceJobs(params: ListBatchInferenceJobsRequest): Request[ListBatchInferenceJobsResponse] =
       js.native
-    def listCampaigns(params: ListCampaignsRequest): Request[ListCampaignsResponse]                         = js.native
-    def listDatasetGroups(params: ListDatasetGroupsRequest): Request[ListDatasetGroupsResponse]             = js.native
+    def listCampaigns(params: ListCampaignsRequest): Request[ListCampaignsResponse] = js.native
+    def listDatasetGroups(params: ListDatasetGroupsRequest): Request[ListDatasetGroupsResponse] = js.native
     def listDatasetImportJobs(params: ListDatasetImportJobsRequest): Request[ListDatasetImportJobsResponse] = js.native
-    def listDatasets(params: ListDatasetsRequest): Request[ListDatasetsResponse]                            = js.native
-    def listEventTrackers(params: ListEventTrackersRequest): Request[ListEventTrackersResponse]             = js.native
-    def listFilters(params: ListFiltersRequest): Request[ListFiltersResponse]                               = js.native
-    def listRecipes(params: ListRecipesRequest): Request[ListRecipesResponse]                               = js.native
-    def listSchemas(params: ListSchemasRequest): Request[ListSchemasResponse]                               = js.native
-    def listSolutionVersions(params: ListSolutionVersionsRequest): Request[ListSolutionVersionsResponse]    = js.native
-    def listSolutions(params: ListSolutionsRequest): Request[ListSolutionsResponse]                         = js.native
-    def updateCampaign(params: UpdateCampaignRequest): Request[UpdateCampaignResponse]                      = js.native
+    def listDatasets(params: ListDatasetsRequest): Request[ListDatasetsResponse] = js.native
+    def listEventTrackers(params: ListEventTrackersRequest): Request[ListEventTrackersResponse] = js.native
+    def listFilters(params: ListFiltersRequest): Request[ListFiltersResponse] = js.native
+    def listRecipes(params: ListRecipesRequest): Request[ListRecipesResponse] = js.native
+    def listSchemas(params: ListSchemasRequest): Request[ListSchemasResponse] = js.native
+    def listSolutionVersions(params: ListSolutionVersionsRequest): Request[ListSolutionVersionsResponse] = js.native
+    def listSolutions(params: ListSolutionsRequest): Request[ListSolutionsResponse] = js.native
+    def updateCampaign(params: UpdateCampaignRequest): Request[UpdateCampaignResponse] = js.native
   }
 
   /**
@@ -656,10 +656,10 @@ package personalize {
         numResults: js.UndefOr[NumBatchResults] = js.undefined
     ): CreateBatchInferenceJobRequest = {
       val __obj = js.Dynamic.literal(
-        "jobInput"           -> jobInput.asInstanceOf[js.Any],
-        "jobName"            -> jobName.asInstanceOf[js.Any],
-        "jobOutput"          -> jobOutput.asInstanceOf[js.Any],
-        "roleArn"            -> roleArn.asInstanceOf[js.Any],
+        "jobInput" -> jobInput.asInstanceOf[js.Any],
+        "jobName" -> jobName.asInstanceOf[js.Any],
+        "jobOutput" -> jobOutput.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
         "solutionVersionArn" -> solutionVersionArn.asInstanceOf[js.Any]
       )
 
@@ -700,8 +700,8 @@ package personalize {
         solutionVersionArn: Arn
     ): CreateCampaignRequest = {
       val __obj = js.Dynamic.literal(
-        "minProvisionedTPS"  -> minProvisionedTPS.asInstanceOf[js.Any],
-        "name"               -> name.asInstanceOf[js.Any],
+        "minProvisionedTPS" -> minProvisionedTPS.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "solutionVersionArn" -> solutionVersionArn.asInstanceOf[js.Any]
       )
 
@@ -784,8 +784,8 @@ package personalize {
       val __obj = js.Dynamic.literal(
         "dataSource" -> dataSource.asInstanceOf[js.Any],
         "datasetArn" -> datasetArn.asInstanceOf[js.Any],
-        "jobName"    -> jobName.asInstanceOf[js.Any],
-        "roleArn"    -> roleArn.asInstanceOf[js.Any]
+        "jobName" -> jobName.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateDatasetImportJobRequest]
@@ -826,9 +826,9 @@ package personalize {
     ): CreateDatasetRequest = {
       val __obj = js.Dynamic.literal(
         "datasetGroupArn" -> datasetGroupArn.asInstanceOf[js.Any],
-        "datasetType"     -> datasetType.asInstanceOf[js.Any],
-        "name"            -> name.asInstanceOf[js.Any],
-        "schemaArn"       -> schemaArn.asInstanceOf[js.Any]
+        "datasetType" -> datasetType.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "schemaArn" -> schemaArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateDatasetRequest]
@@ -865,7 +865,7 @@ package personalize {
     ): CreateEventTrackerRequest = {
       val __obj = js.Dynamic.literal(
         "datasetGroupArn" -> datasetGroupArn.asInstanceOf[js.Any],
-        "name"            -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateEventTrackerRequest]
@@ -906,9 +906,9 @@ package personalize {
         name: Name
     ): CreateFilterRequest = {
       val __obj = js.Dynamic.literal(
-        "datasetGroupArn"  -> datasetGroupArn.asInstanceOf[js.Any],
+        "datasetGroupArn" -> datasetGroupArn.asInstanceOf[js.Any],
         "filterExpression" -> filterExpression.asInstanceOf[js.Any],
-        "name"             -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateFilterRequest]
@@ -944,7 +944,7 @@ package personalize {
         schema: AvroSchema
     ): CreateSchemaRequest = {
       val __obj = js.Dynamic.literal(
-        "name"   -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "schema" -> schema.asInstanceOf[js.Any]
       )
 
@@ -992,7 +992,7 @@ package personalize {
     ): CreateSolutionRequest = {
       val __obj = js.Dynamic.literal(
         "datasetGroupArn" -> datasetGroupArn.asInstanceOf[js.Any],
-        "name"            -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       eventType.foreach(__v => __obj.updateDynamic("eventType")(__v.asInstanceOf[js.Any]))
@@ -3157,7 +3157,7 @@ package personalize {
   @js.native
   sealed trait TrainingMode extends js.Any
   object TrainingMode extends js.Object {
-    val FULL   = "FULL".asInstanceOf[TrainingMode]
+    val FULL = "FULL".asInstanceOf[TrainingMode]
     val UPDATE = "UPDATE".asInstanceOf[TrainingMode]
 
     val values = js.Object.freeze(js.Array(FULL, UPDATE))

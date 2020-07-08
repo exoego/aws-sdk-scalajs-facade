@@ -11,7 +11,7 @@ object AWS extends js.Object {
 
 trait ParamsWithEndpoint extends js.Object {
   var params: js.UndefOr[AWSConfig] = js.undefined
-  var endpoint: js.UndefOr[String]  = js.undefined
+  var endpoint: js.UndefOr[String] = js.undefined
 }
 object ParamsWithEndpoint {
   @inline

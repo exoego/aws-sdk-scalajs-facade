@@ -7,46 +7,46 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object transfer {
-  type AddressAllocationId   = String
-  type AddressAllocationIds  = js.Array[AddressAllocationId]
-  type Arn                   = String
-  type Certificate           = String
-  type DateImported          = js.Date
-  type HomeDirectory         = String
+  type AddressAllocationId = String
+  type AddressAllocationIds = js.Array[AddressAllocationId]
+  type Arn = String
+  type Certificate = String
+  type DateImported = js.Date
+  type HomeDirectory = String
   type HomeDirectoryMappings = js.Array[HomeDirectoryMapEntry]
-  type HostKey               = String
-  type HostKeyFingerprint    = String
-  type ListedServers         = js.Array[ListedServer]
-  type ListedUsers           = js.Array[ListedUser]
-  type MapEntry              = String
-  type MapTarget             = String
-  type MaxResults            = Int
-  type Message               = String
-  type NextToken             = String
-  type NullableRole          = String
-  type Policy                = String
-  type Protocols             = js.Array[Protocol]
-  type Response              = String
-  type Role                  = String
-  type ServerId              = String
-  type SourceIp              = String
-  type SshPublicKeyBody      = String
-  type SshPublicKeyCount     = Int
-  type SshPublicKeyId        = String
-  type SshPublicKeys         = js.Array[SshPublicKey]
-  type StatusCode            = Int
-  type SubnetId              = String
-  type SubnetIds             = js.Array[SubnetId]
-  type TagKey                = String
-  type TagKeys               = js.Array[TagKey]
-  type TagValue              = String
-  type Tags                  = js.Array[Tag]
-  type Url                   = String
-  type UserCount             = Int
-  type UserName              = String
-  type UserPassword          = String
-  type VpcEndpointId         = String
-  type VpcId                 = String
+  type HostKey = String
+  type HostKeyFingerprint = String
+  type ListedServers = js.Array[ListedServer]
+  type ListedUsers = js.Array[ListedUser]
+  type MapEntry = String
+  type MapTarget = String
+  type MaxResults = Int
+  type Message = String
+  type NextToken = String
+  type NullableRole = String
+  type Policy = String
+  type Protocols = js.Array[Protocol]
+  type Response = String
+  type Role = String
+  type ServerId = String
+  type SourceIp = String
+  type SshPublicKeyBody = String
+  type SshPublicKeyCount = Int
+  type SshPublicKeyId = String
+  type SshPublicKeys = js.Array[SshPublicKey]
+  type StatusCode = Int
+  type SubnetId = String
+  type SubnetIds = js.Array[SubnetId]
+  type TagKey = String
+  type TagKeys = js.Array[TagKey]
+  type TagValue = String
+  type Tags = js.Array[Tag]
+  type Url = String
+  type UserCount = Int
+  type UserName = String
+  type UserPassword = String
+  type VpcEndpointId = String
+  type VpcId = String
 
   implicit final class TransferOps(private val service: Transfer) extends AnyVal {
 
@@ -95,24 +95,24 @@ package transfer {
   class Transfer() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createServer(params: CreateServerRequest): Request[CreateServerResponse]                         = js.native
-    def createUser(params: CreateUserRequest): Request[CreateUserResponse]                               = js.native
-    def deleteServer(params: DeleteServerRequest): Request[js.Object]                                    = js.native
-    def deleteSshPublicKey(params: DeleteSshPublicKeyRequest): Request[js.Object]                        = js.native
-    def deleteUser(params: DeleteUserRequest): Request[js.Object]                                        = js.native
-    def describeServer(params: DescribeServerRequest): Request[DescribeServerResponse]                   = js.native
-    def describeUser(params: DescribeUserRequest): Request[DescribeUserResponse]                         = js.native
-    def importSshPublicKey(params: ImportSshPublicKeyRequest): Request[ImportSshPublicKeyResponse]       = js.native
-    def listServers(params: ListServersRequest): Request[ListServersResponse]                            = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]    = js.native
-    def listUsers(params: ListUsersRequest): Request[ListUsersResponse]                                  = js.native
-    def startServer(params: StartServerRequest): Request[js.Object]                                      = js.native
-    def stopServer(params: StopServerRequest): Request[js.Object]                                        = js.native
-    def tagResource(params: TagResourceRequest): Request[js.Object]                                      = js.native
+    def createServer(params: CreateServerRequest): Request[CreateServerResponse] = js.native
+    def createUser(params: CreateUserRequest): Request[CreateUserResponse] = js.native
+    def deleteServer(params: DeleteServerRequest): Request[js.Object] = js.native
+    def deleteSshPublicKey(params: DeleteSshPublicKeyRequest): Request[js.Object] = js.native
+    def deleteUser(params: DeleteUserRequest): Request[js.Object] = js.native
+    def describeServer(params: DescribeServerRequest): Request[DescribeServerResponse] = js.native
+    def describeUser(params: DescribeUserRequest): Request[DescribeUserResponse] = js.native
+    def importSshPublicKey(params: ImportSshPublicKeyRequest): Request[ImportSshPublicKeyResponse] = js.native
+    def listServers(params: ListServersRequest): Request[ListServersResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def listUsers(params: ListUsersRequest): Request[ListUsersResponse] = js.native
+    def startServer(params: StartServerRequest): Request[js.Object] = js.native
+    def stopServer(params: StopServerRequest): Request[js.Object] = js.native
+    def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def testIdentityProvider(params: TestIdentityProviderRequest): Request[TestIdentityProviderResponse] = js.native
-    def untagResource(params: UntagResourceRequest): Request[js.Object]                                  = js.native
-    def updateServer(params: UpdateServerRequest): Request[UpdateServerResponse]                         = js.native
-    def updateUser(params: UpdateUserRequest): Request[UpdateUserResponse]                               = js.native
+    def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
+    def updateServer(params: UpdateServerRequest): Request[UpdateServerResponse] = js.native
+    def updateUser(params: UpdateUserRequest): Request[UpdateUserResponse] = js.native
   }
 
   @js.native
@@ -200,7 +200,7 @@ package transfer {
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateUserRequest = {
       val __obj = js.Dynamic.literal(
-        "Role"     -> Role.asInstanceOf[js.Any],
+        "Role" -> Role.asInstanceOf[js.Any],
         "ServerId" -> ServerId.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
@@ -269,9 +269,9 @@ package transfer {
         UserName: UserName
     ): DeleteSshPublicKeyRequest = {
       val __obj = js.Dynamic.literal(
-        "ServerId"       -> ServerId.asInstanceOf[js.Any],
+        "ServerId" -> ServerId.asInstanceOf[js.Any],
         "SshPublicKeyId" -> SshPublicKeyId.asInstanceOf[js.Any],
-        "UserName"       -> UserName.asInstanceOf[js.Any]
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteSshPublicKeyRequest]
@@ -370,7 +370,7 @@ package transfer {
     ): DescribeUserResponse = {
       val __obj = js.Dynamic.literal(
         "ServerId" -> ServerId.asInstanceOf[js.Any],
-        "User"     -> User.asInstanceOf[js.Any]
+        "User" -> User.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeUserResponse]
@@ -510,8 +510,8 @@ package transfer {
   @js.native
   sealed trait EndpointType extends js.Any
   object EndpointType extends js.Object {
-    val PUBLIC       = "PUBLIC".asInstanceOf[EndpointType]
-    val VPC          = "VPC".asInstanceOf[EndpointType]
+    val PUBLIC = "PUBLIC".asInstanceOf[EndpointType]
+    val VPC = "VPC".asInstanceOf[EndpointType]
     val VPC_ENDPOINT = "VPC_ENDPOINT".asInstanceOf[EndpointType]
 
     val values = js.Object.freeze(js.Array(PUBLIC, VPC, VPC_ENDPOINT))
@@ -533,7 +533,7 @@ package transfer {
         Target: MapTarget
     ): HomeDirectoryMapEntry = {
       val __obj = js.Dynamic.literal(
-        "Entry"  -> Entry.asInstanceOf[js.Any],
+        "Entry" -> Entry.asInstanceOf[js.Any],
         "Target" -> Target.asInstanceOf[js.Any]
       )
 
@@ -544,7 +544,7 @@ package transfer {
   @js.native
   sealed trait HomeDirectoryType extends js.Any
   object HomeDirectoryType extends js.Object {
-    val PATH    = "PATH".asInstanceOf[HomeDirectoryType]
+    val PATH = "PATH".asInstanceOf[HomeDirectoryType]
     val LOGICAL = "LOGICAL".asInstanceOf[HomeDirectoryType]
 
     val values = js.Object.freeze(js.Array(PATH, LOGICAL))
@@ -579,7 +579,7 @@ package transfer {
   sealed trait IdentityProviderType extends js.Any
   object IdentityProviderType extends js.Object {
     val SERVICE_MANAGED = "SERVICE_MANAGED".asInstanceOf[IdentityProviderType]
-    val API_GATEWAY     = "API_GATEWAY".asInstanceOf[IdentityProviderType]
+    val API_GATEWAY = "API_GATEWAY".asInstanceOf[IdentityProviderType]
 
     val values = js.Object.freeze(js.Array(SERVICE_MANAGED, API_GATEWAY))
   }
@@ -599,9 +599,9 @@ package transfer {
         UserName: UserName
     ): ImportSshPublicKeyRequest = {
       val __obj = js.Dynamic.literal(
-        "ServerId"         -> ServerId.asInstanceOf[js.Any],
+        "ServerId" -> ServerId.asInstanceOf[js.Any],
         "SshPublicKeyBody" -> SshPublicKeyBody.asInstanceOf[js.Any],
-        "UserName"         -> UserName.asInstanceOf[js.Any]
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ImportSshPublicKeyRequest]
@@ -626,9 +626,9 @@ package transfer {
         UserName: UserName
     ): ImportSshPublicKeyResponse = {
       val __obj = js.Dynamic.literal(
-        "ServerId"       -> ServerId.asInstanceOf[js.Any],
+        "ServerId" -> ServerId.asInstanceOf[js.Any],
         "SshPublicKeyId" -> SshPublicKeyId.asInstanceOf[js.Any],
-        "UserName"       -> UserName.asInstanceOf[js.Any]
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ImportSshPublicKeyResponse]
@@ -761,7 +761,7 @@ package transfer {
     ): ListUsersResponse = {
       val __obj = js.Dynamic.literal(
         "ServerId" -> ServerId.asInstanceOf[js.Any],
-        "Users"    -> Users.asInstanceOf[js.Any]
+        "Users" -> Users.asInstanceOf[js.Any]
       )
 
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
@@ -848,7 +848,7 @@ package transfer {
   sealed trait Protocol extends js.Any
   object Protocol extends js.Object {
     val SFTP = "SFTP".asInstanceOf[Protocol]
-    val FTP  = "FTP".asInstanceOf[Protocol]
+    val FTP = "FTP".asInstanceOf[Protocol]
     val FTPS = "FTPS".asInstanceOf[Protocol]
 
     val values = js.Object.freeze(js.Array(SFTP, FTP, FTPS))
@@ -872,9 +872,9 @@ package transfer {
         SshPublicKeyId: SshPublicKeyId
     ): SshPublicKey = {
       val __obj = js.Dynamic.literal(
-        "DateImported"     -> DateImported.asInstanceOf[js.Any],
+        "DateImported" -> DateImported.asInstanceOf[js.Any],
         "SshPublicKeyBody" -> SshPublicKeyBody.asInstanceOf[js.Any],
-        "SshPublicKeyId"   -> SshPublicKeyId.asInstanceOf[js.Any]
+        "SshPublicKeyId" -> SshPublicKeyId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[SshPublicKey]
@@ -906,12 +906,12 @@ package transfer {
   @js.native
   sealed trait State extends js.Any
   object State extends js.Object {
-    val OFFLINE      = "OFFLINE".asInstanceOf[State]
-    val ONLINE       = "ONLINE".asInstanceOf[State]
-    val STARTING     = "STARTING".asInstanceOf[State]
-    val STOPPING     = "STOPPING".asInstanceOf[State]
+    val OFFLINE = "OFFLINE".asInstanceOf[State]
+    val ONLINE = "ONLINE".asInstanceOf[State]
+    val STARTING = "STARTING".asInstanceOf[State]
+    val STOPPING = "STOPPING".asInstanceOf[State]
     val START_FAILED = "START_FAILED".asInstanceOf[State]
-    val STOP_FAILED  = "STOP_FAILED".asInstanceOf[State]
+    val STOP_FAILED = "STOP_FAILED".asInstanceOf[State]
 
     val values = js.Object.freeze(js.Array(OFFLINE, ONLINE, STARTING, STOPPING, START_FAILED, STOP_FAILED))
   }
@@ -950,7 +950,7 @@ package transfer {
         Value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -971,7 +971,7 @@ package transfer {
         Tags: Tags
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
-        "Arn"  -> Arn.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
@@ -1027,7 +1027,7 @@ package transfer {
     ): TestIdentityProviderResponse = {
       val __obj = js.Dynamic.literal(
         "StatusCode" -> StatusCode.asInstanceOf[js.Any],
-        "Url"        -> Url.asInstanceOf[js.Any]
+        "Url" -> Url.asInstanceOf[js.Any]
       )
 
       Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
@@ -1049,7 +1049,7 @@ package transfer {
         TagKeys: TagKeys
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
-        "Arn"     -> Arn.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 

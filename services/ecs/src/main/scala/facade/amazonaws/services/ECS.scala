@@ -7,80 +7,80 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object ecs {
-  type AttachmentDetails                  = js.Array[KeyValuePair]
-  type AttachmentStateChanges             = js.Array[AttachmentStateChange]
-  type Attachments                        = js.Array[Attachment]
-  type Attributes                         = js.Array[Attribute]
-  type BoxedBoolean                       = Boolean
-  type BoxedInteger                       = Int
-  type CapacityProviderFieldList          = js.Array[CapacityProviderField]
-  type CapacityProviderStrategy           = js.Array[CapacityProviderStrategyItem]
-  type CapacityProviderStrategyItemBase   = Int
+  type AttachmentDetails = js.Array[KeyValuePair]
+  type AttachmentStateChanges = js.Array[AttachmentStateChange]
+  type Attachments = js.Array[Attachment]
+  type Attributes = js.Array[Attribute]
+  type BoxedBoolean = Boolean
+  type BoxedInteger = Int
+  type CapacityProviderFieldList = js.Array[CapacityProviderField]
+  type CapacityProviderStrategy = js.Array[CapacityProviderStrategyItem]
+  type CapacityProviderStrategyItemBase = Int
   type CapacityProviderStrategyItemWeight = Int
-  type CapacityProviders                  = js.Array[CapacityProvider]
-  type ClusterFieldList                   = js.Array[ClusterField]
-  type ClusterSettings                    = js.Array[ClusterSetting]
-  type Clusters                           = js.Array[Cluster]
-  type CompatibilityList                  = js.Array[Compatibility]
-  type ContainerDefinitions               = js.Array[ContainerDefinition]
-  type ContainerDependencies              = js.Array[ContainerDependency]
-  type ContainerInstanceFieldList         = js.Array[ContainerInstanceField]
-  type ContainerInstances                 = js.Array[ContainerInstance]
-  type ContainerOverrides                 = js.Array[ContainerOverride]
-  type ContainerStateChanges              = js.Array[ContainerStateChange]
-  type Containers                         = js.Array[Container]
-  type Deployments                        = js.Array[Deployment]
-  type DeviceCgroupPermissions            = js.Array[DeviceCgroupPermission]
-  type DevicesList                        = js.Array[Device]
-  type DockerLabelsMap                    = js.Dictionary[String]
-  type EnvironmentFiles                   = js.Array[EnvironmentFile]
-  type EnvironmentVariables               = js.Array[KeyValuePair]
-  type Failures                           = js.Array[Failure]
-  type FirelensConfigurationOptionsMap    = js.Dictionary[String]
-  type GpuIds                             = js.Array[String]
-  type HostEntryList                      = js.Array[HostEntry]
-  type InferenceAcceleratorOverrides      = js.Array[InferenceAcceleratorOverride]
-  type InferenceAccelerators              = js.Array[InferenceAccelerator]
-  type LoadBalancers                      = js.Array[LoadBalancer]
-  type LogConfigurationOptionsMap         = js.Dictionary[String]
-  type ManagedScalingStepSize             = Int
-  type ManagedScalingTargetCapacity       = Int
-  type MountPointList                     = js.Array[MountPoint]
-  type NetworkBindings                    = js.Array[NetworkBinding]
-  type NetworkInterfaces                  = js.Array[NetworkInterface]
-  type PlacementConstraints               = js.Array[PlacementConstraint]
-  type PlacementStrategies                = js.Array[PlacementStrategy]
-  type PlatformDevices                    = js.Array[PlatformDevice]
-  type PortMappingList                    = js.Array[PortMapping]
-  type ProxyConfigurationProperties       = js.Array[KeyValuePair]
-  type RequiresAttributes                 = js.Array[Attribute]
-  type ResourceRequirements               = js.Array[ResourceRequirement]
-  type Resources                          = js.Array[Resource]
-  type SecretList                         = js.Array[Secret]
-  type ServiceEvents                      = js.Array[ServiceEvent]
-  type ServiceFieldList                   = js.Array[ServiceField]
-  type ServiceRegistries                  = js.Array[ServiceRegistry]
-  type Services                           = js.Array[Service]
-  type Settings                           = js.Array[Setting]
-  type Statistics                         = js.Array[KeyValuePair]
-  type StringList                         = js.Array[String]
-  type StringMap                          = js.Dictionary[String]
-  type SystemControls                     = js.Array[SystemControl]
-  type TagKey                             = String
-  type TagKeys                            = js.Array[TagKey]
-  type TagValue                           = String
-  type Tags                               = js.Array[Tag]
-  type TaskDefinitionFieldList            = js.Array[TaskDefinitionField]
+  type CapacityProviders = js.Array[CapacityProvider]
+  type ClusterFieldList = js.Array[ClusterField]
+  type ClusterSettings = js.Array[ClusterSetting]
+  type Clusters = js.Array[Cluster]
+  type CompatibilityList = js.Array[Compatibility]
+  type ContainerDefinitions = js.Array[ContainerDefinition]
+  type ContainerDependencies = js.Array[ContainerDependency]
+  type ContainerInstanceFieldList = js.Array[ContainerInstanceField]
+  type ContainerInstances = js.Array[ContainerInstance]
+  type ContainerOverrides = js.Array[ContainerOverride]
+  type ContainerStateChanges = js.Array[ContainerStateChange]
+  type Containers = js.Array[Container]
+  type Deployments = js.Array[Deployment]
+  type DeviceCgroupPermissions = js.Array[DeviceCgroupPermission]
+  type DevicesList = js.Array[Device]
+  type DockerLabelsMap = js.Dictionary[String]
+  type EnvironmentFiles = js.Array[EnvironmentFile]
+  type EnvironmentVariables = js.Array[KeyValuePair]
+  type Failures = js.Array[Failure]
+  type FirelensConfigurationOptionsMap = js.Dictionary[String]
+  type GpuIds = js.Array[String]
+  type HostEntryList = js.Array[HostEntry]
+  type InferenceAcceleratorOverrides = js.Array[InferenceAcceleratorOverride]
+  type InferenceAccelerators = js.Array[InferenceAccelerator]
+  type LoadBalancers = js.Array[LoadBalancer]
+  type LogConfigurationOptionsMap = js.Dictionary[String]
+  type ManagedScalingStepSize = Int
+  type ManagedScalingTargetCapacity = Int
+  type MountPointList = js.Array[MountPoint]
+  type NetworkBindings = js.Array[NetworkBinding]
+  type NetworkInterfaces = js.Array[NetworkInterface]
+  type PlacementConstraints = js.Array[PlacementConstraint]
+  type PlacementStrategies = js.Array[PlacementStrategy]
+  type PlatformDevices = js.Array[PlatformDevice]
+  type PortMappingList = js.Array[PortMapping]
+  type ProxyConfigurationProperties = js.Array[KeyValuePair]
+  type RequiresAttributes = js.Array[Attribute]
+  type ResourceRequirements = js.Array[ResourceRequirement]
+  type Resources = js.Array[Resource]
+  type SecretList = js.Array[Secret]
+  type ServiceEvents = js.Array[ServiceEvent]
+  type ServiceFieldList = js.Array[ServiceField]
+  type ServiceRegistries = js.Array[ServiceRegistry]
+  type Services = js.Array[Service]
+  type Settings = js.Array[Setting]
+  type Statistics = js.Array[KeyValuePair]
+  type StringList = js.Array[String]
+  type StringMap = js.Dictionary[String]
+  type SystemControls = js.Array[SystemControl]
+  type TagKey = String
+  type TagKeys = js.Array[TagKey]
+  type TagValue = String
+  type Tags = js.Array[Tag]
+  type TaskDefinitionFieldList = js.Array[TaskDefinitionField]
   type TaskDefinitionPlacementConstraints = js.Array[TaskDefinitionPlacementConstraint]
-  type TaskFieldList                      = js.Array[TaskField]
-  type TaskSetFieldList                   = js.Array[TaskSetField]
-  type TaskSets                           = js.Array[TaskSet]
-  type Tasks                              = js.Array[Task]
-  type Timestamp                          = js.Date
-  type TmpfsList                          = js.Array[Tmpfs]
-  type UlimitList                         = js.Array[Ulimit]
-  type VolumeFromList                     = js.Array[VolumeFrom]
-  type VolumeList                         = js.Array[Volume]
+  type TaskFieldList = js.Array[TaskField]
+  type TaskSetFieldList = js.Array[TaskSetField]
+  type TaskSets = js.Array[TaskSet]
+  type Tasks = js.Array[Task]
+  type Timestamp = js.Date
+  type TmpfsList = js.Array[Tmpfs]
+  type UlimitList = js.Array[Ulimit]
+  type VolumeFromList = js.Array[VolumeFrom]
+  type VolumeList = js.Array[Volume]
 
   implicit final class ECSOps(private val service: ECS) extends AnyVal {
 
@@ -212,11 +212,11 @@ package ecs {
 
     def createCapacityProvider(params: CreateCapacityProviderRequest): Request[CreateCapacityProviderResponse] =
       js.native
-    def createCluster(params: CreateClusterRequest): Request[CreateClusterResponse]                      = js.native
-    def createService(params: CreateServiceRequest): Request[CreateServiceResponse]                      = js.native
-    def createTaskSet(params: CreateTaskSetRequest): Request[CreateTaskSetResponse]                      = js.native
+    def createCluster(params: CreateClusterRequest): Request[CreateClusterResponse] = js.native
+    def createService(params: CreateServiceRequest): Request[CreateServiceResponse] = js.native
+    def createTaskSet(params: CreateTaskSetRequest): Request[CreateTaskSetResponse] = js.native
     def deleteAccountSetting(params: DeleteAccountSettingRequest): Request[DeleteAccountSettingResponse] = js.native
-    def deleteAttributes(params: DeleteAttributesRequest): Request[DeleteAttributesResponse]             = js.native
+    def deleteAttributes(params: DeleteAttributesRequest): Request[DeleteAttributesResponse] = js.native
     def deleteCapacityProvider(params: DeleteCapacityProviderRequest): Request[DeleteCapacityProviderResponse] =
       js.native
     def deleteCluster(params: DeleteClusterRequest): Request[DeleteClusterResponse] = js.native
@@ -229,30 +229,30 @@ package ecs {
       js.native
     def describeCapacityProviders(
         params: DescribeCapacityProvidersRequest
-    ): Request[DescribeCapacityProvidersResponse]                                            = js.native
+    ): Request[DescribeCapacityProvidersResponse] = js.native
     def describeClusters(params: DescribeClustersRequest): Request[DescribeClustersResponse] = js.native
     def describeContainerInstances(
         params: DescribeContainerInstancesRequest
-    ): Request[DescribeContainerInstancesResponse]                                           = js.native
+    ): Request[DescribeContainerInstancesResponse] = js.native
     def describeServices(params: DescribeServicesRequest): Request[DescribeServicesResponse] = js.native
     def describeTaskDefinition(params: DescribeTaskDefinitionRequest): Request[DescribeTaskDefinitionResponse] =
       js.native
-    def describeTaskSets(params: DescribeTaskSetsRequest): Request[DescribeTaskSetsResponse]             = js.native
-    def describeTasks(params: DescribeTasksRequest): Request[DescribeTasksResponse]                      = js.native
+    def describeTaskSets(params: DescribeTaskSetsRequest): Request[DescribeTaskSetsResponse] = js.native
+    def describeTasks(params: DescribeTasksRequest): Request[DescribeTasksResponse] = js.native
     def discoverPollEndpoint(params: DiscoverPollEndpointRequest): Request[DiscoverPollEndpointResponse] = js.native
-    def listAccountSettings(params: ListAccountSettingsRequest): Request[ListAccountSettingsResponse]    = js.native
-    def listAttributes(params: ListAttributesRequest): Request[ListAttributesResponse]                   = js.native
-    def listClusters(params: ListClustersRequest): Request[ListClustersResponse]                         = js.native
+    def listAccountSettings(params: ListAccountSettingsRequest): Request[ListAccountSettingsResponse] = js.native
+    def listAttributes(params: ListAttributesRequest): Request[ListAttributesResponse] = js.native
+    def listClusters(params: ListClustersRequest): Request[ListClustersResponse] = js.native
     def listContainerInstances(params: ListContainerInstancesRequest): Request[ListContainerInstancesResponse] =
       js.native
-    def listServices(params: ListServicesRequest): Request[ListServicesResponse]                      = js.native
+    def listServices(params: ListServicesRequest): Request[ListServicesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listTaskDefinitionFamilies(
         params: ListTaskDefinitionFamiliesRequest
-    ): Request[ListTaskDefinitionFamiliesResponse]                                                    = js.native
+    ): Request[ListTaskDefinitionFamiliesResponse] = js.native
     def listTaskDefinitions(params: ListTaskDefinitionsRequest): Request[ListTaskDefinitionsResponse] = js.native
-    def listTasks(params: ListTasksRequest): Request[ListTasksResponse]                               = js.native
-    def putAccountSetting(params: PutAccountSettingRequest): Request[PutAccountSettingResponse]       = js.native
+    def listTasks(params: ListTasksRequest): Request[ListTasksResponse] = js.native
+    def putAccountSetting(params: PutAccountSettingRequest): Request[PutAccountSettingResponse] = js.native
     def putAccountSettingDefault(params: PutAccountSettingDefaultRequest): Request[PutAccountSettingDefaultResponse] =
       js.native
     def putAttributes(params: PutAttributesRequest): Request[PutAttributesResponse] = js.native
@@ -264,39 +264,39 @@ package ecs {
     ): Request[RegisterContainerInstanceResponse] = js.native
     def registerTaskDefinition(params: RegisterTaskDefinitionRequest): Request[RegisterTaskDefinitionResponse] =
       js.native
-    def runTask(params: RunTaskRequest): Request[RunTaskResponse]       = js.native
+    def runTask(params: RunTaskRequest): Request[RunTaskResponse] = js.native
     def startTask(params: StartTaskRequest): Request[StartTaskResponse] = js.native
-    def stopTask(params: StopTaskRequest): Request[StopTaskResponse]    = js.native
+    def stopTask(params: StopTaskRequest): Request[StopTaskResponse] = js.native
     def submitAttachmentStateChanges(
         params: SubmitAttachmentStateChangesRequest
     ): Request[SubmitAttachmentStateChangesResponse] = js.native
     def submitContainerStateChange(
         params: SubmitContainerStateChangeRequest
-    ): Request[SubmitContainerStateChangeResponse]                                                          = js.native
+    ): Request[SubmitContainerStateChangeResponse] = js.native
     def submitTaskStateChange(params: SubmitTaskStateChangeRequest): Request[SubmitTaskStateChangeResponse] = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                               = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                         = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateClusterSettings(params: UpdateClusterSettingsRequest): Request[UpdateClusterSettingsResponse] = js.native
-    def updateContainerAgent(params: UpdateContainerAgentRequest): Request[UpdateContainerAgentResponse]    = js.native
+    def updateContainerAgent(params: UpdateContainerAgentRequest): Request[UpdateContainerAgentResponse] = js.native
     def updateContainerInstancesState(
         params: UpdateContainerInstancesStateRequest
-    ): Request[UpdateContainerInstancesStateResponse]                               = js.native
+    ): Request[UpdateContainerInstancesStateResponse] = js.native
     def updateService(params: UpdateServiceRequest): Request[UpdateServiceResponse] = js.native
     def updateServicePrimaryTaskSet(
         params: UpdateServicePrimaryTaskSetRequest
-    ): Request[UpdateServicePrimaryTaskSetResponse]                                 = js.native
+    ): Request[UpdateServicePrimaryTaskSetResponse] = js.native
     def updateTaskSet(params: UpdateTaskSetRequest): Request[UpdateTaskSetResponse] = js.native
   }
 
   @js.native
   sealed trait AgentUpdateStatus extends js.Any
   object AgentUpdateStatus extends js.Object {
-    val PENDING  = "PENDING".asInstanceOf[AgentUpdateStatus]
-    val STAGING  = "STAGING".asInstanceOf[AgentUpdateStatus]
-    val STAGED   = "STAGED".asInstanceOf[AgentUpdateStatus]
+    val PENDING = "PENDING".asInstanceOf[AgentUpdateStatus]
+    val STAGING = "STAGING".asInstanceOf[AgentUpdateStatus]
+    val STAGED = "STAGED".asInstanceOf[AgentUpdateStatus]
     val UPDATING = "UPDATING".asInstanceOf[AgentUpdateStatus]
-    val UPDATED  = "UPDATED".asInstanceOf[AgentUpdateStatus]
-    val FAILED   = "FAILED".asInstanceOf[AgentUpdateStatus]
+    val UPDATED = "UPDATED".asInstanceOf[AgentUpdateStatus]
+    val FAILED = "FAILED".asInstanceOf[AgentUpdateStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, STAGING, STAGED, UPDATING, UPDATED, FAILED))
   }
@@ -304,7 +304,7 @@ package ecs {
   @js.native
   sealed trait AssignPublicIp extends js.Any
   object AssignPublicIp extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[AssignPublicIp]
+    val ENABLED = "ENABLED".asInstanceOf[AssignPublicIp]
     val DISABLED = "DISABLED".asInstanceOf[AssignPublicIp]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -355,7 +355,7 @@ package ecs {
     ): AttachmentStateChange = {
       val __obj = js.Dynamic.literal(
         "attachmentArn" -> attachmentArn.asInstanceOf[js.Any],
-        "status"        -> status.asInstanceOf[js.Any]
+        "status" -> status.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AttachmentStateChange]
@@ -496,7 +496,7 @@ package ecs {
   @js.native
   sealed trait CapacityProviderStatus extends js.Any
   object CapacityProviderStatus extends js.Object {
-    val ACTIVE   = "ACTIVE".asInstanceOf[CapacityProviderStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[CapacityProviderStatus]
     val INACTIVE = "INACTIVE".asInstanceOf[CapacityProviderStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
@@ -533,8 +533,8 @@ package ecs {
   sealed trait CapacityProviderUpdateStatus extends js.Any
   object CapacityProviderUpdateStatus extends js.Object {
     val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[CapacityProviderUpdateStatus]
-    val DELETE_COMPLETE    = "DELETE_COMPLETE".asInstanceOf[CapacityProviderUpdateStatus]
-    val DELETE_FAILED      = "DELETE_FAILED".asInstanceOf[CapacityProviderUpdateStatus]
+    val DELETE_COMPLETE = "DELETE_COMPLETE".asInstanceOf[CapacityProviderUpdateStatus]
+    val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[CapacityProviderUpdateStatus]
 
     val values = js.Object.freeze(js.Array(DELETE_IN_PROGRESS, DELETE_COMPLETE, DELETE_FAILED))
   }
@@ -605,9 +605,9 @@ package ecs {
   sealed trait ClusterField extends js.Any
   object ClusterField extends js.Object {
     val ATTACHMENTS = "ATTACHMENTS".asInstanceOf[ClusterField]
-    val SETTINGS    = "SETTINGS".asInstanceOf[ClusterField]
-    val STATISTICS  = "STATISTICS".asInstanceOf[ClusterField]
-    val TAGS        = "TAGS".asInstanceOf[ClusterField]
+    val SETTINGS = "SETTINGS".asInstanceOf[ClusterField]
+    val STATISTICS = "STATISTICS".asInstanceOf[ClusterField]
+    val TAGS = "TAGS".asInstanceOf[ClusterField]
 
     val values = js.Object.freeze(js.Array(ATTACHMENTS, SETTINGS, STATISTICS, TAGS))
   }
@@ -645,7 +645,7 @@ package ecs {
   @js.native
   sealed trait Compatibility extends js.Any
   object Compatibility extends js.Object {
-    val EC2     = "EC2".asInstanceOf[Compatibility]
+    val EC2 = "EC2".asInstanceOf[Compatibility]
     val FARGATE = "FARGATE".asInstanceOf[Compatibility]
 
     val values = js.Object.freeze(js.Array(EC2, FARGATE))
@@ -654,7 +654,7 @@ package ecs {
   @js.native
   sealed trait Connectivity extends js.Any
   object Connectivity extends js.Object {
-    val CONNECTED    = "CONNECTED".asInstanceOf[Connectivity]
+    val CONNECTED = "CONNECTED".asInstanceOf[Connectivity]
     val DISCONNECTED = "DISCONNECTED".asInstanceOf[Connectivity]
 
     val values = js.Object.freeze(js.Array(CONNECTED, DISCONNECTED))
@@ -727,10 +727,10 @@ package ecs {
   @js.native
   sealed trait ContainerCondition extends js.Any
   object ContainerCondition extends js.Object {
-    val START    = "START".asInstanceOf[ContainerCondition]
+    val START = "START".asInstanceOf[ContainerCondition]
     val COMPLETE = "COMPLETE".asInstanceOf[ContainerCondition]
-    val SUCCESS  = "SUCCESS".asInstanceOf[ContainerCondition]
-    val HEALTHY  = "HEALTHY".asInstanceOf[ContainerCondition]
+    val SUCCESS = "SUCCESS".asInstanceOf[ContainerCondition]
+    val HEALTHY = "HEALTHY".asInstanceOf[ContainerCondition]
 
     val values = js.Object.freeze(js.Array(START, COMPLETE, SUCCESS, HEALTHY))
   }
@@ -887,7 +887,7 @@ package ecs {
         containerName: String
     ): ContainerDependency = {
       val __obj = js.Dynamic.literal(
-        "condition"     -> condition.asInstanceOf[js.Any],
+        "condition" -> condition.asInstanceOf[js.Any],
         "containerName" -> containerName.asInstanceOf[js.Any]
       )
 
@@ -973,10 +973,10 @@ package ecs {
   @js.native
   sealed trait ContainerInstanceStatus extends js.Any
   object ContainerInstanceStatus extends js.Object {
-    val ACTIVE              = "ACTIVE".asInstanceOf[ContainerInstanceStatus]
-    val DRAINING            = "DRAINING".asInstanceOf[ContainerInstanceStatus]
-    val REGISTERING         = "REGISTERING".asInstanceOf[ContainerInstanceStatus]
-    val DEREGISTERING       = "DEREGISTERING".asInstanceOf[ContainerInstanceStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[ContainerInstanceStatus]
+    val DRAINING = "DRAINING".asInstanceOf[ContainerInstanceStatus]
+    val REGISTERING = "REGISTERING".asInstanceOf[ContainerInstanceStatus]
+    val DEREGISTERING = "DEREGISTERING".asInstanceOf[ContainerInstanceStatus]
     val REGISTRATION_FAILED = "REGISTRATION_FAILED".asInstanceOf[ContainerInstanceStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, DRAINING, REGISTERING, DEREGISTERING, REGISTRATION_FAILED))
@@ -1075,7 +1075,7 @@ package ecs {
     ): CreateCapacityProviderRequest = {
       val __obj = js.Dynamic.literal(
         "autoScalingGroupProvider" -> autoScalingGroupProvider.asInstanceOf[js.Any],
-        "name"                     -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -1276,8 +1276,8 @@ package ecs {
         tags: js.UndefOr[Tags] = js.undefined
     ): CreateTaskSetRequest = {
       val __obj = js.Dynamic.literal(
-        "cluster"        -> cluster.asInstanceOf[js.Any],
-        "service"        -> service.asInstanceOf[js.Any],
+        "cluster" -> cluster.asInstanceOf[js.Any],
+        "service" -> service.asInstanceOf[js.Any],
         "taskDefinition" -> taskDefinition.asInstanceOf[js.Any]
       )
 
@@ -1634,9 +1634,9 @@ package ecs {
   @js.native
   sealed trait DeploymentControllerType extends js.Any
   object DeploymentControllerType extends js.Object {
-    val ECS         = "ECS".asInstanceOf[DeploymentControllerType]
+    val ECS = "ECS".asInstanceOf[DeploymentControllerType]
     val CODE_DEPLOY = "CODE_DEPLOY".asInstanceOf[DeploymentControllerType]
-    val EXTERNAL    = "EXTERNAL".asInstanceOf[DeploymentControllerType]
+    val EXTERNAL = "EXTERNAL".asInstanceOf[DeploymentControllerType]
 
     val values = js.Object.freeze(js.Array(ECS, CODE_DEPLOY, EXTERNAL))
   }
@@ -2055,7 +2055,7 @@ package ecs {
   @js.native
   sealed trait DeviceCgroupPermission extends js.Any
   object DeviceCgroupPermission extends js.Object {
-    val read  = "read".asInstanceOf[DeviceCgroupPermission]
+    val read = "read".asInstanceOf[DeviceCgroupPermission]
     val write = "write".asInstanceOf[DeviceCgroupPermission]
     val mknod = "mknod".asInstanceOf[DeviceCgroupPermission]
 
@@ -2156,7 +2156,7 @@ package ecs {
   @js.native
   sealed trait EFSAuthorizationConfigIAM extends js.Any
   object EFSAuthorizationConfigIAM extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[EFSAuthorizationConfigIAM]
+    val ENABLED = "ENABLED".asInstanceOf[EFSAuthorizationConfigIAM]
     val DISABLED = "DISABLED".asInstanceOf[EFSAuthorizationConfigIAM]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -2165,7 +2165,7 @@ package ecs {
   @js.native
   sealed trait EFSTransitEncryption extends js.Any
   object EFSTransitEncryption extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[EFSTransitEncryption]
+    val ENABLED = "ENABLED".asInstanceOf[EFSTransitEncryption]
     val DISABLED = "DISABLED".asInstanceOf[EFSTransitEncryption]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -2222,7 +2222,7 @@ package ecs {
         value: String
     ): EnvironmentFile = {
       val __obj = js.Dynamic.literal(
-        "type"  -> `type`.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
 
@@ -2290,7 +2290,7 @@ package ecs {
   @js.native
   sealed trait FirelensConfigurationType extends js.Any
   object FirelensConfigurationType extends js.Object {
-    val fluentd   = "fluentd".asInstanceOf[FirelensConfigurationType]
+    val fluentd = "fluentd".asInstanceOf[FirelensConfigurationType]
     val fluentbit = "fluentbit".asInstanceOf[FirelensConfigurationType]
 
     val values = js.Object.freeze(js.Array(fluentd, fluentbit))
@@ -2346,9 +2346,9 @@ package ecs {
   @js.native
   sealed trait HealthStatus extends js.Any
   object HealthStatus extends js.Object {
-    val HEALTHY   = "HEALTHY".asInstanceOf[HealthStatus]
+    val HEALTHY = "HEALTHY".asInstanceOf[HealthStatus]
     val UNHEALTHY = "UNHEALTHY".asInstanceOf[HealthStatus]
-    val UNKNOWN   = "UNKNOWN".asInstanceOf[HealthStatus]
+    val UNKNOWN = "UNKNOWN".asInstanceOf[HealthStatus]
 
     val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY, UNKNOWN))
   }
@@ -2369,7 +2369,7 @@ package ecs {
         ipAddress: String
     ): HostEntry = {
       val __obj = js.Dynamic.literal(
-        "hostname"  -> hostname.asInstanceOf[js.Any],
+        "hostname" -> hostname.asInstanceOf[js.Any],
         "ipAddress" -> ipAddress.asInstanceOf[js.Any]
       )
 
@@ -2499,7 +2499,7 @@ package ecs {
   @js.native
   sealed trait LaunchType extends js.Any
   object LaunchType extends js.Object {
-    val EC2     = "EC2".asInstanceOf[LaunchType]
+    val EC2 = "EC2".asInstanceOf[LaunchType]
     val FARGATE = "FARGATE".asInstanceOf[LaunchType]
 
     val values = js.Object.freeze(js.Array(EC2, FARGATE))
@@ -3026,12 +3026,12 @@ package ecs {
   sealed trait LogDriver extends js.Any
   object LogDriver extends js.Object {
     val `json-file` = "json-file".asInstanceOf[LogDriver]
-    val syslog      = "syslog".asInstanceOf[LogDriver]
-    val journald    = "journald".asInstanceOf[LogDriver]
-    val gelf        = "gelf".asInstanceOf[LogDriver]
-    val fluentd     = "fluentd".asInstanceOf[LogDriver]
-    val awslogs     = "awslogs".asInstanceOf[LogDriver]
-    val splunk      = "splunk".asInstanceOf[LogDriver]
+    val syslog = "syslog".asInstanceOf[LogDriver]
+    val journald = "journald".asInstanceOf[LogDriver]
+    val gelf = "gelf".asInstanceOf[LogDriver]
+    val fluentd = "fluentd".asInstanceOf[LogDriver]
+    val awslogs = "awslogs".asInstanceOf[LogDriver]
+    val splunk = "splunk".asInstanceOf[LogDriver]
     val awsfirelens = "awsfirelens".asInstanceOf[LogDriver]
 
     val values = js.Object.freeze(js.Array(`json-file`, syslog, journald, gelf, fluentd, awslogs, splunk, awsfirelens))
@@ -3070,7 +3070,7 @@ package ecs {
   @js.native
   sealed trait ManagedScalingStatus extends js.Any
   object ManagedScalingStatus extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[ManagedScalingStatus]
+    val ENABLED = "ENABLED".asInstanceOf[ManagedScalingStatus]
     val DISABLED = "DISABLED".asInstanceOf[ManagedScalingStatus]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -3079,7 +3079,7 @@ package ecs {
   @js.native
   sealed trait ManagedTerminationProtection extends js.Any
   object ManagedTerminationProtection extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[ManagedTerminationProtection]
+    val ENABLED = "ENABLED".asInstanceOf[ManagedTerminationProtection]
     val DISABLED = "DISABLED".asInstanceOf[ManagedTerminationProtection]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -3186,9 +3186,9 @@ package ecs {
   sealed trait NetworkMode extends js.Any
   object NetworkMode extends js.Object {
     val bridge = "bridge".asInstanceOf[NetworkMode]
-    val host   = "host".asInstanceOf[NetworkMode]
+    val host = "host".asInstanceOf[NetworkMode]
     val awsvpc = "awsvpc".asInstanceOf[NetworkMode]
-    val none   = "none".asInstanceOf[NetworkMode]
+    val none = "none".asInstanceOf[NetworkMode]
 
     val values = js.Object.freeze(js.Array(bridge, host, awsvpc, none))
   }
@@ -3230,7 +3230,7 @@ package ecs {
   sealed trait PlacementConstraintType extends js.Any
   object PlacementConstraintType extends js.Object {
     val distinctInstance = "distinctInstance".asInstanceOf[PlacementConstraintType]
-    val memberOf         = "memberOf".asInstanceOf[PlacementConstraintType]
+    val memberOf = "memberOf".asInstanceOf[PlacementConstraintType]
 
     val values = js.Object.freeze(js.Array(distinctInstance, memberOf))
   }
@@ -3260,8 +3260,8 @@ package ecs {
   @js.native
   sealed trait PlacementStrategyType extends js.Any
   object PlacementStrategyType extends js.Object {
-    val random  = "random".asInstanceOf[PlacementStrategyType]
-    val spread  = "spread".asInstanceOf[PlacementStrategyType]
+    val random = "random".asInstanceOf[PlacementStrategyType]
+    val spread = "spread".asInstanceOf[PlacementStrategyType]
     val binpack = "binpack".asInstanceOf[PlacementStrategyType]
 
     val values = js.Object.freeze(js.Array(random, spread, binpack))
@@ -3283,7 +3283,7 @@ package ecs {
         `type`: PlatformDeviceType
     ): PlatformDevice = {
       val __obj = js.Dynamic.literal(
-        "id"   -> id.asInstanceOf[js.Any],
+        "id" -> id.asInstanceOf[js.Any],
         "type" -> `type`.asInstanceOf[js.Any]
       )
 
@@ -3330,7 +3330,7 @@ package ecs {
   sealed trait PropagateTags extends js.Any
   object PropagateTags extends js.Object {
     val TASK_DEFINITION = "TASK_DEFINITION".asInstanceOf[PropagateTags]
-    val SERVICE         = "SERVICE".asInstanceOf[PropagateTags]
+    val SERVICE = "SERVICE".asInstanceOf[PropagateTags]
 
     val values = js.Object.freeze(js.Array(TASK_DEFINITION, SERVICE))
   }
@@ -3385,7 +3385,7 @@ package ecs {
         value: String
     ): PutAccountSettingDefaultRequest = {
       val __obj = js.Dynamic.literal(
-        "name"  -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
 
@@ -3424,7 +3424,7 @@ package ecs {
         principalArn: js.UndefOr[String] = js.undefined
     ): PutAccountSettingRequest = {
       val __obj = js.Dynamic.literal(
-        "name"  -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
 
@@ -3501,8 +3501,8 @@ package ecs {
         defaultCapacityProviderStrategy: CapacityProviderStrategy
     ): PutClusterCapacityProvidersRequest = {
       val __obj = js.Dynamic.literal(
-        "capacityProviders"               -> capacityProviders.asInstanceOf[js.Any],
-        "cluster"                         -> cluster.asInstanceOf[js.Any],
+        "capacityProviders" -> capacityProviders.asInstanceOf[js.Any],
+        "cluster" -> cluster.asInstanceOf[js.Any],
         "defaultCapacityProviderStrategy" -> defaultCapacityProviderStrategy.asInstanceOf[js.Any]
       )
 
@@ -3624,7 +3624,7 @@ package ecs {
     ): RegisterTaskDefinitionRequest = {
       val __obj = js.Dynamic.literal(
         "containerDefinitions" -> containerDefinitions.asInstanceOf[js.Any],
-        "family"               -> family.asInstanceOf[js.Any]
+        "family" -> family.asInstanceOf[js.Any]
       )
 
       cpu.foreach(__v => __obj.updateDynamic("cpu")(__v.asInstanceOf[js.Any]))
@@ -3734,7 +3734,7 @@ package ecs {
         value: String
     ): ResourceRequirement = {
       val __obj = js.Dynamic.literal(
-        "type"  -> `type`.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
 
@@ -3745,7 +3745,7 @@ package ecs {
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {
-    val GPU                  = "GPU".asInstanceOf[ResourceType]
+    val GPU = "GPU".asInstanceOf[ResourceType]
     val InferenceAccelerator = "InferenceAccelerator".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(js.Array(GPU, InferenceAccelerator))
@@ -3867,7 +3867,7 @@ package ecs {
   sealed trait SchedulingStrategy extends js.Any
   object SchedulingStrategy extends js.Object {
     val REPLICA = "REPLICA".asInstanceOf[SchedulingStrategy]
-    val DAEMON  = "DAEMON".asInstanceOf[SchedulingStrategy]
+    val DAEMON = "DAEMON".asInstanceOf[SchedulingStrategy]
 
     val values = js.Object.freeze(js.Array(REPLICA, DAEMON))
   }
@@ -3875,7 +3875,7 @@ package ecs {
   @js.native
   sealed trait Scope extends js.Any
   object Scope extends js.Object {
-    val task   = "task".asInstanceOf[Scope]
+    val task = "task".asInstanceOf[Scope]
     val shared = "shared".asInstanceOf[Scope]
 
     val values = js.Object.freeze(js.Array(task, shared))
@@ -3900,7 +3900,7 @@ package ecs {
         valueFrom: String
     ): Secret = {
       val __obj = js.Dynamic.literal(
-        "name"      -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "valueFrom" -> valueFrom.asInstanceOf[js.Any]
       )
 
@@ -4102,11 +4102,11 @@ package ecs {
   @js.native
   sealed trait SettingName extends js.Any
   object SettingName extends js.Object {
-    val serviceLongArnFormat           = "serviceLongArnFormat".asInstanceOf[SettingName]
-    val taskLongArnFormat              = "taskLongArnFormat".asInstanceOf[SettingName]
+    val serviceLongArnFormat = "serviceLongArnFormat".asInstanceOf[SettingName]
+    val taskLongArnFormat = "taskLongArnFormat".asInstanceOf[SettingName]
     val containerInstanceLongArnFormat = "containerInstanceLongArnFormat".asInstanceOf[SettingName]
-    val awsvpcTrunking                 = "awsvpcTrunking".asInstanceOf[SettingName]
-    val containerInsights              = "containerInsights".asInstanceOf[SettingName]
+    val awsvpcTrunking = "awsvpcTrunking".asInstanceOf[SettingName]
+    val containerInsights = "containerInsights".asInstanceOf[SettingName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -4122,7 +4122,7 @@ package ecs {
   @js.native
   sealed trait SortOrder extends js.Any
   object SortOrder extends js.Object {
-    val ASC  = "ASC".asInstanceOf[SortOrder]
+    val ASC = "ASC".asInstanceOf[SortOrder]
     val DESC = "DESC".asInstanceOf[SortOrder]
 
     val values = js.Object.freeze(js.Array(ASC, DESC))
@@ -4132,7 +4132,7 @@ package ecs {
   sealed trait StabilityStatus extends js.Any
   object StabilityStatus extends js.Object {
     val STEADY_STATE = "STEADY_STATE".asInstanceOf[StabilityStatus]
-    val STABILIZING  = "STABILIZING".asInstanceOf[StabilityStatus]
+    val STABILIZING = "STABILIZING".asInstanceOf[StabilityStatus]
 
     val values = js.Object.freeze(js.Array(STEADY_STATE, STABILIZING))
   }
@@ -4169,7 +4169,7 @@ package ecs {
     ): StartTaskRequest = {
       val __obj = js.Dynamic.literal(
         "containerInstances" -> containerInstances.asInstanceOf[js.Any],
-        "taskDefinition"     -> taskDefinition.asInstanceOf[js.Any]
+        "taskDefinition" -> taskDefinition.asInstanceOf[js.Any]
       )
 
       cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
@@ -4459,7 +4459,7 @@ package ecs {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -4678,9 +4678,9 @@ package ecs {
   @js.native
   sealed trait TaskDefinitionFamilyStatus extends js.Any
   object TaskDefinitionFamilyStatus extends js.Object {
-    val ACTIVE   = "ACTIVE".asInstanceOf[TaskDefinitionFamilyStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[TaskDefinitionFamilyStatus]
     val INACTIVE = "INACTIVE".asInstanceOf[TaskDefinitionFamilyStatus]
-    val ALL      = "ALL".asInstanceOf[TaskDefinitionFamilyStatus]
+    val ALL = "ALL".asInstanceOf[TaskDefinitionFamilyStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE, ALL))
   }
@@ -4728,7 +4728,7 @@ package ecs {
   @js.native
   sealed trait TaskDefinitionStatus extends js.Any
   object TaskDefinitionStatus extends js.Object {
-    val ACTIVE   = "ACTIVE".asInstanceOf[TaskDefinitionStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[TaskDefinitionStatus]
     val INACTIVE = "INACTIVE".asInstanceOf[TaskDefinitionStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
@@ -4874,9 +4874,9 @@ package ecs {
   @js.native
   sealed trait TaskStopCode extends js.Any
   object TaskStopCode extends js.Object {
-    val TaskFailedToStart        = "TaskFailedToStart".asInstanceOf[TaskStopCode]
+    val TaskFailedToStart = "TaskFailedToStart".asInstanceOf[TaskStopCode]
     val EssentialContainerExited = "EssentialContainerExited".asInstanceOf[TaskStopCode]
-    val UserInitiated            = "UserInitiated".asInstanceOf[TaskStopCode]
+    val UserInitiated = "UserInitiated".asInstanceOf[TaskStopCode]
 
     val values = js.Object.freeze(js.Array(TaskFailedToStart, EssentialContainerExited, UserInitiated))
   }
@@ -4900,7 +4900,7 @@ package ecs {
     ): Tmpfs = {
       val __obj = js.Dynamic.literal(
         "containerPath" -> containerPath.asInstanceOf[js.Any],
-        "size"          -> size.asInstanceOf[js.Any]
+        "size" -> size.asInstanceOf[js.Any]
       )
 
       mountOptions.foreach(__v => __obj.updateDynamic("mountOptions")(__v.asInstanceOf[js.Any]))
@@ -4936,7 +4936,7 @@ package ecs {
     ): Ulimit = {
       val __obj = js.Dynamic.literal(
         "hardLimit" -> hardLimit.asInstanceOf[js.Any],
-        "name"      -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "softLimit" -> softLimit.asInstanceOf[js.Any]
       )
 
@@ -4947,21 +4947,21 @@ package ecs {
   @js.native
   sealed trait UlimitName extends js.Any
   object UlimitName extends js.Object {
-    val core       = "core".asInstanceOf[UlimitName]
-    val cpu        = "cpu".asInstanceOf[UlimitName]
-    val data       = "data".asInstanceOf[UlimitName]
-    val fsize      = "fsize".asInstanceOf[UlimitName]
-    val locks      = "locks".asInstanceOf[UlimitName]
-    val memlock    = "memlock".asInstanceOf[UlimitName]
-    val msgqueue   = "msgqueue".asInstanceOf[UlimitName]
-    val nice       = "nice".asInstanceOf[UlimitName]
-    val nofile     = "nofile".asInstanceOf[UlimitName]
-    val nproc      = "nproc".asInstanceOf[UlimitName]
-    val rss        = "rss".asInstanceOf[UlimitName]
-    val rtprio     = "rtprio".asInstanceOf[UlimitName]
-    val rttime     = "rttime".asInstanceOf[UlimitName]
+    val core = "core".asInstanceOf[UlimitName]
+    val cpu = "cpu".asInstanceOf[UlimitName]
+    val data = "data".asInstanceOf[UlimitName]
+    val fsize = "fsize".asInstanceOf[UlimitName]
+    val locks = "locks".asInstanceOf[UlimitName]
+    val memlock = "memlock".asInstanceOf[UlimitName]
+    val msgqueue = "msgqueue".asInstanceOf[UlimitName]
+    val nice = "nice".asInstanceOf[UlimitName]
+    val nofile = "nofile".asInstanceOf[UlimitName]
+    val nproc = "nproc".asInstanceOf[UlimitName]
+    val rss = "rss".asInstanceOf[UlimitName]
+    val rtprio = "rtprio".asInstanceOf[UlimitName]
+    val rttime = "rttime".asInstanceOf[UlimitName]
     val sigpending = "sigpending".asInstanceOf[UlimitName]
-    val stack      = "stack".asInstanceOf[UlimitName]
+    val stack = "stack".asInstanceOf[UlimitName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -4998,7 +4998,7 @@ package ecs {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -5031,7 +5031,7 @@ package ecs {
         settings: ClusterSettings
     ): UpdateClusterSettingsRequest = {
       val __obj = js.Dynamic.literal(
-        "cluster"  -> cluster.asInstanceOf[js.Any],
+        "cluster" -> cluster.asInstanceOf[js.Any],
         "settings" -> settings.asInstanceOf[js.Any]
       )
 
@@ -5108,7 +5108,7 @@ package ecs {
     ): UpdateContainerInstancesStateRequest = {
       val __obj = js.Dynamic.literal(
         "containerInstances" -> containerInstances.asInstanceOf[js.Any],
-        "status"             -> status.asInstanceOf[js.Any]
+        "status" -> status.asInstanceOf[js.Any]
       )
 
       cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
@@ -5150,9 +5150,9 @@ package ecs {
         service: String
     ): UpdateServicePrimaryTaskSetRequest = {
       val __obj = js.Dynamic.literal(
-        "cluster"        -> cluster.asInstanceOf[js.Any],
+        "cluster" -> cluster.asInstanceOf[js.Any],
         "primaryTaskSet" -> primaryTaskSet.asInstanceOf[js.Any],
-        "service"        -> service.asInstanceOf[js.Any]
+        "service" -> service.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateServicePrimaryTaskSetRequest]
@@ -5262,7 +5262,7 @@ package ecs {
     ): UpdateTaskSetRequest = {
       val __obj = js.Dynamic.literal(
         "cluster" -> cluster.asInstanceOf[js.Any],
-        "scale"   -> scale.asInstanceOf[js.Any],
+        "scale" -> scale.asInstanceOf[js.Any],
         "service" -> service.asInstanceOf[js.Any],
         "taskSet" -> taskSet.asInstanceOf[js.Any]
       )

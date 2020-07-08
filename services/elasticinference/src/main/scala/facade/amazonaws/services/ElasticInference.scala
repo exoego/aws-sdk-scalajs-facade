@@ -7,30 +7,30 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object elasticinference {
-  type AcceleratorHealthStatus        = String
-  type AcceleratorId                  = String
-  type AcceleratorIdList              = js.Array[AcceleratorId]
-  type AcceleratorTypeList            = js.Array[AcceleratorType]
-  type AcceleratorTypeName            = String
-  type AcceleratorTypeNameList        = js.Array[AcceleratorTypeName]
-  type AcceleratorTypeOfferingList    = js.Array[AcceleratorTypeOffering]
-  type AvailabilityZone               = String
+  type AcceleratorHealthStatus = String
+  type AcceleratorId = String
+  type AcceleratorIdList = js.Array[AcceleratorId]
+  type AcceleratorTypeList = js.Array[AcceleratorType]
+  type AcceleratorTypeName = String
+  type AcceleratorTypeNameList = js.Array[AcceleratorTypeName]
+  type AcceleratorTypeOfferingList = js.Array[AcceleratorTypeOffering]
+  type AvailabilityZone = String
   type ElasticInferenceAcceleratorSet = js.Array[ElasticInferenceAccelerator]
-  type FilterList                     = js.Array[Filter]
-  type FilterName                     = String
-  type Key                            = String
-  type Location                       = String
-  type MaxResults                     = Int
-  type NextToken                      = String
-  type ResourceARN                    = String
-  type ResourceArn                    = String
-  type TagKey                         = String
-  type TagKeyList                     = js.Array[TagKey]
-  type TagMap                         = js.Dictionary[TagValue]
-  type TagValue                       = String
-  type ThroughputInfoList             = js.Array[KeyValuePair]
-  type Value                          = Int
-  type ValueStringList                = js.Array[String]
+  type FilterList = js.Array[Filter]
+  type FilterName = String
+  type Key = String
+  type Location = String
+  type MaxResults = Int
+  type NextToken = String
+  type ResourceARN = String
+  type ResourceArn = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagMap = js.Dictionary[TagValue]
+  type TagValue = String
+  type ThroughputInfoList = js.Array[KeyValuePair]
+  type Value = Int
+  type ValueStringList = js.Array[String]
 
   implicit final class ElasticInferenceOps(private val service: ElasticInference) extends AnyVal {
 
@@ -63,9 +63,9 @@ package elasticinference {
     def describeAcceleratorTypes(params: DescribeAcceleratorTypesRequest): Request[DescribeAcceleratorTypesResponse] =
       js.native
     def describeAccelerators(params: DescribeAcceleratorsRequest): Request[DescribeAcceleratorsResponse] = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResult]      = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResult]                              = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResult]                        = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResult] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResult] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResult] = js.native
   }
 
   /**
@@ -359,8 +359,8 @@ package elasticinference {
   @js.native
   sealed trait LocationType extends js.Any
   object LocationType extends js.Object {
-    val region                 = "region".asInstanceOf[LocationType]
-    val `availability-zone`    = "availability-zone".asInstanceOf[LocationType]
+    val region = "region".asInstanceOf[LocationType]
+    val `availability-zone` = "availability-zone".asInstanceOf[LocationType]
     val `availability-zone-id` = "availability-zone-id".asInstanceOf[LocationType]
 
     val values = js.Object.freeze(js.Array(region, `availability-zone`, `availability-zone-id`))
@@ -399,7 +399,7 @@ package elasticinference {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -433,7 +433,7 @@ package elasticinference {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]

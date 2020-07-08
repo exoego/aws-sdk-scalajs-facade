@@ -7,71 +7,71 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object fsx {
-  type AWSAccountId                        = String
-  type ActiveDirectoryFullyQualifiedName   = String
-  type AdministrativeActions               = js.Array[AdministrativeAction]
-  type ArchivePath                         = String
-  type AutomaticBackupRetentionDays        = Int
-  type BackupId                            = String
-  type BackupIds                           = js.Array[BackupId]
-  type Backups                             = js.Array[Backup]
-  type ClientRequestToken                  = String
-  type CreationTime                        = js.Date
-  type DNSName                             = String
-  type DailyTime                           = String
-  type DataRepositoryTaskFilterValue       = String
-  type DataRepositoryTaskFilterValues      = js.Array[DataRepositoryTaskFilterValue]
-  type DataRepositoryTaskFilters           = js.Array[DataRepositoryTaskFilter]
-  type DataRepositoryTaskPath              = String
-  type DataRepositoryTaskPaths             = js.Array[DataRepositoryTaskPath]
-  type DataRepositoryTasks                 = js.Array[DataRepositoryTask]
-  type DirectoryId                         = String
-  type DirectoryPassword                   = String
-  type DirectoryUserName                   = String
-  type DnsIps                              = js.Array[IpAddress]
-  type EndTime                             = js.Date
-  type ErrorMessage                        = String
-  type FailedCount                         = Double
-  type FileSystemAdministratorsGroupName   = String
-  type FileSystemId                        = String
-  type FileSystemIds                       = js.Array[FileSystemId]
-  type FileSystemMaintenanceOperations     = js.Array[FileSystemMaintenanceOperation]
-  type FileSystems                         = js.Array[FileSystem]
-  type FilterValue                         = String
-  type FilterValues                        = js.Array[FilterValue]
-  type Filters                             = js.Array[Filter]
-  type Flag                                = Boolean
-  type IpAddress                           = String
-  type KmsKeyId                            = String
-  type LastUpdatedTime                     = js.Date
-  type LustreFileSystemMountName           = String
-  type MaxResults                          = Int
-  type Megabytes                           = Int
-  type MegabytesPerSecond                  = Int
-  type NetworkInterfaceId                  = String
-  type NetworkInterfaceIds                 = js.Array[NetworkInterfaceId]
-  type NextToken                           = String
+  type AWSAccountId = String
+  type ActiveDirectoryFullyQualifiedName = String
+  type AdministrativeActions = js.Array[AdministrativeAction]
+  type ArchivePath = String
+  type AutomaticBackupRetentionDays = Int
+  type BackupId = String
+  type BackupIds = js.Array[BackupId]
+  type Backups = js.Array[Backup]
+  type ClientRequestToken = String
+  type CreationTime = js.Date
+  type DNSName = String
+  type DailyTime = String
+  type DataRepositoryTaskFilterValue = String
+  type DataRepositoryTaskFilterValues = js.Array[DataRepositoryTaskFilterValue]
+  type DataRepositoryTaskFilters = js.Array[DataRepositoryTaskFilter]
+  type DataRepositoryTaskPath = String
+  type DataRepositoryTaskPaths = js.Array[DataRepositoryTaskPath]
+  type DataRepositoryTasks = js.Array[DataRepositoryTask]
+  type DirectoryId = String
+  type DirectoryPassword = String
+  type DirectoryUserName = String
+  type DnsIps = js.Array[IpAddress]
+  type EndTime = js.Date
+  type ErrorMessage = String
+  type FailedCount = Double
+  type FileSystemAdministratorsGroupName = String
+  type FileSystemId = String
+  type FileSystemIds = js.Array[FileSystemId]
+  type FileSystemMaintenanceOperations = js.Array[FileSystemMaintenanceOperation]
+  type FileSystems = js.Array[FileSystem]
+  type FilterValue = String
+  type FilterValues = js.Array[FilterValue]
+  type Filters = js.Array[Filter]
+  type Flag = Boolean
+  type IpAddress = String
+  type KmsKeyId = String
+  type LastUpdatedTime = js.Date
+  type LustreFileSystemMountName = String
+  type MaxResults = Int
+  type Megabytes = Int
+  type MegabytesPerSecond = Int
+  type NetworkInterfaceId = String
+  type NetworkInterfaceIds = js.Array[NetworkInterfaceId]
+  type NextToken = String
   type OrganizationalUnitDistinguishedName = String
-  type PerUnitStorageThroughput            = Int
-  type ProgressPercent                     = Int
-  type RequestTime                         = js.Date
-  type ResourceARN                         = String
-  type SecurityGroupId                     = String
-  type SecurityGroupIds                    = js.Array[SecurityGroupId]
-  type StartTime                           = js.Date
-  type StorageCapacity                     = Int
-  type SubnetId                            = String
-  type SubnetIds                           = js.Array[SubnetId]
-  type SucceededCount                      = Double
-  type TagKey                              = String
-  type TagKeys                             = js.Array[TagKey]
-  type TagValue                            = String
-  type Tags                                = js.Array[Tag]
-  type TaskId                              = String
-  type TaskIds                             = js.Array[TaskId]
-  type TotalCount                          = Double
-  type VpcId                               = String
-  type WeeklyTime                          = String
+  type PerUnitStorageThroughput = Int
+  type ProgressPercent = Int
+  type RequestTime = js.Date
+  type ResourceARN = String
+  type SecurityGroupId = String
+  type SecurityGroupIds = js.Array[SecurityGroupId]
+  type StartTime = js.Date
+  type StorageCapacity = Int
+  type SubnetId = String
+  type SubnetIds = js.Array[SubnetId]
+  type SucceededCount = Double
+  type TagKey = String
+  type TagKeys = js.Array[TagKey]
+  type TagValue = String
+  type Tags = js.Array[Tag]
+  type TaskId = String
+  type TaskIds = js.Array[TaskId]
+  type TotalCount = Double
+  type VpcId = String
+  type WeeklyTime = String
 
   implicit final class FSxOps(private val service: FSx) extends AnyVal {
 
@@ -124,18 +124,18 @@ package fsx {
     def createFileSystem(params: CreateFileSystemRequest): Request[CreateFileSystemResponse] = js.native
     def createFileSystemFromBackup(
         params: CreateFileSystemFromBackupRequest
-    ): Request[CreateFileSystemFromBackupResponse]                                           = js.native
-    def deleteBackup(params: DeleteBackupRequest): Request[DeleteBackupResponse]             = js.native
+    ): Request[CreateFileSystemFromBackupResponse] = js.native
+    def deleteBackup(params: DeleteBackupRequest): Request[DeleteBackupResponse] = js.native
     def deleteFileSystem(params: DeleteFileSystemRequest): Request[DeleteFileSystemResponse] = js.native
-    def describeBackups(params: DescribeBackupsRequest): Request[DescribeBackupsResponse]    = js.native
+    def describeBackups(params: DescribeBackupsRequest): Request[DescribeBackupsResponse] = js.native
     def describeDataRepositoryTasks(
         params: DescribeDataRepositoryTasksRequest
-    ): Request[DescribeDataRepositoryTasksResponse]                                                   = js.native
+    ): Request[DescribeDataRepositoryTasksResponse] = js.native
     def describeFileSystems(params: DescribeFileSystemsRequest): Request[DescribeFileSystemsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
-    def updateFileSystem(params: UpdateFileSystemRequest): Request[UpdateFileSystemResponse]          = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateFileSystem(params: UpdateFileSystemRequest): Request[UpdateFileSystemResponse] = js.native
   }
 
   /**
@@ -221,7 +221,7 @@ package fsx {
   @js.native
   sealed trait AdministrativeActionType extends js.Any
   object AdministrativeActionType extends js.Object {
-    val FILE_SYSTEM_UPDATE   = "FILE_SYSTEM_UPDATE".asInstanceOf[AdministrativeActionType]
+    val FILE_SYSTEM_UPDATE = "FILE_SYSTEM_UPDATE".asInstanceOf[AdministrativeActionType]
     val STORAGE_OPTIMIZATION = "STORAGE_OPTIMIZATION".asInstanceOf[AdministrativeActionType]
 
     val values = js.Object.freeze(js.Array(FILE_SYSTEM_UPDATE, STORAGE_OPTIMIZATION))
@@ -261,11 +261,11 @@ package fsx {
         Tags: js.UndefOr[Tags] = js.undefined
     ): Backup = {
       val __obj = js.Dynamic.literal(
-        "BackupId"     -> BackupId.asInstanceOf[js.Any],
+        "BackupId" -> BackupId.asInstanceOf[js.Any],
         "CreationTime" -> CreationTime.asInstanceOf[js.Any],
-        "FileSystem"   -> FileSystem.asInstanceOf[js.Any],
-        "Lifecycle"    -> Lifecycle.asInstanceOf[js.Any],
-        "Type"         -> Type.asInstanceOf[js.Any]
+        "FileSystem" -> FileSystem.asInstanceOf[js.Any],
+        "Lifecycle" -> Lifecycle.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       DirectoryInformation.foreach(__v => __obj.updateDynamic("DirectoryInformation")(__v.asInstanceOf[js.Any]))
@@ -304,9 +304,9 @@ package fsx {
   sealed trait BackupLifecycle extends js.Any
   object BackupLifecycle extends js.Object {
     val AVAILABLE = "AVAILABLE".asInstanceOf[BackupLifecycle]
-    val CREATING  = "CREATING".asInstanceOf[BackupLifecycle]
-    val DELETED   = "DELETED".asInstanceOf[BackupLifecycle]
-    val FAILED    = "FAILED".asInstanceOf[BackupLifecycle]
+    val CREATING = "CREATING".asInstanceOf[BackupLifecycle]
+    val DELETED = "DELETED".asInstanceOf[BackupLifecycle]
+    val FAILED = "FAILED".asInstanceOf[BackupLifecycle]
 
     val values = js.Object.freeze(js.Array(AVAILABLE, CREATING, DELETED, FAILED))
   }
@@ -317,7 +317,7 @@ package fsx {
   @js.native
   sealed trait BackupType extends js.Any
   object BackupType extends js.Object {
-    val AUTOMATIC      = "AUTOMATIC".asInstanceOf[BackupType]
+    val AUTOMATIC = "AUTOMATIC".asInstanceOf[BackupType]
     val USER_INITIATED = "USER_INITIATED".asInstanceOf[BackupType]
 
     val values = js.Object.freeze(js.Array(AUTOMATIC, USER_INITIATED))
@@ -461,8 +461,8 @@ package fsx {
     ): CreateDataRepositoryTaskRequest = {
       val __obj = js.Dynamic.literal(
         "FileSystemId" -> FileSystemId.asInstanceOf[js.Any],
-        "Report"       -> Report.asInstanceOf[js.Any],
-        "Type"         -> Type.asInstanceOf[js.Any]
+        "Report" -> Report.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
@@ -516,7 +516,7 @@ package fsx {
         WindowsConfiguration: js.UndefOr[CreateFileSystemWindowsConfiguration] = js.undefined
     ): CreateFileSystemFromBackupRequest = {
       val __obj = js.Dynamic.literal(
-        "BackupId"  -> BackupId.asInstanceOf[js.Any],
+        "BackupId" -> BackupId.asInstanceOf[js.Any],
         "SubnetIds" -> SubnetIds.asInstanceOf[js.Any]
       )
 
@@ -630,9 +630,9 @@ package fsx {
         WindowsConfiguration: js.UndefOr[CreateFileSystemWindowsConfiguration] = js.undefined
     ): CreateFileSystemRequest = {
       val __obj = js.Dynamic.literal(
-        "FileSystemType"  -> FileSystemType.asInstanceOf[js.Any],
+        "FileSystemType" -> FileSystemType.asInstanceOf[js.Any],
         "StorageCapacity" -> StorageCapacity.asInstanceOf[js.Any],
-        "SubnetIds"       -> SubnetIds.asInstanceOf[js.Any]
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any]
       )
 
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
@@ -783,9 +783,9 @@ package fsx {
       val __obj = js.Dynamic.literal(
         "CreationTime" -> CreationTime.asInstanceOf[js.Any],
         "FileSystemId" -> FileSystemId.asInstanceOf[js.Any],
-        "Lifecycle"    -> Lifecycle.asInstanceOf[js.Any],
-        "TaskId"       -> TaskId.asInstanceOf[js.Any],
-        "Type"         -> Type.asInstanceOf[js.Any]
+        "Lifecycle" -> Lifecycle.asInstanceOf[js.Any],
+        "TaskId" -> TaskId.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
@@ -853,11 +853,11 @@ package fsx {
   @js.native
   sealed trait DataRepositoryTaskLifecycle extends js.Any
   object DataRepositoryTaskLifecycle extends js.Object {
-    val PENDING   = "PENDING".asInstanceOf[DataRepositoryTaskLifecycle]
+    val PENDING = "PENDING".asInstanceOf[DataRepositoryTaskLifecycle]
     val EXECUTING = "EXECUTING".asInstanceOf[DataRepositoryTaskLifecycle]
-    val FAILED    = "FAILED".asInstanceOf[DataRepositoryTaskLifecycle]
+    val FAILED = "FAILED".asInstanceOf[DataRepositoryTaskLifecycle]
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[DataRepositoryTaskLifecycle]
-    val CANCELED  = "CANCELED".asInstanceOf[DataRepositoryTaskLifecycle]
+    val CANCELED = "CANCELED".asInstanceOf[DataRepositoryTaskLifecycle]
     val CANCELING = "CANCELING".asInstanceOf[DataRepositoryTaskLifecycle]
 
     val values = js.Object.freeze(js.Array(PENDING, EXECUTING, FAILED, SUCCEEDED, CANCELED, CANCELING))
@@ -1327,12 +1327,12 @@ package fsx {
   @js.native
   sealed trait FileSystemLifecycle extends js.Any
   object FileSystemLifecycle extends js.Object {
-    val AVAILABLE     = "AVAILABLE".asInstanceOf[FileSystemLifecycle]
-    val CREATING      = "CREATING".asInstanceOf[FileSystemLifecycle]
-    val FAILED        = "FAILED".asInstanceOf[FileSystemLifecycle]
-    val DELETING      = "DELETING".asInstanceOf[FileSystemLifecycle]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[FileSystemLifecycle]
+    val CREATING = "CREATING".asInstanceOf[FileSystemLifecycle]
+    val FAILED = "FAILED".asInstanceOf[FileSystemLifecycle]
+    val DELETING = "DELETING".asInstanceOf[FileSystemLifecycle]
     val MISCONFIGURED = "MISCONFIGURED".asInstanceOf[FileSystemLifecycle]
-    val UPDATING      = "UPDATING".asInstanceOf[FileSystemLifecycle]
+    val UPDATING = "UPDATING".asInstanceOf[FileSystemLifecycle]
 
     val values = js.Object.freeze(js.Array(AVAILABLE, CREATING, FAILED, DELETING, MISCONFIGURED, UPDATING))
   }
@@ -1343,7 +1343,7 @@ package fsx {
   @js.native
   sealed trait FileSystemMaintenanceOperation extends js.Any
   object FileSystemMaintenanceOperation extends js.Object {
-    val PATCHING   = "PATCHING".asInstanceOf[FileSystemMaintenanceOperation]
+    val PATCHING = "PATCHING".asInstanceOf[FileSystemMaintenanceOperation]
     val BACKING_UP = "BACKING_UP".asInstanceOf[FileSystemMaintenanceOperation]
 
     val values = js.Object.freeze(js.Array(PATCHING, BACKING_UP))
@@ -1356,7 +1356,7 @@ package fsx {
   sealed trait FileSystemType extends js.Any
   object FileSystemType extends js.Object {
     val WINDOWS = "WINDOWS".asInstanceOf[FileSystemType]
-    val LUSTRE  = "LUSTRE".asInstanceOf[FileSystemType]
+    val LUSTRE = "LUSTRE".asInstanceOf[FileSystemType]
 
     val values = js.Object.freeze(js.Array(WINDOWS, LUSTRE))
   }
@@ -1389,8 +1389,8 @@ package fsx {
   @js.native
   sealed trait FilterName extends js.Any
   object FilterName extends js.Object {
-    val `file-system-id`   = "file-system-id".asInstanceOf[FilterName]
-    val `backup-type`      = "backup-type".asInstanceOf[FilterName]
+    val `file-system-id` = "file-system-id".asInstanceOf[FilterName]
+    val `backup-type` = "backup-type".asInstanceOf[FilterName]
     val `file-system-type` = "file-system-type".asInstanceOf[FilterName]
 
     val values = js.Object.freeze(js.Array(`file-system-id`, `backup-type`, `file-system-type`))
@@ -1448,8 +1448,8 @@ package fsx {
   @js.native
   sealed trait LustreDeploymentType extends js.Any
   object LustreDeploymentType extends js.Object {
-    val SCRATCH_1    = "SCRATCH_1".asInstanceOf[LustreDeploymentType]
-    val SCRATCH_2    = "SCRATCH_2".asInstanceOf[LustreDeploymentType]
+    val SCRATCH_1 = "SCRATCH_1".asInstanceOf[LustreDeploymentType]
+    val SCRATCH_2 = "SCRATCH_2".asInstanceOf[LustreDeploymentType]
     val PERSISTENT_1 = "PERSISTENT_1".asInstanceOf[LustreDeploymentType]
 
     val values = js.Object.freeze(js.Array(SCRATCH_1, SCRATCH_2, PERSISTENT_1))
@@ -1578,10 +1578,10 @@ package fsx {
         OrganizationalUnitDistinguishedName: js.UndefOr[OrganizationalUnitDistinguishedName] = js.undefined
     ): SelfManagedActiveDirectoryConfiguration = {
       val __obj = js.Dynamic.literal(
-        "DnsIps"     -> DnsIps.asInstanceOf[js.Any],
+        "DnsIps" -> DnsIps.asInstanceOf[js.Any],
         "DomainName" -> DomainName.asInstanceOf[js.Any],
-        "Password"   -> Password.asInstanceOf[js.Any],
-        "UserName"   -> UserName.asInstanceOf[js.Any]
+        "Password" -> Password.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       FileSystemAdministratorsGroup.foreach(__v =>
@@ -1622,10 +1622,10 @@ package fsx {
   @js.native
   sealed trait Status extends js.Any
   object Status extends js.Object {
-    val FAILED             = "FAILED".asInstanceOf[Status]
-    val IN_PROGRESS        = "IN_PROGRESS".asInstanceOf[Status]
-    val PENDING            = "PENDING".asInstanceOf[Status]
-    val COMPLETED          = "COMPLETED".asInstanceOf[Status]
+    val FAILED = "FAILED".asInstanceOf[Status]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[Status]
+    val PENDING = "PENDING".asInstanceOf[Status]
+    val COMPLETED = "COMPLETED".asInstanceOf[Status]
     val UPDATED_OPTIMIZING = "UPDATED_OPTIMIZING".asInstanceOf[Status]
 
     val values = js.Object.freeze(js.Array(FAILED, IN_PROGRESS, PENDING, COMPLETED, UPDATED_OPTIMIZING))
@@ -1682,7 +1682,7 @@ package fsx {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -1722,7 +1722,7 @@ package fsx {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -1871,7 +1871,7 @@ package fsx {
   @js.native
   sealed trait WindowsDeploymentType extends js.Any
   object WindowsDeploymentType extends js.Object {
-    val MULTI_AZ_1  = "MULTI_AZ_1".asInstanceOf[WindowsDeploymentType]
+    val MULTI_AZ_1 = "MULTI_AZ_1".asInstanceOf[WindowsDeploymentType]
     val SINGLE_AZ_1 = "SINGLE_AZ_1".asInstanceOf[WindowsDeploymentType]
     val SINGLE_AZ_2 = "SINGLE_AZ_2".asInstanceOf[WindowsDeploymentType]
 

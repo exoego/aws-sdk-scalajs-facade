@@ -7,132 +7,132 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object codecommit {
-  type AccountId                       = String
-  type AdditionalData                  = String
-  type ApprovalList                    = js.Array[Approval]
-  type ApprovalRuleContent             = String
-  type ApprovalRuleId                  = String
-  type ApprovalRuleName                = String
-  type ApprovalRuleTemplateContent     = String
+  type AccountId = String
+  type AdditionalData = String
+  type ApprovalList = js.Array[Approval]
+  type ApprovalRuleContent = String
+  type ApprovalRuleId = String
+  type ApprovalRuleName = String
+  type ApprovalRuleTemplateContent = String
   type ApprovalRuleTemplateDescription = String
-  type ApprovalRuleTemplateId          = String
-  type ApprovalRuleTemplateName        = String
-  type ApprovalRuleTemplateNameList    = js.Array[ApprovalRuleTemplateName]
-  type ApprovalRulesList               = js.Array[ApprovalRule]
-  type ApprovalRulesNotSatisfiedList   = js.Array[ApprovalRuleName]
-  type ApprovalRulesSatisfiedList      = js.Array[ApprovalRuleName]
-  type Approved                        = Boolean
-  type Arn                             = String
+  type ApprovalRuleTemplateId = String
+  type ApprovalRuleTemplateName = String
+  type ApprovalRuleTemplateNameList = js.Array[ApprovalRuleTemplateName]
+  type ApprovalRulesList = js.Array[ApprovalRule]
+  type ApprovalRulesNotSatisfiedList = js.Array[ApprovalRuleName]
+  type ApprovalRulesSatisfiedList = js.Array[ApprovalRuleName]
+  type Approved = Boolean
+  type Arn = String
   type BatchAssociateApprovalRuleTemplateWithRepositoriesErrorsList =
     js.Array[BatchAssociateApprovalRuleTemplateWithRepositoriesError]
   type BatchDescribeMergeConflictsErrors = js.Array[BatchDescribeMergeConflictsError]
   type BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorsList =
     js.Array[BatchDisassociateApprovalRuleTemplateFromRepositoriesError]
-  type BatchGetCommitsErrorsList                = js.Array[BatchGetCommitsError]
-  type BranchName                               = String
-  type BranchNameList                           = js.Array[BranchName]
-  type CallerReactions                          = js.Array[ReactionValue]
-  type CapitalBoolean                           = Boolean
-  type ClientRequestToken                       = String
-  type CloneUrlHttp                             = String
-  type CloneUrlSsh                              = String
-  type CommentId                                = String
-  type Comments                                 = js.Array[Comment]
-  type CommentsForComparedCommitData            = js.Array[CommentsForComparedCommit]
-  type CommentsForPullRequestData               = js.Array[CommentsForPullRequest]
-  type CommitId                                 = String
-  type CommitIdsInputList                       = js.Array[ObjectId]
-  type CommitName                               = String
-  type CommitObjectsList                        = js.Array[Commit]
-  type ConflictMetadataList                     = js.Array[ConflictMetadata]
-  type Conflicts                                = js.Array[Conflict]
-  type Content                                  = String
-  type Count                                    = Int
-  type CreationDate                             = js.Date
-  type Date                                     = String
-  type DeleteFileEntries                        = js.Array[DeleteFileEntry]
-  type Description                              = String
-  type DifferenceList                           = js.Array[Difference]
-  type Email                                    = String
-  type ErrorCode                                = String
-  type ErrorMessage                             = String
-  type EventDate                                = js.Date
-  type ExceptionName                            = String
-  type FileContent                              = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type FileList                                 = js.Array[File]
-  type FilePaths                                = js.Array[Path]
-  type FileSize                                 = Double
-  type FilesMetadata                            = js.Array[FileMetadata]
-  type FolderList                               = js.Array[Folder]
-  type HunkContent                              = String
-  type IsCommentDeleted                         = Boolean
-  type IsContentConflict                        = Boolean
-  type IsFileModeConflict                       = Boolean
-  type IsHunkConflict                           = Boolean
-  type IsMergeable                              = Boolean
-  type IsMerged                                 = Boolean
-  type IsMove                                   = Boolean
-  type IsObjectTypeConflict                     = Boolean
-  type KeepEmptyFolders                         = Boolean
-  type LastModifiedDate                         = js.Date
-  type Limit                                    = Int
-  type LineNumber                               = Int
-  type MaxResults                               = Int
-  type MergeHunks                               = js.Array[MergeHunk]
-  type MergeOptions                             = js.Array[MergeOptionTypeEnum]
-  type Message                                  = String
-  type Mode                                     = String
-  type Name                                     = String
-  type NextToken                                = String
-  type NumberOfConflicts                        = Int
-  type ObjectId                                 = String
-  type ObjectSize                               = Double
-  type Overridden                               = Boolean
-  type ParentList                               = js.Array[ObjectId]
-  type Path                                     = String
-  type Position                                 = Double
-  type PullRequestEventList                     = js.Array[PullRequestEvent]
-  type PullRequestId                            = String
-  type PullRequestIdList                        = js.Array[PullRequestId]
-  type PullRequestTargetList                    = js.Array[PullRequestTarget]
-  type PutFileEntries                           = js.Array[PutFileEntry]
-  type ReactionCountsMap                        = js.Dictionary[Count]
-  type ReactionEmoji                            = String
-  type ReactionShortCode                        = String
-  type ReactionUnicode                          = String
-  type ReactionUsersList                        = js.Array[Arn]
-  type ReactionValue                            = String
-  type ReactionsForCommentList                  = js.Array[ReactionForComment]
-  type ReferenceName                            = String
-  type ReplaceContentEntries                    = js.Array[ReplaceContentEntry]
-  type RepositoryDescription                    = String
-  type RepositoryId                             = String
-  type RepositoryMetadataList                   = js.Array[RepositoryMetadata]
-  type RepositoryName                           = String
-  type RepositoryNameIdPairList                 = js.Array[RepositoryNameIdPair]
-  type RepositoryNameList                       = js.Array[RepositoryName]
-  type RepositoryNotFoundList                   = js.Array[RepositoryName]
-  type RepositoryTriggerCustomData              = String
-  type RepositoryTriggerEventList               = js.Array[RepositoryTriggerEventEnum]
-  type RepositoryTriggerExecutionFailureList    = js.Array[RepositoryTriggerExecutionFailure]
+  type BatchGetCommitsErrorsList = js.Array[BatchGetCommitsError]
+  type BranchName = String
+  type BranchNameList = js.Array[BranchName]
+  type CallerReactions = js.Array[ReactionValue]
+  type CapitalBoolean = Boolean
+  type ClientRequestToken = String
+  type CloneUrlHttp = String
+  type CloneUrlSsh = String
+  type CommentId = String
+  type Comments = js.Array[Comment]
+  type CommentsForComparedCommitData = js.Array[CommentsForComparedCommit]
+  type CommentsForPullRequestData = js.Array[CommentsForPullRequest]
+  type CommitId = String
+  type CommitIdsInputList = js.Array[ObjectId]
+  type CommitName = String
+  type CommitObjectsList = js.Array[Commit]
+  type ConflictMetadataList = js.Array[ConflictMetadata]
+  type Conflicts = js.Array[Conflict]
+  type Content = String
+  type Count = Int
+  type CreationDate = js.Date
+  type Date = String
+  type DeleteFileEntries = js.Array[DeleteFileEntry]
+  type Description = String
+  type DifferenceList = js.Array[Difference]
+  type Email = String
+  type ErrorCode = String
+  type ErrorMessage = String
+  type EventDate = js.Date
+  type ExceptionName = String
+  type FileContent = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type FileList = js.Array[File]
+  type FilePaths = js.Array[Path]
+  type FileSize = Double
+  type FilesMetadata = js.Array[FileMetadata]
+  type FolderList = js.Array[Folder]
+  type HunkContent = String
+  type IsCommentDeleted = Boolean
+  type IsContentConflict = Boolean
+  type IsFileModeConflict = Boolean
+  type IsHunkConflict = Boolean
+  type IsMergeable = Boolean
+  type IsMerged = Boolean
+  type IsMove = Boolean
+  type IsObjectTypeConflict = Boolean
+  type KeepEmptyFolders = Boolean
+  type LastModifiedDate = js.Date
+  type Limit = Int
+  type LineNumber = Int
+  type MaxResults = Int
+  type MergeHunks = js.Array[MergeHunk]
+  type MergeOptions = js.Array[MergeOptionTypeEnum]
+  type Message = String
+  type Mode = String
+  type Name = String
+  type NextToken = String
+  type NumberOfConflicts = Int
+  type ObjectId = String
+  type ObjectSize = Double
+  type Overridden = Boolean
+  type ParentList = js.Array[ObjectId]
+  type Path = String
+  type Position = Double
+  type PullRequestEventList = js.Array[PullRequestEvent]
+  type PullRequestId = String
+  type PullRequestIdList = js.Array[PullRequestId]
+  type PullRequestTargetList = js.Array[PullRequestTarget]
+  type PutFileEntries = js.Array[PutFileEntry]
+  type ReactionCountsMap = js.Dictionary[Count]
+  type ReactionEmoji = String
+  type ReactionShortCode = String
+  type ReactionUnicode = String
+  type ReactionUsersList = js.Array[Arn]
+  type ReactionValue = String
+  type ReactionsForCommentList = js.Array[ReactionForComment]
+  type ReferenceName = String
+  type ReplaceContentEntries = js.Array[ReplaceContentEntry]
+  type RepositoryDescription = String
+  type RepositoryId = String
+  type RepositoryMetadataList = js.Array[RepositoryMetadata]
+  type RepositoryName = String
+  type RepositoryNameIdPairList = js.Array[RepositoryNameIdPair]
+  type RepositoryNameList = js.Array[RepositoryName]
+  type RepositoryNotFoundList = js.Array[RepositoryName]
+  type RepositoryTriggerCustomData = String
+  type RepositoryTriggerEventList = js.Array[RepositoryTriggerEventEnum]
+  type RepositoryTriggerExecutionFailureList = js.Array[RepositoryTriggerExecutionFailure]
   type RepositoryTriggerExecutionFailureMessage = String
-  type RepositoryTriggerName                    = String
-  type RepositoryTriggerNameList                = js.Array[RepositoryTriggerName]
-  type RepositoryTriggersConfigurationId        = String
-  type RepositoryTriggersList                   = js.Array[RepositoryTrigger]
-  type ResourceArn                              = String
-  type RevisionId                               = String
-  type RuleContentSha256                        = String
-  type SetFileModeEntries                       = js.Array[SetFileModeEntry]
-  type SubModuleList                            = js.Array[SubModule]
-  type SymbolicLinkList                         = js.Array[SymbolicLink]
-  type TagKey                                   = String
-  type TagKeysList                              = js.Array[TagKey]
-  type TagValue                                 = String
-  type TagsMap                                  = js.Dictionary[TagValue]
-  type TargetList                               = js.Array[Target]
-  type Title                                    = String
-  type blob                                     = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type RepositoryTriggerName = String
+  type RepositoryTriggerNameList = js.Array[RepositoryTriggerName]
+  type RepositoryTriggersConfigurationId = String
+  type RepositoryTriggersList = js.Array[RepositoryTrigger]
+  type ResourceArn = String
+  type RevisionId = String
+  type RuleContentSha256 = String
+  type SetFileModeEntries = js.Array[SetFileModeEntry]
+  type SubModuleList = js.Array[SubModule]
+  type SymbolicLinkList = js.Array[SymbolicLink]
+  type TagKey = String
+  type TagKeysList = js.Array[TagKey]
+  type TagValue = String
+  type TagsMap = js.Dictionary[TagValue]
+  type TargetList = js.Array[Target]
+  type Title = String
+  type blob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
 
   implicit final class CodeCommitOps(private val service: CodeCommit) extends AnyVal {
 
@@ -200,7 +200,7 @@ package object codecommit {
       service.evaluatePullRequestApprovalRules(params).promise().toFuture
     @inline def getApprovalRuleTemplateFuture(
         params: GetApprovalRuleTemplateInput
-    ): Future[GetApprovalRuleTemplateOutput]                               = service.getApprovalRuleTemplate(params).promise().toFuture
+    ): Future[GetApprovalRuleTemplateOutput] = service.getApprovalRuleTemplate(params).promise().toFuture
     @inline def getBlobFuture(params: GetBlobInput): Future[GetBlobOutput] = service.getBlob(params).promise().toFuture
     @inline def getBranchFuture(params: GetBranchInput): Future[GetBranchOutput] =
       service.getBranch(params).promise().toFuture
@@ -352,30 +352,30 @@ package codecommit {
     ): Request[BatchDescribeMergeConflictsOutput] = js.native
     def batchDisassociateApprovalRuleTemplateFromRepositories(
         params: BatchDisassociateApprovalRuleTemplateFromRepositoriesInput
-    ): Request[BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput]                          = js.native
-    def batchGetCommits(params: BatchGetCommitsInput): Request[BatchGetCommitsOutput]                = js.native
+    ): Request[BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput] = js.native
+    def batchGetCommits(params: BatchGetCommitsInput): Request[BatchGetCommitsOutput] = js.native
     def batchGetRepositories(params: BatchGetRepositoriesInput): Request[BatchGetRepositoriesOutput] = js.native
     def createApprovalRuleTemplate(params: CreateApprovalRuleTemplateInput): Request[CreateApprovalRuleTemplateOutput] =
       js.native
-    def createBranch(params: CreateBranchInput): Request[js.Object]                         = js.native
-    def createCommit(params: CreateCommitInput): Request[CreateCommitOutput]                = js.native
+    def createBranch(params: CreateBranchInput): Request[js.Object] = js.native
+    def createCommit(params: CreateCommitInput): Request[CreateCommitOutput] = js.native
     def createPullRequest(params: CreatePullRequestInput): Request[CreatePullRequestOutput] = js.native
     def createPullRequestApprovalRule(
         params: CreatePullRequestApprovalRuleInput
-    ): Request[CreatePullRequestApprovalRuleOutput]                                      = js.native
+    ): Request[CreatePullRequestApprovalRuleOutput] = js.native
     def createRepository(params: CreateRepositoryInput): Request[CreateRepositoryOutput] = js.native
     def createUnreferencedMergeCommit(
         params: CreateUnreferencedMergeCommitInput
     ): Request[CreateUnreferencedMergeCommitOutput] = js.native
     def deleteApprovalRuleTemplate(params: DeleteApprovalRuleTemplateInput): Request[DeleteApprovalRuleTemplateOutput] =
       js.native
-    def deleteBranch(params: DeleteBranchInput): Request[DeleteBranchOutput]                         = js.native
+    def deleteBranch(params: DeleteBranchInput): Request[DeleteBranchOutput] = js.native
     def deleteCommentContent(params: DeleteCommentContentInput): Request[DeleteCommentContentOutput] = js.native
-    def deleteFile(params: DeleteFileInput): Request[DeleteFileOutput]                               = js.native
+    def deleteFile(params: DeleteFileInput): Request[DeleteFileOutput] = js.native
     def deletePullRequestApprovalRule(
         params: DeletePullRequestApprovalRuleInput
-    ): Request[DeletePullRequestApprovalRuleOutput]                                                        = js.native
-    def deleteRepository(params: DeleteRepositoryInput): Request[DeleteRepositoryOutput]                   = js.native
+    ): Request[DeletePullRequestApprovalRuleOutput] = js.native
+    def deleteRepository(params: DeleteRepositoryInput): Request[DeleteRepositoryOutput] = js.native
     def describeMergeConflicts(params: DescribeMergeConflictsInput): Request[DescribeMergeConflictsOutput] = js.native
     def describePullRequestEvents(params: DescribePullRequestEventsInput): Request[DescribePullRequestEventsOutput] =
       js.native
@@ -387,42 +387,42 @@ package codecommit {
     ): Request[EvaluatePullRequestApprovalRulesOutput] = js.native
     def getApprovalRuleTemplate(params: GetApprovalRuleTemplateInput): Request[GetApprovalRuleTemplateOutput] =
       js.native
-    def getBlob(params: GetBlobInput): Request[GetBlobOutput]                                     = js.native
-    def getBranch(params: GetBranchInput): Request[GetBranchOutput]                               = js.native
-    def getComment(params: GetCommentInput): Request[GetCommentOutput]                            = js.native
+    def getBlob(params: GetBlobInput): Request[GetBlobOutput] = js.native
+    def getBranch(params: GetBranchInput): Request[GetBranchOutput] = js.native
+    def getComment(params: GetCommentInput): Request[GetCommentOutput] = js.native
     def getCommentReactions(params: GetCommentReactionsInput): Request[GetCommentReactionsOutput] = js.native
     def getCommentsForComparedCommit(
         params: GetCommentsForComparedCommitInput
     ): Request[GetCommentsForComparedCommitOutput] = js.native
     def getCommentsForPullRequest(params: GetCommentsForPullRequestInput): Request[GetCommentsForPullRequestOutput] =
       js.native
-    def getCommit(params: GetCommitInput): Request[GetCommitOutput]                         = js.native
-    def getDifferences(params: GetDifferencesInput): Request[GetDifferencesOutput]          = js.native
-    def getFile(params: GetFileInput): Request[GetFileOutput]                               = js.native
-    def getFolder(params: GetFolderInput): Request[GetFolderOutput]                         = js.native
-    def getMergeCommit(params: GetMergeCommitInput): Request[GetMergeCommitOutput]          = js.native
+    def getCommit(params: GetCommitInput): Request[GetCommitOutput] = js.native
+    def getDifferences(params: GetDifferencesInput): Request[GetDifferencesOutput] = js.native
+    def getFile(params: GetFileInput): Request[GetFileOutput] = js.native
+    def getFolder(params: GetFolderInput): Request[GetFolderOutput] = js.native
+    def getMergeCommit(params: GetMergeCommitInput): Request[GetMergeCommitOutput] = js.native
     def getMergeConflicts(params: GetMergeConflictsInput): Request[GetMergeConflictsOutput] = js.native
-    def getMergeOptions(params: GetMergeOptionsInput): Request[GetMergeOptionsOutput]       = js.native
-    def getPullRequest(params: GetPullRequestInput): Request[GetPullRequestOutput]          = js.native
+    def getMergeOptions(params: GetMergeOptionsInput): Request[GetMergeOptionsOutput] = js.native
+    def getPullRequest(params: GetPullRequestInput): Request[GetPullRequestOutput] = js.native
     def getPullRequestApprovalStates(
         params: GetPullRequestApprovalStatesInput
     ): Request[GetPullRequestApprovalStatesOutput] = js.native
     def getPullRequestOverrideState(
         params: GetPullRequestOverrideStateInput
-    ): Request[GetPullRequestOverrideStateOutput]                                                       = js.native
-    def getRepository(params: GetRepositoryInput): Request[GetRepositoryOutput]                         = js.native
+    ): Request[GetPullRequestOverrideStateOutput] = js.native
+    def getRepository(params: GetRepositoryInput): Request[GetRepositoryOutput] = js.native
     def getRepositoryTriggers(params: GetRepositoryTriggersInput): Request[GetRepositoryTriggersOutput] = js.native
     def listApprovalRuleTemplates(params: ListApprovalRuleTemplatesInput): Request[ListApprovalRuleTemplatesOutput] =
       js.native
     def listAssociatedApprovalRuleTemplatesForRepository(
         params: ListAssociatedApprovalRuleTemplatesForRepositoryInput
-    ): Request[ListAssociatedApprovalRuleTemplatesForRepositoryOutput]                   = js.native
-    def listBranches(params: ListBranchesInput): Request[ListBranchesOutput]             = js.native
+    ): Request[ListAssociatedApprovalRuleTemplatesForRepositoryOutput] = js.native
+    def listBranches(params: ListBranchesInput): Request[ListBranchesOutput] = js.native
     def listPullRequests(params: ListPullRequestsInput): Request[ListPullRequestsOutput] = js.native
     def listRepositories(params: ListRepositoriesInput): Request[ListRepositoriesOutput] = js.native
     def listRepositoriesForApprovalRuleTemplate(
         params: ListRepositoriesForApprovalRuleTemplateInput
-    ): Request[ListRepositoriesForApprovalRuleTemplateOutput]                                     = js.native
+    ): Request[ListRepositoriesForApprovalRuleTemplateOutput] = js.native
     def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput] = js.native
     def mergeBranchesByFastForward(params: MergeBranchesByFastForwardInput): Request[MergeBranchesByFastForwardOutput] =
       js.native
@@ -442,13 +442,13 @@ package codecommit {
     ): Request[PostCommentForComparedCommitOutput] = js.native
     def postCommentForPullRequest(params: PostCommentForPullRequestInput): Request[PostCommentForPullRequestOutput] =
       js.native
-    def postCommentReply(params: PostCommentReplyInput): Request[PostCommentReplyOutput]                   = js.native
-    def putCommentReaction(params: PutCommentReactionInput): Request[js.Object]                            = js.native
-    def putFile(params: PutFileInput): Request[PutFileOutput]                                              = js.native
-    def putRepositoryTriggers(params: PutRepositoryTriggersInput): Request[PutRepositoryTriggersOutput]    = js.native
-    def tagResource(params: TagResourceInput): Request[js.Object]                                          = js.native
+    def postCommentReply(params: PostCommentReplyInput): Request[PostCommentReplyOutput] = js.native
+    def putCommentReaction(params: PutCommentReactionInput): Request[js.Object] = js.native
+    def putFile(params: PutFileInput): Request[PutFileOutput] = js.native
+    def putRepositoryTriggers(params: PutRepositoryTriggersInput): Request[PutRepositoryTriggersOutput] = js.native
+    def tagResource(params: TagResourceInput): Request[js.Object] = js.native
     def testRepositoryTriggers(params: TestRepositoryTriggersInput): Request[TestRepositoryTriggersOutput] = js.native
-    def untagResource(params: UntagResourceInput): Request[js.Object]                                      = js.native
+    def untagResource(params: UntagResourceInput): Request[js.Object] = js.native
     def updateApprovalRuleTemplateContent(
         params: UpdateApprovalRuleTemplateContentInput
     ): Request[UpdateApprovalRuleTemplateContentOutput] = js.native
@@ -457,12 +457,12 @@ package codecommit {
     ): Request[UpdateApprovalRuleTemplateDescriptionOutput] = js.native
     def updateApprovalRuleTemplateName(
         params: UpdateApprovalRuleTemplateNameInput
-    ): Request[UpdateApprovalRuleTemplateNameOutput]                              = js.native
-    def updateComment(params: UpdateCommentInput): Request[UpdateCommentOutput]   = js.native
+    ): Request[UpdateApprovalRuleTemplateNameOutput] = js.native
+    def updateComment(params: UpdateCommentInput): Request[UpdateCommentOutput] = js.native
     def updateDefaultBranch(params: UpdateDefaultBranchInput): Request[js.Object] = js.native
     def updatePullRequestApprovalRuleContent(
         params: UpdatePullRequestApprovalRuleContentInput
-    ): Request[UpdatePullRequestApprovalRuleContentOutput]                                              = js.native
+    ): Request[UpdatePullRequestApprovalRuleContentOutput] = js.native
     def updatePullRequestApprovalState(params: UpdatePullRequestApprovalStateInput): Request[js.Object] = js.native
     def updatePullRequestDescription(
         params: UpdatePullRequestDescriptionInput
@@ -470,8 +470,8 @@ package codecommit {
     def updatePullRequestStatus(params: UpdatePullRequestStatusInput): Request[UpdatePullRequestStatusOutput] =
       js.native
     def updatePullRequestTitle(params: UpdatePullRequestTitleInput): Request[UpdatePullRequestTitleOutput] = js.native
-    def updateRepositoryDescription(params: UpdateRepositoryDescriptionInput): Request[js.Object]          = js.native
-    def updateRepositoryName(params: UpdateRepositoryNameInput): Request[js.Object]                        = js.native
+    def updateRepositoryDescription(params: UpdateRepositoryDescriptionInput): Request[js.Object] = js.native
+    def updateRepositoryName(params: UpdateRepositoryNameInput): Request[js.Object] = js.native
   }
 
   /**
@@ -633,7 +633,7 @@ package codecommit {
   sealed trait ApprovalState extends js.Any
   object ApprovalState extends js.Object {
     val APPROVE = "APPROVE".asInstanceOf[ApprovalState]
-    val REVOKE  = "REVOKE".asInstanceOf[ApprovalState]
+    val REVOKE = "REVOKE".asInstanceOf[ApprovalState]
 
     val values = js.Object.freeze(js.Array(APPROVE, REVOKE))
   }
@@ -674,7 +674,7 @@ package codecommit {
     ): AssociateApprovalRuleTemplateWithRepositoryInput = {
       val __obj = js.Dynamic.literal(
         "approvalRuleTemplateName" -> approvalRuleTemplateName.asInstanceOf[js.Any],
-        "repositoryName"           -> repositoryName.asInstanceOf[js.Any]
+        "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AssociateApprovalRuleTemplateWithRepositoryInput]
@@ -720,7 +720,7 @@ package codecommit {
     ): BatchAssociateApprovalRuleTemplateWithRepositoriesInput = {
       val __obj = js.Dynamic.literal(
         "approvalRuleTemplateName" -> approvalRuleTemplateName.asInstanceOf[js.Any],
-        "repositoryNames"          -> repositoryNames.asInstanceOf[js.Any]
+        "repositoryNames" -> repositoryNames.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[BatchAssociateApprovalRuleTemplateWithRepositoriesInput]
@@ -741,7 +741,7 @@ package codecommit {
     ): BatchAssociateApprovalRuleTemplateWithRepositoriesOutput = {
       val __obj = js.Dynamic.literal(
         "associatedRepositoryNames" -> associatedRepositoryNames.asInstanceOf[js.Any],
-        "errors"                    -> errors.asInstanceOf[js.Any]
+        "errors" -> errors.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[BatchAssociateApprovalRuleTemplateWithRepositoriesOutput]
@@ -767,8 +767,8 @@ package codecommit {
     ): BatchDescribeMergeConflictsError = {
       val __obj = js.Dynamic.literal(
         "exceptionName" -> exceptionName.asInstanceOf[js.Any],
-        "filePath"      -> filePath.asInstanceOf[js.Any],
-        "message"       -> message.asInstanceOf[js.Any]
+        "filePath" -> filePath.asInstanceOf[js.Any],
+        "message" -> message.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[BatchDescribeMergeConflictsError]
@@ -805,9 +805,9 @@ package codecommit {
     ): BatchDescribeMergeConflictsInput = {
       val __obj = js.Dynamic.literal(
         "destinationCommitSpecifier" -> destinationCommitSpecifier.asInstanceOf[js.Any],
-        "mergeOption"                -> mergeOption.asInstanceOf[js.Any],
-        "repositoryName"             -> repositoryName.asInstanceOf[js.Any],
-        "sourceCommitSpecifier"      -> sourceCommitSpecifier.asInstanceOf[js.Any]
+        "mergeOption" -> mergeOption.asInstanceOf[js.Any],
+        "repositoryName" -> repositoryName.asInstanceOf[js.Any],
+        "sourceCommitSpecifier" -> sourceCommitSpecifier.asInstanceOf[js.Any]
       )
 
       conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
@@ -843,9 +843,9 @@ package codecommit {
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): BatchDescribeMergeConflictsOutput = {
       val __obj = js.Dynamic.literal(
-        "conflicts"           -> conflicts.asInstanceOf[js.Any],
+        "conflicts" -> conflicts.asInstanceOf[js.Any],
         "destinationCommitId" -> destinationCommitId.asInstanceOf[js.Any],
-        "sourceCommitId"      -> sourceCommitId.asInstanceOf[js.Any]
+        "sourceCommitId" -> sourceCommitId.asInstanceOf[js.Any]
       )
 
       baseCommitId.foreach(__v => __obj.updateDynamic("baseCommitId")(__v.asInstanceOf[js.Any]))
@@ -894,7 +894,7 @@ package codecommit {
     ): BatchDisassociateApprovalRuleTemplateFromRepositoriesInput = {
       val __obj = js.Dynamic.literal(
         "approvalRuleTemplateName" -> approvalRuleTemplateName.asInstanceOf[js.Any],
-        "repositoryNames"          -> repositoryNames.asInstanceOf[js.Any]
+        "repositoryNames" -> repositoryNames.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[BatchDisassociateApprovalRuleTemplateFromRepositoriesInput]
@@ -915,7 +915,7 @@ package codecommit {
     ): BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput = {
       val __obj = js.Dynamic.literal(
         "disassociatedRepositoryNames" -> disassociatedRepositoryNames.asInstanceOf[js.Any],
-        "errors"                       -> errors.asInstanceOf[js.Any]
+        "errors" -> errors.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput]
@@ -960,7 +960,7 @@ package codecommit {
         repositoryName: RepositoryName
     ): BatchGetCommitsInput = {
       val __obj = js.Dynamic.literal(
-        "commitIds"      -> commitIds.asInstanceOf[js.Any],
+        "commitIds" -> commitIds.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
@@ -1352,10 +1352,10 @@ package codecommit {
   @js.native
   sealed trait ConflictResolutionStrategyTypeEnum extends js.Any
   object ConflictResolutionStrategyTypeEnum extends js.Object {
-    val NONE               = "NONE".asInstanceOf[ConflictResolutionStrategyTypeEnum]
-    val ACCEPT_SOURCE      = "ACCEPT_SOURCE".asInstanceOf[ConflictResolutionStrategyTypeEnum]
+    val NONE = "NONE".asInstanceOf[ConflictResolutionStrategyTypeEnum]
+    val ACCEPT_SOURCE = "ACCEPT_SOURCE".asInstanceOf[ConflictResolutionStrategyTypeEnum]
     val ACCEPT_DESTINATION = "ACCEPT_DESTINATION".asInstanceOf[ConflictResolutionStrategyTypeEnum]
-    val AUTOMERGE          = "AUTOMERGE".asInstanceOf[ConflictResolutionStrategyTypeEnum]
+    val AUTOMERGE = "AUTOMERGE".asInstanceOf[ConflictResolutionStrategyTypeEnum]
 
     val values = js.Object.freeze(js.Array(NONE, ACCEPT_SOURCE, ACCEPT_DESTINATION, AUTOMERGE))
   }
@@ -1376,7 +1376,7 @@ package codecommit {
     ): CreateApprovalRuleTemplateInput = {
       val __obj = js.Dynamic.literal(
         "approvalRuleTemplateContent" -> approvalRuleTemplateContent.asInstanceOf[js.Any],
-        "approvalRuleTemplateName"    -> approvalRuleTemplateName.asInstanceOf[js.Any]
+        "approvalRuleTemplateName" -> approvalRuleTemplateName.asInstanceOf[js.Any]
       )
 
       approvalRuleTemplateDescription.foreach(__v =>
@@ -1422,8 +1422,8 @@ package codecommit {
         repositoryName: RepositoryName
     ): CreateBranchInput = {
       val __obj = js.Dynamic.literal(
-        "branchName"     -> branchName.asInstanceOf[js.Any],
-        "commitId"       -> commitId.asInstanceOf[js.Any],
+        "branchName" -> branchName.asInstanceOf[js.Any],
+        "commitId" -> commitId.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
@@ -1460,7 +1460,7 @@ package codecommit {
         setFileModes: js.UndefOr[SetFileModeEntries] = js.undefined
     ): CreateCommitInput = {
       val __obj = js.Dynamic.literal(
-        "branchName"     -> branchName.asInstanceOf[js.Any],
+        "branchName" -> branchName.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
@@ -1520,8 +1520,8 @@ package codecommit {
     ): CreatePullRequestApprovalRuleInput = {
       val __obj = js.Dynamic.literal(
         "approvalRuleContent" -> approvalRuleContent.asInstanceOf[js.Any],
-        "approvalRuleName"    -> approvalRuleName.asInstanceOf[js.Any],
-        "pullRequestId"       -> pullRequestId.asInstanceOf[js.Any]
+        "approvalRuleName" -> approvalRuleName.asInstanceOf[js.Any],
+        "pullRequestId" -> pullRequestId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreatePullRequestApprovalRuleInput]
@@ -1564,7 +1564,7 @@ package codecommit {
     ): CreatePullRequestInput = {
       val __obj = js.Dynamic.literal(
         "targets" -> targets.asInstanceOf[js.Any],
-        "title"   -> title.asInstanceOf[js.Any]
+        "title" -> title.asInstanceOf[js.Any]
       )
 
       clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
@@ -1669,9 +1669,9 @@ package codecommit {
     ): CreateUnreferencedMergeCommitInput = {
       val __obj = js.Dynamic.literal(
         "destinationCommitSpecifier" -> destinationCommitSpecifier.asInstanceOf[js.Any],
-        "mergeOption"                -> mergeOption.asInstanceOf[js.Any],
-        "repositoryName"             -> repositoryName.asInstanceOf[js.Any],
-        "sourceCommitSpecifier"      -> sourceCommitSpecifier.asInstanceOf[js.Any]
+        "mergeOption" -> mergeOption.asInstanceOf[js.Any],
+        "repositoryName" -> repositoryName.asInstanceOf[js.Any],
+        "sourceCommitSpecifier" -> sourceCommitSpecifier.asInstanceOf[js.Any]
       )
 
       authorName.foreach(__v => __obj.updateDynamic("authorName")(__v.asInstanceOf[js.Any]))
@@ -1758,7 +1758,7 @@ package codecommit {
         repositoryName: RepositoryName
     ): DeleteBranchInput = {
       val __obj = js.Dynamic.literal(
-        "branchName"     -> branchName.asInstanceOf[js.Any],
+        "branchName" -> branchName.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
@@ -1865,8 +1865,8 @@ package codecommit {
         name: js.UndefOr[Name] = js.undefined
     ): DeleteFileInput = {
       val __obj = js.Dynamic.literal(
-        "branchName"     -> branchName.asInstanceOf[js.Any],
-        "filePath"       -> filePath.asInstanceOf[js.Any],
+        "branchName" -> branchName.asInstanceOf[js.Any],
+        "filePath" -> filePath.asInstanceOf[js.Any],
         "parentCommitId" -> parentCommitId.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
@@ -1896,10 +1896,10 @@ package codecommit {
         treeId: ObjectId
     ): DeleteFileOutput = {
       val __obj = js.Dynamic.literal(
-        "blobId"   -> blobId.asInstanceOf[js.Any],
+        "blobId" -> blobId.asInstanceOf[js.Any],
         "commitId" -> commitId.asInstanceOf[js.Any],
         "filePath" -> filePath.asInstanceOf[js.Any],
-        "treeId"   -> treeId.asInstanceOf[js.Any]
+        "treeId" -> treeId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteFileOutput]
@@ -1920,7 +1920,7 @@ package codecommit {
     ): DeletePullRequestApprovalRuleInput = {
       val __obj = js.Dynamic.literal(
         "approvalRuleName" -> approvalRuleName.asInstanceOf[js.Any],
-        "pullRequestId"    -> pullRequestId.asInstanceOf[js.Any]
+        "pullRequestId" -> pullRequestId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeletePullRequestApprovalRuleInput]
@@ -2013,10 +2013,10 @@ package codecommit {
     ): DescribeMergeConflictsInput = {
       val __obj = js.Dynamic.literal(
         "destinationCommitSpecifier" -> destinationCommitSpecifier.asInstanceOf[js.Any],
-        "filePath"                   -> filePath.asInstanceOf[js.Any],
-        "mergeOption"                -> mergeOption.asInstanceOf[js.Any],
-        "repositoryName"             -> repositoryName.asInstanceOf[js.Any],
-        "sourceCommitSpecifier"      -> sourceCommitSpecifier.asInstanceOf[js.Any]
+        "filePath" -> filePath.asInstanceOf[js.Any],
+        "mergeOption" -> mergeOption.asInstanceOf[js.Any],
+        "repositoryName" -> repositoryName.asInstanceOf[js.Any],
+        "sourceCommitSpecifier" -> sourceCommitSpecifier.asInstanceOf[js.Any]
       )
 
       conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
@@ -2050,10 +2050,10 @@ package codecommit {
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeMergeConflictsOutput = {
       val __obj = js.Dynamic.literal(
-        "conflictMetadata"    -> conflictMetadata.asInstanceOf[js.Any],
+        "conflictMetadata" -> conflictMetadata.asInstanceOf[js.Any],
         "destinationCommitId" -> destinationCommitId.asInstanceOf[js.Any],
-        "mergeHunks"          -> mergeHunks.asInstanceOf[js.Any],
-        "sourceCommitId"      -> sourceCommitId.asInstanceOf[js.Any]
+        "mergeHunks" -> mergeHunks.asInstanceOf[js.Any],
+        "sourceCommitId" -> sourceCommitId.asInstanceOf[js.Any]
       )
 
       baseCommitId.foreach(__v => __obj.updateDynamic("baseCommitId")(__v.asInstanceOf[js.Any]))
@@ -2152,7 +2152,7 @@ package codecommit {
     ): DisassociateApprovalRuleTemplateFromRepositoryInput = {
       val __obj = js.Dynamic.literal(
         "approvalRuleTemplateName" -> approvalRuleTemplateName.asInstanceOf[js.Any],
-        "repositoryName"           -> repositoryName.asInstanceOf[js.Any]
+        "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DisassociateApprovalRuleTemplateFromRepositoryInput]
@@ -2173,7 +2173,7 @@ package codecommit {
     ): EvaluatePullRequestApprovalRulesInput = {
       val __obj = js.Dynamic.literal(
         "pullRequestId" -> pullRequestId.asInstanceOf[js.Any],
-        "revisionId"    -> revisionId.asInstanceOf[js.Any]
+        "revisionId" -> revisionId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[EvaluatePullRequestApprovalRulesInput]
@@ -2285,8 +2285,8 @@ package codecommit {
   sealed trait FileModeTypeEnum extends js.Any
   object FileModeTypeEnum extends js.Object {
     val EXECUTABLE = "EXECUTABLE".asInstanceOf[FileModeTypeEnum]
-    val NORMAL     = "NORMAL".asInstanceOf[FileModeTypeEnum]
-    val SYMLINK    = "SYMLINK".asInstanceOf[FileModeTypeEnum]
+    val NORMAL = "NORMAL".asInstanceOf[FileModeTypeEnum]
+    val SYMLINK = "SYMLINK".asInstanceOf[FileModeTypeEnum]
 
     val values = js.Object.freeze(js.Array(EXECUTABLE, NORMAL, SYMLINK))
   }
@@ -2418,7 +2418,7 @@ package codecommit {
         repositoryName: RepositoryName
     ): GetBlobInput = {
       val __obj = js.Dynamic.literal(
-        "blobId"         -> blobId.asInstanceOf[js.Any],
+        "blobId" -> blobId.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
@@ -2589,7 +2589,7 @@ package codecommit {
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetCommentsForComparedCommitInput = {
       val __obj = js.Dynamic.literal(
-        "afterCommitId"  -> afterCommitId.asInstanceOf[js.Any],
+        "afterCommitId" -> afterCommitId.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
@@ -2691,7 +2691,7 @@ package codecommit {
         repositoryName: RepositoryName
     ): GetCommitInput = {
       val __obj = js.Dynamic.literal(
-        "commitId"       -> commitId.asInstanceOf[js.Any],
+        "commitId" -> commitId.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
@@ -2744,7 +2744,7 @@ package codecommit {
     ): GetDifferencesInput = {
       val __obj = js.Dynamic.literal(
         "afterCommitSpecifier" -> afterCommitSpecifier.asInstanceOf[js.Any],
-        "repositoryName"       -> repositoryName.asInstanceOf[js.Any]
+        "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
@@ -2790,7 +2790,7 @@ package codecommit {
         commitSpecifier: js.UndefOr[CommitName] = js.undefined
     ): GetFileInput = {
       val __obj = js.Dynamic.literal(
-        "filePath"       -> filePath.asInstanceOf[js.Any],
+        "filePath" -> filePath.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
@@ -2820,12 +2820,12 @@ package codecommit {
         fileSize: ObjectSize
     ): GetFileOutput = {
       val __obj = js.Dynamic.literal(
-        "blobId"      -> blobId.asInstanceOf[js.Any],
-        "commitId"    -> commitId.asInstanceOf[js.Any],
+        "blobId" -> blobId.asInstanceOf[js.Any],
+        "commitId" -> commitId.asInstanceOf[js.Any],
         "fileContent" -> fileContent.asInstanceOf[js.Any],
-        "fileMode"    -> fileMode.asInstanceOf[js.Any],
-        "filePath"    -> filePath.asInstanceOf[js.Any],
-        "fileSize"    -> fileSize.asInstanceOf[js.Any]
+        "fileMode" -> fileMode.asInstanceOf[js.Any],
+        "filePath" -> filePath.asInstanceOf[js.Any],
+        "fileSize" -> fileSize.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetFileOutput]
@@ -2847,7 +2847,7 @@ package codecommit {
         commitSpecifier: js.UndefOr[CommitName] = js.undefined
     ): GetFolderInput = {
       val __obj = js.Dynamic.literal(
-        "folderPath"     -> folderPath.asInstanceOf[js.Any],
+        "folderPath" -> folderPath.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
@@ -2879,7 +2879,7 @@ package codecommit {
         treeId: js.UndefOr[ObjectId] = js.undefined
     ): GetFolderOutput = {
       val __obj = js.Dynamic.literal(
-        "commitId"   -> commitId.asInstanceOf[js.Any],
+        "commitId" -> commitId.asInstanceOf[js.Any],
         "folderPath" -> folderPath.asInstanceOf[js.Any]
       )
 
@@ -2912,8 +2912,8 @@ package codecommit {
     ): GetMergeCommitInput = {
       val __obj = js.Dynamic.literal(
         "destinationCommitSpecifier" -> destinationCommitSpecifier.asInstanceOf[js.Any],
-        "repositoryName"             -> repositoryName.asInstanceOf[js.Any],
-        "sourceCommitSpecifier"      -> sourceCommitSpecifier.asInstanceOf[js.Any]
+        "repositoryName" -> repositoryName.asInstanceOf[js.Any],
+        "sourceCommitSpecifier" -> sourceCommitSpecifier.asInstanceOf[js.Any]
       )
 
       conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
@@ -2975,9 +2975,9 @@ package codecommit {
     ): GetMergeConflictsInput = {
       val __obj = js.Dynamic.literal(
         "destinationCommitSpecifier" -> destinationCommitSpecifier.asInstanceOf[js.Any],
-        "mergeOption"                -> mergeOption.asInstanceOf[js.Any],
-        "repositoryName"             -> repositoryName.asInstanceOf[js.Any],
-        "sourceCommitSpecifier"      -> sourceCommitSpecifier.asInstanceOf[js.Any]
+        "mergeOption" -> mergeOption.asInstanceOf[js.Any],
+        "repositoryName" -> repositoryName.asInstanceOf[js.Any],
+        "sourceCommitSpecifier" -> sourceCommitSpecifier.asInstanceOf[js.Any]
       )
 
       conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
@@ -3012,9 +3012,9 @@ package codecommit {
     ): GetMergeConflictsOutput = {
       val __obj = js.Dynamic.literal(
         "conflictMetadataList" -> conflictMetadataList.asInstanceOf[js.Any],
-        "destinationCommitId"  -> destinationCommitId.asInstanceOf[js.Any],
-        "mergeable"            -> mergeable.asInstanceOf[js.Any],
-        "sourceCommitId"       -> sourceCommitId.asInstanceOf[js.Any]
+        "destinationCommitId" -> destinationCommitId.asInstanceOf[js.Any],
+        "mergeable" -> mergeable.asInstanceOf[js.Any],
+        "sourceCommitId" -> sourceCommitId.asInstanceOf[js.Any]
       )
 
       baseCommitId.foreach(__v => __obj.updateDynamic("baseCommitId")(__v.asInstanceOf[js.Any]))
@@ -3043,8 +3043,8 @@ package codecommit {
     ): GetMergeOptionsInput = {
       val __obj = js.Dynamic.literal(
         "destinationCommitSpecifier" -> destinationCommitSpecifier.asInstanceOf[js.Any],
-        "repositoryName"             -> repositoryName.asInstanceOf[js.Any],
-        "sourceCommitSpecifier"      -> sourceCommitSpecifier.asInstanceOf[js.Any]
+        "repositoryName" -> repositoryName.asInstanceOf[js.Any],
+        "sourceCommitSpecifier" -> sourceCommitSpecifier.asInstanceOf[js.Any]
       )
 
       conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
@@ -3072,10 +3072,10 @@ package codecommit {
         sourceCommitId: ObjectId
     ): GetMergeOptionsOutput = {
       val __obj = js.Dynamic.literal(
-        "baseCommitId"        -> baseCommitId.asInstanceOf[js.Any],
+        "baseCommitId" -> baseCommitId.asInstanceOf[js.Any],
         "destinationCommitId" -> destinationCommitId.asInstanceOf[js.Any],
-        "mergeOptions"        -> mergeOptions.asInstanceOf[js.Any],
-        "sourceCommitId"      -> sourceCommitId.asInstanceOf[js.Any]
+        "mergeOptions" -> mergeOptions.asInstanceOf[js.Any],
+        "sourceCommitId" -> sourceCommitId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetMergeOptionsOutput]
@@ -3096,7 +3096,7 @@ package codecommit {
     ): GetPullRequestApprovalStatesInput = {
       val __obj = js.Dynamic.literal(
         "pullRequestId" -> pullRequestId.asInstanceOf[js.Any],
-        "revisionId"    -> revisionId.asInstanceOf[js.Any]
+        "revisionId" -> revisionId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetPullRequestApprovalStatesInput]
@@ -3169,7 +3169,7 @@ package codecommit {
     ): GetPullRequestOverrideStateInput = {
       val __obj = js.Dynamic.literal(
         "pullRequestId" -> pullRequestId.asInstanceOf[js.Any],
-        "revisionId"    -> revisionId.asInstanceOf[js.Any]
+        "revisionId" -> revisionId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetPullRequestOverrideStateInput]
@@ -3658,8 +3658,8 @@ package codecommit {
     ): MergeBranchesByFastForwardInput = {
       val __obj = js.Dynamic.literal(
         "destinationCommitSpecifier" -> destinationCommitSpecifier.asInstanceOf[js.Any],
-        "repositoryName"             -> repositoryName.asInstanceOf[js.Any],
-        "sourceCommitSpecifier"      -> sourceCommitSpecifier.asInstanceOf[js.Any]
+        "repositoryName" -> repositoryName.asInstanceOf[js.Any],
+        "sourceCommitSpecifier" -> sourceCommitSpecifier.asInstanceOf[js.Any]
       )
 
       targetBranch.foreach(__v => __obj.updateDynamic("targetBranch")(__v.asInstanceOf[js.Any]))
@@ -3718,8 +3718,8 @@ package codecommit {
     ): MergeBranchesBySquashInput = {
       val __obj = js.Dynamic.literal(
         "destinationCommitSpecifier" -> destinationCommitSpecifier.asInstanceOf[js.Any],
-        "repositoryName"             -> repositoryName.asInstanceOf[js.Any],
-        "sourceCommitSpecifier"      -> sourceCommitSpecifier.asInstanceOf[js.Any]
+        "repositoryName" -> repositoryName.asInstanceOf[js.Any],
+        "sourceCommitSpecifier" -> sourceCommitSpecifier.asInstanceOf[js.Any]
       )
 
       authorName.foreach(__v => __obj.updateDynamic("authorName")(__v.asInstanceOf[js.Any]))
@@ -3787,8 +3787,8 @@ package codecommit {
     ): MergeBranchesByThreeWayInput = {
       val __obj = js.Dynamic.literal(
         "destinationCommitSpecifier" -> destinationCommitSpecifier.asInstanceOf[js.Any],
-        "repositoryName"             -> repositoryName.asInstanceOf[js.Any],
-        "sourceCommitSpecifier"      -> sourceCommitSpecifier.asInstanceOf[js.Any]
+        "repositoryName" -> repositoryName.asInstanceOf[js.Any],
+        "sourceCommitSpecifier" -> sourceCommitSpecifier.asInstanceOf[js.Any]
       )
 
       authorName.foreach(__v => __obj.updateDynamic("authorName")(__v.asInstanceOf[js.Any]))
@@ -3931,8 +3931,8 @@ package codecommit {
   sealed trait MergeOptionTypeEnum extends js.Any
   object MergeOptionTypeEnum extends js.Object {
     val FAST_FORWARD_MERGE = "FAST_FORWARD_MERGE".asInstanceOf[MergeOptionTypeEnum]
-    val SQUASH_MERGE       = "SQUASH_MERGE".asInstanceOf[MergeOptionTypeEnum]
-    val THREE_WAY_MERGE    = "THREE_WAY_MERGE".asInstanceOf[MergeOptionTypeEnum]
+    val SQUASH_MERGE = "SQUASH_MERGE".asInstanceOf[MergeOptionTypeEnum]
+    val THREE_WAY_MERGE = "THREE_WAY_MERGE".asInstanceOf[MergeOptionTypeEnum]
 
     val values = js.Object.freeze(js.Array(FAST_FORWARD_MERGE, SQUASH_MERGE, THREE_WAY_MERGE))
   }
@@ -3952,7 +3952,7 @@ package codecommit {
         sourceCommitId: js.UndefOr[ObjectId] = js.undefined
     ): MergePullRequestByFastForwardInput = {
       val __obj = js.Dynamic.literal(
-        "pullRequestId"  -> pullRequestId.asInstanceOf[js.Any],
+        "pullRequestId" -> pullRequestId.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
@@ -4006,7 +4006,7 @@ package codecommit {
         sourceCommitId: js.UndefOr[ObjectId] = js.undefined
     ): MergePullRequestBySquashInput = {
       val __obj = js.Dynamic.literal(
-        "pullRequestId"  -> pullRequestId.asInstanceOf[js.Any],
+        "pullRequestId" -> pullRequestId.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
@@ -4069,7 +4069,7 @@ package codecommit {
         sourceCommitId: js.UndefOr[ObjectId] = js.undefined
     ): MergePullRequestByThreeWayInput = {
       val __obj = js.Dynamic.literal(
-        "pullRequestId"  -> pullRequestId.asInstanceOf[js.Any],
+        "pullRequestId" -> pullRequestId.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
@@ -4106,9 +4106,9 @@ package codecommit {
   @js.native
   sealed trait ObjectTypeEnum extends js.Any
   object ObjectTypeEnum extends js.Object {
-    val FILE          = "FILE".asInstanceOf[ObjectTypeEnum]
-    val DIRECTORY     = "DIRECTORY".asInstanceOf[ObjectTypeEnum]
-    val GIT_LINK      = "GIT_LINK".asInstanceOf[ObjectTypeEnum]
+    val FILE = "FILE".asInstanceOf[ObjectTypeEnum]
+    val DIRECTORY = "DIRECTORY".asInstanceOf[ObjectTypeEnum]
+    val GIT_LINK = "GIT_LINK".asInstanceOf[ObjectTypeEnum]
     val SYMBOLIC_LINK = "SYMBOLIC_LINK".asInstanceOf[ObjectTypeEnum]
 
     val values = js.Object.freeze(js.Array(FILE, DIRECTORY, GIT_LINK, SYMBOLIC_LINK))
@@ -4142,7 +4142,7 @@ package codecommit {
   @js.native
   sealed trait OrderEnum extends js.Any
   object OrderEnum extends js.Object {
-    val ascending  = "ascending".asInstanceOf[OrderEnum]
+    val ascending = "ascending".asInstanceOf[OrderEnum]
     val descending = "descending".asInstanceOf[OrderEnum]
 
     val values = js.Object.freeze(js.Array(ascending, descending))
@@ -4186,8 +4186,8 @@ package codecommit {
     ): OverridePullRequestApprovalRulesInput = {
       val __obj = js.Dynamic.literal(
         "overrideStatus" -> overrideStatus.asInstanceOf[js.Any],
-        "pullRequestId"  -> pullRequestId.asInstanceOf[js.Any],
-        "revisionId"     -> revisionId.asInstanceOf[js.Any]
+        "pullRequestId" -> pullRequestId.asInstanceOf[js.Any],
+        "revisionId" -> revisionId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[OverridePullRequestApprovalRulesInput]
@@ -4198,7 +4198,7 @@ package codecommit {
   sealed trait OverrideStatus extends js.Any
   object OverrideStatus extends js.Object {
     val OVERRIDE = "OVERRIDE".asInstanceOf[OverrideStatus]
-    val REVOKE   = "REVOKE".asInstanceOf[OverrideStatus]
+    val REVOKE = "REVOKE".asInstanceOf[OverrideStatus]
 
     val values = js.Object.freeze(js.Array(OVERRIDE, REVOKE))
   }
@@ -4224,8 +4224,8 @@ package codecommit {
         location: js.UndefOr[Location] = js.undefined
     ): PostCommentForComparedCommitInput = {
       val __obj = js.Dynamic.literal(
-        "afterCommitId"  -> afterCommitId.asInstanceOf[js.Any],
-        "content"        -> content.asInstanceOf[js.Any],
+        "afterCommitId" -> afterCommitId.asInstanceOf[js.Any],
+        "content" -> content.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
@@ -4293,10 +4293,10 @@ package codecommit {
         location: js.UndefOr[Location] = js.undefined
     ): PostCommentForPullRequestInput = {
       val __obj = js.Dynamic.literal(
-        "afterCommitId"  -> afterCommitId.asInstanceOf[js.Any],
+        "afterCommitId" -> afterCommitId.asInstanceOf[js.Any],
         "beforeCommitId" -> beforeCommitId.asInstanceOf[js.Any],
-        "content"        -> content.asInstanceOf[js.Any],
-        "pullRequestId"  -> pullRequestId.asInstanceOf[js.Any],
+        "content" -> content.asInstanceOf[js.Any],
+        "pullRequestId" -> pullRequestId.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
@@ -4358,7 +4358,7 @@ package codecommit {
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined
     ): PostCommentReplyInput = {
       val __obj = js.Dynamic.literal(
-        "content"   -> content.asInstanceOf[js.Any],
+        "content" -> content.asInstanceOf[js.Any],
         "inReplyTo" -> inReplyTo.asInstanceOf[js.Any]
       )
 
@@ -4528,11 +4528,11 @@ package codecommit {
   @js.native
   sealed trait PullRequestEventType extends js.Any
   object PullRequestEventType extends js.Object {
-    val PULL_REQUEST_CREATED        = "PULL_REQUEST_CREATED".asInstanceOf[PullRequestEventType]
+    val PULL_REQUEST_CREATED = "PULL_REQUEST_CREATED".asInstanceOf[PullRequestEventType]
     val PULL_REQUEST_STATUS_CHANGED = "PULL_REQUEST_STATUS_CHANGED".asInstanceOf[PullRequestEventType]
     val PULL_REQUEST_SOURCE_REFERENCE_UPDATED =
       "PULL_REQUEST_SOURCE_REFERENCE_UPDATED".asInstanceOf[PullRequestEventType]
-    val PULL_REQUEST_MERGE_STATE_CHANGED   = "PULL_REQUEST_MERGE_STATE_CHANGED".asInstanceOf[PullRequestEventType]
+    val PULL_REQUEST_MERGE_STATE_CHANGED = "PULL_REQUEST_MERGE_STATE_CHANGED".asInstanceOf[PullRequestEventType]
     val PULL_REQUEST_APPROVAL_RULE_CREATED = "PULL_REQUEST_APPROVAL_RULE_CREATED".asInstanceOf[PullRequestEventType]
     val PULL_REQUEST_APPROVAL_RULE_UPDATED = "PULL_REQUEST_APPROVAL_RULE_UPDATED".asInstanceOf[PullRequestEventType]
     val PULL_REQUEST_APPROVAL_RULE_DELETED = "PULL_REQUEST_APPROVAL_RULE_DELETED".asInstanceOf[PullRequestEventType]
@@ -4630,7 +4630,7 @@ package codecommit {
   @js.native
   sealed trait PullRequestStatusEnum extends js.Any
   object PullRequestStatusEnum extends js.Object {
-    val OPEN   = "OPEN".asInstanceOf[PullRequestStatusEnum]
+    val OPEN = "OPEN".asInstanceOf[PullRequestStatusEnum]
     val CLOSED = "CLOSED".asInstanceOf[PullRequestStatusEnum]
 
     val values = js.Object.freeze(js.Array(OPEN, CLOSED))
@@ -4686,7 +4686,7 @@ package codecommit {
         reactionValue: ReactionValue
     ): PutCommentReactionInput = {
       val __obj = js.Dynamic.literal(
-        "commentId"     -> commentId.asInstanceOf[js.Any],
+        "commentId" -> commentId.asInstanceOf[js.Any],
         "reactionValue" -> reactionValue.asInstanceOf[js.Any]
       )
 
@@ -4751,9 +4751,9 @@ package codecommit {
         parentCommitId: js.UndefOr[CommitId] = js.undefined
     ): PutFileInput = {
       val __obj = js.Dynamic.literal(
-        "branchName"     -> branchName.asInstanceOf[js.Any],
-        "fileContent"    -> fileContent.asInstanceOf[js.Any],
-        "filePath"       -> filePath.asInstanceOf[js.Any],
+        "branchName" -> branchName.asInstanceOf[js.Any],
+        "fileContent" -> fileContent.asInstanceOf[js.Any],
+        "filePath" -> filePath.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
@@ -4781,9 +4781,9 @@ package codecommit {
         treeId: ObjectId
     ): PutFileOutput = {
       val __obj = js.Dynamic.literal(
-        "blobId"   -> blobId.asInstanceOf[js.Any],
+        "blobId" -> blobId.asInstanceOf[js.Any],
         "commitId" -> commitId.asInstanceOf[js.Any],
-        "treeId"   -> treeId.asInstanceOf[js.Any]
+        "treeId" -> treeId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutFileOutput]
@@ -4807,7 +4807,7 @@ package codecommit {
     ): PutRepositoryTriggersInput = {
       val __obj = js.Dynamic.literal(
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
-        "triggers"       -> triggers.asInstanceOf[js.Any]
+        "triggers" -> triggers.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutRepositoryTriggersInput]
@@ -4889,7 +4889,7 @@ package codecommit {
   sealed trait RelativeFileVersionEnum extends js.Any
   object RelativeFileVersionEnum extends js.Object {
     val BEFORE = "BEFORE".asInstanceOf[RelativeFileVersionEnum]
-    val AFTER  = "AFTER".asInstanceOf[RelativeFileVersionEnum]
+    val AFTER = "AFTER".asInstanceOf[RelativeFileVersionEnum]
 
     val values = js.Object.freeze(js.Array(BEFORE, AFTER))
   }
@@ -4914,7 +4914,7 @@ package codecommit {
         fileMode: js.UndefOr[FileModeTypeEnum] = js.undefined
     ): ReplaceContentEntry = {
       val __obj = js.Dynamic.literal(
-        "filePath"        -> filePath.asInstanceOf[js.Any],
+        "filePath" -> filePath.asInstanceOf[js.Any],
         "replacementType" -> replacementType.asInstanceOf[js.Any]
       )
 
@@ -4927,10 +4927,10 @@ package codecommit {
   @js.native
   sealed trait ReplacementTypeEnum extends js.Any
   object ReplacementTypeEnum extends js.Object {
-    val KEEP_BASE        = "KEEP_BASE".asInstanceOf[ReplacementTypeEnum]
-    val KEEP_SOURCE      = "KEEP_SOURCE".asInstanceOf[ReplacementTypeEnum]
+    val KEEP_BASE = "KEEP_BASE".asInstanceOf[ReplacementTypeEnum]
+    val KEEP_SOURCE = "KEEP_SOURCE".asInstanceOf[ReplacementTypeEnum]
     val KEEP_DESTINATION = "KEEP_DESTINATION".asInstanceOf[ReplacementTypeEnum]
-    val USE_NEW_CONTENT  = "USE_NEW_CONTENT".asInstanceOf[ReplacementTypeEnum]
+    val USE_NEW_CONTENT = "USE_NEW_CONTENT".asInstanceOf[ReplacementTypeEnum]
 
     val values = js.Object.freeze(js.Array(KEEP_BASE, KEEP_SOURCE, KEEP_DESTINATION, USE_NEW_CONTENT))
   }
@@ -5026,8 +5026,8 @@ package codecommit {
     ): RepositoryTrigger = {
       val __obj = js.Dynamic.literal(
         "destinationArn" -> destinationArn.asInstanceOf[js.Any],
-        "events"         -> events.asInstanceOf[js.Any],
-        "name"           -> name.asInstanceOf[js.Any]
+        "events" -> events.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       branches.foreach(__v => __obj.updateDynamic("branches")(__v.asInstanceOf[js.Any]))
@@ -5039,7 +5039,7 @@ package codecommit {
   @js.native
   sealed trait RepositoryTriggerEventEnum extends js.Any
   object RepositoryTriggerEventEnum extends js.Object {
-    val all             = "all".asInstanceOf[RepositoryTriggerEventEnum]
+    val all = "all".asInstanceOf[RepositoryTriggerEventEnum]
     val updateReference = "updateReference".asInstanceOf[RepositoryTriggerEventEnum]
     val createReference = "createReference".asInstanceOf[RepositoryTriggerEventEnum]
     val deleteReference = "deleteReference".asInstanceOf[RepositoryTriggerEventEnum]
@@ -5096,7 +5096,7 @@ package codecommit {
   @js.native
   sealed trait SortByEnum extends js.Any
   object SortByEnum extends js.Object {
-    val repositoryName   = "repositoryName".asInstanceOf[SortByEnum]
+    val repositoryName = "repositoryName".asInstanceOf[SortByEnum]
     val lastModifiedDate = "lastModifiedDate".asInstanceOf[SortByEnum]
 
     val values = js.Object.freeze(js.Array(repositoryName, lastModifiedDate))
@@ -5193,7 +5193,7 @@ package codecommit {
     ): TagResourceInput = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceInput]
@@ -5218,7 +5218,7 @@ package codecommit {
         destinationReference: js.UndefOr[ReferenceName] = js.undefined
     ): Target = {
       val __obj = js.Dynamic.literal(
-        "repositoryName"  -> repositoryName.asInstanceOf[js.Any],
+        "repositoryName" -> repositoryName.asInstanceOf[js.Any],
         "sourceReference" -> sourceReference.asInstanceOf[js.Any]
       )
 
@@ -5244,7 +5244,7 @@ package codecommit {
     ): TestRepositoryTriggersInput = {
       val __obj = js.Dynamic.literal(
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
-        "triggers"       -> triggers.asInstanceOf[js.Any]
+        "triggers" -> triggers.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TestRepositoryTriggersInput]
@@ -5287,7 +5287,7 @@ package codecommit {
     ): UntagResourceInput = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceInput]
@@ -5310,7 +5310,7 @@ package codecommit {
     ): UpdateApprovalRuleTemplateContentInput = {
       val __obj = js.Dynamic.literal(
         "approvalRuleTemplateName" -> approvalRuleTemplateName.asInstanceOf[js.Any],
-        "newRuleContent"           -> newRuleContent.asInstanceOf[js.Any]
+        "newRuleContent" -> newRuleContent.asInstanceOf[js.Any]
       )
 
       existingRuleContentSha256.foreach(__v =>
@@ -5352,7 +5352,7 @@ package codecommit {
     ): UpdateApprovalRuleTemplateDescriptionInput = {
       val __obj = js.Dynamic.literal(
         "approvalRuleTemplateDescription" -> approvalRuleTemplateDescription.asInstanceOf[js.Any],
-        "approvalRuleTemplateName"        -> approvalRuleTemplateName.asInstanceOf[js.Any]
+        "approvalRuleTemplateName" -> approvalRuleTemplateName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateApprovalRuleTemplateDescriptionInput]
@@ -5430,7 +5430,7 @@ package codecommit {
     ): UpdateCommentInput = {
       val __obj = js.Dynamic.literal(
         "commentId" -> commentId.asInstanceOf[js.Any],
-        "content"   -> content.asInstanceOf[js.Any]
+        "content" -> content.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateCommentInput]
@@ -5470,7 +5470,7 @@ package codecommit {
     ): UpdateDefaultBranchInput = {
       val __obj = js.Dynamic.literal(
         "defaultBranchName" -> defaultBranchName.asInstanceOf[js.Any],
-        "repositoryName"    -> repositoryName.asInstanceOf[js.Any]
+        "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateDefaultBranchInput]
@@ -5495,8 +5495,8 @@ package codecommit {
     ): UpdatePullRequestApprovalRuleContentInput = {
       val __obj = js.Dynamic.literal(
         "approvalRuleName" -> approvalRuleName.asInstanceOf[js.Any],
-        "newRuleContent"   -> newRuleContent.asInstanceOf[js.Any],
-        "pullRequestId"    -> pullRequestId.asInstanceOf[js.Any]
+        "newRuleContent" -> newRuleContent.asInstanceOf[js.Any],
+        "pullRequestId" -> pullRequestId.asInstanceOf[js.Any]
       )
 
       existingRuleContentSha256.foreach(__v =>
@@ -5541,7 +5541,7 @@ package codecommit {
       val __obj = js.Dynamic.literal(
         "approvalState" -> approvalState.asInstanceOf[js.Any],
         "pullRequestId" -> pullRequestId.asInstanceOf[js.Any],
-        "revisionId"    -> revisionId.asInstanceOf[js.Any]
+        "revisionId" -> revisionId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdatePullRequestApprovalStateInput]
@@ -5561,7 +5561,7 @@ package codecommit {
         pullRequestId: PullRequestId
     ): UpdatePullRequestDescriptionInput = {
       val __obj = js.Dynamic.literal(
-        "description"   -> description.asInstanceOf[js.Any],
+        "description" -> description.asInstanceOf[js.Any],
         "pullRequestId" -> pullRequestId.asInstanceOf[js.Any]
       )
 
@@ -5600,7 +5600,7 @@ package codecommit {
         pullRequestStatus: PullRequestStatusEnum
     ): UpdatePullRequestStatusInput = {
       val __obj = js.Dynamic.literal(
-        "pullRequestId"     -> pullRequestId.asInstanceOf[js.Any],
+        "pullRequestId" -> pullRequestId.asInstanceOf[js.Any],
         "pullRequestStatus" -> pullRequestStatus.asInstanceOf[js.Any]
       )
 
@@ -5640,7 +5640,7 @@ package codecommit {
     ): UpdatePullRequestTitleInput = {
       val __obj = js.Dynamic.literal(
         "pullRequestId" -> pullRequestId.asInstanceOf[js.Any],
-        "title"         -> title.asInstanceOf[js.Any]
+        "title" -> title.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdatePullRequestTitleInput]

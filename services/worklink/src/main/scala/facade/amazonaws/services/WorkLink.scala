@@ -7,40 +7,40 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object worklink {
-  type AcmCertificateArn                        = String
-  type AuditStreamArn                           = String
-  type Certificate                              = String
-  type CertificateChain                         = String
-  type CompanyCode                              = String
-  type DateTime                                 = js.Date
-  type DeviceManufacturer                       = String
-  type DeviceModel                              = String
-  type DeviceOperatingSystemName                = String
-  type DeviceOperatingSystemVersion             = String
-  type DevicePatchLevel                         = String
-  type DeviceSummaryList                        = js.Array[DeviceSummary]
-  type DisplayName                              = String
-  type DomainName                               = String
-  type DomainSummaryList                        = js.Array[DomainSummary]
-  type FleetArn                                 = String
-  type FleetName                                = String
-  type FleetSummaryList                         = js.Array[FleetSummary]
-  type Id                                       = String
-  type MaxResults                               = Int
-  type NextToken                                = String
-  type SamlMetadata                             = String
-  type SecurityGroupId                          = String
-  type SecurityGroupIds                         = js.Array[SecurityGroupId]
-  type SubnetId                                 = String
-  type SubnetIds                                = js.Array[SubnetId]
-  type TagKey                                   = String
-  type TagKeyList                               = js.Array[TagKey]
-  type TagMap                                   = js.Dictionary[TagValue]
-  type TagValue                                 = String
-  type Username                                 = String
-  type VpcId                                    = String
+  type AcmCertificateArn = String
+  type AuditStreamArn = String
+  type Certificate = String
+  type CertificateChain = String
+  type CompanyCode = String
+  type DateTime = js.Date
+  type DeviceManufacturer = String
+  type DeviceModel = String
+  type DeviceOperatingSystemName = String
+  type DeviceOperatingSystemVersion = String
+  type DevicePatchLevel = String
+  type DeviceSummaryList = js.Array[DeviceSummary]
+  type DisplayName = String
+  type DomainName = String
+  type DomainSummaryList = js.Array[DomainSummary]
+  type FleetArn = String
+  type FleetName = String
+  type FleetSummaryList = js.Array[FleetSummary]
+  type Id = String
+  type MaxResults = Int
+  type NextToken = String
+  type SamlMetadata = String
+  type SecurityGroupId = String
+  type SecurityGroupIds = js.Array[SecurityGroupId]
+  type SubnetId = String
+  type SubnetIds = js.Array[SubnetId]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagMap = js.Dictionary[TagValue]
+  type TagValue = String
+  type Username = String
+  type VpcId = String
   type WebsiteAuthorizationProvidersSummaryList = js.Array[WebsiteAuthorizationProviderSummary]
-  type WebsiteCaSummaryList                     = js.Array[WebsiteCaSummary]
+  type WebsiteCaSummaryList = js.Array[WebsiteCaSummary]
 
   implicit final class WorkLinkOps(private val service: WorkLink) extends AnyVal {
 
@@ -156,7 +156,7 @@ package worklink {
     ): Request[AssociateWebsiteAuthorizationProviderResponse] = js.native
     def associateWebsiteCertificateAuthority(
         params: AssociateWebsiteCertificateAuthorityRequest
-    ): Request[AssociateWebsiteCertificateAuthorityResponse]                  = js.native
+    ): Request[AssociateWebsiteCertificateAuthorityResponse] = js.native
     def createFleet(params: CreateFleetRequest): Request[CreateFleetResponse] = js.native
     def deleteFleet(params: DeleteFleetRequest): Request[DeleteFleetResponse] = js.native
     def describeAuditStreamConfiguration(
@@ -164,41 +164,41 @@ package worklink {
     ): Request[DescribeAuditStreamConfigurationResponse] = js.native
     def describeCompanyNetworkConfiguration(
         params: DescribeCompanyNetworkConfigurationRequest
-    ): Request[DescribeCompanyNetworkConfigurationResponse]                            = js.native
+    ): Request[DescribeCompanyNetworkConfigurationResponse] = js.native
     def describeDevice(params: DescribeDeviceRequest): Request[DescribeDeviceResponse] = js.native
     def describeDevicePolicyConfiguration(
         params: DescribeDevicePolicyConfigurationRequest
-    ): Request[DescribeDevicePolicyConfigurationResponse]                                                   = js.native
-    def describeDomain(params: DescribeDomainRequest): Request[DescribeDomainResponse]                      = js.native
+    ): Request[DescribeDevicePolicyConfigurationResponse] = js.native
+    def describeDomain(params: DescribeDomainRequest): Request[DescribeDomainResponse] = js.native
     def describeFleetMetadata(params: DescribeFleetMetadataRequest): Request[DescribeFleetMetadataResponse] = js.native
     def describeIdentityProviderConfiguration(
         params: DescribeIdentityProviderConfigurationRequest
     ): Request[DescribeIdentityProviderConfigurationResponse] = js.native
     def describeWebsiteCertificateAuthority(
         params: DescribeWebsiteCertificateAuthorityRequest
-    ): Request[DescribeWebsiteCertificateAuthorityResponse]                                        = js.native
+    ): Request[DescribeWebsiteCertificateAuthorityResponse] = js.native
     def disassociateDomain(params: DisassociateDomainRequest): Request[DisassociateDomainResponse] = js.native
     def disassociateWebsiteAuthorizationProvider(
         params: DisassociateWebsiteAuthorizationProviderRequest
     ): Request[DisassociateWebsiteAuthorizationProviderResponse] = js.native
     def disassociateWebsiteCertificateAuthority(
         params: DisassociateWebsiteCertificateAuthorityRequest
-    ): Request[DisassociateWebsiteCertificateAuthorityResponse]                                       = js.native
-    def listDevices(params: ListDevicesRequest): Request[ListDevicesResponse]                         = js.native
-    def listDomains(params: ListDomainsRequest): Request[ListDomainsResponse]                         = js.native
-    def listFleets(params: ListFleetsRequest): Request[ListFleetsResponse]                            = js.native
+    ): Request[DisassociateWebsiteCertificateAuthorityResponse] = js.native
+    def listDevices(params: ListDevicesRequest): Request[ListDevicesResponse] = js.native
+    def listDomains(params: ListDomainsRequest): Request[ListDomainsResponse] = js.native
+    def listFleets(params: ListFleetsRequest): Request[ListFleetsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listWebsiteAuthorizationProviders(
         params: ListWebsiteAuthorizationProvidersRequest
     ): Request[ListWebsiteAuthorizationProvidersResponse] = js.native
     def listWebsiteCertificateAuthorities(
         params: ListWebsiteCertificateAuthoritiesRequest
-    ): Request[ListWebsiteCertificateAuthoritiesResponse]                                             = js.native
+    ): Request[ListWebsiteCertificateAuthoritiesResponse] = js.native
     def restoreDomainAccess(params: RestoreDomainAccessRequest): Request[RestoreDomainAccessResponse] = js.native
-    def revokeDomainAccess(params: RevokeDomainAccessRequest): Request[RevokeDomainAccessResponse]    = js.native
-    def signOutUser(params: SignOutUserRequest): Request[SignOutUserResponse]                         = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
+    def revokeDomainAccess(params: RevokeDomainAccessRequest): Request[RevokeDomainAccessResponse] = js.native
+    def signOutUser(params: SignOutUserRequest): Request[SignOutUserResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateAuditStreamConfiguration(
         params: UpdateAuditStreamConfigurationRequest
     ): Request[UpdateAuditStreamConfigurationResponse] = js.native
@@ -207,9 +207,9 @@ package worklink {
     ): Request[UpdateCompanyNetworkConfigurationResponse] = js.native
     def updateDevicePolicyConfiguration(
         params: UpdateDevicePolicyConfigurationRequest
-    ): Request[UpdateDevicePolicyConfigurationResponse]                                                  = js.native
+    ): Request[UpdateDevicePolicyConfigurationResponse] = js.native
     def updateDomainMetadata(params: UpdateDomainMetadataRequest): Request[UpdateDomainMetadataResponse] = js.native
-    def updateFleetMetadata(params: UpdateFleetMetadataRequest): Request[UpdateFleetMetadataResponse]    = js.native
+    def updateFleetMetadata(params: UpdateFleetMetadataRequest): Request[UpdateFleetMetadataResponse] = js.native
     def updateIdentityProviderConfiguration(
         params: UpdateIdentityProviderConfigurationRequest
     ): Request[UpdateIdentityProviderConfigurationResponse] = js.native
@@ -233,8 +233,8 @@ package worklink {
     ): AssociateDomainRequest = {
       val __obj = js.Dynamic.literal(
         "AcmCertificateArn" -> AcmCertificateArn.asInstanceOf[js.Any],
-        "DomainName"        -> DomainName.asInstanceOf[js.Any],
-        "FleetArn"          -> FleetArn.asInstanceOf[js.Any]
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
 
       DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
@@ -271,7 +271,7 @@ package worklink {
     ): AssociateWebsiteAuthorizationProviderRequest = {
       val __obj = js.Dynamic.literal(
         "AuthorizationProviderType" -> AuthorizationProviderType.asInstanceOf[js.Any],
-        "FleetArn"                  -> FleetArn.asInstanceOf[js.Any]
+        "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
 
       DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
@@ -311,7 +311,7 @@ package worklink {
     ): AssociateWebsiteCertificateAuthorityRequest = {
       val __obj = js.Dynamic.literal(
         "Certificate" -> Certificate.asInstanceOf[js.Any],
-        "FleetArn"    -> FleetArn.asInstanceOf[js.Any]
+        "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
 
       DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
@@ -602,7 +602,7 @@ package worklink {
     ): DescribeDomainRequest = {
       val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any],
-        "FleetArn"   -> FleetArn.asInstanceOf[js.Any]
+        "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeDomainRequest]
@@ -751,7 +751,7 @@ package worklink {
         WebsiteCaId: Id
     ): DescribeWebsiteCertificateAuthorityRequest = {
       val __obj = js.Dynamic.literal(
-        "FleetArn"    -> FleetArn.asInstanceOf[js.Any],
+        "FleetArn" -> FleetArn.asInstanceOf[js.Any],
         "WebsiteCaId" -> WebsiteCaId.asInstanceOf[js.Any]
       )
 
@@ -784,7 +784,7 @@ package worklink {
   @js.native
   sealed trait DeviceStatus extends js.Any
   object DeviceStatus extends js.Object {
-    val ACTIVE     = "ACTIVE".asInstanceOf[DeviceStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[DeviceStatus]
     val SIGNED_OUT = "SIGNED_OUT".asInstanceOf[DeviceStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, SIGNED_OUT))
@@ -826,7 +826,7 @@ package worklink {
     ): DisassociateDomainRequest = {
       val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any],
-        "FleetArn"   -> FleetArn.asInstanceOf[js.Any]
+        "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DisassociateDomainRequest]
@@ -860,7 +860,7 @@ package worklink {
     ): DisassociateWebsiteAuthorizationProviderRequest = {
       val __obj = js.Dynamic.literal(
         "AuthorizationProviderId" -> AuthorizationProviderId.asInstanceOf[js.Any],
-        "FleetArn"                -> FleetArn.asInstanceOf[js.Any]
+        "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DisassociateWebsiteAuthorizationProviderRequest]
@@ -893,7 +893,7 @@ package worklink {
         WebsiteCaId: Id
     ): DisassociateWebsiteCertificateAuthorityRequest = {
       val __obj = js.Dynamic.literal(
-        "FleetArn"    -> FleetArn.asInstanceOf[js.Any],
+        "FleetArn" -> FleetArn.asInstanceOf[js.Any],
         "WebsiteCaId" -> WebsiteCaId.asInstanceOf[js.Any]
       )
 
@@ -917,13 +917,13 @@ package worklink {
   @js.native
   sealed trait DomainStatus extends js.Any
   object DomainStatus extends js.Object {
-    val PENDING_VALIDATION     = "PENDING_VALIDATION".asInstanceOf[DomainStatus]
-    val ASSOCIATING            = "ASSOCIATING".asInstanceOf[DomainStatus]
-    val ACTIVE                 = "ACTIVE".asInstanceOf[DomainStatus]
-    val INACTIVE               = "INACTIVE".asInstanceOf[DomainStatus]
-    val DISASSOCIATING         = "DISASSOCIATING".asInstanceOf[DomainStatus]
-    val DISASSOCIATED          = "DISASSOCIATED".asInstanceOf[DomainStatus]
-    val FAILED_TO_ASSOCIATE    = "FAILED_TO_ASSOCIATE".asInstanceOf[DomainStatus]
+    val PENDING_VALIDATION = "PENDING_VALIDATION".asInstanceOf[DomainStatus]
+    val ASSOCIATING = "ASSOCIATING".asInstanceOf[DomainStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[DomainStatus]
+    val INACTIVE = "INACTIVE".asInstanceOf[DomainStatus]
+    val DISASSOCIATING = "DISASSOCIATING".asInstanceOf[DomainStatus]
+    val DISASSOCIATED = "DISASSOCIATED".asInstanceOf[DomainStatus]
+    val FAILED_TO_ASSOCIATE = "FAILED_TO_ASSOCIATE".asInstanceOf[DomainStatus]
     val FAILED_TO_DISASSOCIATE = "FAILED_TO_DISASSOCIATE".asInstanceOf[DomainStatus]
 
     val values = js.Object.freeze(
@@ -960,8 +960,8 @@ package worklink {
         DisplayName: js.UndefOr[DisplayName] = js.undefined
     ): DomainSummary = {
       val __obj = js.Dynamic.literal(
-        "CreatedTime"  -> CreatedTime.asInstanceOf[js.Any],
-        "DomainName"   -> DomainName.asInstanceOf[js.Any],
+        "CreatedTime" -> CreatedTime.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
         "DomainStatus" -> DomainStatus.asInstanceOf[js.Any]
       )
 
@@ -973,10 +973,10 @@ package worklink {
   @js.native
   sealed trait FleetStatus extends js.Any
   object FleetStatus extends js.Object {
-    val CREATING         = "CREATING".asInstanceOf[FleetStatus]
-    val ACTIVE           = "ACTIVE".asInstanceOf[FleetStatus]
-    val DELETING         = "DELETING".asInstanceOf[FleetStatus]
-    val DELETED          = "DELETED".asInstanceOf[FleetStatus]
+    val CREATING = "CREATING".asInstanceOf[FleetStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[FleetStatus]
+    val DELETING = "DELETING".asInstanceOf[FleetStatus]
+    val DELETED = "DELETED".asInstanceOf[FleetStatus]
     val FAILED_TO_CREATE = "FAILED_TO_CREATE".asInstanceOf[FleetStatus]
     val FAILED_TO_DELETE = "FAILED_TO_DELETE".asInstanceOf[FleetStatus]
 
@@ -1293,7 +1293,7 @@ package worklink {
     ): RestoreDomainAccessRequest = {
       val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any],
-        "FleetArn"   -> FleetArn.asInstanceOf[js.Any]
+        "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RestoreDomainAccessRequest]
@@ -1327,7 +1327,7 @@ package worklink {
     ): RevokeDomainAccessRequest = {
       val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any],
-        "FleetArn"   -> FleetArn.asInstanceOf[js.Any]
+        "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RevokeDomainAccessRequest]
@@ -1395,7 +1395,7 @@ package worklink {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -1429,7 +1429,7 @@ package worklink {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -1500,10 +1500,10 @@ package worklink {
         VpcId: VpcId
     ): UpdateCompanyNetworkConfigurationRequest = {
       val __obj = js.Dynamic.literal(
-        "FleetArn"         -> FleetArn.asInstanceOf[js.Any],
+        "FleetArn" -> FleetArn.asInstanceOf[js.Any],
         "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any],
-        "SubnetIds"        -> SubnetIds.asInstanceOf[js.Any],
-        "VpcId"            -> VpcId.asInstanceOf[js.Any]
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any],
+        "VpcId" -> VpcId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateCompanyNetworkConfigurationRequest]
@@ -1573,7 +1573,7 @@ package worklink {
     ): UpdateDomainMetadataRequest = {
       val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any],
-        "FleetArn"   -> FleetArn.asInstanceOf[js.Any]
+        "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
 
       DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
@@ -1648,7 +1648,7 @@ package worklink {
         IdentityProviderSamlMetadata: js.UndefOr[SamlMetadata] = js.undefined
     ): UpdateIdentityProviderConfigurationRequest = {
       val __obj = js.Dynamic.literal(
-        "FleetArn"             -> FleetArn.asInstanceOf[js.Any],
+        "FleetArn" -> FleetArn.asInstanceOf[js.Any],
         "IdentityProviderType" -> IdentityProviderType.asInstanceOf[js.Any]
       )
 

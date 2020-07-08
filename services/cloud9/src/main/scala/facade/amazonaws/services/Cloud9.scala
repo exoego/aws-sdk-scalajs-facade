@@ -9,24 +9,24 @@ import facade.amazonaws._
 package object cloud9 {
   type AutomaticStopTimeMinutes = Int
   type BoundedEnvironmentIdList = js.Array[EnvironmentId]
-  type ClientRequestToken       = String
-  type EnvironmentArn           = String
-  type EnvironmentDescription   = String
-  type EnvironmentId            = String
-  type EnvironmentIdList        = js.Array[EnvironmentId]
-  type EnvironmentList          = js.Array[Environment]
-  type EnvironmentMembersList   = js.Array[EnvironmentMember]
-  type EnvironmentName          = String
-  type InstanceType             = String
-  type MaxResults               = Int
-  type PermissionsList          = js.Array[Permissions]
-  type SubnetId                 = String
-  type TagKey                   = String
-  type TagKeyList               = js.Array[TagKey]
-  type TagList                  = js.Array[Tag]
-  type TagValue                 = String
-  type Timestamp                = js.Date
-  type UserArn                  = String
+  type ClientRequestToken = String
+  type EnvironmentArn = String
+  type EnvironmentDescription = String
+  type EnvironmentId = String
+  type EnvironmentIdList = js.Array[EnvironmentId]
+  type EnvironmentList = js.Array[Environment]
+  type EnvironmentMembersList = js.Array[EnvironmentMember]
+  type EnvironmentName = String
+  type InstanceType = String
+  type MaxResults = Int
+  type PermissionsList = js.Array[Permissions]
+  type SubnetId = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type Timestamp = js.Date
+  type UserArn = String
 
   implicit final class Cloud9Ops(private val service: Cloud9) extends AnyVal {
 
@@ -73,7 +73,7 @@ package cloud9 {
     def createEnvironmentEC2(params: CreateEnvironmentEC2Request): Request[CreateEnvironmentEC2Result] = js.native
     def createEnvironmentMembership(
         params: CreateEnvironmentMembershipRequest
-    ): Request[CreateEnvironmentMembershipResult]                                             = js.native
+    ): Request[CreateEnvironmentMembershipResult] = js.native
     def deleteEnvironment(params: DeleteEnvironmentRequest): Request[DeleteEnvironmentResult] = js.native
     def deleteEnvironmentMembership(
         params: DeleteEnvironmentMembershipRequest
@@ -84,11 +84,11 @@ package cloud9 {
     def describeEnvironmentStatus(params: DescribeEnvironmentStatusRequest): Request[DescribeEnvironmentStatusResult] =
       js.native
     def describeEnvironments(params: DescribeEnvironmentsRequest): Request[DescribeEnvironmentsResult] = js.native
-    def listEnvironments(params: ListEnvironmentsRequest): Request[ListEnvironmentsResult]             = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]  = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                          = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                    = js.native
-    def updateEnvironment(params: UpdateEnvironmentRequest): Request[UpdateEnvironmentResult]          = js.native
+    def listEnvironments(params: ListEnvironmentsRequest): Request[ListEnvironmentsResult] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateEnvironment(params: UpdateEnvironmentRequest): Request[UpdateEnvironmentResult] = js.native
     def updateEnvironmentMembership(
         params: UpdateEnvironmentMembershipRequest
     ): Request[UpdateEnvironmentMembershipResult] = js.native
@@ -120,7 +120,7 @@ package cloud9 {
     ): CreateEnvironmentEC2Request = {
       val __obj = js.Dynamic.literal(
         "instanceType" -> instanceType.asInstanceOf[js.Any],
-        "name"         -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       automaticStopTimeMinutes.foreach(__v => __obj.updateDynamic("automaticStopTimeMinutes")(__v.asInstanceOf[js.Any]))
@@ -165,8 +165,8 @@ package cloud9 {
     ): CreateEnvironmentMembershipRequest = {
       val __obj = js.Dynamic.literal(
         "environmentId" -> environmentId.asInstanceOf[js.Any],
-        "permissions"   -> permissions.asInstanceOf[js.Any],
-        "userArn"       -> userArn.asInstanceOf[js.Any]
+        "permissions" -> permissions.asInstanceOf[js.Any],
+        "userArn" -> userArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateEnvironmentMembershipRequest]
@@ -203,7 +203,7 @@ package cloud9 {
     ): DeleteEnvironmentMembershipRequest = {
       val __obj = js.Dynamic.literal(
         "environmentId" -> environmentId.asInstanceOf[js.Any],
-        "userArn"       -> userArn.asInstanceOf[js.Any]
+        "userArn" -> userArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteEnvironmentMembershipRequest]
@@ -437,10 +437,10 @@ package cloud9 {
   @js.native
   sealed trait EnvironmentLifecycleStatus extends js.Any
   object EnvironmentLifecycleStatus extends js.Object {
-    val CREATING      = "CREATING".asInstanceOf[EnvironmentLifecycleStatus]
-    val CREATED       = "CREATED".asInstanceOf[EnvironmentLifecycleStatus]
+    val CREATING = "CREATING".asInstanceOf[EnvironmentLifecycleStatus]
+    val CREATED = "CREATED".asInstanceOf[EnvironmentLifecycleStatus]
     val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[EnvironmentLifecycleStatus]
-    val DELETING      = "DELETING".asInstanceOf[EnvironmentLifecycleStatus]
+    val DELETING = "DELETING".asInstanceOf[EnvironmentLifecycleStatus]
     val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[EnvironmentLifecycleStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, CREATED, CREATE_FAILED, DELETING, DELETE_FAILED))
@@ -480,13 +480,13 @@ package cloud9 {
   @js.native
   sealed trait EnvironmentStatus extends js.Any
   object EnvironmentStatus extends js.Object {
-    val error      = "error".asInstanceOf[EnvironmentStatus]
-    val creating   = "creating".asInstanceOf[EnvironmentStatus]
+    val error = "error".asInstanceOf[EnvironmentStatus]
+    val creating = "creating".asInstanceOf[EnvironmentStatus]
     val connecting = "connecting".asInstanceOf[EnvironmentStatus]
-    val ready      = "ready".asInstanceOf[EnvironmentStatus]
-    val stopping   = "stopping".asInstanceOf[EnvironmentStatus]
-    val stopped    = "stopped".asInstanceOf[EnvironmentStatus]
-    val deleting   = "deleting".asInstanceOf[EnvironmentStatus]
+    val ready = "ready".asInstanceOf[EnvironmentStatus]
+    val stopping = "stopping".asInstanceOf[EnvironmentStatus]
+    val stopped = "stopped".asInstanceOf[EnvironmentStatus]
+    val deleting = "deleting".asInstanceOf[EnvironmentStatus]
 
     val values = js.Object.freeze(js.Array(error, creating, connecting, ready, stopping, stopped, deleting))
   }
@@ -576,7 +576,7 @@ package cloud9 {
   sealed trait MemberPermissions extends js.Any
   object MemberPermissions extends js.Object {
     val `read-write` = "read-write".asInstanceOf[MemberPermissions]
-    val `read-only`  = "read-only".asInstanceOf[MemberPermissions]
+    val `read-only` = "read-only".asInstanceOf[MemberPermissions]
 
     val values = js.Object.freeze(js.Array(`read-write`, `read-only`))
   }
@@ -584,9 +584,9 @@ package cloud9 {
   @js.native
   sealed trait Permissions extends js.Any
   object Permissions extends js.Object {
-    val owner        = "owner".asInstanceOf[Permissions]
+    val owner = "owner".asInstanceOf[Permissions]
     val `read-write` = "read-write".asInstanceOf[Permissions]
-    val `read-only`  = "read-only".asInstanceOf[Permissions]
+    val `read-only` = "read-only".asInstanceOf[Permissions]
 
     val values = js.Object.freeze(js.Array(owner, `read-write`, `read-only`))
   }
@@ -607,7 +607,7 @@ package cloud9 {
         Value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -629,7 +629,7 @@ package cloud9 {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -663,7 +663,7 @@ package cloud9 {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -699,8 +699,8 @@ package cloud9 {
     ): UpdateEnvironmentMembershipRequest = {
       val __obj = js.Dynamic.literal(
         "environmentId" -> environmentId.asInstanceOf[js.Any],
-        "permissions"   -> permissions.asInstanceOf[js.Any],
-        "userArn"       -> userArn.asInstanceOf[js.Any]
+        "permissions" -> permissions.asInstanceOf[js.Any],
+        "userArn" -> userArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateEnvironmentMembershipRequest]

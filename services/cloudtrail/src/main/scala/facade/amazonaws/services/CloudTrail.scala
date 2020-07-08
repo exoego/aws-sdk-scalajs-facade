@@ -7,25 +7,25 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object cloudtrail {
-  type ByteBuffer                    = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type DataResourceValues            = js.Array[String]
-  type DataResources                 = js.Array[DataResource]
-  type Date                          = js.Date
-  type EventSelectors                = js.Array[EventSelector]
-  type EventsList                    = js.Array[Event]
+  type ByteBuffer = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type DataResourceValues = js.Array[String]
+  type DataResources = js.Array[DataResource]
+  type Date = js.Date
+  type EventSelectors = js.Array[EventSelector]
+  type EventsList = js.Array[Event]
   type ExcludeManagementEventSources = js.Array[String]
-  type InsightSelectors              = js.Array[InsightSelector]
-  type LookupAttributesList          = js.Array[LookupAttribute]
-  type MaxResults                    = Int
-  type NextToken                     = String
-  type PublicKeyList                 = js.Array[PublicKey]
-  type ResourceIdList                = js.Array[String]
-  type ResourceList                  = js.Array[Resource]
-  type ResourceTagList               = js.Array[ResourceTag]
-  type TagsList                      = js.Array[Tag]
-  type TrailList                     = js.Array[Trail]
-  type TrailNameList                 = js.Array[String]
-  type Trails                        = js.Array[TrailInfo]
+  type InsightSelectors = js.Array[InsightSelector]
+  type LookupAttributesList = js.Array[LookupAttribute]
+  type MaxResults = Int
+  type NextToken = String
+  type PublicKeyList = js.Array[PublicKey]
+  type ResourceIdList = js.Array[String]
+  type ResourceList = js.Array[Resource]
+  type ResourceTagList = js.Array[ResourceTag]
+  type TagsList = js.Array[Tag]
+  type TrailList = js.Array[Trail]
+  type TrailNameList = js.Array[String]
+  type Trails = js.Array[TrailInfo]
 
   implicit final class CloudTrailOps(private val service: CloudTrail) extends AnyVal {
 
@@ -74,24 +74,24 @@ package cloudtrail {
   class CloudTrail() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def addTags(params: AddTagsRequest): Request[AddTagsResponse]                                     = js.native
-    def createTrail(params: CreateTrailRequest): Request[CreateTrailResponse]                         = js.native
-    def deleteTrail(params: DeleteTrailRequest): Request[DeleteTrailResponse]                         = js.native
-    def describeTrails(params: DescribeTrailsRequest): Request[DescribeTrailsResponse]                = js.native
-    def getEventSelectors(params: GetEventSelectorsRequest): Request[GetEventSelectorsResponse]       = js.native
+    def addTags(params: AddTagsRequest): Request[AddTagsResponse] = js.native
+    def createTrail(params: CreateTrailRequest): Request[CreateTrailResponse] = js.native
+    def deleteTrail(params: DeleteTrailRequest): Request[DeleteTrailResponse] = js.native
+    def describeTrails(params: DescribeTrailsRequest): Request[DescribeTrailsResponse] = js.native
+    def getEventSelectors(params: GetEventSelectorsRequest): Request[GetEventSelectorsResponse] = js.native
     def getInsightSelectors(params: GetInsightSelectorsRequest): Request[GetInsightSelectorsResponse] = js.native
-    def getTrail(params: GetTrailRequest): Request[GetTrailResponse]                                  = js.native
-    def getTrailStatus(params: GetTrailStatusRequest): Request[GetTrailStatusResponse]                = js.native
-    def listPublicKeys(params: ListPublicKeysRequest): Request[ListPublicKeysResponse]                = js.native
-    def listTags(params: ListTagsRequest): Request[ListTagsResponse]                                  = js.native
-    def listTrails(params: ListTrailsRequest): Request[ListTrailsResponse]                            = js.native
-    def lookupEvents(params: LookupEventsRequest): Request[LookupEventsResponse]                      = js.native
-    def putEventSelectors(params: PutEventSelectorsRequest): Request[PutEventSelectorsResponse]       = js.native
+    def getTrail(params: GetTrailRequest): Request[GetTrailResponse] = js.native
+    def getTrailStatus(params: GetTrailStatusRequest): Request[GetTrailStatusResponse] = js.native
+    def listPublicKeys(params: ListPublicKeysRequest): Request[ListPublicKeysResponse] = js.native
+    def listTags(params: ListTagsRequest): Request[ListTagsResponse] = js.native
+    def listTrails(params: ListTrailsRequest): Request[ListTrailsResponse] = js.native
+    def lookupEvents(params: LookupEventsRequest): Request[LookupEventsResponse] = js.native
+    def putEventSelectors(params: PutEventSelectorsRequest): Request[PutEventSelectorsResponse] = js.native
     def putInsightSelectors(params: PutInsightSelectorsRequest): Request[PutInsightSelectorsResponse] = js.native
-    def removeTags(params: RemoveTagsRequest): Request[RemoveTagsResponse]                            = js.native
-    def startLogging(params: StartLoggingRequest): Request[StartLoggingResponse]                      = js.native
-    def stopLogging(params: StopLoggingRequest): Request[StopLoggingResponse]                         = js.native
-    def updateTrail(params: UpdateTrailRequest): Request[UpdateTrailResponse]                         = js.native
+    def removeTags(params: RemoveTagsRequest): Request[RemoveTagsResponse] = js.native
+    def startLogging(params: StartLoggingRequest): Request[StartLoggingResponse] = js.native
+    def stopLogging(params: StopLoggingRequest): Request[StopLoggingResponse] = js.native
+    def updateTrail(params: UpdateTrailRequest): Request[UpdateTrailResponse] = js.native
   }
 
   /**
@@ -170,7 +170,7 @@ package cloudtrail {
         TagsList: js.UndefOr[TagsList] = js.undefined
     ): CreateTrailRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"         -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "S3BucketName" -> S3BucketName.asInstanceOf[js.Any]
       )
 
@@ -826,7 +826,7 @@ package cloudtrail {
         AttributeValue: String
     ): LookupAttribute = {
       val __obj = js.Dynamic.literal(
-        "AttributeKey"   -> AttributeKey.asInstanceOf[js.Any],
+        "AttributeKey" -> AttributeKey.asInstanceOf[js.Any],
         "AttributeValue" -> AttributeValue.asInstanceOf[js.Any]
       )
 
@@ -837,14 +837,14 @@ package cloudtrail {
   @js.native
   sealed trait LookupAttributeKey extends js.Any
   object LookupAttributeKey extends js.Object {
-    val EventId      = "EventId".asInstanceOf[LookupAttributeKey]
-    val EventName    = "EventName".asInstanceOf[LookupAttributeKey]
-    val ReadOnly     = "ReadOnly".asInstanceOf[LookupAttributeKey]
-    val Username     = "Username".asInstanceOf[LookupAttributeKey]
+    val EventId = "EventId".asInstanceOf[LookupAttributeKey]
+    val EventName = "EventName".asInstanceOf[LookupAttributeKey]
+    val ReadOnly = "ReadOnly".asInstanceOf[LookupAttributeKey]
+    val Username = "Username".asInstanceOf[LookupAttributeKey]
     val ResourceType = "ResourceType".asInstanceOf[LookupAttributeKey]
     val ResourceName = "ResourceName".asInstanceOf[LookupAttributeKey]
-    val EventSource  = "EventSource".asInstanceOf[LookupAttributeKey]
-    val AccessKeyId  = "AccessKeyId".asInstanceOf[LookupAttributeKey]
+    val EventSource = "EventSource".asInstanceOf[LookupAttributeKey]
+    val AccessKeyId = "AccessKeyId".asInstanceOf[LookupAttributeKey]
 
     val values = js.Object.freeze(
       js.Array(EventId, EventName, ReadOnly, Username, ResourceType, ResourceName, EventSource, AccessKeyId)
@@ -949,7 +949,7 @@ package cloudtrail {
     ): PutEventSelectorsRequest = {
       val __obj = js.Dynamic.literal(
         "EventSelectors" -> EventSelectors.asInstanceOf[js.Any],
-        "TrailName"      -> TrailName.asInstanceOf[js.Any]
+        "TrailName" -> TrailName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutEventSelectorsRequest]
@@ -989,7 +989,7 @@ package cloudtrail {
     ): PutInsightSelectorsRequest = {
       val __obj = js.Dynamic.literal(
         "InsightSelectors" -> InsightSelectors.asInstanceOf[js.Any],
-        "TrailName"        -> TrailName.asInstanceOf[js.Any]
+        "TrailName" -> TrailName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutInsightSelectorsRequest]
@@ -1018,9 +1018,9 @@ package cloudtrail {
   @js.native
   sealed trait ReadWriteType extends js.Any
   object ReadWriteType extends js.Object {
-    val ReadOnly  = "ReadOnly".asInstanceOf[ReadWriteType]
+    val ReadOnly = "ReadOnly".asInstanceOf[ReadWriteType]
     val WriteOnly = "WriteOnly".asInstanceOf[ReadWriteType]
-    val All       = "All".asInstanceOf[ReadWriteType]
+    val All = "All".asInstanceOf[ReadWriteType]
 
     val values = js.Object.freeze(js.Array(ReadOnly, WriteOnly, All))
   }
