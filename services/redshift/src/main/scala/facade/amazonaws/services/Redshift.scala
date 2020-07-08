@@ -81,6 +81,7 @@ package object redshift {
   type TagValueList                       = js.Array[String]
   type TaggedResourceList                 = js.Array[TaggedResource]
   type TrackList                          = js.Array[MaintenanceTrack]
+  type UsageLimits                        = js.Array[UsageLimit]
   type ValueStringList                    = js.Array[String]
   type VpcSecurityGroupIdList             = js.Array[String]
   type VpcSecurityGroupMembershipList     = js.Array[VpcSecurityGroupMembership]
@@ -138,6 +139,8 @@ package object redshift {
       service.createSnapshotSchedule(params).promise().toFuture
     @inline def createTagsFuture(params: CreateTagsMessage): Future[js.Object] =
       service.createTags(params).promise().toFuture
+    @inline def createUsageLimitFuture(params: CreateUsageLimitMessage): Future[UsageLimit] =
+      service.createUsageLimit(params).promise().toFuture
     @inline def deleteClusterFuture(params: DeleteClusterMessage): Future[DeleteClusterResult] =
       service.deleteCluster(params).promise().toFuture
     @inline def deleteClusterParameterGroupFuture(params: DeleteClusterParameterGroupMessage): Future[js.Object] =
@@ -162,6 +165,8 @@ package object redshift {
       service.deleteSnapshotSchedule(params).promise().toFuture
     @inline def deleteTagsFuture(params: DeleteTagsMessage): Future[js.Object] =
       service.deleteTags(params).promise().toFuture
+    @inline def deleteUsageLimitFuture(params: DeleteUsageLimitMessage): Future[js.Object] =
+      service.deleteUsageLimit(params).promise().toFuture
     @inline def describeAccountAttributesFuture(
         params: DescribeAccountAttributesMessage
     ): Future[AccountAttributeList] = service.describeAccountAttributes(params).promise().toFuture
@@ -235,6 +240,8 @@ package object redshift {
     ): Future[TableRestoreStatusMessage] = service.describeTableRestoreStatus(params).promise().toFuture
     @inline def describeTagsFuture(params: DescribeTagsMessage): Future[TaggedResourceListMessage] =
       service.describeTags(params).promise().toFuture
+    @inline def describeUsageLimitsFuture(params: DescribeUsageLimitsMessage): Future[UsageLimitList] =
+      service.describeUsageLimits(params).promise().toFuture
     @inline def disableLoggingFuture(params: DisableLoggingMessage): Future[LoggingStatus] =
       service.disableLogging(params).promise().toFuture
     @inline def disableSnapshotCopyFuture(params: DisableSnapshotCopyMessage): Future[DisableSnapshotCopyResult] =
@@ -280,6 +287,10 @@ package object redshift {
       service.modifySnapshotCopyRetentionPeriod(params).promise().toFuture
     @inline def modifySnapshotScheduleFuture(params: ModifySnapshotScheduleMessage): Future[SnapshotSchedule] =
       service.modifySnapshotSchedule(params).promise().toFuture
+    @inline def modifyUsageLimitFuture(params: ModifyUsageLimitMessage): Future[UsageLimit] =
+      service.modifyUsageLimit(params).promise().toFuture
+    @inline def pauseClusterFuture(params: PauseClusterMessage): Future[PauseClusterResult] =
+      service.pauseCluster(params).promise().toFuture
     @inline def purchaseReservedNodeOfferingFuture(
         params: PurchaseReservedNodeOfferingMessage
     ): Future[PurchaseReservedNodeOfferingResult] = service.purchaseReservedNodeOffering(params).promise().toFuture
@@ -297,6 +308,8 @@ package object redshift {
         params: RestoreTableFromClusterSnapshotMessage
     ): Future[RestoreTableFromClusterSnapshotResult] =
       service.restoreTableFromClusterSnapshot(params).promise().toFuture
+    @inline def resumeClusterFuture(params: ResumeClusterMessage): Future[ResumeClusterResult] =
+      service.resumeCluster(params).promise().toFuture
     @inline def revokeClusterSecurityGroupIngressFuture(
         params: RevokeClusterSecurityGroupIngressMessage
     ): Future[RevokeClusterSecurityGroupIngressResult] =
@@ -351,6 +364,7 @@ package redshift {
       js.native
     def createSnapshotSchedule(params: CreateSnapshotScheduleMessage): Request[SnapshotSchedule]           = js.native
     def createTags(params: CreateTagsMessage): Request[js.Object]                                          = js.native
+    def createUsageLimit(params: CreateUsageLimitMessage): Request[UsageLimit]                             = js.native
     def deleteCluster(params: DeleteClusterMessage): Request[DeleteClusterResult]                          = js.native
     def deleteClusterParameterGroup(params: DeleteClusterParameterGroupMessage): Request[js.Object]        = js.native
     def deleteClusterSecurityGroup(params: DeleteClusterSecurityGroupMessage): Request[js.Object]          = js.native
@@ -363,6 +377,7 @@ package redshift {
     def deleteSnapshotCopyGrant(params: DeleteSnapshotCopyGrantMessage): Request[js.Object]                = js.native
     def deleteSnapshotSchedule(params: DeleteSnapshotScheduleMessage): Request[js.Object]                  = js.native
     def deleteTags(params: DeleteTagsMessage): Request[js.Object]                                          = js.native
+    def deleteUsageLimit(params: DeleteUsageLimitMessage): Request[js.Object]                              = js.native
     def describeAccountAttributes(params: DescribeAccountAttributesMessage): Request[AccountAttributeList] = js.native
     def describeClusterDbRevisions(params: DescribeClusterDbRevisionsMessage): Request[ClusterDbRevisionsMessage] =
       js.native
@@ -414,6 +429,7 @@ package redshift {
     def describeTableRestoreStatus(params: DescribeTableRestoreStatusMessage): Request[TableRestoreStatusMessage] =
       js.native
     def describeTags(params: DescribeTagsMessage): Request[TaggedResourceListMessage]               = js.native
+    def describeUsageLimits(params: DescribeUsageLimitsMessage): Request[UsageLimitList]            = js.native
     def disableLogging(params: DisableLoggingMessage): Request[LoggingStatus]                       = js.native
     def disableSnapshotCopy(params: DisableSnapshotCopyMessage): Request[DisableSnapshotCopyResult] = js.native
     def enableLogging(params: EnableLoggingMessage): Request[LoggingStatus]                         = js.native
@@ -442,6 +458,8 @@ package redshift {
         params: ModifySnapshotCopyRetentionPeriodMessage
     ): Request[ModifySnapshotCopyRetentionPeriodResult]                                          = js.native
     def modifySnapshotSchedule(params: ModifySnapshotScheduleMessage): Request[SnapshotSchedule] = js.native
+    def modifyUsageLimit(params: ModifyUsageLimitMessage): Request[UsageLimit]                   = js.native
+    def pauseCluster(params: PauseClusterMessage): Request[PauseClusterResult]                   = js.native
     def purchaseReservedNodeOffering(
         params: PurchaseReservedNodeOfferingMessage
     ): Request[PurchaseReservedNodeOfferingResult]                                = js.native
@@ -455,7 +473,8 @@ package redshift {
     ): Request[RestoreFromClusterSnapshotResult] = js.native
     def restoreTableFromClusterSnapshot(
         params: RestoreTableFromClusterSnapshotMessage
-    ): Request[RestoreTableFromClusterSnapshotResult] = js.native
+    ): Request[RestoreTableFromClusterSnapshotResult]                             = js.native
+    def resumeCluster(params: ResumeClusterMessage): Request[ResumeClusterResult] = js.native
     def revokeClusterSecurityGroupIngress(
         params: RevokeClusterSecurityGroupIngressMessage
     ): Request[RevokeClusterSecurityGroupIngressResult]                                                = js.native
@@ -2165,6 +2184,42 @@ package redshift {
   }
 
   @js.native
+  trait CreateUsageLimitMessage extends js.Object {
+    var Amount: Double
+    var ClusterIdentifier: String
+    var FeatureType: UsageLimitFeatureType
+    var LimitType: UsageLimitLimitType
+    var BreachAction: js.UndefOr[UsageLimitBreachAction]
+    var Period: js.UndefOr[UsageLimitPeriod]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateUsageLimitMessage {
+    @inline
+    def apply(
+        Amount: Double,
+        ClusterIdentifier: String,
+        FeatureType: UsageLimitFeatureType,
+        LimitType: UsageLimitLimitType,
+        BreachAction: js.UndefOr[UsageLimitBreachAction] = js.undefined,
+        Period: js.UndefOr[UsageLimitPeriod] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateUsageLimitMessage = {
+      val __obj = js.Dynamic.literal(
+        "Amount"            -> Amount.asInstanceOf[js.Any],
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
+        "FeatureType"       -> FeatureType.asInstanceOf[js.Any],
+        "LimitType"         -> LimitType.asInstanceOf[js.Any]
+      )
+
+      BreachAction.foreach(__v => __obj.updateDynamic("BreachAction")(__v.asInstanceOf[js.Any]))
+      Period.foreach(__v => __obj.updateDynamic("Period")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateUsageLimitMessage]
+    }
+  }
+
+  @js.native
   trait CustomerStorageMessage extends js.Object {
     var TotalBackupSizeInMegaBytes: js.UndefOr[Double]
     var TotalProvisionedStorageInMegaBytes: js.UndefOr[Double]
@@ -2577,6 +2632,24 @@ package redshift {
       )
 
       __obj.asInstanceOf[DeleteTagsMessage]
+    }
+  }
+
+  @js.native
+  trait DeleteUsageLimitMessage extends js.Object {
+    var UsageLimitId: String
+  }
+
+  object DeleteUsageLimitMessage {
+    @inline
+    def apply(
+        UsageLimitId: String
+    ): DeleteUsageLimitMessage = {
+      val __obj = js.Dynamic.literal(
+        "UsageLimitId" -> UsageLimitId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteUsageLimitMessage]
     }
   }
 
@@ -3405,6 +3478,40 @@ package redshift {
       TagKeys.foreach(__v => __obj.updateDynamic("TagKeys")(__v.asInstanceOf[js.Any]))
       TagValues.foreach(__v => __obj.updateDynamic("TagValues")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTagsMessage]
+    }
+  }
+
+  @js.native
+  trait DescribeUsageLimitsMessage extends js.Object {
+    var ClusterIdentifier: js.UndefOr[String]
+    var FeatureType: js.UndefOr[UsageLimitFeatureType]
+    var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+    var TagKeys: js.UndefOr[TagKeyList]
+    var TagValues: js.UndefOr[TagValueList]
+    var UsageLimitId: js.UndefOr[String]
+  }
+
+  object DescribeUsageLimitsMessage {
+    @inline
+    def apply(
+        ClusterIdentifier: js.UndefOr[String] = js.undefined,
+        FeatureType: js.UndefOr[UsageLimitFeatureType] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        TagKeys: js.UndefOr[TagKeyList] = js.undefined,
+        TagValues: js.UndefOr[TagValueList] = js.undefined,
+        UsageLimitId: js.UndefOr[String] = js.undefined
+    ): DescribeUsageLimitsMessage = {
+      val __obj = js.Dynamic.literal()
+      ClusterIdentifier.foreach(__v => __obj.updateDynamic("ClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      FeatureType.foreach(__v => __obj.updateDynamic("FeatureType")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      TagKeys.foreach(__v => __obj.updateDynamic("TagKeys")(__v.asInstanceOf[js.Any]))
+      TagValues.foreach(__v => __obj.updateDynamic("TagValues")(__v.asInstanceOf[js.Any]))
+      UsageLimitId.foreach(__v => __obj.updateDynamic("UsageLimitId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeUsageLimitsMessage]
     }
   }
 
@@ -4665,6 +4772,30 @@ package redshift {
     }
   }
 
+  @js.native
+  trait ModifyUsageLimitMessage extends js.Object {
+    var UsageLimitId: String
+    var Amount: js.UndefOr[LongOptional]
+    var BreachAction: js.UndefOr[UsageLimitBreachAction]
+  }
+
+  object ModifyUsageLimitMessage {
+    @inline
+    def apply(
+        UsageLimitId: String,
+        Amount: js.UndefOr[LongOptional] = js.undefined,
+        BreachAction: js.UndefOr[UsageLimitBreachAction] = js.undefined
+    ): ModifyUsageLimitMessage = {
+      val __obj = js.Dynamic.literal(
+        "UsageLimitId" -> UsageLimitId.asInstanceOf[js.Any]
+      )
+
+      Amount.foreach(__v => __obj.updateDynamic("Amount")(__v.asInstanceOf[js.Any]))
+      BreachAction.foreach(__v => __obj.updateDynamic("BreachAction")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyUsageLimitMessage]
+    }
+  }
+
   /**
     * A list of node configurations.
     */
@@ -4867,6 +4998,40 @@ package redshift {
     val dynamic = "dynamic".asInstanceOf[ParameterApplyType]
 
     val values = js.Object.freeze(js.Array(static, dynamic))
+  }
+
+  @js.native
+  trait PauseClusterMessage extends js.Object {
+    var ClusterIdentifier: String
+  }
+
+  object PauseClusterMessage {
+    @inline
+    def apply(
+        ClusterIdentifier: String
+    ): PauseClusterMessage = {
+      val __obj = js.Dynamic.literal(
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[PauseClusterMessage]
+    }
+  }
+
+  @js.native
+  trait PauseClusterResult extends js.Object {
+    var Cluster: js.UndefOr[Cluster]
+  }
+
+  object PauseClusterResult {
+    @inline
+    def apply(
+        Cluster: js.UndefOr[Cluster] = js.undefined
+    ): PauseClusterResult = {
+      val __obj = js.Dynamic.literal()
+      Cluster.foreach(__v => __obj.updateDynamic("Cluster")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PauseClusterResult]
+    }
   }
 
   /**
@@ -5561,6 +5726,40 @@ package redshift {
     }
   }
 
+  @js.native
+  trait ResumeClusterMessage extends js.Object {
+    var ClusterIdentifier: String
+  }
+
+  object ResumeClusterMessage {
+    @inline
+    def apply(
+        ClusterIdentifier: String
+    ): ResumeClusterMessage = {
+      val __obj = js.Dynamic.literal(
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ResumeClusterMessage]
+    }
+  }
+
+  @js.native
+  trait ResumeClusterResult extends js.Object {
+    var Cluster: js.UndefOr[Cluster]
+  }
+
+  object ResumeClusterResult {
+    @inline
+    def apply(
+        Cluster: js.UndefOr[Cluster] = js.undefined
+    ): ResumeClusterResult = {
+      val __obj = js.Dynamic.literal()
+      Cluster.foreach(__v => __obj.updateDynamic("Cluster")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResumeClusterResult]
+    }
+  }
+
   /**
     * Describes a <code>RevisionTarget</code>.
     */
@@ -5818,16 +6017,22 @@ package redshift {
     */
   @js.native
   trait ScheduledActionType extends js.Object {
+    var PauseCluster: js.UndefOr[PauseClusterMessage]
     var ResizeCluster: js.UndefOr[ResizeClusterMessage]
+    var ResumeCluster: js.UndefOr[ResumeClusterMessage]
   }
 
   object ScheduledActionType {
     @inline
     def apply(
-        ResizeCluster: js.UndefOr[ResizeClusterMessage] = js.undefined
+        PauseCluster: js.UndefOr[PauseClusterMessage] = js.undefined,
+        ResizeCluster: js.UndefOr[ResizeClusterMessage] = js.undefined,
+        ResumeCluster: js.UndefOr[ResumeClusterMessage] = js.undefined
     ): ScheduledActionType = {
       val __obj = js.Dynamic.literal()
+      PauseCluster.foreach(__v => __obj.updateDynamic("PauseCluster")(__v.asInstanceOf[js.Any]))
       ResizeCluster.foreach(__v => __obj.updateDynamic("ResizeCluster")(__v.asInstanceOf[js.Any]))
+      ResumeCluster.foreach(__v => __obj.updateDynamic("ResumeCluster")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScheduledActionType]
     }
   }
@@ -5836,8 +6041,10 @@ package redshift {
   sealed trait ScheduledActionTypeValues extends js.Any
   object ScheduledActionTypeValues extends js.Object {
     val ResizeCluster = "ResizeCluster".asInstanceOf[ScheduledActionTypeValues]
+    val PauseCluster  = "PauseCluster".asInstanceOf[ScheduledActionTypeValues]
+    val ResumeCluster = "ResumeCluster".asInstanceOf[ScheduledActionTypeValues]
 
-    val values = js.Object.freeze(js.Array(ResizeCluster))
+    val values = js.Object.freeze(js.Array(ResizeCluster, PauseCluster, ResumeCluster))
   }
 
   @js.native
@@ -6454,6 +6661,103 @@ package redshift {
       SupportedOperations.foreach(__v => __obj.updateDynamic("SupportedOperations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateTarget]
     }
+  }
+
+  /**
+    * Describes a usage limit object for a cluster.
+    */
+  @js.native
+  trait UsageLimit extends js.Object {
+    var Amount: js.UndefOr[Double]
+    var BreachAction: js.UndefOr[UsageLimitBreachAction]
+    var ClusterIdentifier: js.UndefOr[String]
+    var FeatureType: js.UndefOr[UsageLimitFeatureType]
+    var LimitType: js.UndefOr[UsageLimitLimitType]
+    var Period: js.UndefOr[UsageLimitPeriod]
+    var Tags: js.UndefOr[TagList]
+    var UsageLimitId: js.UndefOr[String]
+  }
+
+  object UsageLimit {
+    @inline
+    def apply(
+        Amount: js.UndefOr[Double] = js.undefined,
+        BreachAction: js.UndefOr[UsageLimitBreachAction] = js.undefined,
+        ClusterIdentifier: js.UndefOr[String] = js.undefined,
+        FeatureType: js.UndefOr[UsageLimitFeatureType] = js.undefined,
+        LimitType: js.UndefOr[UsageLimitLimitType] = js.undefined,
+        Period: js.UndefOr[UsageLimitPeriod] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        UsageLimitId: js.UndefOr[String] = js.undefined
+    ): UsageLimit = {
+      val __obj = js.Dynamic.literal()
+      Amount.foreach(__v => __obj.updateDynamic("Amount")(__v.asInstanceOf[js.Any]))
+      BreachAction.foreach(__v => __obj.updateDynamic("BreachAction")(__v.asInstanceOf[js.Any]))
+      ClusterIdentifier.foreach(__v => __obj.updateDynamic("ClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      FeatureType.foreach(__v => __obj.updateDynamic("FeatureType")(__v.asInstanceOf[js.Any]))
+      LimitType.foreach(__v => __obj.updateDynamic("LimitType")(__v.asInstanceOf[js.Any]))
+      Period.foreach(__v => __obj.updateDynamic("Period")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      UsageLimitId.foreach(__v => __obj.updateDynamic("UsageLimitId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UsageLimit]
+    }
+  }
+
+  @js.native
+  sealed trait UsageLimitBreachAction extends js.Any
+  object UsageLimitBreachAction extends js.Object {
+    val log           = "log".asInstanceOf[UsageLimitBreachAction]
+    val `emit-metric` = "emit-metric".asInstanceOf[UsageLimitBreachAction]
+    val disable       = "disable".asInstanceOf[UsageLimitBreachAction]
+
+    val values = js.Object.freeze(js.Array(log, `emit-metric`, disable))
+  }
+
+  @js.native
+  sealed trait UsageLimitFeatureType extends js.Any
+  object UsageLimitFeatureType extends js.Object {
+    val spectrum              = "spectrum".asInstanceOf[UsageLimitFeatureType]
+    val `concurrency-scaling` = "concurrency-scaling".asInstanceOf[UsageLimitFeatureType]
+
+    val values = js.Object.freeze(js.Array(spectrum, `concurrency-scaling`))
+  }
+
+  @js.native
+  sealed trait UsageLimitLimitType extends js.Any
+  object UsageLimitLimitType extends js.Object {
+    val time           = "time".asInstanceOf[UsageLimitLimitType]
+    val `data-scanned` = "data-scanned".asInstanceOf[UsageLimitLimitType]
+
+    val values = js.Object.freeze(js.Array(time, `data-scanned`))
+  }
+
+  @js.native
+  trait UsageLimitList extends js.Object {
+    var Marker: js.UndefOr[String]
+    var UsageLimits: js.UndefOr[UsageLimits]
+  }
+
+  object UsageLimitList {
+    @inline
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        UsageLimits: js.UndefOr[UsageLimits] = js.undefined
+    ): UsageLimitList = {
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      UsageLimits.foreach(__v => __obj.updateDynamic("UsageLimits")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UsageLimitList]
+    }
+  }
+
+  @js.native
+  sealed trait UsageLimitPeriod extends js.Any
+  object UsageLimitPeriod extends js.Object {
+    val daily   = "daily".asInstanceOf[UsageLimitPeriod]
+    val weekly  = "weekly".asInstanceOf[UsageLimitPeriod]
+    val monthly = "monthly".asInstanceOf[UsageLimitPeriod]
+
+    val values = js.Object.freeze(js.Array(daily, weekly, monthly))
   }
 
   /**

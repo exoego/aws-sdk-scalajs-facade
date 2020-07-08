@@ -12,9 +12,11 @@ package object quicksight {
   type AliasName                      = String
   type Arn                            = String
   type AwsAccountId                   = String
+  type AwsAndAccountId                = String
   type CalculatedColumnList           = js.Array[CalculatedColumn]
   type Catalog                        = String
   type ClusterId                      = String
+  type ColorList                      = js.Array[HexColor]
   type ColumnGroupColumnSchemaList    = js.Array[ColumnGroupColumnSchema]
   type ColumnGroupList                = js.Array[ColumnGroup]
   type ColumnGroupName                = String
@@ -24,16 +26,20 @@ package object quicksight {
   type ColumnName                     = String
   type ColumnSchemaList               = js.Array[ColumnSchema]
   type ColumnTagList                  = js.Array[ColumnTag]
+  type CopySourceArn                  = String
   type CustomSqlName                  = String
   type DashboardErrorList             = js.Array[DashboardError]
   type DashboardName                  = String
+  type DashboardSearchFilterList      = js.Array[DashboardSearchFilter]
   type DashboardSummaryList           = js.Array[DashboardSummary]
   type DashboardVersionSummaryList    = js.Array[DashboardVersionSummary]
+  type DataSetArnsList                = js.Array[Arn]
   type DataSetConfigurationList       = js.Array[DataSetConfiguration]
   type DataSetName                    = String
   type DataSetReferenceList           = js.Array[DataSetReference]
   type DataSetSummaryList             = js.Array[DataSetSummary]
   type DataSourceList                 = js.Array[DataSource]
+  type DataSourceParametersList       = js.Array[DataSourceParameters]
   type Database                       = String
   type DateTimeParameterList          = js.Array[DateTimeParameter]
   type DecimalParameterList           = js.Array[DecimalParameter]
@@ -47,6 +53,7 @@ package object quicksight {
   type GroupMemberList                = js.Array[GroupMember]
   type GroupMemberName                = String
   type GroupName                      = String
+  type HexColor                       = String
   type Host                           = String
   type IAMPolicyAssignmentName        = String
   type IAMPolicyAssignmentSummaryList = js.Array[IAMPolicyAssignmentSummary]
@@ -101,6 +108,11 @@ package object quicksight {
   type TemplateName                   = String
   type TemplateSummaryList            = js.Array[TemplateSummary]
   type TemplateVersionSummaryList     = js.Array[TemplateVersionSummary]
+  type ThemeAliasList                 = js.Array[ThemeAlias]
+  type ThemeErrorList                 = js.Array[ThemeError]
+  type ThemeName                      = String
+  type ThemeSummaryList               = js.Array[ThemeSummary]
+  type ThemeVersionSummaryList        = js.Array[ThemeVersionSummary]
   type Timestamp                      = js.Date
   type TimestampList                  = js.Array[Timestamp]
   type TransformOperationList         = js.Array[TransformOperation]
@@ -139,6 +151,10 @@ package object quicksight {
       service.createTemplateAlias(params).promise().toFuture
     @inline def createTemplateFuture(params: CreateTemplateRequest): Future[CreateTemplateResponse] =
       service.createTemplate(params).promise().toFuture
+    @inline def createThemeAliasFuture(params: CreateThemeAliasRequest): Future[CreateThemeAliasResponse] =
+      service.createThemeAlias(params).promise().toFuture
+    @inline def createThemeFuture(params: CreateThemeRequest): Future[CreateThemeResponse] =
+      service.createTheme(params).promise().toFuture
     @inline def deleteDashboardFuture(params: DeleteDashboardRequest): Future[DeleteDashboardResponse] =
       service.deleteDashboard(params).promise().toFuture
     @inline def deleteDataSetFuture(params: DeleteDataSetRequest): Future[DeleteDataSetResponse] =
@@ -157,6 +173,10 @@ package object quicksight {
       service.deleteTemplateAlias(params).promise().toFuture
     @inline def deleteTemplateFuture(params: DeleteTemplateRequest): Future[DeleteTemplateResponse] =
       service.deleteTemplate(params).promise().toFuture
+    @inline def deleteThemeAliasFuture(params: DeleteThemeAliasRequest): Future[DeleteThemeAliasResponse] =
+      service.deleteThemeAlias(params).promise().toFuture
+    @inline def deleteThemeFuture(params: DeleteThemeRequest): Future[DeleteThemeResponse] =
+      service.deleteTheme(params).promise().toFuture
     @inline def deleteUserByPrincipalIdFuture(
         params: DeleteUserByPrincipalIdRequest
     ): Future[DeleteUserByPrincipalIdResponse] = service.deleteUserByPrincipalId(params).promise().toFuture
@@ -192,6 +212,13 @@ package object quicksight {
     @inline def describeTemplatePermissionsFuture(
         params: DescribeTemplatePermissionsRequest
     ): Future[DescribeTemplatePermissionsResponse] = service.describeTemplatePermissions(params).promise().toFuture
+    @inline def describeThemeAliasFuture(params: DescribeThemeAliasRequest): Future[DescribeThemeAliasResponse] =
+      service.describeThemeAlias(params).promise().toFuture
+    @inline def describeThemeFuture(params: DescribeThemeRequest): Future[DescribeThemeResponse] =
+      service.describeTheme(params).promise().toFuture
+    @inline def describeThemePermissionsFuture(
+        params: DescribeThemePermissionsRequest
+    ): Future[DescribeThemePermissionsResponse] = service.describeThemePermissions(params).promise().toFuture
     @inline def describeUserFuture(params: DescribeUserRequest): Future[DescribeUserResponse] =
       service.describeUser(params).promise().toFuture
     @inline def getDashboardEmbedUrlFuture(params: GetDashboardEmbedUrlRequest): Future[GetDashboardEmbedUrlResponse] =
@@ -226,12 +253,20 @@ package object quicksight {
       service.listTemplateVersions(params).promise().toFuture
     @inline def listTemplatesFuture(params: ListTemplatesRequest): Future[ListTemplatesResponse] =
       service.listTemplates(params).promise().toFuture
+    @inline def listThemeAliasesFuture(params: ListThemeAliasesRequest): Future[ListThemeAliasesResponse] =
+      service.listThemeAliases(params).promise().toFuture
+    @inline def listThemeVersionsFuture(params: ListThemeVersionsRequest): Future[ListThemeVersionsResponse] =
+      service.listThemeVersions(params).promise().toFuture
+    @inline def listThemesFuture(params: ListThemesRequest): Future[ListThemesResponse] =
+      service.listThemes(params).promise().toFuture
     @inline def listUserGroupsFuture(params: ListUserGroupsRequest): Future[ListUserGroupsResponse] =
       service.listUserGroups(params).promise().toFuture
     @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
       service.listUsers(params).promise().toFuture
     @inline def registerUserFuture(params: RegisterUserRequest): Future[RegisterUserResponse] =
       service.registerUser(params).promise().toFuture
+    @inline def searchDashboardsFuture(params: SearchDashboardsRequest): Future[SearchDashboardsResponse] =
+      service.searchDashboards(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
@@ -267,6 +302,13 @@ package object quicksight {
     @inline def updateTemplatePermissionsFuture(
         params: UpdateTemplatePermissionsRequest
     ): Future[UpdateTemplatePermissionsResponse] = service.updateTemplatePermissions(params).promise().toFuture
+    @inline def updateThemeAliasFuture(params: UpdateThemeAliasRequest): Future[UpdateThemeAliasResponse] =
+      service.updateThemeAlias(params).promise().toFuture
+    @inline def updateThemeFuture(params: UpdateThemeRequest): Future[UpdateThemeResponse] =
+      service.updateTheme(params).promise().toFuture
+    @inline def updateThemePermissionsFuture(
+        params: UpdateThemePermissionsRequest
+    ): Future[UpdateThemePermissionsResponse] = service.updateThemePermissions(params).promise().toFuture
     @inline def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] =
       service.updateUser(params).promise().toFuture
   }
@@ -290,6 +332,8 @@ package quicksight {
     def createIngestion(params: CreateIngestionRequest): Request[CreateIngestionResponse]                   = js.native
     def createTemplate(params: CreateTemplateRequest): Request[CreateTemplateResponse]                      = js.native
     def createTemplateAlias(params: CreateTemplateAliasRequest): Request[CreateTemplateAliasResponse]       = js.native
+    def createTheme(params: CreateThemeRequest): Request[CreateThemeResponse]                               = js.native
+    def createThemeAlias(params: CreateThemeAliasRequest): Request[CreateThemeAliasResponse]                = js.native
     def deleteDashboard(params: DeleteDashboardRequest): Request[DeleteDashboardResponse]                   = js.native
     def deleteDataSet(params: DeleteDataSetRequest): Request[DeleteDataSetResponse]                         = js.native
     def deleteDataSource(params: DeleteDataSourceRequest): Request[DeleteDataSourceResponse]                = js.native
@@ -300,6 +344,8 @@ package quicksight {
     ): Request[DeleteIAMPolicyAssignmentResponse]                                                     = js.native
     def deleteTemplate(params: DeleteTemplateRequest): Request[DeleteTemplateResponse]                = js.native
     def deleteTemplateAlias(params: DeleteTemplateAliasRequest): Request[DeleteTemplateAliasResponse] = js.native
+    def deleteTheme(params: DeleteThemeRequest): Request[DeleteThemeResponse]                         = js.native
+    def deleteThemeAlias(params: DeleteThemeAliasRequest): Request[DeleteThemeAliasResponse]          = js.native
     def deleteUser(params: DeleteUserRequest): Request[DeleteUserResponse]                            = js.native
     def deleteUserByPrincipalId(params: DeleteUserByPrincipalIdRequest): Request[DeleteUserByPrincipalIdResponse] =
       js.native
@@ -324,7 +370,11 @@ package quicksight {
     def describeTemplateAlias(params: DescribeTemplateAliasRequest): Request[DescribeTemplateAliasResponse] = js.native
     def describeTemplatePermissions(
         params: DescribeTemplatePermissionsRequest
-    ): Request[DescribeTemplatePermissionsResponse]                                                         = js.native
+    ): Request[DescribeTemplatePermissionsResponse]                                                = js.native
+    def describeTheme(params: DescribeThemeRequest): Request[DescribeThemeResponse]                = js.native
+    def describeThemeAlias(params: DescribeThemeAliasRequest): Request[DescribeThemeAliasResponse] = js.native
+    def describeThemePermissions(params: DescribeThemePermissionsRequest): Request[DescribeThemePermissionsResponse] =
+      js.native
     def describeUser(params: DescribeUserRequest): Request[DescribeUserResponse]                            = js.native
     def getDashboardEmbedUrl(params: GetDashboardEmbedUrlRequest): Request[GetDashboardEmbedUrlResponse]    = js.native
     def listDashboardVersions(params: ListDashboardVersionsRequest): Request[ListDashboardVersionsResponse] = js.native
@@ -343,9 +393,13 @@ package quicksight {
     def listTemplateAliases(params: ListTemplateAliasesRequest): Request[ListTemplateAliasesResponse]    = js.native
     def listTemplateVersions(params: ListTemplateVersionsRequest): Request[ListTemplateVersionsResponse] = js.native
     def listTemplates(params: ListTemplatesRequest): Request[ListTemplatesResponse]                      = js.native
+    def listThemeAliases(params: ListThemeAliasesRequest): Request[ListThemeAliasesResponse]             = js.native
+    def listThemeVersions(params: ListThemeVersionsRequest): Request[ListThemeVersionsResponse]          = js.native
+    def listThemes(params: ListThemesRequest): Request[ListThemesResponse]                               = js.native
     def listUserGroups(params: ListUserGroupsRequest): Request[ListUserGroupsResponse]                   = js.native
     def listUsers(params: ListUsersRequest): Request[ListUsersResponse]                                  = js.native
     def registerUser(params: RegisterUserRequest): Request[RegisterUserResponse]                         = js.native
+    def searchDashboards(params: SearchDashboardsRequest): Request[SearchDashboardsResponse]             = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                            = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                      = js.native
     def updateDashboard(params: UpdateDashboardRequest): Request[UpdateDashboardResponse]                = js.native
@@ -370,7 +424,11 @@ package quicksight {
     def updateTemplateAlias(params: UpdateTemplateAliasRequest): Request[UpdateTemplateAliasResponse] = js.native
     def updateTemplatePermissions(
         params: UpdateTemplatePermissionsRequest
-    ): Request[UpdateTemplatePermissionsResponse]                          = js.native
+    ): Request[UpdateTemplatePermissionsResponse]                                            = js.native
+    def updateTheme(params: UpdateThemeRequest): Request[UpdateThemeResponse]                = js.native
+    def updateThemeAlias(params: UpdateThemeAliasRequest): Request[UpdateThemeAliasResponse] = js.native
+    def updateThemePermissions(params: UpdateThemePermissionsRequest): Request[UpdateThemePermissionsResponse] =
+      js.native
     def updateUser(params: UpdateUserRequest): Request[UpdateUserResponse] = js.native
   }
 
@@ -537,6 +595,25 @@ package quicksight {
       )
 
       __obj.asInstanceOf[AwsIotAnalyticsParameters]
+    }
+  }
+
+  /**
+    * The display options for tile borders for visuals.
+    */
+  @js.native
+  trait BorderStyle extends js.Object {
+    var Show: js.UndefOr[Boolean]
+  }
+
+  object BorderStyle {
+    @inline
+    def apply(
+        Show: js.UndefOr[Boolean] = js.undefined
+    ): BorderStyle = {
+      val __obj = js.Dynamic.literal()
+      Show.foreach(__v => __obj.updateDynamic("Show")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BorderStyle]
     }
   }
 
@@ -742,7 +819,7 @@ package quicksight {
   }
 
   /**
-    * A tag for a column in a <code>TagColumnOperation</code> structure. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.
+    * A tag for a column in a <a>TagColumnOperation</a> structure. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.
     */
   @js.native
   trait ColumnTag extends js.Object {
@@ -791,6 +868,7 @@ package quicksight {
     var Parameters: js.UndefOr[Parameters]
     var Permissions: js.UndefOr[ResourcePermissionList]
     var Tags: js.UndefOr[TagList]
+    var ThemeArn: js.UndefOr[Arn]
     var VersionDescription: js.UndefOr[VersionDescription]
   }
 
@@ -805,6 +883,7 @@ package quicksight {
         Parameters: js.UndefOr[Parameters] = js.undefined,
         Permissions: js.UndefOr[ResourcePermissionList] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
+        ThemeArn: js.UndefOr[Arn] = js.undefined,
         VersionDescription: js.UndefOr[VersionDescription] = js.undefined
     ): CreateDashboardRequest = {
       val __obj = js.Dynamic.literal(
@@ -818,6 +897,7 @@ package quicksight {
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      ThemeArn.foreach(__v => __obj.updateDynamic("ThemeArn")(__v.asInstanceOf[js.Any]))
       VersionDescription.foreach(__v => __obj.updateDynamic("VersionDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDashboardRequest]
     }
@@ -1344,6 +1424,125 @@ package quicksight {
     }
   }
 
+  @js.native
+  trait CreateThemeAliasRequest extends js.Object {
+    var AliasName: AliasName
+    var AwsAccountId: AwsAccountId
+    var ThemeId: RestrictiveResourceId
+    var ThemeVersionNumber: VersionNumber
+  }
+
+  object CreateThemeAliasRequest {
+    @inline
+    def apply(
+        AliasName: AliasName,
+        AwsAccountId: AwsAccountId,
+        ThemeId: RestrictiveResourceId,
+        ThemeVersionNumber: VersionNumber
+    ): CreateThemeAliasRequest = {
+      val __obj = js.Dynamic.literal(
+        "AliasName"          -> AliasName.asInstanceOf[js.Any],
+        "AwsAccountId"       -> AwsAccountId.asInstanceOf[js.Any],
+        "ThemeId"            -> ThemeId.asInstanceOf[js.Any],
+        "ThemeVersionNumber" -> ThemeVersionNumber.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateThemeAliasRequest]
+    }
+  }
+
+  @js.native
+  trait CreateThemeAliasResponse extends js.Object {
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+    var ThemeAlias: js.UndefOr[ThemeAlias]
+  }
+
+  object CreateThemeAliasResponse {
+    @inline
+    def apply(
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined,
+        ThemeAlias: js.UndefOr[ThemeAlias] = js.undefined
+    ): CreateThemeAliasResponse = {
+      val __obj = js.Dynamic.literal()
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      ThemeAlias.foreach(__v => __obj.updateDynamic("ThemeAlias")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateThemeAliasResponse]
+    }
+  }
+
+  @js.native
+  trait CreateThemeRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var BaseThemeId: RestrictiveResourceId
+    var Configuration: ThemeConfiguration
+    var Name: ThemeName
+    var ThemeId: RestrictiveResourceId
+    var Permissions: js.UndefOr[ResourcePermissionList]
+    var Tags: js.UndefOr[TagList]
+    var VersionDescription: js.UndefOr[VersionDescription]
+  }
+
+  object CreateThemeRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        BaseThemeId: RestrictiveResourceId,
+        Configuration: ThemeConfiguration,
+        Name: ThemeName,
+        ThemeId: RestrictiveResourceId,
+        Permissions: js.UndefOr[ResourcePermissionList] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        VersionDescription: js.UndefOr[VersionDescription] = js.undefined
+    ): CreateThemeRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId"  -> AwsAccountId.asInstanceOf[js.Any],
+        "BaseThemeId"   -> BaseThemeId.asInstanceOf[js.Any],
+        "Configuration" -> Configuration.asInstanceOf[js.Any],
+        "Name"          -> Name.asInstanceOf[js.Any],
+        "ThemeId"       -> ThemeId.asInstanceOf[js.Any]
+      )
+
+      Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      VersionDescription.foreach(__v => __obj.updateDynamic("VersionDescription")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateThemeRequest]
+    }
+  }
+
+  @js.native
+  trait CreateThemeResponse extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var CreationStatus: js.UndefOr[ResourceStatus]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+    var ThemeId: js.UndefOr[RestrictiveResourceId]
+    var VersionArn: js.UndefOr[Arn]
+  }
+
+  object CreateThemeResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        CreationStatus: js.UndefOr[ResourceStatus] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined,
+        ThemeId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        VersionArn: js.UndefOr[Arn] = js.undefined
+    ): CreateThemeResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationStatus.foreach(__v => __obj.updateDynamic("CreationStatus")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      ThemeId.foreach(__v => __obj.updateDynamic("ThemeId")(__v.asInstanceOf[js.Any]))
+      VersionArn.foreach(__v => __obj.updateDynamic("VersionArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateThemeResponse]
+    }
+  }
+
   /**
     * The combination of user name and password that are used as credentials.
     */
@@ -1351,19 +1550,24 @@ package quicksight {
   trait CredentialPair extends js.Object {
     var Password: Password
     var Username: Username
+    var AlternateDataSourceParameters: js.UndefOr[DataSourceParametersList]
   }
 
   object CredentialPair {
     @inline
     def apply(
         Password: Password,
-        Username: Username
+        Username: Username,
+        AlternateDataSourceParameters: js.UndefOr[DataSourceParametersList] = js.undefined
     ): CredentialPair = {
       val __obj = js.Dynamic.literal(
         "Password" -> Password.asInstanceOf[js.Any],
         "Username" -> Username.asInstanceOf[js.Any]
       )
 
+      AlternateDataSourceParameters.foreach(__v =>
+        __obj.updateDynamic("AlternateDataSourceParameters")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[CredentialPair]
     }
   }
@@ -1469,6 +1673,8 @@ package quicksight {
   @js.native
   sealed trait DashboardErrorType extends js.Any
   object DashboardErrorType extends js.Object {
+    val ACCESS_DENIED                   = "ACCESS_DENIED".asInstanceOf[DashboardErrorType]
+    val SOURCE_NOT_FOUND                = "SOURCE_NOT_FOUND".asInstanceOf[DashboardErrorType]
     val DATA_SET_NOT_FOUND              = "DATA_SET_NOT_FOUND".asInstanceOf[DashboardErrorType]
     val INTERNAL_FAILURE                = "INTERNAL_FAILURE".asInstanceOf[DashboardErrorType]
     val PARAMETER_VALUE_INCOMPATIBLE    = "PARAMETER_VALUE_INCOMPATIBLE".asInstanceOf[DashboardErrorType]
@@ -1480,6 +1686,8 @@ package quicksight {
 
     val values = js.Object.freeze(
       js.Array(
+        ACCESS_DENIED,
+        SOURCE_NOT_FOUND,
         DATA_SET_NOT_FOUND,
         INTERNAL_FAILURE,
         PARAMETER_VALUE_INCOMPATIBLE,
@@ -1490,6 +1698,14 @@ package quicksight {
         COLUMN_REPLACEMENT_MISSING
       )
     )
+  }
+
+  @js.native
+  sealed trait DashboardFilterAttribute extends js.Any
+  object DashboardFilterAttribute extends js.Object {
+    val QUICKSIGHT_USER = "QUICKSIGHT_USER".asInstanceOf[DashboardFilterAttribute]
+
+    val values = js.Object.freeze(js.Array(QUICKSIGHT_USER))
   }
 
   /**
@@ -1514,6 +1730,33 @@ package quicksight {
       ExportToCSVOption.foreach(__v => __obj.updateDynamic("ExportToCSVOption")(__v.asInstanceOf[js.Any]))
       SheetControlsOption.foreach(__v => __obj.updateDynamic("SheetControlsOption")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DashboardPublishOptions]
+    }
+  }
+
+  /**
+    * A filter that you apply when searching for dashboards.
+    */
+  @js.native
+  trait DashboardSearchFilter extends js.Object {
+    var Operator: FilterOperator
+    var Name: js.UndefOr[DashboardFilterAttribute]
+    var Value: js.UndefOr[String]
+  }
+
+  object DashboardSearchFilter {
+    @inline
+    def apply(
+        Operator: FilterOperator,
+        Name: js.UndefOr[DashboardFilterAttribute] = js.undefined,
+        Value: js.UndefOr[String] = js.undefined
+    ): DashboardSearchFilter = {
+      val __obj = js.Dynamic.literal(
+        "Operator" -> Operator.asInstanceOf[js.Any]
+      )
+
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DashboardSearchFilter]
     }
   }
 
@@ -1613,6 +1856,7 @@ package quicksight {
   trait DashboardVersion extends js.Object {
     var Arn: js.UndefOr[Arn]
     var CreatedTime: js.UndefOr[Timestamp]
+    var DataSetArns: js.UndefOr[DataSetArnsList]
     var Description: js.UndefOr[VersionDescription]
     var Errors: js.UndefOr[DashboardErrorList]
     var SourceEntityArn: js.UndefOr[Arn]
@@ -1625,6 +1869,7 @@ package quicksight {
     def apply(
         Arn: js.UndefOr[Arn] = js.undefined,
         CreatedTime: js.UndefOr[Timestamp] = js.undefined,
+        DataSetArns: js.UndefOr[DataSetArnsList] = js.undefined,
         Description: js.UndefOr[VersionDescription] = js.undefined,
         Errors: js.UndefOr[DashboardErrorList] = js.undefined,
         SourceEntityArn: js.UndefOr[Arn] = js.undefined,
@@ -1634,6 +1879,7 @@ package quicksight {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      DataSetArns.foreach(__v => __obj.updateDynamic("DataSetArns")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
       SourceEntityArn.foreach(__v => __obj.updateDynamic("SourceEntityArn")(__v.asInstanceOf[js.Any]))
@@ -1674,6 +1920,31 @@ package quicksight {
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       VersionNumber.foreach(__v => __obj.updateDynamic("VersionNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DashboardVersionSummary]
+    }
+  }
+
+  /**
+    * The theme colors that are used for data colors in charts. The colors description is a hexidecimal color code that consists of six alphanumerical characters, prefixed with <code>#</code>, for example #37BFF5.
+    */
+  @js.native
+  trait DataColorPalette extends js.Object {
+    var Colors: js.UndefOr[ColorList]
+    var EmptyFillColor: js.UndefOr[HexColor]
+    var MinMaxGradient: js.UndefOr[ColorList]
+  }
+
+  object DataColorPalette {
+    @inline
+    def apply(
+        Colors: js.UndefOr[ColorList] = js.undefined,
+        EmptyFillColor: js.UndefOr[HexColor] = js.undefined,
+        MinMaxGradient: js.UndefOr[ColorList] = js.undefined
+    ): DataColorPalette = {
+      val __obj = js.Dynamic.literal()
+      Colors.foreach(__v => __obj.updateDynamic("Colors")(__v.asInstanceOf[js.Any]))
+      EmptyFillColor.foreach(__v => __obj.updateDynamic("EmptyFillColor")(__v.asInstanceOf[js.Any]))
+      MinMaxGradient.foreach(__v => __obj.updateDynamic("MinMaxGradient")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataColorPalette]
     }
   }
 
@@ -1854,6 +2125,7 @@ package quicksight {
     */
   @js.native
   trait DataSource extends js.Object {
+    var AlternateDataSourceParameters: js.UndefOr[DataSourceParametersList]
     var Arn: js.UndefOr[Arn]
     var CreatedTime: js.UndefOr[Timestamp]
     var DataSourceId: js.UndefOr[ResourceId]
@@ -1870,6 +2142,7 @@ package quicksight {
   object DataSource {
     @inline
     def apply(
+        AlternateDataSourceParameters: js.UndefOr[DataSourceParametersList] = js.undefined,
         Arn: js.UndefOr[Arn] = js.undefined,
         CreatedTime: js.UndefOr[Timestamp] = js.undefined,
         DataSourceId: js.UndefOr[ResourceId] = js.undefined,
@@ -1883,6 +2156,9 @@ package quicksight {
         VpcConnectionProperties: js.UndefOr[VpcConnectionProperties] = js.undefined
     ): DataSource = {
       val __obj = js.Dynamic.literal()
+      AlternateDataSourceParameters.foreach(__v =>
+        __obj.updateDynamic("AlternateDataSourceParameters")(__v.asInstanceOf[js.Any])
+      )
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
       DataSourceId.foreach(__v => __obj.updateDynamic("DataSourceId")(__v.asInstanceOf[js.Any]))
@@ -1899,19 +2175,22 @@ package quicksight {
   }
 
   /**
-    * Data source credentials.
+    * Data source credentials. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.
     */
   @js.native
   trait DataSourceCredentials extends js.Object {
+    var CopySourceArn: js.UndefOr[CopySourceArn]
     var CredentialPair: js.UndefOr[CredentialPair]
   }
 
   object DataSourceCredentials {
     @inline
     def apply(
+        CopySourceArn: js.UndefOr[CopySourceArn] = js.undefined,
         CredentialPair: js.UndefOr[CredentialPair] = js.undefined
     ): DataSourceCredentials = {
       val __obj = js.Dynamic.literal()
+      CopySourceArn.foreach(__v => __obj.updateDynamic("CopySourceArn")(__v.asInstanceOf[js.Any]))
       CredentialPair.foreach(__v => __obj.updateDynamic("CredentialPair")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataSourceCredentials]
     }
@@ -1942,6 +2221,8 @@ package quicksight {
   @js.native
   sealed trait DataSourceErrorInfoType extends js.Any
   object DataSourceErrorInfoType extends js.Object {
+    val ACCESS_DENIED                = "ACCESS_DENIED".asInstanceOf[DataSourceErrorInfoType]
+    val COPY_SOURCE_NOT_FOUND        = "COPY_SOURCE_NOT_FOUND".asInstanceOf[DataSourceErrorInfoType]
     val TIMEOUT                      = "TIMEOUT".asInstanceOf[DataSourceErrorInfoType]
     val ENGINE_VERSION_NOT_SUPPORTED = "ENGINE_VERSION_NOT_SUPPORTED".asInstanceOf[DataSourceErrorInfoType]
     val UNKNOWN_HOST                 = "UNKNOWN_HOST".asInstanceOf[DataSourceErrorInfoType]
@@ -1950,7 +2231,16 @@ package quicksight {
     val UNKNOWN                      = "UNKNOWN".asInstanceOf[DataSourceErrorInfoType]
 
     val values = js.Object.freeze(
-      js.Array(TIMEOUT, ENGINE_VERSION_NOT_SUPPORTED, UNKNOWN_HOST, GENERIC_SQL_FAILURE, CONFLICT, UNKNOWN)
+      js.Array(
+        ACCESS_DENIED,
+        COPY_SOURCE_NOT_FOUND,
+        TIMEOUT,
+        ENGINE_VERSION_NOT_SUPPORTED,
+        UNKNOWN_HOST,
+        GENERIC_SQL_FAILURE,
+        CONFLICT,
+        UNKNOWN
+      )
     )
   }
 
@@ -2507,6 +2797,107 @@ package quicksight {
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       TemplateId.foreach(__v => __obj.updateDynamic("TemplateId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteTemplateResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteThemeAliasRequest extends js.Object {
+    var AliasName: AliasName
+    var AwsAccountId: AwsAccountId
+    var ThemeId: RestrictiveResourceId
+  }
+
+  object DeleteThemeAliasRequest {
+    @inline
+    def apply(
+        AliasName: AliasName,
+        AwsAccountId: AwsAccountId,
+        ThemeId: RestrictiveResourceId
+    ): DeleteThemeAliasRequest = {
+      val __obj = js.Dynamic.literal(
+        "AliasName"    -> AliasName.asInstanceOf[js.Any],
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "ThemeId"      -> ThemeId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteThemeAliasRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteThemeAliasResponse extends js.Object {
+    var AliasName: js.UndefOr[AliasName]
+    var Arn: js.UndefOr[Arn]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+    var ThemeId: js.UndefOr[RestrictiveResourceId]
+  }
+
+  object DeleteThemeAliasResponse {
+    @inline
+    def apply(
+        AliasName: js.UndefOr[AliasName] = js.undefined,
+        Arn: js.UndefOr[Arn] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined,
+        ThemeId: js.UndefOr[RestrictiveResourceId] = js.undefined
+    ): DeleteThemeAliasResponse = {
+      val __obj = js.Dynamic.literal()
+      AliasName.foreach(__v => __obj.updateDynamic("AliasName")(__v.asInstanceOf[js.Any]))
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      ThemeId.foreach(__v => __obj.updateDynamic("ThemeId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteThemeAliasResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteThemeRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var ThemeId: RestrictiveResourceId
+    var VersionNumber: js.UndefOr[VersionNumber]
+  }
+
+  object DeleteThemeRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        ThemeId: RestrictiveResourceId,
+        VersionNumber: js.UndefOr[VersionNumber] = js.undefined
+    ): DeleteThemeRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "ThemeId"      -> ThemeId.asInstanceOf[js.Any]
+      )
+
+      VersionNumber.foreach(__v => __obj.updateDynamic("VersionNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteThemeRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteThemeResponse extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+    var ThemeId: js.UndefOr[RestrictiveResourceId]
+  }
+
+  object DeleteThemeResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined,
+        ThemeId: js.UndefOr[RestrictiveResourceId] = js.undefined
+    ): DeleteThemeResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      ThemeId.foreach(__v => __obj.updateDynamic("ThemeId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteThemeResponse]
     }
   }
 
@@ -3143,6 +3534,7 @@ package quicksight {
 
   @js.native
   trait DescribeTemplateResponse extends js.Object {
+    var RequestId: js.UndefOr[String]
     var Status: js.UndefOr[StatusCode]
     var Template: js.UndefOr[Template]
   }
@@ -3150,13 +3542,159 @@ package quicksight {
   object DescribeTemplateResponse {
     @inline
     def apply(
+        RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined,
         Template: js.UndefOr[Template] = js.undefined
     ): DescribeTemplateResponse = {
       val __obj = js.Dynamic.literal()
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       Template.foreach(__v => __obj.updateDynamic("Template")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTemplateResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeThemeAliasRequest extends js.Object {
+    var AliasName: AliasName
+    var AwsAccountId: AwsAccountId
+    var ThemeId: RestrictiveResourceId
+  }
+
+  object DescribeThemeAliasRequest {
+    @inline
+    def apply(
+        AliasName: AliasName,
+        AwsAccountId: AwsAccountId,
+        ThemeId: RestrictiveResourceId
+    ): DescribeThemeAliasRequest = {
+      val __obj = js.Dynamic.literal(
+        "AliasName"    -> AliasName.asInstanceOf[js.Any],
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "ThemeId"      -> ThemeId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeThemeAliasRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeThemeAliasResponse extends js.Object {
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+    var ThemeAlias: js.UndefOr[ThemeAlias]
+  }
+
+  object DescribeThemeAliasResponse {
+    @inline
+    def apply(
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined,
+        ThemeAlias: js.UndefOr[ThemeAlias] = js.undefined
+    ): DescribeThemeAliasResponse = {
+      val __obj = js.Dynamic.literal()
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      ThemeAlias.foreach(__v => __obj.updateDynamic("ThemeAlias")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeThemeAliasResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeThemePermissionsRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var ThemeId: RestrictiveResourceId
+  }
+
+  object DescribeThemePermissionsRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        ThemeId: RestrictiveResourceId
+    ): DescribeThemePermissionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "ThemeId"      -> ThemeId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeThemePermissionsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeThemePermissionsResponse extends js.Object {
+    var Permissions: js.UndefOr[ResourcePermissionList]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+    var ThemeArn: js.UndefOr[Arn]
+    var ThemeId: js.UndefOr[RestrictiveResourceId]
+  }
+
+  object DescribeThemePermissionsResponse {
+    @inline
+    def apply(
+        Permissions: js.UndefOr[ResourcePermissionList] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined,
+        ThemeArn: js.UndefOr[Arn] = js.undefined,
+        ThemeId: js.UndefOr[RestrictiveResourceId] = js.undefined
+    ): DescribeThemePermissionsResponse = {
+      val __obj = js.Dynamic.literal()
+      Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      ThemeArn.foreach(__v => __obj.updateDynamic("ThemeArn")(__v.asInstanceOf[js.Any]))
+      ThemeId.foreach(__v => __obj.updateDynamic("ThemeId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeThemePermissionsResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeThemeRequest extends js.Object {
+    var AwsAccountId: AwsAndAccountId
+    var ThemeId: RestrictiveResourceId
+    var AliasName: js.UndefOr[AliasName]
+    var VersionNumber: js.UndefOr[VersionNumber]
+  }
+
+  object DescribeThemeRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAndAccountId,
+        ThemeId: RestrictiveResourceId,
+        AliasName: js.UndefOr[AliasName] = js.undefined,
+        VersionNumber: js.UndefOr[VersionNumber] = js.undefined
+    ): DescribeThemeRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "ThemeId"      -> ThemeId.asInstanceOf[js.Any]
+      )
+
+      AliasName.foreach(__v => __obj.updateDynamic("AliasName")(__v.asInstanceOf[js.Any]))
+      VersionNumber.foreach(__v => __obj.updateDynamic("VersionNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeThemeRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeThemeResponse extends js.Object {
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+    var Theme: js.UndefOr[Theme]
+  }
+
+  object DescribeThemeResponse {
+    @inline
+    def apply(
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined,
+        Theme: js.UndefOr[Theme] = js.undefined
+    ): DescribeThemeResponse = {
+      val __obj = js.Dynamic.literal()
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Theme.foreach(__v => __obj.updateDynamic("Theme")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeThemeResponse]
     }
   }
 
@@ -3279,6 +3817,14 @@ package quicksight {
 
       __obj.asInstanceOf[FilterOperation]
     }
+  }
+
+  @js.native
+  sealed trait FilterOperator extends js.Any
+  object FilterOperator extends js.Object {
+    val StringEquals = "StringEquals".asInstanceOf[FilterOperator]
+
+    val values = js.Object.freeze(js.Array(StringEquals))
   }
 
   /**
@@ -3439,7 +3985,26 @@ package quicksight {
   }
 
   /**
-    * An IAM policy assignment.
+    * The display options for gutter spacing between tiles on a sheet.
+    */
+  @js.native
+  trait GutterStyle extends js.Object {
+    var Show: js.UndefOr[Boolean]
+  }
+
+  object GutterStyle {
+    @inline
+    def apply(
+        Show: js.UndefOr[Boolean] = js.undefined
+    ): GutterStyle = {
+      val __obj = js.Dynamic.literal()
+      Show.foreach(__v => __obj.updateDynamic("Show")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GutterStyle]
+    }
+  }
+
+  /**
+    * An AWS Identity and Access Management (IAM) policy assignment.
     */
   @js.native
   trait IAMPolicyAssignment extends js.Object {
@@ -4467,6 +5032,162 @@ package quicksight {
   }
 
   @js.native
+  trait ListThemeAliasesRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var ThemeId: RestrictiveResourceId
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListThemeAliasesRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        ThemeId: RestrictiveResourceId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListThemeAliasesRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "ThemeId"      -> ThemeId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListThemeAliasesRequest]
+    }
+  }
+
+  @js.native
+  trait ListThemeAliasesResponse extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+    var ThemeAliasList: js.UndefOr[ThemeAliasList]
+  }
+
+  object ListThemeAliasesResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined,
+        ThemeAliasList: js.UndefOr[ThemeAliasList] = js.undefined
+    ): ListThemeAliasesResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      ThemeAliasList.foreach(__v => __obj.updateDynamic("ThemeAliasList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListThemeAliasesResponse]
+    }
+  }
+
+  @js.native
+  trait ListThemeVersionsRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var ThemeId: RestrictiveResourceId
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListThemeVersionsRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        ThemeId: RestrictiveResourceId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListThemeVersionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "ThemeId"      -> ThemeId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListThemeVersionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListThemeVersionsResponse extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+    var ThemeVersionSummaryList: js.UndefOr[ThemeVersionSummaryList]
+  }
+
+  object ListThemeVersionsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined,
+        ThemeVersionSummaryList: js.UndefOr[ThemeVersionSummaryList] = js.undefined
+    ): ListThemeVersionsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      ThemeVersionSummaryList.foreach(__v => __obj.updateDynamic("ThemeVersionSummaryList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListThemeVersionsResponse]
+    }
+  }
+
+  @js.native
+  trait ListThemesRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[String]
+    var Type: js.UndefOr[ThemeType]
+  }
+
+  object ListThemesRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        Type: js.UndefOr[ThemeType] = js.undefined
+    ): ListThemesRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListThemesRequest]
+    }
+  }
+
+  @js.native
+  trait ListThemesResponse extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+    var ThemeSummaryList: js.UndefOr[ThemeSummaryList]
+  }
+
+  object ListThemesResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined,
+        ThemeSummaryList: js.UndefOr[ThemeSummaryList] = js.undefined
+    ): ListThemesResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      ThemeSummaryList.foreach(__v => __obj.updateDynamic("ThemeSummaryList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListThemesResponse]
+    }
+  }
+
+  @js.native
   trait ListUserGroupsRequest extends js.Object {
     var AwsAccountId: AwsAccountId
     var Namespace: Namespace
@@ -4643,6 +5364,25 @@ package quicksight {
       )
 
       __obj.asInstanceOf[ManifestFileLocation]
+    }
+  }
+
+  /**
+    * The display options for margins around the outside edge of sheets.
+    */
+  @js.native
+  trait MarginStyle extends js.Object {
+    var Show: js.UndefOr[Boolean]
+  }
+
+  object MarginStyle {
+    @inline
+    def apply(
+        Show: js.UndefOr[Boolean] = js.undefined
+    ): MarginStyle = {
+      val __obj = js.Dynamic.literal()
+      Show.foreach(__v => __obj.updateDynamic("Show")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MarginStyle]
     }
   }
 
@@ -5195,6 +5935,58 @@ package quicksight {
     }
   }
 
+  @js.native
+  trait SearchDashboardsRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var Filters: DashboardSearchFilterList
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object SearchDashboardsRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        Filters: DashboardSearchFilterList,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): SearchDashboardsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "Filters"      -> Filters.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SearchDashboardsRequest]
+    }
+  }
+
+  @js.native
+  trait SearchDashboardsResponse extends js.Object {
+    var DashboardSummaryList: js.UndefOr[DashboardSummaryList]
+    var NextToken: js.UndefOr[String]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object SearchDashboardsResponse {
+    @inline
+    def apply(
+        DashboardSummaryList: js.UndefOr[DashboardSummaryList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): SearchDashboardsResponse = {
+      val __obj = js.Dynamic.literal()
+      DashboardSummaryList.foreach(__v => __obj.updateDynamic("DashboardSummaryList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SearchDashboardsResponse]
+    }
+  }
+
   /**
     * ServiceNow parameters.
     */
@@ -5232,6 +6024,28 @@ package quicksight {
       val __obj = js.Dynamic.literal()
       VisibilityState.foreach(__v => __obj.updateDynamic("VisibilityState")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SheetControlsOption]
+    }
+  }
+
+  /**
+    * The theme display options for sheets.
+    */
+  @js.native
+  trait SheetStyle extends js.Object {
+    var Tile: js.UndefOr[TileStyle]
+    var TileLayout: js.UndefOr[TileLayoutStyle]
+  }
+
+  object SheetStyle {
+    @inline
+    def apply(
+        Tile: js.UndefOr[TileStyle] = js.undefined,
+        TileLayout: js.UndefOr[TileLayoutStyle] = js.undefined
+    ): SheetStyle = {
+      val __obj = js.Dynamic.literal()
+      Tile.foreach(__v => __obj.updateDynamic("Tile")(__v.asInstanceOf[js.Any]))
+      TileLayout.foreach(__v => __obj.updateDynamic("TileLayout")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SheetStyle]
     }
   }
 
@@ -5529,10 +6343,11 @@ package quicksight {
   @js.native
   sealed trait TemplateErrorType extends js.Any
   object TemplateErrorType extends js.Object {
+    val SOURCE_NOT_FOUND   = "SOURCE_NOT_FOUND".asInstanceOf[TemplateErrorType]
     val DATA_SET_NOT_FOUND = "DATA_SET_NOT_FOUND".asInstanceOf[TemplateErrorType]
     val INTERNAL_FAILURE   = "INTERNAL_FAILURE".asInstanceOf[TemplateErrorType]
 
-    val values = js.Object.freeze(js.Array(DATA_SET_NOT_FOUND, INTERNAL_FAILURE))
+    val values = js.Object.freeze(js.Array(SOURCE_NOT_FOUND, DATA_SET_NOT_FOUND, INTERNAL_FAILURE))
   }
 
   /**
@@ -5741,6 +6556,279 @@ package quicksight {
   }
 
   /**
+    * <p/>
+    */
+  @js.native
+  trait Theme extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var CreatedTime: js.UndefOr[Timestamp]
+    var LastUpdatedTime: js.UndefOr[Timestamp]
+    var Name: js.UndefOr[ThemeName]
+    var ThemeId: js.UndefOr[RestrictiveResourceId]
+    var Type: js.UndefOr[ThemeType]
+    var Version: js.UndefOr[ThemeVersion]
+  }
+
+  object Theme {
+    @inline
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        CreatedTime: js.UndefOr[Timestamp] = js.undefined,
+        LastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
+        Name: js.UndefOr[ThemeName] = js.undefined,
+        ThemeId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        Type: js.UndefOr[ThemeType] = js.undefined,
+        Version: js.UndefOr[ThemeVersion] = js.undefined
+    ): Theme = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ThemeId.foreach(__v => __obj.updateDynamic("ThemeId")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Theme]
+    }
+  }
+
+  /**
+    * An alias for a theme.
+    */
+  @js.native
+  trait ThemeAlias extends js.Object {
+    var AliasName: js.UndefOr[AliasName]
+    var Arn: js.UndefOr[Arn]
+    var ThemeVersionNumber: js.UndefOr[VersionNumber]
+  }
+
+  object ThemeAlias {
+    @inline
+    def apply(
+        AliasName: js.UndefOr[AliasName] = js.undefined,
+        Arn: js.UndefOr[Arn] = js.undefined,
+        ThemeVersionNumber: js.UndefOr[VersionNumber] = js.undefined
+    ): ThemeAlias = {
+      val __obj = js.Dynamic.literal()
+      AliasName.foreach(__v => __obj.updateDynamic("AliasName")(__v.asInstanceOf[js.Any]))
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      ThemeVersionNumber.foreach(__v => __obj.updateDynamic("ThemeVersionNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ThemeAlias]
+    }
+  }
+
+  /**
+    * The theme configuration. This configuration contains all of the display properties for a theme.
+    */
+  @js.native
+  trait ThemeConfiguration extends js.Object {
+    var DataColorPalette: js.UndefOr[DataColorPalette]
+    var Sheet: js.UndefOr[SheetStyle]
+    var UIColorPalette: js.UndefOr[UIColorPalette]
+  }
+
+  object ThemeConfiguration {
+    @inline
+    def apply(
+        DataColorPalette: js.UndefOr[DataColorPalette] = js.undefined,
+        Sheet: js.UndefOr[SheetStyle] = js.undefined,
+        UIColorPalette: js.UndefOr[UIColorPalette] = js.undefined
+    ): ThemeConfiguration = {
+      val __obj = js.Dynamic.literal()
+      DataColorPalette.foreach(__v => __obj.updateDynamic("DataColorPalette")(__v.asInstanceOf[js.Any]))
+      Sheet.foreach(__v => __obj.updateDynamic("Sheet")(__v.asInstanceOf[js.Any]))
+      UIColorPalette.foreach(__v => __obj.updateDynamic("UIColorPalette")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ThemeConfiguration]
+    }
+  }
+
+  /**
+    * Theme error.
+    */
+  @js.native
+  trait ThemeError extends js.Object {
+    var Message: js.UndefOr[NonEmptyString]
+    var Type: js.UndefOr[ThemeErrorType]
+  }
+
+  object ThemeError {
+    @inline
+    def apply(
+        Message: js.UndefOr[NonEmptyString] = js.undefined,
+        Type: js.UndefOr[ThemeErrorType] = js.undefined
+    ): ThemeError = {
+      val __obj = js.Dynamic.literal()
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ThemeError]
+    }
+  }
+
+  @js.native
+  sealed trait ThemeErrorType extends js.Any
+  object ThemeErrorType extends js.Object {
+    val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[ThemeErrorType]
+
+    val values = js.Object.freeze(js.Array(INTERNAL_FAILURE))
+  }
+
+  /**
+    * The theme summary.
+    */
+  @js.native
+  trait ThemeSummary extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var CreatedTime: js.UndefOr[Timestamp]
+    var LastUpdatedTime: js.UndefOr[Timestamp]
+    var LatestVersionNumber: js.UndefOr[VersionNumber]
+    var Name: js.UndefOr[ThemeName]
+    var ThemeId: js.UndefOr[RestrictiveResourceId]
+  }
+
+  object ThemeSummary {
+    @inline
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        CreatedTime: js.UndefOr[Timestamp] = js.undefined,
+        LastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
+        LatestVersionNumber: js.UndefOr[VersionNumber] = js.undefined,
+        Name: js.UndefOr[ThemeName] = js.undefined,
+        ThemeId: js.UndefOr[RestrictiveResourceId] = js.undefined
+    ): ThemeSummary = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      LatestVersionNumber.foreach(__v => __obj.updateDynamic("LatestVersionNumber")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ThemeId.foreach(__v => __obj.updateDynamic("ThemeId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ThemeSummary]
+    }
+  }
+
+  @js.native
+  sealed trait ThemeType extends js.Any
+  object ThemeType extends js.Object {
+    val QUICKSIGHT = "QUICKSIGHT".asInstanceOf[ThemeType]
+    val CUSTOM     = "CUSTOM".asInstanceOf[ThemeType]
+    val ALL        = "ALL".asInstanceOf[ThemeType]
+
+    val values = js.Object.freeze(js.Array(QUICKSIGHT, CUSTOM, ALL))
+  }
+
+  /**
+    * A version of a theme.
+    */
+  @js.native
+  trait ThemeVersion extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var BaseThemeId: js.UndefOr[RestrictiveResourceId]
+    var Configuration: js.UndefOr[ThemeConfiguration]
+    var CreatedTime: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[VersionDescription]
+    var Errors: js.UndefOr[ThemeErrorList]
+    var Status: js.UndefOr[ResourceStatus]
+    var VersionNumber: js.UndefOr[VersionNumber]
+  }
+
+  object ThemeVersion {
+    @inline
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        BaseThemeId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        Configuration: js.UndefOr[ThemeConfiguration] = js.undefined,
+        CreatedTime: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[VersionDescription] = js.undefined,
+        Errors: js.UndefOr[ThemeErrorList] = js.undefined,
+        Status: js.UndefOr[ResourceStatus] = js.undefined,
+        VersionNumber: js.UndefOr[VersionNumber] = js.undefined
+    ): ThemeVersion = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      BaseThemeId.foreach(__v => __obj.updateDynamic("BaseThemeId")(__v.asInstanceOf[js.Any]))
+      Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      VersionNumber.foreach(__v => __obj.updateDynamic("VersionNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ThemeVersion]
+    }
+  }
+
+  /**
+    * The theme version.
+    */
+  @js.native
+  trait ThemeVersionSummary extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var CreatedTime: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[VersionDescription]
+    var Status: js.UndefOr[ResourceStatus]
+    var VersionNumber: js.UndefOr[VersionNumber]
+  }
+
+  object ThemeVersionSummary {
+    @inline
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        CreatedTime: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[VersionDescription] = js.undefined,
+        Status: js.UndefOr[ResourceStatus] = js.undefined,
+        VersionNumber: js.UndefOr[VersionNumber] = js.undefined
+    ): ThemeVersionSummary = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      VersionNumber.foreach(__v => __obj.updateDynamic("VersionNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ThemeVersionSummary]
+    }
+  }
+
+  /**
+    * The display options for the layout of tiles on a sheet.
+    */
+  @js.native
+  trait TileLayoutStyle extends js.Object {
+    var Gutter: js.UndefOr[GutterStyle]
+    var Margin: js.UndefOr[MarginStyle]
+  }
+
+  object TileLayoutStyle {
+    @inline
+    def apply(
+        Gutter: js.UndefOr[GutterStyle] = js.undefined,
+        Margin: js.UndefOr[MarginStyle] = js.undefined
+    ): TileLayoutStyle = {
+      val __obj = js.Dynamic.literal()
+      Gutter.foreach(__v => __obj.updateDynamic("Gutter")(__v.asInstanceOf[js.Any]))
+      Margin.foreach(__v => __obj.updateDynamic("Margin")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TileLayoutStyle]
+    }
+  }
+
+  /**
+    * Display options related to tiles on a sheet.
+    */
+  @js.native
+  trait TileStyle extends js.Object {
+    var Border: js.UndefOr[BorderStyle]
+  }
+
+  object TileStyle {
+    @inline
+    def apply(
+        Border: js.UndefOr[BorderStyle] = js.undefined
+    ): TileStyle = {
+      val __obj = js.Dynamic.literal()
+      Border.foreach(__v => __obj.updateDynamic("Border")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TileStyle]
+    }
+  }
+
+  /**
     * A data transformation on a logical table. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.
     */
   @js.native
@@ -5795,6 +6883,70 @@ package quicksight {
       )
 
       __obj.asInstanceOf[TwitterParameters]
+    }
+  }
+
+  /**
+    * The theme colors that apply to UI and to charts, excluding data colors. The colors description is a hexidecimal color code that consists of six alphanumerical characters, prefixed with <code>#</code>, for example #37BFF5. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html|Using Themes in Amazon QuickSight]] in the <i>Amazon QuickSight User Guide.</i>
+    */
+  @js.native
+  trait UIColorPalette extends js.Object {
+    var Accent: js.UndefOr[HexColor]
+    var AccentForeground: js.UndefOr[HexColor]
+    var Danger: js.UndefOr[HexColor]
+    var DangerForeground: js.UndefOr[HexColor]
+    var Dimension: js.UndefOr[HexColor]
+    var DimensionForeground: js.UndefOr[HexColor]
+    var Measure: js.UndefOr[HexColor]
+    var MeasureForeground: js.UndefOr[HexColor]
+    var PrimaryBackground: js.UndefOr[HexColor]
+    var PrimaryForeground: js.UndefOr[HexColor]
+    var SecondaryBackground: js.UndefOr[HexColor]
+    var SecondaryForeground: js.UndefOr[HexColor]
+    var Success: js.UndefOr[HexColor]
+    var SuccessForeground: js.UndefOr[HexColor]
+    var Warning: js.UndefOr[HexColor]
+    var WarningForeground: js.UndefOr[HexColor]
+  }
+
+  object UIColorPalette {
+    @inline
+    def apply(
+        Accent: js.UndefOr[HexColor] = js.undefined,
+        AccentForeground: js.UndefOr[HexColor] = js.undefined,
+        Danger: js.UndefOr[HexColor] = js.undefined,
+        DangerForeground: js.UndefOr[HexColor] = js.undefined,
+        Dimension: js.UndefOr[HexColor] = js.undefined,
+        DimensionForeground: js.UndefOr[HexColor] = js.undefined,
+        Measure: js.UndefOr[HexColor] = js.undefined,
+        MeasureForeground: js.UndefOr[HexColor] = js.undefined,
+        PrimaryBackground: js.UndefOr[HexColor] = js.undefined,
+        PrimaryForeground: js.UndefOr[HexColor] = js.undefined,
+        SecondaryBackground: js.UndefOr[HexColor] = js.undefined,
+        SecondaryForeground: js.UndefOr[HexColor] = js.undefined,
+        Success: js.UndefOr[HexColor] = js.undefined,
+        SuccessForeground: js.UndefOr[HexColor] = js.undefined,
+        Warning: js.UndefOr[HexColor] = js.undefined,
+        WarningForeground: js.UndefOr[HexColor] = js.undefined
+    ): UIColorPalette = {
+      val __obj = js.Dynamic.literal()
+      Accent.foreach(__v => __obj.updateDynamic("Accent")(__v.asInstanceOf[js.Any]))
+      AccentForeground.foreach(__v => __obj.updateDynamic("AccentForeground")(__v.asInstanceOf[js.Any]))
+      Danger.foreach(__v => __obj.updateDynamic("Danger")(__v.asInstanceOf[js.Any]))
+      DangerForeground.foreach(__v => __obj.updateDynamic("DangerForeground")(__v.asInstanceOf[js.Any]))
+      Dimension.foreach(__v => __obj.updateDynamic("Dimension")(__v.asInstanceOf[js.Any]))
+      DimensionForeground.foreach(__v => __obj.updateDynamic("DimensionForeground")(__v.asInstanceOf[js.Any]))
+      Measure.foreach(__v => __obj.updateDynamic("Measure")(__v.asInstanceOf[js.Any]))
+      MeasureForeground.foreach(__v => __obj.updateDynamic("MeasureForeground")(__v.asInstanceOf[js.Any]))
+      PrimaryBackground.foreach(__v => __obj.updateDynamic("PrimaryBackground")(__v.asInstanceOf[js.Any]))
+      PrimaryForeground.foreach(__v => __obj.updateDynamic("PrimaryForeground")(__v.asInstanceOf[js.Any]))
+      SecondaryBackground.foreach(__v => __obj.updateDynamic("SecondaryBackground")(__v.asInstanceOf[js.Any]))
+      SecondaryForeground.foreach(__v => __obj.updateDynamic("SecondaryForeground")(__v.asInstanceOf[js.Any]))
+      Success.foreach(__v => __obj.updateDynamic("Success")(__v.asInstanceOf[js.Any]))
+      SuccessForeground.foreach(__v => __obj.updateDynamic("SuccessForeground")(__v.asInstanceOf[js.Any]))
+      Warning.foreach(__v => __obj.updateDynamic("Warning")(__v.asInstanceOf[js.Any]))
+      WarningForeground.foreach(__v => __obj.updateDynamic("WarningForeground")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UIColorPalette]
     }
   }
 
@@ -5950,6 +7102,7 @@ package quicksight {
     var SourceEntity: DashboardSourceEntity
     var DashboardPublishOptions: js.UndefOr[DashboardPublishOptions]
     var Parameters: js.UndefOr[Parameters]
+    var ThemeArn: js.UndefOr[Arn]
     var VersionDescription: js.UndefOr[VersionDescription]
   }
 
@@ -5962,6 +7115,7 @@ package quicksight {
         SourceEntity: DashboardSourceEntity,
         DashboardPublishOptions: js.UndefOr[DashboardPublishOptions] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined,
+        ThemeArn: js.UndefOr[Arn] = js.undefined,
         VersionDescription: js.UndefOr[VersionDescription] = js.undefined
     ): UpdateDashboardRequest = {
       val __obj = js.Dynamic.literal(
@@ -5973,6 +7127,7 @@ package quicksight {
 
       DashboardPublishOptions.foreach(__v => __obj.updateDynamic("DashboardPublishOptions")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      ThemeArn.foreach(__v => __obj.updateDynamic("ThemeArn")(__v.asInstanceOf[js.Any]))
       VersionDescription.foreach(__v => __obj.updateDynamic("VersionDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDashboardRequest]
     }
@@ -6527,6 +7682,174 @@ package quicksight {
       TemplateId.foreach(__v => __obj.updateDynamic("TemplateId")(__v.asInstanceOf[js.Any]))
       VersionArn.foreach(__v => __obj.updateDynamic("VersionArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateTemplateResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateThemeAliasRequest extends js.Object {
+    var AliasName: AliasName
+    var AwsAccountId: AwsAccountId
+    var ThemeId: RestrictiveResourceId
+    var ThemeVersionNumber: VersionNumber
+  }
+
+  object UpdateThemeAliasRequest {
+    @inline
+    def apply(
+        AliasName: AliasName,
+        AwsAccountId: AwsAccountId,
+        ThemeId: RestrictiveResourceId,
+        ThemeVersionNumber: VersionNumber
+    ): UpdateThemeAliasRequest = {
+      val __obj = js.Dynamic.literal(
+        "AliasName"          -> AliasName.asInstanceOf[js.Any],
+        "AwsAccountId"       -> AwsAccountId.asInstanceOf[js.Any],
+        "ThemeId"            -> ThemeId.asInstanceOf[js.Any],
+        "ThemeVersionNumber" -> ThemeVersionNumber.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateThemeAliasRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateThemeAliasResponse extends js.Object {
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+    var ThemeAlias: js.UndefOr[ThemeAlias]
+  }
+
+  object UpdateThemeAliasResponse {
+    @inline
+    def apply(
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined,
+        ThemeAlias: js.UndefOr[ThemeAlias] = js.undefined
+    ): UpdateThemeAliasResponse = {
+      val __obj = js.Dynamic.literal()
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      ThemeAlias.foreach(__v => __obj.updateDynamic("ThemeAlias")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateThemeAliasResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateThemePermissionsRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var ThemeId: RestrictiveResourceId
+    var GrantPermissions: js.UndefOr[UpdateResourcePermissionList]
+    var RevokePermissions: js.UndefOr[UpdateResourcePermissionList]
+  }
+
+  object UpdateThemePermissionsRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        ThemeId: RestrictiveResourceId,
+        GrantPermissions: js.UndefOr[UpdateResourcePermissionList] = js.undefined,
+        RevokePermissions: js.UndefOr[UpdateResourcePermissionList] = js.undefined
+    ): UpdateThemePermissionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "ThemeId"      -> ThemeId.asInstanceOf[js.Any]
+      )
+
+      GrantPermissions.foreach(__v => __obj.updateDynamic("GrantPermissions")(__v.asInstanceOf[js.Any]))
+      RevokePermissions.foreach(__v => __obj.updateDynamic("RevokePermissions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateThemePermissionsRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateThemePermissionsResponse extends js.Object {
+    var Permissions: js.UndefOr[ResourcePermissionList]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+    var ThemeArn: js.UndefOr[Arn]
+    var ThemeId: js.UndefOr[RestrictiveResourceId]
+  }
+
+  object UpdateThemePermissionsResponse {
+    @inline
+    def apply(
+        Permissions: js.UndefOr[ResourcePermissionList] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined,
+        ThemeArn: js.UndefOr[Arn] = js.undefined,
+        ThemeId: js.UndefOr[RestrictiveResourceId] = js.undefined
+    ): UpdateThemePermissionsResponse = {
+      val __obj = js.Dynamic.literal()
+      Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      ThemeArn.foreach(__v => __obj.updateDynamic("ThemeArn")(__v.asInstanceOf[js.Any]))
+      ThemeId.foreach(__v => __obj.updateDynamic("ThemeId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateThemePermissionsResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateThemeRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var BaseThemeId: RestrictiveResourceId
+    var ThemeId: RestrictiveResourceId
+    var Configuration: js.UndefOr[ThemeConfiguration]
+    var Name: js.UndefOr[ThemeName]
+    var VersionDescription: js.UndefOr[VersionDescription]
+  }
+
+  object UpdateThemeRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        BaseThemeId: RestrictiveResourceId,
+        ThemeId: RestrictiveResourceId,
+        Configuration: js.UndefOr[ThemeConfiguration] = js.undefined,
+        Name: js.UndefOr[ThemeName] = js.undefined,
+        VersionDescription: js.UndefOr[VersionDescription] = js.undefined
+    ): UpdateThemeRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "BaseThemeId"  -> BaseThemeId.asInstanceOf[js.Any],
+        "ThemeId"      -> ThemeId.asInstanceOf[js.Any]
+      )
+
+      Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      VersionDescription.foreach(__v => __obj.updateDynamic("VersionDescription")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateThemeRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateThemeResponse extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var CreationStatus: js.UndefOr[ResourceStatus]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+    var ThemeId: js.UndefOr[RestrictiveResourceId]
+    var VersionArn: js.UndefOr[Arn]
+  }
+
+  object UpdateThemeResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        CreationStatus: js.UndefOr[ResourceStatus] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined,
+        ThemeId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        VersionArn: js.UndefOr[Arn] = js.undefined
+    ): UpdateThemeResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationStatus.foreach(__v => __obj.updateDynamic("CreationStatus")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      ThemeId.foreach(__v => __obj.updateDynamic("ThemeId")(__v.asInstanceOf[js.Any]))
+      VersionArn.foreach(__v => __obj.updateDynamic("VersionArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateThemeResponse]
     }
   }
 

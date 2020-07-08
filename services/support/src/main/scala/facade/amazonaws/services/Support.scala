@@ -132,9 +132,6 @@ package support {
     def resolveCase(params: ResolveCaseRequest): Request[ResolveCaseResponse] = js.native
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait AddAttachmentsToSetRequest extends js.Object {
     var attachments: Attachments
@@ -178,9 +175,6 @@ package support {
     }
   }
 
-  /**
-    * To be written.
-    */
   @js.native
   trait AddCommunicationToCaseRequest extends js.Object {
     var communicationBody: CommunicationBody
@@ -272,17 +266,23 @@ package support {
   }
 
   /**
-    * A JSON-formatted object that contains the metadata for a support case. It is contained the response from a <a>DescribeCases</a> request. ```CaseDetails``` contains the following fields:
+    * A JSON-formatted object that contains the metadata for a support case. It is contained in the response from a <a>DescribeCases</a> request. ```CaseDetails``` contains the following fields:
     * * ```caseId.``` The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>.
     *  * ```categoryCode.``` The category of problem for the AWS Support case. Corresponds to the CategoryCode values returned by a call to <a>DescribeServices</a>.
     *  * ```displayId.``` The identifier for the case on pages in the AWS Support Center.
     *  * ```language.``` The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.
-    *  * ```recentCommunications.``` One or more <a>Communication</a> objects. Fields of these objects are <code>attachments</code>, <code>body</code>, <code>caseId</code>, <code>submittedBy</code>, and <code>timeCreated</code>.
     *  * ```nextToken.``` A resumption point for pagination.
+    *  * ```recentCommunications.``` One or more <a>Communication</a> objects. Fields of these objects are <code>attachments</code>, <code>body</code>, <code>caseId</code>, <code>submittedBy</code>, and <code>timeCreated</code>.
     *  * ```serviceCode.``` The identifier for the AWS service that corresponds to the service code defined in the call to <a>DescribeServices</a>.
     *  * ```severityCode.``` The severity code assigned to the case. Contains one of the values returned by the call to <a>DescribeSeverityLevels</a>. The possible values are: <code>low</code>, <code>normal</code>, <code>high</code>, <code>urgent</code>, and <code>critical</code>.
-    *  * ```status.``` The status of the case in the AWS Support Center. The possible values are: <code>resolved</code>, <code>pending-customer-action</code>, <code>opened</code>, <code>unassigned</code>, and <code>work-in-progress</code>.
-    *  * ```subject.``` The subject line of the case.
+    *  * ```status.``` The status of the case in the AWS Support Center. Valid values:
+    * <li> <code>opened</code>
+    *  * <code>pending-customer-action</code>
+    *  * <code>reopened</code>
+    *  * <code>resolved</code>
+    *  * <code>unassigned</code>
+    *  * <code>work-in-progress</code>
+    * </li> * ```subject.``` The subject line of the case.
     *  * ```submittedBy.``` The email address of the account that submitted the case.
     *  * ```timeCreated.``` The time the case was created, in ISO-8601 format.
     */
@@ -527,7 +527,7 @@ package support {
   }
 
   /**
-    * Returns an array of <a>CaseDetails</a> objects and a <code>nextToken</code> that defines a point for pagination in the result set.
+    * Returns an array of [[https://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html|CaseDetails]] objects and a <code>nextToken</code> that defines a point for pagination in the result set.
     */
   @js.native
   trait DescribeCasesResponse extends js.Object {
@@ -673,9 +673,6 @@ package support {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DescribeTrustedAdvisorCheckRefreshStatusesRequest extends js.Object {
     var checkIds: StringList
@@ -797,9 +794,6 @@ package support {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DescribeTrustedAdvisorChecksRequest extends js.Object {
     var language: String
@@ -967,7 +961,7 @@ package support {
   }
 
   /**
-    * A code and name pair that represents the severity level of a support case. The available values depend on the support plan for the account. For more information, see [[https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity|Choosing a Severity]].
+    * A code and name pair that represents the severity level of a support case. The available values depend on the support plan for the account. For more information, see [[https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity|Choosing a severity]] in the <i>AWS Support User Guide</i>.
     */
   @js.native
   trait SeverityLevel extends js.Object {
@@ -1140,7 +1134,7 @@ package support {
   }
 
   /**
-    * The estimated cost savings that might be realized if the recommended actions are taken.
+    * The estimated cost savings that might be realized if the recommended operations are taken.
     */
   @js.native
   trait TrustedAdvisorCostOptimizingSummary extends js.Object {

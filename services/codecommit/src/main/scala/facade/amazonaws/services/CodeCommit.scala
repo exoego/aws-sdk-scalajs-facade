@@ -31,6 +31,7 @@ package object codecommit {
   type BatchGetCommitsErrorsList                = js.Array[BatchGetCommitsError]
   type BranchName                               = String
   type BranchNameList                           = js.Array[BranchName]
+  type CallerReactions                          = js.Array[ReactionValue]
   type CapitalBoolean                           = Boolean
   type ClientRequestToken                       = String
   type CloneUrlHttp                             = String
@@ -46,6 +47,7 @@ package object codecommit {
   type ConflictMetadataList                     = js.Array[ConflictMetadata]
   type Conflicts                                = js.Array[Conflict]
   type Content                                  = String
+  type Count                                    = Int
   type CreationDate                             = js.Date
   type Date                                     = String
   type DeleteFileEntries                        = js.Array[DeleteFileEntry]
@@ -94,6 +96,13 @@ package object codecommit {
   type PullRequestIdList                        = js.Array[PullRequestId]
   type PullRequestTargetList                    = js.Array[PullRequestTarget]
   type PutFileEntries                           = js.Array[PutFileEntry]
+  type ReactionCountsMap                        = js.Dictionary[Count]
+  type ReactionEmoji                            = String
+  type ReactionShortCode                        = String
+  type ReactionUnicode                          = String
+  type ReactionUsersList                        = js.Array[Arn]
+  type ReactionValue                            = String
+  type ReactionsForCommentList                  = js.Array[ReactionForComment]
   type ReferenceName                            = String
   type ReplaceContentEntries                    = js.Array[ReplaceContentEntry]
   type RepositoryDescription                    = String
@@ -197,6 +206,8 @@ package object codecommit {
       service.getBranch(params).promise().toFuture
     @inline def getCommentFuture(params: GetCommentInput): Future[GetCommentOutput] =
       service.getComment(params).promise().toFuture
+    @inline def getCommentReactionsFuture(params: GetCommentReactionsInput): Future[GetCommentReactionsOutput] =
+      service.getCommentReactions(params).promise().toFuture
     @inline def getCommentsForComparedCommitFuture(
         params: GetCommentsForComparedCommitInput
     ): Future[GetCommentsForComparedCommitOutput] = service.getCommentsForComparedCommit(params).promise().toFuture
@@ -275,6 +286,8 @@ package object codecommit {
     ): Future[PostCommentForPullRequestOutput] = service.postCommentForPullRequest(params).promise().toFuture
     @inline def postCommentReplyFuture(params: PostCommentReplyInput): Future[PostCommentReplyOutput] =
       service.postCommentReply(params).promise().toFuture
+    @inline def putCommentReactionFuture(params: PutCommentReactionInput): Future[js.Object] =
+      service.putCommentReaction(params).promise().toFuture
     @inline def putFileFuture(params: PutFileInput): Future[PutFileOutput] = service.putFile(params).promise().toFuture
     @inline def putRepositoryTriggersFuture(params: PutRepositoryTriggersInput): Future[PutRepositoryTriggersOutput] =
       service.putRepositoryTriggers(params).promise().toFuture
@@ -374,9 +387,10 @@ package codecommit {
     ): Request[EvaluatePullRequestApprovalRulesOutput] = js.native
     def getApprovalRuleTemplate(params: GetApprovalRuleTemplateInput): Request[GetApprovalRuleTemplateOutput] =
       js.native
-    def getBlob(params: GetBlobInput): Request[GetBlobOutput]          = js.native
-    def getBranch(params: GetBranchInput): Request[GetBranchOutput]    = js.native
-    def getComment(params: GetCommentInput): Request[GetCommentOutput] = js.native
+    def getBlob(params: GetBlobInput): Request[GetBlobOutput]                                     = js.native
+    def getBranch(params: GetBranchInput): Request[GetBranchOutput]                               = js.native
+    def getComment(params: GetCommentInput): Request[GetCommentOutput]                            = js.native
+    def getCommentReactions(params: GetCommentReactionsInput): Request[GetCommentReactionsOutput] = js.native
     def getCommentsForComparedCommit(
         params: GetCommentsForComparedCommitInput
     ): Request[GetCommentsForComparedCommitOutput] = js.native
@@ -429,6 +443,7 @@ package codecommit {
     def postCommentForPullRequest(params: PostCommentForPullRequestInput): Request[PostCommentForPullRequestOutput] =
       js.native
     def postCommentReply(params: PostCommentReplyInput): Request[PostCommentReplyOutput]                   = js.native
+    def putCommentReaction(params: PutCommentReactionInput): Request[js.Object]                            = js.native
     def putFile(params: PutFileInput): Request[PutFileOutput]                                              = js.native
     def putRepositoryTriggers(params: PutRepositoryTriggersInput): Request[PutRepositoryTriggersOutput]    = js.native
     def tagResource(params: TagResourceInput): Request[js.Object]                                          = js.native
@@ -1078,6 +1093,7 @@ package codecommit {
   @js.native
   trait Comment extends js.Object {
     var authorArn: js.UndefOr[Arn]
+    var callerReactions: js.UndefOr[CallerReactions]
     var clientRequestToken: js.UndefOr[ClientRequestToken]
     var commentId: js.UndefOr[CommentId]
     var content: js.UndefOr[Content]
@@ -1085,22 +1101,26 @@ package codecommit {
     var deleted: js.UndefOr[IsCommentDeleted]
     var inReplyTo: js.UndefOr[CommentId]
     var lastModifiedDate: js.UndefOr[LastModifiedDate]
+    var reactionCounts: js.UndefOr[ReactionCountsMap]
   }
 
   object Comment {
     @inline
     def apply(
         authorArn: js.UndefOr[Arn] = js.undefined,
+        callerReactions: js.UndefOr[CallerReactions] = js.undefined,
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
         commentId: js.UndefOr[CommentId] = js.undefined,
         content: js.UndefOr[Content] = js.undefined,
         creationDate: js.UndefOr[CreationDate] = js.undefined,
         deleted: js.UndefOr[IsCommentDeleted] = js.undefined,
         inReplyTo: js.UndefOr[CommentId] = js.undefined,
-        lastModifiedDate: js.UndefOr[LastModifiedDate] = js.undefined
+        lastModifiedDate: js.UndefOr[LastModifiedDate] = js.undefined,
+        reactionCounts: js.UndefOr[ReactionCountsMap] = js.undefined
     ): Comment = {
       val __obj = js.Dynamic.literal()
       authorArn.foreach(__v => __obj.updateDynamic("authorArn")(__v.asInstanceOf[js.Any]))
+      callerReactions.foreach(__v => __obj.updateDynamic("callerReactions")(__v.asInstanceOf[js.Any]))
       clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
       commentId.foreach(__v => __obj.updateDynamic("commentId")(__v.asInstanceOf[js.Any]))
       content.foreach(__v => __obj.updateDynamic("content")(__v.asInstanceOf[js.Any]))
@@ -1108,6 +1128,7 @@ package codecommit {
       deleted.foreach(__v => __obj.updateDynamic("deleted")(__v.asInstanceOf[js.Any]))
       inReplyTo.foreach(__v => __obj.updateDynamic("inReplyTo")(__v.asInstanceOf[js.Any]))
       lastModifiedDate.foreach(__v => __obj.updateDynamic("lastModifiedDate")(__v.asInstanceOf[js.Any]))
+      reactionCounts.foreach(__v => __obj.updateDynamic("reactionCounts")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Comment]
     }
   }
@@ -2498,6 +2519,54 @@ package codecommit {
       val __obj = js.Dynamic.literal()
       comment.foreach(__v => __obj.updateDynamic("comment")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCommentOutput]
+    }
+  }
+
+  @js.native
+  trait GetCommentReactionsInput extends js.Object {
+    var commentId: CommentId
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+    var reactionUserArn: js.UndefOr[Arn]
+  }
+
+  object GetCommentReactionsInput {
+    @inline
+    def apply(
+        commentId: CommentId,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        reactionUserArn: js.UndefOr[Arn] = js.undefined
+    ): GetCommentReactionsInput = {
+      val __obj = js.Dynamic.literal(
+        "commentId" -> commentId.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      reactionUserArn.foreach(__v => __obj.updateDynamic("reactionUserArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCommentReactionsInput]
+    }
+  }
+
+  @js.native
+  trait GetCommentReactionsOutput extends js.Object {
+    var reactionsForComment: ReactionsForCommentList
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object GetCommentReactionsOutput {
+    @inline
+    def apply(
+        reactionsForComment: ReactionsForCommentList,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetCommentReactionsOutput = {
+      val __obj = js.Dynamic.literal(
+        "reactionsForComment" -> reactionsForComment.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCommentReactionsOutput]
     }
   }
 
@@ -4604,6 +4673,27 @@ package codecommit {
     }
   }
 
+  @js.native
+  trait PutCommentReactionInput extends js.Object {
+    var commentId: CommentId
+    var reactionValue: ReactionValue
+  }
+
+  object PutCommentReactionInput {
+    @inline
+    def apply(
+        commentId: CommentId,
+        reactionValue: ReactionValue
+    ): PutCommentReactionInput = {
+      val __obj = js.Dynamic.literal(
+        "commentId"     -> commentId.asInstanceOf[js.Any],
+        "reactionValue" -> reactionValue.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[PutCommentReactionInput]
+    }
+  }
+
   /**
     * Information about a file added or updated as part of a commit.
     */
@@ -4740,6 +4830,58 @@ package codecommit {
       val __obj = js.Dynamic.literal()
       configurationId.foreach(__v => __obj.updateDynamic("configurationId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutRepositoryTriggersOutput]
+    }
+  }
+
+  /**
+    * Information about the reaction values provided by users on a comment.
+    */
+  @js.native
+  trait ReactionForComment extends js.Object {
+    var reaction: js.UndefOr[ReactionValueFormats]
+    var reactionUsers: js.UndefOr[ReactionUsersList]
+    var reactionsFromDeletedUsersCount: js.UndefOr[Count]
+  }
+
+  object ReactionForComment {
+    @inline
+    def apply(
+        reaction: js.UndefOr[ReactionValueFormats] = js.undefined,
+        reactionUsers: js.UndefOr[ReactionUsersList] = js.undefined,
+        reactionsFromDeletedUsersCount: js.UndefOr[Count] = js.undefined
+    ): ReactionForComment = {
+      val __obj = js.Dynamic.literal()
+      reaction.foreach(__v => __obj.updateDynamic("reaction")(__v.asInstanceOf[js.Any]))
+      reactionUsers.foreach(__v => __obj.updateDynamic("reactionUsers")(__v.asInstanceOf[js.Any]))
+      reactionsFromDeletedUsersCount.foreach(__v =>
+        __obj.updateDynamic("reactionsFromDeletedUsersCount")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ReactionForComment]
+    }
+  }
+
+  /**
+    * Information about the values for reactions to a comment. AWS CodeCommit supports a limited set of reactions.
+    */
+  @js.native
+  trait ReactionValueFormats extends js.Object {
+    var emoji: js.UndefOr[ReactionEmoji]
+    var shortCode: js.UndefOr[ReactionShortCode]
+    var unicode: js.UndefOr[ReactionUnicode]
+  }
+
+  object ReactionValueFormats {
+    @inline
+    def apply(
+        emoji: js.UndefOr[ReactionEmoji] = js.undefined,
+        shortCode: js.UndefOr[ReactionShortCode] = js.undefined,
+        unicode: js.UndefOr[ReactionUnicode] = js.undefined
+    ): ReactionValueFormats = {
+      val __obj = js.Dynamic.literal()
+      emoji.foreach(__v => __obj.updateDynamic("emoji")(__v.asInstanceOf[js.Any]))
+      shortCode.foreach(__v => __obj.updateDynamic("shortCode")(__v.asInstanceOf[js.Any]))
+      unicode.foreach(__v => __obj.updateDynamic("unicode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReactionValueFormats]
     }
   }
 

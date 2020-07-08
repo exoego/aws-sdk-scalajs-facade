@@ -7,11 +7,13 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object servicediscovery {
+  type AmazonResourceName      = String
   type Arn                     = String
   type AttrKey                 = String
   type AttrValue               = String
   type Attributes              = js.Dictionary[AttrValue]
   type Code                    = String
+  type DiscoverMaxResults      = Int
   type DnsRecordList           = js.Array[DnsRecord]
   type FailureThreshold        = Int
   type FilterValue             = String
@@ -38,6 +40,10 @@ package object servicediscovery {
   type ServiceFilters          = js.Array[ServiceFilter]
   type ServiceName             = String
   type ServiceSummariesList    = js.Array[ServiceSummary]
+  type TagKey                  = String
+  type TagKeyList              = js.Array[TagKey]
+  type TagList                 = js.Array[Tag]
+  type TagValue                = String
   type Timestamp               = js.Date
 
   implicit final class ServiceDiscoveryOps(private val service: ServiceDiscovery) extends AnyVal {
@@ -79,8 +85,14 @@ package object servicediscovery {
       service.listOperations(params).promise().toFuture
     @inline def listServicesFuture(params: ListServicesRequest): Future[ListServicesResponse] =
       service.listServices(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise().toFuture
     @inline def registerInstanceFuture(params: RegisterInstanceRequest): Future[RegisterInstanceResponse] =
       service.registerInstance(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+      service.untagResource(params).promise().toFuture
     @inline def updateInstanceCustomHealthStatusFuture(
         params: UpdateInstanceCustomHealthStatusRequest
     ): Future[js.Object] = service.updateInstanceCustomHealthStatus(params).promise().toFuture
@@ -109,14 +121,17 @@ package servicediscovery {
     def getInstance(params: GetInstanceRequest): Request[GetInstanceResponse]                      = js.native
     def getInstancesHealthStatus(params: GetInstancesHealthStatusRequest): Request[GetInstancesHealthStatusResponse] =
       js.native
-    def getNamespace(params: GetNamespaceRequest): Request[GetNamespaceResponse]             = js.native
-    def getOperation(params: GetOperationRequest): Request[GetOperationResponse]             = js.native
-    def getService(params: GetServiceRequest): Request[GetServiceResponse]                   = js.native
-    def listInstances(params: ListInstancesRequest): Request[ListInstancesResponse]          = js.native
-    def listNamespaces(params: ListNamespacesRequest): Request[ListNamespacesResponse]       = js.native
-    def listOperations(params: ListOperationsRequest): Request[ListOperationsResponse]       = js.native
-    def listServices(params: ListServicesRequest): Request[ListServicesResponse]             = js.native
-    def registerInstance(params: RegisterInstanceRequest): Request[RegisterInstanceResponse] = js.native
+    def getNamespace(params: GetNamespaceRequest): Request[GetNamespaceResponse]                      = js.native
+    def getOperation(params: GetOperationRequest): Request[GetOperationResponse]                      = js.native
+    def getService(params: GetServiceRequest): Request[GetServiceResponse]                            = js.native
+    def listInstances(params: ListInstancesRequest): Request[ListInstancesResponse]                   = js.native
+    def listNamespaces(params: ListNamespacesRequest): Request[ListNamespacesResponse]                = js.native
+    def listOperations(params: ListOperationsRequest): Request[ListOperationsResponse]                = js.native
+    def listServices(params: ListServicesRequest): Request[ListServicesResponse]                      = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def registerInstance(params: RegisterInstanceRequest): Request[RegisterInstanceResponse]          = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
     def updateInstanceCustomHealthStatus(params: UpdateInstanceCustomHealthStatusRequest): Request[js.Object] =
       js.native
     def updateService(params: UpdateServiceRequest): Request[UpdateServiceResponse] = js.native
@@ -127,6 +142,7 @@ package servicediscovery {
     var Name: NamespaceName
     var CreatorRequestId: js.UndefOr[ResourceId]
     var Description: js.UndefOr[ResourceDescription]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateHttpNamespaceRequest {
@@ -134,7 +150,8 @@ package servicediscovery {
     def apply(
         Name: NamespaceName,
         CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
-        Description: js.UndefOr[ResourceDescription] = js.undefined
+        Description: js.UndefOr[ResourceDescription] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateHttpNamespaceRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
@@ -142,6 +159,7 @@ package servicediscovery {
 
       CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateHttpNamespaceRequest]
     }
   }
@@ -168,6 +186,7 @@ package servicediscovery {
     var Vpc: ResourceId
     var CreatorRequestId: js.UndefOr[ResourceId]
     var Description: js.UndefOr[ResourceDescription]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreatePrivateDnsNamespaceRequest {
@@ -176,7 +195,8 @@ package servicediscovery {
         Name: NamespaceName,
         Vpc: ResourceId,
         CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
-        Description: js.UndefOr[ResourceDescription] = js.undefined
+        Description: js.UndefOr[ResourceDescription] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreatePrivateDnsNamespaceRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any],
@@ -185,6 +205,7 @@ package servicediscovery {
 
       CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePrivateDnsNamespaceRequest]
     }
   }
@@ -210,6 +231,7 @@ package servicediscovery {
     var Name: NamespaceName
     var CreatorRequestId: js.UndefOr[ResourceId]
     var Description: js.UndefOr[ResourceDescription]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreatePublicDnsNamespaceRequest {
@@ -217,7 +239,8 @@ package servicediscovery {
     def apply(
         Name: NamespaceName,
         CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
-        Description: js.UndefOr[ResourceDescription] = js.undefined
+        Description: js.UndefOr[ResourceDescription] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreatePublicDnsNamespaceRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
@@ -225,6 +248,7 @@ package servicediscovery {
 
       CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePublicDnsNamespaceRequest]
     }
   }
@@ -254,6 +278,7 @@ package servicediscovery {
     var HealthCheckConfig: js.UndefOr[HealthCheckConfig]
     var HealthCheckCustomConfig: js.UndefOr[HealthCheckCustomConfig]
     var NamespaceId: js.UndefOr[ResourceId]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateServiceRequest {
@@ -265,7 +290,8 @@ package servicediscovery {
         DnsConfig: js.UndefOr[DnsConfig] = js.undefined,
         HealthCheckConfig: js.UndefOr[HealthCheckConfig] = js.undefined,
         HealthCheckCustomConfig: js.UndefOr[HealthCheckCustomConfig] = js.undefined,
-        NamespaceId: js.UndefOr[ResourceId] = js.undefined
+        NamespaceId: js.UndefOr[ResourceId] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateServiceRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
@@ -277,6 +303,7 @@ package servicediscovery {
       HealthCheckConfig.foreach(__v => __obj.updateDynamic("HealthCheckConfig")(__v.asInstanceOf[js.Any]))
       HealthCheckCustomConfig.foreach(__v => __obj.updateDynamic("HealthCheckCustomConfig")(__v.asInstanceOf[js.Any]))
       NamespaceId.foreach(__v => __obj.updateDynamic("NamespaceId")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateServiceRequest]
     }
   }
@@ -413,7 +440,7 @@ package servicediscovery {
     var NamespaceName: NamespaceName
     var ServiceName: ServiceName
     var HealthStatus: js.UndefOr[HealthStatusFilter]
-    var MaxResults: js.UndefOr[MaxResults]
+    var MaxResults: js.UndefOr[DiscoverMaxResults]
     var QueryParameters: js.UndefOr[Attributes]
   }
 
@@ -423,7 +450,7 @@ package servicediscovery {
         NamespaceName: NamespaceName,
         ServiceName: ServiceName,
         HealthStatus: js.UndefOr[HealthStatusFilter] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        MaxResults: js.UndefOr[DiscoverMaxResults] = js.undefined,
         QueryParameters: js.UndefOr[Attributes] = js.undefined
     ): DiscoverInstancesRequest = {
       val __obj = js.Dynamic.literal(
@@ -741,7 +768,7 @@ package servicediscovery {
   }
 
   /**
-    * <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional health check. If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.
+    * <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check. If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.
     *  <important> If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.
     *  </important> Health checks are basic Route 53 health checks that monitor an AWS endpoint. For information about pricing for health checks, see [[http://aws.amazon.com/route53/pricing/|Amazon Route 53 Pricing]].
     *  Note the following about configuring health checks.
@@ -752,10 +779,10 @@ package servicediscovery {
     *  ```Request interval```
     *  A Route 53 health checker in each health-checking region sends a health check request to an endpoint every 30 seconds. On average, your endpoint receives a health check request about every two seconds. However, health checkers don't coordinate with one another, so you'll sometimes see several requests per second followed by a few seconds with no health checks at all.
     *  ```Health checking regions```
-    *  Health checkers perform checks from all Route 53 health-checking regions. For a list of the current regions, see [[http://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions|Regions]].
+    *  Health checkers perform checks from all Route 53 health-checking regions. For a list of the current regions, see [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions|Regions]].
     *  ```Alias records```
     *  When you register an instance, if you include the <code>AWS_ALIAS_DNS_NAME</code> attribute, AWS Cloud Map creates a Route 53 alias record. Note the following:
-    * * Route 53 automatically sets <code>EvaluateTargetHealth</code> to true for alias records. When <code>EvaluateTargetHealth</code> is true, the alias record inherits the health of the referenced AWS resource. such as an ELB load balancer. For more information, see [[http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-EvaluateTargetHealth|EvaluateTargetHealth]].
+    * * Route 53 automatically sets <code>EvaluateTargetHealth</code> to true for alias records. When <code>EvaluateTargetHealth</code> is true, the alias record inherits the health of the referenced AWS resource. such as an ELB load balancer. For more information, see [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-EvaluateTargetHealth|EvaluateTargetHealth]].
     *  * If you include <code>HealthCheckConfig</code> and then use the service to register an instance that creates an alias record, Route 53 doesn't create the health check.
     * ```Charges for health checks```
     *  Health checks are basic Route 53 health checks that monitor an AWS endpoint. For information about pricing for health checks, see [[http://aws.amazon.com/route53/pricing/|Amazon Route 53 Pricing]].
@@ -789,10 +816,10 @@ package servicediscovery {
     * * You can't use a health check that is defined by <code>HealthCheckConfig</code> because the resource isn't available over the internet. For example, you can use a custom health check when the instance is in an Amazon VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)
     *  * You want to use a third-party health checker regardless of where your resources are.
     * <important> If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.
-    *  </important> To change the status of a custom health check, submit an <code>UpdateInstanceCustomHealthStatus</code> request. Cloud Map doesn't monitor the status of the resource, it just keeps a record of the status specified in the most recent <code>UpdateInstanceCustomHealthStatus</code> request.
+    *  </important> To change the status of a custom health check, submit an <code>UpdateInstanceCustomHealthStatus</code> request. AWS Cloud Map doesn't monitor the status of the resource, it just keeps a record of the status specified in the most recent <code>UpdateInstanceCustomHealthStatus</code> request.
     *  Here's how custom health checks work:
     *  <ol> * You create a service and specify a value for <code>FailureThreshold</code>.
-    *  The failure threshold indicates the number of 30-second intervals you want AWS Cloud Map to wait between the time that your application sends an <a>UpdateInstanceCustomHealthStatus</a> request and the time that AWS Cloud Map stops routing internet traffic to the corresponding resource.
+    *  The failure threshold indicates the number of 30-second intervals you want AWS Cloud Map to wait between the time that your application sends an [[https://docs.aws.amazon.com/cloud-map/latest/api/API_UpdateInstanceCustomHealthStatus.html|UpdateInstanceCustomHealthStatus]] request and the time that AWS Cloud Map stops routing internet traffic to the corresponding resource.
     *  * You register an instance.
     *  <li> You configure a third-party health checker to monitor the resource that is associated with the new instance.
     *
@@ -801,7 +828,7 @@ package servicediscovery {
     *  * Your application submits an <code>UpdateInstanceCustomHealthStatus</code> request.
     *  * AWS Cloud Map waits for (<code>FailureThreshold</code> x 30) seconds.
     *  * If another <code>UpdateInstanceCustomHealthStatus</code> request doesn't arrive during that time to change the status back to healthy, AWS Cloud Map stops routing traffic to the resource.
-    *  </ol> Note the following about configuring custom health checks.
+    *  </ol>
     */
   @js.native
   trait HealthCheckCustomConfig extends js.Object {
@@ -850,7 +877,7 @@ package servicediscovery {
   }
 
   /**
-    * In a response to a <a>DiscoverInstance</a> request, <code>HttpInstanceSummary</code> contains information about one instance that matches the values that you specified in the request.
+    * In a response to a [[https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html|DiscoverInstances]] request, <code>HttpInstanceSummary</code> contains information about one instance that matches the values that you specified in the request.
     */
   @js.native
   trait HttpInstanceSummary extends js.Object {
@@ -1114,6 +1141,40 @@ package servicediscovery {
     }
   }
 
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceARN: AmazonResourceName
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        ResourceARN: AmazonResourceName
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
   /**
     * A complex type that contains information about a specified namespace.
     */
@@ -1355,7 +1416,7 @@ package servicediscovery {
   }
 
   /**
-    * A complex type that contains information about an operation that matches the criteria that you specified in a <a>ListOperations</a> request.
+    * A complex type that contains information about an operation that matches the criteria that you specified in a [[https://docs.aws.amazon.com/cloud-map/latest/api/API_ListOperations.html|ListOperations]] request.
     */
   @js.native
   trait OperationSummary extends js.Object {
@@ -1517,23 +1578,21 @@ package servicediscovery {
     */
   @js.native
   trait ServiceChange extends js.Object {
-    var DnsConfig: DnsConfigChange
     var Description: js.UndefOr[ResourceDescription]
+    var DnsConfig: js.UndefOr[DnsConfigChange]
     var HealthCheckConfig: js.UndefOr[HealthCheckConfig]
   }
 
   object ServiceChange {
     @inline
     def apply(
-        DnsConfig: DnsConfigChange,
         Description: js.UndefOr[ResourceDescription] = js.undefined,
+        DnsConfig: js.UndefOr[DnsConfigChange] = js.undefined,
         HealthCheckConfig: js.UndefOr[HealthCheckConfig] = js.undefined
     ): ServiceChange = {
-      val __obj = js.Dynamic.literal(
-        "DnsConfig" -> DnsConfig.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DnsConfig.foreach(__v => __obj.updateDynamic("DnsConfig")(__v.asInstanceOf[js.Any]))
       HealthCheckConfig.foreach(__v => __obj.updateDynamic("HealthCheckConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceChange]
     }
@@ -1614,6 +1673,98 @@ package servicediscovery {
       InstanceCount.foreach(__v => __obj.updateDynamic("InstanceCount")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceSummary]
+    }
+  }
+
+  /**
+    * A custom key-value pair associated with a resource.
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: TagKey
+    var Value: TagValue
+  }
+
+  object Tag {
+    @inline
+    def apply(
+        Key: TagKey,
+        Value: TagValue
+    ): Tag = {
+      val __obj = js.Dynamic.literal(
+        "Key"   -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceARN: AmazonResourceName
+    var Tags: TagList
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        ResourceARN: AmazonResourceName,
+        Tags: TagList
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "Tags"        -> Tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object {}
+
+  object TagResourceResponse {
+    @inline
+    def apply(
+    ): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceARN: AmazonResourceName
+    var TagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        ResourceARN: AmazonResourceName,
+        TagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object {}
+
+  object UntagResourceResponse {
+    @inline
+    def apply(
+    ): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 

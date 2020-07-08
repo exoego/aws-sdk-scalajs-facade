@@ -33,6 +33,7 @@ package object mediaconvert {
   type __integerMin0Max30000                       = Int
   type __integerMin0Max3600                        = Int
   type __integerMin0Max4                           = Int
+  type __integerMin0Max4194303                     = Int
   type __integerMin0Max47185920                    = Int
   type __integerMin0Max500                         = Int
   type __integerMin0Max50000                       = Int
@@ -47,8 +48,10 @@ package object mediaconvert {
   type __integerMin1000Max288000000                = Int
   type __integerMin1000Max30000                    = Int
   type __integerMin1000Max300000000                = Int
+  type __integerMin1000Max480000000                = Int
   type __integerMin10Max48                         = Int
   type __integerMin16000Max320000                  = Int
+  type __integerMin16000Max48000                   = Int
   type __integerMin16Max24                         = Int
   type __integerMin1Max1                           = Int
   type __integerMin1Max10                          = Int
@@ -64,12 +67,14 @@ package object mediaconvert {
   type __integerMin1Max32                          = Int
   type __integerMin1Max4                           = Int
   type __integerMin1Max6                           = Int
+  type __integerMin1Max60000                       = Int
   type __integerMin1Max64                          = Int
   type __integerMin22050Max48000                   = Int
   type __integerMin24Max60000                      = Int
   type __integerMin25Max10000                      = Int
   type __integerMin25Max2000                       = Int
   type __integerMin2Max2147483647                  = Int
+  type __integerMin32000Max192000                  = Int
   type __integerMin32000Max384000                  = Int
   type __integerMin32000Max48000                   = Int
   type __integerMin32Max8182                       = Int
@@ -78,11 +83,13 @@ package object mediaconvert {
   type __integerMin48000Max48000                   = Int
   type __integerMin6000Max1024000                  = Int
   type __integerMin64000Max640000                  = Int
+  type __integerMin7Max15                          = Int
   type __integerMin8000Max192000                   = Int
   type __integerMin8000Max96000                    = Int
   type __integerMin96Max600                        = Int
   type __integerMinNegative1000Max1000             = Int
   type __integerMinNegative180Max180               = Int
+  type __integerMinNegative1Max10                  = Int
   type __integerMinNegative1Max3                   = Int
   type __integerMinNegative2147483648Max2147483647 = Int
   type __integerMinNegative2Max3                   = Int
@@ -99,6 +106,7 @@ package object mediaconvert {
   type __listOfHlsAdMarkers                        = js.Array[HlsAdMarkers]
   type __listOfHlsAdditionalManifest               = js.Array[HlsAdditionalManifest]
   type __listOfHlsCaptionLanguageMapping           = js.Array[HlsCaptionLanguageMapping]
+  type __listOfHopDestination                      = js.Array[HopDestination]
   type __listOfId3Insertion                        = js.Array[Id3Insertion]
   type __listOfInput                               = js.Array[Input]
   type __listOfInputClipping                       = js.Array[InputClipping]
@@ -114,6 +122,7 @@ package object mediaconvert {
   type __listOfOutputGroupDetail                   = js.Array[OutputGroupDetail]
   type __listOfPreset                              = js.Array[Preset]
   type __listOfQueue                               = js.Array[Queue]
+  type __listOfQueueTransition                     = js.Array[QueueTransition]
   type __listOfTeletextPageType                    = js.Array[TeletextPageType]
   type __listOf__integerMin1Max2147483647          = js.Array[__integerMin1Max2147483647]
   type __listOf__integerMin32Max8182               = js.Array[__integerMin32Max8182]
@@ -139,6 +148,7 @@ package object mediaconvert {
   type __stringMin14PatternS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMIHttpsSccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMI =
     String
   type __stringMin16Max24PatternAZaZ0922AZaZ0916                         = String
+  type __stringMin1Max100000                                             = String
   type __stringMin1Max256                                                = String
   type __stringMin24Max512PatternAZaZ0902                                = String
   type __stringMin32Max32Pattern09aFAF32                                 = String
@@ -162,9 +172,9 @@ package object mediaconvert {
   type __stringPatternIdentityAZaZ26AZaZ09163 = String
   type __stringPatternS3                      = String
   type __stringPatternS3ASSETMAPXml           = String
-  type __stringPatternS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEEHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE =
-    String
   type __stringPatternS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLLHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLL =
+    String
+  type __stringPatternS3WWEEBBMMMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEEHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE =
     String
   type __stringPatternSNManifestConfirmConditionNotificationNS = String
   type __stringPatternSNSignalProcessingNotificationNS         = String
@@ -532,7 +542,7 @@ package mediaconvert {
   }
 
   /**
-    * Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
+    * Accelerated transcoding can significantly speed up jobs with long, visually complex content.
     */
   @js.native
   trait AccelerationSettings extends js.Object {
@@ -724,13 +734,15 @@ package mediaconvert {
     val AC3         = "AC3".asInstanceOf[AudioCodec]
     val EAC3        = "EAC3".asInstanceOf[AudioCodec]
     val EAC3_ATMOS  = "EAC3_ATMOS".asInstanceOf[AudioCodec]
+    val VORBIS      = "VORBIS".asInstanceOf[AudioCodec]
+    val OPUS        = "OPUS".asInstanceOf[AudioCodec]
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[AudioCodec]
 
-    val values = js.Object.freeze(js.Array(AAC, MP2, MP3, WAV, AIFF, AC3, EAC3, EAC3_ATMOS, PASSTHROUGH))
+    val values = js.Object.freeze(js.Array(AAC, MP2, MP3, WAV, AIFF, AC3, EAC3, EAC3_ATMOS, VORBIS, OPUS, PASSTHROUGH))
   }
 
   /**
-    * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio encoding. The settings in this group vary depending on the value that you choose for Audio codec (Codec). For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
+    * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio encoding. The settings in this group vary depending on the value that you choose for Audio codec (Codec). For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings * VORBIS, VorbisSettings * OPUS, OpusSettings
     */
   @js.native
   trait AudioCodecSettings extends js.Object {
@@ -742,6 +754,8 @@ package mediaconvert {
     var Eac3Settings: js.UndefOr[Eac3Settings]
     var Mp2Settings: js.UndefOr[Mp2Settings]
     var Mp3Settings: js.UndefOr[Mp3Settings]
+    var OpusSettings: js.UndefOr[OpusSettings]
+    var VorbisSettings: js.UndefOr[VorbisSettings]
     var WavSettings: js.UndefOr[WavSettings]
   }
 
@@ -756,6 +770,8 @@ package mediaconvert {
         Eac3Settings: js.UndefOr[Eac3Settings] = js.undefined,
         Mp2Settings: js.UndefOr[Mp2Settings] = js.undefined,
         Mp3Settings: js.UndefOr[Mp3Settings] = js.undefined,
+        OpusSettings: js.UndefOr[OpusSettings] = js.undefined,
+        VorbisSettings: js.UndefOr[VorbisSettings] = js.undefined,
         WavSettings: js.UndefOr[WavSettings] = js.undefined
     ): AudioCodecSettings = {
       val __obj = js.Dynamic.literal()
@@ -767,6 +783,8 @@ package mediaconvert {
       Eac3Settings.foreach(__v => __obj.updateDynamic("Eac3Settings")(__v.asInstanceOf[js.Any]))
       Mp2Settings.foreach(__v => __obj.updateDynamic("Mp2Settings")(__v.asInstanceOf[js.Any]))
       Mp3Settings.foreach(__v => __obj.updateDynamic("Mp3Settings")(__v.asInstanceOf[js.Any]))
+      OpusSettings.foreach(__v => __obj.updateDynamic("OpusSettings")(__v.asInstanceOf[js.Any]))
+      VorbisSettings.foreach(__v => __obj.updateDynamic("VorbisSettings")(__v.asInstanceOf[js.Any]))
       WavSettings.foreach(__v => __obj.updateDynamic("WavSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AudioCodecSettings]
     }
@@ -936,7 +954,7 @@ package mediaconvert {
     var CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3]
     var DefaultSelection: js.UndefOr[AudioDefaultSelection]
     var ExternalAudioFileInput: js.UndefOr[
-      __stringPatternS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEEHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE
+      __stringPatternS3WWEEBBMMMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEEHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE
     ]
     var LanguageCode: js.UndefOr[LanguageCode]
     var Offset: js.UndefOr[__integerMinNegative2147483648Max2147483647]
@@ -953,7 +971,7 @@ package mediaconvert {
         CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3] = js.undefined,
         DefaultSelection: js.UndefOr[AudioDefaultSelection] = js.undefined,
         ExternalAudioFileInput: js.UndefOr[
-          __stringPatternS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEEHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE
+          __stringPatternS3WWEEBBMMMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEEHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE
         ] = js.undefined,
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         Offset: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
@@ -1023,6 +1041,149 @@ package mediaconvert {
   }
 
   /**
+    * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+    */
+  @js.native
+  sealed trait Av1AdaptiveQuantization extends js.Any
+  object Av1AdaptiveQuantization extends js.Object {
+    val OFF    = "OFF".asInstanceOf[Av1AdaptiveQuantization]
+    val LOW    = "LOW".asInstanceOf[Av1AdaptiveQuantization]
+    val MEDIUM = "MEDIUM".asInstanceOf[Av1AdaptiveQuantization]
+    val HIGH   = "HIGH".asInstanceOf[Av1AdaptiveQuantization]
+    val HIGHER = "HIGHER".asInstanceOf[Av1AdaptiveQuantization]
+    val MAX    = "MAX".asInstanceOf[Av1AdaptiveQuantization]
+
+    val values = js.Object.freeze(js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX))
+  }
+
+  /**
+    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+    */
+  @js.native
+  sealed trait Av1FramerateControl extends js.Any
+  object Av1FramerateControl extends js.Object {
+    val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Av1FramerateControl]
+    val SPECIFIED              = "SPECIFIED".asInstanceOf[Av1FramerateControl]
+
+    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+  }
+
+  /**
+    * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop conversion.
+    */
+  @js.native
+  sealed trait Av1FramerateConversionAlgorithm extends js.Any
+  object Av1FramerateConversionAlgorithm extends js.Object {
+    val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[Av1FramerateConversionAlgorithm]
+    val INTERPOLATE    = "INTERPOLATE".asInstanceOf[Av1FramerateConversionAlgorithm]
+
+    val values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
+  }
+
+  /**
+    * Settings for quality-defined variable bitrate encoding with the AV1 codec. Required when you set Rate control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate control mode.
+    */
+  @js.native
+  trait Av1QvbrSettings extends js.Object {
+    var QvbrQualityLevel: js.UndefOr[__integerMin1Max10]
+    var QvbrQualityLevelFineTune: js.UndefOr[__doubleMin0Max1]
+  }
+
+  object Av1QvbrSettings {
+    @inline
+    def apply(
+        QvbrQualityLevel: js.UndefOr[__integerMin1Max10] = js.undefined,
+        QvbrQualityLevelFineTune: js.UndefOr[__doubleMin0Max1] = js.undefined
+    ): Av1QvbrSettings = {
+      val __obj = js.Dynamic.literal()
+      QvbrQualityLevel.foreach(__v => __obj.updateDynamic("QvbrQualityLevel")(__v.asInstanceOf[js.Any]))
+      QvbrQualityLevelFineTune.foreach(__v => __obj.updateDynamic("QvbrQualityLevelFineTune")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Av1QvbrSettings]
+    }
+  }
+
+  /**
+    * 'With AV1 outputs, for rate control mode, MediaConvert supports only quality-defined variable bitrate (QVBR). You can''t use CBR or VBR.'
+    */
+  @js.native
+  sealed trait Av1RateControlMode extends js.Any
+  object Av1RateControlMode extends js.Object {
+    val QVBR = "QVBR".asInstanceOf[Av1RateControlMode]
+
+    val values = js.Object.freeze(js.Array(QVBR))
+  }
+
+  /**
+    * Required when you set Codec, under VideoDescription>CodecSettings to the value AV1.
+    */
+  @js.native
+  trait Av1Settings extends js.Object {
+    var AdaptiveQuantization: js.UndefOr[Av1AdaptiveQuantization]
+    var FramerateControl: js.UndefOr[Av1FramerateControl]
+    var FramerateConversionAlgorithm: js.UndefOr[Av1FramerateConversionAlgorithm]
+    var FramerateDenominator: js.UndefOr[__integerMin1Max2147483647]
+    var FramerateNumerator: js.UndefOr[__integerMin1Max2147483647]
+    var GopSize: js.UndefOr[__doubleMin0]
+    var MaxBitrate: js.UndefOr[__integerMin1000Max1152000000]
+    var NumberBFramesBetweenReferenceFrames: js.UndefOr[__integerMin7Max15]
+    var QvbrSettings: js.UndefOr[Av1QvbrSettings]
+    var RateControlMode: js.UndefOr[Av1RateControlMode]
+    var Slices: js.UndefOr[__integerMin1Max32]
+    var SpatialAdaptiveQuantization: js.UndefOr[Av1SpatialAdaptiveQuantization]
+  }
+
+  object Av1Settings {
+    @inline
+    def apply(
+        AdaptiveQuantization: js.UndefOr[Av1AdaptiveQuantization] = js.undefined,
+        FramerateControl: js.UndefOr[Av1FramerateControl] = js.undefined,
+        FramerateConversionAlgorithm: js.UndefOr[Av1FramerateConversionAlgorithm] = js.undefined,
+        FramerateDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        FramerateNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        GopSize: js.UndefOr[__doubleMin0] = js.undefined,
+        MaxBitrate: js.UndefOr[__integerMin1000Max1152000000] = js.undefined,
+        NumberBFramesBetweenReferenceFrames: js.UndefOr[__integerMin7Max15] = js.undefined,
+        QvbrSettings: js.UndefOr[Av1QvbrSettings] = js.undefined,
+        RateControlMode: js.UndefOr[Av1RateControlMode] = js.undefined,
+        Slices: js.UndefOr[__integerMin1Max32] = js.undefined,
+        SpatialAdaptiveQuantization: js.UndefOr[Av1SpatialAdaptiveQuantization] = js.undefined
+    ): Av1Settings = {
+      val __obj = js.Dynamic.literal()
+      AdaptiveQuantization.foreach(__v => __obj.updateDynamic("AdaptiveQuantization")(__v.asInstanceOf[js.Any]))
+      FramerateControl.foreach(__v => __obj.updateDynamic("FramerateControl")(__v.asInstanceOf[js.Any]))
+      FramerateConversionAlgorithm.foreach(__v =>
+        __obj.updateDynamic("FramerateConversionAlgorithm")(__v.asInstanceOf[js.Any])
+      )
+      FramerateDenominator.foreach(__v => __obj.updateDynamic("FramerateDenominator")(__v.asInstanceOf[js.Any]))
+      FramerateNumerator.foreach(__v => __obj.updateDynamic("FramerateNumerator")(__v.asInstanceOf[js.Any]))
+      GopSize.foreach(__v => __obj.updateDynamic("GopSize")(__v.asInstanceOf[js.Any]))
+      MaxBitrate.foreach(__v => __obj.updateDynamic("MaxBitrate")(__v.asInstanceOf[js.Any]))
+      NumberBFramesBetweenReferenceFrames.foreach(__v =>
+        __obj.updateDynamic("NumberBFramesBetweenReferenceFrames")(__v.asInstanceOf[js.Any])
+      )
+      QvbrSettings.foreach(__v => __obj.updateDynamic("QvbrSettings")(__v.asInstanceOf[js.Any]))
+      RateControlMode.foreach(__v => __obj.updateDynamic("RateControlMode")(__v.asInstanceOf[js.Any]))
+      Slices.foreach(__v => __obj.updateDynamic("Slices")(__v.asInstanceOf[js.Any]))
+      SpatialAdaptiveQuantization.foreach(__v =>
+        __obj.updateDynamic("SpatialAdaptiveQuantization")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[Av1Settings]
+    }
+  }
+
+  /**
+    * Adjust quantization within each frame based on spatial variation of content complexity.
+    */
+  @js.native
+  sealed trait Av1SpatialAdaptiveQuantization extends js.Any
+  object Av1SpatialAdaptiveQuantization extends js.Object {
+    val DISABLED = "DISABLED".asInstanceOf[Av1SpatialAdaptiveQuantization]
+    val ENABLED  = "ENABLED".asInstanceOf[Av1SpatialAdaptiveQuantization]
+
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+  }
+
+  /**
     * Settings for Avail Blanking
     */
   @js.native
@@ -1042,7 +1203,7 @@ package mediaconvert {
   }
 
   /**
-    * Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will appear on the billing report unsorted.
+    * The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up.
     */
   @js.native
   sealed trait BillingTagsSource extends js.Any
@@ -1403,6 +1564,28 @@ package mediaconvert {
       LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
       SourceSettings.foreach(__v => __obj.updateDynamic("SourceSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CaptionSelector]
+    }
+  }
+
+  /**
+    * Ignore this setting unless your input captions format is SCC. To have the service compensate for differing frame rates between your input captions and input video, specify the frame rate of the captions file. Specify this value as a fraction, using the settings Framerate numerator (framerateNumerator) and Framerate denominator (framerateDenominator). For example, you might specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001 for 29.97 fps.
+    */
+  @js.native
+  trait CaptionSourceFramerate extends js.Object {
+    var FramerateDenominator: js.UndefOr[__integerMin1Max1001]
+    var FramerateNumerator: js.UndefOr[__integerMin1Max60000]
+  }
+
+  object CaptionSourceFramerate {
+    @inline
+    def apply(
+        FramerateDenominator: js.UndefOr[__integerMin1Max1001] = js.undefined,
+        FramerateNumerator: js.UndefOr[__integerMin1Max60000] = js.undefined
+    ): CaptionSourceFramerate = {
+      val __obj = js.Dynamic.literal()
+      FramerateDenominator.foreach(__v => __obj.updateDynamic("FramerateDenominator")(__v.asInstanceOf[js.Any]))
+      FramerateNumerator.foreach(__v => __obj.updateDynamic("FramerateNumerator")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CaptionSourceFramerate]
     }
   }
 
@@ -1885,7 +2068,7 @@ package mediaconvert {
   }
 
   /**
-    * Specify the color space you want for this output. The service supports conversion between HDR formats, between SDR formats, and from SDR to HDR. The service doesn't support conversion from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted output.
+    * Specify the color space you want for this output. The service supports conversion between HDR formats, between SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion uses Elemental tone mapping technology to approximate the outcome of manually regrading from HDR to SDR.
     */
   @js.native
   sealed trait ColorSpaceConversion extends js.Any
@@ -1935,6 +2118,7 @@ package mediaconvert {
     var MovSettings: js.UndefOr[MovSettings]
     var Mp4Settings: js.UndefOr[Mp4Settings]
     var MpdSettings: js.UndefOr[MpdSettings]
+    var MxfSettings: js.UndefOr[MxfSettings]
   }
 
   object ContainerSettings {
@@ -1947,7 +2131,8 @@ package mediaconvert {
         M3u8Settings: js.UndefOr[M3u8Settings] = js.undefined,
         MovSettings: js.UndefOr[MovSettings] = js.undefined,
         Mp4Settings: js.UndefOr[Mp4Settings] = js.undefined,
-        MpdSettings: js.UndefOr[MpdSettings] = js.undefined
+        MpdSettings: js.UndefOr[MpdSettings] = js.undefined,
+        MxfSettings: js.UndefOr[MxfSettings] = js.undefined
     ): ContainerSettings = {
       val __obj = js.Dynamic.literal()
       CmfcSettings.foreach(__v => __obj.updateDynamic("CmfcSettings")(__v.asInstanceOf[js.Any]))
@@ -1958,6 +2143,7 @@ package mediaconvert {
       MovSettings.foreach(__v => __obj.updateDynamic("MovSettings")(__v.asInstanceOf[js.Any]))
       Mp4Settings.foreach(__v => __obj.updateDynamic("Mp4Settings")(__v.asInstanceOf[js.Any]))
       MpdSettings.foreach(__v => __obj.updateDynamic("MpdSettings")(__v.asInstanceOf[js.Any]))
+      MxfSettings.foreach(__v => __obj.updateDynamic("MxfSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContainerSettings]
     }
   }
@@ -1977,9 +2163,10 @@ package mediaconvert {
     val MP4  = "MP4".asInstanceOf[ContainerType]
     val MPD  = "MPD".asInstanceOf[ContainerType]
     val MXF  = "MXF".asInstanceOf[ContainerType]
+    val WEBM = "WEBM".asInstanceOf[ContainerType]
     val RAW  = "RAW".asInstanceOf[ContainerType]
 
-    val values = js.Object.freeze(js.Array(F4V, ISMV, M2TS, M3U8, CMFC, MOV, MP4, MPD, MXF, RAW))
+    val values = js.Object.freeze(js.Array(F4V, ISMV, M2TS, M3U8, CMFC, MOV, MP4, MPD, MXF, WEBM, RAW))
   }
 
   @js.native
@@ -1989,6 +2176,7 @@ package mediaconvert {
     var AccelerationSettings: js.UndefOr[AccelerationSettings]
     var BillingTagsSource: js.UndefOr[BillingTagsSource]
     var ClientRequestToken: js.UndefOr[__string]
+    var HopDestinations: js.UndefOr[__listOfHopDestination]
     var JobTemplate: js.UndefOr[__string]
     var Priority: js.UndefOr[__integerMinNegative50Max50]
     var Queue: js.UndefOr[__string]
@@ -2006,6 +2194,7 @@ package mediaconvert {
         AccelerationSettings: js.UndefOr[AccelerationSettings] = js.undefined,
         BillingTagsSource: js.UndefOr[BillingTagsSource] = js.undefined,
         ClientRequestToken: js.UndefOr[__string] = js.undefined,
+        HopDestinations: js.UndefOr[__listOfHopDestination] = js.undefined,
         JobTemplate: js.UndefOr[__string] = js.undefined,
         Priority: js.UndefOr[__integerMinNegative50Max50] = js.undefined,
         Queue: js.UndefOr[__string] = js.undefined,
@@ -2022,6 +2211,7 @@ package mediaconvert {
       AccelerationSettings.foreach(__v => __obj.updateDynamic("AccelerationSettings")(__v.asInstanceOf[js.Any]))
       BillingTagsSource.foreach(__v => __obj.updateDynamic("BillingTagsSource")(__v.asInstanceOf[js.Any]))
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      HopDestinations.foreach(__v => __obj.updateDynamic("HopDestinations")(__v.asInstanceOf[js.Any]))
       JobTemplate.foreach(__v => __obj.updateDynamic("JobTemplate")(__v.asInstanceOf[js.Any]))
       Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
       Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
@@ -2056,6 +2246,7 @@ package mediaconvert {
     var AccelerationSettings: js.UndefOr[AccelerationSettings]
     var Category: js.UndefOr[__string]
     var Description: js.UndefOr[__string]
+    var HopDestinations: js.UndefOr[__listOfHopDestination]
     var Priority: js.UndefOr[__integerMinNegative50Max50]
     var Queue: js.UndefOr[__string]
     var StatusUpdateInterval: js.UndefOr[StatusUpdateInterval]
@@ -2070,6 +2261,7 @@ package mediaconvert {
         AccelerationSettings: js.UndefOr[AccelerationSettings] = js.undefined,
         Category: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
+        HopDestinations: js.UndefOr[__listOfHopDestination] = js.undefined,
         Priority: js.UndefOr[__integerMinNegative50Max50] = js.undefined,
         Queue: js.UndefOr[__string] = js.undefined,
         StatusUpdateInterval: js.UndefOr[StatusUpdateInterval] = js.undefined,
@@ -2083,6 +2275,7 @@ package mediaconvert {
       AccelerationSettings.foreach(__v => __obj.updateDynamic("AccelerationSettings")(__v.asInstanceOf[js.Any]))
       Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      HopDestinations.foreach(__v => __obj.updateDynamic("HopDestinations")(__v.asInstanceOf[js.Any]))
       Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
       Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
       StatusUpdateInterval.foreach(__v => __obj.updateDynamic("StatusUpdateInterval")(__v.asInstanceOf[js.Any]))
@@ -3653,6 +3846,7 @@ package mediaconvert {
   @js.native
   trait FileSourceSettings extends js.Object {
     var Convert608To708: js.UndefOr[FileSourceConvert608To708]
+    var Framerate: js.UndefOr[CaptionSourceFramerate]
     var SourceFile: js.UndefOr[
       __stringMin14PatternS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMIHttpsSccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMI
     ]
@@ -3663,6 +3857,7 @@ package mediaconvert {
     @inline
     def apply(
         Convert608To708: js.UndefOr[FileSourceConvert608To708] = js.undefined,
+        Framerate: js.UndefOr[CaptionSourceFramerate] = js.undefined,
         SourceFile: js.UndefOr[
           __stringMin14PatternS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMIHttpsSccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMI
         ] = js.undefined,
@@ -3670,6 +3865,7 @@ package mediaconvert {
     ): FileSourceSettings = {
       val __obj = js.Dynamic.literal()
       Convert608To708.foreach(__v => __obj.updateDynamic("Convert608To708")(__v.asInstanceOf[js.Any]))
+      Framerate.foreach(__v => __obj.updateDynamic("Framerate")(__v.asInstanceOf[js.Any]))
       SourceFile.foreach(__v => __obj.updateDynamic("SourceFile")(__v.asInstanceOf[js.Any]))
       TimeDelta.foreach(__v => __obj.updateDynamic("TimeDelta")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FileSourceSettings]
@@ -3993,7 +4189,7 @@ package mediaconvert {
   }
 
   /**
-    * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+    * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop conversion.
     */
   @js.native
   sealed trait H264FramerateConversionAlgorithm extends js.Any
@@ -4046,7 +4242,7 @@ package mediaconvert {
   }
 
   /**
-    * Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the input. Using the console, do this by choosing Follow source for Pixel aspect ratio.
+    * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
     */
   @js.native
   sealed trait H264ParControl extends js.Any
@@ -4058,7 +4254,7 @@ package mediaconvert {
   }
 
   /**
-    * Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use fast single-pass, high-quality singlepass, or high-quality multipass video encoding.
+    * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
     */
   @js.native
   sealed trait H264QualityTuningLevel extends js.Any
@@ -4474,7 +4670,7 @@ package mediaconvert {
   }
 
   /**
-    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job sepecification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
     */
   @js.native
   sealed trait H265FramerateControl extends js.Any
@@ -4486,7 +4682,7 @@ package mediaconvert {
   }
 
   /**
-    * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+    * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop conversion.
     */
   @js.native
   sealed trait H265FramerateConversionAlgorithm extends js.Any
@@ -4537,7 +4733,7 @@ package mediaconvert {
   }
 
   /**
-    * Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the input. Using the console, do this by choosing Follow source for Pixel aspect ratio.
+    * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
     */
   @js.native
   sealed trait H265ParControl extends js.Any
@@ -4549,7 +4745,7 @@ package mediaconvert {
   }
 
   /**
-    * Use Quality tuning level (H265QualityTuningLevel) to specifiy whether to use fast single-pass, high-quality singlepass, or high-quality multipass video encoding.
+    * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
     */
   @js.native
   sealed trait H265QualityTuningLevel extends js.Any
@@ -5380,6 +5576,31 @@ package mediaconvert {
   }
 
   /**
+    * Optional. Configuration for a destination queue to which the job can hop once a customer-defined minimum wait time has passed.
+    */
+  @js.native
+  trait HopDestination extends js.Object {
+    var Priority: js.UndefOr[__integerMinNegative50Max50]
+    var Queue: js.UndefOr[__string]
+    var WaitMinutes: js.UndefOr[__integer]
+  }
+
+  object HopDestination {
+    @inline
+    def apply(
+        Priority: js.UndefOr[__integerMinNegative50Max50] = js.undefined,
+        Queue: js.UndefOr[__string] = js.undefined,
+        WaitMinutes: js.UndefOr[__integer] = js.undefined
+    ): HopDestination = {
+      val __obj = js.Dynamic.literal()
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
+      WaitMinutes.foreach(__v => __obj.updateDynamic("WaitMinutes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HopDestination]
+    }
+  }
+
+  /**
     * To insert ID3 tags in your output, specify two values. Use ID3 tag (Id3) to specify the base 64 encoded string and use Timecode (TimeCode) to specify the time when the tag should be inserted. To insert multiple ID3 tags in your output, create multiple instances of ID3 insertion (Id3Insertion).
     */
   @js.native
@@ -5440,7 +5661,7 @@ package mediaconvert {
   }
 
   /**
-    * Keep this setting enabled to have MediaConvert use the font style and position information from the captions source in the output. This option is available only when your input captions are CFF-TT, IMSC, SMPTE-TT, or TTML. Disable this setting for simplified output captions.
+    * Keep this setting enabled to have MediaConvert use the font style and position information from the captions source in the output. This option is available only when your input captions are IMSC, SMPTE-TT, or TTML. Disable this setting for simplified output captions.
     */
   @js.native
   sealed trait ImscStylePassthrough extends js.Any
@@ -5551,7 +5772,7 @@ package mediaconvert {
   }
 
   /**
-    * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manaully controllable for MPEG2 and uncompressed video inputs.
+    * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manually controllable for MPEG2 and uncompressed video inputs.
     */
   @js.native
   sealed trait InputDeblockFilter extends js.Any
@@ -5783,6 +6004,7 @@ package mediaconvert {
     var CurrentPhase: js.UndefOr[JobPhase]
     var ErrorCode: js.UndefOr[__integer]
     var ErrorMessage: js.UndefOr[__string]
+    var HopDestinations: js.UndefOr[__listOfHopDestination]
     var Id: js.UndefOr[__string]
     var JobPercentComplete: js.UndefOr[__integer]
     var JobTemplate: js.UndefOr[__string]
@@ -5790,6 +6012,7 @@ package mediaconvert {
     var OutputGroupDetails: js.UndefOr[__listOfOutputGroupDetail]
     var Priority: js.UndefOr[__integerMinNegative50Max50]
     var Queue: js.UndefOr[__string]
+    var QueueTransitions: js.UndefOr[__listOfQueueTransition]
     var RetryCount: js.UndefOr[__integer]
     var SimulateReservedQueue: js.UndefOr[SimulateReservedQueue]
     var Status: js.UndefOr[JobStatus]
@@ -5811,6 +6034,7 @@ package mediaconvert {
         CurrentPhase: js.UndefOr[JobPhase] = js.undefined,
         ErrorCode: js.UndefOr[__integer] = js.undefined,
         ErrorMessage: js.UndefOr[__string] = js.undefined,
+        HopDestinations: js.UndefOr[__listOfHopDestination] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
         JobPercentComplete: js.UndefOr[__integer] = js.undefined,
         JobTemplate: js.UndefOr[__string] = js.undefined,
@@ -5818,6 +6042,7 @@ package mediaconvert {
         OutputGroupDetails: js.UndefOr[__listOfOutputGroupDetail] = js.undefined,
         Priority: js.UndefOr[__integerMinNegative50Max50] = js.undefined,
         Queue: js.UndefOr[__string] = js.undefined,
+        QueueTransitions: js.UndefOr[__listOfQueueTransition] = js.undefined,
         RetryCount: js.UndefOr[__integer] = js.undefined,
         SimulateReservedQueue: js.UndefOr[SimulateReservedQueue] = js.undefined,
         Status: js.UndefOr[JobStatus] = js.undefined,
@@ -5838,6 +6063,7 @@ package mediaconvert {
       CurrentPhase.foreach(__v => __obj.updateDynamic("CurrentPhase")(__v.asInstanceOf[js.Any]))
       ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
       ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      HopDestinations.foreach(__v => __obj.updateDynamic("HopDestinations")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       JobPercentComplete.foreach(__v => __obj.updateDynamic("JobPercentComplete")(__v.asInstanceOf[js.Any]))
       JobTemplate.foreach(__v => __obj.updateDynamic("JobTemplate")(__v.asInstanceOf[js.Any]))
@@ -5845,6 +6071,7 @@ package mediaconvert {
       OutputGroupDetails.foreach(__v => __obj.updateDynamic("OutputGroupDetails")(__v.asInstanceOf[js.Any]))
       Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
       Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
+      QueueTransitions.foreach(__v => __obj.updateDynamic("QueueTransitions")(__v.asInstanceOf[js.Any]))
       RetryCount.foreach(__v => __obj.updateDynamic("RetryCount")(__v.asInstanceOf[js.Any]))
       SimulateReservedQueue.foreach(__v => __obj.updateDynamic("SimulateReservedQueue")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -5960,6 +6187,7 @@ package mediaconvert {
     var Category: js.UndefOr[__string]
     var CreatedAt: js.UndefOr[__timestampUnix]
     var Description: js.UndefOr[__string]
+    var HopDestinations: js.UndefOr[__listOfHopDestination]
     var LastUpdated: js.UndefOr[__timestampUnix]
     var Priority: js.UndefOr[__integerMinNegative50Max50]
     var Queue: js.UndefOr[__string]
@@ -5977,6 +6205,7 @@ package mediaconvert {
         Category: js.UndefOr[__string] = js.undefined,
         CreatedAt: js.UndefOr[__timestampUnix] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
+        HopDestinations: js.UndefOr[__listOfHopDestination] = js.undefined,
         LastUpdated: js.UndefOr[__timestampUnix] = js.undefined,
         Priority: js.UndefOr[__integerMinNegative50Max50] = js.undefined,
         Queue: js.UndefOr[__string] = js.undefined,
@@ -5993,6 +6222,7 @@ package mediaconvert {
       Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
       CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      HopDestinations.foreach(__v => __obj.updateDynamic("HopDestinations")(__v.asInstanceOf[js.Any]))
       LastUpdated.foreach(__v => __obj.updateDynamic("LastUpdated")(__v.asInstanceOf[js.Any]))
       Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
       Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
@@ -7506,7 +7736,7 @@ package mediaconvert {
   }
 
   /**
-    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job sepecification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
     */
   @js.native
   sealed trait Mpeg2FramerateControl extends js.Any
@@ -7518,7 +7748,7 @@ package mediaconvert {
   }
 
   /**
-    * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+    * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop conversion.
     */
   @js.native
   sealed trait Mpeg2FramerateConversionAlgorithm extends js.Any
@@ -7576,7 +7806,7 @@ package mediaconvert {
   }
 
   /**
-    * Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the input. Using the console, do this by choosing Follow source for Pixel aspect ratio.
+    * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
     */
   @js.native
   sealed trait Mpeg2ParControl extends js.Any
@@ -7588,7 +7818,7 @@ package mediaconvert {
   }
 
   /**
-    * Use Quality tuning level (Mpeg2QualityTuningLevel) to specifiy whether to use single-pass or multipass video encoding.
+    * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
     */
   @js.native
   sealed trait Mpeg2QualityTuningLevel extends js.Any
@@ -7906,6 +8136,65 @@ package mediaconvert {
   }
 
   /**
+    * Optional. When you have AFD signaling set up in your output video stream, use this setting to choose whether to also include it in the MXF wrapper. Choose Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper. Choose Copy from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream for this output to the MXF wrapper. Regardless of which option you choose, the AFD values remain in the video stream. Related settings: To set up your output to include or exclude AFD values, see AfdSignaling, under VideoDescription. On the console, find AFD signaling under the output's video encoding settings.
+    */
+  @js.native
+  sealed trait MxfAfdSignaling extends js.Any
+  object MxfAfdSignaling extends js.Object {
+    val NO_COPY         = "NO_COPY".asInstanceOf[MxfAfdSignaling]
+    val COPY_FROM_VIDEO = "COPY_FROM_VIDEO".asInstanceOf[MxfAfdSignaling]
+
+    val values = js.Object.freeze(js.Array(NO_COPY, COPY_FROM_VIDEO))
+  }
+
+  /**
+    * MXF settings
+    */
+  @js.native
+  trait MxfSettings extends js.Object {
+    var AfdSignaling: js.UndefOr[MxfAfdSignaling]
+  }
+
+  object MxfSettings {
+    @inline
+    def apply(
+        AfdSignaling: js.UndefOr[MxfAfdSignaling] = js.undefined
+    ): MxfSettings = {
+      val __obj = js.Dynamic.literal()
+      AfdSignaling.foreach(__v => __obj.updateDynamic("AfdSignaling")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MxfSettings]
+    }
+  }
+
+  /**
+    * For forensic video watermarking, MediaConvert supports Nagra NexGuard File Marker watermarking. MediaConvert supports both PreRelease Content (NGPR/G2) and OTT Streaming workflows.
+    */
+  @js.native
+  trait NexGuardFileMarkerSettings extends js.Object {
+    var License: js.UndefOr[__stringMin1Max100000]
+    var Payload: js.UndefOr[__integerMin0Max4194303]
+    var Preset: js.UndefOr[__stringMin1Max256]
+    var Strength: js.UndefOr[WatermarkingStrength]
+  }
+
+  object NexGuardFileMarkerSettings {
+    @inline
+    def apply(
+        License: js.UndefOr[__stringMin1Max100000] = js.undefined,
+        Payload: js.UndefOr[__integerMin0Max4194303] = js.undefined,
+        Preset: js.UndefOr[__stringMin1Max256] = js.undefined,
+        Strength: js.UndefOr[WatermarkingStrength] = js.undefined
+    ): NexGuardFileMarkerSettings = {
+      val __obj = js.Dynamic.literal()
+      License.foreach(__v => __obj.updateDynamic("License")(__v.asInstanceOf[js.Any]))
+      Payload.foreach(__v => __obj.updateDynamic("Payload")(__v.asInstanceOf[js.Any]))
+      Preset.foreach(__v => __obj.updateDynamic("Preset")(__v.asInstanceOf[js.Any]))
+      Strength.foreach(__v => __obj.updateDynamic("Strength")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NexGuardFileMarkerSettings]
+    }
+  }
+
+  /**
     * Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs in the job. To enable Nielsen configuration programmatically, include an instance of nielsenConfiguration in your JSON job specification. Even if you don't include any children of nielsenConfiguration, you still enable the setting.
     */
   @js.native
@@ -7925,6 +8214,19 @@ package mediaconvert {
       DistributorId.foreach(__v => __obj.updateDynamic("DistributorId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NielsenConfiguration]
     }
+  }
+
+  /**
+    * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can optionally use this setting to apply additional sharpening. The default behavior, Auto (AUTO) allows the transcoder to determine whether to apply filtering, depending on input type and quality.
+    */
+  @js.native
+  sealed trait NoiseFilterPostTemporalSharpening extends js.Any
+  object NoiseFilterPostTemporalSharpening extends js.Object {
+    val DISABLED = "DISABLED".asInstanceOf[NoiseFilterPostTemporalSharpening]
+    val ENABLED  = "ENABLED".asInstanceOf[NoiseFilterPostTemporalSharpening]
+    val AUTO     = "AUTO".asInstanceOf[NoiseFilterPostTemporalSharpening]
+
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED, AUTO))
   }
 
   /**
@@ -8025,6 +8327,7 @@ package mediaconvert {
   @js.native
   trait NoiseReducerTemporalFilterSettings extends js.Object {
     var AggressiveMode: js.UndefOr[__integerMin0Max4]
+    var PostTemporalSharpening: js.UndefOr[NoiseFilterPostTemporalSharpening]
     var Speed: js.UndefOr[__integerMinNegative1Max3]
     var Strength: js.UndefOr[__integerMin0Max16]
   }
@@ -8033,11 +8336,13 @@ package mediaconvert {
     @inline
     def apply(
         AggressiveMode: js.UndefOr[__integerMin0Max4] = js.undefined,
+        PostTemporalSharpening: js.UndefOr[NoiseFilterPostTemporalSharpening] = js.undefined,
         Speed: js.UndefOr[__integerMinNegative1Max3] = js.undefined,
         Strength: js.UndefOr[__integerMin0Max16] = js.undefined
     ): NoiseReducerTemporalFilterSettings = {
       val __obj = js.Dynamic.literal()
       AggressiveMode.foreach(__v => __obj.updateDynamic("AggressiveMode")(__v.asInstanceOf[js.Any]))
+      PostTemporalSharpening.foreach(__v => __obj.updateDynamic("PostTemporalSharpening")(__v.asInstanceOf[js.Any]))
       Speed.foreach(__v => __obj.updateDynamic("Speed")(__v.asInstanceOf[js.Any]))
       Strength.foreach(__v => __obj.updateDynamic("Strength")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NoiseReducerTemporalFilterSettings]
@@ -8045,7 +8350,32 @@ package mediaconvert {
   }
 
   /**
-    * When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
+    * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value OPUS.
+    */
+  @js.native
+  trait OpusSettings extends js.Object {
+    var Bitrate: js.UndefOr[__integerMin32000Max192000]
+    var Channels: js.UndefOr[__integerMin1Max2]
+    var SampleRate: js.UndefOr[__integerMin16000Max48000]
+  }
+
+  object OpusSettings {
+    @inline
+    def apply(
+        Bitrate: js.UndefOr[__integerMin32000Max192000] = js.undefined,
+        Channels: js.UndefOr[__integerMin1Max2] = js.undefined,
+        SampleRate: js.UndefOr[__integerMin16000Max48000] = js.undefined
+    ): OpusSettings = {
+      val __obj = js.Dynamic.literal()
+      Bitrate.foreach(__v => __obj.updateDynamic("Bitrate")(__v.asInstanceOf[js.Any]))
+      Channels.foreach(__v => __obj.updateDynamic("Channels")(__v.asInstanceOf[js.Any]))
+      SampleRate.foreach(__v => __obj.updateDynamic("SampleRate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OpusSettings]
+    }
+  }
+
+  /**
+    * Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
     */
   @js.native
   sealed trait Order extends js.Any
@@ -8275,6 +8605,27 @@ package mediaconvert {
   }
 
   /**
+    * If you work with a third party video watermarking partner, use the group of settings that correspond with your watermarking partner to include watermarks in your output.
+    */
+  @js.native
+  trait PartnerWatermarking extends js.Object {
+    var NexguardFileMarkerSettings: js.UndefOr[NexGuardFileMarkerSettings]
+  }
+
+  object PartnerWatermarking {
+    @inline
+    def apply(
+        NexguardFileMarkerSettings: js.UndefOr[NexGuardFileMarkerSettings] = js.undefined
+    ): PartnerWatermarking = {
+      val __obj = js.Dynamic.literal()
+      NexguardFileMarkerSettings.foreach(__v =>
+        __obj.updateDynamic("NexguardFileMarkerSettings")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[PartnerWatermarking]
+    }
+  }
+
+  /**
     * A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
     */
   @js.native
@@ -8385,7 +8736,7 @@ package mediaconvert {
   }
 
   /**
-    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job sepecification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
     */
   @js.native
   sealed trait ProresFramerateControl extends js.Any
@@ -8397,7 +8748,7 @@ package mediaconvert {
   }
 
   /**
-    * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+    * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop conversion.
     */
   @js.native
   sealed trait ProresFramerateConversionAlgorithm extends js.Any
@@ -8426,7 +8777,7 @@ package mediaconvert {
   }
 
   /**
-    * Use (ProresParControl) to specify how the service determines the pixel aspect ratio. Set to Follow source (INITIALIZE_FROM_SOURCE) to use the pixel aspect ratio from the input.  To specify a different pixel aspect ratio: Using the console, choose it from the dropdown menu. Using the API, set ProresParControl to (SPECIFIED) and provide  for (ParNumerator) and (ParDenominator).
+    * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
     */
   @js.native
   sealed trait ProresParControl extends js.Any
@@ -8585,6 +8936,31 @@ package mediaconvert {
     val PAUSED = "PAUSED".asInstanceOf[QueueStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, PAUSED))
+  }
+
+  /**
+    * Description of the source and destination queues between which the job has moved, along with the timestamp of the move
+    */
+  @js.native
+  trait QueueTransition extends js.Object {
+    var DestinationQueue: js.UndefOr[__string]
+    var SourceQueue: js.UndefOr[__string]
+    var Timestamp: js.UndefOr[__timestampUnix]
+  }
+
+  object QueueTransition {
+    @inline
+    def apply(
+        DestinationQueue: js.UndefOr[__string] = js.undefined,
+        SourceQueue: js.UndefOr[__string] = js.undefined,
+        Timestamp: js.UndefOr[__timestampUnix] = js.undefined
+    ): QueueTransition = {
+      val __obj = js.Dynamic.literal()
+      DestinationQueue.foreach(__v => __obj.updateDynamic("DestinationQueue")(__v.asInstanceOf[js.Any]))
+      SourceQueue.foreach(__v => __obj.updateDynamic("SourceQueue")(__v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueueTransition]
+    }
   }
 
   /**
@@ -9336,7 +9712,7 @@ package mediaconvert {
   }
 
   /**
-    * Pass through style and position information from a TTML-like input source (TTML, SMPTE-TT, CFF-TT) to the CFF-TT output or TTML output.
+    * Pass through style and position information from a TTML-like input source (TTML, SMPTE-TT) to the TTML output.
     */
   @js.native
   sealed trait TtmlStylePassthrough extends js.Any
@@ -9396,6 +9772,7 @@ package mediaconvert {
     var AccelerationSettings: js.UndefOr[AccelerationSettings]
     var Category: js.UndefOr[__string]
     var Description: js.UndefOr[__string]
+    var HopDestinations: js.UndefOr[__listOfHopDestination]
     var Priority: js.UndefOr[__integerMinNegative50Max50]
     var Queue: js.UndefOr[__string]
     var Settings: js.UndefOr[JobTemplateSettings]
@@ -9409,6 +9786,7 @@ package mediaconvert {
         AccelerationSettings: js.UndefOr[AccelerationSettings] = js.undefined,
         Category: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
+        HopDestinations: js.UndefOr[__listOfHopDestination] = js.undefined,
         Priority: js.UndefOr[__integerMinNegative50Max50] = js.undefined,
         Queue: js.UndefOr[__string] = js.undefined,
         Settings: js.UndefOr[JobTemplateSettings] = js.undefined,
@@ -9421,6 +9799,7 @@ package mediaconvert {
       AccelerationSettings.foreach(__v => __obj.updateDynamic("AccelerationSettings")(__v.asInstanceOf[js.Any]))
       Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      HopDestinations.foreach(__v => __obj.updateDynamic("HopDestinations")(__v.asInstanceOf[js.Any]))
       Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
       Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
       Settings.foreach(__v => __obj.updateDynamic("Settings")(__v.asInstanceOf[js.Any]))
@@ -9538,44 +9917,56 @@ package mediaconvert {
   sealed trait VideoCodec extends js.Any
   object VideoCodec extends js.Object {
     val FRAME_CAPTURE = "FRAME_CAPTURE".asInstanceOf[VideoCodec]
+    val AV1           = "AV1".asInstanceOf[VideoCodec]
     val H_264         = "H_264".asInstanceOf[VideoCodec]
     val H_265         = "H_265".asInstanceOf[VideoCodec]
     val MPEG2         = "MPEG2".asInstanceOf[VideoCodec]
     val PRORES        = "PRORES".asInstanceOf[VideoCodec]
+    val VP8           = "VP8".asInstanceOf[VideoCodec]
+    val VP9           = "VP9".asInstanceOf[VideoCodec]
 
-    val values = js.Object.freeze(js.Array(FRAME_CAPTURE, H_264, H_265, MPEG2, PRORES))
+    val values = js.Object.freeze(js.Array(FRAME_CAPTURE, AV1, H_264, H_265, MPEG2, PRORES, VP8, VP9))
   }
 
   /**
-    * Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec (Codec). For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings
+    * Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec (Codec). For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * FRAME_CAPTURE, FrameCaptureSettings * AV1, Av1Settings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VP8, Vp8Settings * VP9, Vp9Settings
     */
   @js.native
   trait VideoCodecSettings extends js.Object {
+    var Av1Settings: js.UndefOr[Av1Settings]
     var Codec: js.UndefOr[VideoCodec]
     var FrameCaptureSettings: js.UndefOr[FrameCaptureSettings]
     var H264Settings: js.UndefOr[H264Settings]
     var H265Settings: js.UndefOr[H265Settings]
     var Mpeg2Settings: js.UndefOr[Mpeg2Settings]
     var ProresSettings: js.UndefOr[ProresSettings]
+    var Vp8Settings: js.UndefOr[Vp8Settings]
+    var Vp9Settings: js.UndefOr[Vp9Settings]
   }
 
   object VideoCodecSettings {
     @inline
     def apply(
+        Av1Settings: js.UndefOr[Av1Settings] = js.undefined,
         Codec: js.UndefOr[VideoCodec] = js.undefined,
         FrameCaptureSettings: js.UndefOr[FrameCaptureSettings] = js.undefined,
         H264Settings: js.UndefOr[H264Settings] = js.undefined,
         H265Settings: js.UndefOr[H265Settings] = js.undefined,
         Mpeg2Settings: js.UndefOr[Mpeg2Settings] = js.undefined,
-        ProresSettings: js.UndefOr[ProresSettings] = js.undefined
+        ProresSettings: js.UndefOr[ProresSettings] = js.undefined,
+        Vp8Settings: js.UndefOr[Vp8Settings] = js.undefined,
+        Vp9Settings: js.UndefOr[Vp9Settings] = js.undefined
     ): VideoCodecSettings = {
       val __obj = js.Dynamic.literal()
+      Av1Settings.foreach(__v => __obj.updateDynamic("Av1Settings")(__v.asInstanceOf[js.Any]))
       Codec.foreach(__v => __obj.updateDynamic("Codec")(__v.asInstanceOf[js.Any]))
       FrameCaptureSettings.foreach(__v => __obj.updateDynamic("FrameCaptureSettings")(__v.asInstanceOf[js.Any]))
       H264Settings.foreach(__v => __obj.updateDynamic("H264Settings")(__v.asInstanceOf[js.Any]))
       H265Settings.foreach(__v => __obj.updateDynamic("H265Settings")(__v.asInstanceOf[js.Any]))
       Mpeg2Settings.foreach(__v => __obj.updateDynamic("Mpeg2Settings")(__v.asInstanceOf[js.Any]))
       ProresSettings.foreach(__v => __obj.updateDynamic("ProresSettings")(__v.asInstanceOf[js.Any]))
+      Vp8Settings.foreach(__v => __obj.updateDynamic("Vp8Settings")(__v.asInstanceOf[js.Any]))
+      Vp9Settings.foreach(__v => __obj.updateDynamic("Vp9Settings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VideoCodecSettings]
     }
   }
@@ -9673,6 +10064,7 @@ package mediaconvert {
     var DolbyVision: js.UndefOr[DolbyVision]
     var ImageInserter: js.UndefOr[ImageInserter]
     var NoiseReducer: js.UndefOr[NoiseReducer]
+    var PartnerWatermarking: js.UndefOr[PartnerWatermarking]
     var TimecodeBurnin: js.UndefOr[TimecodeBurnin]
   }
 
@@ -9684,6 +10076,7 @@ package mediaconvert {
         DolbyVision: js.UndefOr[DolbyVision] = js.undefined,
         ImageInserter: js.UndefOr[ImageInserter] = js.undefined,
         NoiseReducer: js.UndefOr[NoiseReducer] = js.undefined,
+        PartnerWatermarking: js.UndefOr[PartnerWatermarking] = js.undefined,
         TimecodeBurnin: js.UndefOr[TimecodeBurnin] = js.undefined
     ): VideoPreprocessor = {
       val __obj = js.Dynamic.literal()
@@ -9692,6 +10085,7 @@ package mediaconvert {
       DolbyVision.foreach(__v => __obj.updateDynamic("DolbyVision")(__v.asInstanceOf[js.Any]))
       ImageInserter.foreach(__v => __obj.updateDynamic("ImageInserter")(__v.asInstanceOf[js.Any]))
       NoiseReducer.foreach(__v => __obj.updateDynamic("NoiseReducer")(__v.asInstanceOf[js.Any]))
+      PartnerWatermarking.foreach(__v => __obj.updateDynamic("PartnerWatermarking")(__v.asInstanceOf[js.Any]))
       TimecodeBurnin.foreach(__v => __obj.updateDynamic("TimecodeBurnin")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VideoPreprocessor]
     }
@@ -9744,6 +10138,278 @@ package mediaconvert {
     val PIC_TIMING_SEI = "PIC_TIMING_SEI".asInstanceOf[VideoTimecodeInsertion]
 
     val values = js.Object.freeze(js.Array(DISABLED, PIC_TIMING_SEI))
+  }
+
+  /**
+    * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value Vorbis.
+    */
+  @js.native
+  trait VorbisSettings extends js.Object {
+    var Channels: js.UndefOr[__integerMin1Max2]
+    var SampleRate: js.UndefOr[__integerMin22050Max48000]
+    var VbrQuality: js.UndefOr[__integerMinNegative1Max10]
+  }
+
+  object VorbisSettings {
+    @inline
+    def apply(
+        Channels: js.UndefOr[__integerMin1Max2] = js.undefined,
+        SampleRate: js.UndefOr[__integerMin22050Max48000] = js.undefined,
+        VbrQuality: js.UndefOr[__integerMinNegative1Max10] = js.undefined
+    ): VorbisSettings = {
+      val __obj = js.Dynamic.literal()
+      Channels.foreach(__v => __obj.updateDynamic("Channels")(__v.asInstanceOf[js.Any]))
+      SampleRate.foreach(__v => __obj.updateDynamic("SampleRate")(__v.asInstanceOf[js.Any]))
+      VbrQuality.foreach(__v => __obj.updateDynamic("VbrQuality")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VorbisSettings]
+    }
+  }
+
+  /**
+    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+    */
+  @js.native
+  sealed trait Vp8FramerateControl extends js.Any
+  object Vp8FramerateControl extends js.Object {
+    val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Vp8FramerateControl]
+    val SPECIFIED              = "SPECIFIED".asInstanceOf[Vp8FramerateControl]
+
+    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+  }
+
+  /**
+    * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use Drop duplicate (DUPLICATE_DROP) conversion. When you choose Interpolate (INTERPOLATE) instead, the conversion produces smoother motion.
+    */
+  @js.native
+  sealed trait Vp8FramerateConversionAlgorithm extends js.Any
+  object Vp8FramerateConversionAlgorithm extends js.Object {
+    val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[Vp8FramerateConversionAlgorithm]
+    val INTERPOLATE    = "INTERPOLATE".asInstanceOf[Vp8FramerateConversionAlgorithm]
+
+    val values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
+  }
+
+  /**
+    * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
+    */
+  @js.native
+  sealed trait Vp8ParControl extends js.Any
+  object Vp8ParControl extends js.Object {
+    val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Vp8ParControl]
+    val SPECIFIED              = "SPECIFIED".asInstanceOf[Vp8ParControl]
+
+    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+  }
+
+  /**
+    * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, multi-pass encoding.
+    */
+  @js.native
+  sealed trait Vp8QualityTuningLevel extends js.Any
+  object Vp8QualityTuningLevel extends js.Object {
+    val MULTI_PASS    = "MULTI_PASS".asInstanceOf[Vp8QualityTuningLevel]
+    val MULTI_PASS_HQ = "MULTI_PASS_HQ".asInstanceOf[Vp8QualityTuningLevel]
+
+    val values = js.Object.freeze(js.Array(MULTI_PASS, MULTI_PASS_HQ))
+  }
+
+  /**
+    * With the VP8 codec, you can use only the variable bitrate (VBR) rate control mode.
+    */
+  @js.native
+  sealed trait Vp8RateControlMode extends js.Any
+  object Vp8RateControlMode extends js.Object {
+    val VBR = "VBR".asInstanceOf[Vp8RateControlMode]
+
+    val values = js.Object.freeze(js.Array(VBR))
+  }
+
+  /**
+    * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8.
+    */
+  @js.native
+  trait Vp8Settings extends js.Object {
+    var Bitrate: js.UndefOr[__integerMin1000Max1152000000]
+    var FramerateControl: js.UndefOr[Vp8FramerateControl]
+    var FramerateConversionAlgorithm: js.UndefOr[Vp8FramerateConversionAlgorithm]
+    var FramerateDenominator: js.UndefOr[__integerMin1Max2147483647]
+    var FramerateNumerator: js.UndefOr[__integerMin1Max2147483647]
+    var GopSize: js.UndefOr[__doubleMin0]
+    var HrdBufferSize: js.UndefOr[__integerMin0Max47185920]
+    var MaxBitrate: js.UndefOr[__integerMin1000Max1152000000]
+    var ParControl: js.UndefOr[Vp8ParControl]
+    var ParDenominator: js.UndefOr[__integerMin1Max2147483647]
+    var ParNumerator: js.UndefOr[__integerMin1Max2147483647]
+    var QualityTuningLevel: js.UndefOr[Vp8QualityTuningLevel]
+    var RateControlMode: js.UndefOr[Vp8RateControlMode]
+  }
+
+  object Vp8Settings {
+    @inline
+    def apply(
+        Bitrate: js.UndefOr[__integerMin1000Max1152000000] = js.undefined,
+        FramerateControl: js.UndefOr[Vp8FramerateControl] = js.undefined,
+        FramerateConversionAlgorithm: js.UndefOr[Vp8FramerateConversionAlgorithm] = js.undefined,
+        FramerateDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        FramerateNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        GopSize: js.UndefOr[__doubleMin0] = js.undefined,
+        HrdBufferSize: js.UndefOr[__integerMin0Max47185920] = js.undefined,
+        MaxBitrate: js.UndefOr[__integerMin1000Max1152000000] = js.undefined,
+        ParControl: js.UndefOr[Vp8ParControl] = js.undefined,
+        ParDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        ParNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        QualityTuningLevel: js.UndefOr[Vp8QualityTuningLevel] = js.undefined,
+        RateControlMode: js.UndefOr[Vp8RateControlMode] = js.undefined
+    ): Vp8Settings = {
+      val __obj = js.Dynamic.literal()
+      Bitrate.foreach(__v => __obj.updateDynamic("Bitrate")(__v.asInstanceOf[js.Any]))
+      FramerateControl.foreach(__v => __obj.updateDynamic("FramerateControl")(__v.asInstanceOf[js.Any]))
+      FramerateConversionAlgorithm.foreach(__v =>
+        __obj.updateDynamic("FramerateConversionAlgorithm")(__v.asInstanceOf[js.Any])
+      )
+      FramerateDenominator.foreach(__v => __obj.updateDynamic("FramerateDenominator")(__v.asInstanceOf[js.Any]))
+      FramerateNumerator.foreach(__v => __obj.updateDynamic("FramerateNumerator")(__v.asInstanceOf[js.Any]))
+      GopSize.foreach(__v => __obj.updateDynamic("GopSize")(__v.asInstanceOf[js.Any]))
+      HrdBufferSize.foreach(__v => __obj.updateDynamic("HrdBufferSize")(__v.asInstanceOf[js.Any]))
+      MaxBitrate.foreach(__v => __obj.updateDynamic("MaxBitrate")(__v.asInstanceOf[js.Any]))
+      ParControl.foreach(__v => __obj.updateDynamic("ParControl")(__v.asInstanceOf[js.Any]))
+      ParDenominator.foreach(__v => __obj.updateDynamic("ParDenominator")(__v.asInstanceOf[js.Any]))
+      ParNumerator.foreach(__v => __obj.updateDynamic("ParNumerator")(__v.asInstanceOf[js.Any]))
+      QualityTuningLevel.foreach(__v => __obj.updateDynamic("QualityTuningLevel")(__v.asInstanceOf[js.Any]))
+      RateControlMode.foreach(__v => __obj.updateDynamic("RateControlMode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Vp8Settings]
+    }
+  }
+
+  /**
+    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+    */
+  @js.native
+  sealed trait Vp9FramerateControl extends js.Any
+  object Vp9FramerateControl extends js.Object {
+    val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Vp9FramerateControl]
+    val SPECIFIED              = "SPECIFIED".asInstanceOf[Vp9FramerateControl]
+
+    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+  }
+
+  /**
+    * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use Drop duplicate (DUPLICATE_DROP) conversion. When you choose Interpolate (INTERPOLATE) instead, the conversion produces smoother motion.
+    */
+  @js.native
+  sealed trait Vp9FramerateConversionAlgorithm extends js.Any
+  object Vp9FramerateConversionAlgorithm extends js.Object {
+    val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[Vp9FramerateConversionAlgorithm]
+    val INTERPOLATE    = "INTERPOLATE".asInstanceOf[Vp9FramerateConversionAlgorithm]
+
+    val values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
+  }
+
+  /**
+    * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
+    */
+  @js.native
+  sealed trait Vp9ParControl extends js.Any
+  object Vp9ParControl extends js.Object {
+    val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Vp9ParControl]
+    val SPECIFIED              = "SPECIFIED".asInstanceOf[Vp9ParControl]
+
+    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+  }
+
+  /**
+    * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, multi-pass encoding.
+    */
+  @js.native
+  sealed trait Vp9QualityTuningLevel extends js.Any
+  object Vp9QualityTuningLevel extends js.Object {
+    val MULTI_PASS    = "MULTI_PASS".asInstanceOf[Vp9QualityTuningLevel]
+    val MULTI_PASS_HQ = "MULTI_PASS_HQ".asInstanceOf[Vp9QualityTuningLevel]
+
+    val values = js.Object.freeze(js.Array(MULTI_PASS, MULTI_PASS_HQ))
+  }
+
+  /**
+    * With the VP9 codec, you can use only the variable bitrate (VBR) rate control mode.
+    */
+  @js.native
+  sealed trait Vp9RateControlMode extends js.Any
+  object Vp9RateControlMode extends js.Object {
+    val VBR = "VBR".asInstanceOf[Vp9RateControlMode]
+
+    val values = js.Object.freeze(js.Array(VBR))
+  }
+
+  /**
+    * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9.
+    */
+  @js.native
+  trait Vp9Settings extends js.Object {
+    var Bitrate: js.UndefOr[__integerMin1000Max480000000]
+    var FramerateControl: js.UndefOr[Vp9FramerateControl]
+    var FramerateConversionAlgorithm: js.UndefOr[Vp9FramerateConversionAlgorithm]
+    var FramerateDenominator: js.UndefOr[__integerMin1Max2147483647]
+    var FramerateNumerator: js.UndefOr[__integerMin1Max2147483647]
+    var GopSize: js.UndefOr[__doubleMin0]
+    var HrdBufferSize: js.UndefOr[__integerMin0Max47185920]
+    var MaxBitrate: js.UndefOr[__integerMin1000Max480000000]
+    var ParControl: js.UndefOr[Vp9ParControl]
+    var ParDenominator: js.UndefOr[__integerMin1Max2147483647]
+    var ParNumerator: js.UndefOr[__integerMin1Max2147483647]
+    var QualityTuningLevel: js.UndefOr[Vp9QualityTuningLevel]
+    var RateControlMode: js.UndefOr[Vp9RateControlMode]
+  }
+
+  object Vp9Settings {
+    @inline
+    def apply(
+        Bitrate: js.UndefOr[__integerMin1000Max480000000] = js.undefined,
+        FramerateControl: js.UndefOr[Vp9FramerateControl] = js.undefined,
+        FramerateConversionAlgorithm: js.UndefOr[Vp9FramerateConversionAlgorithm] = js.undefined,
+        FramerateDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        FramerateNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        GopSize: js.UndefOr[__doubleMin0] = js.undefined,
+        HrdBufferSize: js.UndefOr[__integerMin0Max47185920] = js.undefined,
+        MaxBitrate: js.UndefOr[__integerMin1000Max480000000] = js.undefined,
+        ParControl: js.UndefOr[Vp9ParControl] = js.undefined,
+        ParDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        ParNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        QualityTuningLevel: js.UndefOr[Vp9QualityTuningLevel] = js.undefined,
+        RateControlMode: js.UndefOr[Vp9RateControlMode] = js.undefined
+    ): Vp9Settings = {
+      val __obj = js.Dynamic.literal()
+      Bitrate.foreach(__v => __obj.updateDynamic("Bitrate")(__v.asInstanceOf[js.Any]))
+      FramerateControl.foreach(__v => __obj.updateDynamic("FramerateControl")(__v.asInstanceOf[js.Any]))
+      FramerateConversionAlgorithm.foreach(__v =>
+        __obj.updateDynamic("FramerateConversionAlgorithm")(__v.asInstanceOf[js.Any])
+      )
+      FramerateDenominator.foreach(__v => __obj.updateDynamic("FramerateDenominator")(__v.asInstanceOf[js.Any]))
+      FramerateNumerator.foreach(__v => __obj.updateDynamic("FramerateNumerator")(__v.asInstanceOf[js.Any]))
+      GopSize.foreach(__v => __obj.updateDynamic("GopSize")(__v.asInstanceOf[js.Any]))
+      HrdBufferSize.foreach(__v => __obj.updateDynamic("HrdBufferSize")(__v.asInstanceOf[js.Any]))
+      MaxBitrate.foreach(__v => __obj.updateDynamic("MaxBitrate")(__v.asInstanceOf[js.Any]))
+      ParControl.foreach(__v => __obj.updateDynamic("ParControl")(__v.asInstanceOf[js.Any]))
+      ParDenominator.foreach(__v => __obj.updateDynamic("ParDenominator")(__v.asInstanceOf[js.Any]))
+      ParNumerator.foreach(__v => __obj.updateDynamic("ParNumerator")(__v.asInstanceOf[js.Any]))
+      QualityTuningLevel.foreach(__v => __obj.updateDynamic("QualityTuningLevel")(__v.asInstanceOf[js.Any]))
+      RateControlMode.foreach(__v => __obj.updateDynamic("RateControlMode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Vp9Settings]
+    }
+  }
+
+  /**
+    * Optional. Ignore this setting unless Nagra support directs you to specify a value. When you don't specify a value here, the Nagra NexGuard library uses its default value.
+    */
+  @js.native
+  sealed trait WatermarkingStrength extends js.Any
+  object WatermarkingStrength extends js.Object {
+    val LIGHTEST  = "LIGHTEST".asInstanceOf[WatermarkingStrength]
+    val LIGHTER   = "LIGHTER".asInstanceOf[WatermarkingStrength]
+    val DEFAULT   = "DEFAULT".asInstanceOf[WatermarkingStrength]
+    val STRONGER  = "STRONGER".asInstanceOf[WatermarkingStrength]
+    val STRONGEST = "STRONGEST".asInstanceOf[WatermarkingStrength]
+
+    val values = js.Object.freeze(js.Array(LIGHTEST, LIGHTER, DEFAULT, STRONGER, STRONGEST))
   }
 
   /**

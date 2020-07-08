@@ -13,6 +13,7 @@ package object dlm {
   type CopyTags                   = Boolean
   type CopyTagsNullable           = Boolean
   type Count                      = Int
+  type CronExpression             = String
   type CrossRegionCopyRules       = js.Array[CrossRegionCopyRule]
   type Encrypted                  = Boolean
   type ExcludeBootVolume          = Boolean
@@ -130,26 +131,28 @@ package dlm {
 
   /**
     * Specifies when to create snapshots of EBS volumes.
+    *  You must specify either a Cron expression or an interval, interval unit, and start time. You cannot specify both.
     */
   @js.native
   trait CreateRule extends js.Object {
-    var Interval: Interval
-    var IntervalUnit: IntervalUnitValues
+    var CronExpression: js.UndefOr[CronExpression]
+    var Interval: js.UndefOr[Interval]
+    var IntervalUnit: js.UndefOr[IntervalUnitValues]
     var Times: js.UndefOr[TimesList]
   }
 
   object CreateRule {
     @inline
     def apply(
-        Interval: Interval,
-        IntervalUnit: IntervalUnitValues,
+        CronExpression: js.UndefOr[CronExpression] = js.undefined,
+        Interval: js.UndefOr[Interval] = js.undefined,
+        IntervalUnit: js.UndefOr[IntervalUnitValues] = js.undefined,
         Times: js.UndefOr[TimesList] = js.undefined
     ): CreateRule = {
-      val __obj = js.Dynamic.literal(
-        "Interval"     -> Interval.asInstanceOf[js.Any],
-        "IntervalUnit" -> IntervalUnit.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
+      CronExpression.foreach(__v => __obj.updateDynamic("CronExpression")(__v.asInstanceOf[js.Any]))
+      Interval.foreach(__v => __obj.updateDynamic("Interval")(__v.asInstanceOf[js.Any]))
+      IntervalUnit.foreach(__v => __obj.updateDynamic("IntervalUnit")(__v.asInstanceOf[js.Any]))
       Times.foreach(__v => __obj.updateDynamic("Times")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRule]
     }

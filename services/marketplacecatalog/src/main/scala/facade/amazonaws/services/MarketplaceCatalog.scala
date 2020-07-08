@@ -184,6 +184,7 @@ package marketplacecatalog {
   @js.native
   trait ChangeSummary extends js.Object {
     var ChangeType: js.UndefOr[ChangeType]
+    var Details: js.UndefOr[Json]
     var Entity: js.UndefOr[Entity]
     var ErrorDetailList: js.UndefOr[ErrorDetailList]
   }
@@ -192,11 +193,13 @@ package marketplacecatalog {
     @inline
     def apply(
         ChangeType: js.UndefOr[ChangeType] = js.undefined,
+        Details: js.UndefOr[Json] = js.undefined,
         Entity: js.UndefOr[Entity] = js.undefined,
         ErrorDetailList: js.UndefOr[ErrorDetailList] = js.undefined
     ): ChangeSummary = {
       val __obj = js.Dynamic.literal()
       ChangeType.foreach(__v => __obj.updateDynamic("ChangeType")(__v.asInstanceOf[js.Any]))
+      Details.foreach(__v => __obj.updateDynamic("Details")(__v.asInstanceOf[js.Any]))
       Entity.foreach(__v => __obj.updateDynamic("Entity")(__v.asInstanceOf[js.Any]))
       ErrorDetailList.foreach(__v => __obj.updateDynamic("ErrorDetailList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChangeSummary]
@@ -514,7 +517,7 @@ package marketplacecatalog {
   }
 
   /**
-    * An object that contains two attributes, <code>sortBy</code> and <code>sortOrder</code>.
+    * An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.
     */
   @js.native
   trait Sort extends js.Object {

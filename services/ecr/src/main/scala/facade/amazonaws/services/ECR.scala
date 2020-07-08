@@ -1029,6 +1029,7 @@ package ecr {
   trait Image extends js.Object {
     var imageId: js.UndefOr[ImageIdentifier]
     var imageManifest: js.UndefOr[ImageManifest]
+    var imageManifestMediaType: js.UndefOr[MediaType]
     var registryId: js.UndefOr[RegistryId]
     var repositoryName: js.UndefOr[RepositoryName]
   }
@@ -1038,12 +1039,14 @@ package ecr {
     def apply(
         imageId: js.UndefOr[ImageIdentifier] = js.undefined,
         imageManifest: js.UndefOr[ImageManifest] = js.undefined,
+        imageManifestMediaType: js.UndefOr[MediaType] = js.undefined,
         registryId: js.UndefOr[RegistryId] = js.undefined,
         repositoryName: js.UndefOr[RepositoryName] = js.undefined
     ): Image = {
       val __obj = js.Dynamic.literal()
       imageId.foreach(__v => __obj.updateDynamic("imageId")(__v.asInstanceOf[js.Any]))
       imageManifest.foreach(__v => __obj.updateDynamic("imageManifest")(__v.asInstanceOf[js.Any]))
+      imageManifestMediaType.foreach(__v => __obj.updateDynamic("imageManifestMediaType")(__v.asInstanceOf[js.Any]))
       registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Image]
@@ -1126,14 +1129,22 @@ package ecr {
   @js.native
   sealed trait ImageFailureCode extends js.Any
   object ImageFailureCode extends js.Object {
-    val InvalidImageDigest         = "InvalidImageDigest".asInstanceOf[ImageFailureCode]
-    val InvalidImageTag            = "InvalidImageTag".asInstanceOf[ImageFailureCode]
-    val ImageTagDoesNotMatchDigest = "ImageTagDoesNotMatchDigest".asInstanceOf[ImageFailureCode]
-    val ImageNotFound              = "ImageNotFound".asInstanceOf[ImageFailureCode]
-    val MissingDigestAndTag        = "MissingDigestAndTag".asInstanceOf[ImageFailureCode]
+    val InvalidImageDigest            = "InvalidImageDigest".asInstanceOf[ImageFailureCode]
+    val InvalidImageTag               = "InvalidImageTag".asInstanceOf[ImageFailureCode]
+    val ImageTagDoesNotMatchDigest    = "ImageTagDoesNotMatchDigest".asInstanceOf[ImageFailureCode]
+    val ImageNotFound                 = "ImageNotFound".asInstanceOf[ImageFailureCode]
+    val MissingDigestAndTag           = "MissingDigestAndTag".asInstanceOf[ImageFailureCode]
+    val ImageReferencedByManifestList = "ImageReferencedByManifestList".asInstanceOf[ImageFailureCode]
 
     val values = js.Object.freeze(
-      js.Array(InvalidImageDigest, InvalidImageTag, ImageTagDoesNotMatchDigest, ImageNotFound, MissingDigestAndTag)
+      js.Array(
+        InvalidImageDigest,
+        InvalidImageTag,
+        ImageTagDoesNotMatchDigest,
+        ImageNotFound,
+        MissingDigestAndTag,
+        ImageReferencedByManifestList
+      )
     )
   }
 
@@ -1613,6 +1624,8 @@ package ecr {
   trait PutImageRequest extends js.Object {
     var imageManifest: ImageManifest
     var repositoryName: RepositoryName
+    var imageDigest: js.UndefOr[ImageDigest]
+    var imageManifestMediaType: js.UndefOr[MediaType]
     var imageTag: js.UndefOr[ImageTag]
     var registryId: js.UndefOr[RegistryId]
   }
@@ -1622,6 +1635,8 @@ package ecr {
     def apply(
         imageManifest: ImageManifest,
         repositoryName: RepositoryName,
+        imageDigest: js.UndefOr[ImageDigest] = js.undefined,
+        imageManifestMediaType: js.UndefOr[MediaType] = js.undefined,
         imageTag: js.UndefOr[ImageTag] = js.undefined,
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): PutImageRequest = {
@@ -1630,6 +1645,8 @@ package ecr {
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
+      imageDigest.foreach(__v => __obj.updateDynamic("imageDigest")(__v.asInstanceOf[js.Any]))
+      imageManifestMediaType.foreach(__v => __obj.updateDynamic("imageManifestMediaType")(__v.asInstanceOf[js.Any]))
       imageTag.foreach(__v => __obj.updateDynamic("imageTag")(__v.asInstanceOf[js.Any]))
       registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutImageRequest]

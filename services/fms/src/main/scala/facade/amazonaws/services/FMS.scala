@@ -163,9 +163,10 @@ package fms {
   @js.native
   sealed trait CustomerPolicyScopeIdType extends js.Any
   object CustomerPolicyScopeIdType extends js.Object {
-    val ACCOUNT = "ACCOUNT".asInstanceOf[CustomerPolicyScopeIdType]
+    val ACCOUNT  = "ACCOUNT".asInstanceOf[CustomerPolicyScopeIdType]
+    val ORG_UNIT = "ORG_UNIT".asInstanceOf[CustomerPolicyScopeIdType]
 
-    val values = js.Object.freeze(js.Array(ACCOUNT))
+    val values = js.Object.freeze(js.Array(ACCOUNT, ORG_UNIT))
   }
 
   @js.native
@@ -883,13 +884,21 @@ package fms {
   sealed trait SecurityServiceType extends js.Any
   object SecurityServiceType extends js.Object {
     val WAF                           = "WAF".asInstanceOf[SecurityServiceType]
+    val WAFV2                         = "WAFV2".asInstanceOf[SecurityServiceType]
     val SHIELD_ADVANCED               = "SHIELD_ADVANCED".asInstanceOf[SecurityServiceType]
     val SECURITY_GROUPS_COMMON        = "SECURITY_GROUPS_COMMON".asInstanceOf[SecurityServiceType]
     val SECURITY_GROUPS_CONTENT_AUDIT = "SECURITY_GROUPS_CONTENT_AUDIT".asInstanceOf[SecurityServiceType]
     val SECURITY_GROUPS_USAGE_AUDIT   = "SECURITY_GROUPS_USAGE_AUDIT".asInstanceOf[SecurityServiceType]
 
     val values = js.Object.freeze(
-      js.Array(WAF, SHIELD_ADVANCED, SECURITY_GROUPS_COMMON, SECURITY_GROUPS_CONTENT_AUDIT, SECURITY_GROUPS_USAGE_AUDIT)
+      js.Array(
+        WAF,
+        WAFV2,
+        SHIELD_ADVANCED,
+        SECURITY_GROUPS_COMMON,
+        SECURITY_GROUPS_CONTENT_AUDIT,
+        SECURITY_GROUPS_USAGE_AUDIT
+      )
     )
   }
 

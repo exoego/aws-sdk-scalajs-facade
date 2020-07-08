@@ -13,6 +13,7 @@ package object costexplorer {
   type AttributeType                                = String
   type AttributeValue                               = String
   type Attributes                                   = js.Dictionary[AttributeValue]
+  type CostCategoryMaxResults                       = Int
   type CostCategoryName                             = String
   type CostCategoryReferencesList                   = js.Array[CostCategoryReference]
   type CostCategoryRulesList                        = js.Array[CostCategoryRule]
@@ -32,6 +33,7 @@ package object costexplorer {
   type Groups                                       = js.Array[Group]
   type Key                                          = String
   type Keys                                         = js.Array[Key]
+  type MatchOptions                                 = js.Array[MatchOption]
   type MaxResults                                   = Int
   type MetricAmount                                 = String
   type MetricName                                   = String
@@ -219,8 +221,7 @@ package costexplorer {
   }
 
   /**
-    * <important> <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is subject to change. Your use of Cost Categories is subject to the Beta Service Participation terms of the [[https://aws.amazon.com/service-terms/|AWS Service Terms]] (Section 1.10).</b> </i>
-    *  </important> The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object.
+    * The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object.
     */
   @js.native
   trait CostCategory extends js.Object {
@@ -256,8 +257,7 @@ package costexplorer {
   }
 
   /**
-    * <important> <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is subject to change. Your use of Cost Categories is subject to the Beta Service Participation terms of the [[https://aws.amazon.com/service-terms/|AWS Service Terms]] (Section 1.10).</b> </i>
-    *  </important> A reference to a Cost Category containing only enough information to identify the Cost Category.
+    * A reference to a Cost Category containing only enough information to identify the Cost Category.
     *  You can use this information to retrieve the full Cost Category information using <code>DescribeCostCategory</code>.
     */
   @js.native
@@ -266,6 +266,7 @@ package costexplorer {
     var EffectiveEnd: js.UndefOr[ZonedDateTime]
     var EffectiveStart: js.UndefOr[ZonedDateTime]
     var Name: js.UndefOr[CostCategoryName]
+    var NumberOfRules: js.UndefOr[NonNegativeInteger]
   }
 
   object CostCategoryReference {
@@ -274,20 +275,21 @@ package costexplorer {
         CostCategoryArn: js.UndefOr[Arn] = js.undefined,
         EffectiveEnd: js.UndefOr[ZonedDateTime] = js.undefined,
         EffectiveStart: js.UndefOr[ZonedDateTime] = js.undefined,
-        Name: js.UndefOr[CostCategoryName] = js.undefined
+        Name: js.UndefOr[CostCategoryName] = js.undefined,
+        NumberOfRules: js.UndefOr[NonNegativeInteger] = js.undefined
     ): CostCategoryReference = {
       val __obj = js.Dynamic.literal()
       CostCategoryArn.foreach(__v => __obj.updateDynamic("CostCategoryArn")(__v.asInstanceOf[js.Any]))
       EffectiveEnd.foreach(__v => __obj.updateDynamic("EffectiveEnd")(__v.asInstanceOf[js.Any]))
       EffectiveStart.foreach(__v => __obj.updateDynamic("EffectiveStart")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NumberOfRules.foreach(__v => __obj.updateDynamic("NumberOfRules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CostCategoryReference]
     }
   }
 
   /**
-    * <important> <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is subject to change. Your use of Cost Categories is subject to the Beta Service Participation terms of the [[https://aws.amazon.com/service-terms/|AWS Service Terms]] (Section 1.10).</b> </i>
-    *  </important> Rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value.
+    * Rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value.
     */
   @js.native
   trait CostCategoryRule extends js.Object {
@@ -322,8 +324,7 @@ package costexplorer {
   }
 
   /**
-    * <important> <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is subject to change. Your use of Cost Categories is subject to the Beta Service Participation terms of the [[https://aws.amazon.com/service-terms/|AWS Service Terms]] (Section 1.10).</b> </i>
-    *  </important> The values that are available for Cost Categories.
+    * The Cost Categories values used for filtering the costs.
     */
   @js.native
   trait CostCategoryValues extends js.Object {
@@ -395,7 +396,7 @@ package costexplorer {
   }
 
   /**
-    * How much it cost to run an instance.
+    * How much it costs to run an instance.
     */
   @js.native
   trait CoverageCost extends js.Object {
@@ -675,10 +676,12 @@ package costexplorer {
     val AZ                   = "AZ".asInstanceOf[Dimension]
     val INSTANCE_TYPE        = "INSTANCE_TYPE".asInstanceOf[Dimension]
     val LINKED_ACCOUNT       = "LINKED_ACCOUNT".asInstanceOf[Dimension]
+    val LINKED_ACCOUNT_NAME  = "LINKED_ACCOUNT_NAME".asInstanceOf[Dimension]
     val OPERATION            = "OPERATION".asInstanceOf[Dimension]
     val PURCHASE_TYPE        = "PURCHASE_TYPE".asInstanceOf[Dimension]
     val REGION               = "REGION".asInstanceOf[Dimension]
     val SERVICE              = "SERVICE".asInstanceOf[Dimension]
+    val SERVICE_CODE         = "SERVICE_CODE".asInstanceOf[Dimension]
     val USAGE_TYPE           = "USAGE_TYPE".asInstanceOf[Dimension]
     val USAGE_TYPE_GROUP     = "USAGE_TYPE_GROUP".asInstanceOf[Dimension]
     val RECORD_TYPE          = "RECORD_TYPE".asInstanceOf[Dimension]
@@ -705,10 +708,12 @@ package costexplorer {
         AZ,
         INSTANCE_TYPE,
         LINKED_ACCOUNT,
+        LINKED_ACCOUNT_NAME,
         OPERATION,
         PURCHASE_TYPE,
         REGION,
         SERVICE,
+        SERVICE_CODE,
         USAGE_TYPE,
         USAGE_TYPE_GROUP,
         RECORD_TYPE,
@@ -739,6 +744,7 @@ package costexplorer {
   @js.native
   trait DimensionValues extends js.Object {
     var Key: js.UndefOr[Dimension]
+    var MatchOptions: js.UndefOr[MatchOptions]
     var Values: js.UndefOr[Values]
   }
 
@@ -746,10 +752,12 @@ package costexplorer {
     @inline
     def apply(
         Key: js.UndefOr[Dimension] = js.undefined,
+        MatchOptions: js.UndefOr[MatchOptions] = js.undefined,
         Values: js.UndefOr[Values] = js.undefined
     ): DimensionValues = {
       val __obj = js.Dynamic.literal()
       Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      MatchOptions.foreach(__v => __obj.updateDynamic("MatchOptions")(__v.asInstanceOf[js.Any]))
       Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DimensionValues]
     }
@@ -1447,6 +1455,7 @@ package costexplorer {
   @js.native
   trait GetRightsizingRecommendationRequest extends js.Object {
     var Service: GenericString
+    var Configuration: js.UndefOr[RightsizingRecommendationConfiguration]
     var Filter: js.UndefOr[Expression]
     var NextPageToken: js.UndefOr[NextPageToken]
     var PageSize: js.UndefOr[NonNegativeInteger]
@@ -1456,6 +1465,7 @@ package costexplorer {
     @inline
     def apply(
         Service: GenericString,
+        Configuration: js.UndefOr[RightsizingRecommendationConfiguration] = js.undefined,
         Filter: js.UndefOr[Expression] = js.undefined,
         NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
         PageSize: js.UndefOr[NonNegativeInteger] = js.undefined
@@ -1464,6 +1474,7 @@ package costexplorer {
         "Service" -> Service.asInstanceOf[js.Any]
       )
 
+      Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
       Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
       NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
       PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
@@ -1473,6 +1484,7 @@ package costexplorer {
 
   @js.native
   trait GetRightsizingRecommendationResponse extends js.Object {
+    var Configuration: js.UndefOr[RightsizingRecommendationConfiguration]
     var Metadata: js.UndefOr[RightsizingRecommendationMetadata]
     var NextPageToken: js.UndefOr[NextPageToken]
     var RightsizingRecommendations: js.UndefOr[RightsizingRecommendationList]
@@ -1482,12 +1494,14 @@ package costexplorer {
   object GetRightsizingRecommendationResponse {
     @inline
     def apply(
+        Configuration: js.UndefOr[RightsizingRecommendationConfiguration] = js.undefined,
         Metadata: js.UndefOr[RightsizingRecommendationMetadata] = js.undefined,
         NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
         RightsizingRecommendations: js.UndefOr[RightsizingRecommendationList] = js.undefined,
         Summary: js.UndefOr[RightsizingRecommendationSummary] = js.undefined
     ): GetRightsizingRecommendationResponse = {
       val __obj = js.Dynamic.literal()
+      Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
       NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
       RightsizingRecommendations.foreach(__v =>
@@ -1561,6 +1575,8 @@ package costexplorer {
     var PaymentOption: PaymentOption
     var SavingsPlansType: SupportedSavingsPlansType
     var TermInYears: TermInYears
+    var AccountScope: js.UndefOr[AccountScope]
+    var Filter: js.UndefOr[Expression]
     var NextPageToken: js.UndefOr[NextPageToken]
     var PageSize: js.UndefOr[NonNegativeInteger]
   }
@@ -1572,6 +1588,8 @@ package costexplorer {
         PaymentOption: PaymentOption,
         SavingsPlansType: SupportedSavingsPlansType,
         TermInYears: TermInYears,
+        AccountScope: js.UndefOr[AccountScope] = js.undefined,
+        Filter: js.UndefOr[Expression] = js.undefined,
         NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
         PageSize: js.UndefOr[NonNegativeInteger] = js.undefined
     ): GetSavingsPlansPurchaseRecommendationRequest = {
@@ -1582,6 +1600,8 @@ package costexplorer {
         "TermInYears"          -> TermInYears.asInstanceOf[js.Any]
       )
 
+      AccountScope.foreach(__v => __obj.updateDynamic("AccountScope")(__v.asInstanceOf[js.Any]))
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
       NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
       PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSavingsPlansPurchaseRecommendationRequest]
@@ -1916,6 +1936,7 @@ package costexplorer {
   @js.native
   trait ListCostCategoryDefinitionsRequest extends js.Object {
     var EffectiveOn: js.UndefOr[ZonedDateTime]
+    var MaxResults: js.UndefOr[CostCategoryMaxResults]
     var NextToken: js.UndefOr[NextPageToken]
   }
 
@@ -1923,10 +1944,12 @@ package costexplorer {
     @inline
     def apply(
         EffectiveOn: js.UndefOr[ZonedDateTime] = js.undefined,
+        MaxResults: js.UndefOr[CostCategoryMaxResults] = js.undefined,
         NextToken: js.UndefOr[NextPageToken] = js.undefined
     ): ListCostCategoryDefinitionsRequest = {
       val __obj = js.Dynamic.literal()
       EffectiveOn.foreach(__v => __obj.updateDynamic("EffectiveOn")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCostCategoryDefinitionsRequest]
     }
@@ -1959,6 +1982,19 @@ package costexplorer {
     val SIXTY_DAYS  = "SIXTY_DAYS".asInstanceOf[LookbackPeriodInDays]
 
     val values = js.Object.freeze(js.Array(SEVEN_DAYS, THIRTY_DAYS, SIXTY_DAYS))
+  }
+
+  @js.native
+  sealed trait MatchOption extends js.Any
+  object MatchOption extends js.Object {
+    val EQUALS           = "EQUALS".asInstanceOf[MatchOption]
+    val STARTS_WITH      = "STARTS_WITH".asInstanceOf[MatchOption]
+    val ENDS_WITH        = "ENDS_WITH".asInstanceOf[MatchOption]
+    val CONTAINS         = "CONTAINS".asInstanceOf[MatchOption]
+    val CASE_SENSITIVE   = "CASE_SENSITIVE".asInstanceOf[MatchOption]
+    val CASE_INSENSITIVE = "CASE_INSENSITIVE".asInstanceOf[MatchOption]
+
+    val values = js.Object.freeze(js.Array(EQUALS, STARTS_WITH, ENDS_WITH, CONTAINS, CASE_SENSITIVE, CASE_INSENSITIVE))
   }
 
   @js.native
@@ -2091,6 +2127,15 @@ package costexplorer {
       SizeFlexEligible.foreach(__v => __obj.updateDynamic("SizeFlexEligible")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RDSInstanceDetails]
     }
+  }
+
+  @js.native
+  sealed trait RecommendationTarget extends js.Any
+  object RecommendationTarget extends js.Object {
+    val SAME_INSTANCE_FAMILY  = "SAME_INSTANCE_FAMILY".asInstanceOf[RecommendationTarget]
+    val CROSS_INSTANCE_FAMILY = "CROSS_INSTANCE_FAMILY".asInstanceOf[RecommendationTarget]
+
+    val values = js.Object.freeze(js.Array(SAME_INSTANCE_FAMILY, CROSS_INSTANCE_FAMILY))
   }
 
   /**
@@ -2347,7 +2392,7 @@ package costexplorer {
   }
 
   /**
-    * Information about this specific recommendation, such as the time stamp for when AWS made a specific recommendation.
+    * Information about this specific recommendation, such as the timestamp for when AWS made a specific recommendation.
     */
   @js.native
   trait ReservationPurchaseRecommendationMetadata extends js.Object {
@@ -2523,6 +2568,30 @@ package costexplorer {
         __obj.updateDynamic("TerminateRecommendationDetail")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[RightsizingRecommendation]
+    }
+  }
+
+  /**
+    * Enables you to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings associated with recommendations with consideration of existing Savings Plans or RI benefits, or niether.
+    */
+  @js.native
+  trait RightsizingRecommendationConfiguration extends js.Object {
+    var BenefitsConsidered: GenericBoolean
+    var RecommendationTarget: RecommendationTarget
+  }
+
+  object RightsizingRecommendationConfiguration {
+    @inline
+    def apply(
+        BenefitsConsidered: GenericBoolean,
+        RecommendationTarget: RecommendationTarget
+    ): RightsizingRecommendationConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "BenefitsConsidered"   -> BenefitsConsidered.asInstanceOf[js.Any],
+        "RecommendationTarget" -> RecommendationTarget.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[RightsizingRecommendationConfiguration]
     }
   }
 
@@ -2704,6 +2773,7 @@ package costexplorer {
     */
   @js.native
   trait SavingsPlansPurchaseRecommendation extends js.Object {
+    var AccountScope: js.UndefOr[AccountScope]
     var LookbackPeriodInDays: js.UndefOr[LookbackPeriodInDays]
     var PaymentOption: js.UndefOr[PaymentOption]
     var SavingsPlansPurchaseRecommendationDetails: js.UndefOr[SavingsPlansPurchaseRecommendationDetailList]
@@ -2715,6 +2785,7 @@ package costexplorer {
   object SavingsPlansPurchaseRecommendation {
     @inline
     def apply(
+        AccountScope: js.UndefOr[AccountScope] = js.undefined,
         LookbackPeriodInDays: js.UndefOr[LookbackPeriodInDays] = js.undefined,
         PaymentOption: js.UndefOr[PaymentOption] = js.undefined,
         SavingsPlansPurchaseRecommendationDetails: js.UndefOr[SavingsPlansPurchaseRecommendationDetailList] =
@@ -2724,6 +2795,7 @@ package costexplorer {
         TermInYears: js.UndefOr[TermInYears] = js.undefined
     ): SavingsPlansPurchaseRecommendation = {
       val __obj = js.Dynamic.literal()
+      AccountScope.foreach(__v => __obj.updateDynamic("AccountScope")(__v.asInstanceOf[js.Any]))
       LookbackPeriodInDays.foreach(__v => __obj.updateDynamic("LookbackPeriodInDays")(__v.asInstanceOf[js.Any]))
       PaymentOption.foreach(__v => __obj.updateDynamic("PaymentOption")(__v.asInstanceOf[js.Any]))
       SavingsPlansPurchaseRecommendationDetails.foreach(__v =>
@@ -3071,6 +3143,7 @@ package costexplorer {
   @js.native
   trait TagValues extends js.Object {
     var Key: js.UndefOr[TagKey]
+    var MatchOptions: js.UndefOr[MatchOptions]
     var Values: js.UndefOr[Values]
   }
 
@@ -3078,10 +3151,12 @@ package costexplorer {
     @inline
     def apply(
         Key: js.UndefOr[TagKey] = js.undefined,
+        MatchOptions: js.UndefOr[MatchOptions] = js.undefined,
         Values: js.UndefOr[Values] = js.undefined
     ): TagValues = {
       val __obj = js.Dynamic.literal()
       Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      MatchOptions.foreach(__v => __obj.updateDynamic("MatchOptions")(__v.asInstanceOf[js.Any]))
       Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagValues]
     }

@@ -7,126 +7,133 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object storagegateway {
-  type ActivationKey              = String
-  type Authentication             = String
-  type BandwidthDownloadRateLimit = Double
-  type BandwidthType              = String
-  type BandwidthUploadRateLimit   = Double
-  type CachediSCSIVolumes         = js.Array[CachediSCSIVolume]
-  type ChapCredentials            = js.Array[ChapInfo]
-  type ChapSecret                 = String
-  type ClientToken                = String
-  type CloudWatchLogGroupARN      = String
-  type CreatedDate                = js.Date
-  type DayOfMonth                 = Int
-  type DayOfWeek                  = Int
-  type Description                = String
-  type DeviceType                 = String
-  type DiskAllocationType         = String
-  type DiskAttribute              = String
-  type DiskAttributeList          = js.Array[DiskAttribute]
-  type DiskId                     = String
-  type DiskIds                    = js.Array[DiskId]
-  type Disks                      = js.Array[Disk]
-  type DomainName                 = String
-  type DomainUserName             = String
-  type DomainUserPassword         = String
-  type DoubleObject               = Double
-  type Ec2InstanceId              = String
-  type Ec2InstanceRegion          = String
-  type FileShareARN               = String
-  type FileShareARNList           = js.Array[FileShareARN]
-  type FileShareClientList        = js.Array[IPV4AddressCIDR]
-  type FileShareId                = String
-  type FileShareInfoList          = js.Array[FileShareInfo]
-  type FileShareStatus            = String
-  type FileShareUser              = String
-  type FileShareUserList          = js.Array[FileShareUser]
-  type Folder                     = String
-  type FolderList                 = js.Array[Folder]
-  type GatewayARN                 = String
-  type GatewayId                  = String
-  type GatewayName                = String
-  type GatewayNetworkInterfaces   = js.Array[NetworkInterface]
-  type GatewayOperationalState    = String
-  type GatewayState               = String
-  type GatewayTimezone            = String
-  type GatewayType                = String
-  type Gateways                   = js.Array[GatewayInfo]
-  type Host                       = String
-  type Hosts                      = js.Array[Host]
-  type HourOfDay                  = Int
-  type IPV4AddressCIDR            = String
-  type Initiator                  = String
-  type Initiators                 = js.Array[Initiator]
-  type IqnName                    = String
-  type KMSKey                     = String
-  type LastSoftwareUpdate         = String
-  type LocalConsolePassword       = String
-  type LocationARN                = String
-  type Marker                     = String
-  type MediumChangerType          = String
-  type MinuteOfHour               = Int
-  type NFSFileShareInfoList       = js.Array[NFSFileShareInfo]
-  type NetworkInterfaceId         = String
-  type NextUpdateAvailabilityDate = String
-  type NotificationId             = String
-  type NumTapesToCreate           = Int
-  type OrganizationalUnit         = String
-  type Path                       = String
-  type PermissionId               = Double
-  type PermissionMode             = String
-  type PoolId                     = String
-  type PositiveIntObject          = Int
-  type RecurrenceInHours          = Int
-  type RegionId                   = String
-  type ResourceARN                = String
-  type Role                       = String
-  type SMBFileShareInfoList       = js.Array[SMBFileShareInfo]
-  type SMBGuestPassword           = String
-  type SnapshotDescription        = String
-  type SnapshotId                 = String
-  type Squash                     = String
-  type StorageClass               = String
-  type StorediSCSIVolumes         = js.Array[StorediSCSIVolume]
-  type TagKey                     = String
-  type TagKeys                    = js.Array[TagKey]
-  type TagValue                   = String
-  type Tags                       = js.Array[Tag]
-  type TapeARN                    = String
-  type TapeARNs                   = js.Array[TapeARN]
-  type TapeArchiveStatus          = String
-  type TapeArchives               = js.Array[TapeArchive]
-  type TapeBarcode                = String
-  type TapeBarcodePrefix          = String
-  type TapeDriveType              = String
-  type TapeInfos                  = js.Array[TapeInfo]
-  type TapeRecoveryPointInfos     = js.Array[TapeRecoveryPointInfo]
-  type TapeRecoveryPointStatus    = String
-  type TapeSize                   = Double
-  type TapeStatus                 = String
-  type TapeUsage                  = Double
-  type Tapes                      = js.Array[Tape]
-  type TargetARN                  = String
-  type TargetName                 = String
-  type Time                       = js.Date
-  type TimeoutInSeconds           = Int
-  type VTLDeviceARN               = String
-  type VTLDeviceARNs              = js.Array[VTLDeviceARN]
-  type VTLDeviceProductIdentifier = String
-  type VTLDeviceType              = String
-  type VTLDeviceVendor            = String
-  type VTLDevices                 = js.Array[VTLDevice]
-  type VolumeARN                  = String
-  type VolumeARNs                 = js.Array[VolumeARN]
-  type VolumeAttachmentStatus     = String
-  type VolumeId                   = String
-  type VolumeInfos                = js.Array[VolumeInfo]
-  type VolumeRecoveryPointInfos   = js.Array[VolumeRecoveryPointInfo]
-  type VolumeStatus               = String
-  type VolumeType                 = String
-  type VolumeUsedInBytes          = Double
-  type double                     = Double
+  type ActivationKey                    = String
+  type AuditDestinationARN              = String
+  type Authentication                   = String
+  type AutomaticTapeCreationPolicyInfos = js.Array[AutomaticTapeCreationPolicyInfo]
+  type AutomaticTapeCreationRules       = js.Array[AutomaticTapeCreationRule]
+  type BandwidthDownloadRateLimit       = Double
+  type BandwidthType                    = String
+  type BandwidthUploadRateLimit         = Double
+  type CacheStaleTimeoutInSeconds       = Int
+  type CachediSCSIVolumes               = js.Array[CachediSCSIVolume]
+  type ChapCredentials                  = js.Array[ChapInfo]
+  type ChapSecret                       = String
+  type ClientToken                      = String
+  type CloudWatchLogGroupARN            = String
+  type CreatedDate                      = js.Date
+  type DayOfMonth                       = Int
+  type DayOfWeek                        = Int
+  type Description                      = String
+  type DeviceType                       = String
+  type DiskAllocationType               = String
+  type DiskAttribute                    = String
+  type DiskAttributeList                = js.Array[DiskAttribute]
+  type DiskId                           = String
+  type DiskIds                          = js.Array[DiskId]
+  type Disks                            = js.Array[Disk]
+  type DomainName                       = String
+  type DomainUserName                   = String
+  type DomainUserPassword               = String
+  type DoubleObject                     = Double
+  type Ec2InstanceId                    = String
+  type Ec2InstanceRegion                = String
+  type EndpointType                     = String
+  type FileShareARN                     = String
+  type FileShareARNList                 = js.Array[FileShareARN]
+  type FileShareClientList              = js.Array[IPV4AddressCIDR]
+  type FileShareId                      = String
+  type FileShareInfoList                = js.Array[FileShareInfo]
+  type FileShareName                    = String
+  type FileShareStatus                  = String
+  type FileShareUser                    = String
+  type FileShareUserList                = js.Array[FileShareUser]
+  type Folder                           = String
+  type FolderList                       = js.Array[Folder]
+  type GatewayARN                       = String
+  type GatewayId                        = String
+  type GatewayName                      = String
+  type GatewayNetworkInterfaces         = js.Array[NetworkInterface]
+  type GatewayOperationalState          = String
+  type GatewayState                     = String
+  type GatewayTimezone                  = String
+  type GatewayType                      = String
+  type Gateways                         = js.Array[GatewayInfo]
+  type Host                             = String
+  type Hosts                            = js.Array[Host]
+  type HourOfDay                        = Int
+  type IPV4AddressCIDR                  = String
+  type Initiator                        = String
+  type Initiators                       = js.Array[Initiator]
+  type IqnName                          = String
+  type KMSKey                           = String
+  type LastSoftwareUpdate               = String
+  type LocalConsolePassword             = String
+  type LocationARN                      = String
+  type Marker                           = String
+  type MediumChangerType                = String
+  type MinimumNumTapes                  = Int
+  type MinuteOfHour                     = Int
+  type NFSFileShareInfoList             = js.Array[NFSFileShareInfo]
+  type NetworkInterfaceId               = String
+  type NextUpdateAvailabilityDate       = String
+  type NotificationId                   = String
+  type NumTapesToCreate                 = Int
+  type OrganizationalUnit               = String
+  type Path                             = String
+  type PermissionId                     = Double
+  type PermissionMode                   = String
+  type PoolId                           = String
+  type PositiveIntObject                = Int
+  type RecurrenceInHours                = Int
+  type RegionId                         = String
+  type ResourceARN                      = String
+  type Role                             = String
+  type SMBFileShareInfoList             = js.Array[SMBFileShareInfo]
+  type SMBGuestPassword                 = String
+  type SnapshotDescription              = String
+  type SnapshotId                       = String
+  type Squash                           = String
+  type StorageClass                     = String
+  type StorediSCSIVolumes               = js.Array[StorediSCSIVolume]
+  type TagKey                           = String
+  type TagKeys                          = js.Array[TagKey]
+  type TagValue                         = String
+  type Tags                             = js.Array[Tag]
+  type TapeARN                          = String
+  type TapeARNs                         = js.Array[TapeARN]
+  type TapeArchiveStatus                = String
+  type TapeArchives                     = js.Array[TapeArchive]
+  type TapeBarcode                      = String
+  type TapeBarcodePrefix                = String
+  type TapeDriveType                    = String
+  type TapeInfos                        = js.Array[TapeInfo]
+  type TapeRecoveryPointInfos           = js.Array[TapeRecoveryPointInfo]
+  type TapeRecoveryPointStatus          = String
+  type TapeSize                         = Double
+  type TapeStatus                       = String
+  type TapeUsage                        = Double
+  type Tapes                            = js.Array[Tape]
+  type TargetARN                        = String
+  type TargetName                       = String
+  type Time                             = js.Date
+  type TimeoutInSeconds                 = Int
+  type VTLDeviceARN                     = String
+  type VTLDeviceARNs                    = js.Array[VTLDeviceARN]
+  type VTLDeviceProductIdentifier       = String
+  type VTLDeviceType                    = String
+  type VTLDeviceVendor                  = String
+  type VTLDevices                       = js.Array[VTLDevice]
+  type VolumeARN                        = String
+  type VolumeARNs                       = js.Array[VolumeARN]
+  type VolumeAttachmentStatus           = String
+  type VolumeId                         = String
+  type VolumeInfos                      = js.Array[VolumeInfo]
+  type VolumeRecoveryPointInfos         = js.Array[VolumeRecoveryPointInfo]
+  type VolumeStatus                     = String
+  type VolumeType                       = String
+  type VolumeUsedInBytes                = Double
+  type double                           = Double
 
   implicit final class StorageGatewayOps(private val service: StorageGateway) extends AnyVal {
 
@@ -168,6 +175,10 @@ package object storagegateway {
       service.createTapeWithBarcode(params).promise().toFuture
     @inline def createTapesFuture(params: CreateTapesInput): Future[CreateTapesOutput] =
       service.createTapes(params).promise().toFuture
+    @inline def deleteAutomaticTapeCreationPolicyFuture(
+        params: DeleteAutomaticTapeCreationPolicyInput
+    ): Future[DeleteAutomaticTapeCreationPolicyOutput] =
+      service.deleteAutomaticTapeCreationPolicy(params).promise().toFuture
     @inline def deleteBandwidthRateLimitFuture(
         params: DeleteBandwidthRateLimitInput
     ): Future[DeleteBandwidthRateLimitOutput] = service.deleteBandwidthRateLimit(params).promise().toFuture
@@ -239,6 +250,10 @@ package object storagegateway {
       service.disableGateway(params).promise().toFuture
     @inline def joinDomainFuture(params: JoinDomainInput): Future[JoinDomainOutput] =
       service.joinDomain(params).promise().toFuture
+    @inline def listAutomaticTapeCreationPoliciesFuture(
+        params: ListAutomaticTapeCreationPoliciesInput
+    ): Future[ListAutomaticTapeCreationPoliciesOutput] =
+      service.listAutomaticTapeCreationPolicies(params).promise().toFuture
     @inline def listFileSharesFuture(params: ListFileSharesInput): Future[ListFileSharesOutput] =
       service.listFileShares(params).promise().toFuture
     @inline def listGatewaysFuture(params: ListGatewaysInput): Future[ListGatewaysOutput] =
@@ -282,6 +297,10 @@ package object storagegateway {
     ): Future[StartAvailabilityMonitorTestOutput] = service.startAvailabilityMonitorTest(params).promise().toFuture
     @inline def startGatewayFuture(params: StartGatewayInput): Future[StartGatewayOutput] =
       service.startGateway(params).promise().toFuture
+    @inline def updateAutomaticTapeCreationPolicyFuture(
+        params: UpdateAutomaticTapeCreationPolicyInput
+    ): Future[UpdateAutomaticTapeCreationPolicyOutput] =
+      service.updateAutomaticTapeCreationPolicy(params).promise().toFuture
     @inline def updateBandwidthRateLimitFuture(
         params: UpdateBandwidthRateLimitInput
     ): Future[UpdateBandwidthRateLimitOutput] = service.updateBandwidthRateLimit(params).promise().toFuture
@@ -338,6 +357,9 @@ package storagegateway {
       js.native
     def createTapeWithBarcode(params: CreateTapeWithBarcodeInput): Request[CreateTapeWithBarcodeOutput] = js.native
     def createTapes(params: CreateTapesInput): Request[CreateTapesOutput]                               = js.native
+    def deleteAutomaticTapeCreationPolicy(
+        params: DeleteAutomaticTapeCreationPolicyInput
+    ): Request[DeleteAutomaticTapeCreationPolicyOutput] = js.native
     def deleteBandwidthRateLimit(params: DeleteBandwidthRateLimitInput): Request[DeleteBandwidthRateLimitOutput] =
       js.native
     def deleteChapCredentials(params: DeleteChapCredentialsInput): Request[DeleteChapCredentialsOutput]    = js.native
@@ -379,12 +401,15 @@ package storagegateway {
     def detachVolume(params: DetachVolumeInput): Request[DetachVolumeOutput]                               = js.native
     def disableGateway(params: DisableGatewayInput): Request[DisableGatewayOutput]                         = js.native
     def joinDomain(params: JoinDomainInput): Request[JoinDomainOutput]                                     = js.native
-    def listFileShares(params: ListFileSharesInput): Request[ListFileSharesOutput]                         = js.native
-    def listGateways(params: ListGatewaysInput): Request[ListGatewaysOutput]                               = js.native
-    def listLocalDisks(params: ListLocalDisksInput): Request[ListLocalDisksOutput]                         = js.native
-    def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput]          = js.native
-    def listTapes(params: ListTapesInput): Request[ListTapesOutput]                                        = js.native
-    def listVolumeInitiators(params: ListVolumeInitiatorsInput): Request[ListVolumeInitiatorsOutput]       = js.native
+    def listAutomaticTapeCreationPolicies(
+        params: ListAutomaticTapeCreationPoliciesInput
+    ): Request[ListAutomaticTapeCreationPoliciesOutput]                                              = js.native
+    def listFileShares(params: ListFileSharesInput): Request[ListFileSharesOutput]                   = js.native
+    def listGateways(params: ListGatewaysInput): Request[ListGatewaysOutput]                         = js.native
+    def listLocalDisks(params: ListLocalDisksInput): Request[ListLocalDisksOutput]                   = js.native
+    def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput]    = js.native
+    def listTapes(params: ListTapesInput): Request[ListTapesOutput]                                  = js.native
+    def listVolumeInitiators(params: ListVolumeInitiatorsInput): Request[ListVolumeInitiatorsOutput] = js.native
     def listVolumeRecoveryPoints(params: ListVolumeRecoveryPointsInput): Request[ListVolumeRecoveryPointsOutput] =
       js.native
     def listVolumes(params: ListVolumesInput): Request[ListVolumesOutput]                                  = js.native
@@ -403,6 +428,9 @@ package storagegateway {
         params: StartAvailabilityMonitorTestInput
     ): Request[StartAvailabilityMonitorTestOutput]                           = js.native
     def startGateway(params: StartGatewayInput): Request[StartGatewayOutput] = js.native
+    def updateAutomaticTapeCreationPolicy(
+        params: UpdateAutomaticTapeCreationPolicyInput
+    ): Request[UpdateAutomaticTapeCreationPolicyOutput] = js.native
     def updateBandwidthRateLimit(params: UpdateBandwidthRateLimitInput): Request[UpdateBandwidthRateLimitOutput] =
       js.native
     def updateChapCredentials(params: UpdateChapCredentialsInput): Request[UpdateChapCredentialsOutput] = js.native
@@ -427,8 +455,8 @@ package storagegateway {
     *  * GatewayRegion
     *  * GatewayTimezone
     *  * GatewayType
-    *  * TapeDriveType
     *  * MediumChangerType
+    *  * TapeDriveType
     */
   @js.native
   trait ActivateGatewayInput extends js.Object {
@@ -642,7 +670,7 @@ package storagegateway {
   }
 
   /**
-    * A JSON object containing the of the gateway for which working storage was configured.
+    * A JSON object containing the Amazon Resource Name (ARN) of the gateway for which working storage was configured.
     */
   @js.native
   trait AddWorkingStorageOutput extends js.Object {
@@ -746,6 +774,60 @@ package storagegateway {
     }
   }
 
+  /**
+    * Information about the gateway's automatic tape creation policies, including the automatic tape creation rules and the gateway that is using the policies.
+    */
+  @js.native
+  trait AutomaticTapeCreationPolicyInfo extends js.Object {
+    var AutomaticTapeCreationRules: js.UndefOr[AutomaticTapeCreationRules]
+    var GatewayARN: js.UndefOr[GatewayARN]
+  }
+
+  object AutomaticTapeCreationPolicyInfo {
+    @inline
+    def apply(
+        AutomaticTapeCreationRules: js.UndefOr[AutomaticTapeCreationRules] = js.undefined,
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): AutomaticTapeCreationPolicyInfo = {
+      val __obj = js.Dynamic.literal()
+      AutomaticTapeCreationRules.foreach(__v =>
+        __obj.updateDynamic("AutomaticTapeCreationRules")(__v.asInstanceOf[js.Any])
+      )
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AutomaticTapeCreationPolicyInfo]
+    }
+  }
+
+  /**
+    * An automatic tape creation policy consists of automatic tape creation rules where each rule defines when and how to create new tapes.
+    */
+  @js.native
+  trait AutomaticTapeCreationRule extends js.Object {
+    var MinimumNumTapes: MinimumNumTapes
+    var PoolId: PoolId
+    var TapeBarcodePrefix: TapeBarcodePrefix
+    var TapeSizeInBytes: TapeSize
+  }
+
+  object AutomaticTapeCreationRule {
+    @inline
+    def apply(
+        MinimumNumTapes: MinimumNumTapes,
+        PoolId: PoolId,
+        TapeBarcodePrefix: TapeBarcodePrefix,
+        TapeSizeInBytes: TapeSize
+    ): AutomaticTapeCreationRule = {
+      val __obj = js.Dynamic.literal(
+        "MinimumNumTapes"   -> MinimumNumTapes.asInstanceOf[js.Any],
+        "PoolId"            -> PoolId.asInstanceOf[js.Any],
+        "TapeBarcodePrefix" -> TapeBarcodePrefix.asInstanceOf[js.Any],
+        "TapeSizeInBytes"   -> TapeSizeInBytes.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[AutomaticTapeCreationRule]
+    }
+  }
+
   @js.native
   sealed trait AvailabilityMonitorTestStatus extends js.Any
   object AvailabilityMonitorTestStatus extends js.Object {
@@ -754,6 +836,27 @@ package storagegateway {
     val PENDING  = "PENDING".asInstanceOf[AvailabilityMonitorTestStatus]
 
     val values = js.Object.freeze(js.Array(COMPLETE, FAILED, PENDING))
+  }
+
+  /**
+    * Lists refresh cache information.
+    */
+  @js.native
+  trait CacheAttributes extends js.Object {
+    var CacheStaleTimeoutInSeconds: js.UndefOr[CacheStaleTimeoutInSeconds]
+  }
+
+  object CacheAttributes {
+    @inline
+    def apply(
+        CacheStaleTimeoutInSeconds: js.UndefOr[CacheStaleTimeoutInSeconds] = js.undefined
+    ): CacheAttributes = {
+      val __obj = js.Dynamic.literal()
+      CacheStaleTimeoutInSeconds.foreach(__v =>
+        __obj.updateDynamic("CacheStaleTimeoutInSeconds")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[CacheAttributes]
+    }
   }
 
   /**
@@ -885,6 +988,15 @@ package storagegateway {
     }
   }
 
+  @js.native
+  sealed trait CaseSensitivity extends js.Any
+  object CaseSensitivity extends js.Object {
+    val ClientSpecified = "ClientSpecified".asInstanceOf[CaseSensitivity]
+    val CaseSensitive   = "CaseSensitive".asInstanceOf[CaseSensitivity]
+
+    val values = js.Object.freeze(js.Array(ClientSpecified, CaseSensitive))
+  }
+
   /**
     * Describes Challenge-Handshake Authentication Protocol (CHAP) information that supports authentication between your gateway and iSCSI initiators.
     */
@@ -987,8 +1099,10 @@ package storagegateway {
     var GatewayARN: GatewayARN
     var LocationARN: LocationARN
     var Role: Role
+    var CacheAttributes: js.UndefOr[CacheAttributes]
     var ClientList: js.UndefOr[FileShareClientList]
     var DefaultStorageClass: js.UndefOr[StorageClass]
+    var FileShareName: js.UndefOr[FileShareName]
     var GuessMIMETypeEnabled: js.UndefOr[Boolean]
     var KMSEncrypted: js.UndefOr[Boolean]
     var KMSKey: js.UndefOr[KMSKey]
@@ -1007,8 +1121,10 @@ package storagegateway {
         GatewayARN: GatewayARN,
         LocationARN: LocationARN,
         Role: Role,
+        CacheAttributes: js.UndefOr[CacheAttributes] = js.undefined,
         ClientList: js.UndefOr[FileShareClientList] = js.undefined,
         DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
+        FileShareName: js.UndefOr[FileShareName] = js.undefined,
         GuessMIMETypeEnabled: js.UndefOr[Boolean] = js.undefined,
         KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
@@ -1026,8 +1142,10 @@ package storagegateway {
         "Role"        -> Role.asInstanceOf[js.Any]
       )
 
+      CacheAttributes.foreach(__v => __obj.updateDynamic("CacheAttributes")(__v.asInstanceOf[js.Any]))
       ClientList.foreach(__v => __obj.updateDynamic("ClientList")(__v.asInstanceOf[js.Any]))
       DefaultStorageClass.foreach(__v => __obj.updateDynamic("DefaultStorageClass")(__v.asInstanceOf[js.Any]))
+      FileShareName.foreach(__v => __obj.updateDynamic("FileShareName")(__v.asInstanceOf[js.Any]))
       GuessMIMETypeEnabled.foreach(__v => __obj.updateDynamic("GuessMIMETypeEnabled")(__v.asInstanceOf[js.Any]))
       KMSEncrypted.foreach(__v => __obj.updateDynamic("KMSEncrypted")(__v.asInstanceOf[js.Any]))
       KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
@@ -1064,8 +1182,12 @@ package storagegateway {
     var LocationARN: LocationARN
     var Role: Role
     var AdminUserList: js.UndefOr[FileShareUserList]
+    var AuditDestinationARN: js.UndefOr[AuditDestinationARN]
     var Authentication: js.UndefOr[Authentication]
+    var CacheAttributes: js.UndefOr[CacheAttributes]
+    var CaseSensitivity: js.UndefOr[CaseSensitivity]
     var DefaultStorageClass: js.UndefOr[StorageClass]
+    var FileShareName: js.UndefOr[FileShareName]
     var GuessMIMETypeEnabled: js.UndefOr[Boolean]
     var InvalidUserList: js.UndefOr[FileShareUserList]
     var KMSEncrypted: js.UndefOr[Boolean]
@@ -1086,8 +1208,12 @@ package storagegateway {
         LocationARN: LocationARN,
         Role: Role,
         AdminUserList: js.UndefOr[FileShareUserList] = js.undefined,
+        AuditDestinationARN: js.UndefOr[AuditDestinationARN] = js.undefined,
         Authentication: js.UndefOr[Authentication] = js.undefined,
+        CacheAttributes: js.UndefOr[CacheAttributes] = js.undefined,
+        CaseSensitivity: js.UndefOr[CaseSensitivity] = js.undefined,
         DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
+        FileShareName: js.UndefOr[FileShareName] = js.undefined,
         GuessMIMETypeEnabled: js.UndefOr[Boolean] = js.undefined,
         InvalidUserList: js.UndefOr[FileShareUserList] = js.undefined,
         KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
@@ -1107,8 +1233,12 @@ package storagegateway {
       )
 
       AdminUserList.foreach(__v => __obj.updateDynamic("AdminUserList")(__v.asInstanceOf[js.Any]))
+      AuditDestinationARN.foreach(__v => __obj.updateDynamic("AuditDestinationARN")(__v.asInstanceOf[js.Any]))
       Authentication.foreach(__v => __obj.updateDynamic("Authentication")(__v.asInstanceOf[js.Any]))
+      CacheAttributes.foreach(__v => __obj.updateDynamic("CacheAttributes")(__v.asInstanceOf[js.Any]))
+      CaseSensitivity.foreach(__v => __obj.updateDynamic("CaseSensitivity")(__v.asInstanceOf[js.Any]))
       DefaultStorageClass.foreach(__v => __obj.updateDynamic("DefaultStorageClass")(__v.asInstanceOf[js.Any]))
+      FileShareName.foreach(__v => __obj.updateDynamic("FileShareName")(__v.asInstanceOf[js.Any]))
       GuessMIMETypeEnabled.foreach(__v => __obj.updateDynamic("GuessMIMETypeEnabled")(__v.asInstanceOf[js.Any]))
       InvalidUserList.foreach(__v => __obj.updateDynamic("InvalidUserList")(__v.asInstanceOf[js.Any]))
       KMSEncrypted.foreach(__v => __obj.updateDynamic("KMSEncrypted")(__v.asInstanceOf[js.Any]))
@@ -1427,6 +1557,40 @@ package storagegateway {
     }
   }
 
+  @js.native
+  trait DeleteAutomaticTapeCreationPolicyInput extends js.Object {
+    var GatewayARN: GatewayARN
+  }
+
+  object DeleteAutomaticTapeCreationPolicyInput {
+    @inline
+    def apply(
+        GatewayARN: GatewayARN
+    ): DeleteAutomaticTapeCreationPolicyInput = {
+      val __obj = js.Dynamic.literal(
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteAutomaticTapeCreationPolicyInput]
+    }
+  }
+
+  @js.native
+  trait DeleteAutomaticTapeCreationPolicyOutput extends js.Object {
+    var GatewayARN: js.UndefOr[GatewayARN]
+  }
+
+  object DeleteAutomaticTapeCreationPolicyOutput {
+    @inline
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): DeleteAutomaticTapeCreationPolicyOutput = {
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteAutomaticTapeCreationPolicyOutput]
+    }
+  }
+
   /**
     * A JSON object containing the following fields:
     * * BandwidthType
@@ -1453,7 +1617,7 @@ package storagegateway {
   }
 
   /**
-    * A JSON object containing the of the gateway whose bandwidth rate information was deleted.
+    * A JSON object containing the Amazon Resource Name (ARN) of the gateway whose bandwidth rate information was deleted.
     */
   @js.native
   trait DeleteBandwidthRateLimitOutput extends js.Object {
@@ -1723,7 +1887,7 @@ package storagegateway {
   }
 
   /**
-    * A JSON object containing the of the storage volume that was deleted
+    * A JSON object containing the Amazon Resource Name (ARN) of the storage volume that was deleted.
     */
   @js.native
   trait DeleteVolumeOutput extends js.Object {
@@ -1782,7 +1946,7 @@ package storagegateway {
   }
 
   /**
-    * A JSON object containing the of the gateway.
+    * A JSON object containing the Amazon Resource Name (ARN) of the gateway.
     */
   @js.native
   trait DescribeBandwidthRateLimitInput extends js.Object {
@@ -1942,7 +2106,7 @@ package storagegateway {
   }
 
   /**
-    * A JSON object containing a .
+    * A JSON object containing the following fields:
     */
   @js.native
   trait DescribeChapCredentialsOutput extends js.Object {
@@ -1989,6 +2153,7 @@ package storagegateway {
     var CloudWatchLogGroupARN: js.UndefOr[CloudWatchLogGroupARN]
     var Ec2InstanceId: js.UndefOr[Ec2InstanceId]
     var Ec2InstanceRegion: js.UndefOr[Ec2InstanceRegion]
+    var EndpointType: js.UndefOr[EndpointType]
     var GatewayARN: js.UndefOr[GatewayARN]
     var GatewayId: js.UndefOr[GatewayId]
     var GatewayName: js.UndefOr[String]
@@ -2009,6 +2174,7 @@ package storagegateway {
         CloudWatchLogGroupARN: js.UndefOr[CloudWatchLogGroupARN] = js.undefined,
         Ec2InstanceId: js.UndefOr[Ec2InstanceId] = js.undefined,
         Ec2InstanceRegion: js.UndefOr[Ec2InstanceRegion] = js.undefined,
+        EndpointType: js.UndefOr[EndpointType] = js.undefined,
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
         GatewayId: js.UndefOr[GatewayId] = js.undefined,
         GatewayName: js.UndefOr[String] = js.undefined,
@@ -2026,6 +2192,7 @@ package storagegateway {
       CloudWatchLogGroupARN.foreach(__v => __obj.updateDynamic("CloudWatchLogGroupARN")(__v.asInstanceOf[js.Any]))
       Ec2InstanceId.foreach(__v => __obj.updateDynamic("Ec2InstanceId")(__v.asInstanceOf[js.Any]))
       Ec2InstanceRegion.foreach(__v => __obj.updateDynamic("Ec2InstanceRegion")(__v.asInstanceOf[js.Any]))
+      EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
       GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       GatewayId.foreach(__v => __obj.updateDynamic("GatewayId")(__v.asInstanceOf[js.Any]))
       GatewayName.foreach(__v => __obj.updateDynamic("GatewayName")(__v.asInstanceOf[js.Any]))
@@ -2045,7 +2212,7 @@ package storagegateway {
   }
 
   /**
-    * A JSON object containing the of the gateway.
+    * A JSON object containing the Amazon Resource Name (ARN) of the gateway.
     */
   @js.native
   trait DescribeMaintenanceStartTimeInput extends js.Object {
@@ -2535,7 +2702,7 @@ package storagegateway {
   }
 
   /**
-    * A JSON object containing the of the gateway.
+    * A JSON object containing the Amazon Resource Name (ARN) of the gateway.
     */
   @js.native
   trait DescribeWorkingStorageInput extends js.Object {
@@ -2879,6 +3046,40 @@ package storagegateway {
     }
   }
 
+  @js.native
+  trait ListAutomaticTapeCreationPoliciesInput extends js.Object {
+    var GatewayARN: js.UndefOr[GatewayARN]
+  }
+
+  object ListAutomaticTapeCreationPoliciesInput {
+    @inline
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): ListAutomaticTapeCreationPoliciesInput = {
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAutomaticTapeCreationPoliciesInput]
+    }
+  }
+
+  @js.native
+  trait ListAutomaticTapeCreationPoliciesOutput extends js.Object {
+    var AutomaticTapeCreationPolicyInfos: js.UndefOr[AutomaticTapeCreationPolicyInfos]
+  }
+
+  object ListAutomaticTapeCreationPoliciesOutput {
+    @inline
+    def apply(
+        AutomaticTapeCreationPolicyInfos: js.UndefOr[AutomaticTapeCreationPolicyInfos] = js.undefined
+    ): ListAutomaticTapeCreationPoliciesOutput = {
+      val __obj = js.Dynamic.literal()
+      AutomaticTapeCreationPolicyInfos.foreach(__v =>
+        __obj.updateDynamic("AutomaticTapeCreationPolicyInfos")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ListAutomaticTapeCreationPoliciesOutput]
+    }
+  }
+
   /**
     * ListFileShareInput
     */
@@ -2973,7 +3174,7 @@ package storagegateway {
   }
 
   /**
-    * A JSON object containing the of the gateway.
+    * A JSON object containing the Amazon Resource Name (ARN) of the gateway.
     */
   @js.native
   trait ListLocalDisksInput extends js.Object {
@@ -3268,10 +3469,12 @@ package storagegateway {
     */
   @js.native
   trait NFSFileShareInfo extends js.Object {
+    var CacheAttributes: js.UndefOr[CacheAttributes]
     var ClientList: js.UndefOr[FileShareClientList]
     var DefaultStorageClass: js.UndefOr[StorageClass]
     var FileShareARN: js.UndefOr[FileShareARN]
     var FileShareId: js.UndefOr[FileShareId]
+    var FileShareName: js.UndefOr[FileShareName]
     var FileShareStatus: js.UndefOr[FileShareStatus]
     var GatewayARN: js.UndefOr[GatewayARN]
     var GuessMIMETypeEnabled: js.UndefOr[Boolean]
@@ -3291,10 +3494,12 @@ package storagegateway {
   object NFSFileShareInfo {
     @inline
     def apply(
+        CacheAttributes: js.UndefOr[CacheAttributes] = js.undefined,
         ClientList: js.UndefOr[FileShareClientList] = js.undefined,
         DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
         FileShareARN: js.UndefOr[FileShareARN] = js.undefined,
         FileShareId: js.UndefOr[FileShareId] = js.undefined,
+        FileShareName: js.UndefOr[FileShareName] = js.undefined,
         FileShareStatus: js.UndefOr[FileShareStatus] = js.undefined,
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
         GuessMIMETypeEnabled: js.UndefOr[Boolean] = js.undefined,
@@ -3311,10 +3516,12 @@ package storagegateway {
         Tags: js.UndefOr[Tags] = js.undefined
     ): NFSFileShareInfo = {
       val __obj = js.Dynamic.literal()
+      CacheAttributes.foreach(__v => __obj.updateDynamic("CacheAttributes")(__v.asInstanceOf[js.Any]))
       ClientList.foreach(__v => __obj.updateDynamic("ClientList")(__v.asInstanceOf[js.Any]))
       DefaultStorageClass.foreach(__v => __obj.updateDynamic("DefaultStorageClass")(__v.asInstanceOf[js.Any]))
       FileShareARN.foreach(__v => __obj.updateDynamic("FileShareARN")(__v.asInstanceOf[js.Any]))
       FileShareId.foreach(__v => __obj.updateDynamic("FileShareId")(__v.asInstanceOf[js.Any]))
+      FileShareName.foreach(__v => __obj.updateDynamic("FileShareName")(__v.asInstanceOf[js.Any]))
       FileShareStatus.foreach(__v => __obj.updateDynamic("FileShareStatus")(__v.asInstanceOf[js.Any]))
       GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       GuessMIMETypeEnabled.foreach(__v => __obj.updateDynamic("GuessMIMETypeEnabled")(__v.asInstanceOf[js.Any]))
@@ -3396,7 +3603,7 @@ package storagegateway {
   }
 
   /**
-    * A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts objects into. The default value is "private".
+    * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file gateway puts objects into. The default value is <code>private</code>.
     */
   @js.native
   sealed trait ObjectACL extends js.Any
@@ -3616,10 +3823,14 @@ package storagegateway {
   @js.native
   trait SMBFileShareInfo extends js.Object {
     var AdminUserList: js.UndefOr[FileShareUserList]
+    var AuditDestinationARN: js.UndefOr[AuditDestinationARN]
     var Authentication: js.UndefOr[Authentication]
+    var CacheAttributes: js.UndefOr[CacheAttributes]
+    var CaseSensitivity: js.UndefOr[CaseSensitivity]
     var DefaultStorageClass: js.UndefOr[StorageClass]
     var FileShareARN: js.UndefOr[FileShareARN]
     var FileShareId: js.UndefOr[FileShareId]
+    var FileShareName: js.UndefOr[FileShareName]
     var FileShareStatus: js.UndefOr[FileShareStatus]
     var GatewayARN: js.UndefOr[GatewayARN]
     var GuessMIMETypeEnabled: js.UndefOr[Boolean]
@@ -3641,10 +3852,14 @@ package storagegateway {
     @inline
     def apply(
         AdminUserList: js.UndefOr[FileShareUserList] = js.undefined,
+        AuditDestinationARN: js.UndefOr[AuditDestinationARN] = js.undefined,
         Authentication: js.UndefOr[Authentication] = js.undefined,
+        CacheAttributes: js.UndefOr[CacheAttributes] = js.undefined,
+        CaseSensitivity: js.UndefOr[CaseSensitivity] = js.undefined,
         DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
         FileShareARN: js.UndefOr[FileShareARN] = js.undefined,
         FileShareId: js.UndefOr[FileShareId] = js.undefined,
+        FileShareName: js.UndefOr[FileShareName] = js.undefined,
         FileShareStatus: js.UndefOr[FileShareStatus] = js.undefined,
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
         GuessMIMETypeEnabled: js.UndefOr[Boolean] = js.undefined,
@@ -3663,10 +3878,14 @@ package storagegateway {
     ): SMBFileShareInfo = {
       val __obj = js.Dynamic.literal()
       AdminUserList.foreach(__v => __obj.updateDynamic("AdminUserList")(__v.asInstanceOf[js.Any]))
+      AuditDestinationARN.foreach(__v => __obj.updateDynamic("AuditDestinationARN")(__v.asInstanceOf[js.Any]))
       Authentication.foreach(__v => __obj.updateDynamic("Authentication")(__v.asInstanceOf[js.Any]))
+      CacheAttributes.foreach(__v => __obj.updateDynamic("CacheAttributes")(__v.asInstanceOf[js.Any]))
+      CaseSensitivity.foreach(__v => __obj.updateDynamic("CaseSensitivity")(__v.asInstanceOf[js.Any]))
       DefaultStorageClass.foreach(__v => __obj.updateDynamic("DefaultStorageClass")(__v.asInstanceOf[js.Any]))
       FileShareARN.foreach(__v => __obj.updateDynamic("FileShareARN")(__v.asInstanceOf[js.Any]))
       FileShareId.foreach(__v => __obj.updateDynamic("FileShareId")(__v.asInstanceOf[js.Any]))
+      FileShareName.foreach(__v => __obj.updateDynamic("FileShareName")(__v.asInstanceOf[js.Any]))
       FileShareStatus.foreach(__v => __obj.updateDynamic("FileShareStatus")(__v.asInstanceOf[js.Any]))
       GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       GuessMIMETypeEnabled.foreach(__v => __obj.updateDynamic("GuessMIMETypeEnabled")(__v.asInstanceOf[js.Any]))
@@ -3771,7 +3990,7 @@ package storagegateway {
   }
 
   /**
-    * A JSON object containing the of the gateway to shut down.
+    * A JSON object containing the Amazon Resource Name (ARN) of the gateway to shut down.
     */
   @js.native
   trait ShutdownGatewayInput extends js.Object {
@@ -3792,7 +4011,7 @@ package storagegateway {
   }
 
   /**
-    * A JSON object containing the of the gateway that was shut down.
+    * A JSON object containing the Amazon Resource Name (ARN) of the gateway that was shut down.
     */
   @js.native
   trait ShutdownGatewayOutput extends js.Object {
@@ -3845,7 +4064,7 @@ package storagegateway {
   }
 
   /**
-    * A JSON object containing the of the gateway to start.
+    * A JSON object containing the Amazon Resource Name (ARN) of the gateway to start.
     */
   @js.native
   trait StartGatewayInput extends js.Object {
@@ -3866,7 +4085,7 @@ package storagegateway {
   }
 
   /**
-    * A JSON object containing the of the gateway that was restarted.
+    * A JSON object containing the Amazon Resource Name (ARN) of the gateway that was restarted.
     */
   @js.native
   trait StartGatewayOutput extends js.Object {
@@ -3946,7 +4165,7 @@ package storagegateway {
   }
 
   /**
-    * A key-value pair that helps you manage, filter, and search for your resource. Allowed characters: letters, white space, and numbers, representable in UTF-8, and the following characters: + - = . _ : /
+    * A key-value pair that helps you manage, filter, and search for your resource. Allowed characters: letters, white space, and numbers, representable in UTF-8, and the following characters: + - = . _ : /.
     */
   @js.native
   trait Tag extends js.Object {
@@ -4123,6 +4342,43 @@ package storagegateway {
     }
   }
 
+  @js.native
+  trait UpdateAutomaticTapeCreationPolicyInput extends js.Object {
+    var AutomaticTapeCreationRules: AutomaticTapeCreationRules
+    var GatewayARN: GatewayARN
+  }
+
+  object UpdateAutomaticTapeCreationPolicyInput {
+    @inline
+    def apply(
+        AutomaticTapeCreationRules: AutomaticTapeCreationRules,
+        GatewayARN: GatewayARN
+    ): UpdateAutomaticTapeCreationPolicyInput = {
+      val __obj = js.Dynamic.literal(
+        "AutomaticTapeCreationRules" -> AutomaticTapeCreationRules.asInstanceOf[js.Any],
+        "GatewayARN"                 -> GatewayARN.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateAutomaticTapeCreationPolicyInput]
+    }
+  }
+
+  @js.native
+  trait UpdateAutomaticTapeCreationPolicyOutput extends js.Object {
+    var GatewayARN: js.UndefOr[GatewayARN]
+  }
+
+  object UpdateAutomaticTapeCreationPolicyOutput {
+    @inline
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): UpdateAutomaticTapeCreationPolicyOutput = {
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateAutomaticTapeCreationPolicyOutput]
+    }
+  }
+
   /**
     * A JSON object containing one or more of the following fields:
     * * AverageDownloadRateLimitInBitsPerSec
@@ -4157,7 +4413,7 @@ package storagegateway {
   }
 
   /**
-    * A JSON object containing the of the gateway whose throttle information was updated.
+    * A JSON object containing the Amazon Resource Name (ARN) of the gateway whose throttle information was updated.
     */
   @js.native
   trait UpdateBandwidthRateLimitOutput extends js.Object {
@@ -4261,7 +4517,7 @@ package storagegateway {
   }
 
   /**
-    * A JSON object containing the ARN of the gateway that was updated.
+    * A JSON object containing the Amazon Resource Name (ARN) of the gateway that was updated.
     */
   @js.native
   trait UpdateGatewayInformationOutput extends js.Object {
@@ -4283,7 +4539,7 @@ package storagegateway {
   }
 
   /**
-    * A JSON object containing the of the gateway to update.
+    * A JSON object containing the Amazon Resource Name (ARN) of the gateway to update.
     */
   @js.native
   trait UpdateGatewaySoftwareNowInput extends js.Object {
@@ -4304,7 +4560,7 @@ package storagegateway {
   }
 
   /**
-    * A JSON object containing the of the gateway that was updated.
+    * A JSON object containing the Amazon Resource Name (ARN) of the gateway that was updated.
     */
   @js.native
   trait UpdateGatewaySoftwareNowOutput extends js.Object {
@@ -4360,7 +4616,7 @@ package storagegateway {
   }
 
   /**
-    * A JSON object containing the of the gateway whose maintenance start time is updated.
+    * A JSON object containing the Amazon Resource Name (ARN) of the gateway whose maintenance start time is updated.
     */
   @js.native
   trait UpdateMaintenanceStartTimeOutput extends js.Object {
@@ -4381,8 +4637,10 @@ package storagegateway {
   @js.native
   trait UpdateNFSFileShareInput extends js.Object {
     var FileShareARN: FileShareARN
+    var CacheAttributes: js.UndefOr[CacheAttributes]
     var ClientList: js.UndefOr[FileShareClientList]
     var DefaultStorageClass: js.UndefOr[StorageClass]
+    var FileShareName: js.UndefOr[FileShareName]
     var GuessMIMETypeEnabled: js.UndefOr[Boolean]
     var KMSEncrypted: js.UndefOr[Boolean]
     var KMSKey: js.UndefOr[KMSKey]
@@ -4397,8 +4655,10 @@ package storagegateway {
     @inline
     def apply(
         FileShareARN: FileShareARN,
+        CacheAttributes: js.UndefOr[CacheAttributes] = js.undefined,
         ClientList: js.UndefOr[FileShareClientList] = js.undefined,
         DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
+        FileShareName: js.UndefOr[FileShareName] = js.undefined,
         GuessMIMETypeEnabled: js.UndefOr[Boolean] = js.undefined,
         KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
@@ -4412,8 +4672,10 @@ package storagegateway {
         "FileShareARN" -> FileShareARN.asInstanceOf[js.Any]
       )
 
+      CacheAttributes.foreach(__v => __obj.updateDynamic("CacheAttributes")(__v.asInstanceOf[js.Any]))
       ClientList.foreach(__v => __obj.updateDynamic("ClientList")(__v.asInstanceOf[js.Any]))
       DefaultStorageClass.foreach(__v => __obj.updateDynamic("DefaultStorageClass")(__v.asInstanceOf[js.Any]))
+      FileShareName.foreach(__v => __obj.updateDynamic("FileShareName")(__v.asInstanceOf[js.Any]))
       GuessMIMETypeEnabled.foreach(__v => __obj.updateDynamic("GuessMIMETypeEnabled")(__v.asInstanceOf[js.Any]))
       KMSEncrypted.foreach(__v => __obj.updateDynamic("KMSEncrypted")(__v.asInstanceOf[js.Any]))
       KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
@@ -4446,7 +4708,11 @@ package storagegateway {
   trait UpdateSMBFileShareInput extends js.Object {
     var FileShareARN: FileShareARN
     var AdminUserList: js.UndefOr[FileShareUserList]
+    var AuditDestinationARN: js.UndefOr[AuditDestinationARN]
+    var CacheAttributes: js.UndefOr[CacheAttributes]
+    var CaseSensitivity: js.UndefOr[CaseSensitivity]
     var DefaultStorageClass: js.UndefOr[StorageClass]
+    var FileShareName: js.UndefOr[FileShareName]
     var GuessMIMETypeEnabled: js.UndefOr[Boolean]
     var InvalidUserList: js.UndefOr[FileShareUserList]
     var KMSEncrypted: js.UndefOr[Boolean]
@@ -4463,7 +4729,11 @@ package storagegateway {
     def apply(
         FileShareARN: FileShareARN,
         AdminUserList: js.UndefOr[FileShareUserList] = js.undefined,
+        AuditDestinationARN: js.UndefOr[AuditDestinationARN] = js.undefined,
+        CacheAttributes: js.UndefOr[CacheAttributes] = js.undefined,
+        CaseSensitivity: js.UndefOr[CaseSensitivity] = js.undefined,
         DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
+        FileShareName: js.UndefOr[FileShareName] = js.undefined,
         GuessMIMETypeEnabled: js.UndefOr[Boolean] = js.undefined,
         InvalidUserList: js.UndefOr[FileShareUserList] = js.undefined,
         KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
@@ -4479,7 +4749,11 @@ package storagegateway {
       )
 
       AdminUserList.foreach(__v => __obj.updateDynamic("AdminUserList")(__v.asInstanceOf[js.Any]))
+      AuditDestinationARN.foreach(__v => __obj.updateDynamic("AuditDestinationARN")(__v.asInstanceOf[js.Any]))
+      CacheAttributes.foreach(__v => __obj.updateDynamic("CacheAttributes")(__v.asInstanceOf[js.Any]))
+      CaseSensitivity.foreach(__v => __obj.updateDynamic("CaseSensitivity")(__v.asInstanceOf[js.Any]))
       DefaultStorageClass.foreach(__v => __obj.updateDynamic("DefaultStorageClass")(__v.asInstanceOf[js.Any]))
+      FileShareName.foreach(__v => __obj.updateDynamic("FileShareName")(__v.asInstanceOf[js.Any]))
       GuessMIMETypeEnabled.foreach(__v => __obj.updateDynamic("GuessMIMETypeEnabled")(__v.asInstanceOf[js.Any]))
       InvalidUserList.foreach(__v => __obj.updateDynamic("InvalidUserList")(__v.asInstanceOf[js.Any]))
       KMSEncrypted.foreach(__v => __obj.updateDynamic("KMSEncrypted")(__v.asInstanceOf[js.Any]))
@@ -4584,7 +4858,7 @@ package storagegateway {
   }
 
   /**
-    * A JSON object containing the of the updated storage volume.
+    * A JSON object containing the Amazon Resource Name (ARN) of the updated storage volume.
     */
   @js.native
   trait UpdateSnapshotScheduleOutput extends js.Object {

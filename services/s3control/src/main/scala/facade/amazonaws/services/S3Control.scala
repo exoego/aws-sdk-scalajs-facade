@@ -13,6 +13,7 @@ package object s3control {
   type BucketName                  = String
   type ConfirmationRequired        = Boolean
   type CreationDate                = js.Date
+  type FunctionArnString           = String
   type IAMRoleArn                  = String
   type IsPublic                    = Boolean
   type JobArn                      = String
@@ -48,8 +49,11 @@ package object s3control {
   type S3TagSet                    = js.Array[S3Tag]
   type S3UserMetadata              = js.Dictionary[MaxLength1024String]
   type Setting                     = Boolean
+  type StringForNextToken          = String
   type SuspendedCause              = String
   type SuspendedDate               = js.Date
+  type TagKeyString                = String
+  type TagValueString              = String
   type TimeStamp                   = js.Date
   type VpcId                       = String
 
@@ -63,6 +67,8 @@ package object s3control {
       service.deleteAccessPoint(params).promise().toFuture
     @inline def deleteAccessPointPolicyFuture(params: DeleteAccessPointPolicyRequest): Future[js.Object] =
       service.deleteAccessPointPolicy(params).promise().toFuture
+    @inline def deleteJobTaggingFuture(params: DeleteJobTaggingRequest): Future[DeleteJobTaggingResult] =
+      service.deleteJobTagging(params).promise().toFuture
     @inline def deletePublicAccessBlockFuture(params: DeletePublicAccessBlockRequest): Future[js.Object] =
       service.deletePublicAccessBlock(params).promise().toFuture
     @inline def describeJobFuture(params: DescribeJobRequest): Future[DescribeJobResult] =
@@ -74,6 +80,8 @@ package object s3control {
     @inline def getAccessPointPolicyStatusFuture(
         params: GetAccessPointPolicyStatusRequest
     ): Future[GetAccessPointPolicyStatusResult] = service.getAccessPointPolicyStatus(params).promise().toFuture
+    @inline def getJobTaggingFuture(params: GetJobTaggingRequest): Future[GetJobTaggingResult] =
+      service.getJobTagging(params).promise().toFuture
     @inline def getPublicAccessBlockFuture(params: GetPublicAccessBlockRequest): Future[GetPublicAccessBlockOutput] =
       service.getPublicAccessBlock(params).promise().toFuture
     @inline def listAccessPointsFuture(params: ListAccessPointsRequest): Future[ListAccessPointsResult] =
@@ -82,6 +90,8 @@ package object s3control {
       service.listJobs(params).promise().toFuture
     @inline def putAccessPointPolicyFuture(params: PutAccessPointPolicyRequest): Future[js.Object] =
       service.putAccessPointPolicy(params).promise().toFuture
+    @inline def putJobTaggingFuture(params: PutJobTaggingRequest): Future[PutJobTaggingResult] =
+      service.putJobTagging(params).promise().toFuture
     @inline def putPublicAccessBlockFuture(params: PutPublicAccessBlockRequest): Future[js.Object] =
       service.putPublicAccessBlock(params).promise().toFuture
     @inline def updateJobPriorityFuture(params: UpdateJobPriorityRequest): Future[UpdateJobPriorityResult] =
@@ -101,6 +111,7 @@ package s3control {
     def createJob(params: CreateJobRequest): Request[CreateJobResult]                                  = js.native
     def deleteAccessPoint(params: DeleteAccessPointRequest): Request[js.Object]                        = js.native
     def deleteAccessPointPolicy(params: DeleteAccessPointPolicyRequest): Request[js.Object]            = js.native
+    def deleteJobTagging(params: DeleteJobTaggingRequest): Request[DeleteJobTaggingResult]             = js.native
     def deletePublicAccessBlock(params: DeletePublicAccessBlockRequest): Request[js.Object]            = js.native
     def describeJob(params: DescribeJobRequest): Request[DescribeJobResult]                            = js.native
     def getAccessPoint(params: GetAccessPointRequest): Request[GetAccessPointResult]                   = js.native
@@ -108,10 +119,12 @@ package s3control {
     def getAccessPointPolicyStatus(
         params: GetAccessPointPolicyStatusRequest
     ): Request[GetAccessPointPolicyStatusResult]                                                       = js.native
+    def getJobTagging(params: GetJobTaggingRequest): Request[GetJobTaggingResult]                      = js.native
     def getPublicAccessBlock(params: GetPublicAccessBlockRequest): Request[GetPublicAccessBlockOutput] = js.native
     def listAccessPoints(params: ListAccessPointsRequest): Request[ListAccessPointsResult]             = js.native
     def listJobs(params: ListJobsRequest): Request[ListJobsResult]                                     = js.native
     def putAccessPointPolicy(params: PutAccessPointPolicyRequest): Request[js.Object]                  = js.native
+    def putJobTagging(params: PutJobTaggingRequest): Request[PutJobTaggingResult]                      = js.native
     def putPublicAccessBlock(params: PutPublicAccessBlockRequest): Request[js.Object]                  = js.native
     def updateJobPriority(params: UpdateJobPriorityRequest): Request[UpdateJobPriorityResult]          = js.native
     def updateJobStatus(params: UpdateJobStatusRequest): Request[UpdateJobStatusResult]                = js.native
@@ -190,6 +203,7 @@ package s3control {
     var RoleArn: IAMRoleArn
     var ConfirmationRequired: js.UndefOr[ConfirmationRequired]
     var Description: js.UndefOr[NonEmptyMaxLength256String]
+    var Tags: js.UndefOr[S3TagSet]
   }
 
   object CreateJobRequest {
@@ -203,7 +217,8 @@ package s3control {
         Report: JobReport,
         RoleArn: IAMRoleArn,
         ConfirmationRequired: js.UndefOr[ConfirmationRequired] = js.undefined,
-        Description: js.UndefOr[NonEmptyMaxLength256String] = js.undefined
+        Description: js.UndefOr[NonEmptyMaxLength256String] = js.undefined,
+        Tags: js.UndefOr[S3TagSet] = js.undefined
     ): CreateJobRequest = {
       val __obj = js.Dynamic.literal(
         "AccountId"          -> AccountId.asInstanceOf[js.Any],
@@ -217,6 +232,7 @@ package s3control {
 
       ConfirmationRequired.foreach(__v => __obj.updateDynamic("ConfirmationRequired")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateJobRequest]
     }
   }
@@ -276,6 +292,40 @@ package s3control {
       )
 
       __obj.asInstanceOf[DeleteAccessPointRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteJobTaggingRequest extends js.Object {
+    var AccountId: AccountId
+    var JobId: JobId
+  }
+
+  object DeleteJobTaggingRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        JobId: JobId
+    ): DeleteJobTaggingRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "JobId"     -> JobId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteJobTaggingRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteJobTaggingResult extends js.Object {}
+
+  object DeleteJobTaggingResult {
+    @inline
+    def apply(
+    ): DeleteJobTaggingResult = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeleteJobTaggingResult]
     }
   }
 
@@ -459,6 +509,43 @@ package s3control {
       )
       VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAccessPointResult]
+    }
+  }
+
+  @js.native
+  trait GetJobTaggingRequest extends js.Object {
+    var AccountId: AccountId
+    var JobId: JobId
+  }
+
+  object GetJobTaggingRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        JobId: JobId
+    ): GetJobTaggingRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "JobId"     -> JobId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetJobTaggingRequest]
+    }
+  }
+
+  @js.native
+  trait GetJobTaggingResult extends js.Object {
+    var Tags: js.UndefOr[S3TagSet]
+  }
+
+  object GetJobTaggingResult {
+    @inline
+    def apply(
+        Tags: js.UndefOr[S3TagSet] = js.undefined
+    ): GetJobTaggingResult = {
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetJobTaggingResult]
     }
   }
 
@@ -731,6 +818,8 @@ package s3control {
     var S3InitiateRestoreObject: js.UndefOr[S3InitiateRestoreObjectOperation]
     var S3PutObjectAcl: js.UndefOr[S3SetObjectAclOperation]
     var S3PutObjectCopy: js.UndefOr[S3CopyObjectOperation]
+    var S3PutObjectLegalHold: js.UndefOr[S3SetObjectLegalHoldOperation]
+    var S3PutObjectRetention: js.UndefOr[S3SetObjectRetentionOperation]
     var S3PutObjectTagging: js.UndefOr[S3SetObjectTaggingOperation]
   }
 
@@ -741,6 +830,8 @@ package s3control {
         S3InitiateRestoreObject: js.UndefOr[S3InitiateRestoreObjectOperation] = js.undefined,
         S3PutObjectAcl: js.UndefOr[S3SetObjectAclOperation] = js.undefined,
         S3PutObjectCopy: js.UndefOr[S3CopyObjectOperation] = js.undefined,
+        S3PutObjectLegalHold: js.UndefOr[S3SetObjectLegalHoldOperation] = js.undefined,
+        S3PutObjectRetention: js.UndefOr[S3SetObjectRetentionOperation] = js.undefined,
         S3PutObjectTagging: js.UndefOr[S3SetObjectTaggingOperation] = js.undefined
     ): JobOperation = {
       val __obj = js.Dynamic.literal()
@@ -748,6 +839,8 @@ package s3control {
       S3InitiateRestoreObject.foreach(__v => __obj.updateDynamic("S3InitiateRestoreObject")(__v.asInstanceOf[js.Any]))
       S3PutObjectAcl.foreach(__v => __obj.updateDynamic("S3PutObjectAcl")(__v.asInstanceOf[js.Any]))
       S3PutObjectCopy.foreach(__v => __obj.updateDynamic("S3PutObjectCopy")(__v.asInstanceOf[js.Any]))
+      S3PutObjectLegalHold.foreach(__v => __obj.updateDynamic("S3PutObjectLegalHold")(__v.asInstanceOf[js.Any]))
+      S3PutObjectRetention.foreach(__v => __obj.updateDynamic("S3PutObjectRetention")(__v.asInstanceOf[js.Any]))
       S3PutObjectTagging.foreach(__v => __obj.updateDynamic("S3PutObjectTagging")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobOperation]
     }
@@ -869,13 +962,13 @@ package s3control {
     */
   @js.native
   trait LambdaInvokeOperation extends js.Object {
-    var FunctionArn: js.UndefOr[NonEmptyMaxLength1024String]
+    var FunctionArn: js.UndefOr[FunctionArnString]
   }
 
   object LambdaInvokeOperation {
     @inline
     def apply(
-        FunctionArn: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined
+        FunctionArn: js.UndefOr[FunctionArnString] = js.undefined
     ): LambdaInvokeOperation = {
       val __obj = js.Dynamic.literal()
       FunctionArn.foreach(__v => __obj.updateDynamic("FunctionArn")(__v.asInstanceOf[js.Any]))
@@ -934,7 +1027,7 @@ package s3control {
     var AccountId: AccountId
     var JobStatuses: js.UndefOr[JobStatusList]
     var MaxResults: js.UndefOr[MaxResults]
-    var NextToken: js.UndefOr[NonEmptyMaxLength1024String]
+    var NextToken: js.UndefOr[StringForNextToken]
   }
 
   object ListJobsRequest {
@@ -943,7 +1036,7 @@ package s3control {
         AccountId: AccountId,
         JobStatuses: js.UndefOr[JobStatusList] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined
+        NextToken: js.UndefOr[StringForNextToken] = js.undefined
     ): ListJobsRequest = {
       val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any]
@@ -959,14 +1052,14 @@ package s3control {
   @js.native
   trait ListJobsResult extends js.Object {
     var Jobs: js.UndefOr[JobListDescriptorList]
-    var NextToken: js.UndefOr[NonEmptyMaxLength1024String]
+    var NextToken: js.UndefOr[StringForNextToken]
   }
 
   object ListJobsResult {
     @inline
     def apply(
         Jobs: js.UndefOr[JobListDescriptorList] = js.undefined,
-        NextToken: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined
+        NextToken: js.UndefOr[StringForNextToken] = js.undefined
     ): ListJobsResult = {
       val __obj = js.Dynamic.literal()
       Jobs.foreach(__v => __obj.updateDynamic("Jobs")(__v.asInstanceOf[js.Any]))
@@ -992,9 +1085,19 @@ package s3control {
     val S3PutObjectAcl          = "S3PutObjectAcl".asInstanceOf[OperationName]
     val S3PutObjectTagging      = "S3PutObjectTagging".asInstanceOf[OperationName]
     val S3InitiateRestoreObject = "S3InitiateRestoreObject".asInstanceOf[OperationName]
+    val S3PutObjectLegalHold    = "S3PutObjectLegalHold".asInstanceOf[OperationName]
+    val S3PutObjectRetention    = "S3PutObjectRetention".asInstanceOf[OperationName]
 
     val values = js.Object.freeze(
-      js.Array(LambdaInvoke, S3PutObjectCopy, S3PutObjectAcl, S3PutObjectTagging, S3InitiateRestoreObject)
+      js.Array(
+        LambdaInvoke,
+        S3PutObjectCopy,
+        S3PutObjectAcl,
+        S3PutObjectTagging,
+        S3InitiateRestoreObject,
+        S3PutObjectLegalHold,
+        S3PutObjectRetention
+      )
     )
   }
 
@@ -1066,6 +1169,43 @@ package s3control {
       )
 
       __obj.asInstanceOf[PutAccessPointPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait PutJobTaggingRequest extends js.Object {
+    var AccountId: AccountId
+    var JobId: JobId
+    var Tags: S3TagSet
+  }
+
+  object PutJobTaggingRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        JobId: JobId,
+        Tags: S3TagSet
+    ): PutJobTaggingRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "JobId"     -> JobId.asInstanceOf[js.Any],
+        "Tags"      -> Tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[PutJobTaggingRequest]
+    }
+  }
+
+  @js.native
+  trait PutJobTaggingResult extends js.Object {}
+
+  object PutJobTaggingResult {
+    @inline
+    def apply(
+    ): PutJobTaggingResult = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[PutJobTaggingResult]
     }
   }
 
@@ -1170,7 +1310,7 @@ package s3control {
   }
 
   /**
-    * Contains the configuration parameters for a PUT Copy object operation. Amazon S3 batch operations passes each value through to the underlying PUT Copy object API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html|PUT Object - Copy]].
+    * Contains the configuration parameters for a PUT Copy object operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Copy object API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html|PUT Object - Copy]].
     */
   @js.native
   trait S3CopyObjectOperation extends js.Object {
@@ -1306,7 +1446,7 @@ package s3control {
   }
 
   /**
-    * Contains the configuration parameters for an Initiate Glacier Restore job. Amazon S3 batch operations passes each value through to the underlying POST Object restore API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOSTrestore.html#RESTObjectPOSTrestore-restore-request|Restoring Archives]].
+    * Contains the configuration parameters for an Initiate Glacier Restore job. Amazon S3 Batch Operations passes each value through to the underlying POST Object restore API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOSTrestore.html#RESTObjectPOSTrestore-restore-request|Restoring Archives]].
     */
   @js.native
   trait S3InitiateRestoreObjectOperation extends js.Object {
@@ -1336,6 +1476,27 @@ package s3control {
     val values = js.Object.freeze(js.Array(COPY, REPLACE))
   }
 
+  /**
+    * <p/>
+    */
+  @js.native
+  trait S3ObjectLockLegalHold extends js.Object {
+    var Status: S3ObjectLockLegalHoldStatus
+  }
+
+  object S3ObjectLockLegalHold {
+    @inline
+    def apply(
+        Status: S3ObjectLockLegalHoldStatus
+    ): S3ObjectLockLegalHold = {
+      val __obj = js.Dynamic.literal(
+        "Status" -> Status.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[S3ObjectLockLegalHold]
+    }
+  }
+
   @js.native
   sealed trait S3ObjectLockLegalHoldStatus extends js.Any
   object S3ObjectLockLegalHoldStatus extends js.Object {
@@ -1350,6 +1511,15 @@ package s3control {
   object S3ObjectLockMode extends js.Object {
     val COMPLIANCE = "COMPLIANCE".asInstanceOf[S3ObjectLockMode]
     val GOVERNANCE = "GOVERNANCE".asInstanceOf[S3ObjectLockMode]
+
+    val values = js.Object.freeze(js.Array(COMPLIANCE, GOVERNANCE))
+  }
+
+  @js.native
+  sealed trait S3ObjectLockRetentionMode extends js.Any
+  object S3ObjectLockRetentionMode extends js.Object {
+    val COMPLIANCE = "COMPLIANCE".asInstanceOf[S3ObjectLockRetentionMode]
+    val GOVERNANCE = "GOVERNANCE".asInstanceOf[S3ObjectLockRetentionMode]
 
     val values = js.Object.freeze(js.Array(COMPLIANCE, GOVERNANCE))
   }
@@ -1437,6 +1607,28 @@ package s3control {
     val values = js.Object.freeze(js.Array(FULL_CONTROL, READ, WRITE, READ_ACP, WRITE_ACP))
   }
 
+  /**
+    * <p/>
+    */
+  @js.native
+  trait S3Retention extends js.Object {
+    var Mode: js.UndefOr[S3ObjectLockRetentionMode]
+    var RetainUntilDate: js.UndefOr[TimeStamp]
+  }
+
+  object S3Retention {
+    @inline
+    def apply(
+        Mode: js.UndefOr[S3ObjectLockRetentionMode] = js.undefined,
+        RetainUntilDate: js.UndefOr[TimeStamp] = js.undefined
+    ): S3Retention = {
+      val __obj = js.Dynamic.literal()
+      Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
+      RetainUntilDate.foreach(__v => __obj.updateDynamic("RetainUntilDate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3Retention]
+    }
+  }
+
   @js.native
   sealed trait S3SSEAlgorithm extends js.Any
   object S3SSEAlgorithm extends js.Object {
@@ -1447,7 +1639,7 @@ package s3control {
   }
 
   /**
-    * Contains the configuration parameters for a Set Object ACL operation. Amazon S3 batch operations passes each value through to the underlying PUT Object acl API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html|PUT Object acl]].
+    * Contains the configuration parameters for a Set Object ACL operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object acl API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html|PUT Object acl]].
     */
   @js.native
   trait S3SetObjectAclOperation extends js.Object {
@@ -1466,7 +1658,54 @@ package s3control {
   }
 
   /**
-    * Contains the configuration parameters for a Set Object Tagging operation. Amazon S3 batch operations passes each value through to the underlying PUT Object tagging API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html|PUT Object tagging]].
+    * Contains the configuration parameters for a Set Object Legal Hold operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object Legal Hold API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.htmll#object-lock-legal-holds|PUT Object Legal Hold]].
+    */
+  @js.native
+  trait S3SetObjectLegalHoldOperation extends js.Object {
+    var LegalHold: S3ObjectLockLegalHold
+  }
+
+  object S3SetObjectLegalHoldOperation {
+    @inline
+    def apply(
+        LegalHold: S3ObjectLockLegalHold
+    ): S3SetObjectLegalHoldOperation = {
+      val __obj = js.Dynamic.literal(
+        "LegalHold" -> LegalHold.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[S3SetObjectLegalHoldOperation]
+    }
+  }
+
+  /**
+    * Contains the configuration parameters for a Set Object Retention operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object Retention API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-retention-modes|PUT Object Retention]].
+    */
+  @js.native
+  trait S3SetObjectRetentionOperation extends js.Object {
+    var Retention: S3Retention
+    var BypassGovernanceRetention: js.UndefOr[Boolean]
+  }
+
+  object S3SetObjectRetentionOperation {
+    @inline
+    def apply(
+        Retention: S3Retention,
+        BypassGovernanceRetention: js.UndefOr[Boolean] = js.undefined
+    ): S3SetObjectRetentionOperation = {
+      val __obj = js.Dynamic.literal(
+        "Retention" -> Retention.asInstanceOf[js.Any]
+      )
+
+      BypassGovernanceRetention.foreach(__v =>
+        __obj.updateDynamic("BypassGovernanceRetention")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[S3SetObjectRetentionOperation]
+    }
+  }
+
+  /**
+    * Contains the configuration parameters for a Set Object Tagging operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object tagging API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html|PUT Object tagging]].
     */
   @js.native
   trait S3SetObjectTaggingOperation extends js.Object {
@@ -1503,15 +1742,15 @@ package s3control {
     */
   @js.native
   trait S3Tag extends js.Object {
-    var Key: NonEmptyMaxLength1024String
-    var Value: MaxLength1024String
+    var Key: TagKeyString
+    var Value: TagValueString
   }
 
   object S3Tag {
     @inline
     def apply(
-        Key: NonEmptyMaxLength1024String,
-        Value: MaxLength1024String
+        Key: TagKeyString,
+        Value: TagValueString
     ): S3Tag = {
       val __obj = js.Dynamic.literal(
         "Key"   -> Key.asInstanceOf[js.Any],
@@ -1617,7 +1856,7 @@ package s3control {
   }
 
   /**
-    * The Virtual Private Cloud (VPC) configuration for an access point.
+    * The virtual private cloud (VPC) configuration for an access point.
     */
   @js.native
   trait VpcConfiguration extends js.Object {

@@ -49,6 +49,7 @@ package object alexaforbusiness {
   type DeviceEventValue                = String
   type DeviceLocale                    = String
   type DeviceName                      = String
+  type DeviceRoomName                  = String
   type DeviceSerialNumber              = String
   type DeviceSerialNumberForAVS        = String
   type DeviceStatusDetails             = js.Array[DeviceStatusDetail]
@@ -875,16 +876,18 @@ package alexaforbusiness {
     */
   @js.native
   trait BusinessReportContentRange extends js.Object {
-    var Interval: js.UndefOr[BusinessReportInterval]
+    var Interval: BusinessReportInterval
   }
 
   object BusinessReportContentRange {
     @inline
     def apply(
-        Interval: js.UndefOr[BusinessReportInterval] = js.undefined
+        Interval: BusinessReportInterval
     ): BusinessReportContentRange = {
-      val __obj = js.Dynamic.literal()
-      Interval.foreach(__v => __obj.updateDynamic("Interval")(__v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal(
+        "Interval" -> Interval.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[BusinessReportContentRange]
     }
   }
@@ -1272,6 +1275,7 @@ package alexaforbusiness {
     var S3BucketName: js.UndefOr[CustomerS3BucketName]
     var S3KeyPrefix: js.UndefOr[S3KeyPrefix]
     var ScheduleName: js.UndefOr[BusinessReportScheduleName]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateBusinessReportScheduleRequest {
@@ -1283,7 +1287,8 @@ package alexaforbusiness {
         Recurrence: js.UndefOr[BusinessReportRecurrence] = js.undefined,
         S3BucketName: js.UndefOr[CustomerS3BucketName] = js.undefined,
         S3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
-        ScheduleName: js.UndefOr[BusinessReportScheduleName] = js.undefined
+        ScheduleName: js.UndefOr[BusinessReportScheduleName] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateBusinessReportScheduleRequest = {
       val __obj = js.Dynamic.literal(
         "ContentRange" -> ContentRange.asInstanceOf[js.Any],
@@ -1295,6 +1300,7 @@ package alexaforbusiness {
       S3BucketName.foreach(__v => __obj.updateDynamic("S3BucketName")(__v.asInstanceOf[js.Any]))
       S3KeyPrefix.foreach(__v => __obj.updateDynamic("S3KeyPrefix")(__v.asInstanceOf[js.Any]))
       ScheduleName.foreach(__v => __obj.updateDynamic("ScheduleName")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBusinessReportScheduleRequest]
     }
   }
@@ -1612,6 +1618,7 @@ package alexaforbusiness {
     var MeetingRoomConfiguration: js.UndefOr[CreateMeetingRoomConfiguration]
     var PSTNEnabled: js.UndefOr[Boolean]
     var SetupModeDisabled: js.UndefOr[Boolean]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateProfileRequest {
@@ -1628,7 +1635,8 @@ package alexaforbusiness {
         MaxVolumeLimit: js.UndefOr[MaxVolumeLimit] = js.undefined,
         MeetingRoomConfiguration: js.UndefOr[CreateMeetingRoomConfiguration] = js.undefined,
         PSTNEnabled: js.UndefOr[Boolean] = js.undefined,
-        SetupModeDisabled: js.UndefOr[Boolean] = js.undefined
+        SetupModeDisabled: js.UndefOr[Boolean] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateProfileRequest = {
       val __obj = js.Dynamic.literal(
         "Address"         -> Address.asInstanceOf[js.Any],
@@ -1645,6 +1653,7 @@ package alexaforbusiness {
       MeetingRoomConfiguration.foreach(__v => __obj.updateDynamic("MeetingRoomConfiguration")(__v.asInstanceOf[js.Any]))
       PSTNEnabled.foreach(__v => __obj.updateDynamic("PSTNEnabled")(__v.asInstanceOf[js.Any]))
       SetupModeDisabled.foreach(__v => __obj.updateDynamic("SetupModeDisabled")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProfileRequest]
     }
   }
@@ -1743,6 +1752,7 @@ package alexaforbusiness {
     var SkillGroupName: SkillGroupName
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
     var Description: js.UndefOr[SkillGroupDescription]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateSkillGroupRequest {
@@ -1750,7 +1760,8 @@ package alexaforbusiness {
     def apply(
         SkillGroupName: SkillGroupName,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-        Description: js.UndefOr[SkillGroupDescription] = js.undefined
+        Description: js.UndefOr[SkillGroupDescription] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateSkillGroupRequest = {
       val __obj = js.Dynamic.literal(
         "SkillGroupName" -> SkillGroupName.asInstanceOf[js.Any]
@@ -1758,6 +1769,7 @@ package alexaforbusiness {
 
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSkillGroupRequest]
     }
   }
@@ -2360,7 +2372,7 @@ package alexaforbusiness {
     var NetworkProfileArn: js.UndefOr[Arn]
     var NetworkProfileName: js.UndefOr[NetworkProfileName]
     var RoomArn: js.UndefOr[Arn]
-    var RoomName: js.UndefOr[RoomName]
+    var RoomName: js.UndefOr[DeviceRoomName]
     var SoftwareVersion: js.UndefOr[SoftwareVersion]
   }
 
@@ -2378,7 +2390,7 @@ package alexaforbusiness {
         NetworkProfileArn: js.UndefOr[Arn] = js.undefined,
         NetworkProfileName: js.UndefOr[NetworkProfileName] = js.undefined,
         RoomArn: js.UndefOr[Arn] = js.undefined,
-        RoomName: js.UndefOr[RoomName] = js.undefined,
+        RoomName: js.UndefOr[DeviceRoomName] = js.undefined,
         SoftwareVersion: js.UndefOr[SoftwareVersion] = js.undefined
     ): DeviceData = {
       val __obj = js.Dynamic.literal()
@@ -2497,21 +2509,23 @@ package alexaforbusiness {
   @js.native
   sealed trait DeviceStatusDetailCode extends js.Any
   object DeviceStatusDetailCode extends js.Object {
-    val DEVICE_SOFTWARE_UPDATE_NEEDED      = "DEVICE_SOFTWARE_UPDATE_NEEDED".asInstanceOf[DeviceStatusDetailCode]
-    val DEVICE_WAS_OFFLINE                 = "DEVICE_WAS_OFFLINE".asInstanceOf[DeviceStatusDetailCode]
-    val CREDENTIALS_ACCESS_FAILURE         = "CREDENTIALS_ACCESS_FAILURE".asInstanceOf[DeviceStatusDetailCode]
-    val TLS_VERSION_MISMATCH               = "TLS_VERSION_MISMATCH".asInstanceOf[DeviceStatusDetailCode]
-    val ASSOCIATION_REJECTION              = "ASSOCIATION_REJECTION".asInstanceOf[DeviceStatusDetailCode]
-    val AUTHENTICATION_FAILURE             = "AUTHENTICATION_FAILURE".asInstanceOf[DeviceStatusDetailCode]
-    val DHCP_FAILURE                       = "DHCP_FAILURE".asInstanceOf[DeviceStatusDetailCode]
-    val INTERNET_UNAVAILABLE               = "INTERNET_UNAVAILABLE".asInstanceOf[DeviceStatusDetailCode]
-    val DNS_FAILURE                        = "DNS_FAILURE".asInstanceOf[DeviceStatusDetailCode]
-    val UNKNOWN_FAILURE                    = "UNKNOWN_FAILURE".asInstanceOf[DeviceStatusDetailCode]
-    val CERTIFICATE_ISSUING_LIMIT_EXCEEDED = "CERTIFICATE_ISSUING_LIMIT_EXCEEDED".asInstanceOf[DeviceStatusDetailCode]
-    val INVALID_CERTIFICATE_AUTHORITY      = "INVALID_CERTIFICATE_AUTHORITY".asInstanceOf[DeviceStatusDetailCode]
-    val NETWORK_PROFILE_NOT_FOUND          = "NETWORK_PROFILE_NOT_FOUND".asInstanceOf[DeviceStatusDetailCode]
-    val INVALID_PASSWORD_STATE             = "INVALID_PASSWORD_STATE".asInstanceOf[DeviceStatusDetailCode]
-    val PASSWORD_NOT_FOUND                 = "PASSWORD_NOT_FOUND".asInstanceOf[DeviceStatusDetailCode]
+    val DEVICE_SOFTWARE_UPDATE_NEEDED       = "DEVICE_SOFTWARE_UPDATE_NEEDED".asInstanceOf[DeviceStatusDetailCode]
+    val DEVICE_WAS_OFFLINE                  = "DEVICE_WAS_OFFLINE".asInstanceOf[DeviceStatusDetailCode]
+    val CREDENTIALS_ACCESS_FAILURE          = "CREDENTIALS_ACCESS_FAILURE".asInstanceOf[DeviceStatusDetailCode]
+    val TLS_VERSION_MISMATCH                = "TLS_VERSION_MISMATCH".asInstanceOf[DeviceStatusDetailCode]
+    val ASSOCIATION_REJECTION               = "ASSOCIATION_REJECTION".asInstanceOf[DeviceStatusDetailCode]
+    val AUTHENTICATION_FAILURE              = "AUTHENTICATION_FAILURE".asInstanceOf[DeviceStatusDetailCode]
+    val DHCP_FAILURE                        = "DHCP_FAILURE".asInstanceOf[DeviceStatusDetailCode]
+    val INTERNET_UNAVAILABLE                = "INTERNET_UNAVAILABLE".asInstanceOf[DeviceStatusDetailCode]
+    val DNS_FAILURE                         = "DNS_FAILURE".asInstanceOf[DeviceStatusDetailCode]
+    val UNKNOWN_FAILURE                     = "UNKNOWN_FAILURE".asInstanceOf[DeviceStatusDetailCode]
+    val CERTIFICATE_ISSUING_LIMIT_EXCEEDED  = "CERTIFICATE_ISSUING_LIMIT_EXCEEDED".asInstanceOf[DeviceStatusDetailCode]
+    val INVALID_CERTIFICATE_AUTHORITY       = "INVALID_CERTIFICATE_AUTHORITY".asInstanceOf[DeviceStatusDetailCode]
+    val NETWORK_PROFILE_NOT_FOUND           = "NETWORK_PROFILE_NOT_FOUND".asInstanceOf[DeviceStatusDetailCode]
+    val INVALID_PASSWORD_STATE              = "INVALID_PASSWORD_STATE".asInstanceOf[DeviceStatusDetailCode]
+    val PASSWORD_NOT_FOUND                  = "PASSWORD_NOT_FOUND".asInstanceOf[DeviceStatusDetailCode]
+    val PASSWORD_MANAGER_ACCESS_DENIED      = "PASSWORD_MANAGER_ACCESS_DENIED".asInstanceOf[DeviceStatusDetailCode]
+    val CERTIFICATE_AUTHORITY_ACCESS_DENIED = "CERTIFICATE_AUTHORITY_ACCESS_DENIED".asInstanceOf[DeviceStatusDetailCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2529,7 +2543,9 @@ package alexaforbusiness {
         INVALID_CERTIFICATE_AUTHORITY,
         NETWORK_PROFILE_NOT_FOUND,
         INVALID_PASSWORD_STATE,
-        PASSWORD_NOT_FOUND
+        PASSWORD_NOT_FOUND,
+        PASSWORD_MANAGER_ACCESS_DENIED,
+        CERTIFICATE_AUTHORITY_ACCESS_DENIED
       )
     )
   }

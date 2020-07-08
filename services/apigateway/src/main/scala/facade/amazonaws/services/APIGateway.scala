@@ -3883,6 +3883,7 @@ package apigateway {
     var requestParameters: js.UndefOr[MapOfStringToString]
     var requestTemplates: js.UndefOr[MapOfStringToString]
     var timeoutInMillis: js.UndefOr[Int]
+    var tlsConfig: js.UndefOr[TlsConfig]
     var `type`: js.UndefOr[IntegrationType]
     var uri: js.UndefOr[String]
   }
@@ -3902,6 +3903,7 @@ package apigateway {
         requestParameters: js.UndefOr[MapOfStringToString] = js.undefined,
         requestTemplates: js.UndefOr[MapOfStringToString] = js.undefined,
         timeoutInMillis: js.UndefOr[Int] = js.undefined,
+        tlsConfig: js.UndefOr[TlsConfig] = js.undefined,
         `type`: js.UndefOr[IntegrationType] = js.undefined,
         uri: js.UndefOr[String] = js.undefined
     ): Integration = {
@@ -3918,6 +3920,7 @@ package apigateway {
       requestParameters.foreach(__v => __obj.updateDynamic("requestParameters")(__v.asInstanceOf[js.Any]))
       requestTemplates.foreach(__v => __obj.updateDynamic("requestTemplates")(__v.asInstanceOf[js.Any]))
       timeoutInMillis.foreach(__v => __obj.updateDynamic("timeoutInMillis")(__v.asInstanceOf[js.Any]))
+      tlsConfig.foreach(__v => __obj.updateDynamic("tlsConfig")(__v.asInstanceOf[js.Any]))
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       uri.foreach(__v => __obj.updateDynamic("uri")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Integration]
@@ -4301,6 +4304,7 @@ package apigateway {
     var requestParameters: js.UndefOr[MapOfStringToString]
     var requestTemplates: js.UndefOr[MapOfStringToString]
     var timeoutInMillis: js.UndefOr[NullableInteger]
+    var tlsConfig: js.UndefOr[TlsConfig]
     var uri: js.UndefOr[String]
   }
 
@@ -4322,6 +4326,7 @@ package apigateway {
         requestParameters: js.UndefOr[MapOfStringToString] = js.undefined,
         requestTemplates: js.UndefOr[MapOfStringToString] = js.undefined,
         timeoutInMillis: js.UndefOr[NullableInteger] = js.undefined,
+        tlsConfig: js.UndefOr[TlsConfig] = js.undefined,
         uri: js.UndefOr[String] = js.undefined
     ): PutIntegrationRequest = {
       val __obj = js.Dynamic.literal(
@@ -4342,6 +4347,7 @@ package apigateway {
       requestParameters.foreach(__v => __obj.updateDynamic("requestParameters")(__v.asInstanceOf[js.Any]))
       requestTemplates.foreach(__v => __obj.updateDynamic("requestTemplates")(__v.asInstanceOf[js.Any]))
       timeoutInMillis.foreach(__v => __obj.updateDynamic("timeoutInMillis")(__v.asInstanceOf[js.Any]))
+      tlsConfig.foreach(__v => __obj.updateDynamic("tlsConfig")(__v.asInstanceOf[js.Any]))
       uri.foreach(__v => __obj.updateDynamic("uri")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutIntegrationRequest]
     }
@@ -5220,6 +5226,22 @@ package apigateway {
   }
 
   @js.native
+  trait TlsConfig extends js.Object {
+    var insecureSkipVerification: js.UndefOr[Boolean]
+  }
+
+  object TlsConfig {
+    @inline
+    def apply(
+        insecureSkipVerification: js.UndefOr[Boolean] = js.undefined
+    ): TlsConfig = {
+      val __obj = js.Dynamic.literal()
+      insecureSkipVerification.foreach(__v => __obj.updateDynamic("insecureSkipVerification")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TlsConfig]
+    }
+  }
+
+  @js.native
   sealed trait UnauthorizedCacheControlHeaderStrategy extends js.Any
   object UnauthorizedCacheControlHeaderStrategy extends js.Object {
     val FAIL_WITH_403 = "FAIL_WITH_403".asInstanceOf[UnauthorizedCacheControlHeaderStrategy]
@@ -5998,7 +6020,7 @@ package apigateway {
   }
 
   /**
-    * A API Gateway VPC link for a <a>RestApi</a> to access resources in an Amazon Virtual Private Cloud (VPC).
+    * An API Gateway VPC link for a <a>RestApi</a> to access resources in an Amazon Virtual Private Cloud (VPC).
     *  <div class="remarks"> <p>To enable access to a resource in an Amazon Virtual Private Cloud through Amazon API Gateway, you, as an API developer, create a <a>VpcLink</a> resource targeted for one or more network load balancers of the VPC and then integrate an API method with a private integration that uses the <a>VpcLink</a>. The private integration has an integration type of <code>HTTP</code> or <code>HTTP_PROXY</code> and has a connection type of <code>VPC_LINK</code>. The integration uses the <code>connectionId</code> property to identify the <a>VpcLink</a> used.
     *  </p> </div>
     */

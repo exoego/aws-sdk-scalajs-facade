@@ -33,6 +33,7 @@ package object ecs {
   type DeviceCgroupPermissions            = js.Array[DeviceCgroupPermission]
   type DevicesList                        = js.Array[Device]
   type DockerLabelsMap                    = js.Dictionary[String]
+  type EnvironmentFiles                   = js.Array[EnvironmentFile]
   type EnvironmentVariables               = js.Array[KeyValuePair]
   type Failures                           = js.Array[Failure]
   type FirelensConfigurationOptionsMap    = js.Dictionary[String]
@@ -96,6 +97,9 @@ package object ecs {
       service.deleteAccountSetting(params).promise().toFuture
     @inline def deleteAttributesFuture(params: DeleteAttributesRequest): Future[DeleteAttributesResponse] =
       service.deleteAttributes(params).promise().toFuture
+    @inline def deleteCapacityProviderFuture(
+        params: DeleteCapacityProviderRequest
+    ): Future[DeleteCapacityProviderResponse] = service.deleteCapacityProvider(params).promise().toFuture
     @inline def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] =
       service.deleteCluster(params).promise().toFuture
     @inline def deleteServiceFuture(params: DeleteServiceRequest): Future[DeleteServiceResponse] =
@@ -213,9 +217,11 @@ package ecs {
     def createTaskSet(params: CreateTaskSetRequest): Request[CreateTaskSetResponse]                      = js.native
     def deleteAccountSetting(params: DeleteAccountSettingRequest): Request[DeleteAccountSettingResponse] = js.native
     def deleteAttributes(params: DeleteAttributesRequest): Request[DeleteAttributesResponse]             = js.native
-    def deleteCluster(params: DeleteClusterRequest): Request[DeleteClusterResponse]                      = js.native
-    def deleteService(params: DeleteServiceRequest): Request[DeleteServiceResponse]                      = js.native
-    def deleteTaskSet(params: DeleteTaskSetRequest): Request[DeleteTaskSetResponse]                      = js.native
+    def deleteCapacityProvider(params: DeleteCapacityProviderRequest): Request[DeleteCapacityProviderResponse] =
+      js.native
+    def deleteCluster(params: DeleteClusterRequest): Request[DeleteClusterResponse] = js.native
+    def deleteService(params: DeleteServiceRequest): Request[DeleteServiceResponse] = js.native
+    def deleteTaskSet(params: DeleteTaskSetRequest): Request[DeleteTaskSetResponse] = js.native
     def deregisterContainerInstance(
         params: DeregisterContainerInstanceRequest
     ): Request[DeregisterContainerInstanceResponse] = js.native
@@ -452,6 +458,8 @@ package ecs {
     var name: js.UndefOr[String]
     var status: js.UndefOr[CapacityProviderStatus]
     var tags: js.UndefOr[Tags]
+    var updateStatus: js.UndefOr[CapacityProviderUpdateStatus]
+    var updateStatusReason: js.UndefOr[String]
   }
 
   object CapacityProvider {
@@ -461,7 +469,9 @@ package ecs {
         capacityProviderArn: js.UndefOr[String] = js.undefined,
         name: js.UndefOr[String] = js.undefined,
         status: js.UndefOr[CapacityProviderStatus] = js.undefined,
-        tags: js.UndefOr[Tags] = js.undefined
+        tags: js.UndefOr[Tags] = js.undefined,
+        updateStatus: js.UndefOr[CapacityProviderUpdateStatus] = js.undefined,
+        updateStatusReason: js.UndefOr[String] = js.undefined
     ): CapacityProvider = {
       val __obj = js.Dynamic.literal()
       autoScalingGroupProvider.foreach(__v => __obj.updateDynamic("autoScalingGroupProvider")(__v.asInstanceOf[js.Any]))
@@ -469,6 +479,8 @@ package ecs {
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      updateStatus.foreach(__v => __obj.updateDynamic("updateStatus")(__v.asInstanceOf[js.Any]))
+      updateStatusReason.foreach(__v => __obj.updateDynamic("updateStatusReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CapacityProvider]
     }
   }
@@ -484,9 +496,10 @@ package ecs {
   @js.native
   sealed trait CapacityProviderStatus extends js.Any
   object CapacityProviderStatus extends js.Object {
-    val ACTIVE = "ACTIVE".asInstanceOf[CapacityProviderStatus]
+    val ACTIVE   = "ACTIVE".asInstanceOf[CapacityProviderStatus]
+    val INACTIVE = "INACTIVE".asInstanceOf[CapacityProviderStatus]
 
-    val values = js.Object.freeze(js.Array(ACTIVE))
+    val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
   }
 
   /**
@@ -514,6 +527,16 @@ package ecs {
       weight.foreach(__v => __obj.updateDynamic("weight")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CapacityProviderStrategyItem]
     }
+  }
+
+  @js.native
+  sealed trait CapacityProviderUpdateStatus extends js.Any
+  object CapacityProviderUpdateStatus extends js.Object {
+    val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[CapacityProviderUpdateStatus]
+    val DELETE_COMPLETE    = "DELETE_COMPLETE".asInstanceOf[CapacityProviderUpdateStatus]
+    val DELETE_FAILED      = "DELETE_FAILED".asInstanceOf[CapacityProviderUpdateStatus]
+
+    val values = js.Object.freeze(js.Array(DELETE_IN_PROGRESS, DELETE_COMPLETE, DELETE_FAILED))
   }
 
   /**
@@ -727,6 +750,7 @@ package ecs {
     var dockerSecurityOptions: js.UndefOr[StringList]
     var entryPoint: js.UndefOr[StringList]
     var environment: js.UndefOr[EnvironmentVariables]
+    var environmentFiles: js.UndefOr[EnvironmentFiles]
     var essential: js.UndefOr[BoxedBoolean]
     var extraHosts: js.UndefOr[HostEntryList]
     var firelensConfiguration: js.UndefOr[FirelensConfiguration]
@@ -770,6 +794,7 @@ package ecs {
         dockerSecurityOptions: js.UndefOr[StringList] = js.undefined,
         entryPoint: js.UndefOr[StringList] = js.undefined,
         environment: js.UndefOr[EnvironmentVariables] = js.undefined,
+        environmentFiles: js.UndefOr[EnvironmentFiles] = js.undefined,
         essential: js.UndefOr[BoxedBoolean] = js.undefined,
         extraHosts: js.UndefOr[HostEntryList] = js.undefined,
         firelensConfiguration: js.UndefOr[FirelensConfiguration] = js.undefined,
@@ -810,6 +835,7 @@ package ecs {
       dockerSecurityOptions.foreach(__v => __obj.updateDynamic("dockerSecurityOptions")(__v.asInstanceOf[js.Any]))
       entryPoint.foreach(__v => __obj.updateDynamic("entryPoint")(__v.asInstanceOf[js.Any]))
       environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
+      environmentFiles.foreach(__v => __obj.updateDynamic("environmentFiles")(__v.asInstanceOf[js.Any]))
       essential.foreach(__v => __obj.updateDynamic("essential")(__v.asInstanceOf[js.Any]))
       extraHosts.foreach(__v => __obj.updateDynamic("extraHosts")(__v.asInstanceOf[js.Any]))
       firelensConfiguration.foreach(__v => __obj.updateDynamic("firelensConfiguration")(__v.asInstanceOf[js.Any]))
@@ -964,6 +990,7 @@ package ecs {
     var command: js.UndefOr[StringList]
     var cpu: js.UndefOr[BoxedInteger]
     var environment: js.UndefOr[EnvironmentVariables]
+    var environmentFiles: js.UndefOr[EnvironmentFiles]
     var memory: js.UndefOr[BoxedInteger]
     var memoryReservation: js.UndefOr[BoxedInteger]
     var name: js.UndefOr[String]
@@ -976,6 +1003,7 @@ package ecs {
         command: js.UndefOr[StringList] = js.undefined,
         cpu: js.UndefOr[BoxedInteger] = js.undefined,
         environment: js.UndefOr[EnvironmentVariables] = js.undefined,
+        environmentFiles: js.UndefOr[EnvironmentFiles] = js.undefined,
         memory: js.UndefOr[BoxedInteger] = js.undefined,
         memoryReservation: js.UndefOr[BoxedInteger] = js.undefined,
         name: js.UndefOr[String] = js.undefined,
@@ -985,6 +1013,7 @@ package ecs {
       command.foreach(__v => __obj.updateDynamic("command")(__v.asInstanceOf[js.Any]))
       cpu.foreach(__v => __obj.updateDynamic("cpu")(__v.asInstanceOf[js.Any]))
       environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
+      environmentFiles.foreach(__v => __obj.updateDynamic("environmentFiles")(__v.asInstanceOf[js.Any]))
       memory.foreach(__v => __obj.updateDynamic("memory")(__v.asInstanceOf[js.Any]))
       memoryReservation.foreach(__v => __obj.updateDynamic("memoryReservation")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
@@ -1353,6 +1382,40 @@ package ecs {
       val __obj = js.Dynamic.literal()
       attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteAttributesResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteCapacityProviderRequest extends js.Object {
+    var capacityProvider: String
+  }
+
+  object DeleteCapacityProviderRequest {
+    @inline
+    def apply(
+        capacityProvider: String
+    ): DeleteCapacityProviderRequest = {
+      val __obj = js.Dynamic.literal(
+        "capacityProvider" -> capacityProvider.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteCapacityProviderRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteCapacityProviderResponse extends js.Object {
+    var capacityProvider: js.UndefOr[CapacityProvider]
+  }
+
+  object DeleteCapacityProviderResponse {
+    @inline
+    def apply(
+        capacityProvider: js.UndefOr[CapacityProvider] = js.undefined
+    ): DeleteCapacityProviderResponse = {
+      val __obj = js.Dynamic.literal()
+      capacityProvider.foreach(__v => __obj.updateDynamic("capacityProvider")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteCapacityProviderResponse]
     }
   }
 
@@ -2069,29 +2132,110 @@ package ecs {
   }
 
   /**
-    * This parameter is specified when you are using an Amazon Elastic File System (Amazon EFS) file storage. Amazon EFS file systems are only supported when you are using the EC2 launch type.
-    *  <important> <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as defined by and subject to the Beta Service Participation Service Terms located at [[https://aws.amazon.com/service-terms|https://aws.amazon.com/service-terms]] ("Beta Terms"). These Beta Terms apply to your participation in this preview of <code>EFSVolumeConfiguration</code>.
-    *  </important>
+    * The authorization configuration details for the Amazon EFS file system.
+    */
+  @js.native
+  trait EFSAuthorizationConfig extends js.Object {
+    var accessPointId: js.UndefOr[String]
+    var iam: js.UndefOr[EFSAuthorizationConfigIAM]
+  }
+
+  object EFSAuthorizationConfig {
+    @inline
+    def apply(
+        accessPointId: js.UndefOr[String] = js.undefined,
+        iam: js.UndefOr[EFSAuthorizationConfigIAM] = js.undefined
+    ): EFSAuthorizationConfig = {
+      val __obj = js.Dynamic.literal()
+      accessPointId.foreach(__v => __obj.updateDynamic("accessPointId")(__v.asInstanceOf[js.Any]))
+      iam.foreach(__v => __obj.updateDynamic("iam")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EFSAuthorizationConfig]
+    }
+  }
+
+  @js.native
+  sealed trait EFSAuthorizationConfigIAM extends js.Any
+  object EFSAuthorizationConfigIAM extends js.Object {
+    val ENABLED  = "ENABLED".asInstanceOf[EFSAuthorizationConfigIAM]
+    val DISABLED = "DISABLED".asInstanceOf[EFSAuthorizationConfigIAM]
+
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+  }
+
+  @js.native
+  sealed trait EFSTransitEncryption extends js.Any
+  object EFSTransitEncryption extends js.Object {
+    val ENABLED  = "ENABLED".asInstanceOf[EFSTransitEncryption]
+    val DISABLED = "DISABLED".asInstanceOf[EFSTransitEncryption]
+
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+  }
+
+  /**
+    * This parameter is specified when you are using an Amazon Elastic File System file system for task storage. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html|Amazon EFS Volumes]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
   trait EFSVolumeConfiguration extends js.Object {
     var fileSystemId: String
+    var authorizationConfig: js.UndefOr[EFSAuthorizationConfig]
     var rootDirectory: js.UndefOr[String]
+    var transitEncryption: js.UndefOr[EFSTransitEncryption]
+    var transitEncryptionPort: js.UndefOr[BoxedInteger]
   }
 
   object EFSVolumeConfiguration {
     @inline
     def apply(
         fileSystemId: String,
-        rootDirectory: js.UndefOr[String] = js.undefined
+        authorizationConfig: js.UndefOr[EFSAuthorizationConfig] = js.undefined,
+        rootDirectory: js.UndefOr[String] = js.undefined,
+        transitEncryption: js.UndefOr[EFSTransitEncryption] = js.undefined,
+        transitEncryptionPort: js.UndefOr[BoxedInteger] = js.undefined
     ): EFSVolumeConfiguration = {
       val __obj = js.Dynamic.literal(
         "fileSystemId" -> fileSystemId.asInstanceOf[js.Any]
       )
 
+      authorizationConfig.foreach(__v => __obj.updateDynamic("authorizationConfig")(__v.asInstanceOf[js.Any]))
       rootDirectory.foreach(__v => __obj.updateDynamic("rootDirectory")(__v.asInstanceOf[js.Any]))
+      transitEncryption.foreach(__v => __obj.updateDynamic("transitEncryption")(__v.asInstanceOf[js.Any]))
+      transitEncryptionPort.foreach(__v => __obj.updateDynamic("transitEncryptionPort")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EFSVolumeConfiguration]
     }
+  }
+
+  /**
+    * A list of files containing the environment variables to pass to a container. You can specify up to ten environment files. The file must have a <code>.env</code> file extension. Each line in an environment file should contain an environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning with <code>#</code> are treated as comments and are ignored. For more information on the environment variable file syntax, see [[https://docs.docker.com/compose/env-file/|Declare default environment variables in file]].
+    *  If there are environment variables specified using the <code>environment</code> parameter in a container definition, they take precedence over the variables contained within an environment file. If multiple environment files are specified that contain the same variable, they are processed from the top down. It is recommended to use unique variable names. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html|Specifying Environment Variables]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    *  This field is not valid for containers in tasks using the Fargate launch type.
+    */
+  @js.native
+  trait EnvironmentFile extends js.Object {
+    var `type`: EnvironmentFileType
+    var value: String
+  }
+
+  object EnvironmentFile {
+    @inline
+    def apply(
+        `type`: EnvironmentFileType,
+        value: String
+    ): EnvironmentFile = {
+      val __obj = js.Dynamic.literal(
+        "type"  -> `type`.asInstanceOf[js.Any],
+        "value" -> value.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[EnvironmentFile]
+    }
+  }
+
+  @js.native
+  sealed trait EnvironmentFileType extends js.Any
+  object EnvironmentFileType extends js.Object {
+    val s3 = "s3".asInstanceOf[EnvironmentFileType]
+
+    val values = js.Object.freeze(js.Array(s3))
   }
 
   /**
@@ -2154,6 +2298,16 @@ package ecs {
 
   /**
     * An object representing a container health check. Health check parameters that are specified in a container definition override any Docker health checks that exist in the container image (such as those specified in a parent image or from the image's Dockerfile).
+    *  You can view the health status of both individual containers and a task with the DescribeTasks API operation or when viewing the task details in the console.
+    *  The following describes the possible <code>healthStatus</code> values for a container:
+    * * <code>HEALTHY</code>-The container health check has passed successfully.
+    *  * <code>UNHEALTHY</code>-The container health check has failed.
+    *  * <code>UNKNOWN</code>-The container health check is being evaluated or there is no container health check defined.
+    * The following describes the possible <code>healthStatus</code> values for a task. The container health check status of nonessential containers do not have an effect on the health status of a task.
+    * * <code>HEALTHY</code>-All essential containers within the task have passed their health checks.
+    *  * <code>UNHEALTHY</code>-One or more essential containers have failed their health check.
+    *  * <code>UNKNOWN</code>-The essential containers within the task are still having their health checks evaluated or there are no container health checks defined.
+    * If a task is run manually, and not as part of a service, the task will continue its lifecycle regardless of its health status. For tasks that are part of a service, if the task reports as unhealthy then the task will be stopped and the service scheduler will replace it.
     *  The following are notes about container health check support:
     * * Container health checks require version 1.17.0 or greater of the Amazon ECS container agent. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html|Updating the Amazon ECS Container Agent]].
     *  * Container health checks are supported for Fargate tasks if you are using platform version 1.1.0 or greater. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html|AWS Fargate Platform Versions]].
@@ -2807,7 +2961,8 @@ package ecs {
   }
 
   /**
-    * Details on the load balancer or load balancers to use with a service or task set.
+    * The load balancer configuration to use with a service or task set.
+    *  For specific notes and restrictions regarding the use of load balancers with services and task sets, see the CreateService and CreateTaskSet actions.
     */
   @js.native
   trait LoadBalancer extends js.Object {
@@ -5030,6 +5185,8 @@ package ecs {
     var forceNewDeployment: js.UndefOr[Boolean]
     var healthCheckGracePeriodSeconds: js.UndefOr[BoxedInteger]
     var networkConfiguration: js.UndefOr[NetworkConfiguration]
+    var placementConstraints: js.UndefOr[PlacementConstraints]
+    var placementStrategy: js.UndefOr[PlacementStrategies]
     var platformVersion: js.UndefOr[String]
     var taskDefinition: js.UndefOr[String]
   }
@@ -5045,6 +5202,8 @@ package ecs {
         forceNewDeployment: js.UndefOr[Boolean] = js.undefined,
         healthCheckGracePeriodSeconds: js.UndefOr[BoxedInteger] = js.undefined,
         networkConfiguration: js.UndefOr[NetworkConfiguration] = js.undefined,
+        placementConstraints: js.UndefOr[PlacementConstraints] = js.undefined,
+        placementStrategy: js.UndefOr[PlacementStrategies] = js.undefined,
         platformVersion: js.UndefOr[String] = js.undefined,
         taskDefinition: js.UndefOr[String] = js.undefined
     ): UpdateServiceRequest = {
@@ -5061,6 +5220,8 @@ package ecs {
         __obj.updateDynamic("healthCheckGracePeriodSeconds")(__v.asInstanceOf[js.Any])
       )
       networkConfiguration.foreach(__v => __obj.updateDynamic("networkConfiguration")(__v.asInstanceOf[js.Any]))
+      placementConstraints.foreach(__v => __obj.updateDynamic("placementConstraints")(__v.asInstanceOf[js.Any]))
+      placementStrategy.foreach(__v => __obj.updateDynamic("placementStrategy")(__v.asInstanceOf[js.Any]))
       platformVersion.foreach(__v => __obj.updateDynamic("platformVersion")(__v.asInstanceOf[js.Any]))
       taskDefinition.foreach(__v => __obj.updateDynamic("taskDefinition")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateServiceRequest]
@@ -5152,7 +5313,7 @@ package ecs {
   }
 
   /**
-    * A data volume used in a task definition. For tasks that use a Docker volume, specify a <code>DockerVolumeConfiguration</code>. For tasks that use a bind mount host volume, specify a <code>host</code> and optional <code>sourcePath</code>. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html|Using Data Volumes in Tasks]].
+    * A data volume used in a task definition. For tasks that use Amazon Elastic File System (Amazon EFS) file storage, specify an <code>efsVolumeConfiguration</code>. For tasks that use a Docker volume, specify a <code>DockerVolumeConfiguration</code>. For tasks that use a bind mount host volume, specify a <code>host</code> and optional <code>sourcePath</code>. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html|Using Data Volumes in Tasks]].
     */
   @js.native
   trait Volume extends js.Object {

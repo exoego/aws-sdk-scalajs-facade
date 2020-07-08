@@ -13,6 +13,7 @@ package object sqs {
   type BatchResultErrorEntryList                    = js.Array[BatchResultErrorEntry]
   type Binary                                       = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type BinaryList                                   = js.Array[Binary]
+  type BoxedInteger                                 = Int
   type ChangeMessageVisibilityBatchRequestEntryList = js.Array[ChangeMessageVisibilityBatchRequestEntry]
   type ChangeMessageVisibilityBatchResultEntryList  = js.Array[ChangeMessageVisibilityBatchResultEntry]
   type DeleteMessageBatchRequestEntryList           = js.Array[DeleteMessageBatchRequestEntry]
@@ -32,6 +33,7 @@ package object sqs {
   type TagKeyList                                   = js.Array[TagKey]
   type TagMap                                       = js.Dictionary[TagValue]
   type TagValue                                     = String
+  type Token                                        = String
 
   implicit final class SQSOps(private val service: SQS) extends AnyVal {
 
@@ -571,17 +573,23 @@ package sqs {
   @js.native
   trait ListDeadLetterSourceQueuesRequest extends js.Object {
     var QueueUrl: String
+    var MaxResults: js.UndefOr[BoxedInteger]
+    var NextToken: js.UndefOr[Token]
   }
 
   object ListDeadLetterSourceQueuesRequest {
     @inline
     def apply(
-        QueueUrl: String
+        QueueUrl: String,
+        MaxResults: js.UndefOr[BoxedInteger] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
     ): ListDeadLetterSourceQueuesRequest = {
       val __obj = js.Dynamic.literal(
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
       )
 
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeadLetterSourceQueuesRequest]
     }
   }
@@ -592,17 +600,20 @@ package sqs {
   @js.native
   trait ListDeadLetterSourceQueuesResult extends js.Object {
     var queueUrls: QueueUrlList
+    var NextToken: js.UndefOr[Token]
   }
 
   object ListDeadLetterSourceQueuesResult {
     @inline
     def apply(
-        queueUrls: QueueUrlList
+        queueUrls: QueueUrlList,
+        NextToken: js.UndefOr[Token] = js.undefined
     ): ListDeadLetterSourceQueuesResult = {
       val __obj = js.Dynamic.literal(
         "queueUrls" -> queueUrls.asInstanceOf[js.Any]
       )
 
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeadLetterSourceQueuesResult]
     }
   }
@@ -646,15 +657,21 @@ package sqs {
     */
   @js.native
   trait ListQueuesRequest extends js.Object {
+    var MaxResults: js.UndefOr[BoxedInteger]
+    var NextToken: js.UndefOr[Token]
     var QueueNamePrefix: js.UndefOr[String]
   }
 
   object ListQueuesRequest {
     @inline
     def apply(
+        MaxResults: js.UndefOr[BoxedInteger] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined,
         QueueNamePrefix: js.UndefOr[String] = js.undefined
     ): ListQueuesRequest = {
       val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       QueueNamePrefix.foreach(__v => __obj.updateDynamic("QueueNamePrefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListQueuesRequest]
     }
@@ -665,15 +682,18 @@ package sqs {
     */
   @js.native
   trait ListQueuesResult extends js.Object {
+    var NextToken: js.UndefOr[Token]
     var QueueUrls: js.UndefOr[QueueUrlList]
   }
 
   object ListQueuesResult {
     @inline
     def apply(
+        NextToken: js.UndefOr[Token] = js.undefined,
         QueueUrls: js.UndefOr[QueueUrlList] = js.undefined
     ): ListQueuesResult = {
       val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       QueueUrls.foreach(__v => __obj.updateDynamic("QueueUrls")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListQueuesResult]
     }

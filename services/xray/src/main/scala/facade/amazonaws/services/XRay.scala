@@ -558,15 +558,18 @@ package xray {
     */
   @js.native
   trait ErrorRootCause extends js.Object {
+    var ClientImpacting: js.UndefOr[NullableBoolean]
     var Services: js.UndefOr[ErrorRootCauseServices]
   }
 
   object ErrorRootCause {
     @inline
     def apply(
+        ClientImpacting: js.UndefOr[NullableBoolean] = js.undefined,
         Services: js.UndefOr[ErrorRootCauseServices] = js.undefined
     ): ErrorRootCause = {
       val __obj = js.Dynamic.literal()
+      ClientImpacting.foreach(__v => __obj.updateDynamic("ClientImpacting")(__v.asInstanceOf[js.Any]))
       Services.foreach(__v => __obj.updateDynamic("Services")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ErrorRootCause]
     }
@@ -661,15 +664,18 @@ package xray {
     */
   @js.native
   trait FaultRootCause extends js.Object {
+    var ClientImpacting: js.UndefOr[NullableBoolean]
     var Services: js.UndefOr[FaultRootCauseServices]
   }
 
   object FaultRootCause {
     @inline
     def apply(
+        ClientImpacting: js.UndefOr[NullableBoolean] = js.undefined,
         Services: js.UndefOr[FaultRootCauseServices] = js.undefined
     ): FaultRootCause = {
       val __obj = js.Dynamic.literal()
+      ClientImpacting.foreach(__v => __obj.updateDynamic("ClientImpacting")(__v.asInstanceOf[js.Any]))
       Services.foreach(__v => __obj.updateDynamic("Services")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FaultRootCause]
     }
@@ -1443,15 +1449,18 @@ package xray {
     */
   @js.native
   trait ResponseTimeRootCause extends js.Object {
+    var ClientImpacting: js.UndefOr[NullableBoolean]
     var Services: js.UndefOr[ResponseTimeRootCauseServices]
   }
 
   object ResponseTimeRootCause {
     @inline
     def apply(
+        ClientImpacting: js.UndefOr[NullableBoolean] = js.undefined,
         Services: js.UndefOr[ResponseTimeRootCauseServices] = js.undefined
     ): ResponseTimeRootCause = {
       val __obj = js.Dynamic.literal()
+      ClientImpacting.foreach(__v => __obj.updateDynamic("ClientImpacting")(__v.asInstanceOf[js.Any]))
       Services.foreach(__v => __obj.updateDynamic("Services")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResponseTimeRootCause]
     }

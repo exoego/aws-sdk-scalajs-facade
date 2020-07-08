@@ -107,35 +107,32 @@ package augmentedairuntime {
 
   @js.native
   trait DescribeHumanLoopResponse extends js.Object {
-    var CreationTimestamp: Timestamp
+    var CreationTime: Timestamp
     var FlowDefinitionArn: FlowDefinitionArn
     var HumanLoopArn: HumanLoopArn
-    var HumanLoopInput: HumanLoopInputContent
     var HumanLoopName: HumanLoopName
     var HumanLoopStatus: HumanLoopStatus
     var FailureCode: js.UndefOr[String]
     var FailureReason: js.UndefOr[String]
-    var HumanLoopOutput: js.UndefOr[HumanLoopOutputContent]
+    var HumanLoopOutput: js.UndefOr[HumanLoopOutput]
   }
 
   object DescribeHumanLoopResponse {
     @inline
     def apply(
-        CreationTimestamp: Timestamp,
+        CreationTime: Timestamp,
         FlowDefinitionArn: FlowDefinitionArn,
         HumanLoopArn: HumanLoopArn,
-        HumanLoopInput: HumanLoopInputContent,
         HumanLoopName: HumanLoopName,
         HumanLoopStatus: HumanLoopStatus,
         FailureCode: js.UndefOr[String] = js.undefined,
         FailureReason: js.UndefOr[String] = js.undefined,
-        HumanLoopOutput: js.UndefOr[HumanLoopOutputContent] = js.undefined
+        HumanLoopOutput: js.UndefOr[HumanLoopOutput] = js.undefined
     ): DescribeHumanLoopResponse = {
       val __obj = js.Dynamic.literal(
-        "CreationTimestamp" -> CreationTimestamp.asInstanceOf[js.Any],
+        "CreationTime"      -> CreationTime.asInstanceOf[js.Any],
         "FlowDefinitionArn" -> FlowDefinitionArn.asInstanceOf[js.Any],
         "HumanLoopArn"      -> HumanLoopArn.asInstanceOf[js.Any],
-        "HumanLoopInput"    -> HumanLoopInput.asInstanceOf[js.Any],
         "HumanLoopName"     -> HumanLoopName.asInstanceOf[js.Any],
         "HumanLoopStatus"   -> HumanLoopStatus.asInstanceOf[js.Any]
       )
@@ -148,68 +145,44 @@ package augmentedairuntime {
   }
 
   /**
-    * Contains information about why a human loop was triggered. If at least one activation reason is evaluated to be true, the human loop is activated.
+    * Attributes of the data specified by the customer. Use these to describe the data to be labeled.
     */
   @js.native
-  trait HumanLoopActivationReason extends js.Object {
-    var ConditionsMatched: js.UndefOr[Boolean]
+  trait HumanLoopDataAttributes extends js.Object {
+    var ContentClassifiers: ContentClassifiers
   }
 
-  object HumanLoopActivationReason {
+  object HumanLoopDataAttributes {
     @inline
     def apply(
-        ConditionsMatched: js.UndefOr[Boolean] = js.undefined
-    ): HumanLoopActivationReason = {
-      val __obj = js.Dynamic.literal()
-      ConditionsMatched.foreach(__v => __obj.updateDynamic("ConditionsMatched")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HumanLoopActivationReason]
+        ContentClassifiers: ContentClassifiers
+    ): HumanLoopDataAttributes = {
+      val __obj = js.Dynamic.literal(
+        "ContentClassifiers" -> ContentClassifiers.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[HumanLoopDataAttributes]
     }
   }
 
   /**
-    * Information about the corresponding flow definition's human loop activation condition evaluation. Null if <code>StartHumanLoop</code> was invoked directly.
+    * An object containing the human loop input in JSON format.
     */
   @js.native
-  trait HumanLoopActivationResults extends js.Object {
-    var HumanLoopActivationConditionsEvaluationResults: js.UndefOr[String]
-    var HumanLoopActivationReason: js.UndefOr[HumanLoopActivationReason]
-  }
-
-  object HumanLoopActivationResults {
-    @inline
-    def apply(
-        HumanLoopActivationConditionsEvaluationResults: js.UndefOr[String] = js.undefined,
-        HumanLoopActivationReason: js.UndefOr[HumanLoopActivationReason] = js.undefined
-    ): HumanLoopActivationResults = {
-      val __obj = js.Dynamic.literal()
-      HumanLoopActivationConditionsEvaluationResults.foreach(__v =>
-        __obj.updateDynamic("HumanLoopActivationConditionsEvaluationResults")(__v.asInstanceOf[js.Any])
-      )
-      HumanLoopActivationReason.foreach(__v =>
-        __obj.updateDynamic("HumanLoopActivationReason")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[HumanLoopActivationResults]
-    }
-  }
-
-  /**
-    * An object containing the input.
-    */
-  @js.native
-  trait HumanLoopInputContent extends js.Object {
+  trait HumanLoopInput extends js.Object {
     var InputContent: InputContent
   }
 
-  object HumanLoopInputContent {
+  object HumanLoopInput {
     @inline
     def apply(
         InputContent: InputContent
-    ): HumanLoopInputContent = {
+    ): HumanLoopInput = {
       val __obj = js.Dynamic.literal(
         "InputContent" -> InputContent.asInstanceOf[js.Any]
       )
 
-      __obj.asInstanceOf[HumanLoopInputContent]
+      __obj.asInstanceOf[HumanLoopInput]
     }
   }
 
@@ -217,20 +190,20 @@ package augmentedairuntime {
     * Information about where the human output will be stored.
     */
   @js.native
-  trait HumanLoopOutputContent extends js.Object {
+  trait HumanLoopOutput extends js.Object {
     var OutputS3Uri: String
   }
 
-  object HumanLoopOutputContent {
+  object HumanLoopOutput {
     @inline
     def apply(
         OutputS3Uri: String
-    ): HumanLoopOutputContent = {
+    ): HumanLoopOutput = {
       val __obj = js.Dynamic.literal(
         "OutputS3Uri" -> OutputS3Uri.asInstanceOf[js.Any]
       )
 
-      __obj.asInstanceOf[HumanLoopOutputContent]
+      __obj.asInstanceOf[HumanLoopOutput]
     }
   }
 
@@ -277,29 +250,9 @@ package augmentedairuntime {
     }
   }
 
-  /**
-    * Attributes of the data specified by the customer. Use these to describe the data to be labeled.
-    */
-  @js.native
-  trait HumanReviewDataAttributes extends js.Object {
-    var ContentClassifiers: ContentClassifiers
-  }
-
-  object HumanReviewDataAttributes {
-    @inline
-    def apply(
-        ContentClassifiers: ContentClassifiers
-    ): HumanReviewDataAttributes = {
-      val __obj = js.Dynamic.literal(
-        "ContentClassifiers" -> ContentClassifiers.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[HumanReviewDataAttributes]
-    }
-  }
-
   @js.native
   trait ListHumanLoopsRequest extends js.Object {
+    var FlowDefinitionArn: FlowDefinitionArn
     var CreationTimeAfter: js.UndefOr[Timestamp]
     var CreationTimeBefore: js.UndefOr[Timestamp]
     var MaxResults: js.UndefOr[MaxResults]
@@ -310,13 +263,17 @@ package augmentedairuntime {
   object ListHumanLoopsRequest {
     @inline
     def apply(
+        FlowDefinitionArn: FlowDefinitionArn,
         CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
         CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SortOrder: js.UndefOr[SortOrder] = js.undefined
     ): ListHumanLoopsRequest = {
-      val __obj = js.Dynamic.literal()
+      val __obj = js.Dynamic.literal(
+        "FlowDefinitionArn" -> FlowDefinitionArn.asInstanceOf[js.Any]
+      )
+
       CreationTimeAfter.foreach(__v => __obj.updateDynamic("CreationTimeAfter")(__v.asInstanceOf[js.Any]))
       CreationTimeBefore.foreach(__v => __obj.updateDynamic("CreationTimeBefore")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
@@ -359,18 +316,18 @@ package augmentedairuntime {
   @js.native
   trait StartHumanLoopRequest extends js.Object {
     var FlowDefinitionArn: FlowDefinitionArn
-    var HumanLoopInput: HumanLoopInputContent
+    var HumanLoopInput: HumanLoopInput
     var HumanLoopName: HumanLoopName
-    var DataAttributes: js.UndefOr[HumanReviewDataAttributes]
+    var DataAttributes: js.UndefOr[HumanLoopDataAttributes]
   }
 
   object StartHumanLoopRequest {
     @inline
     def apply(
         FlowDefinitionArn: FlowDefinitionArn,
-        HumanLoopInput: HumanLoopInputContent,
+        HumanLoopInput: HumanLoopInput,
         HumanLoopName: HumanLoopName,
-        DataAttributes: js.UndefOr[HumanReviewDataAttributes] = js.undefined
+        DataAttributes: js.UndefOr[HumanLoopDataAttributes] = js.undefined
     ): StartHumanLoopRequest = {
       val __obj = js.Dynamic.literal(
         "FlowDefinitionArn" -> FlowDefinitionArn.asInstanceOf[js.Any],
@@ -385,20 +342,15 @@ package augmentedairuntime {
 
   @js.native
   trait StartHumanLoopResponse extends js.Object {
-    var HumanLoopActivationResults: js.UndefOr[HumanLoopActivationResults]
     var HumanLoopArn: js.UndefOr[HumanLoopArn]
   }
 
   object StartHumanLoopResponse {
     @inline
     def apply(
-        HumanLoopActivationResults: js.UndefOr[HumanLoopActivationResults] = js.undefined,
         HumanLoopArn: js.UndefOr[HumanLoopArn] = js.undefined
     ): StartHumanLoopResponse = {
       val __obj = js.Dynamic.literal()
-      HumanLoopActivationResults.foreach(__v =>
-        __obj.updateDynamic("HumanLoopActivationResults")(__v.asInstanceOf[js.Any])
-      )
       HumanLoopArn.foreach(__v => __obj.updateDynamic("HumanLoopArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartHumanLoopResponse]
     }

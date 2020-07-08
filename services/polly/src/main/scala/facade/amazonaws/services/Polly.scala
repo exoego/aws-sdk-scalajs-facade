@@ -810,6 +810,7 @@ package polly {
     val Justin    = "Justin".asInstanceOf[VoiceId]
     val Karl      = "Karl".asInstanceOf[VoiceId]
     val Kendra    = "Kendra".asInstanceOf[VoiceId]
+    val Kevin     = "Kevin".asInstanceOf[VoiceId]
     val Kimberly  = "Kimberly".asInstanceOf[VoiceId]
     val Lea       = "Lea".asInstanceOf[VoiceId]
     val Liv       = "Liv".asInstanceOf[VoiceId]
@@ -873,6 +874,7 @@ package polly {
         Justin,
         Karl,
         Kendra,
+        Kevin,
         Kimberly,
         Lea,
         Liv,

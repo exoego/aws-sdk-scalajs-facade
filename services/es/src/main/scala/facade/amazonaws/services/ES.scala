@@ -12,24 +12,37 @@ package object es {
   type AdvancedOptions                           = js.Dictionary[String]
   type CloudWatchLogsLogGroupArn                 = String
   type CompatibleElasticsearchVersionsList       = js.Array[CompatibleVersionsMap]
+  type ConnectionAlias                           = String
+  type CreatedAt                                 = js.Date
+  type CrossClusterSearchConnectionId            = String
+  type CrossClusterSearchConnectionStatusMessage = String
   type DeploymentCloseDateTimeStamp              = js.Date
+  type DescribePackagesFilterList                = js.Array[DescribePackagesFilter]
+  type DescribePackagesFilterValue               = String
+  type DescribePackagesFilterValues              = js.Array[DescribePackagesFilterValue]
   type DomainId                                  = String
   type DomainInfoList                            = js.Array[DomainInfo]
   type DomainName                                = String
   type DomainNameList                            = js.Array[DomainName]
+  type DomainPackageDetailsList                  = js.Array[DomainPackageDetails]
   type ElasticsearchDomainStatusList             = js.Array[ElasticsearchDomainStatus]
   type ElasticsearchInstanceTypeList             = js.Array[ESPartitionInstanceType]
   type ElasticsearchVersionList                  = js.Array[ElasticsearchVersionString]
   type ElasticsearchVersionString                = String
   type EndpointsMap                              = js.Dictionary[ServiceUrl]
+  type ErrorMessage                              = String
+  type ErrorType                                 = String
+  type FilterList                                = js.Array[Filter]
   type GUID                                      = String
   type IdentityPoolId                            = String
+  type InboundCrossClusterSearchConnections      = js.Array[InboundCrossClusterSearchConnection]
   type InstanceCount                             = Int
   type InstanceRole                              = String
   type IntegerClass                              = Int
   type Issue                                     = String
   type Issues                                    = js.Array[Issue]
   type KmsKeyId                                  = String
+  type LastUpdated                               = js.Date
   type LimitName                                 = String
   type LimitValue                                = String
   type LimitValueList                            = js.Array[LimitValue]
@@ -39,13 +52,24 @@ package object es {
   type MaximumInstanceCount                      = Int
   type MinimumInstanceCount                      = Int
   type NextToken                                 = String
+  type NonEmptyString                            = String
+  type OutboundCrossClusterSearchConnections     = js.Array[OutboundCrossClusterSearchConnection]
+  type OwnerId                                   = String
+  type PackageDescription                        = String
+  type PackageDetailsList                        = js.Array[PackageDetails]
+  type PackageID                                 = String
+  type PackageName                               = String
   type Password                                  = String
   type PolicyDocument                            = String
   type RecurringChargeList                       = js.Array[RecurringCharge]
+  type ReferencePath                             = String
+  type Region                                    = String
   type ReservationToken                          = String
   type ReservedElasticsearchInstanceList         = js.Array[ReservedElasticsearchInstance]
   type ReservedElasticsearchInstanceOfferingList = js.Array[ReservedElasticsearchInstanceOffering]
   type RoleArn                                   = String
+  type S3BucketName                              = String
+  type S3Key                                     = String
   type ServiceUrl                                = String
   type StartTimestamp                            = js.Date
   type StorageSubTypeName                        = String
@@ -63,10 +87,17 @@ package object es {
   type UpgradeStepsList                          = js.Array[UpgradeStepItem]
   type UserPoolId                                = String
   type Username                                  = String
+  type ValueStringList                           = js.Array[NonEmptyString]
 
   implicit final class ESOps(private val service: ES) extends AnyVal {
 
+    @inline def acceptInboundCrossClusterSearchConnectionFuture(
+        params: AcceptInboundCrossClusterSearchConnectionRequest
+    ): Future[AcceptInboundCrossClusterSearchConnectionResponse] =
+      service.acceptInboundCrossClusterSearchConnection(params).promise().toFuture
     @inline def addTagsFuture(params: AddTagsRequest): Future[js.Object] = service.addTags(params).promise().toFuture
+    @inline def associatePackageFuture(params: AssociatePackageRequest): Future[AssociatePackageResponse] =
+      service.associatePackage(params).promise().toFuture
     @inline def cancelElasticsearchServiceSoftwareUpdateFuture(
         params: CancelElasticsearchServiceSoftwareUpdateRequest
     ): Future[CancelElasticsearchServiceSoftwareUpdateResponse] =
@@ -74,11 +105,27 @@ package object es {
     @inline def createElasticsearchDomainFuture(
         params: CreateElasticsearchDomainRequest
     ): Future[CreateElasticsearchDomainResponse] = service.createElasticsearchDomain(params).promise().toFuture
+    @inline def createOutboundCrossClusterSearchConnectionFuture(
+        params: CreateOutboundCrossClusterSearchConnectionRequest
+    ): Future[CreateOutboundCrossClusterSearchConnectionResponse] =
+      service.createOutboundCrossClusterSearchConnection(params).promise().toFuture
+    @inline def createPackageFuture(params: CreatePackageRequest): Future[CreatePackageResponse] =
+      service.createPackage(params).promise().toFuture
     @inline def deleteElasticsearchDomainFuture(
         params: DeleteElasticsearchDomainRequest
     ): Future[DeleteElasticsearchDomainResponse] = service.deleteElasticsearchDomain(params).promise().toFuture
     @inline def deleteElasticsearchServiceRoleFuture(): Future[js.Object] =
       service.deleteElasticsearchServiceRole().promise().toFuture
+    @inline def deleteInboundCrossClusterSearchConnectionFuture(
+        params: DeleteInboundCrossClusterSearchConnectionRequest
+    ): Future[DeleteInboundCrossClusterSearchConnectionResponse] =
+      service.deleteInboundCrossClusterSearchConnection(params).promise().toFuture
+    @inline def deleteOutboundCrossClusterSearchConnectionFuture(
+        params: DeleteOutboundCrossClusterSearchConnectionRequest
+    ): Future[DeleteOutboundCrossClusterSearchConnectionResponse] =
+      service.deleteOutboundCrossClusterSearchConnection(params).promise().toFuture
+    @inline def deletePackageFuture(params: DeletePackageRequest): Future[DeletePackageResponse] =
+      service.deletePackage(params).promise().toFuture
     @inline def describeElasticsearchDomainConfigFuture(
         params: DescribeElasticsearchDomainConfigRequest
     ): Future[DescribeElasticsearchDomainConfigResponse] =
@@ -93,6 +140,16 @@ package object es {
         params: DescribeElasticsearchInstanceTypeLimitsRequest
     ): Future[DescribeElasticsearchInstanceTypeLimitsResponse] =
       service.describeElasticsearchInstanceTypeLimits(params).promise().toFuture
+    @inline def describeInboundCrossClusterSearchConnectionsFuture(
+        params: DescribeInboundCrossClusterSearchConnectionsRequest
+    ): Future[DescribeInboundCrossClusterSearchConnectionsResponse] =
+      service.describeInboundCrossClusterSearchConnections(params).promise().toFuture
+    @inline def describeOutboundCrossClusterSearchConnectionsFuture(
+        params: DescribeOutboundCrossClusterSearchConnectionsRequest
+    ): Future[DescribeOutboundCrossClusterSearchConnectionsResponse] =
+      service.describeOutboundCrossClusterSearchConnections(params).promise().toFuture
+    @inline def describePackagesFuture(params: DescribePackagesRequest): Future[DescribePackagesResponse] =
+      service.describePackages(params).promise().toFuture
     @inline def describeReservedElasticsearchInstanceOfferingsFuture(
         params: DescribeReservedElasticsearchInstanceOfferingsRequest
     ): Future[DescribeReservedElasticsearchInstanceOfferingsResponse] =
@@ -101,6 +158,8 @@ package object es {
         params: DescribeReservedElasticsearchInstancesRequest
     ): Future[DescribeReservedElasticsearchInstancesResponse] =
       service.describeReservedElasticsearchInstances(params).promise().toFuture
+    @inline def dissociatePackageFuture(params: DissociatePackageRequest): Future[DissociatePackageResponse] =
+      service.dissociatePackage(params).promise().toFuture
     @inline def getCompatibleElasticsearchVersionsFuture(
         params: GetCompatibleElasticsearchVersionsRequest
     ): Future[GetCompatibleElasticsearchVersionsResponse] =
@@ -110,6 +169,9 @@ package object es {
     @inline def getUpgradeStatusFuture(params: GetUpgradeStatusRequest): Future[GetUpgradeStatusResponse] =
       service.getUpgradeStatus(params).promise().toFuture
     @inline def listDomainNamesFuture(): Future[ListDomainNamesResponse] = service.listDomainNames().promise().toFuture
+    @inline def listDomainsForPackageFuture(
+        params: ListDomainsForPackageRequest
+    ): Future[ListDomainsForPackageResponse] = service.listDomainsForPackage(params).promise().toFuture
     @inline def listElasticsearchInstanceTypesFuture(
         params: ListElasticsearchInstanceTypesRequest
     ): Future[ListElasticsearchInstanceTypesResponse] =
@@ -117,12 +179,19 @@ package object es {
     @inline def listElasticsearchVersionsFuture(
         params: ListElasticsearchVersionsRequest
     ): Future[ListElasticsearchVersionsResponse] = service.listElasticsearchVersions(params).promise().toFuture
+    @inline def listPackagesForDomainFuture(
+        params: ListPackagesForDomainRequest
+    ): Future[ListPackagesForDomainResponse] = service.listPackagesForDomain(params).promise().toFuture
     @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] =
       service.listTags(params).promise().toFuture
     @inline def purchaseReservedElasticsearchInstanceOfferingFuture(
         params: PurchaseReservedElasticsearchInstanceOfferingRequest
     ): Future[PurchaseReservedElasticsearchInstanceOfferingResponse] =
       service.purchaseReservedElasticsearchInstanceOffering(params).promise().toFuture
+    @inline def rejectInboundCrossClusterSearchConnectionFuture(
+        params: RejectInboundCrossClusterSearchConnectionRequest
+    ): Future[RejectInboundCrossClusterSearchConnectionResponse] =
+      service.rejectInboundCrossClusterSearchConnection(params).promise().toFuture
     @inline def removeTagsFuture(params: RemoveTagsRequest): Future[js.Object] =
       service.removeTags(params).promise().toFuture
     @inline def startElasticsearchServiceSoftwareUpdateFuture(
@@ -145,17 +214,32 @@ package es {
   class ES() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def addTags(params: AddTagsRequest): Request[js.Object] = js.native
+    def acceptInboundCrossClusterSearchConnection(
+        params: AcceptInboundCrossClusterSearchConnectionRequest
+    ): Request[AcceptInboundCrossClusterSearchConnectionResponse]                            = js.native
+    def addTags(params: AddTagsRequest): Request[js.Object]                                  = js.native
+    def associatePackage(params: AssociatePackageRequest): Request[AssociatePackageResponse] = js.native
     def cancelElasticsearchServiceSoftwareUpdate(
         params: CancelElasticsearchServiceSoftwareUpdateRequest
     ): Request[CancelElasticsearchServiceSoftwareUpdateResponse] = js.native
     def createElasticsearchDomain(
         params: CreateElasticsearchDomainRequest
     ): Request[CreateElasticsearchDomainResponse] = js.native
+    def createOutboundCrossClusterSearchConnection(
+        params: CreateOutboundCrossClusterSearchConnectionRequest
+    ): Request[CreateOutboundCrossClusterSearchConnectionResponse]                  = js.native
+    def createPackage(params: CreatePackageRequest): Request[CreatePackageResponse] = js.native
     def deleteElasticsearchDomain(
         params: DeleteElasticsearchDomainRequest
     ): Request[DeleteElasticsearchDomainResponse]            = js.native
     def deleteElasticsearchServiceRole(): Request[js.Object] = js.native
+    def deleteInboundCrossClusterSearchConnection(
+        params: DeleteInboundCrossClusterSearchConnectionRequest
+    ): Request[DeleteInboundCrossClusterSearchConnectionResponse] = js.native
+    def deleteOutboundCrossClusterSearchConnection(
+        params: DeleteOutboundCrossClusterSearchConnectionRequest
+    ): Request[DeleteOutboundCrossClusterSearchConnectionResponse]                  = js.native
+    def deletePackage(params: DeletePackageRequest): Request[DeletePackageResponse] = js.native
     def describeElasticsearchDomain(
         params: DescribeElasticsearchDomainRequest
     ): Request[DescribeElasticsearchDomainResponse] = js.native
@@ -168,29 +252,42 @@ package es {
     def describeElasticsearchInstanceTypeLimits(
         params: DescribeElasticsearchInstanceTypeLimitsRequest
     ): Request[DescribeElasticsearchInstanceTypeLimitsResponse] = js.native
+    def describeInboundCrossClusterSearchConnections(
+        params: DescribeInboundCrossClusterSearchConnectionsRequest
+    ): Request[DescribeInboundCrossClusterSearchConnectionsResponse] = js.native
+    def describeOutboundCrossClusterSearchConnections(
+        params: DescribeOutboundCrossClusterSearchConnectionsRequest
+    ): Request[DescribeOutboundCrossClusterSearchConnectionsResponse]                        = js.native
+    def describePackages(params: DescribePackagesRequest): Request[DescribePackagesResponse] = js.native
     def describeReservedElasticsearchInstanceOfferings(
         params: DescribeReservedElasticsearchInstanceOfferingsRequest
     ): Request[DescribeReservedElasticsearchInstanceOfferingsResponse] = js.native
     def describeReservedElasticsearchInstances(
         params: DescribeReservedElasticsearchInstancesRequest
-    ): Request[DescribeReservedElasticsearchInstancesResponse] = js.native
+    ): Request[DescribeReservedElasticsearchInstancesResponse]                                  = js.native
+    def dissociatePackage(params: DissociatePackageRequest): Request[DissociatePackageResponse] = js.native
     def getCompatibleElasticsearchVersions(
         params: GetCompatibleElasticsearchVersionsRequest
-    ): Request[GetCompatibleElasticsearchVersionsResponse]                                      = js.native
-    def getUpgradeHistory(params: GetUpgradeHistoryRequest): Request[GetUpgradeHistoryResponse] = js.native
-    def getUpgradeStatus(params: GetUpgradeStatusRequest): Request[GetUpgradeStatusResponse]    = js.native
-    def listDomainNames(): Request[ListDomainNamesResponse]                                     = js.native
+    ): Request[GetCompatibleElasticsearchVersionsResponse]                                                  = js.native
+    def getUpgradeHistory(params: GetUpgradeHistoryRequest): Request[GetUpgradeHistoryResponse]             = js.native
+    def getUpgradeStatus(params: GetUpgradeStatusRequest): Request[GetUpgradeStatusResponse]                = js.native
+    def listDomainNames(): Request[ListDomainNamesResponse]                                                 = js.native
+    def listDomainsForPackage(params: ListDomainsForPackageRequest): Request[ListDomainsForPackageResponse] = js.native
     def listElasticsearchInstanceTypes(
         params: ListElasticsearchInstanceTypesRequest
     ): Request[ListElasticsearchInstanceTypesResponse] = js.native
     def listElasticsearchVersions(
         params: ListElasticsearchVersionsRequest
-    ): Request[ListElasticsearchVersionsResponse]                    = js.native
-    def listTags(params: ListTagsRequest): Request[ListTagsResponse] = js.native
+    ): Request[ListElasticsearchVersionsResponse]                                                           = js.native
+    def listPackagesForDomain(params: ListPackagesForDomainRequest): Request[ListPackagesForDomainResponse] = js.native
+    def listTags(params: ListTagsRequest): Request[ListTagsResponse]                                        = js.native
     def purchaseReservedElasticsearchInstanceOffering(
         params: PurchaseReservedElasticsearchInstanceOfferingRequest
     ): Request[PurchaseReservedElasticsearchInstanceOfferingResponse] = js.native
-    def removeTags(params: RemoveTagsRequest): Request[js.Object]     = js.native
+    def rejectInboundCrossClusterSearchConnection(
+        params: RejectInboundCrossClusterSearchConnectionRequest
+    ): Request[RejectInboundCrossClusterSearchConnectionResponse] = js.native
+    def removeTags(params: RemoveTagsRequest): Request[js.Object] = js.native
     def startElasticsearchServiceSoftwareUpdate(
         params: StartElasticsearchServiceSoftwareUpdateRequest
     ): Request[StartElasticsearchServiceSoftwareUpdateResponse] = js.native
@@ -200,6 +297,48 @@ package es {
     def upgradeElasticsearchDomain(
         params: UpgradeElasticsearchDomainRequest
     ): Request[UpgradeElasticsearchDomainResponse] = js.native
+  }
+
+  /**
+    * Container for the parameters to the <code><a>AcceptInboundCrossClusterSearchConnection</a></code> operation.
+    */
+  @js.native
+  trait AcceptInboundCrossClusterSearchConnectionRequest extends js.Object {
+    var CrossClusterSearchConnectionId: CrossClusterSearchConnectionId
+  }
+
+  object AcceptInboundCrossClusterSearchConnectionRequest {
+    @inline
+    def apply(
+        CrossClusterSearchConnectionId: CrossClusterSearchConnectionId
+    ): AcceptInboundCrossClusterSearchConnectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "CrossClusterSearchConnectionId" -> CrossClusterSearchConnectionId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[AcceptInboundCrossClusterSearchConnectionRequest]
+    }
+  }
+
+  /**
+    * The result of a <code><a>AcceptInboundCrossClusterSearchConnection</a></code> operation. Contains details of accepted inbound connection.
+    */
+  @js.native
+  trait AcceptInboundCrossClusterSearchConnectionResponse extends js.Object {
+    var CrossClusterSearchConnection: js.UndefOr[InboundCrossClusterSearchConnection]
+  }
+
+  object AcceptInboundCrossClusterSearchConnectionResponse {
+    @inline
+    def apply(
+        CrossClusterSearchConnection: js.UndefOr[InboundCrossClusterSearchConnection] = js.undefined
+    ): AcceptInboundCrossClusterSearchConnectionResponse = {
+      val __obj = js.Dynamic.literal()
+      CrossClusterSearchConnection.foreach(__v =>
+        __obj.updateDynamic("CrossClusterSearchConnection")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[AcceptInboundCrossClusterSearchConnectionResponse]
+    }
   }
 
   /**
@@ -371,6 +510,49 @@ package es {
       )
 
       __obj.asInstanceOf[AdvancedSecurityOptionsStatus]
+    }
+  }
+
+  /**
+    * Container for request parameters to <code> <a>AssociatePackage</a> </code> operation.
+    */
+  @js.native
+  trait AssociatePackageRequest extends js.Object {
+    var DomainName: DomainName
+    var PackageID: PackageID
+  }
+
+  object AssociatePackageRequest {
+    @inline
+    def apply(
+        DomainName: DomainName,
+        PackageID: PackageID
+    ): AssociatePackageRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "PackageID"  -> PackageID.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[AssociatePackageRequest]
+    }
+  }
+
+  /**
+    * Container for response returned by <code> <a>AssociatePackage</a> </code> operation.
+    */
+  @js.native
+  trait AssociatePackageResponse extends js.Object {
+    var DomainPackageDetails: js.UndefOr[DomainPackageDetails]
+  }
+
+  object AssociatePackageResponse {
+    @inline
+    def apply(
+        DomainPackageDetails: js.UndefOr[DomainPackageDetails] = js.undefined
+    ): AssociatePackageResponse = {
+      val __obj = js.Dynamic.literal()
+      DomainPackageDetails.foreach(__v => __obj.updateDynamic("DomainPackageDetails")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociatePackageResponse]
     }
   }
 
@@ -569,6 +751,115 @@ package es {
   }
 
   /**
+    * Container for the parameters to the <code><a>CreateOutboundCrossClusterSearchConnection</a></code> operation.
+    */
+  @js.native
+  trait CreateOutboundCrossClusterSearchConnectionRequest extends js.Object {
+    var ConnectionAlias: ConnectionAlias
+    var DestinationDomainInfo: DomainInformation
+    var SourceDomainInfo: DomainInformation
+  }
+
+  object CreateOutboundCrossClusterSearchConnectionRequest {
+    @inline
+    def apply(
+        ConnectionAlias: ConnectionAlias,
+        DestinationDomainInfo: DomainInformation,
+        SourceDomainInfo: DomainInformation
+    ): CreateOutboundCrossClusterSearchConnectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "ConnectionAlias"       -> ConnectionAlias.asInstanceOf[js.Any],
+        "DestinationDomainInfo" -> DestinationDomainInfo.asInstanceOf[js.Any],
+        "SourceDomainInfo"      -> SourceDomainInfo.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateOutboundCrossClusterSearchConnectionRequest]
+    }
+  }
+
+  /**
+    * The result of a <code><a>CreateOutboundCrossClusterSearchConnection</a></code> request. Contains the details of the newly created cross-cluster search connection.
+    */
+  @js.native
+  trait CreateOutboundCrossClusterSearchConnectionResponse extends js.Object {
+    var ConnectionAlias: js.UndefOr[ConnectionAlias]
+    var ConnectionStatus: js.UndefOr[OutboundCrossClusterSearchConnectionStatus]
+    var CrossClusterSearchConnectionId: js.UndefOr[CrossClusterSearchConnectionId]
+    var DestinationDomainInfo: js.UndefOr[DomainInformation]
+    var SourceDomainInfo: js.UndefOr[DomainInformation]
+  }
+
+  object CreateOutboundCrossClusterSearchConnectionResponse {
+    @inline
+    def apply(
+        ConnectionAlias: js.UndefOr[ConnectionAlias] = js.undefined,
+        ConnectionStatus: js.UndefOr[OutboundCrossClusterSearchConnectionStatus] = js.undefined,
+        CrossClusterSearchConnectionId: js.UndefOr[CrossClusterSearchConnectionId] = js.undefined,
+        DestinationDomainInfo: js.UndefOr[DomainInformation] = js.undefined,
+        SourceDomainInfo: js.UndefOr[DomainInformation] = js.undefined
+    ): CreateOutboundCrossClusterSearchConnectionResponse = {
+      val __obj = js.Dynamic.literal()
+      ConnectionAlias.foreach(__v => __obj.updateDynamic("ConnectionAlias")(__v.asInstanceOf[js.Any]))
+      ConnectionStatus.foreach(__v => __obj.updateDynamic("ConnectionStatus")(__v.asInstanceOf[js.Any]))
+      CrossClusterSearchConnectionId.foreach(__v =>
+        __obj.updateDynamic("CrossClusterSearchConnectionId")(__v.asInstanceOf[js.Any])
+      )
+      DestinationDomainInfo.foreach(__v => __obj.updateDynamic("DestinationDomainInfo")(__v.asInstanceOf[js.Any]))
+      SourceDomainInfo.foreach(__v => __obj.updateDynamic("SourceDomainInfo")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateOutboundCrossClusterSearchConnectionResponse]
+    }
+  }
+
+  /**
+    * Container for request parameters to <code> <a>CreatePackage</a> </code> operation.
+    */
+  @js.native
+  trait CreatePackageRequest extends js.Object {
+    var PackageName: PackageName
+    var PackageSource: PackageSource
+    var PackageType: PackageType
+    var PackageDescription: js.UndefOr[PackageDescription]
+  }
+
+  object CreatePackageRequest {
+    @inline
+    def apply(
+        PackageName: PackageName,
+        PackageSource: PackageSource,
+        PackageType: PackageType,
+        PackageDescription: js.UndefOr[PackageDescription] = js.undefined
+    ): CreatePackageRequest = {
+      val __obj = js.Dynamic.literal(
+        "PackageName"   -> PackageName.asInstanceOf[js.Any],
+        "PackageSource" -> PackageSource.asInstanceOf[js.Any],
+        "PackageType"   -> PackageType.asInstanceOf[js.Any]
+      )
+
+      PackageDescription.foreach(__v => __obj.updateDynamic("PackageDescription")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreatePackageRequest]
+    }
+  }
+
+  /**
+    * Container for response returned by <code> <a>CreatePackage</a> </code> operation.
+    */
+  @js.native
+  trait CreatePackageResponse extends js.Object {
+    var PackageDetails: js.UndefOr[PackageDetails]
+  }
+
+  object CreatePackageResponse {
+    @inline
+    def apply(
+        PackageDetails: js.UndefOr[PackageDetails] = js.undefined
+    ): CreatePackageResponse = {
+      val __obj = js.Dynamic.literal()
+      PackageDetails.foreach(__v => __obj.updateDynamic("PackageDetails")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreatePackageResponse]
+    }
+  }
+
+  /**
     * Container for the parameters to the <code><a>DeleteElasticsearchDomain</a></code> operation. Specifies the name of the Elasticsearch domain that you want to delete.
     */
   @js.native
@@ -605,6 +896,130 @@ package es {
       val __obj = js.Dynamic.literal()
       DomainStatus.foreach(__v => __obj.updateDynamic("DomainStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteElasticsearchDomainResponse]
+    }
+  }
+
+  /**
+    * Container for the parameters to the <code><a>DeleteInboundCrossClusterSearchConnection</a></code> operation.
+    */
+  @js.native
+  trait DeleteInboundCrossClusterSearchConnectionRequest extends js.Object {
+    var CrossClusterSearchConnectionId: CrossClusterSearchConnectionId
+  }
+
+  object DeleteInboundCrossClusterSearchConnectionRequest {
+    @inline
+    def apply(
+        CrossClusterSearchConnectionId: CrossClusterSearchConnectionId
+    ): DeleteInboundCrossClusterSearchConnectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "CrossClusterSearchConnectionId" -> CrossClusterSearchConnectionId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteInboundCrossClusterSearchConnectionRequest]
+    }
+  }
+
+  /**
+    * The result of a <code><a>DeleteInboundCrossClusterSearchConnection</a></code> operation. Contains details of deleted inbound connection.
+    */
+  @js.native
+  trait DeleteInboundCrossClusterSearchConnectionResponse extends js.Object {
+    var CrossClusterSearchConnection: js.UndefOr[InboundCrossClusterSearchConnection]
+  }
+
+  object DeleteInboundCrossClusterSearchConnectionResponse {
+    @inline
+    def apply(
+        CrossClusterSearchConnection: js.UndefOr[InboundCrossClusterSearchConnection] = js.undefined
+    ): DeleteInboundCrossClusterSearchConnectionResponse = {
+      val __obj = js.Dynamic.literal()
+      CrossClusterSearchConnection.foreach(__v =>
+        __obj.updateDynamic("CrossClusterSearchConnection")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DeleteInboundCrossClusterSearchConnectionResponse]
+    }
+  }
+
+  /**
+    * Container for the parameters to the <code><a>DeleteOutboundCrossClusterSearchConnection</a></code> operation.
+    */
+  @js.native
+  trait DeleteOutboundCrossClusterSearchConnectionRequest extends js.Object {
+    var CrossClusterSearchConnectionId: CrossClusterSearchConnectionId
+  }
+
+  object DeleteOutboundCrossClusterSearchConnectionRequest {
+    @inline
+    def apply(
+        CrossClusterSearchConnectionId: CrossClusterSearchConnectionId
+    ): DeleteOutboundCrossClusterSearchConnectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "CrossClusterSearchConnectionId" -> CrossClusterSearchConnectionId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteOutboundCrossClusterSearchConnectionRequest]
+    }
+  }
+
+  /**
+    * The result of a <code><a>DeleteOutboundCrossClusterSearchConnection</a></code> operation. Contains details of deleted outbound connection.
+    */
+  @js.native
+  trait DeleteOutboundCrossClusterSearchConnectionResponse extends js.Object {
+    var CrossClusterSearchConnection: js.UndefOr[OutboundCrossClusterSearchConnection]
+  }
+
+  object DeleteOutboundCrossClusterSearchConnectionResponse {
+    @inline
+    def apply(
+        CrossClusterSearchConnection: js.UndefOr[OutboundCrossClusterSearchConnection] = js.undefined
+    ): DeleteOutboundCrossClusterSearchConnectionResponse = {
+      val __obj = js.Dynamic.literal()
+      CrossClusterSearchConnection.foreach(__v =>
+        __obj.updateDynamic("CrossClusterSearchConnection")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DeleteOutboundCrossClusterSearchConnectionResponse]
+    }
+  }
+
+  /**
+    * Container for request parameters to <code> <a>DeletePackage</a> </code> operation.
+    */
+  @js.native
+  trait DeletePackageRequest extends js.Object {
+    var PackageID: PackageID
+  }
+
+  object DeletePackageRequest {
+    @inline
+    def apply(
+        PackageID: PackageID
+    ): DeletePackageRequest = {
+      val __obj = js.Dynamic.literal(
+        "PackageID" -> PackageID.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeletePackageRequest]
+    }
+  }
+
+  /**
+    * Container for response parameters to <code> <a>DeletePackage</a> </code> operation.
+    */
+  @js.native
+  trait DeletePackageResponse extends js.Object {
+    var PackageDetails: js.UndefOr[PackageDetails]
+  }
+
+  object DeletePackageResponse {
+    @inline
+    def apply(
+        PackageDetails: js.UndefOr[PackageDetails] = js.undefined
+    ): DeletePackageResponse = {
+      val __obj = js.Dynamic.literal()
+      PackageDetails.foreach(__v => __obj.updateDynamic("PackageDetails")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeletePackageResponse]
     }
   }
 
@@ -793,6 +1208,183 @@ package es {
   }
 
   /**
+    * Container for the parameters to the <code><a>DescribeInboundCrossClusterSearchConnections</a></code> operation.
+    */
+  @js.native
+  trait DescribeInboundCrossClusterSearchConnectionsRequest extends js.Object {
+    var Filters: js.UndefOr[FilterList]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeInboundCrossClusterSearchConnectionsRequest {
+    @inline
+    def apply(
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeInboundCrossClusterSearchConnectionsRequest = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeInboundCrossClusterSearchConnectionsRequest]
+    }
+  }
+
+  /**
+    * The result of a <code><a>DescribeInboundCrossClusterSearchConnections</a></code> request. Contains the list of connections matching the filter criteria.
+    */
+  @js.native
+  trait DescribeInboundCrossClusterSearchConnectionsResponse extends js.Object {
+    var CrossClusterSearchConnections: js.UndefOr[InboundCrossClusterSearchConnections]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeInboundCrossClusterSearchConnectionsResponse {
+    @inline
+    def apply(
+        CrossClusterSearchConnections: js.UndefOr[InboundCrossClusterSearchConnections] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeInboundCrossClusterSearchConnectionsResponse = {
+      val __obj = js.Dynamic.literal()
+      CrossClusterSearchConnections.foreach(__v =>
+        __obj.updateDynamic("CrossClusterSearchConnections")(__v.asInstanceOf[js.Any])
+      )
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeInboundCrossClusterSearchConnectionsResponse]
+    }
+  }
+
+  /**
+    * Container for the parameters to the <code><a>DescribeOutboundCrossClusterSearchConnections</a></code> operation.
+    */
+  @js.native
+  trait DescribeOutboundCrossClusterSearchConnectionsRequest extends js.Object {
+    var Filters: js.UndefOr[FilterList]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeOutboundCrossClusterSearchConnectionsRequest {
+    @inline
+    def apply(
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeOutboundCrossClusterSearchConnectionsRequest = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeOutboundCrossClusterSearchConnectionsRequest]
+    }
+  }
+
+  /**
+    * The result of a <code><a>DescribeOutboundCrossClusterSearchConnections</a></code> request. Contains the list of connections matching the filter criteria.
+    */
+  @js.native
+  trait DescribeOutboundCrossClusterSearchConnectionsResponse extends js.Object {
+    var CrossClusterSearchConnections: js.UndefOr[OutboundCrossClusterSearchConnections]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeOutboundCrossClusterSearchConnectionsResponse {
+    @inline
+    def apply(
+        CrossClusterSearchConnections: js.UndefOr[OutboundCrossClusterSearchConnections] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeOutboundCrossClusterSearchConnectionsResponse = {
+      val __obj = js.Dynamic.literal()
+      CrossClusterSearchConnections.foreach(__v =>
+        __obj.updateDynamic("CrossClusterSearchConnections")(__v.asInstanceOf[js.Any])
+      )
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeOutboundCrossClusterSearchConnectionsResponse]
+    }
+  }
+
+  /**
+    * Filter to apply in <code>DescribePackage</code> response.
+    */
+  @js.native
+  trait DescribePackagesFilter extends js.Object {
+    var Name: js.UndefOr[DescribePackagesFilterName]
+    var Value: js.UndefOr[DescribePackagesFilterValues]
+  }
+
+  object DescribePackagesFilter {
+    @inline
+    def apply(
+        Name: js.UndefOr[DescribePackagesFilterName] = js.undefined,
+        Value: js.UndefOr[DescribePackagesFilterValues] = js.undefined
+    ): DescribePackagesFilter = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribePackagesFilter]
+    }
+  }
+
+  @js.native
+  sealed trait DescribePackagesFilterName extends js.Any
+  object DescribePackagesFilterName extends js.Object {
+    val PackageID     = "PackageID".asInstanceOf[DescribePackagesFilterName]
+    val PackageName   = "PackageName".asInstanceOf[DescribePackagesFilterName]
+    val PackageStatus = "PackageStatus".asInstanceOf[DescribePackagesFilterName]
+
+    val values = js.Object.freeze(js.Array(PackageID, PackageName, PackageStatus))
+  }
+
+  /**
+    * Container for request parameters to <code> <a>DescribePackage</a> </code> operation.
+    */
+  @js.native
+  trait DescribePackagesRequest extends js.Object {
+    var Filters: js.UndefOr[DescribePackagesFilterList]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribePackagesRequest {
+    @inline
+    def apply(
+        Filters: js.UndefOr[DescribePackagesFilterList] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribePackagesRequest = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribePackagesRequest]
+    }
+  }
+
+  /**
+    * Container for response returned by <code> <a>DescribePackages</a> </code> operation.
+    */
+  @js.native
+  trait DescribePackagesResponse extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var PackageDetailsList: js.UndefOr[PackageDetailsList]
+  }
+
+  object DescribePackagesResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        PackageDetailsList: js.UndefOr[PackageDetailsList] = js.undefined
+    ): DescribePackagesResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PackageDetailsList.foreach(__v => __obj.updateDynamic("PackageDetailsList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribePackagesResponse]
+    }
+  }
+
+  /**
     * Container for parameters to <code>DescribeReservedElasticsearchInstanceOfferings</code>
     */
   @js.native
@@ -895,6 +1487,49 @@ package es {
   }
 
   /**
+    * Container for request parameters to <code> <a>DissociatePackage</a> </code> operation.
+    */
+  @js.native
+  trait DissociatePackageRequest extends js.Object {
+    var DomainName: DomainName
+    var PackageID: PackageID
+  }
+
+  object DissociatePackageRequest {
+    @inline
+    def apply(
+        DomainName: DomainName,
+        PackageID: PackageID
+    ): DissociatePackageRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "PackageID"  -> PackageID.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DissociatePackageRequest]
+    }
+  }
+
+  /**
+    * Container for response returned by <code> <a>DissociatePackage</a> </code> operation.
+    */
+  @js.native
+  trait DissociatePackageResponse extends js.Object {
+    var DomainPackageDetails: js.UndefOr[DomainPackageDetails]
+  }
+
+  object DissociatePackageResponse {
+    @inline
+    def apply(
+        DomainPackageDetails: js.UndefOr[DomainPackageDetails] = js.undefined
+    ): DissociatePackageResponse = {
+      val __obj = js.Dynamic.literal()
+      DomainPackageDetails.foreach(__v => __obj.updateDynamic("DomainPackageDetails")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DissociatePackageResponse]
+    }
+  }
+
+  /**
     * Options to configure endpoint for the Elasticsearch domain.
     */
   @js.native
@@ -954,6 +1589,82 @@ package es {
       DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainInfo]
     }
+  }
+
+  @js.native
+  trait DomainInformation extends js.Object {
+    var DomainName: DomainName
+    var OwnerId: js.UndefOr[OwnerId]
+    var Region: js.UndefOr[Region]
+  }
+
+  object DomainInformation {
+    @inline
+    def apply(
+        DomainName: DomainName,
+        OwnerId: js.UndefOr[OwnerId] = js.undefined,
+        Region: js.UndefOr[Region] = js.undefined
+    ): DomainInformation = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      )
+
+      OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DomainInformation]
+    }
+  }
+
+  /**
+    * Information on a package that is associated with a domain.
+    */
+  @js.native
+  trait DomainPackageDetails extends js.Object {
+    var DomainName: js.UndefOr[DomainName]
+    var DomainPackageStatus: js.UndefOr[DomainPackageStatus]
+    var ErrorDetails: js.UndefOr[ErrorDetails]
+    var LastUpdated: js.UndefOr[LastUpdated]
+    var PackageID: js.UndefOr[PackageID]
+    var PackageName: js.UndefOr[PackageName]
+    var PackageType: js.UndefOr[PackageType]
+    var ReferencePath: js.UndefOr[ReferencePath]
+  }
+
+  object DomainPackageDetails {
+    @inline
+    def apply(
+        DomainName: js.UndefOr[DomainName] = js.undefined,
+        DomainPackageStatus: js.UndefOr[DomainPackageStatus] = js.undefined,
+        ErrorDetails: js.UndefOr[ErrorDetails] = js.undefined,
+        LastUpdated: js.UndefOr[LastUpdated] = js.undefined,
+        PackageID: js.UndefOr[PackageID] = js.undefined,
+        PackageName: js.UndefOr[PackageName] = js.undefined,
+        PackageType: js.UndefOr[PackageType] = js.undefined,
+        ReferencePath: js.UndefOr[ReferencePath] = js.undefined
+    ): DomainPackageDetails = {
+      val __obj = js.Dynamic.literal()
+      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
+      DomainPackageStatus.foreach(__v => __obj.updateDynamic("DomainPackageStatus")(__v.asInstanceOf[js.Any]))
+      ErrorDetails.foreach(__v => __obj.updateDynamic("ErrorDetails")(__v.asInstanceOf[js.Any]))
+      LastUpdated.foreach(__v => __obj.updateDynamic("LastUpdated")(__v.asInstanceOf[js.Any]))
+      PackageID.foreach(__v => __obj.updateDynamic("PackageID")(__v.asInstanceOf[js.Any]))
+      PackageName.foreach(__v => __obj.updateDynamic("PackageName")(__v.asInstanceOf[js.Any]))
+      PackageType.foreach(__v => __obj.updateDynamic("PackageType")(__v.asInstanceOf[js.Any]))
+      ReferencePath.foreach(__v => __obj.updateDynamic("ReferencePath")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DomainPackageDetails]
+    }
+  }
+
+  @js.native
+  sealed trait DomainPackageStatus extends js.Any
+  object DomainPackageStatus extends js.Object {
+    val ASSOCIATING         = "ASSOCIATING".asInstanceOf[DomainPackageStatus]
+    val ASSOCIATION_FAILED  = "ASSOCIATION_FAILED".asInstanceOf[DomainPackageStatus]
+    val ACTIVE              = "ACTIVE".asInstanceOf[DomainPackageStatus]
+    val DISSOCIATING        = "DISSOCIATING".asInstanceOf[DomainPackageStatus]
+    val DISSOCIATION_FAILED = "DISSOCIATION_FAILED".asInstanceOf[DomainPackageStatus]
+
+    val values = js.Object.freeze(js.Array(ASSOCIATING, ASSOCIATION_FAILED, ACTIVE, DISSOCIATING, DISSOCIATION_FAILED))
   }
 
   /**
@@ -1431,6 +2142,47 @@ package es {
     }
   }
 
+  @js.native
+  trait ErrorDetails extends js.Object {
+    var ErrorMessage: js.UndefOr[ErrorMessage]
+    var ErrorType: js.UndefOr[ErrorType]
+  }
+
+  object ErrorDetails {
+    @inline
+    def apply(
+        ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
+        ErrorType: js.UndefOr[ErrorType] = js.undefined
+    ): ErrorDetails = {
+      val __obj = js.Dynamic.literal()
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      ErrorType.foreach(__v => __obj.updateDynamic("ErrorType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ErrorDetails]
+    }
+  }
+
+  /**
+    * A filter used to limit results when describing inbound or outbound cross-cluster search connections. Multiple values can be specified per filter. A cross-cluster search connection must match at least one of the specified values for it to be returned from an operation.
+    */
+  @js.native
+  trait Filter extends js.Object {
+    var Name: js.UndefOr[NonEmptyString]
+    var Values: js.UndefOr[ValueStringList]
+  }
+
+  object Filter {
+    @inline
+    def apply(
+        Name: js.UndefOr[NonEmptyString] = js.undefined,
+        Values: js.UndefOr[ValueStringList] = js.undefined
+    ): Filter = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Filter]
+    }
+  }
+
   /**
     * Container for request parameters to <code> <a>GetCompatibleElasticsearchVersions</a> </code> operation.
     */
@@ -1567,6 +2319,71 @@ package es {
   }
 
   /**
+    * Specifies details of an inbound connection.
+    */
+  @js.native
+  trait InboundCrossClusterSearchConnection extends js.Object {
+    var ConnectionStatus: js.UndefOr[InboundCrossClusterSearchConnectionStatus]
+    var CrossClusterSearchConnectionId: js.UndefOr[CrossClusterSearchConnectionId]
+    var DestinationDomainInfo: js.UndefOr[DomainInformation]
+    var SourceDomainInfo: js.UndefOr[DomainInformation]
+  }
+
+  object InboundCrossClusterSearchConnection {
+    @inline
+    def apply(
+        ConnectionStatus: js.UndefOr[InboundCrossClusterSearchConnectionStatus] = js.undefined,
+        CrossClusterSearchConnectionId: js.UndefOr[CrossClusterSearchConnectionId] = js.undefined,
+        DestinationDomainInfo: js.UndefOr[DomainInformation] = js.undefined,
+        SourceDomainInfo: js.UndefOr[DomainInformation] = js.undefined
+    ): InboundCrossClusterSearchConnection = {
+      val __obj = js.Dynamic.literal()
+      ConnectionStatus.foreach(__v => __obj.updateDynamic("ConnectionStatus")(__v.asInstanceOf[js.Any]))
+      CrossClusterSearchConnectionId.foreach(__v =>
+        __obj.updateDynamic("CrossClusterSearchConnectionId")(__v.asInstanceOf[js.Any])
+      )
+      DestinationDomainInfo.foreach(__v => __obj.updateDynamic("DestinationDomainInfo")(__v.asInstanceOf[js.Any]))
+      SourceDomainInfo.foreach(__v => __obj.updateDynamic("SourceDomainInfo")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InboundCrossClusterSearchConnection]
+    }
+  }
+
+  /**
+    * Specifies the coonection status of an inbound cross-cluster search connection.
+    */
+  @js.native
+  trait InboundCrossClusterSearchConnectionStatus extends js.Object {
+    var Message: js.UndefOr[CrossClusterSearchConnectionStatusMessage]
+    var StatusCode: js.UndefOr[InboundCrossClusterSearchConnectionStatusCode]
+  }
+
+  object InboundCrossClusterSearchConnectionStatus {
+    @inline
+    def apply(
+        Message: js.UndefOr[CrossClusterSearchConnectionStatusMessage] = js.undefined,
+        StatusCode: js.UndefOr[InboundCrossClusterSearchConnectionStatusCode] = js.undefined
+    ): InboundCrossClusterSearchConnectionStatus = {
+      val __obj = js.Dynamic.literal()
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      StatusCode.foreach(__v => __obj.updateDynamic("StatusCode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InboundCrossClusterSearchConnectionStatus]
+    }
+  }
+
+  @js.native
+  sealed trait InboundCrossClusterSearchConnectionStatusCode extends js.Any
+  object InboundCrossClusterSearchConnectionStatusCode extends js.Object {
+    val PENDING_ACCEPTANCE = "PENDING_ACCEPTANCE".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
+    val APPROVED           = "APPROVED".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
+    val REJECTING          = "REJECTING".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
+    val REJECTED           = "REJECTED".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
+    val DELETING           = "DELETING".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
+    val DELETED            = "DELETED".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
+
+    val values = js.Object.freeze(js.Array(PENDING_ACCEPTANCE, APPROVED, REJECTING, REJECTED, DELETING, DELETED))
+  }
+
+  /**
     * InstanceCountLimits represents the limits on number of instances that be created in Amazon Elasticsearch for given InstanceType.
     */
   @js.native
@@ -1648,6 +2465,55 @@ package es {
       val __obj = js.Dynamic.literal()
       DomainNames.foreach(__v => __obj.updateDynamic("DomainNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDomainNamesResponse]
+    }
+  }
+
+  /**
+    * Container for request parameters to <code> <a>ListDomainsForPackage</a> </code> operation.
+    */
+  @js.native
+  trait ListDomainsForPackageRequest extends js.Object {
+    var PackageID: PackageID
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListDomainsForPackageRequest {
+    @inline
+    def apply(
+        PackageID: PackageID,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDomainsForPackageRequest = {
+      val __obj = js.Dynamic.literal(
+        "PackageID" -> PackageID.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDomainsForPackageRequest]
+    }
+  }
+
+  /**
+    * Container for response parameters to <code> <a>ListDomainsForPackage</a> </code> operation.
+    */
+  @js.native
+  trait ListDomainsForPackageResponse extends js.Object {
+    var DomainPackageDetailsList: js.UndefOr[DomainPackageDetailsList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListDomainsForPackageResponse {
+    @inline
+    def apply(
+        DomainPackageDetailsList: js.UndefOr[DomainPackageDetailsList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListDomainsForPackageResponse = {
+      val __obj = js.Dynamic.literal()
+      DomainPackageDetailsList.foreach(__v => __obj.updateDynamic("DomainPackageDetailsList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDomainsForPackageResponse]
     }
   }
 
@@ -1748,6 +2614,55 @@ package es {
       ElasticsearchVersions.foreach(__v => __obj.updateDynamic("ElasticsearchVersions")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListElasticsearchVersionsResponse]
+    }
+  }
+
+  /**
+    * Container for request parameters to <code> <a>ListPackagesForDomain</a> </code> operation.
+    */
+  @js.native
+  trait ListPackagesForDomainRequest extends js.Object {
+    var DomainName: DomainName
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListPackagesForDomainRequest {
+    @inline
+    def apply(
+        DomainName: DomainName,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListPackagesForDomainRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPackagesForDomainRequest]
+    }
+  }
+
+  /**
+    * Container for response parameters to <code> <a>ListPackagesForDomain</a> </code> operation.
+    */
+  @js.native
+  trait ListPackagesForDomainResponse extends js.Object {
+    var DomainPackageDetailsList: js.UndefOr[DomainPackageDetailsList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListPackagesForDomainResponse {
+    @inline
+    def apply(
+        DomainPackageDetailsList: js.UndefOr[DomainPackageDetailsList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListPackagesForDomainResponse = {
+      val __obj = js.Dynamic.literal()
+      DomainPackageDetailsList.foreach(__v => __obj.updateDynamic("DomainPackageDetailsList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPackagesForDomainResponse]
     }
   }
 
@@ -1972,6 +2887,162 @@ package es {
   }
 
   /**
+    * Specifies details of an outbound connection.
+    */
+  @js.native
+  trait OutboundCrossClusterSearchConnection extends js.Object {
+    var ConnectionAlias: js.UndefOr[ConnectionAlias]
+    var ConnectionStatus: js.UndefOr[OutboundCrossClusterSearchConnectionStatus]
+    var CrossClusterSearchConnectionId: js.UndefOr[CrossClusterSearchConnectionId]
+    var DestinationDomainInfo: js.UndefOr[DomainInformation]
+    var SourceDomainInfo: js.UndefOr[DomainInformation]
+  }
+
+  object OutboundCrossClusterSearchConnection {
+    @inline
+    def apply(
+        ConnectionAlias: js.UndefOr[ConnectionAlias] = js.undefined,
+        ConnectionStatus: js.UndefOr[OutboundCrossClusterSearchConnectionStatus] = js.undefined,
+        CrossClusterSearchConnectionId: js.UndefOr[CrossClusterSearchConnectionId] = js.undefined,
+        DestinationDomainInfo: js.UndefOr[DomainInformation] = js.undefined,
+        SourceDomainInfo: js.UndefOr[DomainInformation] = js.undefined
+    ): OutboundCrossClusterSearchConnection = {
+      val __obj = js.Dynamic.literal()
+      ConnectionAlias.foreach(__v => __obj.updateDynamic("ConnectionAlias")(__v.asInstanceOf[js.Any]))
+      ConnectionStatus.foreach(__v => __obj.updateDynamic("ConnectionStatus")(__v.asInstanceOf[js.Any]))
+      CrossClusterSearchConnectionId.foreach(__v =>
+        __obj.updateDynamic("CrossClusterSearchConnectionId")(__v.asInstanceOf[js.Any])
+      )
+      DestinationDomainInfo.foreach(__v => __obj.updateDynamic("DestinationDomainInfo")(__v.asInstanceOf[js.Any]))
+      SourceDomainInfo.foreach(__v => __obj.updateDynamic("SourceDomainInfo")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OutboundCrossClusterSearchConnection]
+    }
+  }
+
+  /**
+    * Specifies the connection status of an outbound cross-cluster search connection.
+    */
+  @js.native
+  trait OutboundCrossClusterSearchConnectionStatus extends js.Object {
+    var Message: js.UndefOr[CrossClusterSearchConnectionStatusMessage]
+    var StatusCode: js.UndefOr[OutboundCrossClusterSearchConnectionStatusCode]
+  }
+
+  object OutboundCrossClusterSearchConnectionStatus {
+    @inline
+    def apply(
+        Message: js.UndefOr[CrossClusterSearchConnectionStatusMessage] = js.undefined,
+        StatusCode: js.UndefOr[OutboundCrossClusterSearchConnectionStatusCode] = js.undefined
+    ): OutboundCrossClusterSearchConnectionStatus = {
+      val __obj = js.Dynamic.literal()
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      StatusCode.foreach(__v => __obj.updateDynamic("StatusCode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OutboundCrossClusterSearchConnectionStatus]
+    }
+  }
+
+  @js.native
+  sealed trait OutboundCrossClusterSearchConnectionStatusCode extends js.Any
+  object OutboundCrossClusterSearchConnectionStatusCode extends js.Object {
+    val PENDING_ACCEPTANCE = "PENDING_ACCEPTANCE".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
+    val VALIDATING         = "VALIDATING".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
+    val VALIDATION_FAILED  = "VALIDATION_FAILED".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
+    val PROVISIONING       = "PROVISIONING".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
+    val ACTIVE             = "ACTIVE".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
+    val REJECTED           = "REJECTED".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
+    val DELETING           = "DELETING".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
+    val DELETED            = "DELETED".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
+
+    val values = js.Object.freeze(
+      js.Array(PENDING_ACCEPTANCE, VALIDATING, VALIDATION_FAILED, PROVISIONING, ACTIVE, REJECTED, DELETING, DELETED)
+    )
+  }
+
+  /**
+    * Basic information about a package.
+    */
+  @js.native
+  trait PackageDetails extends js.Object {
+    var CreatedAt: js.UndefOr[CreatedAt]
+    var ErrorDetails: js.UndefOr[ErrorDetails]
+    var PackageDescription: js.UndefOr[PackageDescription]
+    var PackageID: js.UndefOr[PackageID]
+    var PackageName: js.UndefOr[PackageName]
+    var PackageStatus: js.UndefOr[PackageStatus]
+    var PackageType: js.UndefOr[PackageType]
+  }
+
+  object PackageDetails {
+    @inline
+    def apply(
+        CreatedAt: js.UndefOr[CreatedAt] = js.undefined,
+        ErrorDetails: js.UndefOr[ErrorDetails] = js.undefined,
+        PackageDescription: js.UndefOr[PackageDescription] = js.undefined,
+        PackageID: js.UndefOr[PackageID] = js.undefined,
+        PackageName: js.UndefOr[PackageName] = js.undefined,
+        PackageStatus: js.UndefOr[PackageStatus] = js.undefined,
+        PackageType: js.UndefOr[PackageType] = js.undefined
+    ): PackageDetails = {
+      val __obj = js.Dynamic.literal()
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      ErrorDetails.foreach(__v => __obj.updateDynamic("ErrorDetails")(__v.asInstanceOf[js.Any]))
+      PackageDescription.foreach(__v => __obj.updateDynamic("PackageDescription")(__v.asInstanceOf[js.Any]))
+      PackageID.foreach(__v => __obj.updateDynamic("PackageID")(__v.asInstanceOf[js.Any]))
+      PackageName.foreach(__v => __obj.updateDynamic("PackageName")(__v.asInstanceOf[js.Any]))
+      PackageStatus.foreach(__v => __obj.updateDynamic("PackageStatus")(__v.asInstanceOf[js.Any]))
+      PackageType.foreach(__v => __obj.updateDynamic("PackageType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PackageDetails]
+    }
+  }
+
+  /**
+    * The S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code>
+    */
+  @js.native
+  trait PackageSource extends js.Object {
+    var S3BucketName: js.UndefOr[S3BucketName]
+    var S3Key: js.UndefOr[S3Key]
+  }
+
+  object PackageSource {
+    @inline
+    def apply(
+        S3BucketName: js.UndefOr[S3BucketName] = js.undefined,
+        S3Key: js.UndefOr[S3Key] = js.undefined
+    ): PackageSource = {
+      val __obj = js.Dynamic.literal()
+      S3BucketName.foreach(__v => __obj.updateDynamic("S3BucketName")(__v.asInstanceOf[js.Any]))
+      S3Key.foreach(__v => __obj.updateDynamic("S3Key")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PackageSource]
+    }
+  }
+
+  @js.native
+  sealed trait PackageStatus extends js.Any
+  object PackageStatus extends js.Object {
+    val COPYING           = "COPYING".asInstanceOf[PackageStatus]
+    val COPY_FAILED       = "COPY_FAILED".asInstanceOf[PackageStatus]
+    val VALIDATING        = "VALIDATING".asInstanceOf[PackageStatus]
+    val VALIDATION_FAILED = "VALIDATION_FAILED".asInstanceOf[PackageStatus]
+    val AVAILABLE         = "AVAILABLE".asInstanceOf[PackageStatus]
+    val DELETING          = "DELETING".asInstanceOf[PackageStatus]
+    val DELETED           = "DELETED".asInstanceOf[PackageStatus]
+    val DELETE_FAILED     = "DELETE_FAILED".asInstanceOf[PackageStatus]
+
+    val values = js.Object.freeze(
+      js.Array(COPYING, COPY_FAILED, VALIDATING, VALIDATION_FAILED, AVAILABLE, DELETING, DELETED, DELETE_FAILED)
+    )
+  }
+
+  @js.native
+  sealed trait PackageType extends js.Any
+  object PackageType extends js.Object {
+    val `TXT-DICTIONARY` = "TXT-DICTIONARY".asInstanceOf[PackageType]
+
+    val values = js.Object.freeze(js.Array(`TXT-DICTIONARY`))
+  }
+
+  /**
     * Container for parameters to <code>PurchaseReservedElasticsearchInstanceOffering</code>
     */
   @js.native
@@ -2041,6 +3112,48 @@ package es {
       RecurringChargeAmount.foreach(__v => __obj.updateDynamic("RecurringChargeAmount")(__v.asInstanceOf[js.Any]))
       RecurringChargeFrequency.foreach(__v => __obj.updateDynamic("RecurringChargeFrequency")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecurringCharge]
+    }
+  }
+
+  /**
+    * Container for the parameters to the <code><a>RejectInboundCrossClusterSearchConnection</a></code> operation.
+    */
+  @js.native
+  trait RejectInboundCrossClusterSearchConnectionRequest extends js.Object {
+    var CrossClusterSearchConnectionId: CrossClusterSearchConnectionId
+  }
+
+  object RejectInboundCrossClusterSearchConnectionRequest {
+    @inline
+    def apply(
+        CrossClusterSearchConnectionId: CrossClusterSearchConnectionId
+    ): RejectInboundCrossClusterSearchConnectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "CrossClusterSearchConnectionId" -> CrossClusterSearchConnectionId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[RejectInboundCrossClusterSearchConnectionRequest]
+    }
+  }
+
+  /**
+    * The result of a <code><a>RejectInboundCrossClusterSearchConnection</a></code> operation. Contains details of rejected inbound connection.
+    */
+  @js.native
+  trait RejectInboundCrossClusterSearchConnectionResponse extends js.Object {
+    var CrossClusterSearchConnection: js.UndefOr[InboundCrossClusterSearchConnection]
+  }
+
+  object RejectInboundCrossClusterSearchConnectionResponse {
+    @inline
+    def apply(
+        CrossClusterSearchConnection: js.UndefOr[InboundCrossClusterSearchConnection] = js.undefined
+    ): RejectInboundCrossClusterSearchConnectionResponse = {
+      val __obj = js.Dynamic.literal()
+      CrossClusterSearchConnection.foreach(__v =>
+        __obj.updateDynamic("CrossClusterSearchConnection")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[RejectInboundCrossClusterSearchConnectionResponse]
     }
   }
 
@@ -2195,6 +3308,7 @@ package es {
     var CurrentVersion: js.UndefOr[String]
     var Description: js.UndefOr[String]
     var NewVersion: js.UndefOr[String]
+    var OptionalDeployment: js.UndefOr[Boolean]
     var UpdateAvailable: js.UndefOr[Boolean]
     var UpdateStatus: js.UndefOr[DeploymentStatus]
   }
@@ -2207,6 +3321,7 @@ package es {
         CurrentVersion: js.UndefOr[String] = js.undefined,
         Description: js.UndefOr[String] = js.undefined,
         NewVersion: js.UndefOr[String] = js.undefined,
+        OptionalDeployment: js.UndefOr[Boolean] = js.undefined,
         UpdateAvailable: js.UndefOr[Boolean] = js.undefined,
         UpdateStatus: js.UndefOr[DeploymentStatus] = js.undefined
     ): ServiceSoftwareOptions = {
@@ -2216,6 +3331,7 @@ package es {
       CurrentVersion.foreach(__v => __obj.updateDynamic("CurrentVersion")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       NewVersion.foreach(__v => __obj.updateDynamic("NewVersion")(__v.asInstanceOf[js.Any]))
+      OptionalDeployment.foreach(__v => __obj.updateDynamic("OptionalDeployment")(__v.asInstanceOf[js.Any]))
       UpdateAvailable.foreach(__v => __obj.updateDynamic("UpdateAvailable")(__v.asInstanceOf[js.Any]))
       UpdateStatus.foreach(__v => __obj.updateDynamic("UpdateStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceSoftwareOptions]

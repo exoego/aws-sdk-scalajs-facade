@@ -390,12 +390,12 @@ package cloudfront {
 
   /**
     * A complex type that describes how CloudFront processes requests.
-    *  You must create at least as many cache behaviors (including the default cache behavior) as you have origins if you want CloudFront to distribute objects from all of the origins. Each cache behavior specifies the one origin from which you want CloudFront to get objects. If you have two origins and only the default cache behavior, the default cache behavior will cause CloudFront to get objects from one of the origins, but the other origin is never used.
-    *  For the current limit on the number of cache behaviors that you can add to a distribution, see [[https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront|Amazon CloudFront Limits]] in the <i>AWS General Reference</i>.
-    *  If you don't want to specify any cache behaviors, include only an empty <code>CacheBehaviors</code> element. Don't include an empty <code>CacheBehavior</code> element, or CloudFront returns a <code>MalformedXML</code> error.
+    *  You must create at least as many cache behaviors (including the default cache behavior) as you have origins if you want CloudFront to serve objects from all of the origins. Each cache behavior specifies the one origin from which you want CloudFront to get objects. If you have two origins and only the default cache behavior, the default cache behavior will cause CloudFront to get objects from one of the origins, but the other origin is never used.
+    *  For the current quota (formerly known as limit) on the number of cache behaviors that you can add to a distribution, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html|Quotas]] in the <i>Amazon CloudFront Developer Guide</i>.
+    *  If you don’t want to specify any cache behaviors, include only an empty <code>CacheBehaviors</code> element. Don’t include an empty <code>CacheBehavior</code> element because this is invalid.
     *  To delete all cache behaviors in an existing distribution, update the distribution configuration and include only an empty <code>CacheBehaviors</code> element.
     *  To add, change, or remove one or more cache behaviors, update the distribution configuration and specify all of the cache behaviors that you want to include in the updated distribution.
-    *  For more information about cache behaviors, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior|Cache Behaviors]] in the <i>Amazon CloudFront Developer Guide</i>.
+    *  For more information about cache behaviors, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior|Cache Behavior Settings]] in the <i>Amazon CloudFront Developer Guide</i>.
     */
   @js.native
   trait CacheBehavior extends js.Object {
@@ -1238,7 +1238,7 @@ package cloudfront {
   }
 
   /**
-    * A custom origin or an Amazon S3 bucket configured as a website endpoint.
+    * A custom origin. A custom origin is any origin that is <i>not</i> an Amazon S3 bucket, with one exception. An Amazon S3 bucket that is [[https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html|configured with static website hosting]] <i>is</i> a custom origin.
     */
   @js.native
   trait CustomOriginConfig extends js.Object {
@@ -1274,7 +1274,7 @@ package cloudfront {
   }
 
   /**
-    * A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code> element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.
+    * A complex type that describes the default cache behavior if you don’t specify a <code>CacheBehavior</code> element or if request URLs don’t match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.
     */
   @js.native
   trait DefaultCacheBehavior extends js.Object {
@@ -3331,18 +3331,29 @@ package cloudfront {
     val TLSv1_2016     = "TLSv1_2016".asInstanceOf[MinimumProtocolVersion]
     val `TLSv1.1_2016` = "TLSv1.1_2016".asInstanceOf[MinimumProtocolVersion]
     val `TLSv1.2_2018` = "TLSv1.2_2018".asInstanceOf[MinimumProtocolVersion]
+    val `TLSv1.2_2019` = "TLSv1.2_2019".asInstanceOf[MinimumProtocolVersion]
 
-    val values = js.Object.freeze(js.Array(SSLv3, TLSv1, TLSv1_2016, `TLSv1.1_2016`, `TLSv1.2_2018`))
+    val values = js.Object.freeze(js.Array(SSLv3, TLSv1, TLSv1_2016, `TLSv1.1_2016`, `TLSv1.2_2018`, `TLSv1.2_2019`))
   }
 
   /**
-    * A complex type that describes the Amazon S3 bucket, HTTP server (for example, a web server), Amazon MediaStore, or other server from which CloudFront gets your files. This can also be an origin group, if you've created an origin group. You must specify at least one origin or origin group.
-    *  For the current limit on the number of origins or origin groups that you can specify for a distribution, see [[https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront|Amazon CloudFront Limits]] in the <i>AWS General Reference</i>.
+    * An origin.
+    *  An origin is the location where content is stored, and from which CloudFront gets content to serve to viewers. To specify an origin:
+    * * Use the <code>S3OriginConfig</code> type to specify an Amazon S3 bucket that is <i> ```not``` </i> configured with static website hosting.
+    *  * Use the <code>CustomOriginConfig</code> type to specify various other kinds of content containers or HTTP servers, including:
+    * <li> An Amazon S3 bucket that is configured with static website hosting
+    *  * An Elastic Load Balancing load balancer
+    *  * An AWS Elemental MediaPackage origin
+    *  * An AWS Elemental MediaStore container
+    *  * Any other HTTP server, running on an Amazon EC2 instance or any other kind of host
+    * </li>For the current maximum number of origins that you can specify per distribution, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html#limits-web-distributions|General Quotas on Web Distributions]] in the <i>Amazon CloudFront Developer Guide</i> (quotas were formerly referred to as limits).
     */
   @js.native
   trait Origin extends js.Object {
     var DomainName: String
     var Id: String
+    var ConnectionAttempts: js.UndefOr[Int]
+    var ConnectionTimeout: js.UndefOr[Int]
     var CustomHeaders: js.UndefOr[CustomHeaders]
     var CustomOriginConfig: js.UndefOr[CustomOriginConfig]
     var OriginPath: js.UndefOr[String]
@@ -3354,6 +3365,8 @@ package cloudfront {
     def apply(
         DomainName: String,
         Id: String,
+        ConnectionAttempts: js.UndefOr[Int] = js.undefined,
+        ConnectionTimeout: js.UndefOr[Int] = js.undefined,
         CustomHeaders: js.UndefOr[CustomHeaders] = js.undefined,
         CustomOriginConfig: js.UndefOr[CustomOriginConfig] = js.undefined,
         OriginPath: js.UndefOr[String] = js.undefined,
@@ -3364,6 +3377,8 @@ package cloudfront {
         "Id"         -> Id.asInstanceOf[js.Any]
       )
 
+      ConnectionAttempts.foreach(__v => __obj.updateDynamic("ConnectionAttempts")(__v.asInstanceOf[js.Any]))
+      ConnectionTimeout.foreach(__v => __obj.updateDynamic("ConnectionTimeout")(__v.asInstanceOf[js.Any]))
       CustomHeaders.foreach(__v => __obj.updateDynamic("CustomHeaders")(__v.asInstanceOf[js.Any]))
       CustomOriginConfig.foreach(__v => __obj.updateDynamic("CustomOriginConfig")(__v.asInstanceOf[js.Any]))
       OriginPath.foreach(__v => __obj.updateDynamic("OriginPath")(__v.asInstanceOf[js.Any]))
@@ -3867,7 +3882,7 @@ package cloudfront {
   }
 
   /**
-    * A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin, use the <code>CustomOriginConfig</code> element instead.
+    * A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin or an S3 bucket that is configured as a website endpoint, use the <code>CustomOriginConfig</code> element instead.
     */
   @js.native
   trait S3OriginConfig extends js.Object {
@@ -4598,7 +4613,7 @@ package cloudfront {
     *  If the distribution doesn’t use <code>Aliases</code> (also known as alternate domain names or CNAMEs)—that is, if the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>—set <code>CloudFrontDefaultCertificate</code> to <code>true</code> and leave all other fields empty.
     *  If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), use the fields in this type to specify the following settings:
     * * Which viewers the distribution accepts HTTPS connections from: only viewers that support [[https://en.wikipedia.org/wiki/Server_Name_Indication|server name indication (SNI)]] (recommended), or all viewers including those that don’t support SNI.
-    * <li> To accept HTTPS connections from only viewers that support SNI, set <code>SSLSupportMethod</code> to <code>sni-only</code>. This is recommended. Most browsers and clients released after 2010 support SNI.
+    * <li> To accept HTTPS connections from only viewers that support SNI, set <code>SSLSupportMethod</code> to <code>sni-only</code>. This is recommended. Most browsers and clients support SNI.
     *  * To accept HTTPS connections from all viewers, including those that don’t support SNI, set <code>SSLSupportMethod</code> to <code>vip</code>. This is not recommended, and results in additional monthly charges from CloudFront.
     * </li> * The minimum SSL/TLS protocol version that the distribution can use to communicate with viewers. To specify a minimum version, choose a value for <code>MinimumProtocolVersion</code>. For more information, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValues-security-policy|Security Policy]] in the <i>Amazon CloudFront Developer Guide</i>.
     *  * The location of the SSL/TLS certificate, [[https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html|AWS Certificate Manager (ACM)]] (recommended) or [[https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html|AWS Identity and Access Management (AWS IAM)]]. You specify the location by setting a value in one of the following fields (not both):

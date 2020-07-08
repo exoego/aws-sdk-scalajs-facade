@@ -7,51 +7,53 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object pinpoint {
-  type ListOfActivityResponse          = js.Array[ActivityResponse]
-  type ListOfApplicationResponse       = js.Array[ApplicationResponse]
-  type ListOfCampaignResponse          = js.Array[CampaignResponse]
-  type ListOfEndpointBatchItem         = js.Array[EndpointBatchItem]
-  type ListOfEndpointResponse          = js.Array[EndpointResponse]
-  type ListOfExportJobResponse         = js.Array[ExportJobResponse]
-  type ListOfImportJobResponse         = js.Array[ImportJobResponse]
-  type ListOfJourneyResponse           = js.Array[JourneyResponse]
-  type ListOfMultiConditionalBranch    = js.Array[MultiConditionalBranch]
-  type ListOfRandomSplitEntry          = js.Array[RandomSplitEntry]
-  type ListOfResultRow                 = js.Array[ResultRow]
-  type ListOfResultRowValue            = js.Array[ResultRowValue]
-  type ListOfSegmentDimensions         = js.Array[SegmentDimensions]
-  type ListOfSegmentGroup              = js.Array[SegmentGroup]
-  type ListOfSegmentReference          = js.Array[SegmentReference]
-  type ListOfSegmentResponse           = js.Array[SegmentResponse]
-  type ListOfSimpleCondition           = js.Array[SimpleCondition]
-  type ListOfTemplateResponse          = js.Array[TemplateResponse]
-  type ListOfTemplateVersionResponse   = js.Array[TemplateVersionResponse]
-  type ListOfTreatmentResource         = js.Array[TreatmentResource]
-  type ListOfWriteTreatmentResource    = js.Array[WriteTreatmentResource]
-  type ListOf__string                  = js.Array[__string]
-  type MapOfActivity                   = js.Dictionary[Activity]
-  type MapOfAddressConfiguration       = js.Dictionary[AddressConfiguration]
-  type MapOfAttributeDimension         = js.Dictionary[AttributeDimension]
-  type MapOfChannelResponse            = js.Dictionary[ChannelResponse]
-  type MapOfEndpointMessageResult      = js.Dictionary[EndpointMessageResult]
-  type MapOfEndpointSendConfiguration  = js.Dictionary[EndpointSendConfiguration]
-  type MapOfEvent                      = js.Dictionary[Event]
-  type MapOfEventItemResponse          = js.Dictionary[EventItemResponse]
-  type MapOfEventsBatch                = js.Dictionary[EventsBatch]
-  type MapOfItemResponse               = js.Dictionary[ItemResponse]
-  type MapOfListOf__string             = js.Dictionary[ListOf__string]
-  type MapOfMapOfEndpointMessageResult = js.Dictionary[MapOfEndpointMessageResult]
-  type MapOfMessageResult              = js.Dictionary[MessageResult]
-  type MapOfMetricDimension            = js.Dictionary[MetricDimension]
-  type MapOf__double                   = js.Dictionary[__double]
-  type MapOf__integer                  = js.Dictionary[__integer]
-  type MapOf__string                   = js.Dictionary[__string]
-  type __blob                          = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type __boolean                       = Boolean
-  type __double                        = Double
-  type __integer                       = Int
-  type __string                        = String
-  type __timestampIso8601              = js.Date
+  type ListOfActivityResponse                 = js.Array[ActivityResponse]
+  type ListOfApplicationResponse              = js.Array[ApplicationResponse]
+  type ListOfCampaignResponse                 = js.Array[CampaignResponse]
+  type ListOfEndpointBatchItem                = js.Array[EndpointBatchItem]
+  type ListOfEndpointResponse                 = js.Array[EndpointResponse]
+  type ListOfExportJobResponse                = js.Array[ExportJobResponse]
+  type ListOfImportJobResponse                = js.Array[ImportJobResponse]
+  type ListOfJourneyResponse                  = js.Array[JourneyResponse]
+  type ListOfMultiConditionalBranch           = js.Array[MultiConditionalBranch]
+  type ListOfRandomSplitEntry                 = js.Array[RandomSplitEntry]
+  type ListOfRecommenderConfigurationResponse = js.Array[RecommenderConfigurationResponse]
+  type ListOfResultRow                        = js.Array[ResultRow]
+  type ListOfResultRowValue                   = js.Array[ResultRowValue]
+  type ListOfSegmentDimensions                = js.Array[SegmentDimensions]
+  type ListOfSegmentGroup                     = js.Array[SegmentGroup]
+  type ListOfSegmentReference                 = js.Array[SegmentReference]
+  type ListOfSegmentResponse                  = js.Array[SegmentResponse]
+  type ListOfSimpleCondition                  = js.Array[SimpleCondition]
+  type ListOfTemplateResponse                 = js.Array[TemplateResponse]
+  type ListOfTemplateVersionResponse          = js.Array[TemplateVersionResponse]
+  type ListOfTreatmentResource                = js.Array[TreatmentResource]
+  type ListOfWriteTreatmentResource           = js.Array[WriteTreatmentResource]
+  type ListOf__EndpointTypesElement           = js.Array[__EndpointTypesElement]
+  type ListOf__string                         = js.Array[__string]
+  type MapOfActivity                          = js.Dictionary[Activity]
+  type MapOfAddressConfiguration              = js.Dictionary[AddressConfiguration]
+  type MapOfAttributeDimension                = js.Dictionary[AttributeDimension]
+  type MapOfChannelResponse                   = js.Dictionary[ChannelResponse]
+  type MapOfEndpointMessageResult             = js.Dictionary[EndpointMessageResult]
+  type MapOfEndpointSendConfiguration         = js.Dictionary[EndpointSendConfiguration]
+  type MapOfEvent                             = js.Dictionary[Event]
+  type MapOfEventItemResponse                 = js.Dictionary[EventItemResponse]
+  type MapOfEventsBatch                       = js.Dictionary[EventsBatch]
+  type MapOfItemResponse                      = js.Dictionary[ItemResponse]
+  type MapOfListOf__string                    = js.Dictionary[ListOf__string]
+  type MapOfMapOfEndpointMessageResult        = js.Dictionary[MapOfEndpointMessageResult]
+  type MapOfMessageResult                     = js.Dictionary[MessageResult]
+  type MapOfMetricDimension                   = js.Dictionary[MetricDimension]
+  type MapOf__double                          = js.Dictionary[__double]
+  type MapOf__integer                         = js.Dictionary[__integer]
+  type MapOf__string                          = js.Dictionary[__string]
+  type __blob                                 = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type __boolean                              = Boolean
+  type __double                               = Double
+  type __integer                              = Int
+  type __string                               = String
+  type __timestampIso8601                     = js.Date
 
   implicit final class PinpointOps(private val service: Pinpoint) extends AnyVal {
 
@@ -69,6 +71,10 @@ package object pinpoint {
       service.createJourney(params).promise().toFuture
     @inline def createPushTemplateFuture(params: CreatePushTemplateRequest): Future[CreatePushTemplateResponse] =
       service.createPushTemplate(params).promise().toFuture
+    @inline def createRecommenderConfigurationFuture(
+        params: CreateRecommenderConfigurationRequest
+    ): Future[CreateRecommenderConfigurationResponse] =
+      service.createRecommenderConfiguration(params).promise().toFuture
     @inline def createSegmentFuture(params: CreateSegmentRequest): Future[CreateSegmentResponse] =
       service.createSegment(params).promise().toFuture
     @inline def createSmsTemplateFuture(params: CreateSmsTemplateRequest): Future[CreateSmsTemplateResponse] =
@@ -108,6 +114,10 @@ package object pinpoint {
       service.deleteJourney(params).promise().toFuture
     @inline def deletePushTemplateFuture(params: DeletePushTemplateRequest): Future[DeletePushTemplateResponse] =
       service.deletePushTemplate(params).promise().toFuture
+    @inline def deleteRecommenderConfigurationFuture(
+        params: DeleteRecommenderConfigurationRequest
+    ): Future[DeleteRecommenderConfigurationResponse] =
+      service.deleteRecommenderConfiguration(params).promise().toFuture
     @inline def deleteSegmentFuture(params: DeleteSegmentRequest): Future[DeleteSegmentResponse] =
       service.deleteSegment(params).promise().toFuture
     @inline def deleteSmsChannelFuture(params: DeleteSmsChannelRequest): Future[DeleteSmsChannelResponse] =
@@ -191,6 +201,12 @@ package object pinpoint {
       service.getJourney(params).promise().toFuture
     @inline def getPushTemplateFuture(params: GetPushTemplateRequest): Future[GetPushTemplateResponse] =
       service.getPushTemplate(params).promise().toFuture
+    @inline def getRecommenderConfigurationFuture(
+        params: GetRecommenderConfigurationRequest
+    ): Future[GetRecommenderConfigurationResponse] = service.getRecommenderConfiguration(params).promise().toFuture
+    @inline def getRecommenderConfigurationsFuture(
+        params: GetRecommenderConfigurationsRequest
+    ): Future[GetRecommenderConfigurationsResponse] = service.getRecommenderConfigurations(params).promise().toFuture
     @inline def getSegmentExportJobsFuture(params: GetSegmentExportJobsRequest): Future[GetSegmentExportJobsResponse] =
       service.getSegmentExportJobs(params).promise().toFuture
     @inline def getSegmentFuture(params: GetSegmentRequest): Future[GetSegmentResponse] =
@@ -273,6 +289,10 @@ package object pinpoint {
       service.updateJourneyState(params).promise().toFuture
     @inline def updatePushTemplateFuture(params: UpdatePushTemplateRequest): Future[UpdatePushTemplateResponse] =
       service.updatePushTemplate(params).promise().toFuture
+    @inline def updateRecommenderConfigurationFuture(
+        params: UpdateRecommenderConfigurationRequest
+    ): Future[UpdateRecommenderConfigurationResponse] =
+      service.updateRecommenderConfiguration(params).promise().toFuture
     @inline def updateSegmentFuture(params: UpdateSegmentRequest): Future[UpdateSegmentResponse] =
       service.updateSegment(params).promise().toFuture
     @inline def updateSmsChannelFuture(params: UpdateSmsChannelRequest): Future[UpdateSmsChannelResponse] =
@@ -302,6 +322,9 @@ package pinpoint {
     def createImportJob(params: CreateImportJobRequest): Request[CreateImportJobResponse]             = js.native
     def createJourney(params: CreateJourneyRequest): Request[CreateJourneyResponse]                   = js.native
     def createPushTemplate(params: CreatePushTemplateRequest): Request[CreatePushTemplateResponse]    = js.native
+    def createRecommenderConfiguration(
+        params: CreateRecommenderConfigurationRequest
+    ): Request[CreateRecommenderConfigurationResponse]                                                = js.native
     def createSegment(params: CreateSegmentRequest): Request[CreateSegmentResponse]                   = js.native
     def createSmsTemplate(params: CreateSmsTemplateRequest): Request[CreateSmsTemplateResponse]       = js.native
     def createVoiceTemplate(params: CreateVoiceTemplateRequest): Request[CreateVoiceTemplateResponse] = js.native
@@ -312,17 +335,20 @@ package pinpoint {
     def deleteApnsVoipChannel(params: DeleteApnsVoipChannelRequest): Request[DeleteApnsVoipChannelResponse] = js.native
     def deleteApnsVoipSandboxChannel(
         params: DeleteApnsVoipSandboxChannelRequest
-    ): Request[DeleteApnsVoipSandboxChannelResponse]                                                        = js.native
-    def deleteApp(params: DeleteAppRequest): Request[DeleteAppResponse]                                     = js.native
-    def deleteBaiduChannel(params: DeleteBaiduChannelRequest): Request[DeleteBaiduChannelResponse]          = js.native
-    def deleteCampaign(params: DeleteCampaignRequest): Request[DeleteCampaignResponse]                      = js.native
-    def deleteEmailChannel(params: DeleteEmailChannelRequest): Request[DeleteEmailChannelResponse]          = js.native
-    def deleteEmailTemplate(params: DeleteEmailTemplateRequest): Request[DeleteEmailTemplateResponse]       = js.native
-    def deleteEndpoint(params: DeleteEndpointRequest): Request[DeleteEndpointResponse]                      = js.native
-    def deleteEventStream(params: DeleteEventStreamRequest): Request[DeleteEventStreamResponse]             = js.native
-    def deleteGcmChannel(params: DeleteGcmChannelRequest): Request[DeleteGcmChannelResponse]                = js.native
-    def deleteJourney(params: DeleteJourneyRequest): Request[DeleteJourneyResponse]                         = js.native
-    def deletePushTemplate(params: DeletePushTemplateRequest): Request[DeletePushTemplateResponse]          = js.native
+    ): Request[DeleteApnsVoipSandboxChannelResponse]                                                  = js.native
+    def deleteApp(params: DeleteAppRequest): Request[DeleteAppResponse]                               = js.native
+    def deleteBaiduChannel(params: DeleteBaiduChannelRequest): Request[DeleteBaiduChannelResponse]    = js.native
+    def deleteCampaign(params: DeleteCampaignRequest): Request[DeleteCampaignResponse]                = js.native
+    def deleteEmailChannel(params: DeleteEmailChannelRequest): Request[DeleteEmailChannelResponse]    = js.native
+    def deleteEmailTemplate(params: DeleteEmailTemplateRequest): Request[DeleteEmailTemplateResponse] = js.native
+    def deleteEndpoint(params: DeleteEndpointRequest): Request[DeleteEndpointResponse]                = js.native
+    def deleteEventStream(params: DeleteEventStreamRequest): Request[DeleteEventStreamResponse]       = js.native
+    def deleteGcmChannel(params: DeleteGcmChannelRequest): Request[DeleteGcmChannelResponse]          = js.native
+    def deleteJourney(params: DeleteJourneyRequest): Request[DeleteJourneyResponse]                   = js.native
+    def deletePushTemplate(params: DeletePushTemplateRequest): Request[DeletePushTemplateResponse]    = js.native
+    def deleteRecommenderConfiguration(
+        params: DeleteRecommenderConfigurationRequest
+    ): Request[DeleteRecommenderConfigurationResponse]                                                      = js.native
     def deleteSegment(params: DeleteSegmentRequest): Request[DeleteSegmentResponse]                         = js.native
     def deleteSmsChannel(params: DeleteSmsChannelRequest): Request[DeleteSmsChannelResponse]                = js.native
     def deleteSmsTemplate(params: DeleteSmsTemplateRequest): Request[DeleteSmsTemplateResponse]             = js.native
@@ -369,8 +395,14 @@ package pinpoint {
     ): Request[GetJourneyExecutionActivityMetricsResponse] = js.native
     def getJourneyExecutionMetrics(
         params: GetJourneyExecutionMetricsRequest
-    ): Request[GetJourneyExecutionMetricsResponse]                                                       = js.native
-    def getPushTemplate(params: GetPushTemplateRequest): Request[GetPushTemplateResponse]                = js.native
+    ): Request[GetJourneyExecutionMetricsResponse]                                        = js.native
+    def getPushTemplate(params: GetPushTemplateRequest): Request[GetPushTemplateResponse] = js.native
+    def getRecommenderConfiguration(
+        params: GetRecommenderConfigurationRequest
+    ): Request[GetRecommenderConfigurationResponse] = js.native
+    def getRecommenderConfigurations(
+        params: GetRecommenderConfigurationsRequest
+    ): Request[GetRecommenderConfigurationsResponse]                                                     = js.native
     def getSegment(params: GetSegmentRequest): Request[GetSegmentResponse]                               = js.native
     def getSegmentExportJobs(params: GetSegmentExportJobsRequest): Request[GetSegmentExportJobsResponse] = js.native
     def getSegmentImportJobs(params: GetSegmentImportJobsRequest): Request[GetSegmentImportJobsResponse] = js.native
@@ -415,9 +447,12 @@ package pinpoint {
     def updateJourney(params: UpdateJourneyRequest): Request[UpdateJourneyResponse]                      = js.native
     def updateJourneyState(params: UpdateJourneyStateRequest): Request[UpdateJourneyStateResponse]       = js.native
     def updatePushTemplate(params: UpdatePushTemplateRequest): Request[UpdatePushTemplateResponse]       = js.native
-    def updateSegment(params: UpdateSegmentRequest): Request[UpdateSegmentResponse]                      = js.native
-    def updateSmsChannel(params: UpdateSmsChannelRequest): Request[UpdateSmsChannelResponse]             = js.native
-    def updateSmsTemplate(params: UpdateSmsTemplateRequest): Request[UpdateSmsTemplateResponse]          = js.native
+    def updateRecommenderConfiguration(
+        params: UpdateRecommenderConfigurationRequest
+    ): Request[UpdateRecommenderConfigurationResponse]                                          = js.native
+    def updateSegment(params: UpdateSegmentRequest): Request[UpdateSegmentResponse]             = js.native
+    def updateSmsChannel(params: UpdateSmsChannelRequest): Request[UpdateSmsChannelResponse]    = js.native
+    def updateSmsTemplate(params: UpdateSmsTemplateRequest): Request[UpdateSmsTemplateResponse] = js.native
     def updateTemplateActiveVersion(
         params: UpdateTemplateActiveVersionRequest
     ): Request[UpdateTemplateActiveVersionResponse]                                                   = js.native
@@ -1104,33 +1139,42 @@ package pinpoint {
     */
   @js.native
   trait Activity extends js.Object {
+    var CUSTOM: js.UndefOr[CustomMessageActivity]
     var ConditionalSplit: js.UndefOr[ConditionalSplitActivity]
     var Description: js.UndefOr[__string]
     var EMAIL: js.UndefOr[EmailMessageActivity]
     var Holdout: js.UndefOr[HoldoutActivity]
     var MultiCondition: js.UndefOr[MultiConditionalSplitActivity]
+    var PUSH: js.UndefOr[PushMessageActivity]
     var RandomSplit: js.UndefOr[RandomSplitActivity]
+    var SMS: js.UndefOr[SMSMessageActivity]
     var Wait: js.UndefOr[WaitActivity]
   }
 
   object Activity {
     @inline
     def apply(
+        CUSTOM: js.UndefOr[CustomMessageActivity] = js.undefined,
         ConditionalSplit: js.UndefOr[ConditionalSplitActivity] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
         EMAIL: js.UndefOr[EmailMessageActivity] = js.undefined,
         Holdout: js.UndefOr[HoldoutActivity] = js.undefined,
         MultiCondition: js.UndefOr[MultiConditionalSplitActivity] = js.undefined,
+        PUSH: js.UndefOr[PushMessageActivity] = js.undefined,
         RandomSplit: js.UndefOr[RandomSplitActivity] = js.undefined,
+        SMS: js.UndefOr[SMSMessageActivity] = js.undefined,
         Wait: js.UndefOr[WaitActivity] = js.undefined
     ): Activity = {
       val __obj = js.Dynamic.literal()
+      CUSTOM.foreach(__v => __obj.updateDynamic("CUSTOM")(__v.asInstanceOf[js.Any]))
       ConditionalSplit.foreach(__v => __obj.updateDynamic("ConditionalSplit")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       EMAIL.foreach(__v => __obj.updateDynamic("EMAIL")(__v.asInstanceOf[js.Any]))
       Holdout.foreach(__v => __obj.updateDynamic("Holdout")(__v.asInstanceOf[js.Any]))
       MultiCondition.foreach(__v => __obj.updateDynamic("MultiCondition")(__v.asInstanceOf[js.Any]))
+      PUSH.foreach(__v => __obj.updateDynamic("PUSH")(__v.asInstanceOf[js.Any]))
       RandomSplit.foreach(__v => __obj.updateDynamic("RandomSplit")(__v.asInstanceOf[js.Any]))
+      SMS.foreach(__v => __obj.updateDynamic("SMS")(__v.asInstanceOf[js.Any]))
       Wait.foreach(__v => __obj.updateDynamic("Wait")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Activity]
     }
@@ -1609,6 +1653,25 @@ package pinpoint {
   }
 
   /**
+    * Specifies the contents of a message that's sent through a custom channel to recipients of a campaign.
+    */
+  @js.native
+  trait CampaignCustomMessage extends js.Object {
+    var Data: js.UndefOr[__string]
+  }
+
+  object CampaignCustomMessage {
+    @inline
+    def apply(
+        Data: js.UndefOr[__string] = js.undefined
+    ): CampaignCustomMessage = {
+      val __obj = js.Dynamic.literal()
+      Data.foreach(__v => __obj.updateDynamic("Data")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CampaignCustomMessage]
+    }
+  }
+
+  /**
     * Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query.
     */
   @js.native
@@ -1700,7 +1763,7 @@ package pinpoint {
   }
 
   /**
-    * Specifies the AWS Lambda function to use as a code hook for a campaign.
+    * Specifies settings for invoking an AWS Lambda function that customizes a segment for a campaign.
     */
   @js.native
   trait CampaignHook extends js.Object {
@@ -1725,7 +1788,7 @@ package pinpoint {
   }
 
   /**
-    * Specifies limits on the messages that a campaign can send.
+    * For a campaign, specifies limits on the messages that the campaign can send. For an application, specifies the default limits for messages that campaigns and journeys in the application can send.
     */
   @js.native
   trait CampaignLimits extends js.Object {
@@ -1765,6 +1828,7 @@ package pinpoint {
     var SegmentId: __string
     var SegmentVersion: __integer
     var AdditionalTreatments: js.UndefOr[ListOfTreatmentResource]
+    var CustomDeliveryConfiguration: js.UndefOr[CustomDeliveryConfiguration]
     var DefaultState: js.UndefOr[CampaignState]
     var Description: js.UndefOr[__string]
     var HoldoutPercent: js.UndefOr[__integer]
@@ -1793,6 +1857,7 @@ package pinpoint {
         SegmentId: __string,
         SegmentVersion: __integer,
         AdditionalTreatments: js.UndefOr[ListOfTreatmentResource] = js.undefined,
+        CustomDeliveryConfiguration: js.UndefOr[CustomDeliveryConfiguration] = js.undefined,
         DefaultState: js.UndefOr[CampaignState] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
         HoldoutPercent: js.UndefOr[__integer] = js.undefined,
@@ -1820,6 +1885,9 @@ package pinpoint {
       )
 
       AdditionalTreatments.foreach(__v => __obj.updateDynamic("AdditionalTreatments")(__v.asInstanceOf[js.Any]))
+      CustomDeliveryConfiguration.foreach(__v =>
+        __obj.updateDynamic("CustomDeliveryConfiguration")(__v.asInstanceOf[js.Any])
+      )
       DefaultState.foreach(__v => __obj.updateDynamic("DefaultState")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       HoldoutPercent.foreach(__v => __obj.updateDynamic("HoldoutPercent")(__v.asInstanceOf[js.Any]))
@@ -1966,6 +2034,7 @@ package pinpoint {
   @js.native
   sealed trait ChannelType extends js.Any
   object ChannelType extends js.Object {
+    val PUSH              = "PUSH".asInstanceOf[ChannelType]
     val GCM               = "GCM".asInstanceOf[ChannelType]
     val APNS              = "APNS".asInstanceOf[ChannelType]
     val APNS_SANDBOX      = "APNS_SANDBOX".asInstanceOf[ChannelType]
@@ -1979,7 +2048,7 @@ package pinpoint {
     val CUSTOM            = "CUSTOM".asInstanceOf[ChannelType]
 
     val values = js.Object.freeze(
-      js.Array(GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM)
+      js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM)
     )
   }
 
@@ -2348,6 +2417,95 @@ package pinpoint {
     }
   }
 
+  /**
+    * Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.
+    */
+  @js.native
+  trait CreateRecommenderConfiguration extends js.Object {
+    var RecommendationProviderRoleArn: __string
+    var RecommendationProviderUri: __string
+    var Attributes: js.UndefOr[MapOf__string]
+    var Description: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
+    var RecommendationProviderIdType: js.UndefOr[__string]
+    var RecommendationTransformerUri: js.UndefOr[__string]
+    var RecommendationsDisplayName: js.UndefOr[__string]
+    var RecommendationsPerMessage: js.UndefOr[__integer]
+  }
+
+  object CreateRecommenderConfiguration {
+    @inline
+    def apply(
+        RecommendationProviderRoleArn: __string,
+        RecommendationProviderUri: __string,
+        Attributes: js.UndefOr[MapOf__string] = js.undefined,
+        Description: js.UndefOr[__string] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        RecommendationProviderIdType: js.UndefOr[__string] = js.undefined,
+        RecommendationTransformerUri: js.UndefOr[__string] = js.undefined,
+        RecommendationsDisplayName: js.UndefOr[__string] = js.undefined,
+        RecommendationsPerMessage: js.UndefOr[__integer] = js.undefined
+    ): CreateRecommenderConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "RecommendationProviderRoleArn" -> RecommendationProviderRoleArn.asInstanceOf[js.Any],
+        "RecommendationProviderUri"     -> RecommendationProviderUri.asInstanceOf[js.Any]
+      )
+
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RecommendationProviderIdType.foreach(__v =>
+        __obj.updateDynamic("RecommendationProviderIdType")(__v.asInstanceOf[js.Any])
+      )
+      RecommendationTransformerUri.foreach(__v =>
+        __obj.updateDynamic("RecommendationTransformerUri")(__v.asInstanceOf[js.Any])
+      )
+      RecommendationsDisplayName.foreach(__v =>
+        __obj.updateDynamic("RecommendationsDisplayName")(__v.asInstanceOf[js.Any])
+      )
+      RecommendationsPerMessage.foreach(__v =>
+        __obj.updateDynamic("RecommendationsPerMessage")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[CreateRecommenderConfiguration]
+    }
+  }
+
+  @js.native
+  trait CreateRecommenderConfigurationRequest extends js.Object {
+    var CreateRecommenderConfiguration: CreateRecommenderConfiguration
+  }
+
+  object CreateRecommenderConfigurationRequest {
+    @inline
+    def apply(
+        CreateRecommenderConfiguration: CreateRecommenderConfiguration
+    ): CreateRecommenderConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "CreateRecommenderConfiguration" -> CreateRecommenderConfiguration.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateRecommenderConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait CreateRecommenderConfigurationResponse extends js.Object {
+    var RecommenderConfigurationResponse: RecommenderConfigurationResponse
+  }
+
+  object CreateRecommenderConfigurationResponse {
+    @inline
+    def apply(
+        RecommenderConfigurationResponse: RecommenderConfigurationResponse
+    ): CreateRecommenderConfigurationResponse = {
+      val __obj = js.Dynamic.literal(
+        "RecommenderConfigurationResponse" -> RecommenderConfigurationResponse.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateRecommenderConfigurationResponse]
+    }
+  }
+
   @js.native
   trait CreateSegmentRequest extends js.Object {
     var ApplicationId: __string
@@ -2487,6 +2645,64 @@ package pinpoint {
       )
 
       __obj.asInstanceOf[CreateVoiceTemplateResponse]
+    }
+  }
+
+  /**
+    * Specifies the delivery configuration settings for sending a campaign or campaign treatment through a custom channel. This object is required if you use the CampaignCustomMessage object to define the message to send for the campaign or campaign treatment.
+    */
+  @js.native
+  trait CustomDeliveryConfiguration extends js.Object {
+    var DeliveryUri: __string
+    var EndpointTypes: js.UndefOr[ListOf__EndpointTypesElement]
+  }
+
+  object CustomDeliveryConfiguration {
+    @inline
+    def apply(
+        DeliveryUri: __string,
+        EndpointTypes: js.UndefOr[ListOf__EndpointTypesElement] = js.undefined
+    ): CustomDeliveryConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "DeliveryUri" -> DeliveryUri.asInstanceOf[js.Any]
+      )
+
+      EndpointTypes.foreach(__v => __obj.updateDynamic("EndpointTypes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomDeliveryConfiguration]
+    }
+  }
+
+  /**
+    * The settings for a custom message activity. This type of activity calls an AWS Lambda function or web hook that sends messages to participants.
+    */
+  @js.native
+  trait CustomMessageActivity extends js.Object {
+    var DeliveryUri: js.UndefOr[__string]
+    var EndpointTypes: js.UndefOr[ListOf__EndpointTypesElement]
+    var MessageConfig: js.UndefOr[JourneyCustomMessage]
+    var NextActivity: js.UndefOr[__string]
+    var TemplateName: js.UndefOr[__string]
+    var TemplateVersion: js.UndefOr[__string]
+  }
+
+  object CustomMessageActivity {
+    @inline
+    def apply(
+        DeliveryUri: js.UndefOr[__string] = js.undefined,
+        EndpointTypes: js.UndefOr[ListOf__EndpointTypesElement] = js.undefined,
+        MessageConfig: js.UndefOr[JourneyCustomMessage] = js.undefined,
+        NextActivity: js.UndefOr[__string] = js.undefined,
+        TemplateName: js.UndefOr[__string] = js.undefined,
+        TemplateVersion: js.UndefOr[__string] = js.undefined
+    ): CustomMessageActivity = {
+      val __obj = js.Dynamic.literal()
+      DeliveryUri.foreach(__v => __obj.updateDynamic("DeliveryUri")(__v.asInstanceOf[js.Any]))
+      EndpointTypes.foreach(__v => __obj.updateDynamic("EndpointTypes")(__v.asInstanceOf[js.Any]))
+      MessageConfig.foreach(__v => __obj.updateDynamic("MessageConfig")(__v.asInstanceOf[js.Any]))
+      NextActivity.foreach(__v => __obj.updateDynamic("NextActivity")(__v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.updateDynamic("TemplateName")(__v.asInstanceOf[js.Any]))
+      TemplateVersion.foreach(__v => __obj.updateDynamic("TemplateVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomMessageActivity]
     }
   }
 
@@ -3136,6 +3352,42 @@ package pinpoint {
   }
 
   @js.native
+  trait DeleteRecommenderConfigurationRequest extends js.Object {
+    var RecommenderId: __string
+  }
+
+  object DeleteRecommenderConfigurationRequest {
+    @inline
+    def apply(
+        RecommenderId: __string
+    ): DeleteRecommenderConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "RecommenderId" -> RecommenderId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteRecommenderConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteRecommenderConfigurationResponse extends js.Object {
+    var RecommenderConfigurationResponse: RecommenderConfigurationResponse
+  }
+
+  object DeleteRecommenderConfigurationResponse {
+    @inline
+    def apply(
+        RecommenderConfigurationResponse: RecommenderConfigurationResponse
+    ): DeleteRecommenderConfigurationResponse = {
+      val __obj = js.Dynamic.literal(
+        "RecommenderConfigurationResponse" -> RecommenderConfigurationResponse.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteRecommenderConfigurationResponse]
+    }
+  }
+
+  @js.native
   trait DeleteSegmentRequest extends js.Object {
     var ApplicationId: __string
     var SegmentId: __string
@@ -3614,6 +3866,7 @@ package pinpoint {
   trait EmailTemplateRequest extends js.Object {
     var DefaultSubstitutions: js.UndefOr[__string]
     var HtmlPart: js.UndefOr[__string]
+    var RecommenderId: js.UndefOr[__string]
     var Subject: js.UndefOr[__string]
     var TemplateDescription: js.UndefOr[__string]
     var TextPart: js.UndefOr[__string]
@@ -3625,6 +3878,7 @@ package pinpoint {
     def apply(
         DefaultSubstitutions: js.UndefOr[__string] = js.undefined,
         HtmlPart: js.UndefOr[__string] = js.undefined,
+        RecommenderId: js.UndefOr[__string] = js.undefined,
         Subject: js.UndefOr[__string] = js.undefined,
         TemplateDescription: js.UndefOr[__string] = js.undefined,
         TextPart: js.UndefOr[__string] = js.undefined,
@@ -3633,6 +3887,7 @@ package pinpoint {
       val __obj = js.Dynamic.literal()
       DefaultSubstitutions.foreach(__v => __obj.updateDynamic("DefaultSubstitutions")(__v.asInstanceOf[js.Any]))
       HtmlPart.foreach(__v => __obj.updateDynamic("HtmlPart")(__v.asInstanceOf[js.Any]))
+      RecommenderId.foreach(__v => __obj.updateDynamic("RecommenderId")(__v.asInstanceOf[js.Any]))
       Subject.foreach(__v => __obj.updateDynamic("Subject")(__v.asInstanceOf[js.Any]))
       TemplateDescription.foreach(__v => __obj.updateDynamic("TemplateDescription")(__v.asInstanceOf[js.Any]))
       TextPart.foreach(__v => __obj.updateDynamic("TextPart")(__v.asInstanceOf[js.Any]))
@@ -3653,6 +3908,7 @@ package pinpoint {
     var Arn: js.UndefOr[__string]
     var DefaultSubstitutions: js.UndefOr[__string]
     var HtmlPart: js.UndefOr[__string]
+    var RecommenderId: js.UndefOr[__string]
     var Subject: js.UndefOr[__string]
     var TemplateDescription: js.UndefOr[__string]
     var TextPart: js.UndefOr[__string]
@@ -3670,6 +3926,7 @@ package pinpoint {
         Arn: js.UndefOr[__string] = js.undefined,
         DefaultSubstitutions: js.UndefOr[__string] = js.undefined,
         HtmlPart: js.UndefOr[__string] = js.undefined,
+        RecommenderId: js.UndefOr[__string] = js.undefined,
         Subject: js.UndefOr[__string] = js.undefined,
         TemplateDescription: js.UndefOr[__string] = js.undefined,
         TextPart: js.UndefOr[__string] = js.undefined,
@@ -3686,6 +3943,7 @@ package pinpoint {
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       DefaultSubstitutions.foreach(__v => __obj.updateDynamic("DefaultSubstitutions")(__v.asInstanceOf[js.Any]))
       HtmlPart.foreach(__v => __obj.updateDynamic("HtmlPart")(__v.asInstanceOf[js.Any]))
+      RecommenderId.foreach(__v => __obj.updateDynamic("RecommenderId")(__v.asInstanceOf[js.Any]))
       Subject.foreach(__v => __obj.updateDynamic("Subject")(__v.asInstanceOf[js.Any]))
       TemplateDescription.foreach(__v => __obj.updateDynamic("TemplateDescription")(__v.asInstanceOf[js.Any]))
       TextPart.foreach(__v => __obj.updateDynamic("TextPart")(__v.asInstanceOf[js.Any]))
@@ -4137,20 +4395,18 @@ package pinpoint {
     */
   @js.native
   trait EventCondition extends js.Object {
-    var Dimensions: EventDimensions
+    var Dimensions: js.UndefOr[EventDimensions]
     var MessageActivity: js.UndefOr[__string]
   }
 
   object EventCondition {
     @inline
     def apply(
-        Dimensions: EventDimensions,
+        Dimensions: js.UndefOr[EventDimensions] = js.undefined,
         MessageActivity: js.UndefOr[__string] = js.undefined
     ): EventCondition = {
-      val __obj = js.Dynamic.literal(
-        "Dimensions" -> Dimensions.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
+      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
       MessageActivity.foreach(__v => __obj.updateDynamic("MessageActivity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventCondition]
     }
@@ -5918,6 +6174,79 @@ package pinpoint {
   }
 
   @js.native
+  trait GetRecommenderConfigurationRequest extends js.Object {
+    var RecommenderId: __string
+  }
+
+  object GetRecommenderConfigurationRequest {
+    @inline
+    def apply(
+        RecommenderId: __string
+    ): GetRecommenderConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "RecommenderId" -> RecommenderId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetRecommenderConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait GetRecommenderConfigurationResponse extends js.Object {
+    var RecommenderConfigurationResponse: RecommenderConfigurationResponse
+  }
+
+  object GetRecommenderConfigurationResponse {
+    @inline
+    def apply(
+        RecommenderConfigurationResponse: RecommenderConfigurationResponse
+    ): GetRecommenderConfigurationResponse = {
+      val __obj = js.Dynamic.literal(
+        "RecommenderConfigurationResponse" -> RecommenderConfigurationResponse.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetRecommenderConfigurationResponse]
+    }
+  }
+
+  @js.native
+  trait GetRecommenderConfigurationsRequest extends js.Object {
+    var PageSize: js.UndefOr[__string]
+    var Token: js.UndefOr[__string]
+  }
+
+  object GetRecommenderConfigurationsRequest {
+    @inline
+    def apply(
+        PageSize: js.UndefOr[__string] = js.undefined,
+        Token: js.UndefOr[__string] = js.undefined
+    ): GetRecommenderConfigurationsRequest = {
+      val __obj = js.Dynamic.literal()
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      Token.foreach(__v => __obj.updateDynamic("Token")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetRecommenderConfigurationsRequest]
+    }
+  }
+
+  @js.native
+  trait GetRecommenderConfigurationsResponse extends js.Object {
+    var ListRecommenderConfigurationsResponse: ListRecommenderConfigurationsResponse
+  }
+
+  object GetRecommenderConfigurationsResponse {
+    @inline
+    def apply(
+        ListRecommenderConfigurationsResponse: ListRecommenderConfigurationsResponse
+    ): GetRecommenderConfigurationsResponse = {
+      val __obj = js.Dynamic.literal(
+        "ListRecommenderConfigurationsResponse" -> ListRecommenderConfigurationsResponse.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetRecommenderConfigurationsResponse]
+    }
+  }
+
+  @js.native
   trait GetSegmentExportJobsRequest extends js.Object {
     var ApplicationId: __string
     var SegmentId: __string
@@ -6614,6 +6943,25 @@ package pinpoint {
   }
 
   /**
+    * Specifies the message content for a custom channel message that's sent to participants in a journey.
+    */
+  @js.native
+  trait JourneyCustomMessage extends js.Object {
+    var Data: js.UndefOr[__string]
+  }
+
+  object JourneyCustomMessage {
+    @inline
+    def apply(
+        Data: js.UndefOr[__string] = js.undefined
+    ): JourneyCustomMessage = {
+      val __obj = js.Dynamic.literal()
+      Data.foreach(__v => __obj.updateDynamic("Data")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JourneyCustomMessage]
+    }
+  }
+
+  /**
     * Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query.
     */
   @js.native
@@ -6763,6 +7111,25 @@ package pinpoint {
   }
 
   /**
+    * Specifies the message configuration for a push notification that's sent to participants in a journey.
+    */
+  @js.native
+  trait JourneyPushMessage extends js.Object {
+    var TimeToLive: js.UndefOr[__string]
+  }
+
+  object JourneyPushMessage {
+    @inline
+    def apply(
+        TimeToLive: js.UndefOr[__string] = js.undefined
+    ): JourneyPushMessage = {
+      val __obj = js.Dynamic.literal()
+      TimeToLive.foreach(__v => __obj.updateDynamic("TimeToLive")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JourneyPushMessage]
+    }
+  }
+
+  /**
     * Provides information about the status, configuration, and other settings for a journey.
     */
   @js.native
@@ -6822,6 +7189,28 @@ package pinpoint {
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JourneyResponse]
+    }
+  }
+
+  /**
+    * Specifies the sender ID and message type for an SMS message that's sent to participants in a journey.
+    */
+  @js.native
+  trait JourneySMSMessage extends js.Object {
+    var MessageType: js.UndefOr[MessageType]
+    var SenderId: js.UndefOr[__string]
+  }
+
+  object JourneySMSMessage {
+    @inline
+    def apply(
+        MessageType: js.UndefOr[MessageType] = js.undefined,
+        SenderId: js.UndefOr[__string] = js.undefined
+    ): JourneySMSMessage = {
+      val __obj = js.Dynamic.literal()
+      MessageType.foreach(__v => __obj.updateDynamic("MessageType")(__v.asInstanceOf[js.Any]))
+      SenderId.foreach(__v => __obj.updateDynamic("SenderId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JourneySMSMessage]
     }
   }
 
@@ -6932,6 +7321,30 @@ package pinpoint {
       )
 
       __obj.asInstanceOf[ListJourneysResponse]
+    }
+  }
+
+  /**
+    * Provides information about all the recommender model configurations that are associated with your Amazon Pinpoint account.
+    */
+  @js.native
+  trait ListRecommenderConfigurationsResponse extends js.Object {
+    var Item: ListOfRecommenderConfigurationResponse
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object ListRecommenderConfigurationsResponse {
+    @inline
+    def apply(
+        Item: ListOfRecommenderConfigurationResponse,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListRecommenderConfigurationsResponse = {
+      val __obj = js.Dynamic.literal(
+        "Item" -> Item.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRecommenderConfigurationsResponse]
     }
   }
 
@@ -7141,6 +7554,7 @@ package pinpoint {
     var ADMMessage: js.UndefOr[Message]
     var APNSMessage: js.UndefOr[Message]
     var BaiduMessage: js.UndefOr[Message]
+    var CustomMessage: js.UndefOr[CampaignCustomMessage]
     var DefaultMessage: js.UndefOr[Message]
     var EmailMessage: js.UndefOr[CampaignEmailMessage]
     var GCMMessage: js.UndefOr[Message]
@@ -7153,6 +7567,7 @@ package pinpoint {
         ADMMessage: js.UndefOr[Message] = js.undefined,
         APNSMessage: js.UndefOr[Message] = js.undefined,
         BaiduMessage: js.UndefOr[Message] = js.undefined,
+        CustomMessage: js.UndefOr[CampaignCustomMessage] = js.undefined,
         DefaultMessage: js.UndefOr[Message] = js.undefined,
         EmailMessage: js.UndefOr[CampaignEmailMessage] = js.undefined,
         GCMMessage: js.UndefOr[Message] = js.undefined,
@@ -7162,6 +7577,7 @@ package pinpoint {
       ADMMessage.foreach(__v => __obj.updateDynamic("ADMMessage")(__v.asInstanceOf[js.Any]))
       APNSMessage.foreach(__v => __obj.updateDynamic("APNSMessage")(__v.asInstanceOf[js.Any]))
       BaiduMessage.foreach(__v => __obj.updateDynamic("BaiduMessage")(__v.asInstanceOf[js.Any]))
+      CustomMessage.foreach(__v => __obj.updateDynamic("CustomMessage")(__v.asInstanceOf[js.Any]))
       DefaultMessage.foreach(__v => __obj.updateDynamic("DefaultMessage")(__v.asInstanceOf[js.Any]))
       EmailMessage.foreach(__v => __obj.updateDynamic("EmailMessage")(__v.asInstanceOf[js.Any]))
       GCMMessage.foreach(__v => __obj.updateDynamic("GCMMessage")(__v.asInstanceOf[js.Any]))
@@ -7535,6 +7951,34 @@ package pinpoint {
   }
 
   /**
+    * Specifies the settings for a push notification activity in a journey. This type of activity sends a push notification to participants.
+    */
+  @js.native
+  trait PushMessageActivity extends js.Object {
+    var MessageConfig: js.UndefOr[JourneyPushMessage]
+    var NextActivity: js.UndefOr[__string]
+    var TemplateName: js.UndefOr[__string]
+    var TemplateVersion: js.UndefOr[__string]
+  }
+
+  object PushMessageActivity {
+    @inline
+    def apply(
+        MessageConfig: js.UndefOr[JourneyPushMessage] = js.undefined,
+        NextActivity: js.UndefOr[__string] = js.undefined,
+        TemplateName: js.UndefOr[__string] = js.undefined,
+        TemplateVersion: js.UndefOr[__string] = js.undefined
+    ): PushMessageActivity = {
+      val __obj = js.Dynamic.literal()
+      MessageConfig.foreach(__v => __obj.updateDynamic("MessageConfig")(__v.asInstanceOf[js.Any]))
+      NextActivity.foreach(__v => __obj.updateDynamic("NextActivity")(__v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.updateDynamic("TemplateName")(__v.asInstanceOf[js.Any]))
+      TemplateVersion.foreach(__v => __obj.updateDynamic("TemplateVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PushMessageActivity]
+    }
+  }
+
+  /**
     * Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.
     */
   @js.native
@@ -7545,6 +7989,7 @@ package pinpoint {
     var Default: js.UndefOr[DefaultPushNotificationTemplate]
     var DefaultSubstitutions: js.UndefOr[__string]
     var GCM: js.UndefOr[AndroidPushNotificationTemplate]
+    var RecommenderId: js.UndefOr[__string]
     var TemplateDescription: js.UndefOr[__string]
     var tags: js.UndefOr[MapOf__string]
   }
@@ -7558,6 +8003,7 @@ package pinpoint {
         Default: js.UndefOr[DefaultPushNotificationTemplate] = js.undefined,
         DefaultSubstitutions: js.UndefOr[__string] = js.undefined,
         GCM: js.UndefOr[AndroidPushNotificationTemplate] = js.undefined,
+        RecommenderId: js.UndefOr[__string] = js.undefined,
         TemplateDescription: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[MapOf__string] = js.undefined
     ): PushNotificationTemplateRequest = {
@@ -7568,6 +8014,7 @@ package pinpoint {
       Default.foreach(__v => __obj.updateDynamic("Default")(__v.asInstanceOf[js.Any]))
       DefaultSubstitutions.foreach(__v => __obj.updateDynamic("DefaultSubstitutions")(__v.asInstanceOf[js.Any]))
       GCM.foreach(__v => __obj.updateDynamic("GCM")(__v.asInstanceOf[js.Any]))
+      RecommenderId.foreach(__v => __obj.updateDynamic("RecommenderId")(__v.asInstanceOf[js.Any]))
       TemplateDescription.foreach(__v => __obj.updateDynamic("TemplateDescription")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PushNotificationTemplateRequest]
@@ -7590,6 +8037,7 @@ package pinpoint {
     var Default: js.UndefOr[DefaultPushNotificationTemplate]
     var DefaultSubstitutions: js.UndefOr[__string]
     var GCM: js.UndefOr[AndroidPushNotificationTemplate]
+    var RecommenderId: js.UndefOr[__string]
     var TemplateDescription: js.UndefOr[__string]
     var Version: js.UndefOr[__string]
     var tags: js.UndefOr[MapOf__string]
@@ -7609,6 +8057,7 @@ package pinpoint {
         Default: js.UndefOr[DefaultPushNotificationTemplate] = js.undefined,
         DefaultSubstitutions: js.UndefOr[__string] = js.undefined,
         GCM: js.UndefOr[AndroidPushNotificationTemplate] = js.undefined,
+        RecommenderId: js.UndefOr[__string] = js.undefined,
         TemplateDescription: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[MapOf__string] = js.undefined
@@ -7627,6 +8076,7 @@ package pinpoint {
       Default.foreach(__v => __obj.updateDynamic("Default")(__v.asInstanceOf[js.Any]))
       DefaultSubstitutions.foreach(__v => __obj.updateDynamic("DefaultSubstitutions")(__v.asInstanceOf[js.Any]))
       GCM.foreach(__v => __obj.updateDynamic("GCM")(__v.asInstanceOf[js.Any]))
+      RecommenderId.foreach(__v => __obj.updateDynamic("RecommenderId")(__v.asInstanceOf[js.Any]))
       TemplateDescription.foreach(__v => __obj.updateDynamic("TemplateDescription")(__v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -7827,6 +8277,68 @@ package pinpoint {
     val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
   }
 
+  /**
+    * Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.
+    */
+  @js.native
+  trait RecommenderConfigurationResponse extends js.Object {
+    var CreationDate: __string
+    var Id: __string
+    var LastModifiedDate: __string
+    var RecommendationProviderRoleArn: __string
+    var RecommendationProviderUri: __string
+    var Attributes: js.UndefOr[MapOf__string]
+    var Description: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
+    var RecommendationProviderIdType: js.UndefOr[__string]
+    var RecommendationTransformerUri: js.UndefOr[__string]
+    var RecommendationsDisplayName: js.UndefOr[__string]
+    var RecommendationsPerMessage: js.UndefOr[__integer]
+  }
+
+  object RecommenderConfigurationResponse {
+    @inline
+    def apply(
+        CreationDate: __string,
+        Id: __string,
+        LastModifiedDate: __string,
+        RecommendationProviderRoleArn: __string,
+        RecommendationProviderUri: __string,
+        Attributes: js.UndefOr[MapOf__string] = js.undefined,
+        Description: js.UndefOr[__string] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        RecommendationProviderIdType: js.UndefOr[__string] = js.undefined,
+        RecommendationTransformerUri: js.UndefOr[__string] = js.undefined,
+        RecommendationsDisplayName: js.UndefOr[__string] = js.undefined,
+        RecommendationsPerMessage: js.UndefOr[__integer] = js.undefined
+    ): RecommenderConfigurationResponse = {
+      val __obj = js.Dynamic.literal(
+        "CreationDate"                  -> CreationDate.asInstanceOf[js.Any],
+        "Id"                            -> Id.asInstanceOf[js.Any],
+        "LastModifiedDate"              -> LastModifiedDate.asInstanceOf[js.Any],
+        "RecommendationProviderRoleArn" -> RecommendationProviderRoleArn.asInstanceOf[js.Any],
+        "RecommendationProviderUri"     -> RecommendationProviderUri.asInstanceOf[js.Any]
+      )
+
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RecommendationProviderIdType.foreach(__v =>
+        __obj.updateDynamic("RecommendationProviderIdType")(__v.asInstanceOf[js.Any])
+      )
+      RecommendationTransformerUri.foreach(__v =>
+        __obj.updateDynamic("RecommendationTransformerUri")(__v.asInstanceOf[js.Any])
+      )
+      RecommendationsDisplayName.foreach(__v =>
+        __obj.updateDynamic("RecommendationsDisplayName")(__v.asInstanceOf[js.Any])
+      )
+      RecommendationsPerMessage.foreach(__v =>
+        __obj.updateDynamic("RecommendationsPerMessage")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[RecommenderConfigurationResponse]
+    }
+  }
+
   @js.native
   trait RemoveAttributesRequest extends js.Object {
     var ApplicationId: __string
@@ -8016,6 +8528,7 @@ package pinpoint {
   trait SMSMessage extends js.Object {
     var Body: js.UndefOr[__string]
     var Keyword: js.UndefOr[__string]
+    var MediaUrl: js.UndefOr[__string]
     var MessageType: js.UndefOr[MessageType]
     var OriginationNumber: js.UndefOr[__string]
     var SenderId: js.UndefOr[__string]
@@ -8027,6 +8540,7 @@ package pinpoint {
     def apply(
         Body: js.UndefOr[__string] = js.undefined,
         Keyword: js.UndefOr[__string] = js.undefined,
+        MediaUrl: js.UndefOr[__string] = js.undefined,
         MessageType: js.UndefOr[MessageType] = js.undefined,
         OriginationNumber: js.UndefOr[__string] = js.undefined,
         SenderId: js.UndefOr[__string] = js.undefined,
@@ -8035,11 +8549,40 @@ package pinpoint {
       val __obj = js.Dynamic.literal()
       Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
       Keyword.foreach(__v => __obj.updateDynamic("Keyword")(__v.asInstanceOf[js.Any]))
+      MediaUrl.foreach(__v => __obj.updateDynamic("MediaUrl")(__v.asInstanceOf[js.Any]))
       MessageType.foreach(__v => __obj.updateDynamic("MessageType")(__v.asInstanceOf[js.Any]))
       OriginationNumber.foreach(__v => __obj.updateDynamic("OriginationNumber")(__v.asInstanceOf[js.Any]))
       SenderId.foreach(__v => __obj.updateDynamic("SenderId")(__v.asInstanceOf[js.Any]))
       Substitutions.foreach(__v => __obj.updateDynamic("Substitutions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SMSMessage]
+    }
+  }
+
+  /**
+    * Specifies the settings for an SMS activity in a journey. This type of activity sends a text message to participants.
+    */
+  @js.native
+  trait SMSMessageActivity extends js.Object {
+    var MessageConfig: js.UndefOr[JourneySMSMessage]
+    var NextActivity: js.UndefOr[__string]
+    var TemplateName: js.UndefOr[__string]
+    var TemplateVersion: js.UndefOr[__string]
+  }
+
+  object SMSMessageActivity {
+    @inline
+    def apply(
+        MessageConfig: js.UndefOr[JourneySMSMessage] = js.undefined,
+        NextActivity: js.UndefOr[__string] = js.undefined,
+        TemplateName: js.UndefOr[__string] = js.undefined,
+        TemplateVersion: js.UndefOr[__string] = js.undefined
+    ): SMSMessageActivity = {
+      val __obj = js.Dynamic.literal()
+      MessageConfig.foreach(__v => __obj.updateDynamic("MessageConfig")(__v.asInstanceOf[js.Any]))
+      NextActivity.foreach(__v => __obj.updateDynamic("NextActivity")(__v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.updateDynamic("TemplateName")(__v.asInstanceOf[js.Any]))
+      TemplateVersion.foreach(__v => __obj.updateDynamic("TemplateVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SMSMessageActivity]
     }
   }
 
@@ -8050,6 +8593,7 @@ package pinpoint {
   trait SMSTemplateRequest extends js.Object {
     var Body: js.UndefOr[__string]
     var DefaultSubstitutions: js.UndefOr[__string]
+    var RecommenderId: js.UndefOr[__string]
     var TemplateDescription: js.UndefOr[__string]
     var tags: js.UndefOr[MapOf__string]
   }
@@ -8059,12 +8603,14 @@ package pinpoint {
     def apply(
         Body: js.UndefOr[__string] = js.undefined,
         DefaultSubstitutions: js.UndefOr[__string] = js.undefined,
+        RecommenderId: js.UndefOr[__string] = js.undefined,
         TemplateDescription: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[MapOf__string] = js.undefined
     ): SMSTemplateRequest = {
       val __obj = js.Dynamic.literal()
       Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
       DefaultSubstitutions.foreach(__v => __obj.updateDynamic("DefaultSubstitutions")(__v.asInstanceOf[js.Any]))
+      RecommenderId.foreach(__v => __obj.updateDynamic("RecommenderId")(__v.asInstanceOf[js.Any]))
       TemplateDescription.foreach(__v => __obj.updateDynamic("TemplateDescription")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SMSTemplateRequest]
@@ -8083,6 +8629,7 @@ package pinpoint {
     var Arn: js.UndefOr[__string]
     var Body: js.UndefOr[__string]
     var DefaultSubstitutions: js.UndefOr[__string]
+    var RecommenderId: js.UndefOr[__string]
     var TemplateDescription: js.UndefOr[__string]
     var Version: js.UndefOr[__string]
     var tags: js.UndefOr[MapOf__string]
@@ -8098,6 +8645,7 @@ package pinpoint {
         Arn: js.UndefOr[__string] = js.undefined,
         Body: js.UndefOr[__string] = js.undefined,
         DefaultSubstitutions: js.UndefOr[__string] = js.undefined,
+        RecommenderId: js.UndefOr[__string] = js.undefined,
         TemplateDescription: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[MapOf__string] = js.undefined
@@ -8112,6 +8660,7 @@ package pinpoint {
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
       DefaultSubstitutions.foreach(__v => __obj.updateDynamic("DefaultSubstitutions")(__v.asInstanceOf[js.Any]))
+      RecommenderId.foreach(__v => __obj.updateDynamic("RecommenderId")(__v.asInstanceOf[js.Any]))
       TemplateDescription.foreach(__v => __obj.updateDynamic("TemplateDescription")(__v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -8815,7 +9364,7 @@ package pinpoint {
   }
 
   /**
-    * Specifies the tags (keys and values) for an application, campaign, journey, message template, or segment.
+    * Specifies the tags (keys and values) for an application, campaign, message template, or segment.
     */
   @js.native
   trait TagsModel extends js.Object {
@@ -9054,12 +9603,13 @@ package pinpoint {
   }
 
   /**
-    * Specifies the settings for a campaign treatment. A treatment is a variation of a campaign that's used for A/B testing of a campaign.
+    * Specifies the settings for a campaign treatment. A <i>treatment</i> is a variation of a campaign that's used for A/B testing of a campaign.
     */
   @js.native
   trait TreatmentResource extends js.Object {
     var Id: __string
     var SizePercent: __integer
+    var CustomDeliveryConfiguration: js.UndefOr[CustomDeliveryConfiguration]
     var MessageConfiguration: js.UndefOr[MessageConfiguration]
     var Schedule: js.UndefOr[Schedule]
     var State: js.UndefOr[CampaignState]
@@ -9073,6 +9623,7 @@ package pinpoint {
     def apply(
         Id: __string,
         SizePercent: __integer,
+        CustomDeliveryConfiguration: js.UndefOr[CustomDeliveryConfiguration] = js.undefined,
         MessageConfiguration: js.UndefOr[MessageConfiguration] = js.undefined,
         Schedule: js.UndefOr[Schedule] = js.undefined,
         State: js.UndefOr[CampaignState] = js.undefined,
@@ -9085,6 +9636,9 @@ package pinpoint {
         "SizePercent" -> SizePercent.asInstanceOf[js.Any]
       )
 
+      CustomDeliveryConfiguration.foreach(__v =>
+        __obj.updateDynamic("CustomDeliveryConfiguration")(__v.asInstanceOf[js.Any])
+      )
       MessageConfiguration.foreach(__v => __obj.updateDynamic("MessageConfiguration")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
@@ -9793,6 +10347,98 @@ package pinpoint {
     }
   }
 
+  /**
+    * Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.
+    */
+  @js.native
+  trait UpdateRecommenderConfiguration extends js.Object {
+    var RecommendationProviderRoleArn: __string
+    var RecommendationProviderUri: __string
+    var Attributes: js.UndefOr[MapOf__string]
+    var Description: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
+    var RecommendationProviderIdType: js.UndefOr[__string]
+    var RecommendationTransformerUri: js.UndefOr[__string]
+    var RecommendationsDisplayName: js.UndefOr[__string]
+    var RecommendationsPerMessage: js.UndefOr[__integer]
+  }
+
+  object UpdateRecommenderConfiguration {
+    @inline
+    def apply(
+        RecommendationProviderRoleArn: __string,
+        RecommendationProviderUri: __string,
+        Attributes: js.UndefOr[MapOf__string] = js.undefined,
+        Description: js.UndefOr[__string] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        RecommendationProviderIdType: js.UndefOr[__string] = js.undefined,
+        RecommendationTransformerUri: js.UndefOr[__string] = js.undefined,
+        RecommendationsDisplayName: js.UndefOr[__string] = js.undefined,
+        RecommendationsPerMessage: js.UndefOr[__integer] = js.undefined
+    ): UpdateRecommenderConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "RecommendationProviderRoleArn" -> RecommendationProviderRoleArn.asInstanceOf[js.Any],
+        "RecommendationProviderUri"     -> RecommendationProviderUri.asInstanceOf[js.Any]
+      )
+
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RecommendationProviderIdType.foreach(__v =>
+        __obj.updateDynamic("RecommendationProviderIdType")(__v.asInstanceOf[js.Any])
+      )
+      RecommendationTransformerUri.foreach(__v =>
+        __obj.updateDynamic("RecommendationTransformerUri")(__v.asInstanceOf[js.Any])
+      )
+      RecommendationsDisplayName.foreach(__v =>
+        __obj.updateDynamic("RecommendationsDisplayName")(__v.asInstanceOf[js.Any])
+      )
+      RecommendationsPerMessage.foreach(__v =>
+        __obj.updateDynamic("RecommendationsPerMessage")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[UpdateRecommenderConfiguration]
+    }
+  }
+
+  @js.native
+  trait UpdateRecommenderConfigurationRequest extends js.Object {
+    var RecommenderId: __string
+    var UpdateRecommenderConfiguration: UpdateRecommenderConfiguration
+  }
+
+  object UpdateRecommenderConfigurationRequest {
+    @inline
+    def apply(
+        RecommenderId: __string,
+        UpdateRecommenderConfiguration: UpdateRecommenderConfiguration
+    ): UpdateRecommenderConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "RecommenderId"                  -> RecommenderId.asInstanceOf[js.Any],
+        "UpdateRecommenderConfiguration" -> UpdateRecommenderConfiguration.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateRecommenderConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateRecommenderConfigurationResponse extends js.Object {
+    var RecommenderConfigurationResponse: RecommenderConfigurationResponse
+  }
+
+  object UpdateRecommenderConfigurationResponse {
+    @inline
+    def apply(
+        RecommenderConfigurationResponse: RecommenderConfigurationResponse
+    ): UpdateRecommenderConfigurationResponse = {
+      val __obj = js.Dynamic.literal(
+        "RecommenderConfigurationResponse" -> RecommenderConfigurationResponse.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateRecommenderConfigurationResponse]
+    }
+  }
+
   @js.native
   trait UpdateSegmentRequest extends js.Object {
     var ApplicationId: __string
@@ -10309,6 +10955,7 @@ package pinpoint {
   @js.native
   trait WriteCampaignRequest extends js.Object {
     var AdditionalTreatments: js.UndefOr[ListOfWriteTreatmentResource]
+    var CustomDeliveryConfiguration: js.UndefOr[CustomDeliveryConfiguration]
     var Description: js.UndefOr[__string]
     var HoldoutPercent: js.UndefOr[__integer]
     var Hook: js.UndefOr[CampaignHook]
@@ -10329,6 +10976,7 @@ package pinpoint {
     @inline
     def apply(
         AdditionalTreatments: js.UndefOr[ListOfWriteTreatmentResource] = js.undefined,
+        CustomDeliveryConfiguration: js.UndefOr[CustomDeliveryConfiguration] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
         HoldoutPercent: js.UndefOr[__integer] = js.undefined,
         Hook: js.UndefOr[CampaignHook] = js.undefined,
@@ -10346,6 +10994,9 @@ package pinpoint {
     ): WriteCampaignRequest = {
       val __obj = js.Dynamic.literal()
       AdditionalTreatments.foreach(__v => __obj.updateDynamic("AdditionalTreatments")(__v.asInstanceOf[js.Any]))
+      CustomDeliveryConfiguration.foreach(__v =>
+        __obj.updateDynamic("CustomDeliveryConfiguration")(__v.asInstanceOf[js.Any])
+      )
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       HoldoutPercent.foreach(__v => __obj.updateDynamic("HoldoutPercent")(__v.asInstanceOf[js.Any]))
       Hook.foreach(__v => __obj.updateDynamic("Hook")(__v.asInstanceOf[js.Any]))
@@ -10471,11 +11122,12 @@ package pinpoint {
   }
 
   /**
-    * Specifies the settings for a campaign treatment. A treatment is a variation of a campaign that's used for A/B testing of a campaign.
+    * Specifies the settings for a campaign treatment. A <i>treatment</i> is a variation of a campaign that's used for A/B testing of a campaign.
     */
   @js.native
   trait WriteTreatmentResource extends js.Object {
     var SizePercent: __integer
+    var CustomDeliveryConfiguration: js.UndefOr[CustomDeliveryConfiguration]
     var MessageConfiguration: js.UndefOr[MessageConfiguration]
     var Schedule: js.UndefOr[Schedule]
     var TemplateConfiguration: js.UndefOr[TemplateConfiguration]
@@ -10487,6 +11139,7 @@ package pinpoint {
     @inline
     def apply(
         SizePercent: __integer,
+        CustomDeliveryConfiguration: js.UndefOr[CustomDeliveryConfiguration] = js.undefined,
         MessageConfiguration: js.UndefOr[MessageConfiguration] = js.undefined,
         Schedule: js.UndefOr[Schedule] = js.undefined,
         TemplateConfiguration: js.UndefOr[TemplateConfiguration] = js.undefined,
@@ -10497,6 +11150,9 @@ package pinpoint {
         "SizePercent" -> SizePercent.asInstanceOf[js.Any]
       )
 
+      CustomDeliveryConfiguration.foreach(__v =>
+        __obj.updateDynamic("CustomDeliveryConfiguration")(__v.asInstanceOf[js.Any])
+      )
       MessageConfiguration.foreach(__v => __obj.updateDynamic("MessageConfiguration")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
       TemplateConfiguration.foreach(__v => __obj.updateDynamic("TemplateConfiguration")(__v.asInstanceOf[js.Any]))
@@ -10504,5 +11160,26 @@ package pinpoint {
       TreatmentName.foreach(__v => __obj.updateDynamic("TreatmentName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WriteTreatmentResource]
     }
+  }
+
+  @js.native
+  sealed trait __EndpointTypesElement extends js.Any
+  object __EndpointTypesElement extends js.Object {
+    val PUSH              = "PUSH".asInstanceOf[__EndpointTypesElement]
+    val GCM               = "GCM".asInstanceOf[__EndpointTypesElement]
+    val APNS              = "APNS".asInstanceOf[__EndpointTypesElement]
+    val APNS_SANDBOX      = "APNS_SANDBOX".asInstanceOf[__EndpointTypesElement]
+    val APNS_VOIP         = "APNS_VOIP".asInstanceOf[__EndpointTypesElement]
+    val APNS_VOIP_SANDBOX = "APNS_VOIP_SANDBOX".asInstanceOf[__EndpointTypesElement]
+    val ADM               = "ADM".asInstanceOf[__EndpointTypesElement]
+    val SMS               = "SMS".asInstanceOf[__EndpointTypesElement]
+    val VOICE             = "VOICE".asInstanceOf[__EndpointTypesElement]
+    val EMAIL             = "EMAIL".asInstanceOf[__EndpointTypesElement]
+    val BAIDU             = "BAIDU".asInstanceOf[__EndpointTypesElement]
+    val CUSTOM            = "CUSTOM".asInstanceOf[__EndpointTypesElement]
+
+    val values = js.Object.freeze(
+      js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM)
+    )
   }
 }

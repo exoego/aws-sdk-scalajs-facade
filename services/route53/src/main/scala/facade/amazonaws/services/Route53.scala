@@ -7,6 +7,7 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object route53 {
+  type AWSAccountID                      = String
   type AlarmName                         = String
   type AliasHealthEnabled                = Boolean
   type AssociateVPCComment               = String
@@ -42,7 +43,9 @@ package object route53 {
   type HealthChecks                      = js.Array[HealthCheck]
   type HealthThreshold                   = Int
   type HostedZoneCount                   = Double
+  type HostedZoneOwningService           = String
   type HostedZoneRRSetCount              = Double
+  type HostedZoneSummaries               = js.Array[HostedZoneSummary]
   type HostedZones                       = js.Array[HostedZone]
   type IPAddress                         = String
   type IPAddressCidr                     = String
@@ -212,6 +215,8 @@ package object route53 {
     @inline def listHostedZonesByNameFuture(
         params: ListHostedZonesByNameRequest
     ): Future[ListHostedZonesByNameResponse] = service.listHostedZonesByName(params).promise().toFuture
+    @inline def listHostedZonesByVPCFuture(params: ListHostedZonesByVPCRequest): Future[ListHostedZonesByVPCResponse] =
+      service.listHostedZonesByVPC(params).promise().toFuture
     @inline def listHostedZonesFuture(params: ListHostedZonesRequest): Future[ListHostedZonesResponse] =
       service.listHostedZones(params).promise().toFuture
     @inline def listQueryLoggingConfigsFuture(
@@ -338,6 +343,7 @@ package route53 {
     def listHealthChecks(params: ListHealthChecksRequest): Request[ListHealthChecksResponse]                = js.native
     def listHostedZones(params: ListHostedZonesRequest): Request[ListHostedZonesResponse]                   = js.native
     def listHostedZonesByName(params: ListHostedZonesByNameRequest): Request[ListHostedZonesByNameResponse] = js.native
+    def listHostedZonesByVPC(params: ListHostedZonesByVPCRequest): Request[ListHostedZonesByVPCResponse]    = js.native
     def listQueryLoggingConfigs(params: ListQueryLoggingConfigsRequest): Request[ListQueryLoggingConfigsResponse] =
       js.native
     def listResourceRecordSets(params: ListResourceRecordSetsRequest): Request[ListResourceRecordSetsResponse] =
@@ -447,7 +453,7 @@ package route53 {
     * <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to.
     *  When creating resource record sets for a private hosted zone, note the following:
     * * Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted zone is unsupported.
-    *  * For information about creating failover resource record sets in a private hosted zone, see [[http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html|Configuring Failover in a Private Hosted Zone]].
+    *  * For information about creating failover resource record sets in a private hosted zone, see [[https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html|Configuring Failover in a Private Hosted Zone]].
     */
   @js.native
   trait AliasTarget extends js.Object {
@@ -775,6 +781,12 @@ package route53 {
     val `sa-east-1`      = "sa-east-1".asInstanceOf[CloudWatchRegion]
     val `cn-northwest-1` = "cn-northwest-1".asInstanceOf[CloudWatchRegion]
     val `cn-north-1`     = "cn-north-1".asInstanceOf[CloudWatchRegion]
+    val `af-south-1`     = "af-south-1".asInstanceOf[CloudWatchRegion]
+    val `eu-south-1`     = "eu-south-1".asInstanceOf[CloudWatchRegion]
+    val `us-gov-west-1`  = "us-gov-west-1".asInstanceOf[CloudWatchRegion]
+    val `us-gov-east-1`  = "us-gov-east-1".asInstanceOf[CloudWatchRegion]
+    val `us-iso-east-1`  = "us-iso-east-1".asInstanceOf[CloudWatchRegion]
+    val `us-isob-east-1` = "us-isob-east-1".asInstanceOf[CloudWatchRegion]
 
     val values = js.Object.freeze(
       js.Array(
@@ -798,7 +810,13 @@ package route53 {
         `eu-north-1`,
         `sa-east-1`,
         `cn-northwest-1`,
-        `cn-north-1`
+        `cn-north-1`,
+        `af-south-1`,
+        `eu-south-1`,
+        `us-gov-west-1`,
+        `us-gov-east-1`,
+        `us-iso-east-1`,
+        `us-isob-east-1`
       )
     )
   }
@@ -2625,6 +2643,55 @@ package route53 {
     val values = js.Object.freeze(js.Array(MAX_RRSETS_BY_ZONE, MAX_VPCS_ASSOCIATED_BY_ZONE))
   }
 
+  /**
+    * A complex type that identifies a hosted zone that a specified Amazon VPC is associated with and the owner of the hosted zone. If there is a value for <code>OwningAccount</code>, there is no value for <code>OwningService</code>, and vice versa.
+    */
+  @js.native
+  trait HostedZoneOwner extends js.Object {
+    var OwningAccount: js.UndefOr[AWSAccountID]
+    var OwningService: js.UndefOr[HostedZoneOwningService]
+  }
+
+  object HostedZoneOwner {
+    @inline
+    def apply(
+        OwningAccount: js.UndefOr[AWSAccountID] = js.undefined,
+        OwningService: js.UndefOr[HostedZoneOwningService] = js.undefined
+    ): HostedZoneOwner = {
+      val __obj = js.Dynamic.literal()
+      OwningAccount.foreach(__v => __obj.updateDynamic("OwningAccount")(__v.asInstanceOf[js.Any]))
+      OwningService.foreach(__v => __obj.updateDynamic("OwningService")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HostedZoneOwner]
+    }
+  }
+
+  /**
+    * In the response to a <code>ListHostedZonesByVPC</code> request, the <code>HostedZoneSummaries</code> element contains one <code>HostedZoneSummary</code> element for each hosted zone that the specified Amazon VPC is associated with. Each <code>HostedZoneSummary</code> element contains the hosted zone name and ID, and information about who owns the hosted zone.
+    */
+  @js.native
+  trait HostedZoneSummary extends js.Object {
+    var HostedZoneId: ResourceId
+    var Name: DNSName
+    var Owner: HostedZoneOwner
+  }
+
+  object HostedZoneSummary {
+    @inline
+    def apply(
+        HostedZoneId: ResourceId,
+        Name: DNSName,
+        Owner: HostedZoneOwner
+    ): HostedZoneSummary = {
+      val __obj = js.Dynamic.literal(
+        "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
+        "Name"         -> Name.asInstanceOf[js.Any],
+        "Owner"        -> Owner.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[HostedZoneSummary]
+    }
+  }
+
   @js.native
   sealed trait InsufficientDataHealthStatus extends js.Any
   object InsufficientDataHealthStatus extends js.Object {
@@ -2837,6 +2904,60 @@ package route53 {
       NextDNSName.foreach(__v => __obj.updateDynamic("NextDNSName")(__v.asInstanceOf[js.Any]))
       NextHostedZoneId.foreach(__v => __obj.updateDynamic("NextHostedZoneId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListHostedZonesByNameResponse]
+    }
+  }
+
+  /**
+    * Lists all the private hosted zones that a specified VPC is associated with, regardless of which AWS account created the hosted zones.
+    */
+  @js.native
+  trait ListHostedZonesByVPCRequest extends js.Object {
+    var VPCId: VPCId
+    var VPCRegion: VPCRegion
+    var MaxItems: js.UndefOr[PageMaxItems]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListHostedZonesByVPCRequest {
+    @inline
+    def apply(
+        VPCId: VPCId,
+        VPCRegion: VPCRegion,
+        MaxItems: js.UndefOr[PageMaxItems] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListHostedZonesByVPCRequest = {
+      val __obj = js.Dynamic.literal(
+        "VPCId"     -> VPCId.asInstanceOf[js.Any],
+        "VPCRegion" -> VPCRegion.asInstanceOf[js.Any]
+      )
+
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListHostedZonesByVPCRequest]
+    }
+  }
+
+  @js.native
+  trait ListHostedZonesByVPCResponse extends js.Object {
+    var HostedZoneSummaries: HostedZoneSummaries
+    var MaxItems: PageMaxItems
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListHostedZonesByVPCResponse {
+    @inline
+    def apply(
+        HostedZoneSummaries: HostedZoneSummaries,
+        MaxItems: PageMaxItems,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListHostedZonesByVPCResponse = {
+      val __obj = js.Dynamic.literal(
+        "HostedZoneSummaries" -> HostedZoneSummaries.asInstanceOf[js.Any],
+        "MaxItems"            -> MaxItems.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListHostedZonesByVPCResponse]
     }
   }
 
@@ -3710,6 +3831,8 @@ package route53 {
     val `ap-east-1`      = "ap-east-1".asInstanceOf[ResourceRecordSetRegion]
     val `me-south-1`     = "me-south-1".asInstanceOf[ResourceRecordSetRegion]
     val `ap-south-1`     = "ap-south-1".asInstanceOf[ResourceRecordSetRegion]
+    val `af-south-1`     = "af-south-1".asInstanceOf[ResourceRecordSetRegion]
+    val `eu-south-1`     = "eu-south-1".asInstanceOf[ResourceRecordSetRegion]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3733,7 +3856,9 @@ package route53 {
         `cn-northwest-1`,
         `ap-east-1`,
         `me-south-1`,
-        `ap-south-1`
+        `ap-south-1`,
+        `af-south-1`,
+        `eu-south-1`
       )
     )
   }
@@ -4318,6 +4443,10 @@ package route53 {
     val `eu-central-1`   = "eu-central-1".asInstanceOf[VPCRegion]
     val `ap-east-1`      = "ap-east-1".asInstanceOf[VPCRegion]
     val `me-south-1`     = "me-south-1".asInstanceOf[VPCRegion]
+    val `us-gov-west-1`  = "us-gov-west-1".asInstanceOf[VPCRegion]
+    val `us-gov-east-1`  = "us-gov-east-1".asInstanceOf[VPCRegion]
+    val `us-iso-east-1`  = "us-iso-east-1".asInstanceOf[VPCRegion]
+    val `us-isob-east-1` = "us-isob-east-1".asInstanceOf[VPCRegion]
     val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[VPCRegion]
     val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[VPCRegion]
     val `ap-south-1`     = "ap-south-1".asInstanceOf[VPCRegion]
@@ -4328,6 +4457,8 @@ package route53 {
     val `sa-east-1`      = "sa-east-1".asInstanceOf[VPCRegion]
     val `ca-central-1`   = "ca-central-1".asInstanceOf[VPCRegion]
     val `cn-north-1`     = "cn-north-1".asInstanceOf[VPCRegion]
+    val `af-south-1`     = "af-south-1".asInstanceOf[VPCRegion]
+    val `eu-south-1`     = "eu-south-1".asInstanceOf[VPCRegion]
 
     val values = js.Object.freeze(
       js.Array(
@@ -4341,6 +4472,10 @@ package route53 {
         `eu-central-1`,
         `ap-east-1`,
         `me-south-1`,
+        `us-gov-west-1`,
+        `us-gov-east-1`,
+        `us-iso-east-1`,
+        `us-isob-east-1`,
         `ap-southeast-1`,
         `ap-southeast-2`,
         `ap-south-1`,
@@ -4350,7 +4485,9 @@ package route53 {
         `eu-north-1`,
         `sa-east-1`,
         `ca-central-1`,
-        `cn-north-1`
+        `cn-north-1`,
+        `af-south-1`,
+        `eu-south-1`
       )
     )
   }

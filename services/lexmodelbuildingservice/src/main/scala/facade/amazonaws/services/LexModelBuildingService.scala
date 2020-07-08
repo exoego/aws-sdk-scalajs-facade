@@ -9,6 +9,7 @@ import facade.amazonaws._
 package object lexmodelbuildingservice {
   type AliasName                   = String
   type AliasNameOrListAll          = String
+  type AmazonResourceName          = String
   type Blob                        = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type BotAliasMetadataList        = js.Array[BotAliasMetadata]
   type BotChannelAssociationList   = js.Array[BotChannelAssociation]
@@ -33,6 +34,7 @@ package object lexmodelbuildingservice {
   type IntentMetadataList          = js.Array[IntentMetadata]
   type IntentName                  = String
   type IntentUtteranceList         = js.Array[Utterance]
+  type KendraIndexArn              = String
   type KmsKeyArn                   = String
   type LambdaARN                   = String
   type ListOfUtterance             = js.Array[UtteranceData]
@@ -48,6 +50,7 @@ package object lexmodelbuildingservice {
   type NumericalVersion            = String
   type Priority                    = Int
   type PromptMaxAttempts           = Int
+  type QueryFilterString           = String
   type RegexPattern                = String
   type ResourceArn                 = String
   type ResourcePrefix              = String
@@ -61,12 +64,17 @@ package object lexmodelbuildingservice {
   type SlotUtteranceList           = js.Array[Utterance]
   type StringList                  = js.Array[String]
   type SynonymList                 = js.Array[Value]
+  type TagKey                      = String
+  type TagKeyList                  = js.Array[TagKey]
+  type TagList                     = js.Array[Tag]
+  type TagValue                    = String
   type Timestamp                   = js.Date
   type UserId                      = String
   type Utterance                   = String
   type UtteranceString             = String
   type Value                       = String
   type Version                     = String
+  type roleArn                     = String
 
   implicit final class LexModelBuildingServiceOps(private val service: LexModelBuildingService) extends AnyVal {
 
@@ -134,6 +142,8 @@ package object lexmodelbuildingservice {
       service.getSlotTypes(params).promise().toFuture
     @inline def getUtterancesViewFuture(params: GetUtterancesViewRequest): Future[GetUtterancesViewResponse] =
       service.getUtterancesView(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise().toFuture
     @inline def putBotAliasFuture(params: PutBotAliasRequest): Future[PutBotAliasResponse] =
       service.putBotAlias(params).promise().toFuture
     @inline def putBotFuture(params: PutBotRequest): Future[PutBotResponse] = service.putBot(params).promise().toFuture
@@ -143,6 +153,10 @@ package object lexmodelbuildingservice {
       service.putSlotType(params).promise().toFuture
     @inline def startImportFuture(params: StartImportRequest): Future[StartImportResponse] =
       service.startImport(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+      service.untagResource(params).promise().toFuture
   }
 }
 
@@ -186,11 +200,14 @@ package lexmodelbuildingservice {
     def getSlotTypeVersions(params: GetSlotTypeVersionsRequest): Request[GetSlotTypeVersionsResponse] = js.native
     def getSlotTypes(params: GetSlotTypesRequest): Request[GetSlotTypesResponse]                      = js.native
     def getUtterancesView(params: GetUtterancesViewRequest): Request[GetUtterancesViewResponse]       = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putBot(params: PutBotRequest): Request[PutBotResponse]                                        = js.native
     def putBotAlias(params: PutBotAliasRequest): Request[PutBotAliasResponse]                         = js.native
     def putIntent(params: PutIntentRequest): Request[PutIntentResponse]                               = js.native
     def putSlotType(params: PutSlotTypeRequest): Request[PutSlotTypeResponse]                         = js.native
     def startImport(params: StartImportRequest): Request[StartImportResponse]                         = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
   }
 
   /**
@@ -587,6 +604,7 @@ package lexmodelbuildingservice {
     var dialogCodeHook: js.UndefOr[CodeHook]
     var followUpPrompt: js.UndefOr[FollowUpPrompt]
     var fulfillmentActivity: js.UndefOr[FulfillmentActivity]
+    var kendraConfiguration: js.UndefOr[KendraConfiguration]
     var lastUpdatedDate: js.UndefOr[Timestamp]
     var name: js.UndefOr[IntentName]
     var parentIntentSignature: js.UndefOr[BuiltinIntentSignature]
@@ -607,6 +625,7 @@ package lexmodelbuildingservice {
         dialogCodeHook: js.UndefOr[CodeHook] = js.undefined,
         followUpPrompt: js.UndefOr[FollowUpPrompt] = js.undefined,
         fulfillmentActivity: js.UndefOr[FulfillmentActivity] = js.undefined,
+        kendraConfiguration: js.UndefOr[KendraConfiguration] = js.undefined,
         lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
         name: js.UndefOr[IntentName] = js.undefined,
         parentIntentSignature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
@@ -624,6 +643,7 @@ package lexmodelbuildingservice {
       dialogCodeHook.foreach(__v => __obj.updateDynamic("dialogCodeHook")(__v.asInstanceOf[js.Any]))
       followUpPrompt.foreach(__v => __obj.updateDynamic("followUpPrompt")(__v.asInstanceOf[js.Any]))
       fulfillmentActivity.foreach(__v => __obj.updateDynamic("fulfillmentActivity")(__v.asInstanceOf[js.Any]))
+      kendraConfiguration.foreach(__v => __obj.updateDynamic("kendraConfiguration")(__v.asInstanceOf[js.Any]))
       lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       parentIntentSignature.foreach(__v => __obj.updateDynamic("parentIntentSignature")(__v.asInstanceOf[js.Any]))
@@ -1653,6 +1673,7 @@ package lexmodelbuildingservice {
     var dialogCodeHook: js.UndefOr[CodeHook]
     var followUpPrompt: js.UndefOr[FollowUpPrompt]
     var fulfillmentActivity: js.UndefOr[FulfillmentActivity]
+    var kendraConfiguration: js.UndefOr[KendraConfiguration]
     var lastUpdatedDate: js.UndefOr[Timestamp]
     var name: js.UndefOr[IntentName]
     var parentIntentSignature: js.UndefOr[BuiltinIntentSignature]
@@ -1673,6 +1694,7 @@ package lexmodelbuildingservice {
         dialogCodeHook: js.UndefOr[CodeHook] = js.undefined,
         followUpPrompt: js.UndefOr[FollowUpPrompt] = js.undefined,
         fulfillmentActivity: js.UndefOr[FulfillmentActivity] = js.undefined,
+        kendraConfiguration: js.UndefOr[KendraConfiguration] = js.undefined,
         lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
         name: js.UndefOr[IntentName] = js.undefined,
         parentIntentSignature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
@@ -1690,6 +1712,7 @@ package lexmodelbuildingservice {
       dialogCodeHook.foreach(__v => __obj.updateDynamic("dialogCodeHook")(__v.asInstanceOf[js.Any]))
       followUpPrompt.foreach(__v => __obj.updateDynamic("followUpPrompt")(__v.asInstanceOf[js.Any]))
       fulfillmentActivity.foreach(__v => __obj.updateDynamic("fulfillmentActivity")(__v.asInstanceOf[js.Any]))
+      kendraConfiguration.foreach(__v => __obj.updateDynamic("kendraConfiguration")(__v.asInstanceOf[js.Any]))
       lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       parentIntentSignature.foreach(__v => __obj.updateDynamic("parentIntentSignature")(__v.asInstanceOf[js.Any]))
@@ -2041,6 +2064,67 @@ package lexmodelbuildingservice {
     }
   }
 
+  /**
+    * Provides configuration information for the AMAZON.KendraSearchIntent intent. When you use this intent, Amazon Lex searches the specified Amazon Kendra index and returns documents from the index that match the user's utterance. For more information, see [[http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html| AMAZON.KendraSearchIntent]].
+    */
+  @js.native
+  trait KendraConfiguration extends js.Object {
+    var kendraIndex: KendraIndexArn
+    var role: roleArn
+    var queryFilterString: js.UndefOr[QueryFilterString]
+  }
+
+  object KendraConfiguration {
+    @inline
+    def apply(
+        kendraIndex: KendraIndexArn,
+        role: roleArn,
+        queryFilterString: js.UndefOr[QueryFilterString] = js.undefined
+    ): KendraConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "kendraIndex" -> kendraIndex.asInstanceOf[js.Any],
+        "role"        -> role.asInstanceOf[js.Any]
+      )
+
+      queryFilterString.foreach(__v => __obj.updateDynamic("queryFilterString")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KendraConfiguration]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var resourceArn: AmazonResourceName
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        resourceArn: AmazonResourceName
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var tags: js.UndefOr[TagList]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        tags: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
   @js.native
   sealed trait Locale extends js.Any
   object Locale extends js.Object {
@@ -2210,6 +2294,7 @@ package lexmodelbuildingservice {
     var checksum: js.UndefOr[String]
     var conversationLogs: js.UndefOr[ConversationLogsRequest]
     var description: js.UndefOr[Description]
+    var tags: js.UndefOr[TagList]
   }
 
   object PutBotAliasRequest {
@@ -2220,7 +2305,8 @@ package lexmodelbuildingservice {
         name: AliasName,
         checksum: js.UndefOr[String] = js.undefined,
         conversationLogs: js.UndefOr[ConversationLogsRequest] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined
+        description: js.UndefOr[Description] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
     ): PutBotAliasRequest = {
       val __obj = js.Dynamic.literal(
         "botName"    -> botName.asInstanceOf[js.Any],
@@ -2231,6 +2317,7 @@ package lexmodelbuildingservice {
       checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
       conversationLogs.foreach(__v => __obj.updateDynamic("conversationLogs")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBotAliasRequest]
     }
   }
@@ -2245,6 +2332,7 @@ package lexmodelbuildingservice {
     var description: js.UndefOr[Description]
     var lastUpdatedDate: js.UndefOr[Timestamp]
     var name: js.UndefOr[AliasName]
+    var tags: js.UndefOr[TagList]
   }
 
   object PutBotAliasResponse {
@@ -2257,7 +2345,8 @@ package lexmodelbuildingservice {
         createdDate: js.UndefOr[Timestamp] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-        name: js.UndefOr[AliasName] = js.undefined
+        name: js.UndefOr[AliasName] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
     ): PutBotAliasResponse = {
       val __obj = js.Dynamic.literal()
       botName.foreach(__v => __obj.updateDynamic("botName")(__v.asInstanceOf[js.Any]))
@@ -2268,6 +2357,7 @@ package lexmodelbuildingservice {
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBotAliasResponse]
     }
   }
@@ -2286,6 +2376,7 @@ package lexmodelbuildingservice {
     var idleSessionTTLInSeconds: js.UndefOr[SessionTTL]
     var intents: js.UndefOr[IntentList]
     var processBehavior: js.UndefOr[ProcessBehavior]
+    var tags: js.UndefOr[TagList]
     var voiceId: js.UndefOr[String]
   }
 
@@ -2304,6 +2395,7 @@ package lexmodelbuildingservice {
         idleSessionTTLInSeconds: js.UndefOr[SessionTTL] = js.undefined,
         intents: js.UndefOr[IntentList] = js.undefined,
         processBehavior: js.UndefOr[ProcessBehavior] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined,
         voiceId: js.UndefOr[String] = js.undefined
     ): PutBotRequest = {
       val __obj = js.Dynamic.literal(
@@ -2321,6 +2413,7 @@ package lexmodelbuildingservice {
       idleSessionTTLInSeconds.foreach(__v => __obj.updateDynamic("idleSessionTTLInSeconds")(__v.asInstanceOf[js.Any]))
       intents.foreach(__v => __obj.updateDynamic("intents")(__v.asInstanceOf[js.Any]))
       processBehavior.foreach(__v => __obj.updateDynamic("processBehavior")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       voiceId.foreach(__v => __obj.updateDynamic("voiceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBotRequest]
     }
@@ -2343,6 +2436,7 @@ package lexmodelbuildingservice {
     var locale: js.UndefOr[Locale]
     var name: js.UndefOr[BotName]
     var status: js.UndefOr[Status]
+    var tags: js.UndefOr[TagList]
     var version: js.UndefOr[Version]
     var voiceId: js.UndefOr[String]
   }
@@ -2365,6 +2459,7 @@ package lexmodelbuildingservice {
         locale: js.UndefOr[Locale] = js.undefined,
         name: js.UndefOr[BotName] = js.undefined,
         status: js.UndefOr[Status] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined,
         version: js.UndefOr[Version] = js.undefined,
         voiceId: js.UndefOr[String] = js.undefined
     ): PutBotResponse = {
@@ -2384,6 +2479,7 @@ package lexmodelbuildingservice {
       locale.foreach(__v => __obj.updateDynamic("locale")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       voiceId.foreach(__v => __obj.updateDynamic("voiceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBotResponse]
@@ -2401,6 +2497,7 @@ package lexmodelbuildingservice {
     var dialogCodeHook: js.UndefOr[CodeHook]
     var followUpPrompt: js.UndefOr[FollowUpPrompt]
     var fulfillmentActivity: js.UndefOr[FulfillmentActivity]
+    var kendraConfiguration: js.UndefOr[KendraConfiguration]
     var parentIntentSignature: js.UndefOr[BuiltinIntentSignature]
     var rejectionStatement: js.UndefOr[Statement]
     var sampleUtterances: js.UndefOr[IntentUtteranceList]
@@ -2419,6 +2516,7 @@ package lexmodelbuildingservice {
         dialogCodeHook: js.UndefOr[CodeHook] = js.undefined,
         followUpPrompt: js.UndefOr[FollowUpPrompt] = js.undefined,
         fulfillmentActivity: js.UndefOr[FulfillmentActivity] = js.undefined,
+        kendraConfiguration: js.UndefOr[KendraConfiguration] = js.undefined,
         parentIntentSignature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
         rejectionStatement: js.UndefOr[Statement] = js.undefined,
         sampleUtterances: js.UndefOr[IntentUtteranceList] = js.undefined,
@@ -2436,6 +2534,7 @@ package lexmodelbuildingservice {
       dialogCodeHook.foreach(__v => __obj.updateDynamic("dialogCodeHook")(__v.asInstanceOf[js.Any]))
       followUpPrompt.foreach(__v => __obj.updateDynamic("followUpPrompt")(__v.asInstanceOf[js.Any]))
       fulfillmentActivity.foreach(__v => __obj.updateDynamic("fulfillmentActivity")(__v.asInstanceOf[js.Any]))
+      kendraConfiguration.foreach(__v => __obj.updateDynamic("kendraConfiguration")(__v.asInstanceOf[js.Any]))
       parentIntentSignature.foreach(__v => __obj.updateDynamic("parentIntentSignature")(__v.asInstanceOf[js.Any]))
       rejectionStatement.foreach(__v => __obj.updateDynamic("rejectionStatement")(__v.asInstanceOf[js.Any]))
       sampleUtterances.foreach(__v => __obj.updateDynamic("sampleUtterances")(__v.asInstanceOf[js.Any]))
@@ -2455,6 +2554,7 @@ package lexmodelbuildingservice {
     var dialogCodeHook: js.UndefOr[CodeHook]
     var followUpPrompt: js.UndefOr[FollowUpPrompt]
     var fulfillmentActivity: js.UndefOr[FulfillmentActivity]
+    var kendraConfiguration: js.UndefOr[KendraConfiguration]
     var lastUpdatedDate: js.UndefOr[Timestamp]
     var name: js.UndefOr[IntentName]
     var parentIntentSignature: js.UndefOr[BuiltinIntentSignature]
@@ -2476,6 +2576,7 @@ package lexmodelbuildingservice {
         dialogCodeHook: js.UndefOr[CodeHook] = js.undefined,
         followUpPrompt: js.UndefOr[FollowUpPrompt] = js.undefined,
         fulfillmentActivity: js.UndefOr[FulfillmentActivity] = js.undefined,
+        kendraConfiguration: js.UndefOr[KendraConfiguration] = js.undefined,
         lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
         name: js.UndefOr[IntentName] = js.undefined,
         parentIntentSignature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
@@ -2494,6 +2595,7 @@ package lexmodelbuildingservice {
       dialogCodeHook.foreach(__v => __obj.updateDynamic("dialogCodeHook")(__v.asInstanceOf[js.Any]))
       followUpPrompt.foreach(__v => __obj.updateDynamic("followUpPrompt")(__v.asInstanceOf[js.Any]))
       fulfillmentActivity.foreach(__v => __obj.updateDynamic("fulfillmentActivity")(__v.asInstanceOf[js.Any]))
+      kendraConfiguration.foreach(__v => __obj.updateDynamic("kendraConfiguration")(__v.asInstanceOf[js.Any]))
       lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       parentIntentSignature.foreach(__v => __obj.updateDynamic("parentIntentSignature")(__v.asInstanceOf[js.Any]))
@@ -2742,6 +2844,7 @@ package lexmodelbuildingservice {
     var mergeStrategy: MergeStrategy
     var payload: Blob
     var resourceType: ResourceType
+    var tags: js.UndefOr[TagList]
   }
 
   object StartImportRequest {
@@ -2749,7 +2852,8 @@ package lexmodelbuildingservice {
     def apply(
         mergeStrategy: MergeStrategy,
         payload: Blob,
-        resourceType: ResourceType
+        resourceType: ResourceType,
+        tags: js.UndefOr[TagList] = js.undefined
     ): StartImportRequest = {
       val __obj = js.Dynamic.literal(
         "mergeStrategy" -> mergeStrategy.asInstanceOf[js.Any],
@@ -2757,6 +2861,7 @@ package lexmodelbuildingservice {
         "resourceType"  -> resourceType.asInstanceOf[js.Any]
       )
 
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartImportRequest]
     }
   }
@@ -2769,6 +2874,7 @@ package lexmodelbuildingservice {
     var mergeStrategy: js.UndefOr[MergeStrategy]
     var name: js.UndefOr[Name]
     var resourceType: js.UndefOr[ResourceType]
+    var tags: js.UndefOr[TagList]
   }
 
   object StartImportResponse {
@@ -2779,7 +2885,8 @@ package lexmodelbuildingservice {
         importStatus: js.UndefOr[ImportStatus] = js.undefined,
         mergeStrategy: js.UndefOr[MergeStrategy] = js.undefined,
         name: js.UndefOr[Name] = js.undefined,
-        resourceType: js.UndefOr[ResourceType] = js.undefined
+        resourceType: js.UndefOr[ResourceType] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
     ): StartImportResponse = {
       val __obj = js.Dynamic.literal()
       createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
@@ -2788,6 +2895,7 @@ package lexmodelbuildingservice {
       mergeStrategy.foreach(__v => __obj.updateDynamic("mergeStrategy")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartImportResponse]
     }
   }
@@ -2835,6 +2943,98 @@ package lexmodelbuildingservice {
     val Missed   = "Missed".asInstanceOf[StatusType]
 
     val values = js.Object.freeze(js.Array(Detected, Missed))
+  }
+
+  /**
+    * A list of key/value pairs that identify a bot, bot alias, or bot channel. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var key: TagKey
+    var value: TagValue
+  }
+
+  object Tag {
+    @inline
+    def apply(
+        key: TagKey,
+        value: TagValue
+    ): Tag = {
+      val __obj = js.Dynamic.literal(
+        "key"   -> key.asInstanceOf[js.Any],
+        "value" -> value.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var resourceArn: AmazonResourceName
+    var tags: TagList
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        resourceArn: AmazonResourceName,
+        tags: TagList
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tags"        -> tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object {}
+
+  object TagResourceResponse {
+    @inline
+    def apply(
+    ): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var resourceArn: AmazonResourceName
+    var tagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        resourceArn: AmazonResourceName,
+        tagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object {}
+
+  object UntagResourceResponse {
+    @inline
+    def apply(
+    ): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[UntagResourceResponse]
+    }
   }
 
   /**

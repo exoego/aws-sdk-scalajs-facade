@@ -120,6 +120,7 @@ package kinesisvideo {
     val GET_MEDIA_FOR_FRAGMENT_LIST    = "GET_MEDIA_FOR_FRAGMENT_LIST".asInstanceOf[APIName]
     val GET_HLS_STREAMING_SESSION_URL  = "GET_HLS_STREAMING_SESSION_URL".asInstanceOf[APIName]
     val GET_DASH_STREAMING_SESSION_URL = "GET_DASH_STREAMING_SESSION_URL".asInstanceOf[APIName]
+    val GET_CLIP                       = "GET_CLIP".asInstanceOf[APIName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -128,7 +129,8 @@ package kinesisvideo {
         LIST_FRAGMENTS,
         GET_MEDIA_FOR_FRAGMENT_LIST,
         GET_HLS_STREAMING_SESSION_URL,
-        GET_DASH_STREAMING_SESSION_URL
+        GET_DASH_STREAMING_SESSION_URL,
+        GET_CLIP
       )
     )
   }

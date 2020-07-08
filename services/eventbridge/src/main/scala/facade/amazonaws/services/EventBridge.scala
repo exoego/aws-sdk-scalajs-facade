@@ -213,7 +213,7 @@ package eventbridge {
   }
 
   /**
-    * This structure specifies the VPC subnets and security groups for the task and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.
+    * This structure specifies the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.
     */
   @js.native
   trait AwsVpcConfiguration extends js.Object {
@@ -289,7 +289,7 @@ package eventbridge {
   }
 
   /**
-    * The retry strategy to use for failed jobs if the target is an AWS Batch job. If you specify a retry strategy here, it overrides the retry strategy defined in the job definition.
+    * The retry strategy to use for failed jobs, if the target is an AWS Batch job. If you specify a retry strategy here, it overrides the retry strategy defined in the job definition.
     */
   @js.native
   trait BatchRetryStrategy extends js.Object {
@@ -308,7 +308,7 @@ package eventbridge {
   }
 
   /**
-    * A JSON string that you can use to limit the event bus permissions that you're granting to only accounts that fulfill the condition. Currently, the only supported condition is membership in a certain AWS organization. The string must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields. The <code>Value</code> field specifies the ID of the AWS organization. The following is an example value for <code>Condition</code>:
+    * A JSON string which you can use to limit the event bus permissions you are granting to only accounts that fulfill the condition. Currently, the only supported condition is membership in a certain AWS organization. The string must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields. The <code>Value</code> field specifies the ID of the AWS organization. Following is an example value for <code>Condition</code>:
     *  <code>'{"Type" : "StringEquals", "Key": "aws:PrincipalOrgID", "Value": "o-1234567890"}'</code>
     */
   @js.native
@@ -339,19 +339,22 @@ package eventbridge {
   trait CreateEventBusRequest extends js.Object {
     var Name: EventBusName
     var EventSourceName: js.UndefOr[EventSourceName]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateEventBusRequest {
     @inline
     def apply(
         Name: EventBusName,
-        EventSourceName: js.UndefOr[EventSourceName] = js.undefined
+        EventSourceName: js.UndefOr[EventSourceName] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateEventBusRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
       EventSourceName.foreach(__v => __obj.updateDynamic("EventSourceName")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateEventBusRequest]
     }
   }
@@ -847,7 +850,7 @@ package eventbridge {
   }
 
   /**
-    * This object enables you to specify a JSON path to extract from the event and use as the partition key for the Amazon Kinesis data stream so that you can control the shard that the event goes to. If you don't include this parameter, the default is to use the <code>eventId</code> as the partition key.
+    * This object enables you to specify a JSON path to extract from the event and use as the partition key for the Amazon Kinesis data stream, so that you can control the shard to which the event goes. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.
     */
   @js.native
   trait KinesisParameters extends js.Object {
@@ -1407,7 +1410,7 @@ package eventbridge {
     var Detail: js.UndefOr[String]
     var DetailType: js.UndefOr[String]
     var Resources: js.UndefOr[EventResourceList]
-    var Source: js.UndefOr[String]
+    var Source: js.UndefOr[EventSourceName]
     var Time: js.UndefOr[EventTime]
   }
 
@@ -1417,7 +1420,7 @@ package eventbridge {
         Detail: js.UndefOr[String] = js.undefined,
         DetailType: js.UndefOr[String] = js.undefined,
         Resources: js.UndefOr[EventResourceList] = js.undefined,
-        Source: js.UndefOr[String] = js.undefined,
+        Source: js.UndefOr[EventSourceName] = js.undefined,
         Time: js.UndefOr[EventTime] = js.undefined
     ): PutPartnerEventsRequestEntry = {
       val __obj = js.Dynamic.literal()
@@ -1450,7 +1453,7 @@ package eventbridge {
   }
 
   /**
-    * Represents an event that a partner tried to generate but failed.
+    * Represents an event that a partner tried to generate, but failed.
     */
   @js.native
   trait PutPartnerEventsResultEntry extends js.Object {
@@ -1772,7 +1775,7 @@ package eventbridge {
   }
 
   /**
-    * This parameter contains the criteria (either <code>InstanceIds</code> or a tag) used to specify which EC2 instances are to be sent the command.
+    * This parameter contains the criteria (either InstanceIds or a tag) used to specify which EC2 instances are to be sent the command.
     */
   @js.native
   trait RunCommandParameters extends js.Object {
@@ -1793,7 +1796,7 @@ package eventbridge {
   }
 
   /**
-    * Information about the EC2 instances that are to be sent the command, specified as key-value pairs. Each <code>RunCommandTarget</code> block can include only one key, but this key can specify multiple values.
+    * Information about the EC2 instances that are to be sent the command, specified as key-value pairs. Each <code>RunCommandTarget</code> block can include only one key, but this key may specify multiple values.
     */
   @js.native
   trait RunCommandTarget extends js.Object {
@@ -1836,7 +1839,7 @@ package eventbridge {
   }
 
   /**
-    * A key-value pair associated with an AWS resource. In EventBridge, rules support tagging.
+    * A key-value pair associated with an AWS resource. In EventBridge, rules and event buses support tagging.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1895,7 +1898,7 @@ package eventbridge {
 
   /**
     * Targets are the resources to be invoked when a rule is triggered. For a complete list of services and resources that can be set as a target, see <a>PutTargets</a>.
-    *  If you're setting the event bus of another account as the target and that account granted permission to your account through an organization instead of directly by the account ID, you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure. For more information, see [[https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html|Sending and Receiving Events Between AWS Accounts]] in the <i>Amazon EventBridge User Guide</i>.
+    *  If you are setting the event bus of another account as the target, and that account granted permission to your account through an organization instead of directly by the account ID, then you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure. For more information, see [[https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html|Sending and Receiving Events Between AWS Accounts]] in the <i>Amazon EventBridge User Guide</i>.
     */
   @js.native
   trait Target extends js.Object {

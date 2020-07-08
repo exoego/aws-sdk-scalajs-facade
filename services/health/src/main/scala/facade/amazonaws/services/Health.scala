@@ -226,6 +226,7 @@ package health {
   @js.native
   trait DescribeAffectedAccountsForOrganizationResponse extends js.Object {
     var affectedAccounts: js.UndefOr[affectedAccountsList]
+    var eventScopeCode: js.UndefOr[eventScopeCode]
     var nextToken: js.UndefOr[nextToken]
   }
 
@@ -233,10 +234,12 @@ package health {
     @inline
     def apply(
         affectedAccounts: js.UndefOr[affectedAccountsList] = js.undefined,
+        eventScopeCode: js.UndefOr[eventScopeCode] = js.undefined,
         nextToken: js.UndefOr[nextToken] = js.undefined
     ): DescribeAffectedAccountsForOrganizationResponse = {
       val __obj = js.Dynamic.literal()
       affectedAccounts.foreach(__v => __obj.updateDynamic("affectedAccounts")(__v.asInstanceOf[js.Any]))
+      eventScopeCode.foreach(__v => __obj.updateDynamic("eventScopeCode")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAffectedAccountsForOrganizationResponse]
     }
@@ -711,6 +714,7 @@ package health {
     var arn: js.UndefOr[eventArn]
     var availabilityZone: js.UndefOr[availabilityZone]
     var endTime: js.UndefOr[timestamp]
+    var eventScopeCode: js.UndefOr[eventScopeCode]
     var eventTypeCategory: js.UndefOr[eventTypeCategory]
     var eventTypeCode: js.UndefOr[eventTypeCode]
     var lastUpdatedTime: js.UndefOr[timestamp]
@@ -726,6 +730,7 @@ package health {
         arn: js.UndefOr[eventArn] = js.undefined,
         availabilityZone: js.UndefOr[availabilityZone] = js.undefined,
         endTime: js.UndefOr[timestamp] = js.undefined,
+        eventScopeCode: js.UndefOr[eventScopeCode] = js.undefined,
         eventTypeCategory: js.UndefOr[eventTypeCategory] = js.undefined,
         eventTypeCode: js.UndefOr[eventTypeCode] = js.undefined,
         lastUpdatedTime: js.UndefOr[timestamp] = js.undefined,
@@ -738,6 +743,7 @@ package health {
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       availabilityZone.foreach(__v => __obj.updateDynamic("availabilityZone")(__v.asInstanceOf[js.Any]))
       endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      eventScopeCode.foreach(__v => __obj.updateDynamic("eventScopeCode")(__v.asInstanceOf[js.Any]))
       eventTypeCategory.foreach(__v => __obj.updateDynamic("eventTypeCategory")(__v.asInstanceOf[js.Any]))
       eventTypeCode.foreach(__v => __obj.updateDynamic("eventTypeCode")(__v.asInstanceOf[js.Any]))
       lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
@@ -754,21 +760,21 @@ package health {
     */
   @js.native
   trait EventAccountFilter extends js.Object {
-    var awsAccountId: accountId
     var eventArn: eventArn
+    var awsAccountId: js.UndefOr[accountId]
   }
 
   object EventAccountFilter {
     @inline
     def apply(
-        awsAccountId: accountId,
-        eventArn: eventArn
+        eventArn: eventArn,
+        awsAccountId: js.UndefOr[accountId] = js.undefined
     ): EventAccountFilter = {
       val __obj = js.Dynamic.literal(
-        "awsAccountId" -> awsAccountId.asInstanceOf[js.Any],
-        "eventArn"     -> eventArn.asInstanceOf[js.Any]
+        "eventArn" -> eventArn.asInstanceOf[js.Any]
       )
 
+      awsAccountId.foreach(__v => __obj.updateDynamic("awsAccountId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventAccountFilter]
     }
   }
@@ -1004,6 +1010,7 @@ package health {
   trait OrganizationEvent extends js.Object {
     var arn: js.UndefOr[eventArn]
     var endTime: js.UndefOr[timestamp]
+    var eventScopeCode: js.UndefOr[eventScopeCode]
     var eventTypeCategory: js.UndefOr[eventTypeCategory]
     var eventTypeCode: js.UndefOr[eventTypeCode]
     var lastUpdatedTime: js.UndefOr[timestamp]
@@ -1018,6 +1025,7 @@ package health {
     def apply(
         arn: js.UndefOr[eventArn] = js.undefined,
         endTime: js.UndefOr[timestamp] = js.undefined,
+        eventScopeCode: js.UndefOr[eventScopeCode] = js.undefined,
         eventTypeCategory: js.UndefOr[eventTypeCategory] = js.undefined,
         eventTypeCode: js.UndefOr[eventTypeCode] = js.undefined,
         lastUpdatedTime: js.UndefOr[timestamp] = js.undefined,
@@ -1029,6 +1037,7 @@ package health {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      eventScopeCode.foreach(__v => __obj.updateDynamic("eventScopeCode")(__v.asInstanceOf[js.Any]))
       eventTypeCategory.foreach(__v => __obj.updateDynamic("eventTypeCategory")(__v.asInstanceOf[js.Any]))
       eventTypeCode.foreach(__v => __obj.updateDynamic("eventTypeCode")(__v.asInstanceOf[js.Any]))
       lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
@@ -1161,6 +1170,16 @@ package health {
     val eventTypeCategory = "eventTypeCategory".asInstanceOf[eventAggregateField]
 
     val values = js.Object.freeze(js.Array(eventTypeCategory))
+  }
+
+  @js.native
+  sealed trait eventScopeCode extends js.Any
+  object eventScopeCode extends js.Object {
+    val PUBLIC           = "PUBLIC".asInstanceOf[eventScopeCode]
+    val ACCOUNT_SPECIFIC = "ACCOUNT_SPECIFIC".asInstanceOf[eventScopeCode]
+    val NONE             = "NONE".asInstanceOf[eventScopeCode]
+
+    val values = js.Object.freeze(js.Array(PUBLIC, ACCOUNT_SPECIFIC, NONE))
   }
 
   @js.native

@@ -12,12 +12,10 @@ package object macie {
   type ErrorCode                       = String
   type ExceptionMessage                = String
   type FailedS3Resources               = js.Array[FailedS3Resource]
-  type FieldName                       = String
   type MaxResults                      = Int
   type MemberAccounts                  = js.Array[MemberAccount]
   type NextToken                       = String
   type Prefix                          = String
-  type ResourceType                    = String
   type S3Resources                     = js.Array[S3Resource]
   type S3ResourcesClassification       = js.Array[S3ResourceClassification]
   type S3ResourcesClassificationUpdate = js.Array[S3ResourceClassificationUpdate]
@@ -56,15 +54,6 @@ package macie {
     def listMemberAccounts(params: ListMemberAccountsRequest): Request[ListMemberAccountsResult] = js.native
     def listS3Resources(params: ListS3ResourcesRequest): Request[ListS3ResourcesResult]          = js.native
     def updateS3Resources(params: UpdateS3ResourcesRequest): Request[UpdateS3ResourcesResult]    = js.native
-  }
-
-  /**
-    * You do not have required permissions to access the requested resource.
-    */
-  @js.native
-  trait AccessDeniedExceptionException extends js.Object {
-    val message: ExceptionMessage
-    val resourceType: ResourceType
   }
 
   @js.native
@@ -123,7 +112,7 @@ package macie {
   }
 
   /**
-    * The classification type that Amazon Macie applies to the associated S3 resources.
+    * The classification type that Amazon Macie Classic applies to the associated S3 resources.
     */
   @js.native
   trait ClassificationType extends js.Object {
@@ -147,7 +136,7 @@ package macie {
   }
 
   /**
-    * The classification type that Amazon Macie applies to the associated S3 resources. At least one of the classification types (oneTime or continuous) must be specified.
+    * The classification type that Amazon Macie Classic applies to the associated S3 resources. At least one of the classification types (oneTime or continuous) must be specified.
     */
   @js.native
   trait ClassificationTypeUpdate extends js.Object {
@@ -248,35 +237,6 @@ package macie {
     }
   }
 
-  /**
-    * Internal server error.
-    */
-  @js.native
-  trait InternalExceptionException extends js.Object {
-    val errorCode: ErrorCode
-    val message: ExceptionMessage
-  }
-
-  /**
-    * The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
-    */
-  @js.native
-  trait InvalidInputExceptionException extends js.Object {
-    val errorCode: ErrorCode
-    val message: ExceptionMessage
-    val fieldName: FieldName
-  }
-
-  /**
-    * The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.
-    */
-  @js.native
-  trait LimitExceededExceptionException extends js.Object {
-    val errorCode: ErrorCode
-    val message: ExceptionMessage
-    val resourceType: ResourceType
-  }
-
   @js.native
   trait ListMemberAccountsRequest extends js.Object {
     var maxResults: js.UndefOr[MaxResults]
@@ -357,7 +317,7 @@ package macie {
   }
 
   /**
-    * Contains information about the Amazon Macie member account.
+    * Contains information about the Amazon Macie Classic member account.
     */
   @js.native
   trait MemberAccount extends js.Object {
@@ -417,7 +377,7 @@ package macie {
   }
 
   /**
-    * The S3 resources that you want to associate with Amazon Macie for monitoring and data classification. This data type is used as a request parameter in the AssociateS3Resources action and a response parameter in the ListS3Resources action.
+    * The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification. This data type is used as a request parameter in the AssociateS3Resources action and a response parameter in the ListS3Resources action.
     */
   @js.native
   trait S3ResourceClassification extends js.Object {

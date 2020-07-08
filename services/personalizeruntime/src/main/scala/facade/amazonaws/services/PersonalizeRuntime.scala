@@ -15,6 +15,7 @@ package object personalizeruntime {
   type ItemID         = String
   type ItemList       = js.Array[PredictedItem]
   type NumResults     = Int
+  type Score          = Double
   type UserID         = String
 
   implicit final class PersonalizeRuntimeOps(private val service: PersonalizeRuntime) extends AnyVal {
@@ -85,6 +86,7 @@ package personalizeruntime {
   trait GetRecommendationsRequest extends js.Object {
     var campaignArn: Arn
     var context: js.UndefOr[Context]
+    var filterArn: js.UndefOr[Arn]
     var itemId: js.UndefOr[ItemID]
     var numResults: js.UndefOr[NumResults]
     var userId: js.UndefOr[UserID]
@@ -95,6 +97,7 @@ package personalizeruntime {
     def apply(
         campaignArn: Arn,
         context: js.UndefOr[Context] = js.undefined,
+        filterArn: js.UndefOr[Arn] = js.undefined,
         itemId: js.UndefOr[ItemID] = js.undefined,
         numResults: js.UndefOr[NumResults] = js.undefined,
         userId: js.UndefOr[UserID] = js.undefined
@@ -104,6 +107,7 @@ package personalizeruntime {
       )
 
       context.foreach(__v => __obj.updateDynamic("context")(__v.asInstanceOf[js.Any]))
+      filterArn.foreach(__v => __obj.updateDynamic("filterArn")(__v.asInstanceOf[js.Any]))
       itemId.foreach(__v => __obj.updateDynamic("itemId")(__v.asInstanceOf[js.Any]))
       numResults.foreach(__v => __obj.updateDynamic("numResults")(__v.asInstanceOf[js.Any]))
       userId.foreach(__v => __obj.updateDynamic("userId")(__v.asInstanceOf[js.Any]))
@@ -134,15 +138,18 @@ package personalizeruntime {
   @js.native
   trait PredictedItem extends js.Object {
     var itemId: js.UndefOr[ItemID]
+    var score: js.UndefOr[Score]
   }
 
   object PredictedItem {
     @inline
     def apply(
-        itemId: js.UndefOr[ItemID] = js.undefined
+        itemId: js.UndefOr[ItemID] = js.undefined,
+        score: js.UndefOr[Score] = js.undefined
     ): PredictedItem = {
       val __obj = js.Dynamic.literal()
       itemId.foreach(__v => __obj.updateDynamic("itemId")(__v.asInstanceOf[js.Any]))
+      score.foreach(__v => __obj.updateDynamic("score")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PredictedItem]
     }
   }

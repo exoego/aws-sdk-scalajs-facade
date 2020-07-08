@@ -22,6 +22,8 @@ package object elasticbeanstalk {
   type AvailableSolutionStackNamesList      = js.Array[SolutionStackName]
   type BoxedBoolean                         = Boolean
   type BoxedInt                             = Int
+  type BranchName                           = String
+  type BranchOrder                          = Int
   type Cause                                = String
   type Causes                               = js.Array[Cause]
   type CnameAvailability                    = Boolean
@@ -86,12 +88,16 @@ package object elasticbeanstalk {
   type NullableLong                         = Double
   type OperatingSystemName                  = String
   type OperatingSystemVersion               = String
+  type OperationsRole                       = String
   type OptionNamespace                      = String
   type OptionRestrictionMaxLength           = Int
   type OptionRestrictionMaxValue            = Int
   type OptionRestrictionMinValue            = Int
   type OptionsSpecifierList                 = js.Array[OptionSpecification]
   type PlatformArn                          = String
+  type PlatformBranchLifecycleState         = String
+  type PlatformBranchMaxRecords             = Int
+  type PlatformBranchSummaryList            = js.Array[PlatformBranchSummary]
   type PlatformCategory                     = String
   type PlatformFilterOperator               = String
   type PlatformFilterType                   = String
@@ -99,6 +105,7 @@ package object elasticbeanstalk {
   type PlatformFilterValueList              = js.Array[PlatformFilterValue]
   type PlatformFilters                      = js.Array[PlatformFilter]
   type PlatformFrameworks                   = js.Array[PlatformFramework]
+  type PlatformLifecycleState               = String
   type PlatformMaxRecords                   = Int
   type PlatformName                         = String
   type PlatformOwner                        = String
@@ -117,6 +124,11 @@ package object elasticbeanstalk {
   type S3Bucket                             = String
   type S3Key                                = String
   type SampleTimestamp                      = js.Date
+  type SearchFilterAttribute                = String
+  type SearchFilterOperator                 = String
+  type SearchFilterValue                    = String
+  type SearchFilterValues                   = js.Array[SearchFilterValue]
+  type SearchFilters                        = js.Array[SearchFilter]
   type SolutionStackFileTypeList            = js.Array[FileTypeExtension]
   type SolutionStackName                    = String
   type SourceLocation                       = String
@@ -152,6 +164,9 @@ package object elasticbeanstalk {
     @inline def applyEnvironmentManagedActionFuture(
         params: ApplyEnvironmentManagedActionRequest
     ): Future[ApplyEnvironmentManagedActionResult] = service.applyEnvironmentManagedAction(params).promise().toFuture
+    @inline def associateEnvironmentOperationsRoleFuture(
+        params: AssociateEnvironmentOperationsRoleMessage
+    ): Future[js.Object] = service.associateEnvironmentOperationsRole(params).promise().toFuture
     @inline def checkDNSAvailabilityFuture(
         params: CheckDNSAvailabilityMessage
     ): Future[CheckDNSAvailabilityResultMessage] = service.checkDNSAvailability(params).promise().toFuture
@@ -220,8 +235,13 @@ package object elasticbeanstalk {
     @inline def describePlatformVersionFuture(
         params: DescribePlatformVersionRequest
     ): Future[DescribePlatformVersionResult] = service.describePlatformVersion(params).promise().toFuture
+    @inline def disassociateEnvironmentOperationsRoleFuture(
+        params: DisassociateEnvironmentOperationsRoleMessage
+    ): Future[js.Object] = service.disassociateEnvironmentOperationsRole(params).promise().toFuture
     @inline def listAvailableSolutionStacksFuture(): Future[ListAvailableSolutionStacksResultMessage] =
       service.listAvailableSolutionStacks().promise().toFuture
+    @inline def listPlatformBranchesFuture(params: ListPlatformBranchesRequest): Future[ListPlatformBranchesResult] =
+      service.listPlatformBranches(params).promise().toFuture
     @inline def listPlatformVersionsFuture(params: ListPlatformVersionsRequest): Future[ListPlatformVersionsResult] =
       service.listPlatformVersions(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceMessage): Future[ResourceTagsDescriptionMessage] =
@@ -272,6 +292,8 @@ package elasticbeanstalk {
     def applyEnvironmentManagedAction(
         params: ApplyEnvironmentManagedActionRequest
     ): Request[ApplyEnvironmentManagedActionResult] = js.native
+    def associateEnvironmentOperationsRole(params: AssociateEnvironmentOperationsRoleMessage): Request[js.Object] =
+      js.native
     def checkDNSAvailability(params: CheckDNSAvailabilityMessage): Request[CheckDNSAvailabilityResultMessage] =
       js.native
     def composeEnvironments(params: ComposeEnvironmentsMessage): Request[EnvironmentDescriptionsMessage] = js.native
@@ -318,7 +340,11 @@ package elasticbeanstalk {
       js.native
     def describePlatformVersion(params: DescribePlatformVersionRequest): Request[DescribePlatformVersionResult] =
       js.native
+    def disassociateEnvironmentOperationsRole(
+        params: DisassociateEnvironmentOperationsRoleMessage
+    ): Request[js.Object]                                                                                = js.native
     def listAvailableSolutionStacks(): Request[ListAvailableSolutionStacksResultMessage]                 = js.native
+    def listPlatformBranches(params: ListPlatformBranchesRequest): Request[ListPlatformBranchesResult]   = js.native
     def listPlatformVersions(params: ListPlatformVersionsRequest): Request[ListPlatformVersionsResult]   = js.native
     def listTagsForResource(params: ListTagsForResourceMessage): Request[ResourceTagsDescriptionMessage] = js.native
     def rebuildEnvironment(params: RebuildEnvironmentMessage): Request[js.Object]                        = js.native
@@ -505,7 +531,7 @@ package elasticbeanstalk {
   }
 
   /**
-    * The resource lifecycle configuration for an application. Defines lifecycle settings for resources that belong to the application, and the service role that Elastic Beanstalk assumes in order to apply lifecycle settings. The version lifecycle configuration defines lifecycle settings for application versions.
+    * The resource lifecycle configuration for an application. Defines lifecycle settings for resources that belong to the application, and the service role that AWS Elastic Beanstalk assumes in order to apply lifecycle settings. The version lifecycle configuration defines lifecycle settings for application versions.
     */
   @js.native
   trait ApplicationResourceLifecycleConfig extends js.Object {
@@ -719,6 +745,30 @@ package elasticbeanstalk {
       ActionType.foreach(__v => __obj.updateDynamic("ActionType")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplyEnvironmentManagedActionResult]
+    }
+  }
+
+  /**
+    * Request to add or change the operations role used by an environment.
+    */
+  @js.native
+  trait AssociateEnvironmentOperationsRoleMessage extends js.Object {
+    var EnvironmentName: EnvironmentName
+    var OperationsRole: OperationsRole
+  }
+
+  object AssociateEnvironmentOperationsRoleMessage {
+    @inline
+    def apply(
+        EnvironmentName: EnvironmentName,
+        OperationsRole: OperationsRole
+    ): AssociateEnvironmentOperationsRoleMessage = {
+      val __obj = js.Dynamic.literal(
+        "EnvironmentName" -> EnvironmentName.asInstanceOf[js.Any],
+        "OperationsRole"  -> OperationsRole.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[AssociateEnvironmentOperationsRoleMessage]
     }
   }
 
@@ -971,7 +1021,7 @@ package elasticbeanstalk {
   }
 
   /**
-    * A specification identifying an individual configuration option along with its current value. For a list of possible option values, go to [[https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html|Option Values]] in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+    * A specification identifying an individual configuration option along with its current value. For a list of possible namespaces and option values, see [[https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html|Option Values]] in the <i>AWS Elastic Beanstalk Developer Guide</i>.
     */
   @js.native
   trait ConfigurationOptionSetting extends js.Object {
@@ -1246,6 +1296,7 @@ package elasticbeanstalk {
     var Description: js.UndefOr[Description]
     var EnvironmentName: js.UndefOr[EnvironmentName]
     var GroupName: js.UndefOr[GroupName]
+    var OperationsRole: js.UndefOr[OperationsRole]
     var OptionSettings: js.UndefOr[ConfigurationOptionSettingsList]
     var OptionsToRemove: js.UndefOr[OptionsSpecifierList]
     var PlatformArn: js.UndefOr[PlatformArn]
@@ -1264,6 +1315,7 @@ package elasticbeanstalk {
         Description: js.UndefOr[Description] = js.undefined,
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
         GroupName: js.UndefOr[GroupName] = js.undefined,
+        OperationsRole: js.UndefOr[OperationsRole] = js.undefined,
         OptionSettings: js.UndefOr[ConfigurationOptionSettingsList] = js.undefined,
         OptionsToRemove: js.UndefOr[OptionsSpecifierList] = js.undefined,
         PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
@@ -1281,6 +1333,7 @@ package elasticbeanstalk {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       EnvironmentName.foreach(__v => __obj.updateDynamic("EnvironmentName")(__v.asInstanceOf[js.Any]))
       GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
+      OperationsRole.foreach(__v => __obj.updateDynamic("OperationsRole")(__v.asInstanceOf[js.Any]))
       OptionSettings.foreach(__v => __obj.updateDynamic("OptionSettings")(__v.asInstanceOf[js.Any]))
       OptionsToRemove.foreach(__v => __obj.updateDynamic("OptionsToRemove")(__v.asInstanceOf[js.Any]))
       PlatformArn.foreach(__v => __obj.updateDynamic("PlatformArn")(__v.asInstanceOf[js.Any]))
@@ -2033,6 +2086,27 @@ package elasticbeanstalk {
   }
 
   /**
+    * Request to disassociate the operations role from an environment.
+    */
+  @js.native
+  trait DisassociateEnvironmentOperationsRoleMessage extends js.Object {
+    var EnvironmentName: EnvironmentName
+  }
+
+  object DisassociateEnvironmentOperationsRoleMessage {
+    @inline
+    def apply(
+        EnvironmentName: EnvironmentName
+    ): DisassociateEnvironmentOperationsRoleMessage = {
+      val __obj = js.Dynamic.literal(
+        "EnvironmentName" -> EnvironmentName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DisassociateEnvironmentOperationsRoleMessage]
+    }
+  }
+
+  /**
     * Describes the properties of an environment.
     */
   @js.native
@@ -2050,6 +2124,7 @@ package elasticbeanstalk {
     var EnvironmentName: js.UndefOr[EnvironmentName]
     var Health: js.UndefOr[EnvironmentHealth]
     var HealthStatus: js.UndefOr[EnvironmentHealthStatus]
+    var OperationsRole: js.UndefOr[OperationsRole]
     var PlatformArn: js.UndefOr[PlatformArn]
     var Resources: js.UndefOr[EnvironmentResourcesDescription]
     var SolutionStackName: js.UndefOr[SolutionStackName]
@@ -2075,6 +2150,7 @@ package elasticbeanstalk {
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
         Health: js.UndefOr[EnvironmentHealth] = js.undefined,
         HealthStatus: js.UndefOr[EnvironmentHealthStatus] = js.undefined,
+        OperationsRole: js.UndefOr[OperationsRole] = js.undefined,
         PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
         Resources: js.UndefOr[EnvironmentResourcesDescription] = js.undefined,
         SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined,
@@ -2099,6 +2175,7 @@ package elasticbeanstalk {
       EnvironmentName.foreach(__v => __obj.updateDynamic("EnvironmentName")(__v.asInstanceOf[js.Any]))
       Health.foreach(__v => __obj.updateDynamic("Health")(__v.asInstanceOf[js.Any]))
       HealthStatus.foreach(__v => __obj.updateDynamic("HealthStatus")(__v.asInstanceOf[js.Any]))
+      OperationsRole.foreach(__v => __obj.updateDynamic("OperationsRole")(__v.asInstanceOf[js.Any]))
       PlatformArn.foreach(__v => __obj.updateDynamic("PlatformArn")(__v.asInstanceOf[js.Any]))
       Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
       SolutionStackName.foreach(__v => __obj.updateDynamic("SolutionStackName")(__v.asInstanceOf[js.Any]))
@@ -2644,6 +2721,49 @@ package elasticbeanstalk {
   }
 
   @js.native
+  trait ListPlatformBranchesRequest extends js.Object {
+    var Filters: js.UndefOr[SearchFilters]
+    var MaxRecords: js.UndefOr[PlatformBranchMaxRecords]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListPlatformBranchesRequest {
+    @inline
+    def apply(
+        Filters: js.UndefOr[SearchFilters] = js.undefined,
+        MaxRecords: js.UndefOr[PlatformBranchMaxRecords] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListPlatformBranchesRequest = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPlatformBranchesRequest]
+    }
+  }
+
+  @js.native
+  trait ListPlatformBranchesResult extends js.Object {
+    var NextToken: js.UndefOr[Token]
+    var PlatformBranchSummaryList: js.UndefOr[PlatformBranchSummaryList]
+  }
+
+  object ListPlatformBranchesResult {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[Token] = js.undefined,
+        PlatformBranchSummaryList: js.UndefOr[PlatformBranchSummaryList] = js.undefined
+    ): ListPlatformBranchesResult = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PlatformBranchSummaryList.foreach(__v =>
+        __obj.updateDynamic("PlatformBranchSummaryList")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ListPlatformBranchesResult]
+    }
+  }
+
+  @js.native
   trait ListPlatformVersionsRequest extends js.Object {
     var Filters: js.UndefOr[PlatformFilters]
     var MaxRecords: js.UndefOr[PlatformMaxRecords]
@@ -2941,7 +3061,38 @@ package elasticbeanstalk {
   }
 
   /**
-    * Detailed information about a platform.
+    * Summary information about a platform branch.
+    */
+  @js.native
+  trait PlatformBranchSummary extends js.Object {
+    var BranchName: js.UndefOr[BranchName]
+    var BranchOrder: js.UndefOr[BranchOrder]
+    var LifecycleState: js.UndefOr[PlatformBranchLifecycleState]
+    var PlatformName: js.UndefOr[PlatformName]
+    var SupportedTierList: js.UndefOr[SupportedTierList]
+  }
+
+  object PlatformBranchSummary {
+    @inline
+    def apply(
+        BranchName: js.UndefOr[BranchName] = js.undefined,
+        BranchOrder: js.UndefOr[BranchOrder] = js.undefined,
+        LifecycleState: js.UndefOr[PlatformBranchLifecycleState] = js.undefined,
+        PlatformName: js.UndefOr[PlatformName] = js.undefined,
+        SupportedTierList: js.UndefOr[SupportedTierList] = js.undefined
+    ): PlatformBranchSummary = {
+      val __obj = js.Dynamic.literal()
+      BranchName.foreach(__v => __obj.updateDynamic("BranchName")(__v.asInstanceOf[js.Any]))
+      BranchOrder.foreach(__v => __obj.updateDynamic("BranchOrder")(__v.asInstanceOf[js.Any]))
+      LifecycleState.foreach(__v => __obj.updateDynamic("LifecycleState")(__v.asInstanceOf[js.Any]))
+      PlatformName.foreach(__v => __obj.updateDynamic("PlatformName")(__v.asInstanceOf[js.Any]))
+      SupportedTierList.foreach(__v => __obj.updateDynamic("SupportedTierList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PlatformBranchSummary]
+    }
+  }
+
+  /**
+    * Detailed information about a platform version.
     */
   @js.native
   trait PlatformDescription extends js.Object {
@@ -2954,7 +3105,10 @@ package elasticbeanstalk {
     var OperatingSystemName: js.UndefOr[OperatingSystemName]
     var OperatingSystemVersion: js.UndefOr[OperatingSystemVersion]
     var PlatformArn: js.UndefOr[PlatformArn]
+    var PlatformBranchLifecycleState: js.UndefOr[PlatformBranchLifecycleState]
+    var PlatformBranchName: js.UndefOr[BranchName]
     var PlatformCategory: js.UndefOr[PlatformCategory]
+    var PlatformLifecycleState: js.UndefOr[PlatformLifecycleState]
     var PlatformName: js.UndefOr[PlatformName]
     var PlatformOwner: js.UndefOr[PlatformOwner]
     var PlatformStatus: js.UndefOr[PlatformStatus]
@@ -2977,7 +3131,10 @@ package elasticbeanstalk {
         OperatingSystemName: js.UndefOr[OperatingSystemName] = js.undefined,
         OperatingSystemVersion: js.UndefOr[OperatingSystemVersion] = js.undefined,
         PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
+        PlatformBranchLifecycleState: js.UndefOr[PlatformBranchLifecycleState] = js.undefined,
+        PlatformBranchName: js.UndefOr[BranchName] = js.undefined,
         PlatformCategory: js.UndefOr[PlatformCategory] = js.undefined,
+        PlatformLifecycleState: js.UndefOr[PlatformLifecycleState] = js.undefined,
         PlatformName: js.UndefOr[PlatformName] = js.undefined,
         PlatformOwner: js.UndefOr[PlatformOwner] = js.undefined,
         PlatformStatus: js.UndefOr[PlatformStatus] = js.undefined,
@@ -2997,7 +3154,12 @@ package elasticbeanstalk {
       OperatingSystemName.foreach(__v => __obj.updateDynamic("OperatingSystemName")(__v.asInstanceOf[js.Any]))
       OperatingSystemVersion.foreach(__v => __obj.updateDynamic("OperatingSystemVersion")(__v.asInstanceOf[js.Any]))
       PlatformArn.foreach(__v => __obj.updateDynamic("PlatformArn")(__v.asInstanceOf[js.Any]))
+      PlatformBranchLifecycleState.foreach(__v =>
+        __obj.updateDynamic("PlatformBranchLifecycleState")(__v.asInstanceOf[js.Any])
+      )
+      PlatformBranchName.foreach(__v => __obj.updateDynamic("PlatformBranchName")(__v.asInstanceOf[js.Any]))
       PlatformCategory.foreach(__v => __obj.updateDynamic("PlatformCategory")(__v.asInstanceOf[js.Any]))
+      PlatformLifecycleState.foreach(__v => __obj.updateDynamic("PlatformLifecycleState")(__v.asInstanceOf[js.Any]))
       PlatformName.foreach(__v => __obj.updateDynamic("PlatformName")(__v.asInstanceOf[js.Any]))
       PlatformOwner.foreach(__v => __obj.updateDynamic("PlatformOwner")(__v.asInstanceOf[js.Any]))
       PlatformStatus.foreach(__v => __obj.updateDynamic("PlatformStatus")(__v.asInstanceOf[js.Any]))
@@ -3011,9 +3173,8 @@ package elasticbeanstalk {
   }
 
   /**
-    * Specify criteria to restrict the results when listing custom platforms.
-    *  The filter is evaluated as the expression:
-    *  <code>Type</code> <code>Operator</code> <code>Values[i]</code>
+    * Describes criteria to restrict the results when listing platform versions.
+    *  The filter is evaluated as follows: <code>Type Operator Values[1]</code>
     */
   @js.native
   trait PlatformFilter extends js.Object {
@@ -3038,7 +3199,7 @@ package elasticbeanstalk {
   }
 
   /**
-    * A framework supported by the custom platform.
+    * A framework supported by the platform.
     */
   @js.native
   trait PlatformFramework extends js.Object {
@@ -3094,16 +3255,20 @@ package elasticbeanstalk {
   }
 
   /**
-    * Detailed information about a platform.
+    * Summary information about a platform version.
     */
   @js.native
   trait PlatformSummary extends js.Object {
     var OperatingSystemName: js.UndefOr[OperatingSystemName]
     var OperatingSystemVersion: js.UndefOr[OperatingSystemVersion]
     var PlatformArn: js.UndefOr[PlatformArn]
+    var PlatformBranchLifecycleState: js.UndefOr[PlatformBranchLifecycleState]
+    var PlatformBranchName: js.UndefOr[BranchName]
     var PlatformCategory: js.UndefOr[PlatformCategory]
+    var PlatformLifecycleState: js.UndefOr[PlatformLifecycleState]
     var PlatformOwner: js.UndefOr[PlatformOwner]
     var PlatformStatus: js.UndefOr[PlatformStatus]
+    var PlatformVersion: js.UndefOr[PlatformVersion]
     var SupportedAddonList: js.UndefOr[SupportedAddonList]
     var SupportedTierList: js.UndefOr[SupportedTierList]
   }
@@ -3114,9 +3279,13 @@ package elasticbeanstalk {
         OperatingSystemName: js.UndefOr[OperatingSystemName] = js.undefined,
         OperatingSystemVersion: js.UndefOr[OperatingSystemVersion] = js.undefined,
         PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
+        PlatformBranchLifecycleState: js.UndefOr[PlatformBranchLifecycleState] = js.undefined,
+        PlatformBranchName: js.UndefOr[BranchName] = js.undefined,
         PlatformCategory: js.UndefOr[PlatformCategory] = js.undefined,
+        PlatformLifecycleState: js.UndefOr[PlatformLifecycleState] = js.undefined,
         PlatformOwner: js.UndefOr[PlatformOwner] = js.undefined,
         PlatformStatus: js.UndefOr[PlatformStatus] = js.undefined,
+        PlatformVersion: js.UndefOr[PlatformVersion] = js.undefined,
         SupportedAddonList: js.UndefOr[SupportedAddonList] = js.undefined,
         SupportedTierList: js.UndefOr[SupportedTierList] = js.undefined
     ): PlatformSummary = {
@@ -3124,9 +3293,15 @@ package elasticbeanstalk {
       OperatingSystemName.foreach(__v => __obj.updateDynamic("OperatingSystemName")(__v.asInstanceOf[js.Any]))
       OperatingSystemVersion.foreach(__v => __obj.updateDynamic("OperatingSystemVersion")(__v.asInstanceOf[js.Any]))
       PlatformArn.foreach(__v => __obj.updateDynamic("PlatformArn")(__v.asInstanceOf[js.Any]))
+      PlatformBranchLifecycleState.foreach(__v =>
+        __obj.updateDynamic("PlatformBranchLifecycleState")(__v.asInstanceOf[js.Any])
+      )
+      PlatformBranchName.foreach(__v => __obj.updateDynamic("PlatformBranchName")(__v.asInstanceOf[js.Any]))
       PlatformCategory.foreach(__v => __obj.updateDynamic("PlatformCategory")(__v.asInstanceOf[js.Any]))
+      PlatformLifecycleState.foreach(__v => __obj.updateDynamic("PlatformLifecycleState")(__v.asInstanceOf[js.Any]))
       PlatformOwner.foreach(__v => __obj.updateDynamic("PlatformOwner")(__v.asInstanceOf[js.Any]))
       PlatformStatus.foreach(__v => __obj.updateDynamic("PlatformStatus")(__v.asInstanceOf[js.Any]))
+      PlatformVersion.foreach(__v => __obj.updateDynamic("PlatformVersion")(__v.asInstanceOf[js.Any]))
       SupportedAddonList.foreach(__v => __obj.updateDynamic("SupportedAddonList")(__v.asInstanceOf[js.Any]))
       SupportedTierList.foreach(__v => __obj.updateDynamic("SupportedTierList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PlatformSummary]
@@ -3366,6 +3541,34 @@ package elasticbeanstalk {
   }
 
   /**
+    * Describes criteria to restrict a list of results.
+    *  For operators that apply a single value to the attribute, the filter is evaluated as follows: <code>Attribute Operator Values[1]</code>
+    *  Some operators, e.g. <code>in</code>, can apply multiple values. In this case, the filter is evaluated as a logical union (OR) of applications of the operator to the attribute with each one of the values: <code>(Attribute Operator Values[1]) OR (Attribute Operator Values[2]) OR ...</code>
+    *  The valid values for attributes of <code>SearchFilter</code> depend on the API action. For valid values, see the reference page for the API action you're calling that takes a <code>SearchFilter</code> parameter.
+    */
+  @js.native
+  trait SearchFilter extends js.Object {
+    var Attribute: js.UndefOr[SearchFilterAttribute]
+    var Operator: js.UndefOr[SearchFilterOperator]
+    var Values: js.UndefOr[SearchFilterValues]
+  }
+
+  object SearchFilter {
+    @inline
+    def apply(
+        Attribute: js.UndefOr[SearchFilterAttribute] = js.undefined,
+        Operator: js.UndefOr[SearchFilterOperator] = js.undefined,
+        Values: js.UndefOr[SearchFilterValues] = js.undefined
+    ): SearchFilter = {
+      val __obj = js.Dynamic.literal()
+      Attribute.foreach(__v => __obj.updateDynamic("Attribute")(__v.asInstanceOf[js.Any]))
+      Operator.foreach(__v => __obj.updateDynamic("Operator")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SearchFilter]
+    }
+  }
+
+  /**
     * Detailed health information about an Amazon EC2 instance in your Elastic Beanstalk environment.
     */
   @js.native
@@ -3461,7 +3664,7 @@ package elasticbeanstalk {
   }
 
   /**
-    * A specification for an environment configuration
+    * A specification for an environment configuration.
     */
   @js.native
   trait SourceConfiguration extends js.Object {

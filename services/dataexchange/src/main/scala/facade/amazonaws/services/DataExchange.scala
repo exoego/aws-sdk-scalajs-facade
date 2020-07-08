@@ -683,6 +683,7 @@ package dataexchange {
     var AssetDestinations: ListOfAssetDestinationEntry
     var DataSetId: Id
     var RevisionId: Id
+    var Encryption: js.UndefOr[ExportServerSideEncryption]
   }
 
   object ExportAssetsToS3RequestDetails {
@@ -690,7 +691,8 @@ package dataexchange {
     def apply(
         AssetDestinations: ListOfAssetDestinationEntry,
         DataSetId: Id,
-        RevisionId: Id
+        RevisionId: Id,
+        Encryption: js.UndefOr[ExportServerSideEncryption] = js.undefined
     ): ExportAssetsToS3RequestDetails = {
       val __obj = js.Dynamic.literal(
         "AssetDestinations" -> AssetDestinations.asInstanceOf[js.Any],
@@ -698,6 +700,7 @@ package dataexchange {
         "RevisionId"        -> RevisionId.asInstanceOf[js.Any]
       )
 
+      Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportAssetsToS3RequestDetails]
     }
   }
@@ -710,6 +713,7 @@ package dataexchange {
     var AssetDestinations: ListOfAssetDestinationEntry
     var DataSetId: Id
     var RevisionId: Id
+    var Encryption: js.UndefOr[ExportServerSideEncryption]
   }
 
   object ExportAssetsToS3ResponseDetails {
@@ -717,7 +721,8 @@ package dataexchange {
     def apply(
         AssetDestinations: ListOfAssetDestinationEntry,
         DataSetId: Id,
-        RevisionId: Id
+        RevisionId: Id,
+        Encryption: js.UndefOr[ExportServerSideEncryption] = js.undefined
     ): ExportAssetsToS3ResponseDetails = {
       val __obj = js.Dynamic.literal(
         "AssetDestinations" -> AssetDestinations.asInstanceOf[js.Any],
@@ -725,7 +730,32 @@ package dataexchange {
         "RevisionId"        -> RevisionId.asInstanceOf[js.Any]
       )
 
+      Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportAssetsToS3ResponseDetails]
+    }
+  }
+
+  /**
+    * Encryption configuration of the export job. Includes the encryption type as well as the AWS KMS key. The KMS key is only necessary if you chose the KMS encryption type.
+    */
+  @js.native
+  trait ExportServerSideEncryption extends js.Object {
+    var Type: ServerSideEncryptionTypes
+    var KmsKeyArn: js.UndefOr[__string]
+  }
+
+  object ExportServerSideEncryption {
+    @inline
+    def apply(
+        Type: ServerSideEncryptionTypes,
+        KmsKeyArn: js.UndefOr[__string] = js.undefined
+    ): ExportServerSideEncryption = {
+      val __obj = js.Dynamic.literal(
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+
+      KmsKeyArn.foreach(__v => __obj.updateDynamic("KmsKeyArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportServerSideEncryption]
     }
   }
 
@@ -1574,6 +1604,18 @@ package dataexchange {
 
       __obj.asInstanceOf[S3SnapshotAsset]
     }
+  }
+
+  /**
+    * The types of encryption supported in export jobs to Amazon S3.
+    */
+  @js.native
+  sealed trait ServerSideEncryptionTypes extends js.Any
+  object ServerSideEncryptionTypes extends js.Object {
+    val `aws:kms` = "aws:kms".asInstanceOf[ServerSideEncryptionTypes]
+    val AES256    = "AES256".asInstanceOf[ServerSideEncryptionTypes]
+
+    val values = js.Object.freeze(js.Array(`aws:kms`, AES256))
   }
 
   @js.native

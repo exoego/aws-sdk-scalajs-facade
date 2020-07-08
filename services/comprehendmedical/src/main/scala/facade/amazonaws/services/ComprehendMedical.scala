@@ -41,9 +41,15 @@ package object comprehendmedical {
         params: DescribeEntitiesDetectionV2JobRequest
     ): Future[DescribeEntitiesDetectionV2JobResponse] =
       service.describeEntitiesDetectionV2Job(params).promise().toFuture
+    @inline def describeICD10CMInferenceJobFuture(
+        params: DescribeICD10CMInferenceJobRequest
+    ): Future[DescribeICD10CMInferenceJobResponse] = service.describeICD10CMInferenceJob(params).promise().toFuture
     @inline def describePHIDetectionJobFuture(
         params: DescribePHIDetectionJobRequest
     ): Future[DescribePHIDetectionJobResponse] = service.describePHIDetectionJob(params).promise().toFuture
+    @inline def describeRxNormInferenceJobFuture(
+        params: DescribeRxNormInferenceJobRequest
+    ): Future[DescribeRxNormInferenceJobResponse] = service.describeRxNormInferenceJob(params).promise().toFuture
     @inline def detectEntitiesV2Future(params: DetectEntitiesV2Request): Future[DetectEntitiesV2Response] =
       service.detectEntitiesV2(params).promise().toFuture
     @inline def detectPHIFuture(params: DetectPHIRequest): Future[DetectPHIResponse] =
@@ -55,18 +61,36 @@ package object comprehendmedical {
     @inline def listEntitiesDetectionV2JobsFuture(
         params: ListEntitiesDetectionV2JobsRequest
     ): Future[ListEntitiesDetectionV2JobsResponse] = service.listEntitiesDetectionV2Jobs(params).promise().toFuture
+    @inline def listICD10CMInferenceJobsFuture(
+        params: ListICD10CMInferenceJobsRequest
+    ): Future[ListICD10CMInferenceJobsResponse] = service.listICD10CMInferenceJobs(params).promise().toFuture
     @inline def listPHIDetectionJobsFuture(params: ListPHIDetectionJobsRequest): Future[ListPHIDetectionJobsResponse] =
       service.listPHIDetectionJobs(params).promise().toFuture
+    @inline def listRxNormInferenceJobsFuture(
+        params: ListRxNormInferenceJobsRequest
+    ): Future[ListRxNormInferenceJobsResponse] = service.listRxNormInferenceJobs(params).promise().toFuture
     @inline def startEntitiesDetectionV2JobFuture(
         params: StartEntitiesDetectionV2JobRequest
     ): Future[StartEntitiesDetectionV2JobResponse] = service.startEntitiesDetectionV2Job(params).promise().toFuture
+    @inline def startICD10CMInferenceJobFuture(
+        params: StartICD10CMInferenceJobRequest
+    ): Future[StartICD10CMInferenceJobResponse] = service.startICD10CMInferenceJob(params).promise().toFuture
     @inline def startPHIDetectionJobFuture(params: StartPHIDetectionJobRequest): Future[StartPHIDetectionJobResponse] =
       service.startPHIDetectionJob(params).promise().toFuture
+    @inline def startRxNormInferenceJobFuture(
+        params: StartRxNormInferenceJobRequest
+    ): Future[StartRxNormInferenceJobResponse] = service.startRxNormInferenceJob(params).promise().toFuture
     @inline def stopEntitiesDetectionV2JobFuture(
         params: StopEntitiesDetectionV2JobRequest
     ): Future[StopEntitiesDetectionV2JobResponse] = service.stopEntitiesDetectionV2Job(params).promise().toFuture
+    @inline def stopICD10CMInferenceJobFuture(
+        params: StopICD10CMInferenceJobRequest
+    ): Future[StopICD10CMInferenceJobResponse] = service.stopICD10CMInferenceJob(params).promise().toFuture
     @inline def stopPHIDetectionJobFuture(params: StopPHIDetectionJobRequest): Future[StopPHIDetectionJobResponse] =
       service.stopPHIDetectionJob(params).promise().toFuture
+    @inline def stopRxNormInferenceJobFuture(
+        params: StopRxNormInferenceJobRequest
+    ): Future[StopRxNormInferenceJobResponse] = service.stopRxNormInferenceJob(params).promise().toFuture
   }
 }
 
@@ -79,24 +103,42 @@ package comprehendmedical {
     def describeEntitiesDetectionV2Job(
         params: DescribeEntitiesDetectionV2JobRequest
     ): Request[DescribeEntitiesDetectionV2JobResponse] = js.native
+    def describeICD10CMInferenceJob(
+        params: DescribeICD10CMInferenceJobRequest
+    ): Request[DescribeICD10CMInferenceJobResponse] = js.native
     def describePHIDetectionJob(params: DescribePHIDetectionJobRequest): Request[DescribePHIDetectionJobResponse] =
       js.native
+    def describeRxNormInferenceJob(
+        params: DescribeRxNormInferenceJobRequest
+    ): Request[DescribeRxNormInferenceJobResponse]                                           = js.native
     def detectEntitiesV2(params: DetectEntitiesV2Request): Request[DetectEntitiesV2Response] = js.native
     def detectPHI(params: DetectPHIRequest): Request[DetectPHIResponse]                      = js.native
     def inferICD10CM(params: InferICD10CMRequest): Request[InferICD10CMResponse]             = js.native
     def inferRxNorm(params: InferRxNormRequest): Request[InferRxNormResponse]                = js.native
     def listEntitiesDetectionV2Jobs(
         params: ListEntitiesDetectionV2JobsRequest
-    ): Request[ListEntitiesDetectionV2JobsResponse]                                                      = js.native
+    ): Request[ListEntitiesDetectionV2JobsResponse] = js.native
+    def listICD10CMInferenceJobs(params: ListICD10CMInferenceJobsRequest): Request[ListICD10CMInferenceJobsResponse] =
+      js.native
     def listPHIDetectionJobs(params: ListPHIDetectionJobsRequest): Request[ListPHIDetectionJobsResponse] = js.native
+    def listRxNormInferenceJobs(params: ListRxNormInferenceJobsRequest): Request[ListRxNormInferenceJobsResponse] =
+      js.native
     def startEntitiesDetectionV2Job(
         params: StartEntitiesDetectionV2JobRequest
-    ): Request[StartEntitiesDetectionV2JobResponse]                                                      = js.native
+    ): Request[StartEntitiesDetectionV2JobResponse] = js.native
+    def startICD10CMInferenceJob(params: StartICD10CMInferenceJobRequest): Request[StartICD10CMInferenceJobResponse] =
+      js.native
     def startPHIDetectionJob(params: StartPHIDetectionJobRequest): Request[StartPHIDetectionJobResponse] = js.native
+    def startRxNormInferenceJob(params: StartRxNormInferenceJobRequest): Request[StartRxNormInferenceJobResponse] =
+      js.native
     def stopEntitiesDetectionV2Job(
         params: StopEntitiesDetectionV2JobRequest
-    ): Request[StopEntitiesDetectionV2JobResponse]                                                    = js.native
+    ): Request[StopEntitiesDetectionV2JobResponse] = js.native
+    def stopICD10CMInferenceJob(params: StopICD10CMInferenceJobRequest): Request[StopICD10CMInferenceJobResponse] =
+      js.native
     def stopPHIDetectionJob(params: StopPHIDetectionJobRequest): Request[StopPHIDetectionJobResponse] = js.native
+    def stopRxNormInferenceJob(params: StopRxNormInferenceJobRequest): Request[StopRxNormInferenceJobResponse] =
+      js.native
     @deprecated("This operation is deprecated, use DetectEntitiesV2 instead.", "forever") def detectEntities(
         params: DetectEntitiesRequest
     ): Request[DetectEntitiesResponse] = js.native
@@ -108,9 +150,11 @@ package comprehendmedical {
   @js.native
   trait Attribute extends js.Object {
     var BeginOffset: js.UndefOr[Int]
+    var Category: js.UndefOr[EntityType]
     var EndOffset: js.UndefOr[Int]
     var Id: js.UndefOr[Int]
     var RelationshipScore: js.UndefOr[Float]
+    var RelationshipType: js.UndefOr[RelationshipType]
     var Score: js.UndefOr[Float]
     var Text: js.UndefOr[String]
     var Traits: js.UndefOr[TraitList]
@@ -121,9 +165,11 @@ package comprehendmedical {
     @inline
     def apply(
         BeginOffset: js.UndefOr[Int] = js.undefined,
+        Category: js.UndefOr[EntityType] = js.undefined,
         EndOffset: js.UndefOr[Int] = js.undefined,
         Id: js.UndefOr[Int] = js.undefined,
         RelationshipScore: js.UndefOr[Float] = js.undefined,
+        RelationshipType: js.UndefOr[RelationshipType] = js.undefined,
         Score: js.UndefOr[Float] = js.undefined,
         Text: js.UndefOr[String] = js.undefined,
         Traits: js.UndefOr[TraitList] = js.undefined,
@@ -131,9 +177,11 @@ package comprehendmedical {
     ): Attribute = {
       val __obj = js.Dynamic.literal()
       BeginOffset.foreach(__v => __obj.updateDynamic("BeginOffset")(__v.asInstanceOf[js.Any]))
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
       EndOffset.foreach(__v => __obj.updateDynamic("EndOffset")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       RelationshipScore.foreach(__v => __obj.updateDynamic("RelationshipScore")(__v.asInstanceOf[js.Any]))
+      RelationshipType.foreach(__v => __obj.updateDynamic("RelationshipType")(__v.asInstanceOf[js.Any]))
       Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
       Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
       Traits.foreach(__v => __obj.updateDynamic("Traits")(__v.asInstanceOf[js.Any]))
@@ -276,6 +324,42 @@ package comprehendmedical {
   }
 
   @js.native
+  trait DescribeICD10CMInferenceJobRequest extends js.Object {
+    var JobId: JobId
+  }
+
+  object DescribeICD10CMInferenceJobRequest {
+    @inline
+    def apply(
+        JobId: JobId
+    ): DescribeICD10CMInferenceJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeICD10CMInferenceJobRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeICD10CMInferenceJobResponse extends js.Object {
+    var ComprehendMedicalAsyncJobProperties: js.UndefOr[ComprehendMedicalAsyncJobProperties]
+  }
+
+  object DescribeICD10CMInferenceJobResponse {
+    @inline
+    def apply(
+        ComprehendMedicalAsyncJobProperties: js.UndefOr[ComprehendMedicalAsyncJobProperties] = js.undefined
+    ): DescribeICD10CMInferenceJobResponse = {
+      val __obj = js.Dynamic.literal()
+      ComprehendMedicalAsyncJobProperties.foreach(__v =>
+        __obj.updateDynamic("ComprehendMedicalAsyncJobProperties")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeICD10CMInferenceJobResponse]
+    }
+  }
+
+  @js.native
   trait DescribePHIDetectionJobRequest extends js.Object {
     var JobId: JobId
   }
@@ -308,6 +392,42 @@ package comprehendmedical {
         __obj.updateDynamic("ComprehendMedicalAsyncJobProperties")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribePHIDetectionJobResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeRxNormInferenceJobRequest extends js.Object {
+    var JobId: JobId
+  }
+
+  object DescribeRxNormInferenceJobRequest {
+    @inline
+    def apply(
+        JobId: JobId
+    ): DescribeRxNormInferenceJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeRxNormInferenceJobRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeRxNormInferenceJobResponse extends js.Object {
+    var ComprehendMedicalAsyncJobProperties: js.UndefOr[ComprehendMedicalAsyncJobProperties]
+  }
+
+  object DescribeRxNormInferenceJobResponse {
+    @inline
+    def apply(
+        ComprehendMedicalAsyncJobProperties: js.UndefOr[ComprehendMedicalAsyncJobProperties] = js.undefined
+    ): DescribeRxNormInferenceJobResponse = {
+      val __obj = js.Dynamic.literal()
+      ComprehendMedicalAsyncJobProperties.foreach(__v =>
+        __obj.updateDynamic("ComprehendMedicalAsyncJobProperties")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeRxNormInferenceJobResponse]
     }
   }
 
@@ -489,34 +609,40 @@ package comprehendmedical {
   @js.native
   sealed trait EntitySubType extends js.Any
   object EntitySubType extends js.Object {
-    val NAME              = "NAME".asInstanceOf[EntitySubType]
-    val DOSAGE            = "DOSAGE".asInstanceOf[EntitySubType]
-    val ROUTE_OR_MODE     = "ROUTE_OR_MODE".asInstanceOf[EntitySubType]
-    val FORM              = "FORM".asInstanceOf[EntitySubType]
-    val FREQUENCY         = "FREQUENCY".asInstanceOf[EntitySubType]
-    val DURATION          = "DURATION".asInstanceOf[EntitySubType]
-    val GENERIC_NAME      = "GENERIC_NAME".asInstanceOf[EntitySubType]
-    val BRAND_NAME        = "BRAND_NAME".asInstanceOf[EntitySubType]
-    val STRENGTH          = "STRENGTH".asInstanceOf[EntitySubType]
-    val RATE              = "RATE".asInstanceOf[EntitySubType]
-    val ACUITY            = "ACUITY".asInstanceOf[EntitySubType]
-    val TEST_NAME         = "TEST_NAME".asInstanceOf[EntitySubType]
-    val TEST_VALUE        = "TEST_VALUE".asInstanceOf[EntitySubType]
-    val TEST_UNITS        = "TEST_UNITS".asInstanceOf[EntitySubType]
-    val PROCEDURE_NAME    = "PROCEDURE_NAME".asInstanceOf[EntitySubType]
-    val TREATMENT_NAME    = "TREATMENT_NAME".asInstanceOf[EntitySubType]
-    val DATE              = "DATE".asInstanceOf[EntitySubType]
-    val AGE               = "AGE".asInstanceOf[EntitySubType]
-    val CONTACT_POINT     = "CONTACT_POINT".asInstanceOf[EntitySubType]
-    val EMAIL             = "EMAIL".asInstanceOf[EntitySubType]
-    val IDENTIFIER        = "IDENTIFIER".asInstanceOf[EntitySubType]
-    val URL               = "URL".asInstanceOf[EntitySubType]
-    val ADDRESS           = "ADDRESS".asInstanceOf[EntitySubType]
-    val PROFESSION        = "PROFESSION".asInstanceOf[EntitySubType]
-    val SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE".asInstanceOf[EntitySubType]
-    val DIRECTION         = "DIRECTION".asInstanceOf[EntitySubType]
-    val QUALITY           = "QUALITY".asInstanceOf[EntitySubType]
-    val QUANTITY          = "QUANTITY".asInstanceOf[EntitySubType]
+    val NAME                    = "NAME".asInstanceOf[EntitySubType]
+    val DOSAGE                  = "DOSAGE".asInstanceOf[EntitySubType]
+    val ROUTE_OR_MODE           = "ROUTE_OR_MODE".asInstanceOf[EntitySubType]
+    val FORM                    = "FORM".asInstanceOf[EntitySubType]
+    val FREQUENCY               = "FREQUENCY".asInstanceOf[EntitySubType]
+    val DURATION                = "DURATION".asInstanceOf[EntitySubType]
+    val GENERIC_NAME            = "GENERIC_NAME".asInstanceOf[EntitySubType]
+    val BRAND_NAME              = "BRAND_NAME".asInstanceOf[EntitySubType]
+    val STRENGTH                = "STRENGTH".asInstanceOf[EntitySubType]
+    val RATE                    = "RATE".asInstanceOf[EntitySubType]
+    val ACUITY                  = "ACUITY".asInstanceOf[EntitySubType]
+    val TEST_NAME               = "TEST_NAME".asInstanceOf[EntitySubType]
+    val TEST_VALUE              = "TEST_VALUE".asInstanceOf[EntitySubType]
+    val TEST_UNITS              = "TEST_UNITS".asInstanceOf[EntitySubType]
+    val PROCEDURE_NAME          = "PROCEDURE_NAME".asInstanceOf[EntitySubType]
+    val TREATMENT_NAME          = "TREATMENT_NAME".asInstanceOf[EntitySubType]
+    val DATE                    = "DATE".asInstanceOf[EntitySubType]
+    val AGE                     = "AGE".asInstanceOf[EntitySubType]
+    val CONTACT_POINT           = "CONTACT_POINT".asInstanceOf[EntitySubType]
+    val EMAIL                   = "EMAIL".asInstanceOf[EntitySubType]
+    val IDENTIFIER              = "IDENTIFIER".asInstanceOf[EntitySubType]
+    val URL                     = "URL".asInstanceOf[EntitySubType]
+    val ADDRESS                 = "ADDRESS".asInstanceOf[EntitySubType]
+    val PROFESSION              = "PROFESSION".asInstanceOf[EntitySubType]
+    val SYSTEM_ORGAN_SITE       = "SYSTEM_ORGAN_SITE".asInstanceOf[EntitySubType]
+    val DIRECTION               = "DIRECTION".asInstanceOf[EntitySubType]
+    val QUALITY                 = "QUALITY".asInstanceOf[EntitySubType]
+    val QUANTITY                = "QUANTITY".asInstanceOf[EntitySubType]
+    val TIME_EXPRESSION         = "TIME_EXPRESSION".asInstanceOf[EntitySubType]
+    val TIME_TO_MEDICATION_NAME = "TIME_TO_MEDICATION_NAME".asInstanceOf[EntitySubType]
+    val TIME_TO_DX_NAME         = "TIME_TO_DX_NAME".asInstanceOf[EntitySubType]
+    val TIME_TO_TEST_NAME       = "TIME_TO_TEST_NAME".asInstanceOf[EntitySubType]
+    val TIME_TO_PROCEDURE_NAME  = "TIME_TO_PROCEDURE_NAME".asInstanceOf[EntitySubType]
+    val TIME_TO_TREATMENT_NAME  = "TIME_TO_TREATMENT_NAME".asInstanceOf[EntitySubType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -547,7 +673,13 @@ package comprehendmedical {
         SYSTEM_ORGAN_SITE,
         DIRECTION,
         QUALITY,
-        QUANTITY
+        QUANTITY,
+        TIME_EXPRESSION,
+        TIME_TO_MEDICATION_NAME,
+        TIME_TO_DX_NAME,
+        TIME_TO_TEST_NAME,
+        TIME_TO_PROCEDURE_NAME,
+        TIME_TO_TREATMENT_NAME
       )
     )
   }
@@ -560,9 +692,17 @@ package comprehendmedical {
     val PROTECTED_HEALTH_INFORMATION = "PROTECTED_HEALTH_INFORMATION".asInstanceOf[EntityType]
     val TEST_TREATMENT_PROCEDURE     = "TEST_TREATMENT_PROCEDURE".asInstanceOf[EntityType]
     val ANATOMY                      = "ANATOMY".asInstanceOf[EntityType]
+    val TIME_EXPRESSION              = "TIME_EXPRESSION".asInstanceOf[EntityType]
 
     val values = js.Object.freeze(
-      js.Array(MEDICATION, MEDICAL_CONDITION, PROTECTED_HEALTH_INFORMATION, TEST_TREATMENT_PROCEDURE, ANATOMY)
+      js.Array(
+        MEDICATION,
+        MEDICAL_CONDITION,
+        PROTECTED_HEALTH_INFORMATION,
+        TEST_TREATMENT_PROCEDURE,
+        ANATOMY,
+        TIME_EXPRESSION
+      )
     )
   }
 
@@ -823,7 +963,7 @@ package comprehendmedical {
   }
 
   /**
-    * The input properties for an entities detection job
+    * The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. See <a>batch-manifest</a> for more information.
     */
   @js.native
   trait InputDataConfig extends js.Object {
@@ -913,6 +1053,49 @@ package comprehendmedical {
   }
 
   @js.native
+  trait ListICD10CMInferenceJobsRequest extends js.Object {
+    var Filter: js.UndefOr[ComprehendMedicalAsyncJobFilter]
+    var MaxResults: js.UndefOr[MaxResultsInteger]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListICD10CMInferenceJobsRequest {
+    @inline
+    def apply(
+        Filter: js.UndefOr[ComprehendMedicalAsyncJobFilter] = js.undefined,
+        MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListICD10CMInferenceJobsRequest = {
+      val __obj = js.Dynamic.literal()
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListICD10CMInferenceJobsRequest]
+    }
+  }
+
+  @js.native
+  trait ListICD10CMInferenceJobsResponse extends js.Object {
+    var ComprehendMedicalAsyncJobPropertiesList: js.UndefOr[ComprehendMedicalAsyncJobPropertiesList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListICD10CMInferenceJobsResponse {
+    @inline
+    def apply(
+        ComprehendMedicalAsyncJobPropertiesList: js.UndefOr[ComprehendMedicalAsyncJobPropertiesList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListICD10CMInferenceJobsResponse = {
+      val __obj = js.Dynamic.literal()
+      ComprehendMedicalAsyncJobPropertiesList.foreach(__v =>
+        __obj.updateDynamic("ComprehendMedicalAsyncJobPropertiesList")(__v.asInstanceOf[js.Any])
+      )
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListICD10CMInferenceJobsResponse]
+    }
+  }
+
+  @js.native
   trait ListPHIDetectionJobsRequest extends js.Object {
     var Filter: js.UndefOr[ComprehendMedicalAsyncJobFilter]
     var MaxResults: js.UndefOr[MaxResultsInteger]
@@ -955,6 +1138,49 @@ package comprehendmedical {
     }
   }
 
+  @js.native
+  trait ListRxNormInferenceJobsRequest extends js.Object {
+    var Filter: js.UndefOr[ComprehendMedicalAsyncJobFilter]
+    var MaxResults: js.UndefOr[MaxResultsInteger]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListRxNormInferenceJobsRequest {
+    @inline
+    def apply(
+        Filter: js.UndefOr[ComprehendMedicalAsyncJobFilter] = js.undefined,
+        MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListRxNormInferenceJobsRequest = {
+      val __obj = js.Dynamic.literal()
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRxNormInferenceJobsRequest]
+    }
+  }
+
+  @js.native
+  trait ListRxNormInferenceJobsResponse extends js.Object {
+    var ComprehendMedicalAsyncJobPropertiesList: js.UndefOr[ComprehendMedicalAsyncJobPropertiesList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListRxNormInferenceJobsResponse {
+    @inline
+    def apply(
+        ComprehendMedicalAsyncJobPropertiesList: js.UndefOr[ComprehendMedicalAsyncJobPropertiesList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListRxNormInferenceJobsResponse = {
+      val __obj = js.Dynamic.literal()
+      ComprehendMedicalAsyncJobPropertiesList.foreach(__v =>
+        __obj.updateDynamic("ComprehendMedicalAsyncJobPropertiesList")(__v.asInstanceOf[js.Any])
+      )
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRxNormInferenceJobsResponse]
+    }
+  }
+
   /**
     * The output properties for a detection job.
     */
@@ -977,6 +1203,52 @@ package comprehendmedical {
       S3Key.foreach(__v => __obj.updateDynamic("S3Key")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutputDataConfig]
     }
+  }
+
+  @js.native
+  sealed trait RelationshipType extends js.Any
+  object RelationshipType extends js.Object {
+    val EVERY             = "EVERY".asInstanceOf[RelationshipType]
+    val WITH_DOSAGE       = "WITH_DOSAGE".asInstanceOf[RelationshipType]
+    val ADMINISTERED_VIA  = "ADMINISTERED_VIA".asInstanceOf[RelationshipType]
+    val FOR               = "FOR".asInstanceOf[RelationshipType]
+    val NEGATIVE          = "NEGATIVE".asInstanceOf[RelationshipType]
+    val OVERLAP           = "OVERLAP".asInstanceOf[RelationshipType]
+    val DOSAGE            = "DOSAGE".asInstanceOf[RelationshipType]
+    val ROUTE_OR_MODE     = "ROUTE_OR_MODE".asInstanceOf[RelationshipType]
+    val FORM              = "FORM".asInstanceOf[RelationshipType]
+    val FREQUENCY         = "FREQUENCY".asInstanceOf[RelationshipType]
+    val DURATION          = "DURATION".asInstanceOf[RelationshipType]
+    val STRENGTH          = "STRENGTH".asInstanceOf[RelationshipType]
+    val RATE              = "RATE".asInstanceOf[RelationshipType]
+    val ACUITY            = "ACUITY".asInstanceOf[RelationshipType]
+    val TEST_VALUE        = "TEST_VALUE".asInstanceOf[RelationshipType]
+    val TEST_UNITS        = "TEST_UNITS".asInstanceOf[RelationshipType]
+    val DIRECTION         = "DIRECTION".asInstanceOf[RelationshipType]
+    val SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE".asInstanceOf[RelationshipType]
+
+    val values = js.Object.freeze(
+      js.Array(
+        EVERY,
+        WITH_DOSAGE,
+        ADMINISTERED_VIA,
+        FOR,
+        NEGATIVE,
+        OVERLAP,
+        DOSAGE,
+        ROUTE_OR_MODE,
+        FORM,
+        FREQUENCY,
+        DURATION,
+        STRENGTH,
+        RATE,
+        ACUITY,
+        TEST_VALUE,
+        TEST_UNITS,
+        DIRECTION,
+        SYSTEM_ORGAN_SITE
+      )
+    )
   }
 
   /**
@@ -1204,6 +1476,58 @@ package comprehendmedical {
   }
 
   @js.native
+  trait StartICD10CMInferenceJobRequest extends js.Object {
+    var DataAccessRoleArn: IamRoleArn
+    var InputDataConfig: InputDataConfig
+    var LanguageCode: LanguageCode
+    var OutputDataConfig: OutputDataConfig
+    var ClientRequestToken: js.UndefOr[ClientRequestTokenString]
+    var JobName: js.UndefOr[JobName]
+    var KMSKey: js.UndefOr[KMSKey]
+  }
+
+  object StartICD10CMInferenceJobRequest {
+    @inline
+    def apply(
+        DataAccessRoleArn: IamRoleArn,
+        InputDataConfig: InputDataConfig,
+        LanguageCode: LanguageCode,
+        OutputDataConfig: OutputDataConfig,
+        ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
+        JobName: js.UndefOr[JobName] = js.undefined,
+        KMSKey: js.UndefOr[KMSKey] = js.undefined
+    ): StartICD10CMInferenceJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
+        "InputDataConfig"   -> InputDataConfig.asInstanceOf[js.Any],
+        "LanguageCode"      -> LanguageCode.asInstanceOf[js.Any],
+        "OutputDataConfig"  -> OutputDataConfig.asInstanceOf[js.Any]
+      )
+
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartICD10CMInferenceJobRequest]
+    }
+  }
+
+  @js.native
+  trait StartICD10CMInferenceJobResponse extends js.Object {
+    var JobId: js.UndefOr[JobId]
+  }
+
+  object StartICD10CMInferenceJobResponse {
+    @inline
+    def apply(
+        JobId: js.UndefOr[JobId] = js.undefined
+    ): StartICD10CMInferenceJobResponse = {
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartICD10CMInferenceJobResponse]
+    }
+  }
+
+  @js.native
   trait StartPHIDetectionJobRequest extends js.Object {
     var DataAccessRoleArn: IamRoleArn
     var InputDataConfig: InputDataConfig
@@ -1256,6 +1580,58 @@ package comprehendmedical {
   }
 
   @js.native
+  trait StartRxNormInferenceJobRequest extends js.Object {
+    var DataAccessRoleArn: IamRoleArn
+    var InputDataConfig: InputDataConfig
+    var LanguageCode: LanguageCode
+    var OutputDataConfig: OutputDataConfig
+    var ClientRequestToken: js.UndefOr[ClientRequestTokenString]
+    var JobName: js.UndefOr[JobName]
+    var KMSKey: js.UndefOr[KMSKey]
+  }
+
+  object StartRxNormInferenceJobRequest {
+    @inline
+    def apply(
+        DataAccessRoleArn: IamRoleArn,
+        InputDataConfig: InputDataConfig,
+        LanguageCode: LanguageCode,
+        OutputDataConfig: OutputDataConfig,
+        ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
+        JobName: js.UndefOr[JobName] = js.undefined,
+        KMSKey: js.UndefOr[KMSKey] = js.undefined
+    ): StartRxNormInferenceJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
+        "InputDataConfig"   -> InputDataConfig.asInstanceOf[js.Any],
+        "LanguageCode"      -> LanguageCode.asInstanceOf[js.Any],
+        "OutputDataConfig"  -> OutputDataConfig.asInstanceOf[js.Any]
+      )
+
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartRxNormInferenceJobRequest]
+    }
+  }
+
+  @js.native
+  trait StartRxNormInferenceJobResponse extends js.Object {
+    var JobId: js.UndefOr[JobId]
+  }
+
+  object StartRxNormInferenceJobResponse {
+    @inline
+    def apply(
+        JobId: js.UndefOr[JobId] = js.undefined
+    ): StartRxNormInferenceJobResponse = {
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartRxNormInferenceJobResponse]
+    }
+  }
+
+  @js.native
   trait StopEntitiesDetectionV2JobRequest extends js.Object {
     var JobId: JobId
   }
@@ -1290,6 +1666,40 @@ package comprehendmedical {
   }
 
   @js.native
+  trait StopICD10CMInferenceJobRequest extends js.Object {
+    var JobId: JobId
+  }
+
+  object StopICD10CMInferenceJobRequest {
+    @inline
+    def apply(
+        JobId: JobId
+    ): StopICD10CMInferenceJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[StopICD10CMInferenceJobRequest]
+    }
+  }
+
+  @js.native
+  trait StopICD10CMInferenceJobResponse extends js.Object {
+    var JobId: js.UndefOr[JobId]
+  }
+
+  object StopICD10CMInferenceJobResponse {
+    @inline
+    def apply(
+        JobId: js.UndefOr[JobId] = js.undefined
+    ): StopICD10CMInferenceJobResponse = {
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopICD10CMInferenceJobResponse]
+    }
+  }
+
+  @js.native
   trait StopPHIDetectionJobRequest extends js.Object {
     var JobId: JobId
   }
@@ -1320,6 +1730,40 @@ package comprehendmedical {
       val __obj = js.Dynamic.literal()
       JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopPHIDetectionJobResponse]
+    }
+  }
+
+  @js.native
+  trait StopRxNormInferenceJobRequest extends js.Object {
+    var JobId: JobId
+  }
+
+  object StopRxNormInferenceJobRequest {
+    @inline
+    def apply(
+        JobId: JobId
+    ): StopRxNormInferenceJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[StopRxNormInferenceJobRequest]
+    }
+  }
+
+  @js.native
+  trait StopRxNormInferenceJobResponse extends js.Object {
+    var JobId: js.UndefOr[JobId]
+  }
+
+  object StopRxNormInferenceJobResponse {
+    @inline
+    def apply(
+        JobId: js.UndefOr[JobId] = js.undefined
+    ): StopRxNormInferenceJobResponse = {
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopRxNormInferenceJobResponse]
     }
   }
 

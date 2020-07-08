@@ -47,6 +47,7 @@ package object iam {
   type ServicesLastAccessed                            = js.Array[ServiceLastAccessed]
   type SimulationPolicyListType                        = js.Array[policyDocumentType]
   type StatementListType                               = js.Array[Statement]
+  type TrackedActionsLastAccessed                      = js.Array[TrackedActionLastAccessed]
   type accessKeyIdType                                 = String
   type accessKeyMetadataListType                       = js.Array[AccessKeyMetadata]
   type accessKeySecretType                             = String
@@ -663,6 +664,15 @@ package iam {
       js.native
   }
 
+  @js.native
+  sealed trait AccessAdvisorUsageGranularityType extends js.Any
+  object AccessAdvisorUsageGranularityType extends js.Object {
+    val SERVICE_LEVEL = "SERVICE_LEVEL".asInstanceOf[AccessAdvisorUsageGranularityType]
+    val ACTION_LEVEL  = "ACTION_LEVEL".asInstanceOf[AccessAdvisorUsageGranularityType]
+
+    val values = js.Object.freeze(js.Array(SERVICE_LEVEL, ACTION_LEVEL))
+  }
+
   /**
     * An object that contains details about when a principal in the reported AWS Organizations entity last attempted to access an AWS service. A principal can be an IAM user, an IAM role, or the AWS account root user within the reported Organizations entity.
     *  This data type is a response element in the <a>GetOrganizationsAccessReport</a> operation.
@@ -992,7 +1002,7 @@ package iam {
 
   /**
     * Contains information about a condition context key. It includes the name of the key and specifies the value (or values, if the context key supports multiple values) to use in the simulation. This information is used when evaluating the <code>Condition</code> elements of the input policies.
-    *  This data type is used as an input parameter to <code> <a>SimulateCustomPolicy</a> </code> and <code> <a>SimulatePrincipalPolicy</a> </code>.
+    *  This data type is used as an input parameter to <a>SimulateCustomPolicy</a> and <a>SimulatePrincipalPolicy</a>.
     */
   @js.native
   trait ContextEntry extends js.Object {
@@ -2421,17 +2431,20 @@ package iam {
   @js.native
   trait GenerateServiceLastAccessedDetailsRequest extends js.Object {
     var Arn: arnType
+    var Granularity: js.UndefOr[AccessAdvisorUsageGranularityType]
   }
 
   object GenerateServiceLastAccessedDetailsRequest {
     @inline
     def apply(
-        Arn: arnType
+        Arn: arnType,
+        Granularity: js.UndefOr[AccessAdvisorUsageGranularityType] = js.undefined
     ): GenerateServiceLastAccessedDetailsRequest = {
       val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
 
+      Granularity.foreach(__v => __obj.updateDynamic("Granularity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GenerateServiceLastAccessedDetailsRequest]
     }
   }
@@ -3291,6 +3304,7 @@ package iam {
     var ServicesLastAccessed: ServicesLastAccessed
     var Error: js.UndefOr[ErrorDetails]
     var IsTruncated: js.UndefOr[booleanType]
+    var JobType: js.UndefOr[AccessAdvisorUsageGranularityType]
     var Marker: js.UndefOr[responseMarkerType]
   }
 
@@ -3303,6 +3317,7 @@ package iam {
         ServicesLastAccessed: ServicesLastAccessed,
         Error: js.UndefOr[ErrorDetails] = js.undefined,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
+        JobType: js.UndefOr[AccessAdvisorUsageGranularityType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): GetServiceLastAccessedDetailsResponse = {
       val __obj = js.Dynamic.literal(
@@ -3314,6 +3329,7 @@ package iam {
 
       Error.foreach(__v => __obj.updateDynamic("Error")(__v.asInstanceOf[js.Any]))
       IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      JobType.foreach(__v => __obj.updateDynamic("JobType")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetServiceLastAccessedDetailsResponse]
     }
@@ -6128,7 +6144,9 @@ package iam {
     var ServiceNamespace: serviceNamespaceType
     var LastAuthenticated: js.UndefOr[dateType]
     var LastAuthenticatedEntity: js.UndefOr[arnType]
+    var LastAuthenticatedRegion: js.UndefOr[stringType]
     var TotalAuthenticatedEntities: js.UndefOr[integerType]
+    var TrackedActionsLastAccessed: js.UndefOr[TrackedActionsLastAccessed]
   }
 
   object ServiceLastAccessed {
@@ -6138,7 +6156,9 @@ package iam {
         ServiceNamespace: serviceNamespaceType,
         LastAuthenticated: js.UndefOr[dateType] = js.undefined,
         LastAuthenticatedEntity: js.UndefOr[arnType] = js.undefined,
-        TotalAuthenticatedEntities: js.UndefOr[integerType] = js.undefined
+        LastAuthenticatedRegion: js.UndefOr[stringType] = js.undefined,
+        TotalAuthenticatedEntities: js.UndefOr[integerType] = js.undefined,
+        TrackedActionsLastAccessed: js.UndefOr[TrackedActionsLastAccessed] = js.undefined
     ): ServiceLastAccessed = {
       val __obj = js.Dynamic.literal(
         "ServiceName"      -> ServiceName.asInstanceOf[js.Any],
@@ -6147,8 +6167,12 @@ package iam {
 
       LastAuthenticated.foreach(__v => __obj.updateDynamic("LastAuthenticated")(__v.asInstanceOf[js.Any]))
       LastAuthenticatedEntity.foreach(__v => __obj.updateDynamic("LastAuthenticatedEntity")(__v.asInstanceOf[js.Any]))
+      LastAuthenticatedRegion.foreach(__v => __obj.updateDynamic("LastAuthenticatedRegion")(__v.asInstanceOf[js.Any]))
       TotalAuthenticatedEntities.foreach(__v =>
         __obj.updateDynamic("TotalAuthenticatedEntities")(__v.asInstanceOf[js.Any])
+      )
+      TrackedActionsLastAccessed.foreach(__v =>
+        __obj.updateDynamic("TrackedActionsLastAccessed")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ServiceLastAccessed]
     }
@@ -6522,6 +6546,35 @@ package iam {
       )
 
       __obj.asInstanceOf[TagUserRequest]
+    }
+  }
+
+  /**
+    * Contains details about the most recent attempt to access an action within the service.
+    *  This data type is used as a response element in the <a>GetServiceLastAccessedDetails</a> operation.
+    */
+  @js.native
+  trait TrackedActionLastAccessed extends js.Object {
+    var ActionName: js.UndefOr[stringType]
+    var LastAccessedEntity: js.UndefOr[arnType]
+    var LastAccessedRegion: js.UndefOr[stringType]
+    var LastAccessedTime: js.UndefOr[dateType]
+  }
+
+  object TrackedActionLastAccessed {
+    @inline
+    def apply(
+        ActionName: js.UndefOr[stringType] = js.undefined,
+        LastAccessedEntity: js.UndefOr[arnType] = js.undefined,
+        LastAccessedRegion: js.UndefOr[stringType] = js.undefined,
+        LastAccessedTime: js.UndefOr[dateType] = js.undefined
+    ): TrackedActionLastAccessed = {
+      val __obj = js.Dynamic.literal()
+      ActionName.foreach(__v => __obj.updateDynamic("ActionName")(__v.asInstanceOf[js.Any]))
+      LastAccessedEntity.foreach(__v => __obj.updateDynamic("LastAccessedEntity")(__v.asInstanceOf[js.Any]))
+      LastAccessedRegion.foreach(__v => __obj.updateDynamic("LastAccessedRegion")(__v.asInstanceOf[js.Any]))
+      LastAccessedTime.foreach(__v => __obj.updateDynamic("LastAccessedTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TrackedActionLastAccessed]
     }
   }
 

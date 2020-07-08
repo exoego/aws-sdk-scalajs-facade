@@ -581,6 +581,7 @@ package stepfunctions {
     var roleArn: Arn
     var stateMachineArn: Arn
     var updateDate: Timestamp
+    var loggingConfiguration: js.UndefOr[LoggingConfiguration]
   }
 
   object DescribeStateMachineForExecutionOutput {
@@ -590,7 +591,8 @@ package stepfunctions {
         name: Name,
         roleArn: Arn,
         stateMachineArn: Arn,
-        updateDate: Timestamp
+        updateDate: Timestamp,
+        loggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined
     ): DescribeStateMachineForExecutionOutput = {
       val __obj = js.Dynamic.literal(
         "definition"      -> definition.asInstanceOf[js.Any],
@@ -600,6 +602,7 @@ package stepfunctions {
         "updateDate"      -> updateDate.asInstanceOf[js.Any]
       )
 
+      loggingConfiguration.foreach(__v => __obj.updateDynamic("loggingConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeStateMachineForExecutionOutput]
     }
   }
@@ -1531,7 +1534,7 @@ package stepfunctions {
   }
 
   /**
-    * <p/>
+    * The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.
     */
   @js.native
   trait LoggingConfiguration extends js.Object {

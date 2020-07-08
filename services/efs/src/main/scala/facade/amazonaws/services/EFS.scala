@@ -17,6 +17,7 @@ package object efs {
   type ClientToken                    = String
   type CreationToken                  = String
   type Encrypted                      = Boolean
+  type FileSystemArn                  = String
   type FileSystemDescriptions         = js.Array[FileSystemDescription]
   type FileSystemId                   = String
   type FileSystemNullableSizeValue    = Double
@@ -51,6 +52,7 @@ package object efs {
   type Timestamp                      = js.Date
   type Token                          = String
   type Uid                            = Double
+  type VpcId                          = String
 
   implicit final class EFSOps(private val service: EFS) extends AnyVal {
 
@@ -70,6 +72,8 @@ package object efs {
       service.deleteMountTarget(params).promise().toFuture
     @inline def describeAccessPointsFuture(params: DescribeAccessPointsRequest): Future[DescribeAccessPointsResponse] =
       service.describeAccessPoints(params).promise().toFuture
+    @inline def describeBackupPolicyFuture(params: DescribeBackupPolicyRequest): Future[BackupPolicyDescription] =
+      service.describeBackupPolicy(params).promise().toFuture
     @inline def describeFileSystemPolicyFuture(
         params: DescribeFileSystemPolicyRequest
     ): Future[FileSystemPolicyDescription] = service.describeFileSystemPolicy(params).promise().toFuture
@@ -89,6 +93,8 @@ package object efs {
     @inline def modifyMountTargetSecurityGroupsFuture(
         params: ModifyMountTargetSecurityGroupsRequest
     ): Future[js.Object] = service.modifyMountTargetSecurityGroups(params).promise().toFuture
+    @inline def putBackupPolicyFuture(params: PutBackupPolicyRequest): Future[BackupPolicyDescription] =
+      service.putBackupPolicy(params).promise().toFuture
     @inline def putFileSystemPolicyFuture(params: PutFileSystemPolicyRequest): Future[FileSystemPolicyDescription] =
       service.putFileSystemPolicy(params).promise().toFuture
     @inline def putLifecycleConfigurationFuture(
@@ -117,6 +123,7 @@ package efs {
     def deleteFileSystemPolicy(params: DeleteFileSystemPolicyRequest): Request[js.Object]                = js.native
     def deleteMountTarget(params: DeleteMountTargetRequest): Request[js.Object]                          = js.native
     def describeAccessPoints(params: DescribeAccessPointsRequest): Request[DescribeAccessPointsResponse] = js.native
+    def describeBackupPolicy(params: DescribeBackupPolicyRequest): Request[BackupPolicyDescription]      = js.native
     def describeFileSystemPolicy(params: DescribeFileSystemPolicyRequest): Request[FileSystemPolicyDescription] =
       js.native
     def describeFileSystems(params: DescribeFileSystemsRequest): Request[DescribeFileSystemsResponse] = js.native
@@ -129,6 +136,7 @@ package efs {
     def describeMountTargets(params: DescribeMountTargetsRequest): Request[DescribeMountTargetsResponse]    = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
     def modifyMountTargetSecurityGroups(params: ModifyMountTargetSecurityGroupsRequest): Request[js.Object] = js.native
+    def putBackupPolicy(params: PutBackupPolicyRequest): Request[BackupPolicyDescription]                   = js.native
     def putFileSystemPolicy(params: PutFileSystemPolicyRequest): Request[FileSystemPolicyDescription]       = js.native
     def putLifecycleConfiguration(
         params: PutLifecycleConfigurationRequest
@@ -187,6 +195,43 @@ package efs {
       RootDirectory.foreach(__v => __obj.updateDynamic("RootDirectory")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AccessPointDescription]
+    }
+  }
+
+  /**
+    * The backup policy for the file system, showing the curent status. If <code>ENABLED</code>, the file system is being backed up.
+    */
+  @js.native
+  trait BackupPolicy extends js.Object {
+    var Status: Status
+  }
+
+  object BackupPolicy {
+    @inline
+    def apply(
+        Status: Status
+    ): BackupPolicy = {
+      val __obj = js.Dynamic.literal(
+        "Status" -> Status.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[BackupPolicy]
+    }
+  }
+
+  @js.native
+  trait BackupPolicyDescription extends js.Object {
+    var BackupPolicy: js.UndefOr[BackupPolicy]
+  }
+
+  object BackupPolicyDescription {
+    @inline
+    def apply(
+        BackupPolicy: js.UndefOr[BackupPolicy] = js.undefined
+    ): BackupPolicyDescription = {
+      val __obj = js.Dynamic.literal()
+      BackupPolicy.foreach(__v => __obj.updateDynamic("BackupPolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BackupPolicyDescription]
     }
   }
 
@@ -488,6 +533,24 @@ package efs {
   }
 
   @js.native
+  trait DescribeBackupPolicyRequest extends js.Object {
+    var FileSystemId: FileSystemId
+  }
+
+  object DescribeBackupPolicyRequest {
+    @inline
+    def apply(
+        FileSystemId: FileSystemId
+    ): DescribeBackupPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "FileSystemId" -> FileSystemId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeBackupPolicyRequest]
+    }
+  }
+
+  @js.native
   trait DescribeFileSystemPolicyRequest extends js.Object {
     var FileSystemId: FileSystemId
   }
@@ -737,6 +800,7 @@ package efs {
     var SizeInBytes: FileSystemSize
     var Tags: Tags
     var Encrypted: js.UndefOr[Encrypted]
+    var FileSystemArn: js.UndefOr[FileSystemArn]
     var KmsKeyId: js.UndefOr[KmsKeyId]
     var Name: js.UndefOr[TagValue]
     var ProvisionedThroughputInMibps: js.UndefOr[ProvisionedThroughputInMibps]
@@ -756,6 +820,7 @@ package efs {
         SizeInBytes: FileSystemSize,
         Tags: Tags,
         Encrypted: js.UndefOr[Encrypted] = js.undefined,
+        FileSystemArn: js.UndefOr[FileSystemArn] = js.undefined,
         KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
         Name: js.UndefOr[TagValue] = js.undefined,
         ProvisionedThroughputInMibps: js.UndefOr[ProvisionedThroughputInMibps] = js.undefined,
@@ -774,6 +839,7 @@ package efs {
       )
 
       Encrypted.foreach(__v => __obj.updateDynamic("Encrypted")(__v.asInstanceOf[js.Any]))
+      FileSystemArn.foreach(__v => __obj.updateDynamic("FileSystemArn")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       ProvisionedThroughputInMibps.foreach(__v =>
@@ -961,6 +1027,7 @@ package efs {
     var IpAddress: js.UndefOr[IpAddress]
     var NetworkInterfaceId: js.UndefOr[NetworkInterfaceId]
     var OwnerId: js.UndefOr[AwsAccountId]
+    var VpcId: js.UndefOr[VpcId]
   }
 
   object MountTargetDescription {
@@ -974,7 +1041,8 @@ package efs {
         AvailabilityZoneName: js.UndefOr[AvailabilityZoneName] = js.undefined,
         IpAddress: js.UndefOr[IpAddress] = js.undefined,
         NetworkInterfaceId: js.UndefOr[NetworkInterfaceId] = js.undefined,
-        OwnerId: js.UndefOr[AwsAccountId] = js.undefined
+        OwnerId: js.UndefOr[AwsAccountId] = js.undefined,
+        VpcId: js.UndefOr[VpcId] = js.undefined
     ): MountTargetDescription = {
       val __obj = js.Dynamic.literal(
         "FileSystemId"   -> FileSystemId.asInstanceOf[js.Any],
@@ -988,6 +1056,7 @@ package efs {
       IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
       NetworkInterfaceId.foreach(__v => __obj.updateDynamic("NetworkInterfaceId")(__v.asInstanceOf[js.Any]))
       OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MountTargetDescription]
     }
   }
@@ -1025,6 +1094,27 @@ package efs {
 
       SecondaryGids.foreach(__v => __obj.updateDynamic("SecondaryGids")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PosixUser]
+    }
+  }
+
+  @js.native
+  trait PutBackupPolicyRequest extends js.Object {
+    var BackupPolicy: BackupPolicy
+    var FileSystemId: FileSystemId
+  }
+
+  object PutBackupPolicyRequest {
+    @inline
+    def apply(
+        BackupPolicy: BackupPolicy,
+        FileSystemId: FileSystemId
+    ): PutBackupPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "BackupPolicy" -> BackupPolicy.asInstanceOf[js.Any],
+        "FileSystemId" -> FileSystemId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[PutBackupPolicyRequest]
     }
   }
 
@@ -1097,6 +1187,17 @@ package efs {
     }
   }
 
+  @js.native
+  sealed trait Status extends js.Any
+  object Status extends js.Object {
+    val ENABLED   = "ENABLED".asInstanceOf[Status]
+    val ENABLING  = "ENABLING".asInstanceOf[Status]
+    val DISABLED  = "DISABLED".asInstanceOf[Status]
+    val DISABLING = "DISABLING".asInstanceOf[Status]
+
+    val values = js.Object.freeze(js.Array(ENABLED, ENABLING, DISABLED, DISABLING))
+  }
+
   /**
     * A tag is a key-value pair. Allowed characters are letters, white space, and numbers that can be represented in UTF-8, and the following characters:<code> + - = . _ : /</code>
     */
@@ -1166,20 +1267,20 @@ package efs {
   @js.native
   trait UntagResourceRequest extends js.Object {
     var ResourceId: ResourceId
-    var TagKeys: js.UndefOr[TagKeys]
+    var TagKeys: TagKeys
   }
 
   object UntagResourceRequest {
     @inline
     def apply(
         ResourceId: ResourceId,
-        TagKeys: js.UndefOr[TagKeys] = js.undefined
+        TagKeys: TagKeys
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
+        "TagKeys"    -> TagKeys.asInstanceOf[js.Any]
       )
 
-      TagKeys.foreach(__v => __obj.updateDynamic("TagKeys")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }

@@ -65,6 +65,7 @@ package object medialive {
   type __listOfAudioChannelMapping                   = js.Array[AudioChannelMapping]
   type __listOfAudioDescription                      = js.Array[AudioDescription]
   type __listOfAudioSelector                         = js.Array[AudioSelector]
+  type __listOfAudioTrack                            = js.Array[AudioTrack]
   type __listOfCaptionDescription                    = js.Array[CaptionDescription]
   type __listOfCaptionLanguageMapping                = js.Array[CaptionLanguageMapping]
   type __listOfCaptionSelector                       = js.Array[CaptionSelector]
@@ -76,6 +77,9 @@ package object medialive {
   type __listOfInputChannelLevel                     = js.Array[InputChannelLevel]
   type __listOfInputDestination                      = js.Array[InputDestination]
   type __listOfInputDestinationRequest               = js.Array[InputDestinationRequest]
+  type __listOfInputDeviceRequest                    = js.Array[InputDeviceRequest]
+  type __listOfInputDeviceSettings                   = js.Array[InputDeviceSettings]
+  type __listOfInputDeviceSummary                    = js.Array[InputDeviceSummary]
   type __listOfInputSecurityGroup                    = js.Array[InputSecurityGroup]
   type __listOfInputSource                           = js.Array[InputSource]
   type __listOfInputSourceRequest                    = js.Array[InputSourceRequest]
@@ -152,6 +156,8 @@ package object medialive {
       service.deleteTags(params).promise().toFuture
     @inline def describeChannelFuture(params: DescribeChannelRequest): Future[DescribeChannelResponse] =
       service.describeChannel(params).promise().toFuture
+    @inline def describeInputDeviceFuture(params: DescribeInputDeviceRequest): Future[DescribeInputDeviceResponse] =
+      service.describeInputDevice(params).promise().toFuture
     @inline def describeInputFuture(params: DescribeInputRequest): Future[DescribeInputResponse] =
       service.describeInput(params).promise().toFuture
     @inline def describeInputSecurityGroupFuture(
@@ -170,6 +176,8 @@ package object medialive {
       service.describeSchedule(params).promise().toFuture
     @inline def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] =
       service.listChannels(params).promise().toFuture
+    @inline def listInputDevicesFuture(params: ListInputDevicesRequest): Future[ListInputDevicesResponse] =
+      service.listInputDevices(params).promise().toFuture
     @inline def listInputSecurityGroupsFuture(
         params: ListInputSecurityGroupsRequest
     ): Future[ListInputSecurityGroupsResponse] = service.listInputSecurityGroups(params).promise().toFuture
@@ -200,6 +208,8 @@ package object medialive {
       service.updateChannelClass(params).promise().toFuture
     @inline def updateChannelFuture(params: UpdateChannelRequest): Future[UpdateChannelResponse] =
       service.updateChannel(params).promise().toFuture
+    @inline def updateInputDeviceFuture(params: UpdateInputDeviceRequest): Future[UpdateInputDeviceResponse] =
+      service.updateInputDevice(params).promise().toFuture
     @inline def updateInputFuture(params: UpdateInputRequest): Future[UpdateInputResponse] =
       service.updateInput(params).promise().toFuture
     @inline def updateInputSecurityGroupFuture(
@@ -237,11 +247,12 @@ package medialive {
     def deleteMultiplex(params: DeleteMultiplexRequest): Request[DeleteMultiplexResponse] = js.native
     def deleteMultiplexProgram(params: DeleteMultiplexProgramRequest): Request[DeleteMultiplexProgramResponse] =
       js.native
-    def deleteReservation(params: DeleteReservationRequest): Request[DeleteReservationResponse] = js.native
-    def deleteSchedule(params: DeleteScheduleRequest): Request[DeleteScheduleResponse]          = js.native
-    def deleteTags(params: DeleteTagsRequest): Request[js.Object]                               = js.native
-    def describeChannel(params: DescribeChannelRequest): Request[DescribeChannelResponse]       = js.native
-    def describeInput(params: DescribeInputRequest): Request[DescribeInputResponse]             = js.native
+    def deleteReservation(params: DeleteReservationRequest): Request[DeleteReservationResponse]       = js.native
+    def deleteSchedule(params: DeleteScheduleRequest): Request[DeleteScheduleResponse]                = js.native
+    def deleteTags(params: DeleteTagsRequest): Request[js.Object]                                     = js.native
+    def describeChannel(params: DescribeChannelRequest): Request[DescribeChannelResponse]             = js.native
+    def describeInput(params: DescribeInputRequest): Request[DescribeInputResponse]                   = js.native
+    def describeInputDevice(params: DescribeInputDeviceRequest): Request[DescribeInputDeviceResponse] = js.native
     def describeInputSecurityGroup(
         params: DescribeInputSecurityGroupRequest
     ): Request[DescribeInputSecurityGroupResponse]                                              = js.native
@@ -252,6 +263,7 @@ package medialive {
     def describeReservation(params: DescribeReservationRequest): Request[DescribeReservationResponse] = js.native
     def describeSchedule(params: DescribeScheduleRequest): Request[DescribeScheduleResponse]          = js.native
     def listChannels(params: ListChannelsRequest): Request[ListChannelsResponse]                      = js.native
+    def listInputDevices(params: ListInputDevicesRequest): Request[ListInputDevicesResponse]          = js.native
     def listInputSecurityGroups(params: ListInputSecurityGroupsRequest): Request[ListInputSecurityGroupsResponse] =
       js.native
     def listInputs(params: ListInputsRequest): Request[ListInputsResponse]                                  = js.native
@@ -268,6 +280,7 @@ package medialive {
     def updateChannel(params: UpdateChannelRequest): Request[UpdateChannelResponse]                         = js.native
     def updateChannelClass(params: UpdateChannelClassRequest): Request[UpdateChannelClassResponse]          = js.native
     def updateInput(params: UpdateInputRequest): Request[UpdateInputResponse]                               = js.native
+    def updateInputDevice(params: UpdateInputDeviceRequest): Request[UpdateInputDeviceResponse]             = js.native
     def updateInputSecurityGroup(params: UpdateInputSecurityGroupRequest): Request[UpdateInputSecurityGroupResponse] =
       js.native
     def updateMultiplex(params: UpdateMultiplexRequest): Request[UpdateMultiplexResponse] = js.native
@@ -967,18 +980,63 @@ package medialive {
   trait AudioSelectorSettings extends js.Object {
     var AudioLanguageSelection: js.UndefOr[AudioLanguageSelection]
     var AudioPidSelection: js.UndefOr[AudioPidSelection]
+    var AudioTrackSelection: js.UndefOr[AudioTrackSelection]
   }
 
   object AudioSelectorSettings {
     @inline
     def apply(
         AudioLanguageSelection: js.UndefOr[AudioLanguageSelection] = js.undefined,
-        AudioPidSelection: js.UndefOr[AudioPidSelection] = js.undefined
+        AudioPidSelection: js.UndefOr[AudioPidSelection] = js.undefined,
+        AudioTrackSelection: js.UndefOr[AudioTrackSelection] = js.undefined
     ): AudioSelectorSettings = {
       val __obj = js.Dynamic.literal()
       AudioLanguageSelection.foreach(__v => __obj.updateDynamic("AudioLanguageSelection")(__v.asInstanceOf[js.Any]))
       AudioPidSelection.foreach(__v => __obj.updateDynamic("AudioPidSelection")(__v.asInstanceOf[js.Any]))
+      AudioTrackSelection.foreach(__v => __obj.updateDynamic("AudioTrackSelection")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AudioSelectorSettings]
+    }
+  }
+
+  /**
+    * Audio Track
+    */
+  @js.native
+  trait AudioTrack extends js.Object {
+    var Track: __integerMin1
+  }
+
+  object AudioTrack {
+    @inline
+    def apply(
+        Track: __integerMin1
+    ): AudioTrack = {
+      val __obj = js.Dynamic.literal(
+        "Track" -> Track.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[AudioTrack]
+    }
+  }
+
+  /**
+    * Audio Track Selection
+    */
+  @js.native
+  trait AudioTrackSelection extends js.Object {
+    var Tracks: __listOfAudioTrack
+  }
+
+  object AudioTrackSelection {
+    @inline
+    def apply(
+        Tracks: __listOfAudioTrack
+    ): AudioTrackSelection = {
+      val __obj = js.Dynamic.literal(
+        "Tracks" -> Tracks.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[AudioTrackSelection]
     }
   }
 
@@ -1006,6 +1064,30 @@ package medialive {
     val COMMON = "COMMON".asInstanceOf[AuthenticationScheme]
 
     val values = js.Object.freeze(js.Array(AKAMAI, COMMON))
+  }
+
+  /**
+    * The settings for Automatic Input Failover.
+    */
+  @js.native
+  trait AutomaticInputFailoverSettings extends js.Object {
+    var SecondaryInputId: __string
+    var InputPreference: js.UndefOr[InputPreference]
+  }
+
+  object AutomaticInputFailoverSettings {
+    @inline
+    def apply(
+        SecondaryInputId: __string,
+        InputPreference: js.UndefOr[InputPreference] = js.undefined
+    ): AutomaticInputFailoverSettings = {
+      val __obj = js.Dynamic.literal(
+        "SecondaryInputId" -> SecondaryInputId.asInstanceOf[js.Any]
+      )
+
+      InputPreference.foreach(__v => __obj.updateDynamic("InputPreference")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AutomaticInputFailoverSettings]
+    }
   }
 
   /**
@@ -1886,6 +1968,7 @@ package medialive {
   @js.native
   trait CreateInputRequest extends js.Object {
     var Destinations: js.UndefOr[__listOfInputDestinationRequest]
+    var InputDevices: js.UndefOr[__listOfInputDeviceSettings]
     var InputSecurityGroups: js.UndefOr[__listOf__string]
     var MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlowRequest]
     var Name: js.UndefOr[__string]
@@ -1901,6 +1984,7 @@ package medialive {
     @inline
     def apply(
         Destinations: js.UndefOr[__listOfInputDestinationRequest] = js.undefined,
+        InputDevices: js.UndefOr[__listOfInputDeviceSettings] = js.undefined,
         InputSecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
         MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlowRequest] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
@@ -1913,6 +1997,7 @@ package medialive {
     ): CreateInputRequest = {
       val __obj = js.Dynamic.literal()
       Destinations.foreach(__v => __obj.updateDynamic("Destinations")(__v.asInstanceOf[js.Any]))
+      InputDevices.foreach(__v => __obj.updateDynamic("InputDevices")(__v.asInstanceOf[js.Any]))
       InputSecurityGroups.foreach(__v => __obj.updateDynamic("InputSecurityGroups")(__v.asInstanceOf[js.Any]))
       MediaConnectFlows.foreach(__v => __obj.updateDynamic("MediaConnectFlows")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -2621,6 +2706,73 @@ package medialive {
   }
 
   /**
+    * Placeholder documentation for DescribeInputDeviceRequest
+    */
+  @js.native
+  trait DescribeInputDeviceRequest extends js.Object {
+    var InputDeviceId: __string
+  }
+
+  object DescribeInputDeviceRequest {
+    @inline
+    def apply(
+        InputDeviceId: __string
+    ): DescribeInputDeviceRequest = {
+      val __obj = js.Dynamic.literal(
+        "InputDeviceId" -> InputDeviceId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeInputDeviceRequest]
+    }
+  }
+
+  /**
+    * Placeholder documentation for DescribeInputDeviceResponse
+    */
+  @js.native
+  trait DescribeInputDeviceResponse extends js.Object {
+    var Arn: js.UndefOr[__string]
+    var ConnectionState: js.UndefOr[InputDeviceConnectionState]
+    var DeviceSettingsSyncState: js.UndefOr[DeviceSettingsSyncState]
+    var HdDeviceSettings: js.UndefOr[InputDeviceHdSettings]
+    var Id: js.UndefOr[__string]
+    var MacAddress: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
+    var NetworkSettings: js.UndefOr[InputDeviceNetworkSettings]
+    var SerialNumber: js.UndefOr[__string]
+    var Type: js.UndefOr[InputDeviceType]
+  }
+
+  object DescribeInputDeviceResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        ConnectionState: js.UndefOr[InputDeviceConnectionState] = js.undefined,
+        DeviceSettingsSyncState: js.UndefOr[DeviceSettingsSyncState] = js.undefined,
+        HdDeviceSettings: js.UndefOr[InputDeviceHdSettings] = js.undefined,
+        Id: js.UndefOr[__string] = js.undefined,
+        MacAddress: js.UndefOr[__string] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        NetworkSettings: js.UndefOr[InputDeviceNetworkSettings] = js.undefined,
+        SerialNumber: js.UndefOr[__string] = js.undefined,
+        Type: js.UndefOr[InputDeviceType] = js.undefined
+    ): DescribeInputDeviceResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      ConnectionState.foreach(__v => __obj.updateDynamic("ConnectionState")(__v.asInstanceOf[js.Any]))
+      DeviceSettingsSyncState.foreach(__v => __obj.updateDynamic("DeviceSettingsSyncState")(__v.asInstanceOf[js.Any]))
+      HdDeviceSettings.foreach(__v => __obj.updateDynamic("HdDeviceSettings")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      MacAddress.foreach(__v => __obj.updateDynamic("MacAddress")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NetworkSettings.foreach(__v => __obj.updateDynamic("NetworkSettings")(__v.asInstanceOf[js.Any]))
+      SerialNumber.foreach(__v => __obj.updateDynamic("SerialNumber")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeInputDeviceResponse]
+    }
+  }
+
+  /**
     * Placeholder documentation for DescribeInputRequest
     */
   @js.native
@@ -2651,6 +2803,7 @@ package medialive {
     var Destinations: js.UndefOr[__listOfInputDestination]
     var Id: js.UndefOr[__string]
     var InputClass: js.UndefOr[InputClass]
+    var InputDevices: js.UndefOr[__listOfInputDeviceSettings]
     var InputSourceType: js.UndefOr[InputSourceType]
     var MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlow]
     var Name: js.UndefOr[__string]
@@ -2670,6 +2823,7 @@ package medialive {
         Destinations: js.UndefOr[__listOfInputDestination] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
         InputClass: js.UndefOr[InputClass] = js.undefined,
+        InputDevices: js.UndefOr[__listOfInputDeviceSettings] = js.undefined,
         InputSourceType: js.UndefOr[InputSourceType] = js.undefined,
         MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlow] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
@@ -2686,6 +2840,7 @@ package medialive {
       Destinations.foreach(__v => __obj.updateDynamic("Destinations")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       InputClass.foreach(__v => __obj.updateDynamic("InputClass")(__v.asInstanceOf[js.Any]))
+      InputDevices.foreach(__v => __obj.updateDynamic("InputDevices")(__v.asInstanceOf[js.Any]))
       InputSourceType.foreach(__v => __obj.updateDynamic("InputSourceType")(__v.asInstanceOf[js.Any]))
       MediaConnectFlows.foreach(__v => __obj.updateDynamic("MediaConnectFlows")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -3081,6 +3236,18 @@ package medialive {
       ScheduleActions.foreach(__v => __obj.updateDynamic("ScheduleActions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeScheduleResponse]
     }
+  }
+
+  /**
+    * The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration.
+    */
+  @js.native
+  sealed trait DeviceSettingsSyncState extends js.Any
+  object DeviceSettingsSyncState extends js.Object {
+    val SYNCED  = "SYNCED".asInstanceOf[DeviceSettingsSyncState]
+    val SYNCING = "SYNCING".asInstanceOf[DeviceSettingsSyncState]
+
+    val values = js.Object.freeze(js.Array(SYNCED, SYNCING))
   }
 
   /**
@@ -3697,6 +3864,7 @@ package medialive {
     var AvailConfiguration: js.UndefOr[AvailConfiguration]
     var BlackoutSlate: js.UndefOr[BlackoutSlate]
     var CaptionDescriptions: js.UndefOr[__listOfCaptionDescription]
+    var FeatureActivations: js.UndefOr[FeatureActivations]
     var GlobalConfiguration: js.UndefOr[GlobalConfiguration]
     var NielsenConfiguration: js.UndefOr[NielsenConfiguration]
   }
@@ -3712,6 +3880,7 @@ package medialive {
         AvailConfiguration: js.UndefOr[AvailConfiguration] = js.undefined,
         BlackoutSlate: js.UndefOr[BlackoutSlate] = js.undefined,
         CaptionDescriptions: js.UndefOr[__listOfCaptionDescription] = js.undefined,
+        FeatureActivations: js.UndefOr[FeatureActivations] = js.undefined,
         GlobalConfiguration: js.UndefOr[GlobalConfiguration] = js.undefined,
         NielsenConfiguration: js.UndefOr[NielsenConfiguration] = js.undefined
     ): EncoderSettings = {
@@ -3726,10 +3895,44 @@ package medialive {
       AvailConfiguration.foreach(__v => __obj.updateDynamic("AvailConfiguration")(__v.asInstanceOf[js.Any]))
       BlackoutSlate.foreach(__v => __obj.updateDynamic("BlackoutSlate")(__v.asInstanceOf[js.Any]))
       CaptionDescriptions.foreach(__v => __obj.updateDynamic("CaptionDescriptions")(__v.asInstanceOf[js.Any]))
+      FeatureActivations.foreach(__v => __obj.updateDynamic("FeatureActivations")(__v.asInstanceOf[js.Any]))
       GlobalConfiguration.foreach(__v => __obj.updateDynamic("GlobalConfiguration")(__v.asInstanceOf[js.Any]))
       NielsenConfiguration.foreach(__v => __obj.updateDynamic("NielsenConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EncoderSettings]
     }
+  }
+
+  /**
+    * Feature Activations
+    */
+  @js.native
+  trait FeatureActivations extends js.Object {
+    var InputPrepareScheduleActions: js.UndefOr[FeatureActivationsInputPrepareScheduleActions]
+  }
+
+  object FeatureActivations {
+    @inline
+    def apply(
+        InputPrepareScheduleActions: js.UndefOr[FeatureActivationsInputPrepareScheduleActions] = js.undefined
+    ): FeatureActivations = {
+      val __obj = js.Dynamic.literal()
+      InputPrepareScheduleActions.foreach(__v =>
+        __obj.updateDynamic("InputPrepareScheduleActions")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[FeatureActivations]
+    }
+  }
+
+  /**
+    * Feature Activations Input Prepare Schedule Actions
+    */
+  @js.native
+  sealed trait FeatureActivationsInputPrepareScheduleActions extends js.Any
+  object FeatureActivationsInputPrepareScheduleActions extends js.Object {
+    val DISABLED = "DISABLED".asInstanceOf[FeatureActivationsInputPrepareScheduleActions]
+    val ENABLED  = "ENABLED".asInstanceOf[FeatureActivationsInputPrepareScheduleActions]
+
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -3831,17 +4034,47 @@ package medialive {
   @js.native
   trait Fmp4HlsSettings extends js.Object {
     var AudioRenditionSets: js.UndefOr[__string]
+    var NielsenId3Behavior: js.UndefOr[Fmp4NielsenId3Behavior]
+    var TimedMetadataBehavior: js.UndefOr[Fmp4TimedMetadataBehavior]
   }
 
   object Fmp4HlsSettings {
     @inline
     def apply(
-        AudioRenditionSets: js.UndefOr[__string] = js.undefined
+        AudioRenditionSets: js.UndefOr[__string] = js.undefined,
+        NielsenId3Behavior: js.UndefOr[Fmp4NielsenId3Behavior] = js.undefined,
+        TimedMetadataBehavior: js.UndefOr[Fmp4TimedMetadataBehavior] = js.undefined
     ): Fmp4HlsSettings = {
       val __obj = js.Dynamic.literal()
       AudioRenditionSets.foreach(__v => __obj.updateDynamic("AudioRenditionSets")(__v.asInstanceOf[js.Any]))
+      NielsenId3Behavior.foreach(__v => __obj.updateDynamic("NielsenId3Behavior")(__v.asInstanceOf[js.Any]))
+      TimedMetadataBehavior.foreach(__v => __obj.updateDynamic("TimedMetadataBehavior")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Fmp4HlsSettings]
     }
+  }
+
+  /**
+    * Fmp4 Nielsen Id3 Behavior
+    */
+  @js.native
+  sealed trait Fmp4NielsenId3Behavior extends js.Any
+  object Fmp4NielsenId3Behavior extends js.Object {
+    val NO_PASSTHROUGH = "NO_PASSTHROUGH".asInstanceOf[Fmp4NielsenId3Behavior]
+    val PASSTHROUGH    = "PASSTHROUGH".asInstanceOf[Fmp4NielsenId3Behavior]
+
+    val values = js.Object.freeze(js.Array(NO_PASSTHROUGH, PASSTHROUGH))
+  }
+
+  /**
+    * Fmp4 Timed Metadata Behavior
+    */
+  @js.native
+  sealed trait Fmp4TimedMetadataBehavior extends js.Any
+  object Fmp4TimedMetadataBehavior extends js.Object {
+    val NO_PASSTHROUGH = "NO_PASSTHROUGH".asInstanceOf[Fmp4TimedMetadataBehavior]
+    val PASSTHROUGH    = "PASSTHROUGH".asInstanceOf[Fmp4TimedMetadataBehavior]
+
+    val values = js.Object.freeze(js.Array(NO_PASSTHROUGH, PASSTHROUGH))
   }
 
   /**
@@ -4108,6 +4341,25 @@ package medialive {
   }
 
   /**
+    * H264 Filter Settings
+    */
+  @js.native
+  trait H264FilterSettings extends js.Object {
+    var TemporalFilterSettings: js.UndefOr[TemporalFilterSettings]
+  }
+
+  object H264FilterSettings {
+    @inline
+    def apply(
+        TemporalFilterSettings: js.UndefOr[TemporalFilterSettings] = js.undefined
+    ): H264FilterSettings = {
+      val __obj = js.Dynamic.literal()
+      TemporalFilterSettings.foreach(__v => __obj.updateDynamic("TemporalFilterSettings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[H264FilterSettings]
+    }
+  }
+
+  /**
     * H264 Flicker Aq
     */
   @js.native
@@ -4115,6 +4367,18 @@ package medialive {
   object H264FlickerAq extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[H264FlickerAq]
     val ENABLED  = "ENABLED".asInstanceOf[H264FlickerAq]
+
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+  }
+
+  /**
+    * H264 Force Field Pictures
+    */
+  @js.native
+  sealed trait H264ForceFieldPictures extends js.Any
+  object H264ForceFieldPictures extends js.Object {
+    val DISABLED = "DISABLED".asInstanceOf[H264ForceFieldPictures]
+    val ENABLED  = "ENABLED".asInstanceOf[H264ForceFieldPictures]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -4244,6 +4508,18 @@ package medialive {
   }
 
   /**
+    * H264 Quality Level
+    */
+  @js.native
+  sealed trait H264QualityLevel extends js.Any
+  object H264QualityLevel extends js.Object {
+    val ENHANCED_QUALITY = "ENHANCED_QUALITY".asInstanceOf[H264QualityLevel]
+    val STANDARD_QUALITY = "STANDARD_QUALITY".asInstanceOf[H264QualityLevel]
+
+    val values = js.Object.freeze(js.Array(ENHANCED_QUALITY, STANDARD_QUALITY))
+  }
+
+  /**
     * H264 Rate Control Mode
     */
   @js.native
@@ -4294,8 +4570,10 @@ package medialive {
     var ColorMetadata: js.UndefOr[H264ColorMetadata]
     var ColorSpaceSettings: js.UndefOr[H264ColorSpaceSettings]
     var EntropyEncoding: js.UndefOr[H264EntropyEncoding]
+    var FilterSettings: js.UndefOr[H264FilterSettings]
     var FixedAfd: js.UndefOr[FixedAfd]
     var FlickerAq: js.UndefOr[H264FlickerAq]
+    var ForceFieldPictures: js.UndefOr[H264ForceFieldPictures]
     var FramerateControl: js.UndefOr[H264FramerateControl]
     var FramerateDenominator: js.UndefOr[__integerMin1]
     var FramerateNumerator: js.UndefOr[__integerMin1]
@@ -4313,6 +4591,7 @@ package medialive {
     var ParDenominator: js.UndefOr[__integerMin1]
     var ParNumerator: js.UndefOr[__integer]
     var Profile: js.UndefOr[H264Profile]
+    var QualityLevel: js.UndefOr[H264QualityLevel]
     var QvbrQualityLevel: js.UndefOr[__integerMin1Max10]
     var RateControlMode: js.UndefOr[H264RateControlMode]
     var ScanType: js.UndefOr[H264ScanType]
@@ -4337,8 +4616,10 @@ package medialive {
         ColorMetadata: js.UndefOr[H264ColorMetadata] = js.undefined,
         ColorSpaceSettings: js.UndefOr[H264ColorSpaceSettings] = js.undefined,
         EntropyEncoding: js.UndefOr[H264EntropyEncoding] = js.undefined,
+        FilterSettings: js.UndefOr[H264FilterSettings] = js.undefined,
         FixedAfd: js.UndefOr[FixedAfd] = js.undefined,
         FlickerAq: js.UndefOr[H264FlickerAq] = js.undefined,
+        ForceFieldPictures: js.UndefOr[H264ForceFieldPictures] = js.undefined,
         FramerateControl: js.UndefOr[H264FramerateControl] = js.undefined,
         FramerateDenominator: js.UndefOr[__integerMin1] = js.undefined,
         FramerateNumerator: js.UndefOr[__integerMin1] = js.undefined,
@@ -4356,6 +4637,7 @@ package medialive {
         ParDenominator: js.UndefOr[__integerMin1] = js.undefined,
         ParNumerator: js.UndefOr[__integer] = js.undefined,
         Profile: js.UndefOr[H264Profile] = js.undefined,
+        QualityLevel: js.UndefOr[H264QualityLevel] = js.undefined,
         QvbrQualityLevel: js.UndefOr[__integerMin1Max10] = js.undefined,
         RateControlMode: js.UndefOr[H264RateControlMode] = js.undefined,
         ScanType: js.UndefOr[H264ScanType] = js.undefined,
@@ -4377,8 +4659,10 @@ package medialive {
       ColorMetadata.foreach(__v => __obj.updateDynamic("ColorMetadata")(__v.asInstanceOf[js.Any]))
       ColorSpaceSettings.foreach(__v => __obj.updateDynamic("ColorSpaceSettings")(__v.asInstanceOf[js.Any]))
       EntropyEncoding.foreach(__v => __obj.updateDynamic("EntropyEncoding")(__v.asInstanceOf[js.Any]))
+      FilterSettings.foreach(__v => __obj.updateDynamic("FilterSettings")(__v.asInstanceOf[js.Any]))
       FixedAfd.foreach(__v => __obj.updateDynamic("FixedAfd")(__v.asInstanceOf[js.Any]))
       FlickerAq.foreach(__v => __obj.updateDynamic("FlickerAq")(__v.asInstanceOf[js.Any]))
+      ForceFieldPictures.foreach(__v => __obj.updateDynamic("ForceFieldPictures")(__v.asInstanceOf[js.Any]))
       FramerateControl.foreach(__v => __obj.updateDynamic("FramerateControl")(__v.asInstanceOf[js.Any]))
       FramerateDenominator.foreach(__v => __obj.updateDynamic("FramerateDenominator")(__v.asInstanceOf[js.Any]))
       FramerateNumerator.foreach(__v => __obj.updateDynamic("FramerateNumerator")(__v.asInstanceOf[js.Any]))
@@ -4396,6 +4680,7 @@ package medialive {
       ParDenominator.foreach(__v => __obj.updateDynamic("ParDenominator")(__v.asInstanceOf[js.Any]))
       ParNumerator.foreach(__v => __obj.updateDynamic("ParNumerator")(__v.asInstanceOf[js.Any]))
       Profile.foreach(__v => __obj.updateDynamic("Profile")(__v.asInstanceOf[js.Any]))
+      QualityLevel.foreach(__v => __obj.updateDynamic("QualityLevel")(__v.asInstanceOf[js.Any]))
       QvbrQualityLevel.foreach(__v => __obj.updateDynamic("QvbrQualityLevel")(__v.asInstanceOf[js.Any]))
       RateControlMode.foreach(__v => __obj.updateDynamic("RateControlMode")(__v.asInstanceOf[js.Any]))
       ScanType.foreach(__v => __obj.updateDynamic("ScanType")(__v.asInstanceOf[js.Any]))
@@ -5528,7 +5813,7 @@ package medialive {
   }
 
   /**
-    * Settings to configure an action so that it occurs immediately. This is only supported for input switch actions currently.
+    * Settings to configure an action so that it occurs as soon as possible.
     */
   @js.native
   trait ImmediateModeScheduleActionStartSettings extends js.Object {}
@@ -5553,6 +5838,7 @@ package medialive {
     var Destinations: js.UndefOr[__listOfInputDestination]
     var Id: js.UndefOr[__string]
     var InputClass: js.UndefOr[InputClass]
+    var InputDevices: js.UndefOr[__listOfInputDeviceSettings]
     var InputSourceType: js.UndefOr[InputSourceType]
     var MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlow]
     var Name: js.UndefOr[__string]
@@ -5572,6 +5858,7 @@ package medialive {
         Destinations: js.UndefOr[__listOfInputDestination] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
         InputClass: js.UndefOr[InputClass] = js.undefined,
+        InputDevices: js.UndefOr[__listOfInputDeviceSettings] = js.undefined,
         InputSourceType: js.UndefOr[InputSourceType] = js.undefined,
         MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlow] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
@@ -5588,6 +5875,7 @@ package medialive {
       Destinations.foreach(__v => __obj.updateDynamic("Destinations")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       InputClass.foreach(__v => __obj.updateDynamic("InputClass")(__v.asInstanceOf[js.Any]))
+      InputDevices.foreach(__v => __obj.updateDynamic("InputDevices")(__v.asInstanceOf[js.Any]))
       InputSourceType.foreach(__v => __obj.updateDynamic("InputSourceType")(__v.asInstanceOf[js.Any]))
       MediaConnectFlows.foreach(__v => __obj.updateDynamic("MediaConnectFlows")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -5606,6 +5894,7 @@ package medialive {
     */
   @js.native
   trait InputAttachment extends js.Object {
+    var AutomaticInputFailoverSettings: js.UndefOr[AutomaticInputFailoverSettings]
     var InputAttachmentName: js.UndefOr[__string]
     var InputId: js.UndefOr[__string]
     var InputSettings: js.UndefOr[InputSettings]
@@ -5614,11 +5903,15 @@ package medialive {
   object InputAttachment {
     @inline
     def apply(
+        AutomaticInputFailoverSettings: js.UndefOr[AutomaticInputFailoverSettings] = js.undefined,
         InputAttachmentName: js.UndefOr[__string] = js.undefined,
         InputId: js.UndefOr[__string] = js.undefined,
         InputSettings: js.UndefOr[InputSettings] = js.undefined
     ): InputAttachment = {
       val __obj = js.Dynamic.literal()
+      AutomaticInputFailoverSettings.foreach(__v =>
+        __obj.updateDynamic("AutomaticInputFailoverSettings")(__v.asInstanceOf[js.Any])
+      )
       InputAttachmentName.foreach(__v => __obj.updateDynamic("InputAttachmentName")(__v.asInstanceOf[js.Any]))
       InputId.foreach(__v => __obj.updateDynamic("InputId")(__v.asInstanceOf[js.Any]))
       InputSettings.foreach(__v => __obj.updateDynamic("InputSettings")(__v.asInstanceOf[js.Any]))
@@ -5796,6 +6089,267 @@ package medialive {
   }
 
   /**
+    * The source at the input device that is currently active.
+    */
+  @js.native
+  sealed trait InputDeviceActiveInput extends js.Any
+  object InputDeviceActiveInput extends js.Object {
+    val HDMI = "HDMI".asInstanceOf[InputDeviceActiveInput]
+    val SDI  = "SDI".asInstanceOf[InputDeviceActiveInput]
+
+    val values = js.Object.freeze(js.Array(HDMI, SDI))
+  }
+
+  /**
+    * Configurable settings for the input device.
+    */
+  @js.native
+  trait InputDeviceConfigurableSettings extends js.Object {
+    var ConfiguredInput: js.UndefOr[InputDeviceConfiguredInput]
+    var MaxBitrate: js.UndefOr[__integer]
+  }
+
+  object InputDeviceConfigurableSettings {
+    @inline
+    def apply(
+        ConfiguredInput: js.UndefOr[InputDeviceConfiguredInput] = js.undefined,
+        MaxBitrate: js.UndefOr[__integer] = js.undefined
+    ): InputDeviceConfigurableSettings = {
+      val __obj = js.Dynamic.literal()
+      ConfiguredInput.foreach(__v => __obj.updateDynamic("ConfiguredInput")(__v.asInstanceOf[js.Any]))
+      MaxBitrate.foreach(__v => __obj.updateDynamic("MaxBitrate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputDeviceConfigurableSettings]
+    }
+  }
+
+  /**
+    * The source to activate (use) from the input device.
+    */
+  @js.native
+  sealed trait InputDeviceConfiguredInput extends js.Any
+  object InputDeviceConfiguredInput extends js.Object {
+    val AUTO = "AUTO".asInstanceOf[InputDeviceConfiguredInput]
+    val HDMI = "HDMI".asInstanceOf[InputDeviceConfiguredInput]
+    val SDI  = "SDI".asInstanceOf[InputDeviceConfiguredInput]
+
+    val values = js.Object.freeze(js.Array(AUTO, HDMI, SDI))
+  }
+
+  /**
+    * The state of the connection between the input device and AWS.
+    */
+  @js.native
+  sealed trait InputDeviceConnectionState extends js.Any
+  object InputDeviceConnectionState extends js.Object {
+    val DISCONNECTED = "DISCONNECTED".asInstanceOf[InputDeviceConnectionState]
+    val CONNECTED    = "CONNECTED".asInstanceOf[InputDeviceConnectionState]
+
+    val values = js.Object.freeze(js.Array(DISCONNECTED, CONNECTED))
+  }
+
+  /**
+    * Settings that describe the active source from the input device, and the video characteristics of that source.
+    */
+  @js.native
+  trait InputDeviceHdSettings extends js.Object {
+    var ActiveInput: js.UndefOr[InputDeviceActiveInput]
+    var ConfiguredInput: js.UndefOr[InputDeviceConfiguredInput]
+    var DeviceState: js.UndefOr[InputDeviceState]
+    var Framerate: js.UndefOr[__double]
+    var Height: js.UndefOr[__integer]
+    var MaxBitrate: js.UndefOr[__integer]
+    var ScanType: js.UndefOr[InputDeviceScanType]
+    var Width: js.UndefOr[__integer]
+  }
+
+  object InputDeviceHdSettings {
+    @inline
+    def apply(
+        ActiveInput: js.UndefOr[InputDeviceActiveInput] = js.undefined,
+        ConfiguredInput: js.UndefOr[InputDeviceConfiguredInput] = js.undefined,
+        DeviceState: js.UndefOr[InputDeviceState] = js.undefined,
+        Framerate: js.UndefOr[__double] = js.undefined,
+        Height: js.UndefOr[__integer] = js.undefined,
+        MaxBitrate: js.UndefOr[__integer] = js.undefined,
+        ScanType: js.UndefOr[InputDeviceScanType] = js.undefined,
+        Width: js.UndefOr[__integer] = js.undefined
+    ): InputDeviceHdSettings = {
+      val __obj = js.Dynamic.literal()
+      ActiveInput.foreach(__v => __obj.updateDynamic("ActiveInput")(__v.asInstanceOf[js.Any]))
+      ConfiguredInput.foreach(__v => __obj.updateDynamic("ConfiguredInput")(__v.asInstanceOf[js.Any]))
+      DeviceState.foreach(__v => __obj.updateDynamic("DeviceState")(__v.asInstanceOf[js.Any]))
+      Framerate.foreach(__v => __obj.updateDynamic("Framerate")(__v.asInstanceOf[js.Any]))
+      Height.foreach(__v => __obj.updateDynamic("Height")(__v.asInstanceOf[js.Any]))
+      MaxBitrate.foreach(__v => __obj.updateDynamic("MaxBitrate")(__v.asInstanceOf[js.Any]))
+      ScanType.foreach(__v => __obj.updateDynamic("ScanType")(__v.asInstanceOf[js.Any]))
+      Width.foreach(__v => __obj.updateDynamic("Width")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputDeviceHdSettings]
+    }
+  }
+
+  /**
+    * Specifies whether the input device has been configured (outside of MediaLive) to use a dynamic IP address assignment (DHCP) or a static IP address.
+    */
+  @js.native
+  sealed trait InputDeviceIpScheme extends js.Any
+  object InputDeviceIpScheme extends js.Object {
+    val STATIC = "STATIC".asInstanceOf[InputDeviceIpScheme]
+    val DHCP   = "DHCP".asInstanceOf[InputDeviceIpScheme]
+
+    val values = js.Object.freeze(js.Array(STATIC, DHCP))
+  }
+
+  /**
+    * The network settings for the input device.
+    */
+  @js.native
+  trait InputDeviceNetworkSettings extends js.Object {
+    var DnsAddresses: js.UndefOr[__listOf__string]
+    var Gateway: js.UndefOr[__string]
+    var IpAddress: js.UndefOr[__string]
+    var IpScheme: js.UndefOr[InputDeviceIpScheme]
+    var SubnetMask: js.UndefOr[__string]
+  }
+
+  object InputDeviceNetworkSettings {
+    @inline
+    def apply(
+        DnsAddresses: js.UndefOr[__listOf__string] = js.undefined,
+        Gateway: js.UndefOr[__string] = js.undefined,
+        IpAddress: js.UndefOr[__string] = js.undefined,
+        IpScheme: js.UndefOr[InputDeviceIpScheme] = js.undefined,
+        SubnetMask: js.UndefOr[__string] = js.undefined
+    ): InputDeviceNetworkSettings = {
+      val __obj = js.Dynamic.literal()
+      DnsAddresses.foreach(__v => __obj.updateDynamic("DnsAddresses")(__v.asInstanceOf[js.Any]))
+      Gateway.foreach(__v => __obj.updateDynamic("Gateway")(__v.asInstanceOf[js.Any]))
+      IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
+      IpScheme.foreach(__v => __obj.updateDynamic("IpScheme")(__v.asInstanceOf[js.Any]))
+      SubnetMask.foreach(__v => __obj.updateDynamic("SubnetMask")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputDeviceNetworkSettings]
+    }
+  }
+
+  /**
+    * Settings for an input device.
+    */
+  @js.native
+  trait InputDeviceRequest extends js.Object {
+    var Id: js.UndefOr[__string]
+  }
+
+  object InputDeviceRequest {
+    @inline
+    def apply(
+        Id: js.UndefOr[__string] = js.undefined
+    ): InputDeviceRequest = {
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputDeviceRequest]
+    }
+  }
+
+  /**
+    * The scan type of the video source.
+    */
+  @js.native
+  sealed trait InputDeviceScanType extends js.Any
+  object InputDeviceScanType extends js.Object {
+    val INTERLACED  = "INTERLACED".asInstanceOf[InputDeviceScanType]
+    val PROGRESSIVE = "PROGRESSIVE".asInstanceOf[InputDeviceScanType]
+
+    val values = js.Object.freeze(js.Array(INTERLACED, PROGRESSIVE))
+  }
+
+  /**
+    * Settings for an input device.
+    */
+  @js.native
+  trait InputDeviceSettings extends js.Object {
+    var Id: js.UndefOr[__string]
+  }
+
+  object InputDeviceSettings {
+    @inline
+    def apply(
+        Id: js.UndefOr[__string] = js.undefined
+    ): InputDeviceSettings = {
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputDeviceSettings]
+    }
+  }
+
+  /**
+    * The state of the input device.
+    */
+  @js.native
+  sealed trait InputDeviceState extends js.Any
+  object InputDeviceState extends js.Object {
+    val IDLE      = "IDLE".asInstanceOf[InputDeviceState]
+    val STREAMING = "STREAMING".asInstanceOf[InputDeviceState]
+
+    val values = js.Object.freeze(js.Array(IDLE, STREAMING))
+  }
+
+  /**
+    * Details of the input device.
+    */
+  @js.native
+  trait InputDeviceSummary extends js.Object {
+    var Arn: js.UndefOr[__string]
+    var ConnectionState: js.UndefOr[InputDeviceConnectionState]
+    var DeviceSettingsSyncState: js.UndefOr[DeviceSettingsSyncState]
+    var HdDeviceSettings: js.UndefOr[InputDeviceHdSettings]
+    var Id: js.UndefOr[__string]
+    var MacAddress: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
+    var NetworkSettings: js.UndefOr[InputDeviceNetworkSettings]
+    var SerialNumber: js.UndefOr[__string]
+    var Type: js.UndefOr[InputDeviceType]
+  }
+
+  object InputDeviceSummary {
+    @inline
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        ConnectionState: js.UndefOr[InputDeviceConnectionState] = js.undefined,
+        DeviceSettingsSyncState: js.UndefOr[DeviceSettingsSyncState] = js.undefined,
+        HdDeviceSettings: js.UndefOr[InputDeviceHdSettings] = js.undefined,
+        Id: js.UndefOr[__string] = js.undefined,
+        MacAddress: js.UndefOr[__string] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        NetworkSettings: js.UndefOr[InputDeviceNetworkSettings] = js.undefined,
+        SerialNumber: js.UndefOr[__string] = js.undefined,
+        Type: js.UndefOr[InputDeviceType] = js.undefined
+    ): InputDeviceSummary = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      ConnectionState.foreach(__v => __obj.updateDynamic("ConnectionState")(__v.asInstanceOf[js.Any]))
+      DeviceSettingsSyncState.foreach(__v => __obj.updateDynamic("DeviceSettingsSyncState")(__v.asInstanceOf[js.Any]))
+      HdDeviceSettings.foreach(__v => __obj.updateDynamic("HdDeviceSettings")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      MacAddress.foreach(__v => __obj.updateDynamic("MacAddress")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NetworkSettings.foreach(__v => __obj.updateDynamic("NetworkSettings")(__v.asInstanceOf[js.Any]))
+      SerialNumber.foreach(__v => __obj.updateDynamic("SerialNumber")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputDeviceSummary]
+    }
+  }
+
+  /**
+    * The type of the input device. For an AWS Elemental Link device that outputs resolutions up to 1080, choose "HD".
+    */
+  @js.native
+  sealed trait InputDeviceType extends js.Any
+  object InputDeviceType extends js.Object {
+    val HD = "HD".asInstanceOf[InputDeviceType]
+
+    val values = js.Object.freeze(js.Array(HD))
+  }
+
+  /**
     * Input Filter
     */
   @js.native
@@ -5941,6 +6495,47 @@ package medialive {
   }
 
   /**
+    * Input preference when deciding which input to make active when a previously failed input has recovered.
+    * If \"EQUAL_INPUT_PREFERENCE\", then the active input will stay active as long as it is healthy.
+    * If \"PRIMARY_INPUT_PREFERRED\", then always switch back to the primary input when it is healthy.
+    */
+  @js.native
+  sealed trait InputPreference extends js.Any
+  object InputPreference extends js.Object {
+    val EQUAL_INPUT_PREFERENCE  = "EQUAL_INPUT_PREFERENCE".asInstanceOf[InputPreference]
+    val PRIMARY_INPUT_PREFERRED = "PRIMARY_INPUT_PREFERRED".asInstanceOf[InputPreference]
+
+    val values = js.Object.freeze(js.Array(EQUAL_INPUT_PREFERENCE, PRIMARY_INPUT_PREFERRED))
+  }
+
+  /**
+    * Action to prepare an input for a future immediate input switch.
+    */
+  @js.native
+  trait InputPrepareScheduleActionSettings extends js.Object {
+    var InputAttachmentNameReference: __string
+    var InputClippingSettings: js.UndefOr[InputClippingSettings]
+    var UrlPath: js.UndefOr[__listOf__string]
+  }
+
+  object InputPrepareScheduleActionSettings {
+    @inline
+    def apply(
+        InputAttachmentNameReference: __string,
+        InputClippingSettings: js.UndefOr[InputClippingSettings] = js.undefined,
+        UrlPath: js.UndefOr[__listOf__string] = js.undefined
+    ): InputPrepareScheduleActionSettings = {
+      val __obj = js.Dynamic.literal(
+        "InputAttachmentNameReference" -> InputAttachmentNameReference.asInstanceOf[js.Any]
+      )
+
+      InputClippingSettings.foreach(__v => __obj.updateDynamic("InputClippingSettings")(__v.asInstanceOf[js.Any]))
+      UrlPath.foreach(__v => __obj.updateDynamic("UrlPath")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputPrepareScheduleActionSettings]
+    }
+  }
+
+  /**
     * Input resolution based on lines of vertical resolution in the input; SD is less than 720 lines, HD is 720 to 1080 lines, UHD is greater than 1080 lines
     */
   @js.native
@@ -6013,6 +6608,7 @@ package medialive {
     var FilterStrength: js.UndefOr[__integerMin1Max5]
     var InputFilter: js.UndefOr[InputFilter]
     var NetworkInputSettings: js.UndefOr[NetworkInputSettings]
+    var Smpte2038DataPreference: js.UndefOr[Smpte2038DataPreference]
     var SourceEndBehavior: js.UndefOr[InputSourceEndBehavior]
     var VideoSelector: js.UndefOr[VideoSelector]
   }
@@ -6027,6 +6623,7 @@ package medialive {
         FilterStrength: js.UndefOr[__integerMin1Max5] = js.undefined,
         InputFilter: js.UndefOr[InputFilter] = js.undefined,
         NetworkInputSettings: js.UndefOr[NetworkInputSettings] = js.undefined,
+        Smpte2038DataPreference: js.UndefOr[Smpte2038DataPreference] = js.undefined,
         SourceEndBehavior: js.UndefOr[InputSourceEndBehavior] = js.undefined,
         VideoSelector: js.UndefOr[VideoSelector] = js.undefined
     ): InputSettings = {
@@ -6038,6 +6635,7 @@ package medialive {
       FilterStrength.foreach(__v => __obj.updateDynamic("FilterStrength")(__v.asInstanceOf[js.Any]))
       InputFilter.foreach(__v => __obj.updateDynamic("InputFilter")(__v.asInstanceOf[js.Any]))
       NetworkInputSettings.foreach(__v => __obj.updateDynamic("NetworkInputSettings")(__v.asInstanceOf[js.Any]))
+      Smpte2038DataPreference.foreach(__v => __obj.updateDynamic("Smpte2038DataPreference")(__v.asInstanceOf[js.Any]))
       SourceEndBehavior.foreach(__v => __obj.updateDynamic("SourceEndBehavior")(__v.asInstanceOf[js.Any]))
       VideoSelector.foreach(__v => __obj.updateDynamic("VideoSelector")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InputSettings]
@@ -6212,8 +6810,11 @@ package medialive {
     val URL_PULL     = "URL_PULL".asInstanceOf[InputType]
     val MP4_FILE     = "MP4_FILE".asInstanceOf[InputType]
     val MEDIACONNECT = "MEDIACONNECT".asInstanceOf[InputType]
+    val INPUT_DEVICE = "INPUT_DEVICE".asInstanceOf[InputType]
 
-    val values = js.Object.freeze(js.Array(UDP_PUSH, RTP_PUSH, RTMP_PUSH, RTMP_PULL, URL_PULL, MP4_FILE, MEDIACONNECT))
+    val values = js.Object.freeze(
+      js.Array(UDP_PUSH, RTP_PUSH, RTMP_PUSH, RTMP_PULL, URL_PULL, MP4_FILE, MEDIACONNECT, INPUT_DEVICE)
+    )
   }
 
   /**
@@ -6353,6 +6954,50 @@ package medialive {
       Channels.foreach(__v => __obj.updateDynamic("Channels")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListChannelsResponse]
+    }
+  }
+
+  /**
+    * Placeholder documentation for ListInputDevicesRequest
+    */
+  @js.native
+  trait ListInputDevicesRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object ListInputDevicesRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListInputDevicesRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListInputDevicesRequest]
+    }
+  }
+
+  /**
+    * Placeholder documentation for ListInputDevicesResponse
+    */
+  @js.native
+  trait ListInputDevicesResponse extends js.Object {
+    var InputDevices: js.UndefOr[__listOfInputDeviceSummary]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object ListInputDevicesResponse {
+    @inline
+    def apply(
+        InputDevices: js.UndefOr[__listOfInputDeviceSummary] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListInputDevicesResponse = {
+      val __obj = js.Dynamic.literal()
+      InputDevices.foreach(__v => __obj.updateDynamic("InputDevices")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListInputDevicesResponse]
     }
   }
 
@@ -7734,6 +8379,7 @@ package medialive {
   @js.native
   trait MultiplexProgramSettings extends js.Object {
     var ProgramNumber: __integerMin0Max65535
+    var PreferredChannelPipeline: js.UndefOr[PreferredChannelPipeline]
     var ServiceDescriptor: js.UndefOr[MultiplexProgramServiceDescriptor]
     var VideoSettings: js.UndefOr[MultiplexVideoSettings]
   }
@@ -7742,6 +8388,7 @@ package medialive {
     @inline
     def apply(
         ProgramNumber: __integerMin0Max65535,
+        PreferredChannelPipeline: js.UndefOr[PreferredChannelPipeline] = js.undefined,
         ServiceDescriptor: js.UndefOr[MultiplexProgramServiceDescriptor] = js.undefined,
         VideoSettings: js.UndefOr[MultiplexVideoSettings] = js.undefined
     ): MultiplexProgramSettings = {
@@ -7749,6 +8396,7 @@ package medialive {
         "ProgramNumber" -> ProgramNumber.asInstanceOf[js.Any]
       )
 
+      PreferredChannelPipeline.foreach(__v => __obj.updateDynamic("PreferredChannelPipeline")(__v.asInstanceOf[js.Any]))
       ServiceDescriptor.foreach(__v => __obj.updateDynamic("ServiceDescriptor")(__v.asInstanceOf[js.Any]))
       VideoSettings.foreach(__v => __obj.updateDynamic("VideoSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MultiplexProgramSettings]
@@ -8399,6 +9047,23 @@ package medialive {
   }
 
   /**
+    * Indicates which pipeline is preferred by the multiplex for program ingest.
+    * If set to \"PIPELINE_0\" or \"PIPELINE_1\" and an unhealthy ingest causes the multiplex to switch to the non-preferred pipeline,
+    * it will switch back once that ingest is healthy again. If set to \"CURRENTLY_ACTIVE\",
+    * it will not switch back to the other pipeline based on it recovering to a healthy state,
+    * it will only switch if the active pipeline becomes unhealthy.
+    */
+  @js.native
+  sealed trait PreferredChannelPipeline extends js.Any
+  object PreferredChannelPipeline extends js.Object {
+    val CURRENTLY_ACTIVE = "CURRENTLY_ACTIVE".asInstanceOf[PreferredChannelPipeline]
+    val PIPELINE_0       = "PIPELINE_0".asInstanceOf[PreferredChannelPipeline]
+    val PIPELINE_1       = "PIPELINE_1".asInstanceOf[PreferredChannelPipeline]
+
+    val values = js.Object.freeze(js.Array(CURRENTLY_ACTIVE, PIPELINE_0, PIPELINE_1))
+  }
+
+  /**
     * Placeholder documentation for PurchaseOfferingRequest
     */
   @js.native
@@ -8879,6 +9544,7 @@ package medialive {
   trait ScheduleActionSettings extends js.Object {
     var HlsId3SegmentTaggingSettings: js.UndefOr[HlsId3SegmentTaggingScheduleActionSettings]
     var HlsTimedMetadataSettings: js.UndefOr[HlsTimedMetadataScheduleActionSettings]
+    var InputPrepareSettings: js.UndefOr[InputPrepareScheduleActionSettings]
     var InputSwitchSettings: js.UndefOr[InputSwitchScheduleActionSettings]
     var PauseStateSettings: js.UndefOr[PauseStateScheduleActionSettings]
     var Scte35ReturnToNetworkSettings: js.UndefOr[Scte35ReturnToNetworkScheduleActionSettings]
@@ -8893,6 +9559,7 @@ package medialive {
     def apply(
         HlsId3SegmentTaggingSettings: js.UndefOr[HlsId3SegmentTaggingScheduleActionSettings] = js.undefined,
         HlsTimedMetadataSettings: js.UndefOr[HlsTimedMetadataScheduleActionSettings] = js.undefined,
+        InputPrepareSettings: js.UndefOr[InputPrepareScheduleActionSettings] = js.undefined,
         InputSwitchSettings: js.UndefOr[InputSwitchScheduleActionSettings] = js.undefined,
         PauseStateSettings: js.UndefOr[PauseStateScheduleActionSettings] = js.undefined,
         Scte35ReturnToNetworkSettings: js.UndefOr[Scte35ReturnToNetworkScheduleActionSettings] = js.undefined,
@@ -8906,6 +9573,7 @@ package medialive {
         __obj.updateDynamic("HlsId3SegmentTaggingSettings")(__v.asInstanceOf[js.Any])
       )
       HlsTimedMetadataSettings.foreach(__v => __obj.updateDynamic("HlsTimedMetadataSettings")(__v.asInstanceOf[js.Any]))
+      InputPrepareSettings.foreach(__v => __obj.updateDynamic("InputPrepareSettings")(__v.asInstanceOf[js.Any]))
       InputSwitchSettings.foreach(__v => __obj.updateDynamic("InputSwitchSettings")(__v.asInstanceOf[js.Any]))
       PauseStateSettings.foreach(__v => __obj.updateDynamic("PauseStateSettings")(__v.asInstanceOf[js.Any]))
       Scte35ReturnToNetworkSettings.foreach(__v =>
@@ -9459,10 +10127,11 @@ package medialive {
   @js.native
   sealed trait SmoothGroupSparseTrackType extends js.Any
   object SmoothGroupSparseTrackType extends js.Object {
-    val NONE    = "NONE".asInstanceOf[SmoothGroupSparseTrackType]
-    val SCTE_35 = "SCTE_35".asInstanceOf[SmoothGroupSparseTrackType]
+    val NONE                         = "NONE".asInstanceOf[SmoothGroupSparseTrackType]
+    val SCTE_35                      = "SCTE_35".asInstanceOf[SmoothGroupSparseTrackType]
+    val SCTE_35_WITHOUT_SEGMENTATION = "SCTE_35_WITHOUT_SEGMENTATION".asInstanceOf[SmoothGroupSparseTrackType]
 
-    val values = js.Object.freeze(js.Array(NONE, SCTE_35))
+    val values = js.Object.freeze(js.Array(NONE, SCTE_35, SCTE_35_WITHOUT_SEGMENTATION))
   }
 
   /**
@@ -9487,6 +10156,18 @@ package medialive {
     val USE_EVENT_START_DATE  = "USE_EVENT_START_DATE".asInstanceOf[SmoothGroupTimestampOffsetMode]
 
     val values = js.Object.freeze(js.Array(USE_CONFIGURED_OFFSET, USE_EVENT_START_DATE))
+  }
+
+  /**
+    * Smpte2038 Data Preference
+    */
+  @js.native
+  sealed trait Smpte2038DataPreference extends js.Any
+  object Smpte2038DataPreference extends js.Object {
+    val IGNORE = "IGNORE".asInstanceOf[Smpte2038DataPreference]
+    val PREFER = "PREFER".asInstanceOf[Smpte2038DataPreference]
+
+    val values = js.Object.freeze(js.Array(IGNORE, PREFER))
   }
 
   /**
@@ -10000,6 +10681,88 @@ package medialive {
   }
 
   /**
+    * Temporal Filter Post Filter Sharpening
+    */
+  @js.native
+  sealed trait TemporalFilterPostFilterSharpening extends js.Any
+  object TemporalFilterPostFilterSharpening extends js.Object {
+    val AUTO     = "AUTO".asInstanceOf[TemporalFilterPostFilterSharpening]
+    val DISABLED = "DISABLED".asInstanceOf[TemporalFilterPostFilterSharpening]
+    val ENABLED  = "ENABLED".asInstanceOf[TemporalFilterPostFilterSharpening]
+
+    val values = js.Object.freeze(js.Array(AUTO, DISABLED, ENABLED))
+  }
+
+  /**
+    * Temporal Filter Settings
+    */
+  @js.native
+  trait TemporalFilterSettings extends js.Object {
+    var PostFilterSharpening: js.UndefOr[TemporalFilterPostFilterSharpening]
+    var Strength: js.UndefOr[TemporalFilterStrength]
+  }
+
+  object TemporalFilterSettings {
+    @inline
+    def apply(
+        PostFilterSharpening: js.UndefOr[TemporalFilterPostFilterSharpening] = js.undefined,
+        Strength: js.UndefOr[TemporalFilterStrength] = js.undefined
+    ): TemporalFilterSettings = {
+      val __obj = js.Dynamic.literal()
+      PostFilterSharpening.foreach(__v => __obj.updateDynamic("PostFilterSharpening")(__v.asInstanceOf[js.Any]))
+      Strength.foreach(__v => __obj.updateDynamic("Strength")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TemporalFilterSettings]
+    }
+  }
+
+  /**
+    * Temporal Filter Strength
+    */
+  @js.native
+  sealed trait TemporalFilterStrength extends js.Any
+  object TemporalFilterStrength extends js.Object {
+    val AUTO        = "AUTO".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_1  = "STRENGTH_1".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_2  = "STRENGTH_2".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_3  = "STRENGTH_3".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_4  = "STRENGTH_4".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_5  = "STRENGTH_5".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_6  = "STRENGTH_6".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_7  = "STRENGTH_7".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_8  = "STRENGTH_8".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_9  = "STRENGTH_9".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_10 = "STRENGTH_10".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_11 = "STRENGTH_11".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_12 = "STRENGTH_12".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_13 = "STRENGTH_13".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_14 = "STRENGTH_14".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_15 = "STRENGTH_15".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_16 = "STRENGTH_16".asInstanceOf[TemporalFilterStrength]
+
+    val values = js.Object.freeze(
+      js.Array(
+        AUTO,
+        STRENGTH_1,
+        STRENGTH_2,
+        STRENGTH_3,
+        STRENGTH_4,
+        STRENGTH_5,
+        STRENGTH_6,
+        STRENGTH_7,
+        STRENGTH_8,
+        STRENGTH_9,
+        STRENGTH_10,
+        STRENGTH_11,
+        STRENGTH_12,
+        STRENGTH_13,
+        STRENGTH_14,
+        STRENGTH_15,
+        STRENGTH_16
+      )
+    )
+  }
+
+  /**
     * Timecode Config
     */
   @js.native
@@ -10262,12 +11025,86 @@ package medialive {
   }
 
   /**
+    * A request to update an input device.
+    */
+  @js.native
+  trait UpdateInputDeviceRequest extends js.Object {
+    var InputDeviceId: __string
+    var HdDeviceSettings: js.UndefOr[InputDeviceConfigurableSettings]
+    var Name: js.UndefOr[__string]
+  }
+
+  object UpdateInputDeviceRequest {
+    @inline
+    def apply(
+        InputDeviceId: __string,
+        HdDeviceSettings: js.UndefOr[InputDeviceConfigurableSettings] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined
+    ): UpdateInputDeviceRequest = {
+      val __obj = js.Dynamic.literal(
+        "InputDeviceId" -> InputDeviceId.asInstanceOf[js.Any]
+      )
+
+      HdDeviceSettings.foreach(__v => __obj.updateDynamic("HdDeviceSettings")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateInputDeviceRequest]
+    }
+  }
+
+  /**
+    * Placeholder documentation for UpdateInputDeviceResponse
+    */
+  @js.native
+  trait UpdateInputDeviceResponse extends js.Object {
+    var Arn: js.UndefOr[__string]
+    var ConnectionState: js.UndefOr[InputDeviceConnectionState]
+    var DeviceSettingsSyncState: js.UndefOr[DeviceSettingsSyncState]
+    var HdDeviceSettings: js.UndefOr[InputDeviceHdSettings]
+    var Id: js.UndefOr[__string]
+    var MacAddress: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
+    var NetworkSettings: js.UndefOr[InputDeviceNetworkSettings]
+    var SerialNumber: js.UndefOr[__string]
+    var Type: js.UndefOr[InputDeviceType]
+  }
+
+  object UpdateInputDeviceResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        ConnectionState: js.UndefOr[InputDeviceConnectionState] = js.undefined,
+        DeviceSettingsSyncState: js.UndefOr[DeviceSettingsSyncState] = js.undefined,
+        HdDeviceSettings: js.UndefOr[InputDeviceHdSettings] = js.undefined,
+        Id: js.UndefOr[__string] = js.undefined,
+        MacAddress: js.UndefOr[__string] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        NetworkSettings: js.UndefOr[InputDeviceNetworkSettings] = js.undefined,
+        SerialNumber: js.UndefOr[__string] = js.undefined,
+        Type: js.UndefOr[InputDeviceType] = js.undefined
+    ): UpdateInputDeviceResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      ConnectionState.foreach(__v => __obj.updateDynamic("ConnectionState")(__v.asInstanceOf[js.Any]))
+      DeviceSettingsSyncState.foreach(__v => __obj.updateDynamic("DeviceSettingsSyncState")(__v.asInstanceOf[js.Any]))
+      HdDeviceSettings.foreach(__v => __obj.updateDynamic("HdDeviceSettings")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      MacAddress.foreach(__v => __obj.updateDynamic("MacAddress")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NetworkSettings.foreach(__v => __obj.updateDynamic("NetworkSettings")(__v.asInstanceOf[js.Any]))
+      SerialNumber.foreach(__v => __obj.updateDynamic("SerialNumber")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateInputDeviceResponse]
+    }
+  }
+
+  /**
     * A request to update an input.
     */
   @js.native
   trait UpdateInputRequest extends js.Object {
     var InputId: __string
     var Destinations: js.UndefOr[__listOfInputDestinationRequest]
+    var InputDevices: js.UndefOr[__listOfInputDeviceRequest]
     var InputSecurityGroups: js.UndefOr[__listOf__string]
     var MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlowRequest]
     var Name: js.UndefOr[__string]
@@ -10280,6 +11117,7 @@ package medialive {
     def apply(
         InputId: __string,
         Destinations: js.UndefOr[__listOfInputDestinationRequest] = js.undefined,
+        InputDevices: js.UndefOr[__listOfInputDeviceRequest] = js.undefined,
         InputSecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
         MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlowRequest] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
@@ -10291,6 +11129,7 @@ package medialive {
       )
 
       Destinations.foreach(__v => __obj.updateDynamic("Destinations")(__v.asInstanceOf[js.Any]))
+      InputDevices.foreach(__v => __obj.updateDynamic("InputDevices")(__v.asInstanceOf[js.Any]))
       InputSecurityGroups.foreach(__v => __obj.updateDynamic("InputSecurityGroups")(__v.asInstanceOf[js.Any]))
       MediaConnectFlows.foreach(__v => __obj.updateDynamic("MediaConnectFlows")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))

@@ -383,7 +383,7 @@ package connect {
   }
 
   /**
-    * Contains information about a real-time metric.
+    * Contains information about a real-time metric. For a description of each metric, see [[https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html|Real-time Metrics Definitions]] in the <i>Amazon Connect Administrator Guide</i>.
     */
   @js.native
   trait CurrentMetric extends js.Object {
@@ -997,7 +997,7 @@ package connect {
   }
 
   /**
-    * Contains information about a historical metric.
+    * Contains information about a historical metric. For a description of each metric, see [[https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html|Historical Metrics Definitions]] in the <i>Amazon Connect Administrator Guide</i>.
     */
   @js.native
   trait HistoricalMetric extends js.Object {

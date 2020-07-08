@@ -9,6 +9,7 @@ import facade.amazonaws._
 package object rekognition {
   type Assets                                         = js.Array[Asset]
   type Attributes                                     = js.Array[Attribute]
+  type AudioMetadataList                              = js.Array[AudioMetadata]
   type BoundingBoxHeight                              = Float
   type BoundingBoxWidth                               = Float
   type CelebrityList                                  = js.Array[Celebrity]
@@ -80,12 +81,17 @@ package object rekognition {
   type S3ObjectName                                   = String
   type S3ObjectVersion                                = String
   type SNSTopicArn                                    = String
+  type SegmentConfidence                              = Float
+  type SegmentDetections                              = js.Array[SegmentDetection]
+  type SegmentTypes                                   = js.Array[SegmentType]
+  type SegmentTypesInfo                               = js.Array[SegmentTypeInfo]
   type StatusMessage                                  = String
   type StreamProcessorArn                             = String
   type StreamProcessorList                            = js.Array[StreamProcessor]
   type StreamProcessorName                            = String
   type TextDetectionList                              = js.Array[TextDetection]
   type TextDetectionResults                           = js.Array[TextDetectionResult]
+  type Timecode                                       = String
   type Timestamp                                      = Double
   type UInteger                                       = Int
   type ULong                                          = Double
@@ -94,6 +100,7 @@ package object rekognition {
   type Urls                                           = js.Array[Url]
   type VersionName                                    = String
   type VersionNames                                   = js.Array[VersionName]
+  type VideoMetadataList                              = js.Array[VideoMetadata]
 
   implicit final class RekognitionOps(private val service: Rekognition) extends AnyVal {
 
@@ -112,6 +119,10 @@ package object rekognition {
       service.deleteCollection(params).promise().toFuture
     @inline def deleteFacesFuture(params: DeleteFacesRequest): Future[DeleteFacesResponse] =
       service.deleteFaces(params).promise().toFuture
+    @inline def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResponse] =
+      service.deleteProject(params).promise().toFuture
+    @inline def deleteProjectVersionFuture(params: DeleteProjectVersionRequest): Future[DeleteProjectVersionResponse] =
+      service.deleteProjectVersion(params).promise().toFuture
     @inline def deleteStreamProcessorFuture(
         params: DeleteStreamProcessorRequest
     ): Future[DeleteStreamProcessorResponse] = service.deleteStreamProcessor(params).promise().toFuture
@@ -151,6 +162,8 @@ package object rekognition {
       service.getLabelDetection(params).promise().toFuture
     @inline def getPersonTrackingFuture(params: GetPersonTrackingRequest): Future[GetPersonTrackingResponse] =
       service.getPersonTracking(params).promise().toFuture
+    @inline def getSegmentDetectionFuture(params: GetSegmentDetectionRequest): Future[GetSegmentDetectionResponse] =
+      service.getSegmentDetection(params).promise().toFuture
     @inline def getTextDetectionFuture(params: GetTextDetectionRequest): Future[GetTextDetectionResponse] =
       service.getTextDetection(params).promise().toFuture
     @inline def indexFacesFuture(params: IndexFacesRequest): Future[IndexFacesResponse] =
@@ -183,6 +196,9 @@ package object rekognition {
       service.startPersonTracking(params).promise().toFuture
     @inline def startProjectVersionFuture(params: StartProjectVersionRequest): Future[StartProjectVersionResponse] =
       service.startProjectVersion(params).promise().toFuture
+    @inline def startSegmentDetectionFuture(
+        params: StartSegmentDetectionRequest
+    ): Future[StartSegmentDetectionResponse] = service.startSegmentDetection(params).promise().toFuture
     @inline def startStreamProcessorFuture(params: StartStreamProcessorRequest): Future[StartStreamProcessorResponse] =
       service.startStreamProcessor(params).promise().toFuture
     @inline def startTextDetectionFuture(params: StartTextDetectionRequest): Future[StartTextDetectionResponse] =
@@ -207,6 +223,8 @@ package rekognition {
     def createStreamProcessor(params: CreateStreamProcessorRequest): Request[CreateStreamProcessorResponse] = js.native
     def deleteCollection(params: DeleteCollectionRequest): Request[DeleteCollectionResponse]                = js.native
     def deleteFaces(params: DeleteFacesRequest): Request[DeleteFacesResponse]                               = js.native
+    def deleteProject(params: DeleteProjectRequest): Request[DeleteProjectResponse]                         = js.native
+    def deleteProjectVersion(params: DeleteProjectVersionRequest): Request[DeleteProjectVersionResponse]    = js.native
     def deleteStreamProcessor(params: DeleteStreamProcessorRequest): Request[DeleteStreamProcessorResponse] = js.native
     def describeCollection(params: DescribeCollectionRequest): Request[DescribeCollectionResponse]          = js.native
     def describeProjectVersions(params: DescribeProjectVersionsRequest): Request[DescribeProjectVersionsResponse] =
@@ -228,6 +246,7 @@ package rekognition {
     def getFaceSearch(params: GetFaceSearchRequest): Request[GetFaceSearchResponse]                      = js.native
     def getLabelDetection(params: GetLabelDetectionRequest): Request[GetLabelDetectionResponse]          = js.native
     def getPersonTracking(params: GetPersonTrackingRequest): Request[GetPersonTrackingResponse]          = js.native
+    def getSegmentDetection(params: GetSegmentDetectionRequest): Request[GetSegmentDetectionResponse]    = js.native
     def getTextDetection(params: GetTextDetectionRequest): Request[GetTextDetectionResponse]             = js.native
     def indexFaces(params: IndexFacesRequest): Request[IndexFacesResponse]                               = js.native
     def listCollections(params: ListCollectionsRequest): Request[ListCollectionsResponse]                = js.native
@@ -241,15 +260,16 @@ package rekognition {
     ): Request[StartCelebrityRecognitionResponse] = js.native
     def startContentModeration(params: StartContentModerationRequest): Request[StartContentModerationResponse] =
       js.native
-    def startFaceDetection(params: StartFaceDetectionRequest): Request[StartFaceDetectionResponse]       = js.native
-    def startFaceSearch(params: StartFaceSearchRequest): Request[StartFaceSearchResponse]                = js.native
-    def startLabelDetection(params: StartLabelDetectionRequest): Request[StartLabelDetectionResponse]    = js.native
-    def startPersonTracking(params: StartPersonTrackingRequest): Request[StartPersonTrackingResponse]    = js.native
-    def startProjectVersion(params: StartProjectVersionRequest): Request[StartProjectVersionResponse]    = js.native
-    def startStreamProcessor(params: StartStreamProcessorRequest): Request[StartStreamProcessorResponse] = js.native
-    def startTextDetection(params: StartTextDetectionRequest): Request[StartTextDetectionResponse]       = js.native
-    def stopProjectVersion(params: StopProjectVersionRequest): Request[StopProjectVersionResponse]       = js.native
-    def stopStreamProcessor(params: StopStreamProcessorRequest): Request[StopStreamProcessorResponse]    = js.native
+    def startFaceDetection(params: StartFaceDetectionRequest): Request[StartFaceDetectionResponse]          = js.native
+    def startFaceSearch(params: StartFaceSearchRequest): Request[StartFaceSearchResponse]                   = js.native
+    def startLabelDetection(params: StartLabelDetectionRequest): Request[StartLabelDetectionResponse]       = js.native
+    def startPersonTracking(params: StartPersonTrackingRequest): Request[StartPersonTrackingResponse]       = js.native
+    def startProjectVersion(params: StartProjectVersionRequest): Request[StartProjectVersionResponse]       = js.native
+    def startSegmentDetection(params: StartSegmentDetectionRequest): Request[StartSegmentDetectionResponse] = js.native
+    def startStreamProcessor(params: StartStreamProcessorRequest): Request[StartStreamProcessorResponse]    = js.native
+    def startTextDetection(params: StartTextDetectionRequest): Request[StartTextDetectionResponse]          = js.native
+    def stopProjectVersion(params: StopProjectVersionRequest): Request[StopProjectVersionResponse]          = js.native
+    def stopStreamProcessor(params: StopStreamProcessorRequest): Request[StopStreamProcessorResponse]       = js.native
   }
 
   /**
@@ -301,6 +321,34 @@ package rekognition {
     val ALL     = "ALL".asInstanceOf[Attribute]
 
     val values = js.Object.freeze(js.Array(DEFAULT, ALL))
+  }
+
+  /**
+    * Metadata information about an audio stream. An array of <code>AudioMetadata</code> objects for the audio streams found in a stored video is returned by <a>GetSegmentDetection</a>.
+    */
+  @js.native
+  trait AudioMetadata extends js.Object {
+    var Codec: js.UndefOr[String]
+    var DurationMillis: js.UndefOr[ULong]
+    var NumberOfChannels: js.UndefOr[ULong]
+    var SampleRate: js.UndefOr[ULong]
+  }
+
+  object AudioMetadata {
+    @inline
+    def apply(
+        Codec: js.UndefOr[String] = js.undefined,
+        DurationMillis: js.UndefOr[ULong] = js.undefined,
+        NumberOfChannels: js.UndefOr[ULong] = js.undefined,
+        SampleRate: js.UndefOr[ULong] = js.undefined
+    ): AudioMetadata = {
+      val __obj = js.Dynamic.literal()
+      Codec.foreach(__v => __obj.updateDynamic("Codec")(__v.asInstanceOf[js.Any]))
+      DurationMillis.foreach(__v => __obj.updateDynamic("DurationMillis")(__v.asInstanceOf[js.Any]))
+      NumberOfChannels.foreach(__v => __obj.updateDynamic("NumberOfChannels")(__v.asInstanceOf[js.Any]))
+      SampleRate.foreach(__v => __obj.updateDynamic("SampleRate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AudioMetadata]
+    }
   }
 
   /**
@@ -887,6 +935,74 @@ package rekognition {
       val __obj = js.Dynamic.literal()
       DeletedFaces.foreach(__v => __obj.updateDynamic("DeletedFaces")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteFacesResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteProjectRequest extends js.Object {
+    var ProjectArn: ProjectArn
+  }
+
+  object DeleteProjectRequest {
+    @inline
+    def apply(
+        ProjectArn: ProjectArn
+    ): DeleteProjectRequest = {
+      val __obj = js.Dynamic.literal(
+        "ProjectArn" -> ProjectArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteProjectRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteProjectResponse extends js.Object {
+    var Status: js.UndefOr[ProjectStatus]
+  }
+
+  object DeleteProjectResponse {
+    @inline
+    def apply(
+        Status: js.UndefOr[ProjectStatus] = js.undefined
+    ): DeleteProjectResponse = {
+      val __obj = js.Dynamic.literal()
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteProjectResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteProjectVersionRequest extends js.Object {
+    var ProjectVersionArn: ProjectVersionArn
+  }
+
+  object DeleteProjectVersionRequest {
+    @inline
+    def apply(
+        ProjectVersionArn: ProjectVersionArn
+    ): DeleteProjectVersionRequest = {
+      val __obj = js.Dynamic.literal(
+        "ProjectVersionArn" -> ProjectVersionArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteProjectVersionRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteProjectVersionResponse extends js.Object {
+    var Status: js.UndefOr[ProjectVersionStatus]
+  }
+
+  object DeleteProjectVersionResponse {
+    @inline
+    def apply(
+        Status: js.UndefOr[ProjectVersionStatus] = js.undefined
+    ): DeleteProjectVersionResponse = {
+      val __obj = js.Dynamic.literal()
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteProjectVersionResponse]
     }
   }
 
@@ -2110,6 +2226,64 @@ package rekognition {
   }
 
   @js.native
+  trait GetSegmentDetectionRequest extends js.Object {
+    var JobId: JobId
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object GetSegmentDetectionRequest {
+    @inline
+    def apply(
+        JobId: JobId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): GetSegmentDetectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSegmentDetectionRequest]
+    }
+  }
+
+  @js.native
+  trait GetSegmentDetectionResponse extends js.Object {
+    var AudioMetadata: js.UndefOr[AudioMetadataList]
+    var JobStatus: js.UndefOr[VideoJobStatus]
+    var NextToken: js.UndefOr[PaginationToken]
+    var Segments: js.UndefOr[SegmentDetections]
+    var SelectedSegmentTypes: js.UndefOr[SegmentTypesInfo]
+    var StatusMessage: js.UndefOr[StatusMessage]
+    var VideoMetadata: js.UndefOr[VideoMetadataList]
+  }
+
+  object GetSegmentDetectionResponse {
+    @inline
+    def apply(
+        AudioMetadata: js.UndefOr[AudioMetadataList] = js.undefined,
+        JobStatus: js.UndefOr[VideoJobStatus] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined,
+        Segments: js.UndefOr[SegmentDetections] = js.undefined,
+        SelectedSegmentTypes: js.UndefOr[SegmentTypesInfo] = js.undefined,
+        StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
+        VideoMetadata: js.UndefOr[VideoMetadataList] = js.undefined
+    ): GetSegmentDetectionResponse = {
+      val __obj = js.Dynamic.literal()
+      AudioMetadata.foreach(__v => __obj.updateDynamic("AudioMetadata")(__v.asInstanceOf[js.Any]))
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Segments.foreach(__v => __obj.updateDynamic("Segments")(__v.asInstanceOf[js.Any]))
+      SelectedSegmentTypes.foreach(__v => __obj.updateDynamic("SelectedSegmentTypes")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      VideoMetadata.foreach(__v => __obj.updateDynamic("VideoMetadata")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSegmentDetectionResponse]
+    }
+  }
+
+  @js.native
   trait GetTextDetectionRequest extends js.Object {
     var JobId: JobId
     var MaxResults: js.UndefOr[MaxResults]
@@ -3323,6 +3497,102 @@ package rekognition {
   }
 
   /**
+    * A technical cue or shot detection segment detected in a video. An array of <code>SegmentDetection</code> objects containing all segments detected in a stored video is returned by <a>GetSegmentDetection</a>.
+    */
+  @js.native
+  trait SegmentDetection extends js.Object {
+    var DurationMillis: js.UndefOr[ULong]
+    var DurationSMPTE: js.UndefOr[Timecode]
+    var EndTimecodeSMPTE: js.UndefOr[Timecode]
+    var EndTimestampMillis: js.UndefOr[Timestamp]
+    var ShotSegment: js.UndefOr[ShotSegment]
+    var StartTimecodeSMPTE: js.UndefOr[Timecode]
+    var StartTimestampMillis: js.UndefOr[Timestamp]
+    var TechnicalCueSegment: js.UndefOr[TechnicalCueSegment]
+    var Type: js.UndefOr[SegmentType]
+  }
+
+  object SegmentDetection {
+    @inline
+    def apply(
+        DurationMillis: js.UndefOr[ULong] = js.undefined,
+        DurationSMPTE: js.UndefOr[Timecode] = js.undefined,
+        EndTimecodeSMPTE: js.UndefOr[Timecode] = js.undefined,
+        EndTimestampMillis: js.UndefOr[Timestamp] = js.undefined,
+        ShotSegment: js.UndefOr[ShotSegment] = js.undefined,
+        StartTimecodeSMPTE: js.UndefOr[Timecode] = js.undefined,
+        StartTimestampMillis: js.UndefOr[Timestamp] = js.undefined,
+        TechnicalCueSegment: js.UndefOr[TechnicalCueSegment] = js.undefined,
+        Type: js.UndefOr[SegmentType] = js.undefined
+    ): SegmentDetection = {
+      val __obj = js.Dynamic.literal()
+      DurationMillis.foreach(__v => __obj.updateDynamic("DurationMillis")(__v.asInstanceOf[js.Any]))
+      DurationSMPTE.foreach(__v => __obj.updateDynamic("DurationSMPTE")(__v.asInstanceOf[js.Any]))
+      EndTimecodeSMPTE.foreach(__v => __obj.updateDynamic("EndTimecodeSMPTE")(__v.asInstanceOf[js.Any]))
+      EndTimestampMillis.foreach(__v => __obj.updateDynamic("EndTimestampMillis")(__v.asInstanceOf[js.Any]))
+      ShotSegment.foreach(__v => __obj.updateDynamic("ShotSegment")(__v.asInstanceOf[js.Any]))
+      StartTimecodeSMPTE.foreach(__v => __obj.updateDynamic("StartTimecodeSMPTE")(__v.asInstanceOf[js.Any]))
+      StartTimestampMillis.foreach(__v => __obj.updateDynamic("StartTimestampMillis")(__v.asInstanceOf[js.Any]))
+      TechnicalCueSegment.foreach(__v => __obj.updateDynamic("TechnicalCueSegment")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SegmentDetection]
+    }
+  }
+
+  @js.native
+  sealed trait SegmentType extends js.Any
+  object SegmentType extends js.Object {
+    val TECHNICAL_CUE = "TECHNICAL_CUE".asInstanceOf[SegmentType]
+    val SHOT          = "SHOT".asInstanceOf[SegmentType]
+
+    val values = js.Object.freeze(js.Array(TECHNICAL_CUE, SHOT))
+  }
+
+  /**
+    * Information about the type of a segment requested in a call to <a>StartSegmentDetection</a>. An array of <code>SegmentTypeInfo</code> objects is returned by the response from <a>GetSegmentDetection</a>.
+    */
+  @js.native
+  trait SegmentTypeInfo extends js.Object {
+    var ModelVersion: js.UndefOr[String]
+    var Type: js.UndefOr[SegmentType]
+  }
+
+  object SegmentTypeInfo {
+    @inline
+    def apply(
+        ModelVersion: js.UndefOr[String] = js.undefined,
+        Type: js.UndefOr[SegmentType] = js.undefined
+    ): SegmentTypeInfo = {
+      val __obj = js.Dynamic.literal()
+      ModelVersion.foreach(__v => __obj.updateDynamic("ModelVersion")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SegmentTypeInfo]
+    }
+  }
+
+  /**
+    * Information about a shot detection segment detected in a video. For more information, see <a>SegmentDetection</a>.
+    */
+  @js.native
+  trait ShotSegment extends js.Object {
+    var Confidence: js.UndefOr[SegmentConfidence]
+    var Index: js.UndefOr[ULong]
+  }
+
+  object ShotSegment {
+    @inline
+    def apply(
+        Confidence: js.UndefOr[SegmentConfidence] = js.undefined,
+        Index: js.UndefOr[ULong] = js.undefined
+    ): ShotSegment = {
+      val __obj = js.Dynamic.literal()
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Index.foreach(__v => __obj.updateDynamic("Index")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ShotSegment]
+    }
+  }
+
+  /**
     * Indicates whether or not the face is smiling, and the confidence level in the determination.
     */
   @js.native
@@ -3654,6 +3924,96 @@ package rekognition {
     }
   }
 
+  /**
+    * Filters applied to the technical cue or shot detection segments. For more information, see <a>StartSegmentDetection</a>.
+    */
+  @js.native
+  trait StartSegmentDetectionFilters extends js.Object {
+    var ShotFilter: js.UndefOr[StartShotDetectionFilter]
+    var TechnicalCueFilter: js.UndefOr[StartTechnicalCueDetectionFilter]
+  }
+
+  object StartSegmentDetectionFilters {
+    @inline
+    def apply(
+        ShotFilter: js.UndefOr[StartShotDetectionFilter] = js.undefined,
+        TechnicalCueFilter: js.UndefOr[StartTechnicalCueDetectionFilter] = js.undefined
+    ): StartSegmentDetectionFilters = {
+      val __obj = js.Dynamic.literal()
+      ShotFilter.foreach(__v => __obj.updateDynamic("ShotFilter")(__v.asInstanceOf[js.Any]))
+      TechnicalCueFilter.foreach(__v => __obj.updateDynamic("TechnicalCueFilter")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartSegmentDetectionFilters]
+    }
+  }
+
+  @js.native
+  trait StartSegmentDetectionRequest extends js.Object {
+    var SegmentTypes: SegmentTypes
+    var Video: Video
+    var ClientRequestToken: js.UndefOr[ClientRequestToken]
+    var Filters: js.UndefOr[StartSegmentDetectionFilters]
+    var JobTag: js.UndefOr[JobTag]
+    var NotificationChannel: js.UndefOr[NotificationChannel]
+  }
+
+  object StartSegmentDetectionRequest {
+    @inline
+    def apply(
+        SegmentTypes: SegmentTypes,
+        Video: Video,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        Filters: js.UndefOr[StartSegmentDetectionFilters] = js.undefined,
+        JobTag: js.UndefOr[JobTag] = js.undefined,
+        NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined
+    ): StartSegmentDetectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "SegmentTypes" -> SegmentTypes.asInstanceOf[js.Any],
+        "Video"        -> Video.asInstanceOf[js.Any]
+      )
+
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      JobTag.foreach(__v => __obj.updateDynamic("JobTag")(__v.asInstanceOf[js.Any]))
+      NotificationChannel.foreach(__v => __obj.updateDynamic("NotificationChannel")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartSegmentDetectionRequest]
+    }
+  }
+
+  @js.native
+  trait StartSegmentDetectionResponse extends js.Object {
+    var JobId: js.UndefOr[JobId]
+  }
+
+  object StartSegmentDetectionResponse {
+    @inline
+    def apply(
+        JobId: js.UndefOr[JobId] = js.undefined
+    ): StartSegmentDetectionResponse = {
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartSegmentDetectionResponse]
+    }
+  }
+
+  /**
+    * Filters for the shot detection segments returned by <code>GetSegmentDetection</code>. For more information, see <a>StartSegmentDetectionFilters</a>.
+    */
+  @js.native
+  trait StartShotDetectionFilter extends js.Object {
+    var MinSegmentConfidence: js.UndefOr[SegmentConfidence]
+  }
+
+  object StartShotDetectionFilter {
+    @inline
+    def apply(
+        MinSegmentConfidence: js.UndefOr[SegmentConfidence] = js.undefined
+    ): StartShotDetectionFilter = {
+      val __obj = js.Dynamic.literal()
+      MinSegmentConfidence.foreach(__v => __obj.updateDynamic("MinSegmentConfidence")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartShotDetectionFilter]
+    }
+  }
+
   @js.native
   trait StartStreamProcessorRequest extends js.Object {
     var Name: StreamProcessorName
@@ -3682,6 +4042,25 @@ package rekognition {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartStreamProcessorResponse]
+    }
+  }
+
+  /**
+    * Filters for the technical segments returned by <a>GetSegmentDetection</a>. For more information, see <a>StartSegmentDetectionFilters</a>.
+    */
+  @js.native
+  trait StartTechnicalCueDetectionFilter extends js.Object {
+    var MinSegmentConfidence: js.UndefOr[SegmentConfidence]
+  }
+
+  object StartTechnicalCueDetectionFilter {
+    @inline
+    def apply(
+        MinSegmentConfidence: js.UndefOr[SegmentConfidence] = js.undefined
+    ): StartTechnicalCueDetectionFilter = {
+      val __obj = js.Dynamic.literal()
+      MinSegmentConfidence.foreach(__v => __obj.updateDynamic("MinSegmentConfidence")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartTechnicalCueDetectionFilter]
     }
   }
 
@@ -3949,6 +4328,38 @@ package rekognition {
       Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Sunglasses]
     }
+  }
+
+  /**
+    * Information about a technical cue segment. For more information, see <a>SegmentDetection</a>.
+    */
+  @js.native
+  trait TechnicalCueSegment extends js.Object {
+    var Confidence: js.UndefOr[SegmentConfidence]
+    var Type: js.UndefOr[TechnicalCueType]
+  }
+
+  object TechnicalCueSegment {
+    @inline
+    def apply(
+        Confidence: js.UndefOr[SegmentConfidence] = js.undefined,
+        Type: js.UndefOr[TechnicalCueType] = js.undefined
+    ): TechnicalCueSegment = {
+      val __obj = js.Dynamic.literal()
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TechnicalCueSegment]
+    }
+  }
+
+  @js.native
+  sealed trait TechnicalCueType extends js.Any
+  object TechnicalCueType extends js.Object {
+    val ColorBars   = "ColorBars".asInstanceOf[TechnicalCueType]
+    val EndCredits  = "EndCredits".asInstanceOf[TechnicalCueType]
+    val BlackFrames = "BlackFrames".asInstanceOf[TechnicalCueType]
+
+    val values = js.Object.freeze(js.Array(ColorBars, EndCredits, BlackFrames))
   }
 
   /**

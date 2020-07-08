@@ -50,6 +50,7 @@ package object servicecatalog {
   type InstructionValue                        = String
   type LastRequestId                           = String
   type LaunchPathSummaries                     = js.Array[LaunchPathSummary]
+  type LaunchPaths                             = js.Array[LaunchPath]
   type LogicalResourceId                       = String
   type Message                                 = String
   type Namespaces                              = js.Array[AccountId]
@@ -988,6 +989,8 @@ package servicecatalog {
     var ConstraintId: js.UndefOr[Id]
     var Description: js.UndefOr[ConstraintDescription]
     var Owner: js.UndefOr[AccountId]
+    var PortfolioId: js.UndefOr[Id]
+    var ProductId: js.UndefOr[Id]
     var Type: js.UndefOr[ConstraintType]
   }
 
@@ -997,12 +1000,16 @@ package servicecatalog {
         ConstraintId: js.UndefOr[Id] = js.undefined,
         Description: js.UndefOr[ConstraintDescription] = js.undefined,
         Owner: js.UndefOr[AccountId] = js.undefined,
+        PortfolioId: js.UndefOr[Id] = js.undefined,
+        ProductId: js.UndefOr[Id] = js.undefined,
         Type: js.UndefOr[ConstraintType] = js.undefined
     ): ConstraintDetail = {
       val __obj = js.Dynamic.literal()
       ConstraintId.foreach(__v => __obj.updateDynamic("ConstraintId")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
+      PortfolioId.foreach(__v => __obj.updateDynamic("PortfolioId")(__v.asInstanceOf[js.Any]))
+      ProductId.foreach(__v => __obj.updateDynamic("ProductId")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConstraintDetail]
     }
@@ -2007,21 +2014,22 @@ package servicecatalog {
 
   @js.native
   trait DescribeProductAsAdminInput extends js.Object {
-    var Id: Id
     var AcceptLanguage: js.UndefOr[AcceptLanguage]
+    var Id: js.UndefOr[Id]
+    var Name: js.UndefOr[ProductViewName]
   }
 
   object DescribeProductAsAdminInput {
     @inline
     def apply(
-        Id: Id,
-        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
+        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+        Id: js.UndefOr[Id] = js.undefined,
+        Name: js.UndefOr[ProductViewName] = js.undefined
     ): DescribeProductAsAdminInput = {
-      val __obj = js.Dynamic.literal(
-        "Id" -> Id.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProductAsAdminInput]
     }
   }
@@ -2058,21 +2066,22 @@ package servicecatalog {
 
   @js.native
   trait DescribeProductInput extends js.Object {
-    var Id: Id
     var AcceptLanguage: js.UndefOr[AcceptLanguage]
+    var Id: js.UndefOr[Id]
+    var Name: js.UndefOr[ProductViewName]
   }
 
   object DescribeProductInput {
     @inline
     def apply(
-        Id: Id,
-        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
+        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+        Id: js.UndefOr[Id] = js.undefined,
+        Name: js.UndefOr[ProductViewName] = js.undefined
     ): DescribeProductInput = {
-      val __obj = js.Dynamic.literal(
-        "Id" -> Id.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProductInput]
     }
   }
@@ -2080,6 +2089,7 @@ package servicecatalog {
   @js.native
   trait DescribeProductOutput extends js.Object {
     var Budgets: js.UndefOr[Budgets]
+    var LaunchPaths: js.UndefOr[LaunchPaths]
     var ProductViewSummary: js.UndefOr[ProductViewSummary]
     var ProvisioningArtifacts: js.UndefOr[ProvisioningArtifacts]
   }
@@ -2088,11 +2098,13 @@ package servicecatalog {
     @inline
     def apply(
         Budgets: js.UndefOr[Budgets] = js.undefined,
+        LaunchPaths: js.UndefOr[LaunchPaths] = js.undefined,
         ProductViewSummary: js.UndefOr[ProductViewSummary] = js.undefined,
         ProvisioningArtifacts: js.UndefOr[ProvisioningArtifacts] = js.undefined
     ): DescribeProductOutput = {
       val __obj = js.Dynamic.literal()
       Budgets.foreach(__v => __obj.updateDynamic("Budgets")(__v.asInstanceOf[js.Any]))
+      LaunchPaths.foreach(__v => __obj.updateDynamic("LaunchPaths")(__v.asInstanceOf[js.Any]))
       ProductViewSummary.foreach(__v => __obj.updateDynamic("ProductViewSummary")(__v.asInstanceOf[js.Any]))
       ProvisioningArtifacts.foreach(__v => __obj.updateDynamic("ProvisioningArtifacts")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProductOutput]
@@ -2232,26 +2244,30 @@ package servicecatalog {
 
   @js.native
   trait DescribeProvisioningArtifactInput extends js.Object {
-    var ProductId: Id
-    var ProvisioningArtifactId: Id
     var AcceptLanguage: js.UndefOr[AcceptLanguage]
+    var ProductId: js.UndefOr[Id]
+    var ProductName: js.UndefOr[ProductViewName]
+    var ProvisioningArtifactId: js.UndefOr[Id]
+    var ProvisioningArtifactName: js.UndefOr[ProvisioningArtifactName]
     var Verbose: js.UndefOr[Verbose]
   }
 
   object DescribeProvisioningArtifactInput {
     @inline
     def apply(
-        ProductId: Id,
-        ProvisioningArtifactId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+        ProductId: js.UndefOr[Id] = js.undefined,
+        ProductName: js.UndefOr[ProductViewName] = js.undefined,
+        ProvisioningArtifactId: js.UndefOr[Id] = js.undefined,
+        ProvisioningArtifactName: js.UndefOr[ProvisioningArtifactName] = js.undefined,
         Verbose: js.UndefOr[Verbose] = js.undefined
     ): DescribeProvisioningArtifactInput = {
-      val __obj = js.Dynamic.literal(
-        "ProductId"              -> ProductId.asInstanceOf[js.Any],
-        "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      ProductId.foreach(__v => __obj.updateDynamic("ProductId")(__v.asInstanceOf[js.Any]))
+      ProductName.foreach(__v => __obj.updateDynamic("ProductName")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactId.foreach(__v => __obj.updateDynamic("ProvisioningArtifactId")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactName.foreach(__v => __obj.updateDynamic("ProvisioningArtifactName")(__v.asInstanceOf[js.Any]))
       Verbose.foreach(__v => __obj.updateDynamic("Verbose")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProvisioningArtifactInput]
     }
@@ -2911,6 +2927,28 @@ package servicecatalog {
       val __obj = js.Dynamic.literal()
       AccessStatus.foreach(__v => __obj.updateDynamic("AccessStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAWSOrganizationsAccessStatusOutput]
+    }
+  }
+
+  /**
+    * A launch path object.
+    */
+  @js.native
+  trait LaunchPath extends js.Object {
+    var Id: js.UndefOr[Id]
+    var Name: js.UndefOr[PortfolioName]
+  }
+
+  object LaunchPath {
+    @inline
+    def apply(
+        Id: js.UndefOr[Id] = js.undefined,
+        Name: js.UndefOr[PortfolioName] = js.undefined
+    ): LaunchPath = {
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LaunchPath]
     }
   }
 

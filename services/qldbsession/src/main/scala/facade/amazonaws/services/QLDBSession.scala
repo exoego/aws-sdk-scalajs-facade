@@ -327,7 +327,7 @@ package qldbsession {
   }
 
   /**
-    * Specifies a request to start a a new session.
+    * Specifies a request to start a new session.
     */
   @js.native
   trait StartSessionRequest extends js.Object {
@@ -402,7 +402,7 @@ package qldbsession {
   }
 
   /**
-    * A structure that can contains values in multiple encoding formats.
+    * A structure that can contain an Amazon Ion value in multiple encoding formats.
     */
   @js.native
   trait ValueHolder extends js.Object {

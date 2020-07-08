@@ -8,6 +8,8 @@ import facade.amazonaws._
 
 package object globalaccelerator {
   type Accelerators               = js.Array[Accelerator]
+  type ByoipCidrEvents            = js.Array[ByoipCidrEvent]
+  type ByoipCidrs                 = js.Array[ByoipCidr]
   type EndpointConfigurations     = js.Array[EndpointConfiguration]
   type EndpointDescriptions       = js.Array[EndpointDescription]
   type EndpointGroups             = js.Array[EndpointGroup]
@@ -24,12 +26,19 @@ package object globalaccelerator {
   type MaxResults                 = Int
   type PortNumber                 = Int
   type PortRanges                 = js.Array[PortRange]
+  type ResourceArn                = String
+  type TagKey                     = String
+  type TagKeys                    = js.Array[TagKey]
+  type TagValue                   = String
+  type Tags                       = js.Array[Tag]
   type ThresholdCount             = Int
   type Timestamp                  = js.Date
   type TrafficDialPercentage      = Float
 
   implicit final class GlobalAcceleratorOps(private val service: GlobalAccelerator) extends AnyVal {
 
+    @inline def advertiseByoipCidrFuture(params: AdvertiseByoipCidrRequest): Future[AdvertiseByoipCidrResponse] =
+      service.advertiseByoipCidr(params).promise().toFuture
     @inline def createAcceleratorFuture(params: CreateAcceleratorRequest): Future[CreateAcceleratorResponse] =
       service.createAccelerator(params).promise().toFuture
     @inline def createEndpointGroupFuture(params: CreateEndpointGroupRequest): Future[CreateEndpointGroupResponse] =
@@ -42,6 +51,8 @@ package object globalaccelerator {
       service.deleteEndpointGroup(params).promise().toFuture
     @inline def deleteListenerFuture(params: DeleteListenerRequest): Future[js.Object] =
       service.deleteListener(params).promise().toFuture
+    @inline def deprovisionByoipCidrFuture(params: DeprovisionByoipCidrRequest): Future[DeprovisionByoipCidrResponse] =
+      service.deprovisionByoipCidr(params).promise().toFuture
     @inline def describeAcceleratorAttributesFuture(
         params: DescribeAcceleratorAttributesRequest
     ): Future[DescribeAcceleratorAttributesResponse] = service.describeAcceleratorAttributes(params).promise().toFuture
@@ -54,10 +65,20 @@ package object globalaccelerator {
       service.describeListener(params).promise().toFuture
     @inline def listAcceleratorsFuture(params: ListAcceleratorsRequest): Future[ListAcceleratorsResponse] =
       service.listAccelerators(params).promise().toFuture
+    @inline def listByoipCidrsFuture(params: ListByoipCidrsRequest): Future[ListByoipCidrsResponse] =
+      service.listByoipCidrs(params).promise().toFuture
     @inline def listEndpointGroupsFuture(params: ListEndpointGroupsRequest): Future[ListEndpointGroupsResponse] =
       service.listEndpointGroups(params).promise().toFuture
     @inline def listListenersFuture(params: ListListenersRequest): Future[ListListenersResponse] =
       service.listListeners(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise().toFuture
+    @inline def provisionByoipCidrFuture(params: ProvisionByoipCidrRequest): Future[ProvisionByoipCidrResponse] =
+      service.provisionByoipCidr(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+      service.untagResource(params).promise().toFuture
     @inline def updateAcceleratorAttributesFuture(
         params: UpdateAcceleratorAttributesRequest
     ): Future[UpdateAcceleratorAttributesResponse] = service.updateAcceleratorAttributes(params).promise().toFuture
@@ -67,6 +88,8 @@ package object globalaccelerator {
       service.updateEndpointGroup(params).promise().toFuture
     @inline def updateListenerFuture(params: UpdateListenerRequest): Future[UpdateListenerResponse] =
       service.updateListener(params).promise().toFuture
+    @inline def withdrawByoipCidrFuture(params: WithdrawByoipCidrRequest): Future[WithdrawByoipCidrResponse] =
+      service.withdrawByoipCidr(params).promise().toFuture
   }
 }
 
@@ -76,27 +99,35 @@ package globalaccelerator {
   class GlobalAccelerator() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createAccelerator(params: CreateAcceleratorRequest): Request[CreateAcceleratorResponse]       = js.native
-    def createEndpointGroup(params: CreateEndpointGroupRequest): Request[CreateEndpointGroupResponse] = js.native
-    def createListener(params: CreateListenerRequest): Request[CreateListenerResponse]                = js.native
-    def deleteAccelerator(params: DeleteAcceleratorRequest): Request[js.Object]                       = js.native
-    def deleteEndpointGroup(params: DeleteEndpointGroupRequest): Request[js.Object]                   = js.native
-    def deleteListener(params: DeleteListenerRequest): Request[js.Object]                             = js.native
-    def describeAccelerator(params: DescribeAcceleratorRequest): Request[DescribeAcceleratorResponse] = js.native
+    def advertiseByoipCidr(params: AdvertiseByoipCidrRequest): Request[AdvertiseByoipCidrResponse]       = js.native
+    def createAccelerator(params: CreateAcceleratorRequest): Request[CreateAcceleratorResponse]          = js.native
+    def createEndpointGroup(params: CreateEndpointGroupRequest): Request[CreateEndpointGroupResponse]    = js.native
+    def createListener(params: CreateListenerRequest): Request[CreateListenerResponse]                   = js.native
+    def deleteAccelerator(params: DeleteAcceleratorRequest): Request[js.Object]                          = js.native
+    def deleteEndpointGroup(params: DeleteEndpointGroupRequest): Request[js.Object]                      = js.native
+    def deleteListener(params: DeleteListenerRequest): Request[js.Object]                                = js.native
+    def deprovisionByoipCidr(params: DeprovisionByoipCidrRequest): Request[DeprovisionByoipCidrResponse] = js.native
+    def describeAccelerator(params: DescribeAcceleratorRequest): Request[DescribeAcceleratorResponse]    = js.native
     def describeAcceleratorAttributes(
         params: DescribeAcceleratorAttributesRequest
     ): Request[DescribeAcceleratorAttributesResponse]                                                       = js.native
     def describeEndpointGroup(params: DescribeEndpointGroupRequest): Request[DescribeEndpointGroupResponse] = js.native
     def describeListener(params: DescribeListenerRequest): Request[DescribeListenerResponse]                = js.native
     def listAccelerators(params: ListAcceleratorsRequest): Request[ListAcceleratorsResponse]                = js.native
+    def listByoipCidrs(params: ListByoipCidrsRequest): Request[ListByoipCidrsResponse]                      = js.native
     def listEndpointGroups(params: ListEndpointGroupsRequest): Request[ListEndpointGroupsResponse]          = js.native
     def listListeners(params: ListListenersRequest): Request[ListListenersResponse]                         = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
+    def provisionByoipCidr(params: ProvisionByoipCidrRequest): Request[ProvisionByoipCidrResponse]          = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                               = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                         = js.native
     def updateAccelerator(params: UpdateAcceleratorRequest): Request[UpdateAcceleratorResponse]             = js.native
     def updateAcceleratorAttributes(
         params: UpdateAcceleratorAttributesRequest
     ): Request[UpdateAcceleratorAttributesResponse]                                                   = js.native
     def updateEndpointGroup(params: UpdateEndpointGroupRequest): Request[UpdateEndpointGroupResponse] = js.native
     def updateListener(params: UpdateListenerRequest): Request[UpdateListenerResponse]                = js.native
+    def withdrawByoipCidr(params: WithdrawByoipCidrRequest): Request[WithdrawByoipCidrResponse]       = js.native
   }
 
   /**
@@ -177,6 +208,156 @@ package globalaccelerator {
   }
 
   @js.native
+  trait AdvertiseByoipCidrRequest extends js.Object {
+    var Cidr: GenericString
+  }
+
+  object AdvertiseByoipCidrRequest {
+    @inline
+    def apply(
+        Cidr: GenericString
+    ): AdvertiseByoipCidrRequest = {
+      val __obj = js.Dynamic.literal(
+        "Cidr" -> Cidr.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[AdvertiseByoipCidrRequest]
+    }
+  }
+
+  @js.native
+  trait AdvertiseByoipCidrResponse extends js.Object {
+    var ByoipCidr: js.UndefOr[ByoipCidr]
+  }
+
+  object AdvertiseByoipCidrResponse {
+    @inline
+    def apply(
+        ByoipCidr: js.UndefOr[ByoipCidr] = js.undefined
+    ): AdvertiseByoipCidrResponse = {
+      val __obj = js.Dynamic.literal()
+      ByoipCidr.foreach(__v => __obj.updateDynamic("ByoipCidr")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AdvertiseByoipCidrResponse]
+    }
+  }
+
+  /**
+    * Information about an IP address range that is provisioned for use with your AWS resources through bring your own IP address (BYOIP).
+    *  The following describes each BYOIP <code>State</code> that your IP address range can be in.
+    * * ```PENDING_PROVISIONING``` — You’ve submitted a request to provision an IP address range but it is not yet provisioned with AWS Global Accelerator.
+    *  * ```READY``` — The address range is provisioned with AWS Global Accelerator and can be advertised.
+    *  * ```PENDING_ADVERTISING``` — You’ve submitted a request for AWS Global Accelerator to advertise an address range but it is not yet being advertised.
+    *  * ```ADVERTISING``` — The address range is being advertised by AWS Global Accelerator.
+    *  * ```PENDING_WITHDRAWING``` — You’ve submitted a request to withdraw an address range from being advertised but it is still being advertised by AWS Global Accelerator.
+    *  * ```PENDING_DEPROVISIONING``` — You’ve submitted a request to deprovision an address range from AWS Global Accelerator but it is still provisioned.
+    *  * ```DEPROVISIONED``` — The address range is deprovisioned from AWS Global Accelerator.
+    *  * ```FAILED_PROVISION ``` — The request to provision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.
+    *  * ```FAILED_ADVERTISING``` — The request for AWS Global Accelerator to advertise the address range was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.
+    *  * ```FAILED_WITHDRAW``` — The request to withdraw the address range from advertising by AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.
+    *  * ```FAILED_DEPROVISION ``` — The request to deprovision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.
+    */
+  @js.native
+  trait ByoipCidr extends js.Object {
+    var Cidr: js.UndefOr[GenericString]
+    var Events: js.UndefOr[ByoipCidrEvents]
+    var State: js.UndefOr[ByoipCidrState]
+  }
+
+  object ByoipCidr {
+    @inline
+    def apply(
+        Cidr: js.UndefOr[GenericString] = js.undefined,
+        Events: js.UndefOr[ByoipCidrEvents] = js.undefined,
+        State: js.UndefOr[ByoipCidrState] = js.undefined
+    ): ByoipCidr = {
+      val __obj = js.Dynamic.literal()
+      Cidr.foreach(__v => __obj.updateDynamic("Cidr")(__v.asInstanceOf[js.Any]))
+      Events.foreach(__v => __obj.updateDynamic("Events")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ByoipCidr]
+    }
+  }
+
+  /**
+    * A complex type that contains a <code>Message</code> and a <code>Timestamp</code> value for changes that you make in the status an IP address range that you bring to AWS Global Accelerator through bring your own IP address (BYOIP).
+    */
+  @js.native
+  trait ByoipCidrEvent extends js.Object {
+    var Message: js.UndefOr[GenericString]
+    var Timestamp: js.UndefOr[Timestamp]
+  }
+
+  object ByoipCidrEvent {
+    @inline
+    def apply(
+        Message: js.UndefOr[GenericString] = js.undefined,
+        Timestamp: js.UndefOr[Timestamp] = js.undefined
+    ): ByoipCidrEvent = {
+      val __obj = js.Dynamic.literal()
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ByoipCidrEvent]
+    }
+  }
+
+  @js.native
+  sealed trait ByoipCidrState extends js.Any
+  object ByoipCidrState extends js.Object {
+    val PENDING_PROVISIONING   = "PENDING_PROVISIONING".asInstanceOf[ByoipCidrState]
+    val READY                  = "READY".asInstanceOf[ByoipCidrState]
+    val PENDING_ADVERTISING    = "PENDING_ADVERTISING".asInstanceOf[ByoipCidrState]
+    val ADVERTISING            = "ADVERTISING".asInstanceOf[ByoipCidrState]
+    val PENDING_WITHDRAWING    = "PENDING_WITHDRAWING".asInstanceOf[ByoipCidrState]
+    val PENDING_DEPROVISIONING = "PENDING_DEPROVISIONING".asInstanceOf[ByoipCidrState]
+    val DEPROVISIONED          = "DEPROVISIONED".asInstanceOf[ByoipCidrState]
+    val FAILED_PROVISION       = "FAILED_PROVISION".asInstanceOf[ByoipCidrState]
+    val FAILED_ADVERTISING     = "FAILED_ADVERTISING".asInstanceOf[ByoipCidrState]
+    val FAILED_WITHDRAW        = "FAILED_WITHDRAW".asInstanceOf[ByoipCidrState]
+    val FAILED_DEPROVISION     = "FAILED_DEPROVISION".asInstanceOf[ByoipCidrState]
+
+    val values = js.Object.freeze(
+      js.Array(
+        PENDING_PROVISIONING,
+        READY,
+        PENDING_ADVERTISING,
+        ADVERTISING,
+        PENDING_WITHDRAWING,
+        PENDING_DEPROVISIONING,
+        DEPROVISIONED,
+        FAILED_PROVISION,
+        FAILED_ADVERTISING,
+        FAILED_WITHDRAW,
+        FAILED_DEPROVISION
+      )
+    )
+  }
+
+  /**
+    * Provides authorization for Amazon to bring a specific IP address range to a specific AWS account using bring your own IP addresses (BYOIP).
+    *  For more information, see [[https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html|Bring Your Own IP Addresses (BYOIP)]] in the <i>AWS Global Accelerator Developer Guide</i>.
+    */
+  @js.native
+  trait CidrAuthorizationContext extends js.Object {
+    var Message: GenericString
+    var Signature: GenericString
+  }
+
+  object CidrAuthorizationContext {
+    @inline
+    def apply(
+        Message: GenericString,
+        Signature: GenericString
+    ): CidrAuthorizationContext = {
+      val __obj = js.Dynamic.literal(
+        "Message"   -> Message.asInstanceOf[js.Any],
+        "Signature" -> Signature.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CidrAuthorizationContext]
+    }
+  }
+
+  @js.native
   sealed trait ClientAffinity extends js.Any
   object ClientAffinity extends js.Object {
     val NONE      = "NONE".asInstanceOf[ClientAffinity]
@@ -191,6 +372,8 @@ package globalaccelerator {
     var Name: GenericString
     var Enabled: js.UndefOr[GenericBoolean]
     var IpAddressType: js.UndefOr[IpAddressType]
+    var IpAddresses: js.UndefOr[IpAddresses]
+    var Tags: js.UndefOr[Tags]
   }
 
   object CreateAcceleratorRequest {
@@ -199,7 +382,9 @@ package globalaccelerator {
         IdempotencyToken: IdempotencyToken,
         Name: GenericString,
         Enabled: js.UndefOr[GenericBoolean] = js.undefined,
-        IpAddressType: js.UndefOr[IpAddressType] = js.undefined
+        IpAddressType: js.UndefOr[IpAddressType] = js.undefined,
+        IpAddresses: js.UndefOr[IpAddresses] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): CreateAcceleratorRequest = {
       val __obj = js.Dynamic.literal(
         "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
@@ -208,6 +393,8 @@ package globalaccelerator {
 
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       IpAddressType.foreach(__v => __obj.updateDynamic("IpAddressType")(__v.asInstanceOf[js.Any]))
+      IpAddresses.foreach(__v => __obj.updateDynamic("IpAddresses")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAcceleratorRequest]
     }
   }
@@ -388,6 +575,40 @@ package globalaccelerator {
       )
 
       __obj.asInstanceOf[DeleteListenerRequest]
+    }
+  }
+
+  @js.native
+  trait DeprovisionByoipCidrRequest extends js.Object {
+    var Cidr: GenericString
+  }
+
+  object DeprovisionByoipCidrRequest {
+    @inline
+    def apply(
+        Cidr: GenericString
+    ): DeprovisionByoipCidrRequest = {
+      val __obj = js.Dynamic.literal(
+        "Cidr" -> Cidr.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeprovisionByoipCidrRequest]
+    }
+  }
+
+  @js.native
+  trait DeprovisionByoipCidrResponse extends js.Object {
+    var ByoipCidr: js.UndefOr[ByoipCidr]
+  }
+
+  object DeprovisionByoipCidrResponse {
+    @inline
+    def apply(
+        ByoipCidr: js.UndefOr[ByoipCidr] = js.undefined
+    ): DeprovisionByoipCidrResponse = {
+      val __obj = js.Dynamic.literal()
+      ByoipCidr.foreach(__v => __obj.updateDynamic("ByoipCidr")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeprovisionByoipCidrResponse]
     }
   }
 
@@ -721,6 +942,44 @@ package globalaccelerator {
   }
 
   @js.native
+  trait ListByoipCidrsRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[GenericString]
+  }
+
+  object ListByoipCidrsRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[GenericString] = js.undefined
+    ): ListByoipCidrsRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListByoipCidrsRequest]
+    }
+  }
+
+  @js.native
+  trait ListByoipCidrsResponse extends js.Object {
+    var ByoipCidrs: js.UndefOr[ByoipCidrs]
+    var NextToken: js.UndefOr[GenericString]
+  }
+
+  object ListByoipCidrsResponse {
+    @inline
+    def apply(
+        ByoipCidrs: js.UndefOr[ByoipCidrs] = js.undefined,
+        NextToken: js.UndefOr[GenericString] = js.undefined
+    ): ListByoipCidrsResponse = {
+      val __obj = js.Dynamic.literal()
+      ByoipCidrs.foreach(__v => __obj.updateDynamic("ByoipCidrs")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListByoipCidrsResponse]
+    }
+  }
+
+  @js.native
   trait ListEndpointGroupsRequest extends js.Object {
     var ListenerArn: GenericString
     var MaxResults: js.UndefOr[MaxResults]
@@ -806,6 +1065,40 @@ package globalaccelerator {
     }
   }
 
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceArn: ResourceArn
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: ResourceArn
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
   /**
     * A complex type for a listener.
     */
@@ -863,6 +1156,135 @@ package globalaccelerator {
     val UDP = "UDP".asInstanceOf[Protocol]
 
     val values = js.Object.freeze(js.Array(TCP, UDP))
+  }
+
+  @js.native
+  trait ProvisionByoipCidrRequest extends js.Object {
+    var Cidr: GenericString
+    var CidrAuthorizationContext: CidrAuthorizationContext
+  }
+
+  object ProvisionByoipCidrRequest {
+    @inline
+    def apply(
+        Cidr: GenericString,
+        CidrAuthorizationContext: CidrAuthorizationContext
+    ): ProvisionByoipCidrRequest = {
+      val __obj = js.Dynamic.literal(
+        "Cidr"                     -> Cidr.asInstanceOf[js.Any],
+        "CidrAuthorizationContext" -> CidrAuthorizationContext.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ProvisionByoipCidrRequest]
+    }
+  }
+
+  @js.native
+  trait ProvisionByoipCidrResponse extends js.Object {
+    var ByoipCidr: js.UndefOr[ByoipCidr]
+  }
+
+  object ProvisionByoipCidrResponse {
+    @inline
+    def apply(
+        ByoipCidr: js.UndefOr[ByoipCidr] = js.undefined
+    ): ProvisionByoipCidrResponse = {
+      val __obj = js.Dynamic.literal()
+      ByoipCidr.foreach(__v => __obj.updateDynamic("ByoipCidr")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProvisionByoipCidrResponse]
+    }
+  }
+
+  /**
+    * A complex type that contains a <code>Tag</code> key and <code>Tag</code> value.
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: TagKey
+    var Value: TagValue
+  }
+
+  object Tag {
+    @inline
+    def apply(
+        Key: TagKey,
+        Value: TagValue
+    ): Tag = {
+      val __obj = js.Dynamic.literal(
+        "Key"   -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceArn: ResourceArn
+    var Tags: Tags
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: ResourceArn,
+        Tags: Tags
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "Tags"        -> Tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object {}
+
+  object TagResourceResponse {
+    @inline
+    def apply(
+    ): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceArn: ResourceArn
+    var TagKeys: TagKeys
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: ResourceArn,
+        TagKeys: TagKeys
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object {}
+
+  object UntagResourceResponse {
+    @inline
+    def apply(
+    ): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[UntagResourceResponse]
+    }
   }
 
   @js.native
@@ -1048,6 +1470,40 @@ package globalaccelerator {
       val __obj = js.Dynamic.literal()
       Listener.foreach(__v => __obj.updateDynamic("Listener")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateListenerResponse]
+    }
+  }
+
+  @js.native
+  trait WithdrawByoipCidrRequest extends js.Object {
+    var Cidr: GenericString
+  }
+
+  object WithdrawByoipCidrRequest {
+    @inline
+    def apply(
+        Cidr: GenericString
+    ): WithdrawByoipCidrRequest = {
+      val __obj = js.Dynamic.literal(
+        "Cidr" -> Cidr.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[WithdrawByoipCidrRequest]
+    }
+  }
+
+  @js.native
+  trait WithdrawByoipCidrResponse extends js.Object {
+    var ByoipCidr: js.UndefOr[ByoipCidr]
+  }
+
+  object WithdrawByoipCidrResponse {
+    @inline
+    def apply(
+        ByoipCidr: js.UndefOr[ByoipCidr] = js.undefined
+    ): WithdrawByoipCidrResponse = {
+      val __obj = js.Dynamic.literal()
+      ByoipCidr.foreach(__v => __obj.updateDynamic("ByoipCidr")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WithdrawByoipCidrResponse]
     }
   }
 }

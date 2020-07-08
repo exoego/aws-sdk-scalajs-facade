@@ -7,67 +7,93 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object chime {
-  type AccountList                      = js.Array[Account]
-  type AccountName                      = String
-  type Arn                              = String
-  type AttendeeList                     = js.Array[Attendee]
-  type BatchCreateAttendeeErrorList     = js.Array[CreateAttendeeError]
-  type BotList                          = js.Array[Bot]
-  type CallingName                      = String
-  type CallingRegion                    = String
-  type CallingRegionList                = js.Array[CallingRegion]
-  type ClientRequestToken               = String
-  type CpsLimit                         = Int
-  type CreateAttendeeRequestItemList    = js.Array[CreateAttendeeRequestItem]
-  type CredentialList                   = js.Array[Credential]
-  type DataRetentionInHours             = Int
-  type E164PhoneNumber                  = String
-  type E164PhoneNumberList              = js.Array[E164PhoneNumber]
-  type EmailAddress                     = String
-  type ExternalUserIdType               = String
-  type GuidString                       = String
-  type InviteList                       = js.Array[Invite]
-  type Iso8601Timestamp                 = js.Date
-  type JoinTokenString                  = String
-  type LicenseList                      = js.Array[License]
-  type MeetingList                      = js.Array[Meeting]
-  type MemberErrorList                  = js.Array[MemberError]
-  type MembershipItemList               = js.Array[MembershipItem]
-  type NonEmptyString                   = String
-  type NonEmptyStringList               = js.Array[String]
-  type NullableBoolean                  = Boolean
-  type OrderedPhoneNumberList           = js.Array[OrderedPhoneNumber]
-  type OriginationRouteList             = js.Array[OriginationRoute]
-  type OriginationRoutePriority         = Int
-  type OriginationRouteWeight           = Int
-  type PhoneNumberAssociationList       = js.Array[PhoneNumberAssociation]
-  type PhoneNumberErrorList             = js.Array[PhoneNumberError]
-  type PhoneNumberList                  = js.Array[PhoneNumber]
-  type PhoneNumberMaxResults            = Int
-  type PhoneNumberOrderList             = js.Array[PhoneNumberOrder]
-  type Port                             = Int
-  type ProfileServiceMaxResults         = Int
-  type ResultMax                        = Int
-  type RoomList                         = js.Array[Room]
-  type RoomMembershipList               = js.Array[RoomMembership]
-  type SensitiveString                  = String
-  type SensitiveStringList              = js.Array[SensitiveString]
-  type SigninDelegateGroupList          = js.Array[SigninDelegateGroup]
-  type StringList                       = js.Array[String]
-  type TollFreePrefix                   = String
-  type UpdatePhoneNumberRequestItemList = js.Array[UpdatePhoneNumberRequestItem]
-  type UpdateUserRequestItemList        = js.Array[UpdateUserRequestItem]
-  type UriType                          = String
-  type UserEmailList                    = js.Array[EmailAddress]
-  type UserErrorList                    = js.Array[UserError]
-  type UserIdList                       = js.Array[NonEmptyString]
-  type UserList                         = js.Array[User]
-  type VoiceConnectorGroupList          = js.Array[VoiceConnectorGroup]
-  type VoiceConnectorGroupName          = String
-  type VoiceConnectorItemList           = js.Array[VoiceConnectorItem]
-  type VoiceConnectorItemPriority       = Int
-  type VoiceConnectorList               = js.Array[VoiceConnector]
-  type VoiceConnectorName               = String
+  type AccountList                               = js.Array[Account]
+  type AccountName                               = String
+  type Alpha2CountryCode                         = String
+  type AreaCode                                  = String
+  type Arn                                       = String
+  type AttendeeList                              = js.Array[Attendee]
+  type AttendeeTagKeyList                        = js.Array[TagKey]
+  type AttendeeTagList                           = js.Array[Tag]
+  type BatchCreateAttendeeErrorList              = js.Array[CreateAttendeeError]
+  type BotList                                   = js.Array[Bot]
+  type CallingName                               = String
+  type CallingRegion                             = String
+  type CallingRegionList                         = js.Array[CallingRegion]
+  type CapabilityList                            = js.Array[Capability]
+  type ClientRequestToken                        = String
+  type Country                                   = String
+  type CountryList                               = js.Array[Country]
+  type CpsLimit                                  = Int
+  type CreateAttendeeRequestItemList             = js.Array[CreateAttendeeRequestItem]
+  type CreateMeetingWithAttendeesRequestItemList = js.Array[CreateAttendeeRequestItem]
+  type CredentialList                            = js.Array[Credential]
+  type DNISEmergencyCallingConfigurationList     = js.Array[DNISEmergencyCallingConfiguration]
+  type DataRetentionInHours                      = Int
+  type E164PhoneNumber                           = String
+  type E164PhoneNumberList                       = js.Array[E164PhoneNumber]
+  type EmailAddress                              = String
+  type ExternalMeetingIdType                     = String
+  type ExternalUserIdType                        = String
+  type GuidString                                = String
+  type InviteList                                = js.Array[Invite]
+  type Iso8601Timestamp                          = js.Date
+  type JoinTokenString                           = String
+  type LicenseList                               = js.Array[License]
+  type MeetingList                               = js.Array[Meeting]
+  type MeetingTagKeyList                         = js.Array[TagKey]
+  type MeetingTagList                            = js.Array[Tag]
+  type MemberErrorList                           = js.Array[MemberError]
+  type MembershipItemList                        = js.Array[MembershipItem]
+  type NextTokenString                           = String
+  type NonEmptyString                            = String
+  type NonEmptyString128                         = String
+  type NonEmptyStringList                        = js.Array[String]
+  type NullableBoolean                           = Boolean
+  type OrderedPhoneNumberList                    = js.Array[OrderedPhoneNumber]
+  type OriginationRouteList                      = js.Array[OriginationRoute]
+  type OriginationRoutePriority                  = Int
+  type OriginationRouteWeight                    = Int
+  type ParticipantPhoneNumberList                = js.Array[E164PhoneNumber]
+  type Participants                              = js.Array[Participant]
+  type PhoneNumberAssociationList                = js.Array[PhoneNumberAssociation]
+  type PhoneNumberErrorList                      = js.Array[PhoneNumberError]
+  type PhoneNumberList                           = js.Array[PhoneNumber]
+  type PhoneNumberMaxResults                     = Int
+  type PhoneNumberOrderList                      = js.Array[PhoneNumberOrder]
+  type Port                                      = Int
+  type PositiveInteger                           = Int
+  type ProfileServiceMaxResults                  = Int
+  type ProxySessionNameString                    = String
+  type ProxySessions                             = js.Array[ProxySession]
+  type ResultMax                                 = Int
+  type RetentionDays                             = Int
+  type RoomList                                  = js.Array[Room]
+  type RoomMembershipList                        = js.Array[RoomMembership]
+  type SensitiveString                           = String
+  type SensitiveStringList                       = js.Array[SensitiveString]
+  type SigninDelegateGroupList                   = js.Array[SigninDelegateGroup]
+  type StreamingNotificationTargetList           = js.Array[StreamingNotificationTarget]
+  type String128                                 = String
+  type StringList                                = js.Array[String]
+  type TagKey                                    = String
+  type TagKeyList                                = js.Array[TagKey]
+  type TagList                                   = js.Array[Tag]
+  type TagValue                                  = String
+  type TollFreePrefix                            = String
+  type UpdatePhoneNumberRequestItemList          = js.Array[UpdatePhoneNumberRequestItem]
+  type UpdateUserRequestItemList                 = js.Array[UpdateUserRequestItem]
+  type UriType                                   = String
+  type UserEmailList                             = js.Array[EmailAddress]
+  type UserErrorList                             = js.Array[UserError]
+  type UserIdList                                = js.Array[NonEmptyString]
+  type UserList                                  = js.Array[User]
+  type VoiceConnectorGroupList                   = js.Array[VoiceConnectorGroup]
+  type VoiceConnectorGroupName                   = String
+  type VoiceConnectorItemList                    = js.Array[VoiceConnectorItem]
+  type VoiceConnectorItemPriority                = Int
+  type VoiceConnectorList                        = js.Array[VoiceConnector]
+  type VoiceConnectorName                        = String
 
   implicit final class ChimeOps(private val service: Chime) extends AnyVal {
 
@@ -111,9 +137,14 @@ package object chime {
       service.createBot(params).promise().toFuture
     @inline def createMeetingFuture(params: CreateMeetingRequest): Future[CreateMeetingResponse] =
       service.createMeeting(params).promise().toFuture
+    @inline def createMeetingWithAttendeesFuture(
+        params: CreateMeetingWithAttendeesRequest
+    ): Future[CreateMeetingWithAttendeesResponse] = service.createMeetingWithAttendees(params).promise().toFuture
     @inline def createPhoneNumberOrderFuture(
         params: CreatePhoneNumberOrderRequest
     ): Future[CreatePhoneNumberOrderResponse] = service.createPhoneNumberOrder(params).promise().toFuture
+    @inline def createProxySessionFuture(params: CreateProxySessionRequest): Future[CreateProxySessionResponse] =
+      service.createProxySession(params).promise().toFuture
     @inline def createRoomFuture(params: CreateRoomRequest): Future[CreateRoomResponse] =
       service.createRoom(params).promise().toFuture
     @inline def createRoomMembershipFuture(params: CreateRoomMembershipRequest): Future[CreateRoomMembershipResponse] =
@@ -135,10 +166,15 @@ package object chime {
       service.deleteMeeting(params).promise().toFuture
     @inline def deletePhoneNumberFuture(params: DeletePhoneNumberRequest): Future[js.Object] =
       service.deletePhoneNumber(params).promise().toFuture
+    @inline def deleteProxySessionFuture(params: DeleteProxySessionRequest): Future[js.Object] =
+      service.deleteProxySession(params).promise().toFuture
     @inline def deleteRoomFuture(params: DeleteRoomRequest): Future[js.Object] =
       service.deleteRoom(params).promise().toFuture
     @inline def deleteRoomMembershipFuture(params: DeleteRoomMembershipRequest): Future[js.Object] =
       service.deleteRoomMembership(params).promise().toFuture
+    @inline def deleteVoiceConnectorEmergencyCallingConfigurationFuture(
+        params: DeleteVoiceConnectorEmergencyCallingConfigurationRequest
+    ): Future[js.Object] = service.deleteVoiceConnectorEmergencyCallingConfiguration(params).promise().toFuture
     @inline def deleteVoiceConnectorFuture(params: DeleteVoiceConnectorRequest): Future[js.Object] =
       service.deleteVoiceConnector(params).promise().toFuture
     @inline def deleteVoiceConnectorGroupFuture(params: DeleteVoiceConnectorGroupRequest): Future[js.Object] =
@@ -146,6 +182,8 @@ package object chime {
     @inline def deleteVoiceConnectorOriginationFuture(
         params: DeleteVoiceConnectorOriginationRequest
     ): Future[js.Object] = service.deleteVoiceConnectorOrigination(params).promise().toFuture
+    @inline def deleteVoiceConnectorProxyFuture(params: DeleteVoiceConnectorProxyRequest): Future[js.Object] =
+      service.deleteVoiceConnectorProxy(params).promise().toFuture
     @inline def deleteVoiceConnectorStreamingConfigurationFuture(
         params: DeleteVoiceConnectorStreamingConfigurationRequest
     ): Future[js.Object] = service.deleteVoiceConnectorStreamingConfiguration(params).promise().toFuture
@@ -191,12 +229,20 @@ package object chime {
       service.getPhoneNumberOrder(params).promise().toFuture
     @inline def getPhoneNumberSettingsFuture(): Future[GetPhoneNumberSettingsResponse] =
       service.getPhoneNumberSettings().promise().toFuture
+    @inline def getProxySessionFuture(params: GetProxySessionRequest): Future[GetProxySessionResponse] =
+      service.getProxySession(params).promise().toFuture
+    @inline def getRetentionSettingsFuture(params: GetRetentionSettingsRequest): Future[GetRetentionSettingsResponse] =
+      service.getRetentionSettings(params).promise().toFuture
     @inline def getRoomFuture(params: GetRoomRequest): Future[GetRoomResponse] =
       service.getRoom(params).promise().toFuture
     @inline def getUserFuture(params: GetUserRequest): Future[GetUserResponse] =
       service.getUser(params).promise().toFuture
     @inline def getUserSettingsFuture(params: GetUserSettingsRequest): Future[GetUserSettingsResponse] =
       service.getUserSettings(params).promise().toFuture
+    @inline def getVoiceConnectorEmergencyCallingConfigurationFuture(
+        params: GetVoiceConnectorEmergencyCallingConfigurationRequest
+    ): Future[GetVoiceConnectorEmergencyCallingConfigurationResponse] =
+      service.getVoiceConnectorEmergencyCallingConfiguration(params).promise().toFuture
     @inline def getVoiceConnectorFuture(params: GetVoiceConnectorRequest): Future[GetVoiceConnectorResponse] =
       service.getVoiceConnector(params).promise().toFuture
     @inline def getVoiceConnectorGroupFuture(
@@ -209,6 +255,9 @@ package object chime {
     @inline def getVoiceConnectorOriginationFuture(
         params: GetVoiceConnectorOriginationRequest
     ): Future[GetVoiceConnectorOriginationResponse] = service.getVoiceConnectorOrigination(params).promise().toFuture
+    @inline def getVoiceConnectorProxyFuture(
+        params: GetVoiceConnectorProxyRequest
+    ): Future[GetVoiceConnectorProxyResponse] = service.getVoiceConnectorProxy(params).promise().toFuture
     @inline def getVoiceConnectorStreamingConfigurationFuture(
         params: GetVoiceConnectorStreamingConfigurationRequest
     ): Future[GetVoiceConnectorStreamingConfigurationResponse] =
@@ -224,10 +273,14 @@ package object chime {
       service.inviteUsers(params).promise().toFuture
     @inline def listAccountsFuture(params: ListAccountsRequest): Future[ListAccountsResponse] =
       service.listAccounts(params).promise().toFuture
+    @inline def listAttendeeTagsFuture(params: ListAttendeeTagsRequest): Future[ListAttendeeTagsResponse] =
+      service.listAttendeeTags(params).promise().toFuture
     @inline def listAttendeesFuture(params: ListAttendeesRequest): Future[ListAttendeesResponse] =
       service.listAttendees(params).promise().toFuture
     @inline def listBotsFuture(params: ListBotsRequest): Future[ListBotsResponse] =
       service.listBots(params).promise().toFuture
+    @inline def listMeetingTagsFuture(params: ListMeetingTagsRequest): Future[ListMeetingTagsResponse] =
+      service.listMeetingTags(params).promise().toFuture
     @inline def listMeetingsFuture(params: ListMeetingsRequest): Future[ListMeetingsResponse] =
       service.listMeetings(params).promise().toFuture
     @inline def listPhoneNumberOrdersFuture(
@@ -235,10 +288,14 @@ package object chime {
     ): Future[ListPhoneNumberOrdersResponse] = service.listPhoneNumberOrders(params).promise().toFuture
     @inline def listPhoneNumbersFuture(params: ListPhoneNumbersRequest): Future[ListPhoneNumbersResponse] =
       service.listPhoneNumbers(params).promise().toFuture
+    @inline def listProxySessionsFuture(params: ListProxySessionsRequest): Future[ListProxySessionsResponse] =
+      service.listProxySessions(params).promise().toFuture
     @inline def listRoomMembershipsFuture(params: ListRoomMembershipsRequest): Future[ListRoomMembershipsResponse] =
       service.listRoomMemberships(params).promise().toFuture
     @inline def listRoomsFuture(params: ListRoomsRequest): Future[ListRoomsResponse] =
       service.listRooms(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise().toFuture
     @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
       service.listUsers(params).promise().toFuture
     @inline def listVoiceConnectorGroupsFuture(
@@ -255,6 +312,12 @@ package object chime {
     @inline def putEventsConfigurationFuture(
         params: PutEventsConfigurationRequest
     ): Future[PutEventsConfigurationResponse] = service.putEventsConfiguration(params).promise().toFuture
+    @inline def putRetentionSettingsFuture(params: PutRetentionSettingsRequest): Future[PutRetentionSettingsResponse] =
+      service.putRetentionSettings(params).promise().toFuture
+    @inline def putVoiceConnectorEmergencyCallingConfigurationFuture(
+        params: PutVoiceConnectorEmergencyCallingConfigurationRequest
+    ): Future[PutVoiceConnectorEmergencyCallingConfigurationResponse] =
+      service.putVoiceConnectorEmergencyCallingConfiguration(params).promise().toFuture
     @inline def putVoiceConnectorLoggingConfigurationFuture(
         params: PutVoiceConnectorLoggingConfigurationRequest
     ): Future[PutVoiceConnectorLoggingConfigurationResponse] =
@@ -262,6 +325,9 @@ package object chime {
     @inline def putVoiceConnectorOriginationFuture(
         params: PutVoiceConnectorOriginationRequest
     ): Future[PutVoiceConnectorOriginationResponse] = service.putVoiceConnectorOrigination(params).promise().toFuture
+    @inline def putVoiceConnectorProxyFuture(
+        params: PutVoiceConnectorProxyRequest
+    ): Future[PutVoiceConnectorProxyResponse] = service.putVoiceConnectorProxy(params).promise().toFuture
     @inline def putVoiceConnectorStreamingConfigurationFuture(
         params: PutVoiceConnectorStreamingConfigurationRequest
     ): Future[PutVoiceConnectorStreamingConfigurationResponse] =
@@ -272,6 +338,11 @@ package object chime {
     @inline def putVoiceConnectorTerminationFuture(
         params: PutVoiceConnectorTerminationRequest
     ): Future[PutVoiceConnectorTerminationResponse] = service.putVoiceConnectorTermination(params).promise().toFuture
+    @inline def redactConversationMessageFuture(
+        params: RedactConversationMessageRequest
+    ): Future[RedactConversationMessageResponse] = service.redactConversationMessage(params).promise().toFuture
+    @inline def redactRoomMessageFuture(params: RedactRoomMessageRequest): Future[RedactRoomMessageResponse] =
+      service.redactRoomMessage(params).promise().toFuture
     @inline def regenerateSecurityTokenFuture(
         params: RegenerateSecurityTokenRequest
     ): Future[RegenerateSecurityTokenResponse] = service.regenerateSecurityToken(params).promise().toFuture
@@ -282,6 +353,18 @@ package object chime {
     @inline def searchAvailablePhoneNumbersFuture(
         params: SearchAvailablePhoneNumbersRequest
     ): Future[SearchAvailablePhoneNumbersResponse] = service.searchAvailablePhoneNumbers(params).promise().toFuture
+    @inline def tagAttendeeFuture(params: TagAttendeeRequest): Future[js.Object] =
+      service.tagAttendee(params).promise().toFuture
+    @inline def tagMeetingFuture(params: TagMeetingRequest): Future[js.Object] =
+      service.tagMeeting(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
+      service.tagResource(params).promise().toFuture
+    @inline def untagAttendeeFuture(params: UntagAttendeeRequest): Future[js.Object] =
+      service.untagAttendee(params).promise().toFuture
+    @inline def untagMeetingFuture(params: UntagMeetingRequest): Future[js.Object] =
+      service.untagMeeting(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
+      service.untagResource(params).promise().toFuture
     @inline def updateAccountFuture(params: UpdateAccountRequest): Future[UpdateAccountResponse] =
       service.updateAccount(params).promise().toFuture
     @inline def updateAccountSettingsFuture(
@@ -295,6 +378,8 @@ package object chime {
       service.updatePhoneNumber(params).promise().toFuture
     @inline def updatePhoneNumberSettingsFuture(params: UpdatePhoneNumberSettingsRequest): Future[js.Object] =
       service.updatePhoneNumberSettings(params).promise().toFuture
+    @inline def updateProxySessionFuture(params: UpdateProxySessionRequest): Future[UpdateProxySessionResponse] =
+      service.updateProxySession(params).promise().toFuture
     @inline def updateRoomFuture(params: UpdateRoomRequest): Future[UpdateRoomResponse] =
       service.updateRoom(params).promise().toFuture
     @inline def updateRoomMembershipFuture(params: UpdateRoomMembershipRequest): Future[UpdateRoomMembershipResponse] =
@@ -344,25 +429,34 @@ package chime {
     def createAttendee(params: CreateAttendeeRequest): Request[CreateAttendeeResponse]    = js.native
     def createBot(params: CreateBotRequest): Request[CreateBotResponse]                   = js.native
     def createMeeting(params: CreateMeetingRequest): Request[CreateMeetingResponse]       = js.native
+    def createMeetingWithAttendees(
+        params: CreateMeetingWithAttendeesRequest
+    ): Request[CreateMeetingWithAttendeesResponse] = js.native
     def createPhoneNumberOrder(params: CreatePhoneNumberOrderRequest): Request[CreatePhoneNumberOrderResponse] =
       js.native
+    def createProxySession(params: CreateProxySessionRequest): Request[CreateProxySessionResponse]       = js.native
     def createRoom(params: CreateRoomRequest): Request[CreateRoomResponse]                               = js.native
     def createRoomMembership(params: CreateRoomMembershipRequest): Request[CreateRoomMembershipResponse] = js.native
     def createUser(params: CreateUserRequest): Request[CreateUserResponse]                               = js.native
     def createVoiceConnector(params: CreateVoiceConnectorRequest): Request[CreateVoiceConnectorResponse] = js.native
     def createVoiceConnectorGroup(
         params: CreateVoiceConnectorGroupRequest
-    ): Request[CreateVoiceConnectorGroupResponse]                                                           = js.native
-    def deleteAccount(params: DeleteAccountRequest): Request[DeleteAccountResponse]                         = js.native
-    def deleteAttendee(params: DeleteAttendeeRequest): Request[js.Object]                                   = js.native
-    def deleteEventsConfiguration(params: DeleteEventsConfigurationRequest): Request[js.Object]             = js.native
-    def deleteMeeting(params: DeleteMeetingRequest): Request[js.Object]                                     = js.native
-    def deletePhoneNumber(params: DeletePhoneNumberRequest): Request[js.Object]                             = js.native
-    def deleteRoom(params: DeleteRoomRequest): Request[js.Object]                                           = js.native
-    def deleteRoomMembership(params: DeleteRoomMembershipRequest): Request[js.Object]                       = js.native
-    def deleteVoiceConnector(params: DeleteVoiceConnectorRequest): Request[js.Object]                       = js.native
+    ): Request[CreateVoiceConnectorGroupResponse]                                               = js.native
+    def deleteAccount(params: DeleteAccountRequest): Request[DeleteAccountResponse]             = js.native
+    def deleteAttendee(params: DeleteAttendeeRequest): Request[js.Object]                       = js.native
+    def deleteEventsConfiguration(params: DeleteEventsConfigurationRequest): Request[js.Object] = js.native
+    def deleteMeeting(params: DeleteMeetingRequest): Request[js.Object]                         = js.native
+    def deletePhoneNumber(params: DeletePhoneNumberRequest): Request[js.Object]                 = js.native
+    def deleteProxySession(params: DeleteProxySessionRequest): Request[js.Object]               = js.native
+    def deleteRoom(params: DeleteRoomRequest): Request[js.Object]                               = js.native
+    def deleteRoomMembership(params: DeleteRoomMembershipRequest): Request[js.Object]           = js.native
+    def deleteVoiceConnector(params: DeleteVoiceConnectorRequest): Request[js.Object]           = js.native
+    def deleteVoiceConnectorEmergencyCallingConfiguration(
+        params: DeleteVoiceConnectorEmergencyCallingConfigurationRequest
+    ): Request[js.Object]                                                                                   = js.native
     def deleteVoiceConnectorGroup(params: DeleteVoiceConnectorGroupRequest): Request[js.Object]             = js.native
     def deleteVoiceConnectorOrigination(params: DeleteVoiceConnectorOriginationRequest): Request[js.Object] = js.native
+    def deleteVoiceConnectorProxy(params: DeleteVoiceConnectorProxyRequest): Request[js.Object]             = js.native
     def deleteVoiceConnectorStreamingConfiguration(
         params: DeleteVoiceConnectorStreamingConfigurationRequest
     ): Request[js.Object]                                                                                   = js.native
@@ -388,15 +482,20 @@ package chime {
     def getBot(params: GetBotRequest): Request[GetBotResponse]                                     = js.native
     def getEventsConfiguration(params: GetEventsConfigurationRequest): Request[GetEventsConfigurationResponse] =
       js.native
-    def getGlobalSettings(): Request[GetGlobalSettingsResponse]                                       = js.native
-    def getMeeting(params: GetMeetingRequest): Request[GetMeetingResponse]                            = js.native
-    def getPhoneNumber(params: GetPhoneNumberRequest): Request[GetPhoneNumberResponse]                = js.native
-    def getPhoneNumberOrder(params: GetPhoneNumberOrderRequest): Request[GetPhoneNumberOrderResponse] = js.native
-    def getPhoneNumberSettings(): Request[GetPhoneNumberSettingsResponse]                             = js.native
-    def getRoom(params: GetRoomRequest): Request[GetRoomResponse]                                     = js.native
-    def getUser(params: GetUserRequest): Request[GetUserResponse]                                     = js.native
-    def getUserSettings(params: GetUserSettingsRequest): Request[GetUserSettingsResponse]             = js.native
-    def getVoiceConnector(params: GetVoiceConnectorRequest): Request[GetVoiceConnectorResponse]       = js.native
+    def getGlobalSettings(): Request[GetGlobalSettingsResponse]                                          = js.native
+    def getMeeting(params: GetMeetingRequest): Request[GetMeetingResponse]                               = js.native
+    def getPhoneNumber(params: GetPhoneNumberRequest): Request[GetPhoneNumberResponse]                   = js.native
+    def getPhoneNumberOrder(params: GetPhoneNumberOrderRequest): Request[GetPhoneNumberOrderResponse]    = js.native
+    def getPhoneNumberSettings(): Request[GetPhoneNumberSettingsResponse]                                = js.native
+    def getProxySession(params: GetProxySessionRequest): Request[GetProxySessionResponse]                = js.native
+    def getRetentionSettings(params: GetRetentionSettingsRequest): Request[GetRetentionSettingsResponse] = js.native
+    def getRoom(params: GetRoomRequest): Request[GetRoomResponse]                                        = js.native
+    def getUser(params: GetUserRequest): Request[GetUserResponse]                                        = js.native
+    def getUserSettings(params: GetUserSettingsRequest): Request[GetUserSettingsResponse]                = js.native
+    def getVoiceConnector(params: GetVoiceConnectorRequest): Request[GetVoiceConnectorResponse]          = js.native
+    def getVoiceConnectorEmergencyCallingConfiguration(
+        params: GetVoiceConnectorEmergencyCallingConfigurationRequest
+    ): Request[GetVoiceConnectorEmergencyCallingConfigurationResponse] = js.native
     def getVoiceConnectorGroup(params: GetVoiceConnectorGroupRequest): Request[GetVoiceConnectorGroupResponse] =
       js.native
     def getVoiceConnectorLoggingConfiguration(
@@ -405,6 +504,8 @@ package chime {
     def getVoiceConnectorOrigination(
         params: GetVoiceConnectorOriginationRequest
     ): Request[GetVoiceConnectorOriginationResponse] = js.native
+    def getVoiceConnectorProxy(params: GetVoiceConnectorProxyRequest): Request[GetVoiceConnectorProxyResponse] =
+      js.native
     def getVoiceConnectorStreamingConfiguration(
         params: GetVoiceConnectorStreamingConfigurationRequest
     ): Request[GetVoiceConnectorStreamingConfigurationResponse] = js.native
@@ -416,13 +517,17 @@ package chime {
     ): Request[GetVoiceConnectorTerminationHealthResponse]                                                  = js.native
     def inviteUsers(params: InviteUsersRequest): Request[InviteUsersResponse]                               = js.native
     def listAccounts(params: ListAccountsRequest): Request[ListAccountsResponse]                            = js.native
+    def listAttendeeTags(params: ListAttendeeTagsRequest): Request[ListAttendeeTagsResponse]                = js.native
     def listAttendees(params: ListAttendeesRequest): Request[ListAttendeesResponse]                         = js.native
     def listBots(params: ListBotsRequest): Request[ListBotsResponse]                                        = js.native
+    def listMeetingTags(params: ListMeetingTagsRequest): Request[ListMeetingTagsResponse]                   = js.native
     def listMeetings(params: ListMeetingsRequest): Request[ListMeetingsResponse]                            = js.native
     def listPhoneNumberOrders(params: ListPhoneNumberOrdersRequest): Request[ListPhoneNumberOrdersResponse] = js.native
     def listPhoneNumbers(params: ListPhoneNumbersRequest): Request[ListPhoneNumbersResponse]                = js.native
+    def listProxySessions(params: ListProxySessionsRequest): Request[ListProxySessionsResponse]             = js.native
     def listRoomMemberships(params: ListRoomMembershipsRequest): Request[ListRoomMembershipsResponse]       = js.native
     def listRooms(params: ListRoomsRequest): Request[ListRoomsResponse]                                     = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
     def listUsers(params: ListUsersRequest): Request[ListUsersResponse]                                     = js.native
     def listVoiceConnectorGroups(params: ListVoiceConnectorGroupsRequest): Request[ListVoiceConnectorGroupsResponse] =
       js.native
@@ -433,12 +538,18 @@ package chime {
     def logoutUser(params: LogoutUserRequest): Request[LogoutUserResponse]                            = js.native
     def putEventsConfiguration(params: PutEventsConfigurationRequest): Request[PutEventsConfigurationResponse] =
       js.native
+    def putRetentionSettings(params: PutRetentionSettingsRequest): Request[PutRetentionSettingsResponse] = js.native
+    def putVoiceConnectorEmergencyCallingConfiguration(
+        params: PutVoiceConnectorEmergencyCallingConfigurationRequest
+    ): Request[PutVoiceConnectorEmergencyCallingConfigurationResponse] = js.native
     def putVoiceConnectorLoggingConfiguration(
         params: PutVoiceConnectorLoggingConfigurationRequest
     ): Request[PutVoiceConnectorLoggingConfigurationResponse] = js.native
     def putVoiceConnectorOrigination(
         params: PutVoiceConnectorOriginationRequest
     ): Request[PutVoiceConnectorOriginationResponse] = js.native
+    def putVoiceConnectorProxy(params: PutVoiceConnectorProxyRequest): Request[PutVoiceConnectorProxyResponse] =
+      js.native
     def putVoiceConnectorStreamingConfiguration(
         params: PutVoiceConnectorStreamingConfigurationRequest
     ): Request[PutVoiceConnectorStreamingConfigurationResponse] = js.native
@@ -448,6 +559,10 @@ package chime {
     def putVoiceConnectorTerminationCredentials(
         params: PutVoiceConnectorTerminationCredentialsRequest
     ): Request[js.Object] = js.native
+    def redactConversationMessage(
+        params: RedactConversationMessageRequest
+    ): Request[RedactConversationMessageResponse]                                               = js.native
+    def redactRoomMessage(params: RedactRoomMessageRequest): Request[RedactRoomMessageResponse] = js.native
     def regenerateSecurityToken(params: RegenerateSecurityTokenRequest): Request[RegenerateSecurityTokenResponse] =
       js.native
     def resetPersonalPIN(params: ResetPersonalPINRequest): Request[ResetPersonalPINResponse]       = js.native
@@ -455,12 +570,19 @@ package chime {
     def searchAvailablePhoneNumbers(
         params: SearchAvailablePhoneNumbersRequest
     ): Request[SearchAvailablePhoneNumbersResponse]                                                         = js.native
+    def tagAttendee(params: TagAttendeeRequest): Request[js.Object]                                         = js.native
+    def tagMeeting(params: TagMeetingRequest): Request[js.Object]                                           = js.native
+    def tagResource(params: TagResourceRequest): Request[js.Object]                                         = js.native
+    def untagAttendee(params: UntagAttendeeRequest): Request[js.Object]                                     = js.native
+    def untagMeeting(params: UntagMeetingRequest): Request[js.Object]                                       = js.native
+    def untagResource(params: UntagResourceRequest): Request[js.Object]                                     = js.native
     def updateAccount(params: UpdateAccountRequest): Request[UpdateAccountResponse]                         = js.native
     def updateAccountSettings(params: UpdateAccountSettingsRequest): Request[UpdateAccountSettingsResponse] = js.native
     def updateBot(params: UpdateBotRequest): Request[UpdateBotResponse]                                     = js.native
     def updateGlobalSettings(params: UpdateGlobalSettingsRequest): Request[js.Object]                       = js.native
     def updatePhoneNumber(params: UpdatePhoneNumberRequest): Request[UpdatePhoneNumberResponse]             = js.native
     def updatePhoneNumberSettings(params: UpdatePhoneNumberSettingsRequest): Request[js.Object]             = js.native
+    def updateProxySession(params: UpdateProxySessionRequest): Request[UpdateProxySessionResponse]          = js.native
     def updateRoom(params: UpdateRoomRequest): Request[UpdateRoomResponse]                                  = js.native
     def updateRoomMembership(params: UpdateRoomMembershipRequest): Request[UpdateRoomMembershipResponse]    = js.native
     def updateUser(params: UpdateUserRequest): Request[UpdateUserResponse]                                  = js.native
@@ -609,23 +731,23 @@ package chime {
 
   @js.native
   trait AssociatePhoneNumbersWithVoiceConnectorGroupRequest extends js.Object {
+    var E164PhoneNumbers: E164PhoneNumberList
     var VoiceConnectorGroupId: NonEmptyString
-    var E164PhoneNumbers: js.UndefOr[E164PhoneNumberList]
     var ForceAssociate: js.UndefOr[NullableBoolean]
   }
 
   object AssociatePhoneNumbersWithVoiceConnectorGroupRequest {
     @inline
     def apply(
+        E164PhoneNumbers: E164PhoneNumberList,
         VoiceConnectorGroupId: NonEmptyString,
-        E164PhoneNumbers: js.UndefOr[E164PhoneNumberList] = js.undefined,
         ForceAssociate: js.UndefOr[NullableBoolean] = js.undefined
     ): AssociatePhoneNumbersWithVoiceConnectorGroupRequest = {
       val __obj = js.Dynamic.literal(
+        "E164PhoneNumbers"      -> E164PhoneNumbers.asInstanceOf[js.Any],
         "VoiceConnectorGroupId" -> VoiceConnectorGroupId.asInstanceOf[js.Any]
       )
 
-      E164PhoneNumbers.foreach(__v => __obj.updateDynamic("E164PhoneNumbers")(__v.asInstanceOf[js.Any]))
       ForceAssociate.foreach(__v => __obj.updateDynamic("ForceAssociate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociatePhoneNumbersWithVoiceConnectorGroupRequest]
     }
@@ -649,23 +771,23 @@ package chime {
 
   @js.native
   trait AssociatePhoneNumbersWithVoiceConnectorRequest extends js.Object {
+    var E164PhoneNumbers: E164PhoneNumberList
     var VoiceConnectorId: NonEmptyString
-    var E164PhoneNumbers: js.UndefOr[E164PhoneNumberList]
     var ForceAssociate: js.UndefOr[NullableBoolean]
   }
 
   object AssociatePhoneNumbersWithVoiceConnectorRequest {
     @inline
     def apply(
+        E164PhoneNumbers: E164PhoneNumberList,
         VoiceConnectorId: NonEmptyString,
-        E164PhoneNumbers: js.UndefOr[E164PhoneNumberList] = js.undefined,
         ForceAssociate: js.UndefOr[NullableBoolean] = js.undefined
     ): AssociatePhoneNumbersWithVoiceConnectorRequest = {
       val __obj = js.Dynamic.literal(
+        "E164PhoneNumbers" -> E164PhoneNumbers.asInstanceOf[js.Any],
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
 
-      E164PhoneNumbers.foreach(__v => __obj.updateDynamic("E164PhoneNumbers")(__v.asInstanceOf[js.Any]))
       ForceAssociate.foreach(__v => __obj.updateDynamic("ForceAssociate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociatePhoneNumbersWithVoiceConnectorRequest]
     }
@@ -1088,6 +1210,34 @@ package chime {
   }
 
   @js.native
+  sealed trait Capability extends js.Any
+  object Capability extends js.Object {
+    val Voice = "Voice".asInstanceOf[Capability]
+    val SMS   = "SMS".asInstanceOf[Capability]
+
+    val values = js.Object.freeze(js.Array(Voice, SMS))
+  }
+
+  /**
+    * The retention settings that determine how long to retain chat conversation messages for an Amazon Chime Enterprise account.
+    */
+  @js.native
+  trait ConversationRetentionSettings extends js.Object {
+    var RetentionDays: js.UndefOr[RetentionDays]
+  }
+
+  object ConversationRetentionSettings {
+    @inline
+    def apply(
+        RetentionDays: js.UndefOr[RetentionDays] = js.undefined
+    ): ConversationRetentionSettings = {
+      val __obj = js.Dynamic.literal()
+      RetentionDays.foreach(__v => __obj.updateDynamic("RetentionDays")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConversationRetentionSettings]
+    }
+  }
+
+  @js.native
   trait CreateAccountRequest extends js.Object {
     var Name: AccountName
   }
@@ -1150,19 +1300,22 @@ package chime {
   trait CreateAttendeeRequest extends js.Object {
     var ExternalUserId: ExternalUserIdType
     var MeetingId: GuidString
+    var Tags: js.UndefOr[AttendeeTagList]
   }
 
   object CreateAttendeeRequest {
     @inline
     def apply(
         ExternalUserId: ExternalUserIdType,
-        MeetingId: GuidString
+        MeetingId: GuidString,
+        Tags: js.UndefOr[AttendeeTagList] = js.undefined
     ): CreateAttendeeRequest = {
       val __obj = js.Dynamic.literal(
         "ExternalUserId" -> ExternalUserId.asInstanceOf[js.Any],
         "MeetingId"      -> MeetingId.asInstanceOf[js.Any]
       )
 
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAttendeeRequest]
     }
   }
@@ -1173,17 +1326,20 @@ package chime {
   @js.native
   trait CreateAttendeeRequestItem extends js.Object {
     var ExternalUserId: ExternalUserIdType
+    var Tags: js.UndefOr[AttendeeTagList]
   }
 
   object CreateAttendeeRequestItem {
     @inline
     def apply(
-        ExternalUserId: ExternalUserIdType
+        ExternalUserId: ExternalUserIdType,
+        Tags: js.UndefOr[AttendeeTagList] = js.undefined
     ): CreateAttendeeRequestItem = {
       val __obj = js.Dynamic.literal(
         "ExternalUserId" -> ExternalUserId.asInstanceOf[js.Any]
       )
 
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAttendeeRequestItem]
     }
   }
@@ -1247,28 +1403,34 @@ package chime {
   @js.native
   trait CreateMeetingRequest extends js.Object {
     var ClientRequestToken: ClientRequestToken
+    var ExternalMeetingId: js.UndefOr[ExternalMeetingIdType]
     var MediaRegion: js.UndefOr[String]
     var MeetingHostId: js.UndefOr[ExternalUserIdType]
     var NotificationsConfiguration: js.UndefOr[MeetingNotificationConfiguration]
+    var Tags: js.UndefOr[MeetingTagList]
   }
 
   object CreateMeetingRequest {
     @inline
     def apply(
         ClientRequestToken: ClientRequestToken,
+        ExternalMeetingId: js.UndefOr[ExternalMeetingIdType] = js.undefined,
         MediaRegion: js.UndefOr[String] = js.undefined,
         MeetingHostId: js.UndefOr[ExternalUserIdType] = js.undefined,
-        NotificationsConfiguration: js.UndefOr[MeetingNotificationConfiguration] = js.undefined
+        NotificationsConfiguration: js.UndefOr[MeetingNotificationConfiguration] = js.undefined,
+        Tags: js.UndefOr[MeetingTagList] = js.undefined
     ): CreateMeetingRequest = {
       val __obj = js.Dynamic.literal(
         "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any]
       )
 
+      ExternalMeetingId.foreach(__v => __obj.updateDynamic("ExternalMeetingId")(__v.asInstanceOf[js.Any]))
       MediaRegion.foreach(__v => __obj.updateDynamic("MediaRegion")(__v.asInstanceOf[js.Any]))
       MeetingHostId.foreach(__v => __obj.updateDynamic("MeetingHostId")(__v.asInstanceOf[js.Any]))
       NotificationsConfiguration.foreach(__v =>
         __obj.updateDynamic("NotificationsConfiguration")(__v.asInstanceOf[js.Any])
       )
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateMeetingRequest]
     }
   }
@@ -1286,6 +1448,66 @@ package chime {
       val __obj = js.Dynamic.literal()
       Meeting.foreach(__v => __obj.updateDynamic("Meeting")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateMeetingResponse]
+    }
+  }
+
+  @js.native
+  trait CreateMeetingWithAttendeesRequest extends js.Object {
+    var ClientRequestToken: ClientRequestToken
+    var Attendees: js.UndefOr[CreateMeetingWithAttendeesRequestItemList]
+    var ExternalMeetingId: js.UndefOr[ExternalMeetingIdType]
+    var MediaRegion: js.UndefOr[String]
+    var MeetingHostId: js.UndefOr[ExternalUserIdType]
+    var NotificationsConfiguration: js.UndefOr[MeetingNotificationConfiguration]
+    var Tags: js.UndefOr[MeetingTagList]
+  }
+
+  object CreateMeetingWithAttendeesRequest {
+    @inline
+    def apply(
+        ClientRequestToken: ClientRequestToken,
+        Attendees: js.UndefOr[CreateMeetingWithAttendeesRequestItemList] = js.undefined,
+        ExternalMeetingId: js.UndefOr[ExternalMeetingIdType] = js.undefined,
+        MediaRegion: js.UndefOr[String] = js.undefined,
+        MeetingHostId: js.UndefOr[ExternalUserIdType] = js.undefined,
+        NotificationsConfiguration: js.UndefOr[MeetingNotificationConfiguration] = js.undefined,
+        Tags: js.UndefOr[MeetingTagList] = js.undefined
+    ): CreateMeetingWithAttendeesRequest = {
+      val __obj = js.Dynamic.literal(
+        "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any]
+      )
+
+      Attendees.foreach(__v => __obj.updateDynamic("Attendees")(__v.asInstanceOf[js.Any]))
+      ExternalMeetingId.foreach(__v => __obj.updateDynamic("ExternalMeetingId")(__v.asInstanceOf[js.Any]))
+      MediaRegion.foreach(__v => __obj.updateDynamic("MediaRegion")(__v.asInstanceOf[js.Any]))
+      MeetingHostId.foreach(__v => __obj.updateDynamic("MeetingHostId")(__v.asInstanceOf[js.Any]))
+      NotificationsConfiguration.foreach(__v =>
+        __obj.updateDynamic("NotificationsConfiguration")(__v.asInstanceOf[js.Any])
+      )
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateMeetingWithAttendeesRequest]
+    }
+  }
+
+  @js.native
+  trait CreateMeetingWithAttendeesResponse extends js.Object {
+    var Attendees: js.UndefOr[AttendeeList]
+    var Errors: js.UndefOr[BatchCreateAttendeeErrorList]
+    var Meeting: js.UndefOr[Meeting]
+  }
+
+  object CreateMeetingWithAttendeesResponse {
+    @inline
+    def apply(
+        Attendees: js.UndefOr[AttendeeList] = js.undefined,
+        Errors: js.UndefOr[BatchCreateAttendeeErrorList] = js.undefined,
+        Meeting: js.UndefOr[Meeting] = js.undefined
+    ): CreateMeetingWithAttendeesResponse = {
+      val __obj = js.Dynamic.literal()
+      Attendees.foreach(__v => __obj.updateDynamic("Attendees")(__v.asInstanceOf[js.Any]))
+      Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
+      Meeting.foreach(__v => __obj.updateDynamic("Meeting")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateMeetingWithAttendeesResponse]
     }
   }
 
@@ -1323,6 +1545,61 @@ package chime {
       val __obj = js.Dynamic.literal()
       PhoneNumberOrder.foreach(__v => __obj.updateDynamic("PhoneNumberOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePhoneNumberOrderResponse]
+    }
+  }
+
+  @js.native
+  trait CreateProxySessionRequest extends js.Object {
+    var Capabilities: CapabilityList
+    var ParticipantPhoneNumbers: ParticipantPhoneNumberList
+    var VoiceConnectorId: NonEmptyString128
+    var ExpiryMinutes: js.UndefOr[PositiveInteger]
+    var GeoMatchLevel: js.UndefOr[GeoMatchLevel]
+    var GeoMatchParams: js.UndefOr[GeoMatchParams]
+    var Name: js.UndefOr[ProxySessionNameString]
+    var NumberSelectionBehavior: js.UndefOr[NumberSelectionBehavior]
+  }
+
+  object CreateProxySessionRequest {
+    @inline
+    def apply(
+        Capabilities: CapabilityList,
+        ParticipantPhoneNumbers: ParticipantPhoneNumberList,
+        VoiceConnectorId: NonEmptyString128,
+        ExpiryMinutes: js.UndefOr[PositiveInteger] = js.undefined,
+        GeoMatchLevel: js.UndefOr[GeoMatchLevel] = js.undefined,
+        GeoMatchParams: js.UndefOr[GeoMatchParams] = js.undefined,
+        Name: js.UndefOr[ProxySessionNameString] = js.undefined,
+        NumberSelectionBehavior: js.UndefOr[NumberSelectionBehavior] = js.undefined
+    ): CreateProxySessionRequest = {
+      val __obj = js.Dynamic.literal(
+        "Capabilities"            -> Capabilities.asInstanceOf[js.Any],
+        "ParticipantPhoneNumbers" -> ParticipantPhoneNumbers.asInstanceOf[js.Any],
+        "VoiceConnectorId"        -> VoiceConnectorId.asInstanceOf[js.Any]
+      )
+
+      ExpiryMinutes.foreach(__v => __obj.updateDynamic("ExpiryMinutes")(__v.asInstanceOf[js.Any]))
+      GeoMatchLevel.foreach(__v => __obj.updateDynamic("GeoMatchLevel")(__v.asInstanceOf[js.Any]))
+      GeoMatchParams.foreach(__v => __obj.updateDynamic("GeoMatchParams")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NumberSelectionBehavior.foreach(__v => __obj.updateDynamic("NumberSelectionBehavior")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateProxySessionRequest]
+    }
+  }
+
+  @js.native
+  trait CreateProxySessionResponse extends js.Object {
+    var ProxySession: js.UndefOr[ProxySession]
+  }
+
+  object CreateProxySessionResponse {
+    @inline
+    def apply(
+        ProxySession: js.UndefOr[ProxySession] = js.undefined
+    ): CreateProxySessionResponse = {
+      val __obj = js.Dynamic.literal()
+      ProxySession.foreach(__v => __obj.updateDynamic("ProxySession")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateProxySessionResponse]
     }
   }
 
@@ -1551,6 +1828,33 @@ package chime {
     }
   }
 
+  /**
+    * The Dialed Number Identification Service (DNIS) emergency calling configuration details associated with an Amazon Chime Voice Connector's emergency calling configuration.
+    */
+  @js.native
+  trait DNISEmergencyCallingConfiguration extends js.Object {
+    var CallingCountry: Alpha2CountryCode
+    var EmergencyPhoneNumber: E164PhoneNumber
+    var TestPhoneNumber: js.UndefOr[E164PhoneNumber]
+  }
+
+  object DNISEmergencyCallingConfiguration {
+    @inline
+    def apply(
+        CallingCountry: Alpha2CountryCode,
+        EmergencyPhoneNumber: E164PhoneNumber,
+        TestPhoneNumber: js.UndefOr[E164PhoneNumber] = js.undefined
+    ): DNISEmergencyCallingConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "CallingCountry"       -> CallingCountry.asInstanceOf[js.Any],
+        "EmergencyPhoneNumber" -> EmergencyPhoneNumber.asInstanceOf[js.Any]
+      )
+
+      TestPhoneNumber.foreach(__v => __obj.updateDynamic("TestPhoneNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DNISEmergencyCallingConfiguration]
+    }
+  }
+
   @js.native
   trait DeleteAccountRequest extends js.Object {
     var AccountId: NonEmptyString
@@ -1661,6 +1965,27 @@ package chime {
   }
 
   @js.native
+  trait DeleteProxySessionRequest extends js.Object {
+    var ProxySessionId: NonEmptyString128
+    var VoiceConnectorId: NonEmptyString128
+  }
+
+  object DeleteProxySessionRequest {
+    @inline
+    def apply(
+        ProxySessionId: NonEmptyString128,
+        VoiceConnectorId: NonEmptyString128
+    ): DeleteProxySessionRequest = {
+      val __obj = js.Dynamic.literal(
+        "ProxySessionId"   -> ProxySessionId.asInstanceOf[js.Any],
+        "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteProxySessionRequest]
+    }
+  }
+
+  @js.native
   trait DeleteRoomMembershipRequest extends js.Object {
     var AccountId: NonEmptyString
     var MemberId: NonEmptyString
@@ -1706,6 +2031,24 @@ package chime {
   }
 
   @js.native
+  trait DeleteVoiceConnectorEmergencyCallingConfigurationRequest extends js.Object {
+    var VoiceConnectorId: NonEmptyString
+  }
+
+  object DeleteVoiceConnectorEmergencyCallingConfigurationRequest {
+    @inline
+    def apply(
+        VoiceConnectorId: NonEmptyString
+    ): DeleteVoiceConnectorEmergencyCallingConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteVoiceConnectorEmergencyCallingConfigurationRequest]
+    }
+  }
+
+  @js.native
   trait DeleteVoiceConnectorGroupRequest extends js.Object {
     var VoiceConnectorGroupId: NonEmptyString
   }
@@ -1738,6 +2081,24 @@ package chime {
       )
 
       __obj.asInstanceOf[DeleteVoiceConnectorOriginationRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteVoiceConnectorProxyRequest extends js.Object {
+    var VoiceConnectorId: NonEmptyString128
+  }
+
+  object DeleteVoiceConnectorProxyRequest {
+    @inline
+    def apply(
+        VoiceConnectorId: NonEmptyString128
+    ): DeleteVoiceConnectorProxyRequest = {
+      val __obj = js.Dynamic.literal(
+        "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteVoiceConnectorProxyRequest]
     }
   }
 
@@ -1779,21 +2140,21 @@ package chime {
 
   @js.native
   trait DeleteVoiceConnectorTerminationCredentialsRequest extends js.Object {
+    var Usernames: SensitiveStringList
     var VoiceConnectorId: NonEmptyString
-    var Usernames: js.UndefOr[SensitiveStringList]
   }
 
   object DeleteVoiceConnectorTerminationCredentialsRequest {
     @inline
     def apply(
-        VoiceConnectorId: NonEmptyString,
-        Usernames: js.UndefOr[SensitiveStringList] = js.undefined
+        Usernames: SensitiveStringList,
+        VoiceConnectorId: NonEmptyString
     ): DeleteVoiceConnectorTerminationCredentialsRequest = {
       val __obj = js.Dynamic.literal(
+        "Usernames"        -> Usernames.asInstanceOf[js.Any],
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
 
-      Usernames.foreach(__v => __obj.updateDynamic("Usernames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteVoiceConnectorTerminationCredentialsRequest]
     }
   }
@@ -1852,21 +2213,21 @@ package chime {
 
   @js.native
   trait DisassociatePhoneNumbersFromVoiceConnectorGroupRequest extends js.Object {
+    var E164PhoneNumbers: E164PhoneNumberList
     var VoiceConnectorGroupId: NonEmptyString
-    var E164PhoneNumbers: js.UndefOr[E164PhoneNumberList]
   }
 
   object DisassociatePhoneNumbersFromVoiceConnectorGroupRequest {
     @inline
     def apply(
-        VoiceConnectorGroupId: NonEmptyString,
-        E164PhoneNumbers: js.UndefOr[E164PhoneNumberList] = js.undefined
+        E164PhoneNumbers: E164PhoneNumberList,
+        VoiceConnectorGroupId: NonEmptyString
     ): DisassociatePhoneNumbersFromVoiceConnectorGroupRequest = {
       val __obj = js.Dynamic.literal(
+        "E164PhoneNumbers"      -> E164PhoneNumbers.asInstanceOf[js.Any],
         "VoiceConnectorGroupId" -> VoiceConnectorGroupId.asInstanceOf[js.Any]
       )
 
-      E164PhoneNumbers.foreach(__v => __obj.updateDynamic("E164PhoneNumbers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisassociatePhoneNumbersFromVoiceConnectorGroupRequest]
     }
   }
@@ -1889,21 +2250,21 @@ package chime {
 
   @js.native
   trait DisassociatePhoneNumbersFromVoiceConnectorRequest extends js.Object {
+    var E164PhoneNumbers: E164PhoneNumberList
     var VoiceConnectorId: NonEmptyString
-    var E164PhoneNumbers: js.UndefOr[E164PhoneNumberList]
   }
 
   object DisassociatePhoneNumbersFromVoiceConnectorRequest {
     @inline
     def apply(
-        VoiceConnectorId: NonEmptyString,
-        E164PhoneNumbers: js.UndefOr[E164PhoneNumberList] = js.undefined
+        E164PhoneNumbers: E164PhoneNumberList,
+        VoiceConnectorId: NonEmptyString
     ): DisassociatePhoneNumbersFromVoiceConnectorRequest = {
       val __obj = js.Dynamic.literal(
+        "E164PhoneNumbers" -> E164PhoneNumbers.asInstanceOf[js.Any],
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
 
-      E164PhoneNumbers.foreach(__v => __obj.updateDynamic("E164PhoneNumbers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisassociatePhoneNumbersFromVoiceConnectorRequest]
     }
   }
@@ -1968,6 +2329,25 @@ package chime {
     val values = js.Object.freeze(js.Array(NotSent, Sent, Failed))
   }
 
+  /**
+    * The emergency calling configuration details associated with an Amazon Chime Voice Connector.
+    */
+  @js.native
+  trait EmergencyCallingConfiguration extends js.Object {
+    var DNIS: js.UndefOr[DNISEmergencyCallingConfigurationList]
+  }
+
+  object EmergencyCallingConfiguration {
+    @inline
+    def apply(
+        DNIS: js.UndefOr[DNISEmergencyCallingConfigurationList] = js.undefined
+    ): EmergencyCallingConfiguration = {
+      val __obj = js.Dynamic.literal()
+      DNIS.foreach(__v => __obj.updateDynamic("DNIS")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EmergencyCallingConfiguration]
+    }
+  }
+
   @js.native
   sealed trait ErrorCode extends js.Any
   object ErrorCode extends js.Object {
@@ -2030,6 +2410,39 @@ package chime {
         __obj.updateDynamic("OutboundEventsHTTPSEndpoint")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[EventsConfiguration]
+    }
+  }
+
+  @js.native
+  sealed trait GeoMatchLevel extends js.Any
+  object GeoMatchLevel extends js.Object {
+    val Country  = "Country".asInstanceOf[GeoMatchLevel]
+    val AreaCode = "AreaCode".asInstanceOf[GeoMatchLevel]
+
+    val values = js.Object.freeze(js.Array(Country, AreaCode))
+  }
+
+  /**
+    * The country and area code for a proxy phone number in a proxy phone session.
+    */
+  @js.native
+  trait GeoMatchParams extends js.Object {
+    var AreaCode: AreaCode
+    var Country: Country
+  }
+
+  object GeoMatchParams {
+    @inline
+    def apply(
+        AreaCode: AreaCode,
+        Country: Country
+    ): GeoMatchParams = {
+      val __obj = js.Dynamic.literal(
+        "AreaCode" -> AreaCode.asInstanceOf[js.Any],
+        "Country"  -> Country.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GeoMatchParams]
     }
   }
 
@@ -2355,6 +2768,82 @@ package chime {
   }
 
   @js.native
+  trait GetProxySessionRequest extends js.Object {
+    var ProxySessionId: NonEmptyString128
+    var VoiceConnectorId: NonEmptyString128
+  }
+
+  object GetProxySessionRequest {
+    @inline
+    def apply(
+        ProxySessionId: NonEmptyString128,
+        VoiceConnectorId: NonEmptyString128
+    ): GetProxySessionRequest = {
+      val __obj = js.Dynamic.literal(
+        "ProxySessionId"   -> ProxySessionId.asInstanceOf[js.Any],
+        "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetProxySessionRequest]
+    }
+  }
+
+  @js.native
+  trait GetProxySessionResponse extends js.Object {
+    var ProxySession: js.UndefOr[ProxySession]
+  }
+
+  object GetProxySessionResponse {
+    @inline
+    def apply(
+        ProxySession: js.UndefOr[ProxySession] = js.undefined
+    ): GetProxySessionResponse = {
+      val __obj = js.Dynamic.literal()
+      ProxySession.foreach(__v => __obj.updateDynamic("ProxySession")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetProxySessionResponse]
+    }
+  }
+
+  @js.native
+  trait GetRetentionSettingsRequest extends js.Object {
+    var AccountId: NonEmptyString
+  }
+
+  object GetRetentionSettingsRequest {
+    @inline
+    def apply(
+        AccountId: NonEmptyString
+    ): GetRetentionSettingsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetRetentionSettingsRequest]
+    }
+  }
+
+  @js.native
+  trait GetRetentionSettingsResponse extends js.Object {
+    var InitiateDeletionTimestamp: js.UndefOr[Iso8601Timestamp]
+    var RetentionSettings: js.UndefOr[RetentionSettings]
+  }
+
+  object GetRetentionSettingsResponse {
+    @inline
+    def apply(
+        InitiateDeletionTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined,
+        RetentionSettings: js.UndefOr[RetentionSettings] = js.undefined
+    ): GetRetentionSettingsResponse = {
+      val __obj = js.Dynamic.literal()
+      InitiateDeletionTimestamp.foreach(__v =>
+        __obj.updateDynamic("InitiateDeletionTimestamp")(__v.asInstanceOf[js.Any])
+      )
+      RetentionSettings.foreach(__v => __obj.updateDynamic("RetentionSettings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetRetentionSettingsResponse]
+    }
+  }
+
+  @js.native
   trait GetRoomRequest extends js.Object {
     var AccountId: NonEmptyString
     var RoomId: NonEmptyString
@@ -2466,6 +2955,42 @@ package chime {
   }
 
   @js.native
+  trait GetVoiceConnectorEmergencyCallingConfigurationRequest extends js.Object {
+    var VoiceConnectorId: NonEmptyString
+  }
+
+  object GetVoiceConnectorEmergencyCallingConfigurationRequest {
+    @inline
+    def apply(
+        VoiceConnectorId: NonEmptyString
+    ): GetVoiceConnectorEmergencyCallingConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetVoiceConnectorEmergencyCallingConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait GetVoiceConnectorEmergencyCallingConfigurationResponse extends js.Object {
+    var EmergencyCallingConfiguration: js.UndefOr[EmergencyCallingConfiguration]
+  }
+
+  object GetVoiceConnectorEmergencyCallingConfigurationResponse {
+    @inline
+    def apply(
+        EmergencyCallingConfiguration: js.UndefOr[EmergencyCallingConfiguration] = js.undefined
+    ): GetVoiceConnectorEmergencyCallingConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      EmergencyCallingConfiguration.foreach(__v =>
+        __obj.updateDynamic("EmergencyCallingConfiguration")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[GetVoiceConnectorEmergencyCallingConfigurationResponse]
+    }
+  }
+
+  @js.native
   trait GetVoiceConnectorGroupRequest extends js.Object {
     var VoiceConnectorGroupId: NonEmptyString
   }
@@ -2564,6 +3089,40 @@ package chime {
       val __obj = js.Dynamic.literal()
       Origination.foreach(__v => __obj.updateDynamic("Origination")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetVoiceConnectorOriginationResponse]
+    }
+  }
+
+  @js.native
+  trait GetVoiceConnectorProxyRequest extends js.Object {
+    var VoiceConnectorId: NonEmptyString128
+  }
+
+  object GetVoiceConnectorProxyRequest {
+    @inline
+    def apply(
+        VoiceConnectorId: NonEmptyString128
+    ): GetVoiceConnectorProxyRequest = {
+      val __obj = js.Dynamic.literal(
+        "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetVoiceConnectorProxyRequest]
+    }
+  }
+
+  @js.native
+  trait GetVoiceConnectorProxyResponse extends js.Object {
+    var Proxy: js.UndefOr[Proxy]
+  }
+
+  object GetVoiceConnectorProxyResponse {
+    @inline
+    def apply(
+        Proxy: js.UndefOr[Proxy] = js.undefined
+    ): GetVoiceConnectorProxyResponse = {
+      val __obj = js.Dynamic.literal()
+      Proxy.foreach(__v => __obj.updateDynamic("Proxy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetVoiceConnectorProxyResponse]
     }
   }
 
@@ -2837,6 +3396,43 @@ package chime {
   }
 
   @js.native
+  trait ListAttendeeTagsRequest extends js.Object {
+    var AttendeeId: GuidString
+    var MeetingId: GuidString
+  }
+
+  object ListAttendeeTagsRequest {
+    @inline
+    def apply(
+        AttendeeId: GuidString,
+        MeetingId: GuidString
+    ): ListAttendeeTagsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AttendeeId" -> AttendeeId.asInstanceOf[js.Any],
+        "MeetingId"  -> MeetingId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ListAttendeeTagsRequest]
+    }
+  }
+
+  @js.native
+  trait ListAttendeeTagsResponse extends js.Object {
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object ListAttendeeTagsResponse {
+    @inline
+    def apply(
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ListAttendeeTagsResponse = {
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAttendeeTagsResponse]
+    }
+  }
+
+  @js.native
   trait ListAttendeesRequest extends js.Object {
     var MeetingId: GuidString
     var MaxResults: js.UndefOr[ResultMax]
@@ -2919,6 +3515,40 @@ package chime {
       Bots.foreach(__v => __obj.updateDynamic("Bots")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBotsResponse]
+    }
+  }
+
+  @js.native
+  trait ListMeetingTagsRequest extends js.Object {
+    var MeetingId: GuidString
+  }
+
+  object ListMeetingTagsRequest {
+    @inline
+    def apply(
+        MeetingId: GuidString
+    ): ListMeetingTagsRequest = {
+      val __obj = js.Dynamic.literal(
+        "MeetingId" -> MeetingId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ListMeetingTagsRequest]
+    }
+  }
+
+  @js.native
+  trait ListMeetingTagsResponse extends js.Object {
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object ListMeetingTagsResponse {
+    @inline
+    def apply(
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ListMeetingTagsResponse = {
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMeetingTagsResponse]
     }
   }
 
@@ -3049,6 +3679,52 @@ package chime {
   }
 
   @js.native
+  trait ListProxySessionsRequest extends js.Object {
+    var VoiceConnectorId: NonEmptyString128
+    var MaxResults: js.UndefOr[ResultMax]
+    var NextToken: js.UndefOr[NextTokenString]
+    var Status: js.UndefOr[ProxySessionStatus]
+  }
+
+  object ListProxySessionsRequest {
+    @inline
+    def apply(
+        VoiceConnectorId: NonEmptyString128,
+        MaxResults: js.UndefOr[ResultMax] = js.undefined,
+        NextToken: js.UndefOr[NextTokenString] = js.undefined,
+        Status: js.UndefOr[ProxySessionStatus] = js.undefined
+    ): ListProxySessionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListProxySessionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListProxySessionsResponse extends js.Object {
+    var NextToken: js.UndefOr[NextTokenString]
+    var ProxySessions: js.UndefOr[ProxySessions]
+  }
+
+  object ListProxySessionsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextTokenString] = js.undefined,
+        ProxySessions: js.UndefOr[ProxySessions] = js.undefined
+    ): ListProxySessionsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ProxySessions.foreach(__v => __obj.updateDynamic("ProxySessions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListProxySessionsResponse]
+    }
+  }
+
+  @js.native
   trait ListRoomMembershipsRequest extends js.Object {
     var AccountId: NonEmptyString
     var RoomId: NonEmptyString
@@ -3137,6 +3813,40 @@ package chime {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       Rooms.foreach(__v => __obj.updateDynamic("Rooms")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRoomsResponse]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceARN: Arn
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        ResourceARN: Arn
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
 
@@ -3394,6 +4104,7 @@ package chime {
     */
   @js.native
   trait Meeting extends js.Object {
+    var ExternalMeetingId: js.UndefOr[ExternalMeetingIdType]
     var MediaPlacement: js.UndefOr[MediaPlacement]
     var MediaRegion: js.UndefOr[String]
     var MeetingId: js.UndefOr[GuidString]
@@ -3402,11 +4113,13 @@ package chime {
   object Meeting {
     @inline
     def apply(
+        ExternalMeetingId: js.UndefOr[ExternalMeetingIdType] = js.undefined,
         MediaPlacement: js.UndefOr[MediaPlacement] = js.undefined,
         MediaRegion: js.UndefOr[String] = js.undefined,
         MeetingId: js.UndefOr[GuidString] = js.undefined
     ): Meeting = {
       val __obj = js.Dynamic.literal()
+      ExternalMeetingId.foreach(__v => __obj.updateDynamic("ExternalMeetingId")(__v.asInstanceOf[js.Any]))
       MediaPlacement.foreach(__v => __obj.updateDynamic("MediaPlacement")(__v.asInstanceOf[js.Any]))
       MediaRegion.foreach(__v => __obj.updateDynamic("MediaRegion")(__v.asInstanceOf[js.Any]))
       MeetingId.foreach(__v => __obj.updateDynamic("MeetingId")(__v.asInstanceOf[js.Any]))
@@ -3415,7 +4128,7 @@ package chime {
   }
 
   /**
-    * The configuration for resource targets to receive notifications when Amazon Chime SDK meeting and attendee events occur.
+    * The configuration for resource targets to receive notifications when Amazon Chime SDK meeting and attendee events occur. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (<code>us-east-1</code>).
     */
   @js.native
   trait MeetingNotificationConfiguration extends js.Object {
@@ -3524,6 +4237,25 @@ package chime {
     }
   }
 
+  @js.native
+  sealed trait NotificationTarget extends js.Any
+  object NotificationTarget extends js.Object {
+    val EventBridge = "EventBridge".asInstanceOf[NotificationTarget]
+    val SNS         = "SNS".asInstanceOf[NotificationTarget]
+    val SQS         = "SQS".asInstanceOf[NotificationTarget]
+
+    val values = js.Object.freeze(js.Array(EventBridge, SNS, SQS))
+  }
+
+  @js.native
+  sealed trait NumberSelectionBehavior extends js.Any
+  object NumberSelectionBehavior extends js.Object {
+    val PreferSticky = "PreferSticky".asInstanceOf[NumberSelectionBehavior]
+    val AvoidSticky  = "AvoidSticky".asInstanceOf[NumberSelectionBehavior]
+
+    val values = js.Object.freeze(js.Array(PreferSticky, AvoidSticky))
+  }
+
   /**
     * A phone number for which an order has been placed.
     */
@@ -3616,6 +4348,28 @@ package chime {
     val UDP = "UDP".asInstanceOf[OriginationRouteProtocol]
 
     val values = js.Object.freeze(js.Array(TCP, UDP))
+  }
+
+  /**
+    * The phone number and proxy phone number for a participant in an Amazon Chime Voice Connector proxy session.
+    */
+  @js.native
+  trait Participant extends js.Object {
+    var PhoneNumber: js.UndefOr[E164PhoneNumber]
+    var ProxyPhoneNumber: js.UndefOr[E164PhoneNumber]
+  }
+
+  object Participant {
+    @inline
+    def apply(
+        PhoneNumber: js.UndefOr[E164PhoneNumber] = js.undefined,
+        ProxyPhoneNumber: js.UndefOr[E164PhoneNumber] = js.undefined
+    ): Participant = {
+      val __obj = js.Dynamic.literal()
+      PhoneNumber.foreach(__v => __obj.updateDynamic("PhoneNumber")(__v.asInstanceOf[js.Any]))
+      ProxyPhoneNumber.foreach(__v => __obj.updateDynamic("ProxyPhoneNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Participant]
+    }
   }
 
   /**
@@ -3854,6 +4608,101 @@ package chime {
     val values = js.Object.freeze(js.Array(Local, TollFree))
   }
 
+  /**
+    * The proxy configuration for an Amazon Chime Voice Connector.
+    */
+  @js.native
+  trait Proxy extends js.Object {
+    var DefaultSessionExpiryMinutes: js.UndefOr[Int]
+    var Disabled: js.UndefOr[Boolean]
+    var FallBackPhoneNumber: js.UndefOr[E164PhoneNumber]
+    var PhoneNumberCountries: js.UndefOr[StringList]
+  }
+
+  object Proxy {
+    @inline
+    def apply(
+        DefaultSessionExpiryMinutes: js.UndefOr[Int] = js.undefined,
+        Disabled: js.UndefOr[Boolean] = js.undefined,
+        FallBackPhoneNumber: js.UndefOr[E164PhoneNumber] = js.undefined,
+        PhoneNumberCountries: js.UndefOr[StringList] = js.undefined
+    ): Proxy = {
+      val __obj = js.Dynamic.literal()
+      DefaultSessionExpiryMinutes.foreach(__v =>
+        __obj.updateDynamic("DefaultSessionExpiryMinutes")(__v.asInstanceOf[js.Any])
+      )
+      Disabled.foreach(__v => __obj.updateDynamic("Disabled")(__v.asInstanceOf[js.Any]))
+      FallBackPhoneNumber.foreach(__v => __obj.updateDynamic("FallBackPhoneNumber")(__v.asInstanceOf[js.Any]))
+      PhoneNumberCountries.foreach(__v => __obj.updateDynamic("PhoneNumberCountries")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Proxy]
+    }
+  }
+
+  /**
+    * The proxy session for an Amazon Chime Voice Connector.
+    */
+  @js.native
+  trait ProxySession extends js.Object {
+    var Capabilities: js.UndefOr[CapabilityList]
+    var CreatedTimestamp: js.UndefOr[Iso8601Timestamp]
+    var EndedTimestamp: js.UndefOr[Iso8601Timestamp]
+    var ExpiryMinutes: js.UndefOr[PositiveInteger]
+    var GeoMatchLevel: js.UndefOr[GeoMatchLevel]
+    var GeoMatchParams: js.UndefOr[GeoMatchParams]
+    var Name: js.UndefOr[String128]
+    var NumberSelectionBehavior: js.UndefOr[NumberSelectionBehavior]
+    var Participants: js.UndefOr[Participants]
+    var ProxySessionId: js.UndefOr[NonEmptyString128]
+    var Status: js.UndefOr[ProxySessionStatus]
+    var UpdatedTimestamp: js.UndefOr[Iso8601Timestamp]
+    var VoiceConnectorId: js.UndefOr[NonEmptyString128]
+  }
+
+  object ProxySession {
+    @inline
+    def apply(
+        Capabilities: js.UndefOr[CapabilityList] = js.undefined,
+        CreatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined,
+        EndedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined,
+        ExpiryMinutes: js.UndefOr[PositiveInteger] = js.undefined,
+        GeoMatchLevel: js.UndefOr[GeoMatchLevel] = js.undefined,
+        GeoMatchParams: js.UndefOr[GeoMatchParams] = js.undefined,
+        Name: js.UndefOr[String128] = js.undefined,
+        NumberSelectionBehavior: js.UndefOr[NumberSelectionBehavior] = js.undefined,
+        Participants: js.UndefOr[Participants] = js.undefined,
+        ProxySessionId: js.UndefOr[NonEmptyString128] = js.undefined,
+        Status: js.UndefOr[ProxySessionStatus] = js.undefined,
+        UpdatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined,
+        VoiceConnectorId: js.UndefOr[NonEmptyString128] = js.undefined
+    ): ProxySession = {
+      val __obj = js.Dynamic.literal()
+      Capabilities.foreach(__v => __obj.updateDynamic("Capabilities")(__v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      EndedTimestamp.foreach(__v => __obj.updateDynamic("EndedTimestamp")(__v.asInstanceOf[js.Any]))
+      ExpiryMinutes.foreach(__v => __obj.updateDynamic("ExpiryMinutes")(__v.asInstanceOf[js.Any]))
+      GeoMatchLevel.foreach(__v => __obj.updateDynamic("GeoMatchLevel")(__v.asInstanceOf[js.Any]))
+      GeoMatchParams.foreach(__v => __obj.updateDynamic("GeoMatchParams")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NumberSelectionBehavior.foreach(__v => __obj.updateDynamic("NumberSelectionBehavior")(__v.asInstanceOf[js.Any]))
+      Participants.foreach(__v => __obj.updateDynamic("Participants")(__v.asInstanceOf[js.Any]))
+      ProxySessionId.foreach(__v => __obj.updateDynamic("ProxySessionId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      UpdatedTimestamp.foreach(__v => __obj.updateDynamic("UpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      VoiceConnectorId.foreach(__v => __obj.updateDynamic("VoiceConnectorId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProxySession]
+    }
+  }
+
+  @js.native
+  sealed trait ProxySessionStatus extends js.Any
+  object ProxySessionStatus extends js.Object {
+    val Open       = "Open".asInstanceOf[ProxySessionStatus]
+    val InProgress = "InProgress".asInstanceOf[ProxySessionStatus]
+    val Closed     = "Closed".asInstanceOf[ProxySessionStatus]
+
+    val values = js.Object.freeze(js.Array(Open, InProgress, Closed))
+  }
+
   @js.native
   trait PutEventsConfigurationRequest extends js.Object {
     var AccountId: NonEmptyString
@@ -3896,6 +4745,87 @@ package chime {
       val __obj = js.Dynamic.literal()
       EventsConfiguration.foreach(__v => __obj.updateDynamic("EventsConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutEventsConfigurationResponse]
+    }
+  }
+
+  @js.native
+  trait PutRetentionSettingsRequest extends js.Object {
+    var AccountId: NonEmptyString
+    var RetentionSettings: RetentionSettings
+  }
+
+  object PutRetentionSettingsRequest {
+    @inline
+    def apply(
+        AccountId: NonEmptyString,
+        RetentionSettings: RetentionSettings
+    ): PutRetentionSettingsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId"         -> AccountId.asInstanceOf[js.Any],
+        "RetentionSettings" -> RetentionSettings.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[PutRetentionSettingsRequest]
+    }
+  }
+
+  @js.native
+  trait PutRetentionSettingsResponse extends js.Object {
+    var InitiateDeletionTimestamp: js.UndefOr[Iso8601Timestamp]
+    var RetentionSettings: js.UndefOr[RetentionSettings]
+  }
+
+  object PutRetentionSettingsResponse {
+    @inline
+    def apply(
+        InitiateDeletionTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined,
+        RetentionSettings: js.UndefOr[RetentionSettings] = js.undefined
+    ): PutRetentionSettingsResponse = {
+      val __obj = js.Dynamic.literal()
+      InitiateDeletionTimestamp.foreach(__v =>
+        __obj.updateDynamic("InitiateDeletionTimestamp")(__v.asInstanceOf[js.Any])
+      )
+      RetentionSettings.foreach(__v => __obj.updateDynamic("RetentionSettings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutRetentionSettingsResponse]
+    }
+  }
+
+  @js.native
+  trait PutVoiceConnectorEmergencyCallingConfigurationRequest extends js.Object {
+    var EmergencyCallingConfiguration: EmergencyCallingConfiguration
+    var VoiceConnectorId: NonEmptyString
+  }
+
+  object PutVoiceConnectorEmergencyCallingConfigurationRequest {
+    @inline
+    def apply(
+        EmergencyCallingConfiguration: EmergencyCallingConfiguration,
+        VoiceConnectorId: NonEmptyString
+    ): PutVoiceConnectorEmergencyCallingConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "EmergencyCallingConfiguration" -> EmergencyCallingConfiguration.asInstanceOf[js.Any],
+        "VoiceConnectorId"              -> VoiceConnectorId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[PutVoiceConnectorEmergencyCallingConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait PutVoiceConnectorEmergencyCallingConfigurationResponse extends js.Object {
+    var EmergencyCallingConfiguration: js.UndefOr[EmergencyCallingConfiguration]
+  }
+
+  object PutVoiceConnectorEmergencyCallingConfigurationResponse {
+    @inline
+    def apply(
+        EmergencyCallingConfiguration: js.UndefOr[EmergencyCallingConfiguration] = js.undefined
+    ): PutVoiceConnectorEmergencyCallingConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      EmergencyCallingConfiguration.foreach(__v =>
+        __obj.updateDynamic("EmergencyCallingConfiguration")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[PutVoiceConnectorEmergencyCallingConfigurationResponse]
     }
   }
 
@@ -3970,6 +4900,52 @@ package chime {
       val __obj = js.Dynamic.literal()
       Origination.foreach(__v => __obj.updateDynamic("Origination")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutVoiceConnectorOriginationResponse]
+    }
+  }
+
+  @js.native
+  trait PutVoiceConnectorProxyRequest extends js.Object {
+    var DefaultSessionExpiryMinutes: Int
+    var PhoneNumberPoolCountries: CountryList
+    var VoiceConnectorId: NonEmptyString128
+    var Disabled: js.UndefOr[Boolean]
+    var FallBackPhoneNumber: js.UndefOr[E164PhoneNumber]
+  }
+
+  object PutVoiceConnectorProxyRequest {
+    @inline
+    def apply(
+        DefaultSessionExpiryMinutes: Int,
+        PhoneNumberPoolCountries: CountryList,
+        VoiceConnectorId: NonEmptyString128,
+        Disabled: js.UndefOr[Boolean] = js.undefined,
+        FallBackPhoneNumber: js.UndefOr[E164PhoneNumber] = js.undefined
+    ): PutVoiceConnectorProxyRequest = {
+      val __obj = js.Dynamic.literal(
+        "DefaultSessionExpiryMinutes" -> DefaultSessionExpiryMinutes.asInstanceOf[js.Any],
+        "PhoneNumberPoolCountries"    -> PhoneNumberPoolCountries.asInstanceOf[js.Any],
+        "VoiceConnectorId"            -> VoiceConnectorId.asInstanceOf[js.Any]
+      )
+
+      Disabled.foreach(__v => __obj.updateDynamic("Disabled")(__v.asInstanceOf[js.Any]))
+      FallBackPhoneNumber.foreach(__v => __obj.updateDynamic("FallBackPhoneNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutVoiceConnectorProxyRequest]
+    }
+  }
+
+  @js.native
+  trait PutVoiceConnectorProxyResponse extends js.Object {
+    var Proxy: js.UndefOr[Proxy]
+  }
+
+  object PutVoiceConnectorProxyResponse {
+    @inline
+    def apply(
+        Proxy: js.UndefOr[Proxy] = js.undefined
+    ): PutVoiceConnectorProxyResponse = {
+      val __obj = js.Dynamic.literal()
+      Proxy.foreach(__v => __obj.updateDynamic("Proxy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutVoiceConnectorProxyResponse]
     }
   }
 
@@ -4065,6 +5041,80 @@ package chime {
       val __obj = js.Dynamic.literal()
       Termination.foreach(__v => __obj.updateDynamic("Termination")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutVoiceConnectorTerminationResponse]
+    }
+  }
+
+  @js.native
+  trait RedactConversationMessageRequest extends js.Object {
+    var AccountId: NonEmptyString
+    var ConversationId: NonEmptyString
+    var MessageId: NonEmptyString
+  }
+
+  object RedactConversationMessageRequest {
+    @inline
+    def apply(
+        AccountId: NonEmptyString,
+        ConversationId: NonEmptyString,
+        MessageId: NonEmptyString
+    ): RedactConversationMessageRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId"      -> AccountId.asInstanceOf[js.Any],
+        "ConversationId" -> ConversationId.asInstanceOf[js.Any],
+        "MessageId"      -> MessageId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[RedactConversationMessageRequest]
+    }
+  }
+
+  @js.native
+  trait RedactConversationMessageResponse extends js.Object {}
+
+  object RedactConversationMessageResponse {
+    @inline
+    def apply(
+    ): RedactConversationMessageResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[RedactConversationMessageResponse]
+    }
+  }
+
+  @js.native
+  trait RedactRoomMessageRequest extends js.Object {
+    var AccountId: NonEmptyString
+    var MessageId: NonEmptyString
+    var RoomId: NonEmptyString
+  }
+
+  object RedactRoomMessageRequest {
+    @inline
+    def apply(
+        AccountId: NonEmptyString,
+        MessageId: NonEmptyString,
+        RoomId: NonEmptyString
+    ): RedactRoomMessageRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "MessageId" -> MessageId.asInstanceOf[js.Any],
+        "RoomId"    -> RoomId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[RedactRoomMessageRequest]
+    }
+  }
+
+  @js.native
+  trait RedactRoomMessageResponse extends js.Object {}
+
+  object RedactRoomMessageResponse {
+    @inline
+    def apply(
+    ): RedactRoomMessageResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[RedactRoomMessageResponse]
     }
   }
 
@@ -4187,6 +5237,30 @@ package chime {
   }
 
   /**
+    * The retention settings for an Amazon Chime Enterprise account that determine how long to retain items such as chat room messages and chat conversation messages.
+    */
+  @js.native
+  trait RetentionSettings extends js.Object {
+    var ConversationRetentionSettings: js.UndefOr[ConversationRetentionSettings]
+    var RoomRetentionSettings: js.UndefOr[RoomRetentionSettings]
+  }
+
+  object RetentionSettings {
+    @inline
+    def apply(
+        ConversationRetentionSettings: js.UndefOr[ConversationRetentionSettings] = js.undefined,
+        RoomRetentionSettings: js.UndefOr[RoomRetentionSettings] = js.undefined
+    ): RetentionSettings = {
+      val __obj = js.Dynamic.literal()
+      ConversationRetentionSettings.foreach(__v =>
+        __obj.updateDynamic("ConversationRetentionSettings")(__v.asInstanceOf[js.Any])
+      )
+      RoomRetentionSettings.foreach(__v => __obj.updateDynamic("RoomRetentionSettings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RetentionSettings]
+    }
+  }
+
+  /**
     * The Amazon Chime chat room details.
     */
   @js.native
@@ -4258,6 +5332,25 @@ package chime {
     val Member        = "Member".asInstanceOf[RoomMembershipRole]
 
     val values = js.Object.freeze(js.Array(Administrator, Member))
+  }
+
+  /**
+    * The retention settings that determine how long to retain chat room messages for an Amazon Chime Enterprise account.
+    */
+  @js.native
+  trait RoomRetentionSettings extends js.Object {
+    var RetentionDays: js.UndefOr[RetentionDays]
+  }
+
+  object RoomRetentionSettings {
+    @inline
+    def apply(
+        RetentionDays: js.UndefOr[RetentionDays] = js.undefined
+    ): RoomRetentionSettings = {
+      val __obj = js.Dynamic.literal()
+      RetentionDays.foreach(__v => __obj.updateDynamic("RetentionDays")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RoomRetentionSettings]
+    }
   }
 
   @js.native
@@ -4336,20 +5429,136 @@ package chime {
   trait StreamingConfiguration extends js.Object {
     var DataRetentionInHours: DataRetentionInHours
     var Disabled: js.UndefOr[Boolean]
+    var StreamingNotificationTargets: js.UndefOr[StreamingNotificationTargetList]
   }
 
   object StreamingConfiguration {
     @inline
     def apply(
         DataRetentionInHours: DataRetentionInHours,
-        Disabled: js.UndefOr[Boolean] = js.undefined
+        Disabled: js.UndefOr[Boolean] = js.undefined,
+        StreamingNotificationTargets: js.UndefOr[StreamingNotificationTargetList] = js.undefined
     ): StreamingConfiguration = {
       val __obj = js.Dynamic.literal(
         "DataRetentionInHours" -> DataRetentionInHours.asInstanceOf[js.Any]
       )
 
       Disabled.foreach(__v => __obj.updateDynamic("Disabled")(__v.asInstanceOf[js.Any]))
+      StreamingNotificationTargets.foreach(__v =>
+        __obj.updateDynamic("StreamingNotificationTargets")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[StreamingConfiguration]
+    }
+  }
+
+  /**
+    * The targeted recipient for a streaming configuration notification.
+    */
+  @js.native
+  trait StreamingNotificationTarget extends js.Object {
+    var NotificationTarget: NotificationTarget
+  }
+
+  object StreamingNotificationTarget {
+    @inline
+    def apply(
+        NotificationTarget: NotificationTarget
+    ): StreamingNotificationTarget = {
+      val __obj = js.Dynamic.literal(
+        "NotificationTarget" -> NotificationTarget.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[StreamingNotificationTarget]
+    }
+  }
+
+  /**
+    * Describes a tag applied to a resource.
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: TagKey
+    var Value: TagValue
+  }
+
+  object Tag {
+    @inline
+    def apply(
+        Key: TagKey,
+        Value: TagValue
+    ): Tag = {
+      val __obj = js.Dynamic.literal(
+        "Key"   -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagAttendeeRequest extends js.Object {
+    var AttendeeId: GuidString
+    var MeetingId: GuidString
+    var Tags: AttendeeTagList
+  }
+
+  object TagAttendeeRequest {
+    @inline
+    def apply(
+        AttendeeId: GuidString,
+        MeetingId: GuidString,
+        Tags: AttendeeTagList
+    ): TagAttendeeRequest = {
+      val __obj = js.Dynamic.literal(
+        "AttendeeId" -> AttendeeId.asInstanceOf[js.Any],
+        "MeetingId"  -> MeetingId.asInstanceOf[js.Any],
+        "Tags"       -> Tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagAttendeeRequest]
+    }
+  }
+
+  @js.native
+  trait TagMeetingRequest extends js.Object {
+    var MeetingId: GuidString
+    var Tags: MeetingTagList
+  }
+
+  object TagMeetingRequest {
+    @inline
+    def apply(
+        MeetingId: GuidString,
+        Tags: MeetingTagList
+    ): TagMeetingRequest = {
+      val __obj = js.Dynamic.literal(
+        "MeetingId" -> MeetingId.asInstanceOf[js.Any],
+        "Tags"      -> Tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagMeetingRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceARN: Arn
+    var Tags: TagList
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        ResourceARN: Arn,
+        Tags: TagList
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "Tags"        -> Tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
@@ -4430,6 +5639,72 @@ package chime {
       Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
       Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TerminationHealth]
+    }
+  }
+
+  @js.native
+  trait UntagAttendeeRequest extends js.Object {
+    var AttendeeId: GuidString
+    var MeetingId: GuidString
+    var TagKeys: AttendeeTagKeyList
+  }
+
+  object UntagAttendeeRequest {
+    @inline
+    def apply(
+        AttendeeId: GuidString,
+        MeetingId: GuidString,
+        TagKeys: AttendeeTagKeyList
+    ): UntagAttendeeRequest = {
+      val __obj = js.Dynamic.literal(
+        "AttendeeId" -> AttendeeId.asInstanceOf[js.Any],
+        "MeetingId"  -> MeetingId.asInstanceOf[js.Any],
+        "TagKeys"    -> TagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagAttendeeRequest]
+    }
+  }
+
+  @js.native
+  trait UntagMeetingRequest extends js.Object {
+    var MeetingId: GuidString
+    var TagKeys: MeetingTagKeyList
+  }
+
+  object UntagMeetingRequest {
+    @inline
+    def apply(
+        MeetingId: GuidString,
+        TagKeys: MeetingTagKeyList
+    ): UntagMeetingRequest = {
+      val __obj = js.Dynamic.literal(
+        "MeetingId" -> MeetingId.asInstanceOf[js.Any],
+        "TagKeys"   -> TagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagMeetingRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceARN: Arn
+    var TagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        ResourceARN: Arn,
+        TagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
@@ -4647,6 +5922,49 @@ package chime {
       )
 
       __obj.asInstanceOf[UpdatePhoneNumberSettingsRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateProxySessionRequest extends js.Object {
+    var Capabilities: CapabilityList
+    var ProxySessionId: NonEmptyString128
+    var VoiceConnectorId: NonEmptyString128
+    var ExpiryMinutes: js.UndefOr[PositiveInteger]
+  }
+
+  object UpdateProxySessionRequest {
+    @inline
+    def apply(
+        Capabilities: CapabilityList,
+        ProxySessionId: NonEmptyString128,
+        VoiceConnectorId: NonEmptyString128,
+        ExpiryMinutes: js.UndefOr[PositiveInteger] = js.undefined
+    ): UpdateProxySessionRequest = {
+      val __obj = js.Dynamic.literal(
+        "Capabilities"     -> Capabilities.asInstanceOf[js.Any],
+        "ProxySessionId"   -> ProxySessionId.asInstanceOf[js.Any],
+        "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
+      )
+
+      ExpiryMinutes.foreach(__v => __obj.updateDynamic("ExpiryMinutes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateProxySessionRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateProxySessionResponse extends js.Object {
+    var ProxySession: js.UndefOr[ProxySession]
+  }
+
+  object UpdateProxySessionResponse {
+    @inline
+    def apply(
+        ProxySession: js.UndefOr[ProxySession] = js.undefined
+    ): UpdateProxySessionResponse = {
+      val __obj = js.Dynamic.literal()
+      ProxySession.foreach(__v => __obj.updateDynamic("ProxySession")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateProxySessionResponse]
     }
   }
 

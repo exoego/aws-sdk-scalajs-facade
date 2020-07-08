@@ -3771,7 +3771,7 @@ package s3 {
   }
 
   /**
-    * Container for Glacier job parameters.
+    * Container for S3 Glacier job parameters.
     */
   @js.native
   trait GlacierJobParameters extends js.Object {
@@ -7348,7 +7348,7 @@ package s3 {
   }
 
   /**
-    * Specifies lifecycle rules for an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlifecycle.html|PUT Bucket lifecycle]] in the <i>Amazon Simple Storage Service API Reference</i>.
+    * Specifies lifecycle rules for an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlifecycle.html|Put Bucket Lifecycle Configuration]] in the <i>Amazon Simple Storage Service API Reference</i>. For examples, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html#API_PutBucketLifecycleConfiguration_Examples|Put Bucket Lifecycle Configuration Examples]]
     */
   @js.native
   trait Rule extends js.Object {
@@ -8023,7 +8023,7 @@ package s3 {
   }
 
   /**
-    * Specifies when an object transitions to a specified storage class.
+    * Specifies when an object transitions to a specified storage class. For more information about Amazon S3 lifecycle configuration rules, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html|Transitioning Objects Using Amazon S3 Lifecycle]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
     */
   @js.native
   trait Transition extends js.Object {

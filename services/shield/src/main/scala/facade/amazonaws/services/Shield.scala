@@ -12,6 +12,7 @@ package object shield {
   type AttackSummaries             = js.Array[AttackSummary]
   type AttackTimestamp             = js.Date
   type AttackVectorDescriptionList = js.Array[AttackVectorDescription]
+  type ContactNotes                = String
   type DurationInSeconds           = Double
   type EmailAddress                = String
   type EmergencyContactList        = js.Array[EmergencyContact]
@@ -23,6 +24,7 @@ package object shield {
   type LogBucketList               = js.Array[LogBucket]
   type MaxResults                  = Int
   type MitigationList              = js.Array[Mitigation]
+  type PhoneNumber                 = String
   type ProtectionId                = String
   type ProtectionName              = String
   type Protections                 = js.Array[Protection]
@@ -45,6 +47,10 @@ package object shield {
       service.associateDRTRole(params).promise().toFuture
     @inline def associateHealthCheckFuture(params: AssociateHealthCheckRequest): Future[AssociateHealthCheckResponse] =
       service.associateHealthCheck(params).promise().toFuture
+    @inline def associateProactiveEngagementDetailsFuture(
+        params: AssociateProactiveEngagementDetailsRequest
+    ): Future[AssociateProactiveEngagementDetailsResponse] =
+      service.associateProactiveEngagementDetails(params).promise().toFuture
     @inline def createProtectionFuture(params: CreateProtectionRequest): Future[CreateProtectionResponse] =
       service.createProtection(params).promise().toFuture
     @inline def createSubscriptionFuture(params: CreateSubscriptionRequest): Future[CreateSubscriptionResponse] =
@@ -63,6 +69,9 @@ package object shield {
       service.describeProtection(params).promise().toFuture
     @inline def describeSubscriptionFuture(params: DescribeSubscriptionRequest): Future[DescribeSubscriptionResponse] =
       service.describeSubscription(params).promise().toFuture
+    @inline def disableProactiveEngagementFuture(
+        params: DisableProactiveEngagementRequest
+    ): Future[DisableProactiveEngagementResponse] = service.disableProactiveEngagement(params).promise().toFuture
     @inline def disassociateDRTLogBucketFuture(
         params: DisassociateDRTLogBucketRequest
     ): Future[DisassociateDRTLogBucketResponse] = service.disassociateDRTLogBucket(params).promise().toFuture
@@ -71,6 +80,9 @@ package object shield {
     @inline def disassociateHealthCheckFuture(
         params: DisassociateHealthCheckRequest
     ): Future[DisassociateHealthCheckResponse] = service.disassociateHealthCheck(params).promise().toFuture
+    @inline def enableProactiveEngagementFuture(
+        params: EnableProactiveEngagementRequest
+    ): Future[EnableProactiveEngagementResponse] = service.enableProactiveEngagement(params).promise().toFuture
     @inline def getSubscriptionStateFuture(params: GetSubscriptionStateRequest): Future[GetSubscriptionStateResponse] =
       service.getSubscriptionState(params).promise().toFuture
     @inline def listAttacksFuture(params: ListAttacksRequest): Future[ListAttacksResponse] =
@@ -95,21 +107,30 @@ package shield {
     def associateDRTLogBucket(params: AssociateDRTLogBucketRequest): Request[AssociateDRTLogBucketResponse] = js.native
     def associateDRTRole(params: AssociateDRTRoleRequest): Request[AssociateDRTRoleResponse]                = js.native
     def associateHealthCheck(params: AssociateHealthCheckRequest): Request[AssociateHealthCheckResponse]    = js.native
-    def createProtection(params: CreateProtectionRequest): Request[CreateProtectionResponse]                = js.native
-    def createSubscription(params: CreateSubscriptionRequest): Request[CreateSubscriptionResponse]          = js.native
-    def deleteProtection(params: DeleteProtectionRequest): Request[DeleteProtectionResponse]                = js.native
-    def describeAttack(params: DescribeAttackRequest): Request[DescribeAttackResponse]                      = js.native
-    def describeDRTAccess(params: DescribeDRTAccessRequest): Request[DescribeDRTAccessResponse]             = js.native
+    def associateProactiveEngagementDetails(
+        params: AssociateProactiveEngagementDetailsRequest
+    ): Request[AssociateProactiveEngagementDetailsResponse]                                        = js.native
+    def createProtection(params: CreateProtectionRequest): Request[CreateProtectionResponse]       = js.native
+    def createSubscription(params: CreateSubscriptionRequest): Request[CreateSubscriptionResponse] = js.native
+    def deleteProtection(params: DeleteProtectionRequest): Request[DeleteProtectionResponse]       = js.native
+    def describeAttack(params: DescribeAttackRequest): Request[DescribeAttackResponse]             = js.native
+    def describeDRTAccess(params: DescribeDRTAccessRequest): Request[DescribeDRTAccessResponse]    = js.native
     def describeEmergencyContactSettings(
         params: DescribeEmergencyContactSettingsRequest
     ): Request[DescribeEmergencyContactSettingsResponse]                                                 = js.native
     def describeProtection(params: DescribeProtectionRequest): Request[DescribeProtectionResponse]       = js.native
     def describeSubscription(params: DescribeSubscriptionRequest): Request[DescribeSubscriptionResponse] = js.native
+    def disableProactiveEngagement(
+        params: DisableProactiveEngagementRequest
+    ): Request[DisableProactiveEngagementResponse] = js.native
     def disassociateDRTLogBucket(params: DisassociateDRTLogBucketRequest): Request[DisassociateDRTLogBucketResponse] =
       js.native
     def disassociateDRTRole(params: DisassociateDRTRoleRequest): Request[DisassociateDRTRoleResponse] = js.native
     def disassociateHealthCheck(params: DisassociateHealthCheckRequest): Request[DisassociateHealthCheckResponse] =
       js.native
+    def enableProactiveEngagement(
+        params: EnableProactiveEngagementRequest
+    ): Request[EnableProactiveEngagementResponse]                                                        = js.native
     def getSubscriptionState(params: GetSubscriptionStateRequest): Request[GetSubscriptionStateResponse] = js.native
     def listAttacks(params: ListAttacksRequest): Request[ListAttacksResponse]                            = js.native
     def listProtections(params: ListProtectionsRequest): Request[ListProtectionsResponse]                = js.native
@@ -215,6 +236,37 @@ package shield {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateHealthCheckResponse]
+    }
+  }
+
+  @js.native
+  trait AssociateProactiveEngagementDetailsRequest extends js.Object {
+    var EmergencyContactList: EmergencyContactList
+  }
+
+  object AssociateProactiveEngagementDetailsRequest {
+    @inline
+    def apply(
+        EmergencyContactList: EmergencyContactList
+    ): AssociateProactiveEngagementDetailsRequest = {
+      val __obj = js.Dynamic.literal(
+        "EmergencyContactList" -> EmergencyContactList.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[AssociateProactiveEngagementDetailsRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateProactiveEngagementDetailsResponse extends js.Object {}
+
+  object AssociateProactiveEngagementDetailsResponse {
+    @inline
+    def apply(
+    ): AssociateProactiveEngagementDetailsResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[AssociateProactiveEngagementDetailsResponse]
     }
   }
 
@@ -689,6 +741,32 @@ package shield {
   }
 
   @js.native
+  trait DisableProactiveEngagementRequest extends js.Object {}
+
+  object DisableProactiveEngagementRequest {
+    @inline
+    def apply(
+    ): DisableProactiveEngagementRequest = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DisableProactiveEngagementRequest]
+    }
+  }
+
+  @js.native
+  trait DisableProactiveEngagementResponse extends js.Object {}
+
+  object DisableProactiveEngagementResponse {
+    @inline
+    def apply(
+    ): DisableProactiveEngagementResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DisableProactiveEngagementResponse]
+    }
+  }
+
+  @js.native
   trait DisassociateDRTLogBucketRequest extends js.Object {
     var LogBucket: LogBucket
   }
@@ -780,23 +858,55 @@ package shield {
   }
 
   /**
-    * Contact information that the DRT can use to contact you during a suspected attack.
+    * Contact information that the DRT can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.
     */
   @js.native
   trait EmergencyContact extends js.Object {
     var EmailAddress: EmailAddress
+    var ContactNotes: js.UndefOr[ContactNotes]
+    var PhoneNumber: js.UndefOr[PhoneNumber]
   }
 
   object EmergencyContact {
     @inline
     def apply(
-        EmailAddress: EmailAddress
+        EmailAddress: EmailAddress,
+        ContactNotes: js.UndefOr[ContactNotes] = js.undefined,
+        PhoneNumber: js.UndefOr[PhoneNumber] = js.undefined
     ): EmergencyContact = {
       val __obj = js.Dynamic.literal(
         "EmailAddress" -> EmailAddress.asInstanceOf[js.Any]
       )
 
+      ContactNotes.foreach(__v => __obj.updateDynamic("ContactNotes")(__v.asInstanceOf[js.Any]))
+      PhoneNumber.foreach(__v => __obj.updateDynamic("PhoneNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EmergencyContact]
+    }
+  }
+
+  @js.native
+  trait EnableProactiveEngagementRequest extends js.Object {}
+
+  object EnableProactiveEngagementRequest {
+    @inline
+    def apply(
+    ): EnableProactiveEngagementRequest = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[EnableProactiveEngagementRequest]
+    }
+  }
+
+  @js.native
+  trait EnableProactiveEngagementResponse extends js.Object {}
+
+  object EnableProactiveEngagementResponse {
+    @inline
+    def apply(
+    ): EnableProactiveEngagementResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[EnableProactiveEngagementResponse]
     }
   }
 
@@ -957,6 +1067,16 @@ package shield {
     }
   }
 
+  @js.native
+  sealed trait ProactiveEngagementStatus extends js.Any
+  object ProactiveEngagementStatus extends js.Object {
+    val ENABLED  = "ENABLED".asInstanceOf[ProactiveEngagementStatus]
+    val DISABLED = "DISABLED".asInstanceOf[ProactiveEngagementStatus]
+    val PENDING  = "PENDING".asInstanceOf[ProactiveEngagementStatus]
+
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED, PENDING))
+  }
+
   /**
     * An object that represents a resource that is under DDoS protection.
     */
@@ -1030,6 +1150,7 @@ package shield {
     var AutoRenew: js.UndefOr[AutoRenew]
     var EndTime: js.UndefOr[Timestamp]
     var Limits: js.UndefOr[Limits]
+    var ProactiveEngagementStatus: js.UndefOr[ProactiveEngagementStatus]
     var StartTime: js.UndefOr[Timestamp]
     var TimeCommitmentInSeconds: js.UndefOr[DurationInSeconds]
   }
@@ -1040,6 +1161,7 @@ package shield {
         AutoRenew: js.UndefOr[AutoRenew] = js.undefined,
         EndTime: js.UndefOr[Timestamp] = js.undefined,
         Limits: js.UndefOr[Limits] = js.undefined,
+        ProactiveEngagementStatus: js.UndefOr[ProactiveEngagementStatus] = js.undefined,
         StartTime: js.UndefOr[Timestamp] = js.undefined,
         TimeCommitmentInSeconds: js.UndefOr[DurationInSeconds] = js.undefined
     ): Subscription = {
@@ -1047,6 +1169,9 @@ package shield {
       AutoRenew.foreach(__v => __obj.updateDynamic("AutoRenew")(__v.asInstanceOf[js.Any]))
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
       Limits.foreach(__v => __obj.updateDynamic("Limits")(__v.asInstanceOf[js.Any]))
+      ProactiveEngagementStatus.foreach(__v =>
+        __obj.updateDynamic("ProactiveEngagementStatus")(__v.asInstanceOf[js.Any])
+      )
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       TimeCommitmentInSeconds.foreach(__v => __obj.updateDynamic("TimeCommitmentInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Subscription]

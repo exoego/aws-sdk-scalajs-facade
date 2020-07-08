@@ -7,13 +7,17 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object gamelift {
+  type AliasArn                            = String
   type AliasId                             = String
+  type AliasIdOrArn                        = String
   type AliasList                           = js.Array[Alias]
   type AmazonResourceName                  = String
   type ArnStringModel                      = String
+  type AutoScalingGroupArn                 = String
   type BooleanModel                        = Boolean
   type BuildArn                            = String
   type BuildId                             = String
+  type BuildIdOrArn                        = String
   type BuildList                           = js.Array[Build]
   type CustomEventData                     = String
   type DesiredPlayerSessionList            = js.Array[DesiredPlayerSession]
@@ -22,29 +26,50 @@ package object gamelift {
   type EC2InstanceLimitList                = js.Array[EC2InstanceLimit]
   type EventList                           = js.Array[Event]
   type FleetActionList                     = js.Array[FleetAction]
+  type FleetArn                            = String
   type FleetAttributesList                 = js.Array[FleetAttributes]
   type FleetCapacityList                   = js.Array[FleetCapacity]
   type FleetId                             = String
   type FleetIdList                         = js.Array[FleetId]
+  type FleetIdOrArn                        = String
+  type FleetIdOrArnList                    = js.Array[FleetIdOrArn]
   type FleetUtilizationList                = js.Array[FleetUtilization]
   type FreeText                            = String
   type GamePropertyKey                     = String
   type GamePropertyList                    = js.Array[GameProperty]
   type GamePropertyValue                   = String
+  type GameServerConnectionInfo            = String
+  type GameServerData                      = String
+  type GameServerGroupActions              = js.Array[GameServerGroupAction]
+  type GameServerGroupArn                  = String
+  type GameServerGroupName                 = String
+  type GameServerGroupNameOrArn            = String
+  type GameServerGroups                    = js.Array[GameServerGroup]
+  type GameServerId                        = String
+  type GameServerInstanceId                = String
+  type GameServerSortKey                   = String
+  type GameServers                         = js.Array[GameServer]
   type GameSessionActivationTimeoutSeconds = Int
   type GameSessionData                     = String
   type GameSessionDetailList               = js.Array[GameSessionDetail]
   type GameSessionList                     = js.Array[GameSession]
+  type GameSessionQueueArn                 = String
   type GameSessionQueueDestinationList     = js.Array[GameSessionQueueDestination]
   type GameSessionQueueList                = js.Array[GameSessionQueue]
   type GameSessionQueueName                = String
-  type GameSessionQueueNameList            = js.Array[GameSessionQueueName]
+  type GameSessionQueueNameOrArn           = String
+  type GameSessionQueueNameOrArnList       = js.Array[GameSessionQueueNameOrArn]
+  type IamRoleArn                          = String
   type IdStringModel                       = String
+  type InstanceDefinitions                 = js.Array[InstanceDefinition]
   type InstanceId                          = String
   type InstanceList                        = js.Array[Instance]
   type IpAddress                           = String
   type IpPermissionsList                   = js.Array[IpPermission]
   type LatencyMap                          = js.Dictionary[PositiveInteger]
+  type LaunchTemplateId                    = String
+  type LaunchTemplateName                  = String
+  type LaunchTemplateVersion               = String
   type MatchedPlayerSessionList            = js.Array[MatchedPlayerSession]
   type MatchmakerData                      = String
   type MatchmakingAcceptanceTimeoutInteger = Int
@@ -66,6 +91,7 @@ package object gamelift {
   type NonBlankAndLengthConstraintString   = String
   type NonBlankString                      = String
   type NonEmptyString                      = String
+  type NonNegativeDouble                   = Double
   type NonZeroAndMaxString                 = String
   type PlacedPlayerSessionList             = js.Array[PlacedPlayerSession]
   type PlayerAttributeMap                  = js.Dictionary[AttributeValue]
@@ -86,6 +112,7 @@ package object gamelift {
   type ScalingPolicyList                   = js.Array[ScalingPolicy]
   type ScriptArn                           = String
   type ScriptId                            = String
+  type ScriptIdOrArn                       = String
   type ScriptList                          = js.Array[Script]
   type ServerProcessList                   = js.Array[ServerProcess]
   type SnsArnStringModel                   = String
@@ -99,6 +126,9 @@ package object gamelift {
   type Timestamp                           = js.Date
   type VpcPeeringAuthorizationList         = js.Array[VpcPeeringAuthorization]
   type VpcPeeringConnectionList            = js.Array[VpcPeeringConnection]
+  type VpcSubnet                           = String
+  type VpcSubnets                          = js.Array[VpcSubnet]
+  type WeightedCapacity                    = String
   type WholeNumber                         = Int
   type ZipBlob                             = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
 
@@ -106,12 +136,16 @@ package object gamelift {
 
     @inline def acceptMatchFuture(params: AcceptMatchInput): Future[AcceptMatchOutput] =
       service.acceptMatch(params).promise().toFuture
+    @inline def claimGameServerFuture(params: ClaimGameServerInput): Future[ClaimGameServerOutput] =
+      service.claimGameServer(params).promise().toFuture
     @inline def createAliasFuture(params: CreateAliasInput): Future[CreateAliasOutput] =
       service.createAlias(params).promise().toFuture
     @inline def createBuildFuture(params: CreateBuildInput): Future[CreateBuildOutput] =
       service.createBuild(params).promise().toFuture
     @inline def createFleetFuture(params: CreateFleetInput): Future[CreateFleetOutput] =
       service.createFleet(params).promise().toFuture
+    @inline def createGameServerGroupFuture(params: CreateGameServerGroupInput): Future[CreateGameServerGroupOutput] =
+      service.createGameServerGroup(params).promise().toFuture
     @inline def createGameSessionFuture(params: CreateGameSessionInput): Future[CreateGameSessionOutput] =
       service.createGameSession(params).promise().toFuture
     @inline def createGameSessionQueueFuture(
@@ -141,6 +175,8 @@ package object gamelift {
       service.deleteBuild(params).promise().toFuture
     @inline def deleteFleetFuture(params: DeleteFleetInput): Future[js.Object] =
       service.deleteFleet(params).promise().toFuture
+    @inline def deleteGameServerGroupFuture(params: DeleteGameServerGroupInput): Future[DeleteGameServerGroupOutput] =
+      service.deleteGameServerGroup(params).promise().toFuture
     @inline def deleteGameSessionQueueFuture(
         params: DeleteGameSessionQueueInput
     ): Future[DeleteGameSessionQueueOutput] = service.deleteGameSessionQueue(params).promise().toFuture
@@ -160,6 +196,8 @@ package object gamelift {
     @inline def deleteVpcPeeringConnectionFuture(
         params: DeleteVpcPeeringConnectionInput
     ): Future[DeleteVpcPeeringConnectionOutput] = service.deleteVpcPeeringConnection(params).promise().toFuture
+    @inline def deregisterGameServerFuture(params: DeregisterGameServerInput): Future[js.Object] =
+      service.deregisterGameServer(params).promise().toFuture
     @inline def describeAliasFuture(params: DescribeAliasInput): Future[DescribeAliasOutput] =
       service.describeAlias(params).promise().toFuture
     @inline def describeBuildFuture(params: DescribeBuildInput): Future[DescribeBuildOutput] =
@@ -180,6 +218,11 @@ package object gamelift {
     @inline def describeFleetUtilizationFuture(
         params: DescribeFleetUtilizationInput
     ): Future[DescribeFleetUtilizationOutput] = service.describeFleetUtilization(params).promise().toFuture
+    @inline def describeGameServerFuture(params: DescribeGameServerInput): Future[DescribeGameServerOutput] =
+      service.describeGameServer(params).promise().toFuture
+    @inline def describeGameServerGroupFuture(
+        params: DescribeGameServerGroupInput
+    ): Future[DescribeGameServerGroupOutput] = service.describeGameServerGroup(params).promise().toFuture
     @inline def describeGameSessionDetailsFuture(
         params: DescribeGameSessionDetailsInput
     ): Future[DescribeGameSessionDetailsOutput] = service.describeGameSessionDetails(params).promise().toFuture
@@ -230,17 +273,25 @@ package object gamelift {
       service.listBuilds(params).promise().toFuture
     @inline def listFleetsFuture(params: ListFleetsInput): Future[ListFleetsOutput] =
       service.listFleets(params).promise().toFuture
+    @inline def listGameServerGroupsFuture(params: ListGameServerGroupsInput): Future[ListGameServerGroupsOutput] =
+      service.listGameServerGroups(params).promise().toFuture
+    @inline def listGameServersFuture(params: ListGameServersInput): Future[ListGameServersOutput] =
+      service.listGameServers(params).promise().toFuture
     @inline def listScriptsFuture(params: ListScriptsInput): Future[ListScriptsOutput] =
       service.listScripts(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise().toFuture
     @inline def putScalingPolicyFuture(params: PutScalingPolicyInput): Future[PutScalingPolicyOutput] =
       service.putScalingPolicy(params).promise().toFuture
+    @inline def registerGameServerFuture(params: RegisterGameServerInput): Future[RegisterGameServerOutput] =
+      service.registerGameServer(params).promise().toFuture
     @inline def requestUploadCredentialsFuture(
         params: RequestUploadCredentialsInput
     ): Future[RequestUploadCredentialsOutput] = service.requestUploadCredentials(params).promise().toFuture
     @inline def resolveAliasFuture(params: ResolveAliasInput): Future[ResolveAliasOutput] =
       service.resolveAlias(params).promise().toFuture
+    @inline def resumeGameServerGroupFuture(params: ResumeGameServerGroupInput): Future[ResumeGameServerGroupOutput] =
+      service.resumeGameServerGroup(params).promise().toFuture
     @inline def searchGameSessionsFuture(params: SearchGameSessionsInput): Future[SearchGameSessionsOutput] =
       service.searchGameSessions(params).promise().toFuture
     @inline def startFleetActionsFuture(params: StartFleetActionsInput): Future[StartFleetActionsOutput] =
@@ -259,6 +310,9 @@ package object gamelift {
     ): Future[StopGameSessionPlacementOutput] = service.stopGameSessionPlacement(params).promise().toFuture
     @inline def stopMatchmakingFuture(params: StopMatchmakingInput): Future[StopMatchmakingOutput] =
       service.stopMatchmaking(params).promise().toFuture
+    @inline def suspendGameServerGroupFuture(
+        params: SuspendGameServerGroupInput
+    ): Future[SuspendGameServerGroupOutput] = service.suspendGameServerGroup(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
@@ -274,6 +328,10 @@ package object gamelift {
     @inline def updateFleetPortSettingsFuture(
         params: UpdateFleetPortSettingsInput
     ): Future[UpdateFleetPortSettingsOutput] = service.updateFleetPortSettings(params).promise().toFuture
+    @inline def updateGameServerFuture(params: UpdateGameServerInput): Future[UpdateGameServerOutput] =
+      service.updateGameServer(params).promise().toFuture
+    @inline def updateGameServerGroupFuture(params: UpdateGameServerGroupInput): Future[UpdateGameServerGroupOutput] =
+      service.updateGameServerGroup(params).promise().toFuture
     @inline def updateGameSessionFuture(params: UpdateGameSessionInput): Future[UpdateGameSessionOutput] =
       service.updateGameSession(params).promise().toFuture
     @inline def updateGameSessionQueueFuture(
@@ -300,9 +358,11 @@ package gamelift {
     def this(config: AWSConfig) = this()
 
     def acceptMatch(params: AcceptMatchInput): Request[AcceptMatchOutput]                                  = js.native
+    def claimGameServer(params: ClaimGameServerInput): Request[ClaimGameServerOutput]                      = js.native
     def createAlias(params: CreateAliasInput): Request[CreateAliasOutput]                                  = js.native
     def createBuild(params: CreateBuildInput): Request[CreateBuildOutput]                                  = js.native
     def createFleet(params: CreateFleetInput): Request[CreateFleetOutput]                                  = js.native
+    def createGameServerGroup(params: CreateGameServerGroupInput): Request[CreateGameServerGroupOutput]    = js.native
     def createGameSession(params: CreateGameSessionInput): Request[CreateGameSessionOutput]                = js.native
     def createGameSessionQueue(params: CreateGameSessionQueueInput): Request[CreateGameSessionQueueOutput] = js.native
     def createMatchmakingConfiguration(
@@ -321,6 +381,7 @@ package gamelift {
     def deleteAlias(params: DeleteAliasInput): Request[js.Object]                                          = js.native
     def deleteBuild(params: DeleteBuildInput): Request[js.Object]                                          = js.native
     def deleteFleet(params: DeleteFleetInput): Request[js.Object]                                          = js.native
+    def deleteGameServerGroup(params: DeleteGameServerGroupInput): Request[DeleteGameServerGroupOutput]    = js.native
     def deleteGameSessionQueue(params: DeleteGameSessionQueueInput): Request[DeleteGameSessionQueueOutput] = js.native
     def deleteMatchmakingConfiguration(
         params: DeleteMatchmakingConfigurationInput
@@ -334,8 +395,9 @@ package gamelift {
     ): Request[DeleteVpcPeeringAuthorizationOutput] = js.native
     def deleteVpcPeeringConnection(params: DeleteVpcPeeringConnectionInput): Request[DeleteVpcPeeringConnectionOutput] =
       js.native
-    def describeAlias(params: DescribeAliasInput): Request[DescribeAliasOutput] = js.native
-    def describeBuild(params: DescribeBuildInput): Request[DescribeBuildOutput] = js.native
+    def deregisterGameServer(params: DeregisterGameServerInput): Request[js.Object] = js.native
+    def describeAlias(params: DescribeAliasInput): Request[DescribeAliasOutput]     = js.native
+    def describeBuild(params: DescribeBuildInput): Request[DescribeBuildOutput]     = js.native
     def describeEC2InstanceLimits(params: DescribeEC2InstanceLimitsInput): Request[DescribeEC2InstanceLimitsOutput] =
       js.native
     def describeFleetAttributes(params: DescribeFleetAttributesInput): Request[DescribeFleetAttributesOutput] =
@@ -345,6 +407,9 @@ package gamelift {
     def describeFleetPortSettings(params: DescribeFleetPortSettingsInput): Request[DescribeFleetPortSettingsOutput] =
       js.native
     def describeFleetUtilization(params: DescribeFleetUtilizationInput): Request[DescribeFleetUtilizationOutput] =
+      js.native
+    def describeGameServer(params: DescribeGameServerInput): Request[DescribeGameServerOutput] = js.native
+    def describeGameServerGroup(params: DescribeGameServerGroupInput): Request[DescribeGameServerGroupOutput] =
       js.native
     def describeGameSessionDetails(params: DescribeGameSessionDetailsInput): Request[DescribeGameSessionDetailsOutput] =
       js.native
@@ -380,14 +445,18 @@ package gamelift {
     def listAliases(params: ListAliasesInput): Request[ListAliasesOutput]                             = js.native
     def listBuilds(params: ListBuildsInput): Request[ListBuildsOutput]                                = js.native
     def listFleets(params: ListFleetsInput): Request[ListFleetsOutput]                                = js.native
+    def listGameServerGroups(params: ListGameServerGroupsInput): Request[ListGameServerGroupsOutput]  = js.native
+    def listGameServers(params: ListGameServersInput): Request[ListGameServersOutput]                 = js.native
     def listScripts(params: ListScriptsInput): Request[ListScriptsOutput]                             = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putScalingPolicy(params: PutScalingPolicyInput): Request[PutScalingPolicyOutput]              = js.native
+    def registerGameServer(params: RegisterGameServerInput): Request[RegisterGameServerOutput]        = js.native
     def requestUploadCredentials(params: RequestUploadCredentialsInput): Request[RequestUploadCredentialsOutput] =
       js.native
-    def resolveAlias(params: ResolveAliasInput): Request[ResolveAliasOutput]                   = js.native
-    def searchGameSessions(params: SearchGameSessionsInput): Request[SearchGameSessionsOutput] = js.native
-    def startFleetActions(params: StartFleetActionsInput): Request[StartFleetActionsOutput]    = js.native
+    def resolveAlias(params: ResolveAliasInput): Request[ResolveAliasOutput]                            = js.native
+    def resumeGameServerGroup(params: ResumeGameServerGroupInput): Request[ResumeGameServerGroupOutput] = js.native
+    def searchGameSessions(params: SearchGameSessionsInput): Request[SearchGameSessionsOutput]          = js.native
+    def startFleetActions(params: StartFleetActionsInput): Request[StartFleetActionsOutput]             = js.native
     def startGameSessionPlacement(params: StartGameSessionPlacementInput): Request[StartGameSessionPlacementOutput] =
       js.native
     def startMatchBackfill(params: StartMatchBackfillInput): Request[StartMatchBackfillOutput] = js.native
@@ -395,15 +464,18 @@ package gamelift {
     def stopFleetActions(params: StopFleetActionsInput): Request[StopFleetActionsOutput]       = js.native
     def stopGameSessionPlacement(params: StopGameSessionPlacementInput): Request[StopGameSessionPlacementOutput] =
       js.native
-    def stopMatchmaking(params: StopMatchmakingInput): Request[StopMatchmakingOutput]                   = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                           = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                     = js.native
-    def updateAlias(params: UpdateAliasInput): Request[UpdateAliasOutput]                               = js.native
-    def updateBuild(params: UpdateBuildInput): Request[UpdateBuildOutput]                               = js.native
-    def updateFleetAttributes(params: UpdateFleetAttributesInput): Request[UpdateFleetAttributesOutput] = js.native
-    def updateFleetCapacity(params: UpdateFleetCapacityInput): Request[UpdateFleetCapacityOutput]       = js.native
+    def stopMatchmaking(params: StopMatchmakingInput): Request[StopMatchmakingOutput]                      = js.native
+    def suspendGameServerGroup(params: SuspendGameServerGroupInput): Request[SuspendGameServerGroupOutput] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                              = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                        = js.native
+    def updateAlias(params: UpdateAliasInput): Request[UpdateAliasOutput]                                  = js.native
+    def updateBuild(params: UpdateBuildInput): Request[UpdateBuildOutput]                                  = js.native
+    def updateFleetAttributes(params: UpdateFleetAttributesInput): Request[UpdateFleetAttributesOutput]    = js.native
+    def updateFleetCapacity(params: UpdateFleetCapacityInput): Request[UpdateFleetCapacityOutput]          = js.native
     def updateFleetPortSettings(params: UpdateFleetPortSettingsInput): Request[UpdateFleetPortSettingsOutput] =
       js.native
+    def updateGameServer(params: UpdateGameServerInput): Request[UpdateGameServerOutput]                   = js.native
+    def updateGameServerGroup(params: UpdateGameServerGroupInput): Request[UpdateGameServerGroupOutput]    = js.native
     def updateGameSession(params: UpdateGameSessionInput): Request[UpdateGameSessionOutput]                = js.native
     def updateGameSessionQueue(params: UpdateGameSessionQueueInput): Request[UpdateGameSessionQueueOutput] = js.native
     def updateMatchmakingConfiguration(
@@ -476,7 +548,7 @@ package gamelift {
     */
   @js.native
   trait Alias extends js.Object {
-    var AliasArn: js.UndefOr[ArnStringModel]
+    var AliasArn: js.UndefOr[AliasArn]
     var AliasId: js.UndefOr[AliasId]
     var CreationTime: js.UndefOr[Timestamp]
     var Description: js.UndefOr[FreeText]
@@ -488,7 +560,7 @@ package gamelift {
   object Alias {
     @inline
     def apply(
-        AliasArn: js.UndefOr[ArnStringModel] = js.undefined,
+        AliasArn: js.UndefOr[AliasArn] = js.undefined,
         AliasId: js.UndefOr[AliasId] = js.undefined,
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         Description: js.UndefOr[FreeText] = js.undefined,
@@ -568,6 +640,15 @@ package gamelift {
     val MANUAL    = "MANUAL".asInstanceOf[BackfillMode]
 
     val values = js.Object.freeze(js.Array(AUTOMATIC, MANUAL))
+  }
+
+  @js.native
+  sealed trait BalancingStrategy extends js.Any
+  object BalancingStrategy extends js.Object {
+    val SPOT_ONLY      = "SPOT_ONLY".asInstanceOf[BalancingStrategy]
+    val SPOT_PREFERRED = "SPOT_PREFERRED".asInstanceOf[BalancingStrategy]
+
+    val values = js.Object.freeze(js.Array(SPOT_ONLY, SPOT_PREFERRED))
   }
 
   /**
@@ -654,6 +735,46 @@ package gamelift {
     val GENERATED = "GENERATED".asInstanceOf[CertificateType]
 
     val values = js.Object.freeze(js.Array(DISABLED, GENERATED))
+  }
+
+  @js.native
+  trait ClaimGameServerInput extends js.Object {
+    var GameServerGroupName: GameServerGroupNameOrArn
+    var GameServerData: js.UndefOr[GameServerData]
+    var GameServerId: js.UndefOr[GameServerId]
+  }
+
+  object ClaimGameServerInput {
+    @inline
+    def apply(
+        GameServerGroupName: GameServerGroupNameOrArn,
+        GameServerData: js.UndefOr[GameServerData] = js.undefined,
+        GameServerId: js.UndefOr[GameServerId] = js.undefined
+    ): ClaimGameServerInput = {
+      val __obj = js.Dynamic.literal(
+        "GameServerGroupName" -> GameServerGroupName.asInstanceOf[js.Any]
+      )
+
+      GameServerData.foreach(__v => __obj.updateDynamic("GameServerData")(__v.asInstanceOf[js.Any]))
+      GameServerId.foreach(__v => __obj.updateDynamic("GameServerId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClaimGameServerInput]
+    }
+  }
+
+  @js.native
+  trait ClaimGameServerOutput extends js.Object {
+    var GameServer: js.UndefOr[GameServer]
+  }
+
+  object ClaimGameServerOutput {
+    @inline
+    def apply(
+        GameServer: js.UndefOr[GameServer] = js.undefined
+    ): ClaimGameServerOutput = {
+      val __obj = js.Dynamic.literal()
+      GameServer.foreach(__v => __obj.updateDynamic("GameServer")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClaimGameServerOutput]
+    }
   }
 
   @js.native
@@ -781,7 +902,7 @@ package gamelift {
   trait CreateFleetInput extends js.Object {
     var EC2InstanceType: EC2InstanceType
     var Name: NonZeroAndMaxString
-    var BuildId: js.UndefOr[BuildId]
+    var BuildId: js.UndefOr[BuildIdOrArn]
     var CertificateConfiguration: js.UndefOr[CertificateConfiguration]
     var Description: js.UndefOr[NonZeroAndMaxString]
     var EC2InboundPermissions: js.UndefOr[IpPermissionsList]
@@ -794,7 +915,7 @@ package gamelift {
     var PeerVpcId: js.UndefOr[NonZeroAndMaxString]
     var ResourceCreationLimitPolicy: js.UndefOr[ResourceCreationLimitPolicy]
     var RuntimeConfiguration: js.UndefOr[RuntimeConfiguration]
-    var ScriptId: js.UndefOr[ScriptId]
+    var ScriptId: js.UndefOr[ScriptIdOrArn]
     var ServerLaunchParameters: js.UndefOr[NonZeroAndMaxString]
     var ServerLaunchPath: js.UndefOr[NonZeroAndMaxString]
     var Tags: js.UndefOr[TagList]
@@ -805,7 +926,7 @@ package gamelift {
     def apply(
         EC2InstanceType: EC2InstanceType,
         Name: NonZeroAndMaxString,
-        BuildId: js.UndefOr[BuildId] = js.undefined,
+        BuildId: js.UndefOr[BuildIdOrArn] = js.undefined,
         CertificateConfiguration: js.UndefOr[CertificateConfiguration] = js.undefined,
         Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         EC2InboundPermissions: js.UndefOr[IpPermissionsList] = js.undefined,
@@ -818,7 +939,7 @@ package gamelift {
         PeerVpcId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         ResourceCreationLimitPolicy: js.UndefOr[ResourceCreationLimitPolicy] = js.undefined,
         RuntimeConfiguration: js.UndefOr[RuntimeConfiguration] = js.undefined,
-        ScriptId: js.UndefOr[ScriptId] = js.undefined,
+        ScriptId: js.UndefOr[ScriptIdOrArn] = js.undefined,
         ServerLaunchParameters: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         ServerLaunchPath: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -872,15 +993,81 @@ package gamelift {
     }
   }
 
+  @js.native
+  trait CreateGameServerGroupInput extends js.Object {
+    var GameServerGroupName: GameServerGroupName
+    var InstanceDefinitions: InstanceDefinitions
+    var LaunchTemplate: LaunchTemplateSpecification
+    var MaxSize: PositiveInteger
+    var MinSize: WholeNumber
+    var RoleArn: IamRoleArn
+    var AutoScalingPolicy: js.UndefOr[GameServerGroupAutoScalingPolicy]
+    var BalancingStrategy: js.UndefOr[BalancingStrategy]
+    var GameServerProtectionPolicy: js.UndefOr[GameServerProtectionPolicy]
+    var Tags: js.UndefOr[TagList]
+    var VpcSubnets: js.UndefOr[VpcSubnets]
+  }
+
+  object CreateGameServerGroupInput {
+    @inline
+    def apply(
+        GameServerGroupName: GameServerGroupName,
+        InstanceDefinitions: InstanceDefinitions,
+        LaunchTemplate: LaunchTemplateSpecification,
+        MaxSize: PositiveInteger,
+        MinSize: WholeNumber,
+        RoleArn: IamRoleArn,
+        AutoScalingPolicy: js.UndefOr[GameServerGroupAutoScalingPolicy] = js.undefined,
+        BalancingStrategy: js.UndefOr[BalancingStrategy] = js.undefined,
+        GameServerProtectionPolicy: js.UndefOr[GameServerProtectionPolicy] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        VpcSubnets: js.UndefOr[VpcSubnets] = js.undefined
+    ): CreateGameServerGroupInput = {
+      val __obj = js.Dynamic.literal(
+        "GameServerGroupName" -> GameServerGroupName.asInstanceOf[js.Any],
+        "InstanceDefinitions" -> InstanceDefinitions.asInstanceOf[js.Any],
+        "LaunchTemplate"      -> LaunchTemplate.asInstanceOf[js.Any],
+        "MaxSize"             -> MaxSize.asInstanceOf[js.Any],
+        "MinSize"             -> MinSize.asInstanceOf[js.Any],
+        "RoleArn"             -> RoleArn.asInstanceOf[js.Any]
+      )
+
+      AutoScalingPolicy.foreach(__v => __obj.updateDynamic("AutoScalingPolicy")(__v.asInstanceOf[js.Any]))
+      BalancingStrategy.foreach(__v => __obj.updateDynamic("BalancingStrategy")(__v.asInstanceOf[js.Any]))
+      GameServerProtectionPolicy.foreach(__v =>
+        __obj.updateDynamic("GameServerProtectionPolicy")(__v.asInstanceOf[js.Any])
+      )
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      VpcSubnets.foreach(__v => __obj.updateDynamic("VpcSubnets")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateGameServerGroupInput]
+    }
+  }
+
+  @js.native
+  trait CreateGameServerGroupOutput extends js.Object {
+    var GameServerGroup: js.UndefOr[GameServerGroup]
+  }
+
+  object CreateGameServerGroupOutput {
+    @inline
+    def apply(
+        GameServerGroup: js.UndefOr[GameServerGroup] = js.undefined
+    ): CreateGameServerGroupOutput = {
+      val __obj = js.Dynamic.literal()
+      GameServerGroup.foreach(__v => __obj.updateDynamic("GameServerGroup")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateGameServerGroupOutput]
+    }
+  }
+
   /**
     * Represents the input for a request action.
     */
   @js.native
   trait CreateGameSessionInput extends js.Object {
     var MaximumPlayerSessionCount: WholeNumber
-    var AliasId: js.UndefOr[AliasId]
+    var AliasId: js.UndefOr[AliasIdOrArn]
     var CreatorId: js.UndefOr[NonZeroAndMaxString]
-    var FleetId: js.UndefOr[FleetId]
+    var FleetId: js.UndefOr[FleetIdOrArn]
     var GameProperties: js.UndefOr[GamePropertyList]
     var GameSessionData: js.UndefOr[GameSessionData]
     var GameSessionId: js.UndefOr[IdStringModel]
@@ -892,9 +1079,9 @@ package gamelift {
     @inline
     def apply(
         MaximumPlayerSessionCount: WholeNumber,
-        AliasId: js.UndefOr[AliasId] = js.undefined,
+        AliasId: js.UndefOr[AliasIdOrArn] = js.undefined,
         CreatorId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-        FleetId: js.UndefOr[FleetId] = js.undefined,
+        FleetId: js.UndefOr[FleetIdOrArn] = js.undefined,
         GameProperties: js.UndefOr[GamePropertyList] = js.undefined,
         GameSessionData: js.UndefOr[GameSessionData] = js.undefined,
         GameSessionId: js.UndefOr[IdStringModel] = js.undefined,
@@ -1339,13 +1526,13 @@ package gamelift {
     */
   @js.native
   trait DeleteAliasInput extends js.Object {
-    var AliasId: AliasId
+    var AliasId: AliasIdOrArn
   }
 
   object DeleteAliasInput {
     @inline
     def apply(
-        AliasId: AliasId
+        AliasId: AliasIdOrArn
     ): DeleteAliasInput = {
       val __obj = js.Dynamic.literal(
         "AliasId" -> AliasId.asInstanceOf[js.Any]
@@ -1360,13 +1547,13 @@ package gamelift {
     */
   @js.native
   trait DeleteBuildInput extends js.Object {
-    var BuildId: BuildId
+    var BuildId: BuildIdOrArn
   }
 
   object DeleteBuildInput {
     @inline
     def apply(
-        BuildId: BuildId
+        BuildId: BuildIdOrArn
     ): DeleteBuildInput = {
       val __obj = js.Dynamic.literal(
         "BuildId" -> BuildId.asInstanceOf[js.Any]
@@ -1381,13 +1568,13 @@ package gamelift {
     */
   @js.native
   trait DeleteFleetInput extends js.Object {
-    var FleetId: FleetId
+    var FleetId: FleetIdOrArn
   }
 
   object DeleteFleetInput {
     @inline
     def apply(
-        FleetId: FleetId
+        FleetId: FleetIdOrArn
     ): DeleteFleetInput = {
       val __obj = js.Dynamic.literal(
         "FleetId" -> FleetId.asInstanceOf[js.Any]
@@ -1397,18 +1584,55 @@ package gamelift {
     }
   }
 
+  @js.native
+  trait DeleteGameServerGroupInput extends js.Object {
+    var GameServerGroupName: GameServerGroupNameOrArn
+    var DeleteOption: js.UndefOr[GameServerGroupDeleteOption]
+  }
+
+  object DeleteGameServerGroupInput {
+    @inline
+    def apply(
+        GameServerGroupName: GameServerGroupNameOrArn,
+        DeleteOption: js.UndefOr[GameServerGroupDeleteOption] = js.undefined
+    ): DeleteGameServerGroupInput = {
+      val __obj = js.Dynamic.literal(
+        "GameServerGroupName" -> GameServerGroupName.asInstanceOf[js.Any]
+      )
+
+      DeleteOption.foreach(__v => __obj.updateDynamic("DeleteOption")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteGameServerGroupInput]
+    }
+  }
+
+  @js.native
+  trait DeleteGameServerGroupOutput extends js.Object {
+    var GameServerGroup: js.UndefOr[GameServerGroup]
+  }
+
+  object DeleteGameServerGroupOutput {
+    @inline
+    def apply(
+        GameServerGroup: js.UndefOr[GameServerGroup] = js.undefined
+    ): DeleteGameServerGroupOutput = {
+      val __obj = js.Dynamic.literal()
+      GameServerGroup.foreach(__v => __obj.updateDynamic("GameServerGroup")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteGameServerGroupOutput]
+    }
+  }
+
   /**
     * Represents the input for a request action.
     */
   @js.native
   trait DeleteGameSessionQueueInput extends js.Object {
-    var Name: GameSessionQueueName
+    var Name: GameSessionQueueNameOrArn
   }
 
   object DeleteGameSessionQueueInput {
     @inline
     def apply(
-        Name: GameSessionQueueName
+        Name: GameSessionQueueNameOrArn
     ): DeleteGameSessionQueueInput = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
@@ -1507,14 +1731,14 @@ package gamelift {
     */
   @js.native
   trait DeleteScalingPolicyInput extends js.Object {
-    var FleetId: FleetId
+    var FleetId: FleetIdOrArn
     var Name: NonZeroAndMaxString
   }
 
   object DeleteScalingPolicyInput {
     @inline
     def apply(
-        FleetId: FleetId,
+        FleetId: FleetIdOrArn,
         Name: NonZeroAndMaxString
     ): DeleteScalingPolicyInput = {
       val __obj = js.Dynamic.literal(
@@ -1528,13 +1752,13 @@ package gamelift {
 
   @js.native
   trait DeleteScriptInput extends js.Object {
-    var ScriptId: ScriptId
+    var ScriptId: ScriptIdOrArn
   }
 
   object DeleteScriptInput {
     @inline
     def apply(
-        ScriptId: ScriptId
+        ScriptId: ScriptIdOrArn
     ): DeleteScriptInput = {
       val __obj = js.Dynamic.literal(
         "ScriptId" -> ScriptId.asInstanceOf[js.Any]
@@ -1618,18 +1842,39 @@ package gamelift {
     }
   }
 
+  @js.native
+  trait DeregisterGameServerInput extends js.Object {
+    var GameServerGroupName: GameServerGroupNameOrArn
+    var GameServerId: GameServerId
+  }
+
+  object DeregisterGameServerInput {
+    @inline
+    def apply(
+        GameServerGroupName: GameServerGroupNameOrArn,
+        GameServerId: GameServerId
+    ): DeregisterGameServerInput = {
+      val __obj = js.Dynamic.literal(
+        "GameServerGroupName" -> GameServerGroupName.asInstanceOf[js.Any],
+        "GameServerId"        -> GameServerId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeregisterGameServerInput]
+    }
+  }
+
   /**
     * Represents the input for a request action.
     */
   @js.native
   trait DescribeAliasInput extends js.Object {
-    var AliasId: AliasId
+    var AliasId: AliasIdOrArn
   }
 
   object DescribeAliasInput {
     @inline
     def apply(
-        AliasId: AliasId
+        AliasId: AliasIdOrArn
     ): DescribeAliasInput = {
       val __obj = js.Dynamic.literal(
         "AliasId" -> AliasId.asInstanceOf[js.Any]
@@ -1663,13 +1908,13 @@ package gamelift {
     */
   @js.native
   trait DescribeBuildInput extends js.Object {
-    var BuildId: BuildId
+    var BuildId: BuildIdOrArn
   }
 
   object DescribeBuildInput {
     @inline
     def apply(
-        BuildId: BuildId
+        BuildId: BuildIdOrArn
     ): DescribeBuildInput = {
       val __obj = js.Dynamic.literal(
         "BuildId" -> BuildId.asInstanceOf[js.Any]
@@ -1741,7 +1986,7 @@ package gamelift {
     */
   @js.native
   trait DescribeFleetAttributesInput extends js.Object {
-    var FleetIds: js.UndefOr[FleetIdList]
+    var FleetIds: js.UndefOr[FleetIdOrArnList]
     var Limit: js.UndefOr[PositiveInteger]
     var NextToken: js.UndefOr[NonZeroAndMaxString]
   }
@@ -1749,7 +1994,7 @@ package gamelift {
   object DescribeFleetAttributesInput {
     @inline
     def apply(
-        FleetIds: js.UndefOr[FleetIdList] = js.undefined,
+        FleetIds: js.UndefOr[FleetIdOrArnList] = js.undefined,
         Limit: js.UndefOr[PositiveInteger] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): DescribeFleetAttributesInput = {
@@ -1788,7 +2033,7 @@ package gamelift {
     */
   @js.native
   trait DescribeFleetCapacityInput extends js.Object {
-    var FleetIds: js.UndefOr[FleetIdList]
+    var FleetIds: js.UndefOr[FleetIdOrArnList]
     var Limit: js.UndefOr[PositiveInteger]
     var NextToken: js.UndefOr[NonZeroAndMaxString]
   }
@@ -1796,7 +2041,7 @@ package gamelift {
   object DescribeFleetCapacityInput {
     @inline
     def apply(
-        FleetIds: js.UndefOr[FleetIdList] = js.undefined,
+        FleetIds: js.UndefOr[FleetIdOrArnList] = js.undefined,
         Limit: js.UndefOr[PositiveInteger] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): DescribeFleetCapacityInput = {
@@ -1835,7 +2080,7 @@ package gamelift {
     */
   @js.native
   trait DescribeFleetEventsInput extends js.Object {
-    var FleetId: FleetId
+    var FleetId: FleetIdOrArn
     var EndTime: js.UndefOr[Timestamp]
     var Limit: js.UndefOr[PositiveInteger]
     var NextToken: js.UndefOr[NonZeroAndMaxString]
@@ -1845,7 +2090,7 @@ package gamelift {
   object DescribeFleetEventsInput {
     @inline
     def apply(
-        FleetId: FleetId,
+        FleetId: FleetIdOrArn,
         EndTime: js.UndefOr[Timestamp] = js.undefined,
         Limit: js.UndefOr[PositiveInteger] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
@@ -1890,13 +2135,13 @@ package gamelift {
     */
   @js.native
   trait DescribeFleetPortSettingsInput extends js.Object {
-    var FleetId: FleetId
+    var FleetId: FleetIdOrArn
   }
 
   object DescribeFleetPortSettingsInput {
     @inline
     def apply(
-        FleetId: FleetId
+        FleetId: FleetIdOrArn
     ): DescribeFleetPortSettingsInput = {
       val __obj = js.Dynamic.literal(
         "FleetId" -> FleetId.asInstanceOf[js.Any]
@@ -1930,7 +2175,7 @@ package gamelift {
     */
   @js.native
   trait DescribeFleetUtilizationInput extends js.Object {
-    var FleetIds: js.UndefOr[FleetIdList]
+    var FleetIds: js.UndefOr[FleetIdOrArnList]
     var Limit: js.UndefOr[PositiveInteger]
     var NextToken: js.UndefOr[NonZeroAndMaxString]
   }
@@ -1938,7 +2183,7 @@ package gamelift {
   object DescribeFleetUtilizationInput {
     @inline
     def apply(
-        FleetIds: js.UndefOr[FleetIdList] = js.undefined,
+        FleetIds: js.UndefOr[FleetIdOrArnList] = js.undefined,
         Limit: js.UndefOr[PositiveInteger] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): DescribeFleetUtilizationInput = {
@@ -1972,13 +2217,84 @@ package gamelift {
     }
   }
 
+  @js.native
+  trait DescribeGameServerGroupInput extends js.Object {
+    var GameServerGroupName: GameServerGroupNameOrArn
+  }
+
+  object DescribeGameServerGroupInput {
+    @inline
+    def apply(
+        GameServerGroupName: GameServerGroupNameOrArn
+    ): DescribeGameServerGroupInput = {
+      val __obj = js.Dynamic.literal(
+        "GameServerGroupName" -> GameServerGroupName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeGameServerGroupInput]
+    }
+  }
+
+  @js.native
+  trait DescribeGameServerGroupOutput extends js.Object {
+    var GameServerGroup: js.UndefOr[GameServerGroup]
+  }
+
+  object DescribeGameServerGroupOutput {
+    @inline
+    def apply(
+        GameServerGroup: js.UndefOr[GameServerGroup] = js.undefined
+    ): DescribeGameServerGroupOutput = {
+      val __obj = js.Dynamic.literal()
+      GameServerGroup.foreach(__v => __obj.updateDynamic("GameServerGroup")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeGameServerGroupOutput]
+    }
+  }
+
+  @js.native
+  trait DescribeGameServerInput extends js.Object {
+    var GameServerGroupName: GameServerGroupNameOrArn
+    var GameServerId: GameServerId
+  }
+
+  object DescribeGameServerInput {
+    @inline
+    def apply(
+        GameServerGroupName: GameServerGroupNameOrArn,
+        GameServerId: GameServerId
+    ): DescribeGameServerInput = {
+      val __obj = js.Dynamic.literal(
+        "GameServerGroupName" -> GameServerGroupName.asInstanceOf[js.Any],
+        "GameServerId"        -> GameServerId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeGameServerInput]
+    }
+  }
+
+  @js.native
+  trait DescribeGameServerOutput extends js.Object {
+    var GameServer: js.UndefOr[GameServer]
+  }
+
+  object DescribeGameServerOutput {
+    @inline
+    def apply(
+        GameServer: js.UndefOr[GameServer] = js.undefined
+    ): DescribeGameServerOutput = {
+      val __obj = js.Dynamic.literal()
+      GameServer.foreach(__v => __obj.updateDynamic("GameServer")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeGameServerOutput]
+    }
+  }
+
   /**
     * Represents the input for a request action.
     */
   @js.native
   trait DescribeGameSessionDetailsInput extends js.Object {
-    var AliasId: js.UndefOr[AliasId]
-    var FleetId: js.UndefOr[FleetId]
+    var AliasId: js.UndefOr[AliasIdOrArn]
+    var FleetId: js.UndefOr[FleetIdOrArn]
     var GameSessionId: js.UndefOr[ArnStringModel]
     var Limit: js.UndefOr[PositiveInteger]
     var NextToken: js.UndefOr[NonZeroAndMaxString]
@@ -1988,8 +2304,8 @@ package gamelift {
   object DescribeGameSessionDetailsInput {
     @inline
     def apply(
-        AliasId: js.UndefOr[AliasId] = js.undefined,
-        FleetId: js.UndefOr[FleetId] = js.undefined,
+        AliasId: js.UndefOr[AliasIdOrArn] = js.undefined,
+        FleetId: js.UndefOr[FleetIdOrArn] = js.undefined,
         GameSessionId: js.UndefOr[ArnStringModel] = js.undefined,
         Limit: js.UndefOr[PositiveInteger] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
@@ -2074,7 +2390,7 @@ package gamelift {
   @js.native
   trait DescribeGameSessionQueuesInput extends js.Object {
     var Limit: js.UndefOr[PositiveInteger]
-    var Names: js.UndefOr[GameSessionQueueNameList]
+    var Names: js.UndefOr[GameSessionQueueNameOrArnList]
     var NextToken: js.UndefOr[NonZeroAndMaxString]
   }
 
@@ -2082,7 +2398,7 @@ package gamelift {
     @inline
     def apply(
         Limit: js.UndefOr[PositiveInteger] = js.undefined,
-        Names: js.UndefOr[GameSessionQueueNameList] = js.undefined,
+        Names: js.UndefOr[GameSessionQueueNameOrArnList] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): DescribeGameSessionQueuesInput = {
       val __obj = js.Dynamic.literal()
@@ -2120,8 +2436,8 @@ package gamelift {
     */
   @js.native
   trait DescribeGameSessionsInput extends js.Object {
-    var AliasId: js.UndefOr[AliasId]
-    var FleetId: js.UndefOr[FleetId]
+    var AliasId: js.UndefOr[AliasIdOrArn]
+    var FleetId: js.UndefOr[FleetIdOrArn]
     var GameSessionId: js.UndefOr[ArnStringModel]
     var Limit: js.UndefOr[PositiveInteger]
     var NextToken: js.UndefOr[NonZeroAndMaxString]
@@ -2131,8 +2447,8 @@ package gamelift {
   object DescribeGameSessionsInput {
     @inline
     def apply(
-        AliasId: js.UndefOr[AliasId] = js.undefined,
-        FleetId: js.UndefOr[FleetId] = js.undefined,
+        AliasId: js.UndefOr[AliasIdOrArn] = js.undefined,
+        FleetId: js.UndefOr[FleetIdOrArn] = js.undefined,
         GameSessionId: js.UndefOr[ArnStringModel] = js.undefined,
         Limit: js.UndefOr[PositiveInteger] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
@@ -2176,7 +2492,7 @@ package gamelift {
     */
   @js.native
   trait DescribeInstancesInput extends js.Object {
-    var FleetId: FleetId
+    var FleetId: FleetIdOrArn
     var InstanceId: js.UndefOr[InstanceId]
     var Limit: js.UndefOr[PositiveInteger]
     var NextToken: js.UndefOr[NonZeroAndMaxString]
@@ -2185,7 +2501,7 @@ package gamelift {
   object DescribeInstancesInput {
     @inline
     def apply(
-        FleetId: FleetId,
+        FleetId: FleetIdOrArn,
         InstanceId: js.UndefOr[InstanceId] = js.undefined,
         Limit: js.UndefOr[PositiveInteger] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
@@ -2425,13 +2741,13 @@ package gamelift {
     */
   @js.native
   trait DescribeRuntimeConfigurationInput extends js.Object {
-    var FleetId: FleetId
+    var FleetId: FleetIdOrArn
   }
 
   object DescribeRuntimeConfigurationInput {
     @inline
     def apply(
-        FleetId: FleetId
+        FleetId: FleetIdOrArn
     ): DescribeRuntimeConfigurationInput = {
       val __obj = js.Dynamic.literal(
         "FleetId" -> FleetId.asInstanceOf[js.Any]
@@ -2465,7 +2781,7 @@ package gamelift {
     */
   @js.native
   trait DescribeScalingPoliciesInput extends js.Object {
-    var FleetId: FleetId
+    var FleetId: FleetIdOrArn
     var Limit: js.UndefOr[PositiveInteger]
     var NextToken: js.UndefOr[NonZeroAndMaxString]
     var StatusFilter: js.UndefOr[ScalingStatusType]
@@ -2474,7 +2790,7 @@ package gamelift {
   object DescribeScalingPoliciesInput {
     @inline
     def apply(
-        FleetId: FleetId,
+        FleetId: FleetIdOrArn,
         Limit: js.UndefOr[PositiveInteger] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         StatusFilter: js.UndefOr[ScalingStatusType] = js.undefined
@@ -2514,13 +2830,13 @@ package gamelift {
 
   @js.native
   trait DescribeScriptInput extends js.Object {
-    var ScriptId: ScriptId
+    var ScriptId: ScriptIdOrArn
   }
 
   object DescribeScriptInput {
     @inline
     def apply(
-        ScriptId: ScriptId
+        ScriptId: ScriptIdOrArn
     ): DescribeScriptInput = {
       val __obj = js.Dynamic.literal(
         "ScriptId" -> ScriptId.asInstanceOf[js.Any]
@@ -2642,10 +2958,7 @@ package gamelift {
     *  * <a>DeleteFleet</a>
     *  * <a>DescribeFleetAttributes</a>
     *  * <a>UpdateFleetAttributes</a>
-    *  * Manage fleet actions:
-    * <li> <a>StartFleetActions</a>
-    *  * <a>StopFleetActions</a>
-    * </li>
+    *  * <a>StartFleetActions</a> or <a>StopFleetActions</a>
     */
   @js.native
   trait EC2InstanceCounts extends js.Object {
@@ -2959,10 +3272,7 @@ package gamelift {
     *  * <a>DeleteFleet</a>
     *  * <a>DescribeFleetAttributes</a>
     *  * <a>UpdateFleetAttributes</a>
-    *  * Manage fleet actions:
-    * <li> <a>StartFleetActions</a>
-    *  * <a>StopFleetActions</a>
-    * </li>
+    *  * <a>StartFleetActions</a> or <a>StopFleetActions</a>
     */
   @js.native
   trait FleetAttributes extends js.Object {
@@ -2971,7 +3281,7 @@ package gamelift {
     var CertificateConfiguration: js.UndefOr[CertificateConfiguration]
     var CreationTime: js.UndefOr[Timestamp]
     var Description: js.UndefOr[NonZeroAndMaxString]
-    var FleetArn: js.UndefOr[ArnStringModel]
+    var FleetArn: js.UndefOr[FleetArn]
     var FleetId: js.UndefOr[FleetId]
     var FleetType: js.UndefOr[FleetType]
     var InstanceRoleArn: js.UndefOr[NonEmptyString]
@@ -2999,7 +3309,7 @@ package gamelift {
         CertificateConfiguration: js.UndefOr[CertificateConfiguration] = js.undefined,
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-        FleetArn: js.UndefOr[ArnStringModel] = js.undefined,
+        FleetArn: js.UndefOr[FleetArn] = js.undefined,
         FleetId: js.UndefOr[FleetId] = js.undefined,
         FleetType: js.UndefOr[FleetType] = js.undefined,
         InstanceRoleArn: js.UndefOr[NonEmptyString] = js.undefined,
@@ -3057,10 +3367,7 @@ package gamelift {
     *  * <a>DeleteFleet</a>
     *  * <a>DescribeFleetAttributes</a>
     *  * <a>UpdateFleetAttributes</a>
-    *  * Manage fleet actions:
-    * <li> <a>StartFleetActions</a>
-    *  * <a>StopFleetActions</a>
-    * </li>
+    *  * <a>StartFleetActions</a> or <a>StopFleetActions</a>
     */
   @js.native
   trait FleetCapacity extends js.Object {
@@ -3118,10 +3425,7 @@ package gamelift {
     *  * <a>DeleteFleet</a>
     *  * <a>DescribeFleetAttributes</a>
     *  * <a>UpdateFleetAttributes</a>
-    *  * Manage fleet actions:
-    * <li> <a>StartFleetActions</a>
-    *  * <a>StopFleetActions</a>
-    * </li>
+    *  * <a>StartFleetActions</a> or <a>StopFleetActions</a>
     */
   @js.native
   trait FleetUtilization extends js.Object {
@@ -3180,6 +3484,297 @@ package gamelift {
   }
 
   /**
+    * ```This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.```
+    *  Properties describing a game server resource.
+    *  A game server resource is created by a successful call to <a>RegisterGameServer</a> and deleted by calling <a>DeregisterGameServer</a>.
+    */
+  @js.native
+  trait GameServer extends js.Object {
+    var ClaimStatus: js.UndefOr[GameServerClaimStatus]
+    var ConnectionInfo: js.UndefOr[GameServerConnectionInfo]
+    var CustomSortKey: js.UndefOr[GameServerSortKey]
+    var GameServerData: js.UndefOr[GameServerData]
+    var GameServerGroupArn: js.UndefOr[GameServerGroupArn]
+    var GameServerGroupName: js.UndefOr[GameServerGroupName]
+    var GameServerId: js.UndefOr[GameServerId]
+    var InstanceId: js.UndefOr[GameServerInstanceId]
+    var LastClaimTime: js.UndefOr[Timestamp]
+    var LastHealthCheckTime: js.UndefOr[Timestamp]
+    var RegistrationTime: js.UndefOr[Timestamp]
+    var UtilizationStatus: js.UndefOr[GameServerUtilizationStatus]
+  }
+
+  object GameServer {
+    @inline
+    def apply(
+        ClaimStatus: js.UndefOr[GameServerClaimStatus] = js.undefined,
+        ConnectionInfo: js.UndefOr[GameServerConnectionInfo] = js.undefined,
+        CustomSortKey: js.UndefOr[GameServerSortKey] = js.undefined,
+        GameServerData: js.UndefOr[GameServerData] = js.undefined,
+        GameServerGroupArn: js.UndefOr[GameServerGroupArn] = js.undefined,
+        GameServerGroupName: js.UndefOr[GameServerGroupName] = js.undefined,
+        GameServerId: js.UndefOr[GameServerId] = js.undefined,
+        InstanceId: js.UndefOr[GameServerInstanceId] = js.undefined,
+        LastClaimTime: js.UndefOr[Timestamp] = js.undefined,
+        LastHealthCheckTime: js.UndefOr[Timestamp] = js.undefined,
+        RegistrationTime: js.UndefOr[Timestamp] = js.undefined,
+        UtilizationStatus: js.UndefOr[GameServerUtilizationStatus] = js.undefined
+    ): GameServer = {
+      val __obj = js.Dynamic.literal()
+      ClaimStatus.foreach(__v => __obj.updateDynamic("ClaimStatus")(__v.asInstanceOf[js.Any]))
+      ConnectionInfo.foreach(__v => __obj.updateDynamic("ConnectionInfo")(__v.asInstanceOf[js.Any]))
+      CustomSortKey.foreach(__v => __obj.updateDynamic("CustomSortKey")(__v.asInstanceOf[js.Any]))
+      GameServerData.foreach(__v => __obj.updateDynamic("GameServerData")(__v.asInstanceOf[js.Any]))
+      GameServerGroupArn.foreach(__v => __obj.updateDynamic("GameServerGroupArn")(__v.asInstanceOf[js.Any]))
+      GameServerGroupName.foreach(__v => __obj.updateDynamic("GameServerGroupName")(__v.asInstanceOf[js.Any]))
+      GameServerId.foreach(__v => __obj.updateDynamic("GameServerId")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      LastClaimTime.foreach(__v => __obj.updateDynamic("LastClaimTime")(__v.asInstanceOf[js.Any]))
+      LastHealthCheckTime.foreach(__v => __obj.updateDynamic("LastHealthCheckTime")(__v.asInstanceOf[js.Any]))
+      RegistrationTime.foreach(__v => __obj.updateDynamic("RegistrationTime")(__v.asInstanceOf[js.Any]))
+      UtilizationStatus.foreach(__v => __obj.updateDynamic("UtilizationStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GameServer]
+    }
+  }
+
+  @js.native
+  sealed trait GameServerClaimStatus extends js.Any
+  object GameServerClaimStatus extends js.Object {
+    val CLAIMED = "CLAIMED".asInstanceOf[GameServerClaimStatus]
+
+    val values = js.Object.freeze(js.Array(CLAIMED))
+  }
+
+  /**
+    * ```This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.```
+    *  Properties describing a game server group resource. A game server group manages certain properties of a corresponding EC2 Auto Scaling group.
+    *  A game server group is created by a successful call to <a>CreateGameServerGroup</a> and deleted by calling <a>DeleteGameServerGroup</a>. Game server group activity can be temporarily suspended and resumed by calling <a>SuspendGameServerGroup</a> and <a>ResumeGameServerGroup</a>.
+    */
+  @js.native
+  trait GameServerGroup extends js.Object {
+    var AutoScalingGroupArn: js.UndefOr[AutoScalingGroupArn]
+    var BalancingStrategy: js.UndefOr[BalancingStrategy]
+    var CreationTime: js.UndefOr[Timestamp]
+    var GameServerGroupArn: js.UndefOr[GameServerGroupArn]
+    var GameServerGroupName: js.UndefOr[GameServerGroupName]
+    var GameServerProtectionPolicy: js.UndefOr[GameServerProtectionPolicy]
+    var InstanceDefinitions: js.UndefOr[InstanceDefinitions]
+    var LastUpdatedTime: js.UndefOr[Timestamp]
+    var RoleArn: js.UndefOr[IamRoleArn]
+    var Status: js.UndefOr[GameServerGroupStatus]
+    var StatusReason: js.UndefOr[NonZeroAndMaxString]
+    var SuspendedActions: js.UndefOr[GameServerGroupActions]
+  }
+
+  object GameServerGroup {
+    @inline
+    def apply(
+        AutoScalingGroupArn: js.UndefOr[AutoScalingGroupArn] = js.undefined,
+        BalancingStrategy: js.UndefOr[BalancingStrategy] = js.undefined,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        GameServerGroupArn: js.UndefOr[GameServerGroupArn] = js.undefined,
+        GameServerGroupName: js.UndefOr[GameServerGroupName] = js.undefined,
+        GameServerProtectionPolicy: js.UndefOr[GameServerProtectionPolicy] = js.undefined,
+        InstanceDefinitions: js.UndefOr[InstanceDefinitions] = js.undefined,
+        LastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
+        RoleArn: js.UndefOr[IamRoleArn] = js.undefined,
+        Status: js.UndefOr[GameServerGroupStatus] = js.undefined,
+        StatusReason: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        SuspendedActions: js.UndefOr[GameServerGroupActions] = js.undefined
+    ): GameServerGroup = {
+      val __obj = js.Dynamic.literal()
+      AutoScalingGroupArn.foreach(__v => __obj.updateDynamic("AutoScalingGroupArn")(__v.asInstanceOf[js.Any]))
+      BalancingStrategy.foreach(__v => __obj.updateDynamic("BalancingStrategy")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      GameServerGroupArn.foreach(__v => __obj.updateDynamic("GameServerGroupArn")(__v.asInstanceOf[js.Any]))
+      GameServerGroupName.foreach(__v => __obj.updateDynamic("GameServerGroupName")(__v.asInstanceOf[js.Any]))
+      GameServerProtectionPolicy.foreach(__v =>
+        __obj.updateDynamic("GameServerProtectionPolicy")(__v.asInstanceOf[js.Any])
+      )
+      InstanceDefinitions.foreach(__v => __obj.updateDynamic("InstanceDefinitions")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
+      SuspendedActions.foreach(__v => __obj.updateDynamic("SuspendedActions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GameServerGroup]
+    }
+  }
+
+  @js.native
+  sealed trait GameServerGroupAction extends js.Any
+  object GameServerGroupAction extends js.Object {
+    val REPLACE_INSTANCE_TYPES = "REPLACE_INSTANCE_TYPES".asInstanceOf[GameServerGroupAction]
+
+    val values = js.Object.freeze(js.Array(REPLACE_INSTANCE_TYPES))
+  }
+
+  /**
+    * ```This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.```
+    *  Configuration settings for intelligent autoscaling that uses target tracking. An autoscaling policy can be specified when a new game server group is created with <a>CreateGameServerGroup</a>. If a group has an autoscaling policy, the Auto Scaling group takes action based on this policy, in addition to (and potentially in conflict with) any other autoscaling policies that are separately applied to the Auto Scaling group.
+    */
+  @js.native
+  trait GameServerGroupAutoScalingPolicy extends js.Object {
+    var TargetTrackingConfiguration: TargetTrackingConfiguration
+    var EstimatedInstanceWarmup: js.UndefOr[PositiveInteger]
+  }
+
+  object GameServerGroupAutoScalingPolicy {
+    @inline
+    def apply(
+        TargetTrackingConfiguration: TargetTrackingConfiguration,
+        EstimatedInstanceWarmup: js.UndefOr[PositiveInteger] = js.undefined
+    ): GameServerGroupAutoScalingPolicy = {
+      val __obj = js.Dynamic.literal(
+        "TargetTrackingConfiguration" -> TargetTrackingConfiguration.asInstanceOf[js.Any]
+      )
+
+      EstimatedInstanceWarmup.foreach(__v => __obj.updateDynamic("EstimatedInstanceWarmup")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GameServerGroupAutoScalingPolicy]
+    }
+  }
+
+  @js.native
+  sealed trait GameServerGroupDeleteOption extends js.Any
+  object GameServerGroupDeleteOption extends js.Object {
+    val SAFE_DELETE  = "SAFE_DELETE".asInstanceOf[GameServerGroupDeleteOption]
+    val FORCE_DELETE = "FORCE_DELETE".asInstanceOf[GameServerGroupDeleteOption]
+    val RETAIN       = "RETAIN".asInstanceOf[GameServerGroupDeleteOption]
+
+    val values = js.Object.freeze(js.Array(SAFE_DELETE, FORCE_DELETE, RETAIN))
+  }
+
+  @js.native
+  sealed trait GameServerGroupInstanceType extends js.Any
+  object GameServerGroupInstanceType extends js.Object {
+    val `c4.large`    = "c4.large".asInstanceOf[GameServerGroupInstanceType]
+    val `c4.xlarge`   = "c4.xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `c4.2xlarge`  = "c4.2xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `c4.4xlarge`  = "c4.4xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `c4.8xlarge`  = "c4.8xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `c5.large`    = "c5.large".asInstanceOf[GameServerGroupInstanceType]
+    val `c5.xlarge`   = "c5.xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `c5.2xlarge`  = "c5.2xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `c5.4xlarge`  = "c5.4xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `c5.9xlarge`  = "c5.9xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `c5.12xlarge` = "c5.12xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `c5.18xlarge` = "c5.18xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `c5.24xlarge` = "c5.24xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `r4.large`    = "r4.large".asInstanceOf[GameServerGroupInstanceType]
+    val `r4.xlarge`   = "r4.xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `r4.2xlarge`  = "r4.2xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `r4.4xlarge`  = "r4.4xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `r4.8xlarge`  = "r4.8xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `r4.16xlarge` = "r4.16xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `r5.large`    = "r5.large".asInstanceOf[GameServerGroupInstanceType]
+    val `r5.xlarge`   = "r5.xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `r5.2xlarge`  = "r5.2xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `r5.4xlarge`  = "r5.4xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `r5.8xlarge`  = "r5.8xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `r5.12xlarge` = "r5.12xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `r5.16xlarge` = "r5.16xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `r5.24xlarge` = "r5.24xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `m4.large`    = "m4.large".asInstanceOf[GameServerGroupInstanceType]
+    val `m4.xlarge`   = "m4.xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `m4.2xlarge`  = "m4.2xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `m4.4xlarge`  = "m4.4xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `m4.10xlarge` = "m4.10xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `m5.large`    = "m5.large".asInstanceOf[GameServerGroupInstanceType]
+    val `m5.xlarge`   = "m5.xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `m5.2xlarge`  = "m5.2xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `m5.4xlarge`  = "m5.4xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `m5.8xlarge`  = "m5.8xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `m5.12xlarge` = "m5.12xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `m5.16xlarge` = "m5.16xlarge".asInstanceOf[GameServerGroupInstanceType]
+    val `m5.24xlarge` = "m5.24xlarge".asInstanceOf[GameServerGroupInstanceType]
+
+    val values = js.Object.freeze(
+      js.Array(
+        `c4.large`,
+        `c4.xlarge`,
+        `c4.2xlarge`,
+        `c4.4xlarge`,
+        `c4.8xlarge`,
+        `c5.large`,
+        `c5.xlarge`,
+        `c5.2xlarge`,
+        `c5.4xlarge`,
+        `c5.9xlarge`,
+        `c5.12xlarge`,
+        `c5.18xlarge`,
+        `c5.24xlarge`,
+        `r4.large`,
+        `r4.xlarge`,
+        `r4.2xlarge`,
+        `r4.4xlarge`,
+        `r4.8xlarge`,
+        `r4.16xlarge`,
+        `r5.large`,
+        `r5.xlarge`,
+        `r5.2xlarge`,
+        `r5.4xlarge`,
+        `r5.8xlarge`,
+        `r5.12xlarge`,
+        `r5.16xlarge`,
+        `r5.24xlarge`,
+        `m4.large`,
+        `m4.xlarge`,
+        `m4.2xlarge`,
+        `m4.4xlarge`,
+        `m4.10xlarge`,
+        `m5.large`,
+        `m5.xlarge`,
+        `m5.2xlarge`,
+        `m5.4xlarge`,
+        `m5.8xlarge`,
+        `m5.12xlarge`,
+        `m5.16xlarge`,
+        `m5.24xlarge`
+      )
+    )
+  }
+
+  @js.native
+  sealed trait GameServerGroupStatus extends js.Any
+  object GameServerGroupStatus extends js.Object {
+    val NEW              = "NEW".asInstanceOf[GameServerGroupStatus]
+    val ACTIVATING       = "ACTIVATING".asInstanceOf[GameServerGroupStatus]
+    val ACTIVE           = "ACTIVE".asInstanceOf[GameServerGroupStatus]
+    val DELETE_SCHEDULED = "DELETE_SCHEDULED".asInstanceOf[GameServerGroupStatus]
+    val DELETING         = "DELETING".asInstanceOf[GameServerGroupStatus]
+    val DELETED          = "DELETED".asInstanceOf[GameServerGroupStatus]
+    val ERROR            = "ERROR".asInstanceOf[GameServerGroupStatus]
+
+    val values = js.Object.freeze(js.Array(NEW, ACTIVATING, ACTIVE, DELETE_SCHEDULED, DELETING, DELETED, ERROR))
+  }
+
+  @js.native
+  sealed trait GameServerHealthCheck extends js.Any
+  object GameServerHealthCheck extends js.Object {
+    val HEALTHY = "HEALTHY".asInstanceOf[GameServerHealthCheck]
+
+    val values = js.Object.freeze(js.Array(HEALTHY))
+  }
+
+  @js.native
+  sealed trait GameServerProtectionPolicy extends js.Any
+  object GameServerProtectionPolicy extends js.Object {
+    val NO_PROTECTION   = "NO_PROTECTION".asInstanceOf[GameServerProtectionPolicy]
+    val FULL_PROTECTION = "FULL_PROTECTION".asInstanceOf[GameServerProtectionPolicy]
+
+    val values = js.Object.freeze(js.Array(NO_PROTECTION, FULL_PROTECTION))
+  }
+
+  @js.native
+  sealed trait GameServerUtilizationStatus extends js.Any
+  object GameServerUtilizationStatus extends js.Object {
+    val AVAILABLE = "AVAILABLE".asInstanceOf[GameServerUtilizationStatus]
+    val UTILIZED  = "UTILIZED".asInstanceOf[GameServerUtilizationStatus]
+
+    val values = js.Object.freeze(js.Array(AVAILABLE, UTILIZED))
+  }
+
+  /**
     * Properties describing a game session.
     *  A game session in ACTIVE status can host players. When a game session ends, its status is set to <code>TERMINATED</code>.
     *  Once the session ends, the game session object is retained for 30 days. This means you can reuse idempotency token values after this time. Game session logs are retained for 14 days.
@@ -3201,7 +3796,7 @@ package gamelift {
     var CreatorId: js.UndefOr[NonZeroAndMaxString]
     var CurrentPlayerSessionCount: js.UndefOr[WholeNumber]
     var DnsName: js.UndefOr[DnsName]
-    var FleetArn: js.UndefOr[ArnStringModel]
+    var FleetArn: js.UndefOr[FleetArn]
     var FleetId: js.UndefOr[FleetId]
     var GameProperties: js.UndefOr[GamePropertyList]
     var GameSessionData: js.UndefOr[GameSessionData]
@@ -3224,7 +3819,7 @@ package gamelift {
         CreatorId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         CurrentPlayerSessionCount: js.UndefOr[WholeNumber] = js.undefined,
         DnsName: js.UndefOr[DnsName] = js.undefined,
-        FleetArn: js.UndefOr[ArnStringModel] = js.undefined,
+        FleetArn: js.UndefOr[FleetArn] = js.undefined,
         FleetId: js.UndefOr[FleetId] = js.undefined,
         GameProperties: js.UndefOr[GamePropertyList] = js.undefined,
         GameSessionData: js.UndefOr[GameSessionData] = js.undefined,
@@ -3422,7 +4017,7 @@ package gamelift {
   @js.native
   trait GameSessionQueue extends js.Object {
     var Destinations: js.UndefOr[GameSessionQueueDestinationList]
-    var GameSessionQueueArn: js.UndefOr[ArnStringModel]
+    var GameSessionQueueArn: js.UndefOr[GameSessionQueueArn]
     var Name: js.UndefOr[GameSessionQueueName]
     var PlayerLatencyPolicies: js.UndefOr[PlayerLatencyPolicyList]
     var TimeoutInSeconds: js.UndefOr[WholeNumber]
@@ -3432,7 +4027,7 @@ package gamelift {
     @inline
     def apply(
         Destinations: js.UndefOr[GameSessionQueueDestinationList] = js.undefined,
-        GameSessionQueueArn: js.UndefOr[ArnStringModel] = js.undefined,
+        GameSessionQueueArn: js.UndefOr[GameSessionQueueArn] = js.undefined,
         Name: js.UndefOr[GameSessionQueueName] = js.undefined,
         PlayerLatencyPolicies: js.UndefOr[PlayerLatencyPolicyList] = js.undefined,
         TimeoutInSeconds: js.UndefOr[WholeNumber] = js.undefined
@@ -3535,14 +4130,14 @@ package gamelift {
     */
   @js.native
   trait GetInstanceAccessInput extends js.Object {
-    var FleetId: FleetId
+    var FleetId: FleetIdOrArn
     var InstanceId: InstanceId
   }
 
   object GetInstanceAccessInput {
     @inline
     def apply(
-        FleetId: FleetId,
+        FleetId: FleetIdOrArn,
         InstanceId: InstanceId
     ): GetInstanceAccessInput = {
       val __obj = js.Dynamic.literal(
@@ -3666,6 +4261,31 @@ package gamelift {
     }
   }
 
+  /**
+    * ```This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.```
+    *  An allowed instance type for your game server group. GameLift FleetIQ periodically evaluates each defined instance type for viability. It then updates the Auto Scaling group with the list of viable instance types.
+    */
+  @js.native
+  trait InstanceDefinition extends js.Object {
+    var InstanceType: GameServerGroupInstanceType
+    var WeightedCapacity: js.UndefOr[WeightedCapacity]
+  }
+
+  object InstanceDefinition {
+    @inline
+    def apply(
+        InstanceType: GameServerGroupInstanceType,
+        WeightedCapacity: js.UndefOr[WeightedCapacity] = js.undefined
+    ): InstanceDefinition = {
+      val __obj = js.Dynamic.literal(
+        "InstanceType" -> InstanceType.asInstanceOf[js.Any]
+      )
+
+      WeightedCapacity.foreach(__v => __obj.updateDynamic("WeightedCapacity")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InstanceDefinition]
+    }
+  }
+
   @js.native
   sealed trait InstanceStatus extends js.Any
   object InstanceStatus extends js.Object {
@@ -3713,6 +4333,32 @@ package gamelift {
     val UDP = "UDP".asInstanceOf[IpProtocol]
 
     val values = js.Object.freeze(js.Array(TCP, UDP))
+  }
+
+  /**
+    * ```This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.```
+    *  An EC2 launch template that contains configuration settings and game server code to be deployed to all instances in a game server group.
+    */
+  @js.native
+  trait LaunchTemplateSpecification extends js.Object {
+    var LaunchTemplateId: js.UndefOr[LaunchTemplateId]
+    var LaunchTemplateName: js.UndefOr[LaunchTemplateName]
+    var Version: js.UndefOr[LaunchTemplateVersion]
+  }
+
+  object LaunchTemplateSpecification {
+    @inline
+    def apply(
+        LaunchTemplateId: js.UndefOr[LaunchTemplateId] = js.undefined,
+        LaunchTemplateName: js.UndefOr[LaunchTemplateName] = js.undefined,
+        Version: js.UndefOr[LaunchTemplateVersion] = js.undefined
+    ): LaunchTemplateSpecification = {
+      val __obj = js.Dynamic.literal()
+      LaunchTemplateId.foreach(__v => __obj.updateDynamic("LaunchTemplateId")(__v.asInstanceOf[js.Any]))
+      LaunchTemplateName.foreach(__v => __obj.updateDynamic("LaunchTemplateName")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LaunchTemplateSpecification]
+    }
   }
 
   /**
@@ -3817,19 +4463,19 @@ package gamelift {
     */
   @js.native
   trait ListFleetsInput extends js.Object {
-    var BuildId: js.UndefOr[BuildId]
+    var BuildId: js.UndefOr[BuildIdOrArn]
     var Limit: js.UndefOr[PositiveInteger]
     var NextToken: js.UndefOr[NonZeroAndMaxString]
-    var ScriptId: js.UndefOr[ScriptId]
+    var ScriptId: js.UndefOr[ScriptIdOrArn]
   }
 
   object ListFleetsInput {
     @inline
     def apply(
-        BuildId: js.UndefOr[BuildId] = js.undefined,
+        BuildId: js.UndefOr[BuildIdOrArn] = js.undefined,
         Limit: js.UndefOr[PositiveInteger] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-        ScriptId: js.UndefOr[ScriptId] = js.undefined
+        ScriptId: js.UndefOr[ScriptIdOrArn] = js.undefined
     ): ListFleetsInput = {
       val __obj = js.Dynamic.literal()
       BuildId.foreach(__v => __obj.updateDynamic("BuildId")(__v.asInstanceOf[js.Any]))
@@ -3859,6 +4505,90 @@ package gamelift {
       FleetIds.foreach(__v => __obj.updateDynamic("FleetIds")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFleetsOutput]
+    }
+  }
+
+  @js.native
+  trait ListGameServerGroupsInput extends js.Object {
+    var Limit: js.UndefOr[PositiveInteger]
+    var NextToken: js.UndefOr[NonZeroAndMaxString]
+  }
+
+  object ListGameServerGroupsInput {
+    @inline
+    def apply(
+        Limit: js.UndefOr[PositiveInteger] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): ListGameServerGroupsInput = {
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListGameServerGroupsInput]
+    }
+  }
+
+  @js.native
+  trait ListGameServerGroupsOutput extends js.Object {
+    var GameServerGroups: js.UndefOr[GameServerGroups]
+    var NextToken: js.UndefOr[NonZeroAndMaxString]
+  }
+
+  object ListGameServerGroupsOutput {
+    @inline
+    def apply(
+        GameServerGroups: js.UndefOr[GameServerGroups] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): ListGameServerGroupsOutput = {
+      val __obj = js.Dynamic.literal()
+      GameServerGroups.foreach(__v => __obj.updateDynamic("GameServerGroups")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListGameServerGroupsOutput]
+    }
+  }
+
+  @js.native
+  trait ListGameServersInput extends js.Object {
+    var GameServerGroupName: GameServerGroupNameOrArn
+    var Limit: js.UndefOr[PositiveInteger]
+    var NextToken: js.UndefOr[NonZeroAndMaxString]
+    var SortOrder: js.UndefOr[SortOrder]
+  }
+
+  object ListGameServersInput {
+    @inline
+    def apply(
+        GameServerGroupName: GameServerGroupNameOrArn,
+        Limit: js.UndefOr[PositiveInteger] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        SortOrder: js.UndefOr[SortOrder] = js.undefined
+    ): ListGameServersInput = {
+      val __obj = js.Dynamic.literal(
+        "GameServerGroupName" -> GameServerGroupName.asInstanceOf[js.Any]
+      )
+
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListGameServersInput]
+    }
+  }
+
+  @js.native
+  trait ListGameServersOutput extends js.Object {
+    var GameServers: js.UndefOr[GameServers]
+    var NextToken: js.UndefOr[NonZeroAndMaxString]
+  }
+
+  object ListGameServersOutput {
+    @inline
+    def apply(
+        GameServers: js.UndefOr[GameServers] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): ListGameServersOutput = {
+      val __obj = js.Dynamic.literal()
+      GameServers.foreach(__v => __obj.updateDynamic("GameServers")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListGameServersOutput]
     }
   }
 
@@ -4293,7 +5023,7 @@ package gamelift {
   trait PlayerSession extends js.Object {
     var CreationTime: js.UndefOr[Timestamp]
     var DnsName: js.UndefOr[DnsName]
-    var FleetArn: js.UndefOr[ArnStringModel]
+    var FleetArn: js.UndefOr[FleetArn]
     var FleetId: js.UndefOr[FleetId]
     var GameSessionId: js.UndefOr[NonZeroAndMaxString]
     var IpAddress: js.UndefOr[IpAddress]
@@ -4310,7 +5040,7 @@ package gamelift {
     def apply(
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         DnsName: js.UndefOr[DnsName] = js.undefined,
-        FleetArn: js.UndefOr[ArnStringModel] = js.undefined,
+        FleetArn: js.UndefOr[FleetArn] = js.undefined,
         FleetId: js.UndefOr[FleetId] = js.undefined,
         GameSessionId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         IpAddress: js.UndefOr[IpAddress] = js.undefined,
@@ -4381,7 +5111,7 @@ package gamelift {
     */
   @js.native
   trait PutScalingPolicyInput extends js.Object {
-    var FleetId: FleetId
+    var FleetId: FleetIdOrArn
     var MetricName: MetricName
     var Name: NonZeroAndMaxString
     var ComparisonOperator: js.UndefOr[ComparisonOperatorType]
@@ -4396,7 +5126,7 @@ package gamelift {
   object PutScalingPolicyInput {
     @inline
     def apply(
-        FleetId: FleetId,
+        FleetId: FleetIdOrArn,
         MetricName: MetricName,
         Name: NonZeroAndMaxString,
         ComparisonOperator: js.UndefOr[ComparisonOperatorType] = js.undefined,
@@ -4443,18 +5173,70 @@ package gamelift {
     }
   }
 
+  @js.native
+  trait RegisterGameServerInput extends js.Object {
+    var GameServerGroupName: GameServerGroupNameOrArn
+    var GameServerId: GameServerId
+    var InstanceId: GameServerInstanceId
+    var ConnectionInfo: js.UndefOr[GameServerConnectionInfo]
+    var CustomSortKey: js.UndefOr[GameServerSortKey]
+    var GameServerData: js.UndefOr[GameServerData]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object RegisterGameServerInput {
+    @inline
+    def apply(
+        GameServerGroupName: GameServerGroupNameOrArn,
+        GameServerId: GameServerId,
+        InstanceId: GameServerInstanceId,
+        ConnectionInfo: js.UndefOr[GameServerConnectionInfo] = js.undefined,
+        CustomSortKey: js.UndefOr[GameServerSortKey] = js.undefined,
+        GameServerData: js.UndefOr[GameServerData] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): RegisterGameServerInput = {
+      val __obj = js.Dynamic.literal(
+        "GameServerGroupName" -> GameServerGroupName.asInstanceOf[js.Any],
+        "GameServerId"        -> GameServerId.asInstanceOf[js.Any],
+        "InstanceId"          -> InstanceId.asInstanceOf[js.Any]
+      )
+
+      ConnectionInfo.foreach(__v => __obj.updateDynamic("ConnectionInfo")(__v.asInstanceOf[js.Any]))
+      CustomSortKey.foreach(__v => __obj.updateDynamic("CustomSortKey")(__v.asInstanceOf[js.Any]))
+      GameServerData.foreach(__v => __obj.updateDynamic("GameServerData")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisterGameServerInput]
+    }
+  }
+
+  @js.native
+  trait RegisterGameServerOutput extends js.Object {
+    var GameServer: js.UndefOr[GameServer]
+  }
+
+  object RegisterGameServerOutput {
+    @inline
+    def apply(
+        GameServer: js.UndefOr[GameServer] = js.undefined
+    ): RegisterGameServerOutput = {
+      val __obj = js.Dynamic.literal()
+      GameServer.foreach(__v => __obj.updateDynamic("GameServer")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisterGameServerOutput]
+    }
+  }
+
   /**
     * Represents the input for a request action.
     */
   @js.native
   trait RequestUploadCredentialsInput extends js.Object {
-    var BuildId: BuildId
+    var BuildId: BuildIdOrArn
   }
 
   object RequestUploadCredentialsInput {
     @inline
     def apply(
-        BuildId: BuildId
+        BuildId: BuildIdOrArn
     ): RequestUploadCredentialsInput = {
       val __obj = js.Dynamic.literal(
         "BuildId" -> BuildId.asInstanceOf[js.Any]
@@ -4491,13 +5273,13 @@ package gamelift {
     */
   @js.native
   trait ResolveAliasInput extends js.Object {
-    var AliasId: AliasId
+    var AliasId: AliasIdOrArn
   }
 
   object ResolveAliasInput {
     @inline
     def apply(
-        AliasId: AliasId
+        AliasId: AliasIdOrArn
     ): ResolveAliasInput = {
       val __obj = js.Dynamic.literal(
         "AliasId" -> AliasId.asInstanceOf[js.Any]
@@ -4512,14 +5294,14 @@ package gamelift {
     */
   @js.native
   trait ResolveAliasOutput extends js.Object {
-    var FleetArn: js.UndefOr[ArnStringModel]
+    var FleetArn: js.UndefOr[FleetArn]
     var FleetId: js.UndefOr[FleetId]
   }
 
   object ResolveAliasOutput {
     @inline
     def apply(
-        FleetArn: js.UndefOr[ArnStringModel] = js.undefined,
+        FleetArn: js.UndefOr[FleetArn] = js.undefined,
         FleetId: js.UndefOr[FleetId] = js.undefined
     ): ResolveAliasOutput = {
       val __obj = js.Dynamic.literal()
@@ -4551,6 +5333,43 @@ package gamelift {
       )
       PolicyPeriodInMinutes.foreach(__v => __obj.updateDynamic("PolicyPeriodInMinutes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceCreationLimitPolicy]
+    }
+  }
+
+  @js.native
+  trait ResumeGameServerGroupInput extends js.Object {
+    var GameServerGroupName: GameServerGroupNameOrArn
+    var ResumeActions: GameServerGroupActions
+  }
+
+  object ResumeGameServerGroupInput {
+    @inline
+    def apply(
+        GameServerGroupName: GameServerGroupNameOrArn,
+        ResumeActions: GameServerGroupActions
+    ): ResumeGameServerGroupInput = {
+      val __obj = js.Dynamic.literal(
+        "GameServerGroupName" -> GameServerGroupName.asInstanceOf[js.Any],
+        "ResumeActions"       -> ResumeActions.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ResumeGameServerGroupInput]
+    }
+  }
+
+  @js.native
+  trait ResumeGameServerGroupOutput extends js.Object {
+    var GameServerGroup: js.UndefOr[GameServerGroup]
+  }
+
+  object ResumeGameServerGroupOutput {
+    @inline
+    def apply(
+        GameServerGroup: js.UndefOr[GameServerGroup] = js.undefined
+    ): ResumeGameServerGroupOutput = {
+      val __obj = js.Dynamic.literal()
+      GameServerGroup.foreach(__v => __obj.updateDynamic("GameServerGroup")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResumeGameServerGroupOutput]
     }
   }
 
@@ -4603,10 +5422,7 @@ package gamelift {
     *  * <a>DeleteFleet</a>
     *  * <a>DescribeFleetAttributes</a>
     *  * <a>UpdateFleetAttributes</a>
-    *  * Manage fleet actions:
-    * <li> <a>StartFleetActions</a>
-    *  * <a>StopFleetActions</a>
-    * </li>
+    *  * <a>StartFleetActions</a> or <a>StopFleetActions</a>
     */
   @js.native
   trait RuntimeConfiguration extends js.Object {
@@ -4635,7 +5451,7 @@ package gamelift {
   }
 
   /**
-    * The location in Amazon S3 where build or script files are stored for access by Amazon GameLift. This location is specified in <a>CreateBuild</a>, <a>CreateScript</a>, and <a>UpdateScript</a> requests.
+    * The location in S3 where build or script files are stored for access by Amazon GameLift. This location is specified in <a>CreateBuild</a>, <a>CreateScript</a>, and <a>UpdateScript</a> requests.
     */
   @js.native
   trait S3Location extends js.Object {
@@ -4795,9 +5611,9 @@ package gamelift {
     */
   @js.native
   trait SearchGameSessionsInput extends js.Object {
-    var AliasId: js.UndefOr[AliasId]
+    var AliasId: js.UndefOr[AliasIdOrArn]
     var FilterExpression: js.UndefOr[NonZeroAndMaxString]
-    var FleetId: js.UndefOr[FleetId]
+    var FleetId: js.UndefOr[FleetIdOrArn]
     var Limit: js.UndefOr[PositiveInteger]
     var NextToken: js.UndefOr[NonZeroAndMaxString]
     var SortExpression: js.UndefOr[NonZeroAndMaxString]
@@ -4806,9 +5622,9 @@ package gamelift {
   object SearchGameSessionsInput {
     @inline
     def apply(
-        AliasId: js.UndefOr[AliasId] = js.undefined,
+        AliasId: js.UndefOr[AliasIdOrArn] = js.undefined,
         FilterExpression: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-        FleetId: js.UndefOr[FleetId] = js.undefined,
+        FleetId: js.UndefOr[FleetIdOrArn] = js.undefined,
         Limit: js.UndefOr[PositiveInteger] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         SortExpression: js.UndefOr[NonZeroAndMaxString] = js.undefined
@@ -4874,16 +5690,25 @@ package gamelift {
   }
 
   @js.native
+  sealed trait SortOrder extends js.Any
+  object SortOrder extends js.Object {
+    val ASCENDING  = "ASCENDING".asInstanceOf[SortOrder]
+    val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
+
+    val values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
+  }
+
+  @js.native
   trait StartFleetActionsInput extends js.Object {
     var Actions: FleetActionList
-    var FleetId: FleetId
+    var FleetId: FleetIdOrArn
   }
 
   object StartFleetActionsInput {
     @inline
     def apply(
         Actions: FleetActionList,
-        FleetId: FleetId
+        FleetId: FleetIdOrArn
     ): StartFleetActionsInput = {
       val __obj = js.Dynamic.literal(
         "Actions" -> Actions.asInstanceOf[js.Any],
@@ -4912,7 +5737,7 @@ package gamelift {
     */
   @js.native
   trait StartGameSessionPlacementInput extends js.Object {
-    var GameSessionQueueName: GameSessionQueueName
+    var GameSessionQueueName: GameSessionQueueNameOrArn
     var MaximumPlayerSessionCount: WholeNumber
     var PlacementId: IdStringModel
     var DesiredPlayerSessions: js.UndefOr[DesiredPlayerSessionList]
@@ -4925,7 +5750,7 @@ package gamelift {
   object StartGameSessionPlacementInput {
     @inline
     def apply(
-        GameSessionQueueName: GameSessionQueueName,
+        GameSessionQueueName: GameSessionQueueNameOrArn,
         MaximumPlayerSessionCount: WholeNumber,
         PlacementId: IdStringModel,
         DesiredPlayerSessions: js.UndefOr[DesiredPlayerSessionList] = js.undefined,
@@ -5066,14 +5891,14 @@ package gamelift {
   @js.native
   trait StopFleetActionsInput extends js.Object {
     var Actions: FleetActionList
-    var FleetId: FleetId
+    var FleetId: FleetIdOrArn
   }
 
   object StopFleetActionsInput {
     @inline
     def apply(
         Actions: FleetActionList,
-        FleetId: FleetId
+        FleetId: FleetIdOrArn
     ): StopFleetActionsInput = {
       val __obj = js.Dynamic.literal(
         "Actions" -> Actions.asInstanceOf[js.Any],
@@ -5168,6 +5993,43 @@ package gamelift {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopMatchmakingOutput]
+    }
+  }
+
+  @js.native
+  trait SuspendGameServerGroupInput extends js.Object {
+    var GameServerGroupName: GameServerGroupNameOrArn
+    var SuspendActions: GameServerGroupActions
+  }
+
+  object SuspendGameServerGroupInput {
+    @inline
+    def apply(
+        GameServerGroupName: GameServerGroupNameOrArn,
+        SuspendActions: GameServerGroupActions
+    ): SuspendGameServerGroupInput = {
+      val __obj = js.Dynamic.literal(
+        "GameServerGroupName" -> GameServerGroupName.asInstanceOf[js.Any],
+        "SuspendActions"      -> SuspendActions.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[SuspendGameServerGroupInput]
+    }
+  }
+
+  @js.native
+  trait SuspendGameServerGroupOutput extends js.Object {
+    var GameServerGroup: js.UndefOr[GameServerGroup]
+  }
+
+  object SuspendGameServerGroupOutput {
+    @inline
+    def apply(
+        GameServerGroup: js.UndefOr[GameServerGroup] = js.undefined
+    ): SuspendGameServerGroupOutput = {
+      val __obj = js.Dynamic.literal()
+      GameServerGroup.foreach(__v => __obj.updateDynamic("GameServerGroup")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SuspendGameServerGroupOutput]
     }
   }
 
@@ -5268,6 +6130,28 @@ package gamelift {
     }
   }
 
+  /**
+    * ```This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.```
+    *  Settings for a target-based scaling policy applied to Auto Scaling group. These settings are used to create a target-based policy that tracks the GameLift FleetIQ metric "PercentUtilizedGameServers" and specifies a target value for the metric. As player usage changes, the policy triggers to adjust the game server group capacity so that the metric returns to the target value.
+    */
+  @js.native
+  trait TargetTrackingConfiguration extends js.Object {
+    var TargetValue: NonNegativeDouble
+  }
+
+  object TargetTrackingConfiguration {
+    @inline
+    def apply(
+        TargetValue: NonNegativeDouble
+    ): TargetTrackingConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "TargetValue" -> TargetValue.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TargetTrackingConfiguration]
+    }
+  }
+
   @js.native
   trait UntagResourceRequest extends js.Object {
     var ResourceARN: AmazonResourceName
@@ -5307,7 +6191,7 @@ package gamelift {
     */
   @js.native
   trait UpdateAliasInput extends js.Object {
-    var AliasId: AliasId
+    var AliasId: AliasIdOrArn
     var Description: js.UndefOr[NonZeroAndMaxString]
     var Name: js.UndefOr[NonBlankAndLengthConstraintString]
     var RoutingStrategy: js.UndefOr[RoutingStrategy]
@@ -5316,7 +6200,7 @@ package gamelift {
   object UpdateAliasInput {
     @inline
     def apply(
-        AliasId: AliasId,
+        AliasId: AliasIdOrArn,
         Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         Name: js.UndefOr[NonBlankAndLengthConstraintString] = js.undefined,
         RoutingStrategy: js.UndefOr[RoutingStrategy] = js.undefined
@@ -5356,7 +6240,7 @@ package gamelift {
     */
   @js.native
   trait UpdateBuildInput extends js.Object {
-    var BuildId: BuildId
+    var BuildId: BuildIdOrArn
     var Name: js.UndefOr[NonZeroAndMaxString]
     var Version: js.UndefOr[NonZeroAndMaxString]
   }
@@ -5364,7 +6248,7 @@ package gamelift {
   object UpdateBuildInput {
     @inline
     def apply(
-        BuildId: BuildId,
+        BuildId: BuildIdOrArn,
         Name: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         Version: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): UpdateBuildInput = {
@@ -5402,7 +6286,7 @@ package gamelift {
     */
   @js.native
   trait UpdateFleetAttributesInput extends js.Object {
-    var FleetId: FleetId
+    var FleetId: FleetIdOrArn
     var Description: js.UndefOr[NonZeroAndMaxString]
     var MetricGroups: js.UndefOr[MetricGroupList]
     var Name: js.UndefOr[NonZeroAndMaxString]
@@ -5413,7 +6297,7 @@ package gamelift {
   object UpdateFleetAttributesInput {
     @inline
     def apply(
-        FleetId: FleetId,
+        FleetId: FleetIdOrArn,
         Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         MetricGroups: js.UndefOr[MetricGroupList] = js.undefined,
         Name: js.UndefOr[NonZeroAndMaxString] = js.undefined,
@@ -5461,7 +6345,7 @@ package gamelift {
     */
   @js.native
   trait UpdateFleetCapacityInput extends js.Object {
-    var FleetId: FleetId
+    var FleetId: FleetIdOrArn
     var DesiredInstances: js.UndefOr[WholeNumber]
     var MaxSize: js.UndefOr[WholeNumber]
     var MinSize: js.UndefOr[WholeNumber]
@@ -5470,7 +6354,7 @@ package gamelift {
   object UpdateFleetCapacityInput {
     @inline
     def apply(
-        FleetId: FleetId,
+        FleetId: FleetIdOrArn,
         DesiredInstances: js.UndefOr[WholeNumber] = js.undefined,
         MaxSize: js.UndefOr[WholeNumber] = js.undefined,
         MinSize: js.UndefOr[WholeNumber] = js.undefined
@@ -5510,7 +6394,7 @@ package gamelift {
     */
   @js.native
   trait UpdateFleetPortSettingsInput extends js.Object {
-    var FleetId: FleetId
+    var FleetId: FleetIdOrArn
     var InboundPermissionAuthorizations: js.UndefOr[IpPermissionsList]
     var InboundPermissionRevocations: js.UndefOr[IpPermissionsList]
   }
@@ -5518,7 +6402,7 @@ package gamelift {
   object UpdateFleetPortSettingsInput {
     @inline
     def apply(
-        FleetId: FleetId,
+        FleetId: FleetIdOrArn,
         InboundPermissionAuthorizations: js.UndefOr[IpPermissionsList] = js.undefined,
         InboundPermissionRevocations: js.UndefOr[IpPermissionsList] = js.undefined
     ): UpdateFleetPortSettingsInput = {
@@ -5552,6 +6436,103 @@ package gamelift {
       val __obj = js.Dynamic.literal()
       FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFleetPortSettingsOutput]
+    }
+  }
+
+  @js.native
+  trait UpdateGameServerGroupInput extends js.Object {
+    var GameServerGroupName: GameServerGroupNameOrArn
+    var BalancingStrategy: js.UndefOr[BalancingStrategy]
+    var GameServerProtectionPolicy: js.UndefOr[GameServerProtectionPolicy]
+    var InstanceDefinitions: js.UndefOr[InstanceDefinitions]
+    var RoleArn: js.UndefOr[IamRoleArn]
+  }
+
+  object UpdateGameServerGroupInput {
+    @inline
+    def apply(
+        GameServerGroupName: GameServerGroupNameOrArn,
+        BalancingStrategy: js.UndefOr[BalancingStrategy] = js.undefined,
+        GameServerProtectionPolicy: js.UndefOr[GameServerProtectionPolicy] = js.undefined,
+        InstanceDefinitions: js.UndefOr[InstanceDefinitions] = js.undefined,
+        RoleArn: js.UndefOr[IamRoleArn] = js.undefined
+    ): UpdateGameServerGroupInput = {
+      val __obj = js.Dynamic.literal(
+        "GameServerGroupName" -> GameServerGroupName.asInstanceOf[js.Any]
+      )
+
+      BalancingStrategy.foreach(__v => __obj.updateDynamic("BalancingStrategy")(__v.asInstanceOf[js.Any]))
+      GameServerProtectionPolicy.foreach(__v =>
+        __obj.updateDynamic("GameServerProtectionPolicy")(__v.asInstanceOf[js.Any])
+      )
+      InstanceDefinitions.foreach(__v => __obj.updateDynamic("InstanceDefinitions")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateGameServerGroupInput]
+    }
+  }
+
+  @js.native
+  trait UpdateGameServerGroupOutput extends js.Object {
+    var GameServerGroup: js.UndefOr[GameServerGroup]
+  }
+
+  object UpdateGameServerGroupOutput {
+    @inline
+    def apply(
+        GameServerGroup: js.UndefOr[GameServerGroup] = js.undefined
+    ): UpdateGameServerGroupOutput = {
+      val __obj = js.Dynamic.literal()
+      GameServerGroup.foreach(__v => __obj.updateDynamic("GameServerGroup")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateGameServerGroupOutput]
+    }
+  }
+
+  @js.native
+  trait UpdateGameServerInput extends js.Object {
+    var GameServerGroupName: GameServerGroupNameOrArn
+    var GameServerId: GameServerId
+    var CustomSortKey: js.UndefOr[GameServerSortKey]
+    var GameServerData: js.UndefOr[GameServerData]
+    var HealthCheck: js.UndefOr[GameServerHealthCheck]
+    var UtilizationStatus: js.UndefOr[GameServerUtilizationStatus]
+  }
+
+  object UpdateGameServerInput {
+    @inline
+    def apply(
+        GameServerGroupName: GameServerGroupNameOrArn,
+        GameServerId: GameServerId,
+        CustomSortKey: js.UndefOr[GameServerSortKey] = js.undefined,
+        GameServerData: js.UndefOr[GameServerData] = js.undefined,
+        HealthCheck: js.UndefOr[GameServerHealthCheck] = js.undefined,
+        UtilizationStatus: js.UndefOr[GameServerUtilizationStatus] = js.undefined
+    ): UpdateGameServerInput = {
+      val __obj = js.Dynamic.literal(
+        "GameServerGroupName" -> GameServerGroupName.asInstanceOf[js.Any],
+        "GameServerId"        -> GameServerId.asInstanceOf[js.Any]
+      )
+
+      CustomSortKey.foreach(__v => __obj.updateDynamic("CustomSortKey")(__v.asInstanceOf[js.Any]))
+      GameServerData.foreach(__v => __obj.updateDynamic("GameServerData")(__v.asInstanceOf[js.Any]))
+      HealthCheck.foreach(__v => __obj.updateDynamic("HealthCheck")(__v.asInstanceOf[js.Any]))
+      UtilizationStatus.foreach(__v => __obj.updateDynamic("UtilizationStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateGameServerInput]
+    }
+  }
+
+  @js.native
+  trait UpdateGameServerOutput extends js.Object {
+    var GameServer: js.UndefOr[GameServer]
+  }
+
+  object UpdateGameServerOutput {
+    @inline
+    def apply(
+        GameServer: js.UndefOr[GameServer] = js.undefined
+    ): UpdateGameServerOutput = {
+      val __obj = js.Dynamic.literal()
+      GameServer.foreach(__v => __obj.updateDynamic("GameServer")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateGameServerOutput]
     }
   }
 
@@ -5616,7 +6597,7 @@ package gamelift {
     */
   @js.native
   trait UpdateGameSessionQueueInput extends js.Object {
-    var Name: GameSessionQueueName
+    var Name: GameSessionQueueNameOrArn
     var Destinations: js.UndefOr[GameSessionQueueDestinationList]
     var PlayerLatencyPolicies: js.UndefOr[PlayerLatencyPolicyList]
     var TimeoutInSeconds: js.UndefOr[WholeNumber]
@@ -5625,7 +6606,7 @@ package gamelift {
   object UpdateGameSessionQueueInput {
     @inline
     def apply(
-        Name: GameSessionQueueName,
+        Name: GameSessionQueueNameOrArn,
         Destinations: js.UndefOr[GameSessionQueueDestinationList] = js.undefined,
         PlayerLatencyPolicies: js.UndefOr[PlayerLatencyPolicyList] = js.undefined,
         TimeoutInSeconds: js.UndefOr[WholeNumber] = js.undefined
@@ -5741,14 +6722,14 @@ package gamelift {
     */
   @js.native
   trait UpdateRuntimeConfigurationInput extends js.Object {
-    var FleetId: FleetId
+    var FleetId: FleetIdOrArn
     var RuntimeConfiguration: RuntimeConfiguration
   }
 
   object UpdateRuntimeConfigurationInput {
     @inline
     def apply(
-        FleetId: FleetId,
+        FleetId: FleetIdOrArn,
         RuntimeConfiguration: RuntimeConfiguration
     ): UpdateRuntimeConfigurationInput = {
       val __obj = js.Dynamic.literal(
@@ -5781,7 +6762,7 @@ package gamelift {
 
   @js.native
   trait UpdateScriptInput extends js.Object {
-    var ScriptId: ScriptId
+    var ScriptId: ScriptIdOrArn
     var Name: js.UndefOr[NonZeroAndMaxString]
     var StorageLocation: js.UndefOr[S3Location]
     var Version: js.UndefOr[NonZeroAndMaxString]
@@ -5791,7 +6772,7 @@ package gamelift {
   object UpdateScriptInput {
     @inline
     def apply(
-        ScriptId: ScriptId,
+        ScriptId: ScriptIdOrArn,
         Name: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         StorageLocation: js.UndefOr[S3Location] = js.undefined,
         Version: js.UndefOr[NonZeroAndMaxString] = js.undefined,
@@ -5913,7 +6894,7 @@ package gamelift {
     */
   @js.native
   trait VpcPeeringConnection extends js.Object {
-    var FleetArn: js.UndefOr[ArnStringModel]
+    var FleetArn: js.UndefOr[FleetArn]
     var FleetId: js.UndefOr[FleetId]
     var GameLiftVpcId: js.UndefOr[NonZeroAndMaxString]
     var IpV4CidrBlock: js.UndefOr[NonZeroAndMaxString]
@@ -5925,7 +6906,7 @@ package gamelift {
   object VpcPeeringConnection {
     @inline
     def apply(
-        FleetArn: js.UndefOr[ArnStringModel] = js.undefined,
+        FleetArn: js.UndefOr[FleetArn] = js.undefined,
         FleetId: js.UndefOr[FleetId] = js.undefined,
         GameLiftVpcId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         IpV4CidrBlock: js.UndefOr[NonZeroAndMaxString] = js.undefined,

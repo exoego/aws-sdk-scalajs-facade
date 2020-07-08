@@ -9,6 +9,7 @@ import facade.amazonaws._
 package object lightsail {
   type AddOnList                                            = js.Array[AddOn]
   type AddOnRequestList                                     = js.Array[AddOnRequest]
+  type AlarmsList                                           = js.Array[Alarm]
   type AttachedDiskList                                     = js.Array[AttachedDisk]
   type AttachedDiskMap                                      = js.Dictionary[DiskMapList]
   type AutoSnapshotDate                                     = String
@@ -19,6 +20,8 @@ package object lightsail {
   type BundleList                                           = js.Array[Bundle]
   type CloudFormationStackRecordList                        = js.Array[CloudFormationStackRecord]
   type CloudFormationStackRecordSourceInfoList              = js.Array[CloudFormationStackRecordSourceInfo]
+  type ContactMethodsList                                   = js.Array[ContactMethod]
+  type ContactProtocolsList                                 = js.Array[ContactProtocol]
   type DiskInfoList                                         = js.Array[DiskInfo]
   type DiskList                                             = js.Array[Disk]
   type DiskMapList                                          = js.Array[DiskMap]
@@ -54,6 +57,7 @@ package object lightsail {
   type MetricPeriod                                         = Int
   type MetricStatisticList                                  = js.Array[MetricStatistic]
   type NonEmptyString                                       = String
+  type NotificationTriggerList                              = js.Array[AlarmState]
   type OperationList                                        = js.Array[Operation]
   type PendingMaintenanceActionList                         = js.Array[PendingMaintenanceAction]
   type Port                                                 = Int
@@ -104,6 +108,8 @@ package object lightsail {
     @inline def createCloudFormationStackFuture(
         params: CreateCloudFormationStackRequest
     ): Future[CreateCloudFormationStackResult] = service.createCloudFormationStack(params).promise().toFuture
+    @inline def createContactMethodFuture(params: CreateContactMethodRequest): Future[CreateContactMethodResult] =
+      service.createContactMethod(params).promise().toFuture
     @inline def createDiskFromSnapshotFuture(
         params: CreateDiskFromSnapshotRequest
     ): Future[CreateDiskFromSnapshotResult] = service.createDiskFromSnapshot(params).promise().toFuture
@@ -142,8 +148,12 @@ package object lightsail {
         params: CreateRelationalDatabaseSnapshotRequest
     ): Future[CreateRelationalDatabaseSnapshotResult] =
       service.createRelationalDatabaseSnapshot(params).promise().toFuture
+    @inline def deleteAlarmFuture(params: DeleteAlarmRequest): Future[DeleteAlarmResult] =
+      service.deleteAlarm(params).promise().toFuture
     @inline def deleteAutoSnapshotFuture(params: DeleteAutoSnapshotRequest): Future[DeleteAutoSnapshotResult] =
       service.deleteAutoSnapshot(params).promise().toFuture
+    @inline def deleteContactMethodFuture(params: DeleteContactMethodRequest): Future[DeleteContactMethodResult] =
+      service.deleteContactMethod(params).promise().toFuture
     @inline def deleteDiskFuture(params: DeleteDiskRequest): Future[DeleteDiskResult] =
       service.deleteDisk(params).promise().toFuture
     @inline def deleteDiskSnapshotFuture(params: DeleteDiskSnapshotRequest): Future[DeleteDiskSnapshotResult] =
@@ -193,6 +203,8 @@ package object lightsail {
       service.exportSnapshot(params).promise().toFuture
     @inline def getActiveNamesFuture(params: GetActiveNamesRequest): Future[GetActiveNamesResult] =
       service.getActiveNames(params).promise().toFuture
+    @inline def getAlarmsFuture(params: GetAlarmsRequest): Future[GetAlarmsResult] =
+      service.getAlarms(params).promise().toFuture
     @inline def getAutoSnapshotsFuture(params: GetAutoSnapshotsRequest): Future[GetAutoSnapshotsResult] =
       service.getAutoSnapshots(params).promise().toFuture
     @inline def getBlueprintsFuture(params: GetBlueprintsRequest): Future[GetBlueprintsResult] =
@@ -202,6 +214,8 @@ package object lightsail {
     @inline def getCloudFormationStackRecordsFuture(
         params: GetCloudFormationStackRecordsRequest
     ): Future[GetCloudFormationStackRecordsResult] = service.getCloudFormationStackRecords(params).promise().toFuture
+    @inline def getContactMethodsFuture(params: GetContactMethodsRequest): Future[GetContactMethodsResult] =
+      service.getContactMethods(params).promise().toFuture
     @inline def getDiskFuture(params: GetDiskRequest): Future[GetDiskResult] =
       service.getDisk(params).promise().toFuture
     @inline def getDiskSnapshotFuture(params: GetDiskSnapshotRequest): Future[GetDiskSnapshotResult] =
@@ -310,6 +324,8 @@ package object lightsail {
     ): Future[OpenInstancePublicPortsResult] = service.openInstancePublicPorts(params).promise().toFuture
     @inline def peerVpcFuture(params: PeerVpcRequest): Future[PeerVpcResult] =
       service.peerVpc(params).promise().toFuture
+    @inline def putAlarmFuture(params: PutAlarmRequest): Future[PutAlarmResult] =
+      service.putAlarm(params).promise().toFuture
     @inline def putInstancePublicPortsFuture(
         params: PutInstancePublicPortsRequest
     ): Future[PutInstancePublicPortsResult] = service.putInstancePublicPorts(params).promise().toFuture
@@ -320,6 +336,9 @@ package object lightsail {
     ): Future[RebootRelationalDatabaseResult] = service.rebootRelationalDatabase(params).promise().toFuture
     @inline def releaseStaticIpFuture(params: ReleaseStaticIpRequest): Future[ReleaseStaticIpResult] =
       service.releaseStaticIp(params).promise().toFuture
+    @inline def sendContactMethodVerificationFuture(
+        params: SendContactMethodVerificationRequest
+    ): Future[SendContactMethodVerificationResult] = service.sendContactMethodVerification(params).promise().toFuture
     @inline def startInstanceFuture(params: StartInstanceRequest): Future[StartInstanceResult] =
       service.startInstance(params).promise().toFuture
     @inline def startRelationalDatabaseFuture(
@@ -332,6 +351,8 @@ package object lightsail {
     ): Future[StopRelationalDatabaseResult] = service.stopRelationalDatabase(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResult] =
       service.tagResource(params).promise().toFuture
+    @inline def testAlarmFuture(params: TestAlarmRequest): Future[TestAlarmResult] =
+      service.testAlarm(params).promise().toFuture
     @inline def unpeerVpcFuture(params: UnpeerVpcRequest): Future[UnpeerVpcResult] =
       service.unpeerVpc(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResult] =
@@ -371,6 +392,7 @@ package lightsail {
     def copySnapshot(params: CopySnapshotRequest): Request[CopySnapshotResult] = js.native
     def createCloudFormationStack(params: CreateCloudFormationStackRequest): Request[CreateCloudFormationStackResult] =
       js.native
+    def createContactMethod(params: CreateContactMethodRequest): Request[CreateContactMethodResult]          = js.native
     def createDisk(params: CreateDiskRequest): Request[CreateDiskResult]                                     = js.native
     def createDiskFromSnapshot(params: CreateDiskFromSnapshotRequest): Request[CreateDiskFromSnapshotResult] = js.native
     def createDiskSnapshot(params: CreateDiskSnapshotRequest): Request[CreateDiskSnapshotResult]             = js.native
@@ -394,7 +416,9 @@ package lightsail {
     def createRelationalDatabaseSnapshot(
         params: CreateRelationalDatabaseSnapshotRequest
     ): Request[CreateRelationalDatabaseSnapshotResult]                                                       = js.native
+    def deleteAlarm(params: DeleteAlarmRequest): Request[DeleteAlarmResult]                                  = js.native
     def deleteAutoSnapshot(params: DeleteAutoSnapshotRequest): Request[DeleteAutoSnapshotResult]             = js.native
+    def deleteContactMethod(params: DeleteContactMethodRequest): Request[DeleteContactMethodResult]          = js.native
     def deleteDisk(params: DeleteDiskRequest): Request[DeleteDiskResult]                                     = js.native
     def deleteDiskSnapshot(params: DeleteDiskSnapshotRequest): Request[DeleteDiskSnapshotResult]             = js.native
     def deleteDomain(params: DeleteDomainRequest): Request[DeleteDomainResult]                               = js.native
@@ -422,18 +446,20 @@ package lightsail {
     def enableAddOn(params: EnableAddOnRequest): Request[EnableAddOnResult]                                  = js.native
     def exportSnapshot(params: ExportSnapshotRequest): Request[ExportSnapshotResult]                         = js.native
     def getActiveNames(params: GetActiveNamesRequest): Request[GetActiveNamesResult]                         = js.native
+    def getAlarms(params: GetAlarmsRequest): Request[GetAlarmsResult]                                        = js.native
     def getAutoSnapshots(params: GetAutoSnapshotsRequest): Request[GetAutoSnapshotsResult]                   = js.native
     def getBlueprints(params: GetBlueprintsRequest): Request[GetBlueprintsResult]                            = js.native
     def getBundles(params: GetBundlesRequest): Request[GetBundlesResult]                                     = js.native
     def getCloudFormationStackRecords(
         params: GetCloudFormationStackRecordsRequest
-    ): Request[GetCloudFormationStackRecordsResult]                                        = js.native
-    def getDisk(params: GetDiskRequest): Request[GetDiskResult]                            = js.native
-    def getDiskSnapshot(params: GetDiskSnapshotRequest): Request[GetDiskSnapshotResult]    = js.native
-    def getDiskSnapshots(params: GetDiskSnapshotsRequest): Request[GetDiskSnapshotsResult] = js.native
-    def getDisks(params: GetDisksRequest): Request[GetDisksResult]                         = js.native
-    def getDomain(params: GetDomainRequest): Request[GetDomainResult]                      = js.native
-    def getDomains(params: GetDomainsRequest): Request[GetDomainsResult]                   = js.native
+    ): Request[GetCloudFormationStackRecordsResult]                                           = js.native
+    def getContactMethods(params: GetContactMethodsRequest): Request[GetContactMethodsResult] = js.native
+    def getDisk(params: GetDiskRequest): Request[GetDiskResult]                               = js.native
+    def getDiskSnapshot(params: GetDiskSnapshotRequest): Request[GetDiskSnapshotResult]       = js.native
+    def getDiskSnapshots(params: GetDiskSnapshotsRequest): Request[GetDiskSnapshotsResult]    = js.native
+    def getDisks(params: GetDisksRequest): Request[GetDisksResult]                            = js.native
+    def getDomain(params: GetDomainRequest): Request[GetDomainResult]                         = js.native
+    def getDomains(params: GetDomainsRequest): Request[GetDomainsResult]                      = js.native
     def getExportSnapshotRecords(params: GetExportSnapshotRecordsRequest): Request[GetExportSnapshotRecordsResult] =
       js.native
     def getInstance(params: GetInstanceRequest): Request[GetInstanceResult] = js.native
@@ -498,17 +524,22 @@ package lightsail {
     def openInstancePublicPorts(params: OpenInstancePublicPortsRequest): Request[OpenInstancePublicPortsResult] =
       js.native
     def peerVpc(params: PeerVpcRequest): Request[PeerVpcResult]                                              = js.native
+    def putAlarm(params: PutAlarmRequest): Request[PutAlarmResult]                                           = js.native
     def putInstancePublicPorts(params: PutInstancePublicPortsRequest): Request[PutInstancePublicPortsResult] = js.native
     def rebootInstance(params: RebootInstanceRequest): Request[RebootInstanceResult]                         = js.native
     def rebootRelationalDatabase(params: RebootRelationalDatabaseRequest): Request[RebootRelationalDatabaseResult] =
       js.native
     def releaseStaticIp(params: ReleaseStaticIpRequest): Request[ReleaseStaticIpResult] = js.native
-    def startInstance(params: StartInstanceRequest): Request[StartInstanceResult]       = js.native
+    def sendContactMethodVerification(
+        params: SendContactMethodVerificationRequest
+    ): Request[SendContactMethodVerificationResult]                               = js.native
+    def startInstance(params: StartInstanceRequest): Request[StartInstanceResult] = js.native
     def startRelationalDatabase(params: StartRelationalDatabaseRequest): Request[StartRelationalDatabaseResult] =
       js.native
     def stopInstance(params: StopInstanceRequest): Request[StopInstanceResult]                               = js.native
     def stopRelationalDatabase(params: StopRelationalDatabaseRequest): Request[StopRelationalDatabaseResult] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResult]                                  = js.native
+    def testAlarm(params: TestAlarmRequest): Request[TestAlarmResult]                                        = js.native
     def unpeerVpc(params: UnpeerVpcRequest): Request[UnpeerVpcResult]                                        = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResult]                            = js.native
     def updateDomainEntry(params: UpdateDomainEntryRequest): Request[UpdateDomainEntryResult]                = js.native
@@ -591,6 +622,93 @@ package lightsail {
     val AutoSnapshot = "AutoSnapshot".asInstanceOf[AddOnType]
 
     val values = js.Object.freeze(js.Array(AutoSnapshot))
+  }
+
+  /**
+    * Describes an alarm.
+    *  An alarm is a way to monitor your Amazon Lightsail resource metrics. For more information, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms|Alarms in Amazon Lightsail]].
+    */
+  @js.native
+  trait Alarm extends js.Object {
+    var arn: js.UndefOr[NonEmptyString]
+    var comparisonOperator: js.UndefOr[ComparisonOperator]
+    var contactProtocols: js.UndefOr[ContactProtocolsList]
+    var createdAt: js.UndefOr[IsoDate]
+    var datapointsToAlarm: js.UndefOr[Int]
+    var evaluationPeriods: js.UndefOr[Int]
+    var location: js.UndefOr[ResourceLocation]
+    var metricName: js.UndefOr[MetricName]
+    var monitoredResourceInfo: js.UndefOr[MonitoredResourceInfo]
+    var name: js.UndefOr[ResourceName]
+    var notificationEnabled: js.UndefOr[Boolean]
+    var notificationTriggers: js.UndefOr[NotificationTriggerList]
+    var period: js.UndefOr[MetricPeriod]
+    var resourceType: js.UndefOr[ResourceType]
+    var state: js.UndefOr[AlarmState]
+    var statistic: js.UndefOr[MetricStatistic]
+    var supportCode: js.UndefOr[String]
+    var threshold: js.UndefOr[double]
+    var treatMissingData: js.UndefOr[TreatMissingData]
+    var unit: js.UndefOr[MetricUnit]
+  }
+
+  object Alarm {
+    @inline
+    def apply(
+        arn: js.UndefOr[NonEmptyString] = js.undefined,
+        comparisonOperator: js.UndefOr[ComparisonOperator] = js.undefined,
+        contactProtocols: js.UndefOr[ContactProtocolsList] = js.undefined,
+        createdAt: js.UndefOr[IsoDate] = js.undefined,
+        datapointsToAlarm: js.UndefOr[Int] = js.undefined,
+        evaluationPeriods: js.UndefOr[Int] = js.undefined,
+        location: js.UndefOr[ResourceLocation] = js.undefined,
+        metricName: js.UndefOr[MetricName] = js.undefined,
+        monitoredResourceInfo: js.UndefOr[MonitoredResourceInfo] = js.undefined,
+        name: js.UndefOr[ResourceName] = js.undefined,
+        notificationEnabled: js.UndefOr[Boolean] = js.undefined,
+        notificationTriggers: js.UndefOr[NotificationTriggerList] = js.undefined,
+        period: js.UndefOr[MetricPeriod] = js.undefined,
+        resourceType: js.UndefOr[ResourceType] = js.undefined,
+        state: js.UndefOr[AlarmState] = js.undefined,
+        statistic: js.UndefOr[MetricStatistic] = js.undefined,
+        supportCode: js.UndefOr[String] = js.undefined,
+        threshold: js.UndefOr[double] = js.undefined,
+        treatMissingData: js.UndefOr[TreatMissingData] = js.undefined,
+        unit: js.UndefOr[MetricUnit] = js.undefined
+    ): Alarm = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      comparisonOperator.foreach(__v => __obj.updateDynamic("comparisonOperator")(__v.asInstanceOf[js.Any]))
+      contactProtocols.foreach(__v => __obj.updateDynamic("contactProtocols")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      datapointsToAlarm.foreach(__v => __obj.updateDynamic("datapointsToAlarm")(__v.asInstanceOf[js.Any]))
+      evaluationPeriods.foreach(__v => __obj.updateDynamic("evaluationPeriods")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      metricName.foreach(__v => __obj.updateDynamic("metricName")(__v.asInstanceOf[js.Any]))
+      monitoredResourceInfo.foreach(__v => __obj.updateDynamic("monitoredResourceInfo")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      notificationEnabled.foreach(__v => __obj.updateDynamic("notificationEnabled")(__v.asInstanceOf[js.Any]))
+      notificationTriggers.foreach(__v => __obj.updateDynamic("notificationTriggers")(__v.asInstanceOf[js.Any]))
+      period.foreach(__v => __obj.updateDynamic("period")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      statistic.foreach(__v => __obj.updateDynamic("statistic")(__v.asInstanceOf[js.Any]))
+      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
+      threshold.foreach(__v => __obj.updateDynamic("threshold")(__v.asInstanceOf[js.Any]))
+      treatMissingData.foreach(__v => __obj.updateDynamic("treatMissingData")(__v.asInstanceOf[js.Any]))
+      unit.foreach(__v => __obj.updateDynamic("unit")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Alarm]
+    }
+  }
+
+  @js.native
+  sealed trait AlarmState extends js.Any
+  object AlarmState extends js.Object {
+    val OK                = "OK".asInstanceOf[AlarmState]
+    val ALARM             = "ALARM".asInstanceOf[AlarmState]
+    val INSUFFICIENT_DATA = "INSUFFICIENT_DATA".asInstanceOf[AlarmState]
+
+    val values = js.Object.freeze(js.Array(OK, ALARM, INSUFFICIENT_DATA))
   }
 
   @js.native
@@ -1107,6 +1225,90 @@ package lightsail {
   }
 
   @js.native
+  sealed trait ComparisonOperator extends js.Any
+  object ComparisonOperator extends js.Object {
+    val GreaterThanOrEqualToThreshold = "GreaterThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
+    val GreaterThanThreshold          = "GreaterThanThreshold".asInstanceOf[ComparisonOperator]
+    val LessThanThreshold             = "LessThanThreshold".asInstanceOf[ComparisonOperator]
+    val LessThanOrEqualToThreshold    = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
+
+    val values = js.Object.freeze(
+      js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
+    )
+  }
+
+  /**
+    * Describes a contact method.
+    *  A contact method is a way to send you notifications. For more information, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications|Notifications in Amazon Lightsail]].
+    */
+  @js.native
+  trait ContactMethod extends js.Object {
+    var arn: js.UndefOr[NonEmptyString]
+    var contactEndpoint: js.UndefOr[NonEmptyString]
+    var createdAt: js.UndefOr[IsoDate]
+    var location: js.UndefOr[ResourceLocation]
+    var name: js.UndefOr[ResourceName]
+    var protocol: js.UndefOr[ContactProtocol]
+    var resourceType: js.UndefOr[ResourceType]
+    var status: js.UndefOr[ContactMethodStatus]
+    var supportCode: js.UndefOr[String]
+  }
+
+  object ContactMethod {
+    @inline
+    def apply(
+        arn: js.UndefOr[NonEmptyString] = js.undefined,
+        contactEndpoint: js.UndefOr[NonEmptyString] = js.undefined,
+        createdAt: js.UndefOr[IsoDate] = js.undefined,
+        location: js.UndefOr[ResourceLocation] = js.undefined,
+        name: js.UndefOr[ResourceName] = js.undefined,
+        protocol: js.UndefOr[ContactProtocol] = js.undefined,
+        resourceType: js.UndefOr[ResourceType] = js.undefined,
+        status: js.UndefOr[ContactMethodStatus] = js.undefined,
+        supportCode: js.UndefOr[String] = js.undefined
+    ): ContactMethod = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      contactEndpoint.foreach(__v => __obj.updateDynamic("contactEndpoint")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContactMethod]
+    }
+  }
+
+  @js.native
+  sealed trait ContactMethodStatus extends js.Any
+  object ContactMethodStatus extends js.Object {
+    val PendingVerification = "PendingVerification".asInstanceOf[ContactMethodStatus]
+    val Valid               = "Valid".asInstanceOf[ContactMethodStatus]
+    val Invalid             = "Invalid".asInstanceOf[ContactMethodStatus]
+
+    val values = js.Object.freeze(js.Array(PendingVerification, Valid, Invalid))
+  }
+
+  @js.native
+  sealed trait ContactMethodVerificationProtocol extends js.Any
+  object ContactMethodVerificationProtocol extends js.Object {
+    val Email = "Email".asInstanceOf[ContactMethodVerificationProtocol]
+
+    val values = js.Object.freeze(js.Array(Email))
+  }
+
+  @js.native
+  sealed trait ContactProtocol extends js.Any
+  object ContactProtocol extends js.Object {
+    val Email = "Email".asInstanceOf[ContactProtocol]
+    val SMS   = "SMS".asInstanceOf[ContactProtocol]
+
+    val values = js.Object.freeze(js.Array(Email, SMS))
+  }
+
+  @js.native
   trait CopySnapshotRequest extends js.Object {
     var sourceRegion: RegionName
     var targetSnapshotName: ResourceName
@@ -1188,6 +1390,43 @@ package lightsail {
       val __obj = js.Dynamic.literal()
       operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCloudFormationStackResult]
+    }
+  }
+
+  @js.native
+  trait CreateContactMethodRequest extends js.Object {
+    var contactEndpoint: StringMax256
+    var protocol: ContactProtocol
+  }
+
+  object CreateContactMethodRequest {
+    @inline
+    def apply(
+        contactEndpoint: StringMax256,
+        protocol: ContactProtocol
+    ): CreateContactMethodRequest = {
+      val __obj = js.Dynamic.literal(
+        "contactEndpoint" -> contactEndpoint.asInstanceOf[js.Any],
+        "protocol"        -> protocol.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateContactMethodRequest]
+    }
+  }
+
+  @js.native
+  trait CreateContactMethodResult extends js.Object {
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object CreateContactMethodResult {
+    @inline
+    def apply(
+        operations: js.UndefOr[OperationList] = js.undefined
+    ): CreateContactMethodResult = {
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateContactMethodResult]
     }
   }
 
@@ -1900,6 +2139,40 @@ package lightsail {
   }
 
   @js.native
+  trait DeleteAlarmRequest extends js.Object {
+    var alarmName: ResourceName
+  }
+
+  object DeleteAlarmRequest {
+    @inline
+    def apply(
+        alarmName: ResourceName
+    ): DeleteAlarmRequest = {
+      val __obj = js.Dynamic.literal(
+        "alarmName" -> alarmName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteAlarmRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteAlarmResult extends js.Object {
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object DeleteAlarmResult {
+    @inline
+    def apply(
+        operations: js.UndefOr[OperationList] = js.undefined
+    ): DeleteAlarmResult = {
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteAlarmResult]
+    }
+  }
+
+  @js.native
   trait DeleteAutoSnapshotRequest extends js.Object {
     var date: AutoSnapshotDate
     var resourceName: ResourceName
@@ -1933,6 +2206,40 @@ package lightsail {
       val __obj = js.Dynamic.literal()
       operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteAutoSnapshotResult]
+    }
+  }
+
+  @js.native
+  trait DeleteContactMethodRequest extends js.Object {
+    var protocol: ContactProtocol
+  }
+
+  object DeleteContactMethodRequest {
+    @inline
+    def apply(
+        protocol: ContactProtocol
+    ): DeleteContactMethodRequest = {
+      val __obj = js.Dynamic.literal(
+        "protocol" -> protocol.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteContactMethodRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteContactMethodResult extends js.Object {
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object DeleteContactMethodResult {
+    @inline
+    def apply(
+        operations: js.UndefOr[OperationList] = js.undefined
+    ): DeleteContactMethodResult = {
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteContactMethodResult]
     }
   }
 
@@ -3053,6 +3360,47 @@ package lightsail {
   }
 
   @js.native
+  trait GetAlarmsRequest extends js.Object {
+    var alarmName: js.UndefOr[ResourceName]
+    var monitoredResourceName: js.UndefOr[ResourceName]
+    var pageToken: js.UndefOr[String]
+  }
+
+  object GetAlarmsRequest {
+    @inline
+    def apply(
+        alarmName: js.UndefOr[ResourceName] = js.undefined,
+        monitoredResourceName: js.UndefOr[ResourceName] = js.undefined,
+        pageToken: js.UndefOr[String] = js.undefined
+    ): GetAlarmsRequest = {
+      val __obj = js.Dynamic.literal()
+      alarmName.foreach(__v => __obj.updateDynamic("alarmName")(__v.asInstanceOf[js.Any]))
+      monitoredResourceName.foreach(__v => __obj.updateDynamic("monitoredResourceName")(__v.asInstanceOf[js.Any]))
+      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAlarmsRequest]
+    }
+  }
+
+  @js.native
+  trait GetAlarmsResult extends js.Object {
+    var alarms: js.UndefOr[AlarmsList]
+    var nextPageToken: js.UndefOr[String]
+  }
+
+  object GetAlarmsResult {
+    @inline
+    def apply(
+        alarms: js.UndefOr[AlarmsList] = js.undefined,
+        nextPageToken: js.UndefOr[String] = js.undefined
+    ): GetAlarmsResult = {
+      val __obj = js.Dynamic.literal()
+      alarms.foreach(__v => __obj.updateDynamic("alarms")(__v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAlarmsResult]
+    }
+  }
+
+  @js.native
   trait GetAutoSnapshotsRequest extends js.Object {
     var resourceName: ResourceName
   }
@@ -3202,6 +3550,38 @@ package lightsail {
       )
       nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCloudFormationStackRecordsResult]
+    }
+  }
+
+  @js.native
+  trait GetContactMethodsRequest extends js.Object {
+    var protocols: js.UndefOr[ContactProtocolsList]
+  }
+
+  object GetContactMethodsRequest {
+    @inline
+    def apply(
+        protocols: js.UndefOr[ContactProtocolsList] = js.undefined
+    ): GetContactMethodsRequest = {
+      val __obj = js.Dynamic.literal()
+      protocols.foreach(__v => __obj.updateDynamic("protocols")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetContactMethodsRequest]
+    }
+  }
+
+  @js.native
+  trait GetContactMethodsResult extends js.Object {
+    var contactMethods: js.UndefOr[ContactMethodsList]
+  }
+
+  object GetContactMethodsResult {
+    @inline
+    def apply(
+        contactMethods: js.UndefOr[ContactMethodsList] = js.undefined
+    ): GetContactMethodsResult = {
+      val __obj = js.Dynamic.literal()
+      contactMethods.foreach(__v => __obj.updateDynamic("contactMethods")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetContactMethodsResult]
     }
   }
 
@@ -5011,6 +5391,8 @@ package lightsail {
     val StatusCheckFailed          = "StatusCheckFailed".asInstanceOf[InstanceMetricName]
     val StatusCheckFailed_Instance = "StatusCheckFailed_Instance".asInstanceOf[InstanceMetricName]
     val StatusCheckFailed_System   = "StatusCheckFailed_System".asInstanceOf[InstanceMetricName]
+    val BurstCapacityTime          = "BurstCapacityTime".asInstanceOf[InstanceMetricName]
+    val BurstCapacityPercentage    = "BurstCapacityPercentage".asInstanceOf[InstanceMetricName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -5019,7 +5401,9 @@ package lightsail {
         NetworkOut,
         StatusCheckFailed,
         StatusCheckFailed_Instance,
-        StatusCheckFailed_System
+        StatusCheckFailed_System,
+        BurstCapacityTime,
+        BurstCapacityPercentage
       )
     )
   }
@@ -5056,13 +5440,15 @@ package lightsail {
   }
 
   /**
-    * Describes information about the instance ports.
+    * Describes information about ports for an Amazon Lightsail instance.
     */
   @js.native
   trait InstancePortInfo extends js.Object {
     var accessDirection: js.UndefOr[AccessDirection]
     var accessFrom: js.UndefOr[String]
     var accessType: js.UndefOr[PortAccessType]
+    var cidrListAliases: js.UndefOr[StringList]
+    var cidrs: js.UndefOr[StringList]
     var commonName: js.UndefOr[String]
     var fromPort: js.UndefOr[Port]
     var protocol: js.UndefOr[NetworkProtocol]
@@ -5075,6 +5461,8 @@ package lightsail {
         accessDirection: js.UndefOr[AccessDirection] = js.undefined,
         accessFrom: js.UndefOr[String] = js.undefined,
         accessType: js.UndefOr[PortAccessType] = js.undefined,
+        cidrListAliases: js.UndefOr[StringList] = js.undefined,
+        cidrs: js.UndefOr[StringList] = js.undefined,
         commonName: js.UndefOr[String] = js.undefined,
         fromPort: js.UndefOr[Port] = js.undefined,
         protocol: js.UndefOr[NetworkProtocol] = js.undefined,
@@ -5084,6 +5472,8 @@ package lightsail {
       accessDirection.foreach(__v => __obj.updateDynamic("accessDirection")(__v.asInstanceOf[js.Any]))
       accessFrom.foreach(__v => __obj.updateDynamic("accessFrom")(__v.asInstanceOf[js.Any]))
       accessType.foreach(__v => __obj.updateDynamic("accessType")(__v.asInstanceOf[js.Any]))
+      cidrListAliases.foreach(__v => __obj.updateDynamic("cidrListAliases")(__v.asInstanceOf[js.Any]))
+      cidrs.foreach(__v => __obj.updateDynamic("cidrs")(__v.asInstanceOf[js.Any]))
       commonName.foreach(__v => __obj.updateDynamic("commonName")(__v.asInstanceOf[js.Any]))
       fromPort.foreach(__v => __obj.updateDynamic("fromPort")(__v.asInstanceOf[js.Any]))
       protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
@@ -5093,10 +5483,12 @@ package lightsail {
   }
 
   /**
-    * Describes the port state.
+    * Describes open ports on an instance, the IP addresses allowed to connect to the instance through the ports, and the protocol.
     */
   @js.native
   trait InstancePortState extends js.Object {
+    var cidrListAliases: js.UndefOr[StringList]
+    var cidrs: js.UndefOr[StringList]
     var fromPort: js.UndefOr[Port]
     var protocol: js.UndefOr[NetworkProtocol]
     var state: js.UndefOr[PortState]
@@ -5106,12 +5498,16 @@ package lightsail {
   object InstancePortState {
     @inline
     def apply(
+        cidrListAliases: js.UndefOr[StringList] = js.undefined,
+        cidrs: js.UndefOr[StringList] = js.undefined,
         fromPort: js.UndefOr[Port] = js.undefined,
         protocol: js.UndefOr[NetworkProtocol] = js.undefined,
         state: js.UndefOr[PortState] = js.undefined,
         toPort: js.UndefOr[Port] = js.undefined
     ): InstancePortState = {
       val __obj = js.Dynamic.literal()
+      cidrListAliases.foreach(__v => __obj.updateDynamic("cidrListAliases")(__v.asInstanceOf[js.Any]))
+      cidrs.foreach(__v => __obj.updateDynamic("cidrs")(__v.asInstanceOf[js.Any]))
       fromPort.foreach(__v => __obj.updateDynamic("fromPort")(__v.asInstanceOf[js.Any]))
       protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
       state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
@@ -5779,6 +6175,66 @@ package lightsail {
   }
 
   @js.native
+  sealed trait MetricName extends js.Any
+  object MetricName extends js.Object {
+    val CPUUtilization                 = "CPUUtilization".asInstanceOf[MetricName]
+    val NetworkIn                      = "NetworkIn".asInstanceOf[MetricName]
+    val NetworkOut                     = "NetworkOut".asInstanceOf[MetricName]
+    val StatusCheckFailed              = "StatusCheckFailed".asInstanceOf[MetricName]
+    val StatusCheckFailed_Instance     = "StatusCheckFailed_Instance".asInstanceOf[MetricName]
+    val StatusCheckFailed_System       = "StatusCheckFailed_System".asInstanceOf[MetricName]
+    val ClientTLSNegotiationErrorCount = "ClientTLSNegotiationErrorCount".asInstanceOf[MetricName]
+    val HealthyHostCount               = "HealthyHostCount".asInstanceOf[MetricName]
+    val UnhealthyHostCount             = "UnhealthyHostCount".asInstanceOf[MetricName]
+    val HTTPCode_LB_4XX_Count          = "HTTPCode_LB_4XX_Count".asInstanceOf[MetricName]
+    val HTTPCode_LB_5XX_Count          = "HTTPCode_LB_5XX_Count".asInstanceOf[MetricName]
+    val HTTPCode_Instance_2XX_Count    = "HTTPCode_Instance_2XX_Count".asInstanceOf[MetricName]
+    val HTTPCode_Instance_3XX_Count    = "HTTPCode_Instance_3XX_Count".asInstanceOf[MetricName]
+    val HTTPCode_Instance_4XX_Count    = "HTTPCode_Instance_4XX_Count".asInstanceOf[MetricName]
+    val HTTPCode_Instance_5XX_Count    = "HTTPCode_Instance_5XX_Count".asInstanceOf[MetricName]
+    val InstanceResponseTime           = "InstanceResponseTime".asInstanceOf[MetricName]
+    val RejectedConnectionCount        = "RejectedConnectionCount".asInstanceOf[MetricName]
+    val RequestCount                   = "RequestCount".asInstanceOf[MetricName]
+    val DatabaseConnections            = "DatabaseConnections".asInstanceOf[MetricName]
+    val DiskQueueDepth                 = "DiskQueueDepth".asInstanceOf[MetricName]
+    val FreeStorageSpace               = "FreeStorageSpace".asInstanceOf[MetricName]
+    val NetworkReceiveThroughput       = "NetworkReceiveThroughput".asInstanceOf[MetricName]
+    val NetworkTransmitThroughput      = "NetworkTransmitThroughput".asInstanceOf[MetricName]
+    val BurstCapacityTime              = "BurstCapacityTime".asInstanceOf[MetricName]
+    val BurstCapacityPercentage        = "BurstCapacityPercentage".asInstanceOf[MetricName]
+
+    val values = js.Object.freeze(
+      js.Array(
+        CPUUtilization,
+        NetworkIn,
+        NetworkOut,
+        StatusCheckFailed,
+        StatusCheckFailed_Instance,
+        StatusCheckFailed_System,
+        ClientTLSNegotiationErrorCount,
+        HealthyHostCount,
+        UnhealthyHostCount,
+        HTTPCode_LB_4XX_Count,
+        HTTPCode_LB_5XX_Count,
+        HTTPCode_Instance_2XX_Count,
+        HTTPCode_Instance_3XX_Count,
+        HTTPCode_Instance_4XX_Count,
+        HTTPCode_Instance_5XX_Count,
+        InstanceResponseTime,
+        RejectedConnectionCount,
+        RequestCount,
+        DatabaseConnections,
+        DiskQueueDepth,
+        FreeStorageSpace,
+        NetworkReceiveThroughput,
+        NetworkTransmitThroughput,
+        BurstCapacityTime,
+        BurstCapacityPercentage
+      )
+    )
+  }
+
+  @js.native
   sealed trait MetricStatistic extends js.Any
   object MetricStatistic extends js.Object {
     val Minimum     = "Minimum".asInstanceOf[MetricStatistic]
@@ -5855,6 +6311,32 @@ package lightsail {
   }
 
   /**
+    * Describes resource being monitored by an alarm.
+    *  An alarm is a way to monitor your Amazon Lightsail resource metrics. For more information, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms|Alarms in Amazon Lightsail]].
+    */
+  @js.native
+  trait MonitoredResourceInfo extends js.Object {
+    var arn: js.UndefOr[ResourceArn]
+    var name: js.UndefOr[ResourceName]
+    var resourceType: js.UndefOr[ResourceType]
+  }
+
+  object MonitoredResourceInfo {
+    @inline
+    def apply(
+        arn: js.UndefOr[ResourceArn] = js.undefined,
+        name: js.UndefOr[ResourceName] = js.undefined,
+        resourceType: js.UndefOr[ResourceType] = js.undefined
+    ): MonitoredResourceInfo = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MonitoredResourceInfo]
+    }
+  }
+
+  /**
     * Describes the monthly data transfer in and out of your virtual private server (or <i>instance</i>).
     */
   @js.native
@@ -5876,11 +6358,12 @@ package lightsail {
   @js.native
   sealed trait NetworkProtocol extends js.Any
   object NetworkProtocol extends js.Object {
-    val tcp = "tcp".asInstanceOf[NetworkProtocol]
-    val all = "all".asInstanceOf[NetworkProtocol]
-    val udp = "udp".asInstanceOf[NetworkProtocol]
+    val tcp  = "tcp".asInstanceOf[NetworkProtocol]
+    val all  = "all".asInstanceOf[NetworkProtocol]
+    val udp  = "udp".asInstanceOf[NetworkProtocol]
+    val icmp = "icmp".asInstanceOf[NetworkProtocol]
 
-    val values = js.Object.freeze(js.Array(tcp, all, udp))
+    val values = js.Object.freeze(js.Array(tcp, all, udp, icmp))
   }
 
   @js.native
@@ -6034,6 +6517,14 @@ package lightsail {
     val StopRelationalDatabase               = "StopRelationalDatabase".asInstanceOf[OperationType]
     val EnableAddOn                          = "EnableAddOn".asInstanceOf[OperationType]
     val DisableAddOn                         = "DisableAddOn".asInstanceOf[OperationType]
+    val PutAlarm                             = "PutAlarm".asInstanceOf[OperationType]
+    val GetAlarms                            = "GetAlarms".asInstanceOf[OperationType]
+    val DeleteAlarm                          = "DeleteAlarm".asInstanceOf[OperationType]
+    val TestAlarm                            = "TestAlarm".asInstanceOf[OperationType]
+    val CreateContactMethod                  = "CreateContactMethod".asInstanceOf[OperationType]
+    val GetContactMethods                    = "GetContactMethods".asInstanceOf[OperationType]
+    val SendContactMethodVerification        = "SendContactMethodVerification".asInstanceOf[OperationType]
+    val DeleteContactMethod                  = "DeleteContactMethod".asInstanceOf[OperationType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -6083,7 +6574,15 @@ package lightsail {
         RebootRelationalDatabase,
         StopRelationalDatabase,
         EnableAddOn,
-        DisableAddOn
+        DisableAddOn,
+        PutAlarm,
+        GetAlarms,
+        DeleteAlarm,
+        TestAlarm,
+        CreateContactMethod,
+        GetContactMethods,
+        SendContactMethodVerification,
+        DeleteContactMethod
       )
     )
   }
@@ -6199,10 +6698,12 @@ package lightsail {
   }
 
   /**
-    * Describes information about the ports on your virtual private server (or <i>instance</i>).
+    * Describes ports to open on an instance, the IP addresses allowed to connect to the instance through the ports, and the protocol.
     */
   @js.native
   trait PortInfo extends js.Object {
+    var cidrListAliases: js.UndefOr[StringList]
+    var cidrs: js.UndefOr[StringList]
     var fromPort: js.UndefOr[Port]
     var protocol: js.UndefOr[NetworkProtocol]
     var toPort: js.UndefOr[Port]
@@ -6211,11 +6712,15 @@ package lightsail {
   object PortInfo {
     @inline
     def apply(
+        cidrListAliases: js.UndefOr[StringList] = js.undefined,
+        cidrs: js.UndefOr[StringList] = js.undefined,
         fromPort: js.UndefOr[Port] = js.undefined,
         protocol: js.UndefOr[NetworkProtocol] = js.undefined,
         toPort: js.UndefOr[Port] = js.undefined
     ): PortInfo = {
       val __obj = js.Dynamic.literal()
+      cidrListAliases.foreach(__v => __obj.updateDynamic("cidrListAliases")(__v.asInstanceOf[js.Any]))
+      cidrs.foreach(__v => __obj.updateDynamic("cidrs")(__v.asInstanceOf[js.Any]))
       fromPort.foreach(__v => __obj.updateDynamic("fromPort")(__v.asInstanceOf[js.Any]))
       protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
       toPort.foreach(__v => __obj.updateDynamic("toPort")(__v.asInstanceOf[js.Any]))
@@ -6241,6 +6746,70 @@ package lightsail {
     val closed = "closed".asInstanceOf[PortState]
 
     val values = js.Object.freeze(js.Array(open, closed))
+  }
+
+  @js.native
+  trait PutAlarmRequest extends js.Object {
+    var alarmName: ResourceName
+    var comparisonOperator: ComparisonOperator
+    var evaluationPeriods: Int
+    var metricName: MetricName
+    var monitoredResourceName: ResourceName
+    var threshold: double
+    var contactProtocols: js.UndefOr[ContactProtocolsList]
+    var datapointsToAlarm: js.UndefOr[Int]
+    var notificationEnabled: js.UndefOr[Boolean]
+    var notificationTriggers: js.UndefOr[NotificationTriggerList]
+    var treatMissingData: js.UndefOr[TreatMissingData]
+  }
+
+  object PutAlarmRequest {
+    @inline
+    def apply(
+        alarmName: ResourceName,
+        comparisonOperator: ComparisonOperator,
+        evaluationPeriods: Int,
+        metricName: MetricName,
+        monitoredResourceName: ResourceName,
+        threshold: double,
+        contactProtocols: js.UndefOr[ContactProtocolsList] = js.undefined,
+        datapointsToAlarm: js.UndefOr[Int] = js.undefined,
+        notificationEnabled: js.UndefOr[Boolean] = js.undefined,
+        notificationTriggers: js.UndefOr[NotificationTriggerList] = js.undefined,
+        treatMissingData: js.UndefOr[TreatMissingData] = js.undefined
+    ): PutAlarmRequest = {
+      val __obj = js.Dynamic.literal(
+        "alarmName"             -> alarmName.asInstanceOf[js.Any],
+        "comparisonOperator"    -> comparisonOperator.asInstanceOf[js.Any],
+        "evaluationPeriods"     -> evaluationPeriods.asInstanceOf[js.Any],
+        "metricName"            -> metricName.asInstanceOf[js.Any],
+        "monitoredResourceName" -> monitoredResourceName.asInstanceOf[js.Any],
+        "threshold"             -> threshold.asInstanceOf[js.Any]
+      )
+
+      contactProtocols.foreach(__v => __obj.updateDynamic("contactProtocols")(__v.asInstanceOf[js.Any]))
+      datapointsToAlarm.foreach(__v => __obj.updateDynamic("datapointsToAlarm")(__v.asInstanceOf[js.Any]))
+      notificationEnabled.foreach(__v => __obj.updateDynamic("notificationEnabled")(__v.asInstanceOf[js.Any]))
+      notificationTriggers.foreach(__v => __obj.updateDynamic("notificationTriggers")(__v.asInstanceOf[js.Any]))
+      treatMissingData.foreach(__v => __obj.updateDynamic("treatMissingData")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutAlarmRequest]
+    }
+  }
+
+  @js.native
+  trait PutAlarmResult extends js.Object {
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object PutAlarmResult {
+    @inline
+    def apply(
+        operations: js.UndefOr[OperationList] = js.undefined
+    ): PutAlarmResult = {
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutAlarmResult]
+    }
   }
 
   @js.native
@@ -6910,6 +7479,8 @@ package lightsail {
     val RelationalDatabaseSnapshot = "RelationalDatabaseSnapshot".asInstanceOf[ResourceType]
     val ExportSnapshotRecord       = "ExportSnapshotRecord".asInstanceOf[ResourceType]
     val CloudFormationStackRecord  = "CloudFormationStackRecord".asInstanceOf[ResourceType]
+    val Alarm                      = "Alarm".asInstanceOf[ResourceType]
+    val ContactMethod              = "ContactMethod".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -6926,9 +7497,45 @@ package lightsail {
         RelationalDatabase,
         RelationalDatabaseSnapshot,
         ExportSnapshotRecord,
-        CloudFormationStackRecord
+        CloudFormationStackRecord,
+        Alarm,
+        ContactMethod
       )
     )
+  }
+
+  @js.native
+  trait SendContactMethodVerificationRequest extends js.Object {
+    var protocol: ContactMethodVerificationProtocol
+  }
+
+  object SendContactMethodVerificationRequest {
+    @inline
+    def apply(
+        protocol: ContactMethodVerificationProtocol
+    ): SendContactMethodVerificationRequest = {
+      val __obj = js.Dynamic.literal(
+        "protocol" -> protocol.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[SendContactMethodVerificationRequest]
+    }
+  }
+
+  @js.native
+  trait SendContactMethodVerificationResult extends js.Object {
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object SendContactMethodVerificationResult {
+    @inline
+    def apply(
+        operations: js.UndefOr[OperationList] = js.undefined
+    ): SendContactMethodVerificationResult = {
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SendContactMethodVerificationResult]
+    }
   }
 
   @js.native
@@ -7179,6 +7786,54 @@ package lightsail {
       operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagResourceResult]
     }
+  }
+
+  @js.native
+  trait TestAlarmRequest extends js.Object {
+    var alarmName: ResourceName
+    var state: AlarmState
+  }
+
+  object TestAlarmRequest {
+    @inline
+    def apply(
+        alarmName: ResourceName,
+        state: AlarmState
+    ): TestAlarmRequest = {
+      val __obj = js.Dynamic.literal(
+        "alarmName" -> alarmName.asInstanceOf[js.Any],
+        "state"     -> state.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TestAlarmRequest]
+    }
+  }
+
+  @js.native
+  trait TestAlarmResult extends js.Object {
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object TestAlarmResult {
+    @inline
+    def apply(
+        operations: js.UndefOr[OperationList] = js.undefined
+    ): TestAlarmResult = {
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TestAlarmResult]
+    }
+  }
+
+  @js.native
+  sealed trait TreatMissingData extends js.Any
+  object TreatMissingData extends js.Object {
+    val breaching    = "breaching".asInstanceOf[TreatMissingData]
+    val notBreaching = "notBreaching".asInstanceOf[TreatMissingData]
+    val ignore       = "ignore".asInstanceOf[TreatMissingData]
+    val missing      = "missing".asInstanceOf[TreatMissingData]
+
+    val values = js.Object.freeze(js.Array(breaching, notBreaching, ignore, missing))
   }
 
   @js.native

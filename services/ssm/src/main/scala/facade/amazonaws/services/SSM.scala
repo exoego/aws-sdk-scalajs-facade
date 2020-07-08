@@ -19,6 +19,7 @@ package object ssm {
   type AgentErrorCode                                       = String
   type AggregatorSchemaOnly                                 = Boolean
   type AllowedPattern                                       = String
+  type ApplyOnlyAtCronInterval                              = Boolean
   type ApproveAfterDays                                     = Int
   type AssociationDescriptionList                           = js.Array[AssociationDescription]
   type AssociationExecutionFilterList                       = js.Array[AssociationExecutionFilter]
@@ -232,6 +233,7 @@ package object ssm {
   type MaintenanceWindowLambdaQualifier                     = String
   type MaintenanceWindowMaxResults                          = Int
   type MaintenanceWindowName                                = String
+  type MaintenanceWindowOffset                              = Int
   type MaintenanceWindowSchedule                            = String
   type MaintenanceWindowSearchMaxResults                    = Int
   type MaintenanceWindowStepFunctionsInput                  = String
@@ -303,6 +305,7 @@ package object ssm {
   type PSParameterSelector                                  = String
   type PSParameterValue                                     = String
   type PSParameterVersion                                   = Double
+  type ParameterDataType                                    = String
   type ParameterDescription                                 = String
   type ParameterHistoryList                                 = js.Array[ParameterHistory]
   type ParameterKeyId                                       = String
@@ -367,7 +370,7 @@ package object ssm {
   type PatchSourceName                                      = String
   type PatchSourceProduct                                   = String
   type PatchSourceProductList                               = js.Array[PatchSourceProduct]
-  type PatchStringDate                                      = String
+  type PatchStringDateTime                                  = String
   type PatchTitle                                           = String
   type PatchUnreportedNotApplicableCount                    = Int
   type PatchVendor                                          = String
@@ -385,6 +388,7 @@ package object ssm {
   type ResourceCountByStatus                                = String
   type ResourceDataSyncAWSKMSKeyARN                         = String
   type ResourceDataSyncCreatedTime                          = js.Date
+  type ResourceDataSyncDestinationDataSharingType           = String
   type ResourceDataSyncIncludeFutureRegions                 = Boolean
   type ResourceDataSyncItemList                             = js.Array[ResourceDataSyncItem]
   type ResourceDataSyncLastModifiedTime                     = js.Date
@@ -1188,6 +1192,7 @@ package ssm {
     */
   @js.native
   trait AssociationDescription extends js.Object {
+    var ApplyOnlyAtCronInterval: js.UndefOr[ApplyOnlyAtCronInterval]
     var AssociationId: js.UndefOr[AssociationId]
     var AssociationName: js.UndefOr[AssociationName]
     var AssociationVersion: js.UndefOr[AssociationVersion]
@@ -1207,12 +1212,14 @@ package ssm {
     var Parameters: js.UndefOr[Parameters]
     var ScheduleExpression: js.UndefOr[ScheduleExpression]
     var Status: js.UndefOr[AssociationStatus]
+    var SyncCompliance: js.UndefOr[AssociationSyncCompliance]
     var Targets: js.UndefOr[Targets]
   }
 
   object AssociationDescription {
     @inline
     def apply(
+        ApplyOnlyAtCronInterval: js.UndefOr[ApplyOnlyAtCronInterval] = js.undefined,
         AssociationId: js.UndefOr[AssociationId] = js.undefined,
         AssociationName: js.UndefOr[AssociationName] = js.undefined,
         AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
@@ -1232,9 +1239,11 @@ package ssm {
         Parameters: js.UndefOr[Parameters] = js.undefined,
         ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
         Status: js.UndefOr[AssociationStatus] = js.undefined,
+        SyncCompliance: js.UndefOr[AssociationSyncCompliance] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined
     ): AssociationDescription = {
       val __obj = js.Dynamic.literal()
+      ApplyOnlyAtCronInterval.foreach(__v => __obj.updateDynamic("ApplyOnlyAtCronInterval")(__v.asInstanceOf[js.Any]))
       AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
       AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
       AssociationVersion.foreach(__v => __obj.updateDynamic("AssociationVersion")(__v.asInstanceOf[js.Any]))
@@ -1260,6 +1269,7 @@ package ssm {
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      SyncCompliance.foreach(__v => __obj.updateDynamic("SyncCompliance")(__v.asInstanceOf[js.Any]))
       Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociationDescription]
     }
@@ -1453,6 +1463,7 @@ package ssm {
     val LastExecutedBefore    = "LastExecutedBefore".asInstanceOf[AssociationFilterKey]
     val LastExecutedAfter     = "LastExecutedAfter".asInstanceOf[AssociationFilterKey]
     val AssociationName       = "AssociationName".asInstanceOf[AssociationFilterKey]
+    val ResourceGroupName     = "ResourceGroupName".asInstanceOf[AssociationFilterKey]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1462,7 +1473,8 @@ package ssm {
         AssociationStatusName,
         LastExecutedBefore,
         LastExecutedAfter,
-        AssociationName
+        AssociationName,
+        ResourceGroupName
       )
     )
   }
@@ -1544,11 +1556,21 @@ package ssm {
     val values = js.Object.freeze(js.Array(Pending, Success, Failed))
   }
 
+  @js.native
+  sealed trait AssociationSyncCompliance extends js.Any
+  object AssociationSyncCompliance extends js.Object {
+    val AUTO   = "AUTO".asInstanceOf[AssociationSyncCompliance]
+    val MANUAL = "MANUAL".asInstanceOf[AssociationSyncCompliance]
+
+    val values = js.Object.freeze(js.Array(AUTO, MANUAL))
+  }
+
   /**
     * Information about the association version.
     */
   @js.native
   trait AssociationVersionInfo extends js.Object {
+    var ApplyOnlyAtCronInterval: js.UndefOr[ApplyOnlyAtCronInterval]
     var AssociationId: js.UndefOr[AssociationId]
     var AssociationName: js.UndefOr[AssociationName]
     var AssociationVersion: js.UndefOr[AssociationVersion]
@@ -1561,12 +1583,14 @@ package ssm {
     var OutputLocation: js.UndefOr[InstanceAssociationOutputLocation]
     var Parameters: js.UndefOr[Parameters]
     var ScheduleExpression: js.UndefOr[ScheduleExpression]
+    var SyncCompliance: js.UndefOr[AssociationSyncCompliance]
     var Targets: js.UndefOr[Targets]
   }
 
   object AssociationVersionInfo {
     @inline
     def apply(
+        ApplyOnlyAtCronInterval: js.UndefOr[ApplyOnlyAtCronInterval] = js.undefined,
         AssociationId: js.UndefOr[AssociationId] = js.undefined,
         AssociationName: js.UndefOr[AssociationName] = js.undefined,
         AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
@@ -1579,9 +1603,11 @@ package ssm {
         OutputLocation: js.UndefOr[InstanceAssociationOutputLocation] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined,
         ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
+        SyncCompliance: js.UndefOr[AssociationSyncCompliance] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined
     ): AssociationVersionInfo = {
       val __obj = js.Dynamic.literal()
+      ApplyOnlyAtCronInterval.foreach(__v => __obj.updateDynamic("ApplyOnlyAtCronInterval")(__v.asInstanceOf[js.Any]))
       AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
       AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
       AssociationVersion.foreach(__v => __obj.updateDynamic("AssociationVersion")(__v.asInstanceOf[js.Any]))
@@ -1594,6 +1620,7 @@ package ssm {
       OutputLocation.foreach(__v => __obj.updateDynamic("OutputLocation")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
+      SyncCompliance.foreach(__v => __obj.updateDynamic("SyncCompliance")(__v.asInstanceOf[js.Any]))
       Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociationVersionInfo]
     }
@@ -2083,6 +2110,7 @@ package ssm {
     var StatusDetails: js.UndefOr[StatusDetails]
     var TargetCount: js.UndefOr[TargetCount]
     var Targets: js.UndefOr[Targets]
+    var TimeoutSeconds: js.UndefOr[TimeoutSeconds]
   }
 
   object Command {
@@ -2110,7 +2138,8 @@ package ssm {
         Status: js.UndefOr[CommandStatus] = js.undefined,
         StatusDetails: js.UndefOr[StatusDetails] = js.undefined,
         TargetCount: js.UndefOr[TargetCount] = js.undefined,
-        Targets: js.UndefOr[Targets] = js.undefined
+        Targets: js.UndefOr[Targets] = js.undefined,
+        TimeoutSeconds: js.UndefOr[TimeoutSeconds] = js.undefined
     ): Command = {
       val __obj = js.Dynamic.literal()
       CloudWatchOutputConfig.foreach(__v => __obj.updateDynamic("CloudWatchOutputConfig")(__v.asInstanceOf[js.Any]))
@@ -2136,6 +2165,7 @@ package ssm {
       StatusDetails.foreach(__v => __obj.updateDynamic("StatusDetails")(__v.asInstanceOf[js.Any]))
       TargetCount.foreach(__v => __obj.updateDynamic("TargetCount")(__v.asInstanceOf[js.Any]))
       Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
+      TimeoutSeconds.foreach(__v => __obj.updateDynamic("TimeoutSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Command]
     }
   }
@@ -2363,7 +2393,7 @@ package ssm {
   }
 
   /**
-    * Information about the compliance as defined by the resource type. For example, for a patch resource type, <code>Items</code> includes information about the PatchSeverity, Classification, etc.
+    * Information about the compliance as defined by the resource type. For example, for a patch resource type, <code>Items</code> includes information about the PatchSeverity, Classification, and so on.
     */
   @js.native
   trait ComplianceItem extends js.Object {
@@ -2522,6 +2552,15 @@ package ssm {
     }
   }
 
+  @js.native
+  sealed trait ComplianceUploadType extends js.Any
+  object ComplianceUploadType extends js.Object {
+    val COMPLETE = "COMPLETE".asInstanceOf[ComplianceUploadType]
+    val PARTIAL  = "PARTIAL".asInstanceOf[ComplianceUploadType]
+
+    val values = js.Object.freeze(js.Array(COMPLETE, PARTIAL))
+  }
+
   /**
     * A summary of resources that are compliant. The summary is organized according to the resource count for each compliance type.
     */
@@ -2629,6 +2668,7 @@ package ssm {
   @js.native
   trait CreateAssociationBatchRequestEntry extends js.Object {
     var Name: DocumentARN
+    var ApplyOnlyAtCronInterval: js.UndefOr[ApplyOnlyAtCronInterval]
     var AssociationName: js.UndefOr[AssociationName]
     var AutomationTargetParameterName: js.UndefOr[AutomationTargetParameterName]
     var ComplianceSeverity: js.UndefOr[AssociationComplianceSeverity]
@@ -2639,6 +2679,7 @@ package ssm {
     var OutputLocation: js.UndefOr[InstanceAssociationOutputLocation]
     var Parameters: js.UndefOr[Parameters]
     var ScheduleExpression: js.UndefOr[ScheduleExpression]
+    var SyncCompliance: js.UndefOr[AssociationSyncCompliance]
     var Targets: js.UndefOr[Targets]
   }
 
@@ -2646,6 +2687,7 @@ package ssm {
     @inline
     def apply(
         Name: DocumentARN,
+        ApplyOnlyAtCronInterval: js.UndefOr[ApplyOnlyAtCronInterval] = js.undefined,
         AssociationName: js.UndefOr[AssociationName] = js.undefined,
         AutomationTargetParameterName: js.UndefOr[AutomationTargetParameterName] = js.undefined,
         ComplianceSeverity: js.UndefOr[AssociationComplianceSeverity] = js.undefined,
@@ -2656,12 +2698,14 @@ package ssm {
         OutputLocation: js.UndefOr[InstanceAssociationOutputLocation] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined,
         ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
+        SyncCompliance: js.UndefOr[AssociationSyncCompliance] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined
     ): CreateAssociationBatchRequestEntry = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
+      ApplyOnlyAtCronInterval.foreach(__v => __obj.updateDynamic("ApplyOnlyAtCronInterval")(__v.asInstanceOf[js.Any]))
       AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
       AutomationTargetParameterName.foreach(__v =>
         __obj.updateDynamic("AutomationTargetParameterName")(__v.asInstanceOf[js.Any])
@@ -2674,6 +2718,7 @@ package ssm {
       OutputLocation.foreach(__v => __obj.updateDynamic("OutputLocation")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
+      SyncCompliance.foreach(__v => __obj.updateDynamic("SyncCompliance")(__v.asInstanceOf[js.Any]))
       Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAssociationBatchRequestEntry]
     }
@@ -2701,6 +2746,7 @@ package ssm {
   @js.native
   trait CreateAssociationRequest extends js.Object {
     var Name: DocumentARN
+    var ApplyOnlyAtCronInterval: js.UndefOr[ApplyOnlyAtCronInterval]
     var AssociationName: js.UndefOr[AssociationName]
     var AutomationTargetParameterName: js.UndefOr[AutomationTargetParameterName]
     var ComplianceSeverity: js.UndefOr[AssociationComplianceSeverity]
@@ -2711,6 +2757,7 @@ package ssm {
     var OutputLocation: js.UndefOr[InstanceAssociationOutputLocation]
     var Parameters: js.UndefOr[Parameters]
     var ScheduleExpression: js.UndefOr[ScheduleExpression]
+    var SyncCompliance: js.UndefOr[AssociationSyncCompliance]
     var Targets: js.UndefOr[Targets]
   }
 
@@ -2718,6 +2765,7 @@ package ssm {
     @inline
     def apply(
         Name: DocumentARN,
+        ApplyOnlyAtCronInterval: js.UndefOr[ApplyOnlyAtCronInterval] = js.undefined,
         AssociationName: js.UndefOr[AssociationName] = js.undefined,
         AutomationTargetParameterName: js.UndefOr[AutomationTargetParameterName] = js.undefined,
         ComplianceSeverity: js.UndefOr[AssociationComplianceSeverity] = js.undefined,
@@ -2728,12 +2776,14 @@ package ssm {
         OutputLocation: js.UndefOr[InstanceAssociationOutputLocation] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined,
         ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
+        SyncCompliance: js.UndefOr[AssociationSyncCompliance] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined
     ): CreateAssociationRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
+      ApplyOnlyAtCronInterval.foreach(__v => __obj.updateDynamic("ApplyOnlyAtCronInterval")(__v.asInstanceOf[js.Any]))
       AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
       AutomationTargetParameterName.foreach(__v =>
         __obj.updateDynamic("AutomationTargetParameterName")(__v.asInstanceOf[js.Any])
@@ -2746,6 +2796,7 @@ package ssm {
       OutputLocation.foreach(__v => __obj.updateDynamic("OutputLocation")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
+      SyncCompliance.foreach(__v => __obj.updateDynamic("SyncCompliance")(__v.asInstanceOf[js.Any]))
       Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAssociationRequest]
     }
@@ -2835,6 +2886,7 @@ package ssm {
     var ClientToken: js.UndefOr[ClientToken]
     var Description: js.UndefOr[MaintenanceWindowDescription]
     var EndDate: js.UndefOr[MaintenanceWindowStringDateTime]
+    var ScheduleOffset: js.UndefOr[MaintenanceWindowOffset]
     var ScheduleTimezone: js.UndefOr[MaintenanceWindowTimezone]
     var StartDate: js.UndefOr[MaintenanceWindowStringDateTime]
     var Tags: js.UndefOr[TagList]
@@ -2851,6 +2903,7 @@ package ssm {
         ClientToken: js.UndefOr[ClientToken] = js.undefined,
         Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
         EndDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
+        ScheduleOffset: js.UndefOr[MaintenanceWindowOffset] = js.undefined,
         ScheduleTimezone: js.UndefOr[MaintenanceWindowTimezone] = js.undefined,
         StartDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -2866,6 +2919,7 @@ package ssm {
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       EndDate.foreach(__v => __obj.updateDynamic("EndDate")(__v.asInstanceOf[js.Any]))
+      ScheduleOffset.foreach(__v => __obj.updateDynamic("ScheduleOffset")(__v.asInstanceOf[js.Any]))
       ScheduleTimezone.foreach(__v => __obj.updateDynamic("ScheduleTimezone")(__v.asInstanceOf[js.Any]))
       StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -5141,7 +5195,7 @@ package ssm {
   }
 
   /**
-    * Describes a filter.
+    * This data type is deprecated. Instead, use <a>DocumentKeyValuesFilter</a>.
     */
   @js.native
   trait DocumentFilter extends js.Object {
@@ -5246,12 +5300,12 @@ package ssm {
   /**
     * One or more filters. Use a filter to return a more specific list of documents.
     *  For keys, you can specify one or more tags that have been applied to a document.
-    *  Other valid values include Owner, Name, PlatformTypes, and DocumentType.
+    *  Other valid values include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>, and <code>TargetType</code>.
     *  Note that only one Owner can be specified in a request. For example: <code>Key=Owner,Values=Self</code>.
     *  If you use Name as a key, you can use a name prefix to return a list of documents. For example, in the AWS CLI, to return a list of all documents that begin with <code>Te</code>, run the following command:
     *  <code>aws ssm list-documents --filters Key=Name,Values=Te</code>
     *  If you specify more than two keys, only documents that are identified by all the tags are returned in the results. If you specify more than two values for a key, documents that are identified by any of the values are returned in the results.
-    *  To specify a custom key and value pair, use the format <code>Key=tag:[tagName],Values=[valueName]</code>.
+    *  To specify a custom key and value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.
     *  For example, if you created a Key called region and are using the AWS CLI to call the <code>list-documents</code> command:
     *  <code>aws ssm list-documents --filters Key=tag:region,Values=east,west Key=Owner,Values=Self</code>
     */
@@ -6190,6 +6244,7 @@ package ssm {
     var Name: js.UndefOr[MaintenanceWindowName]
     var NextExecutionTime: js.UndefOr[MaintenanceWindowStringDateTime]
     var Schedule: js.UndefOr[MaintenanceWindowSchedule]
+    var ScheduleOffset: js.UndefOr[MaintenanceWindowOffset]
     var ScheduleTimezone: js.UndefOr[MaintenanceWindowTimezone]
     var StartDate: js.UndefOr[MaintenanceWindowStringDateTime]
     var WindowId: js.UndefOr[MaintenanceWindowId]
@@ -6209,6 +6264,7 @@ package ssm {
         Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
         NextExecutionTime: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
         Schedule: js.UndefOr[MaintenanceWindowSchedule] = js.undefined,
+        ScheduleOffset: js.UndefOr[MaintenanceWindowOffset] = js.undefined,
         ScheduleTimezone: js.UndefOr[MaintenanceWindowTimezone] = js.undefined,
         StartDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
         WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined
@@ -6225,6 +6281,7 @@ package ssm {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       NextExecutionTime.foreach(__v => __obj.updateDynamic("NextExecutionTime")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
+      ScheduleOffset.foreach(__v => __obj.updateDynamic("ScheduleOffset")(__v.asInstanceOf[js.Any]))
       ScheduleTimezone.foreach(__v => __obj.updateDynamic("ScheduleTimezone")(__v.asInstanceOf[js.Any]))
       StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
       WindowId.foreach(__v => __obj.updateDynamic("WindowId")(__v.asInstanceOf[js.Any]))
@@ -6783,7 +6840,7 @@ package ssm {
   }
 
   /**
-    * An Amazon S3 bucket where you want to store the results of this request.
+    * An S3 bucket where you want to store the results of this request.
     */
   @js.native
   trait InstanceAssociationOutputLocation extends js.Object {
@@ -6802,7 +6859,7 @@ package ssm {
   }
 
   /**
-    * The URL of Amazon S3 bucket where you want to store the results of this request.
+    * The URL of S3 bucket where you want to store the results of this request.
     */
   @js.native
   trait InstanceAssociationOutputUrl extends js.Object {
@@ -8083,7 +8140,7 @@ package ssm {
   }
 
   /**
-    * Information about an Amazon S3 bucket to write instance-level logs to.
+    * Information about an S3 bucket to write instance-level logs to.
     *
     * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
     */
@@ -8311,6 +8368,7 @@ package ssm {
     var Name: js.UndefOr[MaintenanceWindowName]
     var NextExecutionTime: js.UndefOr[MaintenanceWindowStringDateTime]
     var Schedule: js.UndefOr[MaintenanceWindowSchedule]
+    var ScheduleOffset: js.UndefOr[MaintenanceWindowOffset]
     var ScheduleTimezone: js.UndefOr[MaintenanceWindowTimezone]
     var StartDate: js.UndefOr[MaintenanceWindowStringDateTime]
     var WindowId: js.UndefOr[MaintenanceWindowId]
@@ -8327,6 +8385,7 @@ package ssm {
         Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
         NextExecutionTime: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
         Schedule: js.UndefOr[MaintenanceWindowSchedule] = js.undefined,
+        ScheduleOffset: js.UndefOr[MaintenanceWindowOffset] = js.undefined,
         ScheduleTimezone: js.UndefOr[MaintenanceWindowTimezone] = js.undefined,
         StartDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
         WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined
@@ -8340,6 +8399,7 @@ package ssm {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       NextExecutionTime.foreach(__v => __obj.updateDynamic("NextExecutionTime")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
+      ScheduleOffset.foreach(__v => __obj.updateDynamic("ScheduleOffset")(__v.asInstanceOf[js.Any]))
       ScheduleTimezone.foreach(__v => __obj.updateDynamic("ScheduleTimezone")(__v.asInstanceOf[js.Any]))
       StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
       WindowId.foreach(__v => __obj.updateDynamic("WindowId")(__v.asInstanceOf[js.Any]))
@@ -8761,9 +8821,22 @@ package ssm {
     val REDHAT_ENTERPRISE_LINUX = "REDHAT_ENTERPRISE_LINUX".asInstanceOf[OperatingSystem]
     val SUSE                    = "SUSE".asInstanceOf[OperatingSystem]
     val CENTOS                  = "CENTOS".asInstanceOf[OperatingSystem]
+    val ORACLE_LINUX            = "ORACLE_LINUX".asInstanceOf[OperatingSystem]
+    val DEBIAN                  = "DEBIAN".asInstanceOf[OperatingSystem]
 
-    val values =
-      js.Object.freeze(js.Array(WINDOWS, AMAZON_LINUX, AMAZON_LINUX_2, UBUNTU, REDHAT_ENTERPRISE_LINUX, SUSE, CENTOS))
+    val values = js.Object.freeze(
+      js.Array(
+        WINDOWS,
+        AMAZON_LINUX,
+        AMAZON_LINUX_2,
+        UBUNTU,
+        REDHAT_ENTERPRISE_LINUX,
+        SUSE,
+        CENTOS,
+        ORACLE_LINUX,
+        DEBIAN
+      )
+    )
   }
 
   /**
@@ -8885,7 +8958,7 @@ package ssm {
   }
 
   /**
-    * Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their AWS resources. For more information, see [[http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html|AWS Systems Manager OpsCenter]] in the <i>AWS Systems Manager User Guide</i>.
+    * Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their AWS resources. For more information, see [[https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html|AWS Systems Manager OpsCenter]] in the <i>AWS Systems Manager User Guide</i>.
     */
   @js.native
   trait OpsItem extends js.Object {
@@ -9182,11 +9255,12 @@ package ssm {
   }
 
   /**
-    * An Amazon EC2 Systems Manager parameter in Parameter Store.
+    * An Systems Manager parameter in Parameter Store.
     */
   @js.native
   trait Parameter extends js.Object {
     var ARN: js.UndefOr[String]
+    var DataType: js.UndefOr[ParameterDataType]
     var LastModifiedDate: js.UndefOr[DateTime]
     var Name: js.UndefOr[PSParameterName]
     var Selector: js.UndefOr[PSParameterSelector]
@@ -9200,6 +9274,7 @@ package ssm {
     @inline
     def apply(
         ARN: js.UndefOr[String] = js.undefined,
+        DataType: js.UndefOr[ParameterDataType] = js.undefined,
         LastModifiedDate: js.UndefOr[DateTime] = js.undefined,
         Name: js.UndefOr[PSParameterName] = js.undefined,
         Selector: js.UndefOr[PSParameterSelector] = js.undefined,
@@ -9210,6 +9285,7 @@ package ssm {
     ): Parameter = {
       val __obj = js.Dynamic.literal()
       ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
+      DataType.foreach(__v => __obj.updateDynamic("DataType")(__v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Selector.foreach(__v => __obj.updateDynamic("Selector")(__v.asInstanceOf[js.Any]))
@@ -9227,6 +9303,7 @@ package ssm {
   @js.native
   trait ParameterHistory extends js.Object {
     var AllowedPattern: js.UndefOr[AllowedPattern]
+    var DataType: js.UndefOr[ParameterDataType]
     var Description: js.UndefOr[ParameterDescription]
     var KeyId: js.UndefOr[ParameterKeyId]
     var Labels: js.UndefOr[ParameterLabelList]
@@ -9244,6 +9321,7 @@ package ssm {
     @inline
     def apply(
         AllowedPattern: js.UndefOr[AllowedPattern] = js.undefined,
+        DataType: js.UndefOr[ParameterDataType] = js.undefined,
         Description: js.UndefOr[ParameterDescription] = js.undefined,
         KeyId: js.UndefOr[ParameterKeyId] = js.undefined,
         Labels: js.UndefOr[ParameterLabelList] = js.undefined,
@@ -9258,6 +9336,7 @@ package ssm {
     ): ParameterHistory = {
       val __obj = js.Dynamic.literal()
       AllowedPattern.foreach(__v => __obj.updateDynamic("AllowedPattern")(__v.asInstanceOf[js.Any]))
+      DataType.foreach(__v => __obj.updateDynamic("DataType")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       KeyId.foreach(__v => __obj.updateDynamic("KeyId")(__v.asInstanceOf[js.Any]))
       Labels.foreach(__v => __obj.updateDynamic("Labels")(__v.asInstanceOf[js.Any]))
@@ -9304,6 +9383,7 @@ package ssm {
   @js.native
   trait ParameterMetadata extends js.Object {
     var AllowedPattern: js.UndefOr[AllowedPattern]
+    var DataType: js.UndefOr[ParameterDataType]
     var Description: js.UndefOr[ParameterDescription]
     var KeyId: js.UndefOr[ParameterKeyId]
     var LastModifiedDate: js.UndefOr[DateTime]
@@ -9319,6 +9399,7 @@ package ssm {
     @inline
     def apply(
         AllowedPattern: js.UndefOr[AllowedPattern] = js.undefined,
+        DataType: js.UndefOr[ParameterDataType] = js.undefined,
         Description: js.UndefOr[ParameterDescription] = js.undefined,
         KeyId: js.UndefOr[ParameterKeyId] = js.undefined,
         LastModifiedDate: js.UndefOr[DateTime] = js.undefined,
@@ -9331,6 +9412,7 @@ package ssm {
     ): ParameterMetadata = {
       val __obj = js.Dynamic.literal()
       AllowedPattern.foreach(__v => __obj.updateDynamic("AllowedPattern")(__v.asInstanceOf[js.Any]))
+      DataType.foreach(__v => __obj.updateDynamic("DataType")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       KeyId.foreach(__v => __obj.updateDynamic("KeyId")(__v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
@@ -9349,7 +9431,7 @@ package ssm {
     *  <important> The <code>ParameterStringFilter</code> object is used by the <a>DescribeParameters</a> and <a>GetParametersByPath</a> API actions. However, not all of the pattern values listed for <code>Key</code> can be used with both actions.
     *  For <code>DescribeActions</code>, all of the listed patterns are valid, with the exception of <code>Label</code>.
     *  For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code> are not valid: <code>Name</code>, <code>Path</code>, and <code>Tier</code>.
-    *  For examples of CLI commands demonstrating valid parameter filter constructions, see [[http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html|Searching for Systems Manager Parameters]] in the <i>AWS Systems Manager User Guide</i>.
+    *  For examples of CLI commands demonstrating valid parameter filter constructions, see [[https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html|Searching for Systems Manager parameters]] in the <i>AWS Systems Manager User Guide</i>.
     *  </important>
     */
   @js.native
@@ -9747,7 +9829,7 @@ package ssm {
   trait PatchRule extends js.Object {
     var PatchFilterGroup: PatchFilterGroup
     var ApproveAfterDays: js.UndefOr[ApproveAfterDays]
-    var ApproveUntilDate: js.UndefOr[PatchStringDate]
+    var ApproveUntilDate: js.UndefOr[PatchStringDateTime]
     var ComplianceLevel: js.UndefOr[PatchComplianceLevel]
     var EnableNonSecurity: js.UndefOr[Boolean]
   }
@@ -9757,7 +9839,7 @@ package ssm {
     def apply(
         PatchFilterGroup: PatchFilterGroup,
         ApproveAfterDays: js.UndefOr[ApproveAfterDays] = js.undefined,
-        ApproveUntilDate: js.UndefOr[PatchStringDate] = js.undefined,
+        ApproveUntilDate: js.UndefOr[PatchStringDateTime] = js.undefined,
         ComplianceLevel: js.UndefOr[PatchComplianceLevel] = js.undefined,
         EnableNonSecurity: js.UndefOr[Boolean] = js.undefined
     ): PatchRule = {
@@ -9913,6 +9995,7 @@ package ssm {
     var ResourceId: ComplianceResourceId
     var ResourceType: ComplianceResourceType
     var ItemContentHash: js.UndefOr[ComplianceItemContentHash]
+    var UploadType: js.UndefOr[ComplianceUploadType]
   }
 
   object PutComplianceItemsRequest {
@@ -9923,7 +10006,8 @@ package ssm {
         Items: ComplianceItemEntryList,
         ResourceId: ComplianceResourceId,
         ResourceType: ComplianceResourceType,
-        ItemContentHash: js.UndefOr[ComplianceItemContentHash] = js.undefined
+        ItemContentHash: js.UndefOr[ComplianceItemContentHash] = js.undefined,
+        UploadType: js.UndefOr[ComplianceUploadType] = js.undefined
     ): PutComplianceItemsRequest = {
       val __obj = js.Dynamic.literal(
         "ComplianceType"   -> ComplianceType.asInstanceOf[js.Any],
@@ -9934,6 +10018,7 @@ package ssm {
       )
 
       ItemContentHash.foreach(__v => __obj.updateDynamic("ItemContentHash")(__v.asInstanceOf[js.Any]))
+      UploadType.foreach(__v => __obj.updateDynamic("UploadType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutComplianceItemsRequest]
     }
   }
@@ -9991,44 +10076,47 @@ package ssm {
   @js.native
   trait PutParameterRequest extends js.Object {
     var Name: PSParameterName
-    var Type: ParameterType
     var Value: PSParameterValue
     var AllowedPattern: js.UndefOr[AllowedPattern]
+    var DataType: js.UndefOr[ParameterDataType]
     var Description: js.UndefOr[ParameterDescription]
     var KeyId: js.UndefOr[ParameterKeyId]
     var Overwrite: js.UndefOr[Boolean]
     var Policies: js.UndefOr[ParameterPolicies]
     var Tags: js.UndefOr[TagList]
     var Tier: js.UndefOr[ParameterTier]
+    var Type: js.UndefOr[ParameterType]
   }
 
   object PutParameterRequest {
     @inline
     def apply(
         Name: PSParameterName,
-        Type: ParameterType,
         Value: PSParameterValue,
         AllowedPattern: js.UndefOr[AllowedPattern] = js.undefined,
+        DataType: js.UndefOr[ParameterDataType] = js.undefined,
         Description: js.UndefOr[ParameterDescription] = js.undefined,
         KeyId: js.UndefOr[ParameterKeyId] = js.undefined,
         Overwrite: js.UndefOr[Boolean] = js.undefined,
         Policies: js.UndefOr[ParameterPolicies] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
-        Tier: js.UndefOr[ParameterTier] = js.undefined
+        Tier: js.UndefOr[ParameterTier] = js.undefined,
+        Type: js.UndefOr[ParameterType] = js.undefined
     ): PutParameterRequest = {
       val __obj = js.Dynamic.literal(
         "Name"  -> Name.asInstanceOf[js.Any],
-        "Type"  -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
       AllowedPattern.foreach(__v => __obj.updateDynamic("AllowedPattern")(__v.asInstanceOf[js.Any]))
+      DataType.foreach(__v => __obj.updateDynamic("DataType")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       KeyId.foreach(__v => __obj.updateDynamic("KeyId")(__v.asInstanceOf[js.Any]))
       Overwrite.foreach(__v => __obj.updateDynamic("Overwrite")(__v.asInstanceOf[js.Any]))
       Policies.foreach(__v => __obj.updateDynamic("Policies")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       Tier.foreach(__v => __obj.updateDynamic("Tier")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutParameterRequest]
     }
   }
@@ -10445,6 +10533,27 @@ package ssm {
   }
 
   /**
+    * Synchronize Systems Manager Inventory data from multiple AWS accounts defined in AWS Organizations to a centralized S3 bucket. Data is synchronized to individual key prefixes in the central bucket. Each key prefix represents a different AWS account ID.
+    */
+  @js.native
+  trait ResourceDataSyncDestinationDataSharing extends js.Object {
+    var DestinationDataSharingType: js.UndefOr[ResourceDataSyncDestinationDataSharingType]
+  }
+
+  object ResourceDataSyncDestinationDataSharing {
+    @inline
+    def apply(
+        DestinationDataSharingType: js.UndefOr[ResourceDataSyncDestinationDataSharingType] = js.undefined
+    ): ResourceDataSyncDestinationDataSharing = {
+      val __obj = js.Dynamic.literal()
+      DestinationDataSharingType.foreach(__v =>
+        __obj.updateDynamic("DestinationDataSharingType")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ResourceDataSyncDestinationDataSharing]
+    }
+  }
+
+  /**
     * Information about a Resource Data Sync configuration, including its current status and last successful sync.
     */
   @js.native
@@ -10510,7 +10619,7 @@ package ssm {
   }
 
   /**
-    * Information about the target Amazon S3 bucket for the Resource Data Sync.
+    * Information about the target S3 bucket for the Resource Data Sync.
     */
   @js.native
   trait ResourceDataSyncS3Destination extends js.Object {
@@ -10518,6 +10627,7 @@ package ssm {
     var Region: ResourceDataSyncS3Region
     var SyncFormat: ResourceDataSyncS3Format
     var AWSKMSKeyARN: js.UndefOr[ResourceDataSyncAWSKMSKeyARN]
+    var DestinationDataSharing: js.UndefOr[ResourceDataSyncDestinationDataSharing]
     var Prefix: js.UndefOr[ResourceDataSyncS3Prefix]
   }
 
@@ -10528,6 +10638,7 @@ package ssm {
         Region: ResourceDataSyncS3Region,
         SyncFormat: ResourceDataSyncS3Format,
         AWSKMSKeyARN: js.UndefOr[ResourceDataSyncAWSKMSKeyARN] = js.undefined,
+        DestinationDataSharing: js.UndefOr[ResourceDataSyncDestinationDataSharing] = js.undefined,
         Prefix: js.UndefOr[ResourceDataSyncS3Prefix] = js.undefined
     ): ResourceDataSyncS3Destination = {
       val __obj = js.Dynamic.literal(
@@ -10537,6 +10648,7 @@ package ssm {
       )
 
       AWSKMSKeyARN.foreach(__v => __obj.updateDynamic("AWSKMSKeyARN")(__v.asInstanceOf[js.Any]))
+      DestinationDataSharing.foreach(__v => __obj.updateDynamic("DestinationDataSharing")(__v.asInstanceOf[js.Any]))
       Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceDataSyncS3Destination]
     }
@@ -10701,7 +10813,7 @@ package ssm {
   }
 
   /**
-    * An Amazon S3 bucket where you want to store the results of this request.
+    * An S3 bucket where you want to store the results of this request.
     */
   @js.native
   trait S3OutputLocation extends js.Object {
@@ -10726,7 +10838,7 @@ package ssm {
   }
 
   /**
-    * A URL for the Amazon S3 bucket where you want to store the results of this request.
+    * A URL for the S3 bucket where you want to store the results of this request.
     */
   @js.native
   trait S3OutputUrl extends js.Object {
@@ -11440,10 +11552,10 @@ package ssm {
     *  * (Maintenance window targets only) <code>Key=resource-groups:Name,Values=ProductionResourceGroup</code>
     *  This example demonstrates how to target all resources in the resource group ```ProductionResourceGroup``` in your maintenance window.
     *  * (Maintenance window targets only) <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code>
-    *  This example demonstrates how to target only Amazon EC2 instances and VPCs in your maintenance window.
+    *  This example demonstrates how to target only EC2 instances and VPCs in your maintenance window.
     *  * (State Manager association targets only) <code>Key=InstanceIds,Values=<i>*</i> </code>
     *  This example demonstrates how to target all managed instances in the AWS Region where the association was created.
-    * For information about how to send commands that target instances using <code>Key,Value</code> parameters, see [[https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting|Using Targets and Rate Controls to Send Commands to a Fleet]] in the <i>AWS Systems Manager User Guide</i>.
+    * For information about how to send commands that target instances using <code>Key,Value</code> parameters, see [[https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting|Targeting multiple instances]] in the <i>AWS Systems Manager User Guide</i>.
     */
   @js.native
   trait Target extends js.Object {
@@ -11534,6 +11646,7 @@ package ssm {
   @js.native
   trait UpdateAssociationRequest extends js.Object {
     var AssociationId: AssociationId
+    var ApplyOnlyAtCronInterval: js.UndefOr[ApplyOnlyAtCronInterval]
     var AssociationName: js.UndefOr[AssociationName]
     var AssociationVersion: js.UndefOr[AssociationVersion]
     var AutomationTargetParameterName: js.UndefOr[AutomationTargetParameterName]
@@ -11545,6 +11658,7 @@ package ssm {
     var OutputLocation: js.UndefOr[InstanceAssociationOutputLocation]
     var Parameters: js.UndefOr[Parameters]
     var ScheduleExpression: js.UndefOr[ScheduleExpression]
+    var SyncCompliance: js.UndefOr[AssociationSyncCompliance]
     var Targets: js.UndefOr[Targets]
   }
 
@@ -11552,6 +11666,7 @@ package ssm {
     @inline
     def apply(
         AssociationId: AssociationId,
+        ApplyOnlyAtCronInterval: js.UndefOr[ApplyOnlyAtCronInterval] = js.undefined,
         AssociationName: js.UndefOr[AssociationName] = js.undefined,
         AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
         AutomationTargetParameterName: js.UndefOr[AutomationTargetParameterName] = js.undefined,
@@ -11563,12 +11678,14 @@ package ssm {
         OutputLocation: js.UndefOr[InstanceAssociationOutputLocation] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined,
         ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
+        SyncCompliance: js.UndefOr[AssociationSyncCompliance] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined
     ): UpdateAssociationRequest = {
       val __obj = js.Dynamic.literal(
         "AssociationId" -> AssociationId.asInstanceOf[js.Any]
       )
 
+      ApplyOnlyAtCronInterval.foreach(__v => __obj.updateDynamic("ApplyOnlyAtCronInterval")(__v.asInstanceOf[js.Any]))
       AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
       AssociationVersion.foreach(__v => __obj.updateDynamic("AssociationVersion")(__v.asInstanceOf[js.Any]))
       AutomationTargetParameterName.foreach(__v =>
@@ -11582,6 +11699,7 @@ package ssm {
       OutputLocation.foreach(__v => __obj.updateDynamic("OutputLocation")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
+      SyncCompliance.foreach(__v => __obj.updateDynamic("SyncCompliance")(__v.asInstanceOf[js.Any]))
       Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAssociationRequest]
     }
@@ -11744,6 +11862,7 @@ package ssm {
     var Name: js.UndefOr[MaintenanceWindowName]
     var Replace: js.UndefOr[Boolean]
     var Schedule: js.UndefOr[MaintenanceWindowSchedule]
+    var ScheduleOffset: js.UndefOr[MaintenanceWindowOffset]
     var ScheduleTimezone: js.UndefOr[MaintenanceWindowTimezone]
     var StartDate: js.UndefOr[MaintenanceWindowStringDateTime]
   }
@@ -11761,6 +11880,7 @@ package ssm {
         Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
         Replace: js.UndefOr[Boolean] = js.undefined,
         Schedule: js.UndefOr[MaintenanceWindowSchedule] = js.undefined,
+        ScheduleOffset: js.UndefOr[MaintenanceWindowOffset] = js.undefined,
         ScheduleTimezone: js.UndefOr[MaintenanceWindowTimezone] = js.undefined,
         StartDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined
     ): UpdateMaintenanceWindowRequest = {
@@ -11777,6 +11897,7 @@ package ssm {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Replace.foreach(__v => __obj.updateDynamic("Replace")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
+      ScheduleOffset.foreach(__v => __obj.updateDynamic("ScheduleOffset")(__v.asInstanceOf[js.Any]))
       ScheduleTimezone.foreach(__v => __obj.updateDynamic("ScheduleTimezone")(__v.asInstanceOf[js.Any]))
       StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateMaintenanceWindowRequest]
@@ -11793,6 +11914,7 @@ package ssm {
     var EndDate: js.UndefOr[MaintenanceWindowStringDateTime]
     var Name: js.UndefOr[MaintenanceWindowName]
     var Schedule: js.UndefOr[MaintenanceWindowSchedule]
+    var ScheduleOffset: js.UndefOr[MaintenanceWindowOffset]
     var ScheduleTimezone: js.UndefOr[MaintenanceWindowTimezone]
     var StartDate: js.UndefOr[MaintenanceWindowStringDateTime]
     var WindowId: js.UndefOr[MaintenanceWindowId]
@@ -11809,6 +11931,7 @@ package ssm {
         EndDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
         Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
         Schedule: js.UndefOr[MaintenanceWindowSchedule] = js.undefined,
+        ScheduleOffset: js.UndefOr[MaintenanceWindowOffset] = js.undefined,
         ScheduleTimezone: js.UndefOr[MaintenanceWindowTimezone] = js.undefined,
         StartDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
         WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined
@@ -11822,6 +11945,7 @@ package ssm {
       EndDate.foreach(__v => __obj.updateDynamic("EndDate")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
+      ScheduleOffset.foreach(__v => __obj.updateDynamic("ScheduleOffset")(__v.asInstanceOf[js.Any]))
       ScheduleTimezone.foreach(__v => __obj.updateDynamic("ScheduleTimezone")(__v.asInstanceOf[js.Any]))
       StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
       WindowId.foreach(__v => __obj.updateDynamic("WindowId")(__v.asInstanceOf[js.Any]))

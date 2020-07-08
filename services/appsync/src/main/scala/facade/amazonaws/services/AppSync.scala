@@ -252,9 +252,34 @@ package appsync {
     val R4_2XLARGE = "R4_2XLARGE".asInstanceOf[ApiCacheType]
     val R4_4XLARGE = "R4_4XLARGE".asInstanceOf[ApiCacheType]
     val R4_8XLARGE = "R4_8XLARGE".asInstanceOf[ApiCacheType]
+    val SMALL      = "SMALL".asInstanceOf[ApiCacheType]
+    val MEDIUM     = "MEDIUM".asInstanceOf[ApiCacheType]
+    val LARGE      = "LARGE".asInstanceOf[ApiCacheType]
+    val XLARGE     = "XLARGE".asInstanceOf[ApiCacheType]
+    val LARGE_2X   = "LARGE_2X".asInstanceOf[ApiCacheType]
+    val LARGE_4X   = "LARGE_4X".asInstanceOf[ApiCacheType]
+    val LARGE_8X   = "LARGE_8X".asInstanceOf[ApiCacheType]
+    val LARGE_12X  = "LARGE_12X".asInstanceOf[ApiCacheType]
 
-    val values =
-      js.Object.freeze(js.Array(T2_SMALL, T2_MEDIUM, R4_LARGE, R4_XLARGE, R4_2XLARGE, R4_4XLARGE, R4_8XLARGE))
+    val values = js.Object.freeze(
+      js.Array(
+        T2_SMALL,
+        T2_MEDIUM,
+        R4_LARGE,
+        R4_XLARGE,
+        R4_2XLARGE,
+        R4_4XLARGE,
+        R4_8XLARGE,
+        SMALL,
+        MEDIUM,
+        LARGE,
+        XLARGE,
+        LARGE_2X,
+        LARGE_4X,
+        LARGE_8X,
+        LARGE_12X
+      )
+    )
   }
 
   @js.native

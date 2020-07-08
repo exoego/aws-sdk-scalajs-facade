@@ -45,6 +45,7 @@ package object cloudformation {
   type Imports                              = js.Array[StackName]
   type InProgressStackInstancesCount        = Int
   type InSyncStackInstancesCount            = Int
+  type IsDefaultVersion                     = Boolean
   type Key                                  = String
   type LastUpdatedTime                      = js.Date
   type LimitName                            = String
@@ -114,6 +115,8 @@ package object cloudformation {
   type StackDriftDetectionStatusReason      = String
   type StackEvents                          = js.Array[StackEvent]
   type StackId                              = String
+  type StackInstanceFilterValues            = String
+  type StackInstanceFilters                 = js.Array[StackInstanceFilter]
   type StackInstanceSummaries               = js.Array[StackInstanceSummary]
   type StackName                            = String
   type StackNameOrId                        = String
@@ -364,8 +367,8 @@ package cloudformation {
   }
 
   /**
-    * Structure that contains the results of the account gate function which AWS CloudFormation invokes, if present, before proceeding with a stack set operation in an account and region.
-    *  For each account and region, AWS CloudFormation lets you specify a Lamdba function that encapsulates any requirements that must be met before CloudFormation can proceed with a stack set operation in that account and region. CloudFormation invokes the function each time a stack set operation is requested for that account and region; if the function returns <code>FAILED</code>, CloudFormation cancels the operation in that account and region, and sets the stack set operation result status for that account and region to <code>FAILED</code>.
+    * Structure that contains the results of the account gate function which AWS CloudFormation invokes, if present, before proceeding with a stack set operation in an account and Region.
+    *  For each account and Region, AWS CloudFormation lets you specify a Lamdba function that encapsulates any requirements that must be met before CloudFormation can proceed with a stack set operation in that account and Region. CloudFormation invokes the function each time a stack set operation is requested for that account and Region; if the function returns <code>FAILED</code>, CloudFormation cancels the operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>.
     *  For more information, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-account-gating.html|Configuring a target account gate]].
     */
   @js.native
@@ -1100,7 +1103,7 @@ package cloudformation {
   }
 
   /**
-    * [<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys.
+    * [<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does not deploy stack instances to the organization master account, even if the master account is in your organization or in an OU in your organization.
     *  For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.
     */
   @js.native
@@ -1726,6 +1729,7 @@ package cloudformation {
     var Description: js.UndefOr[Description]
     var DocumentationUrl: js.UndefOr[OptionalSecureUrl]
     var ExecutionRoleArn: js.UndefOr[RoleArn]
+    var IsDefaultVersion: js.UndefOr[IsDefaultVersion]
     var LastUpdated: js.UndefOr[Timestamp]
     var LoggingConfig: js.UndefOr[LoggingConfig]
     var ProvisioningType: js.UndefOr[ProvisioningType]
@@ -1746,6 +1750,7 @@ package cloudformation {
         Description: js.UndefOr[Description] = js.undefined,
         DocumentationUrl: js.UndefOr[OptionalSecureUrl] = js.undefined,
         ExecutionRoleArn: js.UndefOr[RoleArn] = js.undefined,
+        IsDefaultVersion: js.UndefOr[IsDefaultVersion] = js.undefined,
         LastUpdated: js.UndefOr[Timestamp] = js.undefined,
         LoggingConfig: js.UndefOr[LoggingConfig] = js.undefined,
         ProvisioningType: js.UndefOr[ProvisioningType] = js.undefined,
@@ -1763,6 +1768,7 @@ package cloudformation {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       DocumentationUrl.foreach(__v => __obj.updateDynamic("DocumentationUrl")(__v.asInstanceOf[js.Any]))
       ExecutionRoleArn.foreach(__v => __obj.updateDynamic("ExecutionRoleArn")(__v.asInstanceOf[js.Any]))
+      IsDefaultVersion.foreach(__v => __obj.updateDynamic("IsDefaultVersion")(__v.asInstanceOf[js.Any]))
       LastUpdated.foreach(__v => __obj.updateDynamic("LastUpdated")(__v.asInstanceOf[js.Any]))
       LoggingConfig.foreach(__v => __obj.updateDynamic("LoggingConfig")(__v.asInstanceOf[js.Any]))
       ProvisioningType.foreach(__v => __obj.updateDynamic("ProvisioningType")(__v.asInstanceOf[js.Any]))
@@ -2405,6 +2411,7 @@ package cloudformation {
   @js.native
   trait ListStackInstancesInput extends js.Object {
     var StackSetName: StackSetName
+    var Filters: js.UndefOr[StackInstanceFilters]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
     var StackInstanceAccount: js.UndefOr[Account]
@@ -2415,6 +2422,7 @@ package cloudformation {
     @inline
     def apply(
         StackSetName: StackSetName,
+        Filters: js.UndefOr[StackInstanceFilters] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
         StackInstanceAccount: js.UndefOr[Account] = js.undefined,
@@ -2424,6 +2432,7 @@ package cloudformation {
         "StackSetName" -> StackSetName.asInstanceOf[js.Any]
       )
 
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       StackInstanceAccount.foreach(__v => __obj.updateDynamic("StackInstanceAccount")(__v.asInstanceOf[js.Any]))
@@ -3736,7 +3745,7 @@ package cloudformation {
   }
 
   /**
-    * An AWS CloudFormation stack, in a specific account and region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status.
+    * An AWS CloudFormation stack, in a specific account and Region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given Region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status.
     */
   @js.native
   trait StackInstance extends js.Object {
@@ -3747,6 +3756,7 @@ package cloudformation {
     var ParameterOverrides: js.UndefOr[Parameters]
     var Region: js.UndefOr[Region]
     var StackId: js.UndefOr[StackId]
+    var StackInstanceStatus: js.UndefOr[StackInstanceComprehensiveStatus]
     var StackSetId: js.UndefOr[StackSetId]
     var Status: js.UndefOr[StackInstanceStatus]
     var StatusReason: js.UndefOr[Reason]
@@ -3762,6 +3772,7 @@ package cloudformation {
         ParameterOverrides: js.UndefOr[Parameters] = js.undefined,
         Region: js.UndefOr[Region] = js.undefined,
         StackId: js.UndefOr[StackId] = js.undefined,
+        StackInstanceStatus: js.UndefOr[StackInstanceComprehensiveStatus] = js.undefined,
         StackSetId: js.UndefOr[StackSetId] = js.undefined,
         Status: js.UndefOr[StackInstanceStatus] = js.undefined,
         StatusReason: js.UndefOr[Reason] = js.undefined
@@ -3774,11 +3785,74 @@ package cloudformation {
       ParameterOverrides.foreach(__v => __obj.updateDynamic("ParameterOverrides")(__v.asInstanceOf[js.Any]))
       Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
       StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
+      StackInstanceStatus.foreach(__v => __obj.updateDynamic("StackInstanceStatus")(__v.asInstanceOf[js.Any]))
       StackSetId.foreach(__v => __obj.updateDynamic("StackSetId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StackInstance]
     }
+  }
+
+  /**
+    * The detailed status of the stack instance.
+    */
+  @js.native
+  trait StackInstanceComprehensiveStatus extends js.Object {
+    var DetailedStatus: js.UndefOr[StackInstanceDetailedStatus]
+  }
+
+  object StackInstanceComprehensiveStatus {
+    @inline
+    def apply(
+        DetailedStatus: js.UndefOr[StackInstanceDetailedStatus] = js.undefined
+    ): StackInstanceComprehensiveStatus = {
+      val __obj = js.Dynamic.literal()
+      DetailedStatus.foreach(__v => __obj.updateDynamic("DetailedStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StackInstanceComprehensiveStatus]
+    }
+  }
+
+  @js.native
+  sealed trait StackInstanceDetailedStatus extends js.Any
+  object StackInstanceDetailedStatus extends js.Object {
+    val PENDING    = "PENDING".asInstanceOf[StackInstanceDetailedStatus]
+    val RUNNING    = "RUNNING".asInstanceOf[StackInstanceDetailedStatus]
+    val SUCCEEDED  = "SUCCEEDED".asInstanceOf[StackInstanceDetailedStatus]
+    val FAILED     = "FAILED".asInstanceOf[StackInstanceDetailedStatus]
+    val CANCELLED  = "CANCELLED".asInstanceOf[StackInstanceDetailedStatus]
+    val INOPERABLE = "INOPERABLE".asInstanceOf[StackInstanceDetailedStatus]
+
+    val values = js.Object.freeze(js.Array(PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED, INOPERABLE))
+  }
+
+  /**
+    * The status that stack instances are filtered by.
+    */
+  @js.native
+  trait StackInstanceFilter extends js.Object {
+    var Name: js.UndefOr[StackInstanceFilterName]
+    var Values: js.UndefOr[StackInstanceFilterValues]
+  }
+
+  object StackInstanceFilter {
+    @inline
+    def apply(
+        Name: js.UndefOr[StackInstanceFilterName] = js.undefined,
+        Values: js.UndefOr[StackInstanceFilterValues] = js.undefined
+    ): StackInstanceFilter = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StackInstanceFilter]
+    }
+  }
+
+  @js.native
+  sealed trait StackInstanceFilterName extends js.Any
+  object StackInstanceFilterName extends js.Object {
+    val DETAILED_STATUS = "DETAILED_STATUS".asInstanceOf[StackInstanceFilterName]
+
+    val values = js.Object.freeze(js.Array(DETAILED_STATUS))
   }
 
   @js.native
@@ -3802,6 +3876,7 @@ package cloudformation {
     var OrganizationalUnitId: js.UndefOr[OrganizationalUnitId]
     var Region: js.UndefOr[Region]
     var StackId: js.UndefOr[StackId]
+    var StackInstanceStatus: js.UndefOr[StackInstanceComprehensiveStatus]
     var StackSetId: js.UndefOr[StackSetId]
     var Status: js.UndefOr[StackInstanceStatus]
     var StatusReason: js.UndefOr[Reason]
@@ -3816,6 +3891,7 @@ package cloudformation {
         OrganizationalUnitId: js.UndefOr[OrganizationalUnitId] = js.undefined,
         Region: js.UndefOr[Region] = js.undefined,
         StackId: js.UndefOr[StackId] = js.undefined,
+        StackInstanceStatus: js.UndefOr[StackInstanceComprehensiveStatus] = js.undefined,
         StackSetId: js.UndefOr[StackSetId] = js.undefined,
         Status: js.UndefOr[StackInstanceStatus] = js.undefined,
         StatusReason: js.UndefOr[Reason] = js.undefined
@@ -3827,6 +3903,7 @@ package cloudformation {
       OrganizationalUnitId.foreach(__v => __obj.updateDynamic("OrganizationalUnitId")(__v.asInstanceOf[js.Any]))
       Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
       StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
+      StackInstanceStatus.foreach(__v => __obj.updateDynamic("StackInstanceStatus")(__v.asInstanceOf[js.Any]))
       StackSetId.foreach(__v => __obj.updateDynamic("StackSetId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
@@ -4084,7 +4161,7 @@ package cloudformation {
   }
 
   /**
-    * A structure that contains information about a stack set. A stack set enables you to provision stacks into AWS accounts and across regions by using a single CloudFormation template. In the stack set, you specify the template to use, as well as any parameters and capabilities that the template requires.
+    * A structure that contains information about a stack set. A stack set enables you to provision stacks into AWS accounts and across Regions by using a single CloudFormation template. In the stack set, you specify the template to use, as well as any parameters and capabilities that the template requires.
     */
   @js.native
   trait StackSet extends js.Object {
@@ -4331,7 +4408,7 @@ package cloudformation {
   }
 
   /**
-    * The structure that contains information about a specified operation's results for a given account in a given region.
+    * The structure that contains information about a specified operation's results for a given account in a given Region.
     */
   @js.native
   trait StackSetOperationResultSummary extends js.Object {
@@ -4699,6 +4776,7 @@ package cloudformation {
   trait TypeVersionSummary extends js.Object {
     var Arn: js.UndefOr[TypeArn]
     var Description: js.UndefOr[Description]
+    var IsDefaultVersion: js.UndefOr[IsDefaultVersion]
     var TimeCreated: js.UndefOr[Timestamp]
     var Type: js.UndefOr[RegistryType]
     var TypeName: js.UndefOr[TypeName]
@@ -4710,6 +4788,7 @@ package cloudformation {
     def apply(
         Arn: js.UndefOr[TypeArn] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
+        IsDefaultVersion: js.UndefOr[IsDefaultVersion] = js.undefined,
         TimeCreated: js.UndefOr[Timestamp] = js.undefined,
         Type: js.UndefOr[RegistryType] = js.undefined,
         TypeName: js.UndefOr[TypeName] = js.undefined,
@@ -4718,6 +4797,7 @@ package cloudformation {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      IsDefaultVersion.foreach(__v => __obj.updateDynamic("IsDefaultVersion")(__v.asInstanceOf[js.Any]))
       TimeCreated.foreach(__v => __obj.updateDynamic("TimeCreated")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))

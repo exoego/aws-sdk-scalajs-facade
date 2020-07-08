@@ -16,6 +16,7 @@ package object directconnect {
   type AwsDeviceV2                                 = String
   type BGPAuthKey                                  = String
   type BGPPeerId                                   = String
+  type BGPPeerIdList                               = js.Array[BGPPeerId]
   type BGPPeerList                                 = js.Array[BGPPeer]
   type Bandwidth                                   = String
   type BooleanFlag                                 = Boolean
@@ -33,6 +34,8 @@ package object directconnect {
   type DirectConnectGatewayId                      = String
   type DirectConnectGatewayList                    = js.Array[DirectConnectGateway]
   type DirectConnectGatewayName                    = String
+  type EndTime                                     = js.Date
+  type FailureTestHistoryStatus                    = String
   type GatewayIdToAssociate                        = String
   type GatewayIdentifier                           = String
   type InterconnectId                              = String
@@ -62,22 +65,26 @@ package object directconnect {
   type ResourceTagList                             = js.Array[ResourceTag]
   type RouteFilterPrefixList                       = js.Array[RouteFilterPrefix]
   type RouterConfig                                = String
+  type StartTime                                   = js.Date
   type StateChangeError                            = String
   type TagKey                                      = String
   type TagKeyList                                  = js.Array[TagKey]
   type TagList                                     = js.Array[Tag]
   type TagValue                                    = String
+  type TestDuration                                = Int
+  type TestId                                      = String
   type VLAN                                        = Int
   type VirtualGatewayId                            = String
   type VirtualGatewayList                          = js.Array[VirtualGateway]
   @deprecated("Deprecated in AWS SDK", "forever")
-  type VirtualGatewayRegion   = String
-  type VirtualGatewayState    = String
-  type VirtualInterfaceId     = String
-  type VirtualInterfaceList   = js.Array[VirtualInterface]
-  type VirtualInterfaceName   = String
-  type VirtualInterfaceRegion = String
-  type VirtualInterfaceType   = String
+  type VirtualGatewayRegion            = String
+  type VirtualGatewayState             = String
+  type VirtualInterfaceId              = String
+  type VirtualInterfaceList            = js.Array[VirtualInterface]
+  type VirtualInterfaceName            = String
+  type VirtualInterfaceRegion          = String
+  type VirtualInterfaceTestHistoryList = js.Array[VirtualInterfaceTestHistory]
+  type VirtualInterfaceType            = String
 
   implicit final class DirectConnectOps(private val service: DirectConnect) extends AnyVal {
 
@@ -198,6 +205,14 @@ package object directconnect {
       service.describeVirtualInterfaces(params).promise().toFuture
     @inline def disassociateConnectionFromLagFuture(params: DisassociateConnectionFromLagRequest): Future[Connection] =
       service.disassociateConnectionFromLag(params).promise().toFuture
+    @inline def listVirtualInterfaceTestHistoryFuture(
+        params: ListVirtualInterfaceTestHistoryRequest
+    ): Future[ListVirtualInterfaceTestHistoryResponse] =
+      service.listVirtualInterfaceTestHistory(params).promise().toFuture
+    @inline def startBgpFailoverTestFuture(params: StartBgpFailoverTestRequest): Future[StartBgpFailoverTestResponse] =
+      service.startBgpFailoverTest(params).promise().toFuture
+    @inline def stopBgpFailoverTestFuture(params: StopBgpFailoverTestRequest): Future[StopBgpFailoverTestResponse] =
+      service.stopBgpFailoverTest(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
@@ -299,6 +314,11 @@ package directconnect {
     def describeVirtualGateways(): Request[VirtualGateways]                                              = js.native
     def describeVirtualInterfaces(params: DescribeVirtualInterfacesRequest): Request[VirtualInterfaces]  = js.native
     def disassociateConnectionFromLag(params: DisassociateConnectionFromLagRequest): Request[Connection] = js.native
+    def listVirtualInterfaceTestHistory(
+        params: ListVirtualInterfaceTestHistoryRequest
+    ): Request[ListVirtualInterfaceTestHistoryResponse]                                                  = js.native
+    def startBgpFailoverTest(params: StartBgpFailoverTestRequest): Request[StartBgpFailoverTestResponse] = js.native
+    def stopBgpFailoverTest(params: StopBgpFailoverTestRequest): Request[StopBgpFailoverTestResponse]    = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                            = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                      = js.native
     def updateDirectConnectGatewayAssociation(
@@ -2417,6 +2437,58 @@ package directconnect {
     }
   }
 
+  @js.native
+  trait ListVirtualInterfaceTestHistoryRequest extends js.Object {
+    var bgpPeers: js.UndefOr[BGPPeerIdList]
+    var maxResults: js.UndefOr[MaxResultSetSize]
+    var nextToken: js.UndefOr[PaginationToken]
+    var status: js.UndefOr[FailureTestHistoryStatus]
+    var testId: js.UndefOr[TestId]
+    var virtualInterfaceId: js.UndefOr[VirtualInterfaceId]
+  }
+
+  object ListVirtualInterfaceTestHistoryRequest {
+    @inline
+    def apply(
+        bgpPeers: js.UndefOr[BGPPeerIdList] = js.undefined,
+        maxResults: js.UndefOr[MaxResultSetSize] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        status: js.UndefOr[FailureTestHistoryStatus] = js.undefined,
+        testId: js.UndefOr[TestId] = js.undefined,
+        virtualInterfaceId: js.UndefOr[VirtualInterfaceId] = js.undefined
+    ): ListVirtualInterfaceTestHistoryRequest = {
+      val __obj = js.Dynamic.literal()
+      bgpPeers.foreach(__v => __obj.updateDynamic("bgpPeers")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      testId.foreach(__v => __obj.updateDynamic("testId")(__v.asInstanceOf[js.Any]))
+      virtualInterfaceId.foreach(__v => __obj.updateDynamic("virtualInterfaceId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListVirtualInterfaceTestHistoryRequest]
+    }
+  }
+
+  @js.native
+  trait ListVirtualInterfaceTestHistoryResponse extends js.Object {
+    var nextToken: js.UndefOr[PaginationToken]
+    var virtualInterfaceTestHistory: js.UndefOr[VirtualInterfaceTestHistoryList]
+  }
+
+  object ListVirtualInterfaceTestHistoryResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        virtualInterfaceTestHistory: js.UndefOr[VirtualInterfaceTestHistoryList] = js.undefined
+    ): ListVirtualInterfaceTestHistoryResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      virtualInterfaceTestHistory.foreach(__v =>
+        __obj.updateDynamic("virtualInterfaceTestHistory")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ListVirtualInterfaceTestHistoryResponse]
+    }
+  }
+
   /**
     * Information about a Letter of Authorization - Connecting Facility Assignment (LOA-CFA) for a connection.
     */
@@ -2841,6 +2913,80 @@ package directconnect {
     }
   }
 
+  @js.native
+  trait StartBgpFailoverTestRequest extends js.Object {
+    var virtualInterfaceId: VirtualInterfaceId
+    var bgpPeers: js.UndefOr[BGPPeerIdList]
+    var testDurationInMinutes: js.UndefOr[TestDuration]
+  }
+
+  object StartBgpFailoverTestRequest {
+    @inline
+    def apply(
+        virtualInterfaceId: VirtualInterfaceId,
+        bgpPeers: js.UndefOr[BGPPeerIdList] = js.undefined,
+        testDurationInMinutes: js.UndefOr[TestDuration] = js.undefined
+    ): StartBgpFailoverTestRequest = {
+      val __obj = js.Dynamic.literal(
+        "virtualInterfaceId" -> virtualInterfaceId.asInstanceOf[js.Any]
+      )
+
+      bgpPeers.foreach(__v => __obj.updateDynamic("bgpPeers")(__v.asInstanceOf[js.Any]))
+      testDurationInMinutes.foreach(__v => __obj.updateDynamic("testDurationInMinutes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartBgpFailoverTestRequest]
+    }
+  }
+
+  @js.native
+  trait StartBgpFailoverTestResponse extends js.Object {
+    var virtualInterfaceTest: js.UndefOr[VirtualInterfaceTestHistory]
+  }
+
+  object StartBgpFailoverTestResponse {
+    @inline
+    def apply(
+        virtualInterfaceTest: js.UndefOr[VirtualInterfaceTestHistory] = js.undefined
+    ): StartBgpFailoverTestResponse = {
+      val __obj = js.Dynamic.literal()
+      virtualInterfaceTest.foreach(__v => __obj.updateDynamic("virtualInterfaceTest")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartBgpFailoverTestResponse]
+    }
+  }
+
+  @js.native
+  trait StopBgpFailoverTestRequest extends js.Object {
+    var virtualInterfaceId: VirtualInterfaceId
+  }
+
+  object StopBgpFailoverTestRequest {
+    @inline
+    def apply(
+        virtualInterfaceId: VirtualInterfaceId
+    ): StopBgpFailoverTestRequest = {
+      val __obj = js.Dynamic.literal(
+        "virtualInterfaceId" -> virtualInterfaceId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[StopBgpFailoverTestRequest]
+    }
+  }
+
+  @js.native
+  trait StopBgpFailoverTestResponse extends js.Object {
+    var virtualInterfaceTest: js.UndefOr[VirtualInterfaceTestHistory]
+  }
+
+  object StopBgpFailoverTestResponse {
+    @inline
+    def apply(
+        virtualInterfaceTest: js.UndefOr[VirtualInterfaceTestHistory] = js.undefined
+    ): StopBgpFailoverTestResponse = {
+      val __obj = js.Dynamic.literal()
+      virtualInterfaceTest.foreach(__v => __obj.updateDynamic("virtualInterfaceTest")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopBgpFailoverTestResponse]
+    }
+  }
+
   /**
     * Information about a tag.
     */
@@ -3163,6 +3309,46 @@ package directconnect {
 
     val values =
       js.Object.freeze(js.Array(confirming, verifying, pending, available, down, deleting, deleted, rejected, unknown))
+  }
+
+  /**
+    * Information about the virtual interface failover test.
+    */
+  @js.native
+  trait VirtualInterfaceTestHistory extends js.Object {
+    var bgpPeers: js.UndefOr[BGPPeerIdList]
+    var endTime: js.UndefOr[EndTime]
+    var ownerAccount: js.UndefOr[OwnerAccount]
+    var startTime: js.UndefOr[StartTime]
+    var status: js.UndefOr[FailureTestHistoryStatus]
+    var testDurationInMinutes: js.UndefOr[TestDuration]
+    var testId: js.UndefOr[TestId]
+    var virtualInterfaceId: js.UndefOr[VirtualInterfaceId]
+  }
+
+  object VirtualInterfaceTestHistory {
+    @inline
+    def apply(
+        bgpPeers: js.UndefOr[BGPPeerIdList] = js.undefined,
+        endTime: js.UndefOr[EndTime] = js.undefined,
+        ownerAccount: js.UndefOr[OwnerAccount] = js.undefined,
+        startTime: js.UndefOr[StartTime] = js.undefined,
+        status: js.UndefOr[FailureTestHistoryStatus] = js.undefined,
+        testDurationInMinutes: js.UndefOr[TestDuration] = js.undefined,
+        testId: js.UndefOr[TestId] = js.undefined,
+        virtualInterfaceId: js.UndefOr[VirtualInterfaceId] = js.undefined
+    ): VirtualInterfaceTestHistory = {
+      val __obj = js.Dynamic.literal()
+      bgpPeers.foreach(__v => __obj.updateDynamic("bgpPeers")(__v.asInstanceOf[js.Any]))
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      ownerAccount.foreach(__v => __obj.updateDynamic("ownerAccount")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      testDurationInMinutes.foreach(__v => __obj.updateDynamic("testDurationInMinutes")(__v.asInstanceOf[js.Any]))
+      testId.foreach(__v => __obj.updateDynamic("testId")(__v.asInstanceOf[js.Any]))
+      virtualInterfaceId.foreach(__v => __obj.updateDynamic("virtualInterfaceId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VirtualInterfaceTestHistory]
+    }
   }
 
   @js.native

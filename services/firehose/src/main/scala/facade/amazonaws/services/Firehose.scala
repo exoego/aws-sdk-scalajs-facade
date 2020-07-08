@@ -64,8 +64,10 @@ package object firehose {
   type PutResponseRecordId                     = String
   type RedshiftRetryDurationInSeconds          = Int
   type RoleARN                                 = String
+  type SecurityGroupIdList                     = js.Array[NonEmptyStringWithoutWhitespace]
   type SizeInMBs                               = Int
   type SplunkRetryDurationInSeconds            = Int
+  type SubnetIdList                            = js.Array[NonEmptyStringWithoutWhitespace]
   type TagDeliveryStreamInputTagList           = js.Array[Tag]
   type TagKey                                  = String
   type TagKeyList                              = js.Array[TagKey]
@@ -181,12 +183,13 @@ package firehose {
   @js.native
   sealed trait CompressionFormat extends js.Any
   object CompressionFormat extends js.Object {
-    val UNCOMPRESSED = "UNCOMPRESSED".asInstanceOf[CompressionFormat]
-    val GZIP         = "GZIP".asInstanceOf[CompressionFormat]
-    val ZIP          = "ZIP".asInstanceOf[CompressionFormat]
-    val Snappy       = "Snappy".asInstanceOf[CompressionFormat]
+    val UNCOMPRESSED  = "UNCOMPRESSED".asInstanceOf[CompressionFormat]
+    val GZIP          = "GZIP".asInstanceOf[CompressionFormat]
+    val ZIP           = "ZIP".asInstanceOf[CompressionFormat]
+    val Snappy        = "Snappy".asInstanceOf[CompressionFormat]
+    val HADOOP_SNAPPY = "HADOOP_SNAPPY".asInstanceOf[CompressionFormat]
 
-    val values = js.Object.freeze(js.Array(UNCOMPRESSED, GZIP, ZIP, Snappy))
+    val values = js.Object.freeze(js.Array(UNCOMPRESSED, GZIP, ZIP, Snappy, HADOOP_SNAPPY))
   }
 
   /**
@@ -441,7 +444,7 @@ package firehose {
   }
 
   /**
-    * Used to specify the type and Amazon Resource Name (ARN) of the CMK needed for Server-Side Encryption (SSE).
+    * Specifies the type and Amazon Resource Name (ARN) of the CMK to use for Server-Side Encryption (SSE).
     */
   @js.native
   trait DeliveryStreamEncryptionConfigurationInput extends js.Object {
@@ -480,14 +483,21 @@ package firehose {
   @js.native
   sealed trait DeliveryStreamFailureType extends js.Any
   object DeliveryStreamFailureType extends js.Object {
-    val RETIRE_KMS_GRANT_FAILED = "RETIRE_KMS_GRANT_FAILED".asInstanceOf[DeliveryStreamFailureType]
-    val CREATE_KMS_GRANT_FAILED = "CREATE_KMS_GRANT_FAILED".asInstanceOf[DeliveryStreamFailureType]
-    val KMS_ACCESS_DENIED       = "KMS_ACCESS_DENIED".asInstanceOf[DeliveryStreamFailureType]
-    val DISABLED_KMS_KEY        = "DISABLED_KMS_KEY".asInstanceOf[DeliveryStreamFailureType]
-    val INVALID_KMS_KEY         = "INVALID_KMS_KEY".asInstanceOf[DeliveryStreamFailureType]
-    val KMS_KEY_NOT_FOUND       = "KMS_KEY_NOT_FOUND".asInstanceOf[DeliveryStreamFailureType]
-    val KMS_OPT_IN_REQUIRED     = "KMS_OPT_IN_REQUIRED".asInstanceOf[DeliveryStreamFailureType]
-    val UNKNOWN_ERROR           = "UNKNOWN_ERROR".asInstanceOf[DeliveryStreamFailureType]
+    val RETIRE_KMS_GRANT_FAILED      = "RETIRE_KMS_GRANT_FAILED".asInstanceOf[DeliveryStreamFailureType]
+    val CREATE_KMS_GRANT_FAILED      = "CREATE_KMS_GRANT_FAILED".asInstanceOf[DeliveryStreamFailureType]
+    val KMS_ACCESS_DENIED            = "KMS_ACCESS_DENIED".asInstanceOf[DeliveryStreamFailureType]
+    val DISABLED_KMS_KEY             = "DISABLED_KMS_KEY".asInstanceOf[DeliveryStreamFailureType]
+    val INVALID_KMS_KEY              = "INVALID_KMS_KEY".asInstanceOf[DeliveryStreamFailureType]
+    val KMS_KEY_NOT_FOUND            = "KMS_KEY_NOT_FOUND".asInstanceOf[DeliveryStreamFailureType]
+    val KMS_OPT_IN_REQUIRED          = "KMS_OPT_IN_REQUIRED".asInstanceOf[DeliveryStreamFailureType]
+    val CREATE_ENI_FAILED            = "CREATE_ENI_FAILED".asInstanceOf[DeliveryStreamFailureType]
+    val DELETE_ENI_FAILED            = "DELETE_ENI_FAILED".asInstanceOf[DeliveryStreamFailureType]
+    val SUBNET_NOT_FOUND             = "SUBNET_NOT_FOUND".asInstanceOf[DeliveryStreamFailureType]
+    val SECURITY_GROUP_NOT_FOUND     = "SECURITY_GROUP_NOT_FOUND".asInstanceOf[DeliveryStreamFailureType]
+    val ENI_ACCESS_DENIED            = "ENI_ACCESS_DENIED".asInstanceOf[DeliveryStreamFailureType]
+    val SUBNET_ACCESS_DENIED         = "SUBNET_ACCESS_DENIED".asInstanceOf[DeliveryStreamFailureType]
+    val SECURITY_GROUP_ACCESS_DENIED = "SECURITY_GROUP_ACCESS_DENIED".asInstanceOf[DeliveryStreamFailureType]
+    val UNKNOWN_ERROR                = "UNKNOWN_ERROR".asInstanceOf[DeliveryStreamFailureType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -498,6 +508,13 @@ package firehose {
         INVALID_KMS_KEY,
         KMS_KEY_NOT_FOUND,
         KMS_OPT_IN_REQUIRED,
+        CREATE_ENI_FAILED,
+        DELETE_ENI_FAILED,
+        SUBNET_NOT_FOUND,
+        SECURITY_GROUP_NOT_FOUND,
+        ENI_ACCESS_DENIED,
+        SUBNET_ACCESS_DENIED,
+        SECURITY_GROUP_ACCESS_DENIED,
         UNKNOWN_ERROR
       )
     )
@@ -673,6 +690,7 @@ package firehose {
     var RetryOptions: js.UndefOr[ElasticsearchRetryOptions]
     var S3BackupMode: js.UndefOr[ElasticsearchS3BackupMode]
     var TypeName: js.UndefOr[ElasticsearchTypeName]
+    var VpcConfiguration: js.UndefOr[VpcConfiguration]
   }
 
   object ElasticsearchDestinationConfiguration {
@@ -689,7 +707,8 @@ package firehose {
         ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
         RetryOptions: js.UndefOr[ElasticsearchRetryOptions] = js.undefined,
         S3BackupMode: js.UndefOr[ElasticsearchS3BackupMode] = js.undefined,
-        TypeName: js.UndefOr[ElasticsearchTypeName] = js.undefined
+        TypeName: js.UndefOr[ElasticsearchTypeName] = js.undefined,
+        VpcConfiguration: js.UndefOr[VpcConfiguration] = js.undefined
     ): ElasticsearchDestinationConfiguration = {
       val __obj = js.Dynamic.literal(
         "IndexName"       -> IndexName.asInstanceOf[js.Any],
@@ -706,6 +725,7 @@ package firehose {
       RetryOptions.foreach(__v => __obj.updateDynamic("RetryOptions")(__v.asInstanceOf[js.Any]))
       S3BackupMode.foreach(__v => __obj.updateDynamic("S3BackupMode")(__v.asInstanceOf[js.Any]))
       TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
+      VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ElasticsearchDestinationConfiguration]
     }
   }
@@ -727,6 +747,7 @@ package firehose {
     var S3BackupMode: js.UndefOr[ElasticsearchS3BackupMode]
     var S3DestinationDescription: js.UndefOr[S3DestinationDescription]
     var TypeName: js.UndefOr[ElasticsearchTypeName]
+    var VpcConfigurationDescription: js.UndefOr[VpcConfigurationDescription]
   }
 
   object ElasticsearchDestinationDescription {
@@ -743,7 +764,8 @@ package firehose {
         RoleARN: js.UndefOr[RoleARN] = js.undefined,
         S3BackupMode: js.UndefOr[ElasticsearchS3BackupMode] = js.undefined,
         S3DestinationDescription: js.UndefOr[S3DestinationDescription] = js.undefined,
-        TypeName: js.UndefOr[ElasticsearchTypeName] = js.undefined
+        TypeName: js.UndefOr[ElasticsearchTypeName] = js.undefined,
+        VpcConfigurationDescription: js.UndefOr[VpcConfigurationDescription] = js.undefined
     ): ElasticsearchDestinationDescription = {
       val __obj = js.Dynamic.literal()
       BufferingHints.foreach(__v => __obj.updateDynamic("BufferingHints")(__v.asInstanceOf[js.Any]))
@@ -758,6 +780,9 @@ package firehose {
       S3BackupMode.foreach(__v => __obj.updateDynamic("S3BackupMode")(__v.asInstanceOf[js.Any]))
       S3DestinationDescription.foreach(__v => __obj.updateDynamic("S3DestinationDescription")(__v.asInstanceOf[js.Any]))
       TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
+      VpcConfigurationDescription.foreach(__v =>
+        __obj.updateDynamic("VpcConfigurationDescription")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[ElasticsearchDestinationDescription]
     }
   }
@@ -1092,7 +1117,7 @@ package firehose {
   }
 
   /**
-    * Specifies the deserializer you want to use to convert the format of the input data.
+    * Specifies the deserializer you want to use to convert the format of the input data. This parameter is required if <code>Enabled</code> is set to true.
     */
   @js.native
   trait InputFormatConfiguration extends js.Object {
@@ -1382,7 +1407,7 @@ package firehose {
   }
 
   /**
-    * Specifies the serializer that you want Kinesis Data Firehose to use to convert the format of your data before it writes it to Amazon S3.
+    * Specifies the serializer that you want Kinesis Data Firehose to use to convert the format of your data before it writes it to Amazon S3. This parameter is required if <code>Enabled</code> is set to true.
     */
   @js.native
   trait OutputFormatConfiguration extends js.Object {
@@ -1989,7 +2014,7 @@ package firehose {
   }
 
   /**
-    * Specifies the schema to which you want Kinesis Data Firehose to configure your data before it writes it to Amazon S3.
+    * Specifies the schema to which you want Kinesis Data Firehose to configure your data before it writes it to Amazon S3. This parameter is required if <code>Enabled</code> is set to true.
     */
   @js.native
   trait SchemaConfiguration extends js.Object {
@@ -2445,6 +2470,63 @@ package firehose {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateDestinationOutput]
+    }
+  }
+
+  /**
+    * The details of the VPC of the Amazon ES destination.
+    */
+  @js.native
+  trait VpcConfiguration extends js.Object {
+    var RoleARN: RoleARN
+    var SecurityGroupIds: SecurityGroupIdList
+    var SubnetIds: SubnetIdList
+  }
+
+  object VpcConfiguration {
+    @inline
+    def apply(
+        RoleARN: RoleARN,
+        SecurityGroupIds: SecurityGroupIdList,
+        SubnetIds: SubnetIdList
+    ): VpcConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "RoleARN"          -> RoleARN.asInstanceOf[js.Any],
+        "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any],
+        "SubnetIds"        -> SubnetIds.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[VpcConfiguration]
+    }
+  }
+
+  /**
+    * The details of the VPC of the Amazon ES destination.
+    */
+  @js.native
+  trait VpcConfigurationDescription extends js.Object {
+    var RoleARN: RoleARN
+    var SecurityGroupIds: SecurityGroupIdList
+    var SubnetIds: SubnetIdList
+    var VpcId: NonEmptyStringWithoutWhitespace
+  }
+
+  object VpcConfigurationDescription {
+    @inline
+    def apply(
+        RoleARN: RoleARN,
+        SecurityGroupIds: SecurityGroupIdList,
+        SubnetIds: SubnetIdList,
+        VpcId: NonEmptyStringWithoutWhitespace
+    ): VpcConfigurationDescription = {
+      val __obj = js.Dynamic.literal(
+        "RoleARN"          -> RoleARN.asInstanceOf[js.Any],
+        "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any],
+        "SubnetIds"        -> SubnetIds.asInstanceOf[js.Any],
+        "VpcId"            -> VpcId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[VpcConfigurationDescription]
     }
   }
 }

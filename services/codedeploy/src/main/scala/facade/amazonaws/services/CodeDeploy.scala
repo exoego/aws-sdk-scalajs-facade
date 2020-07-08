@@ -21,6 +21,7 @@ package object codedeploy {
   type AutoScalingGroupList           = js.Array[AutoScalingGroup]
   type AutoScalingGroupName           = String
   type AutoScalingGroupNameList       = js.Array[AutoScalingGroupName]
+  type CloudFormationResourceType     = String
   type CommitId                       = String
   type DeploymentConfigId             = String
   type DeploymentConfigName           = String
@@ -50,6 +51,7 @@ package object codedeploy {
   type ELBName                        = String
   type ETag                           = String
   type ErrorMessage                   = String
+  type ExternalId                     = String
   type FilterValue                    = String
   type FilterValueList                = js.Array[FilterValue]
   type GitHubAccountTokenName         = String
@@ -153,6 +155,9 @@ package object codedeploy {
     @inline def deleteGitHubAccountTokenFuture(
         params: DeleteGitHubAccountTokenInput
     ): Future[DeleteGitHubAccountTokenOutput] = service.deleteGitHubAccountToken(params).promise().toFuture
+    @inline def deleteResourcesByExternalIdFuture(
+        params: DeleteResourcesByExternalIdInput
+    ): Future[DeleteResourcesByExternalIdOutput] = service.deleteResourcesByExternalId(params).promise().toFuture
     @inline def deregisterOnPremisesInstanceFuture(params: DeregisterOnPremisesInstanceInput): Future[js.Object] =
       service.deregisterOnPremisesInstance(params).promise().toFuture
     @inline def getApplicationFuture(params: GetApplicationInput): Future[GetApplicationOutput] =
@@ -244,6 +249,9 @@ package codedeploy {
     def deleteDeploymentGroup(params: DeleteDeploymentGroupInput): Request[DeleteDeploymentGroupOutput]    = js.native
     def deleteGitHubAccountToken(params: DeleteGitHubAccountTokenInput): Request[DeleteGitHubAccountTokenOutput] =
       js.native
+    def deleteResourcesByExternalId(
+        params: DeleteResourcesByExternalIdInput
+    ): Request[DeleteResourcesByExternalIdOutput]                                                          = js.native
     def deregisterOnPremisesInstance(params: DeregisterOnPremisesInstanceInput): Request[js.Object]        = js.native
     def getApplication(params: GetApplicationInput): Request[GetApplicationOutput]                         = js.native
     def getApplicationRevision(params: GetApplicationRevisionInput): Request[GetApplicationRevisionOutput] = js.native
@@ -487,7 +495,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a BatchGetApplicationRevisions operation.
+    * Represents the input of a <code>BatchGetApplicationRevisions</code> operation.
     */
   @js.native
   trait BatchGetApplicationRevisionsInput extends js.Object {
@@ -511,7 +519,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the output of a BatchGetApplicationRevisions operation.
+    * Represents the output of a <code>BatchGetApplicationRevisions</code> operation.
     */
   @js.native
   trait BatchGetApplicationRevisionsOutput extends js.Object {
@@ -536,7 +544,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a BatchGetApplications operation.
+    * Represents the input of a <code>BatchGetApplications</code> operation.
     */
   @js.native
   trait BatchGetApplicationsInput extends js.Object {
@@ -557,7 +565,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the output of a BatchGetApplications operation.
+    * Represents the output of a <code>BatchGetApplications</code> operation.
     */
   @js.native
   trait BatchGetApplicationsOutput extends js.Object {
@@ -576,7 +584,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a BatchGetDeploymentGroups operation.
+    * Represents the input of a <code>BatchGetDeploymentGroups</code> operation.
     */
   @js.native
   trait BatchGetDeploymentGroupsInput extends js.Object {
@@ -600,7 +608,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the output of a BatchGetDeploymentGroups operation.
+    * Represents the output of a <code>BatchGetDeploymentGroups</code> operation.
     */
   @js.native
   trait BatchGetDeploymentGroupsOutput extends js.Object {
@@ -622,7 +630,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a BatchGetDeploymentInstances operation.
+    * Represents the input of a <code>BatchGetDeploymentInstances</code> operation.
     */
   @js.native
   trait BatchGetDeploymentInstancesInput extends js.Object {
@@ -646,7 +654,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the output of a BatchGetDeploymentInstances operation.
+    * Represents the output of a <code>BatchGetDeploymentInstances</code> operation.
     */
   @js.native
   trait BatchGetDeploymentInstancesOutput extends js.Object {
@@ -703,7 +711,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a BatchGetDeployments operation.
+    * Represents the input of a <code>BatchGetDeployments</code> operation.
     */
   @js.native
   trait BatchGetDeploymentsInput extends js.Object {
@@ -724,7 +732,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the output of a BatchGetDeployments operation.
+    * Represents the output of a <code>BatchGetDeployments</code> operation.
     */
   @js.native
   trait BatchGetDeploymentsOutput extends js.Object {
@@ -743,7 +751,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a BatchGetOnPremisesInstances operation.
+    * Represents the input of a <code>BatchGetOnPremisesInstances</code> operation.
     */
   @js.native
   trait BatchGetOnPremisesInstancesInput extends js.Object {
@@ -764,7 +772,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the output of a BatchGetOnPremisesInstances operation.
+    * Represents the output of a <code>BatchGetOnPremisesInstances</code> operation.
     */
   @js.native
   trait BatchGetOnPremisesInstancesOutput extends js.Object {
@@ -847,6 +855,43 @@ package codedeploy {
     val values = js.Object.freeze(js.Array(tar, tgz, zip, YAML, JSON))
   }
 
+  /**
+    * Information about the target to be updated by an AWS CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update.
+    */
+  @js.native
+  trait CloudFormationTarget extends js.Object {
+    var deploymentId: js.UndefOr[DeploymentId]
+    var lastUpdatedAt: js.UndefOr[Time]
+    var lifecycleEvents: js.UndefOr[LifecycleEventList]
+    var resourceType: js.UndefOr[CloudFormationResourceType]
+    var status: js.UndefOr[TargetStatus]
+    var targetId: js.UndefOr[TargetId]
+    var targetVersionWeight: js.UndefOr[TrafficWeight]
+  }
+
+  object CloudFormationTarget {
+    @inline
+    def apply(
+        deploymentId: js.UndefOr[DeploymentId] = js.undefined,
+        lastUpdatedAt: js.UndefOr[Time] = js.undefined,
+        lifecycleEvents: js.UndefOr[LifecycleEventList] = js.undefined,
+        resourceType: js.UndefOr[CloudFormationResourceType] = js.undefined,
+        status: js.UndefOr[TargetStatus] = js.undefined,
+        targetId: js.UndefOr[TargetId] = js.undefined,
+        targetVersionWeight: js.UndefOr[TrafficWeight] = js.undefined
+    ): CloudFormationTarget = {
+      val __obj = js.Dynamic.literal()
+      deploymentId.foreach(__v => __obj.updateDynamic("deploymentId")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      lifecycleEvents.foreach(__v => __obj.updateDynamic("lifecycleEvents")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      targetId.foreach(__v => __obj.updateDynamic("targetId")(__v.asInstanceOf[js.Any]))
+      targetVersionWeight.foreach(__v => __obj.updateDynamic("targetVersionWeight")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CloudFormationTarget]
+    }
+  }
+
   @js.native
   sealed trait ComputePlatform extends js.Any
   object ComputePlatform extends js.Object {
@@ -877,7 +922,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a CreateApplication operation.
+    * Represents the input of a <code>CreateApplication</code> operation.
     */
   @js.native
   trait CreateApplicationInput extends js.Object {
@@ -904,7 +949,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the output of a CreateApplication operation.
+    * Represents the output of a <code>CreateApplication</code> operation.
     */
   @js.native
   trait CreateApplicationOutput extends js.Object {
@@ -923,7 +968,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a CreateDeploymentConfig operation.
+    * Represents the input of a <code>CreateDeploymentConfig</code> operation.
     */
   @js.native
   trait CreateDeploymentConfigInput extends js.Object {
@@ -953,7 +998,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the output of a CreateDeploymentConfig operation.
+    * Represents the output of a <code>CreateDeploymentConfig</code> operation.
     */
   @js.native
   trait CreateDeploymentConfigOutput extends js.Object {
@@ -972,7 +1017,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a CreateDeploymentGroup operation.
+    * Represents the input of a <code>CreateDeploymentGroup</code> operation.
     */
   @js.native
   trait CreateDeploymentGroupInput extends js.Object {
@@ -1047,7 +1092,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the output of a CreateDeploymentGroup operation.
+    * Represents the output of a <code>CreateDeploymentGroup</code> operation.
     */
   @js.native
   trait CreateDeploymentGroupOutput extends js.Object {
@@ -1066,7 +1111,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a CreateDeployment operation.
+    * Represents the input of a <code>CreateDeployment</code> operation.
     */
   @js.native
   trait CreateDeploymentInput extends js.Object {
@@ -1120,7 +1165,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the output of a CreateDeployment operation.
+    * Represents the output of a <code>CreateDeployment</code> operation.
     */
   @js.native
   trait CreateDeploymentOutput extends js.Object {
@@ -1139,7 +1184,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a DeleteApplication operation.
+    * Represents the input of a <code>DeleteApplication</code> operation.
     */
   @js.native
   trait DeleteApplicationInput extends js.Object {
@@ -1160,7 +1205,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a DeleteDeploymentConfig operation.
+    * Represents the input of a <code>DeleteDeploymentConfig</code> operation.
     */
   @js.native
   trait DeleteDeploymentConfigInput extends js.Object {
@@ -1181,7 +1226,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a DeleteDeploymentGroup operation.
+    * Represents the input of a <code>DeleteDeploymentGroup</code> operation.
     */
   @js.native
   trait DeleteDeploymentGroupInput extends js.Object {
@@ -1205,7 +1250,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the output of a DeleteDeploymentGroup operation.
+    * Represents the output of a <code>DeleteDeploymentGroup</code> operation.
     */
   @js.native
   trait DeleteDeploymentGroupOutput extends js.Object {
@@ -1224,7 +1269,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a DeleteGitHubAccount operation.
+    * Represents the input of a <code>DeleteGitHubAccount</code> operation.
     */
   @js.native
   trait DeleteGitHubAccountTokenInput extends js.Object {
@@ -1243,7 +1288,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the output of a DeleteGitHubAccountToken operation.
+    * Represents the output of a <code>DeleteGitHubAccountToken</code> operation.
     */
   @js.native
   trait DeleteGitHubAccountTokenOutput extends js.Object {
@@ -1258,6 +1303,35 @@ package codedeploy {
       val __obj = js.Dynamic.literal()
       tokenName.foreach(__v => __obj.updateDynamic("tokenName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteGitHubAccountTokenOutput]
+    }
+  }
+
+  @js.native
+  trait DeleteResourcesByExternalIdInput extends js.Object {
+    var externalId: js.UndefOr[ExternalId]
+  }
+
+  object DeleteResourcesByExternalIdInput {
+    @inline
+    def apply(
+        externalId: js.UndefOr[ExternalId] = js.undefined
+    ): DeleteResourcesByExternalIdInput = {
+      val __obj = js.Dynamic.literal()
+      externalId.foreach(__v => __obj.updateDynamic("externalId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteResourcesByExternalIdInput]
+    }
+  }
+
+  @js.native
+  trait DeleteResourcesByExternalIdOutput extends js.Object {}
+
+  object DeleteResourcesByExternalIdOutput {
+    @inline
+    def apply(
+    ): DeleteResourcesByExternalIdOutput = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeleteResourcesByExternalIdOutput]
     }
   }
 
@@ -1298,11 +1372,16 @@ package codedeploy {
   @js.native
   sealed trait DeploymentCreator extends js.Any
   object DeploymentCreator extends js.Object {
-    val user               = "user".asInstanceOf[DeploymentCreator]
-    val autoscaling        = "autoscaling".asInstanceOf[DeploymentCreator]
-    val codeDeployRollback = "codeDeployRollback".asInstanceOf[DeploymentCreator]
+    val user                   = "user".asInstanceOf[DeploymentCreator]
+    val autoscaling            = "autoscaling".asInstanceOf[DeploymentCreator]
+    val codeDeployRollback     = "codeDeployRollback".asInstanceOf[DeploymentCreator]
+    val CodeDeploy             = "CodeDeploy".asInstanceOf[DeploymentCreator]
+    val CloudFormation         = "CloudFormation".asInstanceOf[DeploymentCreator]
+    val CloudFormationRollback = "CloudFormationRollback".asInstanceOf[DeploymentCreator]
 
-    val values = js.Object.freeze(js.Array(user, autoscaling, codeDeployRollback))
+    val values = js.Object.freeze(
+      js.Array(user, autoscaling, codeDeployRollback, CodeDeploy, CloudFormation, CloudFormationRollback)
+    )
   }
 
   /**
@@ -1411,6 +1490,7 @@ package codedeploy {
     var deploymentStyle: js.UndefOr[DeploymentStyle]
     var description: js.UndefOr[Description]
     var errorInformation: js.UndefOr[ErrorInformation]
+    var externalId: js.UndefOr[ExternalId]
     var fileExistsBehavior: js.UndefOr[FileExistsBehavior]
     var ignoreApplicationStopFailures: js.UndefOr[Boolean]
     var instanceTerminationWaitTimeStarted: js.UndefOr[Boolean]
@@ -1443,6 +1523,7 @@ package codedeploy {
         deploymentStyle: js.UndefOr[DeploymentStyle] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         errorInformation: js.UndefOr[ErrorInformation] = js.undefined,
+        externalId: js.UndefOr[ExternalId] = js.undefined,
         fileExistsBehavior: js.UndefOr[FileExistsBehavior] = js.undefined,
         ignoreApplicationStopFailures: js.UndefOr[Boolean] = js.undefined,
         instanceTerminationWaitTimeStarted: js.UndefOr[Boolean] = js.undefined,
@@ -1478,6 +1559,7 @@ package codedeploy {
       deploymentStyle.foreach(__v => __obj.updateDynamic("deploymentStyle")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       errorInformation.foreach(__v => __obj.updateDynamic("errorInformation")(__v.asInstanceOf[js.Any]))
+      externalId.foreach(__v => __obj.updateDynamic("externalId")(__v.asInstanceOf[js.Any]))
       fileExistsBehavior.foreach(__v => __obj.updateDynamic("fileExistsBehavior")(__v.asInstanceOf[js.Any]))
       ignoreApplicationStopFailures.foreach(__v =>
         __obj.updateDynamic("ignoreApplicationStopFailures")(__v.asInstanceOf[js.Any])
@@ -1579,12 +1661,13 @@ package codedeploy {
     val Created    = "Created".asInstanceOf[DeploymentStatus]
     val Queued     = "Queued".asInstanceOf[DeploymentStatus]
     val InProgress = "InProgress".asInstanceOf[DeploymentStatus]
+    val Baking     = "Baking".asInstanceOf[DeploymentStatus]
     val Succeeded  = "Succeeded".asInstanceOf[DeploymentStatus]
     val Failed     = "Failed".asInstanceOf[DeploymentStatus]
     val Stopped    = "Stopped".asInstanceOf[DeploymentStatus]
     val Ready      = "Ready".asInstanceOf[DeploymentStatus]
 
-    val values = js.Object.freeze(js.Array(Created, Queued, InProgress, Succeeded, Failed, Stopped, Ready))
+    val values = js.Object.freeze(js.Array(Created, Queued, InProgress, Baking, Succeeded, Failed, Stopped, Ready))
   }
 
   /**
@@ -1614,6 +1697,7 @@ package codedeploy {
     */
   @js.native
   trait DeploymentTarget extends js.Object {
+    var cloudFormationTarget: js.UndefOr[CloudFormationTarget]
     var deploymentTargetType: js.UndefOr[DeploymentTargetType]
     var ecsTarget: js.UndefOr[ECSTarget]
     var instanceTarget: js.UndefOr[InstanceTarget]
@@ -1623,12 +1707,14 @@ package codedeploy {
   object DeploymentTarget {
     @inline
     def apply(
+        cloudFormationTarget: js.UndefOr[CloudFormationTarget] = js.undefined,
         deploymentTargetType: js.UndefOr[DeploymentTargetType] = js.undefined,
         ecsTarget: js.UndefOr[ECSTarget] = js.undefined,
         instanceTarget: js.UndefOr[InstanceTarget] = js.undefined,
         lambdaTarget: js.UndefOr[LambdaTarget] = js.undefined
     ): DeploymentTarget = {
       val __obj = js.Dynamic.literal()
+      cloudFormationTarget.foreach(__v => __obj.updateDynamic("cloudFormationTarget")(__v.asInstanceOf[js.Any]))
       deploymentTargetType.foreach(__v => __obj.updateDynamic("deploymentTargetType")(__v.asInstanceOf[js.Any]))
       ecsTarget.foreach(__v => __obj.updateDynamic("ecsTarget")(__v.asInstanceOf[js.Any]))
       instanceTarget.foreach(__v => __obj.updateDynamic("instanceTarget")(__v.asInstanceOf[js.Any]))
@@ -1640,11 +1726,12 @@ package codedeploy {
   @js.native
   sealed trait DeploymentTargetType extends js.Any
   object DeploymentTargetType extends js.Object {
-    val InstanceTarget = "InstanceTarget".asInstanceOf[DeploymentTargetType]
-    val LambdaTarget   = "LambdaTarget".asInstanceOf[DeploymentTargetType]
-    val ECSTarget      = "ECSTarget".asInstanceOf[DeploymentTargetType]
+    val InstanceTarget       = "InstanceTarget".asInstanceOf[DeploymentTargetType]
+    val LambdaTarget         = "LambdaTarget".asInstanceOf[DeploymentTargetType]
+    val ECSTarget            = "ECSTarget".asInstanceOf[DeploymentTargetType]
+    val CloudFormationTarget = "CloudFormationTarget".asInstanceOf[DeploymentTargetType]
 
-    val values = js.Object.freeze(js.Array(InstanceTarget, LambdaTarget, ECSTarget))
+    val values = js.Object.freeze(js.Array(InstanceTarget, LambdaTarget, ECSTarget, CloudFormationTarget))
   }
 
   @js.native
@@ -1666,7 +1753,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a DeregisterOnPremisesInstance operation.
+    * Represents the input of a <code>DeregisterOnPremisesInstance</code> operation.
     */
   @js.native
   trait DeregisterOnPremisesInstanceInput extends js.Object {
@@ -1914,15 +2001,16 @@ package codedeploy {
     val MANUAL_STOP                         = "MANUAL_STOP".asInstanceOf[ErrorCode]
     val MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION =
       "MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION".asInstanceOf[ErrorCode]
-    val MISSING_ELB_INFORMATION = "MISSING_ELB_INFORMATION".asInstanceOf[ErrorCode]
-    val MISSING_GITHUB_TOKEN    = "MISSING_GITHUB_TOKEN".asInstanceOf[ErrorCode]
-    val NO_EC2_SUBSCRIPTION     = "NO_EC2_SUBSCRIPTION".asInstanceOf[ErrorCode]
-    val NO_INSTANCES            = "NO_INSTANCES".asInstanceOf[ErrorCode]
-    val OVER_MAX_INSTANCES      = "OVER_MAX_INSTANCES".asInstanceOf[ErrorCode]
-    val RESOURCE_LIMIT_EXCEEDED = "RESOURCE_LIMIT_EXCEEDED".asInstanceOf[ErrorCode]
-    val REVISION_MISSING        = "REVISION_MISSING".asInstanceOf[ErrorCode]
-    val THROTTLED               = "THROTTLED".asInstanceOf[ErrorCode]
-    val TIMEOUT                 = "TIMEOUT".asInstanceOf[ErrorCode]
+    val MISSING_ELB_INFORMATION      = "MISSING_ELB_INFORMATION".asInstanceOf[ErrorCode]
+    val MISSING_GITHUB_TOKEN         = "MISSING_GITHUB_TOKEN".asInstanceOf[ErrorCode]
+    val NO_EC2_SUBSCRIPTION          = "NO_EC2_SUBSCRIPTION".asInstanceOf[ErrorCode]
+    val NO_INSTANCES                 = "NO_INSTANCES".asInstanceOf[ErrorCode]
+    val OVER_MAX_INSTANCES           = "OVER_MAX_INSTANCES".asInstanceOf[ErrorCode]
+    val RESOURCE_LIMIT_EXCEEDED      = "RESOURCE_LIMIT_EXCEEDED".asInstanceOf[ErrorCode]
+    val REVISION_MISSING             = "REVISION_MISSING".asInstanceOf[ErrorCode]
+    val THROTTLED                    = "THROTTLED".asInstanceOf[ErrorCode]
+    val TIMEOUT                      = "TIMEOUT".asInstanceOf[ErrorCode]
+    val CLOUDFORMATION_STACK_FAILURE = "CLOUDFORMATION_STACK_FAILURE".asInstanceOf[ErrorCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1958,7 +2046,8 @@ package codedeploy {
         RESOURCE_LIMIT_EXCEEDED,
         REVISION_MISSING,
         THROTTLED,
-        TIMEOUT
+        TIMEOUT,
+        CLOUDFORMATION_STACK_FAILURE
       )
     )
   }
@@ -2027,7 +2116,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a GetApplication operation.
+    * Represents the input of a <code>GetApplication</code> operation.
     */
   @js.native
   trait GetApplicationInput extends js.Object {
@@ -2048,7 +2137,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the output of a GetApplication operation.
+    * Represents the output of a <code>GetApplication</code> operation.
     */
   @js.native
   trait GetApplicationOutput extends js.Object {
@@ -2067,7 +2156,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a GetApplicationRevision operation.
+    * Represents the input of a <code>GetApplicationRevision</code> operation.
     */
   @js.native
   trait GetApplicationRevisionInput extends js.Object {
@@ -2091,7 +2180,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the output of a GetApplicationRevision operation.
+    * Represents the output of a <code>GetApplicationRevision</code> operation.
     */
   @js.native
   trait GetApplicationRevisionOutput extends js.Object {
@@ -2116,7 +2205,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a GetDeploymentConfig operation.
+    * Represents the input of a <code>GetDeploymentConfig</code> operation.
     */
   @js.native
   trait GetDeploymentConfigInput extends js.Object {
@@ -2137,7 +2226,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the output of a GetDeploymentConfig operation.
+    * Represents the output of a <code>GetDeploymentConfig</code> operation.
     */
   @js.native
   trait GetDeploymentConfigOutput extends js.Object {
@@ -2156,7 +2245,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a GetDeploymentGroup operation.
+    * Represents the input of a <code>GetDeploymentGroup</code> operation.
     */
   @js.native
   trait GetDeploymentGroupInput extends js.Object {
@@ -2180,7 +2269,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the output of a GetDeploymentGroup operation.
+    * Represents the output of a <code>GetDeploymentGroup</code> operation.
     */
   @js.native
   trait GetDeploymentGroupOutput extends js.Object {
@@ -2199,7 +2288,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a GetDeployment operation.
+    * Represents the input of a <code>GetDeployment</code> operation.
     */
   @js.native
   trait GetDeploymentInput extends js.Object {
@@ -2220,7 +2309,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a GetDeploymentInstance operation.
+    * Represents the input of a <code>GetDeploymentInstance</code> operation.
     */
   @js.native
   trait GetDeploymentInstanceInput extends js.Object {
@@ -2244,7 +2333,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the output of a GetDeploymentInstance operation.
+    * Represents the output of a <code>GetDeploymentInstance</code> operation.
     */
   @js.native
   trait GetDeploymentInstanceOutput extends js.Object {
@@ -2263,7 +2352,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the output of a GetDeployment operation.
+    * Represents the output of a <code>GetDeployment</code> operation.
     */
   @js.native
   trait GetDeploymentOutput extends js.Object {
@@ -2317,7 +2406,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a GetOnPremisesInstance operation.
+    * Represents the input of a <code>GetOnPremisesInstance</code> operation.
     */
   @js.native
   trait GetOnPremisesInstanceInput extends js.Object {
@@ -2338,7 +2427,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the output of a GetOnPremisesInstance operation.
+    * Represents the output of a <code>GetOnPremisesInstance</code> operation.
     */
   @js.native
   trait GetOnPremisesInstanceOutput extends js.Object {
@@ -2704,7 +2793,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a ListApplicationRevisions operation.
+    * Represents the input of a <code>ListApplicationRevisions</code> operation.
     */
   @js.native
   trait ListApplicationRevisionsInput extends js.Object {
@@ -2743,7 +2832,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the output of a ListApplicationRevisions operation.
+    * Represents the output of a <code>ListApplicationRevisions</code> operation.
     */
   @js.native
   trait ListApplicationRevisionsOutput extends js.Object {
@@ -2765,7 +2854,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a ListApplications operation.
+    * Represents the input of a <code>ListApplications</code> operation.
     */
   @js.native
   trait ListApplicationsInput extends js.Object {
@@ -2806,7 +2895,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a ListDeploymentConfigs operation.
+    * Represents the input of a <code>ListDeploymentConfigs</code> operation.
     */
   @js.native
   trait ListDeploymentConfigsInput extends js.Object {
@@ -2825,7 +2914,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the output of a ListDeploymentConfigs operation.
+    * Represents the output of a <code>ListDeploymentConfigs</code> operation.
     */
   @js.native
   trait ListDeploymentConfigsOutput extends js.Object {
@@ -2847,7 +2936,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a ListDeploymentGroups operation.
+    * Represents the input of a <code>ListDeploymentGroups</code> operation.
     */
   @js.native
   trait ListDeploymentGroupsInput extends js.Object {
@@ -2871,7 +2960,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the output of a ListDeploymentGroups operation.
+    * Represents the output of a <code>ListDeploymentGroups</code> operation.
     */
   @js.native
   trait ListDeploymentGroupsOutput extends js.Object {
@@ -2896,7 +2985,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a ListDeploymentInstances operation.
+    * Represents the input of a <code>ListDeploymentInstances</code> operation.
     */
   @js.native
   trait ListDeploymentInstancesInput extends js.Object {
@@ -2926,7 +3015,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the output of a ListDeploymentInstances operation.
+    * Represents the output of a <code>ListDeploymentInstances</code> operation.
     */
   @js.native
   trait ListDeploymentInstancesOutput extends js.Object {
@@ -2989,13 +3078,14 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a ListDeployments operation.
+    * Represents the input of a <code>ListDeployments</code> operation.
     */
   @js.native
   trait ListDeploymentsInput extends js.Object {
     var applicationName: js.UndefOr[ApplicationName]
     var createTimeRange: js.UndefOr[TimeRange]
     var deploymentGroupName: js.UndefOr[DeploymentGroupName]
+    var externalId: js.UndefOr[ExternalId]
     var includeOnlyStatuses: js.UndefOr[DeploymentStatusList]
     var nextToken: js.UndefOr[NextToken]
   }
@@ -3006,6 +3096,7 @@ package codedeploy {
         applicationName: js.UndefOr[ApplicationName] = js.undefined,
         createTimeRange: js.UndefOr[TimeRange] = js.undefined,
         deploymentGroupName: js.UndefOr[DeploymentGroupName] = js.undefined,
+        externalId: js.UndefOr[ExternalId] = js.undefined,
         includeOnlyStatuses: js.UndefOr[DeploymentStatusList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDeploymentsInput = {
@@ -3013,6 +3104,7 @@ package codedeploy {
       applicationName.foreach(__v => __obj.updateDynamic("applicationName")(__v.asInstanceOf[js.Any]))
       createTimeRange.foreach(__v => __obj.updateDynamic("createTimeRange")(__v.asInstanceOf[js.Any]))
       deploymentGroupName.foreach(__v => __obj.updateDynamic("deploymentGroupName")(__v.asInstanceOf[js.Any]))
+      externalId.foreach(__v => __obj.updateDynamic("externalId")(__v.asInstanceOf[js.Any]))
       includeOnlyStatuses.foreach(__v => __obj.updateDynamic("includeOnlyStatuses")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeploymentsInput]
@@ -3020,7 +3112,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the output of a ListDeployments operation.
+    * Represents the output of a <code>ListDeployments</code> operation.
     */
   @js.native
   trait ListDeploymentsOutput extends js.Object {
@@ -3042,7 +3134,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a ListGitHubAccountTokenNames operation.
+    * Represents the input of a <code>ListGitHubAccountTokenNames</code> operation.
     */
   @js.native
   trait ListGitHubAccountTokenNamesInput extends js.Object {
@@ -3061,7 +3153,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the output of a ListGitHubAccountTokenNames operation.
+    * Represents the output of a <code>ListGitHubAccountTokenNames</code> operation.
     */
   @js.native
   trait ListGitHubAccountTokenNamesOutput extends js.Object {
@@ -3083,7 +3175,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a ListOnPremisesInstances operation.
+    * Represents the input of a <code>ListOnPremisesInstances</code> operation.
     */
   @js.native
   trait ListOnPremisesInstancesInput extends js.Object {
@@ -3383,7 +3475,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a RemoveTagsFromOnPremisesInstances operation.
+    * Represents the input of a <code>RemoveTagsFromOnPremisesInstances</code> operation.
     */
   @js.native
   trait RemoveTagsFromOnPremisesInstancesInput extends js.Object {
@@ -3554,7 +3646,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of a StopDeployment operation.
+    * Represents the input of a <code>StopDeployment</code> operation.
     */
   @js.native
   trait StopDeploymentInput extends js.Object {
@@ -3578,7 +3670,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the output of a StopDeployment operation.
+    * Represents the output of a <code>StopDeployment</code> operation.
     */
   @js.native
   trait StopDeploymentOutput extends js.Object {
@@ -3801,7 +3893,7 @@ package codedeploy {
   }
 
   /**
-    * A configuration that shifts traffic from one version of a Lambda function to another in two increments. The original and target Lambda function versions are specified in the deployment's AppSpec file.
+    * A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in two increments. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.
     */
   @js.native
   trait TimeBasedCanary extends js.Object {
@@ -3823,7 +3915,7 @@ package codedeploy {
   }
 
   /**
-    * A configuration that shifts traffic from one version of a Lambda function to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions are specified in the deployment's AppSpec file.
+    * A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.
     */
   @js.native
   trait TimeBasedLinear extends js.Object {
@@ -3886,7 +3978,7 @@ package codedeploy {
   }
 
   /**
-    * The configuration that specifies how traffic is shifted from one version of a Lambda function to another version during an AWS Lambda deployment.
+    * The configuration that specifies how traffic is shifted from one version of a Lambda function to another version during an AWS Lambda deployment, or from one Amazon ECS task set to another during an Amazon ECS deployment.
     */
   @js.native
   trait TrafficRoutingConfig extends js.Object {
@@ -4010,7 +4102,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of an UpdateApplication operation.
+    * Represents the input of an <code>UpdateApplication</code> operation.
     */
   @js.native
   trait UpdateApplicationInput extends js.Object {
@@ -4032,7 +4124,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the input of an UpdateDeploymentGroup operation.
+    * Represents the input of an <code>UpdateDeploymentGroup</code> operation.
     */
   @js.native
   trait UpdateDeploymentGroupInput extends js.Object {
@@ -4107,7 +4199,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the output of an UpdateDeploymentGroup operation.
+    * Represents the output of an <code>UpdateDeploymentGroup</code> operation.
     */
   @js.native
   trait UpdateDeploymentGroupOutput extends js.Object {

@@ -27,6 +27,8 @@ package object lambda {
   type EnvironmentVariables                     = js.Dictionary[EnvironmentVariableValue]
   type EventSourceMappingsList                  = js.Array[EventSourceMappingConfiguration]
   type EventSourceToken                         = String
+  type FileSystemArn                            = String
+  type FileSystemConfigList                     = js.Array[FileSystemConfig]
   type FunctionArn                              = String
   type FunctionEventInvokeConfigList            = js.Array[FunctionEventInvokeConfig]
   type FunctionList                             = js.Array[FunctionConfiguration]
@@ -46,6 +48,7 @@ package object lambda {
   type LayersList                               = js.Array[LayersListItem]
   type LayersReferenceList                      = js.Array[Layer]
   type LicenseInfo                              = String
+  type LocalMountPath                           = String
   type MasterRegion                             = String
   type MaxFunctionEventInvokeConfigListItems    = Int
   type MaxLayerListItems                        = Int
@@ -636,6 +639,7 @@ package lambda {
     var DeadLetterConfig: js.UndefOr[DeadLetterConfig]
     var Description: js.UndefOr[Description]
     var Environment: js.UndefOr[Environment]
+    var FileSystemConfigs: js.UndefOr[FileSystemConfigList]
     var KMSKeyArn: js.UndefOr[KMSKeyArn]
     var Layers: js.UndefOr[LayerList]
     var MemorySize: js.UndefOr[MemorySize]
@@ -657,6 +661,7 @@ package lambda {
         DeadLetterConfig: js.UndefOr[DeadLetterConfig] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         Environment: js.UndefOr[Environment] = js.undefined,
+        FileSystemConfigs: js.UndefOr[FileSystemConfigList] = js.undefined,
         KMSKeyArn: js.UndefOr[KMSKeyArn] = js.undefined,
         Layers: js.UndefOr[LayerList] = js.undefined,
         MemorySize: js.UndefOr[MemorySize] = js.undefined,
@@ -677,6 +682,7 @@ package lambda {
       DeadLetterConfig.foreach(__v => __obj.updateDynamic("DeadLetterConfig")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
+      FileSystemConfigs.foreach(__v => __obj.updateDynamic("FileSystemConfigs")(__v.asInstanceOf[js.Any]))
       KMSKeyArn.foreach(__v => __obj.updateDynamic("KMSKeyArn")(__v.asInstanceOf[js.Any]))
       Layers.foreach(__v => __obj.updateDynamic("Layers")(__v.asInstanceOf[js.Any]))
       MemorySize.foreach(__v => __obj.updateDynamic("MemorySize")(__v.asInstanceOf[js.Any]))
@@ -1009,6 +1015,30 @@ package lambda {
   }
 
   /**
+    * Details about the connection between a Lambda function and an Amazon EFS file system.
+    */
+  @js.native
+  trait FileSystemConfig extends js.Object {
+    var Arn: FileSystemArn
+    var LocalMountPath: LocalMountPath
+  }
+
+  object FileSystemConfig {
+    @inline
+    def apply(
+        Arn: FileSystemArn,
+        LocalMountPath: LocalMountPath
+    ): FileSystemConfig = {
+      val __obj = js.Dynamic.literal(
+        "Arn"            -> Arn.asInstanceOf[js.Any],
+        "LocalMountPath" -> LocalMountPath.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[FileSystemConfig]
+    }
+  }
+
+  /**
     * The code for the Lambda function. You can specify either an object in Amazon S3, or upload a deployment package directly.
     */
   @js.native
@@ -1068,6 +1098,7 @@ package lambda {
     var DeadLetterConfig: js.UndefOr[DeadLetterConfig]
     var Description: js.UndefOr[Description]
     var Environment: js.UndefOr[EnvironmentResponse]
+    var FileSystemConfigs: js.UndefOr[FileSystemConfigList]
     var FunctionArn: js.UndefOr[NameSpacedFunctionArn]
     var FunctionName: js.UndefOr[NamespacedFunctionName]
     var Handler: js.UndefOr[Handler]
@@ -1099,6 +1130,7 @@ package lambda {
         DeadLetterConfig: js.UndefOr[DeadLetterConfig] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         Environment: js.UndefOr[EnvironmentResponse] = js.undefined,
+        FileSystemConfigs: js.UndefOr[FileSystemConfigList] = js.undefined,
         FunctionArn: js.UndefOr[NameSpacedFunctionArn] = js.undefined,
         FunctionName: js.UndefOr[NamespacedFunctionName] = js.undefined,
         Handler: js.UndefOr[Handler] = js.undefined,
@@ -1127,6 +1159,7 @@ package lambda {
       DeadLetterConfig.foreach(__v => __obj.updateDynamic("DeadLetterConfig")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
+      FileSystemConfigs.foreach(__v => __obj.updateDynamic("FileSystemConfigs")(__v.asInstanceOf[js.Any]))
       FunctionArn.foreach(__v => __obj.updateDynamic("FunctionArn")(__v.asInstanceOf[js.Any]))
       FunctionName.foreach(__v => __obj.updateDynamic("FunctionName")(__v.asInstanceOf[js.Any]))
       Handler.foreach(__v => __obj.updateDynamic("Handler")(__v.asInstanceOf[js.Any]))
@@ -2649,6 +2682,7 @@ package lambda {
     val `dotnetcore1.0`  = "dotnetcore1.0".asInstanceOf[Runtime]
     val `dotnetcore2.0`  = "dotnetcore2.0".asInstanceOf[Runtime]
     val `dotnetcore2.1`  = "dotnetcore2.1".asInstanceOf[Runtime]
+    val `dotnetcore3.1`  = "dotnetcore3.1".asInstanceOf[Runtime]
     val `nodejs4.3-edge` = "nodejs4.3-edge".asInstanceOf[Runtime]
     val `go1.x`          = "go1.x".asInstanceOf[Runtime]
     val `ruby2.5`        = "ruby2.5".asInstanceOf[Runtime]
@@ -2672,6 +2706,7 @@ package lambda {
         `dotnetcore1.0`,
         `dotnetcore2.0`,
         `dotnetcore2.1`,
+        `dotnetcore3.1`,
         `nodejs4.3-edge`,
         `go1.x`,
         `ruby2.5`,
@@ -2940,6 +2975,7 @@ package lambda {
     var DeadLetterConfig: js.UndefOr[DeadLetterConfig]
     var Description: js.UndefOr[Description]
     var Environment: js.UndefOr[Environment]
+    var FileSystemConfigs: js.UndefOr[FileSystemConfigList]
     var Handler: js.UndefOr[Handler]
     var KMSKeyArn: js.UndefOr[KMSKeyArn]
     var Layers: js.UndefOr[LayerList]
@@ -2959,6 +2995,7 @@ package lambda {
         DeadLetterConfig: js.UndefOr[DeadLetterConfig] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         Environment: js.UndefOr[Environment] = js.undefined,
+        FileSystemConfigs: js.UndefOr[FileSystemConfigList] = js.undefined,
         Handler: js.UndefOr[Handler] = js.undefined,
         KMSKeyArn: js.UndefOr[KMSKeyArn] = js.undefined,
         Layers: js.UndefOr[LayerList] = js.undefined,
@@ -2977,6 +3014,7 @@ package lambda {
       DeadLetterConfig.foreach(__v => __obj.updateDynamic("DeadLetterConfig")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
+      FileSystemConfigs.foreach(__v => __obj.updateDynamic("FileSystemConfigs")(__v.asInstanceOf[js.Any]))
       Handler.foreach(__v => __obj.updateDynamic("Handler")(__v.asInstanceOf[js.Any]))
       KMSKeyArn.foreach(__v => __obj.updateDynamic("KMSKeyArn")(__v.asInstanceOf[js.Any]))
       Layers.foreach(__v => __obj.updateDynamic("Layers")(__v.asInstanceOf[js.Any]))

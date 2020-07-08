@@ -58,8 +58,12 @@ package object cloudwatchlogs {
   type Percentage                  = Int
   type PolicyDocument              = String
   type PolicyName                  = String
+  type QueryDefinitionList         = js.Array[QueryDefinition]
+  type QueryDefinitionName         = String
+  type QueryDefinitionString       = String
   type QueryId                     = String
   type QueryInfoList               = js.Array[QueryInfo]
+  type QueryListMaxResults         = Int
   type QueryResults                = js.Array[ResultRows]
   type QueryString                 = String
   type ResourcePolicies            = js.Array[ResourcePolicy]
@@ -102,6 +106,9 @@ package object cloudwatchlogs {
       service.deleteLogStream(params).promise().toFuture
     @inline def deleteMetricFilterFuture(params: DeleteMetricFilterRequest): Future[js.Object] =
       service.deleteMetricFilter(params).promise().toFuture
+    @inline def deleteQueryDefinitionFuture(
+        params: DeleteQueryDefinitionRequest
+    ): Future[DeleteQueryDefinitionResponse] = service.deleteQueryDefinition(params).promise().toFuture
     @inline def deleteResourcePolicyFuture(params: DeleteResourcePolicyRequest): Future[js.Object] =
       service.deleteResourcePolicy(params).promise().toFuture
     @inline def deleteRetentionPolicyFuture(params: DeleteRetentionPolicyRequest): Future[js.Object] =
@@ -121,6 +128,9 @@ package object cloudwatchlogs {
     ): Future[DescribeMetricFiltersResponse] = service.describeMetricFilters(params).promise().toFuture
     @inline def describeQueriesFuture(params: DescribeQueriesRequest): Future[DescribeQueriesResponse] =
       service.describeQueries(params).promise().toFuture
+    @inline def describeQueryDefinitionsFuture(
+        params: DescribeQueryDefinitionsRequest
+    ): Future[DescribeQueryDefinitionsResponse] = service.describeQueryDefinitions(params).promise().toFuture
     @inline def describeResourcePoliciesFuture(
         params: DescribeResourcePoliciesRequest
     ): Future[DescribeResourcePoliciesResponse] = service.describeResourcePolicies(params).promise().toFuture
@@ -149,6 +159,8 @@ package object cloudwatchlogs {
       service.putLogEvents(params).promise().toFuture
     @inline def putMetricFilterFuture(params: PutMetricFilterRequest): Future[js.Object] =
       service.putMetricFilter(params).promise().toFuture
+    @inline def putQueryDefinitionFuture(params: PutQueryDefinitionRequest): Future[PutQueryDefinitionResponse] =
+      service.putQueryDefinition(params).promise().toFuture
     @inline def putResourcePolicyFuture(params: PutResourcePolicyRequest): Future[PutResourcePolicyResponse] =
       service.putResourcePolicy(params).promise().toFuture
     @inline def putRetentionPolicyFuture(params: PutRetentionPolicyRequest): Future[js.Object] =
@@ -183,6 +195,7 @@ package cloudwatchlogs {
     def deleteLogGroup(params: DeleteLogGroupRequest): Request[js.Object]                                   = js.native
     def deleteLogStream(params: DeleteLogStreamRequest): Request[js.Object]                                 = js.native
     def deleteMetricFilter(params: DeleteMetricFilterRequest): Request[js.Object]                           = js.native
+    def deleteQueryDefinition(params: DeleteQueryDefinitionRequest): Request[DeleteQueryDefinitionResponse] = js.native
     def deleteResourcePolicy(params: DeleteResourcePolicyRequest): Request[js.Object]                       = js.native
     def deleteRetentionPolicy(params: DeleteRetentionPolicyRequest): Request[js.Object]                     = js.native
     def deleteSubscriptionFilter(params: DeleteSubscriptionFilterRequest): Request[js.Object]               = js.native
@@ -192,30 +205,33 @@ package cloudwatchlogs {
     def describeLogStreams(params: DescribeLogStreamsRequest): Request[DescribeLogStreamsResponse]          = js.native
     def describeMetricFilters(params: DescribeMetricFiltersRequest): Request[DescribeMetricFiltersResponse] = js.native
     def describeQueries(params: DescribeQueriesRequest): Request[DescribeQueriesResponse]                   = js.native
+    def describeQueryDefinitions(params: DescribeQueryDefinitionsRequest): Request[DescribeQueryDefinitionsResponse] =
+      js.native
     def describeResourcePolicies(params: DescribeResourcePoliciesRequest): Request[DescribeResourcePoliciesResponse] =
       js.native
     def describeSubscriptionFilters(
         params: DescribeSubscriptionFiltersRequest
-    ): Request[DescribeSubscriptionFiltersResponse]                                             = js.native
-    def disassociateKmsKey(params: DisassociateKmsKeyRequest): Request[js.Object]               = js.native
-    def filterLogEvents(params: FilterLogEventsRequest): Request[FilterLogEventsResponse]       = js.native
-    def getLogEvents(params: GetLogEventsRequest): Request[GetLogEventsResponse]                = js.native
-    def getLogGroupFields(params: GetLogGroupFieldsRequest): Request[GetLogGroupFieldsResponse] = js.native
-    def getLogRecord(params: GetLogRecordRequest): Request[GetLogRecordResponse]                = js.native
-    def getQueryResults(params: GetQueryResultsRequest): Request[GetQueryResultsResponse]       = js.native
-    def listTagsLogGroup(params: ListTagsLogGroupRequest): Request[ListTagsLogGroupResponse]    = js.native
-    def putDestination(params: PutDestinationRequest): Request[PutDestinationResponse]          = js.native
-    def putDestinationPolicy(params: PutDestinationPolicyRequest): Request[js.Object]           = js.native
-    def putLogEvents(params: PutLogEventsRequest): Request[PutLogEventsResponse]                = js.native
-    def putMetricFilter(params: PutMetricFilterRequest): Request[js.Object]                     = js.native
-    def putResourcePolicy(params: PutResourcePolicyRequest): Request[PutResourcePolicyResponse] = js.native
-    def putRetentionPolicy(params: PutRetentionPolicyRequest): Request[js.Object]               = js.native
-    def putSubscriptionFilter(params: PutSubscriptionFilterRequest): Request[js.Object]         = js.native
-    def startQuery(params: StartQueryRequest): Request[StartQueryResponse]                      = js.native
-    def stopQuery(params: StopQueryRequest): Request[StopQueryResponse]                         = js.native
-    def tagLogGroup(params: TagLogGroupRequest): Request[js.Object]                             = js.native
-    def testMetricFilter(params: TestMetricFilterRequest): Request[TestMetricFilterResponse]    = js.native
-    def untagLogGroup(params: UntagLogGroupRequest): Request[js.Object]                         = js.native
+    ): Request[DescribeSubscriptionFiltersResponse]                                                = js.native
+    def disassociateKmsKey(params: DisassociateKmsKeyRequest): Request[js.Object]                  = js.native
+    def filterLogEvents(params: FilterLogEventsRequest): Request[FilterLogEventsResponse]          = js.native
+    def getLogEvents(params: GetLogEventsRequest): Request[GetLogEventsResponse]                   = js.native
+    def getLogGroupFields(params: GetLogGroupFieldsRequest): Request[GetLogGroupFieldsResponse]    = js.native
+    def getLogRecord(params: GetLogRecordRequest): Request[GetLogRecordResponse]                   = js.native
+    def getQueryResults(params: GetQueryResultsRequest): Request[GetQueryResultsResponse]          = js.native
+    def listTagsLogGroup(params: ListTagsLogGroupRequest): Request[ListTagsLogGroupResponse]       = js.native
+    def putDestination(params: PutDestinationRequest): Request[PutDestinationResponse]             = js.native
+    def putDestinationPolicy(params: PutDestinationPolicyRequest): Request[js.Object]              = js.native
+    def putLogEvents(params: PutLogEventsRequest): Request[PutLogEventsResponse]                   = js.native
+    def putMetricFilter(params: PutMetricFilterRequest): Request[js.Object]                        = js.native
+    def putQueryDefinition(params: PutQueryDefinitionRequest): Request[PutQueryDefinitionResponse] = js.native
+    def putResourcePolicy(params: PutResourcePolicyRequest): Request[PutResourcePolicyResponse]    = js.native
+    def putRetentionPolicy(params: PutRetentionPolicyRequest): Request[js.Object]                  = js.native
+    def putSubscriptionFilter(params: PutSubscriptionFilterRequest): Request[js.Object]            = js.native
+    def startQuery(params: StartQueryRequest): Request[StartQueryResponse]                         = js.native
+    def stopQuery(params: StopQueryRequest): Request[StopQueryResponse]                            = js.native
+    def tagLogGroup(params: TagLogGroupRequest): Request[js.Object]                                = js.native
+    def testMetricFilter(params: TestMetricFilterRequest): Request[TestMetricFilterResponse]       = js.native
+    def untagLogGroup(params: UntagLogGroupRequest): Request[js.Object]                            = js.native
   }
 
   @js.native
@@ -429,6 +445,40 @@ package cloudwatchlogs {
       )
 
       __obj.asInstanceOf[DeleteMetricFilterRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteQueryDefinitionRequest extends js.Object {
+    var queryDefinitionId: QueryId
+  }
+
+  object DeleteQueryDefinitionRequest {
+    @inline
+    def apply(
+        queryDefinitionId: QueryId
+    ): DeleteQueryDefinitionRequest = {
+      val __obj = js.Dynamic.literal(
+        "queryDefinitionId" -> queryDefinitionId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteQueryDefinitionRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteQueryDefinitionResponse extends js.Object {
+    var success: js.UndefOr[Success]
+  }
+
+  object DeleteQueryDefinitionResponse {
+    @inline
+    def apply(
+        success: js.UndefOr[Success] = js.undefined
+    ): DeleteQueryDefinitionResponse = {
+      val __obj = js.Dynamic.literal()
+      success.foreach(__v => __obj.updateDynamic("success")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteQueryDefinitionResponse]
     }
   }
 
@@ -756,6 +806,49 @@ package cloudwatchlogs {
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       queries.foreach(__v => __obj.updateDynamic("queries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeQueriesResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeQueryDefinitionsRequest extends js.Object {
+    var maxResults: js.UndefOr[QueryListMaxResults]
+    var nextToken: js.UndefOr[NextToken]
+    var queryDefinitionNamePrefix: js.UndefOr[QueryDefinitionName]
+  }
+
+  object DescribeQueryDefinitionsRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[QueryListMaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        queryDefinitionNamePrefix: js.UndefOr[QueryDefinitionName] = js.undefined
+    ): DescribeQueryDefinitionsRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      queryDefinitionNamePrefix.foreach(__v =>
+        __obj.updateDynamic("queryDefinitionNamePrefix")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeQueryDefinitionsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeQueryDefinitionsResponse extends js.Object {
+    var nextToken: js.UndefOr[NextToken]
+    var queryDefinitions: js.UndefOr[QueryDefinitionList]
+  }
+
+  object DescribeQueryDefinitionsResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        queryDefinitions: js.UndefOr[QueryDefinitionList] = js.undefined
+    ): DescribeQueryDefinitionsResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      queryDefinitions.foreach(__v => __obj.updateDynamic("queryDefinitions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeQueryDefinitionsResponse]
     }
   }
 
@@ -1683,6 +1776,49 @@ package cloudwatchlogs {
   }
 
   @js.native
+  trait PutQueryDefinitionRequest extends js.Object {
+    var name: QueryDefinitionName
+    var queryString: QueryDefinitionString
+    var logGroupNames: js.UndefOr[LogGroupNames]
+    var queryDefinitionId: js.UndefOr[QueryId]
+  }
+
+  object PutQueryDefinitionRequest {
+    @inline
+    def apply(
+        name: QueryDefinitionName,
+        queryString: QueryDefinitionString,
+        logGroupNames: js.UndefOr[LogGroupNames] = js.undefined,
+        queryDefinitionId: js.UndefOr[QueryId] = js.undefined
+    ): PutQueryDefinitionRequest = {
+      val __obj = js.Dynamic.literal(
+        "name"        -> name.asInstanceOf[js.Any],
+        "queryString" -> queryString.asInstanceOf[js.Any]
+      )
+
+      logGroupNames.foreach(__v => __obj.updateDynamic("logGroupNames")(__v.asInstanceOf[js.Any]))
+      queryDefinitionId.foreach(__v => __obj.updateDynamic("queryDefinitionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutQueryDefinitionRequest]
+    }
+  }
+
+  @js.native
+  trait PutQueryDefinitionResponse extends js.Object {
+    var queryDefinitionId: js.UndefOr[QueryId]
+  }
+
+  object PutQueryDefinitionResponse {
+    @inline
+    def apply(
+        queryDefinitionId: js.UndefOr[QueryId] = js.undefined
+    ): PutQueryDefinitionResponse = {
+      val __obj = js.Dynamic.literal()
+      queryDefinitionId.foreach(__v => __obj.updateDynamic("queryDefinitionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutQueryDefinitionResponse]
+    }
+  }
+
+  @js.native
   trait PutResourcePolicyRequest extends js.Object {
     var policyDocument: js.UndefOr[PolicyDocument]
     var policyName: js.UndefOr[PolicyName]
@@ -1768,6 +1904,34 @@ package cloudwatchlogs {
       distribution.foreach(__v => __obj.updateDynamic("distribution")(__v.asInstanceOf[js.Any]))
       roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutSubscriptionFilterRequest]
+    }
+  }
+
+  @js.native
+  trait QueryDefinition extends js.Object {
+    var lastModified: js.UndefOr[Timestamp]
+    var logGroupNames: js.UndefOr[LogGroupNames]
+    var name: js.UndefOr[QueryDefinitionName]
+    var queryDefinitionId: js.UndefOr[QueryId]
+    var queryString: js.UndefOr[QueryDefinitionString]
+  }
+
+  object QueryDefinition {
+    @inline
+    def apply(
+        lastModified: js.UndefOr[Timestamp] = js.undefined,
+        logGroupNames: js.UndefOr[LogGroupNames] = js.undefined,
+        name: js.UndefOr[QueryDefinitionName] = js.undefined,
+        queryDefinitionId: js.UndefOr[QueryId] = js.undefined,
+        queryString: js.UndefOr[QueryDefinitionString] = js.undefined
+    ): QueryDefinition = {
+      val __obj = js.Dynamic.literal()
+      lastModified.foreach(__v => __obj.updateDynamic("lastModified")(__v.asInstanceOf[js.Any]))
+      logGroupNames.foreach(__v => __obj.updateDynamic("logGroupNames")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      queryDefinitionId.foreach(__v => __obj.updateDynamic("queryDefinitionId")(__v.asInstanceOf[js.Any]))
+      queryString.foreach(__v => __obj.updateDynamic("queryString")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueryDefinition]
     }
   }
 
@@ -1891,6 +2055,7 @@ package cloudwatchlogs {
 
   /**
     * Contains one field from one log event returned by a CloudWatch Logs Insights query, along with the value of that field.
+    *  For more information about the fields that are generated by CloudWatch logs, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html|Supported Logs and Discovered Fields]].
     */
   @js.native
   trait ResultField extends js.Object {

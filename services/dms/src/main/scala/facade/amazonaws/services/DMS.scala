@@ -410,7 +410,7 @@ package dms {
   }
 
   /**
-    * <p/>
+    * The name of an Availability Zone for use during database migration.
     */
   @js.native
   trait AvailabilityZone extends js.Object {
@@ -484,7 +484,7 @@ package dms {
   }
 
   /**
-    * <p/>
+    * Status of the connection between an endpoint and a replication instance, including Amazon Resource Names (ARNs) and the last error message issued.
     */
   @js.native
   trait Connection extends js.Object {
@@ -534,9 +534,11 @@ package dms {
     var ElasticsearchSettings: js.UndefOr[ElasticsearchSettings]
     var ExternalTableDefinition: js.UndefOr[String]
     var ExtraConnectionAttributes: js.UndefOr[String]
+    var KafkaSettings: js.UndefOr[KafkaSettings]
     var KinesisSettings: js.UndefOr[KinesisSettings]
     var KmsKeyId: js.UndefOr[String]
     var MongoDbSettings: js.UndefOr[MongoDbSettings]
+    var NeptuneSettings: js.UndefOr[NeptuneSettings]
     var Password: js.UndefOr[SecretString]
     var Port: js.UndefOr[IntegerOptional]
     var RedshiftSettings: js.UndefOr[RedshiftSettings]
@@ -561,9 +563,11 @@ package dms {
         ElasticsearchSettings: js.UndefOr[ElasticsearchSettings] = js.undefined,
         ExternalTableDefinition: js.UndefOr[String] = js.undefined,
         ExtraConnectionAttributes: js.UndefOr[String] = js.undefined,
+        KafkaSettings: js.UndefOr[KafkaSettings] = js.undefined,
         KinesisSettings: js.UndefOr[KinesisSettings] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
         MongoDbSettings: js.UndefOr[MongoDbSettings] = js.undefined,
+        NeptuneSettings: js.UndefOr[NeptuneSettings] = js.undefined,
         Password: js.UndefOr[SecretString] = js.undefined,
         Port: js.UndefOr[IntegerOptional] = js.undefined,
         RedshiftSettings: js.UndefOr[RedshiftSettings] = js.undefined,
@@ -589,9 +593,11 @@ package dms {
       ExtraConnectionAttributes.foreach(__v =>
         __obj.updateDynamic("ExtraConnectionAttributes")(__v.asInstanceOf[js.Any])
       )
+      KafkaSettings.foreach(__v => __obj.updateDynamic("KafkaSettings")(__v.asInstanceOf[js.Any]))
       KinesisSettings.foreach(__v => __obj.updateDynamic("KinesisSettings")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       MongoDbSettings.foreach(__v => __obj.updateDynamic("MongoDbSettings")(__v.asInstanceOf[js.Any]))
+      NeptuneSettings.foreach(__v => __obj.updateDynamic("NeptuneSettings")(__v.asInstanceOf[js.Any]))
       Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       RedshiftSettings.foreach(__v => __obj.updateDynamic("RedshiftSettings")(__v.asInstanceOf[js.Any]))
@@ -830,6 +836,7 @@ package dms {
     var CdcStopPosition: js.UndefOr[String]
     var ReplicationTaskSettings: js.UndefOr[String]
     var Tags: js.UndefOr[TagList]
+    var TaskData: js.UndefOr[String]
   }
 
   object CreateReplicationTaskMessage {
@@ -845,7 +852,8 @@ package dms {
         CdcStartTime: js.UndefOr[TStamp] = js.undefined,
         CdcStopPosition: js.UndefOr[String] = js.undefined,
         ReplicationTaskSettings: js.UndefOr[String] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
+        Tags: js.UndefOr[TagList] = js.undefined,
+        TaskData: js.UndefOr[String] = js.undefined
     ): CreateReplicationTaskMessage = {
       val __obj = js.Dynamic.literal(
         "MigrationType"             -> MigrationType.asInstanceOf[js.Any],
@@ -861,6 +869,7 @@ package dms {
       CdcStopPosition.foreach(__v => __obj.updateDynamic("CdcStopPosition")(__v.asInstanceOf[js.Any]))
       ReplicationTaskSettings.foreach(__v => __obj.updateDynamic("ReplicationTaskSettings")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TaskData.foreach(__v => __obj.updateDynamic("TaskData")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateReplicationTaskMessage]
     }
   }
@@ -2063,7 +2072,7 @@ package dms {
   }
 
   /**
-    * <p/>
+    * Provides the Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role used to define an Amazon DynamoDB target endpoint.
     */
   @js.native
   trait DynamoDbSettings extends js.Object {
@@ -2084,7 +2093,7 @@ package dms {
   }
 
   /**
-    * <p/>
+    * Provides information that defines an Elasticsearch endpoint.
     */
   @js.native
   trait ElasticsearchSettings extends js.Object {
@@ -2133,7 +2142,11 @@ package dms {
   }
 
   /**
-    * <p/>
+    * Describes an endpoint of a database instance in response to operations such as the following:
+    * * <code>CreateEndpoint</code>
+    *  * <code>DescribeEndpoint</code>
+    *  * <code>DescribeEndpointTypes</code>
+    *  * <code>ModifyEndpoint</code>
     */
   @js.native
   trait Endpoint extends js.Object {
@@ -2150,9 +2163,11 @@ package dms {
     var ExternalId: js.UndefOr[String]
     var ExternalTableDefinition: js.UndefOr[String]
     var ExtraConnectionAttributes: js.UndefOr[String]
+    var KafkaSettings: js.UndefOr[KafkaSettings]
     var KinesisSettings: js.UndefOr[KinesisSettings]
     var KmsKeyId: js.UndefOr[String]
     var MongoDbSettings: js.UndefOr[MongoDbSettings]
+    var NeptuneSettings: js.UndefOr[NeptuneSettings]
     var Port: js.UndefOr[IntegerOptional]
     var RedshiftSettings: js.UndefOr[RedshiftSettings]
     var S3Settings: js.UndefOr[S3Settings]
@@ -2179,9 +2194,11 @@ package dms {
         ExternalId: js.UndefOr[String] = js.undefined,
         ExternalTableDefinition: js.UndefOr[String] = js.undefined,
         ExtraConnectionAttributes: js.UndefOr[String] = js.undefined,
+        KafkaSettings: js.UndefOr[KafkaSettings] = js.undefined,
         KinesisSettings: js.UndefOr[KinesisSettings] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
         MongoDbSettings: js.UndefOr[MongoDbSettings] = js.undefined,
+        NeptuneSettings: js.UndefOr[NeptuneSettings] = js.undefined,
         Port: js.UndefOr[IntegerOptional] = js.undefined,
         RedshiftSettings: js.UndefOr[RedshiftSettings] = js.undefined,
         S3Settings: js.UndefOr[S3Settings] = js.undefined,
@@ -2207,9 +2224,11 @@ package dms {
       ExtraConnectionAttributes.foreach(__v =>
         __obj.updateDynamic("ExtraConnectionAttributes")(__v.asInstanceOf[js.Any])
       )
+      KafkaSettings.foreach(__v => __obj.updateDynamic("KafkaSettings")(__v.asInstanceOf[js.Any]))
       KinesisSettings.foreach(__v => __obj.updateDynamic("KinesisSettings")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       MongoDbSettings.foreach(__v => __obj.updateDynamic("MongoDbSettings")(__v.asInstanceOf[js.Any]))
+      NeptuneSettings.foreach(__v => __obj.updateDynamic("NeptuneSettings")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       RedshiftSettings.foreach(__v => __obj.updateDynamic("RedshiftSettings")(__v.asInstanceOf[js.Any]))
       S3Settings.foreach(__v => __obj.updateDynamic("S3Settings")(__v.asInstanceOf[js.Any]))
@@ -2223,7 +2242,7 @@ package dms {
   }
 
   /**
-    * <p/>
+    * Describes an identifiable significant activity that affects a replication instance or task. This object can provide the message, the available event categories, the date and source of the event, and the AWS DMS resource type.
     */
   @js.native
   trait Event extends js.Object {
@@ -2254,7 +2273,7 @@ package dms {
   }
 
   /**
-    * <p/>
+    * Lists categories of events subscribed to, and generated by, the applicable AWS DMS resource type.
     */
   @js.native
   trait EventCategoryGroup extends js.Object {
@@ -2276,7 +2295,7 @@ package dms {
   }
 
   /**
-    * <p/>
+    * Describes an event notification subscription created by the <code>CreateEventSubscription</code> operation.
     */
   @js.native
   trait EventSubscription extends js.Object {
@@ -2319,7 +2338,7 @@ package dms {
   }
 
   /**
-    * <p/>
+    * Identifies the name and value of a source filter object used to limit the number and type of records transferred from your source to your target.
     */
   @js.native
   trait Filter extends js.Object {
@@ -2386,11 +2405,38 @@ package dms {
   }
 
   /**
-    * <p/>
+    * Provides information that describes an Apache Kafka endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information.
+    */
+  @js.native
+  trait KafkaSettings extends js.Object {
+    var Broker: js.UndefOr[String]
+    var Topic: js.UndefOr[String]
+  }
+
+  object KafkaSettings {
+    @inline
+    def apply(
+        Broker: js.UndefOr[String] = js.undefined,
+        Topic: js.UndefOr[String] = js.undefined
+    ): KafkaSettings = {
+      val __obj = js.Dynamic.literal()
+      Broker.foreach(__v => __obj.updateDynamic("Broker")(__v.asInstanceOf[js.Any]))
+      Topic.foreach(__v => __obj.updateDynamic("Topic")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KafkaSettings]
+    }
+  }
+
+  /**
+    * Provides information that describes an Amazon Kinesis Data Stream endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information.
     */
   @js.native
   trait KinesisSettings extends js.Object {
+    var IncludeControlDetails: js.UndefOr[BooleanOptional]
+    var IncludePartitionValue: js.UndefOr[BooleanOptional]
+    var IncludeTableAlterOperations: js.UndefOr[BooleanOptional]
+    var IncludeTransactionDetails: js.UndefOr[BooleanOptional]
     var MessageFormat: js.UndefOr[MessageFormatValue]
+    var PartitionIncludeSchemaTable: js.UndefOr[BooleanOptional]
     var ServiceAccessRoleArn: js.UndefOr[String]
     var StreamArn: js.UndefOr[String]
   }
@@ -2398,12 +2444,28 @@ package dms {
   object KinesisSettings {
     @inline
     def apply(
+        IncludeControlDetails: js.UndefOr[BooleanOptional] = js.undefined,
+        IncludePartitionValue: js.UndefOr[BooleanOptional] = js.undefined,
+        IncludeTableAlterOperations: js.UndefOr[BooleanOptional] = js.undefined,
+        IncludeTransactionDetails: js.UndefOr[BooleanOptional] = js.undefined,
         MessageFormat: js.UndefOr[MessageFormatValue] = js.undefined,
+        PartitionIncludeSchemaTable: js.UndefOr[BooleanOptional] = js.undefined,
         ServiceAccessRoleArn: js.UndefOr[String] = js.undefined,
         StreamArn: js.UndefOr[String] = js.undefined
     ): KinesisSettings = {
       val __obj = js.Dynamic.literal()
+      IncludeControlDetails.foreach(__v => __obj.updateDynamic("IncludeControlDetails")(__v.asInstanceOf[js.Any]))
+      IncludePartitionValue.foreach(__v => __obj.updateDynamic("IncludePartitionValue")(__v.asInstanceOf[js.Any]))
+      IncludeTableAlterOperations.foreach(__v =>
+        __obj.updateDynamic("IncludeTableAlterOperations")(__v.asInstanceOf[js.Any])
+      )
+      IncludeTransactionDetails.foreach(__v =>
+        __obj.updateDynamic("IncludeTransactionDetails")(__v.asInstanceOf[js.Any])
+      )
       MessageFormat.foreach(__v => __obj.updateDynamic("MessageFormat")(__v.asInstanceOf[js.Any]))
+      PartitionIncludeSchemaTable.foreach(__v =>
+        __obj.updateDynamic("PartitionIncludeSchemaTable")(__v.asInstanceOf[js.Any])
+      )
       ServiceAccessRoleArn.foreach(__v => __obj.updateDynamic("ServiceAccessRoleArn")(__v.asInstanceOf[js.Any]))
       StreamArn.foreach(__v => __obj.updateDynamic("StreamArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KinesisSettings]
@@ -2453,9 +2515,10 @@ package dms {
   @js.native
   sealed trait MessageFormatValue extends js.Any
   object MessageFormatValue extends js.Object {
-    val json = "json".asInstanceOf[MessageFormatValue]
+    val json               = "json".asInstanceOf[MessageFormatValue]
+    val `json-unformatted` = "json-unformatted".asInstanceOf[MessageFormatValue]
 
-    val values = js.Object.freeze(js.Array(json))
+    val values = js.Object.freeze(js.Array(json, `json-unformatted`))
   }
 
   @js.native
@@ -2484,8 +2547,10 @@ package dms {
     var EngineName: js.UndefOr[String]
     var ExternalTableDefinition: js.UndefOr[String]
     var ExtraConnectionAttributes: js.UndefOr[String]
+    var KafkaSettings: js.UndefOr[KafkaSettings]
     var KinesisSettings: js.UndefOr[KinesisSettings]
     var MongoDbSettings: js.UndefOr[MongoDbSettings]
+    var NeptuneSettings: js.UndefOr[NeptuneSettings]
     var Password: js.UndefOr[SecretString]
     var Port: js.UndefOr[IntegerOptional]
     var RedshiftSettings: js.UndefOr[RedshiftSettings]
@@ -2510,8 +2575,10 @@ package dms {
         EngineName: js.UndefOr[String] = js.undefined,
         ExternalTableDefinition: js.UndefOr[String] = js.undefined,
         ExtraConnectionAttributes: js.UndefOr[String] = js.undefined,
+        KafkaSettings: js.UndefOr[KafkaSettings] = js.undefined,
         KinesisSettings: js.UndefOr[KinesisSettings] = js.undefined,
         MongoDbSettings: js.UndefOr[MongoDbSettings] = js.undefined,
+        NeptuneSettings: js.UndefOr[NeptuneSettings] = js.undefined,
         Password: js.UndefOr[SecretString] = js.undefined,
         Port: js.UndefOr[IntegerOptional] = js.undefined,
         RedshiftSettings: js.UndefOr[RedshiftSettings] = js.undefined,
@@ -2537,8 +2604,10 @@ package dms {
       ExtraConnectionAttributes.foreach(__v =>
         __obj.updateDynamic("ExtraConnectionAttributes")(__v.asInstanceOf[js.Any])
       )
+      KafkaSettings.foreach(__v => __obj.updateDynamic("KafkaSettings")(__v.asInstanceOf[js.Any]))
       KinesisSettings.foreach(__v => __obj.updateDynamic("KinesisSettings")(__v.asInstanceOf[js.Any]))
       MongoDbSettings.foreach(__v => __obj.updateDynamic("MongoDbSettings")(__v.asInstanceOf[js.Any]))
+      NeptuneSettings.foreach(__v => __obj.updateDynamic("NeptuneSettings")(__v.asInstanceOf[js.Any]))
       Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       RedshiftSettings.foreach(__v => __obj.updateDynamic("RedshiftSettings")(__v.asInstanceOf[js.Any]))
@@ -2757,6 +2826,7 @@ package dms {
     var ReplicationTaskIdentifier: js.UndefOr[String]
     var ReplicationTaskSettings: js.UndefOr[String]
     var TableMappings: js.UndefOr[String]
+    var TaskData: js.UndefOr[String]
   }
 
   object ModifyReplicationTaskMessage {
@@ -2769,7 +2839,8 @@ package dms {
         MigrationType: js.UndefOr[MigrationTypeValue] = js.undefined,
         ReplicationTaskIdentifier: js.UndefOr[String] = js.undefined,
         ReplicationTaskSettings: js.UndefOr[String] = js.undefined,
-        TableMappings: js.UndefOr[String] = js.undefined
+        TableMappings: js.UndefOr[String] = js.undefined,
+        TaskData: js.UndefOr[String] = js.undefined
     ): ModifyReplicationTaskMessage = {
       val __obj = js.Dynamic.literal(
         "ReplicationTaskArn" -> ReplicationTaskArn.asInstanceOf[js.Any]
@@ -2784,6 +2855,7 @@ package dms {
       )
       ReplicationTaskSettings.foreach(__v => __obj.updateDynamic("ReplicationTaskSettings")(__v.asInstanceOf[js.Any]))
       TableMappings.foreach(__v => __obj.updateDynamic("TableMappings")(__v.asInstanceOf[js.Any]))
+      TaskData.foreach(__v => __obj.updateDynamic("TaskData")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyReplicationTaskMessage]
     }
   }
@@ -2808,7 +2880,7 @@ package dms {
   }
 
   /**
-    * <p/>
+    * Provides information that defines a MongoDB endpoint.
     */
   @js.native
   trait MongoDbSettings extends js.Object {
@@ -2859,6 +2931,45 @@ package dms {
     }
   }
 
+  /**
+    * Provides information that defines an Amazon Neptune endpoint.
+    */
+  @js.native
+  trait NeptuneSettings extends js.Object {
+    var S3BucketFolder: String
+    var S3BucketName: String
+    var ErrorRetryDuration: js.UndefOr[IntegerOptional]
+    var IamAuthEnabled: js.UndefOr[BooleanOptional]
+    var MaxFileSize: js.UndefOr[IntegerOptional]
+    var MaxRetryCount: js.UndefOr[IntegerOptional]
+    var ServiceAccessRoleArn: js.UndefOr[String]
+  }
+
+  object NeptuneSettings {
+    @inline
+    def apply(
+        S3BucketFolder: String,
+        S3BucketName: String,
+        ErrorRetryDuration: js.UndefOr[IntegerOptional] = js.undefined,
+        IamAuthEnabled: js.UndefOr[BooleanOptional] = js.undefined,
+        MaxFileSize: js.UndefOr[IntegerOptional] = js.undefined,
+        MaxRetryCount: js.UndefOr[IntegerOptional] = js.undefined,
+        ServiceAccessRoleArn: js.UndefOr[String] = js.undefined
+    ): NeptuneSettings = {
+      val __obj = js.Dynamic.literal(
+        "S3BucketFolder" -> S3BucketFolder.asInstanceOf[js.Any],
+        "S3BucketName"   -> S3BucketName.asInstanceOf[js.Any]
+      )
+
+      ErrorRetryDuration.foreach(__v => __obj.updateDynamic("ErrorRetryDuration")(__v.asInstanceOf[js.Any]))
+      IamAuthEnabled.foreach(__v => __obj.updateDynamic("IamAuthEnabled")(__v.asInstanceOf[js.Any]))
+      MaxFileSize.foreach(__v => __obj.updateDynamic("MaxFileSize")(__v.asInstanceOf[js.Any]))
+      MaxRetryCount.foreach(__v => __obj.updateDynamic("MaxRetryCount")(__v.asInstanceOf[js.Any]))
+      ServiceAccessRoleArn.foreach(__v => __obj.updateDynamic("ServiceAccessRoleArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NeptuneSettings]
+    }
+  }
+
   @js.native
   sealed trait NestingLevelValue extends js.Any
   object NestingLevelValue extends js.Object {
@@ -2869,7 +2980,7 @@ package dms {
   }
 
   /**
-    * <p/>
+    * In response to the <code>DescribeOrderableReplicationInstances</code> operation, this object describes an available replication instance. This description includes the replication instance's type, engine version, and allocated storage.
     */
   @js.native
   trait OrderableReplicationInstance extends js.Object {
@@ -2921,7 +3032,7 @@ package dms {
   }
 
   /**
-    * <p/>
+    * Describes a maintenance action pending for an AWS DMS resource, including when and how it will be applied. This data type is a response element to the <code>DescribePendingMaintenanceActions</code> operation.
     */
   @js.native
   trait PendingMaintenanceAction extends js.Object {
@@ -2992,7 +3103,7 @@ package dms {
   }
 
   /**
-    * <p/>
+    * Provides information that defines an Amazon Redshift endpoint.
     */
   @js.native
   trait RedshiftSettings extends js.Object {
@@ -3130,7 +3241,7 @@ package dms {
   }
 
   /**
-    * <p/>
+    * Provides information that describes status of a schema at an endpoint specified by the <code>DescribeRefreshSchemaStatus</code> operation.
     */
   @js.native
   trait RefreshSchemasStatus extends js.Object {
@@ -3277,7 +3388,7 @@ package dms {
   }
 
   /**
-    * <p/>
+    * Provides information that defines a replication instance.
     */
   @js.native
   trait ReplicationInstance extends js.Object {
@@ -3405,7 +3516,7 @@ package dms {
   }
 
   /**
-    * <p/>
+    * Provides information about the values of pending modifications to a replication instance. This data type is an object of the <code>ReplicationInstance</code> user-defined data type.
     */
   @js.native
   trait ReplicationPendingModifiedValues extends js.Object {
@@ -3433,7 +3544,7 @@ package dms {
   }
 
   /**
-    * <p/>
+    * Describes a subnet group in response to a request by the <code>DescribeReplicationSubnetGroup</code> operation.
     */
   @js.native
   trait ReplicationSubnetGroup extends js.Object {
@@ -3468,7 +3579,7 @@ package dms {
   }
 
   /**
-    * <p/>
+    * Provides information that describes a replication task created by the <code>CreateReplicationTask</code> operation.
     */
   @js.native
   trait ReplicationTask extends js.Object {
@@ -3489,6 +3600,7 @@ package dms {
     var StopReason: js.UndefOr[String]
     var TableMappings: js.UndefOr[String]
     var TargetEndpointArn: js.UndefOr[String]
+    var TaskData: js.UndefOr[String]
   }
 
   object ReplicationTask {
@@ -3510,7 +3622,8 @@ package dms {
         Status: js.UndefOr[String] = js.undefined,
         StopReason: js.UndefOr[String] = js.undefined,
         TableMappings: js.UndefOr[String] = js.undefined,
-        TargetEndpointArn: js.UndefOr[String] = js.undefined
+        TargetEndpointArn: js.UndefOr[String] = js.undefined,
+        TaskData: js.UndefOr[String] = js.undefined
     ): ReplicationTask = {
       val __obj = js.Dynamic.literal()
       CdcStartPosition.foreach(__v => __obj.updateDynamic("CdcStartPosition")(__v.asInstanceOf[js.Any]))
@@ -3534,6 +3647,7 @@ package dms {
       StopReason.foreach(__v => __obj.updateDynamic("StopReason")(__v.asInstanceOf[js.Any]))
       TableMappings.foreach(__v => __obj.updateDynamic("TableMappings")(__v.asInstanceOf[js.Any]))
       TargetEndpointArn.foreach(__v => __obj.updateDynamic("TargetEndpointArn")(__v.asInstanceOf[js.Any]))
+      TaskData.foreach(__v => __obj.updateDynamic("TaskData")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicationTask]
     }
   }
@@ -3580,7 +3694,7 @@ package dms {
   }
 
   /**
-    * <p/>
+    * In response to a request by the <code>DescribeReplicationTasks</code> operation, this object provides a collection of statistics about a replication task.
     */
   @js.native
   trait ReplicationTaskStats extends js.Object {
@@ -3629,7 +3743,7 @@ package dms {
   }
 
   /**
-    * <p/>
+    * Identifies an AWS DMS resource and any pending actions for it.
     */
   @js.native
   trait ResourcePendingMaintenanceActions extends js.Object {
@@ -3659,6 +3773,7 @@ package dms {
   trait S3Settings extends js.Object {
     var BucketFolder: js.UndefOr[String]
     var BucketName: js.UndefOr[String]
+    var CdcInsertsAndUpdates: js.UndefOr[BooleanOptional]
     var CdcInsertsOnly: js.UndefOr[BooleanOptional]
     var CompressionType: js.UndefOr[CompressionTypeValue]
     var CsvDelimiter: js.UndefOr[String]
@@ -3684,6 +3799,7 @@ package dms {
     def apply(
         BucketFolder: js.UndefOr[String] = js.undefined,
         BucketName: js.UndefOr[String] = js.undefined,
+        CdcInsertsAndUpdates: js.UndefOr[BooleanOptional] = js.undefined,
         CdcInsertsOnly: js.UndefOr[BooleanOptional] = js.undefined,
         CompressionType: js.UndefOr[CompressionTypeValue] = js.undefined,
         CsvDelimiter: js.UndefOr[String] = js.undefined,
@@ -3706,6 +3822,7 @@ package dms {
       val __obj = js.Dynamic.literal()
       BucketFolder.foreach(__v => __obj.updateDynamic("BucketFolder")(__v.asInstanceOf[js.Any]))
       BucketName.foreach(__v => __obj.updateDynamic("BucketName")(__v.asInstanceOf[js.Any]))
+      CdcInsertsAndUpdates.foreach(__v => __obj.updateDynamic("CdcInsertsAndUpdates")(__v.asInstanceOf[js.Any]))
       CdcInsertsOnly.foreach(__v => __obj.updateDynamic("CdcInsertsOnly")(__v.asInstanceOf[js.Any]))
       CompressionType.foreach(__v => __obj.updateDynamic("CompressionType")(__v.asInstanceOf[js.Any]))
       CsvDelimiter.foreach(__v => __obj.updateDynamic("CsvDelimiter")(__v.asInstanceOf[js.Any]))
@@ -3883,7 +4000,7 @@ package dms {
   }
 
   /**
-    * <p/>
+    * In response to a request by the <code>DescribeReplicationSubnetGroup</code> operation, this object identifies a subnet by its given Availability Zone, subnet identifier, and status.
     */
   @js.native
   trait Subnet extends js.Object {
@@ -3908,13 +4025,14 @@ package dms {
   }
 
   /**
-    * <p/>
+    * Provides information about types of supported endpoints in response to a request by the <code>DescribeEndpointTypes</code> operation. This information includes the type of endpoint, the database engine name, and whether change data capture (CDC) is supported.
     */
   @js.native
   trait SupportedEndpointType extends js.Object {
     var EndpointType: js.UndefOr[ReplicationEndpointTypeValue]
     var EngineDisplayName: js.UndefOr[String]
     var EngineName: js.UndefOr[String]
+    var ReplicationInstanceEngineMinimumVersion: js.UndefOr[String]
     var SupportsCDC: js.UndefOr[Boolean]
   }
 
@@ -3924,27 +4042,34 @@ package dms {
         EndpointType: js.UndefOr[ReplicationEndpointTypeValue] = js.undefined,
         EngineDisplayName: js.UndefOr[String] = js.undefined,
         EngineName: js.UndefOr[String] = js.undefined,
+        ReplicationInstanceEngineMinimumVersion: js.UndefOr[String] = js.undefined,
         SupportsCDC: js.UndefOr[Boolean] = js.undefined
     ): SupportedEndpointType = {
       val __obj = js.Dynamic.literal()
       EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
       EngineDisplayName.foreach(__v => __obj.updateDynamic("EngineDisplayName")(__v.asInstanceOf[js.Any]))
       EngineName.foreach(__v => __obj.updateDynamic("EngineName")(__v.asInstanceOf[js.Any]))
+      ReplicationInstanceEngineMinimumVersion.foreach(__v =>
+        __obj.updateDynamic("ReplicationInstanceEngineMinimumVersion")(__v.asInstanceOf[js.Any])
+      )
       SupportsCDC.foreach(__v => __obj.updateDynamic("SupportsCDC")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SupportedEndpointType]
     }
   }
 
   /**
-    * <p/>
+    * Provides a collection of table statistics in response to a request by the <code>DescribeTableStatistics</code> operation.
     */
   @js.native
   trait TableStatistics extends js.Object {
     var Ddls: js.UndefOr[Double]
     var Deletes: js.UndefOr[Double]
     var FullLoadCondtnlChkFailedRows: js.UndefOr[Double]
+    var FullLoadEndTime: js.UndefOr[TStamp]
     var FullLoadErrorRows: js.UndefOr[Double]
+    var FullLoadReloaded: js.UndefOr[BooleanOptional]
     var FullLoadRows: js.UndefOr[Double]
+    var FullLoadStartTime: js.UndefOr[TStamp]
     var Inserts: js.UndefOr[Double]
     var LastUpdateTime: js.UndefOr[TStamp]
     var SchemaName: js.UndefOr[String]
@@ -3964,8 +4089,11 @@ package dms {
         Ddls: js.UndefOr[Double] = js.undefined,
         Deletes: js.UndefOr[Double] = js.undefined,
         FullLoadCondtnlChkFailedRows: js.UndefOr[Double] = js.undefined,
+        FullLoadEndTime: js.UndefOr[TStamp] = js.undefined,
         FullLoadErrorRows: js.UndefOr[Double] = js.undefined,
+        FullLoadReloaded: js.UndefOr[BooleanOptional] = js.undefined,
         FullLoadRows: js.UndefOr[Double] = js.undefined,
+        FullLoadStartTime: js.UndefOr[TStamp] = js.undefined,
         Inserts: js.UndefOr[Double] = js.undefined,
         LastUpdateTime: js.UndefOr[TStamp] = js.undefined,
         SchemaName: js.UndefOr[String] = js.undefined,
@@ -3984,8 +4112,11 @@ package dms {
       FullLoadCondtnlChkFailedRows.foreach(__v =>
         __obj.updateDynamic("FullLoadCondtnlChkFailedRows")(__v.asInstanceOf[js.Any])
       )
+      FullLoadEndTime.foreach(__v => __obj.updateDynamic("FullLoadEndTime")(__v.asInstanceOf[js.Any]))
       FullLoadErrorRows.foreach(__v => __obj.updateDynamic("FullLoadErrorRows")(__v.asInstanceOf[js.Any]))
+      FullLoadReloaded.foreach(__v => __obj.updateDynamic("FullLoadReloaded")(__v.asInstanceOf[js.Any]))
       FullLoadRows.foreach(__v => __obj.updateDynamic("FullLoadRows")(__v.asInstanceOf[js.Any]))
+      FullLoadStartTime.foreach(__v => __obj.updateDynamic("FullLoadStartTime")(__v.asInstanceOf[js.Any]))
       Inserts.foreach(__v => __obj.updateDynamic("Inserts")(__v.asInstanceOf[js.Any]))
       LastUpdateTime.foreach(__v => __obj.updateDynamic("LastUpdateTime")(__v.asInstanceOf[js.Any]))
       SchemaName.foreach(__v => __obj.updateDynamic("SchemaName")(__v.asInstanceOf[js.Any]))
@@ -4004,7 +4135,7 @@ package dms {
   }
 
   /**
-    * <p/>
+    * Provides the name of the schema and table to be reloaded.
     */
   @js.native
   trait TableToReload extends js.Object {
@@ -4026,7 +4157,10 @@ package dms {
   }
 
   /**
-    * <p/>
+    * A user-defined key-value pair that describes metadata added to an AWS DMS resource and that is used by operations such as the following:
+    * * <code>AddTagsToResource</code>
+    *  * <code>ListTagsForResource</code>
+    *  * <code>RemoveTagsFromResource</code>
     */
   @js.native
   trait Tag extends js.Object {
@@ -4091,7 +4225,7 @@ package dms {
   }
 
   /**
-    * <p/>
+    * Describes the status of a security group associated with the virtual private cloud (VPC) hosting your replication and DB instances.
     */
   @js.native
   trait VpcSecurityGroupMembership extends js.Object {

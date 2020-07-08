@@ -16,6 +16,7 @@ package object glue {
   type BatchStopJobRunErrorList                = js.Array[BatchStopJobRunError]
   type BatchStopJobRunJobRunIdList             = js.Array[IdString]
   type BatchStopJobRunSuccessfulSubmissionList = js.Array[BatchStopJobRunSuccessfulSubmission]
+  type Blob                                    = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type BooleanNullable                         = Boolean
   type BooleanValue                            = Boolean
   type BoundedPartitionValueList               = js.Array[ValueString]
@@ -31,8 +32,11 @@ package object glue {
   type CodeGenIdentifier                       = String
   type CodeGenNodeArgs                         = js.Array[CodeGenNodeArg]
   type CodeGenNodeType                         = String
+  type ColumnErrors                            = js.Array[ColumnError]
   type ColumnList                              = js.Array[Column]
   type ColumnNameString                        = String
+  type ColumnStatisticsErrors                  = js.Array[ColumnStatisticsError]
+  type ColumnStatisticsList                    = js.Array[ColumnStatistics]
   type ColumnTypeString                        = String
   type ColumnValueStringList                   = js.Array[ColumnValuesString]
   type ColumnValuesString                      = String
@@ -74,6 +78,8 @@ package object glue {
   type GenericBoundedDouble                    = Double
   type GenericMap                              = js.Dictionary[GenericString]
   type GenericString                           = String
+  type GetColumnNamesList                      = js.Array[NameString]
+  type GetResourcePoliciesResponseList         = js.Array[GluePolicy]
   type GetTableVersionsList                    = js.Array[TableVersion]
   type GlueResourceArn                         = String
   type GlueTables                              = js.Array[GlueTable]
@@ -109,6 +115,7 @@ package object glue {
   type NodeList                                = js.Array[Node]
   type NonNegativeDouble                       = Double
   type NonNegativeInteger                      = Int
+  type NonNegativeLong                         = Double
   type NotifyDelayAfter                        = Int
   type NullableBoolean                         = Boolean
   type NullableDouble                          = Double
@@ -166,11 +173,14 @@ package object glue {
   type TimestampValue                          = js.Date
   type Token                                   = String
   type TotalSegmentsInteger                    = Int
+  type TransformIdList                         = js.Array[HashString]
   type TransformList                           = js.Array[MLTransform]
   type TransformSchema                         = js.Array[SchemaColumn]
   type TriggerList                             = js.Array[Trigger]
   type TriggerNameList                         = js.Array[NameString]
+  type TypeString                              = String
   type URI                                     = String
+  type UpdateColumnStatisticsList              = js.Array[ColumnStatistics]
   type UriString                               = String
   type UserDefinedFunctionList                 = js.Array[UserDefinedFunction]
   type ValueString                             = String
@@ -245,6 +255,14 @@ package object glue {
       service.createWorkflow(params).promise().toFuture
     @inline def deleteClassifierFuture(params: DeleteClassifierRequest): Future[DeleteClassifierResponse] =
       service.deleteClassifier(params).promise().toFuture
+    @inline def deleteColumnStatisticsForPartitionFuture(
+        params: DeleteColumnStatisticsForPartitionRequest
+    ): Future[DeleteColumnStatisticsForPartitionResponse] =
+      service.deleteColumnStatisticsForPartition(params).promise().toFuture
+    @inline def deleteColumnStatisticsForTableFuture(
+        params: DeleteColumnStatisticsForTableRequest
+    ): Future[DeleteColumnStatisticsForTableResponse] =
+      service.deleteColumnStatisticsForTable(params).promise().toFuture
     @inline def deleteConnectionFuture(params: DeleteConnectionRequest): Future[DeleteConnectionResponse] =
       service.deleteConnection(params).promise().toFuture
     @inline def deleteCrawlerFuture(params: DeleteCrawlerRequest): Future[DeleteCrawlerResponse] =
@@ -282,6 +300,13 @@ package object glue {
       service.getClassifier(params).promise().toFuture
     @inline def getClassifiersFuture(params: GetClassifiersRequest): Future[GetClassifiersResponse] =
       service.getClassifiers(params).promise().toFuture
+    @inline def getColumnStatisticsForPartitionFuture(
+        params: GetColumnStatisticsForPartitionRequest
+    ): Future[GetColumnStatisticsForPartitionResponse] =
+      service.getColumnStatisticsForPartition(params).promise().toFuture
+    @inline def getColumnStatisticsForTableFuture(
+        params: GetColumnStatisticsForTableRequest
+    ): Future[GetColumnStatisticsForTableResponse] = service.getColumnStatisticsForTable(params).promise().toFuture
     @inline def getConnectionFuture(params: GetConnectionRequest): Future[GetConnectionResponse] =
       service.getConnection(params).promise().toFuture
     @inline def getConnectionsFuture(params: GetConnectionsRequest): Future[GetConnectionsResponse] =
@@ -331,6 +356,8 @@ package object glue {
       service.getPartitions(params).promise().toFuture
     @inline def getPlanFuture(params: GetPlanRequest): Future[GetPlanResponse] =
       service.getPlan(params).promise().toFuture
+    @inline def getResourcePoliciesFuture(params: GetResourcePoliciesRequest): Future[GetResourcePoliciesResponse] =
+      service.getResourcePolicies(params).promise().toFuture
     @inline def getResourcePolicyFuture(params: GetResourcePolicyRequest): Future[GetResourcePolicyResponse] =
       service.getResourcePolicy(params).promise().toFuture
     @inline def getSecurityConfigurationFuture(
@@ -376,6 +403,8 @@ package object glue {
       service.listDevEndpoints(params).promise().toFuture
     @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResponse] =
       service.listJobs(params).promise().toFuture
+    @inline def listMLTransformsFuture(params: ListMLTransformsRequest): Future[ListMLTransformsResponse] =
+      service.listMLTransforms(params).promise().toFuture
     @inline def listTriggersFuture(params: ListTriggersRequest): Future[ListTriggersResponse] =
       service.listTriggers(params).promise().toFuture
     @inline def listWorkflowsFuture(params: ListWorkflowsRequest): Future[ListWorkflowsResponse] =
@@ -422,12 +451,22 @@ package object glue {
       service.stopCrawlerSchedule(params).promise().toFuture
     @inline def stopTriggerFuture(params: StopTriggerRequest): Future[StopTriggerResponse] =
       service.stopTrigger(params).promise().toFuture
+    @inline def stopWorkflowRunFuture(params: StopWorkflowRunRequest): Future[StopWorkflowRunResponse] =
+      service.stopWorkflowRun(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise().toFuture
     @inline def updateClassifierFuture(params: UpdateClassifierRequest): Future[UpdateClassifierResponse] =
       service.updateClassifier(params).promise().toFuture
+    @inline def updateColumnStatisticsForPartitionFuture(
+        params: UpdateColumnStatisticsForPartitionRequest
+    ): Future[UpdateColumnStatisticsForPartitionResponse] =
+      service.updateColumnStatisticsForPartition(params).promise().toFuture
+    @inline def updateColumnStatisticsForTableFuture(
+        params: UpdateColumnStatisticsForTableRequest
+    ): Future[UpdateColumnStatisticsForTableResponse] =
+      service.updateColumnStatisticsForTable(params).promise().toFuture
     @inline def updateConnectionFuture(params: UpdateConnectionRequest): Future[UpdateConnectionResponse] =
       service.updateConnection(params).promise().toFuture
     @inline def updateCrawlerFuture(params: UpdateCrawlerRequest): Future[UpdateCrawlerResponse] =
@@ -493,9 +532,15 @@ package glue {
     def createTrigger(params: CreateTriggerRequest): Request[CreateTriggerResponse] = js.native
     def createUserDefinedFunction(
         params: CreateUserDefinedFunctionRequest
-    ): Request[CreateUserDefinedFunctionResponse]                                                        = js.native
-    def createWorkflow(params: CreateWorkflowRequest): Request[CreateWorkflowResponse]                   = js.native
-    def deleteClassifier(params: DeleteClassifierRequest): Request[DeleteClassifierResponse]             = js.native
+    ): Request[CreateUserDefinedFunctionResponse]                                            = js.native
+    def createWorkflow(params: CreateWorkflowRequest): Request[CreateWorkflowResponse]       = js.native
+    def deleteClassifier(params: DeleteClassifierRequest): Request[DeleteClassifierResponse] = js.native
+    def deleteColumnStatisticsForPartition(
+        params: DeleteColumnStatisticsForPartitionRequest
+    ): Request[DeleteColumnStatisticsForPartitionResponse] = js.native
+    def deleteColumnStatisticsForTable(
+        params: DeleteColumnStatisticsForTableRequest
+    ): Request[DeleteColumnStatisticsForTableResponse]                                                   = js.native
     def deleteConnection(params: DeleteConnectionRequest): Request[DeleteConnectionResponse]             = js.native
     def deleteCrawler(params: DeleteCrawlerRequest): Request[DeleteCrawlerResponse]                      = js.native
     def deleteDatabase(params: DeleteDatabaseRequest): Request[DeleteDatabaseResponse]                   = js.native
@@ -516,8 +561,14 @@ package glue {
     def deleteWorkflow(params: DeleteWorkflowRequest): Request[DeleteWorkflowResponse] = js.native
     def getCatalogImportStatus(params: GetCatalogImportStatusRequest): Request[GetCatalogImportStatusResponse] =
       js.native
-    def getClassifier(params: GetClassifierRequest): Request[GetClassifierResponse]             = js.native
-    def getClassifiers(params: GetClassifiersRequest): Request[GetClassifiersResponse]          = js.native
+    def getClassifier(params: GetClassifierRequest): Request[GetClassifierResponse]    = js.native
+    def getClassifiers(params: GetClassifiersRequest): Request[GetClassifiersResponse] = js.native
+    def getColumnStatisticsForPartition(
+        params: GetColumnStatisticsForPartitionRequest
+    ): Request[GetColumnStatisticsForPartitionResponse] = js.native
+    def getColumnStatisticsForTable(
+        params: GetColumnStatisticsForTableRequest
+    ): Request[GetColumnStatisticsForTableResponse]                                             = js.native
     def getConnection(params: GetConnectionRequest): Request[GetConnectionResponse]             = js.native
     def getConnections(params: GetConnectionsRequest): Request[GetConnectionsResponse]          = js.native
     def getCrawler(params: GetCrawlerRequest): Request[GetCrawlerResponse]                      = js.native
@@ -525,26 +576,27 @@ package glue {
     def getCrawlers(params: GetCrawlersRequest): Request[GetCrawlersResponse]                   = js.native
     def getDataCatalogEncryptionSettings(
         params: GetDataCatalogEncryptionSettingsRequest
-    ): Request[GetDataCatalogEncryptionSettingsResponse]                                        = js.native
-    def getDatabase(params: GetDatabaseRequest): Request[GetDatabaseResponse]                   = js.native
-    def getDatabases(params: GetDatabasesRequest): Request[GetDatabasesResponse]                = js.native
-    def getDataflowGraph(params: GetDataflowGraphRequest): Request[GetDataflowGraphResponse]    = js.native
-    def getDevEndpoint(params: GetDevEndpointRequest): Request[GetDevEndpointResponse]          = js.native
-    def getDevEndpoints(params: GetDevEndpointsRequest): Request[GetDevEndpointsResponse]       = js.native
-    def getJob(params: GetJobRequest): Request[GetJobResponse]                                  = js.native
-    def getJobBookmark(params: GetJobBookmarkRequest): Request[GetJobBookmarkResponse]          = js.native
-    def getJobRun(params: GetJobRunRequest): Request[GetJobRunResponse]                         = js.native
-    def getJobRuns(params: GetJobRunsRequest): Request[GetJobRunsResponse]                      = js.native
-    def getJobs(params: GetJobsRequest): Request[GetJobsResponse]                               = js.native
-    def getMLTaskRun(params: GetMLTaskRunRequest): Request[GetMLTaskRunResponse]                = js.native
-    def getMLTaskRuns(params: GetMLTaskRunsRequest): Request[GetMLTaskRunsResponse]             = js.native
-    def getMLTransform(params: GetMLTransformRequest): Request[GetMLTransformResponse]          = js.native
-    def getMLTransforms(params: GetMLTransformsRequest): Request[GetMLTransformsResponse]       = js.native
-    def getMapping(params: GetMappingRequest): Request[GetMappingResponse]                      = js.native
-    def getPartition(params: GetPartitionRequest): Request[GetPartitionResponse]                = js.native
-    def getPartitions(params: GetPartitionsRequest): Request[GetPartitionsResponse]             = js.native
-    def getPlan(params: GetPlanRequest): Request[GetPlanResponse]                               = js.native
-    def getResourcePolicy(params: GetResourcePolicyRequest): Request[GetResourcePolicyResponse] = js.native
+    ): Request[GetDataCatalogEncryptionSettingsResponse]                                              = js.native
+    def getDatabase(params: GetDatabaseRequest): Request[GetDatabaseResponse]                         = js.native
+    def getDatabases(params: GetDatabasesRequest): Request[GetDatabasesResponse]                      = js.native
+    def getDataflowGraph(params: GetDataflowGraphRequest): Request[GetDataflowGraphResponse]          = js.native
+    def getDevEndpoint(params: GetDevEndpointRequest): Request[GetDevEndpointResponse]                = js.native
+    def getDevEndpoints(params: GetDevEndpointsRequest): Request[GetDevEndpointsResponse]             = js.native
+    def getJob(params: GetJobRequest): Request[GetJobResponse]                                        = js.native
+    def getJobBookmark(params: GetJobBookmarkRequest): Request[GetJobBookmarkResponse]                = js.native
+    def getJobRun(params: GetJobRunRequest): Request[GetJobRunResponse]                               = js.native
+    def getJobRuns(params: GetJobRunsRequest): Request[GetJobRunsResponse]                            = js.native
+    def getJobs(params: GetJobsRequest): Request[GetJobsResponse]                                     = js.native
+    def getMLTaskRun(params: GetMLTaskRunRequest): Request[GetMLTaskRunResponse]                      = js.native
+    def getMLTaskRuns(params: GetMLTaskRunsRequest): Request[GetMLTaskRunsResponse]                   = js.native
+    def getMLTransform(params: GetMLTransformRequest): Request[GetMLTransformResponse]                = js.native
+    def getMLTransforms(params: GetMLTransformsRequest): Request[GetMLTransformsResponse]             = js.native
+    def getMapping(params: GetMappingRequest): Request[GetMappingResponse]                            = js.native
+    def getPartition(params: GetPartitionRequest): Request[GetPartitionResponse]                      = js.native
+    def getPartitions(params: GetPartitionsRequest): Request[GetPartitionsResponse]                   = js.native
+    def getPlan(params: GetPlanRequest): Request[GetPlanResponse]                                     = js.native
+    def getResourcePolicies(params: GetResourcePoliciesRequest): Request[GetResourcePoliciesResponse] = js.native
+    def getResourcePolicy(params: GetResourcePolicyRequest): Request[GetResourcePolicyResponse]       = js.native
     def getSecurityConfiguration(params: GetSecurityConfigurationRequest): Request[GetSecurityConfigurationResponse] =
       js.native
     def getSecurityConfigurations(
@@ -570,6 +622,7 @@ package glue {
     def listCrawlers(params: ListCrawlersRequest): Request[ListCrawlersResponse]                      = js.native
     def listDevEndpoints(params: ListDevEndpointsRequest): Request[ListDevEndpointsResponse]          = js.native
     def listJobs(params: ListJobsRequest): Request[ListJobsResponse]                                  = js.native
+    def listMLTransforms(params: ListMLTransformsRequest): Request[ListMLTransformsResponse]          = js.native
     def listTriggers(params: ListTriggersRequest): Request[ListTriggersResponse]                      = js.native
     def listWorkflows(params: ListWorkflowsRequest): Request[ListWorkflowsResponse]                   = js.native
     def putDataCatalogEncryptionSettings(
@@ -591,15 +644,22 @@ package glue {
       js.native
     def startMLLabelingSetGenerationTaskRun(
         params: StartMLLabelingSetGenerationTaskRunRequest
-    ): Request[StartMLLabelingSetGenerationTaskRunResponse]                                                 = js.native
-    def startTrigger(params: StartTriggerRequest): Request[StartTriggerResponse]                            = js.native
-    def startWorkflowRun(params: StartWorkflowRunRequest): Request[StartWorkflowRunResponse]                = js.native
-    def stopCrawler(params: StopCrawlerRequest): Request[StopCrawlerResponse]                               = js.native
-    def stopCrawlerSchedule(params: StopCrawlerScheduleRequest): Request[StopCrawlerScheduleResponse]       = js.native
-    def stopTrigger(params: StopTriggerRequest): Request[StopTriggerResponse]                               = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                               = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                         = js.native
-    def updateClassifier(params: UpdateClassifierRequest): Request[UpdateClassifierResponse]                = js.native
+    ): Request[StartMLLabelingSetGenerationTaskRunResponse]                                           = js.native
+    def startTrigger(params: StartTriggerRequest): Request[StartTriggerResponse]                      = js.native
+    def startWorkflowRun(params: StartWorkflowRunRequest): Request[StartWorkflowRunResponse]          = js.native
+    def stopCrawler(params: StopCrawlerRequest): Request[StopCrawlerResponse]                         = js.native
+    def stopCrawlerSchedule(params: StopCrawlerScheduleRequest): Request[StopCrawlerScheduleResponse] = js.native
+    def stopTrigger(params: StopTriggerRequest): Request[StopTriggerResponse]                         = js.native
+    def stopWorkflowRun(params: StopWorkflowRunRequest): Request[StopWorkflowRunResponse]             = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
+    def updateClassifier(params: UpdateClassifierRequest): Request[UpdateClassifierResponse]          = js.native
+    def updateColumnStatisticsForPartition(
+        params: UpdateColumnStatisticsForPartitionRequest
+    ): Request[UpdateColumnStatisticsForPartitionResponse] = js.native
+    def updateColumnStatisticsForTable(
+        params: UpdateColumnStatisticsForTableRequest
+    ): Request[UpdateColumnStatisticsForTableResponse]                                                      = js.native
     def updateConnection(params: UpdateConnectionRequest): Request[UpdateConnectionResponse]                = js.native
     def updateCrawler(params: UpdateCrawlerRequest): Request[UpdateCrawlerResponse]                         = js.native
     def updateCrawlerSchedule(params: UpdateCrawlerScheduleRequest): Request[UpdateCrawlerScheduleResponse] = js.native
@@ -1180,6 +1240,60 @@ package glue {
     }
   }
 
+  /**
+    * Defines a binary column statistics data.
+    */
+  @js.native
+  trait BinaryColumnStatisticsData extends js.Object {
+    var AverageLength: NonNegativeDouble
+    var MaximumLength: NonNegativeLong
+    var NumberOfNulls: NonNegativeLong
+  }
+
+  object BinaryColumnStatisticsData {
+    @inline
+    def apply(
+        AverageLength: NonNegativeDouble,
+        MaximumLength: NonNegativeLong,
+        NumberOfNulls: NonNegativeLong
+    ): BinaryColumnStatisticsData = {
+      val __obj = js.Dynamic.literal(
+        "AverageLength" -> AverageLength.asInstanceOf[js.Any],
+        "MaximumLength" -> MaximumLength.asInstanceOf[js.Any],
+        "NumberOfNulls" -> NumberOfNulls.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[BinaryColumnStatisticsData]
+    }
+  }
+
+  /**
+    * Defines a boolean column statistics.
+    */
+  @js.native
+  trait BooleanColumnStatisticsData extends js.Object {
+    var NumberOfFalses: NonNegativeLong
+    var NumberOfNulls: NonNegativeLong
+    var NumberOfTrues: NonNegativeLong
+  }
+
+  object BooleanColumnStatisticsData {
+    @inline
+    def apply(
+        NumberOfFalses: NonNegativeLong,
+        NumberOfNulls: NonNegativeLong,
+        NumberOfTrues: NonNegativeLong
+    ): BooleanColumnStatisticsData = {
+      val __obj = js.Dynamic.literal(
+        "NumberOfFalses" -> NumberOfFalses.asInstanceOf[js.Any],
+        "NumberOfNulls"  -> NumberOfNulls.asInstanceOf[js.Any],
+        "NumberOfTrues"  -> NumberOfTrues.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[BooleanColumnStatisticsData]
+    }
+  }
+
   @js.native
   trait CancelMLTaskRunRequest extends js.Object {
     var TaskRunId: HashString
@@ -1479,6 +1593,146 @@ package glue {
     }
   }
 
+  /**
+    * Defines a column containing error.
+    */
+  @js.native
+  trait ColumnError extends js.Object {
+    var ColumnName: js.UndefOr[NameString]
+    var Error: js.UndefOr[ErrorDetail]
+  }
+
+  object ColumnError {
+    @inline
+    def apply(
+        ColumnName: js.UndefOr[NameString] = js.undefined,
+        Error: js.UndefOr[ErrorDetail] = js.undefined
+    ): ColumnError = {
+      val __obj = js.Dynamic.literal()
+      ColumnName.foreach(__v => __obj.updateDynamic("ColumnName")(__v.asInstanceOf[js.Any]))
+      Error.foreach(__v => __obj.updateDynamic("Error")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ColumnError]
+    }
+  }
+
+  /**
+    * Defines a column statistics.
+    */
+  @js.native
+  trait ColumnStatistics extends js.Object {
+    var AnalyzedTime: Timestamp
+    var ColumnName: NameString
+    var ColumnType: TypeString
+    var StatisticsData: ColumnStatisticsData
+  }
+
+  object ColumnStatistics {
+    @inline
+    def apply(
+        AnalyzedTime: Timestamp,
+        ColumnName: NameString,
+        ColumnType: TypeString,
+        StatisticsData: ColumnStatisticsData
+    ): ColumnStatistics = {
+      val __obj = js.Dynamic.literal(
+        "AnalyzedTime"   -> AnalyzedTime.asInstanceOf[js.Any],
+        "ColumnName"     -> ColumnName.asInstanceOf[js.Any],
+        "ColumnType"     -> ColumnType.asInstanceOf[js.Any],
+        "StatisticsData" -> StatisticsData.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ColumnStatistics]
+    }
+  }
+
+  /**
+    * Defines a column statistics data.
+    */
+  @js.native
+  trait ColumnStatisticsData extends js.Object {
+    var Type: ColumnStatisticsType
+    var BinaryColumnStatisticsData: js.UndefOr[BinaryColumnStatisticsData]
+    var BooleanColumnStatisticsData: js.UndefOr[BooleanColumnStatisticsData]
+    var DateColumnStatisticsData: js.UndefOr[DateColumnStatisticsData]
+    var DecimalColumnStatisticsData: js.UndefOr[DecimalColumnStatisticsData]
+    var DoubleColumnStatisticsData: js.UndefOr[DoubleColumnStatisticsData]
+    var LongColumnStatisticsData: js.UndefOr[LongColumnStatisticsData]
+    var StringColumnStatisticsData: js.UndefOr[StringColumnStatisticsData]
+  }
+
+  object ColumnStatisticsData {
+    @inline
+    def apply(
+        Type: ColumnStatisticsType,
+        BinaryColumnStatisticsData: js.UndefOr[BinaryColumnStatisticsData] = js.undefined,
+        BooleanColumnStatisticsData: js.UndefOr[BooleanColumnStatisticsData] = js.undefined,
+        DateColumnStatisticsData: js.UndefOr[DateColumnStatisticsData] = js.undefined,
+        DecimalColumnStatisticsData: js.UndefOr[DecimalColumnStatisticsData] = js.undefined,
+        DoubleColumnStatisticsData: js.UndefOr[DoubleColumnStatisticsData] = js.undefined,
+        LongColumnStatisticsData: js.UndefOr[LongColumnStatisticsData] = js.undefined,
+        StringColumnStatisticsData: js.UndefOr[StringColumnStatisticsData] = js.undefined
+    ): ColumnStatisticsData = {
+      val __obj = js.Dynamic.literal(
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+
+      BinaryColumnStatisticsData.foreach(__v =>
+        __obj.updateDynamic("BinaryColumnStatisticsData")(__v.asInstanceOf[js.Any])
+      )
+      BooleanColumnStatisticsData.foreach(__v =>
+        __obj.updateDynamic("BooleanColumnStatisticsData")(__v.asInstanceOf[js.Any])
+      )
+      DateColumnStatisticsData.foreach(__v => __obj.updateDynamic("DateColumnStatisticsData")(__v.asInstanceOf[js.Any]))
+      DecimalColumnStatisticsData.foreach(__v =>
+        __obj.updateDynamic("DecimalColumnStatisticsData")(__v.asInstanceOf[js.Any])
+      )
+      DoubleColumnStatisticsData.foreach(__v =>
+        __obj.updateDynamic("DoubleColumnStatisticsData")(__v.asInstanceOf[js.Any])
+      )
+      LongColumnStatisticsData.foreach(__v => __obj.updateDynamic("LongColumnStatisticsData")(__v.asInstanceOf[js.Any]))
+      StringColumnStatisticsData.foreach(__v =>
+        __obj.updateDynamic("StringColumnStatisticsData")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ColumnStatisticsData]
+    }
+  }
+
+  /**
+    * Defines a column containing error.
+    */
+  @js.native
+  trait ColumnStatisticsError extends js.Object {
+    var ColumnStatistics: js.UndefOr[ColumnStatistics]
+    var Error: js.UndefOr[ErrorDetail]
+  }
+
+  object ColumnStatisticsError {
+    @inline
+    def apply(
+        ColumnStatistics: js.UndefOr[ColumnStatistics] = js.undefined,
+        Error: js.UndefOr[ErrorDetail] = js.undefined
+    ): ColumnStatisticsError = {
+      val __obj = js.Dynamic.literal()
+      ColumnStatistics.foreach(__v => __obj.updateDynamic("ColumnStatistics")(__v.asInstanceOf[js.Any]))
+      Error.foreach(__v => __obj.updateDynamic("Error")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ColumnStatisticsError]
+    }
+  }
+
+  @js.native
+  sealed trait ColumnStatisticsType extends js.Any
+  object ColumnStatisticsType extends js.Object {
+    val BOOLEAN = "BOOLEAN".asInstanceOf[ColumnStatisticsType]
+    val DATE    = "DATE".asInstanceOf[ColumnStatisticsType]
+    val DECIMAL = "DECIMAL".asInstanceOf[ColumnStatisticsType]
+    val DOUBLE  = "DOUBLE".asInstanceOf[ColumnStatisticsType]
+    val LONG    = "LONG".asInstanceOf[ColumnStatisticsType]
+    val STRING  = "STRING".asInstanceOf[ColumnStatisticsType]
+    val BINARY  = "BINARY".asInstanceOf[ColumnStatisticsType]
+
+    val values = js.Object.freeze(js.Array(BOOLEAN, DATE, DECIMAL, DOUBLE, LONG, STRING, BINARY))
+  }
+
   @js.native
   sealed trait Comparator extends js.Any
   object Comparator extends js.Object {
@@ -1679,6 +1933,8 @@ package glue {
     val CUSTOM_JDBC_CERT                 = "CUSTOM_JDBC_CERT".asInstanceOf[ConnectionPropertyKey]
     val SKIP_CUSTOM_JDBC_CERT_VALIDATION = "SKIP_CUSTOM_JDBC_CERT_VALIDATION".asInstanceOf[ConnectionPropertyKey]
     val CUSTOM_JDBC_CERT_STRING          = "CUSTOM_JDBC_CERT_STRING".asInstanceOf[ConnectionPropertyKey]
+    val CONNECTION_URL                   = "CONNECTION_URL".asInstanceOf[ConnectionPropertyKey]
+    val KAFKA_BOOTSTRAP_SERVERS          = "KAFKA_BOOTSTRAP_SERVERS".asInstanceOf[ConnectionPropertyKey]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1697,7 +1953,9 @@ package glue {
         JDBC_ENFORCE_SSL,
         CUSTOM_JDBC_CERT,
         SKIP_CUSTOM_JDBC_CERT_VALIDATION,
-        CUSTOM_JDBC_CERT_STRING
+        CUSTOM_JDBC_CERT_STRING,
+        CONNECTION_URL,
+        KAFKA_BOOTSTRAP_SERVERS
       )
     )
   }
@@ -1705,10 +1963,12 @@ package glue {
   @js.native
   sealed trait ConnectionType extends js.Any
   object ConnectionType extends js.Object {
-    val JDBC = "JDBC".asInstanceOf[ConnectionType]
-    val SFTP = "SFTP".asInstanceOf[ConnectionType]
+    val JDBC    = "JDBC".asInstanceOf[ConnectionType]
+    val SFTP    = "SFTP".asInstanceOf[ConnectionType]
+    val MONGODB = "MONGODB".asInstanceOf[ConnectionType]
+    val KAFKA   = "KAFKA".asInstanceOf[ConnectionType]
 
-    val values = js.Object.freeze(js.Array(JDBC, SFTP))
+    val values = js.Object.freeze(js.Array(JDBC, SFTP, MONGODB, KAFKA))
   }
 
   /**
@@ -1767,12 +2027,13 @@ package glue {
   @js.native
   sealed trait CrawlState extends js.Any
   object CrawlState extends js.Object {
-    val RUNNING   = "RUNNING".asInstanceOf[CrawlState]
-    val SUCCEEDED = "SUCCEEDED".asInstanceOf[CrawlState]
-    val CANCELLED = "CANCELLED".asInstanceOf[CrawlState]
-    val FAILED    = "FAILED".asInstanceOf[CrawlState]
+    val RUNNING    = "RUNNING".asInstanceOf[CrawlState]
+    val CANCELLING = "CANCELLING".asInstanceOf[CrawlState]
+    val CANCELLED  = "CANCELLED".asInstanceOf[CrawlState]
+    val SUCCEEDED  = "SUCCEEDED".asInstanceOf[CrawlState]
+    val FAILED     = "FAILED".asInstanceOf[CrawlState]
 
-    val values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, CANCELLED, FAILED))
+    val values = js.Object.freeze(js.Array(RUNNING, CANCELLING, CANCELLED, SUCCEEDED, FAILED))
   }
 
   /**
@@ -2437,6 +2698,7 @@ package glue {
     var MaxCapacity: js.UndefOr[NullableDouble]
     var MaxRetries: js.UndefOr[NullableInteger]
     var NumberOfWorkers: js.UndefOr[NullableInteger]
+    var Tags: js.UndefOr[TagsMap]
     var Timeout: js.UndefOr[Timeout]
     var WorkerType: js.UndefOr[WorkerType]
   }
@@ -2453,6 +2715,7 @@ package glue {
         MaxCapacity: js.UndefOr[NullableDouble] = js.undefined,
         MaxRetries: js.UndefOr[NullableInteger] = js.undefined,
         NumberOfWorkers: js.UndefOr[NullableInteger] = js.undefined,
+        Tags: js.UndefOr[TagsMap] = js.undefined,
         Timeout: js.UndefOr[Timeout] = js.undefined,
         WorkerType: js.UndefOr[WorkerType] = js.undefined
     ): CreateMLTransformRequest = {
@@ -2468,6 +2731,7 @@ package glue {
       MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
       MaxRetries.foreach(__v => __obj.updateDynamic("MaxRetries")(__v.asInstanceOf[js.Any]))
       NumberOfWorkers.foreach(__v => __obj.updateDynamic("NumberOfWorkers")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
       WorkerType.foreach(__v => __obj.updateDynamic("WorkerType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateMLTransformRequest]
@@ -2922,27 +3186,32 @@ package glue {
   @js.native
   trait Database extends js.Object {
     var Name: NameString
+    var CatalogId: js.UndefOr[CatalogIdString]
     var CreateTableDefaultPermissions: js.UndefOr[PrincipalPermissionsList]
     var CreateTime: js.UndefOr[Timestamp]
     var Description: js.UndefOr[DescriptionString]
     var LocationUri: js.UndefOr[URI]
     var Parameters: js.UndefOr[ParametersMap]
+    var TargetDatabase: js.UndefOr[DatabaseIdentifier]
   }
 
   object Database {
     @inline
     def apply(
         Name: NameString,
+        CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
         CreateTableDefaultPermissions: js.UndefOr[PrincipalPermissionsList] = js.undefined,
         CreateTime: js.UndefOr[Timestamp] = js.undefined,
         Description: js.UndefOr[DescriptionString] = js.undefined,
         LocationUri: js.UndefOr[URI] = js.undefined,
-        Parameters: js.UndefOr[ParametersMap] = js.undefined
+        Parameters: js.UndefOr[ParametersMap] = js.undefined,
+        TargetDatabase: js.UndefOr[DatabaseIdentifier] = js.undefined
     ): Database = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       CreateTableDefaultPermissions.foreach(__v =>
         __obj.updateDynamic("CreateTableDefaultPermissions")(__v.asInstanceOf[js.Any])
       )
@@ -2950,7 +3219,30 @@ package glue {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      TargetDatabase.foreach(__v => __obj.updateDynamic("TargetDatabase")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Database]
+    }
+  }
+
+  /**
+    * A structure that describes a target database for resource linking.
+    */
+  @js.native
+  trait DatabaseIdentifier extends js.Object {
+    var CatalogId: js.UndefOr[CatalogIdString]
+    var DatabaseName: js.UndefOr[NameString]
+  }
+
+  object DatabaseIdentifier {
+    @inline
+    def apply(
+        CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
+        DatabaseName: js.UndefOr[NameString] = js.undefined
+    ): DatabaseIdentifier = {
+      val __obj = js.Dynamic.literal()
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatabaseIdentifier]
     }
   }
 
@@ -2964,6 +3256,7 @@ package glue {
     var Description: js.UndefOr[DescriptionString]
     var LocationUri: js.UndefOr[URI]
     var Parameters: js.UndefOr[ParametersMap]
+    var TargetDatabase: js.UndefOr[DatabaseIdentifier]
   }
 
   object DatabaseInput {
@@ -2973,7 +3266,8 @@ package glue {
         CreateTableDefaultPermissions: js.UndefOr[PrincipalPermissionsList] = js.undefined,
         Description: js.UndefOr[DescriptionString] = js.undefined,
         LocationUri: js.UndefOr[URI] = js.undefined,
-        Parameters: js.UndefOr[ParametersMap] = js.undefined
+        Parameters: js.UndefOr[ParametersMap] = js.undefined,
+        TargetDatabase: js.UndefOr[DatabaseIdentifier] = js.undefined
     ): DatabaseInput = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
@@ -2985,7 +3279,92 @@ package glue {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      TargetDatabase.foreach(__v => __obj.updateDynamic("TargetDatabase")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatabaseInput]
+    }
+  }
+
+  /**
+    * Defines a date column statistics data.
+    */
+  @js.native
+  trait DateColumnStatisticsData extends js.Object {
+    var NumberOfDistinctValues: NonNegativeLong
+    var NumberOfNulls: NonNegativeLong
+    var MaximumValue: js.UndefOr[Timestamp]
+    var MinimumValue: js.UndefOr[Timestamp]
+  }
+
+  object DateColumnStatisticsData {
+    @inline
+    def apply(
+        NumberOfDistinctValues: NonNegativeLong,
+        NumberOfNulls: NonNegativeLong,
+        MaximumValue: js.UndefOr[Timestamp] = js.undefined,
+        MinimumValue: js.UndefOr[Timestamp] = js.undefined
+    ): DateColumnStatisticsData = {
+      val __obj = js.Dynamic.literal(
+        "NumberOfDistinctValues" -> NumberOfDistinctValues.asInstanceOf[js.Any],
+        "NumberOfNulls"          -> NumberOfNulls.asInstanceOf[js.Any]
+      )
+
+      MaximumValue.foreach(__v => __obj.updateDynamic("MaximumValue")(__v.asInstanceOf[js.Any]))
+      MinimumValue.foreach(__v => __obj.updateDynamic("MinimumValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DateColumnStatisticsData]
+    }
+  }
+
+  /**
+    * Defines a decimal column statistics data.
+    */
+  @js.native
+  trait DecimalColumnStatisticsData extends js.Object {
+    var NumberOfDistinctValues: NonNegativeLong
+    var NumberOfNulls: NonNegativeLong
+    var MaximumValue: js.UndefOr[DecimalNumber]
+    var MinimumValue: js.UndefOr[DecimalNumber]
+  }
+
+  object DecimalColumnStatisticsData {
+    @inline
+    def apply(
+        NumberOfDistinctValues: NonNegativeLong,
+        NumberOfNulls: NonNegativeLong,
+        MaximumValue: js.UndefOr[DecimalNumber] = js.undefined,
+        MinimumValue: js.UndefOr[DecimalNumber] = js.undefined
+    ): DecimalColumnStatisticsData = {
+      val __obj = js.Dynamic.literal(
+        "NumberOfDistinctValues" -> NumberOfDistinctValues.asInstanceOf[js.Any],
+        "NumberOfNulls"          -> NumberOfNulls.asInstanceOf[js.Any]
+      )
+
+      MaximumValue.foreach(__v => __obj.updateDynamic("MaximumValue")(__v.asInstanceOf[js.Any]))
+      MinimumValue.foreach(__v => __obj.updateDynamic("MinimumValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DecimalColumnStatisticsData]
+    }
+  }
+
+  /**
+    * Contains a numeric value in decimal format.
+    */
+  @js.native
+  trait DecimalNumber extends js.Object {
+    var Scale: Int
+    var UnscaledValue: Blob
+  }
+
+  object DecimalNumber {
+    @inline
+    def apply(
+        Scale: Int,
+        UnscaledValue: Blob
+    ): DecimalNumber = {
+      val __obj = js.Dynamic.literal(
+        "Scale"         -> Scale.asInstanceOf[js.Any],
+        "UnscaledValue" -> UnscaledValue.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DecimalNumber]
     }
   }
 
@@ -3027,6 +3406,89 @@ package glue {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteClassifierResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteColumnStatisticsForPartitionRequest extends js.Object {
+    var ColumnName: NameString
+    var DatabaseName: NameString
+    var PartitionValues: ValueStringList
+    var TableName: NameString
+    var CatalogId: js.UndefOr[CatalogIdString]
+  }
+
+  object DeleteColumnStatisticsForPartitionRequest {
+    @inline
+    def apply(
+        ColumnName: NameString,
+        DatabaseName: NameString,
+        PartitionValues: ValueStringList,
+        TableName: NameString,
+        CatalogId: js.UndefOr[CatalogIdString] = js.undefined
+    ): DeleteColumnStatisticsForPartitionRequest = {
+      val __obj = js.Dynamic.literal(
+        "ColumnName"      -> ColumnName.asInstanceOf[js.Any],
+        "DatabaseName"    -> DatabaseName.asInstanceOf[js.Any],
+        "PartitionValues" -> PartitionValues.asInstanceOf[js.Any],
+        "TableName"       -> TableName.asInstanceOf[js.Any]
+      )
+
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteColumnStatisticsForPartitionRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteColumnStatisticsForPartitionResponse extends js.Object {}
+
+  object DeleteColumnStatisticsForPartitionResponse {
+    @inline
+    def apply(
+    ): DeleteColumnStatisticsForPartitionResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeleteColumnStatisticsForPartitionResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteColumnStatisticsForTableRequest extends js.Object {
+    var ColumnName: NameString
+    var DatabaseName: NameString
+    var TableName: NameString
+    var CatalogId: js.UndefOr[CatalogIdString]
+  }
+
+  object DeleteColumnStatisticsForTableRequest {
+    @inline
+    def apply(
+        ColumnName: NameString,
+        DatabaseName: NameString,
+        TableName: NameString,
+        CatalogId: js.UndefOr[CatalogIdString] = js.undefined
+    ): DeleteColumnStatisticsForTableRequest = {
+      val __obj = js.Dynamic.literal(
+        "ColumnName"   -> ColumnName.asInstanceOf[js.Any],
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "TableName"    -> TableName.asInstanceOf[js.Any]
+      )
+
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteColumnStatisticsForTableRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteColumnStatisticsForTableResponse extends js.Object {}
+
+  object DeleteColumnStatisticsForTableResponse {
+    @inline
+    def apply(
+    ): DeleteColumnStatisticsForTableResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeleteColumnStatisticsForTableResponse]
     }
   }
 
@@ -3271,15 +3733,18 @@ package glue {
   @js.native
   trait DeleteResourcePolicyRequest extends js.Object {
     var PolicyHashCondition: js.UndefOr[HashString]
+    var ResourceArn: js.UndefOr[GlueResourceArn]
   }
 
   object DeleteResourcePolicyRequest {
     @inline
     def apply(
-        PolicyHashCondition: js.UndefOr[HashString] = js.undefined
+        PolicyHashCondition: js.UndefOr[HashString] = js.undefined,
+        ResourceArn: js.UndefOr[GlueResourceArn] = js.undefined
     ): DeleteResourcePolicyRequest = {
       val __obj = js.Dynamic.literal()
       PolicyHashCondition.foreach(__v => __obj.updateDynamic("PolicyHashCondition")(__v.asInstanceOf[js.Any]))
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteResourcePolicyRequest]
     }
   }
@@ -3626,20 +4091,56 @@ package glue {
   }
 
   /**
+    * Defines a double column statistics data.
+    */
+  @js.native
+  trait DoubleColumnStatisticsData extends js.Object {
+    var NumberOfDistinctValues: NonNegativeLong
+    var NumberOfNulls: NonNegativeLong
+    var MaximumValue: js.UndefOr[Double]
+    var MinimumValue: js.UndefOr[Double]
+  }
+
+  object DoubleColumnStatisticsData {
+    @inline
+    def apply(
+        NumberOfDistinctValues: NonNegativeLong,
+        NumberOfNulls: NonNegativeLong,
+        MaximumValue: js.UndefOr[Double] = js.undefined,
+        MinimumValue: js.UndefOr[Double] = js.undefined
+    ): DoubleColumnStatisticsData = {
+      val __obj = js.Dynamic.literal(
+        "NumberOfDistinctValues" -> NumberOfDistinctValues.asInstanceOf[js.Any],
+        "NumberOfNulls"          -> NumberOfNulls.asInstanceOf[js.Any]
+      )
+
+      MaximumValue.foreach(__v => __obj.updateDynamic("MaximumValue")(__v.asInstanceOf[js.Any]))
+      MinimumValue.foreach(__v => __obj.updateDynamic("MinimumValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DoubleColumnStatisticsData]
+    }
+  }
+
+  /**
     * Specifies an Amazon DynamoDB table to crawl.
     */
   @js.native
   trait DynamoDBTarget extends js.Object {
     var Path: js.UndefOr[Path]
+    var scanAll: js.UndefOr[NullableBoolean]
+    var scanRate: js.UndefOr[NullableDouble]
   }
 
   object DynamoDBTarget {
     @inline
     def apply(
-        Path: js.UndefOr[Path] = js.undefined
+        Path: js.UndefOr[Path] = js.undefined,
+        scanAll: js.UndefOr[NullableBoolean] = js.undefined,
+        scanRate: js.UndefOr[NullableDouble] = js.undefined
     ): DynamoDBTarget = {
       val __obj = js.Dynamic.literal()
       Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
+      scanAll.foreach(__v => __obj.updateDynamic("scanAll")(__v.asInstanceOf[js.Any]))
+      scanRate.foreach(__v => __obj.updateDynamic("scanRate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DynamoDBTarget]
     }
   }
@@ -3664,6 +4165,15 @@ package glue {
       SourceId.foreach(__v => __obj.updateDynamic("SourceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Edge]
     }
+  }
+
+  @js.native
+  sealed trait EnableHybridValues extends js.Any
+  object EnableHybridValues extends js.Object {
+    val TRUE  = "TRUE".asInstanceOf[EnableHybridValues]
+    val FALSE = "FALSE".asInstanceOf[EnableHybridValues]
+
+    val values = js.Object.freeze(js.Array(TRUE, FALSE))
   }
 
   /**
@@ -3998,6 +4508,101 @@ package glue {
   }
 
   @js.native
+  trait GetColumnStatisticsForPartitionRequest extends js.Object {
+    var ColumnNames: GetColumnNamesList
+    var DatabaseName: NameString
+    var PartitionValues: ValueStringList
+    var TableName: NameString
+    var CatalogId: js.UndefOr[CatalogIdString]
+  }
+
+  object GetColumnStatisticsForPartitionRequest {
+    @inline
+    def apply(
+        ColumnNames: GetColumnNamesList,
+        DatabaseName: NameString,
+        PartitionValues: ValueStringList,
+        TableName: NameString,
+        CatalogId: js.UndefOr[CatalogIdString] = js.undefined
+    ): GetColumnStatisticsForPartitionRequest = {
+      val __obj = js.Dynamic.literal(
+        "ColumnNames"     -> ColumnNames.asInstanceOf[js.Any],
+        "DatabaseName"    -> DatabaseName.asInstanceOf[js.Any],
+        "PartitionValues" -> PartitionValues.asInstanceOf[js.Any],
+        "TableName"       -> TableName.asInstanceOf[js.Any]
+      )
+
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetColumnStatisticsForPartitionRequest]
+    }
+  }
+
+  @js.native
+  trait GetColumnStatisticsForPartitionResponse extends js.Object {
+    var ColumnStatisticsList: js.UndefOr[ColumnStatisticsList]
+    var Errors: js.UndefOr[ColumnErrors]
+  }
+
+  object GetColumnStatisticsForPartitionResponse {
+    @inline
+    def apply(
+        ColumnStatisticsList: js.UndefOr[ColumnStatisticsList] = js.undefined,
+        Errors: js.UndefOr[ColumnErrors] = js.undefined
+    ): GetColumnStatisticsForPartitionResponse = {
+      val __obj = js.Dynamic.literal()
+      ColumnStatisticsList.foreach(__v => __obj.updateDynamic("ColumnStatisticsList")(__v.asInstanceOf[js.Any]))
+      Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetColumnStatisticsForPartitionResponse]
+    }
+  }
+
+  @js.native
+  trait GetColumnStatisticsForTableRequest extends js.Object {
+    var ColumnNames: GetColumnNamesList
+    var DatabaseName: NameString
+    var TableName: NameString
+    var CatalogId: js.UndefOr[CatalogIdString]
+  }
+
+  object GetColumnStatisticsForTableRequest {
+    @inline
+    def apply(
+        ColumnNames: GetColumnNamesList,
+        DatabaseName: NameString,
+        TableName: NameString,
+        CatalogId: js.UndefOr[CatalogIdString] = js.undefined
+    ): GetColumnStatisticsForTableRequest = {
+      val __obj = js.Dynamic.literal(
+        "ColumnNames"  -> ColumnNames.asInstanceOf[js.Any],
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "TableName"    -> TableName.asInstanceOf[js.Any]
+      )
+
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetColumnStatisticsForTableRequest]
+    }
+  }
+
+  @js.native
+  trait GetColumnStatisticsForTableResponse extends js.Object {
+    var ColumnStatisticsList: js.UndefOr[ColumnStatisticsList]
+    var Errors: js.UndefOr[ColumnErrors]
+  }
+
+  object GetColumnStatisticsForTableResponse {
+    @inline
+    def apply(
+        ColumnStatisticsList: js.UndefOr[ColumnStatisticsList] = js.undefined,
+        Errors: js.UndefOr[ColumnErrors] = js.undefined
+    ): GetColumnStatisticsForTableResponse = {
+      val __obj = js.Dynamic.literal()
+      ColumnStatisticsList.foreach(__v => __obj.updateDynamic("ColumnStatisticsList")(__v.asInstanceOf[js.Any]))
+      Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetColumnStatisticsForTableResponse]
+    }
+  }
+
+  @js.native
   trait GetConnectionRequest extends js.Object {
     var Name: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
@@ -4295,6 +4900,7 @@ package glue {
     var CatalogId: js.UndefOr[CatalogIdString]
     var MaxResults: js.UndefOr[PageSize]
     var NextToken: js.UndefOr[Token]
+    var ResourceShareType: js.UndefOr[ResourceShareType]
   }
 
   object GetDatabasesRequest {
@@ -4302,12 +4908,14 @@ package glue {
     def apply(
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
         MaxResults: js.UndefOr[PageSize] = js.undefined,
-        NextToken: js.UndefOr[Token] = js.undefined
+        NextToken: js.UndefOr[Token] = js.undefined,
+        ResourceShareType: js.UndefOr[ResourceShareType] = js.undefined
     ): GetDatabasesRequest = {
       val __obj = js.Dynamic.literal()
       CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ResourceShareType.foreach(__v => __obj.updateDynamic("ResourceShareType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDatabasesRequest]
     }
   }
@@ -5066,14 +5674,57 @@ package glue {
   }
 
   @js.native
-  trait GetResourcePolicyRequest extends js.Object {}
+  trait GetResourcePoliciesRequest extends js.Object {
+    var MaxResults: js.UndefOr[PageSize]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object GetResourcePoliciesRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[PageSize] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): GetResourcePoliciesRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetResourcePoliciesRequest]
+    }
+  }
+
+  @js.native
+  trait GetResourcePoliciesResponse extends js.Object {
+    var GetResourcePoliciesResponseList: js.UndefOr[GetResourcePoliciesResponseList]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object GetResourcePoliciesResponse {
+    @inline
+    def apply(
+        GetResourcePoliciesResponseList: js.UndefOr[GetResourcePoliciesResponseList] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): GetResourcePoliciesResponse = {
+      val __obj = js.Dynamic.literal()
+      GetResourcePoliciesResponseList.foreach(__v =>
+        __obj.updateDynamic("GetResourcePoliciesResponseList")(__v.asInstanceOf[js.Any])
+      )
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetResourcePoliciesResponse]
+    }
+  }
+
+  @js.native
+  trait GetResourcePolicyRequest extends js.Object {
+    var ResourceArn: js.UndefOr[GlueResourceArn]
+  }
 
   object GetResourcePolicyRequest {
     @inline
     def apply(
+        ResourceArn: js.UndefOr[GlueResourceArn] = js.undefined
     ): GetResourcePolicyRequest = {
       val __obj = js.Dynamic.literal()
-
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetResourcePolicyRequest]
     }
   }
@@ -5507,9 +6158,9 @@ package glue {
 
   @js.native
   trait GetUserDefinedFunctionsRequest extends js.Object {
-    var DatabaseName: NameString
     var Pattern: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
+    var DatabaseName: js.UndefOr[NameString]
     var MaxResults: js.UndefOr[PageSize]
     var NextToken: js.UndefOr[Token]
   }
@@ -5517,18 +6168,18 @@ package glue {
   object GetUserDefinedFunctionsRequest {
     @inline
     def apply(
-        DatabaseName: NameString,
         Pattern: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
+        DatabaseName: js.UndefOr[NameString] = js.undefined,
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetUserDefinedFunctionsRequest = {
       val __obj = js.Dynamic.literal(
-        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
-        "Pattern"      -> Pattern.asInstanceOf[js.Any]
+        "Pattern" -> Pattern.asInstanceOf[js.Any]
       )
 
       CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetUserDefinedFunctionsRequest]
@@ -5711,6 +6362,34 @@ package glue {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       Runs.foreach(__v => __obj.updateDynamic("Runs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetWorkflowRunsResponse]
+    }
+  }
+
+  /**
+    * A structure for returning a resource policy.
+    */
+  @js.native
+  trait GluePolicy extends js.Object {
+    var CreateTime: js.UndefOr[Timestamp]
+    var PolicyHash: js.UndefOr[HashString]
+    var PolicyInJson: js.UndefOr[PolicyJsonString]
+    var UpdateTime: js.UndefOr[Timestamp]
+  }
+
+  object GluePolicy {
+    @inline
+    def apply(
+        CreateTime: js.UndefOr[Timestamp] = js.undefined,
+        PolicyHash: js.UndefOr[HashString] = js.undefined,
+        PolicyInJson: js.UndefOr[PolicyJsonString] = js.undefined,
+        UpdateTime: js.UndefOr[Timestamp] = js.undefined
+    ): GluePolicy = {
+      val __obj = js.Dynamic.literal()
+      CreateTime.foreach(__v => __obj.updateDynamic("CreateTime")(__v.asInstanceOf[js.Any]))
+      PolicyHash.foreach(__v => __obj.updateDynamic("PolicyHash")(__v.asInstanceOf[js.Any]))
+      PolicyInJson.foreach(__v => __obj.updateDynamic("PolicyInJson")(__v.asInstanceOf[js.Any]))
+      UpdateTime.foreach(__v => __obj.updateDynamic("UpdateTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GluePolicy]
     }
   }
 
@@ -6441,6 +7120,55 @@ package glue {
   }
 
   @js.native
+  trait ListMLTransformsRequest extends js.Object {
+    var Filter: js.UndefOr[TransformFilterCriteria]
+    var MaxResults: js.UndefOr[PageSize]
+    var NextToken: js.UndefOr[PaginationToken]
+    var Sort: js.UndefOr[TransformSortCriteria]
+    var Tags: js.UndefOr[TagsMap]
+  }
+
+  object ListMLTransformsRequest {
+    @inline
+    def apply(
+        Filter: js.UndefOr[TransformFilterCriteria] = js.undefined,
+        MaxResults: js.UndefOr[PageSize] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined,
+        Sort: js.UndefOr[TransformSortCriteria] = js.undefined,
+        Tags: js.UndefOr[TagsMap] = js.undefined
+    ): ListMLTransformsRequest = {
+      val __obj = js.Dynamic.literal()
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Sort.foreach(__v => __obj.updateDynamic("Sort")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMLTransformsRequest]
+    }
+  }
+
+  @js.native
+  trait ListMLTransformsResponse extends js.Object {
+    var TransformIds: TransformIdList
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListMLTransformsResponse {
+    @inline
+    def apply(
+        TransformIds: TransformIdList,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListMLTransformsResponse = {
+      val __obj = js.Dynamic.literal(
+        "TransformIds" -> TransformIds.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMLTransformsResponse]
+    }
+  }
+
+  @js.native
   trait ListTriggersRequest extends js.Object {
     var DependentJobName: js.UndefOr[NameString]
     var MaxResults: js.UndefOr[PageSize]
@@ -6562,6 +7290,36 @@ package glue {
     val EQUALS = "EQUALS".asInstanceOf[LogicalOperator]
 
     val values = js.Object.freeze(js.Array(EQUALS))
+  }
+
+  /**
+    * Defines a long column statistics data.
+    */
+  @js.native
+  trait LongColumnStatisticsData extends js.Object {
+    var NumberOfDistinctValues: NonNegativeLong
+    var NumberOfNulls: NonNegativeLong
+    var MaximumValue: js.UndefOr[Double]
+    var MinimumValue: js.UndefOr[Double]
+  }
+
+  object LongColumnStatisticsData {
+    @inline
+    def apply(
+        NumberOfDistinctValues: NonNegativeLong,
+        NumberOfNulls: NonNegativeLong,
+        MaximumValue: js.UndefOr[Double] = js.undefined,
+        MinimumValue: js.UndefOr[Double] = js.undefined
+    ): LongColumnStatisticsData = {
+      val __obj = js.Dynamic.literal(
+        "NumberOfDistinctValues" -> NumberOfDistinctValues.asInstanceOf[js.Any],
+        "NumberOfNulls"          -> NumberOfNulls.asInstanceOf[js.Any]
+      )
+
+      MaximumValue.foreach(__v => __obj.updateDynamic("MaximumValue")(__v.asInstanceOf[js.Any]))
+      MinimumValue.foreach(__v => __obj.updateDynamic("MinimumValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LongColumnStatisticsData]
+    }
   }
 
   /**
@@ -6760,6 +7518,7 @@ package glue {
     */
   @js.native
   trait Partition extends js.Object {
+    var CatalogId: js.UndefOr[CatalogIdString]
     var CreationTime: js.UndefOr[Timestamp]
     var DatabaseName: js.UndefOr[NameString]
     var LastAccessTime: js.UndefOr[Timestamp]
@@ -6773,6 +7532,7 @@ package glue {
   object Partition {
     @inline
     def apply(
+        CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         DatabaseName: js.UndefOr[NameString] = js.undefined,
         LastAccessTime: js.UndefOr[Timestamp] = js.undefined,
@@ -6783,6 +7543,7 @@ package glue {
         Values: js.UndefOr[ValueStringList] = js.undefined
     ): Partition = {
       val __obj = js.Dynamic.literal()
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
       LastAccessTime.foreach(__v => __obj.updateDynamic("LastAccessTime")(__v.asInstanceOf[js.Any]))
@@ -7050,23 +7811,29 @@ package glue {
   @js.native
   trait PutResourcePolicyRequest extends js.Object {
     var PolicyInJson: PolicyJsonString
+    var EnableHybrid: js.UndefOr[EnableHybridValues]
     var PolicyExistsCondition: js.UndefOr[ExistCondition]
     var PolicyHashCondition: js.UndefOr[HashString]
+    var ResourceArn: js.UndefOr[GlueResourceArn]
   }
 
   object PutResourcePolicyRequest {
     @inline
     def apply(
         PolicyInJson: PolicyJsonString,
+        EnableHybrid: js.UndefOr[EnableHybridValues] = js.undefined,
         PolicyExistsCondition: js.UndefOr[ExistCondition] = js.undefined,
-        PolicyHashCondition: js.UndefOr[HashString] = js.undefined
+        PolicyHashCondition: js.UndefOr[HashString] = js.undefined,
+        ResourceArn: js.UndefOr[GlueResourceArn] = js.undefined
     ): PutResourcePolicyRequest = {
       val __obj = js.Dynamic.literal(
         "PolicyInJson" -> PolicyInJson.asInstanceOf[js.Any]
       )
 
+      EnableHybrid.foreach(__v => __obj.updateDynamic("EnableHybrid")(__v.asInstanceOf[js.Any]))
       PolicyExistsCondition.foreach(__v => __obj.updateDynamic("PolicyExistsCondition")(__v.asInstanceOf[js.Any]))
       PolicyHashCondition.foreach(__v => __obj.updateDynamic("PolicyHashCondition")(__v.asInstanceOf[js.Any]))
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutResourcePolicyRequest]
     }
   }
@@ -7159,6 +7926,15 @@ package glue {
       JobBookmarkEntry.foreach(__v => __obj.updateDynamic("JobBookmarkEntry")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResetJobBookmarkResponse]
     }
+  }
+
+  @js.native
+  sealed trait ResourceShareType extends js.Any
+  object ResourceShareType extends js.Object {
+    val FOREIGN = "FOREIGN".asInstanceOf[ResourceShareType]
+    val ALL     = "ALL".asInstanceOf[ResourceShareType]
+
+    val values = js.Object.freeze(js.Array(FOREIGN, ALL))
   }
 
   @js.native
@@ -7329,6 +8105,7 @@ package glue {
     var Filters: js.UndefOr[SearchPropertyPredicates]
     var MaxResults: js.UndefOr[PageSize]
     var NextToken: js.UndefOr[Token]
+    var ResourceShareType: js.UndefOr[ResourceShareType]
     var SearchText: js.UndefOr[ValueString]
     var SortCriteria: js.UndefOr[SortCriteria]
   }
@@ -7340,6 +8117,7 @@ package glue {
         Filters: js.UndefOr[SearchPropertyPredicates] = js.undefined,
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined,
+        ResourceShareType: js.UndefOr[ResourceShareType] = js.undefined,
         SearchText: js.UndefOr[ValueString] = js.undefined,
         SortCriteria: js.UndefOr[SortCriteria] = js.undefined
     ): SearchTablesRequest = {
@@ -7348,6 +8126,7 @@ package glue {
       Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ResourceShareType.foreach(__v => __obj.updateDynamic("ResourceShareType")(__v.asInstanceOf[js.Any]))
       SearchText.foreach(__v => __obj.updateDynamic("SearchText")(__v.asInstanceOf[js.Any]))
       SortCriteria.foreach(__v => __obj.updateDynamic("SortCriteria")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchTablesRequest]
@@ -7949,6 +8728,40 @@ package glue {
     }
   }
 
+  @js.native
+  trait StopWorkflowRunRequest extends js.Object {
+    var Name: NameString
+    var RunId: IdString
+  }
+
+  object StopWorkflowRunRequest {
+    @inline
+    def apply(
+        Name: NameString,
+        RunId: IdString
+    ): StopWorkflowRunRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name"  -> Name.asInstanceOf[js.Any],
+        "RunId" -> RunId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[StopWorkflowRunRequest]
+    }
+  }
+
+  @js.native
+  trait StopWorkflowRunResponse extends js.Object {}
+
+  object StopWorkflowRunResponse {
+    @inline
+    def apply(
+    ): StopWorkflowRunResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[StopWorkflowRunResponse]
+    }
+  }
+
   /**
     * Describes the physical storage of table data.
     */
@@ -8002,11 +8815,42 @@ package glue {
   }
 
   /**
+    * Defines a string column statistics data.
+    */
+  @js.native
+  trait StringColumnStatisticsData extends js.Object {
+    var AverageLength: NonNegativeDouble
+    var MaximumLength: NonNegativeLong
+    var NumberOfDistinctValues: NonNegativeLong
+    var NumberOfNulls: NonNegativeLong
+  }
+
+  object StringColumnStatisticsData {
+    @inline
+    def apply(
+        AverageLength: NonNegativeDouble,
+        MaximumLength: NonNegativeLong,
+        NumberOfDistinctValues: NonNegativeLong,
+        NumberOfNulls: NonNegativeLong
+    ): StringColumnStatisticsData = {
+      val __obj = js.Dynamic.literal(
+        "AverageLength"          -> AverageLength.asInstanceOf[js.Any],
+        "MaximumLength"          -> MaximumLength.asInstanceOf[js.Any],
+        "NumberOfDistinctValues" -> NumberOfDistinctValues.asInstanceOf[js.Any],
+        "NumberOfNulls"          -> NumberOfNulls.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[StringColumnStatisticsData]
+    }
+  }
+
+  /**
     * Represents a collection of related data organized in columns and rows.
     */
   @js.native
   trait Table extends js.Object {
     var Name: NameString
+    var CatalogId: js.UndefOr[CatalogIdString]
     var CreateTime: js.UndefOr[Timestamp]
     var CreatedBy: js.UndefOr[NameString]
     var DatabaseName: js.UndefOr[NameString]
@@ -8020,6 +8864,7 @@ package glue {
     var Retention: js.UndefOr[NonNegativeInteger]
     var StorageDescriptor: js.UndefOr[StorageDescriptor]
     var TableType: js.UndefOr[TableTypeString]
+    var TargetTable: js.UndefOr[TableIdentifier]
     var UpdateTime: js.UndefOr[Timestamp]
     var ViewExpandedText: js.UndefOr[ViewTextString]
     var ViewOriginalText: js.UndefOr[ViewTextString]
@@ -8029,6 +8874,7 @@ package glue {
     @inline
     def apply(
         Name: NameString,
+        CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
         CreateTime: js.UndefOr[Timestamp] = js.undefined,
         CreatedBy: js.UndefOr[NameString] = js.undefined,
         DatabaseName: js.UndefOr[NameString] = js.undefined,
@@ -8042,6 +8888,7 @@ package glue {
         Retention: js.UndefOr[NonNegativeInteger] = js.undefined,
         StorageDescriptor: js.UndefOr[StorageDescriptor] = js.undefined,
         TableType: js.UndefOr[TableTypeString] = js.undefined,
+        TargetTable: js.UndefOr[TableIdentifier] = js.undefined,
         UpdateTime: js.UndefOr[Timestamp] = js.undefined,
         ViewExpandedText: js.UndefOr[ViewTextString] = js.undefined,
         ViewOriginalText: js.UndefOr[ViewTextString] = js.undefined
@@ -8050,6 +8897,7 @@ package glue {
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       CreateTime.foreach(__v => __obj.updateDynamic("CreateTime")(__v.asInstanceOf[js.Any]))
       CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
@@ -8065,6 +8913,7 @@ package glue {
       Retention.foreach(__v => __obj.updateDynamic("Retention")(__v.asInstanceOf[js.Any]))
       StorageDescriptor.foreach(__v => __obj.updateDynamic("StorageDescriptor")(__v.asInstanceOf[js.Any]))
       TableType.foreach(__v => __obj.updateDynamic("TableType")(__v.asInstanceOf[js.Any]))
+      TargetTable.foreach(__v => __obj.updateDynamic("TargetTable")(__v.asInstanceOf[js.Any]))
       UpdateTime.foreach(__v => __obj.updateDynamic("UpdateTime")(__v.asInstanceOf[js.Any]))
       ViewExpandedText.foreach(__v => __obj.updateDynamic("ViewExpandedText")(__v.asInstanceOf[js.Any]))
       ViewOriginalText.foreach(__v => __obj.updateDynamic("ViewOriginalText")(__v.asInstanceOf[js.Any]))
@@ -8095,6 +8944,31 @@ package glue {
   }
 
   /**
+    * A structure that describes a target table for resource linking.
+    */
+  @js.native
+  trait TableIdentifier extends js.Object {
+    var CatalogId: js.UndefOr[CatalogIdString]
+    var DatabaseName: js.UndefOr[NameString]
+    var Name: js.UndefOr[NameString]
+  }
+
+  object TableIdentifier {
+    @inline
+    def apply(
+        CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
+        DatabaseName: js.UndefOr[NameString] = js.undefined,
+        Name: js.UndefOr[NameString] = js.undefined
+    ): TableIdentifier = {
+      val __obj = js.Dynamic.literal()
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableIdentifier]
+    }
+  }
+
+  /**
     * A structure used to define a table.
     */
   @js.native
@@ -8109,6 +8983,7 @@ package glue {
     var Retention: js.UndefOr[NonNegativeInteger]
     var StorageDescriptor: js.UndefOr[StorageDescriptor]
     var TableType: js.UndefOr[TableTypeString]
+    var TargetTable: js.UndefOr[TableIdentifier]
     var ViewExpandedText: js.UndefOr[ViewTextString]
     var ViewOriginalText: js.UndefOr[ViewTextString]
   }
@@ -8126,6 +9001,7 @@ package glue {
         Retention: js.UndefOr[NonNegativeInteger] = js.undefined,
         StorageDescriptor: js.UndefOr[StorageDescriptor] = js.undefined,
         TableType: js.UndefOr[TableTypeString] = js.undefined,
+        TargetTable: js.UndefOr[TableIdentifier] = js.undefined,
         ViewExpandedText: js.UndefOr[ViewTextString] = js.undefined,
         ViewOriginalText: js.UndefOr[ViewTextString] = js.undefined
     ): TableInput = {
@@ -8142,6 +9018,7 @@ package glue {
       Retention.foreach(__v => __obj.updateDynamic("Retention")(__v.asInstanceOf[js.Any]))
       StorageDescriptor.foreach(__v => __obj.updateDynamic("StorageDescriptor")(__v.asInstanceOf[js.Any]))
       TableType.foreach(__v => __obj.updateDynamic("TableType")(__v.asInstanceOf[js.Any]))
+      TargetTable.foreach(__v => __obj.updateDynamic("TargetTable")(__v.asInstanceOf[js.Any]))
       ViewExpandedText.foreach(__v => __obj.updateDynamic("ViewExpandedText")(__v.asInstanceOf[js.Any]))
       ViewOriginalText.foreach(__v => __obj.updateDynamic("ViewOriginalText")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TableInput]
@@ -8722,6 +9599,95 @@ package glue {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateClassifierResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateColumnStatisticsForPartitionRequest extends js.Object {
+    var ColumnStatisticsList: UpdateColumnStatisticsList
+    var DatabaseName: NameString
+    var PartitionValues: ValueStringList
+    var TableName: NameString
+    var CatalogId: js.UndefOr[CatalogIdString]
+  }
+
+  object UpdateColumnStatisticsForPartitionRequest {
+    @inline
+    def apply(
+        ColumnStatisticsList: UpdateColumnStatisticsList,
+        DatabaseName: NameString,
+        PartitionValues: ValueStringList,
+        TableName: NameString,
+        CatalogId: js.UndefOr[CatalogIdString] = js.undefined
+    ): UpdateColumnStatisticsForPartitionRequest = {
+      val __obj = js.Dynamic.literal(
+        "ColumnStatisticsList" -> ColumnStatisticsList.asInstanceOf[js.Any],
+        "DatabaseName"         -> DatabaseName.asInstanceOf[js.Any],
+        "PartitionValues"      -> PartitionValues.asInstanceOf[js.Any],
+        "TableName"            -> TableName.asInstanceOf[js.Any]
+      )
+
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateColumnStatisticsForPartitionRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateColumnStatisticsForPartitionResponse extends js.Object {
+    var Errors: js.UndefOr[ColumnStatisticsErrors]
+  }
+
+  object UpdateColumnStatisticsForPartitionResponse {
+    @inline
+    def apply(
+        Errors: js.UndefOr[ColumnStatisticsErrors] = js.undefined
+    ): UpdateColumnStatisticsForPartitionResponse = {
+      val __obj = js.Dynamic.literal()
+      Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateColumnStatisticsForPartitionResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateColumnStatisticsForTableRequest extends js.Object {
+    var ColumnStatisticsList: UpdateColumnStatisticsList
+    var DatabaseName: NameString
+    var TableName: NameString
+    var CatalogId: js.UndefOr[CatalogIdString]
+  }
+
+  object UpdateColumnStatisticsForTableRequest {
+    @inline
+    def apply(
+        ColumnStatisticsList: UpdateColumnStatisticsList,
+        DatabaseName: NameString,
+        TableName: NameString,
+        CatalogId: js.UndefOr[CatalogIdString] = js.undefined
+    ): UpdateColumnStatisticsForTableRequest = {
+      val __obj = js.Dynamic.literal(
+        "ColumnStatisticsList" -> ColumnStatisticsList.asInstanceOf[js.Any],
+        "DatabaseName"         -> DatabaseName.asInstanceOf[js.Any],
+        "TableName"            -> TableName.asInstanceOf[js.Any]
+      )
+
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateColumnStatisticsForTableRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateColumnStatisticsForTableResponse extends js.Object {
+    var Errors: js.UndefOr[ColumnStatisticsErrors]
+  }
+
+  object UpdateColumnStatisticsForTableResponse {
+    @inline
+    def apply(
+        Errors: js.UndefOr[ColumnStatisticsErrors] = js.undefined
+    ): UpdateColumnStatisticsForTableResponse = {
+      val __obj = js.Dynamic.literal()
+      Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateColumnStatisticsForTableResponse]
     }
   }
 
@@ -9374,8 +10340,10 @@ package glue {
     */
   @js.native
   trait UserDefinedFunction extends js.Object {
+    var CatalogId: js.UndefOr[CatalogIdString]
     var ClassName: js.UndefOr[NameString]
     var CreateTime: js.UndefOr[Timestamp]
+    var DatabaseName: js.UndefOr[NameString]
     var FunctionName: js.UndefOr[NameString]
     var OwnerName: js.UndefOr[NameString]
     var OwnerType: js.UndefOr[PrincipalType]
@@ -9385,16 +10353,20 @@ package glue {
   object UserDefinedFunction {
     @inline
     def apply(
+        CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
         ClassName: js.UndefOr[NameString] = js.undefined,
         CreateTime: js.UndefOr[Timestamp] = js.undefined,
+        DatabaseName: js.UndefOr[NameString] = js.undefined,
         FunctionName: js.UndefOr[NameString] = js.undefined,
         OwnerName: js.UndefOr[NameString] = js.undefined,
         OwnerType: js.UndefOr[PrincipalType] = js.undefined,
         ResourceUris: js.UndefOr[ResourceUriList] = js.undefined
     ): UserDefinedFunction = {
       val __obj = js.Dynamic.literal()
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       ClassName.foreach(__v => __obj.updateDynamic("ClassName")(__v.asInstanceOf[js.Any]))
       CreateTime.foreach(__v => __obj.updateDynamic("CreateTime")(__v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
       FunctionName.foreach(__v => __obj.updateDynamic("FunctionName")(__v.asInstanceOf[js.Any]))
       OwnerName.foreach(__v => __obj.updateDynamic("OwnerName")(__v.asInstanceOf[js.Any]))
       OwnerType.foreach(__v => __obj.updateDynamic("OwnerType")(__v.asInstanceOf[js.Any]))
@@ -9582,8 +10554,10 @@ package glue {
   object WorkflowRunStatus extends js.Object {
     val RUNNING   = "RUNNING".asInstanceOf[WorkflowRunStatus]
     val COMPLETED = "COMPLETED".asInstanceOf[WorkflowRunStatus]
+    val STOPPING  = "STOPPING".asInstanceOf[WorkflowRunStatus]
+    val STOPPED   = "STOPPED".asInstanceOf[WorkflowRunStatus]
 
-    val values = js.Object.freeze(js.Array(RUNNING, COMPLETED))
+    val values = js.Object.freeze(js.Array(RUNNING, COMPLETED, STOPPING, STOPPED))
   }
 
   /**

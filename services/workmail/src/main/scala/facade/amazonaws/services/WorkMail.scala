@@ -16,6 +16,7 @@ package object workmail {
   type Aliases                      = js.Array[EmailAddress]
   type AmazonResourceName           = String
   type EmailAddress                 = String
+  type FolderConfigurations         = js.Array[FolderConfiguration]
   type GroupName                    = String
   type Groups                       = js.Array[Group]
   type IpAddress                    = String
@@ -32,10 +33,13 @@ package object workmail {
   type Password                     = String
   type PermissionValues             = js.Array[PermissionType]
   type Permissions                  = js.Array[Permission]
+  type PolicyDescription            = String
   type ResourceDelegates            = js.Array[Delegate]
   type ResourceId                   = String
   type ResourceName                 = String
   type Resources                    = js.Array[Resource]
+  type RetentionPeriod              = Int
+  type ShortString                  = String
   type TagKey                       = String
   type TagKeyList                   = js.Array[TagKey]
   type TagList                      = js.Array[Tag]
@@ -74,6 +78,9 @@ package object workmail {
     ): Future[DeleteMailboxPermissionsResponse] = service.deleteMailboxPermissions(params).promise().toFuture
     @inline def deleteResourceFuture(params: DeleteResourceRequest): Future[DeleteResourceResponse] =
       service.deleteResource(params).promise().toFuture
+    @inline def deleteRetentionPolicyFuture(
+        params: DeleteRetentionPolicyRequest
+    ): Future[DeleteRetentionPolicyResponse] = service.deleteRetentionPolicy(params).promise().toFuture
     @inline def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResponse] =
       service.deleteUser(params).promise().toFuture
     @inline def deregisterFromWorkMailFuture(
@@ -97,6 +104,9 @@ package object workmail {
     @inline def getAccessControlEffectFuture(
         params: GetAccessControlEffectRequest
     ): Future[GetAccessControlEffectResponse] = service.getAccessControlEffect(params).promise().toFuture
+    @inline def getDefaultRetentionPolicyFuture(
+        params: GetDefaultRetentionPolicyRequest
+    ): Future[GetDefaultRetentionPolicyResponse] = service.getDefaultRetentionPolicy(params).promise().toFuture
     @inline def getMailboxDetailsFuture(params: GetMailboxDetailsRequest): Future[GetMailboxDetailsResponse] =
       service.getMailboxDetails(params).promise().toFuture
     @inline def listAccessControlRulesFuture(
@@ -127,6 +137,8 @@ package object workmail {
     @inline def putMailboxPermissionsFuture(
         params: PutMailboxPermissionsRequest
     ): Future[PutMailboxPermissionsResponse] = service.putMailboxPermissions(params).promise().toFuture
+    @inline def putRetentionPolicyFuture(params: PutRetentionPolicyRequest): Future[PutRetentionPolicyResponse] =
+      service.putRetentionPolicy(params).promise().toFuture
     @inline def registerToWorkMailFuture(params: RegisterToWorkMailRequest): Future[RegisterToWorkMailResponse] =
       service.registerToWorkMail(params).promise().toFuture
     @inline def resetPasswordFuture(params: ResetPasswordRequest): Future[ResetPasswordResponse] =
@@ -166,8 +178,9 @@ package workmail {
     def deleteGroup(params: DeleteGroupRequest): Request[DeleteGroupResponse] = js.native
     def deleteMailboxPermissions(params: DeleteMailboxPermissionsRequest): Request[DeleteMailboxPermissionsResponse] =
       js.native
-    def deleteResource(params: DeleteResourceRequest): Request[DeleteResourceResponse] = js.native
-    def deleteUser(params: DeleteUserRequest): Request[DeleteUserResponse]             = js.native
+    def deleteResource(params: DeleteResourceRequest): Request[DeleteResourceResponse]                      = js.native
+    def deleteRetentionPolicy(params: DeleteRetentionPolicyRequest): Request[DeleteRetentionPolicyResponse] = js.native
+    def deleteUser(params: DeleteUserRequest): Request[DeleteUserResponse]                                  = js.native
     def deregisterFromWorkMail(params: DeregisterFromWorkMailRequest): Request[DeregisterFromWorkMailResponse] =
       js.native
     def describeGroup(params: DescribeGroupRequest): Request[DescribeGroupResponse]                      = js.native
@@ -182,6 +195,9 @@ package workmail {
     ): Request[DisassociateMemberFromGroupResponse] = js.native
     def getAccessControlEffect(params: GetAccessControlEffectRequest): Request[GetAccessControlEffectResponse] =
       js.native
+    def getDefaultRetentionPolicy(
+        params: GetDefaultRetentionPolicyRequest
+    ): Request[GetDefaultRetentionPolicyResponse]                                               = js.native
     def getMailboxDetails(params: GetMailboxDetailsRequest): Request[GetMailboxDetailsResponse] = js.native
     def listAccessControlRules(params: ListAccessControlRulesRequest): Request[ListAccessControlRulesResponse] =
       js.native
@@ -197,6 +213,7 @@ package workmail {
     def listUsers(params: ListUsersRequest): Request[ListUsersResponse]                                     = js.native
     def putAccessControlRule(params: PutAccessControlRuleRequest): Request[PutAccessControlRuleResponse]    = js.native
     def putMailboxPermissions(params: PutMailboxPermissionsRequest): Request[PutMailboxPermissionsResponse] = js.native
+    def putRetentionPolicy(params: PutRetentionPolicyRequest): Request[PutRetentionPolicyResponse]          = js.native
     def registerToWorkMail(params: RegisterToWorkMailRequest): Request[RegisterToWorkMailResponse]          = js.native
     def resetPassword(params: ResetPasswordRequest): Request[ResetPasswordResponse]                         = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                               = js.native
@@ -553,20 +570,20 @@ package workmail {
   @js.native
   trait DeleteAccessControlRuleRequest extends js.Object {
     var Name: AccessControlRuleName
-    var OrganizationId: js.UndefOr[OrganizationId]
+    var OrganizationId: OrganizationId
   }
 
   object DeleteAccessControlRuleRequest {
     @inline
     def apply(
         Name: AccessControlRuleName,
-        OrganizationId: js.UndefOr[OrganizationId] = js.undefined
+        OrganizationId: OrganizationId
     ): DeleteAccessControlRuleRequest = {
       val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
+        "Name"           -> Name.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
 
-      OrganizationId.foreach(__v => __obj.updateDynamic("OrganizationId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteAccessControlRuleRequest]
     }
   }
@@ -723,6 +740,40 @@ package workmail {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteResourceResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteRetentionPolicyRequest extends js.Object {
+    var Id: ShortString
+    var OrganizationId: OrganizationId
+  }
+
+  object DeleteRetentionPolicyRequest {
+    @inline
+    def apply(
+        Id: ShortString,
+        OrganizationId: OrganizationId
+    ): DeleteRetentionPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id"             -> Id.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteRetentionPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteRetentionPolicyResponse extends js.Object {}
+
+  object DeleteRetentionPolicyResponse {
+    @inline
+    def apply(
+    ): DeleteRetentionPolicyResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeleteRetentionPolicyResponse]
     }
   }
 
@@ -1104,6 +1155,45 @@ package workmail {
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED, DELETED))
   }
 
+  /**
+    * The configuration applied to an organization's folders by its retention policy.
+    */
+  @js.native
+  trait FolderConfiguration extends js.Object {
+    var Action: RetentionAction
+    var Name: FolderName
+    var Period: js.UndefOr[RetentionPeriod]
+  }
+
+  object FolderConfiguration {
+    @inline
+    def apply(
+        Action: RetentionAction,
+        Name: FolderName,
+        Period: js.UndefOr[RetentionPeriod] = js.undefined
+    ): FolderConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Action" -> Action.asInstanceOf[js.Any],
+        "Name"   -> Name.asInstanceOf[js.Any]
+      )
+
+      Period.foreach(__v => __obj.updateDynamic("Period")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FolderConfiguration]
+    }
+  }
+
+  @js.native
+  sealed trait FolderName extends js.Any
+  object FolderName extends js.Object {
+    val INBOX         = "INBOX".asInstanceOf[FolderName]
+    val DELETED_ITEMS = "DELETED_ITEMS".asInstanceOf[FolderName]
+    val SENT_ITEMS    = "SENT_ITEMS".asInstanceOf[FolderName]
+    val DRAFTS        = "DRAFTS".asInstanceOf[FolderName]
+    val JUNK_EMAIL    = "JUNK_EMAIL".asInstanceOf[FolderName]
+
+    val values = js.Object.freeze(js.Array(INBOX, DELETED_ITEMS, SENT_ITEMS, DRAFTS, JUNK_EMAIL))
+  }
+
   @js.native
   trait GetAccessControlEffectRequest extends js.Object {
     var Action: AccessControlRuleAction
@@ -1147,6 +1237,49 @@ package workmail {
       Effect.foreach(__v => __obj.updateDynamic("Effect")(__v.asInstanceOf[js.Any]))
       MatchedRules.foreach(__v => __obj.updateDynamic("MatchedRules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAccessControlEffectResponse]
+    }
+  }
+
+  @js.native
+  trait GetDefaultRetentionPolicyRequest extends js.Object {
+    var OrganizationId: OrganizationId
+  }
+
+  object GetDefaultRetentionPolicyRequest {
+    @inline
+    def apply(
+        OrganizationId: OrganizationId
+    ): GetDefaultRetentionPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetDefaultRetentionPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait GetDefaultRetentionPolicyResponse extends js.Object {
+    var Description: js.UndefOr[String]
+    var FolderConfigurations: js.UndefOr[FolderConfigurations]
+    var Id: js.UndefOr[ShortString]
+    var Name: js.UndefOr[ShortString]
+  }
+
+  object GetDefaultRetentionPolicyResponse {
+    @inline
+    def apply(
+        Description: js.UndefOr[String] = js.undefined,
+        FolderConfigurations: js.UndefOr[FolderConfigurations] = js.undefined,
+        Id: js.UndefOr[ShortString] = js.undefined,
+        Name: js.UndefOr[ShortString] = js.undefined
+    ): GetDefaultRetentionPolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      FolderConfigurations.foreach(__v => __obj.updateDynamic("FolderConfigurations")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDefaultRetentionPolicyResponse]
     }
   }
 
@@ -1850,6 +1983,49 @@ package workmail {
   }
 
   @js.native
+  trait PutRetentionPolicyRequest extends js.Object {
+    var FolderConfigurations: FolderConfigurations
+    var Name: ShortString
+    var OrganizationId: OrganizationId
+    var Description: js.UndefOr[PolicyDescription]
+    var Id: js.UndefOr[ShortString]
+  }
+
+  object PutRetentionPolicyRequest {
+    @inline
+    def apply(
+        FolderConfigurations: FolderConfigurations,
+        Name: ShortString,
+        OrganizationId: OrganizationId,
+        Description: js.UndefOr[PolicyDescription] = js.undefined,
+        Id: js.UndefOr[ShortString] = js.undefined
+    ): PutRetentionPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "FolderConfigurations" -> FolderConfigurations.asInstanceOf[js.Any],
+        "Name"                 -> Name.asInstanceOf[js.Any],
+        "OrganizationId"       -> OrganizationId.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutRetentionPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait PutRetentionPolicyResponse extends js.Object {}
+
+  object PutRetentionPolicyResponse {
+    @inline
+    def apply(
+    ): PutRetentionPolicyResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[PutRetentionPolicyResponse]
+    }
+  }
+
+  @js.native
   trait RegisterToWorkMailRequest extends js.Object {
     var Email: EmailAddress
     var EntityId: WorkMailIdentifier
@@ -1967,6 +2143,16 @@ package workmail {
     val EQUIPMENT = "EQUIPMENT".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(js.Array(ROOM, EQUIPMENT))
+  }
+
+  @js.native
+  sealed trait RetentionAction extends js.Any
+  object RetentionAction extends js.Object {
+    val NONE               = "NONE".asInstanceOf[RetentionAction]
+    val DELETE             = "DELETE".asInstanceOf[RetentionAction]
+    val PERMANENTLY_DELETE = "PERMANENTLY_DELETE".asInstanceOf[RetentionAction]
+
+    val values = js.Object.freeze(js.Array(NONE, DELETE, PERMANENTLY_DELETE))
   }
 
   /**

@@ -17,6 +17,8 @@ package object organizations {
   type CreateAccountRequestId   = String
   type CreateAccountStates      = js.Array[CreateAccountState]
   type CreateAccountStatuses    = js.Array[CreateAccountStatus]
+  type DelegatedAdministrators  = js.Array[DelegatedAdministrator]
+  type DelegatedServices        = js.Array[DelegatedService]
   type Email                    = String
   type EnabledServicePrincipals = js.Array[EnabledServicePrincipal]
   type GenericArn               = String
@@ -88,6 +90,9 @@ package object organizations {
       service.deleteOrganizationalUnit(params).promise().toFuture
     @inline def deletePolicyFuture(params: DeletePolicyRequest): Future[js.Object] =
       service.deletePolicy(params).promise().toFuture
+    @inline def deregisterDelegatedAdministratorFuture(
+        params: DeregisterDelegatedAdministratorRequest
+    ): Future[js.Object] = service.deregisterDelegatedAdministrator(params).promise().toFuture
     @inline def describeAccountFuture(params: DescribeAccountRequest): Future[DescribeAccountResponse] =
       service.describeAccount(params).promise().toFuture
     @inline def describeCreateAccountStatusFuture(
@@ -135,6 +140,13 @@ package object organizations {
     @inline def listCreateAccountStatusFuture(
         params: ListCreateAccountStatusRequest
     ): Future[ListCreateAccountStatusResponse] = service.listCreateAccountStatus(params).promise().toFuture
+    @inline def listDelegatedAdministratorsFuture(
+        params: ListDelegatedAdministratorsRequest
+    ): Future[ListDelegatedAdministratorsResponse] = service.listDelegatedAdministrators(params).promise().toFuture
+    @inline def listDelegatedServicesForAccountFuture(
+        params: ListDelegatedServicesForAccountRequest
+    ): Future[ListDelegatedServicesForAccountResponse] =
+      service.listDelegatedServicesForAccount(params).promise().toFuture
     @inline def listHandshakesForAccountFuture(
         params: ListHandshakesForAccountRequest
     ): Future[ListHandshakesForAccountResponse] = service.listHandshakesForAccount(params).promise().toFuture
@@ -160,6 +172,8 @@ package object organizations {
       service.listTargetsForPolicy(params).promise().toFuture
     @inline def moveAccountFuture(params: MoveAccountRequest): Future[js.Object] =
       service.moveAccount(params).promise().toFuture
+    @inline def registerDelegatedAdministratorFuture(params: RegisterDelegatedAdministratorRequest): Future[js.Object] =
+      service.registerDelegatedAdministrator(params).promise().toFuture
     @inline def removeAccountFromOrganizationFuture(params: RemoveAccountFromOrganizationRequest): Future[js.Object] =
       service.removeAccountFromOrganization(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
@@ -193,7 +207,9 @@ package organizations {
     def deleteOrganization(): Request[js.Object]                                              = js.native
     def deleteOrganizationalUnit(params: DeleteOrganizationalUnitRequest): Request[js.Object] = js.native
     def deletePolicy(params: DeletePolicyRequest): Request[js.Object]                         = js.native
-    def describeAccount(params: DescribeAccountRequest): Request[DescribeAccountResponse]     = js.native
+    def deregisterDelegatedAdministrator(params: DeregisterDelegatedAdministratorRequest): Request[js.Object] =
+      js.native
+    def describeAccount(params: DescribeAccountRequest): Request[DescribeAccountResponse] = js.native
     def describeCreateAccountStatus(
         params: DescribeCreateAccountStatusRequest
     ): Request[DescribeCreateAccountStatusResponse] = js.native
@@ -223,6 +239,12 @@ package organizations {
     def listChildren(params: ListChildrenRequest): Request[ListChildrenResponse]                            = js.native
     def listCreateAccountStatus(params: ListCreateAccountStatusRequest): Request[ListCreateAccountStatusResponse] =
       js.native
+    def listDelegatedAdministrators(
+        params: ListDelegatedAdministratorsRequest
+    ): Request[ListDelegatedAdministratorsResponse] = js.native
+    def listDelegatedServicesForAccount(
+        params: ListDelegatedServicesForAccountRequest
+    ): Request[ListDelegatedServicesForAccountResponse] = js.native
     def listHandshakesForAccount(params: ListHandshakesForAccountRequest): Request[ListHandshakesForAccountResponse] =
       js.native
     def listHandshakesForOrganization(
@@ -238,6 +260,7 @@ package organizations {
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
     def listTargetsForPolicy(params: ListTargetsForPolicyRequest): Request[ListTargetsForPolicyResponse]    = js.native
     def moveAccount(params: MoveAccountRequest): Request[js.Object]                                         = js.native
+    def registerDelegatedAdministrator(params: RegisterDelegatedAdministratorRequest): Request[js.Object]   = js.native
     def removeAccountFromOrganization(params: RemoveAccountFromOrganizationRequest): Request[js.Object]     = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object]                                         = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object]                                     = js.native
@@ -740,6 +763,68 @@ package organizations {
     }
   }
 
+  /**
+    * Contains information about the delegated administrator.
+    */
+  @js.native
+  trait DelegatedAdministrator extends js.Object {
+    var Arn: js.UndefOr[AccountArn]
+    var DelegationEnabledDate: js.UndefOr[Timestamp]
+    var Email: js.UndefOr[Email]
+    var Id: js.UndefOr[AccountId]
+    var JoinedMethod: js.UndefOr[AccountJoinedMethod]
+    var JoinedTimestamp: js.UndefOr[Timestamp]
+    var Name: js.UndefOr[AccountName]
+    var Status: js.UndefOr[AccountStatus]
+  }
+
+  object DelegatedAdministrator {
+    @inline
+    def apply(
+        Arn: js.UndefOr[AccountArn] = js.undefined,
+        DelegationEnabledDate: js.UndefOr[Timestamp] = js.undefined,
+        Email: js.UndefOr[Email] = js.undefined,
+        Id: js.UndefOr[AccountId] = js.undefined,
+        JoinedMethod: js.UndefOr[AccountJoinedMethod] = js.undefined,
+        JoinedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        Name: js.UndefOr[AccountName] = js.undefined,
+        Status: js.UndefOr[AccountStatus] = js.undefined
+    ): DelegatedAdministrator = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      DelegationEnabledDate.foreach(__v => __obj.updateDynamic("DelegationEnabledDate")(__v.asInstanceOf[js.Any]))
+      Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      JoinedMethod.foreach(__v => __obj.updateDynamic("JoinedMethod")(__v.asInstanceOf[js.Any]))
+      JoinedTimestamp.foreach(__v => __obj.updateDynamic("JoinedTimestamp")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DelegatedAdministrator]
+    }
+  }
+
+  /**
+    * Contains information about the AWS service for which the account is a delegated administrator.
+    */
+  @js.native
+  trait DelegatedService extends js.Object {
+    var DelegationEnabledDate: js.UndefOr[Timestamp]
+    var ServicePrincipal: js.UndefOr[ServicePrincipal]
+  }
+
+  object DelegatedService {
+    @inline
+    def apply(
+        DelegationEnabledDate: js.UndefOr[Timestamp] = js.undefined,
+        ServicePrincipal: js.UndefOr[ServicePrincipal] = js.undefined
+    ): DelegatedService = {
+      val __obj = js.Dynamic.literal()
+      DelegationEnabledDate.foreach(__v => __obj.updateDynamic("DelegationEnabledDate")(__v.asInstanceOf[js.Any]))
+      ServicePrincipal.foreach(__v => __obj.updateDynamic("ServicePrincipal")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DelegatedService]
+    }
+  }
+
   @js.native
   trait DeleteOrganizationalUnitRequest extends js.Object {
     var OrganizationalUnitId: OrganizationalUnitId
@@ -773,6 +858,27 @@ package organizations {
       )
 
       __obj.asInstanceOf[DeletePolicyRequest]
+    }
+  }
+
+  @js.native
+  trait DeregisterDelegatedAdministratorRequest extends js.Object {
+    var AccountId: AccountId
+    var ServicePrincipal: ServicePrincipal
+  }
+
+  object DeregisterDelegatedAdministratorRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        ServicePrincipal: ServicePrincipal
+    ): DeregisterDelegatedAdministratorRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId"        -> AccountId.asInstanceOf[js.Any],
+        "ServicePrincipal" -> ServicePrincipal.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeregisterDelegatedAdministratorRequest]
     }
   }
 
@@ -1106,9 +1212,10 @@ package organizations {
   @js.native
   sealed trait EffectivePolicyType extends js.Any
   object EffectivePolicyType extends js.Object {
-    val TAG_POLICY = "TAG_POLICY".asInstanceOf[EffectivePolicyType]
+    val TAG_POLICY    = "TAG_POLICY".asInstanceOf[EffectivePolicyType]
+    val BACKUP_POLICY = "BACKUP_POLICY".asInstanceOf[EffectivePolicyType]
 
-    val values = js.Object.freeze(js.Array(TAG_POLICY))
+    val values = js.Object.freeze(js.Array(TAG_POLICY, BACKUP_POLICY))
   }
 
   @js.native
@@ -1196,7 +1303,7 @@ package organizations {
   }
 
   /**
-    * A structure that contains details of a service principal that is enabled to integrate with AWS Organizations.
+    * A structure that contains details of a service principal that represents an AWS service that is enabled to integrate with AWS Organizations.
     */
   @js.native
   trait EnabledServicePrincipal extends js.Object {
@@ -1218,8 +1325,8 @@ package organizations {
   }
 
   /**
-    * Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, assume that a master account (the originator) invites another account (the recipient) to join its organization. In that case, the two accounts exchange information as a series of handshake requests and responses.
-    *  ```Note:``` Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering that state. After that, they are deleted.
+    * Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a master account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.
+    *  ```Note:``` Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering that state After that they are deleted.
     */
   @js.native
   trait Handshake extends js.Object {
@@ -1631,6 +1738,90 @@ package organizations {
   }
 
   @js.native
+  trait ListDelegatedAdministratorsRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+    var ServicePrincipal: js.UndefOr[ServicePrincipal]
+  }
+
+  object ListDelegatedAdministratorsRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        ServicePrincipal: js.UndefOr[ServicePrincipal] = js.undefined
+    ): ListDelegatedAdministratorsRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ServicePrincipal.foreach(__v => __obj.updateDynamic("ServicePrincipal")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDelegatedAdministratorsRequest]
+    }
+  }
+
+  @js.native
+  trait ListDelegatedAdministratorsResponse extends js.Object {
+    var DelegatedAdministrators: js.UndefOr[DelegatedAdministrators]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListDelegatedAdministratorsResponse {
+    @inline
+    def apply(
+        DelegatedAdministrators: js.UndefOr[DelegatedAdministrators] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDelegatedAdministratorsResponse = {
+      val __obj = js.Dynamic.literal()
+      DelegatedAdministrators.foreach(__v => __obj.updateDynamic("DelegatedAdministrators")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDelegatedAdministratorsResponse]
+    }
+  }
+
+  @js.native
+  trait ListDelegatedServicesForAccountRequest extends js.Object {
+    var AccountId: AccountId
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListDelegatedServicesForAccountRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDelegatedServicesForAccountRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDelegatedServicesForAccountRequest]
+    }
+  }
+
+  @js.native
+  trait ListDelegatedServicesForAccountResponse extends js.Object {
+    var DelegatedServices: js.UndefOr[DelegatedServices]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListDelegatedServicesForAccountResponse {
+    @inline
+    def apply(
+        DelegatedServices: js.UndefOr[DelegatedServices] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDelegatedServicesForAccountResponse = {
+      val __obj = js.Dynamic.literal()
+      DelegatedServices.foreach(__v => __obj.updateDynamic("DelegatedServices")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDelegatedServicesForAccountResponse]
+    }
+  }
+
+  @js.native
   trait ListHandshakesForAccountRequest extends js.Object {
     var Filter: js.UndefOr[HandshakeFilter]
     var MaxResults: js.UndefOr[MaxResults]
@@ -2033,7 +2224,7 @@ package organizations {
   }
 
   /**
-    * Contains details about an organization. An organization is a collection of accounts that are centrally managed together using consolidated billing, organized hierarchically with organizational units (OUs), and controlled with policies.
+    * Contains details about an organization. An organization is a collection of accounts that are centrally managed together using consolidated billing, organized hierarchically with organizational units (OUs), and controlled with policies .
     */
   @js.native
   trait Organization extends js.Object {
@@ -2223,8 +2414,9 @@ package organizations {
   object PolicyType extends js.Object {
     val SERVICE_CONTROL_POLICY = "SERVICE_CONTROL_POLICY".asInstanceOf[PolicyType]
     val TAG_POLICY             = "TAG_POLICY".asInstanceOf[PolicyType]
+    val BACKUP_POLICY          = "BACKUP_POLICY".asInstanceOf[PolicyType]
 
-    val values = js.Object.freeze(js.Array(SERVICE_CONTROL_POLICY, TAG_POLICY))
+    val values = js.Object.freeze(js.Array(SERVICE_CONTROL_POLICY, TAG_POLICY, BACKUP_POLICY))
   }
 
   @js.native
@@ -2256,6 +2448,27 @@ package organizations {
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PolicyTypeSummary]
+    }
+  }
+
+  @js.native
+  trait RegisterDelegatedAdministratorRequest extends js.Object {
+    var AccountId: AccountId
+    var ServicePrincipal: ServicePrincipal
+  }
+
+  object RegisterDelegatedAdministratorRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        ServicePrincipal: ServicePrincipal
+    ): RegisterDelegatedAdministratorRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId"        -> AccountId.asInstanceOf[js.Any],
+        "ServicePrincipal" -> ServicePrincipal.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[RegisterDelegatedAdministratorRequest]
     }
   }
 

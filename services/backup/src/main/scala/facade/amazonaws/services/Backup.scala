@@ -8,6 +8,7 @@ import facade.amazonaws._
 
 package object backup {
   type ARN                            = String
+  type AccountId                      = String
   type BackupJobsList                 = js.Array[BackupJob]
   type BackupPlanName                 = String
   type BackupPlanTemplatesList        = js.Array[BackupPlanTemplatesListMember]
@@ -28,6 +29,7 @@ package object backup {
   type CronExpression                 = String
   type IAMPolicy                      = String
   type IAMRoleArn                     = String
+  type IsEnabled                      = Boolean
   type ListOfTags                     = js.Array[Condition]
   type MaxResults                     = Int
   type Metadata                       = js.Dictionary[MetadataValue]
@@ -38,6 +40,7 @@ package object backup {
   type RecoveryPointByResourceList    = js.Array[RecoveryPointByResource]
   type ResourceArns                   = js.Array[ARN]
   type ResourceType                   = String
+  type ResourceTypeOptInPreference    = js.Dictionary[IsEnabled]
   type ResourceTypes                  = js.Array[ResourceType]
   type RestoreJobId                   = String
   type RestoreJobsList                = js.Array[RestoreJobsListMember]
@@ -79,6 +82,9 @@ package object backup {
     ): Future[DescribeProtectedResourceOutput] = service.describeProtectedResource(params).promise().toFuture
     @inline def describeRecoveryPointFuture(params: DescribeRecoveryPointInput): Future[DescribeRecoveryPointOutput] =
       service.describeRecoveryPoint(params).promise().toFuture
+    @inline def describeRegionSettingsFuture(
+        params: DescribeRegionSettingsInput
+    ): Future[DescribeRegionSettingsOutput] = service.describeRegionSettings(params).promise().toFuture
     @inline def describeRestoreJobFuture(params: DescribeRestoreJobInput): Future[DescribeRestoreJobOutput] =
       service.describeRestoreJob(params).promise().toFuture
     @inline def exportBackupPlanTemplateFuture(
@@ -156,6 +162,8 @@ package object backup {
     @inline def updateRecoveryPointLifecycleFuture(
         params: UpdateRecoveryPointLifecycleInput
     ): Future[UpdateRecoveryPointLifecycleOutput] = service.updateRecoveryPointLifecycle(params).promise().toFuture
+    @inline def updateRegionSettingsFuture(params: UpdateRegionSettingsInput): Future[js.Object] =
+      service.updateRegionSettings(params).promise().toFuture
   }
 }
 
@@ -179,8 +187,9 @@ package backup {
     def describeCopyJob(params: DescribeCopyJobInput): Request[DescribeCopyJobOutput]                   = js.native
     def describeProtectedResource(params: DescribeProtectedResourceInput): Request[DescribeProtectedResourceOutput] =
       js.native
-    def describeRecoveryPoint(params: DescribeRecoveryPointInput): Request[DescribeRecoveryPointOutput] = js.native
-    def describeRestoreJob(params: DescribeRestoreJobInput): Request[DescribeRestoreJobOutput]          = js.native
+    def describeRecoveryPoint(params: DescribeRecoveryPointInput): Request[DescribeRecoveryPointOutput]    = js.native
+    def describeRegionSettings(params: DescribeRegionSettingsInput): Request[DescribeRegionSettingsOutput] = js.native
+    def describeRestoreJob(params: DescribeRestoreJobInput): Request[DescribeRestoreJobOutput]             = js.native
     def exportBackupPlanTemplate(params: ExportBackupPlanTemplateInput): Request[ExportBackupPlanTemplateOutput] =
       js.native
     def getBackupPlan(params: GetBackupPlanInput): Request[GetBackupPlanOutput]                         = js.native
@@ -225,7 +234,8 @@ package backup {
     def updateBackupPlan(params: UpdateBackupPlanInput): Request[UpdateBackupPlanOutput]          = js.native
     def updateRecoveryPointLifecycle(
         params: UpdateRecoveryPointLifecycleInput
-    ): Request[UpdateRecoveryPointLifecycleOutput] = js.native
+    ): Request[UpdateRecoveryPointLifecycleOutput]                                  = js.native
+    def updateRegionSettings(params: UpdateRegionSettingsInput): Request[js.Object] = js.native
   }
 
   /**
@@ -233,6 +243,7 @@ package backup {
     */
   @js.native
   trait BackupJob extends js.Object {
+    var AccountId: js.UndefOr[AccountId]
     var BackupJobId: js.UndefOr[String]
     var BackupSizeInBytes: js.UndefOr[Double]
     var BackupVaultArn: js.UndefOr[ARN]
@@ -255,6 +266,7 @@ package backup {
   object BackupJob {
     @inline
     def apply(
+        AccountId: js.UndefOr[AccountId] = js.undefined,
         BackupJobId: js.UndefOr[String] = js.undefined,
         BackupSizeInBytes: js.UndefOr[Double] = js.undefined,
         BackupVaultArn: js.UndefOr[ARN] = js.undefined,
@@ -274,6 +286,7 @@ package backup {
         StatusMessage: js.UndefOr[String] = js.undefined
     ): BackupJob = {
       val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
       BackupJobId.foreach(__v => __obj.updateDynamic("BackupJobId")(__v.asInstanceOf[js.Any]))
       BackupSizeInBytes.foreach(__v => __obj.updateDynamic("BackupSizeInBytes")(__v.asInstanceOf[js.Any]))
       BackupVaultArn.foreach(__v => __obj.updateDynamic("BackupVaultArn")(__v.asInstanceOf[js.Any]))
@@ -733,6 +746,7 @@ package backup {
     */
   @js.native
   trait CopyJob extends js.Object {
+    var AccountId: js.UndefOr[AccountId]
     var BackupSizeInBytes: js.UndefOr[Double]
     var CompletionDate: js.UndefOr[timestamp]
     var CopyJobId: js.UndefOr[String]
@@ -752,6 +766,7 @@ package backup {
   object CopyJob {
     @inline
     def apply(
+        AccountId: js.UndefOr[AccountId] = js.undefined,
         BackupSizeInBytes: js.UndefOr[Double] = js.undefined,
         CompletionDate: js.UndefOr[timestamp] = js.undefined,
         CopyJobId: js.UndefOr[String] = js.undefined,
@@ -768,6 +783,7 @@ package backup {
         StatusMessage: js.UndefOr[String] = js.undefined
     ): CopyJob = {
       val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
       BackupSizeInBytes.foreach(__v => __obj.updateDynamic("BackupSizeInBytes")(__v.asInstanceOf[js.Any]))
       CompletionDate.foreach(__v => __obj.updateDynamic("CompletionDate")(__v.asInstanceOf[js.Any]))
       CopyJobId.foreach(__v => __obj.updateDynamic("CopyJobId")(__v.asInstanceOf[js.Any]))
@@ -1104,6 +1120,7 @@ package backup {
 
   @js.native
   trait DescribeBackupJobOutput extends js.Object {
+    var AccountId: js.UndefOr[AccountId]
     var BackupJobId: js.UndefOr[String]
     var BackupSizeInBytes: js.UndefOr[Double]
     var BackupVaultArn: js.UndefOr[ARN]
@@ -1126,6 +1143,7 @@ package backup {
   object DescribeBackupJobOutput {
     @inline
     def apply(
+        AccountId: js.UndefOr[AccountId] = js.undefined,
         BackupJobId: js.UndefOr[String] = js.undefined,
         BackupSizeInBytes: js.UndefOr[Double] = js.undefined,
         BackupVaultArn: js.UndefOr[ARN] = js.undefined,
@@ -1145,6 +1163,7 @@ package backup {
         StatusMessage: js.UndefOr[String] = js.undefined
     ): DescribeBackupJobOutput = {
       val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
       BackupJobId.foreach(__v => __obj.updateDynamic("BackupJobId")(__v.asInstanceOf[js.Any]))
       BackupSizeInBytes.foreach(__v => __obj.updateDynamic("BackupSizeInBytes")(__v.asInstanceOf[js.Any]))
       BackupVaultArn.foreach(__v => __obj.updateDynamic("BackupVaultArn")(__v.asInstanceOf[js.Any]))
@@ -1375,6 +1394,37 @@ package backup {
   }
 
   @js.native
+  trait DescribeRegionSettingsInput extends js.Object {}
+
+  object DescribeRegionSettingsInput {
+    @inline
+    def apply(
+    ): DescribeRegionSettingsInput = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DescribeRegionSettingsInput]
+    }
+  }
+
+  @js.native
+  trait DescribeRegionSettingsOutput extends js.Object {
+    var ResourceTypeOptInPreference: js.UndefOr[ResourceTypeOptInPreference]
+  }
+
+  object DescribeRegionSettingsOutput {
+    @inline
+    def apply(
+        ResourceTypeOptInPreference: js.UndefOr[ResourceTypeOptInPreference] = js.undefined
+    ): DescribeRegionSettingsOutput = {
+      val __obj = js.Dynamic.literal()
+      ResourceTypeOptInPreference.foreach(__v =>
+        __obj.updateDynamic("ResourceTypeOptInPreference")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeRegionSettingsOutput]
+    }
+  }
+
+  @js.native
   trait DescribeRestoreJobInput extends js.Object {
     var RestoreJobId: RestoreJobId
   }
@@ -1394,6 +1444,7 @@ package backup {
 
   @js.native
   trait DescribeRestoreJobOutput extends js.Object {
+    var AccountId: js.UndefOr[AccountId]
     var BackupSizeInBytes: js.UndefOr[Double]
     var CompletionDate: js.UndefOr[timestamp]
     var CreatedResourceArn: js.UndefOr[ARN]
@@ -1402,6 +1453,7 @@ package backup {
     var IamRoleArn: js.UndefOr[IAMRoleArn]
     var PercentDone: js.UndefOr[String]
     var RecoveryPointArn: js.UndefOr[ARN]
+    var ResourceType: js.UndefOr[ResourceType]
     var RestoreJobId: js.UndefOr[String]
     var Status: js.UndefOr[RestoreJobStatus]
     var StatusMessage: js.UndefOr[String]
@@ -1410,6 +1462,7 @@ package backup {
   object DescribeRestoreJobOutput {
     @inline
     def apply(
+        AccountId: js.UndefOr[AccountId] = js.undefined,
         BackupSizeInBytes: js.UndefOr[Double] = js.undefined,
         CompletionDate: js.UndefOr[timestamp] = js.undefined,
         CreatedResourceArn: js.UndefOr[ARN] = js.undefined,
@@ -1418,11 +1471,13 @@ package backup {
         IamRoleArn: js.UndefOr[IAMRoleArn] = js.undefined,
         PercentDone: js.UndefOr[String] = js.undefined,
         RecoveryPointArn: js.UndefOr[ARN] = js.undefined,
+        ResourceType: js.UndefOr[ResourceType] = js.undefined,
         RestoreJobId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[RestoreJobStatus] = js.undefined,
         StatusMessage: js.UndefOr[String] = js.undefined
     ): DescribeRestoreJobOutput = {
       val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
       BackupSizeInBytes.foreach(__v => __obj.updateDynamic("BackupSizeInBytes")(__v.asInstanceOf[js.Any]))
       CompletionDate.foreach(__v => __obj.updateDynamic("CompletionDate")(__v.asInstanceOf[js.Any]))
       CreatedResourceArn.foreach(__v => __obj.updateDynamic("CreatedResourceArn")(__v.asInstanceOf[js.Any]))
@@ -1433,6 +1488,7 @@ package backup {
       IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
       PercentDone.foreach(__v => __obj.updateDynamic("PercentDone")(__v.asInstanceOf[js.Any]))
       RecoveryPointArn.foreach(__v => __obj.updateDynamic("RecoveryPointArn")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       RestoreJobId.foreach(__v => __obj.updateDynamic("RestoreJobId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
@@ -1818,6 +1874,7 @@ package backup {
 
   @js.native
   trait ListBackupJobsInput extends js.Object {
+    var ByAccountId: js.UndefOr[AccountId]
     var ByBackupVaultName: js.UndefOr[BackupVaultName]
     var ByCreatedAfter: js.UndefOr[timestamp]
     var ByCreatedBefore: js.UndefOr[timestamp]
@@ -1831,6 +1888,7 @@ package backup {
   object ListBackupJobsInput {
     @inline
     def apply(
+        ByAccountId: js.UndefOr[AccountId] = js.undefined,
         ByBackupVaultName: js.UndefOr[BackupVaultName] = js.undefined,
         ByCreatedAfter: js.UndefOr[timestamp] = js.undefined,
         ByCreatedBefore: js.UndefOr[timestamp] = js.undefined,
@@ -1841,6 +1899,7 @@ package backup {
         NextToken: js.UndefOr[String] = js.undefined
     ): ListBackupJobsInput = {
       val __obj = js.Dynamic.literal()
+      ByAccountId.foreach(__v => __obj.updateDynamic("ByAccountId")(__v.asInstanceOf[js.Any]))
       ByBackupVaultName.foreach(__v => __obj.updateDynamic("ByBackupVaultName")(__v.asInstanceOf[js.Any]))
       ByCreatedAfter.foreach(__v => __obj.updateDynamic("ByCreatedAfter")(__v.asInstanceOf[js.Any]))
       ByCreatedBefore.foreach(__v => __obj.updateDynamic("ByCreatedBefore")(__v.asInstanceOf[js.Any]))
@@ -2077,6 +2136,7 @@ package backup {
 
   @js.native
   trait ListCopyJobsInput extends js.Object {
+    var ByAccountId: js.UndefOr[AccountId]
     var ByCreatedAfter: js.UndefOr[timestamp]
     var ByCreatedBefore: js.UndefOr[timestamp]
     var ByDestinationVaultArn: js.UndefOr[String]
@@ -2090,6 +2150,7 @@ package backup {
   object ListCopyJobsInput {
     @inline
     def apply(
+        ByAccountId: js.UndefOr[AccountId] = js.undefined,
         ByCreatedAfter: js.UndefOr[timestamp] = js.undefined,
         ByCreatedBefore: js.UndefOr[timestamp] = js.undefined,
         ByDestinationVaultArn: js.UndefOr[String] = js.undefined,
@@ -2100,6 +2161,7 @@ package backup {
         NextToken: js.UndefOr[String] = js.undefined
     ): ListCopyJobsInput = {
       val __obj = js.Dynamic.literal()
+      ByAccountId.foreach(__v => __obj.updateDynamic("ByAccountId")(__v.asInstanceOf[js.Any]))
       ByCreatedAfter.foreach(__v => __obj.updateDynamic("ByCreatedAfter")(__v.asInstanceOf[js.Any]))
       ByCreatedBefore.foreach(__v => __obj.updateDynamic("ByCreatedBefore")(__v.asInstanceOf[js.Any]))
       ByDestinationVaultArn.foreach(__v => __obj.updateDynamic("ByDestinationVaultArn")(__v.asInstanceOf[js.Any]))
@@ -2272,6 +2334,10 @@ package backup {
 
   @js.native
   trait ListRestoreJobsInput extends js.Object {
+    var ByAccountId: js.UndefOr[AccountId]
+    var ByCreatedAfter: js.UndefOr[timestamp]
+    var ByCreatedBefore: js.UndefOr[timestamp]
+    var ByStatus: js.UndefOr[RestoreJobStatus]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[String]
   }
@@ -2279,10 +2345,18 @@ package backup {
   object ListRestoreJobsInput {
     @inline
     def apply(
+        ByAccountId: js.UndefOr[AccountId] = js.undefined,
+        ByCreatedAfter: js.UndefOr[timestamp] = js.undefined,
+        ByCreatedBefore: js.UndefOr[timestamp] = js.undefined,
+        ByStatus: js.UndefOr[RestoreJobStatus] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListRestoreJobsInput = {
       val __obj = js.Dynamic.literal()
+      ByAccountId.foreach(__v => __obj.updateDynamic("ByAccountId")(__v.asInstanceOf[js.Any]))
+      ByCreatedAfter.foreach(__v => __obj.updateDynamic("ByCreatedAfter")(__v.asInstanceOf[js.Any]))
+      ByCreatedBefore.foreach(__v => __obj.updateDynamic("ByCreatedBefore")(__v.asInstanceOf[js.Any]))
+      ByStatus.foreach(__v => __obj.updateDynamic("ByStatus")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRestoreJobsInput]
@@ -2575,6 +2649,7 @@ package backup {
     */
   @js.native
   trait RestoreJobsListMember extends js.Object {
+    var AccountId: js.UndefOr[AccountId]
     var BackupSizeInBytes: js.UndefOr[Double]
     var CompletionDate: js.UndefOr[timestamp]
     var CreatedResourceArn: js.UndefOr[ARN]
@@ -2583,6 +2658,7 @@ package backup {
     var IamRoleArn: js.UndefOr[IAMRoleArn]
     var PercentDone: js.UndefOr[String]
     var RecoveryPointArn: js.UndefOr[ARN]
+    var ResourceType: js.UndefOr[ResourceType]
     var RestoreJobId: js.UndefOr[String]
     var Status: js.UndefOr[RestoreJobStatus]
     var StatusMessage: js.UndefOr[String]
@@ -2591,6 +2667,7 @@ package backup {
   object RestoreJobsListMember {
     @inline
     def apply(
+        AccountId: js.UndefOr[AccountId] = js.undefined,
         BackupSizeInBytes: js.UndefOr[Double] = js.undefined,
         CompletionDate: js.UndefOr[timestamp] = js.undefined,
         CreatedResourceArn: js.UndefOr[ARN] = js.undefined,
@@ -2599,11 +2676,13 @@ package backup {
         IamRoleArn: js.UndefOr[IAMRoleArn] = js.undefined,
         PercentDone: js.UndefOr[String] = js.undefined,
         RecoveryPointArn: js.UndefOr[ARN] = js.undefined,
+        ResourceType: js.UndefOr[ResourceType] = js.undefined,
         RestoreJobId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[RestoreJobStatus] = js.undefined,
         StatusMessage: js.UndefOr[String] = js.undefined
     ): RestoreJobsListMember = {
       val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
       BackupSizeInBytes.foreach(__v => __obj.updateDynamic("BackupSizeInBytes")(__v.asInstanceOf[js.Any]))
       CompletionDate.foreach(__v => __obj.updateDynamic("CompletionDate")(__v.asInstanceOf[js.Any]))
       CreatedResourceArn.foreach(__v => __obj.updateDynamic("CreatedResourceArn")(__v.asInstanceOf[js.Any]))
@@ -2614,6 +2693,7 @@ package backup {
       IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
       PercentDone.foreach(__v => __obj.updateDynamic("PercentDone")(__v.asInstanceOf[js.Any]))
       RecoveryPointArn.foreach(__v => __obj.updateDynamic("RecoveryPointArn")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       RestoreJobId.foreach(__v => __obj.updateDynamic("RestoreJobId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
@@ -2942,6 +3022,24 @@ package backup {
       Lifecycle.foreach(__v => __obj.updateDynamic("Lifecycle")(__v.asInstanceOf[js.Any]))
       RecoveryPointArn.foreach(__v => __obj.updateDynamic("RecoveryPointArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRecoveryPointLifecycleOutput]
+    }
+  }
+
+  @js.native
+  trait UpdateRegionSettingsInput extends js.Object {
+    var ResourceTypeOptInPreference: js.UndefOr[ResourceTypeOptInPreference]
+  }
+
+  object UpdateRegionSettingsInput {
+    @inline
+    def apply(
+        ResourceTypeOptInPreference: js.UndefOr[ResourceTypeOptInPreference] = js.undefined
+    ): UpdateRegionSettingsInput = {
+      val __obj = js.Dynamic.literal()
+      ResourceTypeOptInPreference.foreach(__v =>
+        __obj.updateDynamic("ResourceTypeOptInPreference")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[UpdateRegionSettingsInput]
     }
   }
 }

@@ -17,6 +17,7 @@ package object wafv2 {
   type EntityName                 = String
   type ExcludedRules              = js.Array[ExcludedRule]
   type FieldToMatchData           = String
+  type FirewallManagerRuleGroups  = js.Array[FirewallManagerRuleGroup]
   type HTTPHeaders                = js.Array[HTTPHeader]
   type HTTPMethod                 = String
   type HTTPVersion                = String
@@ -34,6 +35,7 @@ package object wafv2 {
   type MetricName                 = String
   type NextMarker                 = String
   type PaginationLimit            = Int
+  type PolicyString               = String
   type PopulationSize             = Double
   type RateLimit                  = Double
   type RedactedFields             = js.Array[FieldToMatch]
@@ -77,11 +79,18 @@ package object wafv2 {
       service.createRuleGroup(params).promise().toFuture
     @inline def createWebACLFuture(params: CreateWebACLRequest): Future[CreateWebACLResponse] =
       service.createWebACL(params).promise().toFuture
+    @inline def deleteFirewallManagerRuleGroupsFuture(
+        params: DeleteFirewallManagerRuleGroupsRequest
+    ): Future[DeleteFirewallManagerRuleGroupsResponse] =
+      service.deleteFirewallManagerRuleGroups(params).promise().toFuture
     @inline def deleteIPSetFuture(params: DeleteIPSetRequest): Future[DeleteIPSetResponse] =
       service.deleteIPSet(params).promise().toFuture
     @inline def deleteLoggingConfigurationFuture(
         params: DeleteLoggingConfigurationRequest
     ): Future[DeleteLoggingConfigurationResponse] = service.deleteLoggingConfiguration(params).promise().toFuture
+    @inline def deletePermissionPolicyFuture(
+        params: DeletePermissionPolicyRequest
+    ): Future[DeletePermissionPolicyResponse] = service.deletePermissionPolicy(params).promise().toFuture
     @inline def deleteRegexPatternSetFuture(
         params: DeleteRegexPatternSetRequest
     ): Future[DeleteRegexPatternSetResponse] = service.deleteRegexPatternSet(params).promise().toFuture
@@ -99,6 +108,8 @@ package object wafv2 {
     @inline def getLoggingConfigurationFuture(
         params: GetLoggingConfigurationRequest
     ): Future[GetLoggingConfigurationResponse] = service.getLoggingConfiguration(params).promise().toFuture
+    @inline def getPermissionPolicyFuture(params: GetPermissionPolicyRequest): Future[GetPermissionPolicyResponse] =
+      service.getPermissionPolicy(params).promise().toFuture
     @inline def getRateBasedStatementManagedKeysFuture(
         params: GetRateBasedStatementManagedKeysRequest
     ): Future[GetRateBasedStatementManagedKeysResponse] =
@@ -136,6 +147,8 @@ package object wafv2 {
     @inline def putLoggingConfigurationFuture(
         params: PutLoggingConfigurationRequest
     ): Future[PutLoggingConfigurationResponse] = service.putLoggingConfiguration(params).promise().toFuture
+    @inline def putPermissionPolicyFuture(params: PutPermissionPolicyRequest): Future[PutPermissionPolicyResponse] =
+      service.putPermissionPolicy(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
@@ -164,10 +177,15 @@ package wafv2 {
     def createRegexPatternSet(params: CreateRegexPatternSetRequest): Request[CreateRegexPatternSetResponse] = js.native
     def createRuleGroup(params: CreateRuleGroupRequest): Request[CreateRuleGroupResponse]                   = js.native
     def createWebACL(params: CreateWebACLRequest): Request[CreateWebACLResponse]                            = js.native
-    def deleteIPSet(params: DeleteIPSetRequest): Request[DeleteIPSetResponse]                               = js.native
+    def deleteFirewallManagerRuleGroups(
+        params: DeleteFirewallManagerRuleGroupsRequest
+    ): Request[DeleteFirewallManagerRuleGroupsResponse]                       = js.native
+    def deleteIPSet(params: DeleteIPSetRequest): Request[DeleteIPSetResponse] = js.native
     def deleteLoggingConfiguration(
         params: DeleteLoggingConfigurationRequest
-    ): Request[DeleteLoggingConfigurationResponse]                                                          = js.native
+    ): Request[DeleteLoggingConfigurationResponse] = js.native
+    def deletePermissionPolicy(params: DeletePermissionPolicyRequest): Request[DeletePermissionPolicyResponse] =
+      js.native
     def deleteRegexPatternSet(params: DeleteRegexPatternSetRequest): Request[DeleteRegexPatternSetResponse] = js.native
     def deleteRuleGroup(params: DeleteRuleGroupRequest): Request[DeleteRuleGroupResponse]                   = js.native
     def deleteWebACL(params: DeleteWebACLRequest): Request[DeleteWebACLResponse]                            = js.native
@@ -177,6 +195,7 @@ package wafv2 {
     def getIPSet(params: GetIPSetRequest): Request[GetIPSetResponse]                               = js.native
     def getLoggingConfiguration(params: GetLoggingConfigurationRequest): Request[GetLoggingConfigurationResponse] =
       js.native
+    def getPermissionPolicy(params: GetPermissionPolicyRequest): Request[GetPermissionPolicyResponse] = js.native
     def getRateBasedStatementManagedKeys(
         params: GetRateBasedStatementManagedKeysRequest
     ): Request[GetRateBasedStatementManagedKeysResponse]                                                 = js.native
@@ -200,6 +219,7 @@ package wafv2 {
     def listWebACLs(params: ListWebACLsRequest): Request[ListWebACLsResponse]                         = js.native
     def putLoggingConfiguration(params: PutLoggingConfigurationRequest): Request[PutLoggingConfigurationResponse] =
       js.native
+    def putPermissionPolicy(params: PutPermissionPolicyRequest): Request[PutPermissionPolicyResponse]       = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                               = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                         = js.native
     def updateIPSet(params: UpdateIPSetRequest): Request[UpdateIPSetResponse]                               = js.native
@@ -1166,6 +1186,43 @@ package wafv2 {
   }
 
   @js.native
+  trait DeleteFirewallManagerRuleGroupsRequest extends js.Object {
+    var WebACLArn: ResourceArn
+    var WebACLLockToken: LockToken
+  }
+
+  object DeleteFirewallManagerRuleGroupsRequest {
+    @inline
+    def apply(
+        WebACLArn: ResourceArn,
+        WebACLLockToken: LockToken
+    ): DeleteFirewallManagerRuleGroupsRequest = {
+      val __obj = js.Dynamic.literal(
+        "WebACLArn"       -> WebACLArn.asInstanceOf[js.Any],
+        "WebACLLockToken" -> WebACLLockToken.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteFirewallManagerRuleGroupsRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteFirewallManagerRuleGroupsResponse extends js.Object {
+    var NextWebACLLockToken: js.UndefOr[LockToken]
+  }
+
+  object DeleteFirewallManagerRuleGroupsResponse {
+    @inline
+    def apply(
+        NextWebACLLockToken: js.UndefOr[LockToken] = js.undefined
+    ): DeleteFirewallManagerRuleGroupsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextWebACLLockToken.foreach(__v => __obj.updateDynamic("NextWebACLLockToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteFirewallManagerRuleGroupsResponse]
+    }
+  }
+
+  @js.native
   trait DeleteIPSetRequest extends js.Object {
     var Id: EntityId
     var LockToken: LockToken
@@ -1233,6 +1290,37 @@ package wafv2 {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteLoggingConfigurationResponse]
+    }
+  }
+
+  @js.native
+  trait DeletePermissionPolicyRequest extends js.Object {
+    var ResourceArn: ResourceArn
+  }
+
+  object DeletePermissionPolicyRequest {
+    @inline
+    def apply(
+        ResourceArn: ResourceArn
+    ): DeletePermissionPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeletePermissionPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait DeletePermissionPolicyResponse extends js.Object {}
+
+  object DeletePermissionPolicyResponse {
+    @inline
+    def apply(
+    ): DeletePermissionPolicyResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeletePermissionPolicyResponse]
     }
   }
 
@@ -1454,7 +1542,7 @@ package wafv2 {
 
   /**
     * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
-    * The part of a web request that you want AWS WAF to inspect. Include the <code>FieldToMatch</code> types that you want to inspect, with additional specifications as needed, according to the type.
+    * The part of a web request that you want AWS WAF to inspect. Include the single <code>FieldToMatch</code> type that you want to inspect, with additional specifications as needed, according to the type. You specify a single request component in <code>FieldToMatch</code> for each rule statement that requires it. To inspect more than one component of a web request, create a separate rule statement for each component.
     */
   @js.native
   trait FieldToMatch extends js.Object {
@@ -1487,6 +1575,65 @@ package wafv2 {
       SingleQueryArgument.foreach(__v => __obj.updateDynamic("SingleQueryArgument")(__v.asInstanceOf[js.Any]))
       UriPath.foreach(__v => __obj.updateDynamic("UriPath")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FieldToMatch]
+    }
+  }
+
+  /**
+    * A rule group that's defined for an AWS Firewall Manager WAF policy.
+    */
+  @js.native
+  trait FirewallManagerRuleGroup extends js.Object {
+    var FirewallManagerStatement: FirewallManagerStatement
+    var Name: EntityName
+    var OverrideAction: OverrideAction
+    var Priority: RulePriority
+    var VisibilityConfig: VisibilityConfig
+  }
+
+  object FirewallManagerRuleGroup {
+    @inline
+    def apply(
+        FirewallManagerStatement: FirewallManagerStatement,
+        Name: EntityName,
+        OverrideAction: OverrideAction,
+        Priority: RulePriority,
+        VisibilityConfig: VisibilityConfig
+    ): FirewallManagerRuleGroup = {
+      val __obj = js.Dynamic.literal(
+        "FirewallManagerStatement" -> FirewallManagerStatement.asInstanceOf[js.Any],
+        "Name"                     -> Name.asInstanceOf[js.Any],
+        "OverrideAction"           -> OverrideAction.asInstanceOf[js.Any],
+        "Priority"                 -> Priority.asInstanceOf[js.Any],
+        "VisibilityConfig"         -> VisibilityConfig.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[FirewallManagerRuleGroup]
+    }
+  }
+
+  /**
+    * The processing guidance for an AWS Firewall Manager rule. This is like a regular rule <a>Statement</a>, but it can only contain a rule group reference.
+    */
+  @js.native
+  trait FirewallManagerStatement extends js.Object {
+    var ManagedRuleGroupStatement: js.UndefOr[ManagedRuleGroupStatement]
+    var RuleGroupReferenceStatement: js.UndefOr[RuleGroupReferenceStatement]
+  }
+
+  object FirewallManagerStatement {
+    @inline
+    def apply(
+        ManagedRuleGroupStatement: js.UndefOr[ManagedRuleGroupStatement] = js.undefined,
+        RuleGroupReferenceStatement: js.UndefOr[RuleGroupReferenceStatement] = js.undefined
+    ): FirewallManagerStatement = {
+      val __obj = js.Dynamic.literal()
+      ManagedRuleGroupStatement.foreach(__v =>
+        __obj.updateDynamic("ManagedRuleGroupStatement")(__v.asInstanceOf[js.Any])
+      )
+      RuleGroupReferenceStatement.foreach(__v =>
+        __obj.updateDynamic("RuleGroupReferenceStatement")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[FirewallManagerStatement]
     }
   }
 
@@ -1584,6 +1731,40 @@ package wafv2 {
       val __obj = js.Dynamic.literal()
       LoggingConfiguration.foreach(__v => __obj.updateDynamic("LoggingConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLoggingConfigurationResponse]
+    }
+  }
+
+  @js.native
+  trait GetPermissionPolicyRequest extends js.Object {
+    var ResourceArn: ResourceArn
+  }
+
+  object GetPermissionPolicyRequest {
+    @inline
+    def apply(
+        ResourceArn: ResourceArn
+    ): GetPermissionPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetPermissionPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait GetPermissionPolicyResponse extends js.Object {
+    var Policy: js.UndefOr[PolicyString]
+  }
+
+  object GetPermissionPolicyResponse {
+    @inline
+    def apply(
+        Policy: js.UndefOr[PolicyString] = js.undefined
+    ): GetPermissionPolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPermissionPolicyResponse]
     }
   }
 
@@ -2508,8 +2689,11 @@ package wafv2 {
   }
 
   /**
-    * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
-    * The action to use to override the rule's <code>Action</code> setting. You can use no override action, in which case the rule action is in effect, or count, in which case, if the rule matches a web request, it only counts the match.
+    * The override action to apply to the rules in a rule group. Used only for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
+    *  Set the override action to none to leave the rule actions in effect. Set it to count to only count matches, regardless of the rule action settings.
+    *  In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule <code>Action</code> setting, but not both:
+    * * If the rule statement references a rule group, use this override action setting and not the action setting.
+    *  * If the rule statement does not reference a rule group, use the rule action setting and not this rule override action setting.
     */
   @js.native
   trait OverrideAction extends js.Object {
@@ -2573,6 +2757,40 @@ package wafv2 {
       val __obj = js.Dynamic.literal()
       LoggingConfiguration.foreach(__v => __obj.updateDynamic("LoggingConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutLoggingConfigurationResponse]
+    }
+  }
+
+  @js.native
+  trait PutPermissionPolicyRequest extends js.Object {
+    var Policy: PolicyString
+    var ResourceArn: ResourceArn
+  }
+
+  object PutPermissionPolicyRequest {
+    @inline
+    def apply(
+        Policy: PolicyString,
+        ResourceArn: ResourceArn
+    ): PutPermissionPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "Policy"      -> Policy.asInstanceOf[js.Any],
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[PutPermissionPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait PutPermissionPolicyResponse extends js.Object {}
+
+  object PutPermissionPolicyResponse {
+    @inline
+    def apply(
+    ): PutPermissionPolicyResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[PutPermissionPolicyResponse]
     }
   }
 
@@ -3619,6 +3837,9 @@ package wafv2 {
     var VisibilityConfig: VisibilityConfig
     var Capacity: js.UndefOr[ConsumedCapacity]
     var Description: js.UndefOr[EntityDescription]
+    var ManagedByFirewallManager: js.UndefOr[Boolean]
+    var PostProcessFirewallManagerRuleGroups: js.UndefOr[FirewallManagerRuleGroups]
+    var PreProcessFirewallManagerRuleGroups: js.UndefOr[FirewallManagerRuleGroups]
     var Rules: js.UndefOr[Rules]
   }
 
@@ -3632,6 +3853,9 @@ package wafv2 {
         VisibilityConfig: VisibilityConfig,
         Capacity: js.UndefOr[ConsumedCapacity] = js.undefined,
         Description: js.UndefOr[EntityDescription] = js.undefined,
+        ManagedByFirewallManager: js.UndefOr[Boolean] = js.undefined,
+        PostProcessFirewallManagerRuleGroups: js.UndefOr[FirewallManagerRuleGroups] = js.undefined,
+        PreProcessFirewallManagerRuleGroups: js.UndefOr[FirewallManagerRuleGroups] = js.undefined,
         Rules: js.UndefOr[Rules] = js.undefined
     ): WebACL = {
       val __obj = js.Dynamic.literal(
@@ -3644,6 +3868,13 @@ package wafv2 {
 
       Capacity.foreach(__v => __obj.updateDynamic("Capacity")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ManagedByFirewallManager.foreach(__v => __obj.updateDynamic("ManagedByFirewallManager")(__v.asInstanceOf[js.Any]))
+      PostProcessFirewallManagerRuleGroups.foreach(__v =>
+        __obj.updateDynamic("PostProcessFirewallManagerRuleGroups")(__v.asInstanceOf[js.Any])
+      )
+      PreProcessFirewallManagerRuleGroups.foreach(__v =>
+        __obj.updateDynamic("PreProcessFirewallManagerRuleGroups")(__v.asInstanceOf[js.Any])
+      )
       Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WebACL]
     }

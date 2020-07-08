@@ -9,6 +9,7 @@ import facade.amazonaws._
 package object fsx {
   type AWSAccountId                        = String
   type ActiveDirectoryFullyQualifiedName   = String
+  type AdministrativeActions               = js.Array[AdministrativeAction]
   type ArchivePath                         = String
   type AutomaticBackupRetentionDays        = Int
   type BackupId                            = String
@@ -43,6 +44,7 @@ package object fsx {
   type IpAddress                           = String
   type KmsKeyId                            = String
   type LastUpdatedTime                     = js.Date
+  type LustreFileSystemMountName           = String
   type MaxResults                          = Int
   type Megabytes                           = Int
   type MegabytesPerSecond                  = Int
@@ -50,7 +52,9 @@ package object fsx {
   type NetworkInterfaceIds                 = js.Array[NetworkInterfaceId]
   type NextToken                           = String
   type OrganizationalUnitDistinguishedName = String
+  type PerUnitStorageThroughput            = Int
   type ProgressPercent                     = Int
+  type RequestTime                         = js.Date
   type ResourceARN                         = String
   type SecurityGroupId                     = String
   type SecurityGroupIds                    = js.Array[SecurityGroupId]
@@ -157,7 +161,74 @@ package fsx {
   }
 
   /**
-    * A backup of an Amazon FSx for Windows File Server file system. You can create a new file system from a backup to protect against data loss.
+    * Describes a specific Amazon FSx Administrative Action for the current Windows file system.
+    */
+  @js.native
+  trait AdministrativeAction extends js.Object {
+    var AdministrativeActionType: js.UndefOr[AdministrativeActionType]
+    var FailureDetails: js.UndefOr[AdministrativeActionFailureDetails]
+    var ProgressPercent: js.UndefOr[ProgressPercent]
+    var RequestTime: js.UndefOr[RequestTime]
+    var Status: js.UndefOr[Status]
+    var TargetFileSystemValues: js.UndefOr[FileSystem]
+  }
+
+  object AdministrativeAction {
+    @inline
+    def apply(
+        AdministrativeActionType: js.UndefOr[AdministrativeActionType] = js.undefined,
+        FailureDetails: js.UndefOr[AdministrativeActionFailureDetails] = js.undefined,
+        ProgressPercent: js.UndefOr[ProgressPercent] = js.undefined,
+        RequestTime: js.UndefOr[RequestTime] = js.undefined,
+        Status: js.UndefOr[Status] = js.undefined,
+        TargetFileSystemValues: js.UndefOr[FileSystem] = js.undefined
+    ): AdministrativeAction = {
+      val __obj = js.Dynamic.literal()
+      AdministrativeActionType.foreach(__v => __obj.updateDynamic("AdministrativeActionType")(__v.asInstanceOf[js.Any]))
+      FailureDetails.foreach(__v => __obj.updateDynamic("FailureDetails")(__v.asInstanceOf[js.Any]))
+      ProgressPercent.foreach(__v => __obj.updateDynamic("ProgressPercent")(__v.asInstanceOf[js.Any]))
+      RequestTime.foreach(__v => __obj.updateDynamic("RequestTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TargetFileSystemValues.foreach(__v => __obj.updateDynamic("TargetFileSystemValues")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AdministrativeAction]
+    }
+  }
+
+  /**
+    * Provides information about a failed administrative action.
+    */
+  @js.native
+  trait AdministrativeActionFailureDetails extends js.Object {
+    var Message: js.UndefOr[ErrorMessage]
+  }
+
+  object AdministrativeActionFailureDetails {
+    @inline
+    def apply(
+        Message: js.UndefOr[ErrorMessage] = js.undefined
+    ): AdministrativeActionFailureDetails = {
+      val __obj = js.Dynamic.literal()
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AdministrativeActionFailureDetails]
+    }
+  }
+
+  /**
+    * Describes the type of administrative action, as follows:
+    * * <code>FILE_SYSTEM_UPDATE</code> - A file system update administrative action initiated by the user from the Amazon FSx console, API (UpdateFileSystem), or CLI (update-file-system). A
+    *  * <code>STORAGE_OPTIMIZATION</code> - Once the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity completes successfully, a <code>STORAGE_OPTIMIZATION</code> task starts. Storage optimization is the process of migrating the file system data to the new, larger disks. You can track the storage migration progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> completes successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see [[https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html|Managing Storage Capacity]].
+    */
+  @js.native
+  sealed trait AdministrativeActionType extends js.Any
+  object AdministrativeActionType extends js.Object {
+    val FILE_SYSTEM_UPDATE   = "FILE_SYSTEM_UPDATE".asInstanceOf[AdministrativeActionType]
+    val STORAGE_OPTIMIZATION = "STORAGE_OPTIMIZATION".asInstanceOf[AdministrativeActionType]
+
+    val values = js.Object.freeze(js.Array(FILE_SYSTEM_UPDATE, STORAGE_OPTIMIZATION))
+  }
+
+  /**
+    * A backup of an Amazon FSx for file system.
     */
   @js.native
   trait Backup extends js.Object {
@@ -425,7 +496,9 @@ package fsx {
     var BackupId: BackupId
     var SubnetIds: SubnetIds
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
+    var LustreConfiguration: js.UndefOr[CreateFileSystemLustreConfiguration]
     var SecurityGroupIds: js.UndefOr[SecurityGroupIds]
+    var StorageType: js.UndefOr[StorageType]
     var Tags: js.UndefOr[Tags]
     var WindowsConfiguration: js.UndefOr[CreateFileSystemWindowsConfiguration]
   }
@@ -436,7 +509,9 @@ package fsx {
         BackupId: BackupId,
         SubnetIds: SubnetIds,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        LustreConfiguration: js.UndefOr[CreateFileSystemLustreConfiguration] = js.undefined,
         SecurityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
+        StorageType: js.UndefOr[StorageType] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
         WindowsConfiguration: js.UndefOr[CreateFileSystemWindowsConfiguration] = js.undefined
     ): CreateFileSystemFromBackupRequest = {
@@ -446,7 +521,9 @@ package fsx {
       )
 
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      LustreConfiguration.foreach(__v => __obj.updateDynamic("LustreConfiguration")(__v.asInstanceOf[js.Any]))
       SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       WindowsConfiguration.foreach(__v => __obj.updateDynamic("WindowsConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFileSystemFromBackupRequest]
@@ -473,28 +550,47 @@ package fsx {
   }
 
   /**
-    * The Lustre configuration for the file system being created. This value is required if <code>FileSystemType</code> is set to <code>LUSTRE</code>.
+    * The Lustre configuration for the file system being created.
     */
   @js.native
   trait CreateFileSystemLustreConfiguration extends js.Object {
+    var AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays]
+    var CopyTagsToBackups: js.UndefOr[Flag]
+    var DailyAutomaticBackupStartTime: js.UndefOr[DailyTime]
+    var DeploymentType: js.UndefOr[LustreDeploymentType]
     var ExportPath: js.UndefOr[ArchivePath]
     var ImportPath: js.UndefOr[ArchivePath]
     var ImportedFileChunkSize: js.UndefOr[Megabytes]
+    var PerUnitStorageThroughput: js.UndefOr[PerUnitStorageThroughput]
     var WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime]
   }
 
   object CreateFileSystemLustreConfiguration {
     @inline
     def apply(
+        AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays] = js.undefined,
+        CopyTagsToBackups: js.UndefOr[Flag] = js.undefined,
+        DailyAutomaticBackupStartTime: js.UndefOr[DailyTime] = js.undefined,
+        DeploymentType: js.UndefOr[LustreDeploymentType] = js.undefined,
         ExportPath: js.UndefOr[ArchivePath] = js.undefined,
         ImportPath: js.UndefOr[ArchivePath] = js.undefined,
         ImportedFileChunkSize: js.UndefOr[Megabytes] = js.undefined,
+        PerUnitStorageThroughput: js.UndefOr[PerUnitStorageThroughput] = js.undefined,
         WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined
     ): CreateFileSystemLustreConfiguration = {
       val __obj = js.Dynamic.literal()
+      AutomaticBackupRetentionDays.foreach(__v =>
+        __obj.updateDynamic("AutomaticBackupRetentionDays")(__v.asInstanceOf[js.Any])
+      )
+      CopyTagsToBackups.foreach(__v => __obj.updateDynamic("CopyTagsToBackups")(__v.asInstanceOf[js.Any]))
+      DailyAutomaticBackupStartTime.foreach(__v =>
+        __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any])
+      )
+      DeploymentType.foreach(__v => __obj.updateDynamic("DeploymentType")(__v.asInstanceOf[js.Any]))
       ExportPath.foreach(__v => __obj.updateDynamic("ExportPath")(__v.asInstanceOf[js.Any]))
       ImportPath.foreach(__v => __obj.updateDynamic("ImportPath")(__v.asInstanceOf[js.Any]))
       ImportedFileChunkSize.foreach(__v => __obj.updateDynamic("ImportedFileChunkSize")(__v.asInstanceOf[js.Any]))
+      PerUnitStorageThroughput.foreach(__v => __obj.updateDynamic("PerUnitStorageThroughput")(__v.asInstanceOf[js.Any]))
       WeeklyMaintenanceStartTime.foreach(__v =>
         __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any])
       )
@@ -514,6 +610,7 @@ package fsx {
     var KmsKeyId: js.UndefOr[KmsKeyId]
     var LustreConfiguration: js.UndefOr[CreateFileSystemLustreConfiguration]
     var SecurityGroupIds: js.UndefOr[SecurityGroupIds]
+    var StorageType: js.UndefOr[StorageType]
     var Tags: js.UndefOr[Tags]
     var WindowsConfiguration: js.UndefOr[CreateFileSystemWindowsConfiguration]
   }
@@ -528,6 +625,7 @@ package fsx {
         KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
         LustreConfiguration: js.UndefOr[CreateFileSystemLustreConfiguration] = js.undefined,
         SecurityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
+        StorageType: js.UndefOr[StorageType] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
         WindowsConfiguration: js.UndefOr[CreateFileSystemWindowsConfiguration] = js.undefined
     ): CreateFileSystemRequest = {
@@ -541,6 +639,7 @@ package fsx {
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       LustreConfiguration.foreach(__v => __obj.updateDynamic("LustreConfiguration")(__v.asInstanceOf[js.Any]))
       SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       WindowsConfiguration.foreach(__v => __obj.updateDynamic("WindowsConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFileSystemRequest]
@@ -847,12 +946,57 @@ package fsx {
   }
 
   /**
+    * The configuration object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.
+    */
+  @js.native
+  trait DeleteFileSystemLustreConfiguration extends js.Object {
+    var FinalBackupTags: js.UndefOr[Tags]
+    var SkipFinalBackup: js.UndefOr[Flag]
+  }
+
+  object DeleteFileSystemLustreConfiguration {
+    @inline
+    def apply(
+        FinalBackupTags: js.UndefOr[Tags] = js.undefined,
+        SkipFinalBackup: js.UndefOr[Flag] = js.undefined
+    ): DeleteFileSystemLustreConfiguration = {
+      val __obj = js.Dynamic.literal()
+      FinalBackupTags.foreach(__v => __obj.updateDynamic("FinalBackupTags")(__v.asInstanceOf[js.Any]))
+      SkipFinalBackup.foreach(__v => __obj.updateDynamic("SkipFinalBackup")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteFileSystemLustreConfiguration]
+    }
+  }
+
+  /**
+    * The response object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.
+    */
+  @js.native
+  trait DeleteFileSystemLustreResponse extends js.Object {
+    var FinalBackupId: js.UndefOr[BackupId]
+    var FinalBackupTags: js.UndefOr[Tags]
+  }
+
+  object DeleteFileSystemLustreResponse {
+    @inline
+    def apply(
+        FinalBackupId: js.UndefOr[BackupId] = js.undefined,
+        FinalBackupTags: js.UndefOr[Tags] = js.undefined
+    ): DeleteFileSystemLustreResponse = {
+      val __obj = js.Dynamic.literal()
+      FinalBackupId.foreach(__v => __obj.updateDynamic("FinalBackupId")(__v.asInstanceOf[js.Any]))
+      FinalBackupTags.foreach(__v => __obj.updateDynamic("FinalBackupTags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteFileSystemLustreResponse]
+    }
+  }
+
+  /**
     * The request object for <code>DeleteFileSystem</code> operation.
     */
   @js.native
   trait DeleteFileSystemRequest extends js.Object {
     var FileSystemId: FileSystemId
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
+    var LustreConfiguration: js.UndefOr[DeleteFileSystemLustreConfiguration]
     var WindowsConfiguration: js.UndefOr[DeleteFileSystemWindowsConfiguration]
   }
 
@@ -861,6 +1005,7 @@ package fsx {
     def apply(
         FileSystemId: FileSystemId,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        LustreConfiguration: js.UndefOr[DeleteFileSystemLustreConfiguration] = js.undefined,
         WindowsConfiguration: js.UndefOr[DeleteFileSystemWindowsConfiguration] = js.undefined
     ): DeleteFileSystemRequest = {
       val __obj = js.Dynamic.literal(
@@ -868,6 +1013,7 @@ package fsx {
       )
 
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      LustreConfiguration.foreach(__v => __obj.updateDynamic("LustreConfiguration")(__v.asInstanceOf[js.Any]))
       WindowsConfiguration.foreach(__v => __obj.updateDynamic("WindowsConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteFileSystemRequest]
     }
@@ -880,6 +1026,7 @@ package fsx {
   trait DeleteFileSystemResponse extends js.Object {
     var FileSystemId: js.UndefOr[FileSystemId]
     var Lifecycle: js.UndefOr[FileSystemLifecycle]
+    var LustreResponse: js.UndefOr[DeleteFileSystemLustreResponse]
     var WindowsResponse: js.UndefOr[DeleteFileSystemWindowsResponse]
   }
 
@@ -888,11 +1035,13 @@ package fsx {
     def apply(
         FileSystemId: js.UndefOr[FileSystemId] = js.undefined,
         Lifecycle: js.UndefOr[FileSystemLifecycle] = js.undefined,
+        LustreResponse: js.UndefOr[DeleteFileSystemLustreResponse] = js.undefined,
         WindowsResponse: js.UndefOr[DeleteFileSystemWindowsResponse] = js.undefined
     ): DeleteFileSystemResponse = {
       val __obj = js.Dynamic.literal()
       FileSystemId.foreach(__v => __obj.updateDynamic("FileSystemId")(__v.asInstanceOf[js.Any]))
       Lifecycle.foreach(__v => __obj.updateDynamic("Lifecycle")(__v.asInstanceOf[js.Any]))
+      LustreResponse.foreach(__v => __obj.updateDynamic("LustreResponse")(__v.asInstanceOf[js.Any]))
       WindowsResponse.foreach(__v => __obj.updateDynamic("WindowsResponse")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteFileSystemResponse]
     }
@@ -1088,6 +1237,7 @@ package fsx {
     */
   @js.native
   trait FileSystem extends js.Object {
+    var AdministrativeActions: js.UndefOr[AdministrativeActions]
     var CreationTime: js.UndefOr[CreationTime]
     var DNSName: js.UndefOr[DNSName]
     var FailureDetails: js.UndefOr[FileSystemFailureDetails]
@@ -1100,6 +1250,7 @@ package fsx {
     var OwnerId: js.UndefOr[AWSAccountId]
     var ResourceARN: js.UndefOr[ResourceARN]
     var StorageCapacity: js.UndefOr[StorageCapacity]
+    var StorageType: js.UndefOr[StorageType]
     var SubnetIds: js.UndefOr[SubnetIds]
     var Tags: js.UndefOr[Tags]
     var VpcId: js.UndefOr[VpcId]
@@ -1109,6 +1260,7 @@ package fsx {
   object FileSystem {
     @inline
     def apply(
+        AdministrativeActions: js.UndefOr[AdministrativeActions] = js.undefined,
         CreationTime: js.UndefOr[CreationTime] = js.undefined,
         DNSName: js.UndefOr[DNSName] = js.undefined,
         FailureDetails: js.UndefOr[FileSystemFailureDetails] = js.undefined,
@@ -1121,12 +1273,14 @@ package fsx {
         OwnerId: js.UndefOr[AWSAccountId] = js.undefined,
         ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
         StorageCapacity: js.UndefOr[StorageCapacity] = js.undefined,
+        StorageType: js.UndefOr[StorageType] = js.undefined,
         SubnetIds: js.UndefOr[SubnetIds] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
         VpcId: js.UndefOr[VpcId] = js.undefined,
         WindowsConfiguration: js.UndefOr[WindowsFileSystemConfiguration] = js.undefined
     ): FileSystem = {
       val __obj = js.Dynamic.literal()
+      AdministrativeActions.foreach(__v => __obj.updateDynamic("AdministrativeActions")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       DNSName.foreach(__v => __obj.updateDynamic("DNSName")(__v.asInstanceOf[js.Any]))
       FailureDetails.foreach(__v => __obj.updateDynamic("FailureDetails")(__v.asInstanceOf[js.Any]))
@@ -1139,6 +1293,7 @@ package fsx {
       OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
       ResourceARN.foreach(__v => __obj.updateDynamic("ResourceARN")(__v.asInstanceOf[js.Any]))
       StorageCapacity.foreach(__v => __obj.updateDynamic("StorageCapacity")(__v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
@@ -1234,10 +1389,11 @@ package fsx {
   @js.native
   sealed trait FilterName extends js.Any
   object FilterName extends js.Object {
-    val `file-system-id` = "file-system-id".asInstanceOf[FilterName]
-    val `backup-type`    = "backup-type".asInstanceOf[FilterName]
+    val `file-system-id`   = "file-system-id".asInstanceOf[FilterName]
+    val `backup-type`      = "backup-type".asInstanceOf[FilterName]
+    val `file-system-type` = "file-system-type".asInstanceOf[FilterName]
 
-    val values = js.Object.freeze(js.Array(`file-system-id`, `backup-type`))
+    val values = js.Object.freeze(js.Array(`file-system-id`, `backup-type`, `file-system-type`))
   }
 
   /**
@@ -1289,25 +1445,57 @@ package fsx {
     }
   }
 
+  @js.native
+  sealed trait LustreDeploymentType extends js.Any
+  object LustreDeploymentType extends js.Object {
+    val SCRATCH_1    = "SCRATCH_1".asInstanceOf[LustreDeploymentType]
+    val SCRATCH_2    = "SCRATCH_2".asInstanceOf[LustreDeploymentType]
+    val PERSISTENT_1 = "PERSISTENT_1".asInstanceOf[LustreDeploymentType]
+
+    val values = js.Object.freeze(js.Array(SCRATCH_1, SCRATCH_2, PERSISTENT_1))
+  }
+
   /**
     * The configuration for the Amazon FSx for Lustre file system.
     */
   @js.native
   trait LustreFileSystemConfiguration extends js.Object {
+    var AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays]
+    var CopyTagsToBackups: js.UndefOr[Flag]
+    var DailyAutomaticBackupStartTime: js.UndefOr[DailyTime]
     var DataRepositoryConfiguration: js.UndefOr[DataRepositoryConfiguration]
+    var DeploymentType: js.UndefOr[LustreDeploymentType]
+    var MountName: js.UndefOr[LustreFileSystemMountName]
+    var PerUnitStorageThroughput: js.UndefOr[PerUnitStorageThroughput]
     var WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime]
   }
 
   object LustreFileSystemConfiguration {
     @inline
     def apply(
+        AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays] = js.undefined,
+        CopyTagsToBackups: js.UndefOr[Flag] = js.undefined,
+        DailyAutomaticBackupStartTime: js.UndefOr[DailyTime] = js.undefined,
         DataRepositoryConfiguration: js.UndefOr[DataRepositoryConfiguration] = js.undefined,
+        DeploymentType: js.UndefOr[LustreDeploymentType] = js.undefined,
+        MountName: js.UndefOr[LustreFileSystemMountName] = js.undefined,
+        PerUnitStorageThroughput: js.UndefOr[PerUnitStorageThroughput] = js.undefined,
         WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined
     ): LustreFileSystemConfiguration = {
       val __obj = js.Dynamic.literal()
+      AutomaticBackupRetentionDays.foreach(__v =>
+        __obj.updateDynamic("AutomaticBackupRetentionDays")(__v.asInstanceOf[js.Any])
+      )
+      CopyTagsToBackups.foreach(__v => __obj.updateDynamic("CopyTagsToBackups")(__v.asInstanceOf[js.Any]))
+      DailyAutomaticBackupStartTime.foreach(__v =>
+        __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any])
+      )
       DataRepositoryConfiguration.foreach(__v =>
         __obj.updateDynamic("DataRepositoryConfiguration")(__v.asInstanceOf[js.Any])
       )
+      DeploymentType.foreach(__v => __obj.updateDynamic("DeploymentType")(__v.asInstanceOf[js.Any]))
+      MountName.foreach(__v => __obj.updateDynamic("MountName")(__v.asInstanceOf[js.Any]))
+      PerUnitStorageThroughput.foreach(__v => __obj.updateDynamic("PerUnitStorageThroughput")(__v.asInstanceOf[js.Any]))
       WeeklyMaintenanceStartTime.foreach(__v =>
         __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any])
       )
@@ -1407,7 +1595,7 @@ package fsx {
   }
 
   /**
-    * The configuration that Amazon FSx uses to join the Windows File Server instance to the self-managed Microsoft Active Directory (AD) directory.
+    * The configuration that Amazon FSx uses to join the Windows File Server instance to a self-managed Microsoft Active Directory (AD) directory.
     */
   @js.native
   trait SelfManagedActiveDirectoryConfigurationUpdates extends js.Object {
@@ -1429,6 +1617,30 @@ package fsx {
       UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SelfManagedActiveDirectoryConfigurationUpdates]
     }
+  }
+
+  @js.native
+  sealed trait Status extends js.Any
+  object Status extends js.Object {
+    val FAILED             = "FAILED".asInstanceOf[Status]
+    val IN_PROGRESS        = "IN_PROGRESS".asInstanceOf[Status]
+    val PENDING            = "PENDING".asInstanceOf[Status]
+    val COMPLETED          = "COMPLETED".asInstanceOf[Status]
+    val UPDATED_OPTIMIZING = "UPDATED_OPTIMIZING".asInstanceOf[Status]
+
+    val values = js.Object.freeze(js.Array(FAILED, IN_PROGRESS, PENDING, COMPLETED, UPDATED_OPTIMIZING))
+  }
+
+  /**
+    * The storage type for your Amazon FSx file system.
+    */
+  @js.native
+  sealed trait StorageType extends js.Any
+  object StorageType extends js.Object {
+    val SSD = "SSD".asInstanceOf[StorageType]
+    val HDD = "HDD".asInstanceOf[StorageType]
+
+    val values = js.Object.freeze(js.Array(SSD, HDD))
   }
 
   /**
@@ -1538,15 +1750,25 @@ package fsx {
     */
   @js.native
   trait UpdateFileSystemLustreConfiguration extends js.Object {
+    var AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays]
+    var DailyAutomaticBackupStartTime: js.UndefOr[DailyTime]
     var WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime]
   }
 
   object UpdateFileSystemLustreConfiguration {
     @inline
     def apply(
+        AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays] = js.undefined,
+        DailyAutomaticBackupStartTime: js.UndefOr[DailyTime] = js.undefined,
         WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined
     ): UpdateFileSystemLustreConfiguration = {
       val __obj = js.Dynamic.literal()
+      AutomaticBackupRetentionDays.foreach(__v =>
+        __obj.updateDynamic("AutomaticBackupRetentionDays")(__v.asInstanceOf[js.Any])
+      )
+      DailyAutomaticBackupStartTime.foreach(__v =>
+        __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any])
+      )
       WeeklyMaintenanceStartTime.foreach(__v =>
         __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any])
       )
@@ -1562,6 +1784,7 @@ package fsx {
     var FileSystemId: FileSystemId
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
     var LustreConfiguration: js.UndefOr[UpdateFileSystemLustreConfiguration]
+    var StorageCapacity: js.UndefOr[StorageCapacity]
     var WindowsConfiguration: js.UndefOr[UpdateFileSystemWindowsConfiguration]
   }
 
@@ -1571,6 +1794,7 @@ package fsx {
         FileSystemId: FileSystemId,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
         LustreConfiguration: js.UndefOr[UpdateFileSystemLustreConfiguration] = js.undefined,
+        StorageCapacity: js.UndefOr[StorageCapacity] = js.undefined,
         WindowsConfiguration: js.UndefOr[UpdateFileSystemWindowsConfiguration] = js.undefined
     ): UpdateFileSystemRequest = {
       val __obj = js.Dynamic.literal(
@@ -1579,6 +1803,7 @@ package fsx {
 
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
       LustreConfiguration.foreach(__v => __obj.updateDynamic("LustreConfiguration")(__v.asInstanceOf[js.Any]))
+      StorageCapacity.foreach(__v => __obj.updateDynamic("StorageCapacity")(__v.asInstanceOf[js.Any]))
       WindowsConfiguration.foreach(__v => __obj.updateDynamic("WindowsConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFileSystemRequest]
     }
@@ -1604,13 +1829,14 @@ package fsx {
   }
 
   /**
-    * Updates the Microsoft Windows configuration for an existing Amazon FSx for Windows File Server file system. Amazon FSx overwrites existing properties with non-null values provided in the request. If you don't specify a non-null value for a property, that property is not updated.
+    * Updates the configuration for an existing Amazon FSx for Windows File Server file system. Amazon FSx only overwrites existing properties with non-null values provided in the request.
     */
   @js.native
   trait UpdateFileSystemWindowsConfiguration extends js.Object {
     var AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays]
     var DailyAutomaticBackupStartTime: js.UndefOr[DailyTime]
     var SelfManagedActiveDirectoryConfiguration: js.UndefOr[SelfManagedActiveDirectoryConfigurationUpdates]
+    var ThroughputCapacity: js.UndefOr[MegabytesPerSecond]
     var WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime]
   }
 
@@ -1621,6 +1847,7 @@ package fsx {
         DailyAutomaticBackupStartTime: js.UndefOr[DailyTime] = js.undefined,
         SelfManagedActiveDirectoryConfiguration: js.UndefOr[SelfManagedActiveDirectoryConfigurationUpdates] =
           js.undefined,
+        ThroughputCapacity: js.UndefOr[MegabytesPerSecond] = js.undefined,
         WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined
     ): UpdateFileSystemWindowsConfiguration = {
       val __obj = js.Dynamic.literal()
@@ -1633,6 +1860,7 @@ package fsx {
       SelfManagedActiveDirectoryConfiguration.foreach(__v =>
         __obj.updateDynamic("SelfManagedActiveDirectoryConfiguration")(__v.asInstanceOf[js.Any])
       )
+      ThroughputCapacity.foreach(__v => __obj.updateDynamic("ThroughputCapacity")(__v.asInstanceOf[js.Any]))
       WeeklyMaintenanceStartTime.foreach(__v =>
         __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any])
       )
@@ -1645,8 +1873,9 @@ package fsx {
   object WindowsDeploymentType extends js.Object {
     val MULTI_AZ_1  = "MULTI_AZ_1".asInstanceOf[WindowsDeploymentType]
     val SINGLE_AZ_1 = "SINGLE_AZ_1".asInstanceOf[WindowsDeploymentType]
+    val SINGLE_AZ_2 = "SINGLE_AZ_2".asInstanceOf[WindowsDeploymentType]
 
-    val values = js.Object.freeze(js.Array(MULTI_AZ_1, SINGLE_AZ_1))
+    val values = js.Object.freeze(js.Array(MULTI_AZ_1, SINGLE_AZ_1, SINGLE_AZ_2))
   }
 
   /**

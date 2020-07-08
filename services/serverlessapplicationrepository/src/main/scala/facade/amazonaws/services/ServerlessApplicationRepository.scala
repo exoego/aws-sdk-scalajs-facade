@@ -55,6 +55,8 @@ package object serverlessapplicationrepository {
       service.listApplications(params).promise().toFuture
     @inline def putApplicationPolicyFuture(params: PutApplicationPolicyRequest): Future[PutApplicationPolicyResponse] =
       service.putApplicationPolicy(params).promise().toFuture
+    @inline def unshareApplicationFuture(params: UnshareApplicationRequest): Future[js.Object] =
+      service.unshareApplication(params).promise().toFuture
     @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] =
       service.updateApplication(params).promise().toFuture
   }
@@ -88,6 +90,7 @@ package serverlessapplicationrepository {
       js.native
     def listApplications(params: ListApplicationsRequest): Request[ListApplicationsResponse]             = js.native
     def putApplicationPolicy(params: PutApplicationPolicyRequest): Request[PutApplicationPolicyResponse] = js.native
+    def unshareApplication(params: UnshareApplicationRequest): Request[js.Object]                        = js.native
     def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResponse]          = js.native
   }
 
@@ -122,6 +125,7 @@ package serverlessapplicationrepository {
   trait ApplicationPolicyStatement extends js.Object {
     var Actions: __listOf__string
     var Principals: __listOf__string
+    var PrincipalOrgIDs: js.UndefOr[__listOf__string]
     var StatementId: js.UndefOr[__string]
   }
 
@@ -130,6 +134,7 @@ package serverlessapplicationrepository {
     def apply(
         Actions: __listOf__string,
         Principals: __listOf__string,
+        PrincipalOrgIDs: js.UndefOr[__listOf__string] = js.undefined,
         StatementId: js.UndefOr[__string] = js.undefined
     ): ApplicationPolicyStatement = {
       val __obj = js.Dynamic.literal(
@@ -137,6 +142,7 @@ package serverlessapplicationrepository {
         "Principals" -> Principals.asInstanceOf[js.Any]
       )
 
+      PrincipalOrgIDs.foreach(__v => __obj.updateDynamic("PrincipalOrgIDs")(__v.asInstanceOf[js.Any]))
       StatementId.foreach(__v => __obj.updateDynamic("StatementId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationPolicyStatement]
     }
@@ -1024,6 +1030,27 @@ package serverlessapplicationrepository {
       )
 
       __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait UnshareApplicationRequest extends js.Object {
+    var ApplicationId: __string
+    var OrganizationId: __string
+  }
+
+  object UnshareApplicationRequest {
+    @inline
+    def apply(
+        ApplicationId: __string,
+        OrganizationId: __string
+    ): UnshareApplicationRequest = {
+      val __obj = js.Dynamic.literal(
+        "ApplicationId"  -> ApplicationId.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UnshareApplicationRequest]
     }
   }
 

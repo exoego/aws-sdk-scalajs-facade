@@ -1408,14 +1408,8 @@ package kms {
   }
 
   /**
-    * Use this structure to allow cryptographic operations in the grant only when the operation request includes the specified [[https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context|encryption context]].
-    *  AWS KMS applies the grant constraints only when the grant allows a cryptographic operation that accepts an encryption context as input, such as the following.
-    * * <a>Encrypt</a>
-    *  * <a>Decrypt</a>
-    *  * <a>GenerateDataKey</a>
-    *  * <a>GenerateDataKeyWithoutPlaintext</a>
-    *  * <a>ReEncrypt</a>
-    * AWS KMS does not apply the grant constraints to other operations, such as <a>DescribeKey</a> or <a>ScheduleKeyDeletion</a>.
+    * Use this structure to allow [[https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations|cryptographic operations]] in the grant only when the operation request includes the specified [[https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context|encryption context]].
+    *  AWS KMS applies the grant constraints only to cryptographic operations that support an encryption context, that is, all cryptographic operations with a [[https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks|symmetric CMK]]. Grant constraints are not applied to operations that do not support an encryption context, such as cryptographic operations with asymmetric CMKs and management operations, such as <a>DescribeKey</a> or <a>ScheduleKeyDeletion</a>.
     *  <important> In a cryptographic operation, the encryption context in the decryption operation must be an exact, case-sensitive match for the keys and values in the encryption context of the encryption operation. Only the order of the pairs can vary.
     *  However, in a grant constraint, the key in each key-value pair is not case sensitive, but the value is case sensitive.
     *  To avoid confusion, do not use multiple encryption context pairs that differ only by case. To require a fully case-sensitive encryption context, use the <code>kms:EncryptionContext:</code> and <code>kms:EncryptionContextKeys</code> conditions in an IAM or key policy. For details, see [[https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context|kms:EncryptionContext:]] in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
@@ -1441,7 +1435,7 @@ package kms {
   }
 
   /**
-    * Contains information about an entry in a list of grants.
+    * Contains information about a grant.
     */
   @js.native
   trait GrantListEntry extends js.Object {

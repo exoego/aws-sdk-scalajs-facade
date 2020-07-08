@@ -15,11 +15,15 @@ package object cloudwatch {
   type AlarmName                         = String
   type AlarmNamePrefix                   = String
   type AlarmNames                        = js.Array[AlarmName]
+  type AlarmRule                         = String
+  type AlarmTypes                        = js.Array[AlarmType]
   type AmazonResourceName                = String
   type AnomalyDetectorExcludedTimeRanges = js.Array[Range]
+  type AnomalyDetectorMetricStat         = String
   type AnomalyDetectorMetricTimezone     = String
   type AnomalyDetectors                  = js.Array[AnomalyDetector]
   type BatchFailures                     = js.Array[PartialFailure]
+  type CompositeAlarms                   = js.Array[CompositeAlarm]
   type Counts                            = js.Array[DatapointValue]
   type DashboardArn                      = String
   type DashboardBody                     = String
@@ -159,6 +163,8 @@ package object cloudwatch {
       service.listTagsForResource(params).promise().toFuture
     @inline def putAnomalyDetectorFuture(params: PutAnomalyDetectorInput): Future[PutAnomalyDetectorOutput] =
       service.putAnomalyDetector(params).promise().toFuture
+    @inline def putCompositeAlarmFuture(params: PutCompositeAlarmInput): Future[js.Object] =
+      service.putCompositeAlarm(params).promise().toFuture
     @inline def putDashboardFuture(params: PutDashboardInput): Future[PutDashboardOutput] =
       service.putDashboard(params).promise().toFuture
     @inline def putInsightRuleFuture(params: PutInsightRuleInput): Future[PutInsightRuleOutput] =
@@ -206,6 +212,7 @@ package cloudwatch {
     def listMetrics(params: ListMetricsInput): Request[ListMetricsOutput]                            = js.native
     def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput]    = js.native
     def putAnomalyDetector(params: PutAnomalyDetectorInput): Request[PutAnomalyDetectorOutput]       = js.native
+    def putCompositeAlarm(params: PutCompositeAlarmInput): Request[js.Object]                        = js.native
     def putDashboard(params: PutDashboardInput): Request[PutDashboardOutput]                         = js.native
     def putInsightRule(params: PutInsightRuleInput): Request[PutInsightRuleOutput]                   = js.native
     def putMetricAlarm(params: PutMetricAlarmInput): Request[js.Object]                              = js.native
@@ -221,6 +228,7 @@ package cloudwatch {
   @js.native
   trait AlarmHistoryItem extends js.Object {
     var AlarmName: js.UndefOr[AlarmName]
+    var AlarmType: js.UndefOr[AlarmType]
     var HistoryData: js.UndefOr[HistoryData]
     var HistoryItemType: js.UndefOr[HistoryItemType]
     var HistorySummary: js.UndefOr[HistorySummary]
@@ -231,6 +239,7 @@ package cloudwatch {
     @inline
     def apply(
         AlarmName: js.UndefOr[AlarmName] = js.undefined,
+        AlarmType: js.UndefOr[AlarmType] = js.undefined,
         HistoryData: js.UndefOr[HistoryData] = js.undefined,
         HistoryItemType: js.UndefOr[HistoryItemType] = js.undefined,
         HistorySummary: js.UndefOr[HistorySummary] = js.undefined,
@@ -238,12 +247,22 @@ package cloudwatch {
     ): AlarmHistoryItem = {
       val __obj = js.Dynamic.literal()
       AlarmName.foreach(__v => __obj.updateDynamic("AlarmName")(__v.asInstanceOf[js.Any]))
+      AlarmType.foreach(__v => __obj.updateDynamic("AlarmType")(__v.asInstanceOf[js.Any]))
       HistoryData.foreach(__v => __obj.updateDynamic("HistoryData")(__v.asInstanceOf[js.Any]))
       HistoryItemType.foreach(__v => __obj.updateDynamic("HistoryItemType")(__v.asInstanceOf[js.Any]))
       HistorySummary.foreach(__v => __obj.updateDynamic("HistorySummary")(__v.asInstanceOf[js.Any]))
       Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AlarmHistoryItem]
     }
+  }
+
+  @js.native
+  sealed trait AlarmType extends js.Any
+  object AlarmType extends js.Object {
+    val CompositeAlarm = "CompositeAlarm".asInstanceOf[AlarmType]
+    val MetricAlarm    = "MetricAlarm".asInstanceOf[AlarmType]
+
+    val values = js.Object.freeze(js.Array(CompositeAlarm, MetricAlarm))
   }
 
   /**
@@ -255,7 +274,7 @@ package cloudwatch {
     var Dimensions: js.UndefOr[Dimensions]
     var MetricName: js.UndefOr[MetricName]
     var Namespace: js.UndefOr[Namespace]
-    var Stat: js.UndefOr[Stat]
+    var Stat: js.UndefOr[AnomalyDetectorMetricStat]
     var StateValue: js.UndefOr[AnomalyDetectorStateValue]
   }
 
@@ -266,7 +285,7 @@ package cloudwatch {
         Dimensions: js.UndefOr[Dimensions] = js.undefined,
         MetricName: js.UndefOr[MetricName] = js.undefined,
         Namespace: js.UndefOr[Namespace] = js.undefined,
-        Stat: js.UndefOr[Stat] = js.undefined,
+        Stat: js.UndefOr[AnomalyDetectorMetricStat] = js.undefined,
         StateValue: js.UndefOr[AnomalyDetectorStateValue] = js.undefined
     ): AnomalyDetector = {
       val __obj = js.Dynamic.literal()
@@ -335,6 +354,63 @@ package cloudwatch {
         GreaterThanUpperThreshold
       )
     )
+  }
+
+  /**
+    * The details about a composite alarm.
+    */
+  @js.native
+  trait CompositeAlarm extends js.Object {
+    var ActionsEnabled: js.UndefOr[ActionsEnabled]
+    var AlarmActions: js.UndefOr[ResourceList]
+    var AlarmArn: js.UndefOr[AlarmArn]
+    var AlarmConfigurationUpdatedTimestamp: js.UndefOr[Timestamp]
+    var AlarmDescription: js.UndefOr[AlarmDescription]
+    var AlarmName: js.UndefOr[AlarmName]
+    var AlarmRule: js.UndefOr[AlarmRule]
+    var InsufficientDataActions: js.UndefOr[ResourceList]
+    var OKActions: js.UndefOr[ResourceList]
+    var StateReason: js.UndefOr[StateReason]
+    var StateReasonData: js.UndefOr[StateReasonData]
+    var StateUpdatedTimestamp: js.UndefOr[Timestamp]
+    var StateValue: js.UndefOr[StateValue]
+  }
+
+  object CompositeAlarm {
+    @inline
+    def apply(
+        ActionsEnabled: js.UndefOr[ActionsEnabled] = js.undefined,
+        AlarmActions: js.UndefOr[ResourceList] = js.undefined,
+        AlarmArn: js.UndefOr[AlarmArn] = js.undefined,
+        AlarmConfigurationUpdatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        AlarmDescription: js.UndefOr[AlarmDescription] = js.undefined,
+        AlarmName: js.UndefOr[AlarmName] = js.undefined,
+        AlarmRule: js.UndefOr[AlarmRule] = js.undefined,
+        InsufficientDataActions: js.UndefOr[ResourceList] = js.undefined,
+        OKActions: js.UndefOr[ResourceList] = js.undefined,
+        StateReason: js.UndefOr[StateReason] = js.undefined,
+        StateReasonData: js.UndefOr[StateReasonData] = js.undefined,
+        StateUpdatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        StateValue: js.UndefOr[StateValue] = js.undefined
+    ): CompositeAlarm = {
+      val __obj = js.Dynamic.literal()
+      ActionsEnabled.foreach(__v => __obj.updateDynamic("ActionsEnabled")(__v.asInstanceOf[js.Any]))
+      AlarmActions.foreach(__v => __obj.updateDynamic("AlarmActions")(__v.asInstanceOf[js.Any]))
+      AlarmArn.foreach(__v => __obj.updateDynamic("AlarmArn")(__v.asInstanceOf[js.Any]))
+      AlarmConfigurationUpdatedTimestamp.foreach(__v =>
+        __obj.updateDynamic("AlarmConfigurationUpdatedTimestamp")(__v.asInstanceOf[js.Any])
+      )
+      AlarmDescription.foreach(__v => __obj.updateDynamic("AlarmDescription")(__v.asInstanceOf[js.Any]))
+      AlarmName.foreach(__v => __obj.updateDynamic("AlarmName")(__v.asInstanceOf[js.Any]))
+      AlarmRule.foreach(__v => __obj.updateDynamic("AlarmRule")(__v.asInstanceOf[js.Any]))
+      InsufficientDataActions.foreach(__v => __obj.updateDynamic("InsufficientDataActions")(__v.asInstanceOf[js.Any]))
+      OKActions.foreach(__v => __obj.updateDynamic("OKActions")(__v.asInstanceOf[js.Any]))
+      StateReason.foreach(__v => __obj.updateDynamic("StateReason")(__v.asInstanceOf[js.Any]))
+      StateReasonData.foreach(__v => __obj.updateDynamic("StateReasonData")(__v.asInstanceOf[js.Any]))
+      StateUpdatedTimestamp.foreach(__v => __obj.updateDynamic("StateUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      StateValue.foreach(__v => __obj.updateDynamic("StateValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CompositeAlarm]
+    }
   }
 
   /**
@@ -449,7 +525,7 @@ package cloudwatch {
   trait DeleteAnomalyDetectorInput extends js.Object {
     var MetricName: MetricName
     var Namespace: Namespace
-    var Stat: Stat
+    var Stat: AnomalyDetectorMetricStat
     var Dimensions: js.UndefOr[Dimensions]
   }
 
@@ -458,7 +534,7 @@ package cloudwatch {
     def apply(
         MetricName: MetricName,
         Namespace: Namespace,
-        Stat: Stat,
+        Stat: AnomalyDetectorMetricStat,
         Dimensions: js.UndefOr[Dimensions] = js.undefined
     ): DeleteAnomalyDetectorInput = {
       val __obj = js.Dynamic.literal(
@@ -553,10 +629,12 @@ package cloudwatch {
   @js.native
   trait DescribeAlarmHistoryInput extends js.Object {
     var AlarmName: js.UndefOr[AlarmName]
+    var AlarmTypes: js.UndefOr[AlarmTypes]
     var EndDate: js.UndefOr[Timestamp]
     var HistoryItemType: js.UndefOr[HistoryItemType]
     var MaxRecords: js.UndefOr[MaxRecords]
     var NextToken: js.UndefOr[NextToken]
+    var ScanBy: js.UndefOr[ScanBy]
     var StartDate: js.UndefOr[Timestamp]
   }
 
@@ -564,18 +642,22 @@ package cloudwatch {
     @inline
     def apply(
         AlarmName: js.UndefOr[AlarmName] = js.undefined,
+        AlarmTypes: js.UndefOr[AlarmTypes] = js.undefined,
         EndDate: js.UndefOr[Timestamp] = js.undefined,
         HistoryItemType: js.UndefOr[HistoryItemType] = js.undefined,
         MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
+        ScanBy: js.UndefOr[ScanBy] = js.undefined,
         StartDate: js.UndefOr[Timestamp] = js.undefined
     ): DescribeAlarmHistoryInput = {
       val __obj = js.Dynamic.literal()
       AlarmName.foreach(__v => __obj.updateDynamic("AlarmName")(__v.asInstanceOf[js.Any]))
+      AlarmTypes.foreach(__v => __obj.updateDynamic("AlarmTypes")(__v.asInstanceOf[js.Any]))
       EndDate.foreach(__v => __obj.updateDynamic("EndDate")(__v.asInstanceOf[js.Any]))
       HistoryItemType.foreach(__v => __obj.updateDynamic("HistoryItemType")(__v.asInstanceOf[js.Any]))
       MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ScanBy.foreach(__v => __obj.updateDynamic("ScanBy")(__v.asInstanceOf[js.Any]))
       StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAlarmHistoryInput]
     }
@@ -657,8 +739,11 @@ package cloudwatch {
     var ActionPrefix: js.UndefOr[ActionPrefix]
     var AlarmNamePrefix: js.UndefOr[AlarmNamePrefix]
     var AlarmNames: js.UndefOr[AlarmNames]
+    var AlarmTypes: js.UndefOr[AlarmTypes]
+    var ChildrenOfAlarmName: js.UndefOr[AlarmName]
     var MaxRecords: js.UndefOr[MaxRecords]
     var NextToken: js.UndefOr[NextToken]
+    var ParentsOfAlarmName: js.UndefOr[AlarmName]
     var StateValue: js.UndefOr[StateValue]
   }
 
@@ -668,16 +753,22 @@ package cloudwatch {
         ActionPrefix: js.UndefOr[ActionPrefix] = js.undefined,
         AlarmNamePrefix: js.UndefOr[AlarmNamePrefix] = js.undefined,
         AlarmNames: js.UndefOr[AlarmNames] = js.undefined,
+        AlarmTypes: js.UndefOr[AlarmTypes] = js.undefined,
+        ChildrenOfAlarmName: js.UndefOr[AlarmName] = js.undefined,
         MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
+        ParentsOfAlarmName: js.UndefOr[AlarmName] = js.undefined,
         StateValue: js.UndefOr[StateValue] = js.undefined
     ): DescribeAlarmsInput = {
       val __obj = js.Dynamic.literal()
       ActionPrefix.foreach(__v => __obj.updateDynamic("ActionPrefix")(__v.asInstanceOf[js.Any]))
       AlarmNamePrefix.foreach(__v => __obj.updateDynamic("AlarmNamePrefix")(__v.asInstanceOf[js.Any]))
       AlarmNames.foreach(__v => __obj.updateDynamic("AlarmNames")(__v.asInstanceOf[js.Any]))
+      AlarmTypes.foreach(__v => __obj.updateDynamic("AlarmTypes")(__v.asInstanceOf[js.Any]))
+      ChildrenOfAlarmName.foreach(__v => __obj.updateDynamic("ChildrenOfAlarmName")(__v.asInstanceOf[js.Any]))
       MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ParentsOfAlarmName.foreach(__v => __obj.updateDynamic("ParentsOfAlarmName")(__v.asInstanceOf[js.Any]))
       StateValue.foreach(__v => __obj.updateDynamic("StateValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAlarmsInput]
     }
@@ -685,6 +776,7 @@ package cloudwatch {
 
   @js.native
   trait DescribeAlarmsOutput extends js.Object {
+    var CompositeAlarms: js.UndefOr[CompositeAlarms]
     var MetricAlarms: js.UndefOr[MetricAlarms]
     var NextToken: js.UndefOr[NextToken]
   }
@@ -692,10 +784,12 @@ package cloudwatch {
   object DescribeAlarmsOutput {
     @inline
     def apply(
+        CompositeAlarms: js.UndefOr[CompositeAlarms] = js.undefined,
         MetricAlarms: js.UndefOr[MetricAlarms] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeAlarmsOutput = {
       val __obj = js.Dynamic.literal()
+      CompositeAlarms.foreach(__v => __obj.updateDynamic("CompositeAlarms")(__v.asInstanceOf[js.Any]))
       MetricAlarms.foreach(__v => __obj.updateDynamic("MetricAlarms")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAlarmsOutput]
@@ -1242,7 +1336,7 @@ package cloudwatch {
   /**
     * One of the unique contributors found by a Contributor Insights rule. If the rule contains multiple keys, then a unique contributor is a unique combination of values from all the keys in the rule.
     *  If the rule contains a single key, then each unique contributor is each unique value for this key.
-    *  For more information, see <a>GetInsightRuleReport</a>.
+    *  For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html|GetInsightRuleReport]].
     */
   @js.native
   trait InsightRuleContributor extends js.Object {
@@ -1270,7 +1364,7 @@ package cloudwatch {
 
   /**
     * One data point related to one contributor.
-    *  For more information, see <a>GetInsightRuleReport</a> and <a>InsightRuleContributor</a>.
+    *  For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html|GetInsightRuleReport]] and [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_InsightRuleContributor.html|InsightRuleContributor]].
     */
   @js.native
   trait InsightRuleContributorDatapoint extends js.Object {
@@ -1295,7 +1389,7 @@ package cloudwatch {
 
   /**
     * One data point from the metric time series returned in a Contributor Insights rule report.
-    *  For more information, see <a>GetInsightRuleReport</a>.
+    *  For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html|GetInsightRuleReport]].
     */
   @js.native
   trait InsightRuleMetricDatapoint extends js.Object {
@@ -1500,7 +1594,7 @@ package cloudwatch {
   }
 
   /**
-    * Represents an alarm.
+    * The details about a metric alarm.
     */
   @js.native
   trait MetricAlarm extends js.Object {
@@ -1602,7 +1696,7 @@ package cloudwatch {
 
   /**
     * This structure is used in both <code>GetMetricData</code> and <code>PutMetricAlarm</code>. The supported use of this structure is different for those two operations.
-    *  When used in <code>GetMetricData</code>, it indicates the metric data to return, and whether this call is just retrieving a batch set of data for one metric, or is performing a math expression on metric data. A single <code>GetMetricData</code> call can include up to 100 <code>MetricDataQuery</code> structures.
+    *  When used in <code>GetMetricData</code>, it indicates the metric data to return, and whether this call is just retrieving a batch set of data for one metric, or is performing a math expression on metric data. A single <code>GetMetricData</code> call can include up to 500 <code>MetricDataQuery</code> structures.
     *  When used in <code>PutMetricAlarm</code>, it enables you to create an alarm based on a metric math expression. Each <code>MetricDataQuery</code> in the array specifies either a metric to retrieve, or a math expression to be performed on retrieved metrics. A single <code>PutMetricAlarm</code> call can include up to 20 <code>MetricDataQuery</code> structures in the array. The 20 structures can include as many as 10 structures that contain a <code>MetricStat</code> parameter to retrieve a metric, and as many as 10 structures that contain the <code>Expression</code> parameter to perform a math expression. Of those <code>Expression</code> structures, one must have <code>True</code> as the value for <code>ReturnData</code>. The result of this expression is the value the alarm watches.
     *  Any expression used in a <code>PutMetricAlarm</code> operation must return a single time series. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax|Metric Math Syntax and Functions]] in the <i>Amazon CloudWatch User Guide</i>.
     *  Some of the parameters of this structure also have different uses whether you are using this structure in a <code>GetMetricData</code> operation or a <code>PutMetricAlarm</code> operation. These differences are explained in the following parameter list.
@@ -1781,7 +1875,7 @@ package cloudwatch {
   trait PutAnomalyDetectorInput extends js.Object {
     var MetricName: MetricName
     var Namespace: Namespace
-    var Stat: Stat
+    var Stat: AnomalyDetectorMetricStat
     var Configuration: js.UndefOr[AnomalyDetectorConfiguration]
     var Dimensions: js.UndefOr[Dimensions]
   }
@@ -1791,7 +1885,7 @@ package cloudwatch {
     def apply(
         MetricName: MetricName,
         Namespace: Namespace,
-        Stat: Stat,
+        Stat: AnomalyDetectorMetricStat,
         Configuration: js.UndefOr[AnomalyDetectorConfiguration] = js.undefined,
         Dimensions: js.UndefOr[Dimensions] = js.undefined
     ): PutAnomalyDetectorInput = {
@@ -1817,6 +1911,45 @@ package cloudwatch {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutAnomalyDetectorOutput]
+    }
+  }
+
+  @js.native
+  trait PutCompositeAlarmInput extends js.Object {
+    var AlarmName: AlarmName
+    var AlarmRule: AlarmRule
+    var ActionsEnabled: js.UndefOr[ActionsEnabled]
+    var AlarmActions: js.UndefOr[ResourceList]
+    var AlarmDescription: js.UndefOr[AlarmDescription]
+    var InsufficientDataActions: js.UndefOr[ResourceList]
+    var OKActions: js.UndefOr[ResourceList]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object PutCompositeAlarmInput {
+    @inline
+    def apply(
+        AlarmName: AlarmName,
+        AlarmRule: AlarmRule,
+        ActionsEnabled: js.UndefOr[ActionsEnabled] = js.undefined,
+        AlarmActions: js.UndefOr[ResourceList] = js.undefined,
+        AlarmDescription: js.UndefOr[AlarmDescription] = js.undefined,
+        InsufficientDataActions: js.UndefOr[ResourceList] = js.undefined,
+        OKActions: js.UndefOr[ResourceList] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): PutCompositeAlarmInput = {
+      val __obj = js.Dynamic.literal(
+        "AlarmName" -> AlarmName.asInstanceOf[js.Any],
+        "AlarmRule" -> AlarmRule.asInstanceOf[js.Any]
+      )
+
+      ActionsEnabled.foreach(__v => __obj.updateDynamic("ActionsEnabled")(__v.asInstanceOf[js.Any]))
+      AlarmActions.foreach(__v => __obj.updateDynamic("AlarmActions")(__v.asInstanceOf[js.Any]))
+      AlarmDescription.foreach(__v => __obj.updateDynamic("AlarmDescription")(__v.asInstanceOf[js.Any]))
+      InsufficientDataActions.foreach(__v => __obj.updateDynamic("InsufficientDataActions")(__v.asInstanceOf[js.Any]))
+      OKActions.foreach(__v => __obj.updateDynamic("OKActions")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutCompositeAlarmInput]
     }
   }
 
@@ -1864,6 +1997,7 @@ package cloudwatch {
     var RuleDefinition: InsightRuleDefinition
     var RuleName: InsightRuleName
     var RuleState: js.UndefOr[InsightRuleState]
+    var Tags: js.UndefOr[TagList]
   }
 
   object PutInsightRuleInput {
@@ -1871,7 +2005,8 @@ package cloudwatch {
     def apply(
         RuleDefinition: InsightRuleDefinition,
         RuleName: InsightRuleName,
-        RuleState: js.UndefOr[InsightRuleState] = js.undefined
+        RuleState: js.UndefOr[InsightRuleState] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): PutInsightRuleInput = {
       val __obj = js.Dynamic.literal(
         "RuleDefinition" -> RuleDefinition.asInstanceOf[js.Any],
@@ -1879,6 +2014,7 @@ package cloudwatch {
       )
 
       RuleState.foreach(__v => __obj.updateDynamic("RuleState")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutInsightRuleInput]
     }
   }

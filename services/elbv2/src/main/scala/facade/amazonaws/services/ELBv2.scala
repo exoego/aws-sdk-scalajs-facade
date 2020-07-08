@@ -7,9 +7,11 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object elbv2 {
-  type ActionOrder  = Int
-  type Actions      = js.Array[Action]
-  type AllocationId = String
+  type ActionOrder     = Int
+  type Actions         = js.Array[Action]
+  type AllocationId    = String
+  type AlpnPolicyName  = js.Array[AlpnPolicyValue]
+  type AlpnPolicyValue = String
   type AuthenticateCognitoActionAuthenticationRequestExtraParams =
     js.Dictionary[AuthenticateCognitoActionAuthenticationRequestParamValue]
   type AuthenticateCognitoActionAuthenticationRequestParamName  = String
@@ -586,6 +588,7 @@ package elbv2 {
     var LoadBalancerArn: LoadBalancerArn
     var Port: Port
     var Protocol: ProtocolEnum
+    var AlpnPolicy: js.UndefOr[AlpnPolicyName]
     var Certificates: js.UndefOr[CertificateList]
     var SslPolicy: js.UndefOr[SslPolicyName]
   }
@@ -597,6 +600,7 @@ package elbv2 {
         LoadBalancerArn: LoadBalancerArn,
         Port: Port,
         Protocol: ProtocolEnum,
+        AlpnPolicy: js.UndefOr[AlpnPolicyName] = js.undefined,
         Certificates: js.UndefOr[CertificateList] = js.undefined,
         SslPolicy: js.UndefOr[SslPolicyName] = js.undefined
     ): CreateListenerInput = {
@@ -607,6 +611,7 @@ package elbv2 {
         "Protocol"        -> Protocol.asInstanceOf[js.Any]
       )
 
+      AlpnPolicy.foreach(__v => __obj.updateDynamic("AlpnPolicy")(__v.asInstanceOf[js.Any]))
       Certificates.foreach(__v => __obj.updateDynamic("Certificates")(__v.asInstanceOf[js.Any]))
       SslPolicy.foreach(__v => __obj.updateDynamic("SslPolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateListenerInput]
@@ -1551,6 +1556,7 @@ package elbv2 {
     */
   @js.native
   trait Listener extends js.Object {
+    var AlpnPolicy: js.UndefOr[AlpnPolicyName]
     var Certificates: js.UndefOr[CertificateList]
     var DefaultActions: js.UndefOr[Actions]
     var ListenerArn: js.UndefOr[ListenerArn]
@@ -1563,6 +1569,7 @@ package elbv2 {
   object Listener {
     @inline
     def apply(
+        AlpnPolicy: js.UndefOr[AlpnPolicyName] = js.undefined,
         Certificates: js.UndefOr[CertificateList] = js.undefined,
         DefaultActions: js.UndefOr[Actions] = js.undefined,
         ListenerArn: js.UndefOr[ListenerArn] = js.undefined,
@@ -1572,6 +1579,7 @@ package elbv2 {
         SslPolicy: js.UndefOr[SslPolicyName] = js.undefined
     ): Listener = {
       val __obj = js.Dynamic.literal()
+      AlpnPolicy.foreach(__v => __obj.updateDynamic("AlpnPolicy")(__v.asInstanceOf[js.Any]))
       Certificates.foreach(__v => __obj.updateDynamic("Certificates")(__v.asInstanceOf[js.Any]))
       DefaultActions.foreach(__v => __obj.updateDynamic("DefaultActions")(__v.asInstanceOf[js.Any]))
       ListenerArn.foreach(__v => __obj.updateDynamic("ListenerArn")(__v.asInstanceOf[js.Any]))
@@ -1757,6 +1765,7 @@ package elbv2 {
   @js.native
   trait ModifyListenerInput extends js.Object {
     var ListenerArn: ListenerArn
+    var AlpnPolicy: js.UndefOr[AlpnPolicyName]
     var Certificates: js.UndefOr[CertificateList]
     var DefaultActions: js.UndefOr[Actions]
     var Port: js.UndefOr[Port]
@@ -1768,6 +1777,7 @@ package elbv2 {
     @inline
     def apply(
         ListenerArn: ListenerArn,
+        AlpnPolicy: js.UndefOr[AlpnPolicyName] = js.undefined,
         Certificates: js.UndefOr[CertificateList] = js.undefined,
         DefaultActions: js.UndefOr[Actions] = js.undefined,
         Port: js.UndefOr[Port] = js.undefined,
@@ -1778,6 +1788,7 @@ package elbv2 {
         "ListenerArn" -> ListenerArn.asInstanceOf[js.Any]
       )
 
+      AlpnPolicy.foreach(__v => __obj.updateDynamic("AlpnPolicy")(__v.asInstanceOf[js.Any]))
       Certificates.foreach(__v => __obj.updateDynamic("Certificates")(__v.asInstanceOf[js.Any]))
       DefaultActions.foreach(__v => __obj.updateDynamic("DefaultActions")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))

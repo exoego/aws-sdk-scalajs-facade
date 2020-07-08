@@ -98,6 +98,9 @@ package object emr {
         params: GetBlockPublicAccessConfigurationInput
     ): Future[GetBlockPublicAccessConfigurationOutput] =
       service.getBlockPublicAccessConfiguration(params).promise().toFuture
+    @inline def getManagedScalingPolicyFuture(
+        params: GetManagedScalingPolicyInput
+    ): Future[GetManagedScalingPolicyOutput] = service.getManagedScalingPolicy(params).promise().toFuture
     @inline def listBootstrapActionsFuture(params: ListBootstrapActionsInput): Future[ListBootstrapActionsOutput] =
       service.listBootstrapActions(params).promise().toFuture
     @inline def listClustersFuture(params: ListClustersInput): Future[ListClustersOutput] =
@@ -125,9 +128,15 @@ package object emr {
         params: PutBlockPublicAccessConfigurationInput
     ): Future[PutBlockPublicAccessConfigurationOutput] =
       service.putBlockPublicAccessConfiguration(params).promise().toFuture
+    @inline def putManagedScalingPolicyFuture(
+        params: PutManagedScalingPolicyInput
+    ): Future[PutManagedScalingPolicyOutput] = service.putManagedScalingPolicy(params).promise().toFuture
     @inline def removeAutoScalingPolicyFuture(
         params: RemoveAutoScalingPolicyInput
     ): Future[RemoveAutoScalingPolicyOutput] = service.removeAutoScalingPolicy(params).promise().toFuture
+    @inline def removeManagedScalingPolicyFuture(
+        params: RemoveManagedScalingPolicyInput
+    ): Future[RemoveManagedScalingPolicyOutput] = service.removeManagedScalingPolicy(params).promise().toFuture
     @inline def removeTagsFuture(params: RemoveTagsInput): Future[RemoveTagsOutput] =
       service.removeTags(params).promise().toFuture
     @inline def runJobFlowFuture(params: RunJobFlowInput): Future[RunJobFlowOutput] =
@@ -165,7 +174,9 @@ package emr {
     def describeStep(params: DescribeStepInput): Request[DescribeStepOutput] = js.native
     def getBlockPublicAccessConfiguration(
         params: GetBlockPublicAccessConfigurationInput
-    ): Request[GetBlockPublicAccessConfigurationOutput]                                              = js.native
+    ): Request[GetBlockPublicAccessConfigurationOutput] = js.native
+    def getManagedScalingPolicy(params: GetManagedScalingPolicyInput): Request[GetManagedScalingPolicyOutput] =
+      js.native
     def listBootstrapActions(params: ListBootstrapActionsInput): Request[ListBootstrapActionsOutput] = js.native
     def listClusters(params: ListClustersInput): Request[ListClustersOutput]                         = js.native
     def listInstanceFleets(params: ListInstanceFleetsInput): Request[ListInstanceFleetsOutput]       = js.native
@@ -181,7 +192,11 @@ package emr {
     def putBlockPublicAccessConfiguration(
         params: PutBlockPublicAccessConfigurationInput
     ): Request[PutBlockPublicAccessConfigurationOutput] = js.native
+    def putManagedScalingPolicy(params: PutManagedScalingPolicyInput): Request[PutManagedScalingPolicyOutput] =
+      js.native
     def removeAutoScalingPolicy(params: RemoveAutoScalingPolicyInput): Request[RemoveAutoScalingPolicyOutput] =
+      js.native
+    def removeManagedScalingPolicy(params: RemoveManagedScalingPolicyInput): Request[RemoveManagedScalingPolicyOutput] =
       js.native
     def removeTags(params: RemoveTagsInput): Request[RemoveTagsOutput]                      = js.native
     def runJobFlow(params: RunJobFlowInput): Request[RunJobFlowOutput]                      = js.native
@@ -768,6 +783,7 @@ package emr {
     var Id: js.UndefOr[ClusterId]
     var InstanceCollectionType: js.UndefOr[InstanceCollectionType]
     var KerberosAttributes: js.UndefOr[KerberosAttributes]
+    var LogEncryptionKmsKeyId: js.UndefOr[String]
     var LogUri: js.UndefOr[String]
     var MasterPublicDnsName: js.UndefOr[String]
     var Name: js.UndefOr[String]
@@ -801,6 +817,7 @@ package emr {
         Id: js.UndefOr[ClusterId] = js.undefined,
         InstanceCollectionType: js.UndefOr[InstanceCollectionType] = js.undefined,
         KerberosAttributes: js.UndefOr[KerberosAttributes] = js.undefined,
+        LogEncryptionKmsKeyId: js.UndefOr[String] = js.undefined,
         LogUri: js.UndefOr[String] = js.undefined,
         MasterPublicDnsName: js.UndefOr[String] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
@@ -831,6 +848,7 @@ package emr {
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       InstanceCollectionType.foreach(__v => __obj.updateDynamic("InstanceCollectionType")(__v.asInstanceOf[js.Any]))
       KerberosAttributes.foreach(__v => __obj.updateDynamic("KerberosAttributes")(__v.asInstanceOf[js.Any]))
+      LogEncryptionKmsKeyId.foreach(__v => __obj.updateDynamic("LogEncryptionKmsKeyId")(__v.asInstanceOf[js.Any]))
       LogUri.foreach(__v => __obj.updateDynamic("LogUri")(__v.asInstanceOf[js.Any]))
       MasterPublicDnsName.foreach(__v => __obj.updateDynamic("MasterPublicDnsName")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -1034,6 +1052,51 @@ package emr {
     val LESS_THAN_OR_EQUAL    = "LESS_THAN_OR_EQUAL".asInstanceOf[ComparisonOperator]
 
     val values = js.Object.freeze(js.Array(GREATER_THAN_OR_EQUAL, GREATER_THAN, LESS_THAN, LESS_THAN_OR_EQUAL))
+  }
+
+  /**
+    * The EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster can not be above or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration.
+    */
+  @js.native
+  trait ComputeLimits extends js.Object {
+    var MaximumCapacityUnits: Int
+    var MinimumCapacityUnits: Int
+    var UnitType: ComputeLimitsUnitType
+    var MaximumCoreCapacityUnits: js.UndefOr[Int]
+    var MaximumOnDemandCapacityUnits: js.UndefOr[Int]
+  }
+
+  object ComputeLimits {
+    @inline
+    def apply(
+        MaximumCapacityUnits: Int,
+        MinimumCapacityUnits: Int,
+        UnitType: ComputeLimitsUnitType,
+        MaximumCoreCapacityUnits: js.UndefOr[Int] = js.undefined,
+        MaximumOnDemandCapacityUnits: js.UndefOr[Int] = js.undefined
+    ): ComputeLimits = {
+      val __obj = js.Dynamic.literal(
+        "MaximumCapacityUnits" -> MaximumCapacityUnits.asInstanceOf[js.Any],
+        "MinimumCapacityUnits" -> MinimumCapacityUnits.asInstanceOf[js.Any],
+        "UnitType"             -> UnitType.asInstanceOf[js.Any]
+      )
+
+      MaximumCoreCapacityUnits.foreach(__v => __obj.updateDynamic("MaximumCoreCapacityUnits")(__v.asInstanceOf[js.Any]))
+      MaximumOnDemandCapacityUnits.foreach(__v =>
+        __obj.updateDynamic("MaximumOnDemandCapacityUnits")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ComputeLimits]
+    }
+  }
+
+  @js.native
+  sealed trait ComputeLimitsUnitType extends js.Any
+  object ComputeLimitsUnitType extends js.Object {
+    val InstanceFleetUnits = "InstanceFleetUnits".asInstanceOf[ComputeLimitsUnitType]
+    val Instances          = "Instances".asInstanceOf[ComputeLimitsUnitType]
+    val VCPU               = "VCPU".asInstanceOf[ComputeLimitsUnitType]
+
+    val values = js.Object.freeze(js.Array(InstanceFleetUnits, Instances, VCPU))
   }
 
   /**
@@ -1515,6 +1578,40 @@ package emr {
     }
   }
 
+  @js.native
+  trait GetManagedScalingPolicyInput extends js.Object {
+    var ClusterId: ClusterId
+  }
+
+  object GetManagedScalingPolicyInput {
+    @inline
+    def apply(
+        ClusterId: ClusterId
+    ): GetManagedScalingPolicyInput = {
+      val __obj = js.Dynamic.literal(
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetManagedScalingPolicyInput]
+    }
+  }
+
+  @js.native
+  trait GetManagedScalingPolicyOutput extends js.Object {
+    var ManagedScalingPolicy: js.UndefOr[ManagedScalingPolicy]
+  }
+
+  object GetManagedScalingPolicyOutput {
+    @inline
+    def apply(
+        ManagedScalingPolicy: js.UndefOr[ManagedScalingPolicy] = js.undefined
+    ): GetManagedScalingPolicyOutput = {
+      val __obj = js.Dynamic.literal()
+      ManagedScalingPolicy.foreach(__v => __obj.updateDynamic("ManagedScalingPolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetManagedScalingPolicyOutput]
+    }
+  }
+
   /**
     * A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail.
     */
@@ -1754,24 +1851,25 @@ package emr {
   }
 
   /**
-    * The launch specification for Spot instances in the fleet, which determines the defined duration and provisioning timeout behavior.
+    * The launch specification for Spot instances in the fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.
     *
-    * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
+    * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. On-Demand and Spot instance allocation strategies are available in Amazon EMR version 5.12.1 and later.
     */
   @js.native
   trait InstanceFleetProvisioningSpecifications extends js.Object {
-    var SpotSpecification: SpotProvisioningSpecification
+    var OnDemandSpecification: js.UndefOr[OnDemandProvisioningSpecification]
+    var SpotSpecification: js.UndefOr[SpotProvisioningSpecification]
   }
 
   object InstanceFleetProvisioningSpecifications {
     @inline
     def apply(
-        SpotSpecification: SpotProvisioningSpecification
+        OnDemandSpecification: js.UndefOr[OnDemandProvisioningSpecification] = js.undefined,
+        SpotSpecification: js.UndefOr[SpotProvisioningSpecification] = js.undefined
     ): InstanceFleetProvisioningSpecifications = {
-      val __obj = js.Dynamic.literal(
-        "SpotSpecification" -> SpotSpecification.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
+      OnDemandSpecification.foreach(__v => __obj.updateDynamic("OnDemandSpecification")(__v.asInstanceOf[js.Any]))
+      SpotSpecification.foreach(__v => __obj.updateDynamic("SpotSpecification")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceFleetProvisioningSpecifications]
     }
   }
@@ -2455,6 +2553,7 @@ package emr {
     var AutoScalingRole: js.UndefOr[XmlString]
     var BootstrapActions: js.UndefOr[BootstrapActionDetailList]
     var JobFlowRole: js.UndefOr[XmlString]
+    var LogEncryptionKmsKeyId: js.UndefOr[XmlString]
     var LogUri: js.UndefOr[XmlString]
     var ScaleDownBehavior: js.UndefOr[ScaleDownBehavior]
     var ServiceRole: js.UndefOr[XmlString]
@@ -2474,6 +2573,7 @@ package emr {
         AutoScalingRole: js.UndefOr[XmlString] = js.undefined,
         BootstrapActions: js.UndefOr[BootstrapActionDetailList] = js.undefined,
         JobFlowRole: js.UndefOr[XmlString] = js.undefined,
+        LogEncryptionKmsKeyId: js.UndefOr[XmlString] = js.undefined,
         LogUri: js.UndefOr[XmlString] = js.undefined,
         ScaleDownBehavior: js.UndefOr[ScaleDownBehavior] = js.undefined,
         ServiceRole: js.UndefOr[XmlString] = js.undefined,
@@ -2492,6 +2592,7 @@ package emr {
       AutoScalingRole.foreach(__v => __obj.updateDynamic("AutoScalingRole")(__v.asInstanceOf[js.Any]))
       BootstrapActions.foreach(__v => __obj.updateDynamic("BootstrapActions")(__v.asInstanceOf[js.Any]))
       JobFlowRole.foreach(__v => __obj.updateDynamic("JobFlowRole")(__v.asInstanceOf[js.Any]))
+      LogEncryptionKmsKeyId.foreach(__v => __obj.updateDynamic("LogEncryptionKmsKeyId")(__v.asInstanceOf[js.Any]))
       LogUri.foreach(__v => __obj.updateDynamic("LogUri")(__v.asInstanceOf[js.Any]))
       ScaleDownBehavior.foreach(__v => __obj.updateDynamic("ScaleDownBehavior")(__v.asInstanceOf[js.Any]))
       ServiceRole.foreach(__v => __obj.updateDynamic("ServiceRole")(__v.asInstanceOf[js.Any]))
@@ -3083,6 +3184,25 @@ package emr {
     }
   }
 
+  /**
+    * Managed scaling policy for an Amazon EMR cluster. The policy specifies the limits for resources that can be added or terminated from a cluster. The policy only applies to the core and task nodes. The master node cannot be scaled after initial configuration.
+    */
+  @js.native
+  trait ManagedScalingPolicy extends js.Object {
+    var ComputeLimits: js.UndefOr[ComputeLimits]
+  }
+
+  object ManagedScalingPolicy {
+    @inline
+    def apply(
+        ComputeLimits: js.UndefOr[ComputeLimits] = js.undefined
+    ): ManagedScalingPolicy = {
+      val __obj = js.Dynamic.literal()
+      ComputeLimits.foreach(__v => __obj.updateDynamic("ComputeLimits")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ManagedScalingPolicy]
+    }
+  }
+
   @js.native
   sealed trait MarketType extends js.Any
   object MarketType extends js.Object {
@@ -3191,6 +3311,37 @@ package emr {
       ClusterId.foreach(__v => __obj.updateDynamic("ClusterId")(__v.asInstanceOf[js.Any]))
       InstanceGroups.foreach(__v => __obj.updateDynamic("InstanceGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyInstanceGroupsInput]
+    }
+  }
+
+  @js.native
+  sealed trait OnDemandProvisioningAllocationStrategy extends js.Any
+  object OnDemandProvisioningAllocationStrategy extends js.Object {
+    val `lowest-price` = "lowest-price".asInstanceOf[OnDemandProvisioningAllocationStrategy]
+
+    val values = js.Object.freeze(js.Array(`lowest-price`))
+  }
+
+  /**
+    * The launch specification for On-Demand instances in the instance fleet, which determines the allocation strategy.
+    *
+    * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. On-Demand instances allocation strategy is available in Amazon EMR version 5.12.1 and later.
+    */
+  @js.native
+  trait OnDemandProvisioningSpecification extends js.Object {
+    var AllocationStrategy: OnDemandProvisioningAllocationStrategy
+  }
+
+  object OnDemandProvisioningSpecification {
+    @inline
+    def apply(
+        AllocationStrategy: OnDemandProvisioningAllocationStrategy
+    ): OnDemandProvisioningSpecification = {
+      val __obj = js.Dynamic.literal(
+        "AllocationStrategy" -> AllocationStrategy.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[OnDemandProvisioningSpecification]
     }
   }
 
@@ -3321,6 +3472,40 @@ package emr {
   }
 
   @js.native
+  trait PutManagedScalingPolicyInput extends js.Object {
+    var ClusterId: ClusterId
+    var ManagedScalingPolicy: ManagedScalingPolicy
+  }
+
+  object PutManagedScalingPolicyInput {
+    @inline
+    def apply(
+        ClusterId: ClusterId,
+        ManagedScalingPolicy: ManagedScalingPolicy
+    ): PutManagedScalingPolicyInput = {
+      val __obj = js.Dynamic.literal(
+        "ClusterId"            -> ClusterId.asInstanceOf[js.Any],
+        "ManagedScalingPolicy" -> ManagedScalingPolicy.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[PutManagedScalingPolicyInput]
+    }
+  }
+
+  @js.native
+  trait PutManagedScalingPolicyOutput extends js.Object {}
+
+  object PutManagedScalingPolicyOutput {
+    @inline
+    def apply(
+    ): PutManagedScalingPolicyOutput = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[PutManagedScalingPolicyOutput]
+    }
+  }
+
+  @js.native
   trait RemoveAutoScalingPolicyInput extends js.Object {
     var ClusterId: ClusterId
     var InstanceGroupId: InstanceGroupId
@@ -3351,6 +3536,37 @@ package emr {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RemoveAutoScalingPolicyOutput]
+    }
+  }
+
+  @js.native
+  trait RemoveManagedScalingPolicyInput extends js.Object {
+    var ClusterId: ClusterId
+  }
+
+  object RemoveManagedScalingPolicyInput {
+    @inline
+    def apply(
+        ClusterId: ClusterId
+    ): RemoveManagedScalingPolicyInput = {
+      val __obj = js.Dynamic.literal(
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[RemoveManagedScalingPolicyInput]
+    }
+  }
+
+  @js.native
+  trait RemoveManagedScalingPolicyOutput extends js.Object {}
+
+  object RemoveManagedScalingPolicyOutput {
+    @inline
+    def apply(
+    ): RemoveManagedScalingPolicyOutput = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[RemoveManagedScalingPolicyOutput]
     }
   }
 
@@ -3420,7 +3636,9 @@ package emr {
     var EbsRootVolumeSize: js.UndefOr[Int]
     var JobFlowRole: js.UndefOr[XmlString]
     var KerberosAttributes: js.UndefOr[KerberosAttributes]
+    var LogEncryptionKmsKeyId: js.UndefOr[XmlString]
     var LogUri: js.UndefOr[XmlString]
+    var ManagedScalingPolicy: js.UndefOr[ManagedScalingPolicy]
     var NewSupportedProducts: js.UndefOr[NewSupportedProductsList]
     var ReleaseLabel: js.UndefOr[XmlStringMaxLen256]
     var RepoUpgradeOnBoot: js.UndefOr[RepoUpgradeOnBoot]
@@ -3449,7 +3667,9 @@ package emr {
         EbsRootVolumeSize: js.UndefOr[Int] = js.undefined,
         JobFlowRole: js.UndefOr[XmlString] = js.undefined,
         KerberosAttributes: js.UndefOr[KerberosAttributes] = js.undefined,
+        LogEncryptionKmsKeyId: js.UndefOr[XmlString] = js.undefined,
         LogUri: js.UndefOr[XmlString] = js.undefined,
+        ManagedScalingPolicy: js.UndefOr[ManagedScalingPolicy] = js.undefined,
         NewSupportedProducts: js.UndefOr[NewSupportedProductsList] = js.undefined,
         ReleaseLabel: js.UndefOr[XmlStringMaxLen256] = js.undefined,
         RepoUpgradeOnBoot: js.UndefOr[RepoUpgradeOnBoot] = js.undefined,
@@ -3477,7 +3697,9 @@ package emr {
       EbsRootVolumeSize.foreach(__v => __obj.updateDynamic("EbsRootVolumeSize")(__v.asInstanceOf[js.Any]))
       JobFlowRole.foreach(__v => __obj.updateDynamic("JobFlowRole")(__v.asInstanceOf[js.Any]))
       KerberosAttributes.foreach(__v => __obj.updateDynamic("KerberosAttributes")(__v.asInstanceOf[js.Any]))
+      LogEncryptionKmsKeyId.foreach(__v => __obj.updateDynamic("LogEncryptionKmsKeyId")(__v.asInstanceOf[js.Any]))
       LogUri.foreach(__v => __obj.updateDynamic("LogUri")(__v.asInstanceOf[js.Any]))
+      ManagedScalingPolicy.foreach(__v => __obj.updateDynamic("ManagedScalingPolicy")(__v.asInstanceOf[js.Any]))
       NewSupportedProducts.foreach(__v => __obj.updateDynamic("NewSupportedProducts")(__v.asInstanceOf[js.Any]))
       ReleaseLabel.foreach(__v => __obj.updateDynamic("ReleaseLabel")(__v.asInstanceOf[js.Any]))
       RepoUpgradeOnBoot.foreach(__v => __obj.updateDynamic("RepoUpgradeOnBoot")(__v.asInstanceOf[js.Any]))
@@ -3766,15 +3988,24 @@ package emr {
     }
   }
 
+  @js.native
+  sealed trait SpotProvisioningAllocationStrategy extends js.Any
+  object SpotProvisioningAllocationStrategy extends js.Object {
+    val `capacity-optimized` = "capacity-optimized".asInstanceOf[SpotProvisioningAllocationStrategy]
+
+    val values = js.Object.freeze(js.Array(`capacity-optimized`))
+  }
+
   /**
-    * The launch specification for Spot instances in the instance fleet, which determines the defined duration and provisioning timeout behavior.
+    * The launch specification for Spot instances in the instance fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.
     *
-    * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
+    * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. Spot instance allocation strategy is available in Amazon EMR version 5.12.1 and later.
     */
   @js.native
   trait SpotProvisioningSpecification extends js.Object {
     var TimeoutAction: SpotProvisioningTimeoutAction
     var TimeoutDurationMinutes: WholeNumber
+    var AllocationStrategy: js.UndefOr[SpotProvisioningAllocationStrategy]
     var BlockDurationMinutes: js.UndefOr[WholeNumber]
   }
 
@@ -3783,6 +4014,7 @@ package emr {
     def apply(
         TimeoutAction: SpotProvisioningTimeoutAction,
         TimeoutDurationMinutes: WholeNumber,
+        AllocationStrategy: js.UndefOr[SpotProvisioningAllocationStrategy] = js.undefined,
         BlockDurationMinutes: js.UndefOr[WholeNumber] = js.undefined
     ): SpotProvisioningSpecification = {
       val __obj = js.Dynamic.literal(
@@ -3790,6 +4022,7 @@ package emr {
         "TimeoutDurationMinutes" -> TimeoutDurationMinutes.asInstanceOf[js.Any]
       )
 
+      AllocationStrategy.foreach(__v => __obj.updateDynamic("AllocationStrategy")(__v.asInstanceOf[js.Any]))
       BlockDurationMinutes.foreach(__v => __obj.updateDynamic("BlockDurationMinutes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SpotProvisioningSpecification]
     }

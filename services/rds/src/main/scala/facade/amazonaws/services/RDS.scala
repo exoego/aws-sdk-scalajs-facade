@@ -708,7 +708,7 @@ package rds {
     *  * <code>EventSubscriptions</code> - The number of event subscriptions per account. The used value is the count of the event subscriptions in the account.
     *  * <code>ManualSnapshots</code> - The number of manual DB snapshots per account. The used value is the count of the manual DB snapshots in the account.
     *  * <code>OptionGroups</code> - The number of DB option groups per account, excluding default option groups. The used value is the count of nondefault DB option groups in the account.
-    *  * <code>ReadReplicasPerMaster</code> - The number of Read Replicas per DB instance. The used value is the highest number of Read Replicas for a DB instance in the account. Other DB instances in the account might have a lower number of Read Replicas.
+    *  * <code>ReadReplicasPerMaster</code> - The number of read replicas per DB instance. The used value is the highest number of read replicas for a DB instance in the account. Other DB instances in the account might have a lower number of read replicas.
     *  * <code>ReservedDBInstances</code> - The number of reserved DB instances per account. The used value is the count of the active reserved DB instances in the account.
     *  * <code>SubnetsPerDBSubnetGroup</code> - The number of subnets per DB subnet group. The used value is highest number of subnets for a DB subnet group in the account. Other DB subnet groups in the account might have a lower number of subnets.
     * For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Limits.html|Quotas for Amazon RDS]] in the <i>Amazon RDS User Guide</i> and [[https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Limits.html|Quotas for Amazon Aurora]] in the <i>Amazon Aurora User Guide</i>.
@@ -1184,7 +1184,6 @@ package rds {
   }
 
   /**
-    * '''Note:'''This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
     * Specifies the settings that control the size and behavior of the connection pool associated with a <code>DBProxyTargetGroup</code>.
     */
   @js.native
@@ -1218,7 +1217,6 @@ package rds {
   }
 
   /**
-    * '''Note:'''This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
     * Displays the settings that control the size and behavior of the connection pool associated with a <code>DBProxyTarget</code>.
     */
   @js.native
@@ -1597,6 +1595,7 @@ package rds {
     var Domain: js.UndefOr[String]
     var DomainIAMRoleName: js.UndefOr[String]
     var EnableCloudwatchLogsExports: js.UndefOr[LogTypeList]
+    var EnableGlobalWriteForwarding: js.UndefOr[BooleanOptional]
     var EnableHttpEndpoint: js.UndefOr[BooleanOptional]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
     var EngineMode: js.UndefOr[String]
@@ -1635,6 +1634,7 @@ package rds {
         Domain: js.UndefOr[String] = js.undefined,
         DomainIAMRoleName: js.UndefOr[String] = js.undefined,
         EnableCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
+        EnableGlobalWriteForwarding: js.UndefOr[BooleanOptional] = js.undefined,
         EnableHttpEndpoint: js.UndefOr[BooleanOptional] = js.undefined,
         EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
         EngineMode: js.UndefOr[String] = js.undefined,
@@ -1675,6 +1675,9 @@ package rds {
       DomainIAMRoleName.foreach(__v => __obj.updateDynamic("DomainIAMRoleName")(__v.asInstanceOf[js.Any]))
       EnableCloudwatchLogsExports.foreach(__v =>
         __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any])
+      )
+      EnableGlobalWriteForwarding.foreach(__v =>
+        __obj.updateDynamic("EnableGlobalWriteForwarding")(__v.asInstanceOf[js.Any])
       )
       EnableHttpEndpoint.foreach(__v => __obj.updateDynamic("EnableHttpEndpoint")(__v.asInstanceOf[js.Any]))
       EnableIAMDatabaseAuthentication.foreach(__v =>
@@ -2617,6 +2620,8 @@ package rds {
     var Engine: js.UndefOr[String]
     var EngineMode: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
+    var GlobalWriteForwardingRequested: js.UndefOr[BooleanOptional]
+    var GlobalWriteForwardingStatus: js.UndefOr[WriteForwardingStatus]
     var HostedZoneId: js.UndefOr[String]
     var HttpEndpointEnabled: js.UndefOr[BooleanOptional]
     var IAMDatabaseAuthenticationEnabled: js.UndefOr[BooleanOptional]
@@ -2674,6 +2679,8 @@ package rds {
         Engine: js.UndefOr[String] = js.undefined,
         EngineMode: js.UndefOr[String] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
+        GlobalWriteForwardingRequested: js.UndefOr[BooleanOptional] = js.undefined,
+        GlobalWriteForwardingStatus: js.UndefOr[WriteForwardingStatus] = js.undefined,
         HostedZoneId: js.UndefOr[String] = js.undefined,
         HttpEndpointEnabled: js.UndefOr[BooleanOptional] = js.undefined,
         IAMDatabaseAuthenticationEnabled: js.UndefOr[BooleanOptional] = js.undefined,
@@ -2736,6 +2743,12 @@ package rds {
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineMode.foreach(__v => __obj.updateDynamic("EngineMode")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      GlobalWriteForwardingRequested.foreach(__v =>
+        __obj.updateDynamic("GlobalWriteForwardingRequested")(__v.asInstanceOf[js.Any])
+      )
+      GlobalWriteForwardingStatus.foreach(__v =>
+        __obj.updateDynamic("GlobalWriteForwardingStatus")(__v.asInstanceOf[js.Any])
+      )
       HostedZoneId.foreach(__v => __obj.updateDynamic("HostedZoneId")(__v.asInstanceOf[js.Any]))
       HttpEndpointEnabled.foreach(__v => __obj.updateDynamic("HttpEndpointEnabled")(__v.asInstanceOf[js.Any]))
       IAMDatabaseAuthenticationEnabled.foreach(__v =>
@@ -3884,7 +3897,6 @@ package rds {
   }
 
   /**
-    * '''Note:'''This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
     * The data structure representing a proxy managed by the RDS Proxy.
     *  This data type is used as a response element in the <code>DescribeDBProxies</code> action.
     */
@@ -3952,14 +3964,26 @@ package rds {
     val `insufficient-resource-limits` = "insufficient-resource-limits".asInstanceOf[DBProxyStatus]
     val creating                       = "creating".asInstanceOf[DBProxyStatus]
     val deleting                       = "deleting".asInstanceOf[DBProxyStatus]
+    val suspended                      = "suspended".asInstanceOf[DBProxyStatus]
+    val suspending                     = "suspending".asInstanceOf[DBProxyStatus]
+    val reactivating                   = "reactivating".asInstanceOf[DBProxyStatus]
 
     val values = js.Object.freeze(
-      js.Array(available, modifying, `incompatible-network`, `insufficient-resource-limits`, creating, deleting)
+      js.Array(
+        available,
+        modifying,
+        `incompatible-network`,
+        `insufficient-resource-limits`,
+        creating,
+        deleting,
+        suspended,
+        suspending,
+        reactivating
+      )
     )
   }
 
   /**
-    * '''Note:'''This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
     * Contains the details for an RDS Proxy target. It represents an RDS DB instance or Aurora DB cluster that the proxy can connect to. One or more targets are associated with an RDS Proxy target group.
     *  This data type is used as a response element in the <code>DescribeDBProxyTargets</code> action.
     */
@@ -3969,6 +3993,7 @@ package rds {
     var Port: js.UndefOr[Int]
     var RdsResourceId: js.UndefOr[String]
     var TargetArn: js.UndefOr[String]
+    var TargetHealth: js.UndefOr[TargetHealth]
     var TrackedClusterId: js.UndefOr[String]
     var Type: js.UndefOr[TargetType]
   }
@@ -3980,6 +4005,7 @@ package rds {
         Port: js.UndefOr[Int] = js.undefined,
         RdsResourceId: js.UndefOr[String] = js.undefined,
         TargetArn: js.UndefOr[String] = js.undefined,
+        TargetHealth: js.UndefOr[TargetHealth] = js.undefined,
         TrackedClusterId: js.UndefOr[String] = js.undefined,
         Type: js.UndefOr[TargetType] = js.undefined
     ): DBProxyTarget = {
@@ -3988,6 +4014,7 @@ package rds {
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       RdsResourceId.foreach(__v => __obj.updateDynamic("RdsResourceId")(__v.asInstanceOf[js.Any]))
       TargetArn.foreach(__v => __obj.updateDynamic("TargetArn")(__v.asInstanceOf[js.Any]))
+      TargetHealth.foreach(__v => __obj.updateDynamic("TargetHealth")(__v.asInstanceOf[js.Any]))
       TrackedClusterId.foreach(__v => __obj.updateDynamic("TrackedClusterId")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBProxyTarget]
@@ -3995,7 +4022,6 @@ package rds {
   }
 
   /**
-    * '''Note:'''This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
     * Represents a set of RDS DB instances, Aurora DB clusters, or both that a proxy can connect to. Currently, each target group is associated with exactly one RDS DB instance or Aurora DB cluster.
     *  This data type is used as a response element in the <code>DescribeDBProxyTargetGroups</code> action.
     */
@@ -5905,7 +5931,7 @@ package rds {
     var ExportTaskIdentifier: js.UndefOr[String]
     var Filters: js.UndefOr[FilterList]
     var Marker: js.UndefOr[String]
-    var MaxRecords: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[MaxRecords]
     var SourceArn: js.UndefOr[String]
   }
 
@@ -5915,7 +5941,7 @@ package rds {
         ExportTaskIdentifier: js.UndefOr[String] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
-        MaxRecords: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
         SourceArn: js.UndefOr[String] = js.undefined
     ): DescribeExportTasksMessage = {
       val __obj = js.Dynamic.literal()
@@ -6051,6 +6077,7 @@ package rds {
   @js.native
   trait DescribeOrderableDBInstanceOptionsMessage extends js.Object {
     var Engine: String
+    var AvailabilityZoneGroup: js.UndefOr[String]
     var DBInstanceClass: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
     var Filters: js.UndefOr[FilterList]
@@ -6064,6 +6091,7 @@ package rds {
     @inline
     def apply(
         Engine: String,
+        AvailabilityZoneGroup: js.UndefOr[String] = js.undefined,
         DBInstanceClass: js.UndefOr[String] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -6076,6 +6104,7 @@ package rds {
         "Engine" -> Engine.asInstanceOf[js.Any]
       )
 
+      AvailabilityZoneGroup.foreach(__v => __obj.updateDynamic("AvailabilityZoneGroup")(__v.asInstanceOf[js.Any]))
       DBInstanceClass.foreach(__v => __obj.updateDynamic("DBInstanceClass")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
@@ -6471,9 +6500,10 @@ package rds {
   @js.native
   sealed trait EngineFamily extends js.Any
   object EngineFamily extends js.Object {
-    val MYSQL = "MYSQL".asInstanceOf[EngineFamily]
+    val MYSQL      = "MYSQL".asInstanceOf[EngineFamily]
+    val POSTGRESQL = "POSTGRESQL".asInstanceOf[EngineFamily]
 
-    val values = js.Object.freeze(js.Array(MYSQL))
+    val values = js.Object.freeze(js.Array(MYSQL, POSTGRESQL))
   }
 
   /**
@@ -6848,6 +6878,7 @@ package rds {
   @js.native
   trait GlobalClusterMember extends js.Object {
     var DBClusterArn: js.UndefOr[String]
+    var GlobalWriteForwardingStatus: js.UndefOr[WriteForwardingStatus]
     var IsWriter: js.UndefOr[Boolean]
     var Readers: js.UndefOr[ReadersArnList]
   }
@@ -6856,11 +6887,15 @@ package rds {
     @inline
     def apply(
         DBClusterArn: js.UndefOr[String] = js.undefined,
+        GlobalWriteForwardingStatus: js.UndefOr[WriteForwardingStatus] = js.undefined,
         IsWriter: js.UndefOr[Boolean] = js.undefined,
         Readers: js.UndefOr[ReadersArnList] = js.undefined
     ): GlobalClusterMember = {
       val __obj = js.Dynamic.literal()
       DBClusterArn.foreach(__v => __obj.updateDynamic("DBClusterArn")(__v.asInstanceOf[js.Any]))
+      GlobalWriteForwardingStatus.foreach(__v =>
+        __obj.updateDynamic("GlobalWriteForwardingStatus")(__v.asInstanceOf[js.Any])
+      )
       IsWriter.foreach(__v => __obj.updateDynamic("IsWriter")(__v.asInstanceOf[js.Any]))
       Readers.foreach(__v => __obj.updateDynamic("Readers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GlobalClusterMember]
@@ -7179,6 +7214,7 @@ package rds {
     var DeletionProtection: js.UndefOr[BooleanOptional]
     var Domain: js.UndefOr[String]
     var DomainIAMRoleName: js.UndefOr[String]
+    var EnableGlobalWriteForwarding: js.UndefOr[BooleanOptional]
     var EnableHttpEndpoint: js.UndefOr[BooleanOptional]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
     var EngineVersion: js.UndefOr[String]
@@ -7207,6 +7243,7 @@ package rds {
         DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
         Domain: js.UndefOr[String] = js.undefined,
         DomainIAMRoleName: js.UndefOr[String] = js.undefined,
+        EnableGlobalWriteForwarding: js.UndefOr[BooleanOptional] = js.undefined,
         EnableHttpEndpoint: js.UndefOr[BooleanOptional] = js.undefined,
         EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
@@ -7240,6 +7277,9 @@ package rds {
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       DomainIAMRoleName.foreach(__v => __obj.updateDynamic("DomainIAMRoleName")(__v.asInstanceOf[js.Any]))
+      EnableGlobalWriteForwarding.foreach(__v =>
+        __obj.updateDynamic("EnableGlobalWriteForwarding")(__v.asInstanceOf[js.Any])
+      )
       EnableHttpEndpoint.foreach(__v => __obj.updateDynamic("EnableHttpEndpoint")(__v.asInstanceOf[js.Any]))
       EnableIAMDatabaseAuthentication.foreach(__v =>
         __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any])
@@ -8293,6 +8333,7 @@ package rds {
     */
   @js.native
   trait OrderableDBInstanceOption extends js.Object {
+    var AvailabilityZoneGroup: js.UndefOr[String]
     var AvailabilityZones: js.UndefOr[AvailabilityZoneList]
     var AvailableProcessorFeatures: js.UndefOr[AvailableProcessorFeatureList]
     var DBInstanceClass: js.UndefOr[String]
@@ -8306,6 +8347,7 @@ package rds {
     var MinIopsPerGib: js.UndefOr[DoubleOptional]
     var MinStorageSize: js.UndefOr[IntegerOptional]
     var MultiAZCapable: js.UndefOr[Boolean]
+    var OutpostCapable: js.UndefOr[Boolean]
     var ReadReplicaCapable: js.UndefOr[Boolean]
     var StorageType: js.UndefOr[String]
     var SupportedEngineModes: js.UndefOr[EngineModeList]
@@ -8322,6 +8364,7 @@ package rds {
   object OrderableDBInstanceOption {
     @inline
     def apply(
+        AvailabilityZoneGroup: js.UndefOr[String] = js.undefined,
         AvailabilityZones: js.UndefOr[AvailabilityZoneList] = js.undefined,
         AvailableProcessorFeatures: js.UndefOr[AvailableProcessorFeatureList] = js.undefined,
         DBInstanceClass: js.UndefOr[String] = js.undefined,
@@ -8335,6 +8378,7 @@ package rds {
         MinIopsPerGib: js.UndefOr[DoubleOptional] = js.undefined,
         MinStorageSize: js.UndefOr[IntegerOptional] = js.undefined,
         MultiAZCapable: js.UndefOr[Boolean] = js.undefined,
+        OutpostCapable: js.UndefOr[Boolean] = js.undefined,
         ReadReplicaCapable: js.UndefOr[Boolean] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined,
         SupportedEngineModes: js.UndefOr[EngineModeList] = js.undefined,
@@ -8348,6 +8392,7 @@ package rds {
         Vpc: js.UndefOr[Boolean] = js.undefined
     ): OrderableDBInstanceOption = {
       val __obj = js.Dynamic.literal()
+      AvailabilityZoneGroup.foreach(__v => __obj.updateDynamic("AvailabilityZoneGroup")(__v.asInstanceOf[js.Any]))
       AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
       AvailableProcessorFeatures.foreach(__v =>
         __obj.updateDynamic("AvailableProcessorFeatures")(__v.asInstanceOf[js.Any])
@@ -8363,6 +8408,7 @@ package rds {
       MinIopsPerGib.foreach(__v => __obj.updateDynamic("MinIopsPerGib")(__v.asInstanceOf[js.Any]))
       MinStorageSize.foreach(__v => __obj.updateDynamic("MinStorageSize")(__v.asInstanceOf[js.Any]))
       MultiAZCapable.foreach(__v => __obj.updateDynamic("MultiAZCapable")(__v.asInstanceOf[js.Any]))
+      OutpostCapable.foreach(__v => __obj.updateDynamic("OutpostCapable")(__v.asInstanceOf[js.Any]))
       ReadReplicaCapable.foreach(__v => __obj.updateDynamic("ReadReplicaCapable")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       SupportedEngineModes.foreach(__v => __obj.updateDynamic("SupportedEngineModes")(__v.asInstanceOf[js.Any]))
@@ -8411,6 +8457,26 @@ package rds {
         __obj.updateDynamic("OrderableDBInstanceOptions")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[OrderableDBInstanceOptionsMessage]
+    }
+  }
+
+  /**
+    * A data type that represents an Outpost.
+    *  For more information about RDS on Outposts, see [[https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html|Amazon RDS on AWS Outposts]] in the <i>Amazon RDS User Guide.</i>
+    */
+  @js.native
+  trait Outpost extends js.Object {
+    var Arn: js.UndefOr[String]
+  }
+
+  object Outpost {
+    @inline
+    def apply(
+        Arn: js.UndefOr[String] = js.undefined
+    ): Outpost = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Outpost]
     }
   }
 
@@ -10529,12 +10595,13 @@ package rds {
   }
 
   /**
-    * This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.
+    * This data type is used as a response element for the <code>DescribeDBSubnetGroups</code> operation.
     */
   @js.native
   trait Subnet extends js.Object {
     var SubnetAvailabilityZone: js.UndefOr[AvailabilityZone]
     var SubnetIdentifier: js.UndefOr[String]
+    var SubnetOutpost: js.UndefOr[Outpost]
     var SubnetStatus: js.UndefOr[String]
   }
 
@@ -10543,11 +10610,13 @@ package rds {
     def apply(
         SubnetAvailabilityZone: js.UndefOr[AvailabilityZone] = js.undefined,
         SubnetIdentifier: js.UndefOr[String] = js.undefined,
+        SubnetOutpost: js.UndefOr[Outpost] = js.undefined,
         SubnetStatus: js.UndefOr[String] = js.undefined
     ): Subnet = {
       val __obj = js.Dynamic.literal()
       SubnetAvailabilityZone.foreach(__v => __obj.updateDynamic("SubnetAvailabilityZone")(__v.asInstanceOf[js.Any]))
       SubnetIdentifier.foreach(__v => __obj.updateDynamic("SubnetIdentifier")(__v.asInstanceOf[js.Any]))
+      SubnetOutpost.foreach(__v => __obj.updateDynamic("SubnetOutpost")(__v.asInstanceOf[js.Any]))
       SubnetStatus.foreach(__v => __obj.updateDynamic("SubnetStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Subnet]
     }
@@ -10592,6 +10661,52 @@ package rds {
       TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagListMessage]
     }
+  }
+
+  /**
+    * Information about the connection health of an RDS Proxy target.
+    */
+  @js.native
+  trait TargetHealth extends js.Object {
+    var Description: js.UndefOr[String]
+    var Reason: js.UndefOr[TargetHealthReason]
+    var State: js.UndefOr[TargetState]
+  }
+
+  object TargetHealth {
+    @inline
+    def apply(
+        Description: js.UndefOr[String] = js.undefined,
+        Reason: js.UndefOr[TargetHealthReason] = js.undefined,
+        State: js.UndefOr[TargetState] = js.undefined
+    ): TargetHealth = {
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TargetHealth]
+    }
+  }
+
+  @js.native
+  sealed trait TargetHealthReason extends js.Any
+  object TargetHealthReason extends js.Object {
+    val UNREACHABLE            = "UNREACHABLE".asInstanceOf[TargetHealthReason]
+    val CONNECTION_FAILED      = "CONNECTION_FAILED".asInstanceOf[TargetHealthReason]
+    val AUTH_FAILURE           = "AUTH_FAILURE".asInstanceOf[TargetHealthReason]
+    val PENDING_PROXY_CAPACITY = "PENDING_PROXY_CAPACITY".asInstanceOf[TargetHealthReason]
+
+    val values = js.Object.freeze(js.Array(UNREACHABLE, CONNECTION_FAILED, AUTH_FAILURE, PENDING_PROXY_CAPACITY))
+  }
+
+  @js.native
+  sealed trait TargetState extends js.Any
+  object TargetState extends js.Object {
+    val REGISTERING = "REGISTERING".asInstanceOf[TargetState]
+    val AVAILABLE   = "AVAILABLE".asInstanceOf[TargetState]
+    val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[TargetState]
+
+    val values = js.Object.freeze(js.Array(REGISTERING, AVAILABLE, UNAVAILABLE))
   }
 
   @js.native
@@ -10655,7 +10770,6 @@ package rds {
   }
 
   /**
-    * '''Note:'''This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
     * Specifies the details of authentication used by a proxy to log in as a specific database user.
     */
   @js.native
@@ -10687,7 +10801,6 @@ package rds {
   }
 
   /**
-    * '''Note:'''This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
     * Returns the details of authentication used by a proxy to log in as a specific database user.
     */
   @js.native
@@ -10828,5 +10941,17 @@ package rds {
       VpnTunnelOriginatorIP.foreach(__v => __obj.updateDynamic("VpnTunnelOriginatorIP")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VpnDetails]
     }
+  }
+
+  @js.native
+  sealed trait WriteForwardingStatus extends js.Any
+  object WriteForwardingStatus extends js.Object {
+    val enabled   = "enabled".asInstanceOf[WriteForwardingStatus]
+    val disabled  = "disabled".asInstanceOf[WriteForwardingStatus]
+    val enabling  = "enabling".asInstanceOf[WriteForwardingStatus]
+    val disabling = "disabling".asInstanceOf[WriteForwardingStatus]
+    val unknown   = "unknown".asInstanceOf[WriteForwardingStatus]
+
+    val values = js.Object.freeze(js.Array(enabled, disabled, enabling, disabling, unknown))
   }
 }

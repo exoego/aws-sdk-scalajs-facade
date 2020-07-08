@@ -69,6 +69,7 @@ package object robomaker {
   type SimulationJobs                     = js.Array[SimulationJob]
   type SimulationSoftwareSuiteVersionType = String
   type SimulationTimeMillis               = Double
+  type SimulationUnit                     = Int
   type SourceConfigs                      = js.Array[SourceConfig]
   type Sources                            = js.Array[Source]
   type Subnets                            = js.Array[NonEmptyString]
@@ -416,6 +417,44 @@ package robomaker {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CancelSimulationJobResponse]
+    }
+  }
+
+  /**
+    * Compute information for the simulation job.
+    */
+  @js.native
+  trait Compute extends js.Object {
+    var simulationUnitLimit: js.UndefOr[SimulationUnit]
+  }
+
+  object Compute {
+    @inline
+    def apply(
+        simulationUnitLimit: js.UndefOr[SimulationUnit] = js.undefined
+    ): Compute = {
+      val __obj = js.Dynamic.literal()
+      simulationUnitLimit.foreach(__v => __obj.updateDynamic("simulationUnitLimit")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Compute]
+    }
+  }
+
+  /**
+    * Compute information for the simulation job
+    */
+  @js.native
+  trait ComputeResponse extends js.Object {
+    var simulationUnitLimit: js.UndefOr[SimulationUnit]
+  }
+
+  object ComputeResponse {
+    @inline
+    def apply(
+        simulationUnitLimit: js.UndefOr[SimulationUnit] = js.undefined
+    ): ComputeResponse = {
+      val __obj = js.Dynamic.literal()
+      simulationUnitLimit.foreach(__v => __obj.updateDynamic("simulationUnitLimit")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ComputeResponse]
     }
   }
 
@@ -856,6 +895,7 @@ package robomaker {
     var iamRole: IamRole
     var maxJobDurationInSeconds: JobDuration
     var clientRequestToken: js.UndefOr[ClientRequestToken]
+    var compute: js.UndefOr[Compute]
     var dataSources: js.UndefOr[DataSourceConfigs]
     var failureBehavior: js.UndefOr[FailureBehavior]
     var loggingConfig: js.UndefOr[LoggingConfig]
@@ -872,6 +912,7 @@ package robomaker {
         iamRole: IamRole,
         maxJobDurationInSeconds: JobDuration,
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        compute: js.UndefOr[Compute] = js.undefined,
         dataSources: js.UndefOr[DataSourceConfigs] = js.undefined,
         failureBehavior: js.UndefOr[FailureBehavior] = js.undefined,
         loggingConfig: js.UndefOr[LoggingConfig] = js.undefined,
@@ -887,6 +928,7 @@ package robomaker {
       )
 
       clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      compute.foreach(__v => __obj.updateDynamic("compute")(__v.asInstanceOf[js.Any]))
       dataSources.foreach(__v => __obj.updateDynamic("dataSources")(__v.asInstanceOf[js.Any]))
       failureBehavior.foreach(__v => __obj.updateDynamic("failureBehavior")(__v.asInstanceOf[js.Any]))
       loggingConfig.foreach(__v => __obj.updateDynamic("loggingConfig")(__v.asInstanceOf[js.Any]))
@@ -903,6 +945,7 @@ package robomaker {
   trait CreateSimulationJobResponse extends js.Object {
     var arn: js.UndefOr[Arn]
     var clientRequestToken: js.UndefOr[ClientRequestToken]
+    var compute: js.UndefOr[ComputeResponse]
     var dataSources: js.UndefOr[DataSources]
     var failureBehavior: js.UndefOr[FailureBehavior]
     var failureCode: js.UndefOr[SimulationJobErrorCode]
@@ -925,6 +968,7 @@ package robomaker {
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        compute: js.UndefOr[ComputeResponse] = js.undefined,
         dataSources: js.UndefOr[DataSources] = js.undefined,
         failureBehavior: js.UndefOr[FailureBehavior] = js.undefined,
         failureCode: js.UndefOr[SimulationJobErrorCode] = js.undefined,
@@ -944,6 +988,7 @@ package robomaker {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      compute.foreach(__v => __obj.updateDynamic("compute")(__v.asInstanceOf[js.Any]))
       dataSources.foreach(__v => __obj.updateDynamic("dataSources")(__v.asInstanceOf[js.Any]))
       failureBehavior.foreach(__v => __obj.updateDynamic("failureBehavior")(__v.asInstanceOf[js.Any]))
       failureCode.foreach(__v => __obj.updateDynamic("failureCode")(__v.asInstanceOf[js.Any]))
@@ -1259,10 +1304,12 @@ package robomaker {
     val RobotDeploymentNoResponse           = "RobotDeploymentNoResponse".asInstanceOf[DeploymentJobErrorCode]
     val RobotAgentConnectionTimeout         = "RobotAgentConnectionTimeout".asInstanceOf[DeploymentJobErrorCode]
     val GreengrassDeploymentFailed          = "GreengrassDeploymentFailed".asInstanceOf[DeploymentJobErrorCode]
+    val InvalidGreengrassGroup              = "InvalidGreengrassGroup".asInstanceOf[DeploymentJobErrorCode]
     val MissingRobotArchitecture            = "MissingRobotArchitecture".asInstanceOf[DeploymentJobErrorCode]
     val MissingRobotApplicationArchitecture = "MissingRobotApplicationArchitecture".asInstanceOf[DeploymentJobErrorCode]
     val MissingRobotDeploymentResource      = "MissingRobotDeploymentResource".asInstanceOf[DeploymentJobErrorCode]
     val GreengrassGroupVersionDoesNotExist  = "GreengrassGroupVersionDoesNotExist".asInstanceOf[DeploymentJobErrorCode]
+    val LambdaDeleted                       = "LambdaDeleted".asInstanceOf[DeploymentJobErrorCode]
     val ExtractingBundleFailure             = "ExtractingBundleFailure".asInstanceOf[DeploymentJobErrorCode]
     val PreLaunchFileFailure                = "PreLaunchFileFailure".asInstanceOf[DeploymentJobErrorCode]
     val PostLaunchFileFailure               = "PostLaunchFileFailure".asInstanceOf[DeploymentJobErrorCode]
@@ -1280,10 +1327,12 @@ package robomaker {
         RobotDeploymentNoResponse,
         RobotAgentConnectionTimeout,
         GreengrassDeploymentFailed,
+        InvalidGreengrassGroup,
         MissingRobotArchitecture,
         MissingRobotApplicationArchitecture,
         MissingRobotDeploymentResource,
         GreengrassGroupVersionDoesNotExist,
+        LambdaDeleted,
         ExtractingBundleFailure,
         PreLaunchFileFailure,
         PostLaunchFileFailure,
@@ -1770,6 +1819,7 @@ package robomaker {
   trait DescribeSimulationJobResponse extends js.Object {
     var arn: js.UndefOr[Arn]
     var clientRequestToken: js.UndefOr[ClientRequestToken]
+    var compute: js.UndefOr[ComputeResponse]
     var dataSources: js.UndefOr[DataSources]
     var failureBehavior: js.UndefOr[FailureBehavior]
     var failureCode: js.UndefOr[SimulationJobErrorCode]
@@ -1795,6 +1845,7 @@ package robomaker {
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        compute: js.UndefOr[ComputeResponse] = js.undefined,
         dataSources: js.UndefOr[DataSources] = js.undefined,
         failureBehavior: js.UndefOr[FailureBehavior] = js.undefined,
         failureCode: js.UndefOr[SimulationJobErrorCode] = js.undefined,
@@ -1817,6 +1868,7 @@ package robomaker {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      compute.foreach(__v => __obj.updateDynamic("compute")(__v.asInstanceOf[js.Any]))
       dataSources.foreach(__v => __obj.updateDynamic("dataSources")(__v.asInstanceOf[js.Any]))
       failureBehavior.foreach(__v => __obj.updateDynamic("failureBehavior")(__v.asInstanceOf[js.Any]))
       failureCode.foreach(__v => __obj.updateDynamic("failureCode")(__v.asInstanceOf[js.Any]))
@@ -1941,6 +1993,7 @@ package robomaker {
     var packageName: Command
     var environmentVariables: js.UndefOr[EnvironmentVariableMap]
     var portForwardingConfig: js.UndefOr[PortForwardingConfig]
+    var streamUI: js.UndefOr[Boolean]
   }
 
   object LaunchConfig {
@@ -1949,7 +2002,8 @@ package robomaker {
         launchFile: Command,
         packageName: Command,
         environmentVariables: js.UndefOr[EnvironmentVariableMap] = js.undefined,
-        portForwardingConfig: js.UndefOr[PortForwardingConfig] = js.undefined
+        portForwardingConfig: js.UndefOr[PortForwardingConfig] = js.undefined,
+        streamUI: js.UndefOr[Boolean] = js.undefined
     ): LaunchConfig = {
       val __obj = js.Dynamic.literal(
         "launchFile"  -> launchFile.asInstanceOf[js.Any],
@@ -1958,6 +2012,7 @@ package robomaker {
 
       environmentVariables.foreach(__v => __obj.updateDynamic("environmentVariables")(__v.asInstanceOf[js.Any]))
       portForwardingConfig.foreach(__v => __obj.updateDynamic("portForwardingConfig")(__v.asInstanceOf[js.Any]))
+      streamUI.foreach(__v => __obj.updateDynamic("streamUI")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LaunchConfig]
     }
   }
@@ -2877,6 +2932,7 @@ package robomaker {
   trait SimulationJob extends js.Object {
     var arn: js.UndefOr[Arn]
     var clientRequestToken: js.UndefOr[ClientRequestToken]
+    var compute: js.UndefOr[ComputeResponse]
     var dataSources: js.UndefOr[DataSources]
     var failureBehavior: js.UndefOr[FailureBehavior]
     var failureCode: js.UndefOr[SimulationJobErrorCode]
@@ -2902,6 +2958,7 @@ package robomaker {
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        compute: js.UndefOr[ComputeResponse] = js.undefined,
         dataSources: js.UndefOr[DataSources] = js.undefined,
         failureBehavior: js.UndefOr[FailureBehavior] = js.undefined,
         failureCode: js.UndefOr[SimulationJobErrorCode] = js.undefined,
@@ -2924,6 +2981,7 @@ package robomaker {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      compute.foreach(__v => __obj.updateDynamic("compute")(__v.asInstanceOf[js.Any]))
       dataSources.foreach(__v => __obj.updateDynamic("dataSources")(__v.asInstanceOf[js.Any]))
       failureBehavior.foreach(__v => __obj.updateDynamic("failureBehavior")(__v.asInstanceOf[js.Any]))
       failureCode.foreach(__v => __obj.updateDynamic("failureCode")(__v.asInstanceOf[js.Any]))
@@ -3081,6 +3139,7 @@ package robomaker {
   @js.native
   trait SimulationJobRequest extends js.Object {
     var maxJobDurationInSeconds: JobDuration
+    var compute: js.UndefOr[Compute]
     var dataSources: js.UndefOr[DataSourceConfigs]
     var failureBehavior: js.UndefOr[FailureBehavior]
     var iamRole: js.UndefOr[IamRole]
@@ -3097,6 +3156,7 @@ package robomaker {
     @inline
     def apply(
         maxJobDurationInSeconds: JobDuration,
+        compute: js.UndefOr[Compute] = js.undefined,
         dataSources: js.UndefOr[DataSourceConfigs] = js.undefined,
         failureBehavior: js.UndefOr[FailureBehavior] = js.undefined,
         iamRole: js.UndefOr[IamRole] = js.undefined,
@@ -3112,6 +3172,7 @@ package robomaker {
         "maxJobDurationInSeconds" -> maxJobDurationInSeconds.asInstanceOf[js.Any]
       )
 
+      compute.foreach(__v => __obj.updateDynamic("compute")(__v.asInstanceOf[js.Any]))
       dataSources.foreach(__v => __obj.updateDynamic("dataSources")(__v.asInstanceOf[js.Any]))
       failureBehavior.foreach(__v => __obj.updateDynamic("failureBehavior")(__v.asInstanceOf[js.Any]))
       iamRole.foreach(__v => __obj.updateDynamic("iamRole")(__v.asInstanceOf[js.Any]))

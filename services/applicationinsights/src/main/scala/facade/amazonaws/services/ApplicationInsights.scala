@@ -11,6 +11,14 @@ package object applicationinsights {
   type AmazonResourceName                     = String
   type ApplicationComponentList               = js.Array[ApplicationComponent]
   type ApplicationInfoList                    = js.Array[ApplicationInfo]
+  type CWEMonitorEnabled                      = Boolean
+  type CloudWatchEventDetailType              = String
+  type CloudWatchEventId                      = String
+  type CodeDeployApplication                  = String
+  type CodeDeployDeploymentGroup              = String
+  type CodeDeployDeploymentId                 = String
+  type CodeDeployInstanceGroupId              = String
+  type CodeDeployState                        = String
   type ComponentConfiguration                 = String
   type ComponentName                          = String
   type ConfigurationEventDetail               = String
@@ -18,8 +26,14 @@ package object applicationinsights {
   type ConfigurationEventMonitoredResourceARN = String
   type ConfigurationEventResourceName         = String
   type ConfigurationEventTime                 = js.Date
+  type Ec2State                               = String
   type EndTime                                = js.Date
   type Feedback                               = js.Dictionary[FeedbackValue]
+  type HealthEventArn                         = String
+  type HealthEventDescription                 = String
+  type HealthEventTypeCategory                = String
+  type HealthEventTypeCode                    = String
+  type HealthService                          = String
   type Insights                               = String
   type LifeCycle                              = String
   type LineTime                               = js.Date
@@ -59,6 +73,13 @@ package object applicationinsights {
   type Title                                  = String
   type Unit                                   = String
   type Value                                  = Double
+  type XRayErrorPercent                       = Int
+  type XRayFaultPercent                       = Int
+  type XRayNodeName                           = String
+  type XRayNodeType                           = String
+  type XRayRequestAverageLatency              = Double
+  type XRayRequestCount                       = Int
+  type XRayThrottlePercent                    = Int
 
   implicit final class ApplicationInsightsOps(private val service: ApplicationInsights) extends AnyVal {
 
@@ -203,6 +224,7 @@ package applicationinsights {
     */
   @js.native
   trait ApplicationInfo extends js.Object {
+    var CWEMonitorEnabled: js.UndefOr[CWEMonitorEnabled]
     var LifeCycle: js.UndefOr[LifeCycle]
     var OpsCenterEnabled: js.UndefOr[OpsCenterEnabled]
     var OpsItemSNSTopicArn: js.UndefOr[OpsItemSNSTopicArn]
@@ -213,6 +235,7 @@ package applicationinsights {
   object ApplicationInfo {
     @inline
     def apply(
+        CWEMonitorEnabled: js.UndefOr[CWEMonitorEnabled] = js.undefined,
         LifeCycle: js.UndefOr[LifeCycle] = js.undefined,
         OpsCenterEnabled: js.UndefOr[OpsCenterEnabled] = js.undefined,
         OpsItemSNSTopicArn: js.UndefOr[OpsItemSNSTopicArn] = js.undefined,
@@ -220,6 +243,7 @@ package applicationinsights {
         ResourceGroupName: js.UndefOr[ResourceGroupName] = js.undefined
     ): ApplicationInfo = {
       val __obj = js.Dynamic.literal()
+      CWEMonitorEnabled.foreach(__v => __obj.updateDynamic("CWEMonitorEnabled")(__v.asInstanceOf[js.Any]))
       LifeCycle.foreach(__v => __obj.updateDynamic("LifeCycle")(__v.asInstanceOf[js.Any]))
       OpsCenterEnabled.foreach(__v => __obj.updateDynamic("OpsCenterEnabled")(__v.asInstanceOf[js.Any]))
       OpsItemSNSTopicArn.foreach(__v => __obj.updateDynamic("OpsItemSNSTopicArn")(__v.asInstanceOf[js.Any]))
@@ -227,6 +251,16 @@ package applicationinsights {
       ResourceGroupName.foreach(__v => __obj.updateDynamic("ResourceGroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationInfo]
     }
+  }
+
+  @js.native
+  sealed trait CloudWatchEventSource extends js.Any
+  object CloudWatchEventSource extends js.Object {
+    val EC2         = "EC2".asInstanceOf[CloudWatchEventSource]
+    val CODE_DEPLOY = "CODE_DEPLOY".asInstanceOf[CloudWatchEventSource]
+    val HEALTH      = "HEALTH".asInstanceOf[CloudWatchEventSource]
+
+    val values = js.Object.freeze(js.Array(EC2, CODE_DEPLOY, HEALTH))
   }
 
   /**
@@ -286,6 +320,7 @@ package applicationinsights {
   @js.native
   trait CreateApplicationRequest extends js.Object {
     var ResourceGroupName: ResourceGroupName
+    var CWEMonitorEnabled: js.UndefOr[CWEMonitorEnabled]
     var OpsCenterEnabled: js.UndefOr[OpsCenterEnabled]
     var OpsItemSNSTopicArn: js.UndefOr[OpsItemSNSTopicArn]
     var Tags: js.UndefOr[TagList]
@@ -295,6 +330,7 @@ package applicationinsights {
     @inline
     def apply(
         ResourceGroupName: ResourceGroupName,
+        CWEMonitorEnabled: js.UndefOr[CWEMonitorEnabled] = js.undefined,
         OpsCenterEnabled: js.UndefOr[OpsCenterEnabled] = js.undefined,
         OpsItemSNSTopicArn: js.UndefOr[OpsItemSNSTopicArn] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -303,6 +339,7 @@ package applicationinsights {
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
 
+      CWEMonitorEnabled.foreach(__v => __obj.updateDynamic("CWEMonitorEnabled")(__v.asInstanceOf[js.Any]))
       OpsCenterEnabled.foreach(__v => __obj.updateDynamic("OpsCenterEnabled")(__v.asInstanceOf[js.Any]))
       OpsItemSNSTopicArn.foreach(__v => __obj.updateDynamic("OpsItemSNSTopicArn")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -1184,7 +1221,21 @@ package applicationinsights {
     */
   @js.native
   trait Observation extends js.Object {
+    var CloudWatchEventDetailType: js.UndefOr[CloudWatchEventDetailType]
+    var CloudWatchEventId: js.UndefOr[CloudWatchEventId]
+    var CloudWatchEventSource: js.UndefOr[CloudWatchEventSource]
+    var CodeDeployApplication: js.UndefOr[CodeDeployApplication]
+    var CodeDeployDeploymentGroup: js.UndefOr[CodeDeployDeploymentGroup]
+    var CodeDeployDeploymentId: js.UndefOr[CodeDeployDeploymentId]
+    var CodeDeployInstanceGroupId: js.UndefOr[CodeDeployInstanceGroupId]
+    var CodeDeployState: js.UndefOr[CodeDeployState]
+    var Ec2State: js.UndefOr[Ec2State]
     var EndTime: js.UndefOr[EndTime]
+    var HealthEventArn: js.UndefOr[HealthEventArn]
+    var HealthEventDescription: js.UndefOr[HealthEventDescription]
+    var HealthEventTypeCategory: js.UndefOr[HealthEventTypeCategory]
+    var HealthEventTypeCode: js.UndefOr[HealthEventTypeCode]
+    var HealthService: js.UndefOr[HealthService]
     var Id: js.UndefOr[ObservationId]
     var LineTime: js.UndefOr[LineTime]
     var LogFilter: js.UndefOr[LogFilter]
@@ -1197,12 +1248,33 @@ package applicationinsights {
     var StartTime: js.UndefOr[StartTime]
     var Unit: js.UndefOr[Unit]
     var Value: js.UndefOr[Value]
+    var XRayErrorPercent: js.UndefOr[XRayErrorPercent]
+    var XRayFaultPercent: js.UndefOr[XRayFaultPercent]
+    var XRayNodeName: js.UndefOr[XRayNodeName]
+    var XRayNodeType: js.UndefOr[XRayNodeType]
+    var XRayRequestAverageLatency: js.UndefOr[XRayRequestAverageLatency]
+    var XRayRequestCount: js.UndefOr[XRayRequestCount]
+    var XRayThrottlePercent: js.UndefOr[XRayThrottlePercent]
   }
 
   object Observation {
     @inline
     def apply(
+        CloudWatchEventDetailType: js.UndefOr[CloudWatchEventDetailType] = js.undefined,
+        CloudWatchEventId: js.UndefOr[CloudWatchEventId] = js.undefined,
+        CloudWatchEventSource: js.UndefOr[CloudWatchEventSource] = js.undefined,
+        CodeDeployApplication: js.UndefOr[CodeDeployApplication] = js.undefined,
+        CodeDeployDeploymentGroup: js.UndefOr[CodeDeployDeploymentGroup] = js.undefined,
+        CodeDeployDeploymentId: js.UndefOr[CodeDeployDeploymentId] = js.undefined,
+        CodeDeployInstanceGroupId: js.UndefOr[CodeDeployInstanceGroupId] = js.undefined,
+        CodeDeployState: js.UndefOr[CodeDeployState] = js.undefined,
+        Ec2State: js.UndefOr[Ec2State] = js.undefined,
         EndTime: js.UndefOr[EndTime] = js.undefined,
+        HealthEventArn: js.UndefOr[HealthEventArn] = js.undefined,
+        HealthEventDescription: js.UndefOr[HealthEventDescription] = js.undefined,
+        HealthEventTypeCategory: js.UndefOr[HealthEventTypeCategory] = js.undefined,
+        HealthEventTypeCode: js.UndefOr[HealthEventTypeCode] = js.undefined,
+        HealthService: js.UndefOr[HealthService] = js.undefined,
         Id: js.UndefOr[ObservationId] = js.undefined,
         LineTime: js.UndefOr[LineTime] = js.undefined,
         LogFilter: js.UndefOr[LogFilter] = js.undefined,
@@ -1214,10 +1286,37 @@ package applicationinsights {
         SourceType: js.UndefOr[SourceType] = js.undefined,
         StartTime: js.UndefOr[StartTime] = js.undefined,
         Unit: js.UndefOr[Unit] = js.undefined,
-        Value: js.UndefOr[Value] = js.undefined
+        Value: js.UndefOr[Value] = js.undefined,
+        XRayErrorPercent: js.UndefOr[XRayErrorPercent] = js.undefined,
+        XRayFaultPercent: js.UndefOr[XRayFaultPercent] = js.undefined,
+        XRayNodeName: js.UndefOr[XRayNodeName] = js.undefined,
+        XRayNodeType: js.UndefOr[XRayNodeType] = js.undefined,
+        XRayRequestAverageLatency: js.UndefOr[XRayRequestAverageLatency] = js.undefined,
+        XRayRequestCount: js.UndefOr[XRayRequestCount] = js.undefined,
+        XRayThrottlePercent: js.UndefOr[XRayThrottlePercent] = js.undefined
     ): Observation = {
       val __obj = js.Dynamic.literal()
+      CloudWatchEventDetailType.foreach(__v =>
+        __obj.updateDynamic("CloudWatchEventDetailType")(__v.asInstanceOf[js.Any])
+      )
+      CloudWatchEventId.foreach(__v => __obj.updateDynamic("CloudWatchEventId")(__v.asInstanceOf[js.Any]))
+      CloudWatchEventSource.foreach(__v => __obj.updateDynamic("CloudWatchEventSource")(__v.asInstanceOf[js.Any]))
+      CodeDeployApplication.foreach(__v => __obj.updateDynamic("CodeDeployApplication")(__v.asInstanceOf[js.Any]))
+      CodeDeployDeploymentGroup.foreach(__v =>
+        __obj.updateDynamic("CodeDeployDeploymentGroup")(__v.asInstanceOf[js.Any])
+      )
+      CodeDeployDeploymentId.foreach(__v => __obj.updateDynamic("CodeDeployDeploymentId")(__v.asInstanceOf[js.Any]))
+      CodeDeployInstanceGroupId.foreach(__v =>
+        __obj.updateDynamic("CodeDeployInstanceGroupId")(__v.asInstanceOf[js.Any])
+      )
+      CodeDeployState.foreach(__v => __obj.updateDynamic("CodeDeployState")(__v.asInstanceOf[js.Any]))
+      Ec2State.foreach(__v => __obj.updateDynamic("Ec2State")(__v.asInstanceOf[js.Any]))
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      HealthEventArn.foreach(__v => __obj.updateDynamic("HealthEventArn")(__v.asInstanceOf[js.Any]))
+      HealthEventDescription.foreach(__v => __obj.updateDynamic("HealthEventDescription")(__v.asInstanceOf[js.Any]))
+      HealthEventTypeCategory.foreach(__v => __obj.updateDynamic("HealthEventTypeCategory")(__v.asInstanceOf[js.Any]))
+      HealthEventTypeCode.foreach(__v => __obj.updateDynamic("HealthEventTypeCode")(__v.asInstanceOf[js.Any]))
+      HealthService.foreach(__v => __obj.updateDynamic("HealthService")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       LineTime.foreach(__v => __obj.updateDynamic("LineTime")(__v.asInstanceOf[js.Any]))
       LogFilter.foreach(__v => __obj.updateDynamic("LogFilter")(__v.asInstanceOf[js.Any]))
@@ -1230,6 +1329,15 @@ package applicationinsights {
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
       Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      XRayErrorPercent.foreach(__v => __obj.updateDynamic("XRayErrorPercent")(__v.asInstanceOf[js.Any]))
+      XRayFaultPercent.foreach(__v => __obj.updateDynamic("XRayFaultPercent")(__v.asInstanceOf[js.Any]))
+      XRayNodeName.foreach(__v => __obj.updateDynamic("XRayNodeName")(__v.asInstanceOf[js.Any]))
+      XRayNodeType.foreach(__v => __obj.updateDynamic("XRayNodeType")(__v.asInstanceOf[js.Any]))
+      XRayRequestAverageLatency.foreach(__v =>
+        __obj.updateDynamic("XRayRequestAverageLatency")(__v.asInstanceOf[js.Any])
+      )
+      XRayRequestCount.foreach(__v => __obj.updateDynamic("XRayRequestCount")(__v.asInstanceOf[js.Any]))
+      XRayThrottlePercent.foreach(__v => __obj.updateDynamic("XRayThrottlePercent")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Observation]
     }
   }
@@ -1430,6 +1538,7 @@ package applicationinsights {
   @js.native
   trait UpdateApplicationRequest extends js.Object {
     var ResourceGroupName: ResourceGroupName
+    var CWEMonitorEnabled: js.UndefOr[CWEMonitorEnabled]
     var OpsCenterEnabled: js.UndefOr[OpsCenterEnabled]
     var OpsItemSNSTopicArn: js.UndefOr[OpsItemSNSTopicArn]
     var RemoveSNSTopic: js.UndefOr[RemoveSNSTopic]
@@ -1439,6 +1548,7 @@ package applicationinsights {
     @inline
     def apply(
         ResourceGroupName: ResourceGroupName,
+        CWEMonitorEnabled: js.UndefOr[CWEMonitorEnabled] = js.undefined,
         OpsCenterEnabled: js.UndefOr[OpsCenterEnabled] = js.undefined,
         OpsItemSNSTopicArn: js.UndefOr[OpsItemSNSTopicArn] = js.undefined,
         RemoveSNSTopic: js.UndefOr[RemoveSNSTopic] = js.undefined
@@ -1447,6 +1557,7 @@ package applicationinsights {
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
 
+      CWEMonitorEnabled.foreach(__v => __obj.updateDynamic("CWEMonitorEnabled")(__v.asInstanceOf[js.Any]))
       OpsCenterEnabled.foreach(__v => __obj.updateDynamic("OpsCenterEnabled")(__v.asInstanceOf[js.Any]))
       OpsItemSNSTopicArn.foreach(__v => __obj.updateDynamic("OpsItemSNSTopicArn")(__v.asInstanceOf[js.Any]))
       RemoveSNSTopic.foreach(__v => __obj.updateDynamic("RemoveSNSTopic")(__v.asInstanceOf[js.Any]))

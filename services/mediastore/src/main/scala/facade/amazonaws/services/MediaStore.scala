@@ -22,6 +22,9 @@ package object mediastore {
   type Header                        = String
   type LifecyclePolicy               = String
   type MaxAgeSeconds                 = Int
+  type MetricPolicyRules             = js.Array[MetricPolicyRule]
+  type ObjectGroup                   = String
+  type ObjectGroupName               = String
   type Origin                        = String
   type PaginationToken               = String
   type TagKey                        = String
@@ -42,6 +45,8 @@ package object mediastore {
       service.deleteCorsPolicy(params).promise().toFuture
     @inline def deleteLifecyclePolicyFuture(params: DeleteLifecyclePolicyInput): Future[DeleteLifecyclePolicyOutput] =
       service.deleteLifecyclePolicy(params).promise().toFuture
+    @inline def deleteMetricPolicyFuture(params: DeleteMetricPolicyInput): Future[DeleteMetricPolicyOutput] =
+      service.deleteMetricPolicy(params).promise().toFuture
     @inline def describeContainerFuture(params: DescribeContainerInput): Future[DescribeContainerOutput] =
       service.describeContainer(params).promise().toFuture
     @inline def getContainerPolicyFuture(params: GetContainerPolicyInput): Future[GetContainerPolicyOutput] =
@@ -50,6 +55,8 @@ package object mediastore {
       service.getCorsPolicy(params).promise().toFuture
     @inline def getLifecyclePolicyFuture(params: GetLifecyclePolicyInput): Future[GetLifecyclePolicyOutput] =
       service.getLifecyclePolicy(params).promise().toFuture
+    @inline def getMetricPolicyFuture(params: GetMetricPolicyInput): Future[GetMetricPolicyOutput] =
+      service.getMetricPolicy(params).promise().toFuture
     @inline def listContainersFuture(params: ListContainersInput): Future[ListContainersOutput] =
       service.listContainers(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
@@ -60,6 +67,8 @@ package object mediastore {
       service.putCorsPolicy(params).promise().toFuture
     @inline def putLifecyclePolicyFuture(params: PutLifecyclePolicyInput): Future[PutLifecyclePolicyOutput] =
       service.putLifecyclePolicy(params).promise().toFuture
+    @inline def putMetricPolicyFuture(params: PutMetricPolicyInput): Future[PutMetricPolicyOutput] =
+      service.putMetricPolicy(params).promise().toFuture
     @inline def startAccessLoggingFuture(params: StartAccessLoggingInput): Future[StartAccessLoggingOutput] =
       service.startAccessLogging(params).promise().toFuture
     @inline def stopAccessLoggingFuture(params: StopAccessLoggingInput): Future[StopAccessLoggingOutput] =
@@ -82,15 +91,18 @@ package mediastore {
     def deleteContainerPolicy(params: DeleteContainerPolicyInput): Request[DeleteContainerPolicyOutput] = js.native
     def deleteCorsPolicy(params: DeleteCorsPolicyInput): Request[DeleteCorsPolicyOutput]                = js.native
     def deleteLifecyclePolicy(params: DeleteLifecyclePolicyInput): Request[DeleteLifecyclePolicyOutput] = js.native
+    def deleteMetricPolicy(params: DeleteMetricPolicyInput): Request[DeleteMetricPolicyOutput]          = js.native
     def describeContainer(params: DescribeContainerInput): Request[DescribeContainerOutput]             = js.native
     def getContainerPolicy(params: GetContainerPolicyInput): Request[GetContainerPolicyOutput]          = js.native
     def getCorsPolicy(params: GetCorsPolicyInput): Request[GetCorsPolicyOutput]                         = js.native
     def getLifecyclePolicy(params: GetLifecyclePolicyInput): Request[GetLifecyclePolicyOutput]          = js.native
+    def getMetricPolicy(params: GetMetricPolicyInput): Request[GetMetricPolicyOutput]                   = js.native
     def listContainers(params: ListContainersInput): Request[ListContainersOutput]                      = js.native
     def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput]       = js.native
     def putContainerPolicy(params: PutContainerPolicyInput): Request[PutContainerPolicyOutput]          = js.native
     def putCorsPolicy(params: PutCorsPolicyInput): Request[PutCorsPolicyOutput]                         = js.native
     def putLifecyclePolicy(params: PutLifecyclePolicyInput): Request[PutLifecyclePolicyOutput]          = js.native
+    def putMetricPolicy(params: PutMetricPolicyInput): Request[PutMetricPolicyOutput]                   = js.native
     def startAccessLogging(params: StartAccessLoggingInput): Request[StartAccessLoggingOutput]          = js.native
     def stopAccessLogging(params: StopAccessLoggingInput): Request[StopAccessLoggingOutput]             = js.native
     def tagResource(params: TagResourceInput): Request[TagResourceOutput]                               = js.native
@@ -129,6 +141,15 @@ package mediastore {
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Container]
     }
+  }
+
+  @js.native
+  sealed trait ContainerLevelMetrics extends js.Any
+  object ContainerLevelMetrics extends js.Object {
+    val ENABLED  = "ENABLED".asInstanceOf[ContainerLevelMetrics]
+    val DISABLED = "DISABLED".asInstanceOf[ContainerLevelMetrics]
+
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   @js.native
@@ -338,6 +359,37 @@ package mediastore {
   }
 
   @js.native
+  trait DeleteMetricPolicyInput extends js.Object {
+    var ContainerName: ContainerName
+  }
+
+  object DeleteMetricPolicyInput {
+    @inline
+    def apply(
+        ContainerName: ContainerName
+    ): DeleteMetricPolicyInput = {
+      val __obj = js.Dynamic.literal(
+        "ContainerName" -> ContainerName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteMetricPolicyInput]
+    }
+  }
+
+  @js.native
+  trait DeleteMetricPolicyOutput extends js.Object {}
+
+  object DeleteMetricPolicyOutput {
+    @inline
+    def apply(
+    ): DeleteMetricPolicyOutput = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeleteMetricPolicyOutput]
+    }
+  }
+
+  @js.native
   trait DescribeContainerInput extends js.Object {
     var ContainerName: js.UndefOr[ContainerName]
   }
@@ -478,6 +530,42 @@ package mediastore {
   }
 
   @js.native
+  trait GetMetricPolicyInput extends js.Object {
+    var ContainerName: ContainerName
+  }
+
+  object GetMetricPolicyInput {
+    @inline
+    def apply(
+        ContainerName: ContainerName
+    ): GetMetricPolicyInput = {
+      val __obj = js.Dynamic.literal(
+        "ContainerName" -> ContainerName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetMetricPolicyInput]
+    }
+  }
+
+  @js.native
+  trait GetMetricPolicyOutput extends js.Object {
+    var MetricPolicy: MetricPolicy
+  }
+
+  object GetMetricPolicyOutput {
+    @inline
+    def apply(
+        MetricPolicy: MetricPolicy
+    ): GetMetricPolicyOutput = {
+      val __obj = js.Dynamic.literal(
+        "MetricPolicy" -> MetricPolicy.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetMetricPolicyOutput]
+    }
+  }
+
+  @js.native
   trait ListContainersInput extends js.Object {
     var MaxResults: js.UndefOr[ContainerListLimit]
     var NextToken: js.UndefOr[PaginationToken]
@@ -560,6 +648,55 @@ package mediastore {
     val HEAD   = "HEAD".asInstanceOf[MethodName]
 
     val values = js.Object.freeze(js.Array(PUT, GET, DELETE, HEAD))
+  }
+
+  /**
+    * The metric policy that is associated with the container. A metric policy allows AWS Elemental MediaStore to send metrics to Amazon CloudWatch. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include rules to define groups of objects that you want MediaStore to send object-level metrics for.
+    *  To view examples of how to construct a metric policy for your use case, see [[https://docs.aws.amazon.com/mediastore/latest/ug/policies-metric-examples.html|Example Metric Policies]].
+    */
+  @js.native
+  trait MetricPolicy extends js.Object {
+    var ContainerLevelMetrics: ContainerLevelMetrics
+    var MetricPolicyRules: js.UndefOr[MetricPolicyRules]
+  }
+
+  object MetricPolicy {
+    @inline
+    def apply(
+        ContainerLevelMetrics: ContainerLevelMetrics,
+        MetricPolicyRules: js.UndefOr[MetricPolicyRules] = js.undefined
+    ): MetricPolicy = {
+      val __obj = js.Dynamic.literal(
+        "ContainerLevelMetrics" -> ContainerLevelMetrics.asInstanceOf[js.Any]
+      )
+
+      MetricPolicyRules.foreach(__v => __obj.updateDynamic("MetricPolicyRules")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetricPolicy]
+    }
+  }
+
+  /**
+    * A setting that enables metrics at the object level. Each rule contains an object group and an object group name. If the policy includes the MetricPolicyRules parameter, you must include at least one rule. Each metric policy can include up to five rules by default. You can also [[https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas|request a quota increase]] to allow up to 300 rules per policy.
+    */
+  @js.native
+  trait MetricPolicyRule extends js.Object {
+    var ObjectGroup: ObjectGroup
+    var ObjectGroupName: ObjectGroupName
+  }
+
+  object MetricPolicyRule {
+    @inline
+    def apply(
+        ObjectGroup: ObjectGroup,
+        ObjectGroupName: ObjectGroupName
+    ): MetricPolicyRule = {
+      val __obj = js.Dynamic.literal(
+        "ObjectGroup"     -> ObjectGroup.asInstanceOf[js.Any],
+        "ObjectGroupName" -> ObjectGroupName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[MetricPolicyRule]
+    }
   }
 
   @js.native
@@ -661,6 +798,40 @@ package mediastore {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutLifecyclePolicyOutput]
+    }
+  }
+
+  @js.native
+  trait PutMetricPolicyInput extends js.Object {
+    var ContainerName: ContainerName
+    var MetricPolicy: MetricPolicy
+  }
+
+  object PutMetricPolicyInput {
+    @inline
+    def apply(
+        ContainerName: ContainerName,
+        MetricPolicy: MetricPolicy
+    ): PutMetricPolicyInput = {
+      val __obj = js.Dynamic.literal(
+        "ContainerName" -> ContainerName.asInstanceOf[js.Any],
+        "MetricPolicy"  -> MetricPolicy.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[PutMetricPolicyInput]
+    }
+  }
+
+  @js.native
+  trait PutMetricPolicyOutput extends js.Object {}
+
+  object PutMetricPolicyOutput {
+    @inline
+    def apply(
+    ): PutMetricPolicyOutput = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[PutMetricPolicyOutput]
     }
   }
 

@@ -15,8 +15,15 @@ package object computeoptimizer {
   type AutoScalingGroupRecommendationOptions = js.Array[AutoScalingGroupRecommendationOption]
   type AutoScalingGroupRecommendations       = js.Array[AutoScalingGroupRecommendation]
   type Code                                  = String
+  type CreationTimestamp                     = js.Date
   type CurrentInstanceType                   = String
   type DesiredCapacity                       = Int
+  type DestinationBucket                     = String
+  type DestinationKey                        = String
+  type DestinationKeyPrefix                  = String
+  type ExportableAutoScalingGroupFields      = js.Array[ExportableAutoScalingGroupField]
+  type ExportableInstanceFields              = js.Array[ExportableInstanceField]
+  type FailureReason                         = String
   type FilterValue                           = String
   type FilterValues                          = js.Array[FilterValue]
   type Filters                               = js.Array[Filter]
@@ -28,12 +35,17 @@ package object computeoptimizer {
   type InstanceName                          = String
   type InstanceRecommendations               = js.Array[InstanceRecommendation]
   type InstanceType                          = String
+  type JobFilters                            = js.Array[JobFilter]
+  type JobId                                 = String
+  type JobIds                                = js.Array[JobId]
   type LastRefreshTimestamp                  = js.Date
+  type LastUpdatedTimestamp                  = js.Date
   type LookBackPeriodInDays                  = Double
   type MaxResults                            = Int
   type MaxSize                               = Int
   type MemberAccountsEnrolled                = Boolean
   type Message                               = String
+  type MetadataKey                           = String
   type MetricValue                           = Double
   type MetricValues                          = js.Array[MetricValue]
   type MinSize                               = Int
@@ -43,6 +55,7 @@ package object computeoptimizer {
   type ProjectedMetrics                      = js.Array[ProjectedMetric]
   type ProjectedUtilizationMetrics           = js.Array[UtilizationMetric]
   type Rank                                  = Int
+  type RecommendationExportJobs              = js.Array[RecommendationExportJob]
   type RecommendationOptions                 = js.Array[InstanceRecommendationOption]
   type RecommendationSourceArn               = String
   type RecommendationSources                 = js.Array[RecommendationSource]
@@ -58,6 +71,18 @@ package object computeoptimizer {
 
   implicit final class ComputeOptimizerOps(private val service: ComputeOptimizer) extends AnyVal {
 
+    @inline def describeRecommendationExportJobsFuture(
+        params: DescribeRecommendationExportJobsRequest
+    ): Future[DescribeRecommendationExportJobsResponse] =
+      service.describeRecommendationExportJobs(params).promise().toFuture
+    @inline def exportAutoScalingGroupRecommendationsFuture(
+        params: ExportAutoScalingGroupRecommendationsRequest
+    ): Future[ExportAutoScalingGroupRecommendationsResponse] =
+      service.exportAutoScalingGroupRecommendations(params).promise().toFuture
+    @inline def exportEC2InstanceRecommendationsFuture(
+        params: ExportEC2InstanceRecommendationsRequest
+    ): Future[ExportEC2InstanceRecommendationsResponse] =
+      service.exportEC2InstanceRecommendations(params).promise().toFuture
     @inline def getAutoScalingGroupRecommendationsFuture(
         params: GetAutoScalingGroupRecommendationsRequest
     ): Future[GetAutoScalingGroupRecommendationsResponse] =
@@ -86,6 +111,15 @@ package computeoptimizer {
   class ComputeOptimizer() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def describeRecommendationExportJobs(
+        params: DescribeRecommendationExportJobsRequest
+    ): Request[DescribeRecommendationExportJobsResponse] = js.native
+    def exportAutoScalingGroupRecommendations(
+        params: ExportAutoScalingGroupRecommendationsRequest
+    ): Request[ExportAutoScalingGroupRecommendationsResponse] = js.native
+    def exportEC2InstanceRecommendations(
+        params: ExportEC2InstanceRecommendationsRequest
+    ): Request[ExportEC2InstanceRecommendationsResponse] = js.native
     def getAutoScalingGroupRecommendations(
         params: GetAutoScalingGroupRecommendationsRequest
     ): Request[GetAutoScalingGroupRecommendationsResponse] = js.native
@@ -202,6 +236,349 @@ package computeoptimizer {
       rank.foreach(__v => __obj.updateDynamic("rank")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoScalingGroupRecommendationOption]
     }
+  }
+
+  @js.native
+  trait DescribeRecommendationExportJobsRequest extends js.Object {
+    var filters: js.UndefOr[JobFilters]
+    var jobIds: js.UndefOr[JobIds]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeRecommendationExportJobsRequest {
+    @inline
+    def apply(
+        filters: js.UndefOr[JobFilters] = js.undefined,
+        jobIds: js.UndefOr[JobIds] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeRecommendationExportJobsRequest = {
+      val __obj = js.Dynamic.literal()
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      jobIds.foreach(__v => __obj.updateDynamic("jobIds")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeRecommendationExportJobsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeRecommendationExportJobsResponse extends js.Object {
+    var nextToken: js.UndefOr[NextToken]
+    var recommendationExportJobs: js.UndefOr[RecommendationExportJobs]
+  }
+
+  object DescribeRecommendationExportJobsResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        recommendationExportJobs: js.UndefOr[RecommendationExportJobs] = js.undefined
+    ): DescribeRecommendationExportJobsResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      recommendationExportJobs.foreach(__v => __obj.updateDynamic("recommendationExportJobs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeRecommendationExportJobsResponse]
+    }
+  }
+
+  @js.native
+  trait ExportAutoScalingGroupRecommendationsRequest extends js.Object {
+    var s3DestinationConfig: S3DestinationConfig
+    var accountIds: js.UndefOr[AccountIds]
+    var fieldsToExport: js.UndefOr[ExportableAutoScalingGroupFields]
+    var fileFormat: js.UndefOr[FileFormat]
+    var filters: js.UndefOr[Filters]
+    var includeMemberAccounts: js.UndefOr[IncludeMemberAccounts]
+  }
+
+  object ExportAutoScalingGroupRecommendationsRequest {
+    @inline
+    def apply(
+        s3DestinationConfig: S3DestinationConfig,
+        accountIds: js.UndefOr[AccountIds] = js.undefined,
+        fieldsToExport: js.UndefOr[ExportableAutoScalingGroupFields] = js.undefined,
+        fileFormat: js.UndefOr[FileFormat] = js.undefined,
+        filters: js.UndefOr[Filters] = js.undefined,
+        includeMemberAccounts: js.UndefOr[IncludeMemberAccounts] = js.undefined
+    ): ExportAutoScalingGroupRecommendationsRequest = {
+      val __obj = js.Dynamic.literal(
+        "s3DestinationConfig" -> s3DestinationConfig.asInstanceOf[js.Any]
+      )
+
+      accountIds.foreach(__v => __obj.updateDynamic("accountIds")(__v.asInstanceOf[js.Any]))
+      fieldsToExport.foreach(__v => __obj.updateDynamic("fieldsToExport")(__v.asInstanceOf[js.Any]))
+      fileFormat.foreach(__v => __obj.updateDynamic("fileFormat")(__v.asInstanceOf[js.Any]))
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      includeMemberAccounts.foreach(__v => __obj.updateDynamic("includeMemberAccounts")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportAutoScalingGroupRecommendationsRequest]
+    }
+  }
+
+  @js.native
+  trait ExportAutoScalingGroupRecommendationsResponse extends js.Object {
+    var jobId: js.UndefOr[JobId]
+    var s3Destination: js.UndefOr[S3Destination]
+  }
+
+  object ExportAutoScalingGroupRecommendationsResponse {
+    @inline
+    def apply(
+        jobId: js.UndefOr[JobId] = js.undefined,
+        s3Destination: js.UndefOr[S3Destination] = js.undefined
+    ): ExportAutoScalingGroupRecommendationsResponse = {
+      val __obj = js.Dynamic.literal()
+      jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
+      s3Destination.foreach(__v => __obj.updateDynamic("s3Destination")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportAutoScalingGroupRecommendationsResponse]
+    }
+  }
+
+  /**
+    * Describes the destination of the recommendations export and metadata files.
+    */
+  @js.native
+  trait ExportDestination extends js.Object {
+    var s3: js.UndefOr[S3Destination]
+  }
+
+  object ExportDestination {
+    @inline
+    def apply(
+        s3: js.UndefOr[S3Destination] = js.undefined
+    ): ExportDestination = {
+      val __obj = js.Dynamic.literal()
+      s3.foreach(__v => __obj.updateDynamic("s3")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportDestination]
+    }
+  }
+
+  @js.native
+  trait ExportEC2InstanceRecommendationsRequest extends js.Object {
+    var s3DestinationConfig: S3DestinationConfig
+    var accountIds: js.UndefOr[AccountIds]
+    var fieldsToExport: js.UndefOr[ExportableInstanceFields]
+    var fileFormat: js.UndefOr[FileFormat]
+    var filters: js.UndefOr[Filters]
+    var includeMemberAccounts: js.UndefOr[IncludeMemberAccounts]
+  }
+
+  object ExportEC2InstanceRecommendationsRequest {
+    @inline
+    def apply(
+        s3DestinationConfig: S3DestinationConfig,
+        accountIds: js.UndefOr[AccountIds] = js.undefined,
+        fieldsToExport: js.UndefOr[ExportableInstanceFields] = js.undefined,
+        fileFormat: js.UndefOr[FileFormat] = js.undefined,
+        filters: js.UndefOr[Filters] = js.undefined,
+        includeMemberAccounts: js.UndefOr[IncludeMemberAccounts] = js.undefined
+    ): ExportEC2InstanceRecommendationsRequest = {
+      val __obj = js.Dynamic.literal(
+        "s3DestinationConfig" -> s3DestinationConfig.asInstanceOf[js.Any]
+      )
+
+      accountIds.foreach(__v => __obj.updateDynamic("accountIds")(__v.asInstanceOf[js.Any]))
+      fieldsToExport.foreach(__v => __obj.updateDynamic("fieldsToExport")(__v.asInstanceOf[js.Any]))
+      fileFormat.foreach(__v => __obj.updateDynamic("fileFormat")(__v.asInstanceOf[js.Any]))
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      includeMemberAccounts.foreach(__v => __obj.updateDynamic("includeMemberAccounts")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportEC2InstanceRecommendationsRequest]
+    }
+  }
+
+  @js.native
+  trait ExportEC2InstanceRecommendationsResponse extends js.Object {
+    var jobId: js.UndefOr[JobId]
+    var s3Destination: js.UndefOr[S3Destination]
+  }
+
+  object ExportEC2InstanceRecommendationsResponse {
+    @inline
+    def apply(
+        jobId: js.UndefOr[JobId] = js.undefined,
+        s3Destination: js.UndefOr[S3Destination] = js.undefined
+    ): ExportEC2InstanceRecommendationsResponse = {
+      val __obj = js.Dynamic.literal()
+      jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
+      s3Destination.foreach(__v => __obj.updateDynamic("s3Destination")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportEC2InstanceRecommendationsResponse]
+    }
+  }
+
+  @js.native
+  sealed trait ExportableAutoScalingGroupField extends js.Any
+  object ExportableAutoScalingGroupField extends js.Object {
+    val AccountId                    = "AccountId".asInstanceOf[ExportableAutoScalingGroupField]
+    val AutoScalingGroupArn          = "AutoScalingGroupArn".asInstanceOf[ExportableAutoScalingGroupField]
+    val AutoScalingGroupName         = "AutoScalingGroupName".asInstanceOf[ExportableAutoScalingGroupField]
+    val Finding                      = "Finding".asInstanceOf[ExportableAutoScalingGroupField]
+    val UtilizationMetricsCpuMaximum = "UtilizationMetricsCpuMaximum".asInstanceOf[ExportableAutoScalingGroupField]
+    val UtilizationMetricsMemoryMaximum =
+      "UtilizationMetricsMemoryMaximum".asInstanceOf[ExportableAutoScalingGroupField]
+    val LookbackPeriodInDays = "LookbackPeriodInDays".asInstanceOf[ExportableAutoScalingGroupField]
+    val CurrentConfigurationInstanceType =
+      "CurrentConfigurationInstanceType".asInstanceOf[ExportableAutoScalingGroupField]
+    val CurrentConfigurationDesiredCapacity =
+      "CurrentConfigurationDesiredCapacity".asInstanceOf[ExportableAutoScalingGroupField]
+    val CurrentConfigurationMinSize = "CurrentConfigurationMinSize".asInstanceOf[ExportableAutoScalingGroupField]
+    val CurrentConfigurationMaxSize = "CurrentConfigurationMaxSize".asInstanceOf[ExportableAutoScalingGroupField]
+    val CurrentOnDemandPrice        = "CurrentOnDemandPrice".asInstanceOf[ExportableAutoScalingGroupField]
+    val CurrentStandardOneYearNoUpfrontReservedPrice =
+      "CurrentStandardOneYearNoUpfrontReservedPrice".asInstanceOf[ExportableAutoScalingGroupField]
+    val CurrentStandardThreeYearNoUpfrontReservedPrice =
+      "CurrentStandardThreeYearNoUpfrontReservedPrice".asInstanceOf[ExportableAutoScalingGroupField]
+    val CurrentVCpus   = "CurrentVCpus".asInstanceOf[ExportableAutoScalingGroupField]
+    val CurrentMemory  = "CurrentMemory".asInstanceOf[ExportableAutoScalingGroupField]
+    val CurrentStorage = "CurrentStorage".asInstanceOf[ExportableAutoScalingGroupField]
+    val CurrentNetwork = "CurrentNetwork".asInstanceOf[ExportableAutoScalingGroupField]
+    val RecommendationOptionsConfigurationInstanceType =
+      "RecommendationOptionsConfigurationInstanceType".asInstanceOf[ExportableAutoScalingGroupField]
+    val RecommendationOptionsConfigurationDesiredCapacity =
+      "RecommendationOptionsConfigurationDesiredCapacity".asInstanceOf[ExportableAutoScalingGroupField]
+    val RecommendationOptionsConfigurationMinSize =
+      "RecommendationOptionsConfigurationMinSize".asInstanceOf[ExportableAutoScalingGroupField]
+    val RecommendationOptionsConfigurationMaxSize =
+      "RecommendationOptionsConfigurationMaxSize".asInstanceOf[ExportableAutoScalingGroupField]
+    val RecommendationOptionsProjectedUtilizationMetricsCpuMaximum =
+      "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum".asInstanceOf[ExportableAutoScalingGroupField]
+    val RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum =
+      "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum".asInstanceOf[ExportableAutoScalingGroupField]
+    val RecommendationOptionsPerformanceRisk =
+      "RecommendationOptionsPerformanceRisk".asInstanceOf[ExportableAutoScalingGroupField]
+    val RecommendationOptionsOnDemandPrice =
+      "RecommendationOptionsOnDemandPrice".asInstanceOf[ExportableAutoScalingGroupField]
+    val RecommendationOptionsStandardOneYearNoUpfrontReservedPrice =
+      "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice".asInstanceOf[ExportableAutoScalingGroupField]
+    val RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice =
+      "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice".asInstanceOf[ExportableAutoScalingGroupField]
+    val RecommendationOptionsVcpus   = "RecommendationOptionsVcpus".asInstanceOf[ExportableAutoScalingGroupField]
+    val RecommendationOptionsMemory  = "RecommendationOptionsMemory".asInstanceOf[ExportableAutoScalingGroupField]
+    val RecommendationOptionsStorage = "RecommendationOptionsStorage".asInstanceOf[ExportableAutoScalingGroupField]
+    val RecommendationOptionsNetwork = "RecommendationOptionsNetwork".asInstanceOf[ExportableAutoScalingGroupField]
+    val LastRefreshTimestamp         = "LastRefreshTimestamp".asInstanceOf[ExportableAutoScalingGroupField]
+
+    val values = js.Object.freeze(
+      js.Array(
+        AccountId,
+        AutoScalingGroupArn,
+        AutoScalingGroupName,
+        Finding,
+        UtilizationMetricsCpuMaximum,
+        UtilizationMetricsMemoryMaximum,
+        LookbackPeriodInDays,
+        CurrentConfigurationInstanceType,
+        CurrentConfigurationDesiredCapacity,
+        CurrentConfigurationMinSize,
+        CurrentConfigurationMaxSize,
+        CurrentOnDemandPrice,
+        CurrentStandardOneYearNoUpfrontReservedPrice,
+        CurrentStandardThreeYearNoUpfrontReservedPrice,
+        CurrentVCpus,
+        CurrentMemory,
+        CurrentStorage,
+        CurrentNetwork,
+        RecommendationOptionsConfigurationInstanceType,
+        RecommendationOptionsConfigurationDesiredCapacity,
+        RecommendationOptionsConfigurationMinSize,
+        RecommendationOptionsConfigurationMaxSize,
+        RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
+        RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
+        RecommendationOptionsPerformanceRisk,
+        RecommendationOptionsOnDemandPrice,
+        RecommendationOptionsStandardOneYearNoUpfrontReservedPrice,
+        RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice,
+        RecommendationOptionsVcpus,
+        RecommendationOptionsMemory,
+        RecommendationOptionsStorage,
+        RecommendationOptionsNetwork,
+        LastRefreshTimestamp
+      )
+    )
+  }
+
+  @js.native
+  sealed trait ExportableInstanceField extends js.Any
+  object ExportableInstanceField extends js.Object {
+    val AccountId                       = "AccountId".asInstanceOf[ExportableInstanceField]
+    val InstanceArn                     = "InstanceArn".asInstanceOf[ExportableInstanceField]
+    val InstanceName                    = "InstanceName".asInstanceOf[ExportableInstanceField]
+    val Finding                         = "Finding".asInstanceOf[ExportableInstanceField]
+    val LookbackPeriodInDays            = "LookbackPeriodInDays".asInstanceOf[ExportableInstanceField]
+    val CurrentInstanceType             = "CurrentInstanceType".asInstanceOf[ExportableInstanceField]
+    val UtilizationMetricsCpuMaximum    = "UtilizationMetricsCpuMaximum".asInstanceOf[ExportableInstanceField]
+    val UtilizationMetricsMemoryMaximum = "UtilizationMetricsMemoryMaximum".asInstanceOf[ExportableInstanceField]
+    val CurrentOnDemandPrice            = "CurrentOnDemandPrice".asInstanceOf[ExportableInstanceField]
+    val CurrentStandardOneYearNoUpfrontReservedPrice =
+      "CurrentStandardOneYearNoUpfrontReservedPrice".asInstanceOf[ExportableInstanceField]
+    val CurrentStandardThreeYearNoUpfrontReservedPrice =
+      "CurrentStandardThreeYearNoUpfrontReservedPrice".asInstanceOf[ExportableInstanceField]
+    val CurrentVCpus                      = "CurrentVCpus".asInstanceOf[ExportableInstanceField]
+    val CurrentMemory                     = "CurrentMemory".asInstanceOf[ExportableInstanceField]
+    val CurrentStorage                    = "CurrentStorage".asInstanceOf[ExportableInstanceField]
+    val CurrentNetwork                    = "CurrentNetwork".asInstanceOf[ExportableInstanceField]
+    val RecommendationOptionsInstanceType = "RecommendationOptionsInstanceType".asInstanceOf[ExportableInstanceField]
+    val RecommendationOptionsProjectedUtilizationMetricsCpuMaximum =
+      "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum".asInstanceOf[ExportableInstanceField]
+    val RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum =
+      "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum".asInstanceOf[ExportableInstanceField]
+    val RecommendationOptionsPerformanceRisk =
+      "RecommendationOptionsPerformanceRisk".asInstanceOf[ExportableInstanceField]
+    val RecommendationOptionsVcpus         = "RecommendationOptionsVcpus".asInstanceOf[ExportableInstanceField]
+    val RecommendationOptionsMemory        = "RecommendationOptionsMemory".asInstanceOf[ExportableInstanceField]
+    val RecommendationOptionsStorage       = "RecommendationOptionsStorage".asInstanceOf[ExportableInstanceField]
+    val RecommendationOptionsNetwork       = "RecommendationOptionsNetwork".asInstanceOf[ExportableInstanceField]
+    val RecommendationOptionsOnDemandPrice = "RecommendationOptionsOnDemandPrice".asInstanceOf[ExportableInstanceField]
+    val RecommendationOptionsStandardOneYearNoUpfrontReservedPrice =
+      "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice".asInstanceOf[ExportableInstanceField]
+    val RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice =
+      "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice".asInstanceOf[ExportableInstanceField]
+    val RecommendationsSourcesRecommendationSourceArn =
+      "RecommendationsSourcesRecommendationSourceArn".asInstanceOf[ExportableInstanceField]
+    val RecommendationsSourcesRecommendationSourceType =
+      "RecommendationsSourcesRecommendationSourceType".asInstanceOf[ExportableInstanceField]
+    val LastRefreshTimestamp = "LastRefreshTimestamp".asInstanceOf[ExportableInstanceField]
+
+    val values = js.Object.freeze(
+      js.Array(
+        AccountId,
+        InstanceArn,
+        InstanceName,
+        Finding,
+        LookbackPeriodInDays,
+        CurrentInstanceType,
+        UtilizationMetricsCpuMaximum,
+        UtilizationMetricsMemoryMaximum,
+        CurrentOnDemandPrice,
+        CurrentStandardOneYearNoUpfrontReservedPrice,
+        CurrentStandardThreeYearNoUpfrontReservedPrice,
+        CurrentVCpus,
+        CurrentMemory,
+        CurrentStorage,
+        CurrentNetwork,
+        RecommendationOptionsInstanceType,
+        RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
+        RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
+        RecommendationOptionsPerformanceRisk,
+        RecommendationOptionsVcpus,
+        RecommendationOptionsMemory,
+        RecommendationOptionsStorage,
+        RecommendationOptionsNetwork,
+        RecommendationOptionsOnDemandPrice,
+        RecommendationOptionsStandardOneYearNoUpfrontReservedPrice,
+        RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice,
+        RecommendationsSourcesRecommendationSourceArn,
+        RecommendationsSourcesRecommendationSourceType,
+        LastRefreshTimestamp
+      )
+    )
+  }
+
+  @js.native
+  sealed trait FileFormat extends js.Any
+  object FileFormat extends js.Object {
+    val Csv = "Csv".asInstanceOf[FileFormat]
+
+    val values = js.Object.freeze(js.Array(Csv))
   }
 
   /**
@@ -574,6 +951,49 @@ package computeoptimizer {
     }
   }
 
+  /**
+    * Describes a filter that returns a more specific list of recommendation export jobs.
+    *  This filter is used with the <code>DescribeRecommendationExportJobs</code> action.
+    */
+  @js.native
+  trait JobFilter extends js.Object {
+    var name: js.UndefOr[JobFilterName]
+    var values: js.UndefOr[FilterValues]
+  }
+
+  object JobFilter {
+    @inline
+    def apply(
+        name: js.UndefOr[JobFilterName] = js.undefined,
+        values: js.UndefOr[FilterValues] = js.undefined
+    ): JobFilter = {
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      values.foreach(__v => __obj.updateDynamic("values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JobFilter]
+    }
+  }
+
+  @js.native
+  sealed trait JobFilterName extends js.Any
+  object JobFilterName extends js.Object {
+    val ResourceType = "ResourceType".asInstanceOf[JobFilterName]
+    val JobStatus    = "JobStatus".asInstanceOf[JobFilterName]
+
+    val values = js.Object.freeze(js.Array(ResourceType, JobStatus))
+  }
+
+  @js.native
+  sealed trait JobStatus extends js.Any
+  object JobStatus extends js.Object {
+    val Queued     = "Queued".asInstanceOf[JobStatus]
+    val InProgress = "InProgress".asInstanceOf[JobStatus]
+    val Complete   = "Complete".asInstanceOf[JobStatus]
+    val Failed     = "Failed".asInstanceOf[JobStatus]
+
+    val values = js.Object.freeze(js.Array(Queued, InProgress, Complete, Failed))
+  }
+
   @js.native
   sealed trait MetricName extends js.Any
   object MetricName extends js.Object {
@@ -614,6 +1034,45 @@ package computeoptimizer {
       timestamps.foreach(__v => __obj.updateDynamic("timestamps")(__v.asInstanceOf[js.Any]))
       values.foreach(__v => __obj.updateDynamic("values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProjectedMetric]
+    }
+  }
+
+  /**
+    * Describes a recommendation export job.
+    *  Use the <code>DescribeRecommendationExportJobs</code> action to view your recommendation export jobs.
+    *  Use the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code> actions to request an export of your recommendations.
+    */
+  @js.native
+  trait RecommendationExportJob extends js.Object {
+    var creationTimestamp: js.UndefOr[CreationTimestamp]
+    var destination: js.UndefOr[ExportDestination]
+    var failureReason: js.UndefOr[FailureReason]
+    var jobId: js.UndefOr[JobId]
+    var lastUpdatedTimestamp: js.UndefOr[LastUpdatedTimestamp]
+    var resourceType: js.UndefOr[ResourceType]
+    var status: js.UndefOr[JobStatus]
+  }
+
+  object RecommendationExportJob {
+    @inline
+    def apply(
+        creationTimestamp: js.UndefOr[CreationTimestamp] = js.undefined,
+        destination: js.UndefOr[ExportDestination] = js.undefined,
+        failureReason: js.UndefOr[FailureReason] = js.undefined,
+        jobId: js.UndefOr[JobId] = js.undefined,
+        lastUpdatedTimestamp: js.UndefOr[LastUpdatedTimestamp] = js.undefined,
+        resourceType: js.UndefOr[ResourceType] = js.undefined,
+        status: js.UndefOr[JobStatus] = js.undefined
+    ): RecommendationExportJob = {
+      val __obj = js.Dynamic.literal()
+      creationTimestamp.foreach(__v => __obj.updateDynamic("creationTimestamp")(__v.asInstanceOf[js.Any]))
+      destination.foreach(__v => __obj.updateDynamic("destination")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
+      lastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("lastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RecommendationExportJob]
     }
   }
 
@@ -697,6 +1156,63 @@ package computeoptimizer {
       rank.foreach(__v => __obj.updateDynamic("rank")(__v.asInstanceOf[js.Any]))
       recommendedInstanceType.foreach(__v => __obj.updateDynamic("recommendedInstanceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecommendedOptionProjectedMetric]
+    }
+  }
+
+  @js.native
+  sealed trait ResourceType extends js.Any
+  object ResourceType extends js.Object {
+    val Ec2Instance      = "Ec2Instance".asInstanceOf[ResourceType]
+    val AutoScalingGroup = "AutoScalingGroup".asInstanceOf[ResourceType]
+
+    val values = js.Object.freeze(js.Array(Ec2Instance, AutoScalingGroup))
+  }
+
+  /**
+    * Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.
+    */
+  @js.native
+  trait S3Destination extends js.Object {
+    var bucket: js.UndefOr[DestinationBucket]
+    var key: js.UndefOr[DestinationKey]
+    var metadataKey: js.UndefOr[MetadataKey]
+  }
+
+  object S3Destination {
+    @inline
+    def apply(
+        bucket: js.UndefOr[DestinationBucket] = js.undefined,
+        key: js.UndefOr[DestinationKey] = js.undefined,
+        metadataKey: js.UndefOr[MetadataKey] = js.undefined
+    ): S3Destination = {
+      val __obj = js.Dynamic.literal()
+      bucket.foreach(__v => __obj.updateDynamic("bucket")(__v.asInstanceOf[js.Any]))
+      key.foreach(__v => __obj.updateDynamic("key")(__v.asInstanceOf[js.Any]))
+      metadataKey.foreach(__v => __obj.updateDynamic("metadataKey")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3Destination]
+    }
+  }
+
+  /**
+    * Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.
+    *  You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see [[https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html|Amazon S3 Bucket Policy for Compute Optimizer]] in the <i>Compute Optimizer user guide</i>.
+    */
+  @js.native
+  trait S3DestinationConfig extends js.Object {
+    var bucket: js.UndefOr[DestinationBucket]
+    var keyPrefix: js.UndefOr[DestinationKeyPrefix]
+  }
+
+  object S3DestinationConfig {
+    @inline
+    def apply(
+        bucket: js.UndefOr[DestinationBucket] = js.undefined,
+        keyPrefix: js.UndefOr[DestinationKeyPrefix] = js.undefined
+    ): S3DestinationConfig = {
+      val __obj = js.Dynamic.literal()
+      bucket.foreach(__v => __obj.updateDynamic("bucket")(__v.asInstanceOf[js.Any]))
+      keyPrefix.foreach(__v => __obj.updateDynamic("keyPrefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3DestinationConfig]
     }
   }
 

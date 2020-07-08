@@ -129,9 +129,10 @@ package applicationautoscaling {
 
   /**
     * Represents a CloudWatch metric of your choosing for a target tracking scaling policy to use with Application Auto Scaling.
+    *  For information about the available metrics for a service, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html|AWS Services That Publish CloudWatch Metrics]] in the <i>Amazon CloudWatch User Guide</i>.
     *  To create your customized metric specification:
     * * Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html|Publish Custom Metrics]] in the <i>Amazon CloudWatch User Guide</i>.
-    *  * Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases.
+    *  * Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases, and increase when capacity decreases.
     * For more information about CloudWatch, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html|Amazon CloudWatch Concepts]].
     */
   @js.native
@@ -546,6 +547,8 @@ package applicationautoscaling {
     val AppStreamAverageCapacityUtilization      = "AppStreamAverageCapacityUtilization".asInstanceOf[MetricType]
     val ComprehendInferenceUtilization           = "ComprehendInferenceUtilization".asInstanceOf[MetricType]
     val LambdaProvisionedConcurrencyUtilization  = "LambdaProvisionedConcurrencyUtilization".asInstanceOf[MetricType]
+    val CassandraReadCapacityUtilization         = "CassandraReadCapacityUtilization".asInstanceOf[MetricType]
+    val CassandraWriteCapacityUtilization        = "CassandraWriteCapacityUtilization".asInstanceOf[MetricType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -562,7 +565,9 @@ package applicationautoscaling {
         ECSServiceAverageMemoryUtilization,
         AppStreamAverageCapacityUtilization,
         ComprehendInferenceUtilization,
-        LambdaProvisionedConcurrencyUtilization
+        LambdaProvisionedConcurrencyUtilization,
+        CassandraReadCapacityUtilization,
+        CassandraWriteCapacityUtilization
       )
     )
   }
@@ -578,6 +583,7 @@ package applicationautoscaling {
 
   /**
     * Represents a predefined metric for a target tracking scaling policy to use with Application Auto Scaling.
+    *  Only the AWS services that you're using send metrics to Amazon CloudWatch. To determine whether a desired metric already exists by looking up its namespace and dimension using the CloudWatch metrics dashboard in the console, follow the procedure in [[https://docs.aws.amazon.com/autoscaling/application/userguide/monitoring-cloudwatch.html|Building Dashboards with CloudWatch]] in the <i>Application Auto Scaling User Guide</i>.
     */
   @js.native
   trait PredefinedMetricSpecification extends js.Object {
@@ -784,6 +790,8 @@ package applicationautoscaling {
       "comprehend:document-classifier-endpoint:DesiredInferenceUnits".asInstanceOf[ScalableDimension]
     val `lambda:function:ProvisionedConcurrency` =
       "lambda:function:ProvisionedConcurrency".asInstanceOf[ScalableDimension]
+    val `cassandra:table:ReadCapacityUnits`  = "cassandra:table:ReadCapacityUnits".asInstanceOf[ScalableDimension]
+    val `cassandra:table:WriteCapacityUnits` = "cassandra:table:WriteCapacityUnits".asInstanceOf[ScalableDimension]
 
     val values = js.Object.freeze(
       js.Array(
@@ -799,7 +807,9 @@ package applicationautoscaling {
         `sagemaker:variant:DesiredInstanceCount`,
         `custom-resource:ResourceType:Property`,
         `comprehend:document-classifier-endpoint:DesiredInferenceUnits`,
-        `lambda:function:ProvisionedConcurrency`
+        `lambda:function:ProvisionedConcurrency`,
+        `cassandra:table:ReadCapacityUnits`,
+        `cassandra:table:WriteCapacityUnits`
       )
     )
   }
@@ -1045,14 +1055,27 @@ package applicationautoscaling {
     val `custom-resource` = "custom-resource".asInstanceOf[ServiceNamespace]
     val comprehend        = "comprehend".asInstanceOf[ServiceNamespace]
     val lambda            = "lambda".asInstanceOf[ServiceNamespace]
+    val cassandra         = "cassandra".asInstanceOf[ServiceNamespace]
 
     val values = js.Object.freeze(
-      js.Array(ecs, elasticmapreduce, ec2, appstream, dynamodb, rds, sagemaker, `custom-resource`, comprehend, lambda)
+      js.Array(
+        ecs,
+        elasticmapreduce,
+        ec2,
+        appstream,
+        dynamodb,
+        rds,
+        sagemaker,
+        `custom-resource`,
+        comprehend,
+        lambda,
+        cassandra
+      )
     )
   }
 
   /**
-    * Represents a step adjustment for a <a>StepScalingPolicyConfiguration</a>. Describes an adjustment based on the difference between the value of the aggregated CloudWatch metric and the breach threshold that you've defined for the alarm.
+    * Represents a step adjustment for a [[https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepScalingPolicyConfiguration.html|StepScalingPolicyConfiguration]]. Describes an adjustment based on the difference between the value of the aggregated CloudWatch metric and the breach threshold that you've defined for the alarm.
     *  For the following examples, suppose that you have an alarm with a breach threshold of 50:
     * * To trigger the adjustment when the metric is greater than or equal to 50 and less than 60, specify a lower bound of 0 and an upper bound of 10.
     *  * To trigger the adjustment when the metric is greater than 40 and less than or equal to 50, specify a lower bound of -10 and an upper bound of 0.

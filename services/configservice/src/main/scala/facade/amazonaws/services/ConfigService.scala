@@ -110,7 +110,7 @@ package object configservice {
   type PendingAggregationRequestList               = js.Array[PendingAggregationRequest]
   type Percentage                                  = Int
   type RecorderName                                = String
-  type ReevaluateConfigRuleNames                   = js.Array[StringWithCharLimit64]
+  type ReevaluateConfigRuleNames                   = js.Array[ConfigRuleName]
   type RelatedEvent                                = String
   type RelatedEventList                            = js.Array[RelatedEvent]
   type RelationshipList                            = js.Array[Relationship]
@@ -394,6 +394,9 @@ package object configservice {
     @inline def putRetentionConfigurationFuture(
         params: PutRetentionConfigurationRequest
     ): Future[PutRetentionConfigurationResponse] = service.putRetentionConfiguration(params).promise().toFuture
+    @inline def selectAggregateResourceConfigFuture(
+        params: SelectAggregateResourceConfigRequest
+    ): Future[SelectAggregateResourceConfigResponse] = service.selectAggregateResourceConfig(params).promise().toFuture
     @inline def selectResourceConfigFuture(params: SelectResourceConfigRequest): Future[SelectResourceConfigResponse] =
       service.selectResourceConfig(params).promise().toFuture
     @inline def startConfigRulesEvaluationFuture(
@@ -583,7 +586,10 @@ package configservice {
     def putResourceConfig(params: PutResourceConfigRequest): Request[js.Object] = js.native
     def putRetentionConfiguration(
         params: PutRetentionConfigurationRequest
-    ): Request[PutRetentionConfigurationResponse]                                                        = js.native
+    ): Request[PutRetentionConfigurationResponse] = js.native
+    def selectAggregateResourceConfig(
+        params: SelectAggregateResourceConfigRequest
+    ): Request[SelectAggregateResourceConfigResponse]                                                    = js.native
     def selectResourceConfig(params: SelectResourceConfigRequest): Request[SelectResourceConfigResponse] = js.native
     def startConfigRulesEvaluation(
         params: StartConfigRulesEvaluationRequest
@@ -1181,9 +1187,9 @@ package configservice {
   @js.native
   trait ConfigRule extends js.Object {
     var Source: Source
-    var ConfigRuleArn: js.UndefOr[String]
-    var ConfigRuleId: js.UndefOr[String]
-    var ConfigRuleName: js.UndefOr[StringWithCharLimit64]
+    var ConfigRuleArn: js.UndefOr[StringWithCharLimit256]
+    var ConfigRuleId: js.UndefOr[StringWithCharLimit64]
+    var ConfigRuleName: js.UndefOr[ConfigRuleName]
     var ConfigRuleState: js.UndefOr[ConfigRuleState]
     var CreatedBy: js.UndefOr[StringWithCharLimit256]
     var Description: js.UndefOr[EmptiableStringWithCharLimit256]
@@ -1196,9 +1202,9 @@ package configservice {
     @inline
     def apply(
         Source: Source,
-        ConfigRuleArn: js.UndefOr[String] = js.undefined,
-        ConfigRuleId: js.UndefOr[String] = js.undefined,
-        ConfigRuleName: js.UndefOr[StringWithCharLimit64] = js.undefined,
+        ConfigRuleArn: js.UndefOr[StringWithCharLimit256] = js.undefined,
+        ConfigRuleId: js.UndefOr[StringWithCharLimit64] = js.undefined,
+        ConfigRuleName: js.UndefOr[ConfigRuleName] = js.undefined,
         ConfigRuleState: js.UndefOr[ConfigRuleState] = js.undefined,
         CreatedBy: js.UndefOr[StringWithCharLimit256] = js.undefined,
         Description: js.UndefOr[EmptiableStringWithCharLimit256] = js.undefined,
@@ -1292,9 +1298,10 @@ package configservice {
   trait ConfigRuleEvaluationStatus extends js.Object {
     var ConfigRuleArn: js.UndefOr[String]
     var ConfigRuleId: js.UndefOr[String]
-    var ConfigRuleName: js.UndefOr[StringWithCharLimit64]
+    var ConfigRuleName: js.UndefOr[ConfigRuleName]
     var FirstActivatedTime: js.UndefOr[Date]
     var FirstEvaluationStarted: js.UndefOr[Boolean]
+    var LastDeactivatedTime: js.UndefOr[Date]
     var LastErrorCode: js.UndefOr[String]
     var LastErrorMessage: js.UndefOr[String]
     var LastFailedEvaluationTime: js.UndefOr[Date]
@@ -1308,9 +1315,10 @@ package configservice {
     def apply(
         ConfigRuleArn: js.UndefOr[String] = js.undefined,
         ConfigRuleId: js.UndefOr[String] = js.undefined,
-        ConfigRuleName: js.UndefOr[StringWithCharLimit64] = js.undefined,
+        ConfigRuleName: js.UndefOr[ConfigRuleName] = js.undefined,
         FirstActivatedTime: js.UndefOr[Date] = js.undefined,
         FirstEvaluationStarted: js.UndefOr[Boolean] = js.undefined,
+        LastDeactivatedTime: js.UndefOr[Date] = js.undefined,
         LastErrorCode: js.UndefOr[String] = js.undefined,
         LastErrorMessage: js.UndefOr[String] = js.undefined,
         LastFailedEvaluationTime: js.UndefOr[Date] = js.undefined,
@@ -1324,6 +1332,7 @@ package configservice {
       ConfigRuleName.foreach(__v => __obj.updateDynamic("ConfigRuleName")(__v.asInstanceOf[js.Any]))
       FirstActivatedTime.foreach(__v => __obj.updateDynamic("FirstActivatedTime")(__v.asInstanceOf[js.Any]))
       FirstEvaluationStarted.foreach(__v => __obj.updateDynamic("FirstEvaluationStarted")(__v.asInstanceOf[js.Any]))
+      LastDeactivatedTime.foreach(__v => __obj.updateDynamic("LastDeactivatedTime")(__v.asInstanceOf[js.Any]))
       LastErrorCode.foreach(__v => __obj.updateDynamic("LastErrorCode")(__v.asInstanceOf[js.Any]))
       LastErrorMessage.foreach(__v => __obj.updateDynamic("LastErrorMessage")(__v.asInstanceOf[js.Any]))
       LastFailedEvaluationTime.foreach(__v => __obj.updateDynamic("LastFailedEvaluationTime")(__v.asInstanceOf[js.Any]))
@@ -1890,13 +1899,13 @@ package configservice {
     */
   @js.native
   trait DeleteConfigRuleRequest extends js.Object {
-    var ConfigRuleName: StringWithCharLimit64
+    var ConfigRuleName: ConfigRuleName
   }
 
   object DeleteConfigRuleRequest {
     @inline
     def apply(
-        ConfigRuleName: StringWithCharLimit64
+        ConfigRuleName: ConfigRuleName
     ): DeleteConfigRuleRequest = {
       val __obj = js.Dynamic.literal(
         "ConfigRuleName" -> ConfigRuleName.asInstanceOf[js.Any]
@@ -3455,7 +3464,7 @@ package configservice {
     */
   @js.native
   trait EvaluationResultQualifier extends js.Object {
-    var ConfigRuleName: js.UndefOr[StringWithCharLimit64]
+    var ConfigRuleName: js.UndefOr[ConfigRuleName]
     var ResourceId: js.UndefOr[BaseResourceId]
     var ResourceType: js.UndefOr[StringWithCharLimit256]
   }
@@ -3463,7 +3472,7 @@ package configservice {
   object EvaluationResultQualifier {
     @inline
     def apply(
-        ConfigRuleName: js.UndefOr[StringWithCharLimit64] = js.undefined,
+        ConfigRuleName: js.UndefOr[ConfigRuleName] = js.undefined,
         ResourceId: js.UndefOr[BaseResourceId] = js.undefined,
         ResourceType: js.UndefOr[StringWithCharLimit256] = js.undefined
     ): EvaluationResultQualifier = {
@@ -5947,6 +5956,7 @@ package configservice {
     val `AWS::EC2::VPCEndpointService`        = "AWS::EC2::VPCEndpointService".asInstanceOf[ResourceType]
     val `AWS::EC2::FlowLog`                   = "AWS::EC2::FlowLog".asInstanceOf[ResourceType]
     val `AWS::EC2::VPCPeeringConnection`      = "AWS::EC2::VPCPeeringConnection".asInstanceOf[ResourceType]
+    val `AWS::Elasticsearch::Domain`          = "AWS::Elasticsearch::Domain".asInstanceOf[ResourceType]
     val `AWS::IAM::Group`                     = "AWS::IAM::Group".asInstanceOf[ResourceType]
     val `AWS::IAM::Policy`                    = "AWS::IAM::Policy".asInstanceOf[ResourceType]
     val `AWS::IAM::Role`                      = "AWS::IAM::Role".asInstanceOf[ResourceType]
@@ -5955,13 +5965,10 @@ package configservice {
       "AWS::ElasticLoadBalancingV2::LoadBalancer".asInstanceOf[ResourceType]
     val `AWS::ACM::Certificate`                   = "AWS::ACM::Certificate".asInstanceOf[ResourceType]
     val `AWS::RDS::DBInstance`                    = "AWS::RDS::DBInstance".asInstanceOf[ResourceType]
-    val `AWS::RDS::DBParameterGroup`              = "AWS::RDS::DBParameterGroup".asInstanceOf[ResourceType]
-    val `AWS::RDS::DBOptionGroup`                 = "AWS::RDS::DBOptionGroup".asInstanceOf[ResourceType]
     val `AWS::RDS::DBSubnetGroup`                 = "AWS::RDS::DBSubnetGroup".asInstanceOf[ResourceType]
     val `AWS::RDS::DBSecurityGroup`               = "AWS::RDS::DBSecurityGroup".asInstanceOf[ResourceType]
     val `AWS::RDS::DBSnapshot`                    = "AWS::RDS::DBSnapshot".asInstanceOf[ResourceType]
     val `AWS::RDS::DBCluster`                     = "AWS::RDS::DBCluster".asInstanceOf[ResourceType]
-    val `AWS::RDS::DBClusterParameterGroup`       = "AWS::RDS::DBClusterParameterGroup".asInstanceOf[ResourceType]
     val `AWS::RDS::DBClusterSnapshot`             = "AWS::RDS::DBClusterSnapshot".asInstanceOf[ResourceType]
     val `AWS::RDS::EventSubscription`             = "AWS::RDS::EventSubscription".asInstanceOf[ResourceType]
     val `AWS::S3::Bucket`                         = "AWS::S3::Bucket".asInstanceOf[ResourceType]
@@ -5992,34 +5999,35 @@ package configservice {
     val `AWS::WAFRegional::WebACL`                = "AWS::WAFRegional::WebACL".asInstanceOf[ResourceType]
     val `AWS::CloudFront::Distribution`           = "AWS::CloudFront::Distribution".asInstanceOf[ResourceType]
     val `AWS::CloudFront::StreamingDistribution`  = "AWS::CloudFront::StreamingDistribution".asInstanceOf[ResourceType]
-    val `AWS::Lambda::Alias`                      = "AWS::Lambda::Alias".asInstanceOf[ResourceType]
     val `AWS::Lambda::Function`                   = "AWS::Lambda::Function".asInstanceOf[ResourceType]
     val `AWS::ElasticBeanstalk::Application`      = "AWS::ElasticBeanstalk::Application".asInstanceOf[ResourceType]
     val `AWS::ElasticBeanstalk::ApplicationVersion` =
       "AWS::ElasticBeanstalk::ApplicationVersion".asInstanceOf[ResourceType]
     val `AWS::ElasticBeanstalk::Environment` = "AWS::ElasticBeanstalk::Environment".asInstanceOf[ResourceType]
-    val `AWS::MobileHub::Project`            = "AWS::MobileHub::Project".asInstanceOf[ResourceType]
+    val `AWS::WAFv2::WebACL`                 = "AWS::WAFv2::WebACL".asInstanceOf[ResourceType]
+    val `AWS::WAFv2::RuleGroup`              = "AWS::WAFv2::RuleGroup".asInstanceOf[ResourceType]
+    val `AWS::WAFv2::IPSet`                  = "AWS::WAFv2::IPSet".asInstanceOf[ResourceType]
+    val `AWS::WAFv2::RegexPatternSet`        = "AWS::WAFv2::RegexPatternSet".asInstanceOf[ResourceType]
+    val `AWS::WAFv2::ManagedRuleSet`         = "AWS::WAFv2::ManagedRuleSet".asInstanceOf[ResourceType]
     val `AWS::XRay::EncryptionConfig`        = "AWS::XRay::EncryptionConfig".asInstanceOf[ResourceType]
     val `AWS::SSM::AssociationCompliance`    = "AWS::SSM::AssociationCompliance".asInstanceOf[ResourceType]
     val `AWS::SSM::PatchCompliance`          = "AWS::SSM::PatchCompliance".asInstanceOf[ResourceType]
     val `AWS::Shield::Protection`            = "AWS::Shield::Protection".asInstanceOf[ResourceType]
     val `AWS::ShieldRegional::Protection`    = "AWS::ShieldRegional::Protection".asInstanceOf[ResourceType]
     val `AWS::Config::ResourceCompliance`    = "AWS::Config::ResourceCompliance".asInstanceOf[ResourceType]
-    val `AWS::LicenseManager::LicenseConfiguration` =
-      "AWS::LicenseManager::LicenseConfiguration".asInstanceOf[ResourceType]
-    val `AWS::ApiGateway::DomainName`   = "AWS::ApiGateway::DomainName".asInstanceOf[ResourceType]
-    val `AWS::ApiGateway::Method`       = "AWS::ApiGateway::Method".asInstanceOf[ResourceType]
-    val `AWS::ApiGateway::Stage`        = "AWS::ApiGateway::Stage".asInstanceOf[ResourceType]
-    val `AWS::ApiGateway::RestApi`      = "AWS::ApiGateway::RestApi".asInstanceOf[ResourceType]
-    val `AWS::ApiGatewayV2::DomainName` = "AWS::ApiGatewayV2::DomainName".asInstanceOf[ResourceType]
-    val `AWS::ApiGatewayV2::Stage`      = "AWS::ApiGatewayV2::Stage".asInstanceOf[ResourceType]
-    val `AWS::ApiGatewayV2::Api`        = "AWS::ApiGatewayV2::Api".asInstanceOf[ResourceType]
-    val `AWS::CodePipeline::Pipeline`   = "AWS::CodePipeline::Pipeline".asInstanceOf[ResourceType]
+    val `AWS::ApiGateway::Stage`             = "AWS::ApiGateway::Stage".asInstanceOf[ResourceType]
+    val `AWS::ApiGateway::RestApi`           = "AWS::ApiGateway::RestApi".asInstanceOf[ResourceType]
+    val `AWS::ApiGatewayV2::Stage`           = "AWS::ApiGatewayV2::Stage".asInstanceOf[ResourceType]
+    val `AWS::ApiGatewayV2::Api`             = "AWS::ApiGatewayV2::Api".asInstanceOf[ResourceType]
+    val `AWS::CodePipeline::Pipeline`        = "AWS::CodePipeline::Pipeline".asInstanceOf[ResourceType]
     val `AWS::ServiceCatalog::CloudFormationProvisionedProduct` =
       "AWS::ServiceCatalog::CloudFormationProvisionedProduct".asInstanceOf[ResourceType]
     val `AWS::ServiceCatalog::CloudFormationProduct` =
       "AWS::ServiceCatalog::CloudFormationProduct".asInstanceOf[ResourceType]
     val `AWS::ServiceCatalog::Portfolio` = "AWS::ServiceCatalog::Portfolio".asInstanceOf[ResourceType]
+    val `AWS::SQS::Queue`                = "AWS::SQS::Queue".asInstanceOf[ResourceType]
+    val `AWS::KMS::Key`                  = "AWS::KMS::Key".asInstanceOf[ResourceType]
+    val `AWS::QLDB::Ledger`              = "AWS::QLDB::Ledger".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -6045,6 +6053,7 @@ package configservice {
         `AWS::EC2::VPCEndpointService`,
         `AWS::EC2::FlowLog`,
         `AWS::EC2::VPCPeeringConnection`,
+        `AWS::Elasticsearch::Domain`,
         `AWS::IAM::Group`,
         `AWS::IAM::Policy`,
         `AWS::IAM::Role`,
@@ -6052,13 +6061,10 @@ package configservice {
         `AWS::ElasticLoadBalancingV2::LoadBalancer`,
         `AWS::ACM::Certificate`,
         `AWS::RDS::DBInstance`,
-        `AWS::RDS::DBParameterGroup`,
-        `AWS::RDS::DBOptionGroup`,
         `AWS::RDS::DBSubnetGroup`,
         `AWS::RDS::DBSecurityGroup`,
         `AWS::RDS::DBSnapshot`,
         `AWS::RDS::DBCluster`,
-        `AWS::RDS::DBClusterParameterGroup`,
         `AWS::RDS::DBClusterSnapshot`,
         `AWS::RDS::EventSubscription`,
         `AWS::S3::Bucket`,
@@ -6089,30 +6095,32 @@ package configservice {
         `AWS::WAFRegional::WebACL`,
         `AWS::CloudFront::Distribution`,
         `AWS::CloudFront::StreamingDistribution`,
-        `AWS::Lambda::Alias`,
         `AWS::Lambda::Function`,
         `AWS::ElasticBeanstalk::Application`,
         `AWS::ElasticBeanstalk::ApplicationVersion`,
         `AWS::ElasticBeanstalk::Environment`,
-        `AWS::MobileHub::Project`,
+        `AWS::WAFv2::WebACL`,
+        `AWS::WAFv2::RuleGroup`,
+        `AWS::WAFv2::IPSet`,
+        `AWS::WAFv2::RegexPatternSet`,
+        `AWS::WAFv2::ManagedRuleSet`,
         `AWS::XRay::EncryptionConfig`,
         `AWS::SSM::AssociationCompliance`,
         `AWS::SSM::PatchCompliance`,
         `AWS::Shield::Protection`,
         `AWS::ShieldRegional::Protection`,
         `AWS::Config::ResourceCompliance`,
-        `AWS::LicenseManager::LicenseConfiguration`,
-        `AWS::ApiGateway::DomainName`,
-        `AWS::ApiGateway::Method`,
         `AWS::ApiGateway::Stage`,
         `AWS::ApiGateway::RestApi`,
-        `AWS::ApiGatewayV2::DomainName`,
         `AWS::ApiGatewayV2::Stage`,
         `AWS::ApiGatewayV2::Api`,
         `AWS::CodePipeline::Pipeline`,
         `AWS::ServiceCatalog::CloudFormationProvisionedProduct`,
         `AWS::ServiceCatalog::CloudFormationProduct`,
-        `AWS::ServiceCatalog::Portfolio`
+        `AWS::ServiceCatalog::Portfolio`,
+        `AWS::SQS::Queue`,
+        `AWS::KMS::Key`,
+        `AWS::QLDB::Ledger`
       )
     )
   }
@@ -6195,6 +6203,58 @@ package configservice {
       TagKey.foreach(__v => __obj.updateDynamic("TagKey")(__v.asInstanceOf[js.Any]))
       TagValue.foreach(__v => __obj.updateDynamic("TagValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Scope]
+    }
+  }
+
+  @js.native
+  trait SelectAggregateResourceConfigRequest extends js.Object {
+    var ConfigurationAggregatorName: ConfigurationAggregatorName
+    var Expression: Expression
+    var Limit: js.UndefOr[Limit]
+    var MaxResults: js.UndefOr[Limit]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object SelectAggregateResourceConfigRequest {
+    @inline
+    def apply(
+        ConfigurationAggregatorName: ConfigurationAggregatorName,
+        Expression: Expression,
+        Limit: js.UndefOr[Limit] = js.undefined,
+        MaxResults: js.UndefOr[Limit] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): SelectAggregateResourceConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any],
+        "Expression"                  -> Expression.asInstanceOf[js.Any]
+      )
+
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SelectAggregateResourceConfigRequest]
+    }
+  }
+
+  @js.native
+  trait SelectAggregateResourceConfigResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var QueryInfo: js.UndefOr[QueryInfo]
+    var Results: js.UndefOr[Results]
+  }
+
+  object SelectAggregateResourceConfigResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        QueryInfo: js.UndefOr[QueryInfo] = js.undefined,
+        Results: js.UndefOr[Results] = js.undefined
+    ): SelectAggregateResourceConfigResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      QueryInfo.foreach(__v => __obj.updateDynamic("QueryInfo")(__v.asInstanceOf[js.Any]))
+      Results.foreach(__v => __obj.updateDynamic("Results")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SelectAggregateResourceConfigResponse]
     }
   }
 

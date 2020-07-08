@@ -10,6 +10,7 @@ package object guardduty {
   type AccountDetails            = js.Array[AccountDetail]
   type AccountId                 = String
   type AccountIds                = js.Array[AccountId]
+  type AdminAccounts             = js.Array[AdminAccount]
   type ClientToken               = String
   type CountBySeverity           = js.Dictionary[Int]
   type Criterion                 = js.Dictionary[Condition]
@@ -43,6 +44,7 @@ package object guardduty {
   type PortProbeDetails          = js.Array[PortProbeDetail]
   type PrivateIpAddresses        = js.Array[PrivateIpAddressDetails]
   type ProductCodes              = js.Array[ProductCode]
+  type S3BucketDetails           = js.Array[S3BucketDetail]
   type SecurityGroups            = js.Array[SecurityGroup]
   type TagKey                    = String
   type TagKeyList                = js.Array[TagKey]
@@ -52,6 +54,7 @@ package object guardduty {
   type ThreatIntelSetIds         = js.Array[String]
   type ThreatIntelligenceDetails = js.Array[ThreatIntelligenceDetail]
   type ThreatNames               = js.Array[String]
+  type Timestamp                 = js.Date
   type UnprocessedAccounts       = js.Array[UnprocessedAccount]
 
   implicit final class GuardDutyOps(private val service: GuardDuty) extends AnyVal {
@@ -92,14 +95,26 @@ package object guardduty {
     ): Future[DeletePublishingDestinationResponse] = service.deletePublishingDestination(params).promise().toFuture
     @inline def deleteThreatIntelSetFuture(params: DeleteThreatIntelSetRequest): Future[DeleteThreatIntelSetResponse] =
       service.deleteThreatIntelSet(params).promise().toFuture
+    @inline def describeOrganizationConfigurationFuture(
+        params: DescribeOrganizationConfigurationRequest
+    ): Future[DescribeOrganizationConfigurationResponse] =
+      service.describeOrganizationConfiguration(params).promise().toFuture
     @inline def describePublishingDestinationFuture(
         params: DescribePublishingDestinationRequest
     ): Future[DescribePublishingDestinationResponse] = service.describePublishingDestination(params).promise().toFuture
+    @inline def disableOrganizationAdminAccountFuture(
+        params: DisableOrganizationAdminAccountRequest
+    ): Future[DisableOrganizationAdminAccountResponse] =
+      service.disableOrganizationAdminAccount(params).promise().toFuture
     @inline def disassociateFromMasterAccountFuture(
         params: DisassociateFromMasterAccountRequest
     ): Future[DisassociateFromMasterAccountResponse] = service.disassociateFromMasterAccount(params).promise().toFuture
     @inline def disassociateMembersFuture(params: DisassociateMembersRequest): Future[DisassociateMembersResponse] =
       service.disassociateMembers(params).promise().toFuture
+    @inline def enableOrganizationAdminAccountFuture(
+        params: EnableOrganizationAdminAccountRequest
+    ): Future[EnableOrganizationAdminAccountResponse] =
+      service.enableOrganizationAdminAccount(params).promise().toFuture
     @inline def getDetectorFuture(params: GetDetectorRequest): Future[GetDetectorResponse] =
       service.getDetector(params).promise().toFuture
     @inline def getFilterFuture(params: GetFilterRequest): Future[GetFilterResponse] =
@@ -133,6 +148,9 @@ package object guardduty {
       service.listInvitations(params).promise().toFuture
     @inline def listMembersFuture(params: ListMembersRequest): Future[ListMembersResponse] =
       service.listMembers(params).promise().toFuture
+    @inline def listOrganizationAdminAccountsFuture(
+        params: ListOrganizationAdminAccountsRequest
+    ): Future[ListOrganizationAdminAccountsResponse] = service.listOrganizationAdminAccounts(params).promise().toFuture
     @inline def listPublishingDestinationsFuture(
         params: ListPublishingDestinationsRequest
     ): Future[ListPublishingDestinationsResponse] = service.listPublishingDestinations(params).promise().toFuture
@@ -161,6 +179,10 @@ package object guardduty {
     ): Future[UpdateFindingsFeedbackResponse] = service.updateFindingsFeedback(params).promise().toFuture
     @inline def updateIPSetFuture(params: UpdateIPSetRequest): Future[UpdateIPSetResponse] =
       service.updateIPSet(params).promise().toFuture
+    @inline def updateOrganizationConfigurationFuture(
+        params: UpdateOrganizationConfigurationRequest
+    ): Future[UpdateOrganizationConfigurationResponse] =
+      service.updateOrganizationConfiguration(params).promise().toFuture
     @inline def updatePublishingDestinationFuture(
         params: UpdatePublishingDestinationRequest
     ): Future[UpdatePublishingDestinationResponse] = service.updatePublishingDestination(params).promise().toFuture
@@ -196,13 +218,22 @@ package guardduty {
         params: DeletePublishingDestinationRequest
     ): Request[DeletePublishingDestinationResponse]                                                      = js.native
     def deleteThreatIntelSet(params: DeleteThreatIntelSetRequest): Request[DeleteThreatIntelSetResponse] = js.native
+    def describeOrganizationConfiguration(
+        params: DescribeOrganizationConfigurationRequest
+    ): Request[DescribeOrganizationConfigurationResponse] = js.native
     def describePublishingDestination(
         params: DescribePublishingDestinationRequest
     ): Request[DescribePublishingDestinationResponse] = js.native
+    def disableOrganizationAdminAccount(
+        params: DisableOrganizationAdminAccountRequest
+    ): Request[DisableOrganizationAdminAccountResponse] = js.native
     def disassociateFromMasterAccount(
         params: DisassociateFromMasterAccountRequest
-    ): Request[DisassociateFromMasterAccountResponse]                                                       = js.native
-    def disassociateMembers(params: DisassociateMembersRequest): Request[DisassociateMembersResponse]       = js.native
+    ): Request[DisassociateFromMasterAccountResponse]                                                 = js.native
+    def disassociateMembers(params: DisassociateMembersRequest): Request[DisassociateMembersResponse] = js.native
+    def enableOrganizationAdminAccount(
+        params: EnableOrganizationAdminAccountRequest
+    ): Request[EnableOrganizationAdminAccountResponse]                                                      = js.native
     def getDetector(params: GetDetectorRequest): Request[GetDetectorResponse]                               = js.native
     def getFilter(params: GetFilterRequest): Request[GetFilterResponse]                                     = js.native
     def getFindings(params: GetFindingsRequest): Request[GetFindingsResponse]                               = js.native
@@ -219,6 +250,9 @@ package guardduty {
     def listIPSets(params: ListIPSetsRequest): Request[ListIPSetsResponse]                                  = js.native
     def listInvitations(params: ListInvitationsRequest): Request[ListInvitationsResponse]                   = js.native
     def listMembers(params: ListMembersRequest): Request[ListMembersResponse]                               = js.native
+    def listOrganizationAdminAccounts(
+        params: ListOrganizationAdminAccountsRequest
+    ): Request[ListOrganizationAdminAccountsResponse] = js.native
     def listPublishingDestinations(
         params: ListPublishingDestinationsRequest
     ): Request[ListPublishingDestinationsResponse]                                                    = js.native
@@ -235,6 +269,9 @@ package guardduty {
     def updateFindingsFeedback(params: UpdateFindingsFeedbackRequest): Request[UpdateFindingsFeedbackResponse] =
       js.native
     def updateIPSet(params: UpdateIPSetRequest): Request[UpdateIPSetResponse] = js.native
+    def updateOrganizationConfiguration(
+        params: UpdateOrganizationConfigurationRequest
+    ): Request[UpdateOrganizationConfigurationResponse] = js.native
     def updatePublishingDestination(
         params: UpdatePublishingDestinationRequest
     ): Request[UpdatePublishingDestinationResponse]                                                      = js.native
@@ -275,6 +312,28 @@ package guardduty {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AcceptInvitationResponse]
+    }
+  }
+
+  /**
+    * Contains information on the current access control policies for the bucket.
+    */
+  @js.native
+  trait AccessControlList extends js.Object {
+    var AllowsPublicReadAccess: js.UndefOr[Boolean]
+    var AllowsPublicWriteAccess: js.UndefOr[Boolean]
+  }
+
+  object AccessControlList {
+    @inline
+    def apply(
+        AllowsPublicReadAccess: js.UndefOr[Boolean] = js.undefined,
+        AllowsPublicWriteAccess: js.UndefOr[Boolean] = js.undefined
+    ): AccessControlList = {
+      val __obj = js.Dynamic.literal()
+      AllowsPublicReadAccess.foreach(__v => __obj.updateDynamic("AllowsPublicReadAccess")(__v.asInstanceOf[js.Any]))
+      AllowsPublicWriteAccess.foreach(__v => __obj.updateDynamic("AllowsPublicWriteAccess")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccessControlList]
     }
   }
 
@@ -331,7 +390,26 @@ package guardduty {
   }
 
   /**
-    * Contains information about action.
+    * Contains information about the account level permissions on the S3 bucket.
+    */
+  @js.native
+  trait AccountLevelPermissions extends js.Object {
+    var BlockPublicAccess: js.UndefOr[BlockPublicAccess]
+  }
+
+  object AccountLevelPermissions {
+    @inline
+    def apply(
+        BlockPublicAccess: js.UndefOr[BlockPublicAccess] = js.undefined
+    ): AccountLevelPermissions = {
+      val __obj = js.Dynamic.literal()
+      BlockPublicAccess.foreach(__v => __obj.updateDynamic("BlockPublicAccess")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccountLevelPermissions]
+    }
+  }
+
+  /**
+    * Contains information about actions.
     */
   @js.native
   trait Action extends js.Object {
@@ -359,6 +437,37 @@ package guardduty {
       PortProbeAction.foreach(__v => __obj.updateDynamic("PortProbeAction")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Action]
     }
+  }
+
+  /**
+    * The account within the organization specified as the GuardDuty delegated administrator.
+    */
+  @js.native
+  trait AdminAccount extends js.Object {
+    var AdminAccountId: js.UndefOr[String]
+    var AdminStatus: js.UndefOr[AdminStatus]
+  }
+
+  object AdminAccount {
+    @inline
+    def apply(
+        AdminAccountId: js.UndefOr[String] = js.undefined,
+        AdminStatus: js.UndefOr[AdminStatus] = js.undefined
+    ): AdminAccount = {
+      val __obj = js.Dynamic.literal()
+      AdminAccountId.foreach(__v => __obj.updateDynamic("AdminAccountId")(__v.asInstanceOf[js.Any]))
+      AdminStatus.foreach(__v => __obj.updateDynamic("AdminStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AdminAccount]
+    }
+  }
+
+  @js.native
+  sealed trait AdminStatus extends js.Any
+  object AdminStatus extends js.Object {
+    val ENABLED             = "ENABLED".asInstanceOf[AdminStatus]
+    val DISABLE_IN_PROGRESS = "DISABLE_IN_PROGRESS".asInstanceOf[AdminStatus]
+
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLE_IN_PROGRESS))
   }
 
   @js.native
@@ -423,6 +532,81 @@ package guardduty {
       RemoteIpDetails.foreach(__v => __obj.updateDynamic("RemoteIpDetails")(__v.asInstanceOf[js.Any]))
       ServiceName.foreach(__v => __obj.updateDynamic("ServiceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsApiCallAction]
+    }
+  }
+
+  /**
+    * Contains information on how the bucker owner's S3 Block Public Access settings are being applied to the S3 bucket. See [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html|S3 Block Public Access]] for more information.
+    */
+  @js.native
+  trait BlockPublicAccess extends js.Object {
+    var BlockPublicAcls: js.UndefOr[Boolean]
+    var BlockPublicPolicy: js.UndefOr[Boolean]
+    var IgnorePublicAcls: js.UndefOr[Boolean]
+    var RestrictPublicBuckets: js.UndefOr[Boolean]
+  }
+
+  object BlockPublicAccess {
+    @inline
+    def apply(
+        BlockPublicAcls: js.UndefOr[Boolean] = js.undefined,
+        BlockPublicPolicy: js.UndefOr[Boolean] = js.undefined,
+        IgnorePublicAcls: js.UndefOr[Boolean] = js.undefined,
+        RestrictPublicBuckets: js.UndefOr[Boolean] = js.undefined
+    ): BlockPublicAccess = {
+      val __obj = js.Dynamic.literal()
+      BlockPublicAcls.foreach(__v => __obj.updateDynamic("BlockPublicAcls")(__v.asInstanceOf[js.Any]))
+      BlockPublicPolicy.foreach(__v => __obj.updateDynamic("BlockPublicPolicy")(__v.asInstanceOf[js.Any]))
+      IgnorePublicAcls.foreach(__v => __obj.updateDynamic("IgnorePublicAcls")(__v.asInstanceOf[js.Any]))
+      RestrictPublicBuckets.foreach(__v => __obj.updateDynamic("RestrictPublicBuckets")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BlockPublicAccess]
+    }
+  }
+
+  /**
+    * Contains information about the bucket level permissions for the S3 bucket.
+    */
+  @js.native
+  trait BucketLevelPermissions extends js.Object {
+    var AccessControlList: js.UndefOr[AccessControlList]
+    var BlockPublicAccess: js.UndefOr[BlockPublicAccess]
+    var BucketPolicy: js.UndefOr[BucketPolicy]
+  }
+
+  object BucketLevelPermissions {
+    @inline
+    def apply(
+        AccessControlList: js.UndefOr[AccessControlList] = js.undefined,
+        BlockPublicAccess: js.UndefOr[BlockPublicAccess] = js.undefined,
+        BucketPolicy: js.UndefOr[BucketPolicy] = js.undefined
+    ): BucketLevelPermissions = {
+      val __obj = js.Dynamic.literal()
+      AccessControlList.foreach(__v => __obj.updateDynamic("AccessControlList")(__v.asInstanceOf[js.Any]))
+      BlockPublicAccess.foreach(__v => __obj.updateDynamic("BlockPublicAccess")(__v.asInstanceOf[js.Any]))
+      BucketPolicy.foreach(__v => __obj.updateDynamic("BucketPolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BucketLevelPermissions]
+    }
+  }
+
+  /**
+    * Contains information on the current bucket policies for the S3 bucket.
+    */
+  @js.native
+  trait BucketPolicy extends js.Object {
+    var AllowsPublicReadAccess: js.UndefOr[Boolean]
+    var AllowsPublicWriteAccess: js.UndefOr[Boolean]
+  }
+
+  object BucketPolicy {
+    @inline
+    def apply(
+        AllowsPublicReadAccess: js.UndefOr[Boolean] = js.undefined,
+        AllowsPublicWriteAccess: js.UndefOr[Boolean] = js.undefined
+    ): BucketPolicy = {
+      val __obj = js.Dynamic.literal()
+      AllowsPublicReadAccess.foreach(__v => __obj.updateDynamic("AllowsPublicReadAccess")(__v.asInstanceOf[js.Any]))
+      AllowsPublicWriteAccess.foreach(__v => __obj.updateDynamic("AllowsPublicWriteAccess")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BucketPolicy]
     }
   }
 
@@ -498,7 +682,7 @@ package guardduty {
   }
 
   /**
-    * Contains information about the country in which the remote IP address is located.
+    * Contains information about the country where the remote IP address is located.
     */
   @js.native
   trait Country extends js.Object {
@@ -883,6 +1067,28 @@ package guardduty {
     }
   }
 
+  /**
+    * Contains information on the server side encryption method used in the S3 bucket. See [[https://docs.aws.amazon.com/AmazonS3/atest/dev/serv-side-encryption.html|S3 Server-Side Encryption]] for more information.
+    */
+  @js.native
+  trait DefaultServerSideEncryption extends js.Object {
+    var EncryptionType: js.UndefOr[String]
+    var KmsMasterKeyArn: js.UndefOr[String]
+  }
+
+  object DefaultServerSideEncryption {
+    @inline
+    def apply(
+        EncryptionType: js.UndefOr[String] = js.undefined,
+        KmsMasterKeyArn: js.UndefOr[String] = js.undefined
+    ): DefaultServerSideEncryption = {
+      val __obj = js.Dynamic.literal()
+      EncryptionType.foreach(__v => __obj.updateDynamic("EncryptionType")(__v.asInstanceOf[js.Any]))
+      KmsMasterKeyArn.foreach(__v => __obj.updateDynamic("KmsMasterKeyArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DefaultServerSideEncryption]
+    }
+  }
+
   @js.native
   trait DeleteDetectorRequest extends js.Object {
     var DetectorId: DetectorId
@@ -1126,6 +1332,45 @@ package guardduty {
   }
 
   @js.native
+  trait DescribeOrganizationConfigurationRequest extends js.Object {
+    var DetectorId: DetectorId
+  }
+
+  object DescribeOrganizationConfigurationRequest {
+    @inline
+    def apply(
+        DetectorId: DetectorId
+    ): DescribeOrganizationConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeOrganizationConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeOrganizationConfigurationResponse extends js.Object {
+    var AutoEnable: Boolean
+    var MemberAccountLimitReached: Boolean
+  }
+
+  object DescribeOrganizationConfigurationResponse {
+    @inline
+    def apply(
+        AutoEnable: Boolean,
+        MemberAccountLimitReached: Boolean
+    ): DescribeOrganizationConfigurationResponse = {
+      val __obj = js.Dynamic.literal(
+        "AutoEnable"                -> AutoEnable.asInstanceOf[js.Any],
+        "MemberAccountLimitReached" -> MemberAccountLimitReached.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeOrganizationConfigurationResponse]
+    }
+  }
+
+  @js.native
   trait DescribePublishingDestinationRequest extends js.Object {
     var DestinationId: String
     var DetectorId: DetectorId
@@ -1177,7 +1422,7 @@ package guardduty {
   }
 
   /**
-    * Contains information about a publishing destination, including the ID, type, and status.
+    * Contains information about the publishing destination, including the ID, type, and status.
     */
   @js.native
   trait Destination extends js.Object {
@@ -1204,7 +1449,7 @@ package guardduty {
   }
 
   /**
-    * Contains the ARN of the resource to publish to, such as an S3 bucket, and the ARN of the KMS key to use to encrypt published findings.
+    * Contains the Amazon Resource Name (ARN) of the resource to publish to, such as an S3 bucket, and the ARN of the KMS key to use to encrypt published findings.
     */
   @js.native
   trait DestinationProperties extends js.Object {
@@ -1240,6 +1485,37 @@ package guardduty {
     val DISABLED = "DISABLED".asInstanceOf[DetectorStatus]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
+  }
+
+  @js.native
+  trait DisableOrganizationAdminAccountRequest extends js.Object {
+    var AdminAccountId: String
+  }
+
+  object DisableOrganizationAdminAccountRequest {
+    @inline
+    def apply(
+        AdminAccountId: String
+    ): DisableOrganizationAdminAccountRequest = {
+      val __obj = js.Dynamic.literal(
+        "AdminAccountId" -> AdminAccountId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DisableOrganizationAdminAccountRequest]
+    }
+  }
+
+  @js.native
+  trait DisableOrganizationAdminAccountResponse extends js.Object {}
+
+  object DisableOrganizationAdminAccountResponse {
+    @inline
+    def apply(
+    ): DisableOrganizationAdminAccountResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DisableOrganizationAdminAccountResponse]
+    }
   }
 
   @js.native
@@ -1347,6 +1623,37 @@ package guardduty {
       val __obj = js.Dynamic.literal()
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainDetails]
+    }
+  }
+
+  @js.native
+  trait EnableOrganizationAdminAccountRequest extends js.Object {
+    var AdminAccountId: String
+  }
+
+  object EnableOrganizationAdminAccountRequest {
+    @inline
+    def apply(
+        AdminAccountId: String
+    ): EnableOrganizationAdminAccountRequest = {
+      val __obj = js.Dynamic.literal(
+        "AdminAccountId" -> AdminAccountId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[EnableOrganizationAdminAccountRequest]
+    }
+  }
+
+  @js.native
+  trait EnableOrganizationAdminAccountResponse extends js.Object {}
+
+  object EnableOrganizationAdminAccountResponse {
+    @inline
+    def apply(
+    ): EnableOrganizationAdminAccountResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[EnableOrganizationAdminAccountResponse]
     }
   }
 
@@ -1966,6 +2273,7 @@ package guardduty {
     var InstanceType: js.UndefOr[String]
     var LaunchTime: js.UndefOr[String]
     var NetworkInterfaces: js.UndefOr[NetworkInterfaces]
+    var OutpostArn: js.UndefOr[String]
     var Platform: js.UndefOr[String]
     var ProductCodes: js.UndefOr[ProductCodes]
     var Tags: js.UndefOr[Tags]
@@ -1983,6 +2291,7 @@ package guardduty {
         InstanceType: js.UndefOr[String] = js.undefined,
         LaunchTime: js.UndefOr[String] = js.undefined,
         NetworkInterfaces: js.UndefOr[NetworkInterfaces] = js.undefined,
+        OutpostArn: js.UndefOr[String] = js.undefined,
         Platform: js.UndefOr[String] = js.undefined,
         ProductCodes: js.UndefOr[ProductCodes] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
@@ -1997,6 +2306,7 @@ package guardduty {
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
       LaunchTime.foreach(__v => __obj.updateDynamic("LaunchTime")(__v.asInstanceOf[js.Any]))
       NetworkInterfaces.foreach(__v => __obj.updateDynamic("NetworkInterfaces")(__v.asInstanceOf[js.Any]))
+      OutpostArn.foreach(__v => __obj.updateDynamic("OutpostArn")(__v.asInstanceOf[js.Any]))
       Platform.foreach(__v => __obj.updateDynamic("Platform")(__v.asInstanceOf[js.Any]))
       ProductCodes.foreach(__v => __obj.updateDynamic("ProductCodes")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -2370,6 +2680,44 @@ package guardduty {
   }
 
   @js.native
+  trait ListOrganizationAdminAccountsRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListOrganizationAdminAccountsRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListOrganizationAdminAccountsRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListOrganizationAdminAccountsRequest]
+    }
+  }
+
+  @js.native
+  trait ListOrganizationAdminAccountsResponse extends js.Object {
+    var AdminAccounts: js.UndefOr[AdminAccounts]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListOrganizationAdminAccountsResponse {
+    @inline
+    def apply(
+        AdminAccounts: js.UndefOr[AdminAccounts] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListOrganizationAdminAccountsResponse = {
+      val __obj = js.Dynamic.literal()
+      AdminAccounts.foreach(__v => __obj.updateDynamic("AdminAccounts")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListOrganizationAdminAccountsResponse]
+    }
+  }
+
+  @js.native
   trait ListPublishingDestinationsRequest extends js.Object {
     var DetectorId: DetectorId
     var MaxResults: js.UndefOr[MaxResults]
@@ -2494,6 +2842,25 @@ package guardduty {
   }
 
   /**
+    * Contains information about the local IP address of the connection.
+    */
+  @js.native
+  trait LocalIpDetails extends js.Object {
+    var IpAddressV4: js.UndefOr[String]
+  }
+
+  object LocalIpDetails {
+    @inline
+    def apply(
+        IpAddressV4: js.UndefOr[String] = js.undefined
+    ): LocalIpDetails = {
+      val __obj = js.Dynamic.literal()
+      IpAddressV4.foreach(__v => __obj.updateDynamic("IpAddressV4")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LocalIpDetails]
+    }
+  }
+
+  /**
     * Contains information about the port for the local connection.
     */
   @js.native
@@ -2516,7 +2883,7 @@ package guardduty {
   }
 
   /**
-    * Contains information about the Master account and invitation.
+    * Contains information about the master account and invitation.
     */
   @js.native
   trait Master extends js.Object {
@@ -2544,7 +2911,7 @@ package guardduty {
   }
 
   /**
-    * Continas information about the member account
+    * Contains information about the member account.
     */
   @js.native
   trait Member extends js.Object {
@@ -2589,6 +2956,7 @@ package guardduty {
   trait NetworkConnectionAction extends js.Object {
     var Blocked: js.UndefOr[Boolean]
     var ConnectionDirection: js.UndefOr[String]
+    var LocalIpDetails: js.UndefOr[LocalIpDetails]
     var LocalPortDetails: js.UndefOr[LocalPortDetails]
     var Protocol: js.UndefOr[String]
     var RemoteIpDetails: js.UndefOr[RemoteIpDetails]
@@ -2600,6 +2968,7 @@ package guardduty {
     def apply(
         Blocked: js.UndefOr[Boolean] = js.undefined,
         ConnectionDirection: js.UndefOr[String] = js.undefined,
+        LocalIpDetails: js.UndefOr[LocalIpDetails] = js.undefined,
         LocalPortDetails: js.UndefOr[LocalPortDetails] = js.undefined,
         Protocol: js.UndefOr[String] = js.undefined,
         RemoteIpDetails: js.UndefOr[RemoteIpDetails] = js.undefined,
@@ -2608,6 +2977,7 @@ package guardduty {
       val __obj = js.Dynamic.literal()
       Blocked.foreach(__v => __obj.updateDynamic("Blocked")(__v.asInstanceOf[js.Any]))
       ConnectionDirection.foreach(__v => __obj.updateDynamic("ConnectionDirection")(__v.asInstanceOf[js.Any]))
+      LocalIpDetails.foreach(__v => __obj.updateDynamic("LocalIpDetails")(__v.asInstanceOf[js.Any]))
       LocalPortDetails.foreach(__v => __obj.updateDynamic("LocalPortDetails")(__v.asInstanceOf[js.Any]))
       Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
       RemoteIpDetails.foreach(__v => __obj.updateDynamic("RemoteIpDetails")(__v.asInstanceOf[js.Any]))
@@ -2617,7 +2987,7 @@ package guardduty {
   }
 
   /**
-    * Contains information about the network interface of the Ec2 instance.
+    * Contains information about the elastic network interface of the EC2 instance.
     */
   @js.native
   trait NetworkInterface extends js.Object {
@@ -2672,7 +3042,7 @@ package guardduty {
   }
 
   /**
-    * Continas information about the ISP organization of the remote IP address.
+    * Contains information about the ISP organization of the remote IP address.
     */
   @js.native
   trait Organization extends js.Object {
@@ -2696,6 +3066,47 @@ package guardduty {
       Isp.foreach(__v => __obj.updateDynamic("Isp")(__v.asInstanceOf[js.Any]))
       Org.foreach(__v => __obj.updateDynamic("Org")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Organization]
+    }
+  }
+
+  /**
+    * Contains information on the owner of the bucket.
+    */
+  @js.native
+  trait Owner extends js.Object {
+    var Id: js.UndefOr[String]
+  }
+
+  object Owner {
+    @inline
+    def apply(
+        Id: js.UndefOr[String] = js.undefined
+    ): Owner = {
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Owner]
+    }
+  }
+
+  /**
+    * Contains information about how permissions are configured for the S3 bucket.
+    */
+  @js.native
+  trait PermissionConfiguration extends js.Object {
+    var AccountLevelPermissions: js.UndefOr[AccountLevelPermissions]
+    var BucketLevelPermissions: js.UndefOr[BucketLevelPermissions]
+  }
+
+  object PermissionConfiguration {
+    @inline
+    def apply(
+        AccountLevelPermissions: js.UndefOr[AccountLevelPermissions] = js.undefined,
+        BucketLevelPermissions: js.UndefOr[BucketLevelPermissions] = js.undefined
+    ): PermissionConfiguration = {
+      val __obj = js.Dynamic.literal()
+      AccountLevelPermissions.foreach(__v => __obj.updateDynamic("AccountLevelPermissions")(__v.asInstanceOf[js.Any]))
+      BucketLevelPermissions.foreach(__v => __obj.updateDynamic("BucketLevelPermissions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PermissionConfiguration]
     }
   }
 
@@ -2726,6 +3137,7 @@ package guardduty {
     */
   @js.native
   trait PortProbeDetail extends js.Object {
+    var LocalIpDetails: js.UndefOr[LocalIpDetails]
     var LocalPortDetails: js.UndefOr[LocalPortDetails]
     var RemoteIpDetails: js.UndefOr[RemoteIpDetails]
   }
@@ -2733,10 +3145,12 @@ package guardduty {
   object PortProbeDetail {
     @inline
     def apply(
+        LocalIpDetails: js.UndefOr[LocalIpDetails] = js.undefined,
         LocalPortDetails: js.UndefOr[LocalPortDetails] = js.undefined,
         RemoteIpDetails: js.UndefOr[RemoteIpDetails] = js.undefined
     ): PortProbeDetail = {
       val __obj = js.Dynamic.literal()
+      LocalIpDetails.foreach(__v => __obj.updateDynamic("LocalIpDetails")(__v.asInstanceOf[js.Any]))
       LocalPortDetails.foreach(__v => __obj.updateDynamic("LocalPortDetails")(__v.asInstanceOf[js.Any]))
       RemoteIpDetails.foreach(__v => __obj.updateDynamic("RemoteIpDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PortProbeDetail]
@@ -2766,7 +3180,7 @@ package guardduty {
   }
 
   /**
-    * Contains information about the product code for the Ec2 instance.
+    * Contains information about the product code for the EC2 instance.
     */
   @js.native
   trait ProductCode extends js.Object {
@@ -2787,6 +3201,28 @@ package guardduty {
     }
   }
 
+  /**
+    * Describes the public access policies that apply to the S3 bucket.
+    */
+  @js.native
+  trait PublicAccess extends js.Object {
+    var EffectivePermission: js.UndefOr[String]
+    var PermissionConfiguration: js.UndefOr[PermissionConfiguration]
+  }
+
+  object PublicAccess {
+    @inline
+    def apply(
+        EffectivePermission: js.UndefOr[String] = js.undefined,
+        PermissionConfiguration: js.UndefOr[PermissionConfiguration] = js.undefined
+    ): PublicAccess = {
+      val __obj = js.Dynamic.literal()
+      EffectivePermission.foreach(__v => __obj.updateDynamic("EffectivePermission")(__v.asInstanceOf[js.Any]))
+      PermissionConfiguration.foreach(__v => __obj.updateDynamic("PermissionConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PublicAccess]
+    }
+  }
+
   @js.native
   sealed trait PublishingStatus extends js.Any
   object PublishingStatus extends js.Object {
@@ -2801,7 +3237,7 @@ package guardduty {
   }
 
   /**
-    * Continas information about the remote IP address of the connection.
+    * Contains information about the remote IP address of the connection.
     */
   @js.native
   trait RemoteIpDetails extends js.Object {
@@ -2861,6 +3297,7 @@ package guardduty {
     var AccessKeyDetails: js.UndefOr[AccessKeyDetails]
     var InstanceDetails: js.UndefOr[InstanceDetails]
     var ResourceType: js.UndefOr[String]
+    var S3BucketDetails: js.UndefOr[S3BucketDetails]
   }
 
   object Resource {
@@ -2868,13 +3305,54 @@ package guardduty {
     def apply(
         AccessKeyDetails: js.UndefOr[AccessKeyDetails] = js.undefined,
         InstanceDetails: js.UndefOr[InstanceDetails] = js.undefined,
-        ResourceType: js.UndefOr[String] = js.undefined
+        ResourceType: js.UndefOr[String] = js.undefined,
+        S3BucketDetails: js.UndefOr[S3BucketDetails] = js.undefined
     ): Resource = {
       val __obj = js.Dynamic.literal()
       AccessKeyDetails.foreach(__v => __obj.updateDynamic("AccessKeyDetails")(__v.asInstanceOf[js.Any]))
       InstanceDetails.foreach(__v => __obj.updateDynamic("InstanceDetails")(__v.asInstanceOf[js.Any]))
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      S3BucketDetails.foreach(__v => __obj.updateDynamic("S3BucketDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Resource]
+    }
+  }
+
+  @js.native
+  trait S3BucketDetail extends js.Object {
+    var Arn: js.UndefOr[String]
+    var CreatedAt: js.UndefOr[Timestamp]
+    var DefaultServerSideEncryption: js.UndefOr[DefaultServerSideEncryption]
+    var Name: js.UndefOr[String]
+    var Owner: js.UndefOr[Owner]
+    var PublicAccess: js.UndefOr[PublicAccess]
+    var Tags: js.UndefOr[Tags]
+    var Type: js.UndefOr[String]
+  }
+
+  object S3BucketDetail {
+    @inline
+    def apply(
+        Arn: js.UndefOr[String] = js.undefined,
+        CreatedAt: js.UndefOr[Timestamp] = js.undefined,
+        DefaultServerSideEncryption: js.UndefOr[DefaultServerSideEncryption] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        Owner: js.UndefOr[Owner] = js.undefined,
+        PublicAccess: js.UndefOr[PublicAccess] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        Type: js.UndefOr[String] = js.undefined
+    ): S3BucketDetail = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      DefaultServerSideEncryption.foreach(__v =>
+        __obj.updateDynamic("DefaultServerSideEncryption")(__v.asInstanceOf[js.Any])
+      )
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
+      PublicAccess.foreach(__v => __obj.updateDynamic("PublicAccess")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3BucketDetail]
     }
   }
 
@@ -3047,7 +3525,7 @@ package guardduty {
   }
 
   /**
-    * Contains information about a tag associated with the Ec2 instance.
+    * Contains information about a tag associated with the EC2 instance.
     */
   @js.native
   trait Tag extends js.Object {
@@ -3186,7 +3664,7 @@ package guardduty {
   }
 
   /**
-    * Contains information about the accounts that were not processed.
+    * Contains information about the accounts that weren't processed.
     */
   @js.native
   trait UnprocessedAccount extends js.Object {
@@ -3413,6 +3891,40 @@ package guardduty {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateIPSetResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateOrganizationConfigurationRequest extends js.Object {
+    var AutoEnable: Boolean
+    var DetectorId: DetectorId
+  }
+
+  object UpdateOrganizationConfigurationRequest {
+    @inline
+    def apply(
+        AutoEnable: Boolean,
+        DetectorId: DetectorId
+    ): UpdateOrganizationConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "AutoEnable" -> AutoEnable.asInstanceOf[js.Any],
+        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateOrganizationConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateOrganizationConfigurationResponse extends js.Object {}
+
+  object UpdateOrganizationConfigurationResponse {
+    @inline
+    def apply(
+    ): UpdateOrganizationConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[UpdateOrganizationConfigurationResponse]
     }
   }
 

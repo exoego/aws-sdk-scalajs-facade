@@ -33,6 +33,10 @@ package object worklink {
   type SecurityGroupIds                         = js.Array[SecurityGroupId]
   type SubnetId                                 = String
   type SubnetIds                                = js.Array[SubnetId]
+  type TagKey                                   = String
+  type TagKeyList                               = js.Array[TagKey]
+  type TagMap                                   = js.Dictionary[TagValue]
+  type TagValue                                 = String
   type Username                                 = String
   type VpcId                                    = String
   type WebsiteAuthorizationProvidersSummaryList = js.Array[WebsiteAuthorizationProviderSummary]
@@ -97,6 +101,8 @@ package object worklink {
       service.listDomains(params).promise().toFuture
     @inline def listFleetsFuture(params: ListFleetsRequest): Future[ListFleetsResponse] =
       service.listFleets(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise().toFuture
     @inline def listWebsiteAuthorizationProvidersFuture(
         params: ListWebsiteAuthorizationProvidersRequest
     ): Future[ListWebsiteAuthorizationProvidersResponse] =
@@ -111,6 +117,10 @@ package object worklink {
       service.revokeDomainAccess(params).promise().toFuture
     @inline def signOutUserFuture(params: SignOutUserRequest): Future[SignOutUserResponse] =
       service.signOutUser(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+      service.untagResource(params).promise().toFuture
     @inline def updateAuditStreamConfigurationFuture(
         params: UpdateAuditStreamConfigurationRequest
     ): Future[UpdateAuditStreamConfigurationResponse] =
@@ -173,10 +183,11 @@ package worklink {
     ): Request[DisassociateWebsiteAuthorizationProviderResponse] = js.native
     def disassociateWebsiteCertificateAuthority(
         params: DisassociateWebsiteCertificateAuthorityRequest
-    ): Request[DisassociateWebsiteCertificateAuthorityResponse]               = js.native
-    def listDevices(params: ListDevicesRequest): Request[ListDevicesResponse] = js.native
-    def listDomains(params: ListDomainsRequest): Request[ListDomainsResponse] = js.native
-    def listFleets(params: ListFleetsRequest): Request[ListFleetsResponse]    = js.native
+    ): Request[DisassociateWebsiteCertificateAuthorityResponse]                                       = js.native
+    def listDevices(params: ListDevicesRequest): Request[ListDevicesResponse]                         = js.native
+    def listDomains(params: ListDomainsRequest): Request[ListDomainsResponse]                         = js.native
+    def listFleets(params: ListFleetsRequest): Request[ListFleetsResponse]                            = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listWebsiteAuthorizationProviders(
         params: ListWebsiteAuthorizationProvidersRequest
     ): Request[ListWebsiteAuthorizationProvidersResponse] = js.native
@@ -186,6 +197,8 @@ package worklink {
     def restoreDomainAccess(params: RestoreDomainAccessRequest): Request[RestoreDomainAccessResponse] = js.native
     def revokeDomainAccess(params: RevokeDomainAccessRequest): Request[RevokeDomainAccessResponse]    = js.native
     def signOutUser(params: SignOutUserRequest): Request[SignOutUserResponse]                         = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
     def updateAuditStreamConfiguration(
         params: UpdateAuditStreamConfigurationRequest
     ): Request[UpdateAuditStreamConfigurationResponse] = js.native
@@ -335,6 +348,7 @@ package worklink {
     var FleetName: FleetName
     var DisplayName: js.UndefOr[DisplayName]
     var OptimizeForEndUserLocation: js.UndefOr[Boolean]
+    var Tags: js.UndefOr[TagMap]
   }
 
   object CreateFleetRequest {
@@ -342,7 +356,8 @@ package worklink {
     def apply(
         FleetName: FleetName,
         DisplayName: js.UndefOr[DisplayName] = js.undefined,
-        OptimizeForEndUserLocation: js.UndefOr[Boolean] = js.undefined
+        OptimizeForEndUserLocation: js.UndefOr[Boolean] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateFleetRequest = {
       val __obj = js.Dynamic.literal(
         "FleetName" -> FleetName.asInstanceOf[js.Any]
@@ -352,6 +367,7 @@ package worklink {
       OptimizeForEndUserLocation.foreach(__v =>
         __obj.updateDynamic("OptimizeForEndUserLocation")(__v.asInstanceOf[js.Any])
       )
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFleetRequest]
     }
   }
@@ -648,6 +664,7 @@ package worklink {
     var FleetStatus: js.UndefOr[FleetStatus]
     var LastUpdatedTime: js.UndefOr[DateTime]
     var OptimizeForEndUserLocation: js.UndefOr[Boolean]
+    var Tags: js.UndefOr[TagMap]
   }
 
   object DescribeFleetMetadataResponse {
@@ -659,7 +676,8 @@ package worklink {
         FleetName: js.UndefOr[FleetName] = js.undefined,
         FleetStatus: js.UndefOr[FleetStatus] = js.undefined,
         LastUpdatedTime: js.UndefOr[DateTime] = js.undefined,
-        OptimizeForEndUserLocation: js.UndefOr[Boolean] = js.undefined
+        OptimizeForEndUserLocation: js.UndefOr[Boolean] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): DescribeFleetMetadataResponse = {
       val __obj = js.Dynamic.literal()
       CompanyCode.foreach(__v => __obj.updateDynamic("CompanyCode")(__v.asInstanceOf[js.Any]))
@@ -671,6 +689,7 @@ package worklink {
       OptimizeForEndUserLocation.foreach(__v =>
         __obj.updateDynamic("OptimizeForEndUserLocation")(__v.asInstanceOf[js.Any])
       )
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeFleetMetadataResponse]
     }
   }
@@ -976,6 +995,7 @@ package worklink {
     var FleetName: js.UndefOr[FleetName]
     var FleetStatus: js.UndefOr[FleetStatus]
     var LastUpdatedTime: js.UndefOr[DateTime]
+    var Tags: js.UndefOr[TagMap]
   }
 
   object FleetSummary {
@@ -987,7 +1007,8 @@ package worklink {
         FleetArn: js.UndefOr[FleetArn] = js.undefined,
         FleetName: js.UndefOr[FleetName] = js.undefined,
         FleetStatus: js.UndefOr[FleetStatus] = js.undefined,
-        LastUpdatedTime: js.UndefOr[DateTime] = js.undefined
+        LastUpdatedTime: js.UndefOr[DateTime] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): FleetSummary = {
       val __obj = js.Dynamic.literal()
       CompanyCode.foreach(__v => __obj.updateDynamic("CompanyCode")(__v.asInstanceOf[js.Any]))
@@ -997,6 +1018,7 @@ package worklink {
       FleetName.foreach(__v => __obj.updateDynamic("FleetName")(__v.asInstanceOf[js.Any]))
       FleetStatus.foreach(__v => __obj.updateDynamic("FleetStatus")(__v.asInstanceOf[js.Any]))
       LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FleetSummary]
     }
   }
@@ -1130,6 +1152,40 @@ package worklink {
       FleetSummaryList.foreach(__v => __obj.updateDynamic("FleetSummaryList")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFleetsResponse]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceArn: FleetArn
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: FleetArn
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var Tags: js.UndefOr[TagMap]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
 
@@ -1322,6 +1378,74 @@ package worklink {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SignOutUserResponse]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceArn: FleetArn
+    var Tags: TagMap
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: FleetArn,
+        Tags: TagMap
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "Tags"        -> Tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object {}
+
+  object TagResourceResponse {
+    @inline
+    def apply(
+    ): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceArn: FleetArn
+    var TagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: FleetArn,
+        TagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object {}
+
+  object UntagResourceResponse {
+    @inline
+    def apply(
+    ): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 

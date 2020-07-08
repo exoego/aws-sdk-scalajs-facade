@@ -634,6 +634,28 @@ package codebuild {
     )
   }
 
+  /**
+    * Contains information that defines how the AWS CodeBuild build project reports the build status to the source provider.
+    */
+  @js.native
+  trait BuildStatusConfig extends js.Object {
+    var context: js.UndefOr[String]
+    var targetUrl: js.UndefOr[String]
+  }
+
+  object BuildStatusConfig {
+    @inline
+    def apply(
+        context: js.UndefOr[String] = js.undefined,
+        targetUrl: js.UndefOr[String] = js.undefined
+    ): BuildStatusConfig = {
+      val __obj = js.Dynamic.literal()
+      context.foreach(__v => __obj.updateDynamic("context")(__v.asInstanceOf[js.Any]))
+      targetUrl.foreach(__v => __obj.updateDynamic("targetUrl")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BuildStatusConfig]
+    }
+  }
+
   @js.native
   sealed trait CacheMode extends js.Any
   object CacheMode extends js.Object {
@@ -787,6 +809,7 @@ package codebuild {
     var exportConfig: ReportExportConfig
     var name: ReportGroupName
     var `type`: ReportType
+    var tags: js.UndefOr[TagList]
   }
 
   object CreateReportGroupInput {
@@ -794,7 +817,8 @@ package codebuild {
     def apply(
         exportConfig: ReportExportConfig,
         name: ReportGroupName,
-        `type`: ReportType
+        `type`: ReportType,
+        tags: js.UndefOr[TagList] = js.undefined
     ): CreateReportGroupInput = {
       val __obj = js.Dynamic.literal(
         "exportConfig" -> exportConfig.asInstanceOf[js.Any],
@@ -802,6 +826,7 @@ package codebuild {
         "type"         -> `type`.asInstanceOf[js.Any]
       )
 
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateReportGroupInput]
     }
   }
@@ -2210,6 +2235,7 @@ package codebuild {
   trait ProjectSource extends js.Object {
     var `type`: SourceType
     var auth: js.UndefOr[SourceAuth]
+    var buildStatusConfig: js.UndefOr[BuildStatusConfig]
     var buildspec: js.UndefOr[String]
     var gitCloneDepth: js.UndefOr[GitCloneDepth]
     var gitSubmodulesConfig: js.UndefOr[GitSubmodulesConfig]
@@ -2224,6 +2250,7 @@ package codebuild {
     def apply(
         `type`: SourceType,
         auth: js.UndefOr[SourceAuth] = js.undefined,
+        buildStatusConfig: js.UndefOr[BuildStatusConfig] = js.undefined,
         buildspec: js.UndefOr[String] = js.undefined,
         gitCloneDepth: js.UndefOr[GitCloneDepth] = js.undefined,
         gitSubmodulesConfig: js.UndefOr[GitSubmodulesConfig] = js.undefined,
@@ -2237,6 +2264,7 @@ package codebuild {
       )
 
       auth.foreach(__v => __obj.updateDynamic("auth")(__v.asInstanceOf[js.Any]))
+      buildStatusConfig.foreach(__v => __obj.updateDynamic("buildStatusConfig")(__v.asInstanceOf[js.Any]))
       buildspec.foreach(__v => __obj.updateDynamic("buildspec")(__v.asInstanceOf[js.Any]))
       gitCloneDepth.foreach(__v => __obj.updateDynamic("gitCloneDepth")(__v.asInstanceOf[js.Any]))
       gitSubmodulesConfig.foreach(__v => __obj.updateDynamic("gitSubmodulesConfig")(__v.asInstanceOf[js.Any]))
@@ -2445,6 +2473,7 @@ package codebuild {
     var exportConfig: js.UndefOr[ReportExportConfig]
     var lastModified: js.UndefOr[Timestamp]
     var name: js.UndefOr[ReportGroupName]
+    var tags: js.UndefOr[TagList]
     var `type`: js.UndefOr[ReportType]
   }
 
@@ -2456,6 +2485,7 @@ package codebuild {
         exportConfig: js.UndefOr[ReportExportConfig] = js.undefined,
         lastModified: js.UndefOr[Timestamp] = js.undefined,
         name: js.UndefOr[ReportGroupName] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined,
         `type`: js.UndefOr[ReportType] = js.undefined
     ): ReportGroup = {
       val __obj = js.Dynamic.literal()
@@ -2464,6 +2494,7 @@ package codebuild {
       exportConfig.foreach(__v => __obj.updateDynamic("exportConfig")(__v.asInstanceOf[js.Any]))
       lastModified.foreach(__v => __obj.updateDynamic("lastModified")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReportGroup]
     }
@@ -2671,6 +2702,7 @@ package codebuild {
   trait StartBuildInput extends js.Object {
     var projectName: NonEmptyString
     var artifactsOverride: js.UndefOr[ProjectArtifacts]
+    var buildStatusConfigOverride: js.UndefOr[BuildStatusConfig]
     var buildspecOverride: js.UndefOr[String]
     var cacheOverride: js.UndefOr[ProjectCache]
     var certificateOverride: js.UndefOr[String]
@@ -2705,6 +2737,7 @@ package codebuild {
     def apply(
         projectName: NonEmptyString,
         artifactsOverride: js.UndefOr[ProjectArtifacts] = js.undefined,
+        buildStatusConfigOverride: js.UndefOr[BuildStatusConfig] = js.undefined,
         buildspecOverride: js.UndefOr[String] = js.undefined,
         cacheOverride: js.UndefOr[ProjectCache] = js.undefined,
         certificateOverride: js.UndefOr[String] = js.undefined,
@@ -2738,6 +2771,9 @@ package codebuild {
       )
 
       artifactsOverride.foreach(__v => __obj.updateDynamic("artifactsOverride")(__v.asInstanceOf[js.Any]))
+      buildStatusConfigOverride.foreach(__v =>
+        __obj.updateDynamic("buildStatusConfigOverride")(__v.asInstanceOf[js.Any])
+      )
       buildspecOverride.foreach(__v => __obj.updateDynamic("buildspecOverride")(__v.asInstanceOf[js.Any]))
       cacheOverride.foreach(__v => __obj.updateDynamic("cacheOverride")(__v.asInstanceOf[js.Any]))
       certificateOverride.foreach(__v => __obj.updateDynamic("certificateOverride")(__v.asInstanceOf[js.Any]))
@@ -3049,19 +3085,22 @@ package codebuild {
   trait UpdateReportGroupInput extends js.Object {
     var arn: NonEmptyString
     var exportConfig: js.UndefOr[ReportExportConfig]
+    var tags: js.UndefOr[TagList]
   }
 
   object UpdateReportGroupInput {
     @inline
     def apply(
         arn: NonEmptyString,
-        exportConfig: js.UndefOr[ReportExportConfig] = js.undefined
+        exportConfig: js.UndefOr[ReportExportConfig] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
     ): UpdateReportGroupInput = {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
 
       exportConfig.foreach(__v => __obj.updateDynamic("exportConfig")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateReportGroupInput]
     }
   }
@@ -3219,7 +3258,8 @@ package codebuild {
     val HEAD_REF         = "HEAD_REF".asInstanceOf[WebhookFilterType]
     val ACTOR_ACCOUNT_ID = "ACTOR_ACCOUNT_ID".asInstanceOf[WebhookFilterType]
     val FILE_PATH        = "FILE_PATH".asInstanceOf[WebhookFilterType]
+    val COMMIT_MESSAGE   = "COMMIT_MESSAGE".asInstanceOf[WebhookFilterType]
 
-    val values = js.Object.freeze(js.Array(EVENT, BASE_REF, HEAD_REF, ACTOR_ACCOUNT_ID, FILE_PATH))
+    val values = js.Object.freeze(js.Array(EVENT, BASE_REF, HEAD_REF, ACTOR_ACCOUNT_ID, FILE_PATH, COMMIT_MESSAGE))
   }
 }

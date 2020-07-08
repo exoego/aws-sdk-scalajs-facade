@@ -29,6 +29,7 @@ package object lakeformation {
   type StringValue                      = String
   type StringValueList                  = js.Array[StringValue]
   type Token                            = String
+  type TrustedResourceOwners            = js.Array[CatalogIdString]
 
   implicit final class LakeFormationOps(private val service: LakeFormation) extends AnyVal {
 
@@ -274,7 +275,7 @@ package lakeformation {
   }
 
   /**
-    * The AWS Lake Formation principal.
+    * The AWS Lake Formation principal. Supported principals are IAM users or IAM roles.
     */
   @js.native
   trait DataLakePrincipal extends js.Object {
@@ -306,13 +307,14 @@ package lakeformation {
   }
 
   /**
-    * The AWS Lake Formation principal.
+    * A structure representing a list of AWS Lake Formation principals designated as data lake administrators and lists of principal permission entries for default create database and default create table permissions.
     */
   @js.native
   trait DataLakeSettings extends js.Object {
     var CreateDatabaseDefaultPermissions: js.UndefOr[PrincipalPermissionsList]
     var CreateTableDefaultPermissions: js.UndefOr[PrincipalPermissionsList]
     var DataLakeAdmins: js.UndefOr[DataLakePrincipalList]
+    var TrustedResourceOwners: js.UndefOr[TrustedResourceOwners]
   }
 
   object DataLakeSettings {
@@ -320,7 +322,8 @@ package lakeformation {
     def apply(
         CreateDatabaseDefaultPermissions: js.UndefOr[PrincipalPermissionsList] = js.undefined,
         CreateTableDefaultPermissions: js.UndefOr[PrincipalPermissionsList] = js.undefined,
-        DataLakeAdmins: js.UndefOr[DataLakePrincipalList] = js.undefined
+        DataLakeAdmins: js.UndefOr[DataLakePrincipalList] = js.undefined,
+        TrustedResourceOwners: js.UndefOr[TrustedResourceOwners] = js.undefined
     ): DataLakeSettings = {
       val __obj = js.Dynamic.literal()
       CreateDatabaseDefaultPermissions.foreach(__v =>
@@ -330,6 +333,7 @@ package lakeformation {
         __obj.updateDynamic("CreateTableDefaultPermissions")(__v.asInstanceOf[js.Any])
       )
       DataLakeAdmins.foreach(__v => __obj.updateDynamic("DataLakeAdmins")(__v.asInstanceOf[js.Any]))
+      TrustedResourceOwners.foreach(__v => __obj.updateDynamic("TrustedResourceOwners")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataLakeSettings]
     }
   }
@@ -340,17 +344,20 @@ package lakeformation {
   @js.native
   trait DataLocationResource extends js.Object {
     var ResourceArn: ResourceArnString
+    var CatalogId: js.UndefOr[CatalogIdString]
   }
 
   object DataLocationResource {
     @inline
     def apply(
-        ResourceArn: ResourceArnString
+        ResourceArn: ResourceArnString,
+        CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): DataLocationResource = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataLocationResource]
     }
   }
@@ -361,17 +368,20 @@ package lakeformation {
   @js.native
   trait DatabaseResource extends js.Object {
     var Name: NameString
+    var CatalogId: js.UndefOr[CatalogIdString]
   }
 
   object DatabaseResource {
     @inline
     def apply(
-        Name: NameString
+        Name: NameString,
+        CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): DatabaseResource = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatabaseResource]
     }
   }
@@ -723,12 +733,13 @@ package lakeformation {
     val DROP                 = "DROP".asInstanceOf[Permission]
     val DELETE               = "DELETE".asInstanceOf[Permission]
     val INSERT               = "INSERT".asInstanceOf[Permission]
+    val DESCRIBE             = "DESCRIBE".asInstanceOf[Permission]
     val CREATE_DATABASE      = "CREATE_DATABASE".asInstanceOf[Permission]
     val CREATE_TABLE         = "CREATE_TABLE".asInstanceOf[Permission]
     val DATA_LOCATION_ACCESS = "DATA_LOCATION_ACCESS".asInstanceOf[Permission]
 
     val values = js.Object.freeze(
-      js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS)
+      js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, DESCRIBE, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS)
     )
   }
 
@@ -962,21 +973,43 @@ package lakeformation {
   @js.native
   trait TableResource extends js.Object {
     var DatabaseName: NameString
-    var Name: NameString
+    var CatalogId: js.UndefOr[CatalogIdString]
+    var Name: js.UndefOr[NameString]
+    var TableWildcard: js.UndefOr[TableWildcard]
   }
 
   object TableResource {
     @inline
     def apply(
         DatabaseName: NameString,
-        Name: NameString
+        CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
+        Name: js.UndefOr[NameString] = js.undefined,
+        TableWildcard: js.UndefOr[TableWildcard] = js.undefined
     ): TableResource = {
       val __obj = js.Dynamic.literal(
-        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
-        "Name"         -> Name.asInstanceOf[js.Any]
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any]
       )
 
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      TableWildcard.foreach(__v => __obj.updateDynamic("TableWildcard")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TableResource]
+    }
+  }
+
+  /**
+    * A wildcard object representing every table under a database.
+    */
+  @js.native
+  trait TableWildcard extends js.Object {}
+
+  object TableWildcard {
+    @inline
+    def apply(
+    ): TableWildcard = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[TableWildcard]
     }
   }
 
@@ -986,25 +1019,30 @@ package lakeformation {
     */
   @js.native
   trait TableWithColumnsResource extends js.Object {
+    var DatabaseName: NameString
+    var Name: NameString
+    var CatalogId: js.UndefOr[CatalogIdString]
     var ColumnNames: js.UndefOr[ColumnNames]
     var ColumnWildcard: js.UndefOr[ColumnWildcard]
-    var DatabaseName: js.UndefOr[NameString]
-    var Name: js.UndefOr[NameString]
   }
 
   object TableWithColumnsResource {
     @inline
     def apply(
+        DatabaseName: NameString,
+        Name: NameString,
+        CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
         ColumnNames: js.UndefOr[ColumnNames] = js.undefined,
-        ColumnWildcard: js.UndefOr[ColumnWildcard] = js.undefined,
-        DatabaseName: js.UndefOr[NameString] = js.undefined,
-        Name: js.UndefOr[NameString] = js.undefined
+        ColumnWildcard: js.UndefOr[ColumnWildcard] = js.undefined
     ): TableWithColumnsResource = {
-      val __obj = js.Dynamic.literal()
+      val __obj = js.Dynamic.literal(
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "Name"         -> Name.asInstanceOf[js.Any]
+      )
+
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       ColumnNames.foreach(__v => __obj.updateDynamic("ColumnNames")(__v.asInstanceOf[js.Any]))
       ColumnWildcard.foreach(__v => __obj.updateDynamic("ColumnWildcard")(__v.asInstanceOf[js.Any]))
-      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TableWithColumnsResource]
     }
   }

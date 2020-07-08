@@ -339,6 +339,7 @@ package opsworkscm {
 
   @js.native
   trait CreateServerRequest extends js.Object {
+    var Engine: String
     var InstanceProfileArn: InstanceProfileArn
     var InstanceType: String
     var ServerName: ServerName
@@ -350,7 +351,6 @@ package opsworkscm {
     var CustomDomain: js.UndefOr[CustomDomain]
     var CustomPrivateKey: js.UndefOr[CustomPrivateKey]
     var DisableAutomatedBackup: js.UndefOr[Boolean]
-    var Engine: js.UndefOr[String]
     var EngineAttributes: js.UndefOr[EngineAttributes]
     var EngineModel: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
@@ -365,6 +365,7 @@ package opsworkscm {
   object CreateServerRequest {
     @inline
     def apply(
+        Engine: String,
         InstanceProfileArn: InstanceProfileArn,
         InstanceType: String,
         ServerName: ServerName,
@@ -376,7 +377,6 @@ package opsworkscm {
         CustomDomain: js.UndefOr[CustomDomain] = js.undefined,
         CustomPrivateKey: js.UndefOr[CustomPrivateKey] = js.undefined,
         DisableAutomatedBackup: js.UndefOr[Boolean] = js.undefined,
-        Engine: js.UndefOr[String] = js.undefined,
         EngineAttributes: js.UndefOr[EngineAttributes] = js.undefined,
         EngineModel: js.UndefOr[String] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
@@ -388,6 +388,7 @@ package opsworkscm {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateServerRequest = {
       val __obj = js.Dynamic.literal(
+        "Engine"             -> Engine.asInstanceOf[js.Any],
         "InstanceProfileArn" -> InstanceProfileArn.asInstanceOf[js.Any],
         "InstanceType"       -> InstanceType.asInstanceOf[js.Any],
         "ServerName"         -> ServerName.asInstanceOf[js.Any],
@@ -401,7 +402,6 @@ package opsworkscm {
       CustomDomain.foreach(__v => __obj.updateDynamic("CustomDomain")(__v.asInstanceOf[js.Any]))
       CustomPrivateKey.foreach(__v => __obj.updateDynamic("CustomPrivateKey")(__v.asInstanceOf[js.Any]))
       DisableAutomatedBackup.foreach(__v => __obj.updateDynamic("DisableAutomatedBackup")(__v.asInstanceOf[js.Any]))
-      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineAttributes.foreach(__v => __obj.updateDynamic("EngineAttributes")(__v.asInstanceOf[js.Any]))
       EngineModel.foreach(__v => __obj.updateDynamic("EngineModel")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))

@@ -10,32 +10,48 @@ package object athena {
   type AmazonResourceName              = String
   type BoxedBoolean                    = Boolean
   type BytesScannedCutoffValue         = Double
+  type CatalogNameString               = String
   type ColumnInfoList                  = js.Array[ColumnInfo]
+  type ColumnList                      = js.Array[Column]
+  type CommentString                   = String
+  type DataCatalogSummaryList          = js.Array[DataCatalogSummary]
+  type DatabaseList                    = js.Array[Database]
   type DatabaseString                  = String
   type Date                            = js.Date
   type DescriptionString               = String
   type ErrorCode                       = String
   type ErrorMessage                    = String
+  type ExpressionString                = String
   type IdempotencyToken                = String
+  type KeyString                       = String
+  type MaxDataCatalogsCount            = Int
+  type MaxDatabasesCount               = Int
   type MaxNamedQueriesCount            = Int
   type MaxQueryExecutionsCount         = Int
   type MaxQueryResults                 = Int
+  type MaxTableMetadataCount           = Int
   type MaxTagsCount                    = Int
   type MaxWorkGroupsCount              = Int
   type NameString                      = String
   type NamedQueryId                    = String
   type NamedQueryIdList                = js.Array[NamedQueryId]
   type NamedQueryList                  = js.Array[NamedQuery]
+  type ParametersMap                   = js.Dictionary[ParametersMapValue]
+  type ParametersMapValue              = String
   type QueryExecutionId                = String
   type QueryExecutionIdList            = js.Array[QueryExecutionId]
   type QueryExecutionList              = js.Array[QueryExecution]
   type QueryString                     = String
   type RowList                         = js.Array[Row]
+  type TableMetadataList               = js.Array[TableMetadata]
+  type TableTypeString                 = String
   type TagKey                          = String
   type TagKeyList                      = js.Array[TagKey]
   type TagList                         = js.Array[Tag]
   type TagValue                        = String
+  type Timestamp                       = js.Date
   type Token                           = String
+  type TypeString                      = String
   type UnprocessedNamedQueryIdList     = js.Array[UnprocessedNamedQueryId]
   type UnprocessedQueryExecutionIdList = js.Array[UnprocessedQueryExecutionId]
   type WorkGroupDescriptionString      = String
@@ -51,26 +67,42 @@ package object athena {
     @inline def batchGetQueryExecutionFuture(
         params: BatchGetQueryExecutionInput
     ): Future[BatchGetQueryExecutionOutput] = service.batchGetQueryExecution(params).promise().toFuture
+    @inline def createDataCatalogFuture(params: CreateDataCatalogInput): Future[CreateDataCatalogOutput] =
+      service.createDataCatalog(params).promise().toFuture
     @inline def createNamedQueryFuture(params: CreateNamedQueryInput): Future[CreateNamedQueryOutput] =
       service.createNamedQuery(params).promise().toFuture
     @inline def createWorkGroupFuture(params: CreateWorkGroupInput): Future[CreateWorkGroupOutput] =
       service.createWorkGroup(params).promise().toFuture
+    @inline def deleteDataCatalogFuture(params: DeleteDataCatalogInput): Future[DeleteDataCatalogOutput] =
+      service.deleteDataCatalog(params).promise().toFuture
     @inline def deleteNamedQueryFuture(params: DeleteNamedQueryInput): Future[DeleteNamedQueryOutput] =
       service.deleteNamedQuery(params).promise().toFuture
     @inline def deleteWorkGroupFuture(params: DeleteWorkGroupInput): Future[DeleteWorkGroupOutput] =
       service.deleteWorkGroup(params).promise().toFuture
+    @inline def getDataCatalogFuture(params: GetDataCatalogInput): Future[GetDataCatalogOutput] =
+      service.getDataCatalog(params).promise().toFuture
+    @inline def getDatabaseFuture(params: GetDatabaseInput): Future[GetDatabaseOutput] =
+      service.getDatabase(params).promise().toFuture
     @inline def getNamedQueryFuture(params: GetNamedQueryInput): Future[GetNamedQueryOutput] =
       service.getNamedQuery(params).promise().toFuture
     @inline def getQueryExecutionFuture(params: GetQueryExecutionInput): Future[GetQueryExecutionOutput] =
       service.getQueryExecution(params).promise().toFuture
     @inline def getQueryResultsFuture(params: GetQueryResultsInput): Future[GetQueryResultsOutput] =
       service.getQueryResults(params).promise().toFuture
+    @inline def getTableMetadataFuture(params: GetTableMetadataInput): Future[GetTableMetadataOutput] =
+      service.getTableMetadata(params).promise().toFuture
     @inline def getWorkGroupFuture(params: GetWorkGroupInput): Future[GetWorkGroupOutput] =
       service.getWorkGroup(params).promise().toFuture
+    @inline def listDataCatalogsFuture(params: ListDataCatalogsInput): Future[ListDataCatalogsOutput] =
+      service.listDataCatalogs(params).promise().toFuture
+    @inline def listDatabasesFuture(params: ListDatabasesInput): Future[ListDatabasesOutput] =
+      service.listDatabases(params).promise().toFuture
     @inline def listNamedQueriesFuture(params: ListNamedQueriesInput): Future[ListNamedQueriesOutput] =
       service.listNamedQueries(params).promise().toFuture
     @inline def listQueryExecutionsFuture(params: ListQueryExecutionsInput): Future[ListQueryExecutionsOutput] =
       service.listQueryExecutions(params).promise().toFuture
+    @inline def listTableMetadataFuture(params: ListTableMetadataInput): Future[ListTableMetadataOutput] =
+      service.listTableMetadata(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
       service.listTagsForResource(params).promise().toFuture
     @inline def listWorkGroupsFuture(params: ListWorkGroupsInput): Future[ListWorkGroupsOutput] =
@@ -83,6 +115,8 @@ package object athena {
       service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
       service.untagResource(params).promise().toFuture
+    @inline def updateDataCatalogFuture(params: UpdateDataCatalogInput): Future[UpdateDataCatalogOutput] =
+      service.updateDataCatalog(params).promise().toFuture
     @inline def updateWorkGroupFuture(params: UpdateWorkGroupInput): Future[UpdateWorkGroupOutput] =
       service.updateWorkGroup(params).promise().toFuture
   }
@@ -96,22 +130,31 @@ package athena {
 
     def batchGetNamedQuery(params: BatchGetNamedQueryInput): Request[BatchGetNamedQueryOutput]             = js.native
     def batchGetQueryExecution(params: BatchGetQueryExecutionInput): Request[BatchGetQueryExecutionOutput] = js.native
+    def createDataCatalog(params: CreateDataCatalogInput): Request[CreateDataCatalogOutput]                = js.native
     def createNamedQuery(params: CreateNamedQueryInput): Request[CreateNamedQueryOutput]                   = js.native
     def createWorkGroup(params: CreateWorkGroupInput): Request[CreateWorkGroupOutput]                      = js.native
+    def deleteDataCatalog(params: DeleteDataCatalogInput): Request[DeleteDataCatalogOutput]                = js.native
     def deleteNamedQuery(params: DeleteNamedQueryInput): Request[DeleteNamedQueryOutput]                   = js.native
     def deleteWorkGroup(params: DeleteWorkGroupInput): Request[DeleteWorkGroupOutput]                      = js.native
+    def getDataCatalog(params: GetDataCatalogInput): Request[GetDataCatalogOutput]                         = js.native
+    def getDatabase(params: GetDatabaseInput): Request[GetDatabaseOutput]                                  = js.native
     def getNamedQuery(params: GetNamedQueryInput): Request[GetNamedQueryOutput]                            = js.native
     def getQueryExecution(params: GetQueryExecutionInput): Request[GetQueryExecutionOutput]                = js.native
     def getQueryResults(params: GetQueryResultsInput): Request[GetQueryResultsOutput]                      = js.native
+    def getTableMetadata(params: GetTableMetadataInput): Request[GetTableMetadataOutput]                   = js.native
     def getWorkGroup(params: GetWorkGroupInput): Request[GetWorkGroupOutput]                               = js.native
+    def listDataCatalogs(params: ListDataCatalogsInput): Request[ListDataCatalogsOutput]                   = js.native
+    def listDatabases(params: ListDatabasesInput): Request[ListDatabasesOutput]                            = js.native
     def listNamedQueries(params: ListNamedQueriesInput): Request[ListNamedQueriesOutput]                   = js.native
     def listQueryExecutions(params: ListQueryExecutionsInput): Request[ListQueryExecutionsOutput]          = js.native
+    def listTableMetadata(params: ListTableMetadataInput): Request[ListTableMetadataOutput]                = js.native
     def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput]          = js.native
     def listWorkGroups(params: ListWorkGroupsInput): Request[ListWorkGroupsOutput]                         = js.native
     def startQueryExecution(params: StartQueryExecutionInput): Request[StartQueryExecutionOutput]          = js.native
     def stopQueryExecution(params: StopQueryExecutionInput): Request[StopQueryExecutionOutput]             = js.native
     def tagResource(params: TagResourceInput): Request[TagResourceOutput]                                  = js.native
     def untagResource(params: UntagResourceInput): Request[UntagResourceOutput]                            = js.native
+    def updateDataCatalog(params: UpdateDataCatalogInput): Request[UpdateDataCatalogOutput]                = js.native
     def updateWorkGroup(params: UpdateWorkGroupInput): Request[UpdateWorkGroupOutput]                      = js.native
   }
 
@@ -192,6 +235,33 @@ package athena {
   }
 
   /**
+    * Contains metadata for a column in a table.
+    */
+  @js.native
+  trait Column extends js.Object {
+    var Name: NameString
+    var Comment: js.UndefOr[CommentString]
+    var Type: js.UndefOr[TypeString]
+  }
+
+  object Column {
+    @inline
+    def apply(
+        Name: NameString,
+        Comment: js.UndefOr[CommentString] = js.undefined,
+        Type: js.UndefOr[TypeString] = js.undefined
+    ): Column = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Column]
+    }
+  }
+
+  /**
     * Information about the columns in a query execution result.
     */
   @js.native
@@ -247,6 +317,49 @@ package athena {
     val UNKNOWN  = "UNKNOWN".asInstanceOf[ColumnNullable]
 
     val values = js.Object.freeze(js.Array(NOT_NULL, NULLABLE, UNKNOWN))
+  }
+
+  @js.native
+  trait CreateDataCatalogInput extends js.Object {
+    var Name: CatalogNameString
+    var Type: DataCatalogType
+    var Description: js.UndefOr[DescriptionString]
+    var Parameters: js.UndefOr[ParametersMap]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateDataCatalogInput {
+    @inline
+    def apply(
+        Name: CatalogNameString,
+        Type: DataCatalogType,
+        Description: js.UndefOr[DescriptionString] = js.undefined,
+        Parameters: js.UndefOr[ParametersMap] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateDataCatalogInput = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDataCatalogInput]
+    }
+  }
+
+  @js.native
+  trait CreateDataCatalogOutput extends js.Object {}
+
+  object CreateDataCatalogOutput {
+    @inline
+    def apply(
+    ): CreateDataCatalogOutput = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[CreateDataCatalogOutput]
+    }
   }
 
   @js.native
@@ -339,6 +452,95 @@ package athena {
   }
 
   /**
+    * Contains information about a data catalog in an AWS account.
+    */
+  @js.native
+  trait DataCatalog extends js.Object {
+    var Name: CatalogNameString
+    var Type: DataCatalogType
+    var Description: js.UndefOr[DescriptionString]
+    var Parameters: js.UndefOr[ParametersMap]
+  }
+
+  object DataCatalog {
+    @inline
+    def apply(
+        Name: CatalogNameString,
+        Type: DataCatalogType,
+        Description: js.UndefOr[DescriptionString] = js.undefined,
+        Parameters: js.UndefOr[ParametersMap] = js.undefined
+    ): DataCatalog = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataCatalog]
+    }
+  }
+
+  /**
+    * The summary information for the data catalog, which includes its name and type.
+    */
+  @js.native
+  trait DataCatalogSummary extends js.Object {
+    var CatalogName: js.UndefOr[CatalogNameString]
+    var Type: js.UndefOr[DataCatalogType]
+  }
+
+  object DataCatalogSummary {
+    @inline
+    def apply(
+        CatalogName: js.UndefOr[CatalogNameString] = js.undefined,
+        Type: js.UndefOr[DataCatalogType] = js.undefined
+    ): DataCatalogSummary = {
+      val __obj = js.Dynamic.literal()
+      CatalogName.foreach(__v => __obj.updateDynamic("CatalogName")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataCatalogSummary]
+    }
+  }
+
+  @js.native
+  sealed trait DataCatalogType extends js.Any
+  object DataCatalogType extends js.Object {
+    val LAMBDA = "LAMBDA".asInstanceOf[DataCatalogType]
+    val GLUE   = "GLUE".asInstanceOf[DataCatalogType]
+    val HIVE   = "HIVE".asInstanceOf[DataCatalogType]
+
+    val values = js.Object.freeze(js.Array(LAMBDA, GLUE, HIVE))
+  }
+
+  /**
+    * Contains metadata information for a database in a data catalog.
+    */
+  @js.native
+  trait Database extends js.Object {
+    var Name: NameString
+    var Description: js.UndefOr[DescriptionString]
+    var Parameters: js.UndefOr[ParametersMap]
+  }
+
+  object Database {
+    @inline
+    def apply(
+        Name: NameString,
+        Description: js.UndefOr[DescriptionString] = js.undefined,
+        Parameters: js.UndefOr[ParametersMap] = js.undefined
+    ): Database = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Database]
+    }
+  }
+
+  /**
     * A piece of data (a field in the table).
     */
   @js.native
@@ -354,6 +556,37 @@ package athena {
       val __obj = js.Dynamic.literal()
       VarCharValue.foreach(__v => __obj.updateDynamic("VarCharValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Datum]
+    }
+  }
+
+  @js.native
+  trait DeleteDataCatalogInput extends js.Object {
+    var Name: CatalogNameString
+  }
+
+  object DeleteDataCatalogInput {
+    @inline
+    def apply(
+        Name: CatalogNameString
+    ): DeleteDataCatalogInput = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteDataCatalogInput]
+    }
+  }
+
+  @js.native
+  trait DeleteDataCatalogOutput extends js.Object {}
+
+  object DeleteDataCatalogOutput {
+    @inline
+    def apply(
+    ): DeleteDataCatalogOutput = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeleteDataCatalogOutput]
     }
   }
 
@@ -454,6 +687,77 @@ package athena {
     val CSE_KMS = "CSE_KMS".asInstanceOf[EncryptionOption]
 
     val values = js.Object.freeze(js.Array(SSE_S3, SSE_KMS, CSE_KMS))
+  }
+
+  @js.native
+  trait GetDataCatalogInput extends js.Object {
+    var Name: CatalogNameString
+  }
+
+  object GetDataCatalogInput {
+    @inline
+    def apply(
+        Name: CatalogNameString
+    ): GetDataCatalogInput = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetDataCatalogInput]
+    }
+  }
+
+  @js.native
+  trait GetDataCatalogOutput extends js.Object {
+    var DataCatalog: js.UndefOr[DataCatalog]
+  }
+
+  object GetDataCatalogOutput {
+    @inline
+    def apply(
+        DataCatalog: js.UndefOr[DataCatalog] = js.undefined
+    ): GetDataCatalogOutput = {
+      val __obj = js.Dynamic.literal()
+      DataCatalog.foreach(__v => __obj.updateDynamic("DataCatalog")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDataCatalogOutput]
+    }
+  }
+
+  @js.native
+  trait GetDatabaseInput extends js.Object {
+    var CatalogName: CatalogNameString
+    var DatabaseName: NameString
+  }
+
+  object GetDatabaseInput {
+    @inline
+    def apply(
+        CatalogName: CatalogNameString,
+        DatabaseName: NameString
+    ): GetDatabaseInput = {
+      val __obj = js.Dynamic.literal(
+        "CatalogName"  -> CatalogName.asInstanceOf[js.Any],
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetDatabaseInput]
+    }
+  }
+
+  @js.native
+  trait GetDatabaseOutput extends js.Object {
+    var Database: js.UndefOr[Database]
+  }
+
+  object GetDatabaseOutput {
+    @inline
+    def apply(
+        Database: js.UndefOr[Database] = js.undefined
+    ): GetDatabaseOutput = {
+      val __obj = js.Dynamic.literal()
+      Database.foreach(__v => __obj.updateDynamic("Database")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDatabaseOutput]
+    }
   }
 
   @js.native
@@ -571,6 +875,46 @@ package athena {
   }
 
   @js.native
+  trait GetTableMetadataInput extends js.Object {
+    var CatalogName: CatalogNameString
+    var DatabaseName: NameString
+    var TableName: NameString
+  }
+
+  object GetTableMetadataInput {
+    @inline
+    def apply(
+        CatalogName: CatalogNameString,
+        DatabaseName: NameString,
+        TableName: NameString
+    ): GetTableMetadataInput = {
+      val __obj = js.Dynamic.literal(
+        "CatalogName"  -> CatalogName.asInstanceOf[js.Any],
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "TableName"    -> TableName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetTableMetadataInput]
+    }
+  }
+
+  @js.native
+  trait GetTableMetadataOutput extends js.Object {
+    var TableMetadata: js.UndefOr[TableMetadata]
+  }
+
+  object GetTableMetadataOutput {
+    @inline
+    def apply(
+        TableMetadata: js.UndefOr[TableMetadata] = js.undefined
+    ): GetTableMetadataOutput = {
+      val __obj = js.Dynamic.literal()
+      TableMetadata.foreach(__v => __obj.updateDynamic("TableMetadata")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTableMetadataOutput]
+    }
+  }
+
+  @js.native
   trait GetWorkGroupInput extends js.Object {
     var WorkGroup: WorkGroupName
   }
@@ -601,6 +945,87 @@ package athena {
       val __obj = js.Dynamic.literal()
       WorkGroup.foreach(__v => __obj.updateDynamic("WorkGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetWorkGroupOutput]
+    }
+  }
+
+  @js.native
+  trait ListDataCatalogsInput extends js.Object {
+    var MaxResults: js.UndefOr[MaxDataCatalogsCount]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListDataCatalogsInput {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxDataCatalogsCount] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListDataCatalogsInput = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDataCatalogsInput]
+    }
+  }
+
+  @js.native
+  trait ListDataCatalogsOutput extends js.Object {
+    var DataCatalogsSummary: js.UndefOr[DataCatalogSummaryList]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListDataCatalogsOutput {
+    @inline
+    def apply(
+        DataCatalogsSummary: js.UndefOr[DataCatalogSummaryList] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListDataCatalogsOutput = {
+      val __obj = js.Dynamic.literal()
+      DataCatalogsSummary.foreach(__v => __obj.updateDynamic("DataCatalogsSummary")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDataCatalogsOutput]
+    }
+  }
+
+  @js.native
+  trait ListDatabasesInput extends js.Object {
+    var CatalogName: CatalogNameString
+    var MaxResults: js.UndefOr[MaxDatabasesCount]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListDatabasesInput {
+    @inline
+    def apply(
+        CatalogName: CatalogNameString,
+        MaxResults: js.UndefOr[MaxDatabasesCount] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListDatabasesInput = {
+      val __obj = js.Dynamic.literal(
+        "CatalogName" -> CatalogName.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDatabasesInput]
+    }
+  }
+
+  @js.native
+  trait ListDatabasesOutput extends js.Object {
+    var DatabaseList: js.UndefOr[DatabaseList]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListDatabasesOutput {
+    @inline
+    def apply(
+        DatabaseList: js.UndefOr[DatabaseList] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListDatabasesOutput = {
+      val __obj = js.Dynamic.literal()
+      DatabaseList.foreach(__v => __obj.updateDynamic("DatabaseList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDatabasesOutput]
     }
   }
 
@@ -683,6 +1108,55 @@ package athena {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       QueryExecutionIds.foreach(__v => __obj.updateDynamic("QueryExecutionIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListQueryExecutionsOutput]
+    }
+  }
+
+  @js.native
+  trait ListTableMetadataInput extends js.Object {
+    var CatalogName: CatalogNameString
+    var DatabaseName: NameString
+    var Expression: js.UndefOr[ExpressionString]
+    var MaxResults: js.UndefOr[MaxTableMetadataCount]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListTableMetadataInput {
+    @inline
+    def apply(
+        CatalogName: CatalogNameString,
+        DatabaseName: NameString,
+        Expression: js.UndefOr[ExpressionString] = js.undefined,
+        MaxResults: js.UndefOr[MaxTableMetadataCount] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListTableMetadataInput = {
+      val __obj = js.Dynamic.literal(
+        "CatalogName"  -> CatalogName.asInstanceOf[js.Any],
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any]
+      )
+
+      Expression.foreach(__v => __obj.updateDynamic("Expression")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTableMetadataInput]
+    }
+  }
+
+  @js.native
+  trait ListTableMetadataOutput extends js.Object {
+    var NextToken: js.UndefOr[Token]
+    var TableMetadataList: js.UndefOr[TableMetadataList]
+  }
+
+  object ListTableMetadataOutput {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[Token] = js.undefined,
+        TableMetadataList: js.UndefOr[TableMetadataList] = js.undefined
+    ): ListTableMetadataOutput = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TableMetadataList.foreach(__v => __obj.updateDynamic("TableMetadataList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTableMetadataOutput]
     }
   }
 
@@ -844,19 +1318,22 @@ package athena {
   }
 
   /**
-    * The database in which the query execution occurs.
+    * The database and data catalog context in which the query execution occurs.
     */
   @js.native
   trait QueryExecutionContext extends js.Object {
+    var Catalog: js.UndefOr[CatalogNameString]
     var Database: js.UndefOr[DatabaseString]
   }
 
   object QueryExecutionContext {
     @inline
     def apply(
+        Catalog: js.UndefOr[CatalogNameString] = js.undefined,
         Database: js.UndefOr[DatabaseString] = js.undefined
     ): QueryExecutionContext = {
       val __obj = js.Dynamic.literal()
+      Catalog.foreach(__v => __obj.updateDynamic("Catalog")(__v.asInstanceOf[js.Any]))
       Database.foreach(__v => __obj.updateDynamic("Database")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QueryExecutionContext]
     }
@@ -1000,7 +1477,7 @@ package athena {
   }
 
   /**
-    * The metadata and rows that comprise a query result set. The metadata describes the column structure and data types.
+    * The metadata and rows that comprise a query result set. The metadata describes the column structure and data types. To return a <code>ResultSet</code> object, use <a>GetQueryResults</a>.
     */
   @js.native
   trait ResultSet extends js.Object {
@@ -1022,7 +1499,7 @@ package athena {
   }
 
   /**
-    * The metadata that describes the column structure and data types of a table of query results.
+    * The metadata that describes the column structure and data types of a table of query results. To return a <code>ResultSetMetadata</code> object, use <a>GetQueryResults</a>.
     */
   @js.native
   trait ResultSetMetadata extends js.Object {
@@ -1147,7 +1624,46 @@ package athena {
   }
 
   /**
-    * A tag that you can add to a resource. A tag is a label that you assign to an AWS Athena resource (a workgroup). Each tag consists of a key and an optional value, both of which you define. Tags enable you to categorize workgroups in Athena, for example, by purpose, owner, or environment. Use a consistent set of tag keys to make it easier to search and filter workgroups in your account. The maximum tag key length is 128 Unicode characters in UTF-8. The maximum tag value length is 256 Unicode characters in UTF-8. You can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive. Tag keys must be unique per resource.
+    * Contains metadata for a table.
+    */
+  @js.native
+  trait TableMetadata extends js.Object {
+    var Name: NameString
+    var Columns: js.UndefOr[ColumnList]
+    var CreateTime: js.UndefOr[Timestamp]
+    var LastAccessTime: js.UndefOr[Timestamp]
+    var Parameters: js.UndefOr[ParametersMap]
+    var PartitionKeys: js.UndefOr[ColumnList]
+    var TableType: js.UndefOr[TableTypeString]
+  }
+
+  object TableMetadata {
+    @inline
+    def apply(
+        Name: NameString,
+        Columns: js.UndefOr[ColumnList] = js.undefined,
+        CreateTime: js.UndefOr[Timestamp] = js.undefined,
+        LastAccessTime: js.UndefOr[Timestamp] = js.undefined,
+        Parameters: js.UndefOr[ParametersMap] = js.undefined,
+        PartitionKeys: js.UndefOr[ColumnList] = js.undefined,
+        TableType: js.UndefOr[TableTypeString] = js.undefined
+    ): TableMetadata = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Columns.foreach(__v => __obj.updateDynamic("Columns")(__v.asInstanceOf[js.Any]))
+      CreateTime.foreach(__v => __obj.updateDynamic("CreateTime")(__v.asInstanceOf[js.Any]))
+      LastAccessTime.foreach(__v => __obj.updateDynamic("LastAccessTime")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      PartitionKeys.foreach(__v => __obj.updateDynamic("PartitionKeys")(__v.asInstanceOf[js.Any]))
+      TableType.foreach(__v => __obj.updateDynamic("TableType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableMetadata]
+    }
+  }
+
+  /**
+    * A label that you assign to a resource. In Athena, a resource can be a workgroup or data catalog. Each tag consists of a key and an optional value, both of which you define. For example, you can use tags to categorize Athena workgroups or data catalogs by purpose, owner, or environment. Use a consistent set of tag keys to make it easier to search and filter workgroups or data catalogs in your account. For best practices, see [[https://aws.amazon.com/answers/account-management/aws-tagging-strategies/|Tagging Best Practices]]. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256 UTF-8 Unicode characters. Tags can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive. Tag keys must be unique per resource. If you specify more than one tag, separate them by commas.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1283,6 +1799,46 @@ package athena {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceOutput]
+    }
+  }
+
+  @js.native
+  trait UpdateDataCatalogInput extends js.Object {
+    var Name: CatalogNameString
+    var Type: DataCatalogType
+    var Description: js.UndefOr[DescriptionString]
+    var Parameters: js.UndefOr[ParametersMap]
+  }
+
+  object UpdateDataCatalogInput {
+    @inline
+    def apply(
+        Name: CatalogNameString,
+        Type: DataCatalogType,
+        Description: js.UndefOr[DescriptionString] = js.undefined,
+        Parameters: js.UndefOr[ParametersMap] = js.undefined
+    ): UpdateDataCatalogInput = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDataCatalogInput]
+    }
+  }
+
+  @js.native
+  trait UpdateDataCatalogOutput extends js.Object {}
+
+  object UpdateDataCatalogOutput {
+    @inline
+    def apply(
+    ): UpdateDataCatalogOutput = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[UpdateDataCatalogOutput]
     }
   }
 

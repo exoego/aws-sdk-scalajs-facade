@@ -10,9 +10,7 @@ package object schemas {
   type Body                                        = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type GetDiscoveredSchemaVersionItemInput         = String
   type Tags                                        = js.Dictionary[__string]
-  type __boolean                                   = Boolean
   type __integer                                   = Int
-  type __integerMin1Max29000                       = Int
   type __listOfDiscovererSummary                   = js.Array[DiscovererSummary]
   type __listOfGetDiscoveredSchemaVersionItemInput = js.Array[GetDiscoveredSchemaVersionItemInput]
   type __listOfRegistrySummary                     = js.Array[RegistrySummary]
@@ -26,7 +24,6 @@ package object schemas {
   type __stringMin0Max256                          = String
   type __stringMin0Max36                           = String
   type __stringMin1Max100000                       = String
-  type __stringMin1Max1600                         = String
   type __stringMin20Max1600                        = String
   type __timestampIso8601                          = js.Date
 
@@ -42,6 +39,8 @@ package object schemas {
       service.deleteDiscoverer(params).promise().toFuture
     @inline def deleteRegistryFuture(params: DeleteRegistryRequest): Future[js.Object] =
       service.deleteRegistry(params).promise().toFuture
+    @inline def deleteResourcePolicyFuture(params: DeleteResourcePolicyRequest): Future[js.Object] =
+      service.deleteResourcePolicy(params).promise().toFuture
     @inline def deleteSchemaFuture(params: DeleteSchemaRequest): Future[js.Object] =
       service.deleteSchema(params).promise().toFuture
     @inline def deleteSchemaVersionFuture(params: DeleteSchemaVersionRequest): Future[js.Object] =
@@ -58,6 +57,8 @@ package object schemas {
       service.getCodeBindingSource(params).promise().toFuture
     @inline def getDiscoveredSchemaFuture(params: GetDiscoveredSchemaRequest): Future[GetDiscoveredSchemaResponse] =
       service.getDiscoveredSchema(params).promise().toFuture
+    @inline def getResourcePolicyFuture(params: GetResourcePolicyRequest): Future[GetResourcePolicyResponse] =
+      service.getResourcePolicy(params).promise().toFuture
     @inline def listDiscoverersFuture(params: ListDiscoverersRequest): Future[ListDiscoverersResponse] =
       service.listDiscoverers(params).promise().toFuture
     @inline def listRegistriesFuture(params: ListRegistriesRequest): Future[ListRegistriesResponse] =
@@ -68,11 +69,10 @@ package object schemas {
       service.listSchemas(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise().toFuture
-    @inline def lockServiceLinkedRoleFuture(
-        params: LockServiceLinkedRoleRequest
-    ): Future[LockServiceLinkedRoleResponse] = service.lockServiceLinkedRole(params).promise().toFuture
     @inline def putCodeBindingFuture(params: PutCodeBindingRequest): Future[PutCodeBindingResponse] =
       service.putCodeBinding(params).promise().toFuture
+    @inline def putResourcePolicyFuture(params: PutResourcePolicyRequest): Future[PutResourcePolicyResponse] =
+      service.putResourcePolicy(params).promise().toFuture
     @inline def searchSchemasFuture(params: SearchSchemasRequest): Future[SearchSchemasResponse] =
       service.searchSchemas(params).promise().toFuture
     @inline def startDiscovererFuture(params: StartDiscovererRequest): Future[StartDiscovererResponse] =
@@ -81,9 +81,6 @@ package object schemas {
       service.stopDiscoverer(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
       service.tagResource(params).promise().toFuture
-    @inline def unlockServiceLinkedRoleFuture(
-        params: UnlockServiceLinkedRoleRequest
-    ): Future[UnlockServiceLinkedRoleResponse] = service.unlockServiceLinkedRole(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
       service.untagResource(params).promise().toFuture
     @inline def updateDiscovererFuture(params: UpdateDiscovererRequest): Future[UpdateDiscovererResponse] =
@@ -101,36 +98,36 @@ package schemas {
   class Schemas() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createDiscoverer(params: CreateDiscovererRequest): Request[CreateDiscovererResponse]                = js.native
-    def createRegistry(params: CreateRegistryRequest): Request[CreateRegistryResponse]                      = js.native
-    def createSchema(params: CreateSchemaRequest): Request[CreateSchemaResponse]                            = js.native
-    def deleteDiscoverer(params: DeleteDiscovererRequest): Request[js.Object]                               = js.native
-    def deleteRegistry(params: DeleteRegistryRequest): Request[js.Object]                                   = js.native
-    def deleteSchema(params: DeleteSchemaRequest): Request[js.Object]                                       = js.native
-    def deleteSchemaVersion(params: DeleteSchemaVersionRequest): Request[js.Object]                         = js.native
-    def describeCodeBinding(params: DescribeCodeBindingRequest): Request[DescribeCodeBindingResponse]       = js.native
-    def describeDiscoverer(params: DescribeDiscovererRequest): Request[DescribeDiscovererResponse]          = js.native
-    def describeRegistry(params: DescribeRegistryRequest): Request[DescribeRegistryResponse]                = js.native
-    def describeSchema(params: DescribeSchemaRequest): Request[DescribeSchemaResponse]                      = js.native
-    def getCodeBindingSource(params: GetCodeBindingSourceRequest): Request[GetCodeBindingSourceResponse]    = js.native
-    def getDiscoveredSchema(params: GetDiscoveredSchemaRequest): Request[GetDiscoveredSchemaResponse]       = js.native
-    def listDiscoverers(params: ListDiscoverersRequest): Request[ListDiscoverersResponse]                   = js.native
-    def listRegistries(params: ListRegistriesRequest): Request[ListRegistriesResponse]                      = js.native
-    def listSchemaVersions(params: ListSchemaVersionsRequest): Request[ListSchemaVersionsResponse]          = js.native
-    def listSchemas(params: ListSchemasRequest): Request[ListSchemasResponse]                               = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
-    def lockServiceLinkedRole(params: LockServiceLinkedRoleRequest): Request[LockServiceLinkedRoleResponse] = js.native
-    def putCodeBinding(params: PutCodeBindingRequest): Request[PutCodeBindingResponse]                      = js.native
-    def searchSchemas(params: SearchSchemasRequest): Request[SearchSchemasResponse]                         = js.native
-    def startDiscoverer(params: StartDiscovererRequest): Request[StartDiscovererResponse]                   = js.native
-    def stopDiscoverer(params: StopDiscovererRequest): Request[StopDiscovererResponse]                      = js.native
-    def tagResource(params: TagResourceRequest): Request[js.Object]                                         = js.native
-    def unlockServiceLinkedRole(params: UnlockServiceLinkedRoleRequest): Request[UnlockServiceLinkedRoleResponse] =
-      js.native
-    def untagResource(params: UntagResourceRequest): Request[js.Object]                      = js.native
-    def updateDiscoverer(params: UpdateDiscovererRequest): Request[UpdateDiscovererResponse] = js.native
-    def updateRegistry(params: UpdateRegistryRequest): Request[UpdateRegistryResponse]       = js.native
-    def updateSchema(params: UpdateSchemaRequest): Request[UpdateSchemaResponse]             = js.native
+    def createDiscoverer(params: CreateDiscovererRequest): Request[CreateDiscovererResponse]             = js.native
+    def createRegistry(params: CreateRegistryRequest): Request[CreateRegistryResponse]                   = js.native
+    def createSchema(params: CreateSchemaRequest): Request[CreateSchemaResponse]                         = js.native
+    def deleteDiscoverer(params: DeleteDiscovererRequest): Request[js.Object]                            = js.native
+    def deleteRegistry(params: DeleteRegistryRequest): Request[js.Object]                                = js.native
+    def deleteResourcePolicy(params: DeleteResourcePolicyRequest): Request[js.Object]                    = js.native
+    def deleteSchema(params: DeleteSchemaRequest): Request[js.Object]                                    = js.native
+    def deleteSchemaVersion(params: DeleteSchemaVersionRequest): Request[js.Object]                      = js.native
+    def describeCodeBinding(params: DescribeCodeBindingRequest): Request[DescribeCodeBindingResponse]    = js.native
+    def describeDiscoverer(params: DescribeDiscovererRequest): Request[DescribeDiscovererResponse]       = js.native
+    def describeRegistry(params: DescribeRegistryRequest): Request[DescribeRegistryResponse]             = js.native
+    def describeSchema(params: DescribeSchemaRequest): Request[DescribeSchemaResponse]                   = js.native
+    def getCodeBindingSource(params: GetCodeBindingSourceRequest): Request[GetCodeBindingSourceResponse] = js.native
+    def getDiscoveredSchema(params: GetDiscoveredSchemaRequest): Request[GetDiscoveredSchemaResponse]    = js.native
+    def getResourcePolicy(params: GetResourcePolicyRequest): Request[GetResourcePolicyResponse]          = js.native
+    def listDiscoverers(params: ListDiscoverersRequest): Request[ListDiscoverersResponse]                = js.native
+    def listRegistries(params: ListRegistriesRequest): Request[ListRegistriesResponse]                   = js.native
+    def listSchemaVersions(params: ListSchemaVersionsRequest): Request[ListSchemaVersionsResponse]       = js.native
+    def listSchemas(params: ListSchemasRequest): Request[ListSchemasResponse]                            = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]    = js.native
+    def putCodeBinding(params: PutCodeBindingRequest): Request[PutCodeBindingResponse]                   = js.native
+    def putResourcePolicy(params: PutResourcePolicyRequest): Request[PutResourcePolicyResponse]          = js.native
+    def searchSchemas(params: SearchSchemasRequest): Request[SearchSchemasResponse]                      = js.native
+    def startDiscoverer(params: StartDiscovererRequest): Request[StartDiscovererResponse]                = js.native
+    def stopDiscoverer(params: StopDiscovererRequest): Request[StopDiscovererResponse]                   = js.native
+    def tagResource(params: TagResourceRequest): Request[js.Object]                                      = js.native
+    def untagResource(params: UntagResourceRequest): Request[js.Object]                                  = js.native
+    def updateDiscoverer(params: UpdateDiscovererRequest): Request[UpdateDiscovererResponse]             = js.native
+    def updateRegistry(params: UpdateRegistryRequest): Request[UpdateRegistryResponse]                   = js.native
+    def updateSchema(params: UpdateSchemaRequest): Request[UpdateSchemaResponse]                         = js.native
   }
 
   @js.native
@@ -143,6 +140,8 @@ package schemas {
     val values = js.Object.freeze(js.Array(CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED))
   }
 
+  /**
+    */
   @js.native
   trait CreateDiscovererRequest extends js.Object {
     var SourceArn: __stringMin20Max1600
@@ -350,6 +349,22 @@ package schemas {
       )
 
       __obj.asInstanceOf[DeleteRegistryRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteResourcePolicyRequest extends js.Object {
+    var RegistryName: js.UndefOr[__string]
+  }
+
+  object DeleteResourcePolicyRequest {
+    @inline
+    def apply(
+        RegistryName: js.UndefOr[__string] = js.undefined
+    ): DeleteResourcePolicyRequest = {
+      val __obj = js.Dynamic.literal()
+      RegistryName.foreach(__v => __obj.updateDynamic("RegistryName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteResourcePolicyRequest]
     }
   }
 
@@ -724,6 +739,41 @@ package schemas {
   }
 
   @js.native
+  trait GetResourcePolicyRequest extends js.Object {
+    var RegistryName: js.UndefOr[__string]
+  }
+
+  object GetResourcePolicyRequest {
+    @inline
+    def apply(
+        RegistryName: js.UndefOr[__string] = js.undefined
+    ): GetResourcePolicyRequest = {
+      val __obj = js.Dynamic.literal()
+      RegistryName.foreach(__v => __obj.updateDynamic("RegistryName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetResourcePolicyRequest]
+    }
+  }
+
+  @js.native
+  trait GetResourcePolicyResponse extends js.Object {
+    var Policy: js.UndefOr[__string]
+    var RevisionId: js.UndefOr[__string]
+  }
+
+  object GetResourcePolicyResponse {
+    @inline
+    def apply(
+        Policy: js.UndefOr[__string] = js.undefined,
+        RevisionId: js.UndefOr[__string] = js.undefined
+    ): GetResourcePolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
+      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetResourcePolicyResponse]
+    }
+  }
+
+  @js.native
   trait ListDiscoverersRequest extends js.Object {
     var DiscovererIdPrefix: js.UndefOr[__string]
     var Limit: js.UndefOr[__integer]
@@ -923,62 +973,17 @@ package schemas {
 
   @js.native
   trait ListTagsForResourceResponse extends js.Object {
-    var Tags: Tags
+    var Tags: js.UndefOr[Tags]
   }
 
   object ListTagsForResourceResponse {
     @inline
     def apply(
-        Tags: Tags
+        Tags: js.UndefOr[Tags] = js.undefined
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dynamic.literal(
-        "Tags" -> Tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListTagsForResourceResponse]
-    }
-  }
-
-  @js.native
-  trait LockServiceLinkedRoleRequest extends js.Object {
-    var RoleArn: __stringMin1Max1600
-    var Timeout: __integerMin1Max29000
-  }
-
-  object LockServiceLinkedRoleRequest {
-    @inline
-    def apply(
-        RoleArn: __stringMin1Max1600,
-        Timeout: __integerMin1Max29000
-    ): LockServiceLinkedRoleRequest = {
-      val __obj = js.Dynamic.literal(
-        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
-        "Timeout" -> Timeout.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[LockServiceLinkedRoleRequest]
-    }
-  }
-
-  @js.native
-  trait LockServiceLinkedRoleResponse extends js.Object {
-    var CanBeDeleted: js.UndefOr[__boolean]
-    var ReasonOfFailure: js.UndefOr[__stringMin1Max1600]
-    var RelatedResources: js.UndefOr[__listOfDiscovererSummary]
-  }
-
-  object LockServiceLinkedRoleResponse {
-    @inline
-    def apply(
-        CanBeDeleted: js.UndefOr[__boolean] = js.undefined,
-        ReasonOfFailure: js.UndefOr[__stringMin1Max1600] = js.undefined,
-        RelatedResources: js.UndefOr[__listOfDiscovererSummary] = js.undefined
-    ): LockServiceLinkedRoleResponse = {
       val __obj = js.Dynamic.literal()
-      CanBeDeleted.foreach(__v => __obj.updateDynamic("CanBeDeleted")(__v.asInstanceOf[js.Any]))
-      ReasonOfFailure.foreach(__v => __obj.updateDynamic("ReasonOfFailure")(__v.asInstanceOf[js.Any]))
-      RelatedResources.foreach(__v => __obj.updateDynamic("RelatedResources")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LockServiceLinkedRoleResponse]
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
 
@@ -1031,6 +1036,52 @@ package schemas {
       SchemaVersion.foreach(__v => __obj.updateDynamic("SchemaVersion")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutCodeBindingResponse]
+    }
+  }
+
+  /**
+    * The name of the policy.
+    */
+  @js.native
+  trait PutResourcePolicyRequest extends js.Object {
+    var Policy: __string
+    var RegistryName: js.UndefOr[__string]
+    var RevisionId: js.UndefOr[__string]
+  }
+
+  object PutResourcePolicyRequest {
+    @inline
+    def apply(
+        Policy: __string,
+        RegistryName: js.UndefOr[__string] = js.undefined,
+        RevisionId: js.UndefOr[__string] = js.undefined
+    ): PutResourcePolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "Policy" -> Policy.asInstanceOf[js.Any]
+      )
+
+      RegistryName.foreach(__v => __obj.updateDynamic("RegistryName")(__v.asInstanceOf[js.Any]))
+      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutResourcePolicyRequest]
+    }
+  }
+
+  @js.native
+  trait PutResourcePolicyResponse extends js.Object {
+    var Policy: js.UndefOr[__string]
+    var RevisionId: js.UndefOr[__string]
+  }
+
+  object PutResourcePolicyResponse {
+    @inline
+    def apply(
+        Policy: js.UndefOr[__string] = js.undefined,
+        RevisionId: js.UndefOr[__string] = js.undefined
+    ): PutResourcePolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
+      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutResourcePolicyResponse]
     }
   }
 
@@ -1273,6 +1324,8 @@ package schemas {
     }
   }
 
+  /**
+    */
   @js.native
   trait TagResourceRequest extends js.Object {
     var ResourceArn: __string
@@ -1300,37 +1353,6 @@ package schemas {
     val OpenApi3 = "OpenApi3".asInstanceOf[Type]
 
     val values = js.Object.freeze(js.Array(OpenApi3))
-  }
-
-  @js.native
-  trait UnlockServiceLinkedRoleRequest extends js.Object {
-    var RoleArn: __stringMin1Max1600
-  }
-
-  object UnlockServiceLinkedRoleRequest {
-    @inline
-    def apply(
-        RoleArn: __stringMin1Max1600
-    ): UnlockServiceLinkedRoleRequest = {
-      val __obj = js.Dynamic.literal(
-        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UnlockServiceLinkedRoleRequest]
-    }
-  }
-
-  @js.native
-  trait UnlockServiceLinkedRoleResponse extends js.Object {}
-
-  object UnlockServiceLinkedRoleResponse {
-    @inline
-    def apply(
-    ): UnlockServiceLinkedRoleResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UnlockServiceLinkedRoleResponse]
-    }
   }
 
   @js.native
@@ -1406,6 +1428,9 @@ package schemas {
     }
   }
 
+  /**
+    * Updates the registry.
+    */
   @js.native
   trait UpdateRegistryRequest extends js.Object {
     var RegistryName: __string

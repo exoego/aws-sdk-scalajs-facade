@@ -19,8 +19,7 @@ package object cognitoidentityprovider {
   type AttributeNameType                            = String
   type AttributeValueType                           = String
   type AuthEventsType                               = js.Array[AuthEventType]
-  type AuthParametersType                           = js.Dictionary[AuthParametersValueType]
-  type AuthParametersValueType                      = String
+  type AuthParametersType                           = js.Dictionary[StringType]
   type BlockedIPRangeListType                       = js.Array[StringType]
   type BooleanType                                  = Boolean
   type CSSType                                      = String
@@ -1840,6 +1839,8 @@ package cognitoidentityprovider {
 
   /**
     * The Amazon Pinpoint analytics configuration for collecting metrics for a user pool.
+    *
+    * '''Note:'''Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.
     */
   @js.native
   trait AnalyticsConfigurationType extends js.Object {
@@ -1871,6 +1872,8 @@ package cognitoidentityprovider {
   /**
     * An Amazon Pinpoint analytics endpoint.
     *  An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.
+    *
+    * '''Note:'''Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.
     */
   @js.native
   trait AnalyticsMetadataType extends js.Object {
@@ -3657,6 +3660,7 @@ package cognitoidentityprovider {
     */
   @js.native
   trait EventRiskType extends js.Object {
+    var CompromisedCredentialsDetected: js.UndefOr[WrappedBooleanType]
     var RiskDecision: js.UndefOr[RiskDecisionType]
     var RiskLevel: js.UndefOr[RiskLevelType]
   }
@@ -3664,10 +3668,14 @@ package cognitoidentityprovider {
   object EventRiskType {
     @inline
     def apply(
+        CompromisedCredentialsDetected: js.UndefOr[WrappedBooleanType] = js.undefined,
         RiskDecision: js.UndefOr[RiskDecisionType] = js.undefined,
         RiskLevel: js.UndefOr[RiskLevelType] = js.undefined
     ): EventRiskType = {
       val __obj = js.Dynamic.literal()
+      CompromisedCredentialsDetected.foreach(__v =>
+        __obj.updateDynamic("CompromisedCredentialsDetected")(__v.asInstanceOf[js.Any])
+      )
       RiskDecision.foreach(__v => __obj.updateDynamic("RiskDecision")(__v.asInstanceOf[js.Any]))
       RiskLevel.foreach(__v => __obj.updateDynamic("RiskLevel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventRiskType]

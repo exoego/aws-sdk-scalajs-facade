@@ -382,9 +382,11 @@ package signer {
   @js.native
   sealed trait ImageFormat extends js.Any
   object ImageFormat extends js.Object {
-    val JSON = "JSON".asInstanceOf[ImageFormat]
+    val JSON         = "JSON".asInstanceOf[ImageFormat]
+    val JSONEmbedded = "JSONEmbedded".asInstanceOf[ImageFormat]
+    val JSONDetached = "JSONDetached".asInstanceOf[ImageFormat]
 
-    val values = js.Object.freeze(js.Array(JSON))
+    val values = js.Object.freeze(js.Array(JSON, JSONEmbedded, JSONDetached))
   }
 
   @js.native
@@ -821,7 +823,7 @@ package signer {
   }
 
   /**
-    * Contains information about the signing configurations and parameters that is used to perform a code signing job.
+    * Contains information about the signing configurations and parameters that are used to perform a code signing job.
     */
   @js.native
   trait SigningPlatform extends js.Object {
@@ -866,15 +868,18 @@ package signer {
   @js.native
   trait SigningPlatformOverrides extends js.Object {
     var signingConfiguration: js.UndefOr[SigningConfigurationOverrides]
+    var signingImageFormat: js.UndefOr[ImageFormat]
   }
 
   object SigningPlatformOverrides {
     @inline
     def apply(
-        signingConfiguration: js.UndefOr[SigningConfigurationOverrides] = js.undefined
+        signingConfiguration: js.UndefOr[SigningConfigurationOverrides] = js.undefined,
+        signingImageFormat: js.UndefOr[ImageFormat] = js.undefined
     ): SigningPlatformOverrides = {
       val __obj = js.Dynamic.literal()
       signingConfiguration.foreach(__v => __obj.updateDynamic("signingConfiguration")(__v.asInstanceOf[js.Any]))
+      signingImageFormat.foreach(__v => __obj.updateDynamic("signingImageFormat")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SigningPlatformOverrides]
     }
   }

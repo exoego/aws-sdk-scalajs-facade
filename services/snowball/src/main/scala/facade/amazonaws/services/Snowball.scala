@@ -15,6 +15,7 @@ package object snowball {
   type CompatibleImageList        = js.Array[CompatibleImage]
   type Ec2AmiResourceList         = js.Array[Ec2AmiResource]
   type EventTriggerDefinitionList = js.Array[EventTriggerDefinition]
+  type GSTIN                      = String
   type JobId                      = String
   type JobListEntryList           = js.Array[JobListEntry]
   type JobMetadataList            = js.Array[JobMetadata]
@@ -264,6 +265,7 @@ package snowball {
     var RoleARN: js.UndefOr[RoleARN]
     var ShippingOption: js.UndefOr[ShippingOption]
     var SnowballType: js.UndefOr[SnowballType]
+    var TaxDocuments: js.UndefOr[TaxDocuments]
   }
 
   object ClusterMetadata {
@@ -281,7 +283,8 @@ package snowball {
         Resources: js.UndefOr[JobResource] = js.undefined,
         RoleARN: js.UndefOr[RoleARN] = js.undefined,
         ShippingOption: js.UndefOr[ShippingOption] = js.undefined,
-        SnowballType: js.UndefOr[SnowballType] = js.undefined
+        SnowballType: js.UndefOr[SnowballType] = js.undefined,
+        TaxDocuments: js.UndefOr[TaxDocuments] = js.undefined
     ): ClusterMetadata = {
       val __obj = js.Dynamic.literal()
       AddressId.foreach(__v => __obj.updateDynamic("AddressId")(__v.asInstanceOf[js.Any]))
@@ -297,6 +300,7 @@ package snowball {
       RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
       ShippingOption.foreach(__v => __obj.updateDynamic("ShippingOption")(__v.asInstanceOf[js.Any]))
       SnowballType.foreach(__v => __obj.updateDynamic("SnowballType")(__v.asInstanceOf[js.Any]))
+      TaxDocuments.foreach(__v => __obj.updateDynamic("TaxDocuments")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClusterMetadata]
     }
   }
@@ -381,6 +385,7 @@ package snowball {
     var KmsKeyARN: js.UndefOr[KmsKeyARN]
     var Notification: js.UndefOr[Notification]
     var SnowballType: js.UndefOr[SnowballType]
+    var TaxDocuments: js.UndefOr[TaxDocuments]
   }
 
   object CreateClusterRequest {
@@ -395,7 +400,8 @@ package snowball {
         ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
         KmsKeyARN: js.UndefOr[KmsKeyARN] = js.undefined,
         Notification: js.UndefOr[Notification] = js.undefined,
-        SnowballType: js.UndefOr[SnowballType] = js.undefined
+        SnowballType: js.UndefOr[SnowballType] = js.undefined,
+        TaxDocuments: js.UndefOr[TaxDocuments] = js.undefined
     ): CreateClusterRequest = {
       val __obj = js.Dynamic.literal(
         "AddressId"      -> AddressId.asInstanceOf[js.Any],
@@ -410,6 +416,7 @@ package snowball {
       KmsKeyARN.foreach(__v => __obj.updateDynamic("KmsKeyARN")(__v.asInstanceOf[js.Any]))
       Notification.foreach(__v => __obj.updateDynamic("Notification")(__v.asInstanceOf[js.Any]))
       SnowballType.foreach(__v => __obj.updateDynamic("SnowballType")(__v.asInstanceOf[js.Any]))
+      TaxDocuments.foreach(__v => __obj.updateDynamic("TaxDocuments")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateClusterRequest]
     }
   }
@@ -435,6 +442,7 @@ package snowball {
     var AddressId: js.UndefOr[AddressId]
     var ClusterId: js.UndefOr[ClusterId]
     var Description: js.UndefOr[String]
+    var DeviceConfiguration: js.UndefOr[DeviceConfiguration]
     var ForwardingAddressId: js.UndefOr[AddressId]
     var JobType: js.UndefOr[JobType]
     var KmsKeyARN: js.UndefOr[KmsKeyARN]
@@ -444,6 +452,7 @@ package snowball {
     var ShippingOption: js.UndefOr[ShippingOption]
     var SnowballCapacityPreference: js.UndefOr[SnowballCapacity]
     var SnowballType: js.UndefOr[SnowballType]
+    var TaxDocuments: js.UndefOr[TaxDocuments]
   }
 
   object CreateJobRequest {
@@ -452,6 +461,7 @@ package snowball {
         AddressId: js.UndefOr[AddressId] = js.undefined,
         ClusterId: js.UndefOr[ClusterId] = js.undefined,
         Description: js.UndefOr[String] = js.undefined,
+        DeviceConfiguration: js.UndefOr[DeviceConfiguration] = js.undefined,
         ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
         JobType: js.UndefOr[JobType] = js.undefined,
         KmsKeyARN: js.UndefOr[KmsKeyARN] = js.undefined,
@@ -460,12 +470,14 @@ package snowball {
         RoleARN: js.UndefOr[RoleARN] = js.undefined,
         ShippingOption: js.UndefOr[ShippingOption] = js.undefined,
         SnowballCapacityPreference: js.UndefOr[SnowballCapacity] = js.undefined,
-        SnowballType: js.UndefOr[SnowballType] = js.undefined
+        SnowballType: js.UndefOr[SnowballType] = js.undefined,
+        TaxDocuments: js.UndefOr[TaxDocuments] = js.undefined
     ): CreateJobRequest = {
       val __obj = js.Dynamic.literal()
       AddressId.foreach(__v => __obj.updateDynamic("AddressId")(__v.asInstanceOf[js.Any]))
       ClusterId.foreach(__v => __obj.updateDynamic("ClusterId")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DeviceConfiguration.foreach(__v => __obj.updateDynamic("DeviceConfiguration")(__v.asInstanceOf[js.Any]))
       ForwardingAddressId.foreach(__v => __obj.updateDynamic("ForwardingAddressId")(__v.asInstanceOf[js.Any]))
       JobType.foreach(__v => __obj.updateDynamic("JobType")(__v.asInstanceOf[js.Any]))
       KmsKeyARN.foreach(__v => __obj.updateDynamic("KmsKeyARN")(__v.asInstanceOf[js.Any]))
@@ -477,6 +489,7 @@ package snowball {
         __obj.updateDynamic("SnowballCapacityPreference")(__v.asInstanceOf[js.Any])
       )
       SnowballType.foreach(__v => __obj.updateDynamic("SnowballType")(__v.asInstanceOf[js.Any]))
+      TaxDocuments.foreach(__v => __obj.updateDynamic("TaxDocuments")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateJobRequest]
     }
   }
@@ -669,6 +682,27 @@ package snowball {
   }
 
   /**
+    * The container for <code>SnowconeDeviceConfiguration</code>.
+    */
+  @js.native
+  trait DeviceConfiguration extends js.Object {
+    var SnowconeDeviceConfiguration: js.UndefOr[SnowconeDeviceConfiguration]
+  }
+
+  object DeviceConfiguration {
+    @inline
+    def apply(
+        SnowconeDeviceConfiguration: js.UndefOr[SnowconeDeviceConfiguration] = js.undefined
+    ): DeviceConfiguration = {
+      val __obj = js.Dynamic.literal()
+      SnowconeDeviceConfiguration.foreach(__v =>
+        __obj.updateDynamic("SnowconeDeviceConfiguration")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DeviceConfiguration]
+    }
+  }
+
+  /**
     * A JSON-formatted object that contains the IDs for an Amazon Machine Image (AMI), including the Amazon EC2 AMI ID and the Snowball Edge AMI ID. Each AMI has these two IDs to simplify identifying the AMI in both the AWS Cloud and on the device.
     */
   @js.native
@@ -846,6 +880,25 @@ package snowball {
   }
 
   /**
+    * The tax documents required in AWS Regions in India.
+    */
+  @js.native
+  trait INDTaxDocuments extends js.Object {
+    var GSTIN: js.UndefOr[GSTIN]
+  }
+
+  object INDTaxDocuments {
+    @inline
+    def apply(
+        GSTIN: js.UndefOr[GSTIN] = js.undefined
+    ): INDTaxDocuments = {
+      val __obj = js.Dynamic.literal()
+      GSTIN.foreach(__v => __obj.updateDynamic("GSTIN")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[INDTaxDocuments]
+    }
+  }
+
+  /**
     * Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of an export job.
     */
   @js.native
@@ -920,6 +973,7 @@ package snowball {
     var CreationDate: js.UndefOr[Timestamp]
     var DataTransferProgress: js.UndefOr[DataTransfer]
     var Description: js.UndefOr[String]
+    var DeviceConfiguration: js.UndefOr[DeviceConfiguration]
     var ForwardingAddressId: js.UndefOr[AddressId]
     var JobId: js.UndefOr[String]
     var JobLogInfo: js.UndefOr[JobLogs]
@@ -932,6 +986,7 @@ package snowball {
     var ShippingDetails: js.UndefOr[ShippingDetails]
     var SnowballCapacityPreference: js.UndefOr[SnowballCapacity]
     var SnowballType: js.UndefOr[SnowballType]
+    var TaxDocuments: js.UndefOr[TaxDocuments]
   }
 
   object JobMetadata {
@@ -942,6 +997,7 @@ package snowball {
         CreationDate: js.UndefOr[Timestamp] = js.undefined,
         DataTransferProgress: js.UndefOr[DataTransfer] = js.undefined,
         Description: js.UndefOr[String] = js.undefined,
+        DeviceConfiguration: js.UndefOr[DeviceConfiguration] = js.undefined,
         ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
         JobId: js.UndefOr[String] = js.undefined,
         JobLogInfo: js.UndefOr[JobLogs] = js.undefined,
@@ -953,7 +1009,8 @@ package snowball {
         RoleARN: js.UndefOr[RoleARN] = js.undefined,
         ShippingDetails: js.UndefOr[ShippingDetails] = js.undefined,
         SnowballCapacityPreference: js.UndefOr[SnowballCapacity] = js.undefined,
-        SnowballType: js.UndefOr[SnowballType] = js.undefined
+        SnowballType: js.UndefOr[SnowballType] = js.undefined,
+        TaxDocuments: js.UndefOr[TaxDocuments] = js.undefined
     ): JobMetadata = {
       val __obj = js.Dynamic.literal()
       AddressId.foreach(__v => __obj.updateDynamic("AddressId")(__v.asInstanceOf[js.Any]))
@@ -961,6 +1018,7 @@ package snowball {
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
       DataTransferProgress.foreach(__v => __obj.updateDynamic("DataTransferProgress")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DeviceConfiguration.foreach(__v => __obj.updateDynamic("DeviceConfiguration")(__v.asInstanceOf[js.Any]))
       ForwardingAddressId.foreach(__v => __obj.updateDynamic("ForwardingAddressId")(__v.asInstanceOf[js.Any]))
       JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
       JobLogInfo.foreach(__v => __obj.updateDynamic("JobLogInfo")(__v.asInstanceOf[js.Any]))
@@ -975,6 +1033,7 @@ package snowball {
         __obj.updateDynamic("SnowballCapacityPreference")(__v.asInstanceOf[js.Any])
       )
       SnowballType.foreach(__v => __obj.updateDynamic("SnowballType")(__v.asInstanceOf[js.Any]))
+      TaxDocuments.foreach(__v => __obj.updateDynamic("TaxDocuments")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobMetadata]
     }
   }
@@ -1364,9 +1423,11 @@ package snowball {
     val T80          = "T80".asInstanceOf[SnowballCapacity]
     val T100         = "T100".asInstanceOf[SnowballCapacity]
     val T42          = "T42".asInstanceOf[SnowballCapacity]
+    val T98          = "T98".asInstanceOf[SnowballCapacity]
+    val T8           = "T8".asInstanceOf[SnowballCapacity]
     val NoPreference = "NoPreference".asInstanceOf[SnowballCapacity]
 
-    val values = js.Object.freeze(js.Array(T50, T80, T100, T42, NoPreference))
+    val values = js.Object.freeze(js.Array(T50, T80, T100, T42, T98, T8, NoPreference))
   }
 
   @js.native
@@ -1376,8 +1437,48 @@ package snowball {
     val EDGE     = "EDGE".asInstanceOf[SnowballType]
     val EDGE_C   = "EDGE_C".asInstanceOf[SnowballType]
     val EDGE_CG  = "EDGE_CG".asInstanceOf[SnowballType]
+    val EDGE_S   = "EDGE_S".asInstanceOf[SnowballType]
+    val SNC1_HDD = "SNC1_HDD".asInstanceOf[SnowballType]
 
-    val values = js.Object.freeze(js.Array(STANDARD, EDGE, EDGE_C, EDGE_CG))
+    val values = js.Object.freeze(js.Array(STANDARD, EDGE, EDGE_C, EDGE_CG, EDGE_S, SNC1_HDD))
+  }
+
+  /**
+    * Specifies the device configuration for an AWS Snowcone job.
+    */
+  @js.native
+  trait SnowconeDeviceConfiguration extends js.Object {
+    var WirelessConnection: js.UndefOr[WirelessConnection]
+  }
+
+  object SnowconeDeviceConfiguration {
+    @inline
+    def apply(
+        WirelessConnection: js.UndefOr[WirelessConnection] = js.undefined
+    ): SnowconeDeviceConfiguration = {
+      val __obj = js.Dynamic.literal()
+      WirelessConnection.foreach(__v => __obj.updateDynamic("WirelessConnection")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SnowconeDeviceConfiguration]
+    }
+  }
+
+  /**
+    * The tax documents required in your AWS Region.
+    */
+  @js.native
+  trait TaxDocuments extends js.Object {
+    var IND: js.UndefOr[INDTaxDocuments]
+  }
+
+  object TaxDocuments {
+    @inline
+    def apply(
+        IND: js.UndefOr[INDTaxDocuments] = js.undefined
+    ): TaxDocuments = {
+      val __obj = js.Dynamic.literal()
+      IND.foreach(__v => __obj.updateDynamic("IND")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TaxDocuments]
+    }
   }
 
   @js.native
@@ -1486,6 +1587,25 @@ package snowball {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateJobResult]
+    }
+  }
+
+  /**
+    * Configures the wireless connection on an AWS Snowcone device.
+    */
+  @js.native
+  trait WirelessConnection extends js.Object {
+    var IsWifiEnabled: js.UndefOr[Boolean]
+  }
+
+  object WirelessConnection {
+    @inline
+    def apply(
+        IsWifiEnabled: js.UndefOr[Boolean] = js.undefined
+    ): WirelessConnection = {
+      val __obj = js.Dynamic.literal()
+      IsWifiEnabled.foreach(__v => __obj.updateDynamic("IsWifiEnabled")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WirelessConnection]
     }
   }
 }

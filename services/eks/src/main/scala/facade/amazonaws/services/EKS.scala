@@ -12,6 +12,7 @@ package object eks {
   type BoxedInteger                     = Int
   type Capacity                         = Int
   type ClusterName                      = String
+  type EncryptionConfigList             = js.Array[EncryptionConfig]
   type ErrorDetails                     = js.Array[ErrorDetail]
   type FargateProfileLabel              = js.Dictionary[String]
   type FargateProfileSelectors          = js.Array[FargateProfileSelector]
@@ -171,6 +172,7 @@ package eks {
     var certificateAuthority: js.UndefOr[Certificate]
     var clientRequestToken: js.UndefOr[String]
     var createdAt: js.UndefOr[Timestamp]
+    var encryptionConfig: js.UndefOr[EncryptionConfigList]
     var endpoint: js.UndefOr[String]
     var identity: js.UndefOr[Identity]
     var logging: js.UndefOr[Logging]
@@ -190,6 +192,7 @@ package eks {
         certificateAuthority: js.UndefOr[Certificate] = js.undefined,
         clientRequestToken: js.UndefOr[String] = js.undefined,
         createdAt: js.UndefOr[Timestamp] = js.undefined,
+        encryptionConfig: js.UndefOr[EncryptionConfigList] = js.undefined,
         endpoint: js.UndefOr[String] = js.undefined,
         identity: js.UndefOr[Identity] = js.undefined,
         logging: js.UndefOr[Logging] = js.undefined,
@@ -206,6 +209,7 @@ package eks {
       certificateAuthority.foreach(__v => __obj.updateDynamic("certificateAuthority")(__v.asInstanceOf[js.Any]))
       clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      encryptionConfig.foreach(__v => __obj.updateDynamic("encryptionConfig")(__v.asInstanceOf[js.Any]))
       endpoint.foreach(__v => __obj.updateDynamic("endpoint")(__v.asInstanceOf[js.Any]))
       identity.foreach(__v => __obj.updateDynamic("identity")(__v.asInstanceOf[js.Any]))
       logging.foreach(__v => __obj.updateDynamic("logging")(__v.asInstanceOf[js.Any]))
@@ -238,6 +242,7 @@ package eks {
     var resourcesVpcConfig: VpcConfigRequest
     var roleArn: String
     var clientRequestToken: js.UndefOr[String]
+    var encryptionConfig: js.UndefOr[EncryptionConfigList]
     var logging: js.UndefOr[Logging]
     var tags: js.UndefOr[TagMap]
     var version: js.UndefOr[String]
@@ -250,6 +255,7 @@ package eks {
         resourcesVpcConfig: VpcConfigRequest,
         roleArn: String,
         clientRequestToken: js.UndefOr[String] = js.undefined,
+        encryptionConfig: js.UndefOr[EncryptionConfigList] = js.undefined,
         logging: js.UndefOr[Logging] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined,
         version: js.UndefOr[String] = js.undefined
@@ -261,6 +267,7 @@ package eks {
       )
 
       clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      encryptionConfig.foreach(__v => __obj.updateDynamic("encryptionConfig")(__v.asInstanceOf[js.Any]))
       logging.foreach(__v => __obj.updateDynamic("logging")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
@@ -662,6 +669,28 @@ package eks {
       val __obj = js.Dynamic.literal()
       update.foreach(__v => __obj.updateDynamic("update")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeUpdateResponse]
+    }
+  }
+
+  /**
+    * The encryption configuration for the cluster.
+    */
+  @js.native
+  trait EncryptionConfig extends js.Object {
+    var provider: js.UndefOr[Provider]
+    var resources: js.UndefOr[StringList]
+  }
+
+  object EncryptionConfig {
+    @inline
+    def apply(
+        provider: js.UndefOr[Provider] = js.undefined,
+        resources: js.UndefOr[StringList] = js.undefined
+    ): EncryptionConfig = {
+      val __obj = js.Dynamic.literal()
+      provider.foreach(__v => __obj.updateDynamic("provider")(__v.asInstanceOf[js.Any]))
+      resources.foreach(__v => __obj.updateDynamic("resources")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EncryptionConfig]
     }
   }
 
@@ -1202,8 +1231,11 @@ package eks {
     val Ec2LaunchTemplateNotFound            = "Ec2LaunchTemplateNotFound".asInstanceOf[NodegroupIssueCode]
     val Ec2LaunchTemplateVersionMismatch     = "Ec2LaunchTemplateVersionMismatch".asInstanceOf[NodegroupIssueCode]
     val Ec2SubnetNotFound                    = "Ec2SubnetNotFound".asInstanceOf[NodegroupIssueCode]
+    val Ec2SubnetInvalidConfiguration        = "Ec2SubnetInvalidConfiguration".asInstanceOf[NodegroupIssueCode]
     val IamInstanceProfileNotFound           = "IamInstanceProfileNotFound".asInstanceOf[NodegroupIssueCode]
+    val IamLimitExceeded                     = "IamLimitExceeded".asInstanceOf[NodegroupIssueCode]
     val IamNodeRoleNotFound                  = "IamNodeRoleNotFound".asInstanceOf[NodegroupIssueCode]
+    val NodeCreationFailure                  = "NodeCreationFailure".asInstanceOf[NodegroupIssueCode]
     val AsgInstanceLaunchFailures            = "AsgInstanceLaunchFailures".asInstanceOf[NodegroupIssueCode]
     val InstanceLimitExceeded                = "InstanceLimitExceeded".asInstanceOf[NodegroupIssueCode]
     val InsufficientFreeAddresses            = "InsufficientFreeAddresses".asInstanceOf[NodegroupIssueCode]
@@ -1219,8 +1251,11 @@ package eks {
         Ec2LaunchTemplateNotFound,
         Ec2LaunchTemplateVersionMismatch,
         Ec2SubnetNotFound,
+        Ec2SubnetInvalidConfiguration,
         IamInstanceProfileNotFound,
+        IamLimitExceeded,
         IamNodeRoleNotFound,
+        NodeCreationFailure,
         AsgInstanceLaunchFailures,
         InstanceLimitExceeded,
         InsufficientFreeAddresses,
@@ -1310,6 +1345,25 @@ package eks {
       val __obj = js.Dynamic.literal()
       issuer.foreach(__v => __obj.updateDynamic("issuer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OIDC]
+    }
+  }
+
+  /**
+    * Identifies the AWS Key Management Service (AWS KMS) customer master key (CMK) used to encrypt the secrets.
+    */
+  @js.native
+  trait Provider extends js.Object {
+    var keyArn: js.UndefOr[String]
+  }
+
+  object Provider {
+    @inline
+    def apply(
+        keyArn: js.UndefOr[String] = js.undefined
+    ): Provider = {
+      val __obj = js.Dynamic.literal()
+      keyArn.foreach(__v => __obj.updateDynamic("keyArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Provider]
     }
   }
 

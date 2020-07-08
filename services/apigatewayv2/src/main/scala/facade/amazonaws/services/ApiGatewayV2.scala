@@ -13,16 +13,18 @@ package object apigatewayv2 {
   type CorsMethodList                         = js.Array[StringWithLengthBetween1And64]
   type CorsOriginList                         = js.Array[__string]
   type DomainNameConfigurations               = js.Array[DomainNameConfiguration]
+  type ExportedApi                            = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type Id                                     = String
   type IdentitySourceList                     = js.Array[__string]
   type IntegerWithLengthBetween0And3600       = Int
-  type IntegerWithLengthBetween50And29000     = Int
+  type IntegerWithLengthBetween50And30000     = Int
   type IntegerWithLengthBetweenMinus1And86400 = Int
   type IntegrationParameters                  = js.Dictionary[StringWithLengthBetween1And512]
   type NextToken                              = String
   type RouteModels                            = js.Dictionary[StringWithLengthBetween1And128]
   type RouteParameters                        = js.Dictionary[ParameterConstraints]
   type RouteSettingsMap                       = js.Dictionary[RouteSettings]
+  type SecurityGroupIdList                    = js.Array[__string]
   type SelectionExpression                    = String
   type SelectionKey                           = String
   type StageVariablesMap                      = js.Dictionary[StringWithLengthBetween0And2048]
@@ -35,6 +37,7 @@ package object apigatewayv2 {
   type StringWithLengthBetween1And256         = String
   type StringWithLengthBetween1And512         = String
   type StringWithLengthBetween1And64          = String
+  type SubnetIdList                           = js.Array[__string]
   type Tags                                   = js.Dictionary[StringWithLengthBetween1And1600]
   type TemplateMap                            = js.Dictionary[StringWithLengthBetween0And32K]
   type UriWithLengthBetween1And2048           = String
@@ -52,6 +55,7 @@ package object apigatewayv2 {
   type __listOfRoute                          = js.Array[Route]
   type __listOfRouteResponse                  = js.Array[RouteResponse]
   type __listOfStage                          = js.Array[Stage]
+  type __listOfVpcLink                        = js.Array[VpcLink]
   type __listOf__string                       = js.Array[__string]
   type __string                               = String
   type __timestampIso8601                     = js.Date
@@ -81,6 +85,10 @@ package object apigatewayv2 {
       service.createRouteResponse(params).promise().toFuture
     @inline def createStageFuture(params: CreateStageRequest): Future[CreateStageResponse] =
       service.createStage(params).promise().toFuture
+    @inline def createVpcLinkFuture(params: CreateVpcLinkRequest): Future[CreateVpcLinkResponse] =
+      service.createVpcLink(params).promise().toFuture
+    @inline def deleteAccessLogSettingsFuture(params: DeleteAccessLogSettingsRequest): Future[js.Object] =
+      service.deleteAccessLogSettings(params).promise().toFuture
     @inline def deleteApiFuture(params: DeleteApiRequest): Future[js.Object] =
       service.deleteApi(params).promise().toFuture
     @inline def deleteApiMappingFuture(params: DeleteApiMappingRequest): Future[js.Object] =
@@ -101,12 +109,18 @@ package object apigatewayv2 {
       service.deleteModel(params).promise().toFuture
     @inline def deleteRouteFuture(params: DeleteRouteRequest): Future[js.Object] =
       service.deleteRoute(params).promise().toFuture
+    @inline def deleteRouteRequestParameterFuture(params: DeleteRouteRequestParameterRequest): Future[js.Object] =
+      service.deleteRouteRequestParameter(params).promise().toFuture
     @inline def deleteRouteResponseFuture(params: DeleteRouteResponseRequest): Future[js.Object] =
       service.deleteRouteResponse(params).promise().toFuture
     @inline def deleteRouteSettingsFuture(params: DeleteRouteSettingsRequest): Future[js.Object] =
       service.deleteRouteSettings(params).promise().toFuture
     @inline def deleteStageFuture(params: DeleteStageRequest): Future[js.Object] =
       service.deleteStage(params).promise().toFuture
+    @inline def deleteVpcLinkFuture(params: DeleteVpcLinkRequest): Future[DeleteVpcLinkResponse] =
+      service.deleteVpcLink(params).promise().toFuture
+    @inline def exportApiFuture(params: ExportApiRequest): Future[ExportApiResponse] =
+      service.exportApi(params).promise().toFuture
     @inline def getApiFuture(params: GetApiRequest): Future[GetApiResponse] = service.getApi(params).promise().toFuture
     @inline def getApiMappingFuture(params: GetApiMappingRequest): Future[GetApiMappingResponse] =
       service.getApiMapping(params).promise().toFuture
@@ -156,6 +170,10 @@ package object apigatewayv2 {
       service.getStages(params).promise().toFuture
     @inline def getTagsFuture(params: GetTagsRequest): Future[GetTagsResponse] =
       service.getTags(params).promise().toFuture
+    @inline def getVpcLinkFuture(params: GetVpcLinkRequest): Future[GetVpcLinkResponse] =
+      service.getVpcLink(params).promise().toFuture
+    @inline def getVpcLinksFuture(params: GetVpcLinksRequest): Future[GetVpcLinksResponse] =
+      service.getVpcLinks(params).promise().toFuture
     @inline def importApiFuture(params: ImportApiRequest): Future[ImportApiResponse] =
       service.importApi(params).promise().toFuture
     @inline def reimportApiFuture(params: ReimportApiRequest): Future[ReimportApiResponse] =
@@ -187,6 +205,8 @@ package object apigatewayv2 {
       service.updateRouteResponse(params).promise().toFuture
     @inline def updateStageFuture(params: UpdateStageRequest): Future[UpdateStageResponse] =
       service.updateStage(params).promise().toFuture
+    @inline def updateVpcLinkFuture(params: UpdateVpcLinkRequest): Future[UpdateVpcLinkResponse] =
+      service.updateVpcLink(params).promise().toFuture
   }
 }
 
@@ -209,6 +229,8 @@ package apigatewayv2 {
     def createRoute(params: CreateRouteRequest): Request[CreateRouteResult]                           = js.native
     def createRouteResponse(params: CreateRouteResponseRequest): Request[CreateRouteResponseResponse] = js.native
     def createStage(params: CreateStageRequest): Request[CreateStageResponse]                         = js.native
+    def createVpcLink(params: CreateVpcLinkRequest): Request[CreateVpcLinkResponse]                   = js.native
+    def deleteAccessLogSettings(params: DeleteAccessLogSettingsRequest): Request[js.Object]           = js.native
     def deleteApi(params: DeleteApiRequest): Request[js.Object]                                       = js.native
     def deleteApiMapping(params: DeleteApiMappingRequest): Request[js.Object]                         = js.native
     def deleteAuthorizer(params: DeleteAuthorizerRequest): Request[js.Object]                         = js.native
@@ -219,9 +241,12 @@ package apigatewayv2 {
     def deleteIntegrationResponse(params: DeleteIntegrationResponseRequest): Request[js.Object]       = js.native
     def deleteModel(params: DeleteModelRequest): Request[js.Object]                                   = js.native
     def deleteRoute(params: DeleteRouteRequest): Request[js.Object]                                   = js.native
+    def deleteRouteRequestParameter(params: DeleteRouteRequestParameterRequest): Request[js.Object]   = js.native
     def deleteRouteResponse(params: DeleteRouteResponseRequest): Request[js.Object]                   = js.native
     def deleteRouteSettings(params: DeleteRouteSettingsRequest): Request[js.Object]                   = js.native
     def deleteStage(params: DeleteStageRequest): Request[js.Object]                                   = js.native
+    def deleteVpcLink(params: DeleteVpcLinkRequest): Request[DeleteVpcLinkResponse]                   = js.native
+    def exportApi(params: ExportApiRequest): Request[ExportApiResponse]                               = js.native
     def getApi(params: GetApiRequest): Request[GetApiResponse]                                        = js.native
     def getApiMapping(params: GetApiMappingRequest): Request[GetApiMappingResponse]                   = js.native
     def getApiMappings(params: GetApiMappingsRequest): Request[GetApiMappingsResponse]                = js.native
@@ -248,6 +273,8 @@ package apigatewayv2 {
     def getStage(params: GetStageRequest): Request[GetStageResponse]                            = js.native
     def getStages(params: GetStagesRequest): Request[GetStagesResponse]                         = js.native
     def getTags(params: GetTagsRequest): Request[GetTagsResponse]                               = js.native
+    def getVpcLink(params: GetVpcLinkRequest): Request[GetVpcLinkResponse]                      = js.native
+    def getVpcLinks(params: GetVpcLinksRequest): Request[GetVpcLinksResponse]                   = js.native
     def importApi(params: ImportApiRequest): Request[ImportApiResponse]                         = js.native
     def reimportApi(params: ReimportApiRequest): Request[ReimportApiResponse]                   = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                   = js.native
@@ -265,6 +292,7 @@ package apigatewayv2 {
     def updateRoute(params: UpdateRouteRequest): Request[UpdateRouteResult]                           = js.native
     def updateRouteResponse(params: UpdateRouteResponseRequest): Request[UpdateRouteResponseResponse] = js.native
     def updateStage(params: UpdateStageRequest): Request[UpdateStageResponse]                         = js.native
+    def updateVpcLink(params: UpdateVpcLinkRequest): Request[UpdateVpcLinkResponse]                   = js.native
   }
 
   /**
@@ -906,7 +934,8 @@ package apigatewayv2 {
     var RequestParameters: js.UndefOr[IntegrationParameters]
     var RequestTemplates: js.UndefOr[TemplateMap]
     var TemplateSelectionExpression: js.UndefOr[SelectionExpression]
-    var TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000]
+    var TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And30000]
+    var TlsConfig: js.UndefOr[TlsConfigInput]
   }
 
   object CreateIntegrationRequest {
@@ -926,7 +955,8 @@ package apigatewayv2 {
         RequestParameters: js.UndefOr[IntegrationParameters] = js.undefined,
         RequestTemplates: js.UndefOr[TemplateMap] = js.undefined,
         TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-        TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000] = js.undefined
+        TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And30000] = js.undefined,
+        TlsConfig: js.UndefOr[TlsConfigInput] = js.undefined
     ): CreateIntegrationRequest = {
       val __obj = js.Dynamic.literal(
         "ApiId"           -> ApiId.asInstanceOf[js.Any],
@@ -948,6 +978,7 @@ package apigatewayv2 {
         __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
       )
       TimeoutInMillis.foreach(__v => __obj.updateDynamic("TimeoutInMillis")(__v.asInstanceOf[js.Any]))
+      TlsConfig.foreach(__v => __obj.updateDynamic("TlsConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateIntegrationRequest]
     }
   }
@@ -1044,7 +1075,8 @@ package apigatewayv2 {
     var RequestParameters: js.UndefOr[IntegrationParameters]
     var RequestTemplates: js.UndefOr[TemplateMap]
     var TemplateSelectionExpression: js.UndefOr[SelectionExpression]
-    var TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000]
+    var TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And30000]
+    var TlsConfig: js.UndefOr[TlsConfig]
   }
 
   object CreateIntegrationResult {
@@ -1066,7 +1098,8 @@ package apigatewayv2 {
         RequestParameters: js.UndefOr[IntegrationParameters] = js.undefined,
         RequestTemplates: js.UndefOr[TemplateMap] = js.undefined,
         TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-        TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000] = js.undefined
+        TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And30000] = js.undefined,
+        TlsConfig: js.UndefOr[TlsConfig] = js.undefined
     ): CreateIntegrationResult = {
       val __obj = js.Dynamic.literal()
       ApiGatewayManaged.foreach(__v => __obj.updateDynamic("ApiGatewayManaged")(__v.asInstanceOf[js.Any]))
@@ -1090,6 +1123,7 @@ package apigatewayv2 {
         __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
       )
       TimeoutInMillis.foreach(__v => __obj.updateDynamic("TimeoutInMillis")(__v.asInstanceOf[js.Any]))
+      TlsConfig.foreach(__v => __obj.updateDynamic("TlsConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateIntegrationResult]
     }
   }
@@ -1437,6 +1471,97 @@ package apigatewayv2 {
     }
   }
 
+  /**
+    * Creates a VPC link
+    */
+  @js.native
+  trait CreateVpcLinkRequest extends js.Object {
+    var Name: StringWithLengthBetween1And128
+    var SubnetIds: SubnetIdList
+    var SecurityGroupIds: js.UndefOr[SecurityGroupIdList]
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object CreateVpcLinkRequest {
+    @inline
+    def apply(
+        Name: StringWithLengthBetween1And128,
+        SubnetIds: SubnetIdList,
+        SecurityGroupIds: js.UndefOr[SecurityGroupIdList] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): CreateVpcLinkRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name"      -> Name.asInstanceOf[js.Any],
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any]
+      )
+
+      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateVpcLinkRequest]
+    }
+  }
+
+  @js.native
+  trait CreateVpcLinkResponse extends js.Object {
+    var CreatedDate: js.UndefOr[__timestampIso8601]
+    var Name: js.UndefOr[StringWithLengthBetween1And128]
+    var SecurityGroupIds: js.UndefOr[SecurityGroupIdList]
+    var SubnetIds: js.UndefOr[SubnetIdList]
+    var Tags: js.UndefOr[Tags]
+    var VpcLinkId: js.UndefOr[Id]
+    var VpcLinkStatus: js.UndefOr[VpcLinkStatus]
+    var VpcLinkStatusMessage: js.UndefOr[StringWithLengthBetween0And1024]
+    var VpcLinkVersion: js.UndefOr[VpcLinkVersion]
+  }
+
+  object CreateVpcLinkResponse {
+    @inline
+    def apply(
+        CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
+        Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
+        SecurityGroupIds: js.UndefOr[SecurityGroupIdList] = js.undefined,
+        SubnetIds: js.UndefOr[SubnetIdList] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        VpcLinkId: js.UndefOr[Id] = js.undefined,
+        VpcLinkStatus: js.UndefOr[VpcLinkStatus] = js.undefined,
+        VpcLinkStatusMessage: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        VpcLinkVersion: js.UndefOr[VpcLinkVersion] = js.undefined
+    ): CreateVpcLinkResponse = {
+      val __obj = js.Dynamic.literal()
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      VpcLinkId.foreach(__v => __obj.updateDynamic("VpcLinkId")(__v.asInstanceOf[js.Any]))
+      VpcLinkStatus.foreach(__v => __obj.updateDynamic("VpcLinkStatus")(__v.asInstanceOf[js.Any]))
+      VpcLinkStatusMessage.foreach(__v => __obj.updateDynamic("VpcLinkStatusMessage")(__v.asInstanceOf[js.Any]))
+      VpcLinkVersion.foreach(__v => __obj.updateDynamic("VpcLinkVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateVpcLinkResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteAccessLogSettingsRequest extends js.Object {
+    var ApiId: __string
+    var StageName: __string
+  }
+
+  object DeleteAccessLogSettingsRequest {
+    @inline
+    def apply(
+        ApiId: __string,
+        StageName: __string
+    ): DeleteAccessLogSettingsRequest = {
+      val __obj = js.Dynamic.literal(
+        "ApiId"     -> ApiId.asInstanceOf[js.Any],
+        "StageName" -> StageName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteAccessLogSettingsRequest]
+    }
+  }
+
   @js.native
   trait DeleteApiMappingRequest extends js.Object {
     var ApiMappingId: __string
@@ -1642,6 +1767,30 @@ package apigatewayv2 {
   }
 
   @js.native
+  trait DeleteRouteRequestParameterRequest extends js.Object {
+    var ApiId: __string
+    var RequestParameterKey: __string
+    var RouteId: __string
+  }
+
+  object DeleteRouteRequestParameterRequest {
+    @inline
+    def apply(
+        ApiId: __string,
+        RequestParameterKey: __string,
+        RouteId: __string
+    ): DeleteRouteRequestParameterRequest = {
+      val __obj = js.Dynamic.literal(
+        "ApiId"               -> ApiId.asInstanceOf[js.Any],
+        "RequestParameterKey" -> RequestParameterKey.asInstanceOf[js.Any],
+        "RouteId"             -> RouteId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteRouteRequestParameterRequest]
+    }
+  }
+
+  @js.native
   trait DeleteRouteResponseRequest extends js.Object {
     var ApiId: __string
     var RouteId: __string
@@ -1707,6 +1856,37 @@ package apigatewayv2 {
       )
 
       __obj.asInstanceOf[DeleteStageRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteVpcLinkRequest extends js.Object {
+    var VpcLinkId: __string
+  }
+
+  object DeleteVpcLinkRequest {
+    @inline
+    def apply(
+        VpcLinkId: __string
+    ): DeleteVpcLinkRequest = {
+      val __obj = js.Dynamic.literal(
+        "VpcLinkId" -> VpcLinkId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteVpcLinkRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteVpcLinkResponse extends js.Object {}
+
+  object DeleteVpcLinkResponse {
+    @inline
+    def apply(
+    ): DeleteVpcLinkResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeleteVpcLinkResponse]
     }
   }
 
@@ -1854,6 +2034,55 @@ package apigatewayv2 {
     val EDGE     = "EDGE".asInstanceOf[EndpointType]
 
     val values = js.Object.freeze(js.Array(REGIONAL, EDGE))
+  }
+
+  @js.native
+  trait ExportApiRequest extends js.Object {
+    var ApiId: __string
+    var OutputType: __string
+    var Specification: __string
+    var ExportVersion: js.UndefOr[__string]
+    var IncludeExtensions: js.UndefOr[__boolean]
+    var StageName: js.UndefOr[__string]
+  }
+
+  object ExportApiRequest {
+    @inline
+    def apply(
+        ApiId: __string,
+        OutputType: __string,
+        Specification: __string,
+        ExportVersion: js.UndefOr[__string] = js.undefined,
+        IncludeExtensions: js.UndefOr[__boolean] = js.undefined,
+        StageName: js.UndefOr[__string] = js.undefined
+    ): ExportApiRequest = {
+      val __obj = js.Dynamic.literal(
+        "ApiId"         -> ApiId.asInstanceOf[js.Any],
+        "OutputType"    -> OutputType.asInstanceOf[js.Any],
+        "Specification" -> Specification.asInstanceOf[js.Any]
+      )
+
+      ExportVersion.foreach(__v => __obj.updateDynamic("ExportVersion")(__v.asInstanceOf[js.Any]))
+      IncludeExtensions.foreach(__v => __obj.updateDynamic("IncludeExtensions")(__v.asInstanceOf[js.Any]))
+      StageName.foreach(__v => __obj.updateDynamic("StageName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportApiRequest]
+    }
+  }
+
+  @js.native
+  trait ExportApiResponse extends js.Object {
+    var body: js.UndefOr[ExportedApi]
+  }
+
+  object ExportApiResponse {
+    @inline
+    def apply(
+        body: js.UndefOr[ExportedApi] = js.undefined
+    ): ExportApiResponse = {
+      val __obj = js.Dynamic.literal()
+      body.foreach(__v => __obj.updateDynamic("body")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportApiResponse]
+    }
   }
 
   @js.native
@@ -2486,7 +2715,8 @@ package apigatewayv2 {
     var RequestParameters: js.UndefOr[IntegrationParameters]
     var RequestTemplates: js.UndefOr[TemplateMap]
     var TemplateSelectionExpression: js.UndefOr[SelectionExpression]
-    var TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000]
+    var TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And30000]
+    var TlsConfig: js.UndefOr[TlsConfig]
   }
 
   object GetIntegrationResult {
@@ -2508,7 +2738,8 @@ package apigatewayv2 {
         RequestParameters: js.UndefOr[IntegrationParameters] = js.undefined,
         RequestTemplates: js.UndefOr[TemplateMap] = js.undefined,
         TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-        TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000] = js.undefined
+        TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And30000] = js.undefined,
+        TlsConfig: js.UndefOr[TlsConfig] = js.undefined
     ): GetIntegrationResult = {
       val __obj = js.Dynamic.literal()
       ApiGatewayManaged.foreach(__v => __obj.updateDynamic("ApiGatewayManaged")(__v.asInstanceOf[js.Any]))
@@ -2532,6 +2763,7 @@ package apigatewayv2 {
         __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
       )
       TimeoutInMillis.foreach(__v => __obj.updateDynamic("TimeoutInMillis")(__v.asInstanceOf[js.Any]))
+      TlsConfig.foreach(__v => __obj.updateDynamic("TlsConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetIntegrationResult]
     }
   }
@@ -3065,19 +3297,113 @@ package apigatewayv2 {
 
   @js.native
   trait GetTagsResponse extends js.Object {
-    var Tags: Tags
+    var Tags: js.UndefOr[Tags]
   }
 
   object GetTagsResponse {
     @inline
     def apply(
-        Tags: Tags
+        Tags: js.UndefOr[Tags] = js.undefined
     ): GetTagsResponse = {
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTagsResponse]
+    }
+  }
+
+  @js.native
+  trait GetVpcLinkRequest extends js.Object {
+    var VpcLinkId: __string
+  }
+
+  object GetVpcLinkRequest {
+    @inline
+    def apply(
+        VpcLinkId: __string
+    ): GetVpcLinkRequest = {
       val __obj = js.Dynamic.literal(
-        "Tags" -> Tags.asInstanceOf[js.Any]
+        "VpcLinkId" -> VpcLinkId.asInstanceOf[js.Any]
       )
 
-      __obj.asInstanceOf[GetTagsResponse]
+      __obj.asInstanceOf[GetVpcLinkRequest]
+    }
+  }
+
+  @js.native
+  trait GetVpcLinkResponse extends js.Object {
+    var CreatedDate: js.UndefOr[__timestampIso8601]
+    var Name: js.UndefOr[StringWithLengthBetween1And128]
+    var SecurityGroupIds: js.UndefOr[SecurityGroupIdList]
+    var SubnetIds: js.UndefOr[SubnetIdList]
+    var Tags: js.UndefOr[Tags]
+    var VpcLinkId: js.UndefOr[Id]
+    var VpcLinkStatus: js.UndefOr[VpcLinkStatus]
+    var VpcLinkStatusMessage: js.UndefOr[StringWithLengthBetween0And1024]
+    var VpcLinkVersion: js.UndefOr[VpcLinkVersion]
+  }
+
+  object GetVpcLinkResponse {
+    @inline
+    def apply(
+        CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
+        Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
+        SecurityGroupIds: js.UndefOr[SecurityGroupIdList] = js.undefined,
+        SubnetIds: js.UndefOr[SubnetIdList] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        VpcLinkId: js.UndefOr[Id] = js.undefined,
+        VpcLinkStatus: js.UndefOr[VpcLinkStatus] = js.undefined,
+        VpcLinkStatusMessage: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        VpcLinkVersion: js.UndefOr[VpcLinkVersion] = js.undefined
+    ): GetVpcLinkResponse = {
+      val __obj = js.Dynamic.literal()
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      VpcLinkId.foreach(__v => __obj.updateDynamic("VpcLinkId")(__v.asInstanceOf[js.Any]))
+      VpcLinkStatus.foreach(__v => __obj.updateDynamic("VpcLinkStatus")(__v.asInstanceOf[js.Any]))
+      VpcLinkStatusMessage.foreach(__v => __obj.updateDynamic("VpcLinkStatusMessage")(__v.asInstanceOf[js.Any]))
+      VpcLinkVersion.foreach(__v => __obj.updateDynamic("VpcLinkVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetVpcLinkResponse]
+    }
+  }
+
+  @js.native
+  trait GetVpcLinksRequest extends js.Object {
+    var MaxResults: js.UndefOr[__string]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object GetVpcLinksRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[__string] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): GetVpcLinksRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetVpcLinksRequest]
+    }
+  }
+
+  @js.native
+  trait GetVpcLinksResponse extends js.Object {
+    var Items: js.UndefOr[__listOfVpcLink]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object GetVpcLinksResponse {
+    @inline
+    def apply(
+        Items: js.UndefOr[__listOfVpcLink] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetVpcLinksResponse = {
+      val __obj = js.Dynamic.literal()
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetVpcLinksResponse]
     }
   }
 
@@ -3185,7 +3511,8 @@ package apigatewayv2 {
     var RequestParameters: js.UndefOr[IntegrationParameters]
     var RequestTemplates: js.UndefOr[TemplateMap]
     var TemplateSelectionExpression: js.UndefOr[SelectionExpression]
-    var TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000]
+    var TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And30000]
+    var TlsConfig: js.UndefOr[TlsConfig]
   }
 
   object Integration {
@@ -3207,7 +3534,8 @@ package apigatewayv2 {
         RequestParameters: js.UndefOr[IntegrationParameters] = js.undefined,
         RequestTemplates: js.UndefOr[TemplateMap] = js.undefined,
         TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-        TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000] = js.undefined
+        TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And30000] = js.undefined,
+        TlsConfig: js.UndefOr[TlsConfig] = js.undefined
     ): Integration = {
       val __obj = js.Dynamic.literal()
       ApiGatewayManaged.foreach(__v => __obj.updateDynamic("ApiGatewayManaged")(__v.asInstanceOf[js.Any]))
@@ -3231,6 +3559,7 @@ package apigatewayv2 {
         __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
       )
       TimeoutInMillis.foreach(__v => __obj.updateDynamic("TimeoutInMillis")(__v.asInstanceOf[js.Any]))
+      TlsConfig.foreach(__v => __obj.updateDynamic("TlsConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Integration]
     }
   }
@@ -3316,11 +3645,11 @@ package apigatewayv2 {
   @js.native
   sealed trait LoggingLevel extends js.Any
   object LoggingLevel extends js.Object {
-    val ERROR   = "ERROR".asInstanceOf[LoggingLevel]
-    val INFO    = "INFO".asInstanceOf[LoggingLevel]
-    val `false` = "false".asInstanceOf[LoggingLevel]
+    val ERROR = "ERROR".asInstanceOf[LoggingLevel]
+    val INFO  = "INFO".asInstanceOf[LoggingLevel]
+    val OFF   = "OFF".asInstanceOf[LoggingLevel]
 
-    val values = js.Object.freeze(js.Array(ERROR, INFO, `false`))
+    val values = js.Object.freeze(js.Array(ERROR, INFO, OFF))
   }
 
   /**
@@ -3717,6 +4046,44 @@ package apigatewayv2 {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  /**
+    * The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.
+    */
+  @js.native
+  trait TlsConfig extends js.Object {
+    var ServerNameToVerify: js.UndefOr[StringWithLengthBetween1And512]
+  }
+
+  object TlsConfig {
+    @inline
+    def apply(
+        ServerNameToVerify: js.UndefOr[StringWithLengthBetween1And512] = js.undefined
+    ): TlsConfig = {
+      val __obj = js.Dynamic.literal()
+      ServerNameToVerify.foreach(__v => __obj.updateDynamic("ServerNameToVerify")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TlsConfig]
+    }
+  }
+
+  /**
+    * The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.
+    */
+  @js.native
+  trait TlsConfigInput extends js.Object {
+    var ServerNameToVerify: js.UndefOr[StringWithLengthBetween1And512]
+  }
+
+  object TlsConfigInput {
+    @inline
+    def apply(
+        ServerNameToVerify: js.UndefOr[StringWithLengthBetween1And512] = js.undefined
+    ): TlsConfigInput = {
+      val __obj = js.Dynamic.literal()
+      ServerNameToVerify.foreach(__v => __obj.updateDynamic("ServerNameToVerify")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TlsConfigInput]
     }
   }
 
@@ -4134,7 +4501,8 @@ package apigatewayv2 {
     var RequestParameters: js.UndefOr[IntegrationParameters]
     var RequestTemplates: js.UndefOr[TemplateMap]
     var TemplateSelectionExpression: js.UndefOr[SelectionExpression]
-    var TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000]
+    var TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And30000]
+    var TlsConfig: js.UndefOr[TlsConfigInput]
   }
 
   object UpdateIntegrationRequest {
@@ -4155,7 +4523,8 @@ package apigatewayv2 {
         RequestParameters: js.UndefOr[IntegrationParameters] = js.undefined,
         RequestTemplates: js.UndefOr[TemplateMap] = js.undefined,
         TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-        TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000] = js.undefined
+        TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And30000] = js.undefined,
+        TlsConfig: js.UndefOr[TlsConfigInput] = js.undefined
     ): UpdateIntegrationRequest = {
       val __obj = js.Dynamic.literal(
         "ApiId"         -> ApiId.asInstanceOf[js.Any],
@@ -4178,6 +4547,7 @@ package apigatewayv2 {
         __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
       )
       TimeoutInMillis.foreach(__v => __obj.updateDynamic("TimeoutInMillis")(__v.asInstanceOf[js.Any]))
+      TlsConfig.foreach(__v => __obj.updateDynamic("TlsConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateIntegrationRequest]
     }
   }
@@ -4277,7 +4647,8 @@ package apigatewayv2 {
     var RequestParameters: js.UndefOr[IntegrationParameters]
     var RequestTemplates: js.UndefOr[TemplateMap]
     var TemplateSelectionExpression: js.UndefOr[SelectionExpression]
-    var TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000]
+    var TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And30000]
+    var TlsConfig: js.UndefOr[TlsConfig]
   }
 
   object UpdateIntegrationResult {
@@ -4299,7 +4670,8 @@ package apigatewayv2 {
         RequestParameters: js.UndefOr[IntegrationParameters] = js.undefined,
         RequestTemplates: js.UndefOr[TemplateMap] = js.undefined,
         TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-        TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000] = js.undefined
+        TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And30000] = js.undefined,
+        TlsConfig: js.UndefOr[TlsConfig] = js.undefined
     ): UpdateIntegrationResult = {
       val __obj = js.Dynamic.literal()
       ApiGatewayManaged.foreach(__v => __obj.updateDynamic("ApiGatewayManaged")(__v.asInstanceOf[js.Any]))
@@ -4323,6 +4695,7 @@ package apigatewayv2 {
         __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
       )
       TimeoutInMillis.foreach(__v => __obj.updateDynamic("TimeoutInMillis")(__v.asInstanceOf[js.Any]))
+      TlsConfig.foreach(__v => __obj.updateDynamic("TlsConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateIntegrationResult]
     }
   }
@@ -4674,5 +5047,140 @@ package apigatewayv2 {
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateStageResponse]
     }
+  }
+
+  /**
+    * Updates a VPC link.
+    */
+  @js.native
+  trait UpdateVpcLinkRequest extends js.Object {
+    var VpcLinkId: __string
+    var Name: js.UndefOr[StringWithLengthBetween1And128]
+  }
+
+  object UpdateVpcLinkRequest {
+    @inline
+    def apply(
+        VpcLinkId: __string,
+        Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined
+    ): UpdateVpcLinkRequest = {
+      val __obj = js.Dynamic.literal(
+        "VpcLinkId" -> VpcLinkId.asInstanceOf[js.Any]
+      )
+
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateVpcLinkRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateVpcLinkResponse extends js.Object {
+    var CreatedDate: js.UndefOr[__timestampIso8601]
+    var Name: js.UndefOr[StringWithLengthBetween1And128]
+    var SecurityGroupIds: js.UndefOr[SecurityGroupIdList]
+    var SubnetIds: js.UndefOr[SubnetIdList]
+    var Tags: js.UndefOr[Tags]
+    var VpcLinkId: js.UndefOr[Id]
+    var VpcLinkStatus: js.UndefOr[VpcLinkStatus]
+    var VpcLinkStatusMessage: js.UndefOr[StringWithLengthBetween0And1024]
+    var VpcLinkVersion: js.UndefOr[VpcLinkVersion]
+  }
+
+  object UpdateVpcLinkResponse {
+    @inline
+    def apply(
+        CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
+        Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
+        SecurityGroupIds: js.UndefOr[SecurityGroupIdList] = js.undefined,
+        SubnetIds: js.UndefOr[SubnetIdList] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        VpcLinkId: js.UndefOr[Id] = js.undefined,
+        VpcLinkStatus: js.UndefOr[VpcLinkStatus] = js.undefined,
+        VpcLinkStatusMessage: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        VpcLinkVersion: js.UndefOr[VpcLinkVersion] = js.undefined
+    ): UpdateVpcLinkResponse = {
+      val __obj = js.Dynamic.literal()
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      VpcLinkId.foreach(__v => __obj.updateDynamic("VpcLinkId")(__v.asInstanceOf[js.Any]))
+      VpcLinkStatus.foreach(__v => __obj.updateDynamic("VpcLinkStatus")(__v.asInstanceOf[js.Any]))
+      VpcLinkStatusMessage.foreach(__v => __obj.updateDynamic("VpcLinkStatusMessage")(__v.asInstanceOf[js.Any]))
+      VpcLinkVersion.foreach(__v => __obj.updateDynamic("VpcLinkVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateVpcLinkResponse]
+    }
+  }
+
+  /**
+    * Represents a VPC link.
+    */
+  @js.native
+  trait VpcLink extends js.Object {
+    var Name: StringWithLengthBetween1And128
+    var SecurityGroupIds: SecurityGroupIdList
+    var SubnetIds: SubnetIdList
+    var VpcLinkId: Id
+    var CreatedDate: js.UndefOr[__timestampIso8601]
+    var Tags: js.UndefOr[Tags]
+    var VpcLinkStatus: js.UndefOr[VpcLinkStatus]
+    var VpcLinkStatusMessage: js.UndefOr[StringWithLengthBetween0And1024]
+    var VpcLinkVersion: js.UndefOr[VpcLinkVersion]
+  }
+
+  object VpcLink {
+    @inline
+    def apply(
+        Name: StringWithLengthBetween1And128,
+        SecurityGroupIds: SecurityGroupIdList,
+        SubnetIds: SubnetIdList,
+        VpcLinkId: Id,
+        CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        VpcLinkStatus: js.UndefOr[VpcLinkStatus] = js.undefined,
+        VpcLinkStatusMessage: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        VpcLinkVersion: js.UndefOr[VpcLinkVersion] = js.undefined
+    ): VpcLink = {
+      val __obj = js.Dynamic.literal(
+        "Name"             -> Name.asInstanceOf[js.Any],
+        "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any],
+        "SubnetIds"        -> SubnetIds.asInstanceOf[js.Any],
+        "VpcLinkId"        -> VpcLinkId.asInstanceOf[js.Any]
+      )
+
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      VpcLinkStatus.foreach(__v => __obj.updateDynamic("VpcLinkStatus")(__v.asInstanceOf[js.Any]))
+      VpcLinkStatusMessage.foreach(__v => __obj.updateDynamic("VpcLinkStatusMessage")(__v.asInstanceOf[js.Any]))
+      VpcLinkVersion.foreach(__v => __obj.updateDynamic("VpcLinkVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VpcLink]
+    }
+  }
+
+  /**
+    * The status of the VPC link.
+    */
+  @js.native
+  sealed trait VpcLinkStatus extends js.Any
+  object VpcLinkStatus extends js.Object {
+    val PENDING   = "PENDING".asInstanceOf[VpcLinkStatus]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[VpcLinkStatus]
+    val DELETING  = "DELETING".asInstanceOf[VpcLinkStatus]
+    val FAILED    = "FAILED".asInstanceOf[VpcLinkStatus]
+    val INACTIVE  = "INACTIVE".asInstanceOf[VpcLinkStatus]
+
+    val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, FAILED, INACTIVE))
+  }
+
+  /**
+    * The version of the VPC link.
+    */
+  @js.native
+  sealed trait VpcLinkVersion extends js.Any
+  object VpcLinkVersion extends js.Object {
+    val V2 = "V2".asInstanceOf[VpcLinkVersion]
+
+    val values = js.Object.freeze(js.Array(V2))
   }
 }

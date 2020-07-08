@@ -22,6 +22,7 @@ package object ram {
   type ResourceShareInvitationList    = js.Array[ResourceShareInvitation]
   type ResourceShareList              = js.Array[ResourceShare]
   type ResourceSharePermissionList    = js.Array[ResourceSharePermissionSummary]
+  type ServiceNameAndResourceTypeList = js.Array[ServiceNameAndResourceType]
   type TagFilters                     = js.Array[TagFilter]
   type TagKey                         = String
   type TagKeyList                     = js.Array[TagKey]
@@ -79,6 +80,8 @@ package object ram {
     @inline def listResourceSharePermissionsFuture(
         params: ListResourceSharePermissionsRequest
     ): Future[ListResourceSharePermissionsResponse] = service.listResourceSharePermissions(params).promise().toFuture
+    @inline def listResourceTypesFuture(params: ListResourceTypesRequest): Future[ListResourceTypesResponse] =
+      service.listResourceTypes(params).promise().toFuture
     @inline def listResourcesFuture(params: ListResourcesRequest): Future[ListResourcesResponse] =
       service.listResources(params).promise().toFuture
     @inline def promoteResourceShareCreatedFromPolicyFuture(
@@ -138,8 +141,9 @@ package ram {
     def listPrincipals(params: ListPrincipalsRequest): Request[ListPrincipalsResponse]    = js.native
     def listResourceSharePermissions(
         params: ListResourceSharePermissionsRequest
-    ): Request[ListResourceSharePermissionsResponse]                                = js.native
-    def listResources(params: ListResourcesRequest): Request[ListResourcesResponse] = js.native
+    ): Request[ListResourceSharePermissionsResponse]                                            = js.native
+    def listResourceTypes(params: ListResourceTypesRequest): Request[ListResourceTypesResponse] = js.native
+    def listResources(params: ListResourcesRequest): Request[ListResourcesResponse]             = js.native
     def promoteResourceShareCreatedFromPolicy(
         params: PromoteResourceShareCreatedFromPolicyRequest
     ): Request[PromoteResourceShareCreatedFromPolicyResponse] = js.native
@@ -924,6 +928,44 @@ package ram {
   }
 
   @js.native
+  trait ListResourceTypesRequest extends js.Object {
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object ListResourceTypesRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): ListResourceTypesRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListResourceTypesRequest]
+    }
+  }
+
+  @js.native
+  trait ListResourceTypesResponse extends js.Object {
+    var nextToken: js.UndefOr[String]
+    var resourceTypes: js.UndefOr[ServiceNameAndResourceTypeList]
+  }
+
+  object ListResourceTypesResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[String] = js.undefined,
+        resourceTypes: js.UndefOr[ServiceNameAndResourceTypeList] = js.undefined
+    ): ListResourceTypesResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      resourceTypes.foreach(__v => __obj.updateDynamic("resourceTypes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListResourceTypesResponse]
+    }
+  }
+
+  @js.native
   trait ListResourcesRequest extends js.Object {
     var resourceOwner: ResourceOwner
     var maxResults: js.UndefOr[MaxResults]
@@ -1410,6 +1452,28 @@ package ram {
 
     val values =
       js.Object.freeze(js.Array(AVAILABLE, ZONAL_RESOURCE_INACCESSIBLE, LIMIT_EXCEEDED, UNAVAILABLE, PENDING))
+  }
+
+  /**
+    * Information about the shareable resource types and the AWS services to which they belong.
+    */
+  @js.native
+  trait ServiceNameAndResourceType extends js.Object {
+    var resourceType: js.UndefOr[String]
+    var serviceName: js.UndefOr[String]
+  }
+
+  object ServiceNameAndResourceType {
+    @inline
+    def apply(
+        resourceType: js.UndefOr[String] = js.undefined,
+        serviceName: js.UndefOr[String] = js.undefined
+    ): ServiceNameAndResourceType = {
+      val __obj = js.Dynamic.literal()
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      serviceName.foreach(__v => __obj.updateDynamic("serviceName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ServiceNameAndResourceType]
+    }
   }
 
   /**
