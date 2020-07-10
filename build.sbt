@@ -272,7 +272,7 @@ lazy val all = (project in file("all"))
       Dependencies.shared.scalatestHelper.value
     ),
     npmDependencies in Test ++= Seq(
-      "aws-sdk" -> "2.596.0"
+      "aws-sdk" -> "2.713.0"
     )
   )
   .enablePlugins(ScalaJSPlugin, ScalaJSBundlerPlugin)
