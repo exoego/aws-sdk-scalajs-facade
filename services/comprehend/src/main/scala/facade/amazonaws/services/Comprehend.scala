@@ -15,6 +15,8 @@ package object comprehend {
   type ComprehendEndpointArn = String
   type ComprehendEndpointName = String
   type ComprehendModelArn = String
+  type CustomerInputString = String
+  type CustomerInputStringList = js.Array[CustomerInputString]
   type DocumentClassificationJobPropertiesList = js.Array[DocumentClassificationJobProperties]
   type DocumentClassifierArn = String
   type DocumentClassifierEndpointArn = String
@@ -23,6 +25,7 @@ package object comprehend {
   type EndpointPropertiesList = js.Array[EndpointProperties]
   type EntitiesDetectionJobPropertiesList = js.Array[EntitiesDetectionJobProperties]
   type EntityRecognizerArn = String
+  type EntityRecognizerEndpointArn = String
   type EntityRecognizerMetadataEntityTypesList = js.Array[EntityRecognizerMetadataEntityTypesListItem]
   type EntityRecognizerPropertiesList = js.Array[EntityRecognizerProperties]
   type EntityTypeName = String
@@ -51,7 +54,6 @@ package object comprehend {
   type SecurityGroupId = String
   type SecurityGroupIds = js.Array[SecurityGroupId]
   type SentimentDetectionJobPropertiesList = js.Array[SentimentDetectionJobProperties]
-  type StringList = js.Array[String]
   type SubnetId = String
   type Subnets = js.Array[SubnetId]
   type TagKey = String
@@ -351,13 +353,13 @@ package comprehend {
 
   @js.native
   trait BatchDetectDominantLanguageRequest extends js.Object {
-    var TextList: StringList
+    var TextList: CustomerInputStringList
   }
 
   object BatchDetectDominantLanguageRequest {
     @inline
     def apply(
-        TextList: StringList
+        TextList: CustomerInputStringList
     ): BatchDetectDominantLanguageRequest = {
       val __obj = js.Dynamic.literal(
         "TextList" -> TextList.asInstanceOf[js.Any]
@@ -413,14 +415,14 @@ package comprehend {
   @js.native
   trait BatchDetectEntitiesRequest extends js.Object {
     var LanguageCode: LanguageCode
-    var TextList: StringList
+    var TextList: CustomerInputStringList
   }
 
   object BatchDetectEntitiesRequest {
     @inline
     def apply(
         LanguageCode: LanguageCode,
-        TextList: StringList
+        TextList: CustomerInputStringList
     ): BatchDetectEntitiesRequest = {
       val __obj = js.Dynamic.literal(
         "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
@@ -477,14 +479,14 @@ package comprehend {
   @js.native
   trait BatchDetectKeyPhrasesRequest extends js.Object {
     var LanguageCode: LanguageCode
-    var TextList: StringList
+    var TextList: CustomerInputStringList
   }
 
   object BatchDetectKeyPhrasesRequest {
     @inline
     def apply(
         LanguageCode: LanguageCode,
-        TextList: StringList
+        TextList: CustomerInputStringList
     ): BatchDetectKeyPhrasesRequest = {
       val __obj = js.Dynamic.literal(
         "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
@@ -544,14 +546,14 @@ package comprehend {
   @js.native
   trait BatchDetectSentimentRequest extends js.Object {
     var LanguageCode: LanguageCode
-    var TextList: StringList
+    var TextList: CustomerInputStringList
   }
 
   object BatchDetectSentimentRequest {
     @inline
     def apply(
         LanguageCode: LanguageCode,
-        TextList: StringList
+        TextList: CustomerInputStringList
     ): BatchDetectSentimentRequest = {
       val __obj = js.Dynamic.literal(
         "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
@@ -608,14 +610,14 @@ package comprehend {
   @js.native
   trait BatchDetectSyntaxRequest extends js.Object {
     var LanguageCode: SyntaxLanguageCode
-    var TextList: StringList
+    var TextList: CustomerInputStringList
   }
 
   object BatchDetectSyntaxRequest {
     @inline
     def apply(
         LanguageCode: SyntaxLanguageCode,
-        TextList: StringList
+        TextList: CustomerInputStringList
     ): BatchDetectSyntaxRequest = {
       val __obj = js.Dynamic.literal(
         "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
@@ -743,14 +745,14 @@ package comprehend {
   @js.native
   trait ClassifyDocumentRequest extends js.Object {
     var EndpointArn: DocumentClassifierEndpointArn
-    var Text: String
+    var Text: CustomerInputString
   }
 
   object ClassifyDocumentRequest {
     @inline
     def apply(
         EndpointArn: DocumentClassifierEndpointArn,
-        Text: String
+        Text: CustomerInputString
     ): ClassifyDocumentRequest = {
       val __obj = js.Dynamic.literal(
         "EndpointArn" -> EndpointArn.asInstanceOf[js.Any],
@@ -1359,13 +1361,13 @@ package comprehend {
 
   @js.native
   trait DetectDominantLanguageRequest extends js.Object {
-    var Text: String
+    var Text: CustomerInputString
   }
 
   object DetectDominantLanguageRequest {
     @inline
     def apply(
-        Text: String
+        Text: CustomerInputString
     ): DetectDominantLanguageRequest = {
       val __obj = js.Dynamic.literal(
         "Text" -> Text.asInstanceOf[js.Any]
@@ -1393,21 +1395,24 @@ package comprehend {
 
   @js.native
   trait DetectEntitiesRequest extends js.Object {
-    var LanguageCode: LanguageCode
-    var Text: String
+    var Text: CustomerInputString
+    var EndpointArn: js.UndefOr[EntityRecognizerEndpointArn]
+    var LanguageCode: js.UndefOr[LanguageCode]
   }
 
   object DetectEntitiesRequest {
     @inline
     def apply(
-        LanguageCode: LanguageCode,
-        Text: String
+        Text: CustomerInputString,
+        EndpointArn: js.UndefOr[EntityRecognizerEndpointArn] = js.undefined,
+        LanguageCode: js.UndefOr[LanguageCode] = js.undefined
     ): DetectEntitiesRequest = {
       val __obj = js.Dynamic.literal(
-        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
         "Text" -> Text.asInstanceOf[js.Any]
       )
 
+      EndpointArn.foreach(__v => __obj.updateDynamic("EndpointArn")(__v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectEntitiesRequest]
     }
   }
@@ -1431,14 +1436,14 @@ package comprehend {
   @js.native
   trait DetectKeyPhrasesRequest extends js.Object {
     var LanguageCode: LanguageCode
-    var Text: String
+    var Text: CustomerInputString
   }
 
   object DetectKeyPhrasesRequest {
     @inline
     def apply(
         LanguageCode: LanguageCode,
-        Text: String
+        Text: CustomerInputString
     ): DetectKeyPhrasesRequest = {
       val __obj = js.Dynamic.literal(
         "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
@@ -1468,14 +1473,14 @@ package comprehend {
   @js.native
   trait DetectSentimentRequest extends js.Object {
     var LanguageCode: LanguageCode
-    var Text: String
+    var Text: CustomerInputString
   }
 
   object DetectSentimentRequest {
     @inline
     def apply(
         LanguageCode: LanguageCode,
-        Text: String
+        Text: CustomerInputString
     ): DetectSentimentRequest = {
       val __obj = js.Dynamic.literal(
         "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
@@ -1508,14 +1513,14 @@ package comprehend {
   @js.native
   trait DetectSyntaxRequest extends js.Object {
     var LanguageCode: SyntaxLanguageCode
-    var Text: String
+    var Text: CustomerInputString
   }
 
   object DetectSyntaxRequest {
     @inline
     def apply(
         LanguageCode: SyntaxLanguageCode,
-        Text: String
+        Text: CustomerInputString
     ): DetectSyntaxRequest = {
       val __obj = js.Dynamic.literal(
         "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],

@@ -31077,6 +31077,7 @@ package ec2 {
     var LaunchGroup: js.UndefOr[String]
     var LaunchSpecification: js.UndefOr[RequestSpotLaunchSpecification]
     var SpotPrice: js.UndefOr[String]
+    var TagSpecifications: js.UndefOr[TagSpecificationList]
     var Type: js.UndefOr[SpotInstanceType]
     var ValidFrom: js.UndefOr[DateTime]
     var ValidUntil: js.UndefOr[DateTime]
@@ -31094,6 +31095,7 @@ package ec2 {
         LaunchGroup: js.UndefOr[String] = js.undefined,
         LaunchSpecification: js.UndefOr[RequestSpotLaunchSpecification] = js.undefined,
         SpotPrice: js.UndefOr[String] = js.undefined,
+        TagSpecifications: js.UndefOr[TagSpecificationList] = js.undefined,
         Type: js.UndefOr[SpotInstanceType] = js.undefined,
         ValidFrom: js.UndefOr[DateTime] = js.undefined,
         ValidUntil: js.UndefOr[DateTime] = js.undefined
@@ -31110,6 +31112,7 @@ package ec2 {
       LaunchGroup.foreach(__v => __obj.updateDynamic("LaunchGroup")(__v.asInstanceOf[js.Any]))
       LaunchSpecification.foreach(__v => __obj.updateDynamic("LaunchSpecification")(__v.asInstanceOf[js.Any]))
       SpotPrice.foreach(__v => __obj.updateDynamic("SpotPrice")(__v.asInstanceOf[js.Any]))
+      TagSpecifications.foreach(__v => __obj.updateDynamic("TagSpecifications")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       ValidFrom.foreach(__v => __obj.updateDynamic("ValidFrom")(__v.asInstanceOf[js.Any]))
       ValidUntil.foreach(__v => __obj.updateDynamic("ValidUntil")(__v.asInstanceOf[js.Any]))

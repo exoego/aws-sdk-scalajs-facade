@@ -1214,8 +1214,9 @@ package organizations {
   object EffectivePolicyType extends js.Object {
     val TAG_POLICY = "TAG_POLICY".asInstanceOf[EffectivePolicyType]
     val BACKUP_POLICY = "BACKUP_POLICY".asInstanceOf[EffectivePolicyType]
+    val AISERVICES_OPT_OUT_POLICY = "AISERVICES_OPT_OUT_POLICY".asInstanceOf[EffectivePolicyType]
 
-    val values = js.Object.freeze(js.Array(TAG_POLICY, BACKUP_POLICY))
+    val values = js.Object.freeze(js.Array(TAG_POLICY, BACKUP_POLICY, AISERVICES_OPT_OUT_POLICY))
   }
 
   @js.native
@@ -2415,8 +2416,10 @@ package organizations {
     val SERVICE_CONTROL_POLICY = "SERVICE_CONTROL_POLICY".asInstanceOf[PolicyType]
     val TAG_POLICY = "TAG_POLICY".asInstanceOf[PolicyType]
     val BACKUP_POLICY = "BACKUP_POLICY".asInstanceOf[PolicyType]
+    val AISERVICES_OPT_OUT_POLICY = "AISERVICES_OPT_OUT_POLICY".asInstanceOf[PolicyType]
 
-    val values = js.Object.freeze(js.Array(SERVICE_CONTROL_POLICY, TAG_POLICY, BACKUP_POLICY))
+    val values =
+      js.Object.freeze(js.Array(SERVICE_CONTROL_POLICY, TAG_POLICY, BACKUP_POLICY, AISERVICES_OPT_OUT_POLICY))
   }
 
   @js.native

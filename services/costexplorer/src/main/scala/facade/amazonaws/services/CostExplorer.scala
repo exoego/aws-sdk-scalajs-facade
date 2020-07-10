@@ -524,6 +524,7 @@ package costexplorer {
   @js.native
   trait CurrentInstance extends js.Object {
     var CurrencyCode: js.UndefOr[GenericString]
+    var InstanceName: js.UndefOr[GenericString]
     var MonthlyCost: js.UndefOr[GenericString]
     var OnDemandHoursInLookbackPeriod: js.UndefOr[GenericString]
     var ReservationCoveredHoursInLookbackPeriod: js.UndefOr[GenericString]
@@ -539,6 +540,7 @@ package costexplorer {
     @inline
     def apply(
         CurrencyCode: js.UndefOr[GenericString] = js.undefined,
+        InstanceName: js.UndefOr[GenericString] = js.undefined,
         MonthlyCost: js.UndefOr[GenericString] = js.undefined,
         OnDemandHoursInLookbackPeriod: js.UndefOr[GenericString] = js.undefined,
         ReservationCoveredHoursInLookbackPeriod: js.UndefOr[GenericString] = js.undefined,
@@ -551,6 +553,7 @@ package costexplorer {
     ): CurrentInstance = {
       val __obj = js.Dynamic.literal()
       CurrencyCode.foreach(__v => __obj.updateDynamic("CurrencyCode")(__v.asInstanceOf[js.Any]))
+      InstanceName.foreach(__v => __obj.updateDynamic("InstanceName")(__v.asInstanceOf[js.Any]))
       MonthlyCost.foreach(__v => __obj.updateDynamic("MonthlyCost")(__v.asInstanceOf[js.Any]))
       OnDemandHoursInLookbackPeriod.foreach(__v =>
         __obj.updateDynamic("OnDemandHoursInLookbackPeriod")(__v.asInstanceOf[js.Any])
@@ -2572,7 +2575,7 @@ package costexplorer {
   }
 
   /**
-    * Enables you to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings associated with recommendations with consideration of existing Savings Plans or RI benefits, or niether.
+    * Enables you to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither.
     */
   @js.native
   trait RightsizingRecommendationConfiguration extends js.Object {

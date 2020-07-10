@@ -4376,9 +4376,10 @@ package alexaforbusiness {
   trait RegisterAVSDeviceRequest extends js.Object {
     var AmazonId: AmazonId
     var ClientId: ClientId
-    var DeviceSerialNumber: DeviceSerialNumberForAVS
     var ProductId: ProductId
     var UserCode: UserCode
+    var DeviceSerialNumber: js.UndefOr[DeviceSerialNumberForAVS]
+    var RoomArn: js.UndefOr[Arn]
   }
 
   object RegisterAVSDeviceRequest {
@@ -4386,18 +4387,20 @@ package alexaforbusiness {
     def apply(
         AmazonId: AmazonId,
         ClientId: ClientId,
-        DeviceSerialNumber: DeviceSerialNumberForAVS,
         ProductId: ProductId,
-        UserCode: UserCode
+        UserCode: UserCode,
+        DeviceSerialNumber: js.UndefOr[DeviceSerialNumberForAVS] = js.undefined,
+        RoomArn: js.UndefOr[Arn] = js.undefined
     ): RegisterAVSDeviceRequest = {
       val __obj = js.Dynamic.literal(
         "AmazonId" -> AmazonId.asInstanceOf[js.Any],
         "ClientId" -> ClientId.asInstanceOf[js.Any],
-        "DeviceSerialNumber" -> DeviceSerialNumber.asInstanceOf[js.Any],
         "ProductId" -> ProductId.asInstanceOf[js.Any],
         "UserCode" -> UserCode.asInstanceOf[js.Any]
       )
 
+      DeviceSerialNumber.foreach(__v => __obj.updateDynamic("DeviceSerialNumber")(__v.asInstanceOf[js.Any]))
+      RoomArn.foreach(__v => __obj.updateDynamic("RoomArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterAVSDeviceRequest]
     }
   }

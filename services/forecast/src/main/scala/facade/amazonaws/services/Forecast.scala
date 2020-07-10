@@ -41,6 +41,10 @@ package object forecast {
   type SchemaAttributes = js.Array[SchemaAttribute]
   type Status = String
   type SupplementaryFeatures = js.Array[SupplementaryFeature]
+  type TagKey = String
+  type TagKeys = js.Array[TagKey]
+  type TagValue = String
+  type Tags = js.Array[Tag]
   type TestWindowDetails = js.Array[TestWindowSummary]
   type TestWindows = js.Array[WindowSummary]
   type Timestamp = js.Date
@@ -108,6 +112,12 @@ package object forecast {
       service.listForecasts(params).promise().toFuture
     @inline def listPredictorsFuture(params: ListPredictorsRequest): Future[ListPredictorsResponse] =
       service.listPredictors(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+      service.untagResource(params).promise().toFuture
     @inline def updateDatasetGroupFuture(params: UpdateDatasetGroupRequest): Future[UpdateDatasetGroupResponse] =
       service.updateDatasetGroup(params).promise().toFuture
   }
@@ -150,6 +160,9 @@ package forecast {
       js.native
     def listForecasts(params: ListForecastsRequest): Request[ListForecastsResponse] = js.native
     def listPredictors(params: ListPredictorsRequest): Request[ListPredictorsResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateDatasetGroup(params: UpdateDatasetGroupRequest): Request[UpdateDatasetGroupResponse] = js.native
   }
 
@@ -223,6 +236,7 @@ package forecast {
     var DatasetGroupName: Name
     var Domain: Domain
     var DatasetArns: js.UndefOr[ArnList]
+    var Tags: js.UndefOr[Tags]
   }
 
   object CreateDatasetGroupRequest {
@@ -230,7 +244,8 @@ package forecast {
     def apply(
         DatasetGroupName: Name,
         Domain: Domain,
-        DatasetArns: js.UndefOr[ArnList] = js.undefined
+        DatasetArns: js.UndefOr[ArnList] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): CreateDatasetGroupRequest = {
       val __obj = js.Dynamic.literal(
         "DatasetGroupName" -> DatasetGroupName.asInstanceOf[js.Any],
@@ -238,6 +253,7 @@ package forecast {
       )
 
       DatasetArns.foreach(__v => __obj.updateDynamic("DatasetArns")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatasetGroupRequest]
     }
   }
@@ -263,6 +279,7 @@ package forecast {
     var DataSource: DataSource
     var DatasetArn: Arn
     var DatasetImportJobName: Name
+    var Tags: js.UndefOr[Tags]
     var TimestampFormat: js.UndefOr[TimestampFormat]
   }
 
@@ -272,6 +289,7 @@ package forecast {
         DataSource: DataSource,
         DatasetArn: Arn,
         DatasetImportJobName: Name,
+        Tags: js.UndefOr[Tags] = js.undefined,
         TimestampFormat: js.UndefOr[TimestampFormat] = js.undefined
     ): CreateDatasetImportJobRequest = {
       val __obj = js.Dynamic.literal(
@@ -280,6 +298,7 @@ package forecast {
         "DatasetImportJobName" -> DatasetImportJobName.asInstanceOf[js.Any]
       )
 
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TimestampFormat.foreach(__v => __obj.updateDynamic("TimestampFormat")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatasetImportJobRequest]
     }
@@ -309,6 +328,7 @@ package forecast {
     var Schema: Schema
     var DataFrequency: js.UndefOr[Frequency]
     var EncryptionConfig: js.UndefOr[EncryptionConfig]
+    var Tags: js.UndefOr[Tags]
   }
 
   object CreateDatasetRequest {
@@ -319,7 +339,8 @@ package forecast {
         Domain: Domain,
         Schema: Schema,
         DataFrequency: js.UndefOr[Frequency] = js.undefined,
-        EncryptionConfig: js.UndefOr[EncryptionConfig] = js.undefined
+        EncryptionConfig: js.UndefOr[EncryptionConfig] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): CreateDatasetRequest = {
       val __obj = js.Dynamic.literal(
         "DatasetName" -> DatasetName.asInstanceOf[js.Any],
@@ -330,6 +351,7 @@ package forecast {
 
       DataFrequency.foreach(__v => __obj.updateDynamic("DataFrequency")(__v.asInstanceOf[js.Any]))
       EncryptionConfig.foreach(__v => __obj.updateDynamic("EncryptionConfig")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatasetRequest]
     }
   }
@@ -355,6 +377,7 @@ package forecast {
     var Destination: DataDestination
     var ForecastArn: Arn
     var ForecastExportJobName: Name
+    var Tags: js.UndefOr[Tags]
   }
 
   object CreateForecastExportJobRequest {
@@ -362,7 +385,8 @@ package forecast {
     def apply(
         Destination: DataDestination,
         ForecastArn: Arn,
-        ForecastExportJobName: Name
+        ForecastExportJobName: Name,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): CreateForecastExportJobRequest = {
       val __obj = js.Dynamic.literal(
         "Destination" -> Destination.asInstanceOf[js.Any],
@@ -370,6 +394,7 @@ package forecast {
         "ForecastExportJobName" -> ForecastExportJobName.asInstanceOf[js.Any]
       )
 
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateForecastExportJobRequest]
     }
   }
@@ -395,6 +420,7 @@ package forecast {
     var ForecastName: Name
     var PredictorArn: Arn
     var ForecastTypes: js.UndefOr[ForecastTypes]
+    var Tags: js.UndefOr[Tags]
   }
 
   object CreateForecastRequest {
@@ -402,7 +428,8 @@ package forecast {
     def apply(
         ForecastName: Name,
         PredictorArn: Arn,
-        ForecastTypes: js.UndefOr[ForecastTypes] = js.undefined
+        ForecastTypes: js.UndefOr[ForecastTypes] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): CreateForecastRequest = {
       val __obj = js.Dynamic.literal(
         "ForecastName" -> ForecastName.asInstanceOf[js.Any],
@@ -410,6 +437,7 @@ package forecast {
       )
 
       ForecastTypes.foreach(__v => __obj.updateDynamic("ForecastTypes")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateForecastRequest]
     }
   }
@@ -442,6 +470,7 @@ package forecast {
     var HPOConfig: js.UndefOr[HyperParameterTuningJobConfig]
     var PerformAutoML: js.UndefOr[Boolean]
     var PerformHPO: js.UndefOr[Boolean]
+    var Tags: js.UndefOr[Tags]
     var TrainingParameters: js.UndefOr[TrainingParameters]
   }
 
@@ -458,6 +487,7 @@ package forecast {
         HPOConfig: js.UndefOr[HyperParameterTuningJobConfig] = js.undefined,
         PerformAutoML: js.UndefOr[Boolean] = js.undefined,
         PerformHPO: js.UndefOr[Boolean] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
         TrainingParameters: js.UndefOr[TrainingParameters] = js.undefined
     ): CreatePredictorRequest = {
       val __obj = js.Dynamic.literal(
@@ -473,6 +503,7 @@ package forecast {
       HPOConfig.foreach(__v => __obj.updateDynamic("HPOConfig")(__v.asInstanceOf[js.Any]))
       PerformAutoML.foreach(__v => __obj.updateDynamic("PerformAutoML")(__v.asInstanceOf[js.Any]))
       PerformHPO.foreach(__v => __obj.updateDynamic("PerformHPO")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TrainingParameters.foreach(__v => __obj.updateDynamic("TrainingParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePredictorRequest]
     }
@@ -1259,7 +1290,7 @@ package forecast {
 
   /**
     * In a <a>CreatePredictor</a> operation, the specified algorithm trains a model using the specified dataset group. You can optionally tell the operation to modify data fields prior to training a model. These modifications are referred to as <i>featurization</i>.
-    *  You define featurization using the <code>FeaturizationConfig</code> object. You specify an array of transformations, one for each field that you want to featurize. You then include the <code>FeaturizationConfig</code> object in your <code>CreatePredictor</code> request. Amazon Forecast applies the featurization to the <code>TARGET_TIME_SERIES</code> dataset before model training.
+    *  You define featurization using the <code>FeaturizationConfig</code> object. You specify an array of transformations, one for each field that you want to featurize. You then include the <code>FeaturizationConfig</code> object in your <code>CreatePredictor</code> request. Amazon Forecast applies the featurization to the <code>TARGET_TIME_SERIES</code> and <code>RELATED_TIME_SERIES</code> datasets before model training.
     *  You can create multiple featurization configurations. For example, you might call the <code>CreatePredictor</code> operation twice by specifying different featurization configurations.
     */
   @js.native
@@ -1287,11 +1318,11 @@ package forecast {
   }
 
   /**
-    * Provides information about the method that featurizes (transforms) a dataset field. The method is part of the <code>FeaturizationPipeline</code> of the <a>Featurization</a> object. If you don't specify <code>FeaturizationMethodParameters</code>, Amazon Forecast uses default parameters.
+    * Provides information about the method that featurizes (transforms) a dataset field. The method is part of the <code>FeaturizationPipeline</code> of the <a>Featurization</a> object.
     *  The following is an example of how you specify a <code>FeaturizationMethod</code> object.
     *  <code>{</code>
     *  <code>"FeaturizationMethodName": "filling",</code>
-    *  <code>"FeaturizationMethodParameters": {"aggregation": "avg", "backfill": "nan"}</code>
+    *  <code>"FeaturizationMethodParameters": {"aggregation": "sum", "middlefill": "zero", "backfill": "zero"}</code>
     *  <code>}</code>
     */
   @js.native
@@ -1789,6 +1820,40 @@ package forecast {
     }
   }
 
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceArn: Arn
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: Arn
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
   /**
     * Provides metrics that are used to evaluate the performance of a predictor. This object is part of the <a>WindowSummary</a> object.
     */
@@ -2040,6 +2105,20 @@ package forecast {
   /**
     * Describes a supplementary feature of a dataset group. This object is part of the <a>InputDataConfig</a> object.
     *  The only supported feature is a holiday calendar. If you use the calendar, all data in the datasets should belong to the same country as the calendar. For the holiday calendar data, see the [[http://jollyday.sourceforge.net/data.html|Jollyday]] web site.
+    *  India and Korea's holidays are not included in the Jollyday library, but both are supported by Amazon Forecast. Their holidays are:
+    *  ```"IN" - INDIA```
+    * * <code>JANUARY 26 - REPUBLIC DAY</code>
+    *  * <code>AUGUST 15 - INDEPENDENCE DAY</code>
+    *  * <code>OCTOBER 2 GANDHI'S BIRTHDAY</code>
+    * ```"KR" - KOREA```
+    * * <code>JANUARY 1 - NEW YEAR</code>
+    *  * <code>MARCH 1 - INDEPENDENCE MOVEMENT DAY</code>
+    *  * <code>MAY 5 - CHILDREN'S DAY</code>
+    *  * <code>JUNE 6 - MEMORIAL DAY</code>
+    *  * <code>AUGUST 15 - LIBERATION DAY</code>
+    *  * <code>OCTOBER 3 - NATIONAL FOUNDATION DAY</code>
+    *  * <code>OCTOBER 9 - HANGEUL DAY</code>
+    *  * <code>DECEMBER 25 - CHRISTMAS DAY</code>
     */
   @js.native
   trait SupplementaryFeature extends js.Object {
@@ -2059,6 +2138,72 @@ package forecast {
       )
 
       __obj.asInstanceOf[SupplementaryFeature]
+    }
+  }
+
+  /**
+    * The optional metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.
+    *  The following basic restrictions apply to tags:
+    * * Maximum number of tags per resource - 50.
+    *  * For each resource, each tag key must be unique, and each tag key can have only one value.
+    *  * Maximum key length - 128 Unicode characters in UTF-8.
+    *  * Maximum value length - 256 Unicode characters in UTF-8.
+    *  * If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.
+    *  * Tag keys and values are case sensitive.
+    *  * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: TagKey
+    var Value: TagValue
+  }
+
+  object Tag {
+    @inline
+    def apply(
+        Key: TagKey,
+        Value: TagValue
+    ): Tag = {
+      val __obj = js.Dynamic.literal(
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceArn: Arn
+    var Tags: Tags
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: Arn,
+        Tags: Tags
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object {}
+
+  object TagResourceResponse {
+    @inline
+    def apply(
+    ): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
@@ -2087,6 +2232,40 @@ package forecast {
       TestWindowEnd.foreach(__v => __obj.updateDynamic("TestWindowEnd")(__v.asInstanceOf[js.Any]))
       TestWindowStart.foreach(__v => __obj.updateDynamic("TestWindowStart")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TestWindowSummary]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceArn: Arn
+    var TagKeys: TagKeys
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: Arn,
+        TagKeys: TagKeys
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object {}
+
+  object UntagResourceResponse {
+    @inline
+    def apply(
+    ): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 

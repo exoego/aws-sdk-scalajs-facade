@@ -14,11 +14,15 @@ package object secretsmanager {
   type DeletedDateType = js.Date
   type DeletionDateType = js.Date
   type DescriptionType = String
+  type ErrorMessage = String
   type ExcludeCharactersType = String
   type ExcludeLowercaseType = Boolean
   type ExcludeNumbersType = Boolean
   type ExcludePunctuationType = Boolean
   type ExcludeUppercaseType = Boolean
+  type FilterValueStringType = String
+  type FilterValuesStringList = js.Array[FilterValueStringType]
+  type FiltersListType = js.Array[Filter]
   type IncludeSpaceType = Boolean
   type KmsKeyIdType = String
   type LastAccessedDateType = js.Date
@@ -50,6 +54,8 @@ package object secretsmanager {
   type TagKeyType = String
   type TagListType = js.Array[Tag]
   type TagValueType = String
+  type TimestampType = js.Date
+  type ValidationErrorsType = js.Array[ValidationErrorsEntry]
 
   implicit final class SecretsManagerOps(private val service: SecretsManager) extends AnyVal {
 
@@ -90,6 +96,9 @@ package object secretsmanager {
     @inline def updateSecretVersionStageFuture(
         params: UpdateSecretVersionStageRequest
     ): Future[UpdateSecretVersionStageResponse] = service.updateSecretVersionStage(params).promise().toFuture
+    @inline def validateResourcePolicyFuture(
+        params: ValidateResourcePolicyRequest
+    ): Future[ValidateResourcePolicyResponse] = service.validateResourcePolicy(params).promise().toFuture
   }
 }
 
@@ -117,6 +126,8 @@ package secretsmanager {
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateSecret(params: UpdateSecretRequest): Request[UpdateSecretResponse] = js.native
     def updateSecretVersionStage(params: UpdateSecretVersionStageRequest): Request[UpdateSecretVersionStageResponse] =
+      js.native
+    def validateResourcePolicy(params: ValidateResourcePolicyRequest): Request[ValidateResourcePolicyResponse] =
       js.native
   }
 
@@ -324,6 +335,7 @@ package secretsmanager {
   @js.native
   trait DescribeSecretResponse extends js.Object {
     var ARN: js.UndefOr[SecretARNType]
+    var CreatedDate: js.UndefOr[TimestampType]
     var DeletedDate: js.UndefOr[DeletedDateType]
     var Description: js.UndefOr[DescriptionType]
     var KmsKeyId: js.UndefOr[KmsKeyIdType]
@@ -343,6 +355,7 @@ package secretsmanager {
     @inline
     def apply(
         ARN: js.UndefOr[SecretARNType] = js.undefined,
+        CreatedDate: js.UndefOr[TimestampType] = js.undefined,
         DeletedDate: js.UndefOr[DeletedDateType] = js.undefined,
         Description: js.UndefOr[DescriptionType] = js.undefined,
         KmsKeyId: js.UndefOr[KmsKeyIdType] = js.undefined,
@@ -359,6 +372,7 @@ package secretsmanager {
     ): DescribeSecretResponse = {
       val __obj = js.Dynamic.literal()
       ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
       DeletedDate.foreach(__v => __obj.updateDynamic("DeletedDate")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
@@ -374,6 +388,40 @@ package secretsmanager {
       VersionIdsToStages.foreach(__v => __obj.updateDynamic("VersionIdsToStages")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSecretResponse]
     }
+  }
+
+  /**
+    * Allows you to filter your list of secrets.
+    */
+  @js.native
+  trait Filter extends js.Object {
+    var Key: js.UndefOr[FilterNameStringType]
+    var Values: js.UndefOr[FilterValuesStringList]
+  }
+
+  object Filter {
+    @inline
+    def apply(
+        Key: js.UndefOr[FilterNameStringType] = js.undefined,
+        Values: js.UndefOr[FilterValuesStringList] = js.undefined
+    ): Filter = {
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Filter]
+    }
+  }
+
+  @js.native
+  sealed trait FilterNameStringType extends js.Any
+  object FilterNameStringType extends js.Object {
+    val description = "description".asInstanceOf[FilterNameStringType]
+    val name = "name".asInstanceOf[FilterNameStringType]
+    val `tag-key` = "tag-key".asInstanceOf[FilterNameStringType]
+    val `tag-value` = "tag-value".asInstanceOf[FilterNameStringType]
+    val all = "all".asInstanceOf[FilterNameStringType]
+
+    val values = js.Object.freeze(js.Array(description, name, `tag-key`, `tag-value`, all))
   }
 
   @js.native
@@ -581,19 +629,25 @@ package secretsmanager {
 
   @js.native
   trait ListSecretsRequest extends js.Object {
+    var Filters: js.UndefOr[FiltersListType]
     var MaxResults: js.UndefOr[MaxResultsType]
     var NextToken: js.UndefOr[NextTokenType]
+    var SortOrder: js.UndefOr[SortOrderType]
   }
 
   object ListSecretsRequest {
     @inline
     def apply(
+        Filters: js.UndefOr[FiltersListType] = js.undefined,
         MaxResults: js.UndefOr[MaxResultsType] = js.undefined,
-        NextToken: js.UndefOr[NextTokenType] = js.undefined
+        NextToken: js.UndefOr[NextTokenType] = js.undefined,
+        SortOrder: js.UndefOr[SortOrderType] = js.undefined
     ): ListSecretsRequest = {
       val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSecretsRequest]
     }
   }
@@ -621,19 +675,22 @@ package secretsmanager {
   trait PutResourcePolicyRequest extends js.Object {
     var ResourcePolicy: NonEmptyResourcePolicyType
     var SecretId: SecretIdType
+    var BlockPublicPolicy: js.UndefOr[BooleanType]
   }
 
   object PutResourcePolicyRequest {
     @inline
     def apply(
         ResourcePolicy: NonEmptyResourcePolicyType,
-        SecretId: SecretIdType
+        SecretId: SecretIdType,
+        BlockPublicPolicy: js.UndefOr[BooleanType] = js.undefined
     ): PutResourcePolicyRequest = {
       val __obj = js.Dynamic.literal(
         "ResourcePolicy" -> ResourcePolicy.asInstanceOf[js.Any],
         "SecretId" -> SecretId.asInstanceOf[js.Any]
       )
 
+      BlockPublicPolicy.foreach(__v => __obj.updateDynamic("BlockPublicPolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutResourcePolicyRequest]
     }
   }
@@ -823,6 +880,7 @@ package secretsmanager {
   @js.native
   trait SecretListEntry extends js.Object {
     var ARN: js.UndefOr[SecretARNType]
+    var CreatedDate: js.UndefOr[TimestampType]
     var DeletedDate: js.UndefOr[DeletedDateType]
     var Description: js.UndefOr[DescriptionType]
     var KmsKeyId: js.UndefOr[KmsKeyIdType]
@@ -842,6 +900,7 @@ package secretsmanager {
     @inline
     def apply(
         ARN: js.UndefOr[SecretARNType] = js.undefined,
+        CreatedDate: js.UndefOr[TimestampType] = js.undefined,
         DeletedDate: js.UndefOr[DeletedDateType] = js.undefined,
         Description: js.UndefOr[DescriptionType] = js.undefined,
         KmsKeyId: js.UndefOr[KmsKeyIdType] = js.undefined,
@@ -858,6 +917,7 @@ package secretsmanager {
     ): SecretListEntry = {
       val __obj = js.Dynamic.literal()
       ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
       DeletedDate.foreach(__v => __obj.updateDynamic("DeletedDate")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
@@ -901,6 +961,15 @@ package secretsmanager {
       VersionStages.foreach(__v => __obj.updateDynamic("VersionStages")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SecretVersionsListEntry]
     }
+  }
+
+  @js.native
+  sealed trait SortOrderType extends js.Any
+  object SortOrderType extends js.Object {
+    val asc = "asc".asInstanceOf[SortOrderType]
+    val desc = "desc".asInstanceOf[SortOrderType]
+
+    val values = js.Object.freeze(js.Array(asc, desc))
   }
 
   /**
@@ -1065,6 +1134,68 @@ package secretsmanager {
       ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSecretVersionStageResponse]
+    }
+  }
+
+  @js.native
+  trait ValidateResourcePolicyRequest extends js.Object {
+    var ResourcePolicy: NonEmptyResourcePolicyType
+    var SecretId: js.UndefOr[SecretIdType]
+  }
+
+  object ValidateResourcePolicyRequest {
+    @inline
+    def apply(
+        ResourcePolicy: NonEmptyResourcePolicyType,
+        SecretId: js.UndefOr[SecretIdType] = js.undefined
+    ): ValidateResourcePolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourcePolicy" -> ResourcePolicy.asInstanceOf[js.Any]
+      )
+
+      SecretId.foreach(__v => __obj.updateDynamic("SecretId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ValidateResourcePolicyRequest]
+    }
+  }
+
+  @js.native
+  trait ValidateResourcePolicyResponse extends js.Object {
+    var PolicyValidationPassed: js.UndefOr[BooleanType]
+    var ValidationErrors: js.UndefOr[ValidationErrorsType]
+  }
+
+  object ValidateResourcePolicyResponse {
+    @inline
+    def apply(
+        PolicyValidationPassed: js.UndefOr[BooleanType] = js.undefined,
+        ValidationErrors: js.UndefOr[ValidationErrorsType] = js.undefined
+    ): ValidateResourcePolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      PolicyValidationPassed.foreach(__v => __obj.updateDynamic("PolicyValidationPassed")(__v.asInstanceOf[js.Any]))
+      ValidationErrors.foreach(__v => __obj.updateDynamic("ValidationErrors")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ValidateResourcePolicyResponse]
+    }
+  }
+
+  /**
+    * Displays errors that occurred during validation of the resource policy.
+    */
+  @js.native
+  trait ValidationErrorsEntry extends js.Object {
+    var CheckName: js.UndefOr[NameType]
+    var ErrorMessage: js.UndefOr[ErrorMessage]
+  }
+
+  object ValidationErrorsEntry {
+    @inline
+    def apply(
+        CheckName: js.UndefOr[NameType] = js.undefined,
+        ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined
+    ): ValidationErrorsEntry = {
+      val __obj = js.Dynamic.literal()
+      CheckName.foreach(__v => __obj.updateDynamic("CheckName")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ValidationErrorsEntry]
     }
   }
 }
