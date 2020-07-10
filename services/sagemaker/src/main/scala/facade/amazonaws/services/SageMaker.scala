@@ -439,6 +439,8 @@ package object sagemaker {
       service.deleteExperiment(params).promise().toFuture
     @inline def deleteFlowDefinitionFuture(params: DeleteFlowDefinitionRequest): Future[DeleteFlowDefinitionResponse] =
       service.deleteFlowDefinition(params).promise().toFuture
+    @inline def deleteHumanTaskUiFuture(params: DeleteHumanTaskUiRequest): Future[DeleteHumanTaskUiResponse] =
+      service.deleteHumanTaskUi(params).promise().toFuture
     @inline def deleteModelFuture(params: DeleteModelInput): Future[js.Object] =
       service.deleteModel(params).promise().toFuture
     @inline def deleteModelPackageFuture(params: DeleteModelPackageInput): Future[js.Object] =
@@ -716,6 +718,7 @@ package sagemaker {
     def deleteEndpointConfig(params: DeleteEndpointConfigInput): Request[js.Object] = js.native
     def deleteExperiment(params: DeleteExperimentRequest): Request[DeleteExperimentResponse] = js.native
     def deleteFlowDefinition(params: DeleteFlowDefinitionRequest): Request[DeleteFlowDefinitionResponse] = js.native
+    def deleteHumanTaskUi(params: DeleteHumanTaskUiRequest): Request[DeleteHumanTaskUiResponse] = js.native
     def deleteModel(params: DeleteModelInput): Request[js.Object] = js.native
     def deleteModelPackage(params: DeleteModelPackageInput): Request[js.Object] = js.native
     def deleteMonitoringSchedule(params: DeleteMonitoringScheduleRequest): Request[js.Object] = js.native
@@ -1076,7 +1079,7 @@ package sagemaker {
   }
 
   /**
-    * Configures how labels are consolidated across human workers.
+    * Configures how labels are consolidated across human workers and processes output data.
     */
   @js.native
   trait AnnotationConsolidationConfig extends js.Object {
@@ -4151,6 +4154,37 @@ package sagemaker {
   }
 
   @js.native
+  trait DeleteHumanTaskUiRequest extends js.Object {
+    var HumanTaskUiName: HumanTaskUiName
+  }
+
+  object DeleteHumanTaskUiRequest {
+    @inline
+    def apply(
+        HumanTaskUiName: HumanTaskUiName
+    ): DeleteHumanTaskUiRequest = {
+      val __obj = js.Dynamic.literal(
+        "HumanTaskUiName" -> HumanTaskUiName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteHumanTaskUiRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteHumanTaskUiResponse extends js.Object {}
+
+  object DeleteHumanTaskUiResponse {
+    @inline
+    def apply(
+    ): DeleteHumanTaskUiResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeleteHumanTaskUiResponse]
+    }
+  }
+
+  @js.native
   trait DeleteModelInput extends js.Object {
     var ModelName: ModelName
   }
@@ -5113,6 +5147,7 @@ package sagemaker {
     var HumanTaskUiArn: HumanTaskUiArn
     var HumanTaskUiName: HumanTaskUiName
     var UiTemplate: UiTemplateInfo
+    var HumanTaskUiStatus: js.UndefOr[HumanTaskUiStatus]
   }
 
   object DescribeHumanTaskUiResponse {
@@ -5121,7 +5156,8 @@ package sagemaker {
         CreationTime: Timestamp,
         HumanTaskUiArn: HumanTaskUiArn,
         HumanTaskUiName: HumanTaskUiName,
-        UiTemplate: UiTemplateInfo
+        UiTemplate: UiTemplateInfo,
+        HumanTaskUiStatus: js.UndefOr[HumanTaskUiStatus] = js.undefined
     ): DescribeHumanTaskUiResponse = {
       val __obj = js.Dynamic.literal(
         "CreationTime" -> CreationTime.asInstanceOf[js.Any],
@@ -5130,6 +5166,7 @@ package sagemaker {
         "UiTemplate" -> UiTemplate.asInstanceOf[js.Any]
       )
 
+      HumanTaskUiStatus.foreach(__v => __obj.updateDynamic("HumanTaskUiStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeHumanTaskUiResponse]
     }
   }
@@ -7170,6 +7207,15 @@ package sagemaker {
       TaskKeywords.foreach(__v => __obj.updateDynamic("TaskKeywords")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HumanTaskConfig]
     }
+  }
+
+  @js.native
+  sealed trait HumanTaskUiStatus extends js.Any
+  object HumanTaskUiStatus extends js.Object {
+    val Active = "Active".asInstanceOf[HumanTaskUiStatus]
+    val Deleting = "Deleting".asInstanceOf[HumanTaskUiStatus]
+
+    val values = js.Object.freeze(js.Array(Active, Deleting))
   }
 
   /**

@@ -17,6 +17,7 @@ package object appmesh {
   type CertificateAuthorityArns = js.Array[Arn]
   type DurationValue = Double
   type FilePath = String
+  type GatewayRouteList = js.Array[GatewayRouteRef]
   type GrpcRetryPolicyEvents = js.Array[GrpcRetryPolicyEvent]
   type GrpcRouteMetadataList = js.Array[GrpcRouteMetadata]
   type HeaderMatch = String
@@ -28,8 +29,10 @@ package object appmesh {
   type HttpRetryPolicyEvent = String
   type HttpRetryPolicyEvents = js.Array[HttpRetryPolicyEvent]
   type HttpRouteHeaders = js.Array[HttpRouteHeader]
+  type ListGatewayRoutesLimit = Int
   type ListMeshesLimit = Int
   type ListRoutesLimit = Int
+  type ListVirtualGatewaysLimit = Int
   type ListVirtualNodesLimit = Int
   type ListVirtualRoutersLimit = Int
   type ListVirtualServicesLimit = Int
@@ -51,6 +54,12 @@ package object appmesh {
   type TagsLimit = Int
   type TcpRetryPolicyEvents = js.Array[TcpRetryPolicyEvent]
   type Timestamp = js.Date
+  type VirtualGatewayCertificateAuthorityArns = js.Array[Arn]
+  type VirtualGatewayHealthCheckIntervalMillis = Double
+  type VirtualGatewayHealthCheckThreshold = Int
+  type VirtualGatewayHealthCheckTimeoutMillis = Double
+  type VirtualGatewayList = js.Array[VirtualGatewayRef]
+  type VirtualGatewayListeners = js.Array[VirtualGatewayListener]
   type VirtualNodeList = js.Array[VirtualNodeRef]
   type VirtualRouterList = js.Array[VirtualRouterRef]
   type VirtualRouterListeners = js.Array[VirtualRouterListener]
@@ -59,30 +68,43 @@ package object appmesh {
 
   implicit final class AppMeshOps(private val service: AppMesh) extends AnyVal {
 
+    @inline def createGatewayRouteFuture(params: CreateGatewayRouteInput): Future[CreateGatewayRouteOutput] =
+      service.createGatewayRoute(params).promise().toFuture
     @inline def createMeshFuture(params: CreateMeshInput): Future[CreateMeshOutput] =
       service.createMesh(params).promise().toFuture
     @inline def createRouteFuture(params: CreateRouteInput): Future[CreateRouteOutput] =
       service.createRoute(params).promise().toFuture
+    @inline def createVirtualGatewayFuture(params: CreateVirtualGatewayInput): Future[CreateVirtualGatewayOutput] =
+      service.createVirtualGateway(params).promise().toFuture
     @inline def createVirtualNodeFuture(params: CreateVirtualNodeInput): Future[CreateVirtualNodeOutput] =
       service.createVirtualNode(params).promise().toFuture
     @inline def createVirtualRouterFuture(params: CreateVirtualRouterInput): Future[CreateVirtualRouterOutput] =
       service.createVirtualRouter(params).promise().toFuture
     @inline def createVirtualServiceFuture(params: CreateVirtualServiceInput): Future[CreateVirtualServiceOutput] =
       service.createVirtualService(params).promise().toFuture
+    @inline def deleteGatewayRouteFuture(params: DeleteGatewayRouteInput): Future[DeleteGatewayRouteOutput] =
+      service.deleteGatewayRoute(params).promise().toFuture
     @inline def deleteMeshFuture(params: DeleteMeshInput): Future[DeleteMeshOutput] =
       service.deleteMesh(params).promise().toFuture
     @inline def deleteRouteFuture(params: DeleteRouteInput): Future[DeleteRouteOutput] =
       service.deleteRoute(params).promise().toFuture
+    @inline def deleteVirtualGatewayFuture(params: DeleteVirtualGatewayInput): Future[DeleteVirtualGatewayOutput] =
+      service.deleteVirtualGateway(params).promise().toFuture
     @inline def deleteVirtualNodeFuture(params: DeleteVirtualNodeInput): Future[DeleteVirtualNodeOutput] =
       service.deleteVirtualNode(params).promise().toFuture
     @inline def deleteVirtualRouterFuture(params: DeleteVirtualRouterInput): Future[DeleteVirtualRouterOutput] =
       service.deleteVirtualRouter(params).promise().toFuture
     @inline def deleteVirtualServiceFuture(params: DeleteVirtualServiceInput): Future[DeleteVirtualServiceOutput] =
       service.deleteVirtualService(params).promise().toFuture
+    @inline def describeGatewayRouteFuture(params: DescribeGatewayRouteInput): Future[DescribeGatewayRouteOutput] =
+      service.describeGatewayRoute(params).promise().toFuture
     @inline def describeMeshFuture(params: DescribeMeshInput): Future[DescribeMeshOutput] =
       service.describeMesh(params).promise().toFuture
     @inline def describeRouteFuture(params: DescribeRouteInput): Future[DescribeRouteOutput] =
       service.describeRoute(params).promise().toFuture
+    @inline def describeVirtualGatewayFuture(
+        params: DescribeVirtualGatewayInput
+    ): Future[DescribeVirtualGatewayOutput] = service.describeVirtualGateway(params).promise().toFuture
     @inline def describeVirtualNodeFuture(params: DescribeVirtualNodeInput): Future[DescribeVirtualNodeOutput] =
       service.describeVirtualNode(params).promise().toFuture
     @inline def describeVirtualRouterFuture(params: DescribeVirtualRouterInput): Future[DescribeVirtualRouterOutput] =
@@ -90,12 +112,16 @@ package object appmesh {
     @inline def describeVirtualServiceFuture(
         params: DescribeVirtualServiceInput
     ): Future[DescribeVirtualServiceOutput] = service.describeVirtualService(params).promise().toFuture
+    @inline def listGatewayRoutesFuture(params: ListGatewayRoutesInput): Future[ListGatewayRoutesOutput] =
+      service.listGatewayRoutes(params).promise().toFuture
     @inline def listMeshesFuture(params: ListMeshesInput): Future[ListMeshesOutput] =
       service.listMeshes(params).promise().toFuture
     @inline def listRoutesFuture(params: ListRoutesInput): Future[ListRoutesOutput] =
       service.listRoutes(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
       service.listTagsForResource(params).promise().toFuture
+    @inline def listVirtualGatewaysFuture(params: ListVirtualGatewaysInput): Future[ListVirtualGatewaysOutput] =
+      service.listVirtualGateways(params).promise().toFuture
     @inline def listVirtualNodesFuture(params: ListVirtualNodesInput): Future[ListVirtualNodesOutput] =
       service.listVirtualNodes(params).promise().toFuture
     @inline def listVirtualRoutersFuture(params: ListVirtualRoutersInput): Future[ListVirtualRoutersOutput] =
@@ -106,10 +132,14 @@ package object appmesh {
       service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
       service.untagResource(params).promise().toFuture
+    @inline def updateGatewayRouteFuture(params: UpdateGatewayRouteInput): Future[UpdateGatewayRouteOutput] =
+      service.updateGatewayRoute(params).promise().toFuture
     @inline def updateMeshFuture(params: UpdateMeshInput): Future[UpdateMeshOutput] =
       service.updateMesh(params).promise().toFuture
     @inline def updateRouteFuture(params: UpdateRouteInput): Future[UpdateRouteOutput] =
       service.updateRoute(params).promise().toFuture
+    @inline def updateVirtualGatewayFuture(params: UpdateVirtualGatewayInput): Future[UpdateVirtualGatewayOutput] =
+      service.updateVirtualGateway(params).promise().toFuture
     @inline def updateVirtualNodeFuture(params: UpdateVirtualNodeInput): Future[UpdateVirtualNodeOutput] =
       service.updateVirtualNode(params).promise().toFuture
     @inline def updateVirtualRouterFuture(params: UpdateVirtualRouterInput): Future[UpdateVirtualRouterOutput] =
@@ -125,31 +155,41 @@ package appmesh {
   class AppMesh() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def createGatewayRoute(params: CreateGatewayRouteInput): Request[CreateGatewayRouteOutput] = js.native
     def createMesh(params: CreateMeshInput): Request[CreateMeshOutput] = js.native
     def createRoute(params: CreateRouteInput): Request[CreateRouteOutput] = js.native
+    def createVirtualGateway(params: CreateVirtualGatewayInput): Request[CreateVirtualGatewayOutput] = js.native
     def createVirtualNode(params: CreateVirtualNodeInput): Request[CreateVirtualNodeOutput] = js.native
     def createVirtualRouter(params: CreateVirtualRouterInput): Request[CreateVirtualRouterOutput] = js.native
     def createVirtualService(params: CreateVirtualServiceInput): Request[CreateVirtualServiceOutput] = js.native
+    def deleteGatewayRoute(params: DeleteGatewayRouteInput): Request[DeleteGatewayRouteOutput] = js.native
     def deleteMesh(params: DeleteMeshInput): Request[DeleteMeshOutput] = js.native
     def deleteRoute(params: DeleteRouteInput): Request[DeleteRouteOutput] = js.native
+    def deleteVirtualGateway(params: DeleteVirtualGatewayInput): Request[DeleteVirtualGatewayOutput] = js.native
     def deleteVirtualNode(params: DeleteVirtualNodeInput): Request[DeleteVirtualNodeOutput] = js.native
     def deleteVirtualRouter(params: DeleteVirtualRouterInput): Request[DeleteVirtualRouterOutput] = js.native
     def deleteVirtualService(params: DeleteVirtualServiceInput): Request[DeleteVirtualServiceOutput] = js.native
+    def describeGatewayRoute(params: DescribeGatewayRouteInput): Request[DescribeGatewayRouteOutput] = js.native
     def describeMesh(params: DescribeMeshInput): Request[DescribeMeshOutput] = js.native
     def describeRoute(params: DescribeRouteInput): Request[DescribeRouteOutput] = js.native
+    def describeVirtualGateway(params: DescribeVirtualGatewayInput): Request[DescribeVirtualGatewayOutput] = js.native
     def describeVirtualNode(params: DescribeVirtualNodeInput): Request[DescribeVirtualNodeOutput] = js.native
     def describeVirtualRouter(params: DescribeVirtualRouterInput): Request[DescribeVirtualRouterOutput] = js.native
     def describeVirtualService(params: DescribeVirtualServiceInput): Request[DescribeVirtualServiceOutput] = js.native
+    def listGatewayRoutes(params: ListGatewayRoutesInput): Request[ListGatewayRoutesOutput] = js.native
     def listMeshes(params: ListMeshesInput): Request[ListMeshesOutput] = js.native
     def listRoutes(params: ListRoutesInput): Request[ListRoutesOutput] = js.native
     def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput] = js.native
+    def listVirtualGateways(params: ListVirtualGatewaysInput): Request[ListVirtualGatewaysOutput] = js.native
     def listVirtualNodes(params: ListVirtualNodesInput): Request[ListVirtualNodesOutput] = js.native
     def listVirtualRouters(params: ListVirtualRoutersInput): Request[ListVirtualRoutersOutput] = js.native
     def listVirtualServices(params: ListVirtualServicesInput): Request[ListVirtualServicesOutput] = js.native
     def tagResource(params: TagResourceInput): Request[TagResourceOutput] = js.native
     def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
+    def updateGatewayRoute(params: UpdateGatewayRouteInput): Request[UpdateGatewayRouteOutput] = js.native
     def updateMesh(params: UpdateMeshInput): Request[UpdateMeshOutput] = js.native
     def updateRoute(params: UpdateRouteInput): Request[UpdateRouteOutput] = js.native
+    def updateVirtualGateway(params: UpdateVirtualGatewayInput): Request[UpdateVirtualGatewayOutput] = js.native
     def updateVirtualNode(params: UpdateVirtualNodeInput): Request[UpdateVirtualNodeOutput] = js.native
     def updateVirtualRouter(params: UpdateVirtualRouterInput): Request[UpdateVirtualRouterOutput] = js.native
     def updateVirtualService(params: UpdateVirtualServiceInput): Request[UpdateVirtualServiceOutput] = js.native
@@ -312,6 +352,60 @@ package appmesh {
     }
   }
 
+  @js.native
+  trait CreateGatewayRouteInput extends js.Object {
+    var gatewayRouteName: ResourceName
+    var meshName: ResourceName
+    var spec: GatewayRouteSpec
+    var virtualGatewayName: ResourceName
+    var clientToken: js.UndefOr[String]
+    var meshOwner: js.UndefOr[AccountId]
+    var tags: js.UndefOr[TagList]
+  }
+
+  object CreateGatewayRouteInput {
+    @inline
+    def apply(
+        gatewayRouteName: ResourceName,
+        meshName: ResourceName,
+        spec: GatewayRouteSpec,
+        virtualGatewayName: ResourceName,
+        clientToken: js.UndefOr[String] = js.undefined,
+        meshOwner: js.UndefOr[AccountId] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
+    ): CreateGatewayRouteInput = {
+      val __obj = js.Dynamic.literal(
+        "gatewayRouteName" -> gatewayRouteName.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "spec" -> spec.asInstanceOf[js.Any],
+        "virtualGatewayName" -> virtualGatewayName.asInstanceOf[js.Any]
+      )
+
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      meshOwner.foreach(__v => __obj.updateDynamic("meshOwner")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateGatewayRouteInput]
+    }
+  }
+
+  @js.native
+  trait CreateGatewayRouteOutput extends js.Object {
+    var gatewayRoute: GatewayRouteData
+  }
+
+  object CreateGatewayRouteOutput {
+    @inline
+    def apply(
+        gatewayRoute: GatewayRouteData
+    ): CreateGatewayRouteOutput = {
+      val __obj = js.Dynamic.literal(
+        "gatewayRoute" -> gatewayRoute.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateGatewayRouteOutput]
+    }
+  }
+
   /**
     */
   @js.native
@@ -416,6 +510,57 @@ package appmesh {
       )
 
       __obj.asInstanceOf[CreateRouteOutput]
+    }
+  }
+
+  @js.native
+  trait CreateVirtualGatewayInput extends js.Object {
+    var meshName: ResourceName
+    var spec: VirtualGatewaySpec
+    var virtualGatewayName: ResourceName
+    var clientToken: js.UndefOr[String]
+    var meshOwner: js.UndefOr[AccountId]
+    var tags: js.UndefOr[TagList]
+  }
+
+  object CreateVirtualGatewayInput {
+    @inline
+    def apply(
+        meshName: ResourceName,
+        spec: VirtualGatewaySpec,
+        virtualGatewayName: ResourceName,
+        clientToken: js.UndefOr[String] = js.undefined,
+        meshOwner: js.UndefOr[AccountId] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
+    ): CreateVirtualGatewayInput = {
+      val __obj = js.Dynamic.literal(
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "spec" -> spec.asInstanceOf[js.Any],
+        "virtualGatewayName" -> virtualGatewayName.asInstanceOf[js.Any]
+      )
+
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      meshOwner.foreach(__v => __obj.updateDynamic("meshOwner")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateVirtualGatewayInput]
+    }
+  }
+
+  @js.native
+  trait CreateVirtualGatewayOutput extends js.Object {
+    var virtualGateway: VirtualGatewayData
+  }
+
+  object CreateVirtualGatewayOutput {
+    @inline
+    def apply(
+        virtualGateway: VirtualGatewayData
+    ): CreateVirtualGatewayOutput = {
+      val __obj = js.Dynamic.literal(
+        "virtualGateway" -> virtualGateway.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateVirtualGatewayOutput]
     }
   }
 
@@ -584,6 +729,51 @@ package appmesh {
     }
   }
 
+  @js.native
+  trait DeleteGatewayRouteInput extends js.Object {
+    var gatewayRouteName: ResourceName
+    var meshName: ResourceName
+    var virtualGatewayName: ResourceName
+    var meshOwner: js.UndefOr[AccountId]
+  }
+
+  object DeleteGatewayRouteInput {
+    @inline
+    def apply(
+        gatewayRouteName: ResourceName,
+        meshName: ResourceName,
+        virtualGatewayName: ResourceName,
+        meshOwner: js.UndefOr[AccountId] = js.undefined
+    ): DeleteGatewayRouteInput = {
+      val __obj = js.Dynamic.literal(
+        "gatewayRouteName" -> gatewayRouteName.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "virtualGatewayName" -> virtualGatewayName.asInstanceOf[js.Any]
+      )
+
+      meshOwner.foreach(__v => __obj.updateDynamic("meshOwner")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteGatewayRouteInput]
+    }
+  }
+
+  @js.native
+  trait DeleteGatewayRouteOutput extends js.Object {
+    var gatewayRoute: GatewayRouteData
+  }
+
+  object DeleteGatewayRouteOutput {
+    @inline
+    def apply(
+        gatewayRoute: GatewayRouteData
+    ): DeleteGatewayRouteOutput = {
+      val __obj = js.Dynamic.literal(
+        "gatewayRoute" -> gatewayRoute.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteGatewayRouteOutput]
+    }
+  }
+
   /**
     */
   @js.native
@@ -670,6 +860,48 @@ package appmesh {
       )
 
       __obj.asInstanceOf[DeleteRouteOutput]
+    }
+  }
+
+  @js.native
+  trait DeleteVirtualGatewayInput extends js.Object {
+    var meshName: ResourceName
+    var virtualGatewayName: ResourceName
+    var meshOwner: js.UndefOr[AccountId]
+  }
+
+  object DeleteVirtualGatewayInput {
+    @inline
+    def apply(
+        meshName: ResourceName,
+        virtualGatewayName: ResourceName,
+        meshOwner: js.UndefOr[AccountId] = js.undefined
+    ): DeleteVirtualGatewayInput = {
+      val __obj = js.Dynamic.literal(
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "virtualGatewayName" -> virtualGatewayName.asInstanceOf[js.Any]
+      )
+
+      meshOwner.foreach(__v => __obj.updateDynamic("meshOwner")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteVirtualGatewayInput]
+    }
+  }
+
+  @js.native
+  trait DeleteVirtualGatewayOutput extends js.Object {
+    var virtualGateway: VirtualGatewayData
+  }
+
+  object DeleteVirtualGatewayOutput {
+    @inline
+    def apply(
+        virtualGateway: VirtualGatewayData
+    ): DeleteVirtualGatewayOutput = {
+      val __obj = js.Dynamic.literal(
+        "virtualGateway" -> virtualGateway.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteVirtualGatewayOutput]
     }
   }
 
@@ -811,6 +1043,51 @@ package appmesh {
     }
   }
 
+  @js.native
+  trait DescribeGatewayRouteInput extends js.Object {
+    var gatewayRouteName: ResourceName
+    var meshName: ResourceName
+    var virtualGatewayName: ResourceName
+    var meshOwner: js.UndefOr[AccountId]
+  }
+
+  object DescribeGatewayRouteInput {
+    @inline
+    def apply(
+        gatewayRouteName: ResourceName,
+        meshName: ResourceName,
+        virtualGatewayName: ResourceName,
+        meshOwner: js.UndefOr[AccountId] = js.undefined
+    ): DescribeGatewayRouteInput = {
+      val __obj = js.Dynamic.literal(
+        "gatewayRouteName" -> gatewayRouteName.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "virtualGatewayName" -> virtualGatewayName.asInstanceOf[js.Any]
+      )
+
+      meshOwner.foreach(__v => __obj.updateDynamic("meshOwner")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeGatewayRouteInput]
+    }
+  }
+
+  @js.native
+  trait DescribeGatewayRouteOutput extends js.Object {
+    var gatewayRoute: GatewayRouteData
+  }
+
+  object DescribeGatewayRouteOutput {
+    @inline
+    def apply(
+        gatewayRoute: GatewayRouteData
+    ): DescribeGatewayRouteOutput = {
+      val __obj = js.Dynamic.literal(
+        "gatewayRoute" -> gatewayRoute.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeGatewayRouteOutput]
+    }
+  }
+
   /**
     */
   @js.native
@@ -900,6 +1177,48 @@ package appmesh {
       )
 
       __obj.asInstanceOf[DescribeRouteOutput]
+    }
+  }
+
+  @js.native
+  trait DescribeVirtualGatewayInput extends js.Object {
+    var meshName: ResourceName
+    var virtualGatewayName: ResourceName
+    var meshOwner: js.UndefOr[AccountId]
+  }
+
+  object DescribeVirtualGatewayInput {
+    @inline
+    def apply(
+        meshName: ResourceName,
+        virtualGatewayName: ResourceName,
+        meshOwner: js.UndefOr[AccountId] = js.undefined
+    ): DescribeVirtualGatewayInput = {
+      val __obj = js.Dynamic.literal(
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "virtualGatewayName" -> virtualGatewayName.asInstanceOf[js.Any]
+      )
+
+      meshOwner.foreach(__v => __obj.updateDynamic("meshOwner")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeVirtualGatewayInput]
+    }
+  }
+
+  @js.native
+  trait DescribeVirtualGatewayOutput extends js.Object {
+    var virtualGateway: VirtualGatewayData
+  }
+
+  object DescribeVirtualGatewayOutput {
+    @inline
+    def apply(
+        virtualGateway: VirtualGatewayData
+    ): DescribeVirtualGatewayOutput = {
+      val __obj = js.Dynamic.literal(
+        "virtualGateway" -> virtualGateway.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeVirtualGatewayOutput]
     }
   }
 
@@ -1146,6 +1465,250 @@ package appmesh {
   }
 
   /**
+    * An object that represents a gateway route returned by a describe operation.
+    */
+  @js.native
+  trait GatewayRouteData extends js.Object {
+    var gatewayRouteName: ResourceName
+    var meshName: ResourceName
+    var metadata: ResourceMetadata
+    var spec: GatewayRouteSpec
+    var status: GatewayRouteStatus
+    var virtualGatewayName: ResourceName
+  }
+
+  object GatewayRouteData {
+    @inline
+    def apply(
+        gatewayRouteName: ResourceName,
+        meshName: ResourceName,
+        metadata: ResourceMetadata,
+        spec: GatewayRouteSpec,
+        status: GatewayRouteStatus,
+        virtualGatewayName: ResourceName
+    ): GatewayRouteData = {
+      val __obj = js.Dynamic.literal(
+        "gatewayRouteName" -> gatewayRouteName.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "metadata" -> metadata.asInstanceOf[js.Any],
+        "spec" -> spec.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any],
+        "virtualGatewayName" -> virtualGatewayName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GatewayRouteData]
+    }
+  }
+
+  /**
+    * An object that represents a gateway route returned by a list operation.
+    */
+  @js.native
+  trait GatewayRouteRef extends js.Object {
+    var arn: Arn
+    var createdAt: Timestamp
+    var gatewayRouteName: ResourceName
+    var lastUpdatedAt: Timestamp
+    var meshName: ResourceName
+    var meshOwner: AccountId
+    var resourceOwner: AccountId
+    var version: Double
+    var virtualGatewayName: ResourceName
+  }
+
+  object GatewayRouteRef {
+    @inline
+    def apply(
+        arn: Arn,
+        createdAt: Timestamp,
+        gatewayRouteName: ResourceName,
+        lastUpdatedAt: Timestamp,
+        meshName: ResourceName,
+        meshOwner: AccountId,
+        resourceOwner: AccountId,
+        version: Double,
+        virtualGatewayName: ResourceName
+    ): GatewayRouteRef = {
+      val __obj = js.Dynamic.literal(
+        "arn" -> arn.asInstanceOf[js.Any],
+        "createdAt" -> createdAt.asInstanceOf[js.Any],
+        "gatewayRouteName" -> gatewayRouteName.asInstanceOf[js.Any],
+        "lastUpdatedAt" -> lastUpdatedAt.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "meshOwner" -> meshOwner.asInstanceOf[js.Any],
+        "resourceOwner" -> resourceOwner.asInstanceOf[js.Any],
+        "version" -> version.asInstanceOf[js.Any],
+        "virtualGatewayName" -> virtualGatewayName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GatewayRouteRef]
+    }
+  }
+
+  /**
+    * <p>An object that represents a gateway route specification. Specify one gateway route
+    *          type.</p>
+    */
+  @js.native
+  trait GatewayRouteSpec extends js.Object {
+    var grpcRoute: js.UndefOr[GrpcGatewayRoute]
+    var http2Route: js.UndefOr[HttpGatewayRoute]
+    var httpRoute: js.UndefOr[HttpGatewayRoute]
+  }
+
+  object GatewayRouteSpec {
+    @inline
+    def apply(
+        grpcRoute: js.UndefOr[GrpcGatewayRoute] = js.undefined,
+        http2Route: js.UndefOr[HttpGatewayRoute] = js.undefined,
+        httpRoute: js.UndefOr[HttpGatewayRoute] = js.undefined
+    ): GatewayRouteSpec = {
+      val __obj = js.Dynamic.literal()
+      grpcRoute.foreach(__v => __obj.updateDynamic("grpcRoute")(__v.asInstanceOf[js.Any]))
+      http2Route.foreach(__v => __obj.updateDynamic("http2Route")(__v.asInstanceOf[js.Any]))
+      httpRoute.foreach(__v => __obj.updateDynamic("httpRoute")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GatewayRouteSpec]
+    }
+  }
+
+  /**
+    * An object that represents the current status of a gateway route.
+    */
+  @js.native
+  trait GatewayRouteStatus extends js.Object {
+    var status: GatewayRouteStatusCode
+  }
+
+  object GatewayRouteStatus {
+    @inline
+    def apply(
+        status: GatewayRouteStatusCode
+    ): GatewayRouteStatus = {
+      val __obj = js.Dynamic.literal(
+        "status" -> status.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GatewayRouteStatus]
+    }
+  }
+
+  @js.native
+  sealed trait GatewayRouteStatusCode extends js.Any
+  object GatewayRouteStatusCode extends js.Object {
+    val ACTIVE = "ACTIVE".asInstanceOf[GatewayRouteStatusCode]
+    val DELETED = "DELETED".asInstanceOf[GatewayRouteStatusCode]
+    val INACTIVE = "INACTIVE".asInstanceOf[GatewayRouteStatusCode]
+
+    val values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
+  }
+
+  /**
+    * An object that represents a gateway route target.
+    */
+  @js.native
+  trait GatewayRouteTarget extends js.Object {
+    var virtualService: GatewayRouteVirtualService
+  }
+
+  object GatewayRouteTarget {
+    @inline
+    def apply(
+        virtualService: GatewayRouteVirtualService
+    ): GatewayRouteTarget = {
+      val __obj = js.Dynamic.literal(
+        "virtualService" -> virtualService.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GatewayRouteTarget]
+    }
+  }
+
+  /**
+    * An object that represents the virtual service that traffic is routed to.
+    */
+  @js.native
+  trait GatewayRouteVirtualService extends js.Object {
+    var virtualServiceName: ResourceName
+  }
+
+  object GatewayRouteVirtualService {
+    @inline
+    def apply(
+        virtualServiceName: ResourceName
+    ): GatewayRouteVirtualService = {
+      val __obj = js.Dynamic.literal(
+        "virtualServiceName" -> virtualServiceName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GatewayRouteVirtualService]
+    }
+  }
+
+  /**
+    * An object that represents a gRPC gateway route.
+    */
+  @js.native
+  trait GrpcGatewayRoute extends js.Object {
+    var action: GrpcGatewayRouteAction
+    var `match`: GrpcGatewayRouteMatch
+  }
+
+  object GrpcGatewayRoute {
+    @inline
+    def apply(
+        action: GrpcGatewayRouteAction,
+        `match`: GrpcGatewayRouteMatch
+    ): GrpcGatewayRoute = {
+      val __obj = js.Dynamic.literal(
+        "action" -> action.asInstanceOf[js.Any],
+        "match" -> `match`.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GrpcGatewayRoute]
+    }
+  }
+
+  /**
+    * An object that represents the action to take if a match is determined.
+    */
+  @js.native
+  trait GrpcGatewayRouteAction extends js.Object {
+    var target: GatewayRouteTarget
+  }
+
+  object GrpcGatewayRouteAction {
+    @inline
+    def apply(
+        target: GatewayRouteTarget
+    ): GrpcGatewayRouteAction = {
+      val __obj = js.Dynamic.literal(
+        "target" -> target.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GrpcGatewayRouteAction]
+    }
+  }
+
+  /**
+    * An object that represents the criteria for determining a request match.
+    */
+  @js.native
+  trait GrpcGatewayRouteMatch extends js.Object {
+    var serviceName: js.UndefOr[ServiceName]
+  }
+
+  object GrpcGatewayRouteMatch {
+    @inline
+    def apply(
+        serviceName: js.UndefOr[ServiceName] = js.undefined
+    ): GrpcGatewayRouteMatch = {
+      val __obj = js.Dynamic.literal()
+      serviceName.foreach(__v => __obj.updateDynamic("serviceName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GrpcGatewayRouteMatch]
+    }
+  }
+
+  /**
     * An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>.
     */
   @js.native
@@ -1324,6 +1887,9 @@ package appmesh {
     }
   }
 
+  /**
+    * An object that represents types of timeouts.
+    */
   @js.native
   trait GrpcTimeout extends js.Object {
     var idle: js.UndefOr[Duration]
@@ -1411,6 +1977,72 @@ package appmesh {
       path.foreach(__v => __obj.updateDynamic("path")(__v.asInstanceOf[js.Any]))
       port.foreach(__v => __obj.updateDynamic("port")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HealthCheckPolicy]
+    }
+  }
+
+  /**
+    * An object that represents an HTTP gateway route.
+    */
+  @js.native
+  trait HttpGatewayRoute extends js.Object {
+    var action: HttpGatewayRouteAction
+    var `match`: HttpGatewayRouteMatch
+  }
+
+  object HttpGatewayRoute {
+    @inline
+    def apply(
+        action: HttpGatewayRouteAction,
+        `match`: HttpGatewayRouteMatch
+    ): HttpGatewayRoute = {
+      val __obj = js.Dynamic.literal(
+        "action" -> action.asInstanceOf[js.Any],
+        "match" -> `match`.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[HttpGatewayRoute]
+    }
+  }
+
+  /**
+    * An object that represents the action to take if a match is determined.
+    */
+  @js.native
+  trait HttpGatewayRouteAction extends js.Object {
+    var target: GatewayRouteTarget
+  }
+
+  object HttpGatewayRouteAction {
+    @inline
+    def apply(
+        target: GatewayRouteTarget
+    ): HttpGatewayRouteAction = {
+      val __obj = js.Dynamic.literal(
+        "target" -> target.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[HttpGatewayRouteAction]
+    }
+  }
+
+  /**
+    * An object that represents the criteria for determining a request match.
+    */
+  @js.native
+  trait HttpGatewayRouteMatch extends js.Object {
+    var prefix: String
+  }
+
+  object HttpGatewayRouteMatch {
+    @inline
+    def apply(
+        prefix: String
+    ): HttpGatewayRouteMatch = {
+      val __obj = js.Dynamic.literal(
+        "prefix" -> prefix.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[HttpGatewayRouteMatch]
     }
   }
 
@@ -1578,6 +2210,9 @@ package appmesh {
     val values = js.Object.freeze(js.Array(http, https))
   }
 
+  /**
+    * An object that represents types of timeouts.
+    */
   @js.native
   trait HttpTimeout extends js.Object {
     var idle: js.UndefOr[Duration]
@@ -1594,6 +2229,57 @@ package appmesh {
       idle.foreach(__v => __obj.updateDynamic("idle")(__v.asInstanceOf[js.Any]))
       perRequest.foreach(__v => __obj.updateDynamic("perRequest")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HttpTimeout]
+    }
+  }
+
+  @js.native
+  trait ListGatewayRoutesInput extends js.Object {
+    var meshName: ResourceName
+    var virtualGatewayName: ResourceName
+    var limit: js.UndefOr[ListGatewayRoutesLimit]
+    var meshOwner: js.UndefOr[AccountId]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object ListGatewayRoutesInput {
+    @inline
+    def apply(
+        meshName: ResourceName,
+        virtualGatewayName: ResourceName,
+        limit: js.UndefOr[ListGatewayRoutesLimit] = js.undefined,
+        meshOwner: js.UndefOr[AccountId] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): ListGatewayRoutesInput = {
+      val __obj = js.Dynamic.literal(
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "virtualGatewayName" -> virtualGatewayName.asInstanceOf[js.Any]
+      )
+
+      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
+      meshOwner.foreach(__v => __obj.updateDynamic("meshOwner")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListGatewayRoutesInput]
+    }
+  }
+
+  @js.native
+  trait ListGatewayRoutesOutput extends js.Object {
+    var gatewayRoutes: GatewayRouteList
+    var nextToken: js.UndefOr[String]
+  }
+
+  object ListGatewayRoutesOutput {
+    @inline
+    def apply(
+        gatewayRoutes: GatewayRouteList,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): ListGatewayRoutesOutput = {
+      val __obj = js.Dynamic.literal(
+        "gatewayRoutes" -> gatewayRoutes.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListGatewayRoutesOutput]
     }
   }
 
@@ -1742,6 +2428,54 @@ package appmesh {
 
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceOutput]
+    }
+  }
+
+  @js.native
+  trait ListVirtualGatewaysInput extends js.Object {
+    var meshName: ResourceName
+    var limit: js.UndefOr[ListVirtualGatewaysLimit]
+    var meshOwner: js.UndefOr[AccountId]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object ListVirtualGatewaysInput {
+    @inline
+    def apply(
+        meshName: ResourceName,
+        limit: js.UndefOr[ListVirtualGatewaysLimit] = js.undefined,
+        meshOwner: js.UndefOr[AccountId] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): ListVirtualGatewaysInput = {
+      val __obj = js.Dynamic.literal(
+        "meshName" -> meshName.asInstanceOf[js.Any]
+      )
+
+      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
+      meshOwner.foreach(__v => __obj.updateDynamic("meshOwner")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListVirtualGatewaysInput]
+    }
+  }
+
+  @js.native
+  trait ListVirtualGatewaysOutput extends js.Object {
+    var virtualGateways: VirtualGatewayList
+    var nextToken: js.UndefOr[String]
+  }
+
+  object ListVirtualGatewaysOutput {
+    @inline
+    def apply(
+        virtualGateways: VirtualGatewayList,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): ListVirtualGatewaysOutput = {
+      val __obj = js.Dynamic.literal(
+        "virtualGateways" -> virtualGateways.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListVirtualGatewaysOutput]
     }
   }
 
@@ -1931,6 +2665,9 @@ package appmesh {
     }
   }
 
+  /**
+    * An object that represents timeouts for different protocols.
+    */
   @js.native
   trait ListenerTimeout extends js.Object {
     var grpc: js.UndefOr[GrpcTimeout]
@@ -2575,6 +3312,9 @@ package appmesh {
     }
   }
 
+  /**
+    * An object that represents types of timeouts.
+    */
   @js.native
   trait TcpTimeout extends js.Object {
     var idle: js.UndefOr[Duration]
@@ -2715,6 +3455,57 @@ package appmesh {
     }
   }
 
+  @js.native
+  trait UpdateGatewayRouteInput extends js.Object {
+    var gatewayRouteName: ResourceName
+    var meshName: ResourceName
+    var spec: GatewayRouteSpec
+    var virtualGatewayName: ResourceName
+    var clientToken: js.UndefOr[String]
+    var meshOwner: js.UndefOr[AccountId]
+  }
+
+  object UpdateGatewayRouteInput {
+    @inline
+    def apply(
+        gatewayRouteName: ResourceName,
+        meshName: ResourceName,
+        spec: GatewayRouteSpec,
+        virtualGatewayName: ResourceName,
+        clientToken: js.UndefOr[String] = js.undefined,
+        meshOwner: js.UndefOr[AccountId] = js.undefined
+    ): UpdateGatewayRouteInput = {
+      val __obj = js.Dynamic.literal(
+        "gatewayRouteName" -> gatewayRouteName.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "spec" -> spec.asInstanceOf[js.Any],
+        "virtualGatewayName" -> virtualGatewayName.asInstanceOf[js.Any]
+      )
+
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      meshOwner.foreach(__v => __obj.updateDynamic("meshOwner")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateGatewayRouteInput]
+    }
+  }
+
+  @js.native
+  trait UpdateGatewayRouteOutput extends js.Object {
+    var gatewayRoute: GatewayRouteData
+  }
+
+  object UpdateGatewayRouteOutput {
+    @inline
+    def apply(
+        gatewayRoute: GatewayRouteData
+    ): UpdateGatewayRouteOutput = {
+      val __obj = js.Dynamic.literal(
+        "gatewayRoute" -> gatewayRoute.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateGatewayRouteOutput]
+    }
+  }
+
   /**
     */
   @js.native
@@ -2813,6 +3604,54 @@ package appmesh {
       )
 
       __obj.asInstanceOf[UpdateRouteOutput]
+    }
+  }
+
+  @js.native
+  trait UpdateVirtualGatewayInput extends js.Object {
+    var meshName: ResourceName
+    var spec: VirtualGatewaySpec
+    var virtualGatewayName: ResourceName
+    var clientToken: js.UndefOr[String]
+    var meshOwner: js.UndefOr[AccountId]
+  }
+
+  object UpdateVirtualGatewayInput {
+    @inline
+    def apply(
+        meshName: ResourceName,
+        spec: VirtualGatewaySpec,
+        virtualGatewayName: ResourceName,
+        clientToken: js.UndefOr[String] = js.undefined,
+        meshOwner: js.UndefOr[AccountId] = js.undefined
+    ): UpdateVirtualGatewayInput = {
+      val __obj = js.Dynamic.literal(
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "spec" -> spec.asInstanceOf[js.Any],
+        "virtualGatewayName" -> virtualGatewayName.asInstanceOf[js.Any]
+      )
+
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      meshOwner.foreach(__v => __obj.updateDynamic("meshOwner")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateVirtualGatewayInput]
+    }
+  }
+
+  @js.native
+  trait UpdateVirtualGatewayOutput extends js.Object {
+    var virtualGateway: VirtualGatewayData
+  }
+
+  object UpdateVirtualGatewayOutput {
+    @inline
+    def apply(
+        virtualGateway: VirtualGatewayData
+    ): UpdateVirtualGatewayOutput = {
+      val __obj = js.Dynamic.literal(
+        "virtualGateway" -> virtualGateway.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateVirtualGatewayOutput]
     }
   }
 
@@ -2969,6 +3808,552 @@ package appmesh {
       )
 
       __obj.asInstanceOf[UpdateVirtualServiceOutput]
+    }
+  }
+
+  /**
+    * The access log configuration for a virtual gateway.
+    */
+  @js.native
+  trait VirtualGatewayAccessLog extends js.Object {
+    var file: js.UndefOr[VirtualGatewayFileAccessLog]
+  }
+
+  object VirtualGatewayAccessLog {
+    @inline
+    def apply(
+        file: js.UndefOr[VirtualGatewayFileAccessLog] = js.undefined
+    ): VirtualGatewayAccessLog = {
+      val __obj = js.Dynamic.literal()
+      file.foreach(__v => __obj.updateDynamic("file")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VirtualGatewayAccessLog]
+    }
+  }
+
+  /**
+    * An object that represents the default properties for a backend.
+    */
+  @js.native
+  trait VirtualGatewayBackendDefaults extends js.Object {
+    var clientPolicy: js.UndefOr[VirtualGatewayClientPolicy]
+  }
+
+  object VirtualGatewayBackendDefaults {
+    @inline
+    def apply(
+        clientPolicy: js.UndefOr[VirtualGatewayClientPolicy] = js.undefined
+    ): VirtualGatewayBackendDefaults = {
+      val __obj = js.Dynamic.literal()
+      clientPolicy.foreach(__v => __obj.updateDynamic("clientPolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VirtualGatewayBackendDefaults]
+    }
+  }
+
+  /**
+    * An object that represents a client policy.
+    */
+  @js.native
+  trait VirtualGatewayClientPolicy extends js.Object {
+    var tls: js.UndefOr[VirtualGatewayClientPolicyTls]
+  }
+
+  object VirtualGatewayClientPolicy {
+    @inline
+    def apply(
+        tls: js.UndefOr[VirtualGatewayClientPolicyTls] = js.undefined
+    ): VirtualGatewayClientPolicy = {
+      val __obj = js.Dynamic.literal()
+      tls.foreach(__v => __obj.updateDynamic("tls")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VirtualGatewayClientPolicy]
+    }
+  }
+
+  /**
+    * An object that represents a Transport Layer Security (TLS) client policy.
+    */
+  @js.native
+  trait VirtualGatewayClientPolicyTls extends js.Object {
+    var validation: VirtualGatewayTlsValidationContext
+    var enforce: js.UndefOr[Boolean]
+    var ports: js.UndefOr[PortSet]
+  }
+
+  object VirtualGatewayClientPolicyTls {
+    @inline
+    def apply(
+        validation: VirtualGatewayTlsValidationContext,
+        enforce: js.UndefOr[Boolean] = js.undefined,
+        ports: js.UndefOr[PortSet] = js.undefined
+    ): VirtualGatewayClientPolicyTls = {
+      val __obj = js.Dynamic.literal(
+        "validation" -> validation.asInstanceOf[js.Any]
+      )
+
+      enforce.foreach(__v => __obj.updateDynamic("enforce")(__v.asInstanceOf[js.Any]))
+      ports.foreach(__v => __obj.updateDynamic("ports")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VirtualGatewayClientPolicyTls]
+    }
+  }
+
+  /**
+    * An object that represents a virtual gateway returned by a describe operation.
+    */
+  @js.native
+  trait VirtualGatewayData extends js.Object {
+    var meshName: ResourceName
+    var metadata: ResourceMetadata
+    var spec: VirtualGatewaySpec
+    var status: VirtualGatewayStatus
+    var virtualGatewayName: ResourceName
+  }
+
+  object VirtualGatewayData {
+    @inline
+    def apply(
+        meshName: ResourceName,
+        metadata: ResourceMetadata,
+        spec: VirtualGatewaySpec,
+        status: VirtualGatewayStatus,
+        virtualGatewayName: ResourceName
+    ): VirtualGatewayData = {
+      val __obj = js.Dynamic.literal(
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "metadata" -> metadata.asInstanceOf[js.Any],
+        "spec" -> spec.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any],
+        "virtualGatewayName" -> virtualGatewayName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[VirtualGatewayData]
+    }
+  }
+
+  /**
+    * An object that represents an access log file.
+    */
+  @js.native
+  trait VirtualGatewayFileAccessLog extends js.Object {
+    var path: FilePath
+  }
+
+  object VirtualGatewayFileAccessLog {
+    @inline
+    def apply(
+        path: FilePath
+    ): VirtualGatewayFileAccessLog = {
+      val __obj = js.Dynamic.literal(
+        "path" -> path.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[VirtualGatewayFileAccessLog]
+    }
+  }
+
+  /**
+    * <p>An object that represents the health check policy for a virtual gateway's
+    *          listener.</p>
+    */
+  @js.native
+  trait VirtualGatewayHealthCheckPolicy extends js.Object {
+    var healthyThreshold: VirtualGatewayHealthCheckThreshold
+    var intervalMillis: VirtualGatewayHealthCheckIntervalMillis
+    var protocol: VirtualGatewayPortProtocol
+    var timeoutMillis: VirtualGatewayHealthCheckTimeoutMillis
+    var unhealthyThreshold: VirtualGatewayHealthCheckThreshold
+    var path: js.UndefOr[String]
+    var port: js.UndefOr[PortNumber]
+  }
+
+  object VirtualGatewayHealthCheckPolicy {
+    @inline
+    def apply(
+        healthyThreshold: VirtualGatewayHealthCheckThreshold,
+        intervalMillis: VirtualGatewayHealthCheckIntervalMillis,
+        protocol: VirtualGatewayPortProtocol,
+        timeoutMillis: VirtualGatewayHealthCheckTimeoutMillis,
+        unhealthyThreshold: VirtualGatewayHealthCheckThreshold,
+        path: js.UndefOr[String] = js.undefined,
+        port: js.UndefOr[PortNumber] = js.undefined
+    ): VirtualGatewayHealthCheckPolicy = {
+      val __obj = js.Dynamic.literal(
+        "healthyThreshold" -> healthyThreshold.asInstanceOf[js.Any],
+        "intervalMillis" -> intervalMillis.asInstanceOf[js.Any],
+        "protocol" -> protocol.asInstanceOf[js.Any],
+        "timeoutMillis" -> timeoutMillis.asInstanceOf[js.Any],
+        "unhealthyThreshold" -> unhealthyThreshold.asInstanceOf[js.Any]
+      )
+
+      path.foreach(__v => __obj.updateDynamic("path")(__v.asInstanceOf[js.Any]))
+      port.foreach(__v => __obj.updateDynamic("port")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VirtualGatewayHealthCheckPolicy]
+    }
+  }
+
+  /**
+    * An object that represents a listener for a virtual gateway.
+    */
+  @js.native
+  trait VirtualGatewayListener extends js.Object {
+    var portMapping: VirtualGatewayPortMapping
+    var healthCheck: js.UndefOr[VirtualGatewayHealthCheckPolicy]
+    var tls: js.UndefOr[VirtualGatewayListenerTls]
+  }
+
+  object VirtualGatewayListener {
+    @inline
+    def apply(
+        portMapping: VirtualGatewayPortMapping,
+        healthCheck: js.UndefOr[VirtualGatewayHealthCheckPolicy] = js.undefined,
+        tls: js.UndefOr[VirtualGatewayListenerTls] = js.undefined
+    ): VirtualGatewayListener = {
+      val __obj = js.Dynamic.literal(
+        "portMapping" -> portMapping.asInstanceOf[js.Any]
+      )
+
+      healthCheck.foreach(__v => __obj.updateDynamic("healthCheck")(__v.asInstanceOf[js.Any]))
+      tls.foreach(__v => __obj.updateDynamic("tls")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VirtualGatewayListener]
+    }
+  }
+
+  /**
+    * An object that represents the Transport Layer Security (TLS) properties for a listener.
+    */
+  @js.native
+  trait VirtualGatewayListenerTls extends js.Object {
+    var certificate: VirtualGatewayListenerTlsCertificate
+    var mode: VirtualGatewayListenerTlsMode
+  }
+
+  object VirtualGatewayListenerTls {
+    @inline
+    def apply(
+        certificate: VirtualGatewayListenerTlsCertificate,
+        mode: VirtualGatewayListenerTlsMode
+    ): VirtualGatewayListenerTls = {
+      val __obj = js.Dynamic.literal(
+        "certificate" -> certificate.asInstanceOf[js.Any],
+        "mode" -> mode.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[VirtualGatewayListenerTls]
+    }
+  }
+
+  /**
+    * An object that represents an AWS Certicate Manager (ACM) certificate.
+    */
+  @js.native
+  trait VirtualGatewayListenerTlsAcmCertificate extends js.Object {
+    var certificateArn: Arn
+  }
+
+  object VirtualGatewayListenerTlsAcmCertificate {
+    @inline
+    def apply(
+        certificateArn: Arn
+    ): VirtualGatewayListenerTlsAcmCertificate = {
+      val __obj = js.Dynamic.literal(
+        "certificateArn" -> certificateArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[VirtualGatewayListenerTlsAcmCertificate]
+    }
+  }
+
+  /**
+    * An object that represents a listener's Transport Layer Security (TLS) certificate.
+    */
+  @js.native
+  trait VirtualGatewayListenerTlsCertificate extends js.Object {
+    var acm: js.UndefOr[VirtualGatewayListenerTlsAcmCertificate]
+    var file: js.UndefOr[VirtualGatewayListenerTlsFileCertificate]
+  }
+
+  object VirtualGatewayListenerTlsCertificate {
+    @inline
+    def apply(
+        acm: js.UndefOr[VirtualGatewayListenerTlsAcmCertificate] = js.undefined,
+        file: js.UndefOr[VirtualGatewayListenerTlsFileCertificate] = js.undefined
+    ): VirtualGatewayListenerTlsCertificate = {
+      val __obj = js.Dynamic.literal()
+      acm.foreach(__v => __obj.updateDynamic("acm")(__v.asInstanceOf[js.Any]))
+      file.foreach(__v => __obj.updateDynamic("file")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VirtualGatewayListenerTlsCertificate]
+    }
+  }
+
+  /**
+    * <p>An object that represents a local file certificate.
+    *          The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see [[https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites|Transport Layer Security (TLS)]].</p>
+    */
+  @js.native
+  trait VirtualGatewayListenerTlsFileCertificate extends js.Object {
+    var certificateChain: FilePath
+    var privateKey: FilePath
+  }
+
+  object VirtualGatewayListenerTlsFileCertificate {
+    @inline
+    def apply(
+        certificateChain: FilePath,
+        privateKey: FilePath
+    ): VirtualGatewayListenerTlsFileCertificate = {
+      val __obj = js.Dynamic.literal(
+        "certificateChain" -> certificateChain.asInstanceOf[js.Any],
+        "privateKey" -> privateKey.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[VirtualGatewayListenerTlsFileCertificate]
+    }
+  }
+
+  @js.native
+  sealed trait VirtualGatewayListenerTlsMode extends js.Any
+  object VirtualGatewayListenerTlsMode extends js.Object {
+    val DISABLED = "DISABLED".asInstanceOf[VirtualGatewayListenerTlsMode]
+    val PERMISSIVE = "PERMISSIVE".asInstanceOf[VirtualGatewayListenerTlsMode]
+    val STRICT = "STRICT".asInstanceOf[VirtualGatewayListenerTlsMode]
+
+    val values = js.Object.freeze(js.Array(DISABLED, PERMISSIVE, STRICT))
+  }
+
+  /**
+    * An object that represents logging information.
+    */
+  @js.native
+  trait VirtualGatewayLogging extends js.Object {
+    var accessLog: js.UndefOr[VirtualGatewayAccessLog]
+  }
+
+  object VirtualGatewayLogging {
+    @inline
+    def apply(
+        accessLog: js.UndefOr[VirtualGatewayAccessLog] = js.undefined
+    ): VirtualGatewayLogging = {
+      val __obj = js.Dynamic.literal()
+      accessLog.foreach(__v => __obj.updateDynamic("accessLog")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VirtualGatewayLogging]
+    }
+  }
+
+  /**
+    * An object that represents a port mapping.
+    */
+  @js.native
+  trait VirtualGatewayPortMapping extends js.Object {
+    var port: PortNumber
+    var protocol: VirtualGatewayPortProtocol
+  }
+
+  object VirtualGatewayPortMapping {
+    @inline
+    def apply(
+        port: PortNumber,
+        protocol: VirtualGatewayPortProtocol
+    ): VirtualGatewayPortMapping = {
+      val __obj = js.Dynamic.literal(
+        "port" -> port.asInstanceOf[js.Any],
+        "protocol" -> protocol.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[VirtualGatewayPortMapping]
+    }
+  }
+
+  @js.native
+  sealed trait VirtualGatewayPortProtocol extends js.Any
+  object VirtualGatewayPortProtocol extends js.Object {
+    val grpc = "grpc".asInstanceOf[VirtualGatewayPortProtocol]
+    val http = "http".asInstanceOf[VirtualGatewayPortProtocol]
+    val http2 = "http2".asInstanceOf[VirtualGatewayPortProtocol]
+
+    val values = js.Object.freeze(js.Array(grpc, http, http2))
+  }
+
+  /**
+    * An object that represents a virtual gateway returned by a list operation.
+    */
+  @js.native
+  trait VirtualGatewayRef extends js.Object {
+    var arn: Arn
+    var createdAt: Timestamp
+    var lastUpdatedAt: Timestamp
+    var meshName: ResourceName
+    var meshOwner: AccountId
+    var resourceOwner: AccountId
+    var version: Double
+    var virtualGatewayName: ResourceName
+  }
+
+  object VirtualGatewayRef {
+    @inline
+    def apply(
+        arn: Arn,
+        createdAt: Timestamp,
+        lastUpdatedAt: Timestamp,
+        meshName: ResourceName,
+        meshOwner: AccountId,
+        resourceOwner: AccountId,
+        version: Double,
+        virtualGatewayName: ResourceName
+    ): VirtualGatewayRef = {
+      val __obj = js.Dynamic.literal(
+        "arn" -> arn.asInstanceOf[js.Any],
+        "createdAt" -> createdAt.asInstanceOf[js.Any],
+        "lastUpdatedAt" -> lastUpdatedAt.asInstanceOf[js.Any],
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "meshOwner" -> meshOwner.asInstanceOf[js.Any],
+        "resourceOwner" -> resourceOwner.asInstanceOf[js.Any],
+        "version" -> version.asInstanceOf[js.Any],
+        "virtualGatewayName" -> virtualGatewayName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[VirtualGatewayRef]
+    }
+  }
+
+  /**
+    * An object that represents the specification of a service mesh resource.
+    */
+  @js.native
+  trait VirtualGatewaySpec extends js.Object {
+    var listeners: VirtualGatewayListeners
+    var backendDefaults: js.UndefOr[VirtualGatewayBackendDefaults]
+    var logging: js.UndefOr[VirtualGatewayLogging]
+  }
+
+  object VirtualGatewaySpec {
+    @inline
+    def apply(
+        listeners: VirtualGatewayListeners,
+        backendDefaults: js.UndefOr[VirtualGatewayBackendDefaults] = js.undefined,
+        logging: js.UndefOr[VirtualGatewayLogging] = js.undefined
+    ): VirtualGatewaySpec = {
+      val __obj = js.Dynamic.literal(
+        "listeners" -> listeners.asInstanceOf[js.Any]
+      )
+
+      backendDefaults.foreach(__v => __obj.updateDynamic("backendDefaults")(__v.asInstanceOf[js.Any]))
+      logging.foreach(__v => __obj.updateDynamic("logging")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VirtualGatewaySpec]
+    }
+  }
+
+  /**
+    * An object that represents the status of the mesh resource.
+    */
+  @js.native
+  trait VirtualGatewayStatus extends js.Object {
+    var status: VirtualGatewayStatusCode
+  }
+
+  object VirtualGatewayStatus {
+    @inline
+    def apply(
+        status: VirtualGatewayStatusCode
+    ): VirtualGatewayStatus = {
+      val __obj = js.Dynamic.literal(
+        "status" -> status.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[VirtualGatewayStatus]
+    }
+  }
+
+  @js.native
+  sealed trait VirtualGatewayStatusCode extends js.Any
+  object VirtualGatewayStatusCode extends js.Object {
+    val ACTIVE = "ACTIVE".asInstanceOf[VirtualGatewayStatusCode]
+    val DELETED = "DELETED".asInstanceOf[VirtualGatewayStatusCode]
+    val INACTIVE = "INACTIVE".asInstanceOf[VirtualGatewayStatusCode]
+
+    val values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
+  }
+
+  /**
+    * An object that represents a Transport Layer Security (TLS) validation context.
+    */
+  @js.native
+  trait VirtualGatewayTlsValidationContext extends js.Object {
+    var trust: VirtualGatewayTlsValidationContextTrust
+  }
+
+  object VirtualGatewayTlsValidationContext {
+    @inline
+    def apply(
+        trust: VirtualGatewayTlsValidationContextTrust
+    ): VirtualGatewayTlsValidationContext = {
+      val __obj = js.Dynamic.literal(
+        "trust" -> trust.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[VirtualGatewayTlsValidationContext]
+    }
+  }
+
+  /**
+    * <p>An object that represents a TLS validation context trust for an AWS Certicate Manager (ACM)
+    *          certificate.</p>
+    */
+  @js.native
+  trait VirtualGatewayTlsValidationContextAcmTrust extends js.Object {
+    var certificateAuthorityArns: VirtualGatewayCertificateAuthorityArns
+  }
+
+  object VirtualGatewayTlsValidationContextAcmTrust {
+    @inline
+    def apply(
+        certificateAuthorityArns: VirtualGatewayCertificateAuthorityArns
+    ): VirtualGatewayTlsValidationContextAcmTrust = {
+      val __obj = js.Dynamic.literal(
+        "certificateAuthorityArns" -> certificateAuthorityArns.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[VirtualGatewayTlsValidationContextAcmTrust]
+    }
+  }
+
+  /**
+    * An object that represents a Transport Layer Security (TLS) validation context trust for a local file.
+    */
+  @js.native
+  trait VirtualGatewayTlsValidationContextFileTrust extends js.Object {
+    var certificateChain: FilePath
+  }
+
+  object VirtualGatewayTlsValidationContextFileTrust {
+    @inline
+    def apply(
+        certificateChain: FilePath
+    ): VirtualGatewayTlsValidationContextFileTrust = {
+      val __obj = js.Dynamic.literal(
+        "certificateChain" -> certificateChain.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[VirtualGatewayTlsValidationContextFileTrust]
+    }
+  }
+
+  /**
+    * An object that represents a Transport Layer Security (TLS) validation context trust.
+    */
+  @js.native
+  trait VirtualGatewayTlsValidationContextTrust extends js.Object {
+    var acm: js.UndefOr[VirtualGatewayTlsValidationContextAcmTrust]
+    var file: js.UndefOr[VirtualGatewayTlsValidationContextFileTrust]
+  }
+
+  object VirtualGatewayTlsValidationContextTrust {
+    @inline
+    def apply(
+        acm: js.UndefOr[VirtualGatewayTlsValidationContextAcmTrust] = js.undefined,
+        file: js.UndefOr[VirtualGatewayTlsValidationContextFileTrust] = js.undefined
+    ): VirtualGatewayTlsValidationContextTrust = {
+      val __obj = js.Dynamic.literal()
+      acm.foreach(__v => __obj.updateDynamic("acm")(__v.asInstanceOf[js.Any]))
+      file.foreach(__v => __obj.updateDynamic("file")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VirtualGatewayTlsValidationContextTrust]
     }
   }
 

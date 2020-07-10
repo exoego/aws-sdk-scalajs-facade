@@ -18,6 +18,7 @@ package object wafv2 {
   type ExcludedRules = js.Array[ExcludedRule]
   type FieldToMatchData = String
   type FirewallManagerRuleGroups = js.Array[FirewallManagerRuleGroup]
+  type ForwardedIPHeaderName = String
   type HTTPHeaders = js.Array[HTTPHeader]
   type HTTPMethod = String
   type HTTPVersion = String
@@ -1540,6 +1541,15 @@ package wafv2 {
     }
   }
 
+  @js.native
+  sealed trait FallbackBehavior extends js.Any
+  object FallbackBehavior extends js.Object {
+    val MATCH = "MATCH".asInstanceOf[FallbackBehavior]
+    val NO_MATCH = "NO_MATCH".asInstanceOf[FallbackBehavior]
+
+    val values = js.Object.freeze(js.Array(MATCH, NO_MATCH))
+  }
+
   /**
     * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
     * The part of a web request that you want AWS WAF to inspect. Include the single <code>FieldToMatch</code> type that you want to inspect, with additional specifications as needed, according to the type. You specify a single request component in <code>FieldToMatch</code> for each rule statement that requires it. To inspect more than one component of a web request, create a separate rule statement for each component.
@@ -1638,21 +1648,62 @@ package wafv2 {
   }
 
   /**
+    * The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name.
+    *
+    * '''Note:'''If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+    * This configuration is used for <a>GeoMatchStatement</a> and <a>RateBasedStatement</a>. For <a>IPSetReferenceStatement</a>, use <a>IPSetForwardedIPConfig</a> instead.
+    *  AWS WAF only evaluates the first IP address found in the specified HTTP header.
+    */
+  @js.native
+  trait ForwardedIPConfig extends js.Object {
+    var FallbackBehavior: FallbackBehavior
+    var HeaderName: ForwardedIPHeaderName
+  }
+
+  object ForwardedIPConfig {
+    @inline
+    def apply(
+        FallbackBehavior: FallbackBehavior,
+        HeaderName: ForwardedIPHeaderName
+    ): ForwardedIPConfig = {
+      val __obj = js.Dynamic.literal(
+        "FallbackBehavior" -> FallbackBehavior.asInstanceOf[js.Any],
+        "HeaderName" -> HeaderName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ForwardedIPConfig]
+    }
+  }
+
+  @js.native
+  sealed trait ForwardedIPPosition extends js.Any
+  object ForwardedIPPosition extends js.Object {
+    val FIRST = "FIRST".asInstanceOf[ForwardedIPPosition]
+    val LAST = "LAST".asInstanceOf[ForwardedIPPosition]
+    val ANY = "ANY".asInstanceOf[ForwardedIPPosition]
+
+    val values = js.Object.freeze(js.Array(FIRST, LAST, ANY))
+  }
+
+  /**
     * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
     * A rule statement used to identify web requests based on country of origin.
     */
   @js.native
   trait GeoMatchStatement extends js.Object {
     var CountryCodes: js.UndefOr[CountryCodes]
+    var ForwardedIPConfig: js.UndefOr[ForwardedIPConfig]
   }
 
   object GeoMatchStatement {
     @inline
     def apply(
-        CountryCodes: js.UndefOr[CountryCodes] = js.undefined
+        CountryCodes: js.UndefOr[CountryCodes] = js.undefined,
+        ForwardedIPConfig: js.UndefOr[ForwardedIPConfig] = js.undefined
     ): GeoMatchStatement = {
       val __obj = js.Dynamic.literal()
       CountryCodes.foreach(__v => __obj.updateDynamic("CountryCodes")(__v.asInstanceOf[js.Any]))
+      ForwardedIPConfig.foreach(__v => __obj.updateDynamic("ForwardedIPConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GeoMatchStatement]
     }
   }
@@ -2135,6 +2186,36 @@ package wafv2 {
   }
 
   /**
+    * The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name.
+    *
+    * '''Note:'''If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+    * This configuration is used only for <a>IPSetReferenceStatement</a>. For <a>GeoMatchStatement</a> and <a>RateBasedStatement</a>, use <a>ForwardedIPConfig</a> instead.
+    */
+  @js.native
+  trait IPSetForwardedIPConfig extends js.Object {
+    var FallbackBehavior: FallbackBehavior
+    var HeaderName: ForwardedIPHeaderName
+    var Position: ForwardedIPPosition
+  }
+
+  object IPSetForwardedIPConfig {
+    @inline
+    def apply(
+        FallbackBehavior: FallbackBehavior,
+        HeaderName: ForwardedIPHeaderName,
+        Position: ForwardedIPPosition
+    ): IPSetForwardedIPConfig = {
+      val __obj = js.Dynamic.literal(
+        "FallbackBehavior" -> FallbackBehavior.asInstanceOf[js.Any],
+        "HeaderName" -> HeaderName.asInstanceOf[js.Any],
+        "Position" -> Position.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[IPSetForwardedIPConfig]
+    }
+  }
+
+  /**
     * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
     * A rule statement used to detect web requests coming from particular IP addresses or address ranges. To use this, create an <a>IPSet</a> that specifies the addresses you want to detect, then use the ARN of that set in this statement. To create an IP set, see <a>CreateIPSet</a>.
     *  Each IP set rule statement references an IP set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, AWS WAF automatically updates all rules that reference it.
@@ -2142,17 +2223,20 @@ package wafv2 {
   @js.native
   trait IPSetReferenceStatement extends js.Object {
     var ARN: ResourceArn
+    var IPSetForwardedIPConfig: js.UndefOr[IPSetForwardedIPConfig]
   }
 
   object IPSetReferenceStatement {
     @inline
     def apply(
-        ARN: ResourceArn
+        ARN: ResourceArn,
+        IPSetForwardedIPConfig: js.UndefOr[IPSetForwardedIPConfig] = js.undefined
     ): IPSetReferenceStatement = {
       val __obj = js.Dynamic.literal(
         "ARN" -> ARN.asInstanceOf[js.Any]
       )
 
+      IPSetForwardedIPConfig.foreach(__v => __obj.updateDynamic("IPSetForwardedIPConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IPSetReferenceStatement]
     }
   }
@@ -2826,6 +2910,7 @@ package wafv2 {
   trait RateBasedStatement extends js.Object {
     var AggregateKeyType: RateBasedStatementAggregateKeyType
     var Limit: RateLimit
+    var ForwardedIPConfig: js.UndefOr[ForwardedIPConfig]
     var ScopeDownStatement: js.UndefOr[Statement]
   }
 
@@ -2834,6 +2919,7 @@ package wafv2 {
     def apply(
         AggregateKeyType: RateBasedStatementAggregateKeyType,
         Limit: RateLimit,
+        ForwardedIPConfig: js.UndefOr[ForwardedIPConfig] = js.undefined,
         ScopeDownStatement: js.UndefOr[Statement] = js.undefined
     ): RateBasedStatement = {
       val __obj = js.Dynamic.literal(
@@ -2841,6 +2927,7 @@ package wafv2 {
         "Limit" -> Limit.asInstanceOf[js.Any]
       )
 
+      ForwardedIPConfig.foreach(__v => __obj.updateDynamic("ForwardedIPConfig")(__v.asInstanceOf[js.Any]))
       ScopeDownStatement.foreach(__v => __obj.updateDynamic("ScopeDownStatement")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RateBasedStatement]
     }
@@ -2850,8 +2937,9 @@ package wafv2 {
   sealed trait RateBasedStatementAggregateKeyType extends js.Any
   object RateBasedStatementAggregateKeyType extends js.Object {
     val IP = "IP".asInstanceOf[RateBasedStatementAggregateKeyType]
+    val FORWARDED_IP = "FORWARDED_IP".asInstanceOf[RateBasedStatementAggregateKeyType]
 
-    val values = js.Object.freeze(js.Array(IP))
+    val values = js.Object.freeze(js.Array(IP, FORWARDED_IP))
   }
 
   /**
@@ -3394,7 +3482,8 @@ package wafv2 {
 
   /**
     * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
-    * A collection of key:value pairs associated with an AWS resource. The key:value pair can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each AWS resource.
+    * A tag associated with an AWS resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a resource.
+    *  You can tag the AWS resources that you manage through AWS WAF: web ACLs, rule groups, IP sets, and regex pattern sets. You can't manage or view tags through the AWS WAF console.
     */
   @js.native
   trait Tag extends js.Object {
@@ -3419,7 +3508,8 @@ package wafv2 {
 
   /**
     * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
-    * The collection of tagging definitions for an AWS resource.
+    * The collection of tagging definitions for an AWS resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a resource.
+    *  You can tag the AWS resources that you manage through AWS WAF: web ACLs, rule groups, IP sets, and regex pattern sets. You can't manage or view tags through the AWS WAF console.
     */
   @js.native
   trait TagInfoForResource extends js.Object {
@@ -3516,6 +3606,7 @@ package wafv2 {
   /**
     * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
     * In a <a>GetSampledRequests</a> request, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which you want AWS WAF to return a sample of web requests.
+    *  You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
     *  In a <a>GetSampledRequests</a> response, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which AWS WAF actually returned a sample of web requests. AWS WAF gets the specified number of requests from among the first 5,000 requests that your AWS resource receives during the specified time period. If your resource receives more than 5,000 requests during that period, AWS WAF stops sampling after the 5,000th request. In that case, <code>EndTime</code> is the time that AWS WAF received the 5,000th request.
     */
   @js.native

@@ -22,6 +22,9 @@ package object cloudwatchevents {
   type EventSourceName = String
   type EventSourceNamePrefix = String
   type EventTime = js.Date
+  type HeaderKey = String
+  type HeaderParametersMap = js.Dictionary[HeaderValue]
+  type HeaderValue = String
   type InputTransformerPathKey = String
   type LimitMax100 = Int
   type LimitMin1 = Int
@@ -32,12 +35,17 @@ package object cloudwatchevents {
   type PartnerEventSourceAccountList = js.Array[PartnerEventSourceAccount]
   type PartnerEventSourceList = js.Array[PartnerEventSource]
   type PartnerEventSourceNamePrefix = String
+  type PathParameter = String
+  type PathParameterList = js.Array[PathParameter]
   type Principal = String
   type PutEventsRequestEntryList = js.Array[PutEventsRequestEntry]
   type PutEventsResultEntryList = js.Array[PutEventsResultEntry]
   type PutPartnerEventsRequestEntryList = js.Array[PutPartnerEventsRequestEntry]
   type PutPartnerEventsResultEntryList = js.Array[PutPartnerEventsResultEntry]
   type PutTargetsResultEntryList = js.Array[PutTargetsResultEntry]
+  type QueryStringKey = String
+  type QueryStringParametersMap = js.Dictionary[QueryStringValue]
+  type QueryStringValue = String
   type RemoveTargetsResultEntryList = js.Array[RemoveTargetsResultEntry]
   type RoleArn = String
   type RuleArn = String
@@ -823,6 +831,31 @@ package cloudwatchevents {
     val DELETED = "DELETED".asInstanceOf[EventSourceState]
 
     val values = js.Object.freeze(js.Array(PENDING, ACTIVE, DELETED))
+  }
+
+  /**
+    * These are custom parameter to be used when the target is an API Gateway REST APIs.
+    */
+  @js.native
+  trait HttpParameters extends js.Object {
+    var HeaderParameters: js.UndefOr[HeaderParametersMap]
+    var PathParameterValues: js.UndefOr[PathParameterList]
+    var QueryStringParameters: js.UndefOr[QueryStringParametersMap]
+  }
+
+  object HttpParameters {
+    @inline
+    def apply(
+        HeaderParameters: js.UndefOr[HeaderParametersMap] = js.undefined,
+        PathParameterValues: js.UndefOr[PathParameterList] = js.undefined,
+        QueryStringParameters: js.UndefOr[QueryStringParametersMap] = js.undefined
+    ): HttpParameters = {
+      val __obj = js.Dynamic.literal()
+      HeaderParameters.foreach(__v => __obj.updateDynamic("HeaderParameters")(__v.asInstanceOf[js.Any]))
+      PathParameterValues.foreach(__v => __obj.updateDynamic("PathParameterValues")(__v.asInstanceOf[js.Any]))
+      QueryStringParameters.foreach(__v => __obj.updateDynamic("QueryStringParameters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HttpParameters]
+    }
   }
 
   /**
@@ -1906,6 +1939,7 @@ package cloudwatchevents {
     var Id: TargetId
     var BatchParameters: js.UndefOr[BatchParameters]
     var EcsParameters: js.UndefOr[EcsParameters]
+    var HttpParameters: js.UndefOr[HttpParameters]
     var Input: js.UndefOr[TargetInput]
     var InputPath: js.UndefOr[TargetInputPath]
     var InputTransformer: js.UndefOr[InputTransformer]
@@ -1922,6 +1956,7 @@ package cloudwatchevents {
         Id: TargetId,
         BatchParameters: js.UndefOr[BatchParameters] = js.undefined,
         EcsParameters: js.UndefOr[EcsParameters] = js.undefined,
+        HttpParameters: js.UndefOr[HttpParameters] = js.undefined,
         Input: js.UndefOr[TargetInput] = js.undefined,
         InputPath: js.UndefOr[TargetInputPath] = js.undefined,
         InputTransformer: js.UndefOr[InputTransformer] = js.undefined,
@@ -1937,6 +1972,7 @@ package cloudwatchevents {
 
       BatchParameters.foreach(__v => __obj.updateDynamic("BatchParameters")(__v.asInstanceOf[js.Any]))
       EcsParameters.foreach(__v => __obj.updateDynamic("EcsParameters")(__v.asInstanceOf[js.Any]))
+      HttpParameters.foreach(__v => __obj.updateDynamic("HttpParameters")(__v.asInstanceOf[js.Any]))
       Input.foreach(__v => __obj.updateDynamic("Input")(__v.asInstanceOf[js.Any]))
       InputPath.foreach(__v => __obj.updateDynamic("InputPath")(__v.asInstanceOf[js.Any]))
       InputTransformer.foreach(__v => __obj.updateDynamic("InputTransformer")(__v.asInstanceOf[js.Any]))
