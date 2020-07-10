@@ -81,7 +81,7 @@ package object dataexchange {
 
 package dataexchange {
   @js.native
-  @JSImport("aws-sdk", "DataExchange")
+  @JSImport("aws-sdk", "DataExchange", "AWS.DataExchange")
   class DataExchange() extends js.Object {
     def this(config: AWSConfig) = this()
 

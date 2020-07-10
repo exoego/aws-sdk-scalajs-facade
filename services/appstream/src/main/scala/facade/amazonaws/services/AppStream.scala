@@ -181,7 +181,7 @@ package object appstream {
 
 package appstream {
   @js.native
-  @JSImport("aws-sdk", "AppStream")
+  @JSImport("aws-sdk", "AppStream", "AWS.AppStream")
   class AppStream() extends js.Object {
     def this(config: AWSConfig) = this()
 

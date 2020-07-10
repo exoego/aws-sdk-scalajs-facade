@@ -165,7 +165,7 @@ package object iotanalytics {
 
 package iotanalytics {
   @js.native
-  @JSImport("aws-sdk", "IoTAnalytics")
+  @JSImport("aws-sdk", "IoTAnalytics", "AWS.IoTAnalytics")
   class IoTAnalytics() extends js.Object {
     def this(config: AWSConfig) = this()
 

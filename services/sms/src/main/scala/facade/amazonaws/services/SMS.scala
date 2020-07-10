@@ -150,7 +150,7 @@ package object sms {
 
 package sms {
   @js.native
-  @JSImport("aws-sdk", "SMS")
+  @JSImport("aws-sdk", "SMS", "AWS.SMS")
   class SMS() extends js.Object {
     def this(config: AWSConfig) = this()
 

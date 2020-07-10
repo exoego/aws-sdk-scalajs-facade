@@ -120,7 +120,7 @@ package object appconfig {
 
 package appconfig {
   @js.native
-  @JSImport("aws-sdk", "AppConfig")
+  @JSImport("aws-sdk", "AppConfig", "AWS.AppConfig")
   class AppConfig() extends js.Object {
     def this(config: AWSConfig) = this()
 

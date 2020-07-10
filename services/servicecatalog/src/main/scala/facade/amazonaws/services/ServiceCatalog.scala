@@ -421,7 +421,7 @@ package object servicecatalog {
 
 package servicecatalog {
   @js.native
-  @JSImport("aws-sdk", "ServiceCatalog")
+  @JSImport("aws-sdk", "ServiceCatalog", "AWS.ServiceCatalog")
   class ServiceCatalog() extends js.Object {
     def this(config: AWSConfig) = this()
 

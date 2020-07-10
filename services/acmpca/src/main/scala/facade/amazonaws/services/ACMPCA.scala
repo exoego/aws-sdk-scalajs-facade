@@ -99,7 +99,7 @@ package object acmpca {
 
 package acmpca {
   @js.native
-  @JSImport("aws-sdk", "ACMPCA")
+  @JSImport("aws-sdk", "ACMPCA", "AWS.ACMPCA")
   class ACMPCA() extends js.Object {
     def this(config: AWSConfig) = this()
 

@@ -190,7 +190,7 @@ package object organizations {
 
 package organizations {
   @js.native
-  @JSImport("aws-sdk", "Organizations")
+  @JSImport("aws-sdk", "Organizations", "AWS.Organizations")
   class Organizations() extends js.Object {
     def this(config: AWSConfig) = this()
 

@@ -68,7 +68,7 @@ package object importexport {
 
 package importexport {
   @js.native
-  @JSImport("aws-sdk", "ImportExport")
+  @JSImport("aws-sdk", "ImportExport", "AWS.ImportExport")
   class ImportExport() extends js.Object {
     def this(config: AWSConfig) = this()
 

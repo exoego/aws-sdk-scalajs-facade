@@ -22,7 +22,7 @@ package object personalizeevents {
 
 package personalizeevents {
   @js.native
-  @JSImport("aws-sdk", "PersonalizeEvents")
+  @JSImport("aws-sdk", "PersonalizeEvents", "AWS.PersonalizeEvents")
   class PersonalizeEvents() extends js.Object {
     def this(config: AWSConfig) = this()
 

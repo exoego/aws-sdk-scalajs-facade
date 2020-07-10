@@ -295,7 +295,7 @@ package object ses {
 
 package ses {
   @js.native
-  @JSImport("aws-sdk", "SES")
+  @JSImport("aws-sdk", "SES", "AWS.SES")
   class SES() extends js.Object {
     def this(config: AWSConfig) = this()
 

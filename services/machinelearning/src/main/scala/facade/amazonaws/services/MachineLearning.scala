@@ -135,7 +135,7 @@ package object machinelearning {
 
 package machinelearning {
   @js.native
-  @JSImport("aws-sdk", "MachineLearning")
+  @JSImport("aws-sdk", "MachineLearning", "AWS.MachineLearning")
   class MachineLearning() extends js.Object {
     def this(config: AWSConfig) = this()
 

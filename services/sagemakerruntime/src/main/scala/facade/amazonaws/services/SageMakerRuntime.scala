@@ -23,7 +23,7 @@ package object sagemakerruntime {
 
 package sagemakerruntime {
   @js.native
-  @JSImport("aws-sdk", "SageMakerRuntime")
+  @JSImport("aws-sdk", "SageMakerRuntime", "AWS.SageMakerRuntime")
   class SageMakerRuntime() extends js.Object {
     def this(config: AWSConfig) = this()
 

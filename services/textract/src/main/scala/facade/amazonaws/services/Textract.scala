@@ -61,7 +61,7 @@ package object textract {
 
 package textract {
   @js.native
-  @JSImport("aws-sdk", "Textract")
+  @JSImport("aws-sdk", "Textract", "AWS.Textract")
   class Textract() extends js.Object {
     def this(config: AWSConfig) = this()
 

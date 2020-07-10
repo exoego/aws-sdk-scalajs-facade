@@ -183,7 +183,7 @@ package object cloudfront {
 
 package cloudfront {
   @js.native
-  @JSImport("aws-sdk", "CloudFront")
+  @JSImport("aws-sdk", "CloudFront", "AWS.CloudFront")
   class CloudFront() extends js.Object {
     def this(config: AWSConfig) = this()
 

@@ -118,7 +118,7 @@ package object kinesisanalytics {
 
 package kinesisanalytics {
   @js.native
-  @JSImport("aws-sdk", "KinesisAnalytics")
+  @JSImport("aws-sdk", "KinesisAnalytics", "AWS.KinesisAnalytics")
   class KinesisAnalytics() extends js.Object {
     def this(config: AWSConfig) = this()
 

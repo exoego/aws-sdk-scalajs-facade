@@ -32,7 +32,7 @@ package object pi {
 
 package pi {
   @js.native
-  @JSImport("aws-sdk", "PI")
+  @JSImport("aws-sdk", "PI", "AWS.PI")
   class PI() extends js.Object {
     def this(config: AWSConfig) = this()
 

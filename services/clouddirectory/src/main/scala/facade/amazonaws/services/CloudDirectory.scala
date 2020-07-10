@@ -226,7 +226,7 @@ package object clouddirectory {
 
 package clouddirectory {
   @js.native
-  @JSImport("aws-sdk", "CloudDirectory")
+  @JSImport("aws-sdk", "CloudDirectory", "AWS.CloudDirectory")
   class CloudDirectory() extends js.Object {
     def this(config: AWSConfig) = this()
 

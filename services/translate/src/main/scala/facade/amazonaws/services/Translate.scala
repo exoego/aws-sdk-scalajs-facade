@@ -61,7 +61,7 @@ package object translate {
 
 package translate {
   @js.native
-  @JSImport("aws-sdk", "Translate")
+  @JSImport("aws-sdk", "Translate", "AWS.Translate")
   class Translate() extends js.Object {
     def this(config: AWSConfig) = this()
 

@@ -124,7 +124,7 @@ package object datasync {
 
 package datasync {
   @js.native
-  @JSImport("aws-sdk", "DataSync")
+  @JSImport("aws-sdk", "DataSync", "AWS.DataSync")
   class DataSync() extends js.Object {
     def this(config: AWSConfig) = this()
 

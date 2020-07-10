@@ -95,7 +95,7 @@ package object groundstation {
 
 package groundstation {
   @js.native
-  @JSImport("aws-sdk", "GroundStation")
+  @JSImport("aws-sdk", "GroundStation", "AWS.GroundStation")
   class GroundStation() extends js.Object {
     def this(config: AWSConfig) = this()
 

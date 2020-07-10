@@ -168,7 +168,7 @@ package object wafv2 {
 
 package wafv2 {
   @js.native
-  @JSImport("aws-sdk", "WAFV2")
+  @JSImport("aws-sdk", "WAFV2", "AWS.WAFV2")
   class WAFv2() extends js.Object {
     def this(config: AWSConfig) = this()
 

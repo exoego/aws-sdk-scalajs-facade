@@ -211,7 +211,7 @@ package object elbv2 {
 
 package elbv2 {
   @js.native
-  @JSImport("aws-sdk", "ELBv2")
+  @JSImport("aws-sdk", "ELBv2", "AWS.ELBv2")
   class ELBv2() extends js.Object {
     def this(config: AWSConfig) = this()
 

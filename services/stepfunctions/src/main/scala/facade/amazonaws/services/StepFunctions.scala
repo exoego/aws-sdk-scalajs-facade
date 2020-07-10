@@ -89,7 +89,7 @@ package object stepfunctions {
 
 package stepfunctions {
   @js.native
-  @JSImport("aws-sdk", "StepFunctions")
+  @JSImport("aws-sdk", "StepFunctions", "AWS.StepFunctions")
   class StepFunctions() extends js.Object {
     def this(config: AWSConfig) = this()
 

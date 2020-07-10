@@ -222,7 +222,7 @@ package object codedeploy {
 
 package codedeploy {
   @js.native
-  @JSImport("aws-sdk", "CodeDeploy")
+  @JSImport("aws-sdk", "CodeDeploy", "AWS.CodeDeploy")
   class CodeDeploy() extends js.Object {
     def this(config: AWSConfig) = this()
 

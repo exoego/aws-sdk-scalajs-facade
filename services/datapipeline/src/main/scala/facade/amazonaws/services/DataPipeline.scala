@@ -82,7 +82,7 @@ package object datapipeline {
 
 package datapipeline {
   @js.native
-  @JSImport("aws-sdk", "DataPipeline")
+  @JSImport("aws-sdk", "DataPipeline", "AWS.DataPipeline")
   class DataPipeline() extends js.Object {
     def this(config: AWSConfig) = this()
 

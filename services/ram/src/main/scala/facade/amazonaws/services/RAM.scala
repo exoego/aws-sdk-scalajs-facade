@@ -102,7 +102,7 @@ package object ram {
 
 package ram {
   @js.native
-  @JSImport("aws-sdk", "RAM")
+  @JSImport("aws-sdk", "RAM", "AWS.RAM")
   class RAM() extends js.Object {
     def this(config: AWSConfig) = this()
 

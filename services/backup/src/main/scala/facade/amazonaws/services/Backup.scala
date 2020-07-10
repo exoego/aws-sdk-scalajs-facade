@@ -169,7 +169,7 @@ package object backup {
 
 package backup {
   @js.native
-  @JSImport("aws-sdk", "Backup")
+  @JSImport("aws-sdk", "Backup", "AWS.Backup")
   class Backup() extends js.Object {
     def this(config: AWSConfig) = this()
 

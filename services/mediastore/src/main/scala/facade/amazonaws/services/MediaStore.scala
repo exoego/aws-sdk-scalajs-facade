@@ -82,7 +82,7 @@ package object mediastore {
 
 package mediastore {
   @js.native
-  @JSImport("aws-sdk", "MediaStore")
+  @JSImport("aws-sdk", "MediaStore", "AWS.MediaStore")
   class MediaStore() extends js.Object {
     def this(config: AWSConfig) = this()
 

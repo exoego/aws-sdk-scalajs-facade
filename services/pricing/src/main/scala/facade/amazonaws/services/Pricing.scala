@@ -29,7 +29,7 @@ package object pricing {
 
 package pricing {
   @js.native
-  @JSImport("aws-sdk", "Pricing")
+  @JSImport("aws-sdk", "Pricing", "AWS.Pricing")
   class Pricing() extends js.Object {
     def this(config: AWSConfig) = this()
 

@@ -106,7 +106,7 @@ package object health {
 
 package health {
   @js.native
-  @JSImport("aws-sdk", "Health")
+  @JSImport("aws-sdk", "Health", "AWS.Health")
   class Health() extends js.Object {
     def this(config: AWSConfig) = this()
 

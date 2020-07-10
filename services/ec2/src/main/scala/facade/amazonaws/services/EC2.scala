@@ -1761,7 +1761,7 @@ package object ec2 {
 
 package ec2 {
   @js.native
-  @JSImport("aws-sdk", "EC2")
+  @JSImport("aws-sdk", "EC2", "AWS.EC2")
   class EC2() extends js.Object {
     def this(config: AWSConfig) = this()
 

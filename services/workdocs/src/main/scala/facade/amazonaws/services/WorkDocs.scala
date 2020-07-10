@@ -161,7 +161,7 @@ package object workdocs {
 
 package workdocs {
   @js.native
-  @JSImport("aws-sdk", "WorkDocs")
+  @JSImport("aws-sdk", "WorkDocs", "AWS.WorkDocs")
   class WorkDocs() extends js.Object {
     def this(config: AWSConfig) = this()
 

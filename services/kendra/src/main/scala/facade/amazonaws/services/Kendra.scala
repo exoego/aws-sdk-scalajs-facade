@@ -162,7 +162,7 @@ package object kendra {
 
 package kendra {
   @js.native
-  @JSImport("aws-sdk", "Kendra")
+  @JSImport("aws-sdk", "Kendra", "AWS.Kendra")
   class Kendra() extends js.Object {
     def this(config: AWSConfig) = this()
 

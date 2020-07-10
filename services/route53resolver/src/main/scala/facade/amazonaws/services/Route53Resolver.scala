@@ -105,7 +105,7 @@ package object route53resolver {
 
 package route53resolver {
   @js.native
-  @JSImport("aws-sdk", "Route53Resolver")
+  @JSImport("aws-sdk", "Route53Resolver", "AWS.Route53Resolver")
   class Route53Resolver() extends js.Object {
     def this(config: AWSConfig) = this()
 

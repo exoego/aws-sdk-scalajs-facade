@@ -40,7 +40,7 @@ package object kinesisvideoarchivedmedia {
 
 package kinesisvideoarchivedmedia {
   @js.native
-  @JSImport("aws-sdk", "KinesisVideoArchivedMedia")
+  @JSImport("aws-sdk", "KinesisVideoArchivedMedia", "AWS.KinesisVideoArchivedMedia")
   class KinesisVideoArchivedMedia() extends js.Object {
     def this(config: AWSConfig) = this()
 

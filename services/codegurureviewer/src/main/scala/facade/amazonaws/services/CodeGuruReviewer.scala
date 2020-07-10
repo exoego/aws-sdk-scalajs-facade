@@ -75,7 +75,7 @@ package object codegurureviewer {
 
 package codegurureviewer {
   @js.native
-  @JSImport("aws-sdk", "CodeGuruReviewer")
+  @JSImport("aws-sdk", "CodeGuruReviewer", "AWS.CodeGuruReviewer")
   class CodeGuruReviewer() extends js.Object {
     def this(config: AWSConfig) = this()
 

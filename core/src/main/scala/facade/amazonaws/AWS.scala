@@ -4,7 +4,7 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 
 @js.native
-@JSImport("aws-sdk", JSImport.Namespace)
+@JSImport("aws-sdk", JSImport.Namespace, "AWS")
 object AWS extends js.Object {
   var config: AWSConfigWithServicesDefault = js.native
 }

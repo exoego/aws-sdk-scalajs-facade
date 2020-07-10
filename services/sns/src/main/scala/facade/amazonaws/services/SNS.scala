@@ -129,7 +129,7 @@ package object sns {
 
 package sns {
   @js.native
-  @JSImport("aws-sdk", "SNS")
+  @JSImport("aws-sdk", "SNS", "AWS.SNS")
   class SNS() extends js.Object {
     def this(config: AWSConfig) = this()
 

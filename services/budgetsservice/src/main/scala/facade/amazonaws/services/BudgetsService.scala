@@ -67,7 +67,7 @@ package object budgetsservice {
 
 package budgetsservice {
   @js.native
-  @JSImport("aws-sdk", "Budgets")
+  @JSImport("aws-sdk", "Budgets", "AWS.Budgets")
   class BudgetsService() extends js.Object {
     def this(config: AWSConfig) = this()
 

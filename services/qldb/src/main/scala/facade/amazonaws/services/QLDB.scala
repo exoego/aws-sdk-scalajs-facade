@@ -79,7 +79,7 @@ package object qldb {
 
 package qldb {
   @js.native
-  @JSImport("aws-sdk", "QLDB")
+  @JSImport("aws-sdk", "QLDB", "AWS.QLDB")
   class QLDB() extends js.Object {
     def this(config: AWSConfig) = this()
 

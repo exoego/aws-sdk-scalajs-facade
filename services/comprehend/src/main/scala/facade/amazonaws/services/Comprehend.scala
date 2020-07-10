@@ -216,7 +216,7 @@ package object comprehend {
 
 package comprehend {
   @js.native
-  @JSImport("aws-sdk", "Comprehend")
+  @JSImport("aws-sdk", "Comprehend", "AWS.Comprehend")
   class Comprehend() extends js.Object {
     def this(config: AWSConfig) = this()
 

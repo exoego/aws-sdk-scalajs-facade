@@ -95,7 +95,7 @@ package object networkmanager {
 
 package networkmanager {
   @js.native
-  @JSImport("aws-sdk", "NetworkManager")
+  @JSImport("aws-sdk", "NetworkManager", "AWS.NetworkManager")
   class NetworkManager() extends js.Object {
     def this(config: AWSConfig) = this()
 

@@ -150,7 +150,7 @@ package object eventbridge {
 
 package eventbridge {
   @js.native
-  @JSImport("aws-sdk", "EventBridge")
+  @JSImport("aws-sdk", "EventBridge", "AWS.EventBridge")
   class EventBridge() extends js.Object {
     def this(config: AWSConfig) = this()
 

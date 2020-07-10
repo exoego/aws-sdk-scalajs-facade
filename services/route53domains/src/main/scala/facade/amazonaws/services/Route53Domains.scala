@@ -134,7 +134,7 @@ package object route53domains {
 
 package route53domains {
   @js.native
-  @JSImport("aws-sdk", "Route53Domains")
+  @JSImport("aws-sdk", "Route53Domains", "AWS.Route53Domains")
   class Route53Domains() extends js.Object {
     def this(config: AWSConfig) = this()
 

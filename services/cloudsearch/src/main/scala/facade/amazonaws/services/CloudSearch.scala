@@ -106,7 +106,7 @@ package object cloudsearch {
 
 package cloudsearch {
   @js.native
-  @JSImport("aws-sdk", "CloudSearch")
+  @JSImport("aws-sdk", "CloudSearch", "AWS.CloudSearch")
   class CloudSearch() extends js.Object {
     def this(config: AWSConfig) = this()
 
