@@ -112,7 +112,7 @@ package object fsx {
 
 package fsx {
   @js.native
-  @JSImport("aws-sdk", "FSx")
+  @JSImport("aws-sdk", "FSx", "AWS.FSx")
   class FSx() extends js.Object {
     def this(config: AWSConfig) = this()
 

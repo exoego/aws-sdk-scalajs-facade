@@ -246,7 +246,7 @@ package object directoryservice {
 
 package directoryservice {
   @js.native
-  @JSImport("aws-sdk", "DirectoryService")
+  @JSImport("aws-sdk", "DirectoryService", "AWS.DirectoryService")
   class DirectoryService() extends js.Object {
     def this(config: AWSConfig) = this()
 

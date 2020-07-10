@@ -276,7 +276,7 @@ package object wafregional {
 
 package wafregional {
   @js.native
-  @JSImport("aws-sdk", "WAFRegional")
+  @JSImport("aws-sdk", "WAFRegional", "AWS.WAFRegional")
   class WAFRegional() extends js.Object {
     def this(config: AWSConfig) = this()
 

@@ -76,7 +76,7 @@ package object batch {
 
 package batch {
   @js.native
-  @JSImport("aws-sdk", "Batch")
+  @JSImport("aws-sdk", "Batch", "AWS.Batch")
   class Batch() extends js.Object {
     def this(config: AWSConfig) = this()
 

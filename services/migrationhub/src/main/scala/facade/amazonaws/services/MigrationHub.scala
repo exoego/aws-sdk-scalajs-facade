@@ -86,7 +86,7 @@ package object migrationhub {
 
 package migrationhub {
   @js.native
-  @JSImport("aws-sdk", "MigrationHub")
+  @JSImport("aws-sdk", "MigrationHub", "AWS.MigrationHub")
   class MigrationHub() extends js.Object {
     def this(config: AWSConfig) = this()
 

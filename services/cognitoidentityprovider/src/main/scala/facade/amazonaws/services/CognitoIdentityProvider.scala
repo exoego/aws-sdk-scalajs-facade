@@ -371,7 +371,7 @@ package object cognitoidentityprovider {
 
 package cognitoidentityprovider {
   @js.native
-  @JSImport("aws-sdk", "CognitoIdentityServiceProvider")
+  @JSImport("aws-sdk", "CognitoIdentityServiceProvider", "AWS.CognitoIdentityServiceProvider")
   class CognitoIdentityProvider() extends js.Object {
     def this(config: AWSConfig) = this()
 

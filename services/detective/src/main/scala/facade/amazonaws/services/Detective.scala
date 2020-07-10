@@ -52,7 +52,7 @@ package object detective {
 
 package detective {
   @js.native
-  @JSImport("aws-sdk", "Detective")
+  @JSImport("aws-sdk", "Detective", "AWS.Detective")
   class Detective() extends js.Object {
     def this(config: AWSConfig) = this()
 

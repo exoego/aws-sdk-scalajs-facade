@@ -55,7 +55,7 @@ package object iot1clickdevicesservice {
 
 package iot1clickdevicesservice {
   @js.native
-  @JSImport("aws-sdk", "IoT1ClickDevicesService")
+  @JSImport("aws-sdk", "IoT1ClickDevicesService", "AWS.IoT1ClickDevicesService")
   class IoT1ClickDevicesService() extends js.Object {
     def this(config: AWSConfig) = this()
 

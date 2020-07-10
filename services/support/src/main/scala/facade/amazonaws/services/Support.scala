@@ -99,7 +99,7 @@ package object support {
 
 package support {
   @js.native
-  @JSImport("aws-sdk", "Support")
+  @JSImport("aws-sdk", "Support", "AWS.Support")
   class Support() extends js.Object {
     def this(config: AWSConfig) = this()
 

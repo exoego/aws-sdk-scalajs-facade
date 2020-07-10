@@ -110,7 +110,7 @@ package object firehose {
 
 package firehose {
   @js.native
-  @JSImport("aws-sdk", "Firehose")
+  @JSImport("aws-sdk", "Firehose", "AWS.Firehose")
   class Firehose() extends js.Object {
     def this(config: AWSConfig) = this()
 

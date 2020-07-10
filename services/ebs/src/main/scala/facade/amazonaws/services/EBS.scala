@@ -50,7 +50,7 @@ package object ebs {
 
 package ebs {
   @js.native
-  @JSImport("aws-sdk", "EBS")
+  @JSImport("aws-sdk", "EBS", "AWS.EBS")
   class EBS() extends js.Object {
     def this(config: AWSConfig) = this()
 

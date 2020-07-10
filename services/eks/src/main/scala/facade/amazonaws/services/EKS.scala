@@ -87,7 +87,7 @@ package object eks {
 
 package eks {
   @js.native
-  @JSImport("aws-sdk", "EKS")
+  @JSImport("aws-sdk", "EKS", "AWS.EKS")
   class EKS() extends js.Object {
     def this(config: AWSConfig) = this()
 

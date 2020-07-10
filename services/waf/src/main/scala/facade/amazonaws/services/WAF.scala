@@ -266,7 +266,7 @@ package object waf {
 
 package waf {
   @js.native
-  @JSImport("aws-sdk", "WAF")
+  @JSImport("aws-sdk", "WAF", "AWS.WAF")
   class WAF() extends js.Object {
     def this(config: AWSConfig) = this()
 

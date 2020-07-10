@@ -103,7 +103,7 @@ package object s3control {
 
 package s3control {
   @js.native
-  @JSImport("aws-sdk", "S3Control")
+  @JSImport("aws-sdk", "S3Control", "AWS.S3Control")
   class S3Control() extends js.Object {
     def this(config: AWSConfig) = this()
 

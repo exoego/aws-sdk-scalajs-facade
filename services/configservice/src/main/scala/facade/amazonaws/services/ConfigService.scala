@@ -418,7 +418,7 @@ package object configservice {
 
 package configservice {
   @js.native
-  @JSImport("aws-sdk", "ConfigService")
+  @JSImport("aws-sdk", "ConfigService", "AWS.ConfigService")
   class ConfigService() extends js.Object {
     def this(config: AWSConfig) = this()
 

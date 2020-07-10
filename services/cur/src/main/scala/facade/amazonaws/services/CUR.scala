@@ -36,7 +36,7 @@ package object cur {
 
 package cur {
   @js.native
-  @JSImport("aws-sdk", "CUR")
+  @JSImport("aws-sdk", "CUR", "AWS.CUR")
   class CUR() extends js.Object {
     def this(config: AWSConfig) = this()
 

@@ -91,7 +91,7 @@ package object transfer {
 
 package transfer {
   @js.native
-  @JSImport("aws-sdk", "Transfer")
+  @JSImport("aws-sdk", "Transfer", "AWS.Transfer")
   class Transfer() extends js.Object {
     def this(config: AWSConfig) = this()
 

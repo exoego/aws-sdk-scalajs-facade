@@ -27,7 +27,7 @@ package object forecastquery {
 
 package forecastquery {
   @js.native
-  @JSImport("aws-sdk", "ForecastQueryService")
+  @JSImport("aws-sdk", "ForecastQueryService", "AWS.ForecastQueryService")
   class ForecastQuery() extends js.Object {
     def this(config: AWSConfig) = this()
 

@@ -26,7 +26,7 @@ package object marketplaceentitlementservice {
 
 package marketplaceentitlementservice {
   @js.native
-  @JSImport("aws-sdk", "MarketplaceEntitlementService")
+  @JSImport("aws-sdk", "MarketplaceEntitlementService", "AWS.MarketplaceEntitlementService")
   class MarketplaceEntitlementService() extends js.Object {
     def this(config: AWSConfig) = this()
 

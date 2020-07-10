@@ -227,7 +227,7 @@ package object medialive {
 
 package medialive {
   @js.native
-  @JSImport("aws-sdk", "MediaLive")
+  @JSImport("aws-sdk", "MediaLive", "AWS.MediaLive")
   class MediaLive() extends js.Object {
     def this(config: AWSConfig) = this()
 

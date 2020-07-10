@@ -150,7 +150,7 @@ package object cloudwatchevents {
 
 package cloudwatchevents {
   @js.native
-  @JSImport("aws-sdk", "CloudWatchEvents")
+  @JSImport("aws-sdk", "CloudWatchEvents", "AWS.CloudWatchEvents")
   class CloudWatchEvents() extends js.Object {
     def this(config: AWSConfig) = this()
 

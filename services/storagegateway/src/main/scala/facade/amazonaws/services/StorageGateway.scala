@@ -332,7 +332,7 @@ package object storagegateway {
 
 package storagegateway {
   @js.native
-  @JSImport("aws-sdk", "StorageGateway")
+  @JSImport("aws-sdk", "StorageGateway", "AWS.StorageGateway")
   class StorageGateway() extends js.Object {
     def this(config: AWSConfig) = this()
 

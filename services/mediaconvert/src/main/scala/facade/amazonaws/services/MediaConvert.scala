@@ -239,7 +239,7 @@ package object mediaconvert {
 
 package mediaconvert {
   @js.native
-  @JSImport("aws-sdk", "MediaConvert")
+  @JSImport("aws-sdk", "MediaConvert", "AWS.MediaConvert")
   class MediaConvert() extends js.Object {
     def this(config: AWSConfig) = this()
 

@@ -47,7 +47,7 @@ package object ioteventsdata {
 
 package ioteventsdata {
   @js.native
-  @JSImport("aws-sdk", "IoTEventsData")
+  @JSImport("aws-sdk", "IoTEventsData", "AWS.IoTEventsData")
   class IoTEventsData() extends js.Object {
     def this(config: AWSConfig) = this()
 

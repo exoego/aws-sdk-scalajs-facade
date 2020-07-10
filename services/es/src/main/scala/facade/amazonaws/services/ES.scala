@@ -210,7 +210,7 @@ package object es {
 
 package es {
   @js.native
-  @JSImport("aws-sdk", "ES")
+  @JSImport("aws-sdk", "ES", "AWS.ES")
   class ES() extends js.Object {
     def this(config: AWSConfig) = this()
 

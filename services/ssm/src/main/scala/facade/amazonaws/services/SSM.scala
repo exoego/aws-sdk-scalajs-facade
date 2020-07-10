@@ -805,7 +805,7 @@ package object ssm {
 
 package ssm {
   @js.native
-  @JSImport("aws-sdk", "SSM")
+  @JSImport("aws-sdk", "SSM", "AWS.SSM")
   class SSM() extends js.Object {
     def this(config: AWSConfig) = this()
 

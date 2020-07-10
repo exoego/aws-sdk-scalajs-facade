@@ -234,7 +234,7 @@ package object elasticache {
 
 package elasticache {
   @js.native
-  @JSImport("aws-sdk", "ElastiCache")
+  @JSImport("aws-sdk", "ElastiCache", "AWS.ElastiCache")
   class ElastiCache() extends js.Object {
     def this(config: AWSConfig) = this()
 

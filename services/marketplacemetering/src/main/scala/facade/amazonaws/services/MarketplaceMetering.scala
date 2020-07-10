@@ -33,7 +33,7 @@ package object marketplacemetering {
 
 package marketplacemetering {
   @js.native
-  @JSImport("aws-sdk", "MarketplaceMetering")
+  @JSImport("aws-sdk", "MarketplaceMetering", "AWS.MarketplaceMetering")
   class MarketplaceMetering() extends js.Object {
     def this(config: AWSConfig) = this()
 

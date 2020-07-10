@@ -154,7 +154,7 @@ package object docdb {
 
 package docdb {
   @js.native
-  @JSImport("aws-sdk", "DocDB")
+  @JSImport("aws-sdk", "DocDB", "AWS.DocDB")
   class DocDB() extends js.Object {
     def this(config: AWSConfig) = this()
 

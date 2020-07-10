@@ -143,7 +143,7 @@ package object swf {
 
 package swf {
   @js.native
-  @JSImport("aws-sdk", "SWF")
+  @JSImport("aws-sdk", "SWF", "AWS.SWF")
   class SWF() extends js.Object {
     def this(config: AWSConfig) = this()
 

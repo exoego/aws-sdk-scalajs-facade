@@ -43,7 +43,7 @@ package object connectparticipant {
 
 package connectparticipant {
   @js.native
-  @JSImport("aws-sdk", "ConnectParticipant")
+  @JSImport("aws-sdk", "ConnectParticipant", "AWS.ConnectParticipant")
   class ConnectParticipant() extends js.Object {
     def this(config: AWSConfig) = this()
 

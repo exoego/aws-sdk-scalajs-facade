@@ -30,7 +30,7 @@ package object personalizeruntime {
 
 package personalizeruntime {
   @js.native
-  @JSImport("aws-sdk", "PersonalizeRuntime")
+  @JSImport("aws-sdk", "PersonalizeRuntime", "AWS.PersonalizeRuntime")
   class PersonalizeRuntime() extends js.Object {
     def this(config: AWSConfig) = this()
 

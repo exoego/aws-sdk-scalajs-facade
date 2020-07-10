@@ -323,7 +323,7 @@ package object redshift {
 
 package redshift {
   @js.native
-  @JSImport("aws-sdk", "Redshift")
+  @JSImport("aws-sdk", "Redshift", "AWS.Redshift")
   class Redshift() extends js.Object {
     def this(config: AWSConfig) = this()
 

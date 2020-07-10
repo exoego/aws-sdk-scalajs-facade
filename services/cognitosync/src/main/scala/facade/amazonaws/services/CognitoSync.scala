@@ -80,7 +80,7 @@ package object cognitosync {
 
 package cognitosync {
   @js.native
-  @JSImport("aws-sdk", "CognitoSync")
+  @JSImport("aws-sdk", "CognitoSync", "AWS.CognitoSync")
   class CognitoSync() extends js.Object {
     def this(config: AWSConfig) = this()
 

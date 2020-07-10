@@ -516,7 +516,7 @@ package object s3 {
 
 package s3 {
   @js.native
-  @JSImport("aws-sdk", "S3")
+  @JSImport("aws-sdk", "S3", "AWS.S3")
   class S3() extends js.Object {
     def this(config: AWSConfig) = this()
 

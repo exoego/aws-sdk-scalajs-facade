@@ -41,7 +41,7 @@ package object mediastoredata {
 
 package mediastoredata {
   @js.native
-  @JSImport("aws-sdk", "MediaStoreData")
+  @JSImport("aws-sdk", "MediaStoreData", "AWS.MediaStoreData")
   class MediaStoreData() extends js.Object {
     def this(config: AWSConfig) = this()
 

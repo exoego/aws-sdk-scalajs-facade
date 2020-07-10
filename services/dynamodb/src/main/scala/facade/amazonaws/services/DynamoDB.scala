@@ -237,7 +237,7 @@ package object dynamodb {
 
 package dynamodb {
   @js.native
-  @JSImport("aws-sdk", "DynamoDB")
+  @JSImport("aws-sdk", "DynamoDB", "AWS.DynamoDB")
   class DynamoDB() extends js.Object {
     def this(config: AWSConfig) = this()
 

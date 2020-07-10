@@ -103,7 +103,7 @@ package object glacier {
 
 package glacier {
   @js.native
-  @JSImport("aws-sdk", "Glacier")
+  @JSImport("aws-sdk", "Glacier", "AWS.Glacier")
   class Glacier() extends js.Object {
     def this(config: AWSConfig) = this()
 

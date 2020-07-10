@@ -245,7 +245,7 @@ package object sesv2 {
 
 package sesv2 {
   @js.native
-  @JSImport("aws-sdk", "SESV2")
+  @JSImport("aws-sdk", "SESV2", "AWS.SESV2")
   class SESv2() extends js.Object {
     def this(config: AWSConfig) = this()
 

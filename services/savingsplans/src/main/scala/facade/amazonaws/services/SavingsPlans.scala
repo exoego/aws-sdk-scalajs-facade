@@ -89,7 +89,7 @@ package object savingsplans {
 
 package savingsplans {
   @js.native
-  @JSImport("aws-sdk", "SavingsPlans")
+  @JSImport("aws-sdk", "SavingsPlans", "AWS.SavingsPlans")
   class SavingsPlans() extends js.Object {
     def this(config: AWSConfig) = this()
 

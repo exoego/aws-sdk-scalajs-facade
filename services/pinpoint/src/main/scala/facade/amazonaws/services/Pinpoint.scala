@@ -311,7 +311,7 @@ package object pinpoint {
 
 package pinpoint {
   @js.native
-  @JSImport("aws-sdk", "Pinpoint")
+  @JSImport("aws-sdk", "Pinpoint", "AWS.Pinpoint")
   class Pinpoint() extends js.Object {
     def this(config: AWSConfig) = this()
 

@@ -35,7 +35,7 @@ package object augmentedairuntime {
 
 package augmentedairuntime {
   @js.native
-  @JSImport("aws-sdk", "AugmentedAIRuntime")
+  @JSImport("aws-sdk", "AugmentedAIRuntime", "AWS.AugmentedAIRuntime")
   class AugmentedAIRuntime() extends js.Object {
     def this(config: AWSConfig) = this()
 

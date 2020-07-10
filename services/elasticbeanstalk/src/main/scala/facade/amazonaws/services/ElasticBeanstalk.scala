@@ -284,7 +284,7 @@ package object elasticbeanstalk {
 
 package elasticbeanstalk {
   @js.native
-  @JSImport("aws-sdk", "ElasticBeanstalk")
+  @JSImport("aws-sdk", "ElasticBeanstalk", "AWS.ElasticBeanstalk")
   class ElasticBeanstalk() extends js.Object {
     def this(config: AWSConfig) = this()
 

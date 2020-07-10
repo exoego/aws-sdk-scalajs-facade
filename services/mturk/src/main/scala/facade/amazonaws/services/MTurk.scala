@@ -146,7 +146,7 @@ package object mturk {
 
 package mturk {
   @js.native
-  @JSImport("aws-sdk", "MTurk")
+  @JSImport("aws-sdk", "MTurk", "AWS.MTurk")
   class MTurk() extends js.Object {
     def this(config: AWSConfig) = this()
 

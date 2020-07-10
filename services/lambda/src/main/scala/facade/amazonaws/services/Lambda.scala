@@ -221,7 +221,7 @@ package object lambda {
 
 package lambda {
   @js.native
-  @JSImport("aws-sdk", "Lambda")
+  @JSImport("aws-sdk", "Lambda", "AWS.Lambda")
   class Lambda() extends js.Object {
     def this(config: AWSConfig) = this()
 

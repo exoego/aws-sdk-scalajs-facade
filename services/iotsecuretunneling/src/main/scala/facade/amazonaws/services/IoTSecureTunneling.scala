@@ -47,7 +47,7 @@ package object iotsecuretunneling {
 
 package iotsecuretunneling {
   @js.native
-  @JSImport("aws-sdk", "IoTSecureTunneling")
+  @JSImport("aws-sdk", "IoTSecureTunneling", "AWS.IoTSecureTunneling")
   class IoTSecureTunneling() extends js.Object {
     def this(config: AWSConfig) = this()
 
