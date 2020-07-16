@@ -37,6 +37,7 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var cloudwatch: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var cloudwatchevents: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var cloudwatchlogs: js.UndefOr[ParamsWithEndpoint] = js.undefined
+  var codeartifact: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var codebuild: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var codecommit: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var codedeploy: js.UndefOr[ParamsWithEndpoint] = js.undefined
@@ -101,6 +102,7 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var groundstation: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var guardduty: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var health: js.UndefOr[ParamsWithEndpoint] = js.undefined
+  var honeycode: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var iam: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var imagebuilder: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var importexport: js.UndefOr[ParamsWithEndpoint] = js.undefined
@@ -114,7 +116,9 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var ioteventsdata: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var iotjobsdataplane: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var iotsecuretunneling: js.UndefOr[ParamsWithEndpoint] = js.undefined
+  var iotsitewise: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var iotthingsgraph: js.UndefOr[ParamsWithEndpoint] = js.undefined
+  var ivs: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var kafka: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var kendra: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var kinesis: js.UndefOr[ParamsWithEndpoint] = js.undefined
@@ -133,6 +137,7 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var lightsail: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var machinelearning: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var macie: js.UndefOr[ParamsWithEndpoint] = js.undefined
+  var macie2: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var managedblockchain: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var marketplacecatalog: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var marketplacecommerceanalytics: js.UndefOr[ParamsWithEndpoint] = js.undefined
@@ -210,6 +215,7 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var sts: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var support: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var swf: js.UndefOr[ParamsWithEndpoint] = js.undefined
+  var synthetics: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var textract: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var transcribeservice: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var transfer: js.UndefOr[ParamsWithEndpoint] = js.undefined

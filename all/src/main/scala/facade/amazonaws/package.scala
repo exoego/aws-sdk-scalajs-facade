@@ -9,11 +9,6 @@ package object amazonaws {
       }
     }
 
-    type MigrationHub = services.migrationhub.MigrationHub
-    def MigrationHub(): services.migrationhub.MigrationHub = new services.migrationhub.MigrationHub()
-    def MigrationHub(config: AWSConfig): services.migrationhub.MigrationHub =
-      new services.migrationhub.MigrationHub(config)
-
     type AccessAnalyzer = services.accessanalyzer.AccessAnalyzer
     def AccessAnalyzer(): services.accessanalyzer.AccessAnalyzer = new services.accessanalyzer.AccessAnalyzer()
     def AccessAnalyzer(config: AWSConfig): services.accessanalyzer.AccessAnalyzer =
@@ -94,6 +89,11 @@ package object amazonaws {
     def AutoScalingPlans(config: AWSConfig): services.autoscalingplans.AutoScalingPlans =
       new services.autoscalingplans.AutoScalingPlans(config)
 
+    type MigrationHub = services.migrationhub.MigrationHub
+    def MigrationHub(): services.migrationhub.MigrationHub = new services.migrationhub.MigrationHub()
+    def MigrationHub(config: AWSConfig): services.migrationhub.MigrationHub =
+      new services.migrationhub.MigrationHub(config)
+
     type Backup = services.backup.Backup
     def Backup(): services.backup.Backup = new services.backup.Backup()
     def Backup(config: AWSConfig): services.backup.Backup = new services.backup.Backup(config)
@@ -155,6 +155,11 @@ package object amazonaws {
     type CloudTrail = services.cloudtrail.CloudTrail
     def CloudTrail(): services.cloudtrail.CloudTrail = new services.cloudtrail.CloudTrail()
     def CloudTrail(config: AWSConfig): services.cloudtrail.CloudTrail = new services.cloudtrail.CloudTrail(config)
+
+    type CodeArtifact = services.codeartifact.CodeArtifact
+    def CodeArtifact(): services.codeartifact.CodeArtifact = new services.codeartifact.CodeArtifact()
+    def CodeArtifact(config: AWSConfig): services.codeartifact.CodeArtifact =
+      new services.codeartifact.CodeArtifact(config)
 
     type CodeBuild = services.codebuild.CodeBuild
     def CodeBuild(): services.codebuild.CodeBuild = new services.codebuild.CodeBuild()
@@ -461,6 +466,10 @@ package object amazonaws {
     def Health(): services.health.Health = new services.health.Health()
     def Health(config: AWSConfig): services.health.Health = new services.health.Health(config)
 
+    type Honeycode = services.honeycode.Honeycode
+    def Honeycode(): services.honeycode.Honeycode = new services.honeycode.Honeycode()
+    def Honeycode(config: AWSConfig): services.honeycode.Honeycode = new services.honeycode.Honeycode(config)
+
     type IAM = services.iam.IAM
     def IAM(): services.iam.IAM = new services.iam.IAM()
     def IAM(config: AWSConfig): services.iam.IAM = new services.iam.IAM(config)
@@ -525,10 +534,18 @@ package object amazonaws {
     def IoTSecureTunneling(config: AWSConfig): services.iotsecuretunneling.IoTSecureTunneling =
       new services.iotsecuretunneling.IoTSecureTunneling(config)
 
+    type IoTSiteWise = services.iotsitewise.IoTSiteWise
+    def IoTSiteWise(): services.iotsitewise.IoTSiteWise = new services.iotsitewise.IoTSiteWise()
+    def IoTSiteWise(config: AWSConfig): services.iotsitewise.IoTSiteWise = new services.iotsitewise.IoTSiteWise(config)
+
     type IoTThingsGraph = services.iotthingsgraph.IoTThingsGraph
     def IoTThingsGraph(): services.iotthingsgraph.IoTThingsGraph = new services.iotthingsgraph.IoTThingsGraph()
     def IoTThingsGraph(config: AWSConfig): services.iotthingsgraph.IoTThingsGraph =
       new services.iotthingsgraph.IoTThingsGraph(config)
+
+    type IVS = services.ivs.IVS
+    def IVS(): services.ivs.IVS = new services.ivs.IVS()
+    def IVS(config: AWSConfig): services.ivs.IVS = new services.ivs.IVS(config)
 
     type Kafka = services.kafka.Kafka
     def Kafka(): services.kafka.Kafka = new services.kafka.Kafka()
@@ -618,6 +635,10 @@ package object amazonaws {
     type Macie = services.macie.Macie
     def Macie(): services.macie.Macie = new services.macie.Macie()
     def Macie(config: AWSConfig): services.macie.Macie = new services.macie.Macie(config)
+
+    type Macie2 = services.macie2.Macie2
+    def Macie2(): services.macie2.Macie2 = new services.macie2.Macie2()
+    def Macie2(config: AWSConfig): services.macie2.Macie2 = new services.macie2.Macie2(config)
 
     type ManagedBlockchain = services.managedblockchain.ManagedBlockchain
     def ManagedBlockchain(): services.managedblockchain.ManagedBlockchain =
@@ -980,6 +1001,10 @@ package object amazonaws {
     type SWF = services.swf.SWF
     def SWF(): services.swf.SWF = new services.swf.SWF()
     def SWF(config: AWSConfig): services.swf.SWF = new services.swf.SWF(config)
+
+    type Synthetics = services.synthetics.Synthetics
+    def Synthetics(): services.synthetics.Synthetics = new services.synthetics.Synthetics()
+    def Synthetics(config: AWSConfig): services.synthetics.Synthetics = new services.synthetics.Synthetics(config)
 
     type Textract = services.textract.Textract
     def Textract(): services.textract.Textract = new services.textract.Textract()
