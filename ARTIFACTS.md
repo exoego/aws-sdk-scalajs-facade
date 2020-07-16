@@ -1,6 +1,6 @@
 You can include all-in-one dependencyby adding below single dependency.
 ```scala
-libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade" % "0.28.0-v2.596.0"
+libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade" % "VERSION(SEE README.md)"
 ```
 This dependency contains all AWS and, also offers companion object `AWS` as same as `aws-sdk-js`.
 However, this artifact is quite huge (100MB+!!). 
@@ -9,9 +9,8 @@ If you need only a few AWS (e.g. S3 and DynamoDB), you may consider to depend on
 It will shorten download time and linking time (`fullOptJS`/`fastOptJS`).
 
 ```scala
-val awsSdkScalajsFacadeVersion = "0.28.0-v2.596.0"
+val awsSdkScalajsFacadeVersion = "VERSION(SEE README.md)"
 libraryDependencies ++= Seq(
-    "net.exoego" %%% "aws-sdk-scalajs-facade-accessanalyzer" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-acm" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-acmpca" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-alexaforbusiness" % awsSdkScalajsFacadeVersion,
@@ -47,6 +46,7 @@ libraryDependencies ++= Seq(
     "net.exoego" %%% "aws-sdk-scalajs-facade-cloudwatch" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-cloudwatchevents" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-cloudwatchlogs" % awsSdkScalajsFacadeVersion,
+    "net.exoego" %%% "aws-sdk-scalajs-facade-codeartifact" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-codebuild" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-codecommit" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-codedeploy" % awsSdkScalajsFacadeVersion,
@@ -110,6 +110,7 @@ libraryDependencies ++= Seq(
     "net.exoego" %%% "aws-sdk-scalajs-facade-groundstation" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-guardduty" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-health" % awsSdkScalajsFacadeVersion,
+    "net.exoego" %%% "aws-sdk-scalajs-facade-honeycode" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-iam" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-imagebuilder" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-importexport" % awsSdkScalajsFacadeVersion,
@@ -123,7 +124,9 @@ libraryDependencies ++= Seq(
     "net.exoego" %%% "aws-sdk-scalajs-facade-ioteventsdata" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-iotjobsdataplane" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-iotsecuretunneling" % awsSdkScalajsFacadeVersion,
+    "net.exoego" %%% "aws-sdk-scalajs-facade-iotsitewise" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-iotthingsgraph" % awsSdkScalajsFacadeVersion,
+    "net.exoego" %%% "aws-sdk-scalajs-facade-ivs" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-kafka" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-kendra" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-kinesis" % awsSdkScalajsFacadeVersion,
@@ -142,6 +145,7 @@ libraryDependencies ++= Seq(
     "net.exoego" %%% "aws-sdk-scalajs-facade-lightsail" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-machinelearning" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-macie" % awsSdkScalajsFacadeVersion,
+    "net.exoego" %%% "aws-sdk-scalajs-facade-macie2" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-managedblockchain" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-marketplacecatalog" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-marketplacecommerceanalytics" % awsSdkScalajsFacadeVersion,
@@ -219,6 +223,7 @@ libraryDependencies ++= Seq(
     "net.exoego" %%% "aws-sdk-scalajs-facade-sts" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-support" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-swf" % awsSdkScalajsFacadeVersion,
+    "net.exoego" %%% "aws-sdk-scalajs-facade-synthetics" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-textract" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-transcribeservice" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-transfer" % awsSdkScalajsFacadeVersion,
