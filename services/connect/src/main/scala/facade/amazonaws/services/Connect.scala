@@ -121,13 +121,24 @@ package object connect {
     ): Future[ListUserHierarchyGroupsResponse] = service.listUserHierarchyGroups(params).promise().toFuture
     @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
       service.listUsers(params).promise().toFuture
+    @inline def resumeContactRecordingFuture(
+        params: ResumeContactRecordingRequest
+    ): Future[ResumeContactRecordingResponse] = service.resumeContactRecording(params).promise().toFuture
     @inline def startChatContactFuture(params: StartChatContactRequest): Future[StartChatContactResponse] =
       service.startChatContact(params).promise().toFuture
+    @inline def startContactRecordingFuture(
+        params: StartContactRecordingRequest
+    ): Future[StartContactRecordingResponse] = service.startContactRecording(params).promise().toFuture
     @inline def startOutboundVoiceContactFuture(
         params: StartOutboundVoiceContactRequest
     ): Future[StartOutboundVoiceContactResponse] = service.startOutboundVoiceContact(params).promise().toFuture
     @inline def stopContactFuture(params: StopContactRequest): Future[StopContactResponse] =
       service.stopContact(params).promise().toFuture
+    @inline def stopContactRecordingFuture(params: StopContactRecordingRequest): Future[StopContactRecordingResponse] =
+      service.stopContactRecording(params).promise().toFuture
+    @inline def suspendContactRecordingFuture(
+        params: SuspendContactRecordingRequest
+    ): Future[SuspendContactRecordingResponse] = service.suspendContactRecording(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
       service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
@@ -177,11 +188,17 @@ package connect {
     def listUserHierarchyGroups(params: ListUserHierarchyGroupsRequest): Request[ListUserHierarchyGroupsResponse] =
       js.native
     def listUsers(params: ListUsersRequest): Request[ListUsersResponse] = js.native
+    def resumeContactRecording(params: ResumeContactRecordingRequest): Request[ResumeContactRecordingResponse] =
+      js.native
     def startChatContact(params: StartChatContactRequest): Request[StartChatContactResponse] = js.native
+    def startContactRecording(params: StartContactRecordingRequest): Request[StartContactRecordingResponse] = js.native
     def startOutboundVoiceContact(
         params: StartOutboundVoiceContactRequest
     ): Request[StartOutboundVoiceContactResponse] = js.native
     def stopContact(params: StopContactRequest): Request[StopContactResponse] = js.native
+    def stopContactRecording(params: StopContactRecordingRequest): Request[StopContactRecordingResponse] = js.native
+    def suspendContactRecording(params: SuspendContactRecordingRequest): Request[SuspendContactRecordingResponse] =
+      js.native
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateContactAttributes(params: UpdateContactAttributesRequest): Request[UpdateContactAttributesResponse] =
@@ -2167,6 +2184,43 @@ package connect {
     val values = js.Object.freeze(js.Array(STANDARD, AGENT))
   }
 
+  @js.native
+  trait ResumeContactRecordingRequest extends js.Object {
+    var ContactId: ContactId
+    var InitialContactId: ContactId
+    var InstanceId: InstanceId
+  }
+
+  object ResumeContactRecordingRequest {
+    @inline
+    def apply(
+        ContactId: ContactId,
+        InitialContactId: ContactId,
+        InstanceId: InstanceId
+    ): ResumeContactRecordingRequest = {
+      val __obj = js.Dynamic.literal(
+        "ContactId" -> ContactId.asInstanceOf[js.Any],
+        "InitialContactId" -> InitialContactId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ResumeContactRecordingRequest]
+    }
+  }
+
+  @js.native
+  trait ResumeContactRecordingResponse extends js.Object {}
+
+  object ResumeContactRecordingResponse {
+    @inline
+    def apply(
+    ): ResumeContactRecordingResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[ResumeContactRecordingResponse]
+    }
+  }
+
   /**
     * Contains summary information about a routing profile.
     */
@@ -2273,6 +2327,46 @@ package connect {
   }
 
   @js.native
+  trait StartContactRecordingRequest extends js.Object {
+    var ContactId: ContactId
+    var InitialContactId: ContactId
+    var InstanceId: InstanceId
+    var VoiceRecordingConfiguration: VoiceRecordingConfiguration
+  }
+
+  object StartContactRecordingRequest {
+    @inline
+    def apply(
+        ContactId: ContactId,
+        InitialContactId: ContactId,
+        InstanceId: InstanceId,
+        VoiceRecordingConfiguration: VoiceRecordingConfiguration
+    ): StartContactRecordingRequest = {
+      val __obj = js.Dynamic.literal(
+        "ContactId" -> ContactId.asInstanceOf[js.Any],
+        "InitialContactId" -> InitialContactId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "VoiceRecordingConfiguration" -> VoiceRecordingConfiguration.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[StartContactRecordingRequest]
+    }
+  }
+
+  @js.native
+  trait StartContactRecordingResponse extends js.Object {}
+
+  object StartContactRecordingResponse {
+    @inline
+    def apply(
+    ): StartContactRecordingResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[StartContactRecordingResponse]
+    }
+  }
+
+  @js.native
   trait StartOutboundVoiceContactRequest extends js.Object {
     var ContactFlowId: ContactFlowId
     var DestinationPhoneNumber: PhoneNumber
@@ -2335,6 +2429,43 @@ package connect {
   }
 
   @js.native
+  trait StopContactRecordingRequest extends js.Object {
+    var ContactId: ContactId
+    var InitialContactId: ContactId
+    var InstanceId: InstanceId
+  }
+
+  object StopContactRecordingRequest {
+    @inline
+    def apply(
+        ContactId: ContactId,
+        InitialContactId: ContactId,
+        InstanceId: InstanceId
+    ): StopContactRecordingRequest = {
+      val __obj = js.Dynamic.literal(
+        "ContactId" -> ContactId.asInstanceOf[js.Any],
+        "InitialContactId" -> InitialContactId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[StopContactRecordingRequest]
+    }
+  }
+
+  @js.native
+  trait StopContactRecordingResponse extends js.Object {}
+
+  object StopContactRecordingResponse {
+    @inline
+    def apply(
+    ): StopContactRecordingResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[StopContactRecordingResponse]
+    }
+  }
+
+  @js.native
   trait StopContactRequest extends js.Object {
     var ContactId: ContactId
     var InstanceId: InstanceId
@@ -2365,6 +2496,43 @@ package connect {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopContactResponse]
+    }
+  }
+
+  @js.native
+  trait SuspendContactRecordingRequest extends js.Object {
+    var ContactId: ContactId
+    var InitialContactId: ContactId
+    var InstanceId: InstanceId
+  }
+
+  object SuspendContactRecordingRequest {
+    @inline
+    def apply(
+        ContactId: ContactId,
+        InitialContactId: ContactId,
+        InstanceId: InstanceId
+    ): SuspendContactRecordingRequest = {
+      val __obj = js.Dynamic.literal(
+        "ContactId" -> ContactId.asInstanceOf[js.Any],
+        "InitialContactId" -> InitialContactId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[SuspendContactRecordingRequest]
+    }
+  }
+
+  @js.native
+  trait SuspendContactRecordingResponse extends js.Object {}
+
+  object SuspendContactRecordingResponse {
+    @inline
+    def apply(
+    ): SuspendContactRecordingResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[SuspendContactRecordingResponse]
     }
   }
 
@@ -2725,5 +2893,34 @@ package connect {
       Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UserSummary]
     }
+  }
+
+  /**
+    * Contains information about the recording configuration settings.
+    */
+  @js.native
+  trait VoiceRecordingConfiguration extends js.Object {
+    var VoiceRecordingTrack: js.UndefOr[VoiceRecordingTrack]
+  }
+
+  object VoiceRecordingConfiguration {
+    @inline
+    def apply(
+        VoiceRecordingTrack: js.UndefOr[VoiceRecordingTrack] = js.undefined
+    ): VoiceRecordingConfiguration = {
+      val __obj = js.Dynamic.literal()
+      VoiceRecordingTrack.foreach(__v => __obj.updateDynamic("VoiceRecordingTrack")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VoiceRecordingConfiguration]
+    }
+  }
+
+  @js.native
+  sealed trait VoiceRecordingTrack extends js.Any
+  object VoiceRecordingTrack extends js.Object {
+    val FROM_AGENT = "FROM_AGENT".asInstanceOf[VoiceRecordingTrack]
+    val TO_AGENT = "TO_AGENT".asInstanceOf[VoiceRecordingTrack]
+    val ALL = "ALL".asInstanceOf[VoiceRecordingTrack]
+
+    val values = js.Object.freeze(js.Array(FROM_AGENT, TO_AGENT, ALL))
   }
 }

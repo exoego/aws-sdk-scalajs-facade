@@ -399,7 +399,7 @@ package macie2 {
   }
 
   /**
-    * Reserved for future use.
+    * Provides information about an API operation that an entity invoked for an affected resource.
     */
   @js.native
   trait ApiCallDetails extends js.Object {
@@ -427,7 +427,7 @@ package macie2 {
   }
 
   /**
-    * Reserved for future use.
+    * Provides information about an identity that performed an action on an affected resource by using temporary security credentials. The credentials were obtained using the AssumeRole operation of the AWS Security Token Service (AWS STS) API.
     */
   @js.native
   trait AssumedRole extends js.Object {
@@ -458,7 +458,7 @@ package macie2 {
   }
 
   /**
-    * Reserved for future use.
+    * Provides information about an AWS account and entity that performed an action on an affected resource. The action was performed using the credentials for an AWS account other than your own account.
     */
   @js.native
   trait AwsAccount extends js.Object {
@@ -480,7 +480,7 @@ package macie2 {
   }
 
   /**
-    * Reserved for future use.
+    * Provides information about an AWS service that performed an action on an affected resource.
     */
   @js.native
   trait AwsService extends js.Object {
@@ -596,7 +596,7 @@ package macie2 {
   }
 
   /**
-    * The total number of buckets that are publicly accessible, based on a combination of permissions settings for each bucket.
+    * Provides information about the number of S3 buckets that are publicly accessible based on a combination of permissions settings for each bucket.
     */
   @js.native
   trait BucketCountByEffectivePermission extends js.Object {
@@ -621,7 +621,7 @@ package macie2 {
   }
 
   /**
-    * The total number of buckets, grouped by server-side encryption type. This object also reports the total number of buckets that aren't encrypted.
+    * Provides information about the number of S3 buckets that use certain types of server-side encryption or don't encrypt objects by default.
     */
   @js.native
   trait BucketCountByEncryptionType extends js.Object {
@@ -646,7 +646,7 @@ package macie2 {
   }
 
   /**
-    * The total number of buckets that are shared with another AWS account or configured to support cross-origin resource sharing (CORS).
+    * Provides information about the number of S3 buckets that are shared with other AWS accounts.
     */
   @js.native
   trait BucketCountBySharedAccessType extends js.Object {
@@ -799,7 +799,7 @@ package macie2 {
   }
 
   /**
-    * The account-level and bucket-level permissions settings for an S3 bucket, or the bucket that contains an object.
+    * The account-level and bucket-level permissions settings for an S3 bucket.
     */
   @js.native
   trait BucketPermissionConfiguration extends js.Object {
@@ -934,7 +934,7 @@ package macie2 {
   }
 
   /**
-    * Provides detailed information about a sensitive data finding, including the types and number of occurrences of the data that was found.
+    * Provides detailed information about a sensitive data finding, including the types and number of occurrences of the sensitive data that was found.
     */
   @js.native
   trait ClassificationResult extends js.Object {
@@ -1388,7 +1388,7 @@ package macie2 {
   }
 
   /**
-    * Run the job once a day, every day. If specified, this is an empty object.
+    * Specifies that a classification job runs once a day, every day. This is an empty object.
     */
   @js.native
   trait DailySchedule extends js.Object {}
@@ -1452,7 +1452,7 @@ package macie2 {
   }
 
   /**
-    * Provides information about sensitive data that was detected by managed data identifiers and produced a finding.
+    * Provides information about sensitive data that was detected by managed data identifiers and produced a sensitive data finding.
     */
   @js.native
   trait DefaultDetection extends js.Object {
@@ -1870,7 +1870,7 @@ package macie2 {
   }
 
   /**
-    * The DNS name of the entity that performed the action on the affected resource.
+    * Provides information about the domain name of the device that an entity used to perform an action on an affected resource.
     */
   @js.native
   trait DomainDetails extends js.Object {
@@ -1969,7 +1969,7 @@ package macie2 {
   }
 
   /**
-    * The server-side encryption algorithm that's used when storing the S3 bucket or object. Valid values are:
+    * The type of server-side encryption that's used to encrypt objects in the S3 bucket. Valid values are:
     */
   @js.native
   sealed trait EncryptionType extends js.Any
@@ -1995,7 +1995,7 @@ package macie2 {
   }
 
   /**
-    * Reserved for future use.
+    * Provides information about an identity that performed an action on an affected resource by using temporary security credentials. The credentials were obtained using the GetFederationToken operation of the AWS Security Token Service (AWS STS) API.
     */
   @js.native
   trait FederatedUser extends js.Object {
@@ -2118,7 +2118,7 @@ package macie2 {
   }
 
   /**
-    * The type of action that occurred for the resource and produced the policy finding.
+    * The type of action that occurred for the resource and produced the policy finding:
     */
   @js.native
   sealed trait FindingActionType extends js.Any
@@ -2210,7 +2210,7 @@ package macie2 {
   }
 
   /**
-    * Specifies criteria for sorting the results of a query for information about findings.
+    * Specifies criteria for sorting the results of a query that retrieves aggregated statistical data about findings.
     */
   @js.native
   trait FindingStatisticsSortCriteria extends js.Object {
@@ -2284,6 +2284,7 @@ package macie2 {
     */
   @js.native
   trait FindingsFilterListItem extends js.Object {
+    var action: js.UndefOr[FindingsFilterAction]
     var arn: js.UndefOr[__string]
     var id: js.UndefOr[__string]
     var name: js.UndefOr[__string]
@@ -2293,12 +2294,14 @@ package macie2 {
   object FindingsFilterListItem {
     @inline
     def apply(
+        action: js.UndefOr[FindingsFilterAction] = js.undefined,
         arn: js.UndefOr[__string] = js.undefined,
         id: js.UndefOr[__string] = js.undefined,
         name: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): FindingsFilterListItem = {
       val __obj = js.Dynamic.literal()
+      action.foreach(__v => __obj.updateDynamic("action")(__v.asInstanceOf[js.Any]))
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
@@ -2840,7 +2843,7 @@ package macie2 {
   }
 
   /**
-    * Provides a group of results for a query that retrieved information about findings.
+    * Provides a group of results for a query that retrieved aggregated statistical data about findings.
     */
   @js.native
   trait GroupCount extends js.Object {
@@ -2862,7 +2865,7 @@ package macie2 {
   }
 
   /**
-    * Reserved for future use.
+    * Provides information about an AWS Identity and Access Management (IAM) user who performed an action on an affected resource.
     */
   @js.native
   trait IamUser extends js.Object {
@@ -2918,7 +2921,7 @@ package macie2 {
   }
 
   /**
-    * The IP address of the device that the entity used to perform the action on the affected resource. This object also provides information such as the owner and geographical location for the IP address.
+    * Provides information about the IP address of the device that an entity used to perform an action on an affected resource.
     */
   @js.native
   trait IpAddressDetails extends js.Object {
@@ -2949,7 +2952,7 @@ package macie2 {
   }
 
   /**
-    * Reserved for future use.
+    * Provides information about the city that an IP address originated from.
     */
   @js.native
   trait IpCity extends js.Object {
@@ -2968,7 +2971,7 @@ package macie2 {
   }
 
   /**
-    * Reserved for future use.
+    * Provides information about the country that an IP address originated from.
     */
   @js.native
   trait IpCountry extends js.Object {
@@ -2990,7 +2993,7 @@ package macie2 {
   }
 
   /**
-    * Reserved for future use.
+    * Provides geographic coordinates that indicate where a specified IP address originated from.
     */
   @js.native
   trait IpGeoLocation extends js.Object {
@@ -3012,7 +3015,7 @@ package macie2 {
   }
 
   /**
-    * Reserved for future use.
+    * Provides information about the registered owner of an IP address.
     */
   @js.native
   trait IpOwner extends js.Object {
@@ -3082,7 +3085,7 @@ package macie2 {
   }
 
   /**
-    * Specifies one or more conditions that determine which objects a classification job analyzes.
+    * Specifies a property- or tag-based condition that defines criteria for including or excluding objects from a classification job.
     */
   @js.native
   trait JobScopeTerm extends js.Object {
@@ -3104,7 +3107,7 @@ package macie2 {
   }
 
   /**
-    * Reserved for future use.
+    * Specifies one or more property- and tag-based conditions that define criteria for including or excluding objects from a classification job.
     */
   @js.native
   trait JobScopingBlock extends js.Object {
@@ -3123,7 +3126,7 @@ package macie2 {
   }
 
   /**
-    * The current status of a classification job. Valid values are:
+    * The current status of a classification job. Possible values are:
     */
   @js.native
   sealed trait JobStatus extends js.Any
@@ -3670,7 +3673,7 @@ package macie2 {
   }
 
   /**
-    * Run the job once a month, on a specific day of the month. This value can be an integer from 1 through 30.
+    * Specifies a monthly recurrence pattern for running a classification job.
     */
   @js.native
   trait MonthlySchedule extends js.Object {
@@ -3726,7 +3729,7 @@ package macie2 {
   }
 
   /**
-    * Provides detailed information about a policy finding.
+    * Provides the details of a policy finding.
     */
   @js.native
   trait PolicyDetails extends js.Object {
@@ -3795,6 +3798,8 @@ package macie2 {
     val Resigned = "Resigned".asInstanceOf[RelationshipStatus]
     val EmailVerificationInProgress = "EmailVerificationInProgress".asInstanceOf[RelationshipStatus]
     val EmailVerificationFailed = "EmailVerificationFailed".asInstanceOf[RelationshipStatus]
+    val RegionDisabled = "RegionDisabled".asInstanceOf[RelationshipStatus]
+    val AccountSuspended = "AccountSuspended".asInstanceOf[RelationshipStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3805,7 +3810,9 @@ package macie2 {
         Removed,
         Resigned,
         EmailVerificationInProgress,
-        EmailVerificationFailed
+        EmailVerificationFailed,
+        RegionDisabled,
+        AccountSuspended
       )
     )
   }
@@ -4058,7 +4065,7 @@ package macie2 {
   }
 
   /**
-    * An object that specifies conditions for including or excluding objects from the job.
+    * Specifies one or more property- and tag-based conditions that refine the scope of a classification job. These conditions define criteria that determine which objects a job analyzes.
     */
   @js.native
   trait Scoping extends js.Object {
@@ -4105,7 +4112,7 @@ package macie2 {
   }
 
   /**
-    * The category of sensitive data that was detected and produced the finding.
+    * The category of sensitive data that was detected and produced the finding. Possible values are:
     */
   @js.native
   sealed trait SensitiveDataItemCategory extends js.Any
@@ -4263,7 +4270,7 @@ package macie2 {
   }
 
   /**
-    * The textual representation of the finding's severity. Valid values are:
+    * The textual representation of the finding's severity. Possible values are:
     */
   @js.native
   sealed trait SeverityDescription extends js.Any
@@ -4357,7 +4364,7 @@ package macie2 {
   }
 
   /**
-    * The storage class of the S3 bucket or object. Valid values are:
+    * The storage class of the S3 bucket or object. Possible values are:
     */
   @js.native
   sealed trait StorageClass extends js.Any
@@ -4844,7 +4851,7 @@ package macie2 {
   }
 
   /**
-    * The field to use to filter the results of a query for account quotas and usage data.
+    * The field to use to filter the results of a query for account quotas and usage data:
     */
   @js.native
   sealed trait UsageStatisticsFilterKey extends js.Any
@@ -4877,7 +4884,7 @@ package macie2 {
   }
 
   /**
-    * The field to use to sort the results of a query for account quotas and usage data.
+    * The field to use to sort the results of a query for account quotas and usage data. Valid values are:
     */
   @js.native
   sealed trait UsageStatisticsSortKey extends js.Any
@@ -4926,7 +4933,7 @@ package macie2 {
   }
 
   /**
-    * The name and type of entity who performed the action on the affected resource.
+    * Provides information about the type and other characteristics of an entity that performed an action on an affected resource.
     */
   @js.native
   trait UserIdentity extends js.Object {
@@ -4963,7 +4970,7 @@ package macie2 {
   }
 
   /**
-    * Reserved for future use.
+    * Provides information about an AWS account and entity that performed an action on an affected resource. The action was performed using the credentials for your AWS account.
     */
   @js.native
   trait UserIdentityRoot extends js.Object {
@@ -4988,7 +4995,7 @@ package macie2 {
   }
 
   /**
-    * Reserved for future use.
+    * The type of entity that performed the action on the affected resource. Possible values are:
     */
   @js.native
   sealed trait UserIdentityType extends js.Any
@@ -5004,7 +5011,7 @@ package macie2 {
   }
 
   /**
-    * Reserved for future use.
+    * Specifies a weekly recurrence pattern for running a classification job.
     */
   @js.native
   trait WeeklySchedule extends js.Object {

@@ -63,6 +63,7 @@ package object ec2 {
   type CoipPoolMaxResults = Int
   type CoipPoolSet = js.Array[CoipPool]
   type ConnectionNotificationId = String
+  type ConnectionNotificationIdsList = js.Array[ConnectionNotificationId]
   type ConnectionNotificationSet = js.Array[ConnectionNotification]
   type ConversionIdStringList = js.Array[ConversionTaskId]
   type ConversionTaskId = String
@@ -241,7 +242,7 @@ package object ec2 {
   type InstanceCreditSpecificationListRequest = js.Array[InstanceCreditSpecificationRequest]
   type InstanceEventId = String
   type InstanceId = String
-  type InstanceIdSet = js.Array[String]
+  type InstanceIdSet = js.Array[InstanceId]
   type InstanceIdStringList = js.Array[InstanceId]
   type InstanceIdsSet = js.Array[InstanceId]
   type InstanceIpv6AddressList = js.Array[InstanceIpv6Address]
@@ -414,6 +415,7 @@ package object ec2 {
   type ProductCodeStringList = js.Array[String]
   type ProductDescriptionList = js.Array[String]
   type PropagatingVgwList = js.Array[PropagatingVgw]
+  type PublicIpAddress = String
   type PublicIpStringList = js.Array[String]
   type PublicIpv4PoolIdStringList = js.Array[Ipv4PoolEc2Id]
   type PublicIpv4PoolRangeSet = js.Array[PublicIpv4PoolRange]
@@ -2966,7 +2968,7 @@ package ec2 {
 
   @js.native
   trait AllocateAddressRequest extends js.Object {
-    var Address: js.UndefOr[String]
+    var Address: js.UndefOr[PublicIpAddress]
     var CustomerOwnedIpv4Pool: js.UndefOr[String]
     var Domain: js.UndefOr[DomainType]
     var DryRun: js.UndefOr[Boolean]
@@ -2977,7 +2979,7 @@ package ec2 {
   object AllocateAddressRequest {
     @inline
     def apply(
-        Address: js.UndefOr[String] = js.undefined,
+        Address: js.UndefOr[PublicIpAddress] = js.undefined,
         CustomerOwnedIpv4Pool: js.UndefOr[String] = js.undefined,
         Domain: js.UndefOr[DomainType] = js.undefined,
         DryRun: js.UndefOr[Boolean] = js.undefined,
@@ -6118,7 +6120,7 @@ package ec2 {
 
   @js.native
   trait CopyFpgaImageRequest extends js.Object {
-    var SourceFpgaImageId: FpgaImageId
+    var SourceFpgaImageId: String
     var SourceRegion: String
     var ClientToken: js.UndefOr[String]
     var Description: js.UndefOr[String]
@@ -6129,7 +6131,7 @@ package ec2 {
   object CopyFpgaImageRequest {
     @inline
     def apply(
-        SourceFpgaImageId: FpgaImageId,
+        SourceFpgaImageId: String,
         SourceRegion: String,
         ClientToken: js.UndefOr[String] = js.undefined,
         Description: js.UndefOr[String] = js.undefined,
@@ -9159,7 +9161,7 @@ package ec2 {
   }
 
   /**
-    * Describes the credit option for CPU usage of a T2 or T3 instance.
+    * Describes the credit option for CPU usage of a T2, T3, or T3a instance.
     */
   @js.native
   trait CreditSpecification extends js.Object {
@@ -9178,7 +9180,7 @@ package ec2 {
   }
 
   /**
-    * The credit option for CPU usage of a T2 or T3 instance.
+    * The credit option for CPU usage of a T2, T3, or T3a instance.
     */
   @js.native
   trait CreditSpecificationRequest extends js.Object {
@@ -10764,14 +10766,14 @@ package ec2 {
 
   @js.native
   trait DeleteVpcEndpointConnectionNotificationsRequest extends js.Object {
-    var ConnectionNotificationIds: ValueStringList
+    var ConnectionNotificationIds: ConnectionNotificationIdsList
     var DryRun: js.UndefOr[Boolean]
   }
 
   object DeleteVpcEndpointConnectionNotificationsRequest {
     @inline
     def apply(
-        ConnectionNotificationIds: ValueStringList,
+        ConnectionNotificationIds: ConnectionNotificationIdsList,
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): DeleteVpcEndpointConnectionNotificationsRequest = {
       val __obj = js.Dynamic.literal(
