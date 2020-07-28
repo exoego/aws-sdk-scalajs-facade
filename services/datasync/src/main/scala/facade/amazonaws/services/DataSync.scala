@@ -25,6 +25,7 @@ package object datasync {
   type FsxFilesystemArn = String
   type FsxWindowsSubdirectory = String
   type IamRoleArn = String
+  type InputTagList = js.Array[TagListEntry]
   type LocationArn = String
   type LocationList = js.Array[LocationListEntry]
   type LocationUri = String
@@ -33,6 +34,11 @@ package object datasync {
   type NetworkInterfaceArn = String
   type NextToken = String
   type NfsSubdirectory = String
+  type ObjectStorageAccessKey = String
+  type ObjectStorageBucketName = String
+  type ObjectStorageSecretKey = String
+  type ObjectStorageServerPort = Int
+  type OutputTagList = js.Array[TagListEntry]
   type PLSecurityGroupArnList = js.Array[Ec2SecurityGroupArn]
   type PLSubnetArnList = js.Array[Ec2SubnetArn]
   type S3BucketArn = String
@@ -46,7 +52,6 @@ package object datasync {
   type SourceNetworkInterfaceArns = js.Array[NetworkInterfaceArn]
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
-  type TagList = js.Array[TagListEntry]
   type TagValue = String
   type TaggableResourceArn = String
   type TaskArn = String
@@ -69,6 +74,9 @@ package object datasync {
     ): Future[CreateLocationFsxWindowsResponse] = service.createLocationFsxWindows(params).promise().toFuture
     @inline def createLocationNfsFuture(params: CreateLocationNfsRequest): Future[CreateLocationNfsResponse] =
       service.createLocationNfs(params).promise().toFuture
+    @inline def createLocationObjectStorageFuture(
+        params: CreateLocationObjectStorageRequest
+    ): Future[CreateLocationObjectStorageResponse] = service.createLocationObjectStorage(params).promise().toFuture
     @inline def createLocationS3Future(params: CreateLocationS3Request): Future[CreateLocationS3Response] =
       service.createLocationS3(params).promise().toFuture
     @inline def createLocationSmbFuture(params: CreateLocationSmbRequest): Future[CreateLocationSmbResponse] =
@@ -90,6 +98,9 @@ package object datasync {
     ): Future[DescribeLocationFsxWindowsResponse] = service.describeLocationFsxWindows(params).promise().toFuture
     @inline def describeLocationNfsFuture(params: DescribeLocationNfsRequest): Future[DescribeLocationNfsResponse] =
       service.describeLocationNfs(params).promise().toFuture
+    @inline def describeLocationObjectStorageFuture(
+        params: DescribeLocationObjectStorageRequest
+    ): Future[DescribeLocationObjectStorageResponse] = service.describeLocationObjectStorage(params).promise().toFuture
     @inline def describeLocationS3Future(params: DescribeLocationS3Request): Future[DescribeLocationS3Response] =
       service.describeLocationS3(params).promise().toFuture
     @inline def describeLocationSmbFuture(params: DescribeLocationSmbRequest): Future[DescribeLocationSmbResponse] =
@@ -134,6 +145,9 @@ package datasync {
     def createLocationFsxWindows(params: CreateLocationFsxWindowsRequest): Request[CreateLocationFsxWindowsResponse] =
       js.native
     def createLocationNfs(params: CreateLocationNfsRequest): Request[CreateLocationNfsResponse] = js.native
+    def createLocationObjectStorage(
+        params: CreateLocationObjectStorageRequest
+    ): Request[CreateLocationObjectStorageResponse] = js.native
     def createLocationS3(params: CreateLocationS3Request): Request[CreateLocationS3Response] = js.native
     def createLocationSmb(params: CreateLocationSmbRequest): Request[CreateLocationSmbResponse] = js.native
     def createTask(params: CreateTaskRequest): Request[CreateTaskResponse] = js.native
@@ -146,6 +160,9 @@ package datasync {
         params: DescribeLocationFsxWindowsRequest
     ): Request[DescribeLocationFsxWindowsResponse] = js.native
     def describeLocationNfs(params: DescribeLocationNfsRequest): Request[DescribeLocationNfsResponse] = js.native
+    def describeLocationObjectStorage(
+        params: DescribeLocationObjectStorageRequest
+    ): Request[DescribeLocationObjectStorageResponse] = js.native
     def describeLocationS3(params: DescribeLocationS3Request): Request[DescribeLocationS3Response] = js.native
     def describeLocationSmb(params: DescribeLocationSmbRequest): Request[DescribeLocationSmbResponse] = js.native
     def describeTask(params: DescribeTaskRequest): Request[DescribeTaskResponse] = js.native
@@ -242,7 +259,7 @@ package datasync {
     var AgentName: js.UndefOr[TagValue]
     var SecurityGroupArns: js.UndefOr[PLSecurityGroupArnList]
     var SubnetArns: js.UndefOr[PLSubnetArnList]
-    var Tags: js.UndefOr[TagList]
+    var Tags: js.UndefOr[InputTagList]
     var VpcEndpointId: js.UndefOr[VpcEndpointId]
   }
 
@@ -253,7 +270,7 @@ package datasync {
         AgentName: js.UndefOr[TagValue] = js.undefined,
         SecurityGroupArns: js.UndefOr[PLSecurityGroupArnList] = js.undefined,
         SubnetArns: js.UndefOr[PLSubnetArnList] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined,
+        Tags: js.UndefOr[InputTagList] = js.undefined,
         VpcEndpointId: js.UndefOr[VpcEndpointId] = js.undefined
     ): CreateAgentRequest = {
       val __obj = js.Dynamic.literal(
@@ -290,7 +307,7 @@ package datasync {
     var Ec2Config: Ec2Config
     var EfsFilesystemArn: EfsFilesystemArn
     var Subdirectory: js.UndefOr[EfsSubdirectory]
-    var Tags: js.UndefOr[TagList]
+    var Tags: js.UndefOr[InputTagList]
   }
 
   object CreateLocationEfsRequest {
@@ -299,7 +316,7 @@ package datasync {
         Ec2Config: Ec2Config,
         EfsFilesystemArn: EfsFilesystemArn,
         Subdirectory: js.UndefOr[EfsSubdirectory] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
+        Tags: js.UndefOr[InputTagList] = js.undefined
     ): CreateLocationEfsRequest = {
       val __obj = js.Dynamic.literal(
         "Ec2Config" -> Ec2Config.asInstanceOf[js.Any],
@@ -339,7 +356,7 @@ package datasync {
     var User: SmbUser
     var Domain: js.UndefOr[SmbDomain]
     var Subdirectory: js.UndefOr[FsxWindowsSubdirectory]
-    var Tags: js.UndefOr[TagList]
+    var Tags: js.UndefOr[InputTagList]
   }
 
   object CreateLocationFsxWindowsRequest {
@@ -351,7 +368,7 @@ package datasync {
         User: SmbUser,
         Domain: js.UndefOr[SmbDomain] = js.undefined,
         Subdirectory: js.UndefOr[FsxWindowsSubdirectory] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
+        Tags: js.UndefOr[InputTagList] = js.undefined
     ): CreateLocationFsxWindowsRequest = {
       val __obj = js.Dynamic.literal(
         "FsxFilesystemArn" -> FsxFilesystemArn.asInstanceOf[js.Any],
@@ -389,7 +406,7 @@ package datasync {
     var ServerHostname: ServerHostname
     var Subdirectory: NfsSubdirectory
     var MountOptions: js.UndefOr[NfsMountOptions]
-    var Tags: js.UndefOr[TagList]
+    var Tags: js.UndefOr[InputTagList]
   }
 
   object CreateLocationNfsRequest {
@@ -399,7 +416,7 @@ package datasync {
         ServerHostname: ServerHostname,
         Subdirectory: NfsSubdirectory,
         MountOptions: js.UndefOr[NfsMountOptions] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
+        Tags: js.UndefOr[InputTagList] = js.undefined
     ): CreateLocationNfsRequest = {
       val __obj = js.Dynamic.literal(
         "OnPremConfig" -> OnPremConfig.asInstanceOf[js.Any],
@@ -430,12 +447,70 @@ package datasync {
   }
 
   @js.native
+  trait CreateLocationObjectStorageRequest extends js.Object {
+    var AgentArns: AgentArnList
+    var BucketName: ObjectStorageBucketName
+    var ServerHostname: ServerHostname
+    var AccessKey: js.UndefOr[ObjectStorageAccessKey]
+    var SecretKey: js.UndefOr[ObjectStorageSecretKey]
+    var ServerPort: js.UndefOr[ObjectStorageServerPort]
+    var ServerProtocol: js.UndefOr[ObjectStorageServerProtocol]
+    var Subdirectory: js.UndefOr[S3Subdirectory]
+    var Tags: js.UndefOr[InputTagList]
+  }
+
+  object CreateLocationObjectStorageRequest {
+    @inline
+    def apply(
+        AgentArns: AgentArnList,
+        BucketName: ObjectStorageBucketName,
+        ServerHostname: ServerHostname,
+        AccessKey: js.UndefOr[ObjectStorageAccessKey] = js.undefined,
+        SecretKey: js.UndefOr[ObjectStorageSecretKey] = js.undefined,
+        ServerPort: js.UndefOr[ObjectStorageServerPort] = js.undefined,
+        ServerProtocol: js.UndefOr[ObjectStorageServerProtocol] = js.undefined,
+        Subdirectory: js.UndefOr[S3Subdirectory] = js.undefined,
+        Tags: js.UndefOr[InputTagList] = js.undefined
+    ): CreateLocationObjectStorageRequest = {
+      val __obj = js.Dynamic.literal(
+        "AgentArns" -> AgentArns.asInstanceOf[js.Any],
+        "BucketName" -> BucketName.asInstanceOf[js.Any],
+        "ServerHostname" -> ServerHostname.asInstanceOf[js.Any]
+      )
+
+      AccessKey.foreach(__v => __obj.updateDynamic("AccessKey")(__v.asInstanceOf[js.Any]))
+      SecretKey.foreach(__v => __obj.updateDynamic("SecretKey")(__v.asInstanceOf[js.Any]))
+      ServerPort.foreach(__v => __obj.updateDynamic("ServerPort")(__v.asInstanceOf[js.Any]))
+      ServerProtocol.foreach(__v => __obj.updateDynamic("ServerProtocol")(__v.asInstanceOf[js.Any]))
+      Subdirectory.foreach(__v => __obj.updateDynamic("Subdirectory")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLocationObjectStorageRequest]
+    }
+  }
+
+  @js.native
+  trait CreateLocationObjectStorageResponse extends js.Object {
+    var LocationArn: js.UndefOr[LocationArn]
+  }
+
+  object CreateLocationObjectStorageResponse {
+    @inline
+    def apply(
+        LocationArn: js.UndefOr[LocationArn] = js.undefined
+    ): CreateLocationObjectStorageResponse = {
+      val __obj = js.Dynamic.literal()
+      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLocationObjectStorageResponse]
+    }
+  }
+
+  @js.native
   trait CreateLocationS3Request extends js.Object {
     var S3BucketArn: S3BucketArn
     var S3Config: S3Config
     var S3StorageClass: js.UndefOr[S3StorageClass]
     var Subdirectory: js.UndefOr[S3Subdirectory]
-    var Tags: js.UndefOr[TagList]
+    var Tags: js.UndefOr[InputTagList]
   }
 
   object CreateLocationS3Request {
@@ -445,7 +520,7 @@ package datasync {
         S3Config: S3Config,
         S3StorageClass: js.UndefOr[S3StorageClass] = js.undefined,
         Subdirectory: js.UndefOr[S3Subdirectory] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
+        Tags: js.UndefOr[InputTagList] = js.undefined
     ): CreateLocationS3Request = {
       val __obj = js.Dynamic.literal(
         "S3BucketArn" -> S3BucketArn.asInstanceOf[js.Any],
@@ -484,7 +559,7 @@ package datasync {
     var User: SmbUser
     var Domain: js.UndefOr[SmbDomain]
     var MountOptions: js.UndefOr[SmbMountOptions]
-    var Tags: js.UndefOr[TagList]
+    var Tags: js.UndefOr[InputTagList]
   }
 
   object CreateLocationSmbRequest {
@@ -497,7 +572,7 @@ package datasync {
         User: SmbUser,
         Domain: js.UndefOr[SmbDomain] = js.undefined,
         MountOptions: js.UndefOr[SmbMountOptions] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
+        Tags: js.UndefOr[InputTagList] = js.undefined
     ): CreateLocationSmbRequest = {
       val __obj = js.Dynamic.literal(
         "AgentArns" -> AgentArns.asInstanceOf[js.Any],
@@ -539,7 +614,7 @@ package datasync {
     var Name: js.UndefOr[TagValue]
     var Options: js.UndefOr[Options]
     var Schedule: js.UndefOr[TaskSchedule]
-    var Tags: js.UndefOr[TagList]
+    var Tags: js.UndefOr[InputTagList]
   }
 
   object CreateTaskRequest {
@@ -552,7 +627,7 @@ package datasync {
         Name: js.UndefOr[TagValue] = js.undefined,
         Options: js.UndefOr[Options] = js.undefined,
         Schedule: js.UndefOr[TaskSchedule] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
+        Tags: js.UndefOr[InputTagList] = js.undefined
     ): CreateTaskRequest = {
       val __obj = js.Dynamic.literal(
         "DestinationLocationArn" -> DestinationLocationArn.asInstanceOf[js.Any],
@@ -874,6 +949,58 @@ package datasync {
       MountOptions.foreach(__v => __obj.updateDynamic("MountOptions")(__v.asInstanceOf[js.Any]))
       OnPremConfig.foreach(__v => __obj.updateDynamic("OnPremConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLocationNfsResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeLocationObjectStorageRequest extends js.Object {
+    var LocationArn: LocationArn
+  }
+
+  object DescribeLocationObjectStorageRequest {
+    @inline
+    def apply(
+        LocationArn: LocationArn
+    ): DescribeLocationObjectStorageRequest = {
+      val __obj = js.Dynamic.literal(
+        "LocationArn" -> LocationArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeLocationObjectStorageRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeLocationObjectStorageResponse extends js.Object {
+    var AccessKey: js.UndefOr[ObjectStorageAccessKey]
+    var AgentArns: js.UndefOr[AgentArnList]
+    var CreationTime: js.UndefOr[Time]
+    var LocationArn: js.UndefOr[LocationArn]
+    var LocationUri: js.UndefOr[LocationUri]
+    var ServerPort: js.UndefOr[ObjectStorageServerPort]
+    var ServerProtocol: js.UndefOr[ObjectStorageServerProtocol]
+  }
+
+  object DescribeLocationObjectStorageResponse {
+    @inline
+    def apply(
+        AccessKey: js.UndefOr[ObjectStorageAccessKey] = js.undefined,
+        AgentArns: js.UndefOr[AgentArnList] = js.undefined,
+        CreationTime: js.UndefOr[Time] = js.undefined,
+        LocationArn: js.UndefOr[LocationArn] = js.undefined,
+        LocationUri: js.UndefOr[LocationUri] = js.undefined,
+        ServerPort: js.UndefOr[ObjectStorageServerPort] = js.undefined,
+        ServerProtocol: js.UndefOr[ObjectStorageServerProtocol] = js.undefined
+    ): DescribeLocationObjectStorageResponse = {
+      val __obj = js.Dynamic.literal()
+      AccessKey.foreach(__v => __obj.updateDynamic("AccessKey")(__v.asInstanceOf[js.Any]))
+      AgentArns.foreach(__v => __obj.updateDynamic("AgentArns")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
+      LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
+      ServerPort.foreach(__v => __obj.updateDynamic("ServerPort")(__v.asInstanceOf[js.Any]))
+      ServerProtocol.foreach(__v => __obj.updateDynamic("ServerProtocol")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLocationObjectStorageResponse]
     }
   }
 
@@ -1300,14 +1427,14 @@ package datasync {
   @js.native
   trait ListTagsForResourceResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
-    var Tags: js.UndefOr[TagList]
+    var Tags: js.UndefOr[OutputTagList]
   }
 
   object ListTagsForResourceResponse {
     @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
+        Tags: js.UndefOr[OutputTagList] = js.undefined
     ): ListTagsForResourceResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
@@ -1469,6 +1596,15 @@ package datasync {
     val values = js.Object.freeze(js.Array(AUTOMATIC, NFS3, NFS4_0, NFS4_1))
   }
 
+  @js.native
+  sealed trait ObjectStorageServerProtocol extends js.Any
+  object ObjectStorageServerProtocol extends js.Object {
+    val HTTPS = "HTTPS".asInstanceOf[ObjectStorageServerProtocol]
+    val HTTP = "HTTP".asInstanceOf[ObjectStorageServerProtocol]
+
+    val values = js.Object.freeze(js.Array(HTTPS, HTTP))
+  }
+
   /**
     * A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.
     */
@@ -1506,6 +1642,7 @@ package datasync {
     var PreserveDeletedFiles: js.UndefOr[PreserveDeletedFiles]
     var PreserveDevices: js.UndefOr[PreserveDevices]
     var TaskQueueing: js.UndefOr[TaskQueueing]
+    var TransferMode: js.UndefOr[TransferMode]
     var Uid: js.UndefOr[Uid]
     var VerifyMode: js.UndefOr[VerifyMode]
   }
@@ -1523,6 +1660,7 @@ package datasync {
         PreserveDeletedFiles: js.UndefOr[PreserveDeletedFiles] = js.undefined,
         PreserveDevices: js.UndefOr[PreserveDevices] = js.undefined,
         TaskQueueing: js.UndefOr[TaskQueueing] = js.undefined,
+        TransferMode: js.UndefOr[TransferMode] = js.undefined,
         Uid: js.UndefOr[Uid] = js.undefined,
         VerifyMode: js.UndefOr[VerifyMode] = js.undefined
     ): Options = {
@@ -1537,6 +1675,7 @@ package datasync {
       PreserveDeletedFiles.foreach(__v => __obj.updateDynamic("PreserveDeletedFiles")(__v.asInstanceOf[js.Any]))
       PreserveDevices.foreach(__v => __obj.updateDynamic("PreserveDevices")(__v.asInstanceOf[js.Any]))
       TaskQueueing.foreach(__v => __obj.updateDynamic("TaskQueueing")(__v.asInstanceOf[js.Any]))
+      TransferMode.foreach(__v => __obj.updateDynamic("TransferMode")(__v.asInstanceOf[js.Any]))
       Uid.foreach(__v => __obj.updateDynamic("Uid")(__v.asInstanceOf[js.Any]))
       VerifyMode.foreach(__v => __obj.updateDynamic("VerifyMode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Options]
@@ -1590,7 +1729,7 @@ package datasync {
   }
 
   /**
-    * The VPC endpoint, subnet and security group that an agent uses to access IP addresses in a VPC (Virtual Private Cloud).
+    * The VPC endpoint, subnet, and security group that an agent uses to access IP addresses in a VPC (Virtual Private Cloud).
     */
   @js.native
   trait PrivateLinkConfig extends js.Object {
@@ -1749,14 +1888,14 @@ package datasync {
   @js.native
   trait TagResourceRequest extends js.Object {
     var ResourceArn: TaggableResourceArn
-    var Tags: TagList
+    var Tags: InputTagList
   }
 
   object TagResourceRequest {
     @inline
     def apply(
         ResourceArn: TaggableResourceArn,
-        Tags: TagList
+        Tags: InputTagList
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
@@ -1924,6 +2063,15 @@ package datasync {
     val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[TaskStatus]
 
     val values = js.Object.freeze(js.Array(AVAILABLE, CREATING, QUEUED, RUNNING, UNAVAILABLE))
+  }
+
+  @js.native
+  sealed trait TransferMode extends js.Any
+  object TransferMode extends js.Object {
+    val CHANGED = "CHANGED".asInstanceOf[TransferMode]
+    val ALL = "ALL".asInstanceOf[TransferMode]
+
+    val values = js.Object.freeze(js.Array(CHANGED, ALL))
   }
 
   @js.native

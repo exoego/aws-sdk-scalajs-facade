@@ -10,6 +10,7 @@ package object workspaces {
   type ARN = String
   type AccountModificationList = js.Array[AccountModification]
   type Alias = String
+  type AwsAccount = String
   type BooleanObject = Boolean
   type BundleId = String
   type BundleIdList = js.Array[BundleId]
@@ -34,6 +35,7 @@ package object workspaces {
   type FailedStartWorkspaceRequests = js.Array[FailedWorkspaceChangeRequest]
   type FailedStopWorkspaceRequests = js.Array[FailedWorkspaceChangeRequest]
   type FailedTerminateWorkspaceRequests = js.Array[FailedWorkspaceChangeRequest]
+  type ImagePermissions = js.Array[ImagePermission]
   type IpAddress = String
   type IpGroupDesc = String
   type IpGroupId = String
@@ -126,6 +128,10 @@ package object workspaces {
     @inline def describeWorkspaceDirectoriesFuture(
         params: DescribeWorkspaceDirectoriesRequest
     ): Future[DescribeWorkspaceDirectoriesResult] = service.describeWorkspaceDirectories(params).promise().toFuture
+    @inline def describeWorkspaceImagePermissionsFuture(
+        params: DescribeWorkspaceImagePermissionsRequest
+    ): Future[DescribeWorkspaceImagePermissionsResult] =
+      service.describeWorkspaceImagePermissions(params).promise().toFuture
     @inline def describeWorkspaceImagesFuture(
         params: DescribeWorkspaceImagesRequest
     ): Future[DescribeWorkspaceImagesResult] = service.describeWorkspaceImages(params).promise().toFuture
@@ -188,6 +194,9 @@ package object workspaces {
       service.terminateWorkspaces(params).promise().toFuture
     @inline def updateRulesOfIpGroupFuture(params: UpdateRulesOfIpGroupRequest): Future[UpdateRulesOfIpGroupResult] =
       service.updateRulesOfIpGroup(params).promise().toFuture
+    @inline def updateWorkspaceImagePermissionFuture(
+        params: UpdateWorkspaceImagePermissionRequest
+    ): Future[UpdateWorkspaceImagePermissionResult] = service.updateWorkspaceImagePermission(params).promise().toFuture
   }
 }
 
@@ -222,6 +231,9 @@ package workspaces {
     def describeWorkspaceDirectories(
         params: DescribeWorkspaceDirectoriesRequest
     ): Request[DescribeWorkspaceDirectoriesResult] = js.native
+    def describeWorkspaceImagePermissions(
+        params: DescribeWorkspaceImagePermissionsRequest
+    ): Request[DescribeWorkspaceImagePermissionsResult] = js.native
     def describeWorkspaceImages(params: DescribeWorkspaceImagesRequest): Request[DescribeWorkspaceImagesResult] =
       js.native
     def describeWorkspaceSnapshots(
@@ -262,6 +274,9 @@ package workspaces {
     def stopWorkspaces(params: StopWorkspacesRequest): Request[StopWorkspacesResult] = js.native
     def terminateWorkspaces(params: TerminateWorkspacesRequest): Request[TerminateWorkspacesResult] = js.native
     def updateRulesOfIpGroup(params: UpdateRulesOfIpGroupRequest): Request[UpdateRulesOfIpGroupResult] = js.native
+    def updateWorkspaceImagePermission(
+        params: UpdateWorkspaceImagePermissionRequest
+    ): Request[UpdateWorkspaceImagePermissionResult] = js.native
   }
 
   @js.native
@@ -1072,8 +1087,55 @@ package workspaces {
   }
 
   @js.native
+  trait DescribeWorkspaceImagePermissionsRequest extends js.Object {
+    var ImageId: WorkspaceImageId
+    var MaxResults: js.UndefOr[Limit]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object DescribeWorkspaceImagePermissionsRequest {
+    @inline
+    def apply(
+        ImageId: WorkspaceImageId,
+        MaxResults: js.UndefOr[Limit] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): DescribeWorkspaceImagePermissionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "ImageId" -> ImageId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeWorkspaceImagePermissionsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeWorkspaceImagePermissionsResult extends js.Object {
+    var ImageId: js.UndefOr[WorkspaceImageId]
+    var ImagePermissions: js.UndefOr[ImagePermissions]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object DescribeWorkspaceImagePermissionsResult {
+    @inline
+    def apply(
+        ImageId: js.UndefOr[WorkspaceImageId] = js.undefined,
+        ImagePermissions: js.UndefOr[ImagePermissions] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): DescribeWorkspaceImagePermissionsResult = {
+      val __obj = js.Dynamic.literal()
+      ImageId.foreach(__v => __obj.updateDynamic("ImageId")(__v.asInstanceOf[js.Any]))
+      ImagePermissions.foreach(__v => __obj.updateDynamic("ImagePermissions")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeWorkspaceImagePermissionsResult]
+    }
+  }
+
+  @js.native
   trait DescribeWorkspaceImagesRequest extends js.Object {
     var ImageIds: js.UndefOr[WorkspaceImageIdList]
+    var ImageType: js.UndefOr[ImageType]
     var MaxResults: js.UndefOr[Limit]
     var NextToken: js.UndefOr[PaginationToken]
   }
@@ -1082,11 +1144,13 @@ package workspaces {
     @inline
     def apply(
         ImageIds: js.UndefOr[WorkspaceImageIdList] = js.undefined,
+        ImageType: js.UndefOr[ImageType] = js.undefined,
         MaxResults: js.UndefOr[Limit] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeWorkspaceImagesRequest = {
       val __obj = js.Dynamic.literal()
       ImageIds.foreach(__v => __obj.updateDynamic("ImageIds")(__v.asInstanceOf[js.Any]))
+      ImageType.foreach(__v => __obj.updateDynamic("ImageType")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeWorkspaceImagesRequest]
@@ -1321,6 +1385,34 @@ package workspaces {
       WorkspaceId.foreach(__v => __obj.updateDynamic("WorkspaceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FailedWorkspaceChangeRequest]
     }
+  }
+
+  /**
+    * Describes the AWS accounts that have been granted permission to use a shared image.
+    */
+  @js.native
+  trait ImagePermission extends js.Object {
+    var SharedAccountId: js.UndefOr[AwsAccount]
+  }
+
+  object ImagePermission {
+    @inline
+    def apply(
+        SharedAccountId: js.UndefOr[AwsAccount] = js.undefined
+    ): ImagePermission = {
+      val __obj = js.Dynamic.literal()
+      SharedAccountId.foreach(__v => __obj.updateDynamic("SharedAccountId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImagePermission]
+    }
+  }
+
+  @js.native
+  sealed trait ImageType extends js.Any
+  object ImageType extends js.Object {
+    val OWNED = "OWNED".asInstanceOf[ImageType]
+    val SHARED = "SHARED".asInstanceOf[ImageType]
+
+    val values = js.Object.freeze(js.Array(OWNED, SHARED))
   }
 
   @js.native
@@ -2326,6 +2418,43 @@ package workspaces {
     }
   }
 
+  @js.native
+  trait UpdateWorkspaceImagePermissionRequest extends js.Object {
+    var AllowCopyImage: BooleanObject
+    var ImageId: WorkspaceImageId
+    var SharedAccountId: AwsAccount
+  }
+
+  object UpdateWorkspaceImagePermissionRequest {
+    @inline
+    def apply(
+        AllowCopyImage: BooleanObject,
+        ImageId: WorkspaceImageId,
+        SharedAccountId: AwsAccount
+    ): UpdateWorkspaceImagePermissionRequest = {
+      val __obj = js.Dynamic.literal(
+        "AllowCopyImage" -> AllowCopyImage.asInstanceOf[js.Any],
+        "ImageId" -> ImageId.asInstanceOf[js.Any],
+        "SharedAccountId" -> SharedAccountId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateWorkspaceImagePermissionRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateWorkspaceImagePermissionResult extends js.Object {}
+
+  object UpdateWorkspaceImagePermissionResult {
+    @inline
+    def apply(
+    ): UpdateWorkspaceImagePermissionResult = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[UpdateWorkspaceImagePermissionResult]
+    }
+  }
+
   /**
     * Describes the user storage for a WorkSpace bundle.
     */
@@ -2649,12 +2778,14 @@ package workspaces {
     */
   @js.native
   trait WorkspaceImage extends js.Object {
+    var Created: js.UndefOr[Timestamp]
     var Description: js.UndefOr[WorkspaceImageDescription]
     var ErrorCode: js.UndefOr[WorkspaceImageErrorCode]
     var ErrorMessage: js.UndefOr[Description]
     var ImageId: js.UndefOr[WorkspaceImageId]
     var Name: js.UndefOr[WorkspaceImageName]
     var OperatingSystem: js.UndefOr[OperatingSystem]
+    var OwnerAccountId: js.UndefOr[AwsAccount]
     var RequiredTenancy: js.UndefOr[WorkspaceImageRequiredTenancy]
     var State: js.UndefOr[WorkspaceImageState]
   }
@@ -2662,22 +2793,26 @@ package workspaces {
   object WorkspaceImage {
     @inline
     def apply(
+        Created: js.UndefOr[Timestamp] = js.undefined,
         Description: js.UndefOr[WorkspaceImageDescription] = js.undefined,
         ErrorCode: js.UndefOr[WorkspaceImageErrorCode] = js.undefined,
         ErrorMessage: js.UndefOr[Description] = js.undefined,
         ImageId: js.UndefOr[WorkspaceImageId] = js.undefined,
         Name: js.UndefOr[WorkspaceImageName] = js.undefined,
         OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
+        OwnerAccountId: js.UndefOr[AwsAccount] = js.undefined,
         RequiredTenancy: js.UndefOr[WorkspaceImageRequiredTenancy] = js.undefined,
         State: js.UndefOr[WorkspaceImageState] = js.undefined
     ): WorkspaceImage = {
       val __obj = js.Dynamic.literal()
+      Created.foreach(__v => __obj.updateDynamic("Created")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
       ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
       ImageId.foreach(__v => __obj.updateDynamic("ImageId")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       OperatingSystem.foreach(__v => __obj.updateDynamic("OperatingSystem")(__v.asInstanceOf[js.Any]))
+      OwnerAccountId.foreach(__v => __obj.updateDynamic("OwnerAccountId")(__v.asInstanceOf[js.Any]))
       RequiredTenancy.foreach(__v => __obj.updateDynamic("RequiredTenancy")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkspaceImage]

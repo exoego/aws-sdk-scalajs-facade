@@ -104,8 +104,9 @@ package mediapackage {
     val NONE = "NONE".asInstanceOf[AdMarkers]
     val SCTE35_ENHANCED = "SCTE35_ENHANCED".asInstanceOf[AdMarkers]
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[AdMarkers]
+    val DATERANGE = "DATERANGE".asInstanceOf[AdMarkers]
 
-    val values = js.Object.freeze(js.Array(NONE, SCTE35_ENHANCED, PASSTHROUGH))
+    val values = js.Object.freeze(js.Array(NONE, SCTE35_ENHANCED, PASSTHROUGH, DATERANGE))
   }
 
   /**

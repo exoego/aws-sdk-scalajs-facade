@@ -43,6 +43,8 @@ package object codeguruprofiler {
   type Recommendations = js.Array[Recommendation]
   type RevisionId = String
   type Strings = js.Array[String]
+  type TagKeys = js.Array[String]
+  type TagsMap = js.Dictionary[String]
   type TargetFrame = js.Array[String]
   type TargetFrames = js.Array[TargetFrame]
   type ThreadStates = js.Array[String]
@@ -85,6 +87,8 @@ package object codeguruprofiler {
       service.listProfileTimes(params).promise().toFuture
     @inline def listProfilingGroupsFuture(params: ListProfilingGroupsRequest): Future[ListProfilingGroupsResponse] =
       service.listProfilingGroups(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise().toFuture
     @inline def postAgentProfileFuture(params: PostAgentProfileRequest): Future[PostAgentProfileResponse] =
       service.postAgentProfile(params).promise().toFuture
     @inline def putPermissionFuture(params: PutPermissionRequest): Future[PutPermissionResponse] =
@@ -96,6 +100,10 @@ package object codeguruprofiler {
       service.removePermission(params).promise().toFuture
     @inline def submitFeedbackFuture(params: SubmitFeedbackRequest): Future[SubmitFeedbackResponse] =
       service.submitFeedback(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+      service.untagResource(params).promise().toFuture
     @inline def updateProfilingGroupFuture(params: UpdateProfilingGroupRequest): Future[UpdateProfilingGroupResponse] =
       service.updateProfilingGroup(params).promise().toFuture
   }
@@ -128,6 +136,7 @@ package codeguruprofiler {
     def listFindingsReports(params: ListFindingsReportsRequest): Request[ListFindingsReportsResponse] = js.native
     def listProfileTimes(params: ListProfileTimesRequest): Request[ListProfileTimesResponse] = js.native
     def listProfilingGroups(params: ListProfilingGroupsRequest): Request[ListProfilingGroupsResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def postAgentProfile(params: PostAgentProfileRequest): Request[PostAgentProfileResponse] = js.native
     def putPermission(params: PutPermissionRequest): Request[PutPermissionResponse] = js.native
     def removeNotificationChannel(
@@ -135,6 +144,8 @@ package codeguruprofiler {
     ): Request[RemoveNotificationChannelResponse] = js.native
     def removePermission(params: RemovePermissionRequest): Request[RemovePermissionResponse] = js.native
     def submitFeedback(params: SubmitFeedbackRequest): Request[SubmitFeedbackResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateProfilingGroup(params: UpdateProfilingGroupRequest): Request[UpdateProfilingGroupResponse] = js.native
   }
 
@@ -514,6 +525,7 @@ package codeguruprofiler {
     var profilingGroupName: ProfilingGroupName
     var agentOrchestrationConfig: js.UndefOr[AgentOrchestrationConfig]
     var computePlatform: js.UndefOr[ComputePlatform]
+    var tags: js.UndefOr[TagsMap]
   }
 
   object CreateProfilingGroupRequest {
@@ -522,7 +534,8 @@ package codeguruprofiler {
         clientToken: ClientToken,
         profilingGroupName: ProfilingGroupName,
         agentOrchestrationConfig: js.UndefOr[AgentOrchestrationConfig] = js.undefined,
-        computePlatform: js.UndefOr[ComputePlatform] = js.undefined
+        computePlatform: js.UndefOr[ComputePlatform] = js.undefined,
+        tags: js.UndefOr[TagsMap] = js.undefined
     ): CreateProfilingGroupRequest = {
       val __obj = js.Dynamic.literal(
         "clientToken" -> clientToken.asInstanceOf[js.Any],
@@ -531,6 +544,7 @@ package codeguruprofiler {
 
       agentOrchestrationConfig.foreach(__v => __obj.updateDynamic("agentOrchestrationConfig")(__v.asInstanceOf[js.Any]))
       computePlatform.foreach(__v => __obj.updateDynamic("computePlatform")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProfilingGroupRequest]
     }
   }
@@ -1171,6 +1185,40 @@ package codeguruprofiler {
     }
   }
 
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var resourceArn: ProfilingGroupArn
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        resourceArn: ProfilingGroupArn
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var tags: js.UndefOr[TagsMap]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        tags: js.UndefOr[TagsMap] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
   /**
     * The part of a profile that contains a recommendation found during analysis.
     */
@@ -1402,6 +1450,7 @@ package codeguruprofiler {
     var createdAt: js.UndefOr[Timestamp]
     var name: js.UndefOr[ProfilingGroupName]
     var profilingStatus: js.UndefOr[ProfilingStatus]
+    var tags: js.UndefOr[TagsMap]
     var updatedAt: js.UndefOr[Timestamp]
   }
 
@@ -1414,6 +1463,7 @@ package codeguruprofiler {
         createdAt: js.UndefOr[Timestamp] = js.undefined,
         name: js.UndefOr[ProfilingGroupName] = js.undefined,
         profilingStatus: js.UndefOr[ProfilingStatus] = js.undefined,
+        tags: js.UndefOr[TagsMap] = js.undefined,
         updatedAt: js.UndefOr[Timestamp] = js.undefined
     ): ProfilingGroupDescription = {
       val __obj = js.Dynamic.literal()
@@ -1423,6 +1473,7 @@ package codeguruprofiler {
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       profilingStatus.foreach(__v => __obj.updateDynamic("profilingStatus")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       updatedAt.foreach(__v => __obj.updateDynamic("updatedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProfilingGroupDescription]
     }
@@ -1689,6 +1740,40 @@ package codeguruprofiler {
     }
   }
 
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var resourceArn: ProfilingGroupArn
+    var tags: TagsMap
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        resourceArn: ProfilingGroupArn,
+        tags: TagsMap
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tags" -> tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object {}
+
+  object TagResourceResponse {
+    @inline
+    def apply(
+    ): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
   /**
     * A data type that contains a <code>Timestamp</code> object. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
     */
@@ -1707,6 +1792,40 @@ package codeguruprofiler {
       )
 
       __obj.asInstanceOf[TimestampStructure]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var resourceArn: ProfilingGroupArn
+    var tagKeys: TagKeys
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        resourceArn: ProfilingGroupArn,
+        tagKeys: TagKeys
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object {}
+
+  object UntagResourceResponse {
+    @inline
+    def apply(
+    ): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 

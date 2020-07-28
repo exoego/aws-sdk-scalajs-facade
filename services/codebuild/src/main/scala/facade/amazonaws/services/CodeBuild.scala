@@ -416,6 +416,7 @@ package codebuild {
     var buildStatus: js.UndefOr[StatusType]
     var cache: js.UndefOr[ProjectCache]
     var currentPhase: js.UndefOr[String]
+    var debugSession: js.UndefOr[DebugSession]
     var encryptionKey: js.UndefOr[NonEmptyString]
     var endTime: js.UndefOr[Timestamp]
     var environment: js.UndefOr[ProjectEnvironment]
@@ -451,6 +452,7 @@ package codebuild {
         buildStatus: js.UndefOr[StatusType] = js.undefined,
         cache: js.UndefOr[ProjectCache] = js.undefined,
         currentPhase: js.UndefOr[String] = js.undefined,
+        debugSession: js.UndefOr[DebugSession] = js.undefined,
         encryptionKey: js.UndefOr[NonEmptyString] = js.undefined,
         endTime: js.UndefOr[Timestamp] = js.undefined,
         environment: js.UndefOr[ProjectEnvironment] = js.undefined,
@@ -483,6 +485,7 @@ package codebuild {
       buildStatus.foreach(__v => __obj.updateDynamic("buildStatus")(__v.asInstanceOf[js.Any]))
       cache.foreach(__v => __obj.updateDynamic("cache")(__v.asInstanceOf[js.Any]))
       currentPhase.foreach(__v => __obj.updateDynamic("currentPhase")(__v.asInstanceOf[js.Any]))
+      debugSession.foreach(__v => __obj.updateDynamic("debugSession")(__v.asInstanceOf[js.Any]))
       encryptionKey.foreach(__v => __obj.updateDynamic("encryptionKey")(__v.asInstanceOf[js.Any]))
       endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
       environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
@@ -895,6 +898,28 @@ package codebuild {
     val values = js.Object.freeze(js.Array(SECRETS_MANAGER))
   }
 
+  /**
+    * Contains information about the debug session for a build. For more information, see [[https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html|Viewing a running build in Session Manager]].
+    */
+  @js.native
+  trait DebugSession extends js.Object {
+    var sessionEnabled: js.UndefOr[WrapperBoolean]
+    var sessionTarget: js.UndefOr[NonEmptyString]
+  }
+
+  object DebugSession {
+    @inline
+    def apply(
+        sessionEnabled: js.UndefOr[WrapperBoolean] = js.undefined,
+        sessionTarget: js.UndefOr[NonEmptyString] = js.undefined
+    ): DebugSession = {
+      val __obj = js.Dynamic.literal()
+      sessionEnabled.foreach(__v => __obj.updateDynamic("sessionEnabled")(__v.asInstanceOf[js.Any]))
+      sessionTarget.foreach(__v => __obj.updateDynamic("sessionTarget")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DebugSession]
+    }
+  }
+
   @js.native
   trait DeleteProjectInput extends js.Object {
     var name: NonEmptyString
@@ -1206,8 +1231,11 @@ package codebuild {
     val LINUX_CONTAINER = "LINUX_CONTAINER".asInstanceOf[EnvironmentType]
     val LINUX_GPU_CONTAINER = "LINUX_GPU_CONTAINER".asInstanceOf[EnvironmentType]
     val ARM_CONTAINER = "ARM_CONTAINER".asInstanceOf[EnvironmentType]
+    val WINDOWS_SERVER_2019_CONTAINER = "WINDOWS_SERVER_2019_CONTAINER".asInstanceOf[EnvironmentType]
 
-    val values = js.Object.freeze(js.Array(WINDOWS_CONTAINER, LINUX_CONTAINER, LINUX_GPU_CONTAINER, ARM_CONTAINER))
+    val values = js.Object.freeze(
+      js.Array(WINDOWS_CONTAINER, LINUX_CONTAINER, LINUX_GPU_CONTAINER, ARM_CONTAINER, WINDOWS_SERVER_2019_CONTAINER)
+    )
   }
 
   /**
@@ -2707,6 +2735,7 @@ package codebuild {
     var cacheOverride: js.UndefOr[ProjectCache]
     var certificateOverride: js.UndefOr[String]
     var computeTypeOverride: js.UndefOr[ComputeType]
+    var debugSessionEnabled: js.UndefOr[WrapperBoolean]
     var encryptionKeyOverride: js.UndefOr[NonEmptyString]
     var environmentTypeOverride: js.UndefOr[EnvironmentType]
     var environmentVariablesOverride: js.UndefOr[EnvironmentVariables]
@@ -2742,6 +2771,7 @@ package codebuild {
         cacheOverride: js.UndefOr[ProjectCache] = js.undefined,
         certificateOverride: js.UndefOr[String] = js.undefined,
         computeTypeOverride: js.UndefOr[ComputeType] = js.undefined,
+        debugSessionEnabled: js.UndefOr[WrapperBoolean] = js.undefined,
         encryptionKeyOverride: js.UndefOr[NonEmptyString] = js.undefined,
         environmentTypeOverride: js.UndefOr[EnvironmentType] = js.undefined,
         environmentVariablesOverride: js.UndefOr[EnvironmentVariables] = js.undefined,
@@ -2778,6 +2808,7 @@ package codebuild {
       cacheOverride.foreach(__v => __obj.updateDynamic("cacheOverride")(__v.asInstanceOf[js.Any]))
       certificateOverride.foreach(__v => __obj.updateDynamic("certificateOverride")(__v.asInstanceOf[js.Any]))
       computeTypeOverride.foreach(__v => __obj.updateDynamic("computeTypeOverride")(__v.asInstanceOf[js.Any]))
+      debugSessionEnabled.foreach(__v => __obj.updateDynamic("debugSessionEnabled")(__v.asInstanceOf[js.Any]))
       encryptionKeyOverride.foreach(__v => __obj.updateDynamic("encryptionKeyOverride")(__v.asInstanceOf[js.Any]))
       environmentTypeOverride.foreach(__v => __obj.updateDynamic("environmentTypeOverride")(__v.asInstanceOf[js.Any]))
       environmentVariablesOverride.foreach(__v =>

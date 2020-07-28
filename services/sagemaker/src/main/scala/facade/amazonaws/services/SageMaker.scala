@@ -45,12 +45,13 @@ package object sagemaker {
   type ChannelSpecifications = js.Array[ChannelSpecification]
   type Cidr = String
   type Cidrs = js.Array[Cidr]
+  type ClientId = String
+  type ClientSecret = String
   type CodeRepositoryArn = String
   type CodeRepositoryContains = String
   type CodeRepositoryNameContains = String
   type CodeRepositoryNameOrUrl = String
   type CodeRepositorySummaryList = js.Array[CodeRepositorySummary]
-  type CognitoClientId = String
   type CognitoUserGroup = String
   type CognitoUserPool = String
   type CollectionConfigurations = js.Array[CollectionConfiguration]
@@ -58,6 +59,7 @@ package object sagemaker {
   type CollectionParameters = js.Dictionary[ConfigValue]
   type CompilationJobArn = String
   type CompilationJobSummaries = js.Array[CompilationJobSummary]
+  type CompilerOptions = String
   type CompressionTypes = js.Array[CompressionType]
   type ConfigKey = String
   type ConfigValue = String
@@ -67,6 +69,7 @@ package object sagemaker {
   type ContainerEntrypoint = js.Array[ContainerEntrypointString]
   type ContainerEntrypointString = String
   type ContainerHostname = String
+  type ContainerImage = String
   type ContentClassifiers = js.Array[ContentClassifier]
   type ContentType = String
   type ContentTypes = js.Array[ContentType]
@@ -130,6 +133,8 @@ package object sagemaker {
   type FlowDefinitionTaskTitle = String
   type GenerateCandidateDefinitionsOnly = Boolean
   type GitConfigUrl = String
+  type Group = String
+  type Groups = js.Array[Group]
   type HookParameters = js.Dictionary[ConfigValue]
   type HumanLoopActivationConditions = String
   type HumanTaskUiArn = String
@@ -144,7 +149,7 @@ package object sagemaker {
   type HyperParameterTuningJobObjectives = js.Array[HyperParameterTuningJobObjective]
   type HyperParameterTuningJobSummaries = js.Array[HyperParameterTuningJobSummary]
   type HyperParameters = js.Dictionary[ParameterValue]
-  type Image = String
+  type ImageArn = String
   type ImageDigest = String
   type ImageUri = String
   type InputDataConfig = js.Array[Channel]
@@ -227,6 +232,7 @@ package object sagemaker {
   type NotificationTopicArn = String
   type NumberOfHumanWorkersPerDataObject = Int
   type ObjectiveStatusCounter = Int
+  type OidcEndpoint = String
   type OptionalDouble = Double
   type OptionalInteger = Int
   type OptionalVolumeSizeInGB = Int
@@ -267,7 +273,6 @@ package object sagemaker {
   type RuleConfigurationName = String
   type RuleParameters = js.Dictionary[ConfigValue]
   type S3Uri = String
-  type SageMakerImageArn = String
   type SamplingPercentage = Int
   type ScheduleExpression = String
   type SearchExpressionList = js.Array[SearchExpression]
@@ -351,6 +356,7 @@ package object sagemaker {
   type VpcSecurityGroupIds = js.Array[SecurityGroupId]
   type WorkforceArn = String
   type WorkforceName = String
+  type Workforces = js.Array[Workforce]
   type WorkteamArn = String
   type WorkteamName = String
   type Workteams = js.Array[Workteam]
@@ -421,6 +427,8 @@ package object sagemaker {
       service.createTrial(params).promise().toFuture
     @inline def createUserProfileFuture(params: CreateUserProfileRequest): Future[CreateUserProfileResponse] =
       service.createUserProfile(params).promise().toFuture
+    @inline def createWorkforceFuture(params: CreateWorkforceRequest): Future[CreateWorkforceResponse] =
+      service.createWorkforce(params).promise().toFuture
     @inline def createWorkteamFuture(params: CreateWorkteamRequest): Future[CreateWorkteamResponse] =
       service.createWorkteam(params).promise().toFuture
     @inline def deleteAlgorithmFuture(params: DeleteAlgorithmInput): Future[js.Object] =
@@ -460,6 +468,8 @@ package object sagemaker {
       service.deleteTrial(params).promise().toFuture
     @inline def deleteUserProfileFuture(params: DeleteUserProfileRequest): Future[js.Object] =
       service.deleteUserProfile(params).promise().toFuture
+    @inline def deleteWorkforceFuture(params: DeleteWorkforceRequest): Future[DeleteWorkforceResponse] =
+      service.deleteWorkforce(params).promise().toFuture
     @inline def deleteWorkteamFuture(params: DeleteWorkteamRequest): Future[DeleteWorkteamResponse] =
       service.deleteWorkteam(params).promise().toFuture
     @inline def describeAlgorithmFuture(params: DescribeAlgorithmInput): Future[DescribeAlgorithmOutput] =
@@ -604,6 +614,8 @@ package object sagemaker {
       service.listTrials(params).promise().toFuture
     @inline def listUserProfilesFuture(params: ListUserProfilesRequest): Future[ListUserProfilesResponse] =
       service.listUserProfiles(params).promise().toFuture
+    @inline def listWorkforcesFuture(params: ListWorkforcesRequest): Future[ListWorkforcesResponse] =
+      service.listWorkforces(params).promise().toFuture
     @inline def listWorkteamsFuture(params: ListWorkteamsRequest): Future[ListWorkteamsResponse] =
       service.listWorkteams(params).promise().toFuture
     @inline def renderUiTemplateFuture(params: RenderUiTemplateRequest): Future[RenderUiTemplateResponse] =
@@ -709,6 +721,7 @@ package sagemaker {
     def createTrial(params: CreateTrialRequest): Request[CreateTrialResponse] = js.native
     def createTrialComponent(params: CreateTrialComponentRequest): Request[CreateTrialComponentResponse] = js.native
     def createUserProfile(params: CreateUserProfileRequest): Request[CreateUserProfileResponse] = js.native
+    def createWorkforce(params: CreateWorkforceRequest): Request[CreateWorkforceResponse] = js.native
     def createWorkteam(params: CreateWorkteamRequest): Request[CreateWorkteamResponse] = js.native
     def deleteAlgorithm(params: DeleteAlgorithmInput): Request[js.Object] = js.native
     def deleteApp(params: DeleteAppRequest): Request[js.Object] = js.native
@@ -729,6 +742,7 @@ package sagemaker {
     def deleteTrial(params: DeleteTrialRequest): Request[DeleteTrialResponse] = js.native
     def deleteTrialComponent(params: DeleteTrialComponentRequest): Request[DeleteTrialComponentResponse] = js.native
     def deleteUserProfile(params: DeleteUserProfileRequest): Request[js.Object] = js.native
+    def deleteWorkforce(params: DeleteWorkforceRequest): Request[DeleteWorkforceResponse] = js.native
     def deleteWorkteam(params: DeleteWorkteamRequest): Request[DeleteWorkteamResponse] = js.native
     def describeAlgorithm(params: DescribeAlgorithmInput): Request[DescribeAlgorithmOutput] = js.native
     def describeApp(params: DescribeAppRequest): Request[DescribeAppResponse] = js.native
@@ -816,6 +830,7 @@ package sagemaker {
     def listTrialComponents(params: ListTrialComponentsRequest): Request[ListTrialComponentsResponse] = js.native
     def listTrials(params: ListTrialsRequest): Request[ListTrialsResponse] = js.native
     def listUserProfiles(params: ListUserProfilesRequest): Request[ListUserProfilesResponse] = js.native
+    def listWorkforces(params: ListWorkforcesRequest): Request[ListWorkforcesResponse] = js.native
     def listWorkteams(params: ListWorkteamsRequest): Request[ListWorkteamsResponse] = js.native
     def renderUiTemplate(params: RenderUiTemplateRequest): Request[RenderUiTemplateResponse] = js.native
     def search(params: SearchRequest): Request[SearchResponse] = js.native
@@ -1431,7 +1446,7 @@ package sagemaker {
     */
   @js.native
   trait AutoMLContainerDefinition extends js.Object {
-    var Image: Image
+    var Image: ContainerImage
     var ModelDataUrl: Url
     var Environment: js.UndefOr[EnvironmentMap]
   }
@@ -1439,7 +1454,7 @@ package sagemaker {
   object AutoMLContainerDefinition {
     @inline
     def apply(
-        Image: Image,
+        Image: ContainerImage,
         ModelDataUrl: Url,
         Environment: js.UndefOr[EnvironmentMap] = js.undefined
     ): AutoMLContainerDefinition = {
@@ -2104,11 +2119,35 @@ package sagemaker {
   }
 
   /**
+    * Use this parameter to configure your Amazon Cognito workforce. A single Cognito workforce is created using and corresponds to a single [[https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html| Amazon Cognito user pool]].
+    */
+  @js.native
+  trait CognitoConfig extends js.Object {
+    var ClientId: ClientId
+    var UserPool: CognitoUserPool
+  }
+
+  object CognitoConfig {
+    @inline
+    def apply(
+        ClientId: ClientId,
+        UserPool: CognitoUserPool
+    ): CognitoConfig = {
+      val __obj = js.Dynamic.literal(
+        "ClientId" -> ClientId.asInstanceOf[js.Any],
+        "UserPool" -> UserPool.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CognitoConfig]
+    }
+  }
+
+  /**
     * Identifies a Amazon Cognito user group. A user group can be used in on or more work teams.
     */
   @js.native
   trait CognitoMemberDefinition extends js.Object {
-    var ClientId: CognitoClientId
+    var ClientId: ClientId
     var UserGroup: CognitoUserGroup
     var UserPool: CognitoUserPool
   }
@@ -2116,7 +2155,7 @@ package sagemaker {
   object CognitoMemberDefinition {
     @inline
     def apply(
-        ClientId: CognitoClientId,
+        ClientId: ClientId,
         UserGroup: CognitoUserGroup,
         UserPool: CognitoUserPool
     ): CognitoMemberDefinition = {
@@ -2173,10 +2212,13 @@ package sagemaker {
     var CompilationJobArn: CompilationJobArn
     var CompilationJobName: EntityName
     var CompilationJobStatus: CompilationJobStatus
-    var CompilationTargetDevice: TargetDevice
     var CreationTime: CreationTime
     var CompilationEndTime: js.UndefOr[Timestamp]
     var CompilationStartTime: js.UndefOr[Timestamp]
+    var CompilationTargetDevice: js.UndefOr[TargetDevice]
+    var CompilationTargetPlatformAccelerator: js.UndefOr[TargetPlatformAccelerator]
+    var CompilationTargetPlatformArch: js.UndefOr[TargetPlatformArch]
+    var CompilationTargetPlatformOs: js.UndefOr[TargetPlatformOs]
     var LastModifiedTime: js.UndefOr[LastModifiedTime]
   }
 
@@ -2186,22 +2228,34 @@ package sagemaker {
         CompilationJobArn: CompilationJobArn,
         CompilationJobName: EntityName,
         CompilationJobStatus: CompilationJobStatus,
-        CompilationTargetDevice: TargetDevice,
         CreationTime: CreationTime,
         CompilationEndTime: js.UndefOr[Timestamp] = js.undefined,
         CompilationStartTime: js.UndefOr[Timestamp] = js.undefined,
+        CompilationTargetDevice: js.UndefOr[TargetDevice] = js.undefined,
+        CompilationTargetPlatformAccelerator: js.UndefOr[TargetPlatformAccelerator] = js.undefined,
+        CompilationTargetPlatformArch: js.UndefOr[TargetPlatformArch] = js.undefined,
+        CompilationTargetPlatformOs: js.UndefOr[TargetPlatformOs] = js.undefined,
         LastModifiedTime: js.UndefOr[LastModifiedTime] = js.undefined
     ): CompilationJobSummary = {
       val __obj = js.Dynamic.literal(
         "CompilationJobArn" -> CompilationJobArn.asInstanceOf[js.Any],
         "CompilationJobName" -> CompilationJobName.asInstanceOf[js.Any],
         "CompilationJobStatus" -> CompilationJobStatus.asInstanceOf[js.Any],
-        "CompilationTargetDevice" -> CompilationTargetDevice.asInstanceOf[js.Any],
         "CreationTime" -> CreationTime.asInstanceOf[js.Any]
       )
 
       CompilationEndTime.foreach(__v => __obj.updateDynamic("CompilationEndTime")(__v.asInstanceOf[js.Any]))
       CompilationStartTime.foreach(__v => __obj.updateDynamic("CompilationStartTime")(__v.asInstanceOf[js.Any]))
+      CompilationTargetDevice.foreach(__v => __obj.updateDynamic("CompilationTargetDevice")(__v.asInstanceOf[js.Any]))
+      CompilationTargetPlatformAccelerator.foreach(__v =>
+        __obj.updateDynamic("CompilationTargetPlatformAccelerator")(__v.asInstanceOf[js.Any])
+      )
+      CompilationTargetPlatformArch.foreach(__v =>
+        __obj.updateDynamic("CompilationTargetPlatformArch")(__v.asInstanceOf[js.Any])
+      )
+      CompilationTargetPlatformOs.foreach(__v =>
+        __obj.updateDynamic("CompilationTargetPlatformOs")(__v.asInstanceOf[js.Any])
+      )
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CompilationJobSummary]
     }
@@ -2223,7 +2277,7 @@ package sagemaker {
   trait ContainerDefinition extends js.Object {
     var ContainerHostname: js.UndefOr[ContainerHostname]
     var Environment: js.UndefOr[EnvironmentMap]
-    var Image: js.UndefOr[Image]
+    var Image: js.UndefOr[ContainerImage]
     var Mode: js.UndefOr[ContainerMode]
     var ModelDataUrl: js.UndefOr[Url]
     var ModelPackageName: js.UndefOr[ArnOrName]
@@ -2234,7 +2288,7 @@ package sagemaker {
     def apply(
         ContainerHostname: js.UndefOr[ContainerHostname] = js.undefined,
         Environment: js.UndefOr[EnvironmentMap] = js.undefined,
-        Image: js.UndefOr[Image] = js.undefined,
+        Image: js.UndefOr[ContainerImage] = js.undefined,
         Mode: js.UndefOr[ContainerMode] = js.undefined,
         ModelDataUrl: js.UndefOr[Url] = js.undefined,
         ModelPackageName: js.UndefOr[ArnOrName] = js.undefined
@@ -3705,12 +3759,61 @@ package sagemaker {
   }
 
   @js.native
+  trait CreateWorkforceRequest extends js.Object {
+    var WorkforceName: WorkforceName
+    var CognitoConfig: js.UndefOr[CognitoConfig]
+    var OidcConfig: js.UndefOr[OidcConfig]
+    var SourceIpConfig: js.UndefOr[SourceIpConfig]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateWorkforceRequest {
+    @inline
+    def apply(
+        WorkforceName: WorkforceName,
+        CognitoConfig: js.UndefOr[CognitoConfig] = js.undefined,
+        OidcConfig: js.UndefOr[OidcConfig] = js.undefined,
+        SourceIpConfig: js.UndefOr[SourceIpConfig] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateWorkforceRequest = {
+      val __obj = js.Dynamic.literal(
+        "WorkforceName" -> WorkforceName.asInstanceOf[js.Any]
+      )
+
+      CognitoConfig.foreach(__v => __obj.updateDynamic("CognitoConfig")(__v.asInstanceOf[js.Any]))
+      OidcConfig.foreach(__v => __obj.updateDynamic("OidcConfig")(__v.asInstanceOf[js.Any]))
+      SourceIpConfig.foreach(__v => __obj.updateDynamic("SourceIpConfig")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateWorkforceRequest]
+    }
+  }
+
+  @js.native
+  trait CreateWorkforceResponse extends js.Object {
+    var WorkforceArn: WorkforceArn
+  }
+
+  object CreateWorkforceResponse {
+    @inline
+    def apply(
+        WorkforceArn: WorkforceArn
+    ): CreateWorkforceResponse = {
+      val __obj = js.Dynamic.literal(
+        "WorkforceArn" -> WorkforceArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateWorkforceResponse]
+    }
+  }
+
+  @js.native
   trait CreateWorkteamRequest extends js.Object {
     var Description: String200
     var MemberDefinitions: MemberDefinitions
     var WorkteamName: WorkteamName
     var NotificationConfiguration: js.UndefOr[NotificationConfiguration]
     var Tags: js.UndefOr[TagList]
+    var WorkforceName: js.UndefOr[WorkforceName]
   }
 
   object CreateWorkteamRequest {
@@ -3720,7 +3823,8 @@ package sagemaker {
         MemberDefinitions: MemberDefinitions,
         WorkteamName: WorkteamName,
         NotificationConfiguration: js.UndefOr[NotificationConfiguration] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
+        Tags: js.UndefOr[TagList] = js.undefined,
+        WorkforceName: js.UndefOr[WorkforceName] = js.undefined
     ): CreateWorkteamRequest = {
       val __obj = js.Dynamic.literal(
         "Description" -> Description.asInstanceOf[js.Any],
@@ -3732,6 +3836,7 @@ package sagemaker {
         __obj.updateDynamic("NotificationConfiguration")(__v.asInstanceOf[js.Any])
       )
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      WorkforceName.foreach(__v => __obj.updateDynamic("WorkforceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateWorkteamRequest]
     }
   }
@@ -4398,6 +4503,37 @@ package sagemaker {
   }
 
   @js.native
+  trait DeleteWorkforceRequest extends js.Object {
+    var WorkforceName: WorkforceName
+  }
+
+  object DeleteWorkforceRequest {
+    @inline
+    def apply(
+        WorkforceName: WorkforceName
+    ): DeleteWorkforceRequest = {
+      val __obj = js.Dynamic.literal(
+        "WorkforceName" -> WorkforceName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteWorkforceRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteWorkforceResponse extends js.Object {}
+
+  object DeleteWorkforceResponse {
+    @inline
+    def apply(
+    ): DeleteWorkforceResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeleteWorkforceResponse]
+    }
+  }
+
+  @js.native
   trait DeleteWorkteamRequest extends js.Object {
     var WorkteamName: WorkteamName
   }
@@ -4440,16 +4576,16 @@ package sagemaker {
   @js.native
   trait DeployedImage extends js.Object {
     var ResolutionTime: js.UndefOr[Timestamp]
-    var ResolvedImage: js.UndefOr[Image]
-    var SpecifiedImage: js.UndefOr[Image]
+    var ResolvedImage: js.UndefOr[ContainerImage]
+    var SpecifiedImage: js.UndefOr[ContainerImage]
   }
 
   object DeployedImage {
     @inline
     def apply(
         ResolutionTime: js.UndefOr[Timestamp] = js.undefined,
-        ResolvedImage: js.UndefOr[Image] = js.undefined,
-        SpecifiedImage: js.UndefOr[Image] = js.undefined
+        ResolvedImage: js.UndefOr[ContainerImage] = js.undefined,
+        SpecifiedImage: js.UndefOr[ContainerImage] = js.undefined
     ): DeployedImage = {
       val __obj = js.Dynamic.literal()
       ResolutionTime.foreach(__v => __obj.updateDynamic("ResolutionTime")(__v.asInstanceOf[js.Any]))
@@ -6649,7 +6785,10 @@ package sagemaker {
   }
 
   /**
-    * Configuration for the experiment.
+    * Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:
+    * * <a>CreateProcessingJob</a>
+    *  * <a>CreateTrainingJob</a>
+    *  * <a>CreateTransformJob</a>
     */
   @js.native
   trait ExperimentConfig extends js.Object {
@@ -8004,18 +8143,16 @@ package sagemaker {
     */
   @js.native
   trait LabelingJobDataSource extends js.Object {
-    var S3DataSource: LabelingJobS3DataSource
+    var S3DataSource: js.UndefOr[LabelingJobS3DataSource]
   }
 
   object LabelingJobDataSource {
     @inline
     def apply(
-        S3DataSource: LabelingJobS3DataSource
+        S3DataSource: js.UndefOr[LabelingJobS3DataSource] = js.undefined
     ): LabelingJobDataSource = {
-      val __obj = js.Dynamic.literal(
-        "S3DataSource" -> S3DataSource.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
+      S3DataSource.foreach(__v => __obj.updateDynamic("S3DataSource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LabelingJobDataSource]
     }
   }
@@ -8175,13 +8312,14 @@ package sagemaker {
   @js.native
   sealed trait LabelingJobStatus extends js.Any
   object LabelingJobStatus extends js.Object {
+    val Initializing = "Initializing".asInstanceOf[LabelingJobStatus]
     val InProgress = "InProgress".asInstanceOf[LabelingJobStatus]
     val Completed = "Completed".asInstanceOf[LabelingJobStatus]
     val Failed = "Failed".asInstanceOf[LabelingJobStatus]
     val Stopping = "Stopping".asInstanceOf[LabelingJobStatus]
     val Stopped = "Stopped".asInstanceOf[LabelingJobStatus]
 
-    val values = js.Object.freeze(js.Array(InProgress, Completed, Failed, Stopping, Stopped))
+    val values = js.Object.freeze(js.Array(Initializing, InProgress, Completed, Failed, Stopping, Stopped))
   }
 
   /**
@@ -10014,6 +10152,64 @@ package sagemaker {
   }
 
   @js.native
+  trait ListWorkforcesRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NameContains: js.UndefOr[WorkforceName]
+    var NextToken: js.UndefOr[NextToken]
+    var SortBy: js.UndefOr[ListWorkforcesSortByOptions]
+    var SortOrder: js.UndefOr[SortOrder]
+  }
+
+  object ListWorkforcesRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NameContains: js.UndefOr[WorkforceName] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SortBy: js.UndefOr[ListWorkforcesSortByOptions] = js.undefined,
+        SortOrder: js.UndefOr[SortOrder] = js.undefined
+    ): ListWorkforcesRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NameContains.foreach(__v => __obj.updateDynamic("NameContains")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SortBy.foreach(__v => __obj.updateDynamic("SortBy")(__v.asInstanceOf[js.Any]))
+      SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListWorkforcesRequest]
+    }
+  }
+
+  @js.native
+  trait ListWorkforcesResponse extends js.Object {
+    var Workforces: Workforces
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListWorkforcesResponse {
+    @inline
+    def apply(
+        Workforces: Workforces,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListWorkforcesResponse = {
+      val __obj = js.Dynamic.literal(
+        "Workforces" -> Workforces.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListWorkforcesResponse]
+    }
+  }
+
+  @js.native
+  sealed trait ListWorkforcesSortByOptions extends js.Any
+  object ListWorkforcesSortByOptions extends js.Object {
+    val Name = "Name".asInstanceOf[ListWorkforcesSortByOptions]
+    val CreateDate = "CreateDate".asInstanceOf[ListWorkforcesSortByOptions]
+
+    val values = js.Object.freeze(js.Array(Name, CreateDate))
+  }
+
+  @js.native
   trait ListWorkteamsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NameContains: js.UndefOr[WorkteamName]
@@ -10077,15 +10273,18 @@ package sagemaker {
   @js.native
   trait MemberDefinition extends js.Object {
     var CognitoMemberDefinition: js.UndefOr[CognitoMemberDefinition]
+    var OidcMemberDefinition: js.UndefOr[OidcMemberDefinition]
   }
 
   object MemberDefinition {
     @inline
     def apply(
-        CognitoMemberDefinition: js.UndefOr[CognitoMemberDefinition] = js.undefined
+        CognitoMemberDefinition: js.UndefOr[CognitoMemberDefinition] = js.undefined,
+        OidcMemberDefinition: js.UndefOr[OidcMemberDefinition] = js.undefined
     ): MemberDefinition = {
       val __obj = js.Dynamic.literal()
       CognitoMemberDefinition.foreach(__v => __obj.updateDynamic("CognitoMemberDefinition")(__v.asInstanceOf[js.Any]))
+      OidcMemberDefinition.foreach(__v => __obj.updateDynamic("OidcMemberDefinition")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MemberDefinition]
     }
   }
@@ -10190,7 +10389,7 @@ package sagemaker {
     */
   @js.native
   trait ModelPackageContainerDefinition extends js.Object {
-    var Image: Image
+    var Image: ContainerImage
     var ContainerHostname: js.UndefOr[ContainerHostname]
     var ImageDigest: js.UndefOr[ImageDigest]
     var ModelDataUrl: js.UndefOr[Url]
@@ -10200,7 +10399,7 @@ package sagemaker {
   object ModelPackageContainerDefinition {
     @inline
     def apply(
-        Image: Image,
+        Image: ContainerImage,
         ContainerHostname: js.UndefOr[ContainerHostname] = js.undefined,
         ImageDigest: js.UndefOr[ImageDigest] = js.undefined,
         ModelDataUrl: js.UndefOr[Url] = js.undefined,
@@ -11127,6 +11326,106 @@ package sagemaker {
     }
   }
 
+  /**
+    * Use this parameter to configure your OIDC Identity Provider (IdP).
+    */
+  @js.native
+  trait OidcConfig extends js.Object {
+    var AuthorizationEndpoint: OidcEndpoint
+    var ClientId: ClientId
+    var ClientSecret: ClientSecret
+    var Issuer: OidcEndpoint
+    var JwksUri: OidcEndpoint
+    var LogoutEndpoint: OidcEndpoint
+    var TokenEndpoint: OidcEndpoint
+    var UserInfoEndpoint: OidcEndpoint
+  }
+
+  object OidcConfig {
+    @inline
+    def apply(
+        AuthorizationEndpoint: OidcEndpoint,
+        ClientId: ClientId,
+        ClientSecret: ClientSecret,
+        Issuer: OidcEndpoint,
+        JwksUri: OidcEndpoint,
+        LogoutEndpoint: OidcEndpoint,
+        TokenEndpoint: OidcEndpoint,
+        UserInfoEndpoint: OidcEndpoint
+    ): OidcConfig = {
+      val __obj = js.Dynamic.literal(
+        "AuthorizationEndpoint" -> AuthorizationEndpoint.asInstanceOf[js.Any],
+        "ClientId" -> ClientId.asInstanceOf[js.Any],
+        "ClientSecret" -> ClientSecret.asInstanceOf[js.Any],
+        "Issuer" -> Issuer.asInstanceOf[js.Any],
+        "JwksUri" -> JwksUri.asInstanceOf[js.Any],
+        "LogoutEndpoint" -> LogoutEndpoint.asInstanceOf[js.Any],
+        "TokenEndpoint" -> TokenEndpoint.asInstanceOf[js.Any],
+        "UserInfoEndpoint" -> UserInfoEndpoint.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[OidcConfig]
+    }
+  }
+
+  /**
+    * Your Amazon Cognito workforce configuration.
+    */
+  @js.native
+  trait OidcConfigForResponse extends js.Object {
+    var AuthorizationEndpoint: js.UndefOr[OidcEndpoint]
+    var ClientId: js.UndefOr[ClientId]
+    var Issuer: js.UndefOr[OidcEndpoint]
+    var JwksUri: js.UndefOr[OidcEndpoint]
+    var LogoutEndpoint: js.UndefOr[OidcEndpoint]
+    var TokenEndpoint: js.UndefOr[OidcEndpoint]
+    var UserInfoEndpoint: js.UndefOr[OidcEndpoint]
+  }
+
+  object OidcConfigForResponse {
+    @inline
+    def apply(
+        AuthorizationEndpoint: js.UndefOr[OidcEndpoint] = js.undefined,
+        ClientId: js.UndefOr[ClientId] = js.undefined,
+        Issuer: js.UndefOr[OidcEndpoint] = js.undefined,
+        JwksUri: js.UndefOr[OidcEndpoint] = js.undefined,
+        LogoutEndpoint: js.UndefOr[OidcEndpoint] = js.undefined,
+        TokenEndpoint: js.UndefOr[OidcEndpoint] = js.undefined,
+        UserInfoEndpoint: js.UndefOr[OidcEndpoint] = js.undefined
+    ): OidcConfigForResponse = {
+      val __obj = js.Dynamic.literal()
+      AuthorizationEndpoint.foreach(__v => __obj.updateDynamic("AuthorizationEndpoint")(__v.asInstanceOf[js.Any]))
+      ClientId.foreach(__v => __obj.updateDynamic("ClientId")(__v.asInstanceOf[js.Any]))
+      Issuer.foreach(__v => __obj.updateDynamic("Issuer")(__v.asInstanceOf[js.Any]))
+      JwksUri.foreach(__v => __obj.updateDynamic("JwksUri")(__v.asInstanceOf[js.Any]))
+      LogoutEndpoint.foreach(__v => __obj.updateDynamic("LogoutEndpoint")(__v.asInstanceOf[js.Any]))
+      TokenEndpoint.foreach(__v => __obj.updateDynamic("TokenEndpoint")(__v.asInstanceOf[js.Any]))
+      UserInfoEndpoint.foreach(__v => __obj.updateDynamic("UserInfoEndpoint")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OidcConfigForResponse]
+    }
+  }
+
+  /**
+    * A list user groups that exist in your OIDC Identity Provider (IdP). One to ten groups can be used to create a single private work team. When you add a user group to the list of <code>Groups</code>, you can add that user group to one or more private work teams. If you add a user group to a private work team, all workers in that user group are added to the work team.
+    */
+  @js.native
+  trait OidcMemberDefinition extends js.Object {
+    var Groups: Groups
+  }
+
+  object OidcMemberDefinition {
+    @inline
+    def apply(
+        Groups: Groups
+    ): OidcMemberDefinition = {
+      val __obj = js.Dynamic.literal(
+        "Groups" -> Groups.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[OidcMemberDefinition]
+    }
+  }
+
   @js.native
   sealed trait Operator extends js.Any
   object Operator extends js.Object {
@@ -11167,25 +11466,31 @@ package sagemaker {
   }
 
   /**
-    * Contains information about the output location for the compiled model and the device (target) that the model runs on.
+    * Contains information about the output location for the compiled model and the target device that the model runs on. <code>TargetDevice</code> and <code>TargetPlatform</code> are mutually exclusive, so you need to choose one between the two to specify your target device or platform. If you cannot find your device you want to use from the <code>TargetDevice</code> list, use <code>TargetPlatform</code> to describe the platform of your edge device and <code>CompilerOptions</code> if there are specific settings that are required or recommended to use for particular TargetPlatform.
     */
   @js.native
   trait OutputConfig extends js.Object {
     var S3OutputLocation: S3Uri
-    var TargetDevice: TargetDevice
+    var CompilerOptions: js.UndefOr[CompilerOptions]
+    var TargetDevice: js.UndefOr[TargetDevice]
+    var TargetPlatform: js.UndefOr[TargetPlatform]
   }
 
   object OutputConfig {
     @inline
     def apply(
         S3OutputLocation: S3Uri,
-        TargetDevice: TargetDevice
+        CompilerOptions: js.UndefOr[CompilerOptions] = js.undefined,
+        TargetDevice: js.UndefOr[TargetDevice] = js.undefined,
+        TargetPlatform: js.UndefOr[TargetPlatform] = js.undefined
     ): OutputConfig = {
       val __obj = js.Dynamic.literal(
-        "S3OutputLocation" -> S3OutputLocation.asInstanceOf[js.Any],
-        "TargetDevice" -> TargetDevice.asInstanceOf[js.Any]
+        "S3OutputLocation" -> S3OutputLocation.asInstanceOf[js.Any]
       )
 
+      CompilerOptions.foreach(__v => __obj.updateDynamic("CompilerOptions")(__v.asInstanceOf[js.Any]))
+      TargetDevice.foreach(__v => __obj.updateDynamic("TargetDevice")(__v.asInstanceOf[js.Any]))
+      TargetPlatform.foreach(__v => __obj.updateDynamic("TargetPlatform")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutputConfig]
     }
   }
@@ -12387,14 +12692,14 @@ package sagemaker {
   @js.native
   trait ResourceSpec extends js.Object {
     var InstanceType: js.UndefOr[AppInstanceType]
-    var SageMakerImageArn: js.UndefOr[SageMakerImageArn]
+    var SageMakerImageArn: js.UndefOr[ImageArn]
   }
 
   object ResourceSpec {
     @inline
     def apply(
         InstanceType: js.UndefOr[AppInstanceType] = js.undefined,
-        SageMakerImageArn: js.UndefOr[SageMakerImageArn] = js.undefined
+        SageMakerImageArn: js.UndefOr[ImageArn] = js.undefined
     ): ResourceSpec = {
       val __obj = js.Dynamic.literal()
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
@@ -13216,6 +13521,7 @@ package sagemaker {
     val ml_c5 = "ml_c5".asInstanceOf[TargetDevice]
     val ml_p2 = "ml_p2".asInstanceOf[TargetDevice]
     val ml_p3 = "ml_p3".asInstanceOf[TargetDevice]
+    val ml_g4dn = "ml_g4dn".asInstanceOf[TargetDevice]
     val ml_inf1 = "ml_inf1".asInstanceOf[TargetDevice]
     val jetson_tx1 = "jetson_tx1".asInstanceOf[TargetDevice]
     val jetson_tx2 = "jetson_tx2".asInstanceOf[TargetDevice]
@@ -13232,6 +13538,8 @@ package sagemaker {
     val qcs603 = "qcs603".asInstanceOf[TargetDevice]
     val sitara_am57x = "sitara_am57x".asInstanceOf[TargetDevice]
     val amba_cv22 = "amba_cv22".asInstanceOf[TargetDevice]
+    val x86_win32 = "x86_win32".asInstanceOf[TargetDevice]
+    val x86_win64 = "x86_win64".asInstanceOf[TargetDevice]
 
     val values = js.Object.freeze(
       js.Array(
@@ -13242,6 +13550,7 @@ package sagemaker {
         ml_c5,
         ml_p2,
         ml_p3,
+        ml_g4dn,
         ml_inf1,
         jetson_tx1,
         jetson_tx2,
@@ -13257,9 +13566,69 @@ package sagemaker {
         qcs605,
         qcs603,
         sitara_am57x,
-        amba_cv22
+        amba_cv22,
+        x86_win32,
+        x86_win64
       )
     )
+  }
+
+  /**
+    * Contains information about a target platform that you want your model to run on, such as OS, architecture, and accelerators. It is an alternative of <code>TargetDevice</code>.
+    */
+  @js.native
+  trait TargetPlatform extends js.Object {
+    var Arch: TargetPlatformArch
+    var Os: TargetPlatformOs
+    var Accelerator: js.UndefOr[TargetPlatformAccelerator]
+  }
+
+  object TargetPlatform {
+    @inline
+    def apply(
+        Arch: TargetPlatformArch,
+        Os: TargetPlatformOs,
+        Accelerator: js.UndefOr[TargetPlatformAccelerator] = js.undefined
+    ): TargetPlatform = {
+      val __obj = js.Dynamic.literal(
+        "Arch" -> Arch.asInstanceOf[js.Any],
+        "Os" -> Os.asInstanceOf[js.Any]
+      )
+
+      Accelerator.foreach(__v => __obj.updateDynamic("Accelerator")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TargetPlatform]
+    }
+  }
+
+  @js.native
+  sealed trait TargetPlatformAccelerator extends js.Any
+  object TargetPlatformAccelerator extends js.Object {
+    val INTEL_GRAPHICS = "INTEL_GRAPHICS".asInstanceOf[TargetPlatformAccelerator]
+    val MALI = "MALI".asInstanceOf[TargetPlatformAccelerator]
+    val NVIDIA = "NVIDIA".asInstanceOf[TargetPlatformAccelerator]
+
+    val values = js.Object.freeze(js.Array(INTEL_GRAPHICS, MALI, NVIDIA))
+  }
+
+  @js.native
+  sealed trait TargetPlatformArch extends js.Any
+  object TargetPlatformArch extends js.Object {
+    val X86_64 = "X86_64".asInstanceOf[TargetPlatformArch]
+    val X86 = "X86".asInstanceOf[TargetPlatformArch]
+    val ARM64 = "ARM64".asInstanceOf[TargetPlatformArch]
+    val ARM_EABI = "ARM_EABI".asInstanceOf[TargetPlatformArch]
+    val ARM_EABIHF = "ARM_EABIHF".asInstanceOf[TargetPlatformArch]
+
+    val values = js.Object.freeze(js.Array(X86_64, X86, ARM64, ARM_EABI, ARM_EABIHF))
+  }
+
+  @js.native
+  sealed trait TargetPlatformOs extends js.Any
+  object TargetPlatformOs extends js.Object {
+    val ANDROID = "ANDROID".asInstanceOf[TargetPlatformOs]
+    val LINUX = "LINUX".asInstanceOf[TargetPlatformOs]
+
+    val values = js.Object.freeze(js.Array(ANDROID, LINUX))
   }
 
   /**
@@ -13671,7 +14040,7 @@ package sagemaker {
   trait TrainingSpecification extends js.Object {
     var SupportedTrainingInstanceTypes: TrainingInstanceTypes
     var TrainingChannels: ChannelSpecifications
-    var TrainingImage: Image
+    var TrainingImage: ContainerImage
     var MetricDefinitions: js.UndefOr[MetricDefinitionList]
     var SupportedHyperParameters: js.UndefOr[HyperParameterSpecifications]
     var SupportedTuningJobObjectiveMetrics: js.UndefOr[HyperParameterTuningJobObjectives]
@@ -13684,7 +14053,7 @@ package sagemaker {
     def apply(
         SupportedTrainingInstanceTypes: TrainingInstanceTypes,
         TrainingChannels: ChannelSpecifications,
-        TrainingImage: Image,
+        TrainingImage: ContainerImage,
         MetricDefinitions: js.UndefOr[MetricDefinitionList] = js.undefined,
         SupportedHyperParameters: js.UndefOr[HyperParameterSpecifications] = js.undefined,
         SupportedTuningJobObjectiveMetrics: js.UndefOr[HyperParameterTuningJobObjectives] = js.undefined,
@@ -13821,6 +14190,85 @@ package sagemaker {
         `ml.m5.24xlarge`
       )
     )
+  }
+
+  /**
+    * A batch transform job. For information about SageMaker batch transform, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html|Use Batch Transform]].
+    */
+  @js.native
+  trait TransformJob extends js.Object {
+    var AutoMLJobArn: js.UndefOr[AutoMLJobArn]
+    var BatchStrategy: js.UndefOr[BatchStrategy]
+    var CreationTime: js.UndefOr[Timestamp]
+    var DataProcessing: js.UndefOr[DataProcessing]
+    var Environment: js.UndefOr[TransformEnvironmentMap]
+    var ExperimentConfig: js.UndefOr[ExperimentConfig]
+    var FailureReason: js.UndefOr[FailureReason]
+    var LabelingJobArn: js.UndefOr[LabelingJobArn]
+    var MaxConcurrentTransforms: js.UndefOr[MaxConcurrentTransforms]
+    var MaxPayloadInMB: js.UndefOr[MaxPayloadInMB]
+    var ModelClientConfig: js.UndefOr[ModelClientConfig]
+    var ModelName: js.UndefOr[ModelName]
+    var Tags: js.UndefOr[TagList]
+    var TransformEndTime: js.UndefOr[Timestamp]
+    var TransformInput: js.UndefOr[TransformInput]
+    var TransformJobArn: js.UndefOr[TransformJobArn]
+    var TransformJobName: js.UndefOr[TransformJobName]
+    var TransformJobStatus: js.UndefOr[TransformJobStatus]
+    var TransformOutput: js.UndefOr[TransformOutput]
+    var TransformResources: js.UndefOr[TransformResources]
+    var TransformStartTime: js.UndefOr[Timestamp]
+  }
+
+  object TransformJob {
+    @inline
+    def apply(
+        AutoMLJobArn: js.UndefOr[AutoMLJobArn] = js.undefined,
+        BatchStrategy: js.UndefOr[BatchStrategy] = js.undefined,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        DataProcessing: js.UndefOr[DataProcessing] = js.undefined,
+        Environment: js.UndefOr[TransformEnvironmentMap] = js.undefined,
+        ExperimentConfig: js.UndefOr[ExperimentConfig] = js.undefined,
+        FailureReason: js.UndefOr[FailureReason] = js.undefined,
+        LabelingJobArn: js.UndefOr[LabelingJobArn] = js.undefined,
+        MaxConcurrentTransforms: js.UndefOr[MaxConcurrentTransforms] = js.undefined,
+        MaxPayloadInMB: js.UndefOr[MaxPayloadInMB] = js.undefined,
+        ModelClientConfig: js.UndefOr[ModelClientConfig] = js.undefined,
+        ModelName: js.UndefOr[ModelName] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        TransformEndTime: js.UndefOr[Timestamp] = js.undefined,
+        TransformInput: js.UndefOr[TransformInput] = js.undefined,
+        TransformJobArn: js.UndefOr[TransformJobArn] = js.undefined,
+        TransformJobName: js.UndefOr[TransformJobName] = js.undefined,
+        TransformJobStatus: js.UndefOr[TransformJobStatus] = js.undefined,
+        TransformOutput: js.UndefOr[TransformOutput] = js.undefined,
+        TransformResources: js.UndefOr[TransformResources] = js.undefined,
+        TransformStartTime: js.UndefOr[Timestamp] = js.undefined
+    ): TransformJob = {
+      val __obj = js.Dynamic.literal()
+      AutoMLJobArn.foreach(__v => __obj.updateDynamic("AutoMLJobArn")(__v.asInstanceOf[js.Any]))
+      BatchStrategy.foreach(__v => __obj.updateDynamic("BatchStrategy")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      DataProcessing.foreach(__v => __obj.updateDynamic("DataProcessing")(__v.asInstanceOf[js.Any]))
+      Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
+      ExperimentConfig.foreach(__v => __obj.updateDynamic("ExperimentConfig")(__v.asInstanceOf[js.Any]))
+      FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
+      LabelingJobArn.foreach(__v => __obj.updateDynamic("LabelingJobArn")(__v.asInstanceOf[js.Any]))
+      MaxConcurrentTransforms.foreach(__v => __obj.updateDynamic("MaxConcurrentTransforms")(__v.asInstanceOf[js.Any]))
+      MaxPayloadInMB.foreach(__v => __obj.updateDynamic("MaxPayloadInMB")(__v.asInstanceOf[js.Any]))
+      ModelClientConfig.foreach(__v => __obj.updateDynamic("ModelClientConfig")(__v.asInstanceOf[js.Any]))
+      ModelName.foreach(__v => __obj.updateDynamic("ModelName")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TransformEndTime.foreach(__v => __obj.updateDynamic("TransformEndTime")(__v.asInstanceOf[js.Any]))
+      TransformInput.foreach(__v => __obj.updateDynamic("TransformInput")(__v.asInstanceOf[js.Any]))
+      TransformJobArn.foreach(__v => __obj.updateDynamic("TransformJobArn")(__v.asInstanceOf[js.Any]))
+      TransformJobName.foreach(__v => __obj.updateDynamic("TransformJobName")(__v.asInstanceOf[js.Any]))
+      TransformJobStatus.foreach(__v => __obj.updateDynamic("TransformJobStatus")(__v.asInstanceOf[js.Any]))
+      TransformOutput.foreach(__v => __obj.updateDynamic("TransformOutput")(__v.asInstanceOf[js.Any]))
+      TransformResources.foreach(__v => __obj.updateDynamic("TransformResources")(__v.asInstanceOf[js.Any]))
+      TransformStartTime.foreach(__v => __obj.updateDynamic("TransformStartTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TransformJob]
+    }
   }
 
   /**
@@ -14279,6 +14727,7 @@ package sagemaker {
     var ProcessingJob: js.UndefOr[ProcessingJob]
     var SourceArn: js.UndefOr[TrialComponentSourceArn]
     var TrainingJob: js.UndefOr[TrainingJob]
+    var TransformJob: js.UndefOr[TransformJob]
   }
 
   object TrialComponentSourceDetail {
@@ -14286,12 +14735,14 @@ package sagemaker {
     def apply(
         ProcessingJob: js.UndefOr[ProcessingJob] = js.undefined,
         SourceArn: js.UndefOr[TrialComponentSourceArn] = js.undefined,
-        TrainingJob: js.UndefOr[TrainingJob] = js.undefined
+        TrainingJob: js.UndefOr[TrainingJob] = js.undefined,
+        TransformJob: js.UndefOr[TransformJob] = js.undefined
     ): TrialComponentSourceDetail = {
       val __obj = js.Dynamic.literal()
       ProcessingJob.foreach(__v => __obj.updateDynamic("ProcessingJob")(__v.asInstanceOf[js.Any]))
       SourceArn.foreach(__v => __obj.updateDynamic("SourceArn")(__v.asInstanceOf[js.Any]))
       TrainingJob.foreach(__v => __obj.updateDynamic("TrainingJob")(__v.asInstanceOf[js.Any]))
+      TransformJob.foreach(__v => __obj.updateDynamic("TransformJob")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TrialComponentSourceDetail]
     }
   }
@@ -15037,6 +15488,7 @@ package sagemaker {
   @js.native
   trait UpdateWorkforceRequest extends js.Object {
     var WorkforceName: WorkforceName
+    var OidcConfig: js.UndefOr[OidcConfig]
     var SourceIpConfig: js.UndefOr[SourceIpConfig]
   }
 
@@ -15044,12 +15496,14 @@ package sagemaker {
     @inline
     def apply(
         WorkforceName: WorkforceName,
+        OidcConfig: js.UndefOr[OidcConfig] = js.undefined,
         SourceIpConfig: js.UndefOr[SourceIpConfig] = js.undefined
     ): UpdateWorkforceRequest = {
       val __obj = js.Dynamic.literal(
         "WorkforceName" -> WorkforceName.asInstanceOf[js.Any]
       )
 
+      OidcConfig.foreach(__v => __obj.updateDynamic("OidcConfig")(__v.asInstanceOf[js.Any]))
       SourceIpConfig.foreach(__v => __obj.updateDynamic("SourceIpConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateWorkforceRequest]
     }
@@ -15293,8 +15747,12 @@ package sagemaker {
   trait Workforce extends js.Object {
     var WorkforceArn: WorkforceArn
     var WorkforceName: WorkforceName
+    var CognitoConfig: js.UndefOr[CognitoConfig]
+    var CreateDate: js.UndefOr[Timestamp]
     var LastUpdatedDate: js.UndefOr[Timestamp]
+    var OidcConfig: js.UndefOr[OidcConfigForResponse]
     var SourceIpConfig: js.UndefOr[SourceIpConfig]
+    var SubDomain: js.UndefOr[String]
   }
 
   object Workforce {
@@ -15302,16 +15760,24 @@ package sagemaker {
     def apply(
         WorkforceArn: WorkforceArn,
         WorkforceName: WorkforceName,
+        CognitoConfig: js.UndefOr[CognitoConfig] = js.undefined,
+        CreateDate: js.UndefOr[Timestamp] = js.undefined,
         LastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-        SourceIpConfig: js.UndefOr[SourceIpConfig] = js.undefined
+        OidcConfig: js.UndefOr[OidcConfigForResponse] = js.undefined,
+        SourceIpConfig: js.UndefOr[SourceIpConfig] = js.undefined,
+        SubDomain: js.UndefOr[String] = js.undefined
     ): Workforce = {
       val __obj = js.Dynamic.literal(
         "WorkforceArn" -> WorkforceArn.asInstanceOf[js.Any],
         "WorkforceName" -> WorkforceName.asInstanceOf[js.Any]
       )
 
+      CognitoConfig.foreach(__v => __obj.updateDynamic("CognitoConfig")(__v.asInstanceOf[js.Any]))
+      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
       LastUpdatedDate.foreach(__v => __obj.updateDynamic("LastUpdatedDate")(__v.asInstanceOf[js.Any]))
+      OidcConfig.foreach(__v => __obj.updateDynamic("OidcConfig")(__v.asInstanceOf[js.Any]))
       SourceIpConfig.foreach(__v => __obj.updateDynamic("SourceIpConfig")(__v.asInstanceOf[js.Any]))
+      SubDomain.foreach(__v => __obj.updateDynamic("SubDomain")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Workforce]
     }
   }
@@ -15330,6 +15796,7 @@ package sagemaker {
     var NotificationConfiguration: js.UndefOr[NotificationConfiguration]
     var ProductListingIds: js.UndefOr[ProductListings]
     var SubDomain: js.UndefOr[String]
+    var WorkforceArn: js.UndefOr[WorkforceArn]
   }
 
   object Workteam {
@@ -15343,7 +15810,8 @@ package sagemaker {
         LastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
         NotificationConfiguration: js.UndefOr[NotificationConfiguration] = js.undefined,
         ProductListingIds: js.UndefOr[ProductListings] = js.undefined,
-        SubDomain: js.UndefOr[String] = js.undefined
+        SubDomain: js.UndefOr[String] = js.undefined,
+        WorkforceArn: js.UndefOr[WorkforceArn] = js.undefined
     ): Workteam = {
       val __obj = js.Dynamic.literal(
         "Description" -> Description.asInstanceOf[js.Any],
@@ -15359,6 +15827,7 @@ package sagemaker {
       )
       ProductListingIds.foreach(__v => __obj.updateDynamic("ProductListingIds")(__v.asInstanceOf[js.Any]))
       SubDomain.foreach(__v => __obj.updateDynamic("SubDomain")(__v.asInstanceOf[js.Any]))
+      WorkforceArn.foreach(__v => __obj.updateDynamic("WorkforceArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Workteam]
     }
   }

@@ -122,6 +122,18 @@ package mq {
   }
 
   /**
+    * The authentication strategy used to secure the broker.
+    */
+  @js.native
+  sealed trait AuthenticationStrategy extends js.Any
+  object AuthenticationStrategy extends js.Object {
+    val SIMPLE = "SIMPLE".asInstanceOf[AuthenticationStrategy]
+    val LDAP = "LDAP".asInstanceOf[AuthenticationStrategy]
+
+    val values = js.Object.freeze(js.Array(SIMPLE, LDAP))
+  }
+
+  /**
     * Name of the availability zone.
     */
   @js.native
@@ -306,6 +318,7 @@ package mq {
   @js.native
   trait Configuration extends js.Object {
     var Arn: js.UndefOr[__string]
+    var AuthenticationStrategy: js.UndefOr[AuthenticationStrategy]
     var Created: js.UndefOr[__timestampIso8601]
     var Description: js.UndefOr[__string]
     var EngineType: js.UndefOr[EngineType]
@@ -320,6 +333,7 @@ package mq {
     @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
+        AuthenticationStrategy: js.UndefOr[AuthenticationStrategy] = js.undefined,
         Created: js.UndefOr[__timestampIso8601] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
         EngineType: js.UndefOr[EngineType] = js.undefined,
@@ -331,6 +345,7 @@ package mq {
     ): Configuration = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      AuthenticationStrategy.foreach(__v => __obj.updateDynamic("AuthenticationStrategy")(__v.asInstanceOf[js.Any]))
       Created.foreach(__v => __obj.updateDynamic("Created")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       EngineType.foreach(__v => __obj.updateDynamic("EngineType")(__v.asInstanceOf[js.Any]))
@@ -420,6 +435,7 @@ package mq {
     */
   @js.native
   trait CreateBrokerRequest extends js.Object {
+    var AuthenticationStrategy: js.UndefOr[AuthenticationStrategy]
     var AutoMinorVersionUpgrade: js.UndefOr[__boolean]
     var BrokerName: js.UndefOr[__string]
     var Configuration: js.UndefOr[ConfigurationId]
@@ -429,6 +445,7 @@ package mq {
     var EngineType: js.UndefOr[EngineType]
     var EngineVersion: js.UndefOr[__string]
     var HostInstanceType: js.UndefOr[__string]
+    var LdapServerMetadata: js.UndefOr[LdapServerMetadataInput]
     var Logs: js.UndefOr[Logs]
     var MaintenanceWindowStartTime: js.UndefOr[WeeklyStartTime]
     var PubliclyAccessible: js.UndefOr[__boolean]
@@ -442,6 +459,7 @@ package mq {
   object CreateBrokerRequest {
     @inline
     def apply(
+        AuthenticationStrategy: js.UndefOr[AuthenticationStrategy] = js.undefined,
         AutoMinorVersionUpgrade: js.UndefOr[__boolean] = js.undefined,
         BrokerName: js.UndefOr[__string] = js.undefined,
         Configuration: js.UndefOr[ConfigurationId] = js.undefined,
@@ -451,6 +469,7 @@ package mq {
         EngineType: js.UndefOr[EngineType] = js.undefined,
         EngineVersion: js.UndefOr[__string] = js.undefined,
         HostInstanceType: js.UndefOr[__string] = js.undefined,
+        LdapServerMetadata: js.UndefOr[LdapServerMetadataInput] = js.undefined,
         Logs: js.UndefOr[Logs] = js.undefined,
         MaintenanceWindowStartTime: js.UndefOr[WeeklyStartTime] = js.undefined,
         PubliclyAccessible: js.UndefOr[__boolean] = js.undefined,
@@ -461,6 +480,7 @@ package mq {
         Users: js.UndefOr[__listOfUser] = js.undefined
     ): CreateBrokerRequest = {
       val __obj = js.Dynamic.literal()
+      AuthenticationStrategy.foreach(__v => __obj.updateDynamic("AuthenticationStrategy")(__v.asInstanceOf[js.Any]))
       AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
       BrokerName.foreach(__v => __obj.updateDynamic("BrokerName")(__v.asInstanceOf[js.Any]))
       Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
@@ -470,6 +490,7 @@ package mq {
       EngineType.foreach(__v => __obj.updateDynamic("EngineType")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       HostInstanceType.foreach(__v => __obj.updateDynamic("HostInstanceType")(__v.asInstanceOf[js.Any]))
+      LdapServerMetadata.foreach(__v => __obj.updateDynamic("LdapServerMetadata")(__v.asInstanceOf[js.Any]))
       Logs.foreach(__v => __obj.updateDynamic("Logs")(__v.asInstanceOf[js.Any]))
       MaintenanceWindowStartTime.foreach(__v =>
         __obj.updateDynamic("MaintenanceWindowStartTime")(__v.asInstanceOf[js.Any])
@@ -508,6 +529,7 @@ package mq {
     */
   @js.native
   trait CreateConfigurationRequest extends js.Object {
+    var AuthenticationStrategy: js.UndefOr[AuthenticationStrategy]
     var EngineType: js.UndefOr[EngineType]
     var EngineVersion: js.UndefOr[__string]
     var Name: js.UndefOr[__string]
@@ -517,12 +539,14 @@ package mq {
   object CreateConfigurationRequest {
     @inline
     def apply(
+        AuthenticationStrategy: js.UndefOr[AuthenticationStrategy] = js.undefined,
         EngineType: js.UndefOr[EngineType] = js.undefined,
         EngineVersion: js.UndefOr[__string] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): CreateConfigurationRequest = {
       val __obj = js.Dynamic.literal()
+      AuthenticationStrategy.foreach(__v => __obj.updateDynamic("AuthenticationStrategy")(__v.asInstanceOf[js.Any]))
       EngineType.foreach(__v => __obj.updateDynamic("EngineType")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -534,6 +558,7 @@ package mq {
   @js.native
   trait CreateConfigurationResponse extends js.Object {
     var Arn: js.UndefOr[__string]
+    var AuthenticationStrategy: js.UndefOr[AuthenticationStrategy]
     var Created: js.UndefOr[__timestampIso8601]
     var Id: js.UndefOr[__string]
     var LatestRevision: js.UndefOr[ConfigurationRevision]
@@ -544,6 +569,7 @@ package mq {
     @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
+        AuthenticationStrategy: js.UndefOr[AuthenticationStrategy] = js.undefined,
         Created: js.UndefOr[__timestampIso8601] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
         LatestRevision: js.UndefOr[ConfigurationRevision] = js.undefined,
@@ -551,6 +577,7 @@ package mq {
     ): CreateConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      AuthenticationStrategy.foreach(__v => __obj.updateDynamic("AuthenticationStrategy")(__v.asInstanceOf[js.Any]))
       Created.foreach(__v => __obj.updateDynamic("Created")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       LatestRevision.foreach(__v => __obj.updateDynamic("LatestRevision")(__v.asInstanceOf[js.Any]))
@@ -858,6 +885,7 @@ package mq {
 
   @js.native
   trait DescribeBrokerResponse extends js.Object {
+    var AuthenticationStrategy: js.UndefOr[AuthenticationStrategy]
     var AutoMinorVersionUpgrade: js.UndefOr[__boolean]
     var BrokerArn: js.UndefOr[__string]
     var BrokerId: js.UndefOr[__string]
@@ -871,10 +899,13 @@ package mq {
     var EngineType: js.UndefOr[EngineType]
     var EngineVersion: js.UndefOr[__string]
     var HostInstanceType: js.UndefOr[__string]
+    var LdapServerMetadata: js.UndefOr[LdapServerMetadataOutput]
     var Logs: js.UndefOr[LogsSummary]
     var MaintenanceWindowStartTime: js.UndefOr[WeeklyStartTime]
+    var PendingAuthenticationStrategy: js.UndefOr[AuthenticationStrategy]
     var PendingEngineVersion: js.UndefOr[__string]
     var PendingHostInstanceType: js.UndefOr[__string]
+    var PendingLdapServerMetadata: js.UndefOr[LdapServerMetadataOutput]
     var PendingSecurityGroups: js.UndefOr[__listOf__string]
     var PubliclyAccessible: js.UndefOr[__boolean]
     var SecurityGroups: js.UndefOr[__listOf__string]
@@ -887,6 +918,7 @@ package mq {
   object DescribeBrokerResponse {
     @inline
     def apply(
+        AuthenticationStrategy: js.UndefOr[AuthenticationStrategy] = js.undefined,
         AutoMinorVersionUpgrade: js.UndefOr[__boolean] = js.undefined,
         BrokerArn: js.UndefOr[__string] = js.undefined,
         BrokerId: js.UndefOr[__string] = js.undefined,
@@ -900,10 +932,13 @@ package mq {
         EngineType: js.UndefOr[EngineType] = js.undefined,
         EngineVersion: js.UndefOr[__string] = js.undefined,
         HostInstanceType: js.UndefOr[__string] = js.undefined,
+        LdapServerMetadata: js.UndefOr[LdapServerMetadataOutput] = js.undefined,
         Logs: js.UndefOr[LogsSummary] = js.undefined,
         MaintenanceWindowStartTime: js.UndefOr[WeeklyStartTime] = js.undefined,
+        PendingAuthenticationStrategy: js.UndefOr[AuthenticationStrategy] = js.undefined,
         PendingEngineVersion: js.UndefOr[__string] = js.undefined,
         PendingHostInstanceType: js.UndefOr[__string] = js.undefined,
+        PendingLdapServerMetadata: js.UndefOr[LdapServerMetadataOutput] = js.undefined,
         PendingSecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
         PubliclyAccessible: js.UndefOr[__boolean] = js.undefined,
         SecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
@@ -913,6 +948,7 @@ package mq {
         Users: js.UndefOr[__listOfUserSummary] = js.undefined
     ): DescribeBrokerResponse = {
       val __obj = js.Dynamic.literal()
+      AuthenticationStrategy.foreach(__v => __obj.updateDynamic("AuthenticationStrategy")(__v.asInstanceOf[js.Any]))
       AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
       BrokerArn.foreach(__v => __obj.updateDynamic("BrokerArn")(__v.asInstanceOf[js.Any]))
       BrokerId.foreach(__v => __obj.updateDynamic("BrokerId")(__v.asInstanceOf[js.Any]))
@@ -926,12 +962,19 @@ package mq {
       EngineType.foreach(__v => __obj.updateDynamic("EngineType")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       HostInstanceType.foreach(__v => __obj.updateDynamic("HostInstanceType")(__v.asInstanceOf[js.Any]))
+      LdapServerMetadata.foreach(__v => __obj.updateDynamic("LdapServerMetadata")(__v.asInstanceOf[js.Any]))
       Logs.foreach(__v => __obj.updateDynamic("Logs")(__v.asInstanceOf[js.Any]))
       MaintenanceWindowStartTime.foreach(__v =>
         __obj.updateDynamic("MaintenanceWindowStartTime")(__v.asInstanceOf[js.Any])
       )
+      PendingAuthenticationStrategy.foreach(__v =>
+        __obj.updateDynamic("PendingAuthenticationStrategy")(__v.asInstanceOf[js.Any])
+      )
       PendingEngineVersion.foreach(__v => __obj.updateDynamic("PendingEngineVersion")(__v.asInstanceOf[js.Any]))
       PendingHostInstanceType.foreach(__v => __obj.updateDynamic("PendingHostInstanceType")(__v.asInstanceOf[js.Any]))
+      PendingLdapServerMetadata.foreach(__v =>
+        __obj.updateDynamic("PendingLdapServerMetadata")(__v.asInstanceOf[js.Any])
+      )
       PendingSecurityGroups.foreach(__v => __obj.updateDynamic("PendingSecurityGroups")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
       SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
@@ -964,6 +1007,7 @@ package mq {
   @js.native
   trait DescribeConfigurationResponse extends js.Object {
     var Arn: js.UndefOr[__string]
+    var AuthenticationStrategy: js.UndefOr[AuthenticationStrategy]
     var Created: js.UndefOr[__timestampIso8601]
     var Description: js.UndefOr[__string]
     var EngineType: js.UndefOr[EngineType]
@@ -978,6 +1022,7 @@ package mq {
     @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
+        AuthenticationStrategy: js.UndefOr[AuthenticationStrategy] = js.undefined,
         Created: js.UndefOr[__timestampIso8601] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
         EngineType: js.UndefOr[EngineType] = js.undefined,
@@ -989,6 +1034,7 @@ package mq {
     ): DescribeConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      AuthenticationStrategy.foreach(__v => __obj.updateDynamic("AuthenticationStrategy")(__v.asInstanceOf[js.Any]))
       Created.foreach(__v => __obj.updateDynamic("Created")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       EngineType.foreach(__v => __obj.updateDynamic("EngineType")(__v.asInstanceOf[js.Any]))
@@ -1147,6 +1193,101 @@ package mq {
       val __obj = js.Dynamic.literal()
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EngineVersion]
+    }
+  }
+
+  /**
+    * The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+    */
+  @js.native
+  trait LdapServerMetadataInput extends js.Object {
+    var Hosts: js.UndefOr[__listOf__string]
+    var RoleBase: js.UndefOr[__string]
+    var RoleName: js.UndefOr[__string]
+    var RoleSearchMatching: js.UndefOr[__string]
+    var RoleSearchSubtree: js.UndefOr[__boolean]
+    var ServiceAccountPassword: js.UndefOr[__string]
+    var ServiceAccountUsername: js.UndefOr[__string]
+    var UserBase: js.UndefOr[__string]
+    var UserRoleName: js.UndefOr[__string]
+    var UserSearchMatching: js.UndefOr[__string]
+    var UserSearchSubtree: js.UndefOr[__boolean]
+  }
+
+  object LdapServerMetadataInput {
+    @inline
+    def apply(
+        Hosts: js.UndefOr[__listOf__string] = js.undefined,
+        RoleBase: js.UndefOr[__string] = js.undefined,
+        RoleName: js.UndefOr[__string] = js.undefined,
+        RoleSearchMatching: js.UndefOr[__string] = js.undefined,
+        RoleSearchSubtree: js.UndefOr[__boolean] = js.undefined,
+        ServiceAccountPassword: js.UndefOr[__string] = js.undefined,
+        ServiceAccountUsername: js.UndefOr[__string] = js.undefined,
+        UserBase: js.UndefOr[__string] = js.undefined,
+        UserRoleName: js.UndefOr[__string] = js.undefined,
+        UserSearchMatching: js.UndefOr[__string] = js.undefined,
+        UserSearchSubtree: js.UndefOr[__boolean] = js.undefined
+    ): LdapServerMetadataInput = {
+      val __obj = js.Dynamic.literal()
+      Hosts.foreach(__v => __obj.updateDynamic("Hosts")(__v.asInstanceOf[js.Any]))
+      RoleBase.foreach(__v => __obj.updateDynamic("RoleBase")(__v.asInstanceOf[js.Any]))
+      RoleName.foreach(__v => __obj.updateDynamic("RoleName")(__v.asInstanceOf[js.Any]))
+      RoleSearchMatching.foreach(__v => __obj.updateDynamic("RoleSearchMatching")(__v.asInstanceOf[js.Any]))
+      RoleSearchSubtree.foreach(__v => __obj.updateDynamic("RoleSearchSubtree")(__v.asInstanceOf[js.Any]))
+      ServiceAccountPassword.foreach(__v => __obj.updateDynamic("ServiceAccountPassword")(__v.asInstanceOf[js.Any]))
+      ServiceAccountUsername.foreach(__v => __obj.updateDynamic("ServiceAccountUsername")(__v.asInstanceOf[js.Any]))
+      UserBase.foreach(__v => __obj.updateDynamic("UserBase")(__v.asInstanceOf[js.Any]))
+      UserRoleName.foreach(__v => __obj.updateDynamic("UserRoleName")(__v.asInstanceOf[js.Any]))
+      UserSearchMatching.foreach(__v => __obj.updateDynamic("UserSearchMatching")(__v.asInstanceOf[js.Any]))
+      UserSearchSubtree.foreach(__v => __obj.updateDynamic("UserSearchSubtree")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LdapServerMetadataInput]
+    }
+  }
+
+  /**
+    * The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+    */
+  @js.native
+  trait LdapServerMetadataOutput extends js.Object {
+    var Hosts: js.UndefOr[__listOf__string]
+    var RoleBase: js.UndefOr[__string]
+    var RoleName: js.UndefOr[__string]
+    var RoleSearchMatching: js.UndefOr[__string]
+    var RoleSearchSubtree: js.UndefOr[__boolean]
+    var ServiceAccountUsername: js.UndefOr[__string]
+    var UserBase: js.UndefOr[__string]
+    var UserRoleName: js.UndefOr[__string]
+    var UserSearchMatching: js.UndefOr[__string]
+    var UserSearchSubtree: js.UndefOr[__boolean]
+  }
+
+  object LdapServerMetadataOutput {
+    @inline
+    def apply(
+        Hosts: js.UndefOr[__listOf__string] = js.undefined,
+        RoleBase: js.UndefOr[__string] = js.undefined,
+        RoleName: js.UndefOr[__string] = js.undefined,
+        RoleSearchMatching: js.UndefOr[__string] = js.undefined,
+        RoleSearchSubtree: js.UndefOr[__boolean] = js.undefined,
+        ServiceAccountUsername: js.UndefOr[__string] = js.undefined,
+        UserBase: js.UndefOr[__string] = js.undefined,
+        UserRoleName: js.UndefOr[__string] = js.undefined,
+        UserSearchMatching: js.UndefOr[__string] = js.undefined,
+        UserSearchSubtree: js.UndefOr[__boolean] = js.undefined
+    ): LdapServerMetadataOutput = {
+      val __obj = js.Dynamic.literal()
+      Hosts.foreach(__v => __obj.updateDynamic("Hosts")(__v.asInstanceOf[js.Any]))
+      RoleBase.foreach(__v => __obj.updateDynamic("RoleBase")(__v.asInstanceOf[js.Any]))
+      RoleName.foreach(__v => __obj.updateDynamic("RoleName")(__v.asInstanceOf[js.Any]))
+      RoleSearchMatching.foreach(__v => __obj.updateDynamic("RoleSearchMatching")(__v.asInstanceOf[js.Any]))
+      RoleSearchSubtree.foreach(__v => __obj.updateDynamic("RoleSearchSubtree")(__v.asInstanceOf[js.Any]))
+      ServiceAccountUsername.foreach(__v => __obj.updateDynamic("ServiceAccountUsername")(__v.asInstanceOf[js.Any]))
+      UserBase.foreach(__v => __obj.updateDynamic("UserBase")(__v.asInstanceOf[js.Any]))
+      UserRoleName.foreach(__v => __obj.updateDynamic("UserRoleName")(__v.asInstanceOf[js.Any]))
+      UserSearchMatching.foreach(__v => __obj.updateDynamic("UserSearchMatching")(__v.asInstanceOf[js.Any]))
+      UserSearchSubtree.foreach(__v => __obj.updateDynamic("UserSearchSubtree")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LdapServerMetadataOutput]
     }
   }
 
@@ -1513,10 +1654,12 @@ package mq {
   @js.native
   trait UpdateBrokerRequest extends js.Object {
     var BrokerId: __string
+    var AuthenticationStrategy: js.UndefOr[AuthenticationStrategy]
     var AutoMinorVersionUpgrade: js.UndefOr[__boolean]
     var Configuration: js.UndefOr[ConfigurationId]
     var EngineVersion: js.UndefOr[__string]
     var HostInstanceType: js.UndefOr[__string]
+    var LdapServerMetadata: js.UndefOr[LdapServerMetadataInput]
     var Logs: js.UndefOr[Logs]
     var SecurityGroups: js.UndefOr[__listOf__string]
   }
@@ -1525,10 +1668,12 @@ package mq {
     @inline
     def apply(
         BrokerId: __string,
+        AuthenticationStrategy: js.UndefOr[AuthenticationStrategy] = js.undefined,
         AutoMinorVersionUpgrade: js.UndefOr[__boolean] = js.undefined,
         Configuration: js.UndefOr[ConfigurationId] = js.undefined,
         EngineVersion: js.UndefOr[__string] = js.undefined,
         HostInstanceType: js.UndefOr[__string] = js.undefined,
+        LdapServerMetadata: js.UndefOr[LdapServerMetadataInput] = js.undefined,
         Logs: js.UndefOr[Logs] = js.undefined,
         SecurityGroups: js.UndefOr[__listOf__string] = js.undefined
     ): UpdateBrokerRequest = {
@@ -1536,10 +1681,12 @@ package mq {
         "BrokerId" -> BrokerId.asInstanceOf[js.Any]
       )
 
+      AuthenticationStrategy.foreach(__v => __obj.updateDynamic("AuthenticationStrategy")(__v.asInstanceOf[js.Any]))
       AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
       Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       HostInstanceType.foreach(__v => __obj.updateDynamic("HostInstanceType")(__v.asInstanceOf[js.Any]))
+      LdapServerMetadata.foreach(__v => __obj.updateDynamic("LdapServerMetadata")(__v.asInstanceOf[js.Any]))
       Logs.foreach(__v => __obj.updateDynamic("Logs")(__v.asInstanceOf[js.Any]))
       SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateBrokerRequest]
@@ -1548,11 +1695,13 @@ package mq {
 
   @js.native
   trait UpdateBrokerResponse extends js.Object {
+    var AuthenticationStrategy: js.UndefOr[AuthenticationStrategy]
     var AutoMinorVersionUpgrade: js.UndefOr[__boolean]
     var BrokerId: js.UndefOr[__string]
     var Configuration: js.UndefOr[ConfigurationId]
     var EngineVersion: js.UndefOr[__string]
     var HostInstanceType: js.UndefOr[__string]
+    var LdapServerMetadata: js.UndefOr[LdapServerMetadataOutput]
     var Logs: js.UndefOr[Logs]
     var SecurityGroups: js.UndefOr[__listOf__string]
   }
@@ -1560,20 +1709,24 @@ package mq {
   object UpdateBrokerResponse {
     @inline
     def apply(
+        AuthenticationStrategy: js.UndefOr[AuthenticationStrategy] = js.undefined,
         AutoMinorVersionUpgrade: js.UndefOr[__boolean] = js.undefined,
         BrokerId: js.UndefOr[__string] = js.undefined,
         Configuration: js.UndefOr[ConfigurationId] = js.undefined,
         EngineVersion: js.UndefOr[__string] = js.undefined,
         HostInstanceType: js.UndefOr[__string] = js.undefined,
+        LdapServerMetadata: js.UndefOr[LdapServerMetadataOutput] = js.undefined,
         Logs: js.UndefOr[Logs] = js.undefined,
         SecurityGroups: js.UndefOr[__listOf__string] = js.undefined
     ): UpdateBrokerResponse = {
       val __obj = js.Dynamic.literal()
+      AuthenticationStrategy.foreach(__v => __obj.updateDynamic("AuthenticationStrategy")(__v.asInstanceOf[js.Any]))
       AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
       BrokerId.foreach(__v => __obj.updateDynamic("BrokerId")(__v.asInstanceOf[js.Any]))
       Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       HostInstanceType.foreach(__v => __obj.updateDynamic("HostInstanceType")(__v.asInstanceOf[js.Any]))
+      LdapServerMetadata.foreach(__v => __obj.updateDynamic("LdapServerMetadata")(__v.asInstanceOf[js.Any]))
       Logs.foreach(__v => __obj.updateDynamic("Logs")(__v.asInstanceOf[js.Any]))
       SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateBrokerResponse]

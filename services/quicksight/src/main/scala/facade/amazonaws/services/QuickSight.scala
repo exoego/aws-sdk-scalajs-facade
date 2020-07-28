@@ -47,6 +47,7 @@ package object quicksight {
   type Domain = String
   type DoubleList = js.Array[Double]
   type EmbeddingUrl = String
+  type EntryPoint = String
   type Expression = String
   type GroupDescription = String
   type GroupList = js.Array[Group]
@@ -72,6 +73,7 @@ package object quicksight {
   type LongList = js.Array[Double]
   type MaxResults = Int
   type Namespace = String
+  type Namespaces = js.Array[NamespaceInfoV2]
   type NonEmptyString = String
   type OnClause = String
   type OptionalPort = Int
@@ -90,6 +92,7 @@ package object quicksight {
   type ResourceName = String
   type ResourcePermissionList = js.Array[ResourcePermission]
   type RestrictiveResourceId = String
+  type RoleName = String
   type RoleSessionName = String
   type S3Bucket = String
   type S3Key = String
@@ -131,6 +134,9 @@ package object quicksight {
 
     @inline def cancelIngestionFuture(params: CancelIngestionRequest): Future[CancelIngestionResponse] =
       service.cancelIngestion(params).promise().toFuture
+    @inline def createAccountCustomizationFuture(
+        params: CreateAccountCustomizationRequest
+    ): Future[CreateAccountCustomizationResponse] = service.createAccountCustomization(params).promise().toFuture
     @inline def createDashboardFuture(params: CreateDashboardRequest): Future[CreateDashboardResponse] =
       service.createDashboard(params).promise().toFuture
     @inline def createDataSetFuture(params: CreateDataSetRequest): Future[CreateDataSetResponse] =
@@ -147,6 +153,8 @@ package object quicksight {
     ): Future[CreateIAMPolicyAssignmentResponse] = service.createIAMPolicyAssignment(params).promise().toFuture
     @inline def createIngestionFuture(params: CreateIngestionRequest): Future[CreateIngestionResponse] =
       service.createIngestion(params).promise().toFuture
+    @inline def createNamespaceFuture(params: CreateNamespaceRequest): Future[CreateNamespaceResponse] =
+      service.createNamespace(params).promise().toFuture
     @inline def createTemplateAliasFuture(params: CreateTemplateAliasRequest): Future[CreateTemplateAliasResponse] =
       service.createTemplateAlias(params).promise().toFuture
     @inline def createTemplateFuture(params: CreateTemplateRequest): Future[CreateTemplateResponse] =
@@ -155,6 +163,9 @@ package object quicksight {
       service.createThemeAlias(params).promise().toFuture
     @inline def createThemeFuture(params: CreateThemeRequest): Future[CreateThemeResponse] =
       service.createTheme(params).promise().toFuture
+    @inline def deleteAccountCustomizationFuture(
+        params: DeleteAccountCustomizationRequest
+    ): Future[DeleteAccountCustomizationResponse] = service.deleteAccountCustomization(params).promise().toFuture
     @inline def deleteDashboardFuture(params: DeleteDashboardRequest): Future[DeleteDashboardResponse] =
       service.deleteDashboard(params).promise().toFuture
     @inline def deleteDataSetFuture(params: DeleteDataSetRequest): Future[DeleteDataSetResponse] =
@@ -169,6 +180,8 @@ package object quicksight {
     @inline def deleteIAMPolicyAssignmentFuture(
         params: DeleteIAMPolicyAssignmentRequest
     ): Future[DeleteIAMPolicyAssignmentResponse] = service.deleteIAMPolicyAssignment(params).promise().toFuture
+    @inline def deleteNamespaceFuture(params: DeleteNamespaceRequest): Future[DeleteNamespaceResponse] =
+      service.deleteNamespace(params).promise().toFuture
     @inline def deleteTemplateAliasFuture(params: DeleteTemplateAliasRequest): Future[DeleteTemplateAliasResponse] =
       service.deleteTemplateAlias(params).promise().toFuture
     @inline def deleteTemplateFuture(params: DeleteTemplateRequest): Future[DeleteTemplateResponse] =
@@ -182,6 +195,12 @@ package object quicksight {
     ): Future[DeleteUserByPrincipalIdResponse] = service.deleteUserByPrincipalId(params).promise().toFuture
     @inline def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResponse] =
       service.deleteUser(params).promise().toFuture
+    @inline def describeAccountCustomizationFuture(
+        params: DescribeAccountCustomizationRequest
+    ): Future[DescribeAccountCustomizationResponse] = service.describeAccountCustomization(params).promise().toFuture
+    @inline def describeAccountSettingsFuture(
+        params: DescribeAccountSettingsRequest
+    ): Future[DescribeAccountSettingsResponse] = service.describeAccountSettings(params).promise().toFuture
     @inline def describeDashboardFuture(params: DescribeDashboardRequest): Future[DescribeDashboardResponse] =
       service.describeDashboard(params).promise().toFuture
     @inline def describeDashboardPermissionsFuture(
@@ -204,6 +223,8 @@ package object quicksight {
     ): Future[DescribeIAMPolicyAssignmentResponse] = service.describeIAMPolicyAssignment(params).promise().toFuture
     @inline def describeIngestionFuture(params: DescribeIngestionRequest): Future[DescribeIngestionResponse] =
       service.describeIngestion(params).promise().toFuture
+    @inline def describeNamespaceFuture(params: DescribeNamespaceRequest): Future[DescribeNamespaceResponse] =
+      service.describeNamespace(params).promise().toFuture
     @inline def describeTemplateAliasFuture(
         params: DescribeTemplateAliasRequest
     ): Future[DescribeTemplateAliasResponse] = service.describeTemplateAlias(params).promise().toFuture
@@ -223,6 +244,8 @@ package object quicksight {
       service.describeUser(params).promise().toFuture
     @inline def getDashboardEmbedUrlFuture(params: GetDashboardEmbedUrlRequest): Future[GetDashboardEmbedUrlResponse] =
       service.getDashboardEmbedUrl(params).promise().toFuture
+    @inline def getSessionEmbedUrlFuture(params: GetSessionEmbedUrlRequest): Future[GetSessionEmbedUrlResponse] =
+      service.getSessionEmbedUrl(params).promise().toFuture
     @inline def listDashboardVersionsFuture(
         params: ListDashboardVersionsRequest
     ): Future[ListDashboardVersionsResponse] = service.listDashboardVersions(params).promise().toFuture
@@ -245,6 +268,8 @@ package object quicksight {
     ): Future[ListIAMPolicyAssignmentsResponse] = service.listIAMPolicyAssignments(params).promise().toFuture
     @inline def listIngestionsFuture(params: ListIngestionsRequest): Future[ListIngestionsResponse] =
       service.listIngestions(params).promise().toFuture
+    @inline def listNamespacesFuture(params: ListNamespacesRequest): Future[ListNamespacesResponse] =
+      service.listNamespaces(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise().toFuture
     @inline def listTemplateAliasesFuture(params: ListTemplateAliasesRequest): Future[ListTemplateAliasesResponse] =
@@ -271,6 +296,12 @@ package object quicksight {
       service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise().toFuture
+    @inline def updateAccountCustomizationFuture(
+        params: UpdateAccountCustomizationRequest
+    ): Future[UpdateAccountCustomizationResponse] = service.updateAccountCustomization(params).promise().toFuture
+    @inline def updateAccountSettingsFuture(
+        params: UpdateAccountSettingsRequest
+    ): Future[UpdateAccountSettingsResponse] = service.updateAccountSettings(params).promise().toFuture
     @inline def updateDashboardFuture(params: UpdateDashboardRequest): Future[UpdateDashboardResponse] =
       service.updateDashboard(params).promise().toFuture
     @inline def updateDashboardPermissionsFuture(
@@ -321,6 +352,9 @@ package quicksight {
     def this(config: AWSConfig) = this()
 
     def cancelIngestion(params: CancelIngestionRequest): Request[CancelIngestionResponse] = js.native
+    def createAccountCustomization(
+        params: CreateAccountCustomizationRequest
+    ): Request[CreateAccountCustomizationResponse] = js.native
     def createDashboard(params: CreateDashboardRequest): Request[CreateDashboardResponse] = js.native
     def createDataSet(params: CreateDataSetRequest): Request[CreateDataSetResponse] = js.native
     def createDataSource(params: CreateDataSourceRequest): Request[CreateDataSourceResponse] = js.native
@@ -330,10 +364,14 @@ package quicksight {
         params: CreateIAMPolicyAssignmentRequest
     ): Request[CreateIAMPolicyAssignmentResponse] = js.native
     def createIngestion(params: CreateIngestionRequest): Request[CreateIngestionResponse] = js.native
+    def createNamespace(params: CreateNamespaceRequest): Request[CreateNamespaceResponse] = js.native
     def createTemplate(params: CreateTemplateRequest): Request[CreateTemplateResponse] = js.native
     def createTemplateAlias(params: CreateTemplateAliasRequest): Request[CreateTemplateAliasResponse] = js.native
     def createTheme(params: CreateThemeRequest): Request[CreateThemeResponse] = js.native
     def createThemeAlias(params: CreateThemeAliasRequest): Request[CreateThemeAliasResponse] = js.native
+    def deleteAccountCustomization(
+        params: DeleteAccountCustomizationRequest
+    ): Request[DeleteAccountCustomizationResponse] = js.native
     def deleteDashboard(params: DeleteDashboardRequest): Request[DeleteDashboardResponse] = js.native
     def deleteDataSet(params: DeleteDataSetRequest): Request[DeleteDataSetResponse] = js.native
     def deleteDataSource(params: DeleteDataSourceRequest): Request[DeleteDataSourceResponse] = js.native
@@ -342,12 +380,18 @@ package quicksight {
     def deleteIAMPolicyAssignment(
         params: DeleteIAMPolicyAssignmentRequest
     ): Request[DeleteIAMPolicyAssignmentResponse] = js.native
+    def deleteNamespace(params: DeleteNamespaceRequest): Request[DeleteNamespaceResponse] = js.native
     def deleteTemplate(params: DeleteTemplateRequest): Request[DeleteTemplateResponse] = js.native
     def deleteTemplateAlias(params: DeleteTemplateAliasRequest): Request[DeleteTemplateAliasResponse] = js.native
     def deleteTheme(params: DeleteThemeRequest): Request[DeleteThemeResponse] = js.native
     def deleteThemeAlias(params: DeleteThemeAliasRequest): Request[DeleteThemeAliasResponse] = js.native
     def deleteUser(params: DeleteUserRequest): Request[DeleteUserResponse] = js.native
     def deleteUserByPrincipalId(params: DeleteUserByPrincipalIdRequest): Request[DeleteUserByPrincipalIdResponse] =
+      js.native
+    def describeAccountCustomization(
+        params: DescribeAccountCustomizationRequest
+    ): Request[DescribeAccountCustomizationResponse] = js.native
+    def describeAccountSettings(params: DescribeAccountSettingsRequest): Request[DescribeAccountSettingsResponse] =
       js.native
     def describeDashboard(params: DescribeDashboardRequest): Request[DescribeDashboardResponse] = js.native
     def describeDashboardPermissions(
@@ -366,6 +410,7 @@ package quicksight {
         params: DescribeIAMPolicyAssignmentRequest
     ): Request[DescribeIAMPolicyAssignmentResponse] = js.native
     def describeIngestion(params: DescribeIngestionRequest): Request[DescribeIngestionResponse] = js.native
+    def describeNamespace(params: DescribeNamespaceRequest): Request[DescribeNamespaceResponse] = js.native
     def describeTemplate(params: DescribeTemplateRequest): Request[DescribeTemplateResponse] = js.native
     def describeTemplateAlias(params: DescribeTemplateAliasRequest): Request[DescribeTemplateAliasResponse] = js.native
     def describeTemplatePermissions(
@@ -377,6 +422,7 @@ package quicksight {
       js.native
     def describeUser(params: DescribeUserRequest): Request[DescribeUserResponse] = js.native
     def getDashboardEmbedUrl(params: GetDashboardEmbedUrlRequest): Request[GetDashboardEmbedUrlResponse] = js.native
+    def getSessionEmbedUrl(params: GetSessionEmbedUrlRequest): Request[GetSessionEmbedUrlResponse] = js.native
     def listDashboardVersions(params: ListDashboardVersionsRequest): Request[ListDashboardVersionsResponse] = js.native
     def listDashboards(params: ListDashboardsRequest): Request[ListDashboardsResponse] = js.native
     def listDataSets(params: ListDataSetsRequest): Request[ListDataSetsResponse] = js.native
@@ -389,6 +435,7 @@ package quicksight {
         params: ListIAMPolicyAssignmentsForUserRequest
     ): Request[ListIAMPolicyAssignmentsForUserResponse] = js.native
     def listIngestions(params: ListIngestionsRequest): Request[ListIngestionsResponse] = js.native
+    def listNamespaces(params: ListNamespacesRequest): Request[ListNamespacesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listTemplateAliases(params: ListTemplateAliasesRequest): Request[ListTemplateAliasesResponse] = js.native
     def listTemplateVersions(params: ListTemplateVersionsRequest): Request[ListTemplateVersionsResponse] = js.native
@@ -402,6 +449,10 @@ package quicksight {
     def searchDashboards(params: SearchDashboardsRequest): Request[SearchDashboardsResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateAccountCustomization(
+        params: UpdateAccountCustomizationRequest
+    ): Request[UpdateAccountCustomizationResponse] = js.native
+    def updateAccountSettings(params: UpdateAccountSettingsRequest): Request[UpdateAccountSettingsResponse] = js.native
     def updateDashboard(params: UpdateDashboardRequest): Request[UpdateDashboardResponse] = js.native
     def updateDashboardPermissions(
         params: UpdateDashboardPermissionsRequest
@@ -430,6 +481,53 @@ package quicksight {
     def updateThemePermissions(params: UpdateThemePermissionsRequest): Request[UpdateThemePermissionsResponse] =
       js.native
     def updateUser(params: UpdateUserRequest): Request[UpdateUserResponse] = js.native
+  }
+
+  /**
+    * The customizations associated with your AWS account for QuickSight.
+    */
+  @js.native
+  trait AccountCustomization extends js.Object {
+    var DefaultTheme: js.UndefOr[Arn]
+  }
+
+  object AccountCustomization {
+    @inline
+    def apply(
+        DefaultTheme: js.UndefOr[Arn] = js.undefined
+    ): AccountCustomization = {
+      val __obj = js.Dynamic.literal()
+      DefaultTheme.foreach(__v => __obj.updateDynamic("DefaultTheme")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccountCustomization]
+    }
+  }
+
+  /**
+    * The QuickSight settings associated with your AWS account.
+    */
+  @js.native
+  trait AccountSettings extends js.Object {
+    var AccountName: js.UndefOr[String]
+    var DefaultNamespace: js.UndefOr[Namespace]
+    var Edition: js.UndefOr[Edition]
+    var NotificationEmail: js.UndefOr[String]
+  }
+
+  object AccountSettings {
+    @inline
+    def apply(
+        AccountName: js.UndefOr[String] = js.undefined,
+        DefaultNamespace: js.UndefOr[Namespace] = js.undefined,
+        Edition: js.UndefOr[Edition] = js.undefined,
+        NotificationEmail: js.UndefOr[String] = js.undefined
+    ): AccountSettings = {
+      val __obj = js.Dynamic.literal()
+      AccountName.foreach(__v => __obj.updateDynamic("AccountName")(__v.asInstanceOf[js.Any]))
+      DefaultNamespace.foreach(__v => __obj.updateDynamic("DefaultNamespace")(__v.asInstanceOf[js.Any]))
+      Edition.foreach(__v => __obj.updateDynamic("Edition")(__v.asInstanceOf[js.Any]))
+      NotificationEmail.foreach(__v => __obj.updateDynamic("NotificationEmail")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccountSettings]
+    }
   }
 
   /**
@@ -834,6 +932,58 @@ package quicksight {
       val __obj = js.Dynamic.literal()
       ColumnGeographicRole.foreach(__v => __obj.updateDynamic("ColumnGeographicRole")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ColumnTag]
+    }
+  }
+
+  @js.native
+  trait CreateAccountCustomizationRequest extends js.Object {
+    var AccountCustomization: AccountCustomization
+    var AwsAccountId: AwsAccountId
+    var Namespace: js.UndefOr[Namespace]
+  }
+
+  object CreateAccountCustomizationRequest {
+    @inline
+    def apply(
+        AccountCustomization: AccountCustomization,
+        AwsAccountId: AwsAccountId,
+        Namespace: js.UndefOr[Namespace] = js.undefined
+    ): CreateAccountCustomizationRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountCustomization" -> AccountCustomization.asInstanceOf[js.Any],
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any]
+      )
+
+      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAccountCustomizationRequest]
+    }
+  }
+
+  @js.native
+  trait CreateAccountCustomizationResponse extends js.Object {
+    var AccountCustomization: js.UndefOr[AccountCustomization]
+    var AwsAccountId: js.UndefOr[AwsAccountId]
+    var Namespace: js.UndefOr[Namespace]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object CreateAccountCustomizationResponse {
+    @inline
+    def apply(
+        AccountCustomization: js.UndefOr[AccountCustomization] = js.undefined,
+        AwsAccountId: js.UndefOr[AwsAccountId] = js.undefined,
+        Namespace: js.UndefOr[Namespace] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): CreateAccountCustomizationResponse = {
+      val __obj = js.Dynamic.literal()
+      AccountCustomization.foreach(__v => __obj.updateDynamic("AccountCustomization")(__v.asInstanceOf[js.Any]))
+      AwsAccountId.foreach(__v => __obj.updateDynamic("AwsAccountId")(__v.asInstanceOf[js.Any]))
+      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAccountCustomizationResponse]
     }
   }
 
@@ -1305,6 +1455,67 @@ package quicksight {
       RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateIngestionResponse]
+    }
+  }
+
+  @js.native
+  trait CreateNamespaceRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var IdentityStore: IdentityStore
+    var Namespace: Namespace
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateNamespaceRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        IdentityStore: IdentityStore,
+        Namespace: Namespace,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateNamespaceRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "IdentityStore" -> IdentityStore.asInstanceOf[js.Any],
+        "Namespace" -> Namespace.asInstanceOf[js.Any]
+      )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateNamespaceRequest]
+    }
+  }
+
+  @js.native
+  trait CreateNamespaceResponse extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var CapacityRegion: js.UndefOr[String]
+    var CreationStatus: js.UndefOr[NamespaceStatus]
+    var IdentityStore: js.UndefOr[IdentityStore]
+    var Name: js.UndefOr[Namespace]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object CreateNamespaceResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        CapacityRegion: js.UndefOr[String] = js.undefined,
+        CreationStatus: js.UndefOr[NamespaceStatus] = js.undefined,
+        IdentityStore: js.UndefOr[IdentityStore] = js.undefined,
+        Name: js.UndefOr[Namespace] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): CreateNamespaceResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CapacityRegion.foreach(__v => __obj.updateDynamic("CapacityRegion")(__v.asInstanceOf[js.Any]))
+      CreationStatus.foreach(__v => __obj.updateDynamic("CreationStatus")(__v.asInstanceOf[js.Any]))
+      IdentityStore.foreach(__v => __obj.updateDynamic("IdentityStore")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateNamespaceResponse]
     }
   }
 
@@ -2424,6 +2635,46 @@ package quicksight {
   }
 
   @js.native
+  trait DeleteAccountCustomizationRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var Namespace: js.UndefOr[Namespace]
+  }
+
+  object DeleteAccountCustomizationRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        Namespace: js.UndefOr[Namespace] = js.undefined
+    ): DeleteAccountCustomizationRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any]
+      )
+
+      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteAccountCustomizationRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteAccountCustomizationResponse extends js.Object {
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object DeleteAccountCustomizationResponse {
+    @inline
+    def apply(
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): DeleteAccountCustomizationResponse = {
+      val __obj = js.Dynamic.literal()
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteAccountCustomizationResponse]
+    }
+  }
+
+  @js.native
   trait DeleteDashboardRequest extends js.Object {
     var AwsAccountId: AwsAccountId
     var DashboardId: RestrictiveResourceId
@@ -2696,6 +2947,46 @@ package quicksight {
       RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteIAMPolicyAssignmentResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteNamespaceRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var Namespace: Namespace
+  }
+
+  object DeleteNamespaceRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        Namespace: Namespace
+    ): DeleteNamespaceRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "Namespace" -> Namespace.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteNamespaceRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteNamespaceResponse extends js.Object {
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object DeleteNamespaceResponse {
+    @inline
+    def apply(
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): DeleteNamespaceResponse = {
+      val __obj = js.Dynamic.literal()
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteNamespaceResponse]
     }
   }
 
@@ -2987,6 +3278,98 @@ package quicksight {
       RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteUserResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeAccountCustomizationRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var Namespace: js.UndefOr[Namespace]
+    var Resolved: js.UndefOr[Boolean]
+  }
+
+  object DescribeAccountCustomizationRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        Namespace: js.UndefOr[Namespace] = js.undefined,
+        Resolved: js.UndefOr[Boolean] = js.undefined
+    ): DescribeAccountCustomizationRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any]
+      )
+
+      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
+      Resolved.foreach(__v => __obj.updateDynamic("Resolved")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAccountCustomizationRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeAccountCustomizationResponse extends js.Object {
+    var AccountCustomization: js.UndefOr[AccountCustomization]
+    var AwsAccountId: js.UndefOr[AwsAccountId]
+    var Namespace: js.UndefOr[Namespace]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object DescribeAccountCustomizationResponse {
+    @inline
+    def apply(
+        AccountCustomization: js.UndefOr[AccountCustomization] = js.undefined,
+        AwsAccountId: js.UndefOr[AwsAccountId] = js.undefined,
+        Namespace: js.UndefOr[Namespace] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): DescribeAccountCustomizationResponse = {
+      val __obj = js.Dynamic.literal()
+      AccountCustomization.foreach(__v => __obj.updateDynamic("AccountCustomization")(__v.asInstanceOf[js.Any]))
+      AwsAccountId.foreach(__v => __obj.updateDynamic("AwsAccountId")(__v.asInstanceOf[js.Any]))
+      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAccountCustomizationResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeAccountSettingsRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+  }
+
+  object DescribeAccountSettingsRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId
+    ): DescribeAccountSettingsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeAccountSettingsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeAccountSettingsResponse extends js.Object {
+    var AccountSettings: js.UndefOr[AccountSettings]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object DescribeAccountSettingsResponse {
+    @inline
+    def apply(
+        AccountSettings: js.UndefOr[AccountSettings] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): DescribeAccountSettingsResponse = {
+      val __obj = js.Dynamic.literal()
+      AccountSettings.foreach(__v => __obj.updateDynamic("AccountSettings")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAccountSettingsResponse]
     }
   }
 
@@ -3411,6 +3794,49 @@ package quicksight {
   }
 
   @js.native
+  trait DescribeNamespaceRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var Namespace: Namespace
+  }
+
+  object DescribeNamespaceRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        Namespace: Namespace
+    ): DescribeNamespaceRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "Namespace" -> Namespace.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeNamespaceRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeNamespaceResponse extends js.Object {
+    var Namespace: js.UndefOr[NamespaceInfoV2]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object DescribeNamespaceResponse {
+    @inline
+    def apply(
+        Namespace: js.UndefOr[NamespaceInfoV2] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): DescribeNamespaceResponse = {
+      val __obj = js.Dynamic.literal()
+      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeNamespaceResponse]
+    }
+  }
+
+  @js.native
   trait DescribeTemplateAliasRequest extends js.Object {
     var AliasName: AliasName
     var AwsAccountId: AwsAccountId
@@ -3744,6 +4170,15 @@ package quicksight {
     }
   }
 
+  @js.native
+  sealed trait Edition extends js.Any
+  object Edition extends js.Object {
+    val STANDARD = "STANDARD".asInstanceOf[Edition]
+    val ENTERPRISE = "ENTERPRISE".asInstanceOf[Edition]
+
+    val values = js.Object.freeze(js.Array(STANDARD, ENTERPRISE))
+  }
+
   /**
     * Error information for the SPICE ingestion of a dataset.
     */
@@ -3934,6 +4369,55 @@ package quicksight {
     }
   }
 
+  @js.native
+  trait GetSessionEmbedUrlRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var EntryPoint: js.UndefOr[EntryPoint]
+    var SessionLifetimeInMinutes: js.UndefOr[SessionLifetimeInMinutes]
+    var UserArn: js.UndefOr[Arn]
+  }
+
+  object GetSessionEmbedUrlRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        EntryPoint: js.UndefOr[EntryPoint] = js.undefined,
+        SessionLifetimeInMinutes: js.UndefOr[SessionLifetimeInMinutes] = js.undefined,
+        UserArn: js.UndefOr[Arn] = js.undefined
+    ): GetSessionEmbedUrlRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any]
+      )
+
+      EntryPoint.foreach(__v => __obj.updateDynamic("EntryPoint")(__v.asInstanceOf[js.Any]))
+      SessionLifetimeInMinutes.foreach(__v => __obj.updateDynamic("SessionLifetimeInMinutes")(__v.asInstanceOf[js.Any]))
+      UserArn.foreach(__v => __obj.updateDynamic("UserArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSessionEmbedUrlRequest]
+    }
+  }
+
+  @js.native
+  trait GetSessionEmbedUrlResponse extends js.Object {
+    var EmbedUrl: js.UndefOr[EmbeddingUrl]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object GetSessionEmbedUrlResponse {
+    @inline
+    def apply(
+        EmbedUrl: js.UndefOr[EmbeddingUrl] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): GetSessionEmbedUrlResponse = {
+      val __obj = js.Dynamic.literal()
+      EmbedUrl.foreach(__v => __obj.updateDynamic("EmbedUrl")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSessionEmbedUrlResponse]
+    }
+  }
+
   /**
     * A <i>group</i> in Amazon QuickSight consists of a set of users. You can use groups to make it easier to manage access and security. Currently, an Amazon QuickSight subscription can't contain more than 500 Amazon QuickSight groups.
     */
@@ -4057,6 +4541,14 @@ package quicksight {
       AssignmentStatus.foreach(__v => __obj.updateDynamic("AssignmentStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IAMPolicyAssignmentSummary]
     }
+  }
+
+  @js.native
+  sealed trait IdentityStore extends js.Any
+  object IdentityStore extends js.Object {
+    val QUICKSIGHT = "QUICKSIGHT".asInstanceOf[IdentityStore]
+
+    val values = js.Object.freeze(js.Array(QUICKSIGHT))
   }
 
   @js.native
@@ -4837,6 +5329,55 @@ package quicksight {
   }
 
   @js.native
+  trait ListNamespacesRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListNamespacesRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListNamespacesRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListNamespacesRequest]
+    }
+  }
+
+  @js.native
+  trait ListNamespacesResponse extends js.Object {
+    var Namespaces: js.UndefOr[Namespaces]
+    var NextToken: js.UndefOr[String]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object ListNamespacesResponse {
+    @inline
+    def apply(
+        Namespaces: js.UndefOr[Namespaces] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): ListNamespacesResponse = {
+      val __obj = js.Dynamic.literal()
+      Namespaces.foreach(__v => __obj.updateDynamic("Namespaces")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListNamespacesResponse]
+    }
+  }
+
+  @js.native
   trait ListTagsForResourceRequest extends js.Object {
     var ResourceArn: Arn
   }
@@ -5441,6 +5982,83 @@ package quicksight {
   }
 
   /**
+    * Errors that occur during namespace creation.
+    */
+  @js.native
+  trait NamespaceError extends js.Object {
+    var Message: js.UndefOr[String]
+    var Type: js.UndefOr[NamespaceErrorType]
+  }
+
+  object NamespaceError {
+    @inline
+    def apply(
+        Message: js.UndefOr[String] = js.undefined,
+        Type: js.UndefOr[NamespaceErrorType] = js.undefined
+    ): NamespaceError = {
+      val __obj = js.Dynamic.literal()
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NamespaceError]
+    }
+  }
+
+  @js.native
+  sealed trait NamespaceErrorType extends js.Any
+  object NamespaceErrorType extends js.Object {
+    val PERMISSION_DENIED = "PERMISSION_DENIED".asInstanceOf[NamespaceErrorType]
+    val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[NamespaceErrorType]
+
+    val values = js.Object.freeze(js.Array(PERMISSION_DENIED, INTERNAL_SERVICE_ERROR))
+  }
+
+  /**
+    * The error type.
+    */
+  @js.native
+  trait NamespaceInfoV2 extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var CapacityRegion: js.UndefOr[String]
+    var CreationStatus: js.UndefOr[NamespaceStatus]
+    var IdentityStore: js.UndefOr[IdentityStore]
+    var Name: js.UndefOr[Namespace]
+    var NamespaceError: js.UndefOr[NamespaceError]
+  }
+
+  object NamespaceInfoV2 {
+    @inline
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        CapacityRegion: js.UndefOr[String] = js.undefined,
+        CreationStatus: js.UndefOr[NamespaceStatus] = js.undefined,
+        IdentityStore: js.UndefOr[IdentityStore] = js.undefined,
+        Name: js.UndefOr[Namespace] = js.undefined,
+        NamespaceError: js.UndefOr[NamespaceError] = js.undefined
+    ): NamespaceInfoV2 = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CapacityRegion.foreach(__v => __obj.updateDynamic("CapacityRegion")(__v.asInstanceOf[js.Any]))
+      CreationStatus.foreach(__v => __obj.updateDynamic("CreationStatus")(__v.asInstanceOf[js.Any]))
+      IdentityStore.foreach(__v => __obj.updateDynamic("IdentityStore")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NamespaceError.foreach(__v => __obj.updateDynamic("NamespaceError")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NamespaceInfoV2]
+    }
+  }
+
+  @js.native
+  sealed trait NamespaceStatus extends js.Any
+  object NamespaceStatus extends js.Object {
+    val CREATED = "CREATED".asInstanceOf[NamespaceStatus]
+    val CREATING = "CREATING".asInstanceOf[NamespaceStatus]
+    val DELETING = "DELETING".asInstanceOf[NamespaceStatus]
+    val RETRYABLE_FAILURE = "RETRYABLE_FAILURE".asInstanceOf[NamespaceStatus]
+    val NON_RETRYABLE_FAILURE = "NON_RETRYABLE_FAILURE".asInstanceOf[NamespaceStatus]
+
+    val values = js.Object.freeze(js.Array(CREATED, CREATING, DELETING, RETRYABLE_FAILURE, NON_RETRYABLE_FAILURE))
+  }
+
+  /**
     * Output column.
     */
   @js.native
@@ -5675,6 +6293,7 @@ package quicksight {
     var IdentityType: IdentityType
     var Namespace: Namespace
     var UserRole: UserRole
+    var CustomPermissionsName: js.UndefOr[RoleName]
     var IamArn: js.UndefOr[String]
     var SessionName: js.UndefOr[RoleSessionName]
     var UserName: js.UndefOr[UserName]
@@ -5688,6 +6307,7 @@ package quicksight {
         IdentityType: IdentityType,
         Namespace: Namespace,
         UserRole: UserRole,
+        CustomPermissionsName: js.UndefOr[RoleName] = js.undefined,
         IamArn: js.UndefOr[String] = js.undefined,
         SessionName: js.UndefOr[RoleSessionName] = js.undefined,
         UserName: js.UndefOr[UserName] = js.undefined
@@ -5700,6 +6320,7 @@ package quicksight {
         "UserRole" -> UserRole.asInstanceOf[js.Any]
       )
 
+      CustomPermissionsName.foreach(__v => __obj.updateDynamic("CustomPermissionsName")(__v.asInstanceOf[js.Any]))
       IamArn.foreach(__v => __obj.updateDynamic("IamArn")(__v.asInstanceOf[js.Any]))
       SessionName.foreach(__v => __obj.updateDynamic("SessionName")(__v.asInstanceOf[js.Any]))
       UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
@@ -5861,19 +6482,22 @@ package quicksight {
   trait RowLevelPermissionDataSet extends js.Object {
     var Arn: Arn
     var PermissionPolicy: RowLevelPermissionPolicy
+    var Namespace: js.UndefOr[Namespace]
   }
 
   object RowLevelPermissionDataSet {
     @inline
     def apply(
         Arn: Arn,
-        PermissionPolicy: RowLevelPermissionPolicy
+        PermissionPolicy: RowLevelPermissionPolicy,
+        Namespace: js.UndefOr[Namespace] = js.undefined
     ): RowLevelPermissionDataSet = {
       val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any],
         "PermissionPolicy" -> PermissionPolicy.asInstanceOf[js.Any]
       )
 
+      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RowLevelPermissionDataSet]
     }
   }
@@ -6991,6 +7615,101 @@ package quicksight {
   }
 
   @js.native
+  trait UpdateAccountCustomizationRequest extends js.Object {
+    var AccountCustomization: AccountCustomization
+    var AwsAccountId: AwsAccountId
+    var Namespace: js.UndefOr[Namespace]
+  }
+
+  object UpdateAccountCustomizationRequest {
+    @inline
+    def apply(
+        AccountCustomization: AccountCustomization,
+        AwsAccountId: AwsAccountId,
+        Namespace: js.UndefOr[Namespace] = js.undefined
+    ): UpdateAccountCustomizationRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountCustomization" -> AccountCustomization.asInstanceOf[js.Any],
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any]
+      )
+
+      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateAccountCustomizationRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateAccountCustomizationResponse extends js.Object {
+    var AccountCustomization: js.UndefOr[AccountCustomization]
+    var AwsAccountId: js.UndefOr[AwsAccountId]
+    var Namespace: js.UndefOr[Namespace]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object UpdateAccountCustomizationResponse {
+    @inline
+    def apply(
+        AccountCustomization: js.UndefOr[AccountCustomization] = js.undefined,
+        AwsAccountId: js.UndefOr[AwsAccountId] = js.undefined,
+        Namespace: js.UndefOr[Namespace] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): UpdateAccountCustomizationResponse = {
+      val __obj = js.Dynamic.literal()
+      AccountCustomization.foreach(__v => __obj.updateDynamic("AccountCustomization")(__v.asInstanceOf[js.Any]))
+      AwsAccountId.foreach(__v => __obj.updateDynamic("AwsAccountId")(__v.asInstanceOf[js.Any]))
+      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateAccountCustomizationResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateAccountSettingsRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var DefaultNamespace: Namespace
+    var NotificationEmail: js.UndefOr[String]
+  }
+
+  object UpdateAccountSettingsRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        DefaultNamespace: Namespace,
+        NotificationEmail: js.UndefOr[String] = js.undefined
+    ): UpdateAccountSettingsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "DefaultNamespace" -> DefaultNamespace.asInstanceOf[js.Any]
+      )
+
+      NotificationEmail.foreach(__v => __obj.updateDynamic("NotificationEmail")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateAccountSettingsRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateAccountSettingsResponse extends js.Object {
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object UpdateAccountSettingsResponse {
+    @inline
+    def apply(
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): UpdateAccountSettingsResponse = {
+      val __obj = js.Dynamic.literal()
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateAccountSettingsResponse]
+    }
+  }
+
+  @js.native
   trait UpdateDashboardPermissionsRequest extends js.Object {
     var AwsAccountId: AwsAccountId
     var DashboardId: RestrictiveResourceId
@@ -7860,6 +8579,8 @@ package quicksight {
     var Namespace: Namespace
     var Role: UserRole
     var UserName: UserName
+    var CustomPermissionsName: js.UndefOr[RoleName]
+    var UnapplyCustomPermissions: js.UndefOr[Boolean]
   }
 
   object UpdateUserRequest {
@@ -7869,7 +8590,9 @@ package quicksight {
         Email: String,
         Namespace: Namespace,
         Role: UserRole,
-        UserName: UserName
+        UserName: UserName,
+        CustomPermissionsName: js.UndefOr[RoleName] = js.undefined,
+        UnapplyCustomPermissions: js.UndefOr[Boolean] = js.undefined
     ): UpdateUserRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
@@ -7879,6 +8602,8 @@ package quicksight {
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
+      CustomPermissionsName.foreach(__v => __obj.updateDynamic("CustomPermissionsName")(__v.asInstanceOf[js.Any]))
+      UnapplyCustomPermissions.foreach(__v => __obj.updateDynamic("UnapplyCustomPermissions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateUserRequest]
     }
   }
@@ -7943,6 +8668,7 @@ package quicksight {
   trait User extends js.Object {
     var Active: js.UndefOr[Boolean]
     var Arn: js.UndefOr[Arn]
+    var CustomPermissionsName: js.UndefOr[RoleName]
     var Email: js.UndefOr[String]
     var IdentityType: js.UndefOr[IdentityType]
     var PrincipalId: js.UndefOr[String]
@@ -7955,6 +8681,7 @@ package quicksight {
     def apply(
         Active: js.UndefOr[Boolean] = js.undefined,
         Arn: js.UndefOr[Arn] = js.undefined,
+        CustomPermissionsName: js.UndefOr[RoleName] = js.undefined,
         Email: js.UndefOr[String] = js.undefined,
         IdentityType: js.UndefOr[IdentityType] = js.undefined,
         PrincipalId: js.UndefOr[String] = js.undefined,
@@ -7964,6 +8691,7 @@ package quicksight {
       val __obj = js.Dynamic.literal()
       Active.foreach(__v => __obj.updateDynamic("Active")(__v.asInstanceOf[js.Any]))
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CustomPermissionsName.foreach(__v => __obj.updateDynamic("CustomPermissionsName")(__v.asInstanceOf[js.Any]))
       Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
       IdentityType.foreach(__v => __obj.updateDynamic("IdentityType")(__v.asInstanceOf[js.Any]))
       PrincipalId.foreach(__v => __obj.updateDynamic("PrincipalId")(__v.asInstanceOf[js.Any]))
