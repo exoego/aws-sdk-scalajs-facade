@@ -74,153 +74,72 @@ package object clouddirectory {
 
   implicit final class CloudDirectoryOps(private val service: CloudDirectory) extends AnyVal {
 
-    @inline def addFacetToObjectFuture(params: AddFacetToObjectRequest): Future[AddFacetToObjectResponse] =
-      service.addFacetToObject(params).promise().toFuture
-    @inline def applySchemaFuture(params: ApplySchemaRequest): Future[ApplySchemaResponse] =
-      service.applySchema(params).promise().toFuture
-    @inline def attachObjectFuture(params: AttachObjectRequest): Future[AttachObjectResponse] =
-      service.attachObject(params).promise().toFuture
-    @inline def attachPolicyFuture(params: AttachPolicyRequest): Future[AttachPolicyResponse] =
-      service.attachPolicy(params).promise().toFuture
-    @inline def attachToIndexFuture(params: AttachToIndexRequest): Future[AttachToIndexResponse] =
-      service.attachToIndex(params).promise().toFuture
-    @inline def attachTypedLinkFuture(params: AttachTypedLinkRequest): Future[AttachTypedLinkResponse] =
-      service.attachTypedLink(params).promise().toFuture
-    @inline def batchReadFuture(params: BatchReadRequest): Future[BatchReadResponse] =
-      service.batchRead(params).promise().toFuture
-    @inline def batchWriteFuture(params: BatchWriteRequest): Future[BatchWriteResponse] =
-      service.batchWrite(params).promise().toFuture
-    @inline def createDirectoryFuture(params: CreateDirectoryRequest): Future[CreateDirectoryResponse] =
-      service.createDirectory(params).promise().toFuture
-    @inline def createFacetFuture(params: CreateFacetRequest): Future[CreateFacetResponse] =
-      service.createFacet(params).promise().toFuture
-    @inline def createIndexFuture(params: CreateIndexRequest): Future[CreateIndexResponse] =
-      service.createIndex(params).promise().toFuture
-    @inline def createObjectFuture(params: CreateObjectRequest): Future[CreateObjectResponse] =
-      service.createObject(params).promise().toFuture
-    @inline def createSchemaFuture(params: CreateSchemaRequest): Future[CreateSchemaResponse] =
-      service.createSchema(params).promise().toFuture
-    @inline def createTypedLinkFacetFuture(params: CreateTypedLinkFacetRequest): Future[CreateTypedLinkFacetResponse] =
-      service.createTypedLinkFacet(params).promise().toFuture
-    @inline def deleteDirectoryFuture(params: DeleteDirectoryRequest): Future[DeleteDirectoryResponse] =
-      service.deleteDirectory(params).promise().toFuture
-    @inline def deleteFacetFuture(params: DeleteFacetRequest): Future[DeleteFacetResponse] =
-      service.deleteFacet(params).promise().toFuture
-    @inline def deleteObjectFuture(params: DeleteObjectRequest): Future[DeleteObjectResponse] =
-      service.deleteObject(params).promise().toFuture
-    @inline def deleteSchemaFuture(params: DeleteSchemaRequest): Future[DeleteSchemaResponse] =
-      service.deleteSchema(params).promise().toFuture
-    @inline def deleteTypedLinkFacetFuture(params: DeleteTypedLinkFacetRequest): Future[DeleteTypedLinkFacetResponse] =
-      service.deleteTypedLinkFacet(params).promise().toFuture
-    @inline def detachFromIndexFuture(params: DetachFromIndexRequest): Future[DetachFromIndexResponse] =
-      service.detachFromIndex(params).promise().toFuture
-    @inline def detachObjectFuture(params: DetachObjectRequest): Future[DetachObjectResponse] =
-      service.detachObject(params).promise().toFuture
-    @inline def detachPolicyFuture(params: DetachPolicyRequest): Future[DetachPolicyResponse] =
-      service.detachPolicy(params).promise().toFuture
-    @inline def detachTypedLinkFuture(params: DetachTypedLinkRequest): Future[js.Object] =
-      service.detachTypedLink(params).promise().toFuture
-    @inline def disableDirectoryFuture(params: DisableDirectoryRequest): Future[DisableDirectoryResponse] =
-      service.disableDirectory(params).promise().toFuture
-    @inline def enableDirectoryFuture(params: EnableDirectoryRequest): Future[EnableDirectoryResponse] =
-      service.enableDirectory(params).promise().toFuture
-    @inline def getAppliedSchemaVersionFuture(
-        params: GetAppliedSchemaVersionRequest
-    ): Future[GetAppliedSchemaVersionResponse] = service.getAppliedSchemaVersion(params).promise().toFuture
-    @inline def getDirectoryFuture(params: GetDirectoryRequest): Future[GetDirectoryResponse] =
-      service.getDirectory(params).promise().toFuture
-    @inline def getFacetFuture(params: GetFacetRequest): Future[GetFacetResponse] =
-      service.getFacet(params).promise().toFuture
-    @inline def getLinkAttributesFuture(params: GetLinkAttributesRequest): Future[GetLinkAttributesResponse] =
-      service.getLinkAttributes(params).promise().toFuture
-    @inline def getObjectAttributesFuture(params: GetObjectAttributesRequest): Future[GetObjectAttributesResponse] =
-      service.getObjectAttributes(params).promise().toFuture
-    @inline def getObjectInformationFuture(params: GetObjectInformationRequest): Future[GetObjectInformationResponse] =
-      service.getObjectInformation(params).promise().toFuture
-    @inline def getSchemaAsJsonFuture(params: GetSchemaAsJsonRequest): Future[GetSchemaAsJsonResponse] =
-      service.getSchemaAsJson(params).promise().toFuture
-    @inline def getTypedLinkFacetInformationFuture(
-        params: GetTypedLinkFacetInformationRequest
-    ): Future[GetTypedLinkFacetInformationResponse] = service.getTypedLinkFacetInformation(params).promise().toFuture
-    @inline def listAppliedSchemaArnsFuture(
-        params: ListAppliedSchemaArnsRequest
-    ): Future[ListAppliedSchemaArnsResponse] = service.listAppliedSchemaArns(params).promise().toFuture
-    @inline def listAttachedIndicesFuture(params: ListAttachedIndicesRequest): Future[ListAttachedIndicesResponse] =
-      service.listAttachedIndices(params).promise().toFuture
-    @inline def listDevelopmentSchemaArnsFuture(
-        params: ListDevelopmentSchemaArnsRequest
-    ): Future[ListDevelopmentSchemaArnsResponse] = service.listDevelopmentSchemaArns(params).promise().toFuture
-    @inline def listDirectoriesFuture(params: ListDirectoriesRequest): Future[ListDirectoriesResponse] =
-      service.listDirectories(params).promise().toFuture
-    @inline def listFacetAttributesFuture(params: ListFacetAttributesRequest): Future[ListFacetAttributesResponse] =
-      service.listFacetAttributes(params).promise().toFuture
-    @inline def listFacetNamesFuture(params: ListFacetNamesRequest): Future[ListFacetNamesResponse] =
-      service.listFacetNames(params).promise().toFuture
-    @inline def listIncomingTypedLinksFuture(
-        params: ListIncomingTypedLinksRequest
-    ): Future[ListIncomingTypedLinksResponse] = service.listIncomingTypedLinks(params).promise().toFuture
-    @inline def listIndexFuture(params: ListIndexRequest): Future[ListIndexResponse] =
-      service.listIndex(params).promise().toFuture
-    @inline def listManagedSchemaArnsFuture(
-        params: ListManagedSchemaArnsRequest
-    ): Future[ListManagedSchemaArnsResponse] = service.listManagedSchemaArns(params).promise().toFuture
-    @inline def listObjectAttributesFuture(params: ListObjectAttributesRequest): Future[ListObjectAttributesResponse] =
-      service.listObjectAttributes(params).promise().toFuture
-    @inline def listObjectChildrenFuture(params: ListObjectChildrenRequest): Future[ListObjectChildrenResponse] =
-      service.listObjectChildren(params).promise().toFuture
-    @inline def listObjectParentPathsFuture(
-        params: ListObjectParentPathsRequest
-    ): Future[ListObjectParentPathsResponse] = service.listObjectParentPaths(params).promise().toFuture
-    @inline def listObjectParentsFuture(params: ListObjectParentsRequest): Future[ListObjectParentsResponse] =
-      service.listObjectParents(params).promise().toFuture
-    @inline def listObjectPoliciesFuture(params: ListObjectPoliciesRequest): Future[ListObjectPoliciesResponse] =
-      service.listObjectPolicies(params).promise().toFuture
-    @inline def listOutgoingTypedLinksFuture(
-        params: ListOutgoingTypedLinksRequest
-    ): Future[ListOutgoingTypedLinksResponse] = service.listOutgoingTypedLinks(params).promise().toFuture
-    @inline def listPolicyAttachmentsFuture(
-        params: ListPolicyAttachmentsRequest
-    ): Future[ListPolicyAttachmentsResponse] = service.listPolicyAttachments(params).promise().toFuture
-    @inline def listPublishedSchemaArnsFuture(
-        params: ListPublishedSchemaArnsRequest
-    ): Future[ListPublishedSchemaArnsResponse] = service.listPublishedSchemaArns(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listTypedLinkFacetAttributesFuture(
-        params: ListTypedLinkFacetAttributesRequest
-    ): Future[ListTypedLinkFacetAttributesResponse] = service.listTypedLinkFacetAttributes(params).promise().toFuture
-    @inline def listTypedLinkFacetNamesFuture(
-        params: ListTypedLinkFacetNamesRequest
-    ): Future[ListTypedLinkFacetNamesResponse] = service.listTypedLinkFacetNames(params).promise().toFuture
-    @inline def lookupPolicyFuture(params: LookupPolicyRequest): Future[LookupPolicyResponse] =
-      service.lookupPolicy(params).promise().toFuture
-    @inline def publishSchemaFuture(params: PublishSchemaRequest): Future[PublishSchemaResponse] =
-      service.publishSchema(params).promise().toFuture
-    @inline def putSchemaFromJsonFuture(params: PutSchemaFromJsonRequest): Future[PutSchemaFromJsonResponse] =
-      service.putSchemaFromJson(params).promise().toFuture
-    @inline def removeFacetFromObjectFuture(
-        params: RemoveFacetFromObjectRequest
-    ): Future[RemoveFacetFromObjectResponse] = service.removeFacetFromObject(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateFacetFuture(params: UpdateFacetRequest): Future[UpdateFacetResponse] =
-      service.updateFacet(params).promise().toFuture
-    @inline def updateLinkAttributesFuture(params: UpdateLinkAttributesRequest): Future[UpdateLinkAttributesResponse] =
-      service.updateLinkAttributes(params).promise().toFuture
-    @inline def updateObjectAttributesFuture(
-        params: UpdateObjectAttributesRequest
-    ): Future[UpdateObjectAttributesResponse] = service.updateObjectAttributes(params).promise().toFuture
-    @inline def updateSchemaFuture(params: UpdateSchemaRequest): Future[UpdateSchemaResponse] =
-      service.updateSchema(params).promise().toFuture
-    @inline def updateTypedLinkFacetFuture(params: UpdateTypedLinkFacetRequest): Future[UpdateTypedLinkFacetResponse] =
-      service.updateTypedLinkFacet(params).promise().toFuture
-    @inline def upgradeAppliedSchemaFuture(params: UpgradeAppliedSchemaRequest): Future[UpgradeAppliedSchemaResponse] =
-      service.upgradeAppliedSchema(params).promise().toFuture
-    @inline def upgradePublishedSchemaFuture(
-        params: UpgradePublishedSchemaRequest
-    ): Future[UpgradePublishedSchemaResponse] = service.upgradePublishedSchema(params).promise().toFuture
+    @inline def addFacetToObjectFuture(params: AddFacetToObjectRequest): Future[AddFacetToObjectResponse] = service.addFacetToObject(params).promise().toFuture
+    @inline def applySchemaFuture(params: ApplySchemaRequest): Future[ApplySchemaResponse] = service.applySchema(params).promise().toFuture
+    @inline def attachObjectFuture(params: AttachObjectRequest): Future[AttachObjectResponse] = service.attachObject(params).promise().toFuture
+    @inline def attachPolicyFuture(params: AttachPolicyRequest): Future[AttachPolicyResponse] = service.attachPolicy(params).promise().toFuture
+    @inline def attachToIndexFuture(params: AttachToIndexRequest): Future[AttachToIndexResponse] = service.attachToIndex(params).promise().toFuture
+    @inline def attachTypedLinkFuture(params: AttachTypedLinkRequest): Future[AttachTypedLinkResponse] = service.attachTypedLink(params).promise().toFuture
+    @inline def batchReadFuture(params: BatchReadRequest): Future[BatchReadResponse] = service.batchRead(params).promise().toFuture
+    @inline def batchWriteFuture(params: BatchWriteRequest): Future[BatchWriteResponse] = service.batchWrite(params).promise().toFuture
+    @inline def createDirectoryFuture(params: CreateDirectoryRequest): Future[CreateDirectoryResponse] = service.createDirectory(params).promise().toFuture
+    @inline def createFacetFuture(params: CreateFacetRequest): Future[CreateFacetResponse] = service.createFacet(params).promise().toFuture
+    @inline def createIndexFuture(params: CreateIndexRequest): Future[CreateIndexResponse] = service.createIndex(params).promise().toFuture
+    @inline def createObjectFuture(params: CreateObjectRequest): Future[CreateObjectResponse] = service.createObject(params).promise().toFuture
+    @inline def createSchemaFuture(params: CreateSchemaRequest): Future[CreateSchemaResponse] = service.createSchema(params).promise().toFuture
+    @inline def createTypedLinkFacetFuture(params: CreateTypedLinkFacetRequest): Future[CreateTypedLinkFacetResponse] = service.createTypedLinkFacet(params).promise().toFuture
+    @inline def deleteDirectoryFuture(params: DeleteDirectoryRequest): Future[DeleteDirectoryResponse] = service.deleteDirectory(params).promise().toFuture
+    @inline def deleteFacetFuture(params: DeleteFacetRequest): Future[DeleteFacetResponse] = service.deleteFacet(params).promise().toFuture
+    @inline def deleteObjectFuture(params: DeleteObjectRequest): Future[DeleteObjectResponse] = service.deleteObject(params).promise().toFuture
+    @inline def deleteSchemaFuture(params: DeleteSchemaRequest): Future[DeleteSchemaResponse] = service.deleteSchema(params).promise().toFuture
+    @inline def deleteTypedLinkFacetFuture(params: DeleteTypedLinkFacetRequest): Future[DeleteTypedLinkFacetResponse] = service.deleteTypedLinkFacet(params).promise().toFuture
+    @inline def detachFromIndexFuture(params: DetachFromIndexRequest): Future[DetachFromIndexResponse] = service.detachFromIndex(params).promise().toFuture
+    @inline def detachObjectFuture(params: DetachObjectRequest): Future[DetachObjectResponse] = service.detachObject(params).promise().toFuture
+    @inline def detachPolicyFuture(params: DetachPolicyRequest): Future[DetachPolicyResponse] = service.detachPolicy(params).promise().toFuture
+    @inline def detachTypedLinkFuture(params: DetachTypedLinkRequest): Future[js.Object] = service.detachTypedLink(params).promise().toFuture
+    @inline def disableDirectoryFuture(params: DisableDirectoryRequest): Future[DisableDirectoryResponse] = service.disableDirectory(params).promise().toFuture
+    @inline def enableDirectoryFuture(params: EnableDirectoryRequest): Future[EnableDirectoryResponse] = service.enableDirectory(params).promise().toFuture
+    @inline def getAppliedSchemaVersionFuture(params: GetAppliedSchemaVersionRequest): Future[GetAppliedSchemaVersionResponse] = service.getAppliedSchemaVersion(params).promise().toFuture
+    @inline def getDirectoryFuture(params: GetDirectoryRequest): Future[GetDirectoryResponse] = service.getDirectory(params).promise().toFuture
+    @inline def getFacetFuture(params: GetFacetRequest): Future[GetFacetResponse] = service.getFacet(params).promise().toFuture
+    @inline def getLinkAttributesFuture(params: GetLinkAttributesRequest): Future[GetLinkAttributesResponse] = service.getLinkAttributes(params).promise().toFuture
+    @inline def getObjectAttributesFuture(params: GetObjectAttributesRequest): Future[GetObjectAttributesResponse] = service.getObjectAttributes(params).promise().toFuture
+    @inline def getObjectInformationFuture(params: GetObjectInformationRequest): Future[GetObjectInformationResponse] = service.getObjectInformation(params).promise().toFuture
+    @inline def getSchemaAsJsonFuture(params: GetSchemaAsJsonRequest): Future[GetSchemaAsJsonResponse] = service.getSchemaAsJson(params).promise().toFuture
+    @inline def getTypedLinkFacetInformationFuture(params: GetTypedLinkFacetInformationRequest): Future[GetTypedLinkFacetInformationResponse] = service.getTypedLinkFacetInformation(params).promise().toFuture
+    @inline def listAppliedSchemaArnsFuture(params: ListAppliedSchemaArnsRequest): Future[ListAppliedSchemaArnsResponse] = service.listAppliedSchemaArns(params).promise().toFuture
+    @inline def listAttachedIndicesFuture(params: ListAttachedIndicesRequest): Future[ListAttachedIndicesResponse] = service.listAttachedIndices(params).promise().toFuture
+    @inline def listDevelopmentSchemaArnsFuture(params: ListDevelopmentSchemaArnsRequest): Future[ListDevelopmentSchemaArnsResponse] = service.listDevelopmentSchemaArns(params).promise().toFuture
+    @inline def listDirectoriesFuture(params: ListDirectoriesRequest): Future[ListDirectoriesResponse] = service.listDirectories(params).promise().toFuture
+    @inline def listFacetAttributesFuture(params: ListFacetAttributesRequest): Future[ListFacetAttributesResponse] = service.listFacetAttributes(params).promise().toFuture
+    @inline def listFacetNamesFuture(params: ListFacetNamesRequest): Future[ListFacetNamesResponse] = service.listFacetNames(params).promise().toFuture
+    @inline def listIncomingTypedLinksFuture(params: ListIncomingTypedLinksRequest): Future[ListIncomingTypedLinksResponse] = service.listIncomingTypedLinks(params).promise().toFuture
+    @inline def listIndexFuture(params: ListIndexRequest): Future[ListIndexResponse] = service.listIndex(params).promise().toFuture
+    @inline def listManagedSchemaArnsFuture(params: ListManagedSchemaArnsRequest): Future[ListManagedSchemaArnsResponse] = service.listManagedSchemaArns(params).promise().toFuture
+    @inline def listObjectAttributesFuture(params: ListObjectAttributesRequest): Future[ListObjectAttributesResponse] = service.listObjectAttributes(params).promise().toFuture
+    @inline def listObjectChildrenFuture(params: ListObjectChildrenRequest): Future[ListObjectChildrenResponse] = service.listObjectChildren(params).promise().toFuture
+    @inline def listObjectParentPathsFuture(params: ListObjectParentPathsRequest): Future[ListObjectParentPathsResponse] = service.listObjectParentPaths(params).promise().toFuture
+    @inline def listObjectParentsFuture(params: ListObjectParentsRequest): Future[ListObjectParentsResponse] = service.listObjectParents(params).promise().toFuture
+    @inline def listObjectPoliciesFuture(params: ListObjectPoliciesRequest): Future[ListObjectPoliciesResponse] = service.listObjectPolicies(params).promise().toFuture
+    @inline def listOutgoingTypedLinksFuture(params: ListOutgoingTypedLinksRequest): Future[ListOutgoingTypedLinksResponse] = service.listOutgoingTypedLinks(params).promise().toFuture
+    @inline def listPolicyAttachmentsFuture(params: ListPolicyAttachmentsRequest): Future[ListPolicyAttachmentsResponse] = service.listPolicyAttachments(params).promise().toFuture
+    @inline def listPublishedSchemaArnsFuture(params: ListPublishedSchemaArnsRequest): Future[ListPublishedSchemaArnsResponse] = service.listPublishedSchemaArns(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listTypedLinkFacetAttributesFuture(params: ListTypedLinkFacetAttributesRequest): Future[ListTypedLinkFacetAttributesResponse] = service.listTypedLinkFacetAttributes(params).promise().toFuture
+    @inline def listTypedLinkFacetNamesFuture(params: ListTypedLinkFacetNamesRequest): Future[ListTypedLinkFacetNamesResponse] = service.listTypedLinkFacetNames(params).promise().toFuture
+    @inline def lookupPolicyFuture(params: LookupPolicyRequest): Future[LookupPolicyResponse] = service.lookupPolicy(params).promise().toFuture
+    @inline def publishSchemaFuture(params: PublishSchemaRequest): Future[PublishSchemaResponse] = service.publishSchema(params).promise().toFuture
+    @inline def putSchemaFromJsonFuture(params: PutSchemaFromJsonRequest): Future[PutSchemaFromJsonResponse] = service.putSchemaFromJson(params).promise().toFuture
+    @inline def removeFacetFromObjectFuture(params: RemoveFacetFromObjectRequest): Future[RemoveFacetFromObjectResponse] = service.removeFacetFromObject(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateFacetFuture(params: UpdateFacetRequest): Future[UpdateFacetResponse] = service.updateFacet(params).promise().toFuture
+    @inline def updateLinkAttributesFuture(params: UpdateLinkAttributesRequest): Future[UpdateLinkAttributesResponse] = service.updateLinkAttributes(params).promise().toFuture
+    @inline def updateObjectAttributesFuture(params: UpdateObjectAttributesRequest): Future[UpdateObjectAttributesResponse] = service.updateObjectAttributes(params).promise().toFuture
+    @inline def updateSchemaFuture(params: UpdateSchemaRequest): Future[UpdateSchemaResponse] = service.updateSchema(params).promise().toFuture
+    @inline def updateTypedLinkFacetFuture(params: UpdateTypedLinkFacetRequest): Future[UpdateTypedLinkFacetResponse] = service.updateTypedLinkFacet(params).promise().toFuture
+    @inline def upgradeAppliedSchemaFuture(params: UpgradeAppliedSchemaRequest): Future[UpgradeAppliedSchemaResponse] = service.upgradeAppliedSchema(params).promise().toFuture
+    @inline def upgradePublishedSchemaFuture(params: UpgradePublishedSchemaRequest): Future[UpgradePublishedSchemaResponse] = service.upgradePublishedSchema(params).promise().toFuture
   }
 }
 
@@ -255,27 +174,21 @@ package clouddirectory {
     def detachTypedLink(params: DetachTypedLinkRequest): Request[js.Object] = js.native
     def disableDirectory(params: DisableDirectoryRequest): Request[DisableDirectoryResponse] = js.native
     def enableDirectory(params: EnableDirectoryRequest): Request[EnableDirectoryResponse] = js.native
-    def getAppliedSchemaVersion(params: GetAppliedSchemaVersionRequest): Request[GetAppliedSchemaVersionResponse] =
-      js.native
+    def getAppliedSchemaVersion(params: GetAppliedSchemaVersionRequest): Request[GetAppliedSchemaVersionResponse] = js.native
     def getDirectory(params: GetDirectoryRequest): Request[GetDirectoryResponse] = js.native
     def getFacet(params: GetFacetRequest): Request[GetFacetResponse] = js.native
     def getLinkAttributes(params: GetLinkAttributesRequest): Request[GetLinkAttributesResponse] = js.native
     def getObjectAttributes(params: GetObjectAttributesRequest): Request[GetObjectAttributesResponse] = js.native
     def getObjectInformation(params: GetObjectInformationRequest): Request[GetObjectInformationResponse] = js.native
     def getSchemaAsJson(params: GetSchemaAsJsonRequest): Request[GetSchemaAsJsonResponse] = js.native
-    def getTypedLinkFacetInformation(
-        params: GetTypedLinkFacetInformationRequest
-    ): Request[GetTypedLinkFacetInformationResponse] = js.native
+    def getTypedLinkFacetInformation(params: GetTypedLinkFacetInformationRequest): Request[GetTypedLinkFacetInformationResponse] = js.native
     def listAppliedSchemaArns(params: ListAppliedSchemaArnsRequest): Request[ListAppliedSchemaArnsResponse] = js.native
     def listAttachedIndices(params: ListAttachedIndicesRequest): Request[ListAttachedIndicesResponse] = js.native
-    def listDevelopmentSchemaArns(
-        params: ListDevelopmentSchemaArnsRequest
-    ): Request[ListDevelopmentSchemaArnsResponse] = js.native
+    def listDevelopmentSchemaArns(params: ListDevelopmentSchemaArnsRequest): Request[ListDevelopmentSchemaArnsResponse] = js.native
     def listDirectories(params: ListDirectoriesRequest): Request[ListDirectoriesResponse] = js.native
     def listFacetAttributes(params: ListFacetAttributesRequest): Request[ListFacetAttributesResponse] = js.native
     def listFacetNames(params: ListFacetNamesRequest): Request[ListFacetNamesResponse] = js.native
-    def listIncomingTypedLinks(params: ListIncomingTypedLinksRequest): Request[ListIncomingTypedLinksResponse] =
-      js.native
+    def listIncomingTypedLinks(params: ListIncomingTypedLinksRequest): Request[ListIncomingTypedLinksResponse] = js.native
     def listIndex(params: ListIndexRequest): Request[ListIndexResponse] = js.native
     def listManagedSchemaArns(params: ListManagedSchemaArnsRequest): Request[ListManagedSchemaArnsResponse] = js.native
     def listObjectAttributes(params: ListObjectAttributesRequest): Request[ListObjectAttributesResponse] = js.native
@@ -283,17 +196,12 @@ package clouddirectory {
     def listObjectParentPaths(params: ListObjectParentPathsRequest): Request[ListObjectParentPathsResponse] = js.native
     def listObjectParents(params: ListObjectParentsRequest): Request[ListObjectParentsResponse] = js.native
     def listObjectPolicies(params: ListObjectPoliciesRequest): Request[ListObjectPoliciesResponse] = js.native
-    def listOutgoingTypedLinks(params: ListOutgoingTypedLinksRequest): Request[ListOutgoingTypedLinksResponse] =
-      js.native
+    def listOutgoingTypedLinks(params: ListOutgoingTypedLinksRequest): Request[ListOutgoingTypedLinksResponse] = js.native
     def listPolicyAttachments(params: ListPolicyAttachmentsRequest): Request[ListPolicyAttachmentsResponse] = js.native
-    def listPublishedSchemaArns(params: ListPublishedSchemaArnsRequest): Request[ListPublishedSchemaArnsResponse] =
-      js.native
+    def listPublishedSchemaArns(params: ListPublishedSchemaArnsRequest): Request[ListPublishedSchemaArnsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def listTypedLinkFacetAttributes(
-        params: ListTypedLinkFacetAttributesRequest
-    ): Request[ListTypedLinkFacetAttributesResponse] = js.native
-    def listTypedLinkFacetNames(params: ListTypedLinkFacetNamesRequest): Request[ListTypedLinkFacetNamesResponse] =
-      js.native
+    def listTypedLinkFacetAttributes(params: ListTypedLinkFacetAttributesRequest): Request[ListTypedLinkFacetAttributesResponse] = js.native
+    def listTypedLinkFacetNames(params: ListTypedLinkFacetNamesRequest): Request[ListTypedLinkFacetNamesResponse] = js.native
     def lookupPolicy(params: LookupPolicyRequest): Request[LookupPolicyResponse] = js.native
     def publishSchema(params: PublishSchemaRequest): Request[PublishSchemaResponse] = js.native
     def putSchemaFromJson(params: PutSchemaFromJsonRequest): Request[PutSchemaFromJsonResponse] = js.native
@@ -302,13 +210,11 @@ package clouddirectory {
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateFacet(params: UpdateFacetRequest): Request[UpdateFacetResponse] = js.native
     def updateLinkAttributes(params: UpdateLinkAttributesRequest): Request[UpdateLinkAttributesResponse] = js.native
-    def updateObjectAttributes(params: UpdateObjectAttributesRequest): Request[UpdateObjectAttributesResponse] =
-      js.native
+    def updateObjectAttributes(params: UpdateObjectAttributesRequest): Request[UpdateObjectAttributesResponse] = js.native
     def updateSchema(params: UpdateSchemaRequest): Request[UpdateSchemaResponse] = js.native
     def updateTypedLinkFacet(params: UpdateTypedLinkFacetRequest): Request[UpdateTypedLinkFacetResponse] = js.native
     def upgradeAppliedSchema(params: UpgradeAppliedSchemaRequest): Request[UpgradeAppliedSchemaResponse] = js.native
-    def upgradePublishedSchema(params: UpgradePublishedSchemaRequest): Request[UpgradePublishedSchemaResponse] =
-      js.native
+    def upgradePublishedSchema(params: UpgradePublishedSchemaRequest): Request[UpgradePublishedSchemaResponse] = js.native
   }
 
   @js.native
@@ -1593,9 +1499,7 @@ package clouddirectory {
     ): BatchListObjectParentPathsResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PathToObjectIdentifiersList.foreach(__v =>
-        __obj.updateDynamic("PathToObjectIdentifiersList")(__v.asInstanceOf[js.Any])
-      )
+      PathToObjectIdentifiersList.foreach(__v => __obj.updateDynamic("PathToObjectIdentifiersList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchListObjectParentPathsResponse]
     }
   }
@@ -1884,23 +1788,21 @@ package clouddirectory {
     val LimitExceededException = "LimitExceededException".asInstanceOf[BatchReadExceptionType]
     val InternalServiceException = "InternalServiceException".asInstanceOf[BatchReadExceptionType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ValidationException,
-        InvalidArnException,
-        ResourceNotFoundException,
-        InvalidNextTokenException,
-        AccessDeniedException,
-        NotNodeException,
-        FacetValidationException,
-        CannotListParentOfRootException,
-        NotIndexException,
-        NotPolicyException,
-        DirectoryNotEnabledException,
-        LimitExceededException,
-        InternalServiceException
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      ValidationException,
+      InvalidArnException,
+      ResourceNotFoundException,
+      InvalidNextTokenException,
+      AccessDeniedException,
+      NotNodeException,
+      FacetValidationException,
+      CannotListParentOfRootException,
+      NotIndexException,
+      NotPolicyException,
+      DirectoryNotEnabledException,
+      LimitExceededException,
+      InternalServiceException
+    ))
   }
 
   /**
@@ -4130,9 +4032,7 @@ package clouddirectory {
     ): ListObjectParentPathsResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PathToObjectIdentifiersList.foreach(__v =>
-        __obj.updateDynamic("PathToObjectIdentifiersList")(__v.asInstanceOf[js.Any])
-      )
+      PathToObjectIdentifiersList.foreach(__v => __obj.updateDynamic("PathToObjectIdentifiersList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListObjectParentPathsResponse]
     }
   }
@@ -4163,9 +4063,7 @@ package clouddirectory {
       )
 
       ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
-      IncludeAllLinksToEachParent.foreach(__v =>
-        __obj.updateDynamic("IncludeAllLinksToEachParent")(__v.asInstanceOf[js.Any])
-      )
+      IncludeAllLinksToEachParent.foreach(__v => __obj.updateDynamic("IncludeAllLinksToEachParent")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListObjectParentsRequest]
@@ -4582,12 +4480,8 @@ package clouddirectory {
         ObjectAttributeUpdateValue: js.UndefOr[TypedAttributeValue] = js.undefined
     ): ObjectAttributeAction = {
       val __obj = js.Dynamic.literal()
-      ObjectAttributeActionType.foreach(__v =>
-        __obj.updateDynamic("ObjectAttributeActionType")(__v.asInstanceOf[js.Any])
-      )
-      ObjectAttributeUpdateValue.foreach(__v =>
-        __obj.updateDynamic("ObjectAttributeUpdateValue")(__v.asInstanceOf[js.Any])
-      )
+      ObjectAttributeActionType.foreach(__v => __obj.updateDynamic("ObjectAttributeActionType")(__v.asInstanceOf[js.Any]))
+      ObjectAttributeUpdateValue.foreach(__v => __obj.updateDynamic("ObjectAttributeUpdateValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ObjectAttributeAction]
     }
   }

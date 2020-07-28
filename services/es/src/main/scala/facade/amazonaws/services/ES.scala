@@ -91,120 +91,43 @@ package object es {
 
   implicit final class ESOps(private val service: ES) extends AnyVal {
 
-    @inline def acceptInboundCrossClusterSearchConnectionFuture(
-        params: AcceptInboundCrossClusterSearchConnectionRequest
-    ): Future[AcceptInboundCrossClusterSearchConnectionResponse] =
-      service.acceptInboundCrossClusterSearchConnection(params).promise().toFuture
+    @inline def acceptInboundCrossClusterSearchConnectionFuture(params: AcceptInboundCrossClusterSearchConnectionRequest): Future[AcceptInboundCrossClusterSearchConnectionResponse] = service.acceptInboundCrossClusterSearchConnection(params).promise().toFuture
     @inline def addTagsFuture(params: AddTagsRequest): Future[js.Object] = service.addTags(params).promise().toFuture
-    @inline def associatePackageFuture(params: AssociatePackageRequest): Future[AssociatePackageResponse] =
-      service.associatePackage(params).promise().toFuture
-    @inline def cancelElasticsearchServiceSoftwareUpdateFuture(
-        params: CancelElasticsearchServiceSoftwareUpdateRequest
-    ): Future[CancelElasticsearchServiceSoftwareUpdateResponse] =
-      service.cancelElasticsearchServiceSoftwareUpdate(params).promise().toFuture
-    @inline def createElasticsearchDomainFuture(
-        params: CreateElasticsearchDomainRequest
-    ): Future[CreateElasticsearchDomainResponse] = service.createElasticsearchDomain(params).promise().toFuture
-    @inline def createOutboundCrossClusterSearchConnectionFuture(
-        params: CreateOutboundCrossClusterSearchConnectionRequest
-    ): Future[CreateOutboundCrossClusterSearchConnectionResponse] =
-      service.createOutboundCrossClusterSearchConnection(params).promise().toFuture
-    @inline def createPackageFuture(params: CreatePackageRequest): Future[CreatePackageResponse] =
-      service.createPackage(params).promise().toFuture
-    @inline def deleteElasticsearchDomainFuture(
-        params: DeleteElasticsearchDomainRequest
-    ): Future[DeleteElasticsearchDomainResponse] = service.deleteElasticsearchDomain(params).promise().toFuture
-    @inline def deleteElasticsearchServiceRoleFuture(): Future[js.Object] =
-      service.deleteElasticsearchServiceRole().promise().toFuture
-    @inline def deleteInboundCrossClusterSearchConnectionFuture(
-        params: DeleteInboundCrossClusterSearchConnectionRequest
-    ): Future[DeleteInboundCrossClusterSearchConnectionResponse] =
-      service.deleteInboundCrossClusterSearchConnection(params).promise().toFuture
-    @inline def deleteOutboundCrossClusterSearchConnectionFuture(
-        params: DeleteOutboundCrossClusterSearchConnectionRequest
-    ): Future[DeleteOutboundCrossClusterSearchConnectionResponse] =
-      service.deleteOutboundCrossClusterSearchConnection(params).promise().toFuture
-    @inline def deletePackageFuture(params: DeletePackageRequest): Future[DeletePackageResponse] =
-      service.deletePackage(params).promise().toFuture
-    @inline def describeElasticsearchDomainConfigFuture(
-        params: DescribeElasticsearchDomainConfigRequest
-    ): Future[DescribeElasticsearchDomainConfigResponse] =
-      service.describeElasticsearchDomainConfig(params).promise().toFuture
-    @inline def describeElasticsearchDomainFuture(
-        params: DescribeElasticsearchDomainRequest
-    ): Future[DescribeElasticsearchDomainResponse] = service.describeElasticsearchDomain(params).promise().toFuture
-    @inline def describeElasticsearchDomainsFuture(
-        params: DescribeElasticsearchDomainsRequest
-    ): Future[DescribeElasticsearchDomainsResponse] = service.describeElasticsearchDomains(params).promise().toFuture
-    @inline def describeElasticsearchInstanceTypeLimitsFuture(
-        params: DescribeElasticsearchInstanceTypeLimitsRequest
-    ): Future[DescribeElasticsearchInstanceTypeLimitsResponse] =
-      service.describeElasticsearchInstanceTypeLimits(params).promise().toFuture
-    @inline def describeInboundCrossClusterSearchConnectionsFuture(
-        params: DescribeInboundCrossClusterSearchConnectionsRequest
-    ): Future[DescribeInboundCrossClusterSearchConnectionsResponse] =
-      service.describeInboundCrossClusterSearchConnections(params).promise().toFuture
-    @inline def describeOutboundCrossClusterSearchConnectionsFuture(
-        params: DescribeOutboundCrossClusterSearchConnectionsRequest
-    ): Future[DescribeOutboundCrossClusterSearchConnectionsResponse] =
-      service.describeOutboundCrossClusterSearchConnections(params).promise().toFuture
-    @inline def describePackagesFuture(params: DescribePackagesRequest): Future[DescribePackagesResponse] =
-      service.describePackages(params).promise().toFuture
-    @inline def describeReservedElasticsearchInstanceOfferingsFuture(
-        params: DescribeReservedElasticsearchInstanceOfferingsRequest
-    ): Future[DescribeReservedElasticsearchInstanceOfferingsResponse] =
-      service.describeReservedElasticsearchInstanceOfferings(params).promise().toFuture
-    @inline def describeReservedElasticsearchInstancesFuture(
-        params: DescribeReservedElasticsearchInstancesRequest
-    ): Future[DescribeReservedElasticsearchInstancesResponse] =
-      service.describeReservedElasticsearchInstances(params).promise().toFuture
-    @inline def dissociatePackageFuture(params: DissociatePackageRequest): Future[DissociatePackageResponse] =
-      service.dissociatePackage(params).promise().toFuture
-    @inline def getCompatibleElasticsearchVersionsFuture(
-        params: GetCompatibleElasticsearchVersionsRequest
-    ): Future[GetCompatibleElasticsearchVersionsResponse] =
-      service.getCompatibleElasticsearchVersions(params).promise().toFuture
-    @inline def getUpgradeHistoryFuture(params: GetUpgradeHistoryRequest): Future[GetUpgradeHistoryResponse] =
-      service.getUpgradeHistory(params).promise().toFuture
-    @inline def getUpgradeStatusFuture(params: GetUpgradeStatusRequest): Future[GetUpgradeStatusResponse] =
-      service.getUpgradeStatus(params).promise().toFuture
+    @inline def associatePackageFuture(params: AssociatePackageRequest): Future[AssociatePackageResponse] = service.associatePackage(params).promise().toFuture
+    @inline def cancelElasticsearchServiceSoftwareUpdateFuture(params: CancelElasticsearchServiceSoftwareUpdateRequest): Future[CancelElasticsearchServiceSoftwareUpdateResponse] = service.cancelElasticsearchServiceSoftwareUpdate(params).promise().toFuture
+    @inline def createElasticsearchDomainFuture(params: CreateElasticsearchDomainRequest): Future[CreateElasticsearchDomainResponse] = service.createElasticsearchDomain(params).promise().toFuture
+    @inline def createOutboundCrossClusterSearchConnectionFuture(params: CreateOutboundCrossClusterSearchConnectionRequest): Future[CreateOutboundCrossClusterSearchConnectionResponse] = service.createOutboundCrossClusterSearchConnection(params).promise().toFuture
+    @inline def createPackageFuture(params: CreatePackageRequest): Future[CreatePackageResponse] = service.createPackage(params).promise().toFuture
+    @inline def deleteElasticsearchDomainFuture(params: DeleteElasticsearchDomainRequest): Future[DeleteElasticsearchDomainResponse] = service.deleteElasticsearchDomain(params).promise().toFuture
+    @inline def deleteElasticsearchServiceRoleFuture(): Future[js.Object] = service.deleteElasticsearchServiceRole().promise().toFuture
+    @inline def deleteInboundCrossClusterSearchConnectionFuture(params: DeleteInboundCrossClusterSearchConnectionRequest): Future[DeleteInboundCrossClusterSearchConnectionResponse] = service.deleteInboundCrossClusterSearchConnection(params).promise().toFuture
+    @inline def deleteOutboundCrossClusterSearchConnectionFuture(params: DeleteOutboundCrossClusterSearchConnectionRequest): Future[DeleteOutboundCrossClusterSearchConnectionResponse] = service.deleteOutboundCrossClusterSearchConnection(params).promise().toFuture
+    @inline def deletePackageFuture(params: DeletePackageRequest): Future[DeletePackageResponse] = service.deletePackage(params).promise().toFuture
+    @inline def describeElasticsearchDomainConfigFuture(params: DescribeElasticsearchDomainConfigRequest): Future[DescribeElasticsearchDomainConfigResponse] = service.describeElasticsearchDomainConfig(params).promise().toFuture
+    @inline def describeElasticsearchDomainFuture(params: DescribeElasticsearchDomainRequest): Future[DescribeElasticsearchDomainResponse] = service.describeElasticsearchDomain(params).promise().toFuture
+    @inline def describeElasticsearchDomainsFuture(params: DescribeElasticsearchDomainsRequest): Future[DescribeElasticsearchDomainsResponse] = service.describeElasticsearchDomains(params).promise().toFuture
+    @inline def describeElasticsearchInstanceTypeLimitsFuture(params: DescribeElasticsearchInstanceTypeLimitsRequest): Future[DescribeElasticsearchInstanceTypeLimitsResponse] = service.describeElasticsearchInstanceTypeLimits(params).promise().toFuture
+    @inline def describeInboundCrossClusterSearchConnectionsFuture(params: DescribeInboundCrossClusterSearchConnectionsRequest): Future[DescribeInboundCrossClusterSearchConnectionsResponse] = service.describeInboundCrossClusterSearchConnections(params).promise().toFuture
+    @inline def describeOutboundCrossClusterSearchConnectionsFuture(params: DescribeOutboundCrossClusterSearchConnectionsRequest): Future[DescribeOutboundCrossClusterSearchConnectionsResponse] = service.describeOutboundCrossClusterSearchConnections(params).promise().toFuture
+    @inline def describePackagesFuture(params: DescribePackagesRequest): Future[DescribePackagesResponse] = service.describePackages(params).promise().toFuture
+    @inline def describeReservedElasticsearchInstanceOfferingsFuture(params: DescribeReservedElasticsearchInstanceOfferingsRequest): Future[DescribeReservedElasticsearchInstanceOfferingsResponse] = service.describeReservedElasticsearchInstanceOfferings(params).promise().toFuture
+    @inline def describeReservedElasticsearchInstancesFuture(params: DescribeReservedElasticsearchInstancesRequest): Future[DescribeReservedElasticsearchInstancesResponse] = service.describeReservedElasticsearchInstances(params).promise().toFuture
+    @inline def dissociatePackageFuture(params: DissociatePackageRequest): Future[DissociatePackageResponse] = service.dissociatePackage(params).promise().toFuture
+    @inline def getCompatibleElasticsearchVersionsFuture(params: GetCompatibleElasticsearchVersionsRequest): Future[GetCompatibleElasticsearchVersionsResponse] = service.getCompatibleElasticsearchVersions(params).promise().toFuture
+    @inline def getUpgradeHistoryFuture(params: GetUpgradeHistoryRequest): Future[GetUpgradeHistoryResponse] = service.getUpgradeHistory(params).promise().toFuture
+    @inline def getUpgradeStatusFuture(params: GetUpgradeStatusRequest): Future[GetUpgradeStatusResponse] = service.getUpgradeStatus(params).promise().toFuture
     @inline def listDomainNamesFuture(): Future[ListDomainNamesResponse] = service.listDomainNames().promise().toFuture
-    @inline def listDomainsForPackageFuture(
-        params: ListDomainsForPackageRequest
-    ): Future[ListDomainsForPackageResponse] = service.listDomainsForPackage(params).promise().toFuture
-    @inline def listElasticsearchInstanceTypesFuture(
-        params: ListElasticsearchInstanceTypesRequest
-    ): Future[ListElasticsearchInstanceTypesResponse] =
-      service.listElasticsearchInstanceTypes(params).promise().toFuture
-    @inline def listElasticsearchVersionsFuture(
-        params: ListElasticsearchVersionsRequest
-    ): Future[ListElasticsearchVersionsResponse] = service.listElasticsearchVersions(params).promise().toFuture
-    @inline def listPackagesForDomainFuture(
-        params: ListPackagesForDomainRequest
-    ): Future[ListPackagesForDomainResponse] = service.listPackagesForDomain(params).promise().toFuture
-    @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] =
-      service.listTags(params).promise().toFuture
-    @inline def purchaseReservedElasticsearchInstanceOfferingFuture(
-        params: PurchaseReservedElasticsearchInstanceOfferingRequest
-    ): Future[PurchaseReservedElasticsearchInstanceOfferingResponse] =
-      service.purchaseReservedElasticsearchInstanceOffering(params).promise().toFuture
-    @inline def rejectInboundCrossClusterSearchConnectionFuture(
-        params: RejectInboundCrossClusterSearchConnectionRequest
-    ): Future[RejectInboundCrossClusterSearchConnectionResponse] =
-      service.rejectInboundCrossClusterSearchConnection(params).promise().toFuture
-    @inline def removeTagsFuture(params: RemoveTagsRequest): Future[js.Object] =
-      service.removeTags(params).promise().toFuture
-    @inline def startElasticsearchServiceSoftwareUpdateFuture(
-        params: StartElasticsearchServiceSoftwareUpdateRequest
-    ): Future[StartElasticsearchServiceSoftwareUpdateResponse] =
-      service.startElasticsearchServiceSoftwareUpdate(params).promise().toFuture
-    @inline def updateElasticsearchDomainConfigFuture(
-        params: UpdateElasticsearchDomainConfigRequest
-    ): Future[UpdateElasticsearchDomainConfigResponse] =
-      service.updateElasticsearchDomainConfig(params).promise().toFuture
-    @inline def upgradeElasticsearchDomainFuture(
-        params: UpgradeElasticsearchDomainRequest
-    ): Future[UpgradeElasticsearchDomainResponse] = service.upgradeElasticsearchDomain(params).promise().toFuture
+    @inline def listDomainsForPackageFuture(params: ListDomainsForPackageRequest): Future[ListDomainsForPackageResponse] = service.listDomainsForPackage(params).promise().toFuture
+    @inline def listElasticsearchInstanceTypesFuture(params: ListElasticsearchInstanceTypesRequest): Future[ListElasticsearchInstanceTypesResponse] = service.listElasticsearchInstanceTypes(params).promise().toFuture
+    @inline def listElasticsearchVersionsFuture(params: ListElasticsearchVersionsRequest): Future[ListElasticsearchVersionsResponse] = service.listElasticsearchVersions(params).promise().toFuture
+    @inline def listPackagesForDomainFuture(params: ListPackagesForDomainRequest): Future[ListPackagesForDomainResponse] = service.listPackagesForDomain(params).promise().toFuture
+    @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] = service.listTags(params).promise().toFuture
+    @inline def purchaseReservedElasticsearchInstanceOfferingFuture(params: PurchaseReservedElasticsearchInstanceOfferingRequest): Future[PurchaseReservedElasticsearchInstanceOfferingResponse] = service.purchaseReservedElasticsearchInstanceOffering(params).promise().toFuture
+    @inline def rejectInboundCrossClusterSearchConnectionFuture(params: RejectInboundCrossClusterSearchConnectionRequest): Future[RejectInboundCrossClusterSearchConnectionResponse] = service.rejectInboundCrossClusterSearchConnection(params).promise().toFuture
+    @inline def removeTagsFuture(params: RemoveTagsRequest): Future[js.Object] = service.removeTags(params).promise().toFuture
+    @inline def startElasticsearchServiceSoftwareUpdateFuture(params: StartElasticsearchServiceSoftwareUpdateRequest): Future[StartElasticsearchServiceSoftwareUpdateResponse] = service.startElasticsearchServiceSoftwareUpdate(params).promise().toFuture
+    @inline def updateElasticsearchDomainConfigFuture(params: UpdateElasticsearchDomainConfigRequest): Future[UpdateElasticsearchDomainConfigResponse] = service.updateElasticsearchDomainConfig(params).promise().toFuture
+    @inline def upgradeElasticsearchDomainFuture(params: UpgradeElasticsearchDomainRequest): Future[UpgradeElasticsearchDomainResponse] = service.upgradeElasticsearchDomain(params).promise().toFuture
   }
 }
 
@@ -214,89 +137,43 @@ package es {
   class ES() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def acceptInboundCrossClusterSearchConnection(
-        params: AcceptInboundCrossClusterSearchConnectionRequest
-    ): Request[AcceptInboundCrossClusterSearchConnectionResponse] = js.native
+    def acceptInboundCrossClusterSearchConnection(params: AcceptInboundCrossClusterSearchConnectionRequest): Request[AcceptInboundCrossClusterSearchConnectionResponse] = js.native
     def addTags(params: AddTagsRequest): Request[js.Object] = js.native
     def associatePackage(params: AssociatePackageRequest): Request[AssociatePackageResponse] = js.native
-    def cancelElasticsearchServiceSoftwareUpdate(
-        params: CancelElasticsearchServiceSoftwareUpdateRequest
-    ): Request[CancelElasticsearchServiceSoftwareUpdateResponse] = js.native
-    def createElasticsearchDomain(
-        params: CreateElasticsearchDomainRequest
-    ): Request[CreateElasticsearchDomainResponse] = js.native
-    def createOutboundCrossClusterSearchConnection(
-        params: CreateOutboundCrossClusterSearchConnectionRequest
-    ): Request[CreateOutboundCrossClusterSearchConnectionResponse] = js.native
+    def cancelElasticsearchServiceSoftwareUpdate(params: CancelElasticsearchServiceSoftwareUpdateRequest): Request[CancelElasticsearchServiceSoftwareUpdateResponse] = js.native
+    def createElasticsearchDomain(params: CreateElasticsearchDomainRequest): Request[CreateElasticsearchDomainResponse] = js.native
+    def createOutboundCrossClusterSearchConnection(params: CreateOutboundCrossClusterSearchConnectionRequest): Request[CreateOutboundCrossClusterSearchConnectionResponse] = js.native
     def createPackage(params: CreatePackageRequest): Request[CreatePackageResponse] = js.native
-    def deleteElasticsearchDomain(
-        params: DeleteElasticsearchDomainRequest
-    ): Request[DeleteElasticsearchDomainResponse] = js.native
+    def deleteElasticsearchDomain(params: DeleteElasticsearchDomainRequest): Request[DeleteElasticsearchDomainResponse] = js.native
     def deleteElasticsearchServiceRole(): Request[js.Object] = js.native
-    def deleteInboundCrossClusterSearchConnection(
-        params: DeleteInboundCrossClusterSearchConnectionRequest
-    ): Request[DeleteInboundCrossClusterSearchConnectionResponse] = js.native
-    def deleteOutboundCrossClusterSearchConnection(
-        params: DeleteOutboundCrossClusterSearchConnectionRequest
-    ): Request[DeleteOutboundCrossClusterSearchConnectionResponse] = js.native
+    def deleteInboundCrossClusterSearchConnection(params: DeleteInboundCrossClusterSearchConnectionRequest): Request[DeleteInboundCrossClusterSearchConnectionResponse] = js.native
+    def deleteOutboundCrossClusterSearchConnection(params: DeleteOutboundCrossClusterSearchConnectionRequest): Request[DeleteOutboundCrossClusterSearchConnectionResponse] = js.native
     def deletePackage(params: DeletePackageRequest): Request[DeletePackageResponse] = js.native
-    def describeElasticsearchDomain(
-        params: DescribeElasticsearchDomainRequest
-    ): Request[DescribeElasticsearchDomainResponse] = js.native
-    def describeElasticsearchDomainConfig(
-        params: DescribeElasticsearchDomainConfigRequest
-    ): Request[DescribeElasticsearchDomainConfigResponse] = js.native
-    def describeElasticsearchDomains(
-        params: DescribeElasticsearchDomainsRequest
-    ): Request[DescribeElasticsearchDomainsResponse] = js.native
-    def describeElasticsearchInstanceTypeLimits(
-        params: DescribeElasticsearchInstanceTypeLimitsRequest
-    ): Request[DescribeElasticsearchInstanceTypeLimitsResponse] = js.native
-    def describeInboundCrossClusterSearchConnections(
-        params: DescribeInboundCrossClusterSearchConnectionsRequest
-    ): Request[DescribeInboundCrossClusterSearchConnectionsResponse] = js.native
-    def describeOutboundCrossClusterSearchConnections(
-        params: DescribeOutboundCrossClusterSearchConnectionsRequest
-    ): Request[DescribeOutboundCrossClusterSearchConnectionsResponse] = js.native
+    def describeElasticsearchDomain(params: DescribeElasticsearchDomainRequest): Request[DescribeElasticsearchDomainResponse] = js.native
+    def describeElasticsearchDomainConfig(params: DescribeElasticsearchDomainConfigRequest): Request[DescribeElasticsearchDomainConfigResponse] = js.native
+    def describeElasticsearchDomains(params: DescribeElasticsearchDomainsRequest): Request[DescribeElasticsearchDomainsResponse] = js.native
+    def describeElasticsearchInstanceTypeLimits(params: DescribeElasticsearchInstanceTypeLimitsRequest): Request[DescribeElasticsearchInstanceTypeLimitsResponse] = js.native
+    def describeInboundCrossClusterSearchConnections(params: DescribeInboundCrossClusterSearchConnectionsRequest): Request[DescribeInboundCrossClusterSearchConnectionsResponse] = js.native
+    def describeOutboundCrossClusterSearchConnections(params: DescribeOutboundCrossClusterSearchConnectionsRequest): Request[DescribeOutboundCrossClusterSearchConnectionsResponse] = js.native
     def describePackages(params: DescribePackagesRequest): Request[DescribePackagesResponse] = js.native
-    def describeReservedElasticsearchInstanceOfferings(
-        params: DescribeReservedElasticsearchInstanceOfferingsRequest
-    ): Request[DescribeReservedElasticsearchInstanceOfferingsResponse] = js.native
-    def describeReservedElasticsearchInstances(
-        params: DescribeReservedElasticsearchInstancesRequest
-    ): Request[DescribeReservedElasticsearchInstancesResponse] = js.native
+    def describeReservedElasticsearchInstanceOfferings(params: DescribeReservedElasticsearchInstanceOfferingsRequest): Request[DescribeReservedElasticsearchInstanceOfferingsResponse] = js.native
+    def describeReservedElasticsearchInstances(params: DescribeReservedElasticsearchInstancesRequest): Request[DescribeReservedElasticsearchInstancesResponse] = js.native
     def dissociatePackage(params: DissociatePackageRequest): Request[DissociatePackageResponse] = js.native
-    def getCompatibleElasticsearchVersions(
-        params: GetCompatibleElasticsearchVersionsRequest
-    ): Request[GetCompatibleElasticsearchVersionsResponse] = js.native
+    def getCompatibleElasticsearchVersions(params: GetCompatibleElasticsearchVersionsRequest): Request[GetCompatibleElasticsearchVersionsResponse] = js.native
     def getUpgradeHistory(params: GetUpgradeHistoryRequest): Request[GetUpgradeHistoryResponse] = js.native
     def getUpgradeStatus(params: GetUpgradeStatusRequest): Request[GetUpgradeStatusResponse] = js.native
     def listDomainNames(): Request[ListDomainNamesResponse] = js.native
     def listDomainsForPackage(params: ListDomainsForPackageRequest): Request[ListDomainsForPackageResponse] = js.native
-    def listElasticsearchInstanceTypes(
-        params: ListElasticsearchInstanceTypesRequest
-    ): Request[ListElasticsearchInstanceTypesResponse] = js.native
-    def listElasticsearchVersions(
-        params: ListElasticsearchVersionsRequest
-    ): Request[ListElasticsearchVersionsResponse] = js.native
+    def listElasticsearchInstanceTypes(params: ListElasticsearchInstanceTypesRequest): Request[ListElasticsearchInstanceTypesResponse] = js.native
+    def listElasticsearchVersions(params: ListElasticsearchVersionsRequest): Request[ListElasticsearchVersionsResponse] = js.native
     def listPackagesForDomain(params: ListPackagesForDomainRequest): Request[ListPackagesForDomainResponse] = js.native
     def listTags(params: ListTagsRequest): Request[ListTagsResponse] = js.native
-    def purchaseReservedElasticsearchInstanceOffering(
-        params: PurchaseReservedElasticsearchInstanceOfferingRequest
-    ): Request[PurchaseReservedElasticsearchInstanceOfferingResponse] = js.native
-    def rejectInboundCrossClusterSearchConnection(
-        params: RejectInboundCrossClusterSearchConnectionRequest
-    ): Request[RejectInboundCrossClusterSearchConnectionResponse] = js.native
+    def purchaseReservedElasticsearchInstanceOffering(params: PurchaseReservedElasticsearchInstanceOfferingRequest): Request[PurchaseReservedElasticsearchInstanceOfferingResponse] = js.native
+    def rejectInboundCrossClusterSearchConnection(params: RejectInboundCrossClusterSearchConnectionRequest): Request[RejectInboundCrossClusterSearchConnectionResponse] = js.native
     def removeTags(params: RemoveTagsRequest): Request[js.Object] = js.native
-    def startElasticsearchServiceSoftwareUpdate(
-        params: StartElasticsearchServiceSoftwareUpdateRequest
-    ): Request[StartElasticsearchServiceSoftwareUpdateResponse] = js.native
-    def updateElasticsearchDomainConfig(
-        params: UpdateElasticsearchDomainConfigRequest
-    ): Request[UpdateElasticsearchDomainConfigResponse] = js.native
-    def upgradeElasticsearchDomain(
-        params: UpgradeElasticsearchDomainRequest
-    ): Request[UpgradeElasticsearchDomainResponse] = js.native
+    def startElasticsearchServiceSoftwareUpdate(params: StartElasticsearchServiceSoftwareUpdateRequest): Request[StartElasticsearchServiceSoftwareUpdateResponse] = js.native
+    def updateElasticsearchDomainConfig(params: UpdateElasticsearchDomainConfigRequest): Request[UpdateElasticsearchDomainConfigResponse] = js.native
+    def upgradeElasticsearchDomain(params: UpgradeElasticsearchDomainRequest): Request[UpgradeElasticsearchDomainResponse] = js.native
   }
 
   /**
@@ -334,9 +211,7 @@ package es {
         CrossClusterSearchConnection: js.UndefOr[InboundCrossClusterSearchConnection] = js.undefined
     ): AcceptInboundCrossClusterSearchConnectionResponse = {
       val __obj = js.Dynamic.literal()
-      CrossClusterSearchConnection.foreach(__v =>
-        __obj.updateDynamic("CrossClusterSearchConnection")(__v.asInstanceOf[js.Any])
-      )
+      CrossClusterSearchConnection.foreach(__v => __obj.updateDynamic("CrossClusterSearchConnection")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AcceptInboundCrossClusterSearchConnectionResponse]
     }
   }
@@ -455,9 +330,7 @@ package es {
     ): AdvancedSecurityOptions = {
       val __obj = js.Dynamic.literal()
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      InternalUserDatabaseEnabled.foreach(__v =>
-        __obj.updateDynamic("InternalUserDatabaseEnabled")(__v.asInstanceOf[js.Any])
-      )
+      InternalUserDatabaseEnabled.foreach(__v => __obj.updateDynamic("InternalUserDatabaseEnabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AdvancedSecurityOptions]
     }
   }
@@ -481,9 +354,7 @@ package es {
     ): AdvancedSecurityOptionsInput = {
       val __obj = js.Dynamic.literal()
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      InternalUserDatabaseEnabled.foreach(__v =>
-        __obj.updateDynamic("InternalUserDatabaseEnabled")(__v.asInstanceOf[js.Any])
-      )
+      InternalUserDatabaseEnabled.foreach(__v => __obj.updateDynamic("InternalUserDatabaseEnabled")(__v.asInstanceOf[js.Any]))
       MasterUserOptions.foreach(__v => __obj.updateDynamic("MasterUserOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AdvancedSecurityOptionsInput]
     }
@@ -716,15 +587,11 @@ package es {
       CognitoOptions.foreach(__v => __obj.updateDynamic("CognitoOptions")(__v.asInstanceOf[js.Any]))
       DomainEndpointOptions.foreach(__v => __obj.updateDynamic("DomainEndpointOptions")(__v.asInstanceOf[js.Any]))
       EBSOptions.foreach(__v => __obj.updateDynamic("EBSOptions")(__v.asInstanceOf[js.Any]))
-      ElasticsearchClusterConfig.foreach(__v =>
-        __obj.updateDynamic("ElasticsearchClusterConfig")(__v.asInstanceOf[js.Any])
-      )
+      ElasticsearchClusterConfig.foreach(__v => __obj.updateDynamic("ElasticsearchClusterConfig")(__v.asInstanceOf[js.Any]))
       ElasticsearchVersion.foreach(__v => __obj.updateDynamic("ElasticsearchVersion")(__v.asInstanceOf[js.Any]))
       EncryptionAtRestOptions.foreach(__v => __obj.updateDynamic("EncryptionAtRestOptions")(__v.asInstanceOf[js.Any]))
       LogPublishingOptions.foreach(__v => __obj.updateDynamic("LogPublishingOptions")(__v.asInstanceOf[js.Any]))
-      NodeToNodeEncryptionOptions.foreach(__v =>
-        __obj.updateDynamic("NodeToNodeEncryptionOptions")(__v.asInstanceOf[js.Any])
-      )
+      NodeToNodeEncryptionOptions.foreach(__v => __obj.updateDynamic("NodeToNodeEncryptionOptions")(__v.asInstanceOf[js.Any]))
       SnapshotOptions.foreach(__v => __obj.updateDynamic("SnapshotOptions")(__v.asInstanceOf[js.Any]))
       VPCOptions.foreach(__v => __obj.updateDynamic("VPCOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateElasticsearchDomainRequest]
@@ -801,9 +668,7 @@ package es {
       val __obj = js.Dynamic.literal()
       ConnectionAlias.foreach(__v => __obj.updateDynamic("ConnectionAlias")(__v.asInstanceOf[js.Any]))
       ConnectionStatus.foreach(__v => __obj.updateDynamic("ConnectionStatus")(__v.asInstanceOf[js.Any]))
-      CrossClusterSearchConnectionId.foreach(__v =>
-        __obj.updateDynamic("CrossClusterSearchConnectionId")(__v.asInstanceOf[js.Any])
-      )
+      CrossClusterSearchConnectionId.foreach(__v => __obj.updateDynamic("CrossClusterSearchConnectionId")(__v.asInstanceOf[js.Any]))
       DestinationDomainInfo.foreach(__v => __obj.updateDynamic("DestinationDomainInfo")(__v.asInstanceOf[js.Any]))
       SourceDomainInfo.foreach(__v => __obj.updateDynamic("SourceDomainInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateOutboundCrossClusterSearchConnectionResponse]
@@ -934,9 +799,7 @@ package es {
         CrossClusterSearchConnection: js.UndefOr[InboundCrossClusterSearchConnection] = js.undefined
     ): DeleteInboundCrossClusterSearchConnectionResponse = {
       val __obj = js.Dynamic.literal()
-      CrossClusterSearchConnection.foreach(__v =>
-        __obj.updateDynamic("CrossClusterSearchConnection")(__v.asInstanceOf[js.Any])
-      )
+      CrossClusterSearchConnection.foreach(__v => __obj.updateDynamic("CrossClusterSearchConnection")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteInboundCrossClusterSearchConnectionResponse]
     }
   }
@@ -976,9 +839,7 @@ package es {
         CrossClusterSearchConnection: js.UndefOr[OutboundCrossClusterSearchConnection] = js.undefined
     ): DeleteOutboundCrossClusterSearchConnectionResponse = {
       val __obj = js.Dynamic.literal()
-      CrossClusterSearchConnection.foreach(__v =>
-        __obj.updateDynamic("CrossClusterSearchConnection")(__v.asInstanceOf[js.Any])
-      )
+      CrossClusterSearchConnection.foreach(__v => __obj.updateDynamic("CrossClusterSearchConnection")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteOutboundCrossClusterSearchConnectionResponse]
     }
   }
@@ -1248,9 +1109,7 @@ package es {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeInboundCrossClusterSearchConnectionsResponse = {
       val __obj = js.Dynamic.literal()
-      CrossClusterSearchConnections.foreach(__v =>
-        __obj.updateDynamic("CrossClusterSearchConnections")(__v.asInstanceOf[js.Any])
-      )
+      CrossClusterSearchConnections.foreach(__v => __obj.updateDynamic("CrossClusterSearchConnections")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeInboundCrossClusterSearchConnectionsResponse]
     }
@@ -1297,9 +1156,7 @@ package es {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeOutboundCrossClusterSearchConnectionsResponse = {
       val __obj = js.Dynamic.literal()
-      CrossClusterSearchConnections.foreach(__v =>
-        __obj.updateDynamic("CrossClusterSearchConnections")(__v.asInstanceOf[js.Any])
-      )
+      CrossClusterSearchConnections.foreach(__v => __obj.updateDynamic("CrossClusterSearchConnections")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeOutboundCrossClusterSearchConnectionsResponse]
     }
@@ -1404,9 +1261,7 @@ package es {
       val __obj = js.Dynamic.literal()
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ReservedElasticsearchInstanceOfferingId.foreach(__v =>
-        __obj.updateDynamic("ReservedElasticsearchInstanceOfferingId")(__v.asInstanceOf[js.Any])
-      )
+      ReservedElasticsearchInstanceOfferingId.foreach(__v => __obj.updateDynamic("ReservedElasticsearchInstanceOfferingId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeReservedElasticsearchInstanceOfferingsRequest]
     }
   }
@@ -1428,9 +1283,7 @@ package es {
     ): DescribeReservedElasticsearchInstanceOfferingsResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ReservedElasticsearchInstanceOfferings.foreach(__v =>
-        __obj.updateDynamic("ReservedElasticsearchInstanceOfferings")(__v.asInstanceOf[js.Any])
-      )
+      ReservedElasticsearchInstanceOfferings.foreach(__v => __obj.updateDynamic("ReservedElasticsearchInstanceOfferings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeReservedElasticsearchInstanceOfferingsResponse]
     }
   }
@@ -1455,9 +1308,7 @@ package es {
       val __obj = js.Dynamic.literal()
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ReservedElasticsearchInstanceId.foreach(__v =>
-        __obj.updateDynamic("ReservedElasticsearchInstanceId")(__v.asInstanceOf[js.Any])
-      )
+      ReservedElasticsearchInstanceId.foreach(__v => __obj.updateDynamic("ReservedElasticsearchInstanceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeReservedElasticsearchInstancesRequest]
     }
   }
@@ -1479,9 +1330,7 @@ package es {
     ): DescribeReservedElasticsearchInstancesResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ReservedElasticsearchInstances.foreach(__v =>
-        __obj.updateDynamic("ReservedElasticsearchInstances")(__v.asInstanceOf[js.Any])
-      )
+      ReservedElasticsearchInstances.foreach(__v => __obj.updateDynamic("ReservedElasticsearchInstances")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeReservedElasticsearchInstancesResponse]
     }
   }
@@ -1781,68 +1630,66 @@ package es {
     val `i3.8xlarge.elasticsearch` = "i3.8xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
     val `i3.16xlarge.elasticsearch` = "i3.16xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `m3.medium.elasticsearch`,
-        `m3.large.elasticsearch`,
-        `m3.xlarge.elasticsearch`,
-        `m3.2xlarge.elasticsearch`,
-        `m4.large.elasticsearch`,
-        `m4.xlarge.elasticsearch`,
-        `m4.2xlarge.elasticsearch`,
-        `m4.4xlarge.elasticsearch`,
-        `m4.10xlarge.elasticsearch`,
-        `m5.large.elasticsearch`,
-        `m5.xlarge.elasticsearch`,
-        `m5.2xlarge.elasticsearch`,
-        `m5.4xlarge.elasticsearch`,
-        `m5.12xlarge.elasticsearch`,
-        `r5.large.elasticsearch`,
-        `r5.xlarge.elasticsearch`,
-        `r5.2xlarge.elasticsearch`,
-        `r5.4xlarge.elasticsearch`,
-        `r5.12xlarge.elasticsearch`,
-        `c5.large.elasticsearch`,
-        `c5.xlarge.elasticsearch`,
-        `c5.2xlarge.elasticsearch`,
-        `c5.4xlarge.elasticsearch`,
-        `c5.9xlarge.elasticsearch`,
-        `c5.18xlarge.elasticsearch`,
-        `ultrawarm1.medium.elasticsearch`,
-        `ultrawarm1.large.elasticsearch`,
-        `t2.micro.elasticsearch`,
-        `t2.small.elasticsearch`,
-        `t2.medium.elasticsearch`,
-        `r3.large.elasticsearch`,
-        `r3.xlarge.elasticsearch`,
-        `r3.2xlarge.elasticsearch`,
-        `r3.4xlarge.elasticsearch`,
-        `r3.8xlarge.elasticsearch`,
-        `i2.xlarge.elasticsearch`,
-        `i2.2xlarge.elasticsearch`,
-        `d2.xlarge.elasticsearch`,
-        `d2.2xlarge.elasticsearch`,
-        `d2.4xlarge.elasticsearch`,
-        `d2.8xlarge.elasticsearch`,
-        `c4.large.elasticsearch`,
-        `c4.xlarge.elasticsearch`,
-        `c4.2xlarge.elasticsearch`,
-        `c4.4xlarge.elasticsearch`,
-        `c4.8xlarge.elasticsearch`,
-        `r4.large.elasticsearch`,
-        `r4.xlarge.elasticsearch`,
-        `r4.2xlarge.elasticsearch`,
-        `r4.4xlarge.elasticsearch`,
-        `r4.8xlarge.elasticsearch`,
-        `r4.16xlarge.elasticsearch`,
-        `i3.large.elasticsearch`,
-        `i3.xlarge.elasticsearch`,
-        `i3.2xlarge.elasticsearch`,
-        `i3.4xlarge.elasticsearch`,
-        `i3.8xlarge.elasticsearch`,
-        `i3.16xlarge.elasticsearch`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      `m3.medium.elasticsearch`,
+      `m3.large.elasticsearch`,
+      `m3.xlarge.elasticsearch`,
+      `m3.2xlarge.elasticsearch`,
+      `m4.large.elasticsearch`,
+      `m4.xlarge.elasticsearch`,
+      `m4.2xlarge.elasticsearch`,
+      `m4.4xlarge.elasticsearch`,
+      `m4.10xlarge.elasticsearch`,
+      `m5.large.elasticsearch`,
+      `m5.xlarge.elasticsearch`,
+      `m5.2xlarge.elasticsearch`,
+      `m5.4xlarge.elasticsearch`,
+      `m5.12xlarge.elasticsearch`,
+      `r5.large.elasticsearch`,
+      `r5.xlarge.elasticsearch`,
+      `r5.2xlarge.elasticsearch`,
+      `r5.4xlarge.elasticsearch`,
+      `r5.12xlarge.elasticsearch`,
+      `c5.large.elasticsearch`,
+      `c5.xlarge.elasticsearch`,
+      `c5.2xlarge.elasticsearch`,
+      `c5.4xlarge.elasticsearch`,
+      `c5.9xlarge.elasticsearch`,
+      `c5.18xlarge.elasticsearch`,
+      `ultrawarm1.medium.elasticsearch`,
+      `ultrawarm1.large.elasticsearch`,
+      `t2.micro.elasticsearch`,
+      `t2.small.elasticsearch`,
+      `t2.medium.elasticsearch`,
+      `r3.large.elasticsearch`,
+      `r3.xlarge.elasticsearch`,
+      `r3.2xlarge.elasticsearch`,
+      `r3.4xlarge.elasticsearch`,
+      `r3.8xlarge.elasticsearch`,
+      `i2.xlarge.elasticsearch`,
+      `i2.2xlarge.elasticsearch`,
+      `d2.xlarge.elasticsearch`,
+      `d2.2xlarge.elasticsearch`,
+      `d2.4xlarge.elasticsearch`,
+      `d2.8xlarge.elasticsearch`,
+      `c4.large.elasticsearch`,
+      `c4.xlarge.elasticsearch`,
+      `c4.2xlarge.elasticsearch`,
+      `c4.4xlarge.elasticsearch`,
+      `c4.8xlarge.elasticsearch`,
+      `r4.large.elasticsearch`,
+      `r4.xlarge.elasticsearch`,
+      `r4.2xlarge.elasticsearch`,
+      `r4.4xlarge.elasticsearch`,
+      `r4.8xlarge.elasticsearch`,
+      `r4.16xlarge.elasticsearch`,
+      `i3.large.elasticsearch`,
+      `i3.xlarge.elasticsearch`,
+      `i3.2xlarge.elasticsearch`,
+      `i3.4xlarge.elasticsearch`,
+      `i3.8xlarge.elasticsearch`,
+      `i3.16xlarge.elasticsearch`
+    ))
   }
 
   @js.native
@@ -1968,15 +1815,11 @@ package es {
       CognitoOptions.foreach(__v => __obj.updateDynamic("CognitoOptions")(__v.asInstanceOf[js.Any]))
       DomainEndpointOptions.foreach(__v => __obj.updateDynamic("DomainEndpointOptions")(__v.asInstanceOf[js.Any]))
       EBSOptions.foreach(__v => __obj.updateDynamic("EBSOptions")(__v.asInstanceOf[js.Any]))
-      ElasticsearchClusterConfig.foreach(__v =>
-        __obj.updateDynamic("ElasticsearchClusterConfig")(__v.asInstanceOf[js.Any])
-      )
+      ElasticsearchClusterConfig.foreach(__v => __obj.updateDynamic("ElasticsearchClusterConfig")(__v.asInstanceOf[js.Any]))
       ElasticsearchVersion.foreach(__v => __obj.updateDynamic("ElasticsearchVersion")(__v.asInstanceOf[js.Any]))
       EncryptionAtRestOptions.foreach(__v => __obj.updateDynamic("EncryptionAtRestOptions")(__v.asInstanceOf[js.Any]))
       LogPublishingOptions.foreach(__v => __obj.updateDynamic("LogPublishingOptions")(__v.asInstanceOf[js.Any]))
-      NodeToNodeEncryptionOptions.foreach(__v =>
-        __obj.updateDynamic("NodeToNodeEncryptionOptions")(__v.asInstanceOf[js.Any])
-      )
+      NodeToNodeEncryptionOptions.foreach(__v => __obj.updateDynamic("NodeToNodeEncryptionOptions")(__v.asInstanceOf[js.Any]))
       SnapshotOptions.foreach(__v => __obj.updateDynamic("SnapshotOptions")(__v.asInstanceOf[js.Any]))
       VPCOptions.foreach(__v => __obj.updateDynamic("VPCOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ElasticsearchDomainConfig]
@@ -2060,9 +1903,7 @@ package es {
       Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
       Endpoints.foreach(__v => __obj.updateDynamic("Endpoints")(__v.asInstanceOf[js.Any]))
       LogPublishingOptions.foreach(__v => __obj.updateDynamic("LogPublishingOptions")(__v.asInstanceOf[js.Any]))
-      NodeToNodeEncryptionOptions.foreach(__v =>
-        __obj.updateDynamic("NodeToNodeEncryptionOptions")(__v.asInstanceOf[js.Any])
-      )
+      NodeToNodeEncryptionOptions.foreach(__v => __obj.updateDynamic("NodeToNodeEncryptionOptions")(__v.asInstanceOf[js.Any]))
       Processing.foreach(__v => __obj.updateDynamic("Processing")(__v.asInstanceOf[js.Any]))
       ServiceSoftwareOptions.foreach(__v => __obj.updateDynamic("ServiceSoftwareOptions")(__v.asInstanceOf[js.Any]))
       SnapshotOptions.foreach(__v => __obj.updateDynamic("SnapshotOptions")(__v.asInstanceOf[js.Any]))
@@ -2216,9 +2057,7 @@ package es {
         CompatibleElasticsearchVersions: js.UndefOr[CompatibleElasticsearchVersionsList] = js.undefined
     ): GetCompatibleElasticsearchVersionsResponse = {
       val __obj = js.Dynamic.literal()
-      CompatibleElasticsearchVersions.foreach(__v =>
-        __obj.updateDynamic("CompatibleElasticsearchVersions")(__v.asInstanceOf[js.Any])
-      )
+      CompatibleElasticsearchVersions.foreach(__v => __obj.updateDynamic("CompatibleElasticsearchVersions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCompatibleElasticsearchVersionsResponse]
     }
   }
@@ -2339,9 +2178,7 @@ package es {
     ): InboundCrossClusterSearchConnection = {
       val __obj = js.Dynamic.literal()
       ConnectionStatus.foreach(__v => __obj.updateDynamic("ConnectionStatus")(__v.asInstanceOf[js.Any]))
-      CrossClusterSearchConnectionId.foreach(__v =>
-        __obj.updateDynamic("CrossClusterSearchConnectionId")(__v.asInstanceOf[js.Any])
-      )
+      CrossClusterSearchConnectionId.foreach(__v => __obj.updateDynamic("CrossClusterSearchConnectionId")(__v.asInstanceOf[js.Any]))
       DestinationDomainInfo.foreach(__v => __obj.updateDynamic("DestinationDomainInfo")(__v.asInstanceOf[js.Any]))
       SourceDomainInfo.foreach(__v => __obj.updateDynamic("SourceDomainInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InboundCrossClusterSearchConnection]
@@ -2563,9 +2400,7 @@ package es {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListElasticsearchInstanceTypesResponse = {
       val __obj = js.Dynamic.literal()
-      ElasticsearchInstanceTypes.foreach(__v =>
-        __obj.updateDynamic("ElasticsearchInstanceTypes")(__v.asInstanceOf[js.Any])
-      )
+      ElasticsearchInstanceTypes.foreach(__v => __obj.updateDynamic("ElasticsearchInstanceTypes")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListElasticsearchInstanceTypesResponse]
     }
@@ -2724,9 +2559,7 @@ package es {
         Enabled: js.UndefOr[Boolean] = js.undefined
     ): LogPublishingOption = {
       val __obj = js.Dynamic.literal()
-      CloudWatchLogsLogGroupArn.foreach(__v =>
-        __obj.updateDynamic("CloudWatchLogsLogGroupArn")(__v.asInstanceOf[js.Any])
-      )
+      CloudWatchLogsLogGroupArn.foreach(__v => __obj.updateDynamic("CloudWatchLogsLogGroupArn")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LogPublishingOption]
     }
@@ -2910,9 +2743,7 @@ package es {
       val __obj = js.Dynamic.literal()
       ConnectionAlias.foreach(__v => __obj.updateDynamic("ConnectionAlias")(__v.asInstanceOf[js.Any]))
       ConnectionStatus.foreach(__v => __obj.updateDynamic("ConnectionStatus")(__v.asInstanceOf[js.Any]))
-      CrossClusterSearchConnectionId.foreach(__v =>
-        __obj.updateDynamic("CrossClusterSearchConnectionId")(__v.asInstanceOf[js.Any])
-      )
+      CrossClusterSearchConnectionId.foreach(__v => __obj.updateDynamic("CrossClusterSearchConnectionId")(__v.asInstanceOf[js.Any]))
       DestinationDomainInfo.foreach(__v => __obj.updateDynamic("DestinationDomainInfo")(__v.asInstanceOf[js.Any]))
       SourceDomainInfo.foreach(__v => __obj.updateDynamic("SourceDomainInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutboundCrossClusterSearchConnection]
@@ -2953,9 +2784,7 @@ package es {
     val DELETING = "DELETING".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
     val DELETED = "DELETED".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
 
-    val values = js.Object.freeze(
-      js.Array(PENDING_ACCEPTANCE, VALIDATING, VALIDATION_FAILED, PROVISIONING, ACTIVE, REJECTED, DELETING, DELETED)
-    )
+    val values = js.Object.freeze(js.Array(PENDING_ACCEPTANCE, VALIDATING, VALIDATION_FAILED, PROVISIONING, ACTIVE, REJECTED, DELETING, DELETED))
   }
 
   /**
@@ -3029,9 +2858,7 @@ package es {
     val DELETED = "DELETED".asInstanceOf[PackageStatus]
     val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[PackageStatus]
 
-    val values = js.Object.freeze(
-      js.Array(COPYING, COPY_FAILED, VALIDATING, VALIDATION_FAILED, AVAILABLE, DELETING, DELETED, DELETE_FAILED)
-    )
+    val values = js.Object.freeze(js.Array(COPYING, COPY_FAILED, VALIDATING, VALIDATION_FAILED, AVAILABLE, DELETING, DELETED, DELETE_FAILED))
   }
 
   @js.native
@@ -3086,9 +2913,7 @@ package es {
     ): PurchaseReservedElasticsearchInstanceOfferingResponse = {
       val __obj = js.Dynamic.literal()
       ReservationName.foreach(__v => __obj.updateDynamic("ReservationName")(__v.asInstanceOf[js.Any]))
-      ReservedElasticsearchInstanceId.foreach(__v =>
-        __obj.updateDynamic("ReservedElasticsearchInstanceId")(__v.asInstanceOf[js.Any])
-      )
+      ReservedElasticsearchInstanceId.foreach(__v => __obj.updateDynamic("ReservedElasticsearchInstanceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PurchaseReservedElasticsearchInstanceOfferingResponse]
     }
   }
@@ -3150,9 +2975,7 @@ package es {
         CrossClusterSearchConnection: js.UndefOr[InboundCrossClusterSearchConnection] = js.undefined
     ): RejectInboundCrossClusterSearchConnectionResponse = {
       val __obj = js.Dynamic.literal()
-      CrossClusterSearchConnection.foreach(__v =>
-        __obj.updateDynamic("CrossClusterSearchConnection")(__v.asInstanceOf[js.Any])
-      )
+      CrossClusterSearchConnection.foreach(__v => __obj.updateDynamic("CrossClusterSearchConnection")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RejectInboundCrossClusterSearchConnectionResponse]
     }
   }
@@ -3221,22 +3044,14 @@ package es {
       val __obj = js.Dynamic.literal()
       CurrencyCode.foreach(__v => __obj.updateDynamic("CurrencyCode")(__v.asInstanceOf[js.Any]))
       Duration.foreach(__v => __obj.updateDynamic("Duration")(__v.asInstanceOf[js.Any]))
-      ElasticsearchInstanceCount.foreach(__v =>
-        __obj.updateDynamic("ElasticsearchInstanceCount")(__v.asInstanceOf[js.Any])
-      )
-      ElasticsearchInstanceType.foreach(__v =>
-        __obj.updateDynamic("ElasticsearchInstanceType")(__v.asInstanceOf[js.Any])
-      )
+      ElasticsearchInstanceCount.foreach(__v => __obj.updateDynamic("ElasticsearchInstanceCount")(__v.asInstanceOf[js.Any]))
+      ElasticsearchInstanceType.foreach(__v => __obj.updateDynamic("ElasticsearchInstanceType")(__v.asInstanceOf[js.Any]))
       FixedPrice.foreach(__v => __obj.updateDynamic("FixedPrice")(__v.asInstanceOf[js.Any]))
       PaymentOption.foreach(__v => __obj.updateDynamic("PaymentOption")(__v.asInstanceOf[js.Any]))
       RecurringCharges.foreach(__v => __obj.updateDynamic("RecurringCharges")(__v.asInstanceOf[js.Any]))
       ReservationName.foreach(__v => __obj.updateDynamic("ReservationName")(__v.asInstanceOf[js.Any]))
-      ReservedElasticsearchInstanceId.foreach(__v =>
-        __obj.updateDynamic("ReservedElasticsearchInstanceId")(__v.asInstanceOf[js.Any])
-      )
-      ReservedElasticsearchInstanceOfferingId.foreach(__v =>
-        __obj.updateDynamic("ReservedElasticsearchInstanceOfferingId")(__v.asInstanceOf[js.Any])
-      )
+      ReservedElasticsearchInstanceId.foreach(__v => __obj.updateDynamic("ReservedElasticsearchInstanceId")(__v.asInstanceOf[js.Any]))
+      ReservedElasticsearchInstanceOfferingId.foreach(__v => __obj.updateDynamic("ReservedElasticsearchInstanceOfferingId")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       UsagePrice.foreach(__v => __obj.updateDynamic("UsagePrice")(__v.asInstanceOf[js.Any]))
@@ -3274,15 +3089,11 @@ package es {
       val __obj = js.Dynamic.literal()
       CurrencyCode.foreach(__v => __obj.updateDynamic("CurrencyCode")(__v.asInstanceOf[js.Any]))
       Duration.foreach(__v => __obj.updateDynamic("Duration")(__v.asInstanceOf[js.Any]))
-      ElasticsearchInstanceType.foreach(__v =>
-        __obj.updateDynamic("ElasticsearchInstanceType")(__v.asInstanceOf[js.Any])
-      )
+      ElasticsearchInstanceType.foreach(__v => __obj.updateDynamic("ElasticsearchInstanceType")(__v.asInstanceOf[js.Any]))
       FixedPrice.foreach(__v => __obj.updateDynamic("FixedPrice")(__v.asInstanceOf[js.Any]))
       PaymentOption.foreach(__v => __obj.updateDynamic("PaymentOption")(__v.asInstanceOf[js.Any]))
       RecurringCharges.foreach(__v => __obj.updateDynamic("RecurringCharges")(__v.asInstanceOf[js.Any]))
-      ReservedElasticsearchInstanceOfferingId.foreach(__v =>
-        __obj.updateDynamic("ReservedElasticsearchInstanceOfferingId")(__v.asInstanceOf[js.Any])
-      )
+      ReservedElasticsearchInstanceOfferingId.foreach(__v => __obj.updateDynamic("ReservedElasticsearchInstanceOfferingId")(__v.asInstanceOf[js.Any]))
       UsagePrice.foreach(__v => __obj.updateDynamic("UsagePrice")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReservedElasticsearchInstanceOffering]
     }
@@ -3352,9 +3163,7 @@ package es {
         AutomatedSnapshotStartHour: js.UndefOr[IntegerClass] = js.undefined
     ): SnapshotOptions = {
       val __obj = js.Dynamic.literal()
-      AutomatedSnapshotStartHour.foreach(__v =>
-        __obj.updateDynamic("AutomatedSnapshotStartHour")(__v.asInstanceOf[js.Any])
-      )
+      AutomatedSnapshotStartHour.foreach(__v => __obj.updateDynamic("AutomatedSnapshotStartHour")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SnapshotOptions]
     }
   }
@@ -3546,9 +3355,7 @@ package es {
       CognitoOptions.foreach(__v => __obj.updateDynamic("CognitoOptions")(__v.asInstanceOf[js.Any]))
       DomainEndpointOptions.foreach(__v => __obj.updateDynamic("DomainEndpointOptions")(__v.asInstanceOf[js.Any]))
       EBSOptions.foreach(__v => __obj.updateDynamic("EBSOptions")(__v.asInstanceOf[js.Any]))
-      ElasticsearchClusterConfig.foreach(__v =>
-        __obj.updateDynamic("ElasticsearchClusterConfig")(__v.asInstanceOf[js.Any])
-      )
+      ElasticsearchClusterConfig.foreach(__v => __obj.updateDynamic("ElasticsearchClusterConfig")(__v.asInstanceOf[js.Any]))
       LogPublishingOptions.foreach(__v => __obj.updateDynamic("LogPublishingOptions")(__v.asInstanceOf[js.Any]))
       SnapshotOptions.foreach(__v => __obj.updateDynamic("SnapshotOptions")(__v.asInstanceOf[js.Any]))
       VPCOptions.foreach(__v => __obj.updateDynamic("VPCOptions")(__v.asInstanceOf[js.Any]))

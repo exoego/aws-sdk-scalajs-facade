@@ -20,17 +20,10 @@ package object cur {
 
   implicit final class CUROps(private val service: CUR) extends AnyVal {
 
-    @inline def deleteReportDefinitionFuture(
-        params: DeleteReportDefinitionRequest
-    ): Future[DeleteReportDefinitionResponse] = service.deleteReportDefinition(params).promise().toFuture
-    @inline def describeReportDefinitionsFuture(
-        params: DescribeReportDefinitionsRequest
-    ): Future[DescribeReportDefinitionsResponse] = service.describeReportDefinitions(params).promise().toFuture
-    @inline def modifyReportDefinitionFuture(
-        params: ModifyReportDefinitionRequest
-    ): Future[ModifyReportDefinitionResponse] = service.modifyReportDefinition(params).promise().toFuture
-    @inline def putReportDefinitionFuture(params: PutReportDefinitionRequest): Future[PutReportDefinitionResponse] =
-      service.putReportDefinition(params).promise().toFuture
+    @inline def deleteReportDefinitionFuture(params: DeleteReportDefinitionRequest): Future[DeleteReportDefinitionResponse] = service.deleteReportDefinition(params).promise().toFuture
+    @inline def describeReportDefinitionsFuture(params: DescribeReportDefinitionsRequest): Future[DescribeReportDefinitionsResponse] = service.describeReportDefinitions(params).promise().toFuture
+    @inline def modifyReportDefinitionFuture(params: ModifyReportDefinitionRequest): Future[ModifyReportDefinitionResponse] = service.modifyReportDefinition(params).promise().toFuture
+    @inline def putReportDefinitionFuture(params: PutReportDefinitionRequest): Future[PutReportDefinitionResponse] = service.putReportDefinition(params).promise().toFuture
   }
 }
 
@@ -40,13 +33,9 @@ package cur {
   class CUR() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def deleteReportDefinition(params: DeleteReportDefinitionRequest): Request[DeleteReportDefinitionResponse] =
-      js.native
-    def describeReportDefinitions(
-        params: DescribeReportDefinitionsRequest
-    ): Request[DescribeReportDefinitionsResponse] = js.native
-    def modifyReportDefinition(params: ModifyReportDefinitionRequest): Request[ModifyReportDefinitionResponse] =
-      js.native
+    def deleteReportDefinition(params: DeleteReportDefinitionRequest): Request[DeleteReportDefinitionResponse] = js.native
+    def describeReportDefinitions(params: DescribeReportDefinitionsRequest): Request[DescribeReportDefinitionsResponse] = js.native
+    def modifyReportDefinition(params: ModifyReportDefinitionRequest): Request[ModifyReportDefinitionResponse] = js.native
     def putReportDefinition(params: PutReportDefinitionRequest): Request[PutReportDefinitionResponse] = js.native
   }
 
@@ -68,21 +57,19 @@ package cur {
     val `ap-northeast-3` = "ap-northeast-3".asInstanceOf[AWSRegion]
     val `ap-east-1` = "ap-east-1".asInstanceOf[AWSRegion]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `us-east-1`,
-        `us-west-1`,
-        `us-west-2`,
-        `eu-central-1`,
-        `eu-west-1`,
-        `ap-southeast-1`,
-        `ap-southeast-2`,
-        `ap-northeast-1`,
-        `eu-north-1`,
-        `ap-northeast-3`,
-        `ap-east-1`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      `us-east-1`,
+      `us-west-1`,
+      `us-west-2`,
+      `eu-central-1`,
+      `eu-west-1`,
+      `ap-southeast-1`,
+      `ap-southeast-2`,
+      `ap-northeast-1`,
+      `eu-north-1`,
+      `ap-northeast-3`,
+      `ap-east-1`
+    ))
   }
 
   /**

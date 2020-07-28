@@ -79,72 +79,34 @@ package object sms {
 
   implicit final class SMSOps(private val service: SMS) extends AnyVal {
 
-    @inline def createAppFuture(params: CreateAppRequest): Future[CreateAppResponse] =
-      service.createApp(params).promise().toFuture
-    @inline def createReplicationJobFuture(params: CreateReplicationJobRequest): Future[CreateReplicationJobResponse] =
-      service.createReplicationJob(params).promise().toFuture
-    @inline def deleteAppFuture(params: DeleteAppRequest): Future[DeleteAppResponse] =
-      service.deleteApp(params).promise().toFuture
-    @inline def deleteAppLaunchConfigurationFuture(
-        params: DeleteAppLaunchConfigurationRequest
-    ): Future[DeleteAppLaunchConfigurationResponse] = service.deleteAppLaunchConfiguration(params).promise().toFuture
-    @inline def deleteAppReplicationConfigurationFuture(
-        params: DeleteAppReplicationConfigurationRequest
-    ): Future[DeleteAppReplicationConfigurationResponse] =
-      service.deleteAppReplicationConfiguration(params).promise().toFuture
-    @inline def deleteReplicationJobFuture(params: DeleteReplicationJobRequest): Future[DeleteReplicationJobResponse] =
-      service.deleteReplicationJob(params).promise().toFuture
-    @inline def deleteServerCatalogFuture(params: DeleteServerCatalogRequest): Future[DeleteServerCatalogResponse] =
-      service.deleteServerCatalog(params).promise().toFuture
-    @inline def disassociateConnectorFuture(
-        params: DisassociateConnectorRequest
-    ): Future[DisassociateConnectorResponse] = service.disassociateConnector(params).promise().toFuture
-    @inline def generateChangeSetFuture(params: GenerateChangeSetRequest): Future[GenerateChangeSetResponse] =
-      service.generateChangeSet(params).promise().toFuture
-    @inline def generateTemplateFuture(params: GenerateTemplateRequest): Future[GenerateTemplateResponse] =
-      service.generateTemplate(params).promise().toFuture
+    @inline def createAppFuture(params: CreateAppRequest): Future[CreateAppResponse] = service.createApp(params).promise().toFuture
+    @inline def createReplicationJobFuture(params: CreateReplicationJobRequest): Future[CreateReplicationJobResponse] = service.createReplicationJob(params).promise().toFuture
+    @inline def deleteAppFuture(params: DeleteAppRequest): Future[DeleteAppResponse] = service.deleteApp(params).promise().toFuture
+    @inline def deleteAppLaunchConfigurationFuture(params: DeleteAppLaunchConfigurationRequest): Future[DeleteAppLaunchConfigurationResponse] = service.deleteAppLaunchConfiguration(params).promise().toFuture
+    @inline def deleteAppReplicationConfigurationFuture(params: DeleteAppReplicationConfigurationRequest): Future[DeleteAppReplicationConfigurationResponse] = service.deleteAppReplicationConfiguration(params).promise().toFuture
+    @inline def deleteReplicationJobFuture(params: DeleteReplicationJobRequest): Future[DeleteReplicationJobResponse] = service.deleteReplicationJob(params).promise().toFuture
+    @inline def deleteServerCatalogFuture(params: DeleteServerCatalogRequest): Future[DeleteServerCatalogResponse] = service.deleteServerCatalog(params).promise().toFuture
+    @inline def disassociateConnectorFuture(params: DisassociateConnectorRequest): Future[DisassociateConnectorResponse] = service.disassociateConnector(params).promise().toFuture
+    @inline def generateChangeSetFuture(params: GenerateChangeSetRequest): Future[GenerateChangeSetResponse] = service.generateChangeSet(params).promise().toFuture
+    @inline def generateTemplateFuture(params: GenerateTemplateRequest): Future[GenerateTemplateResponse] = service.generateTemplate(params).promise().toFuture
     @inline def getAppFuture(params: GetAppRequest): Future[GetAppResponse] = service.getApp(params).promise().toFuture
-    @inline def getAppLaunchConfigurationFuture(
-        params: GetAppLaunchConfigurationRequest
-    ): Future[GetAppLaunchConfigurationResponse] = service.getAppLaunchConfiguration(params).promise().toFuture
-    @inline def getAppReplicationConfigurationFuture(
-        params: GetAppReplicationConfigurationRequest
-    ): Future[GetAppReplicationConfigurationResponse] =
-      service.getAppReplicationConfiguration(params).promise().toFuture
-    @inline def getConnectorsFuture(params: GetConnectorsRequest): Future[GetConnectorsResponse] =
-      service.getConnectors(params).promise().toFuture
-    @inline def getReplicationJobsFuture(params: GetReplicationJobsRequest): Future[GetReplicationJobsResponse] =
-      service.getReplicationJobs(params).promise().toFuture
-    @inline def getReplicationRunsFuture(params: GetReplicationRunsRequest): Future[GetReplicationRunsResponse] =
-      service.getReplicationRuns(params).promise().toFuture
-    @inline def getServersFuture(params: GetServersRequest): Future[GetServersResponse] =
-      service.getServers(params).promise().toFuture
-    @inline def importServerCatalogFuture(params: ImportServerCatalogRequest): Future[ImportServerCatalogResponse] =
-      service.importServerCatalog(params).promise().toFuture
-    @inline def launchAppFuture(params: LaunchAppRequest): Future[LaunchAppResponse] =
-      service.launchApp(params).promise().toFuture
-    @inline def listAppsFuture(params: ListAppsRequest): Future[ListAppsResponse] =
-      service.listApps(params).promise().toFuture
-    @inline def putAppLaunchConfigurationFuture(
-        params: PutAppLaunchConfigurationRequest
-    ): Future[PutAppLaunchConfigurationResponse] = service.putAppLaunchConfiguration(params).promise().toFuture
-    @inline def putAppReplicationConfigurationFuture(
-        params: PutAppReplicationConfigurationRequest
-    ): Future[PutAppReplicationConfigurationResponse] =
-      service.putAppReplicationConfiguration(params).promise().toFuture
-    @inline def startAppReplicationFuture(params: StartAppReplicationRequest): Future[StartAppReplicationResponse] =
-      service.startAppReplication(params).promise().toFuture
-    @inline def startOnDemandReplicationRunFuture(
-        params: StartOnDemandReplicationRunRequest
-    ): Future[StartOnDemandReplicationRunResponse] = service.startOnDemandReplicationRun(params).promise().toFuture
-    @inline def stopAppReplicationFuture(params: StopAppReplicationRequest): Future[StopAppReplicationResponse] =
-      service.stopAppReplication(params).promise().toFuture
-    @inline def terminateAppFuture(params: TerminateAppRequest): Future[TerminateAppResponse] =
-      service.terminateApp(params).promise().toFuture
-    @inline def updateAppFuture(params: UpdateAppRequest): Future[UpdateAppResponse] =
-      service.updateApp(params).promise().toFuture
-    @inline def updateReplicationJobFuture(params: UpdateReplicationJobRequest): Future[UpdateReplicationJobResponse] =
-      service.updateReplicationJob(params).promise().toFuture
+    @inline def getAppLaunchConfigurationFuture(params: GetAppLaunchConfigurationRequest): Future[GetAppLaunchConfigurationResponse] = service.getAppLaunchConfiguration(params).promise().toFuture
+    @inline def getAppReplicationConfigurationFuture(params: GetAppReplicationConfigurationRequest): Future[GetAppReplicationConfigurationResponse] = service.getAppReplicationConfiguration(params).promise().toFuture
+    @inline def getConnectorsFuture(params: GetConnectorsRequest): Future[GetConnectorsResponse] = service.getConnectors(params).promise().toFuture
+    @inline def getReplicationJobsFuture(params: GetReplicationJobsRequest): Future[GetReplicationJobsResponse] = service.getReplicationJobs(params).promise().toFuture
+    @inline def getReplicationRunsFuture(params: GetReplicationRunsRequest): Future[GetReplicationRunsResponse] = service.getReplicationRuns(params).promise().toFuture
+    @inline def getServersFuture(params: GetServersRequest): Future[GetServersResponse] = service.getServers(params).promise().toFuture
+    @inline def importServerCatalogFuture(params: ImportServerCatalogRequest): Future[ImportServerCatalogResponse] = service.importServerCatalog(params).promise().toFuture
+    @inline def launchAppFuture(params: LaunchAppRequest): Future[LaunchAppResponse] = service.launchApp(params).promise().toFuture
+    @inline def listAppsFuture(params: ListAppsRequest): Future[ListAppsResponse] = service.listApps(params).promise().toFuture
+    @inline def putAppLaunchConfigurationFuture(params: PutAppLaunchConfigurationRequest): Future[PutAppLaunchConfigurationResponse] = service.putAppLaunchConfiguration(params).promise().toFuture
+    @inline def putAppReplicationConfigurationFuture(params: PutAppReplicationConfigurationRequest): Future[PutAppReplicationConfigurationResponse] = service.putAppReplicationConfiguration(params).promise().toFuture
+    @inline def startAppReplicationFuture(params: StartAppReplicationRequest): Future[StartAppReplicationResponse] = service.startAppReplication(params).promise().toFuture
+    @inline def startOnDemandReplicationRunFuture(params: StartOnDemandReplicationRunRequest): Future[StartOnDemandReplicationRunResponse] = service.startOnDemandReplicationRun(params).promise().toFuture
+    @inline def stopAppReplicationFuture(params: StopAppReplicationRequest): Future[StopAppReplicationResponse] = service.stopAppReplication(params).promise().toFuture
+    @inline def terminateAppFuture(params: TerminateAppRequest): Future[TerminateAppResponse] = service.terminateApp(params).promise().toFuture
+    @inline def updateAppFuture(params: UpdateAppRequest): Future[UpdateAppResponse] = service.updateApp(params).promise().toFuture
+    @inline def updateReplicationJobFuture(params: UpdateReplicationJobRequest): Future[UpdateReplicationJobResponse] = service.updateReplicationJob(params).promise().toFuture
   }
 }
 
@@ -157,24 +119,16 @@ package sms {
     def createApp(params: CreateAppRequest): Request[CreateAppResponse] = js.native
     def createReplicationJob(params: CreateReplicationJobRequest): Request[CreateReplicationJobResponse] = js.native
     def deleteApp(params: DeleteAppRequest): Request[DeleteAppResponse] = js.native
-    def deleteAppLaunchConfiguration(
-        params: DeleteAppLaunchConfigurationRequest
-    ): Request[DeleteAppLaunchConfigurationResponse] = js.native
-    def deleteAppReplicationConfiguration(
-        params: DeleteAppReplicationConfigurationRequest
-    ): Request[DeleteAppReplicationConfigurationResponse] = js.native
+    def deleteAppLaunchConfiguration(params: DeleteAppLaunchConfigurationRequest): Request[DeleteAppLaunchConfigurationResponse] = js.native
+    def deleteAppReplicationConfiguration(params: DeleteAppReplicationConfigurationRequest): Request[DeleteAppReplicationConfigurationResponse] = js.native
     def deleteReplicationJob(params: DeleteReplicationJobRequest): Request[DeleteReplicationJobResponse] = js.native
     def deleteServerCatalog(params: DeleteServerCatalogRequest): Request[DeleteServerCatalogResponse] = js.native
     def disassociateConnector(params: DisassociateConnectorRequest): Request[DisassociateConnectorResponse] = js.native
     def generateChangeSet(params: GenerateChangeSetRequest): Request[GenerateChangeSetResponse] = js.native
     def generateTemplate(params: GenerateTemplateRequest): Request[GenerateTemplateResponse] = js.native
     def getApp(params: GetAppRequest): Request[GetAppResponse] = js.native
-    def getAppLaunchConfiguration(
-        params: GetAppLaunchConfigurationRequest
-    ): Request[GetAppLaunchConfigurationResponse] = js.native
-    def getAppReplicationConfiguration(
-        params: GetAppReplicationConfigurationRequest
-    ): Request[GetAppReplicationConfigurationResponse] = js.native
+    def getAppLaunchConfiguration(params: GetAppLaunchConfigurationRequest): Request[GetAppLaunchConfigurationResponse] = js.native
+    def getAppReplicationConfiguration(params: GetAppReplicationConfigurationRequest): Request[GetAppReplicationConfigurationResponse] = js.native
     def getConnectors(params: GetConnectorsRequest): Request[GetConnectorsResponse] = js.native
     def getReplicationJobs(params: GetReplicationJobsRequest): Request[GetReplicationJobsResponse] = js.native
     def getReplicationRuns(params: GetReplicationRunsRequest): Request[GetReplicationRunsResponse] = js.native
@@ -182,16 +136,10 @@ package sms {
     def importServerCatalog(params: ImportServerCatalogRequest): Request[ImportServerCatalogResponse] = js.native
     def launchApp(params: LaunchAppRequest): Request[LaunchAppResponse] = js.native
     def listApps(params: ListAppsRequest): Request[ListAppsResponse] = js.native
-    def putAppLaunchConfiguration(
-        params: PutAppLaunchConfigurationRequest
-    ): Request[PutAppLaunchConfigurationResponse] = js.native
-    def putAppReplicationConfiguration(
-        params: PutAppReplicationConfigurationRequest
-    ): Request[PutAppReplicationConfigurationResponse] = js.native
+    def putAppLaunchConfiguration(params: PutAppLaunchConfigurationRequest): Request[PutAppLaunchConfigurationResponse] = js.native
+    def putAppReplicationConfiguration(params: PutAppReplicationConfigurationRequest): Request[PutAppReplicationConfigurationResponse] = js.native
     def startAppReplication(params: StartAppReplicationRequest): Request[StartAppReplicationResponse] = js.native
-    def startOnDemandReplicationRun(
-        params: StartOnDemandReplicationRunRequest
-    ): Request[StartOnDemandReplicationRunResponse] = js.native
+    def startOnDemandReplicationRun(params: StartOnDemandReplicationRunRequest): Request[StartOnDemandReplicationRunResponse] = js.native
     def stopAppReplication(params: StopAppReplicationRequest): Request[StopAppReplicationResponse] = js.native
     def terminateApp(params: TerminateAppRequest): Request[TerminateAppResponse] = js.native
     def updateApp(params: UpdateAppRequest): Request[UpdateAppResponse] = js.native
@@ -216,24 +164,22 @@ package sms {
     val TERMINATE_FAILED = "TERMINATE_FAILED".asInstanceOf[AppLaunchStatus]
     val TERMINATED = "TERMINATED".asInstanceOf[AppLaunchStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        READY_FOR_CONFIGURATION,
-        CONFIGURATION_IN_PROGRESS,
-        CONFIGURATION_INVALID,
-        READY_FOR_LAUNCH,
-        VALIDATION_IN_PROGRESS,
-        LAUNCH_PENDING,
-        LAUNCH_IN_PROGRESS,
-        LAUNCHED,
-        DELTA_LAUNCH_IN_PROGRESS,
-        DELTA_LAUNCH_FAILED,
-        LAUNCH_FAILED,
-        TERMINATE_IN_PROGRESS,
-        TERMINATE_FAILED,
-        TERMINATED
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      READY_FOR_CONFIGURATION,
+      CONFIGURATION_IN_PROGRESS,
+      CONFIGURATION_INVALID,
+      READY_FOR_LAUNCH,
+      VALIDATION_IN_PROGRESS,
+      LAUNCH_PENDING,
+      LAUNCH_IN_PROGRESS,
+      LAUNCHED,
+      DELTA_LAUNCH_IN_PROGRESS,
+      DELTA_LAUNCH_FAILED,
+      LAUNCH_FAILED,
+      TERMINATE_IN_PROGRESS,
+      TERMINATE_FAILED,
+      TERMINATED
+    ))
   }
 
   @js.native
@@ -255,25 +201,23 @@ package sms {
     val REPLICATION_STOP_FAILED = "REPLICATION_STOP_FAILED".asInstanceOf[AppReplicationStatus]
     val REPLICATION_STOPPED = "REPLICATION_STOPPED".asInstanceOf[AppReplicationStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        READY_FOR_CONFIGURATION,
-        CONFIGURATION_IN_PROGRESS,
-        CONFIGURATION_INVALID,
-        READY_FOR_REPLICATION,
-        VALIDATION_IN_PROGRESS,
-        REPLICATION_PENDING,
-        REPLICATION_IN_PROGRESS,
-        REPLICATED,
-        DELTA_REPLICATION_IN_PROGRESS,
-        DELTA_REPLICATED,
-        DELTA_REPLICATION_FAILED,
-        REPLICATION_FAILED,
-        REPLICATION_STOPPING,
-        REPLICATION_STOP_FAILED,
-        REPLICATION_STOPPED
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      READY_FOR_CONFIGURATION,
+      CONFIGURATION_IN_PROGRESS,
+      CONFIGURATION_INVALID,
+      READY_FOR_REPLICATION,
+      VALIDATION_IN_PROGRESS,
+      REPLICATION_PENDING,
+      REPLICATION_IN_PROGRESS,
+      REPLICATED,
+      DELTA_REPLICATION_IN_PROGRESS,
+      DELTA_REPLICATED,
+      DELTA_REPLICATION_FAILED,
+      REPLICATION_FAILED,
+      REPLICATION_STOPPING,
+      REPLICATION_STOP_FAILED,
+      REPLICATION_STOPPED
+    ))
   }
 
   @js.native
@@ -817,9 +761,7 @@ package sms {
       val __obj = js.Dynamic.literal()
       appId.foreach(__v => __obj.updateDynamic("appId")(__v.asInstanceOf[js.Any]))
       roleName.foreach(__v => __obj.updateDynamic("roleName")(__v.asInstanceOf[js.Any]))
-      serverGroupLaunchConfigurations.foreach(__v =>
-        __obj.updateDynamic("serverGroupLaunchConfigurations")(__v.asInstanceOf[js.Any])
-      )
+      serverGroupLaunchConfigurations.foreach(__v => __obj.updateDynamic("serverGroupLaunchConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAppLaunchConfigurationResponse]
     }
   }
@@ -851,9 +793,7 @@ package sms {
         serverGroupReplicationConfigurations: js.UndefOr[ServerGroupReplicationConfigurations] = js.undefined
     ): GetAppReplicationConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-      serverGroupReplicationConfigurations.foreach(__v =>
-        __obj.updateDynamic("serverGroupReplicationConfigurations")(__v.asInstanceOf[js.Any])
-      )
+      serverGroupReplicationConfigurations.foreach(__v => __obj.updateDynamic("serverGroupReplicationConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAppReplicationConfigurationResponse]
     }
   }
@@ -1224,9 +1164,7 @@ package sms {
       val __obj = js.Dynamic.literal()
       appId.foreach(__v => __obj.updateDynamic("appId")(__v.asInstanceOf[js.Any]))
       roleName.foreach(__v => __obj.updateDynamic("roleName")(__v.asInstanceOf[js.Any]))
-      serverGroupLaunchConfigurations.foreach(__v =>
-        __obj.updateDynamic("serverGroupLaunchConfigurations")(__v.asInstanceOf[js.Any])
-      )
+      serverGroupLaunchConfigurations.foreach(__v => __obj.updateDynamic("serverGroupLaunchConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutAppLaunchConfigurationRequest]
     }
   }
@@ -1258,9 +1196,7 @@ package sms {
     ): PutAppReplicationConfigurationRequest = {
       val __obj = js.Dynamic.literal()
       appId.foreach(__v => __obj.updateDynamic("appId")(__v.asInstanceOf[js.Any]))
-      serverGroupReplicationConfigurations.foreach(__v =>
-        __obj.updateDynamic("serverGroupReplicationConfigurations")(__v.asInstanceOf[js.Any])
-      )
+      serverGroupReplicationConfigurations.foreach(__v => __obj.updateDynamic("serverGroupReplicationConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutAppReplicationConfigurationRequest]
     }
   }
@@ -1332,9 +1268,7 @@ package sms {
       kmsKeyId.foreach(__v => __obj.updateDynamic("kmsKeyId")(__v.asInstanceOf[js.Any]))
       latestAmiId.foreach(__v => __obj.updateDynamic("latestAmiId")(__v.asInstanceOf[js.Any]))
       licenseType.foreach(__v => __obj.updateDynamic("licenseType")(__v.asInstanceOf[js.Any]))
-      nextReplicationRunStartTime.foreach(__v =>
-        __obj.updateDynamic("nextReplicationRunStartTime")(__v.asInstanceOf[js.Any])
-      )
+      nextReplicationRunStartTime.foreach(__v => __obj.updateDynamic("nextReplicationRunStartTime")(__v.asInstanceOf[js.Any]))
       numberOfRecentAmisToKeep.foreach(__v => __obj.updateDynamic("numberOfRecentAmisToKeep")(__v.asInstanceOf[js.Any]))
       replicationJobId.foreach(__v => __obj.updateDynamic("replicationJobId")(__v.asInstanceOf[js.Any]))
       replicationRunList.foreach(__v => __obj.updateDynamic("replicationRunList")(__v.asInstanceOf[js.Any]))
@@ -1362,8 +1296,7 @@ package sms {
     val PAUSED_ON_FAILURE = "PAUSED_ON_FAILURE".asInstanceOf[ReplicationJobState]
     val FAILING = "FAILING".asInstanceOf[ReplicationJobState]
 
-    val values =
-      js.Object.freeze(js.Array(PENDING, ACTIVE, FAILED, DELETING, DELETED, COMPLETED, PAUSED_ON_FAILURE, FAILING))
+    val values = js.Object.freeze(js.Array(PENDING, ACTIVE, FAILED, DELETING, DELETED, COMPLETED, PAUSED_ON_FAILURE, FAILING))
   }
 
   /**
@@ -1570,9 +1503,7 @@ package sms {
       val __obj = js.Dynamic.literal()
       launchOrder.foreach(__v => __obj.updateDynamic("launchOrder")(__v.asInstanceOf[js.Any]))
       serverGroupId.foreach(__v => __obj.updateDynamic("serverGroupId")(__v.asInstanceOf[js.Any]))
-      serverLaunchConfigurations.foreach(__v =>
-        __obj.updateDynamic("serverLaunchConfigurations")(__v.asInstanceOf[js.Any])
-      )
+      serverLaunchConfigurations.foreach(__v => __obj.updateDynamic("serverLaunchConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServerGroupLaunchConfiguration]
     }
   }
@@ -1594,9 +1525,7 @@ package sms {
     ): ServerGroupReplicationConfiguration = {
       val __obj = js.Dynamic.literal()
       serverGroupId.foreach(__v => __obj.updateDynamic("serverGroupId")(__v.asInstanceOf[js.Any]))
-      serverReplicationConfigurations.foreach(__v =>
-        __obj.updateDynamic("serverReplicationConfigurations")(__v.asInstanceOf[js.Any])
-      )
+      serverReplicationConfigurations.foreach(__v => __obj.updateDynamic("serverReplicationConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServerGroupReplicationConfiguration]
     }
   }
@@ -1661,9 +1590,7 @@ package sms {
     ): ServerReplicationConfiguration = {
       val __obj = js.Dynamic.literal()
       server.foreach(__v => __obj.updateDynamic("server")(__v.asInstanceOf[js.Any]))
-      serverReplicationParameters.foreach(__v =>
-        __obj.updateDynamic("serverReplicationParameters")(__v.asInstanceOf[js.Any])
-      )
+      serverReplicationParameters.foreach(__v => __obj.updateDynamic("serverReplicationParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServerReplicationConfiguration]
     }
   }
@@ -1947,9 +1874,7 @@ package sms {
       frequency.foreach(__v => __obj.updateDynamic("frequency")(__v.asInstanceOf[js.Any]))
       kmsKeyId.foreach(__v => __obj.updateDynamic("kmsKeyId")(__v.asInstanceOf[js.Any]))
       licenseType.foreach(__v => __obj.updateDynamic("licenseType")(__v.asInstanceOf[js.Any]))
-      nextReplicationRunStartTime.foreach(__v =>
-        __obj.updateDynamic("nextReplicationRunStartTime")(__v.asInstanceOf[js.Any])
-      )
+      nextReplicationRunStartTime.foreach(__v => __obj.updateDynamic("nextReplicationRunStartTime")(__v.asInstanceOf[js.Any]))
       numberOfRecentAmisToKeep.foreach(__v => __obj.updateDynamic("numberOfRecentAmisToKeep")(__v.asInstanceOf[js.Any]))
       roleName.foreach(__v => __obj.updateDynamic("roleName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateReplicationJobRequest]

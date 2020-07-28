@@ -38,60 +38,31 @@ package object groundstation {
 
   implicit final class GroundStationOps(private val service: GroundStation) extends AnyVal {
 
-    @inline def cancelContactFuture(params: CancelContactRequest): Future[ContactIdResponse] =
-      service.cancelContact(params).promise().toFuture
-    @inline def createConfigFuture(params: CreateConfigRequest): Future[ConfigIdResponse] =
-      service.createConfig(params).promise().toFuture
-    @inline def createDataflowEndpointGroupFuture(
-        params: CreateDataflowEndpointGroupRequest
-    ): Future[DataflowEndpointGroupIdResponse] = service.createDataflowEndpointGroup(params).promise().toFuture
-    @inline def createMissionProfileFuture(params: CreateMissionProfileRequest): Future[MissionProfileIdResponse] =
-      service.createMissionProfile(params).promise().toFuture
-    @inline def deleteConfigFuture(params: DeleteConfigRequest): Future[ConfigIdResponse] =
-      service.deleteConfig(params).promise().toFuture
-    @inline def deleteDataflowEndpointGroupFuture(
-        params: DeleteDataflowEndpointGroupRequest
-    ): Future[DataflowEndpointGroupIdResponse] = service.deleteDataflowEndpointGroup(params).promise().toFuture
-    @inline def deleteMissionProfileFuture(params: DeleteMissionProfileRequest): Future[MissionProfileIdResponse] =
-      service.deleteMissionProfile(params).promise().toFuture
-    @inline def describeContactFuture(params: DescribeContactRequest): Future[DescribeContactResponse] =
-      service.describeContact(params).promise().toFuture
-    @inline def getConfigFuture(params: GetConfigRequest): Future[GetConfigResponse] =
-      service.getConfig(params).promise().toFuture
-    @inline def getDataflowEndpointGroupFuture(
-        params: GetDataflowEndpointGroupRequest
-    ): Future[GetDataflowEndpointGroupResponse] = service.getDataflowEndpointGroup(params).promise().toFuture
-    @inline def getMinuteUsageFuture(params: GetMinuteUsageRequest): Future[GetMinuteUsageResponse] =
-      service.getMinuteUsage(params).promise().toFuture
-    @inline def getMissionProfileFuture(params: GetMissionProfileRequest): Future[GetMissionProfileResponse] =
-      service.getMissionProfile(params).promise().toFuture
-    @inline def getSatelliteFuture(params: GetSatelliteRequest): Future[GetSatelliteResponse] =
-      service.getSatellite(params).promise().toFuture
-    @inline def listConfigsFuture(params: ListConfigsRequest): Future[ListConfigsResponse] =
-      service.listConfigs(params).promise().toFuture
-    @inline def listContactsFuture(params: ListContactsRequest): Future[ListContactsResponse] =
-      service.listContacts(params).promise().toFuture
-    @inline def listDataflowEndpointGroupsFuture(
-        params: ListDataflowEndpointGroupsRequest
-    ): Future[ListDataflowEndpointGroupsResponse] = service.listDataflowEndpointGroups(params).promise().toFuture
-    @inline def listGroundStationsFuture(params: ListGroundStationsRequest): Future[ListGroundStationsResponse] =
-      service.listGroundStations(params).promise().toFuture
-    @inline def listMissionProfilesFuture(params: ListMissionProfilesRequest): Future[ListMissionProfilesResponse] =
-      service.listMissionProfiles(params).promise().toFuture
-    @inline def listSatellitesFuture(params: ListSatellitesRequest): Future[ListSatellitesResponse] =
-      service.listSatellites(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def reserveContactFuture(params: ReserveContactRequest): Future[ContactIdResponse] =
-      service.reserveContact(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateConfigFuture(params: UpdateConfigRequest): Future[ConfigIdResponse] =
-      service.updateConfig(params).promise().toFuture
-    @inline def updateMissionProfileFuture(params: UpdateMissionProfileRequest): Future[MissionProfileIdResponse] =
-      service.updateMissionProfile(params).promise().toFuture
+    @inline def cancelContactFuture(params: CancelContactRequest): Future[ContactIdResponse] = service.cancelContact(params).promise().toFuture
+    @inline def createConfigFuture(params: CreateConfigRequest): Future[ConfigIdResponse] = service.createConfig(params).promise().toFuture
+    @inline def createDataflowEndpointGroupFuture(params: CreateDataflowEndpointGroupRequest): Future[DataflowEndpointGroupIdResponse] = service.createDataflowEndpointGroup(params).promise().toFuture
+    @inline def createMissionProfileFuture(params: CreateMissionProfileRequest): Future[MissionProfileIdResponse] = service.createMissionProfile(params).promise().toFuture
+    @inline def deleteConfigFuture(params: DeleteConfigRequest): Future[ConfigIdResponse] = service.deleteConfig(params).promise().toFuture
+    @inline def deleteDataflowEndpointGroupFuture(params: DeleteDataflowEndpointGroupRequest): Future[DataflowEndpointGroupIdResponse] = service.deleteDataflowEndpointGroup(params).promise().toFuture
+    @inline def deleteMissionProfileFuture(params: DeleteMissionProfileRequest): Future[MissionProfileIdResponse] = service.deleteMissionProfile(params).promise().toFuture
+    @inline def describeContactFuture(params: DescribeContactRequest): Future[DescribeContactResponse] = service.describeContact(params).promise().toFuture
+    @inline def getConfigFuture(params: GetConfigRequest): Future[GetConfigResponse] = service.getConfig(params).promise().toFuture
+    @inline def getDataflowEndpointGroupFuture(params: GetDataflowEndpointGroupRequest): Future[GetDataflowEndpointGroupResponse] = service.getDataflowEndpointGroup(params).promise().toFuture
+    @inline def getMinuteUsageFuture(params: GetMinuteUsageRequest): Future[GetMinuteUsageResponse] = service.getMinuteUsage(params).promise().toFuture
+    @inline def getMissionProfileFuture(params: GetMissionProfileRequest): Future[GetMissionProfileResponse] = service.getMissionProfile(params).promise().toFuture
+    @inline def getSatelliteFuture(params: GetSatelliteRequest): Future[GetSatelliteResponse] = service.getSatellite(params).promise().toFuture
+    @inline def listConfigsFuture(params: ListConfigsRequest): Future[ListConfigsResponse] = service.listConfigs(params).promise().toFuture
+    @inline def listContactsFuture(params: ListContactsRequest): Future[ListContactsResponse] = service.listContacts(params).promise().toFuture
+    @inline def listDataflowEndpointGroupsFuture(params: ListDataflowEndpointGroupsRequest): Future[ListDataflowEndpointGroupsResponse] = service.listDataflowEndpointGroups(params).promise().toFuture
+    @inline def listGroundStationsFuture(params: ListGroundStationsRequest): Future[ListGroundStationsResponse] = service.listGroundStations(params).promise().toFuture
+    @inline def listMissionProfilesFuture(params: ListMissionProfilesRequest): Future[ListMissionProfilesResponse] = service.listMissionProfiles(params).promise().toFuture
+    @inline def listSatellitesFuture(params: ListSatellitesRequest): Future[ListSatellitesResponse] = service.listSatellites(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def reserveContactFuture(params: ReserveContactRequest): Future[ContactIdResponse] = service.reserveContact(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateConfigFuture(params: UpdateConfigRequest): Future[ConfigIdResponse] = service.updateConfig(params).promise().toFuture
+    @inline def updateMissionProfileFuture(params: UpdateMissionProfileRequest): Future[MissionProfileIdResponse] = service.updateMissionProfile(params).promise().toFuture
   }
 }
 
@@ -103,27 +74,20 @@ package groundstation {
 
     def cancelContact(params: CancelContactRequest): Request[ContactIdResponse] = js.native
     def createConfig(params: CreateConfigRequest): Request[ConfigIdResponse] = js.native
-    def createDataflowEndpointGroup(
-        params: CreateDataflowEndpointGroupRequest
-    ): Request[DataflowEndpointGroupIdResponse] = js.native
+    def createDataflowEndpointGroup(params: CreateDataflowEndpointGroupRequest): Request[DataflowEndpointGroupIdResponse] = js.native
     def createMissionProfile(params: CreateMissionProfileRequest): Request[MissionProfileIdResponse] = js.native
     def deleteConfig(params: DeleteConfigRequest): Request[ConfigIdResponse] = js.native
-    def deleteDataflowEndpointGroup(
-        params: DeleteDataflowEndpointGroupRequest
-    ): Request[DataflowEndpointGroupIdResponse] = js.native
+    def deleteDataflowEndpointGroup(params: DeleteDataflowEndpointGroupRequest): Request[DataflowEndpointGroupIdResponse] = js.native
     def deleteMissionProfile(params: DeleteMissionProfileRequest): Request[MissionProfileIdResponse] = js.native
     def describeContact(params: DescribeContactRequest): Request[DescribeContactResponse] = js.native
     def getConfig(params: GetConfigRequest): Request[GetConfigResponse] = js.native
-    def getDataflowEndpointGroup(params: GetDataflowEndpointGroupRequest): Request[GetDataflowEndpointGroupResponse] =
-      js.native
+    def getDataflowEndpointGroup(params: GetDataflowEndpointGroupRequest): Request[GetDataflowEndpointGroupResponse] = js.native
     def getMinuteUsage(params: GetMinuteUsageRequest): Request[GetMinuteUsageResponse] = js.native
     def getMissionProfile(params: GetMissionProfileRequest): Request[GetMissionProfileResponse] = js.native
     def getSatellite(params: GetSatelliteRequest): Request[GetSatelliteResponse] = js.native
     def listConfigs(params: ListConfigsRequest): Request[ListConfigsResponse] = js.native
     def listContacts(params: ListContactsRequest): Request[ListContactsResponse] = js.native
-    def listDataflowEndpointGroups(
-        params: ListDataflowEndpointGroupsRequest
-    ): Request[ListDataflowEndpointGroupsResponse] = js.native
+    def listDataflowEndpointGroups(params: ListDataflowEndpointGroupsRequest): Request[ListDataflowEndpointGroupsResponse] = js.native
     def listGroundStations(params: ListGroundStationsRequest): Request[ListGroundStationsResponse] = js.native
     def listMissionProfiles(params: ListMissionProfilesRequest): Request[ListMissionProfilesResponse] = js.native
     def listSatellites(params: ListSatellitesRequest): Request[ListSatellitesResponse] = js.native
@@ -279,16 +243,7 @@ package groundstation {
     val tracking = "tracking".asInstanceOf[ConfigCapabilityType]
     val `uplink-echo` = "uplink-echo".asInstanceOf[ConfigCapabilityType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `antenna-downlink`,
-        `antenna-downlink-demod-decode`,
-        `antenna-uplink`,
-        `dataflow-endpoint`,
-        tracking,
-        `uplink-echo`
-      )
-    )
+    val values = js.Object.freeze(js.Array(`antenna-downlink`, `antenna-downlink-demod-decode`, `antenna-uplink`, `dataflow-endpoint`, tracking, `uplink-echo`))
   }
 
   /**
@@ -307,9 +262,7 @@ package groundstation {
         endpointDetails: js.UndefOr[EndpointDetails] = js.undefined
     ): ConfigDetails = {
       val __obj = js.Dynamic.literal()
-      antennaDemodDecodeDetails.foreach(__v =>
-        __obj.updateDynamic("antennaDemodDecodeDetails")(__v.asInstanceOf[js.Any])
-      )
+      antennaDemodDecodeDetails.foreach(__v => __obj.updateDynamic("antennaDemodDecodeDetails")(__v.asInstanceOf[js.Any]))
       endpointDetails.foreach(__v => __obj.updateDynamic("endpointDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfigDetails]
     }
@@ -394,9 +347,7 @@ package groundstation {
     ): ConfigTypeData = {
       val __obj = js.Dynamic.literal()
       antennaDownlinkConfig.foreach(__v => __obj.updateDynamic("antennaDownlinkConfig")(__v.asInstanceOf[js.Any]))
-      antennaDownlinkDemodDecodeConfig.foreach(__v =>
-        __obj.updateDynamic("antennaDownlinkDemodDecodeConfig")(__v.asInstanceOf[js.Any])
-      )
+      antennaDownlinkDemodDecodeConfig.foreach(__v => __obj.updateDynamic("antennaDownlinkDemodDecodeConfig")(__v.asInstanceOf[js.Any]))
       antennaUplinkConfig.foreach(__v => __obj.updateDynamic("antennaUplinkConfig")(__v.asInstanceOf[js.Any]))
       dataflowEndpointConfig.foreach(__v => __obj.updateDynamic("dataflowEndpointConfig")(__v.asInstanceOf[js.Any]))
       trackingConfig.foreach(__v => __obj.updateDynamic("trackingConfig")(__v.asInstanceOf[js.Any]))
@@ -495,22 +446,7 @@ package groundstation {
     val SCHEDULED = "SCHEDULED".asInstanceOf[ContactStatus]
     val SCHEDULING = "SCHEDULING".asInstanceOf[ContactStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        AVAILABLE,
-        AWS_CANCELLED,
-        CANCELLED,
-        CANCELLING,
-        COMPLETED,
-        FAILED,
-        FAILED_TO_SCHEDULE,
-        PASS,
-        POSTPASS,
-        PREPASS,
-        SCHEDULED,
-        SCHEDULING
-      )
-    )
+    val values = js.Object.freeze(js.Array(AVAILABLE, AWS_CANCELLED, CANCELLED, CANCELLING, COMPLETED, FAILED, FAILED_TO_SCHEDULE, PASS, POSTPASS, PREPASS, SCHEDULED, SCHEDULING))
   }
 
   /**
@@ -596,12 +532,8 @@ package groundstation {
         "trackingConfigArn" -> trackingConfigArn.asInstanceOf[js.Any]
       )
 
-      contactPostPassDurationSeconds.foreach(__v =>
-        __obj.updateDynamic("contactPostPassDurationSeconds")(__v.asInstanceOf[js.Any])
-      )
-      contactPrePassDurationSeconds.foreach(__v =>
-        __obj.updateDynamic("contactPrePassDurationSeconds")(__v.asInstanceOf[js.Any])
-      )
+      contactPostPassDurationSeconds.foreach(__v => __obj.updateDynamic("contactPostPassDurationSeconds")(__v.asInstanceOf[js.Any]))
+      contactPrePassDurationSeconds.foreach(__v => __obj.updateDynamic("contactPrePassDurationSeconds")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateMissionProfileRequest]
     }
@@ -942,9 +874,7 @@ package groundstation {
       configDetails.foreach(__v => __obj.updateDynamic("configDetails")(__v.asInstanceOf[js.Any]))
       configId.foreach(__v => __obj.updateDynamic("configId")(__v.asInstanceOf[js.Any]))
       configType.foreach(__v => __obj.updateDynamic("configType")(__v.asInstanceOf[js.Any]))
-      dataflowDestinationRegion.foreach(__v =>
-        __obj.updateDynamic("dataflowDestinationRegion")(__v.asInstanceOf[js.Any])
-      )
+      dataflowDestinationRegion.foreach(__v => __obj.updateDynamic("dataflowDestinationRegion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Destination]
     }
   }
@@ -1252,15 +1182,9 @@ package groundstation {
         upcomingMinutesScheduled: js.UndefOr[Int] = js.undefined
     ): GetMinuteUsageResponse = {
       val __obj = js.Dynamic.literal()
-      estimatedMinutesRemaining.foreach(__v =>
-        __obj.updateDynamic("estimatedMinutesRemaining")(__v.asInstanceOf[js.Any])
-      )
-      isReservedMinutesCustomer.foreach(__v =>
-        __obj.updateDynamic("isReservedMinutesCustomer")(__v.asInstanceOf[js.Any])
-      )
-      totalReservedMinuteAllocation.foreach(__v =>
-        __obj.updateDynamic("totalReservedMinuteAllocation")(__v.asInstanceOf[js.Any])
-      )
+      estimatedMinutesRemaining.foreach(__v => __obj.updateDynamic("estimatedMinutesRemaining")(__v.asInstanceOf[js.Any]))
+      isReservedMinutesCustomer.foreach(__v => __obj.updateDynamic("isReservedMinutesCustomer")(__v.asInstanceOf[js.Any]))
+      totalReservedMinuteAllocation.foreach(__v => __obj.updateDynamic("totalReservedMinuteAllocation")(__v.asInstanceOf[js.Any]))
       totalScheduledMinutes.foreach(__v => __obj.updateDynamic("totalScheduledMinutes")(__v.asInstanceOf[js.Any]))
       upcomingMinutesScheduled.foreach(__v => __obj.updateDynamic("upcomingMinutesScheduled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMinuteUsageResponse]
@@ -1320,16 +1244,10 @@ package groundstation {
         trackingConfigArn: js.UndefOr[ConfigArn] = js.undefined
     ): GetMissionProfileResponse = {
       val __obj = js.Dynamic.literal()
-      contactPostPassDurationSeconds.foreach(__v =>
-        __obj.updateDynamic("contactPostPassDurationSeconds")(__v.asInstanceOf[js.Any])
-      )
-      contactPrePassDurationSeconds.foreach(__v =>
-        __obj.updateDynamic("contactPrePassDurationSeconds")(__v.asInstanceOf[js.Any])
-      )
+      contactPostPassDurationSeconds.foreach(__v => __obj.updateDynamic("contactPostPassDurationSeconds")(__v.asInstanceOf[js.Any]))
+      contactPrePassDurationSeconds.foreach(__v => __obj.updateDynamic("contactPrePassDurationSeconds")(__v.asInstanceOf[js.Any]))
       dataflowEdges.foreach(__v => __obj.updateDynamic("dataflowEdges")(__v.asInstanceOf[js.Any]))
-      minimumViableContactDurationSeconds.foreach(__v =>
-        __obj.updateDynamic("minimumViableContactDurationSeconds")(__v.asInstanceOf[js.Any])
-      )
+      minimumViableContactDurationSeconds.foreach(__v => __obj.updateDynamic("minimumViableContactDurationSeconds")(__v.asInstanceOf[js.Any]))
       missionProfileArn.foreach(__v => __obj.updateDynamic("missionProfileArn")(__v.asInstanceOf[js.Any]))
       missionProfileId.foreach(__v => __obj.updateDynamic("missionProfileId")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
@@ -1560,9 +1478,7 @@ package groundstation {
         nextToken: js.UndefOr[String] = js.undefined
     ): ListDataflowEndpointGroupsResponse = {
       val __obj = js.Dynamic.literal()
-      dataflowEndpointGroupList.foreach(__v =>
-        __obj.updateDynamic("dataflowEndpointGroupList")(__v.asInstanceOf[js.Any])
-      )
+      dataflowEndpointGroupList.foreach(__v => __obj.updateDynamic("dataflowEndpointGroupList")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDataflowEndpointGroupsResponse]
     }
@@ -2130,16 +2046,10 @@ package groundstation {
         "missionProfileId" -> missionProfileId.asInstanceOf[js.Any]
       )
 
-      contactPostPassDurationSeconds.foreach(__v =>
-        __obj.updateDynamic("contactPostPassDurationSeconds")(__v.asInstanceOf[js.Any])
-      )
-      contactPrePassDurationSeconds.foreach(__v =>
-        __obj.updateDynamic("contactPrePassDurationSeconds")(__v.asInstanceOf[js.Any])
-      )
+      contactPostPassDurationSeconds.foreach(__v => __obj.updateDynamic("contactPostPassDurationSeconds")(__v.asInstanceOf[js.Any]))
+      contactPrePassDurationSeconds.foreach(__v => __obj.updateDynamic("contactPrePassDurationSeconds")(__v.asInstanceOf[js.Any]))
       dataflowEdges.foreach(__v => __obj.updateDynamic("dataflowEdges")(__v.asInstanceOf[js.Any]))
-      minimumViableContactDurationSeconds.foreach(__v =>
-        __obj.updateDynamic("minimumViableContactDurationSeconds")(__v.asInstanceOf[js.Any])
-      )
+      minimumViableContactDurationSeconds.foreach(__v => __obj.updateDynamic("minimumViableContactDurationSeconds")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       trackingConfigArn.foreach(__v => __obj.updateDynamic("trackingConfigArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateMissionProfileRequest]

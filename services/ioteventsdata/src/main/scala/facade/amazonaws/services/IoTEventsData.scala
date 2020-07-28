@@ -34,14 +34,10 @@ package object ioteventsdata {
 
   implicit final class IoTEventsDataOps(private val service: IoTEventsData) extends AnyVal {
 
-    @inline def batchPutMessageFuture(params: BatchPutMessageRequest): Future[BatchPutMessageResponse] =
-      service.batchPutMessage(params).promise().toFuture
-    @inline def batchUpdateDetectorFuture(params: BatchUpdateDetectorRequest): Future[BatchUpdateDetectorResponse] =
-      service.batchUpdateDetector(params).promise().toFuture
-    @inline def describeDetectorFuture(params: DescribeDetectorRequest): Future[DescribeDetectorResponse] =
-      service.describeDetector(params).promise().toFuture
-    @inline def listDetectorsFuture(params: ListDetectorsRequest): Future[ListDetectorsResponse] =
-      service.listDetectors(params).promise().toFuture
+    @inline def batchPutMessageFuture(params: BatchPutMessageRequest): Future[BatchPutMessageResponse] = service.batchPutMessage(params).promise().toFuture
+    @inline def batchUpdateDetectorFuture(params: BatchUpdateDetectorRequest): Future[BatchUpdateDetectorResponse] = service.batchUpdateDetector(params).promise().toFuture
+    @inline def describeDetectorFuture(params: DescribeDetectorRequest): Future[DescribeDetectorResponse] = service.describeDetector(params).promise().toFuture
+    @inline def listDetectorsFuture(params: ListDetectorsRequest): Future[ListDetectorsResponse] = service.listDetectors(params).promise().toFuture
   }
 }
 
@@ -111,9 +107,7 @@ package ioteventsdata {
         BatchPutMessageErrorEntries: js.UndefOr[BatchPutMessageErrorEntries] = js.undefined
     ): BatchPutMessageResponse = {
       val __obj = js.Dynamic.literal()
-      BatchPutMessageErrorEntries.foreach(__v =>
-        __obj.updateDynamic("BatchPutMessageErrorEntries")(__v.asInstanceOf[js.Any])
-      )
+      BatchPutMessageErrorEntries.foreach(__v => __obj.updateDynamic("BatchPutMessageErrorEntries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchPutMessageResponse]
     }
   }
@@ -172,9 +166,7 @@ package ioteventsdata {
         batchUpdateDetectorErrorEntries: js.UndefOr[BatchUpdateDetectorErrorEntries] = js.undefined
     ): BatchUpdateDetectorResponse = {
       val __obj = js.Dynamic.literal()
-      batchUpdateDetectorErrorEntries.foreach(__v =>
-        __obj.updateDynamic("batchUpdateDetectorErrorEntries")(__v.asInstanceOf[js.Any])
-      )
+      batchUpdateDetectorErrorEntries.foreach(__v => __obj.updateDynamic("batchUpdateDetectorErrorEntries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchUpdateDetectorResponse]
     }
   }
@@ -366,15 +358,7 @@ package ioteventsdata {
     val ServiceUnavailableException = "ServiceUnavailableException".asInstanceOf[ErrorCode]
     val ThrottlingException = "ThrottlingException".asInstanceOf[ErrorCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ResourceNotFoundException,
-        InvalidRequestException,
-        InternalFailureException,
-        ServiceUnavailableException,
-        ThrottlingException
-      )
-    )
+    val values = js.Object.freeze(js.Array(ResourceNotFoundException, InvalidRequestException, InternalFailureException, ServiceUnavailableException, ThrottlingException))
   }
 
   @js.native

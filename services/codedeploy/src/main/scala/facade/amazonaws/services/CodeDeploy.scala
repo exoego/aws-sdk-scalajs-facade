@@ -117,106 +117,49 @@ package object codedeploy {
 
   implicit final class CodeDeployOps(private val service: CodeDeploy) extends AnyVal {
 
-    @inline def addTagsToOnPremisesInstancesFuture(params: AddTagsToOnPremisesInstancesInput): Future[js.Object] =
-      service.addTagsToOnPremisesInstances(params).promise().toFuture
-    @inline def batchGetApplicationRevisionsFuture(
-        params: BatchGetApplicationRevisionsInput
-    ): Future[BatchGetApplicationRevisionsOutput] = service.batchGetApplicationRevisions(params).promise().toFuture
-    @inline def batchGetApplicationsFuture(params: BatchGetApplicationsInput): Future[BatchGetApplicationsOutput] =
-      service.batchGetApplications(params).promise().toFuture
-    @inline def batchGetDeploymentGroupsFuture(
-        params: BatchGetDeploymentGroupsInput
-    ): Future[BatchGetDeploymentGroupsOutput] = service.batchGetDeploymentGroups(params).promise().toFuture
-    @inline def batchGetDeploymentTargetsFuture(
-        params: BatchGetDeploymentTargetsInput
-    ): Future[BatchGetDeploymentTargetsOutput] = service.batchGetDeploymentTargets(params).promise().toFuture
-    @inline def batchGetDeploymentsFuture(params: BatchGetDeploymentsInput): Future[BatchGetDeploymentsOutput] =
-      service.batchGetDeployments(params).promise().toFuture
-    @inline def batchGetOnPremisesInstancesFuture(
-        params: BatchGetOnPremisesInstancesInput
-    ): Future[BatchGetOnPremisesInstancesOutput] = service.batchGetOnPremisesInstances(params).promise().toFuture
-    @inline def continueDeploymentFuture(params: ContinueDeploymentInput): Future[js.Object] =
-      service.continueDeployment(params).promise().toFuture
-    @inline def createApplicationFuture(params: CreateApplicationInput): Future[CreateApplicationOutput] =
-      service.createApplication(params).promise().toFuture
-    @inline def createDeploymentConfigFuture(
-        params: CreateDeploymentConfigInput
-    ): Future[CreateDeploymentConfigOutput] = service.createDeploymentConfig(params).promise().toFuture
-    @inline def createDeploymentFuture(params: CreateDeploymentInput): Future[CreateDeploymentOutput] =
-      service.createDeployment(params).promise().toFuture
-    @inline def createDeploymentGroupFuture(params: CreateDeploymentGroupInput): Future[CreateDeploymentGroupOutput] =
-      service.createDeploymentGroup(params).promise().toFuture
-    @inline def deleteApplicationFuture(params: DeleteApplicationInput): Future[js.Object] =
-      service.deleteApplication(params).promise().toFuture
-    @inline def deleteDeploymentConfigFuture(params: DeleteDeploymentConfigInput): Future[js.Object] =
-      service.deleteDeploymentConfig(params).promise().toFuture
-    @inline def deleteDeploymentGroupFuture(params: DeleteDeploymentGroupInput): Future[DeleteDeploymentGroupOutput] =
-      service.deleteDeploymentGroup(params).promise().toFuture
-    @inline def deleteGitHubAccountTokenFuture(
-        params: DeleteGitHubAccountTokenInput
-    ): Future[DeleteGitHubAccountTokenOutput] = service.deleteGitHubAccountToken(params).promise().toFuture
-    @inline def deleteResourcesByExternalIdFuture(
-        params: DeleteResourcesByExternalIdInput
-    ): Future[DeleteResourcesByExternalIdOutput] = service.deleteResourcesByExternalId(params).promise().toFuture
-    @inline def deregisterOnPremisesInstanceFuture(params: DeregisterOnPremisesInstanceInput): Future[js.Object] =
-      service.deregisterOnPremisesInstance(params).promise().toFuture
-    @inline def getApplicationFuture(params: GetApplicationInput): Future[GetApplicationOutput] =
-      service.getApplication(params).promise().toFuture
-    @inline def getApplicationRevisionFuture(
-        params: GetApplicationRevisionInput
-    ): Future[GetApplicationRevisionOutput] = service.getApplicationRevision(params).promise().toFuture
-    @inline def getDeploymentConfigFuture(params: GetDeploymentConfigInput): Future[GetDeploymentConfigOutput] =
-      service.getDeploymentConfig(params).promise().toFuture
-    @inline def getDeploymentFuture(params: GetDeploymentInput): Future[GetDeploymentOutput] =
-      service.getDeployment(params).promise().toFuture
-    @inline def getDeploymentGroupFuture(params: GetDeploymentGroupInput): Future[GetDeploymentGroupOutput] =
-      service.getDeploymentGroup(params).promise().toFuture
-    @inline def getDeploymentTargetFuture(params: GetDeploymentTargetInput): Future[GetDeploymentTargetOutput] =
-      service.getDeploymentTarget(params).promise().toFuture
-    @inline def getOnPremisesInstanceFuture(params: GetOnPremisesInstanceInput): Future[GetOnPremisesInstanceOutput] =
-      service.getOnPremisesInstance(params).promise().toFuture
-    @inline def listApplicationRevisionsFuture(
-        params: ListApplicationRevisionsInput
-    ): Future[ListApplicationRevisionsOutput] = service.listApplicationRevisions(params).promise().toFuture
-    @inline def listApplicationsFuture(params: ListApplicationsInput): Future[ListApplicationsOutput] =
-      service.listApplications(params).promise().toFuture
-    @inline def listDeploymentConfigsFuture(params: ListDeploymentConfigsInput): Future[ListDeploymentConfigsOutput] =
-      service.listDeploymentConfigs(params).promise().toFuture
-    @inline def listDeploymentGroupsFuture(params: ListDeploymentGroupsInput): Future[ListDeploymentGroupsOutput] =
-      service.listDeploymentGroups(params).promise().toFuture
-    @inline def listDeploymentTargetsFuture(params: ListDeploymentTargetsInput): Future[ListDeploymentTargetsOutput] =
-      service.listDeploymentTargets(params).promise().toFuture
-    @inline def listDeploymentsFuture(params: ListDeploymentsInput): Future[ListDeploymentsOutput] =
-      service.listDeployments(params).promise().toFuture
-    @inline def listGitHubAccountTokenNamesFuture(
-        params: ListGitHubAccountTokenNamesInput
-    ): Future[ListGitHubAccountTokenNamesOutput] = service.listGitHubAccountTokenNames(params).promise().toFuture
-    @inline def listOnPremisesInstancesFuture(
-        params: ListOnPremisesInstancesInput
-    ): Future[ListOnPremisesInstancesOutput] = service.listOnPremisesInstances(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def putLifecycleEventHookExecutionStatusFuture(
-        params: PutLifecycleEventHookExecutionStatusInput
-    ): Future[PutLifecycleEventHookExecutionStatusOutput] =
-      service.putLifecycleEventHookExecutionStatus(params).promise().toFuture
-    @inline def registerApplicationRevisionFuture(params: RegisterApplicationRevisionInput): Future[js.Object] =
-      service.registerApplicationRevision(params).promise().toFuture
-    @inline def registerOnPremisesInstanceFuture(params: RegisterOnPremisesInstanceInput): Future[js.Object] =
-      service.registerOnPremisesInstance(params).promise().toFuture
-    @inline def removeTagsFromOnPremisesInstancesFuture(
-        params: RemoveTagsFromOnPremisesInstancesInput
-    ): Future[js.Object] = service.removeTagsFromOnPremisesInstances(params).promise().toFuture
-    @inline def stopDeploymentFuture(params: StopDeploymentInput): Future[StopDeploymentOutput] =
-      service.stopDeployment(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateApplicationFuture(params: UpdateApplicationInput): Future[js.Object] =
-      service.updateApplication(params).promise().toFuture
-    @inline def updateDeploymentGroupFuture(params: UpdateDeploymentGroupInput): Future[UpdateDeploymentGroupOutput] =
-      service.updateDeploymentGroup(params).promise().toFuture
+    @inline def addTagsToOnPremisesInstancesFuture(params: AddTagsToOnPremisesInstancesInput): Future[js.Object] = service.addTagsToOnPremisesInstances(params).promise().toFuture
+    @inline def batchGetApplicationRevisionsFuture(params: BatchGetApplicationRevisionsInput): Future[BatchGetApplicationRevisionsOutput] = service.batchGetApplicationRevisions(params).promise().toFuture
+    @inline def batchGetApplicationsFuture(params: BatchGetApplicationsInput): Future[BatchGetApplicationsOutput] = service.batchGetApplications(params).promise().toFuture
+    @inline def batchGetDeploymentGroupsFuture(params: BatchGetDeploymentGroupsInput): Future[BatchGetDeploymentGroupsOutput] = service.batchGetDeploymentGroups(params).promise().toFuture
+    @inline def batchGetDeploymentTargetsFuture(params: BatchGetDeploymentTargetsInput): Future[BatchGetDeploymentTargetsOutput] = service.batchGetDeploymentTargets(params).promise().toFuture
+    @inline def batchGetDeploymentsFuture(params: BatchGetDeploymentsInput): Future[BatchGetDeploymentsOutput] = service.batchGetDeployments(params).promise().toFuture
+    @inline def batchGetOnPremisesInstancesFuture(params: BatchGetOnPremisesInstancesInput): Future[BatchGetOnPremisesInstancesOutput] = service.batchGetOnPremisesInstances(params).promise().toFuture
+    @inline def continueDeploymentFuture(params: ContinueDeploymentInput): Future[js.Object] = service.continueDeployment(params).promise().toFuture
+    @inline def createApplicationFuture(params: CreateApplicationInput): Future[CreateApplicationOutput] = service.createApplication(params).promise().toFuture
+    @inline def createDeploymentConfigFuture(params: CreateDeploymentConfigInput): Future[CreateDeploymentConfigOutput] = service.createDeploymentConfig(params).promise().toFuture
+    @inline def createDeploymentFuture(params: CreateDeploymentInput): Future[CreateDeploymentOutput] = service.createDeployment(params).promise().toFuture
+    @inline def createDeploymentGroupFuture(params: CreateDeploymentGroupInput): Future[CreateDeploymentGroupOutput] = service.createDeploymentGroup(params).promise().toFuture
+    @inline def deleteApplicationFuture(params: DeleteApplicationInput): Future[js.Object] = service.deleteApplication(params).promise().toFuture
+    @inline def deleteDeploymentConfigFuture(params: DeleteDeploymentConfigInput): Future[js.Object] = service.deleteDeploymentConfig(params).promise().toFuture
+    @inline def deleteDeploymentGroupFuture(params: DeleteDeploymentGroupInput): Future[DeleteDeploymentGroupOutput] = service.deleteDeploymentGroup(params).promise().toFuture
+    @inline def deleteGitHubAccountTokenFuture(params: DeleteGitHubAccountTokenInput): Future[DeleteGitHubAccountTokenOutput] = service.deleteGitHubAccountToken(params).promise().toFuture
+    @inline def deleteResourcesByExternalIdFuture(params: DeleteResourcesByExternalIdInput): Future[DeleteResourcesByExternalIdOutput] = service.deleteResourcesByExternalId(params).promise().toFuture
+    @inline def deregisterOnPremisesInstanceFuture(params: DeregisterOnPremisesInstanceInput): Future[js.Object] = service.deregisterOnPremisesInstance(params).promise().toFuture
+    @inline def getApplicationFuture(params: GetApplicationInput): Future[GetApplicationOutput] = service.getApplication(params).promise().toFuture
+    @inline def getApplicationRevisionFuture(params: GetApplicationRevisionInput): Future[GetApplicationRevisionOutput] = service.getApplicationRevision(params).promise().toFuture
+    @inline def getDeploymentConfigFuture(params: GetDeploymentConfigInput): Future[GetDeploymentConfigOutput] = service.getDeploymentConfig(params).promise().toFuture
+    @inline def getDeploymentFuture(params: GetDeploymentInput): Future[GetDeploymentOutput] = service.getDeployment(params).promise().toFuture
+    @inline def getDeploymentGroupFuture(params: GetDeploymentGroupInput): Future[GetDeploymentGroupOutput] = service.getDeploymentGroup(params).promise().toFuture
+    @inline def getDeploymentTargetFuture(params: GetDeploymentTargetInput): Future[GetDeploymentTargetOutput] = service.getDeploymentTarget(params).promise().toFuture
+    @inline def getOnPremisesInstanceFuture(params: GetOnPremisesInstanceInput): Future[GetOnPremisesInstanceOutput] = service.getOnPremisesInstance(params).promise().toFuture
+    @inline def listApplicationRevisionsFuture(params: ListApplicationRevisionsInput): Future[ListApplicationRevisionsOutput] = service.listApplicationRevisions(params).promise().toFuture
+    @inline def listApplicationsFuture(params: ListApplicationsInput): Future[ListApplicationsOutput] = service.listApplications(params).promise().toFuture
+    @inline def listDeploymentConfigsFuture(params: ListDeploymentConfigsInput): Future[ListDeploymentConfigsOutput] = service.listDeploymentConfigs(params).promise().toFuture
+    @inline def listDeploymentGroupsFuture(params: ListDeploymentGroupsInput): Future[ListDeploymentGroupsOutput] = service.listDeploymentGroups(params).promise().toFuture
+    @inline def listDeploymentTargetsFuture(params: ListDeploymentTargetsInput): Future[ListDeploymentTargetsOutput] = service.listDeploymentTargets(params).promise().toFuture
+    @inline def listDeploymentsFuture(params: ListDeploymentsInput): Future[ListDeploymentsOutput] = service.listDeployments(params).promise().toFuture
+    @inline def listGitHubAccountTokenNamesFuture(params: ListGitHubAccountTokenNamesInput): Future[ListGitHubAccountTokenNamesOutput] = service.listGitHubAccountTokenNames(params).promise().toFuture
+    @inline def listOnPremisesInstancesFuture(params: ListOnPremisesInstancesInput): Future[ListOnPremisesInstancesOutput] = service.listOnPremisesInstances(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] = service.listTagsForResource(params).promise().toFuture
+    @inline def putLifecycleEventHookExecutionStatusFuture(params: PutLifecycleEventHookExecutionStatusInput): Future[PutLifecycleEventHookExecutionStatusOutput] = service.putLifecycleEventHookExecutionStatus(params).promise().toFuture
+    @inline def registerApplicationRevisionFuture(params: RegisterApplicationRevisionInput): Future[js.Object] = service.registerApplicationRevision(params).promise().toFuture
+    @inline def registerOnPremisesInstanceFuture(params: RegisterOnPremisesInstanceInput): Future[js.Object] = service.registerOnPremisesInstance(params).promise().toFuture
+    @inline def removeTagsFromOnPremisesInstancesFuture(params: RemoveTagsFromOnPremisesInstancesInput): Future[js.Object] = service.removeTagsFromOnPremisesInstances(params).promise().toFuture
+    @inline def stopDeploymentFuture(params: StopDeploymentInput): Future[StopDeploymentOutput] = service.stopDeployment(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] = service.untagResource(params).promise().toFuture
+    @inline def updateApplicationFuture(params: UpdateApplicationInput): Future[js.Object] = service.updateApplication(params).promise().toFuture
+    @inline def updateDeploymentGroupFuture(params: UpdateDeploymentGroupInput): Future[UpdateDeploymentGroupOutput] = service.updateDeploymentGroup(params).promise().toFuture
   }
 }
 
@@ -227,18 +170,12 @@ package codedeploy {
     def this(config: AWSConfig) = this()
 
     def addTagsToOnPremisesInstances(params: AddTagsToOnPremisesInstancesInput): Request[js.Object] = js.native
-    def batchGetApplicationRevisions(
-        params: BatchGetApplicationRevisionsInput
-    ): Request[BatchGetApplicationRevisionsOutput] = js.native
+    def batchGetApplicationRevisions(params: BatchGetApplicationRevisionsInput): Request[BatchGetApplicationRevisionsOutput] = js.native
     def batchGetApplications(params: BatchGetApplicationsInput): Request[BatchGetApplicationsOutput] = js.native
-    def batchGetDeploymentGroups(params: BatchGetDeploymentGroupsInput): Request[BatchGetDeploymentGroupsOutput] =
-      js.native
-    def batchGetDeploymentTargets(params: BatchGetDeploymentTargetsInput): Request[BatchGetDeploymentTargetsOutput] =
-      js.native
+    def batchGetDeploymentGroups(params: BatchGetDeploymentGroupsInput): Request[BatchGetDeploymentGroupsOutput] = js.native
+    def batchGetDeploymentTargets(params: BatchGetDeploymentTargetsInput): Request[BatchGetDeploymentTargetsOutput] = js.native
     def batchGetDeployments(params: BatchGetDeploymentsInput): Request[BatchGetDeploymentsOutput] = js.native
-    def batchGetOnPremisesInstances(
-        params: BatchGetOnPremisesInstancesInput
-    ): Request[BatchGetOnPremisesInstancesOutput] = js.native
+    def batchGetOnPremisesInstances(params: BatchGetOnPremisesInstancesInput): Request[BatchGetOnPremisesInstancesOutput] = js.native
     def continueDeployment(params: ContinueDeploymentInput): Request[js.Object] = js.native
     def createApplication(params: CreateApplicationInput): Request[CreateApplicationOutput] = js.native
     def createDeployment(params: CreateDeploymentInput): Request[CreateDeploymentOutput] = js.native
@@ -247,11 +184,8 @@ package codedeploy {
     def deleteApplication(params: DeleteApplicationInput): Request[js.Object] = js.native
     def deleteDeploymentConfig(params: DeleteDeploymentConfigInput): Request[js.Object] = js.native
     def deleteDeploymentGroup(params: DeleteDeploymentGroupInput): Request[DeleteDeploymentGroupOutput] = js.native
-    def deleteGitHubAccountToken(params: DeleteGitHubAccountTokenInput): Request[DeleteGitHubAccountTokenOutput] =
-      js.native
-    def deleteResourcesByExternalId(
-        params: DeleteResourcesByExternalIdInput
-    ): Request[DeleteResourcesByExternalIdOutput] = js.native
+    def deleteGitHubAccountToken(params: DeleteGitHubAccountTokenInput): Request[DeleteGitHubAccountTokenOutput] = js.native
+    def deleteResourcesByExternalId(params: DeleteResourcesByExternalIdInput): Request[DeleteResourcesByExternalIdOutput] = js.native
     def deregisterOnPremisesInstance(params: DeregisterOnPremisesInstanceInput): Request[js.Object] = js.native
     def getApplication(params: GetApplicationInput): Request[GetApplicationOutput] = js.native
     def getApplicationRevision(params: GetApplicationRevisionInput): Request[GetApplicationRevisionOutput] = js.native
@@ -260,50 +194,28 @@ package codedeploy {
     def getDeploymentGroup(params: GetDeploymentGroupInput): Request[GetDeploymentGroupOutput] = js.native
     def getDeploymentTarget(params: GetDeploymentTargetInput): Request[GetDeploymentTargetOutput] = js.native
     def getOnPremisesInstance(params: GetOnPremisesInstanceInput): Request[GetOnPremisesInstanceOutput] = js.native
-    def listApplicationRevisions(params: ListApplicationRevisionsInput): Request[ListApplicationRevisionsOutput] =
-      js.native
+    def listApplicationRevisions(params: ListApplicationRevisionsInput): Request[ListApplicationRevisionsOutput] = js.native
     def listApplications(params: ListApplicationsInput): Request[ListApplicationsOutput] = js.native
     def listDeploymentConfigs(params: ListDeploymentConfigsInput): Request[ListDeploymentConfigsOutput] = js.native
     def listDeploymentGroups(params: ListDeploymentGroupsInput): Request[ListDeploymentGroupsOutput] = js.native
     def listDeploymentTargets(params: ListDeploymentTargetsInput): Request[ListDeploymentTargetsOutput] = js.native
     def listDeployments(params: ListDeploymentsInput): Request[ListDeploymentsOutput] = js.native
-    def listGitHubAccountTokenNames(
-        params: ListGitHubAccountTokenNamesInput
-    ): Request[ListGitHubAccountTokenNamesOutput] = js.native
-    def listOnPremisesInstances(params: ListOnPremisesInstancesInput): Request[ListOnPremisesInstancesOutput] =
-      js.native
+    def listGitHubAccountTokenNames(params: ListGitHubAccountTokenNamesInput): Request[ListGitHubAccountTokenNamesOutput] = js.native
+    def listOnPremisesInstances(params: ListOnPremisesInstancesInput): Request[ListOnPremisesInstancesOutput] = js.native
     def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput] = js.native
-    def putLifecycleEventHookExecutionStatus(
-        params: PutLifecycleEventHookExecutionStatusInput
-    ): Request[PutLifecycleEventHookExecutionStatusOutput] = js.native
+    def putLifecycleEventHookExecutionStatus(params: PutLifecycleEventHookExecutionStatusInput): Request[PutLifecycleEventHookExecutionStatusOutput] = js.native
     def registerApplicationRevision(params: RegisterApplicationRevisionInput): Request[js.Object] = js.native
     def registerOnPremisesInstance(params: RegisterOnPremisesInstanceInput): Request[js.Object] = js.native
-    def removeTagsFromOnPremisesInstances(params: RemoveTagsFromOnPremisesInstancesInput): Request[js.Object] =
-      js.native
+    def removeTagsFromOnPremisesInstances(params: RemoveTagsFromOnPremisesInstancesInput): Request[js.Object] = js.native
     def stopDeployment(params: StopDeploymentInput): Request[StopDeploymentOutput] = js.native
     def tagResource(params: TagResourceInput): Request[TagResourceOutput] = js.native
     def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
     def updateApplication(params: UpdateApplicationInput): Request[js.Object] = js.native
     def updateDeploymentGroup(params: UpdateDeploymentGroupInput): Request[UpdateDeploymentGroupOutput] = js.native
-    @deprecated(
-      "This operation is deprecated, use BatchGetDeploymentTargets instead.",
-      "forever"
-    ) def batchGetDeploymentInstances(
-        params: BatchGetDeploymentInstancesInput
-    ): Request[BatchGetDeploymentInstancesOutput] = js.native
-    @deprecated(
-      "This operation is deprecated, use ContinueDeployment with DeploymentWaitType instead.",
-      "forever"
-    ) def skipWaitTimeForInstanceTermination(params: SkipWaitTimeForInstanceTerminationInput): Request[js.Object] =
-      js.native
-    @deprecated("This operation is deprecated, use GetDeploymentTarget instead.", "forever") def getDeploymentInstance(
-        params: GetDeploymentInstanceInput
-    ): Request[GetDeploymentInstanceOutput] = js.native
-    @deprecated(
-      "This operation is deprecated, use ListDeploymentTargets instead.",
-      "forever"
-    ) def listDeploymentInstances(params: ListDeploymentInstancesInput): Request[ListDeploymentInstancesOutput] =
-      js.native
+    @deprecated("This operation is deprecated, use BatchGetDeploymentTargets instead.", "forever") def batchGetDeploymentInstances(params: BatchGetDeploymentInstancesInput): Request[BatchGetDeploymentInstancesOutput] = js.native
+    @deprecated("This operation is deprecated, use ContinueDeployment with DeploymentWaitType instead.", "forever") def skipWaitTimeForInstanceTermination(params: SkipWaitTimeForInstanceTerminationInput): Request[js.Object] = js.native
+    @deprecated("This operation is deprecated, use GetDeploymentTarget instead.", "forever") def getDeploymentInstance(params: GetDeploymentInstanceInput): Request[GetDeploymentInstanceOutput] = js.native
+    @deprecated("This operation is deprecated, use ListDeploymentTargets instead.", "forever") def listDeploymentInstances(params: ListDeploymentInstancesInput): Request[ListDeploymentInstancesOutput] = js.native
   }
 
   /**
@@ -809,12 +721,8 @@ package codedeploy {
     ): BlueGreenDeploymentConfiguration = {
       val __obj = js.Dynamic.literal()
       deploymentReadyOption.foreach(__v => __obj.updateDynamic("deploymentReadyOption")(__v.asInstanceOf[js.Any]))
-      greenFleetProvisioningOption.foreach(__v =>
-        __obj.updateDynamic("greenFleetProvisioningOption")(__v.asInstanceOf[js.Any])
-      )
-      terminateBlueInstancesOnDeploymentSuccess.foreach(__v =>
-        __obj.updateDynamic("terminateBlueInstancesOnDeploymentSuccess")(__v.asInstanceOf[js.Any])
-      )
+      greenFleetProvisioningOption.foreach(__v => __obj.updateDynamic("greenFleetProvisioningOption")(__v.asInstanceOf[js.Any]))
+      terminateBlueInstancesOnDeploymentSuccess.foreach(__v => __obj.updateDynamic("terminateBlueInstancesOnDeploymentSuccess")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BlueGreenDeploymentConfiguration]
     }
   }
@@ -836,9 +744,7 @@ package codedeploy {
     ): BlueInstanceTerminationOption = {
       val __obj = js.Dynamic.literal()
       action.foreach(__v => __obj.updateDynamic("action")(__v.asInstanceOf[js.Any]))
-      terminationWaitTimeInMinutes.foreach(__v =>
-        __obj.updateDynamic("terminationWaitTimeInMinutes")(__v.asInstanceOf[js.Any])
-      )
+      terminationWaitTimeInMinutes.foreach(__v => __obj.updateDynamic("terminationWaitTimeInMinutes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BlueInstanceTerminationOption]
     }
   }
@@ -1068,22 +974,16 @@ package codedeploy {
       )
 
       alarmConfiguration.foreach(__v => __obj.updateDynamic("alarmConfiguration")(__v.asInstanceOf[js.Any]))
-      autoRollbackConfiguration.foreach(__v =>
-        __obj.updateDynamic("autoRollbackConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      autoRollbackConfiguration.foreach(__v => __obj.updateDynamic("autoRollbackConfiguration")(__v.asInstanceOf[js.Any]))
       autoScalingGroups.foreach(__v => __obj.updateDynamic("autoScalingGroups")(__v.asInstanceOf[js.Any]))
-      blueGreenDeploymentConfiguration.foreach(__v =>
-        __obj.updateDynamic("blueGreenDeploymentConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      blueGreenDeploymentConfiguration.foreach(__v => __obj.updateDynamic("blueGreenDeploymentConfiguration")(__v.asInstanceOf[js.Any]))
       deploymentConfigName.foreach(__v => __obj.updateDynamic("deploymentConfigName")(__v.asInstanceOf[js.Any]))
       deploymentStyle.foreach(__v => __obj.updateDynamic("deploymentStyle")(__v.asInstanceOf[js.Any]))
       ec2TagFilters.foreach(__v => __obj.updateDynamic("ec2TagFilters")(__v.asInstanceOf[js.Any]))
       ec2TagSet.foreach(__v => __obj.updateDynamic("ec2TagSet")(__v.asInstanceOf[js.Any]))
       ecsServices.foreach(__v => __obj.updateDynamic("ecsServices")(__v.asInstanceOf[js.Any]))
       loadBalancerInfo.foreach(__v => __obj.updateDynamic("loadBalancerInfo")(__v.asInstanceOf[js.Any]))
-      onPremisesInstanceTagFilters.foreach(__v =>
-        __obj.updateDynamic("onPremisesInstanceTagFilters")(__v.asInstanceOf[js.Any])
-      )
+      onPremisesInstanceTagFilters.foreach(__v => __obj.updateDynamic("onPremisesInstanceTagFilters")(__v.asInstanceOf[js.Any]))
       onPremisesTagSet.foreach(__v => __obj.updateDynamic("onPremisesTagSet")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       triggerConfigurations.foreach(__v => __obj.updateDynamic("triggerConfigurations")(__v.asInstanceOf[js.Any]))
@@ -1145,21 +1045,15 @@ package codedeploy {
         "applicationName" -> applicationName.asInstanceOf[js.Any]
       )
 
-      autoRollbackConfiguration.foreach(__v =>
-        __obj.updateDynamic("autoRollbackConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      autoRollbackConfiguration.foreach(__v => __obj.updateDynamic("autoRollbackConfiguration")(__v.asInstanceOf[js.Any]))
       deploymentConfigName.foreach(__v => __obj.updateDynamic("deploymentConfigName")(__v.asInstanceOf[js.Any]))
       deploymentGroupName.foreach(__v => __obj.updateDynamic("deploymentGroupName")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       fileExistsBehavior.foreach(__v => __obj.updateDynamic("fileExistsBehavior")(__v.asInstanceOf[js.Any]))
-      ignoreApplicationStopFailures.foreach(__v =>
-        __obj.updateDynamic("ignoreApplicationStopFailures")(__v.asInstanceOf[js.Any])
-      )
+      ignoreApplicationStopFailures.foreach(__v => __obj.updateDynamic("ignoreApplicationStopFailures")(__v.asInstanceOf[js.Any]))
       revision.foreach(__v => __obj.updateDynamic("revision")(__v.asInstanceOf[js.Any]))
       targetInstances.foreach(__v => __obj.updateDynamic("targetInstances")(__v.asInstanceOf[js.Any]))
-      updateOutdatedInstancesOnly.foreach(__v =>
-        __obj.updateDynamic("updateOutdatedInstancesOnly")(__v.asInstanceOf[js.Any])
-      )
+      updateOutdatedInstancesOnly.foreach(__v => __obj.updateDynamic("updateOutdatedInstancesOnly")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDeploymentInput]
     }
   }
@@ -1379,9 +1273,7 @@ package codedeploy {
     val CloudFormation = "CloudFormation".asInstanceOf[DeploymentCreator]
     val CloudFormationRollback = "CloudFormationRollback".asInstanceOf[DeploymentCreator]
 
-    val values = js.Object.freeze(
-      js.Array(user, autoscaling, codeDeployRollback, CodeDeploy, CloudFormation, CloudFormationRollback)
-    )
+    val values = js.Object.freeze(js.Array(user, autoscaling, codeDeployRollback, CodeDeploy, CloudFormation, CloudFormationRollback))
   }
 
   /**
@@ -1440,13 +1332,9 @@ package codedeploy {
       val __obj = js.Dynamic.literal()
       alarmConfiguration.foreach(__v => __obj.updateDynamic("alarmConfiguration")(__v.asInstanceOf[js.Any]))
       applicationName.foreach(__v => __obj.updateDynamic("applicationName")(__v.asInstanceOf[js.Any]))
-      autoRollbackConfiguration.foreach(__v =>
-        __obj.updateDynamic("autoRollbackConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      autoRollbackConfiguration.foreach(__v => __obj.updateDynamic("autoRollbackConfiguration")(__v.asInstanceOf[js.Any]))
       autoScalingGroups.foreach(__v => __obj.updateDynamic("autoScalingGroups")(__v.asInstanceOf[js.Any]))
-      blueGreenDeploymentConfiguration.foreach(__v =>
-        __obj.updateDynamic("blueGreenDeploymentConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      blueGreenDeploymentConfiguration.foreach(__v => __obj.updateDynamic("blueGreenDeploymentConfiguration")(__v.asInstanceOf[js.Any]))
       computePlatform.foreach(__v => __obj.updateDynamic("computePlatform")(__v.asInstanceOf[js.Any]))
       deploymentConfigName.foreach(__v => __obj.updateDynamic("deploymentConfigName")(__v.asInstanceOf[js.Any]))
       deploymentGroupId.foreach(__v => __obj.updateDynamic("deploymentGroupId")(__v.asInstanceOf[js.Any]))
@@ -1458,9 +1346,7 @@ package codedeploy {
       lastAttemptedDeployment.foreach(__v => __obj.updateDynamic("lastAttemptedDeployment")(__v.asInstanceOf[js.Any]))
       lastSuccessfulDeployment.foreach(__v => __obj.updateDynamic("lastSuccessfulDeployment")(__v.asInstanceOf[js.Any]))
       loadBalancerInfo.foreach(__v => __obj.updateDynamic("loadBalancerInfo")(__v.asInstanceOf[js.Any]))
-      onPremisesInstanceTagFilters.foreach(__v =>
-        __obj.updateDynamic("onPremisesInstanceTagFilters")(__v.asInstanceOf[js.Any])
-      )
+      onPremisesInstanceTagFilters.foreach(__v => __obj.updateDynamic("onPremisesInstanceTagFilters")(__v.asInstanceOf[js.Any]))
       onPremisesTagSet.foreach(__v => __obj.updateDynamic("onPremisesTagSet")(__v.asInstanceOf[js.Any]))
       serviceRoleArn.foreach(__v => __obj.updateDynamic("serviceRoleArn")(__v.asInstanceOf[js.Any]))
       targetRevision.foreach(__v => __obj.updateDynamic("targetRevision")(__v.asInstanceOf[js.Any]))
@@ -1537,16 +1423,10 @@ package codedeploy {
         updateOutdatedInstancesOnly: js.UndefOr[Boolean] = js.undefined
     ): DeploymentInfo = {
       val __obj = js.Dynamic.literal()
-      additionalDeploymentStatusInfo.foreach(__v =>
-        __obj.updateDynamic("additionalDeploymentStatusInfo")(__v.asInstanceOf[js.Any])
-      )
+      additionalDeploymentStatusInfo.foreach(__v => __obj.updateDynamic("additionalDeploymentStatusInfo")(__v.asInstanceOf[js.Any]))
       applicationName.foreach(__v => __obj.updateDynamic("applicationName")(__v.asInstanceOf[js.Any]))
-      autoRollbackConfiguration.foreach(__v =>
-        __obj.updateDynamic("autoRollbackConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      blueGreenDeploymentConfiguration.foreach(__v =>
-        __obj.updateDynamic("blueGreenDeploymentConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      autoRollbackConfiguration.foreach(__v => __obj.updateDynamic("autoRollbackConfiguration")(__v.asInstanceOf[js.Any]))
+      blueGreenDeploymentConfiguration.foreach(__v => __obj.updateDynamic("blueGreenDeploymentConfiguration")(__v.asInstanceOf[js.Any]))
       completeTime.foreach(__v => __obj.updateDynamic("completeTime")(__v.asInstanceOf[js.Any]))
       computePlatform.foreach(__v => __obj.updateDynamic("computePlatform")(__v.asInstanceOf[js.Any]))
       createTime.foreach(__v => __obj.updateDynamic("createTime")(__v.asInstanceOf[js.Any]))
@@ -1561,12 +1441,8 @@ package codedeploy {
       errorInformation.foreach(__v => __obj.updateDynamic("errorInformation")(__v.asInstanceOf[js.Any]))
       externalId.foreach(__v => __obj.updateDynamic("externalId")(__v.asInstanceOf[js.Any]))
       fileExistsBehavior.foreach(__v => __obj.updateDynamic("fileExistsBehavior")(__v.asInstanceOf[js.Any]))
-      ignoreApplicationStopFailures.foreach(__v =>
-        __obj.updateDynamic("ignoreApplicationStopFailures")(__v.asInstanceOf[js.Any])
-      )
-      instanceTerminationWaitTimeStarted.foreach(__v =>
-        __obj.updateDynamic("instanceTerminationWaitTimeStarted")(__v.asInstanceOf[js.Any])
-      )
+      ignoreApplicationStopFailures.foreach(__v => __obj.updateDynamic("ignoreApplicationStopFailures")(__v.asInstanceOf[js.Any]))
+      instanceTerminationWaitTimeStarted.foreach(__v => __obj.updateDynamic("instanceTerminationWaitTimeStarted")(__v.asInstanceOf[js.Any]))
       loadBalancerInfo.foreach(__v => __obj.updateDynamic("loadBalancerInfo")(__v.asInstanceOf[js.Any]))
       previousRevision.foreach(__v => __obj.updateDynamic("previousRevision")(__v.asInstanceOf[js.Any]))
       revision.foreach(__v => __obj.updateDynamic("revision")(__v.asInstanceOf[js.Any]))
@@ -1574,9 +1450,7 @@ package codedeploy {
       startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       targetInstances.foreach(__v => __obj.updateDynamic("targetInstances")(__v.asInstanceOf[js.Any]))
-      updateOutdatedInstancesOnly.foreach(__v =>
-        __obj.updateDynamic("updateOutdatedInstancesOnly")(__v.asInstanceOf[js.Any])
-      )
+      updateOutdatedInstancesOnly.foreach(__v => __obj.updateDynamic("updateOutdatedInstancesOnly")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeploymentInfo]
     }
   }
@@ -1999,8 +1873,7 @@ package codedeploy {
     val INVALID_LAMBDA_FUNCTION = "INVALID_LAMBDA_FUNCTION".asInstanceOf[ErrorCode]
     val INVALID_REVISION = "INVALID_REVISION".asInstanceOf[ErrorCode]
     val MANUAL_STOP = "MANUAL_STOP".asInstanceOf[ErrorCode]
-    val MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION =
-      "MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION".asInstanceOf[ErrorCode]
+    val MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION = "MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION".asInstanceOf[ErrorCode]
     val MISSING_ELB_INFORMATION = "MISSING_ELB_INFORMATION".asInstanceOf[ErrorCode]
     val MISSING_GITHUB_TOKEN = "MISSING_GITHUB_TOKEN".asInstanceOf[ErrorCode]
     val NO_EC2_SUBSCRIPTION = "NO_EC2_SUBSCRIPTION".asInstanceOf[ErrorCode]
@@ -2012,44 +1885,42 @@ package codedeploy {
     val TIMEOUT = "TIMEOUT".asInstanceOf[ErrorCode]
     val CLOUDFORMATION_STACK_FAILURE = "CLOUDFORMATION_STACK_FAILURE".asInstanceOf[ErrorCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        AGENT_ISSUE,
-        ALARM_ACTIVE,
-        APPLICATION_MISSING,
-        AUTOSCALING_VALIDATION_ERROR,
-        AUTO_SCALING_CONFIGURATION,
-        AUTO_SCALING_IAM_ROLE_PERMISSIONS,
-        CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND,
-        CUSTOMER_APPLICATION_UNHEALTHY,
-        DEPLOYMENT_GROUP_MISSING,
-        ECS_UPDATE_ERROR,
-        ELASTIC_LOAD_BALANCING_INVALID,
-        ELB_INVALID_INSTANCE,
-        HEALTH_CONSTRAINTS,
-        HEALTH_CONSTRAINTS_INVALID,
-        HOOK_EXECUTION_FAILURE,
-        IAM_ROLE_MISSING,
-        IAM_ROLE_PERMISSIONS,
-        INTERNAL_ERROR,
-        INVALID_ECS_SERVICE,
-        INVALID_LAMBDA_CONFIGURATION,
-        INVALID_LAMBDA_FUNCTION,
-        INVALID_REVISION,
-        MANUAL_STOP,
-        MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION,
-        MISSING_ELB_INFORMATION,
-        MISSING_GITHUB_TOKEN,
-        NO_EC2_SUBSCRIPTION,
-        NO_INSTANCES,
-        OVER_MAX_INSTANCES,
-        RESOURCE_LIMIT_EXCEEDED,
-        REVISION_MISSING,
-        THROTTLED,
-        TIMEOUT,
-        CLOUDFORMATION_STACK_FAILURE
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      AGENT_ISSUE,
+      ALARM_ACTIVE,
+      APPLICATION_MISSING,
+      AUTOSCALING_VALIDATION_ERROR,
+      AUTO_SCALING_CONFIGURATION,
+      AUTO_SCALING_IAM_ROLE_PERMISSIONS,
+      CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND,
+      CUSTOMER_APPLICATION_UNHEALTHY,
+      DEPLOYMENT_GROUP_MISSING,
+      ECS_UPDATE_ERROR,
+      ELASTIC_LOAD_BALANCING_INVALID,
+      ELB_INVALID_INSTANCE,
+      HEALTH_CONSTRAINTS,
+      HEALTH_CONSTRAINTS_INVALID,
+      HOOK_EXECUTION_FAILURE,
+      IAM_ROLE_MISSING,
+      IAM_ROLE_PERMISSIONS,
+      INTERNAL_ERROR,
+      INVALID_ECS_SERVICE,
+      INVALID_LAMBDA_CONFIGURATION,
+      INVALID_LAMBDA_FUNCTION,
+      INVALID_REVISION,
+      MANUAL_STOP,
+      MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION,
+      MISSING_ELB_INFORMATION,
+      MISSING_GITHUB_TOKEN,
+      NO_EC2_SUBSCRIPTION,
+      NO_INSTANCES,
+      OVER_MAX_INSTANCES,
+      RESOURCE_LIMIT_EXCEEDED,
+      REVISION_MISSING,
+      THROTTLED,
+      TIMEOUT,
+      CLOUDFORMATION_STACK_FAILURE
+    ))
   }
 
   /**
@@ -2743,9 +2614,7 @@ package codedeploy {
     val ScriptFailed = "ScriptFailed".asInstanceOf[LifecycleErrorCode]
     val UnknownError = "UnknownError".asInstanceOf[LifecycleErrorCode]
 
-    val values = js.Object.freeze(
-      js.Array(Success, ScriptMissing, ScriptNotExecutable, ScriptTimedOut, ScriptFailed, UnknownError)
-    )
+    val values = js.Object.freeze(js.Array(Success, ScriptMissing, ScriptNotExecutable, ScriptTimedOut, ScriptFailed, UnknownError))
   }
 
   /**
@@ -3362,9 +3231,7 @@ package codedeploy {
     ): PutLifecycleEventHookExecutionStatusInput = {
       val __obj = js.Dynamic.literal()
       deploymentId.foreach(__v => __obj.updateDynamic("deploymentId")(__v.asInstanceOf[js.Any]))
-      lifecycleEventHookExecutionId.foreach(__v =>
-        __obj.updateDynamic("lifecycleEventHookExecutionId")(__v.asInstanceOf[js.Any])
-      )
+      lifecycleEventHookExecutionId.foreach(__v => __obj.updateDynamic("lifecycleEventHookExecutionId")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutLifecycleEventHookExecutionStatusInput]
     }
@@ -3381,9 +3248,7 @@ package codedeploy {
         lifecycleEventHookExecutionId: js.UndefOr[LifecycleEventHookExecutionId] = js.undefined
     ): PutLifecycleEventHookExecutionStatusOutput = {
       val __obj = js.Dynamic.literal()
-      lifecycleEventHookExecutionId.foreach(__v =>
-        __obj.updateDynamic("lifecycleEventHookExecutionId")(__v.asInstanceOf[js.Any])
-      )
+      lifecycleEventHookExecutionId.foreach(__v => __obj.updateDynamic("lifecycleEventHookExecutionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutLifecycleEventHookExecutionStatusOutput]
     }
   }
@@ -3582,9 +3447,7 @@ package codedeploy {
       val __obj = js.Dynamic.literal()
       rollbackDeploymentId.foreach(__v => __obj.updateDynamic("rollbackDeploymentId")(__v.asInstanceOf[js.Any]))
       rollbackMessage.foreach(__v => __obj.updateDynamic("rollbackMessage")(__v.asInstanceOf[js.Any]))
-      rollbackTriggeringDeploymentId.foreach(__v =>
-        __obj.updateDynamic("rollbackTriggeringDeploymentId")(__v.asInstanceOf[js.Any])
-      )
+      rollbackTriggeringDeploymentId.foreach(__v => __obj.updateDynamic("rollbackTriggeringDeploymentId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RollbackInfo]
     }
   }
@@ -4051,20 +3914,18 @@ package codedeploy {
     val InstanceFailure = "InstanceFailure".asInstanceOf[TriggerEventType]
     val InstanceReady = "InstanceReady".asInstanceOf[TriggerEventType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        DeploymentStart,
-        DeploymentSuccess,
-        DeploymentFailure,
-        DeploymentStop,
-        DeploymentRollback,
-        DeploymentReady,
-        InstanceStart,
-        InstanceSuccess,
-        InstanceFailure,
-        InstanceReady
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      DeploymentStart,
+      DeploymentSuccess,
+      DeploymentFailure,
+      DeploymentStop,
+      DeploymentRollback,
+      DeploymentReady,
+      InstanceStart,
+      InstanceSuccess,
+      InstanceFailure,
+      InstanceReady
+    ))
   }
 
   @js.native
@@ -4174,13 +4035,9 @@ package codedeploy {
       )
 
       alarmConfiguration.foreach(__v => __obj.updateDynamic("alarmConfiguration")(__v.asInstanceOf[js.Any]))
-      autoRollbackConfiguration.foreach(__v =>
-        __obj.updateDynamic("autoRollbackConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      autoRollbackConfiguration.foreach(__v => __obj.updateDynamic("autoRollbackConfiguration")(__v.asInstanceOf[js.Any]))
       autoScalingGroups.foreach(__v => __obj.updateDynamic("autoScalingGroups")(__v.asInstanceOf[js.Any]))
-      blueGreenDeploymentConfiguration.foreach(__v =>
-        __obj.updateDynamic("blueGreenDeploymentConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      blueGreenDeploymentConfiguration.foreach(__v => __obj.updateDynamic("blueGreenDeploymentConfiguration")(__v.asInstanceOf[js.Any]))
       deploymentConfigName.foreach(__v => __obj.updateDynamic("deploymentConfigName")(__v.asInstanceOf[js.Any]))
       deploymentStyle.foreach(__v => __obj.updateDynamic("deploymentStyle")(__v.asInstanceOf[js.Any]))
       ec2TagFilters.foreach(__v => __obj.updateDynamic("ec2TagFilters")(__v.asInstanceOf[js.Any]))
@@ -4188,9 +4045,7 @@ package codedeploy {
       ecsServices.foreach(__v => __obj.updateDynamic("ecsServices")(__v.asInstanceOf[js.Any]))
       loadBalancerInfo.foreach(__v => __obj.updateDynamic("loadBalancerInfo")(__v.asInstanceOf[js.Any]))
       newDeploymentGroupName.foreach(__v => __obj.updateDynamic("newDeploymentGroupName")(__v.asInstanceOf[js.Any]))
-      onPremisesInstanceTagFilters.foreach(__v =>
-        __obj.updateDynamic("onPremisesInstanceTagFilters")(__v.asInstanceOf[js.Any])
-      )
+      onPremisesInstanceTagFilters.foreach(__v => __obj.updateDynamic("onPremisesInstanceTagFilters")(__v.asInstanceOf[js.Any]))
       onPremisesTagSet.foreach(__v => __obj.updateDynamic("onPremisesTagSet")(__v.asInstanceOf[js.Any]))
       serviceRoleArn.foreach(__v => __obj.updateDynamic("serviceRoleArn")(__v.asInstanceOf[js.Any]))
       triggerConfigurations.foreach(__v => __obj.updateDynamic("triggerConfigurations")(__v.asInstanceOf[js.Any]))

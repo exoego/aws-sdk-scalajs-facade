@@ -168,251 +168,85 @@ package object configservice {
 
   implicit final class ConfigServiceOps(private val service: ConfigService) extends AnyVal {
 
-    @inline def batchGetAggregateResourceConfigFuture(
-        params: BatchGetAggregateResourceConfigRequest
-    ): Future[BatchGetAggregateResourceConfigResponse] =
-      service.batchGetAggregateResourceConfig(params).promise().toFuture
-    @inline def batchGetResourceConfigFuture(
-        params: BatchGetResourceConfigRequest
-    ): Future[BatchGetResourceConfigResponse] = service.batchGetResourceConfig(params).promise().toFuture
-    @inline def deleteAggregationAuthorizationFuture(params: DeleteAggregationAuthorizationRequest): Future[js.Object] =
-      service.deleteAggregationAuthorization(params).promise().toFuture
-    @inline def deleteConfigRuleFuture(params: DeleteConfigRuleRequest): Future[js.Object] =
-      service.deleteConfigRule(params).promise().toFuture
-    @inline def deleteConfigurationAggregatorFuture(params: DeleteConfigurationAggregatorRequest): Future[js.Object] =
-      service.deleteConfigurationAggregator(params).promise().toFuture
-    @inline def deleteConfigurationRecorderFuture(params: DeleteConfigurationRecorderRequest): Future[js.Object] =
-      service.deleteConfigurationRecorder(params).promise().toFuture
-    @inline def deleteConformancePackFuture(params: DeleteConformancePackRequest): Future[js.Object] =
-      service.deleteConformancePack(params).promise().toFuture
-    @inline def deleteDeliveryChannelFuture(params: DeleteDeliveryChannelRequest): Future[js.Object] =
-      service.deleteDeliveryChannel(params).promise().toFuture
-    @inline def deleteEvaluationResultsFuture(
-        params: DeleteEvaluationResultsRequest
-    ): Future[DeleteEvaluationResultsResponse] = service.deleteEvaluationResults(params).promise().toFuture
-    @inline def deleteOrganizationConfigRuleFuture(params: DeleteOrganizationConfigRuleRequest): Future[js.Object] =
-      service.deleteOrganizationConfigRule(params).promise().toFuture
-    @inline def deleteOrganizationConformancePackFuture(
-        params: DeleteOrganizationConformancePackRequest
-    ): Future[js.Object] = service.deleteOrganizationConformancePack(params).promise().toFuture
-    @inline def deletePendingAggregationRequestFuture(
-        params: DeletePendingAggregationRequestRequest
-    ): Future[js.Object] = service.deletePendingAggregationRequest(params).promise().toFuture
-    @inline def deleteRemediationConfigurationFuture(
-        params: DeleteRemediationConfigurationRequest
-    ): Future[DeleteRemediationConfigurationResponse] =
-      service.deleteRemediationConfiguration(params).promise().toFuture
-    @inline def deleteRemediationExceptionsFuture(
-        params: DeleteRemediationExceptionsRequest
-    ): Future[DeleteRemediationExceptionsResponse] = service.deleteRemediationExceptions(params).promise().toFuture
-    @inline def deleteResourceConfigFuture(params: DeleteResourceConfigRequest): Future[js.Object] =
-      service.deleteResourceConfig(params).promise().toFuture
-    @inline def deleteRetentionConfigurationFuture(params: DeleteRetentionConfigurationRequest): Future[js.Object] =
-      service.deleteRetentionConfiguration(params).promise().toFuture
-    @inline def deliverConfigSnapshotFuture(
-        params: DeliverConfigSnapshotRequest
-    ): Future[DeliverConfigSnapshotResponse] = service.deliverConfigSnapshot(params).promise().toFuture
-    @inline def describeAggregateComplianceByConfigRulesFuture(
-        params: DescribeAggregateComplianceByConfigRulesRequest
-    ): Future[DescribeAggregateComplianceByConfigRulesResponse] =
-      service.describeAggregateComplianceByConfigRules(params).promise().toFuture
-    @inline def describeAggregationAuthorizationsFuture(
-        params: DescribeAggregationAuthorizationsRequest
-    ): Future[DescribeAggregationAuthorizationsResponse] =
-      service.describeAggregationAuthorizations(params).promise().toFuture
-    @inline def describeComplianceByConfigRuleFuture(
-        params: DescribeComplianceByConfigRuleRequest
-    ): Future[DescribeComplianceByConfigRuleResponse] =
-      service.describeComplianceByConfigRule(params).promise().toFuture
-    @inline def describeComplianceByResourceFuture(
-        params: DescribeComplianceByResourceRequest
-    ): Future[DescribeComplianceByResourceResponse] = service.describeComplianceByResource(params).promise().toFuture
-    @inline def describeConfigRuleEvaluationStatusFuture(
-        params: DescribeConfigRuleEvaluationStatusRequest
-    ): Future[DescribeConfigRuleEvaluationStatusResponse] =
-      service.describeConfigRuleEvaluationStatus(params).promise().toFuture
-    @inline def describeConfigRulesFuture(params: DescribeConfigRulesRequest): Future[DescribeConfigRulesResponse] =
-      service.describeConfigRules(params).promise().toFuture
-    @inline def describeConfigurationAggregatorSourcesStatusFuture(
-        params: DescribeConfigurationAggregatorSourcesStatusRequest
-    ): Future[DescribeConfigurationAggregatorSourcesStatusResponse] =
-      service.describeConfigurationAggregatorSourcesStatus(params).promise().toFuture
-    @inline def describeConfigurationAggregatorsFuture(
-        params: DescribeConfigurationAggregatorsRequest
-    ): Future[DescribeConfigurationAggregatorsResponse] =
-      service.describeConfigurationAggregators(params).promise().toFuture
-    @inline def describeConfigurationRecorderStatusFuture(
-        params: DescribeConfigurationRecorderStatusRequest
-    ): Future[DescribeConfigurationRecorderStatusResponse] =
-      service.describeConfigurationRecorderStatus(params).promise().toFuture
-    @inline def describeConfigurationRecordersFuture(
-        params: DescribeConfigurationRecordersRequest
-    ): Future[DescribeConfigurationRecordersResponse] =
-      service.describeConfigurationRecorders(params).promise().toFuture
-    @inline def describeConformancePackComplianceFuture(
-        params: DescribeConformancePackComplianceRequest
-    ): Future[DescribeConformancePackComplianceResponse] =
-      service.describeConformancePackCompliance(params).promise().toFuture
-    @inline def describeConformancePackStatusFuture(
-        params: DescribeConformancePackStatusRequest
-    ): Future[DescribeConformancePackStatusResponse] = service.describeConformancePackStatus(params).promise().toFuture
-    @inline def describeConformancePacksFuture(
-        params: DescribeConformancePacksRequest
-    ): Future[DescribeConformancePacksResponse] = service.describeConformancePacks(params).promise().toFuture
-    @inline def describeDeliveryChannelStatusFuture(
-        params: DescribeDeliveryChannelStatusRequest
-    ): Future[DescribeDeliveryChannelStatusResponse] = service.describeDeliveryChannelStatus(params).promise().toFuture
-    @inline def describeDeliveryChannelsFuture(
-        params: DescribeDeliveryChannelsRequest
-    ): Future[DescribeDeliveryChannelsResponse] = service.describeDeliveryChannels(params).promise().toFuture
-    @inline def describeOrganizationConfigRuleStatusesFuture(
-        params: DescribeOrganizationConfigRuleStatusesRequest
-    ): Future[DescribeOrganizationConfigRuleStatusesResponse] =
-      service.describeOrganizationConfigRuleStatuses(params).promise().toFuture
-    @inline def describeOrganizationConfigRulesFuture(
-        params: DescribeOrganizationConfigRulesRequest
-    ): Future[DescribeOrganizationConfigRulesResponse] =
-      service.describeOrganizationConfigRules(params).promise().toFuture
-    @inline def describeOrganizationConformancePackStatusesFuture(
-        params: DescribeOrganizationConformancePackStatusesRequest
-    ): Future[DescribeOrganizationConformancePackStatusesResponse] =
-      service.describeOrganizationConformancePackStatuses(params).promise().toFuture
-    @inline def describeOrganizationConformancePacksFuture(
-        params: DescribeOrganizationConformancePacksRequest
-    ): Future[DescribeOrganizationConformancePacksResponse] =
-      service.describeOrganizationConformancePacks(params).promise().toFuture
-    @inline def describePendingAggregationRequestsFuture(
-        params: DescribePendingAggregationRequestsRequest
-    ): Future[DescribePendingAggregationRequestsResponse] =
-      service.describePendingAggregationRequests(params).promise().toFuture
-    @inline def describeRemediationConfigurationsFuture(
-        params: DescribeRemediationConfigurationsRequest
-    ): Future[DescribeRemediationConfigurationsResponse] =
-      service.describeRemediationConfigurations(params).promise().toFuture
-    @inline def describeRemediationExceptionsFuture(
-        params: DescribeRemediationExceptionsRequest
-    ): Future[DescribeRemediationExceptionsResponse] = service.describeRemediationExceptions(params).promise().toFuture
-    @inline def describeRemediationExecutionStatusFuture(
-        params: DescribeRemediationExecutionStatusRequest
-    ): Future[DescribeRemediationExecutionStatusResponse] =
-      service.describeRemediationExecutionStatus(params).promise().toFuture
-    @inline def describeRetentionConfigurationsFuture(
-        params: DescribeRetentionConfigurationsRequest
-    ): Future[DescribeRetentionConfigurationsResponse] =
-      service.describeRetentionConfigurations(params).promise().toFuture
-    @inline def getAggregateComplianceDetailsByConfigRuleFuture(
-        params: GetAggregateComplianceDetailsByConfigRuleRequest
-    ): Future[GetAggregateComplianceDetailsByConfigRuleResponse] =
-      service.getAggregateComplianceDetailsByConfigRule(params).promise().toFuture
-    @inline def getAggregateConfigRuleComplianceSummaryFuture(
-        params: GetAggregateConfigRuleComplianceSummaryRequest
-    ): Future[GetAggregateConfigRuleComplianceSummaryResponse] =
-      service.getAggregateConfigRuleComplianceSummary(params).promise().toFuture
-    @inline def getAggregateDiscoveredResourceCountsFuture(
-        params: GetAggregateDiscoveredResourceCountsRequest
-    ): Future[GetAggregateDiscoveredResourceCountsResponse] =
-      service.getAggregateDiscoveredResourceCounts(params).promise().toFuture
-    @inline def getAggregateResourceConfigFuture(
-        params: GetAggregateResourceConfigRequest
-    ): Future[GetAggregateResourceConfigResponse] = service.getAggregateResourceConfig(params).promise().toFuture
-    @inline def getComplianceDetailsByConfigRuleFuture(
-        params: GetComplianceDetailsByConfigRuleRequest
-    ): Future[GetComplianceDetailsByConfigRuleResponse] =
-      service.getComplianceDetailsByConfigRule(params).promise().toFuture
-    @inline def getComplianceDetailsByResourceFuture(
-        params: GetComplianceDetailsByResourceRequest
-    ): Future[GetComplianceDetailsByResourceResponse] =
-      service.getComplianceDetailsByResource(params).promise().toFuture
-    @inline def getComplianceSummaryByConfigRuleFuture(): Future[GetComplianceSummaryByConfigRuleResponse] =
-      service.getComplianceSummaryByConfigRule().promise().toFuture
-    @inline def getComplianceSummaryByResourceTypeFuture(
-        params: GetComplianceSummaryByResourceTypeRequest
-    ): Future[GetComplianceSummaryByResourceTypeResponse] =
-      service.getComplianceSummaryByResourceType(params).promise().toFuture
-    @inline def getConformancePackComplianceDetailsFuture(
-        params: GetConformancePackComplianceDetailsRequest
-    ): Future[GetConformancePackComplianceDetailsResponse] =
-      service.getConformancePackComplianceDetails(params).promise().toFuture
-    @inline def getConformancePackComplianceSummaryFuture(
-        params: GetConformancePackComplianceSummaryRequest
-    ): Future[GetConformancePackComplianceSummaryResponse] =
-      service.getConformancePackComplianceSummary(params).promise().toFuture
-    @inline def getDiscoveredResourceCountsFuture(
-        params: GetDiscoveredResourceCountsRequest
-    ): Future[GetDiscoveredResourceCountsResponse] = service.getDiscoveredResourceCounts(params).promise().toFuture
-    @inline def getOrganizationConfigRuleDetailedStatusFuture(
-        params: GetOrganizationConfigRuleDetailedStatusRequest
-    ): Future[GetOrganizationConfigRuleDetailedStatusResponse] =
-      service.getOrganizationConfigRuleDetailedStatus(params).promise().toFuture
-    @inline def getOrganizationConformancePackDetailedStatusFuture(
-        params: GetOrganizationConformancePackDetailedStatusRequest
-    ): Future[GetOrganizationConformancePackDetailedStatusResponse] =
-      service.getOrganizationConformancePackDetailedStatus(params).promise().toFuture
-    @inline def getResourceConfigHistoryFuture(
-        params: GetResourceConfigHistoryRequest
-    ): Future[GetResourceConfigHistoryResponse] = service.getResourceConfigHistory(params).promise().toFuture
-    @inline def listAggregateDiscoveredResourcesFuture(
-        params: ListAggregateDiscoveredResourcesRequest
-    ): Future[ListAggregateDiscoveredResourcesResponse] =
-      service.listAggregateDiscoveredResources(params).promise().toFuture
-    @inline def listDiscoveredResourcesFuture(
-        params: ListDiscoveredResourcesRequest
-    ): Future[ListDiscoveredResourcesResponse] = service.listDiscoveredResources(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def putAggregationAuthorizationFuture(
-        params: PutAggregationAuthorizationRequest
-    ): Future[PutAggregationAuthorizationResponse] = service.putAggregationAuthorization(params).promise().toFuture
-    @inline def putConfigRuleFuture(params: PutConfigRuleRequest): Future[js.Object] =
-      service.putConfigRule(params).promise().toFuture
-    @inline def putConfigurationAggregatorFuture(
-        params: PutConfigurationAggregatorRequest
-    ): Future[PutConfigurationAggregatorResponse] = service.putConfigurationAggregator(params).promise().toFuture
-    @inline def putConfigurationRecorderFuture(params: PutConfigurationRecorderRequest): Future[js.Object] =
-      service.putConfigurationRecorder(params).promise().toFuture
-    @inline def putConformancePackFuture(params: PutConformancePackRequest): Future[PutConformancePackResponse] =
-      service.putConformancePack(params).promise().toFuture
-    @inline def putDeliveryChannelFuture(params: PutDeliveryChannelRequest): Future[js.Object] =
-      service.putDeliveryChannel(params).promise().toFuture
-    @inline def putEvaluationsFuture(params: PutEvaluationsRequest): Future[PutEvaluationsResponse] =
-      service.putEvaluations(params).promise().toFuture
-    @inline def putOrganizationConfigRuleFuture(
-        params: PutOrganizationConfigRuleRequest
-    ): Future[PutOrganizationConfigRuleResponse] = service.putOrganizationConfigRule(params).promise().toFuture
-    @inline def putOrganizationConformancePackFuture(
-        params: PutOrganizationConformancePackRequest
-    ): Future[PutOrganizationConformancePackResponse] =
-      service.putOrganizationConformancePack(params).promise().toFuture
-    @inline def putRemediationConfigurationsFuture(
-        params: PutRemediationConfigurationsRequest
-    ): Future[PutRemediationConfigurationsResponse] = service.putRemediationConfigurations(params).promise().toFuture
-    @inline def putRemediationExceptionsFuture(
-        params: PutRemediationExceptionsRequest
-    ): Future[PutRemediationExceptionsResponse] = service.putRemediationExceptions(params).promise().toFuture
-    @inline def putResourceConfigFuture(params: PutResourceConfigRequest): Future[js.Object] =
-      service.putResourceConfig(params).promise().toFuture
-    @inline def putRetentionConfigurationFuture(
-        params: PutRetentionConfigurationRequest
-    ): Future[PutRetentionConfigurationResponse] = service.putRetentionConfiguration(params).promise().toFuture
-    @inline def selectAggregateResourceConfigFuture(
-        params: SelectAggregateResourceConfigRequest
-    ): Future[SelectAggregateResourceConfigResponse] = service.selectAggregateResourceConfig(params).promise().toFuture
-    @inline def selectResourceConfigFuture(params: SelectResourceConfigRequest): Future[SelectResourceConfigResponse] =
-      service.selectResourceConfig(params).promise().toFuture
-    @inline def startConfigRulesEvaluationFuture(
-        params: StartConfigRulesEvaluationRequest
-    ): Future[StartConfigRulesEvaluationResponse] = service.startConfigRulesEvaluation(params).promise().toFuture
-    @inline def startConfigurationRecorderFuture(params: StartConfigurationRecorderRequest): Future[js.Object] =
-      service.startConfigurationRecorder(params).promise().toFuture
-    @inline def startRemediationExecutionFuture(
-        params: StartRemediationExecutionRequest
-    ): Future[StartRemediationExecutionResponse] = service.startRemediationExecution(params).promise().toFuture
-    @inline def stopConfigurationRecorderFuture(params: StopConfigurationRecorderRequest): Future[js.Object] =
-      service.stopConfigurationRecorder(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise().toFuture
+    @inline def batchGetAggregateResourceConfigFuture(params: BatchGetAggregateResourceConfigRequest): Future[BatchGetAggregateResourceConfigResponse] = service.batchGetAggregateResourceConfig(params).promise().toFuture
+    @inline def batchGetResourceConfigFuture(params: BatchGetResourceConfigRequest): Future[BatchGetResourceConfigResponse] = service.batchGetResourceConfig(params).promise().toFuture
+    @inline def deleteAggregationAuthorizationFuture(params: DeleteAggregationAuthorizationRequest): Future[js.Object] = service.deleteAggregationAuthorization(params).promise().toFuture
+    @inline def deleteConfigRuleFuture(params: DeleteConfigRuleRequest): Future[js.Object] = service.deleteConfigRule(params).promise().toFuture
+    @inline def deleteConfigurationAggregatorFuture(params: DeleteConfigurationAggregatorRequest): Future[js.Object] = service.deleteConfigurationAggregator(params).promise().toFuture
+    @inline def deleteConfigurationRecorderFuture(params: DeleteConfigurationRecorderRequest): Future[js.Object] = service.deleteConfigurationRecorder(params).promise().toFuture
+    @inline def deleteConformancePackFuture(params: DeleteConformancePackRequest): Future[js.Object] = service.deleteConformancePack(params).promise().toFuture
+    @inline def deleteDeliveryChannelFuture(params: DeleteDeliveryChannelRequest): Future[js.Object] = service.deleteDeliveryChannel(params).promise().toFuture
+    @inline def deleteEvaluationResultsFuture(params: DeleteEvaluationResultsRequest): Future[DeleteEvaluationResultsResponse] = service.deleteEvaluationResults(params).promise().toFuture
+    @inline def deleteOrganizationConfigRuleFuture(params: DeleteOrganizationConfigRuleRequest): Future[js.Object] = service.deleteOrganizationConfigRule(params).promise().toFuture
+    @inline def deleteOrganizationConformancePackFuture(params: DeleteOrganizationConformancePackRequest): Future[js.Object] = service.deleteOrganizationConformancePack(params).promise().toFuture
+    @inline def deletePendingAggregationRequestFuture(params: DeletePendingAggregationRequestRequest): Future[js.Object] = service.deletePendingAggregationRequest(params).promise().toFuture
+    @inline def deleteRemediationConfigurationFuture(params: DeleteRemediationConfigurationRequest): Future[DeleteRemediationConfigurationResponse] = service.deleteRemediationConfiguration(params).promise().toFuture
+    @inline def deleteRemediationExceptionsFuture(params: DeleteRemediationExceptionsRequest): Future[DeleteRemediationExceptionsResponse] = service.deleteRemediationExceptions(params).promise().toFuture
+    @inline def deleteResourceConfigFuture(params: DeleteResourceConfigRequest): Future[js.Object] = service.deleteResourceConfig(params).promise().toFuture
+    @inline def deleteRetentionConfigurationFuture(params: DeleteRetentionConfigurationRequest): Future[js.Object] = service.deleteRetentionConfiguration(params).promise().toFuture
+    @inline def deliverConfigSnapshotFuture(params: DeliverConfigSnapshotRequest): Future[DeliverConfigSnapshotResponse] = service.deliverConfigSnapshot(params).promise().toFuture
+    @inline def describeAggregateComplianceByConfigRulesFuture(params: DescribeAggregateComplianceByConfigRulesRequest): Future[DescribeAggregateComplianceByConfigRulesResponse] = service.describeAggregateComplianceByConfigRules(params).promise().toFuture
+    @inline def describeAggregationAuthorizationsFuture(params: DescribeAggregationAuthorizationsRequest): Future[DescribeAggregationAuthorizationsResponse] = service.describeAggregationAuthorizations(params).promise().toFuture
+    @inline def describeComplianceByConfigRuleFuture(params: DescribeComplianceByConfigRuleRequest): Future[DescribeComplianceByConfigRuleResponse] = service.describeComplianceByConfigRule(params).promise().toFuture
+    @inline def describeComplianceByResourceFuture(params: DescribeComplianceByResourceRequest): Future[DescribeComplianceByResourceResponse] = service.describeComplianceByResource(params).promise().toFuture
+    @inline def describeConfigRuleEvaluationStatusFuture(params: DescribeConfigRuleEvaluationStatusRequest): Future[DescribeConfigRuleEvaluationStatusResponse] = service.describeConfigRuleEvaluationStatus(params).promise().toFuture
+    @inline def describeConfigRulesFuture(params: DescribeConfigRulesRequest): Future[DescribeConfigRulesResponse] = service.describeConfigRules(params).promise().toFuture
+    @inline def describeConfigurationAggregatorSourcesStatusFuture(params: DescribeConfigurationAggregatorSourcesStatusRequest): Future[DescribeConfigurationAggregatorSourcesStatusResponse] = service.describeConfigurationAggregatorSourcesStatus(params).promise().toFuture
+    @inline def describeConfigurationAggregatorsFuture(params: DescribeConfigurationAggregatorsRequest): Future[DescribeConfigurationAggregatorsResponse] = service.describeConfigurationAggregators(params).promise().toFuture
+    @inline def describeConfigurationRecorderStatusFuture(params: DescribeConfigurationRecorderStatusRequest): Future[DescribeConfigurationRecorderStatusResponse] = service.describeConfigurationRecorderStatus(params).promise().toFuture
+    @inline def describeConfigurationRecordersFuture(params: DescribeConfigurationRecordersRequest): Future[DescribeConfigurationRecordersResponse] = service.describeConfigurationRecorders(params).promise().toFuture
+    @inline def describeConformancePackComplianceFuture(params: DescribeConformancePackComplianceRequest): Future[DescribeConformancePackComplianceResponse] = service.describeConformancePackCompliance(params).promise().toFuture
+    @inline def describeConformancePackStatusFuture(params: DescribeConformancePackStatusRequest): Future[DescribeConformancePackStatusResponse] = service.describeConformancePackStatus(params).promise().toFuture
+    @inline def describeConformancePacksFuture(params: DescribeConformancePacksRequest): Future[DescribeConformancePacksResponse] = service.describeConformancePacks(params).promise().toFuture
+    @inline def describeDeliveryChannelStatusFuture(params: DescribeDeliveryChannelStatusRequest): Future[DescribeDeliveryChannelStatusResponse] = service.describeDeliveryChannelStatus(params).promise().toFuture
+    @inline def describeDeliveryChannelsFuture(params: DescribeDeliveryChannelsRequest): Future[DescribeDeliveryChannelsResponse] = service.describeDeliveryChannels(params).promise().toFuture
+    @inline def describeOrganizationConfigRuleStatusesFuture(params: DescribeOrganizationConfigRuleStatusesRequest): Future[DescribeOrganizationConfigRuleStatusesResponse] = service.describeOrganizationConfigRuleStatuses(params).promise().toFuture
+    @inline def describeOrganizationConfigRulesFuture(params: DescribeOrganizationConfigRulesRequest): Future[DescribeOrganizationConfigRulesResponse] = service.describeOrganizationConfigRules(params).promise().toFuture
+    @inline def describeOrganizationConformancePackStatusesFuture(params: DescribeOrganizationConformancePackStatusesRequest): Future[DescribeOrganizationConformancePackStatusesResponse] = service.describeOrganizationConformancePackStatuses(params).promise().toFuture
+    @inline def describeOrganizationConformancePacksFuture(params: DescribeOrganizationConformancePacksRequest): Future[DescribeOrganizationConformancePacksResponse] = service.describeOrganizationConformancePacks(params).promise().toFuture
+    @inline def describePendingAggregationRequestsFuture(params: DescribePendingAggregationRequestsRequest): Future[DescribePendingAggregationRequestsResponse] = service.describePendingAggregationRequests(params).promise().toFuture
+    @inline def describeRemediationConfigurationsFuture(params: DescribeRemediationConfigurationsRequest): Future[DescribeRemediationConfigurationsResponse] = service.describeRemediationConfigurations(params).promise().toFuture
+    @inline def describeRemediationExceptionsFuture(params: DescribeRemediationExceptionsRequest): Future[DescribeRemediationExceptionsResponse] = service.describeRemediationExceptions(params).promise().toFuture
+    @inline def describeRemediationExecutionStatusFuture(params: DescribeRemediationExecutionStatusRequest): Future[DescribeRemediationExecutionStatusResponse] = service.describeRemediationExecutionStatus(params).promise().toFuture
+    @inline def describeRetentionConfigurationsFuture(params: DescribeRetentionConfigurationsRequest): Future[DescribeRetentionConfigurationsResponse] = service.describeRetentionConfigurations(params).promise().toFuture
+    @inline def getAggregateComplianceDetailsByConfigRuleFuture(params: GetAggregateComplianceDetailsByConfigRuleRequest): Future[GetAggregateComplianceDetailsByConfigRuleResponse] = service.getAggregateComplianceDetailsByConfigRule(params).promise().toFuture
+    @inline def getAggregateConfigRuleComplianceSummaryFuture(params: GetAggregateConfigRuleComplianceSummaryRequest): Future[GetAggregateConfigRuleComplianceSummaryResponse] = service.getAggregateConfigRuleComplianceSummary(params).promise().toFuture
+    @inline def getAggregateDiscoveredResourceCountsFuture(params: GetAggregateDiscoveredResourceCountsRequest): Future[GetAggregateDiscoveredResourceCountsResponse] = service.getAggregateDiscoveredResourceCounts(params).promise().toFuture
+    @inline def getAggregateResourceConfigFuture(params: GetAggregateResourceConfigRequest): Future[GetAggregateResourceConfigResponse] = service.getAggregateResourceConfig(params).promise().toFuture
+    @inline def getComplianceDetailsByConfigRuleFuture(params: GetComplianceDetailsByConfigRuleRequest): Future[GetComplianceDetailsByConfigRuleResponse] = service.getComplianceDetailsByConfigRule(params).promise().toFuture
+    @inline def getComplianceDetailsByResourceFuture(params: GetComplianceDetailsByResourceRequest): Future[GetComplianceDetailsByResourceResponse] = service.getComplianceDetailsByResource(params).promise().toFuture
+    @inline def getComplianceSummaryByConfigRuleFuture(): Future[GetComplianceSummaryByConfigRuleResponse] = service.getComplianceSummaryByConfigRule().promise().toFuture
+    @inline def getComplianceSummaryByResourceTypeFuture(params: GetComplianceSummaryByResourceTypeRequest): Future[GetComplianceSummaryByResourceTypeResponse] = service.getComplianceSummaryByResourceType(params).promise().toFuture
+    @inline def getConformancePackComplianceDetailsFuture(params: GetConformancePackComplianceDetailsRequest): Future[GetConformancePackComplianceDetailsResponse] = service.getConformancePackComplianceDetails(params).promise().toFuture
+    @inline def getConformancePackComplianceSummaryFuture(params: GetConformancePackComplianceSummaryRequest): Future[GetConformancePackComplianceSummaryResponse] = service.getConformancePackComplianceSummary(params).promise().toFuture
+    @inline def getDiscoveredResourceCountsFuture(params: GetDiscoveredResourceCountsRequest): Future[GetDiscoveredResourceCountsResponse] = service.getDiscoveredResourceCounts(params).promise().toFuture
+    @inline def getOrganizationConfigRuleDetailedStatusFuture(params: GetOrganizationConfigRuleDetailedStatusRequest): Future[GetOrganizationConfigRuleDetailedStatusResponse] = service.getOrganizationConfigRuleDetailedStatus(params).promise().toFuture
+    @inline def getOrganizationConformancePackDetailedStatusFuture(params: GetOrganizationConformancePackDetailedStatusRequest): Future[GetOrganizationConformancePackDetailedStatusResponse] = service.getOrganizationConformancePackDetailedStatus(params).promise().toFuture
+    @inline def getResourceConfigHistoryFuture(params: GetResourceConfigHistoryRequest): Future[GetResourceConfigHistoryResponse] = service.getResourceConfigHistory(params).promise().toFuture
+    @inline def listAggregateDiscoveredResourcesFuture(params: ListAggregateDiscoveredResourcesRequest): Future[ListAggregateDiscoveredResourcesResponse] = service.listAggregateDiscoveredResources(params).promise().toFuture
+    @inline def listDiscoveredResourcesFuture(params: ListDiscoveredResourcesRequest): Future[ListDiscoveredResourcesResponse] = service.listDiscoveredResources(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def putAggregationAuthorizationFuture(params: PutAggregationAuthorizationRequest): Future[PutAggregationAuthorizationResponse] = service.putAggregationAuthorization(params).promise().toFuture
+    @inline def putConfigRuleFuture(params: PutConfigRuleRequest): Future[js.Object] = service.putConfigRule(params).promise().toFuture
+    @inline def putConfigurationAggregatorFuture(params: PutConfigurationAggregatorRequest): Future[PutConfigurationAggregatorResponse] = service.putConfigurationAggregator(params).promise().toFuture
+    @inline def putConfigurationRecorderFuture(params: PutConfigurationRecorderRequest): Future[js.Object] = service.putConfigurationRecorder(params).promise().toFuture
+    @inline def putConformancePackFuture(params: PutConformancePackRequest): Future[PutConformancePackResponse] = service.putConformancePack(params).promise().toFuture
+    @inline def putDeliveryChannelFuture(params: PutDeliveryChannelRequest): Future[js.Object] = service.putDeliveryChannel(params).promise().toFuture
+    @inline def putEvaluationsFuture(params: PutEvaluationsRequest): Future[PutEvaluationsResponse] = service.putEvaluations(params).promise().toFuture
+    @inline def putOrganizationConfigRuleFuture(params: PutOrganizationConfigRuleRequest): Future[PutOrganizationConfigRuleResponse] = service.putOrganizationConfigRule(params).promise().toFuture
+    @inline def putOrganizationConformancePackFuture(params: PutOrganizationConformancePackRequest): Future[PutOrganizationConformancePackResponse] = service.putOrganizationConformancePack(params).promise().toFuture
+    @inline def putRemediationConfigurationsFuture(params: PutRemediationConfigurationsRequest): Future[PutRemediationConfigurationsResponse] = service.putRemediationConfigurations(params).promise().toFuture
+    @inline def putRemediationExceptionsFuture(params: PutRemediationExceptionsRequest): Future[PutRemediationExceptionsResponse] = service.putRemediationExceptions(params).promise().toFuture
+    @inline def putResourceConfigFuture(params: PutResourceConfigRequest): Future[js.Object] = service.putResourceConfig(params).promise().toFuture
+    @inline def putRetentionConfigurationFuture(params: PutRetentionConfigurationRequest): Future[PutRetentionConfigurationResponse] = service.putRetentionConfiguration(params).promise().toFuture
+    @inline def selectAggregateResourceConfigFuture(params: SelectAggregateResourceConfigRequest): Future[SelectAggregateResourceConfigResponse] = service.selectAggregateResourceConfig(params).promise().toFuture
+    @inline def selectResourceConfigFuture(params: SelectResourceConfigRequest): Future[SelectResourceConfigResponse] = service.selectResourceConfig(params).promise().toFuture
+    @inline def startConfigRulesEvaluationFuture(params: StartConfigRulesEvaluationRequest): Future[StartConfigRulesEvaluationResponse] = service.startConfigRulesEvaluation(params).promise().toFuture
+    @inline def startConfigurationRecorderFuture(params: StartConfigurationRecorderRequest): Future[js.Object] = service.startConfigurationRecorder(params).promise().toFuture
+    @inline def startRemediationExecutionFuture(params: StartRemediationExecutionRequest): Future[StartRemediationExecutionResponse] = service.startRemediationExecution(params).promise().toFuture
+    @inline def stopConfigurationRecorderFuture(params: StopConfigurationRecorderRequest): Future[js.Object] = service.stopConfigurationRecorder(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
   }
 }
 
@@ -422,182 +256,82 @@ package configservice {
   class ConfigService() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def batchGetAggregateResourceConfig(
-        params: BatchGetAggregateResourceConfigRequest
-    ): Request[BatchGetAggregateResourceConfigResponse] = js.native
-    def batchGetResourceConfig(params: BatchGetResourceConfigRequest): Request[BatchGetResourceConfigResponse] =
-      js.native
+    def batchGetAggregateResourceConfig(params: BatchGetAggregateResourceConfigRequest): Request[BatchGetAggregateResourceConfigResponse] = js.native
+    def batchGetResourceConfig(params: BatchGetResourceConfigRequest): Request[BatchGetResourceConfigResponse] = js.native
     def deleteAggregationAuthorization(params: DeleteAggregationAuthorizationRequest): Request[js.Object] = js.native
     def deleteConfigRule(params: DeleteConfigRuleRequest): Request[js.Object] = js.native
     def deleteConfigurationAggregator(params: DeleteConfigurationAggregatorRequest): Request[js.Object] = js.native
     def deleteConfigurationRecorder(params: DeleteConfigurationRecorderRequest): Request[js.Object] = js.native
     def deleteConformancePack(params: DeleteConformancePackRequest): Request[js.Object] = js.native
     def deleteDeliveryChannel(params: DeleteDeliveryChannelRequest): Request[js.Object] = js.native
-    def deleteEvaluationResults(params: DeleteEvaluationResultsRequest): Request[DeleteEvaluationResultsResponse] =
-      js.native
+    def deleteEvaluationResults(params: DeleteEvaluationResultsRequest): Request[DeleteEvaluationResultsResponse] = js.native
     def deleteOrganizationConfigRule(params: DeleteOrganizationConfigRuleRequest): Request[js.Object] = js.native
-    def deleteOrganizationConformancePack(params: DeleteOrganizationConformancePackRequest): Request[js.Object] =
-      js.native
+    def deleteOrganizationConformancePack(params: DeleteOrganizationConformancePackRequest): Request[js.Object] = js.native
     def deletePendingAggregationRequest(params: DeletePendingAggregationRequestRequest): Request[js.Object] = js.native
-    def deleteRemediationConfiguration(
-        params: DeleteRemediationConfigurationRequest
-    ): Request[DeleteRemediationConfigurationResponse] = js.native
-    def deleteRemediationExceptions(
-        params: DeleteRemediationExceptionsRequest
-    ): Request[DeleteRemediationExceptionsResponse] = js.native
+    def deleteRemediationConfiguration(params: DeleteRemediationConfigurationRequest): Request[DeleteRemediationConfigurationResponse] = js.native
+    def deleteRemediationExceptions(params: DeleteRemediationExceptionsRequest): Request[DeleteRemediationExceptionsResponse] = js.native
     def deleteResourceConfig(params: DeleteResourceConfigRequest): Request[js.Object] = js.native
     def deleteRetentionConfiguration(params: DeleteRetentionConfigurationRequest): Request[js.Object] = js.native
     def deliverConfigSnapshot(params: DeliverConfigSnapshotRequest): Request[DeliverConfigSnapshotResponse] = js.native
-    def describeAggregateComplianceByConfigRules(
-        params: DescribeAggregateComplianceByConfigRulesRequest
-    ): Request[DescribeAggregateComplianceByConfigRulesResponse] = js.native
-    def describeAggregationAuthorizations(
-        params: DescribeAggregationAuthorizationsRequest
-    ): Request[DescribeAggregationAuthorizationsResponse] = js.native
-    def describeComplianceByConfigRule(
-        params: DescribeComplianceByConfigRuleRequest
-    ): Request[DescribeComplianceByConfigRuleResponse] = js.native
-    def describeComplianceByResource(
-        params: DescribeComplianceByResourceRequest
-    ): Request[DescribeComplianceByResourceResponse] = js.native
-    def describeConfigRuleEvaluationStatus(
-        params: DescribeConfigRuleEvaluationStatusRequest
-    ): Request[DescribeConfigRuleEvaluationStatusResponse] = js.native
+    def describeAggregateComplianceByConfigRules(params: DescribeAggregateComplianceByConfigRulesRequest): Request[DescribeAggregateComplianceByConfigRulesResponse] = js.native
+    def describeAggregationAuthorizations(params: DescribeAggregationAuthorizationsRequest): Request[DescribeAggregationAuthorizationsResponse] = js.native
+    def describeComplianceByConfigRule(params: DescribeComplianceByConfigRuleRequest): Request[DescribeComplianceByConfigRuleResponse] = js.native
+    def describeComplianceByResource(params: DescribeComplianceByResourceRequest): Request[DescribeComplianceByResourceResponse] = js.native
+    def describeConfigRuleEvaluationStatus(params: DescribeConfigRuleEvaluationStatusRequest): Request[DescribeConfigRuleEvaluationStatusResponse] = js.native
     def describeConfigRules(params: DescribeConfigRulesRequest): Request[DescribeConfigRulesResponse] = js.native
-    def describeConfigurationAggregatorSourcesStatus(
-        params: DescribeConfigurationAggregatorSourcesStatusRequest
-    ): Request[DescribeConfigurationAggregatorSourcesStatusResponse] = js.native
-    def describeConfigurationAggregators(
-        params: DescribeConfigurationAggregatorsRequest
-    ): Request[DescribeConfigurationAggregatorsResponse] = js.native
-    def describeConfigurationRecorderStatus(
-        params: DescribeConfigurationRecorderStatusRequest
-    ): Request[DescribeConfigurationRecorderStatusResponse] = js.native
-    def describeConfigurationRecorders(
-        params: DescribeConfigurationRecordersRequest
-    ): Request[DescribeConfigurationRecordersResponse] = js.native
-    def describeConformancePackCompliance(
-        params: DescribeConformancePackComplianceRequest
-    ): Request[DescribeConformancePackComplianceResponse] = js.native
-    def describeConformancePackStatus(
-        params: DescribeConformancePackStatusRequest
-    ): Request[DescribeConformancePackStatusResponse] = js.native
-    def describeConformancePacks(params: DescribeConformancePacksRequest): Request[DescribeConformancePacksResponse] =
-      js.native
-    def describeDeliveryChannelStatus(
-        params: DescribeDeliveryChannelStatusRequest
-    ): Request[DescribeDeliveryChannelStatusResponse] = js.native
-    def describeDeliveryChannels(params: DescribeDeliveryChannelsRequest): Request[DescribeDeliveryChannelsResponse] =
-      js.native
-    def describeOrganizationConfigRuleStatuses(
-        params: DescribeOrganizationConfigRuleStatusesRequest
-    ): Request[DescribeOrganizationConfigRuleStatusesResponse] = js.native
-    def describeOrganizationConfigRules(
-        params: DescribeOrganizationConfigRulesRequest
-    ): Request[DescribeOrganizationConfigRulesResponse] = js.native
-    def describeOrganizationConformancePackStatuses(
-        params: DescribeOrganizationConformancePackStatusesRequest
-    ): Request[DescribeOrganizationConformancePackStatusesResponse] = js.native
-    def describeOrganizationConformancePacks(
-        params: DescribeOrganizationConformancePacksRequest
-    ): Request[DescribeOrganizationConformancePacksResponse] = js.native
-    def describePendingAggregationRequests(
-        params: DescribePendingAggregationRequestsRequest
-    ): Request[DescribePendingAggregationRequestsResponse] = js.native
-    def describeRemediationConfigurations(
-        params: DescribeRemediationConfigurationsRequest
-    ): Request[DescribeRemediationConfigurationsResponse] = js.native
-    def describeRemediationExceptions(
-        params: DescribeRemediationExceptionsRequest
-    ): Request[DescribeRemediationExceptionsResponse] = js.native
-    def describeRemediationExecutionStatus(
-        params: DescribeRemediationExecutionStatusRequest
-    ): Request[DescribeRemediationExecutionStatusResponse] = js.native
-    def describeRetentionConfigurations(
-        params: DescribeRetentionConfigurationsRequest
-    ): Request[DescribeRetentionConfigurationsResponse] = js.native
-    def getAggregateComplianceDetailsByConfigRule(
-        params: GetAggregateComplianceDetailsByConfigRuleRequest
-    ): Request[GetAggregateComplianceDetailsByConfigRuleResponse] = js.native
-    def getAggregateConfigRuleComplianceSummary(
-        params: GetAggregateConfigRuleComplianceSummaryRequest
-    ): Request[GetAggregateConfigRuleComplianceSummaryResponse] = js.native
-    def getAggregateDiscoveredResourceCounts(
-        params: GetAggregateDiscoveredResourceCountsRequest
-    ): Request[GetAggregateDiscoveredResourceCountsResponse] = js.native
-    def getAggregateResourceConfig(
-        params: GetAggregateResourceConfigRequest
-    ): Request[GetAggregateResourceConfigResponse] = js.native
-    def getComplianceDetailsByConfigRule(
-        params: GetComplianceDetailsByConfigRuleRequest
-    ): Request[GetComplianceDetailsByConfigRuleResponse] = js.native
-    def getComplianceDetailsByResource(
-        params: GetComplianceDetailsByResourceRequest
-    ): Request[GetComplianceDetailsByResourceResponse] = js.native
+    def describeConfigurationAggregatorSourcesStatus(params: DescribeConfigurationAggregatorSourcesStatusRequest): Request[DescribeConfigurationAggregatorSourcesStatusResponse] = js.native
+    def describeConfigurationAggregators(params: DescribeConfigurationAggregatorsRequest): Request[DescribeConfigurationAggregatorsResponse] = js.native
+    def describeConfigurationRecorderStatus(params: DescribeConfigurationRecorderStatusRequest): Request[DescribeConfigurationRecorderStatusResponse] = js.native
+    def describeConfigurationRecorders(params: DescribeConfigurationRecordersRequest): Request[DescribeConfigurationRecordersResponse] = js.native
+    def describeConformancePackCompliance(params: DescribeConformancePackComplianceRequest): Request[DescribeConformancePackComplianceResponse] = js.native
+    def describeConformancePackStatus(params: DescribeConformancePackStatusRequest): Request[DescribeConformancePackStatusResponse] = js.native
+    def describeConformancePacks(params: DescribeConformancePacksRequest): Request[DescribeConformancePacksResponse] = js.native
+    def describeDeliveryChannelStatus(params: DescribeDeliveryChannelStatusRequest): Request[DescribeDeliveryChannelStatusResponse] = js.native
+    def describeDeliveryChannels(params: DescribeDeliveryChannelsRequest): Request[DescribeDeliveryChannelsResponse] = js.native
+    def describeOrganizationConfigRuleStatuses(params: DescribeOrganizationConfigRuleStatusesRequest): Request[DescribeOrganizationConfigRuleStatusesResponse] = js.native
+    def describeOrganizationConfigRules(params: DescribeOrganizationConfigRulesRequest): Request[DescribeOrganizationConfigRulesResponse] = js.native
+    def describeOrganizationConformancePackStatuses(params: DescribeOrganizationConformancePackStatusesRequest): Request[DescribeOrganizationConformancePackStatusesResponse] = js.native
+    def describeOrganizationConformancePacks(params: DescribeOrganizationConformancePacksRequest): Request[DescribeOrganizationConformancePacksResponse] = js.native
+    def describePendingAggregationRequests(params: DescribePendingAggregationRequestsRequest): Request[DescribePendingAggregationRequestsResponse] = js.native
+    def describeRemediationConfigurations(params: DescribeRemediationConfigurationsRequest): Request[DescribeRemediationConfigurationsResponse] = js.native
+    def describeRemediationExceptions(params: DescribeRemediationExceptionsRequest): Request[DescribeRemediationExceptionsResponse] = js.native
+    def describeRemediationExecutionStatus(params: DescribeRemediationExecutionStatusRequest): Request[DescribeRemediationExecutionStatusResponse] = js.native
+    def describeRetentionConfigurations(params: DescribeRetentionConfigurationsRequest): Request[DescribeRetentionConfigurationsResponse] = js.native
+    def getAggregateComplianceDetailsByConfigRule(params: GetAggregateComplianceDetailsByConfigRuleRequest): Request[GetAggregateComplianceDetailsByConfigRuleResponse] = js.native
+    def getAggregateConfigRuleComplianceSummary(params: GetAggregateConfigRuleComplianceSummaryRequest): Request[GetAggregateConfigRuleComplianceSummaryResponse] = js.native
+    def getAggregateDiscoveredResourceCounts(params: GetAggregateDiscoveredResourceCountsRequest): Request[GetAggregateDiscoveredResourceCountsResponse] = js.native
+    def getAggregateResourceConfig(params: GetAggregateResourceConfigRequest): Request[GetAggregateResourceConfigResponse] = js.native
+    def getComplianceDetailsByConfigRule(params: GetComplianceDetailsByConfigRuleRequest): Request[GetComplianceDetailsByConfigRuleResponse] = js.native
+    def getComplianceDetailsByResource(params: GetComplianceDetailsByResourceRequest): Request[GetComplianceDetailsByResourceResponse] = js.native
     def getComplianceSummaryByConfigRule(): Request[GetComplianceSummaryByConfigRuleResponse] = js.native
-    def getComplianceSummaryByResourceType(
-        params: GetComplianceSummaryByResourceTypeRequest
-    ): Request[GetComplianceSummaryByResourceTypeResponse] = js.native
-    def getConformancePackComplianceDetails(
-        params: GetConformancePackComplianceDetailsRequest
-    ): Request[GetConformancePackComplianceDetailsResponse] = js.native
-    def getConformancePackComplianceSummary(
-        params: GetConformancePackComplianceSummaryRequest
-    ): Request[GetConformancePackComplianceSummaryResponse] = js.native
-    def getDiscoveredResourceCounts(
-        params: GetDiscoveredResourceCountsRequest
-    ): Request[GetDiscoveredResourceCountsResponse] = js.native
-    def getOrganizationConfigRuleDetailedStatus(
-        params: GetOrganizationConfigRuleDetailedStatusRequest
-    ): Request[GetOrganizationConfigRuleDetailedStatusResponse] = js.native
-    def getOrganizationConformancePackDetailedStatus(
-        params: GetOrganizationConformancePackDetailedStatusRequest
-    ): Request[GetOrganizationConformancePackDetailedStatusResponse] = js.native
-    def getResourceConfigHistory(params: GetResourceConfigHistoryRequest): Request[GetResourceConfigHistoryResponse] =
-      js.native
-    def listAggregateDiscoveredResources(
-        params: ListAggregateDiscoveredResourcesRequest
-    ): Request[ListAggregateDiscoveredResourcesResponse] = js.native
-    def listDiscoveredResources(params: ListDiscoveredResourcesRequest): Request[ListDiscoveredResourcesResponse] =
-      js.native
+    def getComplianceSummaryByResourceType(params: GetComplianceSummaryByResourceTypeRequest): Request[GetComplianceSummaryByResourceTypeResponse] = js.native
+    def getConformancePackComplianceDetails(params: GetConformancePackComplianceDetailsRequest): Request[GetConformancePackComplianceDetailsResponse] = js.native
+    def getConformancePackComplianceSummary(params: GetConformancePackComplianceSummaryRequest): Request[GetConformancePackComplianceSummaryResponse] = js.native
+    def getDiscoveredResourceCounts(params: GetDiscoveredResourceCountsRequest): Request[GetDiscoveredResourceCountsResponse] = js.native
+    def getOrganizationConfigRuleDetailedStatus(params: GetOrganizationConfigRuleDetailedStatusRequest): Request[GetOrganizationConfigRuleDetailedStatusResponse] = js.native
+    def getOrganizationConformancePackDetailedStatus(params: GetOrganizationConformancePackDetailedStatusRequest): Request[GetOrganizationConformancePackDetailedStatusResponse] = js.native
+    def getResourceConfigHistory(params: GetResourceConfigHistoryRequest): Request[GetResourceConfigHistoryResponse] = js.native
+    def listAggregateDiscoveredResources(params: ListAggregateDiscoveredResourcesRequest): Request[ListAggregateDiscoveredResourcesResponse] = js.native
+    def listDiscoveredResources(params: ListDiscoveredResourcesRequest): Request[ListDiscoveredResourcesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def putAggregationAuthorization(
-        params: PutAggregationAuthorizationRequest
-    ): Request[PutAggregationAuthorizationResponse] = js.native
+    def putAggregationAuthorization(params: PutAggregationAuthorizationRequest): Request[PutAggregationAuthorizationResponse] = js.native
     def putConfigRule(params: PutConfigRuleRequest): Request[js.Object] = js.native
-    def putConfigurationAggregator(
-        params: PutConfigurationAggregatorRequest
-    ): Request[PutConfigurationAggregatorResponse] = js.native
+    def putConfigurationAggregator(params: PutConfigurationAggregatorRequest): Request[PutConfigurationAggregatorResponse] = js.native
     def putConfigurationRecorder(params: PutConfigurationRecorderRequest): Request[js.Object] = js.native
     def putConformancePack(params: PutConformancePackRequest): Request[PutConformancePackResponse] = js.native
     def putDeliveryChannel(params: PutDeliveryChannelRequest): Request[js.Object] = js.native
     def putEvaluations(params: PutEvaluationsRequest): Request[PutEvaluationsResponse] = js.native
-    def putOrganizationConfigRule(
-        params: PutOrganizationConfigRuleRequest
-    ): Request[PutOrganizationConfigRuleResponse] = js.native
-    def putOrganizationConformancePack(
-        params: PutOrganizationConformancePackRequest
-    ): Request[PutOrganizationConformancePackResponse] = js.native
-    def putRemediationConfigurations(
-        params: PutRemediationConfigurationsRequest
-    ): Request[PutRemediationConfigurationsResponse] = js.native
-    def putRemediationExceptions(params: PutRemediationExceptionsRequest): Request[PutRemediationExceptionsResponse] =
-      js.native
+    def putOrganizationConfigRule(params: PutOrganizationConfigRuleRequest): Request[PutOrganizationConfigRuleResponse] = js.native
+    def putOrganizationConformancePack(params: PutOrganizationConformancePackRequest): Request[PutOrganizationConformancePackResponse] = js.native
+    def putRemediationConfigurations(params: PutRemediationConfigurationsRequest): Request[PutRemediationConfigurationsResponse] = js.native
+    def putRemediationExceptions(params: PutRemediationExceptionsRequest): Request[PutRemediationExceptionsResponse] = js.native
     def putResourceConfig(params: PutResourceConfigRequest): Request[js.Object] = js.native
-    def putRetentionConfiguration(
-        params: PutRetentionConfigurationRequest
-    ): Request[PutRetentionConfigurationResponse] = js.native
-    def selectAggregateResourceConfig(
-        params: SelectAggregateResourceConfigRequest
-    ): Request[SelectAggregateResourceConfigResponse] = js.native
+    def putRetentionConfiguration(params: PutRetentionConfigurationRequest): Request[PutRetentionConfigurationResponse] = js.native
+    def selectAggregateResourceConfig(params: SelectAggregateResourceConfigRequest): Request[SelectAggregateResourceConfigResponse] = js.native
     def selectResourceConfig(params: SelectResourceConfigRequest): Request[SelectResourceConfigResponse] = js.native
-    def startConfigRulesEvaluation(
-        params: StartConfigRulesEvaluationRequest
-    ): Request[StartConfigRulesEvaluationResponse] = js.native
+    def startConfigRulesEvaluation(params: StartConfigRulesEvaluationRequest): Request[StartConfigRulesEvaluationResponse] = js.native
     def startConfigurationRecorder(params: StartConfigurationRecorderRequest): Request[js.Object] = js.native
-    def startRemediationExecution(
-        params: StartRemediationExecutionRequest
-    ): Request[StartRemediationExecutionResponse] = js.native
+    def startRemediationExecution(params: StartRemediationExecutionRequest): Request[StartRemediationExecutionResponse] = js.native
     def stopConfigurationRecorder(params: StopConfigurationRecorderRequest): Request[js.Object] = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
@@ -712,9 +446,7 @@ package configservice {
       AwsRegion.foreach(__v => __obj.updateDynamic("AwsRegion")(__v.asInstanceOf[js.Any]))
       ComplianceType.foreach(__v => __obj.updateDynamic("ComplianceType")(__v.asInstanceOf[js.Any]))
       ConfigRuleInvokedTime.foreach(__v => __obj.updateDynamic("ConfigRuleInvokedTime")(__v.asInstanceOf[js.Any]))
-      EvaluationResultIdentifier.foreach(__v =>
-        __obj.updateDynamic("EvaluationResultIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      EvaluationResultIdentifier.foreach(__v => __obj.updateDynamic("EvaluationResultIdentifier")(__v.asInstanceOf[js.Any]))
       ResultRecordedTime.foreach(__v => __obj.updateDynamic("ResultRecordedTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AggregateEvaluationResult]
     }
@@ -829,9 +561,7 @@ package configservice {
         CreationTime: js.UndefOr[Date] = js.undefined
     ): AggregationAuthorization = {
       val __obj = js.Dynamic.literal()
-      AggregationAuthorizationArn.foreach(__v =>
-        __obj.updateDynamic("AggregationAuthorizationArn")(__v.asInstanceOf[js.Any])
-      )
+      AggregationAuthorizationArn.foreach(__v => __obj.updateDynamic("AggregationAuthorizationArn")(__v.asInstanceOf[js.Any]))
       AuthorizedAccountId.foreach(__v => __obj.updateDynamic("AuthorizedAccountId")(__v.asInstanceOf[js.Any]))
       AuthorizedAwsRegion.foreach(__v => __obj.updateDynamic("AuthorizedAwsRegion")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
@@ -884,18 +614,14 @@ package configservice {
       availabilityZone.foreach(__v => __obj.updateDynamic("availabilityZone")(__v.asInstanceOf[js.Any]))
       awsRegion.foreach(__v => __obj.updateDynamic("awsRegion")(__v.asInstanceOf[js.Any]))
       configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
-      configurationItemCaptureTime.foreach(__v =>
-        __obj.updateDynamic("configurationItemCaptureTime")(__v.asInstanceOf[js.Any])
-      )
+      configurationItemCaptureTime.foreach(__v => __obj.updateDynamic("configurationItemCaptureTime")(__v.asInstanceOf[js.Any]))
       configurationItemStatus.foreach(__v => __obj.updateDynamic("configurationItemStatus")(__v.asInstanceOf[js.Any]))
       configurationStateId.foreach(__v => __obj.updateDynamic("configurationStateId")(__v.asInstanceOf[js.Any]))
       resourceCreationTime.foreach(__v => __obj.updateDynamic("resourceCreationTime")(__v.asInstanceOf[js.Any]))
       resourceId.foreach(__v => __obj.updateDynamic("resourceId")(__v.asInstanceOf[js.Any]))
       resourceName.foreach(__v => __obj.updateDynamic("resourceName")(__v.asInstanceOf[js.Any]))
       resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      supplementaryConfiguration.foreach(__v =>
-        __obj.updateDynamic("supplementaryConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      supplementaryConfiguration.foreach(__v => __obj.updateDynamic("supplementaryConfiguration")(__v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BaseConfigurationItem]
     }
@@ -936,9 +662,7 @@ package configservice {
     ): BatchGetAggregateResourceConfigResponse = {
       val __obj = js.Dynamic.literal()
       BaseConfigurationItems.foreach(__v => __obj.updateDynamic("BaseConfigurationItems")(__v.asInstanceOf[js.Any]))
-      UnprocessedResourceIdentifiers.foreach(__v =>
-        __obj.updateDynamic("UnprocessedResourceIdentifiers")(__v.asInstanceOf[js.Any])
-      )
+      UnprocessedResourceIdentifiers.foreach(__v => __obj.updateDynamic("UnprocessedResourceIdentifiers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetAggregateResourceConfigResponse]
     }
   }
@@ -1005,9 +729,7 @@ package configservice {
         ComplianceType: js.UndefOr[ComplianceType] = js.undefined
     ): Compliance = {
       val __obj = js.Dynamic.literal()
-      ComplianceContributorCount.foreach(__v =>
-        __obj.updateDynamic("ComplianceContributorCount")(__v.asInstanceOf[js.Any])
-      )
+      ComplianceContributorCount.foreach(__v => __obj.updateDynamic("ComplianceContributorCount")(__v.asInstanceOf[js.Any]))
       ComplianceType.foreach(__v => __obj.updateDynamic("ComplianceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Compliance]
     }
@@ -1100,13 +822,9 @@ package configservice {
         NonCompliantResourceCount: js.UndefOr[ComplianceContributorCount] = js.undefined
     ): ComplianceSummary = {
       val __obj = js.Dynamic.literal()
-      ComplianceSummaryTimestamp.foreach(__v =>
-        __obj.updateDynamic("ComplianceSummaryTimestamp")(__v.asInstanceOf[js.Any])
-      )
+      ComplianceSummaryTimestamp.foreach(__v => __obj.updateDynamic("ComplianceSummaryTimestamp")(__v.asInstanceOf[js.Any]))
       CompliantResourceCount.foreach(__v => __obj.updateDynamic("CompliantResourceCount")(__v.asInstanceOf[js.Any]))
-      NonCompliantResourceCount.foreach(__v =>
-        __obj.updateDynamic("NonCompliantResourceCount")(__v.asInstanceOf[js.Any])
-      )
+      NonCompliantResourceCount.foreach(__v => __obj.updateDynamic("NonCompliantResourceCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComplianceSummary]
     }
   }
@@ -1223,9 +941,7 @@ package configservice {
       CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       InputParameters.foreach(__v => __obj.updateDynamic("InputParameters")(__v.asInstanceOf[js.Any]))
-      MaximumExecutionFrequency.foreach(__v =>
-        __obj.updateDynamic("MaximumExecutionFrequency")(__v.asInstanceOf[js.Any])
-      )
+      MaximumExecutionFrequency.foreach(__v => __obj.updateDynamic("MaximumExecutionFrequency")(__v.asInstanceOf[js.Any]))
       Scope.foreach(__v => __obj.updateDynamic("Scope")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfigRule]
     }
@@ -1337,12 +1053,8 @@ package configservice {
       LastErrorMessage.foreach(__v => __obj.updateDynamic("LastErrorMessage")(__v.asInstanceOf[js.Any]))
       LastFailedEvaluationTime.foreach(__v => __obj.updateDynamic("LastFailedEvaluationTime")(__v.asInstanceOf[js.Any]))
       LastFailedInvocationTime.foreach(__v => __obj.updateDynamic("LastFailedInvocationTime")(__v.asInstanceOf[js.Any]))
-      LastSuccessfulEvaluationTime.foreach(__v =>
-        __obj.updateDynamic("LastSuccessfulEvaluationTime")(__v.asInstanceOf[js.Any])
-      )
-      LastSuccessfulInvocationTime.foreach(__v =>
-        __obj.updateDynamic("LastSuccessfulInvocationTime")(__v.asInstanceOf[js.Any])
-      )
+      LastSuccessfulEvaluationTime.foreach(__v => __obj.updateDynamic("LastSuccessfulEvaluationTime")(__v.asInstanceOf[js.Any]))
+      LastSuccessfulInvocationTime.foreach(__v => __obj.updateDynamic("LastSuccessfulInvocationTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfigRuleEvaluationStatus]
     }
   }
@@ -1441,21 +1153,13 @@ package configservice {
         OrganizationAggregationSource: js.UndefOr[OrganizationAggregationSource] = js.undefined
     ): ConfigurationAggregator = {
       val __obj = js.Dynamic.literal()
-      AccountAggregationSources.foreach(__v =>
-        __obj.updateDynamic("AccountAggregationSources")(__v.asInstanceOf[js.Any])
-      )
-      ConfigurationAggregatorArn.foreach(__v =>
-        __obj.updateDynamic("ConfigurationAggregatorArn")(__v.asInstanceOf[js.Any])
-      )
-      ConfigurationAggregatorName.foreach(__v =>
-        __obj.updateDynamic("ConfigurationAggregatorName")(__v.asInstanceOf[js.Any])
-      )
+      AccountAggregationSources.foreach(__v => __obj.updateDynamic("AccountAggregationSources")(__v.asInstanceOf[js.Any]))
+      ConfigurationAggregatorArn.foreach(__v => __obj.updateDynamic("ConfigurationAggregatorArn")(__v.asInstanceOf[js.Any]))
+      ConfigurationAggregatorName.foreach(__v => __obj.updateDynamic("ConfigurationAggregatorName")(__v.asInstanceOf[js.Any]))
       CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
-      OrganizationAggregationSource.foreach(__v =>
-        __obj.updateDynamic("OrganizationAggregationSource")(__v.asInstanceOf[js.Any])
-      )
+      OrganizationAggregationSource.foreach(__v => __obj.updateDynamic("OrganizationAggregationSource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfigurationAggregator]
     }
   }
@@ -1513,9 +1217,7 @@ package configservice {
       availabilityZone.foreach(__v => __obj.updateDynamic("availabilityZone")(__v.asInstanceOf[js.Any]))
       awsRegion.foreach(__v => __obj.updateDynamic("awsRegion")(__v.asInstanceOf[js.Any]))
       configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
-      configurationItemCaptureTime.foreach(__v =>
-        __obj.updateDynamic("configurationItemCaptureTime")(__v.asInstanceOf[js.Any])
-      )
+      configurationItemCaptureTime.foreach(__v => __obj.updateDynamic("configurationItemCaptureTime")(__v.asInstanceOf[js.Any]))
       configurationItemMD5Hash.foreach(__v => __obj.updateDynamic("configurationItemMD5Hash")(__v.asInstanceOf[js.Any]))
       configurationItemStatus.foreach(__v => __obj.updateDynamic("configurationItemStatus")(__v.asInstanceOf[js.Any]))
       configurationStateId.foreach(__v => __obj.updateDynamic("configurationStateId")(__v.asInstanceOf[js.Any]))
@@ -1525,9 +1227,7 @@ package configservice {
       resourceId.foreach(__v => __obj.updateDynamic("resourceId")(__v.asInstanceOf[js.Any]))
       resourceName.foreach(__v => __obj.updateDynamic("resourceName")(__v.asInstanceOf[js.Any]))
       resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      supplementaryConfiguration.foreach(__v =>
-        __obj.updateDynamic("supplementaryConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      supplementaryConfiguration.foreach(__v => __obj.updateDynamic("supplementaryConfiguration")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfigurationItem]
@@ -1543,9 +1243,7 @@ package configservice {
     val ResourceDeleted = "ResourceDeleted".asInstanceOf[ConfigurationItemStatus]
     val ResourceDeletedNotRecorded = "ResourceDeletedNotRecorded".asInstanceOf[ConfigurationItemStatus]
 
-    val values = js.Object.freeze(
-      js.Array(OK, ResourceDiscovered, ResourceNotRecorded, ResourceDeleted, ResourceDeletedNotRecorded)
-    )
+    val values = js.Object.freeze(js.Array(OK, ResourceDiscovered, ResourceNotRecorded, ResourceDeleted, ResourceDeletedNotRecorded))
   }
 
   /**
@@ -1702,9 +1400,7 @@ package configservice {
         "DeliveryS3Bucket" -> DeliveryS3Bucket.asInstanceOf[js.Any]
       )
 
-      ConformancePackInputParameters.foreach(__v =>
-        __obj.updateDynamic("ConformancePackInputParameters")(__v.asInstanceOf[js.Any])
-      )
+      ConformancePackInputParameters.foreach(__v => __obj.updateDynamic("ConformancePackInputParameters")(__v.asInstanceOf[js.Any]))
       CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
       DeliveryS3KeyPrefix.foreach(__v => __obj.updateDynamic("DeliveryS3KeyPrefix")(__v.asInstanceOf[js.Any]))
       LastUpdateRequestedTime.foreach(__v => __obj.updateDynamic("LastUpdateRequestedTime")(__v.asInstanceOf[js.Any]))
@@ -1828,8 +1524,7 @@ package configservice {
     val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[ConformancePackState]
     val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[ConformancePackState]
 
-    val values =
-      js.Object.freeze(js.Array(CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED, DELETE_IN_PROGRESS, DELETE_FAILED))
+    val values = js.Object.freeze(js.Array(CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED, DELETE_IN_PROGRESS, DELETE_FAILED))
   }
 
   /**
@@ -1868,9 +1563,7 @@ package configservice {
         "StackArn" -> StackArn.asInstanceOf[js.Any]
       )
 
-      ConformancePackStatusReason.foreach(__v =>
-        __obj.updateDynamic("ConformancePackStatusReason")(__v.asInstanceOf[js.Any])
-      )
+      ConformancePackStatusReason.foreach(__v => __obj.updateDynamic("ConformancePackStatusReason")(__v.asInstanceOf[js.Any]))
       LastUpdateCompletedTime.foreach(__v => __obj.updateDynamic("LastUpdateCompletedTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConformancePackStatusDetail]
     }
@@ -2262,9 +1955,7 @@ package configservice {
         snsTopicARN: js.UndefOr[String] = js.undefined
     ): DeliveryChannel = {
       val __obj = js.Dynamic.literal()
-      configSnapshotDeliveryProperties.foreach(__v =>
-        __obj.updateDynamic("configSnapshotDeliveryProperties")(__v.asInstanceOf[js.Any])
-      )
+      configSnapshotDeliveryProperties.foreach(__v => __obj.updateDynamic("configSnapshotDeliveryProperties")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       s3BucketName.foreach(__v => __obj.updateDynamic("s3BucketName")(__v.asInstanceOf[js.Any]))
       s3KeyPrefix.foreach(__v => __obj.updateDynamic("s3KeyPrefix")(__v.asInstanceOf[js.Any]))
@@ -2294,12 +1985,8 @@ package configservice {
         name: js.UndefOr[String] = js.undefined
     ): DeliveryChannelStatus = {
       val __obj = js.Dynamic.literal()
-      configHistoryDeliveryInfo.foreach(__v =>
-        __obj.updateDynamic("configHistoryDeliveryInfo")(__v.asInstanceOf[js.Any])
-      )
-      configSnapshotDeliveryInfo.foreach(__v =>
-        __obj.updateDynamic("configSnapshotDeliveryInfo")(__v.asInstanceOf[js.Any])
-      )
+      configHistoryDeliveryInfo.foreach(__v => __obj.updateDynamic("configHistoryDeliveryInfo")(__v.asInstanceOf[js.Any]))
+      configSnapshotDeliveryInfo.foreach(__v => __obj.updateDynamic("configSnapshotDeliveryInfo")(__v.asInstanceOf[js.Any]))
       configStreamDeliveryInfo.foreach(__v => __obj.updateDynamic("configStreamDeliveryInfo")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeliveryChannelStatus]
@@ -2356,9 +2043,7 @@ package configservice {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeAggregateComplianceByConfigRulesResponse = {
       val __obj = js.Dynamic.literal()
-      AggregateComplianceByConfigRules.foreach(__v =>
-        __obj.updateDynamic("AggregateComplianceByConfigRules")(__v.asInstanceOf[js.Any])
-      )
+      AggregateComplianceByConfigRules.foreach(__v => __obj.updateDynamic("AggregateComplianceByConfigRules")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAggregateComplianceByConfigRulesResponse]
     }
@@ -2396,9 +2081,7 @@ package configservice {
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeAggregationAuthorizationsResponse = {
       val __obj = js.Dynamic.literal()
-      AggregationAuthorizations.foreach(__v =>
-        __obj.updateDynamic("AggregationAuthorizations")(__v.asInstanceOf[js.Any])
-      )
+      AggregationAuthorizations.foreach(__v => __obj.updateDynamic("AggregationAuthorizations")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAggregationAuthorizationsResponse]
     }
@@ -2545,9 +2228,7 @@ package configservice {
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeConfigRuleEvaluationStatusResponse = {
       val __obj = js.Dynamic.literal()
-      ConfigRulesEvaluationStatus.foreach(__v =>
-        __obj.updateDynamic("ConfigRulesEvaluationStatus")(__v.asInstanceOf[js.Any])
-      )
+      ConfigRulesEvaluationStatus.foreach(__v => __obj.updateDynamic("ConfigRulesEvaluationStatus")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeConfigRuleEvaluationStatusResponse]
     }
@@ -2637,9 +2318,7 @@ package configservice {
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeConfigurationAggregatorSourcesStatusResponse = {
       val __obj = js.Dynamic.literal()
-      AggregatedSourceStatusList.foreach(__v =>
-        __obj.updateDynamic("AggregatedSourceStatusList")(__v.asInstanceOf[js.Any])
-      )
+      AggregatedSourceStatusList.foreach(__v => __obj.updateDynamic("AggregatedSourceStatusList")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeConfigurationAggregatorSourcesStatusResponse]
     }
@@ -2660,9 +2339,7 @@ package configservice {
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeConfigurationAggregatorsRequest = {
       val __obj = js.Dynamic.literal()
-      ConfigurationAggregatorNames.foreach(__v =>
-        __obj.updateDynamic("ConfigurationAggregatorNames")(__v.asInstanceOf[js.Any])
-      )
+      ConfigurationAggregatorNames.foreach(__v => __obj.updateDynamic("ConfigurationAggregatorNames")(__v.asInstanceOf[js.Any]))
       Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeConfigurationAggregatorsRequest]
@@ -2702,9 +2379,7 @@ package configservice {
         ConfigurationRecorderNames: js.UndefOr[ConfigurationRecorderNameList] = js.undefined
     ): DescribeConfigurationRecorderStatusRequest = {
       val __obj = js.Dynamic.literal()
-      ConfigurationRecorderNames.foreach(__v =>
-        __obj.updateDynamic("ConfigurationRecorderNames")(__v.asInstanceOf[js.Any])
-      )
+      ConfigurationRecorderNames.foreach(__v => __obj.updateDynamic("ConfigurationRecorderNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeConfigurationRecorderStatusRequest]
     }
   }
@@ -2723,9 +2398,7 @@ package configservice {
         ConfigurationRecordersStatus: js.UndefOr[ConfigurationRecorderStatusList] = js.undefined
     ): DescribeConfigurationRecorderStatusResponse = {
       val __obj = js.Dynamic.literal()
-      ConfigurationRecordersStatus.foreach(__v =>
-        __obj.updateDynamic("ConfigurationRecordersStatus")(__v.asInstanceOf[js.Any])
-      )
+      ConfigurationRecordersStatus.foreach(__v => __obj.updateDynamic("ConfigurationRecordersStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeConfigurationRecorderStatusResponse]
     }
   }
@@ -2744,9 +2417,7 @@ package configservice {
         ConfigurationRecorderNames: js.UndefOr[ConfigurationRecorderNameList] = js.undefined
     ): DescribeConfigurationRecordersRequest = {
       val __obj = js.Dynamic.literal()
-      ConfigurationRecorderNames.foreach(__v =>
-        __obj.updateDynamic("ConfigurationRecorderNames")(__v.asInstanceOf[js.Any])
-      )
+      ConfigurationRecorderNames.foreach(__v => __obj.updateDynamic("ConfigurationRecorderNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeConfigurationRecordersRequest]
     }
   }
@@ -2856,9 +2527,7 @@ package configservice {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeConformancePackStatusResponse = {
       val __obj = js.Dynamic.literal()
-      ConformancePackStatusDetails.foreach(__v =>
-        __obj.updateDynamic("ConformancePackStatusDetails")(__v.asInstanceOf[js.Any])
-      )
+      ConformancePackStatusDetails.foreach(__v => __obj.updateDynamic("ConformancePackStatusDetails")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeConformancePackStatusResponse]
     }
@@ -2998,9 +2667,7 @@ package configservice {
       val __obj = js.Dynamic.literal()
       Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      OrganizationConfigRuleNames.foreach(__v =>
-        __obj.updateDynamic("OrganizationConfigRuleNames")(__v.asInstanceOf[js.Any])
-      )
+      OrganizationConfigRuleNames.foreach(__v => __obj.updateDynamic("OrganizationConfigRuleNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeOrganizationConfigRuleStatusesRequest]
     }
   }
@@ -3019,9 +2686,7 @@ package configservice {
     ): DescribeOrganizationConfigRuleStatusesResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      OrganizationConfigRuleStatuses.foreach(__v =>
-        __obj.updateDynamic("OrganizationConfigRuleStatuses")(__v.asInstanceOf[js.Any])
-      )
+      OrganizationConfigRuleStatuses.foreach(__v => __obj.updateDynamic("OrganizationConfigRuleStatuses")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeOrganizationConfigRuleStatusesResponse]
     }
   }
@@ -3043,9 +2708,7 @@ package configservice {
       val __obj = js.Dynamic.literal()
       Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      OrganizationConfigRuleNames.foreach(__v =>
-        __obj.updateDynamic("OrganizationConfigRuleNames")(__v.asInstanceOf[js.Any])
-      )
+      OrganizationConfigRuleNames.foreach(__v => __obj.updateDynamic("OrganizationConfigRuleNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeOrganizationConfigRulesRequest]
     }
   }
@@ -3086,9 +2749,7 @@ package configservice {
       val __obj = js.Dynamic.literal()
       Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      OrganizationConformancePackNames.foreach(__v =>
-        __obj.updateDynamic("OrganizationConformancePackNames")(__v.asInstanceOf[js.Any])
-      )
+      OrganizationConformancePackNames.foreach(__v => __obj.updateDynamic("OrganizationConformancePackNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeOrganizationConformancePackStatusesRequest]
     }
   }
@@ -3107,9 +2768,7 @@ package configservice {
     ): DescribeOrganizationConformancePackStatusesResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      OrganizationConformancePackStatuses.foreach(__v =>
-        __obj.updateDynamic("OrganizationConformancePackStatuses")(__v.asInstanceOf[js.Any])
-      )
+      OrganizationConformancePackStatuses.foreach(__v => __obj.updateDynamic("OrganizationConformancePackStatuses")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeOrganizationConformancePackStatusesResponse]
     }
   }
@@ -3131,9 +2790,7 @@ package configservice {
       val __obj = js.Dynamic.literal()
       Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      OrganizationConformancePackNames.foreach(__v =>
-        __obj.updateDynamic("OrganizationConformancePackNames")(__v.asInstanceOf[js.Any])
-      )
+      OrganizationConformancePackNames.foreach(__v => __obj.updateDynamic("OrganizationConformancePackNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeOrganizationConformancePacksRequest]
     }
   }
@@ -3152,9 +2809,7 @@ package configservice {
     ): DescribeOrganizationConformancePacksResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      OrganizationConformancePacks.foreach(__v =>
-        __obj.updateDynamic("OrganizationConformancePacks")(__v.asInstanceOf[js.Any])
-      )
+      OrganizationConformancePacks.foreach(__v => __obj.updateDynamic("OrganizationConformancePacks")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeOrganizationConformancePacksResponse]
     }
   }
@@ -3192,9 +2847,7 @@ package configservice {
     ): DescribePendingAggregationRequestsResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PendingAggregationRequests.foreach(__v =>
-        __obj.updateDynamic("PendingAggregationRequests")(__v.asInstanceOf[js.Any])
-      )
+      PendingAggregationRequests.foreach(__v => __obj.updateDynamic("PendingAggregationRequests")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePendingAggregationRequestsResponse]
     }
   }
@@ -3228,9 +2881,7 @@ package configservice {
         RemediationConfigurations: js.UndefOr[RemediationConfigurations] = js.undefined
     ): DescribeRemediationConfigurationsResponse = {
       val __obj = js.Dynamic.literal()
-      RemediationConfigurations.foreach(__v =>
-        __obj.updateDynamic("RemediationConfigurations")(__v.asInstanceOf[js.Any])
-      )
+      RemediationConfigurations.foreach(__v => __obj.updateDynamic("RemediationConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRemediationConfigurationsResponse]
     }
   }
@@ -3322,9 +2973,7 @@ package configservice {
     ): DescribeRemediationExecutionStatusResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      RemediationExecutionStatuses.foreach(__v =>
-        __obj.updateDynamic("RemediationExecutionStatuses")(__v.asInstanceOf[js.Any])
-      )
+      RemediationExecutionStatuses.foreach(__v => __obj.updateDynamic("RemediationExecutionStatuses")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRemediationExecutionStatusResponse]
     }
   }
@@ -3343,9 +2992,7 @@ package configservice {
     ): DescribeRetentionConfigurationsRequest = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      RetentionConfigurationNames.foreach(__v =>
-        __obj.updateDynamic("RetentionConfigurationNames")(__v.asInstanceOf[js.Any])
-      )
+      RetentionConfigurationNames.foreach(__v => __obj.updateDynamic("RetentionConfigurationNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRetentionConfigurationsRequest]
     }
   }
@@ -3429,9 +3076,7 @@ package configservice {
       Annotation.foreach(__v => __obj.updateDynamic("Annotation")(__v.asInstanceOf[js.Any]))
       ComplianceType.foreach(__v => __obj.updateDynamic("ComplianceType")(__v.asInstanceOf[js.Any]))
       ConfigRuleInvokedTime.foreach(__v => __obj.updateDynamic("ConfigRuleInvokedTime")(__v.asInstanceOf[js.Any]))
-      EvaluationResultIdentifier.foreach(__v =>
-        __obj.updateDynamic("EvaluationResultIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      EvaluationResultIdentifier.foreach(__v => __obj.updateDynamic("EvaluationResultIdentifier")(__v.asInstanceOf[js.Any]))
       ResultRecordedTime.foreach(__v => __obj.updateDynamic("ResultRecordedTime")(__v.asInstanceOf[js.Any]))
       ResultToken.foreach(__v => __obj.updateDynamic("ResultToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EvaluationResult]
@@ -3454,9 +3099,7 @@ package configservice {
         OrderingTimestamp: js.UndefOr[Date] = js.undefined
     ): EvaluationResultIdentifier = {
       val __obj = js.Dynamic.literal()
-      EvaluationResultQualifier.foreach(__v =>
-        __obj.updateDynamic("EvaluationResultQualifier")(__v.asInstanceOf[js.Any])
-      )
+      EvaluationResultQualifier.foreach(__v => __obj.updateDynamic("EvaluationResultQualifier")(__v.asInstanceOf[js.Any]))
       OrderingTimestamp.foreach(__v => __obj.updateDynamic("OrderingTimestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EvaluationResultIdentifier]
     }
@@ -3648,9 +3291,7 @@ package configservice {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetAggregateComplianceDetailsByConfigRuleResponse = {
       val __obj = js.Dynamic.literal()
-      AggregateEvaluationResults.foreach(__v =>
-        __obj.updateDynamic("AggregateEvaluationResults")(__v.asInstanceOf[js.Any])
-      )
+      AggregateEvaluationResults.foreach(__v => __obj.updateDynamic("AggregateEvaluationResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAggregateComplianceDetailsByConfigRuleResponse]
     }
@@ -3701,9 +3342,7 @@ package configservice {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetAggregateConfigRuleComplianceSummaryResponse = {
       val __obj = js.Dynamic.literal()
-      AggregateComplianceCounts.foreach(__v =>
-        __obj.updateDynamic("AggregateComplianceCounts")(__v.asInstanceOf[js.Any])
-      )
+      AggregateComplianceCounts.foreach(__v => __obj.updateDynamic("AggregateComplianceCounts")(__v.asInstanceOf[js.Any]))
       GroupByKey.foreach(__v => __obj.updateDynamic("GroupByKey")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAggregateConfigRuleComplianceSummaryResponse]
@@ -3960,9 +3599,7 @@ package configservice {
         ComplianceSummariesByResourceType: js.UndefOr[ComplianceSummariesByResourceType] = js.undefined
     ): GetComplianceSummaryByResourceTypeResponse = {
       val __obj = js.Dynamic.literal()
-      ComplianceSummariesByResourceType.foreach(__v =>
-        __obj.updateDynamic("ComplianceSummariesByResourceType")(__v.asInstanceOf[js.Any])
-      )
+      ComplianceSummariesByResourceType.foreach(__v => __obj.updateDynamic("ComplianceSummariesByResourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetComplianceSummaryByResourceTypeResponse]
     }
   }
@@ -4012,9 +3649,7 @@ package configservice {
         "ConformancePackName" -> ConformancePackName.asInstanceOf[js.Any]
       )
 
-      ConformancePackRuleEvaluationResults.foreach(__v =>
-        __obj.updateDynamic("ConformancePackRuleEvaluationResults")(__v.asInstanceOf[js.Any])
-      )
+      ConformancePackRuleEvaluationResults.foreach(__v => __obj.updateDynamic("ConformancePackRuleEvaluationResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetConformancePackComplianceDetailsResponse]
     }
@@ -4057,9 +3692,7 @@ package configservice {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetConformancePackComplianceSummaryResponse = {
       val __obj = js.Dynamic.literal()
-      ConformancePackComplianceSummaryList.foreach(__v =>
-        __obj.updateDynamic("ConformancePackComplianceSummaryList")(__v.asInstanceOf[js.Any])
-      )
+      ConformancePackComplianceSummaryList.foreach(__v => __obj.updateDynamic("ConformancePackComplianceSummaryList")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetConformancePackComplianceSummaryResponse]
     }
@@ -4150,9 +3783,7 @@ package configservice {
     ): GetOrganizationConfigRuleDetailedStatusResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      OrganizationConfigRuleDetailedStatus.foreach(__v =>
-        __obj.updateDynamic("OrganizationConfigRuleDetailedStatus")(__v.asInstanceOf[js.Any])
-      )
+      OrganizationConfigRuleDetailedStatus.foreach(__v => __obj.updateDynamic("OrganizationConfigRuleDetailedStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOrganizationConfigRuleDetailedStatusResponse]
     }
   }
@@ -4194,14 +3825,11 @@ package configservice {
     @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
-        OrganizationConformancePackDetailedStatuses: js.UndefOr[OrganizationConformancePackDetailedStatuses] =
-          js.undefined
+        OrganizationConformancePackDetailedStatuses: js.UndefOr[OrganizationConformancePackDetailedStatuses] = js.undefined
     ): GetOrganizationConformancePackDetailedStatusResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      OrganizationConformancePackDetailedStatuses.foreach(__v =>
-        __obj.updateDynamic("OrganizationConformancePackDetailedStatuses")(__v.asInstanceOf[js.Any])
-      )
+      OrganizationConformancePackDetailedStatuses.foreach(__v => __obj.updateDynamic("OrganizationConformancePackDetailedStatuses")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOrganizationConformancePackDetailedStatusResponse]
     }
   }
@@ -4466,19 +4094,17 @@ package configservice {
     val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[MemberAccountRuleStatus]
     val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[MemberAccountRuleStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        CREATE_SUCCESSFUL,
-        CREATE_IN_PROGRESS,
-        CREATE_FAILED,
-        DELETE_SUCCESSFUL,
-        DELETE_FAILED,
-        DELETE_IN_PROGRESS,
-        UPDATE_SUCCESSFUL,
-        UPDATE_IN_PROGRESS,
-        UPDATE_FAILED
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      CREATE_SUCCESSFUL,
+      CREATE_IN_PROGRESS,
+      CREATE_FAILED,
+      DELETE_SUCCESSFUL,
+      DELETE_FAILED,
+      DELETE_IN_PROGRESS,
+      UPDATE_SUCCESSFUL,
+      UPDATE_IN_PROGRESS,
+      UPDATE_FAILED
+    ))
   }
 
   /**
@@ -4523,17 +4149,9 @@ package configservice {
     val ConfigurationItemChangeNotification = "ConfigurationItemChangeNotification".asInstanceOf[MessageType]
     val ConfigurationSnapshotDeliveryCompleted = "ConfigurationSnapshotDeliveryCompleted".asInstanceOf[MessageType]
     val ScheduledNotification = "ScheduledNotification".asInstanceOf[MessageType]
-    val OversizedConfigurationItemChangeNotification =
-      "OversizedConfigurationItemChangeNotification".asInstanceOf[MessageType]
+    val OversizedConfigurationItemChangeNotification = "OversizedConfigurationItemChangeNotification".asInstanceOf[MessageType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ConfigurationItemChangeNotification,
-        ConfigurationSnapshotDeliveryCompleted,
-        ScheduledNotification,
-        OversizedConfigurationItemChangeNotification
-      )
-    )
+    val values = js.Object.freeze(js.Array(ConfigurationItemChangeNotification, ConfigurationSnapshotDeliveryCompleted, ScheduledNotification, OversizedConfigurationItemChangeNotification))
   }
 
   /**
@@ -4593,12 +4211,8 @@ package configservice {
 
       ExcludedAccounts.foreach(__v => __obj.updateDynamic("ExcludedAccounts")(__v.asInstanceOf[js.Any]))
       LastUpdateTime.foreach(__v => __obj.updateDynamic("LastUpdateTime")(__v.asInstanceOf[js.Any]))
-      OrganizationCustomRuleMetadata.foreach(__v =>
-        __obj.updateDynamic("OrganizationCustomRuleMetadata")(__v.asInstanceOf[js.Any])
-      )
-      OrganizationManagedRuleMetadata.foreach(__v =>
-        __obj.updateDynamic("OrganizationManagedRuleMetadata")(__v.asInstanceOf[js.Any])
-      )
+      OrganizationCustomRuleMetadata.foreach(__v => __obj.updateDynamic("OrganizationCustomRuleMetadata")(__v.asInstanceOf[js.Any]))
+      OrganizationManagedRuleMetadata.foreach(__v => __obj.updateDynamic("OrganizationManagedRuleMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OrganizationConfigRule]
     }
   }
@@ -4639,15 +4253,11 @@ package configservice {
   @js.native
   sealed trait OrganizationConfigRuleTriggerType extends js.Any
   object OrganizationConfigRuleTriggerType extends js.Object {
-    val ConfigurationItemChangeNotification =
-      "ConfigurationItemChangeNotification".asInstanceOf[OrganizationConfigRuleTriggerType]
-    val OversizedConfigurationItemChangeNotification =
-      "OversizedConfigurationItemChangeNotification".asInstanceOf[OrganizationConfigRuleTriggerType]
+    val ConfigurationItemChangeNotification = "ConfigurationItemChangeNotification".asInstanceOf[OrganizationConfigRuleTriggerType]
+    val OversizedConfigurationItemChangeNotification = "OversizedConfigurationItemChangeNotification".asInstanceOf[OrganizationConfigRuleTriggerType]
     val ScheduledNotification = "ScheduledNotification".asInstanceOf[OrganizationConfigRuleTriggerType]
 
-    val values = js.Object.freeze(
-      js.Array(ConfigurationItemChangeNotification, OversizedConfigurationItemChangeNotification, ScheduledNotification)
-    )
+    val values = js.Object.freeze(js.Array(ConfigurationItemChangeNotification, OversizedConfigurationItemChangeNotification, ScheduledNotification))
   }
 
   /**
@@ -4682,9 +4292,7 @@ package configservice {
         "OrganizationConformancePackName" -> OrganizationConformancePackName.asInstanceOf[js.Any]
       )
 
-      ConformancePackInputParameters.foreach(__v =>
-        __obj.updateDynamic("ConformancePackInputParameters")(__v.asInstanceOf[js.Any])
-      )
+      ConformancePackInputParameters.foreach(__v => __obj.updateDynamic("ConformancePackInputParameters")(__v.asInstanceOf[js.Any]))
       DeliveryS3KeyPrefix.foreach(__v => __obj.updateDynamic("DeliveryS3KeyPrefix")(__v.asInstanceOf[js.Any]))
       ExcludedAccounts.foreach(__v => __obj.updateDynamic("ExcludedAccounts")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OrganizationConformancePack]
@@ -4796,9 +4404,7 @@ package configservice {
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       InputParameters.foreach(__v => __obj.updateDynamic("InputParameters")(__v.asInstanceOf[js.Any]))
-      MaximumExecutionFrequency.foreach(__v =>
-        __obj.updateDynamic("MaximumExecutionFrequency")(__v.asInstanceOf[js.Any])
-      )
+      MaximumExecutionFrequency.foreach(__v => __obj.updateDynamic("MaximumExecutionFrequency")(__v.asInstanceOf[js.Any]))
       ResourceIdScope.foreach(__v => __obj.updateDynamic("ResourceIdScope")(__v.asInstanceOf[js.Any]))
       ResourceTypesScope.foreach(__v => __obj.updateDynamic("ResourceTypesScope")(__v.asInstanceOf[js.Any]))
       TagKeyScope.foreach(__v => __obj.updateDynamic("TagKeyScope")(__v.asInstanceOf[js.Any]))
@@ -4840,9 +4446,7 @@ package configservice {
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       InputParameters.foreach(__v => __obj.updateDynamic("InputParameters")(__v.asInstanceOf[js.Any]))
-      MaximumExecutionFrequency.foreach(__v =>
-        __obj.updateDynamic("MaximumExecutionFrequency")(__v.asInstanceOf[js.Any])
-      )
+      MaximumExecutionFrequency.foreach(__v => __obj.updateDynamic("MaximumExecutionFrequency")(__v.asInstanceOf[js.Any]))
       ResourceIdScope.foreach(__v => __obj.updateDynamic("ResourceIdScope")(__v.asInstanceOf[js.Any]))
       ResourceTypesScope.foreach(__v => __obj.updateDynamic("ResourceTypesScope")(__v.asInstanceOf[js.Any]))
       TagKeyScope.foreach(__v => __obj.updateDynamic("TagKeyScope")(__v.asInstanceOf[js.Any]))
@@ -4864,19 +4468,17 @@ package configservice {
     val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[OrganizationResourceDetailedStatus]
     val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[OrganizationResourceDetailedStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        CREATE_SUCCESSFUL,
-        CREATE_IN_PROGRESS,
-        CREATE_FAILED,
-        DELETE_SUCCESSFUL,
-        DELETE_FAILED,
-        DELETE_IN_PROGRESS,
-        UPDATE_SUCCESSFUL,
-        UPDATE_IN_PROGRESS,
-        UPDATE_FAILED
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      CREATE_SUCCESSFUL,
+      CREATE_IN_PROGRESS,
+      CREATE_FAILED,
+      DELETE_SUCCESSFUL,
+      DELETE_FAILED,
+      DELETE_IN_PROGRESS,
+      UPDATE_SUCCESSFUL,
+      UPDATE_IN_PROGRESS,
+      UPDATE_FAILED
+    ))
   }
 
   /**
@@ -4914,19 +4516,17 @@ package configservice {
     val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[OrganizationResourceStatus]
     val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[OrganizationResourceStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        CREATE_SUCCESSFUL,
-        CREATE_IN_PROGRESS,
-        CREATE_FAILED,
-        DELETE_SUCCESSFUL,
-        DELETE_FAILED,
-        DELETE_IN_PROGRESS,
-        UPDATE_SUCCESSFUL,
-        UPDATE_IN_PROGRESS,
-        UPDATE_FAILED
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      CREATE_SUCCESSFUL,
+      CREATE_IN_PROGRESS,
+      CREATE_FAILED,
+      DELETE_SUCCESSFUL,
+      DELETE_FAILED,
+      DELETE_IN_PROGRESS,
+      UPDATE_SUCCESSFUL,
+      UPDATE_IN_PROGRESS,
+      UPDATE_FAILED
+    ))
   }
 
   @js.native
@@ -4942,19 +4542,17 @@ package configservice {
     val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[OrganizationRuleStatus]
     val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[OrganizationRuleStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        CREATE_SUCCESSFUL,
-        CREATE_IN_PROGRESS,
-        CREATE_FAILED,
-        DELETE_SUCCESSFUL,
-        DELETE_FAILED,
-        DELETE_IN_PROGRESS,
-        UPDATE_SUCCESSFUL,
-        UPDATE_IN_PROGRESS,
-        UPDATE_FAILED
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      CREATE_SUCCESSFUL,
+      CREATE_IN_PROGRESS,
+      CREATE_FAILED,
+      DELETE_SUCCESSFUL,
+      DELETE_FAILED,
+      DELETE_IN_PROGRESS,
+      UPDATE_SUCCESSFUL,
+      UPDATE_IN_PROGRESS,
+      UPDATE_FAILED
+    ))
   }
 
   @js.native
@@ -5069,12 +4667,8 @@ package configservice {
         "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any]
       )
 
-      AccountAggregationSources.foreach(__v =>
-        __obj.updateDynamic("AccountAggregationSources")(__v.asInstanceOf[js.Any])
-      )
-      OrganizationAggregationSource.foreach(__v =>
-        __obj.updateDynamic("OrganizationAggregationSource")(__v.asInstanceOf[js.Any])
-      )
+      AccountAggregationSources.foreach(__v => __obj.updateDynamic("AccountAggregationSources")(__v.asInstanceOf[js.Any]))
+      OrganizationAggregationSource.foreach(__v => __obj.updateDynamic("OrganizationAggregationSource")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutConfigurationAggregatorRequest]
     }
@@ -5142,9 +4736,7 @@ package configservice {
         "DeliveryS3Bucket" -> DeliveryS3Bucket.asInstanceOf[js.Any]
       )
 
-      ConformancePackInputParameters.foreach(__v =>
-        __obj.updateDynamic("ConformancePackInputParameters")(__v.asInstanceOf[js.Any])
-      )
+      ConformancePackInputParameters.foreach(__v => __obj.updateDynamic("ConformancePackInputParameters")(__v.asInstanceOf[js.Any]))
       DeliveryS3KeyPrefix.foreach(__v => __obj.updateDynamic("DeliveryS3KeyPrefix")(__v.asInstanceOf[js.Any]))
       TemplateBody.foreach(__v => __obj.updateDynamic("TemplateBody")(__v.asInstanceOf[js.Any]))
       TemplateS3Uri.foreach(__v => __obj.updateDynamic("TemplateS3Uri")(__v.asInstanceOf[js.Any]))
@@ -5256,12 +4848,8 @@ package configservice {
       )
 
       ExcludedAccounts.foreach(__v => __obj.updateDynamic("ExcludedAccounts")(__v.asInstanceOf[js.Any]))
-      OrganizationCustomRuleMetadata.foreach(__v =>
-        __obj.updateDynamic("OrganizationCustomRuleMetadata")(__v.asInstanceOf[js.Any])
-      )
-      OrganizationManagedRuleMetadata.foreach(__v =>
-        __obj.updateDynamic("OrganizationManagedRuleMetadata")(__v.asInstanceOf[js.Any])
-      )
+      OrganizationCustomRuleMetadata.foreach(__v => __obj.updateDynamic("OrganizationCustomRuleMetadata")(__v.asInstanceOf[js.Any]))
+      OrganizationManagedRuleMetadata.foreach(__v => __obj.updateDynamic("OrganizationManagedRuleMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutOrganizationConfigRuleRequest]
     }
   }
@@ -5277,9 +4865,7 @@ package configservice {
         OrganizationConfigRuleArn: js.UndefOr[StringWithCharLimit256] = js.undefined
     ): PutOrganizationConfigRuleResponse = {
       val __obj = js.Dynamic.literal()
-      OrganizationConfigRuleArn.foreach(__v =>
-        __obj.updateDynamic("OrganizationConfigRuleArn")(__v.asInstanceOf[js.Any])
-      )
+      OrganizationConfigRuleArn.foreach(__v => __obj.updateDynamic("OrganizationConfigRuleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutOrganizationConfigRuleResponse]
     }
   }
@@ -5311,9 +4897,7 @@ package configservice {
         "OrganizationConformancePackName" -> OrganizationConformancePackName.asInstanceOf[js.Any]
       )
 
-      ConformancePackInputParameters.foreach(__v =>
-        __obj.updateDynamic("ConformancePackInputParameters")(__v.asInstanceOf[js.Any])
-      )
+      ConformancePackInputParameters.foreach(__v => __obj.updateDynamic("ConformancePackInputParameters")(__v.asInstanceOf[js.Any]))
       DeliveryS3KeyPrefix.foreach(__v => __obj.updateDynamic("DeliveryS3KeyPrefix")(__v.asInstanceOf[js.Any]))
       ExcludedAccounts.foreach(__v => __obj.updateDynamic("ExcludedAccounts")(__v.asInstanceOf[js.Any]))
       TemplateBody.foreach(__v => __obj.updateDynamic("TemplateBody")(__v.asInstanceOf[js.Any]))
@@ -5333,9 +4917,7 @@ package configservice {
         OrganizationConformancePackArn: js.UndefOr[StringWithCharLimit256] = js.undefined
     ): PutOrganizationConformancePackResponse = {
       val __obj = js.Dynamic.literal()
-      OrganizationConformancePackArn.foreach(__v =>
-        __obj.updateDynamic("OrganizationConformancePackArn")(__v.asInstanceOf[js.Any])
-      )
+      OrganizationConformancePackArn.foreach(__v => __obj.updateDynamic("OrganizationConformancePackArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutOrganizationConformancePackResponse]
     }
   }
@@ -5539,9 +5121,7 @@ package configservice {
     ): RecordingGroup = {
       val __obj = js.Dynamic.literal()
       allSupported.foreach(__v => __obj.updateDynamic("allSupported")(__v.asInstanceOf[js.Any]))
-      includeGlobalResourceTypes.foreach(__v =>
-        __obj.updateDynamic("includeGlobalResourceTypes")(__v.asInstanceOf[js.Any])
-      )
+      includeGlobalResourceTypes.foreach(__v => __obj.updateDynamic("includeGlobalResourceTypes")(__v.asInstanceOf[js.Any]))
       resourceTypes.foreach(__v => __obj.updateDynamic("resourceTypes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecordingGroup]
     }
@@ -5964,8 +5544,7 @@ package configservice {
     val `AWS::IAM::Policy` = "AWS::IAM::Policy".asInstanceOf[ResourceType]
     val `AWS::IAM::Role` = "AWS::IAM::Role".asInstanceOf[ResourceType]
     val `AWS::IAM::User` = "AWS::IAM::User".asInstanceOf[ResourceType]
-    val `AWS::ElasticLoadBalancingV2::LoadBalancer` =
-      "AWS::ElasticLoadBalancingV2::LoadBalancer".asInstanceOf[ResourceType]
+    val `AWS::ElasticLoadBalancingV2::LoadBalancer` = "AWS::ElasticLoadBalancingV2::LoadBalancer".asInstanceOf[ResourceType]
     val `AWS::ACM::Certificate` = "AWS::ACM::Certificate".asInstanceOf[ResourceType]
     val `AWS::RDS::DBInstance` = "AWS::RDS::DBInstance".asInstanceOf[ResourceType]
     val `AWS::RDS::DBSubnetGroup` = "AWS::RDS::DBSubnetGroup".asInstanceOf[ResourceType]
@@ -6004,8 +5583,7 @@ package configservice {
     val `AWS::CloudFront::StreamingDistribution` = "AWS::CloudFront::StreamingDistribution".asInstanceOf[ResourceType]
     val `AWS::Lambda::Function` = "AWS::Lambda::Function".asInstanceOf[ResourceType]
     val `AWS::ElasticBeanstalk::Application` = "AWS::ElasticBeanstalk::Application".asInstanceOf[ResourceType]
-    val `AWS::ElasticBeanstalk::ApplicationVersion` =
-      "AWS::ElasticBeanstalk::ApplicationVersion".asInstanceOf[ResourceType]
+    val `AWS::ElasticBeanstalk::ApplicationVersion` = "AWS::ElasticBeanstalk::ApplicationVersion".asInstanceOf[ResourceType]
     val `AWS::ElasticBeanstalk::Environment` = "AWS::ElasticBeanstalk::Environment".asInstanceOf[ResourceType]
     val `AWS::WAFv2::WebACL` = "AWS::WAFv2::WebACL".asInstanceOf[ResourceType]
     val `AWS::WAFv2::RuleGroup` = "AWS::WAFv2::RuleGroup".asInstanceOf[ResourceType]
@@ -6023,10 +5601,8 @@ package configservice {
     val `AWS::ApiGatewayV2::Stage` = "AWS::ApiGatewayV2::Stage".asInstanceOf[ResourceType]
     val `AWS::ApiGatewayV2::Api` = "AWS::ApiGatewayV2::Api".asInstanceOf[ResourceType]
     val `AWS::CodePipeline::Pipeline` = "AWS::CodePipeline::Pipeline".asInstanceOf[ResourceType]
-    val `AWS::ServiceCatalog::CloudFormationProvisionedProduct` =
-      "AWS::ServiceCatalog::CloudFormationProvisionedProduct".asInstanceOf[ResourceType]
-    val `AWS::ServiceCatalog::CloudFormationProduct` =
-      "AWS::ServiceCatalog::CloudFormationProduct".asInstanceOf[ResourceType]
+    val `AWS::ServiceCatalog::CloudFormationProvisionedProduct` = "AWS::ServiceCatalog::CloudFormationProvisionedProduct".asInstanceOf[ResourceType]
+    val `AWS::ServiceCatalog::CloudFormationProduct` = "AWS::ServiceCatalog::CloudFormationProduct".asInstanceOf[ResourceType]
     val `AWS::ServiceCatalog::Portfolio` = "AWS::ServiceCatalog::Portfolio".asInstanceOf[ResourceType]
     val `AWS::SQS::Queue` = "AWS::SQS::Queue".asInstanceOf[ResourceType]
     val `AWS::KMS::Key` = "AWS::KMS::Key".asInstanceOf[ResourceType]
@@ -6035,103 +5611,101 @@ package configservice {
     val `AWS::SNS::Topic` = "AWS::SNS::Topic".asInstanceOf[ResourceType]
     val `AWS::SSM::FileData` = "AWS::SSM::FileData".asInstanceOf[ResourceType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `AWS::EC2::CustomerGateway`,
-        `AWS::EC2::EIP`,
-        `AWS::EC2::Host`,
-        `AWS::EC2::Instance`,
-        `AWS::EC2::InternetGateway`,
-        `AWS::EC2::NetworkAcl`,
-        `AWS::EC2::NetworkInterface`,
-        `AWS::EC2::RouteTable`,
-        `AWS::EC2::SecurityGroup`,
-        `AWS::EC2::Subnet`,
-        `AWS::CloudTrail::Trail`,
-        `AWS::EC2::Volume`,
-        `AWS::EC2::VPC`,
-        `AWS::EC2::VPNConnection`,
-        `AWS::EC2::VPNGateway`,
-        `AWS::EC2::RegisteredHAInstance`,
-        `AWS::EC2::NatGateway`,
-        `AWS::EC2::EgressOnlyInternetGateway`,
-        `AWS::EC2::VPCEndpoint`,
-        `AWS::EC2::VPCEndpointService`,
-        `AWS::EC2::FlowLog`,
-        `AWS::EC2::VPCPeeringConnection`,
-        `AWS::Elasticsearch::Domain`,
-        `AWS::IAM::Group`,
-        `AWS::IAM::Policy`,
-        `AWS::IAM::Role`,
-        `AWS::IAM::User`,
-        `AWS::ElasticLoadBalancingV2::LoadBalancer`,
-        `AWS::ACM::Certificate`,
-        `AWS::RDS::DBInstance`,
-        `AWS::RDS::DBSubnetGroup`,
-        `AWS::RDS::DBSecurityGroup`,
-        `AWS::RDS::DBSnapshot`,
-        `AWS::RDS::DBCluster`,
-        `AWS::RDS::DBClusterSnapshot`,
-        `AWS::RDS::EventSubscription`,
-        `AWS::S3::Bucket`,
-        `AWS::S3::AccountPublicAccessBlock`,
-        `AWS::Redshift::Cluster`,
-        `AWS::Redshift::ClusterSnapshot`,
-        `AWS::Redshift::ClusterParameterGroup`,
-        `AWS::Redshift::ClusterSecurityGroup`,
-        `AWS::Redshift::ClusterSubnetGroup`,
-        `AWS::Redshift::EventSubscription`,
-        `AWS::SSM::ManagedInstanceInventory`,
-        `AWS::CloudWatch::Alarm`,
-        `AWS::CloudFormation::Stack`,
-        `AWS::ElasticLoadBalancing::LoadBalancer`,
-        `AWS::AutoScaling::AutoScalingGroup`,
-        `AWS::AutoScaling::LaunchConfiguration`,
-        `AWS::AutoScaling::ScalingPolicy`,
-        `AWS::AutoScaling::ScheduledAction`,
-        `AWS::DynamoDB::Table`,
-        `AWS::CodeBuild::Project`,
-        `AWS::WAF::RateBasedRule`,
-        `AWS::WAF::Rule`,
-        `AWS::WAF::RuleGroup`,
-        `AWS::WAF::WebACL`,
-        `AWS::WAFRegional::RateBasedRule`,
-        `AWS::WAFRegional::Rule`,
-        `AWS::WAFRegional::RuleGroup`,
-        `AWS::WAFRegional::WebACL`,
-        `AWS::CloudFront::Distribution`,
-        `AWS::CloudFront::StreamingDistribution`,
-        `AWS::Lambda::Function`,
-        `AWS::ElasticBeanstalk::Application`,
-        `AWS::ElasticBeanstalk::ApplicationVersion`,
-        `AWS::ElasticBeanstalk::Environment`,
-        `AWS::WAFv2::WebACL`,
-        `AWS::WAFv2::RuleGroup`,
-        `AWS::WAFv2::IPSet`,
-        `AWS::WAFv2::RegexPatternSet`,
-        `AWS::WAFv2::ManagedRuleSet`,
-        `AWS::XRay::EncryptionConfig`,
-        `AWS::SSM::AssociationCompliance`,
-        `AWS::SSM::PatchCompliance`,
-        `AWS::Shield::Protection`,
-        `AWS::ShieldRegional::Protection`,
-        `AWS::Config::ResourceCompliance`,
-        `AWS::ApiGateway::Stage`,
-        `AWS::ApiGateway::RestApi`,
-        `AWS::ApiGatewayV2::Stage`,
-        `AWS::ApiGatewayV2::Api`,
-        `AWS::CodePipeline::Pipeline`,
-        `AWS::ServiceCatalog::CloudFormationProvisionedProduct`,
-        `AWS::ServiceCatalog::CloudFormationProduct`,
-        `AWS::ServiceCatalog::Portfolio`,
-        `AWS::SQS::Queue`,
-        `AWS::KMS::Key`,
-        `AWS::QLDB::Ledger`,
-        `AWS::SecretsManager::Secret`,
-        `AWS::SNS::Topic`,
-        `AWS::SSM::FileData`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      `AWS::EC2::CustomerGateway`,
+      `AWS::EC2::EIP`,
+      `AWS::EC2::Host`,
+      `AWS::EC2::Instance`,
+      `AWS::EC2::InternetGateway`,
+      `AWS::EC2::NetworkAcl`,
+      `AWS::EC2::NetworkInterface`,
+      `AWS::EC2::RouteTable`,
+      `AWS::EC2::SecurityGroup`,
+      `AWS::EC2::Subnet`,
+      `AWS::CloudTrail::Trail`,
+      `AWS::EC2::Volume`,
+      `AWS::EC2::VPC`,
+      `AWS::EC2::VPNConnection`,
+      `AWS::EC2::VPNGateway`,
+      `AWS::EC2::RegisteredHAInstance`,
+      `AWS::EC2::NatGateway`,
+      `AWS::EC2::EgressOnlyInternetGateway`,
+      `AWS::EC2::VPCEndpoint`,
+      `AWS::EC2::VPCEndpointService`,
+      `AWS::EC2::FlowLog`,
+      `AWS::EC2::VPCPeeringConnection`,
+      `AWS::Elasticsearch::Domain`,
+      `AWS::IAM::Group`,
+      `AWS::IAM::Policy`,
+      `AWS::IAM::Role`,
+      `AWS::IAM::User`,
+      `AWS::ElasticLoadBalancingV2::LoadBalancer`,
+      `AWS::ACM::Certificate`,
+      `AWS::RDS::DBInstance`,
+      `AWS::RDS::DBSubnetGroup`,
+      `AWS::RDS::DBSecurityGroup`,
+      `AWS::RDS::DBSnapshot`,
+      `AWS::RDS::DBCluster`,
+      `AWS::RDS::DBClusterSnapshot`,
+      `AWS::RDS::EventSubscription`,
+      `AWS::S3::Bucket`,
+      `AWS::S3::AccountPublicAccessBlock`,
+      `AWS::Redshift::Cluster`,
+      `AWS::Redshift::ClusterSnapshot`,
+      `AWS::Redshift::ClusterParameterGroup`,
+      `AWS::Redshift::ClusterSecurityGroup`,
+      `AWS::Redshift::ClusterSubnetGroup`,
+      `AWS::Redshift::EventSubscription`,
+      `AWS::SSM::ManagedInstanceInventory`,
+      `AWS::CloudWatch::Alarm`,
+      `AWS::CloudFormation::Stack`,
+      `AWS::ElasticLoadBalancing::LoadBalancer`,
+      `AWS::AutoScaling::AutoScalingGroup`,
+      `AWS::AutoScaling::LaunchConfiguration`,
+      `AWS::AutoScaling::ScalingPolicy`,
+      `AWS::AutoScaling::ScheduledAction`,
+      `AWS::DynamoDB::Table`,
+      `AWS::CodeBuild::Project`,
+      `AWS::WAF::RateBasedRule`,
+      `AWS::WAF::Rule`,
+      `AWS::WAF::RuleGroup`,
+      `AWS::WAF::WebACL`,
+      `AWS::WAFRegional::RateBasedRule`,
+      `AWS::WAFRegional::Rule`,
+      `AWS::WAFRegional::RuleGroup`,
+      `AWS::WAFRegional::WebACL`,
+      `AWS::CloudFront::Distribution`,
+      `AWS::CloudFront::StreamingDistribution`,
+      `AWS::Lambda::Function`,
+      `AWS::ElasticBeanstalk::Application`,
+      `AWS::ElasticBeanstalk::ApplicationVersion`,
+      `AWS::ElasticBeanstalk::Environment`,
+      `AWS::WAFv2::WebACL`,
+      `AWS::WAFv2::RuleGroup`,
+      `AWS::WAFv2::IPSet`,
+      `AWS::WAFv2::RegexPatternSet`,
+      `AWS::WAFv2::ManagedRuleSet`,
+      `AWS::XRay::EncryptionConfig`,
+      `AWS::SSM::AssociationCompliance`,
+      `AWS::SSM::PatchCompliance`,
+      `AWS::Shield::Protection`,
+      `AWS::ShieldRegional::Protection`,
+      `AWS::Config::ResourceCompliance`,
+      `AWS::ApiGateway::Stage`,
+      `AWS::ApiGateway::RestApi`,
+      `AWS::ApiGatewayV2::Stage`,
+      `AWS::ApiGatewayV2::Api`,
+      `AWS::CodePipeline::Pipeline`,
+      `AWS::ServiceCatalog::CloudFormationProvisionedProduct`,
+      `AWS::ServiceCatalog::CloudFormationProduct`,
+      `AWS::ServiceCatalog::Portfolio`,
+      `AWS::SQS::Queue`,
+      `AWS::KMS::Key`,
+      `AWS::QLDB::Ledger`,
+      `AWS::SecretsManager::Secret`,
+      `AWS::SNS::Topic`,
+      `AWS::SSM::FileData`
+    ))
   }
 
   /**
@@ -6359,9 +5933,7 @@ package configservice {
     ): SourceDetail = {
       val __obj = js.Dynamic.literal()
       EventSource.foreach(__v => __obj.updateDynamic("EventSource")(__v.asInstanceOf[js.Any]))
-      MaximumExecutionFrequency.foreach(__v =>
-        __obj.updateDynamic("MaximumExecutionFrequency")(__v.asInstanceOf[js.Any])
-      )
+      MaximumExecutionFrequency.foreach(__v => __obj.updateDynamic("MaximumExecutionFrequency")(__v.asInstanceOf[js.Any]))
       MessageType.foreach(__v => __obj.updateDynamic("MessageType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SourceDetail]
     }
@@ -6383,9 +5955,7 @@ package configservice {
         ErrorPercentage: js.UndefOr[Percentage] = js.undefined
     ): SsmControls = {
       val __obj = js.Dynamic.literal()
-      ConcurrentExecutionRatePercentage.foreach(__v =>
-        __obj.updateDynamic("ConcurrentExecutionRatePercentage")(__v.asInstanceOf[js.Any])
-      )
+      ConcurrentExecutionRatePercentage.foreach(__v => __obj.updateDynamic("ConcurrentExecutionRatePercentage")(__v.asInstanceOf[js.Any]))
       ErrorPercentage.foreach(__v => __obj.updateDynamic("ErrorPercentage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SsmControls]
     }

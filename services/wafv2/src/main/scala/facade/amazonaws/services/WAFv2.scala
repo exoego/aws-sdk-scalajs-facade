@@ -67,102 +67,46 @@ package object wafv2 {
 
   implicit final class WAFv2Ops(private val service: WAFv2) extends AnyVal {
 
-    @inline def associateWebACLFuture(params: AssociateWebACLRequest): Future[AssociateWebACLResponse] =
-      service.associateWebACL(params).promise().toFuture
-    @inline def checkCapacityFuture(params: CheckCapacityRequest): Future[CheckCapacityResponse] =
-      service.checkCapacity(params).promise().toFuture
-    @inline def createIPSetFuture(params: CreateIPSetRequest): Future[CreateIPSetResponse] =
-      service.createIPSet(params).promise().toFuture
-    @inline def createRegexPatternSetFuture(
-        params: CreateRegexPatternSetRequest
-    ): Future[CreateRegexPatternSetResponse] = service.createRegexPatternSet(params).promise().toFuture
-    @inline def createRuleGroupFuture(params: CreateRuleGroupRequest): Future[CreateRuleGroupResponse] =
-      service.createRuleGroup(params).promise().toFuture
-    @inline def createWebACLFuture(params: CreateWebACLRequest): Future[CreateWebACLResponse] =
-      service.createWebACL(params).promise().toFuture
-    @inline def deleteFirewallManagerRuleGroupsFuture(
-        params: DeleteFirewallManagerRuleGroupsRequest
-    ): Future[DeleteFirewallManagerRuleGroupsResponse] =
-      service.deleteFirewallManagerRuleGroups(params).promise().toFuture
-    @inline def deleteIPSetFuture(params: DeleteIPSetRequest): Future[DeleteIPSetResponse] =
-      service.deleteIPSet(params).promise().toFuture
-    @inline def deleteLoggingConfigurationFuture(
-        params: DeleteLoggingConfigurationRequest
-    ): Future[DeleteLoggingConfigurationResponse] = service.deleteLoggingConfiguration(params).promise().toFuture
-    @inline def deletePermissionPolicyFuture(
-        params: DeletePermissionPolicyRequest
-    ): Future[DeletePermissionPolicyResponse] = service.deletePermissionPolicy(params).promise().toFuture
-    @inline def deleteRegexPatternSetFuture(
-        params: DeleteRegexPatternSetRequest
-    ): Future[DeleteRegexPatternSetResponse] = service.deleteRegexPatternSet(params).promise().toFuture
-    @inline def deleteRuleGroupFuture(params: DeleteRuleGroupRequest): Future[DeleteRuleGroupResponse] =
-      service.deleteRuleGroup(params).promise().toFuture
-    @inline def deleteWebACLFuture(params: DeleteWebACLRequest): Future[DeleteWebACLResponse] =
-      service.deleteWebACL(params).promise().toFuture
-    @inline def describeManagedRuleGroupFuture(
-        params: DescribeManagedRuleGroupRequest
-    ): Future[DescribeManagedRuleGroupResponse] = service.describeManagedRuleGroup(params).promise().toFuture
-    @inline def disassociateWebACLFuture(params: DisassociateWebACLRequest): Future[DisassociateWebACLResponse] =
-      service.disassociateWebACL(params).promise().toFuture
-    @inline def getIPSetFuture(params: GetIPSetRequest): Future[GetIPSetResponse] =
-      service.getIPSet(params).promise().toFuture
-    @inline def getLoggingConfigurationFuture(
-        params: GetLoggingConfigurationRequest
-    ): Future[GetLoggingConfigurationResponse] = service.getLoggingConfiguration(params).promise().toFuture
-    @inline def getPermissionPolicyFuture(params: GetPermissionPolicyRequest): Future[GetPermissionPolicyResponse] =
-      service.getPermissionPolicy(params).promise().toFuture
-    @inline def getRateBasedStatementManagedKeysFuture(
-        params: GetRateBasedStatementManagedKeysRequest
-    ): Future[GetRateBasedStatementManagedKeysResponse] =
-      service.getRateBasedStatementManagedKeys(params).promise().toFuture
-    @inline def getRegexPatternSetFuture(params: GetRegexPatternSetRequest): Future[GetRegexPatternSetResponse] =
-      service.getRegexPatternSet(params).promise().toFuture
-    @inline def getRuleGroupFuture(params: GetRuleGroupRequest): Future[GetRuleGroupResponse] =
-      service.getRuleGroup(params).promise().toFuture
-    @inline def getSampledRequestsFuture(params: GetSampledRequestsRequest): Future[GetSampledRequestsResponse] =
-      service.getSampledRequests(params).promise().toFuture
-    @inline def getWebACLForResourceFuture(params: GetWebACLForResourceRequest): Future[GetWebACLForResourceResponse] =
-      service.getWebACLForResource(params).promise().toFuture
-    @inline def getWebACLFuture(params: GetWebACLRequest): Future[GetWebACLResponse] =
-      service.getWebACL(params).promise().toFuture
-    @inline def listAvailableManagedRuleGroupsFuture(
-        params: ListAvailableManagedRuleGroupsRequest
-    ): Future[ListAvailableManagedRuleGroupsResponse] =
-      service.listAvailableManagedRuleGroups(params).promise().toFuture
-    @inline def listIPSetsFuture(params: ListIPSetsRequest): Future[ListIPSetsResponse] =
-      service.listIPSets(params).promise().toFuture
-    @inline def listLoggingConfigurationsFuture(
-        params: ListLoggingConfigurationsRequest
-    ): Future[ListLoggingConfigurationsResponse] = service.listLoggingConfigurations(params).promise().toFuture
-    @inline def listRegexPatternSetsFuture(params: ListRegexPatternSetsRequest): Future[ListRegexPatternSetsResponse] =
-      service.listRegexPatternSets(params).promise().toFuture
-    @inline def listResourcesForWebACLFuture(
-        params: ListResourcesForWebACLRequest
-    ): Future[ListResourcesForWebACLResponse] = service.listResourcesForWebACL(params).promise().toFuture
-    @inline def listRuleGroupsFuture(params: ListRuleGroupsRequest): Future[ListRuleGroupsResponse] =
-      service.listRuleGroups(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listWebACLsFuture(params: ListWebACLsRequest): Future[ListWebACLsResponse] =
-      service.listWebACLs(params).promise().toFuture
-    @inline def putLoggingConfigurationFuture(
-        params: PutLoggingConfigurationRequest
-    ): Future[PutLoggingConfigurationResponse] = service.putLoggingConfiguration(params).promise().toFuture
-    @inline def putPermissionPolicyFuture(params: PutPermissionPolicyRequest): Future[PutPermissionPolicyResponse] =
-      service.putPermissionPolicy(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateIPSetFuture(params: UpdateIPSetRequest): Future[UpdateIPSetResponse] =
-      service.updateIPSet(params).promise().toFuture
-    @inline def updateRegexPatternSetFuture(
-        params: UpdateRegexPatternSetRequest
-    ): Future[UpdateRegexPatternSetResponse] = service.updateRegexPatternSet(params).promise().toFuture
-    @inline def updateRuleGroupFuture(params: UpdateRuleGroupRequest): Future[UpdateRuleGroupResponse] =
-      service.updateRuleGroup(params).promise().toFuture
-    @inline def updateWebACLFuture(params: UpdateWebACLRequest): Future[UpdateWebACLResponse] =
-      service.updateWebACL(params).promise().toFuture
+    @inline def associateWebACLFuture(params: AssociateWebACLRequest): Future[AssociateWebACLResponse] = service.associateWebACL(params).promise().toFuture
+    @inline def checkCapacityFuture(params: CheckCapacityRequest): Future[CheckCapacityResponse] = service.checkCapacity(params).promise().toFuture
+    @inline def createIPSetFuture(params: CreateIPSetRequest): Future[CreateIPSetResponse] = service.createIPSet(params).promise().toFuture
+    @inline def createRegexPatternSetFuture(params: CreateRegexPatternSetRequest): Future[CreateRegexPatternSetResponse] = service.createRegexPatternSet(params).promise().toFuture
+    @inline def createRuleGroupFuture(params: CreateRuleGroupRequest): Future[CreateRuleGroupResponse] = service.createRuleGroup(params).promise().toFuture
+    @inline def createWebACLFuture(params: CreateWebACLRequest): Future[CreateWebACLResponse] = service.createWebACL(params).promise().toFuture
+    @inline def deleteFirewallManagerRuleGroupsFuture(params: DeleteFirewallManagerRuleGroupsRequest): Future[DeleteFirewallManagerRuleGroupsResponse] = service.deleteFirewallManagerRuleGroups(params).promise().toFuture
+    @inline def deleteIPSetFuture(params: DeleteIPSetRequest): Future[DeleteIPSetResponse] = service.deleteIPSet(params).promise().toFuture
+    @inline def deleteLoggingConfigurationFuture(params: DeleteLoggingConfigurationRequest): Future[DeleteLoggingConfigurationResponse] = service.deleteLoggingConfiguration(params).promise().toFuture
+    @inline def deletePermissionPolicyFuture(params: DeletePermissionPolicyRequest): Future[DeletePermissionPolicyResponse] = service.deletePermissionPolicy(params).promise().toFuture
+    @inline def deleteRegexPatternSetFuture(params: DeleteRegexPatternSetRequest): Future[DeleteRegexPatternSetResponse] = service.deleteRegexPatternSet(params).promise().toFuture
+    @inline def deleteRuleGroupFuture(params: DeleteRuleGroupRequest): Future[DeleteRuleGroupResponse] = service.deleteRuleGroup(params).promise().toFuture
+    @inline def deleteWebACLFuture(params: DeleteWebACLRequest): Future[DeleteWebACLResponse] = service.deleteWebACL(params).promise().toFuture
+    @inline def describeManagedRuleGroupFuture(params: DescribeManagedRuleGroupRequest): Future[DescribeManagedRuleGroupResponse] = service.describeManagedRuleGroup(params).promise().toFuture
+    @inline def disassociateWebACLFuture(params: DisassociateWebACLRequest): Future[DisassociateWebACLResponse] = service.disassociateWebACL(params).promise().toFuture
+    @inline def getIPSetFuture(params: GetIPSetRequest): Future[GetIPSetResponse] = service.getIPSet(params).promise().toFuture
+    @inline def getLoggingConfigurationFuture(params: GetLoggingConfigurationRequest): Future[GetLoggingConfigurationResponse] = service.getLoggingConfiguration(params).promise().toFuture
+    @inline def getPermissionPolicyFuture(params: GetPermissionPolicyRequest): Future[GetPermissionPolicyResponse] = service.getPermissionPolicy(params).promise().toFuture
+    @inline def getRateBasedStatementManagedKeysFuture(params: GetRateBasedStatementManagedKeysRequest): Future[GetRateBasedStatementManagedKeysResponse] = service.getRateBasedStatementManagedKeys(params).promise().toFuture
+    @inline def getRegexPatternSetFuture(params: GetRegexPatternSetRequest): Future[GetRegexPatternSetResponse] = service.getRegexPatternSet(params).promise().toFuture
+    @inline def getRuleGroupFuture(params: GetRuleGroupRequest): Future[GetRuleGroupResponse] = service.getRuleGroup(params).promise().toFuture
+    @inline def getSampledRequestsFuture(params: GetSampledRequestsRequest): Future[GetSampledRequestsResponse] = service.getSampledRequests(params).promise().toFuture
+    @inline def getWebACLForResourceFuture(params: GetWebACLForResourceRequest): Future[GetWebACLForResourceResponse] = service.getWebACLForResource(params).promise().toFuture
+    @inline def getWebACLFuture(params: GetWebACLRequest): Future[GetWebACLResponse] = service.getWebACL(params).promise().toFuture
+    @inline def listAvailableManagedRuleGroupsFuture(params: ListAvailableManagedRuleGroupsRequest): Future[ListAvailableManagedRuleGroupsResponse] = service.listAvailableManagedRuleGroups(params).promise().toFuture
+    @inline def listIPSetsFuture(params: ListIPSetsRequest): Future[ListIPSetsResponse] = service.listIPSets(params).promise().toFuture
+    @inline def listLoggingConfigurationsFuture(params: ListLoggingConfigurationsRequest): Future[ListLoggingConfigurationsResponse] = service.listLoggingConfigurations(params).promise().toFuture
+    @inline def listRegexPatternSetsFuture(params: ListRegexPatternSetsRequest): Future[ListRegexPatternSetsResponse] = service.listRegexPatternSets(params).promise().toFuture
+    @inline def listResourcesForWebACLFuture(params: ListResourcesForWebACLRequest): Future[ListResourcesForWebACLResponse] = service.listResourcesForWebACL(params).promise().toFuture
+    @inline def listRuleGroupsFuture(params: ListRuleGroupsRequest): Future[ListRuleGroupsResponse] = service.listRuleGroups(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listWebACLsFuture(params: ListWebACLsRequest): Future[ListWebACLsResponse] = service.listWebACLs(params).promise().toFuture
+    @inline def putLoggingConfigurationFuture(params: PutLoggingConfigurationRequest): Future[PutLoggingConfigurationResponse] = service.putLoggingConfiguration(params).promise().toFuture
+    @inline def putPermissionPolicyFuture(params: PutPermissionPolicyRequest): Future[PutPermissionPolicyResponse] = service.putPermissionPolicy(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateIPSetFuture(params: UpdateIPSetRequest): Future[UpdateIPSetResponse] = service.updateIPSet(params).promise().toFuture
+    @inline def updateRegexPatternSetFuture(params: UpdateRegexPatternSetRequest): Future[UpdateRegexPatternSetResponse] = service.updateRegexPatternSet(params).promise().toFuture
+    @inline def updateRuleGroupFuture(params: UpdateRuleGroupRequest): Future[UpdateRuleGroupResponse] = service.updateRuleGroup(params).promise().toFuture
+    @inline def updateWebACLFuture(params: UpdateWebACLRequest): Future[UpdateWebACLResponse] = service.updateWebACL(params).promise().toFuture
   }
 }
 
@@ -178,48 +122,33 @@ package wafv2 {
     def createRegexPatternSet(params: CreateRegexPatternSetRequest): Request[CreateRegexPatternSetResponse] = js.native
     def createRuleGroup(params: CreateRuleGroupRequest): Request[CreateRuleGroupResponse] = js.native
     def createWebACL(params: CreateWebACLRequest): Request[CreateWebACLResponse] = js.native
-    def deleteFirewallManagerRuleGroups(
-        params: DeleteFirewallManagerRuleGroupsRequest
-    ): Request[DeleteFirewallManagerRuleGroupsResponse] = js.native
+    def deleteFirewallManagerRuleGroups(params: DeleteFirewallManagerRuleGroupsRequest): Request[DeleteFirewallManagerRuleGroupsResponse] = js.native
     def deleteIPSet(params: DeleteIPSetRequest): Request[DeleteIPSetResponse] = js.native
-    def deleteLoggingConfiguration(
-        params: DeleteLoggingConfigurationRequest
-    ): Request[DeleteLoggingConfigurationResponse] = js.native
-    def deletePermissionPolicy(params: DeletePermissionPolicyRequest): Request[DeletePermissionPolicyResponse] =
-      js.native
+    def deleteLoggingConfiguration(params: DeleteLoggingConfigurationRequest): Request[DeleteLoggingConfigurationResponse] = js.native
+    def deletePermissionPolicy(params: DeletePermissionPolicyRequest): Request[DeletePermissionPolicyResponse] = js.native
     def deleteRegexPatternSet(params: DeleteRegexPatternSetRequest): Request[DeleteRegexPatternSetResponse] = js.native
     def deleteRuleGroup(params: DeleteRuleGroupRequest): Request[DeleteRuleGroupResponse] = js.native
     def deleteWebACL(params: DeleteWebACLRequest): Request[DeleteWebACLResponse] = js.native
-    def describeManagedRuleGroup(params: DescribeManagedRuleGroupRequest): Request[DescribeManagedRuleGroupResponse] =
-      js.native
+    def describeManagedRuleGroup(params: DescribeManagedRuleGroupRequest): Request[DescribeManagedRuleGroupResponse] = js.native
     def disassociateWebACL(params: DisassociateWebACLRequest): Request[DisassociateWebACLResponse] = js.native
     def getIPSet(params: GetIPSetRequest): Request[GetIPSetResponse] = js.native
-    def getLoggingConfiguration(params: GetLoggingConfigurationRequest): Request[GetLoggingConfigurationResponse] =
-      js.native
+    def getLoggingConfiguration(params: GetLoggingConfigurationRequest): Request[GetLoggingConfigurationResponse] = js.native
     def getPermissionPolicy(params: GetPermissionPolicyRequest): Request[GetPermissionPolicyResponse] = js.native
-    def getRateBasedStatementManagedKeys(
-        params: GetRateBasedStatementManagedKeysRequest
-    ): Request[GetRateBasedStatementManagedKeysResponse] = js.native
+    def getRateBasedStatementManagedKeys(params: GetRateBasedStatementManagedKeysRequest): Request[GetRateBasedStatementManagedKeysResponse] = js.native
     def getRegexPatternSet(params: GetRegexPatternSetRequest): Request[GetRegexPatternSetResponse] = js.native
     def getRuleGroup(params: GetRuleGroupRequest): Request[GetRuleGroupResponse] = js.native
     def getSampledRequests(params: GetSampledRequestsRequest): Request[GetSampledRequestsResponse] = js.native
     def getWebACL(params: GetWebACLRequest): Request[GetWebACLResponse] = js.native
     def getWebACLForResource(params: GetWebACLForResourceRequest): Request[GetWebACLForResourceResponse] = js.native
-    def listAvailableManagedRuleGroups(
-        params: ListAvailableManagedRuleGroupsRequest
-    ): Request[ListAvailableManagedRuleGroupsResponse] = js.native
+    def listAvailableManagedRuleGroups(params: ListAvailableManagedRuleGroupsRequest): Request[ListAvailableManagedRuleGroupsResponse] = js.native
     def listIPSets(params: ListIPSetsRequest): Request[ListIPSetsResponse] = js.native
-    def listLoggingConfigurations(
-        params: ListLoggingConfigurationsRequest
-    ): Request[ListLoggingConfigurationsResponse] = js.native
+    def listLoggingConfigurations(params: ListLoggingConfigurationsRequest): Request[ListLoggingConfigurationsResponse] = js.native
     def listRegexPatternSets(params: ListRegexPatternSetsRequest): Request[ListRegexPatternSetsResponse] = js.native
-    def listResourcesForWebACL(params: ListResourcesForWebACLRequest): Request[ListResourcesForWebACLResponse] =
-      js.native
+    def listResourcesForWebACL(params: ListResourcesForWebACLRequest): Request[ListResourcesForWebACLResponse] = js.native
     def listRuleGroups(params: ListRuleGroupsRequest): Request[ListRuleGroupsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listWebACLs(params: ListWebACLsRequest): Request[ListWebACLsResponse] = js.native
-    def putLoggingConfiguration(params: PutLoggingConfigurationRequest): Request[PutLoggingConfigurationResponse] =
-      js.native
+    def putLoggingConfiguration(params: PutLoggingConfigurationRequest): Request[PutLoggingConfigurationResponse] = js.native
     def putPermissionPolicy(params: PutPermissionPolicyRequest): Request[PutPermissionPolicyResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
@@ -709,259 +638,257 @@ package wafv2 {
     val ZM = "ZM".asInstanceOf[CountryCode]
     val ZW = "ZW".asInstanceOf[CountryCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        AF,
-        AX,
-        AL,
-        DZ,
-        AS,
-        AD,
-        AO,
-        AI,
-        AQ,
-        AG,
-        AR,
-        AM,
-        AW,
-        AU,
-        AT,
-        AZ,
-        BS,
-        BH,
-        BD,
-        BB,
-        BY,
-        BE,
-        BZ,
-        BJ,
-        BM,
-        BT,
-        BO,
-        BQ,
-        BA,
-        BW,
-        BV,
-        BR,
-        IO,
-        BN,
-        BG,
-        BF,
-        BI,
-        KH,
-        CM,
-        CA,
-        CV,
-        KY,
-        CF,
-        TD,
-        CL,
-        CN,
-        CX,
-        CC,
-        CO,
-        KM,
-        CG,
-        CD,
-        CK,
-        CR,
-        CI,
-        HR,
-        CU,
-        CW,
-        CY,
-        CZ,
-        DK,
-        DJ,
-        DM,
-        DO,
-        EC,
-        EG,
-        SV,
-        GQ,
-        ER,
-        EE,
-        ET,
-        FK,
-        FO,
-        FJ,
-        FI,
-        FR,
-        GF,
-        PF,
-        TF,
-        GA,
-        GM,
-        GE,
-        DE,
-        GH,
-        GI,
-        GR,
-        GL,
-        GD,
-        GP,
-        GU,
-        GT,
-        GG,
-        GN,
-        GW,
-        GY,
-        HT,
-        HM,
-        VA,
-        HN,
-        HK,
-        HU,
-        IS,
-        IN,
-        ID,
-        IR,
-        IQ,
-        IE,
-        IM,
-        IL,
-        IT,
-        JM,
-        JP,
-        JE,
-        JO,
-        KZ,
-        KE,
-        KI,
-        KP,
-        KR,
-        KW,
-        KG,
-        LA,
-        LV,
-        LB,
-        LS,
-        LR,
-        LY,
-        LI,
-        LT,
-        LU,
-        MO,
-        MK,
-        MG,
-        MW,
-        MY,
-        MV,
-        ML,
-        MT,
-        MH,
-        MQ,
-        MR,
-        MU,
-        YT,
-        MX,
-        FM,
-        MD,
-        MC,
-        MN,
-        ME,
-        MS,
-        MA,
-        MZ,
-        MM,
-        NA,
-        NR,
-        NP,
-        NL,
-        NC,
-        NZ,
-        NI,
-        NE,
-        NG,
-        NU,
-        NF,
-        MP,
-        NO,
-        OM,
-        PK,
-        PW,
-        PS,
-        PA,
-        PG,
-        PY,
-        PE,
-        PH,
-        PN,
-        PL,
-        PT,
-        PR,
-        QA,
-        RE,
-        RO,
-        RU,
-        RW,
-        BL,
-        SH,
-        KN,
-        LC,
-        MF,
-        PM,
-        VC,
-        WS,
-        SM,
-        ST,
-        SA,
-        SN,
-        RS,
-        SC,
-        SL,
-        SG,
-        SX,
-        SK,
-        SI,
-        SB,
-        SO,
-        ZA,
-        GS,
-        SS,
-        ES,
-        LK,
-        SD,
-        SR,
-        SJ,
-        SZ,
-        SE,
-        CH,
-        SY,
-        TW,
-        TJ,
-        TZ,
-        TH,
-        TL,
-        TG,
-        TK,
-        TO,
-        TT,
-        TN,
-        TR,
-        TM,
-        TC,
-        TV,
-        UG,
-        UA,
-        AE,
-        GB,
-        US,
-        UM,
-        UY,
-        UZ,
-        VU,
-        VE,
-        VN,
-        VG,
-        VI,
-        WF,
-        EH,
-        YE,
-        ZM,
-        ZW
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      AF,
+      AX,
+      AL,
+      DZ,
+      AS,
+      AD,
+      AO,
+      AI,
+      AQ,
+      AG,
+      AR,
+      AM,
+      AW,
+      AU,
+      AT,
+      AZ,
+      BS,
+      BH,
+      BD,
+      BB,
+      BY,
+      BE,
+      BZ,
+      BJ,
+      BM,
+      BT,
+      BO,
+      BQ,
+      BA,
+      BW,
+      BV,
+      BR,
+      IO,
+      BN,
+      BG,
+      BF,
+      BI,
+      KH,
+      CM,
+      CA,
+      CV,
+      KY,
+      CF,
+      TD,
+      CL,
+      CN,
+      CX,
+      CC,
+      CO,
+      KM,
+      CG,
+      CD,
+      CK,
+      CR,
+      CI,
+      HR,
+      CU,
+      CW,
+      CY,
+      CZ,
+      DK,
+      DJ,
+      DM,
+      DO,
+      EC,
+      EG,
+      SV,
+      GQ,
+      ER,
+      EE,
+      ET,
+      FK,
+      FO,
+      FJ,
+      FI,
+      FR,
+      GF,
+      PF,
+      TF,
+      GA,
+      GM,
+      GE,
+      DE,
+      GH,
+      GI,
+      GR,
+      GL,
+      GD,
+      GP,
+      GU,
+      GT,
+      GG,
+      GN,
+      GW,
+      GY,
+      HT,
+      HM,
+      VA,
+      HN,
+      HK,
+      HU,
+      IS,
+      IN,
+      ID,
+      IR,
+      IQ,
+      IE,
+      IM,
+      IL,
+      IT,
+      JM,
+      JP,
+      JE,
+      JO,
+      KZ,
+      KE,
+      KI,
+      KP,
+      KR,
+      KW,
+      KG,
+      LA,
+      LV,
+      LB,
+      LS,
+      LR,
+      LY,
+      LI,
+      LT,
+      LU,
+      MO,
+      MK,
+      MG,
+      MW,
+      MY,
+      MV,
+      ML,
+      MT,
+      MH,
+      MQ,
+      MR,
+      MU,
+      YT,
+      MX,
+      FM,
+      MD,
+      MC,
+      MN,
+      ME,
+      MS,
+      MA,
+      MZ,
+      MM,
+      NA,
+      NR,
+      NP,
+      NL,
+      NC,
+      NZ,
+      NI,
+      NE,
+      NG,
+      NU,
+      NF,
+      MP,
+      NO,
+      OM,
+      PK,
+      PW,
+      PS,
+      PA,
+      PG,
+      PY,
+      PE,
+      PH,
+      PN,
+      PL,
+      PT,
+      PR,
+      QA,
+      RE,
+      RO,
+      RU,
+      RW,
+      BL,
+      SH,
+      KN,
+      LC,
+      MF,
+      PM,
+      VC,
+      WS,
+      SM,
+      ST,
+      SA,
+      SN,
+      RS,
+      SC,
+      SL,
+      SG,
+      SX,
+      SK,
+      SI,
+      SB,
+      SO,
+      ZA,
+      GS,
+      SS,
+      ES,
+      LK,
+      SD,
+      SR,
+      SJ,
+      SZ,
+      SE,
+      CH,
+      SY,
+      TW,
+      TJ,
+      TZ,
+      TH,
+      TL,
+      TG,
+      TK,
+      TO,
+      TT,
+      TN,
+      TR,
+      TM,
+      TC,
+      TV,
+      UG,
+      UA,
+      AE,
+      GB,
+      US,
+      UM,
+      UY,
+      UZ,
+      VU,
+      VE,
+      VN,
+      VG,
+      VI,
+      WF,
+      EH,
+      YE,
+      ZM,
+      ZW
+    ))
   }
 
   @js.native
@@ -1637,12 +1564,8 @@ package wafv2 {
         RuleGroupReferenceStatement: js.UndefOr[RuleGroupReferenceStatement] = js.undefined
     ): FirewallManagerStatement = {
       val __obj = js.Dynamic.literal()
-      ManagedRuleGroupStatement.foreach(__v =>
-        __obj.updateDynamic("ManagedRuleGroupStatement")(__v.asInstanceOf[js.Any])
-      )
-      RuleGroupReferenceStatement.foreach(__v =>
-        __obj.updateDynamic("RuleGroupReferenceStatement")(__v.asInstanceOf[js.Any])
-      )
+      ManagedRuleGroupStatement.foreach(__v => __obj.updateDynamic("ManagedRuleGroupStatement")(__v.asInstanceOf[js.Any]))
+      RuleGroupReferenceStatement.foreach(__v => __obj.updateDynamic("RuleGroupReferenceStatement")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FirewallManagerStatement]
     }
   }
@@ -3461,18 +3384,12 @@ package wafv2 {
       ByteMatchStatement.foreach(__v => __obj.updateDynamic("ByteMatchStatement")(__v.asInstanceOf[js.Any]))
       GeoMatchStatement.foreach(__v => __obj.updateDynamic("GeoMatchStatement")(__v.asInstanceOf[js.Any]))
       IPSetReferenceStatement.foreach(__v => __obj.updateDynamic("IPSetReferenceStatement")(__v.asInstanceOf[js.Any]))
-      ManagedRuleGroupStatement.foreach(__v =>
-        __obj.updateDynamic("ManagedRuleGroupStatement")(__v.asInstanceOf[js.Any])
-      )
+      ManagedRuleGroupStatement.foreach(__v => __obj.updateDynamic("ManagedRuleGroupStatement")(__v.asInstanceOf[js.Any]))
       NotStatement.foreach(__v => __obj.updateDynamic("NotStatement")(__v.asInstanceOf[js.Any]))
       OrStatement.foreach(__v => __obj.updateDynamic("OrStatement")(__v.asInstanceOf[js.Any]))
       RateBasedStatement.foreach(__v => __obj.updateDynamic("RateBasedStatement")(__v.asInstanceOf[js.Any]))
-      RegexPatternSetReferenceStatement.foreach(__v =>
-        __obj.updateDynamic("RegexPatternSetReferenceStatement")(__v.asInstanceOf[js.Any])
-      )
-      RuleGroupReferenceStatement.foreach(__v =>
-        __obj.updateDynamic("RuleGroupReferenceStatement")(__v.asInstanceOf[js.Any])
-      )
+      RegexPatternSetReferenceStatement.foreach(__v => __obj.updateDynamic("RegexPatternSetReferenceStatement")(__v.asInstanceOf[js.Any]))
+      RuleGroupReferenceStatement.foreach(__v => __obj.updateDynamic("RuleGroupReferenceStatement")(__v.asInstanceOf[js.Any]))
       SizeConstraintStatement.foreach(__v => __obj.updateDynamic("SizeConstraintStatement")(__v.asInstanceOf[js.Any]))
       SqliMatchStatement.foreach(__v => __obj.updateDynamic("SqliMatchStatement")(__v.asInstanceOf[js.Any]))
       XssMatchStatement.foreach(__v => __obj.updateDynamic("XssMatchStatement")(__v.asInstanceOf[js.Any]))
@@ -3599,8 +3516,7 @@ package wafv2 {
     val CMD_LINE = "CMD_LINE".asInstanceOf[TextTransformationType]
     val URL_DECODE = "URL_DECODE".asInstanceOf[TextTransformationType]
 
-    val values =
-      js.Object.freeze(js.Array(NONE, COMPRESS_WHITE_SPACE, HTML_ENTITY_DECODE, LOWERCASE, CMD_LINE, URL_DECODE))
+    val values = js.Object.freeze(js.Array(NONE, COMPRESS_WHITE_SPACE, HTML_ENTITY_DECODE, LOWERCASE, CMD_LINE, URL_DECODE))
   }
 
   /**
@@ -3960,12 +3876,8 @@ package wafv2 {
       Capacity.foreach(__v => __obj.updateDynamic("Capacity")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       ManagedByFirewallManager.foreach(__v => __obj.updateDynamic("ManagedByFirewallManager")(__v.asInstanceOf[js.Any]))
-      PostProcessFirewallManagerRuleGroups.foreach(__v =>
-        __obj.updateDynamic("PostProcessFirewallManagerRuleGroups")(__v.asInstanceOf[js.Any])
-      )
-      PreProcessFirewallManagerRuleGroups.foreach(__v =>
-        __obj.updateDynamic("PreProcessFirewallManagerRuleGroups")(__v.asInstanceOf[js.Any])
-      )
+      PostProcessFirewallManagerRuleGroups.foreach(__v => __obj.updateDynamic("PostProcessFirewallManagerRuleGroups")(__v.asInstanceOf[js.Any]))
+      PreProcessFirewallManagerRuleGroups.foreach(__v => __obj.updateDynamic("PreProcessFirewallManagerRuleGroups")(__v.asInstanceOf[js.Any]))
       Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WebACL]
     }

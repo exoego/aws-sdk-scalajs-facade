@@ -20,16 +20,11 @@ package object augmentedairuntime {
 
   implicit final class AugmentedAIRuntimeOps(private val service: AugmentedAIRuntime) extends AnyVal {
 
-    @inline def deleteHumanLoopFuture(params: DeleteHumanLoopRequest): Future[DeleteHumanLoopResponse] =
-      service.deleteHumanLoop(params).promise().toFuture
-    @inline def describeHumanLoopFuture(params: DescribeHumanLoopRequest): Future[DescribeHumanLoopResponse] =
-      service.describeHumanLoop(params).promise().toFuture
-    @inline def listHumanLoopsFuture(params: ListHumanLoopsRequest): Future[ListHumanLoopsResponse] =
-      service.listHumanLoops(params).promise().toFuture
-    @inline def startHumanLoopFuture(params: StartHumanLoopRequest): Future[StartHumanLoopResponse] =
-      service.startHumanLoop(params).promise().toFuture
-    @inline def stopHumanLoopFuture(params: StopHumanLoopRequest): Future[StopHumanLoopResponse] =
-      service.stopHumanLoop(params).promise().toFuture
+    @inline def deleteHumanLoopFuture(params: DeleteHumanLoopRequest): Future[DeleteHumanLoopResponse] = service.deleteHumanLoop(params).promise().toFuture
+    @inline def describeHumanLoopFuture(params: DescribeHumanLoopRequest): Future[DescribeHumanLoopResponse] = service.describeHumanLoop(params).promise().toFuture
+    @inline def listHumanLoopsFuture(params: ListHumanLoopsRequest): Future[ListHumanLoopsResponse] = service.listHumanLoops(params).promise().toFuture
+    @inline def startHumanLoopFuture(params: StartHumanLoopRequest): Future[StartHumanLoopResponse] = service.startHumanLoop(params).promise().toFuture
+    @inline def stopHumanLoopFuture(params: StopHumanLoopRequest): Future[StopHumanLoopResponse] = service.stopHumanLoop(params).promise().toFuture
   }
 }
 
@@ -49,8 +44,7 @@ package augmentedairuntime {
   @js.native
   sealed trait ContentClassifier extends js.Any
   object ContentClassifier extends js.Object {
-    val FreeOfPersonallyIdentifiableInformation =
-      "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
+    val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
     val FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
 
     val values = js.Object.freeze(js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent))

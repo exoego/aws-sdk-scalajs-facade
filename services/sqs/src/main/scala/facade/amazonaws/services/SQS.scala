@@ -37,47 +37,26 @@ package object sqs {
 
   implicit final class SQSOps(private val service: SQS) extends AnyVal {
 
-    @inline def addPermissionFuture(params: AddPermissionRequest): Future[js.Object] =
-      service.addPermission(params).promise().toFuture
-    @inline def changeMessageVisibilityBatchFuture(
-        params: ChangeMessageVisibilityBatchRequest
-    ): Future[ChangeMessageVisibilityBatchResult] = service.changeMessageVisibilityBatch(params).promise().toFuture
-    @inline def changeMessageVisibilityFuture(params: ChangeMessageVisibilityRequest): Future[js.Object] =
-      service.changeMessageVisibility(params).promise().toFuture
-    @inline def createQueueFuture(params: CreateQueueRequest): Future[CreateQueueResult] =
-      service.createQueue(params).promise().toFuture
-    @inline def deleteMessageBatchFuture(params: DeleteMessageBatchRequest): Future[DeleteMessageBatchResult] =
-      service.deleteMessageBatch(params).promise().toFuture
-    @inline def deleteMessageFuture(params: DeleteMessageRequest): Future[js.Object] =
-      service.deleteMessage(params).promise().toFuture
-    @inline def deleteQueueFuture(params: DeleteQueueRequest): Future[js.Object] =
-      service.deleteQueue(params).promise().toFuture
-    @inline def getQueueAttributesFuture(params: GetQueueAttributesRequest): Future[GetQueueAttributesResult] =
-      service.getQueueAttributes(params).promise().toFuture
-    @inline def getQueueUrlFuture(params: GetQueueUrlRequest): Future[GetQueueUrlResult] =
-      service.getQueueUrl(params).promise().toFuture
-    @inline def listDeadLetterSourceQueuesFuture(
-        params: ListDeadLetterSourceQueuesRequest
-    ): Future[ListDeadLetterSourceQueuesResult] = service.listDeadLetterSourceQueues(params).promise().toFuture
-    @inline def listQueueTagsFuture(params: ListQueueTagsRequest): Future[ListQueueTagsResult] =
-      service.listQueueTags(params).promise().toFuture
-    @inline def listQueuesFuture(params: ListQueuesRequest): Future[ListQueuesResult] =
-      service.listQueues(params).promise().toFuture
-    @inline def purgeQueueFuture(params: PurgeQueueRequest): Future[js.Object] =
-      service.purgeQueue(params).promise().toFuture
-    @inline def receiveMessageFuture(params: ReceiveMessageRequest): Future[ReceiveMessageResult] =
-      service.receiveMessage(params).promise().toFuture
-    @inline def removePermissionFuture(params: RemovePermissionRequest): Future[js.Object] =
-      service.removePermission(params).promise().toFuture
-    @inline def sendMessageBatchFuture(params: SendMessageBatchRequest): Future[SendMessageBatchResult] =
-      service.sendMessageBatch(params).promise().toFuture
-    @inline def sendMessageFuture(params: SendMessageRequest): Future[SendMessageResult] =
-      service.sendMessage(params).promise().toFuture
-    @inline def setQueueAttributesFuture(params: SetQueueAttributesRequest): Future[js.Object] =
-      service.setQueueAttributes(params).promise().toFuture
+    @inline def addPermissionFuture(params: AddPermissionRequest): Future[js.Object] = service.addPermission(params).promise().toFuture
+    @inline def changeMessageVisibilityBatchFuture(params: ChangeMessageVisibilityBatchRequest): Future[ChangeMessageVisibilityBatchResult] = service.changeMessageVisibilityBatch(params).promise().toFuture
+    @inline def changeMessageVisibilityFuture(params: ChangeMessageVisibilityRequest): Future[js.Object] = service.changeMessageVisibility(params).promise().toFuture
+    @inline def createQueueFuture(params: CreateQueueRequest): Future[CreateQueueResult] = service.createQueue(params).promise().toFuture
+    @inline def deleteMessageBatchFuture(params: DeleteMessageBatchRequest): Future[DeleteMessageBatchResult] = service.deleteMessageBatch(params).promise().toFuture
+    @inline def deleteMessageFuture(params: DeleteMessageRequest): Future[js.Object] = service.deleteMessage(params).promise().toFuture
+    @inline def deleteQueueFuture(params: DeleteQueueRequest): Future[js.Object] = service.deleteQueue(params).promise().toFuture
+    @inline def getQueueAttributesFuture(params: GetQueueAttributesRequest): Future[GetQueueAttributesResult] = service.getQueueAttributes(params).promise().toFuture
+    @inline def getQueueUrlFuture(params: GetQueueUrlRequest): Future[GetQueueUrlResult] = service.getQueueUrl(params).promise().toFuture
+    @inline def listDeadLetterSourceQueuesFuture(params: ListDeadLetterSourceQueuesRequest): Future[ListDeadLetterSourceQueuesResult] = service.listDeadLetterSourceQueues(params).promise().toFuture
+    @inline def listQueueTagsFuture(params: ListQueueTagsRequest): Future[ListQueueTagsResult] = service.listQueueTags(params).promise().toFuture
+    @inline def listQueuesFuture(params: ListQueuesRequest): Future[ListQueuesResult] = service.listQueues(params).promise().toFuture
+    @inline def purgeQueueFuture(params: PurgeQueueRequest): Future[js.Object] = service.purgeQueue(params).promise().toFuture
+    @inline def receiveMessageFuture(params: ReceiveMessageRequest): Future[ReceiveMessageResult] = service.receiveMessage(params).promise().toFuture
+    @inline def removePermissionFuture(params: RemovePermissionRequest): Future[js.Object] = service.removePermission(params).promise().toFuture
+    @inline def sendMessageBatchFuture(params: SendMessageBatchRequest): Future[SendMessageBatchResult] = service.sendMessageBatch(params).promise().toFuture
+    @inline def sendMessageFuture(params: SendMessageRequest): Future[SendMessageResult] = service.sendMessage(params).promise().toFuture
+    @inline def setQueueAttributesFuture(params: SetQueueAttributesRequest): Future[js.Object] = service.setQueueAttributes(params).promise().toFuture
     @inline def tagQueueFuture(params: TagQueueRequest): Future[js.Object] = service.tagQueue(params).promise().toFuture
-    @inline def untagQueueFuture(params: UntagQueueRequest): Future[js.Object] =
-      service.untagQueue(params).promise().toFuture
+    @inline def untagQueueFuture(params: UntagQueueRequest): Future[js.Object] = service.untagQueue(params).promise().toFuture
   }
 }
 
@@ -89,18 +68,14 @@ package sqs {
 
     def addPermission(params: AddPermissionRequest): Request[js.Object] = js.native
     def changeMessageVisibility(params: ChangeMessageVisibilityRequest): Request[js.Object] = js.native
-    def changeMessageVisibilityBatch(
-        params: ChangeMessageVisibilityBatchRequest
-    ): Request[ChangeMessageVisibilityBatchResult] = js.native
+    def changeMessageVisibilityBatch(params: ChangeMessageVisibilityBatchRequest): Request[ChangeMessageVisibilityBatchResult] = js.native
     def createQueue(params: CreateQueueRequest): Request[CreateQueueResult] = js.native
     def deleteMessage(params: DeleteMessageRequest): Request[js.Object] = js.native
     def deleteMessageBatch(params: DeleteMessageBatchRequest): Request[DeleteMessageBatchResult] = js.native
     def deleteQueue(params: DeleteQueueRequest): Request[js.Object] = js.native
     def getQueueAttributes(params: GetQueueAttributesRequest): Request[GetQueueAttributesResult] = js.native
     def getQueueUrl(params: GetQueueUrlRequest): Request[GetQueueUrlResult] = js.native
-    def listDeadLetterSourceQueues(
-        params: ListDeadLetterSourceQueuesRequest
-    ): Request[ListDeadLetterSourceQueuesResult] = js.native
+    def listDeadLetterSourceQueues(params: ListDeadLetterSourceQueuesRequest): Request[ListDeadLetterSourceQueuesResult] = js.native
     def listQueueTags(params: ListQueueTagsRequest): Request[ListQueueTagsResult] = js.native
     def listQueues(params: ListQueuesRequest): Request[ListQueuesResult] = js.native
     def purgeQueue(params: PurgeQueueRequest): Request[js.Object] = js.native
@@ -782,18 +757,7 @@ package sqs {
     val MessageGroupId = "MessageGroupId".asInstanceOf[MessageSystemAttributeName]
     val AWSTraceHeader = "AWSTraceHeader".asInstanceOf[MessageSystemAttributeName]
 
-    val values = js.Object.freeze(
-      js.Array(
-        SenderId,
-        SentTimestamp,
-        ApproximateReceiveCount,
-        ApproximateFirstReceiveTimestamp,
-        SequenceNumber,
-        MessageDeduplicationId,
-        MessageGroupId,
-        AWSTraceHeader
-      )
-    )
+    val values = js.Object.freeze(js.Array(SenderId, SentTimestamp, ApproximateReceiveCount, ApproximateFirstReceiveTimestamp, SequenceNumber, MessageDeduplicationId, MessageGroupId, AWSTraceHeader))
   }
 
   @js.native
@@ -881,28 +845,26 @@ package sqs {
     val KmsMasterKeyId = "KmsMasterKeyId".asInstanceOf[QueueAttributeName]
     val KmsDataKeyReusePeriodSeconds = "KmsDataKeyReusePeriodSeconds".asInstanceOf[QueueAttributeName]
 
-    val values = js.Object.freeze(
-      js.Array(
-        All,
-        Policy,
-        VisibilityTimeout,
-        MaximumMessageSize,
-        MessageRetentionPeriod,
-        ApproximateNumberOfMessages,
-        ApproximateNumberOfMessagesNotVisible,
-        CreatedTimestamp,
-        LastModifiedTimestamp,
-        QueueArn,
-        ApproximateNumberOfMessagesDelayed,
-        DelaySeconds,
-        ReceiveMessageWaitTimeSeconds,
-        RedrivePolicy,
-        FifoQueue,
-        ContentBasedDeduplication,
-        KmsMasterKeyId,
-        KmsDataKeyReusePeriodSeconds
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      All,
+      Policy,
+      VisibilityTimeout,
+      MaximumMessageSize,
+      MessageRetentionPeriod,
+      ApproximateNumberOfMessages,
+      ApproximateNumberOfMessagesNotVisible,
+      CreatedTimestamp,
+      LastModifiedTimestamp,
+      QueueArn,
+      ApproximateNumberOfMessagesDelayed,
+      DelaySeconds,
+      ReceiveMessageWaitTimeSeconds,
+      RedrivePolicy,
+      FifoQueue,
+      ContentBasedDeduplication,
+      KmsMasterKeyId,
+      KmsDataKeyReusePeriodSeconds
+    ))
   }
 
   /**
@@ -1104,9 +1066,7 @@ package sqs {
       )
 
       MD5OfMessageAttributes.foreach(__v => __obj.updateDynamic("MD5OfMessageAttributes")(__v.asInstanceOf[js.Any]))
-      MD5OfMessageSystemAttributes.foreach(__v =>
-        __obj.updateDynamic("MD5OfMessageSystemAttributes")(__v.asInstanceOf[js.Any])
-      )
+      MD5OfMessageSystemAttributes.foreach(__v => __obj.updateDynamic("MD5OfMessageSystemAttributes")(__v.asInstanceOf[js.Any]))
       SequenceNumber.foreach(__v => __obj.updateDynamic("SequenceNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendMessageBatchResultEntry]
     }
@@ -1175,9 +1135,7 @@ package sqs {
       val __obj = js.Dynamic.literal()
       MD5OfMessageAttributes.foreach(__v => __obj.updateDynamic("MD5OfMessageAttributes")(__v.asInstanceOf[js.Any]))
       MD5OfMessageBody.foreach(__v => __obj.updateDynamic("MD5OfMessageBody")(__v.asInstanceOf[js.Any]))
-      MD5OfMessageSystemAttributes.foreach(__v =>
-        __obj.updateDynamic("MD5OfMessageSystemAttributes")(__v.asInstanceOf[js.Any])
-      )
+      MD5OfMessageSystemAttributes.foreach(__v => __obj.updateDynamic("MD5OfMessageSystemAttributes")(__v.asInstanceOf[js.Any]))
       MessageId.foreach(__v => __obj.updateDynamic("MessageId")(__v.asInstanceOf[js.Any]))
       SequenceNumber.foreach(__v => __obj.updateDynamic("SequenceNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendMessageResult]

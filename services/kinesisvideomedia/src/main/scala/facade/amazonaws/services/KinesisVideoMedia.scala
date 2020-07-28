@@ -17,8 +17,7 @@ package object kinesisvideomedia {
 
   implicit final class KinesisVideoMediaOps(private val service: KinesisVideoMedia) extends AnyVal {
 
-    @inline def getMediaFuture(params: GetMediaInput): Future[GetMediaOutput] =
-      service.getMedia(params).promise().toFuture
+    @inline def getMediaFuture(params: GetMediaInput): Future[GetMediaOutput] = service.getMedia(params).promise().toFuture
   }
 }
 
@@ -117,8 +116,6 @@ package kinesisvideomedia {
     val EARLIEST = "EARLIEST".asInstanceOf[StartSelectorType]
     val CONTINUATION_TOKEN = "CONTINUATION_TOKEN".asInstanceOf[StartSelectorType]
 
-    val values = js.Object.freeze(
-      js.Array(FRAGMENT_NUMBER, SERVER_TIMESTAMP, PRODUCER_TIMESTAMP, NOW, EARLIEST, CONTINUATION_TOKEN)
-    )
+    val values = js.Object.freeze(js.Array(FRAGMENT_NUMBER, SERVER_TIMESTAMP, PRODUCER_TIMESTAMP, NOW, EARLIEST, CONTINUATION_TOKEN))
   }
 }

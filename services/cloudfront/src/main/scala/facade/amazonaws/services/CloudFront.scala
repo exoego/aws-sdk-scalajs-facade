@@ -53,172 +53,65 @@ package object cloudfront {
 
   implicit final class CloudFrontOps(private val service: CloudFront) extends AnyVal {
 
-    @inline def createCachePolicyFuture(params: CreateCachePolicyRequest): Future[CreateCachePolicyResult] =
-      service.createCachePolicy(params).promise().toFuture
-    @inline def createCloudFrontOriginAccessIdentityFuture(
-        params: CreateCloudFrontOriginAccessIdentityRequest
-    ): Future[CreateCloudFrontOriginAccessIdentityResult] =
-      service.createCloudFrontOriginAccessIdentity(params).promise().toFuture
-    @inline def createDistributionFuture(params: CreateDistributionRequest): Future[CreateDistributionResult] =
-      service.createDistribution(params).promise().toFuture
-    @inline def createDistributionWithTagsFuture(
-        params: CreateDistributionWithTagsRequest
-    ): Future[CreateDistributionWithTagsResult] = service.createDistributionWithTags(params).promise().toFuture
-    @inline def createFieldLevelEncryptionConfigFuture(
-        params: CreateFieldLevelEncryptionConfigRequest
-    ): Future[CreateFieldLevelEncryptionConfigResult] =
-      service.createFieldLevelEncryptionConfig(params).promise().toFuture
-    @inline def createFieldLevelEncryptionProfileFuture(
-        params: CreateFieldLevelEncryptionProfileRequest
-    ): Future[CreateFieldLevelEncryptionProfileResult] =
-      service.createFieldLevelEncryptionProfile(params).promise().toFuture
-    @inline def createInvalidationFuture(params: CreateInvalidationRequest): Future[CreateInvalidationResult] =
-      service.createInvalidation(params).promise().toFuture
-    @inline def createOriginRequestPolicyFuture(
-        params: CreateOriginRequestPolicyRequest
-    ): Future[CreateOriginRequestPolicyResult] = service.createOriginRequestPolicy(params).promise().toFuture
-    @inline def createPublicKeyFuture(params: CreatePublicKeyRequest): Future[CreatePublicKeyResult] =
-      service.createPublicKey(params).promise().toFuture
-    @inline def createStreamingDistributionFuture(
-        params: CreateStreamingDistributionRequest
-    ): Future[CreateStreamingDistributionResult] = service.createStreamingDistribution(params).promise().toFuture
-    @inline def createStreamingDistributionWithTagsFuture(
-        params: CreateStreamingDistributionWithTagsRequest
-    ): Future[CreateStreamingDistributionWithTagsResult] =
-      service.createStreamingDistributionWithTags(params).promise().toFuture
-    @inline def deleteCachePolicyFuture(params: DeleteCachePolicyRequest): Future[js.Object] =
-      service.deleteCachePolicy(params).promise().toFuture
-    @inline def deleteCloudFrontOriginAccessIdentityFuture(
-        params: DeleteCloudFrontOriginAccessIdentityRequest
-    ): Future[js.Object] = service.deleteCloudFrontOriginAccessIdentity(params).promise().toFuture
-    @inline def deleteDistributionFuture(params: DeleteDistributionRequest): Future[js.Object] =
-      service.deleteDistribution(params).promise().toFuture
-    @inline def deleteFieldLevelEncryptionConfigFuture(
-        params: DeleteFieldLevelEncryptionConfigRequest
-    ): Future[js.Object] = service.deleteFieldLevelEncryptionConfig(params).promise().toFuture
-    @inline def deleteFieldLevelEncryptionProfileFuture(
-        params: DeleteFieldLevelEncryptionProfileRequest
-    ): Future[js.Object] = service.deleteFieldLevelEncryptionProfile(params).promise().toFuture
-    @inline def deleteOriginRequestPolicyFuture(params: DeleteOriginRequestPolicyRequest): Future[js.Object] =
-      service.deleteOriginRequestPolicy(params).promise().toFuture
-    @inline def deletePublicKeyFuture(params: DeletePublicKeyRequest): Future[js.Object] =
-      service.deletePublicKey(params).promise().toFuture
-    @inline def deleteStreamingDistributionFuture(params: DeleteStreamingDistributionRequest): Future[js.Object] =
-      service.deleteStreamingDistribution(params).promise().toFuture
-    @inline def getCachePolicyConfigFuture(params: GetCachePolicyConfigRequest): Future[GetCachePolicyConfigResult] =
-      service.getCachePolicyConfig(params).promise().toFuture
-    @inline def getCachePolicyFuture(params: GetCachePolicyRequest): Future[GetCachePolicyResult] =
-      service.getCachePolicy(params).promise().toFuture
-    @inline def getCloudFrontOriginAccessIdentityConfigFuture(
-        params: GetCloudFrontOriginAccessIdentityConfigRequest
-    ): Future[GetCloudFrontOriginAccessIdentityConfigResult] =
-      service.getCloudFrontOriginAccessIdentityConfig(params).promise().toFuture
-    @inline def getCloudFrontOriginAccessIdentityFuture(
-        params: GetCloudFrontOriginAccessIdentityRequest
-    ): Future[GetCloudFrontOriginAccessIdentityResult] =
-      service.getCloudFrontOriginAccessIdentity(params).promise().toFuture
-    @inline def getDistributionConfigFuture(params: GetDistributionConfigRequest): Future[GetDistributionConfigResult] =
-      service.getDistributionConfig(params).promise().toFuture
-    @inline def getDistributionFuture(params: GetDistributionRequest): Future[GetDistributionResult] =
-      service.getDistribution(params).promise().toFuture
-    @inline def getFieldLevelEncryptionConfigFuture(
-        params: GetFieldLevelEncryptionConfigRequest
-    ): Future[GetFieldLevelEncryptionConfigResult] = service.getFieldLevelEncryptionConfig(params).promise().toFuture
-    @inline def getFieldLevelEncryptionFuture(
-        params: GetFieldLevelEncryptionRequest
-    ): Future[GetFieldLevelEncryptionResult] = service.getFieldLevelEncryption(params).promise().toFuture
-    @inline def getFieldLevelEncryptionProfileConfigFuture(
-        params: GetFieldLevelEncryptionProfileConfigRequest
-    ): Future[GetFieldLevelEncryptionProfileConfigResult] =
-      service.getFieldLevelEncryptionProfileConfig(params).promise().toFuture
-    @inline def getFieldLevelEncryptionProfileFuture(
-        params: GetFieldLevelEncryptionProfileRequest
-    ): Future[GetFieldLevelEncryptionProfileResult] = service.getFieldLevelEncryptionProfile(params).promise().toFuture
-    @inline def getInvalidationFuture(params: GetInvalidationRequest): Future[GetInvalidationResult] =
-      service.getInvalidation(params).promise().toFuture
-    @inline def getOriginRequestPolicyConfigFuture(
-        params: GetOriginRequestPolicyConfigRequest
-    ): Future[GetOriginRequestPolicyConfigResult] = service.getOriginRequestPolicyConfig(params).promise().toFuture
-    @inline def getOriginRequestPolicyFuture(
-        params: GetOriginRequestPolicyRequest
-    ): Future[GetOriginRequestPolicyResult] = service.getOriginRequestPolicy(params).promise().toFuture
-    @inline def getPublicKeyConfigFuture(params: GetPublicKeyConfigRequest): Future[GetPublicKeyConfigResult] =
-      service.getPublicKeyConfig(params).promise().toFuture
-    @inline def getPublicKeyFuture(params: GetPublicKeyRequest): Future[GetPublicKeyResult] =
-      service.getPublicKey(params).promise().toFuture
-    @inline def getStreamingDistributionConfigFuture(
-        params: GetStreamingDistributionConfigRequest
-    ): Future[GetStreamingDistributionConfigResult] = service.getStreamingDistributionConfig(params).promise().toFuture
-    @inline def getStreamingDistributionFuture(
-        params: GetStreamingDistributionRequest
-    ): Future[GetStreamingDistributionResult] = service.getStreamingDistribution(params).promise().toFuture
-    @inline def listCachePoliciesFuture(params: ListCachePoliciesRequest): Future[ListCachePoliciesResult] =
-      service.listCachePolicies(params).promise().toFuture
-    @inline def listCloudFrontOriginAccessIdentitiesFuture(
-        params: ListCloudFrontOriginAccessIdentitiesRequest
-    ): Future[ListCloudFrontOriginAccessIdentitiesResult] =
-      service.listCloudFrontOriginAccessIdentities(params).promise().toFuture
-    @inline def listDistributionsByCachePolicyIdFuture(
-        params: ListDistributionsByCachePolicyIdRequest
-    ): Future[ListDistributionsByCachePolicyIdResult] =
-      service.listDistributionsByCachePolicyId(params).promise().toFuture
-    @inline def listDistributionsByOriginRequestPolicyIdFuture(
-        params: ListDistributionsByOriginRequestPolicyIdRequest
-    ): Future[ListDistributionsByOriginRequestPolicyIdResult] =
-      service.listDistributionsByOriginRequestPolicyId(params).promise().toFuture
-    @inline def listDistributionsByWebACLIdFuture(
-        params: ListDistributionsByWebACLIdRequest
-    ): Future[ListDistributionsByWebACLIdResult] = service.listDistributionsByWebACLId(params).promise().toFuture
-    @inline def listDistributionsFuture(params: ListDistributionsRequest): Future[ListDistributionsResult] =
-      service.listDistributions(params).promise().toFuture
-    @inline def listFieldLevelEncryptionConfigsFuture(
-        params: ListFieldLevelEncryptionConfigsRequest
-    ): Future[ListFieldLevelEncryptionConfigsResult] =
-      service.listFieldLevelEncryptionConfigs(params).promise().toFuture
-    @inline def listFieldLevelEncryptionProfilesFuture(
-        params: ListFieldLevelEncryptionProfilesRequest
-    ): Future[ListFieldLevelEncryptionProfilesResult] =
-      service.listFieldLevelEncryptionProfiles(params).promise().toFuture
-    @inline def listInvalidationsFuture(params: ListInvalidationsRequest): Future[ListInvalidationsResult] =
-      service.listInvalidations(params).promise().toFuture
-    @inline def listOriginRequestPoliciesFuture(
-        params: ListOriginRequestPoliciesRequest
-    ): Future[ListOriginRequestPoliciesResult] = service.listOriginRequestPolicies(params).promise().toFuture
-    @inline def listPublicKeysFuture(params: ListPublicKeysRequest): Future[ListPublicKeysResult] =
-      service.listPublicKeys(params).promise().toFuture
-    @inline def listStreamingDistributionsFuture(
-        params: ListStreamingDistributionsRequest
-    ): Future[ListStreamingDistributionsResult] = service.listStreamingDistributions(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResult] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateCachePolicyFuture(params: UpdateCachePolicyRequest): Future[UpdateCachePolicyResult] =
-      service.updateCachePolicy(params).promise().toFuture
-    @inline def updateCloudFrontOriginAccessIdentityFuture(
-        params: UpdateCloudFrontOriginAccessIdentityRequest
-    ): Future[UpdateCloudFrontOriginAccessIdentityResult] =
-      service.updateCloudFrontOriginAccessIdentity(params).promise().toFuture
-    @inline def updateDistributionFuture(params: UpdateDistributionRequest): Future[UpdateDistributionResult] =
-      service.updateDistribution(params).promise().toFuture
-    @inline def updateFieldLevelEncryptionConfigFuture(
-        params: UpdateFieldLevelEncryptionConfigRequest
-    ): Future[UpdateFieldLevelEncryptionConfigResult] =
-      service.updateFieldLevelEncryptionConfig(params).promise().toFuture
-    @inline def updateFieldLevelEncryptionProfileFuture(
-        params: UpdateFieldLevelEncryptionProfileRequest
-    ): Future[UpdateFieldLevelEncryptionProfileResult] =
-      service.updateFieldLevelEncryptionProfile(params).promise().toFuture
-    @inline def updateOriginRequestPolicyFuture(
-        params: UpdateOriginRequestPolicyRequest
-    ): Future[UpdateOriginRequestPolicyResult] = service.updateOriginRequestPolicy(params).promise().toFuture
-    @inline def updatePublicKeyFuture(params: UpdatePublicKeyRequest): Future[UpdatePublicKeyResult] =
-      service.updatePublicKey(params).promise().toFuture
-    @inline def updateStreamingDistributionFuture(
-        params: UpdateStreamingDistributionRequest
-    ): Future[UpdateStreamingDistributionResult] = service.updateStreamingDistribution(params).promise().toFuture
+    @inline def createCachePolicyFuture(params: CreateCachePolicyRequest): Future[CreateCachePolicyResult] = service.createCachePolicy(params).promise().toFuture
+    @inline def createCloudFrontOriginAccessIdentityFuture(params: CreateCloudFrontOriginAccessIdentityRequest): Future[CreateCloudFrontOriginAccessIdentityResult] = service.createCloudFrontOriginAccessIdentity(params).promise().toFuture
+    @inline def createDistributionFuture(params: CreateDistributionRequest): Future[CreateDistributionResult] = service.createDistribution(params).promise().toFuture
+    @inline def createDistributionWithTagsFuture(params: CreateDistributionWithTagsRequest): Future[CreateDistributionWithTagsResult] = service.createDistributionWithTags(params).promise().toFuture
+    @inline def createFieldLevelEncryptionConfigFuture(params: CreateFieldLevelEncryptionConfigRequest): Future[CreateFieldLevelEncryptionConfigResult] = service.createFieldLevelEncryptionConfig(params).promise().toFuture
+    @inline def createFieldLevelEncryptionProfileFuture(params: CreateFieldLevelEncryptionProfileRequest): Future[CreateFieldLevelEncryptionProfileResult] = service.createFieldLevelEncryptionProfile(params).promise().toFuture
+    @inline def createInvalidationFuture(params: CreateInvalidationRequest): Future[CreateInvalidationResult] = service.createInvalidation(params).promise().toFuture
+    @inline def createOriginRequestPolicyFuture(params: CreateOriginRequestPolicyRequest): Future[CreateOriginRequestPolicyResult] = service.createOriginRequestPolicy(params).promise().toFuture
+    @inline def createPublicKeyFuture(params: CreatePublicKeyRequest): Future[CreatePublicKeyResult] = service.createPublicKey(params).promise().toFuture
+    @inline def createStreamingDistributionFuture(params: CreateStreamingDistributionRequest): Future[CreateStreamingDistributionResult] = service.createStreamingDistribution(params).promise().toFuture
+    @inline def createStreamingDistributionWithTagsFuture(params: CreateStreamingDistributionWithTagsRequest): Future[CreateStreamingDistributionWithTagsResult] = service.createStreamingDistributionWithTags(params).promise().toFuture
+    @inline def deleteCachePolicyFuture(params: DeleteCachePolicyRequest): Future[js.Object] = service.deleteCachePolicy(params).promise().toFuture
+    @inline def deleteCloudFrontOriginAccessIdentityFuture(params: DeleteCloudFrontOriginAccessIdentityRequest): Future[js.Object] = service.deleteCloudFrontOriginAccessIdentity(params).promise().toFuture
+    @inline def deleteDistributionFuture(params: DeleteDistributionRequest): Future[js.Object] = service.deleteDistribution(params).promise().toFuture
+    @inline def deleteFieldLevelEncryptionConfigFuture(params: DeleteFieldLevelEncryptionConfigRequest): Future[js.Object] = service.deleteFieldLevelEncryptionConfig(params).promise().toFuture
+    @inline def deleteFieldLevelEncryptionProfileFuture(params: DeleteFieldLevelEncryptionProfileRequest): Future[js.Object] = service.deleteFieldLevelEncryptionProfile(params).promise().toFuture
+    @inline def deleteOriginRequestPolicyFuture(params: DeleteOriginRequestPolicyRequest): Future[js.Object] = service.deleteOriginRequestPolicy(params).promise().toFuture
+    @inline def deletePublicKeyFuture(params: DeletePublicKeyRequest): Future[js.Object] = service.deletePublicKey(params).promise().toFuture
+    @inline def deleteStreamingDistributionFuture(params: DeleteStreamingDistributionRequest): Future[js.Object] = service.deleteStreamingDistribution(params).promise().toFuture
+    @inline def getCachePolicyConfigFuture(params: GetCachePolicyConfigRequest): Future[GetCachePolicyConfigResult] = service.getCachePolicyConfig(params).promise().toFuture
+    @inline def getCachePolicyFuture(params: GetCachePolicyRequest): Future[GetCachePolicyResult] = service.getCachePolicy(params).promise().toFuture
+    @inline def getCloudFrontOriginAccessIdentityConfigFuture(params: GetCloudFrontOriginAccessIdentityConfigRequest): Future[GetCloudFrontOriginAccessIdentityConfigResult] = service.getCloudFrontOriginAccessIdentityConfig(params).promise().toFuture
+    @inline def getCloudFrontOriginAccessIdentityFuture(params: GetCloudFrontOriginAccessIdentityRequest): Future[GetCloudFrontOriginAccessIdentityResult] = service.getCloudFrontOriginAccessIdentity(params).promise().toFuture
+    @inline def getDistributionConfigFuture(params: GetDistributionConfigRequest): Future[GetDistributionConfigResult] = service.getDistributionConfig(params).promise().toFuture
+    @inline def getDistributionFuture(params: GetDistributionRequest): Future[GetDistributionResult] = service.getDistribution(params).promise().toFuture
+    @inline def getFieldLevelEncryptionConfigFuture(params: GetFieldLevelEncryptionConfigRequest): Future[GetFieldLevelEncryptionConfigResult] = service.getFieldLevelEncryptionConfig(params).promise().toFuture
+    @inline def getFieldLevelEncryptionFuture(params: GetFieldLevelEncryptionRequest): Future[GetFieldLevelEncryptionResult] = service.getFieldLevelEncryption(params).promise().toFuture
+    @inline def getFieldLevelEncryptionProfileConfigFuture(params: GetFieldLevelEncryptionProfileConfigRequest): Future[GetFieldLevelEncryptionProfileConfigResult] = service.getFieldLevelEncryptionProfileConfig(params).promise().toFuture
+    @inline def getFieldLevelEncryptionProfileFuture(params: GetFieldLevelEncryptionProfileRequest): Future[GetFieldLevelEncryptionProfileResult] = service.getFieldLevelEncryptionProfile(params).promise().toFuture
+    @inline def getInvalidationFuture(params: GetInvalidationRequest): Future[GetInvalidationResult] = service.getInvalidation(params).promise().toFuture
+    @inline def getOriginRequestPolicyConfigFuture(params: GetOriginRequestPolicyConfigRequest): Future[GetOriginRequestPolicyConfigResult] = service.getOriginRequestPolicyConfig(params).promise().toFuture
+    @inline def getOriginRequestPolicyFuture(params: GetOriginRequestPolicyRequest): Future[GetOriginRequestPolicyResult] = service.getOriginRequestPolicy(params).promise().toFuture
+    @inline def getPublicKeyConfigFuture(params: GetPublicKeyConfigRequest): Future[GetPublicKeyConfigResult] = service.getPublicKeyConfig(params).promise().toFuture
+    @inline def getPublicKeyFuture(params: GetPublicKeyRequest): Future[GetPublicKeyResult] = service.getPublicKey(params).promise().toFuture
+    @inline def getStreamingDistributionConfigFuture(params: GetStreamingDistributionConfigRequest): Future[GetStreamingDistributionConfigResult] = service.getStreamingDistributionConfig(params).promise().toFuture
+    @inline def getStreamingDistributionFuture(params: GetStreamingDistributionRequest): Future[GetStreamingDistributionResult] = service.getStreamingDistribution(params).promise().toFuture
+    @inline def listCachePoliciesFuture(params: ListCachePoliciesRequest): Future[ListCachePoliciesResult] = service.listCachePolicies(params).promise().toFuture
+    @inline def listCloudFrontOriginAccessIdentitiesFuture(params: ListCloudFrontOriginAccessIdentitiesRequest): Future[ListCloudFrontOriginAccessIdentitiesResult] = service.listCloudFrontOriginAccessIdentities(params).promise().toFuture
+    @inline def listDistributionsByCachePolicyIdFuture(params: ListDistributionsByCachePolicyIdRequest): Future[ListDistributionsByCachePolicyIdResult] = service.listDistributionsByCachePolicyId(params).promise().toFuture
+    @inline def listDistributionsByOriginRequestPolicyIdFuture(params: ListDistributionsByOriginRequestPolicyIdRequest): Future[ListDistributionsByOriginRequestPolicyIdResult] = service.listDistributionsByOriginRequestPolicyId(params).promise().toFuture
+    @inline def listDistributionsByWebACLIdFuture(params: ListDistributionsByWebACLIdRequest): Future[ListDistributionsByWebACLIdResult] = service.listDistributionsByWebACLId(params).promise().toFuture
+    @inline def listDistributionsFuture(params: ListDistributionsRequest): Future[ListDistributionsResult] = service.listDistributions(params).promise().toFuture
+    @inline def listFieldLevelEncryptionConfigsFuture(params: ListFieldLevelEncryptionConfigsRequest): Future[ListFieldLevelEncryptionConfigsResult] = service.listFieldLevelEncryptionConfigs(params).promise().toFuture
+    @inline def listFieldLevelEncryptionProfilesFuture(params: ListFieldLevelEncryptionProfilesRequest): Future[ListFieldLevelEncryptionProfilesResult] = service.listFieldLevelEncryptionProfiles(params).promise().toFuture
+    @inline def listInvalidationsFuture(params: ListInvalidationsRequest): Future[ListInvalidationsResult] = service.listInvalidations(params).promise().toFuture
+    @inline def listOriginRequestPoliciesFuture(params: ListOriginRequestPoliciesRequest): Future[ListOriginRequestPoliciesResult] = service.listOriginRequestPolicies(params).promise().toFuture
+    @inline def listPublicKeysFuture(params: ListPublicKeysRequest): Future[ListPublicKeysResult] = service.listPublicKeys(params).promise().toFuture
+    @inline def listStreamingDistributionsFuture(params: ListStreamingDistributionsRequest): Future[ListStreamingDistributionsResult] = service.listStreamingDistributions(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResult] = service.listTagsForResource(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
+    @inline def updateCachePolicyFuture(params: UpdateCachePolicyRequest): Future[UpdateCachePolicyResult] = service.updateCachePolicy(params).promise().toFuture
+    @inline def updateCloudFrontOriginAccessIdentityFuture(params: UpdateCloudFrontOriginAccessIdentityRequest): Future[UpdateCloudFrontOriginAccessIdentityResult] = service.updateCloudFrontOriginAccessIdentity(params).promise().toFuture
+    @inline def updateDistributionFuture(params: UpdateDistributionRequest): Future[UpdateDistributionResult] = service.updateDistribution(params).promise().toFuture
+    @inline def updateFieldLevelEncryptionConfigFuture(params: UpdateFieldLevelEncryptionConfigRequest): Future[UpdateFieldLevelEncryptionConfigResult] = service.updateFieldLevelEncryptionConfig(params).promise().toFuture
+    @inline def updateFieldLevelEncryptionProfileFuture(params: UpdateFieldLevelEncryptionProfileRequest): Future[UpdateFieldLevelEncryptionProfileResult] = service.updateFieldLevelEncryptionProfile(params).promise().toFuture
+    @inline def updateOriginRequestPolicyFuture(params: UpdateOriginRequestPolicyRequest): Future[UpdateOriginRequestPolicyResult] = service.updateOriginRequestPolicy(params).promise().toFuture
+    @inline def updatePublicKeyFuture(params: UpdatePublicKeyRequest): Future[UpdatePublicKeyResult] = service.updatePublicKey(params).promise().toFuture
+    @inline def updateStreamingDistributionFuture(params: UpdateStreamingDistributionRequest): Future[UpdateStreamingDistributionResult] = service.updateStreamingDistribution(params).promise().toFuture
   }
 }
 
@@ -229,120 +122,64 @@ package cloudfront {
     def this(config: AWSConfig) = this()
 
     def createCachePolicy(params: CreateCachePolicyRequest): Request[CreateCachePolicyResult] = js.native
-    def createCloudFrontOriginAccessIdentity(
-        params: CreateCloudFrontOriginAccessIdentityRequest
-    ): Request[CreateCloudFrontOriginAccessIdentityResult] = js.native
+    def createCloudFrontOriginAccessIdentity(params: CreateCloudFrontOriginAccessIdentityRequest): Request[CreateCloudFrontOriginAccessIdentityResult] = js.native
     def createDistribution(params: CreateDistributionRequest): Request[CreateDistributionResult] = js.native
-    def createDistributionWithTags(
-        params: CreateDistributionWithTagsRequest
-    ): Request[CreateDistributionWithTagsResult] = js.native
-    def createFieldLevelEncryptionConfig(
-        params: CreateFieldLevelEncryptionConfigRequest
-    ): Request[CreateFieldLevelEncryptionConfigResult] = js.native
-    def createFieldLevelEncryptionProfile(
-        params: CreateFieldLevelEncryptionProfileRequest
-    ): Request[CreateFieldLevelEncryptionProfileResult] = js.native
+    def createDistributionWithTags(params: CreateDistributionWithTagsRequest): Request[CreateDistributionWithTagsResult] = js.native
+    def createFieldLevelEncryptionConfig(params: CreateFieldLevelEncryptionConfigRequest): Request[CreateFieldLevelEncryptionConfigResult] = js.native
+    def createFieldLevelEncryptionProfile(params: CreateFieldLevelEncryptionProfileRequest): Request[CreateFieldLevelEncryptionProfileResult] = js.native
     def createInvalidation(params: CreateInvalidationRequest): Request[CreateInvalidationResult] = js.native
-    def createOriginRequestPolicy(params: CreateOriginRequestPolicyRequest): Request[CreateOriginRequestPolicyResult] =
-      js.native
+    def createOriginRequestPolicy(params: CreateOriginRequestPolicyRequest): Request[CreateOriginRequestPolicyResult] = js.native
     def createPublicKey(params: CreatePublicKeyRequest): Request[CreatePublicKeyResult] = js.native
-    def createStreamingDistribution(
-        params: CreateStreamingDistributionRequest
-    ): Request[CreateStreamingDistributionResult] = js.native
-    def createStreamingDistributionWithTags(
-        params: CreateStreamingDistributionWithTagsRequest
-    ): Request[CreateStreamingDistributionWithTagsResult] = js.native
+    def createStreamingDistribution(params: CreateStreamingDistributionRequest): Request[CreateStreamingDistributionResult] = js.native
+    def createStreamingDistributionWithTags(params: CreateStreamingDistributionWithTagsRequest): Request[CreateStreamingDistributionWithTagsResult] = js.native
     def deleteCachePolicy(params: DeleteCachePolicyRequest): Request[js.Object] = js.native
-    def deleteCloudFrontOriginAccessIdentity(params: DeleteCloudFrontOriginAccessIdentityRequest): Request[js.Object] =
-      js.native
+    def deleteCloudFrontOriginAccessIdentity(params: DeleteCloudFrontOriginAccessIdentityRequest): Request[js.Object] = js.native
     def deleteDistribution(params: DeleteDistributionRequest): Request[js.Object] = js.native
-    def deleteFieldLevelEncryptionConfig(params: DeleteFieldLevelEncryptionConfigRequest): Request[js.Object] =
-      js.native
-    def deleteFieldLevelEncryptionProfile(params: DeleteFieldLevelEncryptionProfileRequest): Request[js.Object] =
-      js.native
+    def deleteFieldLevelEncryptionConfig(params: DeleteFieldLevelEncryptionConfigRequest): Request[js.Object] = js.native
+    def deleteFieldLevelEncryptionProfile(params: DeleteFieldLevelEncryptionProfileRequest): Request[js.Object] = js.native
     def deleteOriginRequestPolicy(params: DeleteOriginRequestPolicyRequest): Request[js.Object] = js.native
     def deletePublicKey(params: DeletePublicKeyRequest): Request[js.Object] = js.native
     def deleteStreamingDistribution(params: DeleteStreamingDistributionRequest): Request[js.Object] = js.native
     def getCachePolicy(params: GetCachePolicyRequest): Request[GetCachePolicyResult] = js.native
     def getCachePolicyConfig(params: GetCachePolicyConfigRequest): Request[GetCachePolicyConfigResult] = js.native
-    def getCloudFrontOriginAccessIdentity(
-        params: GetCloudFrontOriginAccessIdentityRequest
-    ): Request[GetCloudFrontOriginAccessIdentityResult] = js.native
-    def getCloudFrontOriginAccessIdentityConfig(
-        params: GetCloudFrontOriginAccessIdentityConfigRequest
-    ): Request[GetCloudFrontOriginAccessIdentityConfigResult] = js.native
+    def getCloudFrontOriginAccessIdentity(params: GetCloudFrontOriginAccessIdentityRequest): Request[GetCloudFrontOriginAccessIdentityResult] = js.native
+    def getCloudFrontOriginAccessIdentityConfig(params: GetCloudFrontOriginAccessIdentityConfigRequest): Request[GetCloudFrontOriginAccessIdentityConfigResult] = js.native
     def getDistribution(params: GetDistributionRequest): Request[GetDistributionResult] = js.native
     def getDistributionConfig(params: GetDistributionConfigRequest): Request[GetDistributionConfigResult] = js.native
-    def getFieldLevelEncryption(params: GetFieldLevelEncryptionRequest): Request[GetFieldLevelEncryptionResult] =
-      js.native
-    def getFieldLevelEncryptionConfig(
-        params: GetFieldLevelEncryptionConfigRequest
-    ): Request[GetFieldLevelEncryptionConfigResult] = js.native
-    def getFieldLevelEncryptionProfile(
-        params: GetFieldLevelEncryptionProfileRequest
-    ): Request[GetFieldLevelEncryptionProfileResult] = js.native
-    def getFieldLevelEncryptionProfileConfig(
-        params: GetFieldLevelEncryptionProfileConfigRequest
-    ): Request[GetFieldLevelEncryptionProfileConfigResult] = js.native
+    def getFieldLevelEncryption(params: GetFieldLevelEncryptionRequest): Request[GetFieldLevelEncryptionResult] = js.native
+    def getFieldLevelEncryptionConfig(params: GetFieldLevelEncryptionConfigRequest): Request[GetFieldLevelEncryptionConfigResult] = js.native
+    def getFieldLevelEncryptionProfile(params: GetFieldLevelEncryptionProfileRequest): Request[GetFieldLevelEncryptionProfileResult] = js.native
+    def getFieldLevelEncryptionProfileConfig(params: GetFieldLevelEncryptionProfileConfigRequest): Request[GetFieldLevelEncryptionProfileConfigResult] = js.native
     def getInvalidation(params: GetInvalidationRequest): Request[GetInvalidationResult] = js.native
     def getOriginRequestPolicy(params: GetOriginRequestPolicyRequest): Request[GetOriginRequestPolicyResult] = js.native
-    def getOriginRequestPolicyConfig(
-        params: GetOriginRequestPolicyConfigRequest
-    ): Request[GetOriginRequestPolicyConfigResult] = js.native
+    def getOriginRequestPolicyConfig(params: GetOriginRequestPolicyConfigRequest): Request[GetOriginRequestPolicyConfigResult] = js.native
     def getPublicKey(params: GetPublicKeyRequest): Request[GetPublicKeyResult] = js.native
     def getPublicKeyConfig(params: GetPublicKeyConfigRequest): Request[GetPublicKeyConfigResult] = js.native
-    def getStreamingDistribution(params: GetStreamingDistributionRequest): Request[GetStreamingDistributionResult] =
-      js.native
-    def getStreamingDistributionConfig(
-        params: GetStreamingDistributionConfigRequest
-    ): Request[GetStreamingDistributionConfigResult] = js.native
+    def getStreamingDistribution(params: GetStreamingDistributionRequest): Request[GetStreamingDistributionResult] = js.native
+    def getStreamingDistributionConfig(params: GetStreamingDistributionConfigRequest): Request[GetStreamingDistributionConfigResult] = js.native
     def listCachePolicies(params: ListCachePoliciesRequest): Request[ListCachePoliciesResult] = js.native
-    def listCloudFrontOriginAccessIdentities(
-        params: ListCloudFrontOriginAccessIdentitiesRequest
-    ): Request[ListCloudFrontOriginAccessIdentitiesResult] = js.native
+    def listCloudFrontOriginAccessIdentities(params: ListCloudFrontOriginAccessIdentitiesRequest): Request[ListCloudFrontOriginAccessIdentitiesResult] = js.native
     def listDistributions(params: ListDistributionsRequest): Request[ListDistributionsResult] = js.native
-    def listDistributionsByCachePolicyId(
-        params: ListDistributionsByCachePolicyIdRequest
-    ): Request[ListDistributionsByCachePolicyIdResult] = js.native
-    def listDistributionsByOriginRequestPolicyId(
-        params: ListDistributionsByOriginRequestPolicyIdRequest
-    ): Request[ListDistributionsByOriginRequestPolicyIdResult] = js.native
-    def listDistributionsByWebACLId(
-        params: ListDistributionsByWebACLIdRequest
-    ): Request[ListDistributionsByWebACLIdResult] = js.native
-    def listFieldLevelEncryptionConfigs(
-        params: ListFieldLevelEncryptionConfigsRequest
-    ): Request[ListFieldLevelEncryptionConfigsResult] = js.native
-    def listFieldLevelEncryptionProfiles(
-        params: ListFieldLevelEncryptionProfilesRequest
-    ): Request[ListFieldLevelEncryptionProfilesResult] = js.native
+    def listDistributionsByCachePolicyId(params: ListDistributionsByCachePolicyIdRequest): Request[ListDistributionsByCachePolicyIdResult] = js.native
+    def listDistributionsByOriginRequestPolicyId(params: ListDistributionsByOriginRequestPolicyIdRequest): Request[ListDistributionsByOriginRequestPolicyIdResult] = js.native
+    def listDistributionsByWebACLId(params: ListDistributionsByWebACLIdRequest): Request[ListDistributionsByWebACLIdResult] = js.native
+    def listFieldLevelEncryptionConfigs(params: ListFieldLevelEncryptionConfigsRequest): Request[ListFieldLevelEncryptionConfigsResult] = js.native
+    def listFieldLevelEncryptionProfiles(params: ListFieldLevelEncryptionProfilesRequest): Request[ListFieldLevelEncryptionProfilesResult] = js.native
     def listInvalidations(params: ListInvalidationsRequest): Request[ListInvalidationsResult] = js.native
-    def listOriginRequestPolicies(params: ListOriginRequestPoliciesRequest): Request[ListOriginRequestPoliciesResult] =
-      js.native
+    def listOriginRequestPolicies(params: ListOriginRequestPoliciesRequest): Request[ListOriginRequestPoliciesResult] = js.native
     def listPublicKeys(params: ListPublicKeysRequest): Request[ListPublicKeysResult] = js.native
-    def listStreamingDistributions(
-        params: ListStreamingDistributionsRequest
-    ): Request[ListStreamingDistributionsResult] = js.native
+    def listStreamingDistributions(params: ListStreamingDistributionsRequest): Request[ListStreamingDistributionsResult] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResult] = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateCachePolicy(params: UpdateCachePolicyRequest): Request[UpdateCachePolicyResult] = js.native
-    def updateCloudFrontOriginAccessIdentity(
-        params: UpdateCloudFrontOriginAccessIdentityRequest
-    ): Request[UpdateCloudFrontOriginAccessIdentityResult] = js.native
+    def updateCloudFrontOriginAccessIdentity(params: UpdateCloudFrontOriginAccessIdentityRequest): Request[UpdateCloudFrontOriginAccessIdentityResult] = js.native
     def updateDistribution(params: UpdateDistributionRequest): Request[UpdateDistributionResult] = js.native
-    def updateFieldLevelEncryptionConfig(
-        params: UpdateFieldLevelEncryptionConfigRequest
-    ): Request[UpdateFieldLevelEncryptionConfigResult] = js.native
-    def updateFieldLevelEncryptionProfile(
-        params: UpdateFieldLevelEncryptionProfileRequest
-    ): Request[UpdateFieldLevelEncryptionProfileResult] = js.native
-    def updateOriginRequestPolicy(params: UpdateOriginRequestPolicyRequest): Request[UpdateOriginRequestPolicyResult] =
-      js.native
+    def updateFieldLevelEncryptionConfig(params: UpdateFieldLevelEncryptionConfigRequest): Request[UpdateFieldLevelEncryptionConfigResult] = js.native
+    def updateFieldLevelEncryptionProfile(params: UpdateFieldLevelEncryptionProfileRequest): Request[UpdateFieldLevelEncryptionProfileResult] = js.native
+    def updateOriginRequestPolicy(params: UpdateOriginRequestPolicyRequest): Request[UpdateOriginRequestPolicyResult] = js.native
     def updatePublicKey(params: UpdatePublicKeyRequest): Request[UpdatePublicKeyResult] = js.native
-    def updateStreamingDistribution(
-        params: UpdateStreamingDistributionRequest
-    ): Request[UpdateStreamingDistributionResult] = js.native
+    def updateStreamingDistribution(params: UpdateStreamingDistributionRequest): Request[UpdateStreamingDistributionResult] = js.native
   }
 
   /**
@@ -512,9 +349,7 @@ package cloudfront {
       DefaultTTL.foreach(__v => __obj.updateDynamic("DefaultTTL")(__v.asInstanceOf[js.Any]))
       FieldLevelEncryptionId.foreach(__v => __obj.updateDynamic("FieldLevelEncryptionId")(__v.asInstanceOf[js.Any]))
       ForwardedValues.foreach(__v => __obj.updateDynamic("ForwardedValues")(__v.asInstanceOf[js.Any]))
-      LambdaFunctionAssociations.foreach(__v =>
-        __obj.updateDynamic("LambdaFunctionAssociations")(__v.asInstanceOf[js.Any])
-      )
+      LambdaFunctionAssociations.foreach(__v => __obj.updateDynamic("LambdaFunctionAssociations")(__v.asInstanceOf[js.Any]))
       MaxTTL.foreach(__v => __obj.updateDynamic("MaxTTL")(__v.asInstanceOf[js.Any]))
       MinTTL.foreach(__v => __obj.updateDynamic("MinTTL")(__v.asInstanceOf[js.Any]))
       OriginRequestPolicyId.foreach(__v => __obj.updateDynamic("OriginRequestPolicyId")(__v.asInstanceOf[js.Any]))
@@ -613,9 +448,7 @@ package cloudfront {
       Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
       DefaultTTL.foreach(__v => __obj.updateDynamic("DefaultTTL")(__v.asInstanceOf[js.Any]))
       MaxTTL.foreach(__v => __obj.updateDynamic("MaxTTL")(__v.asInstanceOf[js.Any]))
-      ParametersInCacheKeyAndForwardedToOrigin.foreach(__v =>
-        __obj.updateDynamic("ParametersInCacheKeyAndForwardedToOrigin")(__v.asInstanceOf[js.Any])
-      )
+      ParametersInCacheKeyAndForwardedToOrigin.foreach(__v => __obj.updateDynamic("ParametersInCacheKeyAndForwardedToOrigin")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CachePolicyConfig]
     }
   }
@@ -845,9 +678,7 @@ package cloudfront {
         "S3CanonicalUserId" -> S3CanonicalUserId.asInstanceOf[js.Any]
       )
 
-      CloudFrontOriginAccessIdentityConfig.foreach(__v =>
-        __obj.updateDynamic("CloudFrontOriginAccessIdentityConfig")(__v.asInstanceOf[js.Any])
-      )
+      CloudFrontOriginAccessIdentityConfig.foreach(__v => __obj.updateDynamic("CloudFrontOriginAccessIdentityConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CloudFrontOriginAccessIdentity]
     }
   }
@@ -1144,9 +975,7 @@ package cloudfront {
         Location: js.UndefOr[String] = js.undefined
     ): CreateCloudFrontOriginAccessIdentityResult = {
       val __obj = js.Dynamic.literal()
-      CloudFrontOriginAccessIdentity.foreach(__v =>
-        __obj.updateDynamic("CloudFrontOriginAccessIdentity")(__v.asInstanceOf[js.Any])
-      )
+      CloudFrontOriginAccessIdentity.foreach(__v => __obj.updateDynamic("CloudFrontOriginAccessIdentity")(__v.asInstanceOf[js.Any]))
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
       Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCloudFrontOriginAccessIdentityResult]
@@ -1319,9 +1148,7 @@ package cloudfront {
     ): CreateFieldLevelEncryptionProfileResult = {
       val __obj = js.Dynamic.literal()
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
-      FieldLevelEncryptionProfile.foreach(__v =>
-        __obj.updateDynamic("FieldLevelEncryptionProfile")(__v.asInstanceOf[js.Any])
-      )
+      FieldLevelEncryptionProfile.foreach(__v => __obj.updateDynamic("FieldLevelEncryptionProfile")(__v.asInstanceOf[js.Any]))
       Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFieldLevelEncryptionProfileResult]
     }
@@ -1716,9 +1543,7 @@ package cloudfront {
       DefaultTTL.foreach(__v => __obj.updateDynamic("DefaultTTL")(__v.asInstanceOf[js.Any]))
       FieldLevelEncryptionId.foreach(__v => __obj.updateDynamic("FieldLevelEncryptionId")(__v.asInstanceOf[js.Any]))
       ForwardedValues.foreach(__v => __obj.updateDynamic("ForwardedValues")(__v.asInstanceOf[js.Any]))
-      LambdaFunctionAssociations.foreach(__v =>
-        __obj.updateDynamic("LambdaFunctionAssociations")(__v.asInstanceOf[js.Any])
-      )
+      LambdaFunctionAssociations.foreach(__v => __obj.updateDynamic("LambdaFunctionAssociations")(__v.asInstanceOf[js.Any]))
       MaxTTL.foreach(__v => __obj.updateDynamic("MaxTTL")(__v.asInstanceOf[js.Any]))
       MinTTL.foreach(__v => __obj.updateDynamic("MinTTL")(__v.asInstanceOf[js.Any]))
       OriginRequestPolicyId.foreach(__v => __obj.updateDynamic("OriginRequestPolicyId")(__v.asInstanceOf[js.Any]))
@@ -2717,9 +2542,7 @@ package cloudfront {
         ETag: js.UndefOr[String] = js.undefined
     ): GetCloudFrontOriginAccessIdentityConfigResult = {
       val __obj = js.Dynamic.literal()
-      CloudFrontOriginAccessIdentityConfig.foreach(__v =>
-        __obj.updateDynamic("CloudFrontOriginAccessIdentityConfig")(__v.asInstanceOf[js.Any])
-      )
+      CloudFrontOriginAccessIdentityConfig.foreach(__v => __obj.updateDynamic("CloudFrontOriginAccessIdentityConfig")(__v.asInstanceOf[js.Any]))
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCloudFrontOriginAccessIdentityConfigResult]
     }
@@ -2762,9 +2585,7 @@ package cloudfront {
         ETag: js.UndefOr[String] = js.undefined
     ): GetCloudFrontOriginAccessIdentityResult = {
       val __obj = js.Dynamic.literal()
-      CloudFrontOriginAccessIdentity.foreach(__v =>
-        __obj.updateDynamic("CloudFrontOriginAccessIdentity")(__v.asInstanceOf[js.Any])
-      )
+      CloudFrontOriginAccessIdentity.foreach(__v => __obj.updateDynamic("CloudFrontOriginAccessIdentity")(__v.asInstanceOf[js.Any]))
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCloudFrontOriginAccessIdentityResult]
     }
@@ -2888,9 +2709,7 @@ package cloudfront {
     ): GetFieldLevelEncryptionConfigResult = {
       val __obj = js.Dynamic.literal()
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
-      FieldLevelEncryptionConfig.foreach(__v =>
-        __obj.updateDynamic("FieldLevelEncryptionConfig")(__v.asInstanceOf[js.Any])
-      )
+      FieldLevelEncryptionConfig.foreach(__v => __obj.updateDynamic("FieldLevelEncryptionConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFieldLevelEncryptionConfigResult]
     }
   }
@@ -2927,9 +2746,7 @@ package cloudfront {
     ): GetFieldLevelEncryptionProfileConfigResult = {
       val __obj = js.Dynamic.literal()
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
-      FieldLevelEncryptionProfileConfig.foreach(__v =>
-        __obj.updateDynamic("FieldLevelEncryptionProfileConfig")(__v.asInstanceOf[js.Any])
-      )
+      FieldLevelEncryptionProfileConfig.foreach(__v => __obj.updateDynamic("FieldLevelEncryptionProfileConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFieldLevelEncryptionProfileConfigResult]
     }
   }
@@ -2966,9 +2783,7 @@ package cloudfront {
     ): GetFieldLevelEncryptionProfileResult = {
       val __obj = js.Dynamic.literal()
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
-      FieldLevelEncryptionProfile.foreach(__v =>
-        __obj.updateDynamic("FieldLevelEncryptionProfile")(__v.asInstanceOf[js.Any])
-      )
+      FieldLevelEncryptionProfile.foreach(__v => __obj.updateDynamic("FieldLevelEncryptionProfile")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFieldLevelEncryptionProfileResult]
     }
   }
@@ -3085,9 +2900,7 @@ package cloudfront {
     ): GetOriginRequestPolicyConfigResult = {
       val __obj = js.Dynamic.literal()
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
-      OriginRequestPolicyConfig.foreach(__v =>
-        __obj.updateDynamic("OriginRequestPolicyConfig")(__v.asInstanceOf[js.Any])
-      )
+      OriginRequestPolicyConfig.foreach(__v => __obj.updateDynamic("OriginRequestPolicyConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOriginRequestPolicyConfigResult]
     }
   }
@@ -3241,9 +3054,7 @@ package cloudfront {
     ): GetStreamingDistributionConfigResult = {
       val __obj = js.Dynamic.literal()
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
-      StreamingDistributionConfig.foreach(__v =>
-        __obj.updateDynamic("StreamingDistributionConfig")(__v.asInstanceOf[js.Any])
-      )
+      StreamingDistributionConfig.foreach(__v => __obj.updateDynamic("StreamingDistributionConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetStreamingDistributionConfigResult]
     }
   }
@@ -3613,9 +3424,7 @@ package cloudfront {
         CloudFrontOriginAccessIdentityList: js.UndefOr[CloudFrontOriginAccessIdentityList] = js.undefined
     ): ListCloudFrontOriginAccessIdentitiesResult = {
       val __obj = js.Dynamic.literal()
-      CloudFrontOriginAccessIdentityList.foreach(__v =>
-        __obj.updateDynamic("CloudFrontOriginAccessIdentityList")(__v.asInstanceOf[js.Any])
-      )
+      CloudFrontOriginAccessIdentityList.foreach(__v => __obj.updateDynamic("CloudFrontOriginAccessIdentityList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCloudFrontOriginAccessIdentitiesResult]
     }
   }
@@ -3852,9 +3661,7 @@ package cloudfront {
         FieldLevelEncryptionProfileList: js.UndefOr[FieldLevelEncryptionProfileList] = js.undefined
     ): ListFieldLevelEncryptionProfilesResult = {
       val __obj = js.Dynamic.literal()
-      FieldLevelEncryptionProfileList.foreach(__v =>
-        __obj.updateDynamic("FieldLevelEncryptionProfileList")(__v.asInstanceOf[js.Any])
-      )
+      FieldLevelEncryptionProfileList.foreach(__v => __obj.updateDynamic("FieldLevelEncryptionProfileList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFieldLevelEncryptionProfilesResult]
     }
   }
@@ -4014,9 +3821,7 @@ package cloudfront {
         StreamingDistributionList: js.UndefOr[StreamingDistributionList] = js.undefined
     ): ListStreamingDistributionsResult = {
       val __obj = js.Dynamic.literal()
-      StreamingDistributionList.foreach(__v =>
-        __obj.updateDynamic("StreamingDistributionList")(__v.asInstanceOf[js.Any])
-      )
+      StreamingDistributionList.foreach(__v => __obj.updateDynamic("StreamingDistributionList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListStreamingDistributionsResult]
     }
   }
@@ -4432,8 +4237,7 @@ package cloudfront {
     val none = "none".asInstanceOf[OriginRequestPolicyHeaderBehavior]
     val whitelist = "whitelist".asInstanceOf[OriginRequestPolicyHeaderBehavior]
     val allViewer = "allViewer".asInstanceOf[OriginRequestPolicyHeaderBehavior]
-    val allViewerAndWhitelistCloudFront =
-      "allViewerAndWhitelistCloudFront".asInstanceOf[OriginRequestPolicyHeaderBehavior]
+    val allViewerAndWhitelistCloudFront = "allViewerAndWhitelistCloudFront".asInstanceOf[OriginRequestPolicyHeaderBehavior]
 
     val values = js.Object.freeze(js.Array(none, whitelist, allViewer, allViewerAndWhitelistCloudFront))
   }
@@ -5493,9 +5297,7 @@ package cloudfront {
         ETag: js.UndefOr[String] = js.undefined
     ): UpdateCloudFrontOriginAccessIdentityResult = {
       val __obj = js.Dynamic.literal()
-      CloudFrontOriginAccessIdentity.foreach(__v =>
-        __obj.updateDynamic("CloudFrontOriginAccessIdentity")(__v.asInstanceOf[js.Any])
-      )
+      CloudFrontOriginAccessIdentity.foreach(__v => __obj.updateDynamic("CloudFrontOriginAccessIdentity")(__v.asInstanceOf[js.Any]))
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateCloudFrontOriginAccessIdentityResult]
     }
@@ -5631,9 +5433,7 @@ package cloudfront {
     ): UpdateFieldLevelEncryptionProfileResult = {
       val __obj = js.Dynamic.literal()
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
-      FieldLevelEncryptionProfile.foreach(__v =>
-        __obj.updateDynamic("FieldLevelEncryptionProfile")(__v.asInstanceOf[js.Any])
-      )
+      FieldLevelEncryptionProfile.foreach(__v => __obj.updateDynamic("FieldLevelEncryptionProfile")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFieldLevelEncryptionProfileResult]
     }
   }
@@ -5813,9 +5613,7 @@ package cloudfront {
       ACMCertificateArn.foreach(__v => __obj.updateDynamic("ACMCertificateArn")(__v.asInstanceOf[js.Any]))
       Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
       CertificateSource.foreach(__v => __obj.updateDynamic("CertificateSource")(__v.asInstanceOf[js.Any]))
-      CloudFrontDefaultCertificate.foreach(__v =>
-        __obj.updateDynamic("CloudFrontDefaultCertificate")(__v.asInstanceOf[js.Any])
-      )
+      CloudFrontDefaultCertificate.foreach(__v => __obj.updateDynamic("CloudFrontDefaultCertificate")(__v.asInstanceOf[js.Any]))
       IAMCertificateId.foreach(__v => __obj.updateDynamic("IAMCertificateId")(__v.asInstanceOf[js.Any]))
       MinimumProtocolVersion.foreach(__v => __obj.updateDynamic("MinimumProtocolVersion")(__v.asInstanceOf[js.Any]))
       SSLSupportMethod.foreach(__v => __obj.updateDynamic("SSLSupportMethod")(__v.asInstanceOf[js.Any]))

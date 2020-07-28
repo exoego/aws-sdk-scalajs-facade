@@ -33,27 +33,17 @@ package object codestarconnections {
 
   implicit final class CodeStarconnectionsOps(private val service: CodeStarconnections) extends AnyVal {
 
-    @inline def createConnectionFuture(params: CreateConnectionInput): Future[CreateConnectionOutput] =
-      service.createConnection(params).promise().toFuture
-    @inline def createHostFuture(params: CreateHostInput): Future[CreateHostOutput] =
-      service.createHost(params).promise().toFuture
-    @inline def deleteConnectionFuture(params: DeleteConnectionInput): Future[DeleteConnectionOutput] =
-      service.deleteConnection(params).promise().toFuture
-    @inline def deleteHostFuture(params: DeleteHostInput): Future[DeleteHostOutput] =
-      service.deleteHost(params).promise().toFuture
-    @inline def getConnectionFuture(params: GetConnectionInput): Future[GetConnectionOutput] =
-      service.getConnection(params).promise().toFuture
+    @inline def createConnectionFuture(params: CreateConnectionInput): Future[CreateConnectionOutput] = service.createConnection(params).promise().toFuture
+    @inline def createHostFuture(params: CreateHostInput): Future[CreateHostOutput] = service.createHost(params).promise().toFuture
+    @inline def deleteConnectionFuture(params: DeleteConnectionInput): Future[DeleteConnectionOutput] = service.deleteConnection(params).promise().toFuture
+    @inline def deleteHostFuture(params: DeleteHostInput): Future[DeleteHostOutput] = service.deleteHost(params).promise().toFuture
+    @inline def getConnectionFuture(params: GetConnectionInput): Future[GetConnectionOutput] = service.getConnection(params).promise().toFuture
     @inline def getHostFuture(params: GetHostInput): Future[GetHostOutput] = service.getHost(params).promise().toFuture
-    @inline def listConnectionsFuture(params: ListConnectionsInput): Future[ListConnectionsOutput] =
-      service.listConnections(params).promise().toFuture
-    @inline def listHostsFuture(params: ListHostsInput): Future[ListHostsOutput] =
-      service.listHosts(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
-      service.untagResource(params).promise().toFuture
+    @inline def listConnectionsFuture(params: ListConnectionsInput): Future[ListConnectionsOutput] = service.listConnections(params).promise().toFuture
+    @inline def listHostsFuture(params: ListHostsInput): Future[ListHostsOutput] = service.listHosts(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] = service.listTagsForResource(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] = service.untagResource(params).promise().toFuture
   }
 }
 

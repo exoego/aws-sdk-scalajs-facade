@@ -35,49 +35,25 @@ package object kinesisvideo {
 
   implicit final class KinesisVideoOps(private val service: KinesisVideo) extends AnyVal {
 
-    @inline def createSignalingChannelFuture(
-        params: CreateSignalingChannelInput
-    ): Future[CreateSignalingChannelOutput] = service.createSignalingChannel(params).promise().toFuture
-    @inline def createStreamFuture(params: CreateStreamInput): Future[CreateStreamOutput] =
-      service.createStream(params).promise().toFuture
-    @inline def deleteSignalingChannelFuture(
-        params: DeleteSignalingChannelInput
-    ): Future[DeleteSignalingChannelOutput] = service.deleteSignalingChannel(params).promise().toFuture
-    @inline def deleteStreamFuture(params: DeleteStreamInput): Future[DeleteStreamOutput] =
-      service.deleteStream(params).promise().toFuture
-    @inline def describeSignalingChannelFuture(
-        params: DescribeSignalingChannelInput
-    ): Future[DescribeSignalingChannelOutput] = service.describeSignalingChannel(params).promise().toFuture
-    @inline def describeStreamFuture(params: DescribeStreamInput): Future[DescribeStreamOutput] =
-      service.describeStream(params).promise().toFuture
-    @inline def getDataEndpointFuture(params: GetDataEndpointInput): Future[GetDataEndpointOutput] =
-      service.getDataEndpoint(params).promise().toFuture
-    @inline def getSignalingChannelEndpointFuture(
-        params: GetSignalingChannelEndpointInput
-    ): Future[GetSignalingChannelEndpointOutput] = service.getSignalingChannelEndpoint(params).promise().toFuture
-    @inline def listSignalingChannelsFuture(params: ListSignalingChannelsInput): Future[ListSignalingChannelsOutput] =
-      service.listSignalingChannels(params).promise().toFuture
-    @inline def listStreamsFuture(params: ListStreamsInput): Future[ListStreamsOutput] =
-      service.listStreams(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listTagsForStreamFuture(params: ListTagsForStreamInput): Future[ListTagsForStreamOutput] =
-      service.listTagsForStream(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
-      service.tagResource(params).promise().toFuture
-    @inline def tagStreamFuture(params: TagStreamInput): Future[TagStreamOutput] =
-      service.tagStream(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
-      service.untagResource(params).promise().toFuture
-    @inline def untagStreamFuture(params: UntagStreamInput): Future[UntagStreamOutput] =
-      service.untagStream(params).promise().toFuture
-    @inline def updateDataRetentionFuture(params: UpdateDataRetentionInput): Future[UpdateDataRetentionOutput] =
-      service.updateDataRetention(params).promise().toFuture
-    @inline def updateSignalingChannelFuture(
-        params: UpdateSignalingChannelInput
-    ): Future[UpdateSignalingChannelOutput] = service.updateSignalingChannel(params).promise().toFuture
-    @inline def updateStreamFuture(params: UpdateStreamInput): Future[UpdateStreamOutput] =
-      service.updateStream(params).promise().toFuture
+    @inline def createSignalingChannelFuture(params: CreateSignalingChannelInput): Future[CreateSignalingChannelOutput] = service.createSignalingChannel(params).promise().toFuture
+    @inline def createStreamFuture(params: CreateStreamInput): Future[CreateStreamOutput] = service.createStream(params).promise().toFuture
+    @inline def deleteSignalingChannelFuture(params: DeleteSignalingChannelInput): Future[DeleteSignalingChannelOutput] = service.deleteSignalingChannel(params).promise().toFuture
+    @inline def deleteStreamFuture(params: DeleteStreamInput): Future[DeleteStreamOutput] = service.deleteStream(params).promise().toFuture
+    @inline def describeSignalingChannelFuture(params: DescribeSignalingChannelInput): Future[DescribeSignalingChannelOutput] = service.describeSignalingChannel(params).promise().toFuture
+    @inline def describeStreamFuture(params: DescribeStreamInput): Future[DescribeStreamOutput] = service.describeStream(params).promise().toFuture
+    @inline def getDataEndpointFuture(params: GetDataEndpointInput): Future[GetDataEndpointOutput] = service.getDataEndpoint(params).promise().toFuture
+    @inline def getSignalingChannelEndpointFuture(params: GetSignalingChannelEndpointInput): Future[GetSignalingChannelEndpointOutput] = service.getSignalingChannelEndpoint(params).promise().toFuture
+    @inline def listSignalingChannelsFuture(params: ListSignalingChannelsInput): Future[ListSignalingChannelsOutput] = service.listSignalingChannels(params).promise().toFuture
+    @inline def listStreamsFuture(params: ListStreamsInput): Future[ListStreamsOutput] = service.listStreams(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] = service.listTagsForResource(params).promise().toFuture
+    @inline def listTagsForStreamFuture(params: ListTagsForStreamInput): Future[ListTagsForStreamOutput] = service.listTagsForStream(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] = service.tagResource(params).promise().toFuture
+    @inline def tagStreamFuture(params: TagStreamInput): Future[TagStreamOutput] = service.tagStream(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] = service.untagResource(params).promise().toFuture
+    @inline def untagStreamFuture(params: UntagStreamInput): Future[UntagStreamOutput] = service.untagStream(params).promise().toFuture
+    @inline def updateDataRetentionFuture(params: UpdateDataRetentionInput): Future[UpdateDataRetentionOutput] = service.updateDataRetention(params).promise().toFuture
+    @inline def updateSignalingChannelFuture(params: UpdateSignalingChannelInput): Future[UpdateSignalingChannelOutput] = service.updateSignalingChannel(params).promise().toFuture
+    @inline def updateStreamFuture(params: UpdateStreamInput): Future[UpdateStreamOutput] = service.updateStream(params).promise().toFuture
   }
 }
 
@@ -91,13 +67,10 @@ package kinesisvideo {
     def createStream(params: CreateStreamInput): Request[CreateStreamOutput] = js.native
     def deleteSignalingChannel(params: DeleteSignalingChannelInput): Request[DeleteSignalingChannelOutput] = js.native
     def deleteStream(params: DeleteStreamInput): Request[DeleteStreamOutput] = js.native
-    def describeSignalingChannel(params: DescribeSignalingChannelInput): Request[DescribeSignalingChannelOutput] =
-      js.native
+    def describeSignalingChannel(params: DescribeSignalingChannelInput): Request[DescribeSignalingChannelOutput] = js.native
     def describeStream(params: DescribeStreamInput): Request[DescribeStreamOutput] = js.native
     def getDataEndpoint(params: GetDataEndpointInput): Request[GetDataEndpointOutput] = js.native
-    def getSignalingChannelEndpoint(
-        params: GetSignalingChannelEndpointInput
-    ): Request[GetSignalingChannelEndpointOutput] = js.native
+    def getSignalingChannelEndpoint(params: GetSignalingChannelEndpointInput): Request[GetSignalingChannelEndpointOutput] = js.native
     def listSignalingChannels(params: ListSignalingChannelsInput): Request[ListSignalingChannelsOutput] = js.native
     def listStreams(params: ListStreamsInput): Request[ListStreamsOutput] = js.native
     def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput] = js.native
@@ -122,17 +95,7 @@ package kinesisvideo {
     val GET_DASH_STREAMING_SESSION_URL = "GET_DASH_STREAMING_SESSION_URL".asInstanceOf[APIName]
     val GET_CLIP = "GET_CLIP".asInstanceOf[APIName]
 
-    val values = js.Object.freeze(
-      js.Array(
-        PUT_MEDIA,
-        GET_MEDIA,
-        LIST_FRAGMENTS,
-        GET_MEDIA_FOR_FRAGMENT_LIST,
-        GET_HLS_STREAMING_SESSION_URL,
-        GET_DASH_STREAMING_SESSION_URL,
-        GET_CLIP
-      )
-    )
+    val values = js.Object.freeze(js.Array(PUT_MEDIA, GET_MEDIA, LIST_FRAGMENTS, GET_MEDIA_FOR_FRAGMENT_LIST, GET_HLS_STREAMING_SESSION_URL, GET_DASH_STREAMING_SESSION_URL, GET_CLIP))
   }
 
   /**
@@ -166,9 +129,7 @@ package kinesisvideo {
       ChannelStatus.foreach(__v => __obj.updateDynamic("ChannelStatus")(__v.asInstanceOf[js.Any]))
       ChannelType.foreach(__v => __obj.updateDynamic("ChannelType")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
-      SingleMasterConfiguration.foreach(__v =>
-        __obj.updateDynamic("SingleMasterConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      SingleMasterConfiguration.foreach(__v => __obj.updateDynamic("SingleMasterConfiguration")(__v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChannelInfo]
     }
@@ -251,9 +212,7 @@ package kinesisvideo {
       )
 
       ChannelType.foreach(__v => __obj.updateDynamic("ChannelType")(__v.asInstanceOf[js.Any]))
-      SingleMasterConfiguration.foreach(__v =>
-        __obj.updateDynamic("SingleMasterConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      SingleMasterConfiguration.foreach(__v => __obj.updateDynamic("SingleMasterConfiguration")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSignalingChannelInput]
     }
@@ -518,9 +477,7 @@ package kinesisvideo {
         "ChannelARN" -> ChannelARN.asInstanceOf[js.Any]
       )
 
-      SingleMasterChannelEndpointConfiguration.foreach(__v =>
-        __obj.updateDynamic("SingleMasterChannelEndpointConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      SingleMasterChannelEndpointConfiguration.foreach(__v => __obj.updateDynamic("SingleMasterChannelEndpointConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSignalingChannelEndpointInput]
     }
   }
@@ -1080,9 +1037,7 @@ package kinesisvideo {
         "CurrentVersion" -> CurrentVersion.asInstanceOf[js.Any]
       )
 
-      SingleMasterConfiguration.foreach(__v =>
-        __obj.updateDynamic("SingleMasterConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      SingleMasterConfiguration.foreach(__v => __obj.updateDynamic("SingleMasterConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSignalingChannelInput]
     }
   }

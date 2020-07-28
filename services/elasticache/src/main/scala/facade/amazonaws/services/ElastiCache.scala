@@ -71,164 +71,63 @@ package object elasticache {
 
   implicit final class ElastiCacheOps(private val service: ElastiCache) extends AnyVal {
 
-    @inline def addTagsToResourceFuture(params: AddTagsToResourceMessage): Future[TagListMessage] =
-      service.addTagsToResource(params).promise().toFuture
-    @inline def authorizeCacheSecurityGroupIngressFuture(
-        params: AuthorizeCacheSecurityGroupIngressMessage
-    ): Future[AuthorizeCacheSecurityGroupIngressResult] =
-      service.authorizeCacheSecurityGroupIngress(params).promise().toFuture
-    @inline def batchApplyUpdateActionFuture(
-        params: BatchApplyUpdateActionMessage
-    ): Future[UpdateActionResultsMessage] = service.batchApplyUpdateAction(params).promise().toFuture
-    @inline def batchStopUpdateActionFuture(params: BatchStopUpdateActionMessage): Future[UpdateActionResultsMessage] =
-      service.batchStopUpdateAction(params).promise().toFuture
-    @inline def completeMigrationFuture(params: CompleteMigrationMessage): Future[CompleteMigrationResponse] =
-      service.completeMigration(params).promise().toFuture
-    @inline def copySnapshotFuture(params: CopySnapshotMessage): Future[CopySnapshotResult] =
-      service.copySnapshot(params).promise().toFuture
-    @inline def createCacheClusterFuture(params: CreateCacheClusterMessage): Future[CreateCacheClusterResult] =
-      service.createCacheCluster(params).promise().toFuture
-    @inline def createCacheParameterGroupFuture(
-        params: CreateCacheParameterGroupMessage
-    ): Future[CreateCacheParameterGroupResult] = service.createCacheParameterGroup(params).promise().toFuture
-    @inline def createCacheSecurityGroupFuture(
-        params: CreateCacheSecurityGroupMessage
-    ): Future[CreateCacheSecurityGroupResult] = service.createCacheSecurityGroup(params).promise().toFuture
-    @inline def createCacheSubnetGroupFuture(
-        params: CreateCacheSubnetGroupMessage
-    ): Future[CreateCacheSubnetGroupResult] = service.createCacheSubnetGroup(params).promise().toFuture
-    @inline def createGlobalReplicationGroupFuture(
-        params: CreateGlobalReplicationGroupMessage
-    ): Future[CreateGlobalReplicationGroupResult] = service.createGlobalReplicationGroup(params).promise().toFuture
-    @inline def createReplicationGroupFuture(
-        params: CreateReplicationGroupMessage
-    ): Future[CreateReplicationGroupResult] = service.createReplicationGroup(params).promise().toFuture
-    @inline def createSnapshotFuture(params: CreateSnapshotMessage): Future[CreateSnapshotResult] =
-      service.createSnapshot(params).promise().toFuture
-    @inline def decreaseNodeGroupsInGlobalReplicationGroupFuture(
-        params: DecreaseNodeGroupsInGlobalReplicationGroupMessage
-    ): Future[DecreaseNodeGroupsInGlobalReplicationGroupResult] =
-      service.decreaseNodeGroupsInGlobalReplicationGroup(params).promise().toFuture
-    @inline def decreaseReplicaCountFuture(params: DecreaseReplicaCountMessage): Future[DecreaseReplicaCountResult] =
-      service.decreaseReplicaCount(params).promise().toFuture
-    @inline def deleteCacheClusterFuture(params: DeleteCacheClusterMessage): Future[DeleteCacheClusterResult] =
-      service.deleteCacheCluster(params).promise().toFuture
-    @inline def deleteCacheParameterGroupFuture(params: DeleteCacheParameterGroupMessage): Future[js.Object] =
-      service.deleteCacheParameterGroup(params).promise().toFuture
-    @inline def deleteCacheSecurityGroupFuture(params: DeleteCacheSecurityGroupMessage): Future[js.Object] =
-      service.deleteCacheSecurityGroup(params).promise().toFuture
-    @inline def deleteCacheSubnetGroupFuture(params: DeleteCacheSubnetGroupMessage): Future[js.Object] =
-      service.deleteCacheSubnetGroup(params).promise().toFuture
-    @inline def deleteGlobalReplicationGroupFuture(
-        params: DeleteGlobalReplicationGroupMessage
-    ): Future[DeleteGlobalReplicationGroupResult] = service.deleteGlobalReplicationGroup(params).promise().toFuture
-    @inline def deleteReplicationGroupFuture(
-        params: DeleteReplicationGroupMessage
-    ): Future[DeleteReplicationGroupResult] = service.deleteReplicationGroup(params).promise().toFuture
-    @inline def deleteSnapshotFuture(params: DeleteSnapshotMessage): Future[DeleteSnapshotResult] =
-      service.deleteSnapshot(params).promise().toFuture
-    @inline def describeCacheClustersFuture(params: DescribeCacheClustersMessage): Future[CacheClusterMessage] =
-      service.describeCacheClusters(params).promise().toFuture
-    @inline def describeCacheEngineVersionsFuture(
-        params: DescribeCacheEngineVersionsMessage
-    ): Future[CacheEngineVersionMessage] = service.describeCacheEngineVersions(params).promise().toFuture
-    @inline def describeCacheParameterGroupsFuture(
-        params: DescribeCacheParameterGroupsMessage
-    ): Future[CacheParameterGroupsMessage] = service.describeCacheParameterGroups(params).promise().toFuture
-    @inline def describeCacheParametersFuture(
-        params: DescribeCacheParametersMessage
-    ): Future[CacheParameterGroupDetails] = service.describeCacheParameters(params).promise().toFuture
-    @inline def describeCacheSecurityGroupsFuture(
-        params: DescribeCacheSecurityGroupsMessage
-    ): Future[CacheSecurityGroupMessage] = service.describeCacheSecurityGroups(params).promise().toFuture
-    @inline def describeCacheSubnetGroupsFuture(
-        params: DescribeCacheSubnetGroupsMessage
-    ): Future[CacheSubnetGroupMessage] = service.describeCacheSubnetGroups(params).promise().toFuture
-    @inline def describeEngineDefaultParametersFuture(
-        params: DescribeEngineDefaultParametersMessage
-    ): Future[DescribeEngineDefaultParametersResult] =
-      service.describeEngineDefaultParameters(params).promise().toFuture
-    @inline def describeEventsFuture(params: DescribeEventsMessage): Future[EventsMessage] =
-      service.describeEvents(params).promise().toFuture
-    @inline def describeGlobalReplicationGroupsFuture(
-        params: DescribeGlobalReplicationGroupsMessage
-    ): Future[DescribeGlobalReplicationGroupsResult] =
-      service.describeGlobalReplicationGroups(params).promise().toFuture
-    @inline def describeReplicationGroupsFuture(
-        params: DescribeReplicationGroupsMessage
-    ): Future[ReplicationGroupMessage] = service.describeReplicationGroups(params).promise().toFuture
-    @inline def describeReservedCacheNodesFuture(
-        params: DescribeReservedCacheNodesMessage
-    ): Future[ReservedCacheNodeMessage] = service.describeReservedCacheNodes(params).promise().toFuture
-    @inline def describeReservedCacheNodesOfferingsFuture(
-        params: DescribeReservedCacheNodesOfferingsMessage
-    ): Future[ReservedCacheNodesOfferingMessage] =
-      service.describeReservedCacheNodesOfferings(params).promise().toFuture
-    @inline def describeServiceUpdatesFuture(params: DescribeServiceUpdatesMessage): Future[ServiceUpdatesMessage] =
-      service.describeServiceUpdates(params).promise().toFuture
-    @inline def describeSnapshotsFuture(params: DescribeSnapshotsMessage): Future[DescribeSnapshotsListMessage] =
-      service.describeSnapshots(params).promise().toFuture
-    @inline def describeUpdateActionsFuture(params: DescribeUpdateActionsMessage): Future[UpdateActionsMessage] =
-      service.describeUpdateActions(params).promise().toFuture
-    @inline def disassociateGlobalReplicationGroupFuture(
-        params: DisassociateGlobalReplicationGroupMessage
-    ): Future[DisassociateGlobalReplicationGroupResult] =
-      service.disassociateGlobalReplicationGroup(params).promise().toFuture
-    @inline def failoverGlobalReplicationGroupFuture(
-        params: FailoverGlobalReplicationGroupMessage
-    ): Future[FailoverGlobalReplicationGroupResult] = service.failoverGlobalReplicationGroup(params).promise().toFuture
-    @inline def increaseNodeGroupsInGlobalReplicationGroupFuture(
-        params: IncreaseNodeGroupsInGlobalReplicationGroupMessage
-    ): Future[IncreaseNodeGroupsInGlobalReplicationGroupResult] =
-      service.increaseNodeGroupsInGlobalReplicationGroup(params).promise().toFuture
-    @inline def increaseReplicaCountFuture(params: IncreaseReplicaCountMessage): Future[IncreaseReplicaCountResult] =
-      service.increaseReplicaCount(params).promise().toFuture
-    @inline def listAllowedNodeTypeModificationsFuture(
-        params: ListAllowedNodeTypeModificationsMessage
-    ): Future[AllowedNodeTypeModificationsMessage] = service.listAllowedNodeTypeModifications(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceMessage): Future[TagListMessage] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def modifyCacheClusterFuture(params: ModifyCacheClusterMessage): Future[ModifyCacheClusterResult] =
-      service.modifyCacheCluster(params).promise().toFuture
-    @inline def modifyCacheParameterGroupFuture(
-        params: ModifyCacheParameterGroupMessage
-    ): Future[CacheParameterGroupNameMessage] = service.modifyCacheParameterGroup(params).promise().toFuture
-    @inline def modifyCacheSubnetGroupFuture(
-        params: ModifyCacheSubnetGroupMessage
-    ): Future[ModifyCacheSubnetGroupResult] = service.modifyCacheSubnetGroup(params).promise().toFuture
-    @inline def modifyGlobalReplicationGroupFuture(
-        params: ModifyGlobalReplicationGroupMessage
-    ): Future[ModifyGlobalReplicationGroupResult] = service.modifyGlobalReplicationGroup(params).promise().toFuture
-    @inline def modifyReplicationGroupFuture(
-        params: ModifyReplicationGroupMessage
-    ): Future[ModifyReplicationGroupResult] = service.modifyReplicationGroup(params).promise().toFuture
-    @inline def modifyReplicationGroupShardConfigurationFuture(
-        params: ModifyReplicationGroupShardConfigurationMessage
-    ): Future[ModifyReplicationGroupShardConfigurationResult] =
-      service.modifyReplicationGroupShardConfiguration(params).promise().toFuture
-    @inline def purchaseReservedCacheNodesOfferingFuture(
-        params: PurchaseReservedCacheNodesOfferingMessage
-    ): Future[PurchaseReservedCacheNodesOfferingResult] =
-      service.purchaseReservedCacheNodesOffering(params).promise().toFuture
-    @inline def rebalanceSlotsInGlobalReplicationGroupFuture(
-        params: RebalanceSlotsInGlobalReplicationGroupMessage
-    ): Future[RebalanceSlotsInGlobalReplicationGroupResult] =
-      service.rebalanceSlotsInGlobalReplicationGroup(params).promise().toFuture
-    @inline def rebootCacheClusterFuture(params: RebootCacheClusterMessage): Future[RebootCacheClusterResult] =
-      service.rebootCacheCluster(params).promise().toFuture
-    @inline def removeTagsFromResourceFuture(params: RemoveTagsFromResourceMessage): Future[TagListMessage] =
-      service.removeTagsFromResource(params).promise().toFuture
-    @inline def resetCacheParameterGroupFuture(
-        params: ResetCacheParameterGroupMessage
-    ): Future[CacheParameterGroupNameMessage] = service.resetCacheParameterGroup(params).promise().toFuture
-    @inline def revokeCacheSecurityGroupIngressFuture(
-        params: RevokeCacheSecurityGroupIngressMessage
-    ): Future[RevokeCacheSecurityGroupIngressResult] =
-      service.revokeCacheSecurityGroupIngress(params).promise().toFuture
-    @inline def startMigrationFuture(params: StartMigrationMessage): Future[StartMigrationResponse] =
-      service.startMigration(params).promise().toFuture
-    @inline def testFailoverFuture(params: TestFailoverMessage): Future[TestFailoverResult] =
-      service.testFailover(params).promise().toFuture
+    @inline def addTagsToResourceFuture(params: AddTagsToResourceMessage): Future[TagListMessage] = service.addTagsToResource(params).promise().toFuture
+    @inline def authorizeCacheSecurityGroupIngressFuture(params: AuthorizeCacheSecurityGroupIngressMessage): Future[AuthorizeCacheSecurityGroupIngressResult] = service.authorizeCacheSecurityGroupIngress(params).promise().toFuture
+    @inline def batchApplyUpdateActionFuture(params: BatchApplyUpdateActionMessage): Future[UpdateActionResultsMessage] = service.batchApplyUpdateAction(params).promise().toFuture
+    @inline def batchStopUpdateActionFuture(params: BatchStopUpdateActionMessage): Future[UpdateActionResultsMessage] = service.batchStopUpdateAction(params).promise().toFuture
+    @inline def completeMigrationFuture(params: CompleteMigrationMessage): Future[CompleteMigrationResponse] = service.completeMigration(params).promise().toFuture
+    @inline def copySnapshotFuture(params: CopySnapshotMessage): Future[CopySnapshotResult] = service.copySnapshot(params).promise().toFuture
+    @inline def createCacheClusterFuture(params: CreateCacheClusterMessage): Future[CreateCacheClusterResult] = service.createCacheCluster(params).promise().toFuture
+    @inline def createCacheParameterGroupFuture(params: CreateCacheParameterGroupMessage): Future[CreateCacheParameterGroupResult] = service.createCacheParameterGroup(params).promise().toFuture
+    @inline def createCacheSecurityGroupFuture(params: CreateCacheSecurityGroupMessage): Future[CreateCacheSecurityGroupResult] = service.createCacheSecurityGroup(params).promise().toFuture
+    @inline def createCacheSubnetGroupFuture(params: CreateCacheSubnetGroupMessage): Future[CreateCacheSubnetGroupResult] = service.createCacheSubnetGroup(params).promise().toFuture
+    @inline def createGlobalReplicationGroupFuture(params: CreateGlobalReplicationGroupMessage): Future[CreateGlobalReplicationGroupResult] = service.createGlobalReplicationGroup(params).promise().toFuture
+    @inline def createReplicationGroupFuture(params: CreateReplicationGroupMessage): Future[CreateReplicationGroupResult] = service.createReplicationGroup(params).promise().toFuture
+    @inline def createSnapshotFuture(params: CreateSnapshotMessage): Future[CreateSnapshotResult] = service.createSnapshot(params).promise().toFuture
+    @inline def decreaseNodeGroupsInGlobalReplicationGroupFuture(params: DecreaseNodeGroupsInGlobalReplicationGroupMessage): Future[DecreaseNodeGroupsInGlobalReplicationGroupResult] = service.decreaseNodeGroupsInGlobalReplicationGroup(params).promise().toFuture
+    @inline def decreaseReplicaCountFuture(params: DecreaseReplicaCountMessage): Future[DecreaseReplicaCountResult] = service.decreaseReplicaCount(params).promise().toFuture
+    @inline def deleteCacheClusterFuture(params: DeleteCacheClusterMessage): Future[DeleteCacheClusterResult] = service.deleteCacheCluster(params).promise().toFuture
+    @inline def deleteCacheParameterGroupFuture(params: DeleteCacheParameterGroupMessage): Future[js.Object] = service.deleteCacheParameterGroup(params).promise().toFuture
+    @inline def deleteCacheSecurityGroupFuture(params: DeleteCacheSecurityGroupMessage): Future[js.Object] = service.deleteCacheSecurityGroup(params).promise().toFuture
+    @inline def deleteCacheSubnetGroupFuture(params: DeleteCacheSubnetGroupMessage): Future[js.Object] = service.deleteCacheSubnetGroup(params).promise().toFuture
+    @inline def deleteGlobalReplicationGroupFuture(params: DeleteGlobalReplicationGroupMessage): Future[DeleteGlobalReplicationGroupResult] = service.deleteGlobalReplicationGroup(params).promise().toFuture
+    @inline def deleteReplicationGroupFuture(params: DeleteReplicationGroupMessage): Future[DeleteReplicationGroupResult] = service.deleteReplicationGroup(params).promise().toFuture
+    @inline def deleteSnapshotFuture(params: DeleteSnapshotMessage): Future[DeleteSnapshotResult] = service.deleteSnapshot(params).promise().toFuture
+    @inline def describeCacheClustersFuture(params: DescribeCacheClustersMessage): Future[CacheClusterMessage] = service.describeCacheClusters(params).promise().toFuture
+    @inline def describeCacheEngineVersionsFuture(params: DescribeCacheEngineVersionsMessage): Future[CacheEngineVersionMessage] = service.describeCacheEngineVersions(params).promise().toFuture
+    @inline def describeCacheParameterGroupsFuture(params: DescribeCacheParameterGroupsMessage): Future[CacheParameterGroupsMessage] = service.describeCacheParameterGroups(params).promise().toFuture
+    @inline def describeCacheParametersFuture(params: DescribeCacheParametersMessage): Future[CacheParameterGroupDetails] = service.describeCacheParameters(params).promise().toFuture
+    @inline def describeCacheSecurityGroupsFuture(params: DescribeCacheSecurityGroupsMessage): Future[CacheSecurityGroupMessage] = service.describeCacheSecurityGroups(params).promise().toFuture
+    @inline def describeCacheSubnetGroupsFuture(params: DescribeCacheSubnetGroupsMessage): Future[CacheSubnetGroupMessage] = service.describeCacheSubnetGroups(params).promise().toFuture
+    @inline def describeEngineDefaultParametersFuture(params: DescribeEngineDefaultParametersMessage): Future[DescribeEngineDefaultParametersResult] = service.describeEngineDefaultParameters(params).promise().toFuture
+    @inline def describeEventsFuture(params: DescribeEventsMessage): Future[EventsMessage] = service.describeEvents(params).promise().toFuture
+    @inline def describeGlobalReplicationGroupsFuture(params: DescribeGlobalReplicationGroupsMessage): Future[DescribeGlobalReplicationGroupsResult] = service.describeGlobalReplicationGroups(params).promise().toFuture
+    @inline def describeReplicationGroupsFuture(params: DescribeReplicationGroupsMessage): Future[ReplicationGroupMessage] = service.describeReplicationGroups(params).promise().toFuture
+    @inline def describeReservedCacheNodesFuture(params: DescribeReservedCacheNodesMessage): Future[ReservedCacheNodeMessage] = service.describeReservedCacheNodes(params).promise().toFuture
+    @inline def describeReservedCacheNodesOfferingsFuture(params: DescribeReservedCacheNodesOfferingsMessage): Future[ReservedCacheNodesOfferingMessage] = service.describeReservedCacheNodesOfferings(params).promise().toFuture
+    @inline def describeServiceUpdatesFuture(params: DescribeServiceUpdatesMessage): Future[ServiceUpdatesMessage] = service.describeServiceUpdates(params).promise().toFuture
+    @inline def describeSnapshotsFuture(params: DescribeSnapshotsMessage): Future[DescribeSnapshotsListMessage] = service.describeSnapshots(params).promise().toFuture
+    @inline def describeUpdateActionsFuture(params: DescribeUpdateActionsMessage): Future[UpdateActionsMessage] = service.describeUpdateActions(params).promise().toFuture
+    @inline def disassociateGlobalReplicationGroupFuture(params: DisassociateGlobalReplicationGroupMessage): Future[DisassociateGlobalReplicationGroupResult] = service.disassociateGlobalReplicationGroup(params).promise().toFuture
+    @inline def failoverGlobalReplicationGroupFuture(params: FailoverGlobalReplicationGroupMessage): Future[FailoverGlobalReplicationGroupResult] = service.failoverGlobalReplicationGroup(params).promise().toFuture
+    @inline def increaseNodeGroupsInGlobalReplicationGroupFuture(params: IncreaseNodeGroupsInGlobalReplicationGroupMessage): Future[IncreaseNodeGroupsInGlobalReplicationGroupResult] = service.increaseNodeGroupsInGlobalReplicationGroup(params).promise().toFuture
+    @inline def increaseReplicaCountFuture(params: IncreaseReplicaCountMessage): Future[IncreaseReplicaCountResult] = service.increaseReplicaCount(params).promise().toFuture
+    @inline def listAllowedNodeTypeModificationsFuture(params: ListAllowedNodeTypeModificationsMessage): Future[AllowedNodeTypeModificationsMessage] = service.listAllowedNodeTypeModifications(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceMessage): Future[TagListMessage] = service.listTagsForResource(params).promise().toFuture
+    @inline def modifyCacheClusterFuture(params: ModifyCacheClusterMessage): Future[ModifyCacheClusterResult] = service.modifyCacheCluster(params).promise().toFuture
+    @inline def modifyCacheParameterGroupFuture(params: ModifyCacheParameterGroupMessage): Future[CacheParameterGroupNameMessage] = service.modifyCacheParameterGroup(params).promise().toFuture
+    @inline def modifyCacheSubnetGroupFuture(params: ModifyCacheSubnetGroupMessage): Future[ModifyCacheSubnetGroupResult] = service.modifyCacheSubnetGroup(params).promise().toFuture
+    @inline def modifyGlobalReplicationGroupFuture(params: ModifyGlobalReplicationGroupMessage): Future[ModifyGlobalReplicationGroupResult] = service.modifyGlobalReplicationGroup(params).promise().toFuture
+    @inline def modifyReplicationGroupFuture(params: ModifyReplicationGroupMessage): Future[ModifyReplicationGroupResult] = service.modifyReplicationGroup(params).promise().toFuture
+    @inline def modifyReplicationGroupShardConfigurationFuture(params: ModifyReplicationGroupShardConfigurationMessage): Future[ModifyReplicationGroupShardConfigurationResult] = service.modifyReplicationGroupShardConfiguration(params).promise().toFuture
+    @inline def purchaseReservedCacheNodesOfferingFuture(params: PurchaseReservedCacheNodesOfferingMessage): Future[PurchaseReservedCacheNodesOfferingResult] = service.purchaseReservedCacheNodesOffering(params).promise().toFuture
+    @inline def rebalanceSlotsInGlobalReplicationGroupFuture(params: RebalanceSlotsInGlobalReplicationGroupMessage): Future[RebalanceSlotsInGlobalReplicationGroupResult] = service.rebalanceSlotsInGlobalReplicationGroup(params).promise().toFuture
+    @inline def rebootCacheClusterFuture(params: RebootCacheClusterMessage): Future[RebootCacheClusterResult] = service.rebootCacheCluster(params).promise().toFuture
+    @inline def removeTagsFromResourceFuture(params: RemoveTagsFromResourceMessage): Future[TagListMessage] = service.removeTagsFromResource(params).promise().toFuture
+    @inline def resetCacheParameterGroupFuture(params: ResetCacheParameterGroupMessage): Future[CacheParameterGroupNameMessage] = service.resetCacheParameterGroup(params).promise().toFuture
+    @inline def revokeCacheSecurityGroupIngressFuture(params: RevokeCacheSecurityGroupIngressMessage): Future[RevokeCacheSecurityGroupIngressResult] = service.revokeCacheSecurityGroupIngress(params).promise().toFuture
+    @inline def startMigrationFuture(params: StartMigrationMessage): Future[StartMigrationResponse] = service.startMigration(params).promise().toFuture
+    @inline def testFailoverFuture(params: TestFailoverMessage): Future[TestFailoverResult] = service.testFailover(params).promise().toFuture
   }
 }
 
@@ -239,103 +138,60 @@ package elasticache {
     def this(config: AWSConfig) = this()
 
     def addTagsToResource(params: AddTagsToResourceMessage): Request[TagListMessage] = js.native
-    def authorizeCacheSecurityGroupIngress(
-        params: AuthorizeCacheSecurityGroupIngressMessage
-    ): Request[AuthorizeCacheSecurityGroupIngressResult] = js.native
+    def authorizeCacheSecurityGroupIngress(params: AuthorizeCacheSecurityGroupIngressMessage): Request[AuthorizeCacheSecurityGroupIngressResult] = js.native
     def batchApplyUpdateAction(params: BatchApplyUpdateActionMessage): Request[UpdateActionResultsMessage] = js.native
     def batchStopUpdateAction(params: BatchStopUpdateActionMessage): Request[UpdateActionResultsMessage] = js.native
     def completeMigration(params: CompleteMigrationMessage): Request[CompleteMigrationResponse] = js.native
     def copySnapshot(params: CopySnapshotMessage): Request[CopySnapshotResult] = js.native
     def createCacheCluster(params: CreateCacheClusterMessage): Request[CreateCacheClusterResult] = js.native
-    def createCacheParameterGroup(params: CreateCacheParameterGroupMessage): Request[CreateCacheParameterGroupResult] =
-      js.native
-    def createCacheSecurityGroup(params: CreateCacheSecurityGroupMessage): Request[CreateCacheSecurityGroupResult] =
-      js.native
+    def createCacheParameterGroup(params: CreateCacheParameterGroupMessage): Request[CreateCacheParameterGroupResult] = js.native
+    def createCacheSecurityGroup(params: CreateCacheSecurityGroupMessage): Request[CreateCacheSecurityGroupResult] = js.native
     def createCacheSubnetGroup(params: CreateCacheSubnetGroupMessage): Request[CreateCacheSubnetGroupResult] = js.native
-    def createGlobalReplicationGroup(
-        params: CreateGlobalReplicationGroupMessage
-    ): Request[CreateGlobalReplicationGroupResult] = js.native
+    def createGlobalReplicationGroup(params: CreateGlobalReplicationGroupMessage): Request[CreateGlobalReplicationGroupResult] = js.native
     def createReplicationGroup(params: CreateReplicationGroupMessage): Request[CreateReplicationGroupResult] = js.native
     def createSnapshot(params: CreateSnapshotMessage): Request[CreateSnapshotResult] = js.native
-    def decreaseNodeGroupsInGlobalReplicationGroup(
-        params: DecreaseNodeGroupsInGlobalReplicationGroupMessage
-    ): Request[DecreaseNodeGroupsInGlobalReplicationGroupResult] = js.native
+    def decreaseNodeGroupsInGlobalReplicationGroup(params: DecreaseNodeGroupsInGlobalReplicationGroupMessage): Request[DecreaseNodeGroupsInGlobalReplicationGroupResult] = js.native
     def decreaseReplicaCount(params: DecreaseReplicaCountMessage): Request[DecreaseReplicaCountResult] = js.native
     def deleteCacheCluster(params: DeleteCacheClusterMessage): Request[DeleteCacheClusterResult] = js.native
     def deleteCacheParameterGroup(params: DeleteCacheParameterGroupMessage): Request[js.Object] = js.native
     def deleteCacheSecurityGroup(params: DeleteCacheSecurityGroupMessage): Request[js.Object] = js.native
     def deleteCacheSubnetGroup(params: DeleteCacheSubnetGroupMessage): Request[js.Object] = js.native
-    def deleteGlobalReplicationGroup(
-        params: DeleteGlobalReplicationGroupMessage
-    ): Request[DeleteGlobalReplicationGroupResult] = js.native
+    def deleteGlobalReplicationGroup(params: DeleteGlobalReplicationGroupMessage): Request[DeleteGlobalReplicationGroupResult] = js.native
     def deleteReplicationGroup(params: DeleteReplicationGroupMessage): Request[DeleteReplicationGroupResult] = js.native
     def deleteSnapshot(params: DeleteSnapshotMessage): Request[DeleteSnapshotResult] = js.native
     def describeCacheClusters(params: DescribeCacheClustersMessage): Request[CacheClusterMessage] = js.native
-    def describeCacheEngineVersions(params: DescribeCacheEngineVersionsMessage): Request[CacheEngineVersionMessage] =
-      js.native
-    def describeCacheParameterGroups(
-        params: DescribeCacheParameterGroupsMessage
-    ): Request[CacheParameterGroupsMessage] = js.native
+    def describeCacheEngineVersions(params: DescribeCacheEngineVersionsMessage): Request[CacheEngineVersionMessage] = js.native
+    def describeCacheParameterGroups(params: DescribeCacheParameterGroupsMessage): Request[CacheParameterGroupsMessage] = js.native
     def describeCacheParameters(params: DescribeCacheParametersMessage): Request[CacheParameterGroupDetails] = js.native
-    def describeCacheSecurityGroups(params: DescribeCacheSecurityGroupsMessage): Request[CacheSecurityGroupMessage] =
-      js.native
-    def describeCacheSubnetGroups(params: DescribeCacheSubnetGroupsMessage): Request[CacheSubnetGroupMessage] =
-      js.native
-    def describeEngineDefaultParameters(
-        params: DescribeEngineDefaultParametersMessage
-    ): Request[DescribeEngineDefaultParametersResult] = js.native
+    def describeCacheSecurityGroups(params: DescribeCacheSecurityGroupsMessage): Request[CacheSecurityGroupMessage] = js.native
+    def describeCacheSubnetGroups(params: DescribeCacheSubnetGroupsMessage): Request[CacheSubnetGroupMessage] = js.native
+    def describeEngineDefaultParameters(params: DescribeEngineDefaultParametersMessage): Request[DescribeEngineDefaultParametersResult] = js.native
     def describeEvents(params: DescribeEventsMessage): Request[EventsMessage] = js.native
-    def describeGlobalReplicationGroups(
-        params: DescribeGlobalReplicationGroupsMessage
-    ): Request[DescribeGlobalReplicationGroupsResult] = js.native
-    def describeReplicationGroups(params: DescribeReplicationGroupsMessage): Request[ReplicationGroupMessage] =
-      js.native
-    def describeReservedCacheNodes(params: DescribeReservedCacheNodesMessage): Request[ReservedCacheNodeMessage] =
-      js.native
-    def describeReservedCacheNodesOfferings(
-        params: DescribeReservedCacheNodesOfferingsMessage
-    ): Request[ReservedCacheNodesOfferingMessage] = js.native
+    def describeGlobalReplicationGroups(params: DescribeGlobalReplicationGroupsMessage): Request[DescribeGlobalReplicationGroupsResult] = js.native
+    def describeReplicationGroups(params: DescribeReplicationGroupsMessage): Request[ReplicationGroupMessage] = js.native
+    def describeReservedCacheNodes(params: DescribeReservedCacheNodesMessage): Request[ReservedCacheNodeMessage] = js.native
+    def describeReservedCacheNodesOfferings(params: DescribeReservedCacheNodesOfferingsMessage): Request[ReservedCacheNodesOfferingMessage] = js.native
     def describeServiceUpdates(params: DescribeServiceUpdatesMessage): Request[ServiceUpdatesMessage] = js.native
     def describeSnapshots(params: DescribeSnapshotsMessage): Request[DescribeSnapshotsListMessage] = js.native
     def describeUpdateActions(params: DescribeUpdateActionsMessage): Request[UpdateActionsMessage] = js.native
-    def disassociateGlobalReplicationGroup(
-        params: DisassociateGlobalReplicationGroupMessage
-    ): Request[DisassociateGlobalReplicationGroupResult] = js.native
-    def failoverGlobalReplicationGroup(
-        params: FailoverGlobalReplicationGroupMessage
-    ): Request[FailoverGlobalReplicationGroupResult] = js.native
-    def increaseNodeGroupsInGlobalReplicationGroup(
-        params: IncreaseNodeGroupsInGlobalReplicationGroupMessage
-    ): Request[IncreaseNodeGroupsInGlobalReplicationGroupResult] = js.native
+    def disassociateGlobalReplicationGroup(params: DisassociateGlobalReplicationGroupMessage): Request[DisassociateGlobalReplicationGroupResult] = js.native
+    def failoverGlobalReplicationGroup(params: FailoverGlobalReplicationGroupMessage): Request[FailoverGlobalReplicationGroupResult] = js.native
+    def increaseNodeGroupsInGlobalReplicationGroup(params: IncreaseNodeGroupsInGlobalReplicationGroupMessage): Request[IncreaseNodeGroupsInGlobalReplicationGroupResult] = js.native
     def increaseReplicaCount(params: IncreaseReplicaCountMessage): Request[IncreaseReplicaCountResult] = js.native
-    def listAllowedNodeTypeModifications(
-        params: ListAllowedNodeTypeModificationsMessage
-    ): Request[AllowedNodeTypeModificationsMessage] = js.native
+    def listAllowedNodeTypeModifications(params: ListAllowedNodeTypeModificationsMessage): Request[AllowedNodeTypeModificationsMessage] = js.native
     def listTagsForResource(params: ListTagsForResourceMessage): Request[TagListMessage] = js.native
     def modifyCacheCluster(params: ModifyCacheClusterMessage): Request[ModifyCacheClusterResult] = js.native
-    def modifyCacheParameterGroup(params: ModifyCacheParameterGroupMessage): Request[CacheParameterGroupNameMessage] =
-      js.native
+    def modifyCacheParameterGroup(params: ModifyCacheParameterGroupMessage): Request[CacheParameterGroupNameMessage] = js.native
     def modifyCacheSubnetGroup(params: ModifyCacheSubnetGroupMessage): Request[ModifyCacheSubnetGroupResult] = js.native
-    def modifyGlobalReplicationGroup(
-        params: ModifyGlobalReplicationGroupMessage
-    ): Request[ModifyGlobalReplicationGroupResult] = js.native
+    def modifyGlobalReplicationGroup(params: ModifyGlobalReplicationGroupMessage): Request[ModifyGlobalReplicationGroupResult] = js.native
     def modifyReplicationGroup(params: ModifyReplicationGroupMessage): Request[ModifyReplicationGroupResult] = js.native
-    def modifyReplicationGroupShardConfiguration(
-        params: ModifyReplicationGroupShardConfigurationMessage
-    ): Request[ModifyReplicationGroupShardConfigurationResult] = js.native
-    def purchaseReservedCacheNodesOffering(
-        params: PurchaseReservedCacheNodesOfferingMessage
-    ): Request[PurchaseReservedCacheNodesOfferingResult] = js.native
-    def rebalanceSlotsInGlobalReplicationGroup(
-        params: RebalanceSlotsInGlobalReplicationGroupMessage
-    ): Request[RebalanceSlotsInGlobalReplicationGroupResult] = js.native
+    def modifyReplicationGroupShardConfiguration(params: ModifyReplicationGroupShardConfigurationMessage): Request[ModifyReplicationGroupShardConfigurationResult] = js.native
+    def purchaseReservedCacheNodesOffering(params: PurchaseReservedCacheNodesOfferingMessage): Request[PurchaseReservedCacheNodesOfferingResult] = js.native
+    def rebalanceSlotsInGlobalReplicationGroup(params: RebalanceSlotsInGlobalReplicationGroupMessage): Request[RebalanceSlotsInGlobalReplicationGroupResult] = js.native
     def rebootCacheCluster(params: RebootCacheClusterMessage): Request[RebootCacheClusterResult] = js.native
     def removeTagsFromResource(params: RemoveTagsFromResourceMessage): Request[TagListMessage] = js.native
-    def resetCacheParameterGroup(params: ResetCacheParameterGroupMessage): Request[CacheParameterGroupNameMessage] =
-      js.native
-    def revokeCacheSecurityGroupIngress(
-        params: RevokeCacheSecurityGroupIngressMessage
-    ): Request[RevokeCacheSecurityGroupIngressResult] = js.native
+    def resetCacheParameterGroup(params: ResetCacheParameterGroupMessage): Request[CacheParameterGroupNameMessage] = js.native
+    def revokeCacheSecurityGroupIngress(params: RevokeCacheSecurityGroupIngressMessage): Request[RevokeCacheSecurityGroupIngressResult] = js.native
     def startMigration(params: StartMigrationMessage): Request[StartMigrationResponse] = js.native
     def testFailover(params: TestFailoverMessage): Request[TestFailoverResult] = js.native
   }
@@ -603,9 +459,7 @@ package elasticache {
       ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
       AtRestEncryptionEnabled.foreach(__v => __obj.updateDynamic("AtRestEncryptionEnabled")(__v.asInstanceOf[js.Any]))
       AuthTokenEnabled.foreach(__v => __obj.updateDynamic("AuthTokenEnabled")(__v.asInstanceOf[js.Any]))
-      AuthTokenLastModifiedDate.foreach(__v =>
-        __obj.updateDynamic("AuthTokenLastModifiedDate")(__v.asInstanceOf[js.Any])
-      )
+      AuthTokenLastModifiedDate.foreach(__v => __obj.updateDynamic("AuthTokenLastModifiedDate")(__v.asInstanceOf[js.Any]))
       AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
       CacheClusterCreateTime.foreach(__v => __obj.updateDynamic("CacheClusterCreateTime")(__v.asInstanceOf[js.Any]))
       CacheClusterId.foreach(__v => __obj.updateDynamic("CacheClusterId")(__v.asInstanceOf[js.Any]))
@@ -615,23 +469,15 @@ package elasticache {
       CacheParameterGroup.foreach(__v => __obj.updateDynamic("CacheParameterGroup")(__v.asInstanceOf[js.Any]))
       CacheSecurityGroups.foreach(__v => __obj.updateDynamic("CacheSecurityGroups")(__v.asInstanceOf[js.Any]))
       CacheSubnetGroupName.foreach(__v => __obj.updateDynamic("CacheSubnetGroupName")(__v.asInstanceOf[js.Any]))
-      ClientDownloadLandingPage.foreach(__v =>
-        __obj.updateDynamic("ClientDownloadLandingPage")(__v.asInstanceOf[js.Any])
-      )
+      ClientDownloadLandingPage.foreach(__v => __obj.updateDynamic("ClientDownloadLandingPage")(__v.asInstanceOf[js.Any]))
       ConfigurationEndpoint.foreach(__v => __obj.updateDynamic("ConfigurationEndpoint")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
-      NotificationConfiguration.foreach(__v =>
-        __obj.updateDynamic("NotificationConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      NotificationConfiguration.foreach(__v => __obj.updateDynamic("NotificationConfiguration")(__v.asInstanceOf[js.Any]))
       NumCacheNodes.foreach(__v => __obj.updateDynamic("NumCacheNodes")(__v.asInstanceOf[js.Any]))
       PendingModifiedValues.foreach(__v => __obj.updateDynamic("PendingModifiedValues")(__v.asInstanceOf[js.Any]))
-      PreferredAvailabilityZone.foreach(__v =>
-        __obj.updateDynamic("PreferredAvailabilityZone")(__v.asInstanceOf[js.Any])
-      )
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      PreferredAvailabilityZone.foreach(__v => __obj.updateDynamic("PreferredAvailabilityZone")(__v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       ReplicationGroupId.foreach(__v => __obj.updateDynamic("ReplicationGroupId")(__v.asInstanceOf[js.Any]))
       SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
       SnapshotRetentionLimit.foreach(__v => __obj.updateDynamic("SnapshotRetentionLimit")(__v.asInstanceOf[js.Any]))
@@ -686,12 +532,8 @@ package elasticache {
     ): CacheEngineVersion = {
       val __obj = js.Dynamic.literal()
       CacheEngineDescription.foreach(__v => __obj.updateDynamic("CacheEngineDescription")(__v.asInstanceOf[js.Any]))
-      CacheEngineVersionDescription.foreach(__v =>
-        __obj.updateDynamic("CacheEngineVersionDescription")(__v.asInstanceOf[js.Any])
-      )
-      CacheParameterGroupFamily.foreach(__v =>
-        __obj.updateDynamic("CacheParameterGroupFamily")(__v.asInstanceOf[js.Any])
-      )
+      CacheEngineVersionDescription.foreach(__v => __obj.updateDynamic("CacheEngineVersionDescription")(__v.asInstanceOf[js.Any]))
+      CacheParameterGroupFamily.foreach(__v => __obj.updateDynamic("CacheParameterGroupFamily")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CacheEngineVersion]
@@ -814,9 +656,7 @@ package elasticache {
     ): CacheNodeTypeSpecificParameter = {
       val __obj = js.Dynamic.literal()
       AllowedValues.foreach(__v => __obj.updateDynamic("AllowedValues")(__v.asInstanceOf[js.Any]))
-      CacheNodeTypeSpecificValues.foreach(__v =>
-        __obj.updateDynamic("CacheNodeTypeSpecificValues")(__v.asInstanceOf[js.Any])
-      )
+      CacheNodeTypeSpecificValues.foreach(__v => __obj.updateDynamic("CacheNodeTypeSpecificValues")(__v.asInstanceOf[js.Any]))
       ChangeType.foreach(__v => __obj.updateDynamic("ChangeType")(__v.asInstanceOf[js.Any]))
       DataType.foreach(__v => __obj.updateDynamic("DataType")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -885,9 +725,7 @@ package elasticache {
       NodeUpdateInitiatedDate.foreach(__v => __obj.updateDynamic("NodeUpdateInitiatedDate")(__v.asInstanceOf[js.Any]))
       NodeUpdateStartDate.foreach(__v => __obj.updateDynamic("NodeUpdateStartDate")(__v.asInstanceOf[js.Any]))
       NodeUpdateStatus.foreach(__v => __obj.updateDynamic("NodeUpdateStatus")(__v.asInstanceOf[js.Any]))
-      NodeUpdateStatusModifiedDate.foreach(__v =>
-        __obj.updateDynamic("NodeUpdateStatusModifiedDate")(__v.asInstanceOf[js.Any])
-      )
+      NodeUpdateStatusModifiedDate.foreach(__v => __obj.updateDynamic("NodeUpdateStatusModifiedDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CacheNodeUpdateStatus]
     }
   }
@@ -915,9 +753,7 @@ package elasticache {
     ): CacheParameterGroup = {
       val __obj = js.Dynamic.literal()
       ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
-      CacheParameterGroupFamily.foreach(__v =>
-        __obj.updateDynamic("CacheParameterGroupFamily")(__v.asInstanceOf[js.Any])
-      )
+      CacheParameterGroupFamily.foreach(__v => __obj.updateDynamic("CacheParameterGroupFamily")(__v.asInstanceOf[js.Any]))
       CacheParameterGroupName.foreach(__v => __obj.updateDynamic("CacheParameterGroupName")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       IsGlobal.foreach(__v => __obj.updateDynamic("IsGlobal")(__v.asInstanceOf[js.Any]))
@@ -943,9 +779,7 @@ package elasticache {
         Parameters: js.UndefOr[ParametersList] = js.undefined
     ): CacheParameterGroupDetails = {
       val __obj = js.Dynamic.literal()
-      CacheNodeTypeSpecificParameters.foreach(__v =>
-        __obj.updateDynamic("CacheNodeTypeSpecificParameters")(__v.asInstanceOf[js.Any])
-      )
+      CacheNodeTypeSpecificParameters.foreach(__v => __obj.updateDynamic("CacheNodeTypeSpecificParameters")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CacheParameterGroupDetails]
@@ -1123,9 +957,7 @@ package elasticache {
     ): CacheSubnetGroup = {
       val __obj = js.Dynamic.literal()
       ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
-      CacheSubnetGroupDescription.foreach(__v =>
-        __obj.updateDynamic("CacheSubnetGroupDescription")(__v.asInstanceOf[js.Any])
-      )
+      CacheSubnetGroupDescription.foreach(__v => __obj.updateDynamic("CacheSubnetGroupDescription")(__v.asInstanceOf[js.Any]))
       CacheSubnetGroupName.foreach(__v => __obj.updateDynamic("CacheSubnetGroupName")(__v.asInstanceOf[js.Any]))
       Subnets.foreach(__v => __obj.updateDynamic("Subnets")(__v.asInstanceOf[js.Any]))
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
@@ -1223,9 +1055,7 @@ package elasticache {
         "NodeGroupId" -> NodeGroupId.asInstanceOf[js.Any]
       )
 
-      PreferredAvailabilityZones.foreach(__v =>
-        __obj.updateDynamic("PreferredAvailabilityZones")(__v.asInstanceOf[js.Any])
-      )
+      PreferredAvailabilityZones.foreach(__v => __obj.updateDynamic("PreferredAvailabilityZones")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfigureShard]
     }
   }
@@ -1349,15 +1179,9 @@ package elasticache {
       NotificationTopicArn.foreach(__v => __obj.updateDynamic("NotificationTopicArn")(__v.asInstanceOf[js.Any]))
       NumCacheNodes.foreach(__v => __obj.updateDynamic("NumCacheNodes")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
-      PreferredAvailabilityZone.foreach(__v =>
-        __obj.updateDynamic("PreferredAvailabilityZone")(__v.asInstanceOf[js.Any])
-      )
-      PreferredAvailabilityZones.foreach(__v =>
-        __obj.updateDynamic("PreferredAvailabilityZones")(__v.asInstanceOf[js.Any])
-      )
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      PreferredAvailabilityZone.foreach(__v => __obj.updateDynamic("PreferredAvailabilityZone")(__v.asInstanceOf[js.Any]))
+      PreferredAvailabilityZones.foreach(__v => __obj.updateDynamic("PreferredAvailabilityZones")(__v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       ReplicationGroupId.foreach(__v => __obj.updateDynamic("ReplicationGroupId")(__v.asInstanceOf[js.Any]))
       SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
       SnapshotArns.foreach(__v => __obj.updateDynamic("SnapshotArns")(__v.asInstanceOf[js.Any]))
@@ -1530,9 +1354,7 @@ package elasticache {
         "PrimaryReplicationGroupId" -> PrimaryReplicationGroupId.asInstanceOf[js.Any]
       )
 
-      GlobalReplicationGroupDescription.foreach(__v =>
-        __obj.updateDynamic("GlobalReplicationGroupDescription")(__v.asInstanceOf[js.Any])
-      )
+      GlobalReplicationGroupDescription.foreach(__v => __obj.updateDynamic("GlobalReplicationGroupDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGlobalReplicationGroupMessage]
     }
   }
@@ -1650,9 +1472,7 @@ package elasticache {
       NumNodeGroups.foreach(__v => __obj.updateDynamic("NumNodeGroups")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       PreferredCacheClusterAZs.foreach(__v => __obj.updateDynamic("PreferredCacheClusterAZs")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       PrimaryClusterId.foreach(__v => __obj.updateDynamic("PrimaryClusterId")(__v.asInstanceOf[js.Any]))
       ReplicasPerNodeGroup.foreach(__v => __obj.updateDynamic("ReplicasPerNodeGroup")(__v.asInstanceOf[js.Any]))
       SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
@@ -2087,9 +1907,7 @@ package elasticache {
       CacheClusterId.foreach(__v => __obj.updateDynamic("CacheClusterId")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      ShowCacheClustersNotInReplicationGroups.foreach(__v =>
-        __obj.updateDynamic("ShowCacheClustersNotInReplicationGroups")(__v.asInstanceOf[js.Any])
-      )
+      ShowCacheClustersNotInReplicationGroups.foreach(__v => __obj.updateDynamic("ShowCacheClustersNotInReplicationGroups")(__v.asInstanceOf[js.Any]))
       ShowCacheNodeInfo.foreach(__v => __obj.updateDynamic("ShowCacheNodeInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCacheClustersMessage]
     }
@@ -2119,9 +1937,7 @@ package elasticache {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeCacheEngineVersionsMessage = {
       val __obj = js.Dynamic.literal()
-      CacheParameterGroupFamily.foreach(__v =>
-        __obj.updateDynamic("CacheParameterGroupFamily")(__v.asInstanceOf[js.Any])
-      )
+      CacheParameterGroupFamily.foreach(__v => __obj.updateDynamic("CacheParameterGroupFamily")(__v.asInstanceOf[js.Any]))
       DefaultOnly.foreach(__v => __obj.updateDynamic("DefaultOnly")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
@@ -2420,9 +2236,7 @@ package elasticache {
       OfferingType.foreach(__v => __obj.updateDynamic("OfferingType")(__v.asInstanceOf[js.Any]))
       ProductDescription.foreach(__v => __obj.updateDynamic("ProductDescription")(__v.asInstanceOf[js.Any]))
       ReservedCacheNodeId.foreach(__v => __obj.updateDynamic("ReservedCacheNodeId")(__v.asInstanceOf[js.Any]))
-      ReservedCacheNodesOfferingId.foreach(__v =>
-        __obj.updateDynamic("ReservedCacheNodesOfferingId")(__v.asInstanceOf[js.Any])
-      )
+      ReservedCacheNodesOfferingId.foreach(__v => __obj.updateDynamic("ReservedCacheNodesOfferingId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeReservedCacheNodesMessage]
     }
   }
@@ -2459,9 +2273,7 @@ package elasticache {
       MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
       OfferingType.foreach(__v => __obj.updateDynamic("OfferingType")(__v.asInstanceOf[js.Any]))
       ProductDescription.foreach(__v => __obj.updateDynamic("ProductDescription")(__v.asInstanceOf[js.Any]))
-      ReservedCacheNodesOfferingId.foreach(__v =>
-        __obj.updateDynamic("ReservedCacheNodesOfferingId")(__v.asInstanceOf[js.Any])
-      )
+      ReservedCacheNodesOfferingId.foreach(__v => __obj.updateDynamic("ReservedCacheNodesOfferingId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeReservedCacheNodesOfferingsMessage]
     }
   }
@@ -2587,9 +2399,7 @@ package elasticache {
       ServiceUpdateName.foreach(__v => __obj.updateDynamic("ServiceUpdateName")(__v.asInstanceOf[js.Any]))
       ServiceUpdateStatus.foreach(__v => __obj.updateDynamic("ServiceUpdateStatus")(__v.asInstanceOf[js.Any]))
       ServiceUpdateTimeRange.foreach(__v => __obj.updateDynamic("ServiceUpdateTimeRange")(__v.asInstanceOf[js.Any]))
-      ShowNodeLevelUpdateStatus.foreach(__v =>
-        __obj.updateDynamic("ShowNodeLevelUpdateStatus")(__v.asInstanceOf[js.Any])
-      )
+      ShowNodeLevelUpdateStatus.foreach(__v => __obj.updateDynamic("ShowNodeLevelUpdateStatus")(__v.asInstanceOf[js.Any]))
       UpdateActionStatus.foreach(__v => __obj.updateDynamic("UpdateActionStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeUpdateActionsMessage]
     }
@@ -2702,12 +2512,8 @@ package elasticache {
         Parameters: js.UndefOr[ParametersList] = js.undefined
     ): EngineDefaults = {
       val __obj = js.Dynamic.literal()
-      CacheNodeTypeSpecificParameters.foreach(__v =>
-        __obj.updateDynamic("CacheNodeTypeSpecificParameters")(__v.asInstanceOf[js.Any])
-      )
-      CacheParameterGroupFamily.foreach(__v =>
-        __obj.updateDynamic("CacheParameterGroupFamily")(__v.asInstanceOf[js.Any])
-      )
+      CacheNodeTypeSpecificParameters.foreach(__v => __obj.updateDynamic("CacheNodeTypeSpecificParameters")(__v.asInstanceOf[js.Any]))
+      CacheParameterGroupFamily.foreach(__v => __obj.updateDynamic("CacheParameterGroupFamily")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EngineDefaults]
@@ -2873,9 +2679,7 @@ package elasticache {
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       GlobalNodeGroups.foreach(__v => __obj.updateDynamic("GlobalNodeGroups")(__v.asInstanceOf[js.Any]))
-      GlobalReplicationGroupDescription.foreach(__v =>
-        __obj.updateDynamic("GlobalReplicationGroupDescription")(__v.asInstanceOf[js.Any])
-      )
+      GlobalReplicationGroupDescription.foreach(__v => __obj.updateDynamic("GlobalReplicationGroupDescription")(__v.asInstanceOf[js.Any]))
       GlobalReplicationGroupId.foreach(__v => __obj.updateDynamic("GlobalReplicationGroupId")(__v.asInstanceOf[js.Any]))
       Members.foreach(__v => __obj.updateDynamic("Members")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -2901,9 +2705,7 @@ package elasticache {
     ): GlobalReplicationGroupInfo = {
       val __obj = js.Dynamic.literal()
       GlobalReplicationGroupId.foreach(__v => __obj.updateDynamic("GlobalReplicationGroupId")(__v.asInstanceOf[js.Any]))
-      GlobalReplicationGroupMemberRole.foreach(__v =>
-        __obj.updateDynamic("GlobalReplicationGroupMemberRole")(__v.asInstanceOf[js.Any])
-      )
+      GlobalReplicationGroupMemberRole.foreach(__v => __obj.updateDynamic("GlobalReplicationGroupMemberRole")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GlobalReplicationGroupInfo]
     }
   }
@@ -3135,9 +2937,7 @@ package elasticache {
       NotificationTopicArn.foreach(__v => __obj.updateDynamic("NotificationTopicArn")(__v.asInstanceOf[js.Any]))
       NotificationTopicStatus.foreach(__v => __obj.updateDynamic("NotificationTopicStatus")(__v.asInstanceOf[js.Any]))
       NumCacheNodes.foreach(__v => __obj.updateDynamic("NumCacheNodes")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
       SnapshotRetentionLimit.foreach(__v => __obj.updateDynamic("SnapshotRetentionLimit")(__v.asInstanceOf[js.Any]))
       SnapshotWindow.foreach(__v => __obj.updateDynamic("SnapshotWindow")(__v.asInstanceOf[js.Any]))
@@ -3206,9 +3006,7 @@ package elasticache {
         "CacheSubnetGroupName" -> CacheSubnetGroupName.asInstanceOf[js.Any]
       )
 
-      CacheSubnetGroupDescription.foreach(__v =>
-        __obj.updateDynamic("CacheSubnetGroupDescription")(__v.asInstanceOf[js.Any])
-      )
+      CacheSubnetGroupDescription.foreach(__v => __obj.updateDynamic("CacheSubnetGroupDescription")(__v.asInstanceOf[js.Any]))
       SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyCacheSubnetGroupMessage]
     }
@@ -3258,9 +3056,7 @@ package elasticache {
       AutomaticFailoverEnabled.foreach(__v => __obj.updateDynamic("AutomaticFailoverEnabled")(__v.asInstanceOf[js.Any]))
       CacheNodeType.foreach(__v => __obj.updateDynamic("CacheNodeType")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
-      GlobalReplicationGroupDescription.foreach(__v =>
-        __obj.updateDynamic("GlobalReplicationGroupDescription")(__v.asInstanceOf[js.Any])
-      )
+      GlobalReplicationGroupDescription.foreach(__v => __obj.updateDynamic("GlobalReplicationGroupDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyGlobalReplicationGroupMessage]
     }
   }
@@ -3351,13 +3147,9 @@ package elasticache {
       NodeGroupId.foreach(__v => __obj.updateDynamic("NodeGroupId")(__v.asInstanceOf[js.Any]))
       NotificationTopicArn.foreach(__v => __obj.updateDynamic("NotificationTopicArn")(__v.asInstanceOf[js.Any]))
       NotificationTopicStatus.foreach(__v => __obj.updateDynamic("NotificationTopicStatus")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       PrimaryClusterId.foreach(__v => __obj.updateDynamic("PrimaryClusterId")(__v.asInstanceOf[js.Any]))
-      ReplicationGroupDescription.foreach(__v =>
-        __obj.updateDynamic("ReplicationGroupDescription")(__v.asInstanceOf[js.Any])
-      )
+      ReplicationGroupDescription.foreach(__v => __obj.updateDynamic("ReplicationGroupDescription")(__v.asInstanceOf[js.Any]))
       SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
       SnapshotRetentionLimit.foreach(__v => __obj.updateDynamic("SnapshotRetentionLimit")(__v.asInstanceOf[js.Any]))
       SnapshotWindow.foreach(__v => __obj.updateDynamic("SnapshotWindow")(__v.asInstanceOf[js.Any]))
@@ -3533,9 +3325,7 @@ package elasticache {
       CacheClusterId.foreach(__v => __obj.updateDynamic("CacheClusterId")(__v.asInstanceOf[js.Any]))
       CacheNodeId.foreach(__v => __obj.updateDynamic("CacheNodeId")(__v.asInstanceOf[js.Any]))
       CurrentRole.foreach(__v => __obj.updateDynamic("CurrentRole")(__v.asInstanceOf[js.Any]))
-      PreferredAvailabilityZone.foreach(__v =>
-        __obj.updateDynamic("PreferredAvailabilityZone")(__v.asInstanceOf[js.Any])
-      )
+      PreferredAvailabilityZone.foreach(__v => __obj.updateDynamic("PreferredAvailabilityZone")(__v.asInstanceOf[js.Any]))
       ReadEndpoint.foreach(__v => __obj.updateDynamic("ReadEndpoint")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NodeGroupMember]
     }
@@ -3579,9 +3369,7 @@ package elasticache {
       NodeUpdateInitiatedDate.foreach(__v => __obj.updateDynamic("NodeUpdateInitiatedDate")(__v.asInstanceOf[js.Any]))
       NodeUpdateStartDate.foreach(__v => __obj.updateDynamic("NodeUpdateStartDate")(__v.asInstanceOf[js.Any]))
       NodeUpdateStatus.foreach(__v => __obj.updateDynamic("NodeUpdateStatus")(__v.asInstanceOf[js.Any]))
-      NodeUpdateStatusModifiedDate.foreach(__v =>
-        __obj.updateDynamic("NodeUpdateStatusModifiedDate")(__v.asInstanceOf[js.Any])
-      )
+      NodeUpdateStatusModifiedDate.foreach(__v => __obj.updateDynamic("NodeUpdateStatusModifiedDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NodeGroupMemberUpdateStatus]
     }
   }
@@ -3603,9 +3391,7 @@ package elasticache {
     ): NodeGroupUpdateStatus = {
       val __obj = js.Dynamic.literal()
       NodeGroupId.foreach(__v => __obj.updateDynamic("NodeGroupId")(__v.asInstanceOf[js.Any]))
-      NodeGroupMemberUpdateStatus.foreach(__v =>
-        __obj.updateDynamic("NodeGroupMemberUpdateStatus")(__v.asInstanceOf[js.Any])
-      )
+      NodeGroupMemberUpdateStatus.foreach(__v => __obj.updateDynamic("NodeGroupMemberUpdateStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NodeGroupUpdateStatus]
     }
   }
@@ -3666,8 +3452,7 @@ package elasticache {
     val stopped = "stopped".asInstanceOf[NodeUpdateStatus]
     val complete = "complete".asInstanceOf[NodeUpdateStatus]
 
-    val values =
-      js.Object.freeze(js.Array(`not-applied`, `waiting-to-start`, `in-progress`, stopping, stopped, complete))
+    val values = js.Object.freeze(js.Array(`not-applied`, `waiting-to-start`, `in-progress`, stopping, stopped, complete))
   }
 
   /**
@@ -4075,17 +3860,13 @@ package elasticache {
       ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
       AtRestEncryptionEnabled.foreach(__v => __obj.updateDynamic("AtRestEncryptionEnabled")(__v.asInstanceOf[js.Any]))
       AuthTokenEnabled.foreach(__v => __obj.updateDynamic("AuthTokenEnabled")(__v.asInstanceOf[js.Any]))
-      AuthTokenLastModifiedDate.foreach(__v =>
-        __obj.updateDynamic("AuthTokenLastModifiedDate")(__v.asInstanceOf[js.Any])
-      )
+      AuthTokenLastModifiedDate.foreach(__v => __obj.updateDynamic("AuthTokenLastModifiedDate")(__v.asInstanceOf[js.Any]))
       AutomaticFailover.foreach(__v => __obj.updateDynamic("AutomaticFailover")(__v.asInstanceOf[js.Any]))
       CacheNodeType.foreach(__v => __obj.updateDynamic("CacheNodeType")(__v.asInstanceOf[js.Any]))
       ClusterEnabled.foreach(__v => __obj.updateDynamic("ClusterEnabled")(__v.asInstanceOf[js.Any]))
       ConfigurationEndpoint.foreach(__v => __obj.updateDynamic("ConfigurationEndpoint")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      GlobalReplicationGroupInfo.foreach(__v =>
-        __obj.updateDynamic("GlobalReplicationGroupInfo")(__v.asInstanceOf[js.Any])
-      )
+      GlobalReplicationGroupInfo.foreach(__v => __obj.updateDynamic("GlobalReplicationGroupInfo")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       MemberClusters.foreach(__v => __obj.updateDynamic("MemberClusters")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
@@ -4198,9 +3979,7 @@ package elasticache {
       RecurringCharges.foreach(__v => __obj.updateDynamic("RecurringCharges")(__v.asInstanceOf[js.Any]))
       ReservationARN.foreach(__v => __obj.updateDynamic("ReservationARN")(__v.asInstanceOf[js.Any]))
       ReservedCacheNodeId.foreach(__v => __obj.updateDynamic("ReservedCacheNodeId")(__v.asInstanceOf[js.Any]))
-      ReservedCacheNodesOfferingId.foreach(__v =>
-        __obj.updateDynamic("ReservedCacheNodesOfferingId")(__v.asInstanceOf[js.Any])
-      )
+      ReservedCacheNodesOfferingId.foreach(__v => __obj.updateDynamic("ReservedCacheNodesOfferingId")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       UsagePrice.foreach(__v => __obj.updateDynamic("UsagePrice")(__v.asInstanceOf[js.Any]))
@@ -4264,9 +4043,7 @@ package elasticache {
       OfferingType.foreach(__v => __obj.updateDynamic("OfferingType")(__v.asInstanceOf[js.Any]))
       ProductDescription.foreach(__v => __obj.updateDynamic("ProductDescription")(__v.asInstanceOf[js.Any]))
       RecurringCharges.foreach(__v => __obj.updateDynamic("RecurringCharges")(__v.asInstanceOf[js.Any]))
-      ReservedCacheNodesOfferingId.foreach(__v =>
-        __obj.updateDynamic("ReservedCacheNodesOfferingId")(__v.asInstanceOf[js.Any])
-      )
+      ReservedCacheNodesOfferingId.foreach(__v => __obj.updateDynamic("ReservedCacheNodesOfferingId")(__v.asInstanceOf[js.Any]))
       UsagePrice.foreach(__v => __obj.updateDynamic("UsagePrice")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReservedCacheNodesOffering]
     }
@@ -4289,9 +4066,7 @@ package elasticache {
     ): ReservedCacheNodesOfferingMessage = {
       val __obj = js.Dynamic.literal()
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      ReservedCacheNodesOfferings.foreach(__v =>
-        __obj.updateDynamic("ReservedCacheNodesOfferings")(__v.asInstanceOf[js.Any])
-      )
+      ReservedCacheNodesOfferings.foreach(__v => __obj.updateDynamic("ReservedCacheNodesOfferings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReservedCacheNodesOfferingMessage]
     }
   }
@@ -4340,9 +4115,7 @@ package elasticache {
     ): ReshardingConfiguration = {
       val __obj = js.Dynamic.literal()
       NodeGroupId.foreach(__v => __obj.updateDynamic("NodeGroupId")(__v.asInstanceOf[js.Any]))
-      PreferredAvailabilityZones.foreach(__v =>
-        __obj.updateDynamic("PreferredAvailabilityZones")(__v.asInstanceOf[js.Any])
-      )
+      PreferredAvailabilityZones.foreach(__v => __obj.updateDynamic("PreferredAvailabilityZones")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReshardingConfiguration]
     }
   }
@@ -4467,18 +4240,14 @@ package elasticache {
         ServiceUpdateType: js.UndefOr[ServiceUpdateType] = js.undefined
     ): ServiceUpdate = {
       val __obj = js.Dynamic.literal()
-      AutoUpdateAfterRecommendedApplyByDate.foreach(__v =>
-        __obj.updateDynamic("AutoUpdateAfterRecommendedApplyByDate")(__v.asInstanceOf[js.Any])
-      )
+      AutoUpdateAfterRecommendedApplyByDate.foreach(__v => __obj.updateDynamic("AutoUpdateAfterRecommendedApplyByDate")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       EstimatedUpdateTime.foreach(__v => __obj.updateDynamic("EstimatedUpdateTime")(__v.asInstanceOf[js.Any]))
       ServiceUpdateDescription.foreach(__v => __obj.updateDynamic("ServiceUpdateDescription")(__v.asInstanceOf[js.Any]))
       ServiceUpdateEndDate.foreach(__v => __obj.updateDynamic("ServiceUpdateEndDate")(__v.asInstanceOf[js.Any]))
       ServiceUpdateName.foreach(__v => __obj.updateDynamic("ServiceUpdateName")(__v.asInstanceOf[js.Any]))
-      ServiceUpdateRecommendedApplyByDate.foreach(__v =>
-        __obj.updateDynamic("ServiceUpdateRecommendedApplyByDate")(__v.asInstanceOf[js.Any])
-      )
+      ServiceUpdateRecommendedApplyByDate.foreach(__v => __obj.updateDynamic("ServiceUpdateRecommendedApplyByDate")(__v.asInstanceOf[js.Any]))
       ServiceUpdateReleaseDate.foreach(__v => __obj.updateDynamic("ServiceUpdateReleaseDate")(__v.asInstanceOf[js.Any]))
       ServiceUpdateSeverity.foreach(__v => __obj.updateDynamic("ServiceUpdateSeverity")(__v.asInstanceOf[js.Any]))
       ServiceUpdateStatus.foreach(__v => __obj.updateDynamic("ServiceUpdateStatus")(__v.asInstanceOf[js.Any]))
@@ -4643,15 +4412,9 @@ package elasticache {
       NumCacheNodes.foreach(__v => __obj.updateDynamic("NumCacheNodes")(__v.asInstanceOf[js.Any]))
       NumNodeGroups.foreach(__v => __obj.updateDynamic("NumNodeGroups")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
-      PreferredAvailabilityZone.foreach(__v =>
-        __obj.updateDynamic("PreferredAvailabilityZone")(__v.asInstanceOf[js.Any])
-      )
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
-      ReplicationGroupDescription.foreach(__v =>
-        __obj.updateDynamic("ReplicationGroupDescription")(__v.asInstanceOf[js.Any])
-      )
+      PreferredAvailabilityZone.foreach(__v => __obj.updateDynamic("PreferredAvailabilityZone")(__v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
+      ReplicationGroupDescription.foreach(__v => __obj.updateDynamic("ReplicationGroupDescription")(__v.asInstanceOf[js.Any]))
       ReplicationGroupId.foreach(__v => __obj.updateDynamic("ReplicationGroupId")(__v.asInstanceOf[js.Any]))
       SnapshotName.foreach(__v => __obj.updateDynamic("SnapshotName")(__v.asInstanceOf[js.Any]))
       SnapshotRetentionLimit.foreach(__v => __obj.updateDynamic("SnapshotRetentionLimit")(__v.asInstanceOf[js.Any]))
@@ -4673,15 +4436,7 @@ package elasticache {
     val `cache-subnet-group` = "cache-subnet-group".asInstanceOf[SourceType]
     val `replication-group` = "replication-group".asInstanceOf[SourceType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `cache-cluster`,
-        `cache-parameter-group`,
-        `cache-security-group`,
-        `cache-subnet-group`,
-        `replication-group`
-      )
-    )
+    val values = js.Object.freeze(js.Array(`cache-cluster`, `cache-parameter-group`, `cache-security-group`, `cache-subnet-group`, `replication-group`))
   }
 
   @js.native
@@ -4928,21 +4683,15 @@ package elasticache {
       NodesUpdated.foreach(__v => __obj.updateDynamic("NodesUpdated")(__v.asInstanceOf[js.Any]))
       ReplicationGroupId.foreach(__v => __obj.updateDynamic("ReplicationGroupId")(__v.asInstanceOf[js.Any]))
       ServiceUpdateName.foreach(__v => __obj.updateDynamic("ServiceUpdateName")(__v.asInstanceOf[js.Any]))
-      ServiceUpdateRecommendedApplyByDate.foreach(__v =>
-        __obj.updateDynamic("ServiceUpdateRecommendedApplyByDate")(__v.asInstanceOf[js.Any])
-      )
+      ServiceUpdateRecommendedApplyByDate.foreach(__v => __obj.updateDynamic("ServiceUpdateRecommendedApplyByDate")(__v.asInstanceOf[js.Any]))
       ServiceUpdateReleaseDate.foreach(__v => __obj.updateDynamic("ServiceUpdateReleaseDate")(__v.asInstanceOf[js.Any]))
       ServiceUpdateSeverity.foreach(__v => __obj.updateDynamic("ServiceUpdateSeverity")(__v.asInstanceOf[js.Any]))
       ServiceUpdateStatus.foreach(__v => __obj.updateDynamic("ServiceUpdateStatus")(__v.asInstanceOf[js.Any]))
       ServiceUpdateType.foreach(__v => __obj.updateDynamic("ServiceUpdateType")(__v.asInstanceOf[js.Any]))
       SlaMet.foreach(__v => __obj.updateDynamic("SlaMet")(__v.asInstanceOf[js.Any]))
-      UpdateActionAvailableDate.foreach(__v =>
-        __obj.updateDynamic("UpdateActionAvailableDate")(__v.asInstanceOf[js.Any])
-      )
+      UpdateActionAvailableDate.foreach(__v => __obj.updateDynamic("UpdateActionAvailableDate")(__v.asInstanceOf[js.Any]))
       UpdateActionStatus.foreach(__v => __obj.updateDynamic("UpdateActionStatus")(__v.asInstanceOf[js.Any]))
-      UpdateActionStatusModifiedDate.foreach(__v =>
-        __obj.updateDynamic("UpdateActionStatusModifiedDate")(__v.asInstanceOf[js.Any])
-      )
+      UpdateActionStatusModifiedDate.foreach(__v => __obj.updateDynamic("UpdateActionStatusModifiedDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAction]
     }
   }
@@ -4979,19 +4728,7 @@ package elasticache {
     val scheduled = "scheduled".asInstanceOf[UpdateActionStatus]
     val `not-applicable` = "not-applicable".asInstanceOf[UpdateActionStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `not-applied`,
-        `waiting-to-start`,
-        `in-progress`,
-        stopping,
-        stopped,
-        complete,
-        scheduling,
-        scheduled,
-        `not-applicable`
-      )
-    )
+    val values = js.Object.freeze(js.Array(`not-applied`, `waiting-to-start`, `in-progress`, stopping, stopped, complete, scheduling, scheduled, `not-applicable`))
   }
 
   @js.native

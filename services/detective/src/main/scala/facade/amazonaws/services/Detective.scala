@@ -24,29 +24,18 @@ package object detective {
 
   implicit final class DetectiveOps(private val service: Detective) extends AnyVal {
 
-    @inline def acceptInvitationFuture(params: AcceptInvitationRequest): Future[js.Object] =
-      service.acceptInvitation(params).promise().toFuture
+    @inline def acceptInvitationFuture(params: AcceptInvitationRequest): Future[js.Object] = service.acceptInvitation(params).promise().toFuture
     @inline def createGraphFuture(): Future[CreateGraphResponse] = service.createGraph().promise().toFuture
-    @inline def createMembersFuture(params: CreateMembersRequest): Future[CreateMembersResponse] =
-      service.createMembers(params).promise().toFuture
-    @inline def deleteGraphFuture(params: DeleteGraphRequest): Future[js.Object] =
-      service.deleteGraph(params).promise().toFuture
-    @inline def deleteMembersFuture(params: DeleteMembersRequest): Future[DeleteMembersResponse] =
-      service.deleteMembers(params).promise().toFuture
-    @inline def disassociateMembershipFuture(params: DisassociateMembershipRequest): Future[js.Object] =
-      service.disassociateMembership(params).promise().toFuture
-    @inline def getMembersFuture(params: GetMembersRequest): Future[GetMembersResponse] =
-      service.getMembers(params).promise().toFuture
-    @inline def listGraphsFuture(params: ListGraphsRequest): Future[ListGraphsResponse] =
-      service.listGraphs(params).promise().toFuture
-    @inline def listInvitationsFuture(params: ListInvitationsRequest): Future[ListInvitationsResponse] =
-      service.listInvitations(params).promise().toFuture
-    @inline def listMembersFuture(params: ListMembersRequest): Future[ListMembersResponse] =
-      service.listMembers(params).promise().toFuture
-    @inline def rejectInvitationFuture(params: RejectInvitationRequest): Future[js.Object] =
-      service.rejectInvitation(params).promise().toFuture
-    @inline def startMonitoringMemberFuture(params: StartMonitoringMemberRequest): Future[js.Object] =
-      service.startMonitoringMember(params).promise().toFuture
+    @inline def createMembersFuture(params: CreateMembersRequest): Future[CreateMembersResponse] = service.createMembers(params).promise().toFuture
+    @inline def deleteGraphFuture(params: DeleteGraphRequest): Future[js.Object] = service.deleteGraph(params).promise().toFuture
+    @inline def deleteMembersFuture(params: DeleteMembersRequest): Future[DeleteMembersResponse] = service.deleteMembers(params).promise().toFuture
+    @inline def disassociateMembershipFuture(params: DisassociateMembershipRequest): Future[js.Object] = service.disassociateMembership(params).promise().toFuture
+    @inline def getMembersFuture(params: GetMembersRequest): Future[GetMembersResponse] = service.getMembers(params).promise().toFuture
+    @inline def listGraphsFuture(params: ListGraphsRequest): Future[ListGraphsResponse] = service.listGraphs(params).promise().toFuture
+    @inline def listInvitationsFuture(params: ListInvitationsRequest): Future[ListInvitationsResponse] = service.listInvitations(params).promise().toFuture
+    @inline def listMembersFuture(params: ListMembersRequest): Future[ListMembersResponse] = service.listMembers(params).promise().toFuture
+    @inline def rejectInvitationFuture(params: RejectInvitationRequest): Future[js.Object] = service.rejectInvitation(params).promise().toFuture
+    @inline def startMonitoringMemberFuture(params: StartMonitoringMemberRequest): Future[js.Object] = service.startMonitoringMember(params).promise().toFuture
   }
 }
 
@@ -466,12 +455,8 @@ package detective {
       GraphArn.foreach(__v => __obj.updateDynamic("GraphArn")(__v.asInstanceOf[js.Any]))
       InvitedTime.foreach(__v => __obj.updateDynamic("InvitedTime")(__v.asInstanceOf[js.Any]))
       MasterId.foreach(__v => __obj.updateDynamic("MasterId")(__v.asInstanceOf[js.Any]))
-      PercentOfGraphUtilization.foreach(__v =>
-        __obj.updateDynamic("PercentOfGraphUtilization")(__v.asInstanceOf[js.Any])
-      )
-      PercentOfGraphUtilizationUpdatedTime.foreach(__v =>
-        __obj.updateDynamic("PercentOfGraphUtilizationUpdatedTime")(__v.asInstanceOf[js.Any])
-      )
+      PercentOfGraphUtilization.foreach(__v => __obj.updateDynamic("PercentOfGraphUtilization")(__v.asInstanceOf[js.Any]))
+      PercentOfGraphUtilizationUpdatedTime.foreach(__v => __obj.updateDynamic("PercentOfGraphUtilizationUpdatedTime")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       UpdatedTime.foreach(__v => __obj.updateDynamic("UpdatedTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MemberDetail]
@@ -496,8 +481,7 @@ package detective {
     val ENABLED = "ENABLED".asInstanceOf[MemberStatus]
     val ACCEPTED_BUT_DISABLED = "ACCEPTED_BUT_DISABLED".asInstanceOf[MemberStatus]
 
-    val values =
-      js.Object.freeze(js.Array(INVITED, VERIFICATION_IN_PROGRESS, VERIFICATION_FAILED, ENABLED, ACCEPTED_BUT_DISABLED))
+    val values = js.Object.freeze(js.Array(INVITED, VERIFICATION_IN_PROGRESS, VERIFICATION_FAILED, ENABLED, ACCEPTED_BUT_DISABLED))
   }
 
   @js.native

@@ -34,20 +34,12 @@ package object elasticinference {
 
   implicit final class ElasticInferenceOps(private val service: ElasticInference) extends AnyVal {
 
-    @inline def describeAcceleratorOfferingsFuture(
-        params: DescribeAcceleratorOfferingsRequest
-    ): Future[DescribeAcceleratorOfferingsResponse] = service.describeAcceleratorOfferings(params).promise().toFuture
-    @inline def describeAcceleratorTypesFuture(
-        params: DescribeAcceleratorTypesRequest
-    ): Future[DescribeAcceleratorTypesResponse] = service.describeAcceleratorTypes(params).promise().toFuture
-    @inline def describeAcceleratorsFuture(params: DescribeAcceleratorsRequest): Future[DescribeAcceleratorsResponse] =
-      service.describeAccelerators(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResult] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResult] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResult] =
-      service.untagResource(params).promise().toFuture
+    @inline def describeAcceleratorOfferingsFuture(params: DescribeAcceleratorOfferingsRequest): Future[DescribeAcceleratorOfferingsResponse] = service.describeAcceleratorOfferings(params).promise().toFuture
+    @inline def describeAcceleratorTypesFuture(params: DescribeAcceleratorTypesRequest): Future[DescribeAcceleratorTypesResponse] = service.describeAcceleratorTypes(params).promise().toFuture
+    @inline def describeAcceleratorsFuture(params: DescribeAcceleratorsRequest): Future[DescribeAcceleratorsResponse] = service.describeAccelerators(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResult] = service.listTagsForResource(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResult] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResult] = service.untagResource(params).promise().toFuture
   }
 }
 
@@ -57,11 +49,8 @@ package elasticinference {
   class ElasticInference() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def describeAcceleratorOfferings(
-        params: DescribeAcceleratorOfferingsRequest
-    ): Request[DescribeAcceleratorOfferingsResponse] = js.native
-    def describeAcceleratorTypes(params: DescribeAcceleratorTypesRequest): Request[DescribeAcceleratorTypesResponse] =
-      js.native
+    def describeAcceleratorOfferings(params: DescribeAcceleratorOfferingsRequest): Request[DescribeAcceleratorOfferingsResponse] = js.native
+    def describeAcceleratorTypes(params: DescribeAcceleratorTypesRequest): Request[DescribeAcceleratorTypesResponse] = js.native
     def describeAccelerators(params: DescribeAcceleratorsRequest): Request[DescribeAcceleratorsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResult] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResult] = js.native

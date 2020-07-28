@@ -28,16 +28,10 @@ package object iotjobsdataplane {
 
   implicit final class IoTJobsDataPlaneOps(private val service: IoTJobsDataPlane) extends AnyVal {
 
-    @inline def describeJobExecutionFuture(params: DescribeJobExecutionRequest): Future[DescribeJobExecutionResponse] =
-      service.describeJobExecution(params).promise().toFuture
-    @inline def getPendingJobExecutionsFuture(
-        params: GetPendingJobExecutionsRequest
-    ): Future[GetPendingJobExecutionsResponse] = service.getPendingJobExecutions(params).promise().toFuture
-    @inline def startNextPendingJobExecutionFuture(
-        params: StartNextPendingJobExecutionRequest
-    ): Future[StartNextPendingJobExecutionResponse] = service.startNextPendingJobExecution(params).promise().toFuture
-    @inline def updateJobExecutionFuture(params: UpdateJobExecutionRequest): Future[UpdateJobExecutionResponse] =
-      service.updateJobExecution(params).promise().toFuture
+    @inline def describeJobExecutionFuture(params: DescribeJobExecutionRequest): Future[DescribeJobExecutionResponse] = service.describeJobExecution(params).promise().toFuture
+    @inline def getPendingJobExecutionsFuture(params: GetPendingJobExecutionsRequest): Future[GetPendingJobExecutionsResponse] = service.getPendingJobExecutions(params).promise().toFuture
+    @inline def startNextPendingJobExecutionFuture(params: StartNextPendingJobExecutionRequest): Future[StartNextPendingJobExecutionResponse] = service.startNextPendingJobExecution(params).promise().toFuture
+    @inline def updateJobExecutionFuture(params: UpdateJobExecutionRequest): Future[UpdateJobExecutionResponse] = service.updateJobExecution(params).promise().toFuture
   }
 }
 
@@ -48,11 +42,8 @@ package iotjobsdataplane {
     def this(config: AWSConfig) = this()
 
     def describeJobExecution(params: DescribeJobExecutionRequest): Request[DescribeJobExecutionResponse] = js.native
-    def getPendingJobExecutions(params: GetPendingJobExecutionsRequest): Request[GetPendingJobExecutionsResponse] =
-      js.native
-    def startNextPendingJobExecution(
-        params: StartNextPendingJobExecutionRequest
-    ): Request[StartNextPendingJobExecutionResponse] = js.native
+    def getPendingJobExecutions(params: GetPendingJobExecutionsRequest): Request[GetPendingJobExecutionsResponse] = js.native
+    def startNextPendingJobExecution(params: StartNextPendingJobExecutionRequest): Request[StartNextPendingJobExecutionResponse] = js.native
     def updateJobExecution(params: UpdateJobExecutionRequest): Request[UpdateJobExecutionResponse] = js.native
   }
 
@@ -170,9 +161,7 @@ package iotjobsdataplane {
         versionNumber: js.UndefOr[VersionNumber] = js.undefined
     ): JobExecution = {
       val __obj = js.Dynamic.literal()
-      approximateSecondsBeforeTimedOut.foreach(__v =>
-        __obj.updateDynamic("approximateSecondsBeforeTimedOut")(__v.asInstanceOf[js.Any])
-      )
+      approximateSecondsBeforeTimedOut.foreach(__v => __obj.updateDynamic("approximateSecondsBeforeTimedOut")(__v.asInstanceOf[js.Any]))
       executionNumber.foreach(__v => __obj.updateDynamic("executionNumber")(__v.asInstanceOf[js.Any]))
       jobDocument.foreach(__v => __obj.updateDynamic("jobDocument")(__v.asInstanceOf[js.Any]))
       jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
@@ -224,8 +213,7 @@ package iotjobsdataplane {
     val REMOVED = "REMOVED".asInstanceOf[JobExecutionStatus]
     val CANCELED = "CANCELED".asInstanceOf[JobExecutionStatus]
 
-    val values =
-      js.Object.freeze(js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED))
+    val values = js.Object.freeze(js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED))
   }
 
   /**

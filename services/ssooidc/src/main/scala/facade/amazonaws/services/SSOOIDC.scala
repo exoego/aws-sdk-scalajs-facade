@@ -28,13 +28,9 @@ package object ssooidc {
 
   implicit final class SSOOIDCOps(private val service: SSOOIDC) extends AnyVal {
 
-    @inline def createTokenFuture(params: CreateTokenRequest): Future[CreateTokenResponse] =
-      service.createToken(params).promise().toFuture
-    @inline def registerClientFuture(params: RegisterClientRequest): Future[RegisterClientResponse] =
-      service.registerClient(params).promise().toFuture
-    @inline def startDeviceAuthorizationFuture(
-        params: StartDeviceAuthorizationRequest
-    ): Future[StartDeviceAuthorizationResponse] = service.startDeviceAuthorization(params).promise().toFuture
+    @inline def createTokenFuture(params: CreateTokenRequest): Future[CreateTokenResponse] = service.createToken(params).promise().toFuture
+    @inline def registerClientFuture(params: RegisterClientRequest): Future[RegisterClientResponse] = service.registerClient(params).promise().toFuture
+    @inline def startDeviceAuthorizationFuture(params: StartDeviceAuthorizationRequest): Future[StartDeviceAuthorizationResponse] = service.startDeviceAuthorization(params).promise().toFuture
   }
 }
 
@@ -46,8 +42,7 @@ package ssooidc {
 
     def createToken(params: CreateTokenRequest): Request[CreateTokenResponse] = js.native
     def registerClient(params: RegisterClientRequest): Request[RegisterClientResponse] = js.native
-    def startDeviceAuthorization(params: StartDeviceAuthorizationRequest): Request[StartDeviceAuthorizationResponse] =
-      js.native
+    def startDeviceAuthorization(params: StartDeviceAuthorizationRequest): Request[StartDeviceAuthorizationResponse] = js.native
   }
 
   @js.native

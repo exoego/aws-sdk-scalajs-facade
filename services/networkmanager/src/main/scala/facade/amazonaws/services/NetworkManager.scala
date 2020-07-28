@@ -25,71 +25,34 @@ package object networkmanager {
 
   implicit final class NetworkManagerOps(private val service: NetworkManager) extends AnyVal {
 
-    @inline def associateCustomerGatewayFuture(
-        params: AssociateCustomerGatewayRequest
-    ): Future[AssociateCustomerGatewayResponse] = service.associateCustomerGateway(params).promise().toFuture
-    @inline def associateLinkFuture(params: AssociateLinkRequest): Future[AssociateLinkResponse] =
-      service.associateLink(params).promise().toFuture
-    @inline def createDeviceFuture(params: CreateDeviceRequest): Future[CreateDeviceResponse] =
-      service.createDevice(params).promise().toFuture
-    @inline def createGlobalNetworkFuture(params: CreateGlobalNetworkRequest): Future[CreateGlobalNetworkResponse] =
-      service.createGlobalNetwork(params).promise().toFuture
-    @inline def createLinkFuture(params: CreateLinkRequest): Future[CreateLinkResponse] =
-      service.createLink(params).promise().toFuture
-    @inline def createSiteFuture(params: CreateSiteRequest): Future[CreateSiteResponse] =
-      service.createSite(params).promise().toFuture
-    @inline def deleteDeviceFuture(params: DeleteDeviceRequest): Future[DeleteDeviceResponse] =
-      service.deleteDevice(params).promise().toFuture
-    @inline def deleteGlobalNetworkFuture(params: DeleteGlobalNetworkRequest): Future[DeleteGlobalNetworkResponse] =
-      service.deleteGlobalNetwork(params).promise().toFuture
-    @inline def deleteLinkFuture(params: DeleteLinkRequest): Future[DeleteLinkResponse] =
-      service.deleteLink(params).promise().toFuture
-    @inline def deleteSiteFuture(params: DeleteSiteRequest): Future[DeleteSiteResponse] =
-      service.deleteSite(params).promise().toFuture
-    @inline def deregisterTransitGatewayFuture(
-        params: DeregisterTransitGatewayRequest
-    ): Future[DeregisterTransitGatewayResponse] = service.deregisterTransitGateway(params).promise().toFuture
-    @inline def describeGlobalNetworksFuture(
-        params: DescribeGlobalNetworksRequest
-    ): Future[DescribeGlobalNetworksResponse] = service.describeGlobalNetworks(params).promise().toFuture
-    @inline def disassociateCustomerGatewayFuture(
-        params: DisassociateCustomerGatewayRequest
-    ): Future[DisassociateCustomerGatewayResponse] = service.disassociateCustomerGateway(params).promise().toFuture
-    @inline def disassociateLinkFuture(params: DisassociateLinkRequest): Future[DisassociateLinkResponse] =
-      service.disassociateLink(params).promise().toFuture
-    @inline def getCustomerGatewayAssociationsFuture(
-        params: GetCustomerGatewayAssociationsRequest
-    ): Future[GetCustomerGatewayAssociationsResponse] =
-      service.getCustomerGatewayAssociations(params).promise().toFuture
-    @inline def getDevicesFuture(params: GetDevicesRequest): Future[GetDevicesResponse] =
-      service.getDevices(params).promise().toFuture
-    @inline def getLinkAssociationsFuture(params: GetLinkAssociationsRequest): Future[GetLinkAssociationsResponse] =
-      service.getLinkAssociations(params).promise().toFuture
-    @inline def getLinksFuture(params: GetLinksRequest): Future[GetLinksResponse] =
-      service.getLinks(params).promise().toFuture
-    @inline def getSitesFuture(params: GetSitesRequest): Future[GetSitesResponse] =
-      service.getSites(params).promise().toFuture
-    @inline def getTransitGatewayRegistrationsFuture(
-        params: GetTransitGatewayRegistrationsRequest
-    ): Future[GetTransitGatewayRegistrationsResponse] =
-      service.getTransitGatewayRegistrations(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def registerTransitGatewayFuture(
-        params: RegisterTransitGatewayRequest
-    ): Future[RegisterTransitGatewayResponse] = service.registerTransitGateway(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateDeviceFuture(params: UpdateDeviceRequest): Future[UpdateDeviceResponse] =
-      service.updateDevice(params).promise().toFuture
-    @inline def updateGlobalNetworkFuture(params: UpdateGlobalNetworkRequest): Future[UpdateGlobalNetworkResponse] =
-      service.updateGlobalNetwork(params).promise().toFuture
-    @inline def updateLinkFuture(params: UpdateLinkRequest): Future[UpdateLinkResponse] =
-      service.updateLink(params).promise().toFuture
-    @inline def updateSiteFuture(params: UpdateSiteRequest): Future[UpdateSiteResponse] =
-      service.updateSite(params).promise().toFuture
+    @inline def associateCustomerGatewayFuture(params: AssociateCustomerGatewayRequest): Future[AssociateCustomerGatewayResponse] = service.associateCustomerGateway(params).promise().toFuture
+    @inline def associateLinkFuture(params: AssociateLinkRequest): Future[AssociateLinkResponse] = service.associateLink(params).promise().toFuture
+    @inline def createDeviceFuture(params: CreateDeviceRequest): Future[CreateDeviceResponse] = service.createDevice(params).promise().toFuture
+    @inline def createGlobalNetworkFuture(params: CreateGlobalNetworkRequest): Future[CreateGlobalNetworkResponse] = service.createGlobalNetwork(params).promise().toFuture
+    @inline def createLinkFuture(params: CreateLinkRequest): Future[CreateLinkResponse] = service.createLink(params).promise().toFuture
+    @inline def createSiteFuture(params: CreateSiteRequest): Future[CreateSiteResponse] = service.createSite(params).promise().toFuture
+    @inline def deleteDeviceFuture(params: DeleteDeviceRequest): Future[DeleteDeviceResponse] = service.deleteDevice(params).promise().toFuture
+    @inline def deleteGlobalNetworkFuture(params: DeleteGlobalNetworkRequest): Future[DeleteGlobalNetworkResponse] = service.deleteGlobalNetwork(params).promise().toFuture
+    @inline def deleteLinkFuture(params: DeleteLinkRequest): Future[DeleteLinkResponse] = service.deleteLink(params).promise().toFuture
+    @inline def deleteSiteFuture(params: DeleteSiteRequest): Future[DeleteSiteResponse] = service.deleteSite(params).promise().toFuture
+    @inline def deregisterTransitGatewayFuture(params: DeregisterTransitGatewayRequest): Future[DeregisterTransitGatewayResponse] = service.deregisterTransitGateway(params).promise().toFuture
+    @inline def describeGlobalNetworksFuture(params: DescribeGlobalNetworksRequest): Future[DescribeGlobalNetworksResponse] = service.describeGlobalNetworks(params).promise().toFuture
+    @inline def disassociateCustomerGatewayFuture(params: DisassociateCustomerGatewayRequest): Future[DisassociateCustomerGatewayResponse] = service.disassociateCustomerGateway(params).promise().toFuture
+    @inline def disassociateLinkFuture(params: DisassociateLinkRequest): Future[DisassociateLinkResponse] = service.disassociateLink(params).promise().toFuture
+    @inline def getCustomerGatewayAssociationsFuture(params: GetCustomerGatewayAssociationsRequest): Future[GetCustomerGatewayAssociationsResponse] = service.getCustomerGatewayAssociations(params).promise().toFuture
+    @inline def getDevicesFuture(params: GetDevicesRequest): Future[GetDevicesResponse] = service.getDevices(params).promise().toFuture
+    @inline def getLinkAssociationsFuture(params: GetLinkAssociationsRequest): Future[GetLinkAssociationsResponse] = service.getLinkAssociations(params).promise().toFuture
+    @inline def getLinksFuture(params: GetLinksRequest): Future[GetLinksResponse] = service.getLinks(params).promise().toFuture
+    @inline def getSitesFuture(params: GetSitesRequest): Future[GetSitesResponse] = service.getSites(params).promise().toFuture
+    @inline def getTransitGatewayRegistrationsFuture(params: GetTransitGatewayRegistrationsRequest): Future[GetTransitGatewayRegistrationsResponse] = service.getTransitGatewayRegistrations(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def registerTransitGatewayFuture(params: RegisterTransitGatewayRequest): Future[RegisterTransitGatewayResponse] = service.registerTransitGateway(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateDeviceFuture(params: UpdateDeviceRequest): Future[UpdateDeviceResponse] = service.updateDevice(params).promise().toFuture
+    @inline def updateGlobalNetworkFuture(params: UpdateGlobalNetworkRequest): Future[UpdateGlobalNetworkResponse] = service.updateGlobalNetwork(params).promise().toFuture
+    @inline def updateLinkFuture(params: UpdateLinkRequest): Future[UpdateLinkResponse] = service.updateLink(params).promise().toFuture
+    @inline def updateSiteFuture(params: UpdateSiteRequest): Future[UpdateSiteResponse] = service.updateSite(params).promise().toFuture
   }
 }
 
@@ -99,8 +62,7 @@ package networkmanager {
   class NetworkManager() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def associateCustomerGateway(params: AssociateCustomerGatewayRequest): Request[AssociateCustomerGatewayResponse] =
-      js.native
+    def associateCustomerGateway(params: AssociateCustomerGatewayRequest): Request[AssociateCustomerGatewayResponse] = js.native
     def associateLink(params: AssociateLinkRequest): Request[AssociateLinkResponse] = js.native
     def createDevice(params: CreateDeviceRequest): Request[CreateDeviceResponse] = js.native
     def createGlobalNetwork(params: CreateGlobalNetworkRequest): Request[CreateGlobalNetworkResponse] = js.native
@@ -110,27 +72,18 @@ package networkmanager {
     def deleteGlobalNetwork(params: DeleteGlobalNetworkRequest): Request[DeleteGlobalNetworkResponse] = js.native
     def deleteLink(params: DeleteLinkRequest): Request[DeleteLinkResponse] = js.native
     def deleteSite(params: DeleteSiteRequest): Request[DeleteSiteResponse] = js.native
-    def deregisterTransitGateway(params: DeregisterTransitGatewayRequest): Request[DeregisterTransitGatewayResponse] =
-      js.native
-    def describeGlobalNetworks(params: DescribeGlobalNetworksRequest): Request[DescribeGlobalNetworksResponse] =
-      js.native
-    def disassociateCustomerGateway(
-        params: DisassociateCustomerGatewayRequest
-    ): Request[DisassociateCustomerGatewayResponse] = js.native
+    def deregisterTransitGateway(params: DeregisterTransitGatewayRequest): Request[DeregisterTransitGatewayResponse] = js.native
+    def describeGlobalNetworks(params: DescribeGlobalNetworksRequest): Request[DescribeGlobalNetworksResponse] = js.native
+    def disassociateCustomerGateway(params: DisassociateCustomerGatewayRequest): Request[DisassociateCustomerGatewayResponse] = js.native
     def disassociateLink(params: DisassociateLinkRequest): Request[DisassociateLinkResponse] = js.native
-    def getCustomerGatewayAssociations(
-        params: GetCustomerGatewayAssociationsRequest
-    ): Request[GetCustomerGatewayAssociationsResponse] = js.native
+    def getCustomerGatewayAssociations(params: GetCustomerGatewayAssociationsRequest): Request[GetCustomerGatewayAssociationsResponse] = js.native
     def getDevices(params: GetDevicesRequest): Request[GetDevicesResponse] = js.native
     def getLinkAssociations(params: GetLinkAssociationsRequest): Request[GetLinkAssociationsResponse] = js.native
     def getLinks(params: GetLinksRequest): Request[GetLinksResponse] = js.native
     def getSites(params: GetSitesRequest): Request[GetSitesResponse] = js.native
-    def getTransitGatewayRegistrations(
-        params: GetTransitGatewayRegistrationsRequest
-    ): Request[GetTransitGatewayRegistrationsResponse] = js.native
+    def getTransitGatewayRegistrations(params: GetTransitGatewayRegistrationsRequest): Request[GetTransitGatewayRegistrationsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def registerTransitGateway(params: RegisterTransitGatewayRequest): Request[RegisterTransitGatewayResponse] =
-      js.native
+    def registerTransitGateway(params: RegisterTransitGatewayRequest): Request[RegisterTransitGatewayResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateDevice(params: UpdateDeviceRequest): Request[UpdateDeviceResponse] = js.native
@@ -177,9 +130,7 @@ package networkmanager {
         CustomerGatewayAssociation: js.UndefOr[CustomerGatewayAssociation] = js.undefined
     ): AssociateCustomerGatewayResponse = {
       val __obj = js.Dynamic.literal()
-      CustomerGatewayAssociation.foreach(__v =>
-        __obj.updateDynamic("CustomerGatewayAssociation")(__v.asInstanceOf[js.Any])
-      )
+      CustomerGatewayAssociation.foreach(__v => __obj.updateDynamic("CustomerGatewayAssociation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateCustomerGatewayResponse]
     }
   }
@@ -653,9 +604,7 @@ package networkmanager {
         TransitGatewayRegistration: js.UndefOr[TransitGatewayRegistration] = js.undefined
     ): DeregisterTransitGatewayResponse = {
       val __obj = js.Dynamic.literal()
-      TransitGatewayRegistration.foreach(__v =>
-        __obj.updateDynamic("TransitGatewayRegistration")(__v.asInstanceOf[js.Any])
-      )
+      TransitGatewayRegistration.foreach(__v => __obj.updateDynamic("TransitGatewayRegistration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeregisterTransitGatewayResponse]
     }
   }
@@ -799,9 +748,7 @@ package networkmanager {
         CustomerGatewayAssociation: js.UndefOr[CustomerGatewayAssociation] = js.undefined
     ): DisassociateCustomerGatewayResponse = {
       val __obj = js.Dynamic.literal()
-      CustomerGatewayAssociation.foreach(__v =>
-        __obj.updateDynamic("CustomerGatewayAssociation")(__v.asInstanceOf[js.Any])
-      )
+      CustomerGatewayAssociation.foreach(__v => __obj.updateDynamic("CustomerGatewayAssociation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisassociateCustomerGatewayResponse]
     }
   }
@@ -886,9 +833,7 @@ package networkmanager {
         NextToken: js.UndefOr[String] = js.undefined
     ): GetCustomerGatewayAssociationsResponse = {
       val __obj = js.Dynamic.literal()
-      CustomerGatewayAssociations.foreach(__v =>
-        __obj.updateDynamic("CustomerGatewayAssociations")(__v.asInstanceOf[js.Any])
-      )
+      CustomerGatewayAssociations.foreach(__v => __obj.updateDynamic("CustomerGatewayAssociations")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCustomerGatewayAssociationsResponse]
     }
@@ -1134,9 +1079,7 @@ package networkmanager {
     ): GetTransitGatewayRegistrationsResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      TransitGatewayRegistrations.foreach(__v =>
-        __obj.updateDynamic("TransitGatewayRegistrations")(__v.asInstanceOf[js.Any])
-      )
+      TransitGatewayRegistrations.foreach(__v => __obj.updateDynamic("TransitGatewayRegistrations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTransitGatewayRegistrationsResponse]
     }
   }
@@ -1376,9 +1319,7 @@ package networkmanager {
         TransitGatewayRegistration: js.UndefOr[TransitGatewayRegistration] = js.undefined
     ): RegisterTransitGatewayResponse = {
       val __obj = js.Dynamic.literal()
-      TransitGatewayRegistration.foreach(__v =>
-        __obj.updateDynamic("TransitGatewayRegistration")(__v.asInstanceOf[js.Any])
-      )
+      TransitGatewayRegistration.foreach(__v => __obj.updateDynamic("TransitGatewayRegistration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterTransitGatewayResponse]
     }
   }

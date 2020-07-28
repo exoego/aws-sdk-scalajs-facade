@@ -47,83 +47,39 @@ package object sns {
 
   implicit final class SNSOps(private val service: SNS) extends AnyVal {
 
-    @inline def addPermissionFuture(params: AddPermissionInput): Future[js.Object] =
-      service.addPermission(params).promise().toFuture
-    @inline def checkIfPhoneNumberIsOptedOutFuture(
-        params: CheckIfPhoneNumberIsOptedOutInput
-    ): Future[CheckIfPhoneNumberIsOptedOutResponse] = service.checkIfPhoneNumberIsOptedOut(params).promise().toFuture
-    @inline def confirmSubscriptionFuture(params: ConfirmSubscriptionInput): Future[ConfirmSubscriptionResponse] =
-      service.confirmSubscription(params).promise().toFuture
-    @inline def createPlatformApplicationFuture(
-        params: CreatePlatformApplicationInput
-    ): Future[CreatePlatformApplicationResponse] = service.createPlatformApplication(params).promise().toFuture
-    @inline def createPlatformEndpointFuture(params: CreatePlatformEndpointInput): Future[CreateEndpointResponse] =
-      service.createPlatformEndpoint(params).promise().toFuture
-    @inline def createTopicFuture(params: CreateTopicInput): Future[CreateTopicResponse] =
-      service.createTopic(params).promise().toFuture
-    @inline def deleteEndpointFuture(params: DeleteEndpointInput): Future[js.Object] =
-      service.deleteEndpoint(params).promise().toFuture
-    @inline def deletePlatformApplicationFuture(params: DeletePlatformApplicationInput): Future[js.Object] =
-      service.deletePlatformApplication(params).promise().toFuture
-    @inline def deleteTopicFuture(params: DeleteTopicInput): Future[js.Object] =
-      service.deleteTopic(params).promise().toFuture
-    @inline def getEndpointAttributesFuture(params: GetEndpointAttributesInput): Future[GetEndpointAttributesResponse] =
-      service.getEndpointAttributes(params).promise().toFuture
-    @inline def getPlatformApplicationAttributesFuture(
-        params: GetPlatformApplicationAttributesInput
-    ): Future[GetPlatformApplicationAttributesResponse] =
-      service.getPlatformApplicationAttributes(params).promise().toFuture
-    @inline def getSMSAttributesFuture(params: GetSMSAttributesInput): Future[GetSMSAttributesResponse] =
-      service.getSMSAttributes(params).promise().toFuture
-    @inline def getSubscriptionAttributesFuture(
-        params: GetSubscriptionAttributesInput
-    ): Future[GetSubscriptionAttributesResponse] = service.getSubscriptionAttributes(params).promise().toFuture
-    @inline def getTopicAttributesFuture(params: GetTopicAttributesInput): Future[GetTopicAttributesResponse] =
-      service.getTopicAttributes(params).promise().toFuture
-    @inline def listEndpointsByPlatformApplicationFuture(
-        params: ListEndpointsByPlatformApplicationInput
-    ): Future[ListEndpointsByPlatformApplicationResponse] =
-      service.listEndpointsByPlatformApplication(params).promise().toFuture
-    @inline def listPhoneNumbersOptedOutFuture(
-        params: ListPhoneNumbersOptedOutInput
-    ): Future[ListPhoneNumbersOptedOutResponse] = service.listPhoneNumbersOptedOut(params).promise().toFuture
-    @inline def listPlatformApplicationsFuture(
-        params: ListPlatformApplicationsInput
-    ): Future[ListPlatformApplicationsResponse] = service.listPlatformApplications(params).promise().toFuture
-    @inline def listSubscriptionsByTopicFuture(
-        params: ListSubscriptionsByTopicInput
-    ): Future[ListSubscriptionsByTopicResponse] = service.listSubscriptionsByTopic(params).promise().toFuture
-    @inline def listSubscriptionsFuture(params: ListSubscriptionsInput): Future[ListSubscriptionsResponse] =
-      service.listSubscriptions(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listTopicsFuture(params: ListTopicsInput): Future[ListTopicsResponse] =
-      service.listTopics(params).promise().toFuture
-    @inline def optInPhoneNumberFuture(params: OptInPhoneNumberInput): Future[OptInPhoneNumberResponse] =
-      service.optInPhoneNumber(params).promise().toFuture
-    @inline def publishFuture(params: PublishInput): Future[PublishResponse] =
-      service.publish(params).promise().toFuture
-    @inline def removePermissionFuture(params: RemovePermissionInput): Future[js.Object] =
-      service.removePermission(params).promise().toFuture
-    @inline def setEndpointAttributesFuture(params: SetEndpointAttributesInput): Future[js.Object] =
-      service.setEndpointAttributes(params).promise().toFuture
-    @inline def setPlatformApplicationAttributesFuture(
-        params: SetPlatformApplicationAttributesInput
-    ): Future[js.Object] = service.setPlatformApplicationAttributes(params).promise().toFuture
-    @inline def setSMSAttributesFuture(params: SetSMSAttributesInput): Future[SetSMSAttributesResponse] =
-      service.setSMSAttributes(params).promise().toFuture
-    @inline def setSubscriptionAttributesFuture(params: SetSubscriptionAttributesInput): Future[js.Object] =
-      service.setSubscriptionAttributes(params).promise().toFuture
-    @inline def setTopicAttributesFuture(params: SetTopicAttributesInput): Future[js.Object] =
-      service.setTopicAttributes(params).promise().toFuture
-    @inline def subscribeFuture(params: SubscribeInput): Future[SubscribeResponse] =
-      service.subscribe(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def unsubscribeFuture(params: UnsubscribeInput): Future[js.Object] =
-      service.unsubscribe(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
+    @inline def addPermissionFuture(params: AddPermissionInput): Future[js.Object] = service.addPermission(params).promise().toFuture
+    @inline def checkIfPhoneNumberIsOptedOutFuture(params: CheckIfPhoneNumberIsOptedOutInput): Future[CheckIfPhoneNumberIsOptedOutResponse] = service.checkIfPhoneNumberIsOptedOut(params).promise().toFuture
+    @inline def confirmSubscriptionFuture(params: ConfirmSubscriptionInput): Future[ConfirmSubscriptionResponse] = service.confirmSubscription(params).promise().toFuture
+    @inline def createPlatformApplicationFuture(params: CreatePlatformApplicationInput): Future[CreatePlatformApplicationResponse] = service.createPlatformApplication(params).promise().toFuture
+    @inline def createPlatformEndpointFuture(params: CreatePlatformEndpointInput): Future[CreateEndpointResponse] = service.createPlatformEndpoint(params).promise().toFuture
+    @inline def createTopicFuture(params: CreateTopicInput): Future[CreateTopicResponse] = service.createTopic(params).promise().toFuture
+    @inline def deleteEndpointFuture(params: DeleteEndpointInput): Future[js.Object] = service.deleteEndpoint(params).promise().toFuture
+    @inline def deletePlatformApplicationFuture(params: DeletePlatformApplicationInput): Future[js.Object] = service.deletePlatformApplication(params).promise().toFuture
+    @inline def deleteTopicFuture(params: DeleteTopicInput): Future[js.Object] = service.deleteTopic(params).promise().toFuture
+    @inline def getEndpointAttributesFuture(params: GetEndpointAttributesInput): Future[GetEndpointAttributesResponse] = service.getEndpointAttributes(params).promise().toFuture
+    @inline def getPlatformApplicationAttributesFuture(params: GetPlatformApplicationAttributesInput): Future[GetPlatformApplicationAttributesResponse] = service.getPlatformApplicationAttributes(params).promise().toFuture
+    @inline def getSMSAttributesFuture(params: GetSMSAttributesInput): Future[GetSMSAttributesResponse] = service.getSMSAttributes(params).promise().toFuture
+    @inline def getSubscriptionAttributesFuture(params: GetSubscriptionAttributesInput): Future[GetSubscriptionAttributesResponse] = service.getSubscriptionAttributes(params).promise().toFuture
+    @inline def getTopicAttributesFuture(params: GetTopicAttributesInput): Future[GetTopicAttributesResponse] = service.getTopicAttributes(params).promise().toFuture
+    @inline def listEndpointsByPlatformApplicationFuture(params: ListEndpointsByPlatformApplicationInput): Future[ListEndpointsByPlatformApplicationResponse] = service.listEndpointsByPlatformApplication(params).promise().toFuture
+    @inline def listPhoneNumbersOptedOutFuture(params: ListPhoneNumbersOptedOutInput): Future[ListPhoneNumbersOptedOutResponse] = service.listPhoneNumbersOptedOut(params).promise().toFuture
+    @inline def listPlatformApplicationsFuture(params: ListPlatformApplicationsInput): Future[ListPlatformApplicationsResponse] = service.listPlatformApplications(params).promise().toFuture
+    @inline def listSubscriptionsByTopicFuture(params: ListSubscriptionsByTopicInput): Future[ListSubscriptionsByTopicResponse] = service.listSubscriptionsByTopic(params).promise().toFuture
+    @inline def listSubscriptionsFuture(params: ListSubscriptionsInput): Future[ListSubscriptionsResponse] = service.listSubscriptions(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listTopicsFuture(params: ListTopicsInput): Future[ListTopicsResponse] = service.listTopics(params).promise().toFuture
+    @inline def optInPhoneNumberFuture(params: OptInPhoneNumberInput): Future[OptInPhoneNumberResponse] = service.optInPhoneNumber(params).promise().toFuture
+    @inline def publishFuture(params: PublishInput): Future[PublishResponse] = service.publish(params).promise().toFuture
+    @inline def removePermissionFuture(params: RemovePermissionInput): Future[js.Object] = service.removePermission(params).promise().toFuture
+    @inline def setEndpointAttributesFuture(params: SetEndpointAttributesInput): Future[js.Object] = service.setEndpointAttributes(params).promise().toFuture
+    @inline def setPlatformApplicationAttributesFuture(params: SetPlatformApplicationAttributesInput): Future[js.Object] = service.setPlatformApplicationAttributes(params).promise().toFuture
+    @inline def setSMSAttributesFuture(params: SetSMSAttributesInput): Future[SetSMSAttributesResponse] = service.setSMSAttributes(params).promise().toFuture
+    @inline def setSubscriptionAttributesFuture(params: SetSubscriptionAttributesInput): Future[js.Object] = service.setSubscriptionAttributes(params).promise().toFuture
+    @inline def setTopicAttributesFuture(params: SetTopicAttributesInput): Future[js.Object] = service.setTopicAttributes(params).promise().toFuture
+    @inline def subscribeFuture(params: SubscribeInput): Future[SubscribeResponse] = service.subscribe(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def unsubscribeFuture(params: UnsubscribeInput): Future[js.Object] = service.unsubscribe(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
   }
 }
 
@@ -134,35 +90,24 @@ package sns {
     def this(config: AWSConfig) = this()
 
     def addPermission(params: AddPermissionInput): Request[js.Object] = js.native
-    def checkIfPhoneNumberIsOptedOut(
-        params: CheckIfPhoneNumberIsOptedOutInput
-    ): Request[CheckIfPhoneNumberIsOptedOutResponse] = js.native
+    def checkIfPhoneNumberIsOptedOut(params: CheckIfPhoneNumberIsOptedOutInput): Request[CheckIfPhoneNumberIsOptedOutResponse] = js.native
     def confirmSubscription(params: ConfirmSubscriptionInput): Request[ConfirmSubscriptionResponse] = js.native
-    def createPlatformApplication(params: CreatePlatformApplicationInput): Request[CreatePlatformApplicationResponse] =
-      js.native
+    def createPlatformApplication(params: CreatePlatformApplicationInput): Request[CreatePlatformApplicationResponse] = js.native
     def createPlatformEndpoint(params: CreatePlatformEndpointInput): Request[CreateEndpointResponse] = js.native
     def createTopic(params: CreateTopicInput): Request[CreateTopicResponse] = js.native
     def deleteEndpoint(params: DeleteEndpointInput): Request[js.Object] = js.native
     def deletePlatformApplication(params: DeletePlatformApplicationInput): Request[js.Object] = js.native
     def deleteTopic(params: DeleteTopicInput): Request[js.Object] = js.native
     def getEndpointAttributes(params: GetEndpointAttributesInput): Request[GetEndpointAttributesResponse] = js.native
-    def getPlatformApplicationAttributes(
-        params: GetPlatformApplicationAttributesInput
-    ): Request[GetPlatformApplicationAttributesResponse] = js.native
+    def getPlatformApplicationAttributes(params: GetPlatformApplicationAttributesInput): Request[GetPlatformApplicationAttributesResponse] = js.native
     def getSMSAttributes(params: GetSMSAttributesInput): Request[GetSMSAttributesResponse] = js.native
-    def getSubscriptionAttributes(params: GetSubscriptionAttributesInput): Request[GetSubscriptionAttributesResponse] =
-      js.native
+    def getSubscriptionAttributes(params: GetSubscriptionAttributesInput): Request[GetSubscriptionAttributesResponse] = js.native
     def getTopicAttributes(params: GetTopicAttributesInput): Request[GetTopicAttributesResponse] = js.native
-    def listEndpointsByPlatformApplication(
-        params: ListEndpointsByPlatformApplicationInput
-    ): Request[ListEndpointsByPlatformApplicationResponse] = js.native
-    def listPhoneNumbersOptedOut(params: ListPhoneNumbersOptedOutInput): Request[ListPhoneNumbersOptedOutResponse] =
-      js.native
-    def listPlatformApplications(params: ListPlatformApplicationsInput): Request[ListPlatformApplicationsResponse] =
-      js.native
+    def listEndpointsByPlatformApplication(params: ListEndpointsByPlatformApplicationInput): Request[ListEndpointsByPlatformApplicationResponse] = js.native
+    def listPhoneNumbersOptedOut(params: ListPhoneNumbersOptedOutInput): Request[ListPhoneNumbersOptedOutResponse] = js.native
+    def listPlatformApplications(params: ListPlatformApplicationsInput): Request[ListPlatformApplicationsResponse] = js.native
     def listSubscriptions(params: ListSubscriptionsInput): Request[ListSubscriptionsResponse] = js.native
-    def listSubscriptionsByTopic(params: ListSubscriptionsByTopicInput): Request[ListSubscriptionsByTopicResponse] =
-      js.native
+    def listSubscriptionsByTopic(params: ListSubscriptionsByTopicInput): Request[ListSubscriptionsByTopicResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listTopics(params: ListTopicsInput): Request[ListTopicsResponse] = js.native
     def optInPhoneNumber(params: OptInPhoneNumberInput): Request[OptInPhoneNumberResponse] = js.native
@@ -268,9 +213,7 @@ package sns {
         "TopicArn" -> TopicArn.asInstanceOf[js.Any]
       )
 
-      AuthenticateOnUnsubscribe.foreach(__v =>
-        __obj.updateDynamic("AuthenticateOnUnsubscribe")(__v.asInstanceOf[js.Any])
-      )
+      AuthenticateOnUnsubscribe.foreach(__v => __obj.updateDynamic("AuthenticateOnUnsubscribe")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfirmSubscriptionInput]
     }
   }

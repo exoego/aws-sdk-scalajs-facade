@@ -86,181 +86,83 @@ package object waf {
 
   implicit final class WAFOps(private val service: WAF) extends AnyVal {
 
-    @inline def createByteMatchSetFuture(params: CreateByteMatchSetRequest): Future[CreateByteMatchSetResponse] =
-      service.createByteMatchSet(params).promise().toFuture
-    @inline def createGeoMatchSetFuture(params: CreateGeoMatchSetRequest): Future[CreateGeoMatchSetResponse] =
-      service.createGeoMatchSet(params).promise().toFuture
-    @inline def createIPSetFuture(params: CreateIPSetRequest): Future[CreateIPSetResponse] =
-      service.createIPSet(params).promise().toFuture
-    @inline def createRateBasedRuleFuture(params: CreateRateBasedRuleRequest): Future[CreateRateBasedRuleResponse] =
-      service.createRateBasedRule(params).promise().toFuture
-    @inline def createRegexMatchSetFuture(params: CreateRegexMatchSetRequest): Future[CreateRegexMatchSetResponse] =
-      service.createRegexMatchSet(params).promise().toFuture
-    @inline def createRegexPatternSetFuture(
-        params: CreateRegexPatternSetRequest
-    ): Future[CreateRegexPatternSetResponse] = service.createRegexPatternSet(params).promise().toFuture
-    @inline def createRuleFuture(params: CreateRuleRequest): Future[CreateRuleResponse] =
-      service.createRule(params).promise().toFuture
-    @inline def createRuleGroupFuture(params: CreateRuleGroupRequest): Future[CreateRuleGroupResponse] =
-      service.createRuleGroup(params).promise().toFuture
-    @inline def createSizeConstraintSetFuture(
-        params: CreateSizeConstraintSetRequest
-    ): Future[CreateSizeConstraintSetResponse] = service.createSizeConstraintSet(params).promise().toFuture
-    @inline def createSqlInjectionMatchSetFuture(
-        params: CreateSqlInjectionMatchSetRequest
-    ): Future[CreateSqlInjectionMatchSetResponse] = service.createSqlInjectionMatchSet(params).promise().toFuture
-    @inline def createWebACLFuture(params: CreateWebACLRequest): Future[CreateWebACLResponse] =
-      service.createWebACL(params).promise().toFuture
-    @inline def createWebACLMigrationStackFuture(
-        params: CreateWebACLMigrationStackRequest
-    ): Future[CreateWebACLMigrationStackResponse] = service.createWebACLMigrationStack(params).promise().toFuture
-    @inline def createXssMatchSetFuture(params: CreateXssMatchSetRequest): Future[CreateXssMatchSetResponse] =
-      service.createXssMatchSet(params).promise().toFuture
-    @inline def deleteByteMatchSetFuture(params: DeleteByteMatchSetRequest): Future[DeleteByteMatchSetResponse] =
-      service.deleteByteMatchSet(params).promise().toFuture
-    @inline def deleteGeoMatchSetFuture(params: DeleteGeoMatchSetRequest): Future[DeleteGeoMatchSetResponse] =
-      service.deleteGeoMatchSet(params).promise().toFuture
-    @inline def deleteIPSetFuture(params: DeleteIPSetRequest): Future[DeleteIPSetResponse] =
-      service.deleteIPSet(params).promise().toFuture
-    @inline def deleteLoggingConfigurationFuture(
-        params: DeleteLoggingConfigurationRequest
-    ): Future[DeleteLoggingConfigurationResponse] = service.deleteLoggingConfiguration(params).promise().toFuture
-    @inline def deletePermissionPolicyFuture(
-        params: DeletePermissionPolicyRequest
-    ): Future[DeletePermissionPolicyResponse] = service.deletePermissionPolicy(params).promise().toFuture
-    @inline def deleteRateBasedRuleFuture(params: DeleteRateBasedRuleRequest): Future[DeleteRateBasedRuleResponse] =
-      service.deleteRateBasedRule(params).promise().toFuture
-    @inline def deleteRegexMatchSetFuture(params: DeleteRegexMatchSetRequest): Future[DeleteRegexMatchSetResponse] =
-      service.deleteRegexMatchSet(params).promise().toFuture
-    @inline def deleteRegexPatternSetFuture(
-        params: DeleteRegexPatternSetRequest
-    ): Future[DeleteRegexPatternSetResponse] = service.deleteRegexPatternSet(params).promise().toFuture
-    @inline def deleteRuleFuture(params: DeleteRuleRequest): Future[DeleteRuleResponse] =
-      service.deleteRule(params).promise().toFuture
-    @inline def deleteRuleGroupFuture(params: DeleteRuleGroupRequest): Future[DeleteRuleGroupResponse] =
-      service.deleteRuleGroup(params).promise().toFuture
-    @inline def deleteSizeConstraintSetFuture(
-        params: DeleteSizeConstraintSetRequest
-    ): Future[DeleteSizeConstraintSetResponse] = service.deleteSizeConstraintSet(params).promise().toFuture
-    @inline def deleteSqlInjectionMatchSetFuture(
-        params: DeleteSqlInjectionMatchSetRequest
-    ): Future[DeleteSqlInjectionMatchSetResponse] = service.deleteSqlInjectionMatchSet(params).promise().toFuture
-    @inline def deleteWebACLFuture(params: DeleteWebACLRequest): Future[DeleteWebACLResponse] =
-      service.deleteWebACL(params).promise().toFuture
-    @inline def deleteXssMatchSetFuture(params: DeleteXssMatchSetRequest): Future[DeleteXssMatchSetResponse] =
-      service.deleteXssMatchSet(params).promise().toFuture
-    @inline def getByteMatchSetFuture(params: GetByteMatchSetRequest): Future[GetByteMatchSetResponse] =
-      service.getByteMatchSet(params).promise().toFuture
-    @inline def getChangeTokenFuture(params: GetChangeTokenRequest): Future[GetChangeTokenResponse] =
-      service.getChangeToken(params).promise().toFuture
-    @inline def getChangeTokenStatusFuture(params: GetChangeTokenStatusRequest): Future[GetChangeTokenStatusResponse] =
-      service.getChangeTokenStatus(params).promise().toFuture
-    @inline def getGeoMatchSetFuture(params: GetGeoMatchSetRequest): Future[GetGeoMatchSetResponse] =
-      service.getGeoMatchSet(params).promise().toFuture
-    @inline def getIPSetFuture(params: GetIPSetRequest): Future[GetIPSetResponse] =
-      service.getIPSet(params).promise().toFuture
-    @inline def getLoggingConfigurationFuture(
-        params: GetLoggingConfigurationRequest
-    ): Future[GetLoggingConfigurationResponse] = service.getLoggingConfiguration(params).promise().toFuture
-    @inline def getPermissionPolicyFuture(params: GetPermissionPolicyRequest): Future[GetPermissionPolicyResponse] =
-      service.getPermissionPolicy(params).promise().toFuture
-    @inline def getRateBasedRuleFuture(params: GetRateBasedRuleRequest): Future[GetRateBasedRuleResponse] =
-      service.getRateBasedRule(params).promise().toFuture
-    @inline def getRateBasedRuleManagedKeysFuture(
-        params: GetRateBasedRuleManagedKeysRequest
-    ): Future[GetRateBasedRuleManagedKeysResponse] = service.getRateBasedRuleManagedKeys(params).promise().toFuture
-    @inline def getRegexMatchSetFuture(params: GetRegexMatchSetRequest): Future[GetRegexMatchSetResponse] =
-      service.getRegexMatchSet(params).promise().toFuture
-    @inline def getRegexPatternSetFuture(params: GetRegexPatternSetRequest): Future[GetRegexPatternSetResponse] =
-      service.getRegexPatternSet(params).promise().toFuture
-    @inline def getRuleFuture(params: GetRuleRequest): Future[GetRuleResponse] =
-      service.getRule(params).promise().toFuture
-    @inline def getRuleGroupFuture(params: GetRuleGroupRequest): Future[GetRuleGroupResponse] =
-      service.getRuleGroup(params).promise().toFuture
-    @inline def getSampledRequestsFuture(params: GetSampledRequestsRequest): Future[GetSampledRequestsResponse] =
-      service.getSampledRequests(params).promise().toFuture
-    @inline def getSizeConstraintSetFuture(params: GetSizeConstraintSetRequest): Future[GetSizeConstraintSetResponse] =
-      service.getSizeConstraintSet(params).promise().toFuture
-    @inline def getSqlInjectionMatchSetFuture(
-        params: GetSqlInjectionMatchSetRequest
-    ): Future[GetSqlInjectionMatchSetResponse] = service.getSqlInjectionMatchSet(params).promise().toFuture
-    @inline def getWebACLFuture(params: GetWebACLRequest): Future[GetWebACLResponse] =
-      service.getWebACL(params).promise().toFuture
-    @inline def getXssMatchSetFuture(params: GetXssMatchSetRequest): Future[GetXssMatchSetResponse] =
-      service.getXssMatchSet(params).promise().toFuture
-    @inline def listActivatedRulesInRuleGroupFuture(
-        params: ListActivatedRulesInRuleGroupRequest
-    ): Future[ListActivatedRulesInRuleGroupResponse] = service.listActivatedRulesInRuleGroup(params).promise().toFuture
-    @inline def listByteMatchSetsFuture(params: ListByteMatchSetsRequest): Future[ListByteMatchSetsResponse] =
-      service.listByteMatchSets(params).promise().toFuture
-    @inline def listGeoMatchSetsFuture(params: ListGeoMatchSetsRequest): Future[ListGeoMatchSetsResponse] =
-      service.listGeoMatchSets(params).promise().toFuture
-    @inline def listIPSetsFuture(params: ListIPSetsRequest): Future[ListIPSetsResponse] =
-      service.listIPSets(params).promise().toFuture
-    @inline def listLoggingConfigurationsFuture(
-        params: ListLoggingConfigurationsRequest
-    ): Future[ListLoggingConfigurationsResponse] = service.listLoggingConfigurations(params).promise().toFuture
-    @inline def listRateBasedRulesFuture(params: ListRateBasedRulesRequest): Future[ListRateBasedRulesResponse] =
-      service.listRateBasedRules(params).promise().toFuture
-    @inline def listRegexMatchSetsFuture(params: ListRegexMatchSetsRequest): Future[ListRegexMatchSetsResponse] =
-      service.listRegexMatchSets(params).promise().toFuture
-    @inline def listRegexPatternSetsFuture(params: ListRegexPatternSetsRequest): Future[ListRegexPatternSetsResponse] =
-      service.listRegexPatternSets(params).promise().toFuture
-    @inline def listRuleGroupsFuture(params: ListRuleGroupsRequest): Future[ListRuleGroupsResponse] =
-      service.listRuleGroups(params).promise().toFuture
-    @inline def listRulesFuture(params: ListRulesRequest): Future[ListRulesResponse] =
-      service.listRules(params).promise().toFuture
-    @inline def listSizeConstraintSetsFuture(
-        params: ListSizeConstraintSetsRequest
-    ): Future[ListSizeConstraintSetsResponse] = service.listSizeConstraintSets(params).promise().toFuture
-    @inline def listSqlInjectionMatchSetsFuture(
-        params: ListSqlInjectionMatchSetsRequest
-    ): Future[ListSqlInjectionMatchSetsResponse] = service.listSqlInjectionMatchSets(params).promise().toFuture
-    @inline def listSubscribedRuleGroupsFuture(
-        params: ListSubscribedRuleGroupsRequest
-    ): Future[ListSubscribedRuleGroupsResponse] = service.listSubscribedRuleGroups(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listWebACLsFuture(params: ListWebACLsRequest): Future[ListWebACLsResponse] =
-      service.listWebACLs(params).promise().toFuture
-    @inline def listXssMatchSetsFuture(params: ListXssMatchSetsRequest): Future[ListXssMatchSetsResponse] =
-      service.listXssMatchSets(params).promise().toFuture
-    @inline def putLoggingConfigurationFuture(
-        params: PutLoggingConfigurationRequest
-    ): Future[PutLoggingConfigurationResponse] = service.putLoggingConfiguration(params).promise().toFuture
-    @inline def putPermissionPolicyFuture(params: PutPermissionPolicyRequest): Future[PutPermissionPolicyResponse] =
-      service.putPermissionPolicy(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateByteMatchSetFuture(params: UpdateByteMatchSetRequest): Future[UpdateByteMatchSetResponse] =
-      service.updateByteMatchSet(params).promise().toFuture
-    @inline def updateGeoMatchSetFuture(params: UpdateGeoMatchSetRequest): Future[UpdateGeoMatchSetResponse] =
-      service.updateGeoMatchSet(params).promise().toFuture
-    @inline def updateIPSetFuture(params: UpdateIPSetRequest): Future[UpdateIPSetResponse] =
-      service.updateIPSet(params).promise().toFuture
-    @inline def updateRateBasedRuleFuture(params: UpdateRateBasedRuleRequest): Future[UpdateRateBasedRuleResponse] =
-      service.updateRateBasedRule(params).promise().toFuture
-    @inline def updateRegexMatchSetFuture(params: UpdateRegexMatchSetRequest): Future[UpdateRegexMatchSetResponse] =
-      service.updateRegexMatchSet(params).promise().toFuture
-    @inline def updateRegexPatternSetFuture(
-        params: UpdateRegexPatternSetRequest
-    ): Future[UpdateRegexPatternSetResponse] = service.updateRegexPatternSet(params).promise().toFuture
-    @inline def updateRuleFuture(params: UpdateRuleRequest): Future[UpdateRuleResponse] =
-      service.updateRule(params).promise().toFuture
-    @inline def updateRuleGroupFuture(params: UpdateRuleGroupRequest): Future[UpdateRuleGroupResponse] =
-      service.updateRuleGroup(params).promise().toFuture
-    @inline def updateSizeConstraintSetFuture(
-        params: UpdateSizeConstraintSetRequest
-    ): Future[UpdateSizeConstraintSetResponse] = service.updateSizeConstraintSet(params).promise().toFuture
-    @inline def updateSqlInjectionMatchSetFuture(
-        params: UpdateSqlInjectionMatchSetRequest
-    ): Future[UpdateSqlInjectionMatchSetResponse] = service.updateSqlInjectionMatchSet(params).promise().toFuture
-    @inline def updateWebACLFuture(params: UpdateWebACLRequest): Future[UpdateWebACLResponse] =
-      service.updateWebACL(params).promise().toFuture
-    @inline def updateXssMatchSetFuture(params: UpdateXssMatchSetRequest): Future[UpdateXssMatchSetResponse] =
-      service.updateXssMatchSet(params).promise().toFuture
+    @inline def createByteMatchSetFuture(params: CreateByteMatchSetRequest): Future[CreateByteMatchSetResponse] = service.createByteMatchSet(params).promise().toFuture
+    @inline def createGeoMatchSetFuture(params: CreateGeoMatchSetRequest): Future[CreateGeoMatchSetResponse] = service.createGeoMatchSet(params).promise().toFuture
+    @inline def createIPSetFuture(params: CreateIPSetRequest): Future[CreateIPSetResponse] = service.createIPSet(params).promise().toFuture
+    @inline def createRateBasedRuleFuture(params: CreateRateBasedRuleRequest): Future[CreateRateBasedRuleResponse] = service.createRateBasedRule(params).promise().toFuture
+    @inline def createRegexMatchSetFuture(params: CreateRegexMatchSetRequest): Future[CreateRegexMatchSetResponse] = service.createRegexMatchSet(params).promise().toFuture
+    @inline def createRegexPatternSetFuture(params: CreateRegexPatternSetRequest): Future[CreateRegexPatternSetResponse] = service.createRegexPatternSet(params).promise().toFuture
+    @inline def createRuleFuture(params: CreateRuleRequest): Future[CreateRuleResponse] = service.createRule(params).promise().toFuture
+    @inline def createRuleGroupFuture(params: CreateRuleGroupRequest): Future[CreateRuleGroupResponse] = service.createRuleGroup(params).promise().toFuture
+    @inline def createSizeConstraintSetFuture(params: CreateSizeConstraintSetRequest): Future[CreateSizeConstraintSetResponse] = service.createSizeConstraintSet(params).promise().toFuture
+    @inline def createSqlInjectionMatchSetFuture(params: CreateSqlInjectionMatchSetRequest): Future[CreateSqlInjectionMatchSetResponse] = service.createSqlInjectionMatchSet(params).promise().toFuture
+    @inline def createWebACLFuture(params: CreateWebACLRequest): Future[CreateWebACLResponse] = service.createWebACL(params).promise().toFuture
+    @inline def createWebACLMigrationStackFuture(params: CreateWebACLMigrationStackRequest): Future[CreateWebACLMigrationStackResponse] = service.createWebACLMigrationStack(params).promise().toFuture
+    @inline def createXssMatchSetFuture(params: CreateXssMatchSetRequest): Future[CreateXssMatchSetResponse] = service.createXssMatchSet(params).promise().toFuture
+    @inline def deleteByteMatchSetFuture(params: DeleteByteMatchSetRequest): Future[DeleteByteMatchSetResponse] = service.deleteByteMatchSet(params).promise().toFuture
+    @inline def deleteGeoMatchSetFuture(params: DeleteGeoMatchSetRequest): Future[DeleteGeoMatchSetResponse] = service.deleteGeoMatchSet(params).promise().toFuture
+    @inline def deleteIPSetFuture(params: DeleteIPSetRequest): Future[DeleteIPSetResponse] = service.deleteIPSet(params).promise().toFuture
+    @inline def deleteLoggingConfigurationFuture(params: DeleteLoggingConfigurationRequest): Future[DeleteLoggingConfigurationResponse] = service.deleteLoggingConfiguration(params).promise().toFuture
+    @inline def deletePermissionPolicyFuture(params: DeletePermissionPolicyRequest): Future[DeletePermissionPolicyResponse] = service.deletePermissionPolicy(params).promise().toFuture
+    @inline def deleteRateBasedRuleFuture(params: DeleteRateBasedRuleRequest): Future[DeleteRateBasedRuleResponse] = service.deleteRateBasedRule(params).promise().toFuture
+    @inline def deleteRegexMatchSetFuture(params: DeleteRegexMatchSetRequest): Future[DeleteRegexMatchSetResponse] = service.deleteRegexMatchSet(params).promise().toFuture
+    @inline def deleteRegexPatternSetFuture(params: DeleteRegexPatternSetRequest): Future[DeleteRegexPatternSetResponse] = service.deleteRegexPatternSet(params).promise().toFuture
+    @inline def deleteRuleFuture(params: DeleteRuleRequest): Future[DeleteRuleResponse] = service.deleteRule(params).promise().toFuture
+    @inline def deleteRuleGroupFuture(params: DeleteRuleGroupRequest): Future[DeleteRuleGroupResponse] = service.deleteRuleGroup(params).promise().toFuture
+    @inline def deleteSizeConstraintSetFuture(params: DeleteSizeConstraintSetRequest): Future[DeleteSizeConstraintSetResponse] = service.deleteSizeConstraintSet(params).promise().toFuture
+    @inline def deleteSqlInjectionMatchSetFuture(params: DeleteSqlInjectionMatchSetRequest): Future[DeleteSqlInjectionMatchSetResponse] = service.deleteSqlInjectionMatchSet(params).promise().toFuture
+    @inline def deleteWebACLFuture(params: DeleteWebACLRequest): Future[DeleteWebACLResponse] = service.deleteWebACL(params).promise().toFuture
+    @inline def deleteXssMatchSetFuture(params: DeleteXssMatchSetRequest): Future[DeleteXssMatchSetResponse] = service.deleteXssMatchSet(params).promise().toFuture
+    @inline def getByteMatchSetFuture(params: GetByteMatchSetRequest): Future[GetByteMatchSetResponse] = service.getByteMatchSet(params).promise().toFuture
+    @inline def getChangeTokenFuture(params: GetChangeTokenRequest): Future[GetChangeTokenResponse] = service.getChangeToken(params).promise().toFuture
+    @inline def getChangeTokenStatusFuture(params: GetChangeTokenStatusRequest): Future[GetChangeTokenStatusResponse] = service.getChangeTokenStatus(params).promise().toFuture
+    @inline def getGeoMatchSetFuture(params: GetGeoMatchSetRequest): Future[GetGeoMatchSetResponse] = service.getGeoMatchSet(params).promise().toFuture
+    @inline def getIPSetFuture(params: GetIPSetRequest): Future[GetIPSetResponse] = service.getIPSet(params).promise().toFuture
+    @inline def getLoggingConfigurationFuture(params: GetLoggingConfigurationRequest): Future[GetLoggingConfigurationResponse] = service.getLoggingConfiguration(params).promise().toFuture
+    @inline def getPermissionPolicyFuture(params: GetPermissionPolicyRequest): Future[GetPermissionPolicyResponse] = service.getPermissionPolicy(params).promise().toFuture
+    @inline def getRateBasedRuleFuture(params: GetRateBasedRuleRequest): Future[GetRateBasedRuleResponse] = service.getRateBasedRule(params).promise().toFuture
+    @inline def getRateBasedRuleManagedKeysFuture(params: GetRateBasedRuleManagedKeysRequest): Future[GetRateBasedRuleManagedKeysResponse] = service.getRateBasedRuleManagedKeys(params).promise().toFuture
+    @inline def getRegexMatchSetFuture(params: GetRegexMatchSetRequest): Future[GetRegexMatchSetResponse] = service.getRegexMatchSet(params).promise().toFuture
+    @inline def getRegexPatternSetFuture(params: GetRegexPatternSetRequest): Future[GetRegexPatternSetResponse] = service.getRegexPatternSet(params).promise().toFuture
+    @inline def getRuleFuture(params: GetRuleRequest): Future[GetRuleResponse] = service.getRule(params).promise().toFuture
+    @inline def getRuleGroupFuture(params: GetRuleGroupRequest): Future[GetRuleGroupResponse] = service.getRuleGroup(params).promise().toFuture
+    @inline def getSampledRequestsFuture(params: GetSampledRequestsRequest): Future[GetSampledRequestsResponse] = service.getSampledRequests(params).promise().toFuture
+    @inline def getSizeConstraintSetFuture(params: GetSizeConstraintSetRequest): Future[GetSizeConstraintSetResponse] = service.getSizeConstraintSet(params).promise().toFuture
+    @inline def getSqlInjectionMatchSetFuture(params: GetSqlInjectionMatchSetRequest): Future[GetSqlInjectionMatchSetResponse] = service.getSqlInjectionMatchSet(params).promise().toFuture
+    @inline def getWebACLFuture(params: GetWebACLRequest): Future[GetWebACLResponse] = service.getWebACL(params).promise().toFuture
+    @inline def getXssMatchSetFuture(params: GetXssMatchSetRequest): Future[GetXssMatchSetResponse] = service.getXssMatchSet(params).promise().toFuture
+    @inline def listActivatedRulesInRuleGroupFuture(params: ListActivatedRulesInRuleGroupRequest): Future[ListActivatedRulesInRuleGroupResponse] = service.listActivatedRulesInRuleGroup(params).promise().toFuture
+    @inline def listByteMatchSetsFuture(params: ListByteMatchSetsRequest): Future[ListByteMatchSetsResponse] = service.listByteMatchSets(params).promise().toFuture
+    @inline def listGeoMatchSetsFuture(params: ListGeoMatchSetsRequest): Future[ListGeoMatchSetsResponse] = service.listGeoMatchSets(params).promise().toFuture
+    @inline def listIPSetsFuture(params: ListIPSetsRequest): Future[ListIPSetsResponse] = service.listIPSets(params).promise().toFuture
+    @inline def listLoggingConfigurationsFuture(params: ListLoggingConfigurationsRequest): Future[ListLoggingConfigurationsResponse] = service.listLoggingConfigurations(params).promise().toFuture
+    @inline def listRateBasedRulesFuture(params: ListRateBasedRulesRequest): Future[ListRateBasedRulesResponse] = service.listRateBasedRules(params).promise().toFuture
+    @inline def listRegexMatchSetsFuture(params: ListRegexMatchSetsRequest): Future[ListRegexMatchSetsResponse] = service.listRegexMatchSets(params).promise().toFuture
+    @inline def listRegexPatternSetsFuture(params: ListRegexPatternSetsRequest): Future[ListRegexPatternSetsResponse] = service.listRegexPatternSets(params).promise().toFuture
+    @inline def listRuleGroupsFuture(params: ListRuleGroupsRequest): Future[ListRuleGroupsResponse] = service.listRuleGroups(params).promise().toFuture
+    @inline def listRulesFuture(params: ListRulesRequest): Future[ListRulesResponse] = service.listRules(params).promise().toFuture
+    @inline def listSizeConstraintSetsFuture(params: ListSizeConstraintSetsRequest): Future[ListSizeConstraintSetsResponse] = service.listSizeConstraintSets(params).promise().toFuture
+    @inline def listSqlInjectionMatchSetsFuture(params: ListSqlInjectionMatchSetsRequest): Future[ListSqlInjectionMatchSetsResponse] = service.listSqlInjectionMatchSets(params).promise().toFuture
+    @inline def listSubscribedRuleGroupsFuture(params: ListSubscribedRuleGroupsRequest): Future[ListSubscribedRuleGroupsResponse] = service.listSubscribedRuleGroups(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listWebACLsFuture(params: ListWebACLsRequest): Future[ListWebACLsResponse] = service.listWebACLs(params).promise().toFuture
+    @inline def listXssMatchSetsFuture(params: ListXssMatchSetsRequest): Future[ListXssMatchSetsResponse] = service.listXssMatchSets(params).promise().toFuture
+    @inline def putLoggingConfigurationFuture(params: PutLoggingConfigurationRequest): Future[PutLoggingConfigurationResponse] = service.putLoggingConfiguration(params).promise().toFuture
+    @inline def putPermissionPolicyFuture(params: PutPermissionPolicyRequest): Future[PutPermissionPolicyResponse] = service.putPermissionPolicy(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateByteMatchSetFuture(params: UpdateByteMatchSetRequest): Future[UpdateByteMatchSetResponse] = service.updateByteMatchSet(params).promise().toFuture
+    @inline def updateGeoMatchSetFuture(params: UpdateGeoMatchSetRequest): Future[UpdateGeoMatchSetResponse] = service.updateGeoMatchSet(params).promise().toFuture
+    @inline def updateIPSetFuture(params: UpdateIPSetRequest): Future[UpdateIPSetResponse] = service.updateIPSet(params).promise().toFuture
+    @inline def updateRateBasedRuleFuture(params: UpdateRateBasedRuleRequest): Future[UpdateRateBasedRuleResponse] = service.updateRateBasedRule(params).promise().toFuture
+    @inline def updateRegexMatchSetFuture(params: UpdateRegexMatchSetRequest): Future[UpdateRegexMatchSetResponse] = service.updateRegexMatchSet(params).promise().toFuture
+    @inline def updateRegexPatternSetFuture(params: UpdateRegexPatternSetRequest): Future[UpdateRegexPatternSetResponse] = service.updateRegexPatternSet(params).promise().toFuture
+    @inline def updateRuleFuture(params: UpdateRuleRequest): Future[UpdateRuleResponse] = service.updateRule(params).promise().toFuture
+    @inline def updateRuleGroupFuture(params: UpdateRuleGroupRequest): Future[UpdateRuleGroupResponse] = service.updateRuleGroup(params).promise().toFuture
+    @inline def updateSizeConstraintSetFuture(params: UpdateSizeConstraintSetRequest): Future[UpdateSizeConstraintSetResponse] = service.updateSizeConstraintSet(params).promise().toFuture
+    @inline def updateSqlInjectionMatchSetFuture(params: UpdateSqlInjectionMatchSetRequest): Future[UpdateSqlInjectionMatchSetResponse] = service.updateSqlInjectionMatchSet(params).promise().toFuture
+    @inline def updateWebACLFuture(params: UpdateWebACLRequest): Future[UpdateWebACLResponse] = service.updateWebACL(params).promise().toFuture
+    @inline def updateXssMatchSetFuture(params: UpdateXssMatchSetRequest): Future[UpdateXssMatchSetResponse] = service.updateXssMatchSet(params).promise().toFuture
   }
 }
 
@@ -278,34 +180,23 @@ package waf {
     def createRegexPatternSet(params: CreateRegexPatternSetRequest): Request[CreateRegexPatternSetResponse] = js.native
     def createRule(params: CreateRuleRequest): Request[CreateRuleResponse] = js.native
     def createRuleGroup(params: CreateRuleGroupRequest): Request[CreateRuleGroupResponse] = js.native
-    def createSizeConstraintSet(params: CreateSizeConstraintSetRequest): Request[CreateSizeConstraintSetResponse] =
-      js.native
-    def createSqlInjectionMatchSet(
-        params: CreateSqlInjectionMatchSetRequest
-    ): Request[CreateSqlInjectionMatchSetResponse] = js.native
+    def createSizeConstraintSet(params: CreateSizeConstraintSetRequest): Request[CreateSizeConstraintSetResponse] = js.native
+    def createSqlInjectionMatchSet(params: CreateSqlInjectionMatchSetRequest): Request[CreateSqlInjectionMatchSetResponse] = js.native
     def createWebACL(params: CreateWebACLRequest): Request[CreateWebACLResponse] = js.native
-    def createWebACLMigrationStack(
-        params: CreateWebACLMigrationStackRequest
-    ): Request[CreateWebACLMigrationStackResponse] = js.native
+    def createWebACLMigrationStack(params: CreateWebACLMigrationStackRequest): Request[CreateWebACLMigrationStackResponse] = js.native
     def createXssMatchSet(params: CreateXssMatchSetRequest): Request[CreateXssMatchSetResponse] = js.native
     def deleteByteMatchSet(params: DeleteByteMatchSetRequest): Request[DeleteByteMatchSetResponse] = js.native
     def deleteGeoMatchSet(params: DeleteGeoMatchSetRequest): Request[DeleteGeoMatchSetResponse] = js.native
     def deleteIPSet(params: DeleteIPSetRequest): Request[DeleteIPSetResponse] = js.native
-    def deleteLoggingConfiguration(
-        params: DeleteLoggingConfigurationRequest
-    ): Request[DeleteLoggingConfigurationResponse] = js.native
-    def deletePermissionPolicy(params: DeletePermissionPolicyRequest): Request[DeletePermissionPolicyResponse] =
-      js.native
+    def deleteLoggingConfiguration(params: DeleteLoggingConfigurationRequest): Request[DeleteLoggingConfigurationResponse] = js.native
+    def deletePermissionPolicy(params: DeletePermissionPolicyRequest): Request[DeletePermissionPolicyResponse] = js.native
     def deleteRateBasedRule(params: DeleteRateBasedRuleRequest): Request[DeleteRateBasedRuleResponse] = js.native
     def deleteRegexMatchSet(params: DeleteRegexMatchSetRequest): Request[DeleteRegexMatchSetResponse] = js.native
     def deleteRegexPatternSet(params: DeleteRegexPatternSetRequest): Request[DeleteRegexPatternSetResponse] = js.native
     def deleteRule(params: DeleteRuleRequest): Request[DeleteRuleResponse] = js.native
     def deleteRuleGroup(params: DeleteRuleGroupRequest): Request[DeleteRuleGroupResponse] = js.native
-    def deleteSizeConstraintSet(params: DeleteSizeConstraintSetRequest): Request[DeleteSizeConstraintSetResponse] =
-      js.native
-    def deleteSqlInjectionMatchSet(
-        params: DeleteSqlInjectionMatchSetRequest
-    ): Request[DeleteSqlInjectionMatchSetResponse] = js.native
+    def deleteSizeConstraintSet(params: DeleteSizeConstraintSetRequest): Request[DeleteSizeConstraintSetResponse] = js.native
+    def deleteSqlInjectionMatchSet(params: DeleteSqlInjectionMatchSetRequest): Request[DeleteSqlInjectionMatchSetResponse] = js.native
     def deleteWebACL(params: DeleteWebACLRequest): Request[DeleteWebACLResponse] = js.native
     def deleteXssMatchSet(params: DeleteXssMatchSetRequest): Request[DeleteXssMatchSetResponse] = js.native
     def getByteMatchSet(params: GetByteMatchSetRequest): Request[GetByteMatchSetResponse] = js.native
@@ -313,49 +204,36 @@ package waf {
     def getChangeTokenStatus(params: GetChangeTokenStatusRequest): Request[GetChangeTokenStatusResponse] = js.native
     def getGeoMatchSet(params: GetGeoMatchSetRequest): Request[GetGeoMatchSetResponse] = js.native
     def getIPSet(params: GetIPSetRequest): Request[GetIPSetResponse] = js.native
-    def getLoggingConfiguration(params: GetLoggingConfigurationRequest): Request[GetLoggingConfigurationResponse] =
-      js.native
+    def getLoggingConfiguration(params: GetLoggingConfigurationRequest): Request[GetLoggingConfigurationResponse] = js.native
     def getPermissionPolicy(params: GetPermissionPolicyRequest): Request[GetPermissionPolicyResponse] = js.native
     def getRateBasedRule(params: GetRateBasedRuleRequest): Request[GetRateBasedRuleResponse] = js.native
-    def getRateBasedRuleManagedKeys(
-        params: GetRateBasedRuleManagedKeysRequest
-    ): Request[GetRateBasedRuleManagedKeysResponse] = js.native
+    def getRateBasedRuleManagedKeys(params: GetRateBasedRuleManagedKeysRequest): Request[GetRateBasedRuleManagedKeysResponse] = js.native
     def getRegexMatchSet(params: GetRegexMatchSetRequest): Request[GetRegexMatchSetResponse] = js.native
     def getRegexPatternSet(params: GetRegexPatternSetRequest): Request[GetRegexPatternSetResponse] = js.native
     def getRule(params: GetRuleRequest): Request[GetRuleResponse] = js.native
     def getRuleGroup(params: GetRuleGroupRequest): Request[GetRuleGroupResponse] = js.native
     def getSampledRequests(params: GetSampledRequestsRequest): Request[GetSampledRequestsResponse] = js.native
     def getSizeConstraintSet(params: GetSizeConstraintSetRequest): Request[GetSizeConstraintSetResponse] = js.native
-    def getSqlInjectionMatchSet(params: GetSqlInjectionMatchSetRequest): Request[GetSqlInjectionMatchSetResponse] =
-      js.native
+    def getSqlInjectionMatchSet(params: GetSqlInjectionMatchSetRequest): Request[GetSqlInjectionMatchSetResponse] = js.native
     def getWebACL(params: GetWebACLRequest): Request[GetWebACLResponse] = js.native
     def getXssMatchSet(params: GetXssMatchSetRequest): Request[GetXssMatchSetResponse] = js.native
-    def listActivatedRulesInRuleGroup(
-        params: ListActivatedRulesInRuleGroupRequest
-    ): Request[ListActivatedRulesInRuleGroupResponse] = js.native
+    def listActivatedRulesInRuleGroup(params: ListActivatedRulesInRuleGroupRequest): Request[ListActivatedRulesInRuleGroupResponse] = js.native
     def listByteMatchSets(params: ListByteMatchSetsRequest): Request[ListByteMatchSetsResponse] = js.native
     def listGeoMatchSets(params: ListGeoMatchSetsRequest): Request[ListGeoMatchSetsResponse] = js.native
     def listIPSets(params: ListIPSetsRequest): Request[ListIPSetsResponse] = js.native
-    def listLoggingConfigurations(
-        params: ListLoggingConfigurationsRequest
-    ): Request[ListLoggingConfigurationsResponse] = js.native
+    def listLoggingConfigurations(params: ListLoggingConfigurationsRequest): Request[ListLoggingConfigurationsResponse] = js.native
     def listRateBasedRules(params: ListRateBasedRulesRequest): Request[ListRateBasedRulesResponse] = js.native
     def listRegexMatchSets(params: ListRegexMatchSetsRequest): Request[ListRegexMatchSetsResponse] = js.native
     def listRegexPatternSets(params: ListRegexPatternSetsRequest): Request[ListRegexPatternSetsResponse] = js.native
     def listRuleGroups(params: ListRuleGroupsRequest): Request[ListRuleGroupsResponse] = js.native
     def listRules(params: ListRulesRequest): Request[ListRulesResponse] = js.native
-    def listSizeConstraintSets(params: ListSizeConstraintSetsRequest): Request[ListSizeConstraintSetsResponse] =
-      js.native
-    def listSqlInjectionMatchSets(
-        params: ListSqlInjectionMatchSetsRequest
-    ): Request[ListSqlInjectionMatchSetsResponse] = js.native
-    def listSubscribedRuleGroups(params: ListSubscribedRuleGroupsRequest): Request[ListSubscribedRuleGroupsResponse] =
-      js.native
+    def listSizeConstraintSets(params: ListSizeConstraintSetsRequest): Request[ListSizeConstraintSetsResponse] = js.native
+    def listSqlInjectionMatchSets(params: ListSqlInjectionMatchSetsRequest): Request[ListSqlInjectionMatchSetsResponse] = js.native
+    def listSubscribedRuleGroups(params: ListSubscribedRuleGroupsRequest): Request[ListSubscribedRuleGroupsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listWebACLs(params: ListWebACLsRequest): Request[ListWebACLsResponse] = js.native
     def listXssMatchSets(params: ListXssMatchSetsRequest): Request[ListXssMatchSetsResponse] = js.native
-    def putLoggingConfiguration(params: PutLoggingConfigurationRequest): Request[PutLoggingConfigurationResponse] =
-      js.native
+    def putLoggingConfiguration(params: PutLoggingConfigurationRequest): Request[PutLoggingConfigurationResponse] = js.native
     def putPermissionPolicy(params: PutPermissionPolicyRequest): Request[PutPermissionPolicyResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
@@ -367,11 +245,8 @@ package waf {
     def updateRegexPatternSet(params: UpdateRegexPatternSetRequest): Request[UpdateRegexPatternSetResponse] = js.native
     def updateRule(params: UpdateRuleRequest): Request[UpdateRuleResponse] = js.native
     def updateRuleGroup(params: UpdateRuleGroupRequest): Request[UpdateRuleGroupResponse] = js.native
-    def updateSizeConstraintSet(params: UpdateSizeConstraintSetRequest): Request[UpdateSizeConstraintSetResponse] =
-      js.native
-    def updateSqlInjectionMatchSet(
-        params: UpdateSqlInjectionMatchSetRequest
-    ): Request[UpdateSqlInjectionMatchSetResponse] = js.native
+    def updateSizeConstraintSet(params: UpdateSizeConstraintSetRequest): Request[UpdateSizeConstraintSetResponse] = js.native
+    def updateSqlInjectionMatchSet(params: UpdateSqlInjectionMatchSetRequest): Request[UpdateSqlInjectionMatchSetResponse] = js.native
     def updateWebACL(params: UpdateWebACLRequest): Request[UpdateWebACLResponse] = js.native
     def updateXssMatchSet(params: UpdateXssMatchSetRequest): Request[UpdateXssMatchSetResponse] = js.native
   }
@@ -1982,259 +1857,257 @@ package waf {
     val ZM = "ZM".asInstanceOf[GeoMatchConstraintValue]
     val ZW = "ZW".asInstanceOf[GeoMatchConstraintValue]
 
-    val values = js.Object.freeze(
-      js.Array(
-        AF,
-        AX,
-        AL,
-        DZ,
-        AS,
-        AD,
-        AO,
-        AI,
-        AQ,
-        AG,
-        AR,
-        AM,
-        AW,
-        AU,
-        AT,
-        AZ,
-        BS,
-        BH,
-        BD,
-        BB,
-        BY,
-        BE,
-        BZ,
-        BJ,
-        BM,
-        BT,
-        BO,
-        BQ,
-        BA,
-        BW,
-        BV,
-        BR,
-        IO,
-        BN,
-        BG,
-        BF,
-        BI,
-        KH,
-        CM,
-        CA,
-        CV,
-        KY,
-        CF,
-        TD,
-        CL,
-        CN,
-        CX,
-        CC,
-        CO,
-        KM,
-        CG,
-        CD,
-        CK,
-        CR,
-        CI,
-        HR,
-        CU,
-        CW,
-        CY,
-        CZ,
-        DK,
-        DJ,
-        DM,
-        DO,
-        EC,
-        EG,
-        SV,
-        GQ,
-        ER,
-        EE,
-        ET,
-        FK,
-        FO,
-        FJ,
-        FI,
-        FR,
-        GF,
-        PF,
-        TF,
-        GA,
-        GM,
-        GE,
-        DE,
-        GH,
-        GI,
-        GR,
-        GL,
-        GD,
-        GP,
-        GU,
-        GT,
-        GG,
-        GN,
-        GW,
-        GY,
-        HT,
-        HM,
-        VA,
-        HN,
-        HK,
-        HU,
-        IS,
-        IN,
-        ID,
-        IR,
-        IQ,
-        IE,
-        IM,
-        IL,
-        IT,
-        JM,
-        JP,
-        JE,
-        JO,
-        KZ,
-        KE,
-        KI,
-        KP,
-        KR,
-        KW,
-        KG,
-        LA,
-        LV,
-        LB,
-        LS,
-        LR,
-        LY,
-        LI,
-        LT,
-        LU,
-        MO,
-        MK,
-        MG,
-        MW,
-        MY,
-        MV,
-        ML,
-        MT,
-        MH,
-        MQ,
-        MR,
-        MU,
-        YT,
-        MX,
-        FM,
-        MD,
-        MC,
-        MN,
-        ME,
-        MS,
-        MA,
-        MZ,
-        MM,
-        NA,
-        NR,
-        NP,
-        NL,
-        NC,
-        NZ,
-        NI,
-        NE,
-        NG,
-        NU,
-        NF,
-        MP,
-        NO,
-        OM,
-        PK,
-        PW,
-        PS,
-        PA,
-        PG,
-        PY,
-        PE,
-        PH,
-        PN,
-        PL,
-        PT,
-        PR,
-        QA,
-        RE,
-        RO,
-        RU,
-        RW,
-        BL,
-        SH,
-        KN,
-        LC,
-        MF,
-        PM,
-        VC,
-        WS,
-        SM,
-        ST,
-        SA,
-        SN,
-        RS,
-        SC,
-        SL,
-        SG,
-        SX,
-        SK,
-        SI,
-        SB,
-        SO,
-        ZA,
-        GS,
-        SS,
-        ES,
-        LK,
-        SD,
-        SR,
-        SJ,
-        SZ,
-        SE,
-        CH,
-        SY,
-        TW,
-        TJ,
-        TZ,
-        TH,
-        TL,
-        TG,
-        TK,
-        TO,
-        TT,
-        TN,
-        TR,
-        TM,
-        TC,
-        TV,
-        UG,
-        UA,
-        AE,
-        GB,
-        US,
-        UM,
-        UY,
-        UZ,
-        VU,
-        VE,
-        VN,
-        VG,
-        VI,
-        WF,
-        EH,
-        YE,
-        ZM,
-        ZW
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      AF,
+      AX,
+      AL,
+      DZ,
+      AS,
+      AD,
+      AO,
+      AI,
+      AQ,
+      AG,
+      AR,
+      AM,
+      AW,
+      AU,
+      AT,
+      AZ,
+      BS,
+      BH,
+      BD,
+      BB,
+      BY,
+      BE,
+      BZ,
+      BJ,
+      BM,
+      BT,
+      BO,
+      BQ,
+      BA,
+      BW,
+      BV,
+      BR,
+      IO,
+      BN,
+      BG,
+      BF,
+      BI,
+      KH,
+      CM,
+      CA,
+      CV,
+      KY,
+      CF,
+      TD,
+      CL,
+      CN,
+      CX,
+      CC,
+      CO,
+      KM,
+      CG,
+      CD,
+      CK,
+      CR,
+      CI,
+      HR,
+      CU,
+      CW,
+      CY,
+      CZ,
+      DK,
+      DJ,
+      DM,
+      DO,
+      EC,
+      EG,
+      SV,
+      GQ,
+      ER,
+      EE,
+      ET,
+      FK,
+      FO,
+      FJ,
+      FI,
+      FR,
+      GF,
+      PF,
+      TF,
+      GA,
+      GM,
+      GE,
+      DE,
+      GH,
+      GI,
+      GR,
+      GL,
+      GD,
+      GP,
+      GU,
+      GT,
+      GG,
+      GN,
+      GW,
+      GY,
+      HT,
+      HM,
+      VA,
+      HN,
+      HK,
+      HU,
+      IS,
+      IN,
+      ID,
+      IR,
+      IQ,
+      IE,
+      IM,
+      IL,
+      IT,
+      JM,
+      JP,
+      JE,
+      JO,
+      KZ,
+      KE,
+      KI,
+      KP,
+      KR,
+      KW,
+      KG,
+      LA,
+      LV,
+      LB,
+      LS,
+      LR,
+      LY,
+      LI,
+      LT,
+      LU,
+      MO,
+      MK,
+      MG,
+      MW,
+      MY,
+      MV,
+      ML,
+      MT,
+      MH,
+      MQ,
+      MR,
+      MU,
+      YT,
+      MX,
+      FM,
+      MD,
+      MC,
+      MN,
+      ME,
+      MS,
+      MA,
+      MZ,
+      MM,
+      NA,
+      NR,
+      NP,
+      NL,
+      NC,
+      NZ,
+      NI,
+      NE,
+      NG,
+      NU,
+      NF,
+      MP,
+      NO,
+      OM,
+      PK,
+      PW,
+      PS,
+      PA,
+      PG,
+      PY,
+      PE,
+      PH,
+      PN,
+      PL,
+      PT,
+      PR,
+      QA,
+      RE,
+      RO,
+      RU,
+      RW,
+      BL,
+      SH,
+      KN,
+      LC,
+      MF,
+      PM,
+      VC,
+      WS,
+      SM,
+      ST,
+      SA,
+      SN,
+      RS,
+      SC,
+      SL,
+      SG,
+      SX,
+      SK,
+      SI,
+      SB,
+      SO,
+      ZA,
+      GS,
+      SS,
+      ES,
+      LK,
+      SD,
+      SR,
+      SJ,
+      SZ,
+      SE,
+      CH,
+      SY,
+      TW,
+      TJ,
+      TZ,
+      TH,
+      TL,
+      TG,
+      TK,
+      TO,
+      TT,
+      TN,
+      TR,
+      TM,
+      TC,
+      TV,
+      UG,
+      UA,
+      AE,
+      GB,
+      US,
+      UM,
+      UY,
+      UZ,
+      VU,
+      VE,
+      VN,
+      VG,
+      VI,
+      WF,
+      EH,
+      YE,
+      ZM,
+      ZW
+    ))
   }
 
   /**
@@ -3858,8 +3731,7 @@ package waf {
     val XssMatch = "XssMatch".asInstanceOf[PredicateType]
     val RegexMatch = "RegexMatch".asInstanceOf[PredicateType]
 
-    val values =
-      js.Object.freeze(js.Array(IPMatch, ByteMatch, SqlInjectionMatch, GeoMatch, SizeConstraint, XssMatch, RegexMatch))
+    val values = js.Object.freeze(js.Array(IPMatch, ByteMatch, SqlInjectionMatch, GeoMatch, SizeConstraint, XssMatch, RegexMatch))
   }
 
   @js.native
@@ -4725,8 +4597,7 @@ package waf {
     val CMD_LINE = "CMD_LINE".asInstanceOf[TextTransformation]
     val URL_DECODE = "URL_DECODE".asInstanceOf[TextTransformation]
 
-    val values =
-      js.Object.freeze(js.Array(NONE, COMPRESS_WHITE_SPACE, HTML_ENTITY_DECODE, LOWERCASE, CMD_LINE, URL_DECODE))
+    val values = js.Object.freeze(js.Array(NONE, COMPRESS_WHITE_SPACE, HTML_ENTITY_DECODE, LOWERCASE, CMD_LINE, URL_DECODE))
   }
 
   /**

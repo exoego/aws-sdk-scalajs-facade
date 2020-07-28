@@ -60,59 +60,26 @@ package object kinesisanalytics {
 
   implicit final class KinesisAnalyticsOps(private val service: KinesisAnalytics) extends AnyVal {
 
-    @inline def addApplicationCloudWatchLoggingOptionFuture(
-        params: AddApplicationCloudWatchLoggingOptionRequest
-    ): Future[AddApplicationCloudWatchLoggingOptionResponse] =
-      service.addApplicationCloudWatchLoggingOption(params).promise().toFuture
-    @inline def addApplicationInputFuture(params: AddApplicationInputRequest): Future[AddApplicationInputResponse] =
-      service.addApplicationInput(params).promise().toFuture
-    @inline def addApplicationInputProcessingConfigurationFuture(
-        params: AddApplicationInputProcessingConfigurationRequest
-    ): Future[AddApplicationInputProcessingConfigurationResponse] =
-      service.addApplicationInputProcessingConfiguration(params).promise().toFuture
-    @inline def addApplicationOutputFuture(params: AddApplicationOutputRequest): Future[AddApplicationOutputResponse] =
-      service.addApplicationOutput(params).promise().toFuture
-    @inline def addApplicationReferenceDataSourceFuture(
-        params: AddApplicationReferenceDataSourceRequest
-    ): Future[AddApplicationReferenceDataSourceResponse] =
-      service.addApplicationReferenceDataSource(params).promise().toFuture
-    @inline def createApplicationFuture(params: CreateApplicationRequest): Future[CreateApplicationResponse] =
-      service.createApplication(params).promise().toFuture
-    @inline def deleteApplicationCloudWatchLoggingOptionFuture(
-        params: DeleteApplicationCloudWatchLoggingOptionRequest
-    ): Future[DeleteApplicationCloudWatchLoggingOptionResponse] =
-      service.deleteApplicationCloudWatchLoggingOption(params).promise().toFuture
-    @inline def deleteApplicationFuture(params: DeleteApplicationRequest): Future[DeleteApplicationResponse] =
-      service.deleteApplication(params).promise().toFuture
-    @inline def deleteApplicationInputProcessingConfigurationFuture(
-        params: DeleteApplicationInputProcessingConfigurationRequest
-    ): Future[DeleteApplicationInputProcessingConfigurationResponse] =
-      service.deleteApplicationInputProcessingConfiguration(params).promise().toFuture
-    @inline def deleteApplicationOutputFuture(
-        params: DeleteApplicationOutputRequest
-    ): Future[DeleteApplicationOutputResponse] = service.deleteApplicationOutput(params).promise().toFuture
-    @inline def deleteApplicationReferenceDataSourceFuture(
-        params: DeleteApplicationReferenceDataSourceRequest
-    ): Future[DeleteApplicationReferenceDataSourceResponse] =
-      service.deleteApplicationReferenceDataSource(params).promise().toFuture
-    @inline def describeApplicationFuture(params: DescribeApplicationRequest): Future[DescribeApplicationResponse] =
-      service.describeApplication(params).promise().toFuture
-    @inline def discoverInputSchemaFuture(params: DiscoverInputSchemaRequest): Future[DiscoverInputSchemaResponse] =
-      service.discoverInputSchema(params).promise().toFuture
-    @inline def listApplicationsFuture(params: ListApplicationsRequest): Future[ListApplicationsResponse] =
-      service.listApplications(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def startApplicationFuture(params: StartApplicationRequest): Future[StartApplicationResponse] =
-      service.startApplication(params).promise().toFuture
-    @inline def stopApplicationFuture(params: StopApplicationRequest): Future[StopApplicationResponse] =
-      service.stopApplication(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] =
-      service.updateApplication(params).promise().toFuture
+    @inline def addApplicationCloudWatchLoggingOptionFuture(params: AddApplicationCloudWatchLoggingOptionRequest): Future[AddApplicationCloudWatchLoggingOptionResponse] = service.addApplicationCloudWatchLoggingOption(params).promise().toFuture
+    @inline def addApplicationInputFuture(params: AddApplicationInputRequest): Future[AddApplicationInputResponse] = service.addApplicationInput(params).promise().toFuture
+    @inline def addApplicationInputProcessingConfigurationFuture(params: AddApplicationInputProcessingConfigurationRequest): Future[AddApplicationInputProcessingConfigurationResponse] = service.addApplicationInputProcessingConfiguration(params).promise().toFuture
+    @inline def addApplicationOutputFuture(params: AddApplicationOutputRequest): Future[AddApplicationOutputResponse] = service.addApplicationOutput(params).promise().toFuture
+    @inline def addApplicationReferenceDataSourceFuture(params: AddApplicationReferenceDataSourceRequest): Future[AddApplicationReferenceDataSourceResponse] = service.addApplicationReferenceDataSource(params).promise().toFuture
+    @inline def createApplicationFuture(params: CreateApplicationRequest): Future[CreateApplicationResponse] = service.createApplication(params).promise().toFuture
+    @inline def deleteApplicationCloudWatchLoggingOptionFuture(params: DeleteApplicationCloudWatchLoggingOptionRequest): Future[DeleteApplicationCloudWatchLoggingOptionResponse] = service.deleteApplicationCloudWatchLoggingOption(params).promise().toFuture
+    @inline def deleteApplicationFuture(params: DeleteApplicationRequest): Future[DeleteApplicationResponse] = service.deleteApplication(params).promise().toFuture
+    @inline def deleteApplicationInputProcessingConfigurationFuture(params: DeleteApplicationInputProcessingConfigurationRequest): Future[DeleteApplicationInputProcessingConfigurationResponse] = service.deleteApplicationInputProcessingConfiguration(params).promise().toFuture
+    @inline def deleteApplicationOutputFuture(params: DeleteApplicationOutputRequest): Future[DeleteApplicationOutputResponse] = service.deleteApplicationOutput(params).promise().toFuture
+    @inline def deleteApplicationReferenceDataSourceFuture(params: DeleteApplicationReferenceDataSourceRequest): Future[DeleteApplicationReferenceDataSourceResponse] = service.deleteApplicationReferenceDataSource(params).promise().toFuture
+    @inline def describeApplicationFuture(params: DescribeApplicationRequest): Future[DescribeApplicationResponse] = service.describeApplication(params).promise().toFuture
+    @inline def discoverInputSchemaFuture(params: DiscoverInputSchemaRequest): Future[DiscoverInputSchemaResponse] = service.discoverInputSchema(params).promise().toFuture
+    @inline def listApplicationsFuture(params: ListApplicationsRequest): Future[ListApplicationsResponse] = service.listApplications(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def startApplicationFuture(params: StartApplicationRequest): Future[StartApplicationResponse] = service.startApplication(params).promise().toFuture
+    @inline def stopApplicationFuture(params: StopApplicationRequest): Future[StopApplicationResponse] = service.stopApplication(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] = service.updateApplication(params).promise().toFuture
   }
 }
 
@@ -122,30 +89,17 @@ package kinesisanalytics {
   class KinesisAnalytics() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def addApplicationCloudWatchLoggingOption(
-        params: AddApplicationCloudWatchLoggingOptionRequest
-    ): Request[AddApplicationCloudWatchLoggingOptionResponse] = js.native
+    def addApplicationCloudWatchLoggingOption(params: AddApplicationCloudWatchLoggingOptionRequest): Request[AddApplicationCloudWatchLoggingOptionResponse] = js.native
     def addApplicationInput(params: AddApplicationInputRequest): Request[AddApplicationInputResponse] = js.native
-    def addApplicationInputProcessingConfiguration(
-        params: AddApplicationInputProcessingConfigurationRequest
-    ): Request[AddApplicationInputProcessingConfigurationResponse] = js.native
+    def addApplicationInputProcessingConfiguration(params: AddApplicationInputProcessingConfigurationRequest): Request[AddApplicationInputProcessingConfigurationResponse] = js.native
     def addApplicationOutput(params: AddApplicationOutputRequest): Request[AddApplicationOutputResponse] = js.native
-    def addApplicationReferenceDataSource(
-        params: AddApplicationReferenceDataSourceRequest
-    ): Request[AddApplicationReferenceDataSourceResponse] = js.native
+    def addApplicationReferenceDataSource(params: AddApplicationReferenceDataSourceRequest): Request[AddApplicationReferenceDataSourceResponse] = js.native
     def createApplication(params: CreateApplicationRequest): Request[CreateApplicationResponse] = js.native
     def deleteApplication(params: DeleteApplicationRequest): Request[DeleteApplicationResponse] = js.native
-    def deleteApplicationCloudWatchLoggingOption(
-        params: DeleteApplicationCloudWatchLoggingOptionRequest
-    ): Request[DeleteApplicationCloudWatchLoggingOptionResponse] = js.native
-    def deleteApplicationInputProcessingConfiguration(
-        params: DeleteApplicationInputProcessingConfigurationRequest
-    ): Request[DeleteApplicationInputProcessingConfigurationResponse] = js.native
-    def deleteApplicationOutput(params: DeleteApplicationOutputRequest): Request[DeleteApplicationOutputResponse] =
-      js.native
-    def deleteApplicationReferenceDataSource(
-        params: DeleteApplicationReferenceDataSourceRequest
-    ): Request[DeleteApplicationReferenceDataSourceResponse] = js.native
+    def deleteApplicationCloudWatchLoggingOption(params: DeleteApplicationCloudWatchLoggingOptionRequest): Request[DeleteApplicationCloudWatchLoggingOptionResponse] = js.native
+    def deleteApplicationInputProcessingConfiguration(params: DeleteApplicationInputProcessingConfigurationRequest): Request[DeleteApplicationInputProcessingConfigurationResponse] = js.native
+    def deleteApplicationOutput(params: DeleteApplicationOutputRequest): Request[DeleteApplicationOutputResponse] = js.native
+    def deleteApplicationReferenceDataSource(params: DeleteApplicationReferenceDataSourceRequest): Request[DeleteApplicationReferenceDataSourceResponse] = js.native
     def describeApplication(params: DescribeApplicationRequest): Request[DescribeApplicationResponse] = js.native
     def discoverInputSchema(params: DiscoverInputSchemaRequest): Request[DiscoverInputSchemaResponse] = js.native
     def listApplications(params: ListApplicationsRequest): Request[ListApplicationsResponse] = js.native
@@ -408,16 +362,12 @@ package kinesisanalytics {
 
       ApplicationCode.foreach(__v => __obj.updateDynamic("ApplicationCode")(__v.asInstanceOf[js.Any]))
       ApplicationDescription.foreach(__v => __obj.updateDynamic("ApplicationDescription")(__v.asInstanceOf[js.Any]))
-      CloudWatchLoggingOptionDescriptions.foreach(__v =>
-        __obj.updateDynamic("CloudWatchLoggingOptionDescriptions")(__v.asInstanceOf[js.Any])
-      )
+      CloudWatchLoggingOptionDescriptions.foreach(__v => __obj.updateDynamic("CloudWatchLoggingOptionDescriptions")(__v.asInstanceOf[js.Any]))
       CreateTimestamp.foreach(__v => __obj.updateDynamic("CreateTimestamp")(__v.asInstanceOf[js.Any]))
       InputDescriptions.foreach(__v => __obj.updateDynamic("InputDescriptions")(__v.asInstanceOf[js.Any]))
       LastUpdateTimestamp.foreach(__v => __obj.updateDynamic("LastUpdateTimestamp")(__v.asInstanceOf[js.Any]))
       OutputDescriptions.foreach(__v => __obj.updateDynamic("OutputDescriptions")(__v.asInstanceOf[js.Any]))
-      ReferenceDataSourceDescriptions.foreach(__v =>
-        __obj.updateDynamic("ReferenceDataSourceDescriptions")(__v.asInstanceOf[js.Any])
-      )
+      ReferenceDataSourceDescriptions.foreach(__v => __obj.updateDynamic("ReferenceDataSourceDescriptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationDetail]
     }
   }
@@ -486,14 +436,10 @@ package kinesisanalytics {
     ): ApplicationUpdate = {
       val __obj = js.Dynamic.literal()
       ApplicationCodeUpdate.foreach(__v => __obj.updateDynamic("ApplicationCodeUpdate")(__v.asInstanceOf[js.Any]))
-      CloudWatchLoggingOptionUpdates.foreach(__v =>
-        __obj.updateDynamic("CloudWatchLoggingOptionUpdates")(__v.asInstanceOf[js.Any])
-      )
+      CloudWatchLoggingOptionUpdates.foreach(__v => __obj.updateDynamic("CloudWatchLoggingOptionUpdates")(__v.asInstanceOf[js.Any]))
       InputUpdates.foreach(__v => __obj.updateDynamic("InputUpdates")(__v.asInstanceOf[js.Any]))
       OutputUpdates.foreach(__v => __obj.updateDynamic("OutputUpdates")(__v.asInstanceOf[js.Any]))
-      ReferenceDataSourceUpdates.foreach(__v =>
-        __obj.updateDynamic("ReferenceDataSourceUpdates")(__v.asInstanceOf[js.Any])
-      )
+      ReferenceDataSourceUpdates.foreach(__v => __obj.updateDynamic("ReferenceDataSourceUpdates")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationUpdate]
     }
   }
@@ -570,9 +516,7 @@ package kinesisanalytics {
         "RoleARN" -> RoleARN.asInstanceOf[js.Any]
       )
 
-      CloudWatchLoggingOptionId.foreach(__v =>
-        __obj.updateDynamic("CloudWatchLoggingOptionId")(__v.asInstanceOf[js.Any])
-      )
+      CloudWatchLoggingOptionId.foreach(__v => __obj.updateDynamic("CloudWatchLoggingOptionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CloudWatchLoggingOptionDescription]
     }
   }
@@ -940,12 +884,8 @@ package kinesisanalytics {
         S3Configuration: js.UndefOr[S3Configuration] = js.undefined
     ): DiscoverInputSchemaRequest = {
       val __obj = js.Dynamic.literal()
-      InputProcessingConfiguration.foreach(__v =>
-        __obj.updateDynamic("InputProcessingConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      InputStartingPositionConfiguration.foreach(__v =>
-        __obj.updateDynamic("InputStartingPositionConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      InputProcessingConfiguration.foreach(__v => __obj.updateDynamic("InputProcessingConfiguration")(__v.asInstanceOf[js.Any]))
+      InputStartingPositionConfiguration.foreach(__v => __obj.updateDynamic("InputStartingPositionConfiguration")(__v.asInstanceOf[js.Any]))
       ResourceARN.foreach(__v => __obj.updateDynamic("ResourceARN")(__v.asInstanceOf[js.Any]))
       RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
       S3Configuration.foreach(__v => __obj.updateDynamic("S3Configuration")(__v.asInstanceOf[js.Any]))
@@ -1010,9 +950,7 @@ package kinesisanalytics {
       )
 
       InputParallelism.foreach(__v => __obj.updateDynamic("InputParallelism")(__v.asInstanceOf[js.Any]))
-      InputProcessingConfiguration.foreach(__v =>
-        __obj.updateDynamic("InputProcessingConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      InputProcessingConfiguration.foreach(__v => __obj.updateDynamic("InputProcessingConfiguration")(__v.asInstanceOf[js.Any]))
       KinesisFirehoseInput.foreach(__v => __obj.updateDynamic("KinesisFirehoseInput")(__v.asInstanceOf[js.Any]))
       KinesisStreamsInput.foreach(__v => __obj.updateDynamic("KinesisStreamsInput")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Input]
@@ -1076,19 +1014,11 @@ package kinesisanalytics {
       InAppStreamNames.foreach(__v => __obj.updateDynamic("InAppStreamNames")(__v.asInstanceOf[js.Any]))
       InputId.foreach(__v => __obj.updateDynamic("InputId")(__v.asInstanceOf[js.Any]))
       InputParallelism.foreach(__v => __obj.updateDynamic("InputParallelism")(__v.asInstanceOf[js.Any]))
-      InputProcessingConfigurationDescription.foreach(__v =>
-        __obj.updateDynamic("InputProcessingConfigurationDescription")(__v.asInstanceOf[js.Any])
-      )
+      InputProcessingConfigurationDescription.foreach(__v => __obj.updateDynamic("InputProcessingConfigurationDescription")(__v.asInstanceOf[js.Any]))
       InputSchema.foreach(__v => __obj.updateDynamic("InputSchema")(__v.asInstanceOf[js.Any]))
-      InputStartingPositionConfiguration.foreach(__v =>
-        __obj.updateDynamic("InputStartingPositionConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      KinesisFirehoseInputDescription.foreach(__v =>
-        __obj.updateDynamic("KinesisFirehoseInputDescription")(__v.asInstanceOf[js.Any])
-      )
-      KinesisStreamsInputDescription.foreach(__v =>
-        __obj.updateDynamic("KinesisStreamsInputDescription")(__v.asInstanceOf[js.Any])
-      )
+      InputStartingPositionConfiguration.foreach(__v => __obj.updateDynamic("InputStartingPositionConfiguration")(__v.asInstanceOf[js.Any]))
+      KinesisFirehoseInputDescription.foreach(__v => __obj.updateDynamic("KinesisFirehoseInputDescription")(__v.asInstanceOf[js.Any]))
+      KinesisStreamsInputDescription.foreach(__v => __obj.updateDynamic("KinesisStreamsInputDescription")(__v.asInstanceOf[js.Any]))
       NamePrefix.foreach(__v => __obj.updateDynamic("NamePrefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InputDescription]
     }
@@ -1235,9 +1165,7 @@ package kinesisanalytics {
         InputLambdaProcessorDescription: js.UndefOr[InputLambdaProcessorDescription] = js.undefined
     ): InputProcessingConfigurationDescription = {
       val __obj = js.Dynamic.literal()
-      InputLambdaProcessorDescription.foreach(__v =>
-        __obj.updateDynamic("InputLambdaProcessorDescription")(__v.asInstanceOf[js.Any])
-      )
+      InputLambdaProcessorDescription.foreach(__v => __obj.updateDynamic("InputLambdaProcessorDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InputProcessingConfigurationDescription]
     }
   }
@@ -1347,16 +1275,10 @@ package kinesisanalytics {
       )
 
       InputParallelismUpdate.foreach(__v => __obj.updateDynamic("InputParallelismUpdate")(__v.asInstanceOf[js.Any]))
-      InputProcessingConfigurationUpdate.foreach(__v =>
-        __obj.updateDynamic("InputProcessingConfigurationUpdate")(__v.asInstanceOf[js.Any])
-      )
+      InputProcessingConfigurationUpdate.foreach(__v => __obj.updateDynamic("InputProcessingConfigurationUpdate")(__v.asInstanceOf[js.Any]))
       InputSchemaUpdate.foreach(__v => __obj.updateDynamic("InputSchemaUpdate")(__v.asInstanceOf[js.Any]))
-      KinesisFirehoseInputUpdate.foreach(__v =>
-        __obj.updateDynamic("KinesisFirehoseInputUpdate")(__v.asInstanceOf[js.Any])
-      )
-      KinesisStreamsInputUpdate.foreach(__v =>
-        __obj.updateDynamic("KinesisStreamsInputUpdate")(__v.asInstanceOf[js.Any])
-      )
+      KinesisFirehoseInputUpdate.foreach(__v => __obj.updateDynamic("KinesisFirehoseInputUpdate")(__v.asInstanceOf[js.Any]))
+      KinesisStreamsInputUpdate.foreach(__v => __obj.updateDynamic("KinesisStreamsInputUpdate")(__v.asInstanceOf[js.Any]))
       NamePrefixUpdate.foreach(__v => __obj.updateDynamic("NamePrefixUpdate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InputUpdate]
     }
@@ -1739,9 +1661,7 @@ package kinesisanalytics {
         Limit: js.UndefOr[ListApplicationsInputLimit] = js.undefined
     ): ListApplicationsRequest = {
       val __obj = js.Dynamic.literal()
-      ExclusiveStartApplicationName.foreach(__v =>
-        __obj.updateDynamic("ExclusiveStartApplicationName")(__v.asInstanceOf[js.Any])
-      )
+      ExclusiveStartApplicationName.foreach(__v => __obj.updateDynamic("ExclusiveStartApplicationName")(__v.asInstanceOf[js.Any]))
       Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListApplicationsRequest]
     }
@@ -1886,12 +1806,8 @@ package kinesisanalytics {
     ): OutputDescription = {
       val __obj = js.Dynamic.literal()
       DestinationSchema.foreach(__v => __obj.updateDynamic("DestinationSchema")(__v.asInstanceOf[js.Any]))
-      KinesisFirehoseOutputDescription.foreach(__v =>
-        __obj.updateDynamic("KinesisFirehoseOutputDescription")(__v.asInstanceOf[js.Any])
-      )
-      KinesisStreamsOutputDescription.foreach(__v =>
-        __obj.updateDynamic("KinesisStreamsOutputDescription")(__v.asInstanceOf[js.Any])
-      )
+      KinesisFirehoseOutputDescription.foreach(__v => __obj.updateDynamic("KinesisFirehoseOutputDescription")(__v.asInstanceOf[js.Any]))
+      KinesisStreamsOutputDescription.foreach(__v => __obj.updateDynamic("KinesisStreamsOutputDescription")(__v.asInstanceOf[js.Any]))
       LambdaOutputDescription.foreach(__v => __obj.updateDynamic("LambdaOutputDescription")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       OutputId.foreach(__v => __obj.updateDynamic("OutputId")(__v.asInstanceOf[js.Any]))
@@ -1927,12 +1843,8 @@ package kinesisanalytics {
       )
 
       DestinationSchemaUpdate.foreach(__v => __obj.updateDynamic("DestinationSchemaUpdate")(__v.asInstanceOf[js.Any]))
-      KinesisFirehoseOutputUpdate.foreach(__v =>
-        __obj.updateDynamic("KinesisFirehoseOutputUpdate")(__v.asInstanceOf[js.Any])
-      )
-      KinesisStreamsOutputUpdate.foreach(__v =>
-        __obj.updateDynamic("KinesisStreamsOutputUpdate")(__v.asInstanceOf[js.Any])
-      )
+      KinesisFirehoseOutputUpdate.foreach(__v => __obj.updateDynamic("KinesisFirehoseOutputUpdate")(__v.asInstanceOf[js.Any]))
+      KinesisStreamsOutputUpdate.foreach(__v => __obj.updateDynamic("KinesisStreamsOutputUpdate")(__v.asInstanceOf[js.Any]))
       LambdaOutputUpdate.foreach(__v => __obj.updateDynamic("LambdaOutputUpdate")(__v.asInstanceOf[js.Any]))
       NameUpdate.foreach(__v => __obj.updateDynamic("NameUpdate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutputUpdate]
@@ -2081,9 +1993,7 @@ package kinesisanalytics {
       )
 
       ReferenceSchemaUpdate.foreach(__v => __obj.updateDynamic("ReferenceSchemaUpdate")(__v.asInstanceOf[js.Any]))
-      S3ReferenceDataSourceUpdate.foreach(__v =>
-        __obj.updateDynamic("S3ReferenceDataSourceUpdate")(__v.asInstanceOf[js.Any])
-      )
+      S3ReferenceDataSourceUpdate.foreach(__v => __obj.updateDynamic("S3ReferenceDataSourceUpdate")(__v.asInstanceOf[js.Any]))
       TableNameUpdate.foreach(__v => __obj.updateDynamic("TableNameUpdate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReferenceDataSourceUpdate]
     }

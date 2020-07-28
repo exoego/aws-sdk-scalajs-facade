@@ -23,11 +23,9 @@ package object codecommit {
   type ApprovalRulesSatisfiedList = js.Array[ApprovalRuleName]
   type Approved = Boolean
   type Arn = String
-  type BatchAssociateApprovalRuleTemplateWithRepositoriesErrorsList =
-    js.Array[BatchAssociateApprovalRuleTemplateWithRepositoriesError]
+  type BatchAssociateApprovalRuleTemplateWithRepositoriesErrorsList = js.Array[BatchAssociateApprovalRuleTemplateWithRepositoriesError]
   type BatchDescribeMergeConflictsErrors = js.Array[BatchDescribeMergeConflictsError]
-  type BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorsList =
-    js.Array[BatchDisassociateApprovalRuleTemplateFromRepositoriesError]
+  type BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorsList = js.Array[BatchDisassociateApprovalRuleTemplateFromRepositoriesError]
   type BatchGetCommitsErrorsList = js.Array[BatchGetCommitsError]
   type BranchName = String
   type BranchNameList = js.Array[BranchName]
@@ -136,202 +134,83 @@ package object codecommit {
 
   implicit final class CodeCommitOps(private val service: CodeCommit) extends AnyVal {
 
-    @inline def associateApprovalRuleTemplateWithRepositoryFuture(
-        params: AssociateApprovalRuleTemplateWithRepositoryInput
-    ): Future[js.Object] = service.associateApprovalRuleTemplateWithRepository(params).promise().toFuture
-    @inline def batchAssociateApprovalRuleTemplateWithRepositoriesFuture(
-        params: BatchAssociateApprovalRuleTemplateWithRepositoriesInput
-    ): Future[BatchAssociateApprovalRuleTemplateWithRepositoriesOutput] =
-      service.batchAssociateApprovalRuleTemplateWithRepositories(params).promise().toFuture
-    @inline def batchDescribeMergeConflictsFuture(
-        params: BatchDescribeMergeConflictsInput
-    ): Future[BatchDescribeMergeConflictsOutput] = service.batchDescribeMergeConflicts(params).promise().toFuture
-    @inline def batchDisassociateApprovalRuleTemplateFromRepositoriesFuture(
-        params: BatchDisassociateApprovalRuleTemplateFromRepositoriesInput
-    ): Future[BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput] =
-      service.batchDisassociateApprovalRuleTemplateFromRepositories(params).promise().toFuture
-    @inline def batchGetCommitsFuture(params: BatchGetCommitsInput): Future[BatchGetCommitsOutput] =
-      service.batchGetCommits(params).promise().toFuture
-    @inline def batchGetRepositoriesFuture(params: BatchGetRepositoriesInput): Future[BatchGetRepositoriesOutput] =
-      service.batchGetRepositories(params).promise().toFuture
-    @inline def createApprovalRuleTemplateFuture(
-        params: CreateApprovalRuleTemplateInput
-    ): Future[CreateApprovalRuleTemplateOutput] = service.createApprovalRuleTemplate(params).promise().toFuture
-    @inline def createBranchFuture(params: CreateBranchInput): Future[js.Object] =
-      service.createBranch(params).promise().toFuture
-    @inline def createCommitFuture(params: CreateCommitInput): Future[CreateCommitOutput] =
-      service.createCommit(params).promise().toFuture
-    @inline def createPullRequestApprovalRuleFuture(
-        params: CreatePullRequestApprovalRuleInput
-    ): Future[CreatePullRequestApprovalRuleOutput] = service.createPullRequestApprovalRule(params).promise().toFuture
-    @inline def createPullRequestFuture(params: CreatePullRequestInput): Future[CreatePullRequestOutput] =
-      service.createPullRequest(params).promise().toFuture
-    @inline def createRepositoryFuture(params: CreateRepositoryInput): Future[CreateRepositoryOutput] =
-      service.createRepository(params).promise().toFuture
-    @inline def createUnreferencedMergeCommitFuture(
-        params: CreateUnreferencedMergeCommitInput
-    ): Future[CreateUnreferencedMergeCommitOutput] = service.createUnreferencedMergeCommit(params).promise().toFuture
-    @inline def deleteApprovalRuleTemplateFuture(
-        params: DeleteApprovalRuleTemplateInput
-    ): Future[DeleteApprovalRuleTemplateOutput] = service.deleteApprovalRuleTemplate(params).promise().toFuture
-    @inline def deleteBranchFuture(params: DeleteBranchInput): Future[DeleteBranchOutput] =
-      service.deleteBranch(params).promise().toFuture
-    @inline def deleteCommentContentFuture(params: DeleteCommentContentInput): Future[DeleteCommentContentOutput] =
-      service.deleteCommentContent(params).promise().toFuture
-    @inline def deleteFileFuture(params: DeleteFileInput): Future[DeleteFileOutput] =
-      service.deleteFile(params).promise().toFuture
-    @inline def deletePullRequestApprovalRuleFuture(
-        params: DeletePullRequestApprovalRuleInput
-    ): Future[DeletePullRequestApprovalRuleOutput] = service.deletePullRequestApprovalRule(params).promise().toFuture
-    @inline def deleteRepositoryFuture(params: DeleteRepositoryInput): Future[DeleteRepositoryOutput] =
-      service.deleteRepository(params).promise().toFuture
-    @inline def describeMergeConflictsFuture(
-        params: DescribeMergeConflictsInput
-    ): Future[DescribeMergeConflictsOutput] = service.describeMergeConflicts(params).promise().toFuture
-    @inline def describePullRequestEventsFuture(
-        params: DescribePullRequestEventsInput
-    ): Future[DescribePullRequestEventsOutput] = service.describePullRequestEvents(params).promise().toFuture
-    @inline def disassociateApprovalRuleTemplateFromRepositoryFuture(
-        params: DisassociateApprovalRuleTemplateFromRepositoryInput
-    ): Future[js.Object] = service.disassociateApprovalRuleTemplateFromRepository(params).promise().toFuture
-    @inline def evaluatePullRequestApprovalRulesFuture(
-        params: EvaluatePullRequestApprovalRulesInput
-    ): Future[EvaluatePullRequestApprovalRulesOutput] =
-      service.evaluatePullRequestApprovalRules(params).promise().toFuture
-    @inline def getApprovalRuleTemplateFuture(
-        params: GetApprovalRuleTemplateInput
-    ): Future[GetApprovalRuleTemplateOutput] = service.getApprovalRuleTemplate(params).promise().toFuture
+    @inline def associateApprovalRuleTemplateWithRepositoryFuture(params: AssociateApprovalRuleTemplateWithRepositoryInput): Future[js.Object] = service.associateApprovalRuleTemplateWithRepository(params).promise().toFuture
+    @inline def batchAssociateApprovalRuleTemplateWithRepositoriesFuture(params: BatchAssociateApprovalRuleTemplateWithRepositoriesInput): Future[BatchAssociateApprovalRuleTemplateWithRepositoriesOutput] = service.batchAssociateApprovalRuleTemplateWithRepositories(params).promise().toFuture
+    @inline def batchDescribeMergeConflictsFuture(params: BatchDescribeMergeConflictsInput): Future[BatchDescribeMergeConflictsOutput] = service.batchDescribeMergeConflicts(params).promise().toFuture
+    @inline def batchDisassociateApprovalRuleTemplateFromRepositoriesFuture(params: BatchDisassociateApprovalRuleTemplateFromRepositoriesInput): Future[BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput] = service.batchDisassociateApprovalRuleTemplateFromRepositories(params).promise().toFuture
+    @inline def batchGetCommitsFuture(params: BatchGetCommitsInput): Future[BatchGetCommitsOutput] = service.batchGetCommits(params).promise().toFuture
+    @inline def batchGetRepositoriesFuture(params: BatchGetRepositoriesInput): Future[BatchGetRepositoriesOutput] = service.batchGetRepositories(params).promise().toFuture
+    @inline def createApprovalRuleTemplateFuture(params: CreateApprovalRuleTemplateInput): Future[CreateApprovalRuleTemplateOutput] = service.createApprovalRuleTemplate(params).promise().toFuture
+    @inline def createBranchFuture(params: CreateBranchInput): Future[js.Object] = service.createBranch(params).promise().toFuture
+    @inline def createCommitFuture(params: CreateCommitInput): Future[CreateCommitOutput] = service.createCommit(params).promise().toFuture
+    @inline def createPullRequestApprovalRuleFuture(params: CreatePullRequestApprovalRuleInput): Future[CreatePullRequestApprovalRuleOutput] = service.createPullRequestApprovalRule(params).promise().toFuture
+    @inline def createPullRequestFuture(params: CreatePullRequestInput): Future[CreatePullRequestOutput] = service.createPullRequest(params).promise().toFuture
+    @inline def createRepositoryFuture(params: CreateRepositoryInput): Future[CreateRepositoryOutput] = service.createRepository(params).promise().toFuture
+    @inline def createUnreferencedMergeCommitFuture(params: CreateUnreferencedMergeCommitInput): Future[CreateUnreferencedMergeCommitOutput] = service.createUnreferencedMergeCommit(params).promise().toFuture
+    @inline def deleteApprovalRuleTemplateFuture(params: DeleteApprovalRuleTemplateInput): Future[DeleteApprovalRuleTemplateOutput] = service.deleteApprovalRuleTemplate(params).promise().toFuture
+    @inline def deleteBranchFuture(params: DeleteBranchInput): Future[DeleteBranchOutput] = service.deleteBranch(params).promise().toFuture
+    @inline def deleteCommentContentFuture(params: DeleteCommentContentInput): Future[DeleteCommentContentOutput] = service.deleteCommentContent(params).promise().toFuture
+    @inline def deleteFileFuture(params: DeleteFileInput): Future[DeleteFileOutput] = service.deleteFile(params).promise().toFuture
+    @inline def deletePullRequestApprovalRuleFuture(params: DeletePullRequestApprovalRuleInput): Future[DeletePullRequestApprovalRuleOutput] = service.deletePullRequestApprovalRule(params).promise().toFuture
+    @inline def deleteRepositoryFuture(params: DeleteRepositoryInput): Future[DeleteRepositoryOutput] = service.deleteRepository(params).promise().toFuture
+    @inline def describeMergeConflictsFuture(params: DescribeMergeConflictsInput): Future[DescribeMergeConflictsOutput] = service.describeMergeConflicts(params).promise().toFuture
+    @inline def describePullRequestEventsFuture(params: DescribePullRequestEventsInput): Future[DescribePullRequestEventsOutput] = service.describePullRequestEvents(params).promise().toFuture
+    @inline def disassociateApprovalRuleTemplateFromRepositoryFuture(params: DisassociateApprovalRuleTemplateFromRepositoryInput): Future[js.Object] = service.disassociateApprovalRuleTemplateFromRepository(params).promise().toFuture
+    @inline def evaluatePullRequestApprovalRulesFuture(params: EvaluatePullRequestApprovalRulesInput): Future[EvaluatePullRequestApprovalRulesOutput] = service.evaluatePullRequestApprovalRules(params).promise().toFuture
+    @inline def getApprovalRuleTemplateFuture(params: GetApprovalRuleTemplateInput): Future[GetApprovalRuleTemplateOutput] = service.getApprovalRuleTemplate(params).promise().toFuture
     @inline def getBlobFuture(params: GetBlobInput): Future[GetBlobOutput] = service.getBlob(params).promise().toFuture
-    @inline def getBranchFuture(params: GetBranchInput): Future[GetBranchOutput] =
-      service.getBranch(params).promise().toFuture
-    @inline def getCommentFuture(params: GetCommentInput): Future[GetCommentOutput] =
-      service.getComment(params).promise().toFuture
-    @inline def getCommentReactionsFuture(params: GetCommentReactionsInput): Future[GetCommentReactionsOutput] =
-      service.getCommentReactions(params).promise().toFuture
-    @inline def getCommentsForComparedCommitFuture(
-        params: GetCommentsForComparedCommitInput
-    ): Future[GetCommentsForComparedCommitOutput] = service.getCommentsForComparedCommit(params).promise().toFuture
-    @inline def getCommentsForPullRequestFuture(
-        params: GetCommentsForPullRequestInput
-    ): Future[GetCommentsForPullRequestOutput] = service.getCommentsForPullRequest(params).promise().toFuture
-    @inline def getCommitFuture(params: GetCommitInput): Future[GetCommitOutput] =
-      service.getCommit(params).promise().toFuture
-    @inline def getDifferencesFuture(params: GetDifferencesInput): Future[GetDifferencesOutput] =
-      service.getDifferences(params).promise().toFuture
+    @inline def getBranchFuture(params: GetBranchInput): Future[GetBranchOutput] = service.getBranch(params).promise().toFuture
+    @inline def getCommentFuture(params: GetCommentInput): Future[GetCommentOutput] = service.getComment(params).promise().toFuture
+    @inline def getCommentReactionsFuture(params: GetCommentReactionsInput): Future[GetCommentReactionsOutput] = service.getCommentReactions(params).promise().toFuture
+    @inline def getCommentsForComparedCommitFuture(params: GetCommentsForComparedCommitInput): Future[GetCommentsForComparedCommitOutput] = service.getCommentsForComparedCommit(params).promise().toFuture
+    @inline def getCommentsForPullRequestFuture(params: GetCommentsForPullRequestInput): Future[GetCommentsForPullRequestOutput] = service.getCommentsForPullRequest(params).promise().toFuture
+    @inline def getCommitFuture(params: GetCommitInput): Future[GetCommitOutput] = service.getCommit(params).promise().toFuture
+    @inline def getDifferencesFuture(params: GetDifferencesInput): Future[GetDifferencesOutput] = service.getDifferences(params).promise().toFuture
     @inline def getFileFuture(params: GetFileInput): Future[GetFileOutput] = service.getFile(params).promise().toFuture
-    @inline def getFolderFuture(params: GetFolderInput): Future[GetFolderOutput] =
-      service.getFolder(params).promise().toFuture
-    @inline def getMergeCommitFuture(params: GetMergeCommitInput): Future[GetMergeCommitOutput] =
-      service.getMergeCommit(params).promise().toFuture
-    @inline def getMergeConflictsFuture(params: GetMergeConflictsInput): Future[GetMergeConflictsOutput] =
-      service.getMergeConflicts(params).promise().toFuture
-    @inline def getMergeOptionsFuture(params: GetMergeOptionsInput): Future[GetMergeOptionsOutput] =
-      service.getMergeOptions(params).promise().toFuture
-    @inline def getPullRequestApprovalStatesFuture(
-        params: GetPullRequestApprovalStatesInput
-    ): Future[GetPullRequestApprovalStatesOutput] = service.getPullRequestApprovalStates(params).promise().toFuture
-    @inline def getPullRequestFuture(params: GetPullRequestInput): Future[GetPullRequestOutput] =
-      service.getPullRequest(params).promise().toFuture
-    @inline def getPullRequestOverrideStateFuture(
-        params: GetPullRequestOverrideStateInput
-    ): Future[GetPullRequestOverrideStateOutput] = service.getPullRequestOverrideState(params).promise().toFuture
-    @inline def getRepositoryFuture(params: GetRepositoryInput): Future[GetRepositoryOutput] =
-      service.getRepository(params).promise().toFuture
-    @inline def getRepositoryTriggersFuture(params: GetRepositoryTriggersInput): Future[GetRepositoryTriggersOutput] =
-      service.getRepositoryTriggers(params).promise().toFuture
-    @inline def listApprovalRuleTemplatesFuture(
-        params: ListApprovalRuleTemplatesInput
-    ): Future[ListApprovalRuleTemplatesOutput] = service.listApprovalRuleTemplates(params).promise().toFuture
-    @inline def listAssociatedApprovalRuleTemplatesForRepositoryFuture(
-        params: ListAssociatedApprovalRuleTemplatesForRepositoryInput
-    ): Future[ListAssociatedApprovalRuleTemplatesForRepositoryOutput] =
-      service.listAssociatedApprovalRuleTemplatesForRepository(params).promise().toFuture
-    @inline def listBranchesFuture(params: ListBranchesInput): Future[ListBranchesOutput] =
-      service.listBranches(params).promise().toFuture
-    @inline def listPullRequestsFuture(params: ListPullRequestsInput): Future[ListPullRequestsOutput] =
-      service.listPullRequests(params).promise().toFuture
-    @inline def listRepositoriesForApprovalRuleTemplateFuture(
-        params: ListRepositoriesForApprovalRuleTemplateInput
-    ): Future[ListRepositoriesForApprovalRuleTemplateOutput] =
-      service.listRepositoriesForApprovalRuleTemplate(params).promise().toFuture
-    @inline def listRepositoriesFuture(params: ListRepositoriesInput): Future[ListRepositoriesOutput] =
-      service.listRepositories(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def mergeBranchesByFastForwardFuture(
-        params: MergeBranchesByFastForwardInput
-    ): Future[MergeBranchesByFastForwardOutput] = service.mergeBranchesByFastForward(params).promise().toFuture
-    @inline def mergeBranchesBySquashFuture(params: MergeBranchesBySquashInput): Future[MergeBranchesBySquashOutput] =
-      service.mergeBranchesBySquash(params).promise().toFuture
-    @inline def mergeBranchesByThreeWayFuture(
-        params: MergeBranchesByThreeWayInput
-    ): Future[MergeBranchesByThreeWayOutput] = service.mergeBranchesByThreeWay(params).promise().toFuture
-    @inline def mergePullRequestByFastForwardFuture(
-        params: MergePullRequestByFastForwardInput
-    ): Future[MergePullRequestByFastForwardOutput] = service.mergePullRequestByFastForward(params).promise().toFuture
-    @inline def mergePullRequestBySquashFuture(
-        params: MergePullRequestBySquashInput
-    ): Future[MergePullRequestBySquashOutput] = service.mergePullRequestBySquash(params).promise().toFuture
-    @inline def mergePullRequestByThreeWayFuture(
-        params: MergePullRequestByThreeWayInput
-    ): Future[MergePullRequestByThreeWayOutput] = service.mergePullRequestByThreeWay(params).promise().toFuture
-    @inline def overridePullRequestApprovalRulesFuture(
-        params: OverridePullRequestApprovalRulesInput
-    ): Future[js.Object] = service.overridePullRequestApprovalRules(params).promise().toFuture
-    @inline def postCommentForComparedCommitFuture(
-        params: PostCommentForComparedCommitInput
-    ): Future[PostCommentForComparedCommitOutput] = service.postCommentForComparedCommit(params).promise().toFuture
-    @inline def postCommentForPullRequestFuture(
-        params: PostCommentForPullRequestInput
-    ): Future[PostCommentForPullRequestOutput] = service.postCommentForPullRequest(params).promise().toFuture
-    @inline def postCommentReplyFuture(params: PostCommentReplyInput): Future[PostCommentReplyOutput] =
-      service.postCommentReply(params).promise().toFuture
-    @inline def putCommentReactionFuture(params: PutCommentReactionInput): Future[js.Object] =
-      service.putCommentReaction(params).promise().toFuture
+    @inline def getFolderFuture(params: GetFolderInput): Future[GetFolderOutput] = service.getFolder(params).promise().toFuture
+    @inline def getMergeCommitFuture(params: GetMergeCommitInput): Future[GetMergeCommitOutput] = service.getMergeCommit(params).promise().toFuture
+    @inline def getMergeConflictsFuture(params: GetMergeConflictsInput): Future[GetMergeConflictsOutput] = service.getMergeConflicts(params).promise().toFuture
+    @inline def getMergeOptionsFuture(params: GetMergeOptionsInput): Future[GetMergeOptionsOutput] = service.getMergeOptions(params).promise().toFuture
+    @inline def getPullRequestApprovalStatesFuture(params: GetPullRequestApprovalStatesInput): Future[GetPullRequestApprovalStatesOutput] = service.getPullRequestApprovalStates(params).promise().toFuture
+    @inline def getPullRequestFuture(params: GetPullRequestInput): Future[GetPullRequestOutput] = service.getPullRequest(params).promise().toFuture
+    @inline def getPullRequestOverrideStateFuture(params: GetPullRequestOverrideStateInput): Future[GetPullRequestOverrideStateOutput] = service.getPullRequestOverrideState(params).promise().toFuture
+    @inline def getRepositoryFuture(params: GetRepositoryInput): Future[GetRepositoryOutput] = service.getRepository(params).promise().toFuture
+    @inline def getRepositoryTriggersFuture(params: GetRepositoryTriggersInput): Future[GetRepositoryTriggersOutput] = service.getRepositoryTriggers(params).promise().toFuture
+    @inline def listApprovalRuleTemplatesFuture(params: ListApprovalRuleTemplatesInput): Future[ListApprovalRuleTemplatesOutput] = service.listApprovalRuleTemplates(params).promise().toFuture
+    @inline def listAssociatedApprovalRuleTemplatesForRepositoryFuture(params: ListAssociatedApprovalRuleTemplatesForRepositoryInput): Future[ListAssociatedApprovalRuleTemplatesForRepositoryOutput] = service.listAssociatedApprovalRuleTemplatesForRepository(params).promise().toFuture
+    @inline def listBranchesFuture(params: ListBranchesInput): Future[ListBranchesOutput] = service.listBranches(params).promise().toFuture
+    @inline def listPullRequestsFuture(params: ListPullRequestsInput): Future[ListPullRequestsOutput] = service.listPullRequests(params).promise().toFuture
+    @inline def listRepositoriesForApprovalRuleTemplateFuture(params: ListRepositoriesForApprovalRuleTemplateInput): Future[ListRepositoriesForApprovalRuleTemplateOutput] = service.listRepositoriesForApprovalRuleTemplate(params).promise().toFuture
+    @inline def listRepositoriesFuture(params: ListRepositoriesInput): Future[ListRepositoriesOutput] = service.listRepositories(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] = service.listTagsForResource(params).promise().toFuture
+    @inline def mergeBranchesByFastForwardFuture(params: MergeBranchesByFastForwardInput): Future[MergeBranchesByFastForwardOutput] = service.mergeBranchesByFastForward(params).promise().toFuture
+    @inline def mergeBranchesBySquashFuture(params: MergeBranchesBySquashInput): Future[MergeBranchesBySquashOutput] = service.mergeBranchesBySquash(params).promise().toFuture
+    @inline def mergeBranchesByThreeWayFuture(params: MergeBranchesByThreeWayInput): Future[MergeBranchesByThreeWayOutput] = service.mergeBranchesByThreeWay(params).promise().toFuture
+    @inline def mergePullRequestByFastForwardFuture(params: MergePullRequestByFastForwardInput): Future[MergePullRequestByFastForwardOutput] = service.mergePullRequestByFastForward(params).promise().toFuture
+    @inline def mergePullRequestBySquashFuture(params: MergePullRequestBySquashInput): Future[MergePullRequestBySquashOutput] = service.mergePullRequestBySquash(params).promise().toFuture
+    @inline def mergePullRequestByThreeWayFuture(params: MergePullRequestByThreeWayInput): Future[MergePullRequestByThreeWayOutput] = service.mergePullRequestByThreeWay(params).promise().toFuture
+    @inline def overridePullRequestApprovalRulesFuture(params: OverridePullRequestApprovalRulesInput): Future[js.Object] = service.overridePullRequestApprovalRules(params).promise().toFuture
+    @inline def postCommentForComparedCommitFuture(params: PostCommentForComparedCommitInput): Future[PostCommentForComparedCommitOutput] = service.postCommentForComparedCommit(params).promise().toFuture
+    @inline def postCommentForPullRequestFuture(params: PostCommentForPullRequestInput): Future[PostCommentForPullRequestOutput] = service.postCommentForPullRequest(params).promise().toFuture
+    @inline def postCommentReplyFuture(params: PostCommentReplyInput): Future[PostCommentReplyOutput] = service.postCommentReply(params).promise().toFuture
+    @inline def putCommentReactionFuture(params: PutCommentReactionInput): Future[js.Object] = service.putCommentReaction(params).promise().toFuture
     @inline def putFileFuture(params: PutFileInput): Future[PutFileOutput] = service.putFile(params).promise().toFuture
-    @inline def putRepositoryTriggersFuture(params: PutRepositoryTriggersInput): Future[PutRepositoryTriggersOutput] =
-      service.putRepositoryTriggers(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceInput): Future[js.Object] =
-      service.tagResource(params).promise().toFuture
-    @inline def testRepositoryTriggersFuture(
-        params: TestRepositoryTriggersInput
-    ): Future[TestRepositoryTriggersOutput] = service.testRepositoryTriggers(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceInput): Future[js.Object] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateApprovalRuleTemplateContentFuture(
-        params: UpdateApprovalRuleTemplateContentInput
-    ): Future[UpdateApprovalRuleTemplateContentOutput] =
-      service.updateApprovalRuleTemplateContent(params).promise().toFuture
-    @inline def updateApprovalRuleTemplateDescriptionFuture(
-        params: UpdateApprovalRuleTemplateDescriptionInput
-    ): Future[UpdateApprovalRuleTemplateDescriptionOutput] =
-      service.updateApprovalRuleTemplateDescription(params).promise().toFuture
-    @inline def updateApprovalRuleTemplateNameFuture(
-        params: UpdateApprovalRuleTemplateNameInput
-    ): Future[UpdateApprovalRuleTemplateNameOutput] = service.updateApprovalRuleTemplateName(params).promise().toFuture
-    @inline def updateCommentFuture(params: UpdateCommentInput): Future[UpdateCommentOutput] =
-      service.updateComment(params).promise().toFuture
-    @inline def updateDefaultBranchFuture(params: UpdateDefaultBranchInput): Future[js.Object] =
-      service.updateDefaultBranch(params).promise().toFuture
-    @inline def updatePullRequestApprovalRuleContentFuture(
-        params: UpdatePullRequestApprovalRuleContentInput
-    ): Future[UpdatePullRequestApprovalRuleContentOutput] =
-      service.updatePullRequestApprovalRuleContent(params).promise().toFuture
-    @inline def updatePullRequestApprovalStateFuture(params: UpdatePullRequestApprovalStateInput): Future[js.Object] =
-      service.updatePullRequestApprovalState(params).promise().toFuture
-    @inline def updatePullRequestDescriptionFuture(
-        params: UpdatePullRequestDescriptionInput
-    ): Future[UpdatePullRequestDescriptionOutput] = service.updatePullRequestDescription(params).promise().toFuture
-    @inline def updatePullRequestStatusFuture(
-        params: UpdatePullRequestStatusInput
-    ): Future[UpdatePullRequestStatusOutput] = service.updatePullRequestStatus(params).promise().toFuture
-    @inline def updatePullRequestTitleFuture(
-        params: UpdatePullRequestTitleInput
-    ): Future[UpdatePullRequestTitleOutput] = service.updatePullRequestTitle(params).promise().toFuture
-    @inline def updateRepositoryDescriptionFuture(params: UpdateRepositoryDescriptionInput): Future[js.Object] =
-      service.updateRepositoryDescription(params).promise().toFuture
-    @inline def updateRepositoryNameFuture(params: UpdateRepositoryNameInput): Future[js.Object] =
-      service.updateRepositoryName(params).promise().toFuture
+    @inline def putRepositoryTriggersFuture(params: PutRepositoryTriggersInput): Future[PutRepositoryTriggersOutput] = service.putRepositoryTriggers(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceInput): Future[js.Object] = service.tagResource(params).promise().toFuture
+    @inline def testRepositoryTriggersFuture(params: TestRepositoryTriggersInput): Future[TestRepositoryTriggersOutput] = service.testRepositoryTriggers(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceInput): Future[js.Object] = service.untagResource(params).promise().toFuture
+    @inline def updateApprovalRuleTemplateContentFuture(params: UpdateApprovalRuleTemplateContentInput): Future[UpdateApprovalRuleTemplateContentOutput] = service.updateApprovalRuleTemplateContent(params).promise().toFuture
+    @inline def updateApprovalRuleTemplateDescriptionFuture(params: UpdateApprovalRuleTemplateDescriptionInput): Future[UpdateApprovalRuleTemplateDescriptionOutput] = service.updateApprovalRuleTemplateDescription(params).promise().toFuture
+    @inline def updateApprovalRuleTemplateNameFuture(params: UpdateApprovalRuleTemplateNameInput): Future[UpdateApprovalRuleTemplateNameOutput] = service.updateApprovalRuleTemplateName(params).promise().toFuture
+    @inline def updateCommentFuture(params: UpdateCommentInput): Future[UpdateCommentOutput] = service.updateComment(params).promise().toFuture
+    @inline def updateDefaultBranchFuture(params: UpdateDefaultBranchInput): Future[js.Object] = service.updateDefaultBranch(params).promise().toFuture
+    @inline def updatePullRequestApprovalRuleContentFuture(params: UpdatePullRequestApprovalRuleContentInput): Future[UpdatePullRequestApprovalRuleContentOutput] = service.updatePullRequestApprovalRuleContent(params).promise().toFuture
+    @inline def updatePullRequestApprovalStateFuture(params: UpdatePullRequestApprovalStateInput): Future[js.Object] = service.updatePullRequestApprovalState(params).promise().toFuture
+    @inline def updatePullRequestDescriptionFuture(params: UpdatePullRequestDescriptionInput): Future[UpdatePullRequestDescriptionOutput] = service.updatePullRequestDescription(params).promise().toFuture
+    @inline def updatePullRequestStatusFuture(params: UpdatePullRequestStatusInput): Future[UpdatePullRequestStatusOutput] = service.updatePullRequestStatus(params).promise().toFuture
+    @inline def updatePullRequestTitleFuture(params: UpdatePullRequestTitleInput): Future[UpdatePullRequestTitleOutput] = service.updatePullRequestTitle(params).promise().toFuture
+    @inline def updateRepositoryDescriptionFuture(params: UpdateRepositoryDescriptionInput): Future[js.Object] = service.updateRepositoryDescription(params).promise().toFuture
+    @inline def updateRepositoryNameFuture(params: UpdateRepositoryNameInput): Future[js.Object] = service.updateRepositoryName(params).promise().toFuture
   }
 }
 
@@ -341,61 +220,36 @@ package codecommit {
   class CodeCommit() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def associateApprovalRuleTemplateWithRepository(
-        params: AssociateApprovalRuleTemplateWithRepositoryInput
-    ): Request[js.Object] = js.native
-    def batchAssociateApprovalRuleTemplateWithRepositories(
-        params: BatchAssociateApprovalRuleTemplateWithRepositoriesInput
-    ): Request[BatchAssociateApprovalRuleTemplateWithRepositoriesOutput] = js.native
-    def batchDescribeMergeConflicts(
-        params: BatchDescribeMergeConflictsInput
-    ): Request[BatchDescribeMergeConflictsOutput] = js.native
-    def batchDisassociateApprovalRuleTemplateFromRepositories(
-        params: BatchDisassociateApprovalRuleTemplateFromRepositoriesInput
-    ): Request[BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput] = js.native
+    def associateApprovalRuleTemplateWithRepository(params: AssociateApprovalRuleTemplateWithRepositoryInput): Request[js.Object] = js.native
+    def batchAssociateApprovalRuleTemplateWithRepositories(params: BatchAssociateApprovalRuleTemplateWithRepositoriesInput): Request[BatchAssociateApprovalRuleTemplateWithRepositoriesOutput] = js.native
+    def batchDescribeMergeConflicts(params: BatchDescribeMergeConflictsInput): Request[BatchDescribeMergeConflictsOutput] = js.native
+    def batchDisassociateApprovalRuleTemplateFromRepositories(params: BatchDisassociateApprovalRuleTemplateFromRepositoriesInput): Request[BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput] = js.native
     def batchGetCommits(params: BatchGetCommitsInput): Request[BatchGetCommitsOutput] = js.native
     def batchGetRepositories(params: BatchGetRepositoriesInput): Request[BatchGetRepositoriesOutput] = js.native
-    def createApprovalRuleTemplate(params: CreateApprovalRuleTemplateInput): Request[CreateApprovalRuleTemplateOutput] =
-      js.native
+    def createApprovalRuleTemplate(params: CreateApprovalRuleTemplateInput): Request[CreateApprovalRuleTemplateOutput] = js.native
     def createBranch(params: CreateBranchInput): Request[js.Object] = js.native
     def createCommit(params: CreateCommitInput): Request[CreateCommitOutput] = js.native
     def createPullRequest(params: CreatePullRequestInput): Request[CreatePullRequestOutput] = js.native
-    def createPullRequestApprovalRule(
-        params: CreatePullRequestApprovalRuleInput
-    ): Request[CreatePullRequestApprovalRuleOutput] = js.native
+    def createPullRequestApprovalRule(params: CreatePullRequestApprovalRuleInput): Request[CreatePullRequestApprovalRuleOutput] = js.native
     def createRepository(params: CreateRepositoryInput): Request[CreateRepositoryOutput] = js.native
-    def createUnreferencedMergeCommit(
-        params: CreateUnreferencedMergeCommitInput
-    ): Request[CreateUnreferencedMergeCommitOutput] = js.native
-    def deleteApprovalRuleTemplate(params: DeleteApprovalRuleTemplateInput): Request[DeleteApprovalRuleTemplateOutput] =
-      js.native
+    def createUnreferencedMergeCommit(params: CreateUnreferencedMergeCommitInput): Request[CreateUnreferencedMergeCommitOutput] = js.native
+    def deleteApprovalRuleTemplate(params: DeleteApprovalRuleTemplateInput): Request[DeleteApprovalRuleTemplateOutput] = js.native
     def deleteBranch(params: DeleteBranchInput): Request[DeleteBranchOutput] = js.native
     def deleteCommentContent(params: DeleteCommentContentInput): Request[DeleteCommentContentOutput] = js.native
     def deleteFile(params: DeleteFileInput): Request[DeleteFileOutput] = js.native
-    def deletePullRequestApprovalRule(
-        params: DeletePullRequestApprovalRuleInput
-    ): Request[DeletePullRequestApprovalRuleOutput] = js.native
+    def deletePullRequestApprovalRule(params: DeletePullRequestApprovalRuleInput): Request[DeletePullRequestApprovalRuleOutput] = js.native
     def deleteRepository(params: DeleteRepositoryInput): Request[DeleteRepositoryOutput] = js.native
     def describeMergeConflicts(params: DescribeMergeConflictsInput): Request[DescribeMergeConflictsOutput] = js.native
-    def describePullRequestEvents(params: DescribePullRequestEventsInput): Request[DescribePullRequestEventsOutput] =
-      js.native
-    def disassociateApprovalRuleTemplateFromRepository(
-        params: DisassociateApprovalRuleTemplateFromRepositoryInput
-    ): Request[js.Object] = js.native
-    def evaluatePullRequestApprovalRules(
-        params: EvaluatePullRequestApprovalRulesInput
-    ): Request[EvaluatePullRequestApprovalRulesOutput] = js.native
-    def getApprovalRuleTemplate(params: GetApprovalRuleTemplateInput): Request[GetApprovalRuleTemplateOutput] =
-      js.native
+    def describePullRequestEvents(params: DescribePullRequestEventsInput): Request[DescribePullRequestEventsOutput] = js.native
+    def disassociateApprovalRuleTemplateFromRepository(params: DisassociateApprovalRuleTemplateFromRepositoryInput): Request[js.Object] = js.native
+    def evaluatePullRequestApprovalRules(params: EvaluatePullRequestApprovalRulesInput): Request[EvaluatePullRequestApprovalRulesOutput] = js.native
+    def getApprovalRuleTemplate(params: GetApprovalRuleTemplateInput): Request[GetApprovalRuleTemplateOutput] = js.native
     def getBlob(params: GetBlobInput): Request[GetBlobOutput] = js.native
     def getBranch(params: GetBranchInput): Request[GetBranchOutput] = js.native
     def getComment(params: GetCommentInput): Request[GetCommentOutput] = js.native
     def getCommentReactions(params: GetCommentReactionsInput): Request[GetCommentReactionsOutput] = js.native
-    def getCommentsForComparedCommit(
-        params: GetCommentsForComparedCommitInput
-    ): Request[GetCommentsForComparedCommitOutput] = js.native
-    def getCommentsForPullRequest(params: GetCommentsForPullRequestInput): Request[GetCommentsForPullRequestOutput] =
-      js.native
+    def getCommentsForComparedCommit(params: GetCommentsForComparedCommitInput): Request[GetCommentsForComparedCommitOutput] = js.native
+    def getCommentsForPullRequest(params: GetCommentsForPullRequestInput): Request[GetCommentsForPullRequestOutput] = js.native
     def getCommit(params: GetCommitInput): Request[GetCommitOutput] = js.native
     def getDifferences(params: GetDifferencesInput): Request[GetDifferencesOutput] = js.native
     def getFile(params: GetFileInput): Request[GetFileOutput] = js.native
@@ -404,44 +258,26 @@ package codecommit {
     def getMergeConflicts(params: GetMergeConflictsInput): Request[GetMergeConflictsOutput] = js.native
     def getMergeOptions(params: GetMergeOptionsInput): Request[GetMergeOptionsOutput] = js.native
     def getPullRequest(params: GetPullRequestInput): Request[GetPullRequestOutput] = js.native
-    def getPullRequestApprovalStates(
-        params: GetPullRequestApprovalStatesInput
-    ): Request[GetPullRequestApprovalStatesOutput] = js.native
-    def getPullRequestOverrideState(
-        params: GetPullRequestOverrideStateInput
-    ): Request[GetPullRequestOverrideStateOutput] = js.native
+    def getPullRequestApprovalStates(params: GetPullRequestApprovalStatesInput): Request[GetPullRequestApprovalStatesOutput] = js.native
+    def getPullRequestOverrideState(params: GetPullRequestOverrideStateInput): Request[GetPullRequestOverrideStateOutput] = js.native
     def getRepository(params: GetRepositoryInput): Request[GetRepositoryOutput] = js.native
     def getRepositoryTriggers(params: GetRepositoryTriggersInput): Request[GetRepositoryTriggersOutput] = js.native
-    def listApprovalRuleTemplates(params: ListApprovalRuleTemplatesInput): Request[ListApprovalRuleTemplatesOutput] =
-      js.native
-    def listAssociatedApprovalRuleTemplatesForRepository(
-        params: ListAssociatedApprovalRuleTemplatesForRepositoryInput
-    ): Request[ListAssociatedApprovalRuleTemplatesForRepositoryOutput] = js.native
+    def listApprovalRuleTemplates(params: ListApprovalRuleTemplatesInput): Request[ListApprovalRuleTemplatesOutput] = js.native
+    def listAssociatedApprovalRuleTemplatesForRepository(params: ListAssociatedApprovalRuleTemplatesForRepositoryInput): Request[ListAssociatedApprovalRuleTemplatesForRepositoryOutput] = js.native
     def listBranches(params: ListBranchesInput): Request[ListBranchesOutput] = js.native
     def listPullRequests(params: ListPullRequestsInput): Request[ListPullRequestsOutput] = js.native
     def listRepositories(params: ListRepositoriesInput): Request[ListRepositoriesOutput] = js.native
-    def listRepositoriesForApprovalRuleTemplate(
-        params: ListRepositoriesForApprovalRuleTemplateInput
-    ): Request[ListRepositoriesForApprovalRuleTemplateOutput] = js.native
+    def listRepositoriesForApprovalRuleTemplate(params: ListRepositoriesForApprovalRuleTemplateInput): Request[ListRepositoriesForApprovalRuleTemplateOutput] = js.native
     def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput] = js.native
-    def mergeBranchesByFastForward(params: MergeBranchesByFastForwardInput): Request[MergeBranchesByFastForwardOutput] =
-      js.native
+    def mergeBranchesByFastForward(params: MergeBranchesByFastForwardInput): Request[MergeBranchesByFastForwardOutput] = js.native
     def mergeBranchesBySquash(params: MergeBranchesBySquashInput): Request[MergeBranchesBySquashOutput] = js.native
-    def mergeBranchesByThreeWay(params: MergeBranchesByThreeWayInput): Request[MergeBranchesByThreeWayOutput] =
-      js.native
-    def mergePullRequestByFastForward(
-        params: MergePullRequestByFastForwardInput
-    ): Request[MergePullRequestByFastForwardOutput] = js.native
-    def mergePullRequestBySquash(params: MergePullRequestBySquashInput): Request[MergePullRequestBySquashOutput] =
-      js.native
-    def mergePullRequestByThreeWay(params: MergePullRequestByThreeWayInput): Request[MergePullRequestByThreeWayOutput] =
-      js.native
+    def mergeBranchesByThreeWay(params: MergeBranchesByThreeWayInput): Request[MergeBranchesByThreeWayOutput] = js.native
+    def mergePullRequestByFastForward(params: MergePullRequestByFastForwardInput): Request[MergePullRequestByFastForwardOutput] = js.native
+    def mergePullRequestBySquash(params: MergePullRequestBySquashInput): Request[MergePullRequestBySquashOutput] = js.native
+    def mergePullRequestByThreeWay(params: MergePullRequestByThreeWayInput): Request[MergePullRequestByThreeWayOutput] = js.native
     def overridePullRequestApprovalRules(params: OverridePullRequestApprovalRulesInput): Request[js.Object] = js.native
-    def postCommentForComparedCommit(
-        params: PostCommentForComparedCommitInput
-    ): Request[PostCommentForComparedCommitOutput] = js.native
-    def postCommentForPullRequest(params: PostCommentForPullRequestInput): Request[PostCommentForPullRequestOutput] =
-      js.native
+    def postCommentForComparedCommit(params: PostCommentForComparedCommitInput): Request[PostCommentForComparedCommitOutput] = js.native
+    def postCommentForPullRequest(params: PostCommentForPullRequestInput): Request[PostCommentForPullRequestOutput] = js.native
     def postCommentReply(params: PostCommentReplyInput): Request[PostCommentReplyOutput] = js.native
     def putCommentReaction(params: PutCommentReactionInput): Request[js.Object] = js.native
     def putFile(params: PutFileInput): Request[PutFileOutput] = js.native
@@ -449,26 +285,15 @@ package codecommit {
     def tagResource(params: TagResourceInput): Request[js.Object] = js.native
     def testRepositoryTriggers(params: TestRepositoryTriggersInput): Request[TestRepositoryTriggersOutput] = js.native
     def untagResource(params: UntagResourceInput): Request[js.Object] = js.native
-    def updateApprovalRuleTemplateContent(
-        params: UpdateApprovalRuleTemplateContentInput
-    ): Request[UpdateApprovalRuleTemplateContentOutput] = js.native
-    def updateApprovalRuleTemplateDescription(
-        params: UpdateApprovalRuleTemplateDescriptionInput
-    ): Request[UpdateApprovalRuleTemplateDescriptionOutput] = js.native
-    def updateApprovalRuleTemplateName(
-        params: UpdateApprovalRuleTemplateNameInput
-    ): Request[UpdateApprovalRuleTemplateNameOutput] = js.native
+    def updateApprovalRuleTemplateContent(params: UpdateApprovalRuleTemplateContentInput): Request[UpdateApprovalRuleTemplateContentOutput] = js.native
+    def updateApprovalRuleTemplateDescription(params: UpdateApprovalRuleTemplateDescriptionInput): Request[UpdateApprovalRuleTemplateDescriptionOutput] = js.native
+    def updateApprovalRuleTemplateName(params: UpdateApprovalRuleTemplateNameInput): Request[UpdateApprovalRuleTemplateNameOutput] = js.native
     def updateComment(params: UpdateCommentInput): Request[UpdateCommentOutput] = js.native
     def updateDefaultBranch(params: UpdateDefaultBranchInput): Request[js.Object] = js.native
-    def updatePullRequestApprovalRuleContent(
-        params: UpdatePullRequestApprovalRuleContentInput
-    ): Request[UpdatePullRequestApprovalRuleContentOutput] = js.native
+    def updatePullRequestApprovalRuleContent(params: UpdatePullRequestApprovalRuleContentInput): Request[UpdatePullRequestApprovalRuleContentOutput] = js.native
     def updatePullRequestApprovalState(params: UpdatePullRequestApprovalStateInput): Request[js.Object] = js.native
-    def updatePullRequestDescription(
-        params: UpdatePullRequestDescriptionInput
-    ): Request[UpdatePullRequestDescriptionOutput] = js.native
-    def updatePullRequestStatus(params: UpdatePullRequestStatusInput): Request[UpdatePullRequestStatusOutput] =
-      js.native
+    def updatePullRequestDescription(params: UpdatePullRequestDescriptionInput): Request[UpdatePullRequestDescriptionOutput] = js.native
+    def updatePullRequestStatus(params: UpdatePullRequestStatusInput): Request[UpdatePullRequestStatusOutput] = js.native
     def updatePullRequestTitle(params: UpdatePullRequestTitleInput): Request[UpdatePullRequestTitleOutput] = js.native
     def updateRepositoryDescription(params: UpdateRepositoryDescriptionInput): Request[js.Object] = js.native
     def updateRepositoryName(params: UpdateRepositoryNameInput): Request[js.Object] = js.native
@@ -530,9 +355,7 @@ package codecommit {
       creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
       lastModifiedDate.foreach(__v => __obj.updateDynamic("lastModifiedDate")(__v.asInstanceOf[js.Any]))
       lastModifiedUser.foreach(__v => __obj.updateDynamic("lastModifiedUser")(__v.asInstanceOf[js.Any]))
-      originApprovalRuleTemplate.foreach(__v =>
-        __obj.updateDynamic("originApprovalRuleTemplate")(__v.asInstanceOf[js.Any])
-      )
+      originApprovalRuleTemplate.foreach(__v => __obj.updateDynamic("originApprovalRuleTemplate")(__v.asInstanceOf[js.Any]))
       ruleContentSha256.foreach(__v => __obj.updateDynamic("ruleContentSha256")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApprovalRule]
     }
@@ -613,12 +436,8 @@ package codecommit {
         ruleContentSha256: js.UndefOr[RuleContentSha256] = js.undefined
     ): ApprovalRuleTemplate = {
       val __obj = js.Dynamic.literal()
-      approvalRuleTemplateContent.foreach(__v =>
-        __obj.updateDynamic("approvalRuleTemplateContent")(__v.asInstanceOf[js.Any])
-      )
-      approvalRuleTemplateDescription.foreach(__v =>
-        __obj.updateDynamic("approvalRuleTemplateDescription")(__v.asInstanceOf[js.Any])
-      )
+      approvalRuleTemplateContent.foreach(__v => __obj.updateDynamic("approvalRuleTemplateContent")(__v.asInstanceOf[js.Any]))
+      approvalRuleTemplateDescription.foreach(__v => __obj.updateDynamic("approvalRuleTemplateDescription")(__v.asInstanceOf[js.Any]))
       approvalRuleTemplateId.foreach(__v => __obj.updateDynamic("approvalRuleTemplateId")(__v.asInstanceOf[js.Any]))
       approvalRuleTemplateName.foreach(__v => __obj.updateDynamic("approvalRuleTemplateName")(__v.asInstanceOf[js.Any]))
       creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
@@ -811,9 +630,7 @@ package codecommit {
       )
 
       conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(__v =>
-        __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
-      )
+      conflictResolutionStrategy.foreach(__v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any]))
       filePaths.foreach(__v => __obj.updateDynamic("filePaths")(__v.asInstanceOf[js.Any]))
       maxConflictFiles.foreach(__v => __obj.updateDynamic("maxConflictFiles")(__v.asInstanceOf[js.Any]))
       maxMergeHunks.foreach(__v => __obj.updateDynamic("maxMergeHunks")(__v.asInstanceOf[js.Any]))
@@ -1379,9 +1196,7 @@ package codecommit {
         "approvalRuleTemplateName" -> approvalRuleTemplateName.asInstanceOf[js.Any]
       )
 
-      approvalRuleTemplateDescription.foreach(__v =>
-        __obj.updateDynamic("approvalRuleTemplateDescription")(__v.asInstanceOf[js.Any])
-      )
+      approvalRuleTemplateDescription.foreach(__v => __obj.updateDynamic("approvalRuleTemplateDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateApprovalRuleTemplateInput]
     }
   }
@@ -1678,9 +1493,7 @@ package codecommit {
       commitMessage.foreach(__v => __obj.updateDynamic("commitMessage")(__v.asInstanceOf[js.Any]))
       conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
       conflictResolution.foreach(__v => __obj.updateDynamic("conflictResolution")(__v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(__v =>
-        __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
-      )
+      conflictResolutionStrategy.foreach(__v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any]))
       email.foreach(__v => __obj.updateDynamic("email")(__v.asInstanceOf[js.Any]))
       keepEmptyFolders.foreach(__v => __obj.updateDynamic("keepEmptyFolders")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateUnreferencedMergeCommitInput]
@@ -2020,9 +1833,7 @@ package codecommit {
       )
 
       conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(__v =>
-        __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
-      )
+      conflictResolutionStrategy.foreach(__v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any]))
       maxMergeHunks.foreach(__v => __obj.updateDynamic("maxMergeHunks")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMergeConflictsInput]
@@ -2218,9 +2029,7 @@ package codecommit {
         overridden: js.UndefOr[Overridden] = js.undefined
     ): Evaluation = {
       val __obj = js.Dynamic.literal()
-      approvalRulesNotSatisfied.foreach(__v =>
-        __obj.updateDynamic("approvalRulesNotSatisfied")(__v.asInstanceOf[js.Any])
-      )
+      approvalRulesNotSatisfied.foreach(__v => __obj.updateDynamic("approvalRulesNotSatisfied")(__v.asInstanceOf[js.Any]))
       approvalRulesSatisfied.foreach(__v => __obj.updateDynamic("approvalRulesSatisfied")(__v.asInstanceOf[js.Any]))
       approved.foreach(__v => __obj.updateDynamic("approved")(__v.asInstanceOf[js.Any]))
       overridden.foreach(__v => __obj.updateDynamic("overridden")(__v.asInstanceOf[js.Any]))
@@ -2613,9 +2422,7 @@ package codecommit {
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetCommentsForComparedCommitOutput = {
       val __obj = js.Dynamic.literal()
-      commentsForComparedCommitData.foreach(__v =>
-        __obj.updateDynamic("commentsForComparedCommitData")(__v.asInstanceOf[js.Any])
-      )
+      commentsForComparedCommitData.foreach(__v => __obj.updateDynamic("commentsForComparedCommitData")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCommentsForComparedCommitOutput]
     }
@@ -2667,9 +2474,7 @@ package codecommit {
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetCommentsForPullRequestOutput = {
       val __obj = js.Dynamic.literal()
-      commentsForPullRequestData.foreach(__v =>
-        __obj.updateDynamic("commentsForPullRequestData")(__v.asInstanceOf[js.Any])
-      )
+      commentsForPullRequestData.foreach(__v => __obj.updateDynamic("commentsForPullRequestData")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCommentsForPullRequestOutput]
     }
@@ -2917,9 +2722,7 @@ package codecommit {
       )
 
       conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(__v =>
-        __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
-      )
+      conflictResolutionStrategy.foreach(__v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMergeCommitInput]
     }
   }
@@ -2981,9 +2784,7 @@ package codecommit {
       )
 
       conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(__v =>
-        __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
-      )
+      conflictResolutionStrategy.foreach(__v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any]))
       maxConflictFiles.foreach(__v => __obj.updateDynamic("maxConflictFiles")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMergeConflictsInput]
@@ -3048,9 +2849,7 @@ package codecommit {
       )
 
       conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(__v =>
-        __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
-      )
+      conflictResolutionStrategy.foreach(__v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMergeOptionsInput]
     }
   }
@@ -3335,9 +3134,7 @@ package codecommit {
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListApprovalRuleTemplatesOutput = {
       val __obj = js.Dynamic.literal()
-      approvalRuleTemplateNames.foreach(__v =>
-        __obj.updateDynamic("approvalRuleTemplateNames")(__v.asInstanceOf[js.Any])
-      )
+      approvalRuleTemplateNames.foreach(__v => __obj.updateDynamic("approvalRuleTemplateNames")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListApprovalRuleTemplatesOutput]
     }
@@ -3380,9 +3177,7 @@ package codecommit {
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListAssociatedApprovalRuleTemplatesForRepositoryOutput = {
       val __obj = js.Dynamic.literal()
-      approvalRuleTemplateNames.foreach(__v =>
-        __obj.updateDynamic("approvalRuleTemplateNames")(__v.asInstanceOf[js.Any])
-      )
+      approvalRuleTemplateNames.foreach(__v => __obj.updateDynamic("approvalRuleTemplateNames")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAssociatedApprovalRuleTemplatesForRepositoryOutput]
     }
@@ -3726,9 +3521,7 @@ package codecommit {
       commitMessage.foreach(__v => __obj.updateDynamic("commitMessage")(__v.asInstanceOf[js.Any]))
       conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
       conflictResolution.foreach(__v => __obj.updateDynamic("conflictResolution")(__v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(__v =>
-        __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
-      )
+      conflictResolutionStrategy.foreach(__v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any]))
       email.foreach(__v => __obj.updateDynamic("email")(__v.asInstanceOf[js.Any]))
       keepEmptyFolders.foreach(__v => __obj.updateDynamic("keepEmptyFolders")(__v.asInstanceOf[js.Any]))
       targetBranch.foreach(__v => __obj.updateDynamic("targetBranch")(__v.asInstanceOf[js.Any]))
@@ -3795,9 +3588,7 @@ package codecommit {
       commitMessage.foreach(__v => __obj.updateDynamic("commitMessage")(__v.asInstanceOf[js.Any]))
       conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
       conflictResolution.foreach(__v => __obj.updateDynamic("conflictResolution")(__v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(__v =>
-        __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
-      )
+      conflictResolutionStrategy.foreach(__v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any]))
       email.foreach(__v => __obj.updateDynamic("email")(__v.asInstanceOf[js.Any]))
       keepEmptyFolders.foreach(__v => __obj.updateDynamic("keepEmptyFolders")(__v.asInstanceOf[js.Any]))
       targetBranch.foreach(__v => __obj.updateDynamic("targetBranch")(__v.asInstanceOf[js.Any]))
@@ -4014,9 +3805,7 @@ package codecommit {
       commitMessage.foreach(__v => __obj.updateDynamic("commitMessage")(__v.asInstanceOf[js.Any]))
       conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
       conflictResolution.foreach(__v => __obj.updateDynamic("conflictResolution")(__v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(__v =>
-        __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
-      )
+      conflictResolutionStrategy.foreach(__v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any]))
       email.foreach(__v => __obj.updateDynamic("email")(__v.asInstanceOf[js.Any]))
       keepEmptyFolders.foreach(__v => __obj.updateDynamic("keepEmptyFolders")(__v.asInstanceOf[js.Any]))
       sourceCommitId.foreach(__v => __obj.updateDynamic("sourceCommitId")(__v.asInstanceOf[js.Any]))
@@ -4077,9 +3866,7 @@ package codecommit {
       commitMessage.foreach(__v => __obj.updateDynamic("commitMessage")(__v.asInstanceOf[js.Any]))
       conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
       conflictResolution.foreach(__v => __obj.updateDynamic("conflictResolution")(__v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(__v =>
-        __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
-      )
+      conflictResolutionStrategy.foreach(__v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any]))
       email.foreach(__v => __obj.updateDynamic("email")(__v.asInstanceOf[js.Any]))
       keepEmptyFolders.foreach(__v => __obj.updateDynamic("keepEmptyFolders")(__v.asInstanceOf[js.Any]))
       sourceCommitId.foreach(__v => __obj.updateDynamic("sourceCommitId")(__v.asInstanceOf[js.Any]))
@@ -4489,38 +4276,22 @@ package codecommit {
         pullRequestCreatedEventMetadata: js.UndefOr[PullRequestCreatedEventMetadata] = js.undefined,
         pullRequestEventType: js.UndefOr[PullRequestEventType] = js.undefined,
         pullRequestId: js.UndefOr[PullRequestId] = js.undefined,
-        pullRequestMergedStateChangedEventMetadata: js.UndefOr[PullRequestMergedStateChangedEventMetadata] =
-          js.undefined,
-        pullRequestSourceReferenceUpdatedEventMetadata: js.UndefOr[PullRequestSourceReferenceUpdatedEventMetadata] =
-          js.undefined,
+        pullRequestMergedStateChangedEventMetadata: js.UndefOr[PullRequestMergedStateChangedEventMetadata] = js.undefined,
+        pullRequestSourceReferenceUpdatedEventMetadata: js.UndefOr[PullRequestSourceReferenceUpdatedEventMetadata] = js.undefined,
         pullRequestStatusChangedEventMetadata: js.UndefOr[PullRequestStatusChangedEventMetadata] = js.undefined
     ): PullRequestEvent = {
       val __obj = js.Dynamic.literal()
       actorArn.foreach(__v => __obj.updateDynamic("actorArn")(__v.asInstanceOf[js.Any]))
-      approvalRuleEventMetadata.foreach(__v =>
-        __obj.updateDynamic("approvalRuleEventMetadata")(__v.asInstanceOf[js.Any])
-      )
-      approvalRuleOverriddenEventMetadata.foreach(__v =>
-        __obj.updateDynamic("approvalRuleOverriddenEventMetadata")(__v.asInstanceOf[js.Any])
-      )
-      approvalStateChangedEventMetadata.foreach(__v =>
-        __obj.updateDynamic("approvalStateChangedEventMetadata")(__v.asInstanceOf[js.Any])
-      )
+      approvalRuleEventMetadata.foreach(__v => __obj.updateDynamic("approvalRuleEventMetadata")(__v.asInstanceOf[js.Any]))
+      approvalRuleOverriddenEventMetadata.foreach(__v => __obj.updateDynamic("approvalRuleOverriddenEventMetadata")(__v.asInstanceOf[js.Any]))
+      approvalStateChangedEventMetadata.foreach(__v => __obj.updateDynamic("approvalStateChangedEventMetadata")(__v.asInstanceOf[js.Any]))
       eventDate.foreach(__v => __obj.updateDynamic("eventDate")(__v.asInstanceOf[js.Any]))
-      pullRequestCreatedEventMetadata.foreach(__v =>
-        __obj.updateDynamic("pullRequestCreatedEventMetadata")(__v.asInstanceOf[js.Any])
-      )
+      pullRequestCreatedEventMetadata.foreach(__v => __obj.updateDynamic("pullRequestCreatedEventMetadata")(__v.asInstanceOf[js.Any]))
       pullRequestEventType.foreach(__v => __obj.updateDynamic("pullRequestEventType")(__v.asInstanceOf[js.Any]))
       pullRequestId.foreach(__v => __obj.updateDynamic("pullRequestId")(__v.asInstanceOf[js.Any]))
-      pullRequestMergedStateChangedEventMetadata.foreach(__v =>
-        __obj.updateDynamic("pullRequestMergedStateChangedEventMetadata")(__v.asInstanceOf[js.Any])
-      )
-      pullRequestSourceReferenceUpdatedEventMetadata.foreach(__v =>
-        __obj.updateDynamic("pullRequestSourceReferenceUpdatedEventMetadata")(__v.asInstanceOf[js.Any])
-      )
-      pullRequestStatusChangedEventMetadata.foreach(__v =>
-        __obj.updateDynamic("pullRequestStatusChangedEventMetadata")(__v.asInstanceOf[js.Any])
-      )
+      pullRequestMergedStateChangedEventMetadata.foreach(__v => __obj.updateDynamic("pullRequestMergedStateChangedEventMetadata")(__v.asInstanceOf[js.Any]))
+      pullRequestSourceReferenceUpdatedEventMetadata.foreach(__v => __obj.updateDynamic("pullRequestSourceReferenceUpdatedEventMetadata")(__v.asInstanceOf[js.Any]))
+      pullRequestStatusChangedEventMetadata.foreach(__v => __obj.updateDynamic("pullRequestStatusChangedEventMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PullRequestEvent]
     }
   }
@@ -4530,29 +4301,25 @@ package codecommit {
   object PullRequestEventType extends js.Object {
     val PULL_REQUEST_CREATED = "PULL_REQUEST_CREATED".asInstanceOf[PullRequestEventType]
     val PULL_REQUEST_STATUS_CHANGED = "PULL_REQUEST_STATUS_CHANGED".asInstanceOf[PullRequestEventType]
-    val PULL_REQUEST_SOURCE_REFERENCE_UPDATED =
-      "PULL_REQUEST_SOURCE_REFERENCE_UPDATED".asInstanceOf[PullRequestEventType]
+    val PULL_REQUEST_SOURCE_REFERENCE_UPDATED = "PULL_REQUEST_SOURCE_REFERENCE_UPDATED".asInstanceOf[PullRequestEventType]
     val PULL_REQUEST_MERGE_STATE_CHANGED = "PULL_REQUEST_MERGE_STATE_CHANGED".asInstanceOf[PullRequestEventType]
     val PULL_REQUEST_APPROVAL_RULE_CREATED = "PULL_REQUEST_APPROVAL_RULE_CREATED".asInstanceOf[PullRequestEventType]
     val PULL_REQUEST_APPROVAL_RULE_UPDATED = "PULL_REQUEST_APPROVAL_RULE_UPDATED".asInstanceOf[PullRequestEventType]
     val PULL_REQUEST_APPROVAL_RULE_DELETED = "PULL_REQUEST_APPROVAL_RULE_DELETED".asInstanceOf[PullRequestEventType]
-    val PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN =
-      "PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN".asInstanceOf[PullRequestEventType]
+    val PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN = "PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN".asInstanceOf[PullRequestEventType]
     val PULL_REQUEST_APPROVAL_STATE_CHANGED = "PULL_REQUEST_APPROVAL_STATE_CHANGED".asInstanceOf[PullRequestEventType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        PULL_REQUEST_CREATED,
-        PULL_REQUEST_STATUS_CHANGED,
-        PULL_REQUEST_SOURCE_REFERENCE_UPDATED,
-        PULL_REQUEST_MERGE_STATE_CHANGED,
-        PULL_REQUEST_APPROVAL_RULE_CREATED,
-        PULL_REQUEST_APPROVAL_RULE_UPDATED,
-        PULL_REQUEST_APPROVAL_RULE_DELETED,
-        PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN,
-        PULL_REQUEST_APPROVAL_STATE_CHANGED
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      PULL_REQUEST_CREATED,
+      PULL_REQUEST_STATUS_CHANGED,
+      PULL_REQUEST_SOURCE_REFERENCE_UPDATED,
+      PULL_REQUEST_MERGE_STATE_CHANGED,
+      PULL_REQUEST_APPROVAL_RULE_CREATED,
+      PULL_REQUEST_APPROVAL_RULE_UPDATED,
+      PULL_REQUEST_APPROVAL_RULE_DELETED,
+      PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN,
+      PULL_REQUEST_APPROVAL_STATE_CHANGED
+    ))
   }
 
   /**
@@ -4853,9 +4620,7 @@ package codecommit {
       val __obj = js.Dynamic.literal()
       reaction.foreach(__v => __obj.updateDynamic("reaction")(__v.asInstanceOf[js.Any]))
       reactionUsers.foreach(__v => __obj.updateDynamic("reactionUsers")(__v.asInstanceOf[js.Any]))
-      reactionsFromDeletedUsersCount.foreach(__v =>
-        __obj.updateDynamic("reactionsFromDeletedUsersCount")(__v.asInstanceOf[js.Any])
-      )
+      reactionsFromDeletedUsersCount.foreach(__v => __obj.updateDynamic("reactionsFromDeletedUsersCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReactionForComment]
     }
   }
@@ -5313,9 +5078,7 @@ package codecommit {
         "newRuleContent" -> newRuleContent.asInstanceOf[js.Any]
       )
 
-      existingRuleContentSha256.foreach(__v =>
-        __obj.updateDynamic("existingRuleContentSha256")(__v.asInstanceOf[js.Any])
-      )
+      existingRuleContentSha256.foreach(__v => __obj.updateDynamic("existingRuleContentSha256")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateApprovalRuleTemplateContentInput]
     }
   }
@@ -5499,9 +5262,7 @@ package codecommit {
         "pullRequestId" -> pullRequestId.asInstanceOf[js.Any]
       )
 
-      existingRuleContentSha256.foreach(__v =>
-        __obj.updateDynamic("existingRuleContentSha256")(__v.asInstanceOf[js.Any])
-      )
+      existingRuleContentSha256.foreach(__v => __obj.updateDynamic("existingRuleContentSha256")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdatePullRequestApprovalRuleContentInput]
     }
   }

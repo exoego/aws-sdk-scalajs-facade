@@ -132,216 +132,96 @@ package object quicksight {
 
   implicit final class QuickSightOps(private val service: QuickSight) extends AnyVal {
 
-    @inline def cancelIngestionFuture(params: CancelIngestionRequest): Future[CancelIngestionResponse] =
-      service.cancelIngestion(params).promise().toFuture
-    @inline def createAccountCustomizationFuture(
-        params: CreateAccountCustomizationRequest
-    ): Future[CreateAccountCustomizationResponse] = service.createAccountCustomization(params).promise().toFuture
-    @inline def createDashboardFuture(params: CreateDashboardRequest): Future[CreateDashboardResponse] =
-      service.createDashboard(params).promise().toFuture
-    @inline def createDataSetFuture(params: CreateDataSetRequest): Future[CreateDataSetResponse] =
-      service.createDataSet(params).promise().toFuture
-    @inline def createDataSourceFuture(params: CreateDataSourceRequest): Future[CreateDataSourceResponse] =
-      service.createDataSource(params).promise().toFuture
-    @inline def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResponse] =
-      service.createGroup(params).promise().toFuture
-    @inline def createGroupMembershipFuture(
-        params: CreateGroupMembershipRequest
-    ): Future[CreateGroupMembershipResponse] = service.createGroupMembership(params).promise().toFuture
-    @inline def createIAMPolicyAssignmentFuture(
-        params: CreateIAMPolicyAssignmentRequest
-    ): Future[CreateIAMPolicyAssignmentResponse] = service.createIAMPolicyAssignment(params).promise().toFuture
-    @inline def createIngestionFuture(params: CreateIngestionRequest): Future[CreateIngestionResponse] =
-      service.createIngestion(params).promise().toFuture
-    @inline def createNamespaceFuture(params: CreateNamespaceRequest): Future[CreateNamespaceResponse] =
-      service.createNamespace(params).promise().toFuture
-    @inline def createTemplateAliasFuture(params: CreateTemplateAliasRequest): Future[CreateTemplateAliasResponse] =
-      service.createTemplateAlias(params).promise().toFuture
-    @inline def createTemplateFuture(params: CreateTemplateRequest): Future[CreateTemplateResponse] =
-      service.createTemplate(params).promise().toFuture
-    @inline def createThemeAliasFuture(params: CreateThemeAliasRequest): Future[CreateThemeAliasResponse] =
-      service.createThemeAlias(params).promise().toFuture
-    @inline def createThemeFuture(params: CreateThemeRequest): Future[CreateThemeResponse] =
-      service.createTheme(params).promise().toFuture
-    @inline def deleteAccountCustomizationFuture(
-        params: DeleteAccountCustomizationRequest
-    ): Future[DeleteAccountCustomizationResponse] = service.deleteAccountCustomization(params).promise().toFuture
-    @inline def deleteDashboardFuture(params: DeleteDashboardRequest): Future[DeleteDashboardResponse] =
-      service.deleteDashboard(params).promise().toFuture
-    @inline def deleteDataSetFuture(params: DeleteDataSetRequest): Future[DeleteDataSetResponse] =
-      service.deleteDataSet(params).promise().toFuture
-    @inline def deleteDataSourceFuture(params: DeleteDataSourceRequest): Future[DeleteDataSourceResponse] =
-      service.deleteDataSource(params).promise().toFuture
-    @inline def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResponse] =
-      service.deleteGroup(params).promise().toFuture
-    @inline def deleteGroupMembershipFuture(
-        params: DeleteGroupMembershipRequest
-    ): Future[DeleteGroupMembershipResponse] = service.deleteGroupMembership(params).promise().toFuture
-    @inline def deleteIAMPolicyAssignmentFuture(
-        params: DeleteIAMPolicyAssignmentRequest
-    ): Future[DeleteIAMPolicyAssignmentResponse] = service.deleteIAMPolicyAssignment(params).promise().toFuture
-    @inline def deleteNamespaceFuture(params: DeleteNamespaceRequest): Future[DeleteNamespaceResponse] =
-      service.deleteNamespace(params).promise().toFuture
-    @inline def deleteTemplateAliasFuture(params: DeleteTemplateAliasRequest): Future[DeleteTemplateAliasResponse] =
-      service.deleteTemplateAlias(params).promise().toFuture
-    @inline def deleteTemplateFuture(params: DeleteTemplateRequest): Future[DeleteTemplateResponse] =
-      service.deleteTemplate(params).promise().toFuture
-    @inline def deleteThemeAliasFuture(params: DeleteThemeAliasRequest): Future[DeleteThemeAliasResponse] =
-      service.deleteThemeAlias(params).promise().toFuture
-    @inline def deleteThemeFuture(params: DeleteThemeRequest): Future[DeleteThemeResponse] =
-      service.deleteTheme(params).promise().toFuture
-    @inline def deleteUserByPrincipalIdFuture(
-        params: DeleteUserByPrincipalIdRequest
-    ): Future[DeleteUserByPrincipalIdResponse] = service.deleteUserByPrincipalId(params).promise().toFuture
-    @inline def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResponse] =
-      service.deleteUser(params).promise().toFuture
-    @inline def describeAccountCustomizationFuture(
-        params: DescribeAccountCustomizationRequest
-    ): Future[DescribeAccountCustomizationResponse] = service.describeAccountCustomization(params).promise().toFuture
-    @inline def describeAccountSettingsFuture(
-        params: DescribeAccountSettingsRequest
-    ): Future[DescribeAccountSettingsResponse] = service.describeAccountSettings(params).promise().toFuture
-    @inline def describeDashboardFuture(params: DescribeDashboardRequest): Future[DescribeDashboardResponse] =
-      service.describeDashboard(params).promise().toFuture
-    @inline def describeDashboardPermissionsFuture(
-        params: DescribeDashboardPermissionsRequest
-    ): Future[DescribeDashboardPermissionsResponse] = service.describeDashboardPermissions(params).promise().toFuture
-    @inline def describeDataSetFuture(params: DescribeDataSetRequest): Future[DescribeDataSetResponse] =
-      service.describeDataSet(params).promise().toFuture
-    @inline def describeDataSetPermissionsFuture(
-        params: DescribeDataSetPermissionsRequest
-    ): Future[DescribeDataSetPermissionsResponse] = service.describeDataSetPermissions(params).promise().toFuture
-    @inline def describeDataSourceFuture(params: DescribeDataSourceRequest): Future[DescribeDataSourceResponse] =
-      service.describeDataSource(params).promise().toFuture
-    @inline def describeDataSourcePermissionsFuture(
-        params: DescribeDataSourcePermissionsRequest
-    ): Future[DescribeDataSourcePermissionsResponse] = service.describeDataSourcePermissions(params).promise().toFuture
-    @inline def describeGroupFuture(params: DescribeGroupRequest): Future[DescribeGroupResponse] =
-      service.describeGroup(params).promise().toFuture
-    @inline def describeIAMPolicyAssignmentFuture(
-        params: DescribeIAMPolicyAssignmentRequest
-    ): Future[DescribeIAMPolicyAssignmentResponse] = service.describeIAMPolicyAssignment(params).promise().toFuture
-    @inline def describeIngestionFuture(params: DescribeIngestionRequest): Future[DescribeIngestionResponse] =
-      service.describeIngestion(params).promise().toFuture
-    @inline def describeNamespaceFuture(params: DescribeNamespaceRequest): Future[DescribeNamespaceResponse] =
-      service.describeNamespace(params).promise().toFuture
-    @inline def describeTemplateAliasFuture(
-        params: DescribeTemplateAliasRequest
-    ): Future[DescribeTemplateAliasResponse] = service.describeTemplateAlias(params).promise().toFuture
-    @inline def describeTemplateFuture(params: DescribeTemplateRequest): Future[DescribeTemplateResponse] =
-      service.describeTemplate(params).promise().toFuture
-    @inline def describeTemplatePermissionsFuture(
-        params: DescribeTemplatePermissionsRequest
-    ): Future[DescribeTemplatePermissionsResponse] = service.describeTemplatePermissions(params).promise().toFuture
-    @inline def describeThemeAliasFuture(params: DescribeThemeAliasRequest): Future[DescribeThemeAliasResponse] =
-      service.describeThemeAlias(params).promise().toFuture
-    @inline def describeThemeFuture(params: DescribeThemeRequest): Future[DescribeThemeResponse] =
-      service.describeTheme(params).promise().toFuture
-    @inline def describeThemePermissionsFuture(
-        params: DescribeThemePermissionsRequest
-    ): Future[DescribeThemePermissionsResponse] = service.describeThemePermissions(params).promise().toFuture
-    @inline def describeUserFuture(params: DescribeUserRequest): Future[DescribeUserResponse] =
-      service.describeUser(params).promise().toFuture
-    @inline def getDashboardEmbedUrlFuture(params: GetDashboardEmbedUrlRequest): Future[GetDashboardEmbedUrlResponse] =
-      service.getDashboardEmbedUrl(params).promise().toFuture
-    @inline def getSessionEmbedUrlFuture(params: GetSessionEmbedUrlRequest): Future[GetSessionEmbedUrlResponse] =
-      service.getSessionEmbedUrl(params).promise().toFuture
-    @inline def listDashboardVersionsFuture(
-        params: ListDashboardVersionsRequest
-    ): Future[ListDashboardVersionsResponse] = service.listDashboardVersions(params).promise().toFuture
-    @inline def listDashboardsFuture(params: ListDashboardsRequest): Future[ListDashboardsResponse] =
-      service.listDashboards(params).promise().toFuture
-    @inline def listDataSetsFuture(params: ListDataSetsRequest): Future[ListDataSetsResponse] =
-      service.listDataSets(params).promise().toFuture
-    @inline def listDataSourcesFuture(params: ListDataSourcesRequest): Future[ListDataSourcesResponse] =
-      service.listDataSources(params).promise().toFuture
-    @inline def listGroupMembershipsFuture(params: ListGroupMembershipsRequest): Future[ListGroupMembershipsResponse] =
-      service.listGroupMemberships(params).promise().toFuture
-    @inline def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] =
-      service.listGroups(params).promise().toFuture
-    @inline def listIAMPolicyAssignmentsForUserFuture(
-        params: ListIAMPolicyAssignmentsForUserRequest
-    ): Future[ListIAMPolicyAssignmentsForUserResponse] =
-      service.listIAMPolicyAssignmentsForUser(params).promise().toFuture
-    @inline def listIAMPolicyAssignmentsFuture(
-        params: ListIAMPolicyAssignmentsRequest
-    ): Future[ListIAMPolicyAssignmentsResponse] = service.listIAMPolicyAssignments(params).promise().toFuture
-    @inline def listIngestionsFuture(params: ListIngestionsRequest): Future[ListIngestionsResponse] =
-      service.listIngestions(params).promise().toFuture
-    @inline def listNamespacesFuture(params: ListNamespacesRequest): Future[ListNamespacesResponse] =
-      service.listNamespaces(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listTemplateAliasesFuture(params: ListTemplateAliasesRequest): Future[ListTemplateAliasesResponse] =
-      service.listTemplateAliases(params).promise().toFuture
-    @inline def listTemplateVersionsFuture(params: ListTemplateVersionsRequest): Future[ListTemplateVersionsResponse] =
-      service.listTemplateVersions(params).promise().toFuture
-    @inline def listTemplatesFuture(params: ListTemplatesRequest): Future[ListTemplatesResponse] =
-      service.listTemplates(params).promise().toFuture
-    @inline def listThemeAliasesFuture(params: ListThemeAliasesRequest): Future[ListThemeAliasesResponse] =
-      service.listThemeAliases(params).promise().toFuture
-    @inline def listThemeVersionsFuture(params: ListThemeVersionsRequest): Future[ListThemeVersionsResponse] =
-      service.listThemeVersions(params).promise().toFuture
-    @inline def listThemesFuture(params: ListThemesRequest): Future[ListThemesResponse] =
-      service.listThemes(params).promise().toFuture
-    @inline def listUserGroupsFuture(params: ListUserGroupsRequest): Future[ListUserGroupsResponse] =
-      service.listUserGroups(params).promise().toFuture
-    @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
-      service.listUsers(params).promise().toFuture
-    @inline def registerUserFuture(params: RegisterUserRequest): Future[RegisterUserResponse] =
-      service.registerUser(params).promise().toFuture
-    @inline def searchDashboardsFuture(params: SearchDashboardsRequest): Future[SearchDashboardsResponse] =
-      service.searchDashboards(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateAccountCustomizationFuture(
-        params: UpdateAccountCustomizationRequest
-    ): Future[UpdateAccountCustomizationResponse] = service.updateAccountCustomization(params).promise().toFuture
-    @inline def updateAccountSettingsFuture(
-        params: UpdateAccountSettingsRequest
-    ): Future[UpdateAccountSettingsResponse] = service.updateAccountSettings(params).promise().toFuture
-    @inline def updateDashboardFuture(params: UpdateDashboardRequest): Future[UpdateDashboardResponse] =
-      service.updateDashboard(params).promise().toFuture
-    @inline def updateDashboardPermissionsFuture(
-        params: UpdateDashboardPermissionsRequest
-    ): Future[UpdateDashboardPermissionsResponse] = service.updateDashboardPermissions(params).promise().toFuture
-    @inline def updateDashboardPublishedVersionFuture(
-        params: UpdateDashboardPublishedVersionRequest
-    ): Future[UpdateDashboardPublishedVersionResponse] =
-      service.updateDashboardPublishedVersion(params).promise().toFuture
-    @inline def updateDataSetFuture(params: UpdateDataSetRequest): Future[UpdateDataSetResponse] =
-      service.updateDataSet(params).promise().toFuture
-    @inline def updateDataSetPermissionsFuture(
-        params: UpdateDataSetPermissionsRequest
-    ): Future[UpdateDataSetPermissionsResponse] = service.updateDataSetPermissions(params).promise().toFuture
-    @inline def updateDataSourceFuture(params: UpdateDataSourceRequest): Future[UpdateDataSourceResponse] =
-      service.updateDataSource(params).promise().toFuture
-    @inline def updateDataSourcePermissionsFuture(
-        params: UpdateDataSourcePermissionsRequest
-    ): Future[UpdateDataSourcePermissionsResponse] = service.updateDataSourcePermissions(params).promise().toFuture
-    @inline def updateGroupFuture(params: UpdateGroupRequest): Future[UpdateGroupResponse] =
-      service.updateGroup(params).promise().toFuture
-    @inline def updateIAMPolicyAssignmentFuture(
-        params: UpdateIAMPolicyAssignmentRequest
-    ): Future[UpdateIAMPolicyAssignmentResponse] = service.updateIAMPolicyAssignment(params).promise().toFuture
-    @inline def updateTemplateAliasFuture(params: UpdateTemplateAliasRequest): Future[UpdateTemplateAliasResponse] =
-      service.updateTemplateAlias(params).promise().toFuture
-    @inline def updateTemplateFuture(params: UpdateTemplateRequest): Future[UpdateTemplateResponse] =
-      service.updateTemplate(params).promise().toFuture
-    @inline def updateTemplatePermissionsFuture(
-        params: UpdateTemplatePermissionsRequest
-    ): Future[UpdateTemplatePermissionsResponse] = service.updateTemplatePermissions(params).promise().toFuture
-    @inline def updateThemeAliasFuture(params: UpdateThemeAliasRequest): Future[UpdateThemeAliasResponse] =
-      service.updateThemeAlias(params).promise().toFuture
-    @inline def updateThemeFuture(params: UpdateThemeRequest): Future[UpdateThemeResponse] =
-      service.updateTheme(params).promise().toFuture
-    @inline def updateThemePermissionsFuture(
-        params: UpdateThemePermissionsRequest
-    ): Future[UpdateThemePermissionsResponse] = service.updateThemePermissions(params).promise().toFuture
-    @inline def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] =
-      service.updateUser(params).promise().toFuture
+    @inline def cancelIngestionFuture(params: CancelIngestionRequest): Future[CancelIngestionResponse] = service.cancelIngestion(params).promise().toFuture
+    @inline def createAccountCustomizationFuture(params: CreateAccountCustomizationRequest): Future[CreateAccountCustomizationResponse] = service.createAccountCustomization(params).promise().toFuture
+    @inline def createDashboardFuture(params: CreateDashboardRequest): Future[CreateDashboardResponse] = service.createDashboard(params).promise().toFuture
+    @inline def createDataSetFuture(params: CreateDataSetRequest): Future[CreateDataSetResponse] = service.createDataSet(params).promise().toFuture
+    @inline def createDataSourceFuture(params: CreateDataSourceRequest): Future[CreateDataSourceResponse] = service.createDataSource(params).promise().toFuture
+    @inline def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResponse] = service.createGroup(params).promise().toFuture
+    @inline def createGroupMembershipFuture(params: CreateGroupMembershipRequest): Future[CreateGroupMembershipResponse] = service.createGroupMembership(params).promise().toFuture
+    @inline def createIAMPolicyAssignmentFuture(params: CreateIAMPolicyAssignmentRequest): Future[CreateIAMPolicyAssignmentResponse] = service.createIAMPolicyAssignment(params).promise().toFuture
+    @inline def createIngestionFuture(params: CreateIngestionRequest): Future[CreateIngestionResponse] = service.createIngestion(params).promise().toFuture
+    @inline def createNamespaceFuture(params: CreateNamespaceRequest): Future[CreateNamespaceResponse] = service.createNamespace(params).promise().toFuture
+    @inline def createTemplateAliasFuture(params: CreateTemplateAliasRequest): Future[CreateTemplateAliasResponse] = service.createTemplateAlias(params).promise().toFuture
+    @inline def createTemplateFuture(params: CreateTemplateRequest): Future[CreateTemplateResponse] = service.createTemplate(params).promise().toFuture
+    @inline def createThemeAliasFuture(params: CreateThemeAliasRequest): Future[CreateThemeAliasResponse] = service.createThemeAlias(params).promise().toFuture
+    @inline def createThemeFuture(params: CreateThemeRequest): Future[CreateThemeResponse] = service.createTheme(params).promise().toFuture
+    @inline def deleteAccountCustomizationFuture(params: DeleteAccountCustomizationRequest): Future[DeleteAccountCustomizationResponse] = service.deleteAccountCustomization(params).promise().toFuture
+    @inline def deleteDashboardFuture(params: DeleteDashboardRequest): Future[DeleteDashboardResponse] = service.deleteDashboard(params).promise().toFuture
+    @inline def deleteDataSetFuture(params: DeleteDataSetRequest): Future[DeleteDataSetResponse] = service.deleteDataSet(params).promise().toFuture
+    @inline def deleteDataSourceFuture(params: DeleteDataSourceRequest): Future[DeleteDataSourceResponse] = service.deleteDataSource(params).promise().toFuture
+    @inline def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResponse] = service.deleteGroup(params).promise().toFuture
+    @inline def deleteGroupMembershipFuture(params: DeleteGroupMembershipRequest): Future[DeleteGroupMembershipResponse] = service.deleteGroupMembership(params).promise().toFuture
+    @inline def deleteIAMPolicyAssignmentFuture(params: DeleteIAMPolicyAssignmentRequest): Future[DeleteIAMPolicyAssignmentResponse] = service.deleteIAMPolicyAssignment(params).promise().toFuture
+    @inline def deleteNamespaceFuture(params: DeleteNamespaceRequest): Future[DeleteNamespaceResponse] = service.deleteNamespace(params).promise().toFuture
+    @inline def deleteTemplateAliasFuture(params: DeleteTemplateAliasRequest): Future[DeleteTemplateAliasResponse] = service.deleteTemplateAlias(params).promise().toFuture
+    @inline def deleteTemplateFuture(params: DeleteTemplateRequest): Future[DeleteTemplateResponse] = service.deleteTemplate(params).promise().toFuture
+    @inline def deleteThemeAliasFuture(params: DeleteThemeAliasRequest): Future[DeleteThemeAliasResponse] = service.deleteThemeAlias(params).promise().toFuture
+    @inline def deleteThemeFuture(params: DeleteThemeRequest): Future[DeleteThemeResponse] = service.deleteTheme(params).promise().toFuture
+    @inline def deleteUserByPrincipalIdFuture(params: DeleteUserByPrincipalIdRequest): Future[DeleteUserByPrincipalIdResponse] = service.deleteUserByPrincipalId(params).promise().toFuture
+    @inline def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResponse] = service.deleteUser(params).promise().toFuture
+    @inline def describeAccountCustomizationFuture(params: DescribeAccountCustomizationRequest): Future[DescribeAccountCustomizationResponse] = service.describeAccountCustomization(params).promise().toFuture
+    @inline def describeAccountSettingsFuture(params: DescribeAccountSettingsRequest): Future[DescribeAccountSettingsResponse] = service.describeAccountSettings(params).promise().toFuture
+    @inline def describeDashboardFuture(params: DescribeDashboardRequest): Future[DescribeDashboardResponse] = service.describeDashboard(params).promise().toFuture
+    @inline def describeDashboardPermissionsFuture(params: DescribeDashboardPermissionsRequest): Future[DescribeDashboardPermissionsResponse] = service.describeDashboardPermissions(params).promise().toFuture
+    @inline def describeDataSetFuture(params: DescribeDataSetRequest): Future[DescribeDataSetResponse] = service.describeDataSet(params).promise().toFuture
+    @inline def describeDataSetPermissionsFuture(params: DescribeDataSetPermissionsRequest): Future[DescribeDataSetPermissionsResponse] = service.describeDataSetPermissions(params).promise().toFuture
+    @inline def describeDataSourceFuture(params: DescribeDataSourceRequest): Future[DescribeDataSourceResponse] = service.describeDataSource(params).promise().toFuture
+    @inline def describeDataSourcePermissionsFuture(params: DescribeDataSourcePermissionsRequest): Future[DescribeDataSourcePermissionsResponse] = service.describeDataSourcePermissions(params).promise().toFuture
+    @inline def describeGroupFuture(params: DescribeGroupRequest): Future[DescribeGroupResponse] = service.describeGroup(params).promise().toFuture
+    @inline def describeIAMPolicyAssignmentFuture(params: DescribeIAMPolicyAssignmentRequest): Future[DescribeIAMPolicyAssignmentResponse] = service.describeIAMPolicyAssignment(params).promise().toFuture
+    @inline def describeIngestionFuture(params: DescribeIngestionRequest): Future[DescribeIngestionResponse] = service.describeIngestion(params).promise().toFuture
+    @inline def describeNamespaceFuture(params: DescribeNamespaceRequest): Future[DescribeNamespaceResponse] = service.describeNamespace(params).promise().toFuture
+    @inline def describeTemplateAliasFuture(params: DescribeTemplateAliasRequest): Future[DescribeTemplateAliasResponse] = service.describeTemplateAlias(params).promise().toFuture
+    @inline def describeTemplateFuture(params: DescribeTemplateRequest): Future[DescribeTemplateResponse] = service.describeTemplate(params).promise().toFuture
+    @inline def describeTemplatePermissionsFuture(params: DescribeTemplatePermissionsRequest): Future[DescribeTemplatePermissionsResponse] = service.describeTemplatePermissions(params).promise().toFuture
+    @inline def describeThemeAliasFuture(params: DescribeThemeAliasRequest): Future[DescribeThemeAliasResponse] = service.describeThemeAlias(params).promise().toFuture
+    @inline def describeThemeFuture(params: DescribeThemeRequest): Future[DescribeThemeResponse] = service.describeTheme(params).promise().toFuture
+    @inline def describeThemePermissionsFuture(params: DescribeThemePermissionsRequest): Future[DescribeThemePermissionsResponse] = service.describeThemePermissions(params).promise().toFuture
+    @inline def describeUserFuture(params: DescribeUserRequest): Future[DescribeUserResponse] = service.describeUser(params).promise().toFuture
+    @inline def getDashboardEmbedUrlFuture(params: GetDashboardEmbedUrlRequest): Future[GetDashboardEmbedUrlResponse] = service.getDashboardEmbedUrl(params).promise().toFuture
+    @inline def getSessionEmbedUrlFuture(params: GetSessionEmbedUrlRequest): Future[GetSessionEmbedUrlResponse] = service.getSessionEmbedUrl(params).promise().toFuture
+    @inline def listDashboardVersionsFuture(params: ListDashboardVersionsRequest): Future[ListDashboardVersionsResponse] = service.listDashboardVersions(params).promise().toFuture
+    @inline def listDashboardsFuture(params: ListDashboardsRequest): Future[ListDashboardsResponse] = service.listDashboards(params).promise().toFuture
+    @inline def listDataSetsFuture(params: ListDataSetsRequest): Future[ListDataSetsResponse] = service.listDataSets(params).promise().toFuture
+    @inline def listDataSourcesFuture(params: ListDataSourcesRequest): Future[ListDataSourcesResponse] = service.listDataSources(params).promise().toFuture
+    @inline def listGroupMembershipsFuture(params: ListGroupMembershipsRequest): Future[ListGroupMembershipsResponse] = service.listGroupMemberships(params).promise().toFuture
+    @inline def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] = service.listGroups(params).promise().toFuture
+    @inline def listIAMPolicyAssignmentsForUserFuture(params: ListIAMPolicyAssignmentsForUserRequest): Future[ListIAMPolicyAssignmentsForUserResponse] = service.listIAMPolicyAssignmentsForUser(params).promise().toFuture
+    @inline def listIAMPolicyAssignmentsFuture(params: ListIAMPolicyAssignmentsRequest): Future[ListIAMPolicyAssignmentsResponse] = service.listIAMPolicyAssignments(params).promise().toFuture
+    @inline def listIngestionsFuture(params: ListIngestionsRequest): Future[ListIngestionsResponse] = service.listIngestions(params).promise().toFuture
+    @inline def listNamespacesFuture(params: ListNamespacesRequest): Future[ListNamespacesResponse] = service.listNamespaces(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listTemplateAliasesFuture(params: ListTemplateAliasesRequest): Future[ListTemplateAliasesResponse] = service.listTemplateAliases(params).promise().toFuture
+    @inline def listTemplateVersionsFuture(params: ListTemplateVersionsRequest): Future[ListTemplateVersionsResponse] = service.listTemplateVersions(params).promise().toFuture
+    @inline def listTemplatesFuture(params: ListTemplatesRequest): Future[ListTemplatesResponse] = service.listTemplates(params).promise().toFuture
+    @inline def listThemeAliasesFuture(params: ListThemeAliasesRequest): Future[ListThemeAliasesResponse] = service.listThemeAliases(params).promise().toFuture
+    @inline def listThemeVersionsFuture(params: ListThemeVersionsRequest): Future[ListThemeVersionsResponse] = service.listThemeVersions(params).promise().toFuture
+    @inline def listThemesFuture(params: ListThemesRequest): Future[ListThemesResponse] = service.listThemes(params).promise().toFuture
+    @inline def listUserGroupsFuture(params: ListUserGroupsRequest): Future[ListUserGroupsResponse] = service.listUserGroups(params).promise().toFuture
+    @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] = service.listUsers(params).promise().toFuture
+    @inline def registerUserFuture(params: RegisterUserRequest): Future[RegisterUserResponse] = service.registerUser(params).promise().toFuture
+    @inline def searchDashboardsFuture(params: SearchDashboardsRequest): Future[SearchDashboardsResponse] = service.searchDashboards(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateAccountCustomizationFuture(params: UpdateAccountCustomizationRequest): Future[UpdateAccountCustomizationResponse] = service.updateAccountCustomization(params).promise().toFuture
+    @inline def updateAccountSettingsFuture(params: UpdateAccountSettingsRequest): Future[UpdateAccountSettingsResponse] = service.updateAccountSettings(params).promise().toFuture
+    @inline def updateDashboardFuture(params: UpdateDashboardRequest): Future[UpdateDashboardResponse] = service.updateDashboard(params).promise().toFuture
+    @inline def updateDashboardPermissionsFuture(params: UpdateDashboardPermissionsRequest): Future[UpdateDashboardPermissionsResponse] = service.updateDashboardPermissions(params).promise().toFuture
+    @inline def updateDashboardPublishedVersionFuture(params: UpdateDashboardPublishedVersionRequest): Future[UpdateDashboardPublishedVersionResponse] = service.updateDashboardPublishedVersion(params).promise().toFuture
+    @inline def updateDataSetFuture(params: UpdateDataSetRequest): Future[UpdateDataSetResponse] = service.updateDataSet(params).promise().toFuture
+    @inline def updateDataSetPermissionsFuture(params: UpdateDataSetPermissionsRequest): Future[UpdateDataSetPermissionsResponse] = service.updateDataSetPermissions(params).promise().toFuture
+    @inline def updateDataSourceFuture(params: UpdateDataSourceRequest): Future[UpdateDataSourceResponse] = service.updateDataSource(params).promise().toFuture
+    @inline def updateDataSourcePermissionsFuture(params: UpdateDataSourcePermissionsRequest): Future[UpdateDataSourcePermissionsResponse] = service.updateDataSourcePermissions(params).promise().toFuture
+    @inline def updateGroupFuture(params: UpdateGroupRequest): Future[UpdateGroupResponse] = service.updateGroup(params).promise().toFuture
+    @inline def updateIAMPolicyAssignmentFuture(params: UpdateIAMPolicyAssignmentRequest): Future[UpdateIAMPolicyAssignmentResponse] = service.updateIAMPolicyAssignment(params).promise().toFuture
+    @inline def updateTemplateAliasFuture(params: UpdateTemplateAliasRequest): Future[UpdateTemplateAliasResponse] = service.updateTemplateAlias(params).promise().toFuture
+    @inline def updateTemplateFuture(params: UpdateTemplateRequest): Future[UpdateTemplateResponse] = service.updateTemplate(params).promise().toFuture
+    @inline def updateTemplatePermissionsFuture(params: UpdateTemplatePermissionsRequest): Future[UpdateTemplatePermissionsResponse] = service.updateTemplatePermissions(params).promise().toFuture
+    @inline def updateThemeAliasFuture(params: UpdateThemeAliasRequest): Future[UpdateThemeAliasResponse] = service.updateThemeAlias(params).promise().toFuture
+    @inline def updateThemeFuture(params: UpdateThemeRequest): Future[UpdateThemeResponse] = service.updateTheme(params).promise().toFuture
+    @inline def updateThemePermissionsFuture(params: UpdateThemePermissionsRequest): Future[UpdateThemePermissionsResponse] = service.updateThemePermissions(params).promise().toFuture
+    @inline def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] = service.updateUser(params).promise().toFuture
   }
 }
 
@@ -352,74 +232,51 @@ package quicksight {
     def this(config: AWSConfig) = this()
 
     def cancelIngestion(params: CancelIngestionRequest): Request[CancelIngestionResponse] = js.native
-    def createAccountCustomization(
-        params: CreateAccountCustomizationRequest
-    ): Request[CreateAccountCustomizationResponse] = js.native
+    def createAccountCustomization(params: CreateAccountCustomizationRequest): Request[CreateAccountCustomizationResponse] = js.native
     def createDashboard(params: CreateDashboardRequest): Request[CreateDashboardResponse] = js.native
     def createDataSet(params: CreateDataSetRequest): Request[CreateDataSetResponse] = js.native
     def createDataSource(params: CreateDataSourceRequest): Request[CreateDataSourceResponse] = js.native
     def createGroup(params: CreateGroupRequest): Request[CreateGroupResponse] = js.native
     def createGroupMembership(params: CreateGroupMembershipRequest): Request[CreateGroupMembershipResponse] = js.native
-    def createIAMPolicyAssignment(
-        params: CreateIAMPolicyAssignmentRequest
-    ): Request[CreateIAMPolicyAssignmentResponse] = js.native
+    def createIAMPolicyAssignment(params: CreateIAMPolicyAssignmentRequest): Request[CreateIAMPolicyAssignmentResponse] = js.native
     def createIngestion(params: CreateIngestionRequest): Request[CreateIngestionResponse] = js.native
     def createNamespace(params: CreateNamespaceRequest): Request[CreateNamespaceResponse] = js.native
     def createTemplate(params: CreateTemplateRequest): Request[CreateTemplateResponse] = js.native
     def createTemplateAlias(params: CreateTemplateAliasRequest): Request[CreateTemplateAliasResponse] = js.native
     def createTheme(params: CreateThemeRequest): Request[CreateThemeResponse] = js.native
     def createThemeAlias(params: CreateThemeAliasRequest): Request[CreateThemeAliasResponse] = js.native
-    def deleteAccountCustomization(
-        params: DeleteAccountCustomizationRequest
-    ): Request[DeleteAccountCustomizationResponse] = js.native
+    def deleteAccountCustomization(params: DeleteAccountCustomizationRequest): Request[DeleteAccountCustomizationResponse] = js.native
     def deleteDashboard(params: DeleteDashboardRequest): Request[DeleteDashboardResponse] = js.native
     def deleteDataSet(params: DeleteDataSetRequest): Request[DeleteDataSetResponse] = js.native
     def deleteDataSource(params: DeleteDataSourceRequest): Request[DeleteDataSourceResponse] = js.native
     def deleteGroup(params: DeleteGroupRequest): Request[DeleteGroupResponse] = js.native
     def deleteGroupMembership(params: DeleteGroupMembershipRequest): Request[DeleteGroupMembershipResponse] = js.native
-    def deleteIAMPolicyAssignment(
-        params: DeleteIAMPolicyAssignmentRequest
-    ): Request[DeleteIAMPolicyAssignmentResponse] = js.native
+    def deleteIAMPolicyAssignment(params: DeleteIAMPolicyAssignmentRequest): Request[DeleteIAMPolicyAssignmentResponse] = js.native
     def deleteNamespace(params: DeleteNamespaceRequest): Request[DeleteNamespaceResponse] = js.native
     def deleteTemplate(params: DeleteTemplateRequest): Request[DeleteTemplateResponse] = js.native
     def deleteTemplateAlias(params: DeleteTemplateAliasRequest): Request[DeleteTemplateAliasResponse] = js.native
     def deleteTheme(params: DeleteThemeRequest): Request[DeleteThemeResponse] = js.native
     def deleteThemeAlias(params: DeleteThemeAliasRequest): Request[DeleteThemeAliasResponse] = js.native
     def deleteUser(params: DeleteUserRequest): Request[DeleteUserResponse] = js.native
-    def deleteUserByPrincipalId(params: DeleteUserByPrincipalIdRequest): Request[DeleteUserByPrincipalIdResponse] =
-      js.native
-    def describeAccountCustomization(
-        params: DescribeAccountCustomizationRequest
-    ): Request[DescribeAccountCustomizationResponse] = js.native
-    def describeAccountSettings(params: DescribeAccountSettingsRequest): Request[DescribeAccountSettingsResponse] =
-      js.native
+    def deleteUserByPrincipalId(params: DeleteUserByPrincipalIdRequest): Request[DeleteUserByPrincipalIdResponse] = js.native
+    def describeAccountCustomization(params: DescribeAccountCustomizationRequest): Request[DescribeAccountCustomizationResponse] = js.native
+    def describeAccountSettings(params: DescribeAccountSettingsRequest): Request[DescribeAccountSettingsResponse] = js.native
     def describeDashboard(params: DescribeDashboardRequest): Request[DescribeDashboardResponse] = js.native
-    def describeDashboardPermissions(
-        params: DescribeDashboardPermissionsRequest
-    ): Request[DescribeDashboardPermissionsResponse] = js.native
+    def describeDashboardPermissions(params: DescribeDashboardPermissionsRequest): Request[DescribeDashboardPermissionsResponse] = js.native
     def describeDataSet(params: DescribeDataSetRequest): Request[DescribeDataSetResponse] = js.native
-    def describeDataSetPermissions(
-        params: DescribeDataSetPermissionsRequest
-    ): Request[DescribeDataSetPermissionsResponse] = js.native
+    def describeDataSetPermissions(params: DescribeDataSetPermissionsRequest): Request[DescribeDataSetPermissionsResponse] = js.native
     def describeDataSource(params: DescribeDataSourceRequest): Request[DescribeDataSourceResponse] = js.native
-    def describeDataSourcePermissions(
-        params: DescribeDataSourcePermissionsRequest
-    ): Request[DescribeDataSourcePermissionsResponse] = js.native
+    def describeDataSourcePermissions(params: DescribeDataSourcePermissionsRequest): Request[DescribeDataSourcePermissionsResponse] = js.native
     def describeGroup(params: DescribeGroupRequest): Request[DescribeGroupResponse] = js.native
-    def describeIAMPolicyAssignment(
-        params: DescribeIAMPolicyAssignmentRequest
-    ): Request[DescribeIAMPolicyAssignmentResponse] = js.native
+    def describeIAMPolicyAssignment(params: DescribeIAMPolicyAssignmentRequest): Request[DescribeIAMPolicyAssignmentResponse] = js.native
     def describeIngestion(params: DescribeIngestionRequest): Request[DescribeIngestionResponse] = js.native
     def describeNamespace(params: DescribeNamespaceRequest): Request[DescribeNamespaceResponse] = js.native
     def describeTemplate(params: DescribeTemplateRequest): Request[DescribeTemplateResponse] = js.native
     def describeTemplateAlias(params: DescribeTemplateAliasRequest): Request[DescribeTemplateAliasResponse] = js.native
-    def describeTemplatePermissions(
-        params: DescribeTemplatePermissionsRequest
-    ): Request[DescribeTemplatePermissionsResponse] = js.native
+    def describeTemplatePermissions(params: DescribeTemplatePermissionsRequest): Request[DescribeTemplatePermissionsResponse] = js.native
     def describeTheme(params: DescribeThemeRequest): Request[DescribeThemeResponse] = js.native
     def describeThemeAlias(params: DescribeThemeAliasRequest): Request[DescribeThemeAliasResponse] = js.native
-    def describeThemePermissions(params: DescribeThemePermissionsRequest): Request[DescribeThemePermissionsResponse] =
-      js.native
+    def describeThemePermissions(params: DescribeThemePermissionsRequest): Request[DescribeThemePermissionsResponse] = js.native
     def describeUser(params: DescribeUserRequest): Request[DescribeUserResponse] = js.native
     def getDashboardEmbedUrl(params: GetDashboardEmbedUrlRequest): Request[GetDashboardEmbedUrlResponse] = js.native
     def getSessionEmbedUrl(params: GetSessionEmbedUrlRequest): Request[GetSessionEmbedUrlResponse] = js.native
@@ -429,11 +286,8 @@ package quicksight {
     def listDataSources(params: ListDataSourcesRequest): Request[ListDataSourcesResponse] = js.native
     def listGroupMemberships(params: ListGroupMembershipsRequest): Request[ListGroupMembershipsResponse] = js.native
     def listGroups(params: ListGroupsRequest): Request[ListGroupsResponse] = js.native
-    def listIAMPolicyAssignments(params: ListIAMPolicyAssignmentsRequest): Request[ListIAMPolicyAssignmentsResponse] =
-      js.native
-    def listIAMPolicyAssignmentsForUser(
-        params: ListIAMPolicyAssignmentsForUserRequest
-    ): Request[ListIAMPolicyAssignmentsForUserResponse] = js.native
+    def listIAMPolicyAssignments(params: ListIAMPolicyAssignmentsRequest): Request[ListIAMPolicyAssignmentsResponse] = js.native
+    def listIAMPolicyAssignmentsForUser(params: ListIAMPolicyAssignmentsForUserRequest): Request[ListIAMPolicyAssignmentsForUserResponse] = js.native
     def listIngestions(params: ListIngestionsRequest): Request[ListIngestionsResponse] = js.native
     def listNamespaces(params: ListNamespacesRequest): Request[ListNamespacesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
@@ -449,37 +303,23 @@ package quicksight {
     def searchDashboards(params: SearchDashboardsRequest): Request[SearchDashboardsResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
-    def updateAccountCustomization(
-        params: UpdateAccountCustomizationRequest
-    ): Request[UpdateAccountCustomizationResponse] = js.native
+    def updateAccountCustomization(params: UpdateAccountCustomizationRequest): Request[UpdateAccountCustomizationResponse] = js.native
     def updateAccountSettings(params: UpdateAccountSettingsRequest): Request[UpdateAccountSettingsResponse] = js.native
     def updateDashboard(params: UpdateDashboardRequest): Request[UpdateDashboardResponse] = js.native
-    def updateDashboardPermissions(
-        params: UpdateDashboardPermissionsRequest
-    ): Request[UpdateDashboardPermissionsResponse] = js.native
-    def updateDashboardPublishedVersion(
-        params: UpdateDashboardPublishedVersionRequest
-    ): Request[UpdateDashboardPublishedVersionResponse] = js.native
+    def updateDashboardPermissions(params: UpdateDashboardPermissionsRequest): Request[UpdateDashboardPermissionsResponse] = js.native
+    def updateDashboardPublishedVersion(params: UpdateDashboardPublishedVersionRequest): Request[UpdateDashboardPublishedVersionResponse] = js.native
     def updateDataSet(params: UpdateDataSetRequest): Request[UpdateDataSetResponse] = js.native
-    def updateDataSetPermissions(params: UpdateDataSetPermissionsRequest): Request[UpdateDataSetPermissionsResponse] =
-      js.native
+    def updateDataSetPermissions(params: UpdateDataSetPermissionsRequest): Request[UpdateDataSetPermissionsResponse] = js.native
     def updateDataSource(params: UpdateDataSourceRequest): Request[UpdateDataSourceResponse] = js.native
-    def updateDataSourcePermissions(
-        params: UpdateDataSourcePermissionsRequest
-    ): Request[UpdateDataSourcePermissionsResponse] = js.native
+    def updateDataSourcePermissions(params: UpdateDataSourcePermissionsRequest): Request[UpdateDataSourcePermissionsResponse] = js.native
     def updateGroup(params: UpdateGroupRequest): Request[UpdateGroupResponse] = js.native
-    def updateIAMPolicyAssignment(
-        params: UpdateIAMPolicyAssignmentRequest
-    ): Request[UpdateIAMPolicyAssignmentResponse] = js.native
+    def updateIAMPolicyAssignment(params: UpdateIAMPolicyAssignmentRequest): Request[UpdateIAMPolicyAssignmentResponse] = js.native
     def updateTemplate(params: UpdateTemplateRequest): Request[UpdateTemplateResponse] = js.native
     def updateTemplateAlias(params: UpdateTemplateAliasRequest): Request[UpdateTemplateAliasResponse] = js.native
-    def updateTemplatePermissions(
-        params: UpdateTemplatePermissionsRequest
-    ): Request[UpdateTemplatePermissionsResponse] = js.native
+    def updateTemplatePermissions(params: UpdateTemplatePermissionsRequest): Request[UpdateTemplatePermissionsResponse] = js.native
     def updateTheme(params: UpdateThemeRequest): Request[UpdateThemeResponse] = js.native
     def updateThemeAlias(params: UpdateThemeAliasRequest): Request[UpdateThemeAliasResponse] = js.native
-    def updateThemePermissions(params: UpdateThemePermissionsRequest): Request[UpdateThemePermissionsResponse] =
-      js.native
+    def updateThemePermissions(params: UpdateThemePermissionsRequest): Request[UpdateThemePermissionsResponse] = js.native
     def updateUser(params: UpdateUserRequest): Request[UpdateUserResponse] = js.native
   }
 
@@ -883,9 +723,7 @@ package quicksight {
         Name: js.UndefOr[String] = js.undefined
     ): ColumnGroupSchema = {
       val __obj = js.Dynamic.literal()
-      ColumnGroupColumnSchemaList.foreach(__v =>
-        __obj.updateDynamic("ColumnGroupColumnSchemaList")(__v.asInstanceOf[js.Any])
-      )
+      ColumnGroupColumnSchemaList.foreach(__v => __obj.updateDynamic("ColumnGroupColumnSchemaList")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ColumnGroupSchema]
     }
@@ -1123,9 +961,7 @@ package quicksight {
       ColumnGroups.foreach(__v => __obj.updateDynamic("ColumnGroups")(__v.asInstanceOf[js.Any]))
       LogicalTableMap.foreach(__v => __obj.updateDynamic("LogicalTableMap")(__v.asInstanceOf[js.Any]))
       Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
-      RowLevelPermissionDataSet.foreach(__v =>
-        __obj.updateDynamic("RowLevelPermissionDataSet")(__v.asInstanceOf[js.Any])
-      )
+      RowLevelPermissionDataSet.foreach(__v => __obj.updateDynamic("RowLevelPermissionDataSet")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDataSetRequest]
     }
@@ -1776,9 +1612,7 @@ package quicksight {
         "Username" -> Username.asInstanceOf[js.Any]
       )
 
-      AlternateDataSourceParameters.foreach(__v =>
-        __obj.updateDynamic("AlternateDataSourceParameters")(__v.asInstanceOf[js.Any])
-      )
+      AlternateDataSourceParameters.foreach(__v => __obj.updateDynamic("AlternateDataSourceParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CredentialPair]
     }
   }
@@ -1895,20 +1729,18 @@ package quicksight {
     val COLUMN_GEOGRAPHIC_ROLE_MISMATCH = "COLUMN_GEOGRAPHIC_ROLE_MISMATCH".asInstanceOf[DashboardErrorType]
     val COLUMN_REPLACEMENT_MISSING = "COLUMN_REPLACEMENT_MISSING".asInstanceOf[DashboardErrorType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ACCESS_DENIED,
-        SOURCE_NOT_FOUND,
-        DATA_SET_NOT_FOUND,
-        INTERNAL_FAILURE,
-        PARAMETER_VALUE_INCOMPATIBLE,
-        PARAMETER_TYPE_INVALID,
-        PARAMETER_NOT_FOUND,
-        COLUMN_TYPE_MISMATCH,
-        COLUMN_GEOGRAPHIC_ROLE_MISMATCH,
-        COLUMN_REPLACEMENT_MISSING
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      ACCESS_DENIED,
+      SOURCE_NOT_FOUND,
+      DATA_SET_NOT_FOUND,
+      INTERNAL_FAILURE,
+      PARAMETER_VALUE_INCOMPATIBLE,
+      PARAMETER_TYPE_INVALID,
+      PARAMETER_NOT_FOUND,
+      COLUMN_TYPE_MISMATCH,
+      COLUMN_GEOGRAPHIC_ROLE_MISMATCH,
+      COLUMN_REPLACEMENT_MISSING
+    ))
   }
 
   @js.native
@@ -2197,9 +2029,7 @@ package quicksight {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       ColumnGroups.foreach(__v => __obj.updateDynamic("ColumnGroups")(__v.asInstanceOf[js.Any]))
-      ConsumedSpiceCapacityInBytes.foreach(__v =>
-        __obj.updateDynamic("ConsumedSpiceCapacityInBytes")(__v.asInstanceOf[js.Any])
-      )
+      ConsumedSpiceCapacityInBytes.foreach(__v => __obj.updateDynamic("ConsumedSpiceCapacityInBytes")(__v.asInstanceOf[js.Any]))
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
       DataSetId.foreach(__v => __obj.updateDynamic("DataSetId")(__v.asInstanceOf[js.Any]))
       ImportMode.foreach(__v => __obj.updateDynamic("ImportMode")(__v.asInstanceOf[js.Any]))
@@ -2208,9 +2038,7 @@ package quicksight {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       OutputColumns.foreach(__v => __obj.updateDynamic("OutputColumns")(__v.asInstanceOf[js.Any]))
       PhysicalTableMap.foreach(__v => __obj.updateDynamic("PhysicalTableMap")(__v.asInstanceOf[js.Any]))
-      RowLevelPermissionDataSet.foreach(__v =>
-        __obj.updateDynamic("RowLevelPermissionDataSet")(__v.asInstanceOf[js.Any])
-      )
+      RowLevelPermissionDataSet.foreach(__v => __obj.updateDynamic("RowLevelPermissionDataSet")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataSet]
     }
   }
@@ -2324,9 +2152,7 @@ package quicksight {
       ImportMode.foreach(__v => __obj.updateDynamic("ImportMode")(__v.asInstanceOf[js.Any]))
       LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      RowLevelPermissionDataSet.foreach(__v =>
-        __obj.updateDynamic("RowLevelPermissionDataSet")(__v.asInstanceOf[js.Any])
-      )
+      RowLevelPermissionDataSet.foreach(__v => __obj.updateDynamic("RowLevelPermissionDataSet")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataSetSummary]
     }
   }
@@ -2367,9 +2193,7 @@ package quicksight {
         VpcConnectionProperties: js.UndefOr[VpcConnectionProperties] = js.undefined
     ): DataSource = {
       val __obj = js.Dynamic.literal()
-      AlternateDataSourceParameters.foreach(__v =>
-        __obj.updateDynamic("AlternateDataSourceParameters")(__v.asInstanceOf[js.Any])
-      )
+      AlternateDataSourceParameters.foreach(__v => __obj.updateDynamic("AlternateDataSourceParameters")(__v.asInstanceOf[js.Any]))
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
       DataSourceId.foreach(__v => __obj.updateDynamic("DataSourceId")(__v.asInstanceOf[js.Any]))
@@ -2441,18 +2265,7 @@ package quicksight {
     val CONFLICT = "CONFLICT".asInstanceOf[DataSourceErrorInfoType]
     val UNKNOWN = "UNKNOWN".asInstanceOf[DataSourceErrorInfoType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ACCESS_DENIED,
-        COPY_SOURCE_NOT_FOUND,
-        TIMEOUT,
-        ENGINE_VERSION_NOT_SUPPORTED,
-        UNKNOWN_HOST,
-        GENERIC_SQL_FAILURE,
-        CONFLICT,
-        UNKNOWN
-      )
-    )
+    val values = js.Object.freeze(js.Array(ACCESS_DENIED, COPY_SOURCE_NOT_FOUND, TIMEOUT, ENGINE_VERSION_NOT_SUPPORTED, UNKNOWN_HOST, GENERIC_SQL_FAILURE, CONFLICT, UNKNOWN))
   }
 
   /**
@@ -2505,17 +2318,11 @@ package quicksight {
         TwitterParameters: js.UndefOr[TwitterParameters] = js.undefined
     ): DataSourceParameters = {
       val __obj = js.Dynamic.literal()
-      AmazonElasticsearchParameters.foreach(__v =>
-        __obj.updateDynamic("AmazonElasticsearchParameters")(__v.asInstanceOf[js.Any])
-      )
+      AmazonElasticsearchParameters.foreach(__v => __obj.updateDynamic("AmazonElasticsearchParameters")(__v.asInstanceOf[js.Any]))
       AthenaParameters.foreach(__v => __obj.updateDynamic("AthenaParameters")(__v.asInstanceOf[js.Any]))
       AuroraParameters.foreach(__v => __obj.updateDynamic("AuroraParameters")(__v.asInstanceOf[js.Any]))
-      AuroraPostgreSqlParameters.foreach(__v =>
-        __obj.updateDynamic("AuroraPostgreSqlParameters")(__v.asInstanceOf[js.Any])
-      )
-      AwsIotAnalyticsParameters.foreach(__v =>
-        __obj.updateDynamic("AwsIotAnalyticsParameters")(__v.asInstanceOf[js.Any])
-      )
+      AuroraPostgreSqlParameters.foreach(__v => __obj.updateDynamic("AuroraPostgreSqlParameters")(__v.asInstanceOf[js.Any]))
+      AwsIotAnalyticsParameters.foreach(__v => __obj.updateDynamic("AwsIotAnalyticsParameters")(__v.asInstanceOf[js.Any]))
       JiraParameters.foreach(__v => __obj.updateDynamic("JiraParameters")(__v.asInstanceOf[js.Any]))
       MariaDbParameters.foreach(__v => __obj.updateDynamic("MariaDbParameters")(__v.asInstanceOf[js.Any]))
       MySqlParameters.foreach(__v => __obj.updateDynamic("MySqlParameters")(__v.asInstanceOf[js.Any]))
@@ -2559,31 +2366,29 @@ package quicksight {
     val TERADATA = "TERADATA".asInstanceOf[DataSourceType]
     val TWITTER = "TWITTER".asInstanceOf[DataSourceType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ADOBE_ANALYTICS,
-        AMAZON_ELASTICSEARCH,
-        ATHENA,
-        AURORA,
-        AURORA_POSTGRESQL,
-        AWS_IOT_ANALYTICS,
-        GITHUB,
-        JIRA,
-        MARIADB,
-        MYSQL,
-        POSTGRESQL,
-        PRESTO,
-        REDSHIFT,
-        S3,
-        SALESFORCE,
-        SERVICENOW,
-        SNOWFLAKE,
-        SPARK,
-        SQLSERVER,
-        TERADATA,
-        TWITTER
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      ADOBE_ANALYTICS,
+      AMAZON_ELASTICSEARCH,
+      ATHENA,
+      AURORA,
+      AURORA_POSTGRESQL,
+      AWS_IOT_ANALYTICS,
+      GITHUB,
+      JIRA,
+      MARIADB,
+      MYSQL,
+      POSTGRESQL,
+      PRESTO,
+      REDSHIFT,
+      S3,
+      SALESFORCE,
+      SERVICENOW,
+      SNOWFLAKE,
+      SPARK,
+      SQLSERVER,
+      TERADATA,
+      TWITTER
+    ))
   }
 
   /**
@@ -4655,50 +4460,48 @@ package quicksight {
     val FAILURE_TO_PROCESS_JSON_FILE = "FAILURE_TO_PROCESS_JSON_FILE".asInstanceOf[IngestionErrorType]
     val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[IngestionErrorType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        FAILURE_TO_ASSUME_ROLE,
-        INGESTION_SUPERSEDED,
-        INGESTION_CANCELED,
-        DATA_SET_DELETED,
-        DATA_SET_NOT_SPICE,
-        S3_UPLOADED_FILE_DELETED,
-        S3_MANIFEST_ERROR,
-        DATA_TOLERANCE_EXCEPTION,
-        SPICE_TABLE_NOT_FOUND,
-        DATA_SET_SIZE_LIMIT_EXCEEDED,
-        ROW_SIZE_LIMIT_EXCEEDED,
-        ACCOUNT_CAPACITY_LIMIT_EXCEEDED,
-        CUSTOMER_ERROR,
-        DATA_SOURCE_NOT_FOUND,
-        IAM_ROLE_NOT_AVAILABLE,
-        CONNECTION_FAILURE,
-        SQL_TABLE_NOT_FOUND,
-        PERMISSION_DENIED,
-        SSL_CERTIFICATE_VALIDATION_FAILURE,
-        OAUTH_TOKEN_FAILURE,
-        SOURCE_API_LIMIT_EXCEEDED_FAILURE,
-        PASSWORD_AUTHENTICATION_FAILURE,
-        SQL_SCHEMA_MISMATCH_ERROR,
-        INVALID_DATE_FORMAT,
-        INVALID_DATAPREP_SYNTAX,
-        SOURCE_RESOURCE_LIMIT_EXCEEDED,
-        SQL_INVALID_PARAMETER_VALUE,
-        QUERY_TIMEOUT,
-        SQL_NUMERIC_OVERFLOW,
-        UNRESOLVABLE_HOST,
-        UNROUTABLE_HOST,
-        SQL_EXCEPTION,
-        S3_FILE_INACCESSIBLE,
-        IOT_FILE_NOT_FOUND,
-        IOT_DATA_SET_FILE_EMPTY,
-        INVALID_DATA_SOURCE_CONFIG,
-        DATA_SOURCE_AUTH_FAILED,
-        DATA_SOURCE_CONNECTION_FAILED,
-        FAILURE_TO_PROCESS_JSON_FILE,
-        INTERNAL_SERVICE_ERROR
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      FAILURE_TO_ASSUME_ROLE,
+      INGESTION_SUPERSEDED,
+      INGESTION_CANCELED,
+      DATA_SET_DELETED,
+      DATA_SET_NOT_SPICE,
+      S3_UPLOADED_FILE_DELETED,
+      S3_MANIFEST_ERROR,
+      DATA_TOLERANCE_EXCEPTION,
+      SPICE_TABLE_NOT_FOUND,
+      DATA_SET_SIZE_LIMIT_EXCEEDED,
+      ROW_SIZE_LIMIT_EXCEEDED,
+      ACCOUNT_CAPACITY_LIMIT_EXCEEDED,
+      CUSTOMER_ERROR,
+      DATA_SOURCE_NOT_FOUND,
+      IAM_ROLE_NOT_AVAILABLE,
+      CONNECTION_FAILURE,
+      SQL_TABLE_NOT_FOUND,
+      PERMISSION_DENIED,
+      SSL_CERTIFICATE_VALIDATION_FAILURE,
+      OAUTH_TOKEN_FAILURE,
+      SOURCE_API_LIMIT_EXCEEDED_FAILURE,
+      PASSWORD_AUTHENTICATION_FAILURE,
+      SQL_SCHEMA_MISMATCH_ERROR,
+      INVALID_DATE_FORMAT,
+      INVALID_DATAPREP_SYNTAX,
+      SOURCE_RESOURCE_LIMIT_EXCEEDED,
+      SQL_INVALID_PARAMETER_VALUE,
+      QUERY_TIMEOUT,
+      SQL_NUMERIC_OVERFLOW,
+      UNRESOLVABLE_HOST,
+      UNROUTABLE_HOST,
+      SQL_EXCEPTION,
+      S3_FILE_INACCESSIBLE,
+      IOT_FILE_NOT_FOUND,
+      IOT_DATA_SET_FILE_EMPTY,
+      INVALID_DATA_SOURCE_CONFIG,
+      DATA_SOURCE_AUTH_FAILED,
+      DATA_SOURCE_CONNECTION_FAILED,
+      FAILURE_TO_PROCESS_JSON_FILE,
+      INTERNAL_SERVICE_ERROR
+    ))
   }
 
   @js.native
@@ -4902,9 +4705,7 @@ package quicksight {
         Status: js.UndefOr[StatusCode] = js.undefined
     ): ListDashboardVersionsResponse = {
       val __obj = js.Dynamic.literal()
-      DashboardVersionSummaryList.foreach(__v =>
-        __obj.updateDynamic("DashboardVersionSummaryList")(__v.asInstanceOf[js.Any])
-      )
+      DashboardVersionSummaryList.foreach(__v => __obj.updateDynamic("DashboardVersionSummaryList")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -5516,9 +5317,7 @@ package quicksight {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      TemplateVersionSummaryList.foreach(__v =>
-        __obj.updateDynamic("TemplateVersionSummaryList")(__v.asInstanceOf[js.Any])
-      )
+      TemplateVersionSummaryList.foreach(__v => __obj.updateDynamic("TemplateVersionSummaryList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTemplateVersionsResponse]
     }
   }
@@ -6441,16 +6240,7 @@ package quicksight {
     val UPDATE_SUCCESSFUL = "UPDATE_SUCCESSFUL".asInstanceOf[ResourceStatus]
     val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[ResourceStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        CREATION_IN_PROGRESS,
-        CREATION_SUCCESSFUL,
-        CREATION_FAILED,
-        UPDATE_IN_PROGRESS,
-        UPDATE_SUCCESSFUL,
-        UPDATE_FAILED
-      )
-    )
+    val values = js.Object.freeze(js.Array(CREATION_IN_PROGRESS, CREATION_SUCCESSFUL, CREATION_FAILED, UPDATE_IN_PROGRESS, UPDATE_SUCCESSFUL, UPDATE_FAILED))
   }
 
   /**
@@ -7969,9 +7759,7 @@ package quicksight {
 
       ColumnGroups.foreach(__v => __obj.updateDynamic("ColumnGroups")(__v.asInstanceOf[js.Any]))
       LogicalTableMap.foreach(__v => __obj.updateDynamic("LogicalTableMap")(__v.asInstanceOf[js.Any]))
-      RowLevelPermissionDataSet.foreach(__v =>
-        __obj.updateDynamic("RowLevelPermissionDataSet")(__v.asInstanceOf[js.Any])
-      )
+      RowLevelPermissionDataSet.foreach(__v => __obj.updateDynamic("RowLevelPermissionDataSet")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDataSetRequest]
     }
   }

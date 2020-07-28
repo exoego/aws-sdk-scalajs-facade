@@ -38,33 +38,16 @@ package object applicationautoscaling {
 
   implicit final class ApplicationAutoScalingOps(private val service: ApplicationAutoScaling) extends AnyVal {
 
-    @inline def deleteScalingPolicyFuture(params: DeleteScalingPolicyRequest): Future[DeleteScalingPolicyResponse] =
-      service.deleteScalingPolicy(params).promise().toFuture
-    @inline def deleteScheduledActionFuture(
-        params: DeleteScheduledActionRequest
-    ): Future[DeleteScheduledActionResponse] = service.deleteScheduledAction(params).promise().toFuture
-    @inline def deregisterScalableTargetFuture(
-        params: DeregisterScalableTargetRequest
-    ): Future[DeregisterScalableTargetResponse] = service.deregisterScalableTarget(params).promise().toFuture
-    @inline def describeScalableTargetsFuture(
-        params: DescribeScalableTargetsRequest
-    ): Future[DescribeScalableTargetsResponse] = service.describeScalableTargets(params).promise().toFuture
-    @inline def describeScalingActivitiesFuture(
-        params: DescribeScalingActivitiesRequest
-    ): Future[DescribeScalingActivitiesResponse] = service.describeScalingActivities(params).promise().toFuture
-    @inline def describeScalingPoliciesFuture(
-        params: DescribeScalingPoliciesRequest
-    ): Future[DescribeScalingPoliciesResponse] = service.describeScalingPolicies(params).promise().toFuture
-    @inline def describeScheduledActionsFuture(
-        params: DescribeScheduledActionsRequest
-    ): Future[DescribeScheduledActionsResponse] = service.describeScheduledActions(params).promise().toFuture
-    @inline def putScalingPolicyFuture(params: PutScalingPolicyRequest): Future[PutScalingPolicyResponse] =
-      service.putScalingPolicy(params).promise().toFuture
-    @inline def putScheduledActionFuture(params: PutScheduledActionRequest): Future[PutScheduledActionResponse] =
-      service.putScheduledAction(params).promise().toFuture
-    @inline def registerScalableTargetFuture(
-        params: RegisterScalableTargetRequest
-    ): Future[RegisterScalableTargetResponse] = service.registerScalableTarget(params).promise().toFuture
+    @inline def deleteScalingPolicyFuture(params: DeleteScalingPolicyRequest): Future[DeleteScalingPolicyResponse] = service.deleteScalingPolicy(params).promise().toFuture
+    @inline def deleteScheduledActionFuture(params: DeleteScheduledActionRequest): Future[DeleteScheduledActionResponse] = service.deleteScheduledAction(params).promise().toFuture
+    @inline def deregisterScalableTargetFuture(params: DeregisterScalableTargetRequest): Future[DeregisterScalableTargetResponse] = service.deregisterScalableTarget(params).promise().toFuture
+    @inline def describeScalableTargetsFuture(params: DescribeScalableTargetsRequest): Future[DescribeScalableTargetsResponse] = service.describeScalableTargets(params).promise().toFuture
+    @inline def describeScalingActivitiesFuture(params: DescribeScalingActivitiesRequest): Future[DescribeScalingActivitiesResponse] = service.describeScalingActivities(params).promise().toFuture
+    @inline def describeScalingPoliciesFuture(params: DescribeScalingPoliciesRequest): Future[DescribeScalingPoliciesResponse] = service.describeScalingPolicies(params).promise().toFuture
+    @inline def describeScheduledActionsFuture(params: DescribeScheduledActionsRequest): Future[DescribeScheduledActionsResponse] = service.describeScheduledActions(params).promise().toFuture
+    @inline def putScalingPolicyFuture(params: PutScalingPolicyRequest): Future[PutScalingPolicyResponse] = service.putScalingPolicy(params).promise().toFuture
+    @inline def putScheduledActionFuture(params: PutScheduledActionRequest): Future[PutScheduledActionResponse] = service.putScheduledAction(params).promise().toFuture
+    @inline def registerScalableTargetFuture(params: RegisterScalableTargetRequest): Future[RegisterScalableTargetResponse] = service.registerScalableTarget(params).promise().toFuture
   }
 }
 
@@ -76,21 +59,14 @@ package applicationautoscaling {
 
     def deleteScalingPolicy(params: DeleteScalingPolicyRequest): Request[DeleteScalingPolicyResponse] = js.native
     def deleteScheduledAction(params: DeleteScheduledActionRequest): Request[DeleteScheduledActionResponse] = js.native
-    def deregisterScalableTarget(params: DeregisterScalableTargetRequest): Request[DeregisterScalableTargetResponse] =
-      js.native
-    def describeScalableTargets(params: DescribeScalableTargetsRequest): Request[DescribeScalableTargetsResponse] =
-      js.native
-    def describeScalingActivities(
-        params: DescribeScalingActivitiesRequest
-    ): Request[DescribeScalingActivitiesResponse] = js.native
-    def describeScalingPolicies(params: DescribeScalingPoliciesRequest): Request[DescribeScalingPoliciesResponse] =
-      js.native
-    def describeScheduledActions(params: DescribeScheduledActionsRequest): Request[DescribeScheduledActionsResponse] =
-      js.native
+    def deregisterScalableTarget(params: DeregisterScalableTargetRequest): Request[DeregisterScalableTargetResponse] = js.native
+    def describeScalableTargets(params: DescribeScalableTargetsRequest): Request[DescribeScalableTargetsResponse] = js.native
+    def describeScalingActivities(params: DescribeScalingActivitiesRequest): Request[DescribeScalingActivitiesResponse] = js.native
+    def describeScalingPolicies(params: DescribeScalingPoliciesRequest): Request[DescribeScalingPoliciesResponse] = js.native
+    def describeScheduledActions(params: DescribeScheduledActionsRequest): Request[DescribeScheduledActionsResponse] = js.native
     def putScalingPolicy(params: PutScalingPolicyRequest): Request[PutScalingPolicyResponse] = js.native
     def putScheduledAction(params: PutScheduledActionRequest): Request[PutScheduledActionResponse] = js.native
-    def registerScalableTarget(params: RegisterScalableTargetRequest): Request[RegisterScalableTargetResponse] =
-      js.native
+    def registerScalableTarget(params: RegisterScalableTargetRequest): Request[RegisterScalableTargetResponse] = js.native
   }
 
   @js.native
@@ -550,26 +526,24 @@ package applicationautoscaling {
     val CassandraReadCapacityUtilization = "CassandraReadCapacityUtilization".asInstanceOf[MetricType]
     val CassandraWriteCapacityUtilization = "CassandraWriteCapacityUtilization".asInstanceOf[MetricType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        DynamoDBReadCapacityUtilization,
-        DynamoDBWriteCapacityUtilization,
-        ALBRequestCountPerTarget,
-        RDSReaderAverageCPUUtilization,
-        RDSReaderAverageDatabaseConnections,
-        EC2SpotFleetRequestAverageCPUUtilization,
-        EC2SpotFleetRequestAverageNetworkIn,
-        EC2SpotFleetRequestAverageNetworkOut,
-        SageMakerVariantInvocationsPerInstance,
-        ECSServiceAverageCPUUtilization,
-        ECSServiceAverageMemoryUtilization,
-        AppStreamAverageCapacityUtilization,
-        ComprehendInferenceUtilization,
-        LambdaProvisionedConcurrencyUtilization,
-        CassandraReadCapacityUtilization,
-        CassandraWriteCapacityUtilization
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      DynamoDBReadCapacityUtilization,
+      DynamoDBWriteCapacityUtilization,
+      ALBRequestCountPerTarget,
+      RDSReaderAverageCPUUtilization,
+      RDSReaderAverageDatabaseConnections,
+      EC2SpotFleetRequestAverageCPUUtilization,
+      EC2SpotFleetRequestAverageNetworkIn,
+      EC2SpotFleetRequestAverageNetworkOut,
+      SageMakerVariantInvocationsPerInstance,
+      ECSServiceAverageCPUUtilization,
+      ECSServiceAverageMemoryUtilization,
+      AppStreamAverageCapacityUtilization,
+      ComprehendInferenceUtilization,
+      LambdaProvisionedConcurrencyUtilization,
+      CassandraReadCapacityUtilization,
+      CassandraWriteCapacityUtilization
+    ))
   }
 
   @js.native
@@ -636,12 +610,8 @@ package applicationautoscaling {
       )
 
       PolicyType.foreach(__v => __obj.updateDynamic("PolicyType")(__v.asInstanceOf[js.Any]))
-      StepScalingPolicyConfiguration.foreach(__v =>
-        __obj.updateDynamic("StepScalingPolicyConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      TargetTrackingScalingPolicyConfiguration.foreach(__v =>
-        __obj.updateDynamic("TargetTrackingScalingPolicyConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      StepScalingPolicyConfiguration.foreach(__v => __obj.updateDynamic("StepScalingPolicyConfiguration")(__v.asInstanceOf[js.Any]))
+      TargetTrackingScalingPolicyConfiguration.foreach(__v => __obj.updateDynamic("TargetTrackingScalingPolicyConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutScalingPolicyRequest]
     }
   }
@@ -772,46 +742,38 @@ package applicationautoscaling {
   sealed trait ScalableDimension extends js.Any
   object ScalableDimension extends js.Object {
     val `ecs:service:DesiredCount` = "ecs:service:DesiredCount".asInstanceOf[ScalableDimension]
-    val `ec2:spot-fleet-request:TargetCapacity` =
-      "ec2:spot-fleet-request:TargetCapacity".asInstanceOf[ScalableDimension]
-    val `elasticmapreduce:instancegroup:InstanceCount` =
-      "elasticmapreduce:instancegroup:InstanceCount".asInstanceOf[ScalableDimension]
+    val `ec2:spot-fleet-request:TargetCapacity` = "ec2:spot-fleet-request:TargetCapacity".asInstanceOf[ScalableDimension]
+    val `elasticmapreduce:instancegroup:InstanceCount` = "elasticmapreduce:instancegroup:InstanceCount".asInstanceOf[ScalableDimension]
     val `appstream:fleet:DesiredCapacity` = "appstream:fleet:DesiredCapacity".asInstanceOf[ScalableDimension]
     val `dynamodb:table:ReadCapacityUnits` = "dynamodb:table:ReadCapacityUnits".asInstanceOf[ScalableDimension]
     val `dynamodb:table:WriteCapacityUnits` = "dynamodb:table:WriteCapacityUnits".asInstanceOf[ScalableDimension]
     val `dynamodb:index:ReadCapacityUnits` = "dynamodb:index:ReadCapacityUnits".asInstanceOf[ScalableDimension]
     val `dynamodb:index:WriteCapacityUnits` = "dynamodb:index:WriteCapacityUnits".asInstanceOf[ScalableDimension]
     val `rds:cluster:ReadReplicaCount` = "rds:cluster:ReadReplicaCount".asInstanceOf[ScalableDimension]
-    val `sagemaker:variant:DesiredInstanceCount` =
-      "sagemaker:variant:DesiredInstanceCount".asInstanceOf[ScalableDimension]
-    val `custom-resource:ResourceType:Property` =
-      "custom-resource:ResourceType:Property".asInstanceOf[ScalableDimension]
-    val `comprehend:document-classifier-endpoint:DesiredInferenceUnits` =
-      "comprehend:document-classifier-endpoint:DesiredInferenceUnits".asInstanceOf[ScalableDimension]
-    val `lambda:function:ProvisionedConcurrency` =
-      "lambda:function:ProvisionedConcurrency".asInstanceOf[ScalableDimension]
+    val `sagemaker:variant:DesiredInstanceCount` = "sagemaker:variant:DesiredInstanceCount".asInstanceOf[ScalableDimension]
+    val `custom-resource:ResourceType:Property` = "custom-resource:ResourceType:Property".asInstanceOf[ScalableDimension]
+    val `comprehend:document-classifier-endpoint:DesiredInferenceUnits` = "comprehend:document-classifier-endpoint:DesiredInferenceUnits".asInstanceOf[ScalableDimension]
+    val `lambda:function:ProvisionedConcurrency` = "lambda:function:ProvisionedConcurrency".asInstanceOf[ScalableDimension]
     val `cassandra:table:ReadCapacityUnits` = "cassandra:table:ReadCapacityUnits".asInstanceOf[ScalableDimension]
     val `cassandra:table:WriteCapacityUnits` = "cassandra:table:WriteCapacityUnits".asInstanceOf[ScalableDimension]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `ecs:service:DesiredCount`,
-        `ec2:spot-fleet-request:TargetCapacity`,
-        `elasticmapreduce:instancegroup:InstanceCount`,
-        `appstream:fleet:DesiredCapacity`,
-        `dynamodb:table:ReadCapacityUnits`,
-        `dynamodb:table:WriteCapacityUnits`,
-        `dynamodb:index:ReadCapacityUnits`,
-        `dynamodb:index:WriteCapacityUnits`,
-        `rds:cluster:ReadReplicaCount`,
-        `sagemaker:variant:DesiredInstanceCount`,
-        `custom-resource:ResourceType:Property`,
-        `comprehend:document-classifier-endpoint:DesiredInferenceUnits`,
-        `lambda:function:ProvisionedConcurrency`,
-        `cassandra:table:ReadCapacityUnits`,
-        `cassandra:table:WriteCapacityUnits`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      `ecs:service:DesiredCount`,
+      `ec2:spot-fleet-request:TargetCapacity`,
+      `elasticmapreduce:instancegroup:InstanceCount`,
+      `appstream:fleet:DesiredCapacity`,
+      `dynamodb:table:ReadCapacityUnits`,
+      `dynamodb:table:WriteCapacityUnits`,
+      `dynamodb:index:ReadCapacityUnits`,
+      `dynamodb:index:WriteCapacityUnits`,
+      `rds:cluster:ReadReplicaCount`,
+      `sagemaker:variant:DesiredInstanceCount`,
+      `custom-resource:ResourceType:Property`,
+      `comprehend:document-classifier-endpoint:DesiredInferenceUnits`,
+      `lambda:function:ProvisionedConcurrency`,
+      `cassandra:table:ReadCapacityUnits`,
+      `cassandra:table:WriteCapacityUnits`
+    ))
   }
 
   /**
@@ -984,12 +946,8 @@ package applicationautoscaling {
       )
 
       Alarms.foreach(__v => __obj.updateDynamic("Alarms")(__v.asInstanceOf[js.Any]))
-      StepScalingPolicyConfiguration.foreach(__v =>
-        __obj.updateDynamic("StepScalingPolicyConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      TargetTrackingScalingPolicyConfiguration.foreach(__v =>
-        __obj.updateDynamic("TargetTrackingScalingPolicyConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      StepScalingPolicyConfiguration.foreach(__v => __obj.updateDynamic("StepScalingPolicyConfiguration")(__v.asInstanceOf[js.Any]))
+      TargetTrackingScalingPolicyConfiguration.foreach(__v => __obj.updateDynamic("TargetTrackingScalingPolicyConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScalingPolicy]
     }
   }
@@ -1057,21 +1015,7 @@ package applicationautoscaling {
     val lambda = "lambda".asInstanceOf[ServiceNamespace]
     val cassandra = "cassandra".asInstanceOf[ServiceNamespace]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ecs,
-        elasticmapreduce,
-        ec2,
-        appstream,
-        dynamodb,
-        rds,
-        sagemaker,
-        `custom-resource`,
-        comprehend,
-        lambda,
-        cassandra
-      )
-    )
+    val values = js.Object.freeze(js.Array(ecs, elasticmapreduce, ec2, appstream, dynamodb, rds, sagemaker, `custom-resource`, comprehend, lambda, cassandra))
   }
 
   /**
@@ -1158,15 +1102,9 @@ package applicationautoscaling {
         ScheduledScalingSuspended: js.UndefOr[ScalingSuspended] = js.undefined
     ): SuspendedState = {
       val __obj = js.Dynamic.literal()
-      DynamicScalingInSuspended.foreach(__v =>
-        __obj.updateDynamic("DynamicScalingInSuspended")(__v.asInstanceOf[js.Any])
-      )
-      DynamicScalingOutSuspended.foreach(__v =>
-        __obj.updateDynamic("DynamicScalingOutSuspended")(__v.asInstanceOf[js.Any])
-      )
-      ScheduledScalingSuspended.foreach(__v =>
-        __obj.updateDynamic("ScheduledScalingSuspended")(__v.asInstanceOf[js.Any])
-      )
+      DynamicScalingInSuspended.foreach(__v => __obj.updateDynamic("DynamicScalingInSuspended")(__v.asInstanceOf[js.Any]))
+      DynamicScalingOutSuspended.foreach(__v => __obj.updateDynamic("DynamicScalingOutSuspended")(__v.asInstanceOf[js.Any]))
+      ScheduledScalingSuspended.foreach(__v => __obj.updateDynamic("ScheduledScalingSuspended")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SuspendedState]
     }
   }
@@ -1198,13 +1136,9 @@ package applicationautoscaling {
         "TargetValue" -> TargetValue.asInstanceOf[js.Any]
       )
 
-      CustomizedMetricSpecification.foreach(__v =>
-        __obj.updateDynamic("CustomizedMetricSpecification")(__v.asInstanceOf[js.Any])
-      )
+      CustomizedMetricSpecification.foreach(__v => __obj.updateDynamic("CustomizedMetricSpecification")(__v.asInstanceOf[js.Any]))
       DisableScaleIn.foreach(__v => __obj.updateDynamic("DisableScaleIn")(__v.asInstanceOf[js.Any]))
-      PredefinedMetricSpecification.foreach(__v =>
-        __obj.updateDynamic("PredefinedMetricSpecification")(__v.asInstanceOf[js.Any])
-      )
+      PredefinedMetricSpecification.foreach(__v => __obj.updateDynamic("PredefinedMetricSpecification")(__v.asInstanceOf[js.Any]))
       ScaleInCooldown.foreach(__v => __obj.updateDynamic("ScaleInCooldown")(__v.asInstanceOf[js.Any]))
       ScaleOutCooldown.foreach(__v => __obj.updateDynamic("ScaleOutCooldown")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TargetTrackingScalingPolicyConfiguration]

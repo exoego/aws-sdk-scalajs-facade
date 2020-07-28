@@ -97,302 +97,125 @@ package object chime {
 
   implicit final class ChimeOps(private val service: Chime) extends AnyVal {
 
-    @inline def associatePhoneNumberWithUserFuture(
-        params: AssociatePhoneNumberWithUserRequest
-    ): Future[AssociatePhoneNumberWithUserResponse] = service.associatePhoneNumberWithUser(params).promise().toFuture
-    @inline def associatePhoneNumbersWithVoiceConnectorFuture(
-        params: AssociatePhoneNumbersWithVoiceConnectorRequest
-    ): Future[AssociatePhoneNumbersWithVoiceConnectorResponse] =
-      service.associatePhoneNumbersWithVoiceConnector(params).promise().toFuture
-    @inline def associatePhoneNumbersWithVoiceConnectorGroupFuture(
-        params: AssociatePhoneNumbersWithVoiceConnectorGroupRequest
-    ): Future[AssociatePhoneNumbersWithVoiceConnectorGroupResponse] =
-      service.associatePhoneNumbersWithVoiceConnectorGroup(params).promise().toFuture
-    @inline def associateSigninDelegateGroupsWithAccountFuture(
-        params: AssociateSigninDelegateGroupsWithAccountRequest
-    ): Future[AssociateSigninDelegateGroupsWithAccountResponse] =
-      service.associateSigninDelegateGroupsWithAccount(params).promise().toFuture
-    @inline def batchCreateAttendeeFuture(params: BatchCreateAttendeeRequest): Future[BatchCreateAttendeeResponse] =
-      service.batchCreateAttendee(params).promise().toFuture
-    @inline def batchCreateRoomMembershipFuture(
-        params: BatchCreateRoomMembershipRequest
-    ): Future[BatchCreateRoomMembershipResponse] = service.batchCreateRoomMembership(params).promise().toFuture
-    @inline def batchDeletePhoneNumberFuture(
-        params: BatchDeletePhoneNumberRequest
-    ): Future[BatchDeletePhoneNumberResponse] = service.batchDeletePhoneNumber(params).promise().toFuture
-    @inline def batchSuspendUserFuture(params: BatchSuspendUserRequest): Future[BatchSuspendUserResponse] =
-      service.batchSuspendUser(params).promise().toFuture
-    @inline def batchUnsuspendUserFuture(params: BatchUnsuspendUserRequest): Future[BatchUnsuspendUserResponse] =
-      service.batchUnsuspendUser(params).promise().toFuture
-    @inline def batchUpdatePhoneNumberFuture(
-        params: BatchUpdatePhoneNumberRequest
-    ): Future[BatchUpdatePhoneNumberResponse] = service.batchUpdatePhoneNumber(params).promise().toFuture
-    @inline def batchUpdateUserFuture(params: BatchUpdateUserRequest): Future[BatchUpdateUserResponse] =
-      service.batchUpdateUser(params).promise().toFuture
-    @inline def createAccountFuture(params: CreateAccountRequest): Future[CreateAccountResponse] =
-      service.createAccount(params).promise().toFuture
-    @inline def createAttendeeFuture(params: CreateAttendeeRequest): Future[CreateAttendeeResponse] =
-      service.createAttendee(params).promise().toFuture
-    @inline def createBotFuture(params: CreateBotRequest): Future[CreateBotResponse] =
-      service.createBot(params).promise().toFuture
-    @inline def createMeetingFuture(params: CreateMeetingRequest): Future[CreateMeetingResponse] =
-      service.createMeeting(params).promise().toFuture
-    @inline def createMeetingWithAttendeesFuture(
-        params: CreateMeetingWithAttendeesRequest
-    ): Future[CreateMeetingWithAttendeesResponse] = service.createMeetingWithAttendees(params).promise().toFuture
-    @inline def createPhoneNumberOrderFuture(
-        params: CreatePhoneNumberOrderRequest
-    ): Future[CreatePhoneNumberOrderResponse] = service.createPhoneNumberOrder(params).promise().toFuture
-    @inline def createProxySessionFuture(params: CreateProxySessionRequest): Future[CreateProxySessionResponse] =
-      service.createProxySession(params).promise().toFuture
-    @inline def createRoomFuture(params: CreateRoomRequest): Future[CreateRoomResponse] =
-      service.createRoom(params).promise().toFuture
-    @inline def createRoomMembershipFuture(params: CreateRoomMembershipRequest): Future[CreateRoomMembershipResponse] =
-      service.createRoomMembership(params).promise().toFuture
-    @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] =
-      service.createUser(params).promise().toFuture
-    @inline def createVoiceConnectorFuture(params: CreateVoiceConnectorRequest): Future[CreateVoiceConnectorResponse] =
-      service.createVoiceConnector(params).promise().toFuture
-    @inline def createVoiceConnectorGroupFuture(
-        params: CreateVoiceConnectorGroupRequest
-    ): Future[CreateVoiceConnectorGroupResponse] = service.createVoiceConnectorGroup(params).promise().toFuture
-    @inline def deleteAccountFuture(params: DeleteAccountRequest): Future[DeleteAccountResponse] =
-      service.deleteAccount(params).promise().toFuture
-    @inline def deleteAttendeeFuture(params: DeleteAttendeeRequest): Future[js.Object] =
-      service.deleteAttendee(params).promise().toFuture
-    @inline def deleteEventsConfigurationFuture(params: DeleteEventsConfigurationRequest): Future[js.Object] =
-      service.deleteEventsConfiguration(params).promise().toFuture
-    @inline def deleteMeetingFuture(params: DeleteMeetingRequest): Future[js.Object] =
-      service.deleteMeeting(params).promise().toFuture
-    @inline def deletePhoneNumberFuture(params: DeletePhoneNumberRequest): Future[js.Object] =
-      service.deletePhoneNumber(params).promise().toFuture
-    @inline def deleteProxySessionFuture(params: DeleteProxySessionRequest): Future[js.Object] =
-      service.deleteProxySession(params).promise().toFuture
-    @inline def deleteRoomFuture(params: DeleteRoomRequest): Future[js.Object] =
-      service.deleteRoom(params).promise().toFuture
-    @inline def deleteRoomMembershipFuture(params: DeleteRoomMembershipRequest): Future[js.Object] =
-      service.deleteRoomMembership(params).promise().toFuture
-    @inline def deleteVoiceConnectorEmergencyCallingConfigurationFuture(
-        params: DeleteVoiceConnectorEmergencyCallingConfigurationRequest
-    ): Future[js.Object] = service.deleteVoiceConnectorEmergencyCallingConfiguration(params).promise().toFuture
-    @inline def deleteVoiceConnectorFuture(params: DeleteVoiceConnectorRequest): Future[js.Object] =
-      service.deleteVoiceConnector(params).promise().toFuture
-    @inline def deleteVoiceConnectorGroupFuture(params: DeleteVoiceConnectorGroupRequest): Future[js.Object] =
-      service.deleteVoiceConnectorGroup(params).promise().toFuture
-    @inline def deleteVoiceConnectorOriginationFuture(
-        params: DeleteVoiceConnectorOriginationRequest
-    ): Future[js.Object] = service.deleteVoiceConnectorOrigination(params).promise().toFuture
-    @inline def deleteVoiceConnectorProxyFuture(params: DeleteVoiceConnectorProxyRequest): Future[js.Object] =
-      service.deleteVoiceConnectorProxy(params).promise().toFuture
-    @inline def deleteVoiceConnectorStreamingConfigurationFuture(
-        params: DeleteVoiceConnectorStreamingConfigurationRequest
-    ): Future[js.Object] = service.deleteVoiceConnectorStreamingConfiguration(params).promise().toFuture
-    @inline def deleteVoiceConnectorTerminationCredentialsFuture(
-        params: DeleteVoiceConnectorTerminationCredentialsRequest
-    ): Future[js.Object] = service.deleteVoiceConnectorTerminationCredentials(params).promise().toFuture
-    @inline def deleteVoiceConnectorTerminationFuture(
-        params: DeleteVoiceConnectorTerminationRequest
-    ): Future[js.Object] = service.deleteVoiceConnectorTermination(params).promise().toFuture
-    @inline def disassociatePhoneNumberFromUserFuture(
-        params: DisassociatePhoneNumberFromUserRequest
-    ): Future[DisassociatePhoneNumberFromUserResponse] =
-      service.disassociatePhoneNumberFromUser(params).promise().toFuture
-    @inline def disassociatePhoneNumbersFromVoiceConnectorFuture(
-        params: DisassociatePhoneNumbersFromVoiceConnectorRequest
-    ): Future[DisassociatePhoneNumbersFromVoiceConnectorResponse] =
-      service.disassociatePhoneNumbersFromVoiceConnector(params).promise().toFuture
-    @inline def disassociatePhoneNumbersFromVoiceConnectorGroupFuture(
-        params: DisassociatePhoneNumbersFromVoiceConnectorGroupRequest
-    ): Future[DisassociatePhoneNumbersFromVoiceConnectorGroupResponse] =
-      service.disassociatePhoneNumbersFromVoiceConnectorGroup(params).promise().toFuture
-    @inline def disassociateSigninDelegateGroupsFromAccountFuture(
-        params: DisassociateSigninDelegateGroupsFromAccountRequest
-    ): Future[DisassociateSigninDelegateGroupsFromAccountResponse] =
-      service.disassociateSigninDelegateGroupsFromAccount(params).promise().toFuture
-    @inline def getAccountFuture(params: GetAccountRequest): Future[GetAccountResponse] =
-      service.getAccount(params).promise().toFuture
-    @inline def getAccountSettingsFuture(params: GetAccountSettingsRequest): Future[GetAccountSettingsResponse] =
-      service.getAccountSettings(params).promise().toFuture
-    @inline def getAttendeeFuture(params: GetAttendeeRequest): Future[GetAttendeeResponse] =
-      service.getAttendee(params).promise().toFuture
+    @inline def associatePhoneNumberWithUserFuture(params: AssociatePhoneNumberWithUserRequest): Future[AssociatePhoneNumberWithUserResponse] = service.associatePhoneNumberWithUser(params).promise().toFuture
+    @inline def associatePhoneNumbersWithVoiceConnectorFuture(params: AssociatePhoneNumbersWithVoiceConnectorRequest): Future[AssociatePhoneNumbersWithVoiceConnectorResponse] = service.associatePhoneNumbersWithVoiceConnector(params).promise().toFuture
+    @inline def associatePhoneNumbersWithVoiceConnectorGroupFuture(params: AssociatePhoneNumbersWithVoiceConnectorGroupRequest): Future[AssociatePhoneNumbersWithVoiceConnectorGroupResponse] = service.associatePhoneNumbersWithVoiceConnectorGroup(params).promise().toFuture
+    @inline def associateSigninDelegateGroupsWithAccountFuture(params: AssociateSigninDelegateGroupsWithAccountRequest): Future[AssociateSigninDelegateGroupsWithAccountResponse] = service.associateSigninDelegateGroupsWithAccount(params).promise().toFuture
+    @inline def batchCreateAttendeeFuture(params: BatchCreateAttendeeRequest): Future[BatchCreateAttendeeResponse] = service.batchCreateAttendee(params).promise().toFuture
+    @inline def batchCreateRoomMembershipFuture(params: BatchCreateRoomMembershipRequest): Future[BatchCreateRoomMembershipResponse] = service.batchCreateRoomMembership(params).promise().toFuture
+    @inline def batchDeletePhoneNumberFuture(params: BatchDeletePhoneNumberRequest): Future[BatchDeletePhoneNumberResponse] = service.batchDeletePhoneNumber(params).promise().toFuture
+    @inline def batchSuspendUserFuture(params: BatchSuspendUserRequest): Future[BatchSuspendUserResponse] = service.batchSuspendUser(params).promise().toFuture
+    @inline def batchUnsuspendUserFuture(params: BatchUnsuspendUserRequest): Future[BatchUnsuspendUserResponse] = service.batchUnsuspendUser(params).promise().toFuture
+    @inline def batchUpdatePhoneNumberFuture(params: BatchUpdatePhoneNumberRequest): Future[BatchUpdatePhoneNumberResponse] = service.batchUpdatePhoneNumber(params).promise().toFuture
+    @inline def batchUpdateUserFuture(params: BatchUpdateUserRequest): Future[BatchUpdateUserResponse] = service.batchUpdateUser(params).promise().toFuture
+    @inline def createAccountFuture(params: CreateAccountRequest): Future[CreateAccountResponse] = service.createAccount(params).promise().toFuture
+    @inline def createAttendeeFuture(params: CreateAttendeeRequest): Future[CreateAttendeeResponse] = service.createAttendee(params).promise().toFuture
+    @inline def createBotFuture(params: CreateBotRequest): Future[CreateBotResponse] = service.createBot(params).promise().toFuture
+    @inline def createMeetingFuture(params: CreateMeetingRequest): Future[CreateMeetingResponse] = service.createMeeting(params).promise().toFuture
+    @inline def createMeetingWithAttendeesFuture(params: CreateMeetingWithAttendeesRequest): Future[CreateMeetingWithAttendeesResponse] = service.createMeetingWithAttendees(params).promise().toFuture
+    @inline def createPhoneNumberOrderFuture(params: CreatePhoneNumberOrderRequest): Future[CreatePhoneNumberOrderResponse] = service.createPhoneNumberOrder(params).promise().toFuture
+    @inline def createProxySessionFuture(params: CreateProxySessionRequest): Future[CreateProxySessionResponse] = service.createProxySession(params).promise().toFuture
+    @inline def createRoomFuture(params: CreateRoomRequest): Future[CreateRoomResponse] = service.createRoom(params).promise().toFuture
+    @inline def createRoomMembershipFuture(params: CreateRoomMembershipRequest): Future[CreateRoomMembershipResponse] = service.createRoomMembership(params).promise().toFuture
+    @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] = service.createUser(params).promise().toFuture
+    @inline def createVoiceConnectorFuture(params: CreateVoiceConnectorRequest): Future[CreateVoiceConnectorResponse] = service.createVoiceConnector(params).promise().toFuture
+    @inline def createVoiceConnectorGroupFuture(params: CreateVoiceConnectorGroupRequest): Future[CreateVoiceConnectorGroupResponse] = service.createVoiceConnectorGroup(params).promise().toFuture
+    @inline def deleteAccountFuture(params: DeleteAccountRequest): Future[DeleteAccountResponse] = service.deleteAccount(params).promise().toFuture
+    @inline def deleteAttendeeFuture(params: DeleteAttendeeRequest): Future[js.Object] = service.deleteAttendee(params).promise().toFuture
+    @inline def deleteEventsConfigurationFuture(params: DeleteEventsConfigurationRequest): Future[js.Object] = service.deleteEventsConfiguration(params).promise().toFuture
+    @inline def deleteMeetingFuture(params: DeleteMeetingRequest): Future[js.Object] = service.deleteMeeting(params).promise().toFuture
+    @inline def deletePhoneNumberFuture(params: DeletePhoneNumberRequest): Future[js.Object] = service.deletePhoneNumber(params).promise().toFuture
+    @inline def deleteProxySessionFuture(params: DeleteProxySessionRequest): Future[js.Object] = service.deleteProxySession(params).promise().toFuture
+    @inline def deleteRoomFuture(params: DeleteRoomRequest): Future[js.Object] = service.deleteRoom(params).promise().toFuture
+    @inline def deleteRoomMembershipFuture(params: DeleteRoomMembershipRequest): Future[js.Object] = service.deleteRoomMembership(params).promise().toFuture
+    @inline def deleteVoiceConnectorEmergencyCallingConfigurationFuture(params: DeleteVoiceConnectorEmergencyCallingConfigurationRequest): Future[js.Object] = service.deleteVoiceConnectorEmergencyCallingConfiguration(params).promise().toFuture
+    @inline def deleteVoiceConnectorFuture(params: DeleteVoiceConnectorRequest): Future[js.Object] = service.deleteVoiceConnector(params).promise().toFuture
+    @inline def deleteVoiceConnectorGroupFuture(params: DeleteVoiceConnectorGroupRequest): Future[js.Object] = service.deleteVoiceConnectorGroup(params).promise().toFuture
+    @inline def deleteVoiceConnectorOriginationFuture(params: DeleteVoiceConnectorOriginationRequest): Future[js.Object] = service.deleteVoiceConnectorOrigination(params).promise().toFuture
+    @inline def deleteVoiceConnectorProxyFuture(params: DeleteVoiceConnectorProxyRequest): Future[js.Object] = service.deleteVoiceConnectorProxy(params).promise().toFuture
+    @inline def deleteVoiceConnectorStreamingConfigurationFuture(params: DeleteVoiceConnectorStreamingConfigurationRequest): Future[js.Object] = service.deleteVoiceConnectorStreamingConfiguration(params).promise().toFuture
+    @inline def deleteVoiceConnectorTerminationCredentialsFuture(params: DeleteVoiceConnectorTerminationCredentialsRequest): Future[js.Object] = service.deleteVoiceConnectorTerminationCredentials(params).promise().toFuture
+    @inline def deleteVoiceConnectorTerminationFuture(params: DeleteVoiceConnectorTerminationRequest): Future[js.Object] = service.deleteVoiceConnectorTermination(params).promise().toFuture
+    @inline def disassociatePhoneNumberFromUserFuture(params: DisassociatePhoneNumberFromUserRequest): Future[DisassociatePhoneNumberFromUserResponse] = service.disassociatePhoneNumberFromUser(params).promise().toFuture
+    @inline def disassociatePhoneNumbersFromVoiceConnectorFuture(params: DisassociatePhoneNumbersFromVoiceConnectorRequest): Future[DisassociatePhoneNumbersFromVoiceConnectorResponse] = service.disassociatePhoneNumbersFromVoiceConnector(params).promise().toFuture
+    @inline def disassociatePhoneNumbersFromVoiceConnectorGroupFuture(params: DisassociatePhoneNumbersFromVoiceConnectorGroupRequest): Future[DisassociatePhoneNumbersFromVoiceConnectorGroupResponse] = service.disassociatePhoneNumbersFromVoiceConnectorGroup(params).promise().toFuture
+    @inline def disassociateSigninDelegateGroupsFromAccountFuture(params: DisassociateSigninDelegateGroupsFromAccountRequest): Future[DisassociateSigninDelegateGroupsFromAccountResponse] = service.disassociateSigninDelegateGroupsFromAccount(params).promise().toFuture
+    @inline def getAccountFuture(params: GetAccountRequest): Future[GetAccountResponse] = service.getAccount(params).promise().toFuture
+    @inline def getAccountSettingsFuture(params: GetAccountSettingsRequest): Future[GetAccountSettingsResponse] = service.getAccountSettings(params).promise().toFuture
+    @inline def getAttendeeFuture(params: GetAttendeeRequest): Future[GetAttendeeResponse] = service.getAttendee(params).promise().toFuture
     @inline def getBotFuture(params: GetBotRequest): Future[GetBotResponse] = service.getBot(params).promise().toFuture
-    @inline def getEventsConfigurationFuture(
-        params: GetEventsConfigurationRequest
-    ): Future[GetEventsConfigurationResponse] = service.getEventsConfiguration(params).promise().toFuture
-    @inline def getGlobalSettingsFuture(): Future[GetGlobalSettingsResponse] =
-      service.getGlobalSettings().promise().toFuture
-    @inline def getMeetingFuture(params: GetMeetingRequest): Future[GetMeetingResponse] =
-      service.getMeeting(params).promise().toFuture
-    @inline def getPhoneNumberFuture(params: GetPhoneNumberRequest): Future[GetPhoneNumberResponse] =
-      service.getPhoneNumber(params).promise().toFuture
-    @inline def getPhoneNumberOrderFuture(params: GetPhoneNumberOrderRequest): Future[GetPhoneNumberOrderResponse] =
-      service.getPhoneNumberOrder(params).promise().toFuture
-    @inline def getPhoneNumberSettingsFuture(): Future[GetPhoneNumberSettingsResponse] =
-      service.getPhoneNumberSettings().promise().toFuture
-    @inline def getProxySessionFuture(params: GetProxySessionRequest): Future[GetProxySessionResponse] =
-      service.getProxySession(params).promise().toFuture
-    @inline def getRetentionSettingsFuture(params: GetRetentionSettingsRequest): Future[GetRetentionSettingsResponse] =
-      service.getRetentionSettings(params).promise().toFuture
-    @inline def getRoomFuture(params: GetRoomRequest): Future[GetRoomResponse] =
-      service.getRoom(params).promise().toFuture
-    @inline def getUserFuture(params: GetUserRequest): Future[GetUserResponse] =
-      service.getUser(params).promise().toFuture
-    @inline def getUserSettingsFuture(params: GetUserSettingsRequest): Future[GetUserSettingsResponse] =
-      service.getUserSettings(params).promise().toFuture
-    @inline def getVoiceConnectorEmergencyCallingConfigurationFuture(
-        params: GetVoiceConnectorEmergencyCallingConfigurationRequest
-    ): Future[GetVoiceConnectorEmergencyCallingConfigurationResponse] =
-      service.getVoiceConnectorEmergencyCallingConfiguration(params).promise().toFuture
-    @inline def getVoiceConnectorFuture(params: GetVoiceConnectorRequest): Future[GetVoiceConnectorResponse] =
-      service.getVoiceConnector(params).promise().toFuture
-    @inline def getVoiceConnectorGroupFuture(
-        params: GetVoiceConnectorGroupRequest
-    ): Future[GetVoiceConnectorGroupResponse] = service.getVoiceConnectorGroup(params).promise().toFuture
-    @inline def getVoiceConnectorLoggingConfigurationFuture(
-        params: GetVoiceConnectorLoggingConfigurationRequest
-    ): Future[GetVoiceConnectorLoggingConfigurationResponse] =
-      service.getVoiceConnectorLoggingConfiguration(params).promise().toFuture
-    @inline def getVoiceConnectorOriginationFuture(
-        params: GetVoiceConnectorOriginationRequest
-    ): Future[GetVoiceConnectorOriginationResponse] = service.getVoiceConnectorOrigination(params).promise().toFuture
-    @inline def getVoiceConnectorProxyFuture(
-        params: GetVoiceConnectorProxyRequest
-    ): Future[GetVoiceConnectorProxyResponse] = service.getVoiceConnectorProxy(params).promise().toFuture
-    @inline def getVoiceConnectorStreamingConfigurationFuture(
-        params: GetVoiceConnectorStreamingConfigurationRequest
-    ): Future[GetVoiceConnectorStreamingConfigurationResponse] =
-      service.getVoiceConnectorStreamingConfiguration(params).promise().toFuture
-    @inline def getVoiceConnectorTerminationFuture(
-        params: GetVoiceConnectorTerminationRequest
-    ): Future[GetVoiceConnectorTerminationResponse] = service.getVoiceConnectorTermination(params).promise().toFuture
-    @inline def getVoiceConnectorTerminationHealthFuture(
-        params: GetVoiceConnectorTerminationHealthRequest
-    ): Future[GetVoiceConnectorTerminationHealthResponse] =
-      service.getVoiceConnectorTerminationHealth(params).promise().toFuture
-    @inline def inviteUsersFuture(params: InviteUsersRequest): Future[InviteUsersResponse] =
-      service.inviteUsers(params).promise().toFuture
-    @inline def listAccountsFuture(params: ListAccountsRequest): Future[ListAccountsResponse] =
-      service.listAccounts(params).promise().toFuture
-    @inline def listAttendeeTagsFuture(params: ListAttendeeTagsRequest): Future[ListAttendeeTagsResponse] =
-      service.listAttendeeTags(params).promise().toFuture
-    @inline def listAttendeesFuture(params: ListAttendeesRequest): Future[ListAttendeesResponse] =
-      service.listAttendees(params).promise().toFuture
-    @inline def listBotsFuture(params: ListBotsRequest): Future[ListBotsResponse] =
-      service.listBots(params).promise().toFuture
-    @inline def listMeetingTagsFuture(params: ListMeetingTagsRequest): Future[ListMeetingTagsResponse] =
-      service.listMeetingTags(params).promise().toFuture
-    @inline def listMeetingsFuture(params: ListMeetingsRequest): Future[ListMeetingsResponse] =
-      service.listMeetings(params).promise().toFuture
-    @inline def listPhoneNumberOrdersFuture(
-        params: ListPhoneNumberOrdersRequest
-    ): Future[ListPhoneNumberOrdersResponse] = service.listPhoneNumberOrders(params).promise().toFuture
-    @inline def listPhoneNumbersFuture(params: ListPhoneNumbersRequest): Future[ListPhoneNumbersResponse] =
-      service.listPhoneNumbers(params).promise().toFuture
-    @inline def listProxySessionsFuture(params: ListProxySessionsRequest): Future[ListProxySessionsResponse] =
-      service.listProxySessions(params).promise().toFuture
-    @inline def listRoomMembershipsFuture(params: ListRoomMembershipsRequest): Future[ListRoomMembershipsResponse] =
-      service.listRoomMemberships(params).promise().toFuture
-    @inline def listRoomsFuture(params: ListRoomsRequest): Future[ListRoomsResponse] =
-      service.listRooms(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
-      service.listUsers(params).promise().toFuture
-    @inline def listVoiceConnectorGroupsFuture(
-        params: ListVoiceConnectorGroupsRequest
-    ): Future[ListVoiceConnectorGroupsResponse] = service.listVoiceConnectorGroups(params).promise().toFuture
-    @inline def listVoiceConnectorTerminationCredentialsFuture(
-        params: ListVoiceConnectorTerminationCredentialsRequest
-    ): Future[ListVoiceConnectorTerminationCredentialsResponse] =
-      service.listVoiceConnectorTerminationCredentials(params).promise().toFuture
-    @inline def listVoiceConnectorsFuture(params: ListVoiceConnectorsRequest): Future[ListVoiceConnectorsResponse] =
-      service.listVoiceConnectors(params).promise().toFuture
-    @inline def logoutUserFuture(params: LogoutUserRequest): Future[LogoutUserResponse] =
-      service.logoutUser(params).promise().toFuture
-    @inline def putEventsConfigurationFuture(
-        params: PutEventsConfigurationRequest
-    ): Future[PutEventsConfigurationResponse] = service.putEventsConfiguration(params).promise().toFuture
-    @inline def putRetentionSettingsFuture(params: PutRetentionSettingsRequest): Future[PutRetentionSettingsResponse] =
-      service.putRetentionSettings(params).promise().toFuture
-    @inline def putVoiceConnectorEmergencyCallingConfigurationFuture(
-        params: PutVoiceConnectorEmergencyCallingConfigurationRequest
-    ): Future[PutVoiceConnectorEmergencyCallingConfigurationResponse] =
-      service.putVoiceConnectorEmergencyCallingConfiguration(params).promise().toFuture
-    @inline def putVoiceConnectorLoggingConfigurationFuture(
-        params: PutVoiceConnectorLoggingConfigurationRequest
-    ): Future[PutVoiceConnectorLoggingConfigurationResponse] =
-      service.putVoiceConnectorLoggingConfiguration(params).promise().toFuture
-    @inline def putVoiceConnectorOriginationFuture(
-        params: PutVoiceConnectorOriginationRequest
-    ): Future[PutVoiceConnectorOriginationResponse] = service.putVoiceConnectorOrigination(params).promise().toFuture
-    @inline def putVoiceConnectorProxyFuture(
-        params: PutVoiceConnectorProxyRequest
-    ): Future[PutVoiceConnectorProxyResponse] = service.putVoiceConnectorProxy(params).promise().toFuture
-    @inline def putVoiceConnectorStreamingConfigurationFuture(
-        params: PutVoiceConnectorStreamingConfigurationRequest
-    ): Future[PutVoiceConnectorStreamingConfigurationResponse] =
-      service.putVoiceConnectorStreamingConfiguration(params).promise().toFuture
-    @inline def putVoiceConnectorTerminationCredentialsFuture(
-        params: PutVoiceConnectorTerminationCredentialsRequest
-    ): Future[js.Object] = service.putVoiceConnectorTerminationCredentials(params).promise().toFuture
-    @inline def putVoiceConnectorTerminationFuture(
-        params: PutVoiceConnectorTerminationRequest
-    ): Future[PutVoiceConnectorTerminationResponse] = service.putVoiceConnectorTermination(params).promise().toFuture
-    @inline def redactConversationMessageFuture(
-        params: RedactConversationMessageRequest
-    ): Future[RedactConversationMessageResponse] = service.redactConversationMessage(params).promise().toFuture
-    @inline def redactRoomMessageFuture(params: RedactRoomMessageRequest): Future[RedactRoomMessageResponse] =
-      service.redactRoomMessage(params).promise().toFuture
-    @inline def regenerateSecurityTokenFuture(
-        params: RegenerateSecurityTokenRequest
-    ): Future[RegenerateSecurityTokenResponse] = service.regenerateSecurityToken(params).promise().toFuture
-    @inline def resetPersonalPINFuture(params: ResetPersonalPINRequest): Future[ResetPersonalPINResponse] =
-      service.resetPersonalPIN(params).promise().toFuture
-    @inline def restorePhoneNumberFuture(params: RestorePhoneNumberRequest): Future[RestorePhoneNumberResponse] =
-      service.restorePhoneNumber(params).promise().toFuture
-    @inline def searchAvailablePhoneNumbersFuture(
-        params: SearchAvailablePhoneNumbersRequest
-    ): Future[SearchAvailablePhoneNumbersResponse] = service.searchAvailablePhoneNumbers(params).promise().toFuture
-    @inline def tagAttendeeFuture(params: TagAttendeeRequest): Future[js.Object] =
-      service.tagAttendee(params).promise().toFuture
-    @inline def tagMeetingFuture(params: TagMeetingRequest): Future[js.Object] =
-      service.tagMeeting(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagAttendeeFuture(params: UntagAttendeeRequest): Future[js.Object] =
-      service.untagAttendee(params).promise().toFuture
-    @inline def untagMeetingFuture(params: UntagMeetingRequest): Future[js.Object] =
-      service.untagMeeting(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateAccountFuture(params: UpdateAccountRequest): Future[UpdateAccountResponse] =
-      service.updateAccount(params).promise().toFuture
-    @inline def updateAccountSettingsFuture(
-        params: UpdateAccountSettingsRequest
-    ): Future[UpdateAccountSettingsResponse] = service.updateAccountSettings(params).promise().toFuture
-    @inline def updateBotFuture(params: UpdateBotRequest): Future[UpdateBotResponse] =
-      service.updateBot(params).promise().toFuture
-    @inline def updateGlobalSettingsFuture(params: UpdateGlobalSettingsRequest): Future[js.Object] =
-      service.updateGlobalSettings(params).promise().toFuture
-    @inline def updatePhoneNumberFuture(params: UpdatePhoneNumberRequest): Future[UpdatePhoneNumberResponse] =
-      service.updatePhoneNumber(params).promise().toFuture
-    @inline def updatePhoneNumberSettingsFuture(params: UpdatePhoneNumberSettingsRequest): Future[js.Object] =
-      service.updatePhoneNumberSettings(params).promise().toFuture
-    @inline def updateProxySessionFuture(params: UpdateProxySessionRequest): Future[UpdateProxySessionResponse] =
-      service.updateProxySession(params).promise().toFuture
-    @inline def updateRoomFuture(params: UpdateRoomRequest): Future[UpdateRoomResponse] =
-      service.updateRoom(params).promise().toFuture
-    @inline def updateRoomMembershipFuture(params: UpdateRoomMembershipRequest): Future[UpdateRoomMembershipResponse] =
-      service.updateRoomMembership(params).promise().toFuture
-    @inline def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] =
-      service.updateUser(params).promise().toFuture
-    @inline def updateUserSettingsFuture(params: UpdateUserSettingsRequest): Future[js.Object] =
-      service.updateUserSettings(params).promise().toFuture
-    @inline def updateVoiceConnectorFuture(params: UpdateVoiceConnectorRequest): Future[UpdateVoiceConnectorResponse] =
-      service.updateVoiceConnector(params).promise().toFuture
-    @inline def updateVoiceConnectorGroupFuture(
-        params: UpdateVoiceConnectorGroupRequest
-    ): Future[UpdateVoiceConnectorGroupResponse] = service.updateVoiceConnectorGroup(params).promise().toFuture
+    @inline def getEventsConfigurationFuture(params: GetEventsConfigurationRequest): Future[GetEventsConfigurationResponse] = service.getEventsConfiguration(params).promise().toFuture
+    @inline def getGlobalSettingsFuture(): Future[GetGlobalSettingsResponse] = service.getGlobalSettings().promise().toFuture
+    @inline def getMeetingFuture(params: GetMeetingRequest): Future[GetMeetingResponse] = service.getMeeting(params).promise().toFuture
+    @inline def getPhoneNumberFuture(params: GetPhoneNumberRequest): Future[GetPhoneNumberResponse] = service.getPhoneNumber(params).promise().toFuture
+    @inline def getPhoneNumberOrderFuture(params: GetPhoneNumberOrderRequest): Future[GetPhoneNumberOrderResponse] = service.getPhoneNumberOrder(params).promise().toFuture
+    @inline def getPhoneNumberSettingsFuture(): Future[GetPhoneNumberSettingsResponse] = service.getPhoneNumberSettings().promise().toFuture
+    @inline def getProxySessionFuture(params: GetProxySessionRequest): Future[GetProxySessionResponse] = service.getProxySession(params).promise().toFuture
+    @inline def getRetentionSettingsFuture(params: GetRetentionSettingsRequest): Future[GetRetentionSettingsResponse] = service.getRetentionSettings(params).promise().toFuture
+    @inline def getRoomFuture(params: GetRoomRequest): Future[GetRoomResponse] = service.getRoom(params).promise().toFuture
+    @inline def getUserFuture(params: GetUserRequest): Future[GetUserResponse] = service.getUser(params).promise().toFuture
+    @inline def getUserSettingsFuture(params: GetUserSettingsRequest): Future[GetUserSettingsResponse] = service.getUserSettings(params).promise().toFuture
+    @inline def getVoiceConnectorEmergencyCallingConfigurationFuture(params: GetVoiceConnectorEmergencyCallingConfigurationRequest): Future[GetVoiceConnectorEmergencyCallingConfigurationResponse] = service.getVoiceConnectorEmergencyCallingConfiguration(params).promise().toFuture
+    @inline def getVoiceConnectorFuture(params: GetVoiceConnectorRequest): Future[GetVoiceConnectorResponse] = service.getVoiceConnector(params).promise().toFuture
+    @inline def getVoiceConnectorGroupFuture(params: GetVoiceConnectorGroupRequest): Future[GetVoiceConnectorGroupResponse] = service.getVoiceConnectorGroup(params).promise().toFuture
+    @inline def getVoiceConnectorLoggingConfigurationFuture(params: GetVoiceConnectorLoggingConfigurationRequest): Future[GetVoiceConnectorLoggingConfigurationResponse] = service.getVoiceConnectorLoggingConfiguration(params).promise().toFuture
+    @inline def getVoiceConnectorOriginationFuture(params: GetVoiceConnectorOriginationRequest): Future[GetVoiceConnectorOriginationResponse] = service.getVoiceConnectorOrigination(params).promise().toFuture
+    @inline def getVoiceConnectorProxyFuture(params: GetVoiceConnectorProxyRequest): Future[GetVoiceConnectorProxyResponse] = service.getVoiceConnectorProxy(params).promise().toFuture
+    @inline def getVoiceConnectorStreamingConfigurationFuture(params: GetVoiceConnectorStreamingConfigurationRequest): Future[GetVoiceConnectorStreamingConfigurationResponse] = service.getVoiceConnectorStreamingConfiguration(params).promise().toFuture
+    @inline def getVoiceConnectorTerminationFuture(params: GetVoiceConnectorTerminationRequest): Future[GetVoiceConnectorTerminationResponse] = service.getVoiceConnectorTermination(params).promise().toFuture
+    @inline def getVoiceConnectorTerminationHealthFuture(params: GetVoiceConnectorTerminationHealthRequest): Future[GetVoiceConnectorTerminationHealthResponse] = service.getVoiceConnectorTerminationHealth(params).promise().toFuture
+    @inline def inviteUsersFuture(params: InviteUsersRequest): Future[InviteUsersResponse] = service.inviteUsers(params).promise().toFuture
+    @inline def listAccountsFuture(params: ListAccountsRequest): Future[ListAccountsResponse] = service.listAccounts(params).promise().toFuture
+    @inline def listAttendeeTagsFuture(params: ListAttendeeTagsRequest): Future[ListAttendeeTagsResponse] = service.listAttendeeTags(params).promise().toFuture
+    @inline def listAttendeesFuture(params: ListAttendeesRequest): Future[ListAttendeesResponse] = service.listAttendees(params).promise().toFuture
+    @inline def listBotsFuture(params: ListBotsRequest): Future[ListBotsResponse] = service.listBots(params).promise().toFuture
+    @inline def listMeetingTagsFuture(params: ListMeetingTagsRequest): Future[ListMeetingTagsResponse] = service.listMeetingTags(params).promise().toFuture
+    @inline def listMeetingsFuture(params: ListMeetingsRequest): Future[ListMeetingsResponse] = service.listMeetings(params).promise().toFuture
+    @inline def listPhoneNumberOrdersFuture(params: ListPhoneNumberOrdersRequest): Future[ListPhoneNumberOrdersResponse] = service.listPhoneNumberOrders(params).promise().toFuture
+    @inline def listPhoneNumbersFuture(params: ListPhoneNumbersRequest): Future[ListPhoneNumbersResponse] = service.listPhoneNumbers(params).promise().toFuture
+    @inline def listProxySessionsFuture(params: ListProxySessionsRequest): Future[ListProxySessionsResponse] = service.listProxySessions(params).promise().toFuture
+    @inline def listRoomMembershipsFuture(params: ListRoomMembershipsRequest): Future[ListRoomMembershipsResponse] = service.listRoomMemberships(params).promise().toFuture
+    @inline def listRoomsFuture(params: ListRoomsRequest): Future[ListRoomsResponse] = service.listRooms(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] = service.listUsers(params).promise().toFuture
+    @inline def listVoiceConnectorGroupsFuture(params: ListVoiceConnectorGroupsRequest): Future[ListVoiceConnectorGroupsResponse] = service.listVoiceConnectorGroups(params).promise().toFuture
+    @inline def listVoiceConnectorTerminationCredentialsFuture(params: ListVoiceConnectorTerminationCredentialsRequest): Future[ListVoiceConnectorTerminationCredentialsResponse] = service.listVoiceConnectorTerminationCredentials(params).promise().toFuture
+    @inline def listVoiceConnectorsFuture(params: ListVoiceConnectorsRequest): Future[ListVoiceConnectorsResponse] = service.listVoiceConnectors(params).promise().toFuture
+    @inline def logoutUserFuture(params: LogoutUserRequest): Future[LogoutUserResponse] = service.logoutUser(params).promise().toFuture
+    @inline def putEventsConfigurationFuture(params: PutEventsConfigurationRequest): Future[PutEventsConfigurationResponse] = service.putEventsConfiguration(params).promise().toFuture
+    @inline def putRetentionSettingsFuture(params: PutRetentionSettingsRequest): Future[PutRetentionSettingsResponse] = service.putRetentionSettings(params).promise().toFuture
+    @inline def putVoiceConnectorEmergencyCallingConfigurationFuture(params: PutVoiceConnectorEmergencyCallingConfigurationRequest): Future[PutVoiceConnectorEmergencyCallingConfigurationResponse] = service.putVoiceConnectorEmergencyCallingConfiguration(params).promise().toFuture
+    @inline def putVoiceConnectorLoggingConfigurationFuture(params: PutVoiceConnectorLoggingConfigurationRequest): Future[PutVoiceConnectorLoggingConfigurationResponse] = service.putVoiceConnectorLoggingConfiguration(params).promise().toFuture
+    @inline def putVoiceConnectorOriginationFuture(params: PutVoiceConnectorOriginationRequest): Future[PutVoiceConnectorOriginationResponse] = service.putVoiceConnectorOrigination(params).promise().toFuture
+    @inline def putVoiceConnectorProxyFuture(params: PutVoiceConnectorProxyRequest): Future[PutVoiceConnectorProxyResponse] = service.putVoiceConnectorProxy(params).promise().toFuture
+    @inline def putVoiceConnectorStreamingConfigurationFuture(params: PutVoiceConnectorStreamingConfigurationRequest): Future[PutVoiceConnectorStreamingConfigurationResponse] = service.putVoiceConnectorStreamingConfiguration(params).promise().toFuture
+    @inline def putVoiceConnectorTerminationCredentialsFuture(params: PutVoiceConnectorTerminationCredentialsRequest): Future[js.Object] = service.putVoiceConnectorTerminationCredentials(params).promise().toFuture
+    @inline def putVoiceConnectorTerminationFuture(params: PutVoiceConnectorTerminationRequest): Future[PutVoiceConnectorTerminationResponse] = service.putVoiceConnectorTermination(params).promise().toFuture
+    @inline def redactConversationMessageFuture(params: RedactConversationMessageRequest): Future[RedactConversationMessageResponse] = service.redactConversationMessage(params).promise().toFuture
+    @inline def redactRoomMessageFuture(params: RedactRoomMessageRequest): Future[RedactRoomMessageResponse] = service.redactRoomMessage(params).promise().toFuture
+    @inline def regenerateSecurityTokenFuture(params: RegenerateSecurityTokenRequest): Future[RegenerateSecurityTokenResponse] = service.regenerateSecurityToken(params).promise().toFuture
+    @inline def resetPersonalPINFuture(params: ResetPersonalPINRequest): Future[ResetPersonalPINResponse] = service.resetPersonalPIN(params).promise().toFuture
+    @inline def restorePhoneNumberFuture(params: RestorePhoneNumberRequest): Future[RestorePhoneNumberResponse] = service.restorePhoneNumber(params).promise().toFuture
+    @inline def searchAvailablePhoneNumbersFuture(params: SearchAvailablePhoneNumbersRequest): Future[SearchAvailablePhoneNumbersResponse] = service.searchAvailablePhoneNumbers(params).promise().toFuture
+    @inline def tagAttendeeFuture(params: TagAttendeeRequest): Future[js.Object] = service.tagAttendee(params).promise().toFuture
+    @inline def tagMeetingFuture(params: TagMeetingRequest): Future[js.Object] = service.tagMeeting(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
+    @inline def untagAttendeeFuture(params: UntagAttendeeRequest): Future[js.Object] = service.untagAttendee(params).promise().toFuture
+    @inline def untagMeetingFuture(params: UntagMeetingRequest): Future[js.Object] = service.untagMeeting(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
+    @inline def updateAccountFuture(params: UpdateAccountRequest): Future[UpdateAccountResponse] = service.updateAccount(params).promise().toFuture
+    @inline def updateAccountSettingsFuture(params: UpdateAccountSettingsRequest): Future[UpdateAccountSettingsResponse] = service.updateAccountSettings(params).promise().toFuture
+    @inline def updateBotFuture(params: UpdateBotRequest): Future[UpdateBotResponse] = service.updateBot(params).promise().toFuture
+    @inline def updateGlobalSettingsFuture(params: UpdateGlobalSettingsRequest): Future[js.Object] = service.updateGlobalSettings(params).promise().toFuture
+    @inline def updatePhoneNumberFuture(params: UpdatePhoneNumberRequest): Future[UpdatePhoneNumberResponse] = service.updatePhoneNumber(params).promise().toFuture
+    @inline def updatePhoneNumberSettingsFuture(params: UpdatePhoneNumberSettingsRequest): Future[js.Object] = service.updatePhoneNumberSettings(params).promise().toFuture
+    @inline def updateProxySessionFuture(params: UpdateProxySessionRequest): Future[UpdateProxySessionResponse] = service.updateProxySession(params).promise().toFuture
+    @inline def updateRoomFuture(params: UpdateRoomRequest): Future[UpdateRoomResponse] = service.updateRoom(params).promise().toFuture
+    @inline def updateRoomMembershipFuture(params: UpdateRoomMembershipRequest): Future[UpdateRoomMembershipResponse] = service.updateRoomMembership(params).promise().toFuture
+    @inline def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] = service.updateUser(params).promise().toFuture
+    @inline def updateUserSettingsFuture(params: UpdateUserSettingsRequest): Future[js.Object] = service.updateUserSettings(params).promise().toFuture
+    @inline def updateVoiceConnectorFuture(params: UpdateVoiceConnectorRequest): Future[UpdateVoiceConnectorResponse] = service.updateVoiceConnector(params).promise().toFuture
+    @inline def updateVoiceConnectorGroupFuture(params: UpdateVoiceConnectorGroupRequest): Future[UpdateVoiceConnectorGroupResponse] = service.updateVoiceConnectorGroup(params).promise().toFuture
   }
 }
 
@@ -402,46 +225,29 @@ package chime {
   class Chime() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def associatePhoneNumberWithUser(
-        params: AssociatePhoneNumberWithUserRequest
-    ): Request[AssociatePhoneNumberWithUserResponse] = js.native
-    def associatePhoneNumbersWithVoiceConnector(
-        params: AssociatePhoneNumbersWithVoiceConnectorRequest
-    ): Request[AssociatePhoneNumbersWithVoiceConnectorResponse] = js.native
-    def associatePhoneNumbersWithVoiceConnectorGroup(
-        params: AssociatePhoneNumbersWithVoiceConnectorGroupRequest
-    ): Request[AssociatePhoneNumbersWithVoiceConnectorGroupResponse] = js.native
-    def associateSigninDelegateGroupsWithAccount(
-        params: AssociateSigninDelegateGroupsWithAccountRequest
-    ): Request[AssociateSigninDelegateGroupsWithAccountResponse] = js.native
+    def associatePhoneNumberWithUser(params: AssociatePhoneNumberWithUserRequest): Request[AssociatePhoneNumberWithUserResponse] = js.native
+    def associatePhoneNumbersWithVoiceConnector(params: AssociatePhoneNumbersWithVoiceConnectorRequest): Request[AssociatePhoneNumbersWithVoiceConnectorResponse] = js.native
+    def associatePhoneNumbersWithVoiceConnectorGroup(params: AssociatePhoneNumbersWithVoiceConnectorGroupRequest): Request[AssociatePhoneNumbersWithVoiceConnectorGroupResponse] = js.native
+    def associateSigninDelegateGroupsWithAccount(params: AssociateSigninDelegateGroupsWithAccountRequest): Request[AssociateSigninDelegateGroupsWithAccountResponse] = js.native
     def batchCreateAttendee(params: BatchCreateAttendeeRequest): Request[BatchCreateAttendeeResponse] = js.native
-    def batchCreateRoomMembership(
-        params: BatchCreateRoomMembershipRequest
-    ): Request[BatchCreateRoomMembershipResponse] = js.native
-    def batchDeletePhoneNumber(params: BatchDeletePhoneNumberRequest): Request[BatchDeletePhoneNumberResponse] =
-      js.native
+    def batchCreateRoomMembership(params: BatchCreateRoomMembershipRequest): Request[BatchCreateRoomMembershipResponse] = js.native
+    def batchDeletePhoneNumber(params: BatchDeletePhoneNumberRequest): Request[BatchDeletePhoneNumberResponse] = js.native
     def batchSuspendUser(params: BatchSuspendUserRequest): Request[BatchSuspendUserResponse] = js.native
     def batchUnsuspendUser(params: BatchUnsuspendUserRequest): Request[BatchUnsuspendUserResponse] = js.native
-    def batchUpdatePhoneNumber(params: BatchUpdatePhoneNumberRequest): Request[BatchUpdatePhoneNumberResponse] =
-      js.native
+    def batchUpdatePhoneNumber(params: BatchUpdatePhoneNumberRequest): Request[BatchUpdatePhoneNumberResponse] = js.native
     def batchUpdateUser(params: BatchUpdateUserRequest): Request[BatchUpdateUserResponse] = js.native
     def createAccount(params: CreateAccountRequest): Request[CreateAccountResponse] = js.native
     def createAttendee(params: CreateAttendeeRequest): Request[CreateAttendeeResponse] = js.native
     def createBot(params: CreateBotRequest): Request[CreateBotResponse] = js.native
     def createMeeting(params: CreateMeetingRequest): Request[CreateMeetingResponse] = js.native
-    def createMeetingWithAttendees(
-        params: CreateMeetingWithAttendeesRequest
-    ): Request[CreateMeetingWithAttendeesResponse] = js.native
-    def createPhoneNumberOrder(params: CreatePhoneNumberOrderRequest): Request[CreatePhoneNumberOrderResponse] =
-      js.native
+    def createMeetingWithAttendees(params: CreateMeetingWithAttendeesRequest): Request[CreateMeetingWithAttendeesResponse] = js.native
+    def createPhoneNumberOrder(params: CreatePhoneNumberOrderRequest): Request[CreatePhoneNumberOrderResponse] = js.native
     def createProxySession(params: CreateProxySessionRequest): Request[CreateProxySessionResponse] = js.native
     def createRoom(params: CreateRoomRequest): Request[CreateRoomResponse] = js.native
     def createRoomMembership(params: CreateRoomMembershipRequest): Request[CreateRoomMembershipResponse] = js.native
     def createUser(params: CreateUserRequest): Request[CreateUserResponse] = js.native
     def createVoiceConnector(params: CreateVoiceConnectorRequest): Request[CreateVoiceConnectorResponse] = js.native
-    def createVoiceConnectorGroup(
-        params: CreateVoiceConnectorGroupRequest
-    ): Request[CreateVoiceConnectorGroupResponse] = js.native
+    def createVoiceConnectorGroup(params: CreateVoiceConnectorGroupRequest): Request[CreateVoiceConnectorGroupResponse] = js.native
     def deleteAccount(params: DeleteAccountRequest): Request[DeleteAccountResponse] = js.native
     def deleteAttendee(params: DeleteAttendeeRequest): Request[js.Object] = js.native
     def deleteEventsConfiguration(params: DeleteEventsConfigurationRequest): Request[js.Object] = js.native
@@ -451,37 +257,22 @@ package chime {
     def deleteRoom(params: DeleteRoomRequest): Request[js.Object] = js.native
     def deleteRoomMembership(params: DeleteRoomMembershipRequest): Request[js.Object] = js.native
     def deleteVoiceConnector(params: DeleteVoiceConnectorRequest): Request[js.Object] = js.native
-    def deleteVoiceConnectorEmergencyCallingConfiguration(
-        params: DeleteVoiceConnectorEmergencyCallingConfigurationRequest
-    ): Request[js.Object] = js.native
+    def deleteVoiceConnectorEmergencyCallingConfiguration(params: DeleteVoiceConnectorEmergencyCallingConfigurationRequest): Request[js.Object] = js.native
     def deleteVoiceConnectorGroup(params: DeleteVoiceConnectorGroupRequest): Request[js.Object] = js.native
     def deleteVoiceConnectorOrigination(params: DeleteVoiceConnectorOriginationRequest): Request[js.Object] = js.native
     def deleteVoiceConnectorProxy(params: DeleteVoiceConnectorProxyRequest): Request[js.Object] = js.native
-    def deleteVoiceConnectorStreamingConfiguration(
-        params: DeleteVoiceConnectorStreamingConfigurationRequest
-    ): Request[js.Object] = js.native
+    def deleteVoiceConnectorStreamingConfiguration(params: DeleteVoiceConnectorStreamingConfigurationRequest): Request[js.Object] = js.native
     def deleteVoiceConnectorTermination(params: DeleteVoiceConnectorTerminationRequest): Request[js.Object] = js.native
-    def deleteVoiceConnectorTerminationCredentials(
-        params: DeleteVoiceConnectorTerminationCredentialsRequest
-    ): Request[js.Object] = js.native
-    def disassociatePhoneNumberFromUser(
-        params: DisassociatePhoneNumberFromUserRequest
-    ): Request[DisassociatePhoneNumberFromUserResponse] = js.native
-    def disassociatePhoneNumbersFromVoiceConnector(
-        params: DisassociatePhoneNumbersFromVoiceConnectorRequest
-    ): Request[DisassociatePhoneNumbersFromVoiceConnectorResponse] = js.native
-    def disassociatePhoneNumbersFromVoiceConnectorGroup(
-        params: DisassociatePhoneNumbersFromVoiceConnectorGroupRequest
-    ): Request[DisassociatePhoneNumbersFromVoiceConnectorGroupResponse] = js.native
-    def disassociateSigninDelegateGroupsFromAccount(
-        params: DisassociateSigninDelegateGroupsFromAccountRequest
-    ): Request[DisassociateSigninDelegateGroupsFromAccountResponse] = js.native
+    def deleteVoiceConnectorTerminationCredentials(params: DeleteVoiceConnectorTerminationCredentialsRequest): Request[js.Object] = js.native
+    def disassociatePhoneNumberFromUser(params: DisassociatePhoneNumberFromUserRequest): Request[DisassociatePhoneNumberFromUserResponse] = js.native
+    def disassociatePhoneNumbersFromVoiceConnector(params: DisassociatePhoneNumbersFromVoiceConnectorRequest): Request[DisassociatePhoneNumbersFromVoiceConnectorResponse] = js.native
+    def disassociatePhoneNumbersFromVoiceConnectorGroup(params: DisassociatePhoneNumbersFromVoiceConnectorGroupRequest): Request[DisassociatePhoneNumbersFromVoiceConnectorGroupResponse] = js.native
+    def disassociateSigninDelegateGroupsFromAccount(params: DisassociateSigninDelegateGroupsFromAccountRequest): Request[DisassociateSigninDelegateGroupsFromAccountResponse] = js.native
     def getAccount(params: GetAccountRequest): Request[GetAccountResponse] = js.native
     def getAccountSettings(params: GetAccountSettingsRequest): Request[GetAccountSettingsResponse] = js.native
     def getAttendee(params: GetAttendeeRequest): Request[GetAttendeeResponse] = js.native
     def getBot(params: GetBotRequest): Request[GetBotResponse] = js.native
-    def getEventsConfiguration(params: GetEventsConfigurationRequest): Request[GetEventsConfigurationResponse] =
-      js.native
+    def getEventsConfiguration(params: GetEventsConfigurationRequest): Request[GetEventsConfigurationResponse] = js.native
     def getGlobalSettings(): Request[GetGlobalSettingsResponse] = js.native
     def getMeeting(params: GetMeetingRequest): Request[GetMeetingResponse] = js.native
     def getPhoneNumber(params: GetPhoneNumberRequest): Request[GetPhoneNumberResponse] = js.native
@@ -493,28 +284,14 @@ package chime {
     def getUser(params: GetUserRequest): Request[GetUserResponse] = js.native
     def getUserSettings(params: GetUserSettingsRequest): Request[GetUserSettingsResponse] = js.native
     def getVoiceConnector(params: GetVoiceConnectorRequest): Request[GetVoiceConnectorResponse] = js.native
-    def getVoiceConnectorEmergencyCallingConfiguration(
-        params: GetVoiceConnectorEmergencyCallingConfigurationRequest
-    ): Request[GetVoiceConnectorEmergencyCallingConfigurationResponse] = js.native
-    def getVoiceConnectorGroup(params: GetVoiceConnectorGroupRequest): Request[GetVoiceConnectorGroupResponse] =
-      js.native
-    def getVoiceConnectorLoggingConfiguration(
-        params: GetVoiceConnectorLoggingConfigurationRequest
-    ): Request[GetVoiceConnectorLoggingConfigurationResponse] = js.native
-    def getVoiceConnectorOrigination(
-        params: GetVoiceConnectorOriginationRequest
-    ): Request[GetVoiceConnectorOriginationResponse] = js.native
-    def getVoiceConnectorProxy(params: GetVoiceConnectorProxyRequest): Request[GetVoiceConnectorProxyResponse] =
-      js.native
-    def getVoiceConnectorStreamingConfiguration(
-        params: GetVoiceConnectorStreamingConfigurationRequest
-    ): Request[GetVoiceConnectorStreamingConfigurationResponse] = js.native
-    def getVoiceConnectorTermination(
-        params: GetVoiceConnectorTerminationRequest
-    ): Request[GetVoiceConnectorTerminationResponse] = js.native
-    def getVoiceConnectorTerminationHealth(
-        params: GetVoiceConnectorTerminationHealthRequest
-    ): Request[GetVoiceConnectorTerminationHealthResponse] = js.native
+    def getVoiceConnectorEmergencyCallingConfiguration(params: GetVoiceConnectorEmergencyCallingConfigurationRequest): Request[GetVoiceConnectorEmergencyCallingConfigurationResponse] = js.native
+    def getVoiceConnectorGroup(params: GetVoiceConnectorGroupRequest): Request[GetVoiceConnectorGroupResponse] = js.native
+    def getVoiceConnectorLoggingConfiguration(params: GetVoiceConnectorLoggingConfigurationRequest): Request[GetVoiceConnectorLoggingConfigurationResponse] = js.native
+    def getVoiceConnectorOrigination(params: GetVoiceConnectorOriginationRequest): Request[GetVoiceConnectorOriginationResponse] = js.native
+    def getVoiceConnectorProxy(params: GetVoiceConnectorProxyRequest): Request[GetVoiceConnectorProxyResponse] = js.native
+    def getVoiceConnectorStreamingConfiguration(params: GetVoiceConnectorStreamingConfigurationRequest): Request[GetVoiceConnectorStreamingConfigurationResponse] = js.native
+    def getVoiceConnectorTermination(params: GetVoiceConnectorTerminationRequest): Request[GetVoiceConnectorTerminationResponse] = js.native
+    def getVoiceConnectorTerminationHealth(params: GetVoiceConnectorTerminationHealthRequest): Request[GetVoiceConnectorTerminationHealthResponse] = js.native
     def inviteUsers(params: InviteUsersRequest): Request[InviteUsersResponse] = js.native
     def listAccounts(params: ListAccountsRequest): Request[ListAccountsResponse] = js.native
     def listAttendeeTags(params: ListAttendeeTagsRequest): Request[ListAttendeeTagsResponse] = js.native
@@ -529,47 +306,25 @@ package chime {
     def listRooms(params: ListRoomsRequest): Request[ListRoomsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listUsers(params: ListUsersRequest): Request[ListUsersResponse] = js.native
-    def listVoiceConnectorGroups(params: ListVoiceConnectorGroupsRequest): Request[ListVoiceConnectorGroupsResponse] =
-      js.native
-    def listVoiceConnectorTerminationCredentials(
-        params: ListVoiceConnectorTerminationCredentialsRequest
-    ): Request[ListVoiceConnectorTerminationCredentialsResponse] = js.native
+    def listVoiceConnectorGroups(params: ListVoiceConnectorGroupsRequest): Request[ListVoiceConnectorGroupsResponse] = js.native
+    def listVoiceConnectorTerminationCredentials(params: ListVoiceConnectorTerminationCredentialsRequest): Request[ListVoiceConnectorTerminationCredentialsResponse] = js.native
     def listVoiceConnectors(params: ListVoiceConnectorsRequest): Request[ListVoiceConnectorsResponse] = js.native
     def logoutUser(params: LogoutUserRequest): Request[LogoutUserResponse] = js.native
-    def putEventsConfiguration(params: PutEventsConfigurationRequest): Request[PutEventsConfigurationResponse] =
-      js.native
+    def putEventsConfiguration(params: PutEventsConfigurationRequest): Request[PutEventsConfigurationResponse] = js.native
     def putRetentionSettings(params: PutRetentionSettingsRequest): Request[PutRetentionSettingsResponse] = js.native
-    def putVoiceConnectorEmergencyCallingConfiguration(
-        params: PutVoiceConnectorEmergencyCallingConfigurationRequest
-    ): Request[PutVoiceConnectorEmergencyCallingConfigurationResponse] = js.native
-    def putVoiceConnectorLoggingConfiguration(
-        params: PutVoiceConnectorLoggingConfigurationRequest
-    ): Request[PutVoiceConnectorLoggingConfigurationResponse] = js.native
-    def putVoiceConnectorOrigination(
-        params: PutVoiceConnectorOriginationRequest
-    ): Request[PutVoiceConnectorOriginationResponse] = js.native
-    def putVoiceConnectorProxy(params: PutVoiceConnectorProxyRequest): Request[PutVoiceConnectorProxyResponse] =
-      js.native
-    def putVoiceConnectorStreamingConfiguration(
-        params: PutVoiceConnectorStreamingConfigurationRequest
-    ): Request[PutVoiceConnectorStreamingConfigurationResponse] = js.native
-    def putVoiceConnectorTermination(
-        params: PutVoiceConnectorTerminationRequest
-    ): Request[PutVoiceConnectorTerminationResponse] = js.native
-    def putVoiceConnectorTerminationCredentials(
-        params: PutVoiceConnectorTerminationCredentialsRequest
-    ): Request[js.Object] = js.native
-    def redactConversationMessage(
-        params: RedactConversationMessageRequest
-    ): Request[RedactConversationMessageResponse] = js.native
+    def putVoiceConnectorEmergencyCallingConfiguration(params: PutVoiceConnectorEmergencyCallingConfigurationRequest): Request[PutVoiceConnectorEmergencyCallingConfigurationResponse] = js.native
+    def putVoiceConnectorLoggingConfiguration(params: PutVoiceConnectorLoggingConfigurationRequest): Request[PutVoiceConnectorLoggingConfigurationResponse] = js.native
+    def putVoiceConnectorOrigination(params: PutVoiceConnectorOriginationRequest): Request[PutVoiceConnectorOriginationResponse] = js.native
+    def putVoiceConnectorProxy(params: PutVoiceConnectorProxyRequest): Request[PutVoiceConnectorProxyResponse] = js.native
+    def putVoiceConnectorStreamingConfiguration(params: PutVoiceConnectorStreamingConfigurationRequest): Request[PutVoiceConnectorStreamingConfigurationResponse] = js.native
+    def putVoiceConnectorTermination(params: PutVoiceConnectorTerminationRequest): Request[PutVoiceConnectorTerminationResponse] = js.native
+    def putVoiceConnectorTerminationCredentials(params: PutVoiceConnectorTerminationCredentialsRequest): Request[js.Object] = js.native
+    def redactConversationMessage(params: RedactConversationMessageRequest): Request[RedactConversationMessageResponse] = js.native
     def redactRoomMessage(params: RedactRoomMessageRequest): Request[RedactRoomMessageResponse] = js.native
-    def regenerateSecurityToken(params: RegenerateSecurityTokenRequest): Request[RegenerateSecurityTokenResponse] =
-      js.native
+    def regenerateSecurityToken(params: RegenerateSecurityTokenRequest): Request[RegenerateSecurityTokenResponse] = js.native
     def resetPersonalPIN(params: ResetPersonalPINRequest): Request[ResetPersonalPINResponse] = js.native
     def restorePhoneNumber(params: RestorePhoneNumberRequest): Request[RestorePhoneNumberResponse] = js.native
-    def searchAvailablePhoneNumbers(
-        params: SearchAvailablePhoneNumbersRequest
-    ): Request[SearchAvailablePhoneNumbersResponse] = js.native
+    def searchAvailablePhoneNumbers(params: SearchAvailablePhoneNumbersRequest): Request[SearchAvailablePhoneNumbersResponse] = js.native
     def tagAttendee(params: TagAttendeeRequest): Request[js.Object] = js.native
     def tagMeeting(params: TagMeetingRequest): Request[js.Object] = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
@@ -588,9 +343,7 @@ package chime {
     def updateUser(params: UpdateUserRequest): Request[UpdateUserResponse] = js.native
     def updateUserSettings(params: UpdateUserSettingsRequest): Request[js.Object] = js.native
     def updateVoiceConnector(params: UpdateVoiceConnectorRequest): Request[UpdateVoiceConnectorResponse] = js.native
-    def updateVoiceConnectorGroup(
-        params: UpdateVoiceConnectorGroupRequest
-    ): Request[UpdateVoiceConnectorGroupResponse] = js.native
+    def updateVoiceConnectorGroup(params: UpdateVoiceConnectorGroupRequest): Request[UpdateVoiceConnectorGroupResponse] = js.native
   }
 
   /**
@@ -685,9 +438,7 @@ package chime {
     ): AlexaForBusinessMetadata = {
       val __obj = js.Dynamic.literal()
       AlexaForBusinessRoomArn.foreach(__v => __obj.updateDynamic("AlexaForBusinessRoomArn")(__v.asInstanceOf[js.Any]))
-      IsAlexaForBusinessEnabled.foreach(__v =>
-        __obj.updateDynamic("IsAlexaForBusinessEnabled")(__v.asInstanceOf[js.Any])
-      )
+      IsAlexaForBusinessEnabled.foreach(__v => __obj.updateDynamic("IsAlexaForBusinessEnabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AlexaForBusinessMetadata]
     }
   }
@@ -1427,9 +1178,7 @@ package chime {
       ExternalMeetingId.foreach(__v => __obj.updateDynamic("ExternalMeetingId")(__v.asInstanceOf[js.Any]))
       MediaRegion.foreach(__v => __obj.updateDynamic("MediaRegion")(__v.asInstanceOf[js.Any]))
       MeetingHostId.foreach(__v => __obj.updateDynamic("MeetingHostId")(__v.asInstanceOf[js.Any]))
-      NotificationsConfiguration.foreach(__v =>
-        __obj.updateDynamic("NotificationsConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      NotificationsConfiguration.foreach(__v => __obj.updateDynamic("NotificationsConfiguration")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateMeetingRequest]
     }
@@ -1481,9 +1230,7 @@ package chime {
       ExternalMeetingId.foreach(__v => __obj.updateDynamic("ExternalMeetingId")(__v.asInstanceOf[js.Any]))
       MediaRegion.foreach(__v => __obj.updateDynamic("MediaRegion")(__v.asInstanceOf[js.Any]))
       MeetingHostId.foreach(__v => __obj.updateDynamic("MeetingHostId")(__v.asInstanceOf[js.Any]))
-      NotificationsConfiguration.foreach(__v =>
-        __obj.updateDynamic("NotificationsConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      NotificationsConfiguration.foreach(__v => __obj.updateDynamic("NotificationsConfiguration")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateMeetingWithAttendeesRequest]
     }
@@ -2366,24 +2113,22 @@ package chime {
     val VoiceConnectorGroupAssociationsExist = "VoiceConnectorGroupAssociationsExist".asInstanceOf[ErrorCode]
     val PhoneNumberAssociationsExist = "PhoneNumberAssociationsExist".asInstanceOf[ErrorCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        BadRequest,
-        Conflict,
-        Forbidden,
-        NotFound,
-        PreconditionFailed,
-        ResourceLimitExceeded,
-        ServiceFailure,
-        AccessDenied,
-        ServiceUnavailable,
-        Throttled,
-        Unauthorized,
-        Unprocessable,
-        VoiceConnectorGroupAssociationsExist,
-        PhoneNumberAssociationsExist
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      BadRequest,
+      Conflict,
+      Forbidden,
+      NotFound,
+      PreconditionFailed,
+      ResourceLimitExceeded,
+      ServiceFailure,
+      AccessDenied,
+      ServiceUnavailable,
+      Throttled,
+      Unauthorized,
+      Unprocessable,
+      VoiceConnectorGroupAssociationsExist,
+      PhoneNumberAssociationsExist
+    ))
   }
 
   /**
@@ -2406,9 +2151,7 @@ package chime {
       val __obj = js.Dynamic.literal()
       BotId.foreach(__v => __obj.updateDynamic("BotId")(__v.asInstanceOf[js.Any]))
       LambdaFunctionArn.foreach(__v => __obj.updateDynamic("LambdaFunctionArn")(__v.asInstanceOf[js.Any]))
-      OutboundEventsHTTPSEndpoint.foreach(__v =>
-        __obj.updateDynamic("OutboundEventsHTTPSEndpoint")(__v.asInstanceOf[js.Any])
-      )
+      OutboundEventsHTTPSEndpoint.foreach(__v => __obj.updateDynamic("OutboundEventsHTTPSEndpoint")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventsConfiguration]
     }
   }
@@ -2760,9 +2503,7 @@ package chime {
     ): GetPhoneNumberSettingsResponse = {
       val __obj = js.Dynamic.literal()
       CallingName.foreach(__v => __obj.updateDynamic("CallingName")(__v.asInstanceOf[js.Any]))
-      CallingNameUpdatedTimestamp.foreach(__v =>
-        __obj.updateDynamic("CallingNameUpdatedTimestamp")(__v.asInstanceOf[js.Any])
-      )
+      CallingNameUpdatedTimestamp.foreach(__v => __obj.updateDynamic("CallingNameUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPhoneNumberSettingsResponse]
     }
   }
@@ -2835,9 +2576,7 @@ package chime {
         RetentionSettings: js.UndefOr[RetentionSettings] = js.undefined
     ): GetRetentionSettingsResponse = {
       val __obj = js.Dynamic.literal()
-      InitiateDeletionTimestamp.foreach(__v =>
-        __obj.updateDynamic("InitiateDeletionTimestamp")(__v.asInstanceOf[js.Any])
-      )
+      InitiateDeletionTimestamp.foreach(__v => __obj.updateDynamic("InitiateDeletionTimestamp")(__v.asInstanceOf[js.Any]))
       RetentionSettings.foreach(__v => __obj.updateDynamic("RetentionSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRetentionSettingsResponse]
     }
@@ -2983,9 +2722,7 @@ package chime {
         EmergencyCallingConfiguration: js.UndefOr[EmergencyCallingConfiguration] = js.undefined
     ): GetVoiceConnectorEmergencyCallingConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-      EmergencyCallingConfiguration.foreach(__v =>
-        __obj.updateDynamic("EmergencyCallingConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      EmergencyCallingConfiguration.foreach(__v => __obj.updateDynamic("EmergencyCallingConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetVoiceConnectorEmergencyCallingConfigurationResponse]
     }
   }
@@ -4585,18 +4322,7 @@ package chime {
     val ReleaseFailed = "ReleaseFailed".asInstanceOf[PhoneNumberStatus]
     val DeleteFailed = "DeleteFailed".asInstanceOf[PhoneNumberStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        AcquireInProgress,
-        AcquireFailed,
-        Unassigned,
-        Assigned,
-        ReleaseInProgress,
-        DeleteInProgress,
-        ReleaseFailed,
-        DeleteFailed
-      )
-    )
+    val values = js.Object.freeze(js.Array(AcquireInProgress, AcquireFailed, Unassigned, Assigned, ReleaseInProgress, DeleteInProgress, ReleaseFailed, DeleteFailed))
   }
 
   @js.native
@@ -4628,9 +4354,7 @@ package chime {
         PhoneNumberCountries: js.UndefOr[StringList] = js.undefined
     ): Proxy = {
       val __obj = js.Dynamic.literal()
-      DefaultSessionExpiryMinutes.foreach(__v =>
-        __obj.updateDynamic("DefaultSessionExpiryMinutes")(__v.asInstanceOf[js.Any])
-      )
+      DefaultSessionExpiryMinutes.foreach(__v => __obj.updateDynamic("DefaultSessionExpiryMinutes")(__v.asInstanceOf[js.Any]))
       Disabled.foreach(__v => __obj.updateDynamic("Disabled")(__v.asInstanceOf[js.Any]))
       FallBackPhoneNumber.foreach(__v => __obj.updateDynamic("FallBackPhoneNumber")(__v.asInstanceOf[js.Any]))
       PhoneNumberCountries.foreach(__v => __obj.updateDynamic("PhoneNumberCountries")(__v.asInstanceOf[js.Any]))
@@ -4725,9 +4449,7 @@ package chime {
       )
 
       LambdaFunctionArn.foreach(__v => __obj.updateDynamic("LambdaFunctionArn")(__v.asInstanceOf[js.Any]))
-      OutboundEventsHTTPSEndpoint.foreach(__v =>
-        __obj.updateDynamic("OutboundEventsHTTPSEndpoint")(__v.asInstanceOf[js.Any])
-      )
+      OutboundEventsHTTPSEndpoint.foreach(__v => __obj.updateDynamic("OutboundEventsHTTPSEndpoint")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutEventsConfigurationRequest]
     }
   }
@@ -4782,9 +4504,7 @@ package chime {
         RetentionSettings: js.UndefOr[RetentionSettings] = js.undefined
     ): PutRetentionSettingsResponse = {
       val __obj = js.Dynamic.literal()
-      InitiateDeletionTimestamp.foreach(__v =>
-        __obj.updateDynamic("InitiateDeletionTimestamp")(__v.asInstanceOf[js.Any])
-      )
+      InitiateDeletionTimestamp.foreach(__v => __obj.updateDynamic("InitiateDeletionTimestamp")(__v.asInstanceOf[js.Any]))
       RetentionSettings.foreach(__v => __obj.updateDynamic("RetentionSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutRetentionSettingsResponse]
     }
@@ -4822,9 +4542,7 @@ package chime {
         EmergencyCallingConfiguration: js.UndefOr[EmergencyCallingConfiguration] = js.undefined
     ): PutVoiceConnectorEmergencyCallingConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-      EmergencyCallingConfiguration.foreach(__v =>
-        __obj.updateDynamic("EmergencyCallingConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      EmergencyCallingConfiguration.foreach(__v => __obj.updateDynamic("EmergencyCallingConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutVoiceConnectorEmergencyCallingConfigurationResponse]
     }
   }
@@ -5252,9 +4970,7 @@ package chime {
         RoomRetentionSettings: js.UndefOr[RoomRetentionSettings] = js.undefined
     ): RetentionSettings = {
       val __obj = js.Dynamic.literal()
-      ConversationRetentionSettings.foreach(__v =>
-        __obj.updateDynamic("ConversationRetentionSettings")(__v.asInstanceOf[js.Any])
-      )
+      ConversationRetentionSettings.foreach(__v => __obj.updateDynamic("ConversationRetentionSettings")(__v.asInstanceOf[js.Any]))
       RoomRetentionSettings.foreach(__v => __obj.updateDynamic("RoomRetentionSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RetentionSettings]
     }
@@ -5444,9 +5160,7 @@ package chime {
       )
 
       Disabled.foreach(__v => __obj.updateDynamic("Disabled")(__v.asInstanceOf[js.Any]))
-      StreamingNotificationTargets.foreach(__v =>
-        __obj.updateDynamic("StreamingNotificationTargets")(__v.asInstanceOf[js.Any])
-      )
+      StreamingNotificationTargets.foreach(__v => __obj.updateDynamic("StreamingNotificationTargets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StreamingConfiguration]
     }
   }

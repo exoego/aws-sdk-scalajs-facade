@@ -46,132 +46,57 @@ package object macie2 {
 
   implicit final class Macie2Ops(private val service: Macie2) extends AnyVal {
 
-    @inline def acceptInvitationFuture(params: AcceptInvitationRequest): Future[AcceptInvitationResponse] =
-      service.acceptInvitation(params).promise().toFuture
-    @inline def batchGetCustomDataIdentifiersFuture(
-        params: BatchGetCustomDataIdentifiersRequest
-    ): Future[BatchGetCustomDataIdentifiersResponse] = service.batchGetCustomDataIdentifiers(params).promise().toFuture
-    @inline def createClassificationJobFuture(
-        params: CreateClassificationJobRequest
-    ): Future[CreateClassificationJobResponse] = service.createClassificationJob(params).promise().toFuture
-    @inline def createCustomDataIdentifierFuture(
-        params: CreateCustomDataIdentifierRequest
-    ): Future[CreateCustomDataIdentifierResponse] = service.createCustomDataIdentifier(params).promise().toFuture
-    @inline def createFindingsFilterFuture(params: CreateFindingsFilterRequest): Future[CreateFindingsFilterResponse] =
-      service.createFindingsFilter(params).promise().toFuture
-    @inline def createInvitationsFuture(params: CreateInvitationsRequest): Future[CreateInvitationsResponse] =
-      service.createInvitations(params).promise().toFuture
-    @inline def createMemberFuture(params: CreateMemberRequest): Future[CreateMemberResponse] =
-      service.createMember(params).promise().toFuture
-    @inline def createSampleFindingsFuture(params: CreateSampleFindingsRequest): Future[CreateSampleFindingsResponse] =
-      service.createSampleFindings(params).promise().toFuture
-    @inline def declineInvitationsFuture(params: DeclineInvitationsRequest): Future[DeclineInvitationsResponse] =
-      service.declineInvitations(params).promise().toFuture
-    @inline def deleteCustomDataIdentifierFuture(
-        params: DeleteCustomDataIdentifierRequest
-    ): Future[DeleteCustomDataIdentifierResponse] = service.deleteCustomDataIdentifier(params).promise().toFuture
-    @inline def deleteFindingsFilterFuture(params: DeleteFindingsFilterRequest): Future[DeleteFindingsFilterResponse] =
-      service.deleteFindingsFilter(params).promise().toFuture
-    @inline def deleteInvitationsFuture(params: DeleteInvitationsRequest): Future[DeleteInvitationsResponse] =
-      service.deleteInvitations(params).promise().toFuture
-    @inline def deleteMemberFuture(params: DeleteMemberRequest): Future[DeleteMemberResponse] =
-      service.deleteMember(params).promise().toFuture
-    @inline def describeBucketsFuture(params: DescribeBucketsRequest): Future[DescribeBucketsResponse] =
-      service.describeBuckets(params).promise().toFuture
-    @inline def describeClassificationJobFuture(
-        params: DescribeClassificationJobRequest
-    ): Future[DescribeClassificationJobResponse] = service.describeClassificationJob(params).promise().toFuture
-    @inline def describeOrganizationConfigurationFuture(
-        params: DescribeOrganizationConfigurationRequest
-    ): Future[DescribeOrganizationConfigurationResponse] =
-      service.describeOrganizationConfiguration(params).promise().toFuture
-    @inline def disableMacieFuture(params: DisableMacieRequest): Future[DisableMacieResponse] =
-      service.disableMacie(params).promise().toFuture
-    @inline def disableOrganizationAdminAccountFuture(
-        params: DisableOrganizationAdminAccountRequest
-    ): Future[DisableOrganizationAdminAccountResponse] =
-      service.disableOrganizationAdminAccount(params).promise().toFuture
-    @inline def disassociateFromMasterAccountFuture(
-        params: DisassociateFromMasterAccountRequest
-    ): Future[DisassociateFromMasterAccountResponse] = service.disassociateFromMasterAccount(params).promise().toFuture
-    @inline def disassociateMemberFuture(params: DisassociateMemberRequest): Future[DisassociateMemberResponse] =
-      service.disassociateMember(params).promise().toFuture
-    @inline def enableMacieFuture(params: EnableMacieRequest): Future[EnableMacieResponse] =
-      service.enableMacie(params).promise().toFuture
-    @inline def enableOrganizationAdminAccountFuture(
-        params: EnableOrganizationAdminAccountRequest
-    ): Future[EnableOrganizationAdminAccountResponse] =
-      service.enableOrganizationAdminAccount(params).promise().toFuture
-    @inline def getBucketStatisticsFuture(params: GetBucketStatisticsRequest): Future[GetBucketStatisticsResponse] =
-      service.getBucketStatistics(params).promise().toFuture
-    @inline def getClassificationExportConfigurationFuture(
-        params: GetClassificationExportConfigurationRequest
-    ): Future[GetClassificationExportConfigurationResponse] =
-      service.getClassificationExportConfiguration(params).promise().toFuture
-    @inline def getCustomDataIdentifierFuture(
-        params: GetCustomDataIdentifierRequest
-    ): Future[GetCustomDataIdentifierResponse] = service.getCustomDataIdentifier(params).promise().toFuture
-    @inline def getFindingStatisticsFuture(params: GetFindingStatisticsRequest): Future[GetFindingStatisticsResponse] =
-      service.getFindingStatistics(params).promise().toFuture
-    @inline def getFindingsFilterFuture(params: GetFindingsFilterRequest): Future[GetFindingsFilterResponse] =
-      service.getFindingsFilter(params).promise().toFuture
-    @inline def getFindingsFuture(params: GetFindingsRequest): Future[GetFindingsResponse] =
-      service.getFindings(params).promise().toFuture
-    @inline def getInvitationsCountFuture(params: GetInvitationsCountRequest): Future[GetInvitationsCountResponse] =
-      service.getInvitationsCount(params).promise().toFuture
-    @inline def getMacieSessionFuture(params: GetMacieSessionRequest): Future[GetMacieSessionResponse] =
-      service.getMacieSession(params).promise().toFuture
-    @inline def getMasterAccountFuture(params: GetMasterAccountRequest): Future[GetMasterAccountResponse] =
-      service.getMasterAccount(params).promise().toFuture
-    @inline def getMemberFuture(params: GetMemberRequest): Future[GetMemberResponse] =
-      service.getMember(params).promise().toFuture
-    @inline def getUsageStatisticsFuture(params: GetUsageStatisticsRequest): Future[GetUsageStatisticsResponse] =
-      service.getUsageStatistics(params).promise().toFuture
-    @inline def getUsageTotalsFuture(params: GetUsageTotalsRequest): Future[GetUsageTotalsResponse] =
-      service.getUsageTotals(params).promise().toFuture
-    @inline def listClassificationJobsFuture(
-        params: ListClassificationJobsRequest
-    ): Future[ListClassificationJobsResponse] = service.listClassificationJobs(params).promise().toFuture
-    @inline def listCustomDataIdentifiersFuture(
-        params: ListCustomDataIdentifiersRequest
-    ): Future[ListCustomDataIdentifiersResponse] = service.listCustomDataIdentifiers(params).promise().toFuture
-    @inline def listFindingsFiltersFuture(params: ListFindingsFiltersRequest): Future[ListFindingsFiltersResponse] =
-      service.listFindingsFilters(params).promise().toFuture
-    @inline def listFindingsFuture(params: ListFindingsRequest): Future[ListFindingsResponse] =
-      service.listFindings(params).promise().toFuture
-    @inline def listInvitationsFuture(params: ListInvitationsRequest): Future[ListInvitationsResponse] =
-      service.listInvitations(params).promise().toFuture
-    @inline def listMembersFuture(params: ListMembersRequest): Future[ListMembersResponse] =
-      service.listMembers(params).promise().toFuture
-    @inline def listOrganizationAdminAccountsFuture(
-        params: ListOrganizationAdminAccountsRequest
-    ): Future[ListOrganizationAdminAccountsResponse] = service.listOrganizationAdminAccounts(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def putClassificationExportConfigurationFuture(
-        params: PutClassificationExportConfigurationRequest
-    ): Future[PutClassificationExportConfigurationResponse] =
-      service.putClassificationExportConfiguration(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def testCustomDataIdentifierFuture(
-        params: TestCustomDataIdentifierRequest
-    ): Future[TestCustomDataIdentifierResponse] = service.testCustomDataIdentifier(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateClassificationJobFuture(
-        params: UpdateClassificationJobRequest
-    ): Future[UpdateClassificationJobResponse] = service.updateClassificationJob(params).promise().toFuture
-    @inline def updateFindingsFilterFuture(params: UpdateFindingsFilterRequest): Future[UpdateFindingsFilterResponse] =
-      service.updateFindingsFilter(params).promise().toFuture
-    @inline def updateMacieSessionFuture(params: UpdateMacieSessionRequest): Future[UpdateMacieSessionResponse] =
-      service.updateMacieSession(params).promise().toFuture
-    @inline def updateMemberSessionFuture(params: UpdateMemberSessionRequest): Future[UpdateMemberSessionResponse] =
-      service.updateMemberSession(params).promise().toFuture
-    @inline def updateOrganizationConfigurationFuture(
-        params: UpdateOrganizationConfigurationRequest
-    ): Future[UpdateOrganizationConfigurationResponse] =
-      service.updateOrganizationConfiguration(params).promise().toFuture
+    @inline def acceptInvitationFuture(params: AcceptInvitationRequest): Future[AcceptInvitationResponse] = service.acceptInvitation(params).promise().toFuture
+    @inline def batchGetCustomDataIdentifiersFuture(params: BatchGetCustomDataIdentifiersRequest): Future[BatchGetCustomDataIdentifiersResponse] = service.batchGetCustomDataIdentifiers(params).promise().toFuture
+    @inline def createClassificationJobFuture(params: CreateClassificationJobRequest): Future[CreateClassificationJobResponse] = service.createClassificationJob(params).promise().toFuture
+    @inline def createCustomDataIdentifierFuture(params: CreateCustomDataIdentifierRequest): Future[CreateCustomDataIdentifierResponse] = service.createCustomDataIdentifier(params).promise().toFuture
+    @inline def createFindingsFilterFuture(params: CreateFindingsFilterRequest): Future[CreateFindingsFilterResponse] = service.createFindingsFilter(params).promise().toFuture
+    @inline def createInvitationsFuture(params: CreateInvitationsRequest): Future[CreateInvitationsResponse] = service.createInvitations(params).promise().toFuture
+    @inline def createMemberFuture(params: CreateMemberRequest): Future[CreateMemberResponse] = service.createMember(params).promise().toFuture
+    @inline def createSampleFindingsFuture(params: CreateSampleFindingsRequest): Future[CreateSampleFindingsResponse] = service.createSampleFindings(params).promise().toFuture
+    @inline def declineInvitationsFuture(params: DeclineInvitationsRequest): Future[DeclineInvitationsResponse] = service.declineInvitations(params).promise().toFuture
+    @inline def deleteCustomDataIdentifierFuture(params: DeleteCustomDataIdentifierRequest): Future[DeleteCustomDataIdentifierResponse] = service.deleteCustomDataIdentifier(params).promise().toFuture
+    @inline def deleteFindingsFilterFuture(params: DeleteFindingsFilterRequest): Future[DeleteFindingsFilterResponse] = service.deleteFindingsFilter(params).promise().toFuture
+    @inline def deleteInvitationsFuture(params: DeleteInvitationsRequest): Future[DeleteInvitationsResponse] = service.deleteInvitations(params).promise().toFuture
+    @inline def deleteMemberFuture(params: DeleteMemberRequest): Future[DeleteMemberResponse] = service.deleteMember(params).promise().toFuture
+    @inline def describeBucketsFuture(params: DescribeBucketsRequest): Future[DescribeBucketsResponse] = service.describeBuckets(params).promise().toFuture
+    @inline def describeClassificationJobFuture(params: DescribeClassificationJobRequest): Future[DescribeClassificationJobResponse] = service.describeClassificationJob(params).promise().toFuture
+    @inline def describeOrganizationConfigurationFuture(params: DescribeOrganizationConfigurationRequest): Future[DescribeOrganizationConfigurationResponse] = service.describeOrganizationConfiguration(params).promise().toFuture
+    @inline def disableMacieFuture(params: DisableMacieRequest): Future[DisableMacieResponse] = service.disableMacie(params).promise().toFuture
+    @inline def disableOrganizationAdminAccountFuture(params: DisableOrganizationAdminAccountRequest): Future[DisableOrganizationAdminAccountResponse] = service.disableOrganizationAdminAccount(params).promise().toFuture
+    @inline def disassociateFromMasterAccountFuture(params: DisassociateFromMasterAccountRequest): Future[DisassociateFromMasterAccountResponse] = service.disassociateFromMasterAccount(params).promise().toFuture
+    @inline def disassociateMemberFuture(params: DisassociateMemberRequest): Future[DisassociateMemberResponse] = service.disassociateMember(params).promise().toFuture
+    @inline def enableMacieFuture(params: EnableMacieRequest): Future[EnableMacieResponse] = service.enableMacie(params).promise().toFuture
+    @inline def enableOrganizationAdminAccountFuture(params: EnableOrganizationAdminAccountRequest): Future[EnableOrganizationAdminAccountResponse] = service.enableOrganizationAdminAccount(params).promise().toFuture
+    @inline def getBucketStatisticsFuture(params: GetBucketStatisticsRequest): Future[GetBucketStatisticsResponse] = service.getBucketStatistics(params).promise().toFuture
+    @inline def getClassificationExportConfigurationFuture(params: GetClassificationExportConfigurationRequest): Future[GetClassificationExportConfigurationResponse] = service.getClassificationExportConfiguration(params).promise().toFuture
+    @inline def getCustomDataIdentifierFuture(params: GetCustomDataIdentifierRequest): Future[GetCustomDataIdentifierResponse] = service.getCustomDataIdentifier(params).promise().toFuture
+    @inline def getFindingStatisticsFuture(params: GetFindingStatisticsRequest): Future[GetFindingStatisticsResponse] = service.getFindingStatistics(params).promise().toFuture
+    @inline def getFindingsFilterFuture(params: GetFindingsFilterRequest): Future[GetFindingsFilterResponse] = service.getFindingsFilter(params).promise().toFuture
+    @inline def getFindingsFuture(params: GetFindingsRequest): Future[GetFindingsResponse] = service.getFindings(params).promise().toFuture
+    @inline def getInvitationsCountFuture(params: GetInvitationsCountRequest): Future[GetInvitationsCountResponse] = service.getInvitationsCount(params).promise().toFuture
+    @inline def getMacieSessionFuture(params: GetMacieSessionRequest): Future[GetMacieSessionResponse] = service.getMacieSession(params).promise().toFuture
+    @inline def getMasterAccountFuture(params: GetMasterAccountRequest): Future[GetMasterAccountResponse] = service.getMasterAccount(params).promise().toFuture
+    @inline def getMemberFuture(params: GetMemberRequest): Future[GetMemberResponse] = service.getMember(params).promise().toFuture
+    @inline def getUsageStatisticsFuture(params: GetUsageStatisticsRequest): Future[GetUsageStatisticsResponse] = service.getUsageStatistics(params).promise().toFuture
+    @inline def getUsageTotalsFuture(params: GetUsageTotalsRequest): Future[GetUsageTotalsResponse] = service.getUsageTotals(params).promise().toFuture
+    @inline def listClassificationJobsFuture(params: ListClassificationJobsRequest): Future[ListClassificationJobsResponse] = service.listClassificationJobs(params).promise().toFuture
+    @inline def listCustomDataIdentifiersFuture(params: ListCustomDataIdentifiersRequest): Future[ListCustomDataIdentifiersResponse] = service.listCustomDataIdentifiers(params).promise().toFuture
+    @inline def listFindingsFiltersFuture(params: ListFindingsFiltersRequest): Future[ListFindingsFiltersResponse] = service.listFindingsFilters(params).promise().toFuture
+    @inline def listFindingsFuture(params: ListFindingsRequest): Future[ListFindingsResponse] = service.listFindings(params).promise().toFuture
+    @inline def listInvitationsFuture(params: ListInvitationsRequest): Future[ListInvitationsResponse] = service.listInvitations(params).promise().toFuture
+    @inline def listMembersFuture(params: ListMembersRequest): Future[ListMembersResponse] = service.listMembers(params).promise().toFuture
+    @inline def listOrganizationAdminAccountsFuture(params: ListOrganizationAdminAccountsRequest): Future[ListOrganizationAdminAccountsResponse] = service.listOrganizationAdminAccounts(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def putClassificationExportConfigurationFuture(params: PutClassificationExportConfigurationRequest): Future[PutClassificationExportConfigurationResponse] = service.putClassificationExportConfiguration(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def testCustomDataIdentifierFuture(params: TestCustomDataIdentifierRequest): Future[TestCustomDataIdentifierResponse] = service.testCustomDataIdentifier(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateClassificationJobFuture(params: UpdateClassificationJobRequest): Future[UpdateClassificationJobResponse] = service.updateClassificationJob(params).promise().toFuture
+    @inline def updateFindingsFilterFuture(params: UpdateFindingsFilterRequest): Future[UpdateFindingsFilterResponse] = service.updateFindingsFilter(params).promise().toFuture
+    @inline def updateMacieSessionFuture(params: UpdateMacieSessionRequest): Future[UpdateMacieSessionResponse] = service.updateMacieSession(params).promise().toFuture
+    @inline def updateMemberSessionFuture(params: UpdateMemberSessionRequest): Future[UpdateMemberSessionResponse] = service.updateMemberSession(params).promise().toFuture
+    @inline def updateOrganizationConfigurationFuture(params: UpdateOrganizationConfigurationRequest): Future[UpdateOrganizationConfigurationResponse] = service.updateOrganizationConfiguration(params).promise().toFuture
   }
 }
 
@@ -182,50 +107,30 @@ package macie2 {
     def this(config: AWSConfig) = this()
 
     def acceptInvitation(params: AcceptInvitationRequest): Request[AcceptInvitationResponse] = js.native
-    def batchGetCustomDataIdentifiers(
-        params: BatchGetCustomDataIdentifiersRequest
-    ): Request[BatchGetCustomDataIdentifiersResponse] = js.native
-    def createClassificationJob(params: CreateClassificationJobRequest): Request[CreateClassificationJobResponse] =
-      js.native
-    def createCustomDataIdentifier(
-        params: CreateCustomDataIdentifierRequest
-    ): Request[CreateCustomDataIdentifierResponse] = js.native
+    def batchGetCustomDataIdentifiers(params: BatchGetCustomDataIdentifiersRequest): Request[BatchGetCustomDataIdentifiersResponse] = js.native
+    def createClassificationJob(params: CreateClassificationJobRequest): Request[CreateClassificationJobResponse] = js.native
+    def createCustomDataIdentifier(params: CreateCustomDataIdentifierRequest): Request[CreateCustomDataIdentifierResponse] = js.native
     def createFindingsFilter(params: CreateFindingsFilterRequest): Request[CreateFindingsFilterResponse] = js.native
     def createInvitations(params: CreateInvitationsRequest): Request[CreateInvitationsResponse] = js.native
     def createMember(params: CreateMemberRequest): Request[CreateMemberResponse] = js.native
     def createSampleFindings(params: CreateSampleFindingsRequest): Request[CreateSampleFindingsResponse] = js.native
     def declineInvitations(params: DeclineInvitationsRequest): Request[DeclineInvitationsResponse] = js.native
-    def deleteCustomDataIdentifier(
-        params: DeleteCustomDataIdentifierRequest
-    ): Request[DeleteCustomDataIdentifierResponse] = js.native
+    def deleteCustomDataIdentifier(params: DeleteCustomDataIdentifierRequest): Request[DeleteCustomDataIdentifierResponse] = js.native
     def deleteFindingsFilter(params: DeleteFindingsFilterRequest): Request[DeleteFindingsFilterResponse] = js.native
     def deleteInvitations(params: DeleteInvitationsRequest): Request[DeleteInvitationsResponse] = js.native
     def deleteMember(params: DeleteMemberRequest): Request[DeleteMemberResponse] = js.native
     def describeBuckets(params: DescribeBucketsRequest): Request[DescribeBucketsResponse] = js.native
-    def describeClassificationJob(
-        params: DescribeClassificationJobRequest
-    ): Request[DescribeClassificationJobResponse] = js.native
-    def describeOrganizationConfiguration(
-        params: DescribeOrganizationConfigurationRequest
-    ): Request[DescribeOrganizationConfigurationResponse] = js.native
+    def describeClassificationJob(params: DescribeClassificationJobRequest): Request[DescribeClassificationJobResponse] = js.native
+    def describeOrganizationConfiguration(params: DescribeOrganizationConfigurationRequest): Request[DescribeOrganizationConfigurationResponse] = js.native
     def disableMacie(params: DisableMacieRequest): Request[DisableMacieResponse] = js.native
-    def disableOrganizationAdminAccount(
-        params: DisableOrganizationAdminAccountRequest
-    ): Request[DisableOrganizationAdminAccountResponse] = js.native
-    def disassociateFromMasterAccount(
-        params: DisassociateFromMasterAccountRequest
-    ): Request[DisassociateFromMasterAccountResponse] = js.native
+    def disableOrganizationAdminAccount(params: DisableOrganizationAdminAccountRequest): Request[DisableOrganizationAdminAccountResponse] = js.native
+    def disassociateFromMasterAccount(params: DisassociateFromMasterAccountRequest): Request[DisassociateFromMasterAccountResponse] = js.native
     def disassociateMember(params: DisassociateMemberRequest): Request[DisassociateMemberResponse] = js.native
     def enableMacie(params: EnableMacieRequest): Request[EnableMacieResponse] = js.native
-    def enableOrganizationAdminAccount(
-        params: EnableOrganizationAdminAccountRequest
-    ): Request[EnableOrganizationAdminAccountResponse] = js.native
+    def enableOrganizationAdminAccount(params: EnableOrganizationAdminAccountRequest): Request[EnableOrganizationAdminAccountResponse] = js.native
     def getBucketStatistics(params: GetBucketStatisticsRequest): Request[GetBucketStatisticsResponse] = js.native
-    def getClassificationExportConfiguration(
-        params: GetClassificationExportConfigurationRequest
-    ): Request[GetClassificationExportConfigurationResponse] = js.native
-    def getCustomDataIdentifier(params: GetCustomDataIdentifierRequest): Request[GetCustomDataIdentifierResponse] =
-      js.native
+    def getClassificationExportConfiguration(params: GetClassificationExportConfigurationRequest): Request[GetClassificationExportConfigurationResponse] = js.native
+    def getCustomDataIdentifier(params: GetCustomDataIdentifierRequest): Request[GetCustomDataIdentifierResponse] = js.native
     def getFindingStatistics(params: GetFindingStatisticsRequest): Request[GetFindingStatisticsResponse] = js.native
     def getFindings(params: GetFindingsRequest): Request[GetFindingsResponse] = js.native
     def getFindingsFilter(params: GetFindingsFilterRequest): Request[GetFindingsFilterResponse] = js.native
@@ -235,34 +140,23 @@ package macie2 {
     def getMember(params: GetMemberRequest): Request[GetMemberResponse] = js.native
     def getUsageStatistics(params: GetUsageStatisticsRequest): Request[GetUsageStatisticsResponse] = js.native
     def getUsageTotals(params: GetUsageTotalsRequest): Request[GetUsageTotalsResponse] = js.native
-    def listClassificationJobs(params: ListClassificationJobsRequest): Request[ListClassificationJobsResponse] =
-      js.native
-    def listCustomDataIdentifiers(
-        params: ListCustomDataIdentifiersRequest
-    ): Request[ListCustomDataIdentifiersResponse] = js.native
+    def listClassificationJobs(params: ListClassificationJobsRequest): Request[ListClassificationJobsResponse] = js.native
+    def listCustomDataIdentifiers(params: ListCustomDataIdentifiersRequest): Request[ListCustomDataIdentifiersResponse] = js.native
     def listFindings(params: ListFindingsRequest): Request[ListFindingsResponse] = js.native
     def listFindingsFilters(params: ListFindingsFiltersRequest): Request[ListFindingsFiltersResponse] = js.native
     def listInvitations(params: ListInvitationsRequest): Request[ListInvitationsResponse] = js.native
     def listMembers(params: ListMembersRequest): Request[ListMembersResponse] = js.native
-    def listOrganizationAdminAccounts(
-        params: ListOrganizationAdminAccountsRequest
-    ): Request[ListOrganizationAdminAccountsResponse] = js.native
+    def listOrganizationAdminAccounts(params: ListOrganizationAdminAccountsRequest): Request[ListOrganizationAdminAccountsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def putClassificationExportConfiguration(
-        params: PutClassificationExportConfigurationRequest
-    ): Request[PutClassificationExportConfigurationResponse] = js.native
+    def putClassificationExportConfiguration(params: PutClassificationExportConfigurationRequest): Request[PutClassificationExportConfigurationResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
-    def testCustomDataIdentifier(params: TestCustomDataIdentifierRequest): Request[TestCustomDataIdentifierResponse] =
-      js.native
+    def testCustomDataIdentifier(params: TestCustomDataIdentifierRequest): Request[TestCustomDataIdentifierResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
-    def updateClassificationJob(params: UpdateClassificationJobRequest): Request[UpdateClassificationJobResponse] =
-      js.native
+    def updateClassificationJob(params: UpdateClassificationJobRequest): Request[UpdateClassificationJobResponse] = js.native
     def updateFindingsFilter(params: UpdateFindingsFilterRequest): Request[UpdateFindingsFilterResponse] = js.native
     def updateMacieSession(params: UpdateMacieSessionRequest): Request[UpdateMacieSessionResponse] = js.native
     def updateMemberSession(params: UpdateMemberSessionRequest): Request[UpdateMemberSessionResponse] = js.native
-    def updateOrganizationConfiguration(
-        params: UpdateOrganizationConfigurationRequest
-    ): Request[UpdateOrganizationConfigurationResponse] = js.native
+    def updateOrganizationConfiguration(params: UpdateOrganizationConfigurationRequest): Request[UpdateOrganizationConfigurationResponse] = js.native
   }
 
   @js.native
@@ -783,9 +677,7 @@ package macie2 {
       classifiableObjectCount.foreach(__v => __obj.updateDynamic("classifiableObjectCount")(__v.asInstanceOf[js.Any]))
       lastUpdated.foreach(__v => __obj.updateDynamic("lastUpdated")(__v.asInstanceOf[js.Any]))
       objectCount.foreach(__v => __obj.updateDynamic("objectCount")(__v.asInstanceOf[js.Any]))
-      objectCountByEncryptionType.foreach(__v =>
-        __obj.updateDynamic("objectCountByEncryptionType")(__v.asInstanceOf[js.Any])
-      )
+      objectCountByEncryptionType.foreach(__v => __obj.updateDynamic("objectCountByEncryptionType")(__v.asInstanceOf[js.Any]))
       publicAccess.foreach(__v => __obj.updateDynamic("publicAccess")(__v.asInstanceOf[js.Any]))
       region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
       replicationDetails.foreach(__v => __obj.updateDynamic("replicationDetails")(__v.asInstanceOf[js.Any]))
@@ -1913,9 +1805,7 @@ package macie2 {
     ): EnableMacieRequest = {
       val __obj = js.Dynamic.literal()
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      findingPublishingFrequency.foreach(__v =>
-        __obj.updateDynamic("findingPublishingFrequency")(__v.asInstanceOf[js.Any])
-      )
+      findingPublishingFrequency.foreach(__v => __obj.updateDynamic("findingPublishingFrequency")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnableMacieRequest]
     }
@@ -2244,27 +2134,22 @@ package macie2 {
     val `SensitiveData:S3Object/CustomIdentifier` = "SensitiveData:S3Object/CustomIdentifier".asInstanceOf[FindingType]
     val `Policy:IAMUser/S3BucketPublic` = "Policy:IAMUser/S3BucketPublic".asInstanceOf[FindingType]
     val `Policy:IAMUser/S3BucketSharedExternally` = "Policy:IAMUser/S3BucketSharedExternally".asInstanceOf[FindingType]
-    val `Policy:IAMUser/S3BucketReplicatedExternally` =
-      "Policy:IAMUser/S3BucketReplicatedExternally".asInstanceOf[FindingType]
-    val `Policy:IAMUser/S3BucketEncryptionDisabled` =
-      "Policy:IAMUser/S3BucketEncryptionDisabled".asInstanceOf[FindingType]
-    val `Policy:IAMUser/S3BlockPublicAccessDisabled` =
-      "Policy:IAMUser/S3BlockPublicAccessDisabled".asInstanceOf[FindingType]
+    val `Policy:IAMUser/S3BucketReplicatedExternally` = "Policy:IAMUser/S3BucketReplicatedExternally".asInstanceOf[FindingType]
+    val `Policy:IAMUser/S3BucketEncryptionDisabled` = "Policy:IAMUser/S3BucketEncryptionDisabled".asInstanceOf[FindingType]
+    val `Policy:IAMUser/S3BlockPublicAccessDisabled` = "Policy:IAMUser/S3BlockPublicAccessDisabled".asInstanceOf[FindingType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `SensitiveData:S3Object/Multiple`,
-        `SensitiveData:S3Object/Financial`,
-        `SensitiveData:S3Object/Personal`,
-        `SensitiveData:S3Object/Credentials`,
-        `SensitiveData:S3Object/CustomIdentifier`,
-        `Policy:IAMUser/S3BucketPublic`,
-        `Policy:IAMUser/S3BucketSharedExternally`,
-        `Policy:IAMUser/S3BucketReplicatedExternally`,
-        `Policy:IAMUser/S3BucketEncryptionDisabled`,
-        `Policy:IAMUser/S3BlockPublicAccessDisabled`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      `SensitiveData:S3Object/Multiple`,
+      `SensitiveData:S3Object/Financial`,
+      `SensitiveData:S3Object/Personal`,
+      `SensitiveData:S3Object/Credentials`,
+      `SensitiveData:S3Object/CustomIdentifier`,
+      `Policy:IAMUser/S3BucketPublic`,
+      `Policy:IAMUser/S3BucketSharedExternally`,
+      `Policy:IAMUser/S3BucketReplicatedExternally`,
+      `Policy:IAMUser/S3BucketEncryptionDisabled`,
+      `Policy:IAMUser/S3BlockPublicAccessDisabled`
+    ))
   }
 
   /**
@@ -2354,15 +2239,9 @@ package macie2 {
     ): GetBucketStatisticsResponse = {
       val __obj = js.Dynamic.literal()
       bucketCount.foreach(__v => __obj.updateDynamic("bucketCount")(__v.asInstanceOf[js.Any]))
-      bucketCountByEffectivePermission.foreach(__v =>
-        __obj.updateDynamic("bucketCountByEffectivePermission")(__v.asInstanceOf[js.Any])
-      )
-      bucketCountByEncryptionType.foreach(__v =>
-        __obj.updateDynamic("bucketCountByEncryptionType")(__v.asInstanceOf[js.Any])
-      )
-      bucketCountBySharedAccessType.foreach(__v =>
-        __obj.updateDynamic("bucketCountBySharedAccessType")(__v.asInstanceOf[js.Any])
-      )
+      bucketCountByEffectivePermission.foreach(__v => __obj.updateDynamic("bucketCountByEffectivePermission")(__v.asInstanceOf[js.Any]))
+      bucketCountByEncryptionType.foreach(__v => __obj.updateDynamic("bucketCountByEncryptionType")(__v.asInstanceOf[js.Any]))
+      bucketCountBySharedAccessType.foreach(__v => __obj.updateDynamic("bucketCountBySharedAccessType")(__v.asInstanceOf[js.Any]))
       classifiableObjectCount.foreach(__v => __obj.updateDynamic("classifiableObjectCount")(__v.asInstanceOf[js.Any]))
       lastUpdated.foreach(__v => __obj.updateDynamic("lastUpdated")(__v.asInstanceOf[js.Any]))
       objectCount.foreach(__v => __obj.updateDynamic("objectCount")(__v.asInstanceOf[js.Any]))
@@ -2662,9 +2541,7 @@ package macie2 {
     ): GetMacieSessionResponse = {
       val __obj = js.Dynamic.literal()
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      findingPublishingFrequency.foreach(__v =>
-        __obj.updateDynamic("findingPublishingFrequency")(__v.asInstanceOf[js.Any])
-      )
+      findingPublishingFrequency.foreach(__v => __obj.updateDynamic("findingPublishingFrequency")(__v.asInstanceOf[js.Any]))
       serviceRole.foreach(__v => __obj.updateDynamic("serviceRole")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       updatedAt.foreach(__v => __obj.updateDynamic("updatedAt")(__v.asInstanceOf[js.Any]))
@@ -2837,9 +2714,7 @@ package macie2 {
     val `classificationDetails.jobId` = "classificationDetails.jobId".asInstanceOf[GroupBy]
     val `severity.description` = "severity.description".asInstanceOf[GroupBy]
 
-    val values = js.Object.freeze(
-      js.Array(`resourcesAffected.s3Bucket.name`, `type`, `classificationDetails.jobId`, `severity.description`)
-    )
+    val values = js.Object.freeze(js.Array(`resourcesAffected.s3Bucket.name`, `type`, `classificationDetails.jobId`, `severity.description`))
   }
 
   /**
@@ -3801,20 +3676,7 @@ package macie2 {
     val RegionDisabled = "RegionDisabled".asInstanceOf[RelationshipStatus]
     val AccountSuspended = "AccountSuspended".asInstanceOf[RelationshipStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        Enabled,
-        Paused,
-        Invited,
-        Created,
-        Removed,
-        Resigned,
-        EmailVerificationInProgress,
-        EmailVerificationFailed,
-        RegionDisabled,
-        AccountSuspended
-      )
-    )
+    val values = js.Object.freeze(js.Array(Enabled, Paused, Invited, Created, Removed, Resigned, EmailVerificationInProgress, EmailVerificationFailed, RegionDisabled, AccountSuspended))
   }
 
   /**
@@ -3892,9 +3754,7 @@ package macie2 {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      defaultServerSideEncryption.foreach(__v =>
-        __obj.updateDynamic("defaultServerSideEncryption")(__v.asInstanceOf[js.Any])
-      )
+      defaultServerSideEncryption.foreach(__v => __obj.updateDynamic("defaultServerSideEncryption")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       owner.foreach(__v => __obj.updateDynamic("owner")(__v.asInstanceOf[js.Any]))
       publicAccess.foreach(__v => __obj.updateDynamic("publicAccess")(__v.asInstanceOf[js.Any]))
@@ -4060,8 +3920,7 @@ package macie2 {
     val OBJECT_SIZE = "OBJECT_SIZE".asInstanceOf[ScopeFilterKey]
     val TAG = "TAG".asInstanceOf[ScopeFilterKey]
 
-    val values =
-      js.Object.freeze(js.Array(BUCKET_CREATION_DATE, OBJECT_EXTENSION, OBJECT_LAST_MODIFIED_DATE, OBJECT_SIZE, TAG))
+    val values = js.Object.freeze(js.Array(BUCKET_CREATION_DATE, OBJECT_EXTENSION, OBJECT_LAST_MODIFIED_DATE, OBJECT_SIZE, TAG))
   }
 
   /**
@@ -4355,9 +4214,7 @@ package macie2 {
         numberOfRuns: js.UndefOr[__double] = js.undefined
     ): Statistics = {
       val __obj = js.Dynamic.literal()
-      approximateNumberOfObjectsToProcess.foreach(__v =>
-        __obj.updateDynamic("approximateNumberOfObjectsToProcess")(__v.asInstanceOf[js.Any])
-      )
+      approximateNumberOfObjectsToProcess.foreach(__v => __obj.updateDynamic("approximateNumberOfObjectsToProcess")(__v.asInstanceOf[js.Any]))
       numberOfRuns.foreach(__v => __obj.updateDynamic("numberOfRuns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Statistics]
     }
@@ -4377,9 +4234,7 @@ package macie2 {
     val ONEZONE_IA = "ONEZONE_IA".asInstanceOf[StorageClass]
     val GLACIER = "GLACIER".asInstanceOf[StorageClass]
 
-    val values = js.Object.freeze(
-      js.Array(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE, ONEZONE_IA, GLACIER)
-    )
+    val values = js.Object.freeze(js.Array(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE, ONEZONE_IA, GLACIER))
   }
 
   @js.native
@@ -4689,9 +4544,7 @@ package macie2 {
         status: js.UndefOr[MacieStatus] = js.undefined
     ): UpdateMacieSessionRequest = {
       val __obj = js.Dynamic.literal()
-      findingPublishingFrequency.foreach(__v =>
-        __obj.updateDynamic("findingPublishingFrequency")(__v.asInstanceOf[js.Any])
-      )
+      findingPublishingFrequency.foreach(__v => __obj.updateDynamic("findingPublishingFrequency")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateMacieSessionRequest]
     }

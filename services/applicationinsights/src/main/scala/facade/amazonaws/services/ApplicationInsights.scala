@@ -83,67 +83,33 @@ package object applicationinsights {
 
   implicit final class ApplicationInsightsOps(private val service: ApplicationInsights) extends AnyVal {
 
-    @inline def createApplicationFuture(params: CreateApplicationRequest): Future[CreateApplicationResponse] =
-      service.createApplication(params).promise().toFuture
-    @inline def createComponentFuture(params: CreateComponentRequest): Future[CreateComponentResponse] =
-      service.createComponent(params).promise().toFuture
-    @inline def createLogPatternFuture(params: CreateLogPatternRequest): Future[CreateLogPatternResponse] =
-      service.createLogPattern(params).promise().toFuture
-    @inline def deleteApplicationFuture(params: DeleteApplicationRequest): Future[DeleteApplicationResponse] =
-      service.deleteApplication(params).promise().toFuture
-    @inline def deleteComponentFuture(params: DeleteComponentRequest): Future[DeleteComponentResponse] =
-      service.deleteComponent(params).promise().toFuture
-    @inline def deleteLogPatternFuture(params: DeleteLogPatternRequest): Future[DeleteLogPatternResponse] =
-      service.deleteLogPattern(params).promise().toFuture
-    @inline def describeApplicationFuture(params: DescribeApplicationRequest): Future[DescribeApplicationResponse] =
-      service.describeApplication(params).promise().toFuture
-    @inline def describeComponentConfigurationFuture(
-        params: DescribeComponentConfigurationRequest
-    ): Future[DescribeComponentConfigurationResponse] =
-      service.describeComponentConfiguration(params).promise().toFuture
-    @inline def describeComponentConfigurationRecommendationFuture(
-        params: DescribeComponentConfigurationRecommendationRequest
-    ): Future[DescribeComponentConfigurationRecommendationResponse] =
-      service.describeComponentConfigurationRecommendation(params).promise().toFuture
-    @inline def describeComponentFuture(params: DescribeComponentRequest): Future[DescribeComponentResponse] =
-      service.describeComponent(params).promise().toFuture
-    @inline def describeLogPatternFuture(params: DescribeLogPatternRequest): Future[DescribeLogPatternResponse] =
-      service.describeLogPattern(params).promise().toFuture
-    @inline def describeObservationFuture(params: DescribeObservationRequest): Future[DescribeObservationResponse] =
-      service.describeObservation(params).promise().toFuture
-    @inline def describeProblemFuture(params: DescribeProblemRequest): Future[DescribeProblemResponse] =
-      service.describeProblem(params).promise().toFuture
-    @inline def describeProblemObservationsFuture(
-        params: DescribeProblemObservationsRequest
-    ): Future[DescribeProblemObservationsResponse] = service.describeProblemObservations(params).promise().toFuture
-    @inline def listApplicationsFuture(params: ListApplicationsRequest): Future[ListApplicationsResponse] =
-      service.listApplications(params).promise().toFuture
-    @inline def listComponentsFuture(params: ListComponentsRequest): Future[ListComponentsResponse] =
-      service.listComponents(params).promise().toFuture
-    @inline def listConfigurationHistoryFuture(
-        params: ListConfigurationHistoryRequest
-    ): Future[ListConfigurationHistoryResponse] = service.listConfigurationHistory(params).promise().toFuture
-    @inline def listLogPatternSetsFuture(params: ListLogPatternSetsRequest): Future[ListLogPatternSetsResponse] =
-      service.listLogPatternSets(params).promise().toFuture
-    @inline def listLogPatternsFuture(params: ListLogPatternsRequest): Future[ListLogPatternsResponse] =
-      service.listLogPatterns(params).promise().toFuture
-    @inline def listProblemsFuture(params: ListProblemsRequest): Future[ListProblemsResponse] =
-      service.listProblems(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] =
-      service.updateApplication(params).promise().toFuture
-    @inline def updateComponentConfigurationFuture(
-        params: UpdateComponentConfigurationRequest
-    ): Future[UpdateComponentConfigurationResponse] = service.updateComponentConfiguration(params).promise().toFuture
-    @inline def updateComponentFuture(params: UpdateComponentRequest): Future[UpdateComponentResponse] =
-      service.updateComponent(params).promise().toFuture
-    @inline def updateLogPatternFuture(params: UpdateLogPatternRequest): Future[UpdateLogPatternResponse] =
-      service.updateLogPattern(params).promise().toFuture
+    @inline def createApplicationFuture(params: CreateApplicationRequest): Future[CreateApplicationResponse] = service.createApplication(params).promise().toFuture
+    @inline def createComponentFuture(params: CreateComponentRequest): Future[CreateComponentResponse] = service.createComponent(params).promise().toFuture
+    @inline def createLogPatternFuture(params: CreateLogPatternRequest): Future[CreateLogPatternResponse] = service.createLogPattern(params).promise().toFuture
+    @inline def deleteApplicationFuture(params: DeleteApplicationRequest): Future[DeleteApplicationResponse] = service.deleteApplication(params).promise().toFuture
+    @inline def deleteComponentFuture(params: DeleteComponentRequest): Future[DeleteComponentResponse] = service.deleteComponent(params).promise().toFuture
+    @inline def deleteLogPatternFuture(params: DeleteLogPatternRequest): Future[DeleteLogPatternResponse] = service.deleteLogPattern(params).promise().toFuture
+    @inline def describeApplicationFuture(params: DescribeApplicationRequest): Future[DescribeApplicationResponse] = service.describeApplication(params).promise().toFuture
+    @inline def describeComponentConfigurationFuture(params: DescribeComponentConfigurationRequest): Future[DescribeComponentConfigurationResponse] = service.describeComponentConfiguration(params).promise().toFuture
+    @inline def describeComponentConfigurationRecommendationFuture(params: DescribeComponentConfigurationRecommendationRequest): Future[DescribeComponentConfigurationRecommendationResponse] = service.describeComponentConfigurationRecommendation(params).promise().toFuture
+    @inline def describeComponentFuture(params: DescribeComponentRequest): Future[DescribeComponentResponse] = service.describeComponent(params).promise().toFuture
+    @inline def describeLogPatternFuture(params: DescribeLogPatternRequest): Future[DescribeLogPatternResponse] = service.describeLogPattern(params).promise().toFuture
+    @inline def describeObservationFuture(params: DescribeObservationRequest): Future[DescribeObservationResponse] = service.describeObservation(params).promise().toFuture
+    @inline def describeProblemFuture(params: DescribeProblemRequest): Future[DescribeProblemResponse] = service.describeProblem(params).promise().toFuture
+    @inline def describeProblemObservationsFuture(params: DescribeProblemObservationsRequest): Future[DescribeProblemObservationsResponse] = service.describeProblemObservations(params).promise().toFuture
+    @inline def listApplicationsFuture(params: ListApplicationsRequest): Future[ListApplicationsResponse] = service.listApplications(params).promise().toFuture
+    @inline def listComponentsFuture(params: ListComponentsRequest): Future[ListComponentsResponse] = service.listComponents(params).promise().toFuture
+    @inline def listConfigurationHistoryFuture(params: ListConfigurationHistoryRequest): Future[ListConfigurationHistoryResponse] = service.listConfigurationHistory(params).promise().toFuture
+    @inline def listLogPatternSetsFuture(params: ListLogPatternSetsRequest): Future[ListLogPatternSetsResponse] = service.listLogPatternSets(params).promise().toFuture
+    @inline def listLogPatternsFuture(params: ListLogPatternsRequest): Future[ListLogPatternsResponse] = service.listLogPatterns(params).promise().toFuture
+    @inline def listProblemsFuture(params: ListProblemsRequest): Future[ListProblemsResponse] = service.listProblems(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] = service.updateApplication(params).promise().toFuture
+    @inline def updateComponentConfigurationFuture(params: UpdateComponentConfigurationRequest): Future[UpdateComponentConfigurationResponse] = service.updateComponentConfiguration(params).promise().toFuture
+    @inline def updateComponentFuture(params: UpdateComponentRequest): Future[UpdateComponentResponse] = service.updateComponent(params).promise().toFuture
+    @inline def updateLogPatternFuture(params: UpdateLogPatternRequest): Future[UpdateLogPatternResponse] = service.updateLogPattern(params).promise().toFuture
   }
 }
 
@@ -161,22 +127,15 @@ package applicationinsights {
     def deleteLogPattern(params: DeleteLogPatternRequest): Request[DeleteLogPatternResponse] = js.native
     def describeApplication(params: DescribeApplicationRequest): Request[DescribeApplicationResponse] = js.native
     def describeComponent(params: DescribeComponentRequest): Request[DescribeComponentResponse] = js.native
-    def describeComponentConfiguration(
-        params: DescribeComponentConfigurationRequest
-    ): Request[DescribeComponentConfigurationResponse] = js.native
-    def describeComponentConfigurationRecommendation(
-        params: DescribeComponentConfigurationRecommendationRequest
-    ): Request[DescribeComponentConfigurationRecommendationResponse] = js.native
+    def describeComponentConfiguration(params: DescribeComponentConfigurationRequest): Request[DescribeComponentConfigurationResponse] = js.native
+    def describeComponentConfigurationRecommendation(params: DescribeComponentConfigurationRecommendationRequest): Request[DescribeComponentConfigurationRecommendationResponse] = js.native
     def describeLogPattern(params: DescribeLogPatternRequest): Request[DescribeLogPatternResponse] = js.native
     def describeObservation(params: DescribeObservationRequest): Request[DescribeObservationResponse] = js.native
     def describeProblem(params: DescribeProblemRequest): Request[DescribeProblemResponse] = js.native
-    def describeProblemObservations(
-        params: DescribeProblemObservationsRequest
-    ): Request[DescribeProblemObservationsResponse] = js.native
+    def describeProblemObservations(params: DescribeProblemObservationsRequest): Request[DescribeProblemObservationsResponse] = js.native
     def listApplications(params: ListApplicationsRequest): Request[ListApplicationsResponse] = js.native
     def listComponents(params: ListComponentsRequest): Request[ListComponentsResponse] = js.native
-    def listConfigurationHistory(params: ListConfigurationHistoryRequest): Request[ListConfigurationHistoryResponse] =
-      js.native
+    def listConfigurationHistory(params: ListConfigurationHistoryRequest): Request[ListConfigurationHistoryResponse] = js.native
     def listLogPatternSets(params: ListLogPatternSetsRequest): Request[ListLogPatternSetsResponse] = js.native
     def listLogPatterns(params: ListLogPatternsRequest): Request[ListLogPatternsResponse] = js.native
     def listProblems(params: ListProblemsRequest): Request[ListProblemsResponse] = js.native
@@ -185,9 +144,7 @@ package applicationinsights {
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResponse] = js.native
     def updateComponent(params: UpdateComponentRequest): Request[UpdateComponentResponse] = js.native
-    def updateComponentConfiguration(
-        params: UpdateComponentConfigurationRequest
-    ): Request[UpdateComponentConfigurationResponse] = js.native
+    def updateComponentConfiguration(params: UpdateComponentConfigurationRequest): Request[UpdateComponentConfigurationResponse] = js.native
     def updateLogPattern(params: UpdateLogPatternRequest): Request[UpdateLogPatternResponse] = js.native
   }
 
@@ -1296,19 +1253,13 @@ package applicationinsights {
         XRayThrottlePercent: js.UndefOr[XRayThrottlePercent] = js.undefined
     ): Observation = {
       val __obj = js.Dynamic.literal()
-      CloudWatchEventDetailType.foreach(__v =>
-        __obj.updateDynamic("CloudWatchEventDetailType")(__v.asInstanceOf[js.Any])
-      )
+      CloudWatchEventDetailType.foreach(__v => __obj.updateDynamic("CloudWatchEventDetailType")(__v.asInstanceOf[js.Any]))
       CloudWatchEventId.foreach(__v => __obj.updateDynamic("CloudWatchEventId")(__v.asInstanceOf[js.Any]))
       CloudWatchEventSource.foreach(__v => __obj.updateDynamic("CloudWatchEventSource")(__v.asInstanceOf[js.Any]))
       CodeDeployApplication.foreach(__v => __obj.updateDynamic("CodeDeployApplication")(__v.asInstanceOf[js.Any]))
-      CodeDeployDeploymentGroup.foreach(__v =>
-        __obj.updateDynamic("CodeDeployDeploymentGroup")(__v.asInstanceOf[js.Any])
-      )
+      CodeDeployDeploymentGroup.foreach(__v => __obj.updateDynamic("CodeDeployDeploymentGroup")(__v.asInstanceOf[js.Any]))
       CodeDeployDeploymentId.foreach(__v => __obj.updateDynamic("CodeDeployDeploymentId")(__v.asInstanceOf[js.Any]))
-      CodeDeployInstanceGroupId.foreach(__v =>
-        __obj.updateDynamic("CodeDeployInstanceGroupId")(__v.asInstanceOf[js.Any])
-      )
+      CodeDeployInstanceGroupId.foreach(__v => __obj.updateDynamic("CodeDeployInstanceGroupId")(__v.asInstanceOf[js.Any]))
       CodeDeployState.foreach(__v => __obj.updateDynamic("CodeDeployState")(__v.asInstanceOf[js.Any]))
       Ec2State.foreach(__v => __obj.updateDynamic("Ec2State")(__v.asInstanceOf[js.Any]))
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
@@ -1333,9 +1284,7 @@ package applicationinsights {
       XRayFaultPercent.foreach(__v => __obj.updateDynamic("XRayFaultPercent")(__v.asInstanceOf[js.Any]))
       XRayNodeName.foreach(__v => __obj.updateDynamic("XRayNodeName")(__v.asInstanceOf[js.Any]))
       XRayNodeType.foreach(__v => __obj.updateDynamic("XRayNodeType")(__v.asInstanceOf[js.Any]))
-      XRayRequestAverageLatency.foreach(__v =>
-        __obj.updateDynamic("XRayRequestAverageLatency")(__v.asInstanceOf[js.Any])
-      )
+      XRayRequestAverageLatency.foreach(__v => __obj.updateDynamic("XRayRequestAverageLatency")(__v.asInstanceOf[js.Any]))
       XRayRequestCount.foreach(__v => __obj.updateDynamic("XRayRequestCount")(__v.asInstanceOf[js.Any]))
       XRayThrottlePercent.foreach(__v => __obj.updateDynamic("XRayThrottlePercent")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Observation]

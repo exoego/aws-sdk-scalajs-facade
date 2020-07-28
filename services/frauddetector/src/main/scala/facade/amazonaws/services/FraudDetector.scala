@@ -74,99 +74,51 @@ package object frauddetector {
 
   implicit final class FraudDetectorOps(private val service: FraudDetector) extends AnyVal {
 
-    @inline def batchCreateVariableFuture(params: BatchCreateVariableRequest): Future[BatchCreateVariableResult] =
-      service.batchCreateVariable(params).promise().toFuture
-    @inline def batchGetVariableFuture(params: BatchGetVariableRequest): Future[BatchGetVariableResult] =
-      service.batchGetVariable(params).promise().toFuture
-    @inline def createDetectorVersionFuture(params: CreateDetectorVersionRequest): Future[CreateDetectorVersionResult] =
-      service.createDetectorVersion(params).promise().toFuture
-    @inline def createModelFuture(params: CreateModelRequest): Future[CreateModelResult] =
-      service.createModel(params).promise().toFuture
-    @inline def createModelVersionFuture(params: CreateModelVersionRequest): Future[CreateModelVersionResult] =
-      service.createModelVersion(params).promise().toFuture
-    @inline def createRuleFuture(params: CreateRuleRequest): Future[CreateRuleResult] =
-      service.createRule(params).promise().toFuture
-    @inline def createVariableFuture(params: CreateVariableRequest): Future[CreateVariableResult] =
-      service.createVariable(params).promise().toFuture
-    @inline def deleteDetectorFuture(params: DeleteDetectorRequest): Future[DeleteDetectorResult] =
-      service.deleteDetector(params).promise().toFuture
-    @inline def deleteDetectorVersionFuture(params: DeleteDetectorVersionRequest): Future[DeleteDetectorVersionResult] =
-      service.deleteDetectorVersion(params).promise().toFuture
-    @inline def deleteEventFuture(params: DeleteEventRequest): Future[DeleteEventResult] =
-      service.deleteEvent(params).promise().toFuture
-    @inline def deleteRuleFuture(params: DeleteRuleRequest): Future[DeleteRuleResult] =
-      service.deleteRule(params).promise().toFuture
-    @inline def describeDetectorFuture(params: DescribeDetectorRequest): Future[DescribeDetectorResult] =
-      service.describeDetector(params).promise().toFuture
-    @inline def describeModelVersionsFuture(params: DescribeModelVersionsRequest): Future[DescribeModelVersionsResult] =
-      service.describeModelVersions(params).promise().toFuture
-    @inline def getDetectorVersionFuture(params: GetDetectorVersionRequest): Future[GetDetectorVersionResult] =
-      service.getDetectorVersion(params).promise().toFuture
-    @inline def getDetectorsFuture(params: GetDetectorsRequest): Future[GetDetectorsResult] =
-      service.getDetectors(params).promise().toFuture
-    @inline def getEntityTypesFuture(params: GetEntityTypesRequest): Future[GetEntityTypesResult] =
-      service.getEntityTypes(params).promise().toFuture
-    @inline def getEventPredictionFuture(params: GetEventPredictionRequest): Future[GetEventPredictionResult] =
-      service.getEventPrediction(params).promise().toFuture
-    @inline def getEventTypesFuture(params: GetEventTypesRequest): Future[GetEventTypesResult] =
-      service.getEventTypes(params).promise().toFuture
-    @inline def getExternalModelsFuture(params: GetExternalModelsRequest): Future[GetExternalModelsResult] =
-      service.getExternalModels(params).promise().toFuture
-    @inline def getKMSEncryptionKeyFuture(): Future[GetKMSEncryptionKeyResult] =
-      service.getKMSEncryptionKey().promise().toFuture
-    @inline def getLabelsFuture(params: GetLabelsRequest): Future[GetLabelsResult] =
-      service.getLabels(params).promise().toFuture
-    @inline def getModelVersionFuture(params: GetModelVersionRequest): Future[GetModelVersionResult] =
-      service.getModelVersion(params).promise().toFuture
-    @inline def getModelsFuture(params: GetModelsRequest): Future[GetModelsResult] =
-      service.getModels(params).promise().toFuture
-    @inline def getOutcomesFuture(params: GetOutcomesRequest): Future[GetOutcomesResult] =
-      service.getOutcomes(params).promise().toFuture
-    @inline def getRulesFuture(params: GetRulesRequest): Future[GetRulesResult] =
-      service.getRules(params).promise().toFuture
-    @inline def getVariablesFuture(params: GetVariablesRequest): Future[GetVariablesResult] =
-      service.getVariables(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResult] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def putDetectorFuture(params: PutDetectorRequest): Future[PutDetectorResult] =
-      service.putDetector(params).promise().toFuture
-    @inline def putEntityTypeFuture(params: PutEntityTypeRequest): Future[PutEntityTypeResult] =
-      service.putEntityType(params).promise().toFuture
-    @inline def putEventTypeFuture(params: PutEventTypeRequest): Future[PutEventTypeResult] =
-      service.putEventType(params).promise().toFuture
-    @inline def putExternalModelFuture(params: PutExternalModelRequest): Future[PutExternalModelResult] =
-      service.putExternalModel(params).promise().toFuture
-    @inline def putKMSEncryptionKeyFuture(params: PutKMSEncryptionKeyRequest): Future[PutKMSEncryptionKeyResult] =
-      service.putKMSEncryptionKey(params).promise().toFuture
-    @inline def putLabelFuture(params: PutLabelRequest): Future[PutLabelResult] =
-      service.putLabel(params).promise().toFuture
-    @inline def putOutcomeFuture(params: PutOutcomeRequest): Future[PutOutcomeResult] =
-      service.putOutcome(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResult] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResult] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateDetectorVersionFuture(params: UpdateDetectorVersionRequest): Future[UpdateDetectorVersionResult] =
-      service.updateDetectorVersion(params).promise().toFuture
-    @inline def updateDetectorVersionMetadataFuture(
-        params: UpdateDetectorVersionMetadataRequest
-    ): Future[UpdateDetectorVersionMetadataResult] = service.updateDetectorVersionMetadata(params).promise().toFuture
-    @inline def updateDetectorVersionStatusFuture(
-        params: UpdateDetectorVersionStatusRequest
-    ): Future[UpdateDetectorVersionStatusResult] = service.updateDetectorVersionStatus(params).promise().toFuture
-    @inline def updateModelFuture(params: UpdateModelRequest): Future[UpdateModelResult] =
-      service.updateModel(params).promise().toFuture
-    @inline def updateModelVersionFuture(params: UpdateModelVersionRequest): Future[UpdateModelVersionResult] =
-      service.updateModelVersion(params).promise().toFuture
-    @inline def updateModelVersionStatusFuture(
-        params: UpdateModelVersionStatusRequest
-    ): Future[UpdateModelVersionStatusResult] = service.updateModelVersionStatus(params).promise().toFuture
-    @inline def updateRuleMetadataFuture(params: UpdateRuleMetadataRequest): Future[UpdateRuleMetadataResult] =
-      service.updateRuleMetadata(params).promise().toFuture
-    @inline def updateRuleVersionFuture(params: UpdateRuleVersionRequest): Future[UpdateRuleVersionResult] =
-      service.updateRuleVersion(params).promise().toFuture
-    @inline def updateVariableFuture(params: UpdateVariableRequest): Future[UpdateVariableResult] =
-      service.updateVariable(params).promise().toFuture
+    @inline def batchCreateVariableFuture(params: BatchCreateVariableRequest): Future[BatchCreateVariableResult] = service.batchCreateVariable(params).promise().toFuture
+    @inline def batchGetVariableFuture(params: BatchGetVariableRequest): Future[BatchGetVariableResult] = service.batchGetVariable(params).promise().toFuture
+    @inline def createDetectorVersionFuture(params: CreateDetectorVersionRequest): Future[CreateDetectorVersionResult] = service.createDetectorVersion(params).promise().toFuture
+    @inline def createModelFuture(params: CreateModelRequest): Future[CreateModelResult] = service.createModel(params).promise().toFuture
+    @inline def createModelVersionFuture(params: CreateModelVersionRequest): Future[CreateModelVersionResult] = service.createModelVersion(params).promise().toFuture
+    @inline def createRuleFuture(params: CreateRuleRequest): Future[CreateRuleResult] = service.createRule(params).promise().toFuture
+    @inline def createVariableFuture(params: CreateVariableRequest): Future[CreateVariableResult] = service.createVariable(params).promise().toFuture
+    @inline def deleteDetectorFuture(params: DeleteDetectorRequest): Future[DeleteDetectorResult] = service.deleteDetector(params).promise().toFuture
+    @inline def deleteDetectorVersionFuture(params: DeleteDetectorVersionRequest): Future[DeleteDetectorVersionResult] = service.deleteDetectorVersion(params).promise().toFuture
+    @inline def deleteEventFuture(params: DeleteEventRequest): Future[DeleteEventResult] = service.deleteEvent(params).promise().toFuture
+    @inline def deleteRuleFuture(params: DeleteRuleRequest): Future[DeleteRuleResult] = service.deleteRule(params).promise().toFuture
+    @inline def describeDetectorFuture(params: DescribeDetectorRequest): Future[DescribeDetectorResult] = service.describeDetector(params).promise().toFuture
+    @inline def describeModelVersionsFuture(params: DescribeModelVersionsRequest): Future[DescribeModelVersionsResult] = service.describeModelVersions(params).promise().toFuture
+    @inline def getDetectorVersionFuture(params: GetDetectorVersionRequest): Future[GetDetectorVersionResult] = service.getDetectorVersion(params).promise().toFuture
+    @inline def getDetectorsFuture(params: GetDetectorsRequest): Future[GetDetectorsResult] = service.getDetectors(params).promise().toFuture
+    @inline def getEntityTypesFuture(params: GetEntityTypesRequest): Future[GetEntityTypesResult] = service.getEntityTypes(params).promise().toFuture
+    @inline def getEventPredictionFuture(params: GetEventPredictionRequest): Future[GetEventPredictionResult] = service.getEventPrediction(params).promise().toFuture
+    @inline def getEventTypesFuture(params: GetEventTypesRequest): Future[GetEventTypesResult] = service.getEventTypes(params).promise().toFuture
+    @inline def getExternalModelsFuture(params: GetExternalModelsRequest): Future[GetExternalModelsResult] = service.getExternalModels(params).promise().toFuture
+    @inline def getKMSEncryptionKeyFuture(): Future[GetKMSEncryptionKeyResult] = service.getKMSEncryptionKey().promise().toFuture
+    @inline def getLabelsFuture(params: GetLabelsRequest): Future[GetLabelsResult] = service.getLabels(params).promise().toFuture
+    @inline def getModelVersionFuture(params: GetModelVersionRequest): Future[GetModelVersionResult] = service.getModelVersion(params).promise().toFuture
+    @inline def getModelsFuture(params: GetModelsRequest): Future[GetModelsResult] = service.getModels(params).promise().toFuture
+    @inline def getOutcomesFuture(params: GetOutcomesRequest): Future[GetOutcomesResult] = service.getOutcomes(params).promise().toFuture
+    @inline def getRulesFuture(params: GetRulesRequest): Future[GetRulesResult] = service.getRules(params).promise().toFuture
+    @inline def getVariablesFuture(params: GetVariablesRequest): Future[GetVariablesResult] = service.getVariables(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResult] = service.listTagsForResource(params).promise().toFuture
+    @inline def putDetectorFuture(params: PutDetectorRequest): Future[PutDetectorResult] = service.putDetector(params).promise().toFuture
+    @inline def putEntityTypeFuture(params: PutEntityTypeRequest): Future[PutEntityTypeResult] = service.putEntityType(params).promise().toFuture
+    @inline def putEventTypeFuture(params: PutEventTypeRequest): Future[PutEventTypeResult] = service.putEventType(params).promise().toFuture
+    @inline def putExternalModelFuture(params: PutExternalModelRequest): Future[PutExternalModelResult] = service.putExternalModel(params).promise().toFuture
+    @inline def putKMSEncryptionKeyFuture(params: PutKMSEncryptionKeyRequest): Future[PutKMSEncryptionKeyResult] = service.putKMSEncryptionKey(params).promise().toFuture
+    @inline def putLabelFuture(params: PutLabelRequest): Future[PutLabelResult] = service.putLabel(params).promise().toFuture
+    @inline def putOutcomeFuture(params: PutOutcomeRequest): Future[PutOutcomeResult] = service.putOutcome(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResult] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResult] = service.untagResource(params).promise().toFuture
+    @inline def updateDetectorVersionFuture(params: UpdateDetectorVersionRequest): Future[UpdateDetectorVersionResult] = service.updateDetectorVersion(params).promise().toFuture
+    @inline def updateDetectorVersionMetadataFuture(params: UpdateDetectorVersionMetadataRequest): Future[UpdateDetectorVersionMetadataResult] = service.updateDetectorVersionMetadata(params).promise().toFuture
+    @inline def updateDetectorVersionStatusFuture(params: UpdateDetectorVersionStatusRequest): Future[UpdateDetectorVersionStatusResult] = service.updateDetectorVersionStatus(params).promise().toFuture
+    @inline def updateModelFuture(params: UpdateModelRequest): Future[UpdateModelResult] = service.updateModel(params).promise().toFuture
+    @inline def updateModelVersionFuture(params: UpdateModelVersionRequest): Future[UpdateModelVersionResult] = service.updateModelVersion(params).promise().toFuture
+    @inline def updateModelVersionStatusFuture(params: UpdateModelVersionStatusRequest): Future[UpdateModelVersionStatusResult] = service.updateModelVersionStatus(params).promise().toFuture
+    @inline def updateRuleMetadataFuture(params: UpdateRuleMetadataRequest): Future[UpdateRuleMetadataResult] = service.updateRuleMetadata(params).promise().toFuture
+    @inline def updateRuleVersionFuture(params: UpdateRuleVersionRequest): Future[UpdateRuleVersionResult] = service.updateRuleVersion(params).promise().toFuture
+    @inline def updateVariableFuture(params: UpdateVariableRequest): Future[UpdateVariableResult] = service.updateVariable(params).promise().toFuture
   }
 }
 
@@ -213,16 +165,11 @@ package frauddetector {
     def tagResource(params: TagResourceRequest): Request[TagResourceResult] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResult] = js.native
     def updateDetectorVersion(params: UpdateDetectorVersionRequest): Request[UpdateDetectorVersionResult] = js.native
-    def updateDetectorVersionMetadata(
-        params: UpdateDetectorVersionMetadataRequest
-    ): Request[UpdateDetectorVersionMetadataResult] = js.native
-    def updateDetectorVersionStatus(
-        params: UpdateDetectorVersionStatusRequest
-    ): Request[UpdateDetectorVersionStatusResult] = js.native
+    def updateDetectorVersionMetadata(params: UpdateDetectorVersionMetadataRequest): Request[UpdateDetectorVersionMetadataResult] = js.native
+    def updateDetectorVersionStatus(params: UpdateDetectorVersionStatusRequest): Request[UpdateDetectorVersionStatusResult] = js.native
     def updateModel(params: UpdateModelRequest): Request[UpdateModelResult] = js.native
     def updateModelVersion(params: UpdateModelVersionRequest): Request[UpdateModelVersionResult] = js.native
-    def updateModelVersionStatus(params: UpdateModelVersionStatusRequest): Request[UpdateModelVersionStatusResult] =
-      js.native
+    def updateModelVersionStatus(params: UpdateModelVersionStatusRequest): Request[UpdateModelVersionStatusResult] = js.native
     def updateRuleMetadata(params: UpdateRuleMetadataRequest): Request[UpdateRuleMetadataResult] = js.native
     def updateRuleVersion(params: UpdateRuleVersionRequest): Request[UpdateRuleVersionResult] = js.native
     def updateVariable(params: UpdateVariableRequest): Request[UpdateVariableResult] = js.native
@@ -1105,9 +1052,7 @@ package frauddetector {
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       createdTime.foreach(__v => __obj.updateDynamic("createdTime")(__v.asInstanceOf[js.Any]))
       inputConfiguration.foreach(__v => __obj.updateDynamic("inputConfiguration")(__v.asInstanceOf[js.Any]))
-      invokeModelEndpointRoleArn.foreach(__v =>
-        __obj.updateDynamic("invokeModelEndpointRoleArn")(__v.asInstanceOf[js.Any])
-      )
+      invokeModelEndpointRoleArn.foreach(__v => __obj.updateDynamic("invokeModelEndpointRoleArn")(__v.asInstanceOf[js.Any]))
       lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
       modelEndpoint.foreach(__v => __obj.updateDynamic("modelEndpoint")(__v.asInstanceOf[js.Any]))
       modelEndpointStatus.foreach(__v => __obj.updateDynamic("modelEndpointStatus")(__v.asInstanceOf[js.Any]))
@@ -1356,9 +1301,7 @@ package frauddetector {
       )
 
       detectorVersionId.foreach(__v => __obj.updateDynamic("detectorVersionId")(__v.asInstanceOf[js.Any]))
-      externalModelEndpointDataBlobs.foreach(__v =>
-        __obj.updateDynamic("externalModelEndpointDataBlobs")(__v.asInstanceOf[js.Any])
-      )
+      externalModelEndpointDataBlobs.foreach(__v => __obj.updateDynamic("externalModelEndpointDataBlobs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetEventPredictionRequest]
     }
   }

@@ -28,40 +28,20 @@ package object budgetsservice {
 
   implicit final class BudgetsServiceOps(private val service: BudgetsService) extends AnyVal {
 
-    @inline def createBudgetFuture(params: CreateBudgetRequest): Future[CreateBudgetResponse] =
-      service.createBudget(params).promise().toFuture
-    @inline def createNotificationFuture(params: CreateNotificationRequest): Future[CreateNotificationResponse] =
-      service.createNotification(params).promise().toFuture
-    @inline def createSubscriberFuture(params: CreateSubscriberRequest): Future[CreateSubscriberResponse] =
-      service.createSubscriber(params).promise().toFuture
-    @inline def deleteBudgetFuture(params: DeleteBudgetRequest): Future[DeleteBudgetResponse] =
-      service.deleteBudget(params).promise().toFuture
-    @inline def deleteNotificationFuture(params: DeleteNotificationRequest): Future[DeleteNotificationResponse] =
-      service.deleteNotification(params).promise().toFuture
-    @inline def deleteSubscriberFuture(params: DeleteSubscriberRequest): Future[DeleteSubscriberResponse] =
-      service.deleteSubscriber(params).promise().toFuture
-    @inline def describeBudgetFuture(params: DescribeBudgetRequest): Future[DescribeBudgetResponse] =
-      service.describeBudget(params).promise().toFuture
-    @inline def describeBudgetPerformanceHistoryFuture(
-        params: DescribeBudgetPerformanceHistoryRequest
-    ): Future[DescribeBudgetPerformanceHistoryResponse] =
-      service.describeBudgetPerformanceHistory(params).promise().toFuture
-    @inline def describeBudgetsFuture(params: DescribeBudgetsRequest): Future[DescribeBudgetsResponse] =
-      service.describeBudgets(params).promise().toFuture
-    @inline def describeNotificationsForBudgetFuture(
-        params: DescribeNotificationsForBudgetRequest
-    ): Future[DescribeNotificationsForBudgetResponse] =
-      service.describeNotificationsForBudget(params).promise().toFuture
-    @inline def describeSubscribersForNotificationFuture(
-        params: DescribeSubscribersForNotificationRequest
-    ): Future[DescribeSubscribersForNotificationResponse] =
-      service.describeSubscribersForNotification(params).promise().toFuture
-    @inline def updateBudgetFuture(params: UpdateBudgetRequest): Future[UpdateBudgetResponse] =
-      service.updateBudget(params).promise().toFuture
-    @inline def updateNotificationFuture(params: UpdateNotificationRequest): Future[UpdateNotificationResponse] =
-      service.updateNotification(params).promise().toFuture
-    @inline def updateSubscriberFuture(params: UpdateSubscriberRequest): Future[UpdateSubscriberResponse] =
-      service.updateSubscriber(params).promise().toFuture
+    @inline def createBudgetFuture(params: CreateBudgetRequest): Future[CreateBudgetResponse] = service.createBudget(params).promise().toFuture
+    @inline def createNotificationFuture(params: CreateNotificationRequest): Future[CreateNotificationResponse] = service.createNotification(params).promise().toFuture
+    @inline def createSubscriberFuture(params: CreateSubscriberRequest): Future[CreateSubscriberResponse] = service.createSubscriber(params).promise().toFuture
+    @inline def deleteBudgetFuture(params: DeleteBudgetRequest): Future[DeleteBudgetResponse] = service.deleteBudget(params).promise().toFuture
+    @inline def deleteNotificationFuture(params: DeleteNotificationRequest): Future[DeleteNotificationResponse] = service.deleteNotification(params).promise().toFuture
+    @inline def deleteSubscriberFuture(params: DeleteSubscriberRequest): Future[DeleteSubscriberResponse] = service.deleteSubscriber(params).promise().toFuture
+    @inline def describeBudgetFuture(params: DescribeBudgetRequest): Future[DescribeBudgetResponse] = service.describeBudget(params).promise().toFuture
+    @inline def describeBudgetPerformanceHistoryFuture(params: DescribeBudgetPerformanceHistoryRequest): Future[DescribeBudgetPerformanceHistoryResponse] = service.describeBudgetPerformanceHistory(params).promise().toFuture
+    @inline def describeBudgetsFuture(params: DescribeBudgetsRequest): Future[DescribeBudgetsResponse] = service.describeBudgets(params).promise().toFuture
+    @inline def describeNotificationsForBudgetFuture(params: DescribeNotificationsForBudgetRequest): Future[DescribeNotificationsForBudgetResponse] = service.describeNotificationsForBudget(params).promise().toFuture
+    @inline def describeSubscribersForNotificationFuture(params: DescribeSubscribersForNotificationRequest): Future[DescribeSubscribersForNotificationResponse] = service.describeSubscribersForNotification(params).promise().toFuture
+    @inline def updateBudgetFuture(params: UpdateBudgetRequest): Future[UpdateBudgetResponse] = service.updateBudget(params).promise().toFuture
+    @inline def updateNotificationFuture(params: UpdateNotificationRequest): Future[UpdateNotificationResponse] = service.updateNotification(params).promise().toFuture
+    @inline def updateSubscriberFuture(params: UpdateSubscriberRequest): Future[UpdateSubscriberResponse] = service.updateSubscriber(params).promise().toFuture
   }
 }
 
@@ -78,16 +58,10 @@ package budgetsservice {
     def deleteNotification(params: DeleteNotificationRequest): Request[DeleteNotificationResponse] = js.native
     def deleteSubscriber(params: DeleteSubscriberRequest): Request[DeleteSubscriberResponse] = js.native
     def describeBudget(params: DescribeBudgetRequest): Request[DescribeBudgetResponse] = js.native
-    def describeBudgetPerformanceHistory(
-        params: DescribeBudgetPerformanceHistoryRequest
-    ): Request[DescribeBudgetPerformanceHistoryResponse] = js.native
+    def describeBudgetPerformanceHistory(params: DescribeBudgetPerformanceHistoryRequest): Request[DescribeBudgetPerformanceHistoryResponse] = js.native
     def describeBudgets(params: DescribeBudgetsRequest): Request[DescribeBudgetsResponse] = js.native
-    def describeNotificationsForBudget(
-        params: DescribeNotificationsForBudgetRequest
-    ): Request[DescribeNotificationsForBudgetResponse] = js.native
-    def describeSubscribersForNotification(
-        params: DescribeSubscribersForNotificationRequest
-    ): Request[DescribeSubscribersForNotificationResponse] = js.native
+    def describeNotificationsForBudget(params: DescribeNotificationsForBudgetRequest): Request[DescribeNotificationsForBudgetResponse] = js.native
+    def describeSubscribersForNotification(params: DescribeSubscribersForNotificationRequest): Request[DescribeSubscribersForNotificationResponse] = js.native
     def updateBudget(params: UpdateBudgetRequest): Request[UpdateBudgetResponse] = js.native
     def updateNotification(params: UpdateNotificationRequest): Request[UpdateNotificationResponse] = js.native
     def updateSubscriber(params: UpdateSubscriberRequest): Request[UpdateSubscriberResponse] = js.native
@@ -169,9 +143,7 @@ package budgetsservice {
       val __obj = js.Dynamic.literal()
       BudgetName.foreach(__v => __obj.updateDynamic("BudgetName")(__v.asInstanceOf[js.Any]))
       BudgetType.foreach(__v => __obj.updateDynamic("BudgetType")(__v.asInstanceOf[js.Any]))
-      BudgetedAndActualAmountsList.foreach(__v =>
-        __obj.updateDynamic("BudgetedAndActualAmountsList")(__v.asInstanceOf[js.Any])
-      )
+      BudgetedAndActualAmountsList.foreach(__v => __obj.updateDynamic("BudgetedAndActualAmountsList")(__v.asInstanceOf[js.Any]))
       CostFilters.foreach(__v => __obj.updateDynamic("CostFilters")(__v.asInstanceOf[js.Any]))
       CostTypes.foreach(__v => __obj.updateDynamic("CostTypes")(__v.asInstanceOf[js.Any]))
       TimeUnit.foreach(__v => __obj.updateDynamic("TimeUnit")(__v.asInstanceOf[js.Any]))
@@ -193,9 +165,7 @@ package budgetsservice {
     val SAVINGS_PLANS_UTILIZATION = "SAVINGS_PLANS_UTILIZATION".asInstanceOf[BudgetType]
     val SAVINGS_PLANS_COVERAGE = "SAVINGS_PLANS_COVERAGE".asInstanceOf[BudgetType]
 
-    val values = js.Object.freeze(
-      js.Array(USAGE, COST, RI_UTILIZATION, RI_COVERAGE, SAVINGS_PLANS_UTILIZATION, SAVINGS_PLANS_COVERAGE)
-    )
+    val values = js.Object.freeze(js.Array(USAGE, COST, RI_UTILIZATION, RI_COVERAGE, SAVINGS_PLANS_UTILIZATION, SAVINGS_PLANS_COVERAGE))
   }
 
   /**
@@ -334,9 +304,7 @@ package budgetsservice {
         "Budget" -> Budget.asInstanceOf[js.Any]
       )
 
-      NotificationsWithSubscribers.foreach(__v =>
-        __obj.updateDynamic("NotificationsWithSubscribers")(__v.asInstanceOf[js.Any])
-      )
+      NotificationsWithSubscribers.foreach(__v => __obj.updateDynamic("NotificationsWithSubscribers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBudgetRequest]
     }
   }

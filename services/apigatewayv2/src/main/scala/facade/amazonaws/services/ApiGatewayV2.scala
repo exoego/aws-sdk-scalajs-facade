@@ -62,151 +62,77 @@ package object apigatewayv2 {
 
   implicit final class ApiGatewayV2Ops(private val service: ApiGatewayV2) extends AnyVal {
 
-    @inline def createApiFuture(params: CreateApiRequest): Future[CreateApiResponse] =
-      service.createApi(params).promise().toFuture
-    @inline def createApiMappingFuture(params: CreateApiMappingRequest): Future[CreateApiMappingResponse] =
-      service.createApiMapping(params).promise().toFuture
-    @inline def createAuthorizerFuture(params: CreateAuthorizerRequest): Future[CreateAuthorizerResponse] =
-      service.createAuthorizer(params).promise().toFuture
-    @inline def createDeploymentFuture(params: CreateDeploymentRequest): Future[CreateDeploymentResponse] =
-      service.createDeployment(params).promise().toFuture
-    @inline def createDomainNameFuture(params: CreateDomainNameRequest): Future[CreateDomainNameResponse] =
-      service.createDomainName(params).promise().toFuture
-    @inline def createIntegrationFuture(params: CreateIntegrationRequest): Future[CreateIntegrationResult] =
-      service.createIntegration(params).promise().toFuture
-    @inline def createIntegrationResponseFuture(
-        params: CreateIntegrationResponseRequest
-    ): Future[CreateIntegrationResponseResponse] = service.createIntegrationResponse(params).promise().toFuture
-    @inline def createModelFuture(params: CreateModelRequest): Future[CreateModelResponse] =
-      service.createModel(params).promise().toFuture
-    @inline def createRouteFuture(params: CreateRouteRequest): Future[CreateRouteResult] =
-      service.createRoute(params).promise().toFuture
-    @inline def createRouteResponseFuture(params: CreateRouteResponseRequest): Future[CreateRouteResponseResponse] =
-      service.createRouteResponse(params).promise().toFuture
-    @inline def createStageFuture(params: CreateStageRequest): Future[CreateStageResponse] =
-      service.createStage(params).promise().toFuture
-    @inline def createVpcLinkFuture(params: CreateVpcLinkRequest): Future[CreateVpcLinkResponse] =
-      service.createVpcLink(params).promise().toFuture
-    @inline def deleteAccessLogSettingsFuture(params: DeleteAccessLogSettingsRequest): Future[js.Object] =
-      service.deleteAccessLogSettings(params).promise().toFuture
-    @inline def deleteApiFuture(params: DeleteApiRequest): Future[js.Object] =
-      service.deleteApi(params).promise().toFuture
-    @inline def deleteApiMappingFuture(params: DeleteApiMappingRequest): Future[js.Object] =
-      service.deleteApiMapping(params).promise().toFuture
-    @inline def deleteAuthorizerFuture(params: DeleteAuthorizerRequest): Future[js.Object] =
-      service.deleteAuthorizer(params).promise().toFuture
-    @inline def deleteCorsConfigurationFuture(params: DeleteCorsConfigurationRequest): Future[js.Object] =
-      service.deleteCorsConfiguration(params).promise().toFuture
-    @inline def deleteDeploymentFuture(params: DeleteDeploymentRequest): Future[js.Object] =
-      service.deleteDeployment(params).promise().toFuture
-    @inline def deleteDomainNameFuture(params: DeleteDomainNameRequest): Future[js.Object] =
-      service.deleteDomainName(params).promise().toFuture
-    @inline def deleteIntegrationFuture(params: DeleteIntegrationRequest): Future[js.Object] =
-      service.deleteIntegration(params).promise().toFuture
-    @inline def deleteIntegrationResponseFuture(params: DeleteIntegrationResponseRequest): Future[js.Object] =
-      service.deleteIntegrationResponse(params).promise().toFuture
-    @inline def deleteModelFuture(params: DeleteModelRequest): Future[js.Object] =
-      service.deleteModel(params).promise().toFuture
-    @inline def deleteRouteFuture(params: DeleteRouteRequest): Future[js.Object] =
-      service.deleteRoute(params).promise().toFuture
-    @inline def deleteRouteRequestParameterFuture(params: DeleteRouteRequestParameterRequest): Future[js.Object] =
-      service.deleteRouteRequestParameter(params).promise().toFuture
-    @inline def deleteRouteResponseFuture(params: DeleteRouteResponseRequest): Future[js.Object] =
-      service.deleteRouteResponse(params).promise().toFuture
-    @inline def deleteRouteSettingsFuture(params: DeleteRouteSettingsRequest): Future[js.Object] =
-      service.deleteRouteSettings(params).promise().toFuture
-    @inline def deleteStageFuture(params: DeleteStageRequest): Future[js.Object] =
-      service.deleteStage(params).promise().toFuture
-    @inline def deleteVpcLinkFuture(params: DeleteVpcLinkRequest): Future[DeleteVpcLinkResponse] =
-      service.deleteVpcLink(params).promise().toFuture
-    @inline def exportApiFuture(params: ExportApiRequest): Future[ExportApiResponse] =
-      service.exportApi(params).promise().toFuture
+    @inline def createApiFuture(params: CreateApiRequest): Future[CreateApiResponse] = service.createApi(params).promise().toFuture
+    @inline def createApiMappingFuture(params: CreateApiMappingRequest): Future[CreateApiMappingResponse] = service.createApiMapping(params).promise().toFuture
+    @inline def createAuthorizerFuture(params: CreateAuthorizerRequest): Future[CreateAuthorizerResponse] = service.createAuthorizer(params).promise().toFuture
+    @inline def createDeploymentFuture(params: CreateDeploymentRequest): Future[CreateDeploymentResponse] = service.createDeployment(params).promise().toFuture
+    @inline def createDomainNameFuture(params: CreateDomainNameRequest): Future[CreateDomainNameResponse] = service.createDomainName(params).promise().toFuture
+    @inline def createIntegrationFuture(params: CreateIntegrationRequest): Future[CreateIntegrationResult] = service.createIntegration(params).promise().toFuture
+    @inline def createIntegrationResponseFuture(params: CreateIntegrationResponseRequest): Future[CreateIntegrationResponseResponse] = service.createIntegrationResponse(params).promise().toFuture
+    @inline def createModelFuture(params: CreateModelRequest): Future[CreateModelResponse] = service.createModel(params).promise().toFuture
+    @inline def createRouteFuture(params: CreateRouteRequest): Future[CreateRouteResult] = service.createRoute(params).promise().toFuture
+    @inline def createRouteResponseFuture(params: CreateRouteResponseRequest): Future[CreateRouteResponseResponse] = service.createRouteResponse(params).promise().toFuture
+    @inline def createStageFuture(params: CreateStageRequest): Future[CreateStageResponse] = service.createStage(params).promise().toFuture
+    @inline def createVpcLinkFuture(params: CreateVpcLinkRequest): Future[CreateVpcLinkResponse] = service.createVpcLink(params).promise().toFuture
+    @inline def deleteAccessLogSettingsFuture(params: DeleteAccessLogSettingsRequest): Future[js.Object] = service.deleteAccessLogSettings(params).promise().toFuture
+    @inline def deleteApiFuture(params: DeleteApiRequest): Future[js.Object] = service.deleteApi(params).promise().toFuture
+    @inline def deleteApiMappingFuture(params: DeleteApiMappingRequest): Future[js.Object] = service.deleteApiMapping(params).promise().toFuture
+    @inline def deleteAuthorizerFuture(params: DeleteAuthorizerRequest): Future[js.Object] = service.deleteAuthorizer(params).promise().toFuture
+    @inline def deleteCorsConfigurationFuture(params: DeleteCorsConfigurationRequest): Future[js.Object] = service.deleteCorsConfiguration(params).promise().toFuture
+    @inline def deleteDeploymentFuture(params: DeleteDeploymentRequest): Future[js.Object] = service.deleteDeployment(params).promise().toFuture
+    @inline def deleteDomainNameFuture(params: DeleteDomainNameRequest): Future[js.Object] = service.deleteDomainName(params).promise().toFuture
+    @inline def deleteIntegrationFuture(params: DeleteIntegrationRequest): Future[js.Object] = service.deleteIntegration(params).promise().toFuture
+    @inline def deleteIntegrationResponseFuture(params: DeleteIntegrationResponseRequest): Future[js.Object] = service.deleteIntegrationResponse(params).promise().toFuture
+    @inline def deleteModelFuture(params: DeleteModelRequest): Future[js.Object] = service.deleteModel(params).promise().toFuture
+    @inline def deleteRouteFuture(params: DeleteRouteRequest): Future[js.Object] = service.deleteRoute(params).promise().toFuture
+    @inline def deleteRouteRequestParameterFuture(params: DeleteRouteRequestParameterRequest): Future[js.Object] = service.deleteRouteRequestParameter(params).promise().toFuture
+    @inline def deleteRouteResponseFuture(params: DeleteRouteResponseRequest): Future[js.Object] = service.deleteRouteResponse(params).promise().toFuture
+    @inline def deleteRouteSettingsFuture(params: DeleteRouteSettingsRequest): Future[js.Object] = service.deleteRouteSettings(params).promise().toFuture
+    @inline def deleteStageFuture(params: DeleteStageRequest): Future[js.Object] = service.deleteStage(params).promise().toFuture
+    @inline def deleteVpcLinkFuture(params: DeleteVpcLinkRequest): Future[DeleteVpcLinkResponse] = service.deleteVpcLink(params).promise().toFuture
+    @inline def exportApiFuture(params: ExportApiRequest): Future[ExportApiResponse] = service.exportApi(params).promise().toFuture
     @inline def getApiFuture(params: GetApiRequest): Future[GetApiResponse] = service.getApi(params).promise().toFuture
-    @inline def getApiMappingFuture(params: GetApiMappingRequest): Future[GetApiMappingResponse] =
-      service.getApiMapping(params).promise().toFuture
-    @inline def getApiMappingsFuture(params: GetApiMappingsRequest): Future[GetApiMappingsResponse] =
-      service.getApiMappings(params).promise().toFuture
-    @inline def getApisFuture(params: GetApisRequest): Future[GetApisResponse] =
-      service.getApis(params).promise().toFuture
-    @inline def getAuthorizerFuture(params: GetAuthorizerRequest): Future[GetAuthorizerResponse] =
-      service.getAuthorizer(params).promise().toFuture
-    @inline def getAuthorizersFuture(params: GetAuthorizersRequest): Future[GetAuthorizersResponse] =
-      service.getAuthorizers(params).promise().toFuture
-    @inline def getDeploymentFuture(params: GetDeploymentRequest): Future[GetDeploymentResponse] =
-      service.getDeployment(params).promise().toFuture
-    @inline def getDeploymentsFuture(params: GetDeploymentsRequest): Future[GetDeploymentsResponse] =
-      service.getDeployments(params).promise().toFuture
-    @inline def getDomainNameFuture(params: GetDomainNameRequest): Future[GetDomainNameResponse] =
-      service.getDomainName(params).promise().toFuture
-    @inline def getDomainNamesFuture(params: GetDomainNamesRequest): Future[GetDomainNamesResponse] =
-      service.getDomainNames(params).promise().toFuture
-    @inline def getIntegrationFuture(params: GetIntegrationRequest): Future[GetIntegrationResult] =
-      service.getIntegration(params).promise().toFuture
-    @inline def getIntegrationResponseFuture(
-        params: GetIntegrationResponseRequest
-    ): Future[GetIntegrationResponseResponse] = service.getIntegrationResponse(params).promise().toFuture
-    @inline def getIntegrationResponsesFuture(
-        params: GetIntegrationResponsesRequest
-    ): Future[GetIntegrationResponsesResponse] = service.getIntegrationResponses(params).promise().toFuture
-    @inline def getIntegrationsFuture(params: GetIntegrationsRequest): Future[GetIntegrationsResponse] =
-      service.getIntegrations(params).promise().toFuture
-    @inline def getModelFuture(params: GetModelRequest): Future[GetModelResponse] =
-      service.getModel(params).promise().toFuture
-    @inline def getModelTemplateFuture(params: GetModelTemplateRequest): Future[GetModelTemplateResponse] =
-      service.getModelTemplate(params).promise().toFuture
-    @inline def getModelsFuture(params: GetModelsRequest): Future[GetModelsResponse] =
-      service.getModels(params).promise().toFuture
-    @inline def getRouteFuture(params: GetRouteRequest): Future[GetRouteResult] =
-      service.getRoute(params).promise().toFuture
-    @inline def getRouteResponseFuture(params: GetRouteResponseRequest): Future[GetRouteResponseResponse] =
-      service.getRouteResponse(params).promise().toFuture
-    @inline def getRouteResponsesFuture(params: GetRouteResponsesRequest): Future[GetRouteResponsesResponse] =
-      service.getRouteResponses(params).promise().toFuture
-    @inline def getRoutesFuture(params: GetRoutesRequest): Future[GetRoutesResponse] =
-      service.getRoutes(params).promise().toFuture
-    @inline def getStageFuture(params: GetStageRequest): Future[GetStageResponse] =
-      service.getStage(params).promise().toFuture
-    @inline def getStagesFuture(params: GetStagesRequest): Future[GetStagesResponse] =
-      service.getStages(params).promise().toFuture
-    @inline def getTagsFuture(params: GetTagsRequest): Future[GetTagsResponse] =
-      service.getTags(params).promise().toFuture
-    @inline def getVpcLinkFuture(params: GetVpcLinkRequest): Future[GetVpcLinkResponse] =
-      service.getVpcLink(params).promise().toFuture
-    @inline def getVpcLinksFuture(params: GetVpcLinksRequest): Future[GetVpcLinksResponse] =
-      service.getVpcLinks(params).promise().toFuture
-    @inline def importApiFuture(params: ImportApiRequest): Future[ImportApiResponse] =
-      service.importApi(params).promise().toFuture
-    @inline def reimportApiFuture(params: ReimportApiRequest): Future[ReimportApiResponse] =
-      service.reimportApi(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateApiFuture(params: UpdateApiRequest): Future[UpdateApiResponse] =
-      service.updateApi(params).promise().toFuture
-    @inline def updateApiMappingFuture(params: UpdateApiMappingRequest): Future[UpdateApiMappingResponse] =
-      service.updateApiMapping(params).promise().toFuture
-    @inline def updateAuthorizerFuture(params: UpdateAuthorizerRequest): Future[UpdateAuthorizerResponse] =
-      service.updateAuthorizer(params).promise().toFuture
-    @inline def updateDeploymentFuture(params: UpdateDeploymentRequest): Future[UpdateDeploymentResponse] =
-      service.updateDeployment(params).promise().toFuture
-    @inline def updateDomainNameFuture(params: UpdateDomainNameRequest): Future[UpdateDomainNameResponse] =
-      service.updateDomainName(params).promise().toFuture
-    @inline def updateIntegrationFuture(params: UpdateIntegrationRequest): Future[UpdateIntegrationResult] =
-      service.updateIntegration(params).promise().toFuture
-    @inline def updateIntegrationResponseFuture(
-        params: UpdateIntegrationResponseRequest
-    ): Future[UpdateIntegrationResponseResponse] = service.updateIntegrationResponse(params).promise().toFuture
-    @inline def updateModelFuture(params: UpdateModelRequest): Future[UpdateModelResponse] =
-      service.updateModel(params).promise().toFuture
-    @inline def updateRouteFuture(params: UpdateRouteRequest): Future[UpdateRouteResult] =
-      service.updateRoute(params).promise().toFuture
-    @inline def updateRouteResponseFuture(params: UpdateRouteResponseRequest): Future[UpdateRouteResponseResponse] =
-      service.updateRouteResponse(params).promise().toFuture
-    @inline def updateStageFuture(params: UpdateStageRequest): Future[UpdateStageResponse] =
-      service.updateStage(params).promise().toFuture
-    @inline def updateVpcLinkFuture(params: UpdateVpcLinkRequest): Future[UpdateVpcLinkResponse] =
-      service.updateVpcLink(params).promise().toFuture
+    @inline def getApiMappingFuture(params: GetApiMappingRequest): Future[GetApiMappingResponse] = service.getApiMapping(params).promise().toFuture
+    @inline def getApiMappingsFuture(params: GetApiMappingsRequest): Future[GetApiMappingsResponse] = service.getApiMappings(params).promise().toFuture
+    @inline def getApisFuture(params: GetApisRequest): Future[GetApisResponse] = service.getApis(params).promise().toFuture
+    @inline def getAuthorizerFuture(params: GetAuthorizerRequest): Future[GetAuthorizerResponse] = service.getAuthorizer(params).promise().toFuture
+    @inline def getAuthorizersFuture(params: GetAuthorizersRequest): Future[GetAuthorizersResponse] = service.getAuthorizers(params).promise().toFuture
+    @inline def getDeploymentFuture(params: GetDeploymentRequest): Future[GetDeploymentResponse] = service.getDeployment(params).promise().toFuture
+    @inline def getDeploymentsFuture(params: GetDeploymentsRequest): Future[GetDeploymentsResponse] = service.getDeployments(params).promise().toFuture
+    @inline def getDomainNameFuture(params: GetDomainNameRequest): Future[GetDomainNameResponse] = service.getDomainName(params).promise().toFuture
+    @inline def getDomainNamesFuture(params: GetDomainNamesRequest): Future[GetDomainNamesResponse] = service.getDomainNames(params).promise().toFuture
+    @inline def getIntegrationFuture(params: GetIntegrationRequest): Future[GetIntegrationResult] = service.getIntegration(params).promise().toFuture
+    @inline def getIntegrationResponseFuture(params: GetIntegrationResponseRequest): Future[GetIntegrationResponseResponse] = service.getIntegrationResponse(params).promise().toFuture
+    @inline def getIntegrationResponsesFuture(params: GetIntegrationResponsesRequest): Future[GetIntegrationResponsesResponse] = service.getIntegrationResponses(params).promise().toFuture
+    @inline def getIntegrationsFuture(params: GetIntegrationsRequest): Future[GetIntegrationsResponse] = service.getIntegrations(params).promise().toFuture
+    @inline def getModelFuture(params: GetModelRequest): Future[GetModelResponse] = service.getModel(params).promise().toFuture
+    @inline def getModelTemplateFuture(params: GetModelTemplateRequest): Future[GetModelTemplateResponse] = service.getModelTemplate(params).promise().toFuture
+    @inline def getModelsFuture(params: GetModelsRequest): Future[GetModelsResponse] = service.getModels(params).promise().toFuture
+    @inline def getRouteFuture(params: GetRouteRequest): Future[GetRouteResult] = service.getRoute(params).promise().toFuture
+    @inline def getRouteResponseFuture(params: GetRouteResponseRequest): Future[GetRouteResponseResponse] = service.getRouteResponse(params).promise().toFuture
+    @inline def getRouteResponsesFuture(params: GetRouteResponsesRequest): Future[GetRouteResponsesResponse] = service.getRouteResponses(params).promise().toFuture
+    @inline def getRoutesFuture(params: GetRoutesRequest): Future[GetRoutesResponse] = service.getRoutes(params).promise().toFuture
+    @inline def getStageFuture(params: GetStageRequest): Future[GetStageResponse] = service.getStage(params).promise().toFuture
+    @inline def getStagesFuture(params: GetStagesRequest): Future[GetStagesResponse] = service.getStages(params).promise().toFuture
+    @inline def getTagsFuture(params: GetTagsRequest): Future[GetTagsResponse] = service.getTags(params).promise().toFuture
+    @inline def getVpcLinkFuture(params: GetVpcLinkRequest): Future[GetVpcLinkResponse] = service.getVpcLink(params).promise().toFuture
+    @inline def getVpcLinksFuture(params: GetVpcLinksRequest): Future[GetVpcLinksResponse] = service.getVpcLinks(params).promise().toFuture
+    @inline def importApiFuture(params: ImportApiRequest): Future[ImportApiResponse] = service.importApi(params).promise().toFuture
+    @inline def reimportApiFuture(params: ReimportApiRequest): Future[ReimportApiResponse] = service.reimportApi(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
+    @inline def updateApiFuture(params: UpdateApiRequest): Future[UpdateApiResponse] = service.updateApi(params).promise().toFuture
+    @inline def updateApiMappingFuture(params: UpdateApiMappingRequest): Future[UpdateApiMappingResponse] = service.updateApiMapping(params).promise().toFuture
+    @inline def updateAuthorizerFuture(params: UpdateAuthorizerRequest): Future[UpdateAuthorizerResponse] = service.updateAuthorizer(params).promise().toFuture
+    @inline def updateDeploymentFuture(params: UpdateDeploymentRequest): Future[UpdateDeploymentResponse] = service.updateDeployment(params).promise().toFuture
+    @inline def updateDomainNameFuture(params: UpdateDomainNameRequest): Future[UpdateDomainNameResponse] = service.updateDomainName(params).promise().toFuture
+    @inline def updateIntegrationFuture(params: UpdateIntegrationRequest): Future[UpdateIntegrationResult] = service.updateIntegration(params).promise().toFuture
+    @inline def updateIntegrationResponseFuture(params: UpdateIntegrationResponseRequest): Future[UpdateIntegrationResponseResponse] = service.updateIntegrationResponse(params).promise().toFuture
+    @inline def updateModelFuture(params: UpdateModelRequest): Future[UpdateModelResponse] = service.updateModel(params).promise().toFuture
+    @inline def updateRouteFuture(params: UpdateRouteRequest): Future[UpdateRouteResult] = service.updateRoute(params).promise().toFuture
+    @inline def updateRouteResponseFuture(params: UpdateRouteResponseRequest): Future[UpdateRouteResponseResponse] = service.updateRouteResponse(params).promise().toFuture
+    @inline def updateStageFuture(params: UpdateStageRequest): Future[UpdateStageResponse] = service.updateStage(params).promise().toFuture
+    @inline def updateVpcLinkFuture(params: UpdateVpcLinkRequest): Future[UpdateVpcLinkResponse] = service.updateVpcLink(params).promise().toFuture
   }
 }
 
@@ -222,9 +148,7 @@ package apigatewayv2 {
     def createDeployment(params: CreateDeploymentRequest): Request[CreateDeploymentResponse] = js.native
     def createDomainName(params: CreateDomainNameRequest): Request[CreateDomainNameResponse] = js.native
     def createIntegration(params: CreateIntegrationRequest): Request[CreateIntegrationResult] = js.native
-    def createIntegrationResponse(
-        params: CreateIntegrationResponseRequest
-    ): Request[CreateIntegrationResponseResponse] = js.native
+    def createIntegrationResponse(params: CreateIntegrationResponseRequest): Request[CreateIntegrationResponseResponse] = js.native
     def createModel(params: CreateModelRequest): Request[CreateModelResponse] = js.native
     def createRoute(params: CreateRouteRequest): Request[CreateRouteResult] = js.native
     def createRouteResponse(params: CreateRouteResponseRequest): Request[CreateRouteResponseResponse] = js.native
@@ -258,10 +182,8 @@ package apigatewayv2 {
     def getDomainName(params: GetDomainNameRequest): Request[GetDomainNameResponse] = js.native
     def getDomainNames(params: GetDomainNamesRequest): Request[GetDomainNamesResponse] = js.native
     def getIntegration(params: GetIntegrationRequest): Request[GetIntegrationResult] = js.native
-    def getIntegrationResponse(params: GetIntegrationResponseRequest): Request[GetIntegrationResponseResponse] =
-      js.native
-    def getIntegrationResponses(params: GetIntegrationResponsesRequest): Request[GetIntegrationResponsesResponse] =
-      js.native
+    def getIntegrationResponse(params: GetIntegrationResponseRequest): Request[GetIntegrationResponseResponse] = js.native
+    def getIntegrationResponses(params: GetIntegrationResponsesRequest): Request[GetIntegrationResponsesResponse] = js.native
     def getIntegrations(params: GetIntegrationsRequest): Request[GetIntegrationsResponse] = js.native
     def getModel(params: GetModelRequest): Request[GetModelResponse] = js.native
     def getModelTemplate(params: GetModelTemplateRequest): Request[GetModelTemplateResponse] = js.native
@@ -285,9 +207,7 @@ package apigatewayv2 {
     def updateDeployment(params: UpdateDeploymentRequest): Request[UpdateDeploymentResponse] = js.native
     def updateDomainName(params: UpdateDomainNameRequest): Request[UpdateDomainNameResponse] = js.native
     def updateIntegration(params: UpdateIntegrationRequest): Request[UpdateIntegrationResult] = js.native
-    def updateIntegrationResponse(
-        params: UpdateIntegrationResponseRequest
-    ): Request[UpdateIntegrationResponseResponse] = js.native
+    def updateIntegrationResponse(params: UpdateIntegrationResponseRequest): Request[UpdateIntegrationResponseResponse] = js.native
     def updateModel(params: UpdateModelRequest): Request[UpdateModelResponse] = js.native
     def updateRoute(params: UpdateRouteRequest): Request[UpdateRouteResult] = js.native
     def updateRouteResponse(params: UpdateRouteResponseRequest): Request[UpdateRouteResponseResponse] = js.native
@@ -364,9 +284,7 @@ package apigatewayv2 {
 
       ApiEndpoint.foreach(__v => __obj.updateDynamic("ApiEndpoint")(__v.asInstanceOf[js.Any]))
       ApiId.foreach(__v => __obj.updateDynamic("ApiId")(__v.asInstanceOf[js.Any]))
-      ApiKeySelectionExpression.foreach(__v =>
-        __obj.updateDynamic("ApiKeySelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      ApiKeySelectionExpression.foreach(__v => __obj.updateDynamic("ApiKeySelectionExpression")(__v.asInstanceOf[js.Any]))
       CorsConfiguration.foreach(__v => __obj.updateDynamic("CorsConfiguration")(__v.asInstanceOf[js.Any]))
       CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -458,15 +376,11 @@ package apigatewayv2 {
 
       AuthorizerCredentialsArn.foreach(__v => __obj.updateDynamic("AuthorizerCredentialsArn")(__v.asInstanceOf[js.Any]))
       AuthorizerId.foreach(__v => __obj.updateDynamic("AuthorizerId")(__v.asInstanceOf[js.Any]))
-      AuthorizerResultTtlInSeconds.foreach(__v =>
-        __obj.updateDynamic("AuthorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      AuthorizerResultTtlInSeconds.foreach(__v => __obj.updateDynamic("AuthorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any]))
       AuthorizerType.foreach(__v => __obj.updateDynamic("AuthorizerType")(__v.asInstanceOf[js.Any]))
       AuthorizerUri.foreach(__v => __obj.updateDynamic("AuthorizerUri")(__v.asInstanceOf[js.Any]))
       IdentitySource.foreach(__v => __obj.updateDynamic("IdentitySource")(__v.asInstanceOf[js.Any]))
-      IdentityValidationExpression.foreach(__v =>
-        __obj.updateDynamic("IdentityValidationExpression")(__v.asInstanceOf[js.Any])
-      )
+      IdentityValidationExpression.foreach(__v => __obj.updateDynamic("IdentityValidationExpression")(__v.asInstanceOf[js.Any]))
       JwtConfiguration.foreach(__v => __obj.updateDynamic("JwtConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Authorizer]
     }
@@ -637,9 +551,7 @@ package apigatewayv2 {
         "ProtocolType" -> ProtocolType.asInstanceOf[js.Any]
       )
 
-      ApiKeySelectionExpression.foreach(__v =>
-        __obj.updateDynamic("ApiKeySelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      ApiKeySelectionExpression.foreach(__v => __obj.updateDynamic("ApiKeySelectionExpression")(__v.asInstanceOf[js.Any]))
       CorsConfiguration.foreach(__v => __obj.updateDynamic("CorsConfiguration")(__v.asInstanceOf[js.Any]))
       CredentialsArn.foreach(__v => __obj.updateDynamic("CredentialsArn")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -692,9 +604,7 @@ package apigatewayv2 {
       val __obj = js.Dynamic.literal()
       ApiEndpoint.foreach(__v => __obj.updateDynamic("ApiEndpoint")(__v.asInstanceOf[js.Any]))
       ApiId.foreach(__v => __obj.updateDynamic("ApiId")(__v.asInstanceOf[js.Any]))
-      ApiKeySelectionExpression.foreach(__v =>
-        __obj.updateDynamic("ApiKeySelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      ApiKeySelectionExpression.foreach(__v => __obj.updateDynamic("ApiKeySelectionExpression")(__v.asInstanceOf[js.Any]))
       CorsConfiguration.foreach(__v => __obj.updateDynamic("CorsConfiguration")(__v.asInstanceOf[js.Any]))
       CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -747,13 +657,9 @@ package apigatewayv2 {
       )
 
       AuthorizerCredentialsArn.foreach(__v => __obj.updateDynamic("AuthorizerCredentialsArn")(__v.asInstanceOf[js.Any]))
-      AuthorizerResultTtlInSeconds.foreach(__v =>
-        __obj.updateDynamic("AuthorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      AuthorizerResultTtlInSeconds.foreach(__v => __obj.updateDynamic("AuthorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any]))
       AuthorizerUri.foreach(__v => __obj.updateDynamic("AuthorizerUri")(__v.asInstanceOf[js.Any]))
-      IdentityValidationExpression.foreach(__v =>
-        __obj.updateDynamic("IdentityValidationExpression")(__v.asInstanceOf[js.Any])
-      )
+      IdentityValidationExpression.foreach(__v => __obj.updateDynamic("IdentityValidationExpression")(__v.asInstanceOf[js.Any]))
       JwtConfiguration.foreach(__v => __obj.updateDynamic("JwtConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAuthorizerRequest]
     }
@@ -788,15 +694,11 @@ package apigatewayv2 {
       val __obj = js.Dynamic.literal()
       AuthorizerCredentialsArn.foreach(__v => __obj.updateDynamic("AuthorizerCredentialsArn")(__v.asInstanceOf[js.Any]))
       AuthorizerId.foreach(__v => __obj.updateDynamic("AuthorizerId")(__v.asInstanceOf[js.Any]))
-      AuthorizerResultTtlInSeconds.foreach(__v =>
-        __obj.updateDynamic("AuthorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      AuthorizerResultTtlInSeconds.foreach(__v => __obj.updateDynamic("AuthorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any]))
       AuthorizerType.foreach(__v => __obj.updateDynamic("AuthorizerType")(__v.asInstanceOf[js.Any]))
       AuthorizerUri.foreach(__v => __obj.updateDynamic("AuthorizerUri")(__v.asInstanceOf[js.Any]))
       IdentitySource.foreach(__v => __obj.updateDynamic("IdentitySource")(__v.asInstanceOf[js.Any]))
-      IdentityValidationExpression.foreach(__v =>
-        __obj.updateDynamic("IdentityValidationExpression")(__v.asInstanceOf[js.Any])
-      )
+      IdentityValidationExpression.foreach(__v => __obj.updateDynamic("IdentityValidationExpression")(__v.asInstanceOf[js.Any]))
       JwtConfiguration.foreach(__v => __obj.updateDynamic("JwtConfiguration")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAuthorizerResponse]
@@ -905,9 +807,7 @@ package apigatewayv2 {
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateDomainNameResponse = {
       val __obj = js.Dynamic.literal()
-      ApiMappingSelectionExpression.foreach(__v =>
-        __obj.updateDynamic("ApiMappingSelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      ApiMappingSelectionExpression.foreach(__v => __obj.updateDynamic("ApiMappingSelectionExpression")(__v.asInstanceOf[js.Any]))
       DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
       DomainNameConfigurations.foreach(__v => __obj.updateDynamic("DomainNameConfigurations")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -974,9 +874,7 @@ package apigatewayv2 {
       PayloadFormatVersion.foreach(__v => __obj.updateDynamic("PayloadFormatVersion")(__v.asInstanceOf[js.Any]))
       RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
       RequestTemplates.foreach(__v => __obj.updateDynamic("RequestTemplates")(__v.asInstanceOf[js.Any]))
-      TemplateSelectionExpression.foreach(__v =>
-        __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      TemplateSelectionExpression.foreach(__v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any]))
       TimeoutInMillis.foreach(__v => __obj.updateDynamic("TimeoutInMillis")(__v.asInstanceOf[js.Any]))
       TlsConfig.foreach(__v => __obj.updateDynamic("TlsConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateIntegrationRequest]
@@ -1017,9 +915,7 @@ package apigatewayv2 {
       ContentHandlingStrategy.foreach(__v => __obj.updateDynamic("ContentHandlingStrategy")(__v.asInstanceOf[js.Any]))
       ResponseParameters.foreach(__v => __obj.updateDynamic("ResponseParameters")(__v.asInstanceOf[js.Any]))
       ResponseTemplates.foreach(__v => __obj.updateDynamic("ResponseTemplates")(__v.asInstanceOf[js.Any]))
-      TemplateSelectionExpression.foreach(__v =>
-        __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      TemplateSelectionExpression.foreach(__v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateIntegrationResponseRequest]
     }
   }
@@ -1050,9 +946,7 @@ package apigatewayv2 {
       IntegrationResponseKey.foreach(__v => __obj.updateDynamic("IntegrationResponseKey")(__v.asInstanceOf[js.Any]))
       ResponseParameters.foreach(__v => __obj.updateDynamic("ResponseParameters")(__v.asInstanceOf[js.Any]))
       ResponseTemplates.foreach(__v => __obj.updateDynamic("ResponseTemplates")(__v.asInstanceOf[js.Any]))
-      TemplateSelectionExpression.foreach(__v =>
-        __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      TemplateSelectionExpression.foreach(__v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateIntegrationResponseResponse]
     }
   }
@@ -1110,18 +1004,14 @@ package apigatewayv2 {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       IntegrationId.foreach(__v => __obj.updateDynamic("IntegrationId")(__v.asInstanceOf[js.Any]))
       IntegrationMethod.foreach(__v => __obj.updateDynamic("IntegrationMethod")(__v.asInstanceOf[js.Any]))
-      IntegrationResponseSelectionExpression.foreach(__v =>
-        __obj.updateDynamic("IntegrationResponseSelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      IntegrationResponseSelectionExpression.foreach(__v => __obj.updateDynamic("IntegrationResponseSelectionExpression")(__v.asInstanceOf[js.Any]))
       IntegrationType.foreach(__v => __obj.updateDynamic("IntegrationType")(__v.asInstanceOf[js.Any]))
       IntegrationUri.foreach(__v => __obj.updateDynamic("IntegrationUri")(__v.asInstanceOf[js.Any]))
       PassthroughBehavior.foreach(__v => __obj.updateDynamic("PassthroughBehavior")(__v.asInstanceOf[js.Any]))
       PayloadFormatVersion.foreach(__v => __obj.updateDynamic("PayloadFormatVersion")(__v.asInstanceOf[js.Any]))
       RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
       RequestTemplates.foreach(__v => __obj.updateDynamic("RequestTemplates")(__v.asInstanceOf[js.Any]))
-      TemplateSelectionExpression.foreach(__v =>
-        __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      TemplateSelectionExpression.foreach(__v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any]))
       TimeoutInMillis.foreach(__v => __obj.updateDynamic("TimeoutInMillis")(__v.asInstanceOf[js.Any]))
       TlsConfig.foreach(__v => __obj.updateDynamic("TlsConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateIntegrationResult]
@@ -1237,9 +1127,7 @@ package apigatewayv2 {
       OperationName.foreach(__v => __obj.updateDynamic("OperationName")(__v.asInstanceOf[js.Any]))
       RequestModels.foreach(__v => __obj.updateDynamic("RequestModels")(__v.asInstanceOf[js.Any]))
       RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
-      RouteResponseSelectionExpression.foreach(__v =>
-        __obj.updateDynamic("RouteResponseSelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      RouteResponseSelectionExpression.foreach(__v => __obj.updateDynamic("RouteResponseSelectionExpression")(__v.asInstanceOf[js.Any]))
       Target.foreach(__v => __obj.updateDynamic("Target")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRouteRequest]
     }
@@ -1355,9 +1243,7 @@ package apigatewayv2 {
       RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
       RouteId.foreach(__v => __obj.updateDynamic("RouteId")(__v.asInstanceOf[js.Any]))
       RouteKey.foreach(__v => __obj.updateDynamic("RouteKey")(__v.asInstanceOf[js.Any]))
-      RouteResponseSelectionExpression.foreach(__v =>
-        __obj.updateDynamic("RouteResponseSelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      RouteResponseSelectionExpression.foreach(__v => __obj.updateDynamic("RouteResponseSelectionExpression")(__v.asInstanceOf[js.Any]))
       Target.foreach(__v => __obj.updateDynamic("Target")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRouteResult]
     }
@@ -1459,9 +1345,7 @@ package apigatewayv2 {
       DefaultRouteSettings.foreach(__v => __obj.updateDynamic("DefaultRouteSettings")(__v.asInstanceOf[js.Any]))
       DeploymentId.foreach(__v => __obj.updateDynamic("DeploymentId")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      LastDeploymentStatusMessage.foreach(__v =>
-        __obj.updateDynamic("LastDeploymentStatusMessage")(__v.asInstanceOf[js.Any])
-      )
+      LastDeploymentStatusMessage.foreach(__v => __obj.updateDynamic("LastDeploymentStatusMessage")(__v.asInstanceOf[js.Any]))
       LastUpdatedDate.foreach(__v => __obj.updateDynamic("LastUpdatedDate")(__v.asInstanceOf[js.Any]))
       RouteSettings.foreach(__v => __obj.updateDynamic("RouteSettings")(__v.asInstanceOf[js.Any]))
       StageName.foreach(__v => __obj.updateDynamic("StageName")(__v.asInstanceOf[js.Any]))
@@ -1960,9 +1844,7 @@ package apigatewayv2 {
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
-      ApiMappingSelectionExpression.foreach(__v =>
-        __obj.updateDynamic("ApiMappingSelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      ApiMappingSelectionExpression.foreach(__v => __obj.updateDynamic("ApiMappingSelectionExpression")(__v.asInstanceOf[js.Any]))
       DomainNameConfigurations.foreach(__v => __obj.updateDynamic("DomainNameConfigurations")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainName]
@@ -2231,9 +2113,7 @@ package apigatewayv2 {
       val __obj = js.Dynamic.literal()
       ApiEndpoint.foreach(__v => __obj.updateDynamic("ApiEndpoint")(__v.asInstanceOf[js.Any]))
       ApiId.foreach(__v => __obj.updateDynamic("ApiId")(__v.asInstanceOf[js.Any]))
-      ApiKeySelectionExpression.foreach(__v =>
-        __obj.updateDynamic("ApiKeySelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      ApiKeySelectionExpression.foreach(__v => __obj.updateDynamic("ApiKeySelectionExpression")(__v.asInstanceOf[js.Any]))
       CorsConfiguration.foreach(__v => __obj.updateDynamic("CorsConfiguration")(__v.asInstanceOf[js.Any]))
       CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -2337,15 +2217,11 @@ package apigatewayv2 {
       val __obj = js.Dynamic.literal()
       AuthorizerCredentialsArn.foreach(__v => __obj.updateDynamic("AuthorizerCredentialsArn")(__v.asInstanceOf[js.Any]))
       AuthorizerId.foreach(__v => __obj.updateDynamic("AuthorizerId")(__v.asInstanceOf[js.Any]))
-      AuthorizerResultTtlInSeconds.foreach(__v =>
-        __obj.updateDynamic("AuthorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      AuthorizerResultTtlInSeconds.foreach(__v => __obj.updateDynamic("AuthorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any]))
       AuthorizerType.foreach(__v => __obj.updateDynamic("AuthorizerType")(__v.asInstanceOf[js.Any]))
       AuthorizerUri.foreach(__v => __obj.updateDynamic("AuthorizerUri")(__v.asInstanceOf[js.Any]))
       IdentitySource.foreach(__v => __obj.updateDynamic("IdentitySource")(__v.asInstanceOf[js.Any]))
-      IdentityValidationExpression.foreach(__v =>
-        __obj.updateDynamic("IdentityValidationExpression")(__v.asInstanceOf[js.Any])
-      )
+      IdentityValidationExpression.foreach(__v => __obj.updateDynamic("IdentityValidationExpression")(__v.asInstanceOf[js.Any]))
       JwtConfiguration.foreach(__v => __obj.updateDynamic("JwtConfiguration")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAuthorizerResponse]
@@ -2525,9 +2401,7 @@ package apigatewayv2 {
         Tags: js.UndefOr[Tags] = js.undefined
     ): GetDomainNameResponse = {
       val __obj = js.Dynamic.literal()
-      ApiMappingSelectionExpression.foreach(__v =>
-        __obj.updateDynamic("ApiMappingSelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      ApiMappingSelectionExpression.foreach(__v => __obj.updateDynamic("ApiMappingSelectionExpression")(__v.asInstanceOf[js.Any]))
       DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
       DomainNameConfigurations.foreach(__v => __obj.updateDynamic("DomainNameConfigurations")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -2644,9 +2518,7 @@ package apigatewayv2 {
       IntegrationResponseKey.foreach(__v => __obj.updateDynamic("IntegrationResponseKey")(__v.asInstanceOf[js.Any]))
       ResponseParameters.foreach(__v => __obj.updateDynamic("ResponseParameters")(__v.asInstanceOf[js.Any]))
       ResponseTemplates.foreach(__v => __obj.updateDynamic("ResponseTemplates")(__v.asInstanceOf[js.Any]))
-      TemplateSelectionExpression.foreach(__v =>
-        __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      TemplateSelectionExpression.foreach(__v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetIntegrationResponseResponse]
     }
   }
@@ -2750,18 +2622,14 @@ package apigatewayv2 {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       IntegrationId.foreach(__v => __obj.updateDynamic("IntegrationId")(__v.asInstanceOf[js.Any]))
       IntegrationMethod.foreach(__v => __obj.updateDynamic("IntegrationMethod")(__v.asInstanceOf[js.Any]))
-      IntegrationResponseSelectionExpression.foreach(__v =>
-        __obj.updateDynamic("IntegrationResponseSelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      IntegrationResponseSelectionExpression.foreach(__v => __obj.updateDynamic("IntegrationResponseSelectionExpression")(__v.asInstanceOf[js.Any]))
       IntegrationType.foreach(__v => __obj.updateDynamic("IntegrationType")(__v.asInstanceOf[js.Any]))
       IntegrationUri.foreach(__v => __obj.updateDynamic("IntegrationUri")(__v.asInstanceOf[js.Any]))
       PassthroughBehavior.foreach(__v => __obj.updateDynamic("PassthroughBehavior")(__v.asInstanceOf[js.Any]))
       PayloadFormatVersion.foreach(__v => __obj.updateDynamic("PayloadFormatVersion")(__v.asInstanceOf[js.Any]))
       RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
       RequestTemplates.foreach(__v => __obj.updateDynamic("RequestTemplates")(__v.asInstanceOf[js.Any]))
-      TemplateSelectionExpression.foreach(__v =>
-        __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      TemplateSelectionExpression.foreach(__v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any]))
       TimeoutInMillis.foreach(__v => __obj.updateDynamic("TimeoutInMillis")(__v.asInstanceOf[js.Any]))
       TlsConfig.foreach(__v => __obj.updateDynamic("TlsConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetIntegrationResult]
@@ -3105,9 +2973,7 @@ package apigatewayv2 {
       RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
       RouteId.foreach(__v => __obj.updateDynamic("RouteId")(__v.asInstanceOf[js.Any]))
       RouteKey.foreach(__v => __obj.updateDynamic("RouteKey")(__v.asInstanceOf[js.Any]))
-      RouteResponseSelectionExpression.foreach(__v =>
-        __obj.updateDynamic("RouteResponseSelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      RouteResponseSelectionExpression.foreach(__v => __obj.updateDynamic("RouteResponseSelectionExpression")(__v.asInstanceOf[js.Any]))
       Target.foreach(__v => __obj.updateDynamic("Target")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRouteResult]
     }
@@ -3222,9 +3088,7 @@ package apigatewayv2 {
       DefaultRouteSettings.foreach(__v => __obj.updateDynamic("DefaultRouteSettings")(__v.asInstanceOf[js.Any]))
       DeploymentId.foreach(__v => __obj.updateDynamic("DeploymentId")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      LastDeploymentStatusMessage.foreach(__v =>
-        __obj.updateDynamic("LastDeploymentStatusMessage")(__v.asInstanceOf[js.Any])
-      )
+      LastDeploymentStatusMessage.foreach(__v => __obj.updateDynamic("LastDeploymentStatusMessage")(__v.asInstanceOf[js.Any]))
       LastUpdatedDate.foreach(__v => __obj.updateDynamic("LastUpdatedDate")(__v.asInstanceOf[js.Any]))
       RouteSettings.foreach(__v => __obj.updateDynamic("RouteSettings")(__v.asInstanceOf[js.Any]))
       StageName.foreach(__v => __obj.updateDynamic("StageName")(__v.asInstanceOf[js.Any]))
@@ -3472,9 +3336,7 @@ package apigatewayv2 {
       val __obj = js.Dynamic.literal()
       ApiEndpoint.foreach(__v => __obj.updateDynamic("ApiEndpoint")(__v.asInstanceOf[js.Any]))
       ApiId.foreach(__v => __obj.updateDynamic("ApiId")(__v.asInstanceOf[js.Any]))
-      ApiKeySelectionExpression.foreach(__v =>
-        __obj.updateDynamic("ApiKeySelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      ApiKeySelectionExpression.foreach(__v => __obj.updateDynamic("ApiKeySelectionExpression")(__v.asInstanceOf[js.Any]))
       CorsConfiguration.foreach(__v => __obj.updateDynamic("CorsConfiguration")(__v.asInstanceOf[js.Any]))
       CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -3546,18 +3408,14 @@ package apigatewayv2 {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       IntegrationId.foreach(__v => __obj.updateDynamic("IntegrationId")(__v.asInstanceOf[js.Any]))
       IntegrationMethod.foreach(__v => __obj.updateDynamic("IntegrationMethod")(__v.asInstanceOf[js.Any]))
-      IntegrationResponseSelectionExpression.foreach(__v =>
-        __obj.updateDynamic("IntegrationResponseSelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      IntegrationResponseSelectionExpression.foreach(__v => __obj.updateDynamic("IntegrationResponseSelectionExpression")(__v.asInstanceOf[js.Any]))
       IntegrationType.foreach(__v => __obj.updateDynamic("IntegrationType")(__v.asInstanceOf[js.Any]))
       IntegrationUri.foreach(__v => __obj.updateDynamic("IntegrationUri")(__v.asInstanceOf[js.Any]))
       PassthroughBehavior.foreach(__v => __obj.updateDynamic("PassthroughBehavior")(__v.asInstanceOf[js.Any]))
       PayloadFormatVersion.foreach(__v => __obj.updateDynamic("PayloadFormatVersion")(__v.asInstanceOf[js.Any]))
       RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
       RequestTemplates.foreach(__v => __obj.updateDynamic("RequestTemplates")(__v.asInstanceOf[js.Any]))
-      TemplateSelectionExpression.foreach(__v =>
-        __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      TemplateSelectionExpression.foreach(__v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any]))
       TimeoutInMillis.foreach(__v => __obj.updateDynamic("TimeoutInMillis")(__v.asInstanceOf[js.Any]))
       TlsConfig.foreach(__v => __obj.updateDynamic("TlsConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Integration]
@@ -3595,9 +3453,7 @@ package apigatewayv2 {
       IntegrationResponseId.foreach(__v => __obj.updateDynamic("IntegrationResponseId")(__v.asInstanceOf[js.Any]))
       ResponseParameters.foreach(__v => __obj.updateDynamic("ResponseParameters")(__v.asInstanceOf[js.Any]))
       ResponseTemplates.foreach(__v => __obj.updateDynamic("ResponseTemplates")(__v.asInstanceOf[js.Any]))
-      TemplateSelectionExpression.foreach(__v =>
-        __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      TemplateSelectionExpression.foreach(__v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IntegrationResponse]
     }
   }
@@ -3797,9 +3653,7 @@ package apigatewayv2 {
       val __obj = js.Dynamic.literal()
       ApiEndpoint.foreach(__v => __obj.updateDynamic("ApiEndpoint")(__v.asInstanceOf[js.Any]))
       ApiId.foreach(__v => __obj.updateDynamic("ApiId")(__v.asInstanceOf[js.Any]))
-      ApiKeySelectionExpression.foreach(__v =>
-        __obj.updateDynamic("ApiKeySelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      ApiKeySelectionExpression.foreach(__v => __obj.updateDynamic("ApiKeySelectionExpression")(__v.asInstanceOf[js.Any]))
       CorsConfiguration.foreach(__v => __obj.updateDynamic("CorsConfiguration")(__v.asInstanceOf[js.Any]))
       CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -3866,9 +3720,7 @@ package apigatewayv2 {
       RequestModels.foreach(__v => __obj.updateDynamic("RequestModels")(__v.asInstanceOf[js.Any]))
       RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
       RouteId.foreach(__v => __obj.updateDynamic("RouteId")(__v.asInstanceOf[js.Any]))
-      RouteResponseSelectionExpression.foreach(__v =>
-        __obj.updateDynamic("RouteResponseSelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      RouteResponseSelectionExpression.foreach(__v => __obj.updateDynamic("RouteResponseSelectionExpression")(__v.asInstanceOf[js.Any]))
       Target.foreach(__v => __obj.updateDynamic("Target")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Route]
     }
@@ -4001,9 +3853,7 @@ package apigatewayv2 {
       DefaultRouteSettings.foreach(__v => __obj.updateDynamic("DefaultRouteSettings")(__v.asInstanceOf[js.Any]))
       DeploymentId.foreach(__v => __obj.updateDynamic("DeploymentId")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      LastDeploymentStatusMessage.foreach(__v =>
-        __obj.updateDynamic("LastDeploymentStatusMessage")(__v.asInstanceOf[js.Any])
-      )
+      LastDeploymentStatusMessage.foreach(__v => __obj.updateDynamic("LastDeploymentStatusMessage")(__v.asInstanceOf[js.Any]))
       LastUpdatedDate.foreach(__v => __obj.updateDynamic("LastUpdatedDate")(__v.asInstanceOf[js.Any]))
       RouteSettings.foreach(__v => __obj.updateDynamic("RouteSettings")(__v.asInstanceOf[js.Any]))
       StageVariables.foreach(__v => __obj.updateDynamic("StageVariables")(__v.asInstanceOf[js.Any]))
@@ -4203,9 +4053,7 @@ package apigatewayv2 {
         "ApiId" -> ApiId.asInstanceOf[js.Any]
       )
 
-      ApiKeySelectionExpression.foreach(__v =>
-        __obj.updateDynamic("ApiKeySelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      ApiKeySelectionExpression.foreach(__v => __obj.updateDynamic("ApiKeySelectionExpression")(__v.asInstanceOf[js.Any]))
       CorsConfiguration.foreach(__v => __obj.updateDynamic("CorsConfiguration")(__v.asInstanceOf[js.Any]))
       CredentialsArn.foreach(__v => __obj.updateDynamic("CredentialsArn")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -4258,9 +4106,7 @@ package apigatewayv2 {
       val __obj = js.Dynamic.literal()
       ApiEndpoint.foreach(__v => __obj.updateDynamic("ApiEndpoint")(__v.asInstanceOf[js.Any]))
       ApiId.foreach(__v => __obj.updateDynamic("ApiId")(__v.asInstanceOf[js.Any]))
-      ApiKeySelectionExpression.foreach(__v =>
-        __obj.updateDynamic("ApiKeySelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      ApiKeySelectionExpression.foreach(__v => __obj.updateDynamic("ApiKeySelectionExpression")(__v.asInstanceOf[js.Any]))
       CorsConfiguration.foreach(__v => __obj.updateDynamic("CorsConfiguration")(__v.asInstanceOf[js.Any]))
       CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -4313,15 +4159,11 @@ package apigatewayv2 {
       )
 
       AuthorizerCredentialsArn.foreach(__v => __obj.updateDynamic("AuthorizerCredentialsArn")(__v.asInstanceOf[js.Any]))
-      AuthorizerResultTtlInSeconds.foreach(__v =>
-        __obj.updateDynamic("AuthorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      AuthorizerResultTtlInSeconds.foreach(__v => __obj.updateDynamic("AuthorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any]))
       AuthorizerType.foreach(__v => __obj.updateDynamic("AuthorizerType")(__v.asInstanceOf[js.Any]))
       AuthorizerUri.foreach(__v => __obj.updateDynamic("AuthorizerUri")(__v.asInstanceOf[js.Any]))
       IdentitySource.foreach(__v => __obj.updateDynamic("IdentitySource")(__v.asInstanceOf[js.Any]))
-      IdentityValidationExpression.foreach(__v =>
-        __obj.updateDynamic("IdentityValidationExpression")(__v.asInstanceOf[js.Any])
-      )
+      IdentityValidationExpression.foreach(__v => __obj.updateDynamic("IdentityValidationExpression")(__v.asInstanceOf[js.Any]))
       JwtConfiguration.foreach(__v => __obj.updateDynamic("JwtConfiguration")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAuthorizerRequest]
@@ -4357,15 +4199,11 @@ package apigatewayv2 {
       val __obj = js.Dynamic.literal()
       AuthorizerCredentialsArn.foreach(__v => __obj.updateDynamic("AuthorizerCredentialsArn")(__v.asInstanceOf[js.Any]))
       AuthorizerId.foreach(__v => __obj.updateDynamic("AuthorizerId")(__v.asInstanceOf[js.Any]))
-      AuthorizerResultTtlInSeconds.foreach(__v =>
-        __obj.updateDynamic("AuthorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      AuthorizerResultTtlInSeconds.foreach(__v => __obj.updateDynamic("AuthorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any]))
       AuthorizerType.foreach(__v => __obj.updateDynamic("AuthorizerType")(__v.asInstanceOf[js.Any]))
       AuthorizerUri.foreach(__v => __obj.updateDynamic("AuthorizerUri")(__v.asInstanceOf[js.Any]))
       IdentitySource.foreach(__v => __obj.updateDynamic("IdentitySource")(__v.asInstanceOf[js.Any]))
-      IdentityValidationExpression.foreach(__v =>
-        __obj.updateDynamic("IdentityValidationExpression")(__v.asInstanceOf[js.Any])
-      )
+      IdentityValidationExpression.foreach(__v => __obj.updateDynamic("IdentityValidationExpression")(__v.asInstanceOf[js.Any]))
       JwtConfiguration.foreach(__v => __obj.updateDynamic("JwtConfiguration")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAuthorizerResponse]
@@ -4471,9 +4309,7 @@ package apigatewayv2 {
         Tags: js.UndefOr[Tags] = js.undefined
     ): UpdateDomainNameResponse = {
       val __obj = js.Dynamic.literal()
-      ApiMappingSelectionExpression.foreach(__v =>
-        __obj.updateDynamic("ApiMappingSelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      ApiMappingSelectionExpression.foreach(__v => __obj.updateDynamic("ApiMappingSelectionExpression")(__v.asInstanceOf[js.Any]))
       DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
       DomainNameConfigurations.foreach(__v => __obj.updateDynamic("DomainNameConfigurations")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -4543,9 +4379,7 @@ package apigatewayv2 {
       PayloadFormatVersion.foreach(__v => __obj.updateDynamic("PayloadFormatVersion")(__v.asInstanceOf[js.Any]))
       RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
       RequestTemplates.foreach(__v => __obj.updateDynamic("RequestTemplates")(__v.asInstanceOf[js.Any]))
-      TemplateSelectionExpression.foreach(__v =>
-        __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      TemplateSelectionExpression.foreach(__v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any]))
       TimeoutInMillis.foreach(__v => __obj.updateDynamic("TimeoutInMillis")(__v.asInstanceOf[js.Any]))
       TlsConfig.foreach(__v => __obj.updateDynamic("TlsConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateIntegrationRequest]
@@ -4589,9 +4423,7 @@ package apigatewayv2 {
       IntegrationResponseKey.foreach(__v => __obj.updateDynamic("IntegrationResponseKey")(__v.asInstanceOf[js.Any]))
       ResponseParameters.foreach(__v => __obj.updateDynamic("ResponseParameters")(__v.asInstanceOf[js.Any]))
       ResponseTemplates.foreach(__v => __obj.updateDynamic("ResponseTemplates")(__v.asInstanceOf[js.Any]))
-      TemplateSelectionExpression.foreach(__v =>
-        __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      TemplateSelectionExpression.foreach(__v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateIntegrationResponseRequest]
     }
   }
@@ -4622,9 +4454,7 @@ package apigatewayv2 {
       IntegrationResponseKey.foreach(__v => __obj.updateDynamic("IntegrationResponseKey")(__v.asInstanceOf[js.Any]))
       ResponseParameters.foreach(__v => __obj.updateDynamic("ResponseParameters")(__v.asInstanceOf[js.Any]))
       ResponseTemplates.foreach(__v => __obj.updateDynamic("ResponseTemplates")(__v.asInstanceOf[js.Any]))
-      TemplateSelectionExpression.foreach(__v =>
-        __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      TemplateSelectionExpression.foreach(__v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateIntegrationResponseResponse]
     }
   }
@@ -4682,18 +4512,14 @@ package apigatewayv2 {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       IntegrationId.foreach(__v => __obj.updateDynamic("IntegrationId")(__v.asInstanceOf[js.Any]))
       IntegrationMethod.foreach(__v => __obj.updateDynamic("IntegrationMethod")(__v.asInstanceOf[js.Any]))
-      IntegrationResponseSelectionExpression.foreach(__v =>
-        __obj.updateDynamic("IntegrationResponseSelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      IntegrationResponseSelectionExpression.foreach(__v => __obj.updateDynamic("IntegrationResponseSelectionExpression")(__v.asInstanceOf[js.Any]))
       IntegrationType.foreach(__v => __obj.updateDynamic("IntegrationType")(__v.asInstanceOf[js.Any]))
       IntegrationUri.foreach(__v => __obj.updateDynamic("IntegrationUri")(__v.asInstanceOf[js.Any]))
       PassthroughBehavior.foreach(__v => __obj.updateDynamic("PassthroughBehavior")(__v.asInstanceOf[js.Any]))
       PayloadFormatVersion.foreach(__v => __obj.updateDynamic("PayloadFormatVersion")(__v.asInstanceOf[js.Any]))
       RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
       RequestTemplates.foreach(__v => __obj.updateDynamic("RequestTemplates")(__v.asInstanceOf[js.Any]))
-      TemplateSelectionExpression.foreach(__v =>
-        __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      TemplateSelectionExpression.foreach(__v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any]))
       TimeoutInMillis.foreach(__v => __obj.updateDynamic("TimeoutInMillis")(__v.asInstanceOf[js.Any]))
       TlsConfig.foreach(__v => __obj.updateDynamic("TlsConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateIntegrationResult]
@@ -4815,9 +4641,7 @@ package apigatewayv2 {
       RequestModels.foreach(__v => __obj.updateDynamic("RequestModels")(__v.asInstanceOf[js.Any]))
       RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
       RouteKey.foreach(__v => __obj.updateDynamic("RouteKey")(__v.asInstanceOf[js.Any]))
-      RouteResponseSelectionExpression.foreach(__v =>
-        __obj.updateDynamic("RouteResponseSelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      RouteResponseSelectionExpression.foreach(__v => __obj.updateDynamic("RouteResponseSelectionExpression")(__v.asInstanceOf[js.Any]))
       Target.foreach(__v => __obj.updateDynamic("Target")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRouteRequest]
     }
@@ -4936,9 +4760,7 @@ package apigatewayv2 {
       RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
       RouteId.foreach(__v => __obj.updateDynamic("RouteId")(__v.asInstanceOf[js.Any]))
       RouteKey.foreach(__v => __obj.updateDynamic("RouteKey")(__v.asInstanceOf[js.Any]))
-      RouteResponseSelectionExpression.foreach(__v =>
-        __obj.updateDynamic("RouteResponseSelectionExpression")(__v.asInstanceOf[js.Any])
-      )
+      RouteResponseSelectionExpression.foreach(__v => __obj.updateDynamic("RouteResponseSelectionExpression")(__v.asInstanceOf[js.Any]))
       Target.foreach(__v => __obj.updateDynamic("Target")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRouteResult]
     }
@@ -5037,9 +4859,7 @@ package apigatewayv2 {
       DefaultRouteSettings.foreach(__v => __obj.updateDynamic("DefaultRouteSettings")(__v.asInstanceOf[js.Any]))
       DeploymentId.foreach(__v => __obj.updateDynamic("DeploymentId")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      LastDeploymentStatusMessage.foreach(__v =>
-        __obj.updateDynamic("LastDeploymentStatusMessage")(__v.asInstanceOf[js.Any])
-      )
+      LastDeploymentStatusMessage.foreach(__v => __obj.updateDynamic("LastDeploymentStatusMessage")(__v.asInstanceOf[js.Any]))
       LastUpdatedDate.foreach(__v => __obj.updateDynamic("LastUpdatedDate")(__v.asInstanceOf[js.Any]))
       RouteSettings.foreach(__v => __obj.updateDynamic("RouteSettings")(__v.asInstanceOf[js.Any]))
       StageName.foreach(__v => __obj.updateDynamic("StageName")(__v.asInstanceOf[js.Any]))

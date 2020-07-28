@@ -34,28 +34,15 @@ package object translate {
 
   implicit final class TranslateOps(private val service: Translate) extends AnyVal {
 
-    @inline def deleteTerminologyFuture(params: DeleteTerminologyRequest): Future[js.Object] =
-      service.deleteTerminology(params).promise().toFuture
-    @inline def describeTextTranslationJobFuture(
-        params: DescribeTextTranslationJobRequest
-    ): Future[DescribeTextTranslationJobResponse] = service.describeTextTranslationJob(params).promise().toFuture
-    @inline def getTerminologyFuture(params: GetTerminologyRequest): Future[GetTerminologyResponse] =
-      service.getTerminology(params).promise().toFuture
-    @inline def importTerminologyFuture(params: ImportTerminologyRequest): Future[ImportTerminologyResponse] =
-      service.importTerminology(params).promise().toFuture
-    @inline def listTerminologiesFuture(params: ListTerminologiesRequest): Future[ListTerminologiesResponse] =
-      service.listTerminologies(params).promise().toFuture
-    @inline def listTextTranslationJobsFuture(
-        params: ListTextTranslationJobsRequest
-    ): Future[ListTextTranslationJobsResponse] = service.listTextTranslationJobs(params).promise().toFuture
-    @inline def startTextTranslationJobFuture(
-        params: StartTextTranslationJobRequest
-    ): Future[StartTextTranslationJobResponse] = service.startTextTranslationJob(params).promise().toFuture
-    @inline def stopTextTranslationJobFuture(
-        params: StopTextTranslationJobRequest
-    ): Future[StopTextTranslationJobResponse] = service.stopTextTranslationJob(params).promise().toFuture
-    @inline def translateTextFuture(params: TranslateTextRequest): Future[TranslateTextResponse] =
-      service.translateText(params).promise().toFuture
+    @inline def deleteTerminologyFuture(params: DeleteTerminologyRequest): Future[js.Object] = service.deleteTerminology(params).promise().toFuture
+    @inline def describeTextTranslationJobFuture(params: DescribeTextTranslationJobRequest): Future[DescribeTextTranslationJobResponse] = service.describeTextTranslationJob(params).promise().toFuture
+    @inline def getTerminologyFuture(params: GetTerminologyRequest): Future[GetTerminologyResponse] = service.getTerminology(params).promise().toFuture
+    @inline def importTerminologyFuture(params: ImportTerminologyRequest): Future[ImportTerminologyResponse] = service.importTerminology(params).promise().toFuture
+    @inline def listTerminologiesFuture(params: ListTerminologiesRequest): Future[ListTerminologiesResponse] = service.listTerminologies(params).promise().toFuture
+    @inline def listTextTranslationJobsFuture(params: ListTextTranslationJobsRequest): Future[ListTextTranslationJobsResponse] = service.listTextTranslationJobs(params).promise().toFuture
+    @inline def startTextTranslationJobFuture(params: StartTextTranslationJobRequest): Future[StartTextTranslationJobResponse] = service.startTextTranslationJob(params).promise().toFuture
+    @inline def stopTextTranslationJobFuture(params: StopTextTranslationJobRequest): Future[StopTextTranslationJobResponse] = service.stopTextTranslationJob(params).promise().toFuture
+    @inline def translateTextFuture(params: TranslateTextRequest): Future[TranslateTextResponse] = service.translateText(params).promise().toFuture
   }
 }
 
@@ -66,18 +53,13 @@ package translate {
     def this(config: AWSConfig) = this()
 
     def deleteTerminology(params: DeleteTerminologyRequest): Request[js.Object] = js.native
-    def describeTextTranslationJob(
-        params: DescribeTextTranslationJobRequest
-    ): Request[DescribeTextTranslationJobResponse] = js.native
+    def describeTextTranslationJob(params: DescribeTextTranslationJobRequest): Request[DescribeTextTranslationJobResponse] = js.native
     def getTerminology(params: GetTerminologyRequest): Request[GetTerminologyResponse] = js.native
     def importTerminology(params: ImportTerminologyRequest): Request[ImportTerminologyResponse] = js.native
     def listTerminologies(params: ListTerminologiesRequest): Request[ListTerminologiesResponse] = js.native
-    def listTextTranslationJobs(params: ListTextTranslationJobsRequest): Request[ListTextTranslationJobsResponse] =
-      js.native
-    def startTextTranslationJob(params: StartTextTranslationJobRequest): Request[StartTextTranslationJobResponse] =
-      js.native
-    def stopTextTranslationJob(params: StopTextTranslationJobRequest): Request[StopTextTranslationJobResponse] =
-      js.native
+    def listTextTranslationJobs(params: ListTextTranslationJobsRequest): Request[ListTextTranslationJobsResponse] = js.native
+    def startTextTranslationJob(params: StartTextTranslationJobRequest): Request[StartTextTranslationJobResponse] = js.native
+    def stopTextTranslationJob(params: StopTextTranslationJobRequest): Request[StopTextTranslationJobResponse] = js.native
     def translateText(params: TranslateTextRequest): Request[TranslateTextResponse] = js.native
   }
 
@@ -150,9 +132,7 @@ package translate {
         TextTranslationJobProperties: js.UndefOr[TextTranslationJobProperties] = js.undefined
     ): DescribeTextTranslationJobResponse = {
       val __obj = js.Dynamic.literal()
-      TextTranslationJobProperties.foreach(__v =>
-        __obj.updateDynamic("TextTranslationJobProperties")(__v.asInstanceOf[js.Any])
-      )
+      TextTranslationJobProperties.foreach(__v => __obj.updateDynamic("TextTranslationJobProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTextTranslationJobResponse]
     }
   }
@@ -335,9 +315,7 @@ package translate {
     val STOP_REQUESTED = "STOP_REQUESTED".asInstanceOf[JobStatus]
     val STOPPED = "STOPPED".asInstanceOf[JobStatus]
 
-    val values = js.Object.freeze(
-      js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERROR, FAILED, STOP_REQUESTED, STOPPED)
-    )
+    val values = js.Object.freeze(js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERROR, FAILED, STOP_REQUESTED, STOPPED))
   }
 
   @js.native
@@ -373,9 +351,7 @@ package translate {
     ): ListTerminologiesResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      TerminologyPropertiesList.foreach(__v =>
-        __obj.updateDynamic("TerminologyPropertiesList")(__v.asInstanceOf[js.Any])
-      )
+      TerminologyPropertiesList.foreach(__v => __obj.updateDynamic("TerminologyPropertiesList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTerminologiesResponse]
     }
   }
@@ -416,9 +392,7 @@ package translate {
     ): ListTextTranslationJobsResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      TextTranslationJobPropertiesList.foreach(__v =>
-        __obj.updateDynamic("TextTranslationJobPropertiesList")(__v.asInstanceOf[js.Any])
-      )
+      TextTranslationJobPropertiesList.foreach(__v => __obj.updateDynamic("TextTranslationJobPropertiesList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTextTranslationJobsResponse]
     }
   }

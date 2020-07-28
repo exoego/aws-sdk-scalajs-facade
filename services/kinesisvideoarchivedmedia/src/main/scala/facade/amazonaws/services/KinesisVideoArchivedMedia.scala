@@ -24,17 +24,10 @@ package object kinesisvideoarchivedmedia {
   implicit final class KinesisVideoArchivedMediaOps(private val service: KinesisVideoArchivedMedia) extends AnyVal {
 
     @inline def getClipFuture(params: GetClipInput): Future[GetClipOutput] = service.getClip(params).promise().toFuture
-    @inline def getDASHStreamingSessionURLFuture(
-        params: GetDASHStreamingSessionURLInput
-    ): Future[GetDASHStreamingSessionURLOutput] = service.getDASHStreamingSessionURL(params).promise().toFuture
-    @inline def getHLSStreamingSessionURLFuture(
-        params: GetHLSStreamingSessionURLInput
-    ): Future[GetHLSStreamingSessionURLOutput] = service.getHLSStreamingSessionURL(params).promise().toFuture
-    @inline def getMediaForFragmentListFuture(
-        params: GetMediaForFragmentListInput
-    ): Future[GetMediaForFragmentListOutput] = service.getMediaForFragmentList(params).promise().toFuture
-    @inline def listFragmentsFuture(params: ListFragmentsInput): Future[ListFragmentsOutput] =
-      service.listFragments(params).promise().toFuture
+    @inline def getDASHStreamingSessionURLFuture(params: GetDASHStreamingSessionURLInput): Future[GetDASHStreamingSessionURLOutput] = service.getDASHStreamingSessionURL(params).promise().toFuture
+    @inline def getHLSStreamingSessionURLFuture(params: GetHLSStreamingSessionURLInput): Future[GetHLSStreamingSessionURLOutput] = service.getHLSStreamingSessionURL(params).promise().toFuture
+    @inline def getMediaForFragmentListFuture(params: GetMediaForFragmentListInput): Future[GetMediaForFragmentListOutput] = service.getMediaForFragmentList(params).promise().toFuture
+    @inline def listFragmentsFuture(params: ListFragmentsInput): Future[ListFragmentsOutput] = service.listFragments(params).promise().toFuture
   }
 }
 
@@ -45,12 +38,9 @@ package kinesisvideoarchivedmedia {
     def this(config: AWSConfig) = this()
 
     def getClip(params: GetClipInput): Request[GetClipOutput] = js.native
-    def getDASHStreamingSessionURL(params: GetDASHStreamingSessionURLInput): Request[GetDASHStreamingSessionURLOutput] =
-      js.native
-    def getHLSStreamingSessionURL(params: GetHLSStreamingSessionURLInput): Request[GetHLSStreamingSessionURLOutput] =
-      js.native
-    def getMediaForFragmentList(params: GetMediaForFragmentListInput): Request[GetMediaForFragmentListOutput] =
-      js.native
+    def getDASHStreamingSessionURL(params: GetDASHStreamingSessionURLInput): Request[GetDASHStreamingSessionURLOutput] = js.native
+    def getHLSStreamingSessionURL(params: GetHLSStreamingSessionURLInput): Request[GetHLSStreamingSessionURLOutput] = js.native
+    def getMediaForFragmentList(params: GetMediaForFragmentListInput): Request[GetMediaForFragmentListOutput] = js.native
     def listFragments(params: ListFragmentsInput): Request[ListFragmentsOutput] = js.native
   }
 
@@ -228,9 +218,7 @@ package kinesisvideoarchivedmedia {
         ServerTimestamp: js.UndefOr[Timestamp] = js.undefined
     ): Fragment = {
       val __obj = js.Dynamic.literal()
-      FragmentLengthInMilliseconds.foreach(__v =>
-        __obj.updateDynamic("FragmentLengthInMilliseconds")(__v.asInstanceOf[js.Any])
-      )
+      FragmentLengthInMilliseconds.foreach(__v => __obj.updateDynamic("FragmentLengthInMilliseconds")(__v.asInstanceOf[js.Any]))
       FragmentNumber.foreach(__v => __obj.updateDynamic("FragmentNumber")(__v.asInstanceOf[js.Any]))
       FragmentSizeInBytes.foreach(__v => __obj.updateDynamic("FragmentSizeInBytes")(__v.asInstanceOf[js.Any]))
       ProducerTimestamp.foreach(__v => __obj.updateDynamic("ProducerTimestamp")(__v.asInstanceOf[js.Any]))
@@ -350,9 +338,7 @@ package kinesisvideoarchivedmedia {
       DisplayFragmentNumber.foreach(__v => __obj.updateDynamic("DisplayFragmentNumber")(__v.asInstanceOf[js.Any]))
       DisplayFragmentTimestamp.foreach(__v => __obj.updateDynamic("DisplayFragmentTimestamp")(__v.asInstanceOf[js.Any]))
       Expires.foreach(__v => __obj.updateDynamic("Expires")(__v.asInstanceOf[js.Any]))
-      MaxManifestFragmentResults.foreach(__v =>
-        __obj.updateDynamic("MaxManifestFragmentResults")(__v.asInstanceOf[js.Any])
-      )
+      MaxManifestFragmentResults.foreach(__v => __obj.updateDynamic("MaxManifestFragmentResults")(__v.asInstanceOf[js.Any]))
       PlaybackMode.foreach(__v => __obj.updateDynamic("PlaybackMode")(__v.asInstanceOf[js.Any]))
       StreamARN.foreach(__v => __obj.updateDynamic("StreamARN")(__v.asInstanceOf[js.Any]))
       StreamName.foreach(__v => __obj.updateDynamic("StreamName")(__v.asInstanceOf[js.Any]))
@@ -408,9 +394,7 @@ package kinesisvideoarchivedmedia {
       DisplayFragmentTimestamp.foreach(__v => __obj.updateDynamic("DisplayFragmentTimestamp")(__v.asInstanceOf[js.Any]))
       Expires.foreach(__v => __obj.updateDynamic("Expires")(__v.asInstanceOf[js.Any]))
       HLSFragmentSelector.foreach(__v => __obj.updateDynamic("HLSFragmentSelector")(__v.asInstanceOf[js.Any]))
-      MaxMediaPlaylistFragmentResults.foreach(__v =>
-        __obj.updateDynamic("MaxMediaPlaylistFragmentResults")(__v.asInstanceOf[js.Any])
-      )
+      MaxMediaPlaylistFragmentResults.foreach(__v => __obj.updateDynamic("MaxMediaPlaylistFragmentResults")(__v.asInstanceOf[js.Any]))
       PlaybackMode.foreach(__v => __obj.updateDynamic("PlaybackMode")(__v.asInstanceOf[js.Any]))
       StreamARN.foreach(__v => __obj.updateDynamic("StreamARN")(__v.asInstanceOf[js.Any]))
       StreamName.foreach(__v => __obj.updateDynamic("StreamName")(__v.asInstanceOf[js.Any]))

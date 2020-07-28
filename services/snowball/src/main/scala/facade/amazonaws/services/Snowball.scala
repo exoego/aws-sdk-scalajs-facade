@@ -31,44 +31,25 @@ package object snowball {
 
   implicit final class SnowballOps(private val service: Snowball) extends AnyVal {
 
-    @inline def cancelClusterFuture(params: CancelClusterRequest): Future[CancelClusterResult] =
-      service.cancelCluster(params).promise().toFuture
-    @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResult] =
-      service.cancelJob(params).promise().toFuture
-    @inline def createAddressFuture(params: CreateAddressRequest): Future[CreateAddressResult] =
-      service.createAddress(params).promise().toFuture
-    @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResult] =
-      service.createCluster(params).promise().toFuture
-    @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResult] =
-      service.createJob(params).promise().toFuture
-    @inline def describeAddressFuture(params: DescribeAddressRequest): Future[DescribeAddressResult] =
-      service.describeAddress(params).promise().toFuture
-    @inline def describeAddressesFuture(params: DescribeAddressesRequest): Future[DescribeAddressesResult] =
-      service.describeAddresses(params).promise().toFuture
-    @inline def describeClusterFuture(params: DescribeClusterRequest): Future[DescribeClusterResult] =
-      service.describeCluster(params).promise().toFuture
-    @inline def describeJobFuture(params: DescribeJobRequest): Future[DescribeJobResult] =
-      service.describeJob(params).promise().toFuture
-    @inline def getJobManifestFuture(params: GetJobManifestRequest): Future[GetJobManifestResult] =
-      service.getJobManifest(params).promise().toFuture
-    @inline def getJobUnlockCodeFuture(params: GetJobUnlockCodeRequest): Future[GetJobUnlockCodeResult] =
-      service.getJobUnlockCode(params).promise().toFuture
-    @inline def getSnowballUsageFuture(params: GetSnowballUsageRequest): Future[GetSnowballUsageResult] =
-      service.getSnowballUsage(params).promise().toFuture
-    @inline def getSoftwareUpdatesFuture(params: GetSoftwareUpdatesRequest): Future[GetSoftwareUpdatesResult] =
-      service.getSoftwareUpdates(params).promise().toFuture
-    @inline def listClusterJobsFuture(params: ListClusterJobsRequest): Future[ListClusterJobsResult] =
-      service.listClusterJobs(params).promise().toFuture
-    @inline def listClustersFuture(params: ListClustersRequest): Future[ListClustersResult] =
-      service.listClusters(params).promise().toFuture
-    @inline def listCompatibleImagesFuture(params: ListCompatibleImagesRequest): Future[ListCompatibleImagesResult] =
-      service.listCompatibleImages(params).promise().toFuture
-    @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult] =
-      service.listJobs(params).promise().toFuture
-    @inline def updateClusterFuture(params: UpdateClusterRequest): Future[UpdateClusterResult] =
-      service.updateCluster(params).promise().toFuture
-    @inline def updateJobFuture(params: UpdateJobRequest): Future[UpdateJobResult] =
-      service.updateJob(params).promise().toFuture
+    @inline def cancelClusterFuture(params: CancelClusterRequest): Future[CancelClusterResult] = service.cancelCluster(params).promise().toFuture
+    @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResult] = service.cancelJob(params).promise().toFuture
+    @inline def createAddressFuture(params: CreateAddressRequest): Future[CreateAddressResult] = service.createAddress(params).promise().toFuture
+    @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResult] = service.createCluster(params).promise().toFuture
+    @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResult] = service.createJob(params).promise().toFuture
+    @inline def describeAddressFuture(params: DescribeAddressRequest): Future[DescribeAddressResult] = service.describeAddress(params).promise().toFuture
+    @inline def describeAddressesFuture(params: DescribeAddressesRequest): Future[DescribeAddressesResult] = service.describeAddresses(params).promise().toFuture
+    @inline def describeClusterFuture(params: DescribeClusterRequest): Future[DescribeClusterResult] = service.describeCluster(params).promise().toFuture
+    @inline def describeJobFuture(params: DescribeJobRequest): Future[DescribeJobResult] = service.describeJob(params).promise().toFuture
+    @inline def getJobManifestFuture(params: GetJobManifestRequest): Future[GetJobManifestResult] = service.getJobManifest(params).promise().toFuture
+    @inline def getJobUnlockCodeFuture(params: GetJobUnlockCodeRequest): Future[GetJobUnlockCodeResult] = service.getJobUnlockCode(params).promise().toFuture
+    @inline def getSnowballUsageFuture(params: GetSnowballUsageRequest): Future[GetSnowballUsageResult] = service.getSnowballUsage(params).promise().toFuture
+    @inline def getSoftwareUpdatesFuture(params: GetSoftwareUpdatesRequest): Future[GetSoftwareUpdatesResult] = service.getSoftwareUpdates(params).promise().toFuture
+    @inline def listClusterJobsFuture(params: ListClusterJobsRequest): Future[ListClusterJobsResult] = service.listClusterJobs(params).promise().toFuture
+    @inline def listClustersFuture(params: ListClustersRequest): Future[ListClustersResult] = service.listClusters(params).promise().toFuture
+    @inline def listCompatibleImagesFuture(params: ListCompatibleImagesRequest): Future[ListCompatibleImagesResult] = service.listCompatibleImages(params).promise().toFuture
+    @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult] = service.listJobs(params).promise().toFuture
+    @inline def updateClusterFuture(params: UpdateClusterRequest): Future[UpdateClusterResult] = service.updateCluster(params).promise().toFuture
+    @inline def updateJobFuture(params: UpdateJobRequest): Future[UpdateJobResult] = service.updateJob(params).promise().toFuture
   }
 }
 
@@ -485,9 +466,7 @@ package snowball {
       Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
       RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
       ShippingOption.foreach(__v => __obj.updateDynamic("ShippingOption")(__v.asInstanceOf[js.Any]))
-      SnowballCapacityPreference.foreach(__v =>
-        __obj.updateDynamic("SnowballCapacityPreference")(__v.asInstanceOf[js.Any])
-      )
+      SnowballCapacityPreference.foreach(__v => __obj.updateDynamic("SnowballCapacityPreference")(__v.asInstanceOf[js.Any]))
       SnowballType.foreach(__v => __obj.updateDynamic("SnowballType")(__v.asInstanceOf[js.Any]))
       TaxDocuments.foreach(__v => __obj.updateDynamic("TaxDocuments")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateJobRequest]
@@ -695,9 +674,7 @@ package snowball {
         SnowconeDeviceConfiguration: js.UndefOr[SnowconeDeviceConfiguration] = js.undefined
     ): DeviceConfiguration = {
       val __obj = js.Dynamic.literal()
-      SnowconeDeviceConfiguration.foreach(__v =>
-        __obj.updateDynamic("SnowconeDeviceConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      SnowconeDeviceConfiguration.foreach(__v => __obj.updateDynamic("SnowconeDeviceConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeviceConfiguration]
     }
   }
@@ -1029,9 +1006,7 @@ package snowball {
       Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
       RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
       ShippingDetails.foreach(__v => __obj.updateDynamic("ShippingDetails")(__v.asInstanceOf[js.Any]))
-      SnowballCapacityPreference.foreach(__v =>
-        __obj.updateDynamic("SnowballCapacityPreference")(__v.asInstanceOf[js.Any])
-      )
+      SnowballCapacityPreference.foreach(__v => __obj.updateDynamic("SnowballCapacityPreference")(__v.asInstanceOf[js.Any]))
       SnowballType.foreach(__v => __obj.updateDynamic("SnowballType")(__v.asInstanceOf[js.Any]))
       TaxDocuments.foreach(__v => __obj.updateDynamic("TaxDocuments")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobMetadata]
@@ -1080,23 +1055,21 @@ package snowball {
     val Listing = "Listing".asInstanceOf[JobState]
     val Pending = "Pending".asInstanceOf[JobState]
 
-    val values = js.Object.freeze(
-      js.Array(
-        New,
-        PreparingAppliance,
-        PreparingShipment,
-        InTransitToCustomer,
-        WithCustomer,
-        InTransitToAWS,
-        WithAWSSortingFacility,
-        WithAWS,
-        InProgress,
-        Complete,
-        Cancelled,
-        Listing,
-        Pending
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      New,
+      PreparingAppliance,
+      PreparingShipment,
+      InTransitToCustomer,
+      WithCustomer,
+      InTransitToAWS,
+      WithAWSSortingFacility,
+      WithAWS,
+      InProgress,
+      Complete,
+      Cancelled,
+      Listing,
+      Pending
+    ))
   }
 
   @js.native
@@ -1570,9 +1543,7 @@ package snowball {
       Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
       RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
       ShippingOption.foreach(__v => __obj.updateDynamic("ShippingOption")(__v.asInstanceOf[js.Any]))
-      SnowballCapacityPreference.foreach(__v =>
-        __obj.updateDynamic("SnowballCapacityPreference")(__v.asInstanceOf[js.Any])
-      )
+      SnowballCapacityPreference.foreach(__v => __obj.updateDynamic("SnowballCapacityPreference")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateJobRequest]
     }
   }

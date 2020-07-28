@@ -29,51 +29,25 @@ package object qldb {
 
   implicit final class QLDBOps(private val service: QLDB) extends AnyVal {
 
-    @inline def cancelJournalKinesisStreamFuture(
-        params: CancelJournalKinesisStreamRequest
-    ): Future[CancelJournalKinesisStreamResponse] = service.cancelJournalKinesisStream(params).promise().toFuture
-    @inline def createLedgerFuture(params: CreateLedgerRequest): Future[CreateLedgerResponse] =
-      service.createLedger(params).promise().toFuture
-    @inline def deleteLedgerFuture(params: DeleteLedgerRequest): Future[js.Object] =
-      service.deleteLedger(params).promise().toFuture
-    @inline def describeJournalKinesisStreamFuture(
-        params: DescribeJournalKinesisStreamRequest
-    ): Future[DescribeJournalKinesisStreamResponse] = service.describeJournalKinesisStream(params).promise().toFuture
-    @inline def describeJournalS3ExportFuture(
-        params: DescribeJournalS3ExportRequest
-    ): Future[DescribeJournalS3ExportResponse] = service.describeJournalS3Export(params).promise().toFuture
-    @inline def describeLedgerFuture(params: DescribeLedgerRequest): Future[DescribeLedgerResponse] =
-      service.describeLedger(params).promise().toFuture
-    @inline def exportJournalToS3Future(params: ExportJournalToS3Request): Future[ExportJournalToS3Response] =
-      service.exportJournalToS3(params).promise().toFuture
-    @inline def getBlockFuture(params: GetBlockRequest): Future[GetBlockResponse] =
-      service.getBlock(params).promise().toFuture
-    @inline def getDigestFuture(params: GetDigestRequest): Future[GetDigestResponse] =
-      service.getDigest(params).promise().toFuture
-    @inline def getRevisionFuture(params: GetRevisionRequest): Future[GetRevisionResponse] =
-      service.getRevision(params).promise().toFuture
-    @inline def listJournalKinesisStreamsForLedgerFuture(
-        params: ListJournalKinesisStreamsForLedgerRequest
-    ): Future[ListJournalKinesisStreamsForLedgerResponse] =
-      service.listJournalKinesisStreamsForLedger(params).promise().toFuture
-    @inline def listJournalS3ExportsForLedgerFuture(
-        params: ListJournalS3ExportsForLedgerRequest
-    ): Future[ListJournalS3ExportsForLedgerResponse] = service.listJournalS3ExportsForLedger(params).promise().toFuture
-    @inline def listJournalS3ExportsFuture(params: ListJournalS3ExportsRequest): Future[ListJournalS3ExportsResponse] =
-      service.listJournalS3Exports(params).promise().toFuture
-    @inline def listLedgersFuture(params: ListLedgersRequest): Future[ListLedgersResponse] =
-      service.listLedgers(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def streamJournalToKinesisFuture(
-        params: StreamJournalToKinesisRequest
-    ): Future[StreamJournalToKinesisResponse] = service.streamJournalToKinesis(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateLedgerFuture(params: UpdateLedgerRequest): Future[UpdateLedgerResponse] =
-      service.updateLedger(params).promise().toFuture
+    @inline def cancelJournalKinesisStreamFuture(params: CancelJournalKinesisStreamRequest): Future[CancelJournalKinesisStreamResponse] = service.cancelJournalKinesisStream(params).promise().toFuture
+    @inline def createLedgerFuture(params: CreateLedgerRequest): Future[CreateLedgerResponse] = service.createLedger(params).promise().toFuture
+    @inline def deleteLedgerFuture(params: DeleteLedgerRequest): Future[js.Object] = service.deleteLedger(params).promise().toFuture
+    @inline def describeJournalKinesisStreamFuture(params: DescribeJournalKinesisStreamRequest): Future[DescribeJournalKinesisStreamResponse] = service.describeJournalKinesisStream(params).promise().toFuture
+    @inline def describeJournalS3ExportFuture(params: DescribeJournalS3ExportRequest): Future[DescribeJournalS3ExportResponse] = service.describeJournalS3Export(params).promise().toFuture
+    @inline def describeLedgerFuture(params: DescribeLedgerRequest): Future[DescribeLedgerResponse] = service.describeLedger(params).promise().toFuture
+    @inline def exportJournalToS3Future(params: ExportJournalToS3Request): Future[ExportJournalToS3Response] = service.exportJournalToS3(params).promise().toFuture
+    @inline def getBlockFuture(params: GetBlockRequest): Future[GetBlockResponse] = service.getBlock(params).promise().toFuture
+    @inline def getDigestFuture(params: GetDigestRequest): Future[GetDigestResponse] = service.getDigest(params).promise().toFuture
+    @inline def getRevisionFuture(params: GetRevisionRequest): Future[GetRevisionResponse] = service.getRevision(params).promise().toFuture
+    @inline def listJournalKinesisStreamsForLedgerFuture(params: ListJournalKinesisStreamsForLedgerRequest): Future[ListJournalKinesisStreamsForLedgerResponse] = service.listJournalKinesisStreamsForLedger(params).promise().toFuture
+    @inline def listJournalS3ExportsForLedgerFuture(params: ListJournalS3ExportsForLedgerRequest): Future[ListJournalS3ExportsForLedgerResponse] = service.listJournalS3ExportsForLedger(params).promise().toFuture
+    @inline def listJournalS3ExportsFuture(params: ListJournalS3ExportsRequest): Future[ListJournalS3ExportsResponse] = service.listJournalS3Exports(params).promise().toFuture
+    @inline def listLedgersFuture(params: ListLedgersRequest): Future[ListLedgersResponse] = service.listLedgers(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def streamJournalToKinesisFuture(params: StreamJournalToKinesisRequest): Future[StreamJournalToKinesisResponse] = service.streamJournalToKinesis(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateLedgerFuture(params: UpdateLedgerRequest): Future[UpdateLedgerResponse] = service.updateLedger(params).promise().toFuture
   }
 }
 
@@ -83,32 +57,22 @@ package qldb {
   class QLDB() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def cancelJournalKinesisStream(
-        params: CancelJournalKinesisStreamRequest
-    ): Request[CancelJournalKinesisStreamResponse] = js.native
+    def cancelJournalKinesisStream(params: CancelJournalKinesisStreamRequest): Request[CancelJournalKinesisStreamResponse] = js.native
     def createLedger(params: CreateLedgerRequest): Request[CreateLedgerResponse] = js.native
     def deleteLedger(params: DeleteLedgerRequest): Request[js.Object] = js.native
-    def describeJournalKinesisStream(
-        params: DescribeJournalKinesisStreamRequest
-    ): Request[DescribeJournalKinesisStreamResponse] = js.native
-    def describeJournalS3Export(params: DescribeJournalS3ExportRequest): Request[DescribeJournalS3ExportResponse] =
-      js.native
+    def describeJournalKinesisStream(params: DescribeJournalKinesisStreamRequest): Request[DescribeJournalKinesisStreamResponse] = js.native
+    def describeJournalS3Export(params: DescribeJournalS3ExportRequest): Request[DescribeJournalS3ExportResponse] = js.native
     def describeLedger(params: DescribeLedgerRequest): Request[DescribeLedgerResponse] = js.native
     def exportJournalToS3(params: ExportJournalToS3Request): Request[ExportJournalToS3Response] = js.native
     def getBlock(params: GetBlockRequest): Request[GetBlockResponse] = js.native
     def getDigest(params: GetDigestRequest): Request[GetDigestResponse] = js.native
     def getRevision(params: GetRevisionRequest): Request[GetRevisionResponse] = js.native
-    def listJournalKinesisStreamsForLedger(
-        params: ListJournalKinesisStreamsForLedgerRequest
-    ): Request[ListJournalKinesisStreamsForLedgerResponse] = js.native
+    def listJournalKinesisStreamsForLedger(params: ListJournalKinesisStreamsForLedgerRequest): Request[ListJournalKinesisStreamsForLedgerResponse] = js.native
     def listJournalS3Exports(params: ListJournalS3ExportsRequest): Request[ListJournalS3ExportsResponse] = js.native
-    def listJournalS3ExportsForLedger(
-        params: ListJournalS3ExportsForLedgerRequest
-    ): Request[ListJournalS3ExportsForLedgerResponse] = js.native
+    def listJournalS3ExportsForLedger(params: ListJournalS3ExportsForLedgerRequest): Request[ListJournalS3ExportsForLedgerResponse] = js.native
     def listLedgers(params: ListLedgersRequest): Request[ListLedgersResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def streamJournalToKinesis(params: StreamJournalToKinesisRequest): Request[StreamJournalToKinesisResponse] =
-      js.native
+    def streamJournalToKinesis(params: StreamJournalToKinesisRequest): Request[StreamJournalToKinesisResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateLedger(params: UpdateLedgerRequest): Request[UpdateLedgerResponse] = js.native

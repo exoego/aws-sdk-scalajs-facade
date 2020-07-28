@@ -38,33 +38,19 @@ package object acm {
 
   implicit final class ACMOps(private val service: ACM) extends AnyVal {
 
-    @inline def addTagsToCertificateFuture(params: AddTagsToCertificateRequest): Future[js.Object] =
-      service.addTagsToCertificate(params).promise().toFuture
-    @inline def deleteCertificateFuture(params: DeleteCertificateRequest): Future[js.Object] =
-      service.deleteCertificate(params).promise().toFuture
-    @inline def describeCertificateFuture(params: DescribeCertificateRequest): Future[DescribeCertificateResponse] =
-      service.describeCertificate(params).promise().toFuture
-    @inline def exportCertificateFuture(params: ExportCertificateRequest): Future[ExportCertificateResponse] =
-      service.exportCertificate(params).promise().toFuture
-    @inline def getCertificateFuture(params: GetCertificateRequest): Future[GetCertificateResponse] =
-      service.getCertificate(params).promise().toFuture
-    @inline def importCertificateFuture(params: ImportCertificateRequest): Future[ImportCertificateResponse] =
-      service.importCertificate(params).promise().toFuture
-    @inline def listCertificatesFuture(params: ListCertificatesRequest): Future[ListCertificatesResponse] =
-      service.listCertificates(params).promise().toFuture
-    @inline def listTagsForCertificateFuture(
-        params: ListTagsForCertificateRequest
-    ): Future[ListTagsForCertificateResponse] = service.listTagsForCertificate(params).promise().toFuture
-    @inline def removeTagsFromCertificateFuture(params: RemoveTagsFromCertificateRequest): Future[js.Object] =
-      service.removeTagsFromCertificate(params).promise().toFuture
-    @inline def renewCertificateFuture(params: RenewCertificateRequest): Future[js.Object] =
-      service.renewCertificate(params).promise().toFuture
-    @inline def requestCertificateFuture(params: RequestCertificateRequest): Future[RequestCertificateResponse] =
-      service.requestCertificate(params).promise().toFuture
-    @inline def resendValidationEmailFuture(params: ResendValidationEmailRequest): Future[js.Object] =
-      service.resendValidationEmail(params).promise().toFuture
-    @inline def updateCertificateOptionsFuture(params: UpdateCertificateOptionsRequest): Future[js.Object] =
-      service.updateCertificateOptions(params).promise().toFuture
+    @inline def addTagsToCertificateFuture(params: AddTagsToCertificateRequest): Future[js.Object] = service.addTagsToCertificate(params).promise().toFuture
+    @inline def deleteCertificateFuture(params: DeleteCertificateRequest): Future[js.Object] = service.deleteCertificate(params).promise().toFuture
+    @inline def describeCertificateFuture(params: DescribeCertificateRequest): Future[DescribeCertificateResponse] = service.describeCertificate(params).promise().toFuture
+    @inline def exportCertificateFuture(params: ExportCertificateRequest): Future[ExportCertificateResponse] = service.exportCertificate(params).promise().toFuture
+    @inline def getCertificateFuture(params: GetCertificateRequest): Future[GetCertificateResponse] = service.getCertificate(params).promise().toFuture
+    @inline def importCertificateFuture(params: ImportCertificateRequest): Future[ImportCertificateResponse] = service.importCertificate(params).promise().toFuture
+    @inline def listCertificatesFuture(params: ListCertificatesRequest): Future[ListCertificatesResponse] = service.listCertificates(params).promise().toFuture
+    @inline def listTagsForCertificateFuture(params: ListTagsForCertificateRequest): Future[ListTagsForCertificateResponse] = service.listTagsForCertificate(params).promise().toFuture
+    @inline def removeTagsFromCertificateFuture(params: RemoveTagsFromCertificateRequest): Future[js.Object] = service.removeTagsFromCertificate(params).promise().toFuture
+    @inline def renewCertificateFuture(params: RenewCertificateRequest): Future[js.Object] = service.renewCertificate(params).promise().toFuture
+    @inline def requestCertificateFuture(params: RequestCertificateRequest): Future[RequestCertificateResponse] = service.requestCertificate(params).promise().toFuture
+    @inline def resendValidationEmailFuture(params: ResendValidationEmailRequest): Future[js.Object] = service.resendValidationEmail(params).promise().toFuture
+    @inline def updateCertificateOptionsFuture(params: UpdateCertificateOptionsRequest): Future[js.Object] = service.updateCertificateOptions(params).promise().toFuture
   }
 }
 
@@ -81,8 +67,7 @@ package acm {
     def getCertificate(params: GetCertificateRequest): Request[GetCertificateResponse] = js.native
     def importCertificate(params: ImportCertificateRequest): Request[ImportCertificateResponse] = js.native
     def listCertificates(params: ListCertificatesRequest): Request[ListCertificatesResponse] = js.native
-    def listTagsForCertificate(params: ListTagsForCertificateRequest): Request[ListTagsForCertificateResponse] =
-      js.native
+    def listTagsForCertificate(params: ListTagsForCertificateRequest): Request[ListTagsForCertificateResponse] = js.native
     def removeTagsFromCertificate(params: RemoveTagsFromCertificateRequest): Request[js.Object] = js.native
     def renewCertificate(params: RenewCertificateRequest): Request[js.Object] = js.native
     def requestCertificate(params: RequestCertificateRequest): Request[RequestCertificateResponse] = js.native
@@ -219,9 +204,7 @@ package acm {
         CertificateTransparencyLoggingPreference: js.UndefOr[CertificateTransparencyLoggingPreference] = js.undefined
     ): CertificateOptions = {
       val __obj = js.Dynamic.literal()
-      CertificateTransparencyLoggingPreference.foreach(__v =>
-        __obj.updateDynamic("CertificateTransparencyLoggingPreference")(__v.asInstanceOf[js.Any])
-      )
+      CertificateTransparencyLoggingPreference.foreach(__v => __obj.updateDynamic("CertificateTransparencyLoggingPreference")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CertificateOptions]
     }
   }
@@ -237,8 +220,7 @@ package acm {
     val REVOKED = "REVOKED".asInstanceOf[CertificateStatus]
     val FAILED = "FAILED".asInstanceOf[CertificateStatus]
 
-    val values =
-      js.Object.freeze(js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED))
+    val values = js.Object.freeze(js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED))
   }
 
   /**
@@ -485,22 +467,20 @@ package acm {
     val NONE = "NONE".asInstanceOf[ExtendedKeyUsageName]
     val CUSTOM = "CUSTOM".asInstanceOf[ExtendedKeyUsageName]
 
-    val values = js.Object.freeze(
-      js.Array(
-        TLS_WEB_SERVER_AUTHENTICATION,
-        TLS_WEB_CLIENT_AUTHENTICATION,
-        CODE_SIGNING,
-        EMAIL_PROTECTION,
-        TIME_STAMPING,
-        OCSP_SIGNING,
-        IPSEC_END_SYSTEM,
-        IPSEC_TUNNEL,
-        IPSEC_USER,
-        ANY,
-        NONE,
-        CUSTOM
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      TLS_WEB_SERVER_AUTHENTICATION,
+      TLS_WEB_CLIENT_AUTHENTICATION,
+      CODE_SIGNING,
+      EMAIL_PROTECTION,
+      TIME_STAMPING,
+      OCSP_SIGNING,
+      IPSEC_END_SYSTEM,
+      IPSEC_TUNNEL,
+      IPSEC_USER,
+      ANY,
+      NONE,
+      CUSTOM
+    ))
   }
 
   @js.native
@@ -523,26 +503,24 @@ package acm {
     val PCA_ACCESS_DENIED = "PCA_ACCESS_DENIED".asInstanceOf[FailureReason]
     val OTHER = "OTHER".asInstanceOf[FailureReason]
 
-    val values = js.Object.freeze(
-      js.Array(
-        NO_AVAILABLE_CONTACTS,
-        ADDITIONAL_VERIFICATION_REQUIRED,
-        DOMAIN_NOT_ALLOWED,
-        INVALID_PUBLIC_DOMAIN,
-        DOMAIN_VALIDATION_DENIED,
-        CAA_ERROR,
-        PCA_LIMIT_EXCEEDED,
-        PCA_INVALID_ARN,
-        PCA_INVALID_STATE,
-        PCA_REQUEST_FAILED,
-        PCA_NAME_CONSTRAINTS_VALIDATION,
-        PCA_RESOURCE_NOT_FOUND,
-        PCA_INVALID_ARGS,
-        PCA_INVALID_DURATION,
-        PCA_ACCESS_DENIED,
-        OTHER
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      NO_AVAILABLE_CONTACTS,
+      ADDITIONAL_VERIFICATION_REQUIRED,
+      DOMAIN_NOT_ALLOWED,
+      INVALID_PUBLIC_DOMAIN,
+      DOMAIN_VALIDATION_DENIED,
+      CAA_ERROR,
+      PCA_LIMIT_EXCEEDED,
+      PCA_INVALID_ARN,
+      PCA_INVALID_STATE,
+      PCA_REQUEST_FAILED,
+      PCA_NAME_CONSTRAINTS_VALIDATION,
+      PCA_RESOURCE_NOT_FOUND,
+      PCA_INVALID_ARGS,
+      PCA_INVALID_DURATION,
+      PCA_ACCESS_DENIED,
+      OTHER
+    ))
   }
 
   /**
@@ -700,21 +678,19 @@ package acm {
     val ANY = "ANY".asInstanceOf[KeyUsageName]
     val CUSTOM = "CUSTOM".asInstanceOf[KeyUsageName]
 
-    val values = js.Object.freeze(
-      js.Array(
-        DIGITAL_SIGNATURE,
-        NON_REPUDIATION,
-        KEY_ENCIPHERMENT,
-        DATA_ENCIPHERMENT,
-        KEY_AGREEMENT,
-        CERTIFICATE_SIGNING,
-        CRL_SIGNING,
-        ENCIPHER_ONLY,
-        DECIPHER_ONLY,
-        ANY,
-        CUSTOM
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      DIGITAL_SIGNATURE,
+      NON_REPUDIATION,
+      KEY_ENCIPHERMENT,
+      DATA_ENCIPHERMENT,
+      KEY_AGREEMENT,
+      CERTIFICATE_SIGNING,
+      CRL_SIGNING,
+      ENCIPHER_ONLY,
+      DECIPHER_ONLY,
+      ANY,
+      CUSTOM
+    ))
   }
 
   @js.native
@@ -1012,20 +988,18 @@ package acm {
     val PRIVILEGE_WITHDRAWN = "PRIVILEGE_WITHDRAWN".asInstanceOf[RevocationReason]
     val A_A_COMPROMISE = "A_A_COMPROMISE".asInstanceOf[RevocationReason]
 
-    val values = js.Object.freeze(
-      js.Array(
-        UNSPECIFIED,
-        KEY_COMPROMISE,
-        CA_COMPROMISE,
-        AFFILIATION_CHANGED,
-        SUPERCEDED,
-        CESSATION_OF_OPERATION,
-        CERTIFICATE_HOLD,
-        REMOVE_FROM_CRL,
-        PRIVILEGE_WITHDRAWN,
-        A_A_COMPROMISE
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      UNSPECIFIED,
+      KEY_COMPROMISE,
+      CA_COMPROMISE,
+      AFFILIATION_CHANGED,
+      SUPERCEDED,
+      CESSATION_OF_OPERATION,
+      CERTIFICATE_HOLD,
+      REMOVE_FROM_CRL,
+      PRIVILEGE_WITHDRAWN,
+      A_A_COMPROMISE
+    ))
   }
 
   /**

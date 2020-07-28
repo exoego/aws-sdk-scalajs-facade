@@ -42,79 +42,39 @@ package object appconfig {
 
   implicit final class AppConfigOps(private val service: AppConfig) extends AnyVal {
 
-    @inline def createApplicationFuture(params: CreateApplicationRequest): Future[Application] =
-      service.createApplication(params).promise().toFuture
-    @inline def createConfigurationProfileFuture(
-        params: CreateConfigurationProfileRequest
-    ): Future[ConfigurationProfile] = service.createConfigurationProfile(params).promise().toFuture
-    @inline def createDeploymentStrategyFuture(params: CreateDeploymentStrategyRequest): Future[DeploymentStrategy] =
-      service.createDeploymentStrategy(params).promise().toFuture
-    @inline def createEnvironmentFuture(params: CreateEnvironmentRequest): Future[Environment] =
-      service.createEnvironment(params).promise().toFuture
-    @inline def createHostedConfigurationVersionFuture(
-        params: CreateHostedConfigurationVersionRequest
-    ): Future[HostedConfigurationVersion] = service.createHostedConfigurationVersion(params).promise().toFuture
-    @inline def deleteApplicationFuture(params: DeleteApplicationRequest): Future[js.Object] =
-      service.deleteApplication(params).promise().toFuture
-    @inline def deleteConfigurationProfileFuture(params: DeleteConfigurationProfileRequest): Future[js.Object] =
-      service.deleteConfigurationProfile(params).promise().toFuture
-    @inline def deleteDeploymentStrategyFuture(params: DeleteDeploymentStrategyRequest): Future[js.Object] =
-      service.deleteDeploymentStrategy(params).promise().toFuture
-    @inline def deleteEnvironmentFuture(params: DeleteEnvironmentRequest): Future[js.Object] =
-      service.deleteEnvironment(params).promise().toFuture
-    @inline def deleteHostedConfigurationVersionFuture(
-        params: DeleteHostedConfigurationVersionRequest
-    ): Future[js.Object] = service.deleteHostedConfigurationVersion(params).promise().toFuture
-    @inline def getApplicationFuture(params: GetApplicationRequest): Future[Application] =
-      service.getApplication(params).promise().toFuture
-    @inline def getConfigurationFuture(params: GetConfigurationRequest): Future[Configuration] =
-      service.getConfiguration(params).promise().toFuture
-    @inline def getConfigurationProfileFuture(params: GetConfigurationProfileRequest): Future[ConfigurationProfile] =
-      service.getConfigurationProfile(params).promise().toFuture
-    @inline def getDeploymentFuture(params: GetDeploymentRequest): Future[Deployment] =
-      service.getDeployment(params).promise().toFuture
-    @inline def getDeploymentStrategyFuture(params: GetDeploymentStrategyRequest): Future[DeploymentStrategy] =
-      service.getDeploymentStrategy(params).promise().toFuture
-    @inline def getEnvironmentFuture(params: GetEnvironmentRequest): Future[Environment] =
-      service.getEnvironment(params).promise().toFuture
-    @inline def getHostedConfigurationVersionFuture(
-        params: GetHostedConfigurationVersionRequest
-    ): Future[HostedConfigurationVersion] = service.getHostedConfigurationVersion(params).promise().toFuture
-    @inline def listApplicationsFuture(params: ListApplicationsRequest): Future[Applications] =
-      service.listApplications(params).promise().toFuture
-    @inline def listConfigurationProfilesFuture(
-        params: ListConfigurationProfilesRequest
-    ): Future[ConfigurationProfiles] = service.listConfigurationProfiles(params).promise().toFuture
-    @inline def listDeploymentStrategiesFuture(params: ListDeploymentStrategiesRequest): Future[DeploymentStrategies] =
-      service.listDeploymentStrategies(params).promise().toFuture
-    @inline def listDeploymentsFuture(params: ListDeploymentsRequest): Future[Deployments] =
-      service.listDeployments(params).promise().toFuture
-    @inline def listEnvironmentsFuture(params: ListEnvironmentsRequest): Future[Environments] =
-      service.listEnvironments(params).promise().toFuture
-    @inline def listHostedConfigurationVersionsFuture(
-        params: ListHostedConfigurationVersionsRequest
-    ): Future[HostedConfigurationVersions] = service.listHostedConfigurationVersions(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ResourceTags] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def startDeploymentFuture(params: StartDeploymentRequest): Future[Deployment] =
-      service.startDeployment(params).promise().toFuture
-    @inline def stopDeploymentFuture(params: StopDeploymentRequest): Future[Deployment] =
-      service.stopDeployment(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[Application] =
-      service.updateApplication(params).promise().toFuture
-    @inline def updateConfigurationProfileFuture(
-        params: UpdateConfigurationProfileRequest
-    ): Future[ConfigurationProfile] = service.updateConfigurationProfile(params).promise().toFuture
-    @inline def updateDeploymentStrategyFuture(params: UpdateDeploymentStrategyRequest): Future[DeploymentStrategy] =
-      service.updateDeploymentStrategy(params).promise().toFuture
-    @inline def updateEnvironmentFuture(params: UpdateEnvironmentRequest): Future[Environment] =
-      service.updateEnvironment(params).promise().toFuture
-    @inline def validateConfigurationFuture(params: ValidateConfigurationRequest): Future[js.Object] =
-      service.validateConfiguration(params).promise().toFuture
+    @inline def createApplicationFuture(params: CreateApplicationRequest): Future[Application] = service.createApplication(params).promise().toFuture
+    @inline def createConfigurationProfileFuture(params: CreateConfigurationProfileRequest): Future[ConfigurationProfile] = service.createConfigurationProfile(params).promise().toFuture
+    @inline def createDeploymentStrategyFuture(params: CreateDeploymentStrategyRequest): Future[DeploymentStrategy] = service.createDeploymentStrategy(params).promise().toFuture
+    @inline def createEnvironmentFuture(params: CreateEnvironmentRequest): Future[Environment] = service.createEnvironment(params).promise().toFuture
+    @inline def createHostedConfigurationVersionFuture(params: CreateHostedConfigurationVersionRequest): Future[HostedConfigurationVersion] = service.createHostedConfigurationVersion(params).promise().toFuture
+    @inline def deleteApplicationFuture(params: DeleteApplicationRequest): Future[js.Object] = service.deleteApplication(params).promise().toFuture
+    @inline def deleteConfigurationProfileFuture(params: DeleteConfigurationProfileRequest): Future[js.Object] = service.deleteConfigurationProfile(params).promise().toFuture
+    @inline def deleteDeploymentStrategyFuture(params: DeleteDeploymentStrategyRequest): Future[js.Object] = service.deleteDeploymentStrategy(params).promise().toFuture
+    @inline def deleteEnvironmentFuture(params: DeleteEnvironmentRequest): Future[js.Object] = service.deleteEnvironment(params).promise().toFuture
+    @inline def deleteHostedConfigurationVersionFuture(params: DeleteHostedConfigurationVersionRequest): Future[js.Object] = service.deleteHostedConfigurationVersion(params).promise().toFuture
+    @inline def getApplicationFuture(params: GetApplicationRequest): Future[Application] = service.getApplication(params).promise().toFuture
+    @inline def getConfigurationFuture(params: GetConfigurationRequest): Future[Configuration] = service.getConfiguration(params).promise().toFuture
+    @inline def getConfigurationProfileFuture(params: GetConfigurationProfileRequest): Future[ConfigurationProfile] = service.getConfigurationProfile(params).promise().toFuture
+    @inline def getDeploymentFuture(params: GetDeploymentRequest): Future[Deployment] = service.getDeployment(params).promise().toFuture
+    @inline def getDeploymentStrategyFuture(params: GetDeploymentStrategyRequest): Future[DeploymentStrategy] = service.getDeploymentStrategy(params).promise().toFuture
+    @inline def getEnvironmentFuture(params: GetEnvironmentRequest): Future[Environment] = service.getEnvironment(params).promise().toFuture
+    @inline def getHostedConfigurationVersionFuture(params: GetHostedConfigurationVersionRequest): Future[HostedConfigurationVersion] = service.getHostedConfigurationVersion(params).promise().toFuture
+    @inline def listApplicationsFuture(params: ListApplicationsRequest): Future[Applications] = service.listApplications(params).promise().toFuture
+    @inline def listConfigurationProfilesFuture(params: ListConfigurationProfilesRequest): Future[ConfigurationProfiles] = service.listConfigurationProfiles(params).promise().toFuture
+    @inline def listDeploymentStrategiesFuture(params: ListDeploymentStrategiesRequest): Future[DeploymentStrategies] = service.listDeploymentStrategies(params).promise().toFuture
+    @inline def listDeploymentsFuture(params: ListDeploymentsRequest): Future[Deployments] = service.listDeployments(params).promise().toFuture
+    @inline def listEnvironmentsFuture(params: ListEnvironmentsRequest): Future[Environments] = service.listEnvironments(params).promise().toFuture
+    @inline def listHostedConfigurationVersionsFuture(params: ListHostedConfigurationVersionsRequest): Future[HostedConfigurationVersions] = service.listHostedConfigurationVersions(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ResourceTags] = service.listTagsForResource(params).promise().toFuture
+    @inline def startDeploymentFuture(params: StartDeploymentRequest): Future[Deployment] = service.startDeployment(params).promise().toFuture
+    @inline def stopDeploymentFuture(params: StopDeploymentRequest): Future[Deployment] = service.stopDeployment(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
+    @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[Application] = service.updateApplication(params).promise().toFuture
+    @inline def updateConfigurationProfileFuture(params: UpdateConfigurationProfileRequest): Future[ConfigurationProfile] = service.updateConfigurationProfile(params).promise().toFuture
+    @inline def updateDeploymentStrategyFuture(params: UpdateDeploymentStrategyRequest): Future[DeploymentStrategy] = service.updateDeploymentStrategy(params).promise().toFuture
+    @inline def updateEnvironmentFuture(params: UpdateEnvironmentRequest): Future[Environment] = service.updateEnvironment(params).promise().toFuture
+    @inline def validateConfigurationFuture(params: ValidateConfigurationRequest): Future[js.Object] = service.validateConfiguration(params).promise().toFuture
   }
 }
 
@@ -128,32 +88,25 @@ package appconfig {
     def createConfigurationProfile(params: CreateConfigurationProfileRequest): Request[ConfigurationProfile] = js.native
     def createDeploymentStrategy(params: CreateDeploymentStrategyRequest): Request[DeploymentStrategy] = js.native
     def createEnvironment(params: CreateEnvironmentRequest): Request[Environment] = js.native
-    def createHostedConfigurationVersion(
-        params: CreateHostedConfigurationVersionRequest
-    ): Request[HostedConfigurationVersion] = js.native
+    def createHostedConfigurationVersion(params: CreateHostedConfigurationVersionRequest): Request[HostedConfigurationVersion] = js.native
     def deleteApplication(params: DeleteApplicationRequest): Request[js.Object] = js.native
     def deleteConfigurationProfile(params: DeleteConfigurationProfileRequest): Request[js.Object] = js.native
     def deleteDeploymentStrategy(params: DeleteDeploymentStrategyRequest): Request[js.Object] = js.native
     def deleteEnvironment(params: DeleteEnvironmentRequest): Request[js.Object] = js.native
-    def deleteHostedConfigurationVersion(params: DeleteHostedConfigurationVersionRequest): Request[js.Object] =
-      js.native
+    def deleteHostedConfigurationVersion(params: DeleteHostedConfigurationVersionRequest): Request[js.Object] = js.native
     def getApplication(params: GetApplicationRequest): Request[Application] = js.native
     def getConfiguration(params: GetConfigurationRequest): Request[Configuration] = js.native
     def getConfigurationProfile(params: GetConfigurationProfileRequest): Request[ConfigurationProfile] = js.native
     def getDeployment(params: GetDeploymentRequest): Request[Deployment] = js.native
     def getDeploymentStrategy(params: GetDeploymentStrategyRequest): Request[DeploymentStrategy] = js.native
     def getEnvironment(params: GetEnvironmentRequest): Request[Environment] = js.native
-    def getHostedConfigurationVersion(
-        params: GetHostedConfigurationVersionRequest
-    ): Request[HostedConfigurationVersion] = js.native
+    def getHostedConfigurationVersion(params: GetHostedConfigurationVersionRequest): Request[HostedConfigurationVersion] = js.native
     def listApplications(params: ListApplicationsRequest): Request[Applications] = js.native
     def listConfigurationProfiles(params: ListConfigurationProfilesRequest): Request[ConfigurationProfiles] = js.native
     def listDeploymentStrategies(params: ListDeploymentStrategiesRequest): Request[DeploymentStrategies] = js.native
     def listDeployments(params: ListDeploymentsRequest): Request[Deployments] = js.native
     def listEnvironments(params: ListEnvironmentsRequest): Request[Environments] = js.native
-    def listHostedConfigurationVersions(
-        params: ListHostedConfigurationVersionsRequest
-    ): Request[HostedConfigurationVersions] = js.native
+    def listHostedConfigurationVersions(params: ListHostedConfigurationVersionsRequest): Request[HostedConfigurationVersions] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ResourceTags] = js.native
     def startDeployment(params: StartDeploymentRequest): Request[Deployment] = js.native
     def stopDeployment(params: StopDeploymentRequest): Request[Deployment] = js.native
@@ -628,9 +581,7 @@ package appconfig {
       ConfigurationName.foreach(__v => __obj.updateDynamic("ConfigurationName")(__v.asInstanceOf[js.Any]))
       ConfigurationProfileId.foreach(__v => __obj.updateDynamic("ConfigurationProfileId")(__v.asInstanceOf[js.Any]))
       ConfigurationVersion.foreach(__v => __obj.updateDynamic("ConfigurationVersion")(__v.asInstanceOf[js.Any]))
-      DeploymentDurationInMinutes.foreach(__v =>
-        __obj.updateDynamic("DeploymentDurationInMinutes")(__v.asInstanceOf[js.Any])
-      )
+      DeploymentDurationInMinutes.foreach(__v => __obj.updateDynamic("DeploymentDurationInMinutes")(__v.asInstanceOf[js.Any]))
       DeploymentNumber.foreach(__v => __obj.updateDynamic("DeploymentNumber")(__v.asInstanceOf[js.Any]))
       DeploymentStrategyId.foreach(__v => __obj.updateDynamic("DeploymentStrategyId")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -684,16 +635,7 @@ package appconfig {
     val DEPLOYMENT_STARTED = "DEPLOYMENT_STARTED".asInstanceOf[DeploymentEventType]
     val DEPLOYMENT_COMPLETED = "DEPLOYMENT_COMPLETED".asInstanceOf[DeploymentEventType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        PERCENTAGE_UPDATED,
-        ROLLBACK_STARTED,
-        ROLLBACK_COMPLETED,
-        BAKE_TIME_STARTED,
-        DEPLOYMENT_STARTED,
-        DEPLOYMENT_COMPLETED
-      )
-    )
+    val values = js.Object.freeze(js.Array(PERCENTAGE_UPDATED, ROLLBACK_STARTED, ROLLBACK_COMPLETED, BAKE_TIME_STARTED, DEPLOYMENT_STARTED, DEPLOYMENT_COMPLETED))
   }
 
   @js.native
@@ -753,9 +695,7 @@ package appconfig {
         ReplicateTo: js.UndefOr[ReplicateTo] = js.undefined
     ): DeploymentStrategy = {
       val __obj = js.Dynamic.literal()
-      DeploymentDurationInMinutes.foreach(__v =>
-        __obj.updateDynamic("DeploymentDurationInMinutes")(__v.asInstanceOf[js.Any])
-      )
+      DeploymentDurationInMinutes.foreach(__v => __obj.updateDynamic("DeploymentDurationInMinutes")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       FinalBakeTimeInMinutes.foreach(__v => __obj.updateDynamic("FinalBakeTimeInMinutes")(__v.asInstanceOf[js.Any]))
       GrowthFactor.foreach(__v => __obj.updateDynamic("GrowthFactor")(__v.asInstanceOf[js.Any]))
@@ -804,9 +744,7 @@ package appconfig {
       CompletedAt.foreach(__v => __obj.updateDynamic("CompletedAt")(__v.asInstanceOf[js.Any]))
       ConfigurationName.foreach(__v => __obj.updateDynamic("ConfigurationName")(__v.asInstanceOf[js.Any]))
       ConfigurationVersion.foreach(__v => __obj.updateDynamic("ConfigurationVersion")(__v.asInstanceOf[js.Any]))
-      DeploymentDurationInMinutes.foreach(__v =>
-        __obj.updateDynamic("DeploymentDurationInMinutes")(__v.asInstanceOf[js.Any])
-      )
+      DeploymentDurationInMinutes.foreach(__v => __obj.updateDynamic("DeploymentDurationInMinutes")(__v.asInstanceOf[js.Any]))
       DeploymentNumber.foreach(__v => __obj.updateDynamic("DeploymentNumber")(__v.asInstanceOf[js.Any]))
       FinalBakeTimeInMinutes.foreach(__v => __obj.updateDynamic("FinalBakeTimeInMinutes")(__v.asInstanceOf[js.Any]))
       GrowthFactor.foreach(__v => __obj.updateDynamic("GrowthFactor")(__v.asInstanceOf[js.Any]))
@@ -962,9 +900,7 @@ package appconfig {
         "Environment" -> Environment.asInstanceOf[js.Any]
       )
 
-      ClientConfigurationVersion.foreach(__v =>
-        __obj.updateDynamic("ClientConfigurationVersion")(__v.asInstanceOf[js.Any])
-      )
+      ClientConfigurationVersion.foreach(__v => __obj.updateDynamic("ClientConfigurationVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetConfigurationRequest]
     }
   }
@@ -1545,9 +1481,7 @@ package appconfig {
         "DeploymentStrategyId" -> DeploymentStrategyId.asInstanceOf[js.Any]
       )
 
-      DeploymentDurationInMinutes.foreach(__v =>
-        __obj.updateDynamic("DeploymentDurationInMinutes")(__v.asInstanceOf[js.Any])
-      )
+      DeploymentDurationInMinutes.foreach(__v => __obj.updateDynamic("DeploymentDurationInMinutes")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       FinalBakeTimeInMinutes.foreach(__v => __obj.updateDynamic("FinalBakeTimeInMinutes")(__v.asInstanceOf[js.Any]))
       GrowthFactor.foreach(__v => __obj.updateDynamic("GrowthFactor")(__v.asInstanceOf[js.Any]))

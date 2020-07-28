@@ -44,103 +44,39 @@ package object worklink {
 
   implicit final class WorkLinkOps(private val service: WorkLink) extends AnyVal {
 
-    @inline def associateDomainFuture(params: AssociateDomainRequest): Future[AssociateDomainResponse] =
-      service.associateDomain(params).promise().toFuture
-    @inline def associateWebsiteAuthorizationProviderFuture(
-        params: AssociateWebsiteAuthorizationProviderRequest
-    ): Future[AssociateWebsiteAuthorizationProviderResponse] =
-      service.associateWebsiteAuthorizationProvider(params).promise().toFuture
-    @inline def associateWebsiteCertificateAuthorityFuture(
-        params: AssociateWebsiteCertificateAuthorityRequest
-    ): Future[AssociateWebsiteCertificateAuthorityResponse] =
-      service.associateWebsiteCertificateAuthority(params).promise().toFuture
-    @inline def createFleetFuture(params: CreateFleetRequest): Future[CreateFleetResponse] =
-      service.createFleet(params).promise().toFuture
-    @inline def deleteFleetFuture(params: DeleteFleetRequest): Future[DeleteFleetResponse] =
-      service.deleteFleet(params).promise().toFuture
-    @inline def describeAuditStreamConfigurationFuture(
-        params: DescribeAuditStreamConfigurationRequest
-    ): Future[DescribeAuditStreamConfigurationResponse] =
-      service.describeAuditStreamConfiguration(params).promise().toFuture
-    @inline def describeCompanyNetworkConfigurationFuture(
-        params: DescribeCompanyNetworkConfigurationRequest
-    ): Future[DescribeCompanyNetworkConfigurationResponse] =
-      service.describeCompanyNetworkConfiguration(params).promise().toFuture
-    @inline def describeDeviceFuture(params: DescribeDeviceRequest): Future[DescribeDeviceResponse] =
-      service.describeDevice(params).promise().toFuture
-    @inline def describeDevicePolicyConfigurationFuture(
-        params: DescribeDevicePolicyConfigurationRequest
-    ): Future[DescribeDevicePolicyConfigurationResponse] =
-      service.describeDevicePolicyConfiguration(params).promise().toFuture
-    @inline def describeDomainFuture(params: DescribeDomainRequest): Future[DescribeDomainResponse] =
-      service.describeDomain(params).promise().toFuture
-    @inline def describeFleetMetadataFuture(
-        params: DescribeFleetMetadataRequest
-    ): Future[DescribeFleetMetadataResponse] = service.describeFleetMetadata(params).promise().toFuture
-    @inline def describeIdentityProviderConfigurationFuture(
-        params: DescribeIdentityProviderConfigurationRequest
-    ): Future[DescribeIdentityProviderConfigurationResponse] =
-      service.describeIdentityProviderConfiguration(params).promise().toFuture
-    @inline def describeWebsiteCertificateAuthorityFuture(
-        params: DescribeWebsiteCertificateAuthorityRequest
-    ): Future[DescribeWebsiteCertificateAuthorityResponse] =
-      service.describeWebsiteCertificateAuthority(params).promise().toFuture
-    @inline def disassociateDomainFuture(params: DisassociateDomainRequest): Future[DisassociateDomainResponse] =
-      service.disassociateDomain(params).promise().toFuture
-    @inline def disassociateWebsiteAuthorizationProviderFuture(
-        params: DisassociateWebsiteAuthorizationProviderRequest
-    ): Future[DisassociateWebsiteAuthorizationProviderResponse] =
-      service.disassociateWebsiteAuthorizationProvider(params).promise().toFuture
-    @inline def disassociateWebsiteCertificateAuthorityFuture(
-        params: DisassociateWebsiteCertificateAuthorityRequest
-    ): Future[DisassociateWebsiteCertificateAuthorityResponse] =
-      service.disassociateWebsiteCertificateAuthority(params).promise().toFuture
-    @inline def listDevicesFuture(params: ListDevicesRequest): Future[ListDevicesResponse] =
-      service.listDevices(params).promise().toFuture
-    @inline def listDomainsFuture(params: ListDomainsRequest): Future[ListDomainsResponse] =
-      service.listDomains(params).promise().toFuture
-    @inline def listFleetsFuture(params: ListFleetsRequest): Future[ListFleetsResponse] =
-      service.listFleets(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listWebsiteAuthorizationProvidersFuture(
-        params: ListWebsiteAuthorizationProvidersRequest
-    ): Future[ListWebsiteAuthorizationProvidersResponse] =
-      service.listWebsiteAuthorizationProviders(params).promise().toFuture
-    @inline def listWebsiteCertificateAuthoritiesFuture(
-        params: ListWebsiteCertificateAuthoritiesRequest
-    ): Future[ListWebsiteCertificateAuthoritiesResponse] =
-      service.listWebsiteCertificateAuthorities(params).promise().toFuture
-    @inline def restoreDomainAccessFuture(params: RestoreDomainAccessRequest): Future[RestoreDomainAccessResponse] =
-      service.restoreDomainAccess(params).promise().toFuture
-    @inline def revokeDomainAccessFuture(params: RevokeDomainAccessRequest): Future[RevokeDomainAccessResponse] =
-      service.revokeDomainAccess(params).promise().toFuture
-    @inline def signOutUserFuture(params: SignOutUserRequest): Future[SignOutUserResponse] =
-      service.signOutUser(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateAuditStreamConfigurationFuture(
-        params: UpdateAuditStreamConfigurationRequest
-    ): Future[UpdateAuditStreamConfigurationResponse] =
-      service.updateAuditStreamConfiguration(params).promise().toFuture
-    @inline def updateCompanyNetworkConfigurationFuture(
-        params: UpdateCompanyNetworkConfigurationRequest
-    ): Future[UpdateCompanyNetworkConfigurationResponse] =
-      service.updateCompanyNetworkConfiguration(params).promise().toFuture
-    @inline def updateDevicePolicyConfigurationFuture(
-        params: UpdateDevicePolicyConfigurationRequest
-    ): Future[UpdateDevicePolicyConfigurationResponse] =
-      service.updateDevicePolicyConfiguration(params).promise().toFuture
-    @inline def updateDomainMetadataFuture(params: UpdateDomainMetadataRequest): Future[UpdateDomainMetadataResponse] =
-      service.updateDomainMetadata(params).promise().toFuture
-    @inline def updateFleetMetadataFuture(params: UpdateFleetMetadataRequest): Future[UpdateFleetMetadataResponse] =
-      service.updateFleetMetadata(params).promise().toFuture
-    @inline def updateIdentityProviderConfigurationFuture(
-        params: UpdateIdentityProviderConfigurationRequest
-    ): Future[UpdateIdentityProviderConfigurationResponse] =
-      service.updateIdentityProviderConfiguration(params).promise().toFuture
+    @inline def associateDomainFuture(params: AssociateDomainRequest): Future[AssociateDomainResponse] = service.associateDomain(params).promise().toFuture
+    @inline def associateWebsiteAuthorizationProviderFuture(params: AssociateWebsiteAuthorizationProviderRequest): Future[AssociateWebsiteAuthorizationProviderResponse] = service.associateWebsiteAuthorizationProvider(params).promise().toFuture
+    @inline def associateWebsiteCertificateAuthorityFuture(params: AssociateWebsiteCertificateAuthorityRequest): Future[AssociateWebsiteCertificateAuthorityResponse] = service.associateWebsiteCertificateAuthority(params).promise().toFuture
+    @inline def createFleetFuture(params: CreateFleetRequest): Future[CreateFleetResponse] = service.createFleet(params).promise().toFuture
+    @inline def deleteFleetFuture(params: DeleteFleetRequest): Future[DeleteFleetResponse] = service.deleteFleet(params).promise().toFuture
+    @inline def describeAuditStreamConfigurationFuture(params: DescribeAuditStreamConfigurationRequest): Future[DescribeAuditStreamConfigurationResponse] = service.describeAuditStreamConfiguration(params).promise().toFuture
+    @inline def describeCompanyNetworkConfigurationFuture(params: DescribeCompanyNetworkConfigurationRequest): Future[DescribeCompanyNetworkConfigurationResponse] = service.describeCompanyNetworkConfiguration(params).promise().toFuture
+    @inline def describeDeviceFuture(params: DescribeDeviceRequest): Future[DescribeDeviceResponse] = service.describeDevice(params).promise().toFuture
+    @inline def describeDevicePolicyConfigurationFuture(params: DescribeDevicePolicyConfigurationRequest): Future[DescribeDevicePolicyConfigurationResponse] = service.describeDevicePolicyConfiguration(params).promise().toFuture
+    @inline def describeDomainFuture(params: DescribeDomainRequest): Future[DescribeDomainResponse] = service.describeDomain(params).promise().toFuture
+    @inline def describeFleetMetadataFuture(params: DescribeFleetMetadataRequest): Future[DescribeFleetMetadataResponse] = service.describeFleetMetadata(params).promise().toFuture
+    @inline def describeIdentityProviderConfigurationFuture(params: DescribeIdentityProviderConfigurationRequest): Future[DescribeIdentityProviderConfigurationResponse] = service.describeIdentityProviderConfiguration(params).promise().toFuture
+    @inline def describeWebsiteCertificateAuthorityFuture(params: DescribeWebsiteCertificateAuthorityRequest): Future[DescribeWebsiteCertificateAuthorityResponse] = service.describeWebsiteCertificateAuthority(params).promise().toFuture
+    @inline def disassociateDomainFuture(params: DisassociateDomainRequest): Future[DisassociateDomainResponse] = service.disassociateDomain(params).promise().toFuture
+    @inline def disassociateWebsiteAuthorizationProviderFuture(params: DisassociateWebsiteAuthorizationProviderRequest): Future[DisassociateWebsiteAuthorizationProviderResponse] = service.disassociateWebsiteAuthorizationProvider(params).promise().toFuture
+    @inline def disassociateWebsiteCertificateAuthorityFuture(params: DisassociateWebsiteCertificateAuthorityRequest): Future[DisassociateWebsiteCertificateAuthorityResponse] = service.disassociateWebsiteCertificateAuthority(params).promise().toFuture
+    @inline def listDevicesFuture(params: ListDevicesRequest): Future[ListDevicesResponse] = service.listDevices(params).promise().toFuture
+    @inline def listDomainsFuture(params: ListDomainsRequest): Future[ListDomainsResponse] = service.listDomains(params).promise().toFuture
+    @inline def listFleetsFuture(params: ListFleetsRequest): Future[ListFleetsResponse] = service.listFleets(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listWebsiteAuthorizationProvidersFuture(params: ListWebsiteAuthorizationProvidersRequest): Future[ListWebsiteAuthorizationProvidersResponse] = service.listWebsiteAuthorizationProviders(params).promise().toFuture
+    @inline def listWebsiteCertificateAuthoritiesFuture(params: ListWebsiteCertificateAuthoritiesRequest): Future[ListWebsiteCertificateAuthoritiesResponse] = service.listWebsiteCertificateAuthorities(params).promise().toFuture
+    @inline def restoreDomainAccessFuture(params: RestoreDomainAccessRequest): Future[RestoreDomainAccessResponse] = service.restoreDomainAccess(params).promise().toFuture
+    @inline def revokeDomainAccessFuture(params: RevokeDomainAccessRequest): Future[RevokeDomainAccessResponse] = service.revokeDomainAccess(params).promise().toFuture
+    @inline def signOutUserFuture(params: SignOutUserRequest): Future[SignOutUserResponse] = service.signOutUser(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateAuditStreamConfigurationFuture(params: UpdateAuditStreamConfigurationRequest): Future[UpdateAuditStreamConfigurationResponse] = service.updateAuditStreamConfiguration(params).promise().toFuture
+    @inline def updateCompanyNetworkConfigurationFuture(params: UpdateCompanyNetworkConfigurationRequest): Future[UpdateCompanyNetworkConfigurationResponse] = service.updateCompanyNetworkConfiguration(params).promise().toFuture
+    @inline def updateDevicePolicyConfigurationFuture(params: UpdateDevicePolicyConfigurationRequest): Future[UpdateDevicePolicyConfigurationResponse] = service.updateDevicePolicyConfiguration(params).promise().toFuture
+    @inline def updateDomainMetadataFuture(params: UpdateDomainMetadataRequest): Future[UpdateDomainMetadataResponse] = service.updateDomainMetadata(params).promise().toFuture
+    @inline def updateFleetMetadataFuture(params: UpdateFleetMetadataRequest): Future[UpdateFleetMetadataResponse] = service.updateFleetMetadata(params).promise().toFuture
+    @inline def updateIdentityProviderConfigurationFuture(params: UpdateIdentityProviderConfigurationRequest): Future[UpdateIdentityProviderConfigurationResponse] = service.updateIdentityProviderConfiguration(params).promise().toFuture
   }
 }
 
@@ -151,68 +87,38 @@ package worklink {
     def this(config: AWSConfig) = this()
 
     def associateDomain(params: AssociateDomainRequest): Request[AssociateDomainResponse] = js.native
-    def associateWebsiteAuthorizationProvider(
-        params: AssociateWebsiteAuthorizationProviderRequest
-    ): Request[AssociateWebsiteAuthorizationProviderResponse] = js.native
-    def associateWebsiteCertificateAuthority(
-        params: AssociateWebsiteCertificateAuthorityRequest
-    ): Request[AssociateWebsiteCertificateAuthorityResponse] = js.native
+    def associateWebsiteAuthorizationProvider(params: AssociateWebsiteAuthorizationProviderRequest): Request[AssociateWebsiteAuthorizationProviderResponse] = js.native
+    def associateWebsiteCertificateAuthority(params: AssociateWebsiteCertificateAuthorityRequest): Request[AssociateWebsiteCertificateAuthorityResponse] = js.native
     def createFleet(params: CreateFleetRequest): Request[CreateFleetResponse] = js.native
     def deleteFleet(params: DeleteFleetRequest): Request[DeleteFleetResponse] = js.native
-    def describeAuditStreamConfiguration(
-        params: DescribeAuditStreamConfigurationRequest
-    ): Request[DescribeAuditStreamConfigurationResponse] = js.native
-    def describeCompanyNetworkConfiguration(
-        params: DescribeCompanyNetworkConfigurationRequest
-    ): Request[DescribeCompanyNetworkConfigurationResponse] = js.native
+    def describeAuditStreamConfiguration(params: DescribeAuditStreamConfigurationRequest): Request[DescribeAuditStreamConfigurationResponse] = js.native
+    def describeCompanyNetworkConfiguration(params: DescribeCompanyNetworkConfigurationRequest): Request[DescribeCompanyNetworkConfigurationResponse] = js.native
     def describeDevice(params: DescribeDeviceRequest): Request[DescribeDeviceResponse] = js.native
-    def describeDevicePolicyConfiguration(
-        params: DescribeDevicePolicyConfigurationRequest
-    ): Request[DescribeDevicePolicyConfigurationResponse] = js.native
+    def describeDevicePolicyConfiguration(params: DescribeDevicePolicyConfigurationRequest): Request[DescribeDevicePolicyConfigurationResponse] = js.native
     def describeDomain(params: DescribeDomainRequest): Request[DescribeDomainResponse] = js.native
     def describeFleetMetadata(params: DescribeFleetMetadataRequest): Request[DescribeFleetMetadataResponse] = js.native
-    def describeIdentityProviderConfiguration(
-        params: DescribeIdentityProviderConfigurationRequest
-    ): Request[DescribeIdentityProviderConfigurationResponse] = js.native
-    def describeWebsiteCertificateAuthority(
-        params: DescribeWebsiteCertificateAuthorityRequest
-    ): Request[DescribeWebsiteCertificateAuthorityResponse] = js.native
+    def describeIdentityProviderConfiguration(params: DescribeIdentityProviderConfigurationRequest): Request[DescribeIdentityProviderConfigurationResponse] = js.native
+    def describeWebsiteCertificateAuthority(params: DescribeWebsiteCertificateAuthorityRequest): Request[DescribeWebsiteCertificateAuthorityResponse] = js.native
     def disassociateDomain(params: DisassociateDomainRequest): Request[DisassociateDomainResponse] = js.native
-    def disassociateWebsiteAuthorizationProvider(
-        params: DisassociateWebsiteAuthorizationProviderRequest
-    ): Request[DisassociateWebsiteAuthorizationProviderResponse] = js.native
-    def disassociateWebsiteCertificateAuthority(
-        params: DisassociateWebsiteCertificateAuthorityRequest
-    ): Request[DisassociateWebsiteCertificateAuthorityResponse] = js.native
+    def disassociateWebsiteAuthorizationProvider(params: DisassociateWebsiteAuthorizationProviderRequest): Request[DisassociateWebsiteAuthorizationProviderResponse] = js.native
+    def disassociateWebsiteCertificateAuthority(params: DisassociateWebsiteCertificateAuthorityRequest): Request[DisassociateWebsiteCertificateAuthorityResponse] = js.native
     def listDevices(params: ListDevicesRequest): Request[ListDevicesResponse] = js.native
     def listDomains(params: ListDomainsRequest): Request[ListDomainsResponse] = js.native
     def listFleets(params: ListFleetsRequest): Request[ListFleetsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def listWebsiteAuthorizationProviders(
-        params: ListWebsiteAuthorizationProvidersRequest
-    ): Request[ListWebsiteAuthorizationProvidersResponse] = js.native
-    def listWebsiteCertificateAuthorities(
-        params: ListWebsiteCertificateAuthoritiesRequest
-    ): Request[ListWebsiteCertificateAuthoritiesResponse] = js.native
+    def listWebsiteAuthorizationProviders(params: ListWebsiteAuthorizationProvidersRequest): Request[ListWebsiteAuthorizationProvidersResponse] = js.native
+    def listWebsiteCertificateAuthorities(params: ListWebsiteCertificateAuthoritiesRequest): Request[ListWebsiteCertificateAuthoritiesResponse] = js.native
     def restoreDomainAccess(params: RestoreDomainAccessRequest): Request[RestoreDomainAccessResponse] = js.native
     def revokeDomainAccess(params: RevokeDomainAccessRequest): Request[RevokeDomainAccessResponse] = js.native
     def signOutUser(params: SignOutUserRequest): Request[SignOutUserResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
-    def updateAuditStreamConfiguration(
-        params: UpdateAuditStreamConfigurationRequest
-    ): Request[UpdateAuditStreamConfigurationResponse] = js.native
-    def updateCompanyNetworkConfiguration(
-        params: UpdateCompanyNetworkConfigurationRequest
-    ): Request[UpdateCompanyNetworkConfigurationResponse] = js.native
-    def updateDevicePolicyConfiguration(
-        params: UpdateDevicePolicyConfigurationRequest
-    ): Request[UpdateDevicePolicyConfigurationResponse] = js.native
+    def updateAuditStreamConfiguration(params: UpdateAuditStreamConfigurationRequest): Request[UpdateAuditStreamConfigurationResponse] = js.native
+    def updateCompanyNetworkConfiguration(params: UpdateCompanyNetworkConfigurationRequest): Request[UpdateCompanyNetworkConfigurationResponse] = js.native
+    def updateDevicePolicyConfiguration(params: UpdateDevicePolicyConfigurationRequest): Request[UpdateDevicePolicyConfigurationResponse] = js.native
     def updateDomainMetadata(params: UpdateDomainMetadataRequest): Request[UpdateDomainMetadataResponse] = js.native
     def updateFleetMetadata(params: UpdateFleetMetadataRequest): Request[UpdateFleetMetadataResponse] = js.native
-    def updateIdentityProviderConfiguration(
-        params: UpdateIdentityProviderConfigurationRequest
-    ): Request[UpdateIdentityProviderConfigurationResponse] = js.native
+    def updateIdentityProviderConfiguration(params: UpdateIdentityProviderConfigurationRequest): Request[UpdateIdentityProviderConfigurationResponse] = js.native
   }
 
   @js.native
@@ -364,9 +270,7 @@ package worklink {
       )
 
       DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
-      OptimizeForEndUserLocation.foreach(__v =>
-        __obj.updateDynamic("OptimizeForEndUserLocation")(__v.asInstanceOf[js.Any])
-      )
+      OptimizeForEndUserLocation.foreach(__v => __obj.updateDynamic("OptimizeForEndUserLocation")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFleetRequest]
     }
@@ -686,9 +590,7 @@ package worklink {
       FleetName.foreach(__v => __obj.updateDynamic("FleetName")(__v.asInstanceOf[js.Any]))
       FleetStatus.foreach(__v => __obj.updateDynamic("FleetStatus")(__v.asInstanceOf[js.Any]))
       LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
-      OptimizeForEndUserLocation.foreach(__v =>
-        __obj.updateDynamic("OptimizeForEndUserLocation")(__v.asInstanceOf[js.Any])
-      )
+      OptimizeForEndUserLocation.foreach(__v => __obj.updateDynamic("OptimizeForEndUserLocation")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeFleetMetadataResponse]
     }
@@ -727,13 +629,9 @@ package worklink {
         ServiceProviderSamlMetadata: js.UndefOr[SamlMetadata] = js.undefined
     ): DescribeIdentityProviderConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-      IdentityProviderSamlMetadata.foreach(__v =>
-        __obj.updateDynamic("IdentityProviderSamlMetadata")(__v.asInstanceOf[js.Any])
-      )
+      IdentityProviderSamlMetadata.foreach(__v => __obj.updateDynamic("IdentityProviderSamlMetadata")(__v.asInstanceOf[js.Any]))
       IdentityProviderType.foreach(__v => __obj.updateDynamic("IdentityProviderType")(__v.asInstanceOf[js.Any]))
-      ServiceProviderSamlMetadata.foreach(__v =>
-        __obj.updateDynamic("ServiceProviderSamlMetadata")(__v.asInstanceOf[js.Any])
-      )
+      ServiceProviderSamlMetadata.foreach(__v => __obj.updateDynamic("ServiceProviderSamlMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeIdentityProviderConfigurationResponse]
     }
   }
@@ -926,18 +824,7 @@ package worklink {
     val FAILED_TO_ASSOCIATE = "FAILED_TO_ASSOCIATE".asInstanceOf[DomainStatus]
     val FAILED_TO_DISASSOCIATE = "FAILED_TO_DISASSOCIATE".asInstanceOf[DomainStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        PENDING_VALIDATION,
-        ASSOCIATING,
-        ACTIVE,
-        INACTIVE,
-        DISASSOCIATING,
-        DISASSOCIATED,
-        FAILED_TO_ASSOCIATE,
-        FAILED_TO_DISASSOCIATE
-      )
-    )
+    val values = js.Object.freeze(js.Array(PENDING_VALIDATION, ASSOCIATING, ACTIVE, INACTIVE, DISASSOCIATING, DISASSOCIATED, FAILED_TO_ASSOCIATE, FAILED_TO_DISASSOCIATE))
   }
 
   /**
@@ -1227,9 +1114,7 @@ package worklink {
     ): ListWebsiteAuthorizationProvidersResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      WebsiteAuthorizationProviders.foreach(__v =>
-        __obj.updateDynamic("WebsiteAuthorizationProviders")(__v.asInstanceOf[js.Any])
-      )
+      WebsiteAuthorizationProviders.foreach(__v => __obj.updateDynamic("WebsiteAuthorizationProviders")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListWebsiteAuthorizationProvidersResponse]
     }
   }
@@ -1272,9 +1157,7 @@ package worklink {
     ): ListWebsiteCertificateAuthoritiesResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      WebsiteCertificateAuthorities.foreach(__v =>
-        __obj.updateDynamic("WebsiteCertificateAuthorities")(__v.asInstanceOf[js.Any])
-      )
+      WebsiteCertificateAuthorities.foreach(__v => __obj.updateDynamic("WebsiteCertificateAuthorities")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListWebsiteCertificateAuthoritiesResponse]
     }
   }
@@ -1613,9 +1496,7 @@ package worklink {
       )
 
       DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
-      OptimizeForEndUserLocation.foreach(__v =>
-        __obj.updateDynamic("OptimizeForEndUserLocation")(__v.asInstanceOf[js.Any])
-      )
+      OptimizeForEndUserLocation.foreach(__v => __obj.updateDynamic("OptimizeForEndUserLocation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFleetMetadataRequest]
     }
   }
@@ -1652,9 +1533,7 @@ package worklink {
         "IdentityProviderType" -> IdentityProviderType.asInstanceOf[js.Any]
       )
 
-      IdentityProviderSamlMetadata.foreach(__v =>
-        __obj.updateDynamic("IdentityProviderSamlMetadata")(__v.asInstanceOf[js.Any])
-      )
+      IdentityProviderSamlMetadata.foreach(__v => __obj.updateDynamic("IdentityProviderSamlMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateIdentityProviderConfigurationRequest]
     }
   }

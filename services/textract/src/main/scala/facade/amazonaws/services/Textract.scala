@@ -41,21 +41,12 @@ package object textract {
 
   implicit final class TextractOps(private val service: Textract) extends AnyVal {
 
-    @inline def analyzeDocumentFuture(params: AnalyzeDocumentRequest): Future[AnalyzeDocumentResponse] =
-      service.analyzeDocument(params).promise().toFuture
-    @inline def detectDocumentTextFuture(params: DetectDocumentTextRequest): Future[DetectDocumentTextResponse] =
-      service.detectDocumentText(params).promise().toFuture
-    @inline def getDocumentAnalysisFuture(params: GetDocumentAnalysisRequest): Future[GetDocumentAnalysisResponse] =
-      service.getDocumentAnalysis(params).promise().toFuture
-    @inline def getDocumentTextDetectionFuture(
-        params: GetDocumentTextDetectionRequest
-    ): Future[GetDocumentTextDetectionResponse] = service.getDocumentTextDetection(params).promise().toFuture
-    @inline def startDocumentAnalysisFuture(
-        params: StartDocumentAnalysisRequest
-    ): Future[StartDocumentAnalysisResponse] = service.startDocumentAnalysis(params).promise().toFuture
-    @inline def startDocumentTextDetectionFuture(
-        params: StartDocumentTextDetectionRequest
-    ): Future[StartDocumentTextDetectionResponse] = service.startDocumentTextDetection(params).promise().toFuture
+    @inline def analyzeDocumentFuture(params: AnalyzeDocumentRequest): Future[AnalyzeDocumentResponse] = service.analyzeDocument(params).promise().toFuture
+    @inline def detectDocumentTextFuture(params: DetectDocumentTextRequest): Future[DetectDocumentTextResponse] = service.detectDocumentText(params).promise().toFuture
+    @inline def getDocumentAnalysisFuture(params: GetDocumentAnalysisRequest): Future[GetDocumentAnalysisResponse] = service.getDocumentAnalysis(params).promise().toFuture
+    @inline def getDocumentTextDetectionFuture(params: GetDocumentTextDetectionRequest): Future[GetDocumentTextDetectionResponse] = service.getDocumentTextDetection(params).promise().toFuture
+    @inline def startDocumentAnalysisFuture(params: StartDocumentAnalysisRequest): Future[StartDocumentAnalysisResponse] = service.startDocumentAnalysis(params).promise().toFuture
+    @inline def startDocumentTextDetectionFuture(params: StartDocumentTextDetectionRequest): Future[StartDocumentTextDetectionResponse] = service.startDocumentTextDetection(params).promise().toFuture
   }
 }
 
@@ -68,12 +59,9 @@ package textract {
     def analyzeDocument(params: AnalyzeDocumentRequest): Request[AnalyzeDocumentResponse] = js.native
     def detectDocumentText(params: DetectDocumentTextRequest): Request[DetectDocumentTextResponse] = js.native
     def getDocumentAnalysis(params: GetDocumentAnalysisRequest): Request[GetDocumentAnalysisResponse] = js.native
-    def getDocumentTextDetection(params: GetDocumentTextDetectionRequest): Request[GetDocumentTextDetectionResponse] =
-      js.native
+    def getDocumentTextDetection(params: GetDocumentTextDetectionRequest): Request[GetDocumentTextDetectionResponse] = js.native
     def startDocumentAnalysis(params: StartDocumentAnalysisRequest): Request[StartDocumentAnalysisResponse] = js.native
-    def startDocumentTextDetection(
-        params: StartDocumentTextDetectionRequest
-    ): Request[StartDocumentTextDetectionResponse] = js.native
+    def startDocumentTextDetection(params: StartDocumentTextDetectionRequest): Request[StartDocumentTextDetectionResponse] = js.native
   }
 
   @js.native
@@ -117,14 +105,10 @@ package textract {
         HumanLoopActivationOutput: js.UndefOr[HumanLoopActivationOutput] = js.undefined
     ): AnalyzeDocumentResponse = {
       val __obj = js.Dynamic.literal()
-      AnalyzeDocumentModelVersion.foreach(__v =>
-        __obj.updateDynamic("AnalyzeDocumentModelVersion")(__v.asInstanceOf[js.Any])
-      )
+      AnalyzeDocumentModelVersion.foreach(__v => __obj.updateDynamic("AnalyzeDocumentModelVersion")(__v.asInstanceOf[js.Any]))
       Blocks.foreach(__v => __obj.updateDynamic("Blocks")(__v.asInstanceOf[js.Any]))
       DocumentMetadata.foreach(__v => __obj.updateDynamic("DocumentMetadata")(__v.asInstanceOf[js.Any]))
-      HumanLoopActivationOutput.foreach(__v =>
-        __obj.updateDynamic("HumanLoopActivationOutput")(__v.asInstanceOf[js.Any])
-      )
+      HumanLoopActivationOutput.foreach(__v => __obj.updateDynamic("HumanLoopActivationOutput")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AnalyzeDocumentResponse]
     }
   }
@@ -233,8 +217,7 @@ package textract {
   @js.native
   sealed trait ContentClassifier extends js.Any
   object ContentClassifier extends js.Object {
-    val FreeOfPersonallyIdentifiableInformation =
-      "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
+    val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
     val FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
 
     val values = js.Object.freeze(js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent))
@@ -274,9 +257,7 @@ package textract {
     ): DetectDocumentTextResponse = {
       val __obj = js.Dynamic.literal()
       Blocks.foreach(__v => __obj.updateDynamic("Blocks")(__v.asInstanceOf[js.Any]))
-      DetectDocumentTextModelVersion.foreach(__v =>
-        __obj.updateDynamic("DetectDocumentTextModelVersion")(__v.asInstanceOf[js.Any])
-      )
+      DetectDocumentTextModelVersion.foreach(__v => __obj.updateDynamic("DetectDocumentTextModelVersion")(__v.asInstanceOf[js.Any]))
       DocumentMetadata.foreach(__v => __obj.updateDynamic("DocumentMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectDocumentTextResponse]
     }
@@ -435,9 +416,7 @@ package textract {
         Warnings: js.UndefOr[Warnings] = js.undefined
     ): GetDocumentAnalysisResponse = {
       val __obj = js.Dynamic.literal()
-      AnalyzeDocumentModelVersion.foreach(__v =>
-        __obj.updateDynamic("AnalyzeDocumentModelVersion")(__v.asInstanceOf[js.Any])
-      )
+      AnalyzeDocumentModelVersion.foreach(__v => __obj.updateDynamic("AnalyzeDocumentModelVersion")(__v.asInstanceOf[js.Any]))
       Blocks.foreach(__v => __obj.updateDynamic("Blocks")(__v.asInstanceOf[js.Any]))
       DocumentMetadata.foreach(__v => __obj.updateDynamic("DocumentMetadata")(__v.asInstanceOf[js.Any]))
       JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
@@ -496,9 +475,7 @@ package textract {
     ): GetDocumentTextDetectionResponse = {
       val __obj = js.Dynamic.literal()
       Blocks.foreach(__v => __obj.updateDynamic("Blocks")(__v.asInstanceOf[js.Any]))
-      DetectDocumentTextModelVersion.foreach(__v =>
-        __obj.updateDynamic("DetectDocumentTextModelVersion")(__v.asInstanceOf[js.Any])
-      )
+      DetectDocumentTextModelVersion.foreach(__v => __obj.updateDynamic("DetectDocumentTextModelVersion")(__v.asInstanceOf[js.Any]))
       DocumentMetadata.foreach(__v => __obj.updateDynamic("DocumentMetadata")(__v.asInstanceOf[js.Any]))
       JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
@@ -521,18 +498,13 @@ package textract {
   object HumanLoopActivationOutput {
     @inline
     def apply(
-        HumanLoopActivationConditionsEvaluationResults: js.UndefOr[HumanLoopActivationConditionsEvaluationResults] =
-          js.undefined,
+        HumanLoopActivationConditionsEvaluationResults: js.UndefOr[HumanLoopActivationConditionsEvaluationResults] = js.undefined,
         HumanLoopActivationReasons: js.UndefOr[HumanLoopActivationReasons] = js.undefined,
         HumanLoopArn: js.UndefOr[HumanLoopArn] = js.undefined
     ): HumanLoopActivationOutput = {
       val __obj = js.Dynamic.literal()
-      HumanLoopActivationConditionsEvaluationResults.foreach(__v =>
-        __obj.updateDynamic("HumanLoopActivationConditionsEvaluationResults")(__v.asInstanceOf[js.Any])
-      )
-      HumanLoopActivationReasons.foreach(__v =>
-        __obj.updateDynamic("HumanLoopActivationReasons")(__v.asInstanceOf[js.Any])
-      )
+      HumanLoopActivationConditionsEvaluationResults.foreach(__v => __obj.updateDynamic("HumanLoopActivationConditionsEvaluationResults")(__v.asInstanceOf[js.Any]))
+      HumanLoopActivationReasons.foreach(__v => __obj.updateDynamic("HumanLoopActivationReasons")(__v.asInstanceOf[js.Any]))
       HumanLoopArn.foreach(__v => __obj.updateDynamic("HumanLoopArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HumanLoopActivationOutput]
     }

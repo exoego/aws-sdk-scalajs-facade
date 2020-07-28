@@ -43,33 +43,16 @@ package object codegurureviewer {
 
   implicit final class CodeGuruReviewerOps(private val service: CodeGuruReviewer) extends AnyVal {
 
-    @inline def associateRepositoryFuture(params: AssociateRepositoryRequest): Future[AssociateRepositoryResponse] =
-      service.associateRepository(params).promise().toFuture
-    @inline def describeCodeReviewFuture(params: DescribeCodeReviewRequest): Future[DescribeCodeReviewResponse] =
-      service.describeCodeReview(params).promise().toFuture
-    @inline def describeRecommendationFeedbackFuture(
-        params: DescribeRecommendationFeedbackRequest
-    ): Future[DescribeRecommendationFeedbackResponse] =
-      service.describeRecommendationFeedback(params).promise().toFuture
-    @inline def describeRepositoryAssociationFuture(
-        params: DescribeRepositoryAssociationRequest
-    ): Future[DescribeRepositoryAssociationResponse] = service.describeRepositoryAssociation(params).promise().toFuture
-    @inline def disassociateRepositoryFuture(
-        params: DisassociateRepositoryRequest
-    ): Future[DisassociateRepositoryResponse] = service.disassociateRepository(params).promise().toFuture
-    @inline def listCodeReviewsFuture(params: ListCodeReviewsRequest): Future[ListCodeReviewsResponse] =
-      service.listCodeReviews(params).promise().toFuture
-    @inline def listRecommendationFeedbackFuture(
-        params: ListRecommendationFeedbackRequest
-    ): Future[ListRecommendationFeedbackResponse] = service.listRecommendationFeedback(params).promise().toFuture
-    @inline def listRecommendationsFuture(params: ListRecommendationsRequest): Future[ListRecommendationsResponse] =
-      service.listRecommendations(params).promise().toFuture
-    @inline def listRepositoryAssociationsFuture(
-        params: ListRepositoryAssociationsRequest
-    ): Future[ListRepositoryAssociationsResponse] = service.listRepositoryAssociations(params).promise().toFuture
-    @inline def putRecommendationFeedbackFuture(
-        params: PutRecommendationFeedbackRequest
-    ): Future[PutRecommendationFeedbackResponse] = service.putRecommendationFeedback(params).promise().toFuture
+    @inline def associateRepositoryFuture(params: AssociateRepositoryRequest): Future[AssociateRepositoryResponse] = service.associateRepository(params).promise().toFuture
+    @inline def describeCodeReviewFuture(params: DescribeCodeReviewRequest): Future[DescribeCodeReviewResponse] = service.describeCodeReview(params).promise().toFuture
+    @inline def describeRecommendationFeedbackFuture(params: DescribeRecommendationFeedbackRequest): Future[DescribeRecommendationFeedbackResponse] = service.describeRecommendationFeedback(params).promise().toFuture
+    @inline def describeRepositoryAssociationFuture(params: DescribeRepositoryAssociationRequest): Future[DescribeRepositoryAssociationResponse] = service.describeRepositoryAssociation(params).promise().toFuture
+    @inline def disassociateRepositoryFuture(params: DisassociateRepositoryRequest): Future[DisassociateRepositoryResponse] = service.disassociateRepository(params).promise().toFuture
+    @inline def listCodeReviewsFuture(params: ListCodeReviewsRequest): Future[ListCodeReviewsResponse] = service.listCodeReviews(params).promise().toFuture
+    @inline def listRecommendationFeedbackFuture(params: ListRecommendationFeedbackRequest): Future[ListRecommendationFeedbackResponse] = service.listRecommendationFeedback(params).promise().toFuture
+    @inline def listRecommendationsFuture(params: ListRecommendationsRequest): Future[ListRecommendationsResponse] = service.listRecommendations(params).promise().toFuture
+    @inline def listRepositoryAssociationsFuture(params: ListRepositoryAssociationsRequest): Future[ListRepositoryAssociationsResponse] = service.listRepositoryAssociations(params).promise().toFuture
+    @inline def putRecommendationFeedbackFuture(params: PutRecommendationFeedbackRequest): Future[PutRecommendationFeedbackResponse] = service.putRecommendationFeedback(params).promise().toFuture
   }
 }
 
@@ -81,25 +64,14 @@ package codegurureviewer {
 
     def associateRepository(params: AssociateRepositoryRequest): Request[AssociateRepositoryResponse] = js.native
     def describeCodeReview(params: DescribeCodeReviewRequest): Request[DescribeCodeReviewResponse] = js.native
-    def describeRecommendationFeedback(
-        params: DescribeRecommendationFeedbackRequest
-    ): Request[DescribeRecommendationFeedbackResponse] = js.native
-    def describeRepositoryAssociation(
-        params: DescribeRepositoryAssociationRequest
-    ): Request[DescribeRepositoryAssociationResponse] = js.native
-    def disassociateRepository(params: DisassociateRepositoryRequest): Request[DisassociateRepositoryResponse] =
-      js.native
+    def describeRecommendationFeedback(params: DescribeRecommendationFeedbackRequest): Request[DescribeRecommendationFeedbackResponse] = js.native
+    def describeRepositoryAssociation(params: DescribeRepositoryAssociationRequest): Request[DescribeRepositoryAssociationResponse] = js.native
+    def disassociateRepository(params: DisassociateRepositoryRequest): Request[DisassociateRepositoryResponse] = js.native
     def listCodeReviews(params: ListCodeReviewsRequest): Request[ListCodeReviewsResponse] = js.native
-    def listRecommendationFeedback(
-        params: ListRecommendationFeedbackRequest
-    ): Request[ListRecommendationFeedbackResponse] = js.native
+    def listRecommendationFeedback(params: ListRecommendationFeedbackRequest): Request[ListRecommendationFeedbackResponse] = js.native
     def listRecommendations(params: ListRecommendationsRequest): Request[ListRecommendationsResponse] = js.native
-    def listRepositoryAssociations(
-        params: ListRepositoryAssociationsRequest
-    ): Request[ListRepositoryAssociationsResponse] = js.native
-    def putRecommendationFeedback(
-        params: PutRecommendationFeedbackRequest
-    ): Request[PutRecommendationFeedbackResponse] = js.native
+    def listRepositoryAssociations(params: ListRepositoryAssociationsRequest): Request[ListRepositoryAssociationsResponse] = js.native
+    def putRecommendationFeedback(params: PutRecommendationFeedbackRequest): Request[PutRecommendationFeedbackResponse] = js.native
   }
 
   @js.native
@@ -535,9 +507,7 @@ package codegurureviewer {
     ): ListRecommendationFeedbackResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      RecommendationFeedbackSummaries.foreach(__v =>
-        __obj.updateDynamic("RecommendationFeedbackSummaries")(__v.asInstanceOf[js.Any])
-      )
+      RecommendationFeedbackSummaries.foreach(__v => __obj.updateDynamic("RecommendationFeedbackSummaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRecommendationFeedbackResponse]
     }
   }
@@ -630,9 +600,7 @@ package codegurureviewer {
     ): ListRepositoryAssociationsResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      RepositoryAssociationSummaries.foreach(__v =>
-        __obj.updateDynamic("RepositoryAssociationSummaries")(__v.asInstanceOf[js.Any])
-      )
+      RepositoryAssociationSummaries.foreach(__v => __obj.updateDynamic("RepositoryAssociationSummaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRepositoryAssociationsResponse]
     }
   }

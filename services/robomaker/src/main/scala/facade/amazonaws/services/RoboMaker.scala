@@ -82,106 +82,46 @@ package object robomaker {
 
   implicit final class RoboMakerOps(private val service: RoboMaker) extends AnyVal {
 
-    @inline def batchDescribeSimulationJobFuture(
-        params: BatchDescribeSimulationJobRequest
-    ): Future[BatchDescribeSimulationJobResponse] = service.batchDescribeSimulationJob(params).promise().toFuture
-    @inline def cancelDeploymentJobFuture(params: CancelDeploymentJobRequest): Future[CancelDeploymentJobResponse] =
-      service.cancelDeploymentJob(params).promise().toFuture
-    @inline def cancelSimulationJobBatchFuture(
-        params: CancelSimulationJobBatchRequest
-    ): Future[CancelSimulationJobBatchResponse] = service.cancelSimulationJobBatch(params).promise().toFuture
-    @inline def cancelSimulationJobFuture(params: CancelSimulationJobRequest): Future[CancelSimulationJobResponse] =
-      service.cancelSimulationJob(params).promise().toFuture
-    @inline def createDeploymentJobFuture(params: CreateDeploymentJobRequest): Future[CreateDeploymentJobResponse] =
-      service.createDeploymentJob(params).promise().toFuture
-    @inline def createFleetFuture(params: CreateFleetRequest): Future[CreateFleetResponse] =
-      service.createFleet(params).promise().toFuture
-    @inline def createRobotApplicationFuture(
-        params: CreateRobotApplicationRequest
-    ): Future[CreateRobotApplicationResponse] = service.createRobotApplication(params).promise().toFuture
-    @inline def createRobotApplicationVersionFuture(
-        params: CreateRobotApplicationVersionRequest
-    ): Future[CreateRobotApplicationVersionResponse] = service.createRobotApplicationVersion(params).promise().toFuture
-    @inline def createRobotFuture(params: CreateRobotRequest): Future[CreateRobotResponse] =
-      service.createRobot(params).promise().toFuture
-    @inline def createSimulationApplicationFuture(
-        params: CreateSimulationApplicationRequest
-    ): Future[CreateSimulationApplicationResponse] = service.createSimulationApplication(params).promise().toFuture
-    @inline def createSimulationApplicationVersionFuture(
-        params: CreateSimulationApplicationVersionRequest
-    ): Future[CreateSimulationApplicationVersionResponse] =
-      service.createSimulationApplicationVersion(params).promise().toFuture
-    @inline def createSimulationJobFuture(params: CreateSimulationJobRequest): Future[CreateSimulationJobResponse] =
-      service.createSimulationJob(params).promise().toFuture
-    @inline def deleteFleetFuture(params: DeleteFleetRequest): Future[DeleteFleetResponse] =
-      service.deleteFleet(params).promise().toFuture
-    @inline def deleteRobotApplicationFuture(
-        params: DeleteRobotApplicationRequest
-    ): Future[DeleteRobotApplicationResponse] = service.deleteRobotApplication(params).promise().toFuture
-    @inline def deleteRobotFuture(params: DeleteRobotRequest): Future[DeleteRobotResponse] =
-      service.deleteRobot(params).promise().toFuture
-    @inline def deleteSimulationApplicationFuture(
-        params: DeleteSimulationApplicationRequest
-    ): Future[DeleteSimulationApplicationResponse] = service.deleteSimulationApplication(params).promise().toFuture
-    @inline def deregisterRobotFuture(params: DeregisterRobotRequest): Future[DeregisterRobotResponse] =
-      service.deregisterRobot(params).promise().toFuture
-    @inline def describeDeploymentJobFuture(
-        params: DescribeDeploymentJobRequest
-    ): Future[DescribeDeploymentJobResponse] = service.describeDeploymentJob(params).promise().toFuture
-    @inline def describeFleetFuture(params: DescribeFleetRequest): Future[DescribeFleetResponse] =
-      service.describeFleet(params).promise().toFuture
-    @inline def describeRobotApplicationFuture(
-        params: DescribeRobotApplicationRequest
-    ): Future[DescribeRobotApplicationResponse] = service.describeRobotApplication(params).promise().toFuture
-    @inline def describeRobotFuture(params: DescribeRobotRequest): Future[DescribeRobotResponse] =
-      service.describeRobot(params).promise().toFuture
-    @inline def describeSimulationApplicationFuture(
-        params: DescribeSimulationApplicationRequest
-    ): Future[DescribeSimulationApplicationResponse] = service.describeSimulationApplication(params).promise().toFuture
-    @inline def describeSimulationJobBatchFuture(
-        params: DescribeSimulationJobBatchRequest
-    ): Future[DescribeSimulationJobBatchResponse] = service.describeSimulationJobBatch(params).promise().toFuture
-    @inline def describeSimulationJobFuture(
-        params: DescribeSimulationJobRequest
-    ): Future[DescribeSimulationJobResponse] = service.describeSimulationJob(params).promise().toFuture
-    @inline def listDeploymentJobsFuture(params: ListDeploymentJobsRequest): Future[ListDeploymentJobsResponse] =
-      service.listDeploymentJobs(params).promise().toFuture
-    @inline def listFleetsFuture(params: ListFleetsRequest): Future[ListFleetsResponse] =
-      service.listFleets(params).promise().toFuture
-    @inline def listRobotApplicationsFuture(
-        params: ListRobotApplicationsRequest
-    ): Future[ListRobotApplicationsResponse] = service.listRobotApplications(params).promise().toFuture
-    @inline def listRobotsFuture(params: ListRobotsRequest): Future[ListRobotsResponse] =
-      service.listRobots(params).promise().toFuture
-    @inline def listSimulationApplicationsFuture(
-        params: ListSimulationApplicationsRequest
-    ): Future[ListSimulationApplicationsResponse] = service.listSimulationApplications(params).promise().toFuture
-    @inline def listSimulationJobBatchesFuture(
-        params: ListSimulationJobBatchesRequest
-    ): Future[ListSimulationJobBatchesResponse] = service.listSimulationJobBatches(params).promise().toFuture
-    @inline def listSimulationJobsFuture(params: ListSimulationJobsRequest): Future[ListSimulationJobsResponse] =
-      service.listSimulationJobs(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def registerRobotFuture(params: RegisterRobotRequest): Future[RegisterRobotResponse] =
-      service.registerRobot(params).promise().toFuture
-    @inline def restartSimulationJobFuture(params: RestartSimulationJobRequest): Future[RestartSimulationJobResponse] =
-      service.restartSimulationJob(params).promise().toFuture
-    @inline def startSimulationJobBatchFuture(
-        params: StartSimulationJobBatchRequest
-    ): Future[StartSimulationJobBatchResponse] = service.startSimulationJobBatch(params).promise().toFuture
-    @inline def syncDeploymentJobFuture(params: SyncDeploymentJobRequest): Future[SyncDeploymentJobResponse] =
-      service.syncDeploymentJob(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateRobotApplicationFuture(
-        params: UpdateRobotApplicationRequest
-    ): Future[UpdateRobotApplicationResponse] = service.updateRobotApplication(params).promise().toFuture
-    @inline def updateSimulationApplicationFuture(
-        params: UpdateSimulationApplicationRequest
-    ): Future[UpdateSimulationApplicationResponse] = service.updateSimulationApplication(params).promise().toFuture
+    @inline def batchDescribeSimulationJobFuture(params: BatchDescribeSimulationJobRequest): Future[BatchDescribeSimulationJobResponse] = service.batchDescribeSimulationJob(params).promise().toFuture
+    @inline def cancelDeploymentJobFuture(params: CancelDeploymentJobRequest): Future[CancelDeploymentJobResponse] = service.cancelDeploymentJob(params).promise().toFuture
+    @inline def cancelSimulationJobBatchFuture(params: CancelSimulationJobBatchRequest): Future[CancelSimulationJobBatchResponse] = service.cancelSimulationJobBatch(params).promise().toFuture
+    @inline def cancelSimulationJobFuture(params: CancelSimulationJobRequest): Future[CancelSimulationJobResponse] = service.cancelSimulationJob(params).promise().toFuture
+    @inline def createDeploymentJobFuture(params: CreateDeploymentJobRequest): Future[CreateDeploymentJobResponse] = service.createDeploymentJob(params).promise().toFuture
+    @inline def createFleetFuture(params: CreateFleetRequest): Future[CreateFleetResponse] = service.createFleet(params).promise().toFuture
+    @inline def createRobotApplicationFuture(params: CreateRobotApplicationRequest): Future[CreateRobotApplicationResponse] = service.createRobotApplication(params).promise().toFuture
+    @inline def createRobotApplicationVersionFuture(params: CreateRobotApplicationVersionRequest): Future[CreateRobotApplicationVersionResponse] = service.createRobotApplicationVersion(params).promise().toFuture
+    @inline def createRobotFuture(params: CreateRobotRequest): Future[CreateRobotResponse] = service.createRobot(params).promise().toFuture
+    @inline def createSimulationApplicationFuture(params: CreateSimulationApplicationRequest): Future[CreateSimulationApplicationResponse] = service.createSimulationApplication(params).promise().toFuture
+    @inline def createSimulationApplicationVersionFuture(params: CreateSimulationApplicationVersionRequest): Future[CreateSimulationApplicationVersionResponse] = service.createSimulationApplicationVersion(params).promise().toFuture
+    @inline def createSimulationJobFuture(params: CreateSimulationJobRequest): Future[CreateSimulationJobResponse] = service.createSimulationJob(params).promise().toFuture
+    @inline def deleteFleetFuture(params: DeleteFleetRequest): Future[DeleteFleetResponse] = service.deleteFleet(params).promise().toFuture
+    @inline def deleteRobotApplicationFuture(params: DeleteRobotApplicationRequest): Future[DeleteRobotApplicationResponse] = service.deleteRobotApplication(params).promise().toFuture
+    @inline def deleteRobotFuture(params: DeleteRobotRequest): Future[DeleteRobotResponse] = service.deleteRobot(params).promise().toFuture
+    @inline def deleteSimulationApplicationFuture(params: DeleteSimulationApplicationRequest): Future[DeleteSimulationApplicationResponse] = service.deleteSimulationApplication(params).promise().toFuture
+    @inline def deregisterRobotFuture(params: DeregisterRobotRequest): Future[DeregisterRobotResponse] = service.deregisterRobot(params).promise().toFuture
+    @inline def describeDeploymentJobFuture(params: DescribeDeploymentJobRequest): Future[DescribeDeploymentJobResponse] = service.describeDeploymentJob(params).promise().toFuture
+    @inline def describeFleetFuture(params: DescribeFleetRequest): Future[DescribeFleetResponse] = service.describeFleet(params).promise().toFuture
+    @inline def describeRobotApplicationFuture(params: DescribeRobotApplicationRequest): Future[DescribeRobotApplicationResponse] = service.describeRobotApplication(params).promise().toFuture
+    @inline def describeRobotFuture(params: DescribeRobotRequest): Future[DescribeRobotResponse] = service.describeRobot(params).promise().toFuture
+    @inline def describeSimulationApplicationFuture(params: DescribeSimulationApplicationRequest): Future[DescribeSimulationApplicationResponse] = service.describeSimulationApplication(params).promise().toFuture
+    @inline def describeSimulationJobBatchFuture(params: DescribeSimulationJobBatchRequest): Future[DescribeSimulationJobBatchResponse] = service.describeSimulationJobBatch(params).promise().toFuture
+    @inline def describeSimulationJobFuture(params: DescribeSimulationJobRequest): Future[DescribeSimulationJobResponse] = service.describeSimulationJob(params).promise().toFuture
+    @inline def listDeploymentJobsFuture(params: ListDeploymentJobsRequest): Future[ListDeploymentJobsResponse] = service.listDeploymentJobs(params).promise().toFuture
+    @inline def listFleetsFuture(params: ListFleetsRequest): Future[ListFleetsResponse] = service.listFleets(params).promise().toFuture
+    @inline def listRobotApplicationsFuture(params: ListRobotApplicationsRequest): Future[ListRobotApplicationsResponse] = service.listRobotApplications(params).promise().toFuture
+    @inline def listRobotsFuture(params: ListRobotsRequest): Future[ListRobotsResponse] = service.listRobots(params).promise().toFuture
+    @inline def listSimulationApplicationsFuture(params: ListSimulationApplicationsRequest): Future[ListSimulationApplicationsResponse] = service.listSimulationApplications(params).promise().toFuture
+    @inline def listSimulationJobBatchesFuture(params: ListSimulationJobBatchesRequest): Future[ListSimulationJobBatchesResponse] = service.listSimulationJobBatches(params).promise().toFuture
+    @inline def listSimulationJobsFuture(params: ListSimulationJobsRequest): Future[ListSimulationJobsResponse] = service.listSimulationJobs(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def registerRobotFuture(params: RegisterRobotRequest): Future[RegisterRobotResponse] = service.registerRobot(params).promise().toFuture
+    @inline def restartSimulationJobFuture(params: RestartSimulationJobRequest): Future[RestartSimulationJobResponse] = service.restartSimulationJob(params).promise().toFuture
+    @inline def startSimulationJobBatchFuture(params: StartSimulationJobBatchRequest): Future[StartSimulationJobBatchResponse] = service.startSimulationJobBatch(params).promise().toFuture
+    @inline def syncDeploymentJobFuture(params: SyncDeploymentJobRequest): Future[SyncDeploymentJobResponse] = service.syncDeploymentJob(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateRobotApplicationFuture(params: UpdateRobotApplicationRequest): Future[UpdateRobotApplicationResponse] = service.updateRobotApplication(params).promise().toFuture
+    @inline def updateSimulationApplicationFuture(params: UpdateSimulationApplicationRequest): Future[UpdateSimulationApplicationResponse] = service.updateSimulationApplication(params).promise().toFuture
   }
 }
 
@@ -191,71 +131,46 @@ package robomaker {
   class RoboMaker() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def batchDescribeSimulationJob(
-        params: BatchDescribeSimulationJobRequest
-    ): Request[BatchDescribeSimulationJobResponse] = js.native
+    def batchDescribeSimulationJob(params: BatchDescribeSimulationJobRequest): Request[BatchDescribeSimulationJobResponse] = js.native
     def cancelDeploymentJob(params: CancelDeploymentJobRequest): Request[CancelDeploymentJobResponse] = js.native
     def cancelSimulationJob(params: CancelSimulationJobRequest): Request[CancelSimulationJobResponse] = js.native
-    def cancelSimulationJobBatch(params: CancelSimulationJobBatchRequest): Request[CancelSimulationJobBatchResponse] =
-      js.native
+    def cancelSimulationJobBatch(params: CancelSimulationJobBatchRequest): Request[CancelSimulationJobBatchResponse] = js.native
     def createDeploymentJob(params: CreateDeploymentJobRequest): Request[CreateDeploymentJobResponse] = js.native
     def createFleet(params: CreateFleetRequest): Request[CreateFleetResponse] = js.native
     def createRobot(params: CreateRobotRequest): Request[CreateRobotResponse] = js.native
-    def createRobotApplication(params: CreateRobotApplicationRequest): Request[CreateRobotApplicationResponse] =
-      js.native
-    def createRobotApplicationVersion(
-        params: CreateRobotApplicationVersionRequest
-    ): Request[CreateRobotApplicationVersionResponse] = js.native
-    def createSimulationApplication(
-        params: CreateSimulationApplicationRequest
-    ): Request[CreateSimulationApplicationResponse] = js.native
-    def createSimulationApplicationVersion(
-        params: CreateSimulationApplicationVersionRequest
-    ): Request[CreateSimulationApplicationVersionResponse] = js.native
+    def createRobotApplication(params: CreateRobotApplicationRequest): Request[CreateRobotApplicationResponse] = js.native
+    def createRobotApplicationVersion(params: CreateRobotApplicationVersionRequest): Request[CreateRobotApplicationVersionResponse] = js.native
+    def createSimulationApplication(params: CreateSimulationApplicationRequest): Request[CreateSimulationApplicationResponse] = js.native
+    def createSimulationApplicationVersion(params: CreateSimulationApplicationVersionRequest): Request[CreateSimulationApplicationVersionResponse] = js.native
     def createSimulationJob(params: CreateSimulationJobRequest): Request[CreateSimulationJobResponse] = js.native
     def deleteFleet(params: DeleteFleetRequest): Request[DeleteFleetResponse] = js.native
     def deleteRobot(params: DeleteRobotRequest): Request[DeleteRobotResponse] = js.native
-    def deleteRobotApplication(params: DeleteRobotApplicationRequest): Request[DeleteRobotApplicationResponse] =
-      js.native
-    def deleteSimulationApplication(
-        params: DeleteSimulationApplicationRequest
-    ): Request[DeleteSimulationApplicationResponse] = js.native
+    def deleteRobotApplication(params: DeleteRobotApplicationRequest): Request[DeleteRobotApplicationResponse] = js.native
+    def deleteSimulationApplication(params: DeleteSimulationApplicationRequest): Request[DeleteSimulationApplicationResponse] = js.native
     def deregisterRobot(params: DeregisterRobotRequest): Request[DeregisterRobotResponse] = js.native
     def describeDeploymentJob(params: DescribeDeploymentJobRequest): Request[DescribeDeploymentJobResponse] = js.native
     def describeFleet(params: DescribeFleetRequest): Request[DescribeFleetResponse] = js.native
     def describeRobot(params: DescribeRobotRequest): Request[DescribeRobotResponse] = js.native
-    def describeRobotApplication(params: DescribeRobotApplicationRequest): Request[DescribeRobotApplicationResponse] =
-      js.native
-    def describeSimulationApplication(
-        params: DescribeSimulationApplicationRequest
-    ): Request[DescribeSimulationApplicationResponse] = js.native
+    def describeRobotApplication(params: DescribeRobotApplicationRequest): Request[DescribeRobotApplicationResponse] = js.native
+    def describeSimulationApplication(params: DescribeSimulationApplicationRequest): Request[DescribeSimulationApplicationResponse] = js.native
     def describeSimulationJob(params: DescribeSimulationJobRequest): Request[DescribeSimulationJobResponse] = js.native
-    def describeSimulationJobBatch(
-        params: DescribeSimulationJobBatchRequest
-    ): Request[DescribeSimulationJobBatchResponse] = js.native
+    def describeSimulationJobBatch(params: DescribeSimulationJobBatchRequest): Request[DescribeSimulationJobBatchResponse] = js.native
     def listDeploymentJobs(params: ListDeploymentJobsRequest): Request[ListDeploymentJobsResponse] = js.native
     def listFleets(params: ListFleetsRequest): Request[ListFleetsResponse] = js.native
     def listRobotApplications(params: ListRobotApplicationsRequest): Request[ListRobotApplicationsResponse] = js.native
     def listRobots(params: ListRobotsRequest): Request[ListRobotsResponse] = js.native
-    def listSimulationApplications(
-        params: ListSimulationApplicationsRequest
-    ): Request[ListSimulationApplicationsResponse] = js.native
-    def listSimulationJobBatches(params: ListSimulationJobBatchesRequest): Request[ListSimulationJobBatchesResponse] =
-      js.native
+    def listSimulationApplications(params: ListSimulationApplicationsRequest): Request[ListSimulationApplicationsResponse] = js.native
+    def listSimulationJobBatches(params: ListSimulationJobBatchesRequest): Request[ListSimulationJobBatchesResponse] = js.native
     def listSimulationJobs(params: ListSimulationJobsRequest): Request[ListSimulationJobsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def registerRobot(params: RegisterRobotRequest): Request[RegisterRobotResponse] = js.native
     def restartSimulationJob(params: RestartSimulationJobRequest): Request[RestartSimulationJobResponse] = js.native
-    def startSimulationJobBatch(params: StartSimulationJobBatchRequest): Request[StartSimulationJobBatchResponse] =
-      js.native
+    def startSimulationJobBatch(params: StartSimulationJobBatchRequest): Request[StartSimulationJobBatchResponse] = js.native
     def syncDeploymentJob(params: SyncDeploymentJobRequest): Request[SyncDeploymentJobResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
-    def updateRobotApplication(params: UpdateRobotApplicationRequest): Request[UpdateRobotApplicationResponse] =
-      js.native
-    def updateSimulationApplication(
-        params: UpdateSimulationApplicationRequest
-    ): Request[UpdateSimulationApplicationResponse] = js.native
+    def updateRobotApplication(params: UpdateRobotApplicationRequest): Request[UpdateRobotApplicationResponse] = js.native
+    def updateSimulationApplication(params: UpdateSimulationApplicationRequest): Request[UpdateSimulationApplicationResponse] = js.native
   }
 
   @js.native
@@ -517,9 +432,7 @@ package robomaker {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      deploymentApplicationConfigs.foreach(__v =>
-        __obj.updateDynamic("deploymentApplicationConfigs")(__v.asInstanceOf[js.Any])
-      )
+      deploymentApplicationConfigs.foreach(__v => __obj.updateDynamic("deploymentApplicationConfigs")(__v.asInstanceOf[js.Any]))
       deploymentConfig.foreach(__v => __obj.updateDynamic("deploymentConfig")(__v.asInstanceOf[js.Any]))
       failureCode.foreach(__v => __obj.updateDynamic("failureCode")(__v.asInstanceOf[js.Any]))
       failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
@@ -1237,16 +1150,10 @@ package robomaker {
         robotDeploymentTimeoutInSeconds: js.UndefOr[DeploymentTimeout] = js.undefined
     ): DeploymentConfig = {
       val __obj = js.Dynamic.literal()
-      concurrentDeploymentPercentage.foreach(__v =>
-        __obj.updateDynamic("concurrentDeploymentPercentage")(__v.asInstanceOf[js.Any])
-      )
+      concurrentDeploymentPercentage.foreach(__v => __obj.updateDynamic("concurrentDeploymentPercentage")(__v.asInstanceOf[js.Any]))
       downloadConditionFile.foreach(__v => __obj.updateDynamic("downloadConditionFile")(__v.asInstanceOf[js.Any]))
-      failureThresholdPercentage.foreach(__v =>
-        __obj.updateDynamic("failureThresholdPercentage")(__v.asInstanceOf[js.Any])
-      )
-      robotDeploymentTimeoutInSeconds.foreach(__v =>
-        __obj.updateDynamic("robotDeploymentTimeoutInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      failureThresholdPercentage.foreach(__v => __obj.updateDynamic("failureThresholdPercentage")(__v.asInstanceOf[js.Any]))
+      robotDeploymentTimeoutInSeconds.foreach(__v => __obj.updateDynamic("robotDeploymentTimeoutInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeploymentConfig]
     }
   }
@@ -1281,9 +1188,7 @@ package robomaker {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      deploymentApplicationConfigs.foreach(__v =>
-        __obj.updateDynamic("deploymentApplicationConfigs")(__v.asInstanceOf[js.Any])
-      )
+      deploymentApplicationConfigs.foreach(__v => __obj.updateDynamic("deploymentApplicationConfigs")(__v.asInstanceOf[js.Any]))
       deploymentConfig.foreach(__v => __obj.updateDynamic("deploymentConfig")(__v.asInstanceOf[js.Any]))
       failureCode.foreach(__v => __obj.updateDynamic("failureCode")(__v.asInstanceOf[js.Any]))
       failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
@@ -1317,30 +1222,28 @@ package robomaker {
     val DownloadConditionFailed = "DownloadConditionFailed".asInstanceOf[DeploymentJobErrorCode]
     val InternalServerError = "InternalServerError".asInstanceOf[DeploymentJobErrorCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ResourceNotFound,
-        EnvironmentSetupError,
-        EtagMismatch,
-        FailureThresholdBreached,
-        RobotDeploymentAborted,
-        RobotDeploymentNoResponse,
-        RobotAgentConnectionTimeout,
-        GreengrassDeploymentFailed,
-        InvalidGreengrassGroup,
-        MissingRobotArchitecture,
-        MissingRobotApplicationArchitecture,
-        MissingRobotDeploymentResource,
-        GreengrassGroupVersionDoesNotExist,
-        LambdaDeleted,
-        ExtractingBundleFailure,
-        PreLaunchFileFailure,
-        PostLaunchFileFailure,
-        BadPermissionError,
-        DownloadConditionFailed,
-        InternalServerError
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      ResourceNotFound,
+      EnvironmentSetupError,
+      EtagMismatch,
+      FailureThresholdBreached,
+      RobotDeploymentAborted,
+      RobotDeploymentNoResponse,
+      RobotAgentConnectionTimeout,
+      GreengrassDeploymentFailed,
+      InvalidGreengrassGroup,
+      MissingRobotArchitecture,
+      MissingRobotApplicationArchitecture,
+      MissingRobotDeploymentResource,
+      GreengrassGroupVersionDoesNotExist,
+      LambdaDeleted,
+      ExtractingBundleFailure,
+      PreLaunchFileFailure,
+      PostLaunchFileFailure,
+      BadPermissionError,
+      DownloadConditionFailed,
+      InternalServerError
+    ))
   }
 
   /**
@@ -1478,9 +1381,7 @@ package robomaker {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      deploymentApplicationConfigs.foreach(__v =>
-        __obj.updateDynamic("deploymentApplicationConfigs")(__v.asInstanceOf[js.Any])
-      )
+      deploymentApplicationConfigs.foreach(__v => __obj.updateDynamic("deploymentApplicationConfigs")(__v.asInstanceOf[js.Any]))
       deploymentConfig.foreach(__v => __obj.updateDynamic("deploymentConfig")(__v.asInstanceOf[js.Any]))
       failureCode.foreach(__v => __obj.updateDynamic("failureCode")(__v.asInstanceOf[js.Any]))
       failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
@@ -2138,9 +2039,7 @@ package robomaker {
     ): ListRobotApplicationsResponse = {
       val __obj = js.Dynamic.literal()
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      robotApplicationSummaries.foreach(__v =>
-        __obj.updateDynamic("robotApplicationSummaries")(__v.asInstanceOf[js.Any])
-      )
+      robotApplicationSummaries.foreach(__v => __obj.updateDynamic("robotApplicationSummaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRobotApplicationsResponse]
     }
   }
@@ -2225,9 +2124,7 @@ package robomaker {
     ): ListSimulationApplicationsResponse = {
       val __obj = js.Dynamic.literal()
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      simulationApplicationSummaries.foreach(__v =>
-        __obj.updateDynamic("simulationApplicationSummaries")(__v.asInstanceOf[js.Any])
-      )
+      simulationApplicationSummaries.foreach(__v => __obj.updateDynamic("simulationApplicationSummaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSimulationApplicationsResponse]
     }
   }
@@ -2268,9 +2165,7 @@ package robomaker {
     ): ListSimulationJobBatchesResponse = {
       val __obj = js.Dynamic.literal()
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      simulationJobBatchSummaries.foreach(__v =>
-        __obj.updateDynamic("simulationJobBatchSummaries")(__v.asInstanceOf[js.Any])
-      )
+      simulationJobBatchSummaries.foreach(__v => __obj.updateDynamic("simulationJobBatchSummaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSimulationJobBatchesResponse]
     }
   }
@@ -2487,9 +2382,7 @@ package robomaker {
     ): ProgressDetail = {
       val __obj = js.Dynamic.literal()
       currentProgress.foreach(__v => __obj.updateDynamic("currentProgress")(__v.asInstanceOf[js.Any]))
-      estimatedTimeRemainingSeconds.foreach(__v =>
-        __obj.updateDynamic("estimatedTimeRemainingSeconds")(__v.asInstanceOf[js.Any])
-      )
+      estimatedTimeRemainingSeconds.foreach(__v => __obj.updateDynamic("estimatedTimeRemainingSeconds")(__v.asInstanceOf[js.Any]))
       percentDone.foreach(__v => __obj.updateDynamic("percentDone")(__v.asInstanceOf[js.Any]))
       targetResource.foreach(__v => __obj.updateDynamic("targetResource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProgressDetail]
@@ -2746,17 +2639,7 @@ package robomaker {
     val ExecutingPostLaunch = "ExecutingPostLaunch".asInstanceOf[RobotDeploymentStep]
     val Finished = "Finished".asInstanceOf[RobotDeploymentStep]
 
-    val values = js.Object.freeze(
-      js.Array(
-        Validating,
-        DownloadingExtracting,
-        ExecutingDownloadCondition,
-        ExecutingPreLaunch,
-        Launching,
-        ExecutingPostLaunch,
-        Finished
-      )
-    )
+    val values = js.Object.freeze(js.Array(Validating, DownloadingExtracting, ExecutingDownloadCondition, ExecutingPreLaunch, Launching, ExecutingPostLaunch, Finished))
   }
 
   /**
@@ -2811,8 +2694,7 @@ package robomaker {
     val InSync = "InSync".asInstanceOf[RobotStatus]
     val NoResponse = "NoResponse".asInstanceOf[RobotStatus]
 
-    val values =
-      js.Object.freeze(js.Array(Available, Registered, PendingNewDeployment, Deploying, Failed, InSync, NoResponse))
+    val values = js.Object.freeze(js.Array(Available, Registered, PendingNewDeployment, Deploying, Failed, InSync, NoResponse))
   }
 
   /**
@@ -3025,9 +2907,7 @@ package robomaker {
     val TimingOut = "TimingOut".asInstanceOf[SimulationJobBatchStatus]
     val TimedOut = "TimedOut".asInstanceOf[SimulationJobBatchStatus]
 
-    val values = js.Object.freeze(
-      js.Array(Pending, InProgress, Failed, Completed, Canceled, Canceling, Completing, TimingOut, TimedOut)
-    )
+    val values = js.Object.freeze(js.Array(Pending, InProgress, Failed, Completed, Canceled, Canceling, Completing, TimingOut, TimedOut))
   }
 
   /**
@@ -3086,10 +2966,8 @@ package robomaker {
     val InvalidS3Resource = "InvalidS3Resource".asInstanceOf[SimulationJobErrorCode]
     val LimitExceeded = "LimitExceeded".asInstanceOf[SimulationJobErrorCode]
     val MismatchedEtag = "MismatchedEtag".asInstanceOf[SimulationJobErrorCode]
-    val RobotApplicationVersionMismatchedEtag =
-      "RobotApplicationVersionMismatchedEtag".asInstanceOf[SimulationJobErrorCode]
-    val SimulationApplicationVersionMismatchedEtag =
-      "SimulationApplicationVersionMismatchedEtag".asInstanceOf[SimulationJobErrorCode]
+    val RobotApplicationVersionMismatchedEtag = "RobotApplicationVersionMismatchedEtag".asInstanceOf[SimulationJobErrorCode]
+    val SimulationApplicationVersionMismatchedEtag = "SimulationApplicationVersionMismatchedEtag".asInstanceOf[SimulationJobErrorCode]
     val ResourceNotFound = "ResourceNotFound".asInstanceOf[SimulationJobErrorCode]
     val RequestThrottled = "RequestThrottled".asInstanceOf[SimulationJobErrorCode]
     val BatchTimedOut = "BatchTimedOut".asInstanceOf[SimulationJobErrorCode]
@@ -3100,37 +2978,35 @@ package robomaker {
     val WrongRegionRobotApplication = "WrongRegionRobotApplication".asInstanceOf[SimulationJobErrorCode]
     val WrongRegionSimulationApplication = "WrongRegionSimulationApplication".asInstanceOf[SimulationJobErrorCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        InternalServiceError,
-        RobotApplicationCrash,
-        SimulationApplicationCrash,
-        BadPermissionsRobotApplication,
-        BadPermissionsSimulationApplication,
-        BadPermissionsS3Object,
-        BadPermissionsS3Output,
-        BadPermissionsCloudwatchLogs,
-        SubnetIpLimitExceeded,
-        ENILimitExceeded,
-        BadPermissionsUserCredentials,
-        InvalidBundleRobotApplication,
-        InvalidBundleSimulationApplication,
-        InvalidS3Resource,
-        LimitExceeded,
-        MismatchedEtag,
-        RobotApplicationVersionMismatchedEtag,
-        SimulationApplicationVersionMismatchedEtag,
-        ResourceNotFound,
-        RequestThrottled,
-        BatchTimedOut,
-        BatchCanceled,
-        InvalidInput,
-        WrongRegionS3Bucket,
-        WrongRegionS3Output,
-        WrongRegionRobotApplication,
-        WrongRegionSimulationApplication
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      InternalServiceError,
+      RobotApplicationCrash,
+      SimulationApplicationCrash,
+      BadPermissionsRobotApplication,
+      BadPermissionsSimulationApplication,
+      BadPermissionsS3Object,
+      BadPermissionsS3Output,
+      BadPermissionsCloudwatchLogs,
+      SubnetIpLimitExceeded,
+      ENILimitExceeded,
+      BadPermissionsUserCredentials,
+      InvalidBundleRobotApplication,
+      InvalidBundleSimulationApplication,
+      InvalidS3Resource,
+      LimitExceeded,
+      MismatchedEtag,
+      RobotApplicationVersionMismatchedEtag,
+      SimulationApplicationVersionMismatchedEtag,
+      ResourceNotFound,
+      RequestThrottled,
+      BatchTimedOut,
+      BatchCanceled,
+      InvalidInput,
+      WrongRegionS3Bucket,
+      WrongRegionS3Output,
+      WrongRegionRobotApplication,
+      WrongRegionSimulationApplication
+    ))
   }
 
   /**
@@ -3201,20 +3077,7 @@ package robomaker {
     val Terminated = "Terminated".asInstanceOf[SimulationJobStatus]
     val Canceled = "Canceled".asInstanceOf[SimulationJobStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        Pending,
-        Preparing,
-        Running,
-        Restarting,
-        Completed,
-        Failed,
-        RunningFailed,
-        Terminating,
-        Terminated,
-        Canceled
-      )
-    )
+    val values = js.Object.freeze(js.Array(Pending, Preparing, Running, Restarting, Completed, Failed, RunningFailed, Terminating, Terminated, Canceled))
   }
 
   /**
@@ -3248,9 +3111,7 @@ package robomaker {
       lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       robotApplicationNames.foreach(__v => __obj.updateDynamic("robotApplicationNames")(__v.asInstanceOf[js.Any]))
-      simulationApplicationNames.foreach(__v =>
-        __obj.updateDynamic("simulationApplicationNames")(__v.asInstanceOf[js.Any])
-      )
+      simulationApplicationNames.foreach(__v => __obj.updateDynamic("simulationApplicationNames")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SimulationJobSummary]
     }
@@ -3461,9 +3322,7 @@ package robomaker {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      deploymentApplicationConfigs.foreach(__v =>
-        __obj.updateDynamic("deploymentApplicationConfigs")(__v.asInstanceOf[js.Any])
-      )
+      deploymentApplicationConfigs.foreach(__v => __obj.updateDynamic("deploymentApplicationConfigs")(__v.asInstanceOf[js.Any]))
       deploymentConfig.foreach(__v => __obj.updateDynamic("deploymentConfig")(__v.asInstanceOf[js.Any]))
       failureCode.foreach(__v => __obj.updateDynamic("failureCode")(__v.asInstanceOf[js.Any]))
       failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))

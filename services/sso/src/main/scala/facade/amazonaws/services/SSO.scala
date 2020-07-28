@@ -23,12 +23,9 @@ package object sso {
 
   implicit final class SSOOps(private val service: SSO) extends AnyVal {
 
-    @inline def getRoleCredentialsFuture(params: GetRoleCredentialsRequest): Future[GetRoleCredentialsResponse] =
-      service.getRoleCredentials(params).promise().toFuture
-    @inline def listAccountRolesFuture(params: ListAccountRolesRequest): Future[ListAccountRolesResponse] =
-      service.listAccountRoles(params).promise().toFuture
-    @inline def listAccountsFuture(params: ListAccountsRequest): Future[ListAccountsResponse] =
-      service.listAccounts(params).promise().toFuture
+    @inline def getRoleCredentialsFuture(params: GetRoleCredentialsRequest): Future[GetRoleCredentialsResponse] = service.getRoleCredentials(params).promise().toFuture
+    @inline def listAccountRolesFuture(params: ListAccountRolesRequest): Future[ListAccountRolesResponse] = service.listAccountRoles(params).promise().toFuture
+    @inline def listAccountsFuture(params: ListAccountsRequest): Future[ListAccountsResponse] = service.listAccounts(params).promise().toFuture
     @inline def logoutFuture(params: LogoutRequest): Future[js.Object] = service.logout(params).promise().toFuture
   }
 }

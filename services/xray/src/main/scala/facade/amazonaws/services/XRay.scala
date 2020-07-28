@@ -84,48 +84,26 @@ package object xray {
 
   implicit final class XRayOps(private val service: XRay) extends AnyVal {
 
-    @inline def batchGetTracesFuture(params: BatchGetTracesRequest): Future[BatchGetTracesResult] =
-      service.batchGetTraces(params).promise().toFuture
-    @inline def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResult] =
-      service.createGroup(params).promise().toFuture
-    @inline def createSamplingRuleFuture(params: CreateSamplingRuleRequest): Future[CreateSamplingRuleResult] =
-      service.createSamplingRule(params).promise().toFuture
-    @inline def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResult] =
-      service.deleteGroup(params).promise().toFuture
-    @inline def deleteSamplingRuleFuture(params: DeleteSamplingRuleRequest): Future[DeleteSamplingRuleResult] =
-      service.deleteSamplingRule(params).promise().toFuture
-    @inline def getEncryptionConfigFuture(params: GetEncryptionConfigRequest): Future[GetEncryptionConfigResult] =
-      service.getEncryptionConfig(params).promise().toFuture
-    @inline def getGroupFuture(params: GetGroupRequest): Future[GetGroupResult] =
-      service.getGroup(params).promise().toFuture
-    @inline def getGroupsFuture(params: GetGroupsRequest): Future[GetGroupsResult] =
-      service.getGroups(params).promise().toFuture
-    @inline def getSamplingRulesFuture(params: GetSamplingRulesRequest): Future[GetSamplingRulesResult] =
-      service.getSamplingRules(params).promise().toFuture
-    @inline def getSamplingStatisticSummariesFuture(
-        params: GetSamplingStatisticSummariesRequest
-    ): Future[GetSamplingStatisticSummariesResult] = service.getSamplingStatisticSummaries(params).promise().toFuture
-    @inline def getSamplingTargetsFuture(params: GetSamplingTargetsRequest): Future[GetSamplingTargetsResult] =
-      service.getSamplingTargets(params).promise().toFuture
-    @inline def getServiceGraphFuture(params: GetServiceGraphRequest): Future[GetServiceGraphResult] =
-      service.getServiceGraph(params).promise().toFuture
-    @inline def getTimeSeriesServiceStatisticsFuture(
-        params: GetTimeSeriesServiceStatisticsRequest
-    ): Future[GetTimeSeriesServiceStatisticsResult] = service.getTimeSeriesServiceStatistics(params).promise().toFuture
-    @inline def getTraceGraphFuture(params: GetTraceGraphRequest): Future[GetTraceGraphResult] =
-      service.getTraceGraph(params).promise().toFuture
-    @inline def getTraceSummariesFuture(params: GetTraceSummariesRequest): Future[GetTraceSummariesResult] =
-      service.getTraceSummaries(params).promise().toFuture
-    @inline def putEncryptionConfigFuture(params: PutEncryptionConfigRequest): Future[PutEncryptionConfigResult] =
-      service.putEncryptionConfig(params).promise().toFuture
-    @inline def putTelemetryRecordsFuture(params: PutTelemetryRecordsRequest): Future[PutTelemetryRecordsResult] =
-      service.putTelemetryRecords(params).promise().toFuture
-    @inline def putTraceSegmentsFuture(params: PutTraceSegmentsRequest): Future[PutTraceSegmentsResult] =
-      service.putTraceSegments(params).promise().toFuture
-    @inline def updateGroupFuture(params: UpdateGroupRequest): Future[UpdateGroupResult] =
-      service.updateGroup(params).promise().toFuture
-    @inline def updateSamplingRuleFuture(params: UpdateSamplingRuleRequest): Future[UpdateSamplingRuleResult] =
-      service.updateSamplingRule(params).promise().toFuture
+    @inline def batchGetTracesFuture(params: BatchGetTracesRequest): Future[BatchGetTracesResult] = service.batchGetTraces(params).promise().toFuture
+    @inline def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResult] = service.createGroup(params).promise().toFuture
+    @inline def createSamplingRuleFuture(params: CreateSamplingRuleRequest): Future[CreateSamplingRuleResult] = service.createSamplingRule(params).promise().toFuture
+    @inline def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResult] = service.deleteGroup(params).promise().toFuture
+    @inline def deleteSamplingRuleFuture(params: DeleteSamplingRuleRequest): Future[DeleteSamplingRuleResult] = service.deleteSamplingRule(params).promise().toFuture
+    @inline def getEncryptionConfigFuture(params: GetEncryptionConfigRequest): Future[GetEncryptionConfigResult] = service.getEncryptionConfig(params).promise().toFuture
+    @inline def getGroupFuture(params: GetGroupRequest): Future[GetGroupResult] = service.getGroup(params).promise().toFuture
+    @inline def getGroupsFuture(params: GetGroupsRequest): Future[GetGroupsResult] = service.getGroups(params).promise().toFuture
+    @inline def getSamplingRulesFuture(params: GetSamplingRulesRequest): Future[GetSamplingRulesResult] = service.getSamplingRules(params).promise().toFuture
+    @inline def getSamplingStatisticSummariesFuture(params: GetSamplingStatisticSummariesRequest): Future[GetSamplingStatisticSummariesResult] = service.getSamplingStatisticSummaries(params).promise().toFuture
+    @inline def getSamplingTargetsFuture(params: GetSamplingTargetsRequest): Future[GetSamplingTargetsResult] = service.getSamplingTargets(params).promise().toFuture
+    @inline def getServiceGraphFuture(params: GetServiceGraphRequest): Future[GetServiceGraphResult] = service.getServiceGraph(params).promise().toFuture
+    @inline def getTimeSeriesServiceStatisticsFuture(params: GetTimeSeriesServiceStatisticsRequest): Future[GetTimeSeriesServiceStatisticsResult] = service.getTimeSeriesServiceStatistics(params).promise().toFuture
+    @inline def getTraceGraphFuture(params: GetTraceGraphRequest): Future[GetTraceGraphResult] = service.getTraceGraph(params).promise().toFuture
+    @inline def getTraceSummariesFuture(params: GetTraceSummariesRequest): Future[GetTraceSummariesResult] = service.getTraceSummaries(params).promise().toFuture
+    @inline def putEncryptionConfigFuture(params: PutEncryptionConfigRequest): Future[PutEncryptionConfigResult] = service.putEncryptionConfig(params).promise().toFuture
+    @inline def putTelemetryRecordsFuture(params: PutTelemetryRecordsRequest): Future[PutTelemetryRecordsResult] = service.putTelemetryRecords(params).promise().toFuture
+    @inline def putTraceSegmentsFuture(params: PutTraceSegmentsRequest): Future[PutTraceSegmentsResult] = service.putTraceSegments(params).promise().toFuture
+    @inline def updateGroupFuture(params: UpdateGroupRequest): Future[UpdateGroupResult] = service.updateGroup(params).promise().toFuture
+    @inline def updateSamplingRuleFuture(params: UpdateSamplingRuleRequest): Future[UpdateSamplingRuleResult] = service.updateSamplingRule(params).promise().toFuture
   }
 }
 
@@ -144,14 +122,10 @@ package xray {
     def getGroup(params: GetGroupRequest): Request[GetGroupResult] = js.native
     def getGroups(params: GetGroupsRequest): Request[GetGroupsResult] = js.native
     def getSamplingRules(params: GetSamplingRulesRequest): Request[GetSamplingRulesResult] = js.native
-    def getSamplingStatisticSummaries(
-        params: GetSamplingStatisticSummariesRequest
-    ): Request[GetSamplingStatisticSummariesResult] = js.native
+    def getSamplingStatisticSummaries(params: GetSamplingStatisticSummariesRequest): Request[GetSamplingStatisticSummariesResult] = js.native
     def getSamplingTargets(params: GetSamplingTargetsRequest): Request[GetSamplingTargetsResult] = js.native
     def getServiceGraph(params: GetServiceGraphRequest): Request[GetServiceGraphResult] = js.native
-    def getTimeSeriesServiceStatistics(
-        params: GetTimeSeriesServiceStatisticsRequest
-    ): Request[GetTimeSeriesServiceStatisticsResult] = js.native
+    def getTimeSeriesServiceStatistics(params: GetTimeSeriesServiceStatisticsRequest): Request[GetTimeSeriesServiceStatisticsResult] = js.native
     def getTraceGraph(params: GetTraceGraphRequest): Request[GetTraceGraphResult] = js.native
     def getTraceSummaries(params: GetTraceSummariesRequest): Request[GetTraceSummariesResult] = js.native
     def putEncryptionConfig(params: PutEncryptionConfigRequest): Request[PutEncryptionConfigResult] = js.native
@@ -926,9 +900,7 @@ package xray {
     ): GetSamplingStatisticSummariesResult = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SamplingStatisticSummaries.foreach(__v =>
-        __obj.updateDynamic("SamplingStatisticSummaries")(__v.asInstanceOf[js.Any])
-      )
+      SamplingStatisticSummaries.foreach(__v => __obj.updateDynamic("SamplingStatisticSummaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSamplingStatisticSummariesResult]
     }
   }
@@ -1084,9 +1056,7 @@ package xray {
       val __obj = js.Dynamic.literal()
       ContainsOldGroupVersions.foreach(__v => __obj.updateDynamic("ContainsOldGroupVersions")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      TimeSeriesServiceStatistics.foreach(__v =>
-        __obj.updateDynamic("TimeSeriesServiceStatistics")(__v.asInstanceOf[js.Any])
-      )
+      TimeSeriesServiceStatistics.foreach(__v => __obj.updateDynamic("TimeSeriesServiceStatistics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTimeSeriesServiceStatisticsResult]
     }
   }

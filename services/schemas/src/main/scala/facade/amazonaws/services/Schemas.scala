@@ -29,66 +29,36 @@ package object schemas {
 
   implicit final class SchemasOps(private val service: Schemas) extends AnyVal {
 
-    @inline def createDiscovererFuture(params: CreateDiscovererRequest): Future[CreateDiscovererResponse] =
-      service.createDiscoverer(params).promise().toFuture
-    @inline def createRegistryFuture(params: CreateRegistryRequest): Future[CreateRegistryResponse] =
-      service.createRegistry(params).promise().toFuture
-    @inline def createSchemaFuture(params: CreateSchemaRequest): Future[CreateSchemaResponse] =
-      service.createSchema(params).promise().toFuture
-    @inline def deleteDiscovererFuture(params: DeleteDiscovererRequest): Future[js.Object] =
-      service.deleteDiscoverer(params).promise().toFuture
-    @inline def deleteRegistryFuture(params: DeleteRegistryRequest): Future[js.Object] =
-      service.deleteRegistry(params).promise().toFuture
-    @inline def deleteResourcePolicyFuture(params: DeleteResourcePolicyRequest): Future[js.Object] =
-      service.deleteResourcePolicy(params).promise().toFuture
-    @inline def deleteSchemaFuture(params: DeleteSchemaRequest): Future[js.Object] =
-      service.deleteSchema(params).promise().toFuture
-    @inline def deleteSchemaVersionFuture(params: DeleteSchemaVersionRequest): Future[js.Object] =
-      service.deleteSchemaVersion(params).promise().toFuture
-    @inline def describeCodeBindingFuture(params: DescribeCodeBindingRequest): Future[DescribeCodeBindingResponse] =
-      service.describeCodeBinding(params).promise().toFuture
-    @inline def describeDiscovererFuture(params: DescribeDiscovererRequest): Future[DescribeDiscovererResponse] =
-      service.describeDiscoverer(params).promise().toFuture
-    @inline def describeRegistryFuture(params: DescribeRegistryRequest): Future[DescribeRegistryResponse] =
-      service.describeRegistry(params).promise().toFuture
-    @inline def describeSchemaFuture(params: DescribeSchemaRequest): Future[DescribeSchemaResponse] =
-      service.describeSchema(params).promise().toFuture
-    @inline def getCodeBindingSourceFuture(params: GetCodeBindingSourceRequest): Future[GetCodeBindingSourceResponse] =
-      service.getCodeBindingSource(params).promise().toFuture
-    @inline def getDiscoveredSchemaFuture(params: GetDiscoveredSchemaRequest): Future[GetDiscoveredSchemaResponse] =
-      service.getDiscoveredSchema(params).promise().toFuture
-    @inline def getResourcePolicyFuture(params: GetResourcePolicyRequest): Future[GetResourcePolicyResponse] =
-      service.getResourcePolicy(params).promise().toFuture
-    @inline def listDiscoverersFuture(params: ListDiscoverersRequest): Future[ListDiscoverersResponse] =
-      service.listDiscoverers(params).promise().toFuture
-    @inline def listRegistriesFuture(params: ListRegistriesRequest): Future[ListRegistriesResponse] =
-      service.listRegistries(params).promise().toFuture
-    @inline def listSchemaVersionsFuture(params: ListSchemaVersionsRequest): Future[ListSchemaVersionsResponse] =
-      service.listSchemaVersions(params).promise().toFuture
-    @inline def listSchemasFuture(params: ListSchemasRequest): Future[ListSchemasResponse] =
-      service.listSchemas(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def putCodeBindingFuture(params: PutCodeBindingRequest): Future[PutCodeBindingResponse] =
-      service.putCodeBinding(params).promise().toFuture
-    @inline def putResourcePolicyFuture(params: PutResourcePolicyRequest): Future[PutResourcePolicyResponse] =
-      service.putResourcePolicy(params).promise().toFuture
-    @inline def searchSchemasFuture(params: SearchSchemasRequest): Future[SearchSchemasResponse] =
-      service.searchSchemas(params).promise().toFuture
-    @inline def startDiscovererFuture(params: StartDiscovererRequest): Future[StartDiscovererResponse] =
-      service.startDiscoverer(params).promise().toFuture
-    @inline def stopDiscovererFuture(params: StopDiscovererRequest): Future[StopDiscovererResponse] =
-      service.stopDiscoverer(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateDiscovererFuture(params: UpdateDiscovererRequest): Future[UpdateDiscovererResponse] =
-      service.updateDiscoverer(params).promise().toFuture
-    @inline def updateRegistryFuture(params: UpdateRegistryRequest): Future[UpdateRegistryResponse] =
-      service.updateRegistry(params).promise().toFuture
-    @inline def updateSchemaFuture(params: UpdateSchemaRequest): Future[UpdateSchemaResponse] =
-      service.updateSchema(params).promise().toFuture
+    @inline def createDiscovererFuture(params: CreateDiscovererRequest): Future[CreateDiscovererResponse] = service.createDiscoverer(params).promise().toFuture
+    @inline def createRegistryFuture(params: CreateRegistryRequest): Future[CreateRegistryResponse] = service.createRegistry(params).promise().toFuture
+    @inline def createSchemaFuture(params: CreateSchemaRequest): Future[CreateSchemaResponse] = service.createSchema(params).promise().toFuture
+    @inline def deleteDiscovererFuture(params: DeleteDiscovererRequest): Future[js.Object] = service.deleteDiscoverer(params).promise().toFuture
+    @inline def deleteRegistryFuture(params: DeleteRegistryRequest): Future[js.Object] = service.deleteRegistry(params).promise().toFuture
+    @inline def deleteResourcePolicyFuture(params: DeleteResourcePolicyRequest): Future[js.Object] = service.deleteResourcePolicy(params).promise().toFuture
+    @inline def deleteSchemaFuture(params: DeleteSchemaRequest): Future[js.Object] = service.deleteSchema(params).promise().toFuture
+    @inline def deleteSchemaVersionFuture(params: DeleteSchemaVersionRequest): Future[js.Object] = service.deleteSchemaVersion(params).promise().toFuture
+    @inline def describeCodeBindingFuture(params: DescribeCodeBindingRequest): Future[DescribeCodeBindingResponse] = service.describeCodeBinding(params).promise().toFuture
+    @inline def describeDiscovererFuture(params: DescribeDiscovererRequest): Future[DescribeDiscovererResponse] = service.describeDiscoverer(params).promise().toFuture
+    @inline def describeRegistryFuture(params: DescribeRegistryRequest): Future[DescribeRegistryResponse] = service.describeRegistry(params).promise().toFuture
+    @inline def describeSchemaFuture(params: DescribeSchemaRequest): Future[DescribeSchemaResponse] = service.describeSchema(params).promise().toFuture
+    @inline def getCodeBindingSourceFuture(params: GetCodeBindingSourceRequest): Future[GetCodeBindingSourceResponse] = service.getCodeBindingSource(params).promise().toFuture
+    @inline def getDiscoveredSchemaFuture(params: GetDiscoveredSchemaRequest): Future[GetDiscoveredSchemaResponse] = service.getDiscoveredSchema(params).promise().toFuture
+    @inline def getResourcePolicyFuture(params: GetResourcePolicyRequest): Future[GetResourcePolicyResponse] = service.getResourcePolicy(params).promise().toFuture
+    @inline def listDiscoverersFuture(params: ListDiscoverersRequest): Future[ListDiscoverersResponse] = service.listDiscoverers(params).promise().toFuture
+    @inline def listRegistriesFuture(params: ListRegistriesRequest): Future[ListRegistriesResponse] = service.listRegistries(params).promise().toFuture
+    @inline def listSchemaVersionsFuture(params: ListSchemaVersionsRequest): Future[ListSchemaVersionsResponse] = service.listSchemaVersions(params).promise().toFuture
+    @inline def listSchemasFuture(params: ListSchemasRequest): Future[ListSchemasResponse] = service.listSchemas(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def putCodeBindingFuture(params: PutCodeBindingRequest): Future[PutCodeBindingResponse] = service.putCodeBinding(params).promise().toFuture
+    @inline def putResourcePolicyFuture(params: PutResourcePolicyRequest): Future[PutResourcePolicyResponse] = service.putResourcePolicy(params).promise().toFuture
+    @inline def searchSchemasFuture(params: SearchSchemasRequest): Future[SearchSchemasResponse] = service.searchSchemas(params).promise().toFuture
+    @inline def startDiscovererFuture(params: StartDiscovererRequest): Future[StartDiscovererResponse] = service.startDiscoverer(params).promise().toFuture
+    @inline def stopDiscovererFuture(params: StopDiscovererRequest): Future[StopDiscovererResponse] = service.stopDiscoverer(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
+    @inline def updateDiscovererFuture(params: UpdateDiscovererRequest): Future[UpdateDiscovererResponse] = service.updateDiscoverer(params).promise().toFuture
+    @inline def updateRegistryFuture(params: UpdateRegistryRequest): Future[UpdateRegistryResponse] = service.updateRegistry(params).promise().toFuture
+    @inline def updateSchemaFuture(params: UpdateSchemaRequest): Future[UpdateSchemaResponse] = service.updateSchema(params).promise().toFuture
   }
 }
 

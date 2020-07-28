@@ -41,66 +41,32 @@ package object cloudsearch {
 
   implicit final class CloudSearchOps(private val service: CloudSearch) extends AnyVal {
 
-    @inline def buildSuggestersFuture(params: BuildSuggestersRequest): Future[BuildSuggestersResponse] =
-      service.buildSuggesters(params).promise().toFuture
-    @inline def createDomainFuture(params: CreateDomainRequest): Future[CreateDomainResponse] =
-      service.createDomain(params).promise().toFuture
-    @inline def defineAnalysisSchemeFuture(params: DefineAnalysisSchemeRequest): Future[DefineAnalysisSchemeResponse] =
-      service.defineAnalysisScheme(params).promise().toFuture
-    @inline def defineExpressionFuture(params: DefineExpressionRequest): Future[DefineExpressionResponse] =
-      service.defineExpression(params).promise().toFuture
-    @inline def defineIndexFieldFuture(params: DefineIndexFieldRequest): Future[DefineIndexFieldResponse] =
-      service.defineIndexField(params).promise().toFuture
-    @inline def defineSuggesterFuture(params: DefineSuggesterRequest): Future[DefineSuggesterResponse] =
-      service.defineSuggester(params).promise().toFuture
-    @inline def deleteAnalysisSchemeFuture(params: DeleteAnalysisSchemeRequest): Future[DeleteAnalysisSchemeResponse] =
-      service.deleteAnalysisScheme(params).promise().toFuture
-    @inline def deleteDomainFuture(params: DeleteDomainRequest): Future[DeleteDomainResponse] =
-      service.deleteDomain(params).promise().toFuture
-    @inline def deleteExpressionFuture(params: DeleteExpressionRequest): Future[DeleteExpressionResponse] =
-      service.deleteExpression(params).promise().toFuture
-    @inline def deleteIndexFieldFuture(params: DeleteIndexFieldRequest): Future[DeleteIndexFieldResponse] =
-      service.deleteIndexField(params).promise().toFuture
-    @inline def deleteSuggesterFuture(params: DeleteSuggesterRequest): Future[DeleteSuggesterResponse] =
-      service.deleteSuggester(params).promise().toFuture
-    @inline def describeAnalysisSchemesFuture(
-        params: DescribeAnalysisSchemesRequest
-    ): Future[DescribeAnalysisSchemesResponse] = service.describeAnalysisSchemes(params).promise().toFuture
-    @inline def describeAvailabilityOptionsFuture(
-        params: DescribeAvailabilityOptionsRequest
-    ): Future[DescribeAvailabilityOptionsResponse] = service.describeAvailabilityOptions(params).promise().toFuture
-    @inline def describeDomainEndpointOptionsFuture(
-        params: DescribeDomainEndpointOptionsRequest
-    ): Future[DescribeDomainEndpointOptionsResponse] = service.describeDomainEndpointOptions(params).promise().toFuture
-    @inline def describeDomainsFuture(params: DescribeDomainsRequest): Future[DescribeDomainsResponse] =
-      service.describeDomains(params).promise().toFuture
-    @inline def describeExpressionsFuture(params: DescribeExpressionsRequest): Future[DescribeExpressionsResponse] =
-      service.describeExpressions(params).promise().toFuture
-    @inline def describeIndexFieldsFuture(params: DescribeIndexFieldsRequest): Future[DescribeIndexFieldsResponse] =
-      service.describeIndexFields(params).promise().toFuture
-    @inline def describeScalingParametersFuture(
-        params: DescribeScalingParametersRequest
-    ): Future[DescribeScalingParametersResponse] = service.describeScalingParameters(params).promise().toFuture
-    @inline def describeServiceAccessPoliciesFuture(
-        params: DescribeServiceAccessPoliciesRequest
-    ): Future[DescribeServiceAccessPoliciesResponse] = service.describeServiceAccessPolicies(params).promise().toFuture
-    @inline def describeSuggestersFuture(params: DescribeSuggestersRequest): Future[DescribeSuggestersResponse] =
-      service.describeSuggesters(params).promise().toFuture
-    @inline def indexDocumentsFuture(params: IndexDocumentsRequest): Future[IndexDocumentsResponse] =
-      service.indexDocuments(params).promise().toFuture
+    @inline def buildSuggestersFuture(params: BuildSuggestersRequest): Future[BuildSuggestersResponse] = service.buildSuggesters(params).promise().toFuture
+    @inline def createDomainFuture(params: CreateDomainRequest): Future[CreateDomainResponse] = service.createDomain(params).promise().toFuture
+    @inline def defineAnalysisSchemeFuture(params: DefineAnalysisSchemeRequest): Future[DefineAnalysisSchemeResponse] = service.defineAnalysisScheme(params).promise().toFuture
+    @inline def defineExpressionFuture(params: DefineExpressionRequest): Future[DefineExpressionResponse] = service.defineExpression(params).promise().toFuture
+    @inline def defineIndexFieldFuture(params: DefineIndexFieldRequest): Future[DefineIndexFieldResponse] = service.defineIndexField(params).promise().toFuture
+    @inline def defineSuggesterFuture(params: DefineSuggesterRequest): Future[DefineSuggesterResponse] = service.defineSuggester(params).promise().toFuture
+    @inline def deleteAnalysisSchemeFuture(params: DeleteAnalysisSchemeRequest): Future[DeleteAnalysisSchemeResponse] = service.deleteAnalysisScheme(params).promise().toFuture
+    @inline def deleteDomainFuture(params: DeleteDomainRequest): Future[DeleteDomainResponse] = service.deleteDomain(params).promise().toFuture
+    @inline def deleteExpressionFuture(params: DeleteExpressionRequest): Future[DeleteExpressionResponse] = service.deleteExpression(params).promise().toFuture
+    @inline def deleteIndexFieldFuture(params: DeleteIndexFieldRequest): Future[DeleteIndexFieldResponse] = service.deleteIndexField(params).promise().toFuture
+    @inline def deleteSuggesterFuture(params: DeleteSuggesterRequest): Future[DeleteSuggesterResponse] = service.deleteSuggester(params).promise().toFuture
+    @inline def describeAnalysisSchemesFuture(params: DescribeAnalysisSchemesRequest): Future[DescribeAnalysisSchemesResponse] = service.describeAnalysisSchemes(params).promise().toFuture
+    @inline def describeAvailabilityOptionsFuture(params: DescribeAvailabilityOptionsRequest): Future[DescribeAvailabilityOptionsResponse] = service.describeAvailabilityOptions(params).promise().toFuture
+    @inline def describeDomainEndpointOptionsFuture(params: DescribeDomainEndpointOptionsRequest): Future[DescribeDomainEndpointOptionsResponse] = service.describeDomainEndpointOptions(params).promise().toFuture
+    @inline def describeDomainsFuture(params: DescribeDomainsRequest): Future[DescribeDomainsResponse] = service.describeDomains(params).promise().toFuture
+    @inline def describeExpressionsFuture(params: DescribeExpressionsRequest): Future[DescribeExpressionsResponse] = service.describeExpressions(params).promise().toFuture
+    @inline def describeIndexFieldsFuture(params: DescribeIndexFieldsRequest): Future[DescribeIndexFieldsResponse] = service.describeIndexFields(params).promise().toFuture
+    @inline def describeScalingParametersFuture(params: DescribeScalingParametersRequest): Future[DescribeScalingParametersResponse] = service.describeScalingParameters(params).promise().toFuture
+    @inline def describeServiceAccessPoliciesFuture(params: DescribeServiceAccessPoliciesRequest): Future[DescribeServiceAccessPoliciesResponse] = service.describeServiceAccessPolicies(params).promise().toFuture
+    @inline def describeSuggestersFuture(params: DescribeSuggestersRequest): Future[DescribeSuggestersResponse] = service.describeSuggesters(params).promise().toFuture
+    @inline def indexDocumentsFuture(params: IndexDocumentsRequest): Future[IndexDocumentsResponse] = service.indexDocuments(params).promise().toFuture
     @inline def listDomainNamesFuture(): Future[ListDomainNamesResponse] = service.listDomainNames().promise().toFuture
-    @inline def updateAvailabilityOptionsFuture(
-        params: UpdateAvailabilityOptionsRequest
-    ): Future[UpdateAvailabilityOptionsResponse] = service.updateAvailabilityOptions(params).promise().toFuture
-    @inline def updateDomainEndpointOptionsFuture(
-        params: UpdateDomainEndpointOptionsRequest
-    ): Future[UpdateDomainEndpointOptionsResponse] = service.updateDomainEndpointOptions(params).promise().toFuture
-    @inline def updateScalingParametersFuture(
-        params: UpdateScalingParametersRequest
-    ): Future[UpdateScalingParametersResponse] = service.updateScalingParameters(params).promise().toFuture
-    @inline def updateServiceAccessPoliciesFuture(
-        params: UpdateServiceAccessPoliciesRequest
-    ): Future[UpdateServiceAccessPoliciesResponse] = service.updateServiceAccessPolicies(params).promise().toFuture
+    @inline def updateAvailabilityOptionsFuture(params: UpdateAvailabilityOptionsRequest): Future[UpdateAvailabilityOptionsResponse] = service.updateAvailabilityOptions(params).promise().toFuture
+    @inline def updateDomainEndpointOptionsFuture(params: UpdateDomainEndpointOptionsRequest): Future[UpdateDomainEndpointOptionsResponse] = service.updateDomainEndpointOptions(params).promise().toFuture
+    @inline def updateScalingParametersFuture(params: UpdateScalingParametersRequest): Future[UpdateScalingParametersResponse] = service.updateScalingParameters(params).promise().toFuture
+    @inline def updateServiceAccessPoliciesFuture(params: UpdateServiceAccessPoliciesRequest): Future[UpdateServiceAccessPoliciesResponse] = service.updateServiceAccessPolicies(params).promise().toFuture
   }
 }
 
@@ -121,37 +87,21 @@ package cloudsearch {
     def deleteExpression(params: DeleteExpressionRequest): Request[DeleteExpressionResponse] = js.native
     def deleteIndexField(params: DeleteIndexFieldRequest): Request[DeleteIndexFieldResponse] = js.native
     def deleteSuggester(params: DeleteSuggesterRequest): Request[DeleteSuggesterResponse] = js.native
-    def describeAnalysisSchemes(params: DescribeAnalysisSchemesRequest): Request[DescribeAnalysisSchemesResponse] =
-      js.native
-    def describeAvailabilityOptions(
-        params: DescribeAvailabilityOptionsRequest
-    ): Request[DescribeAvailabilityOptionsResponse] = js.native
-    def describeDomainEndpointOptions(
-        params: DescribeDomainEndpointOptionsRequest
-    ): Request[DescribeDomainEndpointOptionsResponse] = js.native
+    def describeAnalysisSchemes(params: DescribeAnalysisSchemesRequest): Request[DescribeAnalysisSchemesResponse] = js.native
+    def describeAvailabilityOptions(params: DescribeAvailabilityOptionsRequest): Request[DescribeAvailabilityOptionsResponse] = js.native
+    def describeDomainEndpointOptions(params: DescribeDomainEndpointOptionsRequest): Request[DescribeDomainEndpointOptionsResponse] = js.native
     def describeDomains(params: DescribeDomainsRequest): Request[DescribeDomainsResponse] = js.native
     def describeExpressions(params: DescribeExpressionsRequest): Request[DescribeExpressionsResponse] = js.native
     def describeIndexFields(params: DescribeIndexFieldsRequest): Request[DescribeIndexFieldsResponse] = js.native
-    def describeScalingParameters(
-        params: DescribeScalingParametersRequest
-    ): Request[DescribeScalingParametersResponse] = js.native
-    def describeServiceAccessPolicies(
-        params: DescribeServiceAccessPoliciesRequest
-    ): Request[DescribeServiceAccessPoliciesResponse] = js.native
+    def describeScalingParameters(params: DescribeScalingParametersRequest): Request[DescribeScalingParametersResponse] = js.native
+    def describeServiceAccessPolicies(params: DescribeServiceAccessPoliciesRequest): Request[DescribeServiceAccessPoliciesResponse] = js.native
     def describeSuggesters(params: DescribeSuggestersRequest): Request[DescribeSuggestersResponse] = js.native
     def indexDocuments(params: IndexDocumentsRequest): Request[IndexDocumentsResponse] = js.native
     def listDomainNames(): Request[ListDomainNamesResponse] = js.native
-    def updateAvailabilityOptions(
-        params: UpdateAvailabilityOptionsRequest
-    ): Request[UpdateAvailabilityOptionsResponse] = js.native
-    def updateDomainEndpointOptions(
-        params: UpdateDomainEndpointOptionsRequest
-    ): Request[UpdateDomainEndpointOptionsResponse] = js.native
-    def updateScalingParameters(params: UpdateScalingParametersRequest): Request[UpdateScalingParametersResponse] =
-      js.native
-    def updateServiceAccessPolicies(
-        params: UpdateServiceAccessPoliciesRequest
-    ): Request[UpdateServiceAccessPoliciesResponse] = js.native
+    def updateAvailabilityOptions(params: UpdateAvailabilityOptionsRequest): Request[UpdateAvailabilityOptionsResponse] = js.native
+    def updateDomainEndpointOptions(params: UpdateDomainEndpointOptionsRequest): Request[UpdateDomainEndpointOptionsResponse] = js.native
+    def updateScalingParameters(params: UpdateScalingParametersRequest): Request[UpdateScalingParametersResponse] = js.native
+    def updateServiceAccessPolicies(params: UpdateServiceAccessPoliciesRequest): Request[UpdateServiceAccessPoliciesResponse] = js.native
   }
 
   /**
@@ -212,9 +162,7 @@ package cloudsearch {
     ): AnalysisOptions = {
       val __obj = js.Dynamic.literal()
       AlgorithmicStemming.foreach(__v => __obj.updateDynamic("AlgorithmicStemming")(__v.asInstanceOf[js.Any]))
-      JapaneseTokenizationDictionary.foreach(__v =>
-        __obj.updateDynamic("JapaneseTokenizationDictionary")(__v.asInstanceOf[js.Any])
-      )
+      JapaneseTokenizationDictionary.foreach(__v => __obj.updateDynamic("JapaneseTokenizationDictionary")(__v.asInstanceOf[js.Any]))
       StemmingDictionary.foreach(__v => __obj.updateDynamic("StemmingDictionary")(__v.asInstanceOf[js.Any]))
       Stopwords.foreach(__v => __obj.updateDynamic("Stopwords")(__v.asInstanceOf[js.Any]))
       Synonyms.foreach(__v => __obj.updateDynamic("Synonyms")(__v.asInstanceOf[js.Any]))
@@ -291,45 +239,7 @@ package cloudsearch {
     val `zh-Hans` = "zh-Hans".asInstanceOf[AnalysisSchemeLanguage]
     val `zh-Hant` = "zh-Hant".asInstanceOf[AnalysisSchemeLanguage]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ar,
-        bg,
-        ca,
-        cs,
-        da,
-        de,
-        el,
-        en,
-        es,
-        eu,
-        fa,
-        fi,
-        fr,
-        ga,
-        gl,
-        he,
-        hi,
-        hu,
-        hy,
-        id,
-        it,
-        ja,
-        ko,
-        lv,
-        mul,
-        nl,
-        no,
-        pt,
-        ro,
-        ru,
-        sv,
-        th,
-        tr,
-        `zh-Hans`,
-        `zh-Hant`
-      )
-    )
+    val values = js.Object.freeze(js.Array(ar, bg, ca, cs, da, de, el, en, es, eu, fa, fi, fr, ga, gl, he, hi, hu, hy, id, it, ja, ko, lv, mul, nl, no, pt, ro, ru, sv, th, tr, `zh-Hans`, `zh-Hant`))
   }
 
   /**
@@ -1712,21 +1622,7 @@ package cloudsearch {
     val `text-array` = "text-array".asInstanceOf[IndexFieldType]
     val `date-array` = "date-array".asInstanceOf[IndexFieldType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        int,
-        double,
-        literal,
-        text,
-        date,
-        latlon,
-        `int-array`,
-        `double-array`,
-        `literal-array`,
-        `text-array`,
-        `date-array`
-      )
-    )
+    val values = js.Object.freeze(js.Array(int, double, literal, text, date, latlon, `int-array`, `double-array`, `literal-array`, `text-array`, `date-array`))
   }
 
   /**
@@ -1999,18 +1895,16 @@ package cloudsearch {
     val `search.m3.xlarge` = "search.m3.xlarge".asInstanceOf[PartitionInstanceType]
     val `search.m3.2xlarge` = "search.m3.2xlarge".asInstanceOf[PartitionInstanceType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `search.m1.small`,
-        `search.m1.large`,
-        `search.m2.xlarge`,
-        `search.m2.2xlarge`,
-        `search.m3.medium`,
-        `search.m3.large`,
-        `search.m3.xlarge`,
-        `search.m3.2xlarge`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      `search.m1.small`,
+      `search.m1.large`,
+      `search.m2.xlarge`,
+      `search.m2.2xlarge`,
+      `search.m3.medium`,
+      `search.m3.large`,
+      `search.m3.xlarge`,
+      `search.m3.2xlarge`
+    ))
   }
 
   /**

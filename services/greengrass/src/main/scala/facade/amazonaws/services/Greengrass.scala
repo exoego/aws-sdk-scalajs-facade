@@ -35,263 +35,96 @@ package object greengrass {
 
   implicit final class GreengrassOps(private val service: Greengrass) extends AnyVal {
 
-    @inline def associateRoleToGroupFuture(params: AssociateRoleToGroupRequest): Future[AssociateRoleToGroupResponse] =
-      service.associateRoleToGroup(params).promise().toFuture
-    @inline def associateServiceRoleToAccountFuture(
-        params: AssociateServiceRoleToAccountRequest
-    ): Future[AssociateServiceRoleToAccountResponse] = service.associateServiceRoleToAccount(params).promise().toFuture
-    @inline def createConnectorDefinitionFuture(
-        params: CreateConnectorDefinitionRequest
-    ): Future[CreateConnectorDefinitionResponse] = service.createConnectorDefinition(params).promise().toFuture
-    @inline def createConnectorDefinitionVersionFuture(
-        params: CreateConnectorDefinitionVersionRequest
-    ): Future[CreateConnectorDefinitionVersionResponse] =
-      service.createConnectorDefinitionVersion(params).promise().toFuture
-    @inline def createCoreDefinitionFuture(params: CreateCoreDefinitionRequest): Future[CreateCoreDefinitionResponse] =
-      service.createCoreDefinition(params).promise().toFuture
-    @inline def createCoreDefinitionVersionFuture(
-        params: CreateCoreDefinitionVersionRequest
-    ): Future[CreateCoreDefinitionVersionResponse] = service.createCoreDefinitionVersion(params).promise().toFuture
-    @inline def createDeploymentFuture(params: CreateDeploymentRequest): Future[CreateDeploymentResponse] =
-      service.createDeployment(params).promise().toFuture
-    @inline def createDeviceDefinitionFuture(
-        params: CreateDeviceDefinitionRequest
-    ): Future[CreateDeviceDefinitionResponse] = service.createDeviceDefinition(params).promise().toFuture
-    @inline def createDeviceDefinitionVersionFuture(
-        params: CreateDeviceDefinitionVersionRequest
-    ): Future[CreateDeviceDefinitionVersionResponse] = service.createDeviceDefinitionVersion(params).promise().toFuture
-    @inline def createFunctionDefinitionFuture(
-        params: CreateFunctionDefinitionRequest
-    ): Future[CreateFunctionDefinitionResponse] = service.createFunctionDefinition(params).promise().toFuture
-    @inline def createFunctionDefinitionVersionFuture(
-        params: CreateFunctionDefinitionVersionRequest
-    ): Future[CreateFunctionDefinitionVersionResponse] =
-      service.createFunctionDefinitionVersion(params).promise().toFuture
-    @inline def createGroupCertificateAuthorityFuture(
-        params: CreateGroupCertificateAuthorityRequest
-    ): Future[CreateGroupCertificateAuthorityResponse] =
-      service.createGroupCertificateAuthority(params).promise().toFuture
-    @inline def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResponse] =
-      service.createGroup(params).promise().toFuture
-    @inline def createGroupVersionFuture(params: CreateGroupVersionRequest): Future[CreateGroupVersionResponse] =
-      service.createGroupVersion(params).promise().toFuture
-    @inline def createLoggerDefinitionFuture(
-        params: CreateLoggerDefinitionRequest
-    ): Future[CreateLoggerDefinitionResponse] = service.createLoggerDefinition(params).promise().toFuture
-    @inline def createLoggerDefinitionVersionFuture(
-        params: CreateLoggerDefinitionVersionRequest
-    ): Future[CreateLoggerDefinitionVersionResponse] = service.createLoggerDefinitionVersion(params).promise().toFuture
-    @inline def createResourceDefinitionFuture(
-        params: CreateResourceDefinitionRequest
-    ): Future[CreateResourceDefinitionResponse] = service.createResourceDefinition(params).promise().toFuture
-    @inline def createResourceDefinitionVersionFuture(
-        params: CreateResourceDefinitionVersionRequest
-    ): Future[CreateResourceDefinitionVersionResponse] =
-      service.createResourceDefinitionVersion(params).promise().toFuture
-    @inline def createSoftwareUpdateJobFuture(
-        params: CreateSoftwareUpdateJobRequest
-    ): Future[CreateSoftwareUpdateJobResponse] = service.createSoftwareUpdateJob(params).promise().toFuture
-    @inline def createSubscriptionDefinitionFuture(
-        params: CreateSubscriptionDefinitionRequest
-    ): Future[CreateSubscriptionDefinitionResponse] = service.createSubscriptionDefinition(params).promise().toFuture
-    @inline def createSubscriptionDefinitionVersionFuture(
-        params: CreateSubscriptionDefinitionVersionRequest
-    ): Future[CreateSubscriptionDefinitionVersionResponse] =
-      service.createSubscriptionDefinitionVersion(params).promise().toFuture
-    @inline def deleteConnectorDefinitionFuture(
-        params: DeleteConnectorDefinitionRequest
-    ): Future[DeleteConnectorDefinitionResponse] = service.deleteConnectorDefinition(params).promise().toFuture
-    @inline def deleteCoreDefinitionFuture(params: DeleteCoreDefinitionRequest): Future[DeleteCoreDefinitionResponse] =
-      service.deleteCoreDefinition(params).promise().toFuture
-    @inline def deleteDeviceDefinitionFuture(
-        params: DeleteDeviceDefinitionRequest
-    ): Future[DeleteDeviceDefinitionResponse] = service.deleteDeviceDefinition(params).promise().toFuture
-    @inline def deleteFunctionDefinitionFuture(
-        params: DeleteFunctionDefinitionRequest
-    ): Future[DeleteFunctionDefinitionResponse] = service.deleteFunctionDefinition(params).promise().toFuture
-    @inline def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResponse] =
-      service.deleteGroup(params).promise().toFuture
-    @inline def deleteLoggerDefinitionFuture(
-        params: DeleteLoggerDefinitionRequest
-    ): Future[DeleteLoggerDefinitionResponse] = service.deleteLoggerDefinition(params).promise().toFuture
-    @inline def deleteResourceDefinitionFuture(
-        params: DeleteResourceDefinitionRequest
-    ): Future[DeleteResourceDefinitionResponse] = service.deleteResourceDefinition(params).promise().toFuture
-    @inline def deleteSubscriptionDefinitionFuture(
-        params: DeleteSubscriptionDefinitionRequest
-    ): Future[DeleteSubscriptionDefinitionResponse] = service.deleteSubscriptionDefinition(params).promise().toFuture
-    @inline def disassociateRoleFromGroupFuture(
-        params: DisassociateRoleFromGroupRequest
-    ): Future[DisassociateRoleFromGroupResponse] = service.disassociateRoleFromGroup(params).promise().toFuture
-    @inline def disassociateServiceRoleFromAccountFuture(
-        params: DisassociateServiceRoleFromAccountRequest
-    ): Future[DisassociateServiceRoleFromAccountResponse] =
-      service.disassociateServiceRoleFromAccount(params).promise().toFuture
-    @inline def getAssociatedRoleFuture(params: GetAssociatedRoleRequest): Future[GetAssociatedRoleResponse] =
-      service.getAssociatedRole(params).promise().toFuture
-    @inline def getBulkDeploymentStatusFuture(
-        params: GetBulkDeploymentStatusRequest
-    ): Future[GetBulkDeploymentStatusResponse] = service.getBulkDeploymentStatus(params).promise().toFuture
-    @inline def getConnectivityInfoFuture(params: GetConnectivityInfoRequest): Future[GetConnectivityInfoResponse] =
-      service.getConnectivityInfo(params).promise().toFuture
-    @inline def getConnectorDefinitionFuture(
-        params: GetConnectorDefinitionRequest
-    ): Future[GetConnectorDefinitionResponse] = service.getConnectorDefinition(params).promise().toFuture
-    @inline def getConnectorDefinitionVersionFuture(
-        params: GetConnectorDefinitionVersionRequest
-    ): Future[GetConnectorDefinitionVersionResponse] = service.getConnectorDefinitionVersion(params).promise().toFuture
-    @inline def getCoreDefinitionFuture(params: GetCoreDefinitionRequest): Future[GetCoreDefinitionResponse] =
-      service.getCoreDefinition(params).promise().toFuture
-    @inline def getCoreDefinitionVersionFuture(
-        params: GetCoreDefinitionVersionRequest
-    ): Future[GetCoreDefinitionVersionResponse] = service.getCoreDefinitionVersion(params).promise().toFuture
-    @inline def getDeploymentStatusFuture(params: GetDeploymentStatusRequest): Future[GetDeploymentStatusResponse] =
-      service.getDeploymentStatus(params).promise().toFuture
-    @inline def getDeviceDefinitionFuture(params: GetDeviceDefinitionRequest): Future[GetDeviceDefinitionResponse] =
-      service.getDeviceDefinition(params).promise().toFuture
-    @inline def getDeviceDefinitionVersionFuture(
-        params: GetDeviceDefinitionVersionRequest
-    ): Future[GetDeviceDefinitionVersionResponse] = service.getDeviceDefinitionVersion(params).promise().toFuture
-    @inline def getFunctionDefinitionFuture(
-        params: GetFunctionDefinitionRequest
-    ): Future[GetFunctionDefinitionResponse] = service.getFunctionDefinition(params).promise().toFuture
-    @inline def getFunctionDefinitionVersionFuture(
-        params: GetFunctionDefinitionVersionRequest
-    ): Future[GetFunctionDefinitionVersionResponse] = service.getFunctionDefinitionVersion(params).promise().toFuture
-    @inline def getGroupCertificateAuthorityFuture(
-        params: GetGroupCertificateAuthorityRequest
-    ): Future[GetGroupCertificateAuthorityResponse] = service.getGroupCertificateAuthority(params).promise().toFuture
-    @inline def getGroupCertificateConfigurationFuture(
-        params: GetGroupCertificateConfigurationRequest
-    ): Future[GetGroupCertificateConfigurationResponse] =
-      service.getGroupCertificateConfiguration(params).promise().toFuture
-    @inline def getGroupFuture(params: GetGroupRequest): Future[GetGroupResponse] =
-      service.getGroup(params).promise().toFuture
-    @inline def getGroupVersionFuture(params: GetGroupVersionRequest): Future[GetGroupVersionResponse] =
-      service.getGroupVersion(params).promise().toFuture
-    @inline def getLoggerDefinitionFuture(params: GetLoggerDefinitionRequest): Future[GetLoggerDefinitionResponse] =
-      service.getLoggerDefinition(params).promise().toFuture
-    @inline def getLoggerDefinitionVersionFuture(
-        params: GetLoggerDefinitionVersionRequest
-    ): Future[GetLoggerDefinitionVersionResponse] = service.getLoggerDefinitionVersion(params).promise().toFuture
-    @inline def getResourceDefinitionFuture(
-        params: GetResourceDefinitionRequest
-    ): Future[GetResourceDefinitionResponse] = service.getResourceDefinition(params).promise().toFuture
-    @inline def getResourceDefinitionVersionFuture(
-        params: GetResourceDefinitionVersionRequest
-    ): Future[GetResourceDefinitionVersionResponse] = service.getResourceDefinitionVersion(params).promise().toFuture
-    @inline def getServiceRoleForAccountFuture(
-        params: GetServiceRoleForAccountRequest
-    ): Future[GetServiceRoleForAccountResponse] = service.getServiceRoleForAccount(params).promise().toFuture
-    @inline def getSubscriptionDefinitionFuture(
-        params: GetSubscriptionDefinitionRequest
-    ): Future[GetSubscriptionDefinitionResponse] = service.getSubscriptionDefinition(params).promise().toFuture
-    @inline def getSubscriptionDefinitionVersionFuture(
-        params: GetSubscriptionDefinitionVersionRequest
-    ): Future[GetSubscriptionDefinitionVersionResponse] =
-      service.getSubscriptionDefinitionVersion(params).promise().toFuture
-    @inline def listBulkDeploymentDetailedReportsFuture(
-        params: ListBulkDeploymentDetailedReportsRequest
-    ): Future[ListBulkDeploymentDetailedReportsResponse] =
-      service.listBulkDeploymentDetailedReports(params).promise().toFuture
-    @inline def listBulkDeploymentsFuture(params: ListBulkDeploymentsRequest): Future[ListBulkDeploymentsResponse] =
-      service.listBulkDeployments(params).promise().toFuture
-    @inline def listConnectorDefinitionVersionsFuture(
-        params: ListConnectorDefinitionVersionsRequest
-    ): Future[ListConnectorDefinitionVersionsResponse] =
-      service.listConnectorDefinitionVersions(params).promise().toFuture
-    @inline def listConnectorDefinitionsFuture(
-        params: ListConnectorDefinitionsRequest
-    ): Future[ListConnectorDefinitionsResponse] = service.listConnectorDefinitions(params).promise().toFuture
-    @inline def listCoreDefinitionVersionsFuture(
-        params: ListCoreDefinitionVersionsRequest
-    ): Future[ListCoreDefinitionVersionsResponse] = service.listCoreDefinitionVersions(params).promise().toFuture
-    @inline def listCoreDefinitionsFuture(params: ListCoreDefinitionsRequest): Future[ListCoreDefinitionsResponse] =
-      service.listCoreDefinitions(params).promise().toFuture
-    @inline def listDeploymentsFuture(params: ListDeploymentsRequest): Future[ListDeploymentsResponse] =
-      service.listDeployments(params).promise().toFuture
-    @inline def listDeviceDefinitionVersionsFuture(
-        params: ListDeviceDefinitionVersionsRequest
-    ): Future[ListDeviceDefinitionVersionsResponse] = service.listDeviceDefinitionVersions(params).promise().toFuture
-    @inline def listDeviceDefinitionsFuture(
-        params: ListDeviceDefinitionsRequest
-    ): Future[ListDeviceDefinitionsResponse] = service.listDeviceDefinitions(params).promise().toFuture
-    @inline def listFunctionDefinitionVersionsFuture(
-        params: ListFunctionDefinitionVersionsRequest
-    ): Future[ListFunctionDefinitionVersionsResponse] =
-      service.listFunctionDefinitionVersions(params).promise().toFuture
-    @inline def listFunctionDefinitionsFuture(
-        params: ListFunctionDefinitionsRequest
-    ): Future[ListFunctionDefinitionsResponse] = service.listFunctionDefinitions(params).promise().toFuture
-    @inline def listGroupCertificateAuthoritiesFuture(
-        params: ListGroupCertificateAuthoritiesRequest
-    ): Future[ListGroupCertificateAuthoritiesResponse] =
-      service.listGroupCertificateAuthorities(params).promise().toFuture
-    @inline def listGroupVersionsFuture(params: ListGroupVersionsRequest): Future[ListGroupVersionsResponse] =
-      service.listGroupVersions(params).promise().toFuture
-    @inline def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] =
-      service.listGroups(params).promise().toFuture
-    @inline def listLoggerDefinitionVersionsFuture(
-        params: ListLoggerDefinitionVersionsRequest
-    ): Future[ListLoggerDefinitionVersionsResponse] = service.listLoggerDefinitionVersions(params).promise().toFuture
-    @inline def listLoggerDefinitionsFuture(
-        params: ListLoggerDefinitionsRequest
-    ): Future[ListLoggerDefinitionsResponse] = service.listLoggerDefinitions(params).promise().toFuture
-    @inline def listResourceDefinitionVersionsFuture(
-        params: ListResourceDefinitionVersionsRequest
-    ): Future[ListResourceDefinitionVersionsResponse] =
-      service.listResourceDefinitionVersions(params).promise().toFuture
-    @inline def listResourceDefinitionsFuture(
-        params: ListResourceDefinitionsRequest
-    ): Future[ListResourceDefinitionsResponse] = service.listResourceDefinitions(params).promise().toFuture
-    @inline def listSubscriptionDefinitionVersionsFuture(
-        params: ListSubscriptionDefinitionVersionsRequest
-    ): Future[ListSubscriptionDefinitionVersionsResponse] =
-      service.listSubscriptionDefinitionVersions(params).promise().toFuture
-    @inline def listSubscriptionDefinitionsFuture(
-        params: ListSubscriptionDefinitionsRequest
-    ): Future[ListSubscriptionDefinitionsResponse] = service.listSubscriptionDefinitions(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def resetDeploymentsFuture(params: ResetDeploymentsRequest): Future[ResetDeploymentsResponse] =
-      service.resetDeployments(params).promise().toFuture
-    @inline def startBulkDeploymentFuture(params: StartBulkDeploymentRequest): Future[StartBulkDeploymentResponse] =
-      service.startBulkDeployment(params).promise().toFuture
-    @inline def stopBulkDeploymentFuture(params: StopBulkDeploymentRequest): Future[StopBulkDeploymentResponse] =
-      service.stopBulkDeployment(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateConnectivityInfoFuture(
-        params: UpdateConnectivityInfoRequest
-    ): Future[UpdateConnectivityInfoResponse] = service.updateConnectivityInfo(params).promise().toFuture
-    @inline def updateConnectorDefinitionFuture(
-        params: UpdateConnectorDefinitionRequest
-    ): Future[UpdateConnectorDefinitionResponse] = service.updateConnectorDefinition(params).promise().toFuture
-    @inline def updateCoreDefinitionFuture(params: UpdateCoreDefinitionRequest): Future[UpdateCoreDefinitionResponse] =
-      service.updateCoreDefinition(params).promise().toFuture
-    @inline def updateDeviceDefinitionFuture(
-        params: UpdateDeviceDefinitionRequest
-    ): Future[UpdateDeviceDefinitionResponse] = service.updateDeviceDefinition(params).promise().toFuture
-    @inline def updateFunctionDefinitionFuture(
-        params: UpdateFunctionDefinitionRequest
-    ): Future[UpdateFunctionDefinitionResponse] = service.updateFunctionDefinition(params).promise().toFuture
-    @inline def updateGroupCertificateConfigurationFuture(
-        params: UpdateGroupCertificateConfigurationRequest
-    ): Future[UpdateGroupCertificateConfigurationResponse] =
-      service.updateGroupCertificateConfiguration(params).promise().toFuture
-    @inline def updateGroupFuture(params: UpdateGroupRequest): Future[UpdateGroupResponse] =
-      service.updateGroup(params).promise().toFuture
-    @inline def updateLoggerDefinitionFuture(
-        params: UpdateLoggerDefinitionRequest
-    ): Future[UpdateLoggerDefinitionResponse] = service.updateLoggerDefinition(params).promise().toFuture
-    @inline def updateResourceDefinitionFuture(
-        params: UpdateResourceDefinitionRequest
-    ): Future[UpdateResourceDefinitionResponse] = service.updateResourceDefinition(params).promise().toFuture
-    @inline def updateSubscriptionDefinitionFuture(
-        params: UpdateSubscriptionDefinitionRequest
-    ): Future[UpdateSubscriptionDefinitionResponse] = service.updateSubscriptionDefinition(params).promise().toFuture
+    @inline def associateRoleToGroupFuture(params: AssociateRoleToGroupRequest): Future[AssociateRoleToGroupResponse] = service.associateRoleToGroup(params).promise().toFuture
+    @inline def associateServiceRoleToAccountFuture(params: AssociateServiceRoleToAccountRequest): Future[AssociateServiceRoleToAccountResponse] = service.associateServiceRoleToAccount(params).promise().toFuture
+    @inline def createConnectorDefinitionFuture(params: CreateConnectorDefinitionRequest): Future[CreateConnectorDefinitionResponse] = service.createConnectorDefinition(params).promise().toFuture
+    @inline def createConnectorDefinitionVersionFuture(params: CreateConnectorDefinitionVersionRequest): Future[CreateConnectorDefinitionVersionResponse] = service.createConnectorDefinitionVersion(params).promise().toFuture
+    @inline def createCoreDefinitionFuture(params: CreateCoreDefinitionRequest): Future[CreateCoreDefinitionResponse] = service.createCoreDefinition(params).promise().toFuture
+    @inline def createCoreDefinitionVersionFuture(params: CreateCoreDefinitionVersionRequest): Future[CreateCoreDefinitionVersionResponse] = service.createCoreDefinitionVersion(params).promise().toFuture
+    @inline def createDeploymentFuture(params: CreateDeploymentRequest): Future[CreateDeploymentResponse] = service.createDeployment(params).promise().toFuture
+    @inline def createDeviceDefinitionFuture(params: CreateDeviceDefinitionRequest): Future[CreateDeviceDefinitionResponse] = service.createDeviceDefinition(params).promise().toFuture
+    @inline def createDeviceDefinitionVersionFuture(params: CreateDeviceDefinitionVersionRequest): Future[CreateDeviceDefinitionVersionResponse] = service.createDeviceDefinitionVersion(params).promise().toFuture
+    @inline def createFunctionDefinitionFuture(params: CreateFunctionDefinitionRequest): Future[CreateFunctionDefinitionResponse] = service.createFunctionDefinition(params).promise().toFuture
+    @inline def createFunctionDefinitionVersionFuture(params: CreateFunctionDefinitionVersionRequest): Future[CreateFunctionDefinitionVersionResponse] = service.createFunctionDefinitionVersion(params).promise().toFuture
+    @inline def createGroupCertificateAuthorityFuture(params: CreateGroupCertificateAuthorityRequest): Future[CreateGroupCertificateAuthorityResponse] = service.createGroupCertificateAuthority(params).promise().toFuture
+    @inline def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResponse] = service.createGroup(params).promise().toFuture
+    @inline def createGroupVersionFuture(params: CreateGroupVersionRequest): Future[CreateGroupVersionResponse] = service.createGroupVersion(params).promise().toFuture
+    @inline def createLoggerDefinitionFuture(params: CreateLoggerDefinitionRequest): Future[CreateLoggerDefinitionResponse] = service.createLoggerDefinition(params).promise().toFuture
+    @inline def createLoggerDefinitionVersionFuture(params: CreateLoggerDefinitionVersionRequest): Future[CreateLoggerDefinitionVersionResponse] = service.createLoggerDefinitionVersion(params).promise().toFuture
+    @inline def createResourceDefinitionFuture(params: CreateResourceDefinitionRequest): Future[CreateResourceDefinitionResponse] = service.createResourceDefinition(params).promise().toFuture
+    @inline def createResourceDefinitionVersionFuture(params: CreateResourceDefinitionVersionRequest): Future[CreateResourceDefinitionVersionResponse] = service.createResourceDefinitionVersion(params).promise().toFuture
+    @inline def createSoftwareUpdateJobFuture(params: CreateSoftwareUpdateJobRequest): Future[CreateSoftwareUpdateJobResponse] = service.createSoftwareUpdateJob(params).promise().toFuture
+    @inline def createSubscriptionDefinitionFuture(params: CreateSubscriptionDefinitionRequest): Future[CreateSubscriptionDefinitionResponse] = service.createSubscriptionDefinition(params).promise().toFuture
+    @inline def createSubscriptionDefinitionVersionFuture(params: CreateSubscriptionDefinitionVersionRequest): Future[CreateSubscriptionDefinitionVersionResponse] = service.createSubscriptionDefinitionVersion(params).promise().toFuture
+    @inline def deleteConnectorDefinitionFuture(params: DeleteConnectorDefinitionRequest): Future[DeleteConnectorDefinitionResponse] = service.deleteConnectorDefinition(params).promise().toFuture
+    @inline def deleteCoreDefinitionFuture(params: DeleteCoreDefinitionRequest): Future[DeleteCoreDefinitionResponse] = service.deleteCoreDefinition(params).promise().toFuture
+    @inline def deleteDeviceDefinitionFuture(params: DeleteDeviceDefinitionRequest): Future[DeleteDeviceDefinitionResponse] = service.deleteDeviceDefinition(params).promise().toFuture
+    @inline def deleteFunctionDefinitionFuture(params: DeleteFunctionDefinitionRequest): Future[DeleteFunctionDefinitionResponse] = service.deleteFunctionDefinition(params).promise().toFuture
+    @inline def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResponse] = service.deleteGroup(params).promise().toFuture
+    @inline def deleteLoggerDefinitionFuture(params: DeleteLoggerDefinitionRequest): Future[DeleteLoggerDefinitionResponse] = service.deleteLoggerDefinition(params).promise().toFuture
+    @inline def deleteResourceDefinitionFuture(params: DeleteResourceDefinitionRequest): Future[DeleteResourceDefinitionResponse] = service.deleteResourceDefinition(params).promise().toFuture
+    @inline def deleteSubscriptionDefinitionFuture(params: DeleteSubscriptionDefinitionRequest): Future[DeleteSubscriptionDefinitionResponse] = service.deleteSubscriptionDefinition(params).promise().toFuture
+    @inline def disassociateRoleFromGroupFuture(params: DisassociateRoleFromGroupRequest): Future[DisassociateRoleFromGroupResponse] = service.disassociateRoleFromGroup(params).promise().toFuture
+    @inline def disassociateServiceRoleFromAccountFuture(params: DisassociateServiceRoleFromAccountRequest): Future[DisassociateServiceRoleFromAccountResponse] = service.disassociateServiceRoleFromAccount(params).promise().toFuture
+    @inline def getAssociatedRoleFuture(params: GetAssociatedRoleRequest): Future[GetAssociatedRoleResponse] = service.getAssociatedRole(params).promise().toFuture
+    @inline def getBulkDeploymentStatusFuture(params: GetBulkDeploymentStatusRequest): Future[GetBulkDeploymentStatusResponse] = service.getBulkDeploymentStatus(params).promise().toFuture
+    @inline def getConnectivityInfoFuture(params: GetConnectivityInfoRequest): Future[GetConnectivityInfoResponse] = service.getConnectivityInfo(params).promise().toFuture
+    @inline def getConnectorDefinitionFuture(params: GetConnectorDefinitionRequest): Future[GetConnectorDefinitionResponse] = service.getConnectorDefinition(params).promise().toFuture
+    @inline def getConnectorDefinitionVersionFuture(params: GetConnectorDefinitionVersionRequest): Future[GetConnectorDefinitionVersionResponse] = service.getConnectorDefinitionVersion(params).promise().toFuture
+    @inline def getCoreDefinitionFuture(params: GetCoreDefinitionRequest): Future[GetCoreDefinitionResponse] = service.getCoreDefinition(params).promise().toFuture
+    @inline def getCoreDefinitionVersionFuture(params: GetCoreDefinitionVersionRequest): Future[GetCoreDefinitionVersionResponse] = service.getCoreDefinitionVersion(params).promise().toFuture
+    @inline def getDeploymentStatusFuture(params: GetDeploymentStatusRequest): Future[GetDeploymentStatusResponse] = service.getDeploymentStatus(params).promise().toFuture
+    @inline def getDeviceDefinitionFuture(params: GetDeviceDefinitionRequest): Future[GetDeviceDefinitionResponse] = service.getDeviceDefinition(params).promise().toFuture
+    @inline def getDeviceDefinitionVersionFuture(params: GetDeviceDefinitionVersionRequest): Future[GetDeviceDefinitionVersionResponse] = service.getDeviceDefinitionVersion(params).promise().toFuture
+    @inline def getFunctionDefinitionFuture(params: GetFunctionDefinitionRequest): Future[GetFunctionDefinitionResponse] = service.getFunctionDefinition(params).promise().toFuture
+    @inline def getFunctionDefinitionVersionFuture(params: GetFunctionDefinitionVersionRequest): Future[GetFunctionDefinitionVersionResponse] = service.getFunctionDefinitionVersion(params).promise().toFuture
+    @inline def getGroupCertificateAuthorityFuture(params: GetGroupCertificateAuthorityRequest): Future[GetGroupCertificateAuthorityResponse] = service.getGroupCertificateAuthority(params).promise().toFuture
+    @inline def getGroupCertificateConfigurationFuture(params: GetGroupCertificateConfigurationRequest): Future[GetGroupCertificateConfigurationResponse] = service.getGroupCertificateConfiguration(params).promise().toFuture
+    @inline def getGroupFuture(params: GetGroupRequest): Future[GetGroupResponse] = service.getGroup(params).promise().toFuture
+    @inline def getGroupVersionFuture(params: GetGroupVersionRequest): Future[GetGroupVersionResponse] = service.getGroupVersion(params).promise().toFuture
+    @inline def getLoggerDefinitionFuture(params: GetLoggerDefinitionRequest): Future[GetLoggerDefinitionResponse] = service.getLoggerDefinition(params).promise().toFuture
+    @inline def getLoggerDefinitionVersionFuture(params: GetLoggerDefinitionVersionRequest): Future[GetLoggerDefinitionVersionResponse] = service.getLoggerDefinitionVersion(params).promise().toFuture
+    @inline def getResourceDefinitionFuture(params: GetResourceDefinitionRequest): Future[GetResourceDefinitionResponse] = service.getResourceDefinition(params).promise().toFuture
+    @inline def getResourceDefinitionVersionFuture(params: GetResourceDefinitionVersionRequest): Future[GetResourceDefinitionVersionResponse] = service.getResourceDefinitionVersion(params).promise().toFuture
+    @inline def getServiceRoleForAccountFuture(params: GetServiceRoleForAccountRequest): Future[GetServiceRoleForAccountResponse] = service.getServiceRoleForAccount(params).promise().toFuture
+    @inline def getSubscriptionDefinitionFuture(params: GetSubscriptionDefinitionRequest): Future[GetSubscriptionDefinitionResponse] = service.getSubscriptionDefinition(params).promise().toFuture
+    @inline def getSubscriptionDefinitionVersionFuture(params: GetSubscriptionDefinitionVersionRequest): Future[GetSubscriptionDefinitionVersionResponse] = service.getSubscriptionDefinitionVersion(params).promise().toFuture
+    @inline def listBulkDeploymentDetailedReportsFuture(params: ListBulkDeploymentDetailedReportsRequest): Future[ListBulkDeploymentDetailedReportsResponse] = service.listBulkDeploymentDetailedReports(params).promise().toFuture
+    @inline def listBulkDeploymentsFuture(params: ListBulkDeploymentsRequest): Future[ListBulkDeploymentsResponse] = service.listBulkDeployments(params).promise().toFuture
+    @inline def listConnectorDefinitionVersionsFuture(params: ListConnectorDefinitionVersionsRequest): Future[ListConnectorDefinitionVersionsResponse] = service.listConnectorDefinitionVersions(params).promise().toFuture
+    @inline def listConnectorDefinitionsFuture(params: ListConnectorDefinitionsRequest): Future[ListConnectorDefinitionsResponse] = service.listConnectorDefinitions(params).promise().toFuture
+    @inline def listCoreDefinitionVersionsFuture(params: ListCoreDefinitionVersionsRequest): Future[ListCoreDefinitionVersionsResponse] = service.listCoreDefinitionVersions(params).promise().toFuture
+    @inline def listCoreDefinitionsFuture(params: ListCoreDefinitionsRequest): Future[ListCoreDefinitionsResponse] = service.listCoreDefinitions(params).promise().toFuture
+    @inline def listDeploymentsFuture(params: ListDeploymentsRequest): Future[ListDeploymentsResponse] = service.listDeployments(params).promise().toFuture
+    @inline def listDeviceDefinitionVersionsFuture(params: ListDeviceDefinitionVersionsRequest): Future[ListDeviceDefinitionVersionsResponse] = service.listDeviceDefinitionVersions(params).promise().toFuture
+    @inline def listDeviceDefinitionsFuture(params: ListDeviceDefinitionsRequest): Future[ListDeviceDefinitionsResponse] = service.listDeviceDefinitions(params).promise().toFuture
+    @inline def listFunctionDefinitionVersionsFuture(params: ListFunctionDefinitionVersionsRequest): Future[ListFunctionDefinitionVersionsResponse] = service.listFunctionDefinitionVersions(params).promise().toFuture
+    @inline def listFunctionDefinitionsFuture(params: ListFunctionDefinitionsRequest): Future[ListFunctionDefinitionsResponse] = service.listFunctionDefinitions(params).promise().toFuture
+    @inline def listGroupCertificateAuthoritiesFuture(params: ListGroupCertificateAuthoritiesRequest): Future[ListGroupCertificateAuthoritiesResponse] = service.listGroupCertificateAuthorities(params).promise().toFuture
+    @inline def listGroupVersionsFuture(params: ListGroupVersionsRequest): Future[ListGroupVersionsResponse] = service.listGroupVersions(params).promise().toFuture
+    @inline def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] = service.listGroups(params).promise().toFuture
+    @inline def listLoggerDefinitionVersionsFuture(params: ListLoggerDefinitionVersionsRequest): Future[ListLoggerDefinitionVersionsResponse] = service.listLoggerDefinitionVersions(params).promise().toFuture
+    @inline def listLoggerDefinitionsFuture(params: ListLoggerDefinitionsRequest): Future[ListLoggerDefinitionsResponse] = service.listLoggerDefinitions(params).promise().toFuture
+    @inline def listResourceDefinitionVersionsFuture(params: ListResourceDefinitionVersionsRequest): Future[ListResourceDefinitionVersionsResponse] = service.listResourceDefinitionVersions(params).promise().toFuture
+    @inline def listResourceDefinitionsFuture(params: ListResourceDefinitionsRequest): Future[ListResourceDefinitionsResponse] = service.listResourceDefinitions(params).promise().toFuture
+    @inline def listSubscriptionDefinitionVersionsFuture(params: ListSubscriptionDefinitionVersionsRequest): Future[ListSubscriptionDefinitionVersionsResponse] = service.listSubscriptionDefinitionVersions(params).promise().toFuture
+    @inline def listSubscriptionDefinitionsFuture(params: ListSubscriptionDefinitionsRequest): Future[ListSubscriptionDefinitionsResponse] = service.listSubscriptionDefinitions(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def resetDeploymentsFuture(params: ResetDeploymentsRequest): Future[ResetDeploymentsResponse] = service.resetDeployments(params).promise().toFuture
+    @inline def startBulkDeploymentFuture(params: StartBulkDeploymentRequest): Future[StartBulkDeploymentResponse] = service.startBulkDeployment(params).promise().toFuture
+    @inline def stopBulkDeploymentFuture(params: StopBulkDeploymentRequest): Future[StopBulkDeploymentResponse] = service.stopBulkDeployment(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
+    @inline def updateConnectivityInfoFuture(params: UpdateConnectivityInfoRequest): Future[UpdateConnectivityInfoResponse] = service.updateConnectivityInfo(params).promise().toFuture
+    @inline def updateConnectorDefinitionFuture(params: UpdateConnectorDefinitionRequest): Future[UpdateConnectorDefinitionResponse] = service.updateConnectorDefinition(params).promise().toFuture
+    @inline def updateCoreDefinitionFuture(params: UpdateCoreDefinitionRequest): Future[UpdateCoreDefinitionResponse] = service.updateCoreDefinition(params).promise().toFuture
+    @inline def updateDeviceDefinitionFuture(params: UpdateDeviceDefinitionRequest): Future[UpdateDeviceDefinitionResponse] = service.updateDeviceDefinition(params).promise().toFuture
+    @inline def updateFunctionDefinitionFuture(params: UpdateFunctionDefinitionRequest): Future[UpdateFunctionDefinitionResponse] = service.updateFunctionDefinition(params).promise().toFuture
+    @inline def updateGroupCertificateConfigurationFuture(params: UpdateGroupCertificateConfigurationRequest): Future[UpdateGroupCertificateConfigurationResponse] = service.updateGroupCertificateConfiguration(params).promise().toFuture
+    @inline def updateGroupFuture(params: UpdateGroupRequest): Future[UpdateGroupResponse] = service.updateGroup(params).promise().toFuture
+    @inline def updateLoggerDefinitionFuture(params: UpdateLoggerDefinitionRequest): Future[UpdateLoggerDefinitionResponse] = service.updateLoggerDefinition(params).promise().toFuture
+    @inline def updateResourceDefinitionFuture(params: UpdateResourceDefinitionRequest): Future[UpdateResourceDefinitionResponse] = service.updateResourceDefinition(params).promise().toFuture
+    @inline def updateSubscriptionDefinitionFuture(params: UpdateSubscriptionDefinitionRequest): Future[UpdateSubscriptionDefinitionResponse] = service.updateSubscriptionDefinition(params).promise().toFuture
   }
 }
 
@@ -302,190 +135,95 @@ package greengrass {
     def this(config: AWSConfig) = this()
 
     def associateRoleToGroup(params: AssociateRoleToGroupRequest): Request[AssociateRoleToGroupResponse] = js.native
-    def associateServiceRoleToAccount(
-        params: AssociateServiceRoleToAccountRequest
-    ): Request[AssociateServiceRoleToAccountResponse] = js.native
-    def createConnectorDefinition(
-        params: CreateConnectorDefinitionRequest
-    ): Request[CreateConnectorDefinitionResponse] = js.native
-    def createConnectorDefinitionVersion(
-        params: CreateConnectorDefinitionVersionRequest
-    ): Request[CreateConnectorDefinitionVersionResponse] = js.native
+    def associateServiceRoleToAccount(params: AssociateServiceRoleToAccountRequest): Request[AssociateServiceRoleToAccountResponse] = js.native
+    def createConnectorDefinition(params: CreateConnectorDefinitionRequest): Request[CreateConnectorDefinitionResponse] = js.native
+    def createConnectorDefinitionVersion(params: CreateConnectorDefinitionVersionRequest): Request[CreateConnectorDefinitionVersionResponse] = js.native
     def createCoreDefinition(params: CreateCoreDefinitionRequest): Request[CreateCoreDefinitionResponse] = js.native
-    def createCoreDefinitionVersion(
-        params: CreateCoreDefinitionVersionRequest
-    ): Request[CreateCoreDefinitionVersionResponse] = js.native
+    def createCoreDefinitionVersion(params: CreateCoreDefinitionVersionRequest): Request[CreateCoreDefinitionVersionResponse] = js.native
     def createDeployment(params: CreateDeploymentRequest): Request[CreateDeploymentResponse] = js.native
-    def createDeviceDefinition(params: CreateDeviceDefinitionRequest): Request[CreateDeviceDefinitionResponse] =
-      js.native
-    def createDeviceDefinitionVersion(
-        params: CreateDeviceDefinitionVersionRequest
-    ): Request[CreateDeviceDefinitionVersionResponse] = js.native
-    def createFunctionDefinition(params: CreateFunctionDefinitionRequest): Request[CreateFunctionDefinitionResponse] =
-      js.native
-    def createFunctionDefinitionVersion(
-        params: CreateFunctionDefinitionVersionRequest
-    ): Request[CreateFunctionDefinitionVersionResponse] = js.native
+    def createDeviceDefinition(params: CreateDeviceDefinitionRequest): Request[CreateDeviceDefinitionResponse] = js.native
+    def createDeviceDefinitionVersion(params: CreateDeviceDefinitionVersionRequest): Request[CreateDeviceDefinitionVersionResponse] = js.native
+    def createFunctionDefinition(params: CreateFunctionDefinitionRequest): Request[CreateFunctionDefinitionResponse] = js.native
+    def createFunctionDefinitionVersion(params: CreateFunctionDefinitionVersionRequest): Request[CreateFunctionDefinitionVersionResponse] = js.native
     def createGroup(params: CreateGroupRequest): Request[CreateGroupResponse] = js.native
-    def createGroupCertificateAuthority(
-        params: CreateGroupCertificateAuthorityRequest
-    ): Request[CreateGroupCertificateAuthorityResponse] = js.native
+    def createGroupCertificateAuthority(params: CreateGroupCertificateAuthorityRequest): Request[CreateGroupCertificateAuthorityResponse] = js.native
     def createGroupVersion(params: CreateGroupVersionRequest): Request[CreateGroupVersionResponse] = js.native
-    def createLoggerDefinition(params: CreateLoggerDefinitionRequest): Request[CreateLoggerDefinitionResponse] =
-      js.native
-    def createLoggerDefinitionVersion(
-        params: CreateLoggerDefinitionVersionRequest
-    ): Request[CreateLoggerDefinitionVersionResponse] = js.native
-    def createResourceDefinition(params: CreateResourceDefinitionRequest): Request[CreateResourceDefinitionResponse] =
-      js.native
-    def createResourceDefinitionVersion(
-        params: CreateResourceDefinitionVersionRequest
-    ): Request[CreateResourceDefinitionVersionResponse] = js.native
-    def createSoftwareUpdateJob(params: CreateSoftwareUpdateJobRequest): Request[CreateSoftwareUpdateJobResponse] =
-      js.native
-    def createSubscriptionDefinition(
-        params: CreateSubscriptionDefinitionRequest
-    ): Request[CreateSubscriptionDefinitionResponse] = js.native
-    def createSubscriptionDefinitionVersion(
-        params: CreateSubscriptionDefinitionVersionRequest
-    ): Request[CreateSubscriptionDefinitionVersionResponse] = js.native
-    def deleteConnectorDefinition(
-        params: DeleteConnectorDefinitionRequest
-    ): Request[DeleteConnectorDefinitionResponse] = js.native
+    def createLoggerDefinition(params: CreateLoggerDefinitionRequest): Request[CreateLoggerDefinitionResponse] = js.native
+    def createLoggerDefinitionVersion(params: CreateLoggerDefinitionVersionRequest): Request[CreateLoggerDefinitionVersionResponse] = js.native
+    def createResourceDefinition(params: CreateResourceDefinitionRequest): Request[CreateResourceDefinitionResponse] = js.native
+    def createResourceDefinitionVersion(params: CreateResourceDefinitionVersionRequest): Request[CreateResourceDefinitionVersionResponse] = js.native
+    def createSoftwareUpdateJob(params: CreateSoftwareUpdateJobRequest): Request[CreateSoftwareUpdateJobResponse] = js.native
+    def createSubscriptionDefinition(params: CreateSubscriptionDefinitionRequest): Request[CreateSubscriptionDefinitionResponse] = js.native
+    def createSubscriptionDefinitionVersion(params: CreateSubscriptionDefinitionVersionRequest): Request[CreateSubscriptionDefinitionVersionResponse] = js.native
+    def deleteConnectorDefinition(params: DeleteConnectorDefinitionRequest): Request[DeleteConnectorDefinitionResponse] = js.native
     def deleteCoreDefinition(params: DeleteCoreDefinitionRequest): Request[DeleteCoreDefinitionResponse] = js.native
-    def deleteDeviceDefinition(params: DeleteDeviceDefinitionRequest): Request[DeleteDeviceDefinitionResponse] =
-      js.native
-    def deleteFunctionDefinition(params: DeleteFunctionDefinitionRequest): Request[DeleteFunctionDefinitionResponse] =
-      js.native
+    def deleteDeviceDefinition(params: DeleteDeviceDefinitionRequest): Request[DeleteDeviceDefinitionResponse] = js.native
+    def deleteFunctionDefinition(params: DeleteFunctionDefinitionRequest): Request[DeleteFunctionDefinitionResponse] = js.native
     def deleteGroup(params: DeleteGroupRequest): Request[DeleteGroupResponse] = js.native
-    def deleteLoggerDefinition(params: DeleteLoggerDefinitionRequest): Request[DeleteLoggerDefinitionResponse] =
-      js.native
-    def deleteResourceDefinition(params: DeleteResourceDefinitionRequest): Request[DeleteResourceDefinitionResponse] =
-      js.native
-    def deleteSubscriptionDefinition(
-        params: DeleteSubscriptionDefinitionRequest
-    ): Request[DeleteSubscriptionDefinitionResponse] = js.native
-    def disassociateRoleFromGroup(
-        params: DisassociateRoleFromGroupRequest
-    ): Request[DisassociateRoleFromGroupResponse] = js.native
-    def disassociateServiceRoleFromAccount(
-        params: DisassociateServiceRoleFromAccountRequest
-    ): Request[DisassociateServiceRoleFromAccountResponse] = js.native
+    def deleteLoggerDefinition(params: DeleteLoggerDefinitionRequest): Request[DeleteLoggerDefinitionResponse] = js.native
+    def deleteResourceDefinition(params: DeleteResourceDefinitionRequest): Request[DeleteResourceDefinitionResponse] = js.native
+    def deleteSubscriptionDefinition(params: DeleteSubscriptionDefinitionRequest): Request[DeleteSubscriptionDefinitionResponse] = js.native
+    def disassociateRoleFromGroup(params: DisassociateRoleFromGroupRequest): Request[DisassociateRoleFromGroupResponse] = js.native
+    def disassociateServiceRoleFromAccount(params: DisassociateServiceRoleFromAccountRequest): Request[DisassociateServiceRoleFromAccountResponse] = js.native
     def getAssociatedRole(params: GetAssociatedRoleRequest): Request[GetAssociatedRoleResponse] = js.native
-    def getBulkDeploymentStatus(params: GetBulkDeploymentStatusRequest): Request[GetBulkDeploymentStatusResponse] =
-      js.native
+    def getBulkDeploymentStatus(params: GetBulkDeploymentStatusRequest): Request[GetBulkDeploymentStatusResponse] = js.native
     def getConnectivityInfo(params: GetConnectivityInfoRequest): Request[GetConnectivityInfoResponse] = js.native
-    def getConnectorDefinition(params: GetConnectorDefinitionRequest): Request[GetConnectorDefinitionResponse] =
-      js.native
-    def getConnectorDefinitionVersion(
-        params: GetConnectorDefinitionVersionRequest
-    ): Request[GetConnectorDefinitionVersionResponse] = js.native
+    def getConnectorDefinition(params: GetConnectorDefinitionRequest): Request[GetConnectorDefinitionResponse] = js.native
+    def getConnectorDefinitionVersion(params: GetConnectorDefinitionVersionRequest): Request[GetConnectorDefinitionVersionResponse] = js.native
     def getCoreDefinition(params: GetCoreDefinitionRequest): Request[GetCoreDefinitionResponse] = js.native
-    def getCoreDefinitionVersion(params: GetCoreDefinitionVersionRequest): Request[GetCoreDefinitionVersionResponse] =
-      js.native
+    def getCoreDefinitionVersion(params: GetCoreDefinitionVersionRequest): Request[GetCoreDefinitionVersionResponse] = js.native
     def getDeploymentStatus(params: GetDeploymentStatusRequest): Request[GetDeploymentStatusResponse] = js.native
     def getDeviceDefinition(params: GetDeviceDefinitionRequest): Request[GetDeviceDefinitionResponse] = js.native
-    def getDeviceDefinitionVersion(
-        params: GetDeviceDefinitionVersionRequest
-    ): Request[GetDeviceDefinitionVersionResponse] = js.native
+    def getDeviceDefinitionVersion(params: GetDeviceDefinitionVersionRequest): Request[GetDeviceDefinitionVersionResponse] = js.native
     def getFunctionDefinition(params: GetFunctionDefinitionRequest): Request[GetFunctionDefinitionResponse] = js.native
-    def getFunctionDefinitionVersion(
-        params: GetFunctionDefinitionVersionRequest
-    ): Request[GetFunctionDefinitionVersionResponse] = js.native
+    def getFunctionDefinitionVersion(params: GetFunctionDefinitionVersionRequest): Request[GetFunctionDefinitionVersionResponse] = js.native
     def getGroup(params: GetGroupRequest): Request[GetGroupResponse] = js.native
-    def getGroupCertificateAuthority(
-        params: GetGroupCertificateAuthorityRequest
-    ): Request[GetGroupCertificateAuthorityResponse] = js.native
-    def getGroupCertificateConfiguration(
-        params: GetGroupCertificateConfigurationRequest
-    ): Request[GetGroupCertificateConfigurationResponse] = js.native
+    def getGroupCertificateAuthority(params: GetGroupCertificateAuthorityRequest): Request[GetGroupCertificateAuthorityResponse] = js.native
+    def getGroupCertificateConfiguration(params: GetGroupCertificateConfigurationRequest): Request[GetGroupCertificateConfigurationResponse] = js.native
     def getGroupVersion(params: GetGroupVersionRequest): Request[GetGroupVersionResponse] = js.native
     def getLoggerDefinition(params: GetLoggerDefinitionRequest): Request[GetLoggerDefinitionResponse] = js.native
-    def getLoggerDefinitionVersion(
-        params: GetLoggerDefinitionVersionRequest
-    ): Request[GetLoggerDefinitionVersionResponse] = js.native
+    def getLoggerDefinitionVersion(params: GetLoggerDefinitionVersionRequest): Request[GetLoggerDefinitionVersionResponse] = js.native
     def getResourceDefinition(params: GetResourceDefinitionRequest): Request[GetResourceDefinitionResponse] = js.native
-    def getResourceDefinitionVersion(
-        params: GetResourceDefinitionVersionRequest
-    ): Request[GetResourceDefinitionVersionResponse] = js.native
-    def getServiceRoleForAccount(params: GetServiceRoleForAccountRequest): Request[GetServiceRoleForAccountResponse] =
-      js.native
-    def getSubscriptionDefinition(
-        params: GetSubscriptionDefinitionRequest
-    ): Request[GetSubscriptionDefinitionResponse] = js.native
-    def getSubscriptionDefinitionVersion(
-        params: GetSubscriptionDefinitionVersionRequest
-    ): Request[GetSubscriptionDefinitionVersionResponse] = js.native
-    def listBulkDeploymentDetailedReports(
-        params: ListBulkDeploymentDetailedReportsRequest
-    ): Request[ListBulkDeploymentDetailedReportsResponse] = js.native
+    def getResourceDefinitionVersion(params: GetResourceDefinitionVersionRequest): Request[GetResourceDefinitionVersionResponse] = js.native
+    def getServiceRoleForAccount(params: GetServiceRoleForAccountRequest): Request[GetServiceRoleForAccountResponse] = js.native
+    def getSubscriptionDefinition(params: GetSubscriptionDefinitionRequest): Request[GetSubscriptionDefinitionResponse] = js.native
+    def getSubscriptionDefinitionVersion(params: GetSubscriptionDefinitionVersionRequest): Request[GetSubscriptionDefinitionVersionResponse] = js.native
+    def listBulkDeploymentDetailedReports(params: ListBulkDeploymentDetailedReportsRequest): Request[ListBulkDeploymentDetailedReportsResponse] = js.native
     def listBulkDeployments(params: ListBulkDeploymentsRequest): Request[ListBulkDeploymentsResponse] = js.native
-    def listConnectorDefinitionVersions(
-        params: ListConnectorDefinitionVersionsRequest
-    ): Request[ListConnectorDefinitionVersionsResponse] = js.native
-    def listConnectorDefinitions(params: ListConnectorDefinitionsRequest): Request[ListConnectorDefinitionsResponse] =
-      js.native
-    def listCoreDefinitionVersions(
-        params: ListCoreDefinitionVersionsRequest
-    ): Request[ListCoreDefinitionVersionsResponse] = js.native
+    def listConnectorDefinitionVersions(params: ListConnectorDefinitionVersionsRequest): Request[ListConnectorDefinitionVersionsResponse] = js.native
+    def listConnectorDefinitions(params: ListConnectorDefinitionsRequest): Request[ListConnectorDefinitionsResponse] = js.native
+    def listCoreDefinitionVersions(params: ListCoreDefinitionVersionsRequest): Request[ListCoreDefinitionVersionsResponse] = js.native
     def listCoreDefinitions(params: ListCoreDefinitionsRequest): Request[ListCoreDefinitionsResponse] = js.native
     def listDeployments(params: ListDeploymentsRequest): Request[ListDeploymentsResponse] = js.native
-    def listDeviceDefinitionVersions(
-        params: ListDeviceDefinitionVersionsRequest
-    ): Request[ListDeviceDefinitionVersionsResponse] = js.native
+    def listDeviceDefinitionVersions(params: ListDeviceDefinitionVersionsRequest): Request[ListDeviceDefinitionVersionsResponse] = js.native
     def listDeviceDefinitions(params: ListDeviceDefinitionsRequest): Request[ListDeviceDefinitionsResponse] = js.native
-    def listFunctionDefinitionVersions(
-        params: ListFunctionDefinitionVersionsRequest
-    ): Request[ListFunctionDefinitionVersionsResponse] = js.native
-    def listFunctionDefinitions(params: ListFunctionDefinitionsRequest): Request[ListFunctionDefinitionsResponse] =
-      js.native
-    def listGroupCertificateAuthorities(
-        params: ListGroupCertificateAuthoritiesRequest
-    ): Request[ListGroupCertificateAuthoritiesResponse] = js.native
+    def listFunctionDefinitionVersions(params: ListFunctionDefinitionVersionsRequest): Request[ListFunctionDefinitionVersionsResponse] = js.native
+    def listFunctionDefinitions(params: ListFunctionDefinitionsRequest): Request[ListFunctionDefinitionsResponse] = js.native
+    def listGroupCertificateAuthorities(params: ListGroupCertificateAuthoritiesRequest): Request[ListGroupCertificateAuthoritiesResponse] = js.native
     def listGroupVersions(params: ListGroupVersionsRequest): Request[ListGroupVersionsResponse] = js.native
     def listGroups(params: ListGroupsRequest): Request[ListGroupsResponse] = js.native
-    def listLoggerDefinitionVersions(
-        params: ListLoggerDefinitionVersionsRequest
-    ): Request[ListLoggerDefinitionVersionsResponse] = js.native
+    def listLoggerDefinitionVersions(params: ListLoggerDefinitionVersionsRequest): Request[ListLoggerDefinitionVersionsResponse] = js.native
     def listLoggerDefinitions(params: ListLoggerDefinitionsRequest): Request[ListLoggerDefinitionsResponse] = js.native
-    def listResourceDefinitionVersions(
-        params: ListResourceDefinitionVersionsRequest
-    ): Request[ListResourceDefinitionVersionsResponse] = js.native
-    def listResourceDefinitions(params: ListResourceDefinitionsRequest): Request[ListResourceDefinitionsResponse] =
-      js.native
-    def listSubscriptionDefinitionVersions(
-        params: ListSubscriptionDefinitionVersionsRequest
-    ): Request[ListSubscriptionDefinitionVersionsResponse] = js.native
-    def listSubscriptionDefinitions(
-        params: ListSubscriptionDefinitionsRequest
-    ): Request[ListSubscriptionDefinitionsResponse] = js.native
+    def listResourceDefinitionVersions(params: ListResourceDefinitionVersionsRequest): Request[ListResourceDefinitionVersionsResponse] = js.native
+    def listResourceDefinitions(params: ListResourceDefinitionsRequest): Request[ListResourceDefinitionsResponse] = js.native
+    def listSubscriptionDefinitionVersions(params: ListSubscriptionDefinitionVersionsRequest): Request[ListSubscriptionDefinitionVersionsResponse] = js.native
+    def listSubscriptionDefinitions(params: ListSubscriptionDefinitionsRequest): Request[ListSubscriptionDefinitionsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def resetDeployments(params: ResetDeploymentsRequest): Request[ResetDeploymentsResponse] = js.native
     def startBulkDeployment(params: StartBulkDeploymentRequest): Request[StartBulkDeploymentResponse] = js.native
     def stopBulkDeployment(params: StopBulkDeploymentRequest): Request[StopBulkDeploymentResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
-    def updateConnectivityInfo(params: UpdateConnectivityInfoRequest): Request[UpdateConnectivityInfoResponse] =
-      js.native
-    def updateConnectorDefinition(
-        params: UpdateConnectorDefinitionRequest
-    ): Request[UpdateConnectorDefinitionResponse] = js.native
+    def updateConnectivityInfo(params: UpdateConnectivityInfoRequest): Request[UpdateConnectivityInfoResponse] = js.native
+    def updateConnectorDefinition(params: UpdateConnectorDefinitionRequest): Request[UpdateConnectorDefinitionResponse] = js.native
     def updateCoreDefinition(params: UpdateCoreDefinitionRequest): Request[UpdateCoreDefinitionResponse] = js.native
-    def updateDeviceDefinition(params: UpdateDeviceDefinitionRequest): Request[UpdateDeviceDefinitionResponse] =
-      js.native
-    def updateFunctionDefinition(params: UpdateFunctionDefinitionRequest): Request[UpdateFunctionDefinitionResponse] =
-      js.native
+    def updateDeviceDefinition(params: UpdateDeviceDefinitionRequest): Request[UpdateDeviceDefinitionResponse] = js.native
+    def updateFunctionDefinition(params: UpdateFunctionDefinitionRequest): Request[UpdateFunctionDefinitionResponse] = js.native
     def updateGroup(params: UpdateGroupRequest): Request[UpdateGroupResponse] = js.native
-    def updateGroupCertificateConfiguration(
-        params: UpdateGroupCertificateConfigurationRequest
-    ): Request[UpdateGroupCertificateConfigurationResponse] = js.native
-    def updateLoggerDefinition(params: UpdateLoggerDefinitionRequest): Request[UpdateLoggerDefinitionResponse] =
-      js.native
-    def updateResourceDefinition(params: UpdateResourceDefinitionRequest): Request[UpdateResourceDefinitionResponse] =
-      js.native
-    def updateSubscriptionDefinition(
-        params: UpdateSubscriptionDefinitionRequest
-    ): Request[UpdateSubscriptionDefinitionResponse] = js.native
+    def updateGroupCertificateConfiguration(params: UpdateGroupCertificateConfigurationRequest): Request[UpdateGroupCertificateConfigurationResponse] = js.native
+    def updateLoggerDefinition(params: UpdateLoggerDefinitionRequest): Request[UpdateLoggerDefinitionResponse] = js.native
+    def updateResourceDefinition(params: UpdateResourceDefinitionRequest): Request[UpdateResourceDefinitionResponse] = js.native
+    def updateSubscriptionDefinition(params: UpdateSubscriptionDefinitionRequest): Request[UpdateSubscriptionDefinitionResponse] = js.native
   }
 
   @js.native
@@ -1310,9 +1048,7 @@ package greengrass {
         GroupCertificateAuthorityArn: js.UndefOr[__string] = js.undefined
     ): CreateGroupCertificateAuthorityResponse = {
       val __obj = js.Dynamic.literal()
-      GroupCertificateAuthorityArn.foreach(__v =>
-        __obj.updateDynamic("GroupCertificateAuthorityArn")(__v.asInstanceOf[js.Any])
-      )
+      GroupCertificateAuthorityArn.foreach(__v => __obj.updateDynamic("GroupCertificateAuthorityArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGroupCertificateAuthorityResponse]
     }
   }
@@ -1407,25 +1143,13 @@ package greengrass {
       )
 
       AmznClientToken.foreach(__v => __obj.updateDynamic("AmznClientToken")(__v.asInstanceOf[js.Any]))
-      ConnectorDefinitionVersionArn.foreach(__v =>
-        __obj.updateDynamic("ConnectorDefinitionVersionArn")(__v.asInstanceOf[js.Any])
-      )
+      ConnectorDefinitionVersionArn.foreach(__v => __obj.updateDynamic("ConnectorDefinitionVersionArn")(__v.asInstanceOf[js.Any]))
       CoreDefinitionVersionArn.foreach(__v => __obj.updateDynamic("CoreDefinitionVersionArn")(__v.asInstanceOf[js.Any]))
-      DeviceDefinitionVersionArn.foreach(__v =>
-        __obj.updateDynamic("DeviceDefinitionVersionArn")(__v.asInstanceOf[js.Any])
-      )
-      FunctionDefinitionVersionArn.foreach(__v =>
-        __obj.updateDynamic("FunctionDefinitionVersionArn")(__v.asInstanceOf[js.Any])
-      )
-      LoggerDefinitionVersionArn.foreach(__v =>
-        __obj.updateDynamic("LoggerDefinitionVersionArn")(__v.asInstanceOf[js.Any])
-      )
-      ResourceDefinitionVersionArn.foreach(__v =>
-        __obj.updateDynamic("ResourceDefinitionVersionArn")(__v.asInstanceOf[js.Any])
-      )
-      SubscriptionDefinitionVersionArn.foreach(__v =>
-        __obj.updateDynamic("SubscriptionDefinitionVersionArn")(__v.asInstanceOf[js.Any])
-      )
+      DeviceDefinitionVersionArn.foreach(__v => __obj.updateDynamic("DeviceDefinitionVersionArn")(__v.asInstanceOf[js.Any]))
+      FunctionDefinitionVersionArn.foreach(__v => __obj.updateDynamic("FunctionDefinitionVersionArn")(__v.asInstanceOf[js.Any]))
+      LoggerDefinitionVersionArn.foreach(__v => __obj.updateDynamic("LoggerDefinitionVersionArn")(__v.asInstanceOf[js.Any]))
+      ResourceDefinitionVersionArn.foreach(__v => __obj.updateDynamic("ResourceDefinitionVersionArn")(__v.asInstanceOf[js.Any]))
+      SubscriptionDefinitionVersionArn.foreach(__v => __obj.updateDynamic("SubscriptionDefinitionVersionArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGroupVersionRequest]
     }
   }
@@ -3169,12 +2893,8 @@ package greengrass {
         PemEncodedCertificate: js.UndefOr[__string] = js.undefined
     ): GetGroupCertificateAuthorityResponse = {
       val __obj = js.Dynamic.literal()
-      GroupCertificateAuthorityArn.foreach(__v =>
-        __obj.updateDynamic("GroupCertificateAuthorityArn")(__v.asInstanceOf[js.Any])
-      )
-      GroupCertificateAuthorityId.foreach(__v =>
-        __obj.updateDynamic("GroupCertificateAuthorityId")(__v.asInstanceOf[js.Any])
-      )
+      GroupCertificateAuthorityArn.foreach(__v => __obj.updateDynamic("GroupCertificateAuthorityArn")(__v.asInstanceOf[js.Any]))
+      GroupCertificateAuthorityId.foreach(__v => __obj.updateDynamic("GroupCertificateAuthorityId")(__v.asInstanceOf[js.Any]))
       PemEncodedCertificate.foreach(__v => __obj.updateDynamic("PemEncodedCertificate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetGroupCertificateAuthorityResponse]
     }
@@ -3213,12 +2933,8 @@ package greengrass {
         GroupId: js.UndefOr[__string] = js.undefined
     ): GetGroupCertificateConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-      CertificateAuthorityExpiryInMilliseconds.foreach(__v =>
-        __obj.updateDynamic("CertificateAuthorityExpiryInMilliseconds")(__v.asInstanceOf[js.Any])
-      )
-      CertificateExpiryInMilliseconds.foreach(__v =>
-        __obj.updateDynamic("CertificateExpiryInMilliseconds")(__v.asInstanceOf[js.Any])
-      )
+      CertificateAuthorityExpiryInMilliseconds.foreach(__v => __obj.updateDynamic("CertificateAuthorityExpiryInMilliseconds")(__v.asInstanceOf[js.Any]))
+      CertificateExpiryInMilliseconds.foreach(__v => __obj.updateDynamic("CertificateExpiryInMilliseconds")(__v.asInstanceOf[js.Any]))
       GroupId.foreach(__v => __obj.updateDynamic("GroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetGroupCertificateConfigurationResponse]
     }
@@ -3697,12 +3413,8 @@ package greengrass {
         GroupCertificateAuthorityId: js.UndefOr[__string] = js.undefined
     ): GroupCertificateAuthorityProperties = {
       val __obj = js.Dynamic.literal()
-      GroupCertificateAuthorityArn.foreach(__v =>
-        __obj.updateDynamic("GroupCertificateAuthorityArn")(__v.asInstanceOf[js.Any])
-      )
-      GroupCertificateAuthorityId.foreach(__v =>
-        __obj.updateDynamic("GroupCertificateAuthorityId")(__v.asInstanceOf[js.Any])
-      )
+      GroupCertificateAuthorityArn.foreach(__v => __obj.updateDynamic("GroupCertificateAuthorityArn")(__v.asInstanceOf[js.Any]))
+      GroupCertificateAuthorityId.foreach(__v => __obj.updateDynamic("GroupCertificateAuthorityId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GroupCertificateAuthorityProperties]
     }
   }
@@ -3792,25 +3504,13 @@ package greengrass {
         SubscriptionDefinitionVersionArn: js.UndefOr[__string] = js.undefined
     ): GroupVersion = {
       val __obj = js.Dynamic.literal()
-      ConnectorDefinitionVersionArn.foreach(__v =>
-        __obj.updateDynamic("ConnectorDefinitionVersionArn")(__v.asInstanceOf[js.Any])
-      )
+      ConnectorDefinitionVersionArn.foreach(__v => __obj.updateDynamic("ConnectorDefinitionVersionArn")(__v.asInstanceOf[js.Any]))
       CoreDefinitionVersionArn.foreach(__v => __obj.updateDynamic("CoreDefinitionVersionArn")(__v.asInstanceOf[js.Any]))
-      DeviceDefinitionVersionArn.foreach(__v =>
-        __obj.updateDynamic("DeviceDefinitionVersionArn")(__v.asInstanceOf[js.Any])
-      )
-      FunctionDefinitionVersionArn.foreach(__v =>
-        __obj.updateDynamic("FunctionDefinitionVersionArn")(__v.asInstanceOf[js.Any])
-      )
-      LoggerDefinitionVersionArn.foreach(__v =>
-        __obj.updateDynamic("LoggerDefinitionVersionArn")(__v.asInstanceOf[js.Any])
-      )
-      ResourceDefinitionVersionArn.foreach(__v =>
-        __obj.updateDynamic("ResourceDefinitionVersionArn")(__v.asInstanceOf[js.Any])
-      )
-      SubscriptionDefinitionVersionArn.foreach(__v =>
-        __obj.updateDynamic("SubscriptionDefinitionVersionArn")(__v.asInstanceOf[js.Any])
-      )
+      DeviceDefinitionVersionArn.foreach(__v => __obj.updateDynamic("DeviceDefinitionVersionArn")(__v.asInstanceOf[js.Any]))
+      FunctionDefinitionVersionArn.foreach(__v => __obj.updateDynamic("FunctionDefinitionVersionArn")(__v.asInstanceOf[js.Any]))
+      LoggerDefinitionVersionArn.foreach(__v => __obj.updateDynamic("LoggerDefinitionVersionArn")(__v.asInstanceOf[js.Any]))
+      ResourceDefinitionVersionArn.foreach(__v => __obj.updateDynamic("ResourceDefinitionVersionArn")(__v.asInstanceOf[js.Any]))
+      SubscriptionDefinitionVersionArn.foreach(__v => __obj.updateDynamic("SubscriptionDefinitionVersionArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GroupVersion]
     }
   }
@@ -4292,9 +3992,7 @@ package greengrass {
         GroupCertificateAuthorities: js.UndefOr[__listOfGroupCertificateAuthorityProperties] = js.undefined
     ): ListGroupCertificateAuthoritiesResponse = {
       val __obj = js.Dynamic.literal()
-      GroupCertificateAuthorities.foreach(__v =>
-        __obj.updateDynamic("GroupCertificateAuthorities")(__v.asInstanceOf[js.Any])
-      )
+      GroupCertificateAuthorities.foreach(__v => __obj.updateDynamic("GroupCertificateAuthorities")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroupCertificateAuthoritiesResponse]
     }
   }
@@ -4919,15 +4617,9 @@ package greengrass {
       val __obj = js.Dynamic.literal()
       LocalDeviceResourceData.foreach(__v => __obj.updateDynamic("LocalDeviceResourceData")(__v.asInstanceOf[js.Any]))
       LocalVolumeResourceData.foreach(__v => __obj.updateDynamic("LocalVolumeResourceData")(__v.asInstanceOf[js.Any]))
-      S3MachineLearningModelResourceData.foreach(__v =>
-        __obj.updateDynamic("S3MachineLearningModelResourceData")(__v.asInstanceOf[js.Any])
-      )
-      SageMakerMachineLearningModelResourceData.foreach(__v =>
-        __obj.updateDynamic("SageMakerMachineLearningModelResourceData")(__v.asInstanceOf[js.Any])
-      )
-      SecretsManagerSecretResourceData.foreach(__v =>
-        __obj.updateDynamic("SecretsManagerSecretResourceData")(__v.asInstanceOf[js.Any])
-      )
+      S3MachineLearningModelResourceData.foreach(__v => __obj.updateDynamic("S3MachineLearningModelResourceData")(__v.asInstanceOf[js.Any]))
+      SageMakerMachineLearningModelResourceData.foreach(__v => __obj.updateDynamic("SageMakerMachineLearningModelResourceData")(__v.asInstanceOf[js.Any]))
+      SecretsManagerSecretResourceData.foreach(__v => __obj.updateDynamic("SecretsManagerSecretResourceData")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceDataContainer]
     }
   }
@@ -5042,9 +4734,7 @@ package greengrass {
     ): SecretsManagerSecretResourceData = {
       val __obj = js.Dynamic.literal()
       ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
-      AdditionalStagingLabelsToDownload.foreach(__v =>
-        __obj.updateDynamic("AdditionalStagingLabelsToDownload")(__v.asInstanceOf[js.Any])
-      )
+      AdditionalStagingLabelsToDownload.foreach(__v => __obj.updateDynamic("AdditionalStagingLabelsToDownload")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SecretsManagerSecretResourceData]
     }
   }
@@ -5445,9 +5135,7 @@ package greengrass {
         "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
 
-      CertificateExpiryInMilliseconds.foreach(__v =>
-        __obj.updateDynamic("CertificateExpiryInMilliseconds")(__v.asInstanceOf[js.Any])
-      )
+      CertificateExpiryInMilliseconds.foreach(__v => __obj.updateDynamic("CertificateExpiryInMilliseconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGroupCertificateConfigurationRequest]
     }
   }
@@ -5467,12 +5155,8 @@ package greengrass {
         GroupId: js.UndefOr[__string] = js.undefined
     ): UpdateGroupCertificateConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-      CertificateAuthorityExpiryInMilliseconds.foreach(__v =>
-        __obj.updateDynamic("CertificateAuthorityExpiryInMilliseconds")(__v.asInstanceOf[js.Any])
-      )
-      CertificateExpiryInMilliseconds.foreach(__v =>
-        __obj.updateDynamic("CertificateExpiryInMilliseconds")(__v.asInstanceOf[js.Any])
-      )
+      CertificateAuthorityExpiryInMilliseconds.foreach(__v => __obj.updateDynamic("CertificateAuthorityExpiryInMilliseconds")(__v.asInstanceOf[js.Any]))
+      CertificateExpiryInMilliseconds.foreach(__v => __obj.updateDynamic("CertificateExpiryInMilliseconds")(__v.asInstanceOf[js.Any]))
       GroupId.foreach(__v => __obj.updateDynamic("GroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGroupCertificateConfigurationResponse]
     }

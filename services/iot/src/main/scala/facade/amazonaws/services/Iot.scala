@@ -440,502 +440,209 @@ package object iot {
 
   implicit final class IotOps(private val service: Iot) extends AnyVal {
 
-    @inline def acceptCertificateTransferFuture(params: AcceptCertificateTransferRequest): Future[js.Object] =
-      service.acceptCertificateTransfer(params).promise().toFuture
-    @inline def addThingToBillingGroupFuture(
-        params: AddThingToBillingGroupRequest
-    ): Future[AddThingToBillingGroupResponse] = service.addThingToBillingGroup(params).promise().toFuture
-    @inline def addThingToThingGroupFuture(params: AddThingToThingGroupRequest): Future[AddThingToThingGroupResponse] =
-      service.addThingToThingGroup(params).promise().toFuture
-    @inline def associateTargetsWithJobFuture(
-        params: AssociateTargetsWithJobRequest
-    ): Future[AssociateTargetsWithJobResponse] = service.associateTargetsWithJob(params).promise().toFuture
-    @inline def attachPolicyFuture(params: AttachPolicyRequest): Future[js.Object] =
-      service.attachPolicy(params).promise().toFuture
-    @inline def attachSecurityProfileFuture(
-        params: AttachSecurityProfileRequest
-    ): Future[AttachSecurityProfileResponse] = service.attachSecurityProfile(params).promise().toFuture
-    @inline def attachThingPrincipalFuture(params: AttachThingPrincipalRequest): Future[AttachThingPrincipalResponse] =
-      service.attachThingPrincipal(params).promise().toFuture
-    @inline def cancelAuditMitigationActionsTaskFuture(
-        params: CancelAuditMitigationActionsTaskRequest
-    ): Future[CancelAuditMitigationActionsTaskResponse] =
-      service.cancelAuditMitigationActionsTask(params).promise().toFuture
-    @inline def cancelAuditTaskFuture(params: CancelAuditTaskRequest): Future[CancelAuditTaskResponse] =
-      service.cancelAuditTask(params).promise().toFuture
-    @inline def cancelCertificateTransferFuture(params: CancelCertificateTransferRequest): Future[js.Object] =
-      service.cancelCertificateTransfer(params).promise().toFuture
-    @inline def cancelJobExecutionFuture(params: CancelJobExecutionRequest): Future[js.Object] =
-      service.cancelJobExecution(params).promise().toFuture
-    @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] =
-      service.cancelJob(params).promise().toFuture
-    @inline def clearDefaultAuthorizerFuture(
-        params: ClearDefaultAuthorizerRequest
-    ): Future[ClearDefaultAuthorizerResponse] = service.clearDefaultAuthorizer(params).promise().toFuture
-    @inline def confirmTopicRuleDestinationFuture(
-        params: ConfirmTopicRuleDestinationRequest
-    ): Future[ConfirmTopicRuleDestinationResponse] = service.confirmTopicRuleDestination(params).promise().toFuture
-    @inline def createAuthorizerFuture(params: CreateAuthorizerRequest): Future[CreateAuthorizerResponse] =
-      service.createAuthorizer(params).promise().toFuture
-    @inline def createBillingGroupFuture(params: CreateBillingGroupRequest): Future[CreateBillingGroupResponse] =
-      service.createBillingGroup(params).promise().toFuture
-    @inline def createCertificateFromCsrFuture(
-        params: CreateCertificateFromCsrRequest
-    ): Future[CreateCertificateFromCsrResponse] = service.createCertificateFromCsr(params).promise().toFuture
-    @inline def createDimensionFuture(params: CreateDimensionRequest): Future[CreateDimensionResponse] =
-      service.createDimension(params).promise().toFuture
-    @inline def createDomainConfigurationFuture(
-        params: CreateDomainConfigurationRequest
-    ): Future[CreateDomainConfigurationResponse] = service.createDomainConfiguration(params).promise().toFuture
-    @inline def createDynamicThingGroupFuture(
-        params: CreateDynamicThingGroupRequest
-    ): Future[CreateDynamicThingGroupResponse] = service.createDynamicThingGroup(params).promise().toFuture
-    @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResponse] =
-      service.createJob(params).promise().toFuture
-    @inline def createKeysAndCertificateFuture(
-        params: CreateKeysAndCertificateRequest
-    ): Future[CreateKeysAndCertificateResponse] = service.createKeysAndCertificate(params).promise().toFuture
-    @inline def createMitigationActionFuture(
-        params: CreateMitigationActionRequest
-    ): Future[CreateMitigationActionResponse] = service.createMitigationAction(params).promise().toFuture
-    @inline def createOTAUpdateFuture(params: CreateOTAUpdateRequest): Future[CreateOTAUpdateResponse] =
-      service.createOTAUpdate(params).promise().toFuture
-    @inline def createPolicyFuture(params: CreatePolicyRequest): Future[CreatePolicyResponse] =
-      service.createPolicy(params).promise().toFuture
-    @inline def createPolicyVersionFuture(params: CreatePolicyVersionRequest): Future[CreatePolicyVersionResponse] =
-      service.createPolicyVersion(params).promise().toFuture
-    @inline def createProvisioningClaimFuture(
-        params: CreateProvisioningClaimRequest
-    ): Future[CreateProvisioningClaimResponse] = service.createProvisioningClaim(params).promise().toFuture
-    @inline def createProvisioningTemplateFuture(
-        params: CreateProvisioningTemplateRequest
-    ): Future[CreateProvisioningTemplateResponse] = service.createProvisioningTemplate(params).promise().toFuture
-    @inline def createProvisioningTemplateVersionFuture(
-        params: CreateProvisioningTemplateVersionRequest
-    ): Future[CreateProvisioningTemplateVersionResponse] =
-      service.createProvisioningTemplateVersion(params).promise().toFuture
-    @inline def createRoleAliasFuture(params: CreateRoleAliasRequest): Future[CreateRoleAliasResponse] =
-      service.createRoleAlias(params).promise().toFuture
-    @inline def createScheduledAuditFuture(params: CreateScheduledAuditRequest): Future[CreateScheduledAuditResponse] =
-      service.createScheduledAudit(params).promise().toFuture
-    @inline def createSecurityProfileFuture(
-        params: CreateSecurityProfileRequest
-    ): Future[CreateSecurityProfileResponse] = service.createSecurityProfile(params).promise().toFuture
-    @inline def createStreamFuture(params: CreateStreamRequest): Future[CreateStreamResponse] =
-      service.createStream(params).promise().toFuture
-    @inline def createThingFuture(params: CreateThingRequest): Future[CreateThingResponse] =
-      service.createThing(params).promise().toFuture
-    @inline def createThingGroupFuture(params: CreateThingGroupRequest): Future[CreateThingGroupResponse] =
-      service.createThingGroup(params).promise().toFuture
-    @inline def createThingTypeFuture(params: CreateThingTypeRequest): Future[CreateThingTypeResponse] =
-      service.createThingType(params).promise().toFuture
-    @inline def createTopicRuleDestinationFuture(
-        params: CreateTopicRuleDestinationRequest
-    ): Future[CreateTopicRuleDestinationResponse] = service.createTopicRuleDestination(params).promise().toFuture
-    @inline def createTopicRuleFuture(params: CreateTopicRuleRequest): Future[js.Object] =
-      service.createTopicRule(params).promise().toFuture
-    @inline def deleteAccountAuditConfigurationFuture(
-        params: DeleteAccountAuditConfigurationRequest
-    ): Future[DeleteAccountAuditConfigurationResponse] =
-      service.deleteAccountAuditConfiguration(params).promise().toFuture
-    @inline def deleteAuthorizerFuture(params: DeleteAuthorizerRequest): Future[DeleteAuthorizerResponse] =
-      service.deleteAuthorizer(params).promise().toFuture
-    @inline def deleteBillingGroupFuture(params: DeleteBillingGroupRequest): Future[DeleteBillingGroupResponse] =
-      service.deleteBillingGroup(params).promise().toFuture
-    @inline def deleteCACertificateFuture(params: DeleteCACertificateRequest): Future[DeleteCACertificateResponse] =
-      service.deleteCACertificate(params).promise().toFuture
-    @inline def deleteCertificateFuture(params: DeleteCertificateRequest): Future[js.Object] =
-      service.deleteCertificate(params).promise().toFuture
-    @inline def deleteDimensionFuture(params: DeleteDimensionRequest): Future[DeleteDimensionResponse] =
-      service.deleteDimension(params).promise().toFuture
-    @inline def deleteDomainConfigurationFuture(
-        params: DeleteDomainConfigurationRequest
-    ): Future[DeleteDomainConfigurationResponse] = service.deleteDomainConfiguration(params).promise().toFuture
-    @inline def deleteDynamicThingGroupFuture(
-        params: DeleteDynamicThingGroupRequest
-    ): Future[DeleteDynamicThingGroupResponse] = service.deleteDynamicThingGroup(params).promise().toFuture
-    @inline def deleteJobExecutionFuture(params: DeleteJobExecutionRequest): Future[js.Object] =
-      service.deleteJobExecution(params).promise().toFuture
-    @inline def deleteJobFuture(params: DeleteJobRequest): Future[js.Object] =
-      service.deleteJob(params).promise().toFuture
-    @inline def deleteMitigationActionFuture(
-        params: DeleteMitigationActionRequest
-    ): Future[DeleteMitigationActionResponse] = service.deleteMitigationAction(params).promise().toFuture
-    @inline def deleteOTAUpdateFuture(params: DeleteOTAUpdateRequest): Future[DeleteOTAUpdateResponse] =
-      service.deleteOTAUpdate(params).promise().toFuture
-    @inline def deletePolicyFuture(params: DeletePolicyRequest): Future[js.Object] =
-      service.deletePolicy(params).promise().toFuture
-    @inline def deletePolicyVersionFuture(params: DeletePolicyVersionRequest): Future[js.Object] =
-      service.deletePolicyVersion(params).promise().toFuture
-    @inline def deleteProvisioningTemplateFuture(
-        params: DeleteProvisioningTemplateRequest
-    ): Future[DeleteProvisioningTemplateResponse] = service.deleteProvisioningTemplate(params).promise().toFuture
-    @inline def deleteProvisioningTemplateVersionFuture(
-        params: DeleteProvisioningTemplateVersionRequest
-    ): Future[DeleteProvisioningTemplateVersionResponse] =
-      service.deleteProvisioningTemplateVersion(params).promise().toFuture
-    @inline def deleteRegistrationCodeFuture(
-        params: DeleteRegistrationCodeRequest
-    ): Future[DeleteRegistrationCodeResponse] = service.deleteRegistrationCode(params).promise().toFuture
-    @inline def deleteRoleAliasFuture(params: DeleteRoleAliasRequest): Future[DeleteRoleAliasResponse] =
-      service.deleteRoleAlias(params).promise().toFuture
-    @inline def deleteScheduledAuditFuture(params: DeleteScheduledAuditRequest): Future[DeleteScheduledAuditResponse] =
-      service.deleteScheduledAudit(params).promise().toFuture
-    @inline def deleteSecurityProfileFuture(
-        params: DeleteSecurityProfileRequest
-    ): Future[DeleteSecurityProfileResponse] = service.deleteSecurityProfile(params).promise().toFuture
-    @inline def deleteStreamFuture(params: DeleteStreamRequest): Future[DeleteStreamResponse] =
-      service.deleteStream(params).promise().toFuture
-    @inline def deleteThingFuture(params: DeleteThingRequest): Future[DeleteThingResponse] =
-      service.deleteThing(params).promise().toFuture
-    @inline def deleteThingGroupFuture(params: DeleteThingGroupRequest): Future[DeleteThingGroupResponse] =
-      service.deleteThingGroup(params).promise().toFuture
-    @inline def deleteThingTypeFuture(params: DeleteThingTypeRequest): Future[DeleteThingTypeResponse] =
-      service.deleteThingType(params).promise().toFuture
-    @inline def deleteTopicRuleDestinationFuture(
-        params: DeleteTopicRuleDestinationRequest
-    ): Future[DeleteTopicRuleDestinationResponse] = service.deleteTopicRuleDestination(params).promise().toFuture
-    @inline def deleteTopicRuleFuture(params: DeleteTopicRuleRequest): Future[js.Object] =
-      service.deleteTopicRule(params).promise().toFuture
-    @inline def deleteV2LoggingLevelFuture(params: DeleteV2LoggingLevelRequest): Future[js.Object] =
-      service.deleteV2LoggingLevel(params).promise().toFuture
-    @inline def deprecateThingTypeFuture(params: DeprecateThingTypeRequest): Future[DeprecateThingTypeResponse] =
-      service.deprecateThingType(params).promise().toFuture
-    @inline def describeAccountAuditConfigurationFuture(
-        params: DescribeAccountAuditConfigurationRequest
-    ): Future[DescribeAccountAuditConfigurationResponse] =
-      service.describeAccountAuditConfiguration(params).promise().toFuture
-    @inline def describeAuditFindingFuture(params: DescribeAuditFindingRequest): Future[DescribeAuditFindingResponse] =
-      service.describeAuditFinding(params).promise().toFuture
-    @inline def describeAuditMitigationActionsTaskFuture(
-        params: DescribeAuditMitigationActionsTaskRequest
-    ): Future[DescribeAuditMitigationActionsTaskResponse] =
-      service.describeAuditMitigationActionsTask(params).promise().toFuture
-    @inline def describeAuditTaskFuture(params: DescribeAuditTaskRequest): Future[DescribeAuditTaskResponse] =
-      service.describeAuditTask(params).promise().toFuture
-    @inline def describeAuthorizerFuture(params: DescribeAuthorizerRequest): Future[DescribeAuthorizerResponse] =
-      service.describeAuthorizer(params).promise().toFuture
-    @inline def describeBillingGroupFuture(params: DescribeBillingGroupRequest): Future[DescribeBillingGroupResponse] =
-      service.describeBillingGroup(params).promise().toFuture
-    @inline def describeCACertificateFuture(
-        params: DescribeCACertificateRequest
-    ): Future[DescribeCACertificateResponse] = service.describeCACertificate(params).promise().toFuture
-    @inline def describeCertificateFuture(params: DescribeCertificateRequest): Future[DescribeCertificateResponse] =
-      service.describeCertificate(params).promise().toFuture
-    @inline def describeDefaultAuthorizerFuture(
-        params: DescribeDefaultAuthorizerRequest
-    ): Future[DescribeDefaultAuthorizerResponse] = service.describeDefaultAuthorizer(params).promise().toFuture
-    @inline def describeDimensionFuture(params: DescribeDimensionRequest): Future[DescribeDimensionResponse] =
-      service.describeDimension(params).promise().toFuture
-    @inline def describeDomainConfigurationFuture(
-        params: DescribeDomainConfigurationRequest
-    ): Future[DescribeDomainConfigurationResponse] = service.describeDomainConfiguration(params).promise().toFuture
-    @inline def describeEndpointFuture(params: DescribeEndpointRequest): Future[DescribeEndpointResponse] =
-      service.describeEndpoint(params).promise().toFuture
-    @inline def describeEventConfigurationsFuture(
-        params: DescribeEventConfigurationsRequest
-    ): Future[DescribeEventConfigurationsResponse] = service.describeEventConfigurations(params).promise().toFuture
-    @inline def describeIndexFuture(params: DescribeIndexRequest): Future[DescribeIndexResponse] =
-      service.describeIndex(params).promise().toFuture
-    @inline def describeJobExecutionFuture(params: DescribeJobExecutionRequest): Future[DescribeJobExecutionResponse] =
-      service.describeJobExecution(params).promise().toFuture
-    @inline def describeJobFuture(params: DescribeJobRequest): Future[DescribeJobResponse] =
-      service.describeJob(params).promise().toFuture
-    @inline def describeMitigationActionFuture(
-        params: DescribeMitigationActionRequest
-    ): Future[DescribeMitigationActionResponse] = service.describeMitigationAction(params).promise().toFuture
-    @inline def describeProvisioningTemplateFuture(
-        params: DescribeProvisioningTemplateRequest
-    ): Future[DescribeProvisioningTemplateResponse] = service.describeProvisioningTemplate(params).promise().toFuture
-    @inline def describeProvisioningTemplateVersionFuture(
-        params: DescribeProvisioningTemplateVersionRequest
-    ): Future[DescribeProvisioningTemplateVersionResponse] =
-      service.describeProvisioningTemplateVersion(params).promise().toFuture
-    @inline def describeRoleAliasFuture(params: DescribeRoleAliasRequest): Future[DescribeRoleAliasResponse] =
-      service.describeRoleAlias(params).promise().toFuture
-    @inline def describeScheduledAuditFuture(
-        params: DescribeScheduledAuditRequest
-    ): Future[DescribeScheduledAuditResponse] = service.describeScheduledAudit(params).promise().toFuture
-    @inline def describeSecurityProfileFuture(
-        params: DescribeSecurityProfileRequest
-    ): Future[DescribeSecurityProfileResponse] = service.describeSecurityProfile(params).promise().toFuture
-    @inline def describeStreamFuture(params: DescribeStreamRequest): Future[DescribeStreamResponse] =
-      service.describeStream(params).promise().toFuture
-    @inline def describeThingFuture(params: DescribeThingRequest): Future[DescribeThingResponse] =
-      service.describeThing(params).promise().toFuture
-    @inline def describeThingGroupFuture(params: DescribeThingGroupRequest): Future[DescribeThingGroupResponse] =
-      service.describeThingGroup(params).promise().toFuture
-    @inline def describeThingRegistrationTaskFuture(
-        params: DescribeThingRegistrationTaskRequest
-    ): Future[DescribeThingRegistrationTaskResponse] = service.describeThingRegistrationTask(params).promise().toFuture
-    @inline def describeThingTypeFuture(params: DescribeThingTypeRequest): Future[DescribeThingTypeResponse] =
-      service.describeThingType(params).promise().toFuture
-    @inline def detachPolicyFuture(params: DetachPolicyRequest): Future[js.Object] =
-      service.detachPolicy(params).promise().toFuture
-    @inline def detachSecurityProfileFuture(
-        params: DetachSecurityProfileRequest
-    ): Future[DetachSecurityProfileResponse] = service.detachSecurityProfile(params).promise().toFuture
-    @inline def detachThingPrincipalFuture(params: DetachThingPrincipalRequest): Future[DetachThingPrincipalResponse] =
-      service.detachThingPrincipal(params).promise().toFuture
-    @inline def disableTopicRuleFuture(params: DisableTopicRuleRequest): Future[js.Object] =
-      service.disableTopicRule(params).promise().toFuture
-    @inline def enableTopicRuleFuture(params: EnableTopicRuleRequest): Future[js.Object] =
-      service.enableTopicRule(params).promise().toFuture
-    @inline def getCardinalityFuture(params: GetCardinalityRequest): Future[GetCardinalityResponse] =
-      service.getCardinality(params).promise().toFuture
-    @inline def getEffectivePoliciesFuture(params: GetEffectivePoliciesRequest): Future[GetEffectivePoliciesResponse] =
-      service.getEffectivePolicies(params).promise().toFuture
-    @inline def getIndexingConfigurationFuture(
-        params: GetIndexingConfigurationRequest
-    ): Future[GetIndexingConfigurationResponse] = service.getIndexingConfiguration(params).promise().toFuture
-    @inline def getJobDocumentFuture(params: GetJobDocumentRequest): Future[GetJobDocumentResponse] =
-      service.getJobDocument(params).promise().toFuture
-    @inline def getLoggingOptionsFuture(params: GetLoggingOptionsRequest): Future[GetLoggingOptionsResponse] =
-      service.getLoggingOptions(params).promise().toFuture
-    @inline def getOTAUpdateFuture(params: GetOTAUpdateRequest): Future[GetOTAUpdateResponse] =
-      service.getOTAUpdate(params).promise().toFuture
-    @inline def getPercentilesFuture(params: GetPercentilesRequest): Future[GetPercentilesResponse] =
-      service.getPercentiles(params).promise().toFuture
-    @inline def getPolicyFuture(params: GetPolicyRequest): Future[GetPolicyResponse] =
-      service.getPolicy(params).promise().toFuture
-    @inline def getPolicyVersionFuture(params: GetPolicyVersionRequest): Future[GetPolicyVersionResponse] =
-      service.getPolicyVersion(params).promise().toFuture
-    @inline def getRegistrationCodeFuture(params: GetRegistrationCodeRequest): Future[GetRegistrationCodeResponse] =
-      service.getRegistrationCode(params).promise().toFuture
-    @inline def getStatisticsFuture(params: GetStatisticsRequest): Future[GetStatisticsResponse] =
-      service.getStatistics(params).promise().toFuture
-    @inline def getTopicRuleDestinationFuture(
-        params: GetTopicRuleDestinationRequest
-    ): Future[GetTopicRuleDestinationResponse] = service.getTopicRuleDestination(params).promise().toFuture
-    @inline def getTopicRuleFuture(params: GetTopicRuleRequest): Future[GetTopicRuleResponse] =
-      service.getTopicRule(params).promise().toFuture
-    @inline def getV2LoggingOptionsFuture(params: GetV2LoggingOptionsRequest): Future[GetV2LoggingOptionsResponse] =
-      service.getV2LoggingOptions(params).promise().toFuture
-    @inline def listActiveViolationsFuture(params: ListActiveViolationsRequest): Future[ListActiveViolationsResponse] =
-      service.listActiveViolations(params).promise().toFuture
-    @inline def listAttachedPoliciesFuture(params: ListAttachedPoliciesRequest): Future[ListAttachedPoliciesResponse] =
-      service.listAttachedPolicies(params).promise().toFuture
-    @inline def listAuditFindingsFuture(params: ListAuditFindingsRequest): Future[ListAuditFindingsResponse] =
-      service.listAuditFindings(params).promise().toFuture
-    @inline def listAuditMitigationActionsExecutionsFuture(
-        params: ListAuditMitigationActionsExecutionsRequest
-    ): Future[ListAuditMitigationActionsExecutionsResponse] =
-      service.listAuditMitigationActionsExecutions(params).promise().toFuture
-    @inline def listAuditMitigationActionsTasksFuture(
-        params: ListAuditMitigationActionsTasksRequest
-    ): Future[ListAuditMitigationActionsTasksResponse] =
-      service.listAuditMitigationActionsTasks(params).promise().toFuture
-    @inline def listAuditTasksFuture(params: ListAuditTasksRequest): Future[ListAuditTasksResponse] =
-      service.listAuditTasks(params).promise().toFuture
-    @inline def listAuthorizersFuture(params: ListAuthorizersRequest): Future[ListAuthorizersResponse] =
-      service.listAuthorizers(params).promise().toFuture
-    @inline def listBillingGroupsFuture(params: ListBillingGroupsRequest): Future[ListBillingGroupsResponse] =
-      service.listBillingGroups(params).promise().toFuture
-    @inline def listCACertificatesFuture(params: ListCACertificatesRequest): Future[ListCACertificatesResponse] =
-      service.listCACertificates(params).promise().toFuture
-    @inline def listCertificatesByCAFuture(params: ListCertificatesByCARequest): Future[ListCertificatesByCAResponse] =
-      service.listCertificatesByCA(params).promise().toFuture
-    @inline def listCertificatesFuture(params: ListCertificatesRequest): Future[ListCertificatesResponse] =
-      service.listCertificates(params).promise().toFuture
-    @inline def listDimensionsFuture(params: ListDimensionsRequest): Future[ListDimensionsResponse] =
-      service.listDimensions(params).promise().toFuture
-    @inline def listDomainConfigurationsFuture(
-        params: ListDomainConfigurationsRequest
-    ): Future[ListDomainConfigurationsResponse] = service.listDomainConfigurations(params).promise().toFuture
-    @inline def listIndicesFuture(params: ListIndicesRequest): Future[ListIndicesResponse] =
-      service.listIndices(params).promise().toFuture
-    @inline def listJobExecutionsForJobFuture(
-        params: ListJobExecutionsForJobRequest
-    ): Future[ListJobExecutionsForJobResponse] = service.listJobExecutionsForJob(params).promise().toFuture
-    @inline def listJobExecutionsForThingFuture(
-        params: ListJobExecutionsForThingRequest
-    ): Future[ListJobExecutionsForThingResponse] = service.listJobExecutionsForThing(params).promise().toFuture
-    @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResponse] =
-      service.listJobs(params).promise().toFuture
-    @inline def listMitigationActionsFuture(
-        params: ListMitigationActionsRequest
-    ): Future[ListMitigationActionsResponse] = service.listMitigationActions(params).promise().toFuture
-    @inline def listOTAUpdatesFuture(params: ListOTAUpdatesRequest): Future[ListOTAUpdatesResponse] =
-      service.listOTAUpdates(params).promise().toFuture
-    @inline def listOutgoingCertificatesFuture(
-        params: ListOutgoingCertificatesRequest
-    ): Future[ListOutgoingCertificatesResponse] = service.listOutgoingCertificates(params).promise().toFuture
-    @inline def listPoliciesFuture(params: ListPoliciesRequest): Future[ListPoliciesResponse] =
-      service.listPolicies(params).promise().toFuture
-    @inline def listPolicyVersionsFuture(params: ListPolicyVersionsRequest): Future[ListPolicyVersionsResponse] =
-      service.listPolicyVersions(params).promise().toFuture
-    @inline def listPrincipalThingsFuture(params: ListPrincipalThingsRequest): Future[ListPrincipalThingsResponse] =
-      service.listPrincipalThings(params).promise().toFuture
-    @inline def listProvisioningTemplateVersionsFuture(
-        params: ListProvisioningTemplateVersionsRequest
-    ): Future[ListProvisioningTemplateVersionsResponse] =
-      service.listProvisioningTemplateVersions(params).promise().toFuture
-    @inline def listProvisioningTemplatesFuture(
-        params: ListProvisioningTemplatesRequest
-    ): Future[ListProvisioningTemplatesResponse] = service.listProvisioningTemplates(params).promise().toFuture
-    @inline def listRoleAliasesFuture(params: ListRoleAliasesRequest): Future[ListRoleAliasesResponse] =
-      service.listRoleAliases(params).promise().toFuture
-    @inline def listScheduledAuditsFuture(params: ListScheduledAuditsRequest): Future[ListScheduledAuditsResponse] =
-      service.listScheduledAudits(params).promise().toFuture
-    @inline def listSecurityProfilesForTargetFuture(
-        params: ListSecurityProfilesForTargetRequest
-    ): Future[ListSecurityProfilesForTargetResponse] = service.listSecurityProfilesForTarget(params).promise().toFuture
-    @inline def listSecurityProfilesFuture(params: ListSecurityProfilesRequest): Future[ListSecurityProfilesResponse] =
-      service.listSecurityProfiles(params).promise().toFuture
-    @inline def listStreamsFuture(params: ListStreamsRequest): Future[ListStreamsResponse] =
-      service.listStreams(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listTargetsForPolicyFuture(params: ListTargetsForPolicyRequest): Future[ListTargetsForPolicyResponse] =
-      service.listTargetsForPolicy(params).promise().toFuture
-    @inline def listTargetsForSecurityProfileFuture(
-        params: ListTargetsForSecurityProfileRequest
-    ): Future[ListTargetsForSecurityProfileResponse] = service.listTargetsForSecurityProfile(params).promise().toFuture
-    @inline def listThingGroupsForThingFuture(
-        params: ListThingGroupsForThingRequest
-    ): Future[ListThingGroupsForThingResponse] = service.listThingGroupsForThing(params).promise().toFuture
-    @inline def listThingGroupsFuture(params: ListThingGroupsRequest): Future[ListThingGroupsResponse] =
-      service.listThingGroups(params).promise().toFuture
-    @inline def listThingPrincipalsFuture(params: ListThingPrincipalsRequest): Future[ListThingPrincipalsResponse] =
-      service.listThingPrincipals(params).promise().toFuture
-    @inline def listThingRegistrationTaskReportsFuture(
-        params: ListThingRegistrationTaskReportsRequest
-    ): Future[ListThingRegistrationTaskReportsResponse] =
-      service.listThingRegistrationTaskReports(params).promise().toFuture
-    @inline def listThingRegistrationTasksFuture(
-        params: ListThingRegistrationTasksRequest
-    ): Future[ListThingRegistrationTasksResponse] = service.listThingRegistrationTasks(params).promise().toFuture
-    @inline def listThingTypesFuture(params: ListThingTypesRequest): Future[ListThingTypesResponse] =
-      service.listThingTypes(params).promise().toFuture
-    @inline def listThingsFuture(params: ListThingsRequest): Future[ListThingsResponse] =
-      service.listThings(params).promise().toFuture
-    @inline def listThingsInBillingGroupFuture(
-        params: ListThingsInBillingGroupRequest
-    ): Future[ListThingsInBillingGroupResponse] = service.listThingsInBillingGroup(params).promise().toFuture
-    @inline def listThingsInThingGroupFuture(
-        params: ListThingsInThingGroupRequest
-    ): Future[ListThingsInThingGroupResponse] = service.listThingsInThingGroup(params).promise().toFuture
-    @inline def listTopicRuleDestinationsFuture(
-        params: ListTopicRuleDestinationsRequest
-    ): Future[ListTopicRuleDestinationsResponse] = service.listTopicRuleDestinations(params).promise().toFuture
-    @inline def listTopicRulesFuture(params: ListTopicRulesRequest): Future[ListTopicRulesResponse] =
-      service.listTopicRules(params).promise().toFuture
-    @inline def listV2LoggingLevelsFuture(params: ListV2LoggingLevelsRequest): Future[ListV2LoggingLevelsResponse] =
-      service.listV2LoggingLevels(params).promise().toFuture
-    @inline def listViolationEventsFuture(params: ListViolationEventsRequest): Future[ListViolationEventsResponse] =
-      service.listViolationEvents(params).promise().toFuture
-    @inline def registerCACertificateFuture(
-        params: RegisterCACertificateRequest
-    ): Future[RegisterCACertificateResponse] = service.registerCACertificate(params).promise().toFuture
-    @inline def registerCertificateFuture(params: RegisterCertificateRequest): Future[RegisterCertificateResponse] =
-      service.registerCertificate(params).promise().toFuture
-    @inline def registerCertificateWithoutCAFuture(
-        params: RegisterCertificateWithoutCARequest
-    ): Future[RegisterCertificateWithoutCAResponse] = service.registerCertificateWithoutCA(params).promise().toFuture
-    @inline def registerThingFuture(params: RegisterThingRequest): Future[RegisterThingResponse] =
-      service.registerThing(params).promise().toFuture
-    @inline def rejectCertificateTransferFuture(params: RejectCertificateTransferRequest): Future[js.Object] =
-      service.rejectCertificateTransfer(params).promise().toFuture
-    @inline def removeThingFromBillingGroupFuture(
-        params: RemoveThingFromBillingGroupRequest
-    ): Future[RemoveThingFromBillingGroupResponse] = service.removeThingFromBillingGroup(params).promise().toFuture
-    @inline def removeThingFromThingGroupFuture(
-        params: RemoveThingFromThingGroupRequest
-    ): Future[RemoveThingFromThingGroupResponse] = service.removeThingFromThingGroup(params).promise().toFuture
-    @inline def replaceTopicRuleFuture(params: ReplaceTopicRuleRequest): Future[js.Object] =
-      service.replaceTopicRule(params).promise().toFuture
-    @inline def searchIndexFuture(params: SearchIndexRequest): Future[SearchIndexResponse] =
-      service.searchIndex(params).promise().toFuture
-    @inline def setDefaultAuthorizerFuture(params: SetDefaultAuthorizerRequest): Future[SetDefaultAuthorizerResponse] =
-      service.setDefaultAuthorizer(params).promise().toFuture
-    @inline def setDefaultPolicyVersionFuture(params: SetDefaultPolicyVersionRequest): Future[js.Object] =
-      service.setDefaultPolicyVersion(params).promise().toFuture
-    @inline def setLoggingOptionsFuture(params: SetLoggingOptionsRequest): Future[js.Object] =
-      service.setLoggingOptions(params).promise().toFuture
-    @inline def setV2LoggingLevelFuture(params: SetV2LoggingLevelRequest): Future[js.Object] =
-      service.setV2LoggingLevel(params).promise().toFuture
-    @inline def setV2LoggingOptionsFuture(params: SetV2LoggingOptionsRequest): Future[js.Object] =
-      service.setV2LoggingOptions(params).promise().toFuture
-    @inline def startAuditMitigationActionsTaskFuture(
-        params: StartAuditMitigationActionsTaskRequest
-    ): Future[StartAuditMitigationActionsTaskResponse] =
-      service.startAuditMitigationActionsTask(params).promise().toFuture
-    @inline def startOnDemandAuditTaskFuture(
-        params: StartOnDemandAuditTaskRequest
-    ): Future[StartOnDemandAuditTaskResponse] = service.startOnDemandAuditTask(params).promise().toFuture
-    @inline def startThingRegistrationTaskFuture(
-        params: StartThingRegistrationTaskRequest
-    ): Future[StartThingRegistrationTaskResponse] = service.startThingRegistrationTask(params).promise().toFuture
-    @inline def stopThingRegistrationTaskFuture(
-        params: StopThingRegistrationTaskRequest
-    ): Future[StopThingRegistrationTaskResponse] = service.stopThingRegistrationTask(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def testAuthorizationFuture(params: TestAuthorizationRequest): Future[TestAuthorizationResponse] =
-      service.testAuthorization(params).promise().toFuture
-    @inline def testInvokeAuthorizerFuture(params: TestInvokeAuthorizerRequest): Future[TestInvokeAuthorizerResponse] =
-      service.testInvokeAuthorizer(params).promise().toFuture
-    @inline def transferCertificateFuture(params: TransferCertificateRequest): Future[TransferCertificateResponse] =
-      service.transferCertificate(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateAccountAuditConfigurationFuture(
-        params: UpdateAccountAuditConfigurationRequest
-    ): Future[UpdateAccountAuditConfigurationResponse] =
-      service.updateAccountAuditConfiguration(params).promise().toFuture
-    @inline def updateAuthorizerFuture(params: UpdateAuthorizerRequest): Future[UpdateAuthorizerResponse] =
-      service.updateAuthorizer(params).promise().toFuture
-    @inline def updateBillingGroupFuture(params: UpdateBillingGroupRequest): Future[UpdateBillingGroupResponse] =
-      service.updateBillingGroup(params).promise().toFuture
-    @inline def updateCACertificateFuture(params: UpdateCACertificateRequest): Future[js.Object] =
-      service.updateCACertificate(params).promise().toFuture
-    @inline def updateCertificateFuture(params: UpdateCertificateRequest): Future[js.Object] =
-      service.updateCertificate(params).promise().toFuture
-    @inline def updateDimensionFuture(params: UpdateDimensionRequest): Future[UpdateDimensionResponse] =
-      service.updateDimension(params).promise().toFuture
-    @inline def updateDomainConfigurationFuture(
-        params: UpdateDomainConfigurationRequest
-    ): Future[UpdateDomainConfigurationResponse] = service.updateDomainConfiguration(params).promise().toFuture
-    @inline def updateDynamicThingGroupFuture(
-        params: UpdateDynamicThingGroupRequest
-    ): Future[UpdateDynamicThingGroupResponse] = service.updateDynamicThingGroup(params).promise().toFuture
-    @inline def updateEventConfigurationsFuture(
-        params: UpdateEventConfigurationsRequest
-    ): Future[UpdateEventConfigurationsResponse] = service.updateEventConfigurations(params).promise().toFuture
-    @inline def updateIndexingConfigurationFuture(
-        params: UpdateIndexingConfigurationRequest
-    ): Future[UpdateIndexingConfigurationResponse] = service.updateIndexingConfiguration(params).promise().toFuture
-    @inline def updateJobFuture(params: UpdateJobRequest): Future[js.Object] =
-      service.updateJob(params).promise().toFuture
-    @inline def updateMitigationActionFuture(
-        params: UpdateMitigationActionRequest
-    ): Future[UpdateMitigationActionResponse] = service.updateMitigationAction(params).promise().toFuture
-    @inline def updateProvisioningTemplateFuture(
-        params: UpdateProvisioningTemplateRequest
-    ): Future[UpdateProvisioningTemplateResponse] = service.updateProvisioningTemplate(params).promise().toFuture
-    @inline def updateRoleAliasFuture(params: UpdateRoleAliasRequest): Future[UpdateRoleAliasResponse] =
-      service.updateRoleAlias(params).promise().toFuture
-    @inline def updateScheduledAuditFuture(params: UpdateScheduledAuditRequest): Future[UpdateScheduledAuditResponse] =
-      service.updateScheduledAudit(params).promise().toFuture
-    @inline def updateSecurityProfileFuture(
-        params: UpdateSecurityProfileRequest
-    ): Future[UpdateSecurityProfileResponse] = service.updateSecurityProfile(params).promise().toFuture
-    @inline def updateStreamFuture(params: UpdateStreamRequest): Future[UpdateStreamResponse] =
-      service.updateStream(params).promise().toFuture
-    @inline def updateThingFuture(params: UpdateThingRequest): Future[UpdateThingResponse] =
-      service.updateThing(params).promise().toFuture
-    @inline def updateThingGroupFuture(params: UpdateThingGroupRequest): Future[UpdateThingGroupResponse] =
-      service.updateThingGroup(params).promise().toFuture
-    @inline def updateThingGroupsForThingFuture(
-        params: UpdateThingGroupsForThingRequest
-    ): Future[UpdateThingGroupsForThingResponse] = service.updateThingGroupsForThing(params).promise().toFuture
-    @inline def updateTopicRuleDestinationFuture(
-        params: UpdateTopicRuleDestinationRequest
-    ): Future[UpdateTopicRuleDestinationResponse] = service.updateTopicRuleDestination(params).promise().toFuture
-    @inline def validateSecurityProfileBehaviorsFuture(
-        params: ValidateSecurityProfileBehaviorsRequest
-    ): Future[ValidateSecurityProfileBehaviorsResponse] =
-      service.validateSecurityProfileBehaviors(params).promise().toFuture
+    @inline def acceptCertificateTransferFuture(params: AcceptCertificateTransferRequest): Future[js.Object] = service.acceptCertificateTransfer(params).promise().toFuture
+    @inline def addThingToBillingGroupFuture(params: AddThingToBillingGroupRequest): Future[AddThingToBillingGroupResponse] = service.addThingToBillingGroup(params).promise().toFuture
+    @inline def addThingToThingGroupFuture(params: AddThingToThingGroupRequest): Future[AddThingToThingGroupResponse] = service.addThingToThingGroup(params).promise().toFuture
+    @inline def associateTargetsWithJobFuture(params: AssociateTargetsWithJobRequest): Future[AssociateTargetsWithJobResponse] = service.associateTargetsWithJob(params).promise().toFuture
+    @inline def attachPolicyFuture(params: AttachPolicyRequest): Future[js.Object] = service.attachPolicy(params).promise().toFuture
+    @inline def attachSecurityProfileFuture(params: AttachSecurityProfileRequest): Future[AttachSecurityProfileResponse] = service.attachSecurityProfile(params).promise().toFuture
+    @inline def attachThingPrincipalFuture(params: AttachThingPrincipalRequest): Future[AttachThingPrincipalResponse] = service.attachThingPrincipal(params).promise().toFuture
+    @inline def cancelAuditMitigationActionsTaskFuture(params: CancelAuditMitigationActionsTaskRequest): Future[CancelAuditMitigationActionsTaskResponse] = service.cancelAuditMitigationActionsTask(params).promise().toFuture
+    @inline def cancelAuditTaskFuture(params: CancelAuditTaskRequest): Future[CancelAuditTaskResponse] = service.cancelAuditTask(params).promise().toFuture
+    @inline def cancelCertificateTransferFuture(params: CancelCertificateTransferRequest): Future[js.Object] = service.cancelCertificateTransfer(params).promise().toFuture
+    @inline def cancelJobExecutionFuture(params: CancelJobExecutionRequest): Future[js.Object] = service.cancelJobExecution(params).promise().toFuture
+    @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] = service.cancelJob(params).promise().toFuture
+    @inline def clearDefaultAuthorizerFuture(params: ClearDefaultAuthorizerRequest): Future[ClearDefaultAuthorizerResponse] = service.clearDefaultAuthorizer(params).promise().toFuture
+    @inline def confirmTopicRuleDestinationFuture(params: ConfirmTopicRuleDestinationRequest): Future[ConfirmTopicRuleDestinationResponse] = service.confirmTopicRuleDestination(params).promise().toFuture
+    @inline def createAuthorizerFuture(params: CreateAuthorizerRequest): Future[CreateAuthorizerResponse] = service.createAuthorizer(params).promise().toFuture
+    @inline def createBillingGroupFuture(params: CreateBillingGroupRequest): Future[CreateBillingGroupResponse] = service.createBillingGroup(params).promise().toFuture
+    @inline def createCertificateFromCsrFuture(params: CreateCertificateFromCsrRequest): Future[CreateCertificateFromCsrResponse] = service.createCertificateFromCsr(params).promise().toFuture
+    @inline def createDimensionFuture(params: CreateDimensionRequest): Future[CreateDimensionResponse] = service.createDimension(params).promise().toFuture
+    @inline def createDomainConfigurationFuture(params: CreateDomainConfigurationRequest): Future[CreateDomainConfigurationResponse] = service.createDomainConfiguration(params).promise().toFuture
+    @inline def createDynamicThingGroupFuture(params: CreateDynamicThingGroupRequest): Future[CreateDynamicThingGroupResponse] = service.createDynamicThingGroup(params).promise().toFuture
+    @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResponse] = service.createJob(params).promise().toFuture
+    @inline def createKeysAndCertificateFuture(params: CreateKeysAndCertificateRequest): Future[CreateKeysAndCertificateResponse] = service.createKeysAndCertificate(params).promise().toFuture
+    @inline def createMitigationActionFuture(params: CreateMitigationActionRequest): Future[CreateMitigationActionResponse] = service.createMitigationAction(params).promise().toFuture
+    @inline def createOTAUpdateFuture(params: CreateOTAUpdateRequest): Future[CreateOTAUpdateResponse] = service.createOTAUpdate(params).promise().toFuture
+    @inline def createPolicyFuture(params: CreatePolicyRequest): Future[CreatePolicyResponse] = service.createPolicy(params).promise().toFuture
+    @inline def createPolicyVersionFuture(params: CreatePolicyVersionRequest): Future[CreatePolicyVersionResponse] = service.createPolicyVersion(params).promise().toFuture
+    @inline def createProvisioningClaimFuture(params: CreateProvisioningClaimRequest): Future[CreateProvisioningClaimResponse] = service.createProvisioningClaim(params).promise().toFuture
+    @inline def createProvisioningTemplateFuture(params: CreateProvisioningTemplateRequest): Future[CreateProvisioningTemplateResponse] = service.createProvisioningTemplate(params).promise().toFuture
+    @inline def createProvisioningTemplateVersionFuture(params: CreateProvisioningTemplateVersionRequest): Future[CreateProvisioningTemplateVersionResponse] = service.createProvisioningTemplateVersion(params).promise().toFuture
+    @inline def createRoleAliasFuture(params: CreateRoleAliasRequest): Future[CreateRoleAliasResponse] = service.createRoleAlias(params).promise().toFuture
+    @inline def createScheduledAuditFuture(params: CreateScheduledAuditRequest): Future[CreateScheduledAuditResponse] = service.createScheduledAudit(params).promise().toFuture
+    @inline def createSecurityProfileFuture(params: CreateSecurityProfileRequest): Future[CreateSecurityProfileResponse] = service.createSecurityProfile(params).promise().toFuture
+    @inline def createStreamFuture(params: CreateStreamRequest): Future[CreateStreamResponse] = service.createStream(params).promise().toFuture
+    @inline def createThingFuture(params: CreateThingRequest): Future[CreateThingResponse] = service.createThing(params).promise().toFuture
+    @inline def createThingGroupFuture(params: CreateThingGroupRequest): Future[CreateThingGroupResponse] = service.createThingGroup(params).promise().toFuture
+    @inline def createThingTypeFuture(params: CreateThingTypeRequest): Future[CreateThingTypeResponse] = service.createThingType(params).promise().toFuture
+    @inline def createTopicRuleDestinationFuture(params: CreateTopicRuleDestinationRequest): Future[CreateTopicRuleDestinationResponse] = service.createTopicRuleDestination(params).promise().toFuture
+    @inline def createTopicRuleFuture(params: CreateTopicRuleRequest): Future[js.Object] = service.createTopicRule(params).promise().toFuture
+    @inline def deleteAccountAuditConfigurationFuture(params: DeleteAccountAuditConfigurationRequest): Future[DeleteAccountAuditConfigurationResponse] = service.deleteAccountAuditConfiguration(params).promise().toFuture
+    @inline def deleteAuthorizerFuture(params: DeleteAuthorizerRequest): Future[DeleteAuthorizerResponse] = service.deleteAuthorizer(params).promise().toFuture
+    @inline def deleteBillingGroupFuture(params: DeleteBillingGroupRequest): Future[DeleteBillingGroupResponse] = service.deleteBillingGroup(params).promise().toFuture
+    @inline def deleteCACertificateFuture(params: DeleteCACertificateRequest): Future[DeleteCACertificateResponse] = service.deleteCACertificate(params).promise().toFuture
+    @inline def deleteCertificateFuture(params: DeleteCertificateRequest): Future[js.Object] = service.deleteCertificate(params).promise().toFuture
+    @inline def deleteDimensionFuture(params: DeleteDimensionRequest): Future[DeleteDimensionResponse] = service.deleteDimension(params).promise().toFuture
+    @inline def deleteDomainConfigurationFuture(params: DeleteDomainConfigurationRequest): Future[DeleteDomainConfigurationResponse] = service.deleteDomainConfiguration(params).promise().toFuture
+    @inline def deleteDynamicThingGroupFuture(params: DeleteDynamicThingGroupRequest): Future[DeleteDynamicThingGroupResponse] = service.deleteDynamicThingGroup(params).promise().toFuture
+    @inline def deleteJobExecutionFuture(params: DeleteJobExecutionRequest): Future[js.Object] = service.deleteJobExecution(params).promise().toFuture
+    @inline def deleteJobFuture(params: DeleteJobRequest): Future[js.Object] = service.deleteJob(params).promise().toFuture
+    @inline def deleteMitigationActionFuture(params: DeleteMitigationActionRequest): Future[DeleteMitigationActionResponse] = service.deleteMitigationAction(params).promise().toFuture
+    @inline def deleteOTAUpdateFuture(params: DeleteOTAUpdateRequest): Future[DeleteOTAUpdateResponse] = service.deleteOTAUpdate(params).promise().toFuture
+    @inline def deletePolicyFuture(params: DeletePolicyRequest): Future[js.Object] = service.deletePolicy(params).promise().toFuture
+    @inline def deletePolicyVersionFuture(params: DeletePolicyVersionRequest): Future[js.Object] = service.deletePolicyVersion(params).promise().toFuture
+    @inline def deleteProvisioningTemplateFuture(params: DeleteProvisioningTemplateRequest): Future[DeleteProvisioningTemplateResponse] = service.deleteProvisioningTemplate(params).promise().toFuture
+    @inline def deleteProvisioningTemplateVersionFuture(params: DeleteProvisioningTemplateVersionRequest): Future[DeleteProvisioningTemplateVersionResponse] = service.deleteProvisioningTemplateVersion(params).promise().toFuture
+    @inline def deleteRegistrationCodeFuture(params: DeleteRegistrationCodeRequest): Future[DeleteRegistrationCodeResponse] = service.deleteRegistrationCode(params).promise().toFuture
+    @inline def deleteRoleAliasFuture(params: DeleteRoleAliasRequest): Future[DeleteRoleAliasResponse] = service.deleteRoleAlias(params).promise().toFuture
+    @inline def deleteScheduledAuditFuture(params: DeleteScheduledAuditRequest): Future[DeleteScheduledAuditResponse] = service.deleteScheduledAudit(params).promise().toFuture
+    @inline def deleteSecurityProfileFuture(params: DeleteSecurityProfileRequest): Future[DeleteSecurityProfileResponse] = service.deleteSecurityProfile(params).promise().toFuture
+    @inline def deleteStreamFuture(params: DeleteStreamRequest): Future[DeleteStreamResponse] = service.deleteStream(params).promise().toFuture
+    @inline def deleteThingFuture(params: DeleteThingRequest): Future[DeleteThingResponse] = service.deleteThing(params).promise().toFuture
+    @inline def deleteThingGroupFuture(params: DeleteThingGroupRequest): Future[DeleteThingGroupResponse] = service.deleteThingGroup(params).promise().toFuture
+    @inline def deleteThingTypeFuture(params: DeleteThingTypeRequest): Future[DeleteThingTypeResponse] = service.deleteThingType(params).promise().toFuture
+    @inline def deleteTopicRuleDestinationFuture(params: DeleteTopicRuleDestinationRequest): Future[DeleteTopicRuleDestinationResponse] = service.deleteTopicRuleDestination(params).promise().toFuture
+    @inline def deleteTopicRuleFuture(params: DeleteTopicRuleRequest): Future[js.Object] = service.deleteTopicRule(params).promise().toFuture
+    @inline def deleteV2LoggingLevelFuture(params: DeleteV2LoggingLevelRequest): Future[js.Object] = service.deleteV2LoggingLevel(params).promise().toFuture
+    @inline def deprecateThingTypeFuture(params: DeprecateThingTypeRequest): Future[DeprecateThingTypeResponse] = service.deprecateThingType(params).promise().toFuture
+    @inline def describeAccountAuditConfigurationFuture(params: DescribeAccountAuditConfigurationRequest): Future[DescribeAccountAuditConfigurationResponse] = service.describeAccountAuditConfiguration(params).promise().toFuture
+    @inline def describeAuditFindingFuture(params: DescribeAuditFindingRequest): Future[DescribeAuditFindingResponse] = service.describeAuditFinding(params).promise().toFuture
+    @inline def describeAuditMitigationActionsTaskFuture(params: DescribeAuditMitigationActionsTaskRequest): Future[DescribeAuditMitigationActionsTaskResponse] = service.describeAuditMitigationActionsTask(params).promise().toFuture
+    @inline def describeAuditTaskFuture(params: DescribeAuditTaskRequest): Future[DescribeAuditTaskResponse] = service.describeAuditTask(params).promise().toFuture
+    @inline def describeAuthorizerFuture(params: DescribeAuthorizerRequest): Future[DescribeAuthorizerResponse] = service.describeAuthorizer(params).promise().toFuture
+    @inline def describeBillingGroupFuture(params: DescribeBillingGroupRequest): Future[DescribeBillingGroupResponse] = service.describeBillingGroup(params).promise().toFuture
+    @inline def describeCACertificateFuture(params: DescribeCACertificateRequest): Future[DescribeCACertificateResponse] = service.describeCACertificate(params).promise().toFuture
+    @inline def describeCertificateFuture(params: DescribeCertificateRequest): Future[DescribeCertificateResponse] = service.describeCertificate(params).promise().toFuture
+    @inline def describeDefaultAuthorizerFuture(params: DescribeDefaultAuthorizerRequest): Future[DescribeDefaultAuthorizerResponse] = service.describeDefaultAuthorizer(params).promise().toFuture
+    @inline def describeDimensionFuture(params: DescribeDimensionRequest): Future[DescribeDimensionResponse] = service.describeDimension(params).promise().toFuture
+    @inline def describeDomainConfigurationFuture(params: DescribeDomainConfigurationRequest): Future[DescribeDomainConfigurationResponse] = service.describeDomainConfiguration(params).promise().toFuture
+    @inline def describeEndpointFuture(params: DescribeEndpointRequest): Future[DescribeEndpointResponse] = service.describeEndpoint(params).promise().toFuture
+    @inline def describeEventConfigurationsFuture(params: DescribeEventConfigurationsRequest): Future[DescribeEventConfigurationsResponse] = service.describeEventConfigurations(params).promise().toFuture
+    @inline def describeIndexFuture(params: DescribeIndexRequest): Future[DescribeIndexResponse] = service.describeIndex(params).promise().toFuture
+    @inline def describeJobExecutionFuture(params: DescribeJobExecutionRequest): Future[DescribeJobExecutionResponse] = service.describeJobExecution(params).promise().toFuture
+    @inline def describeJobFuture(params: DescribeJobRequest): Future[DescribeJobResponse] = service.describeJob(params).promise().toFuture
+    @inline def describeMitigationActionFuture(params: DescribeMitigationActionRequest): Future[DescribeMitigationActionResponse] = service.describeMitigationAction(params).promise().toFuture
+    @inline def describeProvisioningTemplateFuture(params: DescribeProvisioningTemplateRequest): Future[DescribeProvisioningTemplateResponse] = service.describeProvisioningTemplate(params).promise().toFuture
+    @inline def describeProvisioningTemplateVersionFuture(params: DescribeProvisioningTemplateVersionRequest): Future[DescribeProvisioningTemplateVersionResponse] = service.describeProvisioningTemplateVersion(params).promise().toFuture
+    @inline def describeRoleAliasFuture(params: DescribeRoleAliasRequest): Future[DescribeRoleAliasResponse] = service.describeRoleAlias(params).promise().toFuture
+    @inline def describeScheduledAuditFuture(params: DescribeScheduledAuditRequest): Future[DescribeScheduledAuditResponse] = service.describeScheduledAudit(params).promise().toFuture
+    @inline def describeSecurityProfileFuture(params: DescribeSecurityProfileRequest): Future[DescribeSecurityProfileResponse] = service.describeSecurityProfile(params).promise().toFuture
+    @inline def describeStreamFuture(params: DescribeStreamRequest): Future[DescribeStreamResponse] = service.describeStream(params).promise().toFuture
+    @inline def describeThingFuture(params: DescribeThingRequest): Future[DescribeThingResponse] = service.describeThing(params).promise().toFuture
+    @inline def describeThingGroupFuture(params: DescribeThingGroupRequest): Future[DescribeThingGroupResponse] = service.describeThingGroup(params).promise().toFuture
+    @inline def describeThingRegistrationTaskFuture(params: DescribeThingRegistrationTaskRequest): Future[DescribeThingRegistrationTaskResponse] = service.describeThingRegistrationTask(params).promise().toFuture
+    @inline def describeThingTypeFuture(params: DescribeThingTypeRequest): Future[DescribeThingTypeResponse] = service.describeThingType(params).promise().toFuture
+    @inline def detachPolicyFuture(params: DetachPolicyRequest): Future[js.Object] = service.detachPolicy(params).promise().toFuture
+    @inline def detachSecurityProfileFuture(params: DetachSecurityProfileRequest): Future[DetachSecurityProfileResponse] = service.detachSecurityProfile(params).promise().toFuture
+    @inline def detachThingPrincipalFuture(params: DetachThingPrincipalRequest): Future[DetachThingPrincipalResponse] = service.detachThingPrincipal(params).promise().toFuture
+    @inline def disableTopicRuleFuture(params: DisableTopicRuleRequest): Future[js.Object] = service.disableTopicRule(params).promise().toFuture
+    @inline def enableTopicRuleFuture(params: EnableTopicRuleRequest): Future[js.Object] = service.enableTopicRule(params).promise().toFuture
+    @inline def getCardinalityFuture(params: GetCardinalityRequest): Future[GetCardinalityResponse] = service.getCardinality(params).promise().toFuture
+    @inline def getEffectivePoliciesFuture(params: GetEffectivePoliciesRequest): Future[GetEffectivePoliciesResponse] = service.getEffectivePolicies(params).promise().toFuture
+    @inline def getIndexingConfigurationFuture(params: GetIndexingConfigurationRequest): Future[GetIndexingConfigurationResponse] = service.getIndexingConfiguration(params).promise().toFuture
+    @inline def getJobDocumentFuture(params: GetJobDocumentRequest): Future[GetJobDocumentResponse] = service.getJobDocument(params).promise().toFuture
+    @inline def getLoggingOptionsFuture(params: GetLoggingOptionsRequest): Future[GetLoggingOptionsResponse] = service.getLoggingOptions(params).promise().toFuture
+    @inline def getOTAUpdateFuture(params: GetOTAUpdateRequest): Future[GetOTAUpdateResponse] = service.getOTAUpdate(params).promise().toFuture
+    @inline def getPercentilesFuture(params: GetPercentilesRequest): Future[GetPercentilesResponse] = service.getPercentiles(params).promise().toFuture
+    @inline def getPolicyFuture(params: GetPolicyRequest): Future[GetPolicyResponse] = service.getPolicy(params).promise().toFuture
+    @inline def getPolicyVersionFuture(params: GetPolicyVersionRequest): Future[GetPolicyVersionResponse] = service.getPolicyVersion(params).promise().toFuture
+    @inline def getRegistrationCodeFuture(params: GetRegistrationCodeRequest): Future[GetRegistrationCodeResponse] = service.getRegistrationCode(params).promise().toFuture
+    @inline def getStatisticsFuture(params: GetStatisticsRequest): Future[GetStatisticsResponse] = service.getStatistics(params).promise().toFuture
+    @inline def getTopicRuleDestinationFuture(params: GetTopicRuleDestinationRequest): Future[GetTopicRuleDestinationResponse] = service.getTopicRuleDestination(params).promise().toFuture
+    @inline def getTopicRuleFuture(params: GetTopicRuleRequest): Future[GetTopicRuleResponse] = service.getTopicRule(params).promise().toFuture
+    @inline def getV2LoggingOptionsFuture(params: GetV2LoggingOptionsRequest): Future[GetV2LoggingOptionsResponse] = service.getV2LoggingOptions(params).promise().toFuture
+    @inline def listActiveViolationsFuture(params: ListActiveViolationsRequest): Future[ListActiveViolationsResponse] = service.listActiveViolations(params).promise().toFuture
+    @inline def listAttachedPoliciesFuture(params: ListAttachedPoliciesRequest): Future[ListAttachedPoliciesResponse] = service.listAttachedPolicies(params).promise().toFuture
+    @inline def listAuditFindingsFuture(params: ListAuditFindingsRequest): Future[ListAuditFindingsResponse] = service.listAuditFindings(params).promise().toFuture
+    @inline def listAuditMitigationActionsExecutionsFuture(params: ListAuditMitigationActionsExecutionsRequest): Future[ListAuditMitigationActionsExecutionsResponse] = service.listAuditMitigationActionsExecutions(params).promise().toFuture
+    @inline def listAuditMitigationActionsTasksFuture(params: ListAuditMitigationActionsTasksRequest): Future[ListAuditMitigationActionsTasksResponse] = service.listAuditMitigationActionsTasks(params).promise().toFuture
+    @inline def listAuditTasksFuture(params: ListAuditTasksRequest): Future[ListAuditTasksResponse] = service.listAuditTasks(params).promise().toFuture
+    @inline def listAuthorizersFuture(params: ListAuthorizersRequest): Future[ListAuthorizersResponse] = service.listAuthorizers(params).promise().toFuture
+    @inline def listBillingGroupsFuture(params: ListBillingGroupsRequest): Future[ListBillingGroupsResponse] = service.listBillingGroups(params).promise().toFuture
+    @inline def listCACertificatesFuture(params: ListCACertificatesRequest): Future[ListCACertificatesResponse] = service.listCACertificates(params).promise().toFuture
+    @inline def listCertificatesByCAFuture(params: ListCertificatesByCARequest): Future[ListCertificatesByCAResponse] = service.listCertificatesByCA(params).promise().toFuture
+    @inline def listCertificatesFuture(params: ListCertificatesRequest): Future[ListCertificatesResponse] = service.listCertificates(params).promise().toFuture
+    @inline def listDimensionsFuture(params: ListDimensionsRequest): Future[ListDimensionsResponse] = service.listDimensions(params).promise().toFuture
+    @inline def listDomainConfigurationsFuture(params: ListDomainConfigurationsRequest): Future[ListDomainConfigurationsResponse] = service.listDomainConfigurations(params).promise().toFuture
+    @inline def listIndicesFuture(params: ListIndicesRequest): Future[ListIndicesResponse] = service.listIndices(params).promise().toFuture
+    @inline def listJobExecutionsForJobFuture(params: ListJobExecutionsForJobRequest): Future[ListJobExecutionsForJobResponse] = service.listJobExecutionsForJob(params).promise().toFuture
+    @inline def listJobExecutionsForThingFuture(params: ListJobExecutionsForThingRequest): Future[ListJobExecutionsForThingResponse] = service.listJobExecutionsForThing(params).promise().toFuture
+    @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResponse] = service.listJobs(params).promise().toFuture
+    @inline def listMitigationActionsFuture(params: ListMitigationActionsRequest): Future[ListMitigationActionsResponse] = service.listMitigationActions(params).promise().toFuture
+    @inline def listOTAUpdatesFuture(params: ListOTAUpdatesRequest): Future[ListOTAUpdatesResponse] = service.listOTAUpdates(params).promise().toFuture
+    @inline def listOutgoingCertificatesFuture(params: ListOutgoingCertificatesRequest): Future[ListOutgoingCertificatesResponse] = service.listOutgoingCertificates(params).promise().toFuture
+    @inline def listPoliciesFuture(params: ListPoliciesRequest): Future[ListPoliciesResponse] = service.listPolicies(params).promise().toFuture
+    @inline def listPolicyVersionsFuture(params: ListPolicyVersionsRequest): Future[ListPolicyVersionsResponse] = service.listPolicyVersions(params).promise().toFuture
+    @inline def listPrincipalThingsFuture(params: ListPrincipalThingsRequest): Future[ListPrincipalThingsResponse] = service.listPrincipalThings(params).promise().toFuture
+    @inline def listProvisioningTemplateVersionsFuture(params: ListProvisioningTemplateVersionsRequest): Future[ListProvisioningTemplateVersionsResponse] = service.listProvisioningTemplateVersions(params).promise().toFuture
+    @inline def listProvisioningTemplatesFuture(params: ListProvisioningTemplatesRequest): Future[ListProvisioningTemplatesResponse] = service.listProvisioningTemplates(params).promise().toFuture
+    @inline def listRoleAliasesFuture(params: ListRoleAliasesRequest): Future[ListRoleAliasesResponse] = service.listRoleAliases(params).promise().toFuture
+    @inline def listScheduledAuditsFuture(params: ListScheduledAuditsRequest): Future[ListScheduledAuditsResponse] = service.listScheduledAudits(params).promise().toFuture
+    @inline def listSecurityProfilesForTargetFuture(params: ListSecurityProfilesForTargetRequest): Future[ListSecurityProfilesForTargetResponse] = service.listSecurityProfilesForTarget(params).promise().toFuture
+    @inline def listSecurityProfilesFuture(params: ListSecurityProfilesRequest): Future[ListSecurityProfilesResponse] = service.listSecurityProfiles(params).promise().toFuture
+    @inline def listStreamsFuture(params: ListStreamsRequest): Future[ListStreamsResponse] = service.listStreams(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listTargetsForPolicyFuture(params: ListTargetsForPolicyRequest): Future[ListTargetsForPolicyResponse] = service.listTargetsForPolicy(params).promise().toFuture
+    @inline def listTargetsForSecurityProfileFuture(params: ListTargetsForSecurityProfileRequest): Future[ListTargetsForSecurityProfileResponse] = service.listTargetsForSecurityProfile(params).promise().toFuture
+    @inline def listThingGroupsForThingFuture(params: ListThingGroupsForThingRequest): Future[ListThingGroupsForThingResponse] = service.listThingGroupsForThing(params).promise().toFuture
+    @inline def listThingGroupsFuture(params: ListThingGroupsRequest): Future[ListThingGroupsResponse] = service.listThingGroups(params).promise().toFuture
+    @inline def listThingPrincipalsFuture(params: ListThingPrincipalsRequest): Future[ListThingPrincipalsResponse] = service.listThingPrincipals(params).promise().toFuture
+    @inline def listThingRegistrationTaskReportsFuture(params: ListThingRegistrationTaskReportsRequest): Future[ListThingRegistrationTaskReportsResponse] = service.listThingRegistrationTaskReports(params).promise().toFuture
+    @inline def listThingRegistrationTasksFuture(params: ListThingRegistrationTasksRequest): Future[ListThingRegistrationTasksResponse] = service.listThingRegistrationTasks(params).promise().toFuture
+    @inline def listThingTypesFuture(params: ListThingTypesRequest): Future[ListThingTypesResponse] = service.listThingTypes(params).promise().toFuture
+    @inline def listThingsFuture(params: ListThingsRequest): Future[ListThingsResponse] = service.listThings(params).promise().toFuture
+    @inline def listThingsInBillingGroupFuture(params: ListThingsInBillingGroupRequest): Future[ListThingsInBillingGroupResponse] = service.listThingsInBillingGroup(params).promise().toFuture
+    @inline def listThingsInThingGroupFuture(params: ListThingsInThingGroupRequest): Future[ListThingsInThingGroupResponse] = service.listThingsInThingGroup(params).promise().toFuture
+    @inline def listTopicRuleDestinationsFuture(params: ListTopicRuleDestinationsRequest): Future[ListTopicRuleDestinationsResponse] = service.listTopicRuleDestinations(params).promise().toFuture
+    @inline def listTopicRulesFuture(params: ListTopicRulesRequest): Future[ListTopicRulesResponse] = service.listTopicRules(params).promise().toFuture
+    @inline def listV2LoggingLevelsFuture(params: ListV2LoggingLevelsRequest): Future[ListV2LoggingLevelsResponse] = service.listV2LoggingLevels(params).promise().toFuture
+    @inline def listViolationEventsFuture(params: ListViolationEventsRequest): Future[ListViolationEventsResponse] = service.listViolationEvents(params).promise().toFuture
+    @inline def registerCACertificateFuture(params: RegisterCACertificateRequest): Future[RegisterCACertificateResponse] = service.registerCACertificate(params).promise().toFuture
+    @inline def registerCertificateFuture(params: RegisterCertificateRequest): Future[RegisterCertificateResponse] = service.registerCertificate(params).promise().toFuture
+    @inline def registerCertificateWithoutCAFuture(params: RegisterCertificateWithoutCARequest): Future[RegisterCertificateWithoutCAResponse] = service.registerCertificateWithoutCA(params).promise().toFuture
+    @inline def registerThingFuture(params: RegisterThingRequest): Future[RegisterThingResponse] = service.registerThing(params).promise().toFuture
+    @inline def rejectCertificateTransferFuture(params: RejectCertificateTransferRequest): Future[js.Object] = service.rejectCertificateTransfer(params).promise().toFuture
+    @inline def removeThingFromBillingGroupFuture(params: RemoveThingFromBillingGroupRequest): Future[RemoveThingFromBillingGroupResponse] = service.removeThingFromBillingGroup(params).promise().toFuture
+    @inline def removeThingFromThingGroupFuture(params: RemoveThingFromThingGroupRequest): Future[RemoveThingFromThingGroupResponse] = service.removeThingFromThingGroup(params).promise().toFuture
+    @inline def replaceTopicRuleFuture(params: ReplaceTopicRuleRequest): Future[js.Object] = service.replaceTopicRule(params).promise().toFuture
+    @inline def searchIndexFuture(params: SearchIndexRequest): Future[SearchIndexResponse] = service.searchIndex(params).promise().toFuture
+    @inline def setDefaultAuthorizerFuture(params: SetDefaultAuthorizerRequest): Future[SetDefaultAuthorizerResponse] = service.setDefaultAuthorizer(params).promise().toFuture
+    @inline def setDefaultPolicyVersionFuture(params: SetDefaultPolicyVersionRequest): Future[js.Object] = service.setDefaultPolicyVersion(params).promise().toFuture
+    @inline def setLoggingOptionsFuture(params: SetLoggingOptionsRequest): Future[js.Object] = service.setLoggingOptions(params).promise().toFuture
+    @inline def setV2LoggingLevelFuture(params: SetV2LoggingLevelRequest): Future[js.Object] = service.setV2LoggingLevel(params).promise().toFuture
+    @inline def setV2LoggingOptionsFuture(params: SetV2LoggingOptionsRequest): Future[js.Object] = service.setV2LoggingOptions(params).promise().toFuture
+    @inline def startAuditMitigationActionsTaskFuture(params: StartAuditMitigationActionsTaskRequest): Future[StartAuditMitigationActionsTaskResponse] = service.startAuditMitigationActionsTask(params).promise().toFuture
+    @inline def startOnDemandAuditTaskFuture(params: StartOnDemandAuditTaskRequest): Future[StartOnDemandAuditTaskResponse] = service.startOnDemandAuditTask(params).promise().toFuture
+    @inline def startThingRegistrationTaskFuture(params: StartThingRegistrationTaskRequest): Future[StartThingRegistrationTaskResponse] = service.startThingRegistrationTask(params).promise().toFuture
+    @inline def stopThingRegistrationTaskFuture(params: StopThingRegistrationTaskRequest): Future[StopThingRegistrationTaskResponse] = service.stopThingRegistrationTask(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def testAuthorizationFuture(params: TestAuthorizationRequest): Future[TestAuthorizationResponse] = service.testAuthorization(params).promise().toFuture
+    @inline def testInvokeAuthorizerFuture(params: TestInvokeAuthorizerRequest): Future[TestInvokeAuthorizerResponse] = service.testInvokeAuthorizer(params).promise().toFuture
+    @inline def transferCertificateFuture(params: TransferCertificateRequest): Future[TransferCertificateResponse] = service.transferCertificate(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateAccountAuditConfigurationFuture(params: UpdateAccountAuditConfigurationRequest): Future[UpdateAccountAuditConfigurationResponse] = service.updateAccountAuditConfiguration(params).promise().toFuture
+    @inline def updateAuthorizerFuture(params: UpdateAuthorizerRequest): Future[UpdateAuthorizerResponse] = service.updateAuthorizer(params).promise().toFuture
+    @inline def updateBillingGroupFuture(params: UpdateBillingGroupRequest): Future[UpdateBillingGroupResponse] = service.updateBillingGroup(params).promise().toFuture
+    @inline def updateCACertificateFuture(params: UpdateCACertificateRequest): Future[js.Object] = service.updateCACertificate(params).promise().toFuture
+    @inline def updateCertificateFuture(params: UpdateCertificateRequest): Future[js.Object] = service.updateCertificate(params).promise().toFuture
+    @inline def updateDimensionFuture(params: UpdateDimensionRequest): Future[UpdateDimensionResponse] = service.updateDimension(params).promise().toFuture
+    @inline def updateDomainConfigurationFuture(params: UpdateDomainConfigurationRequest): Future[UpdateDomainConfigurationResponse] = service.updateDomainConfiguration(params).promise().toFuture
+    @inline def updateDynamicThingGroupFuture(params: UpdateDynamicThingGroupRequest): Future[UpdateDynamicThingGroupResponse] = service.updateDynamicThingGroup(params).promise().toFuture
+    @inline def updateEventConfigurationsFuture(params: UpdateEventConfigurationsRequest): Future[UpdateEventConfigurationsResponse] = service.updateEventConfigurations(params).promise().toFuture
+    @inline def updateIndexingConfigurationFuture(params: UpdateIndexingConfigurationRequest): Future[UpdateIndexingConfigurationResponse] = service.updateIndexingConfiguration(params).promise().toFuture
+    @inline def updateJobFuture(params: UpdateJobRequest): Future[js.Object] = service.updateJob(params).promise().toFuture
+    @inline def updateMitigationActionFuture(params: UpdateMitigationActionRequest): Future[UpdateMitigationActionResponse] = service.updateMitigationAction(params).promise().toFuture
+    @inline def updateProvisioningTemplateFuture(params: UpdateProvisioningTemplateRequest): Future[UpdateProvisioningTemplateResponse] = service.updateProvisioningTemplate(params).promise().toFuture
+    @inline def updateRoleAliasFuture(params: UpdateRoleAliasRequest): Future[UpdateRoleAliasResponse] = service.updateRoleAlias(params).promise().toFuture
+    @inline def updateScheduledAuditFuture(params: UpdateScheduledAuditRequest): Future[UpdateScheduledAuditResponse] = service.updateScheduledAudit(params).promise().toFuture
+    @inline def updateSecurityProfileFuture(params: UpdateSecurityProfileRequest): Future[UpdateSecurityProfileResponse] = service.updateSecurityProfile(params).promise().toFuture
+    @inline def updateStreamFuture(params: UpdateStreamRequest): Future[UpdateStreamResponse] = service.updateStream(params).promise().toFuture
+    @inline def updateThingFuture(params: UpdateThingRequest): Future[UpdateThingResponse] = service.updateThing(params).promise().toFuture
+    @inline def updateThingGroupFuture(params: UpdateThingGroupRequest): Future[UpdateThingGroupResponse] = service.updateThingGroup(params).promise().toFuture
+    @inline def updateThingGroupsForThingFuture(params: UpdateThingGroupsForThingRequest): Future[UpdateThingGroupsForThingResponse] = service.updateThingGroupsForThing(params).promise().toFuture
+    @inline def updateTopicRuleDestinationFuture(params: UpdateTopicRuleDestinationRequest): Future[UpdateTopicRuleDestinationResponse] = service.updateTopicRuleDestination(params).promise().toFuture
+    @inline def validateSecurityProfileBehaviorsFuture(params: ValidateSecurityProfileBehaviorsRequest): Future[ValidateSecurityProfileBehaviorsResponse] = service.validateSecurityProfileBehaviors(params).promise().toFuture
   }
 }
 
@@ -946,52 +653,34 @@ package iot {
     def this(config: AWSConfig) = this()
 
     def acceptCertificateTransfer(params: AcceptCertificateTransferRequest): Request[js.Object] = js.native
-    def addThingToBillingGroup(params: AddThingToBillingGroupRequest): Request[AddThingToBillingGroupResponse] =
-      js.native
+    def addThingToBillingGroup(params: AddThingToBillingGroupRequest): Request[AddThingToBillingGroupResponse] = js.native
     def addThingToThingGroup(params: AddThingToThingGroupRequest): Request[AddThingToThingGroupResponse] = js.native
-    def associateTargetsWithJob(params: AssociateTargetsWithJobRequest): Request[AssociateTargetsWithJobResponse] =
-      js.native
+    def associateTargetsWithJob(params: AssociateTargetsWithJobRequest): Request[AssociateTargetsWithJobResponse] = js.native
     def attachPolicy(params: AttachPolicyRequest): Request[js.Object] = js.native
     def attachSecurityProfile(params: AttachSecurityProfileRequest): Request[AttachSecurityProfileResponse] = js.native
     def attachThingPrincipal(params: AttachThingPrincipalRequest): Request[AttachThingPrincipalResponse] = js.native
-    def cancelAuditMitigationActionsTask(
-        params: CancelAuditMitigationActionsTaskRequest
-    ): Request[CancelAuditMitigationActionsTaskResponse] = js.native
+    def cancelAuditMitigationActionsTask(params: CancelAuditMitigationActionsTaskRequest): Request[CancelAuditMitigationActionsTaskResponse] = js.native
     def cancelAuditTask(params: CancelAuditTaskRequest): Request[CancelAuditTaskResponse] = js.native
     def cancelCertificateTransfer(params: CancelCertificateTransferRequest): Request[js.Object] = js.native
     def cancelJob(params: CancelJobRequest): Request[CancelJobResponse] = js.native
     def cancelJobExecution(params: CancelJobExecutionRequest): Request[js.Object] = js.native
-    def clearDefaultAuthorizer(params: ClearDefaultAuthorizerRequest): Request[ClearDefaultAuthorizerResponse] =
-      js.native
-    def confirmTopicRuleDestination(
-        params: ConfirmTopicRuleDestinationRequest
-    ): Request[ConfirmTopicRuleDestinationResponse] = js.native
+    def clearDefaultAuthorizer(params: ClearDefaultAuthorizerRequest): Request[ClearDefaultAuthorizerResponse] = js.native
+    def confirmTopicRuleDestination(params: ConfirmTopicRuleDestinationRequest): Request[ConfirmTopicRuleDestinationResponse] = js.native
     def createAuthorizer(params: CreateAuthorizerRequest): Request[CreateAuthorizerResponse] = js.native
     def createBillingGroup(params: CreateBillingGroupRequest): Request[CreateBillingGroupResponse] = js.native
-    def createCertificateFromCsr(params: CreateCertificateFromCsrRequest): Request[CreateCertificateFromCsrResponse] =
-      js.native
+    def createCertificateFromCsr(params: CreateCertificateFromCsrRequest): Request[CreateCertificateFromCsrResponse] = js.native
     def createDimension(params: CreateDimensionRequest): Request[CreateDimensionResponse] = js.native
-    def createDomainConfiguration(
-        params: CreateDomainConfigurationRequest
-    ): Request[CreateDomainConfigurationResponse] = js.native
-    def createDynamicThingGroup(params: CreateDynamicThingGroupRequest): Request[CreateDynamicThingGroupResponse] =
-      js.native
+    def createDomainConfiguration(params: CreateDomainConfigurationRequest): Request[CreateDomainConfigurationResponse] = js.native
+    def createDynamicThingGroup(params: CreateDynamicThingGroupRequest): Request[CreateDynamicThingGroupResponse] = js.native
     def createJob(params: CreateJobRequest): Request[CreateJobResponse] = js.native
-    def createKeysAndCertificate(params: CreateKeysAndCertificateRequest): Request[CreateKeysAndCertificateResponse] =
-      js.native
-    def createMitigationAction(params: CreateMitigationActionRequest): Request[CreateMitigationActionResponse] =
-      js.native
+    def createKeysAndCertificate(params: CreateKeysAndCertificateRequest): Request[CreateKeysAndCertificateResponse] = js.native
+    def createMitigationAction(params: CreateMitigationActionRequest): Request[CreateMitigationActionResponse] = js.native
     def createOTAUpdate(params: CreateOTAUpdateRequest): Request[CreateOTAUpdateResponse] = js.native
     def createPolicy(params: CreatePolicyRequest): Request[CreatePolicyResponse] = js.native
     def createPolicyVersion(params: CreatePolicyVersionRequest): Request[CreatePolicyVersionResponse] = js.native
-    def createProvisioningClaim(params: CreateProvisioningClaimRequest): Request[CreateProvisioningClaimResponse] =
-      js.native
-    def createProvisioningTemplate(
-        params: CreateProvisioningTemplateRequest
-    ): Request[CreateProvisioningTemplateResponse] = js.native
-    def createProvisioningTemplateVersion(
-        params: CreateProvisioningTemplateVersionRequest
-    ): Request[CreateProvisioningTemplateVersionResponse] = js.native
+    def createProvisioningClaim(params: CreateProvisioningClaimRequest): Request[CreateProvisioningClaimResponse] = js.native
+    def createProvisioningTemplate(params: CreateProvisioningTemplateRequest): Request[CreateProvisioningTemplateResponse] = js.native
+    def createProvisioningTemplateVersion(params: CreateProvisioningTemplateVersionRequest): Request[CreateProvisioningTemplateVersionResponse] = js.native
     def createRoleAlias(params: CreateRoleAliasRequest): Request[CreateRoleAliasResponse] = js.native
     def createScheduledAudit(params: CreateScheduledAuditRequest): Request[CreateScheduledAuditResponse] = js.native
     def createSecurityProfile(params: CreateSecurityProfileRequest): Request[CreateSecurityProfileResponse] = js.native
@@ -1000,37 +689,24 @@ package iot {
     def createThingGroup(params: CreateThingGroupRequest): Request[CreateThingGroupResponse] = js.native
     def createThingType(params: CreateThingTypeRequest): Request[CreateThingTypeResponse] = js.native
     def createTopicRule(params: CreateTopicRuleRequest): Request[js.Object] = js.native
-    def createTopicRuleDestination(
-        params: CreateTopicRuleDestinationRequest
-    ): Request[CreateTopicRuleDestinationResponse] = js.native
-    def deleteAccountAuditConfiguration(
-        params: DeleteAccountAuditConfigurationRequest
-    ): Request[DeleteAccountAuditConfigurationResponse] = js.native
+    def createTopicRuleDestination(params: CreateTopicRuleDestinationRequest): Request[CreateTopicRuleDestinationResponse] = js.native
+    def deleteAccountAuditConfiguration(params: DeleteAccountAuditConfigurationRequest): Request[DeleteAccountAuditConfigurationResponse] = js.native
     def deleteAuthorizer(params: DeleteAuthorizerRequest): Request[DeleteAuthorizerResponse] = js.native
     def deleteBillingGroup(params: DeleteBillingGroupRequest): Request[DeleteBillingGroupResponse] = js.native
     def deleteCACertificate(params: DeleteCACertificateRequest): Request[DeleteCACertificateResponse] = js.native
     def deleteCertificate(params: DeleteCertificateRequest): Request[js.Object] = js.native
     def deleteDimension(params: DeleteDimensionRequest): Request[DeleteDimensionResponse] = js.native
-    def deleteDomainConfiguration(
-        params: DeleteDomainConfigurationRequest
-    ): Request[DeleteDomainConfigurationResponse] = js.native
-    def deleteDynamicThingGroup(params: DeleteDynamicThingGroupRequest): Request[DeleteDynamicThingGroupResponse] =
-      js.native
+    def deleteDomainConfiguration(params: DeleteDomainConfigurationRequest): Request[DeleteDomainConfigurationResponse] = js.native
+    def deleteDynamicThingGroup(params: DeleteDynamicThingGroupRequest): Request[DeleteDynamicThingGroupResponse] = js.native
     def deleteJob(params: DeleteJobRequest): Request[js.Object] = js.native
     def deleteJobExecution(params: DeleteJobExecutionRequest): Request[js.Object] = js.native
-    def deleteMitigationAction(params: DeleteMitigationActionRequest): Request[DeleteMitigationActionResponse] =
-      js.native
+    def deleteMitigationAction(params: DeleteMitigationActionRequest): Request[DeleteMitigationActionResponse] = js.native
     def deleteOTAUpdate(params: DeleteOTAUpdateRequest): Request[DeleteOTAUpdateResponse] = js.native
     def deletePolicy(params: DeletePolicyRequest): Request[js.Object] = js.native
     def deletePolicyVersion(params: DeletePolicyVersionRequest): Request[js.Object] = js.native
-    def deleteProvisioningTemplate(
-        params: DeleteProvisioningTemplateRequest
-    ): Request[DeleteProvisioningTemplateResponse] = js.native
-    def deleteProvisioningTemplateVersion(
-        params: DeleteProvisioningTemplateVersionRequest
-    ): Request[DeleteProvisioningTemplateVersionResponse] = js.native
-    def deleteRegistrationCode(params: DeleteRegistrationCodeRequest): Request[DeleteRegistrationCodeResponse] =
-      js.native
+    def deleteProvisioningTemplate(params: DeleteProvisioningTemplateRequest): Request[DeleteProvisioningTemplateResponse] = js.native
+    def deleteProvisioningTemplateVersion(params: DeleteProvisioningTemplateVersionRequest): Request[DeleteProvisioningTemplateVersionResponse] = js.native
+    def deleteRegistrationCode(params: DeleteRegistrationCodeRequest): Request[DeleteRegistrationCodeResponse] = js.native
     def deleteRoleAlias(params: DeleteRoleAliasRequest): Request[DeleteRoleAliasResponse] = js.native
     def deleteScheduledAudit(params: DeleteScheduledAuditRequest): Request[DeleteScheduledAuditResponse] = js.native
     def deleteSecurityProfile(params: DeleteSecurityProfileRequest): Request[DeleteSecurityProfileResponse] = js.native
@@ -1039,56 +715,35 @@ package iot {
     def deleteThingGroup(params: DeleteThingGroupRequest): Request[DeleteThingGroupResponse] = js.native
     def deleteThingType(params: DeleteThingTypeRequest): Request[DeleteThingTypeResponse] = js.native
     def deleteTopicRule(params: DeleteTopicRuleRequest): Request[js.Object] = js.native
-    def deleteTopicRuleDestination(
-        params: DeleteTopicRuleDestinationRequest
-    ): Request[DeleteTopicRuleDestinationResponse] = js.native
+    def deleteTopicRuleDestination(params: DeleteTopicRuleDestinationRequest): Request[DeleteTopicRuleDestinationResponse] = js.native
     def deleteV2LoggingLevel(params: DeleteV2LoggingLevelRequest): Request[js.Object] = js.native
     def deprecateThingType(params: DeprecateThingTypeRequest): Request[DeprecateThingTypeResponse] = js.native
-    def describeAccountAuditConfiguration(
-        params: DescribeAccountAuditConfigurationRequest
-    ): Request[DescribeAccountAuditConfigurationResponse] = js.native
+    def describeAccountAuditConfiguration(params: DescribeAccountAuditConfigurationRequest): Request[DescribeAccountAuditConfigurationResponse] = js.native
     def describeAuditFinding(params: DescribeAuditFindingRequest): Request[DescribeAuditFindingResponse] = js.native
-    def describeAuditMitigationActionsTask(
-        params: DescribeAuditMitigationActionsTaskRequest
-    ): Request[DescribeAuditMitigationActionsTaskResponse] = js.native
+    def describeAuditMitigationActionsTask(params: DescribeAuditMitigationActionsTaskRequest): Request[DescribeAuditMitigationActionsTaskResponse] = js.native
     def describeAuditTask(params: DescribeAuditTaskRequest): Request[DescribeAuditTaskResponse] = js.native
     def describeAuthorizer(params: DescribeAuthorizerRequest): Request[DescribeAuthorizerResponse] = js.native
     def describeBillingGroup(params: DescribeBillingGroupRequest): Request[DescribeBillingGroupResponse] = js.native
     def describeCACertificate(params: DescribeCACertificateRequest): Request[DescribeCACertificateResponse] = js.native
     def describeCertificate(params: DescribeCertificateRequest): Request[DescribeCertificateResponse] = js.native
-    def describeDefaultAuthorizer(
-        params: DescribeDefaultAuthorizerRequest
-    ): Request[DescribeDefaultAuthorizerResponse] = js.native
+    def describeDefaultAuthorizer(params: DescribeDefaultAuthorizerRequest): Request[DescribeDefaultAuthorizerResponse] = js.native
     def describeDimension(params: DescribeDimensionRequest): Request[DescribeDimensionResponse] = js.native
-    def describeDomainConfiguration(
-        params: DescribeDomainConfigurationRequest
-    ): Request[DescribeDomainConfigurationResponse] = js.native
+    def describeDomainConfiguration(params: DescribeDomainConfigurationRequest): Request[DescribeDomainConfigurationResponse] = js.native
     def describeEndpoint(params: DescribeEndpointRequest): Request[DescribeEndpointResponse] = js.native
-    def describeEventConfigurations(
-        params: DescribeEventConfigurationsRequest
-    ): Request[DescribeEventConfigurationsResponse] = js.native
+    def describeEventConfigurations(params: DescribeEventConfigurationsRequest): Request[DescribeEventConfigurationsResponse] = js.native
     def describeIndex(params: DescribeIndexRequest): Request[DescribeIndexResponse] = js.native
     def describeJob(params: DescribeJobRequest): Request[DescribeJobResponse] = js.native
     def describeJobExecution(params: DescribeJobExecutionRequest): Request[DescribeJobExecutionResponse] = js.native
-    def describeMitigationAction(params: DescribeMitigationActionRequest): Request[DescribeMitigationActionResponse] =
-      js.native
-    def describeProvisioningTemplate(
-        params: DescribeProvisioningTemplateRequest
-    ): Request[DescribeProvisioningTemplateResponse] = js.native
-    def describeProvisioningTemplateVersion(
-        params: DescribeProvisioningTemplateVersionRequest
-    ): Request[DescribeProvisioningTemplateVersionResponse] = js.native
+    def describeMitigationAction(params: DescribeMitigationActionRequest): Request[DescribeMitigationActionResponse] = js.native
+    def describeProvisioningTemplate(params: DescribeProvisioningTemplateRequest): Request[DescribeProvisioningTemplateResponse] = js.native
+    def describeProvisioningTemplateVersion(params: DescribeProvisioningTemplateVersionRequest): Request[DescribeProvisioningTemplateVersionResponse] = js.native
     def describeRoleAlias(params: DescribeRoleAliasRequest): Request[DescribeRoleAliasResponse] = js.native
-    def describeScheduledAudit(params: DescribeScheduledAuditRequest): Request[DescribeScheduledAuditResponse] =
-      js.native
-    def describeSecurityProfile(params: DescribeSecurityProfileRequest): Request[DescribeSecurityProfileResponse] =
-      js.native
+    def describeScheduledAudit(params: DescribeScheduledAuditRequest): Request[DescribeScheduledAuditResponse] = js.native
+    def describeSecurityProfile(params: DescribeSecurityProfileRequest): Request[DescribeSecurityProfileResponse] = js.native
     def describeStream(params: DescribeStreamRequest): Request[DescribeStreamResponse] = js.native
     def describeThing(params: DescribeThingRequest): Request[DescribeThingResponse] = js.native
     def describeThingGroup(params: DescribeThingGroupRequest): Request[DescribeThingGroupResponse] = js.native
-    def describeThingRegistrationTask(
-        params: DescribeThingRegistrationTaskRequest
-    ): Request[DescribeThingRegistrationTaskResponse] = js.native
+    def describeThingRegistrationTask(params: DescribeThingRegistrationTaskRequest): Request[DescribeThingRegistrationTaskResponse] = js.native
     def describeThingType(params: DescribeThingTypeRequest): Request[DescribeThingTypeResponse] = js.native
     def detachPolicy(params: DetachPolicyRequest): Request[js.Object] = js.native
     def detachSecurityProfile(params: DetachSecurityProfileRequest): Request[DetachSecurityProfileResponse] = js.native
@@ -1097,8 +752,7 @@ package iot {
     def enableTopicRule(params: EnableTopicRuleRequest): Request[js.Object] = js.native
     def getCardinality(params: GetCardinalityRequest): Request[GetCardinalityResponse] = js.native
     def getEffectivePolicies(params: GetEffectivePoliciesRequest): Request[GetEffectivePoliciesResponse] = js.native
-    def getIndexingConfiguration(params: GetIndexingConfigurationRequest): Request[GetIndexingConfigurationResponse] =
-      js.native
+    def getIndexingConfiguration(params: GetIndexingConfigurationRequest): Request[GetIndexingConfigurationResponse] = js.native
     def getJobDocument(params: GetJobDocumentRequest): Request[GetJobDocumentResponse] = js.native
     def getLoggingOptions(params: GetLoggingOptionsRequest): Request[GetLoggingOptionsResponse] = js.native
     def getOTAUpdate(params: GetOTAUpdateRequest): Request[GetOTAUpdateResponse] = js.native
@@ -1108,18 +762,13 @@ package iot {
     def getRegistrationCode(params: GetRegistrationCodeRequest): Request[GetRegistrationCodeResponse] = js.native
     def getStatistics(params: GetStatisticsRequest): Request[GetStatisticsResponse] = js.native
     def getTopicRule(params: GetTopicRuleRequest): Request[GetTopicRuleResponse] = js.native
-    def getTopicRuleDestination(params: GetTopicRuleDestinationRequest): Request[GetTopicRuleDestinationResponse] =
-      js.native
+    def getTopicRuleDestination(params: GetTopicRuleDestinationRequest): Request[GetTopicRuleDestinationResponse] = js.native
     def getV2LoggingOptions(params: GetV2LoggingOptionsRequest): Request[GetV2LoggingOptionsResponse] = js.native
     def listActiveViolations(params: ListActiveViolationsRequest): Request[ListActiveViolationsResponse] = js.native
     def listAttachedPolicies(params: ListAttachedPoliciesRequest): Request[ListAttachedPoliciesResponse] = js.native
     def listAuditFindings(params: ListAuditFindingsRequest): Request[ListAuditFindingsResponse] = js.native
-    def listAuditMitigationActionsExecutions(
-        params: ListAuditMitigationActionsExecutionsRequest
-    ): Request[ListAuditMitigationActionsExecutionsResponse] = js.native
-    def listAuditMitigationActionsTasks(
-        params: ListAuditMitigationActionsTasksRequest
-    ): Request[ListAuditMitigationActionsTasksResponse] = js.native
+    def listAuditMitigationActionsExecutions(params: ListAuditMitigationActionsExecutionsRequest): Request[ListAuditMitigationActionsExecutionsResponse] = js.native
+    def listAuditMitigationActionsTasks(params: ListAuditMitigationActionsTasksRequest): Request[ListAuditMitigationActionsTasksResponse] = js.native
     def listAuditTasks(params: ListAuditTasksRequest): Request[ListAuditTasksResponse] = js.native
     def listAuthorizers(params: ListAuthorizersRequest): Request[ListAuthorizersResponse] = js.native
     def listBillingGroups(params: ListBillingGroupsRequest): Request[ListBillingGroupsResponse] = js.native
@@ -1127,75 +776,47 @@ package iot {
     def listCertificates(params: ListCertificatesRequest): Request[ListCertificatesResponse] = js.native
     def listCertificatesByCA(params: ListCertificatesByCARequest): Request[ListCertificatesByCAResponse] = js.native
     def listDimensions(params: ListDimensionsRequest): Request[ListDimensionsResponse] = js.native
-    def listDomainConfigurations(params: ListDomainConfigurationsRequest): Request[ListDomainConfigurationsResponse] =
-      js.native
+    def listDomainConfigurations(params: ListDomainConfigurationsRequest): Request[ListDomainConfigurationsResponse] = js.native
     def listIndices(params: ListIndicesRequest): Request[ListIndicesResponse] = js.native
-    def listJobExecutionsForJob(params: ListJobExecutionsForJobRequest): Request[ListJobExecutionsForJobResponse] =
-      js.native
-    def listJobExecutionsForThing(
-        params: ListJobExecutionsForThingRequest
-    ): Request[ListJobExecutionsForThingResponse] = js.native
+    def listJobExecutionsForJob(params: ListJobExecutionsForJobRequest): Request[ListJobExecutionsForJobResponse] = js.native
+    def listJobExecutionsForThing(params: ListJobExecutionsForThingRequest): Request[ListJobExecutionsForThingResponse] = js.native
     def listJobs(params: ListJobsRequest): Request[ListJobsResponse] = js.native
     def listMitigationActions(params: ListMitigationActionsRequest): Request[ListMitigationActionsResponse] = js.native
     def listOTAUpdates(params: ListOTAUpdatesRequest): Request[ListOTAUpdatesResponse] = js.native
-    def listOutgoingCertificates(params: ListOutgoingCertificatesRequest): Request[ListOutgoingCertificatesResponse] =
-      js.native
+    def listOutgoingCertificates(params: ListOutgoingCertificatesRequest): Request[ListOutgoingCertificatesResponse] = js.native
     def listPolicies(params: ListPoliciesRequest): Request[ListPoliciesResponse] = js.native
     def listPolicyVersions(params: ListPolicyVersionsRequest): Request[ListPolicyVersionsResponse] = js.native
     def listPrincipalThings(params: ListPrincipalThingsRequest): Request[ListPrincipalThingsResponse] = js.native
-    def listProvisioningTemplateVersions(
-        params: ListProvisioningTemplateVersionsRequest
-    ): Request[ListProvisioningTemplateVersionsResponse] = js.native
-    def listProvisioningTemplates(
-        params: ListProvisioningTemplatesRequest
-    ): Request[ListProvisioningTemplatesResponse] = js.native
+    def listProvisioningTemplateVersions(params: ListProvisioningTemplateVersionsRequest): Request[ListProvisioningTemplateVersionsResponse] = js.native
+    def listProvisioningTemplates(params: ListProvisioningTemplatesRequest): Request[ListProvisioningTemplatesResponse] = js.native
     def listRoleAliases(params: ListRoleAliasesRequest): Request[ListRoleAliasesResponse] = js.native
     def listScheduledAudits(params: ListScheduledAuditsRequest): Request[ListScheduledAuditsResponse] = js.native
     def listSecurityProfiles(params: ListSecurityProfilesRequest): Request[ListSecurityProfilesResponse] = js.native
-    def listSecurityProfilesForTarget(
-        params: ListSecurityProfilesForTargetRequest
-    ): Request[ListSecurityProfilesForTargetResponse] = js.native
+    def listSecurityProfilesForTarget(params: ListSecurityProfilesForTargetRequest): Request[ListSecurityProfilesForTargetResponse] = js.native
     def listStreams(params: ListStreamsRequest): Request[ListStreamsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listTargetsForPolicy(params: ListTargetsForPolicyRequest): Request[ListTargetsForPolicyResponse] = js.native
-    def listTargetsForSecurityProfile(
-        params: ListTargetsForSecurityProfileRequest
-    ): Request[ListTargetsForSecurityProfileResponse] = js.native
+    def listTargetsForSecurityProfile(params: ListTargetsForSecurityProfileRequest): Request[ListTargetsForSecurityProfileResponse] = js.native
     def listThingGroups(params: ListThingGroupsRequest): Request[ListThingGroupsResponse] = js.native
-    def listThingGroupsForThing(params: ListThingGroupsForThingRequest): Request[ListThingGroupsForThingResponse] =
-      js.native
+    def listThingGroupsForThing(params: ListThingGroupsForThingRequest): Request[ListThingGroupsForThingResponse] = js.native
     def listThingPrincipals(params: ListThingPrincipalsRequest): Request[ListThingPrincipalsResponse] = js.native
-    def listThingRegistrationTaskReports(
-        params: ListThingRegistrationTaskReportsRequest
-    ): Request[ListThingRegistrationTaskReportsResponse] = js.native
-    def listThingRegistrationTasks(
-        params: ListThingRegistrationTasksRequest
-    ): Request[ListThingRegistrationTasksResponse] = js.native
+    def listThingRegistrationTaskReports(params: ListThingRegistrationTaskReportsRequest): Request[ListThingRegistrationTaskReportsResponse] = js.native
+    def listThingRegistrationTasks(params: ListThingRegistrationTasksRequest): Request[ListThingRegistrationTasksResponse] = js.native
     def listThingTypes(params: ListThingTypesRequest): Request[ListThingTypesResponse] = js.native
     def listThings(params: ListThingsRequest): Request[ListThingsResponse] = js.native
-    def listThingsInBillingGroup(params: ListThingsInBillingGroupRequest): Request[ListThingsInBillingGroupResponse] =
-      js.native
-    def listThingsInThingGroup(params: ListThingsInThingGroupRequest): Request[ListThingsInThingGroupResponse] =
-      js.native
-    def listTopicRuleDestinations(
-        params: ListTopicRuleDestinationsRequest
-    ): Request[ListTopicRuleDestinationsResponse] = js.native
+    def listThingsInBillingGroup(params: ListThingsInBillingGroupRequest): Request[ListThingsInBillingGroupResponse] = js.native
+    def listThingsInThingGroup(params: ListThingsInThingGroupRequest): Request[ListThingsInThingGroupResponse] = js.native
+    def listTopicRuleDestinations(params: ListTopicRuleDestinationsRequest): Request[ListTopicRuleDestinationsResponse] = js.native
     def listTopicRules(params: ListTopicRulesRequest): Request[ListTopicRulesResponse] = js.native
     def listV2LoggingLevels(params: ListV2LoggingLevelsRequest): Request[ListV2LoggingLevelsResponse] = js.native
     def listViolationEvents(params: ListViolationEventsRequest): Request[ListViolationEventsResponse] = js.native
     def registerCACertificate(params: RegisterCACertificateRequest): Request[RegisterCACertificateResponse] = js.native
     def registerCertificate(params: RegisterCertificateRequest): Request[RegisterCertificateResponse] = js.native
-    def registerCertificateWithoutCA(
-        params: RegisterCertificateWithoutCARequest
-    ): Request[RegisterCertificateWithoutCAResponse] = js.native
+    def registerCertificateWithoutCA(params: RegisterCertificateWithoutCARequest): Request[RegisterCertificateWithoutCAResponse] = js.native
     def registerThing(params: RegisterThingRequest): Request[RegisterThingResponse] = js.native
     def rejectCertificateTransfer(params: RejectCertificateTransferRequest): Request[js.Object] = js.native
-    def removeThingFromBillingGroup(
-        params: RemoveThingFromBillingGroupRequest
-    ): Request[RemoveThingFromBillingGroupResponse] = js.native
-    def removeThingFromThingGroup(
-        params: RemoveThingFromThingGroupRequest
-    ): Request[RemoveThingFromThingGroupResponse] = js.native
+    def removeThingFromBillingGroup(params: RemoveThingFromBillingGroupRequest): Request[RemoveThingFromBillingGroupResponse] = js.native
+    def removeThingFromThingGroup(params: RemoveThingFromThingGroupRequest): Request[RemoveThingFromThingGroupResponse] = js.native
     def replaceTopicRule(params: ReplaceTopicRuleRequest): Request[js.Object] = js.native
     def searchIndex(params: SearchIndexRequest): Request[SearchIndexResponse] = js.native
     def setDefaultAuthorizer(params: SetDefaultAuthorizerRequest): Request[SetDefaultAuthorizerResponse] = js.native
@@ -1203,74 +824,41 @@ package iot {
     def setLoggingOptions(params: SetLoggingOptionsRequest): Request[js.Object] = js.native
     def setV2LoggingLevel(params: SetV2LoggingLevelRequest): Request[js.Object] = js.native
     def setV2LoggingOptions(params: SetV2LoggingOptionsRequest): Request[js.Object] = js.native
-    def startAuditMitigationActionsTask(
-        params: StartAuditMitigationActionsTaskRequest
-    ): Request[StartAuditMitigationActionsTaskResponse] = js.native
-    def startOnDemandAuditTask(params: StartOnDemandAuditTaskRequest): Request[StartOnDemandAuditTaskResponse] =
-      js.native
-    def startThingRegistrationTask(
-        params: StartThingRegistrationTaskRequest
-    ): Request[StartThingRegistrationTaskResponse] = js.native
-    def stopThingRegistrationTask(
-        params: StopThingRegistrationTaskRequest
-    ): Request[StopThingRegistrationTaskResponse] = js.native
+    def startAuditMitigationActionsTask(params: StartAuditMitigationActionsTaskRequest): Request[StartAuditMitigationActionsTaskResponse] = js.native
+    def startOnDemandAuditTask(params: StartOnDemandAuditTaskRequest): Request[StartOnDemandAuditTaskResponse] = js.native
+    def startThingRegistrationTask(params: StartThingRegistrationTaskRequest): Request[StartThingRegistrationTaskResponse] = js.native
+    def stopThingRegistrationTask(params: StopThingRegistrationTaskRequest): Request[StopThingRegistrationTaskResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def testAuthorization(params: TestAuthorizationRequest): Request[TestAuthorizationResponse] = js.native
     def testInvokeAuthorizer(params: TestInvokeAuthorizerRequest): Request[TestInvokeAuthorizerResponse] = js.native
     def transferCertificate(params: TransferCertificateRequest): Request[TransferCertificateResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
-    def updateAccountAuditConfiguration(
-        params: UpdateAccountAuditConfigurationRequest
-    ): Request[UpdateAccountAuditConfigurationResponse] = js.native
+    def updateAccountAuditConfiguration(params: UpdateAccountAuditConfigurationRequest): Request[UpdateAccountAuditConfigurationResponse] = js.native
     def updateAuthorizer(params: UpdateAuthorizerRequest): Request[UpdateAuthorizerResponse] = js.native
     def updateBillingGroup(params: UpdateBillingGroupRequest): Request[UpdateBillingGroupResponse] = js.native
     def updateCACertificate(params: UpdateCACertificateRequest): Request[js.Object] = js.native
     def updateCertificate(params: UpdateCertificateRequest): Request[js.Object] = js.native
     def updateDimension(params: UpdateDimensionRequest): Request[UpdateDimensionResponse] = js.native
-    def updateDomainConfiguration(
-        params: UpdateDomainConfigurationRequest
-    ): Request[UpdateDomainConfigurationResponse] = js.native
-    def updateDynamicThingGroup(params: UpdateDynamicThingGroupRequest): Request[UpdateDynamicThingGroupResponse] =
-      js.native
-    def updateEventConfigurations(
-        params: UpdateEventConfigurationsRequest
-    ): Request[UpdateEventConfigurationsResponse] = js.native
-    def updateIndexingConfiguration(
-        params: UpdateIndexingConfigurationRequest
-    ): Request[UpdateIndexingConfigurationResponse] = js.native
+    def updateDomainConfiguration(params: UpdateDomainConfigurationRequest): Request[UpdateDomainConfigurationResponse] = js.native
+    def updateDynamicThingGroup(params: UpdateDynamicThingGroupRequest): Request[UpdateDynamicThingGroupResponse] = js.native
+    def updateEventConfigurations(params: UpdateEventConfigurationsRequest): Request[UpdateEventConfigurationsResponse] = js.native
+    def updateIndexingConfiguration(params: UpdateIndexingConfigurationRequest): Request[UpdateIndexingConfigurationResponse] = js.native
     def updateJob(params: UpdateJobRequest): Request[js.Object] = js.native
-    def updateMitigationAction(params: UpdateMitigationActionRequest): Request[UpdateMitigationActionResponse] =
-      js.native
-    def updateProvisioningTemplate(
-        params: UpdateProvisioningTemplateRequest
-    ): Request[UpdateProvisioningTemplateResponse] = js.native
+    def updateMitigationAction(params: UpdateMitigationActionRequest): Request[UpdateMitigationActionResponse] = js.native
+    def updateProvisioningTemplate(params: UpdateProvisioningTemplateRequest): Request[UpdateProvisioningTemplateResponse] = js.native
     def updateRoleAlias(params: UpdateRoleAliasRequest): Request[UpdateRoleAliasResponse] = js.native
     def updateScheduledAudit(params: UpdateScheduledAuditRequest): Request[UpdateScheduledAuditResponse] = js.native
     def updateSecurityProfile(params: UpdateSecurityProfileRequest): Request[UpdateSecurityProfileResponse] = js.native
     def updateStream(params: UpdateStreamRequest): Request[UpdateStreamResponse] = js.native
     def updateThing(params: UpdateThingRequest): Request[UpdateThingResponse] = js.native
     def updateThingGroup(params: UpdateThingGroupRequest): Request[UpdateThingGroupResponse] = js.native
-    def updateThingGroupsForThing(
-        params: UpdateThingGroupsForThingRequest
-    ): Request[UpdateThingGroupsForThingResponse] = js.native
-    def updateTopicRuleDestination(
-        params: UpdateTopicRuleDestinationRequest
-    ): Request[UpdateTopicRuleDestinationResponse] = js.native
-    def validateSecurityProfileBehaviors(
-        params: ValidateSecurityProfileBehaviorsRequest
-    ): Request[ValidateSecurityProfileBehaviorsResponse] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def attachPrincipalPolicy(
-        params: AttachPrincipalPolicyRequest
-    ): Request[js.Object] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def detachPrincipalPolicy(
-        params: DetachPrincipalPolicyRequest
-    ): Request[js.Object] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def listPolicyPrincipals(
-        params: ListPolicyPrincipalsRequest
-    ): Request[ListPolicyPrincipalsResponse] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def listPrincipalPolicies(
-        params: ListPrincipalPoliciesRequest
-    ): Request[ListPrincipalPoliciesResponse] = js.native
+    def updateThingGroupsForThing(params: UpdateThingGroupsForThingRequest): Request[UpdateThingGroupsForThingResponse] = js.native
+    def updateTopicRuleDestination(params: UpdateTopicRuleDestinationRequest): Request[UpdateTopicRuleDestinationResponse] = js.native
+    def validateSecurityProfileBehaviors(params: ValidateSecurityProfileBehaviorsRequest): Request[ValidateSecurityProfileBehaviorsResponse] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def attachPrincipalPolicy(params: AttachPrincipalPolicyRequest): Request[js.Object] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def detachPrincipalPolicy(params: DetachPrincipalPolicyRequest): Request[js.Object] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def listPolicyPrincipals(params: ListPolicyPrincipalsRequest): Request[ListPolicyPrincipalsResponse] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def listPrincipalPolicies(params: ListPrincipalPoliciesRequest): Request[ListPrincipalPoliciesResponse] = js.native
   }
 
   @js.native
@@ -1947,9 +1535,7 @@ package iot {
       checkRunStatus.foreach(__v => __obj.updateDynamic("checkRunStatus")(__v.asInstanceOf[js.Any]))
       errorCode.foreach(__v => __obj.updateDynamic("errorCode")(__v.asInstanceOf[js.Any]))
       message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
-      nonCompliantResourcesCount.foreach(__v =>
-        __obj.updateDynamic("nonCompliantResourcesCount")(__v.asInstanceOf[js.Any])
-      )
+      nonCompliantResourcesCount.foreach(__v => __obj.updateDynamic("nonCompliantResourcesCount")(__v.asInstanceOf[js.Any]))
       totalResourcesCount.foreach(__v => __obj.updateDynamic("totalResourcesCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AuditCheckDetails]
     }
@@ -1965,9 +1551,7 @@ package iot {
     val COMPLETED_NON_COMPLIANT = "COMPLETED_NON_COMPLIANT".asInstanceOf[AuditCheckRunStatus]
     val FAILED = "FAILED".asInstanceOf[AuditCheckRunStatus]
 
-    val values = js.Object.freeze(
-      js.Array(IN_PROGRESS, WAITING_FOR_DATA_COLLECTION, CANCELED, COMPLETED_COMPLIANT, COMPLETED_NON_COMPLIANT, FAILED)
-    )
+    val values = js.Object.freeze(js.Array(IN_PROGRESS, WAITING_FOR_DATA_COLLECTION, CANCELED, COMPLETED_COMPLIANT, COMPLETED_NON_COMPLIANT, FAILED))
   }
 
   /**
@@ -2007,9 +1591,7 @@ package iot {
       findingTime.foreach(__v => __obj.updateDynamic("findingTime")(__v.asInstanceOf[js.Any]))
       nonCompliantResource.foreach(__v => __obj.updateDynamic("nonCompliantResource")(__v.asInstanceOf[js.Any]))
       reasonForNonCompliance.foreach(__v => __obj.updateDynamic("reasonForNonCompliance")(__v.asInstanceOf[js.Any]))
-      reasonForNonComplianceCode.foreach(__v =>
-        __obj.updateDynamic("reasonForNonComplianceCode")(__v.asInstanceOf[js.Any])
-      )
+      reasonForNonComplianceCode.foreach(__v => __obj.updateDynamic("reasonForNonComplianceCode")(__v.asInstanceOf[js.Any]))
       relatedResources.foreach(__v => __obj.updateDynamic("relatedResources")(__v.asInstanceOf[js.Any]))
       severity.foreach(__v => __obj.updateDynamic("severity")(__v.asInstanceOf[js.Any]))
       taskId.foreach(__v => __obj.updateDynamic("taskId")(__v.asInstanceOf[js.Any]))
@@ -2150,9 +1732,7 @@ package iot {
         findingIds: js.UndefOr[FindingIds] = js.undefined
     ): AuditMitigationActionsTaskTarget = {
       val __obj = js.Dynamic.literal()
-      auditCheckToReasonCodeFilter.foreach(__v =>
-        __obj.updateDynamic("auditCheckToReasonCodeFilter")(__v.asInstanceOf[js.Any])
-      )
+      auditCheckToReasonCodeFilter.foreach(__v => __obj.updateDynamic("auditCheckToReasonCodeFilter")(__v.asInstanceOf[js.Any]))
       auditTaskId.foreach(__v => __obj.updateDynamic("auditTaskId")(__v.asInstanceOf[js.Any]))
       findingIds.foreach(__v => __obj.updateDynamic("findingIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AuditMitigationActionsTaskTarget]
@@ -2581,9 +2161,7 @@ package iot {
         inProgressTimeoutInMinutes: js.UndefOr[AwsJobTimeoutInProgressTimeoutInMinutes] = js.undefined
     ): AwsJobTimeoutConfig = {
       val __obj = js.Dynamic.literal()
-      inProgressTimeoutInMinutes.foreach(__v =>
-        __obj.updateDynamic("inProgressTimeoutInMinutes")(__v.asInstanceOf[js.Any])
-      )
+      inProgressTimeoutInMinutes.foreach(__v => __obj.updateDynamic("inProgressTimeoutInMinutes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsJobTimeoutConfig]
     }
   }
@@ -2643,12 +2221,8 @@ package iot {
     ): BehaviorCriteria = {
       val __obj = js.Dynamic.literal()
       comparisonOperator.foreach(__v => __obj.updateDynamic("comparisonOperator")(__v.asInstanceOf[js.Any]))
-      consecutiveDatapointsToAlarm.foreach(__v =>
-        __obj.updateDynamic("consecutiveDatapointsToAlarm")(__v.asInstanceOf[js.Any])
-      )
-      consecutiveDatapointsToClear.foreach(__v =>
-        __obj.updateDynamic("consecutiveDatapointsToClear")(__v.asInstanceOf[js.Any])
-      )
+      consecutiveDatapointsToAlarm.foreach(__v => __obj.updateDynamic("consecutiveDatapointsToAlarm")(__v.asInstanceOf[js.Any]))
+      consecutiveDatapointsToClear.foreach(__v => __obj.updateDynamic("consecutiveDatapointsToClear")(__v.asInstanceOf[js.Any]))
       durationSeconds.foreach(__v => __obj.updateDynamic("durationSeconds")(__v.asInstanceOf[js.Any]))
       statisticalThreshold.foreach(__v => __obj.updateDynamic("statisticalThreshold")(__v.asInstanceOf[js.Any]))
       value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
@@ -2962,18 +2536,7 @@ package iot {
     val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[CannedAccessControlList]
     val `log-delivery-write` = "log-delivery-write".asInstanceOf[CannedAccessControlList]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `private`,
-        `public-read`,
-        `public-read-write`,
-        `aws-exec-read`,
-        `authenticated-read`,
-        `bucket-owner-read`,
-        `bucket-owner-full-control`,
-        `log-delivery-write`
-      )
-    )
+    val values = js.Object.freeze(js.Array(`private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`, `log-delivery-write`))
   }
 
   /**
@@ -3084,8 +2647,7 @@ package iot {
     val REGISTER_INACTIVE = "REGISTER_INACTIVE".asInstanceOf[CertificateStatus]
     val PENDING_ACTIVATION = "PENDING_ACTIVATION".asInstanceOf[CertificateStatus]
 
-    val values =
-      js.Object.freeze(js.Array(ACTIVE, INACTIVE, REVOKED, PENDING_TRANSFER, REGISTER_INACTIVE, PENDING_ACTIVATION))
+    val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE, REVOKED, PENDING_TRANSFER, REGISTER_INACTIVE, PENDING_ACTIVATION))
   }
 
   /**
@@ -3304,18 +2866,7 @@ package iot {
     val `in-port-set` = "in-port-set".asInstanceOf[ComparisonOperator]
     val `not-in-port-set` = "not-in-port-set".asInstanceOf[ComparisonOperator]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `less-than`,
-        `less-than-equals`,
-        `greater-than`,
-        `greater-than-equals`,
-        `in-cidr-set`,
-        `not-in-cidr-set`,
-        `in-port-set`,
-        `not-in-port-set`
-      )
-    )
+    val values = js.Object.freeze(js.Array(`less-than`, `less-than-equals`, `greater-than`, `greater-than-equals`, `in-cidr-set`, `not-in-cidr-set`, `in-port-set`, `not-in-port-set`))
   }
 
   /**
@@ -3725,9 +3276,7 @@ package iot {
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       document.foreach(__v => __obj.updateDynamic("document")(__v.asInstanceOf[js.Any]))
       documentSource.foreach(__v => __obj.updateDynamic("documentSource")(__v.asInstanceOf[js.Any]))
-      jobExecutionsRolloutConfig.foreach(__v =>
-        __obj.updateDynamic("jobExecutionsRolloutConfig")(__v.asInstanceOf[js.Any])
-      )
+      jobExecutionsRolloutConfig.foreach(__v => __obj.updateDynamic("jobExecutionsRolloutConfig")(__v.asInstanceOf[js.Any]))
       presignedUrlConfig.foreach(__v => __obj.updateDynamic("presignedUrlConfig")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       targetSelection.foreach(__v => __obj.updateDynamic("targetSelection")(__v.asInstanceOf[js.Any]))
@@ -3894,9 +3443,7 @@ package iot {
 
       additionalParameters.foreach(__v => __obj.updateDynamic("additionalParameters")(__v.asInstanceOf[js.Any]))
       awsJobAbortConfig.foreach(__v => __obj.updateDynamic("awsJobAbortConfig")(__v.asInstanceOf[js.Any]))
-      awsJobExecutionsRolloutConfig.foreach(__v =>
-        __obj.updateDynamic("awsJobExecutionsRolloutConfig")(__v.asInstanceOf[js.Any])
-      )
+      awsJobExecutionsRolloutConfig.foreach(__v => __obj.updateDynamic("awsJobExecutionsRolloutConfig")(__v.asInstanceOf[js.Any]))
       awsJobPresignedUrlConfig.foreach(__v => __obj.updateDynamic("awsJobPresignedUrlConfig")(__v.asInstanceOf[js.Any]))
       awsJobTimeoutConfig.foreach(__v => __obj.updateDynamic("awsJobTimeoutConfig")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
@@ -4216,9 +3763,7 @@ package iot {
         "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
-      credentialDurationSeconds.foreach(__v =>
-        __obj.updateDynamic("credentialDurationSeconds")(__v.asInstanceOf[js.Any])
-      )
+      credentialDurationSeconds.foreach(__v => __obj.updateDynamic("credentialDurationSeconds")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRoleAliasRequest]
     }
@@ -4318,17 +3863,11 @@ package iot {
         "securityProfileName" -> securityProfileName.asInstanceOf[js.Any]
       )
 
-      additionalMetricsToRetain.foreach(__v =>
-        __obj.updateDynamic("additionalMetricsToRetain")(__v.asInstanceOf[js.Any])
-      )
-      additionalMetricsToRetainV2.foreach(__v =>
-        __obj.updateDynamic("additionalMetricsToRetainV2")(__v.asInstanceOf[js.Any])
-      )
+      additionalMetricsToRetain.foreach(__v => __obj.updateDynamic("additionalMetricsToRetain")(__v.asInstanceOf[js.Any]))
+      additionalMetricsToRetainV2.foreach(__v => __obj.updateDynamic("additionalMetricsToRetainV2")(__v.asInstanceOf[js.Any]))
       alertTargets.foreach(__v => __obj.updateDynamic("alertTargets")(__v.asInstanceOf[js.Any]))
       behaviors.foreach(__v => __obj.updateDynamic("behaviors")(__v.asInstanceOf[js.Any]))
-      securityProfileDescription.foreach(__v =>
-        __obj.updateDynamic("securityProfileDescription")(__v.asInstanceOf[js.Any])
-      )
+      securityProfileDescription.foreach(__v => __obj.updateDynamic("securityProfileDescription")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSecurityProfileRequest]
     }
@@ -5578,9 +5117,7 @@ package iot {
     ): DescribeAccountAuditConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       auditCheckConfigurations.foreach(__v => __obj.updateDynamic("auditCheckConfigurations")(__v.asInstanceOf[js.Any]))
-      auditNotificationTargetConfigurations.foreach(__v =>
-        __obj.updateDynamic("auditNotificationTargetConfigurations")(__v.asInstanceOf[js.Any])
-      )
+      auditNotificationTargetConfigurations.foreach(__v => __obj.updateDynamic("auditNotificationTargetConfigurations")(__v.asInstanceOf[js.Any]))
       roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAccountAuditConfigurationResponse]
     }
@@ -5662,9 +5199,7 @@ package iot {
     ): DescribeAuditMitigationActionsTaskResponse = {
       val __obj = js.Dynamic.literal()
       actionsDefinition.foreach(__v => __obj.updateDynamic("actionsDefinition")(__v.asInstanceOf[js.Any]))
-      auditCheckToActionsMapping.foreach(__v =>
-        __obj.updateDynamic("auditCheckToActionsMapping")(__v.asInstanceOf[js.Any])
-      )
+      auditCheckToActionsMapping.foreach(__v => __obj.updateDynamic("auditCheckToActionsMapping")(__v.asInstanceOf[js.Any]))
       endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
       startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
       target.foreach(__v => __obj.updateDynamic("target")(__v.asInstanceOf[js.Any]))
@@ -6013,9 +5548,7 @@ package iot {
       authorizerConfig.foreach(__v => __obj.updateDynamic("authorizerConfig")(__v.asInstanceOf[js.Any]))
       domainConfigurationArn.foreach(__v => __obj.updateDynamic("domainConfigurationArn")(__v.asInstanceOf[js.Any]))
       domainConfigurationName.foreach(__v => __obj.updateDynamic("domainConfigurationName")(__v.asInstanceOf[js.Any]))
-      domainConfigurationStatus.foreach(__v =>
-        __obj.updateDynamic("domainConfigurationStatus")(__v.asInstanceOf[js.Any])
-      )
+      domainConfigurationStatus.foreach(__v => __obj.updateDynamic("domainConfigurationStatus")(__v.asInstanceOf[js.Any]))
       domainName.foreach(__v => __obj.updateDynamic("domainName")(__v.asInstanceOf[js.Any]))
       domainType.foreach(__v => __obj.updateDynamic("domainType")(__v.asInstanceOf[js.Any]))
       serverCertificates.foreach(__v => __obj.updateDynamic("serverCertificates")(__v.asInstanceOf[js.Any]))
@@ -6506,20 +6039,14 @@ package iot {
         version: js.UndefOr[Version] = js.undefined
     ): DescribeSecurityProfileResponse = {
       val __obj = js.Dynamic.literal()
-      additionalMetricsToRetain.foreach(__v =>
-        __obj.updateDynamic("additionalMetricsToRetain")(__v.asInstanceOf[js.Any])
-      )
-      additionalMetricsToRetainV2.foreach(__v =>
-        __obj.updateDynamic("additionalMetricsToRetainV2")(__v.asInstanceOf[js.Any])
-      )
+      additionalMetricsToRetain.foreach(__v => __obj.updateDynamic("additionalMetricsToRetain")(__v.asInstanceOf[js.Any]))
+      additionalMetricsToRetainV2.foreach(__v => __obj.updateDynamic("additionalMetricsToRetainV2")(__v.asInstanceOf[js.Any]))
       alertTargets.foreach(__v => __obj.updateDynamic("alertTargets")(__v.asInstanceOf[js.Any]))
       behaviors.foreach(__v => __obj.updateDynamic("behaviors")(__v.asInstanceOf[js.Any]))
       creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
       lastModifiedDate.foreach(__v => __obj.updateDynamic("lastModifiedDate")(__v.asInstanceOf[js.Any]))
       securityProfileArn.foreach(__v => __obj.updateDynamic("securityProfileArn")(__v.asInstanceOf[js.Any]))
-      securityProfileDescription.foreach(__v =>
-        __obj.updateDynamic("securityProfileDescription")(__v.asInstanceOf[js.Any])
-      )
+      securityProfileDescription.foreach(__v => __obj.updateDynamic("securityProfileDescription")(__v.asInstanceOf[js.Any]))
       securityProfileName.foreach(__v => __obj.updateDynamic("securityProfileName")(__v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSecurityProfileResponse]
@@ -7271,21 +6798,7 @@ package iot {
     val CERTIFICATE = "CERTIFICATE".asInstanceOf[EventType]
     val CA_CERTIFICATE = "CA_CERTIFICATE".asInstanceOf[EventType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        THING,
-        THING_GROUP,
-        THING_TYPE,
-        THING_GROUP_MEMBERSHIP,
-        THING_GROUP_HIERARCHY,
-        THING_TYPE_ASSOCIATION,
-        JOB,
-        JOB_EXECUTION,
-        POLICY,
-        CERTIFICATE,
-        CA_CERTIFICATE
-      )
-    )
+    val values = js.Object.freeze(js.Array(THING, THING_GROUP, THING_TYPE, THING_GROUP_MEMBERSHIP, THING_GROUP_HIERARCHY, THING_TYPE_ASSOCIATION, JOB, JOB_EXECUTION, POLICY, CERTIFICATE, CA_CERTIFICATE))
   }
 
   /**
@@ -7522,12 +7035,8 @@ package iot {
         thingIndexingConfiguration: js.UndefOr[ThingIndexingConfiguration] = js.undefined
     ): GetIndexingConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-      thingGroupIndexingConfiguration.foreach(__v =>
-        __obj.updateDynamic("thingGroupIndexingConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      thingIndexingConfiguration.foreach(__v =>
-        __obj.updateDynamic("thingIndexingConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      thingGroupIndexingConfiguration.foreach(__v => __obj.updateDynamic("thingGroupIndexingConfiguration")(__v.asInstanceOf[js.Any]))
+      thingIndexingConfiguration.foreach(__v => __obj.updateDynamic("thingIndexingConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetIndexingConfigurationResponse]
     }
   }
@@ -8330,9 +7839,7 @@ package iot {
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       forceCanceled.foreach(__v => __obj.updateDynamic("forceCanceled")(__v.asInstanceOf[js.Any]))
       jobArn.foreach(__v => __obj.updateDynamic("jobArn")(__v.asInstanceOf[js.Any]))
-      jobExecutionsRolloutConfig.foreach(__v =>
-        __obj.updateDynamic("jobExecutionsRolloutConfig")(__v.asInstanceOf[js.Any])
-      )
+      jobExecutionsRolloutConfig.foreach(__v => __obj.updateDynamic("jobExecutionsRolloutConfig")(__v.asInstanceOf[js.Any]))
       jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
       jobProcessDetails.foreach(__v => __obj.updateDynamic("jobProcessDetails")(__v.asInstanceOf[js.Any]))
       lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
@@ -8380,9 +7887,7 @@ package iot {
         versionNumber: js.UndefOr[VersionNumber] = js.undefined
     ): JobExecution = {
       val __obj = js.Dynamic.literal()
-      approximateSecondsBeforeTimedOut.foreach(__v =>
-        __obj.updateDynamic("approximateSecondsBeforeTimedOut")(__v.asInstanceOf[js.Any])
-      )
+      approximateSecondsBeforeTimedOut.foreach(__v => __obj.updateDynamic("approximateSecondsBeforeTimedOut")(__v.asInstanceOf[js.Any]))
       executionNumber.foreach(__v => __obj.updateDynamic("executionNumber")(__v.asInstanceOf[js.Any]))
       forceCanceled.foreach(__v => __obj.updateDynamic("forceCanceled")(__v.asInstanceOf[js.Any]))
       jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
@@ -8420,8 +7925,7 @@ package iot {
     val REMOVED = "REMOVED".asInstanceOf[JobExecutionStatus]
     val CANCELED = "CANCELED".asInstanceOf[JobExecutionStatus]
 
-    val values =
-      js.Object.freeze(js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED))
+    val values = js.Object.freeze(js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED))
   }
 
   /**
@@ -10063,9 +9567,7 @@ package iot {
     ): ListSecurityProfilesForTargetResponse = {
       val __obj = js.Dynamic.literal()
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      securityProfileTargetMappings.foreach(__v =>
-        __obj.updateDynamic("securityProfileTargetMappings")(__v.asInstanceOf[js.Any])
-      )
+      securityProfileTargetMappings.foreach(__v => __obj.updateDynamic("securityProfileTargetMappings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSecurityProfilesForTargetResponse]
     }
   }
@@ -10106,9 +9608,7 @@ package iot {
     ): ListSecurityProfilesResponse = {
       val __obj = js.Dynamic.literal()
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      securityProfileIdentifiers.foreach(__v =>
-        __obj.updateDynamic("securityProfileIdentifiers")(__v.asInstanceOf[js.Any])
-      )
+      securityProfileIdentifiers.foreach(__v => __obj.updateDynamic("securityProfileIdentifiers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSecurityProfilesResponse]
     }
   }
@@ -11120,22 +10620,12 @@ package iot {
         updateDeviceCertificateParams: js.UndefOr[UpdateDeviceCertificateParams] = js.undefined
     ): MitigationActionParams = {
       val __obj = js.Dynamic.literal()
-      addThingsToThingGroupParams.foreach(__v =>
-        __obj.updateDynamic("addThingsToThingGroupParams")(__v.asInstanceOf[js.Any])
-      )
+      addThingsToThingGroupParams.foreach(__v => __obj.updateDynamic("addThingsToThingGroupParams")(__v.asInstanceOf[js.Any]))
       enableIoTLoggingParams.foreach(__v => __obj.updateDynamic("enableIoTLoggingParams")(__v.asInstanceOf[js.Any]))
-      publishFindingToSnsParams.foreach(__v =>
-        __obj.updateDynamic("publishFindingToSnsParams")(__v.asInstanceOf[js.Any])
-      )
-      replaceDefaultPolicyVersionParams.foreach(__v =>
-        __obj.updateDynamic("replaceDefaultPolicyVersionParams")(__v.asInstanceOf[js.Any])
-      )
-      updateCACertificateParams.foreach(__v =>
-        __obj.updateDynamic("updateCACertificateParams")(__v.asInstanceOf[js.Any])
-      )
-      updateDeviceCertificateParams.foreach(__v =>
-        __obj.updateDynamic("updateDeviceCertificateParams")(__v.asInstanceOf[js.Any])
-      )
+      publishFindingToSnsParams.foreach(__v => __obj.updateDynamic("publishFindingToSnsParams")(__v.asInstanceOf[js.Any]))
+      replaceDefaultPolicyVersionParams.foreach(__v => __obj.updateDynamic("replaceDefaultPolicyVersionParams")(__v.asInstanceOf[js.Any]))
+      updateCACertificateParams.foreach(__v => __obj.updateDynamic("updateCACertificateParams")(__v.asInstanceOf[js.Any]))
+      updateDeviceCertificateParams.foreach(__v => __obj.updateDynamic("updateDeviceCertificateParams")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MitigationActionParams]
     }
   }
@@ -11150,16 +10640,7 @@ package iot {
     val ENABLE_IOT_LOGGING = "ENABLE_IOT_LOGGING".asInstanceOf[MitigationActionType]
     val PUBLISH_FINDING_TO_SNS = "PUBLISH_FINDING_TO_SNS".asInstanceOf[MitigationActionType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        UPDATE_DEVICE_CERTIFICATE,
-        UPDATE_CA_CERTIFICATE,
-        ADD_THINGS_TO_THING_GROUP,
-        REPLACE_DEFAULT_POLICY_VERSION,
-        ENABLE_IOT_LOGGING,
-        PUBLISH_FINDING_TO_SNS
-      )
-    )
+    val values = js.Object.freeze(js.Array(UPDATE_DEVICE_CERTIFICATE, UPDATE_CA_CERTIFICATE, ADD_THINGS_TO_THING_GROUP, REPLACE_DEFAULT_POLICY_VERSION, ENABLE_IOT_LOGGING, PUBLISH_FINDING_TO_SNS))
   }
 
   /**
@@ -11290,9 +10771,7 @@ package iot {
       additionalParameters.foreach(__v => __obj.updateDynamic("additionalParameters")(__v.asInstanceOf[js.Any]))
       awsIotJobArn.foreach(__v => __obj.updateDynamic("awsIotJobArn")(__v.asInstanceOf[js.Any]))
       awsIotJobId.foreach(__v => __obj.updateDynamic("awsIotJobId")(__v.asInstanceOf[js.Any]))
-      awsJobExecutionsRolloutConfig.foreach(__v =>
-        __obj.updateDynamic("awsJobExecutionsRolloutConfig")(__v.asInstanceOf[js.Any])
-      )
+      awsJobExecutionsRolloutConfig.foreach(__v => __obj.updateDynamic("awsJobExecutionsRolloutConfig")(__v.asInstanceOf[js.Any]))
       awsJobPresignedUrlConfig.foreach(__v => __obj.updateDynamic("awsJobPresignedUrlConfig")(__v.asInstanceOf[js.Any]))
       creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
@@ -12159,18 +11638,7 @@ package iot {
     val ROLE_ALIAS = "ROLE_ALIAS".asInstanceOf[ResourceType]
     val IAM_ROLE = "IAM_ROLE".asInstanceOf[ResourceType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        DEVICE_CERTIFICATE,
-        CA_CERTIFICATE,
-        IOT_POLICY,
-        COGNITO_IDENTITY_POOL,
-        CLIENT_ID,
-        ACCOUNT_SETTINGS,
-        ROLE_ALIAS,
-        IAM_ROLE
-      )
-    )
+    val values = js.Object.freeze(js.Array(DEVICE_CERTIFICATE, CA_CERTIFICATE, IOT_POLICY, COGNITO_IDENTITY_POOL, CLIENT_ID, ACCOUNT_SETTINGS, ROLE_ALIAS, IAM_ROLE))
   }
 
   /**
@@ -12200,9 +11668,7 @@ package iot {
     ): RoleAliasDescription = {
       val __obj = js.Dynamic.literal()
       creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
-      credentialDurationSeconds.foreach(__v =>
-        __obj.updateDynamic("credentialDurationSeconds")(__v.asInstanceOf[js.Any])
-      )
+      credentialDurationSeconds.foreach(__v => __obj.updateDynamic("credentialDurationSeconds")(__v.asInstanceOf[js.Any]))
       lastModifiedDate.foreach(__v => __obj.updateDynamic("lastModifiedDate")(__v.asInstanceOf[js.Any]))
       owner.foreach(__v => __obj.updateDynamic("owner")(__v.asInstanceOf[js.Any]))
       roleAlias.foreach(__v => __obj.updateDynamic("roleAlias")(__v.asInstanceOf[js.Any]))
@@ -12457,9 +11923,7 @@ package iot {
         target: js.UndefOr[SecurityProfileTarget] = js.undefined
     ): SecurityProfileTargetMapping = {
       val __obj = js.Dynamic.literal()
-      securityProfileIdentifier.foreach(__v =>
-        __obj.updateDynamic("securityProfileIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      securityProfileIdentifier.foreach(__v => __obj.updateDynamic("securityProfileIdentifier")(__v.asInstanceOf[js.Any]))
       target.foreach(__v => __obj.updateDynamic("target")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SecurityProfileTargetMapping]
     }
@@ -12494,9 +11958,7 @@ package iot {
       val __obj = js.Dynamic.literal()
       serverCertificateArn.foreach(__v => __obj.updateDynamic("serverCertificateArn")(__v.asInstanceOf[js.Any]))
       serverCertificateStatus.foreach(__v => __obj.updateDynamic("serverCertificateStatus")(__v.asInstanceOf[js.Any]))
-      serverCertificateStatusDetail.foreach(__v =>
-        __obj.updateDynamic("serverCertificateStatusDetail")(__v.asInstanceOf[js.Any])
-      )
+      serverCertificateStatusDetail.foreach(__v => __obj.updateDynamic("serverCertificateStatusDetail")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServerCertificateSummary]
     }
   }
@@ -13227,9 +12689,7 @@ package iot {
       inProgressChecks.foreach(__v => __obj.updateDynamic("inProgressChecks")(__v.asInstanceOf[js.Any]))
       nonCompliantChecks.foreach(__v => __obj.updateDynamic("nonCompliantChecks")(__v.asInstanceOf[js.Any]))
       totalChecks.foreach(__v => __obj.updateDynamic("totalChecks")(__v.asInstanceOf[js.Any]))
-      waitingForDataCollectionChecks.foreach(__v =>
-        __obj.updateDynamic("waitingForDataCollectionChecks")(__v.asInstanceOf[js.Any])
-      )
+      waitingForDataCollectionChecks.foreach(__v => __obj.updateDynamic("waitingForDataCollectionChecks")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TaskStatistics]
     }
   }
@@ -13613,9 +13073,7 @@ package iot {
 
       customFields.foreach(__v => __obj.updateDynamic("customFields")(__v.asInstanceOf[js.Any]))
       managedFields.foreach(__v => __obj.updateDynamic("managedFields")(__v.asInstanceOf[js.Any]))
-      thingConnectivityIndexingMode.foreach(__v =>
-        __obj.updateDynamic("thingConnectivityIndexingMode")(__v.asInstanceOf[js.Any])
-      )
+      thingConnectivityIndexingMode.foreach(__v => __obj.updateDynamic("thingConnectivityIndexingMode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ThingIndexingConfiguration]
     }
   }
@@ -13719,9 +13177,7 @@ package iot {
         inProgressTimeoutInMinutes: js.UndefOr[InProgressTimeoutInMinutes] = js.undefined
     ): TimeoutConfig = {
       val __obj = js.Dynamic.literal()
-      inProgressTimeoutInMinutes.foreach(__v =>
-        __obj.updateDynamic("inProgressTimeoutInMinutes")(__v.asInstanceOf[js.Any])
-      )
+      inProgressTimeoutInMinutes.foreach(__v => __obj.updateDynamic("inProgressTimeoutInMinutes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TimeoutConfig]
     }
   }
@@ -13979,9 +13435,7 @@ package iot {
         transferredCertificateArn: js.UndefOr[CertificateArn] = js.undefined
     ): TransferCertificateResponse = {
       val __obj = js.Dynamic.literal()
-      transferredCertificateArn.foreach(__v =>
-        __obj.updateDynamic("transferredCertificateArn")(__v.asInstanceOf[js.Any])
-      )
+      transferredCertificateArn.foreach(__v => __obj.updateDynamic("transferredCertificateArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TransferCertificateResponse]
     }
   }
@@ -14067,9 +13521,7 @@ package iot {
     ): UpdateAccountAuditConfigurationRequest = {
       val __obj = js.Dynamic.literal()
       auditCheckConfigurations.foreach(__v => __obj.updateDynamic("auditCheckConfigurations")(__v.asInstanceOf[js.Any]))
-      auditNotificationTargetConfigurations.foreach(__v =>
-        __obj.updateDynamic("auditNotificationTargetConfigurations")(__v.asInstanceOf[js.Any])
-      )
+      auditNotificationTargetConfigurations.foreach(__v => __obj.updateDynamic("auditNotificationTargetConfigurations")(__v.asInstanceOf[js.Any]))
       roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAccountAuditConfigurationRequest]
     }
@@ -14223,9 +13675,7 @@ package iot {
         "certificateId" -> certificateId.asInstanceOf[js.Any]
       )
 
-      newAutoRegistrationStatus.foreach(__v =>
-        __obj.updateDynamic("newAutoRegistrationStatus")(__v.asInstanceOf[js.Any])
-      )
+      newAutoRegistrationStatus.foreach(__v => __obj.updateDynamic("newAutoRegistrationStatus")(__v.asInstanceOf[js.Any]))
       newStatus.foreach(__v => __obj.updateDynamic("newStatus")(__v.asInstanceOf[js.Any]))
       registrationConfig.foreach(__v => __obj.updateDynamic("registrationConfig")(__v.asInstanceOf[js.Any]))
       removeAutoRegistration.foreach(__v => __obj.updateDynamic("removeAutoRegistration")(__v.asInstanceOf[js.Any]))
@@ -14351,9 +13801,7 @@ package iot {
       )
 
       authorizerConfig.foreach(__v => __obj.updateDynamic("authorizerConfig")(__v.asInstanceOf[js.Any]))
-      domainConfigurationStatus.foreach(__v =>
-        __obj.updateDynamic("domainConfigurationStatus")(__v.asInstanceOf[js.Any])
-      )
+      domainConfigurationStatus.foreach(__v => __obj.updateDynamic("domainConfigurationStatus")(__v.asInstanceOf[js.Any]))
       removeAuthorizerConfig.foreach(__v => __obj.updateDynamic("removeAuthorizerConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDomainConfigurationRequest]
     }
@@ -14469,12 +13917,8 @@ package iot {
         thingIndexingConfiguration: js.UndefOr[ThingIndexingConfiguration] = js.undefined
     ): UpdateIndexingConfigurationRequest = {
       val __obj = js.Dynamic.literal()
-      thingGroupIndexingConfiguration.foreach(__v =>
-        __obj.updateDynamic("thingGroupIndexingConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      thingIndexingConfiguration.foreach(__v =>
-        __obj.updateDynamic("thingIndexingConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      thingGroupIndexingConfiguration.foreach(__v => __obj.updateDynamic("thingGroupIndexingConfiguration")(__v.asInstanceOf[js.Any]))
+      thingIndexingConfiguration.foreach(__v => __obj.updateDynamic("thingIndexingConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateIndexingConfigurationRequest]
     }
   }
@@ -14518,9 +13962,7 @@ package iot {
 
       abortConfig.foreach(__v => __obj.updateDynamic("abortConfig")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      jobExecutionsRolloutConfig.foreach(__v =>
-        __obj.updateDynamic("jobExecutionsRolloutConfig")(__v.asInstanceOf[js.Any])
-      )
+      jobExecutionsRolloutConfig.foreach(__v => __obj.updateDynamic("jobExecutionsRolloutConfig")(__v.asInstanceOf[js.Any]))
       presignedUrlConfig.foreach(__v => __obj.updateDynamic("presignedUrlConfig")(__v.asInstanceOf[js.Any]))
       timeoutConfig.foreach(__v => __obj.updateDynamic("timeoutConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateJobRequest]
@@ -14601,9 +14043,7 @@ package iot {
       enabled.foreach(__v => __obj.updateDynamic("enabled")(__v.asInstanceOf[js.Any]))
       preProvisioningHook.foreach(__v => __obj.updateDynamic("preProvisioningHook")(__v.asInstanceOf[js.Any]))
       provisioningRoleArn.foreach(__v => __obj.updateDynamic("provisioningRoleArn")(__v.asInstanceOf[js.Any]))
-      removePreProvisioningHook.foreach(__v =>
-        __obj.updateDynamic("removePreProvisioningHook")(__v.asInstanceOf[js.Any])
-      )
+      removePreProvisioningHook.foreach(__v => __obj.updateDynamic("removePreProvisioningHook")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateProvisioningTemplateRequest]
     }
   }
@@ -14639,9 +14079,7 @@ package iot {
         "roleAlias" -> roleAlias.asInstanceOf[js.Any]
       )
 
-      credentialDurationSeconds.foreach(__v =>
-        __obj.updateDynamic("credentialDurationSeconds")(__v.asInstanceOf[js.Any])
-      )
+      credentialDurationSeconds.foreach(__v => __obj.updateDynamic("credentialDurationSeconds")(__v.asInstanceOf[js.Any]))
       roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRoleAliasRequest]
     }
@@ -14744,23 +14182,15 @@ package iot {
         "securityProfileName" -> securityProfileName.asInstanceOf[js.Any]
       )
 
-      additionalMetricsToRetain.foreach(__v =>
-        __obj.updateDynamic("additionalMetricsToRetain")(__v.asInstanceOf[js.Any])
-      )
-      additionalMetricsToRetainV2.foreach(__v =>
-        __obj.updateDynamic("additionalMetricsToRetainV2")(__v.asInstanceOf[js.Any])
-      )
+      additionalMetricsToRetain.foreach(__v => __obj.updateDynamic("additionalMetricsToRetain")(__v.asInstanceOf[js.Any]))
+      additionalMetricsToRetainV2.foreach(__v => __obj.updateDynamic("additionalMetricsToRetainV2")(__v.asInstanceOf[js.Any]))
       alertTargets.foreach(__v => __obj.updateDynamic("alertTargets")(__v.asInstanceOf[js.Any]))
       behaviors.foreach(__v => __obj.updateDynamic("behaviors")(__v.asInstanceOf[js.Any]))
-      deleteAdditionalMetricsToRetain.foreach(__v =>
-        __obj.updateDynamic("deleteAdditionalMetricsToRetain")(__v.asInstanceOf[js.Any])
-      )
+      deleteAdditionalMetricsToRetain.foreach(__v => __obj.updateDynamic("deleteAdditionalMetricsToRetain")(__v.asInstanceOf[js.Any]))
       deleteAlertTargets.foreach(__v => __obj.updateDynamic("deleteAlertTargets")(__v.asInstanceOf[js.Any]))
       deleteBehaviors.foreach(__v => __obj.updateDynamic("deleteBehaviors")(__v.asInstanceOf[js.Any]))
       expectedVersion.foreach(__v => __obj.updateDynamic("expectedVersion")(__v.asInstanceOf[js.Any]))
-      securityProfileDescription.foreach(__v =>
-        __obj.updateDynamic("securityProfileDescription")(__v.asInstanceOf[js.Any])
-      )
+      securityProfileDescription.foreach(__v => __obj.updateDynamic("securityProfileDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSecurityProfileRequest]
     }
   }
@@ -14794,20 +14224,14 @@ package iot {
         version: js.UndefOr[Version] = js.undefined
     ): UpdateSecurityProfileResponse = {
       val __obj = js.Dynamic.literal()
-      additionalMetricsToRetain.foreach(__v =>
-        __obj.updateDynamic("additionalMetricsToRetain")(__v.asInstanceOf[js.Any])
-      )
-      additionalMetricsToRetainV2.foreach(__v =>
-        __obj.updateDynamic("additionalMetricsToRetainV2")(__v.asInstanceOf[js.Any])
-      )
+      additionalMetricsToRetain.foreach(__v => __obj.updateDynamic("additionalMetricsToRetain")(__v.asInstanceOf[js.Any]))
+      additionalMetricsToRetainV2.foreach(__v => __obj.updateDynamic("additionalMetricsToRetainV2")(__v.asInstanceOf[js.Any]))
       alertTargets.foreach(__v => __obj.updateDynamic("alertTargets")(__v.asInstanceOf[js.Any]))
       behaviors.foreach(__v => __obj.updateDynamic("behaviors")(__v.asInstanceOf[js.Any]))
       creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
       lastModifiedDate.foreach(__v => __obj.updateDynamic("lastModifiedDate")(__v.asInstanceOf[js.Any]))
       securityProfileArn.foreach(__v => __obj.updateDynamic("securityProfileArn")(__v.asInstanceOf[js.Any]))
-      securityProfileDescription.foreach(__v =>
-        __obj.updateDynamic("securityProfileDescription")(__v.asInstanceOf[js.Any])
-      )
+      securityProfileDescription.foreach(__v => __obj.updateDynamic("securityProfileDescription")(__v.asInstanceOf[js.Any]))
       securityProfileName.foreach(__v => __obj.updateDynamic("securityProfileName")(__v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSecurityProfileResponse]

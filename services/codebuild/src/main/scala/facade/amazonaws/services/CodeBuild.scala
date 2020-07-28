@@ -57,80 +57,40 @@ package object codebuild {
 
   implicit final class CodeBuildOps(private val service: CodeBuild) extends AnyVal {
 
-    @inline def batchDeleteBuildsFuture(params: BatchDeleteBuildsInput): Future[BatchDeleteBuildsOutput] =
-      service.batchDeleteBuilds(params).promise().toFuture
-    @inline def batchGetBuildsFuture(params: BatchGetBuildsInput): Future[BatchGetBuildsOutput] =
-      service.batchGetBuilds(params).promise().toFuture
-    @inline def batchGetProjectsFuture(params: BatchGetProjectsInput): Future[BatchGetProjectsOutput] =
-      service.batchGetProjects(params).promise().toFuture
-    @inline def batchGetReportGroupsFuture(params: BatchGetReportGroupsInput): Future[BatchGetReportGroupsOutput] =
-      service.batchGetReportGroups(params).promise().toFuture
-    @inline def batchGetReportsFuture(params: BatchGetReportsInput): Future[BatchGetReportsOutput] =
-      service.batchGetReports(params).promise().toFuture
-    @inline def createProjectFuture(params: CreateProjectInput): Future[CreateProjectOutput] =
-      service.createProject(params).promise().toFuture
-    @inline def createReportGroupFuture(params: CreateReportGroupInput): Future[CreateReportGroupOutput] =
-      service.createReportGroup(params).promise().toFuture
-    @inline def createWebhookFuture(params: CreateWebhookInput): Future[CreateWebhookOutput] =
-      service.createWebhook(params).promise().toFuture
-    @inline def deleteProjectFuture(params: DeleteProjectInput): Future[DeleteProjectOutput] =
-      service.deleteProject(params).promise().toFuture
-    @inline def deleteReportFuture(params: DeleteReportInput): Future[DeleteReportOutput] =
-      service.deleteReport(params).promise().toFuture
-    @inline def deleteReportGroupFuture(params: DeleteReportGroupInput): Future[DeleteReportGroupOutput] =
-      service.deleteReportGroup(params).promise().toFuture
-    @inline def deleteResourcePolicyFuture(params: DeleteResourcePolicyInput): Future[DeleteResourcePolicyOutput] =
-      service.deleteResourcePolicy(params).promise().toFuture
-    @inline def deleteSourceCredentialsFuture(
-        params: DeleteSourceCredentialsInput
-    ): Future[DeleteSourceCredentialsOutput] = service.deleteSourceCredentials(params).promise().toFuture
-    @inline def deleteWebhookFuture(params: DeleteWebhookInput): Future[DeleteWebhookOutput] =
-      service.deleteWebhook(params).promise().toFuture
-    @inline def describeTestCasesFuture(params: DescribeTestCasesInput): Future[DescribeTestCasesOutput] =
-      service.describeTestCases(params).promise().toFuture
-    @inline def getResourcePolicyFuture(params: GetResourcePolicyInput): Future[GetResourcePolicyOutput] =
-      service.getResourcePolicy(params).promise().toFuture
-    @inline def importSourceCredentialsFuture(
-        params: ImportSourceCredentialsInput
-    ): Future[ImportSourceCredentialsOutput] = service.importSourceCredentials(params).promise().toFuture
-    @inline def invalidateProjectCacheFuture(
-        params: InvalidateProjectCacheInput
-    ): Future[InvalidateProjectCacheOutput] = service.invalidateProjectCache(params).promise().toFuture
-    @inline def listBuildsForProjectFuture(params: ListBuildsForProjectInput): Future[ListBuildsForProjectOutput] =
-      service.listBuildsForProject(params).promise().toFuture
-    @inline def listBuildsFuture(params: ListBuildsInput): Future[ListBuildsOutput] =
-      service.listBuilds(params).promise().toFuture
-    @inline def listCuratedEnvironmentImagesFuture(
-        params: ListCuratedEnvironmentImagesInput
-    ): Future[ListCuratedEnvironmentImagesOutput] = service.listCuratedEnvironmentImages(params).promise().toFuture
-    @inline def listProjectsFuture(params: ListProjectsInput): Future[ListProjectsOutput] =
-      service.listProjects(params).promise().toFuture
-    @inline def listReportGroupsFuture(params: ListReportGroupsInput): Future[ListReportGroupsOutput] =
-      service.listReportGroups(params).promise().toFuture
-    @inline def listReportsForReportGroupFuture(
-        params: ListReportsForReportGroupInput
-    ): Future[ListReportsForReportGroupOutput] = service.listReportsForReportGroup(params).promise().toFuture
-    @inline def listReportsFuture(params: ListReportsInput): Future[ListReportsOutput] =
-      service.listReports(params).promise().toFuture
-    @inline def listSharedProjectsFuture(params: ListSharedProjectsInput): Future[ListSharedProjectsOutput] =
-      service.listSharedProjects(params).promise().toFuture
-    @inline def listSharedReportGroupsFuture(
-        params: ListSharedReportGroupsInput
-    ): Future[ListSharedReportGroupsOutput] = service.listSharedReportGroups(params).promise().toFuture
-    @inline def listSourceCredentialsFuture(params: ListSourceCredentialsInput): Future[ListSourceCredentialsOutput] =
-      service.listSourceCredentials(params).promise().toFuture
-    @inline def putResourcePolicyFuture(params: PutResourcePolicyInput): Future[PutResourcePolicyOutput] =
-      service.putResourcePolicy(params).promise().toFuture
-    @inline def startBuildFuture(params: StartBuildInput): Future[StartBuildOutput] =
-      service.startBuild(params).promise().toFuture
-    @inline def stopBuildFuture(params: StopBuildInput): Future[StopBuildOutput] =
-      service.stopBuild(params).promise().toFuture
-    @inline def updateProjectFuture(params: UpdateProjectInput): Future[UpdateProjectOutput] =
-      service.updateProject(params).promise().toFuture
-    @inline def updateReportGroupFuture(params: UpdateReportGroupInput): Future[UpdateReportGroupOutput] =
-      service.updateReportGroup(params).promise().toFuture
-    @inline def updateWebhookFuture(params: UpdateWebhookInput): Future[UpdateWebhookOutput] =
-      service.updateWebhook(params).promise().toFuture
+    @inline def batchDeleteBuildsFuture(params: BatchDeleteBuildsInput): Future[BatchDeleteBuildsOutput] = service.batchDeleteBuilds(params).promise().toFuture
+    @inline def batchGetBuildsFuture(params: BatchGetBuildsInput): Future[BatchGetBuildsOutput] = service.batchGetBuilds(params).promise().toFuture
+    @inline def batchGetProjectsFuture(params: BatchGetProjectsInput): Future[BatchGetProjectsOutput] = service.batchGetProjects(params).promise().toFuture
+    @inline def batchGetReportGroupsFuture(params: BatchGetReportGroupsInput): Future[BatchGetReportGroupsOutput] = service.batchGetReportGroups(params).promise().toFuture
+    @inline def batchGetReportsFuture(params: BatchGetReportsInput): Future[BatchGetReportsOutput] = service.batchGetReports(params).promise().toFuture
+    @inline def createProjectFuture(params: CreateProjectInput): Future[CreateProjectOutput] = service.createProject(params).promise().toFuture
+    @inline def createReportGroupFuture(params: CreateReportGroupInput): Future[CreateReportGroupOutput] = service.createReportGroup(params).promise().toFuture
+    @inline def createWebhookFuture(params: CreateWebhookInput): Future[CreateWebhookOutput] = service.createWebhook(params).promise().toFuture
+    @inline def deleteProjectFuture(params: DeleteProjectInput): Future[DeleteProjectOutput] = service.deleteProject(params).promise().toFuture
+    @inline def deleteReportFuture(params: DeleteReportInput): Future[DeleteReportOutput] = service.deleteReport(params).promise().toFuture
+    @inline def deleteReportGroupFuture(params: DeleteReportGroupInput): Future[DeleteReportGroupOutput] = service.deleteReportGroup(params).promise().toFuture
+    @inline def deleteResourcePolicyFuture(params: DeleteResourcePolicyInput): Future[DeleteResourcePolicyOutput] = service.deleteResourcePolicy(params).promise().toFuture
+    @inline def deleteSourceCredentialsFuture(params: DeleteSourceCredentialsInput): Future[DeleteSourceCredentialsOutput] = service.deleteSourceCredentials(params).promise().toFuture
+    @inline def deleteWebhookFuture(params: DeleteWebhookInput): Future[DeleteWebhookOutput] = service.deleteWebhook(params).promise().toFuture
+    @inline def describeTestCasesFuture(params: DescribeTestCasesInput): Future[DescribeTestCasesOutput] = service.describeTestCases(params).promise().toFuture
+    @inline def getResourcePolicyFuture(params: GetResourcePolicyInput): Future[GetResourcePolicyOutput] = service.getResourcePolicy(params).promise().toFuture
+    @inline def importSourceCredentialsFuture(params: ImportSourceCredentialsInput): Future[ImportSourceCredentialsOutput] = service.importSourceCredentials(params).promise().toFuture
+    @inline def invalidateProjectCacheFuture(params: InvalidateProjectCacheInput): Future[InvalidateProjectCacheOutput] = service.invalidateProjectCache(params).promise().toFuture
+    @inline def listBuildsForProjectFuture(params: ListBuildsForProjectInput): Future[ListBuildsForProjectOutput] = service.listBuildsForProject(params).promise().toFuture
+    @inline def listBuildsFuture(params: ListBuildsInput): Future[ListBuildsOutput] = service.listBuilds(params).promise().toFuture
+    @inline def listCuratedEnvironmentImagesFuture(params: ListCuratedEnvironmentImagesInput): Future[ListCuratedEnvironmentImagesOutput] = service.listCuratedEnvironmentImages(params).promise().toFuture
+    @inline def listProjectsFuture(params: ListProjectsInput): Future[ListProjectsOutput] = service.listProjects(params).promise().toFuture
+    @inline def listReportGroupsFuture(params: ListReportGroupsInput): Future[ListReportGroupsOutput] = service.listReportGroups(params).promise().toFuture
+    @inline def listReportsForReportGroupFuture(params: ListReportsForReportGroupInput): Future[ListReportsForReportGroupOutput] = service.listReportsForReportGroup(params).promise().toFuture
+    @inline def listReportsFuture(params: ListReportsInput): Future[ListReportsOutput] = service.listReports(params).promise().toFuture
+    @inline def listSharedProjectsFuture(params: ListSharedProjectsInput): Future[ListSharedProjectsOutput] = service.listSharedProjects(params).promise().toFuture
+    @inline def listSharedReportGroupsFuture(params: ListSharedReportGroupsInput): Future[ListSharedReportGroupsOutput] = service.listSharedReportGroups(params).promise().toFuture
+    @inline def listSourceCredentialsFuture(params: ListSourceCredentialsInput): Future[ListSourceCredentialsOutput] = service.listSourceCredentials(params).promise().toFuture
+    @inline def putResourcePolicyFuture(params: PutResourcePolicyInput): Future[PutResourcePolicyOutput] = service.putResourcePolicy(params).promise().toFuture
+    @inline def startBuildFuture(params: StartBuildInput): Future[StartBuildOutput] = service.startBuild(params).promise().toFuture
+    @inline def stopBuildFuture(params: StopBuildInput): Future[StopBuildOutput] = service.stopBuild(params).promise().toFuture
+    @inline def updateProjectFuture(params: UpdateProjectInput): Future[UpdateProjectOutput] = service.updateProject(params).promise().toFuture
+    @inline def updateReportGroupFuture(params: UpdateReportGroupInput): Future[UpdateReportGroupOutput] = service.updateReportGroup(params).promise().toFuture
+    @inline def updateWebhookFuture(params: UpdateWebhookInput): Future[UpdateWebhookOutput] = service.updateWebhook(params).promise().toFuture
   }
 }
 
@@ -152,24 +112,19 @@ package codebuild {
     def deleteReport(params: DeleteReportInput): Request[DeleteReportOutput] = js.native
     def deleteReportGroup(params: DeleteReportGroupInput): Request[DeleteReportGroupOutput] = js.native
     def deleteResourcePolicy(params: DeleteResourcePolicyInput): Request[DeleteResourcePolicyOutput] = js.native
-    def deleteSourceCredentials(params: DeleteSourceCredentialsInput): Request[DeleteSourceCredentialsOutput] =
-      js.native
+    def deleteSourceCredentials(params: DeleteSourceCredentialsInput): Request[DeleteSourceCredentialsOutput] = js.native
     def deleteWebhook(params: DeleteWebhookInput): Request[DeleteWebhookOutput] = js.native
     def describeTestCases(params: DescribeTestCasesInput): Request[DescribeTestCasesOutput] = js.native
     def getResourcePolicy(params: GetResourcePolicyInput): Request[GetResourcePolicyOutput] = js.native
-    def importSourceCredentials(params: ImportSourceCredentialsInput): Request[ImportSourceCredentialsOutput] =
-      js.native
+    def importSourceCredentials(params: ImportSourceCredentialsInput): Request[ImportSourceCredentialsOutput] = js.native
     def invalidateProjectCache(params: InvalidateProjectCacheInput): Request[InvalidateProjectCacheOutput] = js.native
     def listBuilds(params: ListBuildsInput): Request[ListBuildsOutput] = js.native
     def listBuildsForProject(params: ListBuildsForProjectInput): Request[ListBuildsForProjectOutput] = js.native
-    def listCuratedEnvironmentImages(
-        params: ListCuratedEnvironmentImagesInput
-    ): Request[ListCuratedEnvironmentImagesOutput] = js.native
+    def listCuratedEnvironmentImages(params: ListCuratedEnvironmentImagesInput): Request[ListCuratedEnvironmentImagesOutput] = js.native
     def listProjects(params: ListProjectsInput): Request[ListProjectsOutput] = js.native
     def listReportGroups(params: ListReportGroupsInput): Request[ListReportGroupsOutput] = js.native
     def listReports(params: ListReportsInput): Request[ListReportsOutput] = js.native
-    def listReportsForReportGroup(params: ListReportsForReportGroupInput): Request[ListReportsForReportGroupOutput] =
-      js.native
+    def listReportsForReportGroup(params: ListReportsForReportGroupInput): Request[ListReportsForReportGroupOutput] = js.native
     def listSharedProjects(params: ListSharedProjectsInput): Request[ListSharedProjectsOutput] = js.native
     def listSharedReportGroups(params: ListSharedReportGroupsInput): Request[ListSharedReportGroupsOutput] = js.native
     def listSourceCredentials(params: ListSourceCredentialsInput): Request[ListSourceCredentialsOutput] = js.native
@@ -489,9 +444,7 @@ package codebuild {
       encryptionKey.foreach(__v => __obj.updateDynamic("encryptionKey")(__v.asInstanceOf[js.Any]))
       endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
       environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
-      exportedEnvironmentVariables.foreach(__v =>
-        __obj.updateDynamic("exportedEnvironmentVariables")(__v.asInstanceOf[js.Any])
-      )
+      exportedEnvironmentVariables.foreach(__v => __obj.updateDynamic("exportedEnvironmentVariables")(__v.asInstanceOf[js.Any]))
       fileSystemLocations.foreach(__v => __obj.updateDynamic("fileSystemLocations")(__v.asInstanceOf[js.Any]))
       id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
       initiator.foreach(__v => __obj.updateDynamic("initiator")(__v.asInstanceOf[js.Any]))
@@ -620,21 +573,7 @@ package codebuild {
     val FINALIZING = "FINALIZING".asInstanceOf[BuildPhaseType]
     val COMPLETED = "COMPLETED".asInstanceOf[BuildPhaseType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        SUBMITTED,
-        QUEUED,
-        PROVISIONING,
-        DOWNLOAD_SOURCE,
-        INSTALL,
-        PRE_BUILD,
-        BUILD,
-        POST_BUILD,
-        UPLOAD_ARTIFACTS,
-        FINALIZING,
-        COMPLETED
-      )
-    )
+    val values = js.Object.freeze(js.Array(SUBMITTED, QUEUED, PROVISIONING, DOWNLOAD_SOURCE, INSTALL, PRE_BUILD, BUILD, POST_BUILD, UPLOAD_ARTIFACTS, FINALIZING, COMPLETED))
   }
 
   /**
@@ -714,9 +653,7 @@ package codebuild {
     val BUILD_GENERAL1_LARGE = "BUILD_GENERAL1_LARGE".asInstanceOf[ComputeType]
     val BUILD_GENERAL1_2XLARGE = "BUILD_GENERAL1_2XLARGE".asInstanceOf[ComputeType]
 
-    val values = js.Object.freeze(
-      js.Array(BUILD_GENERAL1_SMALL, BUILD_GENERAL1_MEDIUM, BUILD_GENERAL1_LARGE, BUILD_GENERAL1_2XLARGE)
-    )
+    val values = js.Object.freeze(js.Array(BUILD_GENERAL1_SMALL, BUILD_GENERAL1_MEDIUM, BUILD_GENERAL1_LARGE, BUILD_GENERAL1_2XLARGE))
   }
 
   @js.native
@@ -1233,9 +1170,7 @@ package codebuild {
     val ARM_CONTAINER = "ARM_CONTAINER".asInstanceOf[EnvironmentType]
     val WINDOWS_SERVER_2019_CONTAINER = "WINDOWS_SERVER_2019_CONTAINER".asInstanceOf[EnvironmentType]
 
-    val values = js.Object.freeze(
-      js.Array(WINDOWS_CONTAINER, LINUX_CONTAINER, LINUX_GPU_CONTAINER, ARM_CONTAINER, WINDOWS_SERVER_2019_CONTAINER)
-    )
+    val values = js.Object.freeze(js.Array(WINDOWS_CONTAINER, LINUX_CONTAINER, LINUX_GPU_CONTAINER, ARM_CONTAINER, WINDOWS_SERVER_2019_CONTAINER))
   }
 
   /**
@@ -2722,8 +2657,7 @@ package codebuild {
     val GITHUB_ENTERPRISE = "GITHUB_ENTERPRISE".asInstanceOf[SourceType]
     val NO_SOURCE = "NO_SOURCE".asInstanceOf[SourceType]
 
-    val values =
-      js.Object.freeze(js.Array(CODECOMMIT, CODEPIPELINE, GITHUB, S3, BITBUCKET, GITHUB_ENTERPRISE, NO_SOURCE))
+    val values = js.Object.freeze(js.Array(CODECOMMIT, CODEPIPELINE, GITHUB, S3, BITBUCKET, GITHUB_ENTERPRISE, NO_SOURCE))
   }
 
   @js.native
@@ -2801,9 +2735,7 @@ package codebuild {
       )
 
       artifactsOverride.foreach(__v => __obj.updateDynamic("artifactsOverride")(__v.asInstanceOf[js.Any]))
-      buildStatusConfigOverride.foreach(__v =>
-        __obj.updateDynamic("buildStatusConfigOverride")(__v.asInstanceOf[js.Any])
-      )
+      buildStatusConfigOverride.foreach(__v => __obj.updateDynamic("buildStatusConfigOverride")(__v.asInstanceOf[js.Any]))
       buildspecOverride.foreach(__v => __obj.updateDynamic("buildspecOverride")(__v.asInstanceOf[js.Any]))
       cacheOverride.foreach(__v => __obj.updateDynamic("cacheOverride")(__v.asInstanceOf[js.Any]))
       certificateOverride.foreach(__v => __obj.updateDynamic("certificateOverride")(__v.asInstanceOf[js.Any]))
@@ -2811,37 +2743,21 @@ package codebuild {
       debugSessionEnabled.foreach(__v => __obj.updateDynamic("debugSessionEnabled")(__v.asInstanceOf[js.Any]))
       encryptionKeyOverride.foreach(__v => __obj.updateDynamic("encryptionKeyOverride")(__v.asInstanceOf[js.Any]))
       environmentTypeOverride.foreach(__v => __obj.updateDynamic("environmentTypeOverride")(__v.asInstanceOf[js.Any]))
-      environmentVariablesOverride.foreach(__v =>
-        __obj.updateDynamic("environmentVariablesOverride")(__v.asInstanceOf[js.Any])
-      )
+      environmentVariablesOverride.foreach(__v => __obj.updateDynamic("environmentVariablesOverride")(__v.asInstanceOf[js.Any]))
       gitCloneDepthOverride.foreach(__v => __obj.updateDynamic("gitCloneDepthOverride")(__v.asInstanceOf[js.Any]))
-      gitSubmodulesConfigOverride.foreach(__v =>
-        __obj.updateDynamic("gitSubmodulesConfigOverride")(__v.asInstanceOf[js.Any])
-      )
+      gitSubmodulesConfigOverride.foreach(__v => __obj.updateDynamic("gitSubmodulesConfigOverride")(__v.asInstanceOf[js.Any]))
       idempotencyToken.foreach(__v => __obj.updateDynamic("idempotencyToken")(__v.asInstanceOf[js.Any]))
       imageOverride.foreach(__v => __obj.updateDynamic("imageOverride")(__v.asInstanceOf[js.Any]))
-      imagePullCredentialsTypeOverride.foreach(__v =>
-        __obj.updateDynamic("imagePullCredentialsTypeOverride")(__v.asInstanceOf[js.Any])
-      )
+      imagePullCredentialsTypeOverride.foreach(__v => __obj.updateDynamic("imagePullCredentialsTypeOverride")(__v.asInstanceOf[js.Any]))
       insecureSslOverride.foreach(__v => __obj.updateDynamic("insecureSslOverride")(__v.asInstanceOf[js.Any]))
       logsConfigOverride.foreach(__v => __obj.updateDynamic("logsConfigOverride")(__v.asInstanceOf[js.Any]))
       privilegedModeOverride.foreach(__v => __obj.updateDynamic("privilegedModeOverride")(__v.asInstanceOf[js.Any]))
-      queuedTimeoutInMinutesOverride.foreach(__v =>
-        __obj.updateDynamic("queuedTimeoutInMinutesOverride")(__v.asInstanceOf[js.Any])
-      )
-      registryCredentialOverride.foreach(__v =>
-        __obj.updateDynamic("registryCredentialOverride")(__v.asInstanceOf[js.Any])
-      )
-      reportBuildStatusOverride.foreach(__v =>
-        __obj.updateDynamic("reportBuildStatusOverride")(__v.asInstanceOf[js.Any])
-      )
-      secondaryArtifactsOverride.foreach(__v =>
-        __obj.updateDynamic("secondaryArtifactsOverride")(__v.asInstanceOf[js.Any])
-      )
+      queuedTimeoutInMinutesOverride.foreach(__v => __obj.updateDynamic("queuedTimeoutInMinutesOverride")(__v.asInstanceOf[js.Any]))
+      registryCredentialOverride.foreach(__v => __obj.updateDynamic("registryCredentialOverride")(__v.asInstanceOf[js.Any]))
+      reportBuildStatusOverride.foreach(__v => __obj.updateDynamic("reportBuildStatusOverride")(__v.asInstanceOf[js.Any]))
+      secondaryArtifactsOverride.foreach(__v => __obj.updateDynamic("secondaryArtifactsOverride")(__v.asInstanceOf[js.Any]))
       secondarySourcesOverride.foreach(__v => __obj.updateDynamic("secondarySourcesOverride")(__v.asInstanceOf[js.Any]))
-      secondarySourcesVersionOverride.foreach(__v =>
-        __obj.updateDynamic("secondarySourcesVersionOverride")(__v.asInstanceOf[js.Any])
-      )
+      secondarySourcesVersionOverride.foreach(__v => __obj.updateDynamic("secondarySourcesVersionOverride")(__v.asInstanceOf[js.Any]))
       serviceRoleOverride.foreach(__v => __obj.updateDynamic("serviceRoleOverride")(__v.asInstanceOf[js.Any]))
       sourceAuthOverride.foreach(__v => __obj.updateDynamic("sourceAuthOverride")(__v.asInstanceOf[js.Any]))
       sourceLocationOverride.foreach(__v => __obj.updateDynamic("sourceLocationOverride")(__v.asInstanceOf[js.Any]))

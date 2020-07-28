@@ -105,326 +105,133 @@ package object lightsail {
 
   implicit final class LightsailOps(private val service: Lightsail) extends AnyVal {
 
-    @inline def allocateStaticIpFuture(params: AllocateStaticIpRequest): Future[AllocateStaticIpResult] =
-      service.allocateStaticIp(params).promise().toFuture
-    @inline def attachCertificateToDistributionFuture(
-        params: AttachCertificateToDistributionRequest
-    ): Future[AttachCertificateToDistributionResult] =
-      service.attachCertificateToDistribution(params).promise().toFuture
-    @inline def attachDiskFuture(params: AttachDiskRequest): Future[AttachDiskResult] =
-      service.attachDisk(params).promise().toFuture
-    @inline def attachInstancesToLoadBalancerFuture(
-        params: AttachInstancesToLoadBalancerRequest
-    ): Future[AttachInstancesToLoadBalancerResult] = service.attachInstancesToLoadBalancer(params).promise().toFuture
-    @inline def attachLoadBalancerTlsCertificateFuture(
-        params: AttachLoadBalancerTlsCertificateRequest
-    ): Future[AttachLoadBalancerTlsCertificateResult] =
-      service.attachLoadBalancerTlsCertificate(params).promise().toFuture
-    @inline def attachStaticIpFuture(params: AttachStaticIpRequest): Future[AttachStaticIpResult] =
-      service.attachStaticIp(params).promise().toFuture
-    @inline def closeInstancePublicPortsFuture(
-        params: CloseInstancePublicPortsRequest
-    ): Future[CloseInstancePublicPortsResult] = service.closeInstancePublicPorts(params).promise().toFuture
-    @inline def copySnapshotFuture(params: CopySnapshotRequest): Future[CopySnapshotResult] =
-      service.copySnapshot(params).promise().toFuture
-    @inline def createCertificateFuture(params: CreateCertificateRequest): Future[CreateCertificateResult] =
-      service.createCertificate(params).promise().toFuture
-    @inline def createCloudFormationStackFuture(
-        params: CreateCloudFormationStackRequest
-    ): Future[CreateCloudFormationStackResult] = service.createCloudFormationStack(params).promise().toFuture
-    @inline def createContactMethodFuture(params: CreateContactMethodRequest): Future[CreateContactMethodResult] =
-      service.createContactMethod(params).promise().toFuture
-    @inline def createDiskFromSnapshotFuture(
-        params: CreateDiskFromSnapshotRequest
-    ): Future[CreateDiskFromSnapshotResult] = service.createDiskFromSnapshot(params).promise().toFuture
-    @inline def createDiskFuture(params: CreateDiskRequest): Future[CreateDiskResult] =
-      service.createDisk(params).promise().toFuture
-    @inline def createDiskSnapshotFuture(params: CreateDiskSnapshotRequest): Future[CreateDiskSnapshotResult] =
-      service.createDiskSnapshot(params).promise().toFuture
-    @inline def createDistributionFuture(params: CreateDistributionRequest): Future[CreateDistributionResult] =
-      service.createDistribution(params).promise().toFuture
-    @inline def createDomainEntryFuture(params: CreateDomainEntryRequest): Future[CreateDomainEntryResult] =
-      service.createDomainEntry(params).promise().toFuture
-    @inline def createDomainFuture(params: CreateDomainRequest): Future[CreateDomainResult] =
-      service.createDomain(params).promise().toFuture
-    @inline def createInstanceSnapshotFuture(
-        params: CreateInstanceSnapshotRequest
-    ): Future[CreateInstanceSnapshotResult] = service.createInstanceSnapshot(params).promise().toFuture
-    @inline def createInstancesFromSnapshotFuture(
-        params: CreateInstancesFromSnapshotRequest
-    ): Future[CreateInstancesFromSnapshotResult] = service.createInstancesFromSnapshot(params).promise().toFuture
-    @inline def createInstancesFuture(params: CreateInstancesRequest): Future[CreateInstancesResult] =
-      service.createInstances(params).promise().toFuture
-    @inline def createKeyPairFuture(params: CreateKeyPairRequest): Future[CreateKeyPairResult] =
-      service.createKeyPair(params).promise().toFuture
-    @inline def createLoadBalancerFuture(params: CreateLoadBalancerRequest): Future[CreateLoadBalancerResult] =
-      service.createLoadBalancer(params).promise().toFuture
-    @inline def createLoadBalancerTlsCertificateFuture(
-        params: CreateLoadBalancerTlsCertificateRequest
-    ): Future[CreateLoadBalancerTlsCertificateResult] =
-      service.createLoadBalancerTlsCertificate(params).promise().toFuture
-    @inline def createRelationalDatabaseFromSnapshotFuture(
-        params: CreateRelationalDatabaseFromSnapshotRequest
-    ): Future[CreateRelationalDatabaseFromSnapshotResult] =
-      service.createRelationalDatabaseFromSnapshot(params).promise().toFuture
-    @inline def createRelationalDatabaseFuture(
-        params: CreateRelationalDatabaseRequest
-    ): Future[CreateRelationalDatabaseResult] = service.createRelationalDatabase(params).promise().toFuture
-    @inline def createRelationalDatabaseSnapshotFuture(
-        params: CreateRelationalDatabaseSnapshotRequest
-    ): Future[CreateRelationalDatabaseSnapshotResult] =
-      service.createRelationalDatabaseSnapshot(params).promise().toFuture
-    @inline def deleteAlarmFuture(params: DeleteAlarmRequest): Future[DeleteAlarmResult] =
-      service.deleteAlarm(params).promise().toFuture
-    @inline def deleteAutoSnapshotFuture(params: DeleteAutoSnapshotRequest): Future[DeleteAutoSnapshotResult] =
-      service.deleteAutoSnapshot(params).promise().toFuture
-    @inline def deleteCertificateFuture(params: DeleteCertificateRequest): Future[DeleteCertificateResult] =
-      service.deleteCertificate(params).promise().toFuture
-    @inline def deleteContactMethodFuture(params: DeleteContactMethodRequest): Future[DeleteContactMethodResult] =
-      service.deleteContactMethod(params).promise().toFuture
-    @inline def deleteDiskFuture(params: DeleteDiskRequest): Future[DeleteDiskResult] =
-      service.deleteDisk(params).promise().toFuture
-    @inline def deleteDiskSnapshotFuture(params: DeleteDiskSnapshotRequest): Future[DeleteDiskSnapshotResult] =
-      service.deleteDiskSnapshot(params).promise().toFuture
-    @inline def deleteDistributionFuture(params: DeleteDistributionRequest): Future[DeleteDistributionResult] =
-      service.deleteDistribution(params).promise().toFuture
-    @inline def deleteDomainEntryFuture(params: DeleteDomainEntryRequest): Future[DeleteDomainEntryResult] =
-      service.deleteDomainEntry(params).promise().toFuture
-    @inline def deleteDomainFuture(params: DeleteDomainRequest): Future[DeleteDomainResult] =
-      service.deleteDomain(params).promise().toFuture
-    @inline def deleteInstanceFuture(params: DeleteInstanceRequest): Future[DeleteInstanceResult] =
-      service.deleteInstance(params).promise().toFuture
-    @inline def deleteInstanceSnapshotFuture(
-        params: DeleteInstanceSnapshotRequest
-    ): Future[DeleteInstanceSnapshotResult] = service.deleteInstanceSnapshot(params).promise().toFuture
-    @inline def deleteKeyPairFuture(params: DeleteKeyPairRequest): Future[DeleteKeyPairResult] =
-      service.deleteKeyPair(params).promise().toFuture
-    @inline def deleteKnownHostKeysFuture(params: DeleteKnownHostKeysRequest): Future[DeleteKnownHostKeysResult] =
-      service.deleteKnownHostKeys(params).promise().toFuture
-    @inline def deleteLoadBalancerFuture(params: DeleteLoadBalancerRequest): Future[DeleteLoadBalancerResult] =
-      service.deleteLoadBalancer(params).promise().toFuture
-    @inline def deleteLoadBalancerTlsCertificateFuture(
-        params: DeleteLoadBalancerTlsCertificateRequest
-    ): Future[DeleteLoadBalancerTlsCertificateResult] =
-      service.deleteLoadBalancerTlsCertificate(params).promise().toFuture
-    @inline def deleteRelationalDatabaseFuture(
-        params: DeleteRelationalDatabaseRequest
-    ): Future[DeleteRelationalDatabaseResult] = service.deleteRelationalDatabase(params).promise().toFuture
-    @inline def deleteRelationalDatabaseSnapshotFuture(
-        params: DeleteRelationalDatabaseSnapshotRequest
-    ): Future[DeleteRelationalDatabaseSnapshotResult] =
-      service.deleteRelationalDatabaseSnapshot(params).promise().toFuture
-    @inline def detachCertificateFromDistributionFuture(
-        params: DetachCertificateFromDistributionRequest
-    ): Future[DetachCertificateFromDistributionResult] =
-      service.detachCertificateFromDistribution(params).promise().toFuture
-    @inline def detachDiskFuture(params: DetachDiskRequest): Future[DetachDiskResult] =
-      service.detachDisk(params).promise().toFuture
-    @inline def detachInstancesFromLoadBalancerFuture(
-        params: DetachInstancesFromLoadBalancerRequest
-    ): Future[DetachInstancesFromLoadBalancerResult] =
-      service.detachInstancesFromLoadBalancer(params).promise().toFuture
-    @inline def detachStaticIpFuture(params: DetachStaticIpRequest): Future[DetachStaticIpResult] =
-      service.detachStaticIp(params).promise().toFuture
-    @inline def disableAddOnFuture(params: DisableAddOnRequest): Future[DisableAddOnResult] =
-      service.disableAddOn(params).promise().toFuture
-    @inline def downloadDefaultKeyPairFuture(
-        params: DownloadDefaultKeyPairRequest
-    ): Future[DownloadDefaultKeyPairResult] = service.downloadDefaultKeyPair(params).promise().toFuture
-    @inline def enableAddOnFuture(params: EnableAddOnRequest): Future[EnableAddOnResult] =
-      service.enableAddOn(params).promise().toFuture
-    @inline def exportSnapshotFuture(params: ExportSnapshotRequest): Future[ExportSnapshotResult] =
-      service.exportSnapshot(params).promise().toFuture
-    @inline def getActiveNamesFuture(params: GetActiveNamesRequest): Future[GetActiveNamesResult] =
-      service.getActiveNames(params).promise().toFuture
-    @inline def getAlarmsFuture(params: GetAlarmsRequest): Future[GetAlarmsResult] =
-      service.getAlarms(params).promise().toFuture
-    @inline def getAutoSnapshotsFuture(params: GetAutoSnapshotsRequest): Future[GetAutoSnapshotsResult] =
-      service.getAutoSnapshots(params).promise().toFuture
-    @inline def getBlueprintsFuture(params: GetBlueprintsRequest): Future[GetBlueprintsResult] =
-      service.getBlueprints(params).promise().toFuture
-    @inline def getBundlesFuture(params: GetBundlesRequest): Future[GetBundlesResult] =
-      service.getBundles(params).promise().toFuture
-    @inline def getCertificatesFuture(params: GetCertificatesRequest): Future[GetCertificatesResult] =
-      service.getCertificates(params).promise().toFuture
-    @inline def getCloudFormationStackRecordsFuture(
-        params: GetCloudFormationStackRecordsRequest
-    ): Future[GetCloudFormationStackRecordsResult] = service.getCloudFormationStackRecords(params).promise().toFuture
-    @inline def getContactMethodsFuture(params: GetContactMethodsRequest): Future[GetContactMethodsResult] =
-      service.getContactMethods(params).promise().toFuture
-    @inline def getDiskFuture(params: GetDiskRequest): Future[GetDiskResult] =
-      service.getDisk(params).promise().toFuture
-    @inline def getDiskSnapshotFuture(params: GetDiskSnapshotRequest): Future[GetDiskSnapshotResult] =
-      service.getDiskSnapshot(params).promise().toFuture
-    @inline def getDiskSnapshotsFuture(params: GetDiskSnapshotsRequest): Future[GetDiskSnapshotsResult] =
-      service.getDiskSnapshots(params).promise().toFuture
-    @inline def getDisksFuture(params: GetDisksRequest): Future[GetDisksResult] =
-      service.getDisks(params).promise().toFuture
-    @inline def getDistributionBundlesFuture(
-        params: GetDistributionBundlesRequest
-    ): Future[GetDistributionBundlesResult] = service.getDistributionBundles(params).promise().toFuture
-    @inline def getDistributionLatestCacheResetFuture(
-        params: GetDistributionLatestCacheResetRequest
-    ): Future[GetDistributionLatestCacheResetResult] =
-      service.getDistributionLatestCacheReset(params).promise().toFuture
-    @inline def getDistributionMetricDataFuture(
-        params: GetDistributionMetricDataRequest
-    ): Future[GetDistributionMetricDataResult] = service.getDistributionMetricData(params).promise().toFuture
-    @inline def getDistributionsFuture(params: GetDistributionsRequest): Future[GetDistributionsResult] =
-      service.getDistributions(params).promise().toFuture
-    @inline def getDomainFuture(params: GetDomainRequest): Future[GetDomainResult] =
-      service.getDomain(params).promise().toFuture
-    @inline def getDomainsFuture(params: GetDomainsRequest): Future[GetDomainsResult] =
-      service.getDomains(params).promise().toFuture
-    @inline def getExportSnapshotRecordsFuture(
-        params: GetExportSnapshotRecordsRequest
-    ): Future[GetExportSnapshotRecordsResult] = service.getExportSnapshotRecords(params).promise().toFuture
-    @inline def getInstanceAccessDetailsFuture(
-        params: GetInstanceAccessDetailsRequest
-    ): Future[GetInstanceAccessDetailsResult] = service.getInstanceAccessDetails(params).promise().toFuture
-    @inline def getInstanceFuture(params: GetInstanceRequest): Future[GetInstanceResult] =
-      service.getInstance(params).promise().toFuture
-    @inline def getInstanceMetricDataFuture(params: GetInstanceMetricDataRequest): Future[GetInstanceMetricDataResult] =
-      service.getInstanceMetricData(params).promise().toFuture
-    @inline def getInstancePortStatesFuture(params: GetInstancePortStatesRequest): Future[GetInstancePortStatesResult] =
-      service.getInstancePortStates(params).promise().toFuture
-    @inline def getInstanceSnapshotFuture(params: GetInstanceSnapshotRequest): Future[GetInstanceSnapshotResult] =
-      service.getInstanceSnapshot(params).promise().toFuture
-    @inline def getInstanceSnapshotsFuture(params: GetInstanceSnapshotsRequest): Future[GetInstanceSnapshotsResult] =
-      service.getInstanceSnapshots(params).promise().toFuture
-    @inline def getInstanceStateFuture(params: GetInstanceStateRequest): Future[GetInstanceStateResult] =
-      service.getInstanceState(params).promise().toFuture
-    @inline def getInstancesFuture(params: GetInstancesRequest): Future[GetInstancesResult] =
-      service.getInstances(params).promise().toFuture
-    @inline def getKeyPairFuture(params: GetKeyPairRequest): Future[GetKeyPairResult] =
-      service.getKeyPair(params).promise().toFuture
-    @inline def getKeyPairsFuture(params: GetKeyPairsRequest): Future[GetKeyPairsResult] =
-      service.getKeyPairs(params).promise().toFuture
-    @inline def getLoadBalancerFuture(params: GetLoadBalancerRequest): Future[GetLoadBalancerResult] =
-      service.getLoadBalancer(params).promise().toFuture
-    @inline def getLoadBalancerMetricDataFuture(
-        params: GetLoadBalancerMetricDataRequest
-    ): Future[GetLoadBalancerMetricDataResult] = service.getLoadBalancerMetricData(params).promise().toFuture
-    @inline def getLoadBalancerTlsCertificatesFuture(
-        params: GetLoadBalancerTlsCertificatesRequest
-    ): Future[GetLoadBalancerTlsCertificatesResult] = service.getLoadBalancerTlsCertificates(params).promise().toFuture
-    @inline def getLoadBalancersFuture(params: GetLoadBalancersRequest): Future[GetLoadBalancersResult] =
-      service.getLoadBalancers(params).promise().toFuture
-    @inline def getOperationFuture(params: GetOperationRequest): Future[GetOperationResult] =
-      service.getOperation(params).promise().toFuture
-    @inline def getOperationsForResourceFuture(
-        params: GetOperationsForResourceRequest
-    ): Future[GetOperationsForResourceResult] = service.getOperationsForResource(params).promise().toFuture
-    @inline def getOperationsFuture(params: GetOperationsRequest): Future[GetOperationsResult] =
-      service.getOperations(params).promise().toFuture
-    @inline def getRegionsFuture(params: GetRegionsRequest): Future[GetRegionsResult] =
-      service.getRegions(params).promise().toFuture
-    @inline def getRelationalDatabaseBlueprintsFuture(
-        params: GetRelationalDatabaseBlueprintsRequest
-    ): Future[GetRelationalDatabaseBlueprintsResult] =
-      service.getRelationalDatabaseBlueprints(params).promise().toFuture
-    @inline def getRelationalDatabaseBundlesFuture(
-        params: GetRelationalDatabaseBundlesRequest
-    ): Future[GetRelationalDatabaseBundlesResult] = service.getRelationalDatabaseBundles(params).promise().toFuture
-    @inline def getRelationalDatabaseEventsFuture(
-        params: GetRelationalDatabaseEventsRequest
-    ): Future[GetRelationalDatabaseEventsResult] = service.getRelationalDatabaseEvents(params).promise().toFuture
-    @inline def getRelationalDatabaseFuture(params: GetRelationalDatabaseRequest): Future[GetRelationalDatabaseResult] =
-      service.getRelationalDatabase(params).promise().toFuture
-    @inline def getRelationalDatabaseLogEventsFuture(
-        params: GetRelationalDatabaseLogEventsRequest
-    ): Future[GetRelationalDatabaseLogEventsResult] = service.getRelationalDatabaseLogEvents(params).promise().toFuture
-    @inline def getRelationalDatabaseLogStreamsFuture(
-        params: GetRelationalDatabaseLogStreamsRequest
-    ): Future[GetRelationalDatabaseLogStreamsResult] =
-      service.getRelationalDatabaseLogStreams(params).promise().toFuture
-    @inline def getRelationalDatabaseMasterUserPasswordFuture(
-        params: GetRelationalDatabaseMasterUserPasswordRequest
-    ): Future[GetRelationalDatabaseMasterUserPasswordResult] =
-      service.getRelationalDatabaseMasterUserPassword(params).promise().toFuture
-    @inline def getRelationalDatabaseMetricDataFuture(
-        params: GetRelationalDatabaseMetricDataRequest
-    ): Future[GetRelationalDatabaseMetricDataResult] =
-      service.getRelationalDatabaseMetricData(params).promise().toFuture
-    @inline def getRelationalDatabaseParametersFuture(
-        params: GetRelationalDatabaseParametersRequest
-    ): Future[GetRelationalDatabaseParametersResult] =
-      service.getRelationalDatabaseParameters(params).promise().toFuture
-    @inline def getRelationalDatabaseSnapshotFuture(
-        params: GetRelationalDatabaseSnapshotRequest
-    ): Future[GetRelationalDatabaseSnapshotResult] = service.getRelationalDatabaseSnapshot(params).promise().toFuture
-    @inline def getRelationalDatabaseSnapshotsFuture(
-        params: GetRelationalDatabaseSnapshotsRequest
-    ): Future[GetRelationalDatabaseSnapshotsResult] = service.getRelationalDatabaseSnapshots(params).promise().toFuture
-    @inline def getRelationalDatabasesFuture(
-        params: GetRelationalDatabasesRequest
-    ): Future[GetRelationalDatabasesResult] = service.getRelationalDatabases(params).promise().toFuture
-    @inline def getStaticIpFuture(params: GetStaticIpRequest): Future[GetStaticIpResult] =
-      service.getStaticIp(params).promise().toFuture
-    @inline def getStaticIpsFuture(params: GetStaticIpsRequest): Future[GetStaticIpsResult] =
-      service.getStaticIps(params).promise().toFuture
-    @inline def importKeyPairFuture(params: ImportKeyPairRequest): Future[ImportKeyPairResult] =
-      service.importKeyPair(params).promise().toFuture
-    @inline def isVpcPeeredFuture(params: IsVpcPeeredRequest): Future[IsVpcPeeredResult] =
-      service.isVpcPeered(params).promise().toFuture
-    @inline def openInstancePublicPortsFuture(
-        params: OpenInstancePublicPortsRequest
-    ): Future[OpenInstancePublicPortsResult] = service.openInstancePublicPorts(params).promise().toFuture
-    @inline def peerVpcFuture(params: PeerVpcRequest): Future[PeerVpcResult] =
-      service.peerVpc(params).promise().toFuture
-    @inline def putAlarmFuture(params: PutAlarmRequest): Future[PutAlarmResult] =
-      service.putAlarm(params).promise().toFuture
-    @inline def putInstancePublicPortsFuture(
-        params: PutInstancePublicPortsRequest
-    ): Future[PutInstancePublicPortsResult] = service.putInstancePublicPorts(params).promise().toFuture
-    @inline def rebootInstanceFuture(params: RebootInstanceRequest): Future[RebootInstanceResult] =
-      service.rebootInstance(params).promise().toFuture
-    @inline def rebootRelationalDatabaseFuture(
-        params: RebootRelationalDatabaseRequest
-    ): Future[RebootRelationalDatabaseResult] = service.rebootRelationalDatabase(params).promise().toFuture
-    @inline def releaseStaticIpFuture(params: ReleaseStaticIpRequest): Future[ReleaseStaticIpResult] =
-      service.releaseStaticIp(params).promise().toFuture
-    @inline def resetDistributionCacheFuture(
-        params: ResetDistributionCacheRequest
-    ): Future[ResetDistributionCacheResult] = service.resetDistributionCache(params).promise().toFuture
-    @inline def sendContactMethodVerificationFuture(
-        params: SendContactMethodVerificationRequest
-    ): Future[SendContactMethodVerificationResult] = service.sendContactMethodVerification(params).promise().toFuture
-    @inline def startInstanceFuture(params: StartInstanceRequest): Future[StartInstanceResult] =
-      service.startInstance(params).promise().toFuture
-    @inline def startRelationalDatabaseFuture(
-        params: StartRelationalDatabaseRequest
-    ): Future[StartRelationalDatabaseResult] = service.startRelationalDatabase(params).promise().toFuture
-    @inline def stopInstanceFuture(params: StopInstanceRequest): Future[StopInstanceResult] =
-      service.stopInstance(params).promise().toFuture
-    @inline def stopRelationalDatabaseFuture(
-        params: StopRelationalDatabaseRequest
-    ): Future[StopRelationalDatabaseResult] = service.stopRelationalDatabase(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResult] =
-      service.tagResource(params).promise().toFuture
-    @inline def testAlarmFuture(params: TestAlarmRequest): Future[TestAlarmResult] =
-      service.testAlarm(params).promise().toFuture
-    @inline def unpeerVpcFuture(params: UnpeerVpcRequest): Future[UnpeerVpcResult] =
-      service.unpeerVpc(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResult] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateDistributionBundleFuture(
-        params: UpdateDistributionBundleRequest
-    ): Future[UpdateDistributionBundleResult] = service.updateDistributionBundle(params).promise().toFuture
-    @inline def updateDistributionFuture(params: UpdateDistributionRequest): Future[UpdateDistributionResult] =
-      service.updateDistribution(params).promise().toFuture
-    @inline def updateDomainEntryFuture(params: UpdateDomainEntryRequest): Future[UpdateDomainEntryResult] =
-      service.updateDomainEntry(params).promise().toFuture
-    @inline def updateLoadBalancerAttributeFuture(
-        params: UpdateLoadBalancerAttributeRequest
-    ): Future[UpdateLoadBalancerAttributeResult] = service.updateLoadBalancerAttribute(params).promise().toFuture
-    @inline def updateRelationalDatabaseFuture(
-        params: UpdateRelationalDatabaseRequest
-    ): Future[UpdateRelationalDatabaseResult] = service.updateRelationalDatabase(params).promise().toFuture
-    @inline def updateRelationalDatabaseParametersFuture(
-        params: UpdateRelationalDatabaseParametersRequest
-    ): Future[UpdateRelationalDatabaseParametersResult] =
-      service.updateRelationalDatabaseParameters(params).promise().toFuture
+    @inline def allocateStaticIpFuture(params: AllocateStaticIpRequest): Future[AllocateStaticIpResult] = service.allocateStaticIp(params).promise().toFuture
+    @inline def attachCertificateToDistributionFuture(params: AttachCertificateToDistributionRequest): Future[AttachCertificateToDistributionResult] = service.attachCertificateToDistribution(params).promise().toFuture
+    @inline def attachDiskFuture(params: AttachDiskRequest): Future[AttachDiskResult] = service.attachDisk(params).promise().toFuture
+    @inline def attachInstancesToLoadBalancerFuture(params: AttachInstancesToLoadBalancerRequest): Future[AttachInstancesToLoadBalancerResult] = service.attachInstancesToLoadBalancer(params).promise().toFuture
+    @inline def attachLoadBalancerTlsCertificateFuture(params: AttachLoadBalancerTlsCertificateRequest): Future[AttachLoadBalancerTlsCertificateResult] = service.attachLoadBalancerTlsCertificate(params).promise().toFuture
+    @inline def attachStaticIpFuture(params: AttachStaticIpRequest): Future[AttachStaticIpResult] = service.attachStaticIp(params).promise().toFuture
+    @inline def closeInstancePublicPortsFuture(params: CloseInstancePublicPortsRequest): Future[CloseInstancePublicPortsResult] = service.closeInstancePublicPorts(params).promise().toFuture
+    @inline def copySnapshotFuture(params: CopySnapshotRequest): Future[CopySnapshotResult] = service.copySnapshot(params).promise().toFuture
+    @inline def createCertificateFuture(params: CreateCertificateRequest): Future[CreateCertificateResult] = service.createCertificate(params).promise().toFuture
+    @inline def createCloudFormationStackFuture(params: CreateCloudFormationStackRequest): Future[CreateCloudFormationStackResult] = service.createCloudFormationStack(params).promise().toFuture
+    @inline def createContactMethodFuture(params: CreateContactMethodRequest): Future[CreateContactMethodResult] = service.createContactMethod(params).promise().toFuture
+    @inline def createDiskFromSnapshotFuture(params: CreateDiskFromSnapshotRequest): Future[CreateDiskFromSnapshotResult] = service.createDiskFromSnapshot(params).promise().toFuture
+    @inline def createDiskFuture(params: CreateDiskRequest): Future[CreateDiskResult] = service.createDisk(params).promise().toFuture
+    @inline def createDiskSnapshotFuture(params: CreateDiskSnapshotRequest): Future[CreateDiskSnapshotResult] = service.createDiskSnapshot(params).promise().toFuture
+    @inline def createDistributionFuture(params: CreateDistributionRequest): Future[CreateDistributionResult] = service.createDistribution(params).promise().toFuture
+    @inline def createDomainEntryFuture(params: CreateDomainEntryRequest): Future[CreateDomainEntryResult] = service.createDomainEntry(params).promise().toFuture
+    @inline def createDomainFuture(params: CreateDomainRequest): Future[CreateDomainResult] = service.createDomain(params).promise().toFuture
+    @inline def createInstanceSnapshotFuture(params: CreateInstanceSnapshotRequest): Future[CreateInstanceSnapshotResult] = service.createInstanceSnapshot(params).promise().toFuture
+    @inline def createInstancesFromSnapshotFuture(params: CreateInstancesFromSnapshotRequest): Future[CreateInstancesFromSnapshotResult] = service.createInstancesFromSnapshot(params).promise().toFuture
+    @inline def createInstancesFuture(params: CreateInstancesRequest): Future[CreateInstancesResult] = service.createInstances(params).promise().toFuture
+    @inline def createKeyPairFuture(params: CreateKeyPairRequest): Future[CreateKeyPairResult] = service.createKeyPair(params).promise().toFuture
+    @inline def createLoadBalancerFuture(params: CreateLoadBalancerRequest): Future[CreateLoadBalancerResult] = service.createLoadBalancer(params).promise().toFuture
+    @inline def createLoadBalancerTlsCertificateFuture(params: CreateLoadBalancerTlsCertificateRequest): Future[CreateLoadBalancerTlsCertificateResult] = service.createLoadBalancerTlsCertificate(params).promise().toFuture
+    @inline def createRelationalDatabaseFromSnapshotFuture(params: CreateRelationalDatabaseFromSnapshotRequest): Future[CreateRelationalDatabaseFromSnapshotResult] = service.createRelationalDatabaseFromSnapshot(params).promise().toFuture
+    @inline def createRelationalDatabaseFuture(params: CreateRelationalDatabaseRequest): Future[CreateRelationalDatabaseResult] = service.createRelationalDatabase(params).promise().toFuture
+    @inline def createRelationalDatabaseSnapshotFuture(params: CreateRelationalDatabaseSnapshotRequest): Future[CreateRelationalDatabaseSnapshotResult] = service.createRelationalDatabaseSnapshot(params).promise().toFuture
+    @inline def deleteAlarmFuture(params: DeleteAlarmRequest): Future[DeleteAlarmResult] = service.deleteAlarm(params).promise().toFuture
+    @inline def deleteAutoSnapshotFuture(params: DeleteAutoSnapshotRequest): Future[DeleteAutoSnapshotResult] = service.deleteAutoSnapshot(params).promise().toFuture
+    @inline def deleteCertificateFuture(params: DeleteCertificateRequest): Future[DeleteCertificateResult] = service.deleteCertificate(params).promise().toFuture
+    @inline def deleteContactMethodFuture(params: DeleteContactMethodRequest): Future[DeleteContactMethodResult] = service.deleteContactMethod(params).promise().toFuture
+    @inline def deleteDiskFuture(params: DeleteDiskRequest): Future[DeleteDiskResult] = service.deleteDisk(params).promise().toFuture
+    @inline def deleteDiskSnapshotFuture(params: DeleteDiskSnapshotRequest): Future[DeleteDiskSnapshotResult] = service.deleteDiskSnapshot(params).promise().toFuture
+    @inline def deleteDistributionFuture(params: DeleteDistributionRequest): Future[DeleteDistributionResult] = service.deleteDistribution(params).promise().toFuture
+    @inline def deleteDomainEntryFuture(params: DeleteDomainEntryRequest): Future[DeleteDomainEntryResult] = service.deleteDomainEntry(params).promise().toFuture
+    @inline def deleteDomainFuture(params: DeleteDomainRequest): Future[DeleteDomainResult] = service.deleteDomain(params).promise().toFuture
+    @inline def deleteInstanceFuture(params: DeleteInstanceRequest): Future[DeleteInstanceResult] = service.deleteInstance(params).promise().toFuture
+    @inline def deleteInstanceSnapshotFuture(params: DeleteInstanceSnapshotRequest): Future[DeleteInstanceSnapshotResult] = service.deleteInstanceSnapshot(params).promise().toFuture
+    @inline def deleteKeyPairFuture(params: DeleteKeyPairRequest): Future[DeleteKeyPairResult] = service.deleteKeyPair(params).promise().toFuture
+    @inline def deleteKnownHostKeysFuture(params: DeleteKnownHostKeysRequest): Future[DeleteKnownHostKeysResult] = service.deleteKnownHostKeys(params).promise().toFuture
+    @inline def deleteLoadBalancerFuture(params: DeleteLoadBalancerRequest): Future[DeleteLoadBalancerResult] = service.deleteLoadBalancer(params).promise().toFuture
+    @inline def deleteLoadBalancerTlsCertificateFuture(params: DeleteLoadBalancerTlsCertificateRequest): Future[DeleteLoadBalancerTlsCertificateResult] = service.deleteLoadBalancerTlsCertificate(params).promise().toFuture
+    @inline def deleteRelationalDatabaseFuture(params: DeleteRelationalDatabaseRequest): Future[DeleteRelationalDatabaseResult] = service.deleteRelationalDatabase(params).promise().toFuture
+    @inline def deleteRelationalDatabaseSnapshotFuture(params: DeleteRelationalDatabaseSnapshotRequest): Future[DeleteRelationalDatabaseSnapshotResult] = service.deleteRelationalDatabaseSnapshot(params).promise().toFuture
+    @inline def detachCertificateFromDistributionFuture(params: DetachCertificateFromDistributionRequest): Future[DetachCertificateFromDistributionResult] = service.detachCertificateFromDistribution(params).promise().toFuture
+    @inline def detachDiskFuture(params: DetachDiskRequest): Future[DetachDiskResult] = service.detachDisk(params).promise().toFuture
+    @inline def detachInstancesFromLoadBalancerFuture(params: DetachInstancesFromLoadBalancerRequest): Future[DetachInstancesFromLoadBalancerResult] = service.detachInstancesFromLoadBalancer(params).promise().toFuture
+    @inline def detachStaticIpFuture(params: DetachStaticIpRequest): Future[DetachStaticIpResult] = service.detachStaticIp(params).promise().toFuture
+    @inline def disableAddOnFuture(params: DisableAddOnRequest): Future[DisableAddOnResult] = service.disableAddOn(params).promise().toFuture
+    @inline def downloadDefaultKeyPairFuture(params: DownloadDefaultKeyPairRequest): Future[DownloadDefaultKeyPairResult] = service.downloadDefaultKeyPair(params).promise().toFuture
+    @inline def enableAddOnFuture(params: EnableAddOnRequest): Future[EnableAddOnResult] = service.enableAddOn(params).promise().toFuture
+    @inline def exportSnapshotFuture(params: ExportSnapshotRequest): Future[ExportSnapshotResult] = service.exportSnapshot(params).promise().toFuture
+    @inline def getActiveNamesFuture(params: GetActiveNamesRequest): Future[GetActiveNamesResult] = service.getActiveNames(params).promise().toFuture
+    @inline def getAlarmsFuture(params: GetAlarmsRequest): Future[GetAlarmsResult] = service.getAlarms(params).promise().toFuture
+    @inline def getAutoSnapshotsFuture(params: GetAutoSnapshotsRequest): Future[GetAutoSnapshotsResult] = service.getAutoSnapshots(params).promise().toFuture
+    @inline def getBlueprintsFuture(params: GetBlueprintsRequest): Future[GetBlueprintsResult] = service.getBlueprints(params).promise().toFuture
+    @inline def getBundlesFuture(params: GetBundlesRequest): Future[GetBundlesResult] = service.getBundles(params).promise().toFuture
+    @inline def getCertificatesFuture(params: GetCertificatesRequest): Future[GetCertificatesResult] = service.getCertificates(params).promise().toFuture
+    @inline def getCloudFormationStackRecordsFuture(params: GetCloudFormationStackRecordsRequest): Future[GetCloudFormationStackRecordsResult] = service.getCloudFormationStackRecords(params).promise().toFuture
+    @inline def getContactMethodsFuture(params: GetContactMethodsRequest): Future[GetContactMethodsResult] = service.getContactMethods(params).promise().toFuture
+    @inline def getDiskFuture(params: GetDiskRequest): Future[GetDiskResult] = service.getDisk(params).promise().toFuture
+    @inline def getDiskSnapshotFuture(params: GetDiskSnapshotRequest): Future[GetDiskSnapshotResult] = service.getDiskSnapshot(params).promise().toFuture
+    @inline def getDiskSnapshotsFuture(params: GetDiskSnapshotsRequest): Future[GetDiskSnapshotsResult] = service.getDiskSnapshots(params).promise().toFuture
+    @inline def getDisksFuture(params: GetDisksRequest): Future[GetDisksResult] = service.getDisks(params).promise().toFuture
+    @inline def getDistributionBundlesFuture(params: GetDistributionBundlesRequest): Future[GetDistributionBundlesResult] = service.getDistributionBundles(params).promise().toFuture
+    @inline def getDistributionLatestCacheResetFuture(params: GetDistributionLatestCacheResetRequest): Future[GetDistributionLatestCacheResetResult] = service.getDistributionLatestCacheReset(params).promise().toFuture
+    @inline def getDistributionMetricDataFuture(params: GetDistributionMetricDataRequest): Future[GetDistributionMetricDataResult] = service.getDistributionMetricData(params).promise().toFuture
+    @inline def getDistributionsFuture(params: GetDistributionsRequest): Future[GetDistributionsResult] = service.getDistributions(params).promise().toFuture
+    @inline def getDomainFuture(params: GetDomainRequest): Future[GetDomainResult] = service.getDomain(params).promise().toFuture
+    @inline def getDomainsFuture(params: GetDomainsRequest): Future[GetDomainsResult] = service.getDomains(params).promise().toFuture
+    @inline def getExportSnapshotRecordsFuture(params: GetExportSnapshotRecordsRequest): Future[GetExportSnapshotRecordsResult] = service.getExportSnapshotRecords(params).promise().toFuture
+    @inline def getInstanceAccessDetailsFuture(params: GetInstanceAccessDetailsRequest): Future[GetInstanceAccessDetailsResult] = service.getInstanceAccessDetails(params).promise().toFuture
+    @inline def getInstanceFuture(params: GetInstanceRequest): Future[GetInstanceResult] = service.getInstance(params).promise().toFuture
+    @inline def getInstanceMetricDataFuture(params: GetInstanceMetricDataRequest): Future[GetInstanceMetricDataResult] = service.getInstanceMetricData(params).promise().toFuture
+    @inline def getInstancePortStatesFuture(params: GetInstancePortStatesRequest): Future[GetInstancePortStatesResult] = service.getInstancePortStates(params).promise().toFuture
+    @inline def getInstanceSnapshotFuture(params: GetInstanceSnapshotRequest): Future[GetInstanceSnapshotResult] = service.getInstanceSnapshot(params).promise().toFuture
+    @inline def getInstanceSnapshotsFuture(params: GetInstanceSnapshotsRequest): Future[GetInstanceSnapshotsResult] = service.getInstanceSnapshots(params).promise().toFuture
+    @inline def getInstanceStateFuture(params: GetInstanceStateRequest): Future[GetInstanceStateResult] = service.getInstanceState(params).promise().toFuture
+    @inline def getInstancesFuture(params: GetInstancesRequest): Future[GetInstancesResult] = service.getInstances(params).promise().toFuture
+    @inline def getKeyPairFuture(params: GetKeyPairRequest): Future[GetKeyPairResult] = service.getKeyPair(params).promise().toFuture
+    @inline def getKeyPairsFuture(params: GetKeyPairsRequest): Future[GetKeyPairsResult] = service.getKeyPairs(params).promise().toFuture
+    @inline def getLoadBalancerFuture(params: GetLoadBalancerRequest): Future[GetLoadBalancerResult] = service.getLoadBalancer(params).promise().toFuture
+    @inline def getLoadBalancerMetricDataFuture(params: GetLoadBalancerMetricDataRequest): Future[GetLoadBalancerMetricDataResult] = service.getLoadBalancerMetricData(params).promise().toFuture
+    @inline def getLoadBalancerTlsCertificatesFuture(params: GetLoadBalancerTlsCertificatesRequest): Future[GetLoadBalancerTlsCertificatesResult] = service.getLoadBalancerTlsCertificates(params).promise().toFuture
+    @inline def getLoadBalancersFuture(params: GetLoadBalancersRequest): Future[GetLoadBalancersResult] = service.getLoadBalancers(params).promise().toFuture
+    @inline def getOperationFuture(params: GetOperationRequest): Future[GetOperationResult] = service.getOperation(params).promise().toFuture
+    @inline def getOperationsForResourceFuture(params: GetOperationsForResourceRequest): Future[GetOperationsForResourceResult] = service.getOperationsForResource(params).promise().toFuture
+    @inline def getOperationsFuture(params: GetOperationsRequest): Future[GetOperationsResult] = service.getOperations(params).promise().toFuture
+    @inline def getRegionsFuture(params: GetRegionsRequest): Future[GetRegionsResult] = service.getRegions(params).promise().toFuture
+    @inline def getRelationalDatabaseBlueprintsFuture(params: GetRelationalDatabaseBlueprintsRequest): Future[GetRelationalDatabaseBlueprintsResult] = service.getRelationalDatabaseBlueprints(params).promise().toFuture
+    @inline def getRelationalDatabaseBundlesFuture(params: GetRelationalDatabaseBundlesRequest): Future[GetRelationalDatabaseBundlesResult] = service.getRelationalDatabaseBundles(params).promise().toFuture
+    @inline def getRelationalDatabaseEventsFuture(params: GetRelationalDatabaseEventsRequest): Future[GetRelationalDatabaseEventsResult] = service.getRelationalDatabaseEvents(params).promise().toFuture
+    @inline def getRelationalDatabaseFuture(params: GetRelationalDatabaseRequest): Future[GetRelationalDatabaseResult] = service.getRelationalDatabase(params).promise().toFuture
+    @inline def getRelationalDatabaseLogEventsFuture(params: GetRelationalDatabaseLogEventsRequest): Future[GetRelationalDatabaseLogEventsResult] = service.getRelationalDatabaseLogEvents(params).promise().toFuture
+    @inline def getRelationalDatabaseLogStreamsFuture(params: GetRelationalDatabaseLogStreamsRequest): Future[GetRelationalDatabaseLogStreamsResult] = service.getRelationalDatabaseLogStreams(params).promise().toFuture
+    @inline def getRelationalDatabaseMasterUserPasswordFuture(params: GetRelationalDatabaseMasterUserPasswordRequest): Future[GetRelationalDatabaseMasterUserPasswordResult] = service.getRelationalDatabaseMasterUserPassword(params).promise().toFuture
+    @inline def getRelationalDatabaseMetricDataFuture(params: GetRelationalDatabaseMetricDataRequest): Future[GetRelationalDatabaseMetricDataResult] = service.getRelationalDatabaseMetricData(params).promise().toFuture
+    @inline def getRelationalDatabaseParametersFuture(params: GetRelationalDatabaseParametersRequest): Future[GetRelationalDatabaseParametersResult] = service.getRelationalDatabaseParameters(params).promise().toFuture
+    @inline def getRelationalDatabaseSnapshotFuture(params: GetRelationalDatabaseSnapshotRequest): Future[GetRelationalDatabaseSnapshotResult] = service.getRelationalDatabaseSnapshot(params).promise().toFuture
+    @inline def getRelationalDatabaseSnapshotsFuture(params: GetRelationalDatabaseSnapshotsRequest): Future[GetRelationalDatabaseSnapshotsResult] = service.getRelationalDatabaseSnapshots(params).promise().toFuture
+    @inline def getRelationalDatabasesFuture(params: GetRelationalDatabasesRequest): Future[GetRelationalDatabasesResult] = service.getRelationalDatabases(params).promise().toFuture
+    @inline def getStaticIpFuture(params: GetStaticIpRequest): Future[GetStaticIpResult] = service.getStaticIp(params).promise().toFuture
+    @inline def getStaticIpsFuture(params: GetStaticIpsRequest): Future[GetStaticIpsResult] = service.getStaticIps(params).promise().toFuture
+    @inline def importKeyPairFuture(params: ImportKeyPairRequest): Future[ImportKeyPairResult] = service.importKeyPair(params).promise().toFuture
+    @inline def isVpcPeeredFuture(params: IsVpcPeeredRequest): Future[IsVpcPeeredResult] = service.isVpcPeered(params).promise().toFuture
+    @inline def openInstancePublicPortsFuture(params: OpenInstancePublicPortsRequest): Future[OpenInstancePublicPortsResult] = service.openInstancePublicPorts(params).promise().toFuture
+    @inline def peerVpcFuture(params: PeerVpcRequest): Future[PeerVpcResult] = service.peerVpc(params).promise().toFuture
+    @inline def putAlarmFuture(params: PutAlarmRequest): Future[PutAlarmResult] = service.putAlarm(params).promise().toFuture
+    @inline def putInstancePublicPortsFuture(params: PutInstancePublicPortsRequest): Future[PutInstancePublicPortsResult] = service.putInstancePublicPorts(params).promise().toFuture
+    @inline def rebootInstanceFuture(params: RebootInstanceRequest): Future[RebootInstanceResult] = service.rebootInstance(params).promise().toFuture
+    @inline def rebootRelationalDatabaseFuture(params: RebootRelationalDatabaseRequest): Future[RebootRelationalDatabaseResult] = service.rebootRelationalDatabase(params).promise().toFuture
+    @inline def releaseStaticIpFuture(params: ReleaseStaticIpRequest): Future[ReleaseStaticIpResult] = service.releaseStaticIp(params).promise().toFuture
+    @inline def resetDistributionCacheFuture(params: ResetDistributionCacheRequest): Future[ResetDistributionCacheResult] = service.resetDistributionCache(params).promise().toFuture
+    @inline def sendContactMethodVerificationFuture(params: SendContactMethodVerificationRequest): Future[SendContactMethodVerificationResult] = service.sendContactMethodVerification(params).promise().toFuture
+    @inline def startInstanceFuture(params: StartInstanceRequest): Future[StartInstanceResult] = service.startInstance(params).promise().toFuture
+    @inline def startRelationalDatabaseFuture(params: StartRelationalDatabaseRequest): Future[StartRelationalDatabaseResult] = service.startRelationalDatabase(params).promise().toFuture
+    @inline def stopInstanceFuture(params: StopInstanceRequest): Future[StopInstanceResult] = service.stopInstance(params).promise().toFuture
+    @inline def stopRelationalDatabaseFuture(params: StopRelationalDatabaseRequest): Future[StopRelationalDatabaseResult] = service.stopRelationalDatabase(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResult] = service.tagResource(params).promise().toFuture
+    @inline def testAlarmFuture(params: TestAlarmRequest): Future[TestAlarmResult] = service.testAlarm(params).promise().toFuture
+    @inline def unpeerVpcFuture(params: UnpeerVpcRequest): Future[UnpeerVpcResult] = service.unpeerVpc(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResult] = service.untagResource(params).promise().toFuture
+    @inline def updateDistributionBundleFuture(params: UpdateDistributionBundleRequest): Future[UpdateDistributionBundleResult] = service.updateDistributionBundle(params).promise().toFuture
+    @inline def updateDistributionFuture(params: UpdateDistributionRequest): Future[UpdateDistributionResult] = service.updateDistribution(params).promise().toFuture
+    @inline def updateDomainEntryFuture(params: UpdateDomainEntryRequest): Future[UpdateDomainEntryResult] = service.updateDomainEntry(params).promise().toFuture
+    @inline def updateLoadBalancerAttributeFuture(params: UpdateLoadBalancerAttributeRequest): Future[UpdateLoadBalancerAttributeResult] = service.updateLoadBalancerAttribute(params).promise().toFuture
+    @inline def updateRelationalDatabaseFuture(params: UpdateRelationalDatabaseRequest): Future[UpdateRelationalDatabaseResult] = service.updateRelationalDatabase(params).promise().toFuture
+    @inline def updateRelationalDatabaseParametersFuture(params: UpdateRelationalDatabaseParametersRequest): Future[UpdateRelationalDatabaseParametersResult] = service.updateRelationalDatabaseParameters(params).promise().toFuture
   }
 }
 
@@ -435,23 +242,15 @@ package lightsail {
     def this(config: AWSConfig) = this()
 
     def allocateStaticIp(params: AllocateStaticIpRequest): Request[AllocateStaticIpResult] = js.native
-    def attachCertificateToDistribution(
-        params: AttachCertificateToDistributionRequest
-    ): Request[AttachCertificateToDistributionResult] = js.native
+    def attachCertificateToDistribution(params: AttachCertificateToDistributionRequest): Request[AttachCertificateToDistributionResult] = js.native
     def attachDisk(params: AttachDiskRequest): Request[AttachDiskResult] = js.native
-    def attachInstancesToLoadBalancer(
-        params: AttachInstancesToLoadBalancerRequest
-    ): Request[AttachInstancesToLoadBalancerResult] = js.native
-    def attachLoadBalancerTlsCertificate(
-        params: AttachLoadBalancerTlsCertificateRequest
-    ): Request[AttachLoadBalancerTlsCertificateResult] = js.native
+    def attachInstancesToLoadBalancer(params: AttachInstancesToLoadBalancerRequest): Request[AttachInstancesToLoadBalancerResult] = js.native
+    def attachLoadBalancerTlsCertificate(params: AttachLoadBalancerTlsCertificateRequest): Request[AttachLoadBalancerTlsCertificateResult] = js.native
     def attachStaticIp(params: AttachStaticIpRequest): Request[AttachStaticIpResult] = js.native
-    def closeInstancePublicPorts(params: CloseInstancePublicPortsRequest): Request[CloseInstancePublicPortsResult] =
-      js.native
+    def closeInstancePublicPorts(params: CloseInstancePublicPortsRequest): Request[CloseInstancePublicPortsResult] = js.native
     def copySnapshot(params: CopySnapshotRequest): Request[CopySnapshotResult] = js.native
     def createCertificate(params: CreateCertificateRequest): Request[CreateCertificateResult] = js.native
-    def createCloudFormationStack(params: CreateCloudFormationStackRequest): Request[CreateCloudFormationStackResult] =
-      js.native
+    def createCloudFormationStack(params: CreateCloudFormationStackRequest): Request[CreateCloudFormationStackResult] = js.native
     def createContactMethod(params: CreateContactMethodRequest): Request[CreateContactMethodResult] = js.native
     def createDisk(params: CreateDiskRequest): Request[CreateDiskResult] = js.native
     def createDiskFromSnapshot(params: CreateDiskFromSnapshotRequest): Request[CreateDiskFromSnapshotResult] = js.native
@@ -461,22 +260,13 @@ package lightsail {
     def createDomainEntry(params: CreateDomainEntryRequest): Request[CreateDomainEntryResult] = js.native
     def createInstanceSnapshot(params: CreateInstanceSnapshotRequest): Request[CreateInstanceSnapshotResult] = js.native
     def createInstances(params: CreateInstancesRequest): Request[CreateInstancesResult] = js.native
-    def createInstancesFromSnapshot(
-        params: CreateInstancesFromSnapshotRequest
-    ): Request[CreateInstancesFromSnapshotResult] = js.native
+    def createInstancesFromSnapshot(params: CreateInstancesFromSnapshotRequest): Request[CreateInstancesFromSnapshotResult] = js.native
     def createKeyPair(params: CreateKeyPairRequest): Request[CreateKeyPairResult] = js.native
     def createLoadBalancer(params: CreateLoadBalancerRequest): Request[CreateLoadBalancerResult] = js.native
-    def createLoadBalancerTlsCertificate(
-        params: CreateLoadBalancerTlsCertificateRequest
-    ): Request[CreateLoadBalancerTlsCertificateResult] = js.native
-    def createRelationalDatabase(params: CreateRelationalDatabaseRequest): Request[CreateRelationalDatabaseResult] =
-      js.native
-    def createRelationalDatabaseFromSnapshot(
-        params: CreateRelationalDatabaseFromSnapshotRequest
-    ): Request[CreateRelationalDatabaseFromSnapshotResult] = js.native
-    def createRelationalDatabaseSnapshot(
-        params: CreateRelationalDatabaseSnapshotRequest
-    ): Request[CreateRelationalDatabaseSnapshotResult] = js.native
+    def createLoadBalancerTlsCertificate(params: CreateLoadBalancerTlsCertificateRequest): Request[CreateLoadBalancerTlsCertificateResult] = js.native
+    def createRelationalDatabase(params: CreateRelationalDatabaseRequest): Request[CreateRelationalDatabaseResult] = js.native
+    def createRelationalDatabaseFromSnapshot(params: CreateRelationalDatabaseFromSnapshotRequest): Request[CreateRelationalDatabaseFromSnapshotResult] = js.native
+    def createRelationalDatabaseSnapshot(params: CreateRelationalDatabaseSnapshotRequest): Request[CreateRelationalDatabaseSnapshotResult] = js.native
     def deleteAlarm(params: DeleteAlarmRequest): Request[DeleteAlarmResult] = js.native
     def deleteAutoSnapshot(params: DeleteAutoSnapshotRequest): Request[DeleteAutoSnapshotResult] = js.native
     def deleteCertificate(params: DeleteCertificateRequest): Request[DeleteCertificateResult] = js.native
@@ -491,21 +281,12 @@ package lightsail {
     def deleteKeyPair(params: DeleteKeyPairRequest): Request[DeleteKeyPairResult] = js.native
     def deleteKnownHostKeys(params: DeleteKnownHostKeysRequest): Request[DeleteKnownHostKeysResult] = js.native
     def deleteLoadBalancer(params: DeleteLoadBalancerRequest): Request[DeleteLoadBalancerResult] = js.native
-    def deleteLoadBalancerTlsCertificate(
-        params: DeleteLoadBalancerTlsCertificateRequest
-    ): Request[DeleteLoadBalancerTlsCertificateResult] = js.native
-    def deleteRelationalDatabase(params: DeleteRelationalDatabaseRequest): Request[DeleteRelationalDatabaseResult] =
-      js.native
-    def deleteRelationalDatabaseSnapshot(
-        params: DeleteRelationalDatabaseSnapshotRequest
-    ): Request[DeleteRelationalDatabaseSnapshotResult] = js.native
-    def detachCertificateFromDistribution(
-        params: DetachCertificateFromDistributionRequest
-    ): Request[DetachCertificateFromDistributionResult] = js.native
+    def deleteLoadBalancerTlsCertificate(params: DeleteLoadBalancerTlsCertificateRequest): Request[DeleteLoadBalancerTlsCertificateResult] = js.native
+    def deleteRelationalDatabase(params: DeleteRelationalDatabaseRequest): Request[DeleteRelationalDatabaseResult] = js.native
+    def deleteRelationalDatabaseSnapshot(params: DeleteRelationalDatabaseSnapshotRequest): Request[DeleteRelationalDatabaseSnapshotResult] = js.native
+    def detachCertificateFromDistribution(params: DetachCertificateFromDistributionRequest): Request[DetachCertificateFromDistributionResult] = js.native
     def detachDisk(params: DetachDiskRequest): Request[DetachDiskResult] = js.native
-    def detachInstancesFromLoadBalancer(
-        params: DetachInstancesFromLoadBalancerRequest
-    ): Request[DetachInstancesFromLoadBalancerResult] = js.native
+    def detachInstancesFromLoadBalancer(params: DetachInstancesFromLoadBalancerRequest): Request[DetachInstancesFromLoadBalancerResult] = js.native
     def detachStaticIp(params: DetachStaticIpRequest): Request[DetachStaticIpResult] = js.native
     def disableAddOn(params: DisableAddOnRequest): Request[DisableAddOnResult] = js.native
     def downloadDefaultKeyPair(params: DownloadDefaultKeyPairRequest): Request[DownloadDefaultKeyPairResult] = js.native
@@ -517,28 +298,21 @@ package lightsail {
     def getBlueprints(params: GetBlueprintsRequest): Request[GetBlueprintsResult] = js.native
     def getBundles(params: GetBundlesRequest): Request[GetBundlesResult] = js.native
     def getCertificates(params: GetCertificatesRequest): Request[GetCertificatesResult] = js.native
-    def getCloudFormationStackRecords(
-        params: GetCloudFormationStackRecordsRequest
-    ): Request[GetCloudFormationStackRecordsResult] = js.native
+    def getCloudFormationStackRecords(params: GetCloudFormationStackRecordsRequest): Request[GetCloudFormationStackRecordsResult] = js.native
     def getContactMethods(params: GetContactMethodsRequest): Request[GetContactMethodsResult] = js.native
     def getDisk(params: GetDiskRequest): Request[GetDiskResult] = js.native
     def getDiskSnapshot(params: GetDiskSnapshotRequest): Request[GetDiskSnapshotResult] = js.native
     def getDiskSnapshots(params: GetDiskSnapshotsRequest): Request[GetDiskSnapshotsResult] = js.native
     def getDisks(params: GetDisksRequest): Request[GetDisksResult] = js.native
     def getDistributionBundles(params: GetDistributionBundlesRequest): Request[GetDistributionBundlesResult] = js.native
-    def getDistributionLatestCacheReset(
-        params: GetDistributionLatestCacheResetRequest
-    ): Request[GetDistributionLatestCacheResetResult] = js.native
-    def getDistributionMetricData(params: GetDistributionMetricDataRequest): Request[GetDistributionMetricDataResult] =
-      js.native
+    def getDistributionLatestCacheReset(params: GetDistributionLatestCacheResetRequest): Request[GetDistributionLatestCacheResetResult] = js.native
+    def getDistributionMetricData(params: GetDistributionMetricDataRequest): Request[GetDistributionMetricDataResult] = js.native
     def getDistributions(params: GetDistributionsRequest): Request[GetDistributionsResult] = js.native
     def getDomain(params: GetDomainRequest): Request[GetDomainResult] = js.native
     def getDomains(params: GetDomainsRequest): Request[GetDomainsResult] = js.native
-    def getExportSnapshotRecords(params: GetExportSnapshotRecordsRequest): Request[GetExportSnapshotRecordsResult] =
-      js.native
+    def getExportSnapshotRecords(params: GetExportSnapshotRecordsRequest): Request[GetExportSnapshotRecordsResult] = js.native
     def getInstance(params: GetInstanceRequest): Request[GetInstanceResult] = js.native
-    def getInstanceAccessDetails(params: GetInstanceAccessDetailsRequest): Request[GetInstanceAccessDetailsResult] =
-      js.native
+    def getInstanceAccessDetails(params: GetInstanceAccessDetailsRequest): Request[GetInstanceAccessDetailsResult] = js.native
     def getInstanceMetricData(params: GetInstanceMetricDataRequest): Request[GetInstanceMetricDataResult] = js.native
     def getInstancePortStates(params: GetInstancePortStatesRequest): Request[GetInstancePortStatesResult] = js.native
     def getInstanceSnapshot(params: GetInstanceSnapshotRequest): Request[GetInstanceSnapshotResult] = js.native
@@ -548,69 +322,40 @@ package lightsail {
     def getKeyPair(params: GetKeyPairRequest): Request[GetKeyPairResult] = js.native
     def getKeyPairs(params: GetKeyPairsRequest): Request[GetKeyPairsResult] = js.native
     def getLoadBalancer(params: GetLoadBalancerRequest): Request[GetLoadBalancerResult] = js.native
-    def getLoadBalancerMetricData(params: GetLoadBalancerMetricDataRequest): Request[GetLoadBalancerMetricDataResult] =
-      js.native
-    def getLoadBalancerTlsCertificates(
-        params: GetLoadBalancerTlsCertificatesRequest
-    ): Request[GetLoadBalancerTlsCertificatesResult] = js.native
+    def getLoadBalancerMetricData(params: GetLoadBalancerMetricDataRequest): Request[GetLoadBalancerMetricDataResult] = js.native
+    def getLoadBalancerTlsCertificates(params: GetLoadBalancerTlsCertificatesRequest): Request[GetLoadBalancerTlsCertificatesResult] = js.native
     def getLoadBalancers(params: GetLoadBalancersRequest): Request[GetLoadBalancersResult] = js.native
     def getOperation(params: GetOperationRequest): Request[GetOperationResult] = js.native
     def getOperations(params: GetOperationsRequest): Request[GetOperationsResult] = js.native
-    def getOperationsForResource(params: GetOperationsForResourceRequest): Request[GetOperationsForResourceResult] =
-      js.native
+    def getOperationsForResource(params: GetOperationsForResourceRequest): Request[GetOperationsForResourceResult] = js.native
     def getRegions(params: GetRegionsRequest): Request[GetRegionsResult] = js.native
     def getRelationalDatabase(params: GetRelationalDatabaseRequest): Request[GetRelationalDatabaseResult] = js.native
-    def getRelationalDatabaseBlueprints(
-        params: GetRelationalDatabaseBlueprintsRequest
-    ): Request[GetRelationalDatabaseBlueprintsResult] = js.native
-    def getRelationalDatabaseBundles(
-        params: GetRelationalDatabaseBundlesRequest
-    ): Request[GetRelationalDatabaseBundlesResult] = js.native
-    def getRelationalDatabaseEvents(
-        params: GetRelationalDatabaseEventsRequest
-    ): Request[GetRelationalDatabaseEventsResult] = js.native
-    def getRelationalDatabaseLogEvents(
-        params: GetRelationalDatabaseLogEventsRequest
-    ): Request[GetRelationalDatabaseLogEventsResult] = js.native
-    def getRelationalDatabaseLogStreams(
-        params: GetRelationalDatabaseLogStreamsRequest
-    ): Request[GetRelationalDatabaseLogStreamsResult] = js.native
-    def getRelationalDatabaseMasterUserPassword(
-        params: GetRelationalDatabaseMasterUserPasswordRequest
-    ): Request[GetRelationalDatabaseMasterUserPasswordResult] = js.native
-    def getRelationalDatabaseMetricData(
-        params: GetRelationalDatabaseMetricDataRequest
-    ): Request[GetRelationalDatabaseMetricDataResult] = js.native
-    def getRelationalDatabaseParameters(
-        params: GetRelationalDatabaseParametersRequest
-    ): Request[GetRelationalDatabaseParametersResult] = js.native
-    def getRelationalDatabaseSnapshot(
-        params: GetRelationalDatabaseSnapshotRequest
-    ): Request[GetRelationalDatabaseSnapshotResult] = js.native
-    def getRelationalDatabaseSnapshots(
-        params: GetRelationalDatabaseSnapshotsRequest
-    ): Request[GetRelationalDatabaseSnapshotsResult] = js.native
+    def getRelationalDatabaseBlueprints(params: GetRelationalDatabaseBlueprintsRequest): Request[GetRelationalDatabaseBlueprintsResult] = js.native
+    def getRelationalDatabaseBundles(params: GetRelationalDatabaseBundlesRequest): Request[GetRelationalDatabaseBundlesResult] = js.native
+    def getRelationalDatabaseEvents(params: GetRelationalDatabaseEventsRequest): Request[GetRelationalDatabaseEventsResult] = js.native
+    def getRelationalDatabaseLogEvents(params: GetRelationalDatabaseLogEventsRequest): Request[GetRelationalDatabaseLogEventsResult] = js.native
+    def getRelationalDatabaseLogStreams(params: GetRelationalDatabaseLogStreamsRequest): Request[GetRelationalDatabaseLogStreamsResult] = js.native
+    def getRelationalDatabaseMasterUserPassword(params: GetRelationalDatabaseMasterUserPasswordRequest): Request[GetRelationalDatabaseMasterUserPasswordResult] = js.native
+    def getRelationalDatabaseMetricData(params: GetRelationalDatabaseMetricDataRequest): Request[GetRelationalDatabaseMetricDataResult] = js.native
+    def getRelationalDatabaseParameters(params: GetRelationalDatabaseParametersRequest): Request[GetRelationalDatabaseParametersResult] = js.native
+    def getRelationalDatabaseSnapshot(params: GetRelationalDatabaseSnapshotRequest): Request[GetRelationalDatabaseSnapshotResult] = js.native
+    def getRelationalDatabaseSnapshots(params: GetRelationalDatabaseSnapshotsRequest): Request[GetRelationalDatabaseSnapshotsResult] = js.native
     def getRelationalDatabases(params: GetRelationalDatabasesRequest): Request[GetRelationalDatabasesResult] = js.native
     def getStaticIp(params: GetStaticIpRequest): Request[GetStaticIpResult] = js.native
     def getStaticIps(params: GetStaticIpsRequest): Request[GetStaticIpsResult] = js.native
     def importKeyPair(params: ImportKeyPairRequest): Request[ImportKeyPairResult] = js.native
     def isVpcPeered(params: IsVpcPeeredRequest): Request[IsVpcPeeredResult] = js.native
-    def openInstancePublicPorts(params: OpenInstancePublicPortsRequest): Request[OpenInstancePublicPortsResult] =
-      js.native
+    def openInstancePublicPorts(params: OpenInstancePublicPortsRequest): Request[OpenInstancePublicPortsResult] = js.native
     def peerVpc(params: PeerVpcRequest): Request[PeerVpcResult] = js.native
     def putAlarm(params: PutAlarmRequest): Request[PutAlarmResult] = js.native
     def putInstancePublicPorts(params: PutInstancePublicPortsRequest): Request[PutInstancePublicPortsResult] = js.native
     def rebootInstance(params: RebootInstanceRequest): Request[RebootInstanceResult] = js.native
-    def rebootRelationalDatabase(params: RebootRelationalDatabaseRequest): Request[RebootRelationalDatabaseResult] =
-      js.native
+    def rebootRelationalDatabase(params: RebootRelationalDatabaseRequest): Request[RebootRelationalDatabaseResult] = js.native
     def releaseStaticIp(params: ReleaseStaticIpRequest): Request[ReleaseStaticIpResult] = js.native
     def resetDistributionCache(params: ResetDistributionCacheRequest): Request[ResetDistributionCacheResult] = js.native
-    def sendContactMethodVerification(
-        params: SendContactMethodVerificationRequest
-    ): Request[SendContactMethodVerificationResult] = js.native
+    def sendContactMethodVerification(params: SendContactMethodVerificationRequest): Request[SendContactMethodVerificationResult] = js.native
     def startInstance(params: StartInstanceRequest): Request[StartInstanceResult] = js.native
-    def startRelationalDatabase(params: StartRelationalDatabaseRequest): Request[StartRelationalDatabaseResult] =
-      js.native
+    def startRelationalDatabase(params: StartRelationalDatabaseRequest): Request[StartRelationalDatabaseResult] = js.native
     def stopInstance(params: StopInstanceRequest): Request[StopInstanceResult] = js.native
     def stopRelationalDatabase(params: StopRelationalDatabaseRequest): Request[StopRelationalDatabaseResult] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResult] = js.native
@@ -618,17 +363,11 @@ package lightsail {
     def unpeerVpc(params: UnpeerVpcRequest): Request[UnpeerVpcResult] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResult] = js.native
     def updateDistribution(params: UpdateDistributionRequest): Request[UpdateDistributionResult] = js.native
-    def updateDistributionBundle(params: UpdateDistributionBundleRequest): Request[UpdateDistributionBundleResult] =
-      js.native
+    def updateDistributionBundle(params: UpdateDistributionBundleRequest): Request[UpdateDistributionBundleResult] = js.native
     def updateDomainEntry(params: UpdateDomainEntryRequest): Request[UpdateDomainEntryResult] = js.native
-    def updateLoadBalancerAttribute(
-        params: UpdateLoadBalancerAttributeRequest
-    ): Request[UpdateLoadBalancerAttributeResult] = js.native
-    def updateRelationalDatabase(params: UpdateRelationalDatabaseRequest): Request[UpdateRelationalDatabaseResult] =
-      js.native
-    def updateRelationalDatabaseParameters(
-        params: UpdateRelationalDatabaseParametersRequest
-    ): Request[UpdateRelationalDatabaseParametersResult] = js.native
+    def updateLoadBalancerAttribute(params: UpdateLoadBalancerAttributeRequest): Request[UpdateLoadBalancerAttributeResult] = js.native
+    def updateRelationalDatabase(params: UpdateRelationalDatabaseRequest): Request[UpdateRelationalDatabaseResult] = js.native
+    def updateRelationalDatabaseParameters(params: UpdateRelationalDatabaseParametersRequest): Request[UpdateRelationalDatabaseParametersResult] = js.native
   }
 
   @js.native
@@ -1413,8 +1152,7 @@ package lightsail {
     val REVOKED = "REVOKED".asInstanceOf[CertificateStatus]
     val FAILED = "FAILED".asInstanceOf[CertificateStatus]
 
-    val values =
-      js.Object.freeze(js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED))
+    val values = js.Object.freeze(js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED))
   }
 
   /**
@@ -1567,9 +1305,7 @@ package lightsail {
     val LessThanThreshold = "LessThanThreshold".asInstanceOf[ComparisonOperator]
     val LessThanOrEqualToThreshold = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
 
-    val values = js.Object.freeze(
-      js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
-    )
+    val values = js.Object.freeze(js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold))
   }
 
   /**
@@ -1694,9 +1430,7 @@ package lightsail {
       restoreDate.foreach(__v => __obj.updateDynamic("restoreDate")(__v.asInstanceOf[js.Any]))
       sourceResourceName.foreach(__v => __obj.updateDynamic("sourceResourceName")(__v.asInstanceOf[js.Any]))
       sourceSnapshotName.foreach(__v => __obj.updateDynamic("sourceSnapshotName")(__v.asInstanceOf[js.Any]))
-      useLatestRestorableAutoSnapshot.foreach(__v =>
-        __obj.updateDynamic("useLatestRestorableAutoSnapshot")(__v.asInstanceOf[js.Any])
-      )
+      useLatestRestorableAutoSnapshot.foreach(__v => __obj.updateDynamic("useLatestRestorableAutoSnapshot")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CopySnapshotRequest]
     }
   }
@@ -1871,9 +1605,7 @@ package lightsail {
       restoreDate.foreach(__v => __obj.updateDynamic("restoreDate")(__v.asInstanceOf[js.Any]))
       sourceDiskName.foreach(__v => __obj.updateDynamic("sourceDiskName")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      useLatestRestorableAutoSnapshot.foreach(__v =>
-        __obj.updateDynamic("useLatestRestorableAutoSnapshot")(__v.asInstanceOf[js.Any])
-      )
+      useLatestRestorableAutoSnapshot.foreach(__v => __obj.updateDynamic("useLatestRestorableAutoSnapshot")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDiskFromSnapshotRequest]
     }
   }
@@ -2197,9 +1929,7 @@ package lightsail {
       restoreDate.foreach(__v => __obj.updateDynamic("restoreDate")(__v.asInstanceOf[js.Any]))
       sourceInstanceName.foreach(__v => __obj.updateDynamic("sourceInstanceName")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      useLatestRestorableAutoSnapshot.foreach(__v =>
-        __obj.updateDynamic("useLatestRestorableAutoSnapshot")(__v.asInstanceOf[js.Any])
-      )
+      useLatestRestorableAutoSnapshot.foreach(__v => __obj.updateDynamic("useLatestRestorableAutoSnapshot")(__v.asInstanceOf[js.Any]))
       userData.foreach(__v => __obj.updateDynamic("userData")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateInstancesFromSnapshotRequest]
     }
@@ -2352,9 +2082,7 @@ package lightsail {
         "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
       )
 
-      certificateAlternativeNames.foreach(__v =>
-        __obj.updateDynamic("certificateAlternativeNames")(__v.asInstanceOf[js.Any])
-      )
+      certificateAlternativeNames.foreach(__v => __obj.updateDynamic("certificateAlternativeNames")(__v.asInstanceOf[js.Any]))
       certificateDomainName.foreach(__v => __obj.updateDynamic("certificateDomainName")(__v.asInstanceOf[js.Any]))
       certificateName.foreach(__v => __obj.updateDynamic("certificateName")(__v.asInstanceOf[js.Any]))
       healthCheckPath.foreach(__v => __obj.updateDynamic("healthCheckPath")(__v.asInstanceOf[js.Any]))
@@ -2403,9 +2131,7 @@ package lightsail {
         "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
       )
 
-      certificateAlternativeNames.foreach(__v =>
-        __obj.updateDynamic("certificateAlternativeNames")(__v.asInstanceOf[js.Any])
-      )
+      certificateAlternativeNames.foreach(__v => __obj.updateDynamic("certificateAlternativeNames")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLoadBalancerTlsCertificateRequest]
     }
@@ -2459,16 +2185,10 @@ package lightsail {
 
       availabilityZone.foreach(__v => __obj.updateDynamic("availabilityZone")(__v.asInstanceOf[js.Any]))
       publiclyAccessible.foreach(__v => __obj.updateDynamic("publiclyAccessible")(__v.asInstanceOf[js.Any]))
-      relationalDatabaseBundleId.foreach(__v =>
-        __obj.updateDynamic("relationalDatabaseBundleId")(__v.asInstanceOf[js.Any])
-      )
-      relationalDatabaseSnapshotName.foreach(__v =>
-        __obj.updateDynamic("relationalDatabaseSnapshotName")(__v.asInstanceOf[js.Any])
-      )
+      relationalDatabaseBundleId.foreach(__v => __obj.updateDynamic("relationalDatabaseBundleId")(__v.asInstanceOf[js.Any]))
+      relationalDatabaseSnapshotName.foreach(__v => __obj.updateDynamic("relationalDatabaseSnapshotName")(__v.asInstanceOf[js.Any]))
       restoreTime.foreach(__v => __obj.updateDynamic("restoreTime")(__v.asInstanceOf[js.Any]))
-      sourceRelationalDatabaseName.foreach(__v =>
-        __obj.updateDynamic("sourceRelationalDatabaseName")(__v.asInstanceOf[js.Any])
-      )
+      sourceRelationalDatabaseName.foreach(__v => __obj.updateDynamic("sourceRelationalDatabaseName")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       useLatestRestorableTime.foreach(__v => __obj.updateDynamic("useLatestRestorableTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRelationalDatabaseFromSnapshotRequest]
@@ -2532,9 +2252,7 @@ package lightsail {
       availabilityZone.foreach(__v => __obj.updateDynamic("availabilityZone")(__v.asInstanceOf[js.Any]))
       masterUserPassword.foreach(__v => __obj.updateDynamic("masterUserPassword")(__v.asInstanceOf[js.Any]))
       preferredBackupWindow.foreach(__v => __obj.updateDynamic("preferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      preferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("preferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      preferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("preferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       publiclyAccessible.foreach(__v => __obj.updateDynamic("publiclyAccessible")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRelationalDatabaseRequest]
@@ -3141,9 +2859,7 @@ package lightsail {
         "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
       )
 
-      finalRelationalDatabaseSnapshotName.foreach(__v =>
-        __obj.updateDynamic("finalRelationalDatabaseSnapshotName")(__v.asInstanceOf[js.Any])
-      )
+      finalRelationalDatabaseSnapshotName.foreach(__v => __obj.updateDynamic("finalRelationalDatabaseSnapshotName")(__v.asInstanceOf[js.Any]))
       skipFinalSnapshot.foreach(__v => __obj.updateDynamic("skipFinalSnapshot")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteRelationalDatabaseRequest]
     }
@@ -3658,9 +3374,7 @@ package lightsail {
     val Http4xxErrorRate = "Http4xxErrorRate".asInstanceOf[DistributionMetricName]
     val Http5xxErrorRate = "Http5xxErrorRate".asInstanceOf[DistributionMetricName]
 
-    val values = js.Object.freeze(
-      js.Array(Requests, BytesDownloaded, BytesUploaded, TotalErrorRate, Http4xxErrorRate, Http5xxErrorRate)
-    )
+    val values = js.Object.freeze(js.Array(Requests, BytesDownloaded, BytesUploaded, TotalErrorRate, Http4xxErrorRate, Http5xxErrorRate))
   }
 
   /**
@@ -4170,9 +3884,7 @@ package lightsail {
       val __obj = js.Dynamic.literal()
       certificateName.foreach(__v => __obj.updateDynamic("certificateName")(__v.asInstanceOf[js.Any]))
       certificateStatuses.foreach(__v => __obj.updateDynamic("certificateStatuses")(__v.asInstanceOf[js.Any]))
-      includeCertificateDetails.foreach(__v =>
-        __obj.updateDynamic("includeCertificateDetails")(__v.asInstanceOf[js.Any])
-      )
+      includeCertificateDetails.foreach(__v => __obj.updateDynamic("includeCertificateDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCertificatesRequest]
     }
   }
@@ -4222,9 +3934,7 @@ package lightsail {
         nextPageToken: js.UndefOr[String] = js.undefined
     ): GetCloudFormationStackRecordsResult = {
       val __obj = js.Dynamic.literal()
-      cloudFormationStackRecords.foreach(__v =>
-        __obj.updateDynamic("cloudFormationStackRecords")(__v.asInstanceOf[js.Any])
-      )
+      cloudFormationStackRecords.foreach(__v => __obj.updateDynamic("cloudFormationStackRecords")(__v.asInstanceOf[js.Any]))
       nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCloudFormationStackRecordsResult]
     }
@@ -5312,9 +5022,7 @@ package lightsail {
     ): GetRegionsRequest = {
       val __obj = js.Dynamic.literal()
       includeAvailabilityZones.foreach(__v => __obj.updateDynamic("includeAvailabilityZones")(__v.asInstanceOf[js.Any]))
-      includeRelationalDatabaseAvailabilityZones.foreach(__v =>
-        __obj.updateDynamic("includeRelationalDatabaseAvailabilityZones")(__v.asInstanceOf[js.Any])
-      )
+      includeRelationalDatabaseAvailabilityZones.foreach(__v => __obj.updateDynamic("includeRelationalDatabaseAvailabilityZones")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRegionsRequest]
     }
   }
@@ -5735,9 +5443,7 @@ package lightsail {
         relationalDatabaseSnapshot: js.UndefOr[RelationalDatabaseSnapshot] = js.undefined
     ): GetRelationalDatabaseSnapshotResult = {
       val __obj = js.Dynamic.literal()
-      relationalDatabaseSnapshot.foreach(__v =>
-        __obj.updateDynamic("relationalDatabaseSnapshot")(__v.asInstanceOf[js.Any])
-      )
+      relationalDatabaseSnapshot.foreach(__v => __obj.updateDynamic("relationalDatabaseSnapshot")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRelationalDatabaseSnapshotResult]
     }
   }
@@ -5772,9 +5478,7 @@ package lightsail {
     ): GetRelationalDatabaseSnapshotsResult = {
       val __obj = js.Dynamic.literal()
       nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      relationalDatabaseSnapshots.foreach(__v =>
-        __obj.updateDynamic("relationalDatabaseSnapshots")(__v.asInstanceOf[js.Any])
-      )
+      relationalDatabaseSnapshots.foreach(__v => __obj.updateDynamic("relationalDatabaseSnapshots")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRelationalDatabaseSnapshotsResult]
     }
   }
@@ -5902,25 +5606,23 @@ package lightsail {
     val Origin = "Origin".asInstanceOf[HeaderEnum]
     val Referer = "Referer".asInstanceOf[HeaderEnum]
 
-    val values = js.Object.freeze(
-      js.Array(
-        Accept,
-        `Accept-Charset`,
-        `Accept-Datetime`,
-        `Accept-Encoding`,
-        `Accept-Language`,
-        Authorization,
-        `CloudFront-Forwarded-Proto`,
-        `CloudFront-Is-Desktop-Viewer`,
-        `CloudFront-Is-Mobile-Viewer`,
-        `CloudFront-Is-SmartTV-Viewer`,
-        `CloudFront-Is-Tablet-Viewer`,
-        `CloudFront-Viewer-Country`,
-        Host,
-        Origin,
-        Referer
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      Accept,
+      `Accept-Charset`,
+      `Accept-Datetime`,
+      `Accept-Encoding`,
+      `Accept-Language`,
+      Authorization,
+      `CloudFront-Forwarded-Proto`,
+      `CloudFront-Is-Desktop-Viewer`,
+      `CloudFront-Is-Mobile-Viewer`,
+      `CloudFront-Is-SmartTV-Viewer`,
+      `CloudFront-Is-Tablet-Viewer`,
+      `CloudFront-Viewer-Country`,
+      Host,
+      Origin,
+      Referer
+    ))
   }
 
   /**
@@ -6250,21 +5952,19 @@ package lightsail {
     val `Instance.InvalidState` = "Instance.InvalidState".asInstanceOf[InstanceHealthReason]
     val `Instance.IpUnusable` = "Instance.IpUnusable".asInstanceOf[InstanceHealthReason]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `Lb.RegistrationInProgress`,
-        `Lb.InitialHealthChecking`,
-        `Lb.InternalError`,
-        `Instance.ResponseCodeMismatch`,
-        `Instance.Timeout`,
-        `Instance.FailedHealthChecks`,
-        `Instance.NotRegistered`,
-        `Instance.NotInUse`,
-        `Instance.DeregistrationInProgress`,
-        `Instance.InvalidState`,
-        `Instance.IpUnusable`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      `Lb.RegistrationInProgress`,
+      `Lb.InitialHealthChecking`,
+      `Lb.InternalError`,
+      `Instance.ResponseCodeMismatch`,
+      `Instance.Timeout`,
+      `Instance.FailedHealthChecks`,
+      `Instance.NotRegistered`,
+      `Instance.NotInUse`,
+      `Instance.DeregistrationInProgress`,
+      `Instance.InvalidState`,
+      `Instance.IpUnusable`
+    ))
   }
 
   @js.native
@@ -6317,18 +6017,7 @@ package lightsail {
     val BurstCapacityTime = "BurstCapacityTime".asInstanceOf[InstanceMetricName]
     val BurstCapacityPercentage = "BurstCapacityPercentage".asInstanceOf[InstanceMetricName]
 
-    val values = js.Object.freeze(
-      js.Array(
-        CPUUtilization,
-        NetworkIn,
-        NetworkOut,
-        StatusCheckFailed,
-        StatusCheckFailed_Instance,
-        StatusCheckFailed_System,
-        BurstCapacityTime,
-        BurstCapacityPercentage
-      )
-    )
+    val values = js.Object.freeze(js.Array(CPUUtilization, NetworkIn, NetworkOut, StatusCheckFailed, StatusCheckFailed_Instance, StatusCheckFailed_System, BurstCapacityTime, BurstCapacityPercentage))
   }
 
   /**
@@ -6771,11 +6460,9 @@ package lightsail {
   object LoadBalancerAttributeName extends js.Object {
     val HealthCheckPath = "HealthCheckPath".asInstanceOf[LoadBalancerAttributeName]
     val SessionStickinessEnabled = "SessionStickinessEnabled".asInstanceOf[LoadBalancerAttributeName]
-    val SessionStickiness_LB_CookieDurationSeconds =
-      "SessionStickiness_LB_CookieDurationSeconds".asInstanceOf[LoadBalancerAttributeName]
+    val SessionStickiness_LB_CookieDurationSeconds = "SessionStickiness_LB_CookieDurationSeconds".asInstanceOf[LoadBalancerAttributeName]
 
-    val values =
-      js.Object.freeze(js.Array(HealthCheckPath, SessionStickinessEnabled, SessionStickiness_LB_CookieDurationSeconds))
+    val values = js.Object.freeze(js.Array(HealthCheckPath, SessionStickinessEnabled, SessionStickiness_LB_CookieDurationSeconds))
   }
 
   @js.native
@@ -6794,22 +6481,20 @@ package lightsail {
     val RejectedConnectionCount = "RejectedConnectionCount".asInstanceOf[LoadBalancerMetricName]
     val RequestCount = "RequestCount".asInstanceOf[LoadBalancerMetricName]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ClientTLSNegotiationErrorCount,
-        HealthyHostCount,
-        UnhealthyHostCount,
-        HTTPCode_LB_4XX_Count,
-        HTTPCode_LB_5XX_Count,
-        HTTPCode_Instance_2XX_Count,
-        HTTPCode_Instance_3XX_Count,
-        HTTPCode_Instance_4XX_Count,
-        HTTPCode_Instance_5XX_Count,
-        InstanceResponseTime,
-        RejectedConnectionCount,
-        RequestCount
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      ClientTLSNegotiationErrorCount,
+      HealthyHostCount,
+      UnhealthyHostCount,
+      HTTPCode_LB_4XX_Count,
+      HTTPCode_LB_5XX_Count,
+      HTTPCode_Instance_2XX_Count,
+      HTTPCode_Instance_3XX_Count,
+      HTTPCode_Instance_4XX_Count,
+      HTTPCode_Instance_5XX_Count,
+      InstanceResponseTime,
+      RejectedConnectionCount,
+      RequestCount
+    ))
   }
 
   @js.native
@@ -6992,21 +6677,12 @@ package lightsail {
   sealed trait LoadBalancerTlsCertificateFailureReason extends js.Any
   object LoadBalancerTlsCertificateFailureReason extends js.Object {
     val NO_AVAILABLE_CONTACTS = "NO_AVAILABLE_CONTACTS".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
-    val ADDITIONAL_VERIFICATION_REQUIRED =
-      "ADDITIONAL_VERIFICATION_REQUIRED".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
+    val ADDITIONAL_VERIFICATION_REQUIRED = "ADDITIONAL_VERIFICATION_REQUIRED".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
     val DOMAIN_NOT_ALLOWED = "DOMAIN_NOT_ALLOWED".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
     val INVALID_PUBLIC_DOMAIN = "INVALID_PUBLIC_DOMAIN".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
     val OTHER = "OTHER".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
 
-    val values = js.Object.freeze(
-      js.Array(
-        NO_AVAILABLE_CONTACTS,
-        ADDITIONAL_VERIFICATION_REQUIRED,
-        DOMAIN_NOT_ALLOWED,
-        INVALID_PUBLIC_DOMAIN,
-        OTHER
-      )
-    )
+    val values = js.Object.freeze(js.Array(NO_AVAILABLE_CONTACTS, ADDITIONAL_VERIFICATION_REQUIRED, DOMAIN_NOT_ALLOWED, INVALID_PUBLIC_DOMAIN, OTHER))
   }
 
   @js.native
@@ -7062,20 +6738,18 @@ package lightsail {
     val PRIVILEGE_WITHDRAWN = "PRIVILEGE_WITHDRAWN".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
     val A_A_COMPROMISE = "A_A_COMPROMISE".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
 
-    val values = js.Object.freeze(
-      js.Array(
-        UNSPECIFIED,
-        KEY_COMPROMISE,
-        CA_COMPROMISE,
-        AFFILIATION_CHANGED,
-        SUPERCEDED,
-        CESSATION_OF_OPERATION,
-        CERTIFICATE_HOLD,
-        REMOVE_FROM_CRL,
-        PRIVILEGE_WITHDRAWN,
-        A_A_COMPROMISE
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      UNSPECIFIED,
+      KEY_COMPROMISE,
+      CA_COMPROMISE,
+      AFFILIATION_CHANGED,
+      SUPERCEDED,
+      CESSATION_OF_OPERATION,
+      CERTIFICATE_HOLD,
+      REMOVE_FROM_CRL,
+      PRIVILEGE_WITHDRAWN,
+      A_A_COMPROMISE
+    ))
   }
 
   @js.native
@@ -7090,9 +6764,7 @@ package lightsail {
     val FAILED = "FAILED".asInstanceOf[LoadBalancerTlsCertificateStatus]
     val UNKNOWN = "UNKNOWN".asInstanceOf[LoadBalancerTlsCertificateStatus]
 
-    val values = js.Object.freeze(
-      js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED, UNKNOWN)
-    )
+    val values = js.Object.freeze(js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED, UNKNOWN))
   }
 
   /**
@@ -7205,35 +6877,33 @@ package lightsail {
     val BurstCapacityTime = "BurstCapacityTime".asInstanceOf[MetricName]
     val BurstCapacityPercentage = "BurstCapacityPercentage".asInstanceOf[MetricName]
 
-    val values = js.Object.freeze(
-      js.Array(
-        CPUUtilization,
-        NetworkIn,
-        NetworkOut,
-        StatusCheckFailed,
-        StatusCheckFailed_Instance,
-        StatusCheckFailed_System,
-        ClientTLSNegotiationErrorCount,
-        HealthyHostCount,
-        UnhealthyHostCount,
-        HTTPCode_LB_4XX_Count,
-        HTTPCode_LB_5XX_Count,
-        HTTPCode_Instance_2XX_Count,
-        HTTPCode_Instance_3XX_Count,
-        HTTPCode_Instance_4XX_Count,
-        HTTPCode_Instance_5XX_Count,
-        InstanceResponseTime,
-        RejectedConnectionCount,
-        RequestCount,
-        DatabaseConnections,
-        DiskQueueDepth,
-        FreeStorageSpace,
-        NetworkReceiveThroughput,
-        NetworkTransmitThroughput,
-        BurstCapacityTime,
-        BurstCapacityPercentage
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      CPUUtilization,
+      NetworkIn,
+      NetworkOut,
+      StatusCheckFailed,
+      StatusCheckFailed_Instance,
+      StatusCheckFailed_System,
+      ClientTLSNegotiationErrorCount,
+      HealthyHostCount,
+      UnhealthyHostCount,
+      HTTPCode_LB_4XX_Count,
+      HTTPCode_LB_5XX_Count,
+      HTTPCode_Instance_2XX_Count,
+      HTTPCode_Instance_3XX_Count,
+      HTTPCode_Instance_4XX_Count,
+      HTTPCode_Instance_5XX_Count,
+      InstanceResponseTime,
+      RejectedConnectionCount,
+      RequestCount,
+      DatabaseConnections,
+      DiskQueueDepth,
+      FreeStorageSpace,
+      NetworkReceiveThroughput,
+      NetworkTransmitThroughput,
+      BurstCapacityTime,
+      BurstCapacityPercentage
+    ))
   }
 
   @js.native
@@ -7279,37 +6949,35 @@ package lightsail {
     val `Count/Second` = "Count/Second".asInstanceOf[MetricUnit]
     val None = "None".asInstanceOf[MetricUnit]
 
-    val values = js.Object.freeze(
-      js.Array(
-        Seconds,
-        Microseconds,
-        Milliseconds,
-        Bytes,
-        Kilobytes,
-        Megabytes,
-        Gigabytes,
-        Terabytes,
-        Bits,
-        Kilobits,
-        Megabits,
-        Gigabits,
-        Terabits,
-        Percent,
-        Count,
-        `Bytes/Second`,
-        `Kilobytes/Second`,
-        `Megabytes/Second`,
-        `Gigabytes/Second`,
-        `Terabytes/Second`,
-        `Bits/Second`,
-        `Kilobits/Second`,
-        `Megabits/Second`,
-        `Gigabits/Second`,
-        `Terabits/Second`,
-        `Count/Second`,
-        None
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      Seconds,
+      Microseconds,
+      Milliseconds,
+      Bytes,
+      Kilobytes,
+      Megabytes,
+      Gigabytes,
+      Terabytes,
+      Bits,
+      Kilobits,
+      Megabits,
+      Gigabits,
+      Terabits,
+      Percent,
+      Count,
+      `Bytes/Second`,
+      `Kilobytes/Second`,
+      `Megabytes/Second`,
+      `Gigabytes/Second`,
+      `Terabytes/Second`,
+      `Bits/Second`,
+      `Kilobits/Second`,
+      `Megabits/Second`,
+      `Gigabits/Second`,
+      `Terabits/Second`,
+      `Count/Second`,
+      None
+    ))
   }
 
   /**
@@ -7537,74 +7205,72 @@ package lightsail {
     val CreateCertificate = "CreateCertificate".asInstanceOf[OperationType]
     val DeleteCertificate = "DeleteCertificate".asInstanceOf[OperationType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        DeleteKnownHostKeys,
-        DeleteInstance,
-        CreateInstance,
-        StopInstance,
-        StartInstance,
-        RebootInstance,
-        OpenInstancePublicPorts,
-        PutInstancePublicPorts,
-        CloseInstancePublicPorts,
-        AllocateStaticIp,
-        ReleaseStaticIp,
-        AttachStaticIp,
-        DetachStaticIp,
-        UpdateDomainEntry,
-        DeleteDomainEntry,
-        CreateDomain,
-        DeleteDomain,
-        CreateInstanceSnapshot,
-        DeleteInstanceSnapshot,
-        CreateInstancesFromSnapshot,
-        CreateLoadBalancer,
-        DeleteLoadBalancer,
-        AttachInstancesToLoadBalancer,
-        DetachInstancesFromLoadBalancer,
-        UpdateLoadBalancerAttribute,
-        CreateLoadBalancerTlsCertificate,
-        DeleteLoadBalancerTlsCertificate,
-        AttachLoadBalancerTlsCertificate,
-        CreateDisk,
-        DeleteDisk,
-        AttachDisk,
-        DetachDisk,
-        CreateDiskSnapshot,
-        DeleteDiskSnapshot,
-        CreateDiskFromSnapshot,
-        CreateRelationalDatabase,
-        UpdateRelationalDatabase,
-        DeleteRelationalDatabase,
-        CreateRelationalDatabaseFromSnapshot,
-        CreateRelationalDatabaseSnapshot,
-        DeleteRelationalDatabaseSnapshot,
-        UpdateRelationalDatabaseParameters,
-        StartRelationalDatabase,
-        RebootRelationalDatabase,
-        StopRelationalDatabase,
-        EnableAddOn,
-        DisableAddOn,
-        PutAlarm,
-        GetAlarms,
-        DeleteAlarm,
-        TestAlarm,
-        CreateContactMethod,
-        GetContactMethods,
-        SendContactMethodVerification,
-        DeleteContactMethod,
-        CreateDistribution,
-        UpdateDistribution,
-        DeleteDistribution,
-        ResetDistributionCache,
-        AttachCertificateToDistribution,
-        DetachCertificateFromDistribution,
-        UpdateDistributionBundle,
-        CreateCertificate,
-        DeleteCertificate
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      DeleteKnownHostKeys,
+      DeleteInstance,
+      CreateInstance,
+      StopInstance,
+      StartInstance,
+      RebootInstance,
+      OpenInstancePublicPorts,
+      PutInstancePublicPorts,
+      CloseInstancePublicPorts,
+      AllocateStaticIp,
+      ReleaseStaticIp,
+      AttachStaticIp,
+      DetachStaticIp,
+      UpdateDomainEntry,
+      DeleteDomainEntry,
+      CreateDomain,
+      DeleteDomain,
+      CreateInstanceSnapshot,
+      DeleteInstanceSnapshot,
+      CreateInstancesFromSnapshot,
+      CreateLoadBalancer,
+      DeleteLoadBalancer,
+      AttachInstancesToLoadBalancer,
+      DetachInstancesFromLoadBalancer,
+      UpdateLoadBalancerAttribute,
+      CreateLoadBalancerTlsCertificate,
+      DeleteLoadBalancerTlsCertificate,
+      AttachLoadBalancerTlsCertificate,
+      CreateDisk,
+      DeleteDisk,
+      AttachDisk,
+      DetachDisk,
+      CreateDiskSnapshot,
+      DeleteDiskSnapshot,
+      CreateDiskFromSnapshot,
+      CreateRelationalDatabase,
+      UpdateRelationalDatabase,
+      DeleteRelationalDatabase,
+      CreateRelationalDatabaseFromSnapshot,
+      CreateRelationalDatabaseSnapshot,
+      DeleteRelationalDatabaseSnapshot,
+      UpdateRelationalDatabaseParameters,
+      StartRelationalDatabase,
+      RebootRelationalDatabase,
+      StopRelationalDatabase,
+      EnableAddOn,
+      DisableAddOn,
+      PutAlarm,
+      GetAlarms,
+      DeleteAlarm,
+      TestAlarm,
+      CreateContactMethod,
+      GetContactMethods,
+      SendContactMethodVerification,
+      DeleteContactMethod,
+      CreateDistribution,
+      UpdateDistribution,
+      DeleteDistribution,
+      ResetDistributionCache,
+      AttachCertificateToDistribution,
+      DetachCertificateFromDistribution,
+      UpdateDistributionBundle,
+      CreateCertificate,
+      DeleteCertificate
+    ))
   }
 
   /**
@@ -8037,9 +7703,7 @@ package lightsail {
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       displayName.foreach(__v => __obj.updateDynamic("displayName")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      relationalDatabaseAvailabilityZones.foreach(__v =>
-        __obj.updateDynamic("relationalDatabaseAvailabilityZones")(__v.asInstanceOf[js.Any])
-      )
+      relationalDatabaseAvailabilityZones.foreach(__v => __obj.updateDynamic("relationalDatabaseAvailabilityZones")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Region]
     }
   }
@@ -8062,24 +7726,22 @@ package lightsail {
     val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[RegionName]
     val `ap-northeast-2` = "ap-northeast-2".asInstanceOf[RegionName]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `us-east-1`,
-        `us-east-2`,
-        `us-west-1`,
-        `us-west-2`,
-        `eu-west-1`,
-        `eu-west-2`,
-        `eu-west-3`,
-        `eu-central-1`,
-        `ca-central-1`,
-        `ap-south-1`,
-        `ap-southeast-1`,
-        `ap-southeast-2`,
-        `ap-northeast-1`,
-        `ap-northeast-2`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      `us-east-1`,
+      `us-east-2`,
+      `us-west-1`,
+      `us-west-2`,
+      `eu-west-1`,
+      `eu-west-2`,
+      `eu-west-3`,
+      `eu-central-1`,
+      `ca-central-1`,
+      `ap-south-1`,
+      `ap-southeast-1`,
+      `ap-southeast-2`,
+      `ap-northeast-1`,
+      `ap-northeast-2`
+    ))
   }
 
   /**
@@ -8160,25 +7822,15 @@ package lightsail {
       masterUsername.foreach(__v => __obj.updateDynamic("masterUsername")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       parameterApplyStatus.foreach(__v => __obj.updateDynamic("parameterApplyStatus")(__v.asInstanceOf[js.Any]))
-      pendingMaintenanceActions.foreach(__v =>
-        __obj.updateDynamic("pendingMaintenanceActions")(__v.asInstanceOf[js.Any])
-      )
+      pendingMaintenanceActions.foreach(__v => __obj.updateDynamic("pendingMaintenanceActions")(__v.asInstanceOf[js.Any]))
       pendingModifiedValues.foreach(__v => __obj.updateDynamic("pendingModifiedValues")(__v.asInstanceOf[js.Any]))
       preferredBackupWindow.foreach(__v => __obj.updateDynamic("preferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      preferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("preferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      preferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("preferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       publiclyAccessible.foreach(__v => __obj.updateDynamic("publiclyAccessible")(__v.asInstanceOf[js.Any]))
-      relationalDatabaseBlueprintId.foreach(__v =>
-        __obj.updateDynamic("relationalDatabaseBlueprintId")(__v.asInstanceOf[js.Any])
-      )
-      relationalDatabaseBundleId.foreach(__v =>
-        __obj.updateDynamic("relationalDatabaseBundleId")(__v.asInstanceOf[js.Any])
-      )
+      relationalDatabaseBlueprintId.foreach(__v => __obj.updateDynamic("relationalDatabaseBlueprintId")(__v.asInstanceOf[js.Any]))
+      relationalDatabaseBundleId.foreach(__v => __obj.updateDynamic("relationalDatabaseBundleId")(__v.asInstanceOf[js.Any]))
       resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      secondaryAvailabilityZone.foreach(__v =>
-        __obj.updateDynamic("secondaryAvailabilityZone")(__v.asInstanceOf[js.Any])
-      )
+      secondaryAvailabilityZone.foreach(__v => __obj.updateDynamic("secondaryAvailabilityZone")(__v.asInstanceOf[js.Any]))
       state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
       supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -8356,16 +8008,7 @@ package lightsail {
     val NetworkReceiveThroughput = "NetworkReceiveThroughput".asInstanceOf[RelationalDatabaseMetricName]
     val NetworkTransmitThroughput = "NetworkTransmitThroughput".asInstanceOf[RelationalDatabaseMetricName]
 
-    val values = js.Object.freeze(
-      js.Array(
-        CPUUtilization,
-        DatabaseConnections,
-        DiskQueueDepth,
-        FreeStorageSpace,
-        NetworkReceiveThroughput,
-        NetworkTransmitThroughput
-      )
-    )
+    val values = js.Object.freeze(js.Array(CPUUtilization, DatabaseConnections, DiskQueueDepth, FreeStorageSpace, NetworkReceiveThroughput, NetworkTransmitThroughput))
   }
 
   /**
@@ -8464,18 +8107,10 @@ package lightsail {
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       engine.foreach(__v => __obj.updateDynamic("engine")(__v.asInstanceOf[js.Any]))
       engineVersion.foreach(__v => __obj.updateDynamic("engineVersion")(__v.asInstanceOf[js.Any]))
-      fromRelationalDatabaseArn.foreach(__v =>
-        __obj.updateDynamic("fromRelationalDatabaseArn")(__v.asInstanceOf[js.Any])
-      )
-      fromRelationalDatabaseBlueprintId.foreach(__v =>
-        __obj.updateDynamic("fromRelationalDatabaseBlueprintId")(__v.asInstanceOf[js.Any])
-      )
-      fromRelationalDatabaseBundleId.foreach(__v =>
-        __obj.updateDynamic("fromRelationalDatabaseBundleId")(__v.asInstanceOf[js.Any])
-      )
-      fromRelationalDatabaseName.foreach(__v =>
-        __obj.updateDynamic("fromRelationalDatabaseName")(__v.asInstanceOf[js.Any])
-      )
+      fromRelationalDatabaseArn.foreach(__v => __obj.updateDynamic("fromRelationalDatabaseArn")(__v.asInstanceOf[js.Any]))
+      fromRelationalDatabaseBlueprintId.foreach(__v => __obj.updateDynamic("fromRelationalDatabaseBlueprintId")(__v.asInstanceOf[js.Any]))
+      fromRelationalDatabaseBundleId.foreach(__v => __obj.updateDynamic("fromRelationalDatabaseBundleId")(__v.asInstanceOf[js.Any]))
+      fromRelationalDatabaseName.foreach(__v => __obj.updateDynamic("fromRelationalDatabaseName")(__v.asInstanceOf[js.Any]))
       location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
@@ -8667,28 +8302,26 @@ package lightsail {
     val Distribution = "Distribution".asInstanceOf[ResourceType]
     val Certificate = "Certificate".asInstanceOf[ResourceType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        Instance,
-        StaticIp,
-        KeyPair,
-        InstanceSnapshot,
-        Domain,
-        PeeredVpc,
-        LoadBalancer,
-        LoadBalancerTlsCertificate,
-        Disk,
-        DiskSnapshot,
-        RelationalDatabase,
-        RelationalDatabaseSnapshot,
-        ExportSnapshotRecord,
-        CloudFormationStackRecord,
-        Alarm,
-        ContactMethod,
-        Distribution,
-        Certificate
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      Instance,
+      StaticIp,
+      KeyPair,
+      InstanceSnapshot,
+      Domain,
+      PeeredVpc,
+      LoadBalancer,
+      LoadBalancerTlsCertificate,
+      Disk,
+      DiskSnapshot,
+      RelationalDatabase,
+      RelationalDatabaseSnapshot,
+      ExportSnapshotRecord,
+      CloudFormationStackRecord,
+      Alarm,
+      ContactMethod,
+      Distribution,
+      Certificate
+    ))
   }
 
   @js.native
@@ -8889,9 +8522,7 @@ package lightsail {
         "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
       )
 
-      relationalDatabaseSnapshotName.foreach(__v =>
-        __obj.updateDynamic("relationalDatabaseSnapshotName")(__v.asInstanceOf[js.Any])
-      )
+      relationalDatabaseSnapshotName.foreach(__v => __obj.updateDynamic("relationalDatabaseSnapshotName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopRelationalDatabaseRequest]
     }
   }
@@ -9328,9 +8959,7 @@ package lightsail {
       enableBackupRetention.foreach(__v => __obj.updateDynamic("enableBackupRetention")(__v.asInstanceOf[js.Any]))
       masterUserPassword.foreach(__v => __obj.updateDynamic("masterUserPassword")(__v.asInstanceOf[js.Any]))
       preferredBackupWindow.foreach(__v => __obj.updateDynamic("preferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      preferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("preferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      preferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("preferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       publiclyAccessible.foreach(__v => __obj.updateDynamic("publiclyAccessible")(__v.asInstanceOf[js.Any]))
       rotateMasterUserPassword.foreach(__v => __obj.updateDynamic("rotateMasterUserPassword")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRelationalDatabaseRequest]

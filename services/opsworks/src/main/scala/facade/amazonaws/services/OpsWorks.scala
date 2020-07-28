@@ -54,160 +54,80 @@ package object opsworks {
 
   implicit final class OpsWorksOps(private val service: OpsWorks) extends AnyVal {
 
-    @inline def assignInstanceFuture(params: AssignInstanceRequest): Future[js.Object] =
-      service.assignInstance(params).promise().toFuture
-    @inline def assignVolumeFuture(params: AssignVolumeRequest): Future[js.Object] =
-      service.assignVolume(params).promise().toFuture
-    @inline def associateElasticIpFuture(params: AssociateElasticIpRequest): Future[js.Object] =
-      service.associateElasticIp(params).promise().toFuture
-    @inline def attachElasticLoadBalancerFuture(params: AttachElasticLoadBalancerRequest): Future[js.Object] =
-      service.attachElasticLoadBalancer(params).promise().toFuture
-    @inline def cloneStackFuture(params: CloneStackRequest): Future[CloneStackResult] =
-      service.cloneStack(params).promise().toFuture
-    @inline def createAppFuture(params: CreateAppRequest): Future[CreateAppResult] =
-      service.createApp(params).promise().toFuture
-    @inline def createDeploymentFuture(params: CreateDeploymentRequest): Future[CreateDeploymentResult] =
-      service.createDeployment(params).promise().toFuture
-    @inline def createInstanceFuture(params: CreateInstanceRequest): Future[CreateInstanceResult] =
-      service.createInstance(params).promise().toFuture
-    @inline def createLayerFuture(params: CreateLayerRequest): Future[CreateLayerResult] =
-      service.createLayer(params).promise().toFuture
-    @inline def createStackFuture(params: CreateStackRequest): Future[CreateStackResult] =
-      service.createStack(params).promise().toFuture
-    @inline def createUserProfileFuture(params: CreateUserProfileRequest): Future[CreateUserProfileResult] =
-      service.createUserProfile(params).promise().toFuture
-    @inline def deleteAppFuture(params: DeleteAppRequest): Future[js.Object] =
-      service.deleteApp(params).promise().toFuture
-    @inline def deleteInstanceFuture(params: DeleteInstanceRequest): Future[js.Object] =
-      service.deleteInstance(params).promise().toFuture
-    @inline def deleteLayerFuture(params: DeleteLayerRequest): Future[js.Object] =
-      service.deleteLayer(params).promise().toFuture
-    @inline def deleteStackFuture(params: DeleteStackRequest): Future[js.Object] =
-      service.deleteStack(params).promise().toFuture
-    @inline def deleteUserProfileFuture(params: DeleteUserProfileRequest): Future[js.Object] =
-      service.deleteUserProfile(params).promise().toFuture
-    @inline def deregisterEcsClusterFuture(params: DeregisterEcsClusterRequest): Future[js.Object] =
-      service.deregisterEcsCluster(params).promise().toFuture
-    @inline def deregisterElasticIpFuture(params: DeregisterElasticIpRequest): Future[js.Object] =
-      service.deregisterElasticIp(params).promise().toFuture
-    @inline def deregisterInstanceFuture(params: DeregisterInstanceRequest): Future[js.Object] =
-      service.deregisterInstance(params).promise().toFuture
-    @inline def deregisterRdsDbInstanceFuture(params: DeregisterRdsDbInstanceRequest): Future[js.Object] =
-      service.deregisterRdsDbInstance(params).promise().toFuture
-    @inline def deregisterVolumeFuture(params: DeregisterVolumeRequest): Future[js.Object] =
-      service.deregisterVolume(params).promise().toFuture
-    @inline def describeAgentVersionsFuture(params: DescribeAgentVersionsRequest): Future[DescribeAgentVersionsResult] =
-      service.describeAgentVersions(params).promise().toFuture
-    @inline def describeAppsFuture(params: DescribeAppsRequest): Future[DescribeAppsResult] =
-      service.describeApps(params).promise().toFuture
-    @inline def describeCommandsFuture(params: DescribeCommandsRequest): Future[DescribeCommandsResult] =
-      service.describeCommands(params).promise().toFuture
-    @inline def describeDeploymentsFuture(params: DescribeDeploymentsRequest): Future[DescribeDeploymentsResult] =
-      service.describeDeployments(params).promise().toFuture
-    @inline def describeEcsClustersFuture(params: DescribeEcsClustersRequest): Future[DescribeEcsClustersResult] =
-      service.describeEcsClusters(params).promise().toFuture
-    @inline def describeElasticIpsFuture(params: DescribeElasticIpsRequest): Future[DescribeElasticIpsResult] =
-      service.describeElasticIps(params).promise().toFuture
-    @inline def describeElasticLoadBalancersFuture(
-        params: DescribeElasticLoadBalancersRequest
-    ): Future[DescribeElasticLoadBalancersResult] = service.describeElasticLoadBalancers(params).promise().toFuture
-    @inline def describeInstancesFuture(params: DescribeInstancesRequest): Future[DescribeInstancesResult] =
-      service.describeInstances(params).promise().toFuture
-    @inline def describeLayersFuture(params: DescribeLayersRequest): Future[DescribeLayersResult] =
-      service.describeLayers(params).promise().toFuture
-    @inline def describeLoadBasedAutoScalingFuture(
-        params: DescribeLoadBasedAutoScalingRequest
-    ): Future[DescribeLoadBasedAutoScalingResult] = service.describeLoadBasedAutoScaling(params).promise().toFuture
-    @inline def describeMyUserProfileFuture(): Future[DescribeMyUserProfileResult] =
-      service.describeMyUserProfile().promise().toFuture
-    @inline def describeOperatingSystemsFuture(): Future[DescribeOperatingSystemsResponse] =
-      service.describeOperatingSystems().promise().toFuture
-    @inline def describePermissionsFuture(params: DescribePermissionsRequest): Future[DescribePermissionsResult] =
-      service.describePermissions(params).promise().toFuture
-    @inline def describeRaidArraysFuture(params: DescribeRaidArraysRequest): Future[DescribeRaidArraysResult] =
-      service.describeRaidArrays(params).promise().toFuture
-    @inline def describeRdsDbInstancesFuture(
-        params: DescribeRdsDbInstancesRequest
-    ): Future[DescribeRdsDbInstancesResult] = service.describeRdsDbInstances(params).promise().toFuture
-    @inline def describeServiceErrorsFuture(params: DescribeServiceErrorsRequest): Future[DescribeServiceErrorsResult] =
-      service.describeServiceErrors(params).promise().toFuture
-    @inline def describeStackProvisioningParametersFuture(
-        params: DescribeStackProvisioningParametersRequest
-    ): Future[DescribeStackProvisioningParametersResult] =
-      service.describeStackProvisioningParameters(params).promise().toFuture
-    @inline def describeStackSummaryFuture(params: DescribeStackSummaryRequest): Future[DescribeStackSummaryResult] =
-      service.describeStackSummary(params).promise().toFuture
-    @inline def describeStacksFuture(params: DescribeStacksRequest): Future[DescribeStacksResult] =
-      service.describeStacks(params).promise().toFuture
-    @inline def describeTimeBasedAutoScalingFuture(
-        params: DescribeTimeBasedAutoScalingRequest
-    ): Future[DescribeTimeBasedAutoScalingResult] = service.describeTimeBasedAutoScaling(params).promise().toFuture
-    @inline def describeUserProfilesFuture(params: DescribeUserProfilesRequest): Future[DescribeUserProfilesResult] =
-      service.describeUserProfiles(params).promise().toFuture
-    @inline def describeVolumesFuture(params: DescribeVolumesRequest): Future[DescribeVolumesResult] =
-      service.describeVolumes(params).promise().toFuture
-    @inline def detachElasticLoadBalancerFuture(params: DetachElasticLoadBalancerRequest): Future[js.Object] =
-      service.detachElasticLoadBalancer(params).promise().toFuture
-    @inline def disassociateElasticIpFuture(params: DisassociateElasticIpRequest): Future[js.Object] =
-      service.disassociateElasticIp(params).promise().toFuture
-    @inline def getHostnameSuggestionFuture(params: GetHostnameSuggestionRequest): Future[GetHostnameSuggestionResult] =
-      service.getHostnameSuggestion(params).promise().toFuture
-    @inline def grantAccessFuture(params: GrantAccessRequest): Future[GrantAccessResult] =
-      service.grantAccess(params).promise().toFuture
-    @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResult] =
-      service.listTags(params).promise().toFuture
-    @inline def rebootInstanceFuture(params: RebootInstanceRequest): Future[js.Object] =
-      service.rebootInstance(params).promise().toFuture
-    @inline def registerEcsClusterFuture(params: RegisterEcsClusterRequest): Future[RegisterEcsClusterResult] =
-      service.registerEcsCluster(params).promise().toFuture
-    @inline def registerElasticIpFuture(params: RegisterElasticIpRequest): Future[RegisterElasticIpResult] =
-      service.registerElasticIp(params).promise().toFuture
-    @inline def registerInstanceFuture(params: RegisterInstanceRequest): Future[RegisterInstanceResult] =
-      service.registerInstance(params).promise().toFuture
-    @inline def registerRdsDbInstanceFuture(params: RegisterRdsDbInstanceRequest): Future[js.Object] =
-      service.registerRdsDbInstance(params).promise().toFuture
-    @inline def registerVolumeFuture(params: RegisterVolumeRequest): Future[RegisterVolumeResult] =
-      service.registerVolume(params).promise().toFuture
-    @inline def setLoadBasedAutoScalingFuture(params: SetLoadBasedAutoScalingRequest): Future[js.Object] =
-      service.setLoadBasedAutoScaling(params).promise().toFuture
-    @inline def setPermissionFuture(params: SetPermissionRequest): Future[js.Object] =
-      service.setPermission(params).promise().toFuture
-    @inline def setTimeBasedAutoScalingFuture(params: SetTimeBasedAutoScalingRequest): Future[js.Object] =
-      service.setTimeBasedAutoScaling(params).promise().toFuture
-    @inline def startInstanceFuture(params: StartInstanceRequest): Future[js.Object] =
-      service.startInstance(params).promise().toFuture
-    @inline def startStackFuture(params: StartStackRequest): Future[js.Object] =
-      service.startStack(params).promise().toFuture
-    @inline def stopInstanceFuture(params: StopInstanceRequest): Future[js.Object] =
-      service.stopInstance(params).promise().toFuture
-    @inline def stopStackFuture(params: StopStackRequest): Future[js.Object] =
-      service.stopStack(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise().toFuture
-    @inline def unassignInstanceFuture(params: UnassignInstanceRequest): Future[js.Object] =
-      service.unassignInstance(params).promise().toFuture
-    @inline def unassignVolumeFuture(params: UnassignVolumeRequest): Future[js.Object] =
-      service.unassignVolume(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateAppFuture(params: UpdateAppRequest): Future[js.Object] =
-      service.updateApp(params).promise().toFuture
-    @inline def updateElasticIpFuture(params: UpdateElasticIpRequest): Future[js.Object] =
-      service.updateElasticIp(params).promise().toFuture
-    @inline def updateInstanceFuture(params: UpdateInstanceRequest): Future[js.Object] =
-      service.updateInstance(params).promise().toFuture
-    @inline def updateLayerFuture(params: UpdateLayerRequest): Future[js.Object] =
-      service.updateLayer(params).promise().toFuture
-    @inline def updateMyUserProfileFuture(params: UpdateMyUserProfileRequest): Future[js.Object] =
-      service.updateMyUserProfile(params).promise().toFuture
-    @inline def updateRdsDbInstanceFuture(params: UpdateRdsDbInstanceRequest): Future[js.Object] =
-      service.updateRdsDbInstance(params).promise().toFuture
-    @inline def updateStackFuture(params: UpdateStackRequest): Future[js.Object] =
-      service.updateStack(params).promise().toFuture
-    @inline def updateUserProfileFuture(params: UpdateUserProfileRequest): Future[js.Object] =
-      service.updateUserProfile(params).promise().toFuture
-    @inline def updateVolumeFuture(params: UpdateVolumeRequest): Future[js.Object] =
-      service.updateVolume(params).promise().toFuture
+    @inline def assignInstanceFuture(params: AssignInstanceRequest): Future[js.Object] = service.assignInstance(params).promise().toFuture
+    @inline def assignVolumeFuture(params: AssignVolumeRequest): Future[js.Object] = service.assignVolume(params).promise().toFuture
+    @inline def associateElasticIpFuture(params: AssociateElasticIpRequest): Future[js.Object] = service.associateElasticIp(params).promise().toFuture
+    @inline def attachElasticLoadBalancerFuture(params: AttachElasticLoadBalancerRequest): Future[js.Object] = service.attachElasticLoadBalancer(params).promise().toFuture
+    @inline def cloneStackFuture(params: CloneStackRequest): Future[CloneStackResult] = service.cloneStack(params).promise().toFuture
+    @inline def createAppFuture(params: CreateAppRequest): Future[CreateAppResult] = service.createApp(params).promise().toFuture
+    @inline def createDeploymentFuture(params: CreateDeploymentRequest): Future[CreateDeploymentResult] = service.createDeployment(params).promise().toFuture
+    @inline def createInstanceFuture(params: CreateInstanceRequest): Future[CreateInstanceResult] = service.createInstance(params).promise().toFuture
+    @inline def createLayerFuture(params: CreateLayerRequest): Future[CreateLayerResult] = service.createLayer(params).promise().toFuture
+    @inline def createStackFuture(params: CreateStackRequest): Future[CreateStackResult] = service.createStack(params).promise().toFuture
+    @inline def createUserProfileFuture(params: CreateUserProfileRequest): Future[CreateUserProfileResult] = service.createUserProfile(params).promise().toFuture
+    @inline def deleteAppFuture(params: DeleteAppRequest): Future[js.Object] = service.deleteApp(params).promise().toFuture
+    @inline def deleteInstanceFuture(params: DeleteInstanceRequest): Future[js.Object] = service.deleteInstance(params).promise().toFuture
+    @inline def deleteLayerFuture(params: DeleteLayerRequest): Future[js.Object] = service.deleteLayer(params).promise().toFuture
+    @inline def deleteStackFuture(params: DeleteStackRequest): Future[js.Object] = service.deleteStack(params).promise().toFuture
+    @inline def deleteUserProfileFuture(params: DeleteUserProfileRequest): Future[js.Object] = service.deleteUserProfile(params).promise().toFuture
+    @inline def deregisterEcsClusterFuture(params: DeregisterEcsClusterRequest): Future[js.Object] = service.deregisterEcsCluster(params).promise().toFuture
+    @inline def deregisterElasticIpFuture(params: DeregisterElasticIpRequest): Future[js.Object] = service.deregisterElasticIp(params).promise().toFuture
+    @inline def deregisterInstanceFuture(params: DeregisterInstanceRequest): Future[js.Object] = service.deregisterInstance(params).promise().toFuture
+    @inline def deregisterRdsDbInstanceFuture(params: DeregisterRdsDbInstanceRequest): Future[js.Object] = service.deregisterRdsDbInstance(params).promise().toFuture
+    @inline def deregisterVolumeFuture(params: DeregisterVolumeRequest): Future[js.Object] = service.deregisterVolume(params).promise().toFuture
+    @inline def describeAgentVersionsFuture(params: DescribeAgentVersionsRequest): Future[DescribeAgentVersionsResult] = service.describeAgentVersions(params).promise().toFuture
+    @inline def describeAppsFuture(params: DescribeAppsRequest): Future[DescribeAppsResult] = service.describeApps(params).promise().toFuture
+    @inline def describeCommandsFuture(params: DescribeCommandsRequest): Future[DescribeCommandsResult] = service.describeCommands(params).promise().toFuture
+    @inline def describeDeploymentsFuture(params: DescribeDeploymentsRequest): Future[DescribeDeploymentsResult] = service.describeDeployments(params).promise().toFuture
+    @inline def describeEcsClustersFuture(params: DescribeEcsClustersRequest): Future[DescribeEcsClustersResult] = service.describeEcsClusters(params).promise().toFuture
+    @inline def describeElasticIpsFuture(params: DescribeElasticIpsRequest): Future[DescribeElasticIpsResult] = service.describeElasticIps(params).promise().toFuture
+    @inline def describeElasticLoadBalancersFuture(params: DescribeElasticLoadBalancersRequest): Future[DescribeElasticLoadBalancersResult] = service.describeElasticLoadBalancers(params).promise().toFuture
+    @inline def describeInstancesFuture(params: DescribeInstancesRequest): Future[DescribeInstancesResult] = service.describeInstances(params).promise().toFuture
+    @inline def describeLayersFuture(params: DescribeLayersRequest): Future[DescribeLayersResult] = service.describeLayers(params).promise().toFuture
+    @inline def describeLoadBasedAutoScalingFuture(params: DescribeLoadBasedAutoScalingRequest): Future[DescribeLoadBasedAutoScalingResult] = service.describeLoadBasedAutoScaling(params).promise().toFuture
+    @inline def describeMyUserProfileFuture(): Future[DescribeMyUserProfileResult] = service.describeMyUserProfile().promise().toFuture
+    @inline def describeOperatingSystemsFuture(): Future[DescribeOperatingSystemsResponse] = service.describeOperatingSystems().promise().toFuture
+    @inline def describePermissionsFuture(params: DescribePermissionsRequest): Future[DescribePermissionsResult] = service.describePermissions(params).promise().toFuture
+    @inline def describeRaidArraysFuture(params: DescribeRaidArraysRequest): Future[DescribeRaidArraysResult] = service.describeRaidArrays(params).promise().toFuture
+    @inline def describeRdsDbInstancesFuture(params: DescribeRdsDbInstancesRequest): Future[DescribeRdsDbInstancesResult] = service.describeRdsDbInstances(params).promise().toFuture
+    @inline def describeServiceErrorsFuture(params: DescribeServiceErrorsRequest): Future[DescribeServiceErrorsResult] = service.describeServiceErrors(params).promise().toFuture
+    @inline def describeStackProvisioningParametersFuture(params: DescribeStackProvisioningParametersRequest): Future[DescribeStackProvisioningParametersResult] = service.describeStackProvisioningParameters(params).promise().toFuture
+    @inline def describeStackSummaryFuture(params: DescribeStackSummaryRequest): Future[DescribeStackSummaryResult] = service.describeStackSummary(params).promise().toFuture
+    @inline def describeStacksFuture(params: DescribeStacksRequest): Future[DescribeStacksResult] = service.describeStacks(params).promise().toFuture
+    @inline def describeTimeBasedAutoScalingFuture(params: DescribeTimeBasedAutoScalingRequest): Future[DescribeTimeBasedAutoScalingResult] = service.describeTimeBasedAutoScaling(params).promise().toFuture
+    @inline def describeUserProfilesFuture(params: DescribeUserProfilesRequest): Future[DescribeUserProfilesResult] = service.describeUserProfiles(params).promise().toFuture
+    @inline def describeVolumesFuture(params: DescribeVolumesRequest): Future[DescribeVolumesResult] = service.describeVolumes(params).promise().toFuture
+    @inline def detachElasticLoadBalancerFuture(params: DetachElasticLoadBalancerRequest): Future[js.Object] = service.detachElasticLoadBalancer(params).promise().toFuture
+    @inline def disassociateElasticIpFuture(params: DisassociateElasticIpRequest): Future[js.Object] = service.disassociateElasticIp(params).promise().toFuture
+    @inline def getHostnameSuggestionFuture(params: GetHostnameSuggestionRequest): Future[GetHostnameSuggestionResult] = service.getHostnameSuggestion(params).promise().toFuture
+    @inline def grantAccessFuture(params: GrantAccessRequest): Future[GrantAccessResult] = service.grantAccess(params).promise().toFuture
+    @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResult] = service.listTags(params).promise().toFuture
+    @inline def rebootInstanceFuture(params: RebootInstanceRequest): Future[js.Object] = service.rebootInstance(params).promise().toFuture
+    @inline def registerEcsClusterFuture(params: RegisterEcsClusterRequest): Future[RegisterEcsClusterResult] = service.registerEcsCluster(params).promise().toFuture
+    @inline def registerElasticIpFuture(params: RegisterElasticIpRequest): Future[RegisterElasticIpResult] = service.registerElasticIp(params).promise().toFuture
+    @inline def registerInstanceFuture(params: RegisterInstanceRequest): Future[RegisterInstanceResult] = service.registerInstance(params).promise().toFuture
+    @inline def registerRdsDbInstanceFuture(params: RegisterRdsDbInstanceRequest): Future[js.Object] = service.registerRdsDbInstance(params).promise().toFuture
+    @inline def registerVolumeFuture(params: RegisterVolumeRequest): Future[RegisterVolumeResult] = service.registerVolume(params).promise().toFuture
+    @inline def setLoadBasedAutoScalingFuture(params: SetLoadBasedAutoScalingRequest): Future[js.Object] = service.setLoadBasedAutoScaling(params).promise().toFuture
+    @inline def setPermissionFuture(params: SetPermissionRequest): Future[js.Object] = service.setPermission(params).promise().toFuture
+    @inline def setTimeBasedAutoScalingFuture(params: SetTimeBasedAutoScalingRequest): Future[js.Object] = service.setTimeBasedAutoScaling(params).promise().toFuture
+    @inline def startInstanceFuture(params: StartInstanceRequest): Future[js.Object] = service.startInstance(params).promise().toFuture
+    @inline def startStackFuture(params: StartStackRequest): Future[js.Object] = service.startStack(params).promise().toFuture
+    @inline def stopInstanceFuture(params: StopInstanceRequest): Future[js.Object] = service.stopInstance(params).promise().toFuture
+    @inline def stopStackFuture(params: StopStackRequest): Future[js.Object] = service.stopStack(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
+    @inline def unassignInstanceFuture(params: UnassignInstanceRequest): Future[js.Object] = service.unassignInstance(params).promise().toFuture
+    @inline def unassignVolumeFuture(params: UnassignVolumeRequest): Future[js.Object] = service.unassignVolume(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
+    @inline def updateAppFuture(params: UpdateAppRequest): Future[js.Object] = service.updateApp(params).promise().toFuture
+    @inline def updateElasticIpFuture(params: UpdateElasticIpRequest): Future[js.Object] = service.updateElasticIp(params).promise().toFuture
+    @inline def updateInstanceFuture(params: UpdateInstanceRequest): Future[js.Object] = service.updateInstance(params).promise().toFuture
+    @inline def updateLayerFuture(params: UpdateLayerRequest): Future[js.Object] = service.updateLayer(params).promise().toFuture
+    @inline def updateMyUserProfileFuture(params: UpdateMyUserProfileRequest): Future[js.Object] = service.updateMyUserProfile(params).promise().toFuture
+    @inline def updateRdsDbInstanceFuture(params: UpdateRdsDbInstanceRequest): Future[js.Object] = service.updateRdsDbInstance(params).promise().toFuture
+    @inline def updateStackFuture(params: UpdateStackRequest): Future[js.Object] = service.updateStack(params).promise().toFuture
+    @inline def updateUserProfileFuture(params: UpdateUserProfileRequest): Future[js.Object] = service.updateUserProfile(params).promise().toFuture
+    @inline def updateVolumeFuture(params: UpdateVolumeRequest): Future[js.Object] = service.updateVolume(params).promise().toFuture
   }
 }
 
@@ -244,28 +164,20 @@ package opsworks {
     def describeDeployments(params: DescribeDeploymentsRequest): Request[DescribeDeploymentsResult] = js.native
     def describeEcsClusters(params: DescribeEcsClustersRequest): Request[DescribeEcsClustersResult] = js.native
     def describeElasticIps(params: DescribeElasticIpsRequest): Request[DescribeElasticIpsResult] = js.native
-    def describeElasticLoadBalancers(
-        params: DescribeElasticLoadBalancersRequest
-    ): Request[DescribeElasticLoadBalancersResult] = js.native
+    def describeElasticLoadBalancers(params: DescribeElasticLoadBalancersRequest): Request[DescribeElasticLoadBalancersResult] = js.native
     def describeInstances(params: DescribeInstancesRequest): Request[DescribeInstancesResult] = js.native
     def describeLayers(params: DescribeLayersRequest): Request[DescribeLayersResult] = js.native
-    def describeLoadBasedAutoScaling(
-        params: DescribeLoadBasedAutoScalingRequest
-    ): Request[DescribeLoadBasedAutoScalingResult] = js.native
+    def describeLoadBasedAutoScaling(params: DescribeLoadBasedAutoScalingRequest): Request[DescribeLoadBasedAutoScalingResult] = js.native
     def describeMyUserProfile(): Request[DescribeMyUserProfileResult] = js.native
     def describeOperatingSystems(): Request[DescribeOperatingSystemsResponse] = js.native
     def describePermissions(params: DescribePermissionsRequest): Request[DescribePermissionsResult] = js.native
     def describeRaidArrays(params: DescribeRaidArraysRequest): Request[DescribeRaidArraysResult] = js.native
     def describeRdsDbInstances(params: DescribeRdsDbInstancesRequest): Request[DescribeRdsDbInstancesResult] = js.native
     def describeServiceErrors(params: DescribeServiceErrorsRequest): Request[DescribeServiceErrorsResult] = js.native
-    def describeStackProvisioningParameters(
-        params: DescribeStackProvisioningParametersRequest
-    ): Request[DescribeStackProvisioningParametersResult] = js.native
+    def describeStackProvisioningParameters(params: DescribeStackProvisioningParametersRequest): Request[DescribeStackProvisioningParametersResult] = js.native
     def describeStackSummary(params: DescribeStackSummaryRequest): Request[DescribeStackSummaryResult] = js.native
     def describeStacks(params: DescribeStacksRequest): Request[DescribeStacksResult] = js.native
-    def describeTimeBasedAutoScaling(
-        params: DescribeTimeBasedAutoScalingRequest
-    ): Request[DescribeTimeBasedAutoScalingResult] = js.native
+    def describeTimeBasedAutoScaling(params: DescribeTimeBasedAutoScalingRequest): Request[DescribeTimeBasedAutoScalingResult] = js.native
     def describeUserProfiles(params: DescribeUserProfilesRequest): Request[DescribeUserProfilesResult] = js.native
     def describeVolumes(params: DescribeVolumesRequest): Request[DescribeVolumesResult] = js.native
     def detachElasticLoadBalancer(params: DetachElasticLoadBalancerRequest): Request[js.Object] = js.native
@@ -661,9 +573,7 @@ package opsworks {
       CustomCookbooksSource.foreach(__v => __obj.updateDynamic("CustomCookbooksSource")(__v.asInstanceOf[js.Any]))
       CustomJson.foreach(__v => __obj.updateDynamic("CustomJson")(__v.asInstanceOf[js.Any]))
       DefaultAvailabilityZone.foreach(__v => __obj.updateDynamic("DefaultAvailabilityZone")(__v.asInstanceOf[js.Any]))
-      DefaultInstanceProfileArn.foreach(__v =>
-        __obj.updateDynamic("DefaultInstanceProfileArn")(__v.asInstanceOf[js.Any])
-      )
+      DefaultInstanceProfileArn.foreach(__v => __obj.updateDynamic("DefaultInstanceProfileArn")(__v.asInstanceOf[js.Any]))
       DefaultOs.foreach(__v => __obj.updateDynamic("DefaultOs")(__v.asInstanceOf[js.Any]))
       DefaultRootDeviceType.foreach(__v => __obj.updateDynamic("DefaultRootDeviceType")(__v.asInstanceOf[js.Any]))
       DefaultSshKeyName.foreach(__v => __obj.updateDynamic("DefaultSshKeyName")(__v.asInstanceOf[js.Any]))
@@ -672,9 +582,7 @@ package opsworks {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
       UseCustomCookbooks.foreach(__v => __obj.updateDynamic("UseCustomCookbooks")(__v.asInstanceOf[js.Any]))
-      UseOpsworksSecurityGroups.foreach(__v =>
-        __obj.updateDynamic("UseOpsworksSecurityGroups")(__v.asInstanceOf[js.Any])
-      )
+      UseOpsworksSecurityGroups.foreach(__v => __obj.updateDynamic("UseOpsworksSecurityGroups")(__v.asInstanceOf[js.Any]))
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CloneStackRequest]
     }
@@ -820,102 +728,100 @@ package opsworks {
     val utf_8 = "utf_8".asInstanceOf[CloudWatchLogsEncoding]
     val utf_8_sig = "utf_8_sig".asInstanceOf[CloudWatchLogsEncoding]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ascii,
-        big5,
-        big5hkscs,
-        cp037,
-        cp424,
-        cp437,
-        cp500,
-        cp720,
-        cp737,
-        cp775,
-        cp850,
-        cp852,
-        cp855,
-        cp856,
-        cp857,
-        cp858,
-        cp860,
-        cp861,
-        cp862,
-        cp863,
-        cp864,
-        cp865,
-        cp866,
-        cp869,
-        cp874,
-        cp875,
-        cp932,
-        cp949,
-        cp950,
-        cp1006,
-        cp1026,
-        cp1140,
-        cp1250,
-        cp1251,
-        cp1252,
-        cp1253,
-        cp1254,
-        cp1255,
-        cp1256,
-        cp1257,
-        cp1258,
-        euc_jp,
-        euc_jis_2004,
-        euc_jisx0213,
-        euc_kr,
-        gb2312,
-        gbk,
-        gb18030,
-        hz,
-        iso2022_jp,
-        iso2022_jp_1,
-        iso2022_jp_2,
-        iso2022_jp_2004,
-        iso2022_jp_3,
-        iso2022_jp_ext,
-        iso2022_kr,
-        latin_1,
-        iso8859_2,
-        iso8859_3,
-        iso8859_4,
-        iso8859_5,
-        iso8859_6,
-        iso8859_7,
-        iso8859_8,
-        iso8859_9,
-        iso8859_10,
-        iso8859_13,
-        iso8859_14,
-        iso8859_15,
-        iso8859_16,
-        johab,
-        koi8_r,
-        koi8_u,
-        mac_cyrillic,
-        mac_greek,
-        mac_iceland,
-        mac_latin2,
-        mac_roman,
-        mac_turkish,
-        ptcp154,
-        shift_jis,
-        shift_jis_2004,
-        shift_jisx0213,
-        utf_32,
-        utf_32_be,
-        utf_32_le,
-        utf_16,
-        utf_16_be,
-        utf_16_le,
-        utf_7,
-        utf_8,
-        utf_8_sig
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      ascii,
+      big5,
+      big5hkscs,
+      cp037,
+      cp424,
+      cp437,
+      cp500,
+      cp720,
+      cp737,
+      cp775,
+      cp850,
+      cp852,
+      cp855,
+      cp856,
+      cp857,
+      cp858,
+      cp860,
+      cp861,
+      cp862,
+      cp863,
+      cp864,
+      cp865,
+      cp866,
+      cp869,
+      cp874,
+      cp875,
+      cp932,
+      cp949,
+      cp950,
+      cp1006,
+      cp1026,
+      cp1140,
+      cp1250,
+      cp1251,
+      cp1252,
+      cp1253,
+      cp1254,
+      cp1255,
+      cp1256,
+      cp1257,
+      cp1258,
+      euc_jp,
+      euc_jis_2004,
+      euc_jisx0213,
+      euc_kr,
+      gb2312,
+      gbk,
+      gb18030,
+      hz,
+      iso2022_jp,
+      iso2022_jp_1,
+      iso2022_jp_2,
+      iso2022_jp_2004,
+      iso2022_jp_3,
+      iso2022_jp_ext,
+      iso2022_kr,
+      latin_1,
+      iso8859_2,
+      iso8859_3,
+      iso8859_4,
+      iso8859_5,
+      iso8859_6,
+      iso8859_7,
+      iso8859_8,
+      iso8859_9,
+      iso8859_10,
+      iso8859_13,
+      iso8859_14,
+      iso8859_15,
+      iso8859_16,
+      johab,
+      koi8_r,
+      koi8_u,
+      mac_cyrillic,
+      mac_greek,
+      mac_iceland,
+      mac_latin2,
+      mac_roman,
+      mac_turkish,
+      ptcp154,
+      shift_jis,
+      shift_jis_2004,
+      shift_jisx0213,
+      utf_32,
+      utf_32_be,
+      utf_32_le,
+      utf_16,
+      utf_16_be,
+      utf_16_le,
+      utf_7,
+      utf_8,
+      utf_8_sig
+    ))
   }
 
   /**
@@ -1304,18 +1210,14 @@ package opsworks {
       Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
       AutoAssignElasticIps.foreach(__v => __obj.updateDynamic("AutoAssignElasticIps")(__v.asInstanceOf[js.Any]))
       AutoAssignPublicIps.foreach(__v => __obj.updateDynamic("AutoAssignPublicIps")(__v.asInstanceOf[js.Any]))
-      CloudWatchLogsConfiguration.foreach(__v =>
-        __obj.updateDynamic("CloudWatchLogsConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      CloudWatchLogsConfiguration.foreach(__v => __obj.updateDynamic("CloudWatchLogsConfiguration")(__v.asInstanceOf[js.Any]))
       CustomInstanceProfileArn.foreach(__v => __obj.updateDynamic("CustomInstanceProfileArn")(__v.asInstanceOf[js.Any]))
       CustomJson.foreach(__v => __obj.updateDynamic("CustomJson")(__v.asInstanceOf[js.Any]))
       CustomRecipes.foreach(__v => __obj.updateDynamic("CustomRecipes")(__v.asInstanceOf[js.Any]))
       CustomSecurityGroupIds.foreach(__v => __obj.updateDynamic("CustomSecurityGroupIds")(__v.asInstanceOf[js.Any]))
       EnableAutoHealing.foreach(__v => __obj.updateDynamic("EnableAutoHealing")(__v.asInstanceOf[js.Any]))
       InstallUpdatesOnBoot.foreach(__v => __obj.updateDynamic("InstallUpdatesOnBoot")(__v.asInstanceOf[js.Any]))
-      LifecycleEventConfiguration.foreach(__v =>
-        __obj.updateDynamic("LifecycleEventConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      LifecycleEventConfiguration.foreach(__v => __obj.updateDynamic("LifecycleEventConfiguration")(__v.asInstanceOf[js.Any]))
       Packages.foreach(__v => __obj.updateDynamic("Packages")(__v.asInstanceOf[js.Any]))
       UseEbsOptimizedInstances.foreach(__v => __obj.updateDynamic("UseEbsOptimizedInstances")(__v.asInstanceOf[js.Any]))
       VolumeConfigurations.foreach(__v => __obj.updateDynamic("VolumeConfigurations")(__v.asInstanceOf[js.Any]))
@@ -1408,9 +1310,7 @@ package opsworks {
       DefaultSubnetId.foreach(__v => __obj.updateDynamic("DefaultSubnetId")(__v.asInstanceOf[js.Any]))
       HostnameTheme.foreach(__v => __obj.updateDynamic("HostnameTheme")(__v.asInstanceOf[js.Any]))
       UseCustomCookbooks.foreach(__v => __obj.updateDynamic("UseCustomCookbooks")(__v.asInstanceOf[js.Any]))
-      UseOpsworksSecurityGroups.foreach(__v =>
-        __obj.updateDynamic("UseOpsworksSecurityGroups")(__v.asInstanceOf[js.Any])
-      )
+      UseOpsworksSecurityGroups.foreach(__v => __obj.updateDynamic("UseOpsworksSecurityGroups")(__v.asInstanceOf[js.Any]))
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateStackRequest]
     }
@@ -1694,22 +1594,7 @@ package opsworks {
     val restart = "restart".asInstanceOf[DeploymentCommandName]
     val undeploy = "undeploy".asInstanceOf[DeploymentCommandName]
 
-    val values = js.Object.freeze(
-      js.Array(
-        install_dependencies,
-        update_dependencies,
-        update_custom_cookbooks,
-        execute_recipes,
-        configure,
-        setup,
-        deploy,
-        rollback,
-        start,
-        stop,
-        restart,
-        undeploy
-      )
-    )
+    val values = js.Object.freeze(js.Array(install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, configure, setup, deploy, rollback, start, stop, restart, undeploy))
   }
 
   @js.native
@@ -2197,9 +2082,7 @@ package opsworks {
         LoadBasedAutoScalingConfigurations: js.UndefOr[LoadBasedAutoScalingConfigurations] = js.undefined
     ): DescribeLoadBasedAutoScalingResult = {
       val __obj = js.Dynamic.literal()
-      LoadBasedAutoScalingConfigurations.foreach(__v =>
-        __obj.updateDynamic("LoadBasedAutoScalingConfigurations")(__v.asInstanceOf[js.Any])
-      )
+      LoadBasedAutoScalingConfigurations.foreach(__v => __obj.updateDynamic("LoadBasedAutoScalingConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLoadBasedAutoScalingResult]
     }
   }
@@ -2546,9 +2429,7 @@ package opsworks {
         TimeBasedAutoScalingConfigurations: js.UndefOr[TimeBasedAutoScalingConfigurations] = js.undefined
     ): DescribeTimeBasedAutoScalingResult = {
       val __obj = js.Dynamic.literal()
-      TimeBasedAutoScalingConfigurations.foreach(__v =>
-        __obj.updateDynamic("TimeBasedAutoScalingConfigurations")(__v.asInstanceOf[js.Any])
-      )
+      TimeBasedAutoScalingConfigurations.foreach(__v => __obj.updateDynamic("TimeBasedAutoScalingConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTimeBasedAutoScalingResult]
     }
   }
@@ -3210,24 +3091,18 @@ package opsworks {
       Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
       AutoAssignElasticIps.foreach(__v => __obj.updateDynamic("AutoAssignElasticIps")(__v.asInstanceOf[js.Any]))
       AutoAssignPublicIps.foreach(__v => __obj.updateDynamic("AutoAssignPublicIps")(__v.asInstanceOf[js.Any]))
-      CloudWatchLogsConfiguration.foreach(__v =>
-        __obj.updateDynamic("CloudWatchLogsConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      CloudWatchLogsConfiguration.foreach(__v => __obj.updateDynamic("CloudWatchLogsConfiguration")(__v.asInstanceOf[js.Any]))
       CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
       CustomInstanceProfileArn.foreach(__v => __obj.updateDynamic("CustomInstanceProfileArn")(__v.asInstanceOf[js.Any]))
       CustomJson.foreach(__v => __obj.updateDynamic("CustomJson")(__v.asInstanceOf[js.Any]))
       CustomRecipes.foreach(__v => __obj.updateDynamic("CustomRecipes")(__v.asInstanceOf[js.Any]))
       CustomSecurityGroupIds.foreach(__v => __obj.updateDynamic("CustomSecurityGroupIds")(__v.asInstanceOf[js.Any]))
       DefaultRecipes.foreach(__v => __obj.updateDynamic("DefaultRecipes")(__v.asInstanceOf[js.Any]))
-      DefaultSecurityGroupNames.foreach(__v =>
-        __obj.updateDynamic("DefaultSecurityGroupNames")(__v.asInstanceOf[js.Any])
-      )
+      DefaultSecurityGroupNames.foreach(__v => __obj.updateDynamic("DefaultSecurityGroupNames")(__v.asInstanceOf[js.Any]))
       EnableAutoHealing.foreach(__v => __obj.updateDynamic("EnableAutoHealing")(__v.asInstanceOf[js.Any]))
       InstallUpdatesOnBoot.foreach(__v => __obj.updateDynamic("InstallUpdatesOnBoot")(__v.asInstanceOf[js.Any]))
       LayerId.foreach(__v => __obj.updateDynamic("LayerId")(__v.asInstanceOf[js.Any]))
-      LifecycleEventConfiguration.foreach(__v =>
-        __obj.updateDynamic("LifecycleEventConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      LifecycleEventConfiguration.foreach(__v => __obj.updateDynamic("LifecycleEventConfiguration")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Packages.foreach(__v => __obj.updateDynamic("Packages")(__v.asInstanceOf[js.Any]))
       Shortname.foreach(__v => __obj.updateDynamic("Shortname")(__v.asInstanceOf[js.Any]))
@@ -3268,35 +3143,33 @@ package opsworks {
     val JavaAppServer = "JavaAppServer".asInstanceOf[LayerAttributesKeys]
     val JavaAppServerVersion = "JavaAppServerVersion".asInstanceOf[LayerAttributesKeys]
 
-    val values = js.Object.freeze(
-      js.Array(
-        EcsClusterArn,
-        EnableHaproxyStats,
-        HaproxyStatsUrl,
-        HaproxyStatsUser,
-        HaproxyStatsPassword,
-        HaproxyHealthCheckUrl,
-        HaproxyHealthCheckMethod,
-        MysqlRootPassword,
-        MysqlRootPasswordUbiquitous,
-        GangliaUrl,
-        GangliaUser,
-        GangliaPassword,
-        MemcachedMemory,
-        NodejsVersion,
-        RubyVersion,
-        RubygemsVersion,
-        ManageBundler,
-        BundlerVersion,
-        RailsStack,
-        PassengerVersion,
-        Jvm,
-        JvmVersion,
-        JvmOptions,
-        JavaAppServer,
-        JavaAppServerVersion
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      EcsClusterArn,
+      EnableHaproxyStats,
+      HaproxyStatsUrl,
+      HaproxyStatsUser,
+      HaproxyStatsPassword,
+      HaproxyHealthCheckUrl,
+      HaproxyHealthCheckMethod,
+      MysqlRootPassword,
+      MysqlRootPasswordUbiquitous,
+      GangliaUrl,
+      GangliaUser,
+      GangliaPassword,
+      MemcachedMemory,
+      NodejsVersion,
+      RubyVersion,
+      RubygemsVersion,
+      ManageBundler,
+      BundlerVersion,
+      RailsStack,
+      PassengerVersion,
+      Jvm,
+      JvmVersion,
+      JvmOptions,
+      JavaAppServer,
+      JavaAppServerVersion
+    ))
   }
 
   @js.native
@@ -3315,22 +3188,7 @@ package opsworks {
     val `monitoring-master` = "monitoring-master".asInstanceOf[LayerType]
     val custom = "custom".asInstanceOf[LayerType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `aws-flow-ruby`,
-        `ecs-cluster`,
-        `java-app`,
-        lb,
-        web,
-        `php-app`,
-        `rails-app`,
-        `nodejs-app`,
-        memcached,
-        `db-master`,
-        `monitoring-master`,
-        custom
-      )
-    )
+    val values = js.Object.freeze(js.Array(`aws-flow-ruby`, `ecs-cluster`, `java-app`, lb, web, `php-app`, `rails-app`, `nodejs-app`, memcached, `db-master`, `monitoring-master`, custom))
   }
 
   /**
@@ -4056,9 +3914,7 @@ package opsworks {
         ExecutionTimeout: js.UndefOr[Int] = js.undefined
     ): ShutdownEventConfiguration = {
       val __obj = js.Dynamic.literal()
-      DelayUntilElbConnectionsDrained.foreach(__v =>
-        __obj.updateDynamic("DelayUntilElbConnectionsDrained")(__v.asInstanceOf[js.Any])
-      )
+      DelayUntilElbConnectionsDrained.foreach(__v => __obj.updateDynamic("DelayUntilElbConnectionsDrained")(__v.asInstanceOf[js.Any]))
       ExecutionTimeout.foreach(__v => __obj.updateDynamic("ExecutionTimeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ShutdownEventConfiguration]
     }
@@ -4201,9 +4057,7 @@ package opsworks {
       CustomCookbooksSource.foreach(__v => __obj.updateDynamic("CustomCookbooksSource")(__v.asInstanceOf[js.Any]))
       CustomJson.foreach(__v => __obj.updateDynamic("CustomJson")(__v.asInstanceOf[js.Any]))
       DefaultAvailabilityZone.foreach(__v => __obj.updateDynamic("DefaultAvailabilityZone")(__v.asInstanceOf[js.Any]))
-      DefaultInstanceProfileArn.foreach(__v =>
-        __obj.updateDynamic("DefaultInstanceProfileArn")(__v.asInstanceOf[js.Any])
-      )
+      DefaultInstanceProfileArn.foreach(__v => __obj.updateDynamic("DefaultInstanceProfileArn")(__v.asInstanceOf[js.Any]))
       DefaultOs.foreach(__v => __obj.updateDynamic("DefaultOs")(__v.asInstanceOf[js.Any]))
       DefaultRootDeviceType.foreach(__v => __obj.updateDynamic("DefaultRootDeviceType")(__v.asInstanceOf[js.Any]))
       DefaultSshKeyName.foreach(__v => __obj.updateDynamic("DefaultSshKeyName")(__v.asInstanceOf[js.Any]))
@@ -4214,9 +4068,7 @@ package opsworks {
       ServiceRoleArn.foreach(__v => __obj.updateDynamic("ServiceRoleArn")(__v.asInstanceOf[js.Any]))
       StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
       UseCustomCookbooks.foreach(__v => __obj.updateDynamic("UseCustomCookbooks")(__v.asInstanceOf[js.Any]))
-      UseOpsworksSecurityGroups.foreach(__v =>
-        __obj.updateDynamic("UseOpsworksSecurityGroups")(__v.asInstanceOf[js.Any])
-      )
+      UseOpsworksSecurityGroups.foreach(__v => __obj.updateDynamic("UseOpsworksSecurityGroups")(__v.asInstanceOf[js.Any]))
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Stack]
     }
@@ -4658,18 +4510,14 @@ package opsworks {
       Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
       AutoAssignElasticIps.foreach(__v => __obj.updateDynamic("AutoAssignElasticIps")(__v.asInstanceOf[js.Any]))
       AutoAssignPublicIps.foreach(__v => __obj.updateDynamic("AutoAssignPublicIps")(__v.asInstanceOf[js.Any]))
-      CloudWatchLogsConfiguration.foreach(__v =>
-        __obj.updateDynamic("CloudWatchLogsConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      CloudWatchLogsConfiguration.foreach(__v => __obj.updateDynamic("CloudWatchLogsConfiguration")(__v.asInstanceOf[js.Any]))
       CustomInstanceProfileArn.foreach(__v => __obj.updateDynamic("CustomInstanceProfileArn")(__v.asInstanceOf[js.Any]))
       CustomJson.foreach(__v => __obj.updateDynamic("CustomJson")(__v.asInstanceOf[js.Any]))
       CustomRecipes.foreach(__v => __obj.updateDynamic("CustomRecipes")(__v.asInstanceOf[js.Any]))
       CustomSecurityGroupIds.foreach(__v => __obj.updateDynamic("CustomSecurityGroupIds")(__v.asInstanceOf[js.Any]))
       EnableAutoHealing.foreach(__v => __obj.updateDynamic("EnableAutoHealing")(__v.asInstanceOf[js.Any]))
       InstallUpdatesOnBoot.foreach(__v => __obj.updateDynamic("InstallUpdatesOnBoot")(__v.asInstanceOf[js.Any]))
-      LifecycleEventConfiguration.foreach(__v =>
-        __obj.updateDynamic("LifecycleEventConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      LifecycleEventConfiguration.foreach(__v => __obj.updateDynamic("LifecycleEventConfiguration")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Packages.foreach(__v => __obj.updateDynamic("Packages")(__v.asInstanceOf[js.Any]))
       Shortname.foreach(__v => __obj.updateDynamic("Shortname")(__v.asInstanceOf[js.Any]))
@@ -4774,9 +4622,7 @@ package opsworks {
       CustomCookbooksSource.foreach(__v => __obj.updateDynamic("CustomCookbooksSource")(__v.asInstanceOf[js.Any]))
       CustomJson.foreach(__v => __obj.updateDynamic("CustomJson")(__v.asInstanceOf[js.Any]))
       DefaultAvailabilityZone.foreach(__v => __obj.updateDynamic("DefaultAvailabilityZone")(__v.asInstanceOf[js.Any]))
-      DefaultInstanceProfileArn.foreach(__v =>
-        __obj.updateDynamic("DefaultInstanceProfileArn")(__v.asInstanceOf[js.Any])
-      )
+      DefaultInstanceProfileArn.foreach(__v => __obj.updateDynamic("DefaultInstanceProfileArn")(__v.asInstanceOf[js.Any]))
       DefaultOs.foreach(__v => __obj.updateDynamic("DefaultOs")(__v.asInstanceOf[js.Any]))
       DefaultRootDeviceType.foreach(__v => __obj.updateDynamic("DefaultRootDeviceType")(__v.asInstanceOf[js.Any]))
       DefaultSshKeyName.foreach(__v => __obj.updateDynamic("DefaultSshKeyName")(__v.asInstanceOf[js.Any]))
@@ -4785,9 +4631,7 @@ package opsworks {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       ServiceRoleArn.foreach(__v => __obj.updateDynamic("ServiceRoleArn")(__v.asInstanceOf[js.Any]))
       UseCustomCookbooks.foreach(__v => __obj.updateDynamic("UseCustomCookbooks")(__v.asInstanceOf[js.Any]))
-      UseOpsworksSecurityGroups.foreach(__v =>
-        __obj.updateDynamic("UseOpsworksSecurityGroups")(__v.asInstanceOf[js.Any])
-      )
+      UseOpsworksSecurityGroups.foreach(__v => __obj.updateDynamic("UseOpsworksSecurityGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateStackRequest]
     }
   }

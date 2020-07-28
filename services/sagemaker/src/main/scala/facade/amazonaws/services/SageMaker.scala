@@ -364,317 +364,142 @@ package object sagemaker {
   implicit final class SageMakerOps(private val service: SageMaker) extends AnyVal {
 
     @inline def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise().toFuture
-    @inline def associateTrialComponentFuture(
-        params: AssociateTrialComponentRequest
-    ): Future[AssociateTrialComponentResponse] = service.associateTrialComponent(params).promise().toFuture
-    @inline def createAlgorithmFuture(params: CreateAlgorithmInput): Future[CreateAlgorithmOutput] =
-      service.createAlgorithm(params).promise().toFuture
-    @inline def createAppFuture(params: CreateAppRequest): Future[CreateAppResponse] =
-      service.createApp(params).promise().toFuture
-    @inline def createAutoMLJobFuture(params: CreateAutoMLJobRequest): Future[CreateAutoMLJobResponse] =
-      service.createAutoMLJob(params).promise().toFuture
-    @inline def createCodeRepositoryFuture(params: CreateCodeRepositoryInput): Future[CreateCodeRepositoryOutput] =
-      service.createCodeRepository(params).promise().toFuture
-    @inline def createCompilationJobFuture(params: CreateCompilationJobRequest): Future[CreateCompilationJobResponse] =
-      service.createCompilationJob(params).promise().toFuture
-    @inline def createDomainFuture(params: CreateDomainRequest): Future[CreateDomainResponse] =
-      service.createDomain(params).promise().toFuture
-    @inline def createEndpointConfigFuture(params: CreateEndpointConfigInput): Future[CreateEndpointConfigOutput] =
-      service.createEndpointConfig(params).promise().toFuture
-    @inline def createEndpointFuture(params: CreateEndpointInput): Future[CreateEndpointOutput] =
-      service.createEndpoint(params).promise().toFuture
-    @inline def createExperimentFuture(params: CreateExperimentRequest): Future[CreateExperimentResponse] =
-      service.createExperiment(params).promise().toFuture
-    @inline def createFlowDefinitionFuture(params: CreateFlowDefinitionRequest): Future[CreateFlowDefinitionResponse] =
-      service.createFlowDefinition(params).promise().toFuture
-    @inline def createHumanTaskUiFuture(params: CreateHumanTaskUiRequest): Future[CreateHumanTaskUiResponse] =
-      service.createHumanTaskUi(params).promise().toFuture
-    @inline def createHyperParameterTuningJobFuture(
-        params: CreateHyperParameterTuningJobRequest
-    ): Future[CreateHyperParameterTuningJobResponse] = service.createHyperParameterTuningJob(params).promise().toFuture
-    @inline def createLabelingJobFuture(params: CreateLabelingJobRequest): Future[CreateLabelingJobResponse] =
-      service.createLabelingJob(params).promise().toFuture
-    @inline def createModelFuture(params: CreateModelInput): Future[CreateModelOutput] =
-      service.createModel(params).promise().toFuture
-    @inline def createModelPackageFuture(params: CreateModelPackageInput): Future[CreateModelPackageOutput] =
-      service.createModelPackage(params).promise().toFuture
-    @inline def createMonitoringScheduleFuture(
-        params: CreateMonitoringScheduleRequest
-    ): Future[CreateMonitoringScheduleResponse] = service.createMonitoringSchedule(params).promise().toFuture
-    @inline def createNotebookInstanceFuture(
-        params: CreateNotebookInstanceInput
-    ): Future[CreateNotebookInstanceOutput] = service.createNotebookInstance(params).promise().toFuture
-    @inline def createNotebookInstanceLifecycleConfigFuture(
-        params: CreateNotebookInstanceLifecycleConfigInput
-    ): Future[CreateNotebookInstanceLifecycleConfigOutput] =
-      service.createNotebookInstanceLifecycleConfig(params).promise().toFuture
-    @inline def createPresignedDomainUrlFuture(
-        params: CreatePresignedDomainUrlRequest
-    ): Future[CreatePresignedDomainUrlResponse] = service.createPresignedDomainUrl(params).promise().toFuture
-    @inline def createPresignedNotebookInstanceUrlFuture(
-        params: CreatePresignedNotebookInstanceUrlInput
-    ): Future[CreatePresignedNotebookInstanceUrlOutput] =
-      service.createPresignedNotebookInstanceUrl(params).promise().toFuture
-    @inline def createProcessingJobFuture(params: CreateProcessingJobRequest): Future[CreateProcessingJobResponse] =
-      service.createProcessingJob(params).promise().toFuture
-    @inline def createTrainingJobFuture(params: CreateTrainingJobRequest): Future[CreateTrainingJobResponse] =
-      service.createTrainingJob(params).promise().toFuture
-    @inline def createTransformJobFuture(params: CreateTransformJobRequest): Future[CreateTransformJobResponse] =
-      service.createTransformJob(params).promise().toFuture
-    @inline def createTrialComponentFuture(params: CreateTrialComponentRequest): Future[CreateTrialComponentResponse] =
-      service.createTrialComponent(params).promise().toFuture
-    @inline def createTrialFuture(params: CreateTrialRequest): Future[CreateTrialResponse] =
-      service.createTrial(params).promise().toFuture
-    @inline def createUserProfileFuture(params: CreateUserProfileRequest): Future[CreateUserProfileResponse] =
-      service.createUserProfile(params).promise().toFuture
-    @inline def createWorkforceFuture(params: CreateWorkforceRequest): Future[CreateWorkforceResponse] =
-      service.createWorkforce(params).promise().toFuture
-    @inline def createWorkteamFuture(params: CreateWorkteamRequest): Future[CreateWorkteamResponse] =
-      service.createWorkteam(params).promise().toFuture
-    @inline def deleteAlgorithmFuture(params: DeleteAlgorithmInput): Future[js.Object] =
-      service.deleteAlgorithm(params).promise().toFuture
-    @inline def deleteAppFuture(params: DeleteAppRequest): Future[js.Object] =
-      service.deleteApp(params).promise().toFuture
-    @inline def deleteCodeRepositoryFuture(params: DeleteCodeRepositoryInput): Future[js.Object] =
-      service.deleteCodeRepository(params).promise().toFuture
-    @inline def deleteDomainFuture(params: DeleteDomainRequest): Future[js.Object] =
-      service.deleteDomain(params).promise().toFuture
-    @inline def deleteEndpointConfigFuture(params: DeleteEndpointConfigInput): Future[js.Object] =
-      service.deleteEndpointConfig(params).promise().toFuture
-    @inline def deleteEndpointFuture(params: DeleteEndpointInput): Future[js.Object] =
-      service.deleteEndpoint(params).promise().toFuture
-    @inline def deleteExperimentFuture(params: DeleteExperimentRequest): Future[DeleteExperimentResponse] =
-      service.deleteExperiment(params).promise().toFuture
-    @inline def deleteFlowDefinitionFuture(params: DeleteFlowDefinitionRequest): Future[DeleteFlowDefinitionResponse] =
-      service.deleteFlowDefinition(params).promise().toFuture
-    @inline def deleteHumanTaskUiFuture(params: DeleteHumanTaskUiRequest): Future[DeleteHumanTaskUiResponse] =
-      service.deleteHumanTaskUi(params).promise().toFuture
-    @inline def deleteModelFuture(params: DeleteModelInput): Future[js.Object] =
-      service.deleteModel(params).promise().toFuture
-    @inline def deleteModelPackageFuture(params: DeleteModelPackageInput): Future[js.Object] =
-      service.deleteModelPackage(params).promise().toFuture
-    @inline def deleteMonitoringScheduleFuture(params: DeleteMonitoringScheduleRequest): Future[js.Object] =
-      service.deleteMonitoringSchedule(params).promise().toFuture
-    @inline def deleteNotebookInstanceFuture(params: DeleteNotebookInstanceInput): Future[js.Object] =
-      service.deleteNotebookInstance(params).promise().toFuture
-    @inline def deleteNotebookInstanceLifecycleConfigFuture(
-        params: DeleteNotebookInstanceLifecycleConfigInput
-    ): Future[js.Object] = service.deleteNotebookInstanceLifecycleConfig(params).promise().toFuture
-    @inline def deleteTagsFuture(params: DeleteTagsInput): Future[DeleteTagsOutput] =
-      service.deleteTags(params).promise().toFuture
-    @inline def deleteTrialComponentFuture(params: DeleteTrialComponentRequest): Future[DeleteTrialComponentResponse] =
-      service.deleteTrialComponent(params).promise().toFuture
-    @inline def deleteTrialFuture(params: DeleteTrialRequest): Future[DeleteTrialResponse] =
-      service.deleteTrial(params).promise().toFuture
-    @inline def deleteUserProfileFuture(params: DeleteUserProfileRequest): Future[js.Object] =
-      service.deleteUserProfile(params).promise().toFuture
-    @inline def deleteWorkforceFuture(params: DeleteWorkforceRequest): Future[DeleteWorkforceResponse] =
-      service.deleteWorkforce(params).promise().toFuture
-    @inline def deleteWorkteamFuture(params: DeleteWorkteamRequest): Future[DeleteWorkteamResponse] =
-      service.deleteWorkteam(params).promise().toFuture
-    @inline def describeAlgorithmFuture(params: DescribeAlgorithmInput): Future[DescribeAlgorithmOutput] =
-      service.describeAlgorithm(params).promise().toFuture
-    @inline def describeAppFuture(params: DescribeAppRequest): Future[DescribeAppResponse] =
-      service.describeApp(params).promise().toFuture
-    @inline def describeAutoMLJobFuture(params: DescribeAutoMLJobRequest): Future[DescribeAutoMLJobResponse] =
-      service.describeAutoMLJob(params).promise().toFuture
-    @inline def describeCodeRepositoryFuture(
-        params: DescribeCodeRepositoryInput
-    ): Future[DescribeCodeRepositoryOutput] = service.describeCodeRepository(params).promise().toFuture
-    @inline def describeCompilationJobFuture(
-        params: DescribeCompilationJobRequest
-    ): Future[DescribeCompilationJobResponse] = service.describeCompilationJob(params).promise().toFuture
-    @inline def describeDomainFuture(params: DescribeDomainRequest): Future[DescribeDomainResponse] =
-      service.describeDomain(params).promise().toFuture
-    @inline def describeEndpointConfigFuture(
-        params: DescribeEndpointConfigInput
-    ): Future[DescribeEndpointConfigOutput] = service.describeEndpointConfig(params).promise().toFuture
-    @inline def describeEndpointFuture(params: DescribeEndpointInput): Future[DescribeEndpointOutput] =
-      service.describeEndpoint(params).promise().toFuture
-    @inline def describeExperimentFuture(params: DescribeExperimentRequest): Future[DescribeExperimentResponse] =
-      service.describeExperiment(params).promise().toFuture
-    @inline def describeFlowDefinitionFuture(
-        params: DescribeFlowDefinitionRequest
-    ): Future[DescribeFlowDefinitionResponse] = service.describeFlowDefinition(params).promise().toFuture
-    @inline def describeHumanTaskUiFuture(params: DescribeHumanTaskUiRequest): Future[DescribeHumanTaskUiResponse] =
-      service.describeHumanTaskUi(params).promise().toFuture
-    @inline def describeHyperParameterTuningJobFuture(
-        params: DescribeHyperParameterTuningJobRequest
-    ): Future[DescribeHyperParameterTuningJobResponse] =
-      service.describeHyperParameterTuningJob(params).promise().toFuture
-    @inline def describeLabelingJobFuture(params: DescribeLabelingJobRequest): Future[DescribeLabelingJobResponse] =
-      service.describeLabelingJob(params).promise().toFuture
-    @inline def describeModelFuture(params: DescribeModelInput): Future[DescribeModelOutput] =
-      service.describeModel(params).promise().toFuture
-    @inline def describeModelPackageFuture(params: DescribeModelPackageInput): Future[DescribeModelPackageOutput] =
-      service.describeModelPackage(params).promise().toFuture
-    @inline def describeMonitoringScheduleFuture(
-        params: DescribeMonitoringScheduleRequest
-    ): Future[DescribeMonitoringScheduleResponse] = service.describeMonitoringSchedule(params).promise().toFuture
-    @inline def describeNotebookInstanceFuture(
-        params: DescribeNotebookInstanceInput
-    ): Future[DescribeNotebookInstanceOutput] = service.describeNotebookInstance(params).promise().toFuture
-    @inline def describeNotebookInstanceLifecycleConfigFuture(
-        params: DescribeNotebookInstanceLifecycleConfigInput
-    ): Future[DescribeNotebookInstanceLifecycleConfigOutput] =
-      service.describeNotebookInstanceLifecycleConfig(params).promise().toFuture
-    @inline def describeProcessingJobFuture(
-        params: DescribeProcessingJobRequest
-    ): Future[DescribeProcessingJobResponse] = service.describeProcessingJob(params).promise().toFuture
-    @inline def describeSubscribedWorkteamFuture(
-        params: DescribeSubscribedWorkteamRequest
-    ): Future[DescribeSubscribedWorkteamResponse] = service.describeSubscribedWorkteam(params).promise().toFuture
-    @inline def describeTrainingJobFuture(params: DescribeTrainingJobRequest): Future[DescribeTrainingJobResponse] =
-      service.describeTrainingJob(params).promise().toFuture
-    @inline def describeTransformJobFuture(params: DescribeTransformJobRequest): Future[DescribeTransformJobResponse] =
-      service.describeTransformJob(params).promise().toFuture
-    @inline def describeTrialComponentFuture(
-        params: DescribeTrialComponentRequest
-    ): Future[DescribeTrialComponentResponse] = service.describeTrialComponent(params).promise().toFuture
-    @inline def describeTrialFuture(params: DescribeTrialRequest): Future[DescribeTrialResponse] =
-      service.describeTrial(params).promise().toFuture
-    @inline def describeUserProfileFuture(params: DescribeUserProfileRequest): Future[DescribeUserProfileResponse] =
-      service.describeUserProfile(params).promise().toFuture
-    @inline def describeWorkforceFuture(params: DescribeWorkforceRequest): Future[DescribeWorkforceResponse] =
-      service.describeWorkforce(params).promise().toFuture
-    @inline def describeWorkteamFuture(params: DescribeWorkteamRequest): Future[DescribeWorkteamResponse] =
-      service.describeWorkteam(params).promise().toFuture
-    @inline def disassociateTrialComponentFuture(
-        params: DisassociateTrialComponentRequest
-    ): Future[DisassociateTrialComponentResponse] = service.disassociateTrialComponent(params).promise().toFuture
-    @inline def getSearchSuggestionsFuture(params: GetSearchSuggestionsRequest): Future[GetSearchSuggestionsResponse] =
-      service.getSearchSuggestions(params).promise().toFuture
-    @inline def listAlgorithmsFuture(params: ListAlgorithmsInput): Future[ListAlgorithmsOutput] =
-      service.listAlgorithms(params).promise().toFuture
-    @inline def listAppsFuture(params: ListAppsRequest): Future[ListAppsResponse] =
-      service.listApps(params).promise().toFuture
-    @inline def listAutoMLJobsFuture(params: ListAutoMLJobsRequest): Future[ListAutoMLJobsResponse] =
-      service.listAutoMLJobs(params).promise().toFuture
-    @inline def listCandidatesForAutoMLJobFuture(
-        params: ListCandidatesForAutoMLJobRequest
-    ): Future[ListCandidatesForAutoMLJobResponse] = service.listCandidatesForAutoMLJob(params).promise().toFuture
-    @inline def listCodeRepositoriesFuture(params: ListCodeRepositoriesInput): Future[ListCodeRepositoriesOutput] =
-      service.listCodeRepositories(params).promise().toFuture
-    @inline def listCompilationJobsFuture(params: ListCompilationJobsRequest): Future[ListCompilationJobsResponse] =
-      service.listCompilationJobs(params).promise().toFuture
-    @inline def listDomainsFuture(params: ListDomainsRequest): Future[ListDomainsResponse] =
-      service.listDomains(params).promise().toFuture
-    @inline def listEndpointConfigsFuture(params: ListEndpointConfigsInput): Future[ListEndpointConfigsOutput] =
-      service.listEndpointConfigs(params).promise().toFuture
-    @inline def listEndpointsFuture(params: ListEndpointsInput): Future[ListEndpointsOutput] =
-      service.listEndpoints(params).promise().toFuture
-    @inline def listExperimentsFuture(params: ListExperimentsRequest): Future[ListExperimentsResponse] =
-      service.listExperiments(params).promise().toFuture
-    @inline def listFlowDefinitionsFuture(params: ListFlowDefinitionsRequest): Future[ListFlowDefinitionsResponse] =
-      service.listFlowDefinitions(params).promise().toFuture
-    @inline def listHumanTaskUisFuture(params: ListHumanTaskUisRequest): Future[ListHumanTaskUisResponse] =
-      service.listHumanTaskUis(params).promise().toFuture
-    @inline def listHyperParameterTuningJobsFuture(
-        params: ListHyperParameterTuningJobsRequest
-    ): Future[ListHyperParameterTuningJobsResponse] = service.listHyperParameterTuningJobs(params).promise().toFuture
-    @inline def listLabelingJobsForWorkteamFuture(
-        params: ListLabelingJobsForWorkteamRequest
-    ): Future[ListLabelingJobsForWorkteamResponse] = service.listLabelingJobsForWorkteam(params).promise().toFuture
-    @inline def listLabelingJobsFuture(params: ListLabelingJobsRequest): Future[ListLabelingJobsResponse] =
-      service.listLabelingJobs(params).promise().toFuture
-    @inline def listModelPackagesFuture(params: ListModelPackagesInput): Future[ListModelPackagesOutput] =
-      service.listModelPackages(params).promise().toFuture
-    @inline def listModelsFuture(params: ListModelsInput): Future[ListModelsOutput] =
-      service.listModels(params).promise().toFuture
-    @inline def listMonitoringExecutionsFuture(
-        params: ListMonitoringExecutionsRequest
-    ): Future[ListMonitoringExecutionsResponse] = service.listMonitoringExecutions(params).promise().toFuture
-    @inline def listMonitoringSchedulesFuture(
-        params: ListMonitoringSchedulesRequest
-    ): Future[ListMonitoringSchedulesResponse] = service.listMonitoringSchedules(params).promise().toFuture
-    @inline def listNotebookInstanceLifecycleConfigsFuture(
-        params: ListNotebookInstanceLifecycleConfigsInput
-    ): Future[ListNotebookInstanceLifecycleConfigsOutput] =
-      service.listNotebookInstanceLifecycleConfigs(params).promise().toFuture
-    @inline def listNotebookInstancesFuture(params: ListNotebookInstancesInput): Future[ListNotebookInstancesOutput] =
-      service.listNotebookInstances(params).promise().toFuture
-    @inline def listProcessingJobsFuture(params: ListProcessingJobsRequest): Future[ListProcessingJobsResponse] =
-      service.listProcessingJobs(params).promise().toFuture
-    @inline def listSubscribedWorkteamsFuture(
-        params: ListSubscribedWorkteamsRequest
-    ): Future[ListSubscribedWorkteamsResponse] = service.listSubscribedWorkteams(params).promise().toFuture
-    @inline def listTagsFuture(params: ListTagsInput): Future[ListTagsOutput] =
-      service.listTags(params).promise().toFuture
-    @inline def listTrainingJobsForHyperParameterTuningJobFuture(
-        params: ListTrainingJobsForHyperParameterTuningJobRequest
-    ): Future[ListTrainingJobsForHyperParameterTuningJobResponse] =
-      service.listTrainingJobsForHyperParameterTuningJob(params).promise().toFuture
-    @inline def listTrainingJobsFuture(params: ListTrainingJobsRequest): Future[ListTrainingJobsResponse] =
-      service.listTrainingJobs(params).promise().toFuture
-    @inline def listTransformJobsFuture(params: ListTransformJobsRequest): Future[ListTransformJobsResponse] =
-      service.listTransformJobs(params).promise().toFuture
-    @inline def listTrialComponentsFuture(params: ListTrialComponentsRequest): Future[ListTrialComponentsResponse] =
-      service.listTrialComponents(params).promise().toFuture
-    @inline def listTrialsFuture(params: ListTrialsRequest): Future[ListTrialsResponse] =
-      service.listTrials(params).promise().toFuture
-    @inline def listUserProfilesFuture(params: ListUserProfilesRequest): Future[ListUserProfilesResponse] =
-      service.listUserProfiles(params).promise().toFuture
-    @inline def listWorkforcesFuture(params: ListWorkforcesRequest): Future[ListWorkforcesResponse] =
-      service.listWorkforces(params).promise().toFuture
-    @inline def listWorkteamsFuture(params: ListWorkteamsRequest): Future[ListWorkteamsResponse] =
-      service.listWorkteams(params).promise().toFuture
-    @inline def renderUiTemplateFuture(params: RenderUiTemplateRequest): Future[RenderUiTemplateResponse] =
-      service.renderUiTemplate(params).promise().toFuture
+    @inline def associateTrialComponentFuture(params: AssociateTrialComponentRequest): Future[AssociateTrialComponentResponse] = service.associateTrialComponent(params).promise().toFuture
+    @inline def createAlgorithmFuture(params: CreateAlgorithmInput): Future[CreateAlgorithmOutput] = service.createAlgorithm(params).promise().toFuture
+    @inline def createAppFuture(params: CreateAppRequest): Future[CreateAppResponse] = service.createApp(params).promise().toFuture
+    @inline def createAutoMLJobFuture(params: CreateAutoMLJobRequest): Future[CreateAutoMLJobResponse] = service.createAutoMLJob(params).promise().toFuture
+    @inline def createCodeRepositoryFuture(params: CreateCodeRepositoryInput): Future[CreateCodeRepositoryOutput] = service.createCodeRepository(params).promise().toFuture
+    @inline def createCompilationJobFuture(params: CreateCompilationJobRequest): Future[CreateCompilationJobResponse] = service.createCompilationJob(params).promise().toFuture
+    @inline def createDomainFuture(params: CreateDomainRequest): Future[CreateDomainResponse] = service.createDomain(params).promise().toFuture
+    @inline def createEndpointConfigFuture(params: CreateEndpointConfigInput): Future[CreateEndpointConfigOutput] = service.createEndpointConfig(params).promise().toFuture
+    @inline def createEndpointFuture(params: CreateEndpointInput): Future[CreateEndpointOutput] = service.createEndpoint(params).promise().toFuture
+    @inline def createExperimentFuture(params: CreateExperimentRequest): Future[CreateExperimentResponse] = service.createExperiment(params).promise().toFuture
+    @inline def createFlowDefinitionFuture(params: CreateFlowDefinitionRequest): Future[CreateFlowDefinitionResponse] = service.createFlowDefinition(params).promise().toFuture
+    @inline def createHumanTaskUiFuture(params: CreateHumanTaskUiRequest): Future[CreateHumanTaskUiResponse] = service.createHumanTaskUi(params).promise().toFuture
+    @inline def createHyperParameterTuningJobFuture(params: CreateHyperParameterTuningJobRequest): Future[CreateHyperParameterTuningJobResponse] = service.createHyperParameterTuningJob(params).promise().toFuture
+    @inline def createLabelingJobFuture(params: CreateLabelingJobRequest): Future[CreateLabelingJobResponse] = service.createLabelingJob(params).promise().toFuture
+    @inline def createModelFuture(params: CreateModelInput): Future[CreateModelOutput] = service.createModel(params).promise().toFuture
+    @inline def createModelPackageFuture(params: CreateModelPackageInput): Future[CreateModelPackageOutput] = service.createModelPackage(params).promise().toFuture
+    @inline def createMonitoringScheduleFuture(params: CreateMonitoringScheduleRequest): Future[CreateMonitoringScheduleResponse] = service.createMonitoringSchedule(params).promise().toFuture
+    @inline def createNotebookInstanceFuture(params: CreateNotebookInstanceInput): Future[CreateNotebookInstanceOutput] = service.createNotebookInstance(params).promise().toFuture
+    @inline def createNotebookInstanceLifecycleConfigFuture(params: CreateNotebookInstanceLifecycleConfigInput): Future[CreateNotebookInstanceLifecycleConfigOutput] = service.createNotebookInstanceLifecycleConfig(params).promise().toFuture
+    @inline def createPresignedDomainUrlFuture(params: CreatePresignedDomainUrlRequest): Future[CreatePresignedDomainUrlResponse] = service.createPresignedDomainUrl(params).promise().toFuture
+    @inline def createPresignedNotebookInstanceUrlFuture(params: CreatePresignedNotebookInstanceUrlInput): Future[CreatePresignedNotebookInstanceUrlOutput] = service.createPresignedNotebookInstanceUrl(params).promise().toFuture
+    @inline def createProcessingJobFuture(params: CreateProcessingJobRequest): Future[CreateProcessingJobResponse] = service.createProcessingJob(params).promise().toFuture
+    @inline def createTrainingJobFuture(params: CreateTrainingJobRequest): Future[CreateTrainingJobResponse] = service.createTrainingJob(params).promise().toFuture
+    @inline def createTransformJobFuture(params: CreateTransformJobRequest): Future[CreateTransformJobResponse] = service.createTransformJob(params).promise().toFuture
+    @inline def createTrialComponentFuture(params: CreateTrialComponentRequest): Future[CreateTrialComponentResponse] = service.createTrialComponent(params).promise().toFuture
+    @inline def createTrialFuture(params: CreateTrialRequest): Future[CreateTrialResponse] = service.createTrial(params).promise().toFuture
+    @inline def createUserProfileFuture(params: CreateUserProfileRequest): Future[CreateUserProfileResponse] = service.createUserProfile(params).promise().toFuture
+    @inline def createWorkforceFuture(params: CreateWorkforceRequest): Future[CreateWorkforceResponse] = service.createWorkforce(params).promise().toFuture
+    @inline def createWorkteamFuture(params: CreateWorkteamRequest): Future[CreateWorkteamResponse] = service.createWorkteam(params).promise().toFuture
+    @inline def deleteAlgorithmFuture(params: DeleteAlgorithmInput): Future[js.Object] = service.deleteAlgorithm(params).promise().toFuture
+    @inline def deleteAppFuture(params: DeleteAppRequest): Future[js.Object] = service.deleteApp(params).promise().toFuture
+    @inline def deleteCodeRepositoryFuture(params: DeleteCodeRepositoryInput): Future[js.Object] = service.deleteCodeRepository(params).promise().toFuture
+    @inline def deleteDomainFuture(params: DeleteDomainRequest): Future[js.Object] = service.deleteDomain(params).promise().toFuture
+    @inline def deleteEndpointConfigFuture(params: DeleteEndpointConfigInput): Future[js.Object] = service.deleteEndpointConfig(params).promise().toFuture
+    @inline def deleteEndpointFuture(params: DeleteEndpointInput): Future[js.Object] = service.deleteEndpoint(params).promise().toFuture
+    @inline def deleteExperimentFuture(params: DeleteExperimentRequest): Future[DeleteExperimentResponse] = service.deleteExperiment(params).promise().toFuture
+    @inline def deleteFlowDefinitionFuture(params: DeleteFlowDefinitionRequest): Future[DeleteFlowDefinitionResponse] = service.deleteFlowDefinition(params).promise().toFuture
+    @inline def deleteHumanTaskUiFuture(params: DeleteHumanTaskUiRequest): Future[DeleteHumanTaskUiResponse] = service.deleteHumanTaskUi(params).promise().toFuture
+    @inline def deleteModelFuture(params: DeleteModelInput): Future[js.Object] = service.deleteModel(params).promise().toFuture
+    @inline def deleteModelPackageFuture(params: DeleteModelPackageInput): Future[js.Object] = service.deleteModelPackage(params).promise().toFuture
+    @inline def deleteMonitoringScheduleFuture(params: DeleteMonitoringScheduleRequest): Future[js.Object] = service.deleteMonitoringSchedule(params).promise().toFuture
+    @inline def deleteNotebookInstanceFuture(params: DeleteNotebookInstanceInput): Future[js.Object] = service.deleteNotebookInstance(params).promise().toFuture
+    @inline def deleteNotebookInstanceLifecycleConfigFuture(params: DeleteNotebookInstanceLifecycleConfigInput): Future[js.Object] = service.deleteNotebookInstanceLifecycleConfig(params).promise().toFuture
+    @inline def deleteTagsFuture(params: DeleteTagsInput): Future[DeleteTagsOutput] = service.deleteTags(params).promise().toFuture
+    @inline def deleteTrialComponentFuture(params: DeleteTrialComponentRequest): Future[DeleteTrialComponentResponse] = service.deleteTrialComponent(params).promise().toFuture
+    @inline def deleteTrialFuture(params: DeleteTrialRequest): Future[DeleteTrialResponse] = service.deleteTrial(params).promise().toFuture
+    @inline def deleteUserProfileFuture(params: DeleteUserProfileRequest): Future[js.Object] = service.deleteUserProfile(params).promise().toFuture
+    @inline def deleteWorkforceFuture(params: DeleteWorkforceRequest): Future[DeleteWorkforceResponse] = service.deleteWorkforce(params).promise().toFuture
+    @inline def deleteWorkteamFuture(params: DeleteWorkteamRequest): Future[DeleteWorkteamResponse] = service.deleteWorkteam(params).promise().toFuture
+    @inline def describeAlgorithmFuture(params: DescribeAlgorithmInput): Future[DescribeAlgorithmOutput] = service.describeAlgorithm(params).promise().toFuture
+    @inline def describeAppFuture(params: DescribeAppRequest): Future[DescribeAppResponse] = service.describeApp(params).promise().toFuture
+    @inline def describeAutoMLJobFuture(params: DescribeAutoMLJobRequest): Future[DescribeAutoMLJobResponse] = service.describeAutoMLJob(params).promise().toFuture
+    @inline def describeCodeRepositoryFuture(params: DescribeCodeRepositoryInput): Future[DescribeCodeRepositoryOutput] = service.describeCodeRepository(params).promise().toFuture
+    @inline def describeCompilationJobFuture(params: DescribeCompilationJobRequest): Future[DescribeCompilationJobResponse] = service.describeCompilationJob(params).promise().toFuture
+    @inline def describeDomainFuture(params: DescribeDomainRequest): Future[DescribeDomainResponse] = service.describeDomain(params).promise().toFuture
+    @inline def describeEndpointConfigFuture(params: DescribeEndpointConfigInput): Future[DescribeEndpointConfigOutput] = service.describeEndpointConfig(params).promise().toFuture
+    @inline def describeEndpointFuture(params: DescribeEndpointInput): Future[DescribeEndpointOutput] = service.describeEndpoint(params).promise().toFuture
+    @inline def describeExperimentFuture(params: DescribeExperimentRequest): Future[DescribeExperimentResponse] = service.describeExperiment(params).promise().toFuture
+    @inline def describeFlowDefinitionFuture(params: DescribeFlowDefinitionRequest): Future[DescribeFlowDefinitionResponse] = service.describeFlowDefinition(params).promise().toFuture
+    @inline def describeHumanTaskUiFuture(params: DescribeHumanTaskUiRequest): Future[DescribeHumanTaskUiResponse] = service.describeHumanTaskUi(params).promise().toFuture
+    @inline def describeHyperParameterTuningJobFuture(params: DescribeHyperParameterTuningJobRequest): Future[DescribeHyperParameterTuningJobResponse] = service.describeHyperParameterTuningJob(params).promise().toFuture
+    @inline def describeLabelingJobFuture(params: DescribeLabelingJobRequest): Future[DescribeLabelingJobResponse] = service.describeLabelingJob(params).promise().toFuture
+    @inline def describeModelFuture(params: DescribeModelInput): Future[DescribeModelOutput] = service.describeModel(params).promise().toFuture
+    @inline def describeModelPackageFuture(params: DescribeModelPackageInput): Future[DescribeModelPackageOutput] = service.describeModelPackage(params).promise().toFuture
+    @inline def describeMonitoringScheduleFuture(params: DescribeMonitoringScheduleRequest): Future[DescribeMonitoringScheduleResponse] = service.describeMonitoringSchedule(params).promise().toFuture
+    @inline def describeNotebookInstanceFuture(params: DescribeNotebookInstanceInput): Future[DescribeNotebookInstanceOutput] = service.describeNotebookInstance(params).promise().toFuture
+    @inline def describeNotebookInstanceLifecycleConfigFuture(params: DescribeNotebookInstanceLifecycleConfigInput): Future[DescribeNotebookInstanceLifecycleConfigOutput] = service.describeNotebookInstanceLifecycleConfig(params).promise().toFuture
+    @inline def describeProcessingJobFuture(params: DescribeProcessingJobRequest): Future[DescribeProcessingJobResponse] = service.describeProcessingJob(params).promise().toFuture
+    @inline def describeSubscribedWorkteamFuture(params: DescribeSubscribedWorkteamRequest): Future[DescribeSubscribedWorkteamResponse] = service.describeSubscribedWorkteam(params).promise().toFuture
+    @inline def describeTrainingJobFuture(params: DescribeTrainingJobRequest): Future[DescribeTrainingJobResponse] = service.describeTrainingJob(params).promise().toFuture
+    @inline def describeTransformJobFuture(params: DescribeTransformJobRequest): Future[DescribeTransformJobResponse] = service.describeTransformJob(params).promise().toFuture
+    @inline def describeTrialComponentFuture(params: DescribeTrialComponentRequest): Future[DescribeTrialComponentResponse] = service.describeTrialComponent(params).promise().toFuture
+    @inline def describeTrialFuture(params: DescribeTrialRequest): Future[DescribeTrialResponse] = service.describeTrial(params).promise().toFuture
+    @inline def describeUserProfileFuture(params: DescribeUserProfileRequest): Future[DescribeUserProfileResponse] = service.describeUserProfile(params).promise().toFuture
+    @inline def describeWorkforceFuture(params: DescribeWorkforceRequest): Future[DescribeWorkforceResponse] = service.describeWorkforce(params).promise().toFuture
+    @inline def describeWorkteamFuture(params: DescribeWorkteamRequest): Future[DescribeWorkteamResponse] = service.describeWorkteam(params).promise().toFuture
+    @inline def disassociateTrialComponentFuture(params: DisassociateTrialComponentRequest): Future[DisassociateTrialComponentResponse] = service.disassociateTrialComponent(params).promise().toFuture
+    @inline def getSearchSuggestionsFuture(params: GetSearchSuggestionsRequest): Future[GetSearchSuggestionsResponse] = service.getSearchSuggestions(params).promise().toFuture
+    @inline def listAlgorithmsFuture(params: ListAlgorithmsInput): Future[ListAlgorithmsOutput] = service.listAlgorithms(params).promise().toFuture
+    @inline def listAppsFuture(params: ListAppsRequest): Future[ListAppsResponse] = service.listApps(params).promise().toFuture
+    @inline def listAutoMLJobsFuture(params: ListAutoMLJobsRequest): Future[ListAutoMLJobsResponse] = service.listAutoMLJobs(params).promise().toFuture
+    @inline def listCandidatesForAutoMLJobFuture(params: ListCandidatesForAutoMLJobRequest): Future[ListCandidatesForAutoMLJobResponse] = service.listCandidatesForAutoMLJob(params).promise().toFuture
+    @inline def listCodeRepositoriesFuture(params: ListCodeRepositoriesInput): Future[ListCodeRepositoriesOutput] = service.listCodeRepositories(params).promise().toFuture
+    @inline def listCompilationJobsFuture(params: ListCompilationJobsRequest): Future[ListCompilationJobsResponse] = service.listCompilationJobs(params).promise().toFuture
+    @inline def listDomainsFuture(params: ListDomainsRequest): Future[ListDomainsResponse] = service.listDomains(params).promise().toFuture
+    @inline def listEndpointConfigsFuture(params: ListEndpointConfigsInput): Future[ListEndpointConfigsOutput] = service.listEndpointConfigs(params).promise().toFuture
+    @inline def listEndpointsFuture(params: ListEndpointsInput): Future[ListEndpointsOutput] = service.listEndpoints(params).promise().toFuture
+    @inline def listExperimentsFuture(params: ListExperimentsRequest): Future[ListExperimentsResponse] = service.listExperiments(params).promise().toFuture
+    @inline def listFlowDefinitionsFuture(params: ListFlowDefinitionsRequest): Future[ListFlowDefinitionsResponse] = service.listFlowDefinitions(params).promise().toFuture
+    @inline def listHumanTaskUisFuture(params: ListHumanTaskUisRequest): Future[ListHumanTaskUisResponse] = service.listHumanTaskUis(params).promise().toFuture
+    @inline def listHyperParameterTuningJobsFuture(params: ListHyperParameterTuningJobsRequest): Future[ListHyperParameterTuningJobsResponse] = service.listHyperParameterTuningJobs(params).promise().toFuture
+    @inline def listLabelingJobsForWorkteamFuture(params: ListLabelingJobsForWorkteamRequest): Future[ListLabelingJobsForWorkteamResponse] = service.listLabelingJobsForWorkteam(params).promise().toFuture
+    @inline def listLabelingJobsFuture(params: ListLabelingJobsRequest): Future[ListLabelingJobsResponse] = service.listLabelingJobs(params).promise().toFuture
+    @inline def listModelPackagesFuture(params: ListModelPackagesInput): Future[ListModelPackagesOutput] = service.listModelPackages(params).promise().toFuture
+    @inline def listModelsFuture(params: ListModelsInput): Future[ListModelsOutput] = service.listModels(params).promise().toFuture
+    @inline def listMonitoringExecutionsFuture(params: ListMonitoringExecutionsRequest): Future[ListMonitoringExecutionsResponse] = service.listMonitoringExecutions(params).promise().toFuture
+    @inline def listMonitoringSchedulesFuture(params: ListMonitoringSchedulesRequest): Future[ListMonitoringSchedulesResponse] = service.listMonitoringSchedules(params).promise().toFuture
+    @inline def listNotebookInstanceLifecycleConfigsFuture(params: ListNotebookInstanceLifecycleConfigsInput): Future[ListNotebookInstanceLifecycleConfigsOutput] = service.listNotebookInstanceLifecycleConfigs(params).promise().toFuture
+    @inline def listNotebookInstancesFuture(params: ListNotebookInstancesInput): Future[ListNotebookInstancesOutput] = service.listNotebookInstances(params).promise().toFuture
+    @inline def listProcessingJobsFuture(params: ListProcessingJobsRequest): Future[ListProcessingJobsResponse] = service.listProcessingJobs(params).promise().toFuture
+    @inline def listSubscribedWorkteamsFuture(params: ListSubscribedWorkteamsRequest): Future[ListSubscribedWorkteamsResponse] = service.listSubscribedWorkteams(params).promise().toFuture
+    @inline def listTagsFuture(params: ListTagsInput): Future[ListTagsOutput] = service.listTags(params).promise().toFuture
+    @inline def listTrainingJobsForHyperParameterTuningJobFuture(params: ListTrainingJobsForHyperParameterTuningJobRequest): Future[ListTrainingJobsForHyperParameterTuningJobResponse] = service.listTrainingJobsForHyperParameterTuningJob(params).promise().toFuture
+    @inline def listTrainingJobsFuture(params: ListTrainingJobsRequest): Future[ListTrainingJobsResponse] = service.listTrainingJobs(params).promise().toFuture
+    @inline def listTransformJobsFuture(params: ListTransformJobsRequest): Future[ListTransformJobsResponse] = service.listTransformJobs(params).promise().toFuture
+    @inline def listTrialComponentsFuture(params: ListTrialComponentsRequest): Future[ListTrialComponentsResponse] = service.listTrialComponents(params).promise().toFuture
+    @inline def listTrialsFuture(params: ListTrialsRequest): Future[ListTrialsResponse] = service.listTrials(params).promise().toFuture
+    @inline def listUserProfilesFuture(params: ListUserProfilesRequest): Future[ListUserProfilesResponse] = service.listUserProfiles(params).promise().toFuture
+    @inline def listWorkforcesFuture(params: ListWorkforcesRequest): Future[ListWorkforcesResponse] = service.listWorkforces(params).promise().toFuture
+    @inline def listWorkteamsFuture(params: ListWorkteamsRequest): Future[ListWorkteamsResponse] = service.listWorkteams(params).promise().toFuture
+    @inline def renderUiTemplateFuture(params: RenderUiTemplateRequest): Future[RenderUiTemplateResponse] = service.renderUiTemplate(params).promise().toFuture
     @inline def searchFuture(params: SearchRequest): Future[SearchResponse] = service.search(params).promise().toFuture
-    @inline def startMonitoringScheduleFuture(params: StartMonitoringScheduleRequest): Future[js.Object] =
-      service.startMonitoringSchedule(params).promise().toFuture
-    @inline def startNotebookInstanceFuture(params: StartNotebookInstanceInput): Future[js.Object] =
-      service.startNotebookInstance(params).promise().toFuture
-    @inline def stopAutoMLJobFuture(params: StopAutoMLJobRequest): Future[js.Object] =
-      service.stopAutoMLJob(params).promise().toFuture
-    @inline def stopCompilationJobFuture(params: StopCompilationJobRequest): Future[js.Object] =
-      service.stopCompilationJob(params).promise().toFuture
-    @inline def stopHyperParameterTuningJobFuture(params: StopHyperParameterTuningJobRequest): Future[js.Object] =
-      service.stopHyperParameterTuningJob(params).promise().toFuture
-    @inline def stopLabelingJobFuture(params: StopLabelingJobRequest): Future[js.Object] =
-      service.stopLabelingJob(params).promise().toFuture
-    @inline def stopMonitoringScheduleFuture(params: StopMonitoringScheduleRequest): Future[js.Object] =
-      service.stopMonitoringSchedule(params).promise().toFuture
-    @inline def stopNotebookInstanceFuture(params: StopNotebookInstanceInput): Future[js.Object] =
-      service.stopNotebookInstance(params).promise().toFuture
-    @inline def stopProcessingJobFuture(params: StopProcessingJobRequest): Future[js.Object] =
-      service.stopProcessingJob(params).promise().toFuture
-    @inline def stopTrainingJobFuture(params: StopTrainingJobRequest): Future[js.Object] =
-      service.stopTrainingJob(params).promise().toFuture
-    @inline def stopTransformJobFuture(params: StopTransformJobRequest): Future[js.Object] =
-      service.stopTransformJob(params).promise().toFuture
-    @inline def updateCodeRepositoryFuture(params: UpdateCodeRepositoryInput): Future[UpdateCodeRepositoryOutput] =
-      service.updateCodeRepository(params).promise().toFuture
-    @inline def updateDomainFuture(params: UpdateDomainRequest): Future[UpdateDomainResponse] =
-      service.updateDomain(params).promise().toFuture
-    @inline def updateEndpointFuture(params: UpdateEndpointInput): Future[UpdateEndpointOutput] =
-      service.updateEndpoint(params).promise().toFuture
-    @inline def updateEndpointWeightsAndCapacitiesFuture(
-        params: UpdateEndpointWeightsAndCapacitiesInput
-    ): Future[UpdateEndpointWeightsAndCapacitiesOutput] =
-      service.updateEndpointWeightsAndCapacities(params).promise().toFuture
-    @inline def updateExperimentFuture(params: UpdateExperimentRequest): Future[UpdateExperimentResponse] =
-      service.updateExperiment(params).promise().toFuture
-    @inline def updateMonitoringScheduleFuture(
-        params: UpdateMonitoringScheduleRequest
-    ): Future[UpdateMonitoringScheduleResponse] = service.updateMonitoringSchedule(params).promise().toFuture
-    @inline def updateNotebookInstanceFuture(
-        params: UpdateNotebookInstanceInput
-    ): Future[UpdateNotebookInstanceOutput] = service.updateNotebookInstance(params).promise().toFuture
-    @inline def updateNotebookInstanceLifecycleConfigFuture(
-        params: UpdateNotebookInstanceLifecycleConfigInput
-    ): Future[UpdateNotebookInstanceLifecycleConfigOutput] =
-      service.updateNotebookInstanceLifecycleConfig(params).promise().toFuture
-    @inline def updateTrialComponentFuture(params: UpdateTrialComponentRequest): Future[UpdateTrialComponentResponse] =
-      service.updateTrialComponent(params).promise().toFuture
-    @inline def updateTrialFuture(params: UpdateTrialRequest): Future[UpdateTrialResponse] =
-      service.updateTrial(params).promise().toFuture
-    @inline def updateUserProfileFuture(params: UpdateUserProfileRequest): Future[UpdateUserProfileResponse] =
-      service.updateUserProfile(params).promise().toFuture
-    @inline def updateWorkforceFuture(params: UpdateWorkforceRequest): Future[UpdateWorkforceResponse] =
-      service.updateWorkforce(params).promise().toFuture
-    @inline def updateWorkteamFuture(params: UpdateWorkteamRequest): Future[UpdateWorkteamResponse] =
-      service.updateWorkteam(params).promise().toFuture
+    @inline def startMonitoringScheduleFuture(params: StartMonitoringScheduleRequest): Future[js.Object] = service.startMonitoringSchedule(params).promise().toFuture
+    @inline def startNotebookInstanceFuture(params: StartNotebookInstanceInput): Future[js.Object] = service.startNotebookInstance(params).promise().toFuture
+    @inline def stopAutoMLJobFuture(params: StopAutoMLJobRequest): Future[js.Object] = service.stopAutoMLJob(params).promise().toFuture
+    @inline def stopCompilationJobFuture(params: StopCompilationJobRequest): Future[js.Object] = service.stopCompilationJob(params).promise().toFuture
+    @inline def stopHyperParameterTuningJobFuture(params: StopHyperParameterTuningJobRequest): Future[js.Object] = service.stopHyperParameterTuningJob(params).promise().toFuture
+    @inline def stopLabelingJobFuture(params: StopLabelingJobRequest): Future[js.Object] = service.stopLabelingJob(params).promise().toFuture
+    @inline def stopMonitoringScheduleFuture(params: StopMonitoringScheduleRequest): Future[js.Object] = service.stopMonitoringSchedule(params).promise().toFuture
+    @inline def stopNotebookInstanceFuture(params: StopNotebookInstanceInput): Future[js.Object] = service.stopNotebookInstance(params).promise().toFuture
+    @inline def stopProcessingJobFuture(params: StopProcessingJobRequest): Future[js.Object] = service.stopProcessingJob(params).promise().toFuture
+    @inline def stopTrainingJobFuture(params: StopTrainingJobRequest): Future[js.Object] = service.stopTrainingJob(params).promise().toFuture
+    @inline def stopTransformJobFuture(params: StopTransformJobRequest): Future[js.Object] = service.stopTransformJob(params).promise().toFuture
+    @inline def updateCodeRepositoryFuture(params: UpdateCodeRepositoryInput): Future[UpdateCodeRepositoryOutput] = service.updateCodeRepository(params).promise().toFuture
+    @inline def updateDomainFuture(params: UpdateDomainRequest): Future[UpdateDomainResponse] = service.updateDomain(params).promise().toFuture
+    @inline def updateEndpointFuture(params: UpdateEndpointInput): Future[UpdateEndpointOutput] = service.updateEndpoint(params).promise().toFuture
+    @inline def updateEndpointWeightsAndCapacitiesFuture(params: UpdateEndpointWeightsAndCapacitiesInput): Future[UpdateEndpointWeightsAndCapacitiesOutput] = service.updateEndpointWeightsAndCapacities(params).promise().toFuture
+    @inline def updateExperimentFuture(params: UpdateExperimentRequest): Future[UpdateExperimentResponse] = service.updateExperiment(params).promise().toFuture
+    @inline def updateMonitoringScheduleFuture(params: UpdateMonitoringScheduleRequest): Future[UpdateMonitoringScheduleResponse] = service.updateMonitoringSchedule(params).promise().toFuture
+    @inline def updateNotebookInstanceFuture(params: UpdateNotebookInstanceInput): Future[UpdateNotebookInstanceOutput] = service.updateNotebookInstance(params).promise().toFuture
+    @inline def updateNotebookInstanceLifecycleConfigFuture(params: UpdateNotebookInstanceLifecycleConfigInput): Future[UpdateNotebookInstanceLifecycleConfigOutput] = service.updateNotebookInstanceLifecycleConfig(params).promise().toFuture
+    @inline def updateTrialComponentFuture(params: UpdateTrialComponentRequest): Future[UpdateTrialComponentResponse] = service.updateTrialComponent(params).promise().toFuture
+    @inline def updateTrialFuture(params: UpdateTrialRequest): Future[UpdateTrialResponse] = service.updateTrial(params).promise().toFuture
+    @inline def updateUserProfileFuture(params: UpdateUserProfileRequest): Future[UpdateUserProfileResponse] = service.updateUserProfile(params).promise().toFuture
+    @inline def updateWorkforceFuture(params: UpdateWorkforceRequest): Future[UpdateWorkforceResponse] = service.updateWorkforce(params).promise().toFuture
+    @inline def updateWorkteamFuture(params: UpdateWorkteamRequest): Future[UpdateWorkteamResponse] = service.updateWorkteam(params).promise().toFuture
   }
 }
 
@@ -685,8 +510,7 @@ package sagemaker {
     def this(config: AWSConfig) = this()
 
     def addTags(params: AddTagsInput): Request[AddTagsOutput] = js.native
-    def associateTrialComponent(params: AssociateTrialComponentRequest): Request[AssociateTrialComponentResponse] =
-      js.native
+    def associateTrialComponent(params: AssociateTrialComponentRequest): Request[AssociateTrialComponentResponse] = js.native
     def createAlgorithm(params: CreateAlgorithmInput): Request[CreateAlgorithmOutput] = js.native
     def createApp(params: CreateAppRequest): Request[CreateAppResponse] = js.native
     def createAutoMLJob(params: CreateAutoMLJobRequest): Request[CreateAutoMLJobResponse] = js.native
@@ -698,23 +522,15 @@ package sagemaker {
     def createExperiment(params: CreateExperimentRequest): Request[CreateExperimentResponse] = js.native
     def createFlowDefinition(params: CreateFlowDefinitionRequest): Request[CreateFlowDefinitionResponse] = js.native
     def createHumanTaskUi(params: CreateHumanTaskUiRequest): Request[CreateHumanTaskUiResponse] = js.native
-    def createHyperParameterTuningJob(
-        params: CreateHyperParameterTuningJobRequest
-    ): Request[CreateHyperParameterTuningJobResponse] = js.native
+    def createHyperParameterTuningJob(params: CreateHyperParameterTuningJobRequest): Request[CreateHyperParameterTuningJobResponse] = js.native
     def createLabelingJob(params: CreateLabelingJobRequest): Request[CreateLabelingJobResponse] = js.native
     def createModel(params: CreateModelInput): Request[CreateModelOutput] = js.native
     def createModelPackage(params: CreateModelPackageInput): Request[CreateModelPackageOutput] = js.native
-    def createMonitoringSchedule(params: CreateMonitoringScheduleRequest): Request[CreateMonitoringScheduleResponse] =
-      js.native
+    def createMonitoringSchedule(params: CreateMonitoringScheduleRequest): Request[CreateMonitoringScheduleResponse] = js.native
     def createNotebookInstance(params: CreateNotebookInstanceInput): Request[CreateNotebookInstanceOutput] = js.native
-    def createNotebookInstanceLifecycleConfig(
-        params: CreateNotebookInstanceLifecycleConfigInput
-    ): Request[CreateNotebookInstanceLifecycleConfigOutput] = js.native
-    def createPresignedDomainUrl(params: CreatePresignedDomainUrlRequest): Request[CreatePresignedDomainUrlResponse] =
-      js.native
-    def createPresignedNotebookInstanceUrl(
-        params: CreatePresignedNotebookInstanceUrlInput
-    ): Request[CreatePresignedNotebookInstanceUrlOutput] = js.native
+    def createNotebookInstanceLifecycleConfig(params: CreateNotebookInstanceLifecycleConfigInput): Request[CreateNotebookInstanceLifecycleConfigOutput] = js.native
+    def createPresignedDomainUrl(params: CreatePresignedDomainUrlRequest): Request[CreatePresignedDomainUrlResponse] = js.native
+    def createPresignedNotebookInstanceUrl(params: CreatePresignedNotebookInstanceUrlInput): Request[CreatePresignedNotebookInstanceUrlOutput] = js.native
     def createProcessingJob(params: CreateProcessingJobRequest): Request[CreateProcessingJobResponse] = js.native
     def createTrainingJob(params: CreateTrainingJobRequest): Request[CreateTrainingJobResponse] = js.native
     def createTransformJob(params: CreateTransformJobRequest): Request[CreateTransformJobResponse] = js.native
@@ -736,8 +552,7 @@ package sagemaker {
     def deleteModelPackage(params: DeleteModelPackageInput): Request[js.Object] = js.native
     def deleteMonitoringSchedule(params: DeleteMonitoringScheduleRequest): Request[js.Object] = js.native
     def deleteNotebookInstance(params: DeleteNotebookInstanceInput): Request[js.Object] = js.native
-    def deleteNotebookInstanceLifecycleConfig(params: DeleteNotebookInstanceLifecycleConfigInput): Request[js.Object] =
-      js.native
+    def deleteNotebookInstanceLifecycleConfig(params: DeleteNotebookInstanceLifecycleConfigInput): Request[js.Object] = js.native
     def deleteTags(params: DeleteTagsInput): Request[DeleteTagsOutput] = js.native
     def deleteTrial(params: DeleteTrialRequest): Request[DeleteTrialResponse] = js.native
     def deleteTrialComponent(params: DeleteTrialComponentRequest): Request[DeleteTrialComponentResponse] = js.native
@@ -748,51 +563,35 @@ package sagemaker {
     def describeApp(params: DescribeAppRequest): Request[DescribeAppResponse] = js.native
     def describeAutoMLJob(params: DescribeAutoMLJobRequest): Request[DescribeAutoMLJobResponse] = js.native
     def describeCodeRepository(params: DescribeCodeRepositoryInput): Request[DescribeCodeRepositoryOutput] = js.native
-    def describeCompilationJob(params: DescribeCompilationJobRequest): Request[DescribeCompilationJobResponse] =
-      js.native
+    def describeCompilationJob(params: DescribeCompilationJobRequest): Request[DescribeCompilationJobResponse] = js.native
     def describeDomain(params: DescribeDomainRequest): Request[DescribeDomainResponse] = js.native
     def describeEndpoint(params: DescribeEndpointInput): Request[DescribeEndpointOutput] = js.native
     def describeEndpointConfig(params: DescribeEndpointConfigInput): Request[DescribeEndpointConfigOutput] = js.native
     def describeExperiment(params: DescribeExperimentRequest): Request[DescribeExperimentResponse] = js.native
-    def describeFlowDefinition(params: DescribeFlowDefinitionRequest): Request[DescribeFlowDefinitionResponse] =
-      js.native
+    def describeFlowDefinition(params: DescribeFlowDefinitionRequest): Request[DescribeFlowDefinitionResponse] = js.native
     def describeHumanTaskUi(params: DescribeHumanTaskUiRequest): Request[DescribeHumanTaskUiResponse] = js.native
-    def describeHyperParameterTuningJob(
-        params: DescribeHyperParameterTuningJobRequest
-    ): Request[DescribeHyperParameterTuningJobResponse] = js.native
+    def describeHyperParameterTuningJob(params: DescribeHyperParameterTuningJobRequest): Request[DescribeHyperParameterTuningJobResponse] = js.native
     def describeLabelingJob(params: DescribeLabelingJobRequest): Request[DescribeLabelingJobResponse] = js.native
     def describeModel(params: DescribeModelInput): Request[DescribeModelOutput] = js.native
     def describeModelPackage(params: DescribeModelPackageInput): Request[DescribeModelPackageOutput] = js.native
-    def describeMonitoringSchedule(
-        params: DescribeMonitoringScheduleRequest
-    ): Request[DescribeMonitoringScheduleResponse] = js.native
-    def describeNotebookInstance(params: DescribeNotebookInstanceInput): Request[DescribeNotebookInstanceOutput] =
-      js.native
-    def describeNotebookInstanceLifecycleConfig(
-        params: DescribeNotebookInstanceLifecycleConfigInput
-    ): Request[DescribeNotebookInstanceLifecycleConfigOutput] = js.native
+    def describeMonitoringSchedule(params: DescribeMonitoringScheduleRequest): Request[DescribeMonitoringScheduleResponse] = js.native
+    def describeNotebookInstance(params: DescribeNotebookInstanceInput): Request[DescribeNotebookInstanceOutput] = js.native
+    def describeNotebookInstanceLifecycleConfig(params: DescribeNotebookInstanceLifecycleConfigInput): Request[DescribeNotebookInstanceLifecycleConfigOutput] = js.native
     def describeProcessingJob(params: DescribeProcessingJobRequest): Request[DescribeProcessingJobResponse] = js.native
-    def describeSubscribedWorkteam(
-        params: DescribeSubscribedWorkteamRequest
-    ): Request[DescribeSubscribedWorkteamResponse] = js.native
+    def describeSubscribedWorkteam(params: DescribeSubscribedWorkteamRequest): Request[DescribeSubscribedWorkteamResponse] = js.native
     def describeTrainingJob(params: DescribeTrainingJobRequest): Request[DescribeTrainingJobResponse] = js.native
     def describeTransformJob(params: DescribeTransformJobRequest): Request[DescribeTransformJobResponse] = js.native
     def describeTrial(params: DescribeTrialRequest): Request[DescribeTrialResponse] = js.native
-    def describeTrialComponent(params: DescribeTrialComponentRequest): Request[DescribeTrialComponentResponse] =
-      js.native
+    def describeTrialComponent(params: DescribeTrialComponentRequest): Request[DescribeTrialComponentResponse] = js.native
     def describeUserProfile(params: DescribeUserProfileRequest): Request[DescribeUserProfileResponse] = js.native
     def describeWorkforce(params: DescribeWorkforceRequest): Request[DescribeWorkforceResponse] = js.native
     def describeWorkteam(params: DescribeWorkteamRequest): Request[DescribeWorkteamResponse] = js.native
-    def disassociateTrialComponent(
-        params: DisassociateTrialComponentRequest
-    ): Request[DisassociateTrialComponentResponse] = js.native
+    def disassociateTrialComponent(params: DisassociateTrialComponentRequest): Request[DisassociateTrialComponentResponse] = js.native
     def getSearchSuggestions(params: GetSearchSuggestionsRequest): Request[GetSearchSuggestionsResponse] = js.native
     def listAlgorithms(params: ListAlgorithmsInput): Request[ListAlgorithmsOutput] = js.native
     def listApps(params: ListAppsRequest): Request[ListAppsResponse] = js.native
     def listAutoMLJobs(params: ListAutoMLJobsRequest): Request[ListAutoMLJobsResponse] = js.native
-    def listCandidatesForAutoMLJob(
-        params: ListCandidatesForAutoMLJobRequest
-    ): Request[ListCandidatesForAutoMLJobResponse] = js.native
+    def listCandidatesForAutoMLJob(params: ListCandidatesForAutoMLJobRequest): Request[ListCandidatesForAutoMLJobResponse] = js.native
     def listCodeRepositories(params: ListCodeRepositoriesInput): Request[ListCodeRepositoriesOutput] = js.native
     def listCompilationJobs(params: ListCompilationJobsRequest): Request[ListCompilationJobsResponse] = js.native
     def listDomains(params: ListDomainsRequest): Request[ListDomainsResponse] = js.native
@@ -801,31 +600,20 @@ package sagemaker {
     def listExperiments(params: ListExperimentsRequest): Request[ListExperimentsResponse] = js.native
     def listFlowDefinitions(params: ListFlowDefinitionsRequest): Request[ListFlowDefinitionsResponse] = js.native
     def listHumanTaskUis(params: ListHumanTaskUisRequest): Request[ListHumanTaskUisResponse] = js.native
-    def listHyperParameterTuningJobs(
-        params: ListHyperParameterTuningJobsRequest
-    ): Request[ListHyperParameterTuningJobsResponse] = js.native
+    def listHyperParameterTuningJobs(params: ListHyperParameterTuningJobsRequest): Request[ListHyperParameterTuningJobsResponse] = js.native
     def listLabelingJobs(params: ListLabelingJobsRequest): Request[ListLabelingJobsResponse] = js.native
-    def listLabelingJobsForWorkteam(
-        params: ListLabelingJobsForWorkteamRequest
-    ): Request[ListLabelingJobsForWorkteamResponse] = js.native
+    def listLabelingJobsForWorkteam(params: ListLabelingJobsForWorkteamRequest): Request[ListLabelingJobsForWorkteamResponse] = js.native
     def listModelPackages(params: ListModelPackagesInput): Request[ListModelPackagesOutput] = js.native
     def listModels(params: ListModelsInput): Request[ListModelsOutput] = js.native
-    def listMonitoringExecutions(params: ListMonitoringExecutionsRequest): Request[ListMonitoringExecutionsResponse] =
-      js.native
-    def listMonitoringSchedules(params: ListMonitoringSchedulesRequest): Request[ListMonitoringSchedulesResponse] =
-      js.native
-    def listNotebookInstanceLifecycleConfigs(
-        params: ListNotebookInstanceLifecycleConfigsInput
-    ): Request[ListNotebookInstanceLifecycleConfigsOutput] = js.native
+    def listMonitoringExecutions(params: ListMonitoringExecutionsRequest): Request[ListMonitoringExecutionsResponse] = js.native
+    def listMonitoringSchedules(params: ListMonitoringSchedulesRequest): Request[ListMonitoringSchedulesResponse] = js.native
+    def listNotebookInstanceLifecycleConfigs(params: ListNotebookInstanceLifecycleConfigsInput): Request[ListNotebookInstanceLifecycleConfigsOutput] = js.native
     def listNotebookInstances(params: ListNotebookInstancesInput): Request[ListNotebookInstancesOutput] = js.native
     def listProcessingJobs(params: ListProcessingJobsRequest): Request[ListProcessingJobsResponse] = js.native
-    def listSubscribedWorkteams(params: ListSubscribedWorkteamsRequest): Request[ListSubscribedWorkteamsResponse] =
-      js.native
+    def listSubscribedWorkteams(params: ListSubscribedWorkteamsRequest): Request[ListSubscribedWorkteamsResponse] = js.native
     def listTags(params: ListTagsInput): Request[ListTagsOutput] = js.native
     def listTrainingJobs(params: ListTrainingJobsRequest): Request[ListTrainingJobsResponse] = js.native
-    def listTrainingJobsForHyperParameterTuningJob(
-        params: ListTrainingJobsForHyperParameterTuningJobRequest
-    ): Request[ListTrainingJobsForHyperParameterTuningJobResponse] = js.native
+    def listTrainingJobsForHyperParameterTuningJob(params: ListTrainingJobsForHyperParameterTuningJobRequest): Request[ListTrainingJobsForHyperParameterTuningJobResponse] = js.native
     def listTransformJobs(params: ListTransformJobsRequest): Request[ListTransformJobsResponse] = js.native
     def listTrialComponents(params: ListTrialComponentsRequest): Request[ListTrialComponentsResponse] = js.native
     def listTrials(params: ListTrialsRequest): Request[ListTrialsResponse] = js.native
@@ -848,16 +636,11 @@ package sagemaker {
     def updateCodeRepository(params: UpdateCodeRepositoryInput): Request[UpdateCodeRepositoryOutput] = js.native
     def updateDomain(params: UpdateDomainRequest): Request[UpdateDomainResponse] = js.native
     def updateEndpoint(params: UpdateEndpointInput): Request[UpdateEndpointOutput] = js.native
-    def updateEndpointWeightsAndCapacities(
-        params: UpdateEndpointWeightsAndCapacitiesInput
-    ): Request[UpdateEndpointWeightsAndCapacitiesOutput] = js.native
+    def updateEndpointWeightsAndCapacities(params: UpdateEndpointWeightsAndCapacitiesInput): Request[UpdateEndpointWeightsAndCapacitiesOutput] = js.native
     def updateExperiment(params: UpdateExperimentRequest): Request[UpdateExperimentResponse] = js.native
-    def updateMonitoringSchedule(params: UpdateMonitoringScheduleRequest): Request[UpdateMonitoringScheduleResponse] =
-      js.native
+    def updateMonitoringSchedule(params: UpdateMonitoringScheduleRequest): Request[UpdateMonitoringScheduleResponse] = js.native
     def updateNotebookInstance(params: UpdateNotebookInstanceInput): Request[UpdateNotebookInstanceOutput] = js.native
-    def updateNotebookInstanceLifecycleConfig(
-        params: UpdateNotebookInstanceLifecycleConfigInput
-    ): Request[UpdateNotebookInstanceLifecycleConfigOutput] = js.native
+    def updateNotebookInstanceLifecycleConfig(params: UpdateNotebookInstanceLifecycleConfigInput): Request[UpdateNotebookInstanceLifecycleConfigOutput] = js.native
     def updateTrial(params: UpdateTrialRequest): Request[UpdateTrialResponse] = js.native
     def updateTrialComponent(params: UpdateTrialComponentRequest): Request[UpdateTrialComponentResponse] = js.native
     def updateUserProfile(params: UpdateUserProfileRequest): Request[UpdateUserProfileResponse] = js.native
@@ -938,9 +721,7 @@ package sagemaker {
       )
 
       AlgorithmName.foreach(__v => __obj.updateDynamic("AlgorithmName")(__v.asInstanceOf[js.Any]))
-      EnableSageMakerMetricsTimeSeries.foreach(__v =>
-        __obj.updateDynamic("EnableSageMakerMetricsTimeSeries")(__v.asInstanceOf[js.Any])
-      )
+      EnableSageMakerMetricsTimeSeries.foreach(__v => __obj.updateDynamic("EnableSageMakerMetricsTimeSeries")(__v.asInstanceOf[js.Any]))
       MetricDefinitions.foreach(__v => __obj.updateDynamic("MetricDefinitions")(__v.asInstanceOf[js.Any]))
       TrainingImage.foreach(__v => __obj.updateDynamic("TrainingImage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AlgorithmSpecification]
@@ -1184,42 +965,40 @@ package sagemaker {
     val `ml.g4dn.12xlarge` = "ml.g4dn.12xlarge".asInstanceOf[AppInstanceType]
     val `ml.g4dn.16xlarge` = "ml.g4dn.16xlarge".asInstanceOf[AppInstanceType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        system,
-        `ml.t3.micro`,
-        `ml.t3.small`,
-        `ml.t3.medium`,
-        `ml.t3.large`,
-        `ml.t3.xlarge`,
-        `ml.t3.2xlarge`,
-        `ml.m5.large`,
-        `ml.m5.xlarge`,
-        `ml.m5.2xlarge`,
-        `ml.m5.4xlarge`,
-        `ml.m5.8xlarge`,
-        `ml.m5.12xlarge`,
-        `ml.m5.16xlarge`,
-        `ml.m5.24xlarge`,
-        `ml.c5.large`,
-        `ml.c5.xlarge`,
-        `ml.c5.2xlarge`,
-        `ml.c5.4xlarge`,
-        `ml.c5.9xlarge`,
-        `ml.c5.12xlarge`,
-        `ml.c5.18xlarge`,
-        `ml.c5.24xlarge`,
-        `ml.p3.2xlarge`,
-        `ml.p3.8xlarge`,
-        `ml.p3.16xlarge`,
-        `ml.g4dn.xlarge`,
-        `ml.g4dn.2xlarge`,
-        `ml.g4dn.4xlarge`,
-        `ml.g4dn.8xlarge`,
-        `ml.g4dn.12xlarge`,
-        `ml.g4dn.16xlarge`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      system,
+      `ml.t3.micro`,
+      `ml.t3.small`,
+      `ml.t3.medium`,
+      `ml.t3.large`,
+      `ml.t3.xlarge`,
+      `ml.t3.2xlarge`,
+      `ml.m5.large`,
+      `ml.m5.xlarge`,
+      `ml.m5.2xlarge`,
+      `ml.m5.4xlarge`,
+      `ml.m5.8xlarge`,
+      `ml.m5.12xlarge`,
+      `ml.m5.16xlarge`,
+      `ml.m5.24xlarge`,
+      `ml.c5.large`,
+      `ml.c5.xlarge`,
+      `ml.c5.2xlarge`,
+      `ml.c5.4xlarge`,
+      `ml.c5.9xlarge`,
+      `ml.c5.12xlarge`,
+      `ml.c5.18xlarge`,
+      `ml.c5.24xlarge`,
+      `ml.p3.2xlarge`,
+      `ml.p3.8xlarge`,
+      `ml.p3.16xlarge`,
+      `ml.g4dn.xlarge`,
+      `ml.g4dn.2xlarge`,
+      `ml.g4dn.4xlarge`,
+      `ml.g4dn.8xlarge`,
+      `ml.g4dn.12xlarge`,
+      `ml.g4dn.16xlarge`
+    ))
   }
 
   @js.native
@@ -1379,9 +1158,7 @@ package sagemaker {
 
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
-      FinalAutoMLJobObjectiveMetric.foreach(__v =>
-        __obj.updateDynamic("FinalAutoMLJobObjectiveMetric")(__v.asInstanceOf[js.Any])
-      )
+      FinalAutoMLJobObjectiveMetric.foreach(__v => __obj.updateDynamic("FinalAutoMLJobObjectiveMetric")(__v.asInstanceOf[js.Any]))
       InferenceContainers.foreach(__v => __obj.updateDynamic("InferenceContainers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoMLCandidate]
     }
@@ -1505,12 +1282,8 @@ package sagemaker {
         DataExplorationNotebookLocation: js.UndefOr[DataExplorationNotebookLocation] = js.undefined
     ): AutoMLJobArtifacts = {
       val __obj = js.Dynamic.literal()
-      CandidateDefinitionNotebookLocation.foreach(__v =>
-        __obj.updateDynamic("CandidateDefinitionNotebookLocation")(__v.asInstanceOf[js.Any])
-      )
-      DataExplorationNotebookLocation.foreach(__v =>
-        __obj.updateDynamic("DataExplorationNotebookLocation")(__v.asInstanceOf[js.Any])
-      )
+      CandidateDefinitionNotebookLocation.foreach(__v => __obj.updateDynamic("CandidateDefinitionNotebookLocation")(__v.asInstanceOf[js.Any]))
+      DataExplorationNotebookLocation.foreach(__v => __obj.updateDynamic("DataExplorationNotebookLocation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoMLJobArtifacts]
     }
   }
@@ -1533,13 +1306,9 @@ package sagemaker {
         MaxRuntimePerTrainingJobInSeconds: js.UndefOr[MaxRuntimePerTrainingJobInSeconds] = js.undefined
     ): AutoMLJobCompletionCriteria = {
       val __obj = js.Dynamic.literal()
-      MaxAutoMLJobRuntimeInSeconds.foreach(__v =>
-        __obj.updateDynamic("MaxAutoMLJobRuntimeInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      MaxAutoMLJobRuntimeInSeconds.foreach(__v => __obj.updateDynamic("MaxAutoMLJobRuntimeInSeconds")(__v.asInstanceOf[js.Any]))
       MaxCandidates.foreach(__v => __obj.updateDynamic("MaxCandidates")(__v.asInstanceOf[js.Any]))
-      MaxRuntimePerTrainingJobInSeconds.foreach(__v =>
-        __obj.updateDynamic("MaxRuntimePerTrainingJobInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      MaxRuntimePerTrainingJobInSeconds.foreach(__v => __obj.updateDynamic("MaxRuntimePerTrainingJobInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoMLJobCompletionCriteria]
     }
   }
@@ -1610,20 +1379,18 @@ package sagemaker {
     val Stopping = "Stopping".asInstanceOf[AutoMLJobSecondaryStatus]
     val CandidateDefinitionsGenerated = "CandidateDefinitionsGenerated".asInstanceOf[AutoMLJobSecondaryStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        Starting,
-        AnalyzingData,
-        FeatureEngineering,
-        ModelTuning,
-        MaxCandidatesReached,
-        Failed,
-        Stopped,
-        MaxAutoMLJobRuntimeReached,
-        Stopping,
-        CandidateDefinitionsGenerated
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      Starting,
+      AnalyzingData,
+      FeatureEngineering,
+      ModelTuning,
+      MaxCandidatesReached,
+      Failed,
+      Stopped,
+      MaxAutoMLJobRuntimeReached,
+      Stopping,
+      CandidateDefinitionsGenerated
+    ))
   }
 
   @js.native
@@ -1766,9 +1533,7 @@ package sagemaker {
         VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): AutoMLSecurityConfig = {
       val __obj = js.Dynamic.literal()
-      EnableInterContainerTrafficEncryption.foreach(__v =>
-        __obj.updateDynamic("EnableInterContainerTrafficEncryption")(__v.asInstanceOf[js.Any])
-      )
+      EnableInterContainerTrafficEncryption.foreach(__v => __obj.updateDynamic("EnableInterContainerTrafficEncryption")(__v.asInstanceOf[js.Any]))
       VolumeKmsKeyId.foreach(__v => __obj.updateDynamic("VolumeKmsKeyId")(__v.asInstanceOf[js.Any]))
       VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoMLSecurityConfig]
@@ -1797,14 +1562,10 @@ package sagemaker {
   @js.native
   sealed trait AwsManagedHumanLoopRequestSource extends js.Any
   object AwsManagedHumanLoopRequestSource extends js.Object {
-    val `AWS/Rekognition/DetectModerationLabels/Image/V3` =
-      "AWS/Rekognition/DetectModerationLabels/Image/V3".asInstanceOf[AwsManagedHumanLoopRequestSource]
-    val `AWS/Textract/AnalyzeDocument/Forms/V1` =
-      "AWS/Textract/AnalyzeDocument/Forms/V1".asInstanceOf[AwsManagedHumanLoopRequestSource]
+    val `AWS/Rekognition/DetectModerationLabels/Image/V3` = "AWS/Rekognition/DetectModerationLabels/Image/V3".asInstanceOf[AwsManagedHumanLoopRequestSource]
+    val `AWS/Textract/AnalyzeDocument/Forms/V1` = "AWS/Textract/AnalyzeDocument/Forms/V1".asInstanceOf[AwsManagedHumanLoopRequestSource]
 
-    val values = js.Object.freeze(
-      js.Array(`AWS/Rekognition/DetectModerationLabels/Image/V3`, `AWS/Textract/AnalyzeDocument/Forms/V1`)
-    )
+    val values = js.Object.freeze(js.Array(`AWS/Rekognition/DetectModerationLabels/Image/V3`, `AWS/Textract/AnalyzeDocument/Forms/V1`))
   }
 
   @js.native
@@ -1854,9 +1615,7 @@ package sagemaker {
     val `AWS::SageMaker::TransformJob` = "AWS::SageMaker::TransformJob".asInstanceOf[CandidateStepType]
     val `AWS::SageMaker::ProcessingJob` = "AWS::SageMaker::ProcessingJob".asInstanceOf[CandidateStepType]
 
-    val values = js.Object.freeze(
-      js.Array(`AWS::SageMaker::TrainingJob`, `AWS::SageMaker::TransformJob`, `AWS::SageMaker::ProcessingJob`)
-    )
+    val values = js.Object.freeze(js.Array(`AWS::SageMaker::TrainingJob`, `AWS::SageMaker::TransformJob`, `AWS::SageMaker::ProcessingJob`))
   }
 
   /**
@@ -2035,9 +1794,7 @@ package sagemaker {
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       IsRequired.foreach(__v => __obj.updateDynamic("IsRequired")(__v.asInstanceOf[js.Any]))
-      SupportedCompressionTypes.foreach(__v =>
-        __obj.updateDynamic("SupportedCompressionTypes")(__v.asInstanceOf[js.Any])
-      )
+      SupportedCompressionTypes.foreach(__v => __obj.updateDynamic("SupportedCompressionTypes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChannelSpecification]
     }
   }
@@ -2247,15 +2004,9 @@ package sagemaker {
       CompilationEndTime.foreach(__v => __obj.updateDynamic("CompilationEndTime")(__v.asInstanceOf[js.Any]))
       CompilationStartTime.foreach(__v => __obj.updateDynamic("CompilationStartTime")(__v.asInstanceOf[js.Any]))
       CompilationTargetDevice.foreach(__v => __obj.updateDynamic("CompilationTargetDevice")(__v.asInstanceOf[js.Any]))
-      CompilationTargetPlatformAccelerator.foreach(__v =>
-        __obj.updateDynamic("CompilationTargetPlatformAccelerator")(__v.asInstanceOf[js.Any])
-      )
-      CompilationTargetPlatformArch.foreach(__v =>
-        __obj.updateDynamic("CompilationTargetPlatformArch")(__v.asInstanceOf[js.Any])
-      )
-      CompilationTargetPlatformOs.foreach(__v =>
-        __obj.updateDynamic("CompilationTargetPlatformOs")(__v.asInstanceOf[js.Any])
-      )
+      CompilationTargetPlatformAccelerator.foreach(__v => __obj.updateDynamic("CompilationTargetPlatformAccelerator")(__v.asInstanceOf[js.Any]))
+      CompilationTargetPlatformArch.foreach(__v => __obj.updateDynamic("CompilationTargetPlatformArch")(__v.asInstanceOf[js.Any]))
+      CompilationTargetPlatformOs.foreach(__v => __obj.updateDynamic("CompilationTargetPlatformOs")(__v.asInstanceOf[js.Any]))
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CompilationJobSummary]
     }
@@ -2316,8 +2067,7 @@ package sagemaker {
   @js.native
   sealed trait ContentClassifier extends js.Any
   object ContentClassifier extends js.Object {
-    val FreeOfPersonallyIdentifiableInformation =
-      "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
+    val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
     val FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
 
     val values = js.Object.freeze(js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent))
@@ -2512,9 +2262,7 @@ package sagemaker {
 
       AutoMLJobConfig.foreach(__v => __obj.updateDynamic("AutoMLJobConfig")(__v.asInstanceOf[js.Any]))
       AutoMLJobObjective.foreach(__v => __obj.updateDynamic("AutoMLJobObjective")(__v.asInstanceOf[js.Any]))
-      GenerateCandidateDefinitionsOnly.foreach(__v =>
-        __obj.updateDynamic("GenerateCandidateDefinitionsOnly")(__v.asInstanceOf[js.Any])
-      )
+      GenerateCandidateDefinitionsOnly.foreach(__v => __obj.updateDynamic("GenerateCandidateDefinitionsOnly")(__v.asInstanceOf[js.Any]))
       ProblemType.foreach(__v => __obj.updateDynamic("ProblemType")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAutoMLJobRequest]
@@ -2656,9 +2404,7 @@ package sagemaker {
         "VpcId" -> VpcId.asInstanceOf[js.Any]
       )
 
-      HomeEfsFileSystemKmsKeyId.foreach(__v =>
-        __obj.updateDynamic("HomeEfsFileSystemKmsKeyId")(__v.asInstanceOf[js.Any])
-      )
+      HomeEfsFileSystemKmsKeyId.foreach(__v => __obj.updateDynamic("HomeEfsFileSystemKmsKeyId")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDomainRequest]
     }
@@ -2845,9 +2591,7 @@ package sagemaker {
         "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
-      HumanLoopActivationConfig.foreach(__v =>
-        __obj.updateDynamic("HumanLoopActivationConfig")(__v.asInstanceOf[js.Any])
-      )
+      HumanLoopActivationConfig.foreach(__v => __obj.updateDynamic("HumanLoopActivationConfig")(__v.asInstanceOf[js.Any]))
       HumanLoopRequestSource.foreach(__v => __obj.updateDynamic("HumanLoopRequestSource")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFlowDefinitionRequest]
@@ -3003,9 +2747,7 @@ package sagemaker {
       )
 
       LabelCategoryConfigS3Uri.foreach(__v => __obj.updateDynamic("LabelCategoryConfigS3Uri")(__v.asInstanceOf[js.Any]))
-      LabelingJobAlgorithmsConfig.foreach(__v =>
-        __obj.updateDynamic("LabelingJobAlgorithmsConfig")(__v.asInstanceOf[js.Any])
-      )
+      LabelingJobAlgorithmsConfig.foreach(__v => __obj.updateDynamic("LabelingJobAlgorithmsConfig")(__v.asInstanceOf[js.Any]))
       StoppingConditions.foreach(__v => __obj.updateDynamic("StoppingConditions")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLabelingJobRequest]
@@ -3111,9 +2853,7 @@ package sagemaker {
       CertifyForMarketplace.foreach(__v => __obj.updateDynamic("CertifyForMarketplace")(__v.asInstanceOf[js.Any]))
       InferenceSpecification.foreach(__v => __obj.updateDynamic("InferenceSpecification")(__v.asInstanceOf[js.Any]))
       ModelPackageDescription.foreach(__v => __obj.updateDynamic("ModelPackageDescription")(__v.asInstanceOf[js.Any]))
-      SourceAlgorithmSpecification.foreach(__v =>
-        __obj.updateDynamic("SourceAlgorithmSpecification")(__v.asInstanceOf[js.Any])
-      )
+      SourceAlgorithmSpecification.foreach(__v => __obj.updateDynamic("SourceAlgorithmSpecification")(__v.asInstanceOf[js.Any]))
       ValidationSpecification.foreach(__v => __obj.updateDynamic("ValidationSpecification")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateModelPackageInput]
     }
@@ -3222,9 +2962,7 @@ package sagemaker {
       )
 
       AcceleratorTypes.foreach(__v => __obj.updateDynamic("AcceleratorTypes")(__v.asInstanceOf[js.Any]))
-      AdditionalCodeRepositories.foreach(__v =>
-        __obj.updateDynamic("AdditionalCodeRepositories")(__v.asInstanceOf[js.Any])
-      )
+      AdditionalCodeRepositories.foreach(__v => __obj.updateDynamic("AdditionalCodeRepositories")(__v.asInstanceOf[js.Any]))
       DefaultCodeRepository.foreach(__v => __obj.updateDynamic("DefaultCodeRepository")(__v.asInstanceOf[js.Any]))
       DirectInternetAccess.foreach(__v => __obj.updateDynamic("DirectInternetAccess")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
@@ -3273,9 +3011,7 @@ package sagemaker {
         NotebookInstanceLifecycleConfigArn: js.UndefOr[NotebookInstanceLifecycleConfigArn] = js.undefined
     ): CreateNotebookInstanceLifecycleConfigOutput = {
       val __obj = js.Dynamic.literal()
-      NotebookInstanceLifecycleConfigArn.foreach(__v =>
-        __obj.updateDynamic("NotebookInstanceLifecycleConfigArn")(__v.asInstanceOf[js.Any])
-      )
+      NotebookInstanceLifecycleConfigArn.foreach(__v => __obj.updateDynamic("NotebookInstanceLifecycleConfigArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateNotebookInstanceLifecycleConfigOutput]
     }
   }
@@ -3315,9 +3051,7 @@ package sagemaker {
         "UserProfileName" -> UserProfileName.asInstanceOf[js.Any]
       )
 
-      SessionExpirationDurationInSeconds.foreach(__v =>
-        __obj.updateDynamic("SessionExpirationDurationInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      SessionExpirationDurationInSeconds.foreach(__v => __obj.updateDynamic("SessionExpirationDurationInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePresignedDomainUrlRequest]
     }
   }
@@ -3354,9 +3088,7 @@ package sagemaker {
         "NotebookInstanceName" -> NotebookInstanceName.asInstanceOf[js.Any]
       )
 
-      SessionExpirationDurationInSeconds.foreach(__v =>
-        __obj.updateDynamic("SessionExpirationDurationInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      SessionExpirationDurationInSeconds.foreach(__v => __obj.updateDynamic("SessionExpirationDurationInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePresignedNotebookInstanceUrlInput]
     }
   }
@@ -3499,12 +3231,8 @@ package sagemaker {
       CheckpointConfig.foreach(__v => __obj.updateDynamic("CheckpointConfig")(__v.asInstanceOf[js.Any]))
       DebugHookConfig.foreach(__v => __obj.updateDynamic("DebugHookConfig")(__v.asInstanceOf[js.Any]))
       DebugRuleConfigurations.foreach(__v => __obj.updateDynamic("DebugRuleConfigurations")(__v.asInstanceOf[js.Any]))
-      EnableInterContainerTrafficEncryption.foreach(__v =>
-        __obj.updateDynamic("EnableInterContainerTrafficEncryption")(__v.asInstanceOf[js.Any])
-      )
-      EnableManagedSpotTraining.foreach(__v =>
-        __obj.updateDynamic("EnableManagedSpotTraining")(__v.asInstanceOf[js.Any])
-      )
+      EnableInterContainerTrafficEncryption.foreach(__v => __obj.updateDynamic("EnableInterContainerTrafficEncryption")(__v.asInstanceOf[js.Any]))
+      EnableManagedSpotTraining.foreach(__v => __obj.updateDynamic("EnableManagedSpotTraining")(__v.asInstanceOf[js.Any]))
       EnableNetworkIsolation.foreach(__v => __obj.updateDynamic("EnableNetworkIsolation")(__v.asInstanceOf[js.Any]))
       ExperimentConfig.foreach(__v => __obj.updateDynamic("ExperimentConfig")(__v.asInstanceOf[js.Any]))
       HyperParameters.foreach(__v => __obj.updateDynamic("HyperParameters")(__v.asInstanceOf[js.Any]))
@@ -3732,9 +3460,7 @@ package sagemaker {
         "UserProfileName" -> UserProfileName.asInstanceOf[js.Any]
       )
 
-      SingleSignOnUserIdentifier.foreach(__v =>
-        __obj.updateDynamic("SingleSignOnUserIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      SingleSignOnUserIdentifier.foreach(__v => __obj.updateDynamic("SingleSignOnUserIdentifier")(__v.asInstanceOf[js.Any]))
       SingleSignOnUserValue.foreach(__v => __obj.updateDynamic("SingleSignOnUserValue")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       UserSettings.foreach(__v => __obj.updateDynamic("UserSettings")(__v.asInstanceOf[js.Any]))
@@ -3832,9 +3558,7 @@ package sagemaker {
         "WorkteamName" -> WorkteamName.asInstanceOf[js.Any]
       )
 
-      NotificationConfiguration.foreach(__v =>
-        __obj.updateDynamic("NotificationConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      NotificationConfiguration.foreach(__v => __obj.updateDynamic("NotificationConfiguration")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       WorkforceName.foreach(__v => __obj.updateDynamic("WorkforceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateWorkteamRequest]
@@ -4726,9 +4450,7 @@ package sagemaker {
       DomainId.foreach(__v => __obj.updateDynamic("DomainId")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
       LastHealthCheckTimestamp.foreach(__v => __obj.updateDynamic("LastHealthCheckTimestamp")(__v.asInstanceOf[js.Any]))
-      LastUserActivityTimestamp.foreach(__v =>
-        __obj.updateDynamic("LastUserActivityTimestamp")(__v.asInstanceOf[js.Any])
-      )
+      LastUserActivityTimestamp.foreach(__v => __obj.updateDynamic("LastUserActivityTimestamp")(__v.asInstanceOf[js.Any]))
       ResourceSpec.foreach(__v => __obj.updateDynamic("ResourceSpec")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       UserProfileName.foreach(__v => __obj.updateDynamic("UserProfileName")(__v.asInstanceOf[js.Any]))
@@ -4816,9 +4538,7 @@ package sagemaker {
       BestCandidate.foreach(__v => __obj.updateDynamic("BestCandidate")(__v.asInstanceOf[js.Any]))
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
-      GenerateCandidateDefinitionsOnly.foreach(__v =>
-        __obj.updateDynamic("GenerateCandidateDefinitionsOnly")(__v.asInstanceOf[js.Any])
-      )
+      GenerateCandidateDefinitionsOnly.foreach(__v => __obj.updateDynamic("GenerateCandidateDefinitionsOnly")(__v.asInstanceOf[js.Any]))
       ProblemType.foreach(__v => __obj.updateDynamic("ProblemType")(__v.asInstanceOf[js.Any]))
       ResolvedAttributes.foreach(__v => __obj.updateDynamic("ResolvedAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAutoMLJobResponse]
@@ -5010,13 +4730,9 @@ package sagemaker {
       DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
       HomeEfsFileSystemId.foreach(__v => __obj.updateDynamic("HomeEfsFileSystemId")(__v.asInstanceOf[js.Any]))
-      HomeEfsFileSystemKmsKeyId.foreach(__v =>
-        __obj.updateDynamic("HomeEfsFileSystemKmsKeyId")(__v.asInstanceOf[js.Any])
-      )
+      HomeEfsFileSystemKmsKeyId.foreach(__v => __obj.updateDynamic("HomeEfsFileSystemKmsKeyId")(__v.asInstanceOf[js.Any]))
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
-      SingleSignOnManagedApplicationInstanceId.foreach(__v =>
-        __obj.updateDynamic("SingleSignOnManagedApplicationInstanceId")(__v.asInstanceOf[js.Any])
-      )
+      SingleSignOnManagedApplicationInstanceId.foreach(__v => __obj.updateDynamic("SingleSignOnManagedApplicationInstanceId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
       Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
@@ -5251,9 +4967,7 @@ package sagemaker {
       )
 
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
-      HumanLoopActivationConfig.foreach(__v =>
-        __obj.updateDynamic("HumanLoopActivationConfig")(__v.asInstanceOf[js.Any])
-      )
+      HumanLoopActivationConfig.foreach(__v => __obj.updateDynamic("HumanLoopActivationConfig")(__v.asInstanceOf[js.Any]))
       HumanLoopRequestSource.foreach(__v => __obj.updateDynamic("HumanLoopRequestSource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeFlowDefinitionResponse]
     }
@@ -5375,9 +5089,7 @@ package sagemaker {
 
       BestTrainingJob.foreach(__v => __obj.updateDynamic("BestTrainingJob")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
-      HyperParameterTuningEndTime.foreach(__v =>
-        __obj.updateDynamic("HyperParameterTuningEndTime")(__v.asInstanceOf[js.Any])
-      )
+      HyperParameterTuningEndTime.foreach(__v => __obj.updateDynamic("HyperParameterTuningEndTime")(__v.asInstanceOf[js.Any]))
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
       OverallBestTrainingJob.foreach(__v => __obj.updateDynamic("OverallBestTrainingJob")(__v.asInstanceOf[js.Any]))
       TrainingJobDefinition.foreach(__v => __obj.updateDynamic("TrainingJobDefinition")(__v.asInstanceOf[js.Any]))
@@ -5466,9 +5178,7 @@ package sagemaker {
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
       LabelAttributeName.foreach(__v => __obj.updateDynamic("LabelAttributeName")(__v.asInstanceOf[js.Any]))
       LabelCategoryConfigS3Uri.foreach(__v => __obj.updateDynamic("LabelCategoryConfigS3Uri")(__v.asInstanceOf[js.Any]))
-      LabelingJobAlgorithmsConfig.foreach(__v =>
-        __obj.updateDynamic("LabelingJobAlgorithmsConfig")(__v.asInstanceOf[js.Any])
-      )
+      LabelingJobAlgorithmsConfig.foreach(__v => __obj.updateDynamic("LabelingJobAlgorithmsConfig")(__v.asInstanceOf[js.Any]))
       LabelingJobOutput.foreach(__v => __obj.updateDynamic("LabelingJobOutput")(__v.asInstanceOf[js.Any]))
       StoppingConditions.foreach(__v => __obj.updateDynamic("StoppingConditions")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -5590,9 +5300,7 @@ package sagemaker {
       CertifyForMarketplace.foreach(__v => __obj.updateDynamic("CertifyForMarketplace")(__v.asInstanceOf[js.Any]))
       InferenceSpecification.foreach(__v => __obj.updateDynamic("InferenceSpecification")(__v.asInstanceOf[js.Any]))
       ModelPackageDescription.foreach(__v => __obj.updateDynamic("ModelPackageDescription")(__v.asInstanceOf[js.Any]))
-      SourceAlgorithmSpecification.foreach(__v =>
-        __obj.updateDynamic("SourceAlgorithmSpecification")(__v.asInstanceOf[js.Any])
-      )
+      SourceAlgorithmSpecification.foreach(__v => __obj.updateDynamic("SourceAlgorithmSpecification")(__v.asInstanceOf[js.Any]))
       ValidationSpecification.foreach(__v => __obj.updateDynamic("ValidationSpecification")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeModelPackageOutput]
     }
@@ -5653,9 +5361,7 @@ package sagemaker {
 
       EndpointName.foreach(__v => __obj.updateDynamic("EndpointName")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
-      LastMonitoringExecutionSummary.foreach(__v =>
-        __obj.updateDynamic("LastMonitoringExecutionSummary")(__v.asInstanceOf[js.Any])
-      )
+      LastMonitoringExecutionSummary.foreach(__v => __obj.updateDynamic("LastMonitoringExecutionSummary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMonitoringScheduleResponse]
     }
   }
@@ -5719,12 +5425,8 @@ package sagemaker {
       val __obj = js.Dynamic.literal()
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
-      NotebookInstanceLifecycleConfigArn.foreach(__v =>
-        __obj.updateDynamic("NotebookInstanceLifecycleConfigArn")(__v.asInstanceOf[js.Any])
-      )
-      NotebookInstanceLifecycleConfigName.foreach(__v =>
-        __obj.updateDynamic("NotebookInstanceLifecycleConfigName")(__v.asInstanceOf[js.Any])
-      )
+      NotebookInstanceLifecycleConfigArn.foreach(__v => __obj.updateDynamic("NotebookInstanceLifecycleConfigArn")(__v.asInstanceOf[js.Any]))
+      NotebookInstanceLifecycleConfigName.foreach(__v => __obj.updateDynamic("NotebookInstanceLifecycleConfigName")(__v.asInstanceOf[js.Any]))
       OnCreate.foreach(__v => __obj.updateDynamic("OnCreate")(__v.asInstanceOf[js.Any]))
       OnStart.foreach(__v => __obj.updateDynamic("OnStart")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeNotebookInstanceLifecycleConfigOutput]
@@ -5781,9 +5483,7 @@ package sagemaker {
     ): DescribeNotebookInstanceOutput = {
       val __obj = js.Dynamic.literal()
       AcceleratorTypes.foreach(__v => __obj.updateDynamic("AcceleratorTypes")(__v.asInstanceOf[js.Any]))
-      AdditionalCodeRepositories.foreach(__v =>
-        __obj.updateDynamic("AdditionalCodeRepositories")(__v.asInstanceOf[js.Any])
-      )
+      AdditionalCodeRepositories.foreach(__v => __obj.updateDynamic("AdditionalCodeRepositories")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       DefaultCodeRepository.foreach(__v => __obj.updateDynamic("DefaultCodeRepository")(__v.asInstanceOf[js.Any]))
       DirectInternetAccess.foreach(__v => __obj.updateDynamic("DirectInternetAccess")(__v.asInstanceOf[js.Any]))
@@ -5793,9 +5493,7 @@ package sagemaker {
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
       NetworkInterfaceId.foreach(__v => __obj.updateDynamic("NetworkInterfaceId")(__v.asInstanceOf[js.Any]))
       NotebookInstanceArn.foreach(__v => __obj.updateDynamic("NotebookInstanceArn")(__v.asInstanceOf[js.Any]))
-      NotebookInstanceLifecycleConfigName.foreach(__v =>
-        __obj.updateDynamic("NotebookInstanceLifecycleConfigName")(__v.asInstanceOf[js.Any])
-      )
+      NotebookInstanceLifecycleConfigName.foreach(__v => __obj.updateDynamic("NotebookInstanceLifecycleConfigName")(__v.asInstanceOf[js.Any]))
       NotebookInstanceName.foreach(__v => __obj.updateDynamic("NotebookInstanceName")(__v.asInstanceOf[js.Any]))
       NotebookInstanceStatus.foreach(__v => __obj.updateDynamic("NotebookInstanceStatus")(__v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
@@ -6051,15 +5749,9 @@ package sagemaker {
       CheckpointConfig.foreach(__v => __obj.updateDynamic("CheckpointConfig")(__v.asInstanceOf[js.Any]))
       DebugHookConfig.foreach(__v => __obj.updateDynamic("DebugHookConfig")(__v.asInstanceOf[js.Any]))
       DebugRuleConfigurations.foreach(__v => __obj.updateDynamic("DebugRuleConfigurations")(__v.asInstanceOf[js.Any]))
-      DebugRuleEvaluationStatuses.foreach(__v =>
-        __obj.updateDynamic("DebugRuleEvaluationStatuses")(__v.asInstanceOf[js.Any])
-      )
-      EnableInterContainerTrafficEncryption.foreach(__v =>
-        __obj.updateDynamic("EnableInterContainerTrafficEncryption")(__v.asInstanceOf[js.Any])
-      )
-      EnableManagedSpotTraining.foreach(__v =>
-        __obj.updateDynamic("EnableManagedSpotTraining")(__v.asInstanceOf[js.Any])
-      )
+      DebugRuleEvaluationStatuses.foreach(__v => __obj.updateDynamic("DebugRuleEvaluationStatuses")(__v.asInstanceOf[js.Any]))
+      EnableInterContainerTrafficEncryption.foreach(__v => __obj.updateDynamic("EnableInterContainerTrafficEncryption")(__v.asInstanceOf[js.Any]))
+      EnableManagedSpotTraining.foreach(__v => __obj.updateDynamic("EnableManagedSpotTraining")(__v.asInstanceOf[js.Any]))
       EnableNetworkIsolation.foreach(__v => __obj.updateDynamic("EnableNetworkIsolation")(__v.asInstanceOf[js.Any]))
       ExperimentConfig.foreach(__v => __obj.updateDynamic("ExperimentConfig")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
@@ -6070,9 +5762,7 @@ package sagemaker {
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
       OutputDataConfig.foreach(__v => __obj.updateDynamic("OutputDataConfig")(__v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
-      SecondaryStatusTransitions.foreach(__v =>
-        __obj.updateDynamic("SecondaryStatusTransitions")(__v.asInstanceOf[js.Any])
-      )
+      SecondaryStatusTransitions.foreach(__v => __obj.updateDynamic("SecondaryStatusTransitions")(__v.asInstanceOf[js.Any]))
       TensorBoardOutputConfig.foreach(__v => __obj.updateDynamic("TensorBoardOutputConfig")(__v.asInstanceOf[js.Any]))
       TrainingEndTime.foreach(__v => __obj.updateDynamic("TrainingEndTime")(__v.asInstanceOf[js.Any]))
       TrainingStartTime.foreach(__v => __obj.updateDynamic("TrainingStartTime")(__v.asInstanceOf[js.Any]))
@@ -6367,9 +6057,7 @@ package sagemaker {
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
       HomeEfsFileSystemUid.foreach(__v => __obj.updateDynamic("HomeEfsFileSystemUid")(__v.asInstanceOf[js.Any]))
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
-      SingleSignOnUserIdentifier.foreach(__v =>
-        __obj.updateDynamic("SingleSignOnUserIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      SingleSignOnUserIdentifier.foreach(__v => __obj.updateDynamic("SingleSignOnUserIdentifier")(__v.asInstanceOf[js.Any]))
       SingleSignOnUserValue.foreach(__v => __obj.updateDynamic("SingleSignOnUserValue")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       UserProfileArn.foreach(__v => __obj.updateDynamic("UserProfileArn")(__v.asInstanceOf[js.Any]))
@@ -6685,9 +6373,7 @@ package sagemaker {
     val Deleting = "Deleting".asInstanceOf[EndpointStatus]
     val Failed = "Failed".asInstanceOf[EndpointStatus]
 
-    val values = js.Object.freeze(
-      js.Array(OutOfService, Creating, Updating, SystemUpdating, RollingBack, InService, Deleting, Failed)
-    )
+    val values = js.Object.freeze(js.Array(OutOfService, Creating, Updating, SystemUpdating, RollingBack, InService, Deleting, Failed))
   }
 
   /**
@@ -6734,8 +6420,7 @@ package sagemaker {
     val Stopping = "Stopping".asInstanceOf[ExecutionStatus]
     val Stopped = "Stopped".asInstanceOf[ExecutionStatus]
 
-    val values =
-      js.Object.freeze(js.Array(Pending, Completed, CompletedWithViolations, InProgress, Failed, Stopping, Stopped))
+    val values = js.Object.freeze(js.Array(Pending, Completed, CompletedWithViolations, InProgress, Failed, Stopping, Stopped))
   }
 
   /**
@@ -6806,9 +6491,7 @@ package sagemaker {
     ): ExperimentConfig = {
       val __obj = js.Dynamic.literal()
       ExperimentName.foreach(__v => __obj.updateDynamic("ExperimentName")(__v.asInstanceOf[js.Any]))
-      TrialComponentDisplayName.foreach(__v =>
-        __obj.updateDynamic("TrialComponentDisplayName")(__v.asInstanceOf[js.Any])
-      )
+      TrialComponentDisplayName.foreach(__v => __obj.updateDynamic("TrialComponentDisplayName")(__v.asInstanceOf[js.Any]))
       TrialName.foreach(__v => __obj.updateDynamic("TrialName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExperimentConfig]
     }
@@ -7262,9 +6945,7 @@ package sagemaker {
       )
 
       PublicWorkforceTaskPrice.foreach(__v => __obj.updateDynamic("PublicWorkforceTaskPrice")(__v.asInstanceOf[js.Any]))
-      TaskAvailabilityLifetimeInSeconds.foreach(__v =>
-        __obj.updateDynamic("TaskAvailabilityLifetimeInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      TaskAvailabilityLifetimeInSeconds.foreach(__v => __obj.updateDynamic("TaskAvailabilityLifetimeInSeconds")(__v.asInstanceOf[js.Any]))
       TaskKeywords.foreach(__v => __obj.updateDynamic("TaskKeywords")(__v.asInstanceOf[js.Any]))
       TaskTimeLimitInSeconds.foreach(__v => __obj.updateDynamic("TaskTimeLimitInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HumanLoopConfig]
@@ -7340,9 +7021,7 @@ package sagemaker {
 
       MaxConcurrentTaskCount.foreach(__v => __obj.updateDynamic("MaxConcurrentTaskCount")(__v.asInstanceOf[js.Any]))
       PublicWorkforceTaskPrice.foreach(__v => __obj.updateDynamic("PublicWorkforceTaskPrice")(__v.asInstanceOf[js.Any]))
-      TaskAvailabilityLifetimeInSeconds.foreach(__v =>
-        __obj.updateDynamic("TaskAvailabilityLifetimeInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      TaskAvailabilityLifetimeInSeconds.foreach(__v => __obj.updateDynamic("TaskAvailabilityLifetimeInSeconds")(__v.asInstanceOf[js.Any]))
       TaskKeywords.foreach(__v => __obj.updateDynamic("TaskKeywords")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HumanTaskConfig]
     }
@@ -7515,12 +7194,8 @@ package sagemaker {
 
       CheckpointConfig.foreach(__v => __obj.updateDynamic("CheckpointConfig")(__v.asInstanceOf[js.Any]))
       DefinitionName.foreach(__v => __obj.updateDynamic("DefinitionName")(__v.asInstanceOf[js.Any]))
-      EnableInterContainerTrafficEncryption.foreach(__v =>
-        __obj.updateDynamic("EnableInterContainerTrafficEncryption")(__v.asInstanceOf[js.Any])
-      )
-      EnableManagedSpotTraining.foreach(__v =>
-        __obj.updateDynamic("EnableManagedSpotTraining")(__v.asInstanceOf[js.Any])
-      )
+      EnableInterContainerTrafficEncryption.foreach(__v => __obj.updateDynamic("EnableInterContainerTrafficEncryption")(__v.asInstanceOf[js.Any]))
+      EnableManagedSpotTraining.foreach(__v => __obj.updateDynamic("EnableManagedSpotTraining")(__v.asInstanceOf[js.Any]))
       EnableNetworkIsolation.foreach(__v => __obj.updateDynamic("EnableNetworkIsolation")(__v.asInstanceOf[js.Any]))
       HyperParameterRanges.foreach(__v => __obj.updateDynamic("HyperParameterRanges")(__v.asInstanceOf[js.Any]))
       InputDataConfig.foreach(__v => __obj.updateDynamic("InputDataConfig")(__v.asInstanceOf[js.Any]))
@@ -7559,8 +7234,7 @@ package sagemaker {
         TrainingJobStatus: TrainingJobStatus,
         TunedHyperParameters: HyperParameters,
         FailureReason: js.UndefOr[FailureReason] = js.undefined,
-        FinalHyperParameterTuningJobObjectiveMetric: js.UndefOr[FinalHyperParameterTuningJobObjectiveMetric] =
-          js.undefined,
+        FinalHyperParameterTuningJobObjectiveMetric: js.UndefOr[FinalHyperParameterTuningJobObjectiveMetric] = js.undefined,
         ObjectiveStatus: js.UndefOr[ObjectiveStatus] = js.undefined,
         TrainingEndTime: js.UndefOr[Timestamp] = js.undefined,
         TrainingJobDefinitionName: js.UndefOr[HyperParameterTrainingJobDefinitionName] = js.undefined,
@@ -7576,14 +7250,10 @@ package sagemaker {
       )
 
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
-      FinalHyperParameterTuningJobObjectiveMetric.foreach(__v =>
-        __obj.updateDynamic("FinalHyperParameterTuningJobObjectiveMetric")(__v.asInstanceOf[js.Any])
-      )
+      FinalHyperParameterTuningJobObjectiveMetric.foreach(__v => __obj.updateDynamic("FinalHyperParameterTuningJobObjectiveMetric")(__v.asInstanceOf[js.Any]))
       ObjectiveStatus.foreach(__v => __obj.updateDynamic("ObjectiveStatus")(__v.asInstanceOf[js.Any]))
       TrainingEndTime.foreach(__v => __obj.updateDynamic("TrainingEndTime")(__v.asInstanceOf[js.Any]))
-      TrainingJobDefinitionName.foreach(__v =>
-        __obj.updateDynamic("TrainingJobDefinitionName")(__v.asInstanceOf[js.Any])
-      )
+      TrainingJobDefinitionName.foreach(__v => __obj.updateDynamic("TrainingJobDefinitionName")(__v.asInstanceOf[js.Any]))
       TrainingStartTime.foreach(__v => __obj.updateDynamic("TrainingStartTime")(__v.asInstanceOf[js.Any]))
       TuningJobName.foreach(__v => __obj.updateDynamic("TuningJobName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HyperParameterTrainingJobSummary]
@@ -7618,16 +7288,10 @@ package sagemaker {
         "Strategy" -> Strategy.asInstanceOf[js.Any]
       )
 
-      HyperParameterTuningJobObjective.foreach(__v =>
-        __obj.updateDynamic("HyperParameterTuningJobObjective")(__v.asInstanceOf[js.Any])
-      )
+      HyperParameterTuningJobObjective.foreach(__v => __obj.updateDynamic("HyperParameterTuningJobObjective")(__v.asInstanceOf[js.Any]))
       ParameterRanges.foreach(__v => __obj.updateDynamic("ParameterRanges")(__v.asInstanceOf[js.Any]))
-      TrainingJobEarlyStoppingType.foreach(__v =>
-        __obj.updateDynamic("TrainingJobEarlyStoppingType")(__v.asInstanceOf[js.Any])
-      )
-      TuningJobCompletionCriteria.foreach(__v =>
-        __obj.updateDynamic("TuningJobCompletionCriteria")(__v.asInstanceOf[js.Any])
-      )
+      TrainingJobEarlyStoppingType.foreach(__v => __obj.updateDynamic("TrainingJobEarlyStoppingType")(__v.asInstanceOf[js.Any]))
+      TuningJobCompletionCriteria.foreach(__v => __obj.updateDynamic("TuningJobCompletionCriteria")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HyperParameterTuningJobConfig]
     }
   }
@@ -7740,9 +7404,7 @@ package sagemaker {
         "TrainingJobStatusCounters" -> TrainingJobStatusCounters.asInstanceOf[js.Any]
       )
 
-      HyperParameterTuningEndTime.foreach(__v =>
-        __obj.updateDynamic("HyperParameterTuningEndTime")(__v.asInstanceOf[js.Any])
-      )
+      HyperParameterTuningEndTime.foreach(__v => __obj.updateDynamic("HyperParameterTuningEndTime")(__v.asInstanceOf[js.Any]))
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
       ResourceLimits.foreach(__v => __obj.updateDynamic("ResourceLimits")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HyperParameterTuningJobSummary]
@@ -7887,48 +7549,46 @@ package sagemaker {
     val `ml.p3.8xlarge` = "ml.p3.8xlarge".asInstanceOf[InstanceType]
     val `ml.p3.16xlarge` = "ml.p3.16xlarge".asInstanceOf[InstanceType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `ml.t2.medium`,
-        `ml.t2.large`,
-        `ml.t2.xlarge`,
-        `ml.t2.2xlarge`,
-        `ml.t3.medium`,
-        `ml.t3.large`,
-        `ml.t3.xlarge`,
-        `ml.t3.2xlarge`,
-        `ml.m4.xlarge`,
-        `ml.m4.2xlarge`,
-        `ml.m4.4xlarge`,
-        `ml.m4.10xlarge`,
-        `ml.m4.16xlarge`,
-        `ml.m5.xlarge`,
-        `ml.m5.2xlarge`,
-        `ml.m5.4xlarge`,
-        `ml.m5.12xlarge`,
-        `ml.m5.24xlarge`,
-        `ml.c4.xlarge`,
-        `ml.c4.2xlarge`,
-        `ml.c4.4xlarge`,
-        `ml.c4.8xlarge`,
-        `ml.c5.xlarge`,
-        `ml.c5.2xlarge`,
-        `ml.c5.4xlarge`,
-        `ml.c5.9xlarge`,
-        `ml.c5.18xlarge`,
-        `ml.c5d.xlarge`,
-        `ml.c5d.2xlarge`,
-        `ml.c5d.4xlarge`,
-        `ml.c5d.9xlarge`,
-        `ml.c5d.18xlarge`,
-        `ml.p2.xlarge`,
-        `ml.p2.8xlarge`,
-        `ml.p2.16xlarge`,
-        `ml.p3.2xlarge`,
-        `ml.p3.8xlarge`,
-        `ml.p3.16xlarge`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      `ml.t2.medium`,
+      `ml.t2.large`,
+      `ml.t2.xlarge`,
+      `ml.t2.2xlarge`,
+      `ml.t3.medium`,
+      `ml.t3.large`,
+      `ml.t3.xlarge`,
+      `ml.t3.2xlarge`,
+      `ml.m4.xlarge`,
+      `ml.m4.2xlarge`,
+      `ml.m4.4xlarge`,
+      `ml.m4.10xlarge`,
+      `ml.m4.16xlarge`,
+      `ml.m5.xlarge`,
+      `ml.m5.2xlarge`,
+      `ml.m5.4xlarge`,
+      `ml.m5.12xlarge`,
+      `ml.m5.24xlarge`,
+      `ml.c4.xlarge`,
+      `ml.c4.2xlarge`,
+      `ml.c4.4xlarge`,
+      `ml.c4.8xlarge`,
+      `ml.c5.xlarge`,
+      `ml.c5.2xlarge`,
+      `ml.c5.4xlarge`,
+      `ml.c5.9xlarge`,
+      `ml.c5.18xlarge`,
+      `ml.c5d.xlarge`,
+      `ml.c5d.2xlarge`,
+      `ml.c5d.4xlarge`,
+      `ml.c5d.9xlarge`,
+      `ml.c5d.18xlarge`,
+      `ml.p2.xlarge`,
+      `ml.p2.8xlarge`,
+      `ml.p2.16xlarge`,
+      `ml.p3.2xlarge`,
+      `ml.p3.8xlarge`,
+      `ml.p3.16xlarge`
+    ))
   }
 
   /**
@@ -8109,12 +7769,8 @@ package sagemaker {
         "LabelingJobAlgorithmSpecificationArn" -> LabelingJobAlgorithmSpecificationArn.asInstanceOf[js.Any]
       )
 
-      InitialActiveLearningModelArn.foreach(__v =>
-        __obj.updateDynamic("InitialActiveLearningModelArn")(__v.asInstanceOf[js.Any])
-      )
-      LabelingJobResourceConfig.foreach(__v =>
-        __obj.updateDynamic("LabelingJobResourceConfig")(__v.asInstanceOf[js.Any])
-      )
+      InitialActiveLearningModelArn.foreach(__v => __obj.updateDynamic("InitialActiveLearningModelArn")(__v.asInstanceOf[js.Any]))
+      LabelingJobResourceConfig.foreach(__v => __obj.updateDynamic("LabelingJobResourceConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LabelingJobAlgorithmsConfig]
     }
   }
@@ -8188,9 +7844,7 @@ package sagemaker {
 
       LabelCounters.foreach(__v => __obj.updateDynamic("LabelCounters")(__v.asInstanceOf[js.Any]))
       LabelingJobName.foreach(__v => __obj.updateDynamic("LabelingJobName")(__v.asInstanceOf[js.Any]))
-      NumberOfHumanWorkersPerDataObject.foreach(__v =>
-        __obj.updateDynamic("NumberOfHumanWorkersPerDataObject")(__v.asInstanceOf[js.Any])
-      )
+      NumberOfHumanWorkersPerDataObject.foreach(__v => __obj.updateDynamic("NumberOfHumanWorkersPerDataObject")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LabelingJobForWorkteamSummary]
     }
   }
@@ -8238,9 +7892,7 @@ package sagemaker {
         "OutputDatasetS3Uri" -> OutputDatasetS3Uri.asInstanceOf[js.Any]
       )
 
-      FinalActiveLearningModelArn.foreach(__v =>
-        __obj.updateDynamic("FinalActiveLearningModelArn")(__v.asInstanceOf[js.Any])
-      )
+      FinalActiveLearningModelArn.foreach(__v => __obj.updateDynamic("FinalActiveLearningModelArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LabelingJobOutput]
     }
   }
@@ -8340,12 +7992,8 @@ package sagemaker {
         MaxPercentageOfInputDatasetLabeled: js.UndefOr[MaxPercentageOfInputDatasetLabeled] = js.undefined
     ): LabelingJobStoppingConditions = {
       val __obj = js.Dynamic.literal()
-      MaxHumanLabeledObjectCount.foreach(__v =>
-        __obj.updateDynamic("MaxHumanLabeledObjectCount")(__v.asInstanceOf[js.Any])
-      )
-      MaxPercentageOfInputDatasetLabeled.foreach(__v =>
-        __obj.updateDynamic("MaxPercentageOfInputDatasetLabeled")(__v.asInstanceOf[js.Any])
-      )
+      MaxHumanLabeledObjectCount.foreach(__v => __obj.updateDynamic("MaxHumanLabeledObjectCount")(__v.asInstanceOf[js.Any]))
+      MaxPercentageOfInputDatasetLabeled.foreach(__v => __obj.updateDynamic("MaxPercentageOfInputDatasetLabeled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LabelingJobStoppingConditions]
     }
   }
@@ -8396,9 +8044,7 @@ package sagemaker {
         "WorkteamArn" -> WorkteamArn.asInstanceOf[js.Any]
       )
 
-      AnnotationConsolidationLambdaArn.foreach(__v =>
-        __obj.updateDynamic("AnnotationConsolidationLambdaArn")(__v.asInstanceOf[js.Any])
-      )
+      AnnotationConsolidationLambdaArn.foreach(__v => __obj.updateDynamic("AnnotationConsolidationLambdaArn")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
       InputConfig.foreach(__v => __obj.updateDynamic("InputConfig")(__v.asInstanceOf[js.Any]))
       LabelingJobOutput.foreach(__v => __obj.updateDynamic("LabelingJobOutput")(__v.asInstanceOf[js.Any]))
@@ -9570,9 +9216,7 @@ package sagemaker {
     ): ListNotebookInstanceLifecycleConfigsOutput = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      NotebookInstanceLifecycleConfigs.foreach(__v =>
-        __obj.updateDynamic("NotebookInstanceLifecycleConfigs")(__v.asInstanceOf[js.Any])
-      )
+      NotebookInstanceLifecycleConfigs.foreach(__v => __obj.updateDynamic("NotebookInstanceLifecycleConfigs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListNotebookInstanceLifecycleConfigsOutput]
     }
   }
@@ -9612,22 +9256,16 @@ package sagemaker {
         StatusEquals: js.UndefOr[NotebookInstanceStatus] = js.undefined
     ): ListNotebookInstancesInput = {
       val __obj = js.Dynamic.literal()
-      AdditionalCodeRepositoryEquals.foreach(__v =>
-        __obj.updateDynamic("AdditionalCodeRepositoryEquals")(__v.asInstanceOf[js.Any])
-      )
+      AdditionalCodeRepositoryEquals.foreach(__v => __obj.updateDynamic("AdditionalCodeRepositoryEquals")(__v.asInstanceOf[js.Any]))
       CreationTimeAfter.foreach(__v => __obj.updateDynamic("CreationTimeAfter")(__v.asInstanceOf[js.Any]))
       CreationTimeBefore.foreach(__v => __obj.updateDynamic("CreationTimeBefore")(__v.asInstanceOf[js.Any]))
-      DefaultCodeRepositoryContains.foreach(__v =>
-        __obj.updateDynamic("DefaultCodeRepositoryContains")(__v.asInstanceOf[js.Any])
-      )
+      DefaultCodeRepositoryContains.foreach(__v => __obj.updateDynamic("DefaultCodeRepositoryContains")(__v.asInstanceOf[js.Any]))
       LastModifiedTimeAfter.foreach(__v => __obj.updateDynamic("LastModifiedTimeAfter")(__v.asInstanceOf[js.Any]))
       LastModifiedTimeBefore.foreach(__v => __obj.updateDynamic("LastModifiedTimeBefore")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NameContains.foreach(__v => __obj.updateDynamic("NameContains")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      NotebookInstanceLifecycleConfigNameContains.foreach(__v =>
-        __obj.updateDynamic("NotebookInstanceLifecycleConfigNameContains")(__v.asInstanceOf[js.Any])
-      )
+      NotebookInstanceLifecycleConfigNameContains.foreach(__v => __obj.updateDynamic("NotebookInstanceLifecycleConfigNameContains")(__v.asInstanceOf[js.Any]))
       SortBy.foreach(__v => __obj.updateDynamic("SortBy")(__v.asInstanceOf[js.Any]))
       SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
       StatusEquals.foreach(__v => __obj.updateDynamic("StatusEquals")(__v.asInstanceOf[js.Any]))
@@ -10377,9 +10015,7 @@ package sagemaker {
     ): ModelClientConfig = {
       val __obj = js.Dynamic.literal()
       InvocationsMaxRetries.foreach(__v => __obj.updateDynamic("InvocationsMaxRetries")(__v.asInstanceOf[js.Any]))
-      InvocationsTimeoutInSeconds.foreach(__v =>
-        __obj.updateDynamic("InvocationsTimeoutInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      InvocationsTimeoutInSeconds.foreach(__v => __obj.updateDynamic("InvocationsTimeoutInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModelClientConfig]
     }
   }
@@ -10634,12 +10270,8 @@ package sagemaker {
 
       ContainerArguments.foreach(__v => __obj.updateDynamic("ContainerArguments")(__v.asInstanceOf[js.Any]))
       ContainerEntrypoint.foreach(__v => __obj.updateDynamic("ContainerEntrypoint")(__v.asInstanceOf[js.Any]))
-      PostAnalyticsProcessorSourceUri.foreach(__v =>
-        __obj.updateDynamic("PostAnalyticsProcessorSourceUri")(__v.asInstanceOf[js.Any])
-      )
-      RecordPreprocessorSourceUri.foreach(__v =>
-        __obj.updateDynamic("RecordPreprocessorSourceUri")(__v.asInstanceOf[js.Any])
-      )
+      PostAnalyticsProcessorSourceUri.foreach(__v => __obj.updateDynamic("PostAnalyticsProcessorSourceUri")(__v.asInstanceOf[js.Any]))
+      RecordPreprocessorSourceUri.foreach(__v => __obj.updateDynamic("RecordPreprocessorSourceUri")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MonitoringAppSpecification]
     }
   }
@@ -11081,9 +10713,7 @@ package sagemaker {
         VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): NetworkConfig = {
       val __obj = js.Dynamic.literal()
-      EnableInterContainerTrafficEncryption.foreach(__v =>
-        __obj.updateDynamic("EnableInterContainerTrafficEncryption")(__v.asInstanceOf[js.Any])
-      )
+      EnableInterContainerTrafficEncryption.foreach(__v => __obj.updateDynamic("EnableInterContainerTrafficEncryption")(__v.asInstanceOf[js.Any]))
       EnableNetworkIsolation.foreach(__v => __obj.updateDynamic("EnableNetworkIsolation")(__v.asInstanceOf[js.Any]))
       VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NetworkConfig]
@@ -11100,9 +10730,7 @@ package sagemaker {
     val `ml.eia2.large` = "ml.eia2.large".asInstanceOf[NotebookInstanceAcceleratorType]
     val `ml.eia2.xlarge` = "ml.eia2.xlarge".asInstanceOf[NotebookInstanceAcceleratorType]
 
-    val values = js.Object.freeze(
-      js.Array(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`, `ml.eia2.medium`, `ml.eia2.large`, `ml.eia2.xlarge`)
-    )
+    val values = js.Object.freeze(js.Array(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`, `ml.eia2.medium`, `ml.eia2.large`, `ml.eia2.xlarge`))
   }
 
   @js.native
@@ -11247,16 +10875,12 @@ package sagemaker {
         "NotebookInstanceName" -> NotebookInstanceName.asInstanceOf[js.Any]
       )
 
-      AdditionalCodeRepositories.foreach(__v =>
-        __obj.updateDynamic("AdditionalCodeRepositories")(__v.asInstanceOf[js.Any])
-      )
+      AdditionalCodeRepositories.foreach(__v => __obj.updateDynamic("AdditionalCodeRepositories")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       DefaultCodeRepository.foreach(__v => __obj.updateDynamic("DefaultCodeRepository")(__v.asInstanceOf[js.Any]))
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
-      NotebookInstanceLifecycleConfigName.foreach(__v =>
-        __obj.updateDynamic("NotebookInstanceLifecycleConfigName")(__v.asInstanceOf[js.Any])
-      )
+      NotebookInstanceLifecycleConfigName.foreach(__v => __obj.updateDynamic("NotebookInstanceLifecycleConfigName")(__v.asInstanceOf[js.Any]))
       NotebookInstanceStatus.foreach(__v => __obj.updateDynamic("NotebookInstanceStatus")(__v.asInstanceOf[js.Any]))
       Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NotebookInstanceSummary]
@@ -11440,20 +11064,7 @@ package sagemaker {
     val NotExists = "NotExists".asInstanceOf[Operator]
     val In = "In".asInstanceOf[Operator]
 
-    val values = js.Object.freeze(
-      js.Array(
-        Equals,
-        NotEquals,
-        GreaterThan,
-        GreaterThanOrEqualTo,
-        LessThan,
-        LessThanOrEqualTo,
-        Contains,
-        Exists,
-        NotExists,
-        In
-      )
-    )
+    val values = js.Object.freeze(js.Array(Equals, NotEquals, GreaterThan, GreaterThanOrEqualTo, LessThan, LessThanOrEqualTo, Contains, Exists, NotExists, In))
   }
 
   @js.native
@@ -11537,15 +11148,9 @@ package sagemaker {
         IntegerParameterRangeSpecification: js.UndefOr[IntegerParameterRangeSpecification] = js.undefined
     ): ParameterRange = {
       val __obj = js.Dynamic.literal()
-      CategoricalParameterRangeSpecification.foreach(__v =>
-        __obj.updateDynamic("CategoricalParameterRangeSpecification")(__v.asInstanceOf[js.Any])
-      )
-      ContinuousParameterRangeSpecification.foreach(__v =>
-        __obj.updateDynamic("ContinuousParameterRangeSpecification")(__v.asInstanceOf[js.Any])
-      )
-      IntegerParameterRangeSpecification.foreach(__v =>
-        __obj.updateDynamic("IntegerParameterRangeSpecification")(__v.asInstanceOf[js.Any])
-      )
+      CategoricalParameterRangeSpecification.foreach(__v => __obj.updateDynamic("CategoricalParameterRangeSpecification")(__v.asInstanceOf[js.Any]))
+      ContinuousParameterRangeSpecification.foreach(__v => __obj.updateDynamic("ContinuousParameterRangeSpecification")(__v.asInstanceOf[js.Any]))
+      IntegerParameterRangeSpecification.foreach(__v => __obj.updateDynamic("IntegerParameterRangeSpecification")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ParameterRange]
     }
   }
@@ -11570,12 +11175,8 @@ package sagemaker {
         IntegerParameterRanges: js.UndefOr[IntegerParameterRanges] = js.undefined
     ): ParameterRanges = {
       val __obj = js.Dynamic.literal()
-      CategoricalParameterRanges.foreach(__v =>
-        __obj.updateDynamic("CategoricalParameterRanges")(__v.asInstanceOf[js.Any])
-      )
-      ContinuousParameterRanges.foreach(__v =>
-        __obj.updateDynamic("ContinuousParameterRanges")(__v.asInstanceOf[js.Any])
-      )
+      CategoricalParameterRanges.foreach(__v => __obj.updateDynamic("CategoricalParameterRanges")(__v.asInstanceOf[js.Any]))
+      ContinuousParameterRanges.foreach(__v => __obj.updateDynamic("ContinuousParameterRanges")(__v.asInstanceOf[js.Any]))
       IntegerParameterRanges.foreach(__v => __obj.updateDynamic("IntegerParameterRanges")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ParameterRanges]
     }
@@ -11628,9 +11229,7 @@ package sagemaker {
         HyperParameterTuningJobName: js.UndefOr[HyperParameterTuningJobName] = js.undefined
     ): ParentHyperParameterTuningJob = {
       val __obj = js.Dynamic.literal()
-      HyperParameterTuningJobName.foreach(__v =>
-        __obj.updateDynamic("HyperParameterTuningJobName")(__v.asInstanceOf[js.Any])
-      )
+      HyperParameterTuningJobName.foreach(__v => __obj.updateDynamic("HyperParameterTuningJobName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ParentHyperParameterTuningJob]
     }
   }
@@ -11741,48 +11340,46 @@ package sagemaker {
     val `ml.r5.16xlarge` = "ml.r5.16xlarge".asInstanceOf[ProcessingInstanceType]
     val `ml.r5.24xlarge` = "ml.r5.24xlarge".asInstanceOf[ProcessingInstanceType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `ml.t3.medium`,
-        `ml.t3.large`,
-        `ml.t3.xlarge`,
-        `ml.t3.2xlarge`,
-        `ml.m4.xlarge`,
-        `ml.m4.2xlarge`,
-        `ml.m4.4xlarge`,
-        `ml.m4.10xlarge`,
-        `ml.m4.16xlarge`,
-        `ml.c4.xlarge`,
-        `ml.c4.2xlarge`,
-        `ml.c4.4xlarge`,
-        `ml.c4.8xlarge`,
-        `ml.p2.xlarge`,
-        `ml.p2.8xlarge`,
-        `ml.p2.16xlarge`,
-        `ml.p3.2xlarge`,
-        `ml.p3.8xlarge`,
-        `ml.p3.16xlarge`,
-        `ml.c5.xlarge`,
-        `ml.c5.2xlarge`,
-        `ml.c5.4xlarge`,
-        `ml.c5.9xlarge`,
-        `ml.c5.18xlarge`,
-        `ml.m5.large`,
-        `ml.m5.xlarge`,
-        `ml.m5.2xlarge`,
-        `ml.m5.4xlarge`,
-        `ml.m5.12xlarge`,
-        `ml.m5.24xlarge`,
-        `ml.r5.large`,
-        `ml.r5.xlarge`,
-        `ml.r5.2xlarge`,
-        `ml.r5.4xlarge`,
-        `ml.r5.8xlarge`,
-        `ml.r5.12xlarge`,
-        `ml.r5.16xlarge`,
-        `ml.r5.24xlarge`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      `ml.t3.medium`,
+      `ml.t3.large`,
+      `ml.t3.xlarge`,
+      `ml.t3.2xlarge`,
+      `ml.m4.xlarge`,
+      `ml.m4.2xlarge`,
+      `ml.m4.4xlarge`,
+      `ml.m4.10xlarge`,
+      `ml.m4.16xlarge`,
+      `ml.c4.xlarge`,
+      `ml.c4.2xlarge`,
+      `ml.c4.4xlarge`,
+      `ml.c4.8xlarge`,
+      `ml.p2.xlarge`,
+      `ml.p2.8xlarge`,
+      `ml.p2.16xlarge`,
+      `ml.p3.2xlarge`,
+      `ml.p3.8xlarge`,
+      `ml.p3.16xlarge`,
+      `ml.c5.xlarge`,
+      `ml.c5.2xlarge`,
+      `ml.c5.4xlarge`,
+      `ml.c5.9xlarge`,
+      `ml.c5.18xlarge`,
+      `ml.m5.large`,
+      `ml.m5.xlarge`,
+      `ml.m5.2xlarge`,
+      `ml.m5.4xlarge`,
+      `ml.m5.12xlarge`,
+      `ml.m5.24xlarge`,
+      `ml.r5.large`,
+      `ml.r5.xlarge`,
+      `ml.r5.2xlarge`,
+      `ml.r5.4xlarge`,
+      `ml.r5.8xlarge`,
+      `ml.r5.12xlarge`,
+      `ml.r5.16xlarge`,
+      `ml.r5.24xlarge`
+    ))
   }
 
   /**
@@ -12165,9 +11762,7 @@ package sagemaker {
     val `ml.eia2.large` = "ml.eia2.large".asInstanceOf[ProductionVariantAcceleratorType]
     val `ml.eia2.xlarge` = "ml.eia2.xlarge".asInstanceOf[ProductionVariantAcceleratorType]
 
-    val values = js.Object.freeze(
-      js.Array(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`, `ml.eia2.medium`, `ml.eia2.large`, `ml.eia2.xlarge`)
-    )
+    val values = js.Object.freeze(js.Array(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`, `ml.eia2.medium`, `ml.eia2.large`, `ml.eia2.xlarge`))
   }
 
   @js.native
@@ -12240,76 +11835,74 @@ package sagemaker {
     val `ml.inf1.6xlarge` = "ml.inf1.6xlarge".asInstanceOf[ProductionVariantInstanceType]
     val `ml.inf1.24xlarge` = "ml.inf1.24xlarge".asInstanceOf[ProductionVariantInstanceType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `ml.t2.medium`,
-        `ml.t2.large`,
-        `ml.t2.xlarge`,
-        `ml.t2.2xlarge`,
-        `ml.m4.xlarge`,
-        `ml.m4.2xlarge`,
-        `ml.m4.4xlarge`,
-        `ml.m4.10xlarge`,
-        `ml.m4.16xlarge`,
-        `ml.m5.large`,
-        `ml.m5.xlarge`,
-        `ml.m5.2xlarge`,
-        `ml.m5.4xlarge`,
-        `ml.m5.12xlarge`,
-        `ml.m5.24xlarge`,
-        `ml.m5d.large`,
-        `ml.m5d.xlarge`,
-        `ml.m5d.2xlarge`,
-        `ml.m5d.4xlarge`,
-        `ml.m5d.12xlarge`,
-        `ml.m5d.24xlarge`,
-        `ml.c4.large`,
-        `ml.c4.xlarge`,
-        `ml.c4.2xlarge`,
-        `ml.c4.4xlarge`,
-        `ml.c4.8xlarge`,
-        `ml.p2.xlarge`,
-        `ml.p2.8xlarge`,
-        `ml.p2.16xlarge`,
-        `ml.p3.2xlarge`,
-        `ml.p3.8xlarge`,
-        `ml.p3.16xlarge`,
-        `ml.c5.large`,
-        `ml.c5.xlarge`,
-        `ml.c5.2xlarge`,
-        `ml.c5.4xlarge`,
-        `ml.c5.9xlarge`,
-        `ml.c5.18xlarge`,
-        `ml.c5d.large`,
-        `ml.c5d.xlarge`,
-        `ml.c5d.2xlarge`,
-        `ml.c5d.4xlarge`,
-        `ml.c5d.9xlarge`,
-        `ml.c5d.18xlarge`,
-        `ml.g4dn.xlarge`,
-        `ml.g4dn.2xlarge`,
-        `ml.g4dn.4xlarge`,
-        `ml.g4dn.8xlarge`,
-        `ml.g4dn.12xlarge`,
-        `ml.g4dn.16xlarge`,
-        `ml.r5.large`,
-        `ml.r5.xlarge`,
-        `ml.r5.2xlarge`,
-        `ml.r5.4xlarge`,
-        `ml.r5.12xlarge`,
-        `ml.r5.24xlarge`,
-        `ml.r5d.large`,
-        `ml.r5d.xlarge`,
-        `ml.r5d.2xlarge`,
-        `ml.r5d.4xlarge`,
-        `ml.r5d.12xlarge`,
-        `ml.r5d.24xlarge`,
-        `ml.inf1.xlarge`,
-        `ml.inf1.2xlarge`,
-        `ml.inf1.6xlarge`,
-        `ml.inf1.24xlarge`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      `ml.t2.medium`,
+      `ml.t2.large`,
+      `ml.t2.xlarge`,
+      `ml.t2.2xlarge`,
+      `ml.m4.xlarge`,
+      `ml.m4.2xlarge`,
+      `ml.m4.4xlarge`,
+      `ml.m4.10xlarge`,
+      `ml.m4.16xlarge`,
+      `ml.m5.large`,
+      `ml.m5.xlarge`,
+      `ml.m5.2xlarge`,
+      `ml.m5.4xlarge`,
+      `ml.m5.12xlarge`,
+      `ml.m5.24xlarge`,
+      `ml.m5d.large`,
+      `ml.m5d.xlarge`,
+      `ml.m5d.2xlarge`,
+      `ml.m5d.4xlarge`,
+      `ml.m5d.12xlarge`,
+      `ml.m5d.24xlarge`,
+      `ml.c4.large`,
+      `ml.c4.xlarge`,
+      `ml.c4.2xlarge`,
+      `ml.c4.4xlarge`,
+      `ml.c4.8xlarge`,
+      `ml.p2.xlarge`,
+      `ml.p2.8xlarge`,
+      `ml.p2.16xlarge`,
+      `ml.p3.2xlarge`,
+      `ml.p3.8xlarge`,
+      `ml.p3.16xlarge`,
+      `ml.c5.large`,
+      `ml.c5.xlarge`,
+      `ml.c5.2xlarge`,
+      `ml.c5.4xlarge`,
+      `ml.c5.9xlarge`,
+      `ml.c5.18xlarge`,
+      `ml.c5d.large`,
+      `ml.c5d.xlarge`,
+      `ml.c5d.2xlarge`,
+      `ml.c5d.4xlarge`,
+      `ml.c5d.9xlarge`,
+      `ml.c5d.18xlarge`,
+      `ml.g4dn.xlarge`,
+      `ml.g4dn.2xlarge`,
+      `ml.g4dn.4xlarge`,
+      `ml.g4dn.8xlarge`,
+      `ml.g4dn.12xlarge`,
+      `ml.g4dn.16xlarge`,
+      `ml.r5.large`,
+      `ml.r5.xlarge`,
+      `ml.r5.2xlarge`,
+      `ml.r5.4xlarge`,
+      `ml.r5.12xlarge`,
+      `ml.r5.24xlarge`,
+      `ml.r5d.large`,
+      `ml.r5d.xlarge`,
+      `ml.r5d.2xlarge`,
+      `ml.r5d.4xlarge`,
+      `ml.r5d.12xlarge`,
+      `ml.r5d.24xlarge`,
+      `ml.inf1.xlarge`,
+      `ml.inf1.2xlarge`,
+      `ml.inf1.6xlarge`,
+      `ml.inf1.24xlarge`
+    ))
   }
 
   /**
@@ -12990,24 +12583,22 @@ package sagemaker {
     val Interrupted = "Interrupted".asInstanceOf[SecondaryStatus]
     val MaxWaitTimeExceeded = "MaxWaitTimeExceeded".asInstanceOf[SecondaryStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        Starting,
-        LaunchingMLInstances,
-        PreparingTrainingStack,
-        Downloading,
-        DownloadingTrainingImage,
-        Training,
-        Uploading,
-        Stopping,
-        Stopped,
-        MaxRuntimeExceeded,
-        Completed,
-        Failed,
-        Interrupted,
-        MaxWaitTimeExceeded
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      Starting,
+      LaunchingMLInstances,
+      PreparingTrainingStack,
+      Downloading,
+      DownloadingTrainingImage,
+      Training,
+      Uploading,
+      Stopping,
+      Stopped,
+      MaxRuntimeExceeded,
+      Completed,
+      Failed,
+      Interrupted,
+      MaxWaitTimeExceeded
+    ))
   }
 
   /**
@@ -13541,36 +13132,34 @@ package sagemaker {
     val x86_win32 = "x86_win32".asInstanceOf[TargetDevice]
     val x86_win64 = "x86_win64".asInstanceOf[TargetDevice]
 
-    val values = js.Object.freeze(
-      js.Array(
-        lambda,
-        ml_m4,
-        ml_m5,
-        ml_c4,
-        ml_c5,
-        ml_p2,
-        ml_p3,
-        ml_g4dn,
-        ml_inf1,
-        jetson_tx1,
-        jetson_tx2,
-        jetson_nano,
-        jetson_xavier,
-        rasp3b,
-        imx8qm,
-        deeplens,
-        rk3399,
-        rk3288,
-        aisage,
-        sbe_c,
-        qcs605,
-        qcs603,
-        sitara_am57x,
-        amba_cv22,
-        x86_win32,
-        x86_win64
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      lambda,
+      ml_m4,
+      ml_m5,
+      ml_c4,
+      ml_c5,
+      ml_p2,
+      ml_p3,
+      ml_g4dn,
+      ml_inf1,
+      jetson_tx1,
+      jetson_tx2,
+      jetson_nano,
+      jetson_xavier,
+      rasp3b,
+      imx8qm,
+      deeplens,
+      rk3399,
+      rk3288,
+      aisage,
+      sbe_c,
+      qcs605,
+      qcs603,
+      sitara_am57x,
+      amba_cv22,
+      x86_win32,
+      x86_win64
+    ))
   }
 
   /**
@@ -13725,48 +13314,46 @@ package sagemaker {
     val `ml.c5n.9xlarge` = "ml.c5n.9xlarge".asInstanceOf[TrainingInstanceType]
     val `ml.c5n.18xlarge` = "ml.c5n.18xlarge".asInstanceOf[TrainingInstanceType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `ml.m4.xlarge`,
-        `ml.m4.2xlarge`,
-        `ml.m4.4xlarge`,
-        `ml.m4.10xlarge`,
-        `ml.m4.16xlarge`,
-        `ml.g4dn.xlarge`,
-        `ml.g4dn.2xlarge`,
-        `ml.g4dn.4xlarge`,
-        `ml.g4dn.8xlarge`,
-        `ml.g4dn.12xlarge`,
-        `ml.g4dn.16xlarge`,
-        `ml.m5.large`,
-        `ml.m5.xlarge`,
-        `ml.m5.2xlarge`,
-        `ml.m5.4xlarge`,
-        `ml.m5.12xlarge`,
-        `ml.m5.24xlarge`,
-        `ml.c4.xlarge`,
-        `ml.c4.2xlarge`,
-        `ml.c4.4xlarge`,
-        `ml.c4.8xlarge`,
-        `ml.p2.xlarge`,
-        `ml.p2.8xlarge`,
-        `ml.p2.16xlarge`,
-        `ml.p3.2xlarge`,
-        `ml.p3.8xlarge`,
-        `ml.p3.16xlarge`,
-        `ml.p3dn.24xlarge`,
-        `ml.c5.xlarge`,
-        `ml.c5.2xlarge`,
-        `ml.c5.4xlarge`,
-        `ml.c5.9xlarge`,
-        `ml.c5.18xlarge`,
-        `ml.c5n.xlarge`,
-        `ml.c5n.2xlarge`,
-        `ml.c5n.4xlarge`,
-        `ml.c5n.9xlarge`,
-        `ml.c5n.18xlarge`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      `ml.m4.xlarge`,
+      `ml.m4.2xlarge`,
+      `ml.m4.4xlarge`,
+      `ml.m4.10xlarge`,
+      `ml.m4.16xlarge`,
+      `ml.g4dn.xlarge`,
+      `ml.g4dn.2xlarge`,
+      `ml.g4dn.4xlarge`,
+      `ml.g4dn.8xlarge`,
+      `ml.g4dn.12xlarge`,
+      `ml.g4dn.16xlarge`,
+      `ml.m5.large`,
+      `ml.m5.xlarge`,
+      `ml.m5.2xlarge`,
+      `ml.m5.4xlarge`,
+      `ml.m5.12xlarge`,
+      `ml.m5.24xlarge`,
+      `ml.c4.xlarge`,
+      `ml.c4.2xlarge`,
+      `ml.c4.4xlarge`,
+      `ml.c4.8xlarge`,
+      `ml.p2.xlarge`,
+      `ml.p2.8xlarge`,
+      `ml.p2.16xlarge`,
+      `ml.p3.2xlarge`,
+      `ml.p3.8xlarge`,
+      `ml.p3.16xlarge`,
+      `ml.p3dn.24xlarge`,
+      `ml.c5.xlarge`,
+      `ml.c5.2xlarge`,
+      `ml.c5.4xlarge`,
+      `ml.c5.9xlarge`,
+      `ml.c5.18xlarge`,
+      `ml.c5n.xlarge`,
+      `ml.c5n.2xlarge`,
+      `ml.c5n.4xlarge`,
+      `ml.c5n.9xlarge`,
+      `ml.c5n.18xlarge`
+    ))
   }
 
   /**
@@ -13858,15 +13445,9 @@ package sagemaker {
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       DebugHookConfig.foreach(__v => __obj.updateDynamic("DebugHookConfig")(__v.asInstanceOf[js.Any]))
       DebugRuleConfigurations.foreach(__v => __obj.updateDynamic("DebugRuleConfigurations")(__v.asInstanceOf[js.Any]))
-      DebugRuleEvaluationStatuses.foreach(__v =>
-        __obj.updateDynamic("DebugRuleEvaluationStatuses")(__v.asInstanceOf[js.Any])
-      )
-      EnableInterContainerTrafficEncryption.foreach(__v =>
-        __obj.updateDynamic("EnableInterContainerTrafficEncryption")(__v.asInstanceOf[js.Any])
-      )
-      EnableManagedSpotTraining.foreach(__v =>
-        __obj.updateDynamic("EnableManagedSpotTraining")(__v.asInstanceOf[js.Any])
-      )
+      DebugRuleEvaluationStatuses.foreach(__v => __obj.updateDynamic("DebugRuleEvaluationStatuses")(__v.asInstanceOf[js.Any]))
+      EnableInterContainerTrafficEncryption.foreach(__v => __obj.updateDynamic("EnableInterContainerTrafficEncryption")(__v.asInstanceOf[js.Any]))
+      EnableManagedSpotTraining.foreach(__v => __obj.updateDynamic("EnableManagedSpotTraining")(__v.asInstanceOf[js.Any]))
       EnableNetworkIsolation.foreach(__v => __obj.updateDynamic("EnableNetworkIsolation")(__v.asInstanceOf[js.Any]))
       ExperimentConfig.foreach(__v => __obj.updateDynamic("ExperimentConfig")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
@@ -13880,9 +13461,7 @@ package sagemaker {
       ResourceConfig.foreach(__v => __obj.updateDynamic("ResourceConfig")(__v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       SecondaryStatus.foreach(__v => __obj.updateDynamic("SecondaryStatus")(__v.asInstanceOf[js.Any]))
-      SecondaryStatusTransitions.foreach(__v =>
-        __obj.updateDynamic("SecondaryStatusTransitions")(__v.asInstanceOf[js.Any])
-      )
+      SecondaryStatusTransitions.foreach(__v => __obj.updateDynamic("SecondaryStatusTransitions")(__v.asInstanceOf[js.Any]))
       StoppingCondition.foreach(__v => __obj.updateDynamic("StoppingCondition")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TensorBoardOutputConfig.foreach(__v => __obj.updateDynamic("TensorBoardOutputConfig")(__v.asInstanceOf[js.Any]))
@@ -14068,12 +13647,8 @@ package sagemaker {
 
       MetricDefinitions.foreach(__v => __obj.updateDynamic("MetricDefinitions")(__v.asInstanceOf[js.Any]))
       SupportedHyperParameters.foreach(__v => __obj.updateDynamic("SupportedHyperParameters")(__v.asInstanceOf[js.Any]))
-      SupportedTuningJobObjectiveMetrics.foreach(__v =>
-        __obj.updateDynamic("SupportedTuningJobObjectiveMetrics")(__v.asInstanceOf[js.Any])
-      )
-      SupportsDistributedTraining.foreach(__v =>
-        __obj.updateDynamic("SupportsDistributedTraining")(__v.asInstanceOf[js.Any])
-      )
+      SupportedTuningJobObjectiveMetrics.foreach(__v => __obj.updateDynamic("SupportedTuningJobObjectiveMetrics")(__v.asInstanceOf[js.Any]))
+      SupportsDistributedTraining.foreach(__v => __obj.updateDynamic("SupportsDistributedTraining")(__v.asInstanceOf[js.Any]))
       TrainingImageDigest.foreach(__v => __obj.updateDynamic("TrainingImageDigest")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TrainingSpecification]
     }
@@ -14160,36 +13735,34 @@ package sagemaker {
     val `ml.m5.12xlarge` = "ml.m5.12xlarge".asInstanceOf[TransformInstanceType]
     val `ml.m5.24xlarge` = "ml.m5.24xlarge".asInstanceOf[TransformInstanceType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `ml.m4.xlarge`,
-        `ml.m4.2xlarge`,
-        `ml.m4.4xlarge`,
-        `ml.m4.10xlarge`,
-        `ml.m4.16xlarge`,
-        `ml.c4.xlarge`,
-        `ml.c4.2xlarge`,
-        `ml.c4.4xlarge`,
-        `ml.c4.8xlarge`,
-        `ml.p2.xlarge`,
-        `ml.p2.8xlarge`,
-        `ml.p2.16xlarge`,
-        `ml.p3.2xlarge`,
-        `ml.p3.8xlarge`,
-        `ml.p3.16xlarge`,
-        `ml.c5.xlarge`,
-        `ml.c5.2xlarge`,
-        `ml.c5.4xlarge`,
-        `ml.c5.9xlarge`,
-        `ml.c5.18xlarge`,
-        `ml.m5.large`,
-        `ml.m5.xlarge`,
-        `ml.m5.2xlarge`,
-        `ml.m5.4xlarge`,
-        `ml.m5.12xlarge`,
-        `ml.m5.24xlarge`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      `ml.m4.xlarge`,
+      `ml.m4.2xlarge`,
+      `ml.m4.4xlarge`,
+      `ml.m4.10xlarge`,
+      `ml.m4.16xlarge`,
+      `ml.c4.xlarge`,
+      `ml.c4.2xlarge`,
+      `ml.c4.4xlarge`,
+      `ml.c4.8xlarge`,
+      `ml.p2.xlarge`,
+      `ml.p2.8xlarge`,
+      `ml.p2.16xlarge`,
+      `ml.p3.2xlarge`,
+      `ml.p3.8xlarge`,
+      `ml.p3.16xlarge`,
+      `ml.c5.xlarge`,
+      `ml.c5.2xlarge`,
+      `ml.c5.4xlarge`,
+      `ml.c5.9xlarge`,
+      `ml.c5.18xlarge`,
+      `ml.m5.large`,
+      `ml.m5.xlarge`,
+      `ml.m5.2xlarge`,
+      `ml.m5.4xlarge`,
+      `ml.m5.12xlarge`,
+      `ml.m5.24xlarge`
+    ))
   }
 
   /**
@@ -15084,12 +14657,8 @@ package sagemaker {
         "EndpointName" -> EndpointName.asInstanceOf[js.Any]
       )
 
-      ExcludeRetainedVariantProperties.foreach(__v =>
-        __obj.updateDynamic("ExcludeRetainedVariantProperties")(__v.asInstanceOf[js.Any])
-      )
-      RetainAllVariantProperties.foreach(__v =>
-        __obj.updateDynamic("RetainAllVariantProperties")(__v.asInstanceOf[js.Any])
-      )
+      ExcludeRetainedVariantProperties.foreach(__v => __obj.updateDynamic("ExcludeRetainedVariantProperties")(__v.asInstanceOf[js.Any]))
+      RetainAllVariantProperties.foreach(__v => __obj.updateDynamic("RetainAllVariantProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateEndpointInput]
     }
   }
@@ -15269,22 +14838,12 @@ package sagemaker {
       )
 
       AcceleratorTypes.foreach(__v => __obj.updateDynamic("AcceleratorTypes")(__v.asInstanceOf[js.Any]))
-      AdditionalCodeRepositories.foreach(__v =>
-        __obj.updateDynamic("AdditionalCodeRepositories")(__v.asInstanceOf[js.Any])
-      )
+      AdditionalCodeRepositories.foreach(__v => __obj.updateDynamic("AdditionalCodeRepositories")(__v.asInstanceOf[js.Any]))
       DefaultCodeRepository.foreach(__v => __obj.updateDynamic("DefaultCodeRepository")(__v.asInstanceOf[js.Any]))
-      DisassociateAcceleratorTypes.foreach(__v =>
-        __obj.updateDynamic("DisassociateAcceleratorTypes")(__v.asInstanceOf[js.Any])
-      )
-      DisassociateAdditionalCodeRepositories.foreach(__v =>
-        __obj.updateDynamic("DisassociateAdditionalCodeRepositories")(__v.asInstanceOf[js.Any])
-      )
-      DisassociateDefaultCodeRepository.foreach(__v =>
-        __obj.updateDynamic("DisassociateDefaultCodeRepository")(__v.asInstanceOf[js.Any])
-      )
-      DisassociateLifecycleConfig.foreach(__v =>
-        __obj.updateDynamic("DisassociateLifecycleConfig")(__v.asInstanceOf[js.Any])
-      )
+      DisassociateAcceleratorTypes.foreach(__v => __obj.updateDynamic("DisassociateAcceleratorTypes")(__v.asInstanceOf[js.Any]))
+      DisassociateAdditionalCodeRepositories.foreach(__v => __obj.updateDynamic("DisassociateAdditionalCodeRepositories")(__v.asInstanceOf[js.Any]))
+      DisassociateDefaultCodeRepository.foreach(__v => __obj.updateDynamic("DisassociateDefaultCodeRepository")(__v.asInstanceOf[js.Any]))
+      DisassociateLifecycleConfig.foreach(__v => __obj.updateDynamic("DisassociateLifecycleConfig")(__v.asInstanceOf[js.Any]))
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
       LifecycleConfigName.foreach(__v => __obj.updateDynamic("LifecycleConfigName")(__v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
@@ -15549,9 +15108,7 @@ package sagemaker {
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       MemberDefinitions.foreach(__v => __obj.updateDynamic("MemberDefinitions")(__v.asInstanceOf[js.Any]))
-      NotificationConfiguration.foreach(__v =>
-        __obj.updateDynamic("NotificationConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      NotificationConfiguration.foreach(__v => __obj.updateDynamic("NotificationConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateWorkteamRequest]
     }
   }
@@ -15822,9 +15379,7 @@ package sagemaker {
 
       CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
       LastUpdatedDate.foreach(__v => __obj.updateDynamic("LastUpdatedDate")(__v.asInstanceOf[js.Any]))
-      NotificationConfiguration.foreach(__v =>
-        __obj.updateDynamic("NotificationConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      NotificationConfiguration.foreach(__v => __obj.updateDynamic("NotificationConfiguration")(__v.asInstanceOf[js.Any]))
       ProductListingIds.foreach(__v => __obj.updateDynamic("ProductListingIds")(__v.asInstanceOf[js.Any]))
       SubDomain.foreach(__v => __obj.updateDynamic("SubDomain")(__v.asInstanceOf[js.Any]))
       WorkforceArn.foreach(__v => __obj.updateDynamic("WorkforceArn")(__v.asInstanceOf[js.Any]))

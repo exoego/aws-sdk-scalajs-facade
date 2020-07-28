@@ -31,91 +31,47 @@ package object appsync {
 
   implicit final class AppSyncOps(private val service: AppSync) extends AnyVal {
 
-    @inline def createApiCacheFuture(params: CreateApiCacheRequest): Future[CreateApiCacheResponse] =
-      service.createApiCache(params).promise().toFuture
-    @inline def createApiKeyFuture(params: CreateApiKeyRequest): Future[CreateApiKeyResponse] =
-      service.createApiKey(params).promise().toFuture
-    @inline def createDataSourceFuture(params: CreateDataSourceRequest): Future[CreateDataSourceResponse] =
-      service.createDataSource(params).promise().toFuture
-    @inline def createFunctionFuture(params: CreateFunctionRequest): Future[CreateFunctionResponse] =
-      service.createFunction(params).promise().toFuture
-    @inline def createGraphqlApiFuture(params: CreateGraphqlApiRequest): Future[CreateGraphqlApiResponse] =
-      service.createGraphqlApi(params).promise().toFuture
-    @inline def createResolverFuture(params: CreateResolverRequest): Future[CreateResolverResponse] =
-      service.createResolver(params).promise().toFuture
-    @inline def createTypeFuture(params: CreateTypeRequest): Future[CreateTypeResponse] =
-      service.createType(params).promise().toFuture
-    @inline def deleteApiCacheFuture(params: DeleteApiCacheRequest): Future[DeleteApiCacheResponse] =
-      service.deleteApiCache(params).promise().toFuture
-    @inline def deleteApiKeyFuture(params: DeleteApiKeyRequest): Future[DeleteApiKeyResponse] =
-      service.deleteApiKey(params).promise().toFuture
-    @inline def deleteDataSourceFuture(params: DeleteDataSourceRequest): Future[DeleteDataSourceResponse] =
-      service.deleteDataSource(params).promise().toFuture
-    @inline def deleteFunctionFuture(params: DeleteFunctionRequest): Future[DeleteFunctionResponse] =
-      service.deleteFunction(params).promise().toFuture
-    @inline def deleteGraphqlApiFuture(params: DeleteGraphqlApiRequest): Future[DeleteGraphqlApiResponse] =
-      service.deleteGraphqlApi(params).promise().toFuture
-    @inline def deleteResolverFuture(params: DeleteResolverRequest): Future[DeleteResolverResponse] =
-      service.deleteResolver(params).promise().toFuture
-    @inline def deleteTypeFuture(params: DeleteTypeRequest): Future[DeleteTypeResponse] =
-      service.deleteType(params).promise().toFuture
-    @inline def flushApiCacheFuture(params: FlushApiCacheRequest): Future[FlushApiCacheResponse] =
-      service.flushApiCache(params).promise().toFuture
-    @inline def getApiCacheFuture(params: GetApiCacheRequest): Future[GetApiCacheResponse] =
-      service.getApiCache(params).promise().toFuture
-    @inline def getDataSourceFuture(params: GetDataSourceRequest): Future[GetDataSourceResponse] =
-      service.getDataSource(params).promise().toFuture
-    @inline def getFunctionFuture(params: GetFunctionRequest): Future[GetFunctionResponse] =
-      service.getFunction(params).promise().toFuture
-    @inline def getGraphqlApiFuture(params: GetGraphqlApiRequest): Future[GetGraphqlApiResponse] =
-      service.getGraphqlApi(params).promise().toFuture
-    @inline def getIntrospectionSchemaFuture(
-        params: GetIntrospectionSchemaRequest
-    ): Future[GetIntrospectionSchemaResponse] = service.getIntrospectionSchema(params).promise().toFuture
-    @inline def getResolverFuture(params: GetResolverRequest): Future[GetResolverResponse] =
-      service.getResolver(params).promise().toFuture
-    @inline def getSchemaCreationStatusFuture(
-        params: GetSchemaCreationStatusRequest
-    ): Future[GetSchemaCreationStatusResponse] = service.getSchemaCreationStatus(params).promise().toFuture
-    @inline def getTypeFuture(params: GetTypeRequest): Future[GetTypeResponse] =
-      service.getType(params).promise().toFuture
-    @inline def listApiKeysFuture(params: ListApiKeysRequest): Future[ListApiKeysResponse] =
-      service.listApiKeys(params).promise().toFuture
-    @inline def listDataSourcesFuture(params: ListDataSourcesRequest): Future[ListDataSourcesResponse] =
-      service.listDataSources(params).promise().toFuture
-    @inline def listFunctionsFuture(params: ListFunctionsRequest): Future[ListFunctionsResponse] =
-      service.listFunctions(params).promise().toFuture
-    @inline def listGraphqlApisFuture(params: ListGraphqlApisRequest): Future[ListGraphqlApisResponse] =
-      service.listGraphqlApis(params).promise().toFuture
-    @inline def listResolversByFunctionFuture(
-        params: ListResolversByFunctionRequest
-    ): Future[ListResolversByFunctionResponse] = service.listResolversByFunction(params).promise().toFuture
-    @inline def listResolversFuture(params: ListResolversRequest): Future[ListResolversResponse] =
-      service.listResolvers(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listTypesFuture(params: ListTypesRequest): Future[ListTypesResponse] =
-      service.listTypes(params).promise().toFuture
-    @inline def startSchemaCreationFuture(params: StartSchemaCreationRequest): Future[StartSchemaCreationResponse] =
-      service.startSchemaCreation(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateApiCacheFuture(params: UpdateApiCacheRequest): Future[UpdateApiCacheResponse] =
-      service.updateApiCache(params).promise().toFuture
-    @inline def updateApiKeyFuture(params: UpdateApiKeyRequest): Future[UpdateApiKeyResponse] =
-      service.updateApiKey(params).promise().toFuture
-    @inline def updateDataSourceFuture(params: UpdateDataSourceRequest): Future[UpdateDataSourceResponse] =
-      service.updateDataSource(params).promise().toFuture
-    @inline def updateFunctionFuture(params: UpdateFunctionRequest): Future[UpdateFunctionResponse] =
-      service.updateFunction(params).promise().toFuture
-    @inline def updateGraphqlApiFuture(params: UpdateGraphqlApiRequest): Future[UpdateGraphqlApiResponse] =
-      service.updateGraphqlApi(params).promise().toFuture
-    @inline def updateResolverFuture(params: UpdateResolverRequest): Future[UpdateResolverResponse] =
-      service.updateResolver(params).promise().toFuture
-    @inline def updateTypeFuture(params: UpdateTypeRequest): Future[UpdateTypeResponse] =
-      service.updateType(params).promise().toFuture
+    @inline def createApiCacheFuture(params: CreateApiCacheRequest): Future[CreateApiCacheResponse] = service.createApiCache(params).promise().toFuture
+    @inline def createApiKeyFuture(params: CreateApiKeyRequest): Future[CreateApiKeyResponse] = service.createApiKey(params).promise().toFuture
+    @inline def createDataSourceFuture(params: CreateDataSourceRequest): Future[CreateDataSourceResponse] = service.createDataSource(params).promise().toFuture
+    @inline def createFunctionFuture(params: CreateFunctionRequest): Future[CreateFunctionResponse] = service.createFunction(params).promise().toFuture
+    @inline def createGraphqlApiFuture(params: CreateGraphqlApiRequest): Future[CreateGraphqlApiResponse] = service.createGraphqlApi(params).promise().toFuture
+    @inline def createResolverFuture(params: CreateResolverRequest): Future[CreateResolverResponse] = service.createResolver(params).promise().toFuture
+    @inline def createTypeFuture(params: CreateTypeRequest): Future[CreateTypeResponse] = service.createType(params).promise().toFuture
+    @inline def deleteApiCacheFuture(params: DeleteApiCacheRequest): Future[DeleteApiCacheResponse] = service.deleteApiCache(params).promise().toFuture
+    @inline def deleteApiKeyFuture(params: DeleteApiKeyRequest): Future[DeleteApiKeyResponse] = service.deleteApiKey(params).promise().toFuture
+    @inline def deleteDataSourceFuture(params: DeleteDataSourceRequest): Future[DeleteDataSourceResponse] = service.deleteDataSource(params).promise().toFuture
+    @inline def deleteFunctionFuture(params: DeleteFunctionRequest): Future[DeleteFunctionResponse] = service.deleteFunction(params).promise().toFuture
+    @inline def deleteGraphqlApiFuture(params: DeleteGraphqlApiRequest): Future[DeleteGraphqlApiResponse] = service.deleteGraphqlApi(params).promise().toFuture
+    @inline def deleteResolverFuture(params: DeleteResolverRequest): Future[DeleteResolverResponse] = service.deleteResolver(params).promise().toFuture
+    @inline def deleteTypeFuture(params: DeleteTypeRequest): Future[DeleteTypeResponse] = service.deleteType(params).promise().toFuture
+    @inline def flushApiCacheFuture(params: FlushApiCacheRequest): Future[FlushApiCacheResponse] = service.flushApiCache(params).promise().toFuture
+    @inline def getApiCacheFuture(params: GetApiCacheRequest): Future[GetApiCacheResponse] = service.getApiCache(params).promise().toFuture
+    @inline def getDataSourceFuture(params: GetDataSourceRequest): Future[GetDataSourceResponse] = service.getDataSource(params).promise().toFuture
+    @inline def getFunctionFuture(params: GetFunctionRequest): Future[GetFunctionResponse] = service.getFunction(params).promise().toFuture
+    @inline def getGraphqlApiFuture(params: GetGraphqlApiRequest): Future[GetGraphqlApiResponse] = service.getGraphqlApi(params).promise().toFuture
+    @inline def getIntrospectionSchemaFuture(params: GetIntrospectionSchemaRequest): Future[GetIntrospectionSchemaResponse] = service.getIntrospectionSchema(params).promise().toFuture
+    @inline def getResolverFuture(params: GetResolverRequest): Future[GetResolverResponse] = service.getResolver(params).promise().toFuture
+    @inline def getSchemaCreationStatusFuture(params: GetSchemaCreationStatusRequest): Future[GetSchemaCreationStatusResponse] = service.getSchemaCreationStatus(params).promise().toFuture
+    @inline def getTypeFuture(params: GetTypeRequest): Future[GetTypeResponse] = service.getType(params).promise().toFuture
+    @inline def listApiKeysFuture(params: ListApiKeysRequest): Future[ListApiKeysResponse] = service.listApiKeys(params).promise().toFuture
+    @inline def listDataSourcesFuture(params: ListDataSourcesRequest): Future[ListDataSourcesResponse] = service.listDataSources(params).promise().toFuture
+    @inline def listFunctionsFuture(params: ListFunctionsRequest): Future[ListFunctionsResponse] = service.listFunctions(params).promise().toFuture
+    @inline def listGraphqlApisFuture(params: ListGraphqlApisRequest): Future[ListGraphqlApisResponse] = service.listGraphqlApis(params).promise().toFuture
+    @inline def listResolversByFunctionFuture(params: ListResolversByFunctionRequest): Future[ListResolversByFunctionResponse] = service.listResolversByFunction(params).promise().toFuture
+    @inline def listResolversFuture(params: ListResolversRequest): Future[ListResolversResponse] = service.listResolvers(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listTypesFuture(params: ListTypesRequest): Future[ListTypesResponse] = service.listTypes(params).promise().toFuture
+    @inline def startSchemaCreationFuture(params: StartSchemaCreationRequest): Future[StartSchemaCreationResponse] = service.startSchemaCreation(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateApiCacheFuture(params: UpdateApiCacheRequest): Future[UpdateApiCacheResponse] = service.updateApiCache(params).promise().toFuture
+    @inline def updateApiKeyFuture(params: UpdateApiKeyRequest): Future[UpdateApiKeyResponse] = service.updateApiKey(params).promise().toFuture
+    @inline def updateDataSourceFuture(params: UpdateDataSourceRequest): Future[UpdateDataSourceResponse] = service.updateDataSource(params).promise().toFuture
+    @inline def updateFunctionFuture(params: UpdateFunctionRequest): Future[UpdateFunctionResponse] = service.updateFunction(params).promise().toFuture
+    @inline def updateGraphqlApiFuture(params: UpdateGraphqlApiRequest): Future[UpdateGraphqlApiResponse] = service.updateGraphqlApi(params).promise().toFuture
+    @inline def updateResolverFuture(params: UpdateResolverRequest): Future[UpdateResolverResponse] = service.updateResolver(params).promise().toFuture
+    @inline def updateTypeFuture(params: UpdateTypeRequest): Future[UpdateTypeResponse] = service.updateType(params).promise().toFuture
   }
 }
 
@@ -144,19 +100,16 @@ package appsync {
     def getDataSource(params: GetDataSourceRequest): Request[GetDataSourceResponse] = js.native
     def getFunction(params: GetFunctionRequest): Request[GetFunctionResponse] = js.native
     def getGraphqlApi(params: GetGraphqlApiRequest): Request[GetGraphqlApiResponse] = js.native
-    def getIntrospectionSchema(params: GetIntrospectionSchemaRequest): Request[GetIntrospectionSchemaResponse] =
-      js.native
+    def getIntrospectionSchema(params: GetIntrospectionSchemaRequest): Request[GetIntrospectionSchemaResponse] = js.native
     def getResolver(params: GetResolverRequest): Request[GetResolverResponse] = js.native
-    def getSchemaCreationStatus(params: GetSchemaCreationStatusRequest): Request[GetSchemaCreationStatusResponse] =
-      js.native
+    def getSchemaCreationStatus(params: GetSchemaCreationStatusRequest): Request[GetSchemaCreationStatusResponse] = js.native
     def getType(params: GetTypeRequest): Request[GetTypeResponse] = js.native
     def listApiKeys(params: ListApiKeysRequest): Request[ListApiKeysResponse] = js.native
     def listDataSources(params: ListDataSourcesRequest): Request[ListDataSourcesResponse] = js.native
     def listFunctions(params: ListFunctionsRequest): Request[ListFunctionsResponse] = js.native
     def listGraphqlApis(params: ListGraphqlApisRequest): Request[ListGraphqlApisResponse] = js.native
     def listResolvers(params: ListResolversRequest): Request[ListResolversResponse] = js.native
-    def listResolversByFunction(params: ListResolversByFunctionRequest): Request[ListResolversByFunctionResponse] =
-      js.native
+    def listResolversByFunction(params: ListResolversByFunctionRequest): Request[ListResolversByFunctionResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listTypes(params: ListTypesRequest): Request[ListTypesResponse] = js.native
     def startSchemaCreation(params: StartSchemaCreationRequest): Request[StartSchemaCreationResponse] = js.native
@@ -261,25 +214,7 @@ package appsync {
     val LARGE_8X = "LARGE_8X".asInstanceOf[ApiCacheType]
     val LARGE_12X = "LARGE_12X".asInstanceOf[ApiCacheType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        T2_SMALL,
-        T2_MEDIUM,
-        R4_LARGE,
-        R4_XLARGE,
-        R4_2XLARGE,
-        R4_4XLARGE,
-        R4_8XLARGE,
-        SMALL,
-        MEDIUM,
-        LARGE,
-        XLARGE,
-        LARGE_2X,
-        LARGE_4X,
-        LARGE_8X,
-        LARGE_12X
-      )
-    )
+    val values = js.Object.freeze(js.Array(T2_SMALL, T2_MEDIUM, R4_LARGE, R4_XLARGE, R4_2XLARGE, R4_4XLARGE, R4_8XLARGE, SMALL, MEDIUM, LARGE, XLARGE, LARGE_2X, LARGE_4X, LARGE_8X, LARGE_12X))
   }
 
   @js.native
@@ -700,9 +635,7 @@ package appsync {
         "name" -> name.asInstanceOf[js.Any]
       )
 
-      additionalAuthenticationProviders.foreach(__v =>
-        __obj.updateDynamic("additionalAuthenticationProviders")(__v.asInstanceOf[js.Any])
-      )
+      additionalAuthenticationProviders.foreach(__v => __obj.updateDynamic("additionalAuthenticationProviders")(__v.asInstanceOf[js.Any]))
       logConfig.foreach(__v => __obj.updateDynamic("logConfig")(__v.asInstanceOf[js.Any]))
       openIDConnectConfig.foreach(__v => __obj.updateDynamic("openIDConnectConfig")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -885,8 +818,7 @@ package appsync {
     val HTTP = "HTTP".asInstanceOf[DataSourceType]
     val RELATIONAL_DATABASE = "RELATIONAL_DATABASE".asInstanceOf[DataSourceType]
 
-    val values =
-      js.Object.freeze(js.Array(AWS_LAMBDA, AMAZON_DYNAMODB, AMAZON_ELASTICSEARCH, NONE, HTTP, RELATIONAL_DATABASE))
+    val values = js.Object.freeze(js.Array(AWS_LAMBDA, AMAZON_DYNAMODB, AMAZON_ELASTICSEARCH, NONE, HTTP, RELATIONAL_DATABASE))
   }
 
   @js.native
@@ -1647,9 +1579,7 @@ package appsync {
         xrayEnabled: js.UndefOr[Boolean] = js.undefined
     ): GraphqlApi = {
       val __obj = js.Dynamic.literal()
-      additionalAuthenticationProviders.foreach(__v =>
-        __obj.updateDynamic("additionalAuthenticationProviders")(__v.asInstanceOf[js.Any])
-      )
+      additionalAuthenticationProviders.foreach(__v => __obj.updateDynamic("additionalAuthenticationProviders")(__v.asInstanceOf[js.Any]))
       apiId.foreach(__v => __obj.updateDynamic("apiId")(__v.asInstanceOf[js.Any]))
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       authenticationType.foreach(__v => __obj.updateDynamic("authenticationType")(__v.asInstanceOf[js.Any]))
@@ -2198,9 +2128,7 @@ package appsync {
     ): RelationalDatabaseDataSourceConfig = {
       val __obj = js.Dynamic.literal()
       rdsHttpEndpointConfig.foreach(__v => __obj.updateDynamic("rdsHttpEndpointConfig")(__v.asInstanceOf[js.Any]))
-      relationalDatabaseSourceType.foreach(__v =>
-        __obj.updateDynamic("relationalDatabaseSourceType")(__v.asInstanceOf[js.Any])
-      )
+      relationalDatabaseSourceType.foreach(__v => __obj.updateDynamic("relationalDatabaseSourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RelationalDatabaseDataSourceConfig]
     }
   }
@@ -2339,9 +2267,7 @@ package appsync {
       val __obj = js.Dynamic.literal()
       conflictDetection.foreach(__v => __obj.updateDynamic("conflictDetection")(__v.asInstanceOf[js.Any]))
       conflictHandler.foreach(__v => __obj.updateDynamic("conflictHandler")(__v.asInstanceOf[js.Any]))
-      lambdaConflictHandlerConfig.foreach(__v =>
-        __obj.updateDynamic("lambdaConflictHandlerConfig")(__v.asInstanceOf[js.Any])
-      )
+      lambdaConflictHandlerConfig.foreach(__v => __obj.updateDynamic("lambdaConflictHandlerConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SyncConfig]
     }
   }
@@ -2691,9 +2617,7 @@ package appsync {
         "name" -> name.asInstanceOf[js.Any]
       )
 
-      additionalAuthenticationProviders.foreach(__v =>
-        __obj.updateDynamic("additionalAuthenticationProviders")(__v.asInstanceOf[js.Any])
-      )
+      additionalAuthenticationProviders.foreach(__v => __obj.updateDynamic("additionalAuthenticationProviders")(__v.asInstanceOf[js.Any]))
       authenticationType.foreach(__v => __obj.updateDynamic("authenticationType")(__v.asInstanceOf[js.Any]))
       logConfig.foreach(__v => __obj.updateDynamic("logConfig")(__v.asInstanceOf[js.Any]))
       openIDConnectConfig.foreach(__v => __obj.updateDynamic("openIDConnectConfig")(__v.asInstanceOf[js.Any]))

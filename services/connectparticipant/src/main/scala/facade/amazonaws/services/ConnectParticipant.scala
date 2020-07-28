@@ -26,18 +26,11 @@ package object connectparticipant {
 
   implicit final class ConnectParticipantOps(private val service: ConnectParticipant) extends AnyVal {
 
-    @inline def createParticipantConnectionFuture(
-        params: CreateParticipantConnectionRequest
-    ): Future[CreateParticipantConnectionResponse] = service.createParticipantConnection(params).promise().toFuture
-    @inline def disconnectParticipantFuture(
-        params: DisconnectParticipantRequest
-    ): Future[DisconnectParticipantResponse] = service.disconnectParticipant(params).promise().toFuture
-    @inline def getTranscriptFuture(params: GetTranscriptRequest): Future[GetTranscriptResponse] =
-      service.getTranscript(params).promise().toFuture
-    @inline def sendEventFuture(params: SendEventRequest): Future[SendEventResponse] =
-      service.sendEvent(params).promise().toFuture
-    @inline def sendMessageFuture(params: SendMessageRequest): Future[SendMessageResponse] =
-      service.sendMessage(params).promise().toFuture
+    @inline def createParticipantConnectionFuture(params: CreateParticipantConnectionRequest): Future[CreateParticipantConnectionResponse] = service.createParticipantConnection(params).promise().toFuture
+    @inline def disconnectParticipantFuture(params: DisconnectParticipantRequest): Future[DisconnectParticipantResponse] = service.disconnectParticipant(params).promise().toFuture
+    @inline def getTranscriptFuture(params: GetTranscriptRequest): Future[GetTranscriptResponse] = service.getTranscript(params).promise().toFuture
+    @inline def sendEventFuture(params: SendEventRequest): Future[SendEventResponse] = service.sendEvent(params).promise().toFuture
+    @inline def sendMessageFuture(params: SendMessageRequest): Future[SendMessageResponse] = service.sendMessage(params).promise().toFuture
   }
 }
 
@@ -47,9 +40,7 @@ package connectparticipant {
   class ConnectParticipant() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createParticipantConnection(
-        params: CreateParticipantConnectionRequest
-    ): Request[CreateParticipantConnectionResponse] = js.native
+    def createParticipantConnection(params: CreateParticipantConnectionRequest): Request[CreateParticipantConnectionResponse] = js.native
     def disconnectParticipant(params: DisconnectParticipantRequest): Request[DisconnectParticipantResponse] = js.native
     def getTranscript(params: GetTranscriptRequest): Request[GetTranscriptResponse] = js.native
     def sendEvent(params: SendEventRequest): Request[SendEventResponse] = js.native

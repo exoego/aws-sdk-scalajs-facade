@@ -94,94 +94,43 @@ package object inspector {
 
   implicit final class InspectorOps(private val service: Inspector) extends AnyVal {
 
-    @inline def addAttributesToFindingsFuture(
-        params: AddAttributesToFindingsRequest
-    ): Future[AddAttributesToFindingsResponse] = service.addAttributesToFindings(params).promise().toFuture
-    @inline def createAssessmentTargetFuture(
-        params: CreateAssessmentTargetRequest
-    ): Future[CreateAssessmentTargetResponse] = service.createAssessmentTarget(params).promise().toFuture
-    @inline def createAssessmentTemplateFuture(
-        params: CreateAssessmentTemplateRequest
-    ): Future[CreateAssessmentTemplateResponse] = service.createAssessmentTemplate(params).promise().toFuture
-    @inline def createExclusionsPreviewFuture(
-        params: CreateExclusionsPreviewRequest
-    ): Future[CreateExclusionsPreviewResponse] = service.createExclusionsPreview(params).promise().toFuture
-    @inline def createResourceGroupFuture(params: CreateResourceGroupRequest): Future[CreateResourceGroupResponse] =
-      service.createResourceGroup(params).promise().toFuture
-    @inline def deleteAssessmentRunFuture(params: DeleteAssessmentRunRequest): Future[js.Object] =
-      service.deleteAssessmentRun(params).promise().toFuture
-    @inline def deleteAssessmentTargetFuture(params: DeleteAssessmentTargetRequest): Future[js.Object] =
-      service.deleteAssessmentTarget(params).promise().toFuture
-    @inline def deleteAssessmentTemplateFuture(params: DeleteAssessmentTemplateRequest): Future[js.Object] =
-      service.deleteAssessmentTemplate(params).promise().toFuture
-    @inline def describeAssessmentRunsFuture(
-        params: DescribeAssessmentRunsRequest
-    ): Future[DescribeAssessmentRunsResponse] = service.describeAssessmentRuns(params).promise().toFuture
-    @inline def describeAssessmentTargetsFuture(
-        params: DescribeAssessmentTargetsRequest
-    ): Future[DescribeAssessmentTargetsResponse] = service.describeAssessmentTargets(params).promise().toFuture
-    @inline def describeAssessmentTemplatesFuture(
-        params: DescribeAssessmentTemplatesRequest
-    ): Future[DescribeAssessmentTemplatesResponse] = service.describeAssessmentTemplates(params).promise().toFuture
-    @inline def describeCrossAccountAccessRoleFuture(): Future[DescribeCrossAccountAccessRoleResponse] =
-      service.describeCrossAccountAccessRole().promise().toFuture
-    @inline def describeExclusionsFuture(params: DescribeExclusionsRequest): Future[DescribeExclusionsResponse] =
-      service.describeExclusions(params).promise().toFuture
-    @inline def describeFindingsFuture(params: DescribeFindingsRequest): Future[DescribeFindingsResponse] =
-      service.describeFindings(params).promise().toFuture
-    @inline def describeResourceGroupsFuture(
-        params: DescribeResourceGroupsRequest
-    ): Future[DescribeResourceGroupsResponse] = service.describeResourceGroups(params).promise().toFuture
-    @inline def describeRulesPackagesFuture(
-        params: DescribeRulesPackagesRequest
-    ): Future[DescribeRulesPackagesResponse] = service.describeRulesPackages(params).promise().toFuture
-    @inline def getAssessmentReportFuture(params: GetAssessmentReportRequest): Future[GetAssessmentReportResponse] =
-      service.getAssessmentReport(params).promise().toFuture
-    @inline def getExclusionsPreviewFuture(params: GetExclusionsPreviewRequest): Future[GetExclusionsPreviewResponse] =
-      service.getExclusionsPreview(params).promise().toFuture
-    @inline def getTelemetryMetadataFuture(params: GetTelemetryMetadataRequest): Future[GetTelemetryMetadataResponse] =
-      service.getTelemetryMetadata(params).promise().toFuture
-    @inline def listAssessmentRunAgentsFuture(
-        params: ListAssessmentRunAgentsRequest
-    ): Future[ListAssessmentRunAgentsResponse] = service.listAssessmentRunAgents(params).promise().toFuture
-    @inline def listAssessmentRunsFuture(params: ListAssessmentRunsRequest): Future[ListAssessmentRunsResponse] =
-      service.listAssessmentRuns(params).promise().toFuture
-    @inline def listAssessmentTargetsFuture(
-        params: ListAssessmentTargetsRequest
-    ): Future[ListAssessmentTargetsResponse] = service.listAssessmentTargets(params).promise().toFuture
-    @inline def listAssessmentTemplatesFuture(
-        params: ListAssessmentTemplatesRequest
-    ): Future[ListAssessmentTemplatesResponse] = service.listAssessmentTemplates(params).promise().toFuture
-    @inline def listEventSubscriptionsFuture(
-        params: ListEventSubscriptionsRequest
-    ): Future[ListEventSubscriptionsResponse] = service.listEventSubscriptions(params).promise().toFuture
-    @inline def listExclusionsFuture(params: ListExclusionsRequest): Future[ListExclusionsResponse] =
-      service.listExclusions(params).promise().toFuture
-    @inline def listFindingsFuture(params: ListFindingsRequest): Future[ListFindingsResponse] =
-      service.listFindings(params).promise().toFuture
-    @inline def listRulesPackagesFuture(params: ListRulesPackagesRequest): Future[ListRulesPackagesResponse] =
-      service.listRulesPackages(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def previewAgentsFuture(params: PreviewAgentsRequest): Future[PreviewAgentsResponse] =
-      service.previewAgents(params).promise().toFuture
-    @inline def registerCrossAccountAccessRoleFuture(params: RegisterCrossAccountAccessRoleRequest): Future[js.Object] =
-      service.registerCrossAccountAccessRole(params).promise().toFuture
-    @inline def removeAttributesFromFindingsFuture(
-        params: RemoveAttributesFromFindingsRequest
-    ): Future[RemoveAttributesFromFindingsResponse] = service.removeAttributesFromFindings(params).promise().toFuture
-    @inline def setTagsForResourceFuture(params: SetTagsForResourceRequest): Future[js.Object] =
-      service.setTagsForResource(params).promise().toFuture
-    @inline def startAssessmentRunFuture(params: StartAssessmentRunRequest): Future[StartAssessmentRunResponse] =
-      service.startAssessmentRun(params).promise().toFuture
-    @inline def stopAssessmentRunFuture(params: StopAssessmentRunRequest): Future[js.Object] =
-      service.stopAssessmentRun(params).promise().toFuture
-    @inline def subscribeToEventFuture(params: SubscribeToEventRequest): Future[js.Object] =
-      service.subscribeToEvent(params).promise().toFuture
-    @inline def unsubscribeFromEventFuture(params: UnsubscribeFromEventRequest): Future[js.Object] =
-      service.unsubscribeFromEvent(params).promise().toFuture
-    @inline def updateAssessmentTargetFuture(params: UpdateAssessmentTargetRequest): Future[js.Object] =
-      service.updateAssessmentTarget(params).promise().toFuture
+    @inline def addAttributesToFindingsFuture(params: AddAttributesToFindingsRequest): Future[AddAttributesToFindingsResponse] = service.addAttributesToFindings(params).promise().toFuture
+    @inline def createAssessmentTargetFuture(params: CreateAssessmentTargetRequest): Future[CreateAssessmentTargetResponse] = service.createAssessmentTarget(params).promise().toFuture
+    @inline def createAssessmentTemplateFuture(params: CreateAssessmentTemplateRequest): Future[CreateAssessmentTemplateResponse] = service.createAssessmentTemplate(params).promise().toFuture
+    @inline def createExclusionsPreviewFuture(params: CreateExclusionsPreviewRequest): Future[CreateExclusionsPreviewResponse] = service.createExclusionsPreview(params).promise().toFuture
+    @inline def createResourceGroupFuture(params: CreateResourceGroupRequest): Future[CreateResourceGroupResponse] = service.createResourceGroup(params).promise().toFuture
+    @inline def deleteAssessmentRunFuture(params: DeleteAssessmentRunRequest): Future[js.Object] = service.deleteAssessmentRun(params).promise().toFuture
+    @inline def deleteAssessmentTargetFuture(params: DeleteAssessmentTargetRequest): Future[js.Object] = service.deleteAssessmentTarget(params).promise().toFuture
+    @inline def deleteAssessmentTemplateFuture(params: DeleteAssessmentTemplateRequest): Future[js.Object] = service.deleteAssessmentTemplate(params).promise().toFuture
+    @inline def describeAssessmentRunsFuture(params: DescribeAssessmentRunsRequest): Future[DescribeAssessmentRunsResponse] = service.describeAssessmentRuns(params).promise().toFuture
+    @inline def describeAssessmentTargetsFuture(params: DescribeAssessmentTargetsRequest): Future[DescribeAssessmentTargetsResponse] = service.describeAssessmentTargets(params).promise().toFuture
+    @inline def describeAssessmentTemplatesFuture(params: DescribeAssessmentTemplatesRequest): Future[DescribeAssessmentTemplatesResponse] = service.describeAssessmentTemplates(params).promise().toFuture
+    @inline def describeCrossAccountAccessRoleFuture(): Future[DescribeCrossAccountAccessRoleResponse] = service.describeCrossAccountAccessRole().promise().toFuture
+    @inline def describeExclusionsFuture(params: DescribeExclusionsRequest): Future[DescribeExclusionsResponse] = service.describeExclusions(params).promise().toFuture
+    @inline def describeFindingsFuture(params: DescribeFindingsRequest): Future[DescribeFindingsResponse] = service.describeFindings(params).promise().toFuture
+    @inline def describeResourceGroupsFuture(params: DescribeResourceGroupsRequest): Future[DescribeResourceGroupsResponse] = service.describeResourceGroups(params).promise().toFuture
+    @inline def describeRulesPackagesFuture(params: DescribeRulesPackagesRequest): Future[DescribeRulesPackagesResponse] = service.describeRulesPackages(params).promise().toFuture
+    @inline def getAssessmentReportFuture(params: GetAssessmentReportRequest): Future[GetAssessmentReportResponse] = service.getAssessmentReport(params).promise().toFuture
+    @inline def getExclusionsPreviewFuture(params: GetExclusionsPreviewRequest): Future[GetExclusionsPreviewResponse] = service.getExclusionsPreview(params).promise().toFuture
+    @inline def getTelemetryMetadataFuture(params: GetTelemetryMetadataRequest): Future[GetTelemetryMetadataResponse] = service.getTelemetryMetadata(params).promise().toFuture
+    @inline def listAssessmentRunAgentsFuture(params: ListAssessmentRunAgentsRequest): Future[ListAssessmentRunAgentsResponse] = service.listAssessmentRunAgents(params).promise().toFuture
+    @inline def listAssessmentRunsFuture(params: ListAssessmentRunsRequest): Future[ListAssessmentRunsResponse] = service.listAssessmentRuns(params).promise().toFuture
+    @inline def listAssessmentTargetsFuture(params: ListAssessmentTargetsRequest): Future[ListAssessmentTargetsResponse] = service.listAssessmentTargets(params).promise().toFuture
+    @inline def listAssessmentTemplatesFuture(params: ListAssessmentTemplatesRequest): Future[ListAssessmentTemplatesResponse] = service.listAssessmentTemplates(params).promise().toFuture
+    @inline def listEventSubscriptionsFuture(params: ListEventSubscriptionsRequest): Future[ListEventSubscriptionsResponse] = service.listEventSubscriptions(params).promise().toFuture
+    @inline def listExclusionsFuture(params: ListExclusionsRequest): Future[ListExclusionsResponse] = service.listExclusions(params).promise().toFuture
+    @inline def listFindingsFuture(params: ListFindingsRequest): Future[ListFindingsResponse] = service.listFindings(params).promise().toFuture
+    @inline def listRulesPackagesFuture(params: ListRulesPackagesRequest): Future[ListRulesPackagesResponse] = service.listRulesPackages(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def previewAgentsFuture(params: PreviewAgentsRequest): Future[PreviewAgentsResponse] = service.previewAgents(params).promise().toFuture
+    @inline def registerCrossAccountAccessRoleFuture(params: RegisterCrossAccountAccessRoleRequest): Future[js.Object] = service.registerCrossAccountAccessRole(params).promise().toFuture
+    @inline def removeAttributesFromFindingsFuture(params: RemoveAttributesFromFindingsRequest): Future[RemoveAttributesFromFindingsResponse] = service.removeAttributesFromFindings(params).promise().toFuture
+    @inline def setTagsForResourceFuture(params: SetTagsForResourceRequest): Future[js.Object] = service.setTagsForResource(params).promise().toFuture
+    @inline def startAssessmentRunFuture(params: StartAssessmentRunRequest): Future[StartAssessmentRunResponse] = service.startAssessmentRun(params).promise().toFuture
+    @inline def stopAssessmentRunFuture(params: StopAssessmentRunRequest): Future[js.Object] = service.stopAssessmentRun(params).promise().toFuture
+    @inline def subscribeToEventFuture(params: SubscribeToEventRequest): Future[js.Object] = service.subscribeToEvent(params).promise().toFuture
+    @inline def unsubscribeFromEventFuture(params: UnsubscribeFromEventRequest): Future[js.Object] = service.unsubscribeFromEvent(params).promise().toFuture
+    @inline def updateAssessmentTargetFuture(params: UpdateAssessmentTargetRequest): Future[js.Object] = service.updateAssessmentTarget(params).promise().toFuture
   }
 }
 
@@ -191,52 +140,37 @@ package inspector {
   class Inspector() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def addAttributesToFindings(params: AddAttributesToFindingsRequest): Request[AddAttributesToFindingsResponse] =
-      js.native
-    def createAssessmentTarget(params: CreateAssessmentTargetRequest): Request[CreateAssessmentTargetResponse] =
-      js.native
-    def createAssessmentTemplate(params: CreateAssessmentTemplateRequest): Request[CreateAssessmentTemplateResponse] =
-      js.native
-    def createExclusionsPreview(params: CreateExclusionsPreviewRequest): Request[CreateExclusionsPreviewResponse] =
-      js.native
+    def addAttributesToFindings(params: AddAttributesToFindingsRequest): Request[AddAttributesToFindingsResponse] = js.native
+    def createAssessmentTarget(params: CreateAssessmentTargetRequest): Request[CreateAssessmentTargetResponse] = js.native
+    def createAssessmentTemplate(params: CreateAssessmentTemplateRequest): Request[CreateAssessmentTemplateResponse] = js.native
+    def createExclusionsPreview(params: CreateExclusionsPreviewRequest): Request[CreateExclusionsPreviewResponse] = js.native
     def createResourceGroup(params: CreateResourceGroupRequest): Request[CreateResourceGroupResponse] = js.native
     def deleteAssessmentRun(params: DeleteAssessmentRunRequest): Request[js.Object] = js.native
     def deleteAssessmentTarget(params: DeleteAssessmentTargetRequest): Request[js.Object] = js.native
     def deleteAssessmentTemplate(params: DeleteAssessmentTemplateRequest): Request[js.Object] = js.native
-    def describeAssessmentRuns(params: DescribeAssessmentRunsRequest): Request[DescribeAssessmentRunsResponse] =
-      js.native
-    def describeAssessmentTargets(
-        params: DescribeAssessmentTargetsRequest
-    ): Request[DescribeAssessmentTargetsResponse] = js.native
-    def describeAssessmentTemplates(
-        params: DescribeAssessmentTemplatesRequest
-    ): Request[DescribeAssessmentTemplatesResponse] = js.native
+    def describeAssessmentRuns(params: DescribeAssessmentRunsRequest): Request[DescribeAssessmentRunsResponse] = js.native
+    def describeAssessmentTargets(params: DescribeAssessmentTargetsRequest): Request[DescribeAssessmentTargetsResponse] = js.native
+    def describeAssessmentTemplates(params: DescribeAssessmentTemplatesRequest): Request[DescribeAssessmentTemplatesResponse] = js.native
     def describeCrossAccountAccessRole(): Request[DescribeCrossAccountAccessRoleResponse] = js.native
     def describeExclusions(params: DescribeExclusionsRequest): Request[DescribeExclusionsResponse] = js.native
     def describeFindings(params: DescribeFindingsRequest): Request[DescribeFindingsResponse] = js.native
-    def describeResourceGroups(params: DescribeResourceGroupsRequest): Request[DescribeResourceGroupsResponse] =
-      js.native
+    def describeResourceGroups(params: DescribeResourceGroupsRequest): Request[DescribeResourceGroupsResponse] = js.native
     def describeRulesPackages(params: DescribeRulesPackagesRequest): Request[DescribeRulesPackagesResponse] = js.native
     def getAssessmentReport(params: GetAssessmentReportRequest): Request[GetAssessmentReportResponse] = js.native
     def getExclusionsPreview(params: GetExclusionsPreviewRequest): Request[GetExclusionsPreviewResponse] = js.native
     def getTelemetryMetadata(params: GetTelemetryMetadataRequest): Request[GetTelemetryMetadataResponse] = js.native
-    def listAssessmentRunAgents(params: ListAssessmentRunAgentsRequest): Request[ListAssessmentRunAgentsResponse] =
-      js.native
+    def listAssessmentRunAgents(params: ListAssessmentRunAgentsRequest): Request[ListAssessmentRunAgentsResponse] = js.native
     def listAssessmentRuns(params: ListAssessmentRunsRequest): Request[ListAssessmentRunsResponse] = js.native
     def listAssessmentTargets(params: ListAssessmentTargetsRequest): Request[ListAssessmentTargetsResponse] = js.native
-    def listAssessmentTemplates(params: ListAssessmentTemplatesRequest): Request[ListAssessmentTemplatesResponse] =
-      js.native
-    def listEventSubscriptions(params: ListEventSubscriptionsRequest): Request[ListEventSubscriptionsResponse] =
-      js.native
+    def listAssessmentTemplates(params: ListAssessmentTemplatesRequest): Request[ListAssessmentTemplatesResponse] = js.native
+    def listEventSubscriptions(params: ListEventSubscriptionsRequest): Request[ListEventSubscriptionsResponse] = js.native
     def listExclusions(params: ListExclusionsRequest): Request[ListExclusionsResponse] = js.native
     def listFindings(params: ListFindingsRequest): Request[ListFindingsResponse] = js.native
     def listRulesPackages(params: ListRulesPackagesRequest): Request[ListRulesPackagesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def previewAgents(params: PreviewAgentsRequest): Request[PreviewAgentsResponse] = js.native
     def registerCrossAccountAccessRole(params: RegisterCrossAccountAccessRoleRequest): Request[js.Object] = js.native
-    def removeAttributesFromFindings(
-        params: RemoveAttributesFromFindingsRequest
-    ): Request[RemoveAttributesFromFindingsResponse] = js.native
+    def removeAttributesFromFindings(params: RemoveAttributesFromFindingsRequest): Request[RemoveAttributesFromFindingsResponse] = js.native
     def setTagsForResource(params: SetTagsForResourceRequest): Request[js.Object] = js.native
     def startAssessmentRun(params: StartAssessmentRunRequest): Request[StartAssessmentRunResponse] = js.native
     def stopAssessmentRun(params: StopAssessmentRunRequest): Request[js.Object] = js.native
@@ -577,23 +511,21 @@ package inspector {
     val COMPLETED_WITH_ERRORS = "COMPLETED_WITH_ERRORS".asInstanceOf[AssessmentRunState]
     val CANCELED = "CANCELED".asInstanceOf[AssessmentRunState]
 
-    val values = js.Object.freeze(
-      js.Array(
-        CREATED,
-        START_DATA_COLLECTION_PENDING,
-        START_DATA_COLLECTION_IN_PROGRESS,
-        COLLECTING_DATA,
-        STOP_DATA_COLLECTION_PENDING,
-        DATA_COLLECTED,
-        START_EVALUATING_RULES_PENDING,
-        EVALUATING_RULES,
-        FAILED,
-        ERROR,
-        COMPLETED,
-        COMPLETED_WITH_ERRORS,
-        CANCELED
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      CREATED,
+      START_DATA_COLLECTION_PENDING,
+      START_DATA_COLLECTION_IN_PROGRESS,
+      COLLECTING_DATA,
+      STOP_DATA_COLLECTION_PENDING,
+      DATA_COLLECTED,
+      START_EVALUATING_RULES_PENDING,
+      EVALUATING_RULES,
+      FAILED,
+      ERROR,
+      COMPLETED,
+      COMPLETED_WITH_ERRORS,
+      CANCELED
+    ))
   }
 
   /**
@@ -667,9 +599,7 @@ package inspector {
         assessmentTargetNamePattern: js.UndefOr[NamePattern] = js.undefined
     ): AssessmentTargetFilter = {
       val __obj = js.Dynamic.literal()
-      assessmentTargetNamePattern.foreach(__v =>
-        __obj.updateDynamic("assessmentTargetNamePattern")(__v.asInstanceOf[js.Any])
-      )
+      assessmentTargetNamePattern.foreach(__v => __obj.updateDynamic("assessmentTargetNamePattern")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssessmentTargetFilter]
     }
   }
@@ -882,9 +812,7 @@ package inspector {
         "rulesPackageArns" -> rulesPackageArns.asInstanceOf[js.Any]
       )
 
-      userAttributesForFindings.foreach(__v =>
-        __obj.updateDynamic("userAttributesForFindings")(__v.asInstanceOf[js.Any])
-      )
+      userAttributesForFindings.foreach(__v => __obj.updateDynamic("userAttributesForFindings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAssessmentTemplateRequest]
     }
   }
@@ -1488,9 +1416,7 @@ package inspector {
     val LIMIT_EXCEEDED = "LIMIT_EXCEEDED".asInstanceOf[FailedItemErrorCode]
     val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[FailedItemErrorCode]
 
-    val values = js.Object.freeze(
-      js.Array(INVALID_ARN, DUPLICATE_ARN, ITEM_DOES_NOT_EXIST, ACCESS_DENIED, LIMIT_EXCEEDED, INTERNAL_ERROR)
-    )
+    val values = js.Object.freeze(js.Array(INVALID_ARN, DUPLICATE_ARN, ITEM_DOES_NOT_EXIST, ACCESS_DENIED, LIMIT_EXCEEDED, INTERNAL_ERROR))
   }
 
   /**
@@ -1749,9 +1675,7 @@ package inspector {
     val FINDING_REPORTED = "FINDING_REPORTED".asInstanceOf[InspectorEvent]
     val OTHER = "OTHER".asInstanceOf[InspectorEvent]
 
-    val values = js.Object.freeze(
-      js.Array(ASSESSMENT_RUN_STARTED, ASSESSMENT_RUN_COMPLETED, ASSESSMENT_RUN_STATE_CHANGED, FINDING_REPORTED, OTHER)
-    )
+    val values = js.Object.freeze(js.Array(ASSESSMENT_RUN_STARTED, ASSESSMENT_RUN_COMPLETED, ASSESSMENT_RUN_STATE_CHANGED, FINDING_REPORTED, OTHER))
   }
 
   /**

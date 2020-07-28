@@ -28,21 +28,13 @@ package object outposts {
 
   implicit final class OutpostsOps(private val service: Outposts) extends AnyVal {
 
-    @inline def createOutpostFuture(params: CreateOutpostInput): Future[CreateOutpostOutput] =
-      service.createOutpost(params).promise().toFuture
-    @inline def deleteOutpostFuture(params: DeleteOutpostInput): Future[DeleteOutpostOutput] =
-      service.deleteOutpost(params).promise().toFuture
-    @inline def deleteSiteFuture(params: DeleteSiteInput): Future[DeleteSiteOutput] =
-      service.deleteSite(params).promise().toFuture
-    @inline def getOutpostFuture(params: GetOutpostInput): Future[GetOutpostOutput] =
-      service.getOutpost(params).promise().toFuture
-    @inline def getOutpostInstanceTypesFuture(
-        params: GetOutpostInstanceTypesInput
-    ): Future[GetOutpostInstanceTypesOutput] = service.getOutpostInstanceTypes(params).promise().toFuture
-    @inline def listOutpostsFuture(params: ListOutpostsInput): Future[ListOutpostsOutput] =
-      service.listOutposts(params).promise().toFuture
-    @inline def listSitesFuture(params: ListSitesInput): Future[ListSitesOutput] =
-      service.listSites(params).promise().toFuture
+    @inline def createOutpostFuture(params: CreateOutpostInput): Future[CreateOutpostOutput] = service.createOutpost(params).promise().toFuture
+    @inline def deleteOutpostFuture(params: DeleteOutpostInput): Future[DeleteOutpostOutput] = service.deleteOutpost(params).promise().toFuture
+    @inline def deleteSiteFuture(params: DeleteSiteInput): Future[DeleteSiteOutput] = service.deleteSite(params).promise().toFuture
+    @inline def getOutpostFuture(params: GetOutpostInput): Future[GetOutpostOutput] = service.getOutpost(params).promise().toFuture
+    @inline def getOutpostInstanceTypesFuture(params: GetOutpostInstanceTypesInput): Future[GetOutpostInstanceTypesOutput] = service.getOutpostInstanceTypes(params).promise().toFuture
+    @inline def listOutpostsFuture(params: ListOutpostsInput): Future[ListOutpostsOutput] = service.listOutposts(params).promise().toFuture
+    @inline def listSitesFuture(params: ListSitesInput): Future[ListSitesOutput] = service.listSites(params).promise().toFuture
   }
 }
 
@@ -56,8 +48,7 @@ package outposts {
     def deleteOutpost(params: DeleteOutpostInput): Request[DeleteOutpostOutput] = js.native
     def deleteSite(params: DeleteSiteInput): Request[DeleteSiteOutput] = js.native
     def getOutpost(params: GetOutpostInput): Request[GetOutpostOutput] = js.native
-    def getOutpostInstanceTypes(params: GetOutpostInstanceTypesInput): Request[GetOutpostInstanceTypesOutput] =
-      js.native
+    def getOutpostInstanceTypes(params: GetOutpostInstanceTypesInput): Request[GetOutpostInstanceTypesOutput] = js.native
     def listOutposts(params: ListOutpostsInput): Request[ListOutpostsOutput] = js.native
     def listSites(params: ListSitesInput): Request[ListSitesOutput] = js.native
   }

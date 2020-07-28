@@ -38,60 +38,22 @@ package object servicequotas {
 
   implicit final class ServiceQuotasOps(private val service: ServiceQuotas) extends AnyVal {
 
-    @inline def associateServiceQuotaTemplateFuture(
-        params: AssociateServiceQuotaTemplateRequest
-    ): Future[AssociateServiceQuotaTemplateResponse] = service.associateServiceQuotaTemplate(params).promise().toFuture
-    @inline def deleteServiceQuotaIncreaseRequestFromTemplateFuture(
-        params: DeleteServiceQuotaIncreaseRequestFromTemplateRequest
-    ): Future[DeleteServiceQuotaIncreaseRequestFromTemplateResponse] =
-      service.deleteServiceQuotaIncreaseRequestFromTemplate(params).promise().toFuture
-    @inline def disassociateServiceQuotaTemplateFuture(
-        params: DisassociateServiceQuotaTemplateRequest
-    ): Future[DisassociateServiceQuotaTemplateResponse] =
-      service.disassociateServiceQuotaTemplate(params).promise().toFuture
-    @inline def getAWSDefaultServiceQuotaFuture(
-        params: GetAWSDefaultServiceQuotaRequest
-    ): Future[GetAWSDefaultServiceQuotaResponse] = service.getAWSDefaultServiceQuota(params).promise().toFuture
-    @inline def getAssociationForServiceQuotaTemplateFuture(
-        params: GetAssociationForServiceQuotaTemplateRequest
-    ): Future[GetAssociationForServiceQuotaTemplateResponse] =
-      service.getAssociationForServiceQuotaTemplate(params).promise().toFuture
-    @inline def getRequestedServiceQuotaChangeFuture(
-        params: GetRequestedServiceQuotaChangeRequest
-    ): Future[GetRequestedServiceQuotaChangeResponse] =
-      service.getRequestedServiceQuotaChange(params).promise().toFuture
-    @inline def getServiceQuotaFuture(params: GetServiceQuotaRequest): Future[GetServiceQuotaResponse] =
-      service.getServiceQuota(params).promise().toFuture
-    @inline def getServiceQuotaIncreaseRequestFromTemplateFuture(
-        params: GetServiceQuotaIncreaseRequestFromTemplateRequest
-    ): Future[GetServiceQuotaIncreaseRequestFromTemplateResponse] =
-      service.getServiceQuotaIncreaseRequestFromTemplate(params).promise().toFuture
-    @inline def listAWSDefaultServiceQuotasFuture(
-        params: ListAWSDefaultServiceQuotasRequest
-    ): Future[ListAWSDefaultServiceQuotasResponse] = service.listAWSDefaultServiceQuotas(params).promise().toFuture
-    @inline def listRequestedServiceQuotaChangeHistoryByQuotaFuture(
-        params: ListRequestedServiceQuotaChangeHistoryByQuotaRequest
-    ): Future[ListRequestedServiceQuotaChangeHistoryByQuotaResponse] =
-      service.listRequestedServiceQuotaChangeHistoryByQuota(params).promise().toFuture
-    @inline def listRequestedServiceQuotaChangeHistoryFuture(
-        params: ListRequestedServiceQuotaChangeHistoryRequest
-    ): Future[ListRequestedServiceQuotaChangeHistoryResponse] =
-      service.listRequestedServiceQuotaChangeHistory(params).promise().toFuture
-    @inline def listServiceQuotaIncreaseRequestsInTemplateFuture(
-        params: ListServiceQuotaIncreaseRequestsInTemplateRequest
-    ): Future[ListServiceQuotaIncreaseRequestsInTemplateResponse] =
-      service.listServiceQuotaIncreaseRequestsInTemplate(params).promise().toFuture
-    @inline def listServiceQuotasFuture(params: ListServiceQuotasRequest): Future[ListServiceQuotasResponse] =
-      service.listServiceQuotas(params).promise().toFuture
-    @inline def listServicesFuture(params: ListServicesRequest): Future[ListServicesResponse] =
-      service.listServices(params).promise().toFuture
-    @inline def putServiceQuotaIncreaseRequestIntoTemplateFuture(
-        params: PutServiceQuotaIncreaseRequestIntoTemplateRequest
-    ): Future[PutServiceQuotaIncreaseRequestIntoTemplateResponse] =
-      service.putServiceQuotaIncreaseRequestIntoTemplate(params).promise().toFuture
-    @inline def requestServiceQuotaIncreaseFuture(
-        params: RequestServiceQuotaIncreaseRequest
-    ): Future[RequestServiceQuotaIncreaseResponse] = service.requestServiceQuotaIncrease(params).promise().toFuture
+    @inline def associateServiceQuotaTemplateFuture(params: AssociateServiceQuotaTemplateRequest): Future[AssociateServiceQuotaTemplateResponse] = service.associateServiceQuotaTemplate(params).promise().toFuture
+    @inline def deleteServiceQuotaIncreaseRequestFromTemplateFuture(params: DeleteServiceQuotaIncreaseRequestFromTemplateRequest): Future[DeleteServiceQuotaIncreaseRequestFromTemplateResponse] = service.deleteServiceQuotaIncreaseRequestFromTemplate(params).promise().toFuture
+    @inline def disassociateServiceQuotaTemplateFuture(params: DisassociateServiceQuotaTemplateRequest): Future[DisassociateServiceQuotaTemplateResponse] = service.disassociateServiceQuotaTemplate(params).promise().toFuture
+    @inline def getAWSDefaultServiceQuotaFuture(params: GetAWSDefaultServiceQuotaRequest): Future[GetAWSDefaultServiceQuotaResponse] = service.getAWSDefaultServiceQuota(params).promise().toFuture
+    @inline def getAssociationForServiceQuotaTemplateFuture(params: GetAssociationForServiceQuotaTemplateRequest): Future[GetAssociationForServiceQuotaTemplateResponse] = service.getAssociationForServiceQuotaTemplate(params).promise().toFuture
+    @inline def getRequestedServiceQuotaChangeFuture(params: GetRequestedServiceQuotaChangeRequest): Future[GetRequestedServiceQuotaChangeResponse] = service.getRequestedServiceQuotaChange(params).promise().toFuture
+    @inline def getServiceQuotaFuture(params: GetServiceQuotaRequest): Future[GetServiceQuotaResponse] = service.getServiceQuota(params).promise().toFuture
+    @inline def getServiceQuotaIncreaseRequestFromTemplateFuture(params: GetServiceQuotaIncreaseRequestFromTemplateRequest): Future[GetServiceQuotaIncreaseRequestFromTemplateResponse] = service.getServiceQuotaIncreaseRequestFromTemplate(params).promise().toFuture
+    @inline def listAWSDefaultServiceQuotasFuture(params: ListAWSDefaultServiceQuotasRequest): Future[ListAWSDefaultServiceQuotasResponse] = service.listAWSDefaultServiceQuotas(params).promise().toFuture
+    @inline def listRequestedServiceQuotaChangeHistoryByQuotaFuture(params: ListRequestedServiceQuotaChangeHistoryByQuotaRequest): Future[ListRequestedServiceQuotaChangeHistoryByQuotaResponse] = service.listRequestedServiceQuotaChangeHistoryByQuota(params).promise().toFuture
+    @inline def listRequestedServiceQuotaChangeHistoryFuture(params: ListRequestedServiceQuotaChangeHistoryRequest): Future[ListRequestedServiceQuotaChangeHistoryResponse] = service.listRequestedServiceQuotaChangeHistory(params).promise().toFuture
+    @inline def listServiceQuotaIncreaseRequestsInTemplateFuture(params: ListServiceQuotaIncreaseRequestsInTemplateRequest): Future[ListServiceQuotaIncreaseRequestsInTemplateResponse] = service.listServiceQuotaIncreaseRequestsInTemplate(params).promise().toFuture
+    @inline def listServiceQuotasFuture(params: ListServiceQuotasRequest): Future[ListServiceQuotasResponse] = service.listServiceQuotas(params).promise().toFuture
+    @inline def listServicesFuture(params: ListServicesRequest): Future[ListServicesResponse] = service.listServices(params).promise().toFuture
+    @inline def putServiceQuotaIncreaseRequestIntoTemplateFuture(params: PutServiceQuotaIncreaseRequestIntoTemplateRequest): Future[PutServiceQuotaIncreaseRequestIntoTemplateResponse] = service.putServiceQuotaIncreaseRequestIntoTemplate(params).promise().toFuture
+    @inline def requestServiceQuotaIncreaseFuture(params: RequestServiceQuotaIncreaseRequest): Future[RequestServiceQuotaIncreaseResponse] = service.requestServiceQuotaIncrease(params).promise().toFuture
   }
 }
 
@@ -101,48 +63,22 @@ package servicequotas {
   class ServiceQuotas() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def associateServiceQuotaTemplate(
-        params: AssociateServiceQuotaTemplateRequest
-    ): Request[AssociateServiceQuotaTemplateResponse] = js.native
-    def deleteServiceQuotaIncreaseRequestFromTemplate(
-        params: DeleteServiceQuotaIncreaseRequestFromTemplateRequest
-    ): Request[DeleteServiceQuotaIncreaseRequestFromTemplateResponse] = js.native
-    def disassociateServiceQuotaTemplate(
-        params: DisassociateServiceQuotaTemplateRequest
-    ): Request[DisassociateServiceQuotaTemplateResponse] = js.native
-    def getAWSDefaultServiceQuota(
-        params: GetAWSDefaultServiceQuotaRequest
-    ): Request[GetAWSDefaultServiceQuotaResponse] = js.native
-    def getAssociationForServiceQuotaTemplate(
-        params: GetAssociationForServiceQuotaTemplateRequest
-    ): Request[GetAssociationForServiceQuotaTemplateResponse] = js.native
-    def getRequestedServiceQuotaChange(
-        params: GetRequestedServiceQuotaChangeRequest
-    ): Request[GetRequestedServiceQuotaChangeResponse] = js.native
+    def associateServiceQuotaTemplate(params: AssociateServiceQuotaTemplateRequest): Request[AssociateServiceQuotaTemplateResponse] = js.native
+    def deleteServiceQuotaIncreaseRequestFromTemplate(params: DeleteServiceQuotaIncreaseRequestFromTemplateRequest): Request[DeleteServiceQuotaIncreaseRequestFromTemplateResponse] = js.native
+    def disassociateServiceQuotaTemplate(params: DisassociateServiceQuotaTemplateRequest): Request[DisassociateServiceQuotaTemplateResponse] = js.native
+    def getAWSDefaultServiceQuota(params: GetAWSDefaultServiceQuotaRequest): Request[GetAWSDefaultServiceQuotaResponse] = js.native
+    def getAssociationForServiceQuotaTemplate(params: GetAssociationForServiceQuotaTemplateRequest): Request[GetAssociationForServiceQuotaTemplateResponse] = js.native
+    def getRequestedServiceQuotaChange(params: GetRequestedServiceQuotaChangeRequest): Request[GetRequestedServiceQuotaChangeResponse] = js.native
     def getServiceQuota(params: GetServiceQuotaRequest): Request[GetServiceQuotaResponse] = js.native
-    def getServiceQuotaIncreaseRequestFromTemplate(
-        params: GetServiceQuotaIncreaseRequestFromTemplateRequest
-    ): Request[GetServiceQuotaIncreaseRequestFromTemplateResponse] = js.native
-    def listAWSDefaultServiceQuotas(
-        params: ListAWSDefaultServiceQuotasRequest
-    ): Request[ListAWSDefaultServiceQuotasResponse] = js.native
-    def listRequestedServiceQuotaChangeHistory(
-        params: ListRequestedServiceQuotaChangeHistoryRequest
-    ): Request[ListRequestedServiceQuotaChangeHistoryResponse] = js.native
-    def listRequestedServiceQuotaChangeHistoryByQuota(
-        params: ListRequestedServiceQuotaChangeHistoryByQuotaRequest
-    ): Request[ListRequestedServiceQuotaChangeHistoryByQuotaResponse] = js.native
-    def listServiceQuotaIncreaseRequestsInTemplate(
-        params: ListServiceQuotaIncreaseRequestsInTemplateRequest
-    ): Request[ListServiceQuotaIncreaseRequestsInTemplateResponse] = js.native
+    def getServiceQuotaIncreaseRequestFromTemplate(params: GetServiceQuotaIncreaseRequestFromTemplateRequest): Request[GetServiceQuotaIncreaseRequestFromTemplateResponse] = js.native
+    def listAWSDefaultServiceQuotas(params: ListAWSDefaultServiceQuotasRequest): Request[ListAWSDefaultServiceQuotasResponse] = js.native
+    def listRequestedServiceQuotaChangeHistory(params: ListRequestedServiceQuotaChangeHistoryRequest): Request[ListRequestedServiceQuotaChangeHistoryResponse] = js.native
+    def listRequestedServiceQuotaChangeHistoryByQuota(params: ListRequestedServiceQuotaChangeHistoryByQuotaRequest): Request[ListRequestedServiceQuotaChangeHistoryByQuotaResponse] = js.native
+    def listServiceQuotaIncreaseRequestsInTemplate(params: ListServiceQuotaIncreaseRequestsInTemplateRequest): Request[ListServiceQuotaIncreaseRequestsInTemplateResponse] = js.native
     def listServiceQuotas(params: ListServiceQuotasRequest): Request[ListServiceQuotasResponse] = js.native
     def listServices(params: ListServicesRequest): Request[ListServicesResponse] = js.native
-    def putServiceQuotaIncreaseRequestIntoTemplate(
-        params: PutServiceQuotaIncreaseRequestIntoTemplateRequest
-    ): Request[PutServiceQuotaIncreaseRequestIntoTemplateResponse] = js.native
-    def requestServiceQuotaIncrease(
-        params: RequestServiceQuotaIncreaseRequest
-    ): Request[RequestServiceQuotaIncreaseResponse] = js.native
+    def putServiceQuotaIncreaseRequestIntoTemplate(params: PutServiceQuotaIncreaseRequestIntoTemplateRequest): Request[PutServiceQuotaIncreaseRequestIntoTemplateResponse] = js.native
+    def requestServiceQuotaIncrease(params: RequestServiceQuotaIncreaseRequest): Request[RequestServiceQuotaIncreaseResponse] = js.native
   }
 
   @js.native
@@ -242,14 +178,7 @@ package servicequotas {
     val DEPENDENCY_SERVICE_ERROR = "DEPENDENCY_SERVICE_ERROR".asInstanceOf[ErrorCode]
     val SERVICE_QUOTA_NOT_AVAILABLE_ERROR = "SERVICE_QUOTA_NOT_AVAILABLE_ERROR".asInstanceOf[ErrorCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        DEPENDENCY_ACCESS_DENIED_ERROR,
-        DEPENDENCY_THROTTLING_ERROR,
-        DEPENDENCY_SERVICE_ERROR,
-        SERVICE_QUOTA_NOT_AVAILABLE_ERROR
-      )
-    )
+    val values = js.Object.freeze(js.Array(DEPENDENCY_ACCESS_DENIED_ERROR, DEPENDENCY_THROTTLING_ERROR, DEPENDENCY_SERVICE_ERROR, SERVICE_QUOTA_NOT_AVAILABLE_ERROR))
   }
 
   /**
@@ -335,9 +264,7 @@ package servicequotas {
         ServiceQuotaTemplateAssociationStatus: js.UndefOr[ServiceQuotaTemplateAssociationStatus] = js.undefined
     ): GetAssociationForServiceQuotaTemplateResponse = {
       val __obj = js.Dynamic.literal()
-      ServiceQuotaTemplateAssociationStatus.foreach(__v =>
-        __obj.updateDynamic("ServiceQuotaTemplateAssociationStatus")(__v.asInstanceOf[js.Any])
-      )
+      ServiceQuotaTemplateAssociationStatus.foreach(__v => __obj.updateDynamic("ServiceQuotaTemplateAssociationStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAssociationForServiceQuotaTemplateResponse]
     }
   }
@@ -411,9 +338,7 @@ package servicequotas {
         ServiceQuotaIncreaseRequestInTemplate: js.UndefOr[ServiceQuotaIncreaseRequestInTemplate] = js.undefined
     ): GetServiceQuotaIncreaseRequestFromTemplateResponse = {
       val __obj = js.Dynamic.literal()
-      ServiceQuotaIncreaseRequestInTemplate.foreach(__v =>
-        __obj.updateDynamic("ServiceQuotaIncreaseRequestInTemplate")(__v.asInstanceOf[js.Any])
-      )
+      ServiceQuotaIncreaseRequestInTemplate.foreach(__v => __obj.updateDynamic("ServiceQuotaIncreaseRequestInTemplate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetServiceQuotaIncreaseRequestFromTemplateResponse]
     }
   }
@@ -630,9 +555,7 @@ package servicequotas {
     ): ListServiceQuotaIncreaseRequestsInTemplateResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ServiceQuotaIncreaseRequestInTemplateList.foreach(__v =>
-        __obj.updateDynamic("ServiceQuotaIncreaseRequestInTemplateList")(__v.asInstanceOf[js.Any])
-      )
+      ServiceQuotaIncreaseRequestInTemplateList.foreach(__v => __obj.updateDynamic("ServiceQuotaIncreaseRequestInTemplateList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListServiceQuotaIncreaseRequestsInTemplateResponse]
     }
   }
@@ -741,9 +664,7 @@ package servicequotas {
       MetricDimensions.foreach(__v => __obj.updateDynamic("MetricDimensions")(__v.asInstanceOf[js.Any]))
       MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
       MetricNamespace.foreach(__v => __obj.updateDynamic("MetricNamespace")(__v.asInstanceOf[js.Any]))
-      MetricStatisticRecommendation.foreach(__v =>
-        __obj.updateDynamic("MetricStatisticRecommendation")(__v.asInstanceOf[js.Any])
-      )
+      MetricStatisticRecommendation.foreach(__v => __obj.updateDynamic("MetricStatisticRecommendation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MetricInfo]
     }
   }
@@ -800,9 +721,7 @@ package servicequotas {
         ServiceQuotaIncreaseRequestInTemplate: js.UndefOr[ServiceQuotaIncreaseRequestInTemplate] = js.undefined
     ): PutServiceQuotaIncreaseRequestIntoTemplateResponse = {
       val __obj = js.Dynamic.literal()
-      ServiceQuotaIncreaseRequestInTemplate.foreach(__v =>
-        __obj.updateDynamic("ServiceQuotaIncreaseRequestInTemplate")(__v.asInstanceOf[js.Any])
-      )
+      ServiceQuotaIncreaseRequestInTemplate.foreach(__v => __obj.updateDynamic("ServiceQuotaIncreaseRequestInTemplate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutServiceQuotaIncreaseRequestIntoTemplateResponse]
     }
   }

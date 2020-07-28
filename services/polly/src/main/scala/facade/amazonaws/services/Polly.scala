@@ -41,27 +41,15 @@ package object polly {
 
   implicit final class PollyOps(private val service: Polly) extends AnyVal {
 
-    @inline def deleteLexiconFuture(params: DeleteLexiconInput): Future[DeleteLexiconOutput] =
-      service.deleteLexicon(params).promise().toFuture
-    @inline def describeVoicesFuture(params: DescribeVoicesInput): Future[DescribeVoicesOutput] =
-      service.describeVoices(params).promise().toFuture
-    @inline def getLexiconFuture(params: GetLexiconInput): Future[GetLexiconOutput] =
-      service.getLexicon(params).promise().toFuture
-    @inline def getSpeechSynthesisTaskFuture(
-        params: GetSpeechSynthesisTaskInput
-    ): Future[GetSpeechSynthesisTaskOutput] = service.getSpeechSynthesisTask(params).promise().toFuture
-    @inline def listLexiconsFuture(params: ListLexiconsInput): Future[ListLexiconsOutput] =
-      service.listLexicons(params).promise().toFuture
-    @inline def listSpeechSynthesisTasksFuture(
-        params: ListSpeechSynthesisTasksInput
-    ): Future[ListSpeechSynthesisTasksOutput] = service.listSpeechSynthesisTasks(params).promise().toFuture
-    @inline def putLexiconFuture(params: PutLexiconInput): Future[PutLexiconOutput] =
-      service.putLexicon(params).promise().toFuture
-    @inline def startSpeechSynthesisTaskFuture(
-        params: StartSpeechSynthesisTaskInput
-    ): Future[StartSpeechSynthesisTaskOutput] = service.startSpeechSynthesisTask(params).promise().toFuture
-    @inline def synthesizeSpeechFuture(params: SynthesizeSpeechInput): Future[SynthesizeSpeechOutput] =
-      service.synthesizeSpeech(params).promise().toFuture
+    @inline def deleteLexiconFuture(params: DeleteLexiconInput): Future[DeleteLexiconOutput] = service.deleteLexicon(params).promise().toFuture
+    @inline def describeVoicesFuture(params: DescribeVoicesInput): Future[DescribeVoicesOutput] = service.describeVoices(params).promise().toFuture
+    @inline def getLexiconFuture(params: GetLexiconInput): Future[GetLexiconOutput] = service.getLexicon(params).promise().toFuture
+    @inline def getSpeechSynthesisTaskFuture(params: GetSpeechSynthesisTaskInput): Future[GetSpeechSynthesisTaskOutput] = service.getSpeechSynthesisTask(params).promise().toFuture
+    @inline def listLexiconsFuture(params: ListLexiconsInput): Future[ListLexiconsOutput] = service.listLexicons(params).promise().toFuture
+    @inline def listSpeechSynthesisTasksFuture(params: ListSpeechSynthesisTasksInput): Future[ListSpeechSynthesisTasksOutput] = service.listSpeechSynthesisTasks(params).promise().toFuture
+    @inline def putLexiconFuture(params: PutLexiconInput): Future[PutLexiconOutput] = service.putLexicon(params).promise().toFuture
+    @inline def startSpeechSynthesisTaskFuture(params: StartSpeechSynthesisTaskInput): Future[StartSpeechSynthesisTaskOutput] = service.startSpeechSynthesisTask(params).promise().toFuture
+    @inline def synthesizeSpeechFuture(params: SynthesizeSpeechInput): Future[SynthesizeSpeechOutput] = service.synthesizeSpeech(params).promise().toFuture
   }
 }
 
@@ -76,11 +64,9 @@ package polly {
     def getLexicon(params: GetLexiconInput): Request[GetLexiconOutput] = js.native
     def getSpeechSynthesisTask(params: GetSpeechSynthesisTaskInput): Request[GetSpeechSynthesisTaskOutput] = js.native
     def listLexicons(params: ListLexiconsInput): Request[ListLexiconsOutput] = js.native
-    def listSpeechSynthesisTasks(params: ListSpeechSynthesisTasksInput): Request[ListSpeechSynthesisTasksOutput] =
-      js.native
+    def listSpeechSynthesisTasks(params: ListSpeechSynthesisTasksInput): Request[ListSpeechSynthesisTasksOutput] = js.native
     def putLexicon(params: PutLexiconInput): Request[PutLexiconOutput] = js.native
-    def startSpeechSynthesisTask(params: StartSpeechSynthesisTaskInput): Request[StartSpeechSynthesisTaskOutput] =
-      js.native
+    def startSpeechSynthesisTask(params: StartSpeechSynthesisTaskInput): Request[StartSpeechSynthesisTaskOutput] = js.native
     def synthesizeSpeech(params: SynthesizeSpeechInput): Request[SynthesizeSpeechOutput] = js.native
   }
 
@@ -133,9 +119,7 @@ package polly {
     ): DescribeVoicesInput = {
       val __obj = js.Dynamic.literal()
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
-      IncludeAdditionalLanguageCodes.foreach(__v =>
-        __obj.updateDynamic("IncludeAdditionalLanguageCodes")(__v.asInstanceOf[js.Any])
-      )
+      IncludeAdditionalLanguageCodes.foreach(__v => __obj.updateDynamic("IncludeAdditionalLanguageCodes")(__v.asInstanceOf[js.Any]))
       LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeVoicesInput]
@@ -283,39 +267,37 @@ package polly {
     val `sv-SE` = "sv-SE".asInstanceOf[LanguageCode]
     val `tr-TR` = "tr-TR".asInstanceOf[LanguageCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        arb,
-        `cmn-CN`,
-        `cy-GB`,
-        `da-DK`,
-        `de-DE`,
-        `en-AU`,
-        `en-GB`,
-        `en-GB-WLS`,
-        `en-IN`,
-        `en-US`,
-        `es-ES`,
-        `es-MX`,
-        `es-US`,
-        `fr-CA`,
-        `fr-FR`,
-        `is-IS`,
-        `it-IT`,
-        `ja-JP`,
-        `hi-IN`,
-        `ko-KR`,
-        `nb-NO`,
-        `nl-NL`,
-        `pl-PL`,
-        `pt-BR`,
-        `pt-PT`,
-        `ro-RO`,
-        `ru-RU`,
-        `sv-SE`,
-        `tr-TR`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      arb,
+      `cmn-CN`,
+      `cy-GB`,
+      `da-DK`,
+      `de-DE`,
+      `en-AU`,
+      `en-GB`,
+      `en-GB-WLS`,
+      `en-IN`,
+      `en-US`,
+      `es-ES`,
+      `es-MX`,
+      `es-US`,
+      `fr-CA`,
+      `fr-FR`,
+      `is-IS`,
+      `it-IT`,
+      `ja-JP`,
+      `hi-IN`,
+      `ko-KR`,
+      `nb-NO`,
+      `nl-NL`,
+      `pl-PL`,
+      `pt-BR`,
+      `pt-PT`,
+      `ro-RO`,
+      `ru-RU`,
+      `sv-SE`,
+      `tr-TR`
+    ))
   }
 
   /**
@@ -842,70 +824,68 @@ package polly {
     val Zeina = "Zeina".asInstanceOf[VoiceId]
     val Zhiyu = "Zhiyu".asInstanceOf[VoiceId]
 
-    val values = js.Object.freeze(
-      js.Array(
-        Aditi,
-        Amy,
-        Astrid,
-        Bianca,
-        Brian,
-        Camila,
-        Carla,
-        Carmen,
-        Celine,
-        Chantal,
-        Conchita,
-        Cristiano,
-        Dora,
-        Emma,
-        Enrique,
-        Ewa,
-        Filiz,
-        Geraint,
-        Giorgio,
-        Gwyneth,
-        Hans,
-        Ines,
-        Ivy,
-        Jacek,
-        Jan,
-        Joanna,
-        Joey,
-        Justin,
-        Karl,
-        Kendra,
-        Kevin,
-        Kimberly,
-        Lea,
-        Liv,
-        Lotte,
-        Lucia,
-        Lupe,
-        Mads,
-        Maja,
-        Marlene,
-        Mathieu,
-        Matthew,
-        Maxim,
-        Mia,
-        Miguel,
-        Mizuki,
-        Naja,
-        Nicole,
-        Penelope,
-        Raveena,
-        Ricardo,
-        Ruben,
-        Russell,
-        Salli,
-        Seoyeon,
-        Takumi,
-        Tatyana,
-        Vicki,
-        Vitoria,
-        Zeina,
-        Zhiyu
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      Aditi,
+      Amy,
+      Astrid,
+      Bianca,
+      Brian,
+      Camila,
+      Carla,
+      Carmen,
+      Celine,
+      Chantal,
+      Conchita,
+      Cristiano,
+      Dora,
+      Emma,
+      Enrique,
+      Ewa,
+      Filiz,
+      Geraint,
+      Giorgio,
+      Gwyneth,
+      Hans,
+      Ines,
+      Ivy,
+      Jacek,
+      Jan,
+      Joanna,
+      Joey,
+      Justin,
+      Karl,
+      Kendra,
+      Kevin,
+      Kimberly,
+      Lea,
+      Liv,
+      Lotte,
+      Lucia,
+      Lupe,
+      Mads,
+      Maja,
+      Marlene,
+      Mathieu,
+      Matthew,
+      Maxim,
+      Mia,
+      Miguel,
+      Mizuki,
+      Naja,
+      Nicole,
+      Penelope,
+      Raveena,
+      Ricardo,
+      Ruben,
+      Russell,
+      Salli,
+      Seoyeon,
+      Takumi,
+      Tatyana,
+      Vicki,
+      Vitoria,
+      Zeina,
+      Zhiyu
+    ))
   }
 }

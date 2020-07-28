@@ -88,143 +88,58 @@ package object directconnect {
 
   implicit final class DirectConnectOps(private val service: DirectConnect) extends AnyVal {
 
-    @inline def acceptDirectConnectGatewayAssociationProposalFuture(
-        params: AcceptDirectConnectGatewayAssociationProposalRequest
-    ): Future[AcceptDirectConnectGatewayAssociationProposalResult] =
-      service.acceptDirectConnectGatewayAssociationProposal(params).promise().toFuture
-    @inline def allocateHostedConnectionFuture(params: AllocateHostedConnectionRequest): Future[Connection] =
-      service.allocateHostedConnection(params).promise().toFuture
-    @inline def allocatePrivateVirtualInterfaceFuture(
-        params: AllocatePrivateVirtualInterfaceRequest
-    ): Future[VirtualInterface] = service.allocatePrivateVirtualInterface(params).promise().toFuture
-    @inline def allocatePublicVirtualInterfaceFuture(
-        params: AllocatePublicVirtualInterfaceRequest
-    ): Future[VirtualInterface] = service.allocatePublicVirtualInterface(params).promise().toFuture
-    @inline def allocateTransitVirtualInterfaceFuture(
-        params: AllocateTransitVirtualInterfaceRequest
-    ): Future[AllocateTransitVirtualInterfaceResult] =
-      service.allocateTransitVirtualInterface(params).promise().toFuture
-    @inline def associateConnectionWithLagFuture(params: AssociateConnectionWithLagRequest): Future[Connection] =
-      service.associateConnectionWithLag(params).promise().toFuture
-    @inline def associateHostedConnectionFuture(params: AssociateHostedConnectionRequest): Future[Connection] =
-      service.associateHostedConnection(params).promise().toFuture
-    @inline def associateVirtualInterfaceFuture(params: AssociateVirtualInterfaceRequest): Future[VirtualInterface] =
-      service.associateVirtualInterface(params).promise().toFuture
-    @inline def confirmConnectionFuture(params: ConfirmConnectionRequest): Future[ConfirmConnectionResponse] =
-      service.confirmConnection(params).promise().toFuture
-    @inline def confirmPrivateVirtualInterfaceFuture(
-        params: ConfirmPrivateVirtualInterfaceRequest
-    ): Future[ConfirmPrivateVirtualInterfaceResponse] =
-      service.confirmPrivateVirtualInterface(params).promise().toFuture
-    @inline def confirmPublicVirtualInterfaceFuture(
-        params: ConfirmPublicVirtualInterfaceRequest
-    ): Future[ConfirmPublicVirtualInterfaceResponse] = service.confirmPublicVirtualInterface(params).promise().toFuture
-    @inline def confirmTransitVirtualInterfaceFuture(
-        params: ConfirmTransitVirtualInterfaceRequest
-    ): Future[ConfirmTransitVirtualInterfaceResponse] =
-      service.confirmTransitVirtualInterface(params).promise().toFuture
-    @inline def createBGPPeerFuture(params: CreateBGPPeerRequest): Future[CreateBGPPeerResponse] =
-      service.createBGPPeer(params).promise().toFuture
-    @inline def createConnectionFuture(params: CreateConnectionRequest): Future[Connection] =
-      service.createConnection(params).promise().toFuture
-    @inline def createDirectConnectGatewayAssociationFuture(
-        params: CreateDirectConnectGatewayAssociationRequest
-    ): Future[CreateDirectConnectGatewayAssociationResult] =
-      service.createDirectConnectGatewayAssociation(params).promise().toFuture
-    @inline def createDirectConnectGatewayAssociationProposalFuture(
-        params: CreateDirectConnectGatewayAssociationProposalRequest
-    ): Future[CreateDirectConnectGatewayAssociationProposalResult] =
-      service.createDirectConnectGatewayAssociationProposal(params).promise().toFuture
-    @inline def createDirectConnectGatewayFuture(
-        params: CreateDirectConnectGatewayRequest
-    ): Future[CreateDirectConnectGatewayResult] = service.createDirectConnectGateway(params).promise().toFuture
-    @inline def createInterconnectFuture(params: CreateInterconnectRequest): Future[Interconnect] =
-      service.createInterconnect(params).promise().toFuture
+    @inline def acceptDirectConnectGatewayAssociationProposalFuture(params: AcceptDirectConnectGatewayAssociationProposalRequest): Future[AcceptDirectConnectGatewayAssociationProposalResult] = service.acceptDirectConnectGatewayAssociationProposal(params).promise().toFuture
+    @inline def allocateHostedConnectionFuture(params: AllocateHostedConnectionRequest): Future[Connection] = service.allocateHostedConnection(params).promise().toFuture
+    @inline def allocatePrivateVirtualInterfaceFuture(params: AllocatePrivateVirtualInterfaceRequest): Future[VirtualInterface] = service.allocatePrivateVirtualInterface(params).promise().toFuture
+    @inline def allocatePublicVirtualInterfaceFuture(params: AllocatePublicVirtualInterfaceRequest): Future[VirtualInterface] = service.allocatePublicVirtualInterface(params).promise().toFuture
+    @inline def allocateTransitVirtualInterfaceFuture(params: AllocateTransitVirtualInterfaceRequest): Future[AllocateTransitVirtualInterfaceResult] = service.allocateTransitVirtualInterface(params).promise().toFuture
+    @inline def associateConnectionWithLagFuture(params: AssociateConnectionWithLagRequest): Future[Connection] = service.associateConnectionWithLag(params).promise().toFuture
+    @inline def associateHostedConnectionFuture(params: AssociateHostedConnectionRequest): Future[Connection] = service.associateHostedConnection(params).promise().toFuture
+    @inline def associateVirtualInterfaceFuture(params: AssociateVirtualInterfaceRequest): Future[VirtualInterface] = service.associateVirtualInterface(params).promise().toFuture
+    @inline def confirmConnectionFuture(params: ConfirmConnectionRequest): Future[ConfirmConnectionResponse] = service.confirmConnection(params).promise().toFuture
+    @inline def confirmPrivateVirtualInterfaceFuture(params: ConfirmPrivateVirtualInterfaceRequest): Future[ConfirmPrivateVirtualInterfaceResponse] = service.confirmPrivateVirtualInterface(params).promise().toFuture
+    @inline def confirmPublicVirtualInterfaceFuture(params: ConfirmPublicVirtualInterfaceRequest): Future[ConfirmPublicVirtualInterfaceResponse] = service.confirmPublicVirtualInterface(params).promise().toFuture
+    @inline def confirmTransitVirtualInterfaceFuture(params: ConfirmTransitVirtualInterfaceRequest): Future[ConfirmTransitVirtualInterfaceResponse] = service.confirmTransitVirtualInterface(params).promise().toFuture
+    @inline def createBGPPeerFuture(params: CreateBGPPeerRequest): Future[CreateBGPPeerResponse] = service.createBGPPeer(params).promise().toFuture
+    @inline def createConnectionFuture(params: CreateConnectionRequest): Future[Connection] = service.createConnection(params).promise().toFuture
+    @inline def createDirectConnectGatewayAssociationFuture(params: CreateDirectConnectGatewayAssociationRequest): Future[CreateDirectConnectGatewayAssociationResult] = service.createDirectConnectGatewayAssociation(params).promise().toFuture
+    @inline def createDirectConnectGatewayAssociationProposalFuture(params: CreateDirectConnectGatewayAssociationProposalRequest): Future[CreateDirectConnectGatewayAssociationProposalResult] = service.createDirectConnectGatewayAssociationProposal(params).promise().toFuture
+    @inline def createDirectConnectGatewayFuture(params: CreateDirectConnectGatewayRequest): Future[CreateDirectConnectGatewayResult] = service.createDirectConnectGateway(params).promise().toFuture
+    @inline def createInterconnectFuture(params: CreateInterconnectRequest): Future[Interconnect] = service.createInterconnect(params).promise().toFuture
     @inline def createLagFuture(params: CreateLagRequest): Future[Lag] = service.createLag(params).promise().toFuture
-    @inline def createPrivateVirtualInterfaceFuture(
-        params: CreatePrivateVirtualInterfaceRequest
-    ): Future[VirtualInterface] = service.createPrivateVirtualInterface(params).promise().toFuture
-    @inline def createPublicVirtualInterfaceFuture(
-        params: CreatePublicVirtualInterfaceRequest
-    ): Future[VirtualInterface] = service.createPublicVirtualInterface(params).promise().toFuture
-    @inline def createTransitVirtualInterfaceFuture(
-        params: CreateTransitVirtualInterfaceRequest
-    ): Future[CreateTransitVirtualInterfaceResult] = service.createTransitVirtualInterface(params).promise().toFuture
-    @inline def deleteBGPPeerFuture(params: DeleteBGPPeerRequest): Future[DeleteBGPPeerResponse] =
-      service.deleteBGPPeer(params).promise().toFuture
-    @inline def deleteConnectionFuture(params: DeleteConnectionRequest): Future[Connection] =
-      service.deleteConnection(params).promise().toFuture
-    @inline def deleteDirectConnectGatewayAssociationFuture(
-        params: DeleteDirectConnectGatewayAssociationRequest
-    ): Future[DeleteDirectConnectGatewayAssociationResult] =
-      service.deleteDirectConnectGatewayAssociation(params).promise().toFuture
-    @inline def deleteDirectConnectGatewayAssociationProposalFuture(
-        params: DeleteDirectConnectGatewayAssociationProposalRequest
-    ): Future[DeleteDirectConnectGatewayAssociationProposalResult] =
-      service.deleteDirectConnectGatewayAssociationProposal(params).promise().toFuture
-    @inline def deleteDirectConnectGatewayFuture(
-        params: DeleteDirectConnectGatewayRequest
-    ): Future[DeleteDirectConnectGatewayResult] = service.deleteDirectConnectGateway(params).promise().toFuture
-    @inline def deleteInterconnectFuture(params: DeleteInterconnectRequest): Future[DeleteInterconnectResponse] =
-      service.deleteInterconnect(params).promise().toFuture
+    @inline def createPrivateVirtualInterfaceFuture(params: CreatePrivateVirtualInterfaceRequest): Future[VirtualInterface] = service.createPrivateVirtualInterface(params).promise().toFuture
+    @inline def createPublicVirtualInterfaceFuture(params: CreatePublicVirtualInterfaceRequest): Future[VirtualInterface] = service.createPublicVirtualInterface(params).promise().toFuture
+    @inline def createTransitVirtualInterfaceFuture(params: CreateTransitVirtualInterfaceRequest): Future[CreateTransitVirtualInterfaceResult] = service.createTransitVirtualInterface(params).promise().toFuture
+    @inline def deleteBGPPeerFuture(params: DeleteBGPPeerRequest): Future[DeleteBGPPeerResponse] = service.deleteBGPPeer(params).promise().toFuture
+    @inline def deleteConnectionFuture(params: DeleteConnectionRequest): Future[Connection] = service.deleteConnection(params).promise().toFuture
+    @inline def deleteDirectConnectGatewayAssociationFuture(params: DeleteDirectConnectGatewayAssociationRequest): Future[DeleteDirectConnectGatewayAssociationResult] = service.deleteDirectConnectGatewayAssociation(params).promise().toFuture
+    @inline def deleteDirectConnectGatewayAssociationProposalFuture(params: DeleteDirectConnectGatewayAssociationProposalRequest): Future[DeleteDirectConnectGatewayAssociationProposalResult] = service.deleteDirectConnectGatewayAssociationProposal(params).promise().toFuture
+    @inline def deleteDirectConnectGatewayFuture(params: DeleteDirectConnectGatewayRequest): Future[DeleteDirectConnectGatewayResult] = service.deleteDirectConnectGateway(params).promise().toFuture
+    @inline def deleteInterconnectFuture(params: DeleteInterconnectRequest): Future[DeleteInterconnectResponse] = service.deleteInterconnect(params).promise().toFuture
     @inline def deleteLagFuture(params: DeleteLagRequest): Future[Lag] = service.deleteLag(params).promise().toFuture
-    @inline def deleteVirtualInterfaceFuture(
-        params: DeleteVirtualInterfaceRequest
-    ): Future[DeleteVirtualInterfaceResponse] = service.deleteVirtualInterface(params).promise().toFuture
-    @inline def describeConnectionsFuture(params: DescribeConnectionsRequest): Future[Connections] =
-      service.describeConnections(params).promise().toFuture
-    @inline def describeDirectConnectGatewayAssociationProposalsFuture(
-        params: DescribeDirectConnectGatewayAssociationProposalsRequest
-    ): Future[DescribeDirectConnectGatewayAssociationProposalsResult] =
-      service.describeDirectConnectGatewayAssociationProposals(params).promise().toFuture
-    @inline def describeDirectConnectGatewayAssociationsFuture(
-        params: DescribeDirectConnectGatewayAssociationsRequest
-    ): Future[DescribeDirectConnectGatewayAssociationsResult] =
-      service.describeDirectConnectGatewayAssociations(params).promise().toFuture
-    @inline def describeDirectConnectGatewayAttachmentsFuture(
-        params: DescribeDirectConnectGatewayAttachmentsRequest
-    ): Future[DescribeDirectConnectGatewayAttachmentsResult] =
-      service.describeDirectConnectGatewayAttachments(params).promise().toFuture
-    @inline def describeDirectConnectGatewaysFuture(
-        params: DescribeDirectConnectGatewaysRequest
-    ): Future[DescribeDirectConnectGatewaysResult] = service.describeDirectConnectGateways(params).promise().toFuture
-    @inline def describeHostedConnectionsFuture(params: DescribeHostedConnectionsRequest): Future[Connections] =
-      service.describeHostedConnections(params).promise().toFuture
-    @inline def describeInterconnectsFuture(params: DescribeInterconnectsRequest): Future[Interconnects] =
-      service.describeInterconnects(params).promise().toFuture
-    @inline def describeLagsFuture(params: DescribeLagsRequest): Future[Lags] =
-      service.describeLags(params).promise().toFuture
-    @inline def describeLoaFuture(params: DescribeLoaRequest): Future[Loa] =
-      service.describeLoa(params).promise().toFuture
+    @inline def deleteVirtualInterfaceFuture(params: DeleteVirtualInterfaceRequest): Future[DeleteVirtualInterfaceResponse] = service.deleteVirtualInterface(params).promise().toFuture
+    @inline def describeConnectionsFuture(params: DescribeConnectionsRequest): Future[Connections] = service.describeConnections(params).promise().toFuture
+    @inline def describeDirectConnectGatewayAssociationProposalsFuture(params: DescribeDirectConnectGatewayAssociationProposalsRequest): Future[DescribeDirectConnectGatewayAssociationProposalsResult] = service.describeDirectConnectGatewayAssociationProposals(params).promise().toFuture
+    @inline def describeDirectConnectGatewayAssociationsFuture(params: DescribeDirectConnectGatewayAssociationsRequest): Future[DescribeDirectConnectGatewayAssociationsResult] = service.describeDirectConnectGatewayAssociations(params).promise().toFuture
+    @inline def describeDirectConnectGatewayAttachmentsFuture(params: DescribeDirectConnectGatewayAttachmentsRequest): Future[DescribeDirectConnectGatewayAttachmentsResult] = service.describeDirectConnectGatewayAttachments(params).promise().toFuture
+    @inline def describeDirectConnectGatewaysFuture(params: DescribeDirectConnectGatewaysRequest): Future[DescribeDirectConnectGatewaysResult] = service.describeDirectConnectGateways(params).promise().toFuture
+    @inline def describeHostedConnectionsFuture(params: DescribeHostedConnectionsRequest): Future[Connections] = service.describeHostedConnections(params).promise().toFuture
+    @inline def describeInterconnectsFuture(params: DescribeInterconnectsRequest): Future[Interconnects] = service.describeInterconnects(params).promise().toFuture
+    @inline def describeLagsFuture(params: DescribeLagsRequest): Future[Lags] = service.describeLags(params).promise().toFuture
+    @inline def describeLoaFuture(params: DescribeLoaRequest): Future[Loa] = service.describeLoa(params).promise().toFuture
     @inline def describeLocationsFuture(): Future[Locations] = service.describeLocations().promise().toFuture
-    @inline def describeTagsFuture(params: DescribeTagsRequest): Future[DescribeTagsResponse] =
-      service.describeTags(params).promise().toFuture
-    @inline def describeVirtualGatewaysFuture(): Future[VirtualGateways] =
-      service.describeVirtualGateways().promise().toFuture
-    @inline def describeVirtualInterfacesFuture(params: DescribeVirtualInterfacesRequest): Future[VirtualInterfaces] =
-      service.describeVirtualInterfaces(params).promise().toFuture
-    @inline def disassociateConnectionFromLagFuture(params: DisassociateConnectionFromLagRequest): Future[Connection] =
-      service.disassociateConnectionFromLag(params).promise().toFuture
-    @inline def listVirtualInterfaceTestHistoryFuture(
-        params: ListVirtualInterfaceTestHistoryRequest
-    ): Future[ListVirtualInterfaceTestHistoryResponse] =
-      service.listVirtualInterfaceTestHistory(params).promise().toFuture
-    @inline def startBgpFailoverTestFuture(params: StartBgpFailoverTestRequest): Future[StartBgpFailoverTestResponse] =
-      service.startBgpFailoverTest(params).promise().toFuture
-    @inline def stopBgpFailoverTestFuture(params: StopBgpFailoverTestRequest): Future[StopBgpFailoverTestResponse] =
-      service.stopBgpFailoverTest(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateDirectConnectGatewayAssociationFuture(
-        params: UpdateDirectConnectGatewayAssociationRequest
-    ): Future[UpdateDirectConnectGatewayAssociationResult] =
-      service.updateDirectConnectGatewayAssociation(params).promise().toFuture
+    @inline def describeTagsFuture(params: DescribeTagsRequest): Future[DescribeTagsResponse] = service.describeTags(params).promise().toFuture
+    @inline def describeVirtualGatewaysFuture(): Future[VirtualGateways] = service.describeVirtualGateways().promise().toFuture
+    @inline def describeVirtualInterfacesFuture(params: DescribeVirtualInterfacesRequest): Future[VirtualInterfaces] = service.describeVirtualInterfaces(params).promise().toFuture
+    @inline def disassociateConnectionFromLagFuture(params: DisassociateConnectionFromLagRequest): Future[Connection] = service.disassociateConnectionFromLag(params).promise().toFuture
+    @inline def listVirtualInterfaceTestHistoryFuture(params: ListVirtualInterfaceTestHistoryRequest): Future[ListVirtualInterfaceTestHistoryResponse] = service.listVirtualInterfaceTestHistory(params).promise().toFuture
+    @inline def startBgpFailoverTestFuture(params: StartBgpFailoverTestRequest): Future[StartBgpFailoverTestResponse] = service.startBgpFailoverTest(params).promise().toFuture
+    @inline def stopBgpFailoverTestFuture(params: StopBgpFailoverTestRequest): Future[StopBgpFailoverTestResponse] = service.stopBgpFailoverTest(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateDirectConnectGatewayAssociationFuture(params: UpdateDirectConnectGatewayAssociationRequest): Future[UpdateDirectConnectGatewayAssociationResult] = service.updateDirectConnectGatewayAssociation(params).promise().toFuture
     @inline def updateLagFuture(params: UpdateLagRequest): Future[Lag] = service.updateLag(params).promise().toFuture
-    @inline def updateVirtualInterfaceAttributesFuture(
-        params: UpdateVirtualInterfaceAttributesRequest
-    ): Future[VirtualInterface] = service.updateVirtualInterfaceAttributes(params).promise().toFuture
+    @inline def updateVirtualInterfaceAttributesFuture(params: UpdateVirtualInterfaceAttributesRequest): Future[VirtualInterface] = service.updateVirtualInterfaceAttributes(params).promise().toFuture
   }
 }
 
@@ -234,77 +149,41 @@ package directconnect {
   class DirectConnect() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def acceptDirectConnectGatewayAssociationProposal(
-        params: AcceptDirectConnectGatewayAssociationProposalRequest
-    ): Request[AcceptDirectConnectGatewayAssociationProposalResult] = js.native
+    def acceptDirectConnectGatewayAssociationProposal(params: AcceptDirectConnectGatewayAssociationProposalRequest): Request[AcceptDirectConnectGatewayAssociationProposalResult] = js.native
     def allocateHostedConnection(params: AllocateHostedConnectionRequest): Request[Connection] = js.native
-    def allocatePrivateVirtualInterface(params: AllocatePrivateVirtualInterfaceRequest): Request[VirtualInterface] =
-      js.native
-    def allocatePublicVirtualInterface(params: AllocatePublicVirtualInterfaceRequest): Request[VirtualInterface] =
-      js.native
-    def allocateTransitVirtualInterface(
-        params: AllocateTransitVirtualInterfaceRequest
-    ): Request[AllocateTransitVirtualInterfaceResult] = js.native
+    def allocatePrivateVirtualInterface(params: AllocatePrivateVirtualInterfaceRequest): Request[VirtualInterface] = js.native
+    def allocatePublicVirtualInterface(params: AllocatePublicVirtualInterfaceRequest): Request[VirtualInterface] = js.native
+    def allocateTransitVirtualInterface(params: AllocateTransitVirtualInterfaceRequest): Request[AllocateTransitVirtualInterfaceResult] = js.native
     def associateConnectionWithLag(params: AssociateConnectionWithLagRequest): Request[Connection] = js.native
     def associateHostedConnection(params: AssociateHostedConnectionRequest): Request[Connection] = js.native
     def associateVirtualInterface(params: AssociateVirtualInterfaceRequest): Request[VirtualInterface] = js.native
     def confirmConnection(params: ConfirmConnectionRequest): Request[ConfirmConnectionResponse] = js.native
-    def confirmPrivateVirtualInterface(
-        params: ConfirmPrivateVirtualInterfaceRequest
-    ): Request[ConfirmPrivateVirtualInterfaceResponse] = js.native
-    def confirmPublicVirtualInterface(
-        params: ConfirmPublicVirtualInterfaceRequest
-    ): Request[ConfirmPublicVirtualInterfaceResponse] = js.native
-    def confirmTransitVirtualInterface(
-        params: ConfirmTransitVirtualInterfaceRequest
-    ): Request[ConfirmTransitVirtualInterfaceResponse] = js.native
+    def confirmPrivateVirtualInterface(params: ConfirmPrivateVirtualInterfaceRequest): Request[ConfirmPrivateVirtualInterfaceResponse] = js.native
+    def confirmPublicVirtualInterface(params: ConfirmPublicVirtualInterfaceRequest): Request[ConfirmPublicVirtualInterfaceResponse] = js.native
+    def confirmTransitVirtualInterface(params: ConfirmTransitVirtualInterfaceRequest): Request[ConfirmTransitVirtualInterfaceResponse] = js.native
     def createBGPPeer(params: CreateBGPPeerRequest): Request[CreateBGPPeerResponse] = js.native
     def createConnection(params: CreateConnectionRequest): Request[Connection] = js.native
-    def createDirectConnectGateway(
-        params: CreateDirectConnectGatewayRequest
-    ): Request[CreateDirectConnectGatewayResult] = js.native
-    def createDirectConnectGatewayAssociation(
-        params: CreateDirectConnectGatewayAssociationRequest
-    ): Request[CreateDirectConnectGatewayAssociationResult] = js.native
-    def createDirectConnectGatewayAssociationProposal(
-        params: CreateDirectConnectGatewayAssociationProposalRequest
-    ): Request[CreateDirectConnectGatewayAssociationProposalResult] = js.native
+    def createDirectConnectGateway(params: CreateDirectConnectGatewayRequest): Request[CreateDirectConnectGatewayResult] = js.native
+    def createDirectConnectGatewayAssociation(params: CreateDirectConnectGatewayAssociationRequest): Request[CreateDirectConnectGatewayAssociationResult] = js.native
+    def createDirectConnectGatewayAssociationProposal(params: CreateDirectConnectGatewayAssociationProposalRequest): Request[CreateDirectConnectGatewayAssociationProposalResult] = js.native
     def createInterconnect(params: CreateInterconnectRequest): Request[Interconnect] = js.native
     def createLag(params: CreateLagRequest): Request[Lag] = js.native
-    def createPrivateVirtualInterface(params: CreatePrivateVirtualInterfaceRequest): Request[VirtualInterface] =
-      js.native
+    def createPrivateVirtualInterface(params: CreatePrivateVirtualInterfaceRequest): Request[VirtualInterface] = js.native
     def createPublicVirtualInterface(params: CreatePublicVirtualInterfaceRequest): Request[VirtualInterface] = js.native
-    def createTransitVirtualInterface(
-        params: CreateTransitVirtualInterfaceRequest
-    ): Request[CreateTransitVirtualInterfaceResult] = js.native
+    def createTransitVirtualInterface(params: CreateTransitVirtualInterfaceRequest): Request[CreateTransitVirtualInterfaceResult] = js.native
     def deleteBGPPeer(params: DeleteBGPPeerRequest): Request[DeleteBGPPeerResponse] = js.native
     def deleteConnection(params: DeleteConnectionRequest): Request[Connection] = js.native
-    def deleteDirectConnectGateway(
-        params: DeleteDirectConnectGatewayRequest
-    ): Request[DeleteDirectConnectGatewayResult] = js.native
-    def deleteDirectConnectGatewayAssociation(
-        params: DeleteDirectConnectGatewayAssociationRequest
-    ): Request[DeleteDirectConnectGatewayAssociationResult] = js.native
-    def deleteDirectConnectGatewayAssociationProposal(
-        params: DeleteDirectConnectGatewayAssociationProposalRequest
-    ): Request[DeleteDirectConnectGatewayAssociationProposalResult] = js.native
+    def deleteDirectConnectGateway(params: DeleteDirectConnectGatewayRequest): Request[DeleteDirectConnectGatewayResult] = js.native
+    def deleteDirectConnectGatewayAssociation(params: DeleteDirectConnectGatewayAssociationRequest): Request[DeleteDirectConnectGatewayAssociationResult] = js.native
+    def deleteDirectConnectGatewayAssociationProposal(params: DeleteDirectConnectGatewayAssociationProposalRequest): Request[DeleteDirectConnectGatewayAssociationProposalResult] = js.native
     def deleteInterconnect(params: DeleteInterconnectRequest): Request[DeleteInterconnectResponse] = js.native
     def deleteLag(params: DeleteLagRequest): Request[Lag] = js.native
-    def deleteVirtualInterface(params: DeleteVirtualInterfaceRequest): Request[DeleteVirtualInterfaceResponse] =
-      js.native
+    def deleteVirtualInterface(params: DeleteVirtualInterfaceRequest): Request[DeleteVirtualInterfaceResponse] = js.native
     def describeConnections(params: DescribeConnectionsRequest): Request[Connections] = js.native
-    def describeDirectConnectGatewayAssociationProposals(
-        params: DescribeDirectConnectGatewayAssociationProposalsRequest
-    ): Request[DescribeDirectConnectGatewayAssociationProposalsResult] = js.native
-    def describeDirectConnectGatewayAssociations(
-        params: DescribeDirectConnectGatewayAssociationsRequest
-    ): Request[DescribeDirectConnectGatewayAssociationsResult] = js.native
-    def describeDirectConnectGatewayAttachments(
-        params: DescribeDirectConnectGatewayAttachmentsRequest
-    ): Request[DescribeDirectConnectGatewayAttachmentsResult] = js.native
-    def describeDirectConnectGateways(
-        params: DescribeDirectConnectGatewaysRequest
-    ): Request[DescribeDirectConnectGatewaysResult] = js.native
+    def describeDirectConnectGatewayAssociationProposals(params: DescribeDirectConnectGatewayAssociationProposalsRequest): Request[DescribeDirectConnectGatewayAssociationProposalsResult] = js.native
+    def describeDirectConnectGatewayAssociations(params: DescribeDirectConnectGatewayAssociationsRequest): Request[DescribeDirectConnectGatewayAssociationsResult] = js.native
+    def describeDirectConnectGatewayAttachments(params: DescribeDirectConnectGatewayAttachmentsRequest): Request[DescribeDirectConnectGatewayAttachmentsResult] = js.native
+    def describeDirectConnectGateways(params: DescribeDirectConnectGatewaysRequest): Request[DescribeDirectConnectGatewaysResult] = js.native
     def describeHostedConnections(params: DescribeHostedConnectionsRequest): Request[Connections] = js.native
     def describeInterconnects(params: DescribeInterconnectsRequest): Request[Interconnects] = js.native
     def describeLags(params: DescribeLagsRequest): Request[Lags] = js.native
@@ -314,31 +193,18 @@ package directconnect {
     def describeVirtualGateways(): Request[VirtualGateways] = js.native
     def describeVirtualInterfaces(params: DescribeVirtualInterfacesRequest): Request[VirtualInterfaces] = js.native
     def disassociateConnectionFromLag(params: DisassociateConnectionFromLagRequest): Request[Connection] = js.native
-    def listVirtualInterfaceTestHistory(
-        params: ListVirtualInterfaceTestHistoryRequest
-    ): Request[ListVirtualInterfaceTestHistoryResponse] = js.native
+    def listVirtualInterfaceTestHistory(params: ListVirtualInterfaceTestHistoryRequest): Request[ListVirtualInterfaceTestHistoryResponse] = js.native
     def startBgpFailoverTest(params: StartBgpFailoverTestRequest): Request[StartBgpFailoverTestResponse] = js.native
     def stopBgpFailoverTest(params: StopBgpFailoverTestRequest): Request[StopBgpFailoverTestResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
-    def updateDirectConnectGatewayAssociation(
-        params: UpdateDirectConnectGatewayAssociationRequest
-    ): Request[UpdateDirectConnectGatewayAssociationResult] = js.native
+    def updateDirectConnectGatewayAssociation(params: UpdateDirectConnectGatewayAssociationRequest): Request[UpdateDirectConnectGatewayAssociationResult] = js.native
     def updateLag(params: UpdateLagRequest): Request[Lag] = js.native
-    def updateVirtualInterfaceAttributes(params: UpdateVirtualInterfaceAttributesRequest): Request[VirtualInterface] =
-      js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def allocateConnectionOnInterconnect(
-        params: AllocateConnectionOnInterconnectRequest
-    ): Request[Connection] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def describeConnectionLoa(
-        params: DescribeConnectionLoaRequest
-    ): Request[DescribeConnectionLoaResponse] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def describeConnectionsOnInterconnect(
-        params: DescribeConnectionsOnInterconnectRequest
-    ): Request[Connections] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def describeInterconnectLoa(
-        params: DescribeInterconnectLoaRequest
-    ): Request[DescribeInterconnectLoaResponse] = js.native
+    def updateVirtualInterfaceAttributes(params: UpdateVirtualInterfaceAttributesRequest): Request[VirtualInterface] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def allocateConnectionOnInterconnect(params: AllocateConnectionOnInterconnectRequest): Request[Connection] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def describeConnectionLoa(params: DescribeConnectionLoaRequest): Request[DescribeConnectionLoaResponse] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def describeConnectionsOnInterconnect(params: DescribeConnectionsOnInterconnectRequest): Request[Connections] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def describeInterconnectLoa(params: DescribeInterconnectLoaRequest): Request[DescribeInterconnectLoaResponse] = js.native
   }
 
   @js.native
@@ -363,9 +229,7 @@ package directconnect {
         "proposalId" -> proposalId.asInstanceOf[js.Any]
       )
 
-      overrideAllowedPrefixesToDirectConnectGateway.foreach(__v =>
-        __obj.updateDynamic("overrideAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
-      )
+      overrideAllowedPrefixesToDirectConnectGateway.foreach(__v => __obj.updateDynamic("overrideAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AcceptDirectConnectGatewayAssociationProposalRequest]
     }
   }
@@ -381,9 +245,7 @@ package directconnect {
         directConnectGatewayAssociation: js.UndefOr[DirectConnectGatewayAssociation] = js.undefined
     ): AcceptDirectConnectGatewayAssociationProposalResult = {
       val __obj = js.Dynamic.literal()
-      directConnectGatewayAssociation.foreach(__v =>
-        __obj.updateDynamic("directConnectGatewayAssociation")(__v.asInstanceOf[js.Any])
-      )
+      directConnectGatewayAssociation.foreach(__v => __obj.updateDynamic("directConnectGatewayAssociation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AcceptDirectConnectGatewayAssociationProposalResult]
     }
   }
@@ -929,8 +791,7 @@ package directconnect {
     val rejected = "rejected".asInstanceOf[ConnectionState]
     val unknown = "unknown".asInstanceOf[ConnectionState]
 
-    val values =
-      js.Object.freeze(js.Array(ordering, requested, pending, available, down, deleting, deleted, rejected, unknown))
+    val values = js.Object.freeze(js.Array(ordering, requested, pending, available, down, deleting, deleted, rejected, unknown))
   }
 
   @js.native
@@ -1041,12 +902,8 @@ package directconnect {
         "gatewayId" -> gatewayId.asInstanceOf[js.Any]
       )
 
-      addAllowedPrefixesToDirectConnectGateway.foreach(__v =>
-        __obj.updateDynamic("addAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
-      )
-      removeAllowedPrefixesToDirectConnectGateway.foreach(__v =>
-        __obj.updateDynamic("removeAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
-      )
+      addAllowedPrefixesToDirectConnectGateway.foreach(__v => __obj.updateDynamic("addAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any]))
+      removeAllowedPrefixesToDirectConnectGateway.foreach(__v => __obj.updateDynamic("removeAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDirectConnectGatewayAssociationProposalRequest]
     }
   }
@@ -1062,9 +919,7 @@ package directconnect {
         directConnectGatewayAssociationProposal: js.UndefOr[DirectConnectGatewayAssociationProposal] = js.undefined
     ): CreateDirectConnectGatewayAssociationProposalResult = {
       val __obj = js.Dynamic.literal()
-      directConnectGatewayAssociationProposal.foreach(__v =>
-        __obj.updateDynamic("directConnectGatewayAssociationProposal")(__v.asInstanceOf[js.Any])
-      )
+      directConnectGatewayAssociationProposal.foreach(__v => __obj.updateDynamic("directConnectGatewayAssociationProposal")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDirectConnectGatewayAssociationProposalResult]
     }
   }
@@ -1089,9 +944,7 @@ package directconnect {
         "directConnectGatewayId" -> directConnectGatewayId.asInstanceOf[js.Any]
       )
 
-      addAllowedPrefixesToDirectConnectGateway.foreach(__v =>
-        __obj.updateDynamic("addAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
-      )
+      addAllowedPrefixesToDirectConnectGateway.foreach(__v => __obj.updateDynamic("addAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any]))
       gatewayId.foreach(__v => __obj.updateDynamic("gatewayId")(__v.asInstanceOf[js.Any]))
       virtualGatewayId.foreach(__v => __obj.updateDynamic("virtualGatewayId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDirectConnectGatewayAssociationRequest]
@@ -1109,9 +962,7 @@ package directconnect {
         directConnectGatewayAssociation: js.UndefOr[DirectConnectGatewayAssociation] = js.undefined
     ): CreateDirectConnectGatewayAssociationResult = {
       val __obj = js.Dynamic.literal()
-      directConnectGatewayAssociation.foreach(__v =>
-        __obj.updateDynamic("directConnectGatewayAssociation")(__v.asInstanceOf[js.Any])
-      )
+      directConnectGatewayAssociation.foreach(__v => __obj.updateDynamic("directConnectGatewayAssociation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDirectConnectGatewayAssociationResult]
     }
   }
@@ -1392,9 +1243,7 @@ package directconnect {
         directConnectGatewayAssociationProposal: js.UndefOr[DirectConnectGatewayAssociationProposal] = js.undefined
     ): DeleteDirectConnectGatewayAssociationProposalResult = {
       val __obj = js.Dynamic.literal()
-      directConnectGatewayAssociationProposal.foreach(__v =>
-        __obj.updateDynamic("directConnectGatewayAssociationProposal")(__v.asInstanceOf[js.Any])
-      )
+      directConnectGatewayAssociationProposal.foreach(__v => __obj.updateDynamic("directConnectGatewayAssociationProposal")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDirectConnectGatewayAssociationProposalResult]
     }
   }
@@ -1432,9 +1281,7 @@ package directconnect {
         directConnectGatewayAssociation: js.UndefOr[DirectConnectGatewayAssociation] = js.undefined
     ): DeleteDirectConnectGatewayAssociationResult = {
       val __obj = js.Dynamic.literal()
-      directConnectGatewayAssociation.foreach(__v =>
-        __obj.updateDynamic("directConnectGatewayAssociation")(__v.asInstanceOf[js.Any])
-      )
+      directConnectGatewayAssociation.foreach(__v => __obj.updateDynamic("directConnectGatewayAssociation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDirectConnectGatewayAssociationResult]
     }
   }
@@ -1670,14 +1517,11 @@ package directconnect {
   object DescribeDirectConnectGatewayAssociationProposalsResult {
     @inline
     def apply(
-        directConnectGatewayAssociationProposals: js.UndefOr[DirectConnectGatewayAssociationProposalList] =
-          js.undefined,
+        directConnectGatewayAssociationProposals: js.UndefOr[DirectConnectGatewayAssociationProposalList] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeDirectConnectGatewayAssociationProposalsResult = {
       val __obj = js.Dynamic.literal()
-      directConnectGatewayAssociationProposals.foreach(__v =>
-        __obj.updateDynamic("directConnectGatewayAssociationProposals")(__v.asInstanceOf[js.Any])
-      )
+      directConnectGatewayAssociationProposals.foreach(__v => __obj.updateDynamic("directConnectGatewayAssociationProposals")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDirectConnectGatewayAssociationProposalsResult]
     }
@@ -1727,9 +1571,7 @@ package directconnect {
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeDirectConnectGatewayAssociationsResult = {
       val __obj = js.Dynamic.literal()
-      directConnectGatewayAssociations.foreach(__v =>
-        __obj.updateDynamic("directConnectGatewayAssociations")(__v.asInstanceOf[js.Any])
-      )
+      directConnectGatewayAssociations.foreach(__v => __obj.updateDynamic("directConnectGatewayAssociations")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDirectConnectGatewayAssociationsResult]
     }
@@ -1773,9 +1615,7 @@ package directconnect {
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeDirectConnectGatewayAttachmentsResult = {
       val __obj = js.Dynamic.literal()
-      directConnectGatewayAttachments.foreach(__v =>
-        __obj.updateDynamic("directConnectGatewayAttachments")(__v.asInstanceOf[js.Any])
-      )
+      directConnectGatewayAttachments.foreach(__v => __obj.updateDynamic("directConnectGatewayAttachments")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDirectConnectGatewayAttachmentsResult]
     }
@@ -2016,9 +1856,7 @@ package directconnect {
       amazonSideAsn.foreach(__v => __obj.updateDynamic("amazonSideAsn")(__v.asInstanceOf[js.Any]))
       directConnectGatewayId.foreach(__v => __obj.updateDynamic("directConnectGatewayId")(__v.asInstanceOf[js.Any]))
       directConnectGatewayName.foreach(__v => __obj.updateDynamic("directConnectGatewayName")(__v.asInstanceOf[js.Any]))
-      directConnectGatewayState.foreach(__v =>
-        __obj.updateDynamic("directConnectGatewayState")(__v.asInstanceOf[js.Any])
-      )
+      directConnectGatewayState.foreach(__v => __obj.updateDynamic("directConnectGatewayState")(__v.asInstanceOf[js.Any]))
       ownerAccount.foreach(__v => __obj.updateDynamic("ownerAccount")(__v.asInstanceOf[js.Any]))
       stateChangeError.foreach(__v => __obj.updateDynamic("stateChangeError")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DirectConnectGateway]
@@ -2057,21 +1895,15 @@ package directconnect {
         virtualGatewayRegion: js.UndefOr[VirtualGatewayRegion] = js.undefined
     ): DirectConnectGatewayAssociation = {
       val __obj = js.Dynamic.literal()
-      allowedPrefixesToDirectConnectGateway.foreach(__v =>
-        __obj.updateDynamic("allowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
-      )
+      allowedPrefixesToDirectConnectGateway.foreach(__v => __obj.updateDynamic("allowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any]))
       associatedGateway.foreach(__v => __obj.updateDynamic("associatedGateway")(__v.asInstanceOf[js.Any]))
       associationId.foreach(__v => __obj.updateDynamic("associationId")(__v.asInstanceOf[js.Any]))
       associationState.foreach(__v => __obj.updateDynamic("associationState")(__v.asInstanceOf[js.Any]))
       directConnectGatewayId.foreach(__v => __obj.updateDynamic("directConnectGatewayId")(__v.asInstanceOf[js.Any]))
-      directConnectGatewayOwnerAccount.foreach(__v =>
-        __obj.updateDynamic("directConnectGatewayOwnerAccount")(__v.asInstanceOf[js.Any])
-      )
+      directConnectGatewayOwnerAccount.foreach(__v => __obj.updateDynamic("directConnectGatewayOwnerAccount")(__v.asInstanceOf[js.Any]))
       stateChangeError.foreach(__v => __obj.updateDynamic("stateChangeError")(__v.asInstanceOf[js.Any]))
       virtualGatewayId.foreach(__v => __obj.updateDynamic("virtualGatewayId")(__v.asInstanceOf[js.Any]))
-      virtualGatewayOwnerAccount.foreach(__v =>
-        __obj.updateDynamic("virtualGatewayOwnerAccount")(__v.asInstanceOf[js.Any])
-      )
+      virtualGatewayOwnerAccount.foreach(__v => __obj.updateDynamic("virtualGatewayOwnerAccount")(__v.asInstanceOf[js.Any]))
       virtualGatewayRegion.foreach(__v => __obj.updateDynamic("virtualGatewayRegion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DirectConnectGatewayAssociation]
     }
@@ -2105,17 +1937,11 @@ package directconnect {
       val __obj = js.Dynamic.literal()
       associatedGateway.foreach(__v => __obj.updateDynamic("associatedGateway")(__v.asInstanceOf[js.Any]))
       directConnectGatewayId.foreach(__v => __obj.updateDynamic("directConnectGatewayId")(__v.asInstanceOf[js.Any]))
-      directConnectGatewayOwnerAccount.foreach(__v =>
-        __obj.updateDynamic("directConnectGatewayOwnerAccount")(__v.asInstanceOf[js.Any])
-      )
-      existingAllowedPrefixesToDirectConnectGateway.foreach(__v =>
-        __obj.updateDynamic("existingAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
-      )
+      directConnectGatewayOwnerAccount.foreach(__v => __obj.updateDynamic("directConnectGatewayOwnerAccount")(__v.asInstanceOf[js.Any]))
+      existingAllowedPrefixesToDirectConnectGateway.foreach(__v => __obj.updateDynamic("existingAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any]))
       proposalId.foreach(__v => __obj.updateDynamic("proposalId")(__v.asInstanceOf[js.Any]))
       proposalState.foreach(__v => __obj.updateDynamic("proposalState")(__v.asInstanceOf[js.Any]))
-      requestedAllowedPrefixesToDirectConnectGateway.foreach(__v =>
-        __obj.updateDynamic("requestedAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
-      )
+      requestedAllowedPrefixesToDirectConnectGateway.foreach(__v => __obj.updateDynamic("requestedAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DirectConnectGatewayAssociationProposal]
     }
   }
@@ -2173,9 +1999,7 @@ package directconnect {
       directConnectGatewayId.foreach(__v => __obj.updateDynamic("directConnectGatewayId")(__v.asInstanceOf[js.Any]))
       stateChangeError.foreach(__v => __obj.updateDynamic("stateChangeError")(__v.asInstanceOf[js.Any]))
       virtualInterfaceId.foreach(__v => __obj.updateDynamic("virtualInterfaceId")(__v.asInstanceOf[js.Any]))
-      virtualInterfaceOwnerAccount.foreach(__v =>
-        __obj.updateDynamic("virtualInterfaceOwnerAccount")(__v.asInstanceOf[js.Any])
-      )
+      virtualInterfaceOwnerAccount.foreach(__v => __obj.updateDynamic("virtualInterfaceOwnerAccount")(__v.asInstanceOf[js.Any]))
       virtualInterfaceRegion.foreach(__v => __obj.updateDynamic("virtualInterfaceRegion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DirectConnectGatewayAttachment]
     }
@@ -2482,9 +2306,7 @@ package directconnect {
     ): ListVirtualInterfaceTestHistoryResponse = {
       val __obj = js.Dynamic.literal()
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      virtualInterfaceTestHistory.foreach(__v =>
-        __obj.updateDynamic("virtualInterfaceTestHistory")(__v.asInstanceOf[js.Any])
-      )
+      virtualInterfaceTestHistory.foreach(__v => __obj.updateDynamic("virtualInterfaceTestHistory")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListVirtualInterfaceTestHistoryResponse]
     }
   }
@@ -3094,13 +2916,9 @@ package directconnect {
         removeAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList] = js.undefined
     ): UpdateDirectConnectGatewayAssociationRequest = {
       val __obj = js.Dynamic.literal()
-      addAllowedPrefixesToDirectConnectGateway.foreach(__v =>
-        __obj.updateDynamic("addAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
-      )
+      addAllowedPrefixesToDirectConnectGateway.foreach(__v => __obj.updateDynamic("addAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any]))
       associationId.foreach(__v => __obj.updateDynamic("associationId")(__v.asInstanceOf[js.Any]))
-      removeAllowedPrefixesToDirectConnectGateway.foreach(__v =>
-        __obj.updateDynamic("removeAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
-      )
+      removeAllowedPrefixesToDirectConnectGateway.foreach(__v => __obj.updateDynamic("removeAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDirectConnectGatewayAssociationRequest]
     }
   }
@@ -3116,9 +2934,7 @@ package directconnect {
         directConnectGatewayAssociation: js.UndefOr[DirectConnectGatewayAssociation] = js.undefined
     ): UpdateDirectConnectGatewayAssociationResult = {
       val __obj = js.Dynamic.literal()
-      directConnectGatewayAssociation.foreach(__v =>
-        __obj.updateDynamic("directConnectGatewayAssociation")(__v.asInstanceOf[js.Any])
-      )
+      directConnectGatewayAssociation.foreach(__v => __obj.updateDynamic("directConnectGatewayAssociation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDirectConnectGatewayAssociationResult]
     }
   }
@@ -3307,8 +3123,7 @@ package directconnect {
     val rejected = "rejected".asInstanceOf[VirtualInterfaceState]
     val unknown = "unknown".asInstanceOf[VirtualInterfaceState]
 
-    val values =
-      js.Object.freeze(js.Array(confirming, verifying, pending, available, down, deleting, deleted, rejected, unknown))
+    val values = js.Object.freeze(js.Array(confirming, verifying, pending, available, down, deleting, deleted, rejected, unknown))
   }
 
   /**

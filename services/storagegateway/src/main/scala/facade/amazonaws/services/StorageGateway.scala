@@ -137,196 +137,84 @@ package object storagegateway {
 
   implicit final class StorageGatewayOps(private val service: StorageGateway) extends AnyVal {
 
-    @inline def activateGatewayFuture(params: ActivateGatewayInput): Future[ActivateGatewayOutput] =
-      service.activateGateway(params).promise().toFuture
-    @inline def addCacheFuture(params: AddCacheInput): Future[AddCacheOutput] =
-      service.addCache(params).promise().toFuture
-    @inline def addTagsToResourceFuture(params: AddTagsToResourceInput): Future[AddTagsToResourceOutput] =
-      service.addTagsToResource(params).promise().toFuture
-    @inline def addUploadBufferFuture(params: AddUploadBufferInput): Future[AddUploadBufferOutput] =
-      service.addUploadBuffer(params).promise().toFuture
-    @inline def addWorkingStorageFuture(params: AddWorkingStorageInput): Future[AddWorkingStorageOutput] =
-      service.addWorkingStorage(params).promise().toFuture
-    @inline def assignTapePoolFuture(params: AssignTapePoolInput): Future[AssignTapePoolOutput] =
-      service.assignTapePool(params).promise().toFuture
-    @inline def attachVolumeFuture(params: AttachVolumeInput): Future[AttachVolumeOutput] =
-      service.attachVolume(params).promise().toFuture
-    @inline def cancelArchivalFuture(params: CancelArchivalInput): Future[CancelArchivalOutput] =
-      service.cancelArchival(params).promise().toFuture
-    @inline def cancelRetrievalFuture(params: CancelRetrievalInput): Future[CancelRetrievalOutput] =
-      service.cancelRetrieval(params).promise().toFuture
-    @inline def createCachediSCSIVolumeFuture(
-        params: CreateCachediSCSIVolumeInput
-    ): Future[CreateCachediSCSIVolumeOutput] = service.createCachediSCSIVolume(params).promise().toFuture
-    @inline def createNFSFileShareFuture(params: CreateNFSFileShareInput): Future[CreateNFSFileShareOutput] =
-      service.createNFSFileShare(params).promise().toFuture
-    @inline def createSMBFileShareFuture(params: CreateSMBFileShareInput): Future[CreateSMBFileShareOutput] =
-      service.createSMBFileShare(params).promise().toFuture
-    @inline def createSnapshotFromVolumeRecoveryPointFuture(
-        params: CreateSnapshotFromVolumeRecoveryPointInput
-    ): Future[CreateSnapshotFromVolumeRecoveryPointOutput] =
-      service.createSnapshotFromVolumeRecoveryPoint(params).promise().toFuture
-    @inline def createSnapshotFuture(params: CreateSnapshotInput): Future[CreateSnapshotOutput] =
-      service.createSnapshot(params).promise().toFuture
-    @inline def createStorediSCSIVolumeFuture(
-        params: CreateStorediSCSIVolumeInput
-    ): Future[CreateStorediSCSIVolumeOutput] = service.createStorediSCSIVolume(params).promise().toFuture
-    @inline def createTapeWithBarcodeFuture(params: CreateTapeWithBarcodeInput): Future[CreateTapeWithBarcodeOutput] =
-      service.createTapeWithBarcode(params).promise().toFuture
-    @inline def createTapesFuture(params: CreateTapesInput): Future[CreateTapesOutput] =
-      service.createTapes(params).promise().toFuture
-    @inline def deleteAutomaticTapeCreationPolicyFuture(
-        params: DeleteAutomaticTapeCreationPolicyInput
-    ): Future[DeleteAutomaticTapeCreationPolicyOutput] =
-      service.deleteAutomaticTapeCreationPolicy(params).promise().toFuture
-    @inline def deleteBandwidthRateLimitFuture(
-        params: DeleteBandwidthRateLimitInput
-    ): Future[DeleteBandwidthRateLimitOutput] = service.deleteBandwidthRateLimit(params).promise().toFuture
-    @inline def deleteChapCredentialsFuture(params: DeleteChapCredentialsInput): Future[DeleteChapCredentialsOutput] =
-      service.deleteChapCredentials(params).promise().toFuture
-    @inline def deleteFileShareFuture(params: DeleteFileShareInput): Future[DeleteFileShareOutput] =
-      service.deleteFileShare(params).promise().toFuture
-    @inline def deleteGatewayFuture(params: DeleteGatewayInput): Future[DeleteGatewayOutput] =
-      service.deleteGateway(params).promise().toFuture
-    @inline def deleteSnapshotScheduleFuture(
-        params: DeleteSnapshotScheduleInput
-    ): Future[DeleteSnapshotScheduleOutput] = service.deleteSnapshotSchedule(params).promise().toFuture
-    @inline def deleteTapeArchiveFuture(params: DeleteTapeArchiveInput): Future[DeleteTapeArchiveOutput] =
-      service.deleteTapeArchive(params).promise().toFuture
-    @inline def deleteTapeFuture(params: DeleteTapeInput): Future[DeleteTapeOutput] =
-      service.deleteTape(params).promise().toFuture
-    @inline def deleteVolumeFuture(params: DeleteVolumeInput): Future[DeleteVolumeOutput] =
-      service.deleteVolume(params).promise().toFuture
-    @inline def describeAvailabilityMonitorTestFuture(
-        params: DescribeAvailabilityMonitorTestInput
-    ): Future[DescribeAvailabilityMonitorTestOutput] =
-      service.describeAvailabilityMonitorTest(params).promise().toFuture
-    @inline def describeBandwidthRateLimitFuture(
-        params: DescribeBandwidthRateLimitInput
-    ): Future[DescribeBandwidthRateLimitOutput] = service.describeBandwidthRateLimit(params).promise().toFuture
-    @inline def describeCacheFuture(params: DescribeCacheInput): Future[DescribeCacheOutput] =
-      service.describeCache(params).promise().toFuture
-    @inline def describeCachediSCSIVolumesFuture(
-        params: DescribeCachediSCSIVolumesInput
-    ): Future[DescribeCachediSCSIVolumesOutput] = service.describeCachediSCSIVolumes(params).promise().toFuture
-    @inline def describeChapCredentialsFuture(
-        params: DescribeChapCredentialsInput
-    ): Future[DescribeChapCredentialsOutput] = service.describeChapCredentials(params).promise().toFuture
-    @inline def describeGatewayInformationFuture(
-        params: DescribeGatewayInformationInput
-    ): Future[DescribeGatewayInformationOutput] = service.describeGatewayInformation(params).promise().toFuture
-    @inline def describeMaintenanceStartTimeFuture(
-        params: DescribeMaintenanceStartTimeInput
-    ): Future[DescribeMaintenanceStartTimeOutput] = service.describeMaintenanceStartTime(params).promise().toFuture
-    @inline def describeNFSFileSharesFuture(params: DescribeNFSFileSharesInput): Future[DescribeNFSFileSharesOutput] =
-      service.describeNFSFileShares(params).promise().toFuture
-    @inline def describeSMBFileSharesFuture(params: DescribeSMBFileSharesInput): Future[DescribeSMBFileSharesOutput] =
-      service.describeSMBFileShares(params).promise().toFuture
-    @inline def describeSMBSettingsFuture(params: DescribeSMBSettingsInput): Future[DescribeSMBSettingsOutput] =
-      service.describeSMBSettings(params).promise().toFuture
-    @inline def describeSnapshotScheduleFuture(
-        params: DescribeSnapshotScheduleInput
-    ): Future[DescribeSnapshotScheduleOutput] = service.describeSnapshotSchedule(params).promise().toFuture
-    @inline def describeStorediSCSIVolumesFuture(
-        params: DescribeStorediSCSIVolumesInput
-    ): Future[DescribeStorediSCSIVolumesOutput] = service.describeStorediSCSIVolumes(params).promise().toFuture
-    @inline def describeTapeArchivesFuture(params: DescribeTapeArchivesInput): Future[DescribeTapeArchivesOutput] =
-      service.describeTapeArchives(params).promise().toFuture
-    @inline def describeTapeRecoveryPointsFuture(
-        params: DescribeTapeRecoveryPointsInput
-    ): Future[DescribeTapeRecoveryPointsOutput] = service.describeTapeRecoveryPoints(params).promise().toFuture
-    @inline def describeTapesFuture(params: DescribeTapesInput): Future[DescribeTapesOutput] =
-      service.describeTapes(params).promise().toFuture
-    @inline def describeUploadBufferFuture(params: DescribeUploadBufferInput): Future[DescribeUploadBufferOutput] =
-      service.describeUploadBuffer(params).promise().toFuture
-    @inline def describeVTLDevicesFuture(params: DescribeVTLDevicesInput): Future[DescribeVTLDevicesOutput] =
-      service.describeVTLDevices(params).promise().toFuture
-    @inline def describeWorkingStorageFuture(
-        params: DescribeWorkingStorageInput
-    ): Future[DescribeWorkingStorageOutput] = service.describeWorkingStorage(params).promise().toFuture
-    @inline def detachVolumeFuture(params: DetachVolumeInput): Future[DetachVolumeOutput] =
-      service.detachVolume(params).promise().toFuture
-    @inline def disableGatewayFuture(params: DisableGatewayInput): Future[DisableGatewayOutput] =
-      service.disableGateway(params).promise().toFuture
-    @inline def joinDomainFuture(params: JoinDomainInput): Future[JoinDomainOutput] =
-      service.joinDomain(params).promise().toFuture
-    @inline def listAutomaticTapeCreationPoliciesFuture(
-        params: ListAutomaticTapeCreationPoliciesInput
-    ): Future[ListAutomaticTapeCreationPoliciesOutput] =
-      service.listAutomaticTapeCreationPolicies(params).promise().toFuture
-    @inline def listFileSharesFuture(params: ListFileSharesInput): Future[ListFileSharesOutput] =
-      service.listFileShares(params).promise().toFuture
-    @inline def listGatewaysFuture(params: ListGatewaysInput): Future[ListGatewaysOutput] =
-      service.listGateways(params).promise().toFuture
-    @inline def listLocalDisksFuture(params: ListLocalDisksInput): Future[ListLocalDisksOutput] =
-      service.listLocalDisks(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listTapesFuture(params: ListTapesInput): Future[ListTapesOutput] =
-      service.listTapes(params).promise().toFuture
-    @inline def listVolumeInitiatorsFuture(params: ListVolumeInitiatorsInput): Future[ListVolumeInitiatorsOutput] =
-      service.listVolumeInitiators(params).promise().toFuture
-    @inline def listVolumeRecoveryPointsFuture(
-        params: ListVolumeRecoveryPointsInput
-    ): Future[ListVolumeRecoveryPointsOutput] = service.listVolumeRecoveryPoints(params).promise().toFuture
-    @inline def listVolumesFuture(params: ListVolumesInput): Future[ListVolumesOutput] =
-      service.listVolumes(params).promise().toFuture
-    @inline def notifyWhenUploadedFuture(params: NotifyWhenUploadedInput): Future[NotifyWhenUploadedOutput] =
-      service.notifyWhenUploaded(params).promise().toFuture
-    @inline def refreshCacheFuture(params: RefreshCacheInput): Future[RefreshCacheOutput] =
-      service.refreshCache(params).promise().toFuture
-    @inline def removeTagsFromResourceFuture(
-        params: RemoveTagsFromResourceInput
-    ): Future[RemoveTagsFromResourceOutput] = service.removeTagsFromResource(params).promise().toFuture
-    @inline def resetCacheFuture(params: ResetCacheInput): Future[ResetCacheOutput] =
-      service.resetCache(params).promise().toFuture
-    @inline def retrieveTapeArchiveFuture(params: RetrieveTapeArchiveInput): Future[RetrieveTapeArchiveOutput] =
-      service.retrieveTapeArchive(params).promise().toFuture
-    @inline def retrieveTapeRecoveryPointFuture(
-        params: RetrieveTapeRecoveryPointInput
-    ): Future[RetrieveTapeRecoveryPointOutput] = service.retrieveTapeRecoveryPoint(params).promise().toFuture
-    @inline def setLocalConsolePasswordFuture(
-        params: SetLocalConsolePasswordInput
-    ): Future[SetLocalConsolePasswordOutput] = service.setLocalConsolePassword(params).promise().toFuture
-    @inline def setSMBGuestPasswordFuture(params: SetSMBGuestPasswordInput): Future[SetSMBGuestPasswordOutput] =
-      service.setSMBGuestPassword(params).promise().toFuture
-    @inline def shutdownGatewayFuture(params: ShutdownGatewayInput): Future[ShutdownGatewayOutput] =
-      service.shutdownGateway(params).promise().toFuture
-    @inline def startAvailabilityMonitorTestFuture(
-        params: StartAvailabilityMonitorTestInput
-    ): Future[StartAvailabilityMonitorTestOutput] = service.startAvailabilityMonitorTest(params).promise().toFuture
-    @inline def startGatewayFuture(params: StartGatewayInput): Future[StartGatewayOutput] =
-      service.startGateway(params).promise().toFuture
-    @inline def updateAutomaticTapeCreationPolicyFuture(
-        params: UpdateAutomaticTapeCreationPolicyInput
-    ): Future[UpdateAutomaticTapeCreationPolicyOutput] =
-      service.updateAutomaticTapeCreationPolicy(params).promise().toFuture
-    @inline def updateBandwidthRateLimitFuture(
-        params: UpdateBandwidthRateLimitInput
-    ): Future[UpdateBandwidthRateLimitOutput] = service.updateBandwidthRateLimit(params).promise().toFuture
-    @inline def updateChapCredentialsFuture(params: UpdateChapCredentialsInput): Future[UpdateChapCredentialsOutput] =
-      service.updateChapCredentials(params).promise().toFuture
-    @inline def updateGatewayInformationFuture(
-        params: UpdateGatewayInformationInput
-    ): Future[UpdateGatewayInformationOutput] = service.updateGatewayInformation(params).promise().toFuture
-    @inline def updateGatewaySoftwareNowFuture(
-        params: UpdateGatewaySoftwareNowInput
-    ): Future[UpdateGatewaySoftwareNowOutput] = service.updateGatewaySoftwareNow(params).promise().toFuture
-    @inline def updateMaintenanceStartTimeFuture(
-        params: UpdateMaintenanceStartTimeInput
-    ): Future[UpdateMaintenanceStartTimeOutput] = service.updateMaintenanceStartTime(params).promise().toFuture
-    @inline def updateNFSFileShareFuture(params: UpdateNFSFileShareInput): Future[UpdateNFSFileShareOutput] =
-      service.updateNFSFileShare(params).promise().toFuture
-    @inline def updateSMBFileShareFuture(params: UpdateSMBFileShareInput): Future[UpdateSMBFileShareOutput] =
-      service.updateSMBFileShare(params).promise().toFuture
-    @inline def updateSMBSecurityStrategyFuture(
-        params: UpdateSMBSecurityStrategyInput
-    ): Future[UpdateSMBSecurityStrategyOutput] = service.updateSMBSecurityStrategy(params).promise().toFuture
-    @inline def updateSnapshotScheduleFuture(
-        params: UpdateSnapshotScheduleInput
-    ): Future[UpdateSnapshotScheduleOutput] = service.updateSnapshotSchedule(params).promise().toFuture
-    @inline def updateVTLDeviceTypeFuture(params: UpdateVTLDeviceTypeInput): Future[UpdateVTLDeviceTypeOutput] =
-      service.updateVTLDeviceType(params).promise().toFuture
+    @inline def activateGatewayFuture(params: ActivateGatewayInput): Future[ActivateGatewayOutput] = service.activateGateway(params).promise().toFuture
+    @inline def addCacheFuture(params: AddCacheInput): Future[AddCacheOutput] = service.addCache(params).promise().toFuture
+    @inline def addTagsToResourceFuture(params: AddTagsToResourceInput): Future[AddTagsToResourceOutput] = service.addTagsToResource(params).promise().toFuture
+    @inline def addUploadBufferFuture(params: AddUploadBufferInput): Future[AddUploadBufferOutput] = service.addUploadBuffer(params).promise().toFuture
+    @inline def addWorkingStorageFuture(params: AddWorkingStorageInput): Future[AddWorkingStorageOutput] = service.addWorkingStorage(params).promise().toFuture
+    @inline def assignTapePoolFuture(params: AssignTapePoolInput): Future[AssignTapePoolOutput] = service.assignTapePool(params).promise().toFuture
+    @inline def attachVolumeFuture(params: AttachVolumeInput): Future[AttachVolumeOutput] = service.attachVolume(params).promise().toFuture
+    @inline def cancelArchivalFuture(params: CancelArchivalInput): Future[CancelArchivalOutput] = service.cancelArchival(params).promise().toFuture
+    @inline def cancelRetrievalFuture(params: CancelRetrievalInput): Future[CancelRetrievalOutput] = service.cancelRetrieval(params).promise().toFuture
+    @inline def createCachediSCSIVolumeFuture(params: CreateCachediSCSIVolumeInput): Future[CreateCachediSCSIVolumeOutput] = service.createCachediSCSIVolume(params).promise().toFuture
+    @inline def createNFSFileShareFuture(params: CreateNFSFileShareInput): Future[CreateNFSFileShareOutput] = service.createNFSFileShare(params).promise().toFuture
+    @inline def createSMBFileShareFuture(params: CreateSMBFileShareInput): Future[CreateSMBFileShareOutput] = service.createSMBFileShare(params).promise().toFuture
+    @inline def createSnapshotFromVolumeRecoveryPointFuture(params: CreateSnapshotFromVolumeRecoveryPointInput): Future[CreateSnapshotFromVolumeRecoveryPointOutput] = service.createSnapshotFromVolumeRecoveryPoint(params).promise().toFuture
+    @inline def createSnapshotFuture(params: CreateSnapshotInput): Future[CreateSnapshotOutput] = service.createSnapshot(params).promise().toFuture
+    @inline def createStorediSCSIVolumeFuture(params: CreateStorediSCSIVolumeInput): Future[CreateStorediSCSIVolumeOutput] = service.createStorediSCSIVolume(params).promise().toFuture
+    @inline def createTapeWithBarcodeFuture(params: CreateTapeWithBarcodeInput): Future[CreateTapeWithBarcodeOutput] = service.createTapeWithBarcode(params).promise().toFuture
+    @inline def createTapesFuture(params: CreateTapesInput): Future[CreateTapesOutput] = service.createTapes(params).promise().toFuture
+    @inline def deleteAutomaticTapeCreationPolicyFuture(params: DeleteAutomaticTapeCreationPolicyInput): Future[DeleteAutomaticTapeCreationPolicyOutput] = service.deleteAutomaticTapeCreationPolicy(params).promise().toFuture
+    @inline def deleteBandwidthRateLimitFuture(params: DeleteBandwidthRateLimitInput): Future[DeleteBandwidthRateLimitOutput] = service.deleteBandwidthRateLimit(params).promise().toFuture
+    @inline def deleteChapCredentialsFuture(params: DeleteChapCredentialsInput): Future[DeleteChapCredentialsOutput] = service.deleteChapCredentials(params).promise().toFuture
+    @inline def deleteFileShareFuture(params: DeleteFileShareInput): Future[DeleteFileShareOutput] = service.deleteFileShare(params).promise().toFuture
+    @inline def deleteGatewayFuture(params: DeleteGatewayInput): Future[DeleteGatewayOutput] = service.deleteGateway(params).promise().toFuture
+    @inline def deleteSnapshotScheduleFuture(params: DeleteSnapshotScheduleInput): Future[DeleteSnapshotScheduleOutput] = service.deleteSnapshotSchedule(params).promise().toFuture
+    @inline def deleteTapeArchiveFuture(params: DeleteTapeArchiveInput): Future[DeleteTapeArchiveOutput] = service.deleteTapeArchive(params).promise().toFuture
+    @inline def deleteTapeFuture(params: DeleteTapeInput): Future[DeleteTapeOutput] = service.deleteTape(params).promise().toFuture
+    @inline def deleteVolumeFuture(params: DeleteVolumeInput): Future[DeleteVolumeOutput] = service.deleteVolume(params).promise().toFuture
+    @inline def describeAvailabilityMonitorTestFuture(params: DescribeAvailabilityMonitorTestInput): Future[DescribeAvailabilityMonitorTestOutput] = service.describeAvailabilityMonitorTest(params).promise().toFuture
+    @inline def describeBandwidthRateLimitFuture(params: DescribeBandwidthRateLimitInput): Future[DescribeBandwidthRateLimitOutput] = service.describeBandwidthRateLimit(params).promise().toFuture
+    @inline def describeCacheFuture(params: DescribeCacheInput): Future[DescribeCacheOutput] = service.describeCache(params).promise().toFuture
+    @inline def describeCachediSCSIVolumesFuture(params: DescribeCachediSCSIVolumesInput): Future[DescribeCachediSCSIVolumesOutput] = service.describeCachediSCSIVolumes(params).promise().toFuture
+    @inline def describeChapCredentialsFuture(params: DescribeChapCredentialsInput): Future[DescribeChapCredentialsOutput] = service.describeChapCredentials(params).promise().toFuture
+    @inline def describeGatewayInformationFuture(params: DescribeGatewayInformationInput): Future[DescribeGatewayInformationOutput] = service.describeGatewayInformation(params).promise().toFuture
+    @inline def describeMaintenanceStartTimeFuture(params: DescribeMaintenanceStartTimeInput): Future[DescribeMaintenanceStartTimeOutput] = service.describeMaintenanceStartTime(params).promise().toFuture
+    @inline def describeNFSFileSharesFuture(params: DescribeNFSFileSharesInput): Future[DescribeNFSFileSharesOutput] = service.describeNFSFileShares(params).promise().toFuture
+    @inline def describeSMBFileSharesFuture(params: DescribeSMBFileSharesInput): Future[DescribeSMBFileSharesOutput] = service.describeSMBFileShares(params).promise().toFuture
+    @inline def describeSMBSettingsFuture(params: DescribeSMBSettingsInput): Future[DescribeSMBSettingsOutput] = service.describeSMBSettings(params).promise().toFuture
+    @inline def describeSnapshotScheduleFuture(params: DescribeSnapshotScheduleInput): Future[DescribeSnapshotScheduleOutput] = service.describeSnapshotSchedule(params).promise().toFuture
+    @inline def describeStorediSCSIVolumesFuture(params: DescribeStorediSCSIVolumesInput): Future[DescribeStorediSCSIVolumesOutput] = service.describeStorediSCSIVolumes(params).promise().toFuture
+    @inline def describeTapeArchivesFuture(params: DescribeTapeArchivesInput): Future[DescribeTapeArchivesOutput] = service.describeTapeArchives(params).promise().toFuture
+    @inline def describeTapeRecoveryPointsFuture(params: DescribeTapeRecoveryPointsInput): Future[DescribeTapeRecoveryPointsOutput] = service.describeTapeRecoveryPoints(params).promise().toFuture
+    @inline def describeTapesFuture(params: DescribeTapesInput): Future[DescribeTapesOutput] = service.describeTapes(params).promise().toFuture
+    @inline def describeUploadBufferFuture(params: DescribeUploadBufferInput): Future[DescribeUploadBufferOutput] = service.describeUploadBuffer(params).promise().toFuture
+    @inline def describeVTLDevicesFuture(params: DescribeVTLDevicesInput): Future[DescribeVTLDevicesOutput] = service.describeVTLDevices(params).promise().toFuture
+    @inline def describeWorkingStorageFuture(params: DescribeWorkingStorageInput): Future[DescribeWorkingStorageOutput] = service.describeWorkingStorage(params).promise().toFuture
+    @inline def detachVolumeFuture(params: DetachVolumeInput): Future[DetachVolumeOutput] = service.detachVolume(params).promise().toFuture
+    @inline def disableGatewayFuture(params: DisableGatewayInput): Future[DisableGatewayOutput] = service.disableGateway(params).promise().toFuture
+    @inline def joinDomainFuture(params: JoinDomainInput): Future[JoinDomainOutput] = service.joinDomain(params).promise().toFuture
+    @inline def listAutomaticTapeCreationPoliciesFuture(params: ListAutomaticTapeCreationPoliciesInput): Future[ListAutomaticTapeCreationPoliciesOutput] = service.listAutomaticTapeCreationPolicies(params).promise().toFuture
+    @inline def listFileSharesFuture(params: ListFileSharesInput): Future[ListFileSharesOutput] = service.listFileShares(params).promise().toFuture
+    @inline def listGatewaysFuture(params: ListGatewaysInput): Future[ListGatewaysOutput] = service.listGateways(params).promise().toFuture
+    @inline def listLocalDisksFuture(params: ListLocalDisksInput): Future[ListLocalDisksOutput] = service.listLocalDisks(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] = service.listTagsForResource(params).promise().toFuture
+    @inline def listTapesFuture(params: ListTapesInput): Future[ListTapesOutput] = service.listTapes(params).promise().toFuture
+    @inline def listVolumeInitiatorsFuture(params: ListVolumeInitiatorsInput): Future[ListVolumeInitiatorsOutput] = service.listVolumeInitiators(params).promise().toFuture
+    @inline def listVolumeRecoveryPointsFuture(params: ListVolumeRecoveryPointsInput): Future[ListVolumeRecoveryPointsOutput] = service.listVolumeRecoveryPoints(params).promise().toFuture
+    @inline def listVolumesFuture(params: ListVolumesInput): Future[ListVolumesOutput] = service.listVolumes(params).promise().toFuture
+    @inline def notifyWhenUploadedFuture(params: NotifyWhenUploadedInput): Future[NotifyWhenUploadedOutput] = service.notifyWhenUploaded(params).promise().toFuture
+    @inline def refreshCacheFuture(params: RefreshCacheInput): Future[RefreshCacheOutput] = service.refreshCache(params).promise().toFuture
+    @inline def removeTagsFromResourceFuture(params: RemoveTagsFromResourceInput): Future[RemoveTagsFromResourceOutput] = service.removeTagsFromResource(params).promise().toFuture
+    @inline def resetCacheFuture(params: ResetCacheInput): Future[ResetCacheOutput] = service.resetCache(params).promise().toFuture
+    @inline def retrieveTapeArchiveFuture(params: RetrieveTapeArchiveInput): Future[RetrieveTapeArchiveOutput] = service.retrieveTapeArchive(params).promise().toFuture
+    @inline def retrieveTapeRecoveryPointFuture(params: RetrieveTapeRecoveryPointInput): Future[RetrieveTapeRecoveryPointOutput] = service.retrieveTapeRecoveryPoint(params).promise().toFuture
+    @inline def setLocalConsolePasswordFuture(params: SetLocalConsolePasswordInput): Future[SetLocalConsolePasswordOutput] = service.setLocalConsolePassword(params).promise().toFuture
+    @inline def setSMBGuestPasswordFuture(params: SetSMBGuestPasswordInput): Future[SetSMBGuestPasswordOutput] = service.setSMBGuestPassword(params).promise().toFuture
+    @inline def shutdownGatewayFuture(params: ShutdownGatewayInput): Future[ShutdownGatewayOutput] = service.shutdownGateway(params).promise().toFuture
+    @inline def startAvailabilityMonitorTestFuture(params: StartAvailabilityMonitorTestInput): Future[StartAvailabilityMonitorTestOutput] = service.startAvailabilityMonitorTest(params).promise().toFuture
+    @inline def startGatewayFuture(params: StartGatewayInput): Future[StartGatewayOutput] = service.startGateway(params).promise().toFuture
+    @inline def updateAutomaticTapeCreationPolicyFuture(params: UpdateAutomaticTapeCreationPolicyInput): Future[UpdateAutomaticTapeCreationPolicyOutput] = service.updateAutomaticTapeCreationPolicy(params).promise().toFuture
+    @inline def updateBandwidthRateLimitFuture(params: UpdateBandwidthRateLimitInput): Future[UpdateBandwidthRateLimitOutput] = service.updateBandwidthRateLimit(params).promise().toFuture
+    @inline def updateChapCredentialsFuture(params: UpdateChapCredentialsInput): Future[UpdateChapCredentialsOutput] = service.updateChapCredentials(params).promise().toFuture
+    @inline def updateGatewayInformationFuture(params: UpdateGatewayInformationInput): Future[UpdateGatewayInformationOutput] = service.updateGatewayInformation(params).promise().toFuture
+    @inline def updateGatewaySoftwareNowFuture(params: UpdateGatewaySoftwareNowInput): Future[UpdateGatewaySoftwareNowOutput] = service.updateGatewaySoftwareNow(params).promise().toFuture
+    @inline def updateMaintenanceStartTimeFuture(params: UpdateMaintenanceStartTimeInput): Future[UpdateMaintenanceStartTimeOutput] = service.updateMaintenanceStartTime(params).promise().toFuture
+    @inline def updateNFSFileShareFuture(params: UpdateNFSFileShareInput): Future[UpdateNFSFileShareOutput] = service.updateNFSFileShare(params).promise().toFuture
+    @inline def updateSMBFileShareFuture(params: UpdateSMBFileShareInput): Future[UpdateSMBFileShareOutput] = service.updateSMBFileShare(params).promise().toFuture
+    @inline def updateSMBSecurityStrategyFuture(params: UpdateSMBSecurityStrategyInput): Future[UpdateSMBSecurityStrategyOutput] = service.updateSMBSecurityStrategy(params).promise().toFuture
+    @inline def updateSnapshotScheduleFuture(params: UpdateSnapshotScheduleInput): Future[UpdateSnapshotScheduleOutput] = service.updateSnapshotSchedule(params).promise().toFuture
+    @inline def updateVTLDeviceTypeFuture(params: UpdateVTLDeviceTypeInput): Future[UpdateVTLDeviceTypeOutput] = service.updateVTLDeviceType(params).promise().toFuture
   }
 }
 
@@ -345,23 +233,16 @@ package storagegateway {
     def attachVolume(params: AttachVolumeInput): Request[AttachVolumeOutput] = js.native
     def cancelArchival(params: CancelArchivalInput): Request[CancelArchivalOutput] = js.native
     def cancelRetrieval(params: CancelRetrievalInput): Request[CancelRetrievalOutput] = js.native
-    def createCachediSCSIVolume(params: CreateCachediSCSIVolumeInput): Request[CreateCachediSCSIVolumeOutput] =
-      js.native
+    def createCachediSCSIVolume(params: CreateCachediSCSIVolumeInput): Request[CreateCachediSCSIVolumeOutput] = js.native
     def createNFSFileShare(params: CreateNFSFileShareInput): Request[CreateNFSFileShareOutput] = js.native
     def createSMBFileShare(params: CreateSMBFileShareInput): Request[CreateSMBFileShareOutput] = js.native
     def createSnapshot(params: CreateSnapshotInput): Request[CreateSnapshotOutput] = js.native
-    def createSnapshotFromVolumeRecoveryPoint(
-        params: CreateSnapshotFromVolumeRecoveryPointInput
-    ): Request[CreateSnapshotFromVolumeRecoveryPointOutput] = js.native
-    def createStorediSCSIVolume(params: CreateStorediSCSIVolumeInput): Request[CreateStorediSCSIVolumeOutput] =
-      js.native
+    def createSnapshotFromVolumeRecoveryPoint(params: CreateSnapshotFromVolumeRecoveryPointInput): Request[CreateSnapshotFromVolumeRecoveryPointOutput] = js.native
+    def createStorediSCSIVolume(params: CreateStorediSCSIVolumeInput): Request[CreateStorediSCSIVolumeOutput] = js.native
     def createTapeWithBarcode(params: CreateTapeWithBarcodeInput): Request[CreateTapeWithBarcodeOutput] = js.native
     def createTapes(params: CreateTapesInput): Request[CreateTapesOutput] = js.native
-    def deleteAutomaticTapeCreationPolicy(
-        params: DeleteAutomaticTapeCreationPolicyInput
-    ): Request[DeleteAutomaticTapeCreationPolicyOutput] = js.native
-    def deleteBandwidthRateLimit(params: DeleteBandwidthRateLimitInput): Request[DeleteBandwidthRateLimitOutput] =
-      js.native
+    def deleteAutomaticTapeCreationPolicy(params: DeleteAutomaticTapeCreationPolicyInput): Request[DeleteAutomaticTapeCreationPolicyOutput] = js.native
+    def deleteBandwidthRateLimit(params: DeleteBandwidthRateLimitInput): Request[DeleteBandwidthRateLimitOutput] = js.native
     def deleteChapCredentials(params: DeleteChapCredentialsInput): Request[DeleteChapCredentialsOutput] = js.native
     def deleteFileShare(params: DeleteFileShareInput): Request[DeleteFileShareOutput] = js.native
     def deleteGateway(params: DeleteGatewayInput): Request[DeleteGatewayOutput] = js.native
@@ -369,31 +250,20 @@ package storagegateway {
     def deleteTape(params: DeleteTapeInput): Request[DeleteTapeOutput] = js.native
     def deleteTapeArchive(params: DeleteTapeArchiveInput): Request[DeleteTapeArchiveOutput] = js.native
     def deleteVolume(params: DeleteVolumeInput): Request[DeleteVolumeOutput] = js.native
-    def describeAvailabilityMonitorTest(
-        params: DescribeAvailabilityMonitorTestInput
-    ): Request[DescribeAvailabilityMonitorTestOutput] = js.native
-    def describeBandwidthRateLimit(params: DescribeBandwidthRateLimitInput): Request[DescribeBandwidthRateLimitOutput] =
-      js.native
+    def describeAvailabilityMonitorTest(params: DescribeAvailabilityMonitorTestInput): Request[DescribeAvailabilityMonitorTestOutput] = js.native
+    def describeBandwidthRateLimit(params: DescribeBandwidthRateLimitInput): Request[DescribeBandwidthRateLimitOutput] = js.native
     def describeCache(params: DescribeCacheInput): Request[DescribeCacheOutput] = js.native
-    def describeCachediSCSIVolumes(params: DescribeCachediSCSIVolumesInput): Request[DescribeCachediSCSIVolumesOutput] =
-      js.native
-    def describeChapCredentials(params: DescribeChapCredentialsInput): Request[DescribeChapCredentialsOutput] =
-      js.native
-    def describeGatewayInformation(params: DescribeGatewayInformationInput): Request[DescribeGatewayInformationOutput] =
-      js.native
-    def describeMaintenanceStartTime(
-        params: DescribeMaintenanceStartTimeInput
-    ): Request[DescribeMaintenanceStartTimeOutput] = js.native
+    def describeCachediSCSIVolumes(params: DescribeCachediSCSIVolumesInput): Request[DescribeCachediSCSIVolumesOutput] = js.native
+    def describeChapCredentials(params: DescribeChapCredentialsInput): Request[DescribeChapCredentialsOutput] = js.native
+    def describeGatewayInformation(params: DescribeGatewayInformationInput): Request[DescribeGatewayInformationOutput] = js.native
+    def describeMaintenanceStartTime(params: DescribeMaintenanceStartTimeInput): Request[DescribeMaintenanceStartTimeOutput] = js.native
     def describeNFSFileShares(params: DescribeNFSFileSharesInput): Request[DescribeNFSFileSharesOutput] = js.native
     def describeSMBFileShares(params: DescribeSMBFileSharesInput): Request[DescribeSMBFileSharesOutput] = js.native
     def describeSMBSettings(params: DescribeSMBSettingsInput): Request[DescribeSMBSettingsOutput] = js.native
-    def describeSnapshotSchedule(params: DescribeSnapshotScheduleInput): Request[DescribeSnapshotScheduleOutput] =
-      js.native
-    def describeStorediSCSIVolumes(params: DescribeStorediSCSIVolumesInput): Request[DescribeStorediSCSIVolumesOutput] =
-      js.native
+    def describeSnapshotSchedule(params: DescribeSnapshotScheduleInput): Request[DescribeSnapshotScheduleOutput] = js.native
+    def describeStorediSCSIVolumes(params: DescribeStorediSCSIVolumesInput): Request[DescribeStorediSCSIVolumesOutput] = js.native
     def describeTapeArchives(params: DescribeTapeArchivesInput): Request[DescribeTapeArchivesOutput] = js.native
-    def describeTapeRecoveryPoints(params: DescribeTapeRecoveryPointsInput): Request[DescribeTapeRecoveryPointsOutput] =
-      js.native
+    def describeTapeRecoveryPoints(params: DescribeTapeRecoveryPointsInput): Request[DescribeTapeRecoveryPointsOutput] = js.native
     def describeTapes(params: DescribeTapesInput): Request[DescribeTapesOutput] = js.native
     def describeUploadBuffer(params: DescribeUploadBufferInput): Request[DescribeUploadBufferOutput] = js.native
     def describeVTLDevices(params: DescribeVTLDevicesInput): Request[DescribeVTLDevicesOutput] = js.native
@@ -401,49 +271,35 @@ package storagegateway {
     def detachVolume(params: DetachVolumeInput): Request[DetachVolumeOutput] = js.native
     def disableGateway(params: DisableGatewayInput): Request[DisableGatewayOutput] = js.native
     def joinDomain(params: JoinDomainInput): Request[JoinDomainOutput] = js.native
-    def listAutomaticTapeCreationPolicies(
-        params: ListAutomaticTapeCreationPoliciesInput
-    ): Request[ListAutomaticTapeCreationPoliciesOutput] = js.native
+    def listAutomaticTapeCreationPolicies(params: ListAutomaticTapeCreationPoliciesInput): Request[ListAutomaticTapeCreationPoliciesOutput] = js.native
     def listFileShares(params: ListFileSharesInput): Request[ListFileSharesOutput] = js.native
     def listGateways(params: ListGatewaysInput): Request[ListGatewaysOutput] = js.native
     def listLocalDisks(params: ListLocalDisksInput): Request[ListLocalDisksOutput] = js.native
     def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput] = js.native
     def listTapes(params: ListTapesInput): Request[ListTapesOutput] = js.native
     def listVolumeInitiators(params: ListVolumeInitiatorsInput): Request[ListVolumeInitiatorsOutput] = js.native
-    def listVolumeRecoveryPoints(params: ListVolumeRecoveryPointsInput): Request[ListVolumeRecoveryPointsOutput] =
-      js.native
+    def listVolumeRecoveryPoints(params: ListVolumeRecoveryPointsInput): Request[ListVolumeRecoveryPointsOutput] = js.native
     def listVolumes(params: ListVolumesInput): Request[ListVolumesOutput] = js.native
     def notifyWhenUploaded(params: NotifyWhenUploadedInput): Request[NotifyWhenUploadedOutput] = js.native
     def refreshCache(params: RefreshCacheInput): Request[RefreshCacheOutput] = js.native
     def removeTagsFromResource(params: RemoveTagsFromResourceInput): Request[RemoveTagsFromResourceOutput] = js.native
     def resetCache(params: ResetCacheInput): Request[ResetCacheOutput] = js.native
     def retrieveTapeArchive(params: RetrieveTapeArchiveInput): Request[RetrieveTapeArchiveOutput] = js.native
-    def retrieveTapeRecoveryPoint(params: RetrieveTapeRecoveryPointInput): Request[RetrieveTapeRecoveryPointOutput] =
-      js.native
-    def setLocalConsolePassword(params: SetLocalConsolePasswordInput): Request[SetLocalConsolePasswordOutput] =
-      js.native
+    def retrieveTapeRecoveryPoint(params: RetrieveTapeRecoveryPointInput): Request[RetrieveTapeRecoveryPointOutput] = js.native
+    def setLocalConsolePassword(params: SetLocalConsolePasswordInput): Request[SetLocalConsolePasswordOutput] = js.native
     def setSMBGuestPassword(params: SetSMBGuestPasswordInput): Request[SetSMBGuestPasswordOutput] = js.native
     def shutdownGateway(params: ShutdownGatewayInput): Request[ShutdownGatewayOutput] = js.native
-    def startAvailabilityMonitorTest(
-        params: StartAvailabilityMonitorTestInput
-    ): Request[StartAvailabilityMonitorTestOutput] = js.native
+    def startAvailabilityMonitorTest(params: StartAvailabilityMonitorTestInput): Request[StartAvailabilityMonitorTestOutput] = js.native
     def startGateway(params: StartGatewayInput): Request[StartGatewayOutput] = js.native
-    def updateAutomaticTapeCreationPolicy(
-        params: UpdateAutomaticTapeCreationPolicyInput
-    ): Request[UpdateAutomaticTapeCreationPolicyOutput] = js.native
-    def updateBandwidthRateLimit(params: UpdateBandwidthRateLimitInput): Request[UpdateBandwidthRateLimitOutput] =
-      js.native
+    def updateAutomaticTapeCreationPolicy(params: UpdateAutomaticTapeCreationPolicyInput): Request[UpdateAutomaticTapeCreationPolicyOutput] = js.native
+    def updateBandwidthRateLimit(params: UpdateBandwidthRateLimitInput): Request[UpdateBandwidthRateLimitOutput] = js.native
     def updateChapCredentials(params: UpdateChapCredentialsInput): Request[UpdateChapCredentialsOutput] = js.native
-    def updateGatewayInformation(params: UpdateGatewayInformationInput): Request[UpdateGatewayInformationOutput] =
-      js.native
-    def updateGatewaySoftwareNow(params: UpdateGatewaySoftwareNowInput): Request[UpdateGatewaySoftwareNowOutput] =
-      js.native
-    def updateMaintenanceStartTime(params: UpdateMaintenanceStartTimeInput): Request[UpdateMaintenanceStartTimeOutput] =
-      js.native
+    def updateGatewayInformation(params: UpdateGatewayInformationInput): Request[UpdateGatewayInformationOutput] = js.native
+    def updateGatewaySoftwareNow(params: UpdateGatewaySoftwareNowInput): Request[UpdateGatewaySoftwareNowOutput] = js.native
+    def updateMaintenanceStartTime(params: UpdateMaintenanceStartTimeInput): Request[UpdateMaintenanceStartTimeOutput] = js.native
     def updateNFSFileShare(params: UpdateNFSFileShareInput): Request[UpdateNFSFileShareOutput] = js.native
     def updateSMBFileShare(params: UpdateSMBFileShareInput): Request[UpdateSMBFileShareOutput] = js.native
-    def updateSMBSecurityStrategy(params: UpdateSMBSecurityStrategyInput): Request[UpdateSMBSecurityStrategyOutput] =
-      js.native
+    def updateSMBSecurityStrategy(params: UpdateSMBSecurityStrategyInput): Request[UpdateSMBSecurityStrategyOutput] = js.native
     def updateSnapshotSchedule(params: UpdateSnapshotScheduleInput): Request[UpdateSnapshotScheduleOutput] = js.native
     def updateVTLDeviceType(params: UpdateVTLDeviceTypeInput): Request[UpdateVTLDeviceTypeOutput] = js.native
   }
@@ -529,8 +385,7 @@ package storagegateway {
     val TIMEOUT = "TIMEOUT".asInstanceOf[ActiveDirectoryStatus]
     val UNKNOWN_ERROR = "UNKNOWN_ERROR".asInstanceOf[ActiveDirectoryStatus]
 
-    val values =
-      js.Object.freeze(js.Array(ACCESS_DENIED, DETACHED, JOINED, JOINING, NETWORK_ERROR, TIMEOUT, UNKNOWN_ERROR))
+    val values = js.Object.freeze(js.Array(ACCESS_DENIED, DETACHED, JOINED, JOINING, NETWORK_ERROR, TIMEOUT, UNKNOWN_ERROR))
   }
 
   @js.native
@@ -790,9 +645,7 @@ package storagegateway {
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): AutomaticTapeCreationPolicyInfo = {
       val __obj = js.Dynamic.literal()
-      AutomaticTapeCreationRules.foreach(__v =>
-        __obj.updateDynamic("AutomaticTapeCreationRules")(__v.asInstanceOf[js.Any])
-      )
+      AutomaticTapeCreationRules.foreach(__v => __obj.updateDynamic("AutomaticTapeCreationRules")(__v.asInstanceOf[js.Any]))
       GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutomaticTapeCreationPolicyInfo]
     }
@@ -852,9 +705,7 @@ package storagegateway {
         CacheStaleTimeoutInSeconds: js.UndefOr[CacheStaleTimeoutInSeconds] = js.undefined
     ): CacheAttributes = {
       val __obj = js.Dynamic.literal()
-      CacheStaleTimeoutInSeconds.foreach(__v =>
-        __obj.updateDynamic("CacheStaleTimeoutInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      CacheStaleTimeoutInSeconds.foreach(__v => __obj.updateDynamic("CacheStaleTimeoutInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CacheAttributes]
     }
   }
@@ -1018,12 +869,8 @@ package storagegateway {
     ): ChapInfo = {
       val __obj = js.Dynamic.literal()
       InitiatorName.foreach(__v => __obj.updateDynamic("InitiatorName")(__v.asInstanceOf[js.Any]))
-      SecretToAuthenticateInitiator.foreach(__v =>
-        __obj.updateDynamic("SecretToAuthenticateInitiator")(__v.asInstanceOf[js.Any])
-      )
-      SecretToAuthenticateTarget.foreach(__v =>
-        __obj.updateDynamic("SecretToAuthenticateTarget")(__v.asInstanceOf[js.Any])
-      )
+      SecretToAuthenticateInitiator.foreach(__v => __obj.updateDynamic("SecretToAuthenticateInitiator")(__v.asInstanceOf[js.Any]))
+      SecretToAuthenticateTarget.foreach(__v => __obj.updateDynamic("SecretToAuthenticateTarget")(__v.asInstanceOf[js.Any]))
       TargetARN.foreach(__v => __obj.updateDynamic("TargetARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChapInfo]
     }
@@ -1984,12 +1831,8 @@ package storagegateway {
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): DescribeBandwidthRateLimitOutput = {
       val __obj = js.Dynamic.literal()
-      AverageDownloadRateLimitInBitsPerSec.foreach(__v =>
-        __obj.updateDynamic("AverageDownloadRateLimitInBitsPerSec")(__v.asInstanceOf[js.Any])
-      )
-      AverageUploadRateLimitInBitsPerSec.foreach(__v =>
-        __obj.updateDynamic("AverageUploadRateLimitInBitsPerSec")(__v.asInstanceOf[js.Any])
-      )
+      AverageDownloadRateLimitInBitsPerSec.foreach(__v => __obj.updateDynamic("AverageDownloadRateLimitInBitsPerSec")(__v.asInstanceOf[js.Any]))
+      AverageUploadRateLimitInBitsPerSec.foreach(__v => __obj.updateDynamic("AverageUploadRateLimitInBitsPerSec")(__v.asInstanceOf[js.Any]))
       GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeBandwidthRateLimitOutput]
     }
@@ -2202,9 +2045,7 @@ package storagegateway {
       GatewayType.foreach(__v => __obj.updateDynamic("GatewayType")(__v.asInstanceOf[js.Any]))
       HostEnvironment.foreach(__v => __obj.updateDynamic("HostEnvironment")(__v.asInstanceOf[js.Any]))
       LastSoftwareUpdate.foreach(__v => __obj.updateDynamic("LastSoftwareUpdate")(__v.asInstanceOf[js.Any]))
-      NextUpdateAvailabilityDate.foreach(__v =>
-        __obj.updateDynamic("NextUpdateAvailabilityDate")(__v.asInstanceOf[js.Any])
-      )
+      NextUpdateAvailabilityDate.foreach(__v => __obj.updateDynamic("NextUpdateAvailabilityDate")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       VPCEndpoint.foreach(__v => __obj.updateDynamic("VPCEndpoint")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeGatewayInformationOutput]
@@ -2644,9 +2485,7 @@ package storagegateway {
       val __obj = js.Dynamic.literal()
       DiskIds.foreach(__v => __obj.updateDynamic("DiskIds")(__v.asInstanceOf[js.Any]))
       GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
-      UploadBufferAllocatedInBytes.foreach(__v =>
-        __obj.updateDynamic("UploadBufferAllocatedInBytes")(__v.asInstanceOf[js.Any])
-      )
+      UploadBufferAllocatedInBytes.foreach(__v => __obj.updateDynamic("UploadBufferAllocatedInBytes")(__v.asInstanceOf[js.Any]))
       UploadBufferUsedInBytes.foreach(__v => __obj.updateDynamic("UploadBufferUsedInBytes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeUploadBufferOutput]
     }
@@ -2744,12 +2583,8 @@ package storagegateway {
       val __obj = js.Dynamic.literal()
       DiskIds.foreach(__v => __obj.updateDynamic("DiskIds")(__v.asInstanceOf[js.Any]))
       GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
-      WorkingStorageAllocatedInBytes.foreach(__v =>
-        __obj.updateDynamic("WorkingStorageAllocatedInBytes")(__v.asInstanceOf[js.Any])
-      )
-      WorkingStorageUsedInBytes.foreach(__v =>
-        __obj.updateDynamic("WorkingStorageUsedInBytes")(__v.asInstanceOf[js.Any])
-      )
+      WorkingStorageAllocatedInBytes.foreach(__v => __obj.updateDynamic("WorkingStorageAllocatedInBytes")(__v.asInstanceOf[js.Any]))
+      WorkingStorageUsedInBytes.foreach(__v => __obj.updateDynamic("WorkingStorageUsedInBytes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeWorkingStorageOutput]
     }
   }
@@ -3073,9 +2908,7 @@ package storagegateway {
         AutomaticTapeCreationPolicyInfos: js.UndefOr[AutomaticTapeCreationPolicyInfos] = js.undefined
     ): ListAutomaticTapeCreationPoliciesOutput = {
       val __obj = js.Dynamic.literal()
-      AutomaticTapeCreationPolicyInfos.foreach(__v =>
-        __obj.updateDynamic("AutomaticTapeCreationPolicyInfos")(__v.asInstanceOf[js.Any])
-      )
+      AutomaticTapeCreationPolicyInfos.foreach(__v => __obj.updateDynamic("AutomaticTapeCreationPolicyInfos")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAutomaticTapeCreationPoliciesOutput]
     }
   }
@@ -3616,17 +3449,7 @@ package storagegateway {
     val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[ObjectACL]
     val `aws-exec-read` = "aws-exec-read".asInstanceOf[ObjectACL]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `private`,
-        `public-read`,
-        `public-read-write`,
-        `authenticated-read`,
-        `bucket-owner-read`,
-        `bucket-owner-full-control`,
-        `aws-exec-read`
-      )
-    )
+    val values = js.Object.freeze(js.Array(`private`, `public-read`, `public-read-write`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`, `aws-exec-read`))
   }
 
   @js.native
@@ -4402,12 +4225,8 @@ package storagegateway {
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
 
-      AverageDownloadRateLimitInBitsPerSec.foreach(__v =>
-        __obj.updateDynamic("AverageDownloadRateLimitInBitsPerSec")(__v.asInstanceOf[js.Any])
-      )
-      AverageUploadRateLimitInBitsPerSec.foreach(__v =>
-        __obj.updateDynamic("AverageUploadRateLimitInBitsPerSec")(__v.asInstanceOf[js.Any])
-      )
+      AverageDownloadRateLimitInBitsPerSec.foreach(__v => __obj.updateDynamic("AverageDownloadRateLimitInBitsPerSec")(__v.asInstanceOf[js.Any]))
+      AverageUploadRateLimitInBitsPerSec.foreach(__v => __obj.updateDynamic("AverageUploadRateLimitInBitsPerSec")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateBandwidthRateLimitInput]
     }
   }
@@ -4460,9 +4279,7 @@ package storagegateway {
         "TargetARN" -> TargetARN.asInstanceOf[js.Any]
       )
 
-      SecretToAuthenticateTarget.foreach(__v =>
-        __obj.updateDynamic("SecretToAuthenticateTarget")(__v.asInstanceOf[js.Any])
-      )
+      SecretToAuthenticateTarget.foreach(__v => __obj.updateDynamic("SecretToAuthenticateTarget")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateChapCredentialsInput]
     }
   }
@@ -4937,9 +4754,7 @@ package storagegateway {
       val __obj = js.Dynamic.literal()
       DeviceiSCSIAttributes.foreach(__v => __obj.updateDynamic("DeviceiSCSIAttributes")(__v.asInstanceOf[js.Any]))
       VTLDeviceARN.foreach(__v => __obj.updateDynamic("VTLDeviceARN")(__v.asInstanceOf[js.Any]))
-      VTLDeviceProductIdentifier.foreach(__v =>
-        __obj.updateDynamic("VTLDeviceProductIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      VTLDeviceProductIdentifier.foreach(__v => __obj.updateDynamic("VTLDeviceProductIdentifier")(__v.asInstanceOf[js.Any]))
       VTLDeviceType.foreach(__v => __obj.updateDynamic("VTLDeviceType")(__v.asInstanceOf[js.Any]))
       VTLDeviceVendor.foreach(__v => __obj.updateDynamic("VTLDeviceVendor")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VTLDevice]

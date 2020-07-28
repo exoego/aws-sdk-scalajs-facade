@@ -66,62 +66,29 @@ package object applicationdiscovery {
 
   implicit final class ApplicationDiscoveryOps(private val service: ApplicationDiscovery) extends AnyVal {
 
-    @inline def associateConfigurationItemsToApplicationFuture(
-        params: AssociateConfigurationItemsToApplicationRequest
-    ): Future[AssociateConfigurationItemsToApplicationResponse] =
-      service.associateConfigurationItemsToApplication(params).promise().toFuture
-    @inline def batchDeleteImportDataFuture(
-        params: BatchDeleteImportDataRequest
-    ): Future[BatchDeleteImportDataResponse] = service.batchDeleteImportData(params).promise().toFuture
-    @inline def createApplicationFuture(params: CreateApplicationRequest): Future[CreateApplicationResponse] =
-      service.createApplication(params).promise().toFuture
-    @inline def createTagsFuture(params: CreateTagsRequest): Future[CreateTagsResponse] =
-      service.createTags(params).promise().toFuture
-    @inline def deleteApplicationsFuture(params: DeleteApplicationsRequest): Future[DeleteApplicationsResponse] =
-      service.deleteApplications(params).promise().toFuture
-    @inline def deleteTagsFuture(params: DeleteTagsRequest): Future[DeleteTagsResponse] =
-      service.deleteTags(params).promise().toFuture
-    @inline def describeAgentsFuture(params: DescribeAgentsRequest): Future[DescribeAgentsResponse] =
-      service.describeAgents(params).promise().toFuture
-    @inline def describeConfigurationsFuture(
-        params: DescribeConfigurationsRequest
-    ): Future[DescribeConfigurationsResponse] = service.describeConfigurations(params).promise().toFuture
-    @inline def describeContinuousExportsFuture(
-        params: DescribeContinuousExportsRequest
-    ): Future[DescribeContinuousExportsResponse] = service.describeContinuousExports(params).promise().toFuture
-    @inline def describeExportTasksFuture(params: DescribeExportTasksRequest): Future[DescribeExportTasksResponse] =
-      service.describeExportTasks(params).promise().toFuture
-    @inline def describeImportTasksFuture(params: DescribeImportTasksRequest): Future[DescribeImportTasksResponse] =
-      service.describeImportTasks(params).promise().toFuture
-    @inline def describeTagsFuture(params: DescribeTagsRequest): Future[DescribeTagsResponse] =
-      service.describeTags(params).promise().toFuture
-    @inline def disassociateConfigurationItemsFromApplicationFuture(
-        params: DisassociateConfigurationItemsFromApplicationRequest
-    ): Future[DisassociateConfigurationItemsFromApplicationResponse] =
-      service.disassociateConfigurationItemsFromApplication(params).promise().toFuture
-    @inline def getDiscoverySummaryFuture(params: GetDiscoverySummaryRequest): Future[GetDiscoverySummaryResponse] =
-      service.getDiscoverySummary(params).promise().toFuture
-    @inline def listConfigurationsFuture(params: ListConfigurationsRequest): Future[ListConfigurationsResponse] =
-      service.listConfigurations(params).promise().toFuture
-    @inline def listServerNeighborsFuture(params: ListServerNeighborsRequest): Future[ListServerNeighborsResponse] =
-      service.listServerNeighbors(params).promise().toFuture
-    @inline def startContinuousExportFuture(
-        params: StartContinuousExportRequest
-    ): Future[StartContinuousExportResponse] = service.startContinuousExport(params).promise().toFuture
-    @inline def startDataCollectionByAgentIdsFuture(
-        params: StartDataCollectionByAgentIdsRequest
-    ): Future[StartDataCollectionByAgentIdsResponse] = service.startDataCollectionByAgentIds(params).promise().toFuture
-    @inline def startExportTaskFuture(params: StartExportTaskRequest): Future[StartExportTaskResponse] =
-      service.startExportTask(params).promise().toFuture
-    @inline def startImportTaskFuture(params: StartImportTaskRequest): Future[StartImportTaskResponse] =
-      service.startImportTask(params).promise().toFuture
-    @inline def stopContinuousExportFuture(params: StopContinuousExportRequest): Future[StopContinuousExportResponse] =
-      service.stopContinuousExport(params).promise().toFuture
-    @inline def stopDataCollectionByAgentIdsFuture(
-        params: StopDataCollectionByAgentIdsRequest
-    ): Future[StopDataCollectionByAgentIdsResponse] = service.stopDataCollectionByAgentIds(params).promise().toFuture
-    @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] =
-      service.updateApplication(params).promise().toFuture
+    @inline def associateConfigurationItemsToApplicationFuture(params: AssociateConfigurationItemsToApplicationRequest): Future[AssociateConfigurationItemsToApplicationResponse] = service.associateConfigurationItemsToApplication(params).promise().toFuture
+    @inline def batchDeleteImportDataFuture(params: BatchDeleteImportDataRequest): Future[BatchDeleteImportDataResponse] = service.batchDeleteImportData(params).promise().toFuture
+    @inline def createApplicationFuture(params: CreateApplicationRequest): Future[CreateApplicationResponse] = service.createApplication(params).promise().toFuture
+    @inline def createTagsFuture(params: CreateTagsRequest): Future[CreateTagsResponse] = service.createTags(params).promise().toFuture
+    @inline def deleteApplicationsFuture(params: DeleteApplicationsRequest): Future[DeleteApplicationsResponse] = service.deleteApplications(params).promise().toFuture
+    @inline def deleteTagsFuture(params: DeleteTagsRequest): Future[DeleteTagsResponse] = service.deleteTags(params).promise().toFuture
+    @inline def describeAgentsFuture(params: DescribeAgentsRequest): Future[DescribeAgentsResponse] = service.describeAgents(params).promise().toFuture
+    @inline def describeConfigurationsFuture(params: DescribeConfigurationsRequest): Future[DescribeConfigurationsResponse] = service.describeConfigurations(params).promise().toFuture
+    @inline def describeContinuousExportsFuture(params: DescribeContinuousExportsRequest): Future[DescribeContinuousExportsResponse] = service.describeContinuousExports(params).promise().toFuture
+    @inline def describeExportTasksFuture(params: DescribeExportTasksRequest): Future[DescribeExportTasksResponse] = service.describeExportTasks(params).promise().toFuture
+    @inline def describeImportTasksFuture(params: DescribeImportTasksRequest): Future[DescribeImportTasksResponse] = service.describeImportTasks(params).promise().toFuture
+    @inline def describeTagsFuture(params: DescribeTagsRequest): Future[DescribeTagsResponse] = service.describeTags(params).promise().toFuture
+    @inline def disassociateConfigurationItemsFromApplicationFuture(params: DisassociateConfigurationItemsFromApplicationRequest): Future[DisassociateConfigurationItemsFromApplicationResponse] = service.disassociateConfigurationItemsFromApplication(params).promise().toFuture
+    @inline def getDiscoverySummaryFuture(params: GetDiscoverySummaryRequest): Future[GetDiscoverySummaryResponse] = service.getDiscoverySummary(params).promise().toFuture
+    @inline def listConfigurationsFuture(params: ListConfigurationsRequest): Future[ListConfigurationsResponse] = service.listConfigurations(params).promise().toFuture
+    @inline def listServerNeighborsFuture(params: ListServerNeighborsRequest): Future[ListServerNeighborsResponse] = service.listServerNeighbors(params).promise().toFuture
+    @inline def startContinuousExportFuture(params: StartContinuousExportRequest): Future[StartContinuousExportResponse] = service.startContinuousExport(params).promise().toFuture
+    @inline def startDataCollectionByAgentIdsFuture(params: StartDataCollectionByAgentIdsRequest): Future[StartDataCollectionByAgentIdsResponse] = service.startDataCollectionByAgentIds(params).promise().toFuture
+    @inline def startExportTaskFuture(params: StartExportTaskRequest): Future[StartExportTaskResponse] = service.startExportTask(params).promise().toFuture
+    @inline def startImportTaskFuture(params: StartImportTaskRequest): Future[StartImportTaskResponse] = service.startImportTask(params).promise().toFuture
+    @inline def stopContinuousExportFuture(params: StopContinuousExportRequest): Future[StopContinuousExportResponse] = service.stopContinuousExport(params).promise().toFuture
+    @inline def stopDataCollectionByAgentIdsFuture(params: StopDataCollectionByAgentIdsRequest): Future[StopDataCollectionByAgentIdsResponse] = service.stopDataCollectionByAgentIds(params).promise().toFuture
+    @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] = service.updateApplication(params).promise().toFuture
   }
 }
 
@@ -131,45 +98,31 @@ package applicationdiscovery {
   class ApplicationDiscovery() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def associateConfigurationItemsToApplication(
-        params: AssociateConfigurationItemsToApplicationRequest
-    ): Request[AssociateConfigurationItemsToApplicationResponse] = js.native
+    def associateConfigurationItemsToApplication(params: AssociateConfigurationItemsToApplicationRequest): Request[AssociateConfigurationItemsToApplicationResponse] = js.native
     def batchDeleteImportData(params: BatchDeleteImportDataRequest): Request[BatchDeleteImportDataResponse] = js.native
     def createApplication(params: CreateApplicationRequest): Request[CreateApplicationResponse] = js.native
     def createTags(params: CreateTagsRequest): Request[CreateTagsResponse] = js.native
     def deleteApplications(params: DeleteApplicationsRequest): Request[DeleteApplicationsResponse] = js.native
     def deleteTags(params: DeleteTagsRequest): Request[DeleteTagsResponse] = js.native
     def describeAgents(params: DescribeAgentsRequest): Request[DescribeAgentsResponse] = js.native
-    def describeConfigurations(params: DescribeConfigurationsRequest): Request[DescribeConfigurationsResponse] =
-      js.native
-    def describeContinuousExports(
-        params: DescribeContinuousExportsRequest
-    ): Request[DescribeContinuousExportsResponse] = js.native
+    def describeConfigurations(params: DescribeConfigurationsRequest): Request[DescribeConfigurationsResponse] = js.native
+    def describeContinuousExports(params: DescribeContinuousExportsRequest): Request[DescribeContinuousExportsResponse] = js.native
     def describeExportTasks(params: DescribeExportTasksRequest): Request[DescribeExportTasksResponse] = js.native
     def describeImportTasks(params: DescribeImportTasksRequest): Request[DescribeImportTasksResponse] = js.native
     def describeTags(params: DescribeTagsRequest): Request[DescribeTagsResponse] = js.native
-    def disassociateConfigurationItemsFromApplication(
-        params: DisassociateConfigurationItemsFromApplicationRequest
-    ): Request[DisassociateConfigurationItemsFromApplicationResponse] = js.native
+    def disassociateConfigurationItemsFromApplication(params: DisassociateConfigurationItemsFromApplicationRequest): Request[DisassociateConfigurationItemsFromApplicationResponse] = js.native
     def getDiscoverySummary(params: GetDiscoverySummaryRequest): Request[GetDiscoverySummaryResponse] = js.native
     def listConfigurations(params: ListConfigurationsRequest): Request[ListConfigurationsResponse] = js.native
     def listServerNeighbors(params: ListServerNeighborsRequest): Request[ListServerNeighborsResponse] = js.native
     def startContinuousExport(params: StartContinuousExportRequest): Request[StartContinuousExportResponse] = js.native
-    def startDataCollectionByAgentIds(
-        params: StartDataCollectionByAgentIdsRequest
-    ): Request[StartDataCollectionByAgentIdsResponse] = js.native
+    def startDataCollectionByAgentIds(params: StartDataCollectionByAgentIdsRequest): Request[StartDataCollectionByAgentIdsResponse] = js.native
     def startExportTask(params: StartExportTaskRequest): Request[StartExportTaskResponse] = js.native
     def startImportTask(params: StartImportTaskRequest): Request[StartImportTaskResponse] = js.native
     def stopContinuousExport(params: StopContinuousExportRequest): Request[StopContinuousExportResponse] = js.native
-    def stopDataCollectionByAgentIds(
-        params: StopDataCollectionByAgentIdsRequest
-    ): Request[StopDataCollectionByAgentIdsResponse] = js.native
+    def stopDataCollectionByAgentIds(params: StopDataCollectionByAgentIdsRequest): Request[StopDataCollectionByAgentIdsResponse] = js.native
     def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResponse] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def describeExportConfigurations(
-        params: DescribeExportConfigurationsRequest
-    ): Request[DescribeExportConfigurationsResponse] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def exportConfigurations(): Request[ExportConfigurationsResponse] =
-      js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def describeExportConfigurations(params: DescribeExportConfigurationsRequest): Request[DescribeExportConfigurationsResponse] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def exportConfigurations(): Request[ExportConfigurationsResponse] = js.native
   }
 
   /**
@@ -474,9 +427,7 @@ package applicationdiscovery {
     val STOP_FAILED = "STOP_FAILED".asInstanceOf[ContinuousExportStatus]
     val INACTIVE = "INACTIVE".asInstanceOf[ContinuousExportStatus]
 
-    val values = js.Object.freeze(
-      js.Array(START_IN_PROGRESS, START_FAILED, ACTIVE, ERROR, STOP_IN_PROGRESS, STOP_FAILED, INACTIVE)
-    )
+    val values = js.Object.freeze(js.Array(START_IN_PROGRESS, START_FAILED, ACTIVE, ERROR, STOP_IN_PROGRESS, STOP_FAILED, INACTIVE))
   }
 
   @js.native
@@ -1107,9 +1058,7 @@ package applicationdiscovery {
         "statusMessage" -> statusMessage.asInstanceOf[js.Any]
       )
 
-      configurationsDownloadUrl.foreach(__v =>
-        __obj.updateDynamic("configurationsDownloadUrl")(__v.asInstanceOf[js.Any])
-      )
+      configurationsDownloadUrl.foreach(__v => __obj.updateDynamic("configurationsDownloadUrl")(__v.asInstanceOf[js.Any]))
       isTruncated.foreach(__v => __obj.updateDynamic("isTruncated")(__v.asInstanceOf[js.Any]))
       requestedEndTime.foreach(__v => __obj.updateDynamic("requestedEndTime")(__v.asInstanceOf[js.Any]))
       requestedStartTime.foreach(__v => __obj.updateDynamic("requestedStartTime")(__v.asInstanceOf[js.Any]))
@@ -1193,9 +1142,7 @@ package applicationdiscovery {
       applications.foreach(__v => __obj.updateDynamic("applications")(__v.asInstanceOf[js.Any]))
       connectorSummary.foreach(__v => __obj.updateDynamic("connectorSummary")(__v.asInstanceOf[js.Any]))
       servers.foreach(__v => __obj.updateDynamic("servers")(__v.asInstanceOf[js.Any]))
-      serversMappedToApplications.foreach(__v =>
-        __obj.updateDynamic("serversMappedToApplications")(__v.asInstanceOf[js.Any])
-      )
+      serversMappedToApplications.foreach(__v => __obj.updateDynamic("serversMappedToApplications")(__v.asInstanceOf[js.Any]))
       serversMappedtoTags.foreach(__v => __obj.updateDynamic("serversMappedtoTags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDiscoverySummaryResponse]
     }
@@ -1216,21 +1163,19 @@ package applicationdiscovery {
     val DELETE_FAILED_LIMIT_EXCEEDED = "DELETE_FAILED_LIMIT_EXCEEDED".asInstanceOf[ImportStatus]
     val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[ImportStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        IMPORT_IN_PROGRESS,
-        IMPORT_COMPLETE,
-        IMPORT_COMPLETE_WITH_ERRORS,
-        IMPORT_FAILED,
-        IMPORT_FAILED_SERVER_LIMIT_EXCEEDED,
-        IMPORT_FAILED_RECORD_LIMIT_EXCEEDED,
-        DELETE_IN_PROGRESS,
-        DELETE_COMPLETE,
-        DELETE_FAILED,
-        DELETE_FAILED_LIMIT_EXCEEDED,
-        INTERNAL_ERROR
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      IMPORT_IN_PROGRESS,
+      IMPORT_COMPLETE,
+      IMPORT_COMPLETE_WITH_ERRORS,
+      IMPORT_FAILED,
+      IMPORT_FAILED_SERVER_LIMIT_EXCEEDED,
+      IMPORT_FAILED_RECORD_LIMIT_EXCEEDED,
+      DELETE_IN_PROGRESS,
+      DELETE_COMPLETE,
+      DELETE_FAILED,
+      DELETE_FAILED_LIMIT_EXCEEDED,
+      INTERNAL_ERROR
+    ))
   }
 
   /**
@@ -1274,9 +1219,7 @@ package applicationdiscovery {
       applicationImportFailure.foreach(__v => __obj.updateDynamic("applicationImportFailure")(__v.asInstanceOf[js.Any]))
       applicationImportSuccess.foreach(__v => __obj.updateDynamic("applicationImportSuccess")(__v.asInstanceOf[js.Any]))
       clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
-      errorsAndFailedEntriesZip.foreach(__v =>
-        __obj.updateDynamic("errorsAndFailedEntriesZip")(__v.asInstanceOf[js.Any])
-      )
+      errorsAndFailedEntriesZip.foreach(__v => __obj.updateDynamic("errorsAndFailedEntriesZip")(__v.asInstanceOf[js.Any]))
       importCompletionTime.foreach(__v => __obj.updateDynamic("importCompletionTime")(__v.asInstanceOf[js.Any]))
       importDeletedTime.foreach(__v => __obj.updateDynamic("importDeletedTime")(__v.asInstanceOf[js.Any]))
       importRequestTime.foreach(__v => __obj.updateDynamic("importRequestTime")(__v.asInstanceOf[js.Any]))
@@ -1554,9 +1497,7 @@ package applicationdiscovery {
         agentsConfigurationStatus: js.UndefOr[AgentConfigurationStatusList] = js.undefined
     ): StartDataCollectionByAgentIdsResponse = {
       val __obj = js.Dynamic.literal()
-      agentsConfigurationStatus.foreach(__v =>
-        __obj.updateDynamic("agentsConfigurationStatus")(__v.asInstanceOf[js.Any])
-      )
+      agentsConfigurationStatus.foreach(__v => __obj.updateDynamic("agentsConfigurationStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartDataCollectionByAgentIdsResponse]
     }
   }
@@ -1708,9 +1649,7 @@ package applicationdiscovery {
         agentsConfigurationStatus: js.UndefOr[AgentConfigurationStatusList] = js.undefined
     ): StopDataCollectionByAgentIdsResponse = {
       val __obj = js.Dynamic.literal()
-      agentsConfigurationStatus.foreach(__v =>
-        __obj.updateDynamic("agentsConfigurationStatus")(__v.asInstanceOf[js.Any])
-      )
+      agentsConfigurationStatus.foreach(__v => __obj.updateDynamic("agentsConfigurationStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopDataCollectionByAgentIdsResponse]
     }
   }

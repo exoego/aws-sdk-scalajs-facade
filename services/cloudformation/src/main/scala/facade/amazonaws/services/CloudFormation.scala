@@ -168,127 +168,61 @@ package object cloudformation {
 
   implicit final class CloudFormationOps(private val service: CloudFormation) extends AnyVal {
 
-    @inline def cancelUpdateStackFuture(params: CancelUpdateStackInput): Future[js.Object] =
-      service.cancelUpdateStack(params).promise().toFuture
-    @inline def continueUpdateRollbackFuture(
-        params: ContinueUpdateRollbackInput
-    ): Future[ContinueUpdateRollbackOutput] = service.continueUpdateRollback(params).promise().toFuture
-    @inline def createChangeSetFuture(params: CreateChangeSetInput): Future[CreateChangeSetOutput] =
-      service.createChangeSet(params).promise().toFuture
-    @inline def createStackFuture(params: CreateStackInput): Future[CreateStackOutput] =
-      service.createStack(params).promise().toFuture
-    @inline def createStackInstancesFuture(params: CreateStackInstancesInput): Future[CreateStackInstancesOutput] =
-      service.createStackInstances(params).promise().toFuture
-    @inline def createStackSetFuture(params: CreateStackSetInput): Future[CreateStackSetOutput] =
-      service.createStackSet(params).promise().toFuture
-    @inline def deleteChangeSetFuture(params: DeleteChangeSetInput): Future[DeleteChangeSetOutput] =
-      service.deleteChangeSet(params).promise().toFuture
-    @inline def deleteStackFuture(params: DeleteStackInput): Future[js.Object] =
-      service.deleteStack(params).promise().toFuture
-    @inline def deleteStackInstancesFuture(params: DeleteStackInstancesInput): Future[DeleteStackInstancesOutput] =
-      service.deleteStackInstances(params).promise().toFuture
-    @inline def deleteStackSetFuture(params: DeleteStackSetInput): Future[DeleteStackSetOutput] =
-      service.deleteStackSet(params).promise().toFuture
-    @inline def deregisterTypeFuture(params: DeregisterTypeInput): Future[DeregisterTypeOutput] =
-      service.deregisterType(params).promise().toFuture
-    @inline def describeAccountLimitsFuture(params: DescribeAccountLimitsInput): Future[DescribeAccountLimitsOutput] =
-      service.describeAccountLimits(params).promise().toFuture
-    @inline def describeChangeSetFuture(params: DescribeChangeSetInput): Future[DescribeChangeSetOutput] =
-      service.describeChangeSet(params).promise().toFuture
-    @inline def describeStackDriftDetectionStatusFuture(
-        params: DescribeStackDriftDetectionStatusInput
-    ): Future[DescribeStackDriftDetectionStatusOutput] =
-      service.describeStackDriftDetectionStatus(params).promise().toFuture
-    @inline def describeStackEventsFuture(params: DescribeStackEventsInput): Future[DescribeStackEventsOutput] =
-      service.describeStackEvents(params).promise().toFuture
-    @inline def describeStackInstanceFuture(params: DescribeStackInstanceInput): Future[DescribeStackInstanceOutput] =
-      service.describeStackInstance(params).promise().toFuture
-    @inline def describeStackResourceDriftsFuture(
-        params: DescribeStackResourceDriftsInput
-    ): Future[DescribeStackResourceDriftsOutput] = service.describeStackResourceDrifts(params).promise().toFuture
-    @inline def describeStackResourceFuture(params: DescribeStackResourceInput): Future[DescribeStackResourceOutput] =
-      service.describeStackResource(params).promise().toFuture
-    @inline def describeStackResourcesFuture(
-        params: DescribeStackResourcesInput
-    ): Future[DescribeStackResourcesOutput] = service.describeStackResources(params).promise().toFuture
-    @inline def describeStackSetFuture(params: DescribeStackSetInput): Future[DescribeStackSetOutput] =
-      service.describeStackSet(params).promise().toFuture
-    @inline def describeStackSetOperationFuture(
-        params: DescribeStackSetOperationInput
-    ): Future[DescribeStackSetOperationOutput] = service.describeStackSetOperation(params).promise().toFuture
-    @inline def describeStacksFuture(params: DescribeStacksInput): Future[DescribeStacksOutput] =
-      service.describeStacks(params).promise().toFuture
-    @inline def describeTypeFuture(params: DescribeTypeInput): Future[DescribeTypeOutput] =
-      service.describeType(params).promise().toFuture
-    @inline def describeTypeRegistrationFuture(
-        params: DescribeTypeRegistrationInput
-    ): Future[DescribeTypeRegistrationOutput] = service.describeTypeRegistration(params).promise().toFuture
-    @inline def detectStackDriftFuture(params: DetectStackDriftInput): Future[DetectStackDriftOutput] =
-      service.detectStackDrift(params).promise().toFuture
-    @inline def detectStackResourceDriftFuture(
-        params: DetectStackResourceDriftInput
-    ): Future[DetectStackResourceDriftOutput] = service.detectStackResourceDrift(params).promise().toFuture
-    @inline def detectStackSetDriftFuture(params: DetectStackSetDriftInput): Future[DetectStackSetDriftOutput] =
-      service.detectStackSetDrift(params).promise().toFuture
-    @inline def estimateTemplateCostFuture(params: EstimateTemplateCostInput): Future[EstimateTemplateCostOutput] =
-      service.estimateTemplateCost(params).promise().toFuture
-    @inline def executeChangeSetFuture(params: ExecuteChangeSetInput): Future[ExecuteChangeSetOutput] =
-      service.executeChangeSet(params).promise().toFuture
-    @inline def getStackPolicyFuture(params: GetStackPolicyInput): Future[GetStackPolicyOutput] =
-      service.getStackPolicy(params).promise().toFuture
-    @inline def getTemplateFuture(params: GetTemplateInput): Future[GetTemplateOutput] =
-      service.getTemplate(params).promise().toFuture
-    @inline def getTemplateSummaryFuture(params: GetTemplateSummaryInput): Future[GetTemplateSummaryOutput] =
-      service.getTemplateSummary(params).promise().toFuture
-    @inline def listChangeSetsFuture(params: ListChangeSetsInput): Future[ListChangeSetsOutput] =
-      service.listChangeSets(params).promise().toFuture
-    @inline def listExportsFuture(params: ListExportsInput): Future[ListExportsOutput] =
-      service.listExports(params).promise().toFuture
-    @inline def listImportsFuture(params: ListImportsInput): Future[ListImportsOutput] =
-      service.listImports(params).promise().toFuture
-    @inline def listStackInstancesFuture(params: ListStackInstancesInput): Future[ListStackInstancesOutput] =
-      service.listStackInstances(params).promise().toFuture
-    @inline def listStackResourcesFuture(params: ListStackResourcesInput): Future[ListStackResourcesOutput] =
-      service.listStackResources(params).promise().toFuture
-    @inline def listStackSetOperationResultsFuture(
-        params: ListStackSetOperationResultsInput
-    ): Future[ListStackSetOperationResultsOutput] = service.listStackSetOperationResults(params).promise().toFuture
-    @inline def listStackSetOperationsFuture(
-        params: ListStackSetOperationsInput
-    ): Future[ListStackSetOperationsOutput] = service.listStackSetOperations(params).promise().toFuture
-    @inline def listStackSetsFuture(params: ListStackSetsInput): Future[ListStackSetsOutput] =
-      service.listStackSets(params).promise().toFuture
-    @inline def listStacksFuture(params: ListStacksInput): Future[ListStacksOutput] =
-      service.listStacks(params).promise().toFuture
-    @inline def listTypeRegistrationsFuture(params: ListTypeRegistrationsInput): Future[ListTypeRegistrationsOutput] =
-      service.listTypeRegistrations(params).promise().toFuture
-    @inline def listTypeVersionsFuture(params: ListTypeVersionsInput): Future[ListTypeVersionsOutput] =
-      service.listTypeVersions(params).promise().toFuture
-    @inline def listTypesFuture(params: ListTypesInput): Future[ListTypesOutput] =
-      service.listTypes(params).promise().toFuture
-    @inline def recordHandlerProgressFuture(params: RecordHandlerProgressInput): Future[RecordHandlerProgressOutput] =
-      service.recordHandlerProgress(params).promise().toFuture
-    @inline def registerTypeFuture(params: RegisterTypeInput): Future[RegisterTypeOutput] =
-      service.registerType(params).promise().toFuture
-    @inline def setStackPolicyFuture(params: SetStackPolicyInput): Future[js.Object] =
-      service.setStackPolicy(params).promise().toFuture
-    @inline def setTypeDefaultVersionFuture(params: SetTypeDefaultVersionInput): Future[SetTypeDefaultVersionOutput] =
-      service.setTypeDefaultVersion(params).promise().toFuture
-    @inline def signalResourceFuture(params: SignalResourceInput): Future[js.Object] =
-      service.signalResource(params).promise().toFuture
-    @inline def stopStackSetOperationFuture(params: StopStackSetOperationInput): Future[StopStackSetOperationOutput] =
-      service.stopStackSetOperation(params).promise().toFuture
-    @inline def updateStackFuture(params: UpdateStackInput): Future[UpdateStackOutput] =
-      service.updateStack(params).promise().toFuture
-    @inline def updateStackInstancesFuture(params: UpdateStackInstancesInput): Future[UpdateStackInstancesOutput] =
-      service.updateStackInstances(params).promise().toFuture
-    @inline def updateStackSetFuture(params: UpdateStackSetInput): Future[UpdateStackSetOutput] =
-      service.updateStackSet(params).promise().toFuture
-    @inline def updateTerminationProtectionFuture(
-        params: UpdateTerminationProtectionInput
-    ): Future[UpdateTerminationProtectionOutput] = service.updateTerminationProtection(params).promise().toFuture
-    @inline def validateTemplateFuture(params: ValidateTemplateInput): Future[ValidateTemplateOutput] =
-      service.validateTemplate(params).promise().toFuture
+    @inline def cancelUpdateStackFuture(params: CancelUpdateStackInput): Future[js.Object] = service.cancelUpdateStack(params).promise().toFuture
+    @inline def continueUpdateRollbackFuture(params: ContinueUpdateRollbackInput): Future[ContinueUpdateRollbackOutput] = service.continueUpdateRollback(params).promise().toFuture
+    @inline def createChangeSetFuture(params: CreateChangeSetInput): Future[CreateChangeSetOutput] = service.createChangeSet(params).promise().toFuture
+    @inline def createStackFuture(params: CreateStackInput): Future[CreateStackOutput] = service.createStack(params).promise().toFuture
+    @inline def createStackInstancesFuture(params: CreateStackInstancesInput): Future[CreateStackInstancesOutput] = service.createStackInstances(params).promise().toFuture
+    @inline def createStackSetFuture(params: CreateStackSetInput): Future[CreateStackSetOutput] = service.createStackSet(params).promise().toFuture
+    @inline def deleteChangeSetFuture(params: DeleteChangeSetInput): Future[DeleteChangeSetOutput] = service.deleteChangeSet(params).promise().toFuture
+    @inline def deleteStackFuture(params: DeleteStackInput): Future[js.Object] = service.deleteStack(params).promise().toFuture
+    @inline def deleteStackInstancesFuture(params: DeleteStackInstancesInput): Future[DeleteStackInstancesOutput] = service.deleteStackInstances(params).promise().toFuture
+    @inline def deleteStackSetFuture(params: DeleteStackSetInput): Future[DeleteStackSetOutput] = service.deleteStackSet(params).promise().toFuture
+    @inline def deregisterTypeFuture(params: DeregisterTypeInput): Future[DeregisterTypeOutput] = service.deregisterType(params).promise().toFuture
+    @inline def describeAccountLimitsFuture(params: DescribeAccountLimitsInput): Future[DescribeAccountLimitsOutput] = service.describeAccountLimits(params).promise().toFuture
+    @inline def describeChangeSetFuture(params: DescribeChangeSetInput): Future[DescribeChangeSetOutput] = service.describeChangeSet(params).promise().toFuture
+    @inline def describeStackDriftDetectionStatusFuture(params: DescribeStackDriftDetectionStatusInput): Future[DescribeStackDriftDetectionStatusOutput] = service.describeStackDriftDetectionStatus(params).promise().toFuture
+    @inline def describeStackEventsFuture(params: DescribeStackEventsInput): Future[DescribeStackEventsOutput] = service.describeStackEvents(params).promise().toFuture
+    @inline def describeStackInstanceFuture(params: DescribeStackInstanceInput): Future[DescribeStackInstanceOutput] = service.describeStackInstance(params).promise().toFuture
+    @inline def describeStackResourceDriftsFuture(params: DescribeStackResourceDriftsInput): Future[DescribeStackResourceDriftsOutput] = service.describeStackResourceDrifts(params).promise().toFuture
+    @inline def describeStackResourceFuture(params: DescribeStackResourceInput): Future[DescribeStackResourceOutput] = service.describeStackResource(params).promise().toFuture
+    @inline def describeStackResourcesFuture(params: DescribeStackResourcesInput): Future[DescribeStackResourcesOutput] = service.describeStackResources(params).promise().toFuture
+    @inline def describeStackSetFuture(params: DescribeStackSetInput): Future[DescribeStackSetOutput] = service.describeStackSet(params).promise().toFuture
+    @inline def describeStackSetOperationFuture(params: DescribeStackSetOperationInput): Future[DescribeStackSetOperationOutput] = service.describeStackSetOperation(params).promise().toFuture
+    @inline def describeStacksFuture(params: DescribeStacksInput): Future[DescribeStacksOutput] = service.describeStacks(params).promise().toFuture
+    @inline def describeTypeFuture(params: DescribeTypeInput): Future[DescribeTypeOutput] = service.describeType(params).promise().toFuture
+    @inline def describeTypeRegistrationFuture(params: DescribeTypeRegistrationInput): Future[DescribeTypeRegistrationOutput] = service.describeTypeRegistration(params).promise().toFuture
+    @inline def detectStackDriftFuture(params: DetectStackDriftInput): Future[DetectStackDriftOutput] = service.detectStackDrift(params).promise().toFuture
+    @inline def detectStackResourceDriftFuture(params: DetectStackResourceDriftInput): Future[DetectStackResourceDriftOutput] = service.detectStackResourceDrift(params).promise().toFuture
+    @inline def detectStackSetDriftFuture(params: DetectStackSetDriftInput): Future[DetectStackSetDriftOutput] = service.detectStackSetDrift(params).promise().toFuture
+    @inline def estimateTemplateCostFuture(params: EstimateTemplateCostInput): Future[EstimateTemplateCostOutput] = service.estimateTemplateCost(params).promise().toFuture
+    @inline def executeChangeSetFuture(params: ExecuteChangeSetInput): Future[ExecuteChangeSetOutput] = service.executeChangeSet(params).promise().toFuture
+    @inline def getStackPolicyFuture(params: GetStackPolicyInput): Future[GetStackPolicyOutput] = service.getStackPolicy(params).promise().toFuture
+    @inline def getTemplateFuture(params: GetTemplateInput): Future[GetTemplateOutput] = service.getTemplate(params).promise().toFuture
+    @inline def getTemplateSummaryFuture(params: GetTemplateSummaryInput): Future[GetTemplateSummaryOutput] = service.getTemplateSummary(params).promise().toFuture
+    @inline def listChangeSetsFuture(params: ListChangeSetsInput): Future[ListChangeSetsOutput] = service.listChangeSets(params).promise().toFuture
+    @inline def listExportsFuture(params: ListExportsInput): Future[ListExportsOutput] = service.listExports(params).promise().toFuture
+    @inline def listImportsFuture(params: ListImportsInput): Future[ListImportsOutput] = service.listImports(params).promise().toFuture
+    @inline def listStackInstancesFuture(params: ListStackInstancesInput): Future[ListStackInstancesOutput] = service.listStackInstances(params).promise().toFuture
+    @inline def listStackResourcesFuture(params: ListStackResourcesInput): Future[ListStackResourcesOutput] = service.listStackResources(params).promise().toFuture
+    @inline def listStackSetOperationResultsFuture(params: ListStackSetOperationResultsInput): Future[ListStackSetOperationResultsOutput] = service.listStackSetOperationResults(params).promise().toFuture
+    @inline def listStackSetOperationsFuture(params: ListStackSetOperationsInput): Future[ListStackSetOperationsOutput] = service.listStackSetOperations(params).promise().toFuture
+    @inline def listStackSetsFuture(params: ListStackSetsInput): Future[ListStackSetsOutput] = service.listStackSets(params).promise().toFuture
+    @inline def listStacksFuture(params: ListStacksInput): Future[ListStacksOutput] = service.listStacks(params).promise().toFuture
+    @inline def listTypeRegistrationsFuture(params: ListTypeRegistrationsInput): Future[ListTypeRegistrationsOutput] = service.listTypeRegistrations(params).promise().toFuture
+    @inline def listTypeVersionsFuture(params: ListTypeVersionsInput): Future[ListTypeVersionsOutput] = service.listTypeVersions(params).promise().toFuture
+    @inline def listTypesFuture(params: ListTypesInput): Future[ListTypesOutput] = service.listTypes(params).promise().toFuture
+    @inline def recordHandlerProgressFuture(params: RecordHandlerProgressInput): Future[RecordHandlerProgressOutput] = service.recordHandlerProgress(params).promise().toFuture
+    @inline def registerTypeFuture(params: RegisterTypeInput): Future[RegisterTypeOutput] = service.registerType(params).promise().toFuture
+    @inline def setStackPolicyFuture(params: SetStackPolicyInput): Future[js.Object] = service.setStackPolicy(params).promise().toFuture
+    @inline def setTypeDefaultVersionFuture(params: SetTypeDefaultVersionInput): Future[SetTypeDefaultVersionOutput] = service.setTypeDefaultVersion(params).promise().toFuture
+    @inline def signalResourceFuture(params: SignalResourceInput): Future[js.Object] = service.signalResource(params).promise().toFuture
+    @inline def stopStackSetOperationFuture(params: StopStackSetOperationInput): Future[StopStackSetOperationOutput] = service.stopStackSetOperation(params).promise().toFuture
+    @inline def updateStackFuture(params: UpdateStackInput): Future[UpdateStackOutput] = service.updateStack(params).promise().toFuture
+    @inline def updateStackInstancesFuture(params: UpdateStackInstancesInput): Future[UpdateStackInstancesOutput] = service.updateStackInstances(params).promise().toFuture
+    @inline def updateStackSetFuture(params: UpdateStackSetInput): Future[UpdateStackSetOutput] = service.updateStackSet(params).promise().toFuture
+    @inline def updateTerminationProtectionFuture(params: UpdateTerminationProtectionInput): Future[UpdateTerminationProtectionOutput] = service.updateTerminationProtection(params).promise().toFuture
+    @inline def validateTemplateFuture(params: ValidateTemplateInput): Future[ValidateTemplateOutput] = service.validateTemplate(params).promise().toFuture
   }
 }
 
@@ -311,26 +245,19 @@ package cloudformation {
     def deregisterType(params: DeregisterTypeInput): Request[DeregisterTypeOutput] = js.native
     def describeAccountLimits(params: DescribeAccountLimitsInput): Request[DescribeAccountLimitsOutput] = js.native
     def describeChangeSet(params: DescribeChangeSetInput): Request[DescribeChangeSetOutput] = js.native
-    def describeStackDriftDetectionStatus(
-        params: DescribeStackDriftDetectionStatusInput
-    ): Request[DescribeStackDriftDetectionStatusOutput] = js.native
+    def describeStackDriftDetectionStatus(params: DescribeStackDriftDetectionStatusInput): Request[DescribeStackDriftDetectionStatusOutput] = js.native
     def describeStackEvents(params: DescribeStackEventsInput): Request[DescribeStackEventsOutput] = js.native
     def describeStackInstance(params: DescribeStackInstanceInput): Request[DescribeStackInstanceOutput] = js.native
     def describeStackResource(params: DescribeStackResourceInput): Request[DescribeStackResourceOutput] = js.native
-    def describeStackResourceDrifts(
-        params: DescribeStackResourceDriftsInput
-    ): Request[DescribeStackResourceDriftsOutput] = js.native
+    def describeStackResourceDrifts(params: DescribeStackResourceDriftsInput): Request[DescribeStackResourceDriftsOutput] = js.native
     def describeStackResources(params: DescribeStackResourcesInput): Request[DescribeStackResourcesOutput] = js.native
     def describeStackSet(params: DescribeStackSetInput): Request[DescribeStackSetOutput] = js.native
-    def describeStackSetOperation(params: DescribeStackSetOperationInput): Request[DescribeStackSetOperationOutput] =
-      js.native
+    def describeStackSetOperation(params: DescribeStackSetOperationInput): Request[DescribeStackSetOperationOutput] = js.native
     def describeStacks(params: DescribeStacksInput): Request[DescribeStacksOutput] = js.native
     def describeType(params: DescribeTypeInput): Request[DescribeTypeOutput] = js.native
-    def describeTypeRegistration(params: DescribeTypeRegistrationInput): Request[DescribeTypeRegistrationOutput] =
-      js.native
+    def describeTypeRegistration(params: DescribeTypeRegistrationInput): Request[DescribeTypeRegistrationOutput] = js.native
     def detectStackDrift(params: DetectStackDriftInput): Request[DetectStackDriftOutput] = js.native
-    def detectStackResourceDrift(params: DetectStackResourceDriftInput): Request[DetectStackResourceDriftOutput] =
-      js.native
+    def detectStackResourceDrift(params: DetectStackResourceDriftInput): Request[DetectStackResourceDriftOutput] = js.native
     def detectStackSetDrift(params: DetectStackSetDriftInput): Request[DetectStackSetDriftOutput] = js.native
     def estimateTemplateCost(params: EstimateTemplateCostInput): Request[EstimateTemplateCostOutput] = js.native
     def executeChangeSet(params: ExecuteChangeSetInput): Request[ExecuteChangeSetOutput] = js.native
@@ -342,9 +269,7 @@ package cloudformation {
     def listImports(params: ListImportsInput): Request[ListImportsOutput] = js.native
     def listStackInstances(params: ListStackInstancesInput): Request[ListStackInstancesOutput] = js.native
     def listStackResources(params: ListStackResourcesInput): Request[ListStackResourcesOutput] = js.native
-    def listStackSetOperationResults(
-        params: ListStackSetOperationResultsInput
-    ): Request[ListStackSetOperationResultsOutput] = js.native
+    def listStackSetOperationResults(params: ListStackSetOperationResultsInput): Request[ListStackSetOperationResultsOutput] = js.native
     def listStackSetOperations(params: ListStackSetOperationsInput): Request[ListStackSetOperationsOutput] = js.native
     def listStackSets(params: ListStackSetsInput): Request[ListStackSetsOutput] = js.native
     def listStacks(params: ListStacksInput): Request[ListStacksOutput] = js.native
@@ -360,9 +285,7 @@ package cloudformation {
     def updateStack(params: UpdateStackInput): Request[UpdateStackOutput] = js.native
     def updateStackInstances(params: UpdateStackInstancesInput): Request[UpdateStackInstancesOutput] = js.native
     def updateStackSet(params: UpdateStackSetInput): Request[UpdateStackSetOutput] = js.native
-    def updateTerminationProtection(
-        params: UpdateTerminationProtectionInput
-    ): Request[UpdateTerminationProtectionOutput] = js.native
+    def updateTerminationProtection(params: UpdateTerminationProtectionInput): Request[UpdateTerminationProtectionOutput] = js.native
     def validateTemplate(params: ValidateTemplateInput): Request[ValidateTemplateOutput] = js.native
   }
 
@@ -444,9 +367,7 @@ package cloudformation {
     ): AutoDeployment = {
       val __obj = js.Dynamic.literal()
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      RetainStacksOnAccountRemoval.foreach(__v =>
-        __obj.updateDynamic("RetainStacksOnAccountRemoval")(__v.asInstanceOf[js.Any])
-      )
+      RetainStacksOnAccountRemoval.foreach(__v => __obj.updateDynamic("RetainStacksOnAccountRemoval")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoDeployment]
     }
   }
@@ -527,8 +448,7 @@ package cloudformation {
     val DELETE_COMPLETE = "DELETE_COMPLETE".asInstanceOf[ChangeSetStatus]
     val FAILED = "FAILED".asInstanceOf[ChangeSetStatus]
 
-    val values =
-      js.Object.freeze(js.Array(CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, DELETE_COMPLETE, FAILED))
+    val values = js.Object.freeze(js.Array(CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, DELETE_COMPLETE, FAILED))
   }
 
   /**
@@ -593,9 +513,7 @@ package cloudformation {
     val DirectModification = "DirectModification".asInstanceOf[ChangeSource]
     val Automatic = "Automatic".asInstanceOf[ChangeSource]
 
-    val values = js.Object.freeze(
-      js.Array(ResourceReference, ParameterReference, ResourceAttribute, DirectModification, Automatic)
-    )
+    val values = js.Object.freeze(js.Array(ResourceReference, ParameterReference, ResourceAttribute, DirectModification, Automatic))
   }
 
   @js.native
@@ -792,9 +710,7 @@ package cloudformation {
       Capabilities.foreach(__v => __obj.updateDynamic("Capabilities")(__v.asInstanceOf[js.Any]))
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
       DisableRollback.foreach(__v => __obj.updateDynamic("DisableRollback")(__v.asInstanceOf[js.Any]))
-      EnableTerminationProtection.foreach(__v =>
-        __obj.updateDynamic("EnableTerminationProtection")(__v.asInstanceOf[js.Any])
-      )
+      EnableTerminationProtection.foreach(__v => __obj.updateDynamic("EnableTerminationProtection")(__v.asInstanceOf[js.Any]))
       NotificationARNs.foreach(__v => __obj.updateDynamic("NotificationARNs")(__v.asInstanceOf[js.Any]))
       OnFailure.foreach(__v => __obj.updateDynamic("OnFailure")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
@@ -1352,9 +1268,7 @@ package cloudformation {
       )
 
       DetectionStatusReason.foreach(__v => __obj.updateDynamic("DetectionStatusReason")(__v.asInstanceOf[js.Any]))
-      DriftedStackResourceCount.foreach(__v =>
-        __obj.updateDynamic("DriftedStackResourceCount")(__v.asInstanceOf[js.Any])
-      )
+      DriftedStackResourceCount.foreach(__v => __obj.updateDynamic("DriftedStackResourceCount")(__v.asInstanceOf[js.Any]))
       StackDriftStatus.foreach(__v => __obj.updateDynamic("StackDriftStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeStackDriftDetectionStatusOutput]
     }
@@ -1466,9 +1380,7 @@ package cloudformation {
 
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      StackResourceDriftStatusFilters.foreach(__v =>
-        __obj.updateDynamic("StackResourceDriftStatusFilters")(__v.asInstanceOf[js.Any])
-      )
+      StackResourceDriftStatusFilters.foreach(__v => __obj.updateDynamic("StackResourceDriftStatusFilters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeStackResourceDriftsInput]
     }
   }
@@ -2059,9 +1971,7 @@ package cloudformation {
     val EXECUTE_FAILED = "EXECUTE_FAILED".asInstanceOf[ExecutionStatus]
     val OBSOLETE = "OBSOLETE".asInstanceOf[ExecutionStatus]
 
-    val values = js.Object.freeze(
-      js.Array(UNAVAILABLE, AVAILABLE, EXECUTE_IN_PROGRESS, EXECUTE_COMPLETE, EXECUTE_FAILED, OBSOLETE)
-    )
+    val values = js.Object.freeze(js.Array(UNAVAILABLE, AVAILABLE, EXECUTE_IN_PROGRESS, EXECUTE_COMPLETE, EXECUTE_FAILED, OBSOLETE))
   }
 
   /**
@@ -2240,9 +2150,7 @@ package cloudformation {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
-      ResourceIdentifierSummaries.foreach(__v =>
-        __obj.updateDynamic("ResourceIdentifierSummaries")(__v.asInstanceOf[js.Any])
-      )
+      ResourceIdentifierSummaries.foreach(__v => __obj.updateDynamic("ResourceIdentifierSummaries")(__v.asInstanceOf[js.Any]))
       ResourceTypes.foreach(__v => __obj.updateDynamic("ResourceTypes")(__v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTemplateSummaryOutput]
@@ -2267,24 +2175,22 @@ package cloudformation {
     val NetworkFailure = "NetworkFailure".asInstanceOf[HandlerErrorCode]
     val InternalFailure = "InternalFailure".asInstanceOf[HandlerErrorCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        NotUpdatable,
-        InvalidRequest,
-        AccessDenied,
-        InvalidCredentials,
-        AlreadyExists,
-        NotFound,
-        ResourceConflict,
-        Throttling,
-        ServiceLimitExceeded,
-        NotStabilized,
-        GeneralServiceException,
-        ServiceInternalError,
-        NetworkFailure,
-        InternalFailure
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      NotUpdatable,
+      InvalidRequest,
+      AccessDenied,
+      InvalidCredentials,
+      AlreadyExists,
+      NotFound,
+      ResourceConflict,
+      Throttling,
+      ServiceLimitExceeded,
+      NotStabilized,
+      GeneralServiceException,
+      ServiceInternalError,
+      NetworkFailure,
+      InternalFailure
+    ))
   }
 
   /**
@@ -3322,26 +3228,24 @@ package cloudformation {
     val IMPORT_ROLLBACK_FAILED = "IMPORT_ROLLBACK_FAILED".asInstanceOf[ResourceStatus]
     val IMPORT_ROLLBACK_COMPLETE = "IMPORT_ROLLBACK_COMPLETE".asInstanceOf[ResourceStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        CREATE_IN_PROGRESS,
-        CREATE_FAILED,
-        CREATE_COMPLETE,
-        DELETE_IN_PROGRESS,
-        DELETE_FAILED,
-        DELETE_COMPLETE,
-        DELETE_SKIPPED,
-        UPDATE_IN_PROGRESS,
-        UPDATE_FAILED,
-        UPDATE_COMPLETE,
-        IMPORT_FAILED,
-        IMPORT_COMPLETE,
-        IMPORT_IN_PROGRESS,
-        IMPORT_ROLLBACK_IN_PROGRESS,
-        IMPORT_ROLLBACK_FAILED,
-        IMPORT_ROLLBACK_COMPLETE
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      CREATE_IN_PROGRESS,
+      CREATE_FAILED,
+      CREATE_COMPLETE,
+      DELETE_IN_PROGRESS,
+      DELETE_FAILED,
+      DELETE_COMPLETE,
+      DELETE_SKIPPED,
+      UPDATE_IN_PROGRESS,
+      UPDATE_FAILED,
+      UPDATE_COMPLETE,
+      IMPORT_FAILED,
+      IMPORT_COMPLETE,
+      IMPORT_IN_PROGRESS,
+      IMPORT_ROLLBACK_IN_PROGRESS,
+      IMPORT_ROLLBACK_FAILED,
+      IMPORT_ROLLBACK_COMPLETE
+    ))
   }
 
   /**
@@ -3605,9 +3509,7 @@ package cloudformation {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       DisableRollback.foreach(__v => __obj.updateDynamic("DisableRollback")(__v.asInstanceOf[js.Any]))
       DriftInformation.foreach(__v => __obj.updateDynamic("DriftInformation")(__v.asInstanceOf[js.Any]))
-      EnableTerminationProtection.foreach(__v =>
-        __obj.updateDynamic("EnableTerminationProtection")(__v.asInstanceOf[js.Any])
-      )
+      EnableTerminationProtection.foreach(__v => __obj.updateDynamic("EnableTerminationProtection")(__v.asInstanceOf[js.Any]))
       LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
       NotificationARNs.foreach(__v => __obj.updateDynamic("NotificationARNs")(__v.asInstanceOf[js.Any]))
       Outputs.foreach(__v => __obj.updateDynamic("Outputs")(__v.asInstanceOf[js.Any]))
@@ -4054,9 +3956,7 @@ package cloudformation {
       ActualProperties.foreach(__v => __obj.updateDynamic("ActualProperties")(__v.asInstanceOf[js.Any]))
       ExpectedProperties.foreach(__v => __obj.updateDynamic("ExpectedProperties")(__v.asInstanceOf[js.Any]))
       PhysicalResourceId.foreach(__v => __obj.updateDynamic("PhysicalResourceId")(__v.asInstanceOf[js.Any]))
-      PhysicalResourceIdContext.foreach(__v =>
-        __obj.updateDynamic("PhysicalResourceIdContext")(__v.asInstanceOf[js.Any])
-      )
+      PhysicalResourceIdContext.foreach(__v => __obj.updateDynamic("PhysicalResourceIdContext")(__v.asInstanceOf[js.Any]))
       PropertyDifferences.foreach(__v => __obj.updateDynamic("PropertyDifferences")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StackResourceDrift]
     }
@@ -4211,9 +4111,7 @@ package cloudformation {
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       PermissionModel.foreach(__v => __obj.updateDynamic("PermissionModel")(__v.asInstanceOf[js.Any]))
       StackSetARN.foreach(__v => __obj.updateDynamic("StackSetARN")(__v.asInstanceOf[js.Any]))
-      StackSetDriftDetectionDetails.foreach(__v =>
-        __obj.updateDynamic("StackSetDriftDetectionDetails")(__v.asInstanceOf[js.Any])
-      )
+      StackSetDriftDetectionDetails.foreach(__v => __obj.updateDynamic("StackSetDriftDetectionDetails")(__v.asInstanceOf[js.Any]))
       StackSetId.foreach(__v => __obj.updateDynamic("StackSetId")(__v.asInstanceOf[js.Any]))
       StackSetName.foreach(__v => __obj.updateDynamic("StackSetName")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -4256,18 +4154,10 @@ package cloudformation {
       val __obj = js.Dynamic.literal()
       DriftDetectionStatus.foreach(__v => __obj.updateDynamic("DriftDetectionStatus")(__v.asInstanceOf[js.Any]))
       DriftStatus.foreach(__v => __obj.updateDynamic("DriftStatus")(__v.asInstanceOf[js.Any]))
-      DriftedStackInstancesCount.foreach(__v =>
-        __obj.updateDynamic("DriftedStackInstancesCount")(__v.asInstanceOf[js.Any])
-      )
-      FailedStackInstancesCount.foreach(__v =>
-        __obj.updateDynamic("FailedStackInstancesCount")(__v.asInstanceOf[js.Any])
-      )
-      InProgressStackInstancesCount.foreach(__v =>
-        __obj.updateDynamic("InProgressStackInstancesCount")(__v.asInstanceOf[js.Any])
-      )
-      InSyncStackInstancesCount.foreach(__v =>
-        __obj.updateDynamic("InSyncStackInstancesCount")(__v.asInstanceOf[js.Any])
-      )
+      DriftedStackInstancesCount.foreach(__v => __obj.updateDynamic("DriftedStackInstancesCount")(__v.asInstanceOf[js.Any]))
+      FailedStackInstancesCount.foreach(__v => __obj.updateDynamic("FailedStackInstancesCount")(__v.asInstanceOf[js.Any]))
+      InProgressStackInstancesCount.foreach(__v => __obj.updateDynamic("InProgressStackInstancesCount")(__v.asInstanceOf[js.Any]))
+      InSyncStackInstancesCount.foreach(__v => __obj.updateDynamic("InSyncStackInstancesCount")(__v.asInstanceOf[js.Any]))
       LastDriftCheckTimestamp.foreach(__v => __obj.updateDynamic("LastDriftCheckTimestamp")(__v.asInstanceOf[js.Any]))
       TotalStackInstancesCount.foreach(__v => __obj.updateDynamic("TotalStackInstancesCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StackSetDriftDetectionDetails]
@@ -4341,9 +4231,7 @@ package cloudformation {
       OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
       OperationPreferences.foreach(__v => __obj.updateDynamic("OperationPreferences")(__v.asInstanceOf[js.Any]))
       RetainStacks.foreach(__v => __obj.updateDynamic("RetainStacks")(__v.asInstanceOf[js.Any]))
-      StackSetDriftDetectionDetails.foreach(__v =>
-        __obj.updateDynamic("StackSetDriftDetectionDetails")(__v.asInstanceOf[js.Any])
-      )
+      StackSetDriftDetectionDetails.foreach(__v => __obj.updateDynamic("StackSetDriftDetectionDetails")(__v.asInstanceOf[js.Any]))
       StackSetId.foreach(__v => __obj.updateDynamic("StackSetId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StackSetOperation]
@@ -4385,9 +4273,7 @@ package cloudformation {
     ): StackSetOperationPreferences = {
       val __obj = js.Dynamic.literal()
       FailureToleranceCount.foreach(__v => __obj.updateDynamic("FailureToleranceCount")(__v.asInstanceOf[js.Any]))
-      FailureTolerancePercentage.foreach(__v =>
-        __obj.updateDynamic("FailureTolerancePercentage")(__v.asInstanceOf[js.Any])
-      )
+      FailureTolerancePercentage.foreach(__v => __obj.updateDynamic("FailureTolerancePercentage")(__v.asInstanceOf[js.Any]))
       MaxConcurrentCount.foreach(__v => __obj.updateDynamic("MaxConcurrentCount")(__v.asInstanceOf[js.Any]))
       MaxConcurrentPercentage.foreach(__v => __obj.updateDynamic("MaxConcurrentPercentage")(__v.asInstanceOf[js.Any]))
       RegionOrder.foreach(__v => __obj.updateDynamic("RegionOrder")(__v.asInstanceOf[js.Any]))
@@ -4551,8 +4437,7 @@ package cloudformation {
     val UPDATE_COMPLETE = "UPDATE_COMPLETE".asInstanceOf[StackStatus]
     val UPDATE_ROLLBACK_IN_PROGRESS = "UPDATE_ROLLBACK_IN_PROGRESS".asInstanceOf[StackStatus]
     val UPDATE_ROLLBACK_FAILED = "UPDATE_ROLLBACK_FAILED".asInstanceOf[StackStatus]
-    val UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS =
-      "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS".asInstanceOf[StackStatus]
+    val UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS = "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS".asInstanceOf[StackStatus]
     val UPDATE_ROLLBACK_COMPLETE = "UPDATE_ROLLBACK_COMPLETE".asInstanceOf[StackStatus]
     val REVIEW_IN_PROGRESS = "REVIEW_IN_PROGRESS".asInstanceOf[StackStatus]
     val IMPORT_IN_PROGRESS = "IMPORT_IN_PROGRESS".asInstanceOf[StackStatus]
@@ -4561,32 +4446,30 @@ package cloudformation {
     val IMPORT_ROLLBACK_FAILED = "IMPORT_ROLLBACK_FAILED".asInstanceOf[StackStatus]
     val IMPORT_ROLLBACK_COMPLETE = "IMPORT_ROLLBACK_COMPLETE".asInstanceOf[StackStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        CREATE_IN_PROGRESS,
-        CREATE_FAILED,
-        CREATE_COMPLETE,
-        ROLLBACK_IN_PROGRESS,
-        ROLLBACK_FAILED,
-        ROLLBACK_COMPLETE,
-        DELETE_IN_PROGRESS,
-        DELETE_FAILED,
-        DELETE_COMPLETE,
-        UPDATE_IN_PROGRESS,
-        UPDATE_COMPLETE_CLEANUP_IN_PROGRESS,
-        UPDATE_COMPLETE,
-        UPDATE_ROLLBACK_IN_PROGRESS,
-        UPDATE_ROLLBACK_FAILED,
-        UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS,
-        UPDATE_ROLLBACK_COMPLETE,
-        REVIEW_IN_PROGRESS,
-        IMPORT_IN_PROGRESS,
-        IMPORT_COMPLETE,
-        IMPORT_ROLLBACK_IN_PROGRESS,
-        IMPORT_ROLLBACK_FAILED,
-        IMPORT_ROLLBACK_COMPLETE
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      CREATE_IN_PROGRESS,
+      CREATE_FAILED,
+      CREATE_COMPLETE,
+      ROLLBACK_IN_PROGRESS,
+      ROLLBACK_FAILED,
+      ROLLBACK_COMPLETE,
+      DELETE_IN_PROGRESS,
+      DELETE_FAILED,
+      DELETE_COMPLETE,
+      UPDATE_IN_PROGRESS,
+      UPDATE_COMPLETE_CLEANUP_IN_PROGRESS,
+      UPDATE_COMPLETE,
+      UPDATE_ROLLBACK_IN_PROGRESS,
+      UPDATE_ROLLBACK_FAILED,
+      UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS,
+      UPDATE_ROLLBACK_COMPLETE,
+      REVIEW_IN_PROGRESS,
+      IMPORT_IN_PROGRESS,
+      IMPORT_COMPLETE,
+      IMPORT_ROLLBACK_IN_PROGRESS,
+      IMPORT_ROLLBACK_FAILED,
+      IMPORT_ROLLBACK_COMPLETE
+    ))
   }
 
   /**
@@ -4861,12 +4744,8 @@ package cloudformation {
       RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
       RollbackConfiguration.foreach(__v => __obj.updateDynamic("RollbackConfiguration")(__v.asInstanceOf[js.Any]))
       StackPolicyBody.foreach(__v => __obj.updateDynamic("StackPolicyBody")(__v.asInstanceOf[js.Any]))
-      StackPolicyDuringUpdateBody.foreach(__v =>
-        __obj.updateDynamic("StackPolicyDuringUpdateBody")(__v.asInstanceOf[js.Any])
-      )
-      StackPolicyDuringUpdateURL.foreach(__v =>
-        __obj.updateDynamic("StackPolicyDuringUpdateURL")(__v.asInstanceOf[js.Any])
-      )
+      StackPolicyDuringUpdateBody.foreach(__v => __obj.updateDynamic("StackPolicyDuringUpdateBody")(__v.asInstanceOf[js.Any]))
+      StackPolicyDuringUpdateURL.foreach(__v => __obj.updateDynamic("StackPolicyDuringUpdateURL")(__v.asInstanceOf[js.Any]))
       StackPolicyURL.foreach(__v => __obj.updateDynamic("StackPolicyURL")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TemplateBody.foreach(__v => __obj.updateDynamic("TemplateBody")(__v.asInstanceOf[js.Any]))

@@ -37,51 +37,27 @@ package object eks {
 
   implicit final class EKSOps(private val service: EKS) extends AnyVal {
 
-    @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
-      service.createCluster(params).promise().toFuture
-    @inline def createFargateProfileFuture(params: CreateFargateProfileRequest): Future[CreateFargateProfileResponse] =
-      service.createFargateProfile(params).promise().toFuture
-    @inline def createNodegroupFuture(params: CreateNodegroupRequest): Future[CreateNodegroupResponse] =
-      service.createNodegroup(params).promise().toFuture
-    @inline def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] =
-      service.deleteCluster(params).promise().toFuture
-    @inline def deleteFargateProfileFuture(params: DeleteFargateProfileRequest): Future[DeleteFargateProfileResponse] =
-      service.deleteFargateProfile(params).promise().toFuture
-    @inline def deleteNodegroupFuture(params: DeleteNodegroupRequest): Future[DeleteNodegroupResponse] =
-      service.deleteNodegroup(params).promise().toFuture
-    @inline def describeClusterFuture(params: DescribeClusterRequest): Future[DescribeClusterResponse] =
-      service.describeCluster(params).promise().toFuture
-    @inline def describeFargateProfileFuture(
-        params: DescribeFargateProfileRequest
-    ): Future[DescribeFargateProfileResponse] = service.describeFargateProfile(params).promise().toFuture
-    @inline def describeNodegroupFuture(params: DescribeNodegroupRequest): Future[DescribeNodegroupResponse] =
-      service.describeNodegroup(params).promise().toFuture
-    @inline def describeUpdateFuture(params: DescribeUpdateRequest): Future[DescribeUpdateResponse] =
-      service.describeUpdate(params).promise().toFuture
-    @inline def listClustersFuture(params: ListClustersRequest): Future[ListClustersResponse] =
-      service.listClusters(params).promise().toFuture
-    @inline def listFargateProfilesFuture(params: ListFargateProfilesRequest): Future[ListFargateProfilesResponse] =
-      service.listFargateProfiles(params).promise().toFuture
-    @inline def listNodegroupsFuture(params: ListNodegroupsRequest): Future[ListNodegroupsResponse] =
-      service.listNodegroups(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listUpdatesFuture(params: ListUpdatesRequest): Future[ListUpdatesResponse] =
-      service.listUpdates(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateClusterConfigFuture(params: UpdateClusterConfigRequest): Future[UpdateClusterConfigResponse] =
-      service.updateClusterConfig(params).promise().toFuture
-    @inline def updateClusterVersionFuture(params: UpdateClusterVersionRequest): Future[UpdateClusterVersionResponse] =
-      service.updateClusterVersion(params).promise().toFuture
-    @inline def updateNodegroupConfigFuture(
-        params: UpdateNodegroupConfigRequest
-    ): Future[UpdateNodegroupConfigResponse] = service.updateNodegroupConfig(params).promise().toFuture
-    @inline def updateNodegroupVersionFuture(
-        params: UpdateNodegroupVersionRequest
-    ): Future[UpdateNodegroupVersionResponse] = service.updateNodegroupVersion(params).promise().toFuture
+    @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] = service.createCluster(params).promise().toFuture
+    @inline def createFargateProfileFuture(params: CreateFargateProfileRequest): Future[CreateFargateProfileResponse] = service.createFargateProfile(params).promise().toFuture
+    @inline def createNodegroupFuture(params: CreateNodegroupRequest): Future[CreateNodegroupResponse] = service.createNodegroup(params).promise().toFuture
+    @inline def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] = service.deleteCluster(params).promise().toFuture
+    @inline def deleteFargateProfileFuture(params: DeleteFargateProfileRequest): Future[DeleteFargateProfileResponse] = service.deleteFargateProfile(params).promise().toFuture
+    @inline def deleteNodegroupFuture(params: DeleteNodegroupRequest): Future[DeleteNodegroupResponse] = service.deleteNodegroup(params).promise().toFuture
+    @inline def describeClusterFuture(params: DescribeClusterRequest): Future[DescribeClusterResponse] = service.describeCluster(params).promise().toFuture
+    @inline def describeFargateProfileFuture(params: DescribeFargateProfileRequest): Future[DescribeFargateProfileResponse] = service.describeFargateProfile(params).promise().toFuture
+    @inline def describeNodegroupFuture(params: DescribeNodegroupRequest): Future[DescribeNodegroupResponse] = service.describeNodegroup(params).promise().toFuture
+    @inline def describeUpdateFuture(params: DescribeUpdateRequest): Future[DescribeUpdateResponse] = service.describeUpdate(params).promise().toFuture
+    @inline def listClustersFuture(params: ListClustersRequest): Future[ListClustersResponse] = service.listClusters(params).promise().toFuture
+    @inline def listFargateProfilesFuture(params: ListFargateProfilesRequest): Future[ListFargateProfilesResponse] = service.listFargateProfiles(params).promise().toFuture
+    @inline def listNodegroupsFuture(params: ListNodegroupsRequest): Future[ListNodegroupsResponse] = service.listNodegroups(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listUpdatesFuture(params: ListUpdatesRequest): Future[ListUpdatesResponse] = service.listUpdates(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateClusterConfigFuture(params: UpdateClusterConfigRequest): Future[UpdateClusterConfigResponse] = service.updateClusterConfig(params).promise().toFuture
+    @inline def updateClusterVersionFuture(params: UpdateClusterVersionRequest): Future[UpdateClusterVersionResponse] = service.updateClusterVersion(params).promise().toFuture
+    @inline def updateNodegroupConfigFuture(params: UpdateNodegroupConfigRequest): Future[UpdateNodegroupConfigResponse] = service.updateNodegroupConfig(params).promise().toFuture
+    @inline def updateNodegroupVersionFuture(params: UpdateNodegroupVersionRequest): Future[UpdateNodegroupVersionResponse] = service.updateNodegroupVersion(params).promise().toFuture
   }
 }
 
@@ -98,8 +74,7 @@ package eks {
     def deleteFargateProfile(params: DeleteFargateProfileRequest): Request[DeleteFargateProfileResponse] = js.native
     def deleteNodegroup(params: DeleteNodegroupRequest): Request[DeleteNodegroupResponse] = js.native
     def describeCluster(params: DescribeClusterRequest): Request[DescribeClusterResponse] = js.native
-    def describeFargateProfile(params: DescribeFargateProfileRequest): Request[DescribeFargateProfileResponse] =
-      js.native
+    def describeFargateProfile(params: DescribeFargateProfileRequest): Request[DescribeFargateProfileResponse] = js.native
     def describeNodegroup(params: DescribeNodegroupRequest): Request[DescribeNodegroupResponse] = js.native
     def describeUpdate(params: DescribeUpdateRequest): Request[DescribeUpdateResponse] = js.native
     def listClusters(params: ListClustersRequest): Request[ListClustersResponse] = js.native
@@ -112,8 +87,7 @@ package eks {
     def updateClusterConfig(params: UpdateClusterConfigRequest): Request[UpdateClusterConfigResponse] = js.native
     def updateClusterVersion(params: UpdateClusterVersionRequest): Request[UpdateClusterVersionResponse] = js.native
     def updateNodegroupConfig(params: UpdateNodegroupConfigRequest): Request[UpdateNodegroupConfigResponse] = js.native
-    def updateNodegroupVersion(params: UpdateNodegroupVersionRequest): Request[UpdateNodegroupVersionResponse] =
-      js.native
+    def updateNodegroupVersion(params: UpdateNodegroupVersionRequest): Request[UpdateNodegroupVersionResponse] = js.native
   }
 
   @js.native
@@ -709,21 +683,19 @@ package eks {
     val PodEvictionFailure = "PodEvictionFailure".asInstanceOf[ErrorCode]
     val InsufficientFreeAddresses = "InsufficientFreeAddresses".asInstanceOf[ErrorCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        SubnetNotFound,
-        SecurityGroupNotFound,
-        EniLimitReached,
-        IpNotAvailable,
-        AccessDenied,
-        OperationNotPermitted,
-        VpcIdNotFound,
-        Unknown,
-        NodeCreationFailure,
-        PodEvictionFailure,
-        InsufficientFreeAddresses
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      SubnetNotFound,
+      SecurityGroupNotFound,
+      EniLimitReached,
+      IpNotAvailable,
+      AccessDenied,
+      OperationNotPermitted,
+      VpcIdNotFound,
+      Unknown,
+      NodeCreationFailure,
+      PodEvictionFailure,
+      InsufficientFreeAddresses
+    ))
   }
 
   /**
@@ -1242,27 +1214,25 @@ package eks {
     val AccessDenied = "AccessDenied".asInstanceOf[NodegroupIssueCode]
     val InternalFailure = "InternalFailure".asInstanceOf[NodegroupIssueCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        AutoScalingGroupNotFound,
-        AutoScalingGroupInvalidConfiguration,
-        Ec2SecurityGroupNotFound,
-        Ec2SecurityGroupDeletionFailure,
-        Ec2LaunchTemplateNotFound,
-        Ec2LaunchTemplateVersionMismatch,
-        Ec2SubnetNotFound,
-        Ec2SubnetInvalidConfiguration,
-        IamInstanceProfileNotFound,
-        IamLimitExceeded,
-        IamNodeRoleNotFound,
-        NodeCreationFailure,
-        AsgInstanceLaunchFailures,
-        InstanceLimitExceeded,
-        InsufficientFreeAddresses,
-        AccessDenied,
-        InternalFailure
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      AutoScalingGroupNotFound,
+      AutoScalingGroupInvalidConfiguration,
+      Ec2SecurityGroupNotFound,
+      Ec2SecurityGroupDeletionFailure,
+      Ec2LaunchTemplateNotFound,
+      Ec2LaunchTemplateVersionMismatch,
+      Ec2SubnetNotFound,
+      Ec2SubnetInvalidConfiguration,
+      IamInstanceProfileNotFound,
+      IamLimitExceeded,
+      IamNodeRoleNotFound,
+      NodeCreationFailure,
+      AsgInstanceLaunchFailures,
+      InstanceLimitExceeded,
+      InsufficientFreeAddresses,
+      AccessDenied,
+      InternalFailure
+    ))
   }
 
   /**
@@ -1282,9 +1252,7 @@ package eks {
     ): NodegroupResources = {
       val __obj = js.Dynamic.literal()
       autoScalingGroups.foreach(__v => __obj.updateDynamic("autoScalingGroups")(__v.asInstanceOf[js.Any]))
-      remoteAccessSecurityGroup.foreach(__v =>
-        __obj.updateDynamic("remoteAccessSecurityGroup")(__v.asInstanceOf[js.Any])
-      )
+      remoteAccessSecurityGroup.foreach(__v => __obj.updateDynamic("remoteAccessSecurityGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NodegroupResources]
     }
   }
@@ -1325,8 +1293,7 @@ package eks {
     val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[NodegroupStatus]
     val DEGRADED = "DEGRADED".asInstanceOf[NodegroupStatus]
 
-    val values =
-      js.Object.freeze(js.Array(CREATING, ACTIVE, UPDATING, DELETING, CREATE_FAILED, DELETE_FAILED, DEGRADED))
+    val values = js.Object.freeze(js.Array(CREATING, ACTIVE, UPDATING, DELETING, CREATE_FAILED, DELETE_FAILED, DEGRADED))
   }
 
   /**
@@ -1729,22 +1696,20 @@ package eks {
     val ReleaseVersion = "ReleaseVersion".asInstanceOf[UpdateParamType]
     val PublicAccessCidrs = "PublicAccessCidrs".asInstanceOf[UpdateParamType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        Version,
-        PlatformVersion,
-        EndpointPrivateAccess,
-        EndpointPublicAccess,
-        ClusterLogging,
-        DesiredSize,
-        LabelsToAdd,
-        LabelsToRemove,
-        MaxSize,
-        MinSize,
-        ReleaseVersion,
-        PublicAccessCidrs
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      Version,
+      PlatformVersion,
+      EndpointPrivateAccess,
+      EndpointPublicAccess,
+      ClusterLogging,
+      DesiredSize,
+      LabelsToAdd,
+      LabelsToRemove,
+      MaxSize,
+      MinSize,
+      ReleaseVersion,
+      PublicAccessCidrs
+    ))
   }
 
   @js.native

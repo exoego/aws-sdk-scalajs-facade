@@ -134,220 +134,95 @@ package object gamelift {
 
   implicit final class GameLiftOps(private val service: GameLift) extends AnyVal {
 
-    @inline def acceptMatchFuture(params: AcceptMatchInput): Future[AcceptMatchOutput] =
-      service.acceptMatch(params).promise().toFuture
-    @inline def claimGameServerFuture(params: ClaimGameServerInput): Future[ClaimGameServerOutput] =
-      service.claimGameServer(params).promise().toFuture
-    @inline def createAliasFuture(params: CreateAliasInput): Future[CreateAliasOutput] =
-      service.createAlias(params).promise().toFuture
-    @inline def createBuildFuture(params: CreateBuildInput): Future[CreateBuildOutput] =
-      service.createBuild(params).promise().toFuture
-    @inline def createFleetFuture(params: CreateFleetInput): Future[CreateFleetOutput] =
-      service.createFleet(params).promise().toFuture
-    @inline def createGameServerGroupFuture(params: CreateGameServerGroupInput): Future[CreateGameServerGroupOutput] =
-      service.createGameServerGroup(params).promise().toFuture
-    @inline def createGameSessionFuture(params: CreateGameSessionInput): Future[CreateGameSessionOutput] =
-      service.createGameSession(params).promise().toFuture
-    @inline def createGameSessionQueueFuture(
-        params: CreateGameSessionQueueInput
-    ): Future[CreateGameSessionQueueOutput] = service.createGameSessionQueue(params).promise().toFuture
-    @inline def createMatchmakingConfigurationFuture(
-        params: CreateMatchmakingConfigurationInput
-    ): Future[CreateMatchmakingConfigurationOutput] = service.createMatchmakingConfiguration(params).promise().toFuture
-    @inline def createMatchmakingRuleSetFuture(
-        params: CreateMatchmakingRuleSetInput
-    ): Future[CreateMatchmakingRuleSetOutput] = service.createMatchmakingRuleSet(params).promise().toFuture
-    @inline def createPlayerSessionFuture(params: CreatePlayerSessionInput): Future[CreatePlayerSessionOutput] =
-      service.createPlayerSession(params).promise().toFuture
-    @inline def createPlayerSessionsFuture(params: CreatePlayerSessionsInput): Future[CreatePlayerSessionsOutput] =
-      service.createPlayerSessions(params).promise().toFuture
-    @inline def createScriptFuture(params: CreateScriptInput): Future[CreateScriptOutput] =
-      service.createScript(params).promise().toFuture
-    @inline def createVpcPeeringAuthorizationFuture(
-        params: CreateVpcPeeringAuthorizationInput
-    ): Future[CreateVpcPeeringAuthorizationOutput] = service.createVpcPeeringAuthorization(params).promise().toFuture
-    @inline def createVpcPeeringConnectionFuture(
-        params: CreateVpcPeeringConnectionInput
-    ): Future[CreateVpcPeeringConnectionOutput] = service.createVpcPeeringConnection(params).promise().toFuture
-    @inline def deleteAliasFuture(params: DeleteAliasInput): Future[js.Object] =
-      service.deleteAlias(params).promise().toFuture
-    @inline def deleteBuildFuture(params: DeleteBuildInput): Future[js.Object] =
-      service.deleteBuild(params).promise().toFuture
-    @inline def deleteFleetFuture(params: DeleteFleetInput): Future[js.Object] =
-      service.deleteFleet(params).promise().toFuture
-    @inline def deleteGameServerGroupFuture(params: DeleteGameServerGroupInput): Future[DeleteGameServerGroupOutput] =
-      service.deleteGameServerGroup(params).promise().toFuture
-    @inline def deleteGameSessionQueueFuture(
-        params: DeleteGameSessionQueueInput
-    ): Future[DeleteGameSessionQueueOutput] = service.deleteGameSessionQueue(params).promise().toFuture
-    @inline def deleteMatchmakingConfigurationFuture(
-        params: DeleteMatchmakingConfigurationInput
-    ): Future[DeleteMatchmakingConfigurationOutput] = service.deleteMatchmakingConfiguration(params).promise().toFuture
-    @inline def deleteMatchmakingRuleSetFuture(
-        params: DeleteMatchmakingRuleSetInput
-    ): Future[DeleteMatchmakingRuleSetOutput] = service.deleteMatchmakingRuleSet(params).promise().toFuture
-    @inline def deleteScalingPolicyFuture(params: DeleteScalingPolicyInput): Future[js.Object] =
-      service.deleteScalingPolicy(params).promise().toFuture
-    @inline def deleteScriptFuture(params: DeleteScriptInput): Future[js.Object] =
-      service.deleteScript(params).promise().toFuture
-    @inline def deleteVpcPeeringAuthorizationFuture(
-        params: DeleteVpcPeeringAuthorizationInput
-    ): Future[DeleteVpcPeeringAuthorizationOutput] = service.deleteVpcPeeringAuthorization(params).promise().toFuture
-    @inline def deleteVpcPeeringConnectionFuture(
-        params: DeleteVpcPeeringConnectionInput
-    ): Future[DeleteVpcPeeringConnectionOutput] = service.deleteVpcPeeringConnection(params).promise().toFuture
-    @inline def deregisterGameServerFuture(params: DeregisterGameServerInput): Future[js.Object] =
-      service.deregisterGameServer(params).promise().toFuture
-    @inline def describeAliasFuture(params: DescribeAliasInput): Future[DescribeAliasOutput] =
-      service.describeAlias(params).promise().toFuture
-    @inline def describeBuildFuture(params: DescribeBuildInput): Future[DescribeBuildOutput] =
-      service.describeBuild(params).promise().toFuture
-    @inline def describeEC2InstanceLimitsFuture(
-        params: DescribeEC2InstanceLimitsInput
-    ): Future[DescribeEC2InstanceLimitsOutput] = service.describeEC2InstanceLimits(params).promise().toFuture
-    @inline def describeFleetAttributesFuture(
-        params: DescribeFleetAttributesInput
-    ): Future[DescribeFleetAttributesOutput] = service.describeFleetAttributes(params).promise().toFuture
-    @inline def describeFleetCapacityFuture(params: DescribeFleetCapacityInput): Future[DescribeFleetCapacityOutput] =
-      service.describeFleetCapacity(params).promise().toFuture
-    @inline def describeFleetEventsFuture(params: DescribeFleetEventsInput): Future[DescribeFleetEventsOutput] =
-      service.describeFleetEvents(params).promise().toFuture
-    @inline def describeFleetPortSettingsFuture(
-        params: DescribeFleetPortSettingsInput
-    ): Future[DescribeFleetPortSettingsOutput] = service.describeFleetPortSettings(params).promise().toFuture
-    @inline def describeFleetUtilizationFuture(
-        params: DescribeFleetUtilizationInput
-    ): Future[DescribeFleetUtilizationOutput] = service.describeFleetUtilization(params).promise().toFuture
-    @inline def describeGameServerFuture(params: DescribeGameServerInput): Future[DescribeGameServerOutput] =
-      service.describeGameServer(params).promise().toFuture
-    @inline def describeGameServerGroupFuture(
-        params: DescribeGameServerGroupInput
-    ): Future[DescribeGameServerGroupOutput] = service.describeGameServerGroup(params).promise().toFuture
-    @inline def describeGameSessionDetailsFuture(
-        params: DescribeGameSessionDetailsInput
-    ): Future[DescribeGameSessionDetailsOutput] = service.describeGameSessionDetails(params).promise().toFuture
-    @inline def describeGameSessionPlacementFuture(
-        params: DescribeGameSessionPlacementInput
-    ): Future[DescribeGameSessionPlacementOutput] = service.describeGameSessionPlacement(params).promise().toFuture
-    @inline def describeGameSessionQueuesFuture(
-        params: DescribeGameSessionQueuesInput
-    ): Future[DescribeGameSessionQueuesOutput] = service.describeGameSessionQueues(params).promise().toFuture
-    @inline def describeGameSessionsFuture(params: DescribeGameSessionsInput): Future[DescribeGameSessionsOutput] =
-      service.describeGameSessions(params).promise().toFuture
-    @inline def describeInstancesFuture(params: DescribeInstancesInput): Future[DescribeInstancesOutput] =
-      service.describeInstances(params).promise().toFuture
-    @inline def describeMatchmakingConfigurationsFuture(
-        params: DescribeMatchmakingConfigurationsInput
-    ): Future[DescribeMatchmakingConfigurationsOutput] =
-      service.describeMatchmakingConfigurations(params).promise().toFuture
-    @inline def describeMatchmakingFuture(params: DescribeMatchmakingInput): Future[DescribeMatchmakingOutput] =
-      service.describeMatchmaking(params).promise().toFuture
-    @inline def describeMatchmakingRuleSetsFuture(
-        params: DescribeMatchmakingRuleSetsInput
-    ): Future[DescribeMatchmakingRuleSetsOutput] = service.describeMatchmakingRuleSets(params).promise().toFuture
-    @inline def describePlayerSessionsFuture(
-        params: DescribePlayerSessionsInput
-    ): Future[DescribePlayerSessionsOutput] = service.describePlayerSessions(params).promise().toFuture
-    @inline def describeRuntimeConfigurationFuture(
-        params: DescribeRuntimeConfigurationInput
-    ): Future[DescribeRuntimeConfigurationOutput] = service.describeRuntimeConfiguration(params).promise().toFuture
-    @inline def describeScalingPoliciesFuture(
-        params: DescribeScalingPoliciesInput
-    ): Future[DescribeScalingPoliciesOutput] = service.describeScalingPolicies(params).promise().toFuture
-    @inline def describeScriptFuture(params: DescribeScriptInput): Future[DescribeScriptOutput] =
-      service.describeScript(params).promise().toFuture
-    @inline def describeVpcPeeringAuthorizationsFuture(
-        params: DescribeVpcPeeringAuthorizationsInput
-    ): Future[DescribeVpcPeeringAuthorizationsOutput] =
-      service.describeVpcPeeringAuthorizations(params).promise().toFuture
-    @inline def describeVpcPeeringConnectionsFuture(
-        params: DescribeVpcPeeringConnectionsInput
-    ): Future[DescribeVpcPeeringConnectionsOutput] = service.describeVpcPeeringConnections(params).promise().toFuture
-    @inline def getGameSessionLogUrlFuture(params: GetGameSessionLogUrlInput): Future[GetGameSessionLogUrlOutput] =
-      service.getGameSessionLogUrl(params).promise().toFuture
-    @inline def getInstanceAccessFuture(params: GetInstanceAccessInput): Future[GetInstanceAccessOutput] =
-      service.getInstanceAccess(params).promise().toFuture
-    @inline def listAliasesFuture(params: ListAliasesInput): Future[ListAliasesOutput] =
-      service.listAliases(params).promise().toFuture
-    @inline def listBuildsFuture(params: ListBuildsInput): Future[ListBuildsOutput] =
-      service.listBuilds(params).promise().toFuture
-    @inline def listFleetsFuture(params: ListFleetsInput): Future[ListFleetsOutput] =
-      service.listFleets(params).promise().toFuture
-    @inline def listGameServerGroupsFuture(params: ListGameServerGroupsInput): Future[ListGameServerGroupsOutput] =
-      service.listGameServerGroups(params).promise().toFuture
-    @inline def listGameServersFuture(params: ListGameServersInput): Future[ListGameServersOutput] =
-      service.listGameServers(params).promise().toFuture
-    @inline def listScriptsFuture(params: ListScriptsInput): Future[ListScriptsOutput] =
-      service.listScripts(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def putScalingPolicyFuture(params: PutScalingPolicyInput): Future[PutScalingPolicyOutput] =
-      service.putScalingPolicy(params).promise().toFuture
-    @inline def registerGameServerFuture(params: RegisterGameServerInput): Future[RegisterGameServerOutput] =
-      service.registerGameServer(params).promise().toFuture
-    @inline def requestUploadCredentialsFuture(
-        params: RequestUploadCredentialsInput
-    ): Future[RequestUploadCredentialsOutput] = service.requestUploadCredentials(params).promise().toFuture
-    @inline def resolveAliasFuture(params: ResolveAliasInput): Future[ResolveAliasOutput] =
-      service.resolveAlias(params).promise().toFuture
-    @inline def resumeGameServerGroupFuture(params: ResumeGameServerGroupInput): Future[ResumeGameServerGroupOutput] =
-      service.resumeGameServerGroup(params).promise().toFuture
-    @inline def searchGameSessionsFuture(params: SearchGameSessionsInput): Future[SearchGameSessionsOutput] =
-      service.searchGameSessions(params).promise().toFuture
-    @inline def startFleetActionsFuture(params: StartFleetActionsInput): Future[StartFleetActionsOutput] =
-      service.startFleetActions(params).promise().toFuture
-    @inline def startGameSessionPlacementFuture(
-        params: StartGameSessionPlacementInput
-    ): Future[StartGameSessionPlacementOutput] = service.startGameSessionPlacement(params).promise().toFuture
-    @inline def startMatchBackfillFuture(params: StartMatchBackfillInput): Future[StartMatchBackfillOutput] =
-      service.startMatchBackfill(params).promise().toFuture
-    @inline def startMatchmakingFuture(params: StartMatchmakingInput): Future[StartMatchmakingOutput] =
-      service.startMatchmaking(params).promise().toFuture
-    @inline def stopFleetActionsFuture(params: StopFleetActionsInput): Future[StopFleetActionsOutput] =
-      service.stopFleetActions(params).promise().toFuture
-    @inline def stopGameSessionPlacementFuture(
-        params: StopGameSessionPlacementInput
-    ): Future[StopGameSessionPlacementOutput] = service.stopGameSessionPlacement(params).promise().toFuture
-    @inline def stopMatchmakingFuture(params: StopMatchmakingInput): Future[StopMatchmakingOutput] =
-      service.stopMatchmaking(params).promise().toFuture
-    @inline def suspendGameServerGroupFuture(
-        params: SuspendGameServerGroupInput
-    ): Future[SuspendGameServerGroupOutput] = service.suspendGameServerGroup(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateAliasFuture(params: UpdateAliasInput): Future[UpdateAliasOutput] =
-      service.updateAlias(params).promise().toFuture
-    @inline def updateBuildFuture(params: UpdateBuildInput): Future[UpdateBuildOutput] =
-      service.updateBuild(params).promise().toFuture
-    @inline def updateFleetAttributesFuture(params: UpdateFleetAttributesInput): Future[UpdateFleetAttributesOutput] =
-      service.updateFleetAttributes(params).promise().toFuture
-    @inline def updateFleetCapacityFuture(params: UpdateFleetCapacityInput): Future[UpdateFleetCapacityOutput] =
-      service.updateFleetCapacity(params).promise().toFuture
-    @inline def updateFleetPortSettingsFuture(
-        params: UpdateFleetPortSettingsInput
-    ): Future[UpdateFleetPortSettingsOutput] = service.updateFleetPortSettings(params).promise().toFuture
-    @inline def updateGameServerFuture(params: UpdateGameServerInput): Future[UpdateGameServerOutput] =
-      service.updateGameServer(params).promise().toFuture
-    @inline def updateGameServerGroupFuture(params: UpdateGameServerGroupInput): Future[UpdateGameServerGroupOutput] =
-      service.updateGameServerGroup(params).promise().toFuture
-    @inline def updateGameSessionFuture(params: UpdateGameSessionInput): Future[UpdateGameSessionOutput] =
-      service.updateGameSession(params).promise().toFuture
-    @inline def updateGameSessionQueueFuture(
-        params: UpdateGameSessionQueueInput
-    ): Future[UpdateGameSessionQueueOutput] = service.updateGameSessionQueue(params).promise().toFuture
-    @inline def updateMatchmakingConfigurationFuture(
-        params: UpdateMatchmakingConfigurationInput
-    ): Future[UpdateMatchmakingConfigurationOutput] = service.updateMatchmakingConfiguration(params).promise().toFuture
-    @inline def updateRuntimeConfigurationFuture(
-        params: UpdateRuntimeConfigurationInput
-    ): Future[UpdateRuntimeConfigurationOutput] = service.updateRuntimeConfiguration(params).promise().toFuture
-    @inline def updateScriptFuture(params: UpdateScriptInput): Future[UpdateScriptOutput] =
-      service.updateScript(params).promise().toFuture
-    @inline def validateMatchmakingRuleSetFuture(
-        params: ValidateMatchmakingRuleSetInput
-    ): Future[ValidateMatchmakingRuleSetOutput] = service.validateMatchmakingRuleSet(params).promise().toFuture
+    @inline def acceptMatchFuture(params: AcceptMatchInput): Future[AcceptMatchOutput] = service.acceptMatch(params).promise().toFuture
+    @inline def claimGameServerFuture(params: ClaimGameServerInput): Future[ClaimGameServerOutput] = service.claimGameServer(params).promise().toFuture
+    @inline def createAliasFuture(params: CreateAliasInput): Future[CreateAliasOutput] = service.createAlias(params).promise().toFuture
+    @inline def createBuildFuture(params: CreateBuildInput): Future[CreateBuildOutput] = service.createBuild(params).promise().toFuture
+    @inline def createFleetFuture(params: CreateFleetInput): Future[CreateFleetOutput] = service.createFleet(params).promise().toFuture
+    @inline def createGameServerGroupFuture(params: CreateGameServerGroupInput): Future[CreateGameServerGroupOutput] = service.createGameServerGroup(params).promise().toFuture
+    @inline def createGameSessionFuture(params: CreateGameSessionInput): Future[CreateGameSessionOutput] = service.createGameSession(params).promise().toFuture
+    @inline def createGameSessionQueueFuture(params: CreateGameSessionQueueInput): Future[CreateGameSessionQueueOutput] = service.createGameSessionQueue(params).promise().toFuture
+    @inline def createMatchmakingConfigurationFuture(params: CreateMatchmakingConfigurationInput): Future[CreateMatchmakingConfigurationOutput] = service.createMatchmakingConfiguration(params).promise().toFuture
+    @inline def createMatchmakingRuleSetFuture(params: CreateMatchmakingRuleSetInput): Future[CreateMatchmakingRuleSetOutput] = service.createMatchmakingRuleSet(params).promise().toFuture
+    @inline def createPlayerSessionFuture(params: CreatePlayerSessionInput): Future[CreatePlayerSessionOutput] = service.createPlayerSession(params).promise().toFuture
+    @inline def createPlayerSessionsFuture(params: CreatePlayerSessionsInput): Future[CreatePlayerSessionsOutput] = service.createPlayerSessions(params).promise().toFuture
+    @inline def createScriptFuture(params: CreateScriptInput): Future[CreateScriptOutput] = service.createScript(params).promise().toFuture
+    @inline def createVpcPeeringAuthorizationFuture(params: CreateVpcPeeringAuthorizationInput): Future[CreateVpcPeeringAuthorizationOutput] = service.createVpcPeeringAuthorization(params).promise().toFuture
+    @inline def createVpcPeeringConnectionFuture(params: CreateVpcPeeringConnectionInput): Future[CreateVpcPeeringConnectionOutput] = service.createVpcPeeringConnection(params).promise().toFuture
+    @inline def deleteAliasFuture(params: DeleteAliasInput): Future[js.Object] = service.deleteAlias(params).promise().toFuture
+    @inline def deleteBuildFuture(params: DeleteBuildInput): Future[js.Object] = service.deleteBuild(params).promise().toFuture
+    @inline def deleteFleetFuture(params: DeleteFleetInput): Future[js.Object] = service.deleteFleet(params).promise().toFuture
+    @inline def deleteGameServerGroupFuture(params: DeleteGameServerGroupInput): Future[DeleteGameServerGroupOutput] = service.deleteGameServerGroup(params).promise().toFuture
+    @inline def deleteGameSessionQueueFuture(params: DeleteGameSessionQueueInput): Future[DeleteGameSessionQueueOutput] = service.deleteGameSessionQueue(params).promise().toFuture
+    @inline def deleteMatchmakingConfigurationFuture(params: DeleteMatchmakingConfigurationInput): Future[DeleteMatchmakingConfigurationOutput] = service.deleteMatchmakingConfiguration(params).promise().toFuture
+    @inline def deleteMatchmakingRuleSetFuture(params: DeleteMatchmakingRuleSetInput): Future[DeleteMatchmakingRuleSetOutput] = service.deleteMatchmakingRuleSet(params).promise().toFuture
+    @inline def deleteScalingPolicyFuture(params: DeleteScalingPolicyInput): Future[js.Object] = service.deleteScalingPolicy(params).promise().toFuture
+    @inline def deleteScriptFuture(params: DeleteScriptInput): Future[js.Object] = service.deleteScript(params).promise().toFuture
+    @inline def deleteVpcPeeringAuthorizationFuture(params: DeleteVpcPeeringAuthorizationInput): Future[DeleteVpcPeeringAuthorizationOutput] = service.deleteVpcPeeringAuthorization(params).promise().toFuture
+    @inline def deleteVpcPeeringConnectionFuture(params: DeleteVpcPeeringConnectionInput): Future[DeleteVpcPeeringConnectionOutput] = service.deleteVpcPeeringConnection(params).promise().toFuture
+    @inline def deregisterGameServerFuture(params: DeregisterGameServerInput): Future[js.Object] = service.deregisterGameServer(params).promise().toFuture
+    @inline def describeAliasFuture(params: DescribeAliasInput): Future[DescribeAliasOutput] = service.describeAlias(params).promise().toFuture
+    @inline def describeBuildFuture(params: DescribeBuildInput): Future[DescribeBuildOutput] = service.describeBuild(params).promise().toFuture
+    @inline def describeEC2InstanceLimitsFuture(params: DescribeEC2InstanceLimitsInput): Future[DescribeEC2InstanceLimitsOutput] = service.describeEC2InstanceLimits(params).promise().toFuture
+    @inline def describeFleetAttributesFuture(params: DescribeFleetAttributesInput): Future[DescribeFleetAttributesOutput] = service.describeFleetAttributes(params).promise().toFuture
+    @inline def describeFleetCapacityFuture(params: DescribeFleetCapacityInput): Future[DescribeFleetCapacityOutput] = service.describeFleetCapacity(params).promise().toFuture
+    @inline def describeFleetEventsFuture(params: DescribeFleetEventsInput): Future[DescribeFleetEventsOutput] = service.describeFleetEvents(params).promise().toFuture
+    @inline def describeFleetPortSettingsFuture(params: DescribeFleetPortSettingsInput): Future[DescribeFleetPortSettingsOutput] = service.describeFleetPortSettings(params).promise().toFuture
+    @inline def describeFleetUtilizationFuture(params: DescribeFleetUtilizationInput): Future[DescribeFleetUtilizationOutput] = service.describeFleetUtilization(params).promise().toFuture
+    @inline def describeGameServerFuture(params: DescribeGameServerInput): Future[DescribeGameServerOutput] = service.describeGameServer(params).promise().toFuture
+    @inline def describeGameServerGroupFuture(params: DescribeGameServerGroupInput): Future[DescribeGameServerGroupOutput] = service.describeGameServerGroup(params).promise().toFuture
+    @inline def describeGameSessionDetailsFuture(params: DescribeGameSessionDetailsInput): Future[DescribeGameSessionDetailsOutput] = service.describeGameSessionDetails(params).promise().toFuture
+    @inline def describeGameSessionPlacementFuture(params: DescribeGameSessionPlacementInput): Future[DescribeGameSessionPlacementOutput] = service.describeGameSessionPlacement(params).promise().toFuture
+    @inline def describeGameSessionQueuesFuture(params: DescribeGameSessionQueuesInput): Future[DescribeGameSessionQueuesOutput] = service.describeGameSessionQueues(params).promise().toFuture
+    @inline def describeGameSessionsFuture(params: DescribeGameSessionsInput): Future[DescribeGameSessionsOutput] = service.describeGameSessions(params).promise().toFuture
+    @inline def describeInstancesFuture(params: DescribeInstancesInput): Future[DescribeInstancesOutput] = service.describeInstances(params).promise().toFuture
+    @inline def describeMatchmakingConfigurationsFuture(params: DescribeMatchmakingConfigurationsInput): Future[DescribeMatchmakingConfigurationsOutput] = service.describeMatchmakingConfigurations(params).promise().toFuture
+    @inline def describeMatchmakingFuture(params: DescribeMatchmakingInput): Future[DescribeMatchmakingOutput] = service.describeMatchmaking(params).promise().toFuture
+    @inline def describeMatchmakingRuleSetsFuture(params: DescribeMatchmakingRuleSetsInput): Future[DescribeMatchmakingRuleSetsOutput] = service.describeMatchmakingRuleSets(params).promise().toFuture
+    @inline def describePlayerSessionsFuture(params: DescribePlayerSessionsInput): Future[DescribePlayerSessionsOutput] = service.describePlayerSessions(params).promise().toFuture
+    @inline def describeRuntimeConfigurationFuture(params: DescribeRuntimeConfigurationInput): Future[DescribeRuntimeConfigurationOutput] = service.describeRuntimeConfiguration(params).promise().toFuture
+    @inline def describeScalingPoliciesFuture(params: DescribeScalingPoliciesInput): Future[DescribeScalingPoliciesOutput] = service.describeScalingPolicies(params).promise().toFuture
+    @inline def describeScriptFuture(params: DescribeScriptInput): Future[DescribeScriptOutput] = service.describeScript(params).promise().toFuture
+    @inline def describeVpcPeeringAuthorizationsFuture(params: DescribeVpcPeeringAuthorizationsInput): Future[DescribeVpcPeeringAuthorizationsOutput] = service.describeVpcPeeringAuthorizations(params).promise().toFuture
+    @inline def describeVpcPeeringConnectionsFuture(params: DescribeVpcPeeringConnectionsInput): Future[DescribeVpcPeeringConnectionsOutput] = service.describeVpcPeeringConnections(params).promise().toFuture
+    @inline def getGameSessionLogUrlFuture(params: GetGameSessionLogUrlInput): Future[GetGameSessionLogUrlOutput] = service.getGameSessionLogUrl(params).promise().toFuture
+    @inline def getInstanceAccessFuture(params: GetInstanceAccessInput): Future[GetInstanceAccessOutput] = service.getInstanceAccess(params).promise().toFuture
+    @inline def listAliasesFuture(params: ListAliasesInput): Future[ListAliasesOutput] = service.listAliases(params).promise().toFuture
+    @inline def listBuildsFuture(params: ListBuildsInput): Future[ListBuildsOutput] = service.listBuilds(params).promise().toFuture
+    @inline def listFleetsFuture(params: ListFleetsInput): Future[ListFleetsOutput] = service.listFleets(params).promise().toFuture
+    @inline def listGameServerGroupsFuture(params: ListGameServerGroupsInput): Future[ListGameServerGroupsOutput] = service.listGameServerGroups(params).promise().toFuture
+    @inline def listGameServersFuture(params: ListGameServersInput): Future[ListGameServersOutput] = service.listGameServers(params).promise().toFuture
+    @inline def listScriptsFuture(params: ListScriptsInput): Future[ListScriptsOutput] = service.listScripts(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def putScalingPolicyFuture(params: PutScalingPolicyInput): Future[PutScalingPolicyOutput] = service.putScalingPolicy(params).promise().toFuture
+    @inline def registerGameServerFuture(params: RegisterGameServerInput): Future[RegisterGameServerOutput] = service.registerGameServer(params).promise().toFuture
+    @inline def requestUploadCredentialsFuture(params: RequestUploadCredentialsInput): Future[RequestUploadCredentialsOutput] = service.requestUploadCredentials(params).promise().toFuture
+    @inline def resolveAliasFuture(params: ResolveAliasInput): Future[ResolveAliasOutput] = service.resolveAlias(params).promise().toFuture
+    @inline def resumeGameServerGroupFuture(params: ResumeGameServerGroupInput): Future[ResumeGameServerGroupOutput] = service.resumeGameServerGroup(params).promise().toFuture
+    @inline def searchGameSessionsFuture(params: SearchGameSessionsInput): Future[SearchGameSessionsOutput] = service.searchGameSessions(params).promise().toFuture
+    @inline def startFleetActionsFuture(params: StartFleetActionsInput): Future[StartFleetActionsOutput] = service.startFleetActions(params).promise().toFuture
+    @inline def startGameSessionPlacementFuture(params: StartGameSessionPlacementInput): Future[StartGameSessionPlacementOutput] = service.startGameSessionPlacement(params).promise().toFuture
+    @inline def startMatchBackfillFuture(params: StartMatchBackfillInput): Future[StartMatchBackfillOutput] = service.startMatchBackfill(params).promise().toFuture
+    @inline def startMatchmakingFuture(params: StartMatchmakingInput): Future[StartMatchmakingOutput] = service.startMatchmaking(params).promise().toFuture
+    @inline def stopFleetActionsFuture(params: StopFleetActionsInput): Future[StopFleetActionsOutput] = service.stopFleetActions(params).promise().toFuture
+    @inline def stopGameSessionPlacementFuture(params: StopGameSessionPlacementInput): Future[StopGameSessionPlacementOutput] = service.stopGameSessionPlacement(params).promise().toFuture
+    @inline def stopMatchmakingFuture(params: StopMatchmakingInput): Future[StopMatchmakingOutput] = service.stopMatchmaking(params).promise().toFuture
+    @inline def suspendGameServerGroupFuture(params: SuspendGameServerGroupInput): Future[SuspendGameServerGroupOutput] = service.suspendGameServerGroup(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateAliasFuture(params: UpdateAliasInput): Future[UpdateAliasOutput] = service.updateAlias(params).promise().toFuture
+    @inline def updateBuildFuture(params: UpdateBuildInput): Future[UpdateBuildOutput] = service.updateBuild(params).promise().toFuture
+    @inline def updateFleetAttributesFuture(params: UpdateFleetAttributesInput): Future[UpdateFleetAttributesOutput] = service.updateFleetAttributes(params).promise().toFuture
+    @inline def updateFleetCapacityFuture(params: UpdateFleetCapacityInput): Future[UpdateFleetCapacityOutput] = service.updateFleetCapacity(params).promise().toFuture
+    @inline def updateFleetPortSettingsFuture(params: UpdateFleetPortSettingsInput): Future[UpdateFleetPortSettingsOutput] = service.updateFleetPortSettings(params).promise().toFuture
+    @inline def updateGameServerFuture(params: UpdateGameServerInput): Future[UpdateGameServerOutput] = service.updateGameServer(params).promise().toFuture
+    @inline def updateGameServerGroupFuture(params: UpdateGameServerGroupInput): Future[UpdateGameServerGroupOutput] = service.updateGameServerGroup(params).promise().toFuture
+    @inline def updateGameSessionFuture(params: UpdateGameSessionInput): Future[UpdateGameSessionOutput] = service.updateGameSession(params).promise().toFuture
+    @inline def updateGameSessionQueueFuture(params: UpdateGameSessionQueueInput): Future[UpdateGameSessionQueueOutput] = service.updateGameSessionQueue(params).promise().toFuture
+    @inline def updateMatchmakingConfigurationFuture(params: UpdateMatchmakingConfigurationInput): Future[UpdateMatchmakingConfigurationOutput] = service.updateMatchmakingConfiguration(params).promise().toFuture
+    @inline def updateRuntimeConfigurationFuture(params: UpdateRuntimeConfigurationInput): Future[UpdateRuntimeConfigurationOutput] = service.updateRuntimeConfiguration(params).promise().toFuture
+    @inline def updateScriptFuture(params: UpdateScriptInput): Future[UpdateScriptOutput] = service.updateScript(params).promise().toFuture
+    @inline def validateMatchmakingRuleSetFuture(params: ValidateMatchmakingRuleSetInput): Future[ValidateMatchmakingRuleSetOutput] = service.validateMatchmakingRuleSet(params).promise().toFuture
   }
 }
 
@@ -365,81 +240,49 @@ package gamelift {
     def createGameServerGroup(params: CreateGameServerGroupInput): Request[CreateGameServerGroupOutput] = js.native
     def createGameSession(params: CreateGameSessionInput): Request[CreateGameSessionOutput] = js.native
     def createGameSessionQueue(params: CreateGameSessionQueueInput): Request[CreateGameSessionQueueOutput] = js.native
-    def createMatchmakingConfiguration(
-        params: CreateMatchmakingConfigurationInput
-    ): Request[CreateMatchmakingConfigurationOutput] = js.native
-    def createMatchmakingRuleSet(params: CreateMatchmakingRuleSetInput): Request[CreateMatchmakingRuleSetOutput] =
-      js.native
+    def createMatchmakingConfiguration(params: CreateMatchmakingConfigurationInput): Request[CreateMatchmakingConfigurationOutput] = js.native
+    def createMatchmakingRuleSet(params: CreateMatchmakingRuleSetInput): Request[CreateMatchmakingRuleSetOutput] = js.native
     def createPlayerSession(params: CreatePlayerSessionInput): Request[CreatePlayerSessionOutput] = js.native
     def createPlayerSessions(params: CreatePlayerSessionsInput): Request[CreatePlayerSessionsOutput] = js.native
     def createScript(params: CreateScriptInput): Request[CreateScriptOutput] = js.native
-    def createVpcPeeringAuthorization(
-        params: CreateVpcPeeringAuthorizationInput
-    ): Request[CreateVpcPeeringAuthorizationOutput] = js.native
-    def createVpcPeeringConnection(params: CreateVpcPeeringConnectionInput): Request[CreateVpcPeeringConnectionOutput] =
-      js.native
+    def createVpcPeeringAuthorization(params: CreateVpcPeeringAuthorizationInput): Request[CreateVpcPeeringAuthorizationOutput] = js.native
+    def createVpcPeeringConnection(params: CreateVpcPeeringConnectionInput): Request[CreateVpcPeeringConnectionOutput] = js.native
     def deleteAlias(params: DeleteAliasInput): Request[js.Object] = js.native
     def deleteBuild(params: DeleteBuildInput): Request[js.Object] = js.native
     def deleteFleet(params: DeleteFleetInput): Request[js.Object] = js.native
     def deleteGameServerGroup(params: DeleteGameServerGroupInput): Request[DeleteGameServerGroupOutput] = js.native
     def deleteGameSessionQueue(params: DeleteGameSessionQueueInput): Request[DeleteGameSessionQueueOutput] = js.native
-    def deleteMatchmakingConfiguration(
-        params: DeleteMatchmakingConfigurationInput
-    ): Request[DeleteMatchmakingConfigurationOutput] = js.native
-    def deleteMatchmakingRuleSet(params: DeleteMatchmakingRuleSetInput): Request[DeleteMatchmakingRuleSetOutput] =
-      js.native
+    def deleteMatchmakingConfiguration(params: DeleteMatchmakingConfigurationInput): Request[DeleteMatchmakingConfigurationOutput] = js.native
+    def deleteMatchmakingRuleSet(params: DeleteMatchmakingRuleSetInput): Request[DeleteMatchmakingRuleSetOutput] = js.native
     def deleteScalingPolicy(params: DeleteScalingPolicyInput): Request[js.Object] = js.native
     def deleteScript(params: DeleteScriptInput): Request[js.Object] = js.native
-    def deleteVpcPeeringAuthorization(
-        params: DeleteVpcPeeringAuthorizationInput
-    ): Request[DeleteVpcPeeringAuthorizationOutput] = js.native
-    def deleteVpcPeeringConnection(params: DeleteVpcPeeringConnectionInput): Request[DeleteVpcPeeringConnectionOutput] =
-      js.native
+    def deleteVpcPeeringAuthorization(params: DeleteVpcPeeringAuthorizationInput): Request[DeleteVpcPeeringAuthorizationOutput] = js.native
+    def deleteVpcPeeringConnection(params: DeleteVpcPeeringConnectionInput): Request[DeleteVpcPeeringConnectionOutput] = js.native
     def deregisterGameServer(params: DeregisterGameServerInput): Request[js.Object] = js.native
     def describeAlias(params: DescribeAliasInput): Request[DescribeAliasOutput] = js.native
     def describeBuild(params: DescribeBuildInput): Request[DescribeBuildOutput] = js.native
-    def describeEC2InstanceLimits(params: DescribeEC2InstanceLimitsInput): Request[DescribeEC2InstanceLimitsOutput] =
-      js.native
-    def describeFleetAttributes(params: DescribeFleetAttributesInput): Request[DescribeFleetAttributesOutput] =
-      js.native
+    def describeEC2InstanceLimits(params: DescribeEC2InstanceLimitsInput): Request[DescribeEC2InstanceLimitsOutput] = js.native
+    def describeFleetAttributes(params: DescribeFleetAttributesInput): Request[DescribeFleetAttributesOutput] = js.native
     def describeFleetCapacity(params: DescribeFleetCapacityInput): Request[DescribeFleetCapacityOutput] = js.native
     def describeFleetEvents(params: DescribeFleetEventsInput): Request[DescribeFleetEventsOutput] = js.native
-    def describeFleetPortSettings(params: DescribeFleetPortSettingsInput): Request[DescribeFleetPortSettingsOutput] =
-      js.native
-    def describeFleetUtilization(params: DescribeFleetUtilizationInput): Request[DescribeFleetUtilizationOutput] =
-      js.native
+    def describeFleetPortSettings(params: DescribeFleetPortSettingsInput): Request[DescribeFleetPortSettingsOutput] = js.native
+    def describeFleetUtilization(params: DescribeFleetUtilizationInput): Request[DescribeFleetUtilizationOutput] = js.native
     def describeGameServer(params: DescribeGameServerInput): Request[DescribeGameServerOutput] = js.native
-    def describeGameServerGroup(params: DescribeGameServerGroupInput): Request[DescribeGameServerGroupOutput] =
-      js.native
-    def describeGameSessionDetails(params: DescribeGameSessionDetailsInput): Request[DescribeGameSessionDetailsOutput] =
-      js.native
-    def describeGameSessionPlacement(
-        params: DescribeGameSessionPlacementInput
-    ): Request[DescribeGameSessionPlacementOutput] = js.native
-    def describeGameSessionQueues(params: DescribeGameSessionQueuesInput): Request[DescribeGameSessionQueuesOutput] =
-      js.native
+    def describeGameServerGroup(params: DescribeGameServerGroupInput): Request[DescribeGameServerGroupOutput] = js.native
+    def describeGameSessionDetails(params: DescribeGameSessionDetailsInput): Request[DescribeGameSessionDetailsOutput] = js.native
+    def describeGameSessionPlacement(params: DescribeGameSessionPlacementInput): Request[DescribeGameSessionPlacementOutput] = js.native
+    def describeGameSessionQueues(params: DescribeGameSessionQueuesInput): Request[DescribeGameSessionQueuesOutput] = js.native
     def describeGameSessions(params: DescribeGameSessionsInput): Request[DescribeGameSessionsOutput] = js.native
     def describeInstances(params: DescribeInstancesInput): Request[DescribeInstancesOutput] = js.native
     def describeMatchmaking(params: DescribeMatchmakingInput): Request[DescribeMatchmakingOutput] = js.native
-    def describeMatchmakingConfigurations(
-        params: DescribeMatchmakingConfigurationsInput
-    ): Request[DescribeMatchmakingConfigurationsOutput] = js.native
-    def describeMatchmakingRuleSets(
-        params: DescribeMatchmakingRuleSetsInput
-    ): Request[DescribeMatchmakingRuleSetsOutput] = js.native
+    def describeMatchmakingConfigurations(params: DescribeMatchmakingConfigurationsInput): Request[DescribeMatchmakingConfigurationsOutput] = js.native
+    def describeMatchmakingRuleSets(params: DescribeMatchmakingRuleSetsInput): Request[DescribeMatchmakingRuleSetsOutput] = js.native
     def describePlayerSessions(params: DescribePlayerSessionsInput): Request[DescribePlayerSessionsOutput] = js.native
-    def describeRuntimeConfiguration(
-        params: DescribeRuntimeConfigurationInput
-    ): Request[DescribeRuntimeConfigurationOutput] = js.native
-    def describeScalingPolicies(params: DescribeScalingPoliciesInput): Request[DescribeScalingPoliciesOutput] =
-      js.native
+    def describeRuntimeConfiguration(params: DescribeRuntimeConfigurationInput): Request[DescribeRuntimeConfigurationOutput] = js.native
+    def describeScalingPolicies(params: DescribeScalingPoliciesInput): Request[DescribeScalingPoliciesOutput] = js.native
     def describeScript(params: DescribeScriptInput): Request[DescribeScriptOutput] = js.native
-    def describeVpcPeeringAuthorizations(
-        params: DescribeVpcPeeringAuthorizationsInput
-    ): Request[DescribeVpcPeeringAuthorizationsOutput] = js.native
-    def describeVpcPeeringConnections(
-        params: DescribeVpcPeeringConnectionsInput
-    ): Request[DescribeVpcPeeringConnectionsOutput] = js.native
+    def describeVpcPeeringAuthorizations(params: DescribeVpcPeeringAuthorizationsInput): Request[DescribeVpcPeeringAuthorizationsOutput] = js.native
+    def describeVpcPeeringConnections(params: DescribeVpcPeeringConnectionsInput): Request[DescribeVpcPeeringConnectionsOutput] = js.native
     def getGameSessionLogUrl(params: GetGameSessionLogUrlInput): Request[GetGameSessionLogUrlOutput] = js.native
     def getInstanceAccess(params: GetInstanceAccessInput): Request[GetInstanceAccessOutput] = js.native
     def listAliases(params: ListAliasesInput): Request[ListAliasesOutput] = js.native
@@ -451,19 +294,16 @@ package gamelift {
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putScalingPolicy(params: PutScalingPolicyInput): Request[PutScalingPolicyOutput] = js.native
     def registerGameServer(params: RegisterGameServerInput): Request[RegisterGameServerOutput] = js.native
-    def requestUploadCredentials(params: RequestUploadCredentialsInput): Request[RequestUploadCredentialsOutput] =
-      js.native
+    def requestUploadCredentials(params: RequestUploadCredentialsInput): Request[RequestUploadCredentialsOutput] = js.native
     def resolveAlias(params: ResolveAliasInput): Request[ResolveAliasOutput] = js.native
     def resumeGameServerGroup(params: ResumeGameServerGroupInput): Request[ResumeGameServerGroupOutput] = js.native
     def searchGameSessions(params: SearchGameSessionsInput): Request[SearchGameSessionsOutput] = js.native
     def startFleetActions(params: StartFleetActionsInput): Request[StartFleetActionsOutput] = js.native
-    def startGameSessionPlacement(params: StartGameSessionPlacementInput): Request[StartGameSessionPlacementOutput] =
-      js.native
+    def startGameSessionPlacement(params: StartGameSessionPlacementInput): Request[StartGameSessionPlacementOutput] = js.native
     def startMatchBackfill(params: StartMatchBackfillInput): Request[StartMatchBackfillOutput] = js.native
     def startMatchmaking(params: StartMatchmakingInput): Request[StartMatchmakingOutput] = js.native
     def stopFleetActions(params: StopFleetActionsInput): Request[StopFleetActionsOutput] = js.native
-    def stopGameSessionPlacement(params: StopGameSessionPlacementInput): Request[StopGameSessionPlacementOutput] =
-      js.native
+    def stopGameSessionPlacement(params: StopGameSessionPlacementInput): Request[StopGameSessionPlacementOutput] = js.native
     def stopMatchmaking(params: StopMatchmakingInput): Request[StopMatchmakingOutput] = js.native
     def suspendGameServerGroup(params: SuspendGameServerGroupInput): Request[SuspendGameServerGroupOutput] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
@@ -472,20 +312,15 @@ package gamelift {
     def updateBuild(params: UpdateBuildInput): Request[UpdateBuildOutput] = js.native
     def updateFleetAttributes(params: UpdateFleetAttributesInput): Request[UpdateFleetAttributesOutput] = js.native
     def updateFleetCapacity(params: UpdateFleetCapacityInput): Request[UpdateFleetCapacityOutput] = js.native
-    def updateFleetPortSettings(params: UpdateFleetPortSettingsInput): Request[UpdateFleetPortSettingsOutput] =
-      js.native
+    def updateFleetPortSettings(params: UpdateFleetPortSettingsInput): Request[UpdateFleetPortSettingsOutput] = js.native
     def updateGameServer(params: UpdateGameServerInput): Request[UpdateGameServerOutput] = js.native
     def updateGameServerGroup(params: UpdateGameServerGroupInput): Request[UpdateGameServerGroupOutput] = js.native
     def updateGameSession(params: UpdateGameSessionInput): Request[UpdateGameSessionOutput] = js.native
     def updateGameSessionQueue(params: UpdateGameSessionQueueInput): Request[UpdateGameSessionQueueOutput] = js.native
-    def updateMatchmakingConfiguration(
-        params: UpdateMatchmakingConfigurationInput
-    ): Request[UpdateMatchmakingConfigurationOutput] = js.native
-    def updateRuntimeConfiguration(params: UpdateRuntimeConfigurationInput): Request[UpdateRuntimeConfigurationOutput] =
-      js.native
+    def updateMatchmakingConfiguration(params: UpdateMatchmakingConfigurationInput): Request[UpdateMatchmakingConfigurationOutput] = js.native
+    def updateRuntimeConfiguration(params: UpdateRuntimeConfigurationInput): Request[UpdateRuntimeConfigurationOutput] = js.native
     def updateScript(params: UpdateScriptInput): Request[UpdateScriptOutput] = js.native
-    def validateMatchmakingRuleSet(params: ValidateMatchmakingRuleSetInput): Request[ValidateMatchmakingRuleSetOutput] =
-      js.native
+    def validateMatchmakingRuleSet(params: ValidateMatchmakingRuleSetInput): Request[ValidateMatchmakingRuleSetOutput] = js.native
   }
 
   /**
@@ -785,9 +620,7 @@ package gamelift {
     val LessThanThreshold = "LessThanThreshold".asInstanceOf[ComparisonOperatorType]
     val LessThanOrEqualToThreshold = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperatorType]
 
-    val values = js.Object.freeze(
-      js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
-    )
+    val values = js.Object.freeze(js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold))
   }
 
   /**
@@ -957,14 +790,10 @@ package gamelift {
       InstanceRoleArn.foreach(__v => __obj.updateDynamic("InstanceRoleArn")(__v.asInstanceOf[js.Any]))
       LogPaths.foreach(__v => __obj.updateDynamic("LogPaths")(__v.asInstanceOf[js.Any]))
       MetricGroups.foreach(__v => __obj.updateDynamic("MetricGroups")(__v.asInstanceOf[js.Any]))
-      NewGameSessionProtectionPolicy.foreach(__v =>
-        __obj.updateDynamic("NewGameSessionProtectionPolicy")(__v.asInstanceOf[js.Any])
-      )
+      NewGameSessionProtectionPolicy.foreach(__v => __obj.updateDynamic("NewGameSessionProtectionPolicy")(__v.asInstanceOf[js.Any]))
       PeerVpcAwsAccountId.foreach(__v => __obj.updateDynamic("PeerVpcAwsAccountId")(__v.asInstanceOf[js.Any]))
       PeerVpcId.foreach(__v => __obj.updateDynamic("PeerVpcId")(__v.asInstanceOf[js.Any]))
-      ResourceCreationLimitPolicy.foreach(__v =>
-        __obj.updateDynamic("ResourceCreationLimitPolicy")(__v.asInstanceOf[js.Any])
-      )
+      ResourceCreationLimitPolicy.foreach(__v => __obj.updateDynamic("ResourceCreationLimitPolicy")(__v.asInstanceOf[js.Any]))
       RuntimeConfiguration.foreach(__v => __obj.updateDynamic("RuntimeConfiguration")(__v.asInstanceOf[js.Any]))
       ScriptId.foreach(__v => __obj.updateDynamic("ScriptId")(__v.asInstanceOf[js.Any]))
       ServerLaunchParameters.foreach(__v => __obj.updateDynamic("ServerLaunchParameters")(__v.asInstanceOf[js.Any]))
@@ -1034,9 +863,7 @@ package gamelift {
 
       AutoScalingPolicy.foreach(__v => __obj.updateDynamic("AutoScalingPolicy")(__v.asInstanceOf[js.Any]))
       BalancingStrategy.foreach(__v => __obj.updateDynamic("BalancingStrategy")(__v.asInstanceOf[js.Any]))
-      GameServerProtectionPolicy.foreach(__v =>
-        __obj.updateDynamic("GameServerProtectionPolicy")(__v.asInstanceOf[js.Any])
-      )
+      GameServerProtectionPolicy.foreach(__v => __obj.updateDynamic("GameServerProtectionPolicy")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       VpcSubnets.foreach(__v => __obj.updateDynamic("VpcSubnets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGameServerGroupInput]
@@ -2707,9 +2534,7 @@ package gamelift {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       PlayerId.foreach(__v => __obj.updateDynamic("PlayerId")(__v.asInstanceOf[js.Any]))
       PlayerSessionId.foreach(__v => __obj.updateDynamic("PlayerSessionId")(__v.asInstanceOf[js.Any]))
-      PlayerSessionStatusFilter.foreach(__v =>
-        __obj.updateDynamic("PlayerSessionStatusFilter")(__v.asInstanceOf[js.Any])
-      )
+      PlayerSessionStatusFilter.foreach(__v => __obj.updateDynamic("PlayerSessionStatusFilter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePlayerSessionsInput]
     }
   }
@@ -3081,68 +2906,66 @@ package gamelift {
     val `m5.16xlarge` = "m5.16xlarge".asInstanceOf[EC2InstanceType]
     val `m5.24xlarge` = "m5.24xlarge".asInstanceOf[EC2InstanceType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `t2.micro`,
-        `t2.small`,
-        `t2.medium`,
-        `t2.large`,
-        `c3.large`,
-        `c3.xlarge`,
-        `c3.2xlarge`,
-        `c3.4xlarge`,
-        `c3.8xlarge`,
-        `c4.large`,
-        `c4.xlarge`,
-        `c4.2xlarge`,
-        `c4.4xlarge`,
-        `c4.8xlarge`,
-        `c5.large`,
-        `c5.xlarge`,
-        `c5.2xlarge`,
-        `c5.4xlarge`,
-        `c5.9xlarge`,
-        `c5.12xlarge`,
-        `c5.18xlarge`,
-        `c5.24xlarge`,
-        `r3.large`,
-        `r3.xlarge`,
-        `r3.2xlarge`,
-        `r3.4xlarge`,
-        `r3.8xlarge`,
-        `r4.large`,
-        `r4.xlarge`,
-        `r4.2xlarge`,
-        `r4.4xlarge`,
-        `r4.8xlarge`,
-        `r4.16xlarge`,
-        `r5.large`,
-        `r5.xlarge`,
-        `r5.2xlarge`,
-        `r5.4xlarge`,
-        `r5.8xlarge`,
-        `r5.12xlarge`,
-        `r5.16xlarge`,
-        `r5.24xlarge`,
-        `m3.medium`,
-        `m3.large`,
-        `m3.xlarge`,
-        `m3.2xlarge`,
-        `m4.large`,
-        `m4.xlarge`,
-        `m4.2xlarge`,
-        `m4.4xlarge`,
-        `m4.10xlarge`,
-        `m5.large`,
-        `m5.xlarge`,
-        `m5.2xlarge`,
-        `m5.4xlarge`,
-        `m5.8xlarge`,
-        `m5.12xlarge`,
-        `m5.16xlarge`,
-        `m5.24xlarge`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      `t2.micro`,
+      `t2.small`,
+      `t2.medium`,
+      `t2.large`,
+      `c3.large`,
+      `c3.xlarge`,
+      `c3.2xlarge`,
+      `c3.4xlarge`,
+      `c3.8xlarge`,
+      `c4.large`,
+      `c4.xlarge`,
+      `c4.2xlarge`,
+      `c4.4xlarge`,
+      `c4.8xlarge`,
+      `c5.large`,
+      `c5.xlarge`,
+      `c5.2xlarge`,
+      `c5.4xlarge`,
+      `c5.9xlarge`,
+      `c5.12xlarge`,
+      `c5.18xlarge`,
+      `c5.24xlarge`,
+      `r3.large`,
+      `r3.xlarge`,
+      `r3.2xlarge`,
+      `r3.4xlarge`,
+      `r3.8xlarge`,
+      `r4.large`,
+      `r4.xlarge`,
+      `r4.2xlarge`,
+      `r4.4xlarge`,
+      `r4.8xlarge`,
+      `r4.16xlarge`,
+      `r5.large`,
+      `r5.xlarge`,
+      `r5.2xlarge`,
+      `r5.4xlarge`,
+      `r5.8xlarge`,
+      `r5.12xlarge`,
+      `r5.16xlarge`,
+      `r5.24xlarge`,
+      `m3.medium`,
+      `m3.large`,
+      `m3.xlarge`,
+      `m3.2xlarge`,
+      `m4.large`,
+      `m4.xlarge`,
+      `m4.2xlarge`,
+      `m4.4xlarge`,
+      `m4.10xlarge`,
+      `m5.large`,
+      `m5.xlarge`,
+      `m5.2xlarge`,
+      `m5.4xlarge`,
+      `m5.8xlarge`,
+      `m5.12xlarge`,
+      `m5.16xlarge`,
+      `m5.24xlarge`
+    ))
   }
 
   /**
@@ -3195,13 +3018,11 @@ package gamelift {
     val FLEET_INITIALIZATION_FAILED = "FLEET_INITIALIZATION_FAILED".asInstanceOf[EventCode]
     val FLEET_BINARY_DOWNLOAD_FAILED = "FLEET_BINARY_DOWNLOAD_FAILED".asInstanceOf[EventCode]
     val FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND = "FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND".asInstanceOf[EventCode]
-    val FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE =
-      "FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE".asInstanceOf[EventCode]
+    val FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE = "FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE".asInstanceOf[EventCode]
     val FLEET_VALIDATION_TIMED_OUT = "FLEET_VALIDATION_TIMED_OUT".asInstanceOf[EventCode]
     val FLEET_ACTIVATION_FAILED = "FLEET_ACTIVATION_FAILED".asInstanceOf[EventCode]
     val FLEET_ACTIVATION_FAILED_NO_INSTANCES = "FLEET_ACTIVATION_FAILED_NO_INSTANCES".asInstanceOf[EventCode]
-    val FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED =
-      "FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED".asInstanceOf[EventCode]
+    val FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED = "FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED".asInstanceOf[EventCode]
     val SERVER_PROCESS_INVALID_PATH = "SERVER_PROCESS_INVALID_PATH".asInstanceOf[EventCode]
     val SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT = "SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT".asInstanceOf[EventCode]
     val SERVER_PROCESS_PROCESS_READY_TIMEOUT = "SERVER_PROCESS_PROCESS_READY_TIMEOUT".asInstanceOf[EventCode]
@@ -3218,43 +3039,41 @@ package gamelift {
     val FLEET_VPC_PEERING_DELETED = "FLEET_VPC_PEERING_DELETED".asInstanceOf[EventCode]
     val INSTANCE_INTERRUPTED = "INSTANCE_INTERRUPTED".asInstanceOf[EventCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        GENERIC_EVENT,
-        FLEET_CREATED,
-        FLEET_DELETED,
-        FLEET_SCALING_EVENT,
-        FLEET_STATE_DOWNLOADING,
-        FLEET_STATE_VALIDATING,
-        FLEET_STATE_BUILDING,
-        FLEET_STATE_ACTIVATING,
-        FLEET_STATE_ACTIVE,
-        FLEET_STATE_ERROR,
-        FLEET_INITIALIZATION_FAILED,
-        FLEET_BINARY_DOWNLOAD_FAILED,
-        FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND,
-        FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE,
-        FLEET_VALIDATION_TIMED_OUT,
-        FLEET_ACTIVATION_FAILED,
-        FLEET_ACTIVATION_FAILED_NO_INSTANCES,
-        FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED,
-        SERVER_PROCESS_INVALID_PATH,
-        SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT,
-        SERVER_PROCESS_PROCESS_READY_TIMEOUT,
-        SERVER_PROCESS_CRASHED,
-        SERVER_PROCESS_TERMINATED_UNHEALTHY,
-        SERVER_PROCESS_FORCE_TERMINATED,
-        SERVER_PROCESS_PROCESS_EXIT_TIMEOUT,
-        GAME_SESSION_ACTIVATION_TIMEOUT,
-        FLEET_CREATION_EXTRACTING_BUILD,
-        FLEET_CREATION_RUNNING_INSTALLER,
-        FLEET_CREATION_VALIDATING_RUNTIME_CONFIG,
-        FLEET_VPC_PEERING_SUCCEEDED,
-        FLEET_VPC_PEERING_FAILED,
-        FLEET_VPC_PEERING_DELETED,
-        INSTANCE_INTERRUPTED
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      GENERIC_EVENT,
+      FLEET_CREATED,
+      FLEET_DELETED,
+      FLEET_SCALING_EVENT,
+      FLEET_STATE_DOWNLOADING,
+      FLEET_STATE_VALIDATING,
+      FLEET_STATE_BUILDING,
+      FLEET_STATE_ACTIVATING,
+      FLEET_STATE_ACTIVE,
+      FLEET_STATE_ERROR,
+      FLEET_INITIALIZATION_FAILED,
+      FLEET_BINARY_DOWNLOAD_FAILED,
+      FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND,
+      FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE,
+      FLEET_VALIDATION_TIMED_OUT,
+      FLEET_ACTIVATION_FAILED,
+      FLEET_ACTIVATION_FAILED_NO_INSTANCES,
+      FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED,
+      SERVER_PROCESS_INVALID_PATH,
+      SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT,
+      SERVER_PROCESS_PROCESS_READY_TIMEOUT,
+      SERVER_PROCESS_CRASHED,
+      SERVER_PROCESS_TERMINATED_UNHEALTHY,
+      SERVER_PROCESS_FORCE_TERMINATED,
+      SERVER_PROCESS_PROCESS_EXIT_TIMEOUT,
+      GAME_SESSION_ACTIVATION_TIMEOUT,
+      FLEET_CREATION_EXTRACTING_BUILD,
+      FLEET_CREATION_RUNNING_INSTALLER,
+      FLEET_CREATION_VALIDATING_RUNTIME_CONFIG,
+      FLEET_VPC_PEERING_SUCCEEDED,
+      FLEET_VPC_PEERING_FAILED,
+      FLEET_VPC_PEERING_DELETED,
+      INSTANCE_INTERRUPTED
+    ))
   }
 
   @js.native
@@ -3342,13 +3161,9 @@ package gamelift {
       LogPaths.foreach(__v => __obj.updateDynamic("LogPaths")(__v.asInstanceOf[js.Any]))
       MetricGroups.foreach(__v => __obj.updateDynamic("MetricGroups")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      NewGameSessionProtectionPolicy.foreach(__v =>
-        __obj.updateDynamic("NewGameSessionProtectionPolicy")(__v.asInstanceOf[js.Any])
-      )
+      NewGameSessionProtectionPolicy.foreach(__v => __obj.updateDynamic("NewGameSessionProtectionPolicy")(__v.asInstanceOf[js.Any]))
       OperatingSystem.foreach(__v => __obj.updateDynamic("OperatingSystem")(__v.asInstanceOf[js.Any]))
-      ResourceCreationLimitPolicy.foreach(__v =>
-        __obj.updateDynamic("ResourceCreationLimitPolicy")(__v.asInstanceOf[js.Any])
-      )
+      ResourceCreationLimitPolicy.foreach(__v => __obj.updateDynamic("ResourceCreationLimitPolicy")(__v.asInstanceOf[js.Any]))
       ScriptArn.foreach(__v => __obj.updateDynamic("ScriptArn")(__v.asInstanceOf[js.Any]))
       ScriptId.foreach(__v => __obj.updateDynamic("ScriptId")(__v.asInstanceOf[js.Any]))
       ServerLaunchParameters.foreach(__v => __obj.updateDynamic("ServerLaunchParameters")(__v.asInstanceOf[js.Any]))
@@ -3404,9 +3219,7 @@ package gamelift {
     val ERROR = "ERROR".asInstanceOf[FleetStatus]
     val TERMINATED = "TERMINATED".asInstanceOf[FleetStatus]
 
-    val values = js.Object.freeze(
-      js.Array(NEW, DOWNLOADING, VALIDATING, BUILDING, ACTIVATING, ACTIVE, DELETING, ERROR, TERMINATED)
-    )
+    val values = js.Object.freeze(js.Array(NEW, DOWNLOADING, VALIDATING, BUILDING, ACTIVATING, ACTIVE, DELETING, ERROR, TERMINATED))
   }
 
   @js.native
@@ -3448,13 +3261,9 @@ package gamelift {
       val __obj = js.Dynamic.literal()
       ActiveGameSessionCount.foreach(__v => __obj.updateDynamic("ActiveGameSessionCount")(__v.asInstanceOf[js.Any]))
       ActiveServerProcessCount.foreach(__v => __obj.updateDynamic("ActiveServerProcessCount")(__v.asInstanceOf[js.Any]))
-      CurrentPlayerSessionCount.foreach(__v =>
-        __obj.updateDynamic("CurrentPlayerSessionCount")(__v.asInstanceOf[js.Any])
-      )
+      CurrentPlayerSessionCount.foreach(__v => __obj.updateDynamic("CurrentPlayerSessionCount")(__v.asInstanceOf[js.Any]))
       FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
-      MaximumPlayerSessionCount.foreach(__v =>
-        __obj.updateDynamic("MaximumPlayerSessionCount")(__v.asInstanceOf[js.Any])
-      )
+      MaximumPlayerSessionCount.foreach(__v => __obj.updateDynamic("MaximumPlayerSessionCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FleetUtilization]
     }
   }
@@ -3588,9 +3397,7 @@ package gamelift {
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       GameServerGroupArn.foreach(__v => __obj.updateDynamic("GameServerGroupArn")(__v.asInstanceOf[js.Any]))
       GameServerGroupName.foreach(__v => __obj.updateDynamic("GameServerGroupName")(__v.asInstanceOf[js.Any]))
-      GameServerProtectionPolicy.foreach(__v =>
-        __obj.updateDynamic("GameServerProtectionPolicy")(__v.asInstanceOf[js.Any])
-      )
+      GameServerProtectionPolicy.foreach(__v => __obj.updateDynamic("GameServerProtectionPolicy")(__v.asInstanceOf[js.Any]))
       InstanceDefinitions.foreach(__v => __obj.updateDynamic("InstanceDefinitions")(__v.asInstanceOf[js.Any]))
       LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
@@ -3688,50 +3495,48 @@ package gamelift {
     val `m5.16xlarge` = "m5.16xlarge".asInstanceOf[GameServerGroupInstanceType]
     val `m5.24xlarge` = "m5.24xlarge".asInstanceOf[GameServerGroupInstanceType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `c4.large`,
-        `c4.xlarge`,
-        `c4.2xlarge`,
-        `c4.4xlarge`,
-        `c4.8xlarge`,
-        `c5.large`,
-        `c5.xlarge`,
-        `c5.2xlarge`,
-        `c5.4xlarge`,
-        `c5.9xlarge`,
-        `c5.12xlarge`,
-        `c5.18xlarge`,
-        `c5.24xlarge`,
-        `r4.large`,
-        `r4.xlarge`,
-        `r4.2xlarge`,
-        `r4.4xlarge`,
-        `r4.8xlarge`,
-        `r4.16xlarge`,
-        `r5.large`,
-        `r5.xlarge`,
-        `r5.2xlarge`,
-        `r5.4xlarge`,
-        `r5.8xlarge`,
-        `r5.12xlarge`,
-        `r5.16xlarge`,
-        `r5.24xlarge`,
-        `m4.large`,
-        `m4.xlarge`,
-        `m4.2xlarge`,
-        `m4.4xlarge`,
-        `m4.10xlarge`,
-        `m5.large`,
-        `m5.xlarge`,
-        `m5.2xlarge`,
-        `m5.4xlarge`,
-        `m5.8xlarge`,
-        `m5.12xlarge`,
-        `m5.16xlarge`,
-        `m5.24xlarge`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      `c4.large`,
+      `c4.xlarge`,
+      `c4.2xlarge`,
+      `c4.4xlarge`,
+      `c4.8xlarge`,
+      `c5.large`,
+      `c5.xlarge`,
+      `c5.2xlarge`,
+      `c5.4xlarge`,
+      `c5.9xlarge`,
+      `c5.12xlarge`,
+      `c5.18xlarge`,
+      `c5.24xlarge`,
+      `r4.large`,
+      `r4.xlarge`,
+      `r4.2xlarge`,
+      `r4.4xlarge`,
+      `r4.8xlarge`,
+      `r4.16xlarge`,
+      `r5.large`,
+      `r5.xlarge`,
+      `r5.2xlarge`,
+      `r5.4xlarge`,
+      `r5.8xlarge`,
+      `r5.12xlarge`,
+      `r5.16xlarge`,
+      `r5.24xlarge`,
+      `m4.large`,
+      `m4.xlarge`,
+      `m4.2xlarge`,
+      `m4.4xlarge`,
+      `m4.10xlarge`,
+      `m5.large`,
+      `m5.xlarge`,
+      `m5.2xlarge`,
+      `m5.4xlarge`,
+      `m5.8xlarge`,
+      `m5.12xlarge`,
+      `m5.16xlarge`,
+      `m5.24xlarge`
+    ))
   }
 
   @js.native
@@ -3837,9 +3642,7 @@ package gamelift {
       val __obj = js.Dynamic.literal()
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       CreatorId.foreach(__v => __obj.updateDynamic("CreatorId")(__v.asInstanceOf[js.Any]))
-      CurrentPlayerSessionCount.foreach(__v =>
-        __obj.updateDynamic("CurrentPlayerSessionCount")(__v.asInstanceOf[js.Any])
-      )
+      CurrentPlayerSessionCount.foreach(__v => __obj.updateDynamic("CurrentPlayerSessionCount")(__v.asInstanceOf[js.Any]))
       DnsName.foreach(__v => __obj.updateDynamic("DnsName")(__v.asInstanceOf[js.Any]))
       FleetArn.foreach(__v => __obj.updateDynamic("FleetArn")(__v.asInstanceOf[js.Any]))
       FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
@@ -3848,13 +3651,9 @@ package gamelift {
       GameSessionId.foreach(__v => __obj.updateDynamic("GameSessionId")(__v.asInstanceOf[js.Any]))
       IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
       MatchmakerData.foreach(__v => __obj.updateDynamic("MatchmakerData")(__v.asInstanceOf[js.Any]))
-      MaximumPlayerSessionCount.foreach(__v =>
-        __obj.updateDynamic("MaximumPlayerSessionCount")(__v.asInstanceOf[js.Any])
-      )
+      MaximumPlayerSessionCount.foreach(__v => __obj.updateDynamic("MaximumPlayerSessionCount")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      PlayerSessionCreationPolicy.foreach(__v =>
-        __obj.updateDynamic("PlayerSessionCreationPolicy")(__v.asInstanceOf[js.Any])
-      )
+      PlayerSessionCreationPolicy.foreach(__v => __obj.updateDynamic("PlayerSessionCreationPolicy")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
@@ -3979,9 +3778,7 @@ package gamelift {
       GameSessionRegion.foreach(__v => __obj.updateDynamic("GameSessionRegion")(__v.asInstanceOf[js.Any]))
       IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
       MatchmakerData.foreach(__v => __obj.updateDynamic("MatchmakerData")(__v.asInstanceOf[js.Any]))
-      MaximumPlayerSessionCount.foreach(__v =>
-        __obj.updateDynamic("MaximumPlayerSessionCount")(__v.asInstanceOf[js.Any])
-      )
+      MaximumPlayerSessionCount.foreach(__v => __obj.updateDynamic("MaximumPlayerSessionCount")(__v.asInstanceOf[js.Any]))
       PlacedPlayerSessions.foreach(__v => __obj.updateDynamic("PlacedPlayerSessions")(__v.asInstanceOf[js.Any]))
       PlacementId.foreach(__v => __obj.updateDynamic("PlacementId")(__v.asInstanceOf[js.Any]))
       PlayerLatencies.foreach(__v => __obj.updateDynamic("PlayerLatencies")(__v.asInstanceOf[js.Any]))
@@ -4763,9 +4560,7 @@ package gamelift {
     val SEARCHING = "SEARCHING".asInstanceOf[MatchmakingConfigurationStatus]
     val TIMED_OUT = "TIMED_OUT".asInstanceOf[MatchmakingConfigurationStatus]
 
-    val values = js.Object.freeze(
-      js.Array(CANCELLED, COMPLETED, FAILED, PLACING, QUEUED, REQUIRES_ACCEPTANCE, SEARCHING, TIMED_OUT)
-    )
+    val values = js.Object.freeze(js.Array(CANCELLED, COMPLETED, FAILED, PLACING, QUEUED, REQUIRES_ACCEPTANCE, SEARCHING, TIMED_OUT))
   }
 
   /**
@@ -4841,9 +4636,7 @@ package gamelift {
       ConfigurationName.foreach(__v => __obj.updateDynamic("ConfigurationName")(__v.asInstanceOf[js.Any]))
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
       EstimatedWaitTime.foreach(__v => __obj.updateDynamic("EstimatedWaitTime")(__v.asInstanceOf[js.Any]))
-      GameSessionConnectionInfo.foreach(__v =>
-        __obj.updateDynamic("GameSessionConnectionInfo")(__v.asInstanceOf[js.Any])
-      )
+      GameSessionConnectionInfo.foreach(__v => __obj.updateDynamic("GameSessionConnectionInfo")(__v.asInstanceOf[js.Any]))
       Players.foreach(__v => __obj.updateDynamic("Players")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -4869,21 +4662,19 @@ package gamelift {
     val QueueDepth = "QueueDepth".asInstanceOf[MetricName]
     val WaitTime = "WaitTime".asInstanceOf[MetricName]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ActivatingGameSessions,
-        ActiveGameSessions,
-        ActiveInstances,
-        AvailableGameSessions,
-        AvailablePlayerSessions,
-        CurrentPlayerSessions,
-        IdleInstances,
-        PercentAvailableGameSessions,
-        PercentIdleInstances,
-        QueueDepth,
-        WaitTime
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      ActivatingGameSessions,
+      ActiveGameSessions,
+      ActiveInstances,
+      AvailableGameSessions,
+      AvailablePlayerSessions,
+      CurrentPlayerSessions,
+      IdleInstances,
+      PercentAvailableGameSessions,
+      PercentIdleInstances,
+      QueueDepth,
+      WaitTime
+    ))
   }
 
   @js.native
@@ -4999,9 +4790,7 @@ package gamelift {
         PolicyDurationSeconds: js.UndefOr[WholeNumber] = js.undefined
     ): PlayerLatencyPolicy = {
       val __obj = js.Dynamic.literal()
-      MaximumIndividualPlayerLatencyMilliseconds.foreach(__v =>
-        __obj.updateDynamic("MaximumIndividualPlayerLatencyMilliseconds")(__v.asInstanceOf[js.Any])
-      )
+      MaximumIndividualPlayerLatencyMilliseconds.foreach(__v => __obj.updateDynamic("MaximumIndividualPlayerLatencyMilliseconds")(__v.asInstanceOf[js.Any]))
       PolicyDurationSeconds.foreach(__v => __obj.updateDynamic("PolicyDurationSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PlayerLatencyPolicy]
     }
@@ -5328,9 +5117,7 @@ package gamelift {
         PolicyPeriodInMinutes: js.UndefOr[WholeNumber] = js.undefined
     ): ResourceCreationLimitPolicy = {
       val __obj = js.Dynamic.literal()
-      NewGameSessionsPerCreator.foreach(__v =>
-        __obj.updateDynamic("NewGameSessionsPerCreator")(__v.asInstanceOf[js.Any])
-      )
+      NewGameSessionsPerCreator.foreach(__v => __obj.updateDynamic("NewGameSessionsPerCreator")(__v.asInstanceOf[js.Any]))
       PolicyPeriodInMinutes.foreach(__v => __obj.updateDynamic("PolicyPeriodInMinutes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceCreationLimitPolicy]
     }
@@ -5439,12 +5226,8 @@ package gamelift {
         ServerProcesses: js.UndefOr[ServerProcessList] = js.undefined
     ): RuntimeConfiguration = {
       val __obj = js.Dynamic.literal()
-      GameSessionActivationTimeoutSeconds.foreach(__v =>
-        __obj.updateDynamic("GameSessionActivationTimeoutSeconds")(__v.asInstanceOf[js.Any])
-      )
-      MaxConcurrentGameSessionActivations.foreach(__v =>
-        __obj.updateDynamic("MaxConcurrentGameSessionActivations")(__v.asInstanceOf[js.Any])
-      )
+      GameSessionActivationTimeoutSeconds.foreach(__v => __obj.updateDynamic("GameSessionActivationTimeoutSeconds")(__v.asInstanceOf[js.Any]))
+      MaxConcurrentGameSessionActivations.foreach(__v => __obj.updateDynamic("MaxConcurrentGameSessionActivations")(__v.asInstanceOf[js.Any]))
       ServerProcesses.foreach(__v => __obj.updateDynamic("ServerProcesses")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RuntimeConfiguration]
     }
@@ -5559,8 +5342,7 @@ package gamelift {
     val DELETED = "DELETED".asInstanceOf[ScalingStatusType]
     val ERROR = "ERROR".asInstanceOf[ScalingStatusType]
 
-    val values =
-      js.Object.freeze(js.Array(ACTIVE, UPDATE_REQUESTED, UPDATING, DELETE_REQUESTED, DELETING, DELETED, ERROR))
+    val values = js.Object.freeze(js.Array(ACTIVE, UPDATE_REQUESTED, UPDATING, DELETE_REQUESTED, DELETING, DELETED, ERROR))
   }
 
   /**
@@ -6311,12 +6093,8 @@ package gamelift {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       MetricGroups.foreach(__v => __obj.updateDynamic("MetricGroups")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      NewGameSessionProtectionPolicy.foreach(__v =>
-        __obj.updateDynamic("NewGameSessionProtectionPolicy")(__v.asInstanceOf[js.Any])
-      )
-      ResourceCreationLimitPolicy.foreach(__v =>
-        __obj.updateDynamic("ResourceCreationLimitPolicy")(__v.asInstanceOf[js.Any])
-      )
+      NewGameSessionProtectionPolicy.foreach(__v => __obj.updateDynamic("NewGameSessionProtectionPolicy")(__v.asInstanceOf[js.Any]))
+      ResourceCreationLimitPolicy.foreach(__v => __obj.updateDynamic("ResourceCreationLimitPolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFleetAttributesInput]
     }
   }
@@ -6410,12 +6188,8 @@ package gamelift {
         "FleetId" -> FleetId.asInstanceOf[js.Any]
       )
 
-      InboundPermissionAuthorizations.foreach(__v =>
-        __obj.updateDynamic("InboundPermissionAuthorizations")(__v.asInstanceOf[js.Any])
-      )
-      InboundPermissionRevocations.foreach(__v =>
-        __obj.updateDynamic("InboundPermissionRevocations")(__v.asInstanceOf[js.Any])
-      )
+      InboundPermissionAuthorizations.foreach(__v => __obj.updateDynamic("InboundPermissionAuthorizations")(__v.asInstanceOf[js.Any]))
+      InboundPermissionRevocations.foreach(__v => __obj.updateDynamic("InboundPermissionRevocations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFleetPortSettingsInput]
     }
   }
@@ -6462,9 +6236,7 @@ package gamelift {
       )
 
       BalancingStrategy.foreach(__v => __obj.updateDynamic("BalancingStrategy")(__v.asInstanceOf[js.Any]))
-      GameServerProtectionPolicy.foreach(__v =>
-        __obj.updateDynamic("GameServerProtectionPolicy")(__v.asInstanceOf[js.Any])
-      )
+      GameServerProtectionPolicy.foreach(__v => __obj.updateDynamic("GameServerProtectionPolicy")(__v.asInstanceOf[js.Any]))
       InstanceDefinitions.foreach(__v => __obj.updateDynamic("InstanceDefinitions")(__v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGameServerGroupInput]
@@ -6561,13 +6333,9 @@ package gamelift {
         "GameSessionId" -> GameSessionId.asInstanceOf[js.Any]
       )
 
-      MaximumPlayerSessionCount.foreach(__v =>
-        __obj.updateDynamic("MaximumPlayerSessionCount")(__v.asInstanceOf[js.Any])
-      )
+      MaximumPlayerSessionCount.foreach(__v => __obj.updateDynamic("MaximumPlayerSessionCount")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      PlayerSessionCreationPolicy.foreach(__v =>
-        __obj.updateDynamic("PlayerSessionCreationPolicy")(__v.asInstanceOf[js.Any])
-      )
+      PlayerSessionCreationPolicy.foreach(__v => __obj.updateDynamic("PlayerSessionCreationPolicy")(__v.asInstanceOf[js.Any]))
       ProtectionPolicy.foreach(__v => __obj.updateDynamic("ProtectionPolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGameSessionInput]
     }

@@ -30,16 +30,11 @@ package object lexruntime {
 
   implicit final class LexRuntimeOps(private val service: LexRuntime) extends AnyVal {
 
-    @inline def deleteSessionFuture(params: DeleteSessionRequest): Future[DeleteSessionResponse] =
-      service.deleteSession(params).promise().toFuture
-    @inline def getSessionFuture(params: GetSessionRequest): Future[GetSessionResponse] =
-      service.getSession(params).promise().toFuture
-    @inline def postContentFuture(params: PostContentRequest): Future[PostContentResponse] =
-      service.postContent(params).promise().toFuture
-    @inline def postTextFuture(params: PostTextRequest): Future[PostTextResponse] =
-      service.postText(params).promise().toFuture
-    @inline def putSessionFuture(params: PutSessionRequest): Future[PutSessionResponse] =
-      service.putSession(params).promise().toFuture
+    @inline def deleteSessionFuture(params: DeleteSessionRequest): Future[DeleteSessionResponse] = service.deleteSession(params).promise().toFuture
+    @inline def getSessionFuture(params: GetSessionRequest): Future[GetSessionResponse] = service.getSession(params).promise().toFuture
+    @inline def postContentFuture(params: PostContentRequest): Future[PostContentResponse] = service.postContent(params).promise().toFuture
+    @inline def postTextFuture(params: PostTextRequest): Future[PostTextResponse] = service.postText(params).promise().toFuture
+    @inline def putSessionFuture(params: PutSessionRequest): Future[PutSessionResponse] = service.putSession(params).promise().toFuture
   }
 }
 
@@ -208,8 +203,7 @@ package lexruntime {
     val ReadyForFulfillment = "ReadyForFulfillment".asInstanceOf[DialogState]
     val Failed = "Failed".asInstanceOf[DialogState]
 
-    val values =
-      js.Object.freeze(js.Array(ElicitIntent, ConfirmIntent, ElicitSlot, Fulfilled, ReadyForFulfillment, Failed))
+    val values = js.Object.freeze(js.Array(ElicitIntent, ConfirmIntent, ElicitSlot, Fulfilled, ReadyForFulfillment, Failed))
   }
 
   @js.native

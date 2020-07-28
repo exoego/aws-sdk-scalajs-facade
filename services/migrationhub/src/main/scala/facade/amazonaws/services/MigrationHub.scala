@@ -36,51 +36,23 @@ package object migrationhub {
 
   implicit final class MigrationHubOps(private val service: MigrationHub) extends AnyVal {
 
-    @inline def associateCreatedArtifactFuture(
-        params: AssociateCreatedArtifactRequest
-    ): Future[AssociateCreatedArtifactResult] = service.associateCreatedArtifact(params).promise().toFuture
-    @inline def associateDiscoveredResourceFuture(
-        params: AssociateDiscoveredResourceRequest
-    ): Future[AssociateDiscoveredResourceResult] = service.associateDiscoveredResource(params).promise().toFuture
-    @inline def createProgressUpdateStreamFuture(
-        params: CreateProgressUpdateStreamRequest
-    ): Future[CreateProgressUpdateStreamResult] = service.createProgressUpdateStream(params).promise().toFuture
-    @inline def deleteProgressUpdateStreamFuture(
-        params: DeleteProgressUpdateStreamRequest
-    ): Future[DeleteProgressUpdateStreamResult] = service.deleteProgressUpdateStream(params).promise().toFuture
-    @inline def describeApplicationStateFuture(
-        params: DescribeApplicationStateRequest
-    ): Future[DescribeApplicationStateResult] = service.describeApplicationState(params).promise().toFuture
-    @inline def describeMigrationTaskFuture(params: DescribeMigrationTaskRequest): Future[DescribeMigrationTaskResult] =
-      service.describeMigrationTask(params).promise().toFuture
-    @inline def disassociateCreatedArtifactFuture(
-        params: DisassociateCreatedArtifactRequest
-    ): Future[DisassociateCreatedArtifactResult] = service.disassociateCreatedArtifact(params).promise().toFuture
-    @inline def disassociateDiscoveredResourceFuture(
-        params: DisassociateDiscoveredResourceRequest
-    ): Future[DisassociateDiscoveredResourceResult] = service.disassociateDiscoveredResource(params).promise().toFuture
-    @inline def importMigrationTaskFuture(params: ImportMigrationTaskRequest): Future[ImportMigrationTaskResult] =
-      service.importMigrationTask(params).promise().toFuture
-    @inline def listApplicationStatesFuture(params: ListApplicationStatesRequest): Future[ListApplicationStatesResult] =
-      service.listApplicationStates(params).promise().toFuture
-    @inline def listCreatedArtifactsFuture(params: ListCreatedArtifactsRequest): Future[ListCreatedArtifactsResult] =
-      service.listCreatedArtifacts(params).promise().toFuture
-    @inline def listDiscoveredResourcesFuture(
-        params: ListDiscoveredResourcesRequest
-    ): Future[ListDiscoveredResourcesResult] = service.listDiscoveredResources(params).promise().toFuture
-    @inline def listMigrationTasksFuture(params: ListMigrationTasksRequest): Future[ListMigrationTasksResult] =
-      service.listMigrationTasks(params).promise().toFuture
-    @inline def listProgressUpdateStreamsFuture(
-        params: ListProgressUpdateStreamsRequest
-    ): Future[ListProgressUpdateStreamsResult] = service.listProgressUpdateStreams(params).promise().toFuture
-    @inline def notifyApplicationStateFuture(
-        params: NotifyApplicationStateRequest
-    ): Future[NotifyApplicationStateResult] = service.notifyApplicationState(params).promise().toFuture
-    @inline def notifyMigrationTaskStateFuture(
-        params: NotifyMigrationTaskStateRequest
-    ): Future[NotifyMigrationTaskStateResult] = service.notifyMigrationTaskState(params).promise().toFuture
-    @inline def putResourceAttributesFuture(params: PutResourceAttributesRequest): Future[PutResourceAttributesResult] =
-      service.putResourceAttributes(params).promise().toFuture
+    @inline def associateCreatedArtifactFuture(params: AssociateCreatedArtifactRequest): Future[AssociateCreatedArtifactResult] = service.associateCreatedArtifact(params).promise().toFuture
+    @inline def associateDiscoveredResourceFuture(params: AssociateDiscoveredResourceRequest): Future[AssociateDiscoveredResourceResult] = service.associateDiscoveredResource(params).promise().toFuture
+    @inline def createProgressUpdateStreamFuture(params: CreateProgressUpdateStreamRequest): Future[CreateProgressUpdateStreamResult] = service.createProgressUpdateStream(params).promise().toFuture
+    @inline def deleteProgressUpdateStreamFuture(params: DeleteProgressUpdateStreamRequest): Future[DeleteProgressUpdateStreamResult] = service.deleteProgressUpdateStream(params).promise().toFuture
+    @inline def describeApplicationStateFuture(params: DescribeApplicationStateRequest): Future[DescribeApplicationStateResult] = service.describeApplicationState(params).promise().toFuture
+    @inline def describeMigrationTaskFuture(params: DescribeMigrationTaskRequest): Future[DescribeMigrationTaskResult] = service.describeMigrationTask(params).promise().toFuture
+    @inline def disassociateCreatedArtifactFuture(params: DisassociateCreatedArtifactRequest): Future[DisassociateCreatedArtifactResult] = service.disassociateCreatedArtifact(params).promise().toFuture
+    @inline def disassociateDiscoveredResourceFuture(params: DisassociateDiscoveredResourceRequest): Future[DisassociateDiscoveredResourceResult] = service.disassociateDiscoveredResource(params).promise().toFuture
+    @inline def importMigrationTaskFuture(params: ImportMigrationTaskRequest): Future[ImportMigrationTaskResult] = service.importMigrationTask(params).promise().toFuture
+    @inline def listApplicationStatesFuture(params: ListApplicationStatesRequest): Future[ListApplicationStatesResult] = service.listApplicationStates(params).promise().toFuture
+    @inline def listCreatedArtifactsFuture(params: ListCreatedArtifactsRequest): Future[ListCreatedArtifactsResult] = service.listCreatedArtifacts(params).promise().toFuture
+    @inline def listDiscoveredResourcesFuture(params: ListDiscoveredResourcesRequest): Future[ListDiscoveredResourcesResult] = service.listDiscoveredResources(params).promise().toFuture
+    @inline def listMigrationTasksFuture(params: ListMigrationTasksRequest): Future[ListMigrationTasksResult] = service.listMigrationTasks(params).promise().toFuture
+    @inline def listProgressUpdateStreamsFuture(params: ListProgressUpdateStreamsRequest): Future[ListProgressUpdateStreamsResult] = service.listProgressUpdateStreams(params).promise().toFuture
+    @inline def notifyApplicationStateFuture(params: NotifyApplicationStateRequest): Future[NotifyApplicationStateResult] = service.notifyApplicationState(params).promise().toFuture
+    @inline def notifyMigrationTaskStateFuture(params: NotifyMigrationTaskStateRequest): Future[NotifyMigrationTaskStateResult] = service.notifyMigrationTaskState(params).promise().toFuture
+    @inline def putResourceAttributesFuture(params: PutResourceAttributesRequest): Future[PutResourceAttributesResult] = service.putResourceAttributes(params).promise().toFuture
   }
 }
 
@@ -90,37 +62,22 @@ package migrationhub {
   class MigrationHub() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def associateCreatedArtifact(params: AssociateCreatedArtifactRequest): Request[AssociateCreatedArtifactResult] =
-      js.native
-    def associateDiscoveredResource(
-        params: AssociateDiscoveredResourceRequest
-    ): Request[AssociateDiscoveredResourceResult] = js.native
-    def createProgressUpdateStream(
-        params: CreateProgressUpdateStreamRequest
-    ): Request[CreateProgressUpdateStreamResult] = js.native
-    def deleteProgressUpdateStream(
-        params: DeleteProgressUpdateStreamRequest
-    ): Request[DeleteProgressUpdateStreamResult] = js.native
-    def describeApplicationState(params: DescribeApplicationStateRequest): Request[DescribeApplicationStateResult] =
-      js.native
+    def associateCreatedArtifact(params: AssociateCreatedArtifactRequest): Request[AssociateCreatedArtifactResult] = js.native
+    def associateDiscoveredResource(params: AssociateDiscoveredResourceRequest): Request[AssociateDiscoveredResourceResult] = js.native
+    def createProgressUpdateStream(params: CreateProgressUpdateStreamRequest): Request[CreateProgressUpdateStreamResult] = js.native
+    def deleteProgressUpdateStream(params: DeleteProgressUpdateStreamRequest): Request[DeleteProgressUpdateStreamResult] = js.native
+    def describeApplicationState(params: DescribeApplicationStateRequest): Request[DescribeApplicationStateResult] = js.native
     def describeMigrationTask(params: DescribeMigrationTaskRequest): Request[DescribeMigrationTaskResult] = js.native
-    def disassociateCreatedArtifact(
-        params: DisassociateCreatedArtifactRequest
-    ): Request[DisassociateCreatedArtifactResult] = js.native
-    def disassociateDiscoveredResource(
-        params: DisassociateDiscoveredResourceRequest
-    ): Request[DisassociateDiscoveredResourceResult] = js.native
+    def disassociateCreatedArtifact(params: DisassociateCreatedArtifactRequest): Request[DisassociateCreatedArtifactResult] = js.native
+    def disassociateDiscoveredResource(params: DisassociateDiscoveredResourceRequest): Request[DisassociateDiscoveredResourceResult] = js.native
     def importMigrationTask(params: ImportMigrationTaskRequest): Request[ImportMigrationTaskResult] = js.native
     def listApplicationStates(params: ListApplicationStatesRequest): Request[ListApplicationStatesResult] = js.native
     def listCreatedArtifacts(params: ListCreatedArtifactsRequest): Request[ListCreatedArtifactsResult] = js.native
-    def listDiscoveredResources(params: ListDiscoveredResourcesRequest): Request[ListDiscoveredResourcesResult] =
-      js.native
+    def listDiscoveredResources(params: ListDiscoveredResourcesRequest): Request[ListDiscoveredResourcesResult] = js.native
     def listMigrationTasks(params: ListMigrationTasksRequest): Request[ListMigrationTasksResult] = js.native
-    def listProgressUpdateStreams(params: ListProgressUpdateStreamsRequest): Request[ListProgressUpdateStreamsResult] =
-      js.native
+    def listProgressUpdateStreams(params: ListProgressUpdateStreamsRequest): Request[ListProgressUpdateStreamsResult] = js.native
     def notifyApplicationState(params: NotifyApplicationStateRequest): Request[NotifyApplicationStateResult] = js.native
-    def notifyMigrationTaskState(params: NotifyMigrationTaskStateRequest): Request[NotifyMigrationTaskStateResult] =
-      js.native
+    def notifyMigrationTaskState(params: NotifyMigrationTaskStateRequest): Request[NotifyMigrationTaskStateResult] = js.native
     def putResourceAttributes(params: PutResourceAttributesRequest): Request[PutResourceAttributesResult] = js.native
   }
 
@@ -753,9 +710,7 @@ package migrationhub {
     ): ListProgressUpdateStreamsResult = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ProgressUpdateStreamSummaryList.foreach(__v =>
-        __obj.updateDynamic("ProgressUpdateStreamSummaryList")(__v.asInstanceOf[js.Any])
-      )
+      ProgressUpdateStreamSummaryList.foreach(__v => __obj.updateDynamic("ProgressUpdateStreamSummaryList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListProgressUpdateStreamsResult]
     }
   }
@@ -1016,20 +971,7 @@ package migrationhub {
     val BIOS_ID = "BIOS_ID".asInstanceOf[ResourceAttributeType]
     val MOTHERBOARD_SERIAL_NUMBER = "MOTHERBOARD_SERIAL_NUMBER".asInstanceOf[ResourceAttributeType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        IPV4_ADDRESS,
-        IPV6_ADDRESS,
-        MAC_ADDRESS,
-        FQDN,
-        VM_MANAGER_ID,
-        VM_MANAGED_OBJECT_REFERENCE,
-        VM_NAME,
-        VM_PATH,
-        BIOS_ID,
-        MOTHERBOARD_SERIAL_NUMBER
-      )
-    )
+    val values = js.Object.freeze(js.Array(IPV4_ADDRESS, IPV6_ADDRESS, MAC_ADDRESS, FQDN, VM_MANAGER_ID, VM_MANAGED_OBJECT_REFERENCE, VM_NAME, VM_PATH, BIOS_ID, MOTHERBOARD_SERIAL_NUMBER))
   }
 
   @js.native

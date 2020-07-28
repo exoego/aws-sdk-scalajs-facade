@@ -59,45 +59,25 @@ package object s3control {
 
   implicit final class S3ControlOps(private val service: S3Control) extends AnyVal {
 
-    @inline def createAccessPointFuture(params: CreateAccessPointRequest): Future[js.Object] =
-      service.createAccessPoint(params).promise().toFuture
-    @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResult] =
-      service.createJob(params).promise().toFuture
-    @inline def deleteAccessPointFuture(params: DeleteAccessPointRequest): Future[js.Object] =
-      service.deleteAccessPoint(params).promise().toFuture
-    @inline def deleteAccessPointPolicyFuture(params: DeleteAccessPointPolicyRequest): Future[js.Object] =
-      service.deleteAccessPointPolicy(params).promise().toFuture
-    @inline def deleteJobTaggingFuture(params: DeleteJobTaggingRequest): Future[DeleteJobTaggingResult] =
-      service.deleteJobTagging(params).promise().toFuture
-    @inline def deletePublicAccessBlockFuture(params: DeletePublicAccessBlockRequest): Future[js.Object] =
-      service.deletePublicAccessBlock(params).promise().toFuture
-    @inline def describeJobFuture(params: DescribeJobRequest): Future[DescribeJobResult] =
-      service.describeJob(params).promise().toFuture
-    @inline def getAccessPointFuture(params: GetAccessPointRequest): Future[GetAccessPointResult] =
-      service.getAccessPoint(params).promise().toFuture
-    @inline def getAccessPointPolicyFuture(params: GetAccessPointPolicyRequest): Future[GetAccessPointPolicyResult] =
-      service.getAccessPointPolicy(params).promise().toFuture
-    @inline def getAccessPointPolicyStatusFuture(
-        params: GetAccessPointPolicyStatusRequest
-    ): Future[GetAccessPointPolicyStatusResult] = service.getAccessPointPolicyStatus(params).promise().toFuture
-    @inline def getJobTaggingFuture(params: GetJobTaggingRequest): Future[GetJobTaggingResult] =
-      service.getJobTagging(params).promise().toFuture
-    @inline def getPublicAccessBlockFuture(params: GetPublicAccessBlockRequest): Future[GetPublicAccessBlockOutput] =
-      service.getPublicAccessBlock(params).promise().toFuture
-    @inline def listAccessPointsFuture(params: ListAccessPointsRequest): Future[ListAccessPointsResult] =
-      service.listAccessPoints(params).promise().toFuture
-    @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult] =
-      service.listJobs(params).promise().toFuture
-    @inline def putAccessPointPolicyFuture(params: PutAccessPointPolicyRequest): Future[js.Object] =
-      service.putAccessPointPolicy(params).promise().toFuture
-    @inline def putJobTaggingFuture(params: PutJobTaggingRequest): Future[PutJobTaggingResult] =
-      service.putJobTagging(params).promise().toFuture
-    @inline def putPublicAccessBlockFuture(params: PutPublicAccessBlockRequest): Future[js.Object] =
-      service.putPublicAccessBlock(params).promise().toFuture
-    @inline def updateJobPriorityFuture(params: UpdateJobPriorityRequest): Future[UpdateJobPriorityResult] =
-      service.updateJobPriority(params).promise().toFuture
-    @inline def updateJobStatusFuture(params: UpdateJobStatusRequest): Future[UpdateJobStatusResult] =
-      service.updateJobStatus(params).promise().toFuture
+    @inline def createAccessPointFuture(params: CreateAccessPointRequest): Future[js.Object] = service.createAccessPoint(params).promise().toFuture
+    @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResult] = service.createJob(params).promise().toFuture
+    @inline def deleteAccessPointFuture(params: DeleteAccessPointRequest): Future[js.Object] = service.deleteAccessPoint(params).promise().toFuture
+    @inline def deleteAccessPointPolicyFuture(params: DeleteAccessPointPolicyRequest): Future[js.Object] = service.deleteAccessPointPolicy(params).promise().toFuture
+    @inline def deleteJobTaggingFuture(params: DeleteJobTaggingRequest): Future[DeleteJobTaggingResult] = service.deleteJobTagging(params).promise().toFuture
+    @inline def deletePublicAccessBlockFuture(params: DeletePublicAccessBlockRequest): Future[js.Object] = service.deletePublicAccessBlock(params).promise().toFuture
+    @inline def describeJobFuture(params: DescribeJobRequest): Future[DescribeJobResult] = service.describeJob(params).promise().toFuture
+    @inline def getAccessPointFuture(params: GetAccessPointRequest): Future[GetAccessPointResult] = service.getAccessPoint(params).promise().toFuture
+    @inline def getAccessPointPolicyFuture(params: GetAccessPointPolicyRequest): Future[GetAccessPointPolicyResult] = service.getAccessPointPolicy(params).promise().toFuture
+    @inline def getAccessPointPolicyStatusFuture(params: GetAccessPointPolicyStatusRequest): Future[GetAccessPointPolicyStatusResult] = service.getAccessPointPolicyStatus(params).promise().toFuture
+    @inline def getJobTaggingFuture(params: GetJobTaggingRequest): Future[GetJobTaggingResult] = service.getJobTagging(params).promise().toFuture
+    @inline def getPublicAccessBlockFuture(params: GetPublicAccessBlockRequest): Future[GetPublicAccessBlockOutput] = service.getPublicAccessBlock(params).promise().toFuture
+    @inline def listAccessPointsFuture(params: ListAccessPointsRequest): Future[ListAccessPointsResult] = service.listAccessPoints(params).promise().toFuture
+    @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult] = service.listJobs(params).promise().toFuture
+    @inline def putAccessPointPolicyFuture(params: PutAccessPointPolicyRequest): Future[js.Object] = service.putAccessPointPolicy(params).promise().toFuture
+    @inline def putJobTaggingFuture(params: PutJobTaggingRequest): Future[PutJobTaggingResult] = service.putJobTagging(params).promise().toFuture
+    @inline def putPublicAccessBlockFuture(params: PutPublicAccessBlockRequest): Future[js.Object] = service.putPublicAccessBlock(params).promise().toFuture
+    @inline def updateJobPriorityFuture(params: UpdateJobPriorityRequest): Future[UpdateJobPriorityResult] = service.updateJobPriority(params).promise().toFuture
+    @inline def updateJobStatusFuture(params: UpdateJobStatusRequest): Future[UpdateJobStatusResult] = service.updateJobStatus(params).promise().toFuture
   }
 }
 
@@ -116,9 +96,7 @@ package s3control {
     def describeJob(params: DescribeJobRequest): Request[DescribeJobResult] = js.native
     def getAccessPoint(params: GetAccessPointRequest): Request[GetAccessPointResult] = js.native
     def getAccessPointPolicy(params: GetAccessPointPolicyRequest): Request[GetAccessPointPolicyResult] = js.native
-    def getAccessPointPolicyStatus(
-        params: GetAccessPointPolicyStatusRequest
-    ): Request[GetAccessPointPolicyStatusResult] = js.native
+    def getAccessPointPolicyStatus(params: GetAccessPointPolicyStatusRequest): Request[GetAccessPointPolicyStatusResult] = js.native
     def getJobTagging(params: GetJobTaggingRequest): Request[GetJobTaggingResult] = js.native
     def getPublicAccessBlock(params: GetPublicAccessBlockRequest): Request[GetPublicAccessBlockOutput] = js.native
     def listAccessPoints(params: ListAccessPointsRequest): Request[ListAccessPointsResult] = js.native
@@ -184,9 +162,7 @@ package s3control {
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      PublicAccessBlockConfiguration.foreach(__v =>
-        __obj.updateDynamic("PublicAccessBlockConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      PublicAccessBlockConfiguration.foreach(__v => __obj.updateDynamic("PublicAccessBlockConfiguration")(__v.asInstanceOf[js.Any]))
       VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAccessPointRequest]
     }
@@ -504,9 +480,7 @@ package s3control {
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       NetworkOrigin.foreach(__v => __obj.updateDynamic("NetworkOrigin")(__v.asInstanceOf[js.Any]))
-      PublicAccessBlockConfiguration.foreach(__v =>
-        __obj.updateDynamic("PublicAccessBlockConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      PublicAccessBlockConfiguration.foreach(__v => __obj.updateDynamic("PublicAccessBlockConfiguration")(__v.asInstanceOf[js.Any]))
       VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAccessPointResult]
     }
@@ -560,9 +534,7 @@ package s3control {
         PublicAccessBlockConfiguration: js.UndefOr[PublicAccessBlockConfiguration] = js.undefined
     ): GetPublicAccessBlockOutput = {
       val __obj = js.Dynamic.literal()
-      PublicAccessBlockConfiguration.foreach(__v =>
-        __obj.updateDynamic("PublicAccessBlockConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      PublicAccessBlockConfiguration.foreach(__v => __obj.updateDynamic("PublicAccessBlockConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPublicAccessBlockOutput]
     }
   }
@@ -938,23 +910,7 @@ package s3control {
     val Ready = "Ready".asInstanceOf[JobStatus]
     val Suspended = "Suspended".asInstanceOf[JobStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        Active,
-        Cancelled,
-        Cancelling,
-        Complete,
-        Completing,
-        Failed,
-        Failing,
-        New,
-        Paused,
-        Pausing,
-        Preparing,
-        Ready,
-        Suspended
-      )
-    )
+    val values = js.Object.freeze(js.Array(Active, Cancelled, Cancelling, Complete, Completing, Failed, Failing, New, Paused, Pausing, Preparing, Ready, Suspended))
   }
 
   /**
@@ -1088,17 +1044,7 @@ package s3control {
     val S3PutObjectLegalHold = "S3PutObjectLegalHold".asInstanceOf[OperationName]
     val S3PutObjectRetention = "S3PutObjectRetention".asInstanceOf[OperationName]
 
-    val values = js.Object.freeze(
-      js.Array(
-        LambdaInvoke,
-        S3PutObjectCopy,
-        S3PutObjectAcl,
-        S3PutObjectTagging,
-        S3InitiateRestoreObject,
-        S3PutObjectLegalHold,
-        S3PutObjectRetention
-      )
-    )
+    val values = js.Object.freeze(js.Array(LambdaInvoke, S3PutObjectCopy, S3PutObjectAcl, S3PutObjectTagging, S3InitiateRestoreObject, S3PutObjectLegalHold, S3PutObjectRetention))
   }
 
   /**
@@ -1296,17 +1242,7 @@ package s3control {
     val `bucket-owner-read` = "bucket-owner-read".asInstanceOf[S3CannedAccessControlList]
     val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[S3CannedAccessControlList]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `private`,
-        `public-read`,
-        `public-read-write`,
-        `aws-exec-read`,
-        `authenticated-read`,
-        `bucket-owner-read`,
-        `bucket-owner-full-control`
-      )
-    )
+    val values = js.Object.freeze(js.Array(`private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`))
   }
 
   /**
@@ -1359,22 +1295,16 @@ package s3control {
       ModifiedSinceConstraint.foreach(__v => __obj.updateDynamic("ModifiedSinceConstraint")(__v.asInstanceOf[js.Any]))
       NewObjectMetadata.foreach(__v => __obj.updateDynamic("NewObjectMetadata")(__v.asInstanceOf[js.Any]))
       NewObjectTagging.foreach(__v => __obj.updateDynamic("NewObjectTagging")(__v.asInstanceOf[js.Any]))
-      ObjectLockLegalHoldStatus.foreach(__v =>
-        __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any])
-      )
+      ObjectLockLegalHoldStatus.foreach(__v => __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any]))
       ObjectLockMode.foreach(__v => __obj.updateDynamic("ObjectLockMode")(__v.asInstanceOf[js.Any]))
-      ObjectLockRetainUntilDate.foreach(__v =>
-        __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any])
-      )
+      ObjectLockRetainUntilDate.foreach(__v => __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any]))
       RedirectLocation.foreach(__v => __obj.updateDynamic("RedirectLocation")(__v.asInstanceOf[js.Any]))
       RequesterPays.foreach(__v => __obj.updateDynamic("RequesterPays")(__v.asInstanceOf[js.Any]))
       SSEAwsKmsKeyId.foreach(__v => __obj.updateDynamic("SSEAwsKmsKeyId")(__v.asInstanceOf[js.Any]))
       StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
       TargetKeyPrefix.foreach(__v => __obj.updateDynamic("TargetKeyPrefix")(__v.asInstanceOf[js.Any]))
       TargetResource.foreach(__v => __obj.updateDynamic("TargetResource")(__v.asInstanceOf[js.Any]))
-      UnModifiedSinceConstraint.foreach(__v =>
-        __obj.updateDynamic("UnModifiedSinceConstraint")(__v.asInstanceOf[js.Any])
-      )
+      UnModifiedSinceConstraint.foreach(__v => __obj.updateDynamic("UnModifiedSinceConstraint")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3CopyObjectOperation]
     }
   }
@@ -1697,9 +1627,7 @@ package s3control {
         "Retention" -> Retention.asInstanceOf[js.Any]
       )
 
-      BypassGovernanceRetention.foreach(__v =>
-        __obj.updateDynamic("BypassGovernanceRetention")(__v.asInstanceOf[js.Any])
-      )
+      BypassGovernanceRetention.foreach(__v => __obj.updateDynamic("BypassGovernanceRetention")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3SetObjectRetentionOperation]
     }
   }
@@ -1733,8 +1661,7 @@ package s3control {
     val INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[S3StorageClass]
     val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[S3StorageClass]
 
-    val values =
-      js.Object.freeze(js.Array(STANDARD, STANDARD_IA, ONEZONE_IA, GLACIER, INTELLIGENT_TIERING, DEEP_ARCHIVE))
+    val values = js.Object.freeze(js.Array(STANDARD, STANDARD_IA, ONEZONE_IA, GLACIER, INTELLIGENT_TIERING, DEEP_ARCHIVE))
   }
 
   /**

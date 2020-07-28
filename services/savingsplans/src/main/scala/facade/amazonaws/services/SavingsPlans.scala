@@ -64,26 +64,14 @@ package object savingsplans {
 
   implicit final class SavingsPlansOps(private val service: SavingsPlans) extends AnyVal {
 
-    @inline def createSavingsPlanFuture(params: CreateSavingsPlanRequest): Future[CreateSavingsPlanResponse] =
-      service.createSavingsPlan(params).promise().toFuture
-    @inline def describeSavingsPlanRatesFuture(
-        params: DescribeSavingsPlanRatesRequest
-    ): Future[DescribeSavingsPlanRatesResponse] = service.describeSavingsPlanRates(params).promise().toFuture
-    @inline def describeSavingsPlansFuture(params: DescribeSavingsPlansRequest): Future[DescribeSavingsPlansResponse] =
-      service.describeSavingsPlans(params).promise().toFuture
-    @inline def describeSavingsPlansOfferingRatesFuture(
-        params: DescribeSavingsPlansOfferingRatesRequest
-    ): Future[DescribeSavingsPlansOfferingRatesResponse] =
-      service.describeSavingsPlansOfferingRates(params).promise().toFuture
-    @inline def describeSavingsPlansOfferingsFuture(
-        params: DescribeSavingsPlansOfferingsRequest
-    ): Future[DescribeSavingsPlansOfferingsResponse] = service.describeSavingsPlansOfferings(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
+    @inline def createSavingsPlanFuture(params: CreateSavingsPlanRequest): Future[CreateSavingsPlanResponse] = service.createSavingsPlan(params).promise().toFuture
+    @inline def describeSavingsPlanRatesFuture(params: DescribeSavingsPlanRatesRequest): Future[DescribeSavingsPlanRatesResponse] = service.describeSavingsPlanRates(params).promise().toFuture
+    @inline def describeSavingsPlansFuture(params: DescribeSavingsPlansRequest): Future[DescribeSavingsPlansResponse] = service.describeSavingsPlans(params).promise().toFuture
+    @inline def describeSavingsPlansOfferingRatesFuture(params: DescribeSavingsPlansOfferingRatesRequest): Future[DescribeSavingsPlansOfferingRatesResponse] = service.describeSavingsPlansOfferingRates(params).promise().toFuture
+    @inline def describeSavingsPlansOfferingsFuture(params: DescribeSavingsPlansOfferingsRequest): Future[DescribeSavingsPlansOfferingsResponse] = service.describeSavingsPlansOfferings(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
   }
 }
 
@@ -94,15 +82,10 @@ package savingsplans {
     def this(config: AWSConfig) = this()
 
     def createSavingsPlan(params: CreateSavingsPlanRequest): Request[CreateSavingsPlanResponse] = js.native
-    def describeSavingsPlanRates(params: DescribeSavingsPlanRatesRequest): Request[DescribeSavingsPlanRatesResponse] =
-      js.native
+    def describeSavingsPlanRates(params: DescribeSavingsPlanRatesRequest): Request[DescribeSavingsPlanRatesResponse] = js.native
     def describeSavingsPlans(params: DescribeSavingsPlansRequest): Request[DescribeSavingsPlansResponse] = js.native
-    def describeSavingsPlansOfferingRates(
-        params: DescribeSavingsPlansOfferingRatesRequest
-    ): Request[DescribeSavingsPlansOfferingRatesResponse] = js.native
-    def describeSavingsPlansOfferings(
-        params: DescribeSavingsPlansOfferingsRequest
-    ): Request[DescribeSavingsPlansOfferingsResponse] = js.native
+    def describeSavingsPlansOfferingRates(params: DescribeSavingsPlansOfferingRatesRequest): Request[DescribeSavingsPlansOfferingRatesResponse] = js.native
+    def describeSavingsPlansOfferings(params: DescribeSavingsPlansOfferingsRequest): Request[DescribeSavingsPlansOfferingsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
@@ -247,9 +230,7 @@ package savingsplans {
       operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       products.foreach(__v => __obj.updateDynamic("products")(__v.asInstanceOf[js.Any]))
       savingsPlanOfferingIds.foreach(__v => __obj.updateDynamic("savingsPlanOfferingIds")(__v.asInstanceOf[js.Any]))
-      savingsPlanPaymentOptions.foreach(__v =>
-        __obj.updateDynamic("savingsPlanPaymentOptions")(__v.asInstanceOf[js.Any])
-      )
+      savingsPlanPaymentOptions.foreach(__v => __obj.updateDynamic("savingsPlanPaymentOptions")(__v.asInstanceOf[js.Any]))
       savingsPlanTypes.foreach(__v => __obj.updateDynamic("savingsPlanTypes")(__v.asInstanceOf[js.Any]))
       serviceCodes.foreach(__v => __obj.updateDynamic("serviceCodes")(__v.asInstanceOf[js.Any]))
       usageTypes.foreach(__v => __obj.updateDynamic("usageTypes")(__v.asInstanceOf[js.Any]))
@@ -844,8 +825,7 @@ package savingsplans {
     val tenancy = "tenancy".asInstanceOf[SavingsPlanRateFilterAttribute]
     val productId = "productId".asInstanceOf[SavingsPlanRateFilterAttribute]
 
-    val values =
-      js.Object.freeze(js.Array(region, instanceFamily, instanceType, productDescription, tenancy, productId))
+    val values = js.Object.freeze(js.Array(region, instanceFamily, instanceType, productDescription, tenancy, productId))
   }
 
   @js.native
@@ -860,9 +840,7 @@ package savingsplans {
     val usageType = "usageType".asInstanceOf[SavingsPlanRateFilterName]
     val operation = "operation".asInstanceOf[SavingsPlanRateFilterName]
 
-    val values = js.Object.freeze(
-      js.Array(region, instanceType, productDescription, tenancy, productType, serviceCode, usageType, operation)
-    )
+    val values = js.Object.freeze(js.Array(region, instanceType, productDescription, tenancy, productType, serviceCode, usageType, operation))
   }
 
   /**
@@ -952,19 +930,7 @@ package savingsplans {
     val start = "start".asInstanceOf[SavingsPlansFilterName]
     val end = "end".asInstanceOf[SavingsPlansFilterName]
 
-    val values = js.Object.freeze(
-      js.Array(
-        region,
-        `ec2-instance-family`,
-        commitment,
-        upfront,
-        term,
-        `savings-plan-type`,
-        `payment-option`,
-        start,
-        end
-      )
-    )
+    val values = js.Object.freeze(js.Array(region, `ec2-instance-family`, commitment, upfront, term, `savings-plan-type`, `payment-option`, start, end))
   }
 
   @js.native

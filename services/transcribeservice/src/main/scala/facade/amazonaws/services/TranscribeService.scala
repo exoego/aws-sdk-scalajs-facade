@@ -32,63 +32,29 @@ package object transcribeservice {
 
   implicit final class TranscribeServiceOps(private val service: TranscribeService) extends AnyVal {
 
-    @inline def createMedicalVocabularyFuture(
-        params: CreateMedicalVocabularyRequest
-    ): Future[CreateMedicalVocabularyResponse] = service.createMedicalVocabulary(params).promise().toFuture
-    @inline def createVocabularyFilterFuture(
-        params: CreateVocabularyFilterRequest
-    ): Future[CreateVocabularyFilterResponse] = service.createVocabularyFilter(params).promise().toFuture
-    @inline def createVocabularyFuture(params: CreateVocabularyRequest): Future[CreateVocabularyResponse] =
-      service.createVocabulary(params).promise().toFuture
-    @inline def deleteMedicalTranscriptionJobFuture(params: DeleteMedicalTranscriptionJobRequest): Future[js.Object] =
-      service.deleteMedicalTranscriptionJob(params).promise().toFuture
-    @inline def deleteMedicalVocabularyFuture(params: DeleteMedicalVocabularyRequest): Future[js.Object] =
-      service.deleteMedicalVocabulary(params).promise().toFuture
-    @inline def deleteTranscriptionJobFuture(params: DeleteTranscriptionJobRequest): Future[js.Object] =
-      service.deleteTranscriptionJob(params).promise().toFuture
-    @inline def deleteVocabularyFilterFuture(params: DeleteVocabularyFilterRequest): Future[js.Object] =
-      service.deleteVocabularyFilter(params).promise().toFuture
-    @inline def deleteVocabularyFuture(params: DeleteVocabularyRequest): Future[js.Object] =
-      service.deleteVocabulary(params).promise().toFuture
-    @inline def getMedicalTranscriptionJobFuture(
-        params: GetMedicalTranscriptionJobRequest
-    ): Future[GetMedicalTranscriptionJobResponse] = service.getMedicalTranscriptionJob(params).promise().toFuture
-    @inline def getMedicalVocabularyFuture(params: GetMedicalVocabularyRequest): Future[GetMedicalVocabularyResponse] =
-      service.getMedicalVocabulary(params).promise().toFuture
-    @inline def getTranscriptionJobFuture(params: GetTranscriptionJobRequest): Future[GetTranscriptionJobResponse] =
-      service.getTranscriptionJob(params).promise().toFuture
-    @inline def getVocabularyFilterFuture(params: GetVocabularyFilterRequest): Future[GetVocabularyFilterResponse] =
-      service.getVocabularyFilter(params).promise().toFuture
-    @inline def getVocabularyFuture(params: GetVocabularyRequest): Future[GetVocabularyResponse] =
-      service.getVocabulary(params).promise().toFuture
-    @inline def listMedicalTranscriptionJobsFuture(
-        params: ListMedicalTranscriptionJobsRequest
-    ): Future[ListMedicalTranscriptionJobsResponse] = service.listMedicalTranscriptionJobs(params).promise().toFuture
-    @inline def listMedicalVocabulariesFuture(
-        params: ListMedicalVocabulariesRequest
-    ): Future[ListMedicalVocabulariesResponse] = service.listMedicalVocabularies(params).promise().toFuture
-    @inline def listTranscriptionJobsFuture(
-        params: ListTranscriptionJobsRequest
-    ): Future[ListTranscriptionJobsResponse] = service.listTranscriptionJobs(params).promise().toFuture
-    @inline def listVocabulariesFuture(params: ListVocabulariesRequest): Future[ListVocabulariesResponse] =
-      service.listVocabularies(params).promise().toFuture
-    @inline def listVocabularyFiltersFuture(
-        params: ListVocabularyFiltersRequest
-    ): Future[ListVocabularyFiltersResponse] = service.listVocabularyFilters(params).promise().toFuture
-    @inline def startMedicalTranscriptionJobFuture(
-        params: StartMedicalTranscriptionJobRequest
-    ): Future[StartMedicalTranscriptionJobResponse] = service.startMedicalTranscriptionJob(params).promise().toFuture
-    @inline def startTranscriptionJobFuture(
-        params: StartTranscriptionJobRequest
-    ): Future[StartTranscriptionJobResponse] = service.startTranscriptionJob(params).promise().toFuture
-    @inline def updateMedicalVocabularyFuture(
-        params: UpdateMedicalVocabularyRequest
-    ): Future[UpdateMedicalVocabularyResponse] = service.updateMedicalVocabulary(params).promise().toFuture
-    @inline def updateVocabularyFilterFuture(
-        params: UpdateVocabularyFilterRequest
-    ): Future[UpdateVocabularyFilterResponse] = service.updateVocabularyFilter(params).promise().toFuture
-    @inline def updateVocabularyFuture(params: UpdateVocabularyRequest): Future[UpdateVocabularyResponse] =
-      service.updateVocabulary(params).promise().toFuture
+    @inline def createMedicalVocabularyFuture(params: CreateMedicalVocabularyRequest): Future[CreateMedicalVocabularyResponse] = service.createMedicalVocabulary(params).promise().toFuture
+    @inline def createVocabularyFilterFuture(params: CreateVocabularyFilterRequest): Future[CreateVocabularyFilterResponse] = service.createVocabularyFilter(params).promise().toFuture
+    @inline def createVocabularyFuture(params: CreateVocabularyRequest): Future[CreateVocabularyResponse] = service.createVocabulary(params).promise().toFuture
+    @inline def deleteMedicalTranscriptionJobFuture(params: DeleteMedicalTranscriptionJobRequest): Future[js.Object] = service.deleteMedicalTranscriptionJob(params).promise().toFuture
+    @inline def deleteMedicalVocabularyFuture(params: DeleteMedicalVocabularyRequest): Future[js.Object] = service.deleteMedicalVocabulary(params).promise().toFuture
+    @inline def deleteTranscriptionJobFuture(params: DeleteTranscriptionJobRequest): Future[js.Object] = service.deleteTranscriptionJob(params).promise().toFuture
+    @inline def deleteVocabularyFilterFuture(params: DeleteVocabularyFilterRequest): Future[js.Object] = service.deleteVocabularyFilter(params).promise().toFuture
+    @inline def deleteVocabularyFuture(params: DeleteVocabularyRequest): Future[js.Object] = service.deleteVocabulary(params).promise().toFuture
+    @inline def getMedicalTranscriptionJobFuture(params: GetMedicalTranscriptionJobRequest): Future[GetMedicalTranscriptionJobResponse] = service.getMedicalTranscriptionJob(params).promise().toFuture
+    @inline def getMedicalVocabularyFuture(params: GetMedicalVocabularyRequest): Future[GetMedicalVocabularyResponse] = service.getMedicalVocabulary(params).promise().toFuture
+    @inline def getTranscriptionJobFuture(params: GetTranscriptionJobRequest): Future[GetTranscriptionJobResponse] = service.getTranscriptionJob(params).promise().toFuture
+    @inline def getVocabularyFilterFuture(params: GetVocabularyFilterRequest): Future[GetVocabularyFilterResponse] = service.getVocabularyFilter(params).promise().toFuture
+    @inline def getVocabularyFuture(params: GetVocabularyRequest): Future[GetVocabularyResponse] = service.getVocabulary(params).promise().toFuture
+    @inline def listMedicalTranscriptionJobsFuture(params: ListMedicalTranscriptionJobsRequest): Future[ListMedicalTranscriptionJobsResponse] = service.listMedicalTranscriptionJobs(params).promise().toFuture
+    @inline def listMedicalVocabulariesFuture(params: ListMedicalVocabulariesRequest): Future[ListMedicalVocabulariesResponse] = service.listMedicalVocabularies(params).promise().toFuture
+    @inline def listTranscriptionJobsFuture(params: ListTranscriptionJobsRequest): Future[ListTranscriptionJobsResponse] = service.listTranscriptionJobs(params).promise().toFuture
+    @inline def listVocabulariesFuture(params: ListVocabulariesRequest): Future[ListVocabulariesResponse] = service.listVocabularies(params).promise().toFuture
+    @inline def listVocabularyFiltersFuture(params: ListVocabularyFiltersRequest): Future[ListVocabularyFiltersResponse] = service.listVocabularyFilters(params).promise().toFuture
+    @inline def startMedicalTranscriptionJobFuture(params: StartMedicalTranscriptionJobRequest): Future[StartMedicalTranscriptionJobResponse] = service.startMedicalTranscriptionJob(params).promise().toFuture
+    @inline def startTranscriptionJobFuture(params: StartTranscriptionJobRequest): Future[StartTranscriptionJobResponse] = service.startTranscriptionJob(params).promise().toFuture
+    @inline def updateMedicalVocabularyFuture(params: UpdateMedicalVocabularyRequest): Future[UpdateMedicalVocabularyResponse] = service.updateMedicalVocabulary(params).promise().toFuture
+    @inline def updateVocabularyFilterFuture(params: UpdateVocabularyFilterRequest): Future[UpdateVocabularyFilterResponse] = service.updateVocabularyFilter(params).promise().toFuture
+    @inline def updateVocabularyFuture(params: UpdateVocabularyRequest): Future[UpdateVocabularyResponse] = service.updateVocabulary(params).promise().toFuture
   }
 }
 
@@ -98,40 +64,29 @@ package transcribeservice {
   class TranscribeService() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createMedicalVocabulary(params: CreateMedicalVocabularyRequest): Request[CreateMedicalVocabularyResponse] =
-      js.native
+    def createMedicalVocabulary(params: CreateMedicalVocabularyRequest): Request[CreateMedicalVocabularyResponse] = js.native
     def createVocabulary(params: CreateVocabularyRequest): Request[CreateVocabularyResponse] = js.native
-    def createVocabularyFilter(params: CreateVocabularyFilterRequest): Request[CreateVocabularyFilterResponse] =
-      js.native
+    def createVocabularyFilter(params: CreateVocabularyFilterRequest): Request[CreateVocabularyFilterResponse] = js.native
     def deleteMedicalTranscriptionJob(params: DeleteMedicalTranscriptionJobRequest): Request[js.Object] = js.native
     def deleteMedicalVocabulary(params: DeleteMedicalVocabularyRequest): Request[js.Object] = js.native
     def deleteTranscriptionJob(params: DeleteTranscriptionJobRequest): Request[js.Object] = js.native
     def deleteVocabulary(params: DeleteVocabularyRequest): Request[js.Object] = js.native
     def deleteVocabularyFilter(params: DeleteVocabularyFilterRequest): Request[js.Object] = js.native
-    def getMedicalTranscriptionJob(
-        params: GetMedicalTranscriptionJobRequest
-    ): Request[GetMedicalTranscriptionJobResponse] = js.native
+    def getMedicalTranscriptionJob(params: GetMedicalTranscriptionJobRequest): Request[GetMedicalTranscriptionJobResponse] = js.native
     def getMedicalVocabulary(params: GetMedicalVocabularyRequest): Request[GetMedicalVocabularyResponse] = js.native
     def getTranscriptionJob(params: GetTranscriptionJobRequest): Request[GetTranscriptionJobResponse] = js.native
     def getVocabulary(params: GetVocabularyRequest): Request[GetVocabularyResponse] = js.native
     def getVocabularyFilter(params: GetVocabularyFilterRequest): Request[GetVocabularyFilterResponse] = js.native
-    def listMedicalTranscriptionJobs(
-        params: ListMedicalTranscriptionJobsRequest
-    ): Request[ListMedicalTranscriptionJobsResponse] = js.native
-    def listMedicalVocabularies(params: ListMedicalVocabulariesRequest): Request[ListMedicalVocabulariesResponse] =
-      js.native
+    def listMedicalTranscriptionJobs(params: ListMedicalTranscriptionJobsRequest): Request[ListMedicalTranscriptionJobsResponse] = js.native
+    def listMedicalVocabularies(params: ListMedicalVocabulariesRequest): Request[ListMedicalVocabulariesResponse] = js.native
     def listTranscriptionJobs(params: ListTranscriptionJobsRequest): Request[ListTranscriptionJobsResponse] = js.native
     def listVocabularies(params: ListVocabulariesRequest): Request[ListVocabulariesResponse] = js.native
     def listVocabularyFilters(params: ListVocabularyFiltersRequest): Request[ListVocabularyFiltersResponse] = js.native
-    def startMedicalTranscriptionJob(
-        params: StartMedicalTranscriptionJobRequest
-    ): Request[StartMedicalTranscriptionJobResponse] = js.native
+    def startMedicalTranscriptionJob(params: StartMedicalTranscriptionJobRequest): Request[StartMedicalTranscriptionJobResponse] = js.native
     def startTranscriptionJob(params: StartTranscriptionJobRequest): Request[StartTranscriptionJobResponse] = js.native
-    def updateMedicalVocabulary(params: UpdateMedicalVocabularyRequest): Request[UpdateMedicalVocabularyResponse] =
-      js.native
+    def updateMedicalVocabulary(params: UpdateMedicalVocabularyRequest): Request[UpdateMedicalVocabularyResponse] = js.native
     def updateVocabulary(params: UpdateVocabularyRequest): Request[UpdateVocabularyResponse] = js.native
-    def updateVocabularyFilter(params: UpdateVocabularyFilterRequest): Request[UpdateVocabularyFilterResponse] =
-      js.native
+    def updateVocabularyFilter(params: UpdateVocabularyFilterRequest): Request[UpdateVocabularyFilterResponse] = js.native
   }
 
   /**
@@ -670,41 +625,39 @@ package transcribeservice {
     val `ja-JP` = "ja-JP".asInstanceOf[LanguageCode]
     val `ar-AE` = "ar-AE".asInstanceOf[LanguageCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `en-US`,
-        `es-US`,
-        `en-AU`,
-        `fr-CA`,
-        `en-GB`,
-        `de-DE`,
-        `pt-BR`,
-        `fr-FR`,
-        `it-IT`,
-        `ko-KR`,
-        `es-ES`,
-        `en-IN`,
-        `hi-IN`,
-        `ar-SA`,
-        `ru-RU`,
-        `zh-CN`,
-        `nl-NL`,
-        `id-ID`,
-        `ta-IN`,
-        `fa-IR`,
-        `en-IE`,
-        `en-AB`,
-        `en-WL`,
-        `pt-PT`,
-        `te-IN`,
-        `tr-TR`,
-        `de-CH`,
-        `he-IL`,
-        `ms-MY`,
-        `ja-JP`,
-        `ar-AE`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      `en-US`,
+      `es-US`,
+      `en-AU`,
+      `fr-CA`,
+      `en-GB`,
+      `de-DE`,
+      `pt-BR`,
+      `fr-FR`,
+      `it-IT`,
+      `ko-KR`,
+      `es-ES`,
+      `en-IN`,
+      `hi-IN`,
+      `ar-SA`,
+      `ru-RU`,
+      `zh-CN`,
+      `nl-NL`,
+      `id-ID`,
+      `ta-IN`,
+      `fa-IR`,
+      `en-IE`,
+      `en-AB`,
+      `en-WL`,
+      `pt-PT`,
+      `te-IN`,
+      `tr-TR`,
+      `de-CH`,
+      `he-IL`,
+      `ms-MY`,
+      `ja-JP`,
+      `ar-AE`
+    ))
   }
 
   @js.native
@@ -747,9 +700,7 @@ package transcribeservice {
         Status: js.UndefOr[TranscriptionJobStatus] = js.undefined
     ): ListMedicalTranscriptionJobsResponse = {
       val __obj = js.Dynamic.literal()
-      MedicalTranscriptionJobSummaries.foreach(__v =>
-        __obj.updateDynamic("MedicalTranscriptionJobSummaries")(__v.asInstanceOf[js.Any])
-      )
+      MedicalTranscriptionJobSummaries.foreach(__v => __obj.updateDynamic("MedicalTranscriptionJobSummaries")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListMedicalTranscriptionJobsResponse]
@@ -845,9 +796,7 @@ package transcribeservice {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      TranscriptionJobSummaries.foreach(__v =>
-        __obj.updateDynamic("TranscriptionJobSummaries")(__v.asInstanceOf[js.Any])
-      )
+      TranscriptionJobSummaries.foreach(__v => __obj.updateDynamic("TranscriptionJobSummaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTranscriptionJobsResponse]
     }
   }
@@ -1036,9 +985,7 @@ package transcribeservice {
       Media.foreach(__v => __obj.updateDynamic("Media")(__v.asInstanceOf[js.Any]))
       MediaFormat.foreach(__v => __obj.updateDynamic("MediaFormat")(__v.asInstanceOf[js.Any]))
       MediaSampleRateHertz.foreach(__v => __obj.updateDynamic("MediaSampleRateHertz")(__v.asInstanceOf[js.Any]))
-      MedicalTranscriptionJobName.foreach(__v =>
-        __obj.updateDynamic("MedicalTranscriptionJobName")(__v.asInstanceOf[js.Any])
-      )
+      MedicalTranscriptionJobName.foreach(__v => __obj.updateDynamic("MedicalTranscriptionJobName")(__v.asInstanceOf[js.Any]))
       Settings.foreach(__v => __obj.updateDynamic("Settings")(__v.asInstanceOf[js.Any]))
       Specialty.foreach(__v => __obj.updateDynamic("Specialty")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
@@ -1085,9 +1032,7 @@ package transcribeservice {
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
       LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
-      MedicalTranscriptionJobName.foreach(__v =>
-        __obj.updateDynamic("MedicalTranscriptionJobName")(__v.asInstanceOf[js.Any])
-      )
+      MedicalTranscriptionJobName.foreach(__v => __obj.updateDynamic("MedicalTranscriptionJobName")(__v.asInstanceOf[js.Any]))
       OutputLocationType.foreach(__v => __obj.updateDynamic("OutputLocationType")(__v.asInstanceOf[js.Any]))
       Specialty.foreach(__v => __obj.updateDynamic("Specialty")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
@@ -1343,9 +1288,7 @@ package transcribeservice {
         TranscriptFileUri: js.UndefOr[Uri] = js.undefined
     ): Transcript = {
       val __obj = js.Dynamic.literal()
-      RedactedTranscriptFileUri.foreach(__v =>
-        __obj.updateDynamic("RedactedTranscriptFileUri")(__v.asInstanceOf[js.Any])
-      )
+      RedactedTranscriptFileUri.foreach(__v => __obj.updateDynamic("RedactedTranscriptFileUri")(__v.asInstanceOf[js.Any]))
       TranscriptFileUri.foreach(__v => __obj.updateDynamic("TranscriptFileUri")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Transcript]
     }

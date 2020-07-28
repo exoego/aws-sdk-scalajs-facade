@@ -104,109 +104,53 @@ package object rekognition {
 
   implicit final class RekognitionOps(private val service: Rekognition) extends AnyVal {
 
-    @inline def compareFacesFuture(params: CompareFacesRequest): Future[CompareFacesResponse] =
-      service.compareFaces(params).promise().toFuture
-    @inline def createCollectionFuture(params: CreateCollectionRequest): Future[CreateCollectionResponse] =
-      service.createCollection(params).promise().toFuture
-    @inline def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResponse] =
-      service.createProject(params).promise().toFuture
-    @inline def createProjectVersionFuture(params: CreateProjectVersionRequest): Future[CreateProjectVersionResponse] =
-      service.createProjectVersion(params).promise().toFuture
-    @inline def createStreamProcessorFuture(
-        params: CreateStreamProcessorRequest
-    ): Future[CreateStreamProcessorResponse] = service.createStreamProcessor(params).promise().toFuture
-    @inline def deleteCollectionFuture(params: DeleteCollectionRequest): Future[DeleteCollectionResponse] =
-      service.deleteCollection(params).promise().toFuture
-    @inline def deleteFacesFuture(params: DeleteFacesRequest): Future[DeleteFacesResponse] =
-      service.deleteFaces(params).promise().toFuture
-    @inline def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResponse] =
-      service.deleteProject(params).promise().toFuture
-    @inline def deleteProjectVersionFuture(params: DeleteProjectVersionRequest): Future[DeleteProjectVersionResponse] =
-      service.deleteProjectVersion(params).promise().toFuture
-    @inline def deleteStreamProcessorFuture(
-        params: DeleteStreamProcessorRequest
-    ): Future[DeleteStreamProcessorResponse] = service.deleteStreamProcessor(params).promise().toFuture
-    @inline def describeCollectionFuture(params: DescribeCollectionRequest): Future[DescribeCollectionResponse] =
-      service.describeCollection(params).promise().toFuture
-    @inline def describeProjectVersionsFuture(
-        params: DescribeProjectVersionsRequest
-    ): Future[DescribeProjectVersionsResponse] = service.describeProjectVersions(params).promise().toFuture
-    @inline def describeProjectsFuture(params: DescribeProjectsRequest): Future[DescribeProjectsResponse] =
-      service.describeProjects(params).promise().toFuture
-    @inline def describeStreamProcessorFuture(
-        params: DescribeStreamProcessorRequest
-    ): Future[DescribeStreamProcessorResponse] = service.describeStreamProcessor(params).promise().toFuture
-    @inline def detectCustomLabelsFuture(params: DetectCustomLabelsRequest): Future[DetectCustomLabelsResponse] =
-      service.detectCustomLabels(params).promise().toFuture
-    @inline def detectFacesFuture(params: DetectFacesRequest): Future[DetectFacesResponse] =
-      service.detectFaces(params).promise().toFuture
-    @inline def detectLabelsFuture(params: DetectLabelsRequest): Future[DetectLabelsResponse] =
-      service.detectLabels(params).promise().toFuture
-    @inline def detectModerationLabelsFuture(
-        params: DetectModerationLabelsRequest
-    ): Future[DetectModerationLabelsResponse] = service.detectModerationLabels(params).promise().toFuture
-    @inline def detectTextFuture(params: DetectTextRequest): Future[DetectTextResponse] =
-      service.detectText(params).promise().toFuture
-    @inline def getCelebrityInfoFuture(params: GetCelebrityInfoRequest): Future[GetCelebrityInfoResponse] =
-      service.getCelebrityInfo(params).promise().toFuture
-    @inline def getCelebrityRecognitionFuture(
-        params: GetCelebrityRecognitionRequest
-    ): Future[GetCelebrityRecognitionResponse] = service.getCelebrityRecognition(params).promise().toFuture
-    @inline def getContentModerationFuture(params: GetContentModerationRequest): Future[GetContentModerationResponse] =
-      service.getContentModeration(params).promise().toFuture
-    @inline def getFaceDetectionFuture(params: GetFaceDetectionRequest): Future[GetFaceDetectionResponse] =
-      service.getFaceDetection(params).promise().toFuture
-    @inline def getFaceSearchFuture(params: GetFaceSearchRequest): Future[GetFaceSearchResponse] =
-      service.getFaceSearch(params).promise().toFuture
-    @inline def getLabelDetectionFuture(params: GetLabelDetectionRequest): Future[GetLabelDetectionResponse] =
-      service.getLabelDetection(params).promise().toFuture
-    @inline def getPersonTrackingFuture(params: GetPersonTrackingRequest): Future[GetPersonTrackingResponse] =
-      service.getPersonTracking(params).promise().toFuture
-    @inline def getSegmentDetectionFuture(params: GetSegmentDetectionRequest): Future[GetSegmentDetectionResponse] =
-      service.getSegmentDetection(params).promise().toFuture
-    @inline def getTextDetectionFuture(params: GetTextDetectionRequest): Future[GetTextDetectionResponse] =
-      service.getTextDetection(params).promise().toFuture
-    @inline def indexFacesFuture(params: IndexFacesRequest): Future[IndexFacesResponse] =
-      service.indexFaces(params).promise().toFuture
-    @inline def listCollectionsFuture(params: ListCollectionsRequest): Future[ListCollectionsResponse] =
-      service.listCollections(params).promise().toFuture
-    @inline def listFacesFuture(params: ListFacesRequest): Future[ListFacesResponse] =
-      service.listFaces(params).promise().toFuture
-    @inline def listStreamProcessorsFuture(params: ListStreamProcessorsRequest): Future[ListStreamProcessorsResponse] =
-      service.listStreamProcessors(params).promise().toFuture
-    @inline def recognizeCelebritiesFuture(params: RecognizeCelebritiesRequest): Future[RecognizeCelebritiesResponse] =
-      service.recognizeCelebrities(params).promise().toFuture
-    @inline def searchFacesByImageFuture(params: SearchFacesByImageRequest): Future[SearchFacesByImageResponse] =
-      service.searchFacesByImage(params).promise().toFuture
-    @inline def searchFacesFuture(params: SearchFacesRequest): Future[SearchFacesResponse] =
-      service.searchFaces(params).promise().toFuture
-    @inline def startCelebrityRecognitionFuture(
-        params: StartCelebrityRecognitionRequest
-    ): Future[StartCelebrityRecognitionResponse] = service.startCelebrityRecognition(params).promise().toFuture
-    @inline def startContentModerationFuture(
-        params: StartContentModerationRequest
-    ): Future[StartContentModerationResponse] = service.startContentModeration(params).promise().toFuture
-    @inline def startFaceDetectionFuture(params: StartFaceDetectionRequest): Future[StartFaceDetectionResponse] =
-      service.startFaceDetection(params).promise().toFuture
-    @inline def startFaceSearchFuture(params: StartFaceSearchRequest): Future[StartFaceSearchResponse] =
-      service.startFaceSearch(params).promise().toFuture
-    @inline def startLabelDetectionFuture(params: StartLabelDetectionRequest): Future[StartLabelDetectionResponse] =
-      service.startLabelDetection(params).promise().toFuture
-    @inline def startPersonTrackingFuture(params: StartPersonTrackingRequest): Future[StartPersonTrackingResponse] =
-      service.startPersonTracking(params).promise().toFuture
-    @inline def startProjectVersionFuture(params: StartProjectVersionRequest): Future[StartProjectVersionResponse] =
-      service.startProjectVersion(params).promise().toFuture
-    @inline def startSegmentDetectionFuture(
-        params: StartSegmentDetectionRequest
-    ): Future[StartSegmentDetectionResponse] = service.startSegmentDetection(params).promise().toFuture
-    @inline def startStreamProcessorFuture(params: StartStreamProcessorRequest): Future[StartStreamProcessorResponse] =
-      service.startStreamProcessor(params).promise().toFuture
-    @inline def startTextDetectionFuture(params: StartTextDetectionRequest): Future[StartTextDetectionResponse] =
-      service.startTextDetection(params).promise().toFuture
-    @inline def stopProjectVersionFuture(params: StopProjectVersionRequest): Future[StopProjectVersionResponse] =
-      service.stopProjectVersion(params).promise().toFuture
-    @inline def stopStreamProcessorFuture(params: StopStreamProcessorRequest): Future[StopStreamProcessorResponse] =
-      service.stopStreamProcessor(params).promise().toFuture
+    @inline def compareFacesFuture(params: CompareFacesRequest): Future[CompareFacesResponse] = service.compareFaces(params).promise().toFuture
+    @inline def createCollectionFuture(params: CreateCollectionRequest): Future[CreateCollectionResponse] = service.createCollection(params).promise().toFuture
+    @inline def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResponse] = service.createProject(params).promise().toFuture
+    @inline def createProjectVersionFuture(params: CreateProjectVersionRequest): Future[CreateProjectVersionResponse] = service.createProjectVersion(params).promise().toFuture
+    @inline def createStreamProcessorFuture(params: CreateStreamProcessorRequest): Future[CreateStreamProcessorResponse] = service.createStreamProcessor(params).promise().toFuture
+    @inline def deleteCollectionFuture(params: DeleteCollectionRequest): Future[DeleteCollectionResponse] = service.deleteCollection(params).promise().toFuture
+    @inline def deleteFacesFuture(params: DeleteFacesRequest): Future[DeleteFacesResponse] = service.deleteFaces(params).promise().toFuture
+    @inline def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResponse] = service.deleteProject(params).promise().toFuture
+    @inline def deleteProjectVersionFuture(params: DeleteProjectVersionRequest): Future[DeleteProjectVersionResponse] = service.deleteProjectVersion(params).promise().toFuture
+    @inline def deleteStreamProcessorFuture(params: DeleteStreamProcessorRequest): Future[DeleteStreamProcessorResponse] = service.deleteStreamProcessor(params).promise().toFuture
+    @inline def describeCollectionFuture(params: DescribeCollectionRequest): Future[DescribeCollectionResponse] = service.describeCollection(params).promise().toFuture
+    @inline def describeProjectVersionsFuture(params: DescribeProjectVersionsRequest): Future[DescribeProjectVersionsResponse] = service.describeProjectVersions(params).promise().toFuture
+    @inline def describeProjectsFuture(params: DescribeProjectsRequest): Future[DescribeProjectsResponse] = service.describeProjects(params).promise().toFuture
+    @inline def describeStreamProcessorFuture(params: DescribeStreamProcessorRequest): Future[DescribeStreamProcessorResponse] = service.describeStreamProcessor(params).promise().toFuture
+    @inline def detectCustomLabelsFuture(params: DetectCustomLabelsRequest): Future[DetectCustomLabelsResponse] = service.detectCustomLabels(params).promise().toFuture
+    @inline def detectFacesFuture(params: DetectFacesRequest): Future[DetectFacesResponse] = service.detectFaces(params).promise().toFuture
+    @inline def detectLabelsFuture(params: DetectLabelsRequest): Future[DetectLabelsResponse] = service.detectLabels(params).promise().toFuture
+    @inline def detectModerationLabelsFuture(params: DetectModerationLabelsRequest): Future[DetectModerationLabelsResponse] = service.detectModerationLabels(params).promise().toFuture
+    @inline def detectTextFuture(params: DetectTextRequest): Future[DetectTextResponse] = service.detectText(params).promise().toFuture
+    @inline def getCelebrityInfoFuture(params: GetCelebrityInfoRequest): Future[GetCelebrityInfoResponse] = service.getCelebrityInfo(params).promise().toFuture
+    @inline def getCelebrityRecognitionFuture(params: GetCelebrityRecognitionRequest): Future[GetCelebrityRecognitionResponse] = service.getCelebrityRecognition(params).promise().toFuture
+    @inline def getContentModerationFuture(params: GetContentModerationRequest): Future[GetContentModerationResponse] = service.getContentModeration(params).promise().toFuture
+    @inline def getFaceDetectionFuture(params: GetFaceDetectionRequest): Future[GetFaceDetectionResponse] = service.getFaceDetection(params).promise().toFuture
+    @inline def getFaceSearchFuture(params: GetFaceSearchRequest): Future[GetFaceSearchResponse] = service.getFaceSearch(params).promise().toFuture
+    @inline def getLabelDetectionFuture(params: GetLabelDetectionRequest): Future[GetLabelDetectionResponse] = service.getLabelDetection(params).promise().toFuture
+    @inline def getPersonTrackingFuture(params: GetPersonTrackingRequest): Future[GetPersonTrackingResponse] = service.getPersonTracking(params).promise().toFuture
+    @inline def getSegmentDetectionFuture(params: GetSegmentDetectionRequest): Future[GetSegmentDetectionResponse] = service.getSegmentDetection(params).promise().toFuture
+    @inline def getTextDetectionFuture(params: GetTextDetectionRequest): Future[GetTextDetectionResponse] = service.getTextDetection(params).promise().toFuture
+    @inline def indexFacesFuture(params: IndexFacesRequest): Future[IndexFacesResponse] = service.indexFaces(params).promise().toFuture
+    @inline def listCollectionsFuture(params: ListCollectionsRequest): Future[ListCollectionsResponse] = service.listCollections(params).promise().toFuture
+    @inline def listFacesFuture(params: ListFacesRequest): Future[ListFacesResponse] = service.listFaces(params).promise().toFuture
+    @inline def listStreamProcessorsFuture(params: ListStreamProcessorsRequest): Future[ListStreamProcessorsResponse] = service.listStreamProcessors(params).promise().toFuture
+    @inline def recognizeCelebritiesFuture(params: RecognizeCelebritiesRequest): Future[RecognizeCelebritiesResponse] = service.recognizeCelebrities(params).promise().toFuture
+    @inline def searchFacesByImageFuture(params: SearchFacesByImageRequest): Future[SearchFacesByImageResponse] = service.searchFacesByImage(params).promise().toFuture
+    @inline def searchFacesFuture(params: SearchFacesRequest): Future[SearchFacesResponse] = service.searchFaces(params).promise().toFuture
+    @inline def startCelebrityRecognitionFuture(params: StartCelebrityRecognitionRequest): Future[StartCelebrityRecognitionResponse] = service.startCelebrityRecognition(params).promise().toFuture
+    @inline def startContentModerationFuture(params: StartContentModerationRequest): Future[StartContentModerationResponse] = service.startContentModeration(params).promise().toFuture
+    @inline def startFaceDetectionFuture(params: StartFaceDetectionRequest): Future[StartFaceDetectionResponse] = service.startFaceDetection(params).promise().toFuture
+    @inline def startFaceSearchFuture(params: StartFaceSearchRequest): Future[StartFaceSearchResponse] = service.startFaceSearch(params).promise().toFuture
+    @inline def startLabelDetectionFuture(params: StartLabelDetectionRequest): Future[StartLabelDetectionResponse] = service.startLabelDetection(params).promise().toFuture
+    @inline def startPersonTrackingFuture(params: StartPersonTrackingRequest): Future[StartPersonTrackingResponse] = service.startPersonTracking(params).promise().toFuture
+    @inline def startProjectVersionFuture(params: StartProjectVersionRequest): Future[StartProjectVersionResponse] = service.startProjectVersion(params).promise().toFuture
+    @inline def startSegmentDetectionFuture(params: StartSegmentDetectionRequest): Future[StartSegmentDetectionResponse] = service.startSegmentDetection(params).promise().toFuture
+    @inline def startStreamProcessorFuture(params: StartStreamProcessorRequest): Future[StartStreamProcessorResponse] = service.startStreamProcessor(params).promise().toFuture
+    @inline def startTextDetectionFuture(params: StartTextDetectionRequest): Future[StartTextDetectionResponse] = service.startTextDetection(params).promise().toFuture
+    @inline def stopProjectVersionFuture(params: StopProjectVersionRequest): Future[StopProjectVersionResponse] = service.stopProjectVersion(params).promise().toFuture
+    @inline def stopStreamProcessorFuture(params: StopStreamProcessorRequest): Future[StopStreamProcessorResponse] = service.stopStreamProcessor(params).promise().toFuture
   }
 }
 
@@ -227,20 +171,16 @@ package rekognition {
     def deleteProjectVersion(params: DeleteProjectVersionRequest): Request[DeleteProjectVersionResponse] = js.native
     def deleteStreamProcessor(params: DeleteStreamProcessorRequest): Request[DeleteStreamProcessorResponse] = js.native
     def describeCollection(params: DescribeCollectionRequest): Request[DescribeCollectionResponse] = js.native
-    def describeProjectVersions(params: DescribeProjectVersionsRequest): Request[DescribeProjectVersionsResponse] =
-      js.native
+    def describeProjectVersions(params: DescribeProjectVersionsRequest): Request[DescribeProjectVersionsResponse] = js.native
     def describeProjects(params: DescribeProjectsRequest): Request[DescribeProjectsResponse] = js.native
-    def describeStreamProcessor(params: DescribeStreamProcessorRequest): Request[DescribeStreamProcessorResponse] =
-      js.native
+    def describeStreamProcessor(params: DescribeStreamProcessorRequest): Request[DescribeStreamProcessorResponse] = js.native
     def detectCustomLabels(params: DetectCustomLabelsRequest): Request[DetectCustomLabelsResponse] = js.native
     def detectFaces(params: DetectFacesRequest): Request[DetectFacesResponse] = js.native
     def detectLabels(params: DetectLabelsRequest): Request[DetectLabelsResponse] = js.native
-    def detectModerationLabels(params: DetectModerationLabelsRequest): Request[DetectModerationLabelsResponse] =
-      js.native
+    def detectModerationLabels(params: DetectModerationLabelsRequest): Request[DetectModerationLabelsResponse] = js.native
     def detectText(params: DetectTextRequest): Request[DetectTextResponse] = js.native
     def getCelebrityInfo(params: GetCelebrityInfoRequest): Request[GetCelebrityInfoResponse] = js.native
-    def getCelebrityRecognition(params: GetCelebrityRecognitionRequest): Request[GetCelebrityRecognitionResponse] =
-      js.native
+    def getCelebrityRecognition(params: GetCelebrityRecognitionRequest): Request[GetCelebrityRecognitionResponse] = js.native
     def getContentModeration(params: GetContentModerationRequest): Request[GetContentModerationResponse] = js.native
     def getFaceDetection(params: GetFaceDetectionRequest): Request[GetFaceDetectionResponse] = js.native
     def getFaceSearch(params: GetFaceSearchRequest): Request[GetFaceSearchResponse] = js.native
@@ -255,11 +195,8 @@ package rekognition {
     def recognizeCelebrities(params: RecognizeCelebritiesRequest): Request[RecognizeCelebritiesResponse] = js.native
     def searchFaces(params: SearchFacesRequest): Request[SearchFacesResponse] = js.native
     def searchFacesByImage(params: SearchFacesByImageRequest): Request[SearchFacesByImageResponse] = js.native
-    def startCelebrityRecognition(
-        params: StartCelebrityRecognitionRequest
-    ): Request[StartCelebrityRecognitionResponse] = js.native
-    def startContentModeration(params: StartContentModerationRequest): Request[StartContentModerationResponse] =
-      js.native
+    def startCelebrityRecognition(params: StartCelebrityRecognitionRequest): Request[StartCelebrityRecognitionResponse] = js.native
+    def startContentModeration(params: StartContentModerationRequest): Request[StartContentModerationResponse] = js.native
     def startFaceDetection(params: StartFaceDetectionRequest): Request[StartFaceDetectionResponse] = js.native
     def startFaceSearch(params: StartFaceSearchRequest): Request[StartFaceSearchResponse] = js.native
     def startLabelDetection(params: StartLabelDetectionRequest): Request[StartLabelDetectionResponse] = js.native
@@ -571,12 +508,8 @@ package rekognition {
       val __obj = js.Dynamic.literal()
       FaceMatches.foreach(__v => __obj.updateDynamic("FaceMatches")(__v.asInstanceOf[js.Any]))
       SourceImageFace.foreach(__v => __obj.updateDynamic("SourceImageFace")(__v.asInstanceOf[js.Any]))
-      SourceImageOrientationCorrection.foreach(__v =>
-        __obj.updateDynamic("SourceImageOrientationCorrection")(__v.asInstanceOf[js.Any])
-      )
-      TargetImageOrientationCorrection.foreach(__v =>
-        __obj.updateDynamic("TargetImageOrientationCorrection")(__v.asInstanceOf[js.Any])
-      )
+      SourceImageOrientationCorrection.foreach(__v => __obj.updateDynamic("SourceImageOrientationCorrection")(__v.asInstanceOf[js.Any]))
+      TargetImageOrientationCorrection.foreach(__v => __obj.updateDynamic("TargetImageOrientationCorrection")(__v.asInstanceOf[js.Any]))
       UnmatchedFaces.foreach(__v => __obj.updateDynamic("UnmatchedFaces")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CompareFacesResponse]
     }
@@ -638,8 +571,7 @@ package rekognition {
   @js.native
   sealed trait ContentClassifier extends js.Any
   object ContentClassifier extends js.Object {
-    val FreeOfPersonallyIdentifiableInformation =
-      "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
+    val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
     val FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
 
     val values = js.Object.freeze(js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent))
@@ -1121,9 +1053,7 @@ package rekognition {
     ): DescribeProjectVersionsResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ProjectVersionDescriptions.foreach(__v =>
-        __obj.updateDynamic("ProjectVersionDescriptions")(__v.asInstanceOf[js.Any])
-      )
+      ProjectVersionDescriptions.foreach(__v => __obj.updateDynamic("ProjectVersionDescriptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProjectVersionsResponse]
     }
   }
@@ -1395,9 +1325,7 @@ package rekognition {
         ModerationModelVersion: js.UndefOr[String] = js.undefined
     ): DetectModerationLabelsResponse = {
       val __obj = js.Dynamic.literal()
-      HumanLoopActivationOutput.foreach(__v =>
-        __obj.updateDynamic("HumanLoopActivationOutput")(__v.asInstanceOf[js.Any])
-      )
+      HumanLoopActivationOutput.foreach(__v => __obj.updateDynamic("HumanLoopActivationOutput")(__v.asInstanceOf[js.Any]))
       ModerationLabels.foreach(__v => __obj.updateDynamic("ModerationLabels")(__v.asInstanceOf[js.Any]))
       ModerationModelVersion.foreach(__v => __obj.updateDynamic("ModerationModelVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectModerationLabelsResponse]
@@ -2370,18 +2298,13 @@ package rekognition {
   object HumanLoopActivationOutput {
     @inline
     def apply(
-        HumanLoopActivationConditionsEvaluationResults: js.UndefOr[HumanLoopActivationConditionsEvaluationResults] =
-          js.undefined,
+        HumanLoopActivationConditionsEvaluationResults: js.UndefOr[HumanLoopActivationConditionsEvaluationResults] = js.undefined,
         HumanLoopActivationReasons: js.UndefOr[HumanLoopActivationReasons] = js.undefined,
         HumanLoopArn: js.UndefOr[HumanLoopArn] = js.undefined
     ): HumanLoopActivationOutput = {
       val __obj = js.Dynamic.literal()
-      HumanLoopActivationConditionsEvaluationResults.foreach(__v =>
-        __obj.updateDynamic("HumanLoopActivationConditionsEvaluationResults")(__v.asInstanceOf[js.Any])
-      )
-      HumanLoopActivationReasons.foreach(__v =>
-        __obj.updateDynamic("HumanLoopActivationReasons")(__v.asInstanceOf[js.Any])
-      )
+      HumanLoopActivationConditionsEvaluationResults.foreach(__v => __obj.updateDynamic("HumanLoopActivationConditionsEvaluationResults")(__v.asInstanceOf[js.Any]))
+      HumanLoopActivationReasons.foreach(__v => __obj.updateDynamic("HumanLoopActivationReasons")(__v.asInstanceOf[js.Any]))
       HumanLoopArn.foreach(__v => __obj.updateDynamic("HumanLoopArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HumanLoopActivationOutput]
     }
@@ -2719,40 +2642,38 @@ package rekognition {
     val midJawlineRight = "midJawlineRight".asInstanceOf[LandmarkType]
     val upperJawlineRight = "upperJawlineRight".asInstanceOf[LandmarkType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        eyeLeft,
-        eyeRight,
-        nose,
-        mouthLeft,
-        mouthRight,
-        leftEyeBrowLeft,
-        leftEyeBrowRight,
-        leftEyeBrowUp,
-        rightEyeBrowLeft,
-        rightEyeBrowRight,
-        rightEyeBrowUp,
-        leftEyeLeft,
-        leftEyeRight,
-        leftEyeUp,
-        leftEyeDown,
-        rightEyeLeft,
-        rightEyeRight,
-        rightEyeUp,
-        rightEyeDown,
-        noseLeft,
-        noseRight,
-        mouthUp,
-        mouthDown,
-        leftPupil,
-        rightPupil,
-        upperJawlineLeft,
-        midJawlineLeft,
-        chinBottom,
-        midJawlineRight,
-        upperJawlineRight
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      eyeLeft,
+      eyeRight,
+      nose,
+      mouthLeft,
+      mouthRight,
+      leftEyeBrowLeft,
+      leftEyeBrowRight,
+      leftEyeBrowUp,
+      rightEyeBrowLeft,
+      rightEyeBrowRight,
+      rightEyeBrowUp,
+      leftEyeLeft,
+      leftEyeRight,
+      leftEyeUp,
+      leftEyeDown,
+      rightEyeLeft,
+      rightEyeRight,
+      rightEyeUp,
+      rightEyeDown,
+      noseLeft,
+      noseRight,
+      mouthUp,
+      mouthDown,
+      leftPupil,
+      rightPupil,
+      upperJawlineLeft,
+      midJawlineLeft,
+      chinBottom,
+      midJawlineRight,
+      upperJawlineRight
+    ))
   }
 
   @js.native
@@ -3224,9 +3145,7 @@ package rekognition {
         TrainingEndTimestamp: js.UndefOr[DateTime] = js.undefined
     ): ProjectVersionDescription = {
       val __obj = js.Dynamic.literal()
-      BillableTrainingTimeInSeconds.foreach(__v =>
-        __obj.updateDynamic("BillableTrainingTimeInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      BillableTrainingTimeInSeconds.foreach(__v => __obj.updateDynamic("BillableTrainingTimeInSeconds")(__v.asInstanceOf[js.Any]))
       CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
       EvaluationResult.foreach(__v => __obj.updateDynamic("EvaluationResult")(__v.asInstanceOf[js.Any]))
       MinInferenceUnits.foreach(__v => __obj.updateDynamic("MinInferenceUnits")(__v.asInstanceOf[js.Any]))
@@ -3254,19 +3173,7 @@ package rekognition {
     val STOPPED = "STOPPED".asInstanceOf[ProjectVersionStatus]
     val DELETING = "DELETING".asInstanceOf[ProjectVersionStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        TRAINING_IN_PROGRESS,
-        TRAINING_COMPLETED,
-        TRAINING_FAILED,
-        STARTING,
-        RUNNING,
-        FAILED,
-        STOPPING,
-        STOPPED,
-        DELETING
-      )
-    )
+    val values = js.Object.freeze(js.Array(TRAINING_IN_PROGRESS, TRAINING_COMPLETED, TRAINING_FAILED, STARTING, RUNNING, FAILED, STOPPING, STOPPED, DELETING))
   }
 
   @js.native
@@ -3292,17 +3199,7 @@ package rekognition {
     val SMALL_BOUNDING_BOX = "SMALL_BOUNDING_BOX".asInstanceOf[Reason]
     val LOW_FACE_QUALITY = "LOW_FACE_QUALITY".asInstanceOf[Reason]
 
-    val values = js.Object.freeze(
-      js.Array(
-        EXCEEDS_MAX_FACES,
-        EXTREME_POSE,
-        LOW_BRIGHTNESS,
-        LOW_SHARPNESS,
-        LOW_CONFIDENCE,
-        SMALL_BOUNDING_BOX,
-        LOW_FACE_QUALITY
-      )
-    )
+    val values = js.Object.freeze(js.Array(EXCEEDS_MAX_FACES, EXTREME_POSE, LOW_BRIGHTNESS, LOW_SHARPNESS, LOW_CONFIDENCE, SMALL_BOUNDING_BOX, LOW_FACE_QUALITY))
   }
 
   @js.native

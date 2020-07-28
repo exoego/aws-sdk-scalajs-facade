@@ -61,88 +61,41 @@ package object iotthingsgraph {
 
   implicit final class IoTThingsGraphOps(private val service: IoTThingsGraph) extends AnyVal {
 
-    @inline def associateEntityToThingFuture(
-        params: AssociateEntityToThingRequest
-    ): Future[AssociateEntityToThingResponse] = service.associateEntityToThing(params).promise().toFuture
-    @inline def createFlowTemplateFuture(params: CreateFlowTemplateRequest): Future[CreateFlowTemplateResponse] =
-      service.createFlowTemplate(params).promise().toFuture
-    @inline def createSystemInstanceFuture(params: CreateSystemInstanceRequest): Future[CreateSystemInstanceResponse] =
-      service.createSystemInstance(params).promise().toFuture
-    @inline def createSystemTemplateFuture(params: CreateSystemTemplateRequest): Future[CreateSystemTemplateResponse] =
-      service.createSystemTemplate(params).promise().toFuture
-    @inline def deleteFlowTemplateFuture(params: DeleteFlowTemplateRequest): Future[DeleteFlowTemplateResponse] =
-      service.deleteFlowTemplate(params).promise().toFuture
-    @inline def deleteNamespaceFuture(params: DeleteNamespaceRequest): Future[DeleteNamespaceResponse] =
-      service.deleteNamespace(params).promise().toFuture
-    @inline def deleteSystemInstanceFuture(params: DeleteSystemInstanceRequest): Future[DeleteSystemInstanceResponse] =
-      service.deleteSystemInstance(params).promise().toFuture
-    @inline def deleteSystemTemplateFuture(params: DeleteSystemTemplateRequest): Future[DeleteSystemTemplateResponse] =
-      service.deleteSystemTemplate(params).promise().toFuture
-    @inline def deploySystemInstanceFuture(params: DeploySystemInstanceRequest): Future[DeploySystemInstanceResponse] =
-      service.deploySystemInstance(params).promise().toFuture
-    @inline def deprecateFlowTemplateFuture(
-        params: DeprecateFlowTemplateRequest
-    ): Future[DeprecateFlowTemplateResponse] = service.deprecateFlowTemplate(params).promise().toFuture
-    @inline def deprecateSystemTemplateFuture(
-        params: DeprecateSystemTemplateRequest
-    ): Future[DeprecateSystemTemplateResponse] = service.deprecateSystemTemplate(params).promise().toFuture
-    @inline def describeNamespaceFuture(params: DescribeNamespaceRequest): Future[DescribeNamespaceResponse] =
-      service.describeNamespace(params).promise().toFuture
-    @inline def dissociateEntityFromThingFuture(
-        params: DissociateEntityFromThingRequest
-    ): Future[DissociateEntityFromThingResponse] = service.dissociateEntityFromThing(params).promise().toFuture
-    @inline def getEntitiesFuture(params: GetEntitiesRequest): Future[GetEntitiesResponse] =
-      service.getEntities(params).promise().toFuture
-    @inline def getFlowTemplateFuture(params: GetFlowTemplateRequest): Future[GetFlowTemplateResponse] =
-      service.getFlowTemplate(params).promise().toFuture
-    @inline def getFlowTemplateRevisionsFuture(
-        params: GetFlowTemplateRevisionsRequest
-    ): Future[GetFlowTemplateRevisionsResponse] = service.getFlowTemplateRevisions(params).promise().toFuture
-    @inline def getNamespaceDeletionStatusFuture(
-        params: GetNamespaceDeletionStatusRequest
-    ): Future[GetNamespaceDeletionStatusResponse] = service.getNamespaceDeletionStatus(params).promise().toFuture
-    @inline def getSystemInstanceFuture(params: GetSystemInstanceRequest): Future[GetSystemInstanceResponse] =
-      service.getSystemInstance(params).promise().toFuture
-    @inline def getSystemTemplateFuture(params: GetSystemTemplateRequest): Future[GetSystemTemplateResponse] =
-      service.getSystemTemplate(params).promise().toFuture
-    @inline def getSystemTemplateRevisionsFuture(
-        params: GetSystemTemplateRevisionsRequest
-    ): Future[GetSystemTemplateRevisionsResponse] = service.getSystemTemplateRevisions(params).promise().toFuture
-    @inline def getUploadStatusFuture(params: GetUploadStatusRequest): Future[GetUploadStatusResponse] =
-      service.getUploadStatus(params).promise().toFuture
-    @inline def listFlowExecutionMessagesFuture(
-        params: ListFlowExecutionMessagesRequest
-    ): Future[ListFlowExecutionMessagesResponse] = service.listFlowExecutionMessages(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def searchEntitiesFuture(params: SearchEntitiesRequest): Future[SearchEntitiesResponse] =
-      service.searchEntities(params).promise().toFuture
-    @inline def searchFlowExecutionsFuture(params: SearchFlowExecutionsRequest): Future[SearchFlowExecutionsResponse] =
-      service.searchFlowExecutions(params).promise().toFuture
-    @inline def searchFlowTemplatesFuture(params: SearchFlowTemplatesRequest): Future[SearchFlowTemplatesResponse] =
-      service.searchFlowTemplates(params).promise().toFuture
-    @inline def searchSystemInstancesFuture(
-        params: SearchSystemInstancesRequest
-    ): Future[SearchSystemInstancesResponse] = service.searchSystemInstances(params).promise().toFuture
-    @inline def searchSystemTemplatesFuture(
-        params: SearchSystemTemplatesRequest
-    ): Future[SearchSystemTemplatesResponse] = service.searchSystemTemplates(params).promise().toFuture
-    @inline def searchThingsFuture(params: SearchThingsRequest): Future[SearchThingsResponse] =
-      service.searchThings(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def undeploySystemInstanceFuture(
-        params: UndeploySystemInstanceRequest
-    ): Future[UndeploySystemInstanceResponse] = service.undeploySystemInstance(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateFlowTemplateFuture(params: UpdateFlowTemplateRequest): Future[UpdateFlowTemplateResponse] =
-      service.updateFlowTemplate(params).promise().toFuture
-    @inline def updateSystemTemplateFuture(params: UpdateSystemTemplateRequest): Future[UpdateSystemTemplateResponse] =
-      service.updateSystemTemplate(params).promise().toFuture
-    @inline def uploadEntityDefinitionsFuture(
-        params: UploadEntityDefinitionsRequest
-    ): Future[UploadEntityDefinitionsResponse] = service.uploadEntityDefinitions(params).promise().toFuture
+    @inline def associateEntityToThingFuture(params: AssociateEntityToThingRequest): Future[AssociateEntityToThingResponse] = service.associateEntityToThing(params).promise().toFuture
+    @inline def createFlowTemplateFuture(params: CreateFlowTemplateRequest): Future[CreateFlowTemplateResponse] = service.createFlowTemplate(params).promise().toFuture
+    @inline def createSystemInstanceFuture(params: CreateSystemInstanceRequest): Future[CreateSystemInstanceResponse] = service.createSystemInstance(params).promise().toFuture
+    @inline def createSystemTemplateFuture(params: CreateSystemTemplateRequest): Future[CreateSystemTemplateResponse] = service.createSystemTemplate(params).promise().toFuture
+    @inline def deleteFlowTemplateFuture(params: DeleteFlowTemplateRequest): Future[DeleteFlowTemplateResponse] = service.deleteFlowTemplate(params).promise().toFuture
+    @inline def deleteNamespaceFuture(params: DeleteNamespaceRequest): Future[DeleteNamespaceResponse] = service.deleteNamespace(params).promise().toFuture
+    @inline def deleteSystemInstanceFuture(params: DeleteSystemInstanceRequest): Future[DeleteSystemInstanceResponse] = service.deleteSystemInstance(params).promise().toFuture
+    @inline def deleteSystemTemplateFuture(params: DeleteSystemTemplateRequest): Future[DeleteSystemTemplateResponse] = service.deleteSystemTemplate(params).promise().toFuture
+    @inline def deploySystemInstanceFuture(params: DeploySystemInstanceRequest): Future[DeploySystemInstanceResponse] = service.deploySystemInstance(params).promise().toFuture
+    @inline def deprecateFlowTemplateFuture(params: DeprecateFlowTemplateRequest): Future[DeprecateFlowTemplateResponse] = service.deprecateFlowTemplate(params).promise().toFuture
+    @inline def deprecateSystemTemplateFuture(params: DeprecateSystemTemplateRequest): Future[DeprecateSystemTemplateResponse] = service.deprecateSystemTemplate(params).promise().toFuture
+    @inline def describeNamespaceFuture(params: DescribeNamespaceRequest): Future[DescribeNamespaceResponse] = service.describeNamespace(params).promise().toFuture
+    @inline def dissociateEntityFromThingFuture(params: DissociateEntityFromThingRequest): Future[DissociateEntityFromThingResponse] = service.dissociateEntityFromThing(params).promise().toFuture
+    @inline def getEntitiesFuture(params: GetEntitiesRequest): Future[GetEntitiesResponse] = service.getEntities(params).promise().toFuture
+    @inline def getFlowTemplateFuture(params: GetFlowTemplateRequest): Future[GetFlowTemplateResponse] = service.getFlowTemplate(params).promise().toFuture
+    @inline def getFlowTemplateRevisionsFuture(params: GetFlowTemplateRevisionsRequest): Future[GetFlowTemplateRevisionsResponse] = service.getFlowTemplateRevisions(params).promise().toFuture
+    @inline def getNamespaceDeletionStatusFuture(params: GetNamespaceDeletionStatusRequest): Future[GetNamespaceDeletionStatusResponse] = service.getNamespaceDeletionStatus(params).promise().toFuture
+    @inline def getSystemInstanceFuture(params: GetSystemInstanceRequest): Future[GetSystemInstanceResponse] = service.getSystemInstance(params).promise().toFuture
+    @inline def getSystemTemplateFuture(params: GetSystemTemplateRequest): Future[GetSystemTemplateResponse] = service.getSystemTemplate(params).promise().toFuture
+    @inline def getSystemTemplateRevisionsFuture(params: GetSystemTemplateRevisionsRequest): Future[GetSystemTemplateRevisionsResponse] = service.getSystemTemplateRevisions(params).promise().toFuture
+    @inline def getUploadStatusFuture(params: GetUploadStatusRequest): Future[GetUploadStatusResponse] = service.getUploadStatus(params).promise().toFuture
+    @inline def listFlowExecutionMessagesFuture(params: ListFlowExecutionMessagesRequest): Future[ListFlowExecutionMessagesResponse] = service.listFlowExecutionMessages(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def searchEntitiesFuture(params: SearchEntitiesRequest): Future[SearchEntitiesResponse] = service.searchEntities(params).promise().toFuture
+    @inline def searchFlowExecutionsFuture(params: SearchFlowExecutionsRequest): Future[SearchFlowExecutionsResponse] = service.searchFlowExecutions(params).promise().toFuture
+    @inline def searchFlowTemplatesFuture(params: SearchFlowTemplatesRequest): Future[SearchFlowTemplatesResponse] = service.searchFlowTemplates(params).promise().toFuture
+    @inline def searchSystemInstancesFuture(params: SearchSystemInstancesRequest): Future[SearchSystemInstancesResponse] = service.searchSystemInstances(params).promise().toFuture
+    @inline def searchSystemTemplatesFuture(params: SearchSystemTemplatesRequest): Future[SearchSystemTemplatesResponse] = service.searchSystemTemplates(params).promise().toFuture
+    @inline def searchThingsFuture(params: SearchThingsRequest): Future[SearchThingsResponse] = service.searchThings(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def undeploySystemInstanceFuture(params: UndeploySystemInstanceRequest): Future[UndeploySystemInstanceResponse] = service.undeploySystemInstance(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateFlowTemplateFuture(params: UpdateFlowTemplateRequest): Future[UpdateFlowTemplateResponse] = service.updateFlowTemplate(params).promise().toFuture
+    @inline def updateSystemTemplateFuture(params: UpdateSystemTemplateRequest): Future[UpdateSystemTemplateResponse] = service.updateSystemTemplate(params).promise().toFuture
+    @inline def uploadEntityDefinitionsFuture(params: UploadEntityDefinitionsRequest): Future[UploadEntityDefinitionsResponse] = service.uploadEntityDefinitions(params).promise().toFuture
   }
 }
 
@@ -152,8 +105,7 @@ package iotthingsgraph {
   class IoTThingsGraph() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def associateEntityToThing(params: AssociateEntityToThingRequest): Request[AssociateEntityToThingResponse] =
-      js.native
+    def associateEntityToThing(params: AssociateEntityToThingRequest): Request[AssociateEntityToThingResponse] = js.native
     def createFlowTemplate(params: CreateFlowTemplateRequest): Request[CreateFlowTemplateResponse] = js.native
     def createSystemInstance(params: CreateSystemInstanceRequest): Request[CreateSystemInstanceResponse] = js.native
     def createSystemTemplate(params: CreateSystemTemplateRequest): Request[CreateSystemTemplateResponse] = js.native
@@ -163,28 +115,18 @@ package iotthingsgraph {
     def deleteSystemTemplate(params: DeleteSystemTemplateRequest): Request[DeleteSystemTemplateResponse] = js.native
     def deploySystemInstance(params: DeploySystemInstanceRequest): Request[DeploySystemInstanceResponse] = js.native
     def deprecateFlowTemplate(params: DeprecateFlowTemplateRequest): Request[DeprecateFlowTemplateResponse] = js.native
-    def deprecateSystemTemplate(params: DeprecateSystemTemplateRequest): Request[DeprecateSystemTemplateResponse] =
-      js.native
+    def deprecateSystemTemplate(params: DeprecateSystemTemplateRequest): Request[DeprecateSystemTemplateResponse] = js.native
     def describeNamespace(params: DescribeNamespaceRequest): Request[DescribeNamespaceResponse] = js.native
-    def dissociateEntityFromThing(
-        params: DissociateEntityFromThingRequest
-    ): Request[DissociateEntityFromThingResponse] = js.native
+    def dissociateEntityFromThing(params: DissociateEntityFromThingRequest): Request[DissociateEntityFromThingResponse] = js.native
     def getEntities(params: GetEntitiesRequest): Request[GetEntitiesResponse] = js.native
     def getFlowTemplate(params: GetFlowTemplateRequest): Request[GetFlowTemplateResponse] = js.native
-    def getFlowTemplateRevisions(params: GetFlowTemplateRevisionsRequest): Request[GetFlowTemplateRevisionsResponse] =
-      js.native
-    def getNamespaceDeletionStatus(
-        params: GetNamespaceDeletionStatusRequest
-    ): Request[GetNamespaceDeletionStatusResponse] = js.native
+    def getFlowTemplateRevisions(params: GetFlowTemplateRevisionsRequest): Request[GetFlowTemplateRevisionsResponse] = js.native
+    def getNamespaceDeletionStatus(params: GetNamespaceDeletionStatusRequest): Request[GetNamespaceDeletionStatusResponse] = js.native
     def getSystemInstance(params: GetSystemInstanceRequest): Request[GetSystemInstanceResponse] = js.native
     def getSystemTemplate(params: GetSystemTemplateRequest): Request[GetSystemTemplateResponse] = js.native
-    def getSystemTemplateRevisions(
-        params: GetSystemTemplateRevisionsRequest
-    ): Request[GetSystemTemplateRevisionsResponse] = js.native
+    def getSystemTemplateRevisions(params: GetSystemTemplateRevisionsRequest): Request[GetSystemTemplateRevisionsResponse] = js.native
     def getUploadStatus(params: GetUploadStatusRequest): Request[GetUploadStatusResponse] = js.native
-    def listFlowExecutionMessages(
-        params: ListFlowExecutionMessagesRequest
-    ): Request[ListFlowExecutionMessagesResponse] = js.native
+    def listFlowExecutionMessages(params: ListFlowExecutionMessagesRequest): Request[ListFlowExecutionMessagesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def searchEntities(params: SearchEntitiesRequest): Request[SearchEntitiesResponse] = js.native
     def searchFlowExecutions(params: SearchFlowExecutionsRequest): Request[SearchFlowExecutionsResponse] = js.native
@@ -193,13 +135,11 @@ package iotthingsgraph {
     def searchSystemTemplates(params: SearchSystemTemplatesRequest): Request[SearchSystemTemplatesResponse] = js.native
     def searchThings(params: SearchThingsRequest): Request[SearchThingsResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
-    def undeploySystemInstance(params: UndeploySystemInstanceRequest): Request[UndeploySystemInstanceResponse] =
-      js.native
+    def undeploySystemInstance(params: UndeploySystemInstanceRequest): Request[UndeploySystemInstanceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateFlowTemplate(params: UpdateFlowTemplateRequest): Request[UpdateFlowTemplateResponse] = js.native
     def updateSystemTemplate(params: UpdateSystemTemplateRequest): Request[UpdateSystemTemplateResponse] = js.native
-    def uploadEntityDefinitions(params: UploadEntityDefinitionsRequest): Request[UploadEntityDefinitionsResponse] =
-      js.native
+    def uploadEntityDefinitions(params: UploadEntityDefinitionsRequest): Request[UploadEntityDefinitionsResponse] = js.native
   }
 
   @js.native
@@ -255,9 +195,7 @@ package iotthingsgraph {
         "definition" -> definition.asInstanceOf[js.Any]
       )
 
-      compatibleNamespaceVersion.foreach(__v =>
-        __obj.updateDynamic("compatibleNamespaceVersion")(__v.asInstanceOf[js.Any])
-      )
+      compatibleNamespaceVersion.foreach(__v => __obj.updateDynamic("compatibleNamespaceVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFlowTemplateRequest]
     }
   }
@@ -346,9 +284,7 @@ package iotthingsgraph {
         "definition" -> definition.asInstanceOf[js.Any]
       )
 
-      compatibleNamespaceVersion.foreach(__v =>
-        __obj.updateDynamic("compatibleNamespaceVersion")(__v.asInstanceOf[js.Any])
-      )
+      compatibleNamespaceVersion.foreach(__v => __obj.updateDynamic("compatibleNamespaceVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSystemTemplateRequest]
     }
   }
@@ -810,9 +746,7 @@ package iotthingsgraph {
     val MAPPING = "MAPPING".asInstanceOf[EntityType]
     val ENUM = "ENUM".asInstanceOf[EntityType]
 
-    val values = js.Object.freeze(
-      js.Array(DEVICE, SERVICE, DEVICE_MODEL, CAPABILITY, STATE, ACTION, EVENT, PROPERTY, MAPPING, ENUM)
-    )
+    val values = js.Object.freeze(js.Array(DEVICE, SERVICE, DEVICE_MODEL, CAPABILITY, STATE, ACTION, EVENT, PROPERTY, MAPPING, ENUM))
   }
 
   @js.native
@@ -836,27 +770,25 @@ package iotthingsgraph {
     val THING_ACTION_TASK_SUCCEEDED = "THING_ACTION_TASK_SUCCEEDED".asInstanceOf[FlowExecutionEventType]
     val ACKNOWLEDGE_TASK_MESSAGE = "ACKNOWLEDGE_TASK_MESSAGE".asInstanceOf[FlowExecutionEventType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        EXECUTION_STARTED,
-        EXECUTION_FAILED,
-        EXECUTION_ABORTED,
-        EXECUTION_SUCCEEDED,
-        STEP_STARTED,
-        STEP_FAILED,
-        STEP_SUCCEEDED,
-        ACTIVITY_SCHEDULED,
-        ACTIVITY_STARTED,
-        ACTIVITY_FAILED,
-        ACTIVITY_SUCCEEDED,
-        START_FLOW_EXECUTION_TASK,
-        SCHEDULE_NEXT_READY_STEPS_TASK,
-        THING_ACTION_TASK,
-        THING_ACTION_TASK_FAILED,
-        THING_ACTION_TASK_SUCCEEDED,
-        ACKNOWLEDGE_TASK_MESSAGE
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      EXECUTION_STARTED,
+      EXECUTION_FAILED,
+      EXECUTION_ABORTED,
+      EXECUTION_SUCCEEDED,
+      STEP_STARTED,
+      STEP_FAILED,
+      STEP_SUCCEEDED,
+      ACTIVITY_SCHEDULED,
+      ACTIVITY_STARTED,
+      ACTIVITY_FAILED,
+      ACTIVITY_SUCCEEDED,
+      START_FLOW_EXECUTION_TASK,
+      SCHEDULE_NEXT_READY_STEPS_TASK,
+      THING_ACTION_TASK,
+      THING_ACTION_TASK_FAILED,
+      THING_ACTION_TASK_SUCCEEDED,
+      ACKNOWLEDGE_TASK_MESSAGE
+    ))
   }
 
   /**
@@ -952,9 +884,7 @@ package iotthingsgraph {
       val __obj = js.Dynamic.literal()
       definition.foreach(__v => __obj.updateDynamic("definition")(__v.asInstanceOf[js.Any]))
       summary.foreach(__v => __obj.updateDynamic("summary")(__v.asInstanceOf[js.Any]))
-      validatedNamespaceVersion.foreach(__v =>
-        __obj.updateDynamic("validatedNamespaceVersion")(__v.asInstanceOf[js.Any])
-      )
+      validatedNamespaceVersion.foreach(__v => __obj.updateDynamic("validatedNamespaceVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FlowTemplateDescription]
     }
   }
@@ -1753,18 +1683,7 @@ package iotthingsgraph {
     val PENDING_DELETE = "PENDING_DELETE".asInstanceOf[SystemInstanceDeploymentStatus]
     val DELETED_IN_TARGET = "DELETED_IN_TARGET".asInstanceOf[SystemInstanceDeploymentStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        NOT_DEPLOYED,
-        BOOTSTRAP,
-        DEPLOY_IN_PROGRESS,
-        DEPLOYED_IN_TARGET,
-        UNDEPLOY_IN_PROGRESS,
-        FAILED,
-        PENDING_DELETE,
-        DELETED_IN_TARGET
-      )
-    )
+    val values = js.Object.freeze(js.Array(NOT_DEPLOYED, BOOTSTRAP, DEPLOY_IN_PROGRESS, DEPLOYED_IN_TARGET, UNDEPLOY_IN_PROGRESS, FAILED, PENDING_DELETE, DELETED_IN_TARGET))
   }
 
   /**
@@ -1798,12 +1717,8 @@ package iotthingsgraph {
       metricsConfiguration.foreach(__v => __obj.updateDynamic("metricsConfiguration")(__v.asInstanceOf[js.Any]))
       s3BucketName.foreach(__v => __obj.updateDynamic("s3BucketName")(__v.asInstanceOf[js.Any]))
       summary.foreach(__v => __obj.updateDynamic("summary")(__v.asInstanceOf[js.Any]))
-      validatedDependencyRevisions.foreach(__v =>
-        __obj.updateDynamic("validatedDependencyRevisions")(__v.asInstanceOf[js.Any])
-      )
-      validatedNamespaceVersion.foreach(__v =>
-        __obj.updateDynamic("validatedNamespaceVersion")(__v.asInstanceOf[js.Any])
-      )
+      validatedDependencyRevisions.foreach(__v => __obj.updateDynamic("validatedDependencyRevisions")(__v.asInstanceOf[js.Any]))
+      validatedNamespaceVersion.foreach(__v => __obj.updateDynamic("validatedNamespaceVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SystemInstanceDescription]
     }
   }
@@ -1903,9 +1818,7 @@ package iotthingsgraph {
       val __obj = js.Dynamic.literal()
       definition.foreach(__v => __obj.updateDynamic("definition")(__v.asInstanceOf[js.Any]))
       summary.foreach(__v => __obj.updateDynamic("summary")(__v.asInstanceOf[js.Any]))
-      validatedNamespaceVersion.foreach(__v =>
-        __obj.updateDynamic("validatedNamespaceVersion")(__v.asInstanceOf[js.Any])
-      )
+      validatedNamespaceVersion.foreach(__v => __obj.updateDynamic("validatedNamespaceVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SystemTemplateDescription]
     }
   }
@@ -2135,9 +2048,7 @@ package iotthingsgraph {
         "id" -> id.asInstanceOf[js.Any]
       )
 
-      compatibleNamespaceVersion.foreach(__v =>
-        __obj.updateDynamic("compatibleNamespaceVersion")(__v.asInstanceOf[js.Any])
-      )
+      compatibleNamespaceVersion.foreach(__v => __obj.updateDynamic("compatibleNamespaceVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFlowTemplateRequest]
     }
   }
@@ -2177,9 +2088,7 @@ package iotthingsgraph {
         "id" -> id.asInstanceOf[js.Any]
       )
 
-      compatibleNamespaceVersion.foreach(__v =>
-        __obj.updateDynamic("compatibleNamespaceVersion")(__v.asInstanceOf[js.Any])
-      )
+      compatibleNamespaceVersion.foreach(__v => __obj.updateDynamic("compatibleNamespaceVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSystemTemplateRequest]
     }
   }
@@ -2215,9 +2124,7 @@ package iotthingsgraph {
         syncWithPublicNamespace: js.UndefOr[SyncWithPublicNamespace] = js.undefined
     ): UploadEntityDefinitionsRequest = {
       val __obj = js.Dynamic.literal()
-      deprecateExistingEntities.foreach(__v =>
-        __obj.updateDynamic("deprecateExistingEntities")(__v.asInstanceOf[js.Any])
-      )
+      deprecateExistingEntities.foreach(__v => __obj.updateDynamic("deprecateExistingEntities")(__v.asInstanceOf[js.Any]))
       document.foreach(__v => __obj.updateDynamic("document")(__v.asInstanceOf[js.Any]))
       syncWithPublicNamespace.foreach(__v => __obj.updateDynamic("syncWithPublicNamespace")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UploadEntityDefinitionsRequest]

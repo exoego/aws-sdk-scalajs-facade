@@ -39,38 +39,39 @@ trait AWSConfig extends js.Object {
 
 object AWSConfig {
   @inline
-  def apply(computeChecksums: js.UndefOr[Boolean] = js.undefined,
-            convertResponseTypes: js.UndefOr[Boolean] = js.undefined,
-            correctClockSkew: js.UndefOr[Boolean] = js.undefined,
-            customUserAgent: js.UndefOr[String] = js.undefined,
-            credentials: js.UndefOr[AWSCredentials] = js.undefined,
-            credentialProvider: js.UndefOr[js.Any] = js.undefined,
-            accessKeyId: js.UndefOr[String] = js.undefined,
-            secretAccessKey: js.UndefOr[String] = js.undefined,
-            sessionToken: js.UndefOr[String] = js.undefined,
-            httpOptions: js.UndefOr[HttpOptions] = js.undefined,
-            logger: js.UndefOr[Logger] = js.undefined,
-            maxRetries: js.UndefOr[Int] = js.undefined,
-            maxRedirects: js.UndefOr[Int] = js.undefined,
-            paramValidation: js.UndefOr[ParamValidation] = js.undefined,
-            region: js.UndefOr[String] = js.undefined,
-            retryDelayOptions: js.UndefOr[RetryDelayOptions] = js.undefined,
-            s3BucketEndpoint: js.UndefOr[Boolean] = js.undefined,
-            s3DisableBodySigning: js.UndefOr[Boolean] = js.undefined,
-            s3ForcePathStyle: js.UndefOr[Boolean] = js.undefined,
-            signatureCache: js.UndefOr[Boolean] = js.undefined,
-            signatureVersion: js.UndefOr[String] = js.undefined,
-            sslEnabled: js.UndefOr[Boolean] = js.undefined,
-            systemClockOffset: js.UndefOr[Double] = js.undefined,
-            useAccelerateEndpoint: js.UndefOr[Boolean] = js.undefined,
-            dynamoDbCrc32: js.UndefOr[Boolean] = js.undefined,
-            endpointDiscoveryEnabled: js.UndefOr[Boolean] = js.undefined,
-            endpointCacheSize: js.UndefOr[Double] = js.undefined,
-            hostPrefixEnabled: js.UndefOr[Boolean] = js.undefined,
-            endpoint: js.UndefOr[String] = js.undefined,
-            apiVersion: js.UndefOr[String] = js.undefined,
-            apiVersions: js.UndefOr[js.Dictionary[String]] = js.undefined,
-            clientSideMonitoring: js.UndefOr[Boolean] = js.undefined
+  def apply(
+      computeChecksums: js.UndefOr[Boolean] = js.undefined,
+      convertResponseTypes: js.UndefOr[Boolean] = js.undefined,
+      correctClockSkew: js.UndefOr[Boolean] = js.undefined,
+      customUserAgent: js.UndefOr[String] = js.undefined,
+      credentials: js.UndefOr[AWSCredentials] = js.undefined,
+      credentialProvider: js.UndefOr[js.Any] = js.undefined,
+      accessKeyId: js.UndefOr[String] = js.undefined,
+      secretAccessKey: js.UndefOr[String] = js.undefined,
+      sessionToken: js.UndefOr[String] = js.undefined,
+      httpOptions: js.UndefOr[HttpOptions] = js.undefined,
+      logger: js.UndefOr[Logger] = js.undefined,
+      maxRetries: js.UndefOr[Int] = js.undefined,
+      maxRedirects: js.UndefOr[Int] = js.undefined,
+      paramValidation: js.UndefOr[ParamValidation] = js.undefined,
+      region: js.UndefOr[String] = js.undefined,
+      retryDelayOptions: js.UndefOr[RetryDelayOptions] = js.undefined,
+      s3BucketEndpoint: js.UndefOr[Boolean] = js.undefined,
+      s3DisableBodySigning: js.UndefOr[Boolean] = js.undefined,
+      s3ForcePathStyle: js.UndefOr[Boolean] = js.undefined,
+      signatureCache: js.UndefOr[Boolean] = js.undefined,
+      signatureVersion: js.UndefOr[String] = js.undefined,
+      sslEnabled: js.UndefOr[Boolean] = js.undefined,
+      systemClockOffset: js.UndefOr[Double] = js.undefined,
+      useAccelerateEndpoint: js.UndefOr[Boolean] = js.undefined,
+      dynamoDbCrc32: js.UndefOr[Boolean] = js.undefined,
+      endpointDiscoveryEnabled: js.UndefOr[Boolean] = js.undefined,
+      endpointCacheSize: js.UndefOr[Double] = js.undefined,
+      hostPrefixEnabled: js.UndefOr[Boolean] = js.undefined,
+      endpoint: js.UndefOr[String] = js.undefined,
+      apiVersion: js.UndefOr[String] = js.undefined,
+      apiVersions: js.UndefOr[js.Dictionary[String]] = js.undefined,
+      clientSideMonitoring: js.UndefOr[Boolean] = js.undefined
   ): AWSConfig = {
     val __obj = js.Dynamic.literal()
     computeChecksums.foreach(__v => __obj.updateDynamic("computeChecksums")(__v))
@@ -120,12 +121,13 @@ trait HttpOptions extends js.Object {
 
 object HttpOptions {
   @inline
-  def apply(proxy: js.UndefOr[String] = js.undefined,
-            agent: js.UndefOr[js.Any] = js.undefined,
-            connectTimeout: js.UndefOr[Int] = js.undefined,
-            timeout: js.UndefOr[Int] = js.undefined,
-            xhrAsync: js.UndefOr[Boolean] = js.undefined,
-            xhrWithCredentials: js.UndefOr[Boolean] = js.undefined
+  def apply(
+      proxy: js.UndefOr[String] = js.undefined,
+      agent: js.UndefOr[js.Any] = js.undefined,
+      connectTimeout: js.UndefOr[Int] = js.undefined,
+      timeout: js.UndefOr[Int] = js.undefined,
+      xhrAsync: js.UndefOr[Boolean] = js.undefined,
+      xhrWithCredentials: js.UndefOr[Boolean] = js.undefined
   ): HttpOptions = {
     val __obj = js.Dynamic.literal()
     proxy.foreach(__v => __obj.updateDynamic("proxy")(__v))
@@ -153,10 +155,11 @@ trait ParamValidation extends js.Object {
 
 object ParamValidation {
   @inline
-  def apply(min: js.UndefOr[Boolean] = js.undefined,
-            max: js.UndefOr[Boolean] = js.undefined,
-            pattern: js.UndefOr[Boolean] = js.undefined,
-            enum: js.UndefOr[Boolean] = js.undefined
+  def apply(
+      min: js.UndefOr[Boolean] = js.undefined,
+      max: js.UndefOr[Boolean] = js.undefined,
+      pattern: js.UndefOr[Boolean] = js.undefined,
+      enum: js.UndefOr[Boolean] = js.undefined
   ): ParamValidation = {
     val __obj = js.Dynamic.literal()
     min.foreach(__v => __obj.updateDynamic("min")(__v))
@@ -173,8 +176,9 @@ trait RetryDelayOptions extends js.Object {
 }
 object RetryDelayOptions {
   @inline
-  def apply(base: js.UndefOr[Double] = js.undefined,
-            customBackoff: js.UndefOr[Double => Double] = js.undefined
+  def apply(
+      base: js.UndefOr[Double] = js.undefined,
+      customBackoff: js.UndefOr[Double => Double] = js.undefined
   ): RetryDelayOptions = {
     val __obj = js.Dynamic.literal()
     base.foreach(__v => __obj.updateDynamic("base")(__v))

@@ -20,11 +20,8 @@ package object kinesisvideosignaling {
 
   implicit final class KinesisVideoSignalingOps(private val service: KinesisVideoSignaling) extends AnyVal {
 
-    @inline def getIceServerConfigFuture(params: GetIceServerConfigRequest): Future[GetIceServerConfigResponse] =
-      service.getIceServerConfig(params).promise().toFuture
-    @inline def sendAlexaOfferToMasterFuture(
-        params: SendAlexaOfferToMasterRequest
-    ): Future[SendAlexaOfferToMasterResponse] = service.sendAlexaOfferToMaster(params).promise().toFuture
+    @inline def getIceServerConfigFuture(params: GetIceServerConfigRequest): Future[GetIceServerConfigResponse] = service.getIceServerConfig(params).promise().toFuture
+    @inline def sendAlexaOfferToMasterFuture(params: SendAlexaOfferToMasterRequest): Future[SendAlexaOfferToMasterResponse] = service.sendAlexaOfferToMaster(params).promise().toFuture
   }
 }
 
@@ -35,8 +32,7 @@ package kinesisvideosignaling {
     def this(config: AWSConfig) = this()
 
     def getIceServerConfig(params: GetIceServerConfigRequest): Request[GetIceServerConfigResponse] = js.native
-    def sendAlexaOfferToMaster(params: SendAlexaOfferToMasterRequest): Request[SendAlexaOfferToMasterResponse] =
-      js.native
+    def sendAlexaOfferToMaster(params: SendAlexaOfferToMasterRequest): Request[SendAlexaOfferToMasterResponse] = js.native
   }
 
   @js.native

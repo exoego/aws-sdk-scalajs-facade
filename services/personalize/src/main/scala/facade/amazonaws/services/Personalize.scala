@@ -73,101 +73,49 @@ package object personalize {
 
   implicit final class PersonalizeOps(private val service: Personalize) extends AnyVal {
 
-    @inline def createBatchInferenceJobFuture(
-        params: CreateBatchInferenceJobRequest
-    ): Future[CreateBatchInferenceJobResponse] = service.createBatchInferenceJob(params).promise().toFuture
-    @inline def createCampaignFuture(params: CreateCampaignRequest): Future[CreateCampaignResponse] =
-      service.createCampaign(params).promise().toFuture
-    @inline def createDatasetFuture(params: CreateDatasetRequest): Future[CreateDatasetResponse] =
-      service.createDataset(params).promise().toFuture
-    @inline def createDatasetGroupFuture(params: CreateDatasetGroupRequest): Future[CreateDatasetGroupResponse] =
-      service.createDatasetGroup(params).promise().toFuture
-    @inline def createDatasetImportJobFuture(
-        params: CreateDatasetImportJobRequest
-    ): Future[CreateDatasetImportJobResponse] = service.createDatasetImportJob(params).promise().toFuture
-    @inline def createEventTrackerFuture(params: CreateEventTrackerRequest): Future[CreateEventTrackerResponse] =
-      service.createEventTracker(params).promise().toFuture
-    @inline def createFilterFuture(params: CreateFilterRequest): Future[CreateFilterResponse] =
-      service.createFilter(params).promise().toFuture
-    @inline def createSchemaFuture(params: CreateSchemaRequest): Future[CreateSchemaResponse] =
-      service.createSchema(params).promise().toFuture
-    @inline def createSolutionFuture(params: CreateSolutionRequest): Future[CreateSolutionResponse] =
-      service.createSolution(params).promise().toFuture
-    @inline def createSolutionVersionFuture(
-        params: CreateSolutionVersionRequest
-    ): Future[CreateSolutionVersionResponse] = service.createSolutionVersion(params).promise().toFuture
-    @inline def deleteCampaignFuture(params: DeleteCampaignRequest): Future[js.Object] =
-      service.deleteCampaign(params).promise().toFuture
-    @inline def deleteDatasetFuture(params: DeleteDatasetRequest): Future[js.Object] =
-      service.deleteDataset(params).promise().toFuture
-    @inline def deleteDatasetGroupFuture(params: DeleteDatasetGroupRequest): Future[js.Object] =
-      service.deleteDatasetGroup(params).promise().toFuture
-    @inline def deleteEventTrackerFuture(params: DeleteEventTrackerRequest): Future[js.Object] =
-      service.deleteEventTracker(params).promise().toFuture
-    @inline def deleteFilterFuture(params: DeleteFilterRequest): Future[js.Object] =
-      service.deleteFilter(params).promise().toFuture
-    @inline def deleteSchemaFuture(params: DeleteSchemaRequest): Future[js.Object] =
-      service.deleteSchema(params).promise().toFuture
-    @inline def deleteSolutionFuture(params: DeleteSolutionRequest): Future[js.Object] =
-      service.deleteSolution(params).promise().toFuture
-    @inline def describeAlgorithmFuture(params: DescribeAlgorithmRequest): Future[DescribeAlgorithmResponse] =
-      service.describeAlgorithm(params).promise().toFuture
-    @inline def describeBatchInferenceJobFuture(
-        params: DescribeBatchInferenceJobRequest
-    ): Future[DescribeBatchInferenceJobResponse] = service.describeBatchInferenceJob(params).promise().toFuture
-    @inline def describeCampaignFuture(params: DescribeCampaignRequest): Future[DescribeCampaignResponse] =
-      service.describeCampaign(params).promise().toFuture
-    @inline def describeDatasetFuture(params: DescribeDatasetRequest): Future[DescribeDatasetResponse] =
-      service.describeDataset(params).promise().toFuture
-    @inline def describeDatasetGroupFuture(params: DescribeDatasetGroupRequest): Future[DescribeDatasetGroupResponse] =
-      service.describeDatasetGroup(params).promise().toFuture
-    @inline def describeDatasetImportJobFuture(
-        params: DescribeDatasetImportJobRequest
-    ): Future[DescribeDatasetImportJobResponse] = service.describeDatasetImportJob(params).promise().toFuture
-    @inline def describeEventTrackerFuture(params: DescribeEventTrackerRequest): Future[DescribeEventTrackerResponse] =
-      service.describeEventTracker(params).promise().toFuture
-    @inline def describeFeatureTransformationFuture(
-        params: DescribeFeatureTransformationRequest
-    ): Future[DescribeFeatureTransformationResponse] = service.describeFeatureTransformation(params).promise().toFuture
-    @inline def describeFilterFuture(params: DescribeFilterRequest): Future[DescribeFilterResponse] =
-      service.describeFilter(params).promise().toFuture
-    @inline def describeRecipeFuture(params: DescribeRecipeRequest): Future[DescribeRecipeResponse] =
-      service.describeRecipe(params).promise().toFuture
-    @inline def describeSchemaFuture(params: DescribeSchemaRequest): Future[DescribeSchemaResponse] =
-      service.describeSchema(params).promise().toFuture
-    @inline def describeSolutionFuture(params: DescribeSolutionRequest): Future[DescribeSolutionResponse] =
-      service.describeSolution(params).promise().toFuture
-    @inline def describeSolutionVersionFuture(
-        params: DescribeSolutionVersionRequest
-    ): Future[DescribeSolutionVersionResponse] = service.describeSolutionVersion(params).promise().toFuture
-    @inline def getSolutionMetricsFuture(params: GetSolutionMetricsRequest): Future[GetSolutionMetricsResponse] =
-      service.getSolutionMetrics(params).promise().toFuture
-    @inline def listBatchInferenceJobsFuture(
-        params: ListBatchInferenceJobsRequest
-    ): Future[ListBatchInferenceJobsResponse] = service.listBatchInferenceJobs(params).promise().toFuture
-    @inline def listCampaignsFuture(params: ListCampaignsRequest): Future[ListCampaignsResponse] =
-      service.listCampaigns(params).promise().toFuture
-    @inline def listDatasetGroupsFuture(params: ListDatasetGroupsRequest): Future[ListDatasetGroupsResponse] =
-      service.listDatasetGroups(params).promise().toFuture
-    @inline def listDatasetImportJobsFuture(
-        params: ListDatasetImportJobsRequest
-    ): Future[ListDatasetImportJobsResponse] = service.listDatasetImportJobs(params).promise().toFuture
-    @inline def listDatasetsFuture(params: ListDatasetsRequest): Future[ListDatasetsResponse] =
-      service.listDatasets(params).promise().toFuture
-    @inline def listEventTrackersFuture(params: ListEventTrackersRequest): Future[ListEventTrackersResponse] =
-      service.listEventTrackers(params).promise().toFuture
-    @inline def listFiltersFuture(params: ListFiltersRequest): Future[ListFiltersResponse] =
-      service.listFilters(params).promise().toFuture
-    @inline def listRecipesFuture(params: ListRecipesRequest): Future[ListRecipesResponse] =
-      service.listRecipes(params).promise().toFuture
-    @inline def listSchemasFuture(params: ListSchemasRequest): Future[ListSchemasResponse] =
-      service.listSchemas(params).promise().toFuture
-    @inline def listSolutionVersionsFuture(params: ListSolutionVersionsRequest): Future[ListSolutionVersionsResponse] =
-      service.listSolutionVersions(params).promise().toFuture
-    @inline def listSolutionsFuture(params: ListSolutionsRequest): Future[ListSolutionsResponse] =
-      service.listSolutions(params).promise().toFuture
-    @inline def updateCampaignFuture(params: UpdateCampaignRequest): Future[UpdateCampaignResponse] =
-      service.updateCampaign(params).promise().toFuture
+    @inline def createBatchInferenceJobFuture(params: CreateBatchInferenceJobRequest): Future[CreateBatchInferenceJobResponse] = service.createBatchInferenceJob(params).promise().toFuture
+    @inline def createCampaignFuture(params: CreateCampaignRequest): Future[CreateCampaignResponse] = service.createCampaign(params).promise().toFuture
+    @inline def createDatasetFuture(params: CreateDatasetRequest): Future[CreateDatasetResponse] = service.createDataset(params).promise().toFuture
+    @inline def createDatasetGroupFuture(params: CreateDatasetGroupRequest): Future[CreateDatasetGroupResponse] = service.createDatasetGroup(params).promise().toFuture
+    @inline def createDatasetImportJobFuture(params: CreateDatasetImportJobRequest): Future[CreateDatasetImportJobResponse] = service.createDatasetImportJob(params).promise().toFuture
+    @inline def createEventTrackerFuture(params: CreateEventTrackerRequest): Future[CreateEventTrackerResponse] = service.createEventTracker(params).promise().toFuture
+    @inline def createFilterFuture(params: CreateFilterRequest): Future[CreateFilterResponse] = service.createFilter(params).promise().toFuture
+    @inline def createSchemaFuture(params: CreateSchemaRequest): Future[CreateSchemaResponse] = service.createSchema(params).promise().toFuture
+    @inline def createSolutionFuture(params: CreateSolutionRequest): Future[CreateSolutionResponse] = service.createSolution(params).promise().toFuture
+    @inline def createSolutionVersionFuture(params: CreateSolutionVersionRequest): Future[CreateSolutionVersionResponse] = service.createSolutionVersion(params).promise().toFuture
+    @inline def deleteCampaignFuture(params: DeleteCampaignRequest): Future[js.Object] = service.deleteCampaign(params).promise().toFuture
+    @inline def deleteDatasetFuture(params: DeleteDatasetRequest): Future[js.Object] = service.deleteDataset(params).promise().toFuture
+    @inline def deleteDatasetGroupFuture(params: DeleteDatasetGroupRequest): Future[js.Object] = service.deleteDatasetGroup(params).promise().toFuture
+    @inline def deleteEventTrackerFuture(params: DeleteEventTrackerRequest): Future[js.Object] = service.deleteEventTracker(params).promise().toFuture
+    @inline def deleteFilterFuture(params: DeleteFilterRequest): Future[js.Object] = service.deleteFilter(params).promise().toFuture
+    @inline def deleteSchemaFuture(params: DeleteSchemaRequest): Future[js.Object] = service.deleteSchema(params).promise().toFuture
+    @inline def deleteSolutionFuture(params: DeleteSolutionRequest): Future[js.Object] = service.deleteSolution(params).promise().toFuture
+    @inline def describeAlgorithmFuture(params: DescribeAlgorithmRequest): Future[DescribeAlgorithmResponse] = service.describeAlgorithm(params).promise().toFuture
+    @inline def describeBatchInferenceJobFuture(params: DescribeBatchInferenceJobRequest): Future[DescribeBatchInferenceJobResponse] = service.describeBatchInferenceJob(params).promise().toFuture
+    @inline def describeCampaignFuture(params: DescribeCampaignRequest): Future[DescribeCampaignResponse] = service.describeCampaign(params).promise().toFuture
+    @inline def describeDatasetFuture(params: DescribeDatasetRequest): Future[DescribeDatasetResponse] = service.describeDataset(params).promise().toFuture
+    @inline def describeDatasetGroupFuture(params: DescribeDatasetGroupRequest): Future[DescribeDatasetGroupResponse] = service.describeDatasetGroup(params).promise().toFuture
+    @inline def describeDatasetImportJobFuture(params: DescribeDatasetImportJobRequest): Future[DescribeDatasetImportJobResponse] = service.describeDatasetImportJob(params).promise().toFuture
+    @inline def describeEventTrackerFuture(params: DescribeEventTrackerRequest): Future[DescribeEventTrackerResponse] = service.describeEventTracker(params).promise().toFuture
+    @inline def describeFeatureTransformationFuture(params: DescribeFeatureTransformationRequest): Future[DescribeFeatureTransformationResponse] = service.describeFeatureTransformation(params).promise().toFuture
+    @inline def describeFilterFuture(params: DescribeFilterRequest): Future[DescribeFilterResponse] = service.describeFilter(params).promise().toFuture
+    @inline def describeRecipeFuture(params: DescribeRecipeRequest): Future[DescribeRecipeResponse] = service.describeRecipe(params).promise().toFuture
+    @inline def describeSchemaFuture(params: DescribeSchemaRequest): Future[DescribeSchemaResponse] = service.describeSchema(params).promise().toFuture
+    @inline def describeSolutionFuture(params: DescribeSolutionRequest): Future[DescribeSolutionResponse] = service.describeSolution(params).promise().toFuture
+    @inline def describeSolutionVersionFuture(params: DescribeSolutionVersionRequest): Future[DescribeSolutionVersionResponse] = service.describeSolutionVersion(params).promise().toFuture
+    @inline def getSolutionMetricsFuture(params: GetSolutionMetricsRequest): Future[GetSolutionMetricsResponse] = service.getSolutionMetrics(params).promise().toFuture
+    @inline def listBatchInferenceJobsFuture(params: ListBatchInferenceJobsRequest): Future[ListBatchInferenceJobsResponse] = service.listBatchInferenceJobs(params).promise().toFuture
+    @inline def listCampaignsFuture(params: ListCampaignsRequest): Future[ListCampaignsResponse] = service.listCampaigns(params).promise().toFuture
+    @inline def listDatasetGroupsFuture(params: ListDatasetGroupsRequest): Future[ListDatasetGroupsResponse] = service.listDatasetGroups(params).promise().toFuture
+    @inline def listDatasetImportJobsFuture(params: ListDatasetImportJobsRequest): Future[ListDatasetImportJobsResponse] = service.listDatasetImportJobs(params).promise().toFuture
+    @inline def listDatasetsFuture(params: ListDatasetsRequest): Future[ListDatasetsResponse] = service.listDatasets(params).promise().toFuture
+    @inline def listEventTrackersFuture(params: ListEventTrackersRequest): Future[ListEventTrackersResponse] = service.listEventTrackers(params).promise().toFuture
+    @inline def listFiltersFuture(params: ListFiltersRequest): Future[ListFiltersResponse] = service.listFilters(params).promise().toFuture
+    @inline def listRecipesFuture(params: ListRecipesRequest): Future[ListRecipesResponse] = service.listRecipes(params).promise().toFuture
+    @inline def listSchemasFuture(params: ListSchemasRequest): Future[ListSchemasResponse] = service.listSchemas(params).promise().toFuture
+    @inline def listSolutionVersionsFuture(params: ListSolutionVersionsRequest): Future[ListSolutionVersionsResponse] = service.listSolutionVersions(params).promise().toFuture
+    @inline def listSolutionsFuture(params: ListSolutionsRequest): Future[ListSolutionsResponse] = service.listSolutions(params).promise().toFuture
+    @inline def updateCampaignFuture(params: UpdateCampaignRequest): Future[UpdateCampaignResponse] = service.updateCampaign(params).promise().toFuture
   }
 }
 
@@ -177,13 +125,11 @@ package personalize {
   class Personalize() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createBatchInferenceJob(params: CreateBatchInferenceJobRequest): Request[CreateBatchInferenceJobResponse] =
-      js.native
+    def createBatchInferenceJob(params: CreateBatchInferenceJobRequest): Request[CreateBatchInferenceJobResponse] = js.native
     def createCampaign(params: CreateCampaignRequest): Request[CreateCampaignResponse] = js.native
     def createDataset(params: CreateDatasetRequest): Request[CreateDatasetResponse] = js.native
     def createDatasetGroup(params: CreateDatasetGroupRequest): Request[CreateDatasetGroupResponse] = js.native
-    def createDatasetImportJob(params: CreateDatasetImportJobRequest): Request[CreateDatasetImportJobResponse] =
-      js.native
+    def createDatasetImportJob(params: CreateDatasetImportJobRequest): Request[CreateDatasetImportJobResponse] = js.native
     def createEventTracker(params: CreateEventTrackerRequest): Request[CreateEventTrackerResponse] = js.native
     def createFilter(params: CreateFilterRequest): Request[CreateFilterResponse] = js.native
     def createSchema(params: CreateSchemaRequest): Request[CreateSchemaResponse] = js.native
@@ -197,27 +143,20 @@ package personalize {
     def deleteSchema(params: DeleteSchemaRequest): Request[js.Object] = js.native
     def deleteSolution(params: DeleteSolutionRequest): Request[js.Object] = js.native
     def describeAlgorithm(params: DescribeAlgorithmRequest): Request[DescribeAlgorithmResponse] = js.native
-    def describeBatchInferenceJob(
-        params: DescribeBatchInferenceJobRequest
-    ): Request[DescribeBatchInferenceJobResponse] = js.native
+    def describeBatchInferenceJob(params: DescribeBatchInferenceJobRequest): Request[DescribeBatchInferenceJobResponse] = js.native
     def describeCampaign(params: DescribeCampaignRequest): Request[DescribeCampaignResponse] = js.native
     def describeDataset(params: DescribeDatasetRequest): Request[DescribeDatasetResponse] = js.native
     def describeDatasetGroup(params: DescribeDatasetGroupRequest): Request[DescribeDatasetGroupResponse] = js.native
-    def describeDatasetImportJob(params: DescribeDatasetImportJobRequest): Request[DescribeDatasetImportJobResponse] =
-      js.native
+    def describeDatasetImportJob(params: DescribeDatasetImportJobRequest): Request[DescribeDatasetImportJobResponse] = js.native
     def describeEventTracker(params: DescribeEventTrackerRequest): Request[DescribeEventTrackerResponse] = js.native
-    def describeFeatureTransformation(
-        params: DescribeFeatureTransformationRequest
-    ): Request[DescribeFeatureTransformationResponse] = js.native
+    def describeFeatureTransformation(params: DescribeFeatureTransformationRequest): Request[DescribeFeatureTransformationResponse] = js.native
     def describeFilter(params: DescribeFilterRequest): Request[DescribeFilterResponse] = js.native
     def describeRecipe(params: DescribeRecipeRequest): Request[DescribeRecipeResponse] = js.native
     def describeSchema(params: DescribeSchemaRequest): Request[DescribeSchemaResponse] = js.native
     def describeSolution(params: DescribeSolutionRequest): Request[DescribeSolutionResponse] = js.native
-    def describeSolutionVersion(params: DescribeSolutionVersionRequest): Request[DescribeSolutionVersionResponse] =
-      js.native
+    def describeSolutionVersion(params: DescribeSolutionVersionRequest): Request[DescribeSolutionVersionResponse] = js.native
     def getSolutionMetrics(params: GetSolutionMetricsRequest): Request[GetSolutionMetricsResponse] = js.native
-    def listBatchInferenceJobs(params: ListBatchInferenceJobsRequest): Request[ListBatchInferenceJobsResponse] =
-      js.native
+    def listBatchInferenceJobs(params: ListBatchInferenceJobsRequest): Request[ListBatchInferenceJobsResponse] = js.native
     def listCampaigns(params: ListCampaignsRequest): Request[ListCampaignsResponse] = js.native
     def listDatasetGroups(params: ListDatasetGroupsRequest): Request[ListDatasetGroupsResponse] = js.native
     def listDatasetImportJobs(params: ListDatasetImportJobsRequest): Request[ListDatasetImportJobsResponse] = js.native
@@ -266,9 +205,7 @@ package personalize {
       algorithmArn.foreach(__v => __obj.updateDynamic("algorithmArn")(__v.asInstanceOf[js.Any]))
       algorithmImage.foreach(__v => __obj.updateDynamic("algorithmImage")(__v.asInstanceOf[js.Any]))
       creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
-      defaultHyperParameterRanges.foreach(__v =>
-        __obj.updateDynamic("defaultHyperParameterRanges")(__v.asInstanceOf[js.Any])
-      )
+      defaultHyperParameterRanges.foreach(__v => __obj.updateDynamic("defaultHyperParameterRanges")(__v.asInstanceOf[js.Any]))
       defaultHyperParameters.foreach(__v => __obj.updateDynamic("defaultHyperParameters")(__v.asInstanceOf[js.Any]))
       defaultResourceConfig.foreach(__v => __obj.updateDynamic("defaultResourceConfig")(__v.asInstanceOf[js.Any]))
       lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
@@ -1434,15 +1371,9 @@ package personalize {
         integerHyperParameterRanges: js.UndefOr[DefaultIntegerHyperParameterRanges] = js.undefined
     ): DefaultHyperParameterRanges = {
       val __obj = js.Dynamic.literal()
-      categoricalHyperParameterRanges.foreach(__v =>
-        __obj.updateDynamic("categoricalHyperParameterRanges")(__v.asInstanceOf[js.Any])
-      )
-      continuousHyperParameterRanges.foreach(__v =>
-        __obj.updateDynamic("continuousHyperParameterRanges")(__v.asInstanceOf[js.Any])
-      )
-      integerHyperParameterRanges.foreach(__v =>
-        __obj.updateDynamic("integerHyperParameterRanges")(__v.asInstanceOf[js.Any])
-      )
+      categoricalHyperParameterRanges.foreach(__v => __obj.updateDynamic("categoricalHyperParameterRanges")(__v.asInstanceOf[js.Any]))
+      continuousHyperParameterRanges.foreach(__v => __obj.updateDynamic("continuousHyperParameterRanges")(__v.asInstanceOf[js.Any]))
+      integerHyperParameterRanges.foreach(__v => __obj.updateDynamic("integerHyperParameterRanges")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DefaultHyperParameterRanges]
     }
   }
@@ -2280,9 +2211,7 @@ package personalize {
         hpoResourceConfig: js.UndefOr[HPOResourceConfig] = js.undefined
     ): HPOConfig = {
       val __obj = js.Dynamic.literal()
-      algorithmHyperParameterRanges.foreach(__v =>
-        __obj.updateDynamic("algorithmHyperParameterRanges")(__v.asInstanceOf[js.Any])
-      )
+      algorithmHyperParameterRanges.foreach(__v => __obj.updateDynamic("algorithmHyperParameterRanges")(__v.asInstanceOf[js.Any]))
       hpoObjective.foreach(__v => __obj.updateDynamic("hpoObjective")(__v.asInstanceOf[js.Any]))
       hpoResourceConfig.foreach(__v => __obj.updateDynamic("hpoResourceConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HPOConfig]
@@ -2354,15 +2283,9 @@ package personalize {
         integerHyperParameterRanges: js.UndefOr[IntegerHyperParameterRanges] = js.undefined
     ): HyperParameterRanges = {
       val __obj = js.Dynamic.literal()
-      categoricalHyperParameterRanges.foreach(__v =>
-        __obj.updateDynamic("categoricalHyperParameterRanges")(__v.asInstanceOf[js.Any])
-      )
-      continuousHyperParameterRanges.foreach(__v =>
-        __obj.updateDynamic("continuousHyperParameterRanges")(__v.asInstanceOf[js.Any])
-      )
-      integerHyperParameterRanges.foreach(__v =>
-        __obj.updateDynamic("integerHyperParameterRanges")(__v.asInstanceOf[js.Any])
-      )
+      categoricalHyperParameterRanges.foreach(__v => __obj.updateDynamic("categoricalHyperParameterRanges")(__v.asInstanceOf[js.Any]))
+      continuousHyperParameterRanges.foreach(__v => __obj.updateDynamic("continuousHyperParameterRanges")(__v.asInstanceOf[js.Any]))
+      integerHyperParameterRanges.foreach(__v => __obj.updateDynamic("integerHyperParameterRanges")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HyperParameterRanges]
     }
   }
@@ -3023,9 +2946,7 @@ package personalize {
       algorithmHyperParameters.foreach(__v => __obj.updateDynamic("algorithmHyperParameters")(__v.asInstanceOf[js.Any]))
       autoMLConfig.foreach(__v => __obj.updateDynamic("autoMLConfig")(__v.asInstanceOf[js.Any]))
       eventValueThreshold.foreach(__v => __obj.updateDynamic("eventValueThreshold")(__v.asInstanceOf[js.Any]))
-      featureTransformationParameters.foreach(__v =>
-        __obj.updateDynamic("featureTransformationParameters")(__v.asInstanceOf[js.Any])
-      )
+      featureTransformationParameters.foreach(__v => __obj.updateDynamic("featureTransformationParameters")(__v.asInstanceOf[js.Any]))
       hpoConfig.foreach(__v => __obj.updateDynamic("hpoConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SolutionConfig]
     }

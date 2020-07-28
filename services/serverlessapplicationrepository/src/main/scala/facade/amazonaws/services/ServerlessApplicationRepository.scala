@@ -22,43 +22,22 @@ package object serverlessapplicationrepository {
   type __listOf__string = js.Array[__string]
   type __string = String
 
-  implicit final class ServerlessApplicationRepositoryOps(private val service: ServerlessApplicationRepository)
-      extends AnyVal {
+  implicit final class ServerlessApplicationRepositoryOps(private val service: ServerlessApplicationRepository) extends AnyVal {
 
-    @inline def createApplicationFuture(params: CreateApplicationRequest): Future[CreateApplicationResponse] =
-      service.createApplication(params).promise().toFuture
-    @inline def createApplicationVersionFuture(
-        params: CreateApplicationVersionRequest
-    ): Future[CreateApplicationVersionResponse] = service.createApplicationVersion(params).promise().toFuture
-    @inline def createCloudFormationChangeSetFuture(
-        params: CreateCloudFormationChangeSetRequest
-    ): Future[CreateCloudFormationChangeSetResponse] = service.createCloudFormationChangeSet(params).promise().toFuture
-    @inline def createCloudFormationTemplateFuture(
-        params: CreateCloudFormationTemplateRequest
-    ): Future[CreateCloudFormationTemplateResponse] = service.createCloudFormationTemplate(params).promise().toFuture
-    @inline def deleteApplicationFuture(params: DeleteApplicationRequest): Future[js.Object] =
-      service.deleteApplication(params).promise().toFuture
-    @inline def getApplicationFuture(params: GetApplicationRequest): Future[GetApplicationResponse] =
-      service.getApplication(params).promise().toFuture
-    @inline def getApplicationPolicyFuture(params: GetApplicationPolicyRequest): Future[GetApplicationPolicyResponse] =
-      service.getApplicationPolicy(params).promise().toFuture
-    @inline def getCloudFormationTemplateFuture(
-        params: GetCloudFormationTemplateRequest
-    ): Future[GetCloudFormationTemplateResponse] = service.getCloudFormationTemplate(params).promise().toFuture
-    @inline def listApplicationDependenciesFuture(
-        params: ListApplicationDependenciesRequest
-    ): Future[ListApplicationDependenciesResponse] = service.listApplicationDependencies(params).promise().toFuture
-    @inline def listApplicationVersionsFuture(
-        params: ListApplicationVersionsRequest
-    ): Future[ListApplicationVersionsResponse] = service.listApplicationVersions(params).promise().toFuture
-    @inline def listApplicationsFuture(params: ListApplicationsRequest): Future[ListApplicationsResponse] =
-      service.listApplications(params).promise().toFuture
-    @inline def putApplicationPolicyFuture(params: PutApplicationPolicyRequest): Future[PutApplicationPolicyResponse] =
-      service.putApplicationPolicy(params).promise().toFuture
-    @inline def unshareApplicationFuture(params: UnshareApplicationRequest): Future[js.Object] =
-      service.unshareApplication(params).promise().toFuture
-    @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] =
-      service.updateApplication(params).promise().toFuture
+    @inline def createApplicationFuture(params: CreateApplicationRequest): Future[CreateApplicationResponse] = service.createApplication(params).promise().toFuture
+    @inline def createApplicationVersionFuture(params: CreateApplicationVersionRequest): Future[CreateApplicationVersionResponse] = service.createApplicationVersion(params).promise().toFuture
+    @inline def createCloudFormationChangeSetFuture(params: CreateCloudFormationChangeSetRequest): Future[CreateCloudFormationChangeSetResponse] = service.createCloudFormationChangeSet(params).promise().toFuture
+    @inline def createCloudFormationTemplateFuture(params: CreateCloudFormationTemplateRequest): Future[CreateCloudFormationTemplateResponse] = service.createCloudFormationTemplate(params).promise().toFuture
+    @inline def deleteApplicationFuture(params: DeleteApplicationRequest): Future[js.Object] = service.deleteApplication(params).promise().toFuture
+    @inline def getApplicationFuture(params: GetApplicationRequest): Future[GetApplicationResponse] = service.getApplication(params).promise().toFuture
+    @inline def getApplicationPolicyFuture(params: GetApplicationPolicyRequest): Future[GetApplicationPolicyResponse] = service.getApplicationPolicy(params).promise().toFuture
+    @inline def getCloudFormationTemplateFuture(params: GetCloudFormationTemplateRequest): Future[GetCloudFormationTemplateResponse] = service.getCloudFormationTemplate(params).promise().toFuture
+    @inline def listApplicationDependenciesFuture(params: ListApplicationDependenciesRequest): Future[ListApplicationDependenciesResponse] = service.listApplicationDependencies(params).promise().toFuture
+    @inline def listApplicationVersionsFuture(params: ListApplicationVersionsRequest): Future[ListApplicationVersionsResponse] = service.listApplicationVersions(params).promise().toFuture
+    @inline def listApplicationsFuture(params: ListApplicationsRequest): Future[ListApplicationsResponse] = service.listApplications(params).promise().toFuture
+    @inline def putApplicationPolicyFuture(params: PutApplicationPolicyRequest): Future[PutApplicationPolicyResponse] = service.putApplicationPolicy(params).promise().toFuture
+    @inline def unshareApplicationFuture(params: UnshareApplicationRequest): Future[js.Object] = service.unshareApplication(params).promise().toFuture
+    @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] = service.updateApplication(params).promise().toFuture
   }
 }
 
@@ -69,25 +48,15 @@ package serverlessapplicationrepository {
     def this(config: AWSConfig) = this()
 
     def createApplication(params: CreateApplicationRequest): Request[CreateApplicationResponse] = js.native
-    def createApplicationVersion(params: CreateApplicationVersionRequest): Request[CreateApplicationVersionResponse] =
-      js.native
-    def createCloudFormationChangeSet(
-        params: CreateCloudFormationChangeSetRequest
-    ): Request[CreateCloudFormationChangeSetResponse] = js.native
-    def createCloudFormationTemplate(
-        params: CreateCloudFormationTemplateRequest
-    ): Request[CreateCloudFormationTemplateResponse] = js.native
+    def createApplicationVersion(params: CreateApplicationVersionRequest): Request[CreateApplicationVersionResponse] = js.native
+    def createCloudFormationChangeSet(params: CreateCloudFormationChangeSetRequest): Request[CreateCloudFormationChangeSetResponse] = js.native
+    def createCloudFormationTemplate(params: CreateCloudFormationTemplateRequest): Request[CreateCloudFormationTemplateResponse] = js.native
     def deleteApplication(params: DeleteApplicationRequest): Request[js.Object] = js.native
     def getApplication(params: GetApplicationRequest): Request[GetApplicationResponse] = js.native
     def getApplicationPolicy(params: GetApplicationPolicyRequest): Request[GetApplicationPolicyResponse] = js.native
-    def getCloudFormationTemplate(
-        params: GetCloudFormationTemplateRequest
-    ): Request[GetCloudFormationTemplateResponse] = js.native
-    def listApplicationDependencies(
-        params: ListApplicationDependenciesRequest
-    ): Request[ListApplicationDependenciesResponse] = js.native
-    def listApplicationVersions(params: ListApplicationVersionsRequest): Request[ListApplicationVersionsResponse] =
-      js.native
+    def getCloudFormationTemplate(params: GetCloudFormationTemplateRequest): Request[GetCloudFormationTemplateResponse] = js.native
+    def listApplicationDependencies(params: ListApplicationDependenciesRequest): Request[ListApplicationDependenciesResponse] = js.native
+    def listApplicationVersions(params: ListApplicationVersionsRequest): Request[ListApplicationVersionsResponse] = js.native
     def listApplications(params: ListApplicationsRequest): Request[ListApplicationsResponse] = js.native
     def putApplicationPolicy(params: PutApplicationPolicyRequest): Request[PutApplicationPolicyResponse] = js.native
     def unshareApplication(params: UnshareApplicationRequest): Request[js.Object] = js.native
@@ -201,9 +170,7 @@ package serverlessapplicationrepository {
     val CAPABILITY_AUTO_EXPAND = "CAPABILITY_AUTO_EXPAND".asInstanceOf[Capability]
     val CAPABILITY_RESOURCE_POLICY = "CAPABILITY_RESOURCE_POLICY".asInstanceOf[Capability]
 
-    val values = js.Object.freeze(
-      js.Array(CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND, CAPABILITY_RESOURCE_POLICY)
-    )
+    val values = js.Object.freeze(js.Array(CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND, CAPABILITY_RESOURCE_POLICY))
   }
 
   @js.native

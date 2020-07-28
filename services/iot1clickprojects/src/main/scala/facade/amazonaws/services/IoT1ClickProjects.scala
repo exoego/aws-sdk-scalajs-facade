@@ -36,42 +36,22 @@ package object iot1clickprojects {
 
   implicit final class IoT1ClickProjectsOps(private val service: IoT1ClickProjects) extends AnyVal {
 
-    @inline def associateDeviceWithPlacementFuture(
-        params: AssociateDeviceWithPlacementRequest
-    ): Future[AssociateDeviceWithPlacementResponse] = service.associateDeviceWithPlacement(params).promise().toFuture
-    @inline def createPlacementFuture(params: CreatePlacementRequest): Future[CreatePlacementResponse] =
-      service.createPlacement(params).promise().toFuture
-    @inline def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResponse] =
-      service.createProject(params).promise().toFuture
-    @inline def deletePlacementFuture(params: DeletePlacementRequest): Future[DeletePlacementResponse] =
-      service.deletePlacement(params).promise().toFuture
-    @inline def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResponse] =
-      service.deleteProject(params).promise().toFuture
-    @inline def describePlacementFuture(params: DescribePlacementRequest): Future[DescribePlacementResponse] =
-      service.describePlacement(params).promise().toFuture
-    @inline def describeProjectFuture(params: DescribeProjectRequest): Future[DescribeProjectResponse] =
-      service.describeProject(params).promise().toFuture
-    @inline def disassociateDeviceFromPlacementFuture(
-        params: DisassociateDeviceFromPlacementRequest
-    ): Future[DisassociateDeviceFromPlacementResponse] =
-      service.disassociateDeviceFromPlacement(params).promise().toFuture
-    @inline def getDevicesInPlacementFuture(
-        params: GetDevicesInPlacementRequest
-    ): Future[GetDevicesInPlacementResponse] = service.getDevicesInPlacement(params).promise().toFuture
-    @inline def listPlacementsFuture(params: ListPlacementsRequest): Future[ListPlacementsResponse] =
-      service.listPlacements(params).promise().toFuture
-    @inline def listProjectsFuture(params: ListProjectsRequest): Future[ListProjectsResponse] =
-      service.listProjects(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updatePlacementFuture(params: UpdatePlacementRequest): Future[UpdatePlacementResponse] =
-      service.updatePlacement(params).promise().toFuture
-    @inline def updateProjectFuture(params: UpdateProjectRequest): Future[UpdateProjectResponse] =
-      service.updateProject(params).promise().toFuture
+    @inline def associateDeviceWithPlacementFuture(params: AssociateDeviceWithPlacementRequest): Future[AssociateDeviceWithPlacementResponse] = service.associateDeviceWithPlacement(params).promise().toFuture
+    @inline def createPlacementFuture(params: CreatePlacementRequest): Future[CreatePlacementResponse] = service.createPlacement(params).promise().toFuture
+    @inline def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResponse] = service.createProject(params).promise().toFuture
+    @inline def deletePlacementFuture(params: DeletePlacementRequest): Future[DeletePlacementResponse] = service.deletePlacement(params).promise().toFuture
+    @inline def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResponse] = service.deleteProject(params).promise().toFuture
+    @inline def describePlacementFuture(params: DescribePlacementRequest): Future[DescribePlacementResponse] = service.describePlacement(params).promise().toFuture
+    @inline def describeProjectFuture(params: DescribeProjectRequest): Future[DescribeProjectResponse] = service.describeProject(params).promise().toFuture
+    @inline def disassociateDeviceFromPlacementFuture(params: DisassociateDeviceFromPlacementRequest): Future[DisassociateDeviceFromPlacementResponse] = service.disassociateDeviceFromPlacement(params).promise().toFuture
+    @inline def getDevicesInPlacementFuture(params: GetDevicesInPlacementRequest): Future[GetDevicesInPlacementResponse] = service.getDevicesInPlacement(params).promise().toFuture
+    @inline def listPlacementsFuture(params: ListPlacementsRequest): Future[ListPlacementsResponse] = service.listPlacements(params).promise().toFuture
+    @inline def listProjectsFuture(params: ListProjectsRequest): Future[ListProjectsResponse] = service.listProjects(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updatePlacementFuture(params: UpdatePlacementRequest): Future[UpdatePlacementResponse] = service.updatePlacement(params).promise().toFuture
+    @inline def updateProjectFuture(params: UpdateProjectRequest): Future[UpdateProjectResponse] = service.updateProject(params).promise().toFuture
   }
 }
 
@@ -81,18 +61,14 @@ package iot1clickprojects {
   class IoT1ClickProjects() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def associateDeviceWithPlacement(
-        params: AssociateDeviceWithPlacementRequest
-    ): Request[AssociateDeviceWithPlacementResponse] = js.native
+    def associateDeviceWithPlacement(params: AssociateDeviceWithPlacementRequest): Request[AssociateDeviceWithPlacementResponse] = js.native
     def createPlacement(params: CreatePlacementRequest): Request[CreatePlacementResponse] = js.native
     def createProject(params: CreateProjectRequest): Request[CreateProjectResponse] = js.native
     def deletePlacement(params: DeletePlacementRequest): Request[DeletePlacementResponse] = js.native
     def deleteProject(params: DeleteProjectRequest): Request[DeleteProjectResponse] = js.native
     def describePlacement(params: DescribePlacementRequest): Request[DescribePlacementResponse] = js.native
     def describeProject(params: DescribeProjectRequest): Request[DescribeProjectResponse] = js.native
-    def disassociateDeviceFromPlacement(
-        params: DisassociateDeviceFromPlacementRequest
-    ): Request[DisassociateDeviceFromPlacementResponse] = js.native
+    def disassociateDeviceFromPlacement(params: DisassociateDeviceFromPlacementRequest): Request[DisassociateDeviceFromPlacementResponse] = js.native
     def getDevicesInPlacement(params: GetDevicesInPlacementRequest): Request[GetDevicesInPlacementResponse] = js.native
     def listPlacements(params: ListPlacementsRequest): Request[ListPlacementsResponse] = js.native
     def listProjects(params: ListProjectsRequest): Request[ListProjectsResponse] = js.native

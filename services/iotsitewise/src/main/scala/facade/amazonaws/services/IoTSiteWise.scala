@@ -82,127 +82,60 @@ package object iotsitewise {
 
   implicit final class IoTSiteWiseOps(private val service: IoTSiteWise) extends AnyVal {
 
-    @inline def associateAssetsFuture(params: AssociateAssetsRequest): Future[js.Object] =
-      service.associateAssets(params).promise().toFuture
-    @inline def batchAssociateProjectAssetsFuture(
-        params: BatchAssociateProjectAssetsRequest
-    ): Future[BatchAssociateProjectAssetsResponse] = service.batchAssociateProjectAssets(params).promise().toFuture
-    @inline def batchDisassociateProjectAssetsFuture(
-        params: BatchDisassociateProjectAssetsRequest
-    ): Future[BatchDisassociateProjectAssetsResponse] =
-      service.batchDisassociateProjectAssets(params).promise().toFuture
-    @inline def batchPutAssetPropertyValueFuture(
-        params: BatchPutAssetPropertyValueRequest
-    ): Future[BatchPutAssetPropertyValueResponse] = service.batchPutAssetPropertyValue(params).promise().toFuture
-    @inline def createAccessPolicyFuture(params: CreateAccessPolicyRequest): Future[CreateAccessPolicyResponse] =
-      service.createAccessPolicy(params).promise().toFuture
-    @inline def createAssetFuture(params: CreateAssetRequest): Future[CreateAssetResponse] =
-      service.createAsset(params).promise().toFuture
-    @inline def createAssetModelFuture(params: CreateAssetModelRequest): Future[CreateAssetModelResponse] =
-      service.createAssetModel(params).promise().toFuture
-    @inline def createDashboardFuture(params: CreateDashboardRequest): Future[CreateDashboardResponse] =
-      service.createDashboard(params).promise().toFuture
-    @inline def createGatewayFuture(params: CreateGatewayRequest): Future[CreateGatewayResponse] =
-      service.createGateway(params).promise().toFuture
-    @inline def createPortalFuture(params: CreatePortalRequest): Future[CreatePortalResponse] =
-      service.createPortal(params).promise().toFuture
-    @inline def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResponse] =
-      service.createProject(params).promise().toFuture
-    @inline def deleteAccessPolicyFuture(params: DeleteAccessPolicyRequest): Future[DeleteAccessPolicyResponse] =
-      service.deleteAccessPolicy(params).promise().toFuture
-    @inline def deleteAssetFuture(params: DeleteAssetRequest): Future[DeleteAssetResponse] =
-      service.deleteAsset(params).promise().toFuture
-    @inline def deleteAssetModelFuture(params: DeleteAssetModelRequest): Future[DeleteAssetModelResponse] =
-      service.deleteAssetModel(params).promise().toFuture
-    @inline def deleteDashboardFuture(params: DeleteDashboardRequest): Future[DeleteDashboardResponse] =
-      service.deleteDashboard(params).promise().toFuture
-    @inline def deleteGatewayFuture(params: DeleteGatewayRequest): Future[js.Object] =
-      service.deleteGateway(params).promise().toFuture
-    @inline def deletePortalFuture(params: DeletePortalRequest): Future[DeletePortalResponse] =
-      service.deletePortal(params).promise().toFuture
-    @inline def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResponse] =
-      service.deleteProject(params).promise().toFuture
-    @inline def describeAccessPolicyFuture(params: DescribeAccessPolicyRequest): Future[DescribeAccessPolicyResponse] =
-      service.describeAccessPolicy(params).promise().toFuture
-    @inline def describeAssetFuture(params: DescribeAssetRequest): Future[DescribeAssetResponse] =
-      service.describeAsset(params).promise().toFuture
-    @inline def describeAssetModelFuture(params: DescribeAssetModelRequest): Future[DescribeAssetModelResponse] =
-      service.describeAssetModel(params).promise().toFuture
-    @inline def describeAssetPropertyFuture(
-        params: DescribeAssetPropertyRequest
-    ): Future[DescribeAssetPropertyResponse] = service.describeAssetProperty(params).promise().toFuture
-    @inline def describeDashboardFuture(params: DescribeDashboardRequest): Future[DescribeDashboardResponse] =
-      service.describeDashboard(params).promise().toFuture
-    @inline def describeGatewayCapabilityConfigurationFuture(
-        params: DescribeGatewayCapabilityConfigurationRequest
-    ): Future[DescribeGatewayCapabilityConfigurationResponse] =
-      service.describeGatewayCapabilityConfiguration(params).promise().toFuture
-    @inline def describeGatewayFuture(params: DescribeGatewayRequest): Future[DescribeGatewayResponse] =
-      service.describeGateway(params).promise().toFuture
-    @inline def describeLoggingOptionsFuture(
-        params: DescribeLoggingOptionsRequest
-    ): Future[DescribeLoggingOptionsResponse] = service.describeLoggingOptions(params).promise().toFuture
-    @inline def describePortalFuture(params: DescribePortalRequest): Future[DescribePortalResponse] =
-      service.describePortal(params).promise().toFuture
-    @inline def describeProjectFuture(params: DescribeProjectRequest): Future[DescribeProjectResponse] =
-      service.describeProject(params).promise().toFuture
-    @inline def disassociateAssetsFuture(params: DisassociateAssetsRequest): Future[js.Object] =
-      service.disassociateAssets(params).promise().toFuture
-    @inline def getAssetPropertyAggregatesFuture(
-        params: GetAssetPropertyAggregatesRequest
-    ): Future[GetAssetPropertyAggregatesResponse] = service.getAssetPropertyAggregates(params).promise().toFuture
-    @inline def getAssetPropertyValueFuture(
-        params: GetAssetPropertyValueRequest
-    ): Future[GetAssetPropertyValueResponse] = service.getAssetPropertyValue(params).promise().toFuture
-    @inline def getAssetPropertyValueHistoryFuture(
-        params: GetAssetPropertyValueHistoryRequest
-    ): Future[GetAssetPropertyValueHistoryResponse] = service.getAssetPropertyValueHistory(params).promise().toFuture
-    @inline def listAccessPoliciesFuture(params: ListAccessPoliciesRequest): Future[ListAccessPoliciesResponse] =
-      service.listAccessPolicies(params).promise().toFuture
-    @inline def listAssetModelsFuture(params: ListAssetModelsRequest): Future[ListAssetModelsResponse] =
-      service.listAssetModels(params).promise().toFuture
-    @inline def listAssetsFuture(params: ListAssetsRequest): Future[ListAssetsResponse] =
-      service.listAssets(params).promise().toFuture
-    @inline def listAssociatedAssetsFuture(params: ListAssociatedAssetsRequest): Future[ListAssociatedAssetsResponse] =
-      service.listAssociatedAssets(params).promise().toFuture
-    @inline def listDashboardsFuture(params: ListDashboardsRequest): Future[ListDashboardsResponse] =
-      service.listDashboards(params).promise().toFuture
-    @inline def listGatewaysFuture(params: ListGatewaysRequest): Future[ListGatewaysResponse] =
-      service.listGateways(params).promise().toFuture
-    @inline def listPortalsFuture(params: ListPortalsRequest): Future[ListPortalsResponse] =
-      service.listPortals(params).promise().toFuture
-    @inline def listProjectAssetsFuture(params: ListProjectAssetsRequest): Future[ListProjectAssetsResponse] =
-      service.listProjectAssets(params).promise().toFuture
-    @inline def listProjectsFuture(params: ListProjectsRequest): Future[ListProjectsResponse] =
-      service.listProjects(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def putLoggingOptionsFuture(params: PutLoggingOptionsRequest): Future[PutLoggingOptionsResponse] =
-      service.putLoggingOptions(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateAccessPolicyFuture(params: UpdateAccessPolicyRequest): Future[UpdateAccessPolicyResponse] =
-      service.updateAccessPolicy(params).promise().toFuture
-    @inline def updateAssetFuture(params: UpdateAssetRequest): Future[UpdateAssetResponse] =
-      service.updateAsset(params).promise().toFuture
-    @inline def updateAssetModelFuture(params: UpdateAssetModelRequest): Future[UpdateAssetModelResponse] =
-      service.updateAssetModel(params).promise().toFuture
-    @inline def updateAssetPropertyFuture(params: UpdateAssetPropertyRequest): Future[js.Object] =
-      service.updateAssetProperty(params).promise().toFuture
-    @inline def updateDashboardFuture(params: UpdateDashboardRequest): Future[UpdateDashboardResponse] =
-      service.updateDashboard(params).promise().toFuture
-    @inline def updateGatewayCapabilityConfigurationFuture(
-        params: UpdateGatewayCapabilityConfigurationRequest
-    ): Future[UpdateGatewayCapabilityConfigurationResponse] =
-      service.updateGatewayCapabilityConfiguration(params).promise().toFuture
-    @inline def updateGatewayFuture(params: UpdateGatewayRequest): Future[js.Object] =
-      service.updateGateway(params).promise().toFuture
-    @inline def updatePortalFuture(params: UpdatePortalRequest): Future[UpdatePortalResponse] =
-      service.updatePortal(params).promise().toFuture
-    @inline def updateProjectFuture(params: UpdateProjectRequest): Future[UpdateProjectResponse] =
-      service.updateProject(params).promise().toFuture
+    @inline def associateAssetsFuture(params: AssociateAssetsRequest): Future[js.Object] = service.associateAssets(params).promise().toFuture
+    @inline def batchAssociateProjectAssetsFuture(params: BatchAssociateProjectAssetsRequest): Future[BatchAssociateProjectAssetsResponse] = service.batchAssociateProjectAssets(params).promise().toFuture
+    @inline def batchDisassociateProjectAssetsFuture(params: BatchDisassociateProjectAssetsRequest): Future[BatchDisassociateProjectAssetsResponse] = service.batchDisassociateProjectAssets(params).promise().toFuture
+    @inline def batchPutAssetPropertyValueFuture(params: BatchPutAssetPropertyValueRequest): Future[BatchPutAssetPropertyValueResponse] = service.batchPutAssetPropertyValue(params).promise().toFuture
+    @inline def createAccessPolicyFuture(params: CreateAccessPolicyRequest): Future[CreateAccessPolicyResponse] = service.createAccessPolicy(params).promise().toFuture
+    @inline def createAssetFuture(params: CreateAssetRequest): Future[CreateAssetResponse] = service.createAsset(params).promise().toFuture
+    @inline def createAssetModelFuture(params: CreateAssetModelRequest): Future[CreateAssetModelResponse] = service.createAssetModel(params).promise().toFuture
+    @inline def createDashboardFuture(params: CreateDashboardRequest): Future[CreateDashboardResponse] = service.createDashboard(params).promise().toFuture
+    @inline def createGatewayFuture(params: CreateGatewayRequest): Future[CreateGatewayResponse] = service.createGateway(params).promise().toFuture
+    @inline def createPortalFuture(params: CreatePortalRequest): Future[CreatePortalResponse] = service.createPortal(params).promise().toFuture
+    @inline def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResponse] = service.createProject(params).promise().toFuture
+    @inline def deleteAccessPolicyFuture(params: DeleteAccessPolicyRequest): Future[DeleteAccessPolicyResponse] = service.deleteAccessPolicy(params).promise().toFuture
+    @inline def deleteAssetFuture(params: DeleteAssetRequest): Future[DeleteAssetResponse] = service.deleteAsset(params).promise().toFuture
+    @inline def deleteAssetModelFuture(params: DeleteAssetModelRequest): Future[DeleteAssetModelResponse] = service.deleteAssetModel(params).promise().toFuture
+    @inline def deleteDashboardFuture(params: DeleteDashboardRequest): Future[DeleteDashboardResponse] = service.deleteDashboard(params).promise().toFuture
+    @inline def deleteGatewayFuture(params: DeleteGatewayRequest): Future[js.Object] = service.deleteGateway(params).promise().toFuture
+    @inline def deletePortalFuture(params: DeletePortalRequest): Future[DeletePortalResponse] = service.deletePortal(params).promise().toFuture
+    @inline def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResponse] = service.deleteProject(params).promise().toFuture
+    @inline def describeAccessPolicyFuture(params: DescribeAccessPolicyRequest): Future[DescribeAccessPolicyResponse] = service.describeAccessPolicy(params).promise().toFuture
+    @inline def describeAssetFuture(params: DescribeAssetRequest): Future[DescribeAssetResponse] = service.describeAsset(params).promise().toFuture
+    @inline def describeAssetModelFuture(params: DescribeAssetModelRequest): Future[DescribeAssetModelResponse] = service.describeAssetModel(params).promise().toFuture
+    @inline def describeAssetPropertyFuture(params: DescribeAssetPropertyRequest): Future[DescribeAssetPropertyResponse] = service.describeAssetProperty(params).promise().toFuture
+    @inline def describeDashboardFuture(params: DescribeDashboardRequest): Future[DescribeDashboardResponse] = service.describeDashboard(params).promise().toFuture
+    @inline def describeGatewayCapabilityConfigurationFuture(params: DescribeGatewayCapabilityConfigurationRequest): Future[DescribeGatewayCapabilityConfigurationResponse] = service.describeGatewayCapabilityConfiguration(params).promise().toFuture
+    @inline def describeGatewayFuture(params: DescribeGatewayRequest): Future[DescribeGatewayResponse] = service.describeGateway(params).promise().toFuture
+    @inline def describeLoggingOptionsFuture(params: DescribeLoggingOptionsRequest): Future[DescribeLoggingOptionsResponse] = service.describeLoggingOptions(params).promise().toFuture
+    @inline def describePortalFuture(params: DescribePortalRequest): Future[DescribePortalResponse] = service.describePortal(params).promise().toFuture
+    @inline def describeProjectFuture(params: DescribeProjectRequest): Future[DescribeProjectResponse] = service.describeProject(params).promise().toFuture
+    @inline def disassociateAssetsFuture(params: DisassociateAssetsRequest): Future[js.Object] = service.disassociateAssets(params).promise().toFuture
+    @inline def getAssetPropertyAggregatesFuture(params: GetAssetPropertyAggregatesRequest): Future[GetAssetPropertyAggregatesResponse] = service.getAssetPropertyAggregates(params).promise().toFuture
+    @inline def getAssetPropertyValueFuture(params: GetAssetPropertyValueRequest): Future[GetAssetPropertyValueResponse] = service.getAssetPropertyValue(params).promise().toFuture
+    @inline def getAssetPropertyValueHistoryFuture(params: GetAssetPropertyValueHistoryRequest): Future[GetAssetPropertyValueHistoryResponse] = service.getAssetPropertyValueHistory(params).promise().toFuture
+    @inline def listAccessPoliciesFuture(params: ListAccessPoliciesRequest): Future[ListAccessPoliciesResponse] = service.listAccessPolicies(params).promise().toFuture
+    @inline def listAssetModelsFuture(params: ListAssetModelsRequest): Future[ListAssetModelsResponse] = service.listAssetModels(params).promise().toFuture
+    @inline def listAssetsFuture(params: ListAssetsRequest): Future[ListAssetsResponse] = service.listAssets(params).promise().toFuture
+    @inline def listAssociatedAssetsFuture(params: ListAssociatedAssetsRequest): Future[ListAssociatedAssetsResponse] = service.listAssociatedAssets(params).promise().toFuture
+    @inline def listDashboardsFuture(params: ListDashboardsRequest): Future[ListDashboardsResponse] = service.listDashboards(params).promise().toFuture
+    @inline def listGatewaysFuture(params: ListGatewaysRequest): Future[ListGatewaysResponse] = service.listGateways(params).promise().toFuture
+    @inline def listPortalsFuture(params: ListPortalsRequest): Future[ListPortalsResponse] = service.listPortals(params).promise().toFuture
+    @inline def listProjectAssetsFuture(params: ListProjectAssetsRequest): Future[ListProjectAssetsResponse] = service.listProjectAssets(params).promise().toFuture
+    @inline def listProjectsFuture(params: ListProjectsRequest): Future[ListProjectsResponse] = service.listProjects(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def putLoggingOptionsFuture(params: PutLoggingOptionsRequest): Future[PutLoggingOptionsResponse] = service.putLoggingOptions(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateAccessPolicyFuture(params: UpdateAccessPolicyRequest): Future[UpdateAccessPolicyResponse] = service.updateAccessPolicy(params).promise().toFuture
+    @inline def updateAssetFuture(params: UpdateAssetRequest): Future[UpdateAssetResponse] = service.updateAsset(params).promise().toFuture
+    @inline def updateAssetModelFuture(params: UpdateAssetModelRequest): Future[UpdateAssetModelResponse] = service.updateAssetModel(params).promise().toFuture
+    @inline def updateAssetPropertyFuture(params: UpdateAssetPropertyRequest): Future[js.Object] = service.updateAssetProperty(params).promise().toFuture
+    @inline def updateDashboardFuture(params: UpdateDashboardRequest): Future[UpdateDashboardResponse] = service.updateDashboard(params).promise().toFuture
+    @inline def updateGatewayCapabilityConfigurationFuture(params: UpdateGatewayCapabilityConfigurationRequest): Future[UpdateGatewayCapabilityConfigurationResponse] = service.updateGatewayCapabilityConfiguration(params).promise().toFuture
+    @inline def updateGatewayFuture(params: UpdateGatewayRequest): Future[js.Object] = service.updateGateway(params).promise().toFuture
+    @inline def updatePortalFuture(params: UpdatePortalRequest): Future[UpdatePortalResponse] = service.updatePortal(params).promise().toFuture
+    @inline def updateProjectFuture(params: UpdateProjectRequest): Future[UpdateProjectResponse] = service.updateProject(params).promise().toFuture
   }
 }
 
@@ -213,15 +146,9 @@ package iotsitewise {
     def this(config: AWSConfig) = this()
 
     def associateAssets(params: AssociateAssetsRequest): Request[js.Object] = js.native
-    def batchAssociateProjectAssets(
-        params: BatchAssociateProjectAssetsRequest
-    ): Request[BatchAssociateProjectAssetsResponse] = js.native
-    def batchDisassociateProjectAssets(
-        params: BatchDisassociateProjectAssetsRequest
-    ): Request[BatchDisassociateProjectAssetsResponse] = js.native
-    def batchPutAssetPropertyValue(
-        params: BatchPutAssetPropertyValueRequest
-    ): Request[BatchPutAssetPropertyValueResponse] = js.native
+    def batchAssociateProjectAssets(params: BatchAssociateProjectAssetsRequest): Request[BatchAssociateProjectAssetsResponse] = js.native
+    def batchDisassociateProjectAssets(params: BatchDisassociateProjectAssetsRequest): Request[BatchDisassociateProjectAssetsResponse] = js.native
+    def batchPutAssetPropertyValue(params: BatchPutAssetPropertyValueRequest): Request[BatchPutAssetPropertyValueResponse] = js.native
     def createAccessPolicy(params: CreateAccessPolicyRequest): Request[CreateAccessPolicyResponse] = js.native
     def createAsset(params: CreateAssetRequest): Request[CreateAssetResponse] = js.native
     def createAssetModel(params: CreateAssetModelRequest): Request[CreateAssetModelResponse] = js.native
@@ -242,21 +169,14 @@ package iotsitewise {
     def describeAssetProperty(params: DescribeAssetPropertyRequest): Request[DescribeAssetPropertyResponse] = js.native
     def describeDashboard(params: DescribeDashboardRequest): Request[DescribeDashboardResponse] = js.native
     def describeGateway(params: DescribeGatewayRequest): Request[DescribeGatewayResponse] = js.native
-    def describeGatewayCapabilityConfiguration(
-        params: DescribeGatewayCapabilityConfigurationRequest
-    ): Request[DescribeGatewayCapabilityConfigurationResponse] = js.native
-    def describeLoggingOptions(params: DescribeLoggingOptionsRequest): Request[DescribeLoggingOptionsResponse] =
-      js.native
+    def describeGatewayCapabilityConfiguration(params: DescribeGatewayCapabilityConfigurationRequest): Request[DescribeGatewayCapabilityConfigurationResponse] = js.native
+    def describeLoggingOptions(params: DescribeLoggingOptionsRequest): Request[DescribeLoggingOptionsResponse] = js.native
     def describePortal(params: DescribePortalRequest): Request[DescribePortalResponse] = js.native
     def describeProject(params: DescribeProjectRequest): Request[DescribeProjectResponse] = js.native
     def disassociateAssets(params: DisassociateAssetsRequest): Request[js.Object] = js.native
-    def getAssetPropertyAggregates(
-        params: GetAssetPropertyAggregatesRequest
-    ): Request[GetAssetPropertyAggregatesResponse] = js.native
+    def getAssetPropertyAggregates(params: GetAssetPropertyAggregatesRequest): Request[GetAssetPropertyAggregatesResponse] = js.native
     def getAssetPropertyValue(params: GetAssetPropertyValueRequest): Request[GetAssetPropertyValueResponse] = js.native
-    def getAssetPropertyValueHistory(
-        params: GetAssetPropertyValueHistoryRequest
-    ): Request[GetAssetPropertyValueHistoryResponse] = js.native
+    def getAssetPropertyValueHistory(params: GetAssetPropertyValueHistoryRequest): Request[GetAssetPropertyValueHistoryResponse] = js.native
     def listAccessPolicies(params: ListAccessPoliciesRequest): Request[ListAccessPoliciesResponse] = js.native
     def listAssetModels(params: ListAssetModelsRequest): Request[ListAssetModelsResponse] = js.native
     def listAssets(params: ListAssetsRequest): Request[ListAssetsResponse] = js.native
@@ -276,9 +196,7 @@ package iotsitewise {
     def updateAssetProperty(params: UpdateAssetPropertyRequest): Request[js.Object] = js.native
     def updateDashboard(params: UpdateDashboardRequest): Request[UpdateDashboardResponse] = js.native
     def updateGateway(params: UpdateGatewayRequest): Request[js.Object] = js.native
-    def updateGatewayCapabilityConfiguration(
-        params: UpdateGatewayCapabilityConfigurationRequest
-    ): Request[UpdateGatewayCapabilityConfigurationResponse] = js.native
+    def updateGatewayCapabilityConfiguration(params: UpdateGatewayCapabilityConfigurationRequest): Request[UpdateGatewayCapabilityConfigurationResponse] = js.native
     def updatePortal(params: UpdatePortalRequest): Request[UpdatePortalResponse] = js.native
     def updateProject(params: UpdateProjectRequest): Request[UpdateProjectResponse] = js.native
   }
@@ -1011,24 +929,21 @@ package iotsitewise {
     val ServiceUnavailableException = "ServiceUnavailableException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
     val ThrottlingException = "ThrottlingException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
     val LimitExceededException = "LimitExceededException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
-    val ConflictingOperationException =
-      "ConflictingOperationException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
+    val ConflictingOperationException = "ConflictingOperationException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
     val TimestampOutOfRangeException = "TimestampOutOfRangeException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
     val AccessDeniedException = "AccessDeniedException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ResourceNotFoundException,
-        InvalidRequestException,
-        InternalFailureException,
-        ServiceUnavailableException,
-        ThrottlingException,
-        LimitExceededException,
-        ConflictingOperationException,
-        TimestampOutOfRangeException,
-        AccessDeniedException
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      ResourceNotFoundException,
+      InvalidRequestException,
+      InternalFailureException,
+      ServiceUnavailableException,
+      ThrottlingException,
+      LimitExceededException,
+      ConflictingOperationException,
+      TimestampOutOfRangeException,
+      AccessDeniedException
+    ))
   }
 
   @js.native
@@ -2414,9 +2329,7 @@ package iotsitewise {
         "lastUpdateDate" -> lastUpdateDate.asInstanceOf[js.Any]
       )
 
-      gatewayCapabilitySummaries.foreach(__v =>
-        __obj.updateDynamic("gatewayCapabilitySummaries")(__v.asInstanceOf[js.Any])
-      )
+      gatewayCapabilitySummaries.foreach(__v => __obj.updateDynamic("gatewayCapabilitySummaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GatewaySummary]
     }
   }
@@ -3952,9 +3865,7 @@ package iotsitewise {
 
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
       propertyAlias.foreach(__v => __obj.updateDynamic("propertyAlias")(__v.asInstanceOf[js.Any]))
-      propertyNotificationState.foreach(__v =>
-        __obj.updateDynamic("propertyNotificationState")(__v.asInstanceOf[js.Any])
-      )
+      propertyNotificationState.foreach(__v => __obj.updateDynamic("propertyNotificationState")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAssetPropertyRequest]
     }
   }

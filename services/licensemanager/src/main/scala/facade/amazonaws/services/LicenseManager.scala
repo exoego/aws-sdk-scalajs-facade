@@ -33,55 +33,22 @@ package object licensemanager {
 
   implicit final class LicenseManagerOps(private val service: LicenseManager) extends AnyVal {
 
-    @inline def createLicenseConfigurationFuture(
-        params: CreateLicenseConfigurationRequest
-    ): Future[CreateLicenseConfigurationResponse] = service.createLicenseConfiguration(params).promise().toFuture
-    @inline def deleteLicenseConfigurationFuture(
-        params: DeleteLicenseConfigurationRequest
-    ): Future[DeleteLicenseConfigurationResponse] = service.deleteLicenseConfiguration(params).promise().toFuture
-    @inline def getLicenseConfigurationFuture(
-        params: GetLicenseConfigurationRequest
-    ): Future[GetLicenseConfigurationResponse] = service.getLicenseConfiguration(params).promise().toFuture
-    @inline def getServiceSettingsFuture(params: GetServiceSettingsRequest): Future[GetServiceSettingsResponse] =
-      service.getServiceSettings(params).promise().toFuture
-    @inline def listAssociationsForLicenseConfigurationFuture(
-        params: ListAssociationsForLicenseConfigurationRequest
-    ): Future[ListAssociationsForLicenseConfigurationResponse] =
-      service.listAssociationsForLicenseConfiguration(params).promise().toFuture
-    @inline def listFailuresForLicenseConfigurationOperationsFuture(
-        params: ListFailuresForLicenseConfigurationOperationsRequest
-    ): Future[ListFailuresForLicenseConfigurationOperationsResponse] =
-      service.listFailuresForLicenseConfigurationOperations(params).promise().toFuture
-    @inline def listLicenseConfigurationsFuture(
-        params: ListLicenseConfigurationsRequest
-    ): Future[ListLicenseConfigurationsResponse] = service.listLicenseConfigurations(params).promise().toFuture
-    @inline def listLicenseSpecificationsForResourceFuture(
-        params: ListLicenseSpecificationsForResourceRequest
-    ): Future[ListLicenseSpecificationsForResourceResponse] =
-      service.listLicenseSpecificationsForResource(params).promise().toFuture
-    @inline def listResourceInventoryFuture(
-        params: ListResourceInventoryRequest
-    ): Future[ListResourceInventoryResponse] = service.listResourceInventory(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listUsageForLicenseConfigurationFuture(
-        params: ListUsageForLicenseConfigurationRequest
-    ): Future[ListUsageForLicenseConfigurationResponse] =
-      service.listUsageForLicenseConfiguration(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateLicenseConfigurationFuture(
-        params: UpdateLicenseConfigurationRequest
-    ): Future[UpdateLicenseConfigurationResponse] = service.updateLicenseConfiguration(params).promise().toFuture
-    @inline def updateLicenseSpecificationsForResourceFuture(
-        params: UpdateLicenseSpecificationsForResourceRequest
-    ): Future[UpdateLicenseSpecificationsForResourceResponse] =
-      service.updateLicenseSpecificationsForResource(params).promise().toFuture
-    @inline def updateServiceSettingsFuture(
-        params: UpdateServiceSettingsRequest
-    ): Future[UpdateServiceSettingsResponse] = service.updateServiceSettings(params).promise().toFuture
+    @inline def createLicenseConfigurationFuture(params: CreateLicenseConfigurationRequest): Future[CreateLicenseConfigurationResponse] = service.createLicenseConfiguration(params).promise().toFuture
+    @inline def deleteLicenseConfigurationFuture(params: DeleteLicenseConfigurationRequest): Future[DeleteLicenseConfigurationResponse] = service.deleteLicenseConfiguration(params).promise().toFuture
+    @inline def getLicenseConfigurationFuture(params: GetLicenseConfigurationRequest): Future[GetLicenseConfigurationResponse] = service.getLicenseConfiguration(params).promise().toFuture
+    @inline def getServiceSettingsFuture(params: GetServiceSettingsRequest): Future[GetServiceSettingsResponse] = service.getServiceSettings(params).promise().toFuture
+    @inline def listAssociationsForLicenseConfigurationFuture(params: ListAssociationsForLicenseConfigurationRequest): Future[ListAssociationsForLicenseConfigurationResponse] = service.listAssociationsForLicenseConfiguration(params).promise().toFuture
+    @inline def listFailuresForLicenseConfigurationOperationsFuture(params: ListFailuresForLicenseConfigurationOperationsRequest): Future[ListFailuresForLicenseConfigurationOperationsResponse] = service.listFailuresForLicenseConfigurationOperations(params).promise().toFuture
+    @inline def listLicenseConfigurationsFuture(params: ListLicenseConfigurationsRequest): Future[ListLicenseConfigurationsResponse] = service.listLicenseConfigurations(params).promise().toFuture
+    @inline def listLicenseSpecificationsForResourceFuture(params: ListLicenseSpecificationsForResourceRequest): Future[ListLicenseSpecificationsForResourceResponse] = service.listLicenseSpecificationsForResource(params).promise().toFuture
+    @inline def listResourceInventoryFuture(params: ListResourceInventoryRequest): Future[ListResourceInventoryResponse] = service.listResourceInventory(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listUsageForLicenseConfigurationFuture(params: ListUsageForLicenseConfigurationRequest): Future[ListUsageForLicenseConfigurationResponse] = service.listUsageForLicenseConfiguration(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateLicenseConfigurationFuture(params: UpdateLicenseConfigurationRequest): Future[UpdateLicenseConfigurationResponse] = service.updateLicenseConfiguration(params).promise().toFuture
+    @inline def updateLicenseSpecificationsForResourceFuture(params: UpdateLicenseSpecificationsForResourceRequest): Future[UpdateLicenseSpecificationsForResourceResponse] = service.updateLicenseSpecificationsForResource(params).promise().toFuture
+    @inline def updateServiceSettingsFuture(params: UpdateServiceSettingsRequest): Future[UpdateServiceSettingsResponse] = service.updateServiceSettings(params).promise().toFuture
   }
 }
 
@@ -91,40 +58,21 @@ package licensemanager {
   class LicenseManager() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createLicenseConfiguration(
-        params: CreateLicenseConfigurationRequest
-    ): Request[CreateLicenseConfigurationResponse] = js.native
-    def deleteLicenseConfiguration(
-        params: DeleteLicenseConfigurationRequest
-    ): Request[DeleteLicenseConfigurationResponse] = js.native
-    def getLicenseConfiguration(params: GetLicenseConfigurationRequest): Request[GetLicenseConfigurationResponse] =
-      js.native
+    def createLicenseConfiguration(params: CreateLicenseConfigurationRequest): Request[CreateLicenseConfigurationResponse] = js.native
+    def deleteLicenseConfiguration(params: DeleteLicenseConfigurationRequest): Request[DeleteLicenseConfigurationResponse] = js.native
+    def getLicenseConfiguration(params: GetLicenseConfigurationRequest): Request[GetLicenseConfigurationResponse] = js.native
     def getServiceSettings(params: GetServiceSettingsRequest): Request[GetServiceSettingsResponse] = js.native
-    def listAssociationsForLicenseConfiguration(
-        params: ListAssociationsForLicenseConfigurationRequest
-    ): Request[ListAssociationsForLicenseConfigurationResponse] = js.native
-    def listFailuresForLicenseConfigurationOperations(
-        params: ListFailuresForLicenseConfigurationOperationsRequest
-    ): Request[ListFailuresForLicenseConfigurationOperationsResponse] = js.native
-    def listLicenseConfigurations(
-        params: ListLicenseConfigurationsRequest
-    ): Request[ListLicenseConfigurationsResponse] = js.native
-    def listLicenseSpecificationsForResource(
-        params: ListLicenseSpecificationsForResourceRequest
-    ): Request[ListLicenseSpecificationsForResourceResponse] = js.native
+    def listAssociationsForLicenseConfiguration(params: ListAssociationsForLicenseConfigurationRequest): Request[ListAssociationsForLicenseConfigurationResponse] = js.native
+    def listFailuresForLicenseConfigurationOperations(params: ListFailuresForLicenseConfigurationOperationsRequest): Request[ListFailuresForLicenseConfigurationOperationsResponse] = js.native
+    def listLicenseConfigurations(params: ListLicenseConfigurationsRequest): Request[ListLicenseConfigurationsResponse] = js.native
+    def listLicenseSpecificationsForResource(params: ListLicenseSpecificationsForResourceRequest): Request[ListLicenseSpecificationsForResourceResponse] = js.native
     def listResourceInventory(params: ListResourceInventoryRequest): Request[ListResourceInventoryResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def listUsageForLicenseConfiguration(
-        params: ListUsageForLicenseConfigurationRequest
-    ): Request[ListUsageForLicenseConfigurationResponse] = js.native
+    def listUsageForLicenseConfiguration(params: ListUsageForLicenseConfigurationRequest): Request[ListUsageForLicenseConfigurationResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
-    def updateLicenseConfiguration(
-        params: UpdateLicenseConfigurationRequest
-    ): Request[UpdateLicenseConfigurationResponse] = js.native
-    def updateLicenseSpecificationsForResource(
-        params: UpdateLicenseSpecificationsForResourceRequest
-    ): Request[UpdateLicenseSpecificationsForResourceResponse] = js.native
+    def updateLicenseConfiguration(params: UpdateLicenseConfigurationRequest): Request[UpdateLicenseConfigurationResponse] = js.native
+    def updateLicenseSpecificationsForResource(params: UpdateLicenseSpecificationsForResourceRequest): Request[UpdateLicenseSpecificationsForResourceResponse] = js.native
     def updateServiceSettings(params: UpdateServiceSettingsRequest): Request[UpdateServiceSettingsResponse] = js.native
   }
 
@@ -336,12 +284,8 @@ package licensemanager {
         Tags: js.UndefOr[TagList] = js.undefined
     ): GetLicenseConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-      AutomatedDiscoveryInformation.foreach(__v =>
-        __obj.updateDynamic("AutomatedDiscoveryInformation")(__v.asInstanceOf[js.Any])
-      )
-      ConsumedLicenseSummaryList.foreach(__v =>
-        __obj.updateDynamic("ConsumedLicenseSummaryList")(__v.asInstanceOf[js.Any])
-      )
+      AutomatedDiscoveryInformation.foreach(__v => __obj.updateDynamic("AutomatedDiscoveryInformation")(__v.asInstanceOf[js.Any]))
+      ConsumedLicenseSummaryList.foreach(__v => __obj.updateDynamic("ConsumedLicenseSummaryList")(__v.asInstanceOf[js.Any]))
       ConsumedLicenses.foreach(__v => __obj.updateDynamic("ConsumedLicenses")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       LicenseConfigurationArn.foreach(__v => __obj.updateDynamic("LicenseConfigurationArn")(__v.asInstanceOf[js.Any]))
@@ -350,9 +294,7 @@ package licensemanager {
       LicenseCountHardLimit.foreach(__v => __obj.updateDynamic("LicenseCountHardLimit")(__v.asInstanceOf[js.Any]))
       LicenseCountingType.foreach(__v => __obj.updateDynamic("LicenseCountingType")(__v.asInstanceOf[js.Any]))
       LicenseRules.foreach(__v => __obj.updateDynamic("LicenseRules")(__v.asInstanceOf[js.Any]))
-      ManagedResourceSummaryList.foreach(__v =>
-        __obj.updateDynamic("ManagedResourceSummaryList")(__v.asInstanceOf[js.Any])
-      )
+      ManagedResourceSummaryList.foreach(__v => __obj.updateDynamic("ManagedResourceSummaryList")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       OwnerAccountId.foreach(__v => __obj.updateDynamic("OwnerAccountId")(__v.asInstanceOf[js.Any]))
       ProductInformationList.foreach(__v => __obj.updateDynamic("ProductInformationList")(__v.asInstanceOf[js.Any]))
@@ -394,15 +336,9 @@ package licensemanager {
         SnsTopicArn: js.UndefOr[String] = js.undefined
     ): GetServiceSettingsResponse = {
       val __obj = js.Dynamic.literal()
-      EnableCrossAccountsDiscovery.foreach(__v =>
-        __obj.updateDynamic("EnableCrossAccountsDiscovery")(__v.asInstanceOf[js.Any])
-      )
-      LicenseManagerResourceShareArn.foreach(__v =>
-        __obj.updateDynamic("LicenseManagerResourceShareArn")(__v.asInstanceOf[js.Any])
-      )
-      OrganizationConfiguration.foreach(__v =>
-        __obj.updateDynamic("OrganizationConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      EnableCrossAccountsDiscovery.foreach(__v => __obj.updateDynamic("EnableCrossAccountsDiscovery")(__v.asInstanceOf[js.Any]))
+      LicenseManagerResourceShareArn.foreach(__v => __obj.updateDynamic("LicenseManagerResourceShareArn")(__v.asInstanceOf[js.Any]))
+      OrganizationConfiguration.foreach(__v => __obj.updateDynamic("OrganizationConfiguration")(__v.asInstanceOf[js.Any]))
       S3BucketArn.foreach(__v => __obj.updateDynamic("S3BucketArn")(__v.asInstanceOf[js.Any]))
       SnsTopicArn.foreach(__v => __obj.updateDynamic("SnsTopicArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetServiceSettingsResponse]
@@ -489,12 +425,8 @@ package licensemanager {
         Status: js.UndefOr[String] = js.undefined
     ): LicenseConfiguration = {
       val __obj = js.Dynamic.literal()
-      AutomatedDiscoveryInformation.foreach(__v =>
-        __obj.updateDynamic("AutomatedDiscoveryInformation")(__v.asInstanceOf[js.Any])
-      )
-      ConsumedLicenseSummaryList.foreach(__v =>
-        __obj.updateDynamic("ConsumedLicenseSummaryList")(__v.asInstanceOf[js.Any])
-      )
+      AutomatedDiscoveryInformation.foreach(__v => __obj.updateDynamic("AutomatedDiscoveryInformation")(__v.asInstanceOf[js.Any]))
+      ConsumedLicenseSummaryList.foreach(__v => __obj.updateDynamic("ConsumedLicenseSummaryList")(__v.asInstanceOf[js.Any]))
       ConsumedLicenses.foreach(__v => __obj.updateDynamic("ConsumedLicenses")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       LicenseConfigurationArn.foreach(__v => __obj.updateDynamic("LicenseConfigurationArn")(__v.asInstanceOf[js.Any]))
@@ -503,9 +435,7 @@ package licensemanager {
       LicenseCountHardLimit.foreach(__v => __obj.updateDynamic("LicenseCountHardLimit")(__v.asInstanceOf[js.Any]))
       LicenseCountingType.foreach(__v => __obj.updateDynamic("LicenseCountingType")(__v.asInstanceOf[js.Any]))
       LicenseRules.foreach(__v => __obj.updateDynamic("LicenseRules")(__v.asInstanceOf[js.Any]))
-      ManagedResourceSummaryList.foreach(__v =>
-        __obj.updateDynamic("ManagedResourceSummaryList")(__v.asInstanceOf[js.Any])
-      )
+      ManagedResourceSummaryList.foreach(__v => __obj.updateDynamic("ManagedResourceSummaryList")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       OwnerAccountId.foreach(__v => __obj.updateDynamic("OwnerAccountId")(__v.asInstanceOf[js.Any]))
       ProductInformationList.foreach(__v => __obj.updateDynamic("ProductInformationList")(__v.asInstanceOf[js.Any]))
@@ -694,9 +624,7 @@ package licensemanager {
         NextToken: js.UndefOr[String] = js.undefined
     ): ListAssociationsForLicenseConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-      LicenseConfigurationAssociations.foreach(__v =>
-        __obj.updateDynamic("LicenseConfigurationAssociations")(__v.asInstanceOf[js.Any])
-      )
+      LicenseConfigurationAssociations.foreach(__v => __obj.updateDynamic("LicenseConfigurationAssociations")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAssociationsForLicenseConfigurationResponse]
     }
@@ -739,9 +667,7 @@ package licensemanager {
         NextToken: js.UndefOr[String] = js.undefined
     ): ListFailuresForLicenseConfigurationOperationsResponse = {
       val __obj = js.Dynamic.literal()
-      LicenseOperationFailureList.foreach(__v =>
-        __obj.updateDynamic("LicenseOperationFailureList")(__v.asInstanceOf[js.Any])
-      )
+      LicenseOperationFailureList.foreach(__v => __obj.updateDynamic("LicenseOperationFailureList")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFailuresForLicenseConfigurationOperationsResponse]
     }
@@ -949,9 +875,7 @@ package licensemanager {
         NextToken: js.UndefOr[String] = js.undefined
     ): ListUsageForLicenseConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-      LicenseConfigurationUsageList.foreach(__v =>
-        __obj.updateDynamic("LicenseConfigurationUsageList")(__v.asInstanceOf[js.Any])
-      )
+      LicenseConfigurationUsageList.foreach(__v => __obj.updateDynamic("LicenseConfigurationUsageList")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListUsageForLicenseConfigurationResponse]
     }
@@ -1238,9 +1162,7 @@ package licensemanager {
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      LicenseConfigurationStatus.foreach(__v =>
-        __obj.updateDynamic("LicenseConfigurationStatus")(__v.asInstanceOf[js.Any])
-      )
+      LicenseConfigurationStatus.foreach(__v => __obj.updateDynamic("LicenseConfigurationStatus")(__v.asInstanceOf[js.Any]))
       LicenseCount.foreach(__v => __obj.updateDynamic("LicenseCount")(__v.asInstanceOf[js.Any]))
       LicenseCountHardLimit.foreach(__v => __obj.updateDynamic("LicenseCountHardLimit")(__v.asInstanceOf[js.Any]))
       LicenseRules.foreach(__v => __obj.updateDynamic("LicenseRules")(__v.asInstanceOf[js.Any]))
@@ -1282,9 +1204,7 @@ package licensemanager {
       )
 
       AddLicenseSpecifications.foreach(__v => __obj.updateDynamic("AddLicenseSpecifications")(__v.asInstanceOf[js.Any]))
-      RemoveLicenseSpecifications.foreach(__v =>
-        __obj.updateDynamic("RemoveLicenseSpecifications")(__v.asInstanceOf[js.Any])
-      )
+      RemoveLicenseSpecifications.foreach(__v => __obj.updateDynamic("RemoveLicenseSpecifications")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateLicenseSpecificationsForResourceRequest]
     }
   }
@@ -1319,12 +1239,8 @@ package licensemanager {
         SnsTopicArn: js.UndefOr[String] = js.undefined
     ): UpdateServiceSettingsRequest = {
       val __obj = js.Dynamic.literal()
-      EnableCrossAccountsDiscovery.foreach(__v =>
-        __obj.updateDynamic("EnableCrossAccountsDiscovery")(__v.asInstanceOf[js.Any])
-      )
-      OrganizationConfiguration.foreach(__v =>
-        __obj.updateDynamic("OrganizationConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      EnableCrossAccountsDiscovery.foreach(__v => __obj.updateDynamic("EnableCrossAccountsDiscovery")(__v.asInstanceOf[js.Any]))
+      OrganizationConfiguration.foreach(__v => __obj.updateDynamic("OrganizationConfiguration")(__v.asInstanceOf[js.Any]))
       S3BucketArn.foreach(__v => __obj.updateDynamic("S3BucketArn")(__v.asInstanceOf[js.Any]))
       SnsTopicArn.foreach(__v => __obj.updateDynamic("SnsTopicArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateServiceSettingsRequest]

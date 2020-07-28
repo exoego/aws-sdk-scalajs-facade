@@ -25,54 +25,28 @@ package object mediaconnect {
 
   implicit final class MediaConnectOps(private val service: MediaConnect) extends AnyVal {
 
-    @inline def addFlowOutputsFuture(params: AddFlowOutputsRequest): Future[AddFlowOutputsResponse] =
-      service.addFlowOutputs(params).promise().toFuture
-    @inline def addFlowSourcesFuture(params: AddFlowSourcesRequest): Future[AddFlowSourcesResponse] =
-      service.addFlowSources(params).promise().toFuture
-    @inline def addFlowVpcInterfacesFuture(params: AddFlowVpcInterfacesRequest): Future[AddFlowVpcInterfacesResponse] =
-      service.addFlowVpcInterfaces(params).promise().toFuture
-    @inline def createFlowFuture(params: CreateFlowRequest): Future[CreateFlowResponse] =
-      service.createFlow(params).promise().toFuture
-    @inline def deleteFlowFuture(params: DeleteFlowRequest): Future[DeleteFlowResponse] =
-      service.deleteFlow(params).promise().toFuture
-    @inline def describeFlowFuture(params: DescribeFlowRequest): Future[DescribeFlowResponse] =
-      service.describeFlow(params).promise().toFuture
-    @inline def grantFlowEntitlementsFuture(
-        params: GrantFlowEntitlementsRequest
-    ): Future[GrantFlowEntitlementsResponse] = service.grantFlowEntitlements(params).promise().toFuture
-    @inline def listEntitlementsFuture(params: ListEntitlementsRequest): Future[ListEntitlementsResponse] =
-      service.listEntitlements(params).promise().toFuture
-    @inline def listFlowsFuture(params: ListFlowsRequest): Future[ListFlowsResponse] =
-      service.listFlows(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def removeFlowOutputFuture(params: RemoveFlowOutputRequest): Future[RemoveFlowOutputResponse] =
-      service.removeFlowOutput(params).promise().toFuture
-    @inline def removeFlowSourceFuture(params: RemoveFlowSourceRequest): Future[RemoveFlowSourceResponse] =
-      service.removeFlowSource(params).promise().toFuture
-    @inline def removeFlowVpcInterfaceFuture(
-        params: RemoveFlowVpcInterfaceRequest
-    ): Future[RemoveFlowVpcInterfaceResponse] = service.removeFlowVpcInterface(params).promise().toFuture
-    @inline def revokeFlowEntitlementFuture(
-        params: RevokeFlowEntitlementRequest
-    ): Future[RevokeFlowEntitlementResponse] = service.revokeFlowEntitlement(params).promise().toFuture
-    @inline def startFlowFuture(params: StartFlowRequest): Future[StartFlowResponse] =
-      service.startFlow(params).promise().toFuture
-    @inline def stopFlowFuture(params: StopFlowRequest): Future[StopFlowResponse] =
-      service.stopFlow(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateFlowEntitlementFuture(
-        params: UpdateFlowEntitlementRequest
-    ): Future[UpdateFlowEntitlementResponse] = service.updateFlowEntitlement(params).promise().toFuture
-    @inline def updateFlowFuture(params: UpdateFlowRequest): Future[UpdateFlowResponse] =
-      service.updateFlow(params).promise().toFuture
-    @inline def updateFlowOutputFuture(params: UpdateFlowOutputRequest): Future[UpdateFlowOutputResponse] =
-      service.updateFlowOutput(params).promise().toFuture
-    @inline def updateFlowSourceFuture(params: UpdateFlowSourceRequest): Future[UpdateFlowSourceResponse] =
-      service.updateFlowSource(params).promise().toFuture
+    @inline def addFlowOutputsFuture(params: AddFlowOutputsRequest): Future[AddFlowOutputsResponse] = service.addFlowOutputs(params).promise().toFuture
+    @inline def addFlowSourcesFuture(params: AddFlowSourcesRequest): Future[AddFlowSourcesResponse] = service.addFlowSources(params).promise().toFuture
+    @inline def addFlowVpcInterfacesFuture(params: AddFlowVpcInterfacesRequest): Future[AddFlowVpcInterfacesResponse] = service.addFlowVpcInterfaces(params).promise().toFuture
+    @inline def createFlowFuture(params: CreateFlowRequest): Future[CreateFlowResponse] = service.createFlow(params).promise().toFuture
+    @inline def deleteFlowFuture(params: DeleteFlowRequest): Future[DeleteFlowResponse] = service.deleteFlow(params).promise().toFuture
+    @inline def describeFlowFuture(params: DescribeFlowRequest): Future[DescribeFlowResponse] = service.describeFlow(params).promise().toFuture
+    @inline def grantFlowEntitlementsFuture(params: GrantFlowEntitlementsRequest): Future[GrantFlowEntitlementsResponse] = service.grantFlowEntitlements(params).promise().toFuture
+    @inline def listEntitlementsFuture(params: ListEntitlementsRequest): Future[ListEntitlementsResponse] = service.listEntitlements(params).promise().toFuture
+    @inline def listFlowsFuture(params: ListFlowsRequest): Future[ListFlowsResponse] = service.listFlows(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def removeFlowOutputFuture(params: RemoveFlowOutputRequest): Future[RemoveFlowOutputResponse] = service.removeFlowOutput(params).promise().toFuture
+    @inline def removeFlowSourceFuture(params: RemoveFlowSourceRequest): Future[RemoveFlowSourceResponse] = service.removeFlowSource(params).promise().toFuture
+    @inline def removeFlowVpcInterfaceFuture(params: RemoveFlowVpcInterfaceRequest): Future[RemoveFlowVpcInterfaceResponse] = service.removeFlowVpcInterface(params).promise().toFuture
+    @inline def revokeFlowEntitlementFuture(params: RevokeFlowEntitlementRequest): Future[RevokeFlowEntitlementResponse] = service.revokeFlowEntitlement(params).promise().toFuture
+    @inline def startFlowFuture(params: StartFlowRequest): Future[StartFlowResponse] = service.startFlow(params).promise().toFuture
+    @inline def stopFlowFuture(params: StopFlowRequest): Future[StopFlowResponse] = service.stopFlow(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
+    @inline def updateFlowEntitlementFuture(params: UpdateFlowEntitlementRequest): Future[UpdateFlowEntitlementResponse] = service.updateFlowEntitlement(params).promise().toFuture
+    @inline def updateFlowFuture(params: UpdateFlowRequest): Future[UpdateFlowResponse] = service.updateFlow(params).promise().toFuture
+    @inline def updateFlowOutputFuture(params: UpdateFlowOutputRequest): Future[UpdateFlowOutputResponse] = service.updateFlowOutput(params).promise().toFuture
+    @inline def updateFlowSourceFuture(params: UpdateFlowSourceRequest): Future[UpdateFlowSourceResponse] = service.updateFlowSource(params).promise().toFuture
   }
 }
 
@@ -94,8 +68,7 @@ package mediaconnect {
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def removeFlowOutput(params: RemoveFlowOutputRequest): Request[RemoveFlowOutputResponse] = js.native
     def removeFlowSource(params: RemoveFlowSourceRequest): Request[RemoveFlowSourceResponse] = js.native
-    def removeFlowVpcInterface(params: RemoveFlowVpcInterfaceRequest): Request[RemoveFlowVpcInterfaceResponse] =
-      js.native
+    def removeFlowVpcInterface(params: RemoveFlowVpcInterfaceRequest): Request[RemoveFlowVpcInterfaceResponse] = js.native
     def revokeFlowEntitlement(params: RevokeFlowEntitlementRequest): Request[RevokeFlowEntitlementResponse] = js.native
     def startFlow(params: StartFlowRequest): Request[StartFlowResponse] = js.native
     def stopFlow(params: StopFlowRequest): Request[StopFlowResponse] = js.native
@@ -466,9 +439,7 @@ package mediaconnect {
         "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
-      ConstantInitializationVector.foreach(__v =>
-        __obj.updateDynamic("ConstantInitializationVector")(__v.asInstanceOf[js.Any])
-      )
+      ConstantInitializationVector.foreach(__v => __obj.updateDynamic("ConstantInitializationVector")(__v.asInstanceOf[js.Any]))
       DeviceId.foreach(__v => __obj.updateDynamic("DeviceId")(__v.asInstanceOf[js.Any]))
       KeyType.foreach(__v => __obj.updateDynamic("KeyType")(__v.asInstanceOf[js.Any]))
       Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
@@ -510,9 +481,7 @@ package mediaconnect {
         "Subscribers" -> Subscribers.asInstanceOf[js.Any]
       )
 
-      DataTransferSubscriberFeePercent.foreach(__v =>
-        __obj.updateDynamic("DataTransferSubscriberFeePercent")(__v.asInstanceOf[js.Any])
-      )
+      DataTransferSubscriberFeePercent.foreach(__v => __obj.updateDynamic("DataTransferSubscriberFeePercent")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
       EntitlementStatus.foreach(__v => __obj.updateDynamic("EntitlementStatus")(__v.asInstanceOf[js.Any]))
@@ -632,9 +601,7 @@ package mediaconnect {
         "Subscribers" -> Subscribers.asInstanceOf[js.Any]
       )
 
-      DataTransferSubscriberFeePercent.foreach(__v =>
-        __obj.updateDynamic("DataTransferSubscriberFeePercent")(__v.asInstanceOf[js.Any])
-      )
+      DataTransferSubscriberFeePercent.foreach(__v => __obj.updateDynamic("DataTransferSubscriberFeePercent")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
       EntitlementStatus.foreach(__v => __obj.updateDynamic("EntitlementStatus")(__v.asInstanceOf[js.Any]))
@@ -827,9 +794,7 @@ package mediaconnect {
         "EntitlementName" -> EntitlementName.asInstanceOf[js.Any]
       )
 
-      DataTransferSubscriberFeePercent.foreach(__v =>
-        __obj.updateDynamic("DataTransferSubscriberFeePercent")(__v.asInstanceOf[js.Any])
-      )
+      DataTransferSubscriberFeePercent.foreach(__v => __obj.updateDynamic("DataTransferSubscriberFeePercent")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListedEntitlement]
     }
   }
@@ -929,9 +894,7 @@ package mediaconnect {
         "OutputArn" -> OutputArn.asInstanceOf[js.Any]
       )
 
-      DataTransferSubscriberFeePercent.foreach(__v =>
-        __obj.updateDynamic("DataTransferSubscriberFeePercent")(__v.asInstanceOf[js.Any])
-      )
+      DataTransferSubscriberFeePercent.foreach(__v => __obj.updateDynamic("DataTransferSubscriberFeePercent")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
@@ -1073,9 +1036,7 @@ package mediaconnect {
     ): RemoveFlowVpcInterfaceResponse = {
       val __obj = js.Dynamic.literal()
       FlowArn.foreach(__v => __obj.updateDynamic("FlowArn")(__v.asInstanceOf[js.Any]))
-      NonDeletedNetworkInterfaceIds.foreach(__v =>
-        __obj.updateDynamic("NonDeletedNetworkInterfaceIds")(__v.asInstanceOf[js.Any])
-      )
+      NonDeletedNetworkInterfaceIds.foreach(__v => __obj.updateDynamic("NonDeletedNetworkInterfaceIds")(__v.asInstanceOf[js.Any]))
       VpcInterfaceName.foreach(__v => __obj.updateDynamic("VpcInterfaceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemoveFlowVpcInterfaceResponse]
     }
@@ -1208,9 +1169,7 @@ package mediaconnect {
         "SourceArn" -> SourceArn.asInstanceOf[js.Any]
       )
 
-      DataTransferSubscriberFeePercent.foreach(__v =>
-        __obj.updateDynamic("DataTransferSubscriberFeePercent")(__v.asInstanceOf[js.Any])
-      )
+      DataTransferSubscriberFeePercent.foreach(__v => __obj.updateDynamic("DataTransferSubscriberFeePercent")(__v.asInstanceOf[js.Any]))
       Decryption.foreach(__v => __obj.updateDynamic("Decryption")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       EntitlementArn.foreach(__v => __obj.updateDynamic("EntitlementArn")(__v.asInstanceOf[js.Any]))
@@ -1444,9 +1403,7 @@ package mediaconnect {
     ): UpdateEncryption = {
       val __obj = js.Dynamic.literal()
       Algorithm.foreach(__v => __obj.updateDynamic("Algorithm")(__v.asInstanceOf[js.Any]))
-      ConstantInitializationVector.foreach(__v =>
-        __obj.updateDynamic("ConstantInitializationVector")(__v.asInstanceOf[js.Any])
-      )
+      ConstantInitializationVector.foreach(__v => __obj.updateDynamic("ConstantInitializationVector")(__v.asInstanceOf[js.Any]))
       DeviceId.foreach(__v => __obj.updateDynamic("DeviceId")(__v.asInstanceOf[js.Any]))
       KeyType.foreach(__v => __obj.updateDynamic("KeyType")(__v.asInstanceOf[js.Any]))
       Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))

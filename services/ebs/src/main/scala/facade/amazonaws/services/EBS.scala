@@ -33,18 +33,12 @@ package object ebs {
 
   implicit final class EBSOps(private val service: EBS) extends AnyVal {
 
-    @inline def completeSnapshotFuture(params: CompleteSnapshotRequest): Future[CompleteSnapshotResponse] =
-      service.completeSnapshot(params).promise().toFuture
-    @inline def getSnapshotBlockFuture(params: GetSnapshotBlockRequest): Future[GetSnapshotBlockResponse] =
-      service.getSnapshotBlock(params).promise().toFuture
-    @inline def listChangedBlocksFuture(params: ListChangedBlocksRequest): Future[ListChangedBlocksResponse] =
-      service.listChangedBlocks(params).promise().toFuture
-    @inline def listSnapshotBlocksFuture(params: ListSnapshotBlocksRequest): Future[ListSnapshotBlocksResponse] =
-      service.listSnapshotBlocks(params).promise().toFuture
-    @inline def putSnapshotBlockFuture(params: PutSnapshotBlockRequest): Future[PutSnapshotBlockResponse] =
-      service.putSnapshotBlock(params).promise().toFuture
-    @inline def startSnapshotFuture(params: StartSnapshotRequest): Future[StartSnapshotResponse] =
-      service.startSnapshot(params).promise().toFuture
+    @inline def completeSnapshotFuture(params: CompleteSnapshotRequest): Future[CompleteSnapshotResponse] = service.completeSnapshot(params).promise().toFuture
+    @inline def getSnapshotBlockFuture(params: GetSnapshotBlockRequest): Future[GetSnapshotBlockResponse] = service.getSnapshotBlock(params).promise().toFuture
+    @inline def listChangedBlocksFuture(params: ListChangedBlocksRequest): Future[ListChangedBlocksResponse] = service.listChangedBlocks(params).promise().toFuture
+    @inline def listSnapshotBlocksFuture(params: ListSnapshotBlocksRequest): Future[ListSnapshotBlocksResponse] = service.listSnapshotBlocks(params).promise().toFuture
+    @inline def putSnapshotBlockFuture(params: PutSnapshotBlockRequest): Future[PutSnapshotBlockResponse] = service.putSnapshotBlock(params).promise().toFuture
+    @inline def startSnapshotFuture(params: StartSnapshotRequest): Future[StartSnapshotResponse] = service.startSnapshot(params).promise().toFuture
   }
 }
 
@@ -149,9 +143,7 @@ package ebs {
       )
 
       Checksum.foreach(__v => __obj.updateDynamic("Checksum")(__v.asInstanceOf[js.Any]))
-      ChecksumAggregationMethod.foreach(__v =>
-        __obj.updateDynamic("ChecksumAggregationMethod")(__v.asInstanceOf[js.Any])
-      )
+      ChecksumAggregationMethod.foreach(__v => __obj.updateDynamic("ChecksumAggregationMethod")(__v.asInstanceOf[js.Any]))
       ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CompleteSnapshotRequest]
     }

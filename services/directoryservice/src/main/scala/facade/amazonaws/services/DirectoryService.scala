@@ -118,129 +118,63 @@ package object directoryservice {
 
   implicit final class DirectoryServiceOps(private val service: DirectoryService) extends AnyVal {
 
-    @inline def acceptSharedDirectoryFuture(params: AcceptSharedDirectoryRequest): Future[AcceptSharedDirectoryResult] =
-      service.acceptSharedDirectory(params).promise().toFuture
-    @inline def addIpRoutesFuture(params: AddIpRoutesRequest): Future[AddIpRoutesResult] =
-      service.addIpRoutes(params).promise().toFuture
-    @inline def addTagsToResourceFuture(params: AddTagsToResourceRequest): Future[AddTagsToResourceResult] =
-      service.addTagsToResource(params).promise().toFuture
-    @inline def cancelSchemaExtensionFuture(params: CancelSchemaExtensionRequest): Future[CancelSchemaExtensionResult] =
-      service.cancelSchemaExtension(params).promise().toFuture
-    @inline def connectDirectoryFuture(params: ConnectDirectoryRequest): Future[ConnectDirectoryResult] =
-      service.connectDirectory(params).promise().toFuture
-    @inline def createAliasFuture(params: CreateAliasRequest): Future[CreateAliasResult] =
-      service.createAlias(params).promise().toFuture
-    @inline def createComputerFuture(params: CreateComputerRequest): Future[CreateComputerResult] =
-      service.createComputer(params).promise().toFuture
-    @inline def createConditionalForwarderFuture(
-        params: CreateConditionalForwarderRequest
-    ): Future[CreateConditionalForwarderResult] = service.createConditionalForwarder(params).promise().toFuture
-    @inline def createDirectoryFuture(params: CreateDirectoryRequest): Future[CreateDirectoryResult] =
-      service.createDirectory(params).promise().toFuture
-    @inline def createLogSubscriptionFuture(params: CreateLogSubscriptionRequest): Future[CreateLogSubscriptionResult] =
-      service.createLogSubscription(params).promise().toFuture
-    @inline def createMicrosoftADFuture(params: CreateMicrosoftADRequest): Future[CreateMicrosoftADResult] =
-      service.createMicrosoftAD(params).promise().toFuture
-    @inline def createSnapshotFuture(params: CreateSnapshotRequest): Future[CreateSnapshotResult] =
-      service.createSnapshot(params).promise().toFuture
-    @inline def createTrustFuture(params: CreateTrustRequest): Future[CreateTrustResult] =
-      service.createTrust(params).promise().toFuture
-    @inline def deleteConditionalForwarderFuture(
-        params: DeleteConditionalForwarderRequest
-    ): Future[DeleteConditionalForwarderResult] = service.deleteConditionalForwarder(params).promise().toFuture
-    @inline def deleteDirectoryFuture(params: DeleteDirectoryRequest): Future[DeleteDirectoryResult] =
-      service.deleteDirectory(params).promise().toFuture
-    @inline def deleteLogSubscriptionFuture(params: DeleteLogSubscriptionRequest): Future[DeleteLogSubscriptionResult] =
-      service.deleteLogSubscription(params).promise().toFuture
-    @inline def deleteSnapshotFuture(params: DeleteSnapshotRequest): Future[DeleteSnapshotResult] =
-      service.deleteSnapshot(params).promise().toFuture
-    @inline def deleteTrustFuture(params: DeleteTrustRequest): Future[DeleteTrustResult] =
-      service.deleteTrust(params).promise().toFuture
-    @inline def deregisterCertificateFuture(params: DeregisterCertificateRequest): Future[DeregisterCertificateResult] =
-      service.deregisterCertificate(params).promise().toFuture
-    @inline def deregisterEventTopicFuture(params: DeregisterEventTopicRequest): Future[DeregisterEventTopicResult] =
-      service.deregisterEventTopic(params).promise().toFuture
-    @inline def describeCertificateFuture(params: DescribeCertificateRequest): Future[DescribeCertificateResult] =
-      service.describeCertificate(params).promise().toFuture
-    @inline def describeConditionalForwardersFuture(
-        params: DescribeConditionalForwardersRequest
-    ): Future[DescribeConditionalForwardersResult] = service.describeConditionalForwarders(params).promise().toFuture
-    @inline def describeDirectoriesFuture(params: DescribeDirectoriesRequest): Future[DescribeDirectoriesResult] =
-      service.describeDirectories(params).promise().toFuture
-    @inline def describeDomainControllersFuture(
-        params: DescribeDomainControllersRequest
-    ): Future[DescribeDomainControllersResult] = service.describeDomainControllers(params).promise().toFuture
-    @inline def describeEventTopicsFuture(params: DescribeEventTopicsRequest): Future[DescribeEventTopicsResult] =
-      service.describeEventTopics(params).promise().toFuture
-    @inline def describeLDAPSSettingsFuture(params: DescribeLDAPSSettingsRequest): Future[DescribeLDAPSSettingsResult] =
-      service.describeLDAPSSettings(params).promise().toFuture
-    @inline def describeSharedDirectoriesFuture(
-        params: DescribeSharedDirectoriesRequest
-    ): Future[DescribeSharedDirectoriesResult] = service.describeSharedDirectories(params).promise().toFuture
-    @inline def describeSnapshotsFuture(params: DescribeSnapshotsRequest): Future[DescribeSnapshotsResult] =
-      service.describeSnapshots(params).promise().toFuture
-    @inline def describeTrustsFuture(params: DescribeTrustsRequest): Future[DescribeTrustsResult] =
-      service.describeTrusts(params).promise().toFuture
-    @inline def disableLDAPSFuture(params: DisableLDAPSRequest): Future[DisableLDAPSResult] =
-      service.disableLDAPS(params).promise().toFuture
-    @inline def disableRadiusFuture(params: DisableRadiusRequest): Future[DisableRadiusResult] =
-      service.disableRadius(params).promise().toFuture
-    @inline def disableSsoFuture(params: DisableSsoRequest): Future[DisableSsoResult] =
-      service.disableSso(params).promise().toFuture
-    @inline def enableLDAPSFuture(params: EnableLDAPSRequest): Future[EnableLDAPSResult] =
-      service.enableLDAPS(params).promise().toFuture
-    @inline def enableRadiusFuture(params: EnableRadiusRequest): Future[EnableRadiusResult] =
-      service.enableRadius(params).promise().toFuture
-    @inline def enableSsoFuture(params: EnableSsoRequest): Future[EnableSsoResult] =
-      service.enableSso(params).promise().toFuture
-    @inline def getDirectoryLimitsFuture(params: GetDirectoryLimitsRequest): Future[GetDirectoryLimitsResult] =
-      service.getDirectoryLimits(params).promise().toFuture
-    @inline def getSnapshotLimitsFuture(params: GetSnapshotLimitsRequest): Future[GetSnapshotLimitsResult] =
-      service.getSnapshotLimits(params).promise().toFuture
-    @inline def listCertificatesFuture(params: ListCertificatesRequest): Future[ListCertificatesResult] =
-      service.listCertificates(params).promise().toFuture
-    @inline def listIpRoutesFuture(params: ListIpRoutesRequest): Future[ListIpRoutesResult] =
-      service.listIpRoutes(params).promise().toFuture
-    @inline def listLogSubscriptionsFuture(params: ListLogSubscriptionsRequest): Future[ListLogSubscriptionsResult] =
-      service.listLogSubscriptions(params).promise().toFuture
-    @inline def listSchemaExtensionsFuture(params: ListSchemaExtensionsRequest): Future[ListSchemaExtensionsResult] =
-      service.listSchemaExtensions(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResult] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def registerCertificateFuture(params: RegisterCertificateRequest): Future[RegisterCertificateResult] =
-      service.registerCertificate(params).promise().toFuture
-    @inline def registerEventTopicFuture(params: RegisterEventTopicRequest): Future[RegisterEventTopicResult] =
-      service.registerEventTopic(params).promise().toFuture
-    @inline def rejectSharedDirectoryFuture(params: RejectSharedDirectoryRequest): Future[RejectSharedDirectoryResult] =
-      service.rejectSharedDirectory(params).promise().toFuture
-    @inline def removeIpRoutesFuture(params: RemoveIpRoutesRequest): Future[RemoveIpRoutesResult] =
-      service.removeIpRoutes(params).promise().toFuture
-    @inline def removeTagsFromResourceFuture(
-        params: RemoveTagsFromResourceRequest
-    ): Future[RemoveTagsFromResourceResult] = service.removeTagsFromResource(params).promise().toFuture
-    @inline def resetUserPasswordFuture(params: ResetUserPasswordRequest): Future[ResetUserPasswordResult] =
-      service.resetUserPassword(params).promise().toFuture
-    @inline def restoreFromSnapshotFuture(params: RestoreFromSnapshotRequest): Future[RestoreFromSnapshotResult] =
-      service.restoreFromSnapshot(params).promise().toFuture
-    @inline def shareDirectoryFuture(params: ShareDirectoryRequest): Future[ShareDirectoryResult] =
-      service.shareDirectory(params).promise().toFuture
-    @inline def startSchemaExtensionFuture(params: StartSchemaExtensionRequest): Future[StartSchemaExtensionResult] =
-      service.startSchemaExtension(params).promise().toFuture
-    @inline def unshareDirectoryFuture(params: UnshareDirectoryRequest): Future[UnshareDirectoryResult] =
-      service.unshareDirectory(params).promise().toFuture
-    @inline def updateConditionalForwarderFuture(
-        params: UpdateConditionalForwarderRequest
-    ): Future[UpdateConditionalForwarderResult] = service.updateConditionalForwarder(params).promise().toFuture
-    @inline def updateNumberOfDomainControllersFuture(
-        params: UpdateNumberOfDomainControllersRequest
-    ): Future[UpdateNumberOfDomainControllersResult] =
-      service.updateNumberOfDomainControllers(params).promise().toFuture
-    @inline def updateRadiusFuture(params: UpdateRadiusRequest): Future[UpdateRadiusResult] =
-      service.updateRadius(params).promise().toFuture
-    @inline def updateTrustFuture(params: UpdateTrustRequest): Future[UpdateTrustResult] =
-      service.updateTrust(params).promise().toFuture
-    @inline def verifyTrustFuture(params: VerifyTrustRequest): Future[VerifyTrustResult] =
-      service.verifyTrust(params).promise().toFuture
+    @inline def acceptSharedDirectoryFuture(params: AcceptSharedDirectoryRequest): Future[AcceptSharedDirectoryResult] = service.acceptSharedDirectory(params).promise().toFuture
+    @inline def addIpRoutesFuture(params: AddIpRoutesRequest): Future[AddIpRoutesResult] = service.addIpRoutes(params).promise().toFuture
+    @inline def addTagsToResourceFuture(params: AddTagsToResourceRequest): Future[AddTagsToResourceResult] = service.addTagsToResource(params).promise().toFuture
+    @inline def cancelSchemaExtensionFuture(params: CancelSchemaExtensionRequest): Future[CancelSchemaExtensionResult] = service.cancelSchemaExtension(params).promise().toFuture
+    @inline def connectDirectoryFuture(params: ConnectDirectoryRequest): Future[ConnectDirectoryResult] = service.connectDirectory(params).promise().toFuture
+    @inline def createAliasFuture(params: CreateAliasRequest): Future[CreateAliasResult] = service.createAlias(params).promise().toFuture
+    @inline def createComputerFuture(params: CreateComputerRequest): Future[CreateComputerResult] = service.createComputer(params).promise().toFuture
+    @inline def createConditionalForwarderFuture(params: CreateConditionalForwarderRequest): Future[CreateConditionalForwarderResult] = service.createConditionalForwarder(params).promise().toFuture
+    @inline def createDirectoryFuture(params: CreateDirectoryRequest): Future[CreateDirectoryResult] = service.createDirectory(params).promise().toFuture
+    @inline def createLogSubscriptionFuture(params: CreateLogSubscriptionRequest): Future[CreateLogSubscriptionResult] = service.createLogSubscription(params).promise().toFuture
+    @inline def createMicrosoftADFuture(params: CreateMicrosoftADRequest): Future[CreateMicrosoftADResult] = service.createMicrosoftAD(params).promise().toFuture
+    @inline def createSnapshotFuture(params: CreateSnapshotRequest): Future[CreateSnapshotResult] = service.createSnapshot(params).promise().toFuture
+    @inline def createTrustFuture(params: CreateTrustRequest): Future[CreateTrustResult] = service.createTrust(params).promise().toFuture
+    @inline def deleteConditionalForwarderFuture(params: DeleteConditionalForwarderRequest): Future[DeleteConditionalForwarderResult] = service.deleteConditionalForwarder(params).promise().toFuture
+    @inline def deleteDirectoryFuture(params: DeleteDirectoryRequest): Future[DeleteDirectoryResult] = service.deleteDirectory(params).promise().toFuture
+    @inline def deleteLogSubscriptionFuture(params: DeleteLogSubscriptionRequest): Future[DeleteLogSubscriptionResult] = service.deleteLogSubscription(params).promise().toFuture
+    @inline def deleteSnapshotFuture(params: DeleteSnapshotRequest): Future[DeleteSnapshotResult] = service.deleteSnapshot(params).promise().toFuture
+    @inline def deleteTrustFuture(params: DeleteTrustRequest): Future[DeleteTrustResult] = service.deleteTrust(params).promise().toFuture
+    @inline def deregisterCertificateFuture(params: DeregisterCertificateRequest): Future[DeregisterCertificateResult] = service.deregisterCertificate(params).promise().toFuture
+    @inline def deregisterEventTopicFuture(params: DeregisterEventTopicRequest): Future[DeregisterEventTopicResult] = service.deregisterEventTopic(params).promise().toFuture
+    @inline def describeCertificateFuture(params: DescribeCertificateRequest): Future[DescribeCertificateResult] = service.describeCertificate(params).promise().toFuture
+    @inline def describeConditionalForwardersFuture(params: DescribeConditionalForwardersRequest): Future[DescribeConditionalForwardersResult] = service.describeConditionalForwarders(params).promise().toFuture
+    @inline def describeDirectoriesFuture(params: DescribeDirectoriesRequest): Future[DescribeDirectoriesResult] = service.describeDirectories(params).promise().toFuture
+    @inline def describeDomainControllersFuture(params: DescribeDomainControllersRequest): Future[DescribeDomainControllersResult] = service.describeDomainControllers(params).promise().toFuture
+    @inline def describeEventTopicsFuture(params: DescribeEventTopicsRequest): Future[DescribeEventTopicsResult] = service.describeEventTopics(params).promise().toFuture
+    @inline def describeLDAPSSettingsFuture(params: DescribeLDAPSSettingsRequest): Future[DescribeLDAPSSettingsResult] = service.describeLDAPSSettings(params).promise().toFuture
+    @inline def describeSharedDirectoriesFuture(params: DescribeSharedDirectoriesRequest): Future[DescribeSharedDirectoriesResult] = service.describeSharedDirectories(params).promise().toFuture
+    @inline def describeSnapshotsFuture(params: DescribeSnapshotsRequest): Future[DescribeSnapshotsResult] = service.describeSnapshots(params).promise().toFuture
+    @inline def describeTrustsFuture(params: DescribeTrustsRequest): Future[DescribeTrustsResult] = service.describeTrusts(params).promise().toFuture
+    @inline def disableLDAPSFuture(params: DisableLDAPSRequest): Future[DisableLDAPSResult] = service.disableLDAPS(params).promise().toFuture
+    @inline def disableRadiusFuture(params: DisableRadiusRequest): Future[DisableRadiusResult] = service.disableRadius(params).promise().toFuture
+    @inline def disableSsoFuture(params: DisableSsoRequest): Future[DisableSsoResult] = service.disableSso(params).promise().toFuture
+    @inline def enableLDAPSFuture(params: EnableLDAPSRequest): Future[EnableLDAPSResult] = service.enableLDAPS(params).promise().toFuture
+    @inline def enableRadiusFuture(params: EnableRadiusRequest): Future[EnableRadiusResult] = service.enableRadius(params).promise().toFuture
+    @inline def enableSsoFuture(params: EnableSsoRequest): Future[EnableSsoResult] = service.enableSso(params).promise().toFuture
+    @inline def getDirectoryLimitsFuture(params: GetDirectoryLimitsRequest): Future[GetDirectoryLimitsResult] = service.getDirectoryLimits(params).promise().toFuture
+    @inline def getSnapshotLimitsFuture(params: GetSnapshotLimitsRequest): Future[GetSnapshotLimitsResult] = service.getSnapshotLimits(params).promise().toFuture
+    @inline def listCertificatesFuture(params: ListCertificatesRequest): Future[ListCertificatesResult] = service.listCertificates(params).promise().toFuture
+    @inline def listIpRoutesFuture(params: ListIpRoutesRequest): Future[ListIpRoutesResult] = service.listIpRoutes(params).promise().toFuture
+    @inline def listLogSubscriptionsFuture(params: ListLogSubscriptionsRequest): Future[ListLogSubscriptionsResult] = service.listLogSubscriptions(params).promise().toFuture
+    @inline def listSchemaExtensionsFuture(params: ListSchemaExtensionsRequest): Future[ListSchemaExtensionsResult] = service.listSchemaExtensions(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResult] = service.listTagsForResource(params).promise().toFuture
+    @inline def registerCertificateFuture(params: RegisterCertificateRequest): Future[RegisterCertificateResult] = service.registerCertificate(params).promise().toFuture
+    @inline def registerEventTopicFuture(params: RegisterEventTopicRequest): Future[RegisterEventTopicResult] = service.registerEventTopic(params).promise().toFuture
+    @inline def rejectSharedDirectoryFuture(params: RejectSharedDirectoryRequest): Future[RejectSharedDirectoryResult] = service.rejectSharedDirectory(params).promise().toFuture
+    @inline def removeIpRoutesFuture(params: RemoveIpRoutesRequest): Future[RemoveIpRoutesResult] = service.removeIpRoutes(params).promise().toFuture
+    @inline def removeTagsFromResourceFuture(params: RemoveTagsFromResourceRequest): Future[RemoveTagsFromResourceResult] = service.removeTagsFromResource(params).promise().toFuture
+    @inline def resetUserPasswordFuture(params: ResetUserPasswordRequest): Future[ResetUserPasswordResult] = service.resetUserPassword(params).promise().toFuture
+    @inline def restoreFromSnapshotFuture(params: RestoreFromSnapshotRequest): Future[RestoreFromSnapshotResult] = service.restoreFromSnapshot(params).promise().toFuture
+    @inline def shareDirectoryFuture(params: ShareDirectoryRequest): Future[ShareDirectoryResult] = service.shareDirectory(params).promise().toFuture
+    @inline def startSchemaExtensionFuture(params: StartSchemaExtensionRequest): Future[StartSchemaExtensionResult] = service.startSchemaExtension(params).promise().toFuture
+    @inline def unshareDirectoryFuture(params: UnshareDirectoryRequest): Future[UnshareDirectoryResult] = service.unshareDirectory(params).promise().toFuture
+    @inline def updateConditionalForwarderFuture(params: UpdateConditionalForwarderRequest): Future[UpdateConditionalForwarderResult] = service.updateConditionalForwarder(params).promise().toFuture
+    @inline def updateNumberOfDomainControllersFuture(params: UpdateNumberOfDomainControllersRequest): Future[UpdateNumberOfDomainControllersResult] = service.updateNumberOfDomainControllers(params).promise().toFuture
+    @inline def updateRadiusFuture(params: UpdateRadiusRequest): Future[UpdateRadiusResult] = service.updateRadius(params).promise().toFuture
+    @inline def updateTrustFuture(params: UpdateTrustRequest): Future[UpdateTrustResult] = service.updateTrust(params).promise().toFuture
+    @inline def verifyTrustFuture(params: VerifyTrustRequest): Future[VerifyTrustResult] = service.verifyTrust(params).promise().toFuture
   }
 }
 
@@ -257,17 +191,13 @@ package directoryservice {
     def connectDirectory(params: ConnectDirectoryRequest): Request[ConnectDirectoryResult] = js.native
     def createAlias(params: CreateAliasRequest): Request[CreateAliasResult] = js.native
     def createComputer(params: CreateComputerRequest): Request[CreateComputerResult] = js.native
-    def createConditionalForwarder(
-        params: CreateConditionalForwarderRequest
-    ): Request[CreateConditionalForwarderResult] = js.native
+    def createConditionalForwarder(params: CreateConditionalForwarderRequest): Request[CreateConditionalForwarderResult] = js.native
     def createDirectory(params: CreateDirectoryRequest): Request[CreateDirectoryResult] = js.native
     def createLogSubscription(params: CreateLogSubscriptionRequest): Request[CreateLogSubscriptionResult] = js.native
     def createMicrosoftAD(params: CreateMicrosoftADRequest): Request[CreateMicrosoftADResult] = js.native
     def createSnapshot(params: CreateSnapshotRequest): Request[CreateSnapshotResult] = js.native
     def createTrust(params: CreateTrustRequest): Request[CreateTrustResult] = js.native
-    def deleteConditionalForwarder(
-        params: DeleteConditionalForwarderRequest
-    ): Request[DeleteConditionalForwarderResult] = js.native
+    def deleteConditionalForwarder(params: DeleteConditionalForwarderRequest): Request[DeleteConditionalForwarderResult] = js.native
     def deleteDirectory(params: DeleteDirectoryRequest): Request[DeleteDirectoryResult] = js.native
     def deleteLogSubscription(params: DeleteLogSubscriptionRequest): Request[DeleteLogSubscriptionResult] = js.native
     def deleteSnapshot(params: DeleteSnapshotRequest): Request[DeleteSnapshotResult] = js.native
@@ -275,16 +205,12 @@ package directoryservice {
     def deregisterCertificate(params: DeregisterCertificateRequest): Request[DeregisterCertificateResult] = js.native
     def deregisterEventTopic(params: DeregisterEventTopicRequest): Request[DeregisterEventTopicResult] = js.native
     def describeCertificate(params: DescribeCertificateRequest): Request[DescribeCertificateResult] = js.native
-    def describeConditionalForwarders(
-        params: DescribeConditionalForwardersRequest
-    ): Request[DescribeConditionalForwardersResult] = js.native
+    def describeConditionalForwarders(params: DescribeConditionalForwardersRequest): Request[DescribeConditionalForwardersResult] = js.native
     def describeDirectories(params: DescribeDirectoriesRequest): Request[DescribeDirectoriesResult] = js.native
-    def describeDomainControllers(params: DescribeDomainControllersRequest): Request[DescribeDomainControllersResult] =
-      js.native
+    def describeDomainControllers(params: DescribeDomainControllersRequest): Request[DescribeDomainControllersResult] = js.native
     def describeEventTopics(params: DescribeEventTopicsRequest): Request[DescribeEventTopicsResult] = js.native
     def describeLDAPSSettings(params: DescribeLDAPSSettingsRequest): Request[DescribeLDAPSSettingsResult] = js.native
-    def describeSharedDirectories(params: DescribeSharedDirectoriesRequest): Request[DescribeSharedDirectoriesResult] =
-      js.native
+    def describeSharedDirectories(params: DescribeSharedDirectoriesRequest): Request[DescribeSharedDirectoriesResult] = js.native
     def describeSnapshots(params: DescribeSnapshotsRequest): Request[DescribeSnapshotsResult] = js.native
     def describeTrusts(params: DescribeTrustsRequest): Request[DescribeTrustsResult] = js.native
     def disableLDAPS(params: DisableLDAPSRequest): Request[DisableLDAPSResult] = js.native
@@ -310,12 +236,8 @@ package directoryservice {
     def shareDirectory(params: ShareDirectoryRequest): Request[ShareDirectoryResult] = js.native
     def startSchemaExtension(params: StartSchemaExtensionRequest): Request[StartSchemaExtensionResult] = js.native
     def unshareDirectory(params: UnshareDirectoryRequest): Request[UnshareDirectoryResult] = js.native
-    def updateConditionalForwarder(
-        params: UpdateConditionalForwarderRequest
-    ): Request[UpdateConditionalForwarderResult] = js.native
-    def updateNumberOfDomainControllers(
-        params: UpdateNumberOfDomainControllersRequest
-    ): Request[UpdateNumberOfDomainControllersResult] = js.native
+    def updateConditionalForwarder(params: UpdateConditionalForwarderRequest): Request[UpdateConditionalForwarderResult] = js.native
+    def updateNumberOfDomainControllers(params: UpdateNumberOfDomainControllersRequest): Request[UpdateNumberOfDomainControllersResult] = js.native
     def updateRadius(params: UpdateRadiusRequest): Request[UpdateRadiusResult] = js.native
     def updateTrust(params: UpdateTrustRequest): Request[UpdateTrustResult] = js.native
     def verifyTrust(params: VerifyTrustRequest): Request[VerifyTrustResult] = js.native
@@ -367,17 +289,14 @@ package directoryservice {
     def apply(
         DirectoryId: DirectoryId,
         IpRoutes: IpRoutes,
-        UpdateSecurityGroupForDirectoryControllers: js.UndefOr[UpdateSecurityGroupForDirectoryControllers] =
-          js.undefined
+        UpdateSecurityGroupForDirectoryControllers: js.UndefOr[UpdateSecurityGroupForDirectoryControllers] = js.undefined
     ): AddIpRoutesRequest = {
       val __obj = js.Dynamic.literal(
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "IpRoutes" -> IpRoutes.asInstanceOf[js.Any]
       )
 
-      UpdateSecurityGroupForDirectoryControllers.foreach(__v =>
-        __obj.updateDynamic("UpdateSecurityGroupForDirectoryControllers")(__v.asInstanceOf[js.Any])
-      )
+      UpdateSecurityGroupForDirectoryControllers.foreach(__v => __obj.updateDynamic("UpdateSecurityGroupForDirectoryControllers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddIpRoutesRequest]
     }
   }
@@ -557,8 +476,7 @@ package directoryservice {
     val Deregistered = "Deregistered".asInstanceOf[CertificateState]
     val DeregisterFailed = "DeregisterFailed".asInstanceOf[CertificateState]
 
-    val values =
-      js.Object.freeze(js.Array(Registering, Registered, RegisterFailed, Deregistering, Deregistered, DeregisterFailed))
+    val values = js.Object.freeze(js.Array(Registering, Registered, RegisterFailed, Deregistering, Deregistered, DeregisterFailed))
   }
 
   /**
@@ -743,9 +661,7 @@ package directoryservice {
       )
 
       ComputerAttributes.foreach(__v => __obj.updateDynamic("ComputerAttributes")(__v.asInstanceOf[js.Any]))
-      OrganizationalUnitDistinguishedName.foreach(__v =>
-        __obj.updateDynamic("OrganizationalUnitDistinguishedName")(__v.asInstanceOf[js.Any])
-      )
+      OrganizationalUnitDistinguishedName.foreach(__v => __obj.updateDynamic("OrganizationalUnitDistinguishedName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateComputerRequest]
     }
   }
@@ -1038,9 +954,7 @@ package directoryservice {
         "TrustPassword" -> TrustPassword.asInstanceOf[js.Any]
       )
 
-      ConditionalForwarderIpAddrs.foreach(__v =>
-        __obj.updateDynamic("ConditionalForwarderIpAddrs")(__v.asInstanceOf[js.Any])
-      )
+      ConditionalForwarderIpAddrs.foreach(__v => __obj.updateDynamic("ConditionalForwarderIpAddrs")(__v.asInstanceOf[js.Any]))
       SelectiveAuth.foreach(__v => __obj.updateDynamic("SelectiveAuth")(__v.asInstanceOf[js.Any]))
       TrustType.foreach(__v => __obj.updateDynamic("TrustType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTrustRequest]
@@ -1236,9 +1150,7 @@ package directoryservice {
         "TrustId" -> TrustId.asInstanceOf[js.Any]
       )
 
-      DeleteAssociatedConditionalForwarder.foreach(__v =>
-        __obj.updateDynamic("DeleteAssociatedConditionalForwarder")(__v.asInstanceOf[js.Any])
-      )
+      DeleteAssociatedConditionalForwarder.foreach(__v => __obj.updateDynamic("DeleteAssociatedConditionalForwarder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteTrustRequest]
     }
   }
@@ -1870,17 +1782,13 @@ package directoryservice {
       Alias.foreach(__v => __obj.updateDynamic("Alias")(__v.asInstanceOf[js.Any]))
       ConnectSettings.foreach(__v => __obj.updateDynamic("ConnectSettings")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      DesiredNumberOfDomainControllers.foreach(__v =>
-        __obj.updateDynamic("DesiredNumberOfDomainControllers")(__v.asInstanceOf[js.Any])
-      )
+      DesiredNumberOfDomainControllers.foreach(__v => __obj.updateDynamic("DesiredNumberOfDomainControllers")(__v.asInstanceOf[js.Any]))
       DirectoryId.foreach(__v => __obj.updateDynamic("DirectoryId")(__v.asInstanceOf[js.Any]))
       DnsIpAddrs.foreach(__v => __obj.updateDynamic("DnsIpAddrs")(__v.asInstanceOf[js.Any]))
       Edition.foreach(__v => __obj.updateDynamic("Edition")(__v.asInstanceOf[js.Any]))
       LaunchTime.foreach(__v => __obj.updateDynamic("LaunchTime")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      OwnerDirectoryDescription.foreach(__v =>
-        __obj.updateDynamic("OwnerDirectoryDescription")(__v.asInstanceOf[js.Any])
-      )
+      OwnerDirectoryDescription.foreach(__v => __obj.updateDynamic("OwnerDirectoryDescription")(__v.asInstanceOf[js.Any]))
       RadiusSettings.foreach(__v => __obj.updateDynamic("RadiusSettings")(__v.asInstanceOf[js.Any]))
       RadiusStatus.foreach(__v => __obj.updateDynamic("RadiusStatus")(__v.asInstanceOf[js.Any]))
       ShareMethod.foreach(__v => __obj.updateDynamic("ShareMethod")(__v.asInstanceOf[js.Any]))
@@ -1937,33 +1845,15 @@ package directoryservice {
         ConnectedDirectoriesLimitReached: js.UndefOr[ConnectedDirectoriesLimitReached] = js.undefined
     ): DirectoryLimits = {
       val __obj = js.Dynamic.literal()
-      CloudOnlyDirectoriesCurrentCount.foreach(__v =>
-        __obj.updateDynamic("CloudOnlyDirectoriesCurrentCount")(__v.asInstanceOf[js.Any])
-      )
-      CloudOnlyDirectoriesLimit.foreach(__v =>
-        __obj.updateDynamic("CloudOnlyDirectoriesLimit")(__v.asInstanceOf[js.Any])
-      )
-      CloudOnlyDirectoriesLimitReached.foreach(__v =>
-        __obj.updateDynamic("CloudOnlyDirectoriesLimitReached")(__v.asInstanceOf[js.Any])
-      )
-      CloudOnlyMicrosoftADCurrentCount.foreach(__v =>
-        __obj.updateDynamic("CloudOnlyMicrosoftADCurrentCount")(__v.asInstanceOf[js.Any])
-      )
-      CloudOnlyMicrosoftADLimit.foreach(__v =>
-        __obj.updateDynamic("CloudOnlyMicrosoftADLimit")(__v.asInstanceOf[js.Any])
-      )
-      CloudOnlyMicrosoftADLimitReached.foreach(__v =>
-        __obj.updateDynamic("CloudOnlyMicrosoftADLimitReached")(__v.asInstanceOf[js.Any])
-      )
-      ConnectedDirectoriesCurrentCount.foreach(__v =>
-        __obj.updateDynamic("ConnectedDirectoriesCurrentCount")(__v.asInstanceOf[js.Any])
-      )
-      ConnectedDirectoriesLimit.foreach(__v =>
-        __obj.updateDynamic("ConnectedDirectoriesLimit")(__v.asInstanceOf[js.Any])
-      )
-      ConnectedDirectoriesLimitReached.foreach(__v =>
-        __obj.updateDynamic("ConnectedDirectoriesLimitReached")(__v.asInstanceOf[js.Any])
-      )
+      CloudOnlyDirectoriesCurrentCount.foreach(__v => __obj.updateDynamic("CloudOnlyDirectoriesCurrentCount")(__v.asInstanceOf[js.Any]))
+      CloudOnlyDirectoriesLimit.foreach(__v => __obj.updateDynamic("CloudOnlyDirectoriesLimit")(__v.asInstanceOf[js.Any]))
+      CloudOnlyDirectoriesLimitReached.foreach(__v => __obj.updateDynamic("CloudOnlyDirectoriesLimitReached")(__v.asInstanceOf[js.Any]))
+      CloudOnlyMicrosoftADCurrentCount.foreach(__v => __obj.updateDynamic("CloudOnlyMicrosoftADCurrentCount")(__v.asInstanceOf[js.Any]))
+      CloudOnlyMicrosoftADLimit.foreach(__v => __obj.updateDynamic("CloudOnlyMicrosoftADLimit")(__v.asInstanceOf[js.Any]))
+      CloudOnlyMicrosoftADLimitReached.foreach(__v => __obj.updateDynamic("CloudOnlyMicrosoftADLimitReached")(__v.asInstanceOf[js.Any]))
+      ConnectedDirectoriesCurrentCount.foreach(__v => __obj.updateDynamic("ConnectedDirectoriesCurrentCount")(__v.asInstanceOf[js.Any]))
+      ConnectedDirectoriesLimit.foreach(__v => __obj.updateDynamic("ConnectedDirectoriesLimit")(__v.asInstanceOf[js.Any]))
+      ConnectedDirectoriesLimitReached.foreach(__v => __obj.updateDynamic("ConnectedDirectoriesLimitReached")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DirectoryLimits]
     }
   }
@@ -1992,21 +1882,7 @@ package directoryservice {
     val Deleted = "Deleted".asInstanceOf[DirectoryStage]
     val Failed = "Failed".asInstanceOf[DirectoryStage]
 
-    val values = js.Object.freeze(
-      js.Array(
-        Requested,
-        Creating,
-        Created,
-        Active,
-        Inoperable,
-        Impaired,
-        Restoring,
-        RestoreFailed,
-        Deleting,
-        Deleted,
-        Failed
-      )
-    )
+    val values = js.Object.freeze(js.Array(Requested, Creating, Created, Active, Inoperable, Impaired, Restoring, RestoreFailed, Deleting, Deleted, Failed))
   }
 
   @js.native
@@ -2224,9 +2100,7 @@ package directoryservice {
       DomainControllerId.foreach(__v => __obj.updateDynamic("DomainControllerId")(__v.asInstanceOf[js.Any]))
       LaunchTime.foreach(__v => __obj.updateDynamic("LaunchTime")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      StatusLastUpdatedDateTime.foreach(__v =>
-        __obj.updateDynamic("StatusLastUpdatedDateTime")(__v.asInstanceOf[js.Any])
-      )
+      StatusLastUpdatedDateTime.foreach(__v => __obj.updateDynamic("StatusLastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
       StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
       SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
@@ -2817,9 +2691,7 @@ package directoryservice {
       val __obj = js.Dynamic.literal()
       DirectoryId.foreach(__v => __obj.updateDynamic("DirectoryId")(__v.asInstanceOf[js.Any]))
       LogGroupName.foreach(__v => __obj.updateDynamic("LogGroupName")(__v.asInstanceOf[js.Any]))
-      SubscriptionCreatedDateTime.foreach(__v =>
-        __obj.updateDynamic("SubscriptionCreatedDateTime")(__v.asInstanceOf[js.Any])
-      )
+      SubscriptionCreatedDateTime.foreach(__v => __obj.updateDynamic("SubscriptionCreatedDateTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LogSubscription]
     }
   }
@@ -3211,9 +3083,7 @@ package directoryservice {
       EndDateTime.foreach(__v => __obj.updateDynamic("EndDateTime")(__v.asInstanceOf[js.Any]))
       SchemaExtensionId.foreach(__v => __obj.updateDynamic("SchemaExtensionId")(__v.asInstanceOf[js.Any]))
       SchemaExtensionStatus.foreach(__v => __obj.updateDynamic("SchemaExtensionStatus")(__v.asInstanceOf[js.Any]))
-      SchemaExtensionStatusReason.foreach(__v =>
-        __obj.updateDynamic("SchemaExtensionStatusReason")(__v.asInstanceOf[js.Any])
-      )
+      SchemaExtensionStatusReason.foreach(__v => __obj.updateDynamic("SchemaExtensionStatusReason")(__v.asInstanceOf[js.Any]))
       StartDateTime.foreach(__v => __obj.updateDynamic("StartDateTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SchemaExtensionInfo]
     }
@@ -3232,19 +3102,7 @@ package directoryservice {
     val Failed = "Failed".asInstanceOf[SchemaExtensionStatus]
     val Completed = "Completed".asInstanceOf[SchemaExtensionStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        Initializing,
-        CreatingSnapshot,
-        UpdatingSchema,
-        Replicating,
-        CancelInProgress,
-        RollbackInProgress,
-        Cancelled,
-        Failed,
-        Completed
-      )
-    )
+    val values = js.Object.freeze(js.Array(Initializing, CreatingSnapshot, UpdatingSchema, Replicating, CancelInProgress, RollbackInProgress, Cancelled, Failed, Completed))
   }
 
   @js.native
@@ -3321,9 +3179,7 @@ package directoryservice {
     val Deleted = "Deleted".asInstanceOf[ShareStatus]
     val Deleting = "Deleting".asInstanceOf[ShareStatus]
 
-    val values = js.Object.freeze(
-      js.Array(Shared, PendingAcceptance, Rejected, Rejecting, RejectFailed, Sharing, ShareFailed, Deleted, Deleting)
-    )
+    val values = js.Object.freeze(js.Array(Shared, PendingAcceptance, Rejected, Rejecting, RejectFailed, Sharing, ShareFailed, Deleted, Deleting))
   }
 
   /**
@@ -3445,13 +3301,9 @@ package directoryservice {
         ManualSnapshotsLimitReached: js.UndefOr[ManualSnapshotsLimitReached] = js.undefined
     ): SnapshotLimits = {
       val __obj = js.Dynamic.literal()
-      ManualSnapshotsCurrentCount.foreach(__v =>
-        __obj.updateDynamic("ManualSnapshotsCurrentCount")(__v.asInstanceOf[js.Any])
-      )
+      ManualSnapshotsCurrentCount.foreach(__v => __obj.updateDynamic("ManualSnapshotsCurrentCount")(__v.asInstanceOf[js.Any]))
       ManualSnapshotsLimit.foreach(__v => __obj.updateDynamic("ManualSnapshotsLimit")(__v.asInstanceOf[js.Any]))
-      ManualSnapshotsLimitReached.foreach(__v =>
-        __obj.updateDynamic("ManualSnapshotsLimitReached")(__v.asInstanceOf[js.Any])
-      )
+      ManualSnapshotsLimitReached.foreach(__v => __obj.updateDynamic("ManualSnapshotsLimitReached")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SnapshotLimits]
     }
   }
@@ -3635,21 +3487,7 @@ package directoryservice {
     val Deleted = "Deleted".asInstanceOf[TrustState]
     val Failed = "Failed".asInstanceOf[TrustState]
 
-    val values = js.Object.freeze(
-      js.Array(
-        Creating,
-        Created,
-        Verifying,
-        VerifyFailed,
-        Verified,
-        Updating,
-        UpdateFailed,
-        Updated,
-        Deleting,
-        Deleted,
-        Failed
-      )
-    )
+    val values = js.Object.freeze(js.Array(Creating, Created, Verifying, VerifyFailed, Verified, Updating, UpdateFailed, Updated, Deleting, Deleted, Failed))
   }
 
   @js.native

@@ -40,48 +40,25 @@ package object opsworkscm {
 
   implicit final class OpsWorksCMOps(private val service: OpsWorksCM) extends AnyVal {
 
-    @inline def associateNodeFuture(params: AssociateNodeRequest): Future[AssociateNodeResponse] =
-      service.associateNode(params).promise().toFuture
-    @inline def createBackupFuture(params: CreateBackupRequest): Future[CreateBackupResponse] =
-      service.createBackup(params).promise().toFuture
-    @inline def createServerFuture(params: CreateServerRequest): Future[CreateServerResponse] =
-      service.createServer(params).promise().toFuture
-    @inline def deleteBackupFuture(params: DeleteBackupRequest): Future[DeleteBackupResponse] =
-      service.deleteBackup(params).promise().toFuture
-    @inline def deleteServerFuture(params: DeleteServerRequest): Future[DeleteServerResponse] =
-      service.deleteServer(params).promise().toFuture
-    @inline def describeAccountAttributesFuture(
-        params: DescribeAccountAttributesRequest
-    ): Future[DescribeAccountAttributesResponse] = service.describeAccountAttributes(params).promise().toFuture
-    @inline def describeBackupsFuture(params: DescribeBackupsRequest): Future[DescribeBackupsResponse] =
-      service.describeBackups(params).promise().toFuture
-    @inline def describeEventsFuture(params: DescribeEventsRequest): Future[DescribeEventsResponse] =
-      service.describeEvents(params).promise().toFuture
-    @inline def describeNodeAssociationStatusFuture(
-        params: DescribeNodeAssociationStatusRequest
-    ): Future[DescribeNodeAssociationStatusResponse] = service.describeNodeAssociationStatus(params).promise().toFuture
-    @inline def describeServersFuture(params: DescribeServersRequest): Future[DescribeServersResponse] =
-      service.describeServers(params).promise().toFuture
-    @inline def disassociateNodeFuture(params: DisassociateNodeRequest): Future[DisassociateNodeResponse] =
-      service.disassociateNode(params).promise().toFuture
-    @inline def exportServerEngineAttributeFuture(
-        params: ExportServerEngineAttributeRequest
-    ): Future[ExportServerEngineAttributeResponse] = service.exportServerEngineAttribute(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def restoreServerFuture(params: RestoreServerRequest): Future[RestoreServerResponse] =
-      service.restoreServer(params).promise().toFuture
-    @inline def startMaintenanceFuture(params: StartMaintenanceRequest): Future[StartMaintenanceResponse] =
-      service.startMaintenance(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateServerEngineAttributesFuture(
-        params: UpdateServerEngineAttributesRequest
-    ): Future[UpdateServerEngineAttributesResponse] = service.updateServerEngineAttributes(params).promise().toFuture
-    @inline def updateServerFuture(params: UpdateServerRequest): Future[UpdateServerResponse] =
-      service.updateServer(params).promise().toFuture
+    @inline def associateNodeFuture(params: AssociateNodeRequest): Future[AssociateNodeResponse] = service.associateNode(params).promise().toFuture
+    @inline def createBackupFuture(params: CreateBackupRequest): Future[CreateBackupResponse] = service.createBackup(params).promise().toFuture
+    @inline def createServerFuture(params: CreateServerRequest): Future[CreateServerResponse] = service.createServer(params).promise().toFuture
+    @inline def deleteBackupFuture(params: DeleteBackupRequest): Future[DeleteBackupResponse] = service.deleteBackup(params).promise().toFuture
+    @inline def deleteServerFuture(params: DeleteServerRequest): Future[DeleteServerResponse] = service.deleteServer(params).promise().toFuture
+    @inline def describeAccountAttributesFuture(params: DescribeAccountAttributesRequest): Future[DescribeAccountAttributesResponse] = service.describeAccountAttributes(params).promise().toFuture
+    @inline def describeBackupsFuture(params: DescribeBackupsRequest): Future[DescribeBackupsResponse] = service.describeBackups(params).promise().toFuture
+    @inline def describeEventsFuture(params: DescribeEventsRequest): Future[DescribeEventsResponse] = service.describeEvents(params).promise().toFuture
+    @inline def describeNodeAssociationStatusFuture(params: DescribeNodeAssociationStatusRequest): Future[DescribeNodeAssociationStatusResponse] = service.describeNodeAssociationStatus(params).promise().toFuture
+    @inline def describeServersFuture(params: DescribeServersRequest): Future[DescribeServersResponse] = service.describeServers(params).promise().toFuture
+    @inline def disassociateNodeFuture(params: DisassociateNodeRequest): Future[DisassociateNodeResponse] = service.disassociateNode(params).promise().toFuture
+    @inline def exportServerEngineAttributeFuture(params: ExportServerEngineAttributeRequest): Future[ExportServerEngineAttributeResponse] = service.exportServerEngineAttribute(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def restoreServerFuture(params: RestoreServerRequest): Future[RestoreServerResponse] = service.restoreServer(params).promise().toFuture
+    @inline def startMaintenanceFuture(params: StartMaintenanceRequest): Future[StartMaintenanceResponse] = service.startMaintenance(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateServerEngineAttributesFuture(params: UpdateServerEngineAttributesRequest): Future[UpdateServerEngineAttributesResponse] = service.updateServerEngineAttributes(params).promise().toFuture
+    @inline def updateServerFuture(params: UpdateServerRequest): Future[UpdateServerResponse] = service.updateServer(params).promise().toFuture
   }
 }
 
@@ -96,28 +73,20 @@ package opsworkscm {
     def createServer(params: CreateServerRequest): Request[CreateServerResponse] = js.native
     def deleteBackup(params: DeleteBackupRequest): Request[DeleteBackupResponse] = js.native
     def deleteServer(params: DeleteServerRequest): Request[DeleteServerResponse] = js.native
-    def describeAccountAttributes(
-        params: DescribeAccountAttributesRequest
-    ): Request[DescribeAccountAttributesResponse] = js.native
+    def describeAccountAttributes(params: DescribeAccountAttributesRequest): Request[DescribeAccountAttributesResponse] = js.native
     def describeBackups(params: DescribeBackupsRequest): Request[DescribeBackupsResponse] = js.native
     def describeEvents(params: DescribeEventsRequest): Request[DescribeEventsResponse] = js.native
-    def describeNodeAssociationStatus(
-        params: DescribeNodeAssociationStatusRequest
-    ): Request[DescribeNodeAssociationStatusResponse] = js.native
+    def describeNodeAssociationStatus(params: DescribeNodeAssociationStatusRequest): Request[DescribeNodeAssociationStatusResponse] = js.native
     def describeServers(params: DescribeServersRequest): Request[DescribeServersResponse] = js.native
     def disassociateNode(params: DisassociateNodeRequest): Request[DisassociateNodeResponse] = js.native
-    def exportServerEngineAttribute(
-        params: ExportServerEngineAttributeRequest
-    ): Request[ExportServerEngineAttributeResponse] = js.native
+    def exportServerEngineAttribute(params: ExportServerEngineAttributeRequest): Request[ExportServerEngineAttributeResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def restoreServer(params: RestoreServerRequest): Request[RestoreServerResponse] = js.native
     def startMaintenance(params: StartMaintenanceRequest): Request[StartMaintenanceResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateServer(params: UpdateServerRequest): Request[UpdateServerResponse] = js.native
-    def updateServerEngineAttributes(
-        params: UpdateServerEngineAttributesRequest
-    ): Request[UpdateServerEngineAttributesResponse] = js.native
+    def updateServerEngineAttributes(params: UpdateServerEngineAttributesRequest): Request[UpdateServerEngineAttributesResponse] = js.native
   }
 
   /**
@@ -180,9 +149,7 @@ package opsworkscm {
         NodeAssociationStatusToken: js.UndefOr[NodeAssociationStatusToken] = js.undefined
     ): AssociateNodeResponse = {
       val __obj = js.Dynamic.literal()
-      NodeAssociationStatusToken.foreach(__v =>
-        __obj.updateDynamic("NodeAssociationStatusToken")(__v.asInstanceOf[js.Any])
-      )
+      NodeAssociationStatusToken.foreach(__v => __obj.updateDynamic("NodeAssociationStatusToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateNodeResponse]
     }
   }
@@ -259,9 +226,7 @@ package opsworkscm {
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
       KeyPair.foreach(__v => __obj.updateDynamic("KeyPair")(__v.asInstanceOf[js.Any]))
       PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       S3DataSize.foreach(__v => __obj.updateDynamic("S3DataSize")(__v.asInstanceOf[js.Any]))
       S3DataUrl.foreach(__v => __obj.updateDynamic("S3DataUrl")(__v.asInstanceOf[js.Any]))
       S3LogUrl.foreach(__v => __obj.updateDynamic("S3LogUrl")(__v.asInstanceOf[js.Any]))
@@ -407,9 +372,7 @@ package opsworkscm {
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       KeyPair.foreach(__v => __obj.updateDynamic("KeyPair")(__v.asInstanceOf[js.Any]))
       PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
       SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -727,9 +690,7 @@ package opsworkscm {
         NodeAssociationStatusToken: js.UndefOr[NodeAssociationStatusToken] = js.undefined
     ): DisassociateNodeResponse = {
       val __obj = js.Dynamic.literal()
-      NodeAssociationStatusToken.foreach(__v =>
-        __obj.updateDynamic("NodeAssociationStatusToken")(__v.asInstanceOf[js.Any])
-      )
+      NodeAssociationStatusToken.foreach(__v => __obj.updateDynamic("NodeAssociationStatusToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisassociateNodeResponse]
     }
   }
@@ -983,9 +944,7 @@ package opsworkscm {
       KeyPair.foreach(__v => __obj.updateDynamic("KeyPair")(__v.asInstanceOf[js.Any]))
       MaintenanceStatus.foreach(__v => __obj.updateDynamic("MaintenanceStatus")(__v.asInstanceOf[js.Any]))
       PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
       ServerArn.foreach(__v => __obj.updateDynamic("ServerArn")(__v.asInstanceOf[js.Any]))
       ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
@@ -1042,23 +1001,7 @@ package opsworkscm {
     val UNHEALTHY = "UNHEALTHY".asInstanceOf[ServerStatus]
     val TERMINATED = "TERMINATED".asInstanceOf[ServerStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        BACKING_UP,
-        CONNECTION_LOST,
-        CREATING,
-        DELETING,
-        MODIFYING,
-        FAILED,
-        HEALTHY,
-        RUNNING,
-        RESTORING,
-        SETUP,
-        UNDER_MAINTENANCE,
-        UNHEALTHY,
-        TERMINATED
-      )
-    )
+    val values = js.Object.freeze(js.Array(BACKING_UP, CONNECTION_LOST, CREATING, DELETING, MODIFYING, FAILED, HEALTHY, RUNNING, RESTORING, SETUP, UNDER_MAINTENANCE, UNHEALTHY, TERMINATED))
   }
 
   @js.native
@@ -1255,9 +1198,7 @@ package opsworkscm {
       BackupRetentionCount.foreach(__v => __obj.updateDynamic("BackupRetentionCount")(__v.asInstanceOf[js.Any]))
       DisableAutomatedBackup.foreach(__v => __obj.updateDynamic("DisableAutomatedBackup")(__v.asInstanceOf[js.Any]))
       PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateServerRequest]
     }
   }

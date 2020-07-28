@@ -22,11 +22,8 @@ package object pi {
 
   implicit final class PIOps(private val service: PI) extends AnyVal {
 
-    @inline def describeDimensionKeysFuture(
-        params: DescribeDimensionKeysRequest
-    ): Future[DescribeDimensionKeysResponse] = service.describeDimensionKeys(params).promise().toFuture
-    @inline def getResourceMetricsFuture(params: GetResourceMetricsRequest): Future[GetResourceMetricsResponse] =
-      service.getResourceMetrics(params).promise().toFuture
+    @inline def describeDimensionKeysFuture(params: DescribeDimensionKeysRequest): Future[DescribeDimensionKeysResponse] = service.describeDimensionKeys(params).promise().toFuture
+    @inline def getResourceMetricsFuture(params: GetResourceMetricsRequest): Future[GetResourceMetricsResponse] = service.getResourceMetrics(params).promise().toFuture
   }
 }
 

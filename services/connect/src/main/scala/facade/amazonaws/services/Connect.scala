@@ -80,82 +80,39 @@ package object connect {
 
   implicit final class ConnectOps(private val service: Connect) extends AnyVal {
 
-    @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] =
-      service.createUser(params).promise().toFuture
-    @inline def deleteUserFuture(params: DeleteUserRequest): Future[js.Object] =
-      service.deleteUser(params).promise().toFuture
-    @inline def describeUserFuture(params: DescribeUserRequest): Future[DescribeUserResponse] =
-      service.describeUser(params).promise().toFuture
-    @inline def describeUserHierarchyGroupFuture(
-        params: DescribeUserHierarchyGroupRequest
-    ): Future[DescribeUserHierarchyGroupResponse] = service.describeUserHierarchyGroup(params).promise().toFuture
-    @inline def describeUserHierarchyStructureFuture(
-        params: DescribeUserHierarchyStructureRequest
-    ): Future[DescribeUserHierarchyStructureResponse] =
-      service.describeUserHierarchyStructure(params).promise().toFuture
-    @inline def getContactAttributesFuture(params: GetContactAttributesRequest): Future[GetContactAttributesResponse] =
-      service.getContactAttributes(params).promise().toFuture
-    @inline def getCurrentMetricDataFuture(params: GetCurrentMetricDataRequest): Future[GetCurrentMetricDataResponse] =
-      service.getCurrentMetricData(params).promise().toFuture
-    @inline def getFederationTokenFuture(params: GetFederationTokenRequest): Future[GetFederationTokenResponse] =
-      service.getFederationToken(params).promise().toFuture
-    @inline def getMetricDataFuture(params: GetMetricDataRequest): Future[GetMetricDataResponse] =
-      service.getMetricData(params).promise().toFuture
-    @inline def listContactFlowsFuture(params: ListContactFlowsRequest): Future[ListContactFlowsResponse] =
-      service.listContactFlows(params).promise().toFuture
-    @inline def listHoursOfOperationsFuture(
-        params: ListHoursOfOperationsRequest
-    ): Future[ListHoursOfOperationsResponse] = service.listHoursOfOperations(params).promise().toFuture
-    @inline def listPhoneNumbersFuture(params: ListPhoneNumbersRequest): Future[ListPhoneNumbersResponse] =
-      service.listPhoneNumbers(params).promise().toFuture
-    @inline def listQueuesFuture(params: ListQueuesRequest): Future[ListQueuesResponse] =
-      service.listQueues(params).promise().toFuture
-    @inline def listRoutingProfilesFuture(params: ListRoutingProfilesRequest): Future[ListRoutingProfilesResponse] =
-      service.listRoutingProfiles(params).promise().toFuture
-    @inline def listSecurityProfilesFuture(params: ListSecurityProfilesRequest): Future[ListSecurityProfilesResponse] =
-      service.listSecurityProfiles(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listUserHierarchyGroupsFuture(
-        params: ListUserHierarchyGroupsRequest
-    ): Future[ListUserHierarchyGroupsResponse] = service.listUserHierarchyGroups(params).promise().toFuture
-    @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
-      service.listUsers(params).promise().toFuture
-    @inline def resumeContactRecordingFuture(
-        params: ResumeContactRecordingRequest
-    ): Future[ResumeContactRecordingResponse] = service.resumeContactRecording(params).promise().toFuture
-    @inline def startChatContactFuture(params: StartChatContactRequest): Future[StartChatContactResponse] =
-      service.startChatContact(params).promise().toFuture
-    @inline def startContactRecordingFuture(
-        params: StartContactRecordingRequest
-    ): Future[StartContactRecordingResponse] = service.startContactRecording(params).promise().toFuture
-    @inline def startOutboundVoiceContactFuture(
-        params: StartOutboundVoiceContactRequest
-    ): Future[StartOutboundVoiceContactResponse] = service.startOutboundVoiceContact(params).promise().toFuture
-    @inline def stopContactFuture(params: StopContactRequest): Future[StopContactResponse] =
-      service.stopContact(params).promise().toFuture
-    @inline def stopContactRecordingFuture(params: StopContactRecordingRequest): Future[StopContactRecordingResponse] =
-      service.stopContactRecording(params).promise().toFuture
-    @inline def suspendContactRecordingFuture(
-        params: SuspendContactRecordingRequest
-    ): Future[SuspendContactRecordingResponse] = service.suspendContactRecording(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateContactAttributesFuture(
-        params: UpdateContactAttributesRequest
-    ): Future[UpdateContactAttributesResponse] = service.updateContactAttributes(params).promise().toFuture
-    @inline def updateUserHierarchyFuture(params: UpdateUserHierarchyRequest): Future[js.Object] =
-      service.updateUserHierarchy(params).promise().toFuture
-    @inline def updateUserIdentityInfoFuture(params: UpdateUserIdentityInfoRequest): Future[js.Object] =
-      service.updateUserIdentityInfo(params).promise().toFuture
-    @inline def updateUserPhoneConfigFuture(params: UpdateUserPhoneConfigRequest): Future[js.Object] =
-      service.updateUserPhoneConfig(params).promise().toFuture
-    @inline def updateUserRoutingProfileFuture(params: UpdateUserRoutingProfileRequest): Future[js.Object] =
-      service.updateUserRoutingProfile(params).promise().toFuture
-    @inline def updateUserSecurityProfilesFuture(params: UpdateUserSecurityProfilesRequest): Future[js.Object] =
-      service.updateUserSecurityProfiles(params).promise().toFuture
+    @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] = service.createUser(params).promise().toFuture
+    @inline def deleteUserFuture(params: DeleteUserRequest): Future[js.Object] = service.deleteUser(params).promise().toFuture
+    @inline def describeUserFuture(params: DescribeUserRequest): Future[DescribeUserResponse] = service.describeUser(params).promise().toFuture
+    @inline def describeUserHierarchyGroupFuture(params: DescribeUserHierarchyGroupRequest): Future[DescribeUserHierarchyGroupResponse] = service.describeUserHierarchyGroup(params).promise().toFuture
+    @inline def describeUserHierarchyStructureFuture(params: DescribeUserHierarchyStructureRequest): Future[DescribeUserHierarchyStructureResponse] = service.describeUserHierarchyStructure(params).promise().toFuture
+    @inline def getContactAttributesFuture(params: GetContactAttributesRequest): Future[GetContactAttributesResponse] = service.getContactAttributes(params).promise().toFuture
+    @inline def getCurrentMetricDataFuture(params: GetCurrentMetricDataRequest): Future[GetCurrentMetricDataResponse] = service.getCurrentMetricData(params).promise().toFuture
+    @inline def getFederationTokenFuture(params: GetFederationTokenRequest): Future[GetFederationTokenResponse] = service.getFederationToken(params).promise().toFuture
+    @inline def getMetricDataFuture(params: GetMetricDataRequest): Future[GetMetricDataResponse] = service.getMetricData(params).promise().toFuture
+    @inline def listContactFlowsFuture(params: ListContactFlowsRequest): Future[ListContactFlowsResponse] = service.listContactFlows(params).promise().toFuture
+    @inline def listHoursOfOperationsFuture(params: ListHoursOfOperationsRequest): Future[ListHoursOfOperationsResponse] = service.listHoursOfOperations(params).promise().toFuture
+    @inline def listPhoneNumbersFuture(params: ListPhoneNumbersRequest): Future[ListPhoneNumbersResponse] = service.listPhoneNumbers(params).promise().toFuture
+    @inline def listQueuesFuture(params: ListQueuesRequest): Future[ListQueuesResponse] = service.listQueues(params).promise().toFuture
+    @inline def listRoutingProfilesFuture(params: ListRoutingProfilesRequest): Future[ListRoutingProfilesResponse] = service.listRoutingProfiles(params).promise().toFuture
+    @inline def listSecurityProfilesFuture(params: ListSecurityProfilesRequest): Future[ListSecurityProfilesResponse] = service.listSecurityProfiles(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listUserHierarchyGroupsFuture(params: ListUserHierarchyGroupsRequest): Future[ListUserHierarchyGroupsResponse] = service.listUserHierarchyGroups(params).promise().toFuture
+    @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] = service.listUsers(params).promise().toFuture
+    @inline def resumeContactRecordingFuture(params: ResumeContactRecordingRequest): Future[ResumeContactRecordingResponse] = service.resumeContactRecording(params).promise().toFuture
+    @inline def startChatContactFuture(params: StartChatContactRequest): Future[StartChatContactResponse] = service.startChatContact(params).promise().toFuture
+    @inline def startContactRecordingFuture(params: StartContactRecordingRequest): Future[StartContactRecordingResponse] = service.startContactRecording(params).promise().toFuture
+    @inline def startOutboundVoiceContactFuture(params: StartOutboundVoiceContactRequest): Future[StartOutboundVoiceContactResponse] = service.startOutboundVoiceContact(params).promise().toFuture
+    @inline def stopContactFuture(params: StopContactRequest): Future[StopContactResponse] = service.stopContact(params).promise().toFuture
+    @inline def stopContactRecordingFuture(params: StopContactRecordingRequest): Future[StopContactRecordingResponse] = service.stopContactRecording(params).promise().toFuture
+    @inline def suspendContactRecordingFuture(params: SuspendContactRecordingRequest): Future[SuspendContactRecordingResponse] = service.suspendContactRecording(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
+    @inline def updateContactAttributesFuture(params: UpdateContactAttributesRequest): Future[UpdateContactAttributesResponse] = service.updateContactAttributes(params).promise().toFuture
+    @inline def updateUserHierarchyFuture(params: UpdateUserHierarchyRequest): Future[js.Object] = service.updateUserHierarchy(params).promise().toFuture
+    @inline def updateUserIdentityInfoFuture(params: UpdateUserIdentityInfoRequest): Future[js.Object] = service.updateUserIdentityInfo(params).promise().toFuture
+    @inline def updateUserPhoneConfigFuture(params: UpdateUserPhoneConfigRequest): Future[js.Object] = service.updateUserPhoneConfig(params).promise().toFuture
+    @inline def updateUserRoutingProfileFuture(params: UpdateUserRoutingProfileRequest): Future[js.Object] = service.updateUserRoutingProfile(params).promise().toFuture
+    @inline def updateUserSecurityProfilesFuture(params: UpdateUserSecurityProfilesRequest): Future[js.Object] = service.updateUserSecurityProfiles(params).promise().toFuture
   }
 }
 
@@ -168,12 +125,8 @@ package connect {
     def createUser(params: CreateUserRequest): Request[CreateUserResponse] = js.native
     def deleteUser(params: DeleteUserRequest): Request[js.Object] = js.native
     def describeUser(params: DescribeUserRequest): Request[DescribeUserResponse] = js.native
-    def describeUserHierarchyGroup(
-        params: DescribeUserHierarchyGroupRequest
-    ): Request[DescribeUserHierarchyGroupResponse] = js.native
-    def describeUserHierarchyStructure(
-        params: DescribeUserHierarchyStructureRequest
-    ): Request[DescribeUserHierarchyStructureResponse] = js.native
+    def describeUserHierarchyGroup(params: DescribeUserHierarchyGroupRequest): Request[DescribeUserHierarchyGroupResponse] = js.native
+    def describeUserHierarchyStructure(params: DescribeUserHierarchyStructureRequest): Request[DescribeUserHierarchyStructureResponse] = js.native
     def getContactAttributes(params: GetContactAttributesRequest): Request[GetContactAttributesResponse] = js.native
     def getCurrentMetricData(params: GetCurrentMetricDataRequest): Request[GetCurrentMetricDataResponse] = js.native
     def getFederationToken(params: GetFederationTokenRequest): Request[GetFederationTokenResponse] = js.native
@@ -185,24 +138,18 @@ package connect {
     def listRoutingProfiles(params: ListRoutingProfilesRequest): Request[ListRoutingProfilesResponse] = js.native
     def listSecurityProfiles(params: ListSecurityProfilesRequest): Request[ListSecurityProfilesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def listUserHierarchyGroups(params: ListUserHierarchyGroupsRequest): Request[ListUserHierarchyGroupsResponse] =
-      js.native
+    def listUserHierarchyGroups(params: ListUserHierarchyGroupsRequest): Request[ListUserHierarchyGroupsResponse] = js.native
     def listUsers(params: ListUsersRequest): Request[ListUsersResponse] = js.native
-    def resumeContactRecording(params: ResumeContactRecordingRequest): Request[ResumeContactRecordingResponse] =
-      js.native
+    def resumeContactRecording(params: ResumeContactRecordingRequest): Request[ResumeContactRecordingResponse] = js.native
     def startChatContact(params: StartChatContactRequest): Request[StartChatContactResponse] = js.native
     def startContactRecording(params: StartContactRecordingRequest): Request[StartContactRecordingResponse] = js.native
-    def startOutboundVoiceContact(
-        params: StartOutboundVoiceContactRequest
-    ): Request[StartOutboundVoiceContactResponse] = js.native
+    def startOutboundVoiceContact(params: StartOutboundVoiceContactRequest): Request[StartOutboundVoiceContactResponse] = js.native
     def stopContact(params: StopContactRequest): Request[StopContactResponse] = js.native
     def stopContactRecording(params: StopContactRecordingRequest): Request[StopContactRecordingResponse] = js.native
-    def suspendContactRecording(params: SuspendContactRecordingRequest): Request[SuspendContactRecordingResponse] =
-      js.native
+    def suspendContactRecording(params: SuspendContactRecordingRequest): Request[SuspendContactRecordingResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
-    def updateContactAttributes(params: UpdateContactAttributesRequest): Request[UpdateContactAttributesResponse] =
-      js.native
+    def updateContactAttributes(params: UpdateContactAttributesRequest): Request[UpdateContactAttributesResponse] = js.native
     def updateUserHierarchy(params: UpdateUserHierarchyRequest): Request[js.Object] = js.native
     def updateUserIdentityInfo(params: UpdateUserIdentityInfoRequest): Request[js.Object] = js.native
     def updateUserPhoneConfig(params: UpdateUserPhoneConfigRequest): Request[js.Object] = js.native
@@ -292,19 +239,7 @@ package connect {
     val AGENT_TRANSFER = "AGENT_TRANSFER".asInstanceOf[ContactFlowType]
     val QUEUE_TRANSFER = "QUEUE_TRANSFER".asInstanceOf[ContactFlowType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        CONTACT_FLOW,
-        CUSTOMER_QUEUE,
-        CUSTOMER_HOLD,
-        CUSTOMER_WHISPER,
-        AGENT_HOLD,
-        AGENT_WHISPER,
-        OUTBOUND_WHISPER,
-        AGENT_TRANSFER,
-        QUEUE_TRANSFER
-      )
-    )
+    val values = js.Object.freeze(js.Array(CONTACT_FLOW, CUSTOMER_QUEUE, CUSTOMER_HOLD, CUSTOMER_WHISPER, AGENT_HOLD, AGENT_WHISPER, OUTBOUND_WHISPER, AGENT_TRANSFER, QUEUE_TRANSFER))
   }
 
   @js.native
@@ -463,23 +398,21 @@ package connect {
     val SLOTS_ACTIVE = "SLOTS_ACTIVE".asInstanceOf[CurrentMetricName]
     val SLOTS_AVAILABLE = "SLOTS_AVAILABLE".asInstanceOf[CurrentMetricName]
 
-    val values = js.Object.freeze(
-      js.Array(
-        AGENTS_ONLINE,
-        AGENTS_AVAILABLE,
-        AGENTS_ON_CALL,
-        AGENTS_NON_PRODUCTIVE,
-        AGENTS_AFTER_CONTACT_WORK,
-        AGENTS_ERROR,
-        AGENTS_STAFFED,
-        CONTACTS_IN_QUEUE,
-        OLDEST_CONTACT_AGE,
-        CONTACTS_SCHEDULED,
-        AGENTS_ON_CONTACT,
-        SLOTS_ACTIVE,
-        SLOTS_AVAILABLE
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      AGENTS_ONLINE,
+      AGENTS_AVAILABLE,
+      AGENTS_ON_CALL,
+      AGENTS_NON_PRODUCTIVE,
+      AGENTS_AFTER_CONTACT_WORK,
+      AGENTS_ERROR,
+      AGENTS_STAFFED,
+      CONTACTS_IN_QUEUE,
+      OLDEST_CONTACT_AGE,
+      CONTACTS_SCHEDULED,
+      AGENTS_ON_CONTACT,
+      SLOTS_ACTIVE,
+      SLOTS_AVAILABLE
+    ))
   }
 
   /**
@@ -1095,35 +1028,33 @@ package connect {
     val INTERACTION_AND_HOLD_TIME = "INTERACTION_AND_HOLD_TIME".asInstanceOf[HistoricalMetricName]
     val SERVICE_LEVEL = "SERVICE_LEVEL".asInstanceOf[HistoricalMetricName]
 
-    val values = js.Object.freeze(
-      js.Array(
-        CONTACTS_QUEUED,
-        CONTACTS_HANDLED,
-        CONTACTS_ABANDONED,
-        CONTACTS_CONSULTED,
-        CONTACTS_AGENT_HUNG_UP_FIRST,
-        CONTACTS_HANDLED_INCOMING,
-        CONTACTS_HANDLED_OUTBOUND,
-        CONTACTS_HOLD_ABANDONS,
-        CONTACTS_TRANSFERRED_IN,
-        CONTACTS_TRANSFERRED_OUT,
-        CONTACTS_TRANSFERRED_IN_FROM_QUEUE,
-        CONTACTS_TRANSFERRED_OUT_FROM_QUEUE,
-        CONTACTS_MISSED,
-        CALLBACK_CONTACTS_HANDLED,
-        API_CONTACTS_HANDLED,
-        OCCUPANCY,
-        HANDLE_TIME,
-        AFTER_CONTACT_WORK_TIME,
-        QUEUED_TIME,
-        ABANDON_TIME,
-        QUEUE_ANSWER_TIME,
-        HOLD_TIME,
-        INTERACTION_TIME,
-        INTERACTION_AND_HOLD_TIME,
-        SERVICE_LEVEL
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      CONTACTS_QUEUED,
+      CONTACTS_HANDLED,
+      CONTACTS_ABANDONED,
+      CONTACTS_CONSULTED,
+      CONTACTS_AGENT_HUNG_UP_FIRST,
+      CONTACTS_HANDLED_INCOMING,
+      CONTACTS_HANDLED_OUTBOUND,
+      CONTACTS_HOLD_ABANDONS,
+      CONTACTS_TRANSFERRED_IN,
+      CONTACTS_TRANSFERRED_OUT,
+      CONTACTS_TRANSFERRED_IN_FROM_QUEUE,
+      CONTACTS_TRANSFERRED_OUT_FROM_QUEUE,
+      CONTACTS_MISSED,
+      CALLBACK_CONTACTS_HANDLED,
+      API_CONTACTS_HANDLED,
+      OCCUPANCY,
+      HANDLE_TIME,
+      AFTER_CONTACT_WORK_TIME,
+      QUEUED_TIME,
+      ABANDON_TIME,
+      QUEUE_ANSWER_TIME,
+      HOLD_TIME,
+      INTERACTION_TIME,
+      INTERACTION_AND_HOLD_TIME,
+      SERVICE_LEVEL
+    ))
   }
 
   /**
@@ -1256,9 +1187,7 @@ package connect {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListHoursOfOperationsResponse = {
       val __obj = js.Dynamic.literal()
-      HoursOfOperationSummaryList.foreach(__v =>
-        __obj.updateDynamic("HoursOfOperationSummaryList")(__v.asInstanceOf[js.Any])
-      )
+      HoursOfOperationSummaryList.foreach(__v => __obj.updateDynamic("HoursOfOperationSummaryList")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListHoursOfOperationsResponse]
     }
@@ -1397,9 +1326,7 @@ package connect {
     ): ListRoutingProfilesResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      RoutingProfileSummaryList.foreach(__v =>
-        __obj.updateDynamic("RoutingProfileSummaryList")(__v.asInstanceOf[js.Any])
-      )
+      RoutingProfileSummaryList.foreach(__v => __obj.updateDynamic("RoutingProfileSummaryList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRoutingProfilesResponse]
     }
   }
@@ -1442,9 +1369,7 @@ package connect {
     ): ListSecurityProfilesResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SecurityProfileSummaryList.foreach(__v =>
-        __obj.updateDynamic("SecurityProfileSummaryList")(__v.asInstanceOf[js.Any])
-      )
+      SecurityProfileSummaryList.foreach(__v => __obj.updateDynamic("SecurityProfileSummaryList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSecurityProfilesResponse]
     }
   }
@@ -1521,9 +1446,7 @@ package connect {
     ): ListUserHierarchyGroupsResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      UserHierarchyGroupSummaryList.foreach(__v =>
-        __obj.updateDynamic("UserHierarchyGroupSummaryList")(__v.asInstanceOf[js.Any])
-      )
+      UserHierarchyGroupSummaryList.foreach(__v => __obj.updateDynamic("UserHierarchyGroupSummaryList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListUserHierarchyGroupsResponse]
     }
   }
@@ -1833,247 +1756,245 @@ package connect {
     val ZM = "ZM".asInstanceOf[PhoneNumberCountryCode]
     val ZW = "ZW".asInstanceOf[PhoneNumberCountryCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        AF,
-        AL,
-        DZ,
-        AS,
-        AD,
-        AO,
-        AI,
-        AQ,
-        AG,
-        AR,
-        AM,
-        AW,
-        AU,
-        AT,
-        AZ,
-        BS,
-        BH,
-        BD,
-        BB,
-        BY,
-        BE,
-        BZ,
-        BJ,
-        BM,
-        BT,
-        BO,
-        BA,
-        BW,
-        BR,
-        IO,
-        VG,
-        BN,
-        BG,
-        BF,
-        BI,
-        KH,
-        CM,
-        CA,
-        CV,
-        KY,
-        CF,
-        TD,
-        CL,
-        CN,
-        CX,
-        CC,
-        CO,
-        KM,
-        CK,
-        CR,
-        HR,
-        CU,
-        CW,
-        CY,
-        CZ,
-        CD,
-        DK,
-        DJ,
-        DM,
-        DO,
-        TL,
-        EC,
-        EG,
-        SV,
-        GQ,
-        ER,
-        EE,
-        ET,
-        FK,
-        FO,
-        FJ,
-        FI,
-        FR,
-        PF,
-        GA,
-        GM,
-        GE,
-        DE,
-        GH,
-        GI,
-        GR,
-        GL,
-        GD,
-        GU,
-        GT,
-        GG,
-        GN,
-        GW,
-        GY,
-        HT,
-        HN,
-        HK,
-        HU,
-        IS,
-        IN,
-        ID,
-        IR,
-        IQ,
-        IE,
-        IM,
-        IL,
-        IT,
-        CI,
-        JM,
-        JP,
-        JE,
-        JO,
-        KZ,
-        KE,
-        KI,
-        KW,
-        KG,
-        LA,
-        LV,
-        LB,
-        LS,
-        LR,
-        LY,
-        LI,
-        LT,
-        LU,
-        MO,
-        MK,
-        MG,
-        MW,
-        MY,
-        MV,
-        ML,
-        MT,
-        MH,
-        MR,
-        MU,
-        YT,
-        MX,
-        FM,
-        MD,
-        MC,
-        MN,
-        ME,
-        MS,
-        MA,
-        MZ,
-        MM,
-        NA,
-        NR,
-        NP,
-        NL,
-        AN,
-        NC,
-        NZ,
-        NI,
-        NE,
-        NG,
-        NU,
-        KP,
-        MP,
-        NO,
-        OM,
-        PK,
-        PW,
-        PA,
-        PG,
-        PY,
-        PE,
-        PH,
-        PN,
-        PL,
-        PT,
-        PR,
-        QA,
-        CG,
-        RE,
-        RO,
-        RU,
-        RW,
-        BL,
-        SH,
-        KN,
-        LC,
-        MF,
-        PM,
-        VC,
-        WS,
-        SM,
-        ST,
-        SA,
-        SN,
-        RS,
-        SC,
-        SL,
-        SG,
-        SX,
-        SK,
-        SI,
-        SB,
-        SO,
-        ZA,
-        KR,
-        ES,
-        LK,
-        SD,
-        SR,
-        SJ,
-        SZ,
-        SE,
-        CH,
-        SY,
-        TW,
-        TJ,
-        TZ,
-        TH,
-        TG,
-        TK,
-        TO,
-        TT,
-        TN,
-        TR,
-        TM,
-        TC,
-        TV,
-        VI,
-        UG,
-        UA,
-        AE,
-        GB,
-        US,
-        UY,
-        UZ,
-        VU,
-        VA,
-        VE,
-        VN,
-        WF,
-        EH,
-        YE,
-        ZM,
-        ZW
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      AF,
+      AL,
+      DZ,
+      AS,
+      AD,
+      AO,
+      AI,
+      AQ,
+      AG,
+      AR,
+      AM,
+      AW,
+      AU,
+      AT,
+      AZ,
+      BS,
+      BH,
+      BD,
+      BB,
+      BY,
+      BE,
+      BZ,
+      BJ,
+      BM,
+      BT,
+      BO,
+      BA,
+      BW,
+      BR,
+      IO,
+      VG,
+      BN,
+      BG,
+      BF,
+      BI,
+      KH,
+      CM,
+      CA,
+      CV,
+      KY,
+      CF,
+      TD,
+      CL,
+      CN,
+      CX,
+      CC,
+      CO,
+      KM,
+      CK,
+      CR,
+      HR,
+      CU,
+      CW,
+      CY,
+      CZ,
+      CD,
+      DK,
+      DJ,
+      DM,
+      DO,
+      TL,
+      EC,
+      EG,
+      SV,
+      GQ,
+      ER,
+      EE,
+      ET,
+      FK,
+      FO,
+      FJ,
+      FI,
+      FR,
+      PF,
+      GA,
+      GM,
+      GE,
+      DE,
+      GH,
+      GI,
+      GR,
+      GL,
+      GD,
+      GU,
+      GT,
+      GG,
+      GN,
+      GW,
+      GY,
+      HT,
+      HN,
+      HK,
+      HU,
+      IS,
+      IN,
+      ID,
+      IR,
+      IQ,
+      IE,
+      IM,
+      IL,
+      IT,
+      CI,
+      JM,
+      JP,
+      JE,
+      JO,
+      KZ,
+      KE,
+      KI,
+      KW,
+      KG,
+      LA,
+      LV,
+      LB,
+      LS,
+      LR,
+      LY,
+      LI,
+      LT,
+      LU,
+      MO,
+      MK,
+      MG,
+      MW,
+      MY,
+      MV,
+      ML,
+      MT,
+      MH,
+      MR,
+      MU,
+      YT,
+      MX,
+      FM,
+      MD,
+      MC,
+      MN,
+      ME,
+      MS,
+      MA,
+      MZ,
+      MM,
+      NA,
+      NR,
+      NP,
+      NL,
+      AN,
+      NC,
+      NZ,
+      NI,
+      NE,
+      NG,
+      NU,
+      KP,
+      MP,
+      NO,
+      OM,
+      PK,
+      PW,
+      PA,
+      PG,
+      PY,
+      PE,
+      PH,
+      PN,
+      PL,
+      PT,
+      PR,
+      QA,
+      CG,
+      RE,
+      RO,
+      RU,
+      RW,
+      BL,
+      SH,
+      KN,
+      LC,
+      MF,
+      PM,
+      VC,
+      WS,
+      SM,
+      ST,
+      SA,
+      SN,
+      RS,
+      SC,
+      SL,
+      SG,
+      SX,
+      SK,
+      SI,
+      SB,
+      SO,
+      ZA,
+      KR,
+      ES,
+      LK,
+      SD,
+      SR,
+      SJ,
+      SZ,
+      SE,
+      CH,
+      SY,
+      TW,
+      TJ,
+      TZ,
+      TH,
+      TG,
+      TK,
+      TO,
+      TT,
+      TN,
+      TR,
+      TM,
+      TC,
+      TV,
+      VI,
+      UG,
+      UA,
+      AE,
+      GB,
+      US,
+      UY,
+      UZ,
+      VU,
+      VA,
+      VE,
+      VN,
+      WF,
+      EH,
+      YE,
+      ZM,
+      ZW
+    ))
   }
 
   /**
@@ -2861,9 +2782,7 @@ package connect {
         "PhoneType" -> PhoneType.asInstanceOf[js.Any]
       )
 
-      AfterContactWorkTimeLimit.foreach(__v =>
-        __obj.updateDynamic("AfterContactWorkTimeLimit")(__v.asInstanceOf[js.Any])
-      )
+      AfterContactWorkTimeLimit.foreach(__v => __obj.updateDynamic("AfterContactWorkTimeLimit")(__v.asInstanceOf[js.Any]))
       AutoAccept.foreach(__v => __obj.updateDynamic("AutoAccept")(__v.asInstanceOf[js.Any]))
       DeskPhoneNumber.foreach(__v => __obj.updateDynamic("DeskPhoneNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UserPhoneConfig]

@@ -66,41 +66,22 @@ package object iotevents {
 
   implicit final class IoTEventsOps(private val service: IoTEvents) extends AnyVal {
 
-    @inline def createDetectorModelFuture(params: CreateDetectorModelRequest): Future[CreateDetectorModelResponse] =
-      service.createDetectorModel(params).promise().toFuture
-    @inline def createInputFuture(params: CreateInputRequest): Future[CreateInputResponse] =
-      service.createInput(params).promise().toFuture
-    @inline def deleteDetectorModelFuture(params: DeleteDetectorModelRequest): Future[DeleteDetectorModelResponse] =
-      service.deleteDetectorModel(params).promise().toFuture
-    @inline def deleteInputFuture(params: DeleteInputRequest): Future[DeleteInputResponse] =
-      service.deleteInput(params).promise().toFuture
-    @inline def describeDetectorModelFuture(
-        params: DescribeDetectorModelRequest
-    ): Future[DescribeDetectorModelResponse] = service.describeDetectorModel(params).promise().toFuture
-    @inline def describeInputFuture(params: DescribeInputRequest): Future[DescribeInputResponse] =
-      service.describeInput(params).promise().toFuture
-    @inline def describeLoggingOptionsFuture(
-        params: DescribeLoggingOptionsRequest
-    ): Future[DescribeLoggingOptionsResponse] = service.describeLoggingOptions(params).promise().toFuture
-    @inline def listDetectorModelVersionsFuture(
-        params: ListDetectorModelVersionsRequest
-    ): Future[ListDetectorModelVersionsResponse] = service.listDetectorModelVersions(params).promise().toFuture
-    @inline def listDetectorModelsFuture(params: ListDetectorModelsRequest): Future[ListDetectorModelsResponse] =
-      service.listDetectorModels(params).promise().toFuture
-    @inline def listInputsFuture(params: ListInputsRequest): Future[ListInputsResponse] =
-      service.listInputs(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def putLoggingOptionsFuture(params: PutLoggingOptionsRequest): Future[js.Object] =
-      service.putLoggingOptions(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateDetectorModelFuture(params: UpdateDetectorModelRequest): Future[UpdateDetectorModelResponse] =
-      service.updateDetectorModel(params).promise().toFuture
-    @inline def updateInputFuture(params: UpdateInputRequest): Future[UpdateInputResponse] =
-      service.updateInput(params).promise().toFuture
+    @inline def createDetectorModelFuture(params: CreateDetectorModelRequest): Future[CreateDetectorModelResponse] = service.createDetectorModel(params).promise().toFuture
+    @inline def createInputFuture(params: CreateInputRequest): Future[CreateInputResponse] = service.createInput(params).promise().toFuture
+    @inline def deleteDetectorModelFuture(params: DeleteDetectorModelRequest): Future[DeleteDetectorModelResponse] = service.deleteDetectorModel(params).promise().toFuture
+    @inline def deleteInputFuture(params: DeleteInputRequest): Future[DeleteInputResponse] = service.deleteInput(params).promise().toFuture
+    @inline def describeDetectorModelFuture(params: DescribeDetectorModelRequest): Future[DescribeDetectorModelResponse] = service.describeDetectorModel(params).promise().toFuture
+    @inline def describeInputFuture(params: DescribeInputRequest): Future[DescribeInputResponse] = service.describeInput(params).promise().toFuture
+    @inline def describeLoggingOptionsFuture(params: DescribeLoggingOptionsRequest): Future[DescribeLoggingOptionsResponse] = service.describeLoggingOptions(params).promise().toFuture
+    @inline def listDetectorModelVersionsFuture(params: ListDetectorModelVersionsRequest): Future[ListDetectorModelVersionsResponse] = service.listDetectorModelVersions(params).promise().toFuture
+    @inline def listDetectorModelsFuture(params: ListDetectorModelsRequest): Future[ListDetectorModelsResponse] = service.listDetectorModels(params).promise().toFuture
+    @inline def listInputsFuture(params: ListInputsRequest): Future[ListInputsResponse] = service.listInputs(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def putLoggingOptionsFuture(params: PutLoggingOptionsRequest): Future[js.Object] = service.putLoggingOptions(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateDetectorModelFuture(params: UpdateDetectorModelRequest): Future[UpdateDetectorModelResponse] = service.updateDetectorModel(params).promise().toFuture
+    @inline def updateInputFuture(params: UpdateInputRequest): Future[UpdateInputResponse] = service.updateInput(params).promise().toFuture
   }
 }
 
@@ -116,11 +97,8 @@ package iotevents {
     def deleteInput(params: DeleteInputRequest): Request[DeleteInputResponse] = js.native
     def describeDetectorModel(params: DescribeDetectorModelRequest): Request[DescribeDetectorModelResponse] = js.native
     def describeInput(params: DescribeInputRequest): Request[DescribeInputResponse] = js.native
-    def describeLoggingOptions(params: DescribeLoggingOptionsRequest): Request[DescribeLoggingOptionsResponse] =
-      js.native
-    def listDetectorModelVersions(
-        params: ListDetectorModelVersionsRequest
-    ): Request[ListDetectorModelVersionsResponse] = js.native
+    def describeLoggingOptions(params: DescribeLoggingOptionsRequest): Request[DescribeLoggingOptionsResponse] = js.native
+    def listDetectorModelVersions(params: ListDetectorModelVersionsRequest): Request[ListDetectorModelVersionsResponse] = js.native
     def listDetectorModels(params: ListDetectorModelsRequest): Request[ListDetectorModelsResponse] = js.native
     def listInputs(params: ListInputsRequest): Request[ListInputsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
@@ -367,9 +345,7 @@ package iotevents {
         detectorModelConfiguration: js.UndefOr[DetectorModelConfiguration] = js.undefined
     ): CreateDetectorModelResponse = {
       val __obj = js.Dynamic.literal()
-      detectorModelConfiguration.foreach(__v =>
-        __obj.updateDynamic("detectorModelConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      detectorModelConfiguration.foreach(__v => __obj.updateDynamic("detectorModelConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDetectorModelResponse]
     }
   }
@@ -619,9 +595,7 @@ package iotevents {
         detectorModelDefinition: js.UndefOr[DetectorModelDefinition] = js.undefined
     ): DetectorModel = {
       val __obj = js.Dynamic.literal()
-      detectorModelConfiguration.foreach(__v =>
-        __obj.updateDynamic("detectorModelConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      detectorModelConfiguration.foreach(__v => __obj.updateDynamic("detectorModelConfiguration")(__v.asInstanceOf[js.Any]))
       detectorModelDefinition.foreach(__v => __obj.updateDynamic("detectorModelDefinition")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectorModel]
     }
@@ -1191,9 +1165,7 @@ package iotevents {
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDetectorModelVersionsResponse = {
       val __obj = js.Dynamic.literal()
-      detectorModelVersionSummaries.foreach(__v =>
-        __obj.updateDynamic("detectorModelVersionSummaries")(__v.asInstanceOf[js.Any])
-      )
+      detectorModelVersionSummaries.foreach(__v => __obj.updateDynamic("detectorModelVersionSummaries")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDetectorModelVersionsResponse]
     }
@@ -1777,9 +1749,7 @@ package iotevents {
         detectorModelConfiguration: js.UndefOr[DetectorModelConfiguration] = js.undefined
     ): UpdateDetectorModelResponse = {
       val __obj = js.Dynamic.literal()
-      detectorModelConfiguration.foreach(__v =>
-        __obj.updateDynamic("detectorModelConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      detectorModelConfiguration.foreach(__v => __obj.updateDynamic("detectorModelConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDetectorModelResponse]
     }
   }

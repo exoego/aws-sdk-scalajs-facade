@@ -53,117 +53,54 @@ package object backup {
 
   implicit final class BackupOps(private val service: Backup) extends AnyVal {
 
-    @inline def createBackupPlanFuture(params: CreateBackupPlanInput): Future[CreateBackupPlanOutput] =
-      service.createBackupPlan(params).promise().toFuture
-    @inline def createBackupSelectionFuture(params: CreateBackupSelectionInput): Future[CreateBackupSelectionOutput] =
-      service.createBackupSelection(params).promise().toFuture
-    @inline def createBackupVaultFuture(params: CreateBackupVaultInput): Future[CreateBackupVaultOutput] =
-      service.createBackupVault(params).promise().toFuture
-    @inline def deleteBackupPlanFuture(params: DeleteBackupPlanInput): Future[DeleteBackupPlanOutput] =
-      service.deleteBackupPlan(params).promise().toFuture
-    @inline def deleteBackupSelectionFuture(params: DeleteBackupSelectionInput): Future[js.Object] =
-      service.deleteBackupSelection(params).promise().toFuture
-    @inline def deleteBackupVaultAccessPolicyFuture(params: DeleteBackupVaultAccessPolicyInput): Future[js.Object] =
-      service.deleteBackupVaultAccessPolicy(params).promise().toFuture
-    @inline def deleteBackupVaultFuture(params: DeleteBackupVaultInput): Future[js.Object] =
-      service.deleteBackupVault(params).promise().toFuture
-    @inline def deleteBackupVaultNotificationsFuture(params: DeleteBackupVaultNotificationsInput): Future[js.Object] =
-      service.deleteBackupVaultNotifications(params).promise().toFuture
-    @inline def deleteRecoveryPointFuture(params: DeleteRecoveryPointInput): Future[js.Object] =
-      service.deleteRecoveryPoint(params).promise().toFuture
-    @inline def describeBackupJobFuture(params: DescribeBackupJobInput): Future[DescribeBackupJobOutput] =
-      service.describeBackupJob(params).promise().toFuture
-    @inline def describeBackupVaultFuture(params: DescribeBackupVaultInput): Future[DescribeBackupVaultOutput] =
-      service.describeBackupVault(params).promise().toFuture
-    @inline def describeCopyJobFuture(params: DescribeCopyJobInput): Future[DescribeCopyJobOutput] =
-      service.describeCopyJob(params).promise().toFuture
-    @inline def describeProtectedResourceFuture(
-        params: DescribeProtectedResourceInput
-    ): Future[DescribeProtectedResourceOutput] = service.describeProtectedResource(params).promise().toFuture
-    @inline def describeRecoveryPointFuture(params: DescribeRecoveryPointInput): Future[DescribeRecoveryPointOutput] =
-      service.describeRecoveryPoint(params).promise().toFuture
-    @inline def describeRegionSettingsFuture(
-        params: DescribeRegionSettingsInput
-    ): Future[DescribeRegionSettingsOutput] = service.describeRegionSettings(params).promise().toFuture
-    @inline def describeRestoreJobFuture(params: DescribeRestoreJobInput): Future[DescribeRestoreJobOutput] =
-      service.describeRestoreJob(params).promise().toFuture
-    @inline def exportBackupPlanTemplateFuture(
-        params: ExportBackupPlanTemplateInput
-    ): Future[ExportBackupPlanTemplateOutput] = service.exportBackupPlanTemplate(params).promise().toFuture
-    @inline def getBackupPlanFromJSONFuture(params: GetBackupPlanFromJSONInput): Future[GetBackupPlanFromJSONOutput] =
-      service.getBackupPlanFromJSON(params).promise().toFuture
-    @inline def getBackupPlanFromTemplateFuture(
-        params: GetBackupPlanFromTemplateInput
-    ): Future[GetBackupPlanFromTemplateOutput] = service.getBackupPlanFromTemplate(params).promise().toFuture
-    @inline def getBackupPlanFuture(params: GetBackupPlanInput): Future[GetBackupPlanOutput] =
-      service.getBackupPlan(params).promise().toFuture
-    @inline def getBackupSelectionFuture(params: GetBackupSelectionInput): Future[GetBackupSelectionOutput] =
-      service.getBackupSelection(params).promise().toFuture
-    @inline def getBackupVaultAccessPolicyFuture(
-        params: GetBackupVaultAccessPolicyInput
-    ): Future[GetBackupVaultAccessPolicyOutput] = service.getBackupVaultAccessPolicy(params).promise().toFuture
-    @inline def getBackupVaultNotificationsFuture(
-        params: GetBackupVaultNotificationsInput
-    ): Future[GetBackupVaultNotificationsOutput] = service.getBackupVaultNotifications(params).promise().toFuture
-    @inline def getRecoveryPointRestoreMetadataFuture(
-        params: GetRecoveryPointRestoreMetadataInput
-    ): Future[GetRecoveryPointRestoreMetadataOutput] =
-      service.getRecoveryPointRestoreMetadata(params).promise().toFuture
-    @inline def getSupportedResourceTypesFuture(): Future[GetSupportedResourceTypesOutput] =
-      service.getSupportedResourceTypes().promise().toFuture
-    @inline def listBackupJobsFuture(params: ListBackupJobsInput): Future[ListBackupJobsOutput] =
-      service.listBackupJobs(params).promise().toFuture
-    @inline def listBackupPlanTemplatesFuture(
-        params: ListBackupPlanTemplatesInput
-    ): Future[ListBackupPlanTemplatesOutput] = service.listBackupPlanTemplates(params).promise().toFuture
-    @inline def listBackupPlanVersionsFuture(
-        params: ListBackupPlanVersionsInput
-    ): Future[ListBackupPlanVersionsOutput] = service.listBackupPlanVersions(params).promise().toFuture
-    @inline def listBackupPlansFuture(params: ListBackupPlansInput): Future[ListBackupPlansOutput] =
-      service.listBackupPlans(params).promise().toFuture
-    @inline def listBackupSelectionsFuture(params: ListBackupSelectionsInput): Future[ListBackupSelectionsOutput] =
-      service.listBackupSelections(params).promise().toFuture
-    @inline def listBackupVaultsFuture(params: ListBackupVaultsInput): Future[ListBackupVaultsOutput] =
-      service.listBackupVaults(params).promise().toFuture
-    @inline def listCopyJobsFuture(params: ListCopyJobsInput): Future[ListCopyJobsOutput] =
-      service.listCopyJobs(params).promise().toFuture
-    @inline def listProtectedResourcesFuture(
-        params: ListProtectedResourcesInput
-    ): Future[ListProtectedResourcesOutput] = service.listProtectedResources(params).promise().toFuture
-    @inline def listRecoveryPointsByBackupVaultFuture(
-        params: ListRecoveryPointsByBackupVaultInput
-    ): Future[ListRecoveryPointsByBackupVaultOutput] =
-      service.listRecoveryPointsByBackupVault(params).promise().toFuture
-    @inline def listRecoveryPointsByResourceFuture(
-        params: ListRecoveryPointsByResourceInput
-    ): Future[ListRecoveryPointsByResourceOutput] = service.listRecoveryPointsByResource(params).promise().toFuture
-    @inline def listRestoreJobsFuture(params: ListRestoreJobsInput): Future[ListRestoreJobsOutput] =
-      service.listRestoreJobs(params).promise().toFuture
-    @inline def listTagsFuture(params: ListTagsInput): Future[ListTagsOutput] =
-      service.listTags(params).promise().toFuture
-    @inline def putBackupVaultAccessPolicyFuture(params: PutBackupVaultAccessPolicyInput): Future[js.Object] =
-      service.putBackupVaultAccessPolicy(params).promise().toFuture
-    @inline def putBackupVaultNotificationsFuture(params: PutBackupVaultNotificationsInput): Future[js.Object] =
-      service.putBackupVaultNotifications(params).promise().toFuture
-    @inline def startBackupJobFuture(params: StartBackupJobInput): Future[StartBackupJobOutput] =
-      service.startBackupJob(params).promise().toFuture
-    @inline def startCopyJobFuture(params: StartCopyJobInput): Future[StartCopyJobOutput] =
-      service.startCopyJob(params).promise().toFuture
-    @inline def startRestoreJobFuture(params: StartRestoreJobInput): Future[StartRestoreJobOutput] =
-      service.startRestoreJob(params).promise().toFuture
-    @inline def stopBackupJobFuture(params: StopBackupJobInput): Future[js.Object] =
-      service.stopBackupJob(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceInput): Future[js.Object] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceInput): Future[js.Object] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateBackupPlanFuture(params: UpdateBackupPlanInput): Future[UpdateBackupPlanOutput] =
-      service.updateBackupPlan(params).promise().toFuture
-    @inline def updateRecoveryPointLifecycleFuture(
-        params: UpdateRecoveryPointLifecycleInput
-    ): Future[UpdateRecoveryPointLifecycleOutput] = service.updateRecoveryPointLifecycle(params).promise().toFuture
-    @inline def updateRegionSettingsFuture(params: UpdateRegionSettingsInput): Future[js.Object] =
-      service.updateRegionSettings(params).promise().toFuture
+    @inline def createBackupPlanFuture(params: CreateBackupPlanInput): Future[CreateBackupPlanOutput] = service.createBackupPlan(params).promise().toFuture
+    @inline def createBackupSelectionFuture(params: CreateBackupSelectionInput): Future[CreateBackupSelectionOutput] = service.createBackupSelection(params).promise().toFuture
+    @inline def createBackupVaultFuture(params: CreateBackupVaultInput): Future[CreateBackupVaultOutput] = service.createBackupVault(params).promise().toFuture
+    @inline def deleteBackupPlanFuture(params: DeleteBackupPlanInput): Future[DeleteBackupPlanOutput] = service.deleteBackupPlan(params).promise().toFuture
+    @inline def deleteBackupSelectionFuture(params: DeleteBackupSelectionInput): Future[js.Object] = service.deleteBackupSelection(params).promise().toFuture
+    @inline def deleteBackupVaultAccessPolicyFuture(params: DeleteBackupVaultAccessPolicyInput): Future[js.Object] = service.deleteBackupVaultAccessPolicy(params).promise().toFuture
+    @inline def deleteBackupVaultFuture(params: DeleteBackupVaultInput): Future[js.Object] = service.deleteBackupVault(params).promise().toFuture
+    @inline def deleteBackupVaultNotificationsFuture(params: DeleteBackupVaultNotificationsInput): Future[js.Object] = service.deleteBackupVaultNotifications(params).promise().toFuture
+    @inline def deleteRecoveryPointFuture(params: DeleteRecoveryPointInput): Future[js.Object] = service.deleteRecoveryPoint(params).promise().toFuture
+    @inline def describeBackupJobFuture(params: DescribeBackupJobInput): Future[DescribeBackupJobOutput] = service.describeBackupJob(params).promise().toFuture
+    @inline def describeBackupVaultFuture(params: DescribeBackupVaultInput): Future[DescribeBackupVaultOutput] = service.describeBackupVault(params).promise().toFuture
+    @inline def describeCopyJobFuture(params: DescribeCopyJobInput): Future[DescribeCopyJobOutput] = service.describeCopyJob(params).promise().toFuture
+    @inline def describeProtectedResourceFuture(params: DescribeProtectedResourceInput): Future[DescribeProtectedResourceOutput] = service.describeProtectedResource(params).promise().toFuture
+    @inline def describeRecoveryPointFuture(params: DescribeRecoveryPointInput): Future[DescribeRecoveryPointOutput] = service.describeRecoveryPoint(params).promise().toFuture
+    @inline def describeRegionSettingsFuture(params: DescribeRegionSettingsInput): Future[DescribeRegionSettingsOutput] = service.describeRegionSettings(params).promise().toFuture
+    @inline def describeRestoreJobFuture(params: DescribeRestoreJobInput): Future[DescribeRestoreJobOutput] = service.describeRestoreJob(params).promise().toFuture
+    @inline def exportBackupPlanTemplateFuture(params: ExportBackupPlanTemplateInput): Future[ExportBackupPlanTemplateOutput] = service.exportBackupPlanTemplate(params).promise().toFuture
+    @inline def getBackupPlanFromJSONFuture(params: GetBackupPlanFromJSONInput): Future[GetBackupPlanFromJSONOutput] = service.getBackupPlanFromJSON(params).promise().toFuture
+    @inline def getBackupPlanFromTemplateFuture(params: GetBackupPlanFromTemplateInput): Future[GetBackupPlanFromTemplateOutput] = service.getBackupPlanFromTemplate(params).promise().toFuture
+    @inline def getBackupPlanFuture(params: GetBackupPlanInput): Future[GetBackupPlanOutput] = service.getBackupPlan(params).promise().toFuture
+    @inline def getBackupSelectionFuture(params: GetBackupSelectionInput): Future[GetBackupSelectionOutput] = service.getBackupSelection(params).promise().toFuture
+    @inline def getBackupVaultAccessPolicyFuture(params: GetBackupVaultAccessPolicyInput): Future[GetBackupVaultAccessPolicyOutput] = service.getBackupVaultAccessPolicy(params).promise().toFuture
+    @inline def getBackupVaultNotificationsFuture(params: GetBackupVaultNotificationsInput): Future[GetBackupVaultNotificationsOutput] = service.getBackupVaultNotifications(params).promise().toFuture
+    @inline def getRecoveryPointRestoreMetadataFuture(params: GetRecoveryPointRestoreMetadataInput): Future[GetRecoveryPointRestoreMetadataOutput] = service.getRecoveryPointRestoreMetadata(params).promise().toFuture
+    @inline def getSupportedResourceTypesFuture(): Future[GetSupportedResourceTypesOutput] = service.getSupportedResourceTypes().promise().toFuture
+    @inline def listBackupJobsFuture(params: ListBackupJobsInput): Future[ListBackupJobsOutput] = service.listBackupJobs(params).promise().toFuture
+    @inline def listBackupPlanTemplatesFuture(params: ListBackupPlanTemplatesInput): Future[ListBackupPlanTemplatesOutput] = service.listBackupPlanTemplates(params).promise().toFuture
+    @inline def listBackupPlanVersionsFuture(params: ListBackupPlanVersionsInput): Future[ListBackupPlanVersionsOutput] = service.listBackupPlanVersions(params).promise().toFuture
+    @inline def listBackupPlansFuture(params: ListBackupPlansInput): Future[ListBackupPlansOutput] = service.listBackupPlans(params).promise().toFuture
+    @inline def listBackupSelectionsFuture(params: ListBackupSelectionsInput): Future[ListBackupSelectionsOutput] = service.listBackupSelections(params).promise().toFuture
+    @inline def listBackupVaultsFuture(params: ListBackupVaultsInput): Future[ListBackupVaultsOutput] = service.listBackupVaults(params).promise().toFuture
+    @inline def listCopyJobsFuture(params: ListCopyJobsInput): Future[ListCopyJobsOutput] = service.listCopyJobs(params).promise().toFuture
+    @inline def listProtectedResourcesFuture(params: ListProtectedResourcesInput): Future[ListProtectedResourcesOutput] = service.listProtectedResources(params).promise().toFuture
+    @inline def listRecoveryPointsByBackupVaultFuture(params: ListRecoveryPointsByBackupVaultInput): Future[ListRecoveryPointsByBackupVaultOutput] = service.listRecoveryPointsByBackupVault(params).promise().toFuture
+    @inline def listRecoveryPointsByResourceFuture(params: ListRecoveryPointsByResourceInput): Future[ListRecoveryPointsByResourceOutput] = service.listRecoveryPointsByResource(params).promise().toFuture
+    @inline def listRestoreJobsFuture(params: ListRestoreJobsInput): Future[ListRestoreJobsOutput] = service.listRestoreJobs(params).promise().toFuture
+    @inline def listTagsFuture(params: ListTagsInput): Future[ListTagsOutput] = service.listTags(params).promise().toFuture
+    @inline def putBackupVaultAccessPolicyFuture(params: PutBackupVaultAccessPolicyInput): Future[js.Object] = service.putBackupVaultAccessPolicy(params).promise().toFuture
+    @inline def putBackupVaultNotificationsFuture(params: PutBackupVaultNotificationsInput): Future[js.Object] = service.putBackupVaultNotifications(params).promise().toFuture
+    @inline def startBackupJobFuture(params: StartBackupJobInput): Future[StartBackupJobOutput] = service.startBackupJob(params).promise().toFuture
+    @inline def startCopyJobFuture(params: StartCopyJobInput): Future[StartCopyJobOutput] = service.startCopyJob(params).promise().toFuture
+    @inline def startRestoreJobFuture(params: StartRestoreJobInput): Future[StartRestoreJobOutput] = service.startRestoreJob(params).promise().toFuture
+    @inline def stopBackupJobFuture(params: StopBackupJobInput): Future[js.Object] = service.stopBackupJob(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceInput): Future[js.Object] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceInput): Future[js.Object] = service.untagResource(params).promise().toFuture
+    @inline def updateBackupPlanFuture(params: UpdateBackupPlanInput): Future[UpdateBackupPlanOutput] = service.updateBackupPlan(params).promise().toFuture
+    @inline def updateRecoveryPointLifecycleFuture(params: UpdateRecoveryPointLifecycleInput): Future[UpdateRecoveryPointLifecycleOutput] = service.updateRecoveryPointLifecycle(params).promise().toFuture
+    @inline def updateRegionSettingsFuture(params: UpdateRegionSettingsInput): Future[js.Object] = service.updateRegionSettings(params).promise().toFuture
   }
 }
 
@@ -185,42 +122,29 @@ package backup {
     def describeBackupJob(params: DescribeBackupJobInput): Request[DescribeBackupJobOutput] = js.native
     def describeBackupVault(params: DescribeBackupVaultInput): Request[DescribeBackupVaultOutput] = js.native
     def describeCopyJob(params: DescribeCopyJobInput): Request[DescribeCopyJobOutput] = js.native
-    def describeProtectedResource(params: DescribeProtectedResourceInput): Request[DescribeProtectedResourceOutput] =
-      js.native
+    def describeProtectedResource(params: DescribeProtectedResourceInput): Request[DescribeProtectedResourceOutput] = js.native
     def describeRecoveryPoint(params: DescribeRecoveryPointInput): Request[DescribeRecoveryPointOutput] = js.native
     def describeRegionSettings(params: DescribeRegionSettingsInput): Request[DescribeRegionSettingsOutput] = js.native
     def describeRestoreJob(params: DescribeRestoreJobInput): Request[DescribeRestoreJobOutput] = js.native
-    def exportBackupPlanTemplate(params: ExportBackupPlanTemplateInput): Request[ExportBackupPlanTemplateOutput] =
-      js.native
+    def exportBackupPlanTemplate(params: ExportBackupPlanTemplateInput): Request[ExportBackupPlanTemplateOutput] = js.native
     def getBackupPlan(params: GetBackupPlanInput): Request[GetBackupPlanOutput] = js.native
     def getBackupPlanFromJSON(params: GetBackupPlanFromJSONInput): Request[GetBackupPlanFromJSONOutput] = js.native
-    def getBackupPlanFromTemplate(params: GetBackupPlanFromTemplateInput): Request[GetBackupPlanFromTemplateOutput] =
-      js.native
+    def getBackupPlanFromTemplate(params: GetBackupPlanFromTemplateInput): Request[GetBackupPlanFromTemplateOutput] = js.native
     def getBackupSelection(params: GetBackupSelectionInput): Request[GetBackupSelectionOutput] = js.native
-    def getBackupVaultAccessPolicy(params: GetBackupVaultAccessPolicyInput): Request[GetBackupVaultAccessPolicyOutput] =
-      js.native
-    def getBackupVaultNotifications(
-        params: GetBackupVaultNotificationsInput
-    ): Request[GetBackupVaultNotificationsOutput] = js.native
-    def getRecoveryPointRestoreMetadata(
-        params: GetRecoveryPointRestoreMetadataInput
-    ): Request[GetRecoveryPointRestoreMetadataOutput] = js.native
+    def getBackupVaultAccessPolicy(params: GetBackupVaultAccessPolicyInput): Request[GetBackupVaultAccessPolicyOutput] = js.native
+    def getBackupVaultNotifications(params: GetBackupVaultNotificationsInput): Request[GetBackupVaultNotificationsOutput] = js.native
+    def getRecoveryPointRestoreMetadata(params: GetRecoveryPointRestoreMetadataInput): Request[GetRecoveryPointRestoreMetadataOutput] = js.native
     def getSupportedResourceTypes(): Request[GetSupportedResourceTypesOutput] = js.native
     def listBackupJobs(params: ListBackupJobsInput): Request[ListBackupJobsOutput] = js.native
-    def listBackupPlanTemplates(params: ListBackupPlanTemplatesInput): Request[ListBackupPlanTemplatesOutput] =
-      js.native
+    def listBackupPlanTemplates(params: ListBackupPlanTemplatesInput): Request[ListBackupPlanTemplatesOutput] = js.native
     def listBackupPlanVersions(params: ListBackupPlanVersionsInput): Request[ListBackupPlanVersionsOutput] = js.native
     def listBackupPlans(params: ListBackupPlansInput): Request[ListBackupPlansOutput] = js.native
     def listBackupSelections(params: ListBackupSelectionsInput): Request[ListBackupSelectionsOutput] = js.native
     def listBackupVaults(params: ListBackupVaultsInput): Request[ListBackupVaultsOutput] = js.native
     def listCopyJobs(params: ListCopyJobsInput): Request[ListCopyJobsOutput] = js.native
     def listProtectedResources(params: ListProtectedResourcesInput): Request[ListProtectedResourcesOutput] = js.native
-    def listRecoveryPointsByBackupVault(
-        params: ListRecoveryPointsByBackupVaultInput
-    ): Request[ListRecoveryPointsByBackupVaultOutput] = js.native
-    def listRecoveryPointsByResource(
-        params: ListRecoveryPointsByResourceInput
-    ): Request[ListRecoveryPointsByResourceOutput] = js.native
+    def listRecoveryPointsByBackupVault(params: ListRecoveryPointsByBackupVaultInput): Request[ListRecoveryPointsByBackupVaultOutput] = js.native
+    def listRecoveryPointsByResource(params: ListRecoveryPointsByResourceInput): Request[ListRecoveryPointsByResourceOutput] = js.native
     def listRestoreJobs(params: ListRestoreJobsInput): Request[ListRestoreJobsOutput] = js.native
     def listTags(params: ListTagsInput): Request[ListTagsOutput] = js.native
     def putBackupVaultAccessPolicy(params: PutBackupVaultAccessPolicyInput): Request[js.Object] = js.native
@@ -232,9 +156,7 @@ package backup {
     def tagResource(params: TagResourceInput): Request[js.Object] = js.native
     def untagResource(params: UntagResourceInput): Request[js.Object] = js.native
     def updateBackupPlan(params: UpdateBackupPlanInput): Request[UpdateBackupPlanOutput] = js.native
-    def updateRecoveryPointLifecycle(
-        params: UpdateRecoveryPointLifecycleInput
-    ): Request[UpdateRecoveryPointLifecycleOutput] = js.native
+    def updateRecoveryPointLifecycle(params: UpdateRecoveryPointLifecycleInput): Request[UpdateRecoveryPointLifecycleOutput] = js.native
     def updateRegionSettings(params: UpdateRegionSettingsInput): Request[js.Object] = js.native
   }
 
@@ -603,25 +525,23 @@ package backup {
     val BACKUP_PLAN_CREATED = "BACKUP_PLAN_CREATED".asInstanceOf[BackupVaultEvent]
     val BACKUP_PLAN_MODIFIED = "BACKUP_PLAN_MODIFIED".asInstanceOf[BackupVaultEvent]
 
-    val values = js.Object.freeze(
-      js.Array(
-        BACKUP_JOB_STARTED,
-        BACKUP_JOB_COMPLETED,
-        BACKUP_JOB_SUCCESSFUL,
-        BACKUP_JOB_FAILED,
-        BACKUP_JOB_EXPIRED,
-        RESTORE_JOB_STARTED,
-        RESTORE_JOB_COMPLETED,
-        RESTORE_JOB_SUCCESSFUL,
-        RESTORE_JOB_FAILED,
-        COPY_JOB_STARTED,
-        COPY_JOB_SUCCESSFUL,
-        COPY_JOB_FAILED,
-        RECOVERY_POINT_MODIFIED,
-        BACKUP_PLAN_CREATED,
-        BACKUP_PLAN_MODIFIED
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      BACKUP_JOB_STARTED,
+      BACKUP_JOB_COMPLETED,
+      BACKUP_JOB_SUCCESSFUL,
+      BACKUP_JOB_FAILED,
+      BACKUP_JOB_EXPIRED,
+      RESTORE_JOB_STARTED,
+      RESTORE_JOB_COMPLETED,
+      RESTORE_JOB_SUCCESSFUL,
+      RESTORE_JOB_FAILED,
+      COPY_JOB_STARTED,
+      COPY_JOB_SUCCESSFUL,
+      COPY_JOB_FAILED,
+      RECOVERY_POINT_MODIFIED,
+      BACKUP_PLAN_CREATED,
+      BACKUP_PLAN_MODIFIED
+    ))
   }
 
   /**
@@ -789,12 +709,8 @@ package backup {
       CopyJobId.foreach(__v => __obj.updateDynamic("CopyJobId")(__v.asInstanceOf[js.Any]))
       CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      DestinationBackupVaultArn.foreach(__v =>
-        __obj.updateDynamic("DestinationBackupVaultArn")(__v.asInstanceOf[js.Any])
-      )
-      DestinationRecoveryPointArn.foreach(__v =>
-        __obj.updateDynamic("DestinationRecoveryPointArn")(__v.asInstanceOf[js.Any])
-      )
+      DestinationBackupVaultArn.foreach(__v => __obj.updateDynamic("DestinationBackupVaultArn")(__v.asInstanceOf[js.Any]))
+      DestinationRecoveryPointArn.foreach(__v => __obj.updateDynamic("DestinationRecoveryPointArn")(__v.asInstanceOf[js.Any]))
       IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
       ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
@@ -1417,9 +1333,7 @@ package backup {
         ResourceTypeOptInPreference: js.UndefOr[ResourceTypeOptInPreference] = js.undefined
     ): DescribeRegionSettingsOutput = {
       val __obj = js.Dynamic.literal()
-      ResourceTypeOptInPreference.foreach(__v =>
-        __obj.updateDynamic("ResourceTypeOptInPreference")(__v.asInstanceOf[js.Any])
-      )
+      ResourceTypeOptInPreference.foreach(__v => __obj.updateDynamic("ResourceTypeOptInPreference")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRegionSettingsOutput]
     }
   }
@@ -1482,9 +1396,7 @@ package backup {
       CompletionDate.foreach(__v => __obj.updateDynamic("CompletionDate")(__v.asInstanceOf[js.Any]))
       CreatedResourceArn.foreach(__v => __obj.updateDynamic("CreatedResourceArn")(__v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      ExpectedCompletionTimeMinutes.foreach(__v =>
-        __obj.updateDynamic("ExpectedCompletionTimeMinutes")(__v.asInstanceOf[js.Any])
-      )
+      ExpectedCompletionTimeMinutes.foreach(__v => __obj.updateDynamic("ExpectedCompletionTimeMinutes")(__v.asInstanceOf[js.Any]))
       IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
       PercentDone.foreach(__v => __obj.updateDynamic("PercentDone")(__v.asInstanceOf[js.Any]))
       RecoveryPointArn.foreach(__v => __obj.updateDynamic("RecoveryPointArn")(__v.asInstanceOf[js.Any]))
@@ -1865,9 +1777,7 @@ package backup {
     ): Lifecycle = {
       val __obj = js.Dynamic.literal()
       DeleteAfterDays.foreach(__v => __obj.updateDynamic("DeleteAfterDays")(__v.asInstanceOf[js.Any]))
-      MoveToColdStorageAfterDays.foreach(__v =>
-        __obj.updateDynamic("MoveToColdStorageAfterDays")(__v.asInstanceOf[js.Any])
-      )
+      MoveToColdStorageAfterDays.foreach(__v => __obj.updateDynamic("MoveToColdStorageAfterDays")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Lifecycle]
     }
   }
@@ -2687,9 +2597,7 @@ package backup {
       CompletionDate.foreach(__v => __obj.updateDynamic("CompletionDate")(__v.asInstanceOf[js.Any]))
       CreatedResourceArn.foreach(__v => __obj.updateDynamic("CreatedResourceArn")(__v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      ExpectedCompletionTimeMinutes.foreach(__v =>
-        __obj.updateDynamic("ExpectedCompletionTimeMinutes")(__v.asInstanceOf[js.Any])
-      )
+      ExpectedCompletionTimeMinutes.foreach(__v => __obj.updateDynamic("ExpectedCompletionTimeMinutes")(__v.asInstanceOf[js.Any]))
       IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
       PercentDone.foreach(__v => __obj.updateDynamic("PercentDone")(__v.asInstanceOf[js.Any]))
       RecoveryPointArn.foreach(__v => __obj.updateDynamic("RecoveryPointArn")(__v.asInstanceOf[js.Any]))
@@ -3036,9 +2944,7 @@ package backup {
         ResourceTypeOptInPreference: js.UndefOr[ResourceTypeOptInPreference] = js.undefined
     ): UpdateRegionSettingsInput = {
       val __obj = js.Dynamic.literal()
-      ResourceTypeOptInPreference.foreach(__v =>
-        __obj.updateDynamic("ResourceTypeOptInPreference")(__v.asInstanceOf[js.Any])
-      )
+      ResourceTypeOptInPreference.foreach(__v => __obj.updateDynamic("ResourceTypeOptInPreference")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRegionSettingsInput]
     }
   }

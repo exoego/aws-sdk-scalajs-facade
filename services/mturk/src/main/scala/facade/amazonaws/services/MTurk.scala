@@ -41,106 +41,45 @@ package object mturk {
 
   implicit final class MTurkOps(private val service: MTurk) extends AnyVal {
 
-    @inline def acceptQualificationRequestFuture(
-        params: AcceptQualificationRequestRequest
-    ): Future[AcceptQualificationRequestResponse] = service.acceptQualificationRequest(params).promise().toFuture
-    @inline def approveAssignmentFuture(params: ApproveAssignmentRequest): Future[ApproveAssignmentResponse] =
-      service.approveAssignment(params).promise().toFuture
-    @inline def associateQualificationWithWorkerFuture(
-        params: AssociateQualificationWithWorkerRequest
-    ): Future[AssociateQualificationWithWorkerResponse] =
-      service.associateQualificationWithWorker(params).promise().toFuture
-    @inline def createAdditionalAssignmentsForHITFuture(
-        params: CreateAdditionalAssignmentsForHITRequest
-    ): Future[CreateAdditionalAssignmentsForHITResponse] =
-      service.createAdditionalAssignmentsForHIT(params).promise().toFuture
-    @inline def createHITFuture(params: CreateHITRequest): Future[CreateHITResponse] =
-      service.createHIT(params).promise().toFuture
-    @inline def createHITTypeFuture(params: CreateHITTypeRequest): Future[CreateHITTypeResponse] =
-      service.createHITType(params).promise().toFuture
-    @inline def createHITWithHITTypeFuture(params: CreateHITWithHITTypeRequest): Future[CreateHITWithHITTypeResponse] =
-      service.createHITWithHITType(params).promise().toFuture
-    @inline def createQualificationTypeFuture(
-        params: CreateQualificationTypeRequest
-    ): Future[CreateQualificationTypeResponse] = service.createQualificationType(params).promise().toFuture
-    @inline def createWorkerBlockFuture(params: CreateWorkerBlockRequest): Future[CreateWorkerBlockResponse] =
-      service.createWorkerBlock(params).promise().toFuture
-    @inline def deleteHITFuture(params: DeleteHITRequest): Future[DeleteHITResponse] =
-      service.deleteHIT(params).promise().toFuture
-    @inline def deleteQualificationTypeFuture(
-        params: DeleteQualificationTypeRequest
-    ): Future[DeleteQualificationTypeResponse] = service.deleteQualificationType(params).promise().toFuture
-    @inline def deleteWorkerBlockFuture(params: DeleteWorkerBlockRequest): Future[DeleteWorkerBlockResponse] =
-      service.deleteWorkerBlock(params).promise().toFuture
-    @inline def disassociateQualificationFromWorkerFuture(
-        params: DisassociateQualificationFromWorkerRequest
-    ): Future[DisassociateQualificationFromWorkerResponse] =
-      service.disassociateQualificationFromWorker(params).promise().toFuture
-    @inline def getAccountBalanceFuture(params: GetAccountBalanceRequest): Future[GetAccountBalanceResponse] =
-      service.getAccountBalance(params).promise().toFuture
-    @inline def getAssignmentFuture(params: GetAssignmentRequest): Future[GetAssignmentResponse] =
-      service.getAssignment(params).promise().toFuture
-    @inline def getFileUploadURLFuture(params: GetFileUploadURLRequest): Future[GetFileUploadURLResponse] =
-      service.getFileUploadURL(params).promise().toFuture
+    @inline def acceptQualificationRequestFuture(params: AcceptQualificationRequestRequest): Future[AcceptQualificationRequestResponse] = service.acceptQualificationRequest(params).promise().toFuture
+    @inline def approveAssignmentFuture(params: ApproveAssignmentRequest): Future[ApproveAssignmentResponse] = service.approveAssignment(params).promise().toFuture
+    @inline def associateQualificationWithWorkerFuture(params: AssociateQualificationWithWorkerRequest): Future[AssociateQualificationWithWorkerResponse] = service.associateQualificationWithWorker(params).promise().toFuture
+    @inline def createAdditionalAssignmentsForHITFuture(params: CreateAdditionalAssignmentsForHITRequest): Future[CreateAdditionalAssignmentsForHITResponse] = service.createAdditionalAssignmentsForHIT(params).promise().toFuture
+    @inline def createHITFuture(params: CreateHITRequest): Future[CreateHITResponse] = service.createHIT(params).promise().toFuture
+    @inline def createHITTypeFuture(params: CreateHITTypeRequest): Future[CreateHITTypeResponse] = service.createHITType(params).promise().toFuture
+    @inline def createHITWithHITTypeFuture(params: CreateHITWithHITTypeRequest): Future[CreateHITWithHITTypeResponse] = service.createHITWithHITType(params).promise().toFuture
+    @inline def createQualificationTypeFuture(params: CreateQualificationTypeRequest): Future[CreateQualificationTypeResponse] = service.createQualificationType(params).promise().toFuture
+    @inline def createWorkerBlockFuture(params: CreateWorkerBlockRequest): Future[CreateWorkerBlockResponse] = service.createWorkerBlock(params).promise().toFuture
+    @inline def deleteHITFuture(params: DeleteHITRequest): Future[DeleteHITResponse] = service.deleteHIT(params).promise().toFuture
+    @inline def deleteQualificationTypeFuture(params: DeleteQualificationTypeRequest): Future[DeleteQualificationTypeResponse] = service.deleteQualificationType(params).promise().toFuture
+    @inline def deleteWorkerBlockFuture(params: DeleteWorkerBlockRequest): Future[DeleteWorkerBlockResponse] = service.deleteWorkerBlock(params).promise().toFuture
+    @inline def disassociateQualificationFromWorkerFuture(params: DisassociateQualificationFromWorkerRequest): Future[DisassociateQualificationFromWorkerResponse] = service.disassociateQualificationFromWorker(params).promise().toFuture
+    @inline def getAccountBalanceFuture(params: GetAccountBalanceRequest): Future[GetAccountBalanceResponse] = service.getAccountBalance(params).promise().toFuture
+    @inline def getAssignmentFuture(params: GetAssignmentRequest): Future[GetAssignmentResponse] = service.getAssignment(params).promise().toFuture
+    @inline def getFileUploadURLFuture(params: GetFileUploadURLRequest): Future[GetFileUploadURLResponse] = service.getFileUploadURL(params).promise().toFuture
     @inline def getHITFuture(params: GetHITRequest): Future[GetHITResponse] = service.getHIT(params).promise().toFuture
-    @inline def getQualificationScoreFuture(
-        params: GetQualificationScoreRequest
-    ): Future[GetQualificationScoreResponse] = service.getQualificationScore(params).promise().toFuture
-    @inline def getQualificationTypeFuture(params: GetQualificationTypeRequest): Future[GetQualificationTypeResponse] =
-      service.getQualificationType(params).promise().toFuture
-    @inline def listAssignmentsForHITFuture(
-        params: ListAssignmentsForHITRequest
-    ): Future[ListAssignmentsForHITResponse] = service.listAssignmentsForHIT(params).promise().toFuture
-    @inline def listBonusPaymentsFuture(params: ListBonusPaymentsRequest): Future[ListBonusPaymentsResponse] =
-      service.listBonusPayments(params).promise().toFuture
-    @inline def listHITsForQualificationTypeFuture(
-        params: ListHITsForQualificationTypeRequest
-    ): Future[ListHITsForQualificationTypeResponse] = service.listHITsForQualificationType(params).promise().toFuture
-    @inline def listHITsFuture(params: ListHITsRequest): Future[ListHITsResponse] =
-      service.listHITs(params).promise().toFuture
-    @inline def listQualificationRequestsFuture(
-        params: ListQualificationRequestsRequest
-    ): Future[ListQualificationRequestsResponse] = service.listQualificationRequests(params).promise().toFuture
-    @inline def listQualificationTypesFuture(
-        params: ListQualificationTypesRequest
-    ): Future[ListQualificationTypesResponse] = service.listQualificationTypes(params).promise().toFuture
-    @inline def listReviewPolicyResultsForHITFuture(
-        params: ListReviewPolicyResultsForHITRequest
-    ): Future[ListReviewPolicyResultsForHITResponse] = service.listReviewPolicyResultsForHIT(params).promise().toFuture
-    @inline def listReviewableHITsFuture(params: ListReviewableHITsRequest): Future[ListReviewableHITsResponse] =
-      service.listReviewableHITs(params).promise().toFuture
-    @inline def listWorkerBlocksFuture(params: ListWorkerBlocksRequest): Future[ListWorkerBlocksResponse] =
-      service.listWorkerBlocks(params).promise().toFuture
-    @inline def listWorkersWithQualificationTypeFuture(
-        params: ListWorkersWithQualificationTypeRequest
-    ): Future[ListWorkersWithQualificationTypeResponse] =
-      service.listWorkersWithQualificationType(params).promise().toFuture
-    @inline def notifyWorkersFuture(params: NotifyWorkersRequest): Future[NotifyWorkersResponse] =
-      service.notifyWorkers(params).promise().toFuture
-    @inline def rejectAssignmentFuture(params: RejectAssignmentRequest): Future[RejectAssignmentResponse] =
-      service.rejectAssignment(params).promise().toFuture
-    @inline def rejectQualificationRequestFuture(
-        params: RejectQualificationRequestRequest
-    ): Future[RejectQualificationRequestResponse] = service.rejectQualificationRequest(params).promise().toFuture
-    @inline def sendBonusFuture(params: SendBonusRequest): Future[SendBonusResponse] =
-      service.sendBonus(params).promise().toFuture
-    @inline def sendTestEventNotificationFuture(
-        params: SendTestEventNotificationRequest
-    ): Future[SendTestEventNotificationResponse] = service.sendTestEventNotification(params).promise().toFuture
-    @inline def updateExpirationForHITFuture(
-        params: UpdateExpirationForHITRequest
-    ): Future[UpdateExpirationForHITResponse] = service.updateExpirationForHIT(params).promise().toFuture
-    @inline def updateHITReviewStatusFuture(
-        params: UpdateHITReviewStatusRequest
-    ): Future[UpdateHITReviewStatusResponse] = service.updateHITReviewStatus(params).promise().toFuture
-    @inline def updateHITTypeOfHITFuture(params: UpdateHITTypeOfHITRequest): Future[UpdateHITTypeOfHITResponse] =
-      service.updateHITTypeOfHIT(params).promise().toFuture
-    @inline def updateNotificationSettingsFuture(
-        params: UpdateNotificationSettingsRequest
-    ): Future[UpdateNotificationSettingsResponse] = service.updateNotificationSettings(params).promise().toFuture
-    @inline def updateQualificationTypeFuture(
-        params: UpdateQualificationTypeRequest
-    ): Future[UpdateQualificationTypeResponse] = service.updateQualificationType(params).promise().toFuture
+    @inline def getQualificationScoreFuture(params: GetQualificationScoreRequest): Future[GetQualificationScoreResponse] = service.getQualificationScore(params).promise().toFuture
+    @inline def getQualificationTypeFuture(params: GetQualificationTypeRequest): Future[GetQualificationTypeResponse] = service.getQualificationType(params).promise().toFuture
+    @inline def listAssignmentsForHITFuture(params: ListAssignmentsForHITRequest): Future[ListAssignmentsForHITResponse] = service.listAssignmentsForHIT(params).promise().toFuture
+    @inline def listBonusPaymentsFuture(params: ListBonusPaymentsRequest): Future[ListBonusPaymentsResponse] = service.listBonusPayments(params).promise().toFuture
+    @inline def listHITsForQualificationTypeFuture(params: ListHITsForQualificationTypeRequest): Future[ListHITsForQualificationTypeResponse] = service.listHITsForQualificationType(params).promise().toFuture
+    @inline def listHITsFuture(params: ListHITsRequest): Future[ListHITsResponse] = service.listHITs(params).promise().toFuture
+    @inline def listQualificationRequestsFuture(params: ListQualificationRequestsRequest): Future[ListQualificationRequestsResponse] = service.listQualificationRequests(params).promise().toFuture
+    @inline def listQualificationTypesFuture(params: ListQualificationTypesRequest): Future[ListQualificationTypesResponse] = service.listQualificationTypes(params).promise().toFuture
+    @inline def listReviewPolicyResultsForHITFuture(params: ListReviewPolicyResultsForHITRequest): Future[ListReviewPolicyResultsForHITResponse] = service.listReviewPolicyResultsForHIT(params).promise().toFuture
+    @inline def listReviewableHITsFuture(params: ListReviewableHITsRequest): Future[ListReviewableHITsResponse] = service.listReviewableHITs(params).promise().toFuture
+    @inline def listWorkerBlocksFuture(params: ListWorkerBlocksRequest): Future[ListWorkerBlocksResponse] = service.listWorkerBlocks(params).promise().toFuture
+    @inline def listWorkersWithQualificationTypeFuture(params: ListWorkersWithQualificationTypeRequest): Future[ListWorkersWithQualificationTypeResponse] = service.listWorkersWithQualificationType(params).promise().toFuture
+    @inline def notifyWorkersFuture(params: NotifyWorkersRequest): Future[NotifyWorkersResponse] = service.notifyWorkers(params).promise().toFuture
+    @inline def rejectAssignmentFuture(params: RejectAssignmentRequest): Future[RejectAssignmentResponse] = service.rejectAssignment(params).promise().toFuture
+    @inline def rejectQualificationRequestFuture(params: RejectQualificationRequestRequest): Future[RejectQualificationRequestResponse] = service.rejectQualificationRequest(params).promise().toFuture
+    @inline def sendBonusFuture(params: SendBonusRequest): Future[SendBonusResponse] = service.sendBonus(params).promise().toFuture
+    @inline def sendTestEventNotificationFuture(params: SendTestEventNotificationRequest): Future[SendTestEventNotificationResponse] = service.sendTestEventNotification(params).promise().toFuture
+    @inline def updateExpirationForHITFuture(params: UpdateExpirationForHITRequest): Future[UpdateExpirationForHITResponse] = service.updateExpirationForHIT(params).promise().toFuture
+    @inline def updateHITReviewStatusFuture(params: UpdateHITReviewStatusRequest): Future[UpdateHITReviewStatusResponse] = service.updateHITReviewStatus(params).promise().toFuture
+    @inline def updateHITTypeOfHITFuture(params: UpdateHITTypeOfHITRequest): Future[UpdateHITTypeOfHITResponse] = service.updateHITTypeOfHIT(params).promise().toFuture
+    @inline def updateNotificationSettingsFuture(params: UpdateNotificationSettingsRequest): Future[UpdateNotificationSettingsResponse] = service.updateNotificationSettings(params).promise().toFuture
+    @inline def updateQualificationTypeFuture(params: UpdateQualificationTypeRequest): Future[UpdateQualificationTypeResponse] = service.updateQualificationType(params).promise().toFuture
   }
 }
 
@@ -150,29 +89,19 @@ package mturk {
   class MTurk() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def acceptQualificationRequest(
-        params: AcceptQualificationRequestRequest
-    ): Request[AcceptQualificationRequestResponse] = js.native
+    def acceptQualificationRequest(params: AcceptQualificationRequestRequest): Request[AcceptQualificationRequestResponse] = js.native
     def approveAssignment(params: ApproveAssignmentRequest): Request[ApproveAssignmentResponse] = js.native
-    def associateQualificationWithWorker(
-        params: AssociateQualificationWithWorkerRequest
-    ): Request[AssociateQualificationWithWorkerResponse] = js.native
-    def createAdditionalAssignmentsForHIT(
-        params: CreateAdditionalAssignmentsForHITRequest
-    ): Request[CreateAdditionalAssignmentsForHITResponse] = js.native
+    def associateQualificationWithWorker(params: AssociateQualificationWithWorkerRequest): Request[AssociateQualificationWithWorkerResponse] = js.native
+    def createAdditionalAssignmentsForHIT(params: CreateAdditionalAssignmentsForHITRequest): Request[CreateAdditionalAssignmentsForHITResponse] = js.native
     def createHIT(params: CreateHITRequest): Request[CreateHITResponse] = js.native
     def createHITType(params: CreateHITTypeRequest): Request[CreateHITTypeResponse] = js.native
     def createHITWithHITType(params: CreateHITWithHITTypeRequest): Request[CreateHITWithHITTypeResponse] = js.native
-    def createQualificationType(params: CreateQualificationTypeRequest): Request[CreateQualificationTypeResponse] =
-      js.native
+    def createQualificationType(params: CreateQualificationTypeRequest): Request[CreateQualificationTypeResponse] = js.native
     def createWorkerBlock(params: CreateWorkerBlockRequest): Request[CreateWorkerBlockResponse] = js.native
     def deleteHIT(params: DeleteHITRequest): Request[DeleteHITResponse] = js.native
-    def deleteQualificationType(params: DeleteQualificationTypeRequest): Request[DeleteQualificationTypeResponse] =
-      js.native
+    def deleteQualificationType(params: DeleteQualificationTypeRequest): Request[DeleteQualificationTypeResponse] = js.native
     def deleteWorkerBlock(params: DeleteWorkerBlockRequest): Request[DeleteWorkerBlockResponse] = js.native
-    def disassociateQualificationFromWorker(
-        params: DisassociateQualificationFromWorkerRequest
-    ): Request[DisassociateQualificationFromWorkerResponse] = js.native
+    def disassociateQualificationFromWorker(params: DisassociateQualificationFromWorkerRequest): Request[DisassociateQualificationFromWorkerResponse] = js.native
     def getAccountBalance(params: GetAccountBalanceRequest): Request[GetAccountBalanceResponse] = js.native
     def getAssignment(params: GetAssignmentRequest): Request[GetAssignmentResponse] = js.native
     def getFileUploadURL(params: GetFileUploadURLRequest): Request[GetFileUploadURLResponse] = js.native
@@ -182,40 +111,23 @@ package mturk {
     def listAssignmentsForHIT(params: ListAssignmentsForHITRequest): Request[ListAssignmentsForHITResponse] = js.native
     def listBonusPayments(params: ListBonusPaymentsRequest): Request[ListBonusPaymentsResponse] = js.native
     def listHITs(params: ListHITsRequest): Request[ListHITsResponse] = js.native
-    def listHITsForQualificationType(
-        params: ListHITsForQualificationTypeRequest
-    ): Request[ListHITsForQualificationTypeResponse] = js.native
-    def listQualificationRequests(
-        params: ListQualificationRequestsRequest
-    ): Request[ListQualificationRequestsResponse] = js.native
-    def listQualificationTypes(params: ListQualificationTypesRequest): Request[ListQualificationTypesResponse] =
-      js.native
-    def listReviewPolicyResultsForHIT(
-        params: ListReviewPolicyResultsForHITRequest
-    ): Request[ListReviewPolicyResultsForHITResponse] = js.native
+    def listHITsForQualificationType(params: ListHITsForQualificationTypeRequest): Request[ListHITsForQualificationTypeResponse] = js.native
+    def listQualificationRequests(params: ListQualificationRequestsRequest): Request[ListQualificationRequestsResponse] = js.native
+    def listQualificationTypes(params: ListQualificationTypesRequest): Request[ListQualificationTypesResponse] = js.native
+    def listReviewPolicyResultsForHIT(params: ListReviewPolicyResultsForHITRequest): Request[ListReviewPolicyResultsForHITResponse] = js.native
     def listReviewableHITs(params: ListReviewableHITsRequest): Request[ListReviewableHITsResponse] = js.native
     def listWorkerBlocks(params: ListWorkerBlocksRequest): Request[ListWorkerBlocksResponse] = js.native
-    def listWorkersWithQualificationType(
-        params: ListWorkersWithQualificationTypeRequest
-    ): Request[ListWorkersWithQualificationTypeResponse] = js.native
+    def listWorkersWithQualificationType(params: ListWorkersWithQualificationTypeRequest): Request[ListWorkersWithQualificationTypeResponse] = js.native
     def notifyWorkers(params: NotifyWorkersRequest): Request[NotifyWorkersResponse] = js.native
     def rejectAssignment(params: RejectAssignmentRequest): Request[RejectAssignmentResponse] = js.native
-    def rejectQualificationRequest(
-        params: RejectQualificationRequestRequest
-    ): Request[RejectQualificationRequestResponse] = js.native
+    def rejectQualificationRequest(params: RejectQualificationRequestRequest): Request[RejectQualificationRequestResponse] = js.native
     def sendBonus(params: SendBonusRequest): Request[SendBonusResponse] = js.native
-    def sendTestEventNotification(
-        params: SendTestEventNotificationRequest
-    ): Request[SendTestEventNotificationResponse] = js.native
-    def updateExpirationForHIT(params: UpdateExpirationForHITRequest): Request[UpdateExpirationForHITResponse] =
-      js.native
+    def sendTestEventNotification(params: SendTestEventNotificationRequest): Request[SendTestEventNotificationResponse] = js.native
+    def updateExpirationForHIT(params: UpdateExpirationForHITRequest): Request[UpdateExpirationForHITResponse] = js.native
     def updateHITReviewStatus(params: UpdateHITReviewStatusRequest): Request[UpdateHITReviewStatusResponse] = js.native
     def updateHITTypeOfHIT(params: UpdateHITTypeOfHITRequest): Request[UpdateHITTypeOfHITResponse] = js.native
-    def updateNotificationSettings(
-        params: UpdateNotificationSettingsRequest
-    ): Request[UpdateNotificationSettingsResponse] = js.native
-    def updateQualificationType(params: UpdateQualificationTypeRequest): Request[UpdateQualificationTypeResponse] =
-      js.native
+    def updateNotificationSettings(params: UpdateNotificationSettingsRequest): Request[UpdateNotificationSettingsResponse] = js.native
+    def updateQualificationType(params: UpdateQualificationTypeRequest): Request[UpdateQualificationTypeResponse] = js.native
   }
 
   @js.native
@@ -436,20 +348,7 @@ package mturk {
     val In = "In".asInstanceOf[Comparator]
     val NotIn = "NotIn".asInstanceOf[Comparator]
 
-    val values = js.Object.freeze(
-      js.Array(
-        LessThan,
-        LessThanOrEqualTo,
-        GreaterThan,
-        GreaterThanOrEqualTo,
-        EqualTo,
-        NotEqualTo,
-        Exists,
-        DoesNotExist,
-        In,
-        NotIn
-      )
-    )
+    val values = js.Object.freeze(js.Array(LessThan, LessThanOrEqualTo, GreaterThan, GreaterThanOrEqualTo, EqualTo, NotEqualTo, Exists, DoesNotExist, In, NotIn))
   }
 
   @js.native
@@ -538,17 +437,13 @@ package mturk {
       )
 
       AssignmentReviewPolicy.foreach(__v => __obj.updateDynamic("AssignmentReviewPolicy")(__v.asInstanceOf[js.Any]))
-      AutoApprovalDelayInSeconds.foreach(__v =>
-        __obj.updateDynamic("AutoApprovalDelayInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      AutoApprovalDelayInSeconds.foreach(__v => __obj.updateDynamic("AutoApprovalDelayInSeconds")(__v.asInstanceOf[js.Any]))
       HITLayoutId.foreach(__v => __obj.updateDynamic("HITLayoutId")(__v.asInstanceOf[js.Any]))
       HITLayoutParameters.foreach(__v => __obj.updateDynamic("HITLayoutParameters")(__v.asInstanceOf[js.Any]))
       HITReviewPolicy.foreach(__v => __obj.updateDynamic("HITReviewPolicy")(__v.asInstanceOf[js.Any]))
       Keywords.foreach(__v => __obj.updateDynamic("Keywords")(__v.asInstanceOf[js.Any]))
       MaxAssignments.foreach(__v => __obj.updateDynamic("MaxAssignments")(__v.asInstanceOf[js.Any]))
-      QualificationRequirements.foreach(__v =>
-        __obj.updateDynamic("QualificationRequirements")(__v.asInstanceOf[js.Any])
-      )
+      QualificationRequirements.foreach(__v => __obj.updateDynamic("QualificationRequirements")(__v.asInstanceOf[js.Any]))
       Question.foreach(__v => __obj.updateDynamic("Question")(__v.asInstanceOf[js.Any]))
       RequesterAnnotation.foreach(__v => __obj.updateDynamic("RequesterAnnotation")(__v.asInstanceOf[js.Any]))
       UniqueRequestToken.foreach(__v => __obj.updateDynamic("UniqueRequestToken")(__v.asInstanceOf[js.Any]))
@@ -601,13 +496,9 @@ package mturk {
         "Title" -> Title.asInstanceOf[js.Any]
       )
 
-      AutoApprovalDelayInSeconds.foreach(__v =>
-        __obj.updateDynamic("AutoApprovalDelayInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      AutoApprovalDelayInSeconds.foreach(__v => __obj.updateDynamic("AutoApprovalDelayInSeconds")(__v.asInstanceOf[js.Any]))
       Keywords.foreach(__v => __obj.updateDynamic("Keywords")(__v.asInstanceOf[js.Any]))
-      QualificationRequirements.foreach(__v =>
-        __obj.updateDynamic("QualificationRequirements")(__v.asInstanceOf[js.Any])
-      )
+      QualificationRequirements.foreach(__v => __obj.updateDynamic("QualificationRequirements")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateHITTypeRequest]
     }
   }
@@ -933,22 +824,20 @@ package mturk {
     val HITDisposed = "HITDisposed".asInstanceOf[EventType]
     val Ping = "Ping".asInstanceOf[EventType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        AssignmentAccepted,
-        AssignmentAbandoned,
-        AssignmentReturned,
-        AssignmentSubmitted,
-        AssignmentRejected,
-        AssignmentApproved,
-        HITCreated,
-        HITExpired,
-        HITReviewable,
-        HITExtended,
-        HITDisposed,
-        Ping
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      AssignmentAccepted,
+      AssignmentAbandoned,
+      AssignmentReturned,
+      AssignmentSubmitted,
+      AssignmentRejected,
+      AssignmentApproved,
+      HITCreated,
+      HITExpired,
+      HITReviewable,
+      HITExtended,
+      HITDisposed,
+      Ping
+    ))
   }
 
   @js.native
@@ -1216,12 +1105,8 @@ package mturk {
         Title: js.UndefOr[String] = js.undefined
     ): HIT = {
       val __obj = js.Dynamic.literal()
-      AssignmentDurationInSeconds.foreach(__v =>
-        __obj.updateDynamic("AssignmentDurationInSeconds")(__v.asInstanceOf[js.Any])
-      )
-      AutoApprovalDelayInSeconds.foreach(__v =>
-        __obj.updateDynamic("AutoApprovalDelayInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      AssignmentDurationInSeconds.foreach(__v => __obj.updateDynamic("AssignmentDurationInSeconds")(__v.asInstanceOf[js.Any]))
+      AutoApprovalDelayInSeconds.foreach(__v => __obj.updateDynamic("AutoApprovalDelayInSeconds")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Expiration.foreach(__v => __obj.updateDynamic("Expiration")(__v.asInstanceOf[js.Any]))
@@ -1233,18 +1118,10 @@ package mturk {
       HITTypeId.foreach(__v => __obj.updateDynamic("HITTypeId")(__v.asInstanceOf[js.Any]))
       Keywords.foreach(__v => __obj.updateDynamic("Keywords")(__v.asInstanceOf[js.Any]))
       MaxAssignments.foreach(__v => __obj.updateDynamic("MaxAssignments")(__v.asInstanceOf[js.Any]))
-      NumberOfAssignmentsAvailable.foreach(__v =>
-        __obj.updateDynamic("NumberOfAssignmentsAvailable")(__v.asInstanceOf[js.Any])
-      )
-      NumberOfAssignmentsCompleted.foreach(__v =>
-        __obj.updateDynamic("NumberOfAssignmentsCompleted")(__v.asInstanceOf[js.Any])
-      )
-      NumberOfAssignmentsPending.foreach(__v =>
-        __obj.updateDynamic("NumberOfAssignmentsPending")(__v.asInstanceOf[js.Any])
-      )
-      QualificationRequirements.foreach(__v =>
-        __obj.updateDynamic("QualificationRequirements")(__v.asInstanceOf[js.Any])
-      )
+      NumberOfAssignmentsAvailable.foreach(__v => __obj.updateDynamic("NumberOfAssignmentsAvailable")(__v.asInstanceOf[js.Any]))
+      NumberOfAssignmentsCompleted.foreach(__v => __obj.updateDynamic("NumberOfAssignmentsCompleted")(__v.asInstanceOf[js.Any]))
+      NumberOfAssignmentsPending.foreach(__v => __obj.updateDynamic("NumberOfAssignmentsPending")(__v.asInstanceOf[js.Any]))
+      QualificationRequirements.foreach(__v => __obj.updateDynamic("QualificationRequirements")(__v.asInstanceOf[js.Any]))
       Question.foreach(__v => __obj.updateDynamic("Question")(__v.asInstanceOf[js.Any]))
       RequesterAnnotation.foreach(__v => __obj.updateDynamic("RequesterAnnotation")(__v.asInstanceOf[js.Any]))
       Reward.foreach(__v => __obj.updateDynamic("Reward")(__v.asInstanceOf[js.Any]))
@@ -1882,9 +1759,7 @@ package mturk {
     ): NotifyWorkersFailureStatus = {
       val __obj = js.Dynamic.literal()
       NotifyWorkersFailureCode.foreach(__v => __obj.updateDynamic("NotifyWorkersFailureCode")(__v.asInstanceOf[js.Any]))
-      NotifyWorkersFailureMessage.foreach(__v =>
-        __obj.updateDynamic("NotifyWorkersFailureMessage")(__v.asInstanceOf[js.Any])
-      )
+      NotifyWorkersFailureMessage.foreach(__v => __obj.updateDynamic("NotifyWorkersFailureMessage")(__v.asInstanceOf[js.Any]))
       WorkerId.foreach(__v => __obj.updateDynamic("WorkerId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NotifyWorkersFailureStatus]
     }
@@ -1925,9 +1800,7 @@ package mturk {
         NotifyWorkersFailureStatuses: js.UndefOr[NotifyWorkersFailureStatusList] = js.undefined
     ): NotifyWorkersResponse = {
       val __obj = js.Dynamic.literal()
-      NotifyWorkersFailureStatuses.foreach(__v =>
-        __obj.updateDynamic("NotifyWorkersFailureStatuses")(__v.asInstanceOf[js.Any])
-      )
+      NotifyWorkersFailureStatuses.foreach(__v => __obj.updateDynamic("NotifyWorkersFailureStatuses")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NotifyWorkersResponse]
     }
   }

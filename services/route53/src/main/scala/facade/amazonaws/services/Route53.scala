@@ -114,157 +114,63 @@ package object route53 {
 
   implicit final class Route53Ops(private val service: Route53) extends AnyVal {
 
-    @inline def associateVPCWithHostedZoneFuture(
-        params: AssociateVPCWithHostedZoneRequest
-    ): Future[AssociateVPCWithHostedZoneResponse] = service.associateVPCWithHostedZone(params).promise().toFuture
-    @inline def changeResourceRecordSetsFuture(
-        params: ChangeResourceRecordSetsRequest
-    ): Future[ChangeResourceRecordSetsResponse] = service.changeResourceRecordSets(params).promise().toFuture
-    @inline def changeTagsForResourceFuture(
-        params: ChangeTagsForResourceRequest
-    ): Future[ChangeTagsForResourceResponse] = service.changeTagsForResource(params).promise().toFuture
-    @inline def createHealthCheckFuture(params: CreateHealthCheckRequest): Future[CreateHealthCheckResponse] =
-      service.createHealthCheck(params).promise().toFuture
-    @inline def createHostedZoneFuture(params: CreateHostedZoneRequest): Future[CreateHostedZoneResponse] =
-      service.createHostedZone(params).promise().toFuture
-    @inline def createQueryLoggingConfigFuture(
-        params: CreateQueryLoggingConfigRequest
-    ): Future[CreateQueryLoggingConfigResponse] = service.createQueryLoggingConfig(params).promise().toFuture
-    @inline def createReusableDelegationSetFuture(
-        params: CreateReusableDelegationSetRequest
-    ): Future[CreateReusableDelegationSetResponse] = service.createReusableDelegationSet(params).promise().toFuture
-    @inline def createTrafficPolicyFuture(params: CreateTrafficPolicyRequest): Future[CreateTrafficPolicyResponse] =
-      service.createTrafficPolicy(params).promise().toFuture
-    @inline def createTrafficPolicyInstanceFuture(
-        params: CreateTrafficPolicyInstanceRequest
-    ): Future[CreateTrafficPolicyInstanceResponse] = service.createTrafficPolicyInstance(params).promise().toFuture
-    @inline def createTrafficPolicyVersionFuture(
-        params: CreateTrafficPolicyVersionRequest
-    ): Future[CreateTrafficPolicyVersionResponse] = service.createTrafficPolicyVersion(params).promise().toFuture
-    @inline def createVPCAssociationAuthorizationFuture(
-        params: CreateVPCAssociationAuthorizationRequest
-    ): Future[CreateVPCAssociationAuthorizationResponse] =
-      service.createVPCAssociationAuthorization(params).promise().toFuture
-    @inline def deleteHealthCheckFuture(params: DeleteHealthCheckRequest): Future[DeleteHealthCheckResponse] =
-      service.deleteHealthCheck(params).promise().toFuture
-    @inline def deleteHostedZoneFuture(params: DeleteHostedZoneRequest): Future[DeleteHostedZoneResponse] =
-      service.deleteHostedZone(params).promise().toFuture
-    @inline def deleteQueryLoggingConfigFuture(
-        params: DeleteQueryLoggingConfigRequest
-    ): Future[DeleteQueryLoggingConfigResponse] = service.deleteQueryLoggingConfig(params).promise().toFuture
-    @inline def deleteReusableDelegationSetFuture(
-        params: DeleteReusableDelegationSetRequest
-    ): Future[DeleteReusableDelegationSetResponse] = service.deleteReusableDelegationSet(params).promise().toFuture
-    @inline def deleteTrafficPolicyFuture(params: DeleteTrafficPolicyRequest): Future[DeleteTrafficPolicyResponse] =
-      service.deleteTrafficPolicy(params).promise().toFuture
-    @inline def deleteTrafficPolicyInstanceFuture(
-        params: DeleteTrafficPolicyInstanceRequest
-    ): Future[DeleteTrafficPolicyInstanceResponse] = service.deleteTrafficPolicyInstance(params).promise().toFuture
-    @inline def deleteVPCAssociationAuthorizationFuture(
-        params: DeleteVPCAssociationAuthorizationRequest
-    ): Future[DeleteVPCAssociationAuthorizationResponse] =
-      service.deleteVPCAssociationAuthorization(params).promise().toFuture
-    @inline def disassociateVPCFromHostedZoneFuture(
-        params: DisassociateVPCFromHostedZoneRequest
-    ): Future[DisassociateVPCFromHostedZoneResponse] = service.disassociateVPCFromHostedZone(params).promise().toFuture
-    @inline def getAccountLimitFuture(params: GetAccountLimitRequest): Future[GetAccountLimitResponse] =
-      service.getAccountLimit(params).promise().toFuture
-    @inline def getChangeFuture(params: GetChangeRequest): Future[GetChangeResponse] =
-      service.getChange(params).promise().toFuture
-    @inline def getCheckerIpRangesFuture(params: GetCheckerIpRangesRequest): Future[GetCheckerIpRangesResponse] =
-      service.getCheckerIpRanges(params).promise().toFuture
-    @inline def getGeoLocationFuture(params: GetGeoLocationRequest): Future[GetGeoLocationResponse] =
-      service.getGeoLocation(params).promise().toFuture
-    @inline def getHealthCheckCountFuture(params: GetHealthCheckCountRequest): Future[GetHealthCheckCountResponse] =
-      service.getHealthCheckCount(params).promise().toFuture
-    @inline def getHealthCheckFuture(params: GetHealthCheckRequest): Future[GetHealthCheckResponse] =
-      service.getHealthCheck(params).promise().toFuture
-    @inline def getHealthCheckLastFailureReasonFuture(
-        params: GetHealthCheckLastFailureReasonRequest
-    ): Future[GetHealthCheckLastFailureReasonResponse] =
-      service.getHealthCheckLastFailureReason(params).promise().toFuture
-    @inline def getHealthCheckStatusFuture(params: GetHealthCheckStatusRequest): Future[GetHealthCheckStatusResponse] =
-      service.getHealthCheckStatus(params).promise().toFuture
-    @inline def getHostedZoneCountFuture(params: GetHostedZoneCountRequest): Future[GetHostedZoneCountResponse] =
-      service.getHostedZoneCount(params).promise().toFuture
-    @inline def getHostedZoneFuture(params: GetHostedZoneRequest): Future[GetHostedZoneResponse] =
-      service.getHostedZone(params).promise().toFuture
-    @inline def getHostedZoneLimitFuture(params: GetHostedZoneLimitRequest): Future[GetHostedZoneLimitResponse] =
-      service.getHostedZoneLimit(params).promise().toFuture
-    @inline def getQueryLoggingConfigFuture(
-        params: GetQueryLoggingConfigRequest
-    ): Future[GetQueryLoggingConfigResponse] = service.getQueryLoggingConfig(params).promise().toFuture
-    @inline def getReusableDelegationSetFuture(
-        params: GetReusableDelegationSetRequest
-    ): Future[GetReusableDelegationSetResponse] = service.getReusableDelegationSet(params).promise().toFuture
-    @inline def getReusableDelegationSetLimitFuture(
-        params: GetReusableDelegationSetLimitRequest
-    ): Future[GetReusableDelegationSetLimitResponse] = service.getReusableDelegationSetLimit(params).promise().toFuture
-    @inline def getTrafficPolicyFuture(params: GetTrafficPolicyRequest): Future[GetTrafficPolicyResponse] =
-      service.getTrafficPolicy(params).promise().toFuture
-    @inline def getTrafficPolicyInstanceCountFuture(
-        params: GetTrafficPolicyInstanceCountRequest
-    ): Future[GetTrafficPolicyInstanceCountResponse] = service.getTrafficPolicyInstanceCount(params).promise().toFuture
-    @inline def getTrafficPolicyInstanceFuture(
-        params: GetTrafficPolicyInstanceRequest
-    ): Future[GetTrafficPolicyInstanceResponse] = service.getTrafficPolicyInstance(params).promise().toFuture
-    @inline def listGeoLocationsFuture(params: ListGeoLocationsRequest): Future[ListGeoLocationsResponse] =
-      service.listGeoLocations(params).promise().toFuture
-    @inline def listHealthChecksFuture(params: ListHealthChecksRequest): Future[ListHealthChecksResponse] =
-      service.listHealthChecks(params).promise().toFuture
-    @inline def listHostedZonesByNameFuture(
-        params: ListHostedZonesByNameRequest
-    ): Future[ListHostedZonesByNameResponse] = service.listHostedZonesByName(params).promise().toFuture
-    @inline def listHostedZonesByVPCFuture(params: ListHostedZonesByVPCRequest): Future[ListHostedZonesByVPCResponse] =
-      service.listHostedZonesByVPC(params).promise().toFuture
-    @inline def listHostedZonesFuture(params: ListHostedZonesRequest): Future[ListHostedZonesResponse] =
-      service.listHostedZones(params).promise().toFuture
-    @inline def listQueryLoggingConfigsFuture(
-        params: ListQueryLoggingConfigsRequest
-    ): Future[ListQueryLoggingConfigsResponse] = service.listQueryLoggingConfigs(params).promise().toFuture
-    @inline def listResourceRecordSetsFuture(
-        params: ListResourceRecordSetsRequest
-    ): Future[ListResourceRecordSetsResponse] = service.listResourceRecordSets(params).promise().toFuture
-    @inline def listReusableDelegationSetsFuture(
-        params: ListReusableDelegationSetsRequest
-    ): Future[ListReusableDelegationSetsResponse] = service.listReusableDelegationSets(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listTagsForResourcesFuture(params: ListTagsForResourcesRequest): Future[ListTagsForResourcesResponse] =
-      service.listTagsForResources(params).promise().toFuture
-    @inline def listTrafficPoliciesFuture(params: ListTrafficPoliciesRequest): Future[ListTrafficPoliciesResponse] =
-      service.listTrafficPolicies(params).promise().toFuture
-    @inline def listTrafficPolicyInstancesByHostedZoneFuture(
-        params: ListTrafficPolicyInstancesByHostedZoneRequest
-    ): Future[ListTrafficPolicyInstancesByHostedZoneResponse] =
-      service.listTrafficPolicyInstancesByHostedZone(params).promise().toFuture
-    @inline def listTrafficPolicyInstancesByPolicyFuture(
-        params: ListTrafficPolicyInstancesByPolicyRequest
-    ): Future[ListTrafficPolicyInstancesByPolicyResponse] =
-      service.listTrafficPolicyInstancesByPolicy(params).promise().toFuture
-    @inline def listTrafficPolicyInstancesFuture(
-        params: ListTrafficPolicyInstancesRequest
-    ): Future[ListTrafficPolicyInstancesResponse] = service.listTrafficPolicyInstances(params).promise().toFuture
-    @inline def listTrafficPolicyVersionsFuture(
-        params: ListTrafficPolicyVersionsRequest
-    ): Future[ListTrafficPolicyVersionsResponse] = service.listTrafficPolicyVersions(params).promise().toFuture
-    @inline def listVPCAssociationAuthorizationsFuture(
-        params: ListVPCAssociationAuthorizationsRequest
-    ): Future[ListVPCAssociationAuthorizationsResponse] =
-      service.listVPCAssociationAuthorizations(params).promise().toFuture
-    @inline def testDNSAnswerFuture(params: TestDNSAnswerRequest): Future[TestDNSAnswerResponse] =
-      service.testDNSAnswer(params).promise().toFuture
-    @inline def updateHealthCheckFuture(params: UpdateHealthCheckRequest): Future[UpdateHealthCheckResponse] =
-      service.updateHealthCheck(params).promise().toFuture
-    @inline def updateHostedZoneCommentFuture(
-        params: UpdateHostedZoneCommentRequest
-    ): Future[UpdateHostedZoneCommentResponse] = service.updateHostedZoneComment(params).promise().toFuture
-    @inline def updateTrafficPolicyCommentFuture(
-        params: UpdateTrafficPolicyCommentRequest
-    ): Future[UpdateTrafficPolicyCommentResponse] = service.updateTrafficPolicyComment(params).promise().toFuture
-    @inline def updateTrafficPolicyInstanceFuture(
-        params: UpdateTrafficPolicyInstanceRequest
-    ): Future[UpdateTrafficPolicyInstanceResponse] = service.updateTrafficPolicyInstance(params).promise().toFuture
+    @inline def associateVPCWithHostedZoneFuture(params: AssociateVPCWithHostedZoneRequest): Future[AssociateVPCWithHostedZoneResponse] = service.associateVPCWithHostedZone(params).promise().toFuture
+    @inline def changeResourceRecordSetsFuture(params: ChangeResourceRecordSetsRequest): Future[ChangeResourceRecordSetsResponse] = service.changeResourceRecordSets(params).promise().toFuture
+    @inline def changeTagsForResourceFuture(params: ChangeTagsForResourceRequest): Future[ChangeTagsForResourceResponse] = service.changeTagsForResource(params).promise().toFuture
+    @inline def createHealthCheckFuture(params: CreateHealthCheckRequest): Future[CreateHealthCheckResponse] = service.createHealthCheck(params).promise().toFuture
+    @inline def createHostedZoneFuture(params: CreateHostedZoneRequest): Future[CreateHostedZoneResponse] = service.createHostedZone(params).promise().toFuture
+    @inline def createQueryLoggingConfigFuture(params: CreateQueryLoggingConfigRequest): Future[CreateQueryLoggingConfigResponse] = service.createQueryLoggingConfig(params).promise().toFuture
+    @inline def createReusableDelegationSetFuture(params: CreateReusableDelegationSetRequest): Future[CreateReusableDelegationSetResponse] = service.createReusableDelegationSet(params).promise().toFuture
+    @inline def createTrafficPolicyFuture(params: CreateTrafficPolicyRequest): Future[CreateTrafficPolicyResponse] = service.createTrafficPolicy(params).promise().toFuture
+    @inline def createTrafficPolicyInstanceFuture(params: CreateTrafficPolicyInstanceRequest): Future[CreateTrafficPolicyInstanceResponse] = service.createTrafficPolicyInstance(params).promise().toFuture
+    @inline def createTrafficPolicyVersionFuture(params: CreateTrafficPolicyVersionRequest): Future[CreateTrafficPolicyVersionResponse] = service.createTrafficPolicyVersion(params).promise().toFuture
+    @inline def createVPCAssociationAuthorizationFuture(params: CreateVPCAssociationAuthorizationRequest): Future[CreateVPCAssociationAuthorizationResponse] = service.createVPCAssociationAuthorization(params).promise().toFuture
+    @inline def deleteHealthCheckFuture(params: DeleteHealthCheckRequest): Future[DeleteHealthCheckResponse] = service.deleteHealthCheck(params).promise().toFuture
+    @inline def deleteHostedZoneFuture(params: DeleteHostedZoneRequest): Future[DeleteHostedZoneResponse] = service.deleteHostedZone(params).promise().toFuture
+    @inline def deleteQueryLoggingConfigFuture(params: DeleteQueryLoggingConfigRequest): Future[DeleteQueryLoggingConfigResponse] = service.deleteQueryLoggingConfig(params).promise().toFuture
+    @inline def deleteReusableDelegationSetFuture(params: DeleteReusableDelegationSetRequest): Future[DeleteReusableDelegationSetResponse] = service.deleteReusableDelegationSet(params).promise().toFuture
+    @inline def deleteTrafficPolicyFuture(params: DeleteTrafficPolicyRequest): Future[DeleteTrafficPolicyResponse] = service.deleteTrafficPolicy(params).promise().toFuture
+    @inline def deleteTrafficPolicyInstanceFuture(params: DeleteTrafficPolicyInstanceRequest): Future[DeleteTrafficPolicyInstanceResponse] = service.deleteTrafficPolicyInstance(params).promise().toFuture
+    @inline def deleteVPCAssociationAuthorizationFuture(params: DeleteVPCAssociationAuthorizationRequest): Future[DeleteVPCAssociationAuthorizationResponse] = service.deleteVPCAssociationAuthorization(params).promise().toFuture
+    @inline def disassociateVPCFromHostedZoneFuture(params: DisassociateVPCFromHostedZoneRequest): Future[DisassociateVPCFromHostedZoneResponse] = service.disassociateVPCFromHostedZone(params).promise().toFuture
+    @inline def getAccountLimitFuture(params: GetAccountLimitRequest): Future[GetAccountLimitResponse] = service.getAccountLimit(params).promise().toFuture
+    @inline def getChangeFuture(params: GetChangeRequest): Future[GetChangeResponse] = service.getChange(params).promise().toFuture
+    @inline def getCheckerIpRangesFuture(params: GetCheckerIpRangesRequest): Future[GetCheckerIpRangesResponse] = service.getCheckerIpRanges(params).promise().toFuture
+    @inline def getGeoLocationFuture(params: GetGeoLocationRequest): Future[GetGeoLocationResponse] = service.getGeoLocation(params).promise().toFuture
+    @inline def getHealthCheckCountFuture(params: GetHealthCheckCountRequest): Future[GetHealthCheckCountResponse] = service.getHealthCheckCount(params).promise().toFuture
+    @inline def getHealthCheckFuture(params: GetHealthCheckRequest): Future[GetHealthCheckResponse] = service.getHealthCheck(params).promise().toFuture
+    @inline def getHealthCheckLastFailureReasonFuture(params: GetHealthCheckLastFailureReasonRequest): Future[GetHealthCheckLastFailureReasonResponse] = service.getHealthCheckLastFailureReason(params).promise().toFuture
+    @inline def getHealthCheckStatusFuture(params: GetHealthCheckStatusRequest): Future[GetHealthCheckStatusResponse] = service.getHealthCheckStatus(params).promise().toFuture
+    @inline def getHostedZoneCountFuture(params: GetHostedZoneCountRequest): Future[GetHostedZoneCountResponse] = service.getHostedZoneCount(params).promise().toFuture
+    @inline def getHostedZoneFuture(params: GetHostedZoneRequest): Future[GetHostedZoneResponse] = service.getHostedZone(params).promise().toFuture
+    @inline def getHostedZoneLimitFuture(params: GetHostedZoneLimitRequest): Future[GetHostedZoneLimitResponse] = service.getHostedZoneLimit(params).promise().toFuture
+    @inline def getQueryLoggingConfigFuture(params: GetQueryLoggingConfigRequest): Future[GetQueryLoggingConfigResponse] = service.getQueryLoggingConfig(params).promise().toFuture
+    @inline def getReusableDelegationSetFuture(params: GetReusableDelegationSetRequest): Future[GetReusableDelegationSetResponse] = service.getReusableDelegationSet(params).promise().toFuture
+    @inline def getReusableDelegationSetLimitFuture(params: GetReusableDelegationSetLimitRequest): Future[GetReusableDelegationSetLimitResponse] = service.getReusableDelegationSetLimit(params).promise().toFuture
+    @inline def getTrafficPolicyFuture(params: GetTrafficPolicyRequest): Future[GetTrafficPolicyResponse] = service.getTrafficPolicy(params).promise().toFuture
+    @inline def getTrafficPolicyInstanceCountFuture(params: GetTrafficPolicyInstanceCountRequest): Future[GetTrafficPolicyInstanceCountResponse] = service.getTrafficPolicyInstanceCount(params).promise().toFuture
+    @inline def getTrafficPolicyInstanceFuture(params: GetTrafficPolicyInstanceRequest): Future[GetTrafficPolicyInstanceResponse] = service.getTrafficPolicyInstance(params).promise().toFuture
+    @inline def listGeoLocationsFuture(params: ListGeoLocationsRequest): Future[ListGeoLocationsResponse] = service.listGeoLocations(params).promise().toFuture
+    @inline def listHealthChecksFuture(params: ListHealthChecksRequest): Future[ListHealthChecksResponse] = service.listHealthChecks(params).promise().toFuture
+    @inline def listHostedZonesByNameFuture(params: ListHostedZonesByNameRequest): Future[ListHostedZonesByNameResponse] = service.listHostedZonesByName(params).promise().toFuture
+    @inline def listHostedZonesByVPCFuture(params: ListHostedZonesByVPCRequest): Future[ListHostedZonesByVPCResponse] = service.listHostedZonesByVPC(params).promise().toFuture
+    @inline def listHostedZonesFuture(params: ListHostedZonesRequest): Future[ListHostedZonesResponse] = service.listHostedZones(params).promise().toFuture
+    @inline def listQueryLoggingConfigsFuture(params: ListQueryLoggingConfigsRequest): Future[ListQueryLoggingConfigsResponse] = service.listQueryLoggingConfigs(params).promise().toFuture
+    @inline def listResourceRecordSetsFuture(params: ListResourceRecordSetsRequest): Future[ListResourceRecordSetsResponse] = service.listResourceRecordSets(params).promise().toFuture
+    @inline def listReusableDelegationSetsFuture(params: ListReusableDelegationSetsRequest): Future[ListReusableDelegationSetsResponse] = service.listReusableDelegationSets(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listTagsForResourcesFuture(params: ListTagsForResourcesRequest): Future[ListTagsForResourcesResponse] = service.listTagsForResources(params).promise().toFuture
+    @inline def listTrafficPoliciesFuture(params: ListTrafficPoliciesRequest): Future[ListTrafficPoliciesResponse] = service.listTrafficPolicies(params).promise().toFuture
+    @inline def listTrafficPolicyInstancesByHostedZoneFuture(params: ListTrafficPolicyInstancesByHostedZoneRequest): Future[ListTrafficPolicyInstancesByHostedZoneResponse] = service.listTrafficPolicyInstancesByHostedZone(params).promise().toFuture
+    @inline def listTrafficPolicyInstancesByPolicyFuture(params: ListTrafficPolicyInstancesByPolicyRequest): Future[ListTrafficPolicyInstancesByPolicyResponse] = service.listTrafficPolicyInstancesByPolicy(params).promise().toFuture
+    @inline def listTrafficPolicyInstancesFuture(params: ListTrafficPolicyInstancesRequest): Future[ListTrafficPolicyInstancesResponse] = service.listTrafficPolicyInstances(params).promise().toFuture
+    @inline def listTrafficPolicyVersionsFuture(params: ListTrafficPolicyVersionsRequest): Future[ListTrafficPolicyVersionsResponse] = service.listTrafficPolicyVersions(params).promise().toFuture
+    @inline def listVPCAssociationAuthorizationsFuture(params: ListVPCAssociationAuthorizationsRequest): Future[ListVPCAssociationAuthorizationsResponse] = service.listVPCAssociationAuthorizations(params).promise().toFuture
+    @inline def testDNSAnswerFuture(params: TestDNSAnswerRequest): Future[TestDNSAnswerResponse] = service.testDNSAnswer(params).promise().toFuture
+    @inline def updateHealthCheckFuture(params: UpdateHealthCheckRequest): Future[UpdateHealthCheckResponse] = service.updateHealthCheck(params).promise().toFuture
+    @inline def updateHostedZoneCommentFuture(params: UpdateHostedZoneCommentRequest): Future[UpdateHostedZoneCommentResponse] = service.updateHostedZoneComment(params).promise().toFuture
+    @inline def updateTrafficPolicyCommentFuture(params: UpdateTrafficPolicyCommentRequest): Future[UpdateTrafficPolicyCommentResponse] = service.updateTrafficPolicyComment(params).promise().toFuture
+    @inline def updateTrafficPolicyInstanceFuture(params: UpdateTrafficPolicyInstanceRequest): Future[UpdateTrafficPolicyInstanceResponse] = service.updateTrafficPolicyInstance(params).promise().toFuture
   }
 }
 
@@ -274,111 +180,63 @@ package route53 {
   class Route53() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def associateVPCWithHostedZone(
-        params: AssociateVPCWithHostedZoneRequest
-    ): Request[AssociateVPCWithHostedZoneResponse] = js.native
-    def changeResourceRecordSets(params: ChangeResourceRecordSetsRequest): Request[ChangeResourceRecordSetsResponse] =
-      js.native
+    def associateVPCWithHostedZone(params: AssociateVPCWithHostedZoneRequest): Request[AssociateVPCWithHostedZoneResponse] = js.native
+    def changeResourceRecordSets(params: ChangeResourceRecordSetsRequest): Request[ChangeResourceRecordSetsResponse] = js.native
     def changeTagsForResource(params: ChangeTagsForResourceRequest): Request[ChangeTagsForResourceResponse] = js.native
     def createHealthCheck(params: CreateHealthCheckRequest): Request[CreateHealthCheckResponse] = js.native
     def createHostedZone(params: CreateHostedZoneRequest): Request[CreateHostedZoneResponse] = js.native
-    def createQueryLoggingConfig(params: CreateQueryLoggingConfigRequest): Request[CreateQueryLoggingConfigResponse] =
-      js.native
-    def createReusableDelegationSet(
-        params: CreateReusableDelegationSetRequest
-    ): Request[CreateReusableDelegationSetResponse] = js.native
+    def createQueryLoggingConfig(params: CreateQueryLoggingConfigRequest): Request[CreateQueryLoggingConfigResponse] = js.native
+    def createReusableDelegationSet(params: CreateReusableDelegationSetRequest): Request[CreateReusableDelegationSetResponse] = js.native
     def createTrafficPolicy(params: CreateTrafficPolicyRequest): Request[CreateTrafficPolicyResponse] = js.native
-    def createTrafficPolicyInstance(
-        params: CreateTrafficPolicyInstanceRequest
-    ): Request[CreateTrafficPolicyInstanceResponse] = js.native
-    def createTrafficPolicyVersion(
-        params: CreateTrafficPolicyVersionRequest
-    ): Request[CreateTrafficPolicyVersionResponse] = js.native
-    def createVPCAssociationAuthorization(
-        params: CreateVPCAssociationAuthorizationRequest
-    ): Request[CreateVPCAssociationAuthorizationResponse] = js.native
+    def createTrafficPolicyInstance(params: CreateTrafficPolicyInstanceRequest): Request[CreateTrafficPolicyInstanceResponse] = js.native
+    def createTrafficPolicyVersion(params: CreateTrafficPolicyVersionRequest): Request[CreateTrafficPolicyVersionResponse] = js.native
+    def createVPCAssociationAuthorization(params: CreateVPCAssociationAuthorizationRequest): Request[CreateVPCAssociationAuthorizationResponse] = js.native
     def deleteHealthCheck(params: DeleteHealthCheckRequest): Request[DeleteHealthCheckResponse] = js.native
     def deleteHostedZone(params: DeleteHostedZoneRequest): Request[DeleteHostedZoneResponse] = js.native
-    def deleteQueryLoggingConfig(params: DeleteQueryLoggingConfigRequest): Request[DeleteQueryLoggingConfigResponse] =
-      js.native
-    def deleteReusableDelegationSet(
-        params: DeleteReusableDelegationSetRequest
-    ): Request[DeleteReusableDelegationSetResponse] = js.native
+    def deleteQueryLoggingConfig(params: DeleteQueryLoggingConfigRequest): Request[DeleteQueryLoggingConfigResponse] = js.native
+    def deleteReusableDelegationSet(params: DeleteReusableDelegationSetRequest): Request[DeleteReusableDelegationSetResponse] = js.native
     def deleteTrafficPolicy(params: DeleteTrafficPolicyRequest): Request[DeleteTrafficPolicyResponse] = js.native
-    def deleteTrafficPolicyInstance(
-        params: DeleteTrafficPolicyInstanceRequest
-    ): Request[DeleteTrafficPolicyInstanceResponse] = js.native
-    def deleteVPCAssociationAuthorization(
-        params: DeleteVPCAssociationAuthorizationRequest
-    ): Request[DeleteVPCAssociationAuthorizationResponse] = js.native
-    def disassociateVPCFromHostedZone(
-        params: DisassociateVPCFromHostedZoneRequest
-    ): Request[DisassociateVPCFromHostedZoneResponse] = js.native
+    def deleteTrafficPolicyInstance(params: DeleteTrafficPolicyInstanceRequest): Request[DeleteTrafficPolicyInstanceResponse] = js.native
+    def deleteVPCAssociationAuthorization(params: DeleteVPCAssociationAuthorizationRequest): Request[DeleteVPCAssociationAuthorizationResponse] = js.native
+    def disassociateVPCFromHostedZone(params: DisassociateVPCFromHostedZoneRequest): Request[DisassociateVPCFromHostedZoneResponse] = js.native
     def getAccountLimit(params: GetAccountLimitRequest): Request[GetAccountLimitResponse] = js.native
     def getChange(params: GetChangeRequest): Request[GetChangeResponse] = js.native
     def getCheckerIpRanges(params: GetCheckerIpRangesRequest): Request[GetCheckerIpRangesResponse] = js.native
     def getGeoLocation(params: GetGeoLocationRequest): Request[GetGeoLocationResponse] = js.native
     def getHealthCheck(params: GetHealthCheckRequest): Request[GetHealthCheckResponse] = js.native
     def getHealthCheckCount(params: GetHealthCheckCountRequest): Request[GetHealthCheckCountResponse] = js.native
-    def getHealthCheckLastFailureReason(
-        params: GetHealthCheckLastFailureReasonRequest
-    ): Request[GetHealthCheckLastFailureReasonResponse] = js.native
+    def getHealthCheckLastFailureReason(params: GetHealthCheckLastFailureReasonRequest): Request[GetHealthCheckLastFailureReasonResponse] = js.native
     def getHealthCheckStatus(params: GetHealthCheckStatusRequest): Request[GetHealthCheckStatusResponse] = js.native
     def getHostedZone(params: GetHostedZoneRequest): Request[GetHostedZoneResponse] = js.native
     def getHostedZoneCount(params: GetHostedZoneCountRequest): Request[GetHostedZoneCountResponse] = js.native
     def getHostedZoneLimit(params: GetHostedZoneLimitRequest): Request[GetHostedZoneLimitResponse] = js.native
     def getQueryLoggingConfig(params: GetQueryLoggingConfigRequest): Request[GetQueryLoggingConfigResponse] = js.native
-    def getReusableDelegationSet(params: GetReusableDelegationSetRequest): Request[GetReusableDelegationSetResponse] =
-      js.native
-    def getReusableDelegationSetLimit(
-        params: GetReusableDelegationSetLimitRequest
-    ): Request[GetReusableDelegationSetLimitResponse] = js.native
+    def getReusableDelegationSet(params: GetReusableDelegationSetRequest): Request[GetReusableDelegationSetResponse] = js.native
+    def getReusableDelegationSetLimit(params: GetReusableDelegationSetLimitRequest): Request[GetReusableDelegationSetLimitResponse] = js.native
     def getTrafficPolicy(params: GetTrafficPolicyRequest): Request[GetTrafficPolicyResponse] = js.native
-    def getTrafficPolicyInstance(params: GetTrafficPolicyInstanceRequest): Request[GetTrafficPolicyInstanceResponse] =
-      js.native
-    def getTrafficPolicyInstanceCount(
-        params: GetTrafficPolicyInstanceCountRequest
-    ): Request[GetTrafficPolicyInstanceCountResponse] = js.native
+    def getTrafficPolicyInstance(params: GetTrafficPolicyInstanceRequest): Request[GetTrafficPolicyInstanceResponse] = js.native
+    def getTrafficPolicyInstanceCount(params: GetTrafficPolicyInstanceCountRequest): Request[GetTrafficPolicyInstanceCountResponse] = js.native
     def listGeoLocations(params: ListGeoLocationsRequest): Request[ListGeoLocationsResponse] = js.native
     def listHealthChecks(params: ListHealthChecksRequest): Request[ListHealthChecksResponse] = js.native
     def listHostedZones(params: ListHostedZonesRequest): Request[ListHostedZonesResponse] = js.native
     def listHostedZonesByName(params: ListHostedZonesByNameRequest): Request[ListHostedZonesByNameResponse] = js.native
     def listHostedZonesByVPC(params: ListHostedZonesByVPCRequest): Request[ListHostedZonesByVPCResponse] = js.native
-    def listQueryLoggingConfigs(params: ListQueryLoggingConfigsRequest): Request[ListQueryLoggingConfigsResponse] =
-      js.native
-    def listResourceRecordSets(params: ListResourceRecordSetsRequest): Request[ListResourceRecordSetsResponse] =
-      js.native
-    def listReusableDelegationSets(
-        params: ListReusableDelegationSetsRequest
-    ): Request[ListReusableDelegationSetsResponse] = js.native
+    def listQueryLoggingConfigs(params: ListQueryLoggingConfigsRequest): Request[ListQueryLoggingConfigsResponse] = js.native
+    def listResourceRecordSets(params: ListResourceRecordSetsRequest): Request[ListResourceRecordSetsResponse] = js.native
+    def listReusableDelegationSets(params: ListReusableDelegationSetsRequest): Request[ListReusableDelegationSetsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listTagsForResources(params: ListTagsForResourcesRequest): Request[ListTagsForResourcesResponse] = js.native
     def listTrafficPolicies(params: ListTrafficPoliciesRequest): Request[ListTrafficPoliciesResponse] = js.native
-    def listTrafficPolicyInstances(
-        params: ListTrafficPolicyInstancesRequest
-    ): Request[ListTrafficPolicyInstancesResponse] = js.native
-    def listTrafficPolicyInstancesByHostedZone(
-        params: ListTrafficPolicyInstancesByHostedZoneRequest
-    ): Request[ListTrafficPolicyInstancesByHostedZoneResponse] = js.native
-    def listTrafficPolicyInstancesByPolicy(
-        params: ListTrafficPolicyInstancesByPolicyRequest
-    ): Request[ListTrafficPolicyInstancesByPolicyResponse] = js.native
-    def listTrafficPolicyVersions(
-        params: ListTrafficPolicyVersionsRequest
-    ): Request[ListTrafficPolicyVersionsResponse] = js.native
-    def listVPCAssociationAuthorizations(
-        params: ListVPCAssociationAuthorizationsRequest
-    ): Request[ListVPCAssociationAuthorizationsResponse] = js.native
+    def listTrafficPolicyInstances(params: ListTrafficPolicyInstancesRequest): Request[ListTrafficPolicyInstancesResponse] = js.native
+    def listTrafficPolicyInstancesByHostedZone(params: ListTrafficPolicyInstancesByHostedZoneRequest): Request[ListTrafficPolicyInstancesByHostedZoneResponse] = js.native
+    def listTrafficPolicyInstancesByPolicy(params: ListTrafficPolicyInstancesByPolicyRequest): Request[ListTrafficPolicyInstancesByPolicyResponse] = js.native
+    def listTrafficPolicyVersions(params: ListTrafficPolicyVersionsRequest): Request[ListTrafficPolicyVersionsResponse] = js.native
+    def listVPCAssociationAuthorizations(params: ListVPCAssociationAuthorizationsRequest): Request[ListVPCAssociationAuthorizationsResponse] = js.native
     def testDNSAnswer(params: TestDNSAnswerRequest): Request[TestDNSAnswerResponse] = js.native
     def updateHealthCheck(params: UpdateHealthCheckRequest): Request[UpdateHealthCheckResponse] = js.native
-    def updateHostedZoneComment(params: UpdateHostedZoneCommentRequest): Request[UpdateHostedZoneCommentResponse] =
-      js.native
-    def updateTrafficPolicyComment(
-        params: UpdateTrafficPolicyCommentRequest
-    ): Request[UpdateTrafficPolicyCommentResponse] = js.native
-    def updateTrafficPolicyInstance(
-        params: UpdateTrafficPolicyInstanceRequest
-    ): Request[UpdateTrafficPolicyInstanceResponse] = js.native
+    def updateHostedZoneComment(params: UpdateHostedZoneCommentRequest): Request[UpdateHostedZoneCommentResponse] = js.native
+    def updateTrafficPolicyComment(params: UpdateTrafficPolicyCommentRequest): Request[UpdateTrafficPolicyCommentResponse] = js.native
+    def updateTrafficPolicyInstance(params: UpdateTrafficPolicyInstanceRequest): Request[UpdateTrafficPolicyInstanceResponse] = js.native
   }
 
   /**
@@ -414,15 +272,13 @@ package route53 {
     val MAX_REUSABLE_DELEGATION_SETS_BY_OWNER = "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER".asInstanceOf[AccountLimitType]
     val MAX_TRAFFIC_POLICIES_BY_OWNER = "MAX_TRAFFIC_POLICIES_BY_OWNER".asInstanceOf[AccountLimitType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        MAX_HEALTH_CHECKS_BY_OWNER,
-        MAX_HOSTED_ZONES_BY_OWNER,
-        MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER,
-        MAX_REUSABLE_DELEGATION_SETS_BY_OWNER,
-        MAX_TRAFFIC_POLICIES_BY_OWNER
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      MAX_HEALTH_CHECKS_BY_OWNER,
+      MAX_HOSTED_ZONES_BY_OWNER,
+      MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER,
+      MAX_REUSABLE_DELEGATION_SETS_BY_OWNER,
+      MAX_TRAFFIC_POLICIES_BY_OWNER
+    ))
   }
 
   /**
@@ -788,37 +644,35 @@ package route53 {
     val `us-iso-east-1` = "us-iso-east-1".asInstanceOf[CloudWatchRegion]
     val `us-isob-east-1` = "us-isob-east-1".asInstanceOf[CloudWatchRegion]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `us-east-1`,
-        `us-east-2`,
-        `us-west-1`,
-        `us-west-2`,
-        `ca-central-1`,
-        `eu-central-1`,
-        `eu-west-1`,
-        `eu-west-2`,
-        `eu-west-3`,
-        `ap-east-1`,
-        `me-south-1`,
-        `ap-south-1`,
-        `ap-southeast-1`,
-        `ap-southeast-2`,
-        `ap-northeast-1`,
-        `ap-northeast-2`,
-        `ap-northeast-3`,
-        `eu-north-1`,
-        `sa-east-1`,
-        `cn-northwest-1`,
-        `cn-north-1`,
-        `af-south-1`,
-        `eu-south-1`,
-        `us-gov-west-1`,
-        `us-gov-east-1`,
-        `us-iso-east-1`,
-        `us-isob-east-1`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      `us-east-1`,
+      `us-east-2`,
+      `us-west-1`,
+      `us-west-2`,
+      `ca-central-1`,
+      `eu-central-1`,
+      `eu-west-1`,
+      `eu-west-2`,
+      `eu-west-3`,
+      `ap-east-1`,
+      `me-south-1`,
+      `ap-south-1`,
+      `ap-southeast-1`,
+      `ap-southeast-2`,
+      `ap-northeast-1`,
+      `ap-northeast-2`,
+      `ap-northeast-3`,
+      `eu-north-1`,
+      `sa-east-1`,
+      `cn-northwest-1`,
+      `cn-north-1`,
+      `af-south-1`,
+      `eu-south-1`,
+      `us-gov-west-1`,
+      `us-gov-east-1`,
+      `us-iso-east-1`,
+      `us-isob-east-1`
+    ))
   }
 
   @js.native
@@ -829,9 +683,7 @@ package route53 {
     val LessThanThreshold = "LessThanThreshold".asInstanceOf[ComparisonOperator]
     val LessThanOrEqualToThreshold = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
 
-    val values = js.Object.freeze(
-      js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
-    )
+    val values = js.Object.freeze(js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold))
   }
 
   /**
@@ -2407,9 +2259,7 @@ package route53 {
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
-      CloudWatchAlarmConfiguration.foreach(__v =>
-        __obj.updateDynamic("CloudWatchAlarmConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      CloudWatchAlarmConfiguration.foreach(__v => __obj.updateDynamic("CloudWatchAlarmConfiguration")(__v.asInstanceOf[js.Any]))
       LinkedService.foreach(__v => __obj.updateDynamic("LinkedService")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HealthCheck]
     }
@@ -2472,9 +2322,7 @@ package route53 {
       FullyQualifiedDomainName.foreach(__v => __obj.updateDynamic("FullyQualifiedDomainName")(__v.asInstanceOf[js.Any]))
       HealthThreshold.foreach(__v => __obj.updateDynamic("HealthThreshold")(__v.asInstanceOf[js.Any]))
       IPAddress.foreach(__v => __obj.updateDynamic("IPAddress")(__v.asInstanceOf[js.Any]))
-      InsufficientDataHealthStatus.foreach(__v =>
-        __obj.updateDynamic("InsufficientDataHealthStatus")(__v.asInstanceOf[js.Any])
-      )
+      InsufficientDataHealthStatus.foreach(__v => __obj.updateDynamic("InsufficientDataHealthStatus")(__v.asInstanceOf[js.Any]))
       Inverted.foreach(__v => __obj.updateDynamic("Inverted")(__v.asInstanceOf[js.Any]))
       MeasureLatency.foreach(__v => __obj.updateDynamic("MeasureLatency")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
@@ -2523,18 +2371,7 @@ package route53 {
     val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[HealthCheckRegion]
     val `sa-east-1` = "sa-east-1".asInstanceOf[HealthCheckRegion]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `us-east-1`,
-        `us-west-1`,
-        `us-west-2`,
-        `eu-west-1`,
-        `ap-southeast-1`,
-        `ap-southeast-2`,
-        `ap-northeast-1`,
-        `sa-east-1`
-      )
-    )
+    val values = js.Object.freeze(js.Array(`us-east-1`, `us-west-1`, `us-west-2`, `eu-west-1`, `ap-southeast-1`, `ap-southeast-2`, `ap-northeast-1`, `sa-east-1`))
   }
 
   @js.native
@@ -2548,8 +2385,7 @@ package route53 {
     val CALCULATED = "CALCULATED".asInstanceOf[HealthCheckType]
     val CLOUDWATCH_METRIC = "CLOUDWATCH_METRIC".asInstanceOf[HealthCheckType]
 
-    val values =
-      js.Object.freeze(js.Array(HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP, CALCULATED, CLOUDWATCH_METRIC))
+    val values = js.Object.freeze(js.Array(HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP, CALCULATED, CLOUDWATCH_METRIC))
   }
 
   /**
@@ -3349,12 +3185,8 @@ package route53 {
       )
 
       MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
-      TrafficPolicyInstanceNameMarker.foreach(__v =>
-        __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any])
-      )
-      TrafficPolicyInstanceTypeMarker.foreach(__v =>
-        __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any])
-      )
+      TrafficPolicyInstanceNameMarker.foreach(__v => __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any]))
+      TrafficPolicyInstanceTypeMarker.foreach(__v => __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTrafficPolicyInstancesByHostedZoneRequest]
     }
   }
@@ -3386,12 +3218,8 @@ package route53 {
         "TrafficPolicyInstances" -> TrafficPolicyInstances.asInstanceOf[js.Any]
       )
 
-      TrafficPolicyInstanceNameMarker.foreach(__v =>
-        __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any])
-      )
-      TrafficPolicyInstanceTypeMarker.foreach(__v =>
-        __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any])
-      )
+      TrafficPolicyInstanceNameMarker.foreach(__v => __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any]))
+      TrafficPolicyInstanceTypeMarker.foreach(__v => __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTrafficPolicyInstancesByHostedZoneResponse]
     }
   }
@@ -3426,12 +3254,8 @@ package route53 {
 
       HostedZoneIdMarker.foreach(__v => __obj.updateDynamic("HostedZoneIdMarker")(__v.asInstanceOf[js.Any]))
       MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
-      TrafficPolicyInstanceNameMarker.foreach(__v =>
-        __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any])
-      )
-      TrafficPolicyInstanceTypeMarker.foreach(__v =>
-        __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any])
-      )
+      TrafficPolicyInstanceNameMarker.foreach(__v => __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any]))
+      TrafficPolicyInstanceTypeMarker.foreach(__v => __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTrafficPolicyInstancesByPolicyRequest]
     }
   }
@@ -3466,12 +3290,8 @@ package route53 {
       )
 
       HostedZoneIdMarker.foreach(__v => __obj.updateDynamic("HostedZoneIdMarker")(__v.asInstanceOf[js.Any]))
-      TrafficPolicyInstanceNameMarker.foreach(__v =>
-        __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any])
-      )
-      TrafficPolicyInstanceTypeMarker.foreach(__v =>
-        __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any])
-      )
+      TrafficPolicyInstanceNameMarker.foreach(__v => __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any]))
+      TrafficPolicyInstanceTypeMarker.foreach(__v => __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTrafficPolicyInstancesByPolicyResponse]
     }
   }
@@ -3498,12 +3318,8 @@ package route53 {
       val __obj = js.Dynamic.literal()
       HostedZoneIdMarker.foreach(__v => __obj.updateDynamic("HostedZoneIdMarker")(__v.asInstanceOf[js.Any]))
       MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
-      TrafficPolicyInstanceNameMarker.foreach(__v =>
-        __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any])
-      )
-      TrafficPolicyInstanceTypeMarker.foreach(__v =>
-        __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any])
-      )
+      TrafficPolicyInstanceNameMarker.foreach(__v => __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any]))
+      TrafficPolicyInstanceTypeMarker.foreach(__v => __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTrafficPolicyInstancesRequest]
     }
   }
@@ -3538,12 +3354,8 @@ package route53 {
       )
 
       HostedZoneIdMarker.foreach(__v => __obj.updateDynamic("HostedZoneIdMarker")(__v.asInstanceOf[js.Any]))
-      TrafficPolicyInstanceNameMarker.foreach(__v =>
-        __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any])
-      )
-      TrafficPolicyInstanceTypeMarker.foreach(__v =>
-        __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any])
-      )
+      TrafficPolicyInstanceNameMarker.foreach(__v => __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any]))
+      TrafficPolicyInstanceTypeMarker.foreach(__v => __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTrafficPolicyInstancesResponse]
     }
   }
@@ -3570,9 +3382,7 @@ package route53 {
       )
 
       MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
-      TrafficPolicyVersionMarker.foreach(__v =>
-        __obj.updateDynamic("TrafficPolicyVersionMarker")(__v.asInstanceOf[js.Any])
-      )
+      TrafficPolicyVersionMarker.foreach(__v => __obj.updateDynamic("TrafficPolicyVersionMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTrafficPolicyVersionsRequest]
     }
   }
@@ -3834,33 +3644,31 @@ package route53 {
     val `af-south-1` = "af-south-1".asInstanceOf[ResourceRecordSetRegion]
     val `eu-south-1` = "eu-south-1".asInstanceOf[ResourceRecordSetRegion]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `us-east-1`,
-        `us-east-2`,
-        `us-west-1`,
-        `us-west-2`,
-        `ca-central-1`,
-        `eu-west-1`,
-        `eu-west-2`,
-        `eu-west-3`,
-        `eu-central-1`,
-        `ap-southeast-1`,
-        `ap-southeast-2`,
-        `ap-northeast-1`,
-        `ap-northeast-2`,
-        `ap-northeast-3`,
-        `eu-north-1`,
-        `sa-east-1`,
-        `cn-north-1`,
-        `cn-northwest-1`,
-        `ap-east-1`,
-        `me-south-1`,
-        `ap-south-1`,
-        `af-south-1`,
-        `eu-south-1`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      `us-east-1`,
+      `us-east-2`,
+      `us-west-1`,
+      `us-west-2`,
+      `ca-central-1`,
+      `eu-west-1`,
+      `eu-west-2`,
+      `eu-west-3`,
+      `eu-central-1`,
+      `ap-southeast-1`,
+      `ap-southeast-2`,
+      `ap-northeast-1`,
+      `ap-northeast-2`,
+      `ap-northeast-3`,
+      `eu-north-1`,
+      `sa-east-1`,
+      `cn-north-1`,
+      `cn-northwest-1`,
+      `ap-east-1`,
+      `me-south-1`,
+      `ap-south-1`,
+      `af-south-1`,
+      `eu-south-1`
+    ))
   }
 
   /**
@@ -3915,8 +3723,7 @@ package route53 {
   @js.native
   sealed trait ReusableDelegationSetLimitType extends js.Any
   object ReusableDelegationSetLimitType extends js.Object {
-    val MAX_ZONES_BY_REUSABLE_DELEGATION_SET =
-      "MAX_ZONES_BY_REUSABLE_DELEGATION_SET".asInstanceOf[ReusableDelegationSetLimitType]
+    val MAX_ZONES_BY_REUSABLE_DELEGATION_SET = "MAX_ZONES_BY_REUSABLE_DELEGATION_SET".asInstanceOf[ReusableDelegationSetLimitType]
 
     val values = js.Object.freeze(js.Array(MAX_ZONES_BY_REUSABLE_DELEGATION_SET))
   }
@@ -4230,9 +4037,7 @@ package route53 {
       HealthCheckVersion.foreach(__v => __obj.updateDynamic("HealthCheckVersion")(__v.asInstanceOf[js.Any]))
       HealthThreshold.foreach(__v => __obj.updateDynamic("HealthThreshold")(__v.asInstanceOf[js.Any]))
       IPAddress.foreach(__v => __obj.updateDynamic("IPAddress")(__v.asInstanceOf[js.Any]))
-      InsufficientDataHealthStatus.foreach(__v =>
-        __obj.updateDynamic("InsufficientDataHealthStatus")(__v.asInstanceOf[js.Any])
-      )
+      InsufficientDataHealthStatus.foreach(__v => __obj.updateDynamic("InsufficientDataHealthStatus")(__v.asInstanceOf[js.Any]))
       Inverted.foreach(__v => __obj.updateDynamic("Inverted")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       Regions.foreach(__v => __obj.updateDynamic("Regions")(__v.asInstanceOf[js.Any]))
@@ -4460,35 +4265,33 @@ package route53 {
     val `af-south-1` = "af-south-1".asInstanceOf[VPCRegion]
     val `eu-south-1` = "eu-south-1".asInstanceOf[VPCRegion]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `us-east-1`,
-        `us-east-2`,
-        `us-west-1`,
-        `us-west-2`,
-        `eu-west-1`,
-        `eu-west-2`,
-        `eu-west-3`,
-        `eu-central-1`,
-        `ap-east-1`,
-        `me-south-1`,
-        `us-gov-west-1`,
-        `us-gov-east-1`,
-        `us-iso-east-1`,
-        `us-isob-east-1`,
-        `ap-southeast-1`,
-        `ap-southeast-2`,
-        `ap-south-1`,
-        `ap-northeast-1`,
-        `ap-northeast-2`,
-        `ap-northeast-3`,
-        `eu-north-1`,
-        `sa-east-1`,
-        `ca-central-1`,
-        `cn-north-1`,
-        `af-south-1`,
-        `eu-south-1`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      `us-east-1`,
+      `us-east-2`,
+      `us-west-1`,
+      `us-west-2`,
+      `eu-west-1`,
+      `eu-west-2`,
+      `eu-west-3`,
+      `eu-central-1`,
+      `ap-east-1`,
+      `me-south-1`,
+      `us-gov-west-1`,
+      `us-gov-east-1`,
+      `us-iso-east-1`,
+      `us-isob-east-1`,
+      `ap-southeast-1`,
+      `ap-southeast-2`,
+      `ap-south-1`,
+      `ap-northeast-1`,
+      `ap-northeast-2`,
+      `ap-northeast-3`,
+      `eu-north-1`,
+      `sa-east-1`,
+      `ca-central-1`,
+      `cn-north-1`,
+      `af-south-1`,
+      `eu-south-1`
+    ))
   }
 }
