@@ -706,7 +706,8 @@ package rds {
     *  * <code>DBSecurityGroups</code> - The number of DB security groups (not VPC security groups) per account, excluding the default security group. The used value is the count of nondefault DB security groups in the account.
     *  * <code>DBSubnetGroups</code> - The number of DB subnet groups per account. The used value is the count of the DB subnet groups in the account.
     *  * <code>EventSubscriptions</code> - The number of event subscriptions per account. The used value is the count of the event subscriptions in the account.
-    *  * <code>ManualSnapshots</code> - The number of manual DB snapshots per account. The used value is the count of the manual DB snapshots in the account.
+    *  * <code>ManualClusterSnapshots</code> - The number of manual DB cluster snapshots per account. The used value is the count of the manual DB cluster snapshots in the account.
+    *  * <code>ManualSnapshots</code> - The number of manual DB instance snapshots per account. The used value is the count of the manual DB instance snapshots in the account.
     *  * <code>OptionGroups</code> - The number of DB option groups per account, excluding default option groups. The used value is the count of nondefault DB option groups in the account.
     *  * <code>ReadReplicasPerMaster</code> - The number of read replicas per DB instance. The used value is the highest number of read replicas for a DB instance in the account. Other DB instances in the account might have a lower number of read replicas.
     *  * <code>ReservedDBInstances</code> - The number of reserved DB instances per account. The used value is the count of the active reserved DB instances in the account.

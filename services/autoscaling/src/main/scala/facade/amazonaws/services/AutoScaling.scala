@@ -41,6 +41,7 @@ package object autoscaling {
   type HeartbeatTimeout = Int
   type HonorCooldown = Boolean
   type InstanceIds = js.Array[XmlStringMaxLen19]
+  type InstanceMetadataHttpPutResponseHopLimit = Int
   type InstanceProtected = Boolean
   type InstanceRefreshIds = js.Array[XmlStringMaxLen255]
   type InstanceRefreshes = js.Array[InstanceRefresh]
@@ -1052,6 +1053,7 @@ package autoscaling {
     var InstanceType: js.UndefOr[XmlStringMaxLen255]
     var KernelId: js.UndefOr[XmlStringMaxLen255]
     var KeyName: js.UndefOr[XmlStringMaxLen255]
+    var MetadataOptions: js.UndefOr[InstanceMetadataOptions]
     var PlacementTenancy: js.UndefOr[XmlStringMaxLen64]
     var RamdiskId: js.UndefOr[XmlStringMaxLen255]
     var SecurityGroups: js.UndefOr[SecurityGroups]
@@ -1075,6 +1077,7 @@ package autoscaling {
         InstanceType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         KernelId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         KeyName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+        MetadataOptions: js.UndefOr[InstanceMetadataOptions] = js.undefined,
         PlacementTenancy: js.UndefOr[XmlStringMaxLen64] = js.undefined,
         RamdiskId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         SecurityGroups: js.UndefOr[SecurityGroups] = js.undefined,
@@ -1099,6 +1102,7 @@ package autoscaling {
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
       KernelId.foreach(__v => __obj.updateDynamic("KernelId")(__v.asInstanceOf[js.Any]))
       KeyName.foreach(__v => __obj.updateDynamic("KeyName")(__v.asInstanceOf[js.Any]))
+      MetadataOptions.foreach(__v => __obj.updateDynamic("MetadataOptions")(__v.asInstanceOf[js.Any]))
       PlacementTenancy.foreach(__v => __obj.updateDynamic("PlacementTenancy")(__v.asInstanceOf[js.Any]))
       RamdiskId.foreach(__v => __obj.updateDynamic("RamdiskId")(__v.asInstanceOf[js.Any]))
       SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
@@ -2168,6 +2172,49 @@ package autoscaling {
     }
   }
 
+  @js.native
+  sealed trait InstanceMetadataEndpointState extends js.Any
+  object InstanceMetadataEndpointState extends js.Object {
+    val disabled = "disabled".asInstanceOf[InstanceMetadataEndpointState]
+    val enabled = "enabled".asInstanceOf[InstanceMetadataEndpointState]
+
+    val values = js.Object.freeze(js.Array(disabled, enabled))
+  }
+
+  @js.native
+  sealed trait InstanceMetadataHttpTokensState extends js.Any
+  object InstanceMetadataHttpTokensState extends js.Object {
+    val optional = "optional".asInstanceOf[InstanceMetadataHttpTokensState]
+    val required = "required".asInstanceOf[InstanceMetadataHttpTokensState]
+
+    val values = js.Object.freeze(js.Array(optional, required))
+  }
+
+  /**
+    * The metadata options for the instances. For more information, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html|Instance Metadata and User Data]] in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+    */
+  @js.native
+  trait InstanceMetadataOptions extends js.Object {
+    var HttpEndpoint: js.UndefOr[InstanceMetadataEndpointState]
+    var HttpPutResponseHopLimit: js.UndefOr[InstanceMetadataHttpPutResponseHopLimit]
+    var HttpTokens: js.UndefOr[InstanceMetadataHttpTokensState]
+  }
+
+  object InstanceMetadataOptions {
+    @inline
+    def apply(
+        HttpEndpoint: js.UndefOr[InstanceMetadataEndpointState] = js.undefined,
+        HttpPutResponseHopLimit: js.UndefOr[InstanceMetadataHttpPutResponseHopLimit] = js.undefined,
+        HttpTokens: js.UndefOr[InstanceMetadataHttpTokensState] = js.undefined
+    ): InstanceMetadataOptions = {
+      val __obj = js.Dynamic.literal()
+      HttpEndpoint.foreach(__v => __obj.updateDynamic("HttpEndpoint")(__v.asInstanceOf[js.Any]))
+      HttpPutResponseHopLimit.foreach(__v => __obj.updateDynamic("HttpPutResponseHopLimit")(__v.asInstanceOf[js.Any]))
+      HttpTokens.foreach(__v => __obj.updateDynamic("HttpTokens")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InstanceMetadataOptions]
+    }
+  }
+
   /**
     * Describes whether detailed monitoring is enabled for the Auto Scaling instances.
     */
@@ -2299,6 +2346,7 @@ package autoscaling {
     var KernelId: js.UndefOr[XmlStringMaxLen255]
     var KeyName: js.UndefOr[XmlStringMaxLen255]
     var LaunchConfigurationARN: js.UndefOr[ResourceName]
+    var MetadataOptions: js.UndefOr[InstanceMetadataOptions]
     var PlacementTenancy: js.UndefOr[XmlStringMaxLen64]
     var RamdiskId: js.UndefOr[XmlStringMaxLen255]
     var SecurityGroups: js.UndefOr[SecurityGroups]
@@ -2323,6 +2371,7 @@ package autoscaling {
         KernelId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         KeyName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         LaunchConfigurationARN: js.UndefOr[ResourceName] = js.undefined,
+        MetadataOptions: js.UndefOr[InstanceMetadataOptions] = js.undefined,
         PlacementTenancy: js.UndefOr[XmlStringMaxLen64] = js.undefined,
         RamdiskId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         SecurityGroups: js.UndefOr[SecurityGroups] = js.undefined,
@@ -2348,6 +2397,7 @@ package autoscaling {
       KernelId.foreach(__v => __obj.updateDynamic("KernelId")(__v.asInstanceOf[js.Any]))
       KeyName.foreach(__v => __obj.updateDynamic("KeyName")(__v.asInstanceOf[js.Any]))
       LaunchConfigurationARN.foreach(__v => __obj.updateDynamic("LaunchConfigurationARN")(__v.asInstanceOf[js.Any]))
+      MetadataOptions.foreach(__v => __obj.updateDynamic("MetadataOptions")(__v.asInstanceOf[js.Any]))
       PlacementTenancy.foreach(__v => __obj.updateDynamic("PlacementTenancy")(__v.asInstanceOf[js.Any]))
       RamdiskId.foreach(__v => __obj.updateDynamic("RamdiskId")(__v.asInstanceOf[js.Any]))
       SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
