@@ -3692,7 +3692,7 @@ package macie2 {
   }
 
   /**
-    * The total number of objects that are in the bucket, grouped by server-side encryption type. This includes a grouping that reports the total number of objects that aren't encrypted.
+    * Provides information about the number of objects that are in an S3 bucket and use certain types of server-side encryption, use client-side encryption, or aren't encrypted.
     */
   @js.native
   trait ObjectCountByEncryptionType extends js.Object {
@@ -4829,10 +4829,11 @@ package macie2 {
   }
 
   /**
-    * Specifies criteria for filtering the results of a query for account quotas and usage data.
+    * Specifies a condition for filtering the results of a query for account quotas and usage data.
     */
   @js.native
   trait UsageStatisticsFilter extends js.Object {
+    var comparator: js.UndefOr[UsageStatisticsFilterComparator]
     var key: js.UndefOr[UsageStatisticsFilterKey]
     var values: js.UndefOr[__listOf__string]
   }
@@ -4840,10 +4841,12 @@ package macie2 {
   object UsageStatisticsFilter {
     @inline
     def apply(
+        comparator: js.UndefOr[UsageStatisticsFilterComparator] = js.undefined,
         key: js.UndefOr[UsageStatisticsFilterKey] = js.undefined,
         values: js.UndefOr[__listOf__string] = js.undefined
     ): UsageStatisticsFilter = {
       val __obj = js.Dynamic.literal()
+      comparator.foreach(__v => __obj.updateDynamic("comparator")(__v.asInstanceOf[js.Any]))
       key.foreach(__v => __obj.updateDynamic("key")(__v.asInstanceOf[js.Any]))
       values.foreach(__v => __obj.updateDynamic("values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UsageStatisticsFilter]
@@ -4851,14 +4854,34 @@ package macie2 {
   }
 
   /**
-    * The field to use to filter the results of a query for account quotas and usage data:
+    * The operator to use in a condition that filters the results of a query for account quotas and usage data. Valid values are:
+    */
+  @js.native
+  sealed trait UsageStatisticsFilterComparator extends js.Any
+  object UsageStatisticsFilterComparator extends js.Object {
+    val GT = "GT".asInstanceOf[UsageStatisticsFilterComparator]
+    val GTE = "GTE".asInstanceOf[UsageStatisticsFilterComparator]
+    val LT = "LT".asInstanceOf[UsageStatisticsFilterComparator]
+    val LTE = "LTE".asInstanceOf[UsageStatisticsFilterComparator]
+    val EQ = "EQ".asInstanceOf[UsageStatisticsFilterComparator]
+    val NE = "NE".asInstanceOf[UsageStatisticsFilterComparator]
+    val CONTAINS = "CONTAINS".asInstanceOf[UsageStatisticsFilterComparator]
+
+    val values = js.Object.freeze(js.Array(GT, GTE, LT, LTE, EQ, NE, CONTAINS))
+  }
+
+  /**
+    * The field to use in a condition that filters the results of a query for account quotas and usage data. Valid values are:
     */
   @js.native
   sealed trait UsageStatisticsFilterKey extends js.Any
   object UsageStatisticsFilterKey extends js.Object {
     val accountId = "accountId".asInstanceOf[UsageStatisticsFilterKey]
+    val serviceLimit = "serviceLimit".asInstanceOf[UsageStatisticsFilterKey]
+    val freeTrialStartDate = "freeTrialStartDate".asInstanceOf[UsageStatisticsFilterKey]
+    val total = "total".asInstanceOf[UsageStatisticsFilterKey]
 
-    val values = js.Object.freeze(js.Array(accountId))
+    val values = js.Object.freeze(js.Array(accountId, serviceLimit, freeTrialStartDate, total))
   }
 
   /**
@@ -4891,8 +4914,10 @@ package macie2 {
   object UsageStatisticsSortKey extends js.Object {
     val accountId = "accountId".asInstanceOf[UsageStatisticsSortKey]
     val total = "total".asInstanceOf[UsageStatisticsSortKey]
+    val serviceLimitValue = "serviceLimitValue".asInstanceOf[UsageStatisticsSortKey]
+    val freeTrialStartDate = "freeTrialStartDate".asInstanceOf[UsageStatisticsSortKey]
 
-    val values = js.Object.freeze(js.Array(accountId, total))
+    val values = js.Object.freeze(js.Array(accountId, total, serviceLimitValue, freeTrialStartDate))
   }
 
   /**

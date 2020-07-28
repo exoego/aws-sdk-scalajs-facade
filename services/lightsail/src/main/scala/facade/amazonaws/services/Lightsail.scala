@@ -18,6 +18,10 @@ package object lightsail {
   type Base64 = String
   type BlueprintList = js.Array[Blueprint]
   type BundleList = js.Array[Bundle]
+  type CacheBehaviorList = js.Array[CacheBehaviorPerPath]
+  type CertificateName = String
+  type CertificateStatusList = js.Array[CertificateStatus]
+  type CertificateSummaryList = js.Array[CertificateSummary]
   type CloudFormationStackRecordList = js.Array[CloudFormationStackRecord]
   type CloudFormationStackRecordSourceInfoList = js.Array[CloudFormationStackRecordSourceInfo]
   type ContactMethodsList = js.Array[ContactMethod]
@@ -26,6 +30,8 @@ package object lightsail {
   type DiskList = js.Array[Disk]
   type DiskMapList = js.Array[DiskMap]
   type DiskSnapshotList = js.Array[DiskSnapshot]
+  type DistributionBundleList = js.Array[DistributionBundle]
+  type DistributionList = js.Array[LightsailDistribution]
   type DomainEntryList = js.Array[DomainEntry]
   type DomainEntryOptions = js.Dictionary[String]
   type DomainEntryOptionsKeys = String
@@ -33,8 +39,13 @@ package object lightsail {
   type DomainList = js.Array[Domain]
   type DomainName = String
   type DomainNameList = js.Array[DomainName]
+  type DomainValidationRecordList = js.Array[DomainValidationRecord]
+  type EligibleToRenew = String
   type ExportSnapshotRecordList = js.Array[ExportSnapshotRecord]
+  type HeaderForwardList = js.Array[HeaderEnum]
   type HostKeysList = js.Array[HostKeyAttributes]
+  type InUseResourceCount = Int
+  type IncludeCertificateDetails = Boolean
   type InstanceEntryList = js.Array[InstanceEntry]
   type InstanceHealthSummaryList = js.Array[InstanceHealthSummary]
   type InstanceList = js.Array[Instance]
@@ -45,6 +56,8 @@ package object lightsail {
   type IpAddress = String
   type IpV6Address = String
   type IsoDate = js.Date
+  type IssuerCA = String
+  type KeyAlgorithm = String
   type KeyPairList = js.Array[KeyPair]
   type LoadBalancerConfigurationOptions = js.Dictionary[String]
   type LoadBalancerList = js.Array[LoadBalancer]
@@ -70,13 +83,18 @@ package object lightsail {
   type RelationalDatabaseList = js.Array[RelationalDatabase]
   type RelationalDatabaseParameterList = js.Array[RelationalDatabaseParameter]
   type RelationalDatabaseSnapshotList = js.Array[RelationalDatabaseSnapshot]
+  type RenewalStatusReason = String
+  type RequestFailureReason = String
   type ResourceArn = String
   type ResourceName = String
   type ResourceNameList = js.Array[ResourceName]
+  type RevocationReason = String
   type SensitiveString = String
+  type SerialNumber = String
   type StaticIpList = js.Array[StaticIp]
   type StringList = js.Array[String]
   type StringMax256 = String
+  type SubjectAlternativeNameList = js.Array[DomainName]
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagList = js.Array[Tag]
@@ -89,6 +107,10 @@ package object lightsail {
 
     @inline def allocateStaticIpFuture(params: AllocateStaticIpRequest): Future[AllocateStaticIpResult] =
       service.allocateStaticIp(params).promise().toFuture
+    @inline def attachCertificateToDistributionFuture(
+        params: AttachCertificateToDistributionRequest
+    ): Future[AttachCertificateToDistributionResult] =
+      service.attachCertificateToDistribution(params).promise().toFuture
     @inline def attachDiskFuture(params: AttachDiskRequest): Future[AttachDiskResult] =
       service.attachDisk(params).promise().toFuture
     @inline def attachInstancesToLoadBalancerFuture(
@@ -105,6 +127,8 @@ package object lightsail {
     ): Future[CloseInstancePublicPortsResult] = service.closeInstancePublicPorts(params).promise().toFuture
     @inline def copySnapshotFuture(params: CopySnapshotRequest): Future[CopySnapshotResult] =
       service.copySnapshot(params).promise().toFuture
+    @inline def createCertificateFuture(params: CreateCertificateRequest): Future[CreateCertificateResult] =
+      service.createCertificate(params).promise().toFuture
     @inline def createCloudFormationStackFuture(
         params: CreateCloudFormationStackRequest
     ): Future[CreateCloudFormationStackResult] = service.createCloudFormationStack(params).promise().toFuture
@@ -117,6 +141,8 @@ package object lightsail {
       service.createDisk(params).promise().toFuture
     @inline def createDiskSnapshotFuture(params: CreateDiskSnapshotRequest): Future[CreateDiskSnapshotResult] =
       service.createDiskSnapshot(params).promise().toFuture
+    @inline def createDistributionFuture(params: CreateDistributionRequest): Future[CreateDistributionResult] =
+      service.createDistribution(params).promise().toFuture
     @inline def createDomainEntryFuture(params: CreateDomainEntryRequest): Future[CreateDomainEntryResult] =
       service.createDomainEntry(params).promise().toFuture
     @inline def createDomainFuture(params: CreateDomainRequest): Future[CreateDomainResult] =
@@ -152,12 +178,16 @@ package object lightsail {
       service.deleteAlarm(params).promise().toFuture
     @inline def deleteAutoSnapshotFuture(params: DeleteAutoSnapshotRequest): Future[DeleteAutoSnapshotResult] =
       service.deleteAutoSnapshot(params).promise().toFuture
+    @inline def deleteCertificateFuture(params: DeleteCertificateRequest): Future[DeleteCertificateResult] =
+      service.deleteCertificate(params).promise().toFuture
     @inline def deleteContactMethodFuture(params: DeleteContactMethodRequest): Future[DeleteContactMethodResult] =
       service.deleteContactMethod(params).promise().toFuture
     @inline def deleteDiskFuture(params: DeleteDiskRequest): Future[DeleteDiskResult] =
       service.deleteDisk(params).promise().toFuture
     @inline def deleteDiskSnapshotFuture(params: DeleteDiskSnapshotRequest): Future[DeleteDiskSnapshotResult] =
       service.deleteDiskSnapshot(params).promise().toFuture
+    @inline def deleteDistributionFuture(params: DeleteDistributionRequest): Future[DeleteDistributionResult] =
+      service.deleteDistribution(params).promise().toFuture
     @inline def deleteDomainEntryFuture(params: DeleteDomainEntryRequest): Future[DeleteDomainEntryResult] =
       service.deleteDomainEntry(params).promise().toFuture
     @inline def deleteDomainFuture(params: DeleteDomainRequest): Future[DeleteDomainResult] =
@@ -184,6 +214,10 @@ package object lightsail {
         params: DeleteRelationalDatabaseSnapshotRequest
     ): Future[DeleteRelationalDatabaseSnapshotResult] =
       service.deleteRelationalDatabaseSnapshot(params).promise().toFuture
+    @inline def detachCertificateFromDistributionFuture(
+        params: DetachCertificateFromDistributionRequest
+    ): Future[DetachCertificateFromDistributionResult] =
+      service.detachCertificateFromDistribution(params).promise().toFuture
     @inline def detachDiskFuture(params: DetachDiskRequest): Future[DetachDiskResult] =
       service.detachDisk(params).promise().toFuture
     @inline def detachInstancesFromLoadBalancerFuture(
@@ -211,6 +245,8 @@ package object lightsail {
       service.getBlueprints(params).promise().toFuture
     @inline def getBundlesFuture(params: GetBundlesRequest): Future[GetBundlesResult] =
       service.getBundles(params).promise().toFuture
+    @inline def getCertificatesFuture(params: GetCertificatesRequest): Future[GetCertificatesResult] =
+      service.getCertificates(params).promise().toFuture
     @inline def getCloudFormationStackRecordsFuture(
         params: GetCloudFormationStackRecordsRequest
     ): Future[GetCloudFormationStackRecordsResult] = service.getCloudFormationStackRecords(params).promise().toFuture
@@ -224,6 +260,18 @@ package object lightsail {
       service.getDiskSnapshots(params).promise().toFuture
     @inline def getDisksFuture(params: GetDisksRequest): Future[GetDisksResult] =
       service.getDisks(params).promise().toFuture
+    @inline def getDistributionBundlesFuture(
+        params: GetDistributionBundlesRequest
+    ): Future[GetDistributionBundlesResult] = service.getDistributionBundles(params).promise().toFuture
+    @inline def getDistributionLatestCacheResetFuture(
+        params: GetDistributionLatestCacheResetRequest
+    ): Future[GetDistributionLatestCacheResetResult] =
+      service.getDistributionLatestCacheReset(params).promise().toFuture
+    @inline def getDistributionMetricDataFuture(
+        params: GetDistributionMetricDataRequest
+    ): Future[GetDistributionMetricDataResult] = service.getDistributionMetricData(params).promise().toFuture
+    @inline def getDistributionsFuture(params: GetDistributionsRequest): Future[GetDistributionsResult] =
+      service.getDistributions(params).promise().toFuture
     @inline def getDomainFuture(params: GetDomainRequest): Future[GetDomainResult] =
       service.getDomain(params).promise().toFuture
     @inline def getDomainsFuture(params: GetDomainsRequest): Future[GetDomainsResult] =
@@ -336,6 +384,9 @@ package object lightsail {
     ): Future[RebootRelationalDatabaseResult] = service.rebootRelationalDatabase(params).promise().toFuture
     @inline def releaseStaticIpFuture(params: ReleaseStaticIpRequest): Future[ReleaseStaticIpResult] =
       service.releaseStaticIp(params).promise().toFuture
+    @inline def resetDistributionCacheFuture(
+        params: ResetDistributionCacheRequest
+    ): Future[ResetDistributionCacheResult] = service.resetDistributionCache(params).promise().toFuture
     @inline def sendContactMethodVerificationFuture(
         params: SendContactMethodVerificationRequest
     ): Future[SendContactMethodVerificationResult] = service.sendContactMethodVerification(params).promise().toFuture
@@ -357,6 +408,11 @@ package object lightsail {
       service.unpeerVpc(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResult] =
       service.untagResource(params).promise().toFuture
+    @inline def updateDistributionBundleFuture(
+        params: UpdateDistributionBundleRequest
+    ): Future[UpdateDistributionBundleResult] = service.updateDistributionBundle(params).promise().toFuture
+    @inline def updateDistributionFuture(params: UpdateDistributionRequest): Future[UpdateDistributionResult] =
+      service.updateDistribution(params).promise().toFuture
     @inline def updateDomainEntryFuture(params: UpdateDomainEntryRequest): Future[UpdateDomainEntryResult] =
       service.updateDomainEntry(params).promise().toFuture
     @inline def updateLoadBalancerAttributeFuture(
@@ -379,6 +435,9 @@ package lightsail {
     def this(config: AWSConfig) = this()
 
     def allocateStaticIp(params: AllocateStaticIpRequest): Request[AllocateStaticIpResult] = js.native
+    def attachCertificateToDistribution(
+        params: AttachCertificateToDistributionRequest
+    ): Request[AttachCertificateToDistributionResult] = js.native
     def attachDisk(params: AttachDiskRequest): Request[AttachDiskResult] = js.native
     def attachInstancesToLoadBalancer(
         params: AttachInstancesToLoadBalancerRequest
@@ -390,12 +449,14 @@ package lightsail {
     def closeInstancePublicPorts(params: CloseInstancePublicPortsRequest): Request[CloseInstancePublicPortsResult] =
       js.native
     def copySnapshot(params: CopySnapshotRequest): Request[CopySnapshotResult] = js.native
+    def createCertificate(params: CreateCertificateRequest): Request[CreateCertificateResult] = js.native
     def createCloudFormationStack(params: CreateCloudFormationStackRequest): Request[CreateCloudFormationStackResult] =
       js.native
     def createContactMethod(params: CreateContactMethodRequest): Request[CreateContactMethodResult] = js.native
     def createDisk(params: CreateDiskRequest): Request[CreateDiskResult] = js.native
     def createDiskFromSnapshot(params: CreateDiskFromSnapshotRequest): Request[CreateDiskFromSnapshotResult] = js.native
     def createDiskSnapshot(params: CreateDiskSnapshotRequest): Request[CreateDiskSnapshotResult] = js.native
+    def createDistribution(params: CreateDistributionRequest): Request[CreateDistributionResult] = js.native
     def createDomain(params: CreateDomainRequest): Request[CreateDomainResult] = js.native
     def createDomainEntry(params: CreateDomainEntryRequest): Request[CreateDomainEntryResult] = js.native
     def createInstanceSnapshot(params: CreateInstanceSnapshotRequest): Request[CreateInstanceSnapshotResult] = js.native
@@ -418,9 +479,11 @@ package lightsail {
     ): Request[CreateRelationalDatabaseSnapshotResult] = js.native
     def deleteAlarm(params: DeleteAlarmRequest): Request[DeleteAlarmResult] = js.native
     def deleteAutoSnapshot(params: DeleteAutoSnapshotRequest): Request[DeleteAutoSnapshotResult] = js.native
+    def deleteCertificate(params: DeleteCertificateRequest): Request[DeleteCertificateResult] = js.native
     def deleteContactMethod(params: DeleteContactMethodRequest): Request[DeleteContactMethodResult] = js.native
     def deleteDisk(params: DeleteDiskRequest): Request[DeleteDiskResult] = js.native
     def deleteDiskSnapshot(params: DeleteDiskSnapshotRequest): Request[DeleteDiskSnapshotResult] = js.native
+    def deleteDistribution(params: DeleteDistributionRequest): Request[DeleteDistributionResult] = js.native
     def deleteDomain(params: DeleteDomainRequest): Request[DeleteDomainResult] = js.native
     def deleteDomainEntry(params: DeleteDomainEntryRequest): Request[DeleteDomainEntryResult] = js.native
     def deleteInstance(params: DeleteInstanceRequest): Request[DeleteInstanceResult] = js.native
@@ -436,6 +499,9 @@ package lightsail {
     def deleteRelationalDatabaseSnapshot(
         params: DeleteRelationalDatabaseSnapshotRequest
     ): Request[DeleteRelationalDatabaseSnapshotResult] = js.native
+    def detachCertificateFromDistribution(
+        params: DetachCertificateFromDistributionRequest
+    ): Request[DetachCertificateFromDistributionResult] = js.native
     def detachDisk(params: DetachDiskRequest): Request[DetachDiskResult] = js.native
     def detachInstancesFromLoadBalancer(
         params: DetachInstancesFromLoadBalancerRequest
@@ -450,6 +516,7 @@ package lightsail {
     def getAutoSnapshots(params: GetAutoSnapshotsRequest): Request[GetAutoSnapshotsResult] = js.native
     def getBlueprints(params: GetBlueprintsRequest): Request[GetBlueprintsResult] = js.native
     def getBundles(params: GetBundlesRequest): Request[GetBundlesResult] = js.native
+    def getCertificates(params: GetCertificatesRequest): Request[GetCertificatesResult] = js.native
     def getCloudFormationStackRecords(
         params: GetCloudFormationStackRecordsRequest
     ): Request[GetCloudFormationStackRecordsResult] = js.native
@@ -458,6 +525,13 @@ package lightsail {
     def getDiskSnapshot(params: GetDiskSnapshotRequest): Request[GetDiskSnapshotResult] = js.native
     def getDiskSnapshots(params: GetDiskSnapshotsRequest): Request[GetDiskSnapshotsResult] = js.native
     def getDisks(params: GetDisksRequest): Request[GetDisksResult] = js.native
+    def getDistributionBundles(params: GetDistributionBundlesRequest): Request[GetDistributionBundlesResult] = js.native
+    def getDistributionLatestCacheReset(
+        params: GetDistributionLatestCacheResetRequest
+    ): Request[GetDistributionLatestCacheResetResult] = js.native
+    def getDistributionMetricData(params: GetDistributionMetricDataRequest): Request[GetDistributionMetricDataResult] =
+      js.native
+    def getDistributions(params: GetDistributionsRequest): Request[GetDistributionsResult] = js.native
     def getDomain(params: GetDomainRequest): Request[GetDomainResult] = js.native
     def getDomains(params: GetDomainsRequest): Request[GetDomainsResult] = js.native
     def getExportSnapshotRecords(params: GetExportSnapshotRecordsRequest): Request[GetExportSnapshotRecordsResult] =
@@ -530,6 +604,7 @@ package lightsail {
     def rebootRelationalDatabase(params: RebootRelationalDatabaseRequest): Request[RebootRelationalDatabaseResult] =
       js.native
     def releaseStaticIp(params: ReleaseStaticIpRequest): Request[ReleaseStaticIpResult] = js.native
+    def resetDistributionCache(params: ResetDistributionCacheRequest): Request[ResetDistributionCacheResult] = js.native
     def sendContactMethodVerification(
         params: SendContactMethodVerificationRequest
     ): Request[SendContactMethodVerificationResult] = js.native
@@ -542,6 +617,9 @@ package lightsail {
     def testAlarm(params: TestAlarmRequest): Request[TestAlarmResult] = js.native
     def unpeerVpc(params: UnpeerVpcRequest): Request[UnpeerVpcResult] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResult] = js.native
+    def updateDistribution(params: UpdateDistributionRequest): Request[UpdateDistributionResult] = js.native
+    def updateDistributionBundle(params: UpdateDistributionBundleRequest): Request[UpdateDistributionBundleResult] =
+      js.native
     def updateDomainEntry(params: UpdateDomainEntryRequest): Request[UpdateDomainEntryResult] = js.native
     def updateLoadBalancerAttribute(
         params: UpdateLoadBalancerAttributeRequest
@@ -742,6 +820,43 @@ package lightsail {
       val __obj = js.Dynamic.literal()
       operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AllocateStaticIpResult]
+    }
+  }
+
+  @js.native
+  trait AttachCertificateToDistributionRequest extends js.Object {
+    var certificateName: ResourceName
+    var distributionName: ResourceName
+  }
+
+  object AttachCertificateToDistributionRequest {
+    @inline
+    def apply(
+        certificateName: ResourceName,
+        distributionName: ResourceName
+    ): AttachCertificateToDistributionRequest = {
+      val __obj = js.Dynamic.literal(
+        "certificateName" -> certificateName.asInstanceOf[js.Any],
+        "distributionName" -> distributionName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[AttachCertificateToDistributionRequest]
+    }
+  }
+
+  @js.native
+  trait AttachCertificateToDistributionResult extends js.Object {
+    var operation: js.UndefOr[Operation]
+  }
+
+  object AttachCertificateToDistributionResult {
+    @inline
+    def apply(
+        operation: js.UndefOr[Operation] = js.undefined
+    ): AttachCertificateToDistributionResult = {
+      val __obj = js.Dynamic.literal()
+      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AttachCertificateToDistributionResult]
     }
   }
 
@@ -1003,6 +1118,15 @@ package lightsail {
     }
   }
 
+  @js.native
+  sealed trait BehaviorEnum extends js.Any
+  object BehaviorEnum extends js.Object {
+    val `dont-cache` = "dont-cache".asInstanceOf[BehaviorEnum]
+    val cache = "cache".asInstanceOf[BehaviorEnum]
+
+    val values = js.Object.freeze(js.Array(`dont-cache`, cache))
+  }
+
   /**
     * Describes a blueprint (a virtual private server image).
     */
@@ -1110,6 +1234,217 @@ package lightsail {
       supportedPlatforms.foreach(__v => __obj.updateDynamic("supportedPlatforms")(__v.asInstanceOf[js.Any]))
       transferPerMonthInGb.foreach(__v => __obj.updateDynamic("transferPerMonthInGb")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Bundle]
+    }
+  }
+
+  /**
+    * Describes the default cache behavior of an Amazon Lightsail content delivery network (CDN) distribution.
+    */
+  @js.native
+  trait CacheBehavior extends js.Object {
+    var behavior: js.UndefOr[BehaviorEnum]
+  }
+
+  object CacheBehavior {
+    @inline
+    def apply(
+        behavior: js.UndefOr[BehaviorEnum] = js.undefined
+    ): CacheBehavior = {
+      val __obj = js.Dynamic.literal()
+      behavior.foreach(__v => __obj.updateDynamic("behavior")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CacheBehavior]
+    }
+  }
+
+  /**
+    * Describes the per-path cache behavior of an Amazon Lightsail content delivery network (CDN) distribution.
+    *  A per-path cache behavior is used to override, or add an exception to, the default cache behavior of a distribution. For example, if the <code>cacheBehavior</code> is set to <code>cache</code>, then a per-path cache behavior can be used to specify a directory, file, or file type that your distribution will cache. Alternately, if the distribution's <code>cacheBehavior</code> is <code>dont-cache</code>, then a per-path cache behavior can be used to specify a directory, file, or file type that your distribution will not cache.
+    *  if the cacheBehavior's behavior is set to 'cache', then
+    */
+  @js.native
+  trait CacheBehaviorPerPath extends js.Object {
+    var behavior: js.UndefOr[BehaviorEnum]
+    var path: js.UndefOr[String]
+  }
+
+  object CacheBehaviorPerPath {
+    @inline
+    def apply(
+        behavior: js.UndefOr[BehaviorEnum] = js.undefined,
+        path: js.UndefOr[String] = js.undefined
+    ): CacheBehaviorPerPath = {
+      val __obj = js.Dynamic.literal()
+      behavior.foreach(__v => __obj.updateDynamic("behavior")(__v.asInstanceOf[js.Any]))
+      path.foreach(__v => __obj.updateDynamic("path")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CacheBehaviorPerPath]
+    }
+  }
+
+  /**
+    * Describes the cache settings of an Amazon Lightsail content delivery network (CDN) distribution.
+    *  These settings apply only to your distribution's <code>cacheBehaviors</code> (including the <code>defaultCacheBehavior</code>) that have a <code>behavior</code> of <code>cache</code>.
+    */
+  @js.native
+  trait CacheSettings extends js.Object {
+    var allowedHTTPMethods: js.UndefOr[NonEmptyString]
+    var cachedHTTPMethods: js.UndefOr[NonEmptyString]
+    var defaultTTL: js.UndefOr[Double]
+    var forwardedCookies: js.UndefOr[CookieObject]
+    var forwardedHeaders: js.UndefOr[HeaderObject]
+    var forwardedQueryStrings: js.UndefOr[QueryStringObject]
+    var maximumTTL: js.UndefOr[Double]
+    var minimumTTL: js.UndefOr[Double]
+  }
+
+  object CacheSettings {
+    @inline
+    def apply(
+        allowedHTTPMethods: js.UndefOr[NonEmptyString] = js.undefined,
+        cachedHTTPMethods: js.UndefOr[NonEmptyString] = js.undefined,
+        defaultTTL: js.UndefOr[Double] = js.undefined,
+        forwardedCookies: js.UndefOr[CookieObject] = js.undefined,
+        forwardedHeaders: js.UndefOr[HeaderObject] = js.undefined,
+        forwardedQueryStrings: js.UndefOr[QueryStringObject] = js.undefined,
+        maximumTTL: js.UndefOr[Double] = js.undefined,
+        minimumTTL: js.UndefOr[Double] = js.undefined
+    ): CacheSettings = {
+      val __obj = js.Dynamic.literal()
+      allowedHTTPMethods.foreach(__v => __obj.updateDynamic("allowedHTTPMethods")(__v.asInstanceOf[js.Any]))
+      cachedHTTPMethods.foreach(__v => __obj.updateDynamic("cachedHTTPMethods")(__v.asInstanceOf[js.Any]))
+      defaultTTL.foreach(__v => __obj.updateDynamic("defaultTTL")(__v.asInstanceOf[js.Any]))
+      forwardedCookies.foreach(__v => __obj.updateDynamic("forwardedCookies")(__v.asInstanceOf[js.Any]))
+      forwardedHeaders.foreach(__v => __obj.updateDynamic("forwardedHeaders")(__v.asInstanceOf[js.Any]))
+      forwardedQueryStrings.foreach(__v => __obj.updateDynamic("forwardedQueryStrings")(__v.asInstanceOf[js.Any]))
+      maximumTTL.foreach(__v => __obj.updateDynamic("maximumTTL")(__v.asInstanceOf[js.Any]))
+      minimumTTL.foreach(__v => __obj.updateDynamic("minimumTTL")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CacheSettings]
+    }
+  }
+
+  /**
+    * Describes the full details of an Amazon Lightsail SSL/TLS certificate.
+    *
+    * '''Note:'''To get a summary of a certificate, use the <code>GetCertificates</code> action and ommit <code>includeCertificateDetails</code> from your request. The response will include only the certificate Amazon Resource Name (ARN), certificate name, domain name, and tags.
+    */
+  @js.native
+  trait Certificate extends js.Object {
+    var arn: js.UndefOr[NonEmptyString]
+    var createdAt: js.UndefOr[IsoDate]
+    var domainName: js.UndefOr[DomainName]
+    var domainValidationRecords: js.UndefOr[DomainValidationRecordList]
+    var eligibleToRenew: js.UndefOr[EligibleToRenew]
+    var inUseResourceCount: js.UndefOr[InUseResourceCount]
+    var issuedAt: js.UndefOr[IsoDate]
+    var issuerCA: js.UndefOr[IssuerCA]
+    var keyAlgorithm: js.UndefOr[KeyAlgorithm]
+    var name: js.UndefOr[CertificateName]
+    var notAfter: js.UndefOr[IsoDate]
+    var notBefore: js.UndefOr[IsoDate]
+    var renewalSummary: js.UndefOr[RenewalSummary]
+    var requestFailureReason: js.UndefOr[RequestFailureReason]
+    var revocationReason: js.UndefOr[RevocationReason]
+    var revokedAt: js.UndefOr[IsoDate]
+    var serialNumber: js.UndefOr[SerialNumber]
+    var status: js.UndefOr[CertificateStatus]
+    var subjectAlternativeNames: js.UndefOr[SubjectAlternativeNameList]
+    var supportCode: js.UndefOr[String]
+    var tags: js.UndefOr[TagList]
+  }
+
+  object Certificate {
+    @inline
+    def apply(
+        arn: js.UndefOr[NonEmptyString] = js.undefined,
+        createdAt: js.UndefOr[IsoDate] = js.undefined,
+        domainName: js.UndefOr[DomainName] = js.undefined,
+        domainValidationRecords: js.UndefOr[DomainValidationRecordList] = js.undefined,
+        eligibleToRenew: js.UndefOr[EligibleToRenew] = js.undefined,
+        inUseResourceCount: js.UndefOr[InUseResourceCount] = js.undefined,
+        issuedAt: js.UndefOr[IsoDate] = js.undefined,
+        issuerCA: js.UndefOr[IssuerCA] = js.undefined,
+        keyAlgorithm: js.UndefOr[KeyAlgorithm] = js.undefined,
+        name: js.UndefOr[CertificateName] = js.undefined,
+        notAfter: js.UndefOr[IsoDate] = js.undefined,
+        notBefore: js.UndefOr[IsoDate] = js.undefined,
+        renewalSummary: js.UndefOr[RenewalSummary] = js.undefined,
+        requestFailureReason: js.UndefOr[RequestFailureReason] = js.undefined,
+        revocationReason: js.UndefOr[RevocationReason] = js.undefined,
+        revokedAt: js.UndefOr[IsoDate] = js.undefined,
+        serialNumber: js.UndefOr[SerialNumber] = js.undefined,
+        status: js.UndefOr[CertificateStatus] = js.undefined,
+        subjectAlternativeNames: js.UndefOr[SubjectAlternativeNameList] = js.undefined,
+        supportCode: js.UndefOr[String] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
+    ): Certificate = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      domainName.foreach(__v => __obj.updateDynamic("domainName")(__v.asInstanceOf[js.Any]))
+      domainValidationRecords.foreach(__v => __obj.updateDynamic("domainValidationRecords")(__v.asInstanceOf[js.Any]))
+      eligibleToRenew.foreach(__v => __obj.updateDynamic("eligibleToRenew")(__v.asInstanceOf[js.Any]))
+      inUseResourceCount.foreach(__v => __obj.updateDynamic("inUseResourceCount")(__v.asInstanceOf[js.Any]))
+      issuedAt.foreach(__v => __obj.updateDynamic("issuedAt")(__v.asInstanceOf[js.Any]))
+      issuerCA.foreach(__v => __obj.updateDynamic("issuerCA")(__v.asInstanceOf[js.Any]))
+      keyAlgorithm.foreach(__v => __obj.updateDynamic("keyAlgorithm")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      notAfter.foreach(__v => __obj.updateDynamic("notAfter")(__v.asInstanceOf[js.Any]))
+      notBefore.foreach(__v => __obj.updateDynamic("notBefore")(__v.asInstanceOf[js.Any]))
+      renewalSummary.foreach(__v => __obj.updateDynamic("renewalSummary")(__v.asInstanceOf[js.Any]))
+      requestFailureReason.foreach(__v => __obj.updateDynamic("requestFailureReason")(__v.asInstanceOf[js.Any]))
+      revocationReason.foreach(__v => __obj.updateDynamic("revocationReason")(__v.asInstanceOf[js.Any]))
+      revokedAt.foreach(__v => __obj.updateDynamic("revokedAt")(__v.asInstanceOf[js.Any]))
+      serialNumber.foreach(__v => __obj.updateDynamic("serialNumber")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      subjectAlternativeNames.foreach(__v => __obj.updateDynamic("subjectAlternativeNames")(__v.asInstanceOf[js.Any]))
+      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Certificate]
+    }
+  }
+
+  @js.native
+  sealed trait CertificateStatus extends js.Any
+  object CertificateStatus extends js.Object {
+    val PENDING_VALIDATION = "PENDING_VALIDATION".asInstanceOf[CertificateStatus]
+    val ISSUED = "ISSUED".asInstanceOf[CertificateStatus]
+    val INACTIVE = "INACTIVE".asInstanceOf[CertificateStatus]
+    val EXPIRED = "EXPIRED".asInstanceOf[CertificateStatus]
+    val VALIDATION_TIMED_OUT = "VALIDATION_TIMED_OUT".asInstanceOf[CertificateStatus]
+    val REVOKED = "REVOKED".asInstanceOf[CertificateStatus]
+    val FAILED = "FAILED".asInstanceOf[CertificateStatus]
+
+    val values =
+      js.Object.freeze(js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED))
+  }
+
+  /**
+    * Describes an Amazon Lightsail SSL/TLS certificate.
+    */
+  @js.native
+  trait CertificateSummary extends js.Object {
+    var certificateArn: js.UndefOr[NonEmptyString]
+    var certificateDetail: js.UndefOr[Certificate]
+    var certificateName: js.UndefOr[CertificateName]
+    var domainName: js.UndefOr[DomainName]
+    var tags: js.UndefOr[TagList]
+  }
+
+  object CertificateSummary {
+    @inline
+    def apply(
+        certificateArn: js.UndefOr[NonEmptyString] = js.undefined,
+        certificateDetail: js.UndefOr[Certificate] = js.undefined,
+        certificateName: js.UndefOr[CertificateName] = js.undefined,
+        domainName: js.UndefOr[DomainName] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
+    ): CertificateSummary = {
+      val __obj = js.Dynamic.literal()
+      certificateArn.foreach(__v => __obj.updateDynamic("certificateArn")(__v.asInstanceOf[js.Any]))
+      certificateDetail.foreach(__v => __obj.updateDynamic("certificateDetail")(__v.asInstanceOf[js.Any]))
+      certificateName.foreach(__v => __obj.updateDynamic("certificateName")(__v.asInstanceOf[js.Any]))
+      domainName.foreach(__v => __obj.updateDynamic("domainName")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CertificateSummary]
     }
   }
 
@@ -1308,6 +1643,29 @@ package lightsail {
     val values = js.Object.freeze(js.Array(Email, SMS))
   }
 
+  /**
+    * Describes whether an Amazon Lightsail content delivery network (CDN) distribution forwards cookies to the origin and, if so, which ones.
+    *  For the cookies that you specify, your distribution caches separate versions of the specified content based on the cookie values in viewer requests.
+    */
+  @js.native
+  trait CookieObject extends js.Object {
+    var cookiesAllowList: js.UndefOr[StringList]
+    var option: js.UndefOr[ForwardValues]
+  }
+
+  object CookieObject {
+    @inline
+    def apply(
+        cookiesAllowList: js.UndefOr[StringList] = js.undefined,
+        option: js.UndefOr[ForwardValues] = js.undefined
+    ): CookieObject = {
+      val __obj = js.Dynamic.literal()
+      cookiesAllowList.foreach(__v => __obj.updateDynamic("cookiesAllowList")(__v.asInstanceOf[js.Any]))
+      option.foreach(__v => __obj.updateDynamic("option")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CookieObject]
+    }
+  }
+
   @js.native
   trait CopySnapshotRequest extends js.Object {
     var sourceRegion: RegionName
@@ -1356,6 +1714,52 @@ package lightsail {
       val __obj = js.Dynamic.literal()
       operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CopySnapshotResult]
+    }
+  }
+
+  @js.native
+  trait CreateCertificateRequest extends js.Object {
+    var certificateName: CertificateName
+    var domainName: DomainName
+    var subjectAlternativeNames: js.UndefOr[SubjectAlternativeNameList]
+    var tags: js.UndefOr[TagList]
+  }
+
+  object CreateCertificateRequest {
+    @inline
+    def apply(
+        certificateName: CertificateName,
+        domainName: DomainName,
+        subjectAlternativeNames: js.UndefOr[SubjectAlternativeNameList] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
+    ): CreateCertificateRequest = {
+      val __obj = js.Dynamic.literal(
+        "certificateName" -> certificateName.asInstanceOf[js.Any],
+        "domainName" -> domainName.asInstanceOf[js.Any]
+      )
+
+      subjectAlternativeNames.foreach(__v => __obj.updateDynamic("subjectAlternativeNames")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCertificateRequest]
+    }
+  }
+
+  @js.native
+  trait CreateCertificateResult extends js.Object {
+    var certificate: js.UndefOr[CertificateSummary]
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object CreateCertificateResult {
+    @inline
+    def apply(
+        certificate: js.UndefOr[CertificateSummary] = js.undefined,
+        operations: js.UndefOr[OperationList] = js.undefined
+    ): CreateCertificateResult = {
+      val __obj = js.Dynamic.literal()
+      certificate.foreach(__v => __obj.updateDynamic("certificate")(__v.asInstanceOf[js.Any]))
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCertificateResult]
     }
   }
 
@@ -1576,6 +1980,61 @@ package lightsail {
       val __obj = js.Dynamic.literal()
       operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDiskSnapshotResult]
+    }
+  }
+
+  @js.native
+  trait CreateDistributionRequest extends js.Object {
+    var bundleId: String
+    var defaultCacheBehavior: CacheBehavior
+    var distributionName: ResourceName
+    var origin: InputOrigin
+    var cacheBehaviorSettings: js.UndefOr[CacheSettings]
+    var cacheBehaviors: js.UndefOr[CacheBehaviorList]
+    var tags: js.UndefOr[TagList]
+  }
+
+  object CreateDistributionRequest {
+    @inline
+    def apply(
+        bundleId: String,
+        defaultCacheBehavior: CacheBehavior,
+        distributionName: ResourceName,
+        origin: InputOrigin,
+        cacheBehaviorSettings: js.UndefOr[CacheSettings] = js.undefined,
+        cacheBehaviors: js.UndefOr[CacheBehaviorList] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
+    ): CreateDistributionRequest = {
+      val __obj = js.Dynamic.literal(
+        "bundleId" -> bundleId.asInstanceOf[js.Any],
+        "defaultCacheBehavior" -> defaultCacheBehavior.asInstanceOf[js.Any],
+        "distributionName" -> distributionName.asInstanceOf[js.Any],
+        "origin" -> origin.asInstanceOf[js.Any]
+      )
+
+      cacheBehaviorSettings.foreach(__v => __obj.updateDynamic("cacheBehaviorSettings")(__v.asInstanceOf[js.Any]))
+      cacheBehaviors.foreach(__v => __obj.updateDynamic("cacheBehaviors")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDistributionRequest]
+    }
+  }
+
+  @js.native
+  trait CreateDistributionResult extends js.Object {
+    var distribution: js.UndefOr[LightsailDistribution]
+    var operation: js.UndefOr[Operation]
+  }
+
+  object CreateDistributionResult {
+    @inline
+    def apply(
+        distribution: js.UndefOr[LightsailDistribution] = js.undefined,
+        operation: js.UndefOr[Operation] = js.undefined
+    ): CreateDistributionResult = {
+      val __obj = js.Dynamic.literal()
+      distribution.foreach(__v => __obj.updateDynamic("distribution")(__v.asInstanceOf[js.Any]))
+      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDistributionResult]
     }
   }
 
@@ -2210,6 +2669,40 @@ package lightsail {
   }
 
   @js.native
+  trait DeleteCertificateRequest extends js.Object {
+    var certificateName: CertificateName
+  }
+
+  object DeleteCertificateRequest {
+    @inline
+    def apply(
+        certificateName: CertificateName
+    ): DeleteCertificateRequest = {
+      val __obj = js.Dynamic.literal(
+        "certificateName" -> certificateName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteCertificateRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteCertificateResult extends js.Object {
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object DeleteCertificateResult {
+    @inline
+    def apply(
+        operations: js.UndefOr[OperationList] = js.undefined
+    ): DeleteCertificateResult = {
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteCertificateResult]
+    }
+  }
+
+  @js.native
   trait DeleteContactMethodRequest extends js.Object {
     var protocol: ContactProtocol
   }
@@ -2311,6 +2804,38 @@ package lightsail {
       val __obj = js.Dynamic.literal()
       operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDiskSnapshotResult]
+    }
+  }
+
+  @js.native
+  trait DeleteDistributionRequest extends js.Object {
+    var distributionName: js.UndefOr[ResourceName]
+  }
+
+  object DeleteDistributionRequest {
+    @inline
+    def apply(
+        distributionName: js.UndefOr[ResourceName] = js.undefined
+    ): DeleteDistributionRequest = {
+      val __obj = js.Dynamic.literal()
+      distributionName.foreach(__v => __obj.updateDynamic("distributionName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteDistributionRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteDistributionResult extends js.Object {
+    var operation: js.UndefOr[Operation]
+  }
+
+  object DeleteDistributionResult {
+    @inline
+    def apply(
+        operation: js.UndefOr[Operation] = js.undefined
+    ): DeleteDistributionResult = {
+      val __obj = js.Dynamic.literal()
+      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteDistributionResult]
     }
   }
 
@@ -2697,6 +3222,40 @@ package lightsail {
   }
 
   @js.native
+  trait DetachCertificateFromDistributionRequest extends js.Object {
+    var distributionName: ResourceName
+  }
+
+  object DetachCertificateFromDistributionRequest {
+    @inline
+    def apply(
+        distributionName: ResourceName
+    ): DetachCertificateFromDistributionRequest = {
+      val __obj = js.Dynamic.literal(
+        "distributionName" -> distributionName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DetachCertificateFromDistributionRequest]
+    }
+  }
+
+  @js.native
+  trait DetachCertificateFromDistributionResult extends js.Object {
+    var operation: js.UndefOr[Operation]
+  }
+
+  object DetachCertificateFromDistributionResult {
+    @inline
+    def apply(
+        operation: js.UndefOr[Operation] = js.undefined
+    ): DetachCertificateFromDistributionResult = {
+      val __obj = js.Dynamic.literal()
+      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetachCertificateFromDistributionResult]
+    }
+  }
+
+  @js.native
   trait DetachDiskRequest extends js.Object {
     var diskName: ResourceName
   }
@@ -3059,6 +3618,52 @@ package lightsail {
   }
 
   /**
+    * Describes the specifications of a distribution bundle.
+    */
+  @js.native
+  trait DistributionBundle extends js.Object {
+    var bundleId: js.UndefOr[String]
+    var isActive: js.UndefOr[Boolean]
+    var name: js.UndefOr[String]
+    var price: js.UndefOr[Float]
+    var transferPerMonthInGb: js.UndefOr[Int]
+  }
+
+  object DistributionBundle {
+    @inline
+    def apply(
+        bundleId: js.UndefOr[String] = js.undefined,
+        isActive: js.UndefOr[Boolean] = js.undefined,
+        name: js.UndefOr[String] = js.undefined,
+        price: js.UndefOr[Float] = js.undefined,
+        transferPerMonthInGb: js.UndefOr[Int] = js.undefined
+    ): DistributionBundle = {
+      val __obj = js.Dynamic.literal()
+      bundleId.foreach(__v => __obj.updateDynamic("bundleId")(__v.asInstanceOf[js.Any]))
+      isActive.foreach(__v => __obj.updateDynamic("isActive")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      price.foreach(__v => __obj.updateDynamic("price")(__v.asInstanceOf[js.Any]))
+      transferPerMonthInGb.foreach(__v => __obj.updateDynamic("transferPerMonthInGb")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DistributionBundle]
+    }
+  }
+
+  @js.native
+  sealed trait DistributionMetricName extends js.Any
+  object DistributionMetricName extends js.Object {
+    val Requests = "Requests".asInstanceOf[DistributionMetricName]
+    val BytesDownloaded = "BytesDownloaded".asInstanceOf[DistributionMetricName]
+    val BytesUploaded = "BytesUploaded".asInstanceOf[DistributionMetricName]
+    val TotalErrorRate = "TotalErrorRate".asInstanceOf[DistributionMetricName]
+    val Http4xxErrorRate = "Http4xxErrorRate".asInstanceOf[DistributionMetricName]
+    val Http5xxErrorRate = "Http5xxErrorRate".asInstanceOf[DistributionMetricName]
+
+    val values = js.Object.freeze(
+      js.Array(Requests, BytesDownloaded, BytesUploaded, TotalErrorRate, Http4xxErrorRate, Http5xxErrorRate)
+    )
+  }
+
+  /**
     * Describes a domain where you are storing recordsets in Lightsail.
     */
   @js.native
@@ -3129,6 +3734,28 @@ package lightsail {
       target.foreach(__v => __obj.updateDynamic("target")(__v.asInstanceOf[js.Any]))
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainEntry]
+    }
+  }
+
+  /**
+    * Describes the domain validation records of an Amazon Lightsail SSL/TLS certificate.
+    */
+  @js.native
+  trait DomainValidationRecord extends js.Object {
+    var domainName: js.UndefOr[DomainName]
+    var resourceRecord: js.UndefOr[ResourceRecord]
+  }
+
+  object DomainValidationRecord {
+    @inline
+    def apply(
+        domainName: js.UndefOr[DomainName] = js.undefined,
+        resourceRecord: js.UndefOr[ResourceRecord] = js.undefined
+    ): DomainValidationRecord = {
+      val __obj = js.Dynamic.literal()
+      domainName.foreach(__v => __obj.updateDynamic("domainName")(__v.asInstanceOf[js.Any]))
+      resourceRecord.foreach(__v => __obj.updateDynamic("resourceRecord")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DomainValidationRecord]
     }
   }
 
@@ -3325,6 +3952,16 @@ package lightsail {
   }
 
   @js.native
+  sealed trait ForwardValues extends js.Any
+  object ForwardValues extends js.Object {
+    val none = "none".asInstanceOf[ForwardValues]
+    val `allow-list` = "allow-list".asInstanceOf[ForwardValues]
+    val all = "all".asInstanceOf[ForwardValues]
+
+    val values = js.Object.freeze(js.Array(none, `allow-list`, all))
+  }
+
+  @js.native
   trait GetActiveNamesRequest extends js.Object {
     var pageToken: js.UndefOr[String]
   }
@@ -3513,6 +4150,46 @@ package lightsail {
       bundles.foreach(__v => __obj.updateDynamic("bundles")(__v.asInstanceOf[js.Any]))
       nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBundlesResult]
+    }
+  }
+
+  @js.native
+  trait GetCertificatesRequest extends js.Object {
+    var certificateName: js.UndefOr[CertificateName]
+    var certificateStatuses: js.UndefOr[CertificateStatusList]
+    var includeCertificateDetails: js.UndefOr[IncludeCertificateDetails]
+  }
+
+  object GetCertificatesRequest {
+    @inline
+    def apply(
+        certificateName: js.UndefOr[CertificateName] = js.undefined,
+        certificateStatuses: js.UndefOr[CertificateStatusList] = js.undefined,
+        includeCertificateDetails: js.UndefOr[IncludeCertificateDetails] = js.undefined
+    ): GetCertificatesRequest = {
+      val __obj = js.Dynamic.literal()
+      certificateName.foreach(__v => __obj.updateDynamic("certificateName")(__v.asInstanceOf[js.Any]))
+      certificateStatuses.foreach(__v => __obj.updateDynamic("certificateStatuses")(__v.asInstanceOf[js.Any]))
+      includeCertificateDetails.foreach(__v =>
+        __obj.updateDynamic("includeCertificateDetails")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[GetCertificatesRequest]
+    }
+  }
+
+  @js.native
+  trait GetCertificatesResult extends js.Object {
+    var certificates: js.UndefOr[CertificateSummaryList]
+  }
+
+  object GetCertificatesResult {
+    @inline
+    def apply(
+        certificates: js.UndefOr[CertificateSummaryList] = js.undefined
+    ): GetCertificatesResult = {
+      val __obj = js.Dynamic.literal()
+      certificates.foreach(__v => __obj.updateDynamic("certificates")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCertificatesResult]
     }
   }
 
@@ -3720,6 +4397,163 @@ package lightsail {
       disks.foreach(__v => __obj.updateDynamic("disks")(__v.asInstanceOf[js.Any]))
       nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDisksResult]
+    }
+  }
+
+  @js.native
+  trait GetDistributionBundlesRequest extends js.Object {}
+
+  object GetDistributionBundlesRequest {
+    @inline
+    def apply(
+    ): GetDistributionBundlesRequest = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[GetDistributionBundlesRequest]
+    }
+  }
+
+  @js.native
+  trait GetDistributionBundlesResult extends js.Object {
+    var bundles: js.UndefOr[DistributionBundleList]
+  }
+
+  object GetDistributionBundlesResult {
+    @inline
+    def apply(
+        bundles: js.UndefOr[DistributionBundleList] = js.undefined
+    ): GetDistributionBundlesResult = {
+      val __obj = js.Dynamic.literal()
+      bundles.foreach(__v => __obj.updateDynamic("bundles")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDistributionBundlesResult]
+    }
+  }
+
+  @js.native
+  trait GetDistributionLatestCacheResetRequest extends js.Object {
+    var distributionName: js.UndefOr[ResourceName]
+  }
+
+  object GetDistributionLatestCacheResetRequest {
+    @inline
+    def apply(
+        distributionName: js.UndefOr[ResourceName] = js.undefined
+    ): GetDistributionLatestCacheResetRequest = {
+      val __obj = js.Dynamic.literal()
+      distributionName.foreach(__v => __obj.updateDynamic("distributionName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDistributionLatestCacheResetRequest]
+    }
+  }
+
+  @js.native
+  trait GetDistributionLatestCacheResetResult extends js.Object {
+    var createTime: js.UndefOr[IsoDate]
+    var status: js.UndefOr[String]
+  }
+
+  object GetDistributionLatestCacheResetResult {
+    @inline
+    def apply(
+        createTime: js.UndefOr[IsoDate] = js.undefined,
+        status: js.UndefOr[String] = js.undefined
+    ): GetDistributionLatestCacheResetResult = {
+      val __obj = js.Dynamic.literal()
+      createTime.foreach(__v => __obj.updateDynamic("createTime")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDistributionLatestCacheResetResult]
+    }
+  }
+
+  @js.native
+  trait GetDistributionMetricDataRequest extends js.Object {
+    var distributionName: ResourceName
+    var endTime: timestamp
+    var metricName: DistributionMetricName
+    var period: MetricPeriod
+    var startTime: timestamp
+    var statistics: MetricStatisticList
+    var unit: MetricUnit
+  }
+
+  object GetDistributionMetricDataRequest {
+    @inline
+    def apply(
+        distributionName: ResourceName,
+        endTime: timestamp,
+        metricName: DistributionMetricName,
+        period: MetricPeriod,
+        startTime: timestamp,
+        statistics: MetricStatisticList,
+        unit: MetricUnit
+    ): GetDistributionMetricDataRequest = {
+      val __obj = js.Dynamic.literal(
+        "distributionName" -> distributionName.asInstanceOf[js.Any],
+        "endTime" -> endTime.asInstanceOf[js.Any],
+        "metricName" -> metricName.asInstanceOf[js.Any],
+        "period" -> period.asInstanceOf[js.Any],
+        "startTime" -> startTime.asInstanceOf[js.Any],
+        "statistics" -> statistics.asInstanceOf[js.Any],
+        "unit" -> unit.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetDistributionMetricDataRequest]
+    }
+  }
+
+  @js.native
+  trait GetDistributionMetricDataResult extends js.Object {
+    var metricData: js.UndefOr[MetricDatapointList]
+    var metricName: js.UndefOr[DistributionMetricName]
+  }
+
+  object GetDistributionMetricDataResult {
+    @inline
+    def apply(
+        metricData: js.UndefOr[MetricDatapointList] = js.undefined,
+        metricName: js.UndefOr[DistributionMetricName] = js.undefined
+    ): GetDistributionMetricDataResult = {
+      val __obj = js.Dynamic.literal()
+      metricData.foreach(__v => __obj.updateDynamic("metricData")(__v.asInstanceOf[js.Any]))
+      metricName.foreach(__v => __obj.updateDynamic("metricName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDistributionMetricDataResult]
+    }
+  }
+
+  @js.native
+  trait GetDistributionsRequest extends js.Object {
+    var distributionName: js.UndefOr[ResourceName]
+    var pageToken: js.UndefOr[String]
+  }
+
+  object GetDistributionsRequest {
+    @inline
+    def apply(
+        distributionName: js.UndefOr[ResourceName] = js.undefined,
+        pageToken: js.UndefOr[String] = js.undefined
+    ): GetDistributionsRequest = {
+      val __obj = js.Dynamic.literal()
+      distributionName.foreach(__v => __obj.updateDynamic("distributionName")(__v.asInstanceOf[js.Any]))
+      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDistributionsRequest]
+    }
+  }
+
+  @js.native
+  trait GetDistributionsResult extends js.Object {
+    var distributions: js.UndefOr[DistributionList]
+    var nextPageToken: js.UndefOr[String]
+  }
+
+  object GetDistributionsResult {
+    @inline
+    def apply(
+        distributions: js.UndefOr[DistributionList] = js.undefined,
+        nextPageToken: js.UndefOr[String] = js.undefined
+    ): GetDistributionsResult = {
+      val __obj = js.Dynamic.literal()
+      distributions.foreach(__v => __obj.updateDynamic("distributions")(__v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDistributionsResult]
     }
   }
 
@@ -5049,6 +5883,69 @@ package lightsail {
     }
   }
 
+  @js.native
+  sealed trait HeaderEnum extends js.Any
+  object HeaderEnum extends js.Object {
+    val Accept = "Accept".asInstanceOf[HeaderEnum]
+    val `Accept-Charset` = "Accept-Charset".asInstanceOf[HeaderEnum]
+    val `Accept-Datetime` = "Accept-Datetime".asInstanceOf[HeaderEnum]
+    val `Accept-Encoding` = "Accept-Encoding".asInstanceOf[HeaderEnum]
+    val `Accept-Language` = "Accept-Language".asInstanceOf[HeaderEnum]
+    val Authorization = "Authorization".asInstanceOf[HeaderEnum]
+    val `CloudFront-Forwarded-Proto` = "CloudFront-Forwarded-Proto".asInstanceOf[HeaderEnum]
+    val `CloudFront-Is-Desktop-Viewer` = "CloudFront-Is-Desktop-Viewer".asInstanceOf[HeaderEnum]
+    val `CloudFront-Is-Mobile-Viewer` = "CloudFront-Is-Mobile-Viewer".asInstanceOf[HeaderEnum]
+    val `CloudFront-Is-SmartTV-Viewer` = "CloudFront-Is-SmartTV-Viewer".asInstanceOf[HeaderEnum]
+    val `CloudFront-Is-Tablet-Viewer` = "CloudFront-Is-Tablet-Viewer".asInstanceOf[HeaderEnum]
+    val `CloudFront-Viewer-Country` = "CloudFront-Viewer-Country".asInstanceOf[HeaderEnum]
+    val Host = "Host".asInstanceOf[HeaderEnum]
+    val Origin = "Origin".asInstanceOf[HeaderEnum]
+    val Referer = "Referer".asInstanceOf[HeaderEnum]
+
+    val values = js.Object.freeze(
+      js.Array(
+        Accept,
+        `Accept-Charset`,
+        `Accept-Datetime`,
+        `Accept-Encoding`,
+        `Accept-Language`,
+        Authorization,
+        `CloudFront-Forwarded-Proto`,
+        `CloudFront-Is-Desktop-Viewer`,
+        `CloudFront-Is-Mobile-Viewer`,
+        `CloudFront-Is-SmartTV-Viewer`,
+        `CloudFront-Is-Tablet-Viewer`,
+        `CloudFront-Viewer-Country`,
+        Host,
+        Origin,
+        Referer
+      )
+    )
+  }
+
+  /**
+    * Describes the request headers that a Lightsail distribution bases caching on.
+    *  For the headers that you specify, your distribution caches separate versions of the specified content based on the header values in viewer requests. For example, suppose viewer requests for <code>logo.jpg</code> contain a custom <code>product</code> header that has a value of either <code>acme</code> or <code>apex</code>, and you configure your distribution to cache your content based on values in the <code>product</code> header. Your distribution forwards the <code>product</code> header to the origin and caches the response from the origin once for each header value.
+    */
+  @js.native
+  trait HeaderObject extends js.Object {
+    var headersAllowList: js.UndefOr[HeaderForwardList]
+    var option: js.UndefOr[ForwardValues]
+  }
+
+  object HeaderObject {
+    @inline
+    def apply(
+        headersAllowList: js.UndefOr[HeaderForwardList] = js.undefined,
+        option: js.UndefOr[ForwardValues] = js.undefined
+    ): HeaderObject = {
+      val __obj = js.Dynamic.literal()
+      headersAllowList.foreach(__v => __obj.updateDynamic("headersAllowList")(__v.asInstanceOf[js.Any]))
+      option.foreach(__v => __obj.updateDynamic("option")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HeaderObject]
+    }
+  }
+
   /**
     * Describes the public SSH host keys or the RDP certificate.
     */
@@ -5120,6 +6017,32 @@ package lightsail {
       val __obj = js.Dynamic.literal()
       operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportKeyPairResult]
+    }
+  }
+
+  /**
+    * Describes the origin resource of an Amazon Lightsail content delivery network (CDN) distribution.
+    *  An origin can be a Lightsail instance or load balancer. A distribution pulls content from an origin, caches it, and serves it to viewers via a worldwide network of edge servers.
+    */
+  @js.native
+  trait InputOrigin extends js.Object {
+    var name: js.UndefOr[ResourceName]
+    var protocolPolicy: js.UndefOr[OriginProtocolPolicyEnum]
+    var regionName: js.UndefOr[RegionName]
+  }
+
+  object InputOrigin {
+    @inline
+    def apply(
+        name: js.UndefOr[ResourceName] = js.undefined,
+        protocolPolicy: js.UndefOr[OriginProtocolPolicyEnum] = js.undefined,
+        regionName: js.UndefOr[RegionName] = js.undefined
+    ): InputOrigin = {
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      protocolPolicy.foreach(__v => __obj.updateDynamic("protocolPolicy")(__v.asInstanceOf[js.Any]))
+      regionName.foreach(__v => __obj.updateDynamic("regionName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputOrigin]
     }
   }
 
@@ -5707,6 +6630,79 @@ package lightsail {
   }
 
   /**
+    * Describes an Amazon Lightsail content delivery network (CDN) distribution.
+    */
+  @js.native
+  trait LightsailDistribution extends js.Object {
+    var ableToUpdateBundle: js.UndefOr[Boolean]
+    var alternativeDomainNames: js.UndefOr[StringList]
+    var arn: js.UndefOr[NonEmptyString]
+    var bundleId: js.UndefOr[String]
+    var cacheBehaviorSettings: js.UndefOr[CacheSettings]
+    var cacheBehaviors: js.UndefOr[CacheBehaviorList]
+    var certificateName: js.UndefOr[ResourceName]
+    var createdAt: js.UndefOr[IsoDate]
+    var defaultCacheBehavior: js.UndefOr[CacheBehavior]
+    var domainName: js.UndefOr[String]
+    var isEnabled: js.UndefOr[Boolean]
+    var location: js.UndefOr[ResourceLocation]
+    var name: js.UndefOr[ResourceName]
+    var origin: js.UndefOr[Origin]
+    var originPublicDNS: js.UndefOr[String]
+    var resourceType: js.UndefOr[ResourceType]
+    var status: js.UndefOr[String]
+    var supportCode: js.UndefOr[String]
+    var tags: js.UndefOr[TagList]
+  }
+
+  object LightsailDistribution {
+    @inline
+    def apply(
+        ableToUpdateBundle: js.UndefOr[Boolean] = js.undefined,
+        alternativeDomainNames: js.UndefOr[StringList] = js.undefined,
+        arn: js.UndefOr[NonEmptyString] = js.undefined,
+        bundleId: js.UndefOr[String] = js.undefined,
+        cacheBehaviorSettings: js.UndefOr[CacheSettings] = js.undefined,
+        cacheBehaviors: js.UndefOr[CacheBehaviorList] = js.undefined,
+        certificateName: js.UndefOr[ResourceName] = js.undefined,
+        createdAt: js.UndefOr[IsoDate] = js.undefined,
+        defaultCacheBehavior: js.UndefOr[CacheBehavior] = js.undefined,
+        domainName: js.UndefOr[String] = js.undefined,
+        isEnabled: js.UndefOr[Boolean] = js.undefined,
+        location: js.UndefOr[ResourceLocation] = js.undefined,
+        name: js.UndefOr[ResourceName] = js.undefined,
+        origin: js.UndefOr[Origin] = js.undefined,
+        originPublicDNS: js.UndefOr[String] = js.undefined,
+        resourceType: js.UndefOr[ResourceType] = js.undefined,
+        status: js.UndefOr[String] = js.undefined,
+        supportCode: js.UndefOr[String] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
+    ): LightsailDistribution = {
+      val __obj = js.Dynamic.literal()
+      ableToUpdateBundle.foreach(__v => __obj.updateDynamic("ableToUpdateBundle")(__v.asInstanceOf[js.Any]))
+      alternativeDomainNames.foreach(__v => __obj.updateDynamic("alternativeDomainNames")(__v.asInstanceOf[js.Any]))
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      bundleId.foreach(__v => __obj.updateDynamic("bundleId")(__v.asInstanceOf[js.Any]))
+      cacheBehaviorSettings.foreach(__v => __obj.updateDynamic("cacheBehaviorSettings")(__v.asInstanceOf[js.Any]))
+      cacheBehaviors.foreach(__v => __obj.updateDynamic("cacheBehaviors")(__v.asInstanceOf[js.Any]))
+      certificateName.foreach(__v => __obj.updateDynamic("certificateName")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      defaultCacheBehavior.foreach(__v => __obj.updateDynamic("defaultCacheBehavior")(__v.asInstanceOf[js.Any]))
+      domainName.foreach(__v => __obj.updateDynamic("domainName")(__v.asInstanceOf[js.Any]))
+      isEnabled.foreach(__v => __obj.updateDynamic("isEnabled")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      origin.foreach(__v => __obj.updateDynamic("origin")(__v.asInstanceOf[js.Any]))
+      originPublicDNS.foreach(__v => __obj.updateDynamic("originPublicDNS")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LightsailDistribution]
+    }
+  }
+
+  /**
     * Describes the Lightsail load balancer.
     */
   @js.native
@@ -6026,6 +7022,12 @@ package lightsail {
 
   /**
     * Contains information about the status of Lightsail's managed renewal for the certificate.
+    *  The renewal status of the certificate.
+    *  The following renewal status are possible:
+    * * <b> <code>PendingAutoRenewal</code> </b> - Lightsail is attempting to automatically validate the domain names in the certificate. No further action is required.
+    *  * <b> <code>PendingValidation</code> </b> - Lightsail couldn't automatically validate one or more domain names in the certificate. You must take action to validate these domain names or the certificate won't be renewed. If you used DNS validation, check to make sure your certificate's domain validation records exist in your domain's DNS, and that your certificate remains in use.
+    *  * <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed the certificate. No further action is required.
+    *  * <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and Lightsail did not renew the certificate. You can request a new certificate using the <code>CreateCertificate</code> action.
     */
   @js.native
   trait LoadBalancerTlsCertificateRenewalSummary extends js.Object {
@@ -6525,6 +7527,15 @@ package lightsail {
     val GetContactMethods = "GetContactMethods".asInstanceOf[OperationType]
     val SendContactMethodVerification = "SendContactMethodVerification".asInstanceOf[OperationType]
     val DeleteContactMethod = "DeleteContactMethod".asInstanceOf[OperationType]
+    val CreateDistribution = "CreateDistribution".asInstanceOf[OperationType]
+    val UpdateDistribution = "UpdateDistribution".asInstanceOf[OperationType]
+    val DeleteDistribution = "DeleteDistribution".asInstanceOf[OperationType]
+    val ResetDistributionCache = "ResetDistributionCache".asInstanceOf[OperationType]
+    val AttachCertificateToDistribution = "AttachCertificateToDistribution".asInstanceOf[OperationType]
+    val DetachCertificateFromDistribution = "DetachCertificateFromDistribution".asInstanceOf[OperationType]
+    val UpdateDistributionBundle = "UpdateDistributionBundle".asInstanceOf[OperationType]
+    val CreateCertificate = "CreateCertificate".asInstanceOf[OperationType]
+    val DeleteCertificate = "DeleteCertificate".asInstanceOf[OperationType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -6582,9 +7593,56 @@ package lightsail {
         CreateContactMethod,
         GetContactMethods,
         SendContactMethodVerification,
-        DeleteContactMethod
+        DeleteContactMethod,
+        CreateDistribution,
+        UpdateDistribution,
+        DeleteDistribution,
+        ResetDistributionCache,
+        AttachCertificateToDistribution,
+        DetachCertificateFromDistribution,
+        UpdateDistributionBundle,
+        CreateCertificate,
+        DeleteCertificate
       )
     )
+  }
+
+  /**
+    * Describes the origin resource of an Amazon Lightsail content delivery network (CDN) distribution.
+    *  An origin can be a Lightsail instance or load balancer. A distribution pulls content from an origin, caches it, and serves it to viewers via a worldwide network of edge servers.
+    */
+  @js.native
+  trait Origin extends js.Object {
+    var name: js.UndefOr[ResourceName]
+    var protocolPolicy: js.UndefOr[OriginProtocolPolicyEnum]
+    var regionName: js.UndefOr[RegionName]
+    var resourceType: js.UndefOr[ResourceType]
+  }
+
+  object Origin {
+    @inline
+    def apply(
+        name: js.UndefOr[ResourceName] = js.undefined,
+        protocolPolicy: js.UndefOr[OriginProtocolPolicyEnum] = js.undefined,
+        regionName: js.UndefOr[RegionName] = js.undefined,
+        resourceType: js.UndefOr[ResourceType] = js.undefined
+    ): Origin = {
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      protocolPolicy.foreach(__v => __obj.updateDynamic("protocolPolicy")(__v.asInstanceOf[js.Any]))
+      regionName.foreach(__v => __obj.updateDynamic("regionName")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Origin]
+    }
+  }
+
+  @js.native
+  sealed trait OriginProtocolPolicyEnum extends js.Any
+  object OriginProtocolPolicyEnum extends js.Object {
+    val `http-only` = "http-only".asInstanceOf[OriginProtocolPolicyEnum]
+    val `https-only` = "https-only".asInstanceOf[OriginProtocolPolicyEnum]
+
+    val values = js.Object.freeze(js.Array(`http-only`, `https-only`))
   }
 
   /**
@@ -6846,6 +7904,29 @@ package lightsail {
       val __obj = js.Dynamic.literal()
       operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutInstancePublicPortsResult]
+    }
+  }
+
+  /**
+    * Describes the query string parameters that an Amazon Lightsail content delivery network (CDN) distribution to bases caching on.
+    *  For the query strings that you specify, your distribution caches separate versions of the specified content based on the query string values in viewer requests.
+    */
+  @js.native
+  trait QueryStringObject extends js.Object {
+    var option: js.UndefOr[Boolean]
+    var queryStringsAllowList: js.UndefOr[StringList]
+  }
+
+  object QueryStringObject {
+    @inline
+    def apply(
+        option: js.UndefOr[Boolean] = js.undefined,
+        queryStringsAllowList: js.UndefOr[StringList] = js.undefined
+    ): QueryStringObject = {
+      val __obj = js.Dynamic.literal()
+      option.foreach(__v => __obj.updateDynamic("option")(__v.asInstanceOf[js.Any]))
+      queryStringsAllowList.foreach(__v => __obj.updateDynamic("queryStringsAllowList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueryStringObject]
     }
   }
 
@@ -7440,6 +8521,83 @@ package lightsail {
     }
   }
 
+  @js.native
+  sealed trait RenewalStatus extends js.Any
+  object RenewalStatus extends js.Object {
+    val PendingAutoRenewal = "PendingAutoRenewal".asInstanceOf[RenewalStatus]
+    val PendingValidation = "PendingValidation".asInstanceOf[RenewalStatus]
+    val Success = "Success".asInstanceOf[RenewalStatus]
+    val Failed = "Failed".asInstanceOf[RenewalStatus]
+
+    val values = js.Object.freeze(js.Array(PendingAutoRenewal, PendingValidation, Success, Failed))
+  }
+
+  /**
+    * Describes the status of a SSL/TLS certificate renewal managed by Amazon Lightsail.
+    */
+  @js.native
+  trait RenewalSummary extends js.Object {
+    var domainValidationRecords: js.UndefOr[DomainValidationRecordList]
+    var renewalStatus: js.UndefOr[RenewalStatus]
+    var renewalStatusReason: js.UndefOr[RenewalStatusReason]
+    var updatedAt: js.UndefOr[IsoDate]
+  }
+
+  object RenewalSummary {
+    @inline
+    def apply(
+        domainValidationRecords: js.UndefOr[DomainValidationRecordList] = js.undefined,
+        renewalStatus: js.UndefOr[RenewalStatus] = js.undefined,
+        renewalStatusReason: js.UndefOr[RenewalStatusReason] = js.undefined,
+        updatedAt: js.UndefOr[IsoDate] = js.undefined
+    ): RenewalSummary = {
+      val __obj = js.Dynamic.literal()
+      domainValidationRecords.foreach(__v => __obj.updateDynamic("domainValidationRecords")(__v.asInstanceOf[js.Any]))
+      renewalStatus.foreach(__v => __obj.updateDynamic("renewalStatus")(__v.asInstanceOf[js.Any]))
+      renewalStatusReason.foreach(__v => __obj.updateDynamic("renewalStatusReason")(__v.asInstanceOf[js.Any]))
+      updatedAt.foreach(__v => __obj.updateDynamic("updatedAt")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RenewalSummary]
+    }
+  }
+
+  @js.native
+  trait ResetDistributionCacheRequest extends js.Object {
+    var distributionName: js.UndefOr[ResourceName]
+  }
+
+  object ResetDistributionCacheRequest {
+    @inline
+    def apply(
+        distributionName: js.UndefOr[ResourceName] = js.undefined
+    ): ResetDistributionCacheRequest = {
+      val __obj = js.Dynamic.literal()
+      distributionName.foreach(__v => __obj.updateDynamic("distributionName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResetDistributionCacheRequest]
+    }
+  }
+
+  @js.native
+  trait ResetDistributionCacheResult extends js.Object {
+    var createTime: js.UndefOr[IsoDate]
+    var operation: js.UndefOr[Operation]
+    var status: js.UndefOr[String]
+  }
+
+  object ResetDistributionCacheResult {
+    @inline
+    def apply(
+        createTime: js.UndefOr[IsoDate] = js.undefined,
+        operation: js.UndefOr[Operation] = js.undefined,
+        status: js.UndefOr[String] = js.undefined
+    ): ResetDistributionCacheResult = {
+      val __obj = js.Dynamic.literal()
+      createTime.foreach(__v => __obj.updateDynamic("createTime")(__v.asInstanceOf[js.Any]))
+      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResetDistributionCacheResult]
+    }
+  }
+
   /**
     * Describes the resource location.
     */
@@ -7462,6 +8620,31 @@ package lightsail {
     }
   }
 
+  /**
+    * Describes the domain name system (DNS) records to add to your domain's DNS to validate it for an Amazon Lightsail certificate.
+    */
+  @js.native
+  trait ResourceRecord extends js.Object {
+    var name: js.UndefOr[String]
+    var `type`: js.UndefOr[String]
+    var value: js.UndefOr[String]
+  }
+
+  object ResourceRecord {
+    @inline
+    def apply(
+        name: js.UndefOr[String] = js.undefined,
+        `type`: js.UndefOr[String] = js.undefined,
+        value: js.UndefOr[String] = js.undefined
+    ): ResourceRecord = {
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceRecord]
+    }
+  }
+
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {
@@ -7481,6 +8664,8 @@ package lightsail {
     val CloudFormationStackRecord = "CloudFormationStackRecord".asInstanceOf[ResourceType]
     val Alarm = "Alarm".asInstanceOf[ResourceType]
     val ContactMethod = "ContactMethod".asInstanceOf[ResourceType]
+    val Distribution = "Distribution".asInstanceOf[ResourceType]
+    val Certificate = "Certificate".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -7499,7 +8684,9 @@ package lightsail {
         ExportSnapshotRecord,
         CloudFormationStackRecord,
         Alarm,
-        ContactMethod
+        ContactMethod,
+        Distribution,
+        Certificate
       )
     )
   }
@@ -7902,6 +9089,90 @@ package lightsail {
       val __obj = js.Dynamic.literal()
       operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UntagResourceResult]
+    }
+  }
+
+  @js.native
+  trait UpdateDistributionBundleRequest extends js.Object {
+    var bundleId: js.UndefOr[String]
+    var distributionName: js.UndefOr[ResourceName]
+  }
+
+  object UpdateDistributionBundleRequest {
+    @inline
+    def apply(
+        bundleId: js.UndefOr[String] = js.undefined,
+        distributionName: js.UndefOr[ResourceName] = js.undefined
+    ): UpdateDistributionBundleRequest = {
+      val __obj = js.Dynamic.literal()
+      bundleId.foreach(__v => __obj.updateDynamic("bundleId")(__v.asInstanceOf[js.Any]))
+      distributionName.foreach(__v => __obj.updateDynamic("distributionName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDistributionBundleRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateDistributionBundleResult extends js.Object {
+    var operation: js.UndefOr[Operation]
+  }
+
+  object UpdateDistributionBundleResult {
+    @inline
+    def apply(
+        operation: js.UndefOr[Operation] = js.undefined
+    ): UpdateDistributionBundleResult = {
+      val __obj = js.Dynamic.literal()
+      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDistributionBundleResult]
+    }
+  }
+
+  @js.native
+  trait UpdateDistributionRequest extends js.Object {
+    var distributionName: ResourceName
+    var cacheBehaviorSettings: js.UndefOr[CacheSettings]
+    var cacheBehaviors: js.UndefOr[CacheBehaviorList]
+    var defaultCacheBehavior: js.UndefOr[CacheBehavior]
+    var isEnabled: js.UndefOr[Boolean]
+    var origin: js.UndefOr[InputOrigin]
+  }
+
+  object UpdateDistributionRequest {
+    @inline
+    def apply(
+        distributionName: ResourceName,
+        cacheBehaviorSettings: js.UndefOr[CacheSettings] = js.undefined,
+        cacheBehaviors: js.UndefOr[CacheBehaviorList] = js.undefined,
+        defaultCacheBehavior: js.UndefOr[CacheBehavior] = js.undefined,
+        isEnabled: js.UndefOr[Boolean] = js.undefined,
+        origin: js.UndefOr[InputOrigin] = js.undefined
+    ): UpdateDistributionRequest = {
+      val __obj = js.Dynamic.literal(
+        "distributionName" -> distributionName.asInstanceOf[js.Any]
+      )
+
+      cacheBehaviorSettings.foreach(__v => __obj.updateDynamic("cacheBehaviorSettings")(__v.asInstanceOf[js.Any]))
+      cacheBehaviors.foreach(__v => __obj.updateDynamic("cacheBehaviors")(__v.asInstanceOf[js.Any]))
+      defaultCacheBehavior.foreach(__v => __obj.updateDynamic("defaultCacheBehavior")(__v.asInstanceOf[js.Any]))
+      isEnabled.foreach(__v => __obj.updateDynamic("isEnabled")(__v.asInstanceOf[js.Any]))
+      origin.foreach(__v => __obj.updateDynamic("origin")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDistributionRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateDistributionResult extends js.Object {
+    var operation: js.UndefOr[Operation]
+  }
+
+  object UpdateDistributionResult {
+    @inline
+    def apply(
+        operation: js.UndefOr[Operation] = js.undefined
+    ): UpdateDistributionResult = {
+      val __obj = js.Dynamic.literal()
+      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDistributionResult]
     }
   }
 

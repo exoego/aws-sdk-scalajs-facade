@@ -5887,6 +5887,7 @@ package ec2 {
   @js.native
   trait CoipPool extends js.Object {
     var LocalGatewayRouteTableId: js.UndefOr[LocalGatewayRoutetableId]
+    var PoolArn: js.UndefOr[ResourceArn]
     var PoolCidrs: js.UndefOr[ValueStringList]
     var PoolId: js.UndefOr[CoipPoolId]
     var Tags: js.UndefOr[TagList]
@@ -5896,12 +5897,14 @@ package ec2 {
     @inline
     def apply(
         LocalGatewayRouteTableId: js.UndefOr[LocalGatewayRoutetableId] = js.undefined,
+        PoolArn: js.UndefOr[ResourceArn] = js.undefined,
         PoolCidrs: js.UndefOr[ValueStringList] = js.undefined,
         PoolId: js.UndefOr[CoipPoolId] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CoipPool = {
       val __obj = js.Dynamic.literal()
       LocalGatewayRouteTableId.foreach(__v => __obj.updateDynamic("LocalGatewayRouteTableId")(__v.asInstanceOf[js.Any]))
+      PoolArn.foreach(__v => __obj.updateDynamic("PoolArn")(__v.asInstanceOf[js.Any]))
       PoolCidrs.foreach(__v => __obj.updateDynamic("PoolCidrs")(__v.asInstanceOf[js.Any]))
       PoolId.foreach(__v => __obj.updateDynamic("PoolId")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -7857,19 +7860,22 @@ package ec2 {
   trait CreateRouteTableRequest extends js.Object {
     var VpcId: VpcId
     var DryRun: js.UndefOr[Boolean]
+    var TagSpecifications: js.UndefOr[TagSpecificationList]
   }
 
   object CreateRouteTableRequest {
     @inline
     def apply(
         VpcId: VpcId,
-        DryRun: js.UndefOr[Boolean] = js.undefined
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        TagSpecifications: js.UndefOr[TagSpecificationList] = js.undefined
     ): CreateRouteTableRequest = {
       val __obj = js.Dynamic.literal(
         "VpcId" -> VpcId.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      TagSpecifications.foreach(__v => __obj.updateDynamic("TagSpecifications")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRouteTableRequest]
     }
   }
@@ -8935,6 +8941,7 @@ package ec2 {
     var PeerOwnerId: js.UndefOr[String]
     var PeerRegion: js.UndefOr[String]
     var PeerVpcId: js.UndefOr[String]
+    var TagSpecifications: js.UndefOr[TagSpecificationList]
     var VpcId: js.UndefOr[VpcId]
   }
 
@@ -8945,6 +8952,7 @@ package ec2 {
         PeerOwnerId: js.UndefOr[String] = js.undefined,
         PeerRegion: js.UndefOr[String] = js.undefined,
         PeerVpcId: js.UndefOr[String] = js.undefined,
+        TagSpecifications: js.UndefOr[TagSpecificationList] = js.undefined,
         VpcId: js.UndefOr[VpcId] = js.undefined
     ): CreateVpcPeeringConnectionRequest = {
       val __obj = js.Dynamic.literal()
@@ -8952,6 +8960,7 @@ package ec2 {
       PeerOwnerId.foreach(__v => __obj.updateDynamic("PeerOwnerId")(__v.asInstanceOf[js.Any]))
       PeerRegion.foreach(__v => __obj.updateDynamic("PeerRegion")(__v.asInstanceOf[js.Any]))
       PeerVpcId.foreach(__v => __obj.updateDynamic("PeerVpcId")(__v.asInstanceOf[js.Any]))
+      TagSpecifications.foreach(__v => __obj.updateDynamic("TagSpecifications")(__v.asInstanceOf[js.Any]))
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateVpcPeeringConnectionRequest]
     }
@@ -23308,6 +23317,15 @@ package ec2 {
     val `r6g.8xlarge` = "r6g.8xlarge".asInstanceOf[InstanceType]
     val `r6g.12xlarge` = "r6g.12xlarge".asInstanceOf[InstanceType]
     val `r6g.16xlarge` = "r6g.16xlarge".asInstanceOf[InstanceType]
+    val `r6gd.metal` = "r6gd.metal".asInstanceOf[InstanceType]
+    val `r6gd.medium` = "r6gd.medium".asInstanceOf[InstanceType]
+    val `r6gd.large` = "r6gd.large".asInstanceOf[InstanceType]
+    val `r6gd.xlarge` = "r6gd.xlarge".asInstanceOf[InstanceType]
+    val `r6gd.2xlarge` = "r6gd.2xlarge".asInstanceOf[InstanceType]
+    val `r6gd.4xlarge` = "r6gd.4xlarge".asInstanceOf[InstanceType]
+    val `r6gd.8xlarge` = "r6gd.8xlarge".asInstanceOf[InstanceType]
+    val `r6gd.12xlarge` = "r6gd.12xlarge".asInstanceOf[InstanceType]
+    val `r6gd.16xlarge` = "r6gd.16xlarge".asInstanceOf[InstanceType]
     val `x1.16xlarge` = "x1.16xlarge".asInstanceOf[InstanceType]
     val `x1.32xlarge` = "x1.32xlarge".asInstanceOf[InstanceType]
     val `x1e.xlarge` = "x1e.xlarge".asInstanceOf[InstanceType]
@@ -23390,6 +23408,15 @@ package ec2 {
     val `c6g.8xlarge` = "c6g.8xlarge".asInstanceOf[InstanceType]
     val `c6g.12xlarge` = "c6g.12xlarge".asInstanceOf[InstanceType]
     val `c6g.16xlarge` = "c6g.16xlarge".asInstanceOf[InstanceType]
+    val `c6gd.metal` = "c6gd.metal".asInstanceOf[InstanceType]
+    val `c6gd.medium` = "c6gd.medium".asInstanceOf[InstanceType]
+    val `c6gd.large` = "c6gd.large".asInstanceOf[InstanceType]
+    val `c6gd.xlarge` = "c6gd.xlarge".asInstanceOf[InstanceType]
+    val `c6gd.2xlarge` = "c6gd.2xlarge".asInstanceOf[InstanceType]
+    val `c6gd.4xlarge` = "c6gd.4xlarge".asInstanceOf[InstanceType]
+    val `c6gd.8xlarge` = "c6gd.8xlarge".asInstanceOf[InstanceType]
+    val `c6gd.12xlarge` = "c6gd.12xlarge".asInstanceOf[InstanceType]
+    val `c6gd.16xlarge` = "c6gd.16xlarge".asInstanceOf[InstanceType]
     val `cc1.4xlarge` = "cc1.4xlarge".asInstanceOf[InstanceType]
     val `cc2.8xlarge` = "cc2.8xlarge".asInstanceOf[InstanceType]
     val `g2.2xlarge` = "g2.2xlarge".asInstanceOf[InstanceType]
@@ -23521,6 +23548,15 @@ package ec2 {
     val `m6g.8xlarge` = "m6g.8xlarge".asInstanceOf[InstanceType]
     val `m6g.12xlarge` = "m6g.12xlarge".asInstanceOf[InstanceType]
     val `m6g.16xlarge` = "m6g.16xlarge".asInstanceOf[InstanceType]
+    val `m6gd.metal` = "m6gd.metal".asInstanceOf[InstanceType]
+    val `m6gd.medium` = "m6gd.medium".asInstanceOf[InstanceType]
+    val `m6gd.large` = "m6gd.large".asInstanceOf[InstanceType]
+    val `m6gd.xlarge` = "m6gd.xlarge".asInstanceOf[InstanceType]
+    val `m6gd.2xlarge` = "m6gd.2xlarge".asInstanceOf[InstanceType]
+    val `m6gd.4xlarge` = "m6gd.4xlarge".asInstanceOf[InstanceType]
+    val `m6gd.8xlarge` = "m6gd.8xlarge".asInstanceOf[InstanceType]
+    val `m6gd.12xlarge` = "m6gd.12xlarge".asInstanceOf[InstanceType]
+    val `m6gd.16xlarge` = "m6gd.16xlarge".asInstanceOf[InstanceType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -23618,6 +23654,15 @@ package ec2 {
         `r6g.8xlarge`,
         `r6g.12xlarge`,
         `r6g.16xlarge`,
+        `r6gd.metal`,
+        `r6gd.medium`,
+        `r6gd.large`,
+        `r6gd.xlarge`,
+        `r6gd.2xlarge`,
+        `r6gd.4xlarge`,
+        `r6gd.8xlarge`,
+        `r6gd.12xlarge`,
+        `r6gd.16xlarge`,
         `x1.16xlarge`,
         `x1.32xlarge`,
         `x1e.xlarge`,
@@ -23700,6 +23745,15 @@ package ec2 {
         `c6g.8xlarge`,
         `c6g.12xlarge`,
         `c6g.16xlarge`,
+        `c6gd.metal`,
+        `c6gd.medium`,
+        `c6gd.large`,
+        `c6gd.xlarge`,
+        `c6gd.2xlarge`,
+        `c6gd.4xlarge`,
+        `c6gd.8xlarge`,
+        `c6gd.12xlarge`,
+        `c6gd.16xlarge`,
         `cc1.4xlarge`,
         `cc2.8xlarge`,
         `g2.2xlarge`,
@@ -23830,7 +23884,16 @@ package ec2 {
         `m6g.4xlarge`,
         `m6g.8xlarge`,
         `m6g.12xlarge`,
-        `m6g.16xlarge`
+        `m6g.16xlarge`,
+        `m6gd.metal`,
+        `m6gd.medium`,
+        `m6gd.large`,
+        `m6gd.xlarge`,
+        `m6gd.2xlarge`,
+        `m6gd.4xlarge`,
+        `m6gd.8xlarge`,
+        `m6gd.12xlarge`,
+        `m6gd.16xlarge`
       )
     )
   }

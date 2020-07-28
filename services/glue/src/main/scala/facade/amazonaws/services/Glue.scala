@@ -112,6 +112,7 @@ package object glue {
   type MillisecondsCount = Double
   type NameString = String
   type NameStringList = js.Array[NameString]
+  type NodeIdList = js.Array[NameString]
   type NodeList = js.Array[Node]
   type NonNegativeDouble = Double
   type NonNegativeInteger = Int
@@ -420,6 +421,8 @@ package object glue {
     ): Future[PutWorkflowRunPropertiesResponse] = service.putWorkflowRunProperties(params).promise().toFuture
     @inline def resetJobBookmarkFuture(params: ResetJobBookmarkRequest): Future[ResetJobBookmarkResponse] =
       service.resetJobBookmark(params).promise().toFuture
+    @inline def resumeWorkflowRunFuture(params: ResumeWorkflowRunRequest): Future[ResumeWorkflowRunResponse] =
+      service.resumeWorkflowRun(params).promise().toFuture
     @inline def searchTablesFuture(params: SearchTablesRequest): Future[SearchTablesResponse] =
       service.searchTables(params).promise().toFuture
     @inline def startCrawlerFuture(params: StartCrawlerRequest): Future[StartCrawlerResponse] =
@@ -632,6 +635,7 @@ package glue {
     def putWorkflowRunProperties(params: PutWorkflowRunPropertiesRequest): Request[PutWorkflowRunPropertiesResponse] =
       js.native
     def resetJobBookmark(params: ResetJobBookmarkRequest): Request[ResetJobBookmarkResponse] = js.native
+    def resumeWorkflowRun(params: ResumeWorkflowRunRequest): Request[ResumeWorkflowRunResponse] = js.native
     def searchTables(params: SearchTablesRequest): Request[SearchTablesResponse] = js.native
     def startCrawler(params: StartCrawlerRequest): Request[StartCrawlerResponse] = js.native
     def startCrawlerSchedule(params: StartCrawlerScheduleRequest): Request[StartCrawlerScheduleResponse] = js.native
@@ -1935,6 +1939,9 @@ package glue {
     val CUSTOM_JDBC_CERT_STRING = "CUSTOM_JDBC_CERT_STRING".asInstanceOf[ConnectionPropertyKey]
     val CONNECTION_URL = "CONNECTION_URL".asInstanceOf[ConnectionPropertyKey]
     val KAFKA_BOOTSTRAP_SERVERS = "KAFKA_BOOTSTRAP_SERVERS".asInstanceOf[ConnectionPropertyKey]
+    val KAFKA_SSL_ENABLED = "KAFKA_SSL_ENABLED".asInstanceOf[ConnectionPropertyKey]
+    val KAFKA_CUSTOM_CERT = "KAFKA_CUSTOM_CERT".asInstanceOf[ConnectionPropertyKey]
+    val KAFKA_SKIP_CUSTOM_CERT_VALIDATION = "KAFKA_SKIP_CUSTOM_CERT_VALIDATION".asInstanceOf[ConnectionPropertyKey]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1955,7 +1962,10 @@ package glue {
         SKIP_CUSTOM_JDBC_CERT_VALIDATION,
         CUSTOM_JDBC_CERT_STRING,
         CONNECTION_URL,
-        KAFKA_BOOTSTRAP_SERVERS
+        KAFKA_BOOTSTRAP_SERVERS,
+        KAFKA_SSL_ENABLED,
+        KAFKA_CUSTOM_CERT,
+        KAFKA_SKIP_CUSTOM_CERT_VALIDATION
       )
     )
   }
@@ -4146,7 +4156,7 @@ package glue {
   }
 
   /**
-    * An edge represents a directed connection between two AWS Glue components which are part of the workflow the edge belongs to.
+    * An edge represents a directed connection between two AWS Glue components that are part of the workflow the edge belongs to.
     */
   @js.native
   trait Edge extends js.Object {
@@ -7427,7 +7437,7 @@ package glue {
   }
 
   /**
-    * A node represents an AWS Glue component like Trigger, Job etc. which is part of a workflow.
+    * A node represents an AWS Glue component such as a trigger, or job, etc., that is part of a workflow.
     */
   @js.native
   trait Node extends js.Object {
@@ -7966,6 +7976,49 @@ package glue {
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       Uri.foreach(__v => __obj.updateDynamic("Uri")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceUri]
+    }
+  }
+
+  @js.native
+  trait ResumeWorkflowRunRequest extends js.Object {
+    var Name: NameString
+    var NodeIds: NodeIdList
+    var RunId: IdString
+  }
+
+  object ResumeWorkflowRunRequest {
+    @inline
+    def apply(
+        Name: NameString,
+        NodeIds: NodeIdList,
+        RunId: IdString
+    ): ResumeWorkflowRunRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "NodeIds" -> NodeIds.asInstanceOf[js.Any],
+        "RunId" -> RunId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ResumeWorkflowRunRequest]
+    }
+  }
+
+  @js.native
+  trait ResumeWorkflowRunResponse extends js.Object {
+    var NodeIds: js.UndefOr[NodeIdList]
+    var RunId: js.UndefOr[IdString]
+  }
+
+  object ResumeWorkflowRunResponse {
+    @inline
+    def apply(
+        NodeIds: js.UndefOr[NodeIdList] = js.undefined,
+        RunId: js.UndefOr[IdString] = js.undefined
+    ): ResumeWorkflowRunResponse = {
+      val __obj = js.Dynamic.literal()
+      NodeIds.foreach(__v => __obj.updateDynamic("NodeIds")(__v.asInstanceOf[js.Any]))
+      RunId.foreach(__v => __obj.updateDynamic("RunId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResumeWorkflowRunResponse]
     }
   }
 
@@ -10483,6 +10536,7 @@ package glue {
     var CompletedOn: js.UndefOr[TimestampValue]
     var Graph: js.UndefOr[WorkflowGraph]
     var Name: js.UndefOr[NameString]
+    var PreviousRunId: js.UndefOr[IdString]
     var StartedOn: js.UndefOr[TimestampValue]
     var Statistics: js.UndefOr[WorkflowRunStatistics]
     var Status: js.UndefOr[WorkflowRunStatus]
@@ -10496,6 +10550,7 @@ package glue {
         CompletedOn: js.UndefOr[TimestampValue] = js.undefined,
         Graph: js.UndefOr[WorkflowGraph] = js.undefined,
         Name: js.UndefOr[NameString] = js.undefined,
+        PreviousRunId: js.UndefOr[IdString] = js.undefined,
         StartedOn: js.UndefOr[TimestampValue] = js.undefined,
         Statistics: js.UndefOr[WorkflowRunStatistics] = js.undefined,
         Status: js.UndefOr[WorkflowRunStatus] = js.undefined,
@@ -10506,6 +10561,7 @@ package glue {
       CompletedOn.foreach(__v => __obj.updateDynamic("CompletedOn")(__v.asInstanceOf[js.Any]))
       Graph.foreach(__v => __obj.updateDynamic("Graph")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PreviousRunId.foreach(__v => __obj.updateDynamic("PreviousRunId")(__v.asInstanceOf[js.Any]))
       StartedOn.foreach(__v => __obj.updateDynamic("StartedOn")(__v.asInstanceOf[js.Any]))
       Statistics.foreach(__v => __obj.updateDynamic("Statistics")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))

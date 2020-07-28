@@ -882,7 +882,7 @@ package cloudwatch {
   }
 
   /**
-    * Expands the identity of a metric.
+    * A dimension is a name/value pair that is part of the identity of a metric. You can assign up to 10 dimensions to a metric. Because dimensions are part of the unique identifier for a metric, whenever you add a unique name/value pair to one of your metrics, you are creating a new variation of that metric.
     */
   @js.native
   trait Dimension extends js.Object {
@@ -1474,6 +1474,7 @@ package cloudwatch {
     var MetricName: js.UndefOr[MetricName]
     var Namespace: js.UndefOr[Namespace]
     var NextToken: js.UndefOr[NextToken]
+    var RecentlyActive: js.UndefOr[RecentlyActive]
   }
 
   object ListMetricsInput {
@@ -1482,13 +1483,15 @@ package cloudwatch {
         Dimensions: js.UndefOr[DimensionFilters] = js.undefined,
         MetricName: js.UndefOr[MetricName] = js.undefined,
         Namespace: js.UndefOr[Namespace] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        RecentlyActive: js.UndefOr[RecentlyActive] = js.undefined
     ): ListMetricsInput = {
       val __obj = js.Dynamic.literal()
       Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
       MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
       Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RecentlyActive.foreach(__v => __obj.updateDynamic("RecentlyActive")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListMetricsInput]
     }
   }
@@ -2158,6 +2161,14 @@ package cloudwatch {
 
       __obj.asInstanceOf[Range]
     }
+  }
+
+  @js.native
+  sealed trait RecentlyActive extends js.Any
+  object RecentlyActive extends js.Object {
+    val PT3H = "PT3H".asInstanceOf[RecentlyActive]
+
+    val values = js.Object.freeze(js.Array(PT3H))
   }
 
   @js.native

@@ -8,49 +8,78 @@ import facade.amazonaws._
 
 package object fms {
   type AWSAccountId = String
+  type AppsList = js.Array[App]
+  type AppsListsData = js.Array[AppsListDataSummary]
+  type AwsEc2NetworkInterfaceViolations = js.Array[AwsEc2NetworkInterfaceViolation]
+  type CIDR = String
   type ComplianceViolators = js.Array[ComplianceViolator]
   type CustomerPolicyScopeId = String
   type CustomerPolicyScopeIdList = js.Array[CustomerPolicyScopeId]
   type CustomerPolicyScopeMap = js.Dictionary[CustomerPolicyScopeIdList]
   type DetailedInfo = String
   type EvaluationResults = js.Array[EvaluationResult]
+  type IPPortNumber = Double
   type IssueInfoMap = js.Dictionary[DetailedInfo]
+  type LengthBoundedString = String
+  type ListId = String
   type ManagedServiceData = String
   type MemberAccounts = js.Array[AWSAccountId]
   type PaginationMaxResults = Int
   type PaginationToken = String
+  type PartialMatches = js.Array[PartialMatch]
   type PolicyComplianceStatusList = js.Array[PolicyComplianceStatus]
   type PolicyId = String
   type PolicySummaryList = js.Array[PolicySummary]
   type PolicyUpdateToken = String
+  type PreviousAppsList = js.Dictionary[AppsList]
+  type PreviousListVersion = String
+  type PreviousProtocolsList = js.Dictionary[ProtocolsList]
   type ProtectionData = String
+  type Protocol = String
+  type ProtocolsList = js.Array[Protocol]
+  type ProtocolsListsData = js.Array[ProtocolsListDataSummary]
+  type ReferenceRule = String
+  type RemediationActionDescription = String
   type ResourceArn = String
   type ResourceCount = Double
   type ResourceId = String
+  type ResourceIdList = js.Array[ResourceId]
   type ResourceName = String
   type ResourceTagKey = String
   type ResourceTagValue = String
   type ResourceTags = js.Array[ResourceTag]
   type ResourceType = String
   type ResourceTypeList = js.Array[ResourceType]
+  type ResourceViolations = js.Array[ResourceViolation]
+  type SecurityGroupRemediationActions = js.Array[SecurityGroupRemediationAction]
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagList = js.Array[Tag]
   type TagValue = String
+  type TargetViolationReason = String
+  type TargetViolationReasons = js.Array[TargetViolationReason]
   type TimeStamp = js.Date
+  type UpdateToken = String
+  type ViolationTarget = String
 
   implicit final class FMSOps(private val service: FMS) extends AnyVal {
 
     @inline def associateAdminAccountFuture(params: AssociateAdminAccountRequest): Future[js.Object] =
       service.associateAdminAccount(params).promise().toFuture
+    @inline def deleteAppsListFuture(params: DeleteAppsListRequest): Future[js.Object] =
+      service.deleteAppsList(params).promise().toFuture
     @inline def deleteNotificationChannelFuture(params: DeleteNotificationChannelRequest): Future[js.Object] =
       service.deleteNotificationChannel(params).promise().toFuture
     @inline def deletePolicyFuture(params: DeletePolicyRequest): Future[js.Object] =
       service.deletePolicy(params).promise().toFuture
+    @inline def deleteProtocolsListFuture(params: DeleteProtocolsListRequest): Future[js.Object] =
+      service.deleteProtocolsList(params).promise().toFuture
     @inline def disassociateAdminAccountFuture(params: DisassociateAdminAccountRequest): Future[js.Object] =
       service.disassociateAdminAccount(params).promise().toFuture
     @inline def getAdminAccountFuture(params: GetAdminAccountRequest): Future[GetAdminAccountResponse] =
       service.getAdminAccount(params).promise().toFuture
+    @inline def getAppsListFuture(params: GetAppsListRequest): Future[GetAppsListResponse] =
+      service.getAppsList(params).promise().toFuture
     @inline def getComplianceDetailFuture(params: GetComplianceDetailRequest): Future[GetComplianceDetailResponse] =
       service.getComplianceDetail(params).promise().toFuture
     @inline def getNotificationChannelFuture(
@@ -60,18 +89,30 @@ package object fms {
       service.getPolicy(params).promise().toFuture
     @inline def getProtectionStatusFuture(params: GetProtectionStatusRequest): Future[GetProtectionStatusResponse] =
       service.getProtectionStatus(params).promise().toFuture
+    @inline def getProtocolsListFuture(params: GetProtocolsListRequest): Future[GetProtocolsListResponse] =
+      service.getProtocolsList(params).promise().toFuture
+    @inline def getViolationDetailsFuture(params: GetViolationDetailsRequest): Future[GetViolationDetailsResponse] =
+      service.getViolationDetails(params).promise().toFuture
+    @inline def listAppsListsFuture(params: ListAppsListsRequest): Future[ListAppsListsResponse] =
+      service.listAppsLists(params).promise().toFuture
     @inline def listComplianceStatusFuture(params: ListComplianceStatusRequest): Future[ListComplianceStatusResponse] =
       service.listComplianceStatus(params).promise().toFuture
     @inline def listMemberAccountsFuture(params: ListMemberAccountsRequest): Future[ListMemberAccountsResponse] =
       service.listMemberAccounts(params).promise().toFuture
     @inline def listPoliciesFuture(params: ListPoliciesRequest): Future[ListPoliciesResponse] =
       service.listPolicies(params).promise().toFuture
+    @inline def listProtocolsListsFuture(params: ListProtocolsListsRequest): Future[ListProtocolsListsResponse] =
+      service.listProtocolsLists(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise().toFuture
+    @inline def putAppsListFuture(params: PutAppsListRequest): Future[PutAppsListResponse] =
+      service.putAppsList(params).promise().toFuture
     @inline def putNotificationChannelFuture(params: PutNotificationChannelRequest): Future[js.Object] =
       service.putNotificationChannel(params).promise().toFuture
     @inline def putPolicyFuture(params: PutPolicyRequest): Future[PutPolicyResponse] =
       service.putPolicy(params).promise().toFuture
+    @inline def putProtocolsListFuture(params: PutProtocolsListRequest): Future[PutProtocolsListResponse] =
+      service.putProtocolsList(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
@@ -86,21 +127,30 @@ package fms {
     def this(config: AWSConfig) = this()
 
     def associateAdminAccount(params: AssociateAdminAccountRequest): Request[js.Object] = js.native
+    def deleteAppsList(params: DeleteAppsListRequest): Request[js.Object] = js.native
     def deleteNotificationChannel(params: DeleteNotificationChannelRequest): Request[js.Object] = js.native
     def deletePolicy(params: DeletePolicyRequest): Request[js.Object] = js.native
+    def deleteProtocolsList(params: DeleteProtocolsListRequest): Request[js.Object] = js.native
     def disassociateAdminAccount(params: DisassociateAdminAccountRequest): Request[js.Object] = js.native
     def getAdminAccount(params: GetAdminAccountRequest): Request[GetAdminAccountResponse] = js.native
+    def getAppsList(params: GetAppsListRequest): Request[GetAppsListResponse] = js.native
     def getComplianceDetail(params: GetComplianceDetailRequest): Request[GetComplianceDetailResponse] = js.native
     def getNotificationChannel(params: GetNotificationChannelRequest): Request[GetNotificationChannelResponse] =
       js.native
     def getPolicy(params: GetPolicyRequest): Request[GetPolicyResponse] = js.native
     def getProtectionStatus(params: GetProtectionStatusRequest): Request[GetProtectionStatusResponse] = js.native
+    def getProtocolsList(params: GetProtocolsListRequest): Request[GetProtocolsListResponse] = js.native
+    def getViolationDetails(params: GetViolationDetailsRequest): Request[GetViolationDetailsResponse] = js.native
+    def listAppsLists(params: ListAppsListsRequest): Request[ListAppsListsResponse] = js.native
     def listComplianceStatus(params: ListComplianceStatusRequest): Request[ListComplianceStatusResponse] = js.native
     def listMemberAccounts(params: ListMemberAccountsRequest): Request[ListMemberAccountsResponse] = js.native
     def listPolicies(params: ListPoliciesRequest): Request[ListPoliciesResponse] = js.native
+    def listProtocolsLists(params: ListProtocolsListsRequest): Request[ListProtocolsListsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def putAppsList(params: PutAppsListRequest): Request[PutAppsListResponse] = js.native
     def putNotificationChannel(params: PutNotificationChannelRequest): Request[js.Object] = js.native
     def putPolicy(params: PutPolicyRequest): Request[PutPolicyResponse] = js.native
+    def putProtocolsList(params: PutProtocolsListRequest): Request[PutProtocolsListResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
   }
@@ -115,6 +165,100 @@ package fms {
     val DELETED = "DELETED".asInstanceOf[AccountRoleStatus]
 
     val values = js.Object.freeze(js.Array(READY, CREATING, PENDING_DELETION, DELETING, DELETED))
+  }
+
+  /**
+    * An individual AWS Firewall Manager application.
+    */
+  @js.native
+  trait App extends js.Object {
+    var AppName: ResourceName
+    var Port: IPPortNumber
+    var Protocol: Protocol
+  }
+
+  object App {
+    @inline
+    def apply(
+        AppName: ResourceName,
+        Port: IPPortNumber,
+        Protocol: Protocol
+    ): App = {
+      val __obj = js.Dynamic.literal(
+        "AppName" -> AppName.asInstanceOf[js.Any],
+        "Port" -> Port.asInstanceOf[js.Any],
+        "Protocol" -> Protocol.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[App]
+    }
+  }
+
+  /**
+    * An AWS Firewall Manager applications list.
+    */
+  @js.native
+  trait AppsListData extends js.Object {
+    var AppsList: AppsList
+    var ListName: ResourceName
+    var CreateTime: js.UndefOr[TimeStamp]
+    var LastUpdateTime: js.UndefOr[TimeStamp]
+    var ListId: js.UndefOr[ListId]
+    var ListUpdateToken: js.UndefOr[UpdateToken]
+    var PreviousAppsList: js.UndefOr[PreviousAppsList]
+  }
+
+  object AppsListData {
+    @inline
+    def apply(
+        AppsList: AppsList,
+        ListName: ResourceName,
+        CreateTime: js.UndefOr[TimeStamp] = js.undefined,
+        LastUpdateTime: js.UndefOr[TimeStamp] = js.undefined,
+        ListId: js.UndefOr[ListId] = js.undefined,
+        ListUpdateToken: js.UndefOr[UpdateToken] = js.undefined,
+        PreviousAppsList: js.UndefOr[PreviousAppsList] = js.undefined
+    ): AppsListData = {
+      val __obj = js.Dynamic.literal(
+        "AppsList" -> AppsList.asInstanceOf[js.Any],
+        "ListName" -> ListName.asInstanceOf[js.Any]
+      )
+
+      CreateTime.foreach(__v => __obj.updateDynamic("CreateTime")(__v.asInstanceOf[js.Any]))
+      LastUpdateTime.foreach(__v => __obj.updateDynamic("LastUpdateTime")(__v.asInstanceOf[js.Any]))
+      ListId.foreach(__v => __obj.updateDynamic("ListId")(__v.asInstanceOf[js.Any]))
+      ListUpdateToken.foreach(__v => __obj.updateDynamic("ListUpdateToken")(__v.asInstanceOf[js.Any]))
+      PreviousAppsList.foreach(__v => __obj.updateDynamic("PreviousAppsList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AppsListData]
+    }
+  }
+
+  /**
+    * Details of the AWS Firewall Manager applications list.
+    */
+  @js.native
+  trait AppsListDataSummary extends js.Object {
+    var AppsList: js.UndefOr[AppsList]
+    var ListArn: js.UndefOr[ResourceArn]
+    var ListId: js.UndefOr[ListId]
+    var ListName: js.UndefOr[ResourceName]
+  }
+
+  object AppsListDataSummary {
+    @inline
+    def apply(
+        AppsList: js.UndefOr[AppsList] = js.undefined,
+        ListArn: js.UndefOr[ResourceArn] = js.undefined,
+        ListId: js.UndefOr[ListId] = js.undefined,
+        ListName: js.UndefOr[ResourceName] = js.undefined
+    ): AppsListDataSummary = {
+      val __obj = js.Dynamic.literal()
+      AppsList.foreach(__v => __obj.updateDynamic("AppsList")(__v.asInstanceOf[js.Any]))
+      ListArn.foreach(__v => __obj.updateDynamic("ListArn")(__v.asInstanceOf[js.Any]))
+      ListId.foreach(__v => __obj.updateDynamic("ListId")(__v.asInstanceOf[js.Any]))
+      ListName.foreach(__v => __obj.updateDynamic("ListName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AppsListDataSummary]
+    }
   }
 
   @js.native
@@ -132,6 +276,84 @@ package fms {
       )
 
       __obj.asInstanceOf[AssociateAdminAccountRequest]
+    }
+  }
+
+  /**
+    * Violations for an EC2 instance resource.
+    */
+  @js.native
+  trait AwsEc2InstanceViolation extends js.Object {
+    var AwsEc2NetworkInterfaceViolations: js.UndefOr[AwsEc2NetworkInterfaceViolations]
+    var ViolationTarget: js.UndefOr[ViolationTarget]
+  }
+
+  object AwsEc2InstanceViolation {
+    @inline
+    def apply(
+        AwsEc2NetworkInterfaceViolations: js.UndefOr[AwsEc2NetworkInterfaceViolations] = js.undefined,
+        ViolationTarget: js.UndefOr[ViolationTarget] = js.undefined
+    ): AwsEc2InstanceViolation = {
+      val __obj = js.Dynamic.literal()
+      AwsEc2NetworkInterfaceViolations.foreach(__v =>
+        __obj.updateDynamic("AwsEc2NetworkInterfaceViolations")(__v.asInstanceOf[js.Any])
+      )
+      ViolationTarget.foreach(__v => __obj.updateDynamic("ViolationTarget")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsEc2InstanceViolation]
+    }
+  }
+
+  /**
+    * Violations for network interfaces associated with an EC2 instance.
+    */
+  @js.native
+  trait AwsEc2NetworkInterfaceViolation extends js.Object {
+    var ViolatingSecurityGroups: js.UndefOr[ResourceIdList]
+    var ViolationTarget: js.UndefOr[ViolationTarget]
+  }
+
+  object AwsEc2NetworkInterfaceViolation {
+    @inline
+    def apply(
+        ViolatingSecurityGroups: js.UndefOr[ResourceIdList] = js.undefined,
+        ViolationTarget: js.UndefOr[ViolationTarget] = js.undefined
+    ): AwsEc2NetworkInterfaceViolation = {
+      val __obj = js.Dynamic.literal()
+      ViolatingSecurityGroups.foreach(__v => __obj.updateDynamic("ViolatingSecurityGroups")(__v.asInstanceOf[js.Any]))
+      ViolationTarget.foreach(__v => __obj.updateDynamic("ViolationTarget")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsEc2NetworkInterfaceViolation]
+    }
+  }
+
+  /**
+    * Details of the rule violation in a security group when compared to the master security group of the AWS Firewall Manager policy.
+    */
+  @js.native
+  trait AwsVPCSecurityGroupViolation extends js.Object {
+    var PartialMatches: js.UndefOr[PartialMatches]
+    var PossibleSecurityGroupRemediationActions: js.UndefOr[SecurityGroupRemediationActions]
+    var ViolationTarget: js.UndefOr[ViolationTarget]
+    var ViolationTargetDescription: js.UndefOr[LengthBoundedString]
+  }
+
+  object AwsVPCSecurityGroupViolation {
+    @inline
+    def apply(
+        PartialMatches: js.UndefOr[PartialMatches] = js.undefined,
+        PossibleSecurityGroupRemediationActions: js.UndefOr[SecurityGroupRemediationActions] = js.undefined,
+        ViolationTarget: js.UndefOr[ViolationTarget] = js.undefined,
+        ViolationTargetDescription: js.UndefOr[LengthBoundedString] = js.undefined
+    ): AwsVPCSecurityGroupViolation = {
+      val __obj = js.Dynamic.literal()
+      PartialMatches.foreach(__v => __obj.updateDynamic("PartialMatches")(__v.asInstanceOf[js.Any]))
+      PossibleSecurityGroupRemediationActions.foreach(__v =>
+        __obj.updateDynamic("PossibleSecurityGroupRemediationActions")(__v.asInstanceOf[js.Any])
+      )
+      ViolationTarget.foreach(__v => __obj.updateDynamic("ViolationTarget")(__v.asInstanceOf[js.Any]))
+      ViolationTargetDescription.foreach(__v =>
+        __obj.updateDynamic("ViolationTargetDescription")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[AwsVPCSecurityGroupViolation]
     }
   }
 
@@ -170,6 +392,24 @@ package fms {
   }
 
   @js.native
+  trait DeleteAppsListRequest extends js.Object {
+    var ListId: ListId
+  }
+
+  object DeleteAppsListRequest {
+    @inline
+    def apply(
+        ListId: ListId
+    ): DeleteAppsListRequest = {
+      val __obj = js.Dynamic.literal(
+        "ListId" -> ListId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteAppsListRequest]
+    }
+  }
+
+  @js.native
   trait DeleteNotificationChannelRequest extends js.Object {}
 
   object DeleteNotificationChannelRequest {
@@ -200,6 +440,24 @@ package fms {
 
       DeleteAllPolicyResources.foreach(__v => __obj.updateDynamic("DeleteAllPolicyResources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeletePolicyRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteProtocolsListRequest extends js.Object {
+    var ListId: ListId
+  }
+
+  object DeleteProtocolsListRequest {
+    @inline
+    def apply(
+        ListId: ListId
+    ): DeleteProtocolsListRequest = {
+      val __obj = js.Dynamic.literal(
+        "ListId" -> ListId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteProtocolsListRequest]
     }
   }
 
@@ -281,6 +539,46 @@ package fms {
       AdminAccount.foreach(__v => __obj.updateDynamic("AdminAccount")(__v.asInstanceOf[js.Any]))
       RoleStatus.foreach(__v => __obj.updateDynamic("RoleStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAdminAccountResponse]
+    }
+  }
+
+  @js.native
+  trait GetAppsListRequest extends js.Object {
+    var ListId: ListId
+    var DefaultList: js.UndefOr[Boolean]
+  }
+
+  object GetAppsListRequest {
+    @inline
+    def apply(
+        ListId: ListId,
+        DefaultList: js.UndefOr[Boolean] = js.undefined
+    ): GetAppsListRequest = {
+      val __obj = js.Dynamic.literal(
+        "ListId" -> ListId.asInstanceOf[js.Any]
+      )
+
+      DefaultList.foreach(__v => __obj.updateDynamic("DefaultList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAppsListRequest]
+    }
+  }
+
+  @js.native
+  trait GetAppsListResponse extends js.Object {
+    var AppsList: js.UndefOr[AppsListData]
+    var AppsListArn: js.UndefOr[ResourceArn]
+  }
+
+  object GetAppsListResponse {
+    @inline
+    def apply(
+        AppsList: js.UndefOr[AppsListData] = js.undefined,
+        AppsListArn: js.UndefOr[ResourceArn] = js.undefined
+    ): GetAppsListResponse = {
+      val __obj = js.Dynamic.literal()
+      AppsList.foreach(__v => __obj.updateDynamic("AppsList")(__v.asInstanceOf[js.Any]))
+      AppsListArn.foreach(__v => __obj.updateDynamic("AppsListArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAppsListResponse]
     }
   }
 
@@ -449,6 +747,132 @@ package fms {
   }
 
   @js.native
+  trait GetProtocolsListRequest extends js.Object {
+    var ListId: ListId
+    var DefaultList: js.UndefOr[Boolean]
+  }
+
+  object GetProtocolsListRequest {
+    @inline
+    def apply(
+        ListId: ListId,
+        DefaultList: js.UndefOr[Boolean] = js.undefined
+    ): GetProtocolsListRequest = {
+      val __obj = js.Dynamic.literal(
+        "ListId" -> ListId.asInstanceOf[js.Any]
+      )
+
+      DefaultList.foreach(__v => __obj.updateDynamic("DefaultList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetProtocolsListRequest]
+    }
+  }
+
+  @js.native
+  trait GetProtocolsListResponse extends js.Object {
+    var ProtocolsList: js.UndefOr[ProtocolsListData]
+    var ProtocolsListArn: js.UndefOr[ResourceArn]
+  }
+
+  object GetProtocolsListResponse {
+    @inline
+    def apply(
+        ProtocolsList: js.UndefOr[ProtocolsListData] = js.undefined,
+        ProtocolsListArn: js.UndefOr[ResourceArn] = js.undefined
+    ): GetProtocolsListResponse = {
+      val __obj = js.Dynamic.literal()
+      ProtocolsList.foreach(__v => __obj.updateDynamic("ProtocolsList")(__v.asInstanceOf[js.Any]))
+      ProtocolsListArn.foreach(__v => __obj.updateDynamic("ProtocolsListArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetProtocolsListResponse]
+    }
+  }
+
+  @js.native
+  trait GetViolationDetailsRequest extends js.Object {
+    var MemberAccount: AWSAccountId
+    var PolicyId: PolicyId
+    var ResourceId: ResourceId
+    var ResourceType: ResourceType
+  }
+
+  object GetViolationDetailsRequest {
+    @inline
+    def apply(
+        MemberAccount: AWSAccountId,
+        PolicyId: PolicyId,
+        ResourceId: ResourceId,
+        ResourceType: ResourceType
+    ): GetViolationDetailsRequest = {
+      val __obj = js.Dynamic.literal(
+        "MemberAccount" -> MemberAccount.asInstanceOf[js.Any],
+        "PolicyId" -> PolicyId.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
+        "ResourceType" -> ResourceType.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetViolationDetailsRequest]
+    }
+  }
+
+  @js.native
+  trait GetViolationDetailsResponse extends js.Object {
+    var ViolationDetail: js.UndefOr[ViolationDetail]
+  }
+
+  object GetViolationDetailsResponse {
+    @inline
+    def apply(
+        ViolationDetail: js.UndefOr[ViolationDetail] = js.undefined
+    ): GetViolationDetailsResponse = {
+      val __obj = js.Dynamic.literal()
+      ViolationDetail.foreach(__v => __obj.updateDynamic("ViolationDetail")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetViolationDetailsResponse]
+    }
+  }
+
+  @js.native
+  trait ListAppsListsRequest extends js.Object {
+    var MaxResults: PaginationMaxResults
+    var DefaultLists: js.UndefOr[Boolean]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListAppsListsRequest {
+    @inline
+    def apply(
+        MaxResults: PaginationMaxResults,
+        DefaultLists: js.UndefOr[Boolean] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListAppsListsRequest = {
+      val __obj = js.Dynamic.literal(
+        "MaxResults" -> MaxResults.asInstanceOf[js.Any]
+      )
+
+      DefaultLists.foreach(__v => __obj.updateDynamic("DefaultLists")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAppsListsRequest]
+    }
+  }
+
+  @js.native
+  trait ListAppsListsResponse extends js.Object {
+    var AppsLists: js.UndefOr[AppsListsData]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListAppsListsResponse {
+    @inline
+    def apply(
+        AppsLists: js.UndefOr[AppsListsData] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListAppsListsResponse = {
+      val __obj = js.Dynamic.literal()
+      AppsLists.foreach(__v => __obj.updateDynamic("AppsLists")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAppsListsResponse]
+    }
+  }
+
+  @js.native
   trait ListComplianceStatusRequest extends js.Object {
     var PolicyId: PolicyId
     var MaxResults: js.UndefOr[PaginationMaxResults]
@@ -570,6 +994,49 @@ package fms {
   }
 
   @js.native
+  trait ListProtocolsListsRequest extends js.Object {
+    var MaxResults: PaginationMaxResults
+    var DefaultLists: js.UndefOr[Boolean]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListProtocolsListsRequest {
+    @inline
+    def apply(
+        MaxResults: PaginationMaxResults,
+        DefaultLists: js.UndefOr[Boolean] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListProtocolsListsRequest = {
+      val __obj = js.Dynamic.literal(
+        "MaxResults" -> MaxResults.asInstanceOf[js.Any]
+      )
+
+      DefaultLists.foreach(__v => __obj.updateDynamic("DefaultLists")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListProtocolsListsRequest]
+    }
+  }
+
+  @js.native
+  trait ListProtocolsListsResponse extends js.Object {
+    var NextToken: js.UndefOr[PaginationToken]
+    var ProtocolsLists: js.UndefOr[ProtocolsListsData]
+  }
+
+  object ListProtocolsListsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[PaginationToken] = js.undefined,
+        ProtocolsLists: js.UndefOr[ProtocolsListsData] = js.undefined
+    ): ListProtocolsListsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ProtocolsLists.foreach(__v => __obj.updateDynamic("ProtocolsLists")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListProtocolsListsResponse]
+    }
+  }
+
+  @js.native
   trait ListTagsForResourceRequest extends js.Object {
     var ResourceArn: ResourceArn
   }
@@ -600,6 +1067,28 @@ package fms {
       val __obj = js.Dynamic.literal()
       TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
+  /**
+    * The reference rule that partially matches the <code>ViolationTarget</code> rule and violation reason.
+    */
+  @js.native
+  trait PartialMatch extends js.Object {
+    var Reference: js.UndefOr[ReferenceRule]
+    var TargetViolationReasons: js.UndefOr[TargetViolationReasons]
+  }
+
+  object PartialMatch {
+    @inline
+    def apply(
+        Reference: js.UndefOr[ReferenceRule] = js.undefined,
+        TargetViolationReasons: js.UndefOr[TargetViolationReasons] = js.undefined
+    ): PartialMatch = {
+      val __obj = js.Dynamic.literal()
+      Reference.foreach(__v => __obj.updateDynamic("Reference")(__v.asInstanceOf[js.Any]))
+      TargetViolationReasons.foreach(__v => __obj.updateDynamic("TargetViolationReasons")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PartialMatch]
     }
   }
 
@@ -771,6 +1260,113 @@ package fms {
     }
   }
 
+  /**
+    * An AWS Firewall Manager protocols list.
+    */
+  @js.native
+  trait ProtocolsListData extends js.Object {
+    var ListName: ResourceName
+    var ProtocolsList: ProtocolsList
+    var CreateTime: js.UndefOr[TimeStamp]
+    var LastUpdateTime: js.UndefOr[TimeStamp]
+    var ListId: js.UndefOr[ListId]
+    var ListUpdateToken: js.UndefOr[UpdateToken]
+    var PreviousProtocolsList: js.UndefOr[PreviousProtocolsList]
+  }
+
+  object ProtocolsListData {
+    @inline
+    def apply(
+        ListName: ResourceName,
+        ProtocolsList: ProtocolsList,
+        CreateTime: js.UndefOr[TimeStamp] = js.undefined,
+        LastUpdateTime: js.UndefOr[TimeStamp] = js.undefined,
+        ListId: js.UndefOr[ListId] = js.undefined,
+        ListUpdateToken: js.UndefOr[UpdateToken] = js.undefined,
+        PreviousProtocolsList: js.UndefOr[PreviousProtocolsList] = js.undefined
+    ): ProtocolsListData = {
+      val __obj = js.Dynamic.literal(
+        "ListName" -> ListName.asInstanceOf[js.Any],
+        "ProtocolsList" -> ProtocolsList.asInstanceOf[js.Any]
+      )
+
+      CreateTime.foreach(__v => __obj.updateDynamic("CreateTime")(__v.asInstanceOf[js.Any]))
+      LastUpdateTime.foreach(__v => __obj.updateDynamic("LastUpdateTime")(__v.asInstanceOf[js.Any]))
+      ListId.foreach(__v => __obj.updateDynamic("ListId")(__v.asInstanceOf[js.Any]))
+      ListUpdateToken.foreach(__v => __obj.updateDynamic("ListUpdateToken")(__v.asInstanceOf[js.Any]))
+      PreviousProtocolsList.foreach(__v => __obj.updateDynamic("PreviousProtocolsList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProtocolsListData]
+    }
+  }
+
+  /**
+    * Details of the AWS Firewall Manager protocols list.
+    */
+  @js.native
+  trait ProtocolsListDataSummary extends js.Object {
+    var ListArn: js.UndefOr[ResourceArn]
+    var ListId: js.UndefOr[ListId]
+    var ListName: js.UndefOr[ResourceName]
+    var ProtocolsList: js.UndefOr[ProtocolsList]
+  }
+
+  object ProtocolsListDataSummary {
+    @inline
+    def apply(
+        ListArn: js.UndefOr[ResourceArn] = js.undefined,
+        ListId: js.UndefOr[ListId] = js.undefined,
+        ListName: js.UndefOr[ResourceName] = js.undefined,
+        ProtocolsList: js.UndefOr[ProtocolsList] = js.undefined
+    ): ProtocolsListDataSummary = {
+      val __obj = js.Dynamic.literal()
+      ListArn.foreach(__v => __obj.updateDynamic("ListArn")(__v.asInstanceOf[js.Any]))
+      ListId.foreach(__v => __obj.updateDynamic("ListId")(__v.asInstanceOf[js.Any]))
+      ListName.foreach(__v => __obj.updateDynamic("ListName")(__v.asInstanceOf[js.Any]))
+      ProtocolsList.foreach(__v => __obj.updateDynamic("ProtocolsList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProtocolsListDataSummary]
+    }
+  }
+
+  @js.native
+  trait PutAppsListRequest extends js.Object {
+    var AppsList: AppsListData
+    var TagList: js.UndefOr[TagList]
+  }
+
+  object PutAppsListRequest {
+    @inline
+    def apply(
+        AppsList: AppsListData,
+        TagList: js.UndefOr[TagList] = js.undefined
+    ): PutAppsListRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppsList" -> AppsList.asInstanceOf[js.Any]
+      )
+
+      TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutAppsListRequest]
+    }
+  }
+
+  @js.native
+  trait PutAppsListResponse extends js.Object {
+    var AppsList: js.UndefOr[AppsListData]
+    var AppsListArn: js.UndefOr[ResourceArn]
+  }
+
+  object PutAppsListResponse {
+    @inline
+    def apply(
+        AppsList: js.UndefOr[AppsListData] = js.undefined,
+        AppsListArn: js.UndefOr[ResourceArn] = js.undefined
+    ): PutAppsListResponse = {
+      val __obj = js.Dynamic.literal()
+      AppsList.foreach(__v => __obj.updateDynamic("AppsList")(__v.asInstanceOf[js.Any]))
+      AppsListArn.foreach(__v => __obj.updateDynamic("AppsListArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutAppsListResponse]
+    }
+  }
+
   @js.native
   trait PutNotificationChannelRequest extends js.Object {
     var SnsRoleName: ResourceArn
@@ -832,6 +1428,55 @@ package fms {
     }
   }
 
+  @js.native
+  trait PutProtocolsListRequest extends js.Object {
+    var ProtocolsList: ProtocolsListData
+    var TagList: js.UndefOr[TagList]
+  }
+
+  object PutProtocolsListRequest {
+    @inline
+    def apply(
+        ProtocolsList: ProtocolsListData,
+        TagList: js.UndefOr[TagList] = js.undefined
+    ): PutProtocolsListRequest = {
+      val __obj = js.Dynamic.literal(
+        "ProtocolsList" -> ProtocolsList.asInstanceOf[js.Any]
+      )
+
+      TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutProtocolsListRequest]
+    }
+  }
+
+  @js.native
+  trait PutProtocolsListResponse extends js.Object {
+    var ProtocolsList: js.UndefOr[ProtocolsListData]
+    var ProtocolsListArn: js.UndefOr[ResourceArn]
+  }
+
+  object PutProtocolsListResponse {
+    @inline
+    def apply(
+        ProtocolsList: js.UndefOr[ProtocolsListData] = js.undefined,
+        ProtocolsListArn: js.UndefOr[ResourceArn] = js.undefined
+    ): PutProtocolsListResponse = {
+      val __obj = js.Dynamic.literal()
+      ProtocolsList.foreach(__v => __obj.updateDynamic("ProtocolsList")(__v.asInstanceOf[js.Any]))
+      ProtocolsListArn.foreach(__v => __obj.updateDynamic("ProtocolsListArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutProtocolsListResponse]
+    }
+  }
+
+  @js.native
+  sealed trait RemediationActionType extends js.Any
+  object RemediationActionType extends js.Object {
+    val REMOVE = "REMOVE".asInstanceOf[RemediationActionType]
+    val MODIFY = "MODIFY".asInstanceOf[RemediationActionType]
+
+    val values = js.Object.freeze(js.Array(REMOVE, MODIFY))
+  }
+
   /**
     * The resource tags that AWS Firewall Manager uses to determine if a particular resource should be included or excluded from the AWS Firewall Manager policy. Tags enable you to categorize your AWS resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value. Firewall Manager combines the tags with "AND" so that, if you add more than one tag to a policy scope, a resource must have all the specified tags to be included or excluded. For more information, see [[https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html|Working with Tag Editor]].
     */
@@ -853,6 +1498,97 @@ package fms {
 
       Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceTag]
+    }
+  }
+
+  /**
+    * Violation detail based on resource type.
+    */
+  @js.native
+  trait ResourceViolation extends js.Object {
+    var AwsEc2InstanceViolation: js.UndefOr[AwsEc2InstanceViolation]
+    var AwsEc2NetworkInterfaceViolation: js.UndefOr[AwsEc2NetworkInterfaceViolation]
+    var AwsVPCSecurityGroupViolation: js.UndefOr[AwsVPCSecurityGroupViolation]
+  }
+
+  object ResourceViolation {
+    @inline
+    def apply(
+        AwsEc2InstanceViolation: js.UndefOr[AwsEc2InstanceViolation] = js.undefined,
+        AwsEc2NetworkInterfaceViolation: js.UndefOr[AwsEc2NetworkInterfaceViolation] = js.undefined,
+        AwsVPCSecurityGroupViolation: js.UndefOr[AwsVPCSecurityGroupViolation] = js.undefined
+    ): ResourceViolation = {
+      val __obj = js.Dynamic.literal()
+      AwsEc2InstanceViolation.foreach(__v => __obj.updateDynamic("AwsEc2InstanceViolation")(__v.asInstanceOf[js.Any]))
+      AwsEc2NetworkInterfaceViolation.foreach(__v =>
+        __obj.updateDynamic("AwsEc2NetworkInterfaceViolation")(__v.asInstanceOf[js.Any])
+      )
+      AwsVPCSecurityGroupViolation.foreach(__v =>
+        __obj.updateDynamic("AwsVPCSecurityGroupViolation")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ResourceViolation]
+    }
+  }
+
+  /**
+    * Remediation option for the rule specified in the <code>ViolationTarget</code>.
+    */
+  @js.native
+  trait SecurityGroupRemediationAction extends js.Object {
+    var Description: js.UndefOr[RemediationActionDescription]
+    var IsDefaultAction: js.UndefOr[Boolean]
+    var RemediationActionType: js.UndefOr[RemediationActionType]
+    var RemediationResult: js.UndefOr[SecurityGroupRuleDescription]
+  }
+
+  object SecurityGroupRemediationAction {
+    @inline
+    def apply(
+        Description: js.UndefOr[RemediationActionDescription] = js.undefined,
+        IsDefaultAction: js.UndefOr[Boolean] = js.undefined,
+        RemediationActionType: js.UndefOr[RemediationActionType] = js.undefined,
+        RemediationResult: js.UndefOr[SecurityGroupRuleDescription] = js.undefined
+    ): SecurityGroupRemediationAction = {
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      IsDefaultAction.foreach(__v => __obj.updateDynamic("IsDefaultAction")(__v.asInstanceOf[js.Any]))
+      RemediationActionType.foreach(__v => __obj.updateDynamic("RemediationActionType")(__v.asInstanceOf[js.Any]))
+      RemediationResult.foreach(__v => __obj.updateDynamic("RemediationResult")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SecurityGroupRemediationAction]
+    }
+  }
+
+  /**
+    * Describes a set of permissions for a security group rule.
+    */
+  @js.native
+  trait SecurityGroupRuleDescription extends js.Object {
+    var FromPort: js.UndefOr[IPPortNumber]
+    var IPV4Range: js.UndefOr[CIDR]
+    var IPV6Range: js.UndefOr[CIDR]
+    var PrefixListId: js.UndefOr[ResourceId]
+    var Protocol: js.UndefOr[LengthBoundedString]
+    var ToPort: js.UndefOr[IPPortNumber]
+  }
+
+  object SecurityGroupRuleDescription {
+    @inline
+    def apply(
+        FromPort: js.UndefOr[IPPortNumber] = js.undefined,
+        IPV4Range: js.UndefOr[CIDR] = js.undefined,
+        IPV6Range: js.UndefOr[CIDR] = js.undefined,
+        PrefixListId: js.UndefOr[ResourceId] = js.undefined,
+        Protocol: js.UndefOr[LengthBoundedString] = js.undefined,
+        ToPort: js.UndefOr[IPPortNumber] = js.undefined
+    ): SecurityGroupRuleDescription = {
+      val __obj = js.Dynamic.literal()
+      FromPort.foreach(__v => __obj.updateDynamic("FromPort")(__v.asInstanceOf[js.Any]))
+      IPV4Range.foreach(__v => __obj.updateDynamic("IPV4Range")(__v.asInstanceOf[js.Any]))
+      IPV6Range.foreach(__v => __obj.updateDynamic("IPV6Range")(__v.asInstanceOf[js.Any]))
+      PrefixListId.foreach(__v => __obj.updateDynamic("PrefixListId")(__v.asInstanceOf[js.Any]))
+      Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
+      ToPort.foreach(__v => __obj.updateDynamic("ToPort")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SecurityGroupRuleDescription]
     }
   }
 
@@ -991,6 +1727,45 @@ package fms {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
+    }
+  }
+
+  /**
+    * Violations for a resource based on the specified AWS Firewall Manager policy and AWS account.
+    */
+  @js.native
+  trait ViolationDetail extends js.Object {
+    var MemberAccount: AWSAccountId
+    var PolicyId: PolicyId
+    var ResourceId: ResourceId
+    var ResourceType: ResourceType
+    var ResourceViolations: ResourceViolations
+    var ResourceDescription: js.UndefOr[LengthBoundedString]
+    var ResourceTags: js.UndefOr[TagList]
+  }
+
+  object ViolationDetail {
+    @inline
+    def apply(
+        MemberAccount: AWSAccountId,
+        PolicyId: PolicyId,
+        ResourceId: ResourceId,
+        ResourceType: ResourceType,
+        ResourceViolations: ResourceViolations,
+        ResourceDescription: js.UndefOr[LengthBoundedString] = js.undefined,
+        ResourceTags: js.UndefOr[TagList] = js.undefined
+    ): ViolationDetail = {
+      val __obj = js.Dynamic.literal(
+        "MemberAccount" -> MemberAccount.asInstanceOf[js.Any],
+        "PolicyId" -> PolicyId.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
+        "ResourceType" -> ResourceType.asInstanceOf[js.Any],
+        "ResourceViolations" -> ResourceViolations.asInstanceOf[js.Any]
+      )
+
+      ResourceDescription.foreach(__v => __obj.updateDynamic("ResourceDescription")(__v.asInstanceOf[js.Any]))
+      ResourceTags.foreach(__v => __obj.updateDynamic("ResourceTags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ViolationDetail]
     }
   }
 

@@ -2172,6 +2172,8 @@ package ssm {
 
   /**
     * Describes a command filter.
+    *
+    * '''Note:'''An instance ID can't be specified when a command status is <code>Pending</code> because the command hasn't run on the instance yet.
     */
   @js.native
   trait CommandFilter extends js.Object {
@@ -11543,19 +11545,21 @@ package ssm {
     * * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i> </code>
     *  * <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i> </code>
     *  * <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code>
-    *  * (Maintenance window targets only) <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code>
-    *  * (Maintenance window targets only) <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i> </code>
+    *  * ```Run Command and Maintenance window targets only```: <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code>
+    *  * ```Maintenance window targets only```: <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i> </code>
+    *  * ```Automation targets only```: <code>Key=ResourceGroup;Values=<i>resource-group-name</i> </code>
     * For example:
     * * <code>Key=InstanceIds,Values=i-02573cafcfEXAMPLE,i-0471e04240EXAMPLE,i-07782c72faEXAMPLE</code>
     *  * <code>Key=tag:CostCenter,Values=CostCenter1,CostCenter2,CostCenter3</code>
     *  * <code>Key=tag-key,Values=Name,Instance-Type,CostCenter</code>
-    *  * (Maintenance window targets only) <code>Key=resource-groups:Name,Values=ProductionResourceGroup</code>
+    *  * ```Run Command and Maintenance window targets only```: <code>Key=resource-groups:Name,Values=ProductionResourceGroup</code>
     *  This example demonstrates how to target all resources in the resource group ```ProductionResourceGroup``` in your maintenance window.
-    *  * (Maintenance window targets only) <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code>
+    *  * ```Maintenance window targets only```: <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code>
     *  This example demonstrates how to target only EC2 instances and VPCs in your maintenance window.
-    *  * (State Manager association targets only) <code>Key=InstanceIds,Values=<i>*</i> </code>
+    *  * ```Automation targets only```: <code>Key=ResourceGroup,Values=MyResourceGroup</code>
+    *  * ```State Manager association targets only```: <code>Key=InstanceIds,Values=<i>*</i> </code>
     *  This example demonstrates how to target all managed instances in the AWS Region where the association was created.
-    * For information about how to send commands that target instances using <code>Key,Value</code> parameters, see [[https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting|Targeting multiple instances]] in the <i>AWS Systems Manager User Guide</i>.
+    * For more information about how to send commands that target instances using <code>Key,Value</code> parameters, see [[https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting|Targeting multiple instances]] in the <i>AWS Systems Manager User Guide</i>.
     */
   @js.native
   trait Target extends js.Object {

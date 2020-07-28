@@ -1423,6 +1423,7 @@ package configservice {
     var AccountAggregationSources: js.UndefOr[AccountAggregationSourceList]
     var ConfigurationAggregatorArn: js.UndefOr[ConfigurationAggregatorArn]
     var ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName]
+    var CreatedBy: js.UndefOr[StringWithCharLimit256]
     var CreationTime: js.UndefOr[Date]
     var LastUpdatedTime: js.UndefOr[Date]
     var OrganizationAggregationSource: js.UndefOr[OrganizationAggregationSource]
@@ -1434,6 +1435,7 @@ package configservice {
         AccountAggregationSources: js.UndefOr[AccountAggregationSourceList] = js.undefined,
         ConfigurationAggregatorArn: js.UndefOr[ConfigurationAggregatorArn] = js.undefined,
         ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName] = js.undefined,
+        CreatedBy: js.UndefOr[StringWithCharLimit256] = js.undefined,
         CreationTime: js.UndefOr[Date] = js.undefined,
         LastUpdatedTime: js.UndefOr[Date] = js.undefined,
         OrganizationAggregationSource: js.UndefOr[OrganizationAggregationSource] = js.undefined
@@ -1448,6 +1450,7 @@ package configservice {
       ConfigurationAggregatorName.foreach(__v =>
         __obj.updateDynamic("ConfigurationAggregatorName")(__v.asInstanceOf[js.Any])
       )
+      CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
       OrganizationAggregationSource.foreach(__v =>
@@ -1771,7 +1774,7 @@ package configservice {
   }
 
   /**
-    * Input parameters in the form of key-value pairs for the conformance pack, both of which you define. Keys can have a maximum character length of 128 characters, and values can have a maximum length of 256 characters.
+    * Input parameters in the form of key-value pairs for the conformance pack, both of which you define. Keys can have a maximum character length of 255 characters, and values can have a maximum length of 4096 characters.
     */
   @js.native
   trait ConformancePackInputParameter extends js.Object {
@@ -6028,6 +6031,9 @@ package configservice {
     val `AWS::SQS::Queue` = "AWS::SQS::Queue".asInstanceOf[ResourceType]
     val `AWS::KMS::Key` = "AWS::KMS::Key".asInstanceOf[ResourceType]
     val `AWS::QLDB::Ledger` = "AWS::QLDB::Ledger".asInstanceOf[ResourceType]
+    val `AWS::SecretsManager::Secret` = "AWS::SecretsManager::Secret".asInstanceOf[ResourceType]
+    val `AWS::SNS::Topic` = "AWS::SNS::Topic".asInstanceOf[ResourceType]
+    val `AWS::SSM::FileData` = "AWS::SSM::FileData".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -6120,7 +6126,10 @@ package configservice {
         `AWS::ServiceCatalog::Portfolio`,
         `AWS::SQS::Queue`,
         `AWS::KMS::Key`,
-        `AWS::QLDB::Ledger`
+        `AWS::QLDB::Ledger`,
+        `AWS::SecretsManager::Secret`,
+        `AWS::SNS::Topic`,
+        `AWS::SSM::FileData`
       )
     )
   }

@@ -14,6 +14,8 @@ package object groundstation {
   type DataflowEdgeList = js.Array[DataflowEdge]
   type DataflowEndpointGroupArn = String
   type DataflowEndpointGroupList = js.Array[DataflowEndpointListItem]
+  type DataflowEndpointmtuInteger = Int
+  type DataflowList = js.Array[DataflowDetail]
   type DurationInSeconds = Int
   type EndpointDetailsList = js.Array[EndpointDetails]
   type GroundStationIdList = js.Array[String]
@@ -143,6 +145,25 @@ package groundstation {
   }
 
   /**
+    * Details about an antenna demod decode <code>Config</code> used in a contact.
+    */
+  @js.native
+  trait AntennaDemodDecodeDetails extends js.Object {
+    var outputNode: js.UndefOr[String]
+  }
+
+  object AntennaDemodDecodeDetails {
+    @inline
+    def apply(
+        outputNode: js.UndefOr[String] = js.undefined
+    ): AntennaDemodDecodeDetails = {
+      val __obj = js.Dynamic.literal()
+      outputNode.foreach(__v => __obj.updateDynamic("outputNode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AntennaDemodDecodeDetails]
+    }
+  }
+
+  /**
     * Information about how AWS Ground Station should configure an antenna for downlink during a contact.
     */
   @js.native
@@ -197,19 +218,22 @@ package groundstation {
   trait AntennaUplinkConfig extends js.Object {
     var spectrumConfig: UplinkSpectrumConfig
     var targetEirp: Eirp
+    var transmitDisabled: js.UndefOr[Boolean]
   }
 
   object AntennaUplinkConfig {
     @inline
     def apply(
         spectrumConfig: UplinkSpectrumConfig,
-        targetEirp: Eirp
+        targetEirp: Eirp,
+        transmitDisabled: js.UndefOr[Boolean] = js.undefined
     ): AntennaUplinkConfig = {
       val __obj = js.Dynamic.literal(
         "spectrumConfig" -> spectrumConfig.asInstanceOf[js.Any],
         "targetEirp" -> targetEirp.asInstanceOf[js.Any]
       )
 
+      transmitDisabled.foreach(__v => __obj.updateDynamic("transmitDisabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AntennaUplinkConfig]
     }
   }
@@ -265,6 +289,30 @@ package groundstation {
         `uplink-echo`
       )
     )
+  }
+
+  /**
+    * Details for certain <code>Config</code> object types in a contact.
+    */
+  @js.native
+  trait ConfigDetails extends js.Object {
+    var antennaDemodDecodeDetails: js.UndefOr[AntennaDemodDecodeDetails]
+    var endpointDetails: js.UndefOr[EndpointDetails]
+  }
+
+  object ConfigDetails {
+    @inline
+    def apply(
+        antennaDemodDecodeDetails: js.UndefOr[AntennaDemodDecodeDetails] = js.undefined,
+        endpointDetails: js.UndefOr[EndpointDetails] = js.undefined
+    ): ConfigDetails = {
+      val __obj = js.Dynamic.literal()
+      antennaDemodDecodeDetails.foreach(__v =>
+        __obj.updateDynamic("antennaDemodDecodeDetails")(__v.asInstanceOf[js.Any])
+      )
+      endpointDetails.foreach(__v => __obj.updateDynamic("endpointDetails")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfigDetails]
+    }
   }
 
   /**
@@ -570,11 +618,34 @@ package groundstation {
   }
 
   /**
+    * Information about a dataflow edge used in a contact.
+    */
+  @js.native
+  trait DataflowDetail extends js.Object {
+    var destination: js.UndefOr[Destination]
+    var source: js.UndefOr[Source]
+  }
+
+  object DataflowDetail {
+    @inline
+    def apply(
+        destination: js.UndefOr[Destination] = js.undefined,
+        source: js.UndefOr[Source] = js.undefined
+    ): DataflowDetail = {
+      val __obj = js.Dynamic.literal()
+      destination.foreach(__v => __obj.updateDynamic("destination")(__v.asInstanceOf[js.Any]))
+      source.foreach(__v => __obj.updateDynamic("source")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataflowDetail]
+    }
+  }
+
+  /**
     * Information about a dataflow endpoint.
     */
   @js.native
   trait DataflowEndpoint extends js.Object {
     var address: js.UndefOr[SocketAddress]
+    var mtu: js.UndefOr[DataflowEndpointmtuInteger]
     var name: js.UndefOr[SafeName]
     var status: js.UndefOr[EndpointStatus]
   }
@@ -583,11 +654,13 @@ package groundstation {
     @inline
     def apply(
         address: js.UndefOr[SocketAddress] = js.undefined,
+        mtu: js.UndefOr[DataflowEndpointmtuInteger] = js.undefined,
         name: js.UndefOr[SafeName] = js.undefined,
         status: js.UndefOr[EndpointStatus] = js.undefined
     ): DataflowEndpoint = {
       val __obj = js.Dynamic.literal()
       address.foreach(__v => __obj.updateDynamic("address")(__v.asInstanceOf[js.Any]))
+      mtu.foreach(__v => __obj.updateDynamic("mtu")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataflowEndpoint]
@@ -795,6 +868,7 @@ package groundstation {
   trait DescribeContactResponse extends js.Object {
     var contactId: js.UndefOr[String]
     var contactStatus: js.UndefOr[ContactStatus]
+    var dataflowList: js.UndefOr[DataflowList]
     var endTime: js.UndefOr[Timestamp]
     var errorMessage: js.UndefOr[String]
     var groundStation: js.UndefOr[String]
@@ -813,6 +887,7 @@ package groundstation {
     def apply(
         contactId: js.UndefOr[String] = js.undefined,
         contactStatus: js.UndefOr[ContactStatus] = js.undefined,
+        dataflowList: js.UndefOr[DataflowList] = js.undefined,
         endTime: js.UndefOr[Timestamp] = js.undefined,
         errorMessage: js.UndefOr[String] = js.undefined,
         groundStation: js.UndefOr[String] = js.undefined,
@@ -828,6 +903,7 @@ package groundstation {
       val __obj = js.Dynamic.literal()
       contactId.foreach(__v => __obj.updateDynamic("contactId")(__v.asInstanceOf[js.Any]))
       contactStatus.foreach(__v => __obj.updateDynamic("contactStatus")(__v.asInstanceOf[js.Any]))
+      dataflowList.foreach(__v => __obj.updateDynamic("dataflowList")(__v.asInstanceOf[js.Any]))
       endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
       errorMessage.foreach(__v => __obj.updateDynamic("errorMessage")(__v.asInstanceOf[js.Any]))
       groundStation.foreach(__v => __obj.updateDynamic("groundStation")(__v.asInstanceOf[js.Any]))
@@ -840,6 +916,36 @@ package groundstation {
       startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeContactResponse]
+    }
+  }
+
+  /**
+    * Dataflow details for the destination side.
+    */
+  @js.native
+  trait Destination extends js.Object {
+    var configDetails: js.UndefOr[ConfigDetails]
+    var configId: js.UndefOr[String]
+    var configType: js.UndefOr[ConfigCapabilityType]
+    var dataflowDestinationRegion: js.UndefOr[String]
+  }
+
+  object Destination {
+    @inline
+    def apply(
+        configDetails: js.UndefOr[ConfigDetails] = js.undefined,
+        configId: js.UndefOr[String] = js.undefined,
+        configType: js.UndefOr[ConfigCapabilityType] = js.undefined,
+        dataflowDestinationRegion: js.UndefOr[String] = js.undefined
+    ): Destination = {
+      val __obj = js.Dynamic.literal()
+      configDetails.foreach(__v => __obj.updateDynamic("configDetails")(__v.asInstanceOf[js.Any]))
+      configId.foreach(__v => __obj.updateDynamic("configId")(__v.asInstanceOf[js.Any]))
+      configType.foreach(__v => __obj.updateDynamic("configType")(__v.asInstanceOf[js.Any]))
+      dataflowDestinationRegion.foreach(__v =>
+        __obj.updateDynamic("dataflowDestinationRegion")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[Destination]
     }
   }
 
@@ -1806,6 +1912,34 @@ package groundstation {
       )
 
       __obj.asInstanceOf[SocketAddress]
+    }
+  }
+
+  /**
+    * Dataflow details for the source side.
+    */
+  @js.native
+  trait Source extends js.Object {
+    var configDetails: js.UndefOr[ConfigDetails]
+    var configId: js.UndefOr[String]
+    var configType: js.UndefOr[ConfigCapabilityType]
+    var dataflowSourceRegion: js.UndefOr[String]
+  }
+
+  object Source {
+    @inline
+    def apply(
+        configDetails: js.UndefOr[ConfigDetails] = js.undefined,
+        configId: js.UndefOr[String] = js.undefined,
+        configType: js.UndefOr[ConfigCapabilityType] = js.undefined,
+        dataflowSourceRegion: js.UndefOr[String] = js.undefined
+    ): Source = {
+      val __obj = js.Dynamic.literal()
+      configDetails.foreach(__v => __obj.updateDynamic("configDetails")(__v.asInstanceOf[js.Any]))
+      configId.foreach(__v => __obj.updateDynamic("configId")(__v.asInstanceOf[js.Any]))
+      configType.foreach(__v => __obj.updateDynamic("configType")(__v.asInstanceOf[js.Any]))
+      dataflowSourceRegion.foreach(__v => __obj.updateDynamic("dataflowSourceRegion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Source]
     }
   }
 

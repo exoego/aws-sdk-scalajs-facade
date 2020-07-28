@@ -1019,6 +1019,7 @@ package kendra {
     var ConnectionConfiguration: ConnectionConfiguration
     var DatabaseEngineType: DatabaseEngineType
     var AclConfiguration: js.UndefOr[AclConfiguration]
+    var SqlConfiguration: js.UndefOr[SqlConfiguration]
     var VpcConfiguration: js.UndefOr[DataSourceVpcConfiguration]
   }
 
@@ -1029,6 +1030,7 @@ package kendra {
         ConnectionConfiguration: ConnectionConfiguration,
         DatabaseEngineType: DatabaseEngineType,
         AclConfiguration: js.UndefOr[AclConfiguration] = js.undefined,
+        SqlConfiguration: js.UndefOr[SqlConfiguration] = js.undefined,
         VpcConfiguration: js.UndefOr[DataSourceVpcConfiguration] = js.undefined
     ): DatabaseConfiguration = {
       val __obj = js.Dynamic.literal(
@@ -1038,6 +1040,7 @@ package kendra {
       )
 
       AclConfiguration.foreach(__v => __obj.updateDynamic("AclConfiguration")(__v.asInstanceOf[js.Any]))
+      SqlConfiguration.foreach(__v => __obj.updateDynamic("SqlConfiguration")(__v.asInstanceOf[js.Any]))
       VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatabaseConfiguration]
     }
@@ -2036,6 +2039,15 @@ package kendra {
   }
 
   @js.native
+  sealed trait QueryIdentifiersEnclosingOption extends js.Any
+  object QueryIdentifiersEnclosingOption extends js.Object {
+    val DOUBLE_QUOTES = "DOUBLE_QUOTES".asInstanceOf[QueryIdentifiersEnclosingOption]
+    val NONE = "NONE".asInstanceOf[QueryIdentifiersEnclosingOption]
+
+    val values = js.Object.freeze(js.Array(DOUBLE_QUOTES, NONE))
+  }
+
+  @js.native
   trait QueryRequest extends js.Object {
     var IndexId: IndexId
     var QueryText: QueryText
@@ -2045,6 +2057,7 @@ package kendra {
     var PageSize: js.UndefOr[Int]
     var QueryResultTypeFilter: js.UndefOr[QueryResultType]
     var RequestedDocumentAttributes: js.UndefOr[DocumentAttributeKeyList]
+    var SortingConfiguration: js.UndefOr[SortingConfiguration]
   }
 
   object QueryRequest {
@@ -2057,7 +2070,8 @@ package kendra {
         PageNumber: js.UndefOr[Int] = js.undefined,
         PageSize: js.UndefOr[Int] = js.undefined,
         QueryResultTypeFilter: js.UndefOr[QueryResultType] = js.undefined,
-        RequestedDocumentAttributes: js.UndefOr[DocumentAttributeKeyList] = js.undefined
+        RequestedDocumentAttributes: js.UndefOr[DocumentAttributeKeyList] = js.undefined,
+        SortingConfiguration: js.UndefOr[SortingConfiguration] = js.undefined
     ): QueryRequest = {
       val __obj = js.Dynamic.literal(
         "IndexId" -> IndexId.asInstanceOf[js.Any],
@@ -2072,6 +2086,7 @@ package kendra {
       RequestedDocumentAttributes.foreach(__v =>
         __obj.updateDynamic("RequestedDocumentAttributes")(__v.asInstanceOf[js.Any])
       )
+      SortingConfiguration.foreach(__v => __obj.updateDynamic("SortingConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QueryRequest]
     }
   }
@@ -2585,6 +2600,7 @@ package kendra {
     var Displayable: js.UndefOr[Boolean]
     var Facetable: js.UndefOr[Boolean]
     var Searchable: js.UndefOr[Boolean]
+    var Sortable: js.UndefOr[Boolean]
   }
 
   object Search {
@@ -2592,12 +2608,14 @@ package kendra {
     def apply(
         Displayable: js.UndefOr[Boolean] = js.undefined,
         Facetable: js.UndefOr[Boolean] = js.undefined,
-        Searchable: js.UndefOr[Boolean] = js.undefined
+        Searchable: js.UndefOr[Boolean] = js.undefined,
+        Sortable: js.UndefOr[Boolean] = js.undefined
     ): Search = {
       val __obj = js.Dynamic.literal()
       Displayable.foreach(__v => __obj.updateDynamic("Displayable")(__v.asInstanceOf[js.Any]))
       Facetable.foreach(__v => __obj.updateDynamic("Facetable")(__v.asInstanceOf[js.Any]))
       Searchable.foreach(__v => __obj.updateDynamic("Searchable")(__v.asInstanceOf[js.Any]))
+      Sortable.foreach(__v => __obj.updateDynamic("Sortable")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Search]
     }
   }
@@ -2801,6 +2819,60 @@ package kendra {
     val SHAREPOINT_ONLINE = "SHAREPOINT_ONLINE".asInstanceOf[SharePointVersion]
 
     val values = js.Object.freeze(js.Array(SHAREPOINT_ONLINE))
+  }
+
+  @js.native
+  sealed trait SortOrder extends js.Any
+  object SortOrder extends js.Object {
+    val DESC = "DESC".asInstanceOf[SortOrder]
+    val ASC = "ASC".asInstanceOf[SortOrder]
+
+    val values = js.Object.freeze(js.Array(DESC, ASC))
+  }
+
+  /**
+    * Specifies the document attribute to use to sort the response to a Amazon Kendra query. You can specify a single attribute for sorting. The attribute must have the <code>Sortable</code> flag set to <code>true</code>, otherwise Amazon Kendra returns an exception.
+    */
+  @js.native
+  trait SortingConfiguration extends js.Object {
+    var DocumentAttributeKey: DocumentAttributeKey
+    var SortOrder: SortOrder
+  }
+
+  object SortingConfiguration {
+    @inline
+    def apply(
+        DocumentAttributeKey: DocumentAttributeKey,
+        SortOrder: SortOrder
+    ): SortingConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "DocumentAttributeKey" -> DocumentAttributeKey.asInstanceOf[js.Any],
+        "SortOrder" -> SortOrder.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[SortingConfiguration]
+    }
+  }
+
+  /**
+    * Provides information that configures Amazon Kendra to use a SQL database.
+    */
+  @js.native
+  trait SqlConfiguration extends js.Object {
+    var QueryIdentifiersEnclosingOption: js.UndefOr[QueryIdentifiersEnclosingOption]
+  }
+
+  object SqlConfiguration {
+    @inline
+    def apply(
+        QueryIdentifiersEnclosingOption: js.UndefOr[QueryIdentifiersEnclosingOption] = js.undefined
+    ): SqlConfiguration = {
+      val __obj = js.Dynamic.literal()
+      QueryIdentifiersEnclosingOption.foreach(__v =>
+        __obj.updateDynamic("QueryIdentifiersEnclosingOption")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[SqlConfiguration]
+    }
   }
 
   @js.native

@@ -227,6 +227,16 @@ package fsx {
     val values = js.Object.freeze(js.Array(FILE_SYSTEM_UPDATE, STORAGE_OPTIMIZATION))
   }
 
+  @js.native
+  sealed trait AutoImportPolicyType extends js.Any
+  object AutoImportPolicyType extends js.Object {
+    val NONE = "NONE".asInstanceOf[AutoImportPolicyType]
+    val NEW = "NEW".asInstanceOf[AutoImportPolicyType]
+    val NEW_CHANGED = "NEW_CHANGED".asInstanceOf[AutoImportPolicyType]
+
+    val values = js.Object.freeze(js.Array(NONE, NEW, NEW_CHANGED))
+  }
+
   /**
     * A backup of an Amazon FSx for file system.
     */
@@ -554,6 +564,7 @@ package fsx {
     */
   @js.native
   trait CreateFileSystemLustreConfiguration extends js.Object {
+    var AutoImportPolicy: js.UndefOr[AutoImportPolicyType]
     var AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays]
     var CopyTagsToBackups: js.UndefOr[Flag]
     var DailyAutomaticBackupStartTime: js.UndefOr[DailyTime]
@@ -568,6 +579,7 @@ package fsx {
   object CreateFileSystemLustreConfiguration {
     @inline
     def apply(
+        AutoImportPolicy: js.UndefOr[AutoImportPolicyType] = js.undefined,
         AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays] = js.undefined,
         CopyTagsToBackups: js.UndefOr[Flag] = js.undefined,
         DailyAutomaticBackupStartTime: js.UndefOr[DailyTime] = js.undefined,
@@ -579,6 +591,7 @@ package fsx {
         WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined
     ): CreateFileSystemLustreConfiguration = {
       val __obj = js.Dynamic.literal()
+      AutoImportPolicy.foreach(__v => __obj.updateDynamic("AutoImportPolicy")(__v.asInstanceOf[js.Any]))
       AutomaticBackupRetentionDays.foreach(__v =>
         __obj.updateDynamic("AutomaticBackupRetentionDays")(__v.asInstanceOf[js.Any])
       )
@@ -723,24 +736,64 @@ package fsx {
     */
   @js.native
   trait DataRepositoryConfiguration extends js.Object {
+    var AutoImportPolicy: js.UndefOr[AutoImportPolicyType]
     var ExportPath: js.UndefOr[ArchivePath]
+    var FailureDetails: js.UndefOr[DataRepositoryFailureDetails]
     var ImportPath: js.UndefOr[ArchivePath]
     var ImportedFileChunkSize: js.UndefOr[Megabytes]
+    var Lifecycle: js.UndefOr[DataRepositoryLifecycle]
   }
 
   object DataRepositoryConfiguration {
     @inline
     def apply(
+        AutoImportPolicy: js.UndefOr[AutoImportPolicyType] = js.undefined,
         ExportPath: js.UndefOr[ArchivePath] = js.undefined,
+        FailureDetails: js.UndefOr[DataRepositoryFailureDetails] = js.undefined,
         ImportPath: js.UndefOr[ArchivePath] = js.undefined,
-        ImportedFileChunkSize: js.UndefOr[Megabytes] = js.undefined
+        ImportedFileChunkSize: js.UndefOr[Megabytes] = js.undefined,
+        Lifecycle: js.UndefOr[DataRepositoryLifecycle] = js.undefined
     ): DataRepositoryConfiguration = {
       val __obj = js.Dynamic.literal()
+      AutoImportPolicy.foreach(__v => __obj.updateDynamic("AutoImportPolicy")(__v.asInstanceOf[js.Any]))
       ExportPath.foreach(__v => __obj.updateDynamic("ExportPath")(__v.asInstanceOf[js.Any]))
+      FailureDetails.foreach(__v => __obj.updateDynamic("FailureDetails")(__v.asInstanceOf[js.Any]))
       ImportPath.foreach(__v => __obj.updateDynamic("ImportPath")(__v.asInstanceOf[js.Any]))
       ImportedFileChunkSize.foreach(__v => __obj.updateDynamic("ImportedFileChunkSize")(__v.asInstanceOf[js.Any]))
+      Lifecycle.foreach(__v => __obj.updateDynamic("Lifecycle")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataRepositoryConfiguration]
     }
+  }
+
+  /**
+    * Provides detailed information about the data respository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code>.
+    */
+  @js.native
+  trait DataRepositoryFailureDetails extends js.Object {
+    var Message: js.UndefOr[ErrorMessage]
+  }
+
+  object DataRepositoryFailureDetails {
+    @inline
+    def apply(
+        Message: js.UndefOr[ErrorMessage] = js.undefined
+    ): DataRepositoryFailureDetails = {
+      val __obj = js.Dynamic.literal()
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataRepositoryFailureDetails]
+    }
+  }
+
+  @js.native
+  sealed trait DataRepositoryLifecycle extends js.Any
+  object DataRepositoryLifecycle extends js.Object {
+    val CREATING = "CREATING".asInstanceOf[DataRepositoryLifecycle]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[DataRepositoryLifecycle]
+    val MISCONFIGURED = "MISCONFIGURED".asInstanceOf[DataRepositoryLifecycle]
+    val UPDATING = "UPDATING".asInstanceOf[DataRepositoryLifecycle]
+    val DELETING = "DELETING".asInstanceOf[DataRepositoryLifecycle]
+
+    val values = js.Object.freeze(js.Array(CREATING, AVAILABLE, MISCONFIGURED, UPDATING, DELETING))
   }
 
   /**
@@ -1648,19 +1701,21 @@ package fsx {
     */
   @js.native
   trait Tag extends js.Object {
-    var Key: js.UndefOr[TagKey]
-    var Value: js.UndefOr[TagValue]
+    var Key: TagKey
+    var Value: TagValue
   }
 
   object Tag {
     @inline
     def apply(
-        Key: js.UndefOr[TagKey] = js.undefined,
-        Value: js.UndefOr[TagValue] = js.undefined
+        Key: TagKey,
+        Value: TagValue
     ): Tag = {
-      val __obj = js.Dynamic.literal()
-      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal(
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[Tag]
     }
   }
@@ -1750,6 +1805,7 @@ package fsx {
     */
   @js.native
   trait UpdateFileSystemLustreConfiguration extends js.Object {
+    var AutoImportPolicy: js.UndefOr[AutoImportPolicyType]
     var AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays]
     var DailyAutomaticBackupStartTime: js.UndefOr[DailyTime]
     var WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime]
@@ -1758,11 +1814,13 @@ package fsx {
   object UpdateFileSystemLustreConfiguration {
     @inline
     def apply(
+        AutoImportPolicy: js.UndefOr[AutoImportPolicyType] = js.undefined,
         AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays] = js.undefined,
         DailyAutomaticBackupStartTime: js.UndefOr[DailyTime] = js.undefined,
         WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined
     ): UpdateFileSystemLustreConfiguration = {
       val __obj = js.Dynamic.literal()
+      AutoImportPolicy.foreach(__v => __obj.updateDynamic("AutoImportPolicy")(__v.asInstanceOf[js.Any]))
       AutomaticBackupRetentionDays.foreach(__v =>
         __obj.updateDynamic("AutomaticBackupRetentionDays")(__v.asInstanceOf[js.Any])
       )

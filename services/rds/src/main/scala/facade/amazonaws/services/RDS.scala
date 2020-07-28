@@ -3306,7 +3306,9 @@ package rds {
     var SupportedEngineModes: js.UndefOr[EngineModeList]
     var SupportedFeatureNames: js.UndefOr[FeatureNameList]
     var SupportedTimezones: js.UndefOr[SupportedTimezonesList]
+    var SupportsGlobalDatabases: js.UndefOr[Boolean]
     var SupportsLogExportsToCloudwatchLogs: js.UndefOr[Boolean]
+    var SupportsParallelQuery: js.UndefOr[Boolean]
     var SupportsReadReplica: js.UndefOr[Boolean]
     var ValidUpgradeTarget: js.UndefOr[ValidUpgradeTargetList]
   }
@@ -3326,7 +3328,9 @@ package rds {
         SupportedEngineModes: js.UndefOr[EngineModeList] = js.undefined,
         SupportedFeatureNames: js.UndefOr[FeatureNameList] = js.undefined,
         SupportedTimezones: js.UndefOr[SupportedTimezonesList] = js.undefined,
+        SupportsGlobalDatabases: js.UndefOr[Boolean] = js.undefined,
         SupportsLogExportsToCloudwatchLogs: js.UndefOr[Boolean] = js.undefined,
+        SupportsParallelQuery: js.UndefOr[Boolean] = js.undefined,
         SupportsReadReplica: js.UndefOr[Boolean] = js.undefined,
         ValidUpgradeTarget: js.UndefOr[ValidUpgradeTargetList] = js.undefined
     ): DBEngineVersion = {
@@ -3345,9 +3349,11 @@ package rds {
       SupportedEngineModes.foreach(__v => __obj.updateDynamic("SupportedEngineModes")(__v.asInstanceOf[js.Any]))
       SupportedFeatureNames.foreach(__v => __obj.updateDynamic("SupportedFeatureNames")(__v.asInstanceOf[js.Any]))
       SupportedTimezones.foreach(__v => __obj.updateDynamic("SupportedTimezones")(__v.asInstanceOf[js.Any]))
+      SupportsGlobalDatabases.foreach(__v => __obj.updateDynamic("SupportsGlobalDatabases")(__v.asInstanceOf[js.Any]))
       SupportsLogExportsToCloudwatchLogs.foreach(__v =>
         __obj.updateDynamic("SupportsLogExportsToCloudwatchLogs")(__v.asInstanceOf[js.Any])
       )
+      SupportsParallelQuery.foreach(__v => __obj.updateDynamic("SupportsParallelQuery")(__v.asInstanceOf[js.Any]))
       SupportsReadReplica.foreach(__v => __obj.updateDynamic("SupportsReadReplica")(__v.asInstanceOf[js.Any]))
       ValidUpgradeTarget.foreach(__v => __obj.updateDynamic("ValidUpgradeTarget")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBEngineVersion]
@@ -8352,6 +8358,7 @@ package rds {
     var StorageType: js.UndefOr[String]
     var SupportedEngineModes: js.UndefOr[EngineModeList]
     var SupportsEnhancedMonitoring: js.UndefOr[Boolean]
+    var SupportsGlobalDatabases: js.UndefOr[Boolean]
     var SupportsIAMDatabaseAuthentication: js.UndefOr[Boolean]
     var SupportsIops: js.UndefOr[Boolean]
     var SupportsKerberosAuthentication: js.UndefOr[BooleanOptional]
@@ -8383,6 +8390,7 @@ package rds {
         StorageType: js.UndefOr[String] = js.undefined,
         SupportedEngineModes: js.UndefOr[EngineModeList] = js.undefined,
         SupportsEnhancedMonitoring: js.UndefOr[Boolean] = js.undefined,
+        SupportsGlobalDatabases: js.UndefOr[Boolean] = js.undefined,
         SupportsIAMDatabaseAuthentication: js.UndefOr[Boolean] = js.undefined,
         SupportsIops: js.UndefOr[Boolean] = js.undefined,
         SupportsKerberosAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
@@ -8415,6 +8423,7 @@ package rds {
       SupportsEnhancedMonitoring.foreach(__v =>
         __obj.updateDynamic("SupportsEnhancedMonitoring")(__v.asInstanceOf[js.Any])
       )
+      SupportsGlobalDatabases.foreach(__v => __obj.updateDynamic("SupportsGlobalDatabases")(__v.asInstanceOf[js.Any]))
       SupportsIAMDatabaseAuthentication.foreach(__v =>
         __obj.updateDynamic("SupportsIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any])
       )

@@ -7,6 +7,7 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object medialive {
+  type InputDeviceThumbnail = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type MaxResults = Int
   type Tags = js.Dictionary[__string]
   type __double = Double
@@ -104,6 +105,7 @@ package object medialive {
   type __listOfVideoDescription = js.Array[VideoDescription]
   type __listOf__integer = js.Array[__integer]
   type __listOf__string = js.Array[__string]
+  type __long = Double
   type __longMin0Max1099511627775 = Double
   type __longMin0Max4294967295 = Double
   type __longMin0Max8589934591 = Double
@@ -113,10 +115,12 @@ package object medialive {
   type __stringMin1 = String
   type __stringMin1Max255 = String
   type __stringMin1Max256 = String
+  type __stringMin1Max35 = String
   type __stringMin32Max32 = String
   type __stringMin34Max34 = String
   type __stringMin3Max3 = String
   type __stringMin6Max6 = String
+  type __timestamp = js.Date
 
   implicit final class MediaLiveOps(private val service: MediaLive) extends AnyVal {
 
@@ -158,6 +162,9 @@ package object medialive {
       service.describeChannel(params).promise().toFuture
     @inline def describeInputDeviceFuture(params: DescribeInputDeviceRequest): Future[DescribeInputDeviceResponse] =
       service.describeInputDevice(params).promise().toFuture
+    @inline def describeInputDeviceThumbnailFuture(
+        params: DescribeInputDeviceThumbnailRequest
+    ): Future[DescribeInputDeviceThumbnailResponse] = service.describeInputDeviceThumbnail(params).promise().toFuture
     @inline def describeInputFuture(params: DescribeInputRequest): Future[DescribeInputResponse] =
       service.describeInput(params).promise().toFuture
     @inline def describeInputSecurityGroupFuture(
@@ -253,6 +260,9 @@ package medialive {
     def describeChannel(params: DescribeChannelRequest): Request[DescribeChannelResponse] = js.native
     def describeInput(params: DescribeInputRequest): Request[DescribeInputResponse] = js.native
     def describeInputDevice(params: DescribeInputDeviceRequest): Request[DescribeInputDeviceResponse] = js.native
+    def describeInputDeviceThumbnail(
+        params: DescribeInputDeviceThumbnailRequest
+    ): Request[DescribeInputDeviceThumbnailResponse] = js.native
     def describeInputSecurityGroup(
         params: DescribeInputSecurityGroupRequest
     ): Request[DescribeInputSecurityGroupResponse] = js.native
@@ -540,6 +550,17 @@ package medialive {
   }
 
   /**
+    * The HTTP Accept header. Indicates the requested type for the thumbnail.
+    */
+  @js.native
+  sealed trait AcceptHeader extends js.Any
+  object AcceptHeader extends js.Object {
+    val `image/jpeg` = "image/jpeg".asInstanceOf[AcceptHeader]
+
+    val values = js.Object.freeze(js.Array(`image/jpeg`))
+  }
+
+  /**
     * Afd Signaling
     */
   @js.native
@@ -720,7 +741,7 @@ package medialive {
     var AudioType: js.UndefOr[AudioType]
     var AudioTypeControl: js.UndefOr[AudioDescriptionAudioTypeControl]
     var CodecSettings: js.UndefOr[AudioCodecSettings]
-    var LanguageCode: js.UndefOr[__stringMin3Max3]
+    var LanguageCode: js.UndefOr[__stringMin1Max35]
     var LanguageCodeControl: js.UndefOr[AudioDescriptionLanguageCodeControl]
     var RemixSettings: js.UndefOr[RemixSettings]
     var StreamName: js.UndefOr[__string]
@@ -735,7 +756,7 @@ package medialive {
         AudioType: js.UndefOr[AudioType] = js.undefined,
         AudioTypeControl: js.UndefOr[AudioDescriptionAudioTypeControl] = js.undefined,
         CodecSettings: js.UndefOr[AudioCodecSettings] = js.undefined,
-        LanguageCode: js.UndefOr[__stringMin3Max3] = js.undefined,
+        LanguageCode: js.UndefOr[__stringMin1Max35] = js.undefined,
         LanguageCodeControl: js.UndefOr[AudioDescriptionLanguageCodeControl] = js.undefined,
         RemixSettings: js.UndefOr[RemixSettings] = js.undefined,
         StreamName: js.UndefOr[__string] = js.undefined
@@ -1895,6 +1916,17 @@ package medialive {
   }
 
   /**
+    * Specifies the media type of the thumbnail.
+    */
+  @js.native
+  sealed trait ContentType extends js.Any
+  object ContentType extends js.Object {
+    val `image/jpeg` = "image/jpeg".asInstanceOf[ContentType]
+
+    val values = js.Object.freeze(js.Array(`image/jpeg`))
+  }
+
+  /**
     * A request to create a channel
     */
   @js.native
@@ -2769,6 +2801,61 @@ package medialive {
       SerialNumber.foreach(__v => __obj.updateDynamic("SerialNumber")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeInputDeviceResponse]
+    }
+  }
+
+  /**
+    * Placeholder documentation for DescribeInputDeviceThumbnailRequest
+    */
+  @js.native
+  trait DescribeInputDeviceThumbnailRequest extends js.Object {
+    var Accept: AcceptHeader
+    var InputDeviceId: __string
+  }
+
+  object DescribeInputDeviceThumbnailRequest {
+    @inline
+    def apply(
+        Accept: AcceptHeader,
+        InputDeviceId: __string
+    ): DescribeInputDeviceThumbnailRequest = {
+      val __obj = js.Dynamic.literal(
+        "Accept" -> Accept.asInstanceOf[js.Any],
+        "InputDeviceId" -> InputDeviceId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeInputDeviceThumbnailRequest]
+    }
+  }
+
+  /**
+    * Placeholder documentation for DescribeInputDeviceThumbnailResponse
+    */
+  @js.native
+  trait DescribeInputDeviceThumbnailResponse extends js.Object {
+    var Body: js.UndefOr[InputDeviceThumbnail]
+    var ContentLength: js.UndefOr[__long]
+    var ContentType: js.UndefOr[ContentType]
+    var ETag: js.UndefOr[__string]
+    var LastModified: js.UndefOr[__timestamp]
+  }
+
+  object DescribeInputDeviceThumbnailResponse {
+    @inline
+    def apply(
+        Body: js.UndefOr[InputDeviceThumbnail] = js.undefined,
+        ContentLength: js.UndefOr[__long] = js.undefined,
+        ContentType: js.UndefOr[ContentType] = js.undefined,
+        ETag: js.UndefOr[__string] = js.undefined,
+        LastModified: js.UndefOr[__timestamp] = js.undefined
+    ): DescribeInputDeviceThumbnailResponse = {
+      val __obj = js.Dynamic.literal()
+      Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
+      ContentLength.foreach(__v => __obj.updateDynamic("ContentLength")(__v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeInputDeviceThumbnailResponse]
     }
   }
 
@@ -4589,7 +4676,7 @@ package medialive {
     var NumRefFrames: js.UndefOr[__integerMin1Max6]
     var ParControl: js.UndefOr[H264ParControl]
     var ParDenominator: js.UndefOr[__integerMin1]
-    var ParNumerator: js.UndefOr[__integer]
+    var ParNumerator: js.UndefOr[__integerMin1]
     var Profile: js.UndefOr[H264Profile]
     var QualityLevel: js.UndefOr[H264QualityLevel]
     var QvbrQualityLevel: js.UndefOr[__integerMin1Max10]
@@ -4635,7 +4722,7 @@ package medialive {
         NumRefFrames: js.UndefOr[__integerMin1Max6] = js.undefined,
         ParControl: js.UndefOr[H264ParControl] = js.undefined,
         ParDenominator: js.UndefOr[__integerMin1] = js.undefined,
-        ParNumerator: js.UndefOr[__integer] = js.undefined,
+        ParNumerator: js.UndefOr[__integerMin1] = js.undefined,
         Profile: js.UndefOr[H264Profile] = js.undefined,
         QualityLevel: js.UndefOr[H264QualityLevel] = js.undefined,
         QvbrQualityLevel: js.UndefOr[__integerMin1Max10] = js.undefined,
@@ -6513,7 +6600,7 @@ package medialive {
     */
   @js.native
   trait InputPrepareScheduleActionSettings extends js.Object {
-    var InputAttachmentNameReference: __string
+    var InputAttachmentNameReference: js.UndefOr[__string]
     var InputClippingSettings: js.UndefOr[InputClippingSettings]
     var UrlPath: js.UndefOr[__listOf__string]
   }
@@ -6521,14 +6608,14 @@ package medialive {
   object InputPrepareScheduleActionSettings {
     @inline
     def apply(
-        InputAttachmentNameReference: __string,
+        InputAttachmentNameReference: js.UndefOr[__string] = js.undefined,
         InputClippingSettings: js.UndefOr[InputClippingSettings] = js.undefined,
         UrlPath: js.UndefOr[__listOf__string] = js.undefined
     ): InputPrepareScheduleActionSettings = {
-      val __obj = js.Dynamic.literal(
-        "InputAttachmentNameReference" -> InputAttachmentNameReference.asInstanceOf[js.Any]
+      val __obj = js.Dynamic.literal()
+      InputAttachmentNameReference.foreach(__v =>
+        __obj.updateDynamic("InputAttachmentNameReference")(__v.asInstanceOf[js.Any])
       )
-
       InputClippingSettings.foreach(__v => __obj.updateDynamic("InputClippingSettings")(__v.asInstanceOf[js.Any]))
       UrlPath.foreach(__v => __obj.updateDynamic("UrlPath")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InputPrepareScheduleActionSettings]

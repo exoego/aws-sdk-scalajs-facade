@@ -490,6 +490,7 @@ package mediaconnect {
     var DataTransferSubscriberFeePercent: js.UndefOr[__integer]
     var Description: js.UndefOr[__string]
     var Encryption: js.UndefOr[Encryption]
+    var EntitlementStatus: js.UndefOr[EntitlementStatus]
   }
 
   object Entitlement {
@@ -500,7 +501,8 @@ package mediaconnect {
         Subscribers: __listOf__string,
         DataTransferSubscriberFeePercent: js.UndefOr[__integer] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
-        Encryption: js.UndefOr[Encryption] = js.undefined
+        Encryption: js.UndefOr[Encryption] = js.undefined,
+        EntitlementStatus: js.UndefOr[EntitlementStatus] = js.undefined
     ): Entitlement = {
       val __obj = js.Dynamic.literal(
         "EntitlementArn" -> EntitlementArn.asInstanceOf[js.Any],
@@ -513,8 +515,18 @@ package mediaconnect {
       )
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
+      EntitlementStatus.foreach(__v => __obj.updateDynamic("EntitlementStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Entitlement]
     }
+  }
+
+  @js.native
+  sealed trait EntitlementStatus extends js.Any
+  object EntitlementStatus extends js.Object {
+    val ENABLED = "ENABLED".asInstanceOf[EntitlementStatus]
+    val DISABLED = "DISABLED".asInstanceOf[EntitlementStatus]
+
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**
@@ -602,6 +614,7 @@ package mediaconnect {
     var DataTransferSubscriberFeePercent: js.UndefOr[__integer]
     var Description: js.UndefOr[__string]
     var Encryption: js.UndefOr[Encryption]
+    var EntitlementStatus: js.UndefOr[EntitlementStatus]
     var Name: js.UndefOr[__string]
   }
 
@@ -612,6 +625,7 @@ package mediaconnect {
         DataTransferSubscriberFeePercent: js.UndefOr[__integer] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
         Encryption: js.UndefOr[Encryption] = js.undefined,
+        EntitlementStatus: js.UndefOr[EntitlementStatus] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined
     ): GrantEntitlementRequest = {
       val __obj = js.Dynamic.literal(
@@ -623,6 +637,7 @@ package mediaconnect {
       )
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
+      EntitlementStatus.foreach(__v => __obj.updateDynamic("EntitlementStatus")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GrantEntitlementRequest]
     }
@@ -1474,6 +1489,7 @@ package mediaconnect {
     var FlowArn: __string
     var Description: js.UndefOr[__string]
     var Encryption: js.UndefOr[UpdateEncryption]
+    var EntitlementStatus: js.UndefOr[EntitlementStatus]
     var Subscribers: js.UndefOr[__listOf__string]
   }
 
@@ -1484,6 +1500,7 @@ package mediaconnect {
         FlowArn: __string,
         Description: js.UndefOr[__string] = js.undefined,
         Encryption: js.UndefOr[UpdateEncryption] = js.undefined,
+        EntitlementStatus: js.UndefOr[EntitlementStatus] = js.undefined,
         Subscribers: js.UndefOr[__listOf__string] = js.undefined
     ): UpdateFlowEntitlementRequest = {
       val __obj = js.Dynamic.literal(
@@ -1493,6 +1510,7 @@ package mediaconnect {
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
+      EntitlementStatus.foreach(__v => __obj.updateDynamic("EntitlementStatus")(__v.asInstanceOf[js.Any]))
       Subscribers.foreach(__v => __obj.updateDynamic("Subscribers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFlowEntitlementRequest]
     }

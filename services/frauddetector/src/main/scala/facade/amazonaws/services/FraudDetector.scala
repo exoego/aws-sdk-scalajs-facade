@@ -14,24 +14,17 @@ package object frauddetector {
   type DetectorVersionMaxResults = Int
   type DetectorVersionSummaryList = js.Array[DetectorVersionSummary]
   type DetectorsMaxResults = Int
-  type EventAttributeMap = js.Dictionary[attributeValue]
+  type EventVariableMap = js.Dictionary[variableValue]
   type ExternalModelEndpointDataBlobMap = js.Dictionary[ModelEndpointDataBlob]
   type ExternalModelList = js.Array[ExternalModel]
   type ExternalModelsMaxResults = Int
-  type IsOpaque = Boolean
   type JsonKeyToVariableMap = js.Dictionary[String]
-  type LabelMapper = js.Dictionary[ListOfStrings]
+  type KmsEncryptionKeyArn = String
   type ListOfModelScores = js.Array[ModelScores]
   type ListOfModelVersions = js.Array[ModelVersion]
   type ListOfRuleResults = js.Array[RuleResult]
   type ListOfStrings = js.Array[String]
-  type MaxResults = Int
-  type MetricsMap = js.Dictionary[String]
-  type ModelList = js.Array[Model]
   type ModelPredictionMap = js.Dictionary[Float]
-  type ModelVariableIndex = Int
-  type ModelVariablesList = js.Array[ModelVariable]
-  type ModelVersionDetailList = js.Array[ModelVersionDetail]
   type NameList = js.Array[String]
   type NonEmptyListOfStrings = js.Array[String]
   type OutcomeList = js.Array[Outcome]
@@ -39,20 +32,45 @@ package object frauddetector {
   type RuleDetailList = js.Array[RuleDetail]
   type RuleList = js.Array[Rule]
   type RulesMaxResults = Int
+  type TagsMaxResults = Int
+  type UseEventVariables = Boolean
   type VariableEntryList = js.Array[VariableEntry]
   type VariableList = js.Array[Variable]
   type VariablesMaxResults = Int
-  type attributeKey = String
-  type attributeValue = String
   type blob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type contentType = String
   type description = String
+  type entityTypeList = js.Array[EntityType]
+  type entityTypesMaxResults = Int
+  type eventTypeList = js.Array[EventType]
+  type eventTypesMaxResults = Int
+  type fieldValidationMessageList = js.Array[FieldValidationMessage]
+  type fileValidationMessageList = js.Array[FileValidationMessage]
+  type floatVersionString = String
+  type fraudDetectorArn = String
   type iamRoleArn = String
   type identifier = String
+  type labelList = js.Array[Label]
+  type labelMapper = js.Dictionary[ListOfStrings]
+  type labelsMaxResults = Int
+  type listOfEntities = js.Array[Entity]
+  type metricDataPointsList = js.Array[MetricDataPoint]
+  type modelIdentifier = String
+  type modelList = js.Array[Model]
+  type modelVersionDetailList = js.Array[ModelVersionDetail]
+  type modelsMaxPageSize = Int
   type nonEmptyString = String
   type ruleExpression = String
   type s3BucketLocation = String
+  type sageMakerEndpointIdentifier = String
+  type tagKey = String
+  type tagKeyList = js.Array[tagKey]
+  type tagList = js.Array[Tag]
+  type tagValue = String
   type time = String
+  type variableName = String
+  type variableValue = String
+  type wholeNumberVersionString = String
 
   implicit final class FraudDetectorOps(private val service: FraudDetector) extends AnyVal {
 
@@ -62,6 +80,8 @@ package object frauddetector {
       service.batchGetVariable(params).promise().toFuture
     @inline def createDetectorVersionFuture(params: CreateDetectorVersionRequest): Future[CreateDetectorVersionResult] =
       service.createDetectorVersion(params).promise().toFuture
+    @inline def createModelFuture(params: CreateModelRequest): Future[CreateModelResult] =
+      service.createModel(params).promise().toFuture
     @inline def createModelVersionFuture(params: CreateModelVersionRequest): Future[CreateModelVersionResult] =
       service.createModelVersion(params).promise().toFuture
     @inline def createRuleFuture(params: CreateRuleRequest): Future[CreateRuleResult] =
@@ -74,8 +94,8 @@ package object frauddetector {
       service.deleteDetectorVersion(params).promise().toFuture
     @inline def deleteEventFuture(params: DeleteEventRequest): Future[DeleteEventResult] =
       service.deleteEvent(params).promise().toFuture
-    @inline def deleteRuleVersionFuture(params: DeleteRuleVersionRequest): Future[DeleteRuleVersionResult] =
-      service.deleteRuleVersion(params).promise().toFuture
+    @inline def deleteRuleFuture(params: DeleteRuleRequest): Future[DeleteRuleResult] =
+      service.deleteRule(params).promise().toFuture
     @inline def describeDetectorFuture(params: DescribeDetectorRequest): Future[DescribeDetectorResult] =
       service.describeDetector(params).promise().toFuture
     @inline def describeModelVersionsFuture(params: DescribeModelVersionsRequest): Future[DescribeModelVersionsResult] =
@@ -84,28 +104,48 @@ package object frauddetector {
       service.getDetectorVersion(params).promise().toFuture
     @inline def getDetectorsFuture(params: GetDetectorsRequest): Future[GetDetectorsResult] =
       service.getDetectors(params).promise().toFuture
+    @inline def getEntityTypesFuture(params: GetEntityTypesRequest): Future[GetEntityTypesResult] =
+      service.getEntityTypes(params).promise().toFuture
+    @inline def getEventPredictionFuture(params: GetEventPredictionRequest): Future[GetEventPredictionResult] =
+      service.getEventPrediction(params).promise().toFuture
+    @inline def getEventTypesFuture(params: GetEventTypesRequest): Future[GetEventTypesResult] =
+      service.getEventTypes(params).promise().toFuture
     @inline def getExternalModelsFuture(params: GetExternalModelsRequest): Future[GetExternalModelsResult] =
       service.getExternalModels(params).promise().toFuture
+    @inline def getKMSEncryptionKeyFuture(): Future[GetKMSEncryptionKeyResult] =
+      service.getKMSEncryptionKey().promise().toFuture
+    @inline def getLabelsFuture(params: GetLabelsRequest): Future[GetLabelsResult] =
+      service.getLabels(params).promise().toFuture
     @inline def getModelVersionFuture(params: GetModelVersionRequest): Future[GetModelVersionResult] =
       service.getModelVersion(params).promise().toFuture
     @inline def getModelsFuture(params: GetModelsRequest): Future[GetModelsResult] =
       service.getModels(params).promise().toFuture
     @inline def getOutcomesFuture(params: GetOutcomesRequest): Future[GetOutcomesResult] =
       service.getOutcomes(params).promise().toFuture
-    @inline def getPredictionFuture(params: GetPredictionRequest): Future[GetPredictionResult] =
-      service.getPrediction(params).promise().toFuture
     @inline def getRulesFuture(params: GetRulesRequest): Future[GetRulesResult] =
       service.getRules(params).promise().toFuture
     @inline def getVariablesFuture(params: GetVariablesRequest): Future[GetVariablesResult] =
       service.getVariables(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResult] =
+      service.listTagsForResource(params).promise().toFuture
     @inline def putDetectorFuture(params: PutDetectorRequest): Future[PutDetectorResult] =
       service.putDetector(params).promise().toFuture
+    @inline def putEntityTypeFuture(params: PutEntityTypeRequest): Future[PutEntityTypeResult] =
+      service.putEntityType(params).promise().toFuture
+    @inline def putEventTypeFuture(params: PutEventTypeRequest): Future[PutEventTypeResult] =
+      service.putEventType(params).promise().toFuture
     @inline def putExternalModelFuture(params: PutExternalModelRequest): Future[PutExternalModelResult] =
       service.putExternalModel(params).promise().toFuture
-    @inline def putModelFuture(params: PutModelRequest): Future[PutModelResult] =
-      service.putModel(params).promise().toFuture
+    @inline def putKMSEncryptionKeyFuture(params: PutKMSEncryptionKeyRequest): Future[PutKMSEncryptionKeyResult] =
+      service.putKMSEncryptionKey(params).promise().toFuture
+    @inline def putLabelFuture(params: PutLabelRequest): Future[PutLabelResult] =
+      service.putLabel(params).promise().toFuture
     @inline def putOutcomeFuture(params: PutOutcomeRequest): Future[PutOutcomeResult] =
       service.putOutcome(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResult] =
+      service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResult] =
+      service.untagResource(params).promise().toFuture
     @inline def updateDetectorVersionFuture(params: UpdateDetectorVersionRequest): Future[UpdateDetectorVersionResult] =
       service.updateDetectorVersion(params).promise().toFuture
     @inline def updateDetectorVersionMetadataFuture(
@@ -114,8 +154,13 @@ package object frauddetector {
     @inline def updateDetectorVersionStatusFuture(
         params: UpdateDetectorVersionStatusRequest
     ): Future[UpdateDetectorVersionStatusResult] = service.updateDetectorVersionStatus(params).promise().toFuture
+    @inline def updateModelFuture(params: UpdateModelRequest): Future[UpdateModelResult] =
+      service.updateModel(params).promise().toFuture
     @inline def updateModelVersionFuture(params: UpdateModelVersionRequest): Future[UpdateModelVersionResult] =
       service.updateModelVersion(params).promise().toFuture
+    @inline def updateModelVersionStatusFuture(
+        params: UpdateModelVersionStatusRequest
+    ): Future[UpdateModelVersionStatusResult] = service.updateModelVersionStatus(params).promise().toFuture
     @inline def updateRuleMetadataFuture(params: UpdateRuleMetadataRequest): Future[UpdateRuleMetadataResult] =
       service.updateRuleMetadata(params).promise().toFuture
     @inline def updateRuleVersionFuture(params: UpdateRuleVersionRequest): Future[UpdateRuleVersionResult] =
@@ -134,28 +179,39 @@ package frauddetector {
     def batchCreateVariable(params: BatchCreateVariableRequest): Request[BatchCreateVariableResult] = js.native
     def batchGetVariable(params: BatchGetVariableRequest): Request[BatchGetVariableResult] = js.native
     def createDetectorVersion(params: CreateDetectorVersionRequest): Request[CreateDetectorVersionResult] = js.native
+    def createModel(params: CreateModelRequest): Request[CreateModelResult] = js.native
     def createModelVersion(params: CreateModelVersionRequest): Request[CreateModelVersionResult] = js.native
     def createRule(params: CreateRuleRequest): Request[CreateRuleResult] = js.native
     def createVariable(params: CreateVariableRequest): Request[CreateVariableResult] = js.native
     def deleteDetector(params: DeleteDetectorRequest): Request[DeleteDetectorResult] = js.native
     def deleteDetectorVersion(params: DeleteDetectorVersionRequest): Request[DeleteDetectorVersionResult] = js.native
     def deleteEvent(params: DeleteEventRequest): Request[DeleteEventResult] = js.native
-    def deleteRuleVersion(params: DeleteRuleVersionRequest): Request[DeleteRuleVersionResult] = js.native
+    def deleteRule(params: DeleteRuleRequest): Request[DeleteRuleResult] = js.native
     def describeDetector(params: DescribeDetectorRequest): Request[DescribeDetectorResult] = js.native
     def describeModelVersions(params: DescribeModelVersionsRequest): Request[DescribeModelVersionsResult] = js.native
     def getDetectorVersion(params: GetDetectorVersionRequest): Request[GetDetectorVersionResult] = js.native
     def getDetectors(params: GetDetectorsRequest): Request[GetDetectorsResult] = js.native
+    def getEntityTypes(params: GetEntityTypesRequest): Request[GetEntityTypesResult] = js.native
+    def getEventPrediction(params: GetEventPredictionRequest): Request[GetEventPredictionResult] = js.native
+    def getEventTypes(params: GetEventTypesRequest): Request[GetEventTypesResult] = js.native
     def getExternalModels(params: GetExternalModelsRequest): Request[GetExternalModelsResult] = js.native
+    def getKMSEncryptionKey(): Request[GetKMSEncryptionKeyResult] = js.native
+    def getLabels(params: GetLabelsRequest): Request[GetLabelsResult] = js.native
     def getModelVersion(params: GetModelVersionRequest): Request[GetModelVersionResult] = js.native
     def getModels(params: GetModelsRequest): Request[GetModelsResult] = js.native
     def getOutcomes(params: GetOutcomesRequest): Request[GetOutcomesResult] = js.native
-    def getPrediction(params: GetPredictionRequest): Request[GetPredictionResult] = js.native
     def getRules(params: GetRulesRequest): Request[GetRulesResult] = js.native
     def getVariables(params: GetVariablesRequest): Request[GetVariablesResult] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResult] = js.native
     def putDetector(params: PutDetectorRequest): Request[PutDetectorResult] = js.native
+    def putEntityType(params: PutEntityTypeRequest): Request[PutEntityTypeResult] = js.native
+    def putEventType(params: PutEventTypeRequest): Request[PutEventTypeResult] = js.native
     def putExternalModel(params: PutExternalModelRequest): Request[PutExternalModelResult] = js.native
-    def putModel(params: PutModelRequest): Request[PutModelResult] = js.native
+    def putKMSEncryptionKey(params: PutKMSEncryptionKeyRequest): Request[PutKMSEncryptionKeyResult] = js.native
+    def putLabel(params: PutLabelRequest): Request[PutLabelResult] = js.native
     def putOutcome(params: PutOutcomeRequest): Request[PutOutcomeResult] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResult] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResult] = js.native
     def updateDetectorVersion(params: UpdateDetectorVersionRequest): Request[UpdateDetectorVersionResult] = js.native
     def updateDetectorVersionMetadata(
         params: UpdateDetectorVersionMetadataRequest
@@ -163,7 +219,10 @@ package frauddetector {
     def updateDetectorVersionStatus(
         params: UpdateDetectorVersionStatusRequest
     ): Request[UpdateDetectorVersionStatusResult] = js.native
+    def updateModel(params: UpdateModelRequest): Request[UpdateModelResult] = js.native
     def updateModelVersion(params: UpdateModelVersionRequest): Request[UpdateModelVersionResult] = js.native
+    def updateModelVersionStatus(params: UpdateModelVersionStatusRequest): Request[UpdateModelVersionStatusResult] =
+      js.native
     def updateRuleMetadata(params: UpdateRuleMetadataRequest): Request[UpdateRuleMetadataResult] = js.native
     def updateRuleVersion(params: UpdateRuleVersionRequest): Request[UpdateRuleVersionResult] = js.native
     def updateVariable(params: UpdateVariableRequest): Request[UpdateVariableResult] = js.native
@@ -197,17 +256,20 @@ package frauddetector {
   @js.native
   trait BatchCreateVariableRequest extends js.Object {
     var variableEntries: VariableEntryList
+    var tags: js.UndefOr[tagList]
   }
 
   object BatchCreateVariableRequest {
     @inline
     def apply(
-        variableEntries: VariableEntryList
+        variableEntries: VariableEntryList,
+        tags: js.UndefOr[tagList] = js.undefined
     ): BatchCreateVariableRequest = {
       val __obj = js.Dynamic.literal(
         "variableEntries" -> variableEntries.asInstanceOf[js.Any]
       )
 
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchCreateVariableRequest]
     }
   }
@@ -298,6 +360,7 @@ package frauddetector {
     var externalModelEndpoints: js.UndefOr[ListOfStrings]
     var modelVersions: js.UndefOr[ListOfModelVersions]
     var ruleExecutionMode: js.UndefOr[RuleExecutionMode]
+    var tags: js.UndefOr[tagList]
   }
 
   object CreateDetectorVersionRequest {
@@ -308,7 +371,8 @@ package frauddetector {
         description: js.UndefOr[description] = js.undefined,
         externalModelEndpoints: js.UndefOr[ListOfStrings] = js.undefined,
         modelVersions: js.UndefOr[ListOfModelVersions] = js.undefined,
-        ruleExecutionMode: js.UndefOr[RuleExecutionMode] = js.undefined
+        ruleExecutionMode: js.UndefOr[RuleExecutionMode] = js.undefined,
+        tags: js.UndefOr[tagList] = js.undefined
     ): CreateDetectorVersionRequest = {
       val __obj = js.Dynamic.literal(
         "detectorId" -> detectorId.asInstanceOf[js.Any],
@@ -319,6 +383,7 @@ package frauddetector {
       externalModelEndpoints.foreach(__v => __obj.updateDynamic("externalModelEndpoints")(__v.asInstanceOf[js.Any]))
       modelVersions.foreach(__v => __obj.updateDynamic("modelVersions")(__v.asInstanceOf[js.Any]))
       ruleExecutionMode.foreach(__v => __obj.updateDynamic("ruleExecutionMode")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDetectorVersionRequest]
     }
   }
@@ -346,32 +411,84 @@ package frauddetector {
   }
 
   @js.native
-  trait CreateModelVersionRequest extends js.Object {
-    var modelId: identifier
+  trait CreateModelRequest extends js.Object {
+    var eventTypeName: String
+    var modelId: modelIdentifier
     var modelType: ModelTypeEnum
     var description: js.UndefOr[description]
+    var tags: js.UndefOr[tagList]
   }
 
-  object CreateModelVersionRequest {
+  object CreateModelRequest {
     @inline
     def apply(
-        modelId: identifier,
+        eventTypeName: String,
+        modelId: modelIdentifier,
         modelType: ModelTypeEnum,
-        description: js.UndefOr[description] = js.undefined
-    ): CreateModelVersionRequest = {
+        description: js.UndefOr[description] = js.undefined,
+        tags: js.UndefOr[tagList] = js.undefined
+    ): CreateModelRequest = {
       val __obj = js.Dynamic.literal(
+        "eventTypeName" -> eventTypeName.asInstanceOf[js.Any],
         "modelId" -> modelId.asInstanceOf[js.Any],
         "modelType" -> modelType.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateModelRequest]
+    }
+  }
+
+  @js.native
+  trait CreateModelResult extends js.Object {}
+
+  object CreateModelResult {
+    @inline
+    def apply(
+    ): CreateModelResult = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[CreateModelResult]
+    }
+  }
+
+  @js.native
+  trait CreateModelVersionRequest extends js.Object {
+    var modelId: modelIdentifier
+    var modelType: ModelTypeEnum
+    var trainingDataSchema: TrainingDataSchema
+    var trainingDataSource: TrainingDataSourceEnum
+    var externalEventsDetail: js.UndefOr[ExternalEventsDetail]
+    var tags: js.UndefOr[tagList]
+  }
+
+  object CreateModelVersionRequest {
+    @inline
+    def apply(
+        modelId: modelIdentifier,
+        modelType: ModelTypeEnum,
+        trainingDataSchema: TrainingDataSchema,
+        trainingDataSource: TrainingDataSourceEnum,
+        externalEventsDetail: js.UndefOr[ExternalEventsDetail] = js.undefined,
+        tags: js.UndefOr[tagList] = js.undefined
+    ): CreateModelVersionRequest = {
+      val __obj = js.Dynamic.literal(
+        "modelId" -> modelId.asInstanceOf[js.Any],
+        "modelType" -> modelType.asInstanceOf[js.Any],
+        "trainingDataSchema" -> trainingDataSchema.asInstanceOf[js.Any],
+        "trainingDataSource" -> trainingDataSource.asInstanceOf[js.Any]
+      )
+
+      externalEventsDetail.foreach(__v => __obj.updateDynamic("externalEventsDetail")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateModelVersionRequest]
     }
   }
 
   @js.native
   trait CreateModelVersionResult extends js.Object {
-    var modelId: js.UndefOr[identifier]
+    var modelId: js.UndefOr[modelIdentifier]
     var modelType: js.UndefOr[ModelTypeEnum]
     var modelVersionNumber: js.UndefOr[nonEmptyString]
     var status: js.UndefOr[String]
@@ -380,7 +497,7 @@ package frauddetector {
   object CreateModelVersionResult {
     @inline
     def apply(
-        modelId: js.UndefOr[identifier] = js.undefined,
+        modelId: js.UndefOr[modelIdentifier] = js.undefined,
         modelType: js.UndefOr[ModelTypeEnum] = js.undefined,
         modelVersionNumber: js.UndefOr[nonEmptyString] = js.undefined,
         status: js.UndefOr[String] = js.undefined
@@ -402,6 +519,7 @@ package frauddetector {
     var outcomes: NonEmptyListOfStrings
     var ruleId: identifier
     var description: js.UndefOr[description]
+    var tags: js.UndefOr[tagList]
   }
 
   object CreateRuleRequest {
@@ -412,7 +530,8 @@ package frauddetector {
         language: Language,
         outcomes: NonEmptyListOfStrings,
         ruleId: identifier,
-        description: js.UndefOr[description] = js.undefined
+        description: js.UndefOr[description] = js.undefined,
+        tags: js.UndefOr[tagList] = js.undefined
     ): CreateRuleRequest = {
       val __obj = js.Dynamic.literal(
         "detectorId" -> detectorId.asInstanceOf[js.Any],
@@ -423,6 +542,7 @@ package frauddetector {
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRuleRequest]
     }
   }
@@ -450,6 +570,7 @@ package frauddetector {
     var defaultValue: String
     var name: String
     var description: js.UndefOr[String]
+    var tags: js.UndefOr[tagList]
     var variableType: js.UndefOr[String]
   }
 
@@ -461,6 +582,7 @@ package frauddetector {
         defaultValue: String,
         name: String,
         description: js.UndefOr[String] = js.undefined,
+        tags: js.UndefOr[tagList] = js.undefined,
         variableType: js.UndefOr[String] = js.undefined
     ): CreateVariableRequest = {
       val __obj = js.Dynamic.literal(
@@ -471,6 +593,7 @@ package frauddetector {
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       variableType.foreach(__v => __obj.updateDynamic("variableType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateVariableRequest]
     }
@@ -510,6 +633,28 @@ package frauddetector {
     val values = js.Object.freeze(js.Array(STRING, INTEGER, FLOAT, BOOLEAN))
   }
 
+  /**
+    * The model training validation messages.
+    */
+  @js.native
+  trait DataValidationMetrics extends js.Object {
+    var fieldLevelMessages: js.UndefOr[fieldValidationMessageList]
+    var fileLevelMessages: js.UndefOr[fileValidationMessageList]
+  }
+
+  object DataValidationMetrics {
+    @inline
+    def apply(
+        fieldLevelMessages: js.UndefOr[fieldValidationMessageList] = js.undefined,
+        fileLevelMessages: js.UndefOr[fileValidationMessageList] = js.undefined
+    ): DataValidationMetrics = {
+      val __obj = js.Dynamic.literal()
+      fieldLevelMessages.foreach(__v => __obj.updateDynamic("fieldLevelMessages")(__v.asInstanceOf[js.Any]))
+      fileLevelMessages.foreach(__v => __obj.updateDynamic("fileLevelMessages")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataValidationMetrics]
+    }
+  }
+
   @js.native
   trait DeleteDetectorRequest extends js.Object {
     var detectorId: identifier
@@ -544,14 +689,14 @@ package frauddetector {
   @js.native
   trait DeleteDetectorVersionRequest extends js.Object {
     var detectorId: identifier
-    var detectorVersionId: nonEmptyString
+    var detectorVersionId: wholeNumberVersionString
   }
 
   object DeleteDetectorVersionRequest {
     @inline
     def apply(
         detectorId: identifier,
-        detectorVersionId: nonEmptyString
+        detectorVersionId: wholeNumberVersionString
     ): DeleteDetectorVersionRequest = {
       val __obj = js.Dynamic.literal(
         "detectorId" -> detectorId.asInstanceOf[js.Any],
@@ -578,15 +723,18 @@ package frauddetector {
   @js.native
   trait DeleteEventRequest extends js.Object {
     var eventId: String
+    var eventTypeName: String
   }
 
   object DeleteEventRequest {
     @inline
     def apply(
-        eventId: String
+        eventId: String,
+        eventTypeName: String
     ): DeleteEventRequest = {
       val __obj = js.Dynamic.literal(
-        "eventId" -> eventId.asInstanceOf[js.Any]
+        "eventId" -> eventId.asInstanceOf[js.Any],
+        "eventTypeName" -> eventTypeName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteEventRequest]
@@ -607,39 +755,33 @@ package frauddetector {
   }
 
   @js.native
-  trait DeleteRuleVersionRequest extends js.Object {
-    var detectorId: identifier
-    var ruleId: identifier
-    var ruleVersion: nonEmptyString
+  trait DeleteRuleRequest extends js.Object {
+    var rule: Rule
   }
 
-  object DeleteRuleVersionRequest {
+  object DeleteRuleRequest {
     @inline
     def apply(
-        detectorId: identifier,
-        ruleId: identifier,
-        ruleVersion: nonEmptyString
-    ): DeleteRuleVersionRequest = {
+        rule: Rule
+    ): DeleteRuleRequest = {
       val __obj = js.Dynamic.literal(
-        "detectorId" -> detectorId.asInstanceOf[js.Any],
-        "ruleId" -> ruleId.asInstanceOf[js.Any],
-        "ruleVersion" -> ruleVersion.asInstanceOf[js.Any]
+        "rule" -> rule.asInstanceOf[js.Any]
       )
 
-      __obj.asInstanceOf[DeleteRuleVersionRequest]
+      __obj.asInstanceOf[DeleteRuleRequest]
     }
   }
 
   @js.native
-  trait DeleteRuleVersionResult extends js.Object {}
+  trait DeleteRuleResult extends js.Object {}
 
-  object DeleteRuleVersionResult {
+  object DeleteRuleResult {
     @inline
     def apply(
-    ): DeleteRuleVersionResult = {
+    ): DeleteRuleResult = {
       val __obj = js.Dynamic.literal()
 
-      __obj.asInstanceOf[DeleteRuleVersionResult]
+      __obj.asInstanceOf[DeleteRuleResult]
     }
   }
 
@@ -669,6 +811,7 @@ package frauddetector {
 
   @js.native
   trait DescribeDetectorResult extends js.Object {
+    var arn: js.UndefOr[fraudDetectorArn]
     var detectorId: js.UndefOr[identifier]
     var detectorVersionSummaries: js.UndefOr[DetectorVersionSummaryList]
     var nextToken: js.UndefOr[String]
@@ -677,11 +820,13 @@ package frauddetector {
   object DescribeDetectorResult {
     @inline
     def apply(
+        arn: js.UndefOr[fraudDetectorArn] = js.undefined,
         detectorId: js.UndefOr[identifier] = js.undefined,
         detectorVersionSummaries: js.UndefOr[DetectorVersionSummaryList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): DescribeDetectorResult = {
       val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       detectorId.foreach(__v => __obj.updateDynamic("detectorId")(__v.asInstanceOf[js.Any]))
       detectorVersionSummaries.foreach(__v => __obj.updateDynamic("detectorVersionSummaries")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
@@ -691,20 +836,20 @@ package frauddetector {
 
   @js.native
   trait DescribeModelVersionsRequest extends js.Object {
-    var maxResults: js.UndefOr[MaxResults]
-    var modelId: js.UndefOr[identifier]
+    var maxResults: js.UndefOr[modelsMaxPageSize]
+    var modelId: js.UndefOr[modelIdentifier]
     var modelType: js.UndefOr[ModelTypeEnum]
-    var modelVersionNumber: js.UndefOr[nonEmptyString]
+    var modelVersionNumber: js.UndefOr[floatVersionString]
     var nextToken: js.UndefOr[String]
   }
 
   object DescribeModelVersionsRequest {
     @inline
     def apply(
-        maxResults: js.UndefOr[MaxResults] = js.undefined,
-        modelId: js.UndefOr[identifier] = js.undefined,
+        maxResults: js.UndefOr[modelsMaxPageSize] = js.undefined,
+        modelId: js.UndefOr[modelIdentifier] = js.undefined,
         modelType: js.UndefOr[ModelTypeEnum] = js.undefined,
-        modelVersionNumber: js.UndefOr[nonEmptyString] = js.undefined,
+        modelVersionNumber: js.UndefOr[floatVersionString] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): DescribeModelVersionsRequest = {
       val __obj = js.Dynamic.literal()
@@ -719,14 +864,14 @@ package frauddetector {
 
   @js.native
   trait DescribeModelVersionsResult extends js.Object {
-    var modelVersionDetails: js.UndefOr[ModelVersionDetailList]
+    var modelVersionDetails: js.UndefOr[modelVersionDetailList]
     var nextToken: js.UndefOr[String]
   }
 
   object DescribeModelVersionsResult {
     @inline
     def apply(
-        modelVersionDetails: js.UndefOr[ModelVersionDetailList] = js.undefined,
+        modelVersionDetails: js.UndefOr[modelVersionDetailList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): DescribeModelVersionsResult = {
       val __obj = js.Dynamic.literal()
@@ -741,24 +886,30 @@ package frauddetector {
     */
   @js.native
   trait Detector extends js.Object {
+    var arn: js.UndefOr[fraudDetectorArn]
     var createdTime: js.UndefOr[time]
     var description: js.UndefOr[description]
     var detectorId: js.UndefOr[identifier]
+    var eventTypeName: js.UndefOr[identifier]
     var lastUpdatedTime: js.UndefOr[time]
   }
 
   object Detector {
     @inline
     def apply(
+        arn: js.UndefOr[fraudDetectorArn] = js.undefined,
         createdTime: js.UndefOr[time] = js.undefined,
         description: js.UndefOr[description] = js.undefined,
         detectorId: js.UndefOr[identifier] = js.undefined,
+        eventTypeName: js.UndefOr[identifier] = js.undefined,
         lastUpdatedTime: js.UndefOr[time] = js.undefined
     ): Detector = {
       val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       createdTime.foreach(__v => __obj.updateDynamic("createdTime")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       detectorId.foreach(__v => __obj.updateDynamic("detectorId")(__v.asInstanceOf[js.Any]))
+      eventTypeName.foreach(__v => __obj.updateDynamic("eventTypeName")(__v.asInstanceOf[js.Any]))
       lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Detector]
     }
@@ -803,56 +954,236 @@ package frauddetector {
   }
 
   /**
+    * The entity details.
+    */
+  @js.native
+  trait Entity extends js.Object {
+    var entityId: identifier
+    var entityType: String
+  }
+
+  object Entity {
+    @inline
+    def apply(
+        entityId: identifier,
+        entityType: String
+    ): Entity = {
+      val __obj = js.Dynamic.literal(
+        "entityId" -> entityId.asInstanceOf[js.Any],
+        "entityType" -> entityType.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[Entity]
+    }
+  }
+
+  /**
+    * The entity type details.
+    */
+  @js.native
+  trait EntityType extends js.Object {
+    var arn: js.UndefOr[fraudDetectorArn]
+    var createdTime: js.UndefOr[time]
+    var description: js.UndefOr[description]
+    var lastUpdatedTime: js.UndefOr[time]
+    var name: js.UndefOr[String]
+  }
+
+  object EntityType {
+    @inline
+    def apply(
+        arn: js.UndefOr[fraudDetectorArn] = js.undefined,
+        createdTime: js.UndefOr[time] = js.undefined,
+        description: js.UndefOr[description] = js.undefined,
+        lastUpdatedTime: js.UndefOr[time] = js.undefined,
+        name: js.UndefOr[String] = js.undefined
+    ): EntityType = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdTime.foreach(__v => __obj.updateDynamic("createdTime")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EntityType]
+    }
+  }
+
+  /**
+    * The event type details.
+    */
+  @js.native
+  trait EventType extends js.Object {
+    var arn: js.UndefOr[fraudDetectorArn]
+    var createdTime: js.UndefOr[time]
+    var description: js.UndefOr[description]
+    var entityTypes: js.UndefOr[NonEmptyListOfStrings]
+    var eventVariables: js.UndefOr[ListOfStrings]
+    var labels: js.UndefOr[ListOfStrings]
+    var lastUpdatedTime: js.UndefOr[time]
+    var name: js.UndefOr[String]
+  }
+
+  object EventType {
+    @inline
+    def apply(
+        arn: js.UndefOr[fraudDetectorArn] = js.undefined,
+        createdTime: js.UndefOr[time] = js.undefined,
+        description: js.UndefOr[description] = js.undefined,
+        entityTypes: js.UndefOr[NonEmptyListOfStrings] = js.undefined,
+        eventVariables: js.UndefOr[ListOfStrings] = js.undefined,
+        labels: js.UndefOr[ListOfStrings] = js.undefined,
+        lastUpdatedTime: js.UndefOr[time] = js.undefined,
+        name: js.UndefOr[String] = js.undefined
+    ): EventType = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdTime.foreach(__v => __obj.updateDynamic("createdTime")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      entityTypes.foreach(__v => __obj.updateDynamic("entityTypes")(__v.asInstanceOf[js.Any]))
+      eventVariables.foreach(__v => __obj.updateDynamic("eventVariables")(__v.asInstanceOf[js.Any]))
+      labels.foreach(__v => __obj.updateDynamic("labels")(__v.asInstanceOf[js.Any]))
+      lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventType]
+    }
+  }
+
+  /**
+    * Details for the external events data used for model version training.
+    */
+  @js.native
+  trait ExternalEventsDetail extends js.Object {
+    var dataAccessRoleArn: iamRoleArn
+    var dataLocation: s3BucketLocation
+  }
+
+  object ExternalEventsDetail {
+    @inline
+    def apply(
+        dataAccessRoleArn: iamRoleArn,
+        dataLocation: s3BucketLocation
+    ): ExternalEventsDetail = {
+      val __obj = js.Dynamic.literal(
+        "dataAccessRoleArn" -> dataAccessRoleArn.asInstanceOf[js.Any],
+        "dataLocation" -> dataLocation.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ExternalEventsDetail]
+    }
+  }
+
+  /**
     * The Amazon SageMaker model.
     */
   @js.native
   trait ExternalModel extends js.Object {
+    var arn: js.UndefOr[fraudDetectorArn]
     var createdTime: js.UndefOr[time]
     var inputConfiguration: js.UndefOr[ModelInputConfiguration]
+    var invokeModelEndpointRoleArn: js.UndefOr[String]
     var lastUpdatedTime: js.UndefOr[time]
     var modelEndpoint: js.UndefOr[String]
     var modelEndpointStatus: js.UndefOr[ModelEndpointStatus]
     var modelSource: js.UndefOr[ModelSource]
     var outputConfiguration: js.UndefOr[ModelOutputConfiguration]
-    var role: js.UndefOr[Role]
   }
 
   object ExternalModel {
     @inline
     def apply(
+        arn: js.UndefOr[fraudDetectorArn] = js.undefined,
         createdTime: js.UndefOr[time] = js.undefined,
         inputConfiguration: js.UndefOr[ModelInputConfiguration] = js.undefined,
+        invokeModelEndpointRoleArn: js.UndefOr[String] = js.undefined,
         lastUpdatedTime: js.UndefOr[time] = js.undefined,
         modelEndpoint: js.UndefOr[String] = js.undefined,
         modelEndpointStatus: js.UndefOr[ModelEndpointStatus] = js.undefined,
         modelSource: js.UndefOr[ModelSource] = js.undefined,
-        outputConfiguration: js.UndefOr[ModelOutputConfiguration] = js.undefined,
-        role: js.UndefOr[Role] = js.undefined
+        outputConfiguration: js.UndefOr[ModelOutputConfiguration] = js.undefined
     ): ExternalModel = {
       val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       createdTime.foreach(__v => __obj.updateDynamic("createdTime")(__v.asInstanceOf[js.Any]))
       inputConfiguration.foreach(__v => __obj.updateDynamic("inputConfiguration")(__v.asInstanceOf[js.Any]))
+      invokeModelEndpointRoleArn.foreach(__v =>
+        __obj.updateDynamic("invokeModelEndpointRoleArn")(__v.asInstanceOf[js.Any])
+      )
       lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
       modelEndpoint.foreach(__v => __obj.updateDynamic("modelEndpoint")(__v.asInstanceOf[js.Any]))
       modelEndpointStatus.foreach(__v => __obj.updateDynamic("modelEndpointStatus")(__v.asInstanceOf[js.Any]))
       modelSource.foreach(__v => __obj.updateDynamic("modelSource")(__v.asInstanceOf[js.Any]))
       outputConfiguration.foreach(__v => __obj.updateDynamic("outputConfiguration")(__v.asInstanceOf[js.Any]))
-      role.foreach(__v => __obj.updateDynamic("role")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExternalModel]
+    }
+  }
+
+  /**
+    * The message details.
+    */
+  @js.native
+  trait FieldValidationMessage extends js.Object {
+    var content: js.UndefOr[String]
+    var fieldName: js.UndefOr[String]
+    var identifier: js.UndefOr[String]
+    var title: js.UndefOr[String]
+    var `type`: js.UndefOr[String]
+  }
+
+  object FieldValidationMessage {
+    @inline
+    def apply(
+        content: js.UndefOr[String] = js.undefined,
+        fieldName: js.UndefOr[String] = js.undefined,
+        identifier: js.UndefOr[String] = js.undefined,
+        title: js.UndefOr[String] = js.undefined,
+        `type`: js.UndefOr[String] = js.undefined
+    ): FieldValidationMessage = {
+      val __obj = js.Dynamic.literal()
+      content.foreach(__v => __obj.updateDynamic("content")(__v.asInstanceOf[js.Any]))
+      fieldName.foreach(__v => __obj.updateDynamic("fieldName")(__v.asInstanceOf[js.Any]))
+      identifier.foreach(__v => __obj.updateDynamic("identifier")(__v.asInstanceOf[js.Any]))
+      title.foreach(__v => __obj.updateDynamic("title")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FieldValidationMessage]
+    }
+  }
+
+  /**
+    * The message details.
+    */
+  @js.native
+  trait FileValidationMessage extends js.Object {
+    var content: js.UndefOr[String]
+    var title: js.UndefOr[String]
+    var `type`: js.UndefOr[String]
+  }
+
+  object FileValidationMessage {
+    @inline
+    def apply(
+        content: js.UndefOr[String] = js.undefined,
+        title: js.UndefOr[String] = js.undefined,
+        `type`: js.UndefOr[String] = js.undefined
+    ): FileValidationMessage = {
+      val __obj = js.Dynamic.literal()
+      content.foreach(__v => __obj.updateDynamic("content")(__v.asInstanceOf[js.Any]))
+      title.foreach(__v => __obj.updateDynamic("title")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FileValidationMessage]
     }
   }
 
   @js.native
   trait GetDetectorVersionRequest extends js.Object {
     var detectorId: identifier
-    var detectorVersionId: nonEmptyString
+    var detectorVersionId: wholeNumberVersionString
   }
 
   object GetDetectorVersionRequest {
     @inline
     def apply(
         detectorId: identifier,
-        detectorVersionId: nonEmptyString
+        detectorVersionId: wholeNumberVersionString
     ): GetDetectorVersionRequest = {
       val __obj = js.Dynamic.literal(
         "detectorId" -> detectorId.asInstanceOf[js.Any],
@@ -865,10 +1196,11 @@ package frauddetector {
 
   @js.native
   trait GetDetectorVersionResult extends js.Object {
+    var arn: js.UndefOr[fraudDetectorArn]
     var createdTime: js.UndefOr[time]
     var description: js.UndefOr[description]
     var detectorId: js.UndefOr[identifier]
-    var detectorVersionId: js.UndefOr[nonEmptyString]
+    var detectorVersionId: js.UndefOr[wholeNumberVersionString]
     var externalModelEndpoints: js.UndefOr[ListOfStrings]
     var lastUpdatedTime: js.UndefOr[time]
     var modelVersions: js.UndefOr[ListOfModelVersions]
@@ -880,10 +1212,11 @@ package frauddetector {
   object GetDetectorVersionResult {
     @inline
     def apply(
+        arn: js.UndefOr[fraudDetectorArn] = js.undefined,
         createdTime: js.UndefOr[time] = js.undefined,
         description: js.UndefOr[description] = js.undefined,
         detectorId: js.UndefOr[identifier] = js.undefined,
-        detectorVersionId: js.UndefOr[nonEmptyString] = js.undefined,
+        detectorVersionId: js.UndefOr[wholeNumberVersionString] = js.undefined,
         externalModelEndpoints: js.UndefOr[ListOfStrings] = js.undefined,
         lastUpdatedTime: js.UndefOr[time] = js.undefined,
         modelVersions: js.UndefOr[ListOfModelVersions] = js.undefined,
@@ -892,6 +1225,7 @@ package frauddetector {
         status: js.UndefOr[DetectorVersionStatus] = js.undefined
     ): GetDetectorVersionResult = {
       val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       createdTime.foreach(__v => __obj.updateDynamic("createdTime")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       detectorId.foreach(__v => __obj.updateDynamic("detectorId")(__v.asInstanceOf[js.Any]))
@@ -948,6 +1282,148 @@ package frauddetector {
   }
 
   @js.native
+  trait GetEntityTypesRequest extends js.Object {
+    var maxResults: js.UndefOr[entityTypesMaxResults]
+    var name: js.UndefOr[identifier]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object GetEntityTypesRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[entityTypesMaxResults] = js.undefined,
+        name: js.UndefOr[identifier] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): GetEntityTypesRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetEntityTypesRequest]
+    }
+  }
+
+  @js.native
+  trait GetEntityTypesResult extends js.Object {
+    var entityTypes: js.UndefOr[entityTypeList]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object GetEntityTypesResult {
+    @inline
+    def apply(
+        entityTypes: js.UndefOr[entityTypeList] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): GetEntityTypesResult = {
+      val __obj = js.Dynamic.literal()
+      entityTypes.foreach(__v => __obj.updateDynamic("entityTypes")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetEntityTypesResult]
+    }
+  }
+
+  @js.native
+  trait GetEventPredictionRequest extends js.Object {
+    var detectorId: String
+    var entities: listOfEntities
+    var eventId: String
+    var eventTimestamp: String
+    var eventTypeName: String
+    var eventVariables: EventVariableMap
+    var detectorVersionId: js.UndefOr[wholeNumberVersionString]
+    var externalModelEndpointDataBlobs: js.UndefOr[ExternalModelEndpointDataBlobMap]
+  }
+
+  object GetEventPredictionRequest {
+    @inline
+    def apply(
+        detectorId: String,
+        entities: listOfEntities,
+        eventId: String,
+        eventTimestamp: String,
+        eventTypeName: String,
+        eventVariables: EventVariableMap,
+        detectorVersionId: js.UndefOr[wholeNumberVersionString] = js.undefined,
+        externalModelEndpointDataBlobs: js.UndefOr[ExternalModelEndpointDataBlobMap] = js.undefined
+    ): GetEventPredictionRequest = {
+      val __obj = js.Dynamic.literal(
+        "detectorId" -> detectorId.asInstanceOf[js.Any],
+        "entities" -> entities.asInstanceOf[js.Any],
+        "eventId" -> eventId.asInstanceOf[js.Any],
+        "eventTimestamp" -> eventTimestamp.asInstanceOf[js.Any],
+        "eventTypeName" -> eventTypeName.asInstanceOf[js.Any],
+        "eventVariables" -> eventVariables.asInstanceOf[js.Any]
+      )
+
+      detectorVersionId.foreach(__v => __obj.updateDynamic("detectorVersionId")(__v.asInstanceOf[js.Any]))
+      externalModelEndpointDataBlobs.foreach(__v =>
+        __obj.updateDynamic("externalModelEndpointDataBlobs")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[GetEventPredictionRequest]
+    }
+  }
+
+  @js.native
+  trait GetEventPredictionResult extends js.Object {
+    var modelScores: js.UndefOr[ListOfModelScores]
+    var ruleResults: js.UndefOr[ListOfRuleResults]
+  }
+
+  object GetEventPredictionResult {
+    @inline
+    def apply(
+        modelScores: js.UndefOr[ListOfModelScores] = js.undefined,
+        ruleResults: js.UndefOr[ListOfRuleResults] = js.undefined
+    ): GetEventPredictionResult = {
+      val __obj = js.Dynamic.literal()
+      modelScores.foreach(__v => __obj.updateDynamic("modelScores")(__v.asInstanceOf[js.Any]))
+      ruleResults.foreach(__v => __obj.updateDynamic("ruleResults")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetEventPredictionResult]
+    }
+  }
+
+  @js.native
+  trait GetEventTypesRequest extends js.Object {
+    var maxResults: js.UndefOr[eventTypesMaxResults]
+    var name: js.UndefOr[identifier]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object GetEventTypesRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[eventTypesMaxResults] = js.undefined,
+        name: js.UndefOr[identifier] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): GetEventTypesRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetEventTypesRequest]
+    }
+  }
+
+  @js.native
+  trait GetEventTypesResult extends js.Object {
+    var eventTypes: js.UndefOr[eventTypeList]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object GetEventTypesResult {
+    @inline
+    def apply(
+        eventTypes: js.UndefOr[eventTypeList] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): GetEventTypesResult = {
+      val __obj = js.Dynamic.literal()
+      eventTypes.foreach(__v => __obj.updateDynamic("eventTypes")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetEventTypesResult]
+    }
+  }
+
+  @js.native
   trait GetExternalModelsRequest extends js.Object {
     var maxResults: js.UndefOr[ExternalModelsMaxResults]
     var modelEndpoint: js.UndefOr[String]
@@ -989,18 +1465,75 @@ package frauddetector {
   }
 
   @js.native
+  trait GetKMSEncryptionKeyResult extends js.Object {
+    var kmsKey: js.UndefOr[KMSKey]
+  }
+
+  object GetKMSEncryptionKeyResult {
+    @inline
+    def apply(
+        kmsKey: js.UndefOr[KMSKey] = js.undefined
+    ): GetKMSEncryptionKeyResult = {
+      val __obj = js.Dynamic.literal()
+      kmsKey.foreach(__v => __obj.updateDynamic("kmsKey")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetKMSEncryptionKeyResult]
+    }
+  }
+
+  @js.native
+  trait GetLabelsRequest extends js.Object {
+    var maxResults: js.UndefOr[labelsMaxResults]
+    var name: js.UndefOr[identifier]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object GetLabelsRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[labelsMaxResults] = js.undefined,
+        name: js.UndefOr[identifier] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): GetLabelsRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetLabelsRequest]
+    }
+  }
+
+  @js.native
+  trait GetLabelsResult extends js.Object {
+    var labels: js.UndefOr[labelList]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object GetLabelsResult {
+    @inline
+    def apply(
+        labels: js.UndefOr[labelList] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): GetLabelsResult = {
+      val __obj = js.Dynamic.literal()
+      labels.foreach(__v => __obj.updateDynamic("labels")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetLabelsResult]
+    }
+  }
+
+  @js.native
   trait GetModelVersionRequest extends js.Object {
-    var modelId: identifier
+    var modelId: modelIdentifier
     var modelType: ModelTypeEnum
-    var modelVersionNumber: nonEmptyString
+    var modelVersionNumber: floatVersionString
   }
 
   object GetModelVersionRequest {
     @inline
     def apply(
-        modelId: identifier,
+        modelId: modelIdentifier,
         modelType: ModelTypeEnum,
-        modelVersionNumber: nonEmptyString
+        modelVersionNumber: floatVersionString
     ): GetModelVersionRequest = {
       val __obj = js.Dynamic.literal(
         "modelId" -> modelId.asInstanceOf[js.Any],
@@ -1014,36 +1547,45 @@ package frauddetector {
 
   @js.native
   trait GetModelVersionResult extends js.Object {
-    var description: js.UndefOr[description]
-    var modelId: js.UndefOr[identifier]
+    var arn: js.UndefOr[fraudDetectorArn]
+    var externalEventsDetail: js.UndefOr[ExternalEventsDetail]
+    var modelId: js.UndefOr[modelIdentifier]
     var modelType: js.UndefOr[ModelTypeEnum]
-    var modelVersionNumber: js.UndefOr[nonEmptyString]
+    var modelVersionNumber: js.UndefOr[floatVersionString]
     var status: js.UndefOr[String]
+    var trainingDataSchema: js.UndefOr[TrainingDataSchema]
+    var trainingDataSource: js.UndefOr[TrainingDataSourceEnum]
   }
 
   object GetModelVersionResult {
     @inline
     def apply(
-        description: js.UndefOr[description] = js.undefined,
-        modelId: js.UndefOr[identifier] = js.undefined,
+        arn: js.UndefOr[fraudDetectorArn] = js.undefined,
+        externalEventsDetail: js.UndefOr[ExternalEventsDetail] = js.undefined,
+        modelId: js.UndefOr[modelIdentifier] = js.undefined,
         modelType: js.UndefOr[ModelTypeEnum] = js.undefined,
-        modelVersionNumber: js.UndefOr[nonEmptyString] = js.undefined,
-        status: js.UndefOr[String] = js.undefined
+        modelVersionNumber: js.UndefOr[floatVersionString] = js.undefined,
+        status: js.UndefOr[String] = js.undefined,
+        trainingDataSchema: js.UndefOr[TrainingDataSchema] = js.undefined,
+        trainingDataSource: js.UndefOr[TrainingDataSourceEnum] = js.undefined
     ): GetModelVersionResult = {
       val __obj = js.Dynamic.literal()
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      externalEventsDetail.foreach(__v => __obj.updateDynamic("externalEventsDetail")(__v.asInstanceOf[js.Any]))
       modelId.foreach(__v => __obj.updateDynamic("modelId")(__v.asInstanceOf[js.Any]))
       modelType.foreach(__v => __obj.updateDynamic("modelType")(__v.asInstanceOf[js.Any]))
       modelVersionNumber.foreach(__v => __obj.updateDynamic("modelVersionNumber")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      trainingDataSchema.foreach(__v => __obj.updateDynamic("trainingDataSchema")(__v.asInstanceOf[js.Any]))
+      trainingDataSource.foreach(__v => __obj.updateDynamic("trainingDataSource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetModelVersionResult]
     }
   }
 
   @js.native
   trait GetModelsRequest extends js.Object {
-    var maxResults: js.UndefOr[MaxResults]
-    var modelId: js.UndefOr[identifier]
+    var maxResults: js.UndefOr[modelsMaxPageSize]
+    var modelId: js.UndefOr[modelIdentifier]
     var modelType: js.UndefOr[ModelTypeEnum]
     var nextToken: js.UndefOr[String]
   }
@@ -1051,8 +1593,8 @@ package frauddetector {
   object GetModelsRequest {
     @inline
     def apply(
-        maxResults: js.UndefOr[MaxResults] = js.undefined,
-        modelId: js.UndefOr[identifier] = js.undefined,
+        maxResults: js.UndefOr[modelsMaxPageSize] = js.undefined,
+        modelId: js.UndefOr[modelIdentifier] = js.undefined,
         modelType: js.UndefOr[ModelTypeEnum] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): GetModelsRequest = {
@@ -1067,14 +1609,14 @@ package frauddetector {
 
   @js.native
   trait GetModelsResult extends js.Object {
-    var models: js.UndefOr[ModelList]
+    var models: js.UndefOr[modelList]
     var nextToken: js.UndefOr[String]
   }
 
   object GetModelsResult {
     @inline
     def apply(
-        models: js.UndefOr[ModelList] = js.undefined,
+        models: js.UndefOr[modelList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): GetModelsResult = {
       val __obj = js.Dynamic.literal()
@@ -1126,66 +1668,12 @@ package frauddetector {
   }
 
   @js.native
-  trait GetPredictionRequest extends js.Object {
-    var detectorId: String
-    var eventId: String
-    var detectorVersionId: js.UndefOr[String]
-    var eventAttributes: js.UndefOr[EventAttributeMap]
-    var externalModelEndpointDataBlobs: js.UndefOr[ExternalModelEndpointDataBlobMap]
-  }
-
-  object GetPredictionRequest {
-    @inline
-    def apply(
-        detectorId: String,
-        eventId: String,
-        detectorVersionId: js.UndefOr[String] = js.undefined,
-        eventAttributes: js.UndefOr[EventAttributeMap] = js.undefined,
-        externalModelEndpointDataBlobs: js.UndefOr[ExternalModelEndpointDataBlobMap] = js.undefined
-    ): GetPredictionRequest = {
-      val __obj = js.Dynamic.literal(
-        "detectorId" -> detectorId.asInstanceOf[js.Any],
-        "eventId" -> eventId.asInstanceOf[js.Any]
-      )
-
-      detectorVersionId.foreach(__v => __obj.updateDynamic("detectorVersionId")(__v.asInstanceOf[js.Any]))
-      eventAttributes.foreach(__v => __obj.updateDynamic("eventAttributes")(__v.asInstanceOf[js.Any]))
-      externalModelEndpointDataBlobs.foreach(__v =>
-        __obj.updateDynamic("externalModelEndpointDataBlobs")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[GetPredictionRequest]
-    }
-  }
-
-  @js.native
-  trait GetPredictionResult extends js.Object {
-    var modelScores: js.UndefOr[ListOfModelScores]
-    var outcomes: js.UndefOr[ListOfStrings]
-    var ruleResults: js.UndefOr[ListOfRuleResults]
-  }
-
-  object GetPredictionResult {
-    @inline
-    def apply(
-        modelScores: js.UndefOr[ListOfModelScores] = js.undefined,
-        outcomes: js.UndefOr[ListOfStrings] = js.undefined,
-        ruleResults: js.UndefOr[ListOfRuleResults] = js.undefined
-    ): GetPredictionResult = {
-      val __obj = js.Dynamic.literal()
-      modelScores.foreach(__v => __obj.updateDynamic("modelScores")(__v.asInstanceOf[js.Any]))
-      outcomes.foreach(__v => __obj.updateDynamic("outcomes")(__v.asInstanceOf[js.Any]))
-      ruleResults.foreach(__v => __obj.updateDynamic("ruleResults")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetPredictionResult]
-    }
-  }
-
-  @js.native
   trait GetRulesRequest extends js.Object {
     var detectorId: identifier
     var maxResults: js.UndefOr[RulesMaxResults]
     var nextToken: js.UndefOr[String]
     var ruleId: js.UndefOr[identifier]
-    var ruleVersion: js.UndefOr[nonEmptyString]
+    var ruleVersion: js.UndefOr[wholeNumberVersionString]
   }
 
   object GetRulesRequest {
@@ -1195,7 +1683,7 @@ package frauddetector {
         maxResults: js.UndefOr[RulesMaxResults] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined,
         ruleId: js.UndefOr[identifier] = js.undefined,
-        ruleVersion: js.UndefOr[nonEmptyString] = js.undefined
+        ruleVersion: js.UndefOr[wholeNumberVersionString] = js.undefined
     ): GetRulesRequest = {
       val __obj = js.Dynamic.literal(
         "detectorId" -> detectorId.asInstanceOf[js.Any]
@@ -1270,22 +1758,69 @@ package frauddetector {
   }
 
   /**
+    * The KMS key details.
+    */
+  @js.native
+  trait KMSKey extends js.Object {
+    var kmsEncryptionKeyArn: js.UndefOr[KmsEncryptionKeyArn]
+  }
+
+  object KMSKey {
+    @inline
+    def apply(
+        kmsEncryptionKeyArn: js.UndefOr[KmsEncryptionKeyArn] = js.undefined
+    ): KMSKey = {
+      val __obj = js.Dynamic.literal()
+      kmsEncryptionKeyArn.foreach(__v => __obj.updateDynamic("kmsEncryptionKeyArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KMSKey]
+    }
+  }
+
+  /**
+    * The label details.
+    */
+  @js.native
+  trait Label extends js.Object {
+    var arn: js.UndefOr[fraudDetectorArn]
+    var createdTime: js.UndefOr[time]
+    var description: js.UndefOr[description]
+    var lastUpdatedTime: js.UndefOr[time]
+    var name: js.UndefOr[String]
+  }
+
+  object Label {
+    @inline
+    def apply(
+        arn: js.UndefOr[fraudDetectorArn] = js.undefined,
+        createdTime: js.UndefOr[time] = js.undefined,
+        description: js.UndefOr[description] = js.undefined,
+        lastUpdatedTime: js.UndefOr[time] = js.undefined,
+        name: js.UndefOr[String] = js.undefined
+    ): Label = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdTime.foreach(__v => __obj.updateDynamic("createdTime")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Label]
+    }
+  }
+
+  /**
     * The label schema.
     */
   @js.native
   trait LabelSchema extends js.Object {
-    var labelKey: String
-    var labelMapper: LabelMapper
+    var labelMapper: labelMapper
   }
 
   object LabelSchema {
     @inline
     def apply(
-        labelKey: String,
-        labelMapper: LabelMapper
+        labelMapper: labelMapper
     ): LabelSchema = {
       val __obj = js.Dynamic.literal(
-        "labelKey" -> labelKey.asInstanceOf[js.Any],
         "labelMapper" -> labelMapper.asInstanceOf[js.Any]
       )
 
@@ -1301,42 +1836,110 @@ package frauddetector {
     val values = js.Object.freeze(js.Array(DETECTORPL))
   }
 
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var resourceARN: fraudDetectorArn
+    var maxResults: js.UndefOr[TagsMaxResults]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        resourceARN: fraudDetectorArn,
+        maxResults: js.UndefOr[TagsMaxResults] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceARN" -> resourceARN.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResult extends js.Object {
+    var nextToken: js.UndefOr[String]
+    var tags: js.UndefOr[tagList]
+  }
+
+  object ListTagsForResourceResult {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[String] = js.undefined,
+        tags: js.UndefOr[tagList] = js.undefined
+    ): ListTagsForResourceResult = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResult]
+    }
+  }
+
+  /**
+    * Model performance metrics data points.
+    */
+  @js.native
+  trait MetricDataPoint extends js.Object {
+    var fpr: js.UndefOr[Float]
+    var precision: js.UndefOr[Float]
+    var threshold: js.UndefOr[Float]
+    var tpr: js.UndefOr[Float]
+  }
+
+  object MetricDataPoint {
+    @inline
+    def apply(
+        fpr: js.UndefOr[Float] = js.undefined,
+        precision: js.UndefOr[Float] = js.undefined,
+        threshold: js.UndefOr[Float] = js.undefined,
+        tpr: js.UndefOr[Float] = js.undefined
+    ): MetricDataPoint = {
+      val __obj = js.Dynamic.literal()
+      fpr.foreach(__v => __obj.updateDynamic("fpr")(__v.asInstanceOf[js.Any]))
+      precision.foreach(__v => __obj.updateDynamic("precision")(__v.asInstanceOf[js.Any]))
+      threshold.foreach(__v => __obj.updateDynamic("threshold")(__v.asInstanceOf[js.Any]))
+      tpr.foreach(__v => __obj.updateDynamic("tpr")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetricDataPoint]
+    }
+  }
+
   /**
     * The model.
     */
   @js.native
   trait Model extends js.Object {
+    var arn: js.UndefOr[fraudDetectorArn]
     var createdTime: js.UndefOr[time]
     var description: js.UndefOr[description]
-    var labelSchema: js.UndefOr[LabelSchema]
+    var eventTypeName: js.UndefOr[String]
     var lastUpdatedTime: js.UndefOr[time]
-    var modelId: js.UndefOr[identifier]
+    var modelId: js.UndefOr[modelIdentifier]
     var modelType: js.UndefOr[ModelTypeEnum]
-    var modelVariables: js.UndefOr[ModelVariablesList]
-    var trainingDataSource: js.UndefOr[TrainingDataSource]
   }
 
   object Model {
     @inline
     def apply(
+        arn: js.UndefOr[fraudDetectorArn] = js.undefined,
         createdTime: js.UndefOr[time] = js.undefined,
         description: js.UndefOr[description] = js.undefined,
-        labelSchema: js.UndefOr[LabelSchema] = js.undefined,
+        eventTypeName: js.UndefOr[String] = js.undefined,
         lastUpdatedTime: js.UndefOr[time] = js.undefined,
-        modelId: js.UndefOr[identifier] = js.undefined,
-        modelType: js.UndefOr[ModelTypeEnum] = js.undefined,
-        modelVariables: js.UndefOr[ModelVariablesList] = js.undefined,
-        trainingDataSource: js.UndefOr[TrainingDataSource] = js.undefined
+        modelId: js.UndefOr[modelIdentifier] = js.undefined,
+        modelType: js.UndefOr[ModelTypeEnum] = js.undefined
     ): Model = {
       val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       createdTime.foreach(__v => __obj.updateDynamic("createdTime")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      labelSchema.foreach(__v => __obj.updateDynamic("labelSchema")(__v.asInstanceOf[js.Any]))
+      eventTypeName.foreach(__v => __obj.updateDynamic("eventTypeName")(__v.asInstanceOf[js.Any]))
       lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
       modelId.foreach(__v => __obj.updateDynamic("modelId")(__v.asInstanceOf[js.Any]))
       modelType.foreach(__v => __obj.updateDynamic("modelType")(__v.asInstanceOf[js.Any]))
-      modelVariables.foreach(__v => __obj.updateDynamic("modelVariables")(__v.asInstanceOf[js.Any]))
-      trainingDataSource.foreach(__v => __obj.updateDynamic("trainingDataSource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Model]
     }
   }
@@ -1373,12 +1976,13 @@ package frauddetector {
   }
 
   /**
-    * The model input configuration.
+    * The Amazon SageMaker model input configuration.
     */
   @js.native
   trait ModelInputConfiguration extends js.Object {
-    var isOpaque: IsOpaque
+    var useEventVariables: UseEventVariables
     var csvInputTemplate: js.UndefOr[String]
+    var eventTypeName: js.UndefOr[identifier]
     var format: js.UndefOr[ModelInputDataFormat]
     var jsonInputTemplate: js.UndefOr[String]
   }
@@ -1386,16 +1990,18 @@ package frauddetector {
   object ModelInputConfiguration {
     @inline
     def apply(
-        isOpaque: IsOpaque,
+        useEventVariables: UseEventVariables,
         csvInputTemplate: js.UndefOr[String] = js.undefined,
+        eventTypeName: js.UndefOr[identifier] = js.undefined,
         format: js.UndefOr[ModelInputDataFormat] = js.undefined,
         jsonInputTemplate: js.UndefOr[String] = js.undefined
     ): ModelInputConfiguration = {
       val __obj = js.Dynamic.literal(
-        "isOpaque" -> isOpaque.asInstanceOf[js.Any]
+        "useEventVariables" -> useEventVariables.asInstanceOf[js.Any]
       )
 
       csvInputTemplate.foreach(__v => __obj.updateDynamic("csvInputTemplate")(__v.asInstanceOf[js.Any]))
+      eventTypeName.foreach(__v => __obj.updateDynamic("eventTypeName")(__v.asInstanceOf[js.Any]))
       format.foreach(__v => __obj.updateDynamic("format")(__v.asInstanceOf[js.Any]))
       jsonInputTemplate.foreach(__v => __obj.updateDynamic("jsonInputTemplate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModelInputConfiguration]
@@ -1412,7 +2018,7 @@ package frauddetector {
   }
 
   /**
-    * Provides the model output configuration.
+    * Provides the Amazon Sagemaker model output configuration.
     */
   @js.native
   trait ModelOutputConfiguration extends js.Object {
@@ -1486,45 +2092,23 @@ package frauddetector {
   }
 
   /**
-    * The model variable.&gt;
-    */
-  @js.native
-  trait ModelVariable extends js.Object {
-    var name: String
-    var index: js.UndefOr[ModelVariableIndex]
-  }
-
-  object ModelVariable {
-    @inline
-    def apply(
-        name: String,
-        index: js.UndefOr[ModelVariableIndex] = js.undefined
-    ): ModelVariable = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      index.foreach(__v => __obj.updateDynamic("index")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ModelVariable]
-    }
-  }
-
-  /**
     * The model version.
     */
   @js.native
   trait ModelVersion extends js.Object {
-    var modelId: identifier
+    var modelId: modelIdentifier
     var modelType: ModelTypeEnum
     var modelVersionNumber: nonEmptyString
+    var arn: js.UndefOr[fraudDetectorArn]
   }
 
   object ModelVersion {
     @inline
     def apply(
-        modelId: identifier,
+        modelId: modelIdentifier,
         modelType: ModelTypeEnum,
-        modelVersionNumber: nonEmptyString
+        modelVersionNumber: nonEmptyString,
+        arn: js.UndefOr[fraudDetectorArn] = js.undefined
     ): ModelVersion = {
       val __obj = js.Dynamic.literal(
         "modelId" -> modelId.asInstanceOf[js.Any],
@@ -1532,58 +2116,56 @@ package frauddetector {
         "modelVersionNumber" -> modelVersionNumber.asInstanceOf[js.Any]
       )
 
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModelVersion]
     }
   }
 
   /**
-    * Provides the model version details.
+    * The details of the model version.
     */
   @js.native
   trait ModelVersionDetail extends js.Object {
+    var arn: js.UndefOr[fraudDetectorArn]
     var createdTime: js.UndefOr[time]
-    var description: js.UndefOr[description]
-    var labelSchema: js.UndefOr[LabelSchema]
+    var externalEventsDetail: js.UndefOr[ExternalEventsDetail]
     var lastUpdatedTime: js.UndefOr[time]
-    var modelId: js.UndefOr[identifier]
+    var modelId: js.UndefOr[modelIdentifier]
     var modelType: js.UndefOr[ModelTypeEnum]
-    var modelVariables: js.UndefOr[ModelVariablesList]
-    var modelVersionNumber: js.UndefOr[nonEmptyString]
+    var modelVersionNumber: js.UndefOr[floatVersionString]
     var status: js.UndefOr[String]
-    var trainingDataSource: js.UndefOr[TrainingDataSource]
-    var trainingMetrics: js.UndefOr[MetricsMap]
-    var validationMetrics: js.UndefOr[MetricsMap]
+    var trainingDataSchema: js.UndefOr[TrainingDataSchema]
+    var trainingDataSource: js.UndefOr[TrainingDataSourceEnum]
+    var trainingResult: js.UndefOr[TrainingResult]
   }
 
   object ModelVersionDetail {
     @inline
     def apply(
+        arn: js.UndefOr[fraudDetectorArn] = js.undefined,
         createdTime: js.UndefOr[time] = js.undefined,
-        description: js.UndefOr[description] = js.undefined,
-        labelSchema: js.UndefOr[LabelSchema] = js.undefined,
+        externalEventsDetail: js.UndefOr[ExternalEventsDetail] = js.undefined,
         lastUpdatedTime: js.UndefOr[time] = js.undefined,
-        modelId: js.UndefOr[identifier] = js.undefined,
+        modelId: js.UndefOr[modelIdentifier] = js.undefined,
         modelType: js.UndefOr[ModelTypeEnum] = js.undefined,
-        modelVariables: js.UndefOr[ModelVariablesList] = js.undefined,
-        modelVersionNumber: js.UndefOr[nonEmptyString] = js.undefined,
+        modelVersionNumber: js.UndefOr[floatVersionString] = js.undefined,
         status: js.UndefOr[String] = js.undefined,
-        trainingDataSource: js.UndefOr[TrainingDataSource] = js.undefined,
-        trainingMetrics: js.UndefOr[MetricsMap] = js.undefined,
-        validationMetrics: js.UndefOr[MetricsMap] = js.undefined
+        trainingDataSchema: js.UndefOr[TrainingDataSchema] = js.undefined,
+        trainingDataSource: js.UndefOr[TrainingDataSourceEnum] = js.undefined,
+        trainingResult: js.UndefOr[TrainingResult] = js.undefined
     ): ModelVersionDetail = {
       val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       createdTime.foreach(__v => __obj.updateDynamic("createdTime")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      labelSchema.foreach(__v => __obj.updateDynamic("labelSchema")(__v.asInstanceOf[js.Any]))
+      externalEventsDetail.foreach(__v => __obj.updateDynamic("externalEventsDetail")(__v.asInstanceOf[js.Any]))
       lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
       modelId.foreach(__v => __obj.updateDynamic("modelId")(__v.asInstanceOf[js.Any]))
       modelType.foreach(__v => __obj.updateDynamic("modelType")(__v.asInstanceOf[js.Any]))
-      modelVariables.foreach(__v => __obj.updateDynamic("modelVariables")(__v.asInstanceOf[js.Any]))
       modelVersionNumber.foreach(__v => __obj.updateDynamic("modelVersionNumber")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      trainingDataSchema.foreach(__v => __obj.updateDynamic("trainingDataSchema")(__v.asInstanceOf[js.Any]))
       trainingDataSource.foreach(__v => __obj.updateDynamic("trainingDataSource")(__v.asInstanceOf[js.Any]))
-      trainingMetrics.foreach(__v => __obj.updateDynamic("trainingMetrics")(__v.asInstanceOf[js.Any]))
-      validationMetrics.foreach(__v => __obj.updateDynamic("validationMetrics")(__v.asInstanceOf[js.Any]))
+      trainingResult.foreach(__v => __obj.updateDynamic("trainingResult")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModelVersionDetail]
     }
   }
@@ -1591,27 +2173,10 @@ package frauddetector {
   @js.native
   sealed trait ModelVersionStatus extends js.Any
   object ModelVersionStatus extends js.Object {
-    val TRAINING_IN_PROGRESS = "TRAINING_IN_PROGRESS".asInstanceOf[ModelVersionStatus]
-    val TRAINING_COMPLETE = "TRAINING_COMPLETE".asInstanceOf[ModelVersionStatus]
-    val ACTIVATE_REQUESTED = "ACTIVATE_REQUESTED".asInstanceOf[ModelVersionStatus]
-    val ACTIVATE_IN_PROGRESS = "ACTIVATE_IN_PROGRESS".asInstanceOf[ModelVersionStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[ModelVersionStatus]
-    val INACTIVATE_IN_PROGRESS = "INACTIVATE_IN_PROGRESS".asInstanceOf[ModelVersionStatus]
     val INACTIVE = "INACTIVE".asInstanceOf[ModelVersionStatus]
-    val ERROR = "ERROR".asInstanceOf[ModelVersionStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        TRAINING_IN_PROGRESS,
-        TRAINING_COMPLETE,
-        ACTIVATE_REQUESTED,
-        ACTIVATE_IN_PROGRESS,
-        ACTIVE,
-        INACTIVATE_IN_PROGRESS,
-        INACTIVE,
-        ERROR
-      )
-    )
+    val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
   }
 
   /**
@@ -1619,6 +2184,7 @@ package frauddetector {
     */
   @js.native
   trait Outcome extends js.Object {
+    var arn: js.UndefOr[fraudDetectorArn]
     var createdTime: js.UndefOr[time]
     var description: js.UndefOr[description]
     var lastUpdatedTime: js.UndefOr[time]
@@ -1628,12 +2194,14 @@ package frauddetector {
   object Outcome {
     @inline
     def apply(
+        arn: js.UndefOr[fraudDetectorArn] = js.undefined,
         createdTime: js.UndefOr[time] = js.undefined,
         description: js.UndefOr[description] = js.undefined,
         lastUpdatedTime: js.UndefOr[time] = js.undefined,
         name: js.UndefOr[identifier] = js.undefined
     ): Outcome = {
       val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       createdTime.foreach(__v => __obj.updateDynamic("createdTime")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
@@ -1645,20 +2213,26 @@ package frauddetector {
   @js.native
   trait PutDetectorRequest extends js.Object {
     var detectorId: identifier
+    var eventTypeName: identifier
     var description: js.UndefOr[description]
+    var tags: js.UndefOr[tagList]
   }
 
   object PutDetectorRequest {
     @inline
     def apply(
         detectorId: identifier,
-        description: js.UndefOr[description] = js.undefined
+        eventTypeName: identifier,
+        description: js.UndefOr[description] = js.undefined,
+        tags: js.UndefOr[tagList] = js.undefined
     ): PutDetectorRequest = {
       val __obj = js.Dynamic.literal(
-        "detectorId" -> detectorId.asInstanceOf[js.Any]
+        "detectorId" -> detectorId.asInstanceOf[js.Any],
+        "eventTypeName" -> eventTypeName.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutDetectorRequest]
     }
   }
@@ -1677,34 +2251,120 @@ package frauddetector {
   }
 
   @js.native
+  trait PutEntityTypeRequest extends js.Object {
+    var name: identifier
+    var description: js.UndefOr[description]
+    var tags: js.UndefOr[tagList]
+  }
+
+  object PutEntityTypeRequest {
+    @inline
+    def apply(
+        name: identifier,
+        description: js.UndefOr[description] = js.undefined,
+        tags: js.UndefOr[tagList] = js.undefined
+    ): PutEntityTypeRequest = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any]
+      )
+
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutEntityTypeRequest]
+    }
+  }
+
+  @js.native
+  trait PutEntityTypeResult extends js.Object {}
+
+  object PutEntityTypeResult {
+    @inline
+    def apply(
+    ): PutEntityTypeResult = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[PutEntityTypeResult]
+    }
+  }
+
+  @js.native
+  trait PutEventTypeRequest extends js.Object {
+    var entityTypes: NonEmptyListOfStrings
+    var eventVariables: NonEmptyListOfStrings
+    var name: identifier
+    var description: js.UndefOr[description]
+    var labels: js.UndefOr[ListOfStrings]
+    var tags: js.UndefOr[tagList]
+  }
+
+  object PutEventTypeRequest {
+    @inline
+    def apply(
+        entityTypes: NonEmptyListOfStrings,
+        eventVariables: NonEmptyListOfStrings,
+        name: identifier,
+        description: js.UndefOr[description] = js.undefined,
+        labels: js.UndefOr[ListOfStrings] = js.undefined,
+        tags: js.UndefOr[tagList] = js.undefined
+    ): PutEventTypeRequest = {
+      val __obj = js.Dynamic.literal(
+        "entityTypes" -> entityTypes.asInstanceOf[js.Any],
+        "eventVariables" -> eventVariables.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any]
+      )
+
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      labels.foreach(__v => __obj.updateDynamic("labels")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutEventTypeRequest]
+    }
+  }
+
+  @js.native
+  trait PutEventTypeResult extends js.Object {}
+
+  object PutEventTypeResult {
+    @inline
+    def apply(
+    ): PutEventTypeResult = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[PutEventTypeResult]
+    }
+  }
+
+  @js.native
   trait PutExternalModelRequest extends js.Object {
     var inputConfiguration: ModelInputConfiguration
-    var modelEndpoint: String
+    var invokeModelEndpointRoleArn: String
+    var modelEndpoint: sageMakerEndpointIdentifier
     var modelEndpointStatus: ModelEndpointStatus
     var modelSource: ModelSource
     var outputConfiguration: ModelOutputConfiguration
-    var role: Role
+    var tags: js.UndefOr[tagList]
   }
 
   object PutExternalModelRequest {
     @inline
     def apply(
         inputConfiguration: ModelInputConfiguration,
-        modelEndpoint: String,
+        invokeModelEndpointRoleArn: String,
+        modelEndpoint: sageMakerEndpointIdentifier,
         modelEndpointStatus: ModelEndpointStatus,
         modelSource: ModelSource,
         outputConfiguration: ModelOutputConfiguration,
-        role: Role
+        tags: js.UndefOr[tagList] = js.undefined
     ): PutExternalModelRequest = {
       val __obj = js.Dynamic.literal(
         "inputConfiguration" -> inputConfiguration.asInstanceOf[js.Any],
+        "invokeModelEndpointRoleArn" -> invokeModelEndpointRoleArn.asInstanceOf[js.Any],
         "modelEndpoint" -> modelEndpoint.asInstanceOf[js.Any],
         "modelEndpointStatus" -> modelEndpointStatus.asInstanceOf[js.Any],
         "modelSource" -> modelSource.asInstanceOf[js.Any],
-        "outputConfiguration" -> outputConfiguration.asInstanceOf[js.Any],
-        "role" -> role.asInstanceOf[js.Any]
+        "outputConfiguration" -> outputConfiguration.asInstanceOf[js.Any]
       )
 
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutExternalModelRequest]
     }
   }
@@ -1723,48 +2383,70 @@ package frauddetector {
   }
 
   @js.native
-  trait PutModelRequest extends js.Object {
-    var labelSchema: LabelSchema
-    var modelId: identifier
-    var modelType: ModelTypeEnum
-    var modelVariables: ModelVariablesList
-    var trainingDataSource: TrainingDataSource
-    var description: js.UndefOr[description]
+  trait PutKMSEncryptionKeyRequest extends js.Object {
+    var kmsEncryptionKeyArn: KmsEncryptionKeyArn
   }
 
-  object PutModelRequest {
+  object PutKMSEncryptionKeyRequest {
     @inline
     def apply(
-        labelSchema: LabelSchema,
-        modelId: identifier,
-        modelType: ModelTypeEnum,
-        modelVariables: ModelVariablesList,
-        trainingDataSource: TrainingDataSource,
-        description: js.UndefOr[description] = js.undefined
-    ): PutModelRequest = {
+        kmsEncryptionKeyArn: KmsEncryptionKeyArn
+    ): PutKMSEncryptionKeyRequest = {
       val __obj = js.Dynamic.literal(
-        "labelSchema" -> labelSchema.asInstanceOf[js.Any],
-        "modelId" -> modelId.asInstanceOf[js.Any],
-        "modelType" -> modelType.asInstanceOf[js.Any],
-        "modelVariables" -> modelVariables.asInstanceOf[js.Any],
-        "trainingDataSource" -> trainingDataSource.asInstanceOf[js.Any]
+        "kmsEncryptionKeyArn" -> kmsEncryptionKeyArn.asInstanceOf[js.Any]
       )
 
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutModelRequest]
+      __obj.asInstanceOf[PutKMSEncryptionKeyRequest]
     }
   }
 
   @js.native
-  trait PutModelResult extends js.Object {}
+  trait PutKMSEncryptionKeyResult extends js.Object {}
 
-  object PutModelResult {
+  object PutKMSEncryptionKeyResult {
     @inline
     def apply(
-    ): PutModelResult = {
+    ): PutKMSEncryptionKeyResult = {
       val __obj = js.Dynamic.literal()
 
-      __obj.asInstanceOf[PutModelResult]
+      __obj.asInstanceOf[PutKMSEncryptionKeyResult]
+    }
+  }
+
+  @js.native
+  trait PutLabelRequest extends js.Object {
+    var name: identifier
+    var description: js.UndefOr[description]
+    var tags: js.UndefOr[tagList]
+  }
+
+  object PutLabelRequest {
+    @inline
+    def apply(
+        name: identifier,
+        description: js.UndefOr[description] = js.undefined,
+        tags: js.UndefOr[tagList] = js.undefined
+    ): PutLabelRequest = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any]
+      )
+
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutLabelRequest]
+    }
+  }
+
+  @js.native
+  trait PutLabelResult extends js.Object {}
+
+  object PutLabelResult {
+    @inline
+    def apply(
+    ): PutLabelResult = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[PutLabelResult]
     }
   }
 
@@ -1772,19 +2454,22 @@ package frauddetector {
   trait PutOutcomeRequest extends js.Object {
     var name: identifier
     var description: js.UndefOr[description]
+    var tags: js.UndefOr[tagList]
   }
 
   object PutOutcomeRequest {
     @inline
     def apply(
         name: identifier,
-        description: js.UndefOr[description] = js.undefined
+        description: js.UndefOr[description] = js.undefined,
+        tags: js.UndefOr[tagList] = js.undefined
     ): PutOutcomeRequest = {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutOutcomeRequest]
     }
   }
@@ -1803,37 +2488,13 @@ package frauddetector {
   }
 
   /**
-    * The role used to invoke external model endpoints.
-    */
-  @js.native
-  trait Role extends js.Object {
-    var arn: String
-    var name: String
-  }
-
-  object Role {
-    @inline
-    def apply(
-        arn: String,
-        name: String
-    ): Role = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any],
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Role]
-    }
-  }
-
-  /**
     * A rule.
     */
   @js.native
   trait Rule extends js.Object {
     var detectorId: identifier
     var ruleId: identifier
-    var ruleVersion: nonEmptyString
+    var ruleVersion: wholeNumberVersionString
   }
 
   object Rule {
@@ -1841,7 +2502,7 @@ package frauddetector {
     def apply(
         detectorId: identifier,
         ruleId: identifier,
-        ruleVersion: nonEmptyString
+        ruleVersion: wholeNumberVersionString
     ): Rule = {
       val __obj = js.Dynamic.literal(
         "detectorId" -> detectorId.asInstanceOf[js.Any],
@@ -1858,6 +2519,7 @@ package frauddetector {
     */
   @js.native
   trait RuleDetail extends js.Object {
+    var arn: js.UndefOr[fraudDetectorArn]
     var createdTime: js.UndefOr[time]
     var description: js.UndefOr[description]
     var detectorId: js.UndefOr[identifier]
@@ -1866,12 +2528,13 @@ package frauddetector {
     var lastUpdatedTime: js.UndefOr[time]
     var outcomes: js.UndefOr[NonEmptyListOfStrings]
     var ruleId: js.UndefOr[identifier]
-    var ruleVersion: js.UndefOr[nonEmptyString]
+    var ruleVersion: js.UndefOr[wholeNumberVersionString]
   }
 
   object RuleDetail {
     @inline
     def apply(
+        arn: js.UndefOr[fraudDetectorArn] = js.undefined,
         createdTime: js.UndefOr[time] = js.undefined,
         description: js.UndefOr[description] = js.undefined,
         detectorId: js.UndefOr[identifier] = js.undefined,
@@ -1880,9 +2543,10 @@ package frauddetector {
         lastUpdatedTime: js.UndefOr[time] = js.undefined,
         outcomes: js.UndefOr[NonEmptyListOfStrings] = js.undefined,
         ruleId: js.UndefOr[identifier] = js.undefined,
-        ruleVersion: js.UndefOr[nonEmptyString] = js.undefined
+        ruleVersion: js.UndefOr[wholeNumberVersionString] = js.undefined
     ): RuleDetail = {
       val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       createdTime.foreach(__v => __obj.updateDynamic("createdTime")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       detectorId.foreach(__v => __obj.updateDynamic("detectorId")(__v.asInstanceOf[js.Any]))
@@ -1928,26 +2592,170 @@ package frauddetector {
   }
 
   /**
-    * The training data source.
+    * A key and value pair.
     */
   @js.native
-  trait TrainingDataSource extends js.Object {
-    var dataAccessRoleArn: iamRoleArn
-    var dataLocation: s3BucketLocation
+  trait Tag extends js.Object {
+    var key: tagKey
+    var value: tagValue
   }
 
-  object TrainingDataSource {
+  object Tag {
     @inline
     def apply(
-        dataAccessRoleArn: iamRoleArn,
-        dataLocation: s3BucketLocation
-    ): TrainingDataSource = {
+        key: tagKey,
+        value: tagValue
+    ): Tag = {
       val __obj = js.Dynamic.literal(
-        "dataAccessRoleArn" -> dataAccessRoleArn.asInstanceOf[js.Any],
-        "dataLocation" -> dataLocation.asInstanceOf[js.Any]
+        "key" -> key.asInstanceOf[js.Any],
+        "value" -> value.asInstanceOf[js.Any]
       )
 
-      __obj.asInstanceOf[TrainingDataSource]
+      __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var resourceARN: fraudDetectorArn
+    var tags: tagList
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        resourceARN: fraudDetectorArn,
+        tags: tagList
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceARN" -> resourceARN.asInstanceOf[js.Any],
+        "tags" -> tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResult extends js.Object {}
+
+  object TagResourceResult {
+    @inline
+    def apply(
+    ): TagResourceResult = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[TagResourceResult]
+    }
+  }
+
+  /**
+    * The training data schema.
+    */
+  @js.native
+  trait TrainingDataSchema extends js.Object {
+    var labelSchema: LabelSchema
+    var modelVariables: ListOfStrings
+  }
+
+  object TrainingDataSchema {
+    @inline
+    def apply(
+        labelSchema: LabelSchema,
+        modelVariables: ListOfStrings
+    ): TrainingDataSchema = {
+      val __obj = js.Dynamic.literal(
+        "labelSchema" -> labelSchema.asInstanceOf[js.Any],
+        "modelVariables" -> modelVariables.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TrainingDataSchema]
+    }
+  }
+
+  @js.native
+  sealed trait TrainingDataSourceEnum extends js.Any
+  object TrainingDataSourceEnum extends js.Object {
+    val EXTERNAL_EVENTS = "EXTERNAL_EVENTS".asInstanceOf[TrainingDataSourceEnum]
+
+    val values = js.Object.freeze(js.Array(EXTERNAL_EVENTS))
+  }
+
+  /**
+    * The training metric details.
+    */
+  @js.native
+  trait TrainingMetrics extends js.Object {
+    var auc: js.UndefOr[Float]
+    var metricDataPoints: js.UndefOr[metricDataPointsList]
+  }
+
+  object TrainingMetrics {
+    @inline
+    def apply(
+        auc: js.UndefOr[Float] = js.undefined,
+        metricDataPoints: js.UndefOr[metricDataPointsList] = js.undefined
+    ): TrainingMetrics = {
+      val __obj = js.Dynamic.literal()
+      auc.foreach(__v => __obj.updateDynamic("auc")(__v.asInstanceOf[js.Any]))
+      metricDataPoints.foreach(__v => __obj.updateDynamic("metricDataPoints")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TrainingMetrics]
+    }
+  }
+
+  /**
+    * The training result details.
+    */
+  @js.native
+  trait TrainingResult extends js.Object {
+    var dataValidationMetrics: js.UndefOr[DataValidationMetrics]
+    var trainingMetrics: js.UndefOr[TrainingMetrics]
+  }
+
+  object TrainingResult {
+    @inline
+    def apply(
+        dataValidationMetrics: js.UndefOr[DataValidationMetrics] = js.undefined,
+        trainingMetrics: js.UndefOr[TrainingMetrics] = js.undefined
+    ): TrainingResult = {
+      val __obj = js.Dynamic.literal()
+      dataValidationMetrics.foreach(__v => __obj.updateDynamic("dataValidationMetrics")(__v.asInstanceOf[js.Any]))
+      trainingMetrics.foreach(__v => __obj.updateDynamic("trainingMetrics")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TrainingResult]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var resourceARN: fraudDetectorArn
+    var tagKeys: tagKeyList
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        resourceARN: fraudDetectorArn,
+        tagKeys: tagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceARN" -> resourceARN.asInstanceOf[js.Any],
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResult extends js.Object {}
+
+  object UntagResourceResult {
+    @inline
+    def apply(
+    ): UntagResourceResult = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[UntagResourceResult]
     }
   }
 
@@ -1955,7 +2763,7 @@ package frauddetector {
   trait UpdateDetectorVersionMetadataRequest extends js.Object {
     var description: description
     var detectorId: identifier
-    var detectorVersionId: nonEmptyString
+    var detectorVersionId: wholeNumberVersionString
   }
 
   object UpdateDetectorVersionMetadataRequest {
@@ -1963,7 +2771,7 @@ package frauddetector {
     def apply(
         description: description,
         detectorId: identifier,
-        detectorVersionId: nonEmptyString
+        detectorVersionId: wholeNumberVersionString
     ): UpdateDetectorVersionMetadataRequest = {
       val __obj = js.Dynamic.literal(
         "description" -> description.asInstanceOf[js.Any],
@@ -1991,7 +2799,7 @@ package frauddetector {
   @js.native
   trait UpdateDetectorVersionRequest extends js.Object {
     var detectorId: identifier
-    var detectorVersionId: nonEmptyString
+    var detectorVersionId: wholeNumberVersionString
     var externalModelEndpoints: ListOfStrings
     var rules: RuleList
     var description: js.UndefOr[description]
@@ -2003,7 +2811,7 @@ package frauddetector {
     @inline
     def apply(
         detectorId: identifier,
-        detectorVersionId: nonEmptyString,
+        detectorVersionId: wholeNumberVersionString,
         externalModelEndpoints: ListOfStrings,
         rules: RuleList,
         description: js.UndefOr[description] = js.undefined,
@@ -2040,7 +2848,7 @@ package frauddetector {
   @js.native
   trait UpdateDetectorVersionStatusRequest extends js.Object {
     var detectorId: identifier
-    var detectorVersionId: nonEmptyString
+    var detectorVersionId: wholeNumberVersionString
     var status: DetectorVersionStatus
   }
 
@@ -2048,7 +2856,7 @@ package frauddetector {
     @inline
     def apply(
         detectorId: identifier,
-        detectorVersionId: nonEmptyString,
+        detectorVersionId: wholeNumberVersionString,
         status: DetectorVersionStatus
     ): UpdateDetectorVersionStatusRequest = {
       val __obj = js.Dynamic.literal(
@@ -2075,45 +2883,134 @@ package frauddetector {
   }
 
   @js.native
-  trait UpdateModelVersionRequest extends js.Object {
-    var description: description
-    var modelId: identifier
+  trait UpdateModelRequest extends js.Object {
+    var modelId: modelIdentifier
     var modelType: ModelTypeEnum
-    var modelVersionNumber: nonEmptyString
-    var status: ModelVersionStatus
+    var description: js.UndefOr[description]
+  }
+
+  object UpdateModelRequest {
+    @inline
+    def apply(
+        modelId: modelIdentifier,
+        modelType: ModelTypeEnum,
+        description: js.UndefOr[description] = js.undefined
+    ): UpdateModelRequest = {
+      val __obj = js.Dynamic.literal(
+        "modelId" -> modelId.asInstanceOf[js.Any],
+        "modelType" -> modelType.asInstanceOf[js.Any]
+      )
+
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateModelRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateModelResult extends js.Object {}
+
+  object UpdateModelResult {
+    @inline
+    def apply(
+    ): UpdateModelResult = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[UpdateModelResult]
+    }
+  }
+
+  @js.native
+  trait UpdateModelVersionRequest extends js.Object {
+    var majorVersionNumber: wholeNumberVersionString
+    var modelId: modelIdentifier
+    var modelType: ModelTypeEnum
+    var externalEventsDetail: js.UndefOr[ExternalEventsDetail]
+    var tags: js.UndefOr[tagList]
   }
 
   object UpdateModelVersionRequest {
     @inline
     def apply(
-        description: description,
-        modelId: identifier,
+        majorVersionNumber: wholeNumberVersionString,
+        modelId: modelIdentifier,
         modelType: ModelTypeEnum,
-        modelVersionNumber: nonEmptyString,
-        status: ModelVersionStatus
+        externalEventsDetail: js.UndefOr[ExternalEventsDetail] = js.undefined,
+        tags: js.UndefOr[tagList] = js.undefined
     ): UpdateModelVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "description" -> description.asInstanceOf[js.Any],
+        "majorVersionNumber" -> majorVersionNumber.asInstanceOf[js.Any],
+        "modelId" -> modelId.asInstanceOf[js.Any],
+        "modelType" -> modelType.asInstanceOf[js.Any]
+      )
+
+      externalEventsDetail.foreach(__v => __obj.updateDynamic("externalEventsDetail")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateModelVersionRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateModelVersionResult extends js.Object {
+    var modelId: js.UndefOr[modelIdentifier]
+    var modelType: js.UndefOr[ModelTypeEnum]
+    var modelVersionNumber: js.UndefOr[floatVersionString]
+    var status: js.UndefOr[String]
+  }
+
+  object UpdateModelVersionResult {
+    @inline
+    def apply(
+        modelId: js.UndefOr[modelIdentifier] = js.undefined,
+        modelType: js.UndefOr[ModelTypeEnum] = js.undefined,
+        modelVersionNumber: js.UndefOr[floatVersionString] = js.undefined,
+        status: js.UndefOr[String] = js.undefined
+    ): UpdateModelVersionResult = {
+      val __obj = js.Dynamic.literal()
+      modelId.foreach(__v => __obj.updateDynamic("modelId")(__v.asInstanceOf[js.Any]))
+      modelType.foreach(__v => __obj.updateDynamic("modelType")(__v.asInstanceOf[js.Any]))
+      modelVersionNumber.foreach(__v => __obj.updateDynamic("modelVersionNumber")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateModelVersionResult]
+    }
+  }
+
+  @js.native
+  trait UpdateModelVersionStatusRequest extends js.Object {
+    var modelId: modelIdentifier
+    var modelType: ModelTypeEnum
+    var modelVersionNumber: floatVersionString
+    var status: ModelVersionStatus
+  }
+
+  object UpdateModelVersionStatusRequest {
+    @inline
+    def apply(
+        modelId: modelIdentifier,
+        modelType: ModelTypeEnum,
+        modelVersionNumber: floatVersionString,
+        status: ModelVersionStatus
+    ): UpdateModelVersionStatusRequest = {
+      val __obj = js.Dynamic.literal(
         "modelId" -> modelId.asInstanceOf[js.Any],
         "modelType" -> modelType.asInstanceOf[js.Any],
         "modelVersionNumber" -> modelVersionNumber.asInstanceOf[js.Any],
         "status" -> status.asInstanceOf[js.Any]
       )
 
-      __obj.asInstanceOf[UpdateModelVersionRequest]
+      __obj.asInstanceOf[UpdateModelVersionStatusRequest]
     }
   }
 
   @js.native
-  trait UpdateModelVersionResult extends js.Object {}
+  trait UpdateModelVersionStatusResult extends js.Object {}
 
-  object UpdateModelVersionResult {
+  object UpdateModelVersionStatusResult {
     @inline
     def apply(
-    ): UpdateModelVersionResult = {
+    ): UpdateModelVersionStatusResult = {
       val __obj = js.Dynamic.literal()
 
-      __obj.asInstanceOf[UpdateModelVersionResult]
+      __obj.asInstanceOf[UpdateModelVersionStatusResult]
     }
   }
 
@@ -2158,6 +3055,7 @@ package frauddetector {
     var outcomes: NonEmptyListOfStrings
     var rule: Rule
     var description: js.UndefOr[description]
+    var tags: js.UndefOr[tagList]
   }
 
   object UpdateRuleVersionRequest {
@@ -2167,7 +3065,8 @@ package frauddetector {
         language: Language,
         outcomes: NonEmptyListOfStrings,
         rule: Rule,
-        description: js.UndefOr[description] = js.undefined
+        description: js.UndefOr[description] = js.undefined,
+        tags: js.UndefOr[tagList] = js.undefined
     ): UpdateRuleVersionRequest = {
       val __obj = js.Dynamic.literal(
         "expression" -> expression.asInstanceOf[js.Any],
@@ -2177,6 +3076,7 @@ package frauddetector {
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRuleVersionRequest]
     }
   }
@@ -2242,6 +3142,7 @@ package frauddetector {
     */
   @js.native
   trait Variable extends js.Object {
+    var arn: js.UndefOr[fraudDetectorArn]
     var createdTime: js.UndefOr[time]
     var dataSource: js.UndefOr[DataSource]
     var dataType: js.UndefOr[DataType]
@@ -2255,6 +3156,7 @@ package frauddetector {
   object Variable {
     @inline
     def apply(
+        arn: js.UndefOr[fraudDetectorArn] = js.undefined,
         createdTime: js.UndefOr[time] = js.undefined,
         dataSource: js.UndefOr[DataSource] = js.undefined,
         dataType: js.UndefOr[DataType] = js.undefined,
@@ -2265,6 +3167,7 @@ package frauddetector {
         variableType: js.UndefOr[String] = js.undefined
     ): Variable = {
       val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       createdTime.foreach(__v => __obj.updateDynamic("createdTime")(__v.asInstanceOf[js.Any]))
       dataSource.foreach(__v => __obj.updateDynamic("dataSource")(__v.asInstanceOf[js.Any]))
       dataType.foreach(__v => __obj.updateDynamic("dataType")(__v.asInstanceOf[js.Any]))
@@ -2278,7 +3181,7 @@ package frauddetector {
   }
 
   /**
-    * The variable entry in a list.
+    * A variable in the list of variables for the batch create variable request.
     */
   @js.native
   trait VariableEntry extends js.Object {
