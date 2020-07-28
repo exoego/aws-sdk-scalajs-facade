@@ -2539,31 +2539,29 @@ package lambda {
     val `ruby2.7` = "ruby2.7".asInstanceOf[Runtime]
     val provided = "provided".asInstanceOf[Runtime]
 
-    val values = js.Object.freeze(
-      js.Array(
-        nodejs,
-        `nodejs4.3`,
-        `nodejs6.10`,
-        `nodejs8.10`,
-        `nodejs10.x`,
-        `nodejs12.x`,
-        java8,
-        java11,
-        `python2.7`,
-        `python3.6`,
-        `python3.7`,
-        `python3.8`,
-        `dotnetcore1.0`,
-        `dotnetcore2.0`,
-        `dotnetcore2.1`,
-        `dotnetcore3.1`,
-        `nodejs4.3-edge`,
-        `go1.x`,
-        `ruby2.5`,
-        `ruby2.7`,
-        provided
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      nodejs,
+      `nodejs4.3`,
+      `nodejs6.10`,
+      `nodejs8.10`,
+      `nodejs10.x`,
+      `nodejs12.x`,
+      java8,
+      java11,
+      `python2.7`,
+      `python3.6`,
+      `python3.7`,
+      `python3.8`,
+      `dotnetcore1.0`,
+      `dotnetcore2.0`,
+      `dotnetcore2.1`,
+      `dotnetcore3.1`,
+      `nodejs4.3-edge`,
+      `go1.x`,
+      `ruby2.5`,
+      `ruby2.7`,
+      provided
+    ))
   }
 
   @js.native
@@ -2591,20 +2589,18 @@ package lambda {
     val InvalidSubnet = "InvalidSubnet".asInstanceOf[StateReasonCode]
     val InvalidSecurityGroup = "InvalidSecurityGroup".asInstanceOf[StateReasonCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        Idle,
-        Creating,
-        Restoring,
-        EniLimitExceeded,
-        InsufficientRolePermissions,
-        InvalidConfiguration,
-        InternalError,
-        SubnetOutOfIPAddresses,
-        InvalidSubnet,
-        InvalidSecurityGroup
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      Idle,
+      Creating,
+      Restoring,
+      EniLimitExceeded,
+      InsufficientRolePermissions,
+      InvalidConfiguration,
+      InternalError,
+      SubnetOutOfIPAddresses,
+      InvalidSubnet,
+      InvalidSecurityGroup
+    ))
   }
 
   @js.native

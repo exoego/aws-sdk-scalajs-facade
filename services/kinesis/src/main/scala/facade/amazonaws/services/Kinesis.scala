@@ -1030,18 +1030,16 @@ package kinesis {
     val IteratorAgeMilliseconds = "IteratorAgeMilliseconds".asInstanceOf[MetricsName]
     val ALL = "ALL".asInstanceOf[MetricsName]
 
-    val values = js.Object.freeze(
-      js.Array(
-        IncomingBytes,
-        IncomingRecords,
-        OutgoingBytes,
-        OutgoingRecords,
-        WriteProvisionedThroughputExceeded,
-        ReadProvisionedThroughputExceeded,
-        IteratorAgeMilliseconds,
-        ALL
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      IncomingBytes,
+      IncomingRecords,
+      OutgoingBytes,
+      OutgoingRecords,
+      WriteProvisionedThroughputExceeded,
+      ReadProvisionedThroughputExceeded,
+      IteratorAgeMilliseconds,
+      ALL
+    ))
   }
 
   /**

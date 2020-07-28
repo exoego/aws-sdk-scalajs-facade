@@ -2729,22 +2729,20 @@ package elbv2 {
     val `Target.HealthCheckDisabled` = "Target.HealthCheckDisabled".asInstanceOf[TargetHealthReasonEnum]
     val `Elb.InternalError` = "Elb.InternalError".asInstanceOf[TargetHealthReasonEnum]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `Elb.RegistrationInProgress`,
-        `Elb.InitialHealthChecking`,
-        `Target.ResponseCodeMismatch`,
-        `Target.Timeout`,
-        `Target.FailedHealthChecks`,
-        `Target.NotRegistered`,
-        `Target.NotInUse`,
-        `Target.DeregistrationInProgress`,
-        `Target.InvalidState`,
-        `Target.IpUnusable`,
-        `Target.HealthCheckDisabled`,
-        `Elb.InternalError`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      `Elb.RegistrationInProgress`,
+      `Elb.InitialHealthChecking`,
+      `Target.ResponseCodeMismatch`,
+      `Target.Timeout`,
+      `Target.FailedHealthChecks`,
+      `Target.NotRegistered`,
+      `Target.NotInUse`,
+      `Target.DeregistrationInProgress`,
+      `Target.InvalidState`,
+      `Target.IpUnusable`,
+      `Target.HealthCheckDisabled`,
+      `Elb.InternalError`
+    ))
   }
 
   @js.native

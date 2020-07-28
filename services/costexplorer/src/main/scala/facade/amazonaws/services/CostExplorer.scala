@@ -631,39 +631,37 @@ package costexplorer {
     val SAVINGS_PLAN_ARN = "SAVINGS_PLAN_ARN".asInstanceOf[Dimension]
     val PAYMENT_OPTION = "PAYMENT_OPTION".asInstanceOf[Dimension]
 
-    val values = js.Object.freeze(
-      js.Array(
-        AZ,
-        INSTANCE_TYPE,
-        LINKED_ACCOUNT,
-        LINKED_ACCOUNT_NAME,
-        OPERATION,
-        PURCHASE_TYPE,
-        REGION,
-        SERVICE,
-        SERVICE_CODE,
-        USAGE_TYPE,
-        USAGE_TYPE_GROUP,
-        RECORD_TYPE,
-        OPERATING_SYSTEM,
-        TENANCY,
-        SCOPE,
-        PLATFORM,
-        SUBSCRIPTION_ID,
-        LEGAL_ENTITY_NAME,
-        DEPLOYMENT_OPTION,
-        DATABASE_ENGINE,
-        CACHE_ENGINE,
-        INSTANCE_TYPE_FAMILY,
-        BILLING_ENTITY,
-        RESERVATION_ID,
-        RESOURCE_ID,
-        RIGHTSIZING_TYPE,
-        SAVINGS_PLANS_TYPE,
-        SAVINGS_PLAN_ARN,
-        PAYMENT_OPTION
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      AZ,
+      INSTANCE_TYPE,
+      LINKED_ACCOUNT,
+      LINKED_ACCOUNT_NAME,
+      OPERATION,
+      PURCHASE_TYPE,
+      REGION,
+      SERVICE,
+      SERVICE_CODE,
+      USAGE_TYPE,
+      USAGE_TYPE_GROUP,
+      RECORD_TYPE,
+      OPERATING_SYSTEM,
+      TENANCY,
+      SCOPE,
+      PLATFORM,
+      SUBSCRIPTION_ID,
+      LEGAL_ENTITY_NAME,
+      DEPLOYMENT_OPTION,
+      DATABASE_ENGINE,
+      CACHE_ENGINE,
+      INSTANCE_TYPE_FAMILY,
+      BILLING_ENTITY,
+      RESERVATION_ID,
+      RESOURCE_ID,
+      RIGHTSIZING_TYPE,
+      SAVINGS_PLANS_TYPE,
+      SAVINGS_PLAN_ARN,
+      PAYMENT_OPTION
+    ))
   }
 
   /**

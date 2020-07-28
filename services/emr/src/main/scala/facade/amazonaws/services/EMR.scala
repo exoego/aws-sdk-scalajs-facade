@@ -4271,37 +4271,35 @@ package emr {
     val TERA_BITS_PER_SECOND = "TERA_BITS_PER_SECOND".asInstanceOf[Unit]
     val COUNT_PER_SECOND = "COUNT_PER_SECOND".asInstanceOf[Unit]
 
-    val values = js.Object.freeze(
-      js.Array(
-        NONE,
-        SECONDS,
-        MICRO_SECONDS,
-        MILLI_SECONDS,
-        BYTES,
-        KILO_BYTES,
-        MEGA_BYTES,
-        GIGA_BYTES,
-        TERA_BYTES,
-        BITS,
-        KILO_BITS,
-        MEGA_BITS,
-        GIGA_BITS,
-        TERA_BITS,
-        PERCENT,
-        COUNT,
-        BYTES_PER_SECOND,
-        KILO_BYTES_PER_SECOND,
-        MEGA_BYTES_PER_SECOND,
-        GIGA_BYTES_PER_SECOND,
-        TERA_BYTES_PER_SECOND,
-        BITS_PER_SECOND,
-        KILO_BITS_PER_SECOND,
-        MEGA_BITS_PER_SECOND,
-        GIGA_BITS_PER_SECOND,
-        TERA_BITS_PER_SECOND,
-        COUNT_PER_SECOND
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      NONE,
+      SECONDS,
+      MICRO_SECONDS,
+      MILLI_SECONDS,
+      BYTES,
+      KILO_BYTES,
+      MEGA_BYTES,
+      GIGA_BYTES,
+      TERA_BYTES,
+      BITS,
+      KILO_BITS,
+      MEGA_BITS,
+      GIGA_BITS,
+      TERA_BITS,
+      PERCENT,
+      COUNT,
+      BYTES_PER_SECOND,
+      KILO_BYTES_PER_SECOND,
+      MEGA_BYTES_PER_SECOND,
+      GIGA_BYTES_PER_SECOND,
+      TERA_BYTES_PER_SECOND,
+      BITS_PER_SECOND,
+      KILO_BITS_PER_SECOND,
+      MEGA_BITS_PER_SECOND,
+      GIGA_BITS_PER_SECOND,
+      TERA_BITS_PER_SECOND,
+      COUNT_PER_SECOND
+    ))
   }
 
   /**

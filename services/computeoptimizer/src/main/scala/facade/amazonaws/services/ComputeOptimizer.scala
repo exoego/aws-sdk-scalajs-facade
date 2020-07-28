@@ -403,43 +403,41 @@ package computeoptimizer {
     val RecommendationOptionsNetwork = "RecommendationOptionsNetwork".asInstanceOf[ExportableAutoScalingGroupField]
     val LastRefreshTimestamp = "LastRefreshTimestamp".asInstanceOf[ExportableAutoScalingGroupField]
 
-    val values = js.Object.freeze(
-      js.Array(
-        AccountId,
-        AutoScalingGroupArn,
-        AutoScalingGroupName,
-        Finding,
-        UtilizationMetricsCpuMaximum,
-        UtilizationMetricsMemoryMaximum,
-        LookbackPeriodInDays,
-        CurrentConfigurationInstanceType,
-        CurrentConfigurationDesiredCapacity,
-        CurrentConfigurationMinSize,
-        CurrentConfigurationMaxSize,
-        CurrentOnDemandPrice,
-        CurrentStandardOneYearNoUpfrontReservedPrice,
-        CurrentStandardThreeYearNoUpfrontReservedPrice,
-        CurrentVCpus,
-        CurrentMemory,
-        CurrentStorage,
-        CurrentNetwork,
-        RecommendationOptionsConfigurationInstanceType,
-        RecommendationOptionsConfigurationDesiredCapacity,
-        RecommendationOptionsConfigurationMinSize,
-        RecommendationOptionsConfigurationMaxSize,
-        RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
-        RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
-        RecommendationOptionsPerformanceRisk,
-        RecommendationOptionsOnDemandPrice,
-        RecommendationOptionsStandardOneYearNoUpfrontReservedPrice,
-        RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice,
-        RecommendationOptionsVcpus,
-        RecommendationOptionsMemory,
-        RecommendationOptionsStorage,
-        RecommendationOptionsNetwork,
-        LastRefreshTimestamp
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      AccountId,
+      AutoScalingGroupArn,
+      AutoScalingGroupName,
+      Finding,
+      UtilizationMetricsCpuMaximum,
+      UtilizationMetricsMemoryMaximum,
+      LookbackPeriodInDays,
+      CurrentConfigurationInstanceType,
+      CurrentConfigurationDesiredCapacity,
+      CurrentConfigurationMinSize,
+      CurrentConfigurationMaxSize,
+      CurrentOnDemandPrice,
+      CurrentStandardOneYearNoUpfrontReservedPrice,
+      CurrentStandardThreeYearNoUpfrontReservedPrice,
+      CurrentVCpus,
+      CurrentMemory,
+      CurrentStorage,
+      CurrentNetwork,
+      RecommendationOptionsConfigurationInstanceType,
+      RecommendationOptionsConfigurationDesiredCapacity,
+      RecommendationOptionsConfigurationMinSize,
+      RecommendationOptionsConfigurationMaxSize,
+      RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
+      RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
+      RecommendationOptionsPerformanceRisk,
+      RecommendationOptionsOnDemandPrice,
+      RecommendationOptionsStandardOneYearNoUpfrontReservedPrice,
+      RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice,
+      RecommendationOptionsVcpus,
+      RecommendationOptionsMemory,
+      RecommendationOptionsStorage,
+      RecommendationOptionsNetwork,
+      LastRefreshTimestamp
+    ))
   }
 
   @js.native
@@ -475,39 +473,37 @@ package computeoptimizer {
     val RecommendationsSourcesRecommendationSourceType = "RecommendationsSourcesRecommendationSourceType".asInstanceOf[ExportableInstanceField]
     val LastRefreshTimestamp = "LastRefreshTimestamp".asInstanceOf[ExportableInstanceField]
 
-    val values = js.Object.freeze(
-      js.Array(
-        AccountId,
-        InstanceArn,
-        InstanceName,
-        Finding,
-        LookbackPeriodInDays,
-        CurrentInstanceType,
-        UtilizationMetricsCpuMaximum,
-        UtilizationMetricsMemoryMaximum,
-        CurrentOnDemandPrice,
-        CurrentStandardOneYearNoUpfrontReservedPrice,
-        CurrentStandardThreeYearNoUpfrontReservedPrice,
-        CurrentVCpus,
-        CurrentMemory,
-        CurrentStorage,
-        CurrentNetwork,
-        RecommendationOptionsInstanceType,
-        RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
-        RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
-        RecommendationOptionsPerformanceRisk,
-        RecommendationOptionsVcpus,
-        RecommendationOptionsMemory,
-        RecommendationOptionsStorage,
-        RecommendationOptionsNetwork,
-        RecommendationOptionsOnDemandPrice,
-        RecommendationOptionsStandardOneYearNoUpfrontReservedPrice,
-        RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice,
-        RecommendationsSourcesRecommendationSourceArn,
-        RecommendationsSourcesRecommendationSourceType,
-        LastRefreshTimestamp
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      AccountId,
+      InstanceArn,
+      InstanceName,
+      Finding,
+      LookbackPeriodInDays,
+      CurrentInstanceType,
+      UtilizationMetricsCpuMaximum,
+      UtilizationMetricsMemoryMaximum,
+      CurrentOnDemandPrice,
+      CurrentStandardOneYearNoUpfrontReservedPrice,
+      CurrentStandardThreeYearNoUpfrontReservedPrice,
+      CurrentVCpus,
+      CurrentMemory,
+      CurrentStorage,
+      CurrentNetwork,
+      RecommendationOptionsInstanceType,
+      RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
+      RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
+      RecommendationOptionsPerformanceRisk,
+      RecommendationOptionsVcpus,
+      RecommendationOptionsMemory,
+      RecommendationOptionsStorage,
+      RecommendationOptionsNetwork,
+      RecommendationOptionsOnDemandPrice,
+      RecommendationOptionsStandardOneYearNoUpfrontReservedPrice,
+      RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice,
+      RecommendationsSourcesRecommendationSourceArn,
+      RecommendationsSourcesRecommendationSourceType,
+      LastRefreshTimestamp
+    ))
   }
 
   @js.native

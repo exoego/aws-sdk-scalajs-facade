@@ -2825,27 +2825,25 @@ package workspaces {
     val STOPPED = "STOPPED".asInstanceOf[WorkspaceState]
     val ERROR = "ERROR".asInstanceOf[WorkspaceState]
 
-    val values = js.Object.freeze(
-      js.Array(
-        PENDING,
-        AVAILABLE,
-        IMPAIRED,
-        UNHEALTHY,
-        REBOOTING,
-        STARTING,
-        REBUILDING,
-        RESTORING,
-        MAINTENANCE,
-        ADMIN_MAINTENANCE,
-        TERMINATING,
-        TERMINATED,
-        SUSPENDED,
-        UPDATING,
-        STOPPING,
-        STOPPED,
-        ERROR
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      PENDING,
+      AVAILABLE,
+      IMPAIRED,
+      UNHEALTHY,
+      REBOOTING,
+      STARTING,
+      REBUILDING,
+      RESTORING,
+      MAINTENANCE,
+      ADMIN_MAINTENANCE,
+      TERMINATING,
+      TERMINATED,
+      SUSPENDED,
+      UPDATING,
+      STOPPING,
+      STOPPED,
+      ERROR
+    ))
   }
 
   /**

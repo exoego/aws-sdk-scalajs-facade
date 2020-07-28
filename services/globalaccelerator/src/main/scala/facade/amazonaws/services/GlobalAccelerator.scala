@@ -283,21 +283,19 @@ package globalaccelerator {
     val FAILED_WITHDRAW = "FAILED_WITHDRAW".asInstanceOf[ByoipCidrState]
     val FAILED_DEPROVISION = "FAILED_DEPROVISION".asInstanceOf[ByoipCidrState]
 
-    val values = js.Object.freeze(
-      js.Array(
-        PENDING_PROVISIONING,
-        READY,
-        PENDING_ADVERTISING,
-        ADVERTISING,
-        PENDING_WITHDRAWING,
-        PENDING_DEPROVISIONING,
-        DEPROVISIONED,
-        FAILED_PROVISION,
-        FAILED_ADVERTISING,
-        FAILED_WITHDRAW,
-        FAILED_DEPROVISION
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      PENDING_PROVISIONING,
+      READY,
+      PENDING_ADVERTISING,
+      ADVERTISING,
+      PENDING_WITHDRAWING,
+      PENDING_DEPROVISIONING,
+      DEPROVISIONED,
+      FAILED_PROVISION,
+      FAILED_ADVERTISING,
+      FAILED_WITHDRAW,
+      FAILED_DEPROVISION
+    ))
   }
 
   /**

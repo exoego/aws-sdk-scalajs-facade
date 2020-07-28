@@ -2642,40 +2642,38 @@ package rekognition {
     val midJawlineRight = "midJawlineRight".asInstanceOf[LandmarkType]
     val upperJawlineRight = "upperJawlineRight".asInstanceOf[LandmarkType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        eyeLeft,
-        eyeRight,
-        nose,
-        mouthLeft,
-        mouthRight,
-        leftEyeBrowLeft,
-        leftEyeBrowRight,
-        leftEyeBrowUp,
-        rightEyeBrowLeft,
-        rightEyeBrowRight,
-        rightEyeBrowUp,
-        leftEyeLeft,
-        leftEyeRight,
-        leftEyeUp,
-        leftEyeDown,
-        rightEyeLeft,
-        rightEyeRight,
-        rightEyeUp,
-        rightEyeDown,
-        noseLeft,
-        noseRight,
-        mouthUp,
-        mouthDown,
-        leftPupil,
-        rightPupil,
-        upperJawlineLeft,
-        midJawlineLeft,
-        chinBottom,
-        midJawlineRight,
-        upperJawlineRight
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      eyeLeft,
+      eyeRight,
+      nose,
+      mouthLeft,
+      mouthRight,
+      leftEyeBrowLeft,
+      leftEyeBrowRight,
+      leftEyeBrowUp,
+      rightEyeBrowLeft,
+      rightEyeBrowRight,
+      rightEyeBrowUp,
+      leftEyeLeft,
+      leftEyeRight,
+      leftEyeUp,
+      leftEyeDown,
+      rightEyeLeft,
+      rightEyeRight,
+      rightEyeUp,
+      rightEyeDown,
+      noseLeft,
+      noseRight,
+      mouthUp,
+      mouthDown,
+      leftPupil,
+      rightPupil,
+      upperJawlineLeft,
+      midJawlineLeft,
+      chinBottom,
+      midJawlineRight,
+      upperJawlineRight
+    ))
   }
 
   @js.native

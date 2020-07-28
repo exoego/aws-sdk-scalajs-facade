@@ -1222,30 +1222,28 @@ package robomaker {
     val DownloadConditionFailed = "DownloadConditionFailed".asInstanceOf[DeploymentJobErrorCode]
     val InternalServerError = "InternalServerError".asInstanceOf[DeploymentJobErrorCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ResourceNotFound,
-        EnvironmentSetupError,
-        EtagMismatch,
-        FailureThresholdBreached,
-        RobotDeploymentAborted,
-        RobotDeploymentNoResponse,
-        RobotAgentConnectionTimeout,
-        GreengrassDeploymentFailed,
-        InvalidGreengrassGroup,
-        MissingRobotArchitecture,
-        MissingRobotApplicationArchitecture,
-        MissingRobotDeploymentResource,
-        GreengrassGroupVersionDoesNotExist,
-        LambdaDeleted,
-        ExtractingBundleFailure,
-        PreLaunchFileFailure,
-        PostLaunchFileFailure,
-        BadPermissionError,
-        DownloadConditionFailed,
-        InternalServerError
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      ResourceNotFound,
+      EnvironmentSetupError,
+      EtagMismatch,
+      FailureThresholdBreached,
+      RobotDeploymentAborted,
+      RobotDeploymentNoResponse,
+      RobotAgentConnectionTimeout,
+      GreengrassDeploymentFailed,
+      InvalidGreengrassGroup,
+      MissingRobotArchitecture,
+      MissingRobotApplicationArchitecture,
+      MissingRobotDeploymentResource,
+      GreengrassGroupVersionDoesNotExist,
+      LambdaDeleted,
+      ExtractingBundleFailure,
+      PreLaunchFileFailure,
+      PostLaunchFileFailure,
+      BadPermissionError,
+      DownloadConditionFailed,
+      InternalServerError
+    ))
   }
 
   /**
@@ -2980,37 +2978,35 @@ package robomaker {
     val WrongRegionRobotApplication = "WrongRegionRobotApplication".asInstanceOf[SimulationJobErrorCode]
     val WrongRegionSimulationApplication = "WrongRegionSimulationApplication".asInstanceOf[SimulationJobErrorCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        InternalServiceError,
-        RobotApplicationCrash,
-        SimulationApplicationCrash,
-        BadPermissionsRobotApplication,
-        BadPermissionsSimulationApplication,
-        BadPermissionsS3Object,
-        BadPermissionsS3Output,
-        BadPermissionsCloudwatchLogs,
-        SubnetIpLimitExceeded,
-        ENILimitExceeded,
-        BadPermissionsUserCredentials,
-        InvalidBundleRobotApplication,
-        InvalidBundleSimulationApplication,
-        InvalidS3Resource,
-        LimitExceeded,
-        MismatchedEtag,
-        RobotApplicationVersionMismatchedEtag,
-        SimulationApplicationVersionMismatchedEtag,
-        ResourceNotFound,
-        RequestThrottled,
-        BatchTimedOut,
-        BatchCanceled,
-        InvalidInput,
-        WrongRegionS3Bucket,
-        WrongRegionS3Output,
-        WrongRegionRobotApplication,
-        WrongRegionSimulationApplication
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      InternalServiceError,
+      RobotApplicationCrash,
+      SimulationApplicationCrash,
+      BadPermissionsRobotApplication,
+      BadPermissionsSimulationApplication,
+      BadPermissionsS3Object,
+      BadPermissionsS3Output,
+      BadPermissionsCloudwatchLogs,
+      SubnetIpLimitExceeded,
+      ENILimitExceeded,
+      BadPermissionsUserCredentials,
+      InvalidBundleRobotApplication,
+      InvalidBundleSimulationApplication,
+      InvalidS3Resource,
+      LimitExceeded,
+      MismatchedEtag,
+      RobotApplicationVersionMismatchedEtag,
+      SimulationApplicationVersionMismatchedEtag,
+      ResourceNotFound,
+      RequestThrottled,
+      BatchTimedOut,
+      BatchCanceled,
+      InvalidInput,
+      WrongRegionS3Bucket,
+      WrongRegionS3Output,
+      WrongRegionRobotApplication,
+      WrongRegionSimulationApplication
+    ))
   }
 
   /**

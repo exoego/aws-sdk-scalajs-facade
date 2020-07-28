@@ -458,24 +458,22 @@ package ses {
     val TransientFailure = "TransientFailure".asInstanceOf[BulkEmailStatus]
     val Failed = "Failed".asInstanceOf[BulkEmailStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        Success,
-        MessageRejected,
-        MailFromDomainNotVerified,
-        ConfigurationSetDoesNotExist,
-        TemplateDoesNotExist,
-        AccountSuspended,
-        AccountThrottled,
-        AccountDailyQuotaExceeded,
-        InvalidSendingPoolName,
-        AccountSendingPaused,
-        ConfigurationSetSendingPaused,
-        InvalidParameterValue,
-        TransientFailure,
-        Failed
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      Success,
+      MessageRejected,
+      MailFromDomainNotVerified,
+      ConfigurationSetDoesNotExist,
+      TemplateDoesNotExist,
+      AccountSuspended,
+      AccountThrottled,
+      AccountDailyQuotaExceeded,
+      InvalidSendingPoolName,
+      AccountSendingPaused,
+      ConfigurationSetSendingPaused,
+      InvalidParameterValue,
+      TransientFailure,
+      Failed
+    ))
   }
 
   /**

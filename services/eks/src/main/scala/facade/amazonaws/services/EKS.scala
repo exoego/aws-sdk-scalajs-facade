@@ -683,21 +683,19 @@ package eks {
     val PodEvictionFailure = "PodEvictionFailure".asInstanceOf[ErrorCode]
     val InsufficientFreeAddresses = "InsufficientFreeAddresses".asInstanceOf[ErrorCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        SubnetNotFound,
-        SecurityGroupNotFound,
-        EniLimitReached,
-        IpNotAvailable,
-        AccessDenied,
-        OperationNotPermitted,
-        VpcIdNotFound,
-        Unknown,
-        NodeCreationFailure,
-        PodEvictionFailure,
-        InsufficientFreeAddresses
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      SubnetNotFound,
+      SecurityGroupNotFound,
+      EniLimitReached,
+      IpNotAvailable,
+      AccessDenied,
+      OperationNotPermitted,
+      VpcIdNotFound,
+      Unknown,
+      NodeCreationFailure,
+      PodEvictionFailure,
+      InsufficientFreeAddresses
+    ))
   }
 
   /**
@@ -1216,27 +1214,25 @@ package eks {
     val AccessDenied = "AccessDenied".asInstanceOf[NodegroupIssueCode]
     val InternalFailure = "InternalFailure".asInstanceOf[NodegroupIssueCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        AutoScalingGroupNotFound,
-        AutoScalingGroupInvalidConfiguration,
-        Ec2SecurityGroupNotFound,
-        Ec2SecurityGroupDeletionFailure,
-        Ec2LaunchTemplateNotFound,
-        Ec2LaunchTemplateVersionMismatch,
-        Ec2SubnetNotFound,
-        Ec2SubnetInvalidConfiguration,
-        IamInstanceProfileNotFound,
-        IamLimitExceeded,
-        IamNodeRoleNotFound,
-        NodeCreationFailure,
-        AsgInstanceLaunchFailures,
-        InstanceLimitExceeded,
-        InsufficientFreeAddresses,
-        AccessDenied,
-        InternalFailure
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      AutoScalingGroupNotFound,
+      AutoScalingGroupInvalidConfiguration,
+      Ec2SecurityGroupNotFound,
+      Ec2SecurityGroupDeletionFailure,
+      Ec2LaunchTemplateNotFound,
+      Ec2LaunchTemplateVersionMismatch,
+      Ec2SubnetNotFound,
+      Ec2SubnetInvalidConfiguration,
+      IamInstanceProfileNotFound,
+      IamLimitExceeded,
+      IamNodeRoleNotFound,
+      NodeCreationFailure,
+      AsgInstanceLaunchFailures,
+      InstanceLimitExceeded,
+      InsufficientFreeAddresses,
+      AccessDenied,
+      InternalFailure
+    ))
   }
 
   /**
@@ -1700,22 +1696,20 @@ package eks {
     val ReleaseVersion = "ReleaseVersion".asInstanceOf[UpdateParamType]
     val PublicAccessCidrs = "PublicAccessCidrs".asInstanceOf[UpdateParamType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        Version,
-        PlatformVersion,
-        EndpointPrivateAccess,
-        EndpointPublicAccess,
-        ClusterLogging,
-        DesiredSize,
-        LabelsToAdd,
-        LabelsToRemove,
-        MaxSize,
-        MinSize,
-        ReleaseVersion,
-        PublicAccessCidrs
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      Version,
+      PlatformVersion,
+      EndpointPrivateAccess,
+      EndpointPublicAccess,
+      ClusterLogging,
+      DesiredSize,
+      LabelsToAdd,
+      LabelsToRemove,
+      MaxSize,
+      MinSize,
+      ReleaseVersion,
+      PublicAccessCidrs
+    ))
   }
 
   @js.native

@@ -8667,25 +8667,23 @@ package ssm {
     val Category = "Category".asInstanceOf[OpsItemFilterKey]
     val Severity = "Severity".asInstanceOf[OpsItemFilterKey]
 
-    val values = js.Object.freeze(
-      js.Array(
-        Status,
-        CreatedBy,
-        Source,
-        Priority,
-        Title,
-        OpsItemId,
-        CreatedTime,
-        LastModifiedTime,
-        OperationalData,
-        OperationalDataKey,
-        OperationalDataValue,
-        ResourceId,
-        AutomationId,
-        Category,
-        Severity
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      Status,
+      CreatedBy,
+      Source,
+      Priority,
+      Title,
+      OpsItemId,
+      CreatedTime,
+      LastModifiedTime,
+      OperationalData,
+      OperationalDataKey,
+      OperationalDataValue,
+      ResourceId,
+      AutomationId,
+      Category,
+      Severity
+    ))
   }
 
   @js.native

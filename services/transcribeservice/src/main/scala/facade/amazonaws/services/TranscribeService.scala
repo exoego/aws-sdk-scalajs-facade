@@ -625,41 +625,39 @@ package transcribeservice {
     val `ja-JP` = "ja-JP".asInstanceOf[LanguageCode]
     val `ar-AE` = "ar-AE".asInstanceOf[LanguageCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `en-US`,
-        `es-US`,
-        `en-AU`,
-        `fr-CA`,
-        `en-GB`,
-        `de-DE`,
-        `pt-BR`,
-        `fr-FR`,
-        `it-IT`,
-        `ko-KR`,
-        `es-ES`,
-        `en-IN`,
-        `hi-IN`,
-        `ar-SA`,
-        `ru-RU`,
-        `zh-CN`,
-        `nl-NL`,
-        `id-ID`,
-        `ta-IN`,
-        `fa-IR`,
-        `en-IE`,
-        `en-AB`,
-        `en-WL`,
-        `pt-PT`,
-        `te-IN`,
-        `tr-TR`,
-        `de-CH`,
-        `he-IL`,
-        `ms-MY`,
-        `ja-JP`,
-        `ar-AE`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      `en-US`,
+      `es-US`,
+      `en-AU`,
+      `fr-CA`,
+      `en-GB`,
+      `de-DE`,
+      `pt-BR`,
+      `fr-FR`,
+      `it-IT`,
+      `ko-KR`,
+      `es-ES`,
+      `en-IN`,
+      `hi-IN`,
+      `ar-SA`,
+      `ru-RU`,
+      `zh-CN`,
+      `nl-NL`,
+      `id-ID`,
+      `ta-IN`,
+      `fa-IR`,
+      `en-IE`,
+      `en-AB`,
+      `en-WL`,
+      `pt-PT`,
+      `te-IN`,
+      `tr-TR`,
+      `de-CH`,
+      `he-IL`,
+      `ms-MY`,
+      `ja-JP`,
+      `ar-AE`
+    ))
   }
 
   @js.native

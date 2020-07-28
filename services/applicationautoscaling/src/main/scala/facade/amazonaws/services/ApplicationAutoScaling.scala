@@ -526,26 +526,24 @@ package applicationautoscaling {
     val CassandraReadCapacityUtilization = "CassandraReadCapacityUtilization".asInstanceOf[MetricType]
     val CassandraWriteCapacityUtilization = "CassandraWriteCapacityUtilization".asInstanceOf[MetricType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        DynamoDBReadCapacityUtilization,
-        DynamoDBWriteCapacityUtilization,
-        ALBRequestCountPerTarget,
-        RDSReaderAverageCPUUtilization,
-        RDSReaderAverageDatabaseConnections,
-        EC2SpotFleetRequestAverageCPUUtilization,
-        EC2SpotFleetRequestAverageNetworkIn,
-        EC2SpotFleetRequestAverageNetworkOut,
-        SageMakerVariantInvocationsPerInstance,
-        ECSServiceAverageCPUUtilization,
-        ECSServiceAverageMemoryUtilization,
-        AppStreamAverageCapacityUtilization,
-        ComprehendInferenceUtilization,
-        LambdaProvisionedConcurrencyUtilization,
-        CassandraReadCapacityUtilization,
-        CassandraWriteCapacityUtilization
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      DynamoDBReadCapacityUtilization,
+      DynamoDBWriteCapacityUtilization,
+      ALBRequestCountPerTarget,
+      RDSReaderAverageCPUUtilization,
+      RDSReaderAverageDatabaseConnections,
+      EC2SpotFleetRequestAverageCPUUtilization,
+      EC2SpotFleetRequestAverageNetworkIn,
+      EC2SpotFleetRequestAverageNetworkOut,
+      SageMakerVariantInvocationsPerInstance,
+      ECSServiceAverageCPUUtilization,
+      ECSServiceAverageMemoryUtilization,
+      AppStreamAverageCapacityUtilization,
+      ComprehendInferenceUtilization,
+      LambdaProvisionedConcurrencyUtilization,
+      CassandraReadCapacityUtilization,
+      CassandraWriteCapacityUtilization
+    ))
   }
 
   @js.native
@@ -759,25 +757,23 @@ package applicationautoscaling {
     val `cassandra:table:ReadCapacityUnits` = "cassandra:table:ReadCapacityUnits".asInstanceOf[ScalableDimension]
     val `cassandra:table:WriteCapacityUnits` = "cassandra:table:WriteCapacityUnits".asInstanceOf[ScalableDimension]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `ecs:service:DesiredCount`,
-        `ec2:spot-fleet-request:TargetCapacity`,
-        `elasticmapreduce:instancegroup:InstanceCount`,
-        `appstream:fleet:DesiredCapacity`,
-        `dynamodb:table:ReadCapacityUnits`,
-        `dynamodb:table:WriteCapacityUnits`,
-        `dynamodb:index:ReadCapacityUnits`,
-        `dynamodb:index:WriteCapacityUnits`,
-        `rds:cluster:ReadReplicaCount`,
-        `sagemaker:variant:DesiredInstanceCount`,
-        `custom-resource:ResourceType:Property`,
-        `comprehend:document-classifier-endpoint:DesiredInferenceUnits`,
-        `lambda:function:ProvisionedConcurrency`,
-        `cassandra:table:ReadCapacityUnits`,
-        `cassandra:table:WriteCapacityUnits`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      `ecs:service:DesiredCount`,
+      `ec2:spot-fleet-request:TargetCapacity`,
+      `elasticmapreduce:instancegroup:InstanceCount`,
+      `appstream:fleet:DesiredCapacity`,
+      `dynamodb:table:ReadCapacityUnits`,
+      `dynamodb:table:WriteCapacityUnits`,
+      `dynamodb:index:ReadCapacityUnits`,
+      `dynamodb:index:WriteCapacityUnits`,
+      `rds:cluster:ReadReplicaCount`,
+      `sagemaker:variant:DesiredInstanceCount`,
+      `custom-resource:ResourceType:Property`,
+      `comprehend:document-classifier-endpoint:DesiredInferenceUnits`,
+      `lambda:function:ProvisionedConcurrency`,
+      `cassandra:table:ReadCapacityUnits`,
+      `cassandra:table:WriteCapacityUnits`
+    ))
   }
 
   /**

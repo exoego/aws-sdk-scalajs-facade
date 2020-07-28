@@ -511,23 +511,21 @@ package inspector {
     val COMPLETED_WITH_ERRORS = "COMPLETED_WITH_ERRORS".asInstanceOf[AssessmentRunState]
     val CANCELED = "CANCELED".asInstanceOf[AssessmentRunState]
 
-    val values = js.Object.freeze(
-      js.Array(
-        CREATED,
-        START_DATA_COLLECTION_PENDING,
-        START_DATA_COLLECTION_IN_PROGRESS,
-        COLLECTING_DATA,
-        STOP_DATA_COLLECTION_PENDING,
-        DATA_COLLECTED,
-        START_EVALUATING_RULES_PENDING,
-        EVALUATING_RULES,
-        FAILED,
-        ERROR,
-        COMPLETED,
-        COMPLETED_WITH_ERRORS,
-        CANCELED
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      CREATED,
+      START_DATA_COLLECTION_PENDING,
+      START_DATA_COLLECTION_IN_PROGRESS,
+      COLLECTING_DATA,
+      STOP_DATA_COLLECTION_PENDING,
+      DATA_COLLECTED,
+      START_EVALUATING_RULES_PENDING,
+      EVALUATING_RULES,
+      FAILED,
+      ERROR,
+      COMPLETED,
+      COMPLETED_WITH_ERRORS,
+      CANCELED
+    ))
   }
 
   /**

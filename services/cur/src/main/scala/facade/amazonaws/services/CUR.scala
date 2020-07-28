@@ -57,21 +57,19 @@ package cur {
     val `ap-northeast-3` = "ap-northeast-3".asInstanceOf[AWSRegion]
     val `ap-east-1` = "ap-east-1".asInstanceOf[AWSRegion]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `us-east-1`,
-        `us-west-1`,
-        `us-west-2`,
-        `eu-central-1`,
-        `eu-west-1`,
-        `ap-southeast-1`,
-        `ap-southeast-2`,
-        `ap-northeast-1`,
-        `eu-north-1`,
-        `ap-northeast-3`,
-        `ap-east-1`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      `us-east-1`,
+      `us-west-1`,
+      `us-west-2`,
+      `eu-central-1`,
+      `eu-west-1`,
+      `ap-southeast-1`,
+      `ap-southeast-2`,
+      `ap-northeast-1`,
+      `eu-north-1`,
+      `ap-northeast-3`,
+      `ap-east-1`
+    ))
   }
 
   /**

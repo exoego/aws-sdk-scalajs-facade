@@ -1722,31 +1722,29 @@ package glue {
     val KAFKA_CUSTOM_CERT = "KAFKA_CUSTOM_CERT".asInstanceOf[ConnectionPropertyKey]
     val KAFKA_SKIP_CUSTOM_CERT_VALIDATION = "KAFKA_SKIP_CUSTOM_CERT_VALIDATION".asInstanceOf[ConnectionPropertyKey]
 
-    val values = js.Object.freeze(
-      js.Array(
-        HOST,
-        PORT,
-        USERNAME,
-        PASSWORD,
-        ENCRYPTED_PASSWORD,
-        JDBC_DRIVER_JAR_URI,
-        JDBC_DRIVER_CLASS_NAME,
-        JDBC_ENGINE,
-        JDBC_ENGINE_VERSION,
-        CONFIG_FILES,
-        INSTANCE_ID,
-        JDBC_CONNECTION_URL,
-        JDBC_ENFORCE_SSL,
-        CUSTOM_JDBC_CERT,
-        SKIP_CUSTOM_JDBC_CERT_VALIDATION,
-        CUSTOM_JDBC_CERT_STRING,
-        CONNECTION_URL,
-        KAFKA_BOOTSTRAP_SERVERS,
-        KAFKA_SSL_ENABLED,
-        KAFKA_CUSTOM_CERT,
-        KAFKA_SKIP_CUSTOM_CERT_VALIDATION
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      HOST,
+      PORT,
+      USERNAME,
+      PASSWORD,
+      ENCRYPTED_PASSWORD,
+      JDBC_DRIVER_JAR_URI,
+      JDBC_DRIVER_CLASS_NAME,
+      JDBC_ENGINE,
+      JDBC_ENGINE_VERSION,
+      CONFIG_FILES,
+      INSTANCE_ID,
+      JDBC_CONNECTION_URL,
+      JDBC_ENFORCE_SSL,
+      CUSTOM_JDBC_CERT,
+      SKIP_CUSTOM_JDBC_CERT_VALIDATION,
+      CUSTOM_JDBC_CERT_STRING,
+      CONNECTION_URL,
+      KAFKA_BOOTSTRAP_SERVERS,
+      KAFKA_SSL_ENABLED,
+      KAFKA_CUSTOM_CERT,
+      KAFKA_SKIP_CUSTOM_CERT_VALIDATION
+    ))
   }
 
   @js.native

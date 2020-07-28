@@ -2175,24 +2175,22 @@ package cloudformation {
     val NetworkFailure = "NetworkFailure".asInstanceOf[HandlerErrorCode]
     val InternalFailure = "InternalFailure".asInstanceOf[HandlerErrorCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        NotUpdatable,
-        InvalidRequest,
-        AccessDenied,
-        InvalidCredentials,
-        AlreadyExists,
-        NotFound,
-        ResourceConflict,
-        Throttling,
-        ServiceLimitExceeded,
-        NotStabilized,
-        GeneralServiceException,
-        ServiceInternalError,
-        NetworkFailure,
-        InternalFailure
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      NotUpdatable,
+      InvalidRequest,
+      AccessDenied,
+      InvalidCredentials,
+      AlreadyExists,
+      NotFound,
+      ResourceConflict,
+      Throttling,
+      ServiceLimitExceeded,
+      NotStabilized,
+      GeneralServiceException,
+      ServiceInternalError,
+      NetworkFailure,
+      InternalFailure
+    ))
   }
 
   /**
@@ -3230,26 +3228,24 @@ package cloudformation {
     val IMPORT_ROLLBACK_FAILED = "IMPORT_ROLLBACK_FAILED".asInstanceOf[ResourceStatus]
     val IMPORT_ROLLBACK_COMPLETE = "IMPORT_ROLLBACK_COMPLETE".asInstanceOf[ResourceStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        CREATE_IN_PROGRESS,
-        CREATE_FAILED,
-        CREATE_COMPLETE,
-        DELETE_IN_PROGRESS,
-        DELETE_FAILED,
-        DELETE_COMPLETE,
-        DELETE_SKIPPED,
-        UPDATE_IN_PROGRESS,
-        UPDATE_FAILED,
-        UPDATE_COMPLETE,
-        IMPORT_FAILED,
-        IMPORT_COMPLETE,
-        IMPORT_IN_PROGRESS,
-        IMPORT_ROLLBACK_IN_PROGRESS,
-        IMPORT_ROLLBACK_FAILED,
-        IMPORT_ROLLBACK_COMPLETE
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      CREATE_IN_PROGRESS,
+      CREATE_FAILED,
+      CREATE_COMPLETE,
+      DELETE_IN_PROGRESS,
+      DELETE_FAILED,
+      DELETE_COMPLETE,
+      DELETE_SKIPPED,
+      UPDATE_IN_PROGRESS,
+      UPDATE_FAILED,
+      UPDATE_COMPLETE,
+      IMPORT_FAILED,
+      IMPORT_COMPLETE,
+      IMPORT_IN_PROGRESS,
+      IMPORT_ROLLBACK_IN_PROGRESS,
+      IMPORT_ROLLBACK_FAILED,
+      IMPORT_ROLLBACK_COMPLETE
+    ))
   }
 
   /**
@@ -4450,32 +4446,30 @@ package cloudformation {
     val IMPORT_ROLLBACK_FAILED = "IMPORT_ROLLBACK_FAILED".asInstanceOf[StackStatus]
     val IMPORT_ROLLBACK_COMPLETE = "IMPORT_ROLLBACK_COMPLETE".asInstanceOf[StackStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        CREATE_IN_PROGRESS,
-        CREATE_FAILED,
-        CREATE_COMPLETE,
-        ROLLBACK_IN_PROGRESS,
-        ROLLBACK_FAILED,
-        ROLLBACK_COMPLETE,
-        DELETE_IN_PROGRESS,
-        DELETE_FAILED,
-        DELETE_COMPLETE,
-        UPDATE_IN_PROGRESS,
-        UPDATE_COMPLETE_CLEANUP_IN_PROGRESS,
-        UPDATE_COMPLETE,
-        UPDATE_ROLLBACK_IN_PROGRESS,
-        UPDATE_ROLLBACK_FAILED,
-        UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS,
-        UPDATE_ROLLBACK_COMPLETE,
-        REVIEW_IN_PROGRESS,
-        IMPORT_IN_PROGRESS,
-        IMPORT_COMPLETE,
-        IMPORT_ROLLBACK_IN_PROGRESS,
-        IMPORT_ROLLBACK_FAILED,
-        IMPORT_ROLLBACK_COMPLETE
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      CREATE_IN_PROGRESS,
+      CREATE_FAILED,
+      CREATE_COMPLETE,
+      ROLLBACK_IN_PROGRESS,
+      ROLLBACK_FAILED,
+      ROLLBACK_COMPLETE,
+      DELETE_IN_PROGRESS,
+      DELETE_FAILED,
+      DELETE_COMPLETE,
+      UPDATE_IN_PROGRESS,
+      UPDATE_COMPLETE_CLEANUP_IN_PROGRESS,
+      UPDATE_COMPLETE,
+      UPDATE_ROLLBACK_IN_PROGRESS,
+      UPDATE_ROLLBACK_FAILED,
+      UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS,
+      UPDATE_ROLLBACK_COMPLETE,
+      REVIEW_IN_PROGRESS,
+      IMPORT_IN_PROGRESS,
+      IMPORT_COMPLETE,
+      IMPORT_ROLLBACK_IN_PROGRESS,
+      IMPORT_ROLLBACK_FAILED,
+      IMPORT_ROLLBACK_COMPLETE
+    ))
   }
 
   /**

@@ -4437,27 +4437,25 @@ package medialive {
     val H264_LEVEL_5_2 = "H264_LEVEL_5_2".asInstanceOf[H264Level]
     val H264_LEVEL_AUTO = "H264_LEVEL_AUTO".asInstanceOf[H264Level]
 
-    val values = js.Object.freeze(
-      js.Array(
-        H264_LEVEL_1,
-        H264_LEVEL_1_1,
-        H264_LEVEL_1_2,
-        H264_LEVEL_1_3,
-        H264_LEVEL_2,
-        H264_LEVEL_2_1,
-        H264_LEVEL_2_2,
-        H264_LEVEL_3,
-        H264_LEVEL_3_1,
-        H264_LEVEL_3_2,
-        H264_LEVEL_4,
-        H264_LEVEL_4_1,
-        H264_LEVEL_4_2,
-        H264_LEVEL_5,
-        H264_LEVEL_5_1,
-        H264_LEVEL_5_2,
-        H264_LEVEL_AUTO
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      H264_LEVEL_1,
+      H264_LEVEL_1_1,
+      H264_LEVEL_1_2,
+      H264_LEVEL_1_3,
+      H264_LEVEL_2,
+      H264_LEVEL_2_1,
+      H264_LEVEL_2_2,
+      H264_LEVEL_3,
+      H264_LEVEL_3_1,
+      H264_LEVEL_3_2,
+      H264_LEVEL_4,
+      H264_LEVEL_4_1,
+      H264_LEVEL_4_2,
+      H264_LEVEL_5,
+      H264_LEVEL_5_1,
+      H264_LEVEL_5_2,
+      H264_LEVEL_AUTO
+    ))
   }
 
   /**
@@ -4882,24 +4880,22 @@ package medialive {
     val H265_LEVEL_6_2 = "H265_LEVEL_6_2".asInstanceOf[H265Level]
     val H265_LEVEL_AUTO = "H265_LEVEL_AUTO".asInstanceOf[H265Level]
 
-    val values = js.Object.freeze(
-      js.Array(
-        H265_LEVEL_1,
-        H265_LEVEL_2,
-        H265_LEVEL_2_1,
-        H265_LEVEL_3,
-        H265_LEVEL_3_1,
-        H265_LEVEL_4,
-        H265_LEVEL_4_1,
-        H265_LEVEL_5,
-        H265_LEVEL_5_1,
-        H265_LEVEL_5_2,
-        H265_LEVEL_6,
-        H265_LEVEL_6_1,
-        H265_LEVEL_6_2,
-        H265_LEVEL_AUTO
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      H265_LEVEL_1,
+      H265_LEVEL_2,
+      H265_LEVEL_2_1,
+      H265_LEVEL_3,
+      H265_LEVEL_3_1,
+      H265_LEVEL_4,
+      H265_LEVEL_4_1,
+      H265_LEVEL_5,
+      H265_LEVEL_5_1,
+      H265_LEVEL_5_2,
+      H265_LEVEL_6,
+      H265_LEVEL_6_1,
+      H265_LEVEL_6_2,
+      H265_LEVEL_AUTO
+    ))
   }
 
   /**
@@ -10706,27 +10702,25 @@ package medialive {
     val STRENGTH_15 = "STRENGTH_15".asInstanceOf[TemporalFilterStrength]
     val STRENGTH_16 = "STRENGTH_16".asInstanceOf[TemporalFilterStrength]
 
-    val values = js.Object.freeze(
-      js.Array(
-        AUTO,
-        STRENGTH_1,
-        STRENGTH_2,
-        STRENGTH_3,
-        STRENGTH_4,
-        STRENGTH_5,
-        STRENGTH_6,
-        STRENGTH_7,
-        STRENGTH_8,
-        STRENGTH_9,
-        STRENGTH_10,
-        STRENGTH_11,
-        STRENGTH_12,
-        STRENGTH_13,
-        STRENGTH_14,
-        STRENGTH_15,
-        STRENGTH_16
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      AUTO,
+      STRENGTH_1,
+      STRENGTH_2,
+      STRENGTH_3,
+      STRENGTH_4,
+      STRENGTH_5,
+      STRENGTH_6,
+      STRENGTH_7,
+      STRENGTH_8,
+      STRENGTH_9,
+      STRENGTH_10,
+      STRENGTH_11,
+      STRENGTH_12,
+      STRENGTH_13,
+      STRENGTH_14,
+      STRENGTH_15,
+      STRENGTH_16
+    ))
   }
 
   /**

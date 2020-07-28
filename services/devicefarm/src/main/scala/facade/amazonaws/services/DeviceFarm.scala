@@ -365,38 +365,36 @@ package devicefarm {
     val CUSTOMER_ARTIFACT_LOG = "CUSTOMER_ARTIFACT_LOG".asInstanceOf[ArtifactType]
     val TESTSPEC_OUTPUT = "TESTSPEC_OUTPUT".asInstanceOf[ArtifactType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        UNKNOWN,
-        SCREENSHOT,
-        DEVICE_LOG,
-        MESSAGE_LOG,
-        VIDEO_LOG,
-        RESULT_LOG,
-        SERVICE_LOG,
-        WEBKIT_LOG,
-        INSTRUMENTATION_OUTPUT,
-        EXERCISER_MONKEY_OUTPUT,
-        CALABASH_JSON_OUTPUT,
-        CALABASH_PRETTY_OUTPUT,
-        CALABASH_STANDARD_OUTPUT,
-        CALABASH_JAVA_XML_OUTPUT,
-        AUTOMATION_OUTPUT,
-        APPIUM_SERVER_OUTPUT,
-        APPIUM_JAVA_OUTPUT,
-        APPIUM_JAVA_XML_OUTPUT,
-        APPIUM_PYTHON_OUTPUT,
-        APPIUM_PYTHON_XML_OUTPUT,
-        EXPLORER_EVENT_LOG,
-        EXPLORER_SUMMARY_LOG,
-        APPLICATION_CRASH_REPORT,
-        XCTEST_LOG,
-        VIDEO,
-        CUSTOMER_ARTIFACT,
-        CUSTOMER_ARTIFACT_LOG,
-        TESTSPEC_OUTPUT
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      UNKNOWN,
+      SCREENSHOT,
+      DEVICE_LOG,
+      MESSAGE_LOG,
+      VIDEO_LOG,
+      RESULT_LOG,
+      SERVICE_LOG,
+      WEBKIT_LOG,
+      INSTRUMENTATION_OUTPUT,
+      EXERCISER_MONKEY_OUTPUT,
+      CALABASH_JSON_OUTPUT,
+      CALABASH_PRETTY_OUTPUT,
+      CALABASH_STANDARD_OUTPUT,
+      CALABASH_JAVA_XML_OUTPUT,
+      AUTOMATION_OUTPUT,
+      APPIUM_SERVER_OUTPUT,
+      APPIUM_JAVA_OUTPUT,
+      APPIUM_JAVA_XML_OUTPUT,
+      APPIUM_PYTHON_OUTPUT,
+      APPIUM_PYTHON_XML_OUTPUT,
+      EXPLORER_EVENT_LOG,
+      EXPLORER_SUMMARY_LOG,
+      APPLICATION_CRASH_REPORT,
+      XCTEST_LOG,
+      VIDEO,
+      CUSTOMER_ARTIFACT,
+      CUSTOMER_ARTIFACT_LOG,
+      TESTSPEC_OUTPUT
+    ))
   }
 
   @js.native
@@ -1382,23 +1380,21 @@ package devicefarm {
     val MODEL = "MODEL".asInstanceOf[DeviceAttribute]
     val AVAILABILITY = "AVAILABILITY".asInstanceOf[DeviceAttribute]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ARN,
-        PLATFORM,
-        FORM_FACTOR,
-        MANUFACTURER,
-        REMOTE_ACCESS_ENABLED,
-        REMOTE_DEBUG_ENABLED,
-        APPIUM_VERSION,
-        INSTANCE_ARN,
-        INSTANCE_LABELS,
-        FLEET_TYPE,
-        OS_VERSION,
-        MODEL,
-        AVAILABILITY
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      ARN,
+      PLATFORM,
+      FORM_FACTOR,
+      MANUFACTURER,
+      REMOTE_ACCESS_ENABLED,
+      REMOTE_DEBUG_ENABLED,
+      APPIUM_VERSION,
+      INSTANCE_ARN,
+      INSTANCE_LABELS,
+      FLEET_TYPE,
+      OS_VERSION,
+      MODEL,
+      AVAILABILITY
+    ))
   }
 
   @js.native
@@ -1454,22 +1450,20 @@ package devicefarm {
     val INSTANCE_LABELS = "INSTANCE_LABELS".asInstanceOf[DeviceFilterAttribute]
     val FLEET_TYPE = "FLEET_TYPE".asInstanceOf[DeviceFilterAttribute]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ARN,
-        PLATFORM,
-        OS_VERSION,
-        MODEL,
-        AVAILABILITY,
-        FORM_FACTOR,
-        MANUFACTURER,
-        REMOTE_ACCESS_ENABLED,
-        REMOTE_DEBUG_ENABLED,
-        INSTANCE_ARN,
-        INSTANCE_LABELS,
-        FLEET_TYPE
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      ARN,
+      PLATFORM,
+      OS_VERSION,
+      MODEL,
+      AVAILABILITY,
+      FORM_FACTOR,
+      MANUFACTURER,
+      REMOTE_ACCESS_ENABLED,
+      REMOTE_DEBUG_ENABLED,
+      INSTANCE_ARN,
+      INSTANCE_LABELS,
+      FLEET_TYPE
+    ))
   }
 
   @js.native
@@ -4436,27 +4430,25 @@ package devicefarm {
     val OPENGL_AVG_DRAWTIME = "OPENGL_AVG_DRAWTIME".asInstanceOf[SampleType]
     val OPENGL_MAX_DRAWTIME = "OPENGL_MAX_DRAWTIME".asInstanceOf[SampleType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        CPU,
-        MEMORY,
-        THREADS,
-        RX_RATE,
-        TX_RATE,
-        RX,
-        TX,
-        NATIVE_FRAMES,
-        NATIVE_FPS,
-        NATIVE_MIN_DRAWTIME,
-        NATIVE_AVG_DRAWTIME,
-        NATIVE_MAX_DRAWTIME,
-        OPENGL_FRAMES,
-        OPENGL_FPS,
-        OPENGL_MIN_DRAWTIME,
-        OPENGL_AVG_DRAWTIME,
-        OPENGL_MAX_DRAWTIME
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      CPU,
+      MEMORY,
+      THREADS,
+      RX_RATE,
+      TX_RATE,
+      RX,
+      TX,
+      NATIVE_FRAMES,
+      NATIVE_FPS,
+      NATIVE_MIN_DRAWTIME,
+      NATIVE_AVG_DRAWTIME,
+      NATIVE_MAX_DRAWTIME,
+      OPENGL_FRAMES,
+      OPENGL_FPS,
+      OPENGL_MIN_DRAWTIME,
+      OPENGL_AVG_DRAWTIME,
+      OPENGL_MAX_DRAWTIME
+    ))
   }
 
   /**
@@ -5040,31 +5032,29 @@ package devicefarm {
     val REMOTE_ACCESS_RECORD = "REMOTE_ACCESS_RECORD".asInstanceOf[TestType]
     val REMOTE_ACCESS_REPLAY = "REMOTE_ACCESS_REPLAY".asInstanceOf[TestType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        BUILTIN_FUZZ,
-        BUILTIN_EXPLORER,
-        WEB_PERFORMANCE_PROFILE,
-        APPIUM_JAVA_JUNIT,
-        APPIUM_JAVA_TESTNG,
-        APPIUM_PYTHON,
-        APPIUM_NODE,
-        APPIUM_RUBY,
-        APPIUM_WEB_JAVA_JUNIT,
-        APPIUM_WEB_JAVA_TESTNG,
-        APPIUM_WEB_PYTHON,
-        APPIUM_WEB_NODE,
-        APPIUM_WEB_RUBY,
-        CALABASH,
-        INSTRUMENTATION,
-        UIAUTOMATION,
-        UIAUTOMATOR,
-        XCTEST,
-        XCTEST_UI,
-        REMOTE_ACCESS_RECORD,
-        REMOTE_ACCESS_REPLAY
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      BUILTIN_FUZZ,
+      BUILTIN_EXPLORER,
+      WEB_PERFORMANCE_PROFILE,
+      APPIUM_JAVA_JUNIT,
+      APPIUM_JAVA_TESTNG,
+      APPIUM_PYTHON,
+      APPIUM_NODE,
+      APPIUM_RUBY,
+      APPIUM_WEB_JAVA_JUNIT,
+      APPIUM_WEB_JAVA_TESTNG,
+      APPIUM_WEB_PYTHON,
+      APPIUM_WEB_NODE,
+      APPIUM_WEB_RUBY,
+      CALABASH,
+      INSTRUMENTATION,
+      UIAUTOMATION,
+      UIAUTOMATOR,
+      XCTEST,
+      XCTEST_UI,
+      REMOTE_ACCESS_RECORD,
+      REMOTE_ACCESS_REPLAY
+    ))
   }
 
   /**
@@ -5633,42 +5623,40 @@ package devicefarm {
     val INSTRUMENTATION_TEST_SPEC = "INSTRUMENTATION_TEST_SPEC".asInstanceOf[UploadType]
     val XCTEST_UI_TEST_SPEC = "XCTEST_UI_TEST_SPEC".asInstanceOf[UploadType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ANDROID_APP,
-        IOS_APP,
-        WEB_APP,
-        EXTERNAL_DATA,
-        APPIUM_JAVA_JUNIT_TEST_PACKAGE,
-        APPIUM_JAVA_TESTNG_TEST_PACKAGE,
-        APPIUM_PYTHON_TEST_PACKAGE,
-        APPIUM_NODE_TEST_PACKAGE,
-        APPIUM_RUBY_TEST_PACKAGE,
-        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE,
-        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE,
-        APPIUM_WEB_PYTHON_TEST_PACKAGE,
-        APPIUM_WEB_NODE_TEST_PACKAGE,
-        APPIUM_WEB_RUBY_TEST_PACKAGE,
-        CALABASH_TEST_PACKAGE,
-        INSTRUMENTATION_TEST_PACKAGE,
-        UIAUTOMATION_TEST_PACKAGE,
-        UIAUTOMATOR_TEST_PACKAGE,
-        XCTEST_TEST_PACKAGE,
-        XCTEST_UI_TEST_PACKAGE,
-        APPIUM_JAVA_JUNIT_TEST_SPEC,
-        APPIUM_JAVA_TESTNG_TEST_SPEC,
-        APPIUM_PYTHON_TEST_SPEC,
-        APPIUM_NODE_TEST_SPEC,
-        APPIUM_RUBY_TEST_SPEC,
-        APPIUM_WEB_JAVA_JUNIT_TEST_SPEC,
-        APPIUM_WEB_JAVA_TESTNG_TEST_SPEC,
-        APPIUM_WEB_PYTHON_TEST_SPEC,
-        APPIUM_WEB_NODE_TEST_SPEC,
-        APPIUM_WEB_RUBY_TEST_SPEC,
-        INSTRUMENTATION_TEST_SPEC,
-        XCTEST_UI_TEST_SPEC
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      ANDROID_APP,
+      IOS_APP,
+      WEB_APP,
+      EXTERNAL_DATA,
+      APPIUM_JAVA_JUNIT_TEST_PACKAGE,
+      APPIUM_JAVA_TESTNG_TEST_PACKAGE,
+      APPIUM_PYTHON_TEST_PACKAGE,
+      APPIUM_NODE_TEST_PACKAGE,
+      APPIUM_RUBY_TEST_PACKAGE,
+      APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE,
+      APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE,
+      APPIUM_WEB_PYTHON_TEST_PACKAGE,
+      APPIUM_WEB_NODE_TEST_PACKAGE,
+      APPIUM_WEB_RUBY_TEST_PACKAGE,
+      CALABASH_TEST_PACKAGE,
+      INSTRUMENTATION_TEST_PACKAGE,
+      UIAUTOMATION_TEST_PACKAGE,
+      UIAUTOMATOR_TEST_PACKAGE,
+      XCTEST_TEST_PACKAGE,
+      XCTEST_UI_TEST_PACKAGE,
+      APPIUM_JAVA_JUNIT_TEST_SPEC,
+      APPIUM_JAVA_TESTNG_TEST_SPEC,
+      APPIUM_PYTHON_TEST_SPEC,
+      APPIUM_NODE_TEST_SPEC,
+      APPIUM_RUBY_TEST_SPEC,
+      APPIUM_WEB_JAVA_JUNIT_TEST_SPEC,
+      APPIUM_WEB_JAVA_TESTNG_TEST_SPEC,
+      APPIUM_WEB_PYTHON_TEST_SPEC,
+      APPIUM_WEB_NODE_TEST_SPEC,
+      APPIUM_WEB_RUBY_TEST_SPEC,
+      INSTRUMENTATION_TEST_SPEC,
+      XCTEST_UI_TEST_SPEC
+    ))
   }
 
   /**

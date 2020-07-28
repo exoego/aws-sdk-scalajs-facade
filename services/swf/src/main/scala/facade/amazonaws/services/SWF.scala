@@ -1046,19 +1046,17 @@ package swf {
     val CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED = "CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
 
-    val values = js.Object.freeze(
-      js.Array(
-        UNHANDLED_DECISION,
-        WORKFLOW_TYPE_DEPRECATED,
-        WORKFLOW_TYPE_DOES_NOT_EXIST,
-        DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED,
-        DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED,
-        DEFAULT_TASK_LIST_UNDEFINED,
-        DEFAULT_CHILD_POLICY_UNDEFINED,
-        CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED,
-        OPERATION_NOT_PERMITTED
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      UNHANDLED_DECISION,
+      WORKFLOW_TYPE_DEPRECATED,
+      WORKFLOW_TYPE_DOES_NOT_EXIST,
+      DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED,
+      DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED,
+      DEFAULT_TASK_LIST_UNDEFINED,
+      DEFAULT_CHILD_POLICY_UNDEFINED,
+      CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED,
+      OPERATION_NOT_PERMITTED
+    ))
   }
 
   /**
@@ -1470,23 +1468,21 @@ package swf {
     val StartChildWorkflowExecution = "StartChildWorkflowExecution".asInstanceOf[DecisionType]
     val ScheduleLambdaFunction = "ScheduleLambdaFunction".asInstanceOf[DecisionType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ScheduleActivityTask,
-        RequestCancelActivityTask,
-        CompleteWorkflowExecution,
-        FailWorkflowExecution,
-        CancelWorkflowExecution,
-        ContinueAsNewWorkflowExecution,
-        RecordMarker,
-        StartTimer,
-        CancelTimer,
-        SignalExternalWorkflowExecution,
-        RequestCancelExternalWorkflowExecution,
-        StartChildWorkflowExecution,
-        ScheduleLambdaFunction
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      ScheduleActivityTask,
+      RequestCancelActivityTask,
+      CompleteWorkflowExecution,
+      FailWorkflowExecution,
+      CancelWorkflowExecution,
+      ContinueAsNewWorkflowExecution,
+      RecordMarker,
+      StartTimer,
+      CancelTimer,
+      SignalExternalWorkflowExecution,
+      RequestCancelExternalWorkflowExecution,
+      StartChildWorkflowExecution,
+      ScheduleLambdaFunction
+    ))
   }
 
   @js.native
@@ -1787,64 +1783,62 @@ package swf {
     val ScheduleLambdaFunctionFailed = "ScheduleLambdaFunctionFailed".asInstanceOf[EventType]
     val StartLambdaFunctionFailed = "StartLambdaFunctionFailed".asInstanceOf[EventType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        WorkflowExecutionStarted,
-        WorkflowExecutionCancelRequested,
-        WorkflowExecutionCompleted,
-        CompleteWorkflowExecutionFailed,
-        WorkflowExecutionFailed,
-        FailWorkflowExecutionFailed,
-        WorkflowExecutionTimedOut,
-        WorkflowExecutionCanceled,
-        CancelWorkflowExecutionFailed,
-        WorkflowExecutionContinuedAsNew,
-        ContinueAsNewWorkflowExecutionFailed,
-        WorkflowExecutionTerminated,
-        DecisionTaskScheduled,
-        DecisionTaskStarted,
-        DecisionTaskCompleted,
-        DecisionTaskTimedOut,
-        ActivityTaskScheduled,
-        ScheduleActivityTaskFailed,
-        ActivityTaskStarted,
-        ActivityTaskCompleted,
-        ActivityTaskFailed,
-        ActivityTaskTimedOut,
-        ActivityTaskCanceled,
-        ActivityTaskCancelRequested,
-        RequestCancelActivityTaskFailed,
-        WorkflowExecutionSignaled,
-        MarkerRecorded,
-        RecordMarkerFailed,
-        TimerStarted,
-        StartTimerFailed,
-        TimerFired,
-        TimerCanceled,
-        CancelTimerFailed,
-        StartChildWorkflowExecutionInitiated,
-        StartChildWorkflowExecutionFailed,
-        ChildWorkflowExecutionStarted,
-        ChildWorkflowExecutionCompleted,
-        ChildWorkflowExecutionFailed,
-        ChildWorkflowExecutionTimedOut,
-        ChildWorkflowExecutionCanceled,
-        ChildWorkflowExecutionTerminated,
-        SignalExternalWorkflowExecutionInitiated,
-        SignalExternalWorkflowExecutionFailed,
-        ExternalWorkflowExecutionSignaled,
-        RequestCancelExternalWorkflowExecutionInitiated,
-        RequestCancelExternalWorkflowExecutionFailed,
-        ExternalWorkflowExecutionCancelRequested,
-        LambdaFunctionScheduled,
-        LambdaFunctionStarted,
-        LambdaFunctionCompleted,
-        LambdaFunctionFailed,
-        LambdaFunctionTimedOut,
-        ScheduleLambdaFunctionFailed,
-        StartLambdaFunctionFailed
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      WorkflowExecutionStarted,
+      WorkflowExecutionCancelRequested,
+      WorkflowExecutionCompleted,
+      CompleteWorkflowExecutionFailed,
+      WorkflowExecutionFailed,
+      FailWorkflowExecutionFailed,
+      WorkflowExecutionTimedOut,
+      WorkflowExecutionCanceled,
+      CancelWorkflowExecutionFailed,
+      WorkflowExecutionContinuedAsNew,
+      ContinueAsNewWorkflowExecutionFailed,
+      WorkflowExecutionTerminated,
+      DecisionTaskScheduled,
+      DecisionTaskStarted,
+      DecisionTaskCompleted,
+      DecisionTaskTimedOut,
+      ActivityTaskScheduled,
+      ScheduleActivityTaskFailed,
+      ActivityTaskStarted,
+      ActivityTaskCompleted,
+      ActivityTaskFailed,
+      ActivityTaskTimedOut,
+      ActivityTaskCanceled,
+      ActivityTaskCancelRequested,
+      RequestCancelActivityTaskFailed,
+      WorkflowExecutionSignaled,
+      MarkerRecorded,
+      RecordMarkerFailed,
+      TimerStarted,
+      StartTimerFailed,
+      TimerFired,
+      TimerCanceled,
+      CancelTimerFailed,
+      StartChildWorkflowExecutionInitiated,
+      StartChildWorkflowExecutionFailed,
+      ChildWorkflowExecutionStarted,
+      ChildWorkflowExecutionCompleted,
+      ChildWorkflowExecutionFailed,
+      ChildWorkflowExecutionTimedOut,
+      ChildWorkflowExecutionCanceled,
+      ChildWorkflowExecutionTerminated,
+      SignalExternalWorkflowExecutionInitiated,
+      SignalExternalWorkflowExecutionFailed,
+      ExternalWorkflowExecutionSignaled,
+      RequestCancelExternalWorkflowExecutionInitiated,
+      RequestCancelExternalWorkflowExecutionFailed,
+      ExternalWorkflowExecutionCancelRequested,
+      LambdaFunctionScheduled,
+      LambdaFunctionStarted,
+      LambdaFunctionCompleted,
+      LambdaFunctionFailed,
+      LambdaFunctionTimedOut,
+      ScheduleLambdaFunctionFailed,
+      StartLambdaFunctionFailed
+    ))
   }
 
   @js.native
@@ -3365,21 +3359,19 @@ package swf {
     val DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED = "DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED".asInstanceOf[ScheduleActivityTaskFailedCause]
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[ScheduleActivityTaskFailedCause]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ACTIVITY_TYPE_DEPRECATED,
-        ACTIVITY_TYPE_DOES_NOT_EXIST,
-        ACTIVITY_ID_ALREADY_IN_USE,
-        OPEN_ACTIVITIES_LIMIT_EXCEEDED,
-        ACTIVITY_CREATION_RATE_EXCEEDED,
-        DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED,
-        DEFAULT_TASK_LIST_UNDEFINED,
-        DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED,
-        DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED,
-        DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED,
-        OPERATION_NOT_PERMITTED
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      ACTIVITY_TYPE_DEPRECATED,
+      ACTIVITY_TYPE_DOES_NOT_EXIST,
+      ACTIVITY_ID_ALREADY_IN_USE,
+      OPEN_ACTIVITIES_LIMIT_EXCEEDED,
+      ACTIVITY_CREATION_RATE_EXCEEDED,
+      DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED,
+      DEFAULT_TASK_LIST_UNDEFINED,
+      DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED,
+      DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED,
+      DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED,
+      OPERATION_NOT_PERMITTED
+    ))
   }
 
   /**
@@ -3713,21 +3705,19 @@ package swf {
     val DEFAULT_CHILD_POLICY_UNDEFINED = "DEFAULT_CHILD_POLICY_UNDEFINED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
 
-    val values = js.Object.freeze(
-      js.Array(
-        WORKFLOW_TYPE_DOES_NOT_EXIST,
-        WORKFLOW_TYPE_DEPRECATED,
-        OPEN_CHILDREN_LIMIT_EXCEEDED,
-        OPEN_WORKFLOWS_LIMIT_EXCEEDED,
-        CHILD_CREATION_RATE_EXCEEDED,
-        WORKFLOW_ALREADY_RUNNING,
-        DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED,
-        DEFAULT_TASK_LIST_UNDEFINED,
-        DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED,
-        DEFAULT_CHILD_POLICY_UNDEFINED,
-        OPERATION_NOT_PERMITTED
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      WORKFLOW_TYPE_DOES_NOT_EXIST,
+      WORKFLOW_TYPE_DEPRECATED,
+      OPEN_CHILDREN_LIMIT_EXCEEDED,
+      OPEN_WORKFLOWS_LIMIT_EXCEEDED,
+      CHILD_CREATION_RATE_EXCEEDED,
+      WORKFLOW_ALREADY_RUNNING,
+      DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED,
+      DEFAULT_TASK_LIST_UNDEFINED,
+      DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED,
+      DEFAULT_CHILD_POLICY_UNDEFINED,
+      OPERATION_NOT_PERMITTED
+    ))
   }
 
   /**

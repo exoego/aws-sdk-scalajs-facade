@@ -267,19 +267,17 @@ package kms {
     val USER_LOGGED_IN = "USER_LOGGED_IN".asInstanceOf[ConnectionErrorCodeType]
     val SUBNET_NOT_FOUND = "SUBNET_NOT_FOUND".asInstanceOf[ConnectionErrorCodeType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        INVALID_CREDENTIALS,
-        CLUSTER_NOT_FOUND,
-        NETWORK_ERRORS,
-        INTERNAL_ERROR,
-        INSUFFICIENT_CLOUDHSM_HSMS,
-        USER_LOCKED_OUT,
-        USER_NOT_FOUND,
-        USER_LOGGED_IN,
-        SUBNET_NOT_FOUND
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      INVALID_CREDENTIALS,
+      CLUSTER_NOT_FOUND,
+      NETWORK_ERRORS,
+      INTERNAL_ERROR,
+      INSUFFICIENT_CLOUDHSM_HSMS,
+      USER_LOCKED_OUT,
+      USER_NOT_FOUND,
+      USER_LOGGED_IN,
+      SUBNET_NOT_FOUND
+    ))
   }
 
   @js.native
@@ -1421,24 +1419,22 @@ package kms {
     val GenerateDataKeyPair = "GenerateDataKeyPair".asInstanceOf[GrantOperation]
     val GenerateDataKeyPairWithoutPlaintext = "GenerateDataKeyPairWithoutPlaintext".asInstanceOf[GrantOperation]
 
-    val values = js.Object.freeze(
-      js.Array(
-        Decrypt,
-        Encrypt,
-        GenerateDataKey,
-        GenerateDataKeyWithoutPlaintext,
-        ReEncryptFrom,
-        ReEncryptTo,
-        Sign,
-        Verify,
-        GetPublicKey,
-        CreateGrant,
-        RetireGrant,
-        DescribeKey,
-        GenerateDataKeyPair,
-        GenerateDataKeyPairWithoutPlaintext
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      Decrypt,
+      Encrypt,
+      GenerateDataKey,
+      GenerateDataKeyWithoutPlaintext,
+      ReEncryptFrom,
+      ReEncryptTo,
+      Sign,
+      Verify,
+      GetPublicKey,
+      CreateGrant,
+      RetireGrant,
+      DescribeKey,
+      GenerateDataKeyPair,
+      GenerateDataKeyPairWithoutPlaintext
+    ))
   }
 
   @js.native
@@ -2117,19 +2113,17 @@ package kms {
     val ECDSA_SHA_384 = "ECDSA_SHA_384".asInstanceOf[SigningAlgorithmSpec]
     val ECDSA_SHA_512 = "ECDSA_SHA_512".asInstanceOf[SigningAlgorithmSpec]
 
-    val values = js.Object.freeze(
-      js.Array(
-        RSASSA_PSS_SHA_256,
-        RSASSA_PSS_SHA_384,
-        RSASSA_PSS_SHA_512,
-        RSASSA_PKCS1_V1_5_SHA_256,
-        RSASSA_PKCS1_V1_5_SHA_384,
-        RSASSA_PKCS1_V1_5_SHA_512,
-        ECDSA_SHA_256,
-        ECDSA_SHA_384,
-        ECDSA_SHA_512
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      RSASSA_PSS_SHA_256,
+      RSASSA_PSS_SHA_384,
+      RSASSA_PSS_SHA_512,
+      RSASSA_PKCS1_V1_5_SHA_256,
+      RSASSA_PKCS1_V1_5_SHA_384,
+      RSASSA_PKCS1_V1_5_SHA_512,
+      ECDSA_SHA_256,
+      ECDSA_SHA_384,
+      ECDSA_SHA_512
+    ))
   }
 
   /**

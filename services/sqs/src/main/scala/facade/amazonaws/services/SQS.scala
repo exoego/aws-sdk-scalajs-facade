@@ -845,28 +845,26 @@ package sqs {
     val KmsMasterKeyId = "KmsMasterKeyId".asInstanceOf[QueueAttributeName]
     val KmsDataKeyReusePeriodSeconds = "KmsDataKeyReusePeriodSeconds".asInstanceOf[QueueAttributeName]
 
-    val values = js.Object.freeze(
-      js.Array(
-        All,
-        Policy,
-        VisibilityTimeout,
-        MaximumMessageSize,
-        MessageRetentionPeriod,
-        ApproximateNumberOfMessages,
-        ApproximateNumberOfMessagesNotVisible,
-        CreatedTimestamp,
-        LastModifiedTimestamp,
-        QueueArn,
-        ApproximateNumberOfMessagesDelayed,
-        DelaySeconds,
-        ReceiveMessageWaitTimeSeconds,
-        RedrivePolicy,
-        FifoQueue,
-        ContentBasedDeduplication,
-        KmsMasterKeyId,
-        KmsDataKeyReusePeriodSeconds
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      All,
+      Policy,
+      VisibilityTimeout,
+      MaximumMessageSize,
+      MessageRetentionPeriod,
+      ApproximateNumberOfMessages,
+      ApproximateNumberOfMessagesNotVisible,
+      CreatedTimestamp,
+      LastModifiedTimestamp,
+      QueueArn,
+      ApproximateNumberOfMessagesDelayed,
+      DelaySeconds,
+      ReceiveMessageWaitTimeSeconds,
+      RedrivePolicy,
+      FifoQueue,
+      ContentBasedDeduplication,
+      KmsMasterKeyId,
+      KmsDataKeyReusePeriodSeconds
+    ))
   }
 
   /**

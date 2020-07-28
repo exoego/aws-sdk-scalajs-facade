@@ -1207,19 +1207,17 @@ package codeguruprofiler {
     val LambdaRemainingTimeInMilliseconds = "LambdaRemainingTimeInMilliseconds".asInstanceOf[MetadataField]
     val LambdaTimeGapBetweenInvokesInMilliseconds = "LambdaTimeGapBetweenInvokesInMilliseconds".asInstanceOf[MetadataField]
 
-    val values = js.Object.freeze(
-      js.Array(
-        AgentId,
-        AwsRequestId,
-        ComputePlatform,
-        ExecutionEnvironment,
-        LambdaFunctionArn,
-        LambdaMemoryLimitInMB,
-        LambdaPreviousExecutionTimeInMilliseconds,
-        LambdaRemainingTimeInMilliseconds,
-        LambdaTimeGapBetweenInvokesInMilliseconds
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      AgentId,
+      AwsRequestId,
+      ComputePlatform,
+      ExecutionEnvironment,
+      LambdaFunctionArn,
+      LambdaMemoryLimitInMB,
+      LambdaPreviousExecutionTimeInMilliseconds,
+      LambdaRemainingTimeInMilliseconds,
+      LambdaTimeGapBetweenInvokesInMilliseconds
+    ))
   }
 
   /**

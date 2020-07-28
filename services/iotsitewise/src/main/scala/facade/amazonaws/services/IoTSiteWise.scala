@@ -933,19 +933,17 @@ package iotsitewise {
     val TimestampOutOfRangeException = "TimestampOutOfRangeException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
     val AccessDeniedException = "AccessDeniedException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ResourceNotFoundException,
-        InvalidRequestException,
-        InternalFailureException,
-        ServiceUnavailableException,
-        ThrottlingException,
-        LimitExceededException,
-        ConflictingOperationException,
-        TimestampOutOfRangeException,
-        AccessDeniedException
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      ResourceNotFoundException,
+      InvalidRequestException,
+      InternalFailureException,
+      ServiceUnavailableException,
+      ThrottlingException,
+      LimitExceededException,
+      ConflictingOperationException,
+      TimestampOutOfRangeException,
+      AccessDeniedException
+    ))
   }
 
   @js.native

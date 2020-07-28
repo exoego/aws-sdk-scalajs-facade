@@ -1909,20 +1909,18 @@ package cognitoidentityprovider {
     val ADMIN_NO_SRP_AUTH = "ADMIN_NO_SRP_AUTH".asInstanceOf[ChallengeNameType]
     val NEW_PASSWORD_REQUIRED = "NEW_PASSWORD_REQUIRED".asInstanceOf[ChallengeNameType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        SMS_MFA,
-        SOFTWARE_TOKEN_MFA,
-        SELECT_MFA_TYPE,
-        MFA_SETUP,
-        PASSWORD_VERIFIER,
-        CUSTOM_CHALLENGE,
-        DEVICE_SRP_AUTH,
-        DEVICE_PASSWORD_VERIFIER,
-        ADMIN_NO_SRP_AUTH,
-        NEW_PASSWORD_REQUIRED
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      SMS_MFA,
+      SOFTWARE_TOKEN_MFA,
+      SELECT_MFA_TYPE,
+      MFA_SETUP,
+      PASSWORD_VERIFIER,
+      CUSTOM_CHALLENGE,
+      DEVICE_SRP_AUTH,
+      DEVICE_PASSWORD_VERIFIER,
+      ADMIN_NO_SRP_AUTH,
+      NEW_PASSWORD_REQUIRED
+    ))
   }
 
   @js.native
@@ -3508,18 +3506,16 @@ package cognitoidentityprovider {
     val ALLOW_USER_SRP_AUTH = "ALLOW_USER_SRP_AUTH".asInstanceOf[ExplicitAuthFlowsType]
     val ALLOW_REFRESH_TOKEN_AUTH = "ALLOW_REFRESH_TOKEN_AUTH".asInstanceOf[ExplicitAuthFlowsType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ADMIN_NO_SRP_AUTH,
-        CUSTOM_AUTH_FLOW_ONLY,
-        USER_PASSWORD_AUTH,
-        ALLOW_ADMIN_USER_PASSWORD_AUTH,
-        ALLOW_CUSTOM_AUTH,
-        ALLOW_USER_PASSWORD_AUTH,
-        ALLOW_USER_SRP_AUTH,
-        ALLOW_REFRESH_TOKEN_AUTH
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      ADMIN_NO_SRP_AUTH,
+      CUSTOM_AUTH_FLOW_ONLY,
+      USER_PASSWORD_AUTH,
+      ALLOW_ADMIN_USER_PASSWORD_AUTH,
+      ALLOW_CUSTOM_AUTH,
+      ALLOW_USER_PASSWORD_AUTH,
+      ALLOW_USER_SRP_AUTH,
+      ALLOW_REFRESH_TOKEN_AUTH
+    ))
   }
 
   @js.native

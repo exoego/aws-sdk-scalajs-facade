@@ -7093,35 +7093,33 @@ package iam {
     val VersionsPerPolicyQuota = "VersionsPerPolicyQuota".asInstanceOf[summaryKeyType]
     val GlobalEndpointTokenVersion = "GlobalEndpointTokenVersion".asInstanceOf[summaryKeyType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        Users,
-        UsersQuota,
-        Groups,
-        GroupsQuota,
-        ServerCertificates,
-        ServerCertificatesQuota,
-        UserPolicySizeQuota,
-        GroupPolicySizeQuota,
-        GroupsPerUserQuota,
-        SigningCertificatesPerUserQuota,
-        AccessKeysPerUserQuota,
-        MFADevices,
-        MFADevicesInUse,
-        AccountMFAEnabled,
-        AccountAccessKeysPresent,
-        AccountSigningCertificatesPresent,
-        AttachedPoliciesPerGroupQuota,
-        AttachedPoliciesPerRoleQuota,
-        AttachedPoliciesPerUserQuota,
-        Policies,
-        PoliciesQuota,
-        PolicySizeQuota,
-        PolicyVersionsInUse,
-        PolicyVersionsInUseQuota,
-        VersionsPerPolicyQuota,
-        GlobalEndpointTokenVersion
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      Users,
+      UsersQuota,
+      Groups,
+      GroupsQuota,
+      ServerCertificates,
+      ServerCertificatesQuota,
+      UserPolicySizeQuota,
+      GroupPolicySizeQuota,
+      GroupsPerUserQuota,
+      SigningCertificatesPerUserQuota,
+      AccessKeysPerUserQuota,
+      MFADevices,
+      MFADevicesInUse,
+      AccountMFAEnabled,
+      AccountAccessKeysPresent,
+      AccountSigningCertificatesPresent,
+      AttachedPoliciesPerGroupQuota,
+      AttachedPoliciesPerRoleQuota,
+      AttachedPoliciesPerUserQuota,
+      Policies,
+      PoliciesQuota,
+      PolicySizeQuota,
+      PolicyVersionsInUse,
+      PolicyVersionsInUseQuota,
+      VersionsPerPolicyQuota,
+      GlobalEndpointTokenVersion
+    ))
   }
 }

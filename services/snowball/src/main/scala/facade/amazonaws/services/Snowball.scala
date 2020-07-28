@@ -1055,23 +1055,21 @@ package snowball {
     val Listing = "Listing".asInstanceOf[JobState]
     val Pending = "Pending".asInstanceOf[JobState]
 
-    val values = js.Object.freeze(
-      js.Array(
-        New,
-        PreparingAppliance,
-        PreparingShipment,
-        InTransitToCustomer,
-        WithCustomer,
-        InTransitToAWS,
-        WithAWSSortingFacility,
-        WithAWS,
-        InProgress,
-        Complete,
-        Cancelled,
-        Listing,
-        Pending
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      New,
+      PreparingAppliance,
+      PreparingShipment,
+      InTransitToCustomer,
+      WithCustomer,
+      InTransitToAWS,
+      WithAWSSortingFacility,
+      WithAWS,
+      InProgress,
+      Complete,
+      Cancelled,
+      Listing,
+      Pending
+    ))
   }
 
   @js.native

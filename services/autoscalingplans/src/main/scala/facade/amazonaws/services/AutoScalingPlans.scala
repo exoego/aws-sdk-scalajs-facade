@@ -554,18 +554,16 @@ package autoscalingplans {
     val `dynamodb:index:ReadCapacityUnits` = "dynamodb:index:ReadCapacityUnits".asInstanceOf[ScalableDimension]
     val `dynamodb:index:WriteCapacityUnits` = "dynamodb:index:WriteCapacityUnits".asInstanceOf[ScalableDimension]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `autoscaling:autoScalingGroup:DesiredCapacity`,
-        `ecs:service:DesiredCount`,
-        `ec2:spot-fleet-request:TargetCapacity`,
-        `rds:cluster:ReadReplicaCount`,
-        `dynamodb:table:ReadCapacityUnits`,
-        `dynamodb:table:WriteCapacityUnits`,
-        `dynamodb:index:ReadCapacityUnits`,
-        `dynamodb:index:WriteCapacityUnits`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      `autoscaling:autoScalingGroup:DesiredCapacity`,
+      `ecs:service:DesiredCount`,
+      `ec2:spot-fleet-request:TargetCapacity`,
+      `rds:cluster:ReadReplicaCount`,
+      `dynamodb:table:ReadCapacityUnits`,
+      `dynamodb:table:WriteCapacityUnits`,
+      `dynamodb:index:ReadCapacityUnits`,
+      `dynamodb:index:WriteCapacityUnits`
+    ))
   }
 
   /**
@@ -650,23 +648,21 @@ package autoscalingplans {
     val EC2SpotFleetRequestAverageNetworkIn = "EC2SpotFleetRequestAverageNetworkIn".asInstanceOf[ScalingMetricType]
     val EC2SpotFleetRequestAverageNetworkOut = "EC2SpotFleetRequestAverageNetworkOut".asInstanceOf[ScalingMetricType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ASGAverageCPUUtilization,
-        ASGAverageNetworkIn,
-        ASGAverageNetworkOut,
-        DynamoDBReadCapacityUtilization,
-        DynamoDBWriteCapacityUtilization,
-        ECSServiceAverageCPUUtilization,
-        ECSServiceAverageMemoryUtilization,
-        ALBRequestCountPerTarget,
-        RDSReaderAverageCPUUtilization,
-        RDSReaderAverageDatabaseConnections,
-        EC2SpotFleetRequestAverageCPUUtilization,
-        EC2SpotFleetRequestAverageNetworkIn,
-        EC2SpotFleetRequestAverageNetworkOut
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      ASGAverageCPUUtilization,
+      ASGAverageNetworkIn,
+      ASGAverageNetworkOut,
+      DynamoDBReadCapacityUtilization,
+      DynamoDBWriteCapacityUtilization,
+      ECSServiceAverageCPUUtilization,
+      ECSServiceAverageMemoryUtilization,
+      ALBRequestCountPerTarget,
+      RDSReaderAverageCPUUtilization,
+      RDSReaderAverageDatabaseConnections,
+      EC2SpotFleetRequestAverageCPUUtilization,
+      EC2SpotFleetRequestAverageNetworkIn,
+      EC2SpotFleetRequestAverageNetworkOut
+    ))
   }
 
   /**

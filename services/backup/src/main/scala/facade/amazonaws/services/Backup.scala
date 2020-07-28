@@ -525,25 +525,23 @@ package backup {
     val BACKUP_PLAN_CREATED = "BACKUP_PLAN_CREATED".asInstanceOf[BackupVaultEvent]
     val BACKUP_PLAN_MODIFIED = "BACKUP_PLAN_MODIFIED".asInstanceOf[BackupVaultEvent]
 
-    val values = js.Object.freeze(
-      js.Array(
-        BACKUP_JOB_STARTED,
-        BACKUP_JOB_COMPLETED,
-        BACKUP_JOB_SUCCESSFUL,
-        BACKUP_JOB_FAILED,
-        BACKUP_JOB_EXPIRED,
-        RESTORE_JOB_STARTED,
-        RESTORE_JOB_COMPLETED,
-        RESTORE_JOB_SUCCESSFUL,
-        RESTORE_JOB_FAILED,
-        COPY_JOB_STARTED,
-        COPY_JOB_SUCCESSFUL,
-        COPY_JOB_FAILED,
-        RECOVERY_POINT_MODIFIED,
-        BACKUP_PLAN_CREATED,
-        BACKUP_PLAN_MODIFIED
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      BACKUP_JOB_STARTED,
+      BACKUP_JOB_COMPLETED,
+      BACKUP_JOB_SUCCESSFUL,
+      BACKUP_JOB_FAILED,
+      BACKUP_JOB_EXPIRED,
+      RESTORE_JOB_STARTED,
+      RESTORE_JOB_COMPLETED,
+      RESTORE_JOB_SUCCESSFUL,
+      RESTORE_JOB_FAILED,
+      COPY_JOB_STARTED,
+      COPY_JOB_SUCCESSFUL,
+      COPY_JOB_FAILED,
+      RECOVERY_POINT_MODIFIED,
+      BACKUP_PLAN_CREATED,
+      BACKUP_PLAN_MODIFIED
+    ))
   }
 
   /**

@@ -1788,23 +1788,21 @@ package clouddirectory {
     val LimitExceededException = "LimitExceededException".asInstanceOf[BatchReadExceptionType]
     val InternalServiceException = "InternalServiceException".asInstanceOf[BatchReadExceptionType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ValidationException,
-        InvalidArnException,
-        ResourceNotFoundException,
-        InvalidNextTokenException,
-        AccessDeniedException,
-        NotNodeException,
-        FacetValidationException,
-        CannotListParentOfRootException,
-        NotIndexException,
-        NotPolicyException,
-        DirectoryNotEnabledException,
-        LimitExceededException,
-        InternalServiceException
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      ValidationException,
+      InvalidArnException,
+      ResourceNotFoundException,
+      InvalidNextTokenException,
+      AccessDeniedException,
+      NotNodeException,
+      FacetValidationException,
+      CannotListParentOfRootException,
+      NotIndexException,
+      NotPolicyException,
+      DirectoryNotEnabledException,
+      LimitExceededException,
+      InternalServiceException
+    ))
   }
 
   /**

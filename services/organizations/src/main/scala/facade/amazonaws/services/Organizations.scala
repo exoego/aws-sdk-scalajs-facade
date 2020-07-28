@@ -375,17 +375,15 @@ package organizations {
     val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[CreateAccountFailureReason]
     val GOVCLOUD_ACCOUNT_ALREADY_EXISTS = "GOVCLOUD_ACCOUNT_ALREADY_EXISTS".asInstanceOf[CreateAccountFailureReason]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ACCOUNT_LIMIT_EXCEEDED,
-        EMAIL_ALREADY_EXISTS,
-        INVALID_ADDRESS,
-        INVALID_EMAIL,
-        CONCURRENT_ACCOUNT_MODIFICATION,
-        INTERNAL_FAILURE,
-        GOVCLOUD_ACCOUNT_ALREADY_EXISTS
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      ACCOUNT_LIMIT_EXCEEDED,
+      EMAIL_ALREADY_EXISTS,
+      INVALID_ADDRESS,
+      INVALID_EMAIL,
+      CONCURRENT_ACCOUNT_MODIFICATION,
+      INTERNAL_FAILURE,
+      GOVCLOUD_ACCOUNT_ALREADY_EXISTS
+    ))
   }
 
   @js.native

@@ -2530,23 +2530,21 @@ package autoscaling {
     val EnteringStandby = "EnteringStandby".asInstanceOf[LifecycleState]
     val Standby = "Standby".asInstanceOf[LifecycleState]
 
-    val values = js.Object.freeze(
-      js.Array(
-        Pending,
-        `Pending:Wait`,
-        `Pending:Proceed`,
-        Quarantined,
-        InService,
-        Terminating,
-        `Terminating:Wait`,
-        `Terminating:Proceed`,
-        Terminated,
-        Detaching,
-        Detached,
-        EnteringStandby,
-        Standby
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      Pending,
+      `Pending:Wait`,
+      `Pending:Proceed`,
+      Quarantined,
+      InService,
+      Terminating,
+      `Terminating:Wait`,
+      `Terminating:Proceed`,
+      Terminated,
+      Detaching,
+      Detached,
+      EnteringStandby,
+      Standby
+    ))
   }
 
   /**
@@ -3090,22 +3088,20 @@ package autoscaling {
     val Failed = "Failed".asInstanceOf[ScalingActivityStatusCode]
     val Cancelled = "Cancelled".asInstanceOf[ScalingActivityStatusCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        PendingSpotBidPlacement,
-        WaitingForSpotInstanceRequestId,
-        WaitingForSpotInstanceId,
-        WaitingForInstanceId,
-        PreInService,
-        InProgress,
-        WaitingForELBConnectionDraining,
-        MidLifecycleAction,
-        WaitingForInstanceWarmup,
-        Successful,
-        Failed,
-        Cancelled
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      PendingSpotBidPlacement,
+      WaitingForSpotInstanceRequestId,
+      WaitingForSpotInstanceId,
+      WaitingForInstanceId,
+      PreInService,
+      InProgress,
+      WaitingForELBConnectionDraining,
+      MidLifecycleAction,
+      WaitingForInstanceWarmup,
+      Successful,
+      Failed,
+      Cancelled
+    ))
   }
 
   /**

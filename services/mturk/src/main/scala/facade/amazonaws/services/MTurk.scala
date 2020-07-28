@@ -824,22 +824,20 @@ package mturk {
     val HITDisposed = "HITDisposed".asInstanceOf[EventType]
     val Ping = "Ping".asInstanceOf[EventType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        AssignmentAccepted,
-        AssignmentAbandoned,
-        AssignmentReturned,
-        AssignmentSubmitted,
-        AssignmentRejected,
-        AssignmentApproved,
-        HITCreated,
-        HITExpired,
-        HITReviewable,
-        HITExtended,
-        HITDisposed,
-        Ping
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      AssignmentAccepted,
+      AssignmentAbandoned,
+      AssignmentReturned,
+      AssignmentSubmitted,
+      AssignmentRejected,
+      AssignmentApproved,
+      HITCreated,
+      HITExpired,
+      HITReviewable,
+      HITExtended,
+      HITDisposed,
+      Ping
+    ))
   }
 
   @js.native

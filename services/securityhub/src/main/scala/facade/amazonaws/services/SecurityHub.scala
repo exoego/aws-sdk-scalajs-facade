@@ -4097,25 +4097,23 @@ package securityhub {
     val VIRUS = "VIRUS".asInstanceOf[MalwareType]
     val WORM = "WORM".asInstanceOf[MalwareType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ADWARE,
-        BLENDED_THREAT,
-        BOTNET_AGENT,
-        COIN_MINER,
-        EXPLOIT_KIT,
-        KEYLOGGER,
-        MACRO,
-        POTENTIALLY_UNWANTED,
-        SPYWARE,
-        RANSOMWARE,
-        REMOTE_ACCESS,
-        ROOTKIT,
-        TROJAN,
-        VIRUS,
-        WORM
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      ADWARE,
+      BLENDED_THREAT,
+      BOTNET_AGENT,
+      COIN_MINER,
+      EXPLOIT_KIT,
+      KEYLOGGER,
+      MACRO,
+      POTENTIALLY_UNWANTED,
+      SPYWARE,
+      RANSOMWARE,
+      REMOTE_ACCESS,
+      ROOTKIT,
+      TROJAN,
+      VIRUS,
+      WORM
+    ))
   }
 
   /**

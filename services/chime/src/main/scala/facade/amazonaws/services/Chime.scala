@@ -2113,24 +2113,22 @@ package chime {
     val VoiceConnectorGroupAssociationsExist = "VoiceConnectorGroupAssociationsExist".asInstanceOf[ErrorCode]
     val PhoneNumberAssociationsExist = "PhoneNumberAssociationsExist".asInstanceOf[ErrorCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        BadRequest,
-        Conflict,
-        Forbidden,
-        NotFound,
-        PreconditionFailed,
-        ResourceLimitExceeded,
-        ServiceFailure,
-        AccessDenied,
-        ServiceUnavailable,
-        Throttled,
-        Unauthorized,
-        Unprocessable,
-        VoiceConnectorGroupAssociationsExist,
-        PhoneNumberAssociationsExist
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      BadRequest,
+      Conflict,
+      Forbidden,
+      NotFound,
+      PreconditionFailed,
+      ResourceLimitExceeded,
+      ServiceFailure,
+      AccessDenied,
+      ServiceUnavailable,
+      Throttled,
+      Unauthorized,
+      Unprocessable,
+      VoiceConnectorGroupAssociationsExist,
+      PhoneNumberAssociationsExist
+    ))
   }
 
   /**

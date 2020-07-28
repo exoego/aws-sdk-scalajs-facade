@@ -467,22 +467,20 @@ package acm {
     val NONE = "NONE".asInstanceOf[ExtendedKeyUsageName]
     val CUSTOM = "CUSTOM".asInstanceOf[ExtendedKeyUsageName]
 
-    val values = js.Object.freeze(
-      js.Array(
-        TLS_WEB_SERVER_AUTHENTICATION,
-        TLS_WEB_CLIENT_AUTHENTICATION,
-        CODE_SIGNING,
-        EMAIL_PROTECTION,
-        TIME_STAMPING,
-        OCSP_SIGNING,
-        IPSEC_END_SYSTEM,
-        IPSEC_TUNNEL,
-        IPSEC_USER,
-        ANY,
-        NONE,
-        CUSTOM
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      TLS_WEB_SERVER_AUTHENTICATION,
+      TLS_WEB_CLIENT_AUTHENTICATION,
+      CODE_SIGNING,
+      EMAIL_PROTECTION,
+      TIME_STAMPING,
+      OCSP_SIGNING,
+      IPSEC_END_SYSTEM,
+      IPSEC_TUNNEL,
+      IPSEC_USER,
+      ANY,
+      NONE,
+      CUSTOM
+    ))
   }
 
   @js.native
@@ -505,26 +503,24 @@ package acm {
     val PCA_ACCESS_DENIED = "PCA_ACCESS_DENIED".asInstanceOf[FailureReason]
     val OTHER = "OTHER".asInstanceOf[FailureReason]
 
-    val values = js.Object.freeze(
-      js.Array(
-        NO_AVAILABLE_CONTACTS,
-        ADDITIONAL_VERIFICATION_REQUIRED,
-        DOMAIN_NOT_ALLOWED,
-        INVALID_PUBLIC_DOMAIN,
-        DOMAIN_VALIDATION_DENIED,
-        CAA_ERROR,
-        PCA_LIMIT_EXCEEDED,
-        PCA_INVALID_ARN,
-        PCA_INVALID_STATE,
-        PCA_REQUEST_FAILED,
-        PCA_NAME_CONSTRAINTS_VALIDATION,
-        PCA_RESOURCE_NOT_FOUND,
-        PCA_INVALID_ARGS,
-        PCA_INVALID_DURATION,
-        PCA_ACCESS_DENIED,
-        OTHER
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      NO_AVAILABLE_CONTACTS,
+      ADDITIONAL_VERIFICATION_REQUIRED,
+      DOMAIN_NOT_ALLOWED,
+      INVALID_PUBLIC_DOMAIN,
+      DOMAIN_VALIDATION_DENIED,
+      CAA_ERROR,
+      PCA_LIMIT_EXCEEDED,
+      PCA_INVALID_ARN,
+      PCA_INVALID_STATE,
+      PCA_REQUEST_FAILED,
+      PCA_NAME_CONSTRAINTS_VALIDATION,
+      PCA_RESOURCE_NOT_FOUND,
+      PCA_INVALID_ARGS,
+      PCA_INVALID_DURATION,
+      PCA_ACCESS_DENIED,
+      OTHER
+    ))
   }
 
   /**
@@ -682,21 +678,19 @@ package acm {
     val ANY = "ANY".asInstanceOf[KeyUsageName]
     val CUSTOM = "CUSTOM".asInstanceOf[KeyUsageName]
 
-    val values = js.Object.freeze(
-      js.Array(
-        DIGITAL_SIGNATURE,
-        NON_REPUDIATION,
-        KEY_ENCIPHERMENT,
-        DATA_ENCIPHERMENT,
-        KEY_AGREEMENT,
-        CERTIFICATE_SIGNING,
-        CRL_SIGNING,
-        ENCIPHER_ONLY,
-        DECIPHER_ONLY,
-        ANY,
-        CUSTOM
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      DIGITAL_SIGNATURE,
+      NON_REPUDIATION,
+      KEY_ENCIPHERMENT,
+      DATA_ENCIPHERMENT,
+      KEY_AGREEMENT,
+      CERTIFICATE_SIGNING,
+      CRL_SIGNING,
+      ENCIPHER_ONLY,
+      DECIPHER_ONLY,
+      ANY,
+      CUSTOM
+    ))
   }
 
   @js.native
@@ -994,20 +988,18 @@ package acm {
     val PRIVILEGE_WITHDRAWN = "PRIVILEGE_WITHDRAWN".asInstanceOf[RevocationReason]
     val A_A_COMPROMISE = "A_A_COMPROMISE".asInstanceOf[RevocationReason]
 
-    val values = js.Object.freeze(
-      js.Array(
-        UNSPECIFIED,
-        KEY_COMPROMISE,
-        CA_COMPROMISE,
-        AFFILIATION_CHANGED,
-        SUPERCEDED,
-        CESSATION_OF_OPERATION,
-        CERTIFICATE_HOLD,
-        REMOVE_FROM_CRL,
-        PRIVILEGE_WITHDRAWN,
-        A_A_COMPROMISE
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      UNSPECIFIED,
+      KEY_COMPROMISE,
+      CA_COMPROMISE,
+      AFFILIATION_CHANGED,
+      SUPERCEDED,
+      CESSATION_OF_OPERATION,
+      CERTIFICATE_HOLD,
+      REMOVE_FROM_CRL,
+      PRIVILEGE_WITHDRAWN,
+      A_A_COMPROMISE
+    ))
   }
 
   /**

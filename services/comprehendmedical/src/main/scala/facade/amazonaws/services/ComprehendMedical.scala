@@ -581,44 +581,42 @@ package comprehendmedical {
     val TIME_TO_PROCEDURE_NAME = "TIME_TO_PROCEDURE_NAME".asInstanceOf[EntitySubType]
     val TIME_TO_TREATMENT_NAME = "TIME_TO_TREATMENT_NAME".asInstanceOf[EntitySubType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        NAME,
-        DOSAGE,
-        ROUTE_OR_MODE,
-        FORM,
-        FREQUENCY,
-        DURATION,
-        GENERIC_NAME,
-        BRAND_NAME,
-        STRENGTH,
-        RATE,
-        ACUITY,
-        TEST_NAME,
-        TEST_VALUE,
-        TEST_UNITS,
-        PROCEDURE_NAME,
-        TREATMENT_NAME,
-        DATE,
-        AGE,
-        CONTACT_POINT,
-        EMAIL,
-        IDENTIFIER,
-        URL,
-        ADDRESS,
-        PROFESSION,
-        SYSTEM_ORGAN_SITE,
-        DIRECTION,
-        QUALITY,
-        QUANTITY,
-        TIME_EXPRESSION,
-        TIME_TO_MEDICATION_NAME,
-        TIME_TO_DX_NAME,
-        TIME_TO_TEST_NAME,
-        TIME_TO_PROCEDURE_NAME,
-        TIME_TO_TREATMENT_NAME
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      NAME,
+      DOSAGE,
+      ROUTE_OR_MODE,
+      FORM,
+      FREQUENCY,
+      DURATION,
+      GENERIC_NAME,
+      BRAND_NAME,
+      STRENGTH,
+      RATE,
+      ACUITY,
+      TEST_NAME,
+      TEST_VALUE,
+      TEST_UNITS,
+      PROCEDURE_NAME,
+      TREATMENT_NAME,
+      DATE,
+      AGE,
+      CONTACT_POINT,
+      EMAIL,
+      IDENTIFIER,
+      URL,
+      ADDRESS,
+      PROFESSION,
+      SYSTEM_ORGAN_SITE,
+      DIRECTION,
+      QUALITY,
+      QUANTITY,
+      TIME_EXPRESSION,
+      TIME_TO_MEDICATION_NAME,
+      TIME_TO_DX_NAME,
+      TIME_TO_TEST_NAME,
+      TIME_TO_PROCEDURE_NAME,
+      TIME_TO_TREATMENT_NAME
+    ))
   }
 
   @js.native
@@ -1146,28 +1144,26 @@ package comprehendmedical {
     val DIRECTION = "DIRECTION".asInstanceOf[RelationshipType]
     val SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE".asInstanceOf[RelationshipType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        EVERY,
-        WITH_DOSAGE,
-        ADMINISTERED_VIA,
-        FOR,
-        NEGATIVE,
-        OVERLAP,
-        DOSAGE,
-        ROUTE_OR_MODE,
-        FORM,
-        FREQUENCY,
-        DURATION,
-        STRENGTH,
-        RATE,
-        ACUITY,
-        TEST_VALUE,
-        TEST_UNITS,
-        DIRECTION,
-        SYSTEM_ORGAN_SITE
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      EVERY,
+      WITH_DOSAGE,
+      ADMINISTERED_VIA,
+      FOR,
+      NEGATIVE,
+      OVERLAP,
+      DOSAGE,
+      ROUTE_OR_MODE,
+      FORM,
+      FREQUENCY,
+      DURATION,
+      STRENGTH,
+      RATE,
+      ACUITY,
+      TEST_VALUE,
+      TEST_UNITS,
+      DIRECTION,
+      SYSTEM_ORGAN_SITE
+    ))
   }
 
   /**

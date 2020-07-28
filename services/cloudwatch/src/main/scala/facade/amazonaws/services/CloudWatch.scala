@@ -308,17 +308,15 @@ package cloudwatch {
     val LessThanLowerThreshold = "LessThanLowerThreshold".asInstanceOf[ComparisonOperator]
     val GreaterThanUpperThreshold = "GreaterThanUpperThreshold".asInstanceOf[ComparisonOperator]
 
-    val values = js.Object.freeze(
-      js.Array(
-        GreaterThanOrEqualToThreshold,
-        GreaterThanThreshold,
-        LessThanThreshold,
-        LessThanOrEqualToThreshold,
-        LessThanLowerOrGreaterThanUpperThreshold,
-        LessThanLowerThreshold,
-        GreaterThanUpperThreshold
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      GreaterThanOrEqualToThreshold,
+      GreaterThanThreshold,
+      LessThanThreshold,
+      LessThanOrEqualToThreshold,
+      LessThanLowerOrGreaterThanUpperThreshold,
+      LessThanLowerThreshold,
+      GreaterThanUpperThreshold
+    ))
   }
 
   /**
@@ -2193,37 +2191,35 @@ package cloudwatch {
     val `Count/Second` = "Count/Second".asInstanceOf[StandardUnit]
     val None = "None".asInstanceOf[StandardUnit]
 
-    val values = js.Object.freeze(
-      js.Array(
-        Seconds,
-        Microseconds,
-        Milliseconds,
-        Bytes,
-        Kilobytes,
-        Megabytes,
-        Gigabytes,
-        Terabytes,
-        Bits,
-        Kilobits,
-        Megabits,
-        Gigabits,
-        Terabits,
-        Percent,
-        Count,
-        `Bytes/Second`,
-        `Kilobytes/Second`,
-        `Megabytes/Second`,
-        `Gigabytes/Second`,
-        `Terabytes/Second`,
-        `Bits/Second`,
-        `Kilobits/Second`,
-        `Megabits/Second`,
-        `Gigabits/Second`,
-        `Terabits/Second`,
-        `Count/Second`,
-        None
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      Seconds,
+      Microseconds,
+      Milliseconds,
+      Bytes,
+      Kilobytes,
+      Megabytes,
+      Gigabytes,
+      Terabytes,
+      Bits,
+      Kilobits,
+      Megabits,
+      Gigabits,
+      Terabits,
+      Percent,
+      Count,
+      `Bytes/Second`,
+      `Kilobytes/Second`,
+      `Megabytes/Second`,
+      `Gigabytes/Second`,
+      `Terabytes/Second`,
+      `Bits/Second`,
+      `Kilobits/Second`,
+      `Megabits/Second`,
+      `Gigabits/Second`,
+      `Terabits/Second`,
+      `Count/Second`,
+      None
+    ))
   }
 
   @js.native

@@ -5606,25 +5606,23 @@ package lightsail {
     val Origin = "Origin".asInstanceOf[HeaderEnum]
     val Referer = "Referer".asInstanceOf[HeaderEnum]
 
-    val values = js.Object.freeze(
-      js.Array(
-        Accept,
-        `Accept-Charset`,
-        `Accept-Datetime`,
-        `Accept-Encoding`,
-        `Accept-Language`,
-        Authorization,
-        `CloudFront-Forwarded-Proto`,
-        `CloudFront-Is-Desktop-Viewer`,
-        `CloudFront-Is-Mobile-Viewer`,
-        `CloudFront-Is-SmartTV-Viewer`,
-        `CloudFront-Is-Tablet-Viewer`,
-        `CloudFront-Viewer-Country`,
-        Host,
-        Origin,
-        Referer
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      Accept,
+      `Accept-Charset`,
+      `Accept-Datetime`,
+      `Accept-Encoding`,
+      `Accept-Language`,
+      Authorization,
+      `CloudFront-Forwarded-Proto`,
+      `CloudFront-Is-Desktop-Viewer`,
+      `CloudFront-Is-Mobile-Viewer`,
+      `CloudFront-Is-SmartTV-Viewer`,
+      `CloudFront-Is-Tablet-Viewer`,
+      `CloudFront-Viewer-Country`,
+      Host,
+      Origin,
+      Referer
+    ))
   }
 
   /**
@@ -5954,21 +5952,19 @@ package lightsail {
     val `Instance.InvalidState` = "Instance.InvalidState".asInstanceOf[InstanceHealthReason]
     val `Instance.IpUnusable` = "Instance.IpUnusable".asInstanceOf[InstanceHealthReason]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `Lb.RegistrationInProgress`,
-        `Lb.InitialHealthChecking`,
-        `Lb.InternalError`,
-        `Instance.ResponseCodeMismatch`,
-        `Instance.Timeout`,
-        `Instance.FailedHealthChecks`,
-        `Instance.NotRegistered`,
-        `Instance.NotInUse`,
-        `Instance.DeregistrationInProgress`,
-        `Instance.InvalidState`,
-        `Instance.IpUnusable`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      `Lb.RegistrationInProgress`,
+      `Lb.InitialHealthChecking`,
+      `Lb.InternalError`,
+      `Instance.ResponseCodeMismatch`,
+      `Instance.Timeout`,
+      `Instance.FailedHealthChecks`,
+      `Instance.NotRegistered`,
+      `Instance.NotInUse`,
+      `Instance.DeregistrationInProgress`,
+      `Instance.InvalidState`,
+      `Instance.IpUnusable`
+    ))
   }
 
   @js.native
@@ -6485,22 +6481,20 @@ package lightsail {
     val RejectedConnectionCount = "RejectedConnectionCount".asInstanceOf[LoadBalancerMetricName]
     val RequestCount = "RequestCount".asInstanceOf[LoadBalancerMetricName]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ClientTLSNegotiationErrorCount,
-        HealthyHostCount,
-        UnhealthyHostCount,
-        HTTPCode_LB_4XX_Count,
-        HTTPCode_LB_5XX_Count,
-        HTTPCode_Instance_2XX_Count,
-        HTTPCode_Instance_3XX_Count,
-        HTTPCode_Instance_4XX_Count,
-        HTTPCode_Instance_5XX_Count,
-        InstanceResponseTime,
-        RejectedConnectionCount,
-        RequestCount
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      ClientTLSNegotiationErrorCount,
+      HealthyHostCount,
+      UnhealthyHostCount,
+      HTTPCode_LB_4XX_Count,
+      HTTPCode_LB_5XX_Count,
+      HTTPCode_Instance_2XX_Count,
+      HTTPCode_Instance_3XX_Count,
+      HTTPCode_Instance_4XX_Count,
+      HTTPCode_Instance_5XX_Count,
+      InstanceResponseTime,
+      RejectedConnectionCount,
+      RequestCount
+    ))
   }
 
   @js.native
@@ -6744,20 +6738,18 @@ package lightsail {
     val PRIVILEGE_WITHDRAWN = "PRIVILEGE_WITHDRAWN".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
     val A_A_COMPROMISE = "A_A_COMPROMISE".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
 
-    val values = js.Object.freeze(
-      js.Array(
-        UNSPECIFIED,
-        KEY_COMPROMISE,
-        CA_COMPROMISE,
-        AFFILIATION_CHANGED,
-        SUPERCEDED,
-        CESSATION_OF_OPERATION,
-        CERTIFICATE_HOLD,
-        REMOVE_FROM_CRL,
-        PRIVILEGE_WITHDRAWN,
-        A_A_COMPROMISE
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      UNSPECIFIED,
+      KEY_COMPROMISE,
+      CA_COMPROMISE,
+      AFFILIATION_CHANGED,
+      SUPERCEDED,
+      CESSATION_OF_OPERATION,
+      CERTIFICATE_HOLD,
+      REMOVE_FROM_CRL,
+      PRIVILEGE_WITHDRAWN,
+      A_A_COMPROMISE
+    ))
   }
 
   @js.native
@@ -6885,35 +6877,33 @@ package lightsail {
     val BurstCapacityTime = "BurstCapacityTime".asInstanceOf[MetricName]
     val BurstCapacityPercentage = "BurstCapacityPercentage".asInstanceOf[MetricName]
 
-    val values = js.Object.freeze(
-      js.Array(
-        CPUUtilization,
-        NetworkIn,
-        NetworkOut,
-        StatusCheckFailed,
-        StatusCheckFailed_Instance,
-        StatusCheckFailed_System,
-        ClientTLSNegotiationErrorCount,
-        HealthyHostCount,
-        UnhealthyHostCount,
-        HTTPCode_LB_4XX_Count,
-        HTTPCode_LB_5XX_Count,
-        HTTPCode_Instance_2XX_Count,
-        HTTPCode_Instance_3XX_Count,
-        HTTPCode_Instance_4XX_Count,
-        HTTPCode_Instance_5XX_Count,
-        InstanceResponseTime,
-        RejectedConnectionCount,
-        RequestCount,
-        DatabaseConnections,
-        DiskQueueDepth,
-        FreeStorageSpace,
-        NetworkReceiveThroughput,
-        NetworkTransmitThroughput,
-        BurstCapacityTime,
-        BurstCapacityPercentage
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      CPUUtilization,
+      NetworkIn,
+      NetworkOut,
+      StatusCheckFailed,
+      StatusCheckFailed_Instance,
+      StatusCheckFailed_System,
+      ClientTLSNegotiationErrorCount,
+      HealthyHostCount,
+      UnhealthyHostCount,
+      HTTPCode_LB_4XX_Count,
+      HTTPCode_LB_5XX_Count,
+      HTTPCode_Instance_2XX_Count,
+      HTTPCode_Instance_3XX_Count,
+      HTTPCode_Instance_4XX_Count,
+      HTTPCode_Instance_5XX_Count,
+      InstanceResponseTime,
+      RejectedConnectionCount,
+      RequestCount,
+      DatabaseConnections,
+      DiskQueueDepth,
+      FreeStorageSpace,
+      NetworkReceiveThroughput,
+      NetworkTransmitThroughput,
+      BurstCapacityTime,
+      BurstCapacityPercentage
+    ))
   }
 
   @js.native
@@ -6959,37 +6949,35 @@ package lightsail {
     val `Count/Second` = "Count/Second".asInstanceOf[MetricUnit]
     val None = "None".asInstanceOf[MetricUnit]
 
-    val values = js.Object.freeze(
-      js.Array(
-        Seconds,
-        Microseconds,
-        Milliseconds,
-        Bytes,
-        Kilobytes,
-        Megabytes,
-        Gigabytes,
-        Terabytes,
-        Bits,
-        Kilobits,
-        Megabits,
-        Gigabits,
-        Terabits,
-        Percent,
-        Count,
-        `Bytes/Second`,
-        `Kilobytes/Second`,
-        `Megabytes/Second`,
-        `Gigabytes/Second`,
-        `Terabytes/Second`,
-        `Bits/Second`,
-        `Kilobits/Second`,
-        `Megabits/Second`,
-        `Gigabits/Second`,
-        `Terabits/Second`,
-        `Count/Second`,
-        None
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      Seconds,
+      Microseconds,
+      Milliseconds,
+      Bytes,
+      Kilobytes,
+      Megabytes,
+      Gigabytes,
+      Terabytes,
+      Bits,
+      Kilobits,
+      Megabits,
+      Gigabits,
+      Terabits,
+      Percent,
+      Count,
+      `Bytes/Second`,
+      `Kilobytes/Second`,
+      `Megabytes/Second`,
+      `Gigabytes/Second`,
+      `Terabytes/Second`,
+      `Bits/Second`,
+      `Kilobits/Second`,
+      `Megabits/Second`,
+      `Gigabits/Second`,
+      `Terabits/Second`,
+      `Count/Second`,
+      None
+    ))
   }
 
   /**
@@ -7217,74 +7205,72 @@ package lightsail {
     val CreateCertificate = "CreateCertificate".asInstanceOf[OperationType]
     val DeleteCertificate = "DeleteCertificate".asInstanceOf[OperationType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        DeleteKnownHostKeys,
-        DeleteInstance,
-        CreateInstance,
-        StopInstance,
-        StartInstance,
-        RebootInstance,
-        OpenInstancePublicPorts,
-        PutInstancePublicPorts,
-        CloseInstancePublicPorts,
-        AllocateStaticIp,
-        ReleaseStaticIp,
-        AttachStaticIp,
-        DetachStaticIp,
-        UpdateDomainEntry,
-        DeleteDomainEntry,
-        CreateDomain,
-        DeleteDomain,
-        CreateInstanceSnapshot,
-        DeleteInstanceSnapshot,
-        CreateInstancesFromSnapshot,
-        CreateLoadBalancer,
-        DeleteLoadBalancer,
-        AttachInstancesToLoadBalancer,
-        DetachInstancesFromLoadBalancer,
-        UpdateLoadBalancerAttribute,
-        CreateLoadBalancerTlsCertificate,
-        DeleteLoadBalancerTlsCertificate,
-        AttachLoadBalancerTlsCertificate,
-        CreateDisk,
-        DeleteDisk,
-        AttachDisk,
-        DetachDisk,
-        CreateDiskSnapshot,
-        DeleteDiskSnapshot,
-        CreateDiskFromSnapshot,
-        CreateRelationalDatabase,
-        UpdateRelationalDatabase,
-        DeleteRelationalDatabase,
-        CreateRelationalDatabaseFromSnapshot,
-        CreateRelationalDatabaseSnapshot,
-        DeleteRelationalDatabaseSnapshot,
-        UpdateRelationalDatabaseParameters,
-        StartRelationalDatabase,
-        RebootRelationalDatabase,
-        StopRelationalDatabase,
-        EnableAddOn,
-        DisableAddOn,
-        PutAlarm,
-        GetAlarms,
-        DeleteAlarm,
-        TestAlarm,
-        CreateContactMethod,
-        GetContactMethods,
-        SendContactMethodVerification,
-        DeleteContactMethod,
-        CreateDistribution,
-        UpdateDistribution,
-        DeleteDistribution,
-        ResetDistributionCache,
-        AttachCertificateToDistribution,
-        DetachCertificateFromDistribution,
-        UpdateDistributionBundle,
-        CreateCertificate,
-        DeleteCertificate
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      DeleteKnownHostKeys,
+      DeleteInstance,
+      CreateInstance,
+      StopInstance,
+      StartInstance,
+      RebootInstance,
+      OpenInstancePublicPorts,
+      PutInstancePublicPorts,
+      CloseInstancePublicPorts,
+      AllocateStaticIp,
+      ReleaseStaticIp,
+      AttachStaticIp,
+      DetachStaticIp,
+      UpdateDomainEntry,
+      DeleteDomainEntry,
+      CreateDomain,
+      DeleteDomain,
+      CreateInstanceSnapshot,
+      DeleteInstanceSnapshot,
+      CreateInstancesFromSnapshot,
+      CreateLoadBalancer,
+      DeleteLoadBalancer,
+      AttachInstancesToLoadBalancer,
+      DetachInstancesFromLoadBalancer,
+      UpdateLoadBalancerAttribute,
+      CreateLoadBalancerTlsCertificate,
+      DeleteLoadBalancerTlsCertificate,
+      AttachLoadBalancerTlsCertificate,
+      CreateDisk,
+      DeleteDisk,
+      AttachDisk,
+      DetachDisk,
+      CreateDiskSnapshot,
+      DeleteDiskSnapshot,
+      CreateDiskFromSnapshot,
+      CreateRelationalDatabase,
+      UpdateRelationalDatabase,
+      DeleteRelationalDatabase,
+      CreateRelationalDatabaseFromSnapshot,
+      CreateRelationalDatabaseSnapshot,
+      DeleteRelationalDatabaseSnapshot,
+      UpdateRelationalDatabaseParameters,
+      StartRelationalDatabase,
+      RebootRelationalDatabase,
+      StopRelationalDatabase,
+      EnableAddOn,
+      DisableAddOn,
+      PutAlarm,
+      GetAlarms,
+      DeleteAlarm,
+      TestAlarm,
+      CreateContactMethod,
+      GetContactMethods,
+      SendContactMethodVerification,
+      DeleteContactMethod,
+      CreateDistribution,
+      UpdateDistribution,
+      DeleteDistribution,
+      ResetDistributionCache,
+      AttachCertificateToDistribution,
+      DetachCertificateFromDistribution,
+      UpdateDistributionBundle,
+      CreateCertificate,
+      DeleteCertificate
+    ))
   }
 
   /**
@@ -7740,24 +7726,22 @@ package lightsail {
     val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[RegionName]
     val `ap-northeast-2` = "ap-northeast-2".asInstanceOf[RegionName]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `us-east-1`,
-        `us-east-2`,
-        `us-west-1`,
-        `us-west-2`,
-        `eu-west-1`,
-        `eu-west-2`,
-        `eu-west-3`,
-        `eu-central-1`,
-        `ca-central-1`,
-        `ap-south-1`,
-        `ap-southeast-1`,
-        `ap-southeast-2`,
-        `ap-northeast-1`,
-        `ap-northeast-2`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      `us-east-1`,
+      `us-east-2`,
+      `us-west-1`,
+      `us-west-2`,
+      `eu-west-1`,
+      `eu-west-2`,
+      `eu-west-3`,
+      `eu-central-1`,
+      `ca-central-1`,
+      `ap-south-1`,
+      `ap-southeast-1`,
+      `ap-southeast-2`,
+      `ap-northeast-1`,
+      `ap-northeast-2`
+    ))
   }
 
   /**
@@ -8318,28 +8302,26 @@ package lightsail {
     val Distribution = "Distribution".asInstanceOf[ResourceType]
     val Certificate = "Certificate".asInstanceOf[ResourceType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        Instance,
-        StaticIp,
-        KeyPair,
-        InstanceSnapshot,
-        Domain,
-        PeeredVpc,
-        LoadBalancer,
-        LoadBalancerTlsCertificate,
-        Disk,
-        DiskSnapshot,
-        RelationalDatabase,
-        RelationalDatabaseSnapshot,
-        ExportSnapshotRecord,
-        CloudFormationStackRecord,
-        Alarm,
-        ContactMethod,
-        Distribution,
-        Certificate
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      Instance,
+      StaticIp,
+      KeyPair,
+      InstanceSnapshot,
+      Domain,
+      PeeredVpc,
+      LoadBalancer,
+      LoadBalancerTlsCertificate,
+      Disk,
+      DiskSnapshot,
+      RelationalDatabase,
+      RelationalDatabaseSnapshot,
+      ExportSnapshotRecord,
+      CloudFormationStackRecord,
+      Alarm,
+      ContactMethod,
+      Distribution,
+      Certificate
+    ))
   }
 
   @js.native

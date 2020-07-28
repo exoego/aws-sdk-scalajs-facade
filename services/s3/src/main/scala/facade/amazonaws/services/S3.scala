@@ -306,8 +306,7 @@ package object s3 {
         deepCloned.Expires = expires
         deepCloned.asInstanceOf[js.Object]
       }
-      service
-        .asInstanceOf[js.Dynamic]
+      service.asInstanceOf[js.Dynamic]
         .getSignedUrlPromise(operation, paramsWithExpires)
         .asInstanceOf[js.Promise[String]]
         .toFuture
@@ -2333,27 +2332,25 @@ package s3 {
     val `s3:Replication:OperationMissedThreshold` = "s3:Replication:OperationMissedThreshold".asInstanceOf[Event]
     val `s3:Replication:OperationReplicatedAfterThreshold` = "s3:Replication:OperationReplicatedAfterThreshold".asInstanceOf[Event]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `s3:ReducedRedundancyLostObject`,
-        `s3:ObjectCreated:*`,
-        `s3:ObjectCreated:Put`,
-        `s3:ObjectCreated:Post`,
-        `s3:ObjectCreated:Copy`,
-        `s3:ObjectCreated:CompleteMultipartUpload`,
-        `s3:ObjectRemoved:*`,
-        `s3:ObjectRemoved:Delete`,
-        `s3:ObjectRemoved:DeleteMarkerCreated`,
-        `s3:ObjectRestore:*`,
-        `s3:ObjectRestore:Post`,
-        `s3:ObjectRestore:Completed`,
-        `s3:Replication:*`,
-        `s3:Replication:OperationFailedReplication`,
-        `s3:Replication:OperationNotTracked`,
-        `s3:Replication:OperationMissedThreshold`,
-        `s3:Replication:OperationReplicatedAfterThreshold`
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      `s3:ReducedRedundancyLostObject`,
+      `s3:ObjectCreated:*`,
+      `s3:ObjectCreated:Put`,
+      `s3:ObjectCreated:Post`,
+      `s3:ObjectCreated:Copy`,
+      `s3:ObjectCreated:CompleteMultipartUpload`,
+      `s3:ObjectRemoved:*`,
+      `s3:ObjectRemoved:Delete`,
+      `s3:ObjectRemoved:DeleteMarkerCreated`,
+      `s3:ObjectRestore:*`,
+      `s3:ObjectRestore:Post`,
+      `s3:ObjectRestore:Completed`,
+      `s3:Replication:*`,
+      `s3:Replication:OperationFailedReplication`,
+      `s3:Replication:OperationNotTracked`,
+      `s3:Replication:OperationMissedThreshold`,
+      `s3:Replication:OperationReplicatedAfterThreshold`
+    ))
   }
 
   /**
@@ -4031,21 +4028,19 @@ package s3 {
     val ObjectLockLegalHoldStatus = "ObjectLockLegalHoldStatus".asInstanceOf[InventoryOptionalField]
     val IntelligentTieringAccessTier = "IntelligentTieringAccessTier".asInstanceOf[InventoryOptionalField]
 
-    val values = js.Object.freeze(
-      js.Array(
-        Size,
-        LastModifiedDate,
-        StorageClass,
-        ETag,
-        IsMultipartUploaded,
-        ReplicationStatus,
-        EncryptionStatus,
-        ObjectLockRetainUntilDate,
-        ObjectLockMode,
-        ObjectLockLegalHoldStatus,
-        IntelligentTieringAccessTier
-      )
-    )
+    val values = js.Object.freeze(js.Array(
+      Size,
+      LastModifiedDate,
+      StorageClass,
+      ETag,
+      IsMultipartUploaded,
+      ReplicationStatus,
+      EncryptionStatus,
+      ObjectLockRetainUntilDate,
+      ObjectLockMode,
+      ObjectLockLegalHoldStatus,
+      IntelligentTieringAccessTier
+    ))
   }
 
   /**
