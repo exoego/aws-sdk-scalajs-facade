@@ -6556,6 +6556,7 @@ package ec2 {
     var DeviceName: js.UndefOr[String]
     var DryRun: js.UndefOr[Boolean]
     var PublicIp: js.UndefOr[String]
+    var TagSpecifications: js.UndefOr[TagSpecificationList]
   }
 
   object CreateCustomerGatewayRequest {
@@ -6566,7 +6567,8 @@ package ec2 {
         CertificateArn: js.UndefOr[String] = js.undefined,
         DeviceName: js.UndefOr[String] = js.undefined,
         DryRun: js.UndefOr[Boolean] = js.undefined,
-        PublicIp: js.UndefOr[String] = js.undefined
+        PublicIp: js.UndefOr[String] = js.undefined,
+        TagSpecifications: js.UndefOr[TagSpecificationList] = js.undefined
     ): CreateCustomerGatewayRequest = {
       val __obj = js.Dynamic.literal(
         "BgpAsn" -> BgpAsn.asInstanceOf[js.Any],
@@ -6577,6 +6579,7 @@ package ec2 {
       DeviceName.foreach(__v => __obj.updateDynamic("DeviceName")(__v.asInstanceOf[js.Any]))
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       PublicIp.foreach(__v => __obj.updateDynamic("PublicIp")(__v.asInstanceOf[js.Any]))
+      TagSpecifications.foreach(__v => __obj.updateDynamic("TagSpecifications")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCustomerGatewayRequest]
     }
   }
@@ -9050,6 +9053,7 @@ package ec2 {
     var Type: String
     var DryRun: js.UndefOr[Boolean]
     var Options: js.UndefOr[VpnConnectionOptionsSpecification]
+    var TagSpecifications: js.UndefOr[TagSpecificationList]
     var TransitGatewayId: js.UndefOr[TransitGatewayId]
     var VpnGatewayId: js.UndefOr[VpnGatewayId]
   }
@@ -9061,6 +9065,7 @@ package ec2 {
         Type: String,
         DryRun: js.UndefOr[Boolean] = js.undefined,
         Options: js.UndefOr[VpnConnectionOptionsSpecification] = js.undefined,
+        TagSpecifications: js.UndefOr[TagSpecificationList] = js.undefined,
         TransitGatewayId: js.UndefOr[TransitGatewayId] = js.undefined,
         VpnGatewayId: js.UndefOr[VpnGatewayId] = js.undefined
     ): CreateVpnConnectionRequest = {
@@ -9071,6 +9076,7 @@ package ec2 {
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       Options.foreach(__v => __obj.updateDynamic("Options")(__v.asInstanceOf[js.Any]))
+      TagSpecifications.foreach(__v => __obj.updateDynamic("TagSpecifications")(__v.asInstanceOf[js.Any]))
       TransitGatewayId.foreach(__v => __obj.updateDynamic("TransitGatewayId")(__v.asInstanceOf[js.Any]))
       VpnGatewayId.foreach(__v => __obj.updateDynamic("VpnGatewayId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateVpnConnectionRequest]
@@ -9129,6 +9135,7 @@ package ec2 {
     var AmazonSideAsn: js.UndefOr[Double]
     var AvailabilityZone: js.UndefOr[String]
     var DryRun: js.UndefOr[Boolean]
+    var TagSpecifications: js.UndefOr[TagSpecificationList]
   }
 
   object CreateVpnGatewayRequest {
@@ -9137,7 +9144,8 @@ package ec2 {
         Type: GatewayType,
         AmazonSideAsn: js.UndefOr[Double] = js.undefined,
         AvailabilityZone: js.UndefOr[String] = js.undefined,
-        DryRun: js.UndefOr[Boolean] = js.undefined
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        TagSpecifications: js.UndefOr[TagSpecificationList] = js.undefined
     ): CreateVpnGatewayRequest = {
       val __obj = js.Dynamic.literal(
         "Type" -> Type.asInstanceOf[js.Any]
@@ -9146,6 +9154,7 @@ package ec2 {
       AmazonSideAsn.foreach(__v => __obj.updateDynamic("AmazonSideAsn")(__v.asInstanceOf[js.Any]))
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      TagSpecifications.foreach(__v => __obj.updateDynamic("TagSpecifications")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateVpnGatewayRequest]
     }
   }

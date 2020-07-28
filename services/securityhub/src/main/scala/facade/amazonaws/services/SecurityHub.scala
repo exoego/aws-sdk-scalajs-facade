@@ -178,6 +178,10 @@ package object securityhub {
       service.updateFindings(params).promise().toFuture
     @inline def updateInsightFuture(params: UpdateInsightRequest): Future[UpdateInsightResponse] =
       service.updateInsight(params).promise().toFuture
+    @inline def updateSecurityHubConfigurationFuture(
+        params: UpdateSecurityHubConfigurationRequest
+    ): Future[UpdateSecurityHubConfigurationResponse] =
+      service.updateSecurityHubConfiguration(params).promise().toFuture
     @inline def updateStandardsControlFuture(
         params: UpdateStandardsControlRequest
     ): Future[UpdateStandardsControlResponse] = service.updateStandardsControl(params).promise().toFuture
@@ -241,6 +245,9 @@ package securityhub {
     def updateActionTarget(params: UpdateActionTargetRequest): Request[UpdateActionTargetResponse] = js.native
     def updateFindings(params: UpdateFindingsRequest): Request[UpdateFindingsResponse] = js.native
     def updateInsight(params: UpdateInsightRequest): Request[UpdateInsightResponse] = js.native
+    def updateSecurityHubConfiguration(
+        params: UpdateSecurityHubConfigurationRequest
+    ): Request[UpdateSecurityHubConfigurationResponse] = js.native
     def updateStandardsControl(params: UpdateStandardsControlRequest): Request[UpdateStandardsControlResponse] =
       js.native
   }
@@ -3162,6 +3169,7 @@ package securityhub {
 
   @js.native
   trait DescribeHubResponse extends js.Object {
+    var AutoEnableControls: js.UndefOr[Boolean]
     var HubArn: js.UndefOr[NonEmptyString]
     var SubscribedAt: js.UndefOr[NonEmptyString]
   }
@@ -3169,10 +3177,12 @@ package securityhub {
   object DescribeHubResponse {
     @inline
     def apply(
+        AutoEnableControls: js.UndefOr[Boolean] = js.undefined,
         HubArn: js.UndefOr[NonEmptyString] = js.undefined,
         SubscribedAt: js.UndefOr[NonEmptyString] = js.undefined
     ): DescribeHubResponse = {
       val __obj = js.Dynamic.literal()
+      AutoEnableControls.foreach(__v => __obj.updateDynamic("AutoEnableControls")(__v.asInstanceOf[js.Any]))
       HubArn.foreach(__v => __obj.updateDynamic("HubArn")(__v.asInstanceOf[js.Any]))
       SubscribedAt.foreach(__v => __obj.updateDynamic("SubscribedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeHubResponse]
@@ -4852,6 +4862,8 @@ package securityhub {
 
   /**
     * The severity of the finding.
+    *  The finding provider can provide the initial severity, but cannot update it after that. The severity can only be updated by a master account. It cannot be updated by a member account.
+    *  The finding must have either <code>Label</code> or <code>Normalized</code> populated. If only one of these attributes is populated, then Security Hub automatically populates the other one. If neither attribute is populated, then the finding is invalid. <code>Label</code> is the preferred attribute.
     */
   @js.native
   trait Severity extends js.Object {
@@ -5442,6 +5454,35 @@ package securityhub {
       val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateInsightResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateSecurityHubConfigurationRequest extends js.Object {
+    var AutoEnableControls: js.UndefOr[Boolean]
+  }
+
+  object UpdateSecurityHubConfigurationRequest {
+    @inline
+    def apply(
+        AutoEnableControls: js.UndefOr[Boolean] = js.undefined
+    ): UpdateSecurityHubConfigurationRequest = {
+      val __obj = js.Dynamic.literal()
+      AutoEnableControls.foreach(__v => __obj.updateDynamic("AutoEnableControls")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateSecurityHubConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateSecurityHubConfigurationResponse extends js.Object {}
+
+  object UpdateSecurityHubConfigurationResponse {
+    @inline
+    def apply(
+    ): UpdateSecurityHubConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[UpdateSecurityHubConfigurationResponse]
     }
   }
 

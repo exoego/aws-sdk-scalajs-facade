@@ -1565,6 +1565,7 @@ package medialive {
     var AribDestinationSettings: js.UndefOr[AribDestinationSettings]
     var BurnInDestinationSettings: js.UndefOr[BurnInDestinationSettings]
     var DvbSubDestinationSettings: js.UndefOr[DvbSubDestinationSettings]
+    var EbuTtDDestinationSettings: js.UndefOr[EbuTtDDestinationSettings]
     var EmbeddedDestinationSettings: js.UndefOr[EmbeddedDestinationSettings]
     var EmbeddedPlusScte20DestinationSettings: js.UndefOr[EmbeddedPlusScte20DestinationSettings]
     var RtmpCaptionInfoDestinationSettings: js.UndefOr[RtmpCaptionInfoDestinationSettings]
@@ -1582,6 +1583,7 @@ package medialive {
         AribDestinationSettings: js.UndefOr[AribDestinationSettings] = js.undefined,
         BurnInDestinationSettings: js.UndefOr[BurnInDestinationSettings] = js.undefined,
         DvbSubDestinationSettings: js.UndefOr[DvbSubDestinationSettings] = js.undefined,
+        EbuTtDDestinationSettings: js.UndefOr[EbuTtDDestinationSettings] = js.undefined,
         EmbeddedDestinationSettings: js.UndefOr[EmbeddedDestinationSettings] = js.undefined,
         EmbeddedPlusScte20DestinationSettings: js.UndefOr[EmbeddedPlusScte20DestinationSettings] = js.undefined,
         RtmpCaptionInfoDestinationSettings: js.UndefOr[RtmpCaptionInfoDestinationSettings] = js.undefined,
@@ -1599,6 +1601,9 @@ package medialive {
       )
       DvbSubDestinationSettings.foreach(__v =>
         __obj.updateDynamic("DvbSubDestinationSettings")(__v.asInstanceOf[js.Any])
+      )
+      EbuTtDDestinationSettings.foreach(__v =>
+        __obj.updateDynamic("EbuTtDDestinationSettings")(__v.asInstanceOf[js.Any])
       )
       EmbeddedDestinationSettings.foreach(__v =>
         __obj.updateDynamic("EmbeddedDestinationSettings")(__v.asInstanceOf[js.Any])
@@ -3855,6 +3860,55 @@ package medialive {
   }
 
   /**
+    * Ebu Tt DDestination Settings
+    */
+  @js.native
+  trait EbuTtDDestinationSettings extends js.Object {
+    var FillLineGap: js.UndefOr[EbuTtDFillLineGapControl]
+    var FontFamily: js.UndefOr[__string]
+    var StyleControl: js.UndefOr[EbuTtDDestinationStyleControl]
+  }
+
+  object EbuTtDDestinationSettings {
+    @inline
+    def apply(
+        FillLineGap: js.UndefOr[EbuTtDFillLineGapControl] = js.undefined,
+        FontFamily: js.UndefOr[__string] = js.undefined,
+        StyleControl: js.UndefOr[EbuTtDDestinationStyleControl] = js.undefined
+    ): EbuTtDDestinationSettings = {
+      val __obj = js.Dynamic.literal()
+      FillLineGap.foreach(__v => __obj.updateDynamic("FillLineGap")(__v.asInstanceOf[js.Any]))
+      FontFamily.foreach(__v => __obj.updateDynamic("FontFamily")(__v.asInstanceOf[js.Any]))
+      StyleControl.foreach(__v => __obj.updateDynamic("StyleControl")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EbuTtDDestinationSettings]
+    }
+  }
+
+  /**
+    * Ebu Tt DDestination Style Control
+    */
+  @js.native
+  sealed trait EbuTtDDestinationStyleControl extends js.Any
+  object EbuTtDDestinationStyleControl extends js.Object {
+    val EXCLUDE = "EXCLUDE".asInstanceOf[EbuTtDDestinationStyleControl]
+    val INCLUDE = "INCLUDE".asInstanceOf[EbuTtDDestinationStyleControl]
+
+    val values = js.Object.freeze(js.Array(EXCLUDE, INCLUDE))
+  }
+
+  /**
+    * Ebu Tt DFill Line Gap Control
+    */
+  @js.native
+  sealed trait EbuTtDFillLineGapControl extends js.Any
+  object EbuTtDFillLineGapControl extends js.Object {
+    val DISABLED = "DISABLED".asInstanceOf[EbuTtDFillLineGapControl]
+    val ENABLED = "ENABLED".asInstanceOf[EbuTtDFillLineGapControl]
+
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+  }
+
+  /**
     * Embedded Convert608 To708
     */
   @js.native
@@ -4914,6 +4968,25 @@ package medialive {
   }
 
   /**
+    * H265 Filter Settings
+    */
+  @js.native
+  trait H265FilterSettings extends js.Object {
+    var TemporalFilterSettings: js.UndefOr[TemporalFilterSettings]
+  }
+
+  object H265FilterSettings {
+    @inline
+    def apply(
+        TemporalFilterSettings: js.UndefOr[TemporalFilterSettings] = js.undefined
+    ): H265FilterSettings = {
+      val __obj = js.Dynamic.literal()
+      TemporalFilterSettings.foreach(__v => __obj.updateDynamic("TemporalFilterSettings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[H265FilterSettings]
+    }
+  }
+
+  /**
     * H265 Flicker Aq
     */
   @js.native
@@ -5022,9 +5095,10 @@ package medialive {
   @js.native
   sealed trait H265ScanType extends js.Any
   object H265ScanType extends js.Object {
+    val INTERLACED = "INTERLACED".asInstanceOf[H265ScanType]
     val PROGRESSIVE = "PROGRESSIVE".asInstanceOf[H265ScanType]
 
-    val values = js.Object.freeze(js.Array(PROGRESSIVE))
+    val values = js.Object.freeze(js.Array(INTERLACED, PROGRESSIVE))
   }
 
   /**
@@ -5053,6 +5127,7 @@ package medialive {
     var BufSize: js.UndefOr[__integerMin100000Max80000000]
     var ColorMetadata: js.UndefOr[H265ColorMetadata]
     var ColorSpaceSettings: js.UndefOr[H265ColorSpaceSettings]
+    var FilterSettings: js.UndefOr[H265FilterSettings]
     var FixedAfd: js.UndefOr[FixedAfd]
     var FlickerAq: js.UndefOr[H265FlickerAq]
     var GopClosedCadence: js.UndefOr[__integerMin0]
@@ -5086,6 +5161,7 @@ package medialive {
         BufSize: js.UndefOr[__integerMin100000Max80000000] = js.undefined,
         ColorMetadata: js.UndefOr[H265ColorMetadata] = js.undefined,
         ColorSpaceSettings: js.UndefOr[H265ColorSpaceSettings] = js.undefined,
+        FilterSettings: js.UndefOr[H265FilterSettings] = js.undefined,
         FixedAfd: js.UndefOr[FixedAfd] = js.undefined,
         FlickerAq: js.UndefOr[H265FlickerAq] = js.undefined,
         GopClosedCadence: js.UndefOr[__integerMin0] = js.undefined,
@@ -5120,6 +5196,7 @@ package medialive {
       BufSize.foreach(__v => __obj.updateDynamic("BufSize")(__v.asInstanceOf[js.Any]))
       ColorMetadata.foreach(__v => __obj.updateDynamic("ColorMetadata")(__v.asInstanceOf[js.Any]))
       ColorSpaceSettings.foreach(__v => __obj.updateDynamic("ColorSpaceSettings")(__v.asInstanceOf[js.Any]))
+      FilterSettings.foreach(__v => __obj.updateDynamic("FilterSettings")(__v.asInstanceOf[js.Any]))
       FixedAfd.foreach(__v => __obj.updateDynamic("FixedAfd")(__v.asInstanceOf[js.Any]))
       FlickerAq.foreach(__v => __obj.updateDynamic("FlickerAq")(__v.asInstanceOf[js.Any]))
       GopClosedCadence.foreach(__v => __obj.updateDynamic("GopClosedCadence")(__v.asInstanceOf[js.Any]))
@@ -5691,8 +5768,9 @@ package medialive {
   object HlsOutputSelection extends js.Object {
     val MANIFESTS_AND_SEGMENTS = "MANIFESTS_AND_SEGMENTS".asInstanceOf[HlsOutputSelection]
     val SEGMENTS_ONLY = "SEGMENTS_ONLY".asInstanceOf[HlsOutputSelection]
+    val VARIANT_MANIFESTS_AND_SEGMENTS = "VARIANT_MANIFESTS_AND_SEGMENTS".asInstanceOf[HlsOutputSelection]
 
-    val values = js.Object.freeze(js.Array(MANIFESTS_AND_SEGMENTS, SEGMENTS_ONLY))
+    val values = js.Object.freeze(js.Array(MANIFESTS_AND_SEGMENTS, SEGMENTS_ONLY, VARIANT_MANIFESTS_AND_SEGMENTS))
   }
 
   /**
