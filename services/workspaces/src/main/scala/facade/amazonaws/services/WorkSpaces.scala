@@ -89,114 +89,49 @@ package object workspaces {
 
   implicit final class WorkSpacesOps(private val service: WorkSpaces) extends AnyVal {
 
-    @inline def associateIpGroupsFuture(params: AssociateIpGroupsRequest): Future[AssociateIpGroupsResult] =
-      service.associateIpGroups(params).promise().toFuture
-    @inline def authorizeIpRulesFuture(params: AuthorizeIpRulesRequest): Future[AuthorizeIpRulesResult] =
-      service.authorizeIpRules(params).promise().toFuture
-    @inline def copyWorkspaceImageFuture(params: CopyWorkspaceImageRequest): Future[CopyWorkspaceImageResult] =
-      service.copyWorkspaceImage(params).promise().toFuture
-    @inline def createIpGroupFuture(params: CreateIpGroupRequest): Future[CreateIpGroupResult] =
-      service.createIpGroup(params).promise().toFuture
-    @inline def createTagsFuture(params: CreateTagsRequest): Future[CreateTagsResult] =
-      service.createTags(params).promise().toFuture
-    @inline def createWorkspacesFuture(params: CreateWorkspacesRequest): Future[CreateWorkspacesResult] =
-      service.createWorkspaces(params).promise().toFuture
-    @inline def deleteIpGroupFuture(params: DeleteIpGroupRequest): Future[DeleteIpGroupResult] =
-      service.deleteIpGroup(params).promise().toFuture
-    @inline def deleteTagsFuture(params: DeleteTagsRequest): Future[DeleteTagsResult] =
-      service.deleteTags(params).promise().toFuture
-    @inline def deleteWorkspaceImageFuture(params: DeleteWorkspaceImageRequest): Future[DeleteWorkspaceImageResult] =
-      service.deleteWorkspaceImage(params).promise().toFuture
-    @inline def deregisterWorkspaceDirectoryFuture(
-        params: DeregisterWorkspaceDirectoryRequest
-    ): Future[DeregisterWorkspaceDirectoryResult] = service.deregisterWorkspaceDirectory(params).promise().toFuture
-    @inline def describeAccountFuture(params: DescribeAccountRequest): Future[DescribeAccountResult] =
-      service.describeAccount(params).promise().toFuture
-    @inline def describeAccountModificationsFuture(
-        params: DescribeAccountModificationsRequest
-    ): Future[DescribeAccountModificationsResult] = service.describeAccountModifications(params).promise().toFuture
-    @inline def describeClientPropertiesFuture(
-        params: DescribeClientPropertiesRequest
-    ): Future[DescribeClientPropertiesResult] = service.describeClientProperties(params).promise().toFuture
-    @inline def describeIpGroupsFuture(params: DescribeIpGroupsRequest): Future[DescribeIpGroupsResult] =
-      service.describeIpGroups(params).promise().toFuture
-    @inline def describeTagsFuture(params: DescribeTagsRequest): Future[DescribeTagsResult] =
-      service.describeTags(params).promise().toFuture
-    @inline def describeWorkspaceBundlesFuture(
-        params: DescribeWorkspaceBundlesRequest
-    ): Future[DescribeWorkspaceBundlesResult] = service.describeWorkspaceBundles(params).promise().toFuture
-    @inline def describeWorkspaceDirectoriesFuture(
-        params: DescribeWorkspaceDirectoriesRequest
-    ): Future[DescribeWorkspaceDirectoriesResult] = service.describeWorkspaceDirectories(params).promise().toFuture
-    @inline def describeWorkspaceImagePermissionsFuture(
-        params: DescribeWorkspaceImagePermissionsRequest
-    ): Future[DescribeWorkspaceImagePermissionsResult] =
-      service.describeWorkspaceImagePermissions(params).promise().toFuture
-    @inline def describeWorkspaceImagesFuture(
-        params: DescribeWorkspaceImagesRequest
-    ): Future[DescribeWorkspaceImagesResult] = service.describeWorkspaceImages(params).promise().toFuture
-    @inline def describeWorkspaceSnapshotsFuture(
-        params: DescribeWorkspaceSnapshotsRequest
-    ): Future[DescribeWorkspaceSnapshotsResult] = service.describeWorkspaceSnapshots(params).promise().toFuture
-    @inline def describeWorkspacesConnectionStatusFuture(
-        params: DescribeWorkspacesConnectionStatusRequest
-    ): Future[DescribeWorkspacesConnectionStatusResult] =
-      service.describeWorkspacesConnectionStatus(params).promise().toFuture
-    @inline def describeWorkspacesFuture(params: DescribeWorkspacesRequest): Future[DescribeWorkspacesResult] =
-      service.describeWorkspaces(params).promise().toFuture
-    @inline def disassociateIpGroupsFuture(params: DisassociateIpGroupsRequest): Future[DisassociateIpGroupsResult] =
-      service.disassociateIpGroups(params).promise().toFuture
-    @inline def importWorkspaceImageFuture(params: ImportWorkspaceImageRequest): Future[ImportWorkspaceImageResult] =
-      service.importWorkspaceImage(params).promise().toFuture
-    @inline def listAvailableManagementCidrRangesFuture(
-        params: ListAvailableManagementCidrRangesRequest
-    ): Future[ListAvailableManagementCidrRangesResult] =
-      service.listAvailableManagementCidrRanges(params).promise().toFuture
-    @inline def migrateWorkspaceFuture(params: MigrateWorkspaceRequest): Future[MigrateWorkspaceResult] =
-      service.migrateWorkspace(params).promise().toFuture
-    @inline def modifyAccountFuture(params: ModifyAccountRequest): Future[ModifyAccountResult] =
-      service.modifyAccount(params).promise().toFuture
-    @inline def modifyClientPropertiesFuture(
-        params: ModifyClientPropertiesRequest
-    ): Future[ModifyClientPropertiesResult] = service.modifyClientProperties(params).promise().toFuture
-    @inline def modifySelfservicePermissionsFuture(
-        params: ModifySelfservicePermissionsRequest
-    ): Future[ModifySelfservicePermissionsResult] = service.modifySelfservicePermissions(params).promise().toFuture
-    @inline def modifyWorkspaceAccessPropertiesFuture(
-        params: ModifyWorkspaceAccessPropertiesRequest
-    ): Future[ModifyWorkspaceAccessPropertiesResult] =
-      service.modifyWorkspaceAccessProperties(params).promise().toFuture
-    @inline def modifyWorkspaceCreationPropertiesFuture(
-        params: ModifyWorkspaceCreationPropertiesRequest
-    ): Future[ModifyWorkspaceCreationPropertiesResult] =
-      service.modifyWorkspaceCreationProperties(params).promise().toFuture
-    @inline def modifyWorkspacePropertiesFuture(
-        params: ModifyWorkspacePropertiesRequest
-    ): Future[ModifyWorkspacePropertiesResult] = service.modifyWorkspaceProperties(params).promise().toFuture
-    @inline def modifyWorkspaceStateFuture(params: ModifyWorkspaceStateRequest): Future[ModifyWorkspaceStateResult] =
-      service.modifyWorkspaceState(params).promise().toFuture
-    @inline def rebootWorkspacesFuture(params: RebootWorkspacesRequest): Future[RebootWorkspacesResult] =
-      service.rebootWorkspaces(params).promise().toFuture
-    @inline def rebuildWorkspacesFuture(params: RebuildWorkspacesRequest): Future[RebuildWorkspacesResult] =
-      service.rebuildWorkspaces(params).promise().toFuture
-    @inline def registerWorkspaceDirectoryFuture(
-        params: RegisterWorkspaceDirectoryRequest
-    ): Future[RegisterWorkspaceDirectoryResult] = service.registerWorkspaceDirectory(params).promise().toFuture
-    @inline def restoreWorkspaceFuture(params: RestoreWorkspaceRequest): Future[RestoreWorkspaceResult] =
-      service.restoreWorkspace(params).promise().toFuture
-    @inline def revokeIpRulesFuture(params: RevokeIpRulesRequest): Future[RevokeIpRulesResult] =
-      service.revokeIpRules(params).promise().toFuture
-    @inline def startWorkspacesFuture(params: StartWorkspacesRequest): Future[StartWorkspacesResult] =
-      service.startWorkspaces(params).promise().toFuture
-    @inline def stopWorkspacesFuture(params: StopWorkspacesRequest): Future[StopWorkspacesResult] =
-      service.stopWorkspaces(params).promise().toFuture
-    @inline def terminateWorkspacesFuture(params: TerminateWorkspacesRequest): Future[TerminateWorkspacesResult] =
-      service.terminateWorkspaces(params).promise().toFuture
-    @inline def updateRulesOfIpGroupFuture(params: UpdateRulesOfIpGroupRequest): Future[UpdateRulesOfIpGroupResult] =
-      service.updateRulesOfIpGroup(params).promise().toFuture
-    @inline def updateWorkspaceImagePermissionFuture(
-        params: UpdateWorkspaceImagePermissionRequest
-    ): Future[UpdateWorkspaceImagePermissionResult] = service.updateWorkspaceImagePermission(params).promise().toFuture
+    @inline def associateIpGroupsFuture(params: AssociateIpGroupsRequest): Future[AssociateIpGroupsResult] = service.associateIpGroups(params).promise().toFuture
+    @inline def authorizeIpRulesFuture(params: AuthorizeIpRulesRequest): Future[AuthorizeIpRulesResult] = service.authorizeIpRules(params).promise().toFuture
+    @inline def copyWorkspaceImageFuture(params: CopyWorkspaceImageRequest): Future[CopyWorkspaceImageResult] = service.copyWorkspaceImage(params).promise().toFuture
+    @inline def createIpGroupFuture(params: CreateIpGroupRequest): Future[CreateIpGroupResult] = service.createIpGroup(params).promise().toFuture
+    @inline def createTagsFuture(params: CreateTagsRequest): Future[CreateTagsResult] = service.createTags(params).promise().toFuture
+    @inline def createWorkspacesFuture(params: CreateWorkspacesRequest): Future[CreateWorkspacesResult] = service.createWorkspaces(params).promise().toFuture
+    @inline def deleteIpGroupFuture(params: DeleteIpGroupRequest): Future[DeleteIpGroupResult] = service.deleteIpGroup(params).promise().toFuture
+    @inline def deleteTagsFuture(params: DeleteTagsRequest): Future[DeleteTagsResult] = service.deleteTags(params).promise().toFuture
+    @inline def deleteWorkspaceImageFuture(params: DeleteWorkspaceImageRequest): Future[DeleteWorkspaceImageResult] = service.deleteWorkspaceImage(params).promise().toFuture
+    @inline def deregisterWorkspaceDirectoryFuture(params: DeregisterWorkspaceDirectoryRequest): Future[DeregisterWorkspaceDirectoryResult] = service.deregisterWorkspaceDirectory(params).promise().toFuture
+    @inline def describeAccountFuture(params: DescribeAccountRequest): Future[DescribeAccountResult] = service.describeAccount(params).promise().toFuture
+    @inline def describeAccountModificationsFuture(params: DescribeAccountModificationsRequest): Future[DescribeAccountModificationsResult] = service.describeAccountModifications(params).promise().toFuture
+    @inline def describeClientPropertiesFuture(params: DescribeClientPropertiesRequest): Future[DescribeClientPropertiesResult] = service.describeClientProperties(params).promise().toFuture
+    @inline def describeIpGroupsFuture(params: DescribeIpGroupsRequest): Future[DescribeIpGroupsResult] = service.describeIpGroups(params).promise().toFuture
+    @inline def describeTagsFuture(params: DescribeTagsRequest): Future[DescribeTagsResult] = service.describeTags(params).promise().toFuture
+    @inline def describeWorkspaceBundlesFuture(params: DescribeWorkspaceBundlesRequest): Future[DescribeWorkspaceBundlesResult] = service.describeWorkspaceBundles(params).promise().toFuture
+    @inline def describeWorkspaceDirectoriesFuture(params: DescribeWorkspaceDirectoriesRequest): Future[DescribeWorkspaceDirectoriesResult] = service.describeWorkspaceDirectories(params).promise().toFuture
+    @inline def describeWorkspaceImagePermissionsFuture(params: DescribeWorkspaceImagePermissionsRequest): Future[DescribeWorkspaceImagePermissionsResult] = service.describeWorkspaceImagePermissions(params).promise().toFuture
+    @inline def describeWorkspaceImagesFuture(params: DescribeWorkspaceImagesRequest): Future[DescribeWorkspaceImagesResult] = service.describeWorkspaceImages(params).promise().toFuture
+    @inline def describeWorkspaceSnapshotsFuture(params: DescribeWorkspaceSnapshotsRequest): Future[DescribeWorkspaceSnapshotsResult] = service.describeWorkspaceSnapshots(params).promise().toFuture
+    @inline def describeWorkspacesConnectionStatusFuture(params: DescribeWorkspacesConnectionStatusRequest): Future[DescribeWorkspacesConnectionStatusResult] = service.describeWorkspacesConnectionStatus(params).promise().toFuture
+    @inline def describeWorkspacesFuture(params: DescribeWorkspacesRequest): Future[DescribeWorkspacesResult] = service.describeWorkspaces(params).promise().toFuture
+    @inline def disassociateIpGroupsFuture(params: DisassociateIpGroupsRequest): Future[DisassociateIpGroupsResult] = service.disassociateIpGroups(params).promise().toFuture
+    @inline def importWorkspaceImageFuture(params: ImportWorkspaceImageRequest): Future[ImportWorkspaceImageResult] = service.importWorkspaceImage(params).promise().toFuture
+    @inline def listAvailableManagementCidrRangesFuture(params: ListAvailableManagementCidrRangesRequest): Future[ListAvailableManagementCidrRangesResult] = service.listAvailableManagementCidrRanges(params).promise().toFuture
+    @inline def migrateWorkspaceFuture(params: MigrateWorkspaceRequest): Future[MigrateWorkspaceResult] = service.migrateWorkspace(params).promise().toFuture
+    @inline def modifyAccountFuture(params: ModifyAccountRequest): Future[ModifyAccountResult] = service.modifyAccount(params).promise().toFuture
+    @inline def modifyClientPropertiesFuture(params: ModifyClientPropertiesRequest): Future[ModifyClientPropertiesResult] = service.modifyClientProperties(params).promise().toFuture
+    @inline def modifySelfservicePermissionsFuture(params: ModifySelfservicePermissionsRequest): Future[ModifySelfservicePermissionsResult] = service.modifySelfservicePermissions(params).promise().toFuture
+    @inline def modifyWorkspaceAccessPropertiesFuture(params: ModifyWorkspaceAccessPropertiesRequest): Future[ModifyWorkspaceAccessPropertiesResult] = service.modifyWorkspaceAccessProperties(params).promise().toFuture
+    @inline def modifyWorkspaceCreationPropertiesFuture(params: ModifyWorkspaceCreationPropertiesRequest): Future[ModifyWorkspaceCreationPropertiesResult] = service.modifyWorkspaceCreationProperties(params).promise().toFuture
+    @inline def modifyWorkspacePropertiesFuture(params: ModifyWorkspacePropertiesRequest): Future[ModifyWorkspacePropertiesResult] = service.modifyWorkspaceProperties(params).promise().toFuture
+    @inline def modifyWorkspaceStateFuture(params: ModifyWorkspaceStateRequest): Future[ModifyWorkspaceStateResult] = service.modifyWorkspaceState(params).promise().toFuture
+    @inline def rebootWorkspacesFuture(params: RebootWorkspacesRequest): Future[RebootWorkspacesResult] = service.rebootWorkspaces(params).promise().toFuture
+    @inline def rebuildWorkspacesFuture(params: RebuildWorkspacesRequest): Future[RebuildWorkspacesResult] = service.rebuildWorkspaces(params).promise().toFuture
+    @inline def registerWorkspaceDirectoryFuture(params: RegisterWorkspaceDirectoryRequest): Future[RegisterWorkspaceDirectoryResult] = service.registerWorkspaceDirectory(params).promise().toFuture
+    @inline def restoreWorkspaceFuture(params: RestoreWorkspaceRequest): Future[RestoreWorkspaceResult] = service.restoreWorkspace(params).promise().toFuture
+    @inline def revokeIpRulesFuture(params: RevokeIpRulesRequest): Future[RevokeIpRulesResult] = service.revokeIpRules(params).promise().toFuture
+    @inline def startWorkspacesFuture(params: StartWorkspacesRequest): Future[StartWorkspacesResult] = service.startWorkspaces(params).promise().toFuture
+    @inline def stopWorkspacesFuture(params: StopWorkspacesRequest): Future[StopWorkspacesResult] = service.stopWorkspaces(params).promise().toFuture
+    @inline def terminateWorkspacesFuture(params: TerminateWorkspacesRequest): Future[TerminateWorkspacesResult] = service.terminateWorkspaces(params).promise().toFuture
+    @inline def updateRulesOfIpGroupFuture(params: UpdateRulesOfIpGroupRequest): Future[UpdateRulesOfIpGroupResult] = service.updateRulesOfIpGroup(params).promise().toFuture
+    @inline def updateWorkspaceImagePermissionFuture(params: UpdateWorkspaceImagePermissionRequest): Future[UpdateWorkspaceImagePermissionResult] = service.updateWorkspaceImagePermission(params).promise().toFuture
   }
 }
 
@@ -215,68 +150,40 @@ package workspaces {
     def deleteIpGroup(params: DeleteIpGroupRequest): Request[DeleteIpGroupResult] = js.native
     def deleteTags(params: DeleteTagsRequest): Request[DeleteTagsResult] = js.native
     def deleteWorkspaceImage(params: DeleteWorkspaceImageRequest): Request[DeleteWorkspaceImageResult] = js.native
-    def deregisterWorkspaceDirectory(
-        params: DeregisterWorkspaceDirectoryRequest
-    ): Request[DeregisterWorkspaceDirectoryResult] = js.native
+    def deregisterWorkspaceDirectory(params: DeregisterWorkspaceDirectoryRequest): Request[DeregisterWorkspaceDirectoryResult] = js.native
     def describeAccount(params: DescribeAccountRequest): Request[DescribeAccountResult] = js.native
-    def describeAccountModifications(
-        params: DescribeAccountModificationsRequest
-    ): Request[DescribeAccountModificationsResult] = js.native
-    def describeClientProperties(params: DescribeClientPropertiesRequest): Request[DescribeClientPropertiesResult] =
-      js.native
+    def describeAccountModifications(params: DescribeAccountModificationsRequest): Request[DescribeAccountModificationsResult] = js.native
+    def describeClientProperties(params: DescribeClientPropertiesRequest): Request[DescribeClientPropertiesResult] = js.native
     def describeIpGroups(params: DescribeIpGroupsRequest): Request[DescribeIpGroupsResult] = js.native
     def describeTags(params: DescribeTagsRequest): Request[DescribeTagsResult] = js.native
-    def describeWorkspaceBundles(params: DescribeWorkspaceBundlesRequest): Request[DescribeWorkspaceBundlesResult] =
-      js.native
-    def describeWorkspaceDirectories(
-        params: DescribeWorkspaceDirectoriesRequest
-    ): Request[DescribeWorkspaceDirectoriesResult] = js.native
-    def describeWorkspaceImagePermissions(
-        params: DescribeWorkspaceImagePermissionsRequest
-    ): Request[DescribeWorkspaceImagePermissionsResult] = js.native
-    def describeWorkspaceImages(params: DescribeWorkspaceImagesRequest): Request[DescribeWorkspaceImagesResult] =
-      js.native
-    def describeWorkspaceSnapshots(
-        params: DescribeWorkspaceSnapshotsRequest
-    ): Request[DescribeWorkspaceSnapshotsResult] = js.native
+    def describeWorkspaceBundles(params: DescribeWorkspaceBundlesRequest): Request[DescribeWorkspaceBundlesResult] = js.native
+    def describeWorkspaceDirectories(params: DescribeWorkspaceDirectoriesRequest): Request[DescribeWorkspaceDirectoriesResult] = js.native
+    def describeWorkspaceImagePermissions(params: DescribeWorkspaceImagePermissionsRequest): Request[DescribeWorkspaceImagePermissionsResult] = js.native
+    def describeWorkspaceImages(params: DescribeWorkspaceImagesRequest): Request[DescribeWorkspaceImagesResult] = js.native
+    def describeWorkspaceSnapshots(params: DescribeWorkspaceSnapshotsRequest): Request[DescribeWorkspaceSnapshotsResult] = js.native
     def describeWorkspaces(params: DescribeWorkspacesRequest): Request[DescribeWorkspacesResult] = js.native
-    def describeWorkspacesConnectionStatus(
-        params: DescribeWorkspacesConnectionStatusRequest
-    ): Request[DescribeWorkspacesConnectionStatusResult] = js.native
+    def describeWorkspacesConnectionStatus(params: DescribeWorkspacesConnectionStatusRequest): Request[DescribeWorkspacesConnectionStatusResult] = js.native
     def disassociateIpGroups(params: DisassociateIpGroupsRequest): Request[DisassociateIpGroupsResult] = js.native
     def importWorkspaceImage(params: ImportWorkspaceImageRequest): Request[ImportWorkspaceImageResult] = js.native
-    def listAvailableManagementCidrRanges(
-        params: ListAvailableManagementCidrRangesRequest
-    ): Request[ListAvailableManagementCidrRangesResult] = js.native
+    def listAvailableManagementCidrRanges(params: ListAvailableManagementCidrRangesRequest): Request[ListAvailableManagementCidrRangesResult] = js.native
     def migrateWorkspace(params: MigrateWorkspaceRequest): Request[MigrateWorkspaceResult] = js.native
     def modifyAccount(params: ModifyAccountRequest): Request[ModifyAccountResult] = js.native
     def modifyClientProperties(params: ModifyClientPropertiesRequest): Request[ModifyClientPropertiesResult] = js.native
-    def modifySelfservicePermissions(
-        params: ModifySelfservicePermissionsRequest
-    ): Request[ModifySelfservicePermissionsResult] = js.native
-    def modifyWorkspaceAccessProperties(
-        params: ModifyWorkspaceAccessPropertiesRequest
-    ): Request[ModifyWorkspaceAccessPropertiesResult] = js.native
-    def modifyWorkspaceCreationProperties(
-        params: ModifyWorkspaceCreationPropertiesRequest
-    ): Request[ModifyWorkspaceCreationPropertiesResult] = js.native
-    def modifyWorkspaceProperties(params: ModifyWorkspacePropertiesRequest): Request[ModifyWorkspacePropertiesResult] =
-      js.native
+    def modifySelfservicePermissions(params: ModifySelfservicePermissionsRequest): Request[ModifySelfservicePermissionsResult] = js.native
+    def modifyWorkspaceAccessProperties(params: ModifyWorkspaceAccessPropertiesRequest): Request[ModifyWorkspaceAccessPropertiesResult] = js.native
+    def modifyWorkspaceCreationProperties(params: ModifyWorkspaceCreationPropertiesRequest): Request[ModifyWorkspaceCreationPropertiesResult] = js.native
+    def modifyWorkspaceProperties(params: ModifyWorkspacePropertiesRequest): Request[ModifyWorkspacePropertiesResult] = js.native
     def modifyWorkspaceState(params: ModifyWorkspaceStateRequest): Request[ModifyWorkspaceStateResult] = js.native
     def rebootWorkspaces(params: RebootWorkspacesRequest): Request[RebootWorkspacesResult] = js.native
     def rebuildWorkspaces(params: RebuildWorkspacesRequest): Request[RebuildWorkspacesResult] = js.native
-    def registerWorkspaceDirectory(
-        params: RegisterWorkspaceDirectoryRequest
-    ): Request[RegisterWorkspaceDirectoryResult] = js.native
+    def registerWorkspaceDirectory(params: RegisterWorkspaceDirectoryRequest): Request[RegisterWorkspaceDirectoryResult] = js.native
     def restoreWorkspace(params: RestoreWorkspaceRequest): Request[RestoreWorkspaceResult] = js.native
     def revokeIpRules(params: RevokeIpRulesRequest): Request[RevokeIpRulesResult] = js.native
     def startWorkspaces(params: StartWorkspacesRequest): Request[StartWorkspacesResult] = js.native
     def stopWorkspaces(params: StopWorkspacesRequest): Request[StopWorkspacesResult] = js.native
     def terminateWorkspaces(params: TerminateWorkspacesRequest): Request[TerminateWorkspacesResult] = js.native
     def updateRulesOfIpGroup(params: UpdateRulesOfIpGroupRequest): Request[UpdateRulesOfIpGroupResult] = js.native
-    def updateWorkspaceImagePermission(
-        params: UpdateWorkspaceImagePermissionRequest
-    ): Request[UpdateWorkspaceImagePermissionResult] = js.native
+    def updateWorkspaceImagePermission(params: UpdateWorkspaceImagePermissionRequest): Request[UpdateWorkspaceImagePermissionResult] = js.native
   }
 
   @js.native
@@ -312,9 +219,7 @@ package workspaces {
         StartTime: js.UndefOr[Timestamp] = js.undefined
     ): AccountModification = {
       val __obj = js.Dynamic.literal()
-      DedicatedTenancyManagementCidrRange.foreach(__v =>
-        __obj.updateDynamic("DedicatedTenancyManagementCidrRange")(__v.asInstanceOf[js.Any])
-      )
+      DedicatedTenancyManagementCidrRange.foreach(__v => __obj.updateDynamic("DedicatedTenancyManagementCidrRange")(__v.asInstanceOf[js.Any]))
       DedicatedTenancySupport.foreach(__v => __obj.updateDynamic("DedicatedTenancySupport")(__v.asInstanceOf[js.Any]))
       ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
       ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
@@ -692,9 +597,7 @@ package workspaces {
       EnableInternetAccess.foreach(__v => __obj.updateDynamic("EnableInternetAccess")(__v.asInstanceOf[js.Any]))
       EnableMaintenanceMode.foreach(__v => __obj.updateDynamic("EnableMaintenanceMode")(__v.asInstanceOf[js.Any]))
       EnableWorkDocs.foreach(__v => __obj.updateDynamic("EnableWorkDocs")(__v.asInstanceOf[js.Any]))
-      UserEnabledAsLocalAdministrator.foreach(__v =>
-        __obj.updateDynamic("UserEnabledAsLocalAdministrator")(__v.asInstanceOf[js.Any])
-      )
+      UserEnabledAsLocalAdministrator.foreach(__v => __obj.updateDynamic("UserEnabledAsLocalAdministrator")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DefaultWorkspaceCreationProperties]
     }
   }
@@ -887,9 +790,7 @@ package workspaces {
         DedicatedTenancySupport: js.UndefOr[DedicatedTenancySupportResultEnum] = js.undefined
     ): DescribeAccountResult = {
       val __obj = js.Dynamic.literal()
-      DedicatedTenancyManagementCidrRange.foreach(__v =>
-        __obj.updateDynamic("DedicatedTenancyManagementCidrRange")(__v.asInstanceOf[js.Any])
-      )
+      DedicatedTenancyManagementCidrRange.foreach(__v => __obj.updateDynamic("DedicatedTenancyManagementCidrRange")(__v.asInstanceOf[js.Any]))
       DedicatedTenancySupport.foreach(__v => __obj.updateDynamic("DedicatedTenancySupport")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAccountResult]
     }
@@ -1246,9 +1147,7 @@ package workspaces {
     ): DescribeWorkspacesConnectionStatusResult = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      WorkspacesConnectionStatus.foreach(__v =>
-        __obj.updateDynamic("WorkspacesConnectionStatus")(__v.asInstanceOf[js.Any])
-      )
+      WorkspacesConnectionStatus.foreach(__v => __obj.updateDynamic("WorkspacesConnectionStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeWorkspacesConnectionStatusResult]
     }
   }
@@ -1620,9 +1519,7 @@ package workspaces {
         DedicatedTenancySupport: js.UndefOr[DedicatedTenancySupportEnum] = js.undefined
     ): ModifyAccountRequest = {
       val __obj = js.Dynamic.literal()
-      DedicatedTenancyManagementCidrRange.foreach(__v =>
-        __obj.updateDynamic("DedicatedTenancyManagementCidrRange")(__v.asInstanceOf[js.Any])
-      )
+      DedicatedTenancyManagementCidrRange.foreach(__v => __obj.updateDynamic("DedicatedTenancyManagementCidrRange")(__v.asInstanceOf[js.Any]))
       DedicatedTenancySupport.foreach(__v => __obj.updateDynamic("DedicatedTenancySupport")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyAccountRequest]
     }
@@ -2523,15 +2420,11 @@ package workspaces {
       ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
       IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
       ModificationStates.foreach(__v => __obj.updateDynamic("ModificationStates")(__v.asInstanceOf[js.Any]))
-      RootVolumeEncryptionEnabled.foreach(__v =>
-        __obj.updateDynamic("RootVolumeEncryptionEnabled")(__v.asInstanceOf[js.Any])
-      )
+      RootVolumeEncryptionEnabled.foreach(__v => __obj.updateDynamic("RootVolumeEncryptionEnabled")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
       UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
-      UserVolumeEncryptionEnabled.foreach(__v =>
-        __obj.updateDynamic("UserVolumeEncryptionEnabled")(__v.asInstanceOf[js.Any])
-      )
+      UserVolumeEncryptionEnabled.foreach(__v => __obj.updateDynamic("UserVolumeEncryptionEnabled")(__v.asInstanceOf[js.Any]))
       VolumeEncryptionKey.foreach(__v => __obj.updateDynamic("VolumeEncryptionKey")(__v.asInstanceOf[js.Any]))
       WorkspaceId.foreach(__v => __obj.updateDynamic("WorkspaceId")(__v.asInstanceOf[js.Any]))
       WorkspaceProperties.foreach(__v => __obj.updateDynamic("WorkspaceProperties")(__v.asInstanceOf[js.Any]))
@@ -2640,12 +2533,8 @@ package workspaces {
     ): WorkspaceConnectionStatus = {
       val __obj = js.Dynamic.literal()
       ConnectionState.foreach(__v => __obj.updateDynamic("ConnectionState")(__v.asInstanceOf[js.Any]))
-      ConnectionStateCheckTimestamp.foreach(__v =>
-        __obj.updateDynamic("ConnectionStateCheckTimestamp")(__v.asInstanceOf[js.Any])
-      )
-      LastKnownUserConnectionTimestamp.foreach(__v =>
-        __obj.updateDynamic("LastKnownUserConnectionTimestamp")(__v.asInstanceOf[js.Any])
-      )
+      ConnectionStateCheckTimestamp.foreach(__v => __obj.updateDynamic("ConnectionStateCheckTimestamp")(__v.asInstanceOf[js.Any]))
+      LastKnownUserConnectionTimestamp.foreach(__v => __obj.updateDynamic("LastKnownUserConnectionTimestamp")(__v.asInstanceOf[js.Any]))
       WorkspaceId.foreach(__v => __obj.updateDynamic("WorkspaceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkspaceConnectionStatus]
     }
@@ -2677,9 +2566,7 @@ package workspaces {
       DefaultOu.foreach(__v => __obj.updateDynamic("DefaultOu")(__v.asInstanceOf[js.Any]))
       EnableInternetAccess.foreach(__v => __obj.updateDynamic("EnableInternetAccess")(__v.asInstanceOf[js.Any]))
       EnableMaintenanceMode.foreach(__v => __obj.updateDynamic("EnableMaintenanceMode")(__v.asInstanceOf[js.Any]))
-      UserEnabledAsLocalAdministrator.foreach(__v =>
-        __obj.updateDynamic("UserEnabledAsLocalAdministrator")(__v.asInstanceOf[js.Any])
-      )
+      UserEnabledAsLocalAdministrator.foreach(__v => __obj.updateDynamic("UserEnabledAsLocalAdministrator")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkspaceCreationProperties]
     }
   }
@@ -2740,12 +2627,8 @@ package workspaces {
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
       Tenancy.foreach(__v => __obj.updateDynamic("Tenancy")(__v.asInstanceOf[js.Any]))
-      WorkspaceAccessProperties.foreach(__v =>
-        __obj.updateDynamic("WorkspaceAccessProperties")(__v.asInstanceOf[js.Any])
-      )
-      WorkspaceCreationProperties.foreach(__v =>
-        __obj.updateDynamic("WorkspaceCreationProperties")(__v.asInstanceOf[js.Any])
-      )
+      WorkspaceAccessProperties.foreach(__v => __obj.updateDynamic("WorkspaceAccessProperties")(__v.asInstanceOf[js.Any]))
+      WorkspaceCreationProperties.foreach(__v => __obj.updateDynamic("WorkspaceCreationProperties")(__v.asInstanceOf[js.Any]))
       WorkspaceSecurityGroupId.foreach(__v => __obj.updateDynamic("WorkspaceSecurityGroupId")(__v.asInstanceOf[js.Any]))
       ipGroupIds.foreach(__v => __obj.updateDynamic("ipGroupIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkspaceDirectory]
@@ -2873,9 +2756,7 @@ package workspaces {
       ComputeTypeName.foreach(__v => __obj.updateDynamic("ComputeTypeName")(__v.asInstanceOf[js.Any]))
       RootVolumeSizeGib.foreach(__v => __obj.updateDynamic("RootVolumeSizeGib")(__v.asInstanceOf[js.Any]))
       RunningMode.foreach(__v => __obj.updateDynamic("RunningMode")(__v.asInstanceOf[js.Any]))
-      RunningModeAutoStopTimeoutInMinutes.foreach(__v =>
-        __obj.updateDynamic("RunningModeAutoStopTimeoutInMinutes")(__v.asInstanceOf[js.Any])
-      )
+      RunningModeAutoStopTimeoutInMinutes.foreach(__v => __obj.updateDynamic("RunningModeAutoStopTimeoutInMinutes")(__v.asInstanceOf[js.Any]))
       UserVolumeSizeGib.foreach(__v => __obj.updateDynamic("UserVolumeSizeGib")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkspaceProperties]
     }
@@ -2914,13 +2795,9 @@ package workspaces {
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
-      RootVolumeEncryptionEnabled.foreach(__v =>
-        __obj.updateDynamic("RootVolumeEncryptionEnabled")(__v.asInstanceOf[js.Any])
-      )
+      RootVolumeEncryptionEnabled.foreach(__v => __obj.updateDynamic("RootVolumeEncryptionEnabled")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      UserVolumeEncryptionEnabled.foreach(__v =>
-        __obj.updateDynamic("UserVolumeEncryptionEnabled")(__v.asInstanceOf[js.Any])
-      )
+      UserVolumeEncryptionEnabled.foreach(__v => __obj.updateDynamic("UserVolumeEncryptionEnabled")(__v.asInstanceOf[js.Any]))
       VolumeEncryptionKey.foreach(__v => __obj.updateDynamic("VolumeEncryptionKey")(__v.asInstanceOf[js.Any]))
       WorkspaceProperties.foreach(__v => __obj.updateDynamic("WorkspaceProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkspaceRequest]

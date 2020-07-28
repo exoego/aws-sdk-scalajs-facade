@@ -53,82 +53,34 @@ package object route53domains {
 
   implicit final class Route53DomainsOps(private val service: Route53Domains) extends AnyVal {
 
-    @inline def acceptDomainTransferFromAnotherAwsAccountFuture(
-        params: AcceptDomainTransferFromAnotherAwsAccountRequest
-    ): Future[AcceptDomainTransferFromAnotherAwsAccountResponse] =
-      service.acceptDomainTransferFromAnotherAwsAccount(params).promise().toFuture
-    @inline def cancelDomainTransferToAnotherAwsAccountFuture(
-        params: CancelDomainTransferToAnotherAwsAccountRequest
-    ): Future[CancelDomainTransferToAnotherAwsAccountResponse] =
-      service.cancelDomainTransferToAnotherAwsAccount(params).promise().toFuture
-    @inline def checkDomainAvailabilityFuture(
-        params: CheckDomainAvailabilityRequest
-    ): Future[CheckDomainAvailabilityResponse] = service.checkDomainAvailability(params).promise().toFuture
-    @inline def checkDomainTransferabilityFuture(
-        params: CheckDomainTransferabilityRequest
-    ): Future[CheckDomainTransferabilityResponse] = service.checkDomainTransferability(params).promise().toFuture
-    @inline def deleteTagsForDomainFuture(params: DeleteTagsForDomainRequest): Future[DeleteTagsForDomainResponse] =
-      service.deleteTagsForDomain(params).promise().toFuture
-    @inline def disableDomainAutoRenewFuture(
-        params: DisableDomainAutoRenewRequest
-    ): Future[DisableDomainAutoRenewResponse] = service.disableDomainAutoRenew(params).promise().toFuture
-    @inline def disableDomainTransferLockFuture(
-        params: DisableDomainTransferLockRequest
-    ): Future[DisableDomainTransferLockResponse] = service.disableDomainTransferLock(params).promise().toFuture
-    @inline def enableDomainAutoRenewFuture(
-        params: EnableDomainAutoRenewRequest
-    ): Future[EnableDomainAutoRenewResponse] = service.enableDomainAutoRenew(params).promise().toFuture
-    @inline def enableDomainTransferLockFuture(
-        params: EnableDomainTransferLockRequest
-    ): Future[EnableDomainTransferLockResponse] = service.enableDomainTransferLock(params).promise().toFuture
-    @inline def getContactReachabilityStatusFuture(
-        params: GetContactReachabilityStatusRequest
-    ): Future[GetContactReachabilityStatusResponse] = service.getContactReachabilityStatus(params).promise().toFuture
-    @inline def getDomainDetailFuture(params: GetDomainDetailRequest): Future[GetDomainDetailResponse] =
-      service.getDomainDetail(params).promise().toFuture
-    @inline def getDomainSuggestionsFuture(params: GetDomainSuggestionsRequest): Future[GetDomainSuggestionsResponse] =
-      service.getDomainSuggestions(params).promise().toFuture
-    @inline def getOperationDetailFuture(params: GetOperationDetailRequest): Future[GetOperationDetailResponse] =
-      service.getOperationDetail(params).promise().toFuture
-    @inline def listDomainsFuture(params: ListDomainsRequest): Future[ListDomainsResponse] =
-      service.listDomains(params).promise().toFuture
-    @inline def listOperationsFuture(params: ListOperationsRequest): Future[ListOperationsResponse] =
-      service.listOperations(params).promise().toFuture
-    @inline def listTagsForDomainFuture(params: ListTagsForDomainRequest): Future[ListTagsForDomainResponse] =
-      service.listTagsForDomain(params).promise().toFuture
-    @inline def registerDomainFuture(params: RegisterDomainRequest): Future[RegisterDomainResponse] =
-      service.registerDomain(params).promise().toFuture
-    @inline def rejectDomainTransferFromAnotherAwsAccountFuture(
-        params: RejectDomainTransferFromAnotherAwsAccountRequest
-    ): Future[RejectDomainTransferFromAnotherAwsAccountResponse] =
-      service.rejectDomainTransferFromAnotherAwsAccount(params).promise().toFuture
-    @inline def renewDomainFuture(params: RenewDomainRequest): Future[RenewDomainResponse] =
-      service.renewDomain(params).promise().toFuture
-    @inline def resendContactReachabilityEmailFuture(
-        params: ResendContactReachabilityEmailRequest
-    ): Future[ResendContactReachabilityEmailResponse] =
-      service.resendContactReachabilityEmail(params).promise().toFuture
-    @inline def retrieveDomainAuthCodeFuture(
-        params: RetrieveDomainAuthCodeRequest
-    ): Future[RetrieveDomainAuthCodeResponse] = service.retrieveDomainAuthCode(params).promise().toFuture
-    @inline def transferDomainFuture(params: TransferDomainRequest): Future[TransferDomainResponse] =
-      service.transferDomain(params).promise().toFuture
-    @inline def transferDomainToAnotherAwsAccountFuture(
-        params: TransferDomainToAnotherAwsAccountRequest
-    ): Future[TransferDomainToAnotherAwsAccountResponse] =
-      service.transferDomainToAnotherAwsAccount(params).promise().toFuture
-    @inline def updateDomainContactFuture(params: UpdateDomainContactRequest): Future[UpdateDomainContactResponse] =
-      service.updateDomainContact(params).promise().toFuture
-    @inline def updateDomainContactPrivacyFuture(
-        params: UpdateDomainContactPrivacyRequest
-    ): Future[UpdateDomainContactPrivacyResponse] = service.updateDomainContactPrivacy(params).promise().toFuture
-    @inline def updateDomainNameserversFuture(
-        params: UpdateDomainNameserversRequest
-    ): Future[UpdateDomainNameserversResponse] = service.updateDomainNameservers(params).promise().toFuture
-    @inline def updateTagsForDomainFuture(params: UpdateTagsForDomainRequest): Future[UpdateTagsForDomainResponse] =
-      service.updateTagsForDomain(params).promise().toFuture
-    @inline def viewBillingFuture(params: ViewBillingRequest): Future[ViewBillingResponse] =
-      service.viewBilling(params).promise().toFuture
+    @inline def acceptDomainTransferFromAnotherAwsAccountFuture(params: AcceptDomainTransferFromAnotherAwsAccountRequest): Future[AcceptDomainTransferFromAnotherAwsAccountResponse] = service.acceptDomainTransferFromAnotherAwsAccount(params).promise().toFuture
+    @inline def cancelDomainTransferToAnotherAwsAccountFuture(params: CancelDomainTransferToAnotherAwsAccountRequest): Future[CancelDomainTransferToAnotherAwsAccountResponse] = service.cancelDomainTransferToAnotherAwsAccount(params).promise().toFuture
+    @inline def checkDomainAvailabilityFuture(params: CheckDomainAvailabilityRequest): Future[CheckDomainAvailabilityResponse] = service.checkDomainAvailability(params).promise().toFuture
+    @inline def checkDomainTransferabilityFuture(params: CheckDomainTransferabilityRequest): Future[CheckDomainTransferabilityResponse] = service.checkDomainTransferability(params).promise().toFuture
+    @inline def deleteTagsForDomainFuture(params: DeleteTagsForDomainRequest): Future[DeleteTagsForDomainResponse] = service.deleteTagsForDomain(params).promise().toFuture
+    @inline def disableDomainAutoRenewFuture(params: DisableDomainAutoRenewRequest): Future[DisableDomainAutoRenewResponse] = service.disableDomainAutoRenew(params).promise().toFuture
+    @inline def disableDomainTransferLockFuture(params: DisableDomainTransferLockRequest): Future[DisableDomainTransferLockResponse] = service.disableDomainTransferLock(params).promise().toFuture
+    @inline def enableDomainAutoRenewFuture(params: EnableDomainAutoRenewRequest): Future[EnableDomainAutoRenewResponse] = service.enableDomainAutoRenew(params).promise().toFuture
+    @inline def enableDomainTransferLockFuture(params: EnableDomainTransferLockRequest): Future[EnableDomainTransferLockResponse] = service.enableDomainTransferLock(params).promise().toFuture
+    @inline def getContactReachabilityStatusFuture(params: GetContactReachabilityStatusRequest): Future[GetContactReachabilityStatusResponse] = service.getContactReachabilityStatus(params).promise().toFuture
+    @inline def getDomainDetailFuture(params: GetDomainDetailRequest): Future[GetDomainDetailResponse] = service.getDomainDetail(params).promise().toFuture
+    @inline def getDomainSuggestionsFuture(params: GetDomainSuggestionsRequest): Future[GetDomainSuggestionsResponse] = service.getDomainSuggestions(params).promise().toFuture
+    @inline def getOperationDetailFuture(params: GetOperationDetailRequest): Future[GetOperationDetailResponse] = service.getOperationDetail(params).promise().toFuture
+    @inline def listDomainsFuture(params: ListDomainsRequest): Future[ListDomainsResponse] = service.listDomains(params).promise().toFuture
+    @inline def listOperationsFuture(params: ListOperationsRequest): Future[ListOperationsResponse] = service.listOperations(params).promise().toFuture
+    @inline def listTagsForDomainFuture(params: ListTagsForDomainRequest): Future[ListTagsForDomainResponse] = service.listTagsForDomain(params).promise().toFuture
+    @inline def registerDomainFuture(params: RegisterDomainRequest): Future[RegisterDomainResponse] = service.registerDomain(params).promise().toFuture
+    @inline def rejectDomainTransferFromAnotherAwsAccountFuture(params: RejectDomainTransferFromAnotherAwsAccountRequest): Future[RejectDomainTransferFromAnotherAwsAccountResponse] = service.rejectDomainTransferFromAnotherAwsAccount(params).promise().toFuture
+    @inline def renewDomainFuture(params: RenewDomainRequest): Future[RenewDomainResponse] = service.renewDomain(params).promise().toFuture
+    @inline def resendContactReachabilityEmailFuture(params: ResendContactReachabilityEmailRequest): Future[ResendContactReachabilityEmailResponse] = service.resendContactReachabilityEmail(params).promise().toFuture
+    @inline def retrieveDomainAuthCodeFuture(params: RetrieveDomainAuthCodeRequest): Future[RetrieveDomainAuthCodeResponse] = service.retrieveDomainAuthCode(params).promise().toFuture
+    @inline def transferDomainFuture(params: TransferDomainRequest): Future[TransferDomainResponse] = service.transferDomain(params).promise().toFuture
+    @inline def transferDomainToAnotherAwsAccountFuture(params: TransferDomainToAnotherAwsAccountRequest): Future[TransferDomainToAnotherAwsAccountResponse] = service.transferDomainToAnotherAwsAccount(params).promise().toFuture
+    @inline def updateDomainContactFuture(params: UpdateDomainContactRequest): Future[UpdateDomainContactResponse] = service.updateDomainContact(params).promise().toFuture
+    @inline def updateDomainContactPrivacyFuture(params: UpdateDomainContactPrivacyRequest): Future[UpdateDomainContactPrivacyResponse] = service.updateDomainContactPrivacy(params).promise().toFuture
+    @inline def updateDomainNameserversFuture(params: UpdateDomainNameserversRequest): Future[UpdateDomainNameserversResponse] = service.updateDomainNameservers(params).promise().toFuture
+    @inline def updateTagsForDomainFuture(params: UpdateTagsForDomainRequest): Future[UpdateTagsForDomainResponse] = service.updateTagsForDomain(params).promise().toFuture
+    @inline def viewBillingFuture(params: ViewBillingRequest): Future[ViewBillingResponse] = service.viewBilling(params).promise().toFuture
   }
 }
 
@@ -138,29 +90,16 @@ package route53domains {
   class Route53Domains() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def acceptDomainTransferFromAnotherAwsAccount(
-        params: AcceptDomainTransferFromAnotherAwsAccountRequest
-    ): Request[AcceptDomainTransferFromAnotherAwsAccountResponse] = js.native
-    def cancelDomainTransferToAnotherAwsAccount(
-        params: CancelDomainTransferToAnotherAwsAccountRequest
-    ): Request[CancelDomainTransferToAnotherAwsAccountResponse] = js.native
-    def checkDomainAvailability(params: CheckDomainAvailabilityRequest): Request[CheckDomainAvailabilityResponse] =
-      js.native
-    def checkDomainTransferability(
-        params: CheckDomainTransferabilityRequest
-    ): Request[CheckDomainTransferabilityResponse] = js.native
+    def acceptDomainTransferFromAnotherAwsAccount(params: AcceptDomainTransferFromAnotherAwsAccountRequest): Request[AcceptDomainTransferFromAnotherAwsAccountResponse] = js.native
+    def cancelDomainTransferToAnotherAwsAccount(params: CancelDomainTransferToAnotherAwsAccountRequest): Request[CancelDomainTransferToAnotherAwsAccountResponse] = js.native
+    def checkDomainAvailability(params: CheckDomainAvailabilityRequest): Request[CheckDomainAvailabilityResponse] = js.native
+    def checkDomainTransferability(params: CheckDomainTransferabilityRequest): Request[CheckDomainTransferabilityResponse] = js.native
     def deleteTagsForDomain(params: DeleteTagsForDomainRequest): Request[DeleteTagsForDomainResponse] = js.native
-    def disableDomainAutoRenew(params: DisableDomainAutoRenewRequest): Request[DisableDomainAutoRenewResponse] =
-      js.native
-    def disableDomainTransferLock(
-        params: DisableDomainTransferLockRequest
-    ): Request[DisableDomainTransferLockResponse] = js.native
+    def disableDomainAutoRenew(params: DisableDomainAutoRenewRequest): Request[DisableDomainAutoRenewResponse] = js.native
+    def disableDomainTransferLock(params: DisableDomainTransferLockRequest): Request[DisableDomainTransferLockResponse] = js.native
     def enableDomainAutoRenew(params: EnableDomainAutoRenewRequest): Request[EnableDomainAutoRenewResponse] = js.native
-    def enableDomainTransferLock(params: EnableDomainTransferLockRequest): Request[EnableDomainTransferLockResponse] =
-      js.native
-    def getContactReachabilityStatus(
-        params: GetContactReachabilityStatusRequest
-    ): Request[GetContactReachabilityStatusResponse] = js.native
+    def enableDomainTransferLock(params: EnableDomainTransferLockRequest): Request[EnableDomainTransferLockResponse] = js.native
+    def getContactReachabilityStatus(params: GetContactReachabilityStatusRequest): Request[GetContactReachabilityStatusResponse] = js.native
     def getDomainDetail(params: GetDomainDetailRequest): Request[GetDomainDetailResponse] = js.native
     def getDomainSuggestions(params: GetDomainSuggestionsRequest): Request[GetDomainSuggestionsResponse] = js.native
     def getOperationDetail(params: GetOperationDetailRequest): Request[GetOperationDetailResponse] = js.native
@@ -168,25 +107,15 @@ package route53domains {
     def listOperations(params: ListOperationsRequest): Request[ListOperationsResponse] = js.native
     def listTagsForDomain(params: ListTagsForDomainRequest): Request[ListTagsForDomainResponse] = js.native
     def registerDomain(params: RegisterDomainRequest): Request[RegisterDomainResponse] = js.native
-    def rejectDomainTransferFromAnotherAwsAccount(
-        params: RejectDomainTransferFromAnotherAwsAccountRequest
-    ): Request[RejectDomainTransferFromAnotherAwsAccountResponse] = js.native
+    def rejectDomainTransferFromAnotherAwsAccount(params: RejectDomainTransferFromAnotherAwsAccountRequest): Request[RejectDomainTransferFromAnotherAwsAccountResponse] = js.native
     def renewDomain(params: RenewDomainRequest): Request[RenewDomainResponse] = js.native
-    def resendContactReachabilityEmail(
-        params: ResendContactReachabilityEmailRequest
-    ): Request[ResendContactReachabilityEmailResponse] = js.native
-    def retrieveDomainAuthCode(params: RetrieveDomainAuthCodeRequest): Request[RetrieveDomainAuthCodeResponse] =
-      js.native
+    def resendContactReachabilityEmail(params: ResendContactReachabilityEmailRequest): Request[ResendContactReachabilityEmailResponse] = js.native
+    def retrieveDomainAuthCode(params: RetrieveDomainAuthCodeRequest): Request[RetrieveDomainAuthCodeResponse] = js.native
     def transferDomain(params: TransferDomainRequest): Request[TransferDomainResponse] = js.native
-    def transferDomainToAnotherAwsAccount(
-        params: TransferDomainToAnotherAwsAccountRequest
-    ): Request[TransferDomainToAnotherAwsAccountResponse] = js.native
+    def transferDomainToAnotherAwsAccount(params: TransferDomainToAnotherAwsAccountRequest): Request[TransferDomainToAnotherAwsAccountResponse] = js.native
     def updateDomainContact(params: UpdateDomainContactRequest): Request[UpdateDomainContactResponse] = js.native
-    def updateDomainContactPrivacy(
-        params: UpdateDomainContactPrivacyRequest
-    ): Request[UpdateDomainContactPrivacyResponse] = js.native
-    def updateDomainNameservers(params: UpdateDomainNameserversRequest): Request[UpdateDomainNameserversResponse] =
-      js.native
+    def updateDomainContactPrivacy(params: UpdateDomainContactPrivacyRequest): Request[UpdateDomainContactPrivacyResponse] = js.native
+    def updateDomainNameservers(params: UpdateDomainNameserversRequest): Request[UpdateDomainNameserversResponse] = js.native
     def updateTagsForDomain(params: UpdateTagsForDomainRequest): Request[UpdateTagsForDomainResponse] = js.native
     def viewBilling(params: ViewBillingRequest): Request[ViewBillingResponse] = js.native
   }
@@ -1055,18 +984,7 @@ package route53domains {
     val RESERVED = "RESERVED".asInstanceOf[DomainAvailability]
     val DONT_KNOW = "DONT_KNOW".asInstanceOf[DomainAvailability]
 
-    val values = js.Object.freeze(
-      js.Array(
-        AVAILABLE,
-        AVAILABLE_RESERVED,
-        AVAILABLE_PREORDER,
-        UNAVAILABLE,
-        UNAVAILABLE_PREMIUM,
-        UNAVAILABLE_RESTRICTED,
-        RESERVED,
-        DONT_KNOW
-      )
-    )
+    val values = js.Object.freeze(js.Array(AVAILABLE, AVAILABLE_RESERVED, AVAILABLE_PREORDER, UNAVAILABLE, UNAVAILABLE_PREMIUM, UNAVAILABLE_RESTRICTED, RESERVED, DONT_KNOW))
   }
 
   /**
@@ -1837,15 +1755,9 @@ package route53domains {
 
       AutoRenew.foreach(__v => __obj.updateDynamic("AutoRenew")(__v.asInstanceOf[js.Any]))
       IdnLangCode.foreach(__v => __obj.updateDynamic("IdnLangCode")(__v.asInstanceOf[js.Any]))
-      PrivacyProtectAdminContact.foreach(__v =>
-        __obj.updateDynamic("PrivacyProtectAdminContact")(__v.asInstanceOf[js.Any])
-      )
-      PrivacyProtectRegistrantContact.foreach(__v =>
-        __obj.updateDynamic("PrivacyProtectRegistrantContact")(__v.asInstanceOf[js.Any])
-      )
-      PrivacyProtectTechContact.foreach(__v =>
-        __obj.updateDynamic("PrivacyProtectTechContact")(__v.asInstanceOf[js.Any])
-      )
+      PrivacyProtectAdminContact.foreach(__v => __obj.updateDynamic("PrivacyProtectAdminContact")(__v.asInstanceOf[js.Any]))
+      PrivacyProtectRegistrantContact.foreach(__v => __obj.updateDynamic("PrivacyProtectRegistrantContact")(__v.asInstanceOf[js.Any]))
+      PrivacyProtectTechContact.foreach(__v => __obj.updateDynamic("PrivacyProtectTechContact")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterDomainRequest]
     }
   }
@@ -2105,15 +2017,9 @@ package route53domains {
       AutoRenew.foreach(__v => __obj.updateDynamic("AutoRenew")(__v.asInstanceOf[js.Any]))
       IdnLangCode.foreach(__v => __obj.updateDynamic("IdnLangCode")(__v.asInstanceOf[js.Any]))
       Nameservers.foreach(__v => __obj.updateDynamic("Nameservers")(__v.asInstanceOf[js.Any]))
-      PrivacyProtectAdminContact.foreach(__v =>
-        __obj.updateDynamic("PrivacyProtectAdminContact")(__v.asInstanceOf[js.Any])
-      )
-      PrivacyProtectRegistrantContact.foreach(__v =>
-        __obj.updateDynamic("PrivacyProtectRegistrantContact")(__v.asInstanceOf[js.Any])
-      )
-      PrivacyProtectTechContact.foreach(__v =>
-        __obj.updateDynamic("PrivacyProtectTechContact")(__v.asInstanceOf[js.Any])
-      )
+      PrivacyProtectAdminContact.foreach(__v => __obj.updateDynamic("PrivacyProtectAdminContact")(__v.asInstanceOf[js.Any]))
+      PrivacyProtectRegistrantContact.foreach(__v => __obj.updateDynamic("PrivacyProtectRegistrantContact")(__v.asInstanceOf[js.Any]))
+      PrivacyProtectTechContact.foreach(__v => __obj.updateDynamic("PrivacyProtectTechContact")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TransferDomainRequest]
     }
   }

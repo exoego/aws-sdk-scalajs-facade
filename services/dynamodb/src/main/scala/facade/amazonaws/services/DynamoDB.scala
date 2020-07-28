@@ -98,8 +98,7 @@ package object dynamodb {
   type ReplicaAutoScalingDescriptionList = js.Array[ReplicaAutoScalingDescription]
   type ReplicaAutoScalingUpdateList = js.Array[ReplicaAutoScalingUpdate]
   type ReplicaDescriptionList = js.Array[ReplicaDescription]
-  type ReplicaGlobalSecondaryIndexAutoScalingDescriptionList =
-    js.Array[ReplicaGlobalSecondaryIndexAutoScalingDescription]
+  type ReplicaGlobalSecondaryIndexAutoScalingDescriptionList = js.Array[ReplicaGlobalSecondaryIndexAutoScalingDescription]
   type ReplicaGlobalSecondaryIndexAutoScalingUpdateList = js.Array[ReplicaGlobalSecondaryIndexAutoScalingUpdate]
   type ReplicaGlobalSecondaryIndexDescriptionList = js.Array[ReplicaGlobalSecondaryIndexDescription]
   type ReplicaGlobalSecondaryIndexList = js.Array[ReplicaGlobalSecondaryIndex]
@@ -142,96 +141,47 @@ package object dynamodb {
 
   implicit final class DynamoDBOps(private val service: DynamoDB) extends AnyVal {
 
-    @inline def batchGetItemFuture(params: BatchGetItemInput): Future[BatchGetItemOutput] =
-      service.batchGetItem(params).promise().toFuture
-    @inline def batchWriteItemFuture(params: BatchWriteItemInput): Future[BatchWriteItemOutput] =
-      service.batchWriteItem(params).promise().toFuture
-    @inline def createBackupFuture(params: CreateBackupInput): Future[CreateBackupOutput] =
-      service.createBackup(params).promise().toFuture
-    @inline def createGlobalTableFuture(params: CreateGlobalTableInput): Future[CreateGlobalTableOutput] =
-      service.createGlobalTable(params).promise().toFuture
-    @inline def createTableFuture(params: CreateTableInput): Future[CreateTableOutput] =
-      service.createTable(params).promise().toFuture
-    @inline def deleteBackupFuture(params: DeleteBackupInput): Future[DeleteBackupOutput] =
-      service.deleteBackup(params).promise().toFuture
-    @inline def deleteItemFuture(params: DeleteItemInput): Future[DeleteItemOutput] =
-      service.deleteItem(params).promise().toFuture
-    @inline def deleteTableFuture(params: DeleteTableInput): Future[DeleteTableOutput] =
-      service.deleteTable(params).promise().toFuture
-    @inline def describeBackupFuture(params: DescribeBackupInput): Future[DescribeBackupOutput] =
-      service.describeBackup(params).promise().toFuture
-    @inline def describeContinuousBackupsFuture(
-        params: DescribeContinuousBackupsInput
-    ): Future[DescribeContinuousBackupsOutput] = service.describeContinuousBackups(params).promise().toFuture
-    @inline def describeContributorInsightsFuture(
-        params: DescribeContributorInsightsInput
-    ): Future[DescribeContributorInsightsOutput] = service.describeContributorInsights(params).promise().toFuture
-    @inline def describeEndpointsFuture(params: DescribeEndpointsRequest): Future[DescribeEndpointsResponse] =
-      service.describeEndpoints(params).promise().toFuture
-    @inline def describeGlobalTableFuture(params: DescribeGlobalTableInput): Future[DescribeGlobalTableOutput] =
-      service.describeGlobalTable(params).promise().toFuture
-    @inline def describeGlobalTableSettingsFuture(
-        params: DescribeGlobalTableSettingsInput
-    ): Future[DescribeGlobalTableSettingsOutput] = service.describeGlobalTableSettings(params).promise().toFuture
-    @inline def describeLimitsFuture(params: DescribeLimitsInput): Future[DescribeLimitsOutput] =
-      service.describeLimits(params).promise().toFuture
-    @inline def describeTableFuture(params: DescribeTableInput): Future[DescribeTableOutput] =
-      service.describeTable(params).promise().toFuture
-    @inline def describeTableReplicaAutoScalingFuture(
-        params: DescribeTableReplicaAutoScalingInput
-    ): Future[DescribeTableReplicaAutoScalingOutput] =
-      service.describeTableReplicaAutoScaling(params).promise().toFuture
-    @inline def describeTimeToLiveFuture(params: DescribeTimeToLiveInput): Future[DescribeTimeToLiveOutput] =
-      service.describeTimeToLive(params).promise().toFuture
+    @inline def batchGetItemFuture(params: BatchGetItemInput): Future[BatchGetItemOutput] = service.batchGetItem(params).promise().toFuture
+    @inline def batchWriteItemFuture(params: BatchWriteItemInput): Future[BatchWriteItemOutput] = service.batchWriteItem(params).promise().toFuture
+    @inline def createBackupFuture(params: CreateBackupInput): Future[CreateBackupOutput] = service.createBackup(params).promise().toFuture
+    @inline def createGlobalTableFuture(params: CreateGlobalTableInput): Future[CreateGlobalTableOutput] = service.createGlobalTable(params).promise().toFuture
+    @inline def createTableFuture(params: CreateTableInput): Future[CreateTableOutput] = service.createTable(params).promise().toFuture
+    @inline def deleteBackupFuture(params: DeleteBackupInput): Future[DeleteBackupOutput] = service.deleteBackup(params).promise().toFuture
+    @inline def deleteItemFuture(params: DeleteItemInput): Future[DeleteItemOutput] = service.deleteItem(params).promise().toFuture
+    @inline def deleteTableFuture(params: DeleteTableInput): Future[DeleteTableOutput] = service.deleteTable(params).promise().toFuture
+    @inline def describeBackupFuture(params: DescribeBackupInput): Future[DescribeBackupOutput] = service.describeBackup(params).promise().toFuture
+    @inline def describeContinuousBackupsFuture(params: DescribeContinuousBackupsInput): Future[DescribeContinuousBackupsOutput] = service.describeContinuousBackups(params).promise().toFuture
+    @inline def describeContributorInsightsFuture(params: DescribeContributorInsightsInput): Future[DescribeContributorInsightsOutput] = service.describeContributorInsights(params).promise().toFuture
+    @inline def describeEndpointsFuture(params: DescribeEndpointsRequest): Future[DescribeEndpointsResponse] = service.describeEndpoints(params).promise().toFuture
+    @inline def describeGlobalTableFuture(params: DescribeGlobalTableInput): Future[DescribeGlobalTableOutput] = service.describeGlobalTable(params).promise().toFuture
+    @inline def describeGlobalTableSettingsFuture(params: DescribeGlobalTableSettingsInput): Future[DescribeGlobalTableSettingsOutput] = service.describeGlobalTableSettings(params).promise().toFuture
+    @inline def describeLimitsFuture(params: DescribeLimitsInput): Future[DescribeLimitsOutput] = service.describeLimits(params).promise().toFuture
+    @inline def describeTableFuture(params: DescribeTableInput): Future[DescribeTableOutput] = service.describeTable(params).promise().toFuture
+    @inline def describeTableReplicaAutoScalingFuture(params: DescribeTableReplicaAutoScalingInput): Future[DescribeTableReplicaAutoScalingOutput] = service.describeTableReplicaAutoScaling(params).promise().toFuture
+    @inline def describeTimeToLiveFuture(params: DescribeTimeToLiveInput): Future[DescribeTimeToLiveOutput] = service.describeTimeToLive(params).promise().toFuture
     @inline def getItemFuture(params: GetItemInput): Future[GetItemOutput] = service.getItem(params).promise().toFuture
-    @inline def listBackupsFuture(params: ListBackupsInput): Future[ListBackupsOutput] =
-      service.listBackups(params).promise().toFuture
-    @inline def listContributorInsightsFuture(
-        params: ListContributorInsightsInput
-    ): Future[ListContributorInsightsOutput] = service.listContributorInsights(params).promise().toFuture
-    @inline def listGlobalTablesFuture(params: ListGlobalTablesInput): Future[ListGlobalTablesOutput] =
-      service.listGlobalTables(params).promise().toFuture
-    @inline def listTablesFuture(params: ListTablesInput): Future[ListTablesOutput] =
-      service.listTables(params).promise().toFuture
-    @inline def listTagsOfResourceFuture(params: ListTagsOfResourceInput): Future[ListTagsOfResourceOutput] =
-      service.listTagsOfResource(params).promise().toFuture
+    @inline def listBackupsFuture(params: ListBackupsInput): Future[ListBackupsOutput] = service.listBackups(params).promise().toFuture
+    @inline def listContributorInsightsFuture(params: ListContributorInsightsInput): Future[ListContributorInsightsOutput] = service.listContributorInsights(params).promise().toFuture
+    @inline def listGlobalTablesFuture(params: ListGlobalTablesInput): Future[ListGlobalTablesOutput] = service.listGlobalTables(params).promise().toFuture
+    @inline def listTablesFuture(params: ListTablesInput): Future[ListTablesOutput] = service.listTables(params).promise().toFuture
+    @inline def listTagsOfResourceFuture(params: ListTagsOfResourceInput): Future[ListTagsOfResourceOutput] = service.listTagsOfResource(params).promise().toFuture
     @inline def putItemFuture(params: PutItemInput): Future[PutItemOutput] = service.putItem(params).promise().toFuture
     @inline def queryFuture(params: QueryInput): Future[QueryOutput] = service.query(params).promise().toFuture
-    @inline def restoreTableFromBackupFuture(
-        params: RestoreTableFromBackupInput
-    ): Future[RestoreTableFromBackupOutput] = service.restoreTableFromBackup(params).promise().toFuture
-    @inline def restoreTableToPointInTimeFuture(
-        params: RestoreTableToPointInTimeInput
-    ): Future[RestoreTableToPointInTimeOutput] = service.restoreTableToPointInTime(params).promise().toFuture
+    @inline def restoreTableFromBackupFuture(params: RestoreTableFromBackupInput): Future[RestoreTableFromBackupOutput] = service.restoreTableFromBackup(params).promise().toFuture
+    @inline def restoreTableToPointInTimeFuture(params: RestoreTableToPointInTimeInput): Future[RestoreTableToPointInTimeOutput] = service.restoreTableToPointInTime(params).promise().toFuture
     @inline def scanFuture(params: ScanInput): Future[ScanOutput] = service.scan(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceInput): Future[js.Object] =
-      service.tagResource(params).promise().toFuture
-    @inline def transactGetItemsFuture(params: TransactGetItemsInput): Future[TransactGetItemsOutput] =
-      service.transactGetItems(params).promise().toFuture
-    @inline def transactWriteItemsFuture(params: TransactWriteItemsInput): Future[TransactWriteItemsOutput] =
-      service.transactWriteItems(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceInput): Future[js.Object] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateContinuousBackupsFuture(
-        params: UpdateContinuousBackupsInput
-    ): Future[UpdateContinuousBackupsOutput] = service.updateContinuousBackups(params).promise().toFuture
-    @inline def updateContributorInsightsFuture(
-        params: UpdateContributorInsightsInput
-    ): Future[UpdateContributorInsightsOutput] = service.updateContributorInsights(params).promise().toFuture
-    @inline def updateGlobalTableFuture(params: UpdateGlobalTableInput): Future[UpdateGlobalTableOutput] =
-      service.updateGlobalTable(params).promise().toFuture
-    @inline def updateGlobalTableSettingsFuture(
-        params: UpdateGlobalTableSettingsInput
-    ): Future[UpdateGlobalTableSettingsOutput] = service.updateGlobalTableSettings(params).promise().toFuture
-    @inline def updateItemFuture(params: UpdateItemInput): Future[UpdateItemOutput] =
-      service.updateItem(params).promise().toFuture
-    @inline def updateTableFuture(params: UpdateTableInput): Future[UpdateTableOutput] =
-      service.updateTable(params).promise().toFuture
-    @inline def updateTableReplicaAutoScalingFuture(
-        params: UpdateTableReplicaAutoScalingInput
-    ): Future[UpdateTableReplicaAutoScalingOutput] = service.updateTableReplicaAutoScaling(params).promise().toFuture
-    @inline def updateTimeToLiveFuture(params: UpdateTimeToLiveInput): Future[UpdateTimeToLiveOutput] =
-      service.updateTimeToLive(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceInput): Future[js.Object] = service.tagResource(params).promise().toFuture
+    @inline def transactGetItemsFuture(params: TransactGetItemsInput): Future[TransactGetItemsOutput] = service.transactGetItems(params).promise().toFuture
+    @inline def transactWriteItemsFuture(params: TransactWriteItemsInput): Future[TransactWriteItemsOutput] = service.transactWriteItems(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceInput): Future[js.Object] = service.untagResource(params).promise().toFuture
+    @inline def updateContinuousBackupsFuture(params: UpdateContinuousBackupsInput): Future[UpdateContinuousBackupsOutput] = service.updateContinuousBackups(params).promise().toFuture
+    @inline def updateContributorInsightsFuture(params: UpdateContributorInsightsInput): Future[UpdateContributorInsightsOutput] = service.updateContributorInsights(params).promise().toFuture
+    @inline def updateGlobalTableFuture(params: UpdateGlobalTableInput): Future[UpdateGlobalTableOutput] = service.updateGlobalTable(params).promise().toFuture
+    @inline def updateGlobalTableSettingsFuture(params: UpdateGlobalTableSettingsInput): Future[UpdateGlobalTableSettingsOutput] = service.updateGlobalTableSettings(params).promise().toFuture
+    @inline def updateItemFuture(params: UpdateItemInput): Future[UpdateItemOutput] = service.updateItem(params).promise().toFuture
+    @inline def updateTableFuture(params: UpdateTableInput): Future[UpdateTableOutput] = service.updateTable(params).promise().toFuture
+    @inline def updateTableReplicaAutoScalingFuture(params: UpdateTableReplicaAutoScalingInput): Future[UpdateTableReplicaAutoScalingOutput] = service.updateTableReplicaAutoScaling(params).promise().toFuture
+    @inline def updateTimeToLiveFuture(params: UpdateTimeToLiveInput): Future[UpdateTimeToLiveOutput] = service.updateTimeToLive(params).promise().toFuture
   }
 }
 
@@ -250,51 +200,37 @@ package dynamodb {
     def deleteItem(params: DeleteItemInput): Request[DeleteItemOutput] = js.native
     def deleteTable(params: DeleteTableInput): Request[DeleteTableOutput] = js.native
     def describeBackup(params: DescribeBackupInput): Request[DescribeBackupOutput] = js.native
-    def describeContinuousBackups(params: DescribeContinuousBackupsInput): Request[DescribeContinuousBackupsOutput] =
-      js.native
-    def describeContributorInsights(
-        params: DescribeContributorInsightsInput
-    ): Request[DescribeContributorInsightsOutput] = js.native
+    def describeContinuousBackups(params: DescribeContinuousBackupsInput): Request[DescribeContinuousBackupsOutput] = js.native
+    def describeContributorInsights(params: DescribeContributorInsightsInput): Request[DescribeContributorInsightsOutput] = js.native
     def describeEndpoints(params: DescribeEndpointsRequest): Request[DescribeEndpointsResponse] = js.native
     def describeGlobalTable(params: DescribeGlobalTableInput): Request[DescribeGlobalTableOutput] = js.native
-    def describeGlobalTableSettings(
-        params: DescribeGlobalTableSettingsInput
-    ): Request[DescribeGlobalTableSettingsOutput] = js.native
+    def describeGlobalTableSettings(params: DescribeGlobalTableSettingsInput): Request[DescribeGlobalTableSettingsOutput] = js.native
     def describeLimits(params: DescribeLimitsInput): Request[DescribeLimitsOutput] = js.native
     def describeTable(params: DescribeTableInput): Request[DescribeTableOutput] = js.native
-    def describeTableReplicaAutoScaling(
-        params: DescribeTableReplicaAutoScalingInput
-    ): Request[DescribeTableReplicaAutoScalingOutput] = js.native
+    def describeTableReplicaAutoScaling(params: DescribeTableReplicaAutoScalingInput): Request[DescribeTableReplicaAutoScalingOutput] = js.native
     def describeTimeToLive(params: DescribeTimeToLiveInput): Request[DescribeTimeToLiveOutput] = js.native
     def getItem(params: GetItemInput): Request[GetItemOutput] = js.native
     def listBackups(params: ListBackupsInput): Request[ListBackupsOutput] = js.native
-    def listContributorInsights(params: ListContributorInsightsInput): Request[ListContributorInsightsOutput] =
-      js.native
+    def listContributorInsights(params: ListContributorInsightsInput): Request[ListContributorInsightsOutput] = js.native
     def listGlobalTables(params: ListGlobalTablesInput): Request[ListGlobalTablesOutput] = js.native
     def listTables(params: ListTablesInput): Request[ListTablesOutput] = js.native
     def listTagsOfResource(params: ListTagsOfResourceInput): Request[ListTagsOfResourceOutput] = js.native
     def putItem(params: PutItemInput): Request[PutItemOutput] = js.native
     def query(params: QueryInput): Request[QueryOutput] = js.native
     def restoreTableFromBackup(params: RestoreTableFromBackupInput): Request[RestoreTableFromBackupOutput] = js.native
-    def restoreTableToPointInTime(params: RestoreTableToPointInTimeInput): Request[RestoreTableToPointInTimeOutput] =
-      js.native
+    def restoreTableToPointInTime(params: RestoreTableToPointInTimeInput): Request[RestoreTableToPointInTimeOutput] = js.native
     def scan(params: ScanInput): Request[ScanOutput] = js.native
     def tagResource(params: TagResourceInput): Request[js.Object] = js.native
     def transactGetItems(params: TransactGetItemsInput): Request[TransactGetItemsOutput] = js.native
     def transactWriteItems(params: TransactWriteItemsInput): Request[TransactWriteItemsOutput] = js.native
     def untagResource(params: UntagResourceInput): Request[js.Object] = js.native
-    def updateContinuousBackups(params: UpdateContinuousBackupsInput): Request[UpdateContinuousBackupsOutput] =
-      js.native
-    def updateContributorInsights(params: UpdateContributorInsightsInput): Request[UpdateContributorInsightsOutput] =
-      js.native
+    def updateContinuousBackups(params: UpdateContinuousBackupsInput): Request[UpdateContinuousBackupsOutput] = js.native
+    def updateContributorInsights(params: UpdateContributorInsightsInput): Request[UpdateContributorInsightsOutput] = js.native
     def updateGlobalTable(params: UpdateGlobalTableInput): Request[UpdateGlobalTableOutput] = js.native
-    def updateGlobalTableSettings(params: UpdateGlobalTableSettingsInput): Request[UpdateGlobalTableSettingsOutput] =
-      js.native
+    def updateGlobalTableSettings(params: UpdateGlobalTableSettingsInput): Request[UpdateGlobalTableSettingsOutput] = js.native
     def updateItem(params: UpdateItemInput): Request[UpdateItemOutput] = js.native
     def updateTable(params: UpdateTableInput): Request[UpdateTableOutput] = js.native
-    def updateTableReplicaAutoScaling(
-        params: UpdateTableReplicaAutoScalingInput
-    ): Request[UpdateTableReplicaAutoScalingOutput] = js.native
+    def updateTableReplicaAutoScaling(params: UpdateTableReplicaAutoScalingInput): Request[UpdateTableReplicaAutoScalingOutput] = js.native
     def updateTimeToLive(params: UpdateTimeToLiveInput): Request[UpdateTimeToLiveOutput] = js.native
   }
 
@@ -406,33 +342,20 @@ package dynamodb {
     def S(value: StringAttributeValue): AttributeValue = js.Dynamic.literal("S" -> value).asInstanceOf[AttributeValue]
     def NFromInt(value: Int): AttributeValue = js.Dynamic.literal("N" -> value.toString).asInstanceOf[AttributeValue]
     def NFromLong(value: Long): AttributeValue = js.Dynamic.literal("N" -> value.toString).asInstanceOf[AttributeValue]
-    def NFromDouble(value: Double): AttributeValue =
-      js.Dynamic.literal("N" -> value.toString).asInstanceOf[AttributeValue]
-    def NFromBigInt(value: BigInt): AttributeValue =
-      js.Dynamic.literal("N" -> value.toString).asInstanceOf[AttributeValue]
-    def NFromBigDecimal(value: BigDecimal): AttributeValue =
-      js.Dynamic.literal("N" -> value.toString).asInstanceOf[AttributeValue]
-    def BOOL(value: BooleanAttributeValue): AttributeValue =
-      js.Dynamic.literal("BOOL" -> value).asInstanceOf[AttributeValue]
-    def M(value: js.UndefOr[MapAttributeValue]): AttributeValue =
-      if (value.isEmpty) AttributeValue.NULL(true) else js.Dynamic.literal("M" -> value).asInstanceOf[AttributeValue]
-    def M(value: Option[MapAttributeValue]): AttributeValue =
-      if (value.isEmpty) AttributeValue.NULL(true)
-      else js.Dynamic.literal("M" -> value.get).asInstanceOf[AttributeValue]
-    def MFromMap[T](value: Map[String, T])(implicit valueType: AttributeValueMapper[T]): AttributeValue =
-      AttributeValueMapper.AttributeValueTypeMapT[T].apply(value)
+    def NFromDouble(value: Double): AttributeValue = js.Dynamic.literal("N" -> value.toString).asInstanceOf[AttributeValue]
+    def NFromBigInt(value: BigInt): AttributeValue = js.Dynamic.literal("N" -> value.toString).asInstanceOf[AttributeValue]
+    def NFromBigDecimal(value: BigDecimal): AttributeValue = js.Dynamic.literal("N" -> value.toString).asInstanceOf[AttributeValue]
+    def BOOL(value: BooleanAttributeValue): AttributeValue = js.Dynamic.literal("BOOL" -> value).asInstanceOf[AttributeValue]
+    def M(value: js.UndefOr[MapAttributeValue]): AttributeValue = if (value.isEmpty) AttributeValue.NULL(true) else js.Dynamic.literal("M" -> value).asInstanceOf[AttributeValue]
+    def M(value: Option[MapAttributeValue]): AttributeValue = if (value.isEmpty) AttributeValue.NULL(true) else js.Dynamic.literal("M" -> value.get).asInstanceOf[AttributeValue]
+    def MFromMap[T](value: Map[String, T])(implicit valueType: AttributeValueMapper[T]): AttributeValue = AttributeValueMapper.AttributeValueTypeMapT[T].apply(value)
     def L(value: ListAttributeValue): AttributeValue = js.Dynamic.literal("L" -> value).asInstanceOf[AttributeValue]
-    def LFromSeq[T](value: Seq[T])(implicit valueType: AttributeValueMapper[T]): AttributeValue =
-      AttributeValueMapper.AttributeValueTypeSeqT[T].apply(value)
-    def NULL(value: NullAttributeValue): AttributeValue =
-      js.Dynamic.literal("NULL" -> value).asInstanceOf[AttributeValue]
-    def B(value: BinaryAttributeValue): AttributeValue =
-      js.Dynamic.literal("B" -> value.asInstanceOf[js.Any]).asInstanceOf[AttributeValue]
+    def LFromSeq[T](value: Seq[T])(implicit valueType: AttributeValueMapper[T]): AttributeValue = AttributeValueMapper.AttributeValueTypeSeqT[T].apply(value)
+    def NULL(value: NullAttributeValue): AttributeValue = js.Dynamic.literal("NULL" -> value).asInstanceOf[AttributeValue]
+    def B(value: BinaryAttributeValue): AttributeValue = js.Dynamic.literal("B" -> value.asInstanceOf[js.Any]).asInstanceOf[AttributeValue]
     def NS(value: StringAttributeValue): AttributeValue = js.Dynamic.literal("NS" -> value).asInstanceOf[AttributeValue]
-    def BS(value: BinarySetAttributeValue): AttributeValue =
-      js.Dynamic.literal("BS" -> value).asInstanceOf[AttributeValue]
-    def SS(value: StringSetAttributeValue): AttributeValue =
-      js.Dynamic.literal("SS" -> value).asInstanceOf[AttributeValue]
+    def BS(value: BinarySetAttributeValue): AttributeValue = js.Dynamic.literal("BS" -> value).asInstanceOf[AttributeValue]
+    def SS(value: StringSetAttributeValue): AttributeValue = js.Dynamic.literal("SS" -> value).asInstanceOf[AttributeValue]
 
     def OptionAsValueOrNull[T](opt: Option[T])(implicit valueType: AttributeValueMapper[T]): AttributeValue = {
       opt match {
@@ -479,24 +402,18 @@ package dynamodb {
   @js.native
   trait AutoScalingPolicyDescription extends js.Object {
     var PolicyName: js.UndefOr[AutoScalingPolicyName]
-    var TargetTrackingScalingPolicyConfiguration: js.UndefOr[
-      AutoScalingTargetTrackingScalingPolicyConfigurationDescription
-    ]
+    var TargetTrackingScalingPolicyConfiguration: js.UndefOr[AutoScalingTargetTrackingScalingPolicyConfigurationDescription]
   }
 
   object AutoScalingPolicyDescription {
     @inline
     def apply(
         PolicyName: js.UndefOr[AutoScalingPolicyName] = js.undefined,
-        TargetTrackingScalingPolicyConfiguration: js.UndefOr[
-          AutoScalingTargetTrackingScalingPolicyConfigurationDescription
-        ] = js.undefined
+        TargetTrackingScalingPolicyConfiguration: js.UndefOr[AutoScalingTargetTrackingScalingPolicyConfigurationDescription] = js.undefined
     ): AutoScalingPolicyDescription = {
       val __obj = js.Dynamic.literal()
       PolicyName.foreach(__v => __obj.updateDynamic("PolicyName")(__v.asInstanceOf[js.Any]))
-      TargetTrackingScalingPolicyConfiguration.foreach(__v =>
-        __obj.updateDynamic("TargetTrackingScalingPolicyConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      TargetTrackingScalingPolicyConfiguration.foreach(__v => __obj.updateDynamic("TargetTrackingScalingPolicyConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoScalingPolicyDescription]
     }
   }
@@ -667,9 +584,7 @@ package dynamodb {
       val __obj = js.Dynamic.literal()
       BackupDetails.foreach(__v => __obj.updateDynamic("BackupDetails")(__v.asInstanceOf[js.Any]))
       SourceTableDetails.foreach(__v => __obj.updateDynamic("SourceTableDetails")(__v.asInstanceOf[js.Any]))
-      SourceTableFeatureDetails.foreach(__v =>
-        __obj.updateDynamic("SourceTableFeatureDetails")(__v.asInstanceOf[js.Any])
-      )
+      SourceTableFeatureDetails.foreach(__v => __obj.updateDynamic("SourceTableFeatureDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BackupDescription]
     }
   }
@@ -861,9 +776,7 @@ package dynamodb {
       )
 
       ReturnConsumedCapacity.foreach(__v => __obj.updateDynamic("ReturnConsumedCapacity")(__v.asInstanceOf[js.Any]))
-      ReturnItemCollectionMetrics.foreach(__v =>
-        __obj.updateDynamic("ReturnItemCollectionMetrics")(__v.asInstanceOf[js.Any])
-      )
+      ReturnItemCollectionMetrics.foreach(__v => __obj.updateDynamic("ReturnItemCollectionMetrics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchWriteItemInput]
     }
   }
@@ -919,9 +832,7 @@ package dynamodb {
     ): BillingModeSummary = {
       val __obj = js.Dynamic.literal()
       BillingMode.foreach(__v => __obj.updateDynamic("BillingMode")(__v.asInstanceOf[js.Any]))
-      LastUpdateToPayPerRequestDateTime.foreach(__v =>
-        __obj.updateDynamic("LastUpdateToPayPerRequestDateTime")(__v.asInstanceOf[js.Any])
-      )
+      LastUpdateToPayPerRequestDateTime.foreach(__v => __obj.updateDynamic("LastUpdateToPayPerRequestDateTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BillingModeSummary]
     }
   }
@@ -968,9 +879,7 @@ package dynamodb {
     val NOT_CONTAINS = "NOT_CONTAINS".asInstanceOf[ComparisonOperator]
     val BEGINS_WITH = "BEGINS_WITH".asInstanceOf[ComparisonOperator]
 
-    val values = js.Object.freeze(
-      js.Array(EQ, NE, IN, LE, LT, GE, GT, BETWEEN, NOT_NULL, NULL, CONTAINS, NOT_CONTAINS, BEGINS_WITH)
-    )
+    val values = js.Object.freeze(js.Array(EQ, NE, IN, LE, LT, GE, GT, BETWEEN, NOT_NULL, NULL, CONTAINS, NOT_CONTAINS, BEGINS_WITH))
   }
 
   /**
@@ -1031,12 +940,8 @@ package dynamodb {
       )
 
       ExpressionAttributeNames.foreach(__v => __obj.updateDynamic("ExpressionAttributeNames")(__v.asInstanceOf[js.Any]))
-      ExpressionAttributeValues.foreach(__v =>
-        __obj.updateDynamic("ExpressionAttributeValues")(__v.asInstanceOf[js.Any])
-      )
-      ReturnValuesOnConditionCheckFailure.foreach(__v =>
-        __obj.updateDynamic("ReturnValuesOnConditionCheckFailure")(__v.asInstanceOf[js.Any])
-      )
+      ExpressionAttributeValues.foreach(__v => __obj.updateDynamic("ExpressionAttributeValues")(__v.asInstanceOf[js.Any]))
+      ReturnValuesOnConditionCheckFailure.foreach(__v => __obj.updateDynamic("ReturnValuesOnConditionCheckFailure")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConditionCheck]
     }
   }
@@ -1106,9 +1011,7 @@ package dynamodb {
         "ContinuousBackupsStatus" -> ContinuousBackupsStatus.asInstanceOf[js.Any]
       )
 
-      PointInTimeRecoveryDescription.foreach(__v =>
-        __obj.updateDynamic("PointInTimeRecoveryDescription")(__v.asInstanceOf[js.Any])
-      )
+      PointInTimeRecoveryDescription.foreach(__v => __obj.updateDynamic("PointInTimeRecoveryDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContinuousBackupsDescription]
     }
   }
@@ -1161,9 +1064,7 @@ package dynamodb {
         TableName: js.UndefOr[TableName] = js.undefined
     ): ContributorInsightsSummary = {
       val __obj = js.Dynamic.literal()
-      ContributorInsightsStatus.foreach(__v =>
-        __obj.updateDynamic("ContributorInsightsStatus")(__v.asInstanceOf[js.Any])
-      )
+      ContributorInsightsStatus.foreach(__v => __obj.updateDynamic("ContributorInsightsStatus")(__v.asInstanceOf[js.Any]))
       IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
       TableName.foreach(__v => __obj.updateDynamic("TableName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContributorInsightsSummary]
@@ -1320,9 +1221,7 @@ package dynamodb {
 
       GlobalSecondaryIndexes.foreach(__v => __obj.updateDynamic("GlobalSecondaryIndexes")(__v.asInstanceOf[js.Any]))
       KMSMasterKeyId.foreach(__v => __obj.updateDynamic("KMSMasterKeyId")(__v.asInstanceOf[js.Any]))
-      ProvisionedThroughputOverride.foreach(__v =>
-        __obj.updateDynamic("ProvisionedThroughputOverride")(__v.asInstanceOf[js.Any])
-      )
+      ProvisionedThroughputOverride.foreach(__v => __obj.updateDynamic("ProvisionedThroughputOverride")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateReplicationGroupMemberAction]
     }
   }
@@ -1424,12 +1323,8 @@ package dynamodb {
 
       ConditionExpression.foreach(__v => __obj.updateDynamic("ConditionExpression")(__v.asInstanceOf[js.Any]))
       ExpressionAttributeNames.foreach(__v => __obj.updateDynamic("ExpressionAttributeNames")(__v.asInstanceOf[js.Any]))
-      ExpressionAttributeValues.foreach(__v =>
-        __obj.updateDynamic("ExpressionAttributeValues")(__v.asInstanceOf[js.Any])
-      )
-      ReturnValuesOnConditionCheckFailure.foreach(__v =>
-        __obj.updateDynamic("ReturnValuesOnConditionCheckFailure")(__v.asInstanceOf[js.Any])
-      )
+      ExpressionAttributeValues.foreach(__v => __obj.updateDynamic("ExpressionAttributeValues")(__v.asInstanceOf[js.Any]))
+      ReturnValuesOnConditionCheckFailure.foreach(__v => __obj.updateDynamic("ReturnValuesOnConditionCheckFailure")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Delete]
     }
   }
@@ -1529,13 +1424,9 @@ package dynamodb {
       ConditionalOperator.foreach(__v => __obj.updateDynamic("ConditionalOperator")(__v.asInstanceOf[js.Any]))
       Expected.foreach(__v => __obj.updateDynamic("Expected")(__v.asInstanceOf[js.Any]))
       ExpressionAttributeNames.foreach(__v => __obj.updateDynamic("ExpressionAttributeNames")(__v.asInstanceOf[js.Any]))
-      ExpressionAttributeValues.foreach(__v =>
-        __obj.updateDynamic("ExpressionAttributeValues")(__v.asInstanceOf[js.Any])
-      )
+      ExpressionAttributeValues.foreach(__v => __obj.updateDynamic("ExpressionAttributeValues")(__v.asInstanceOf[js.Any]))
       ReturnConsumedCapacity.foreach(__v => __obj.updateDynamic("ReturnConsumedCapacity")(__v.asInstanceOf[js.Any]))
-      ReturnItemCollectionMetrics.foreach(__v =>
-        __obj.updateDynamic("ReturnItemCollectionMetrics")(__v.asInstanceOf[js.Any])
-      )
+      ReturnItemCollectionMetrics.foreach(__v => __obj.updateDynamic("ReturnItemCollectionMetrics")(__v.asInstanceOf[js.Any]))
       ReturnValues.foreach(__v => __obj.updateDynamic("ReturnValues")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteItemInput]
     }
@@ -1732,9 +1623,7 @@ package dynamodb {
         ContinuousBackupsDescription: js.UndefOr[ContinuousBackupsDescription] = js.undefined
     ): DescribeContinuousBackupsOutput = {
       val __obj = js.Dynamic.literal()
-      ContinuousBackupsDescription.foreach(__v =>
-        __obj.updateDynamic("ContinuousBackupsDescription")(__v.asInstanceOf[js.Any])
-      )
+      ContinuousBackupsDescription.foreach(__v => __obj.updateDynamic("ContinuousBackupsDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeContinuousBackupsOutput]
     }
   }
@@ -1781,12 +1670,8 @@ package dynamodb {
         TableName: js.UndefOr[TableName] = js.undefined
     ): DescribeContributorInsightsOutput = {
       val __obj = js.Dynamic.literal()
-      ContributorInsightsRuleList.foreach(__v =>
-        __obj.updateDynamic("ContributorInsightsRuleList")(__v.asInstanceOf[js.Any])
-      )
-      ContributorInsightsStatus.foreach(__v =>
-        __obj.updateDynamic("ContributorInsightsStatus")(__v.asInstanceOf[js.Any])
-      )
+      ContributorInsightsRuleList.foreach(__v => __obj.updateDynamic("ContributorInsightsRuleList")(__v.asInstanceOf[js.Any]))
+      ContributorInsightsStatus.foreach(__v => __obj.updateDynamic("ContributorInsightsStatus")(__v.asInstanceOf[js.Any]))
       FailureException.foreach(__v => __obj.updateDynamic("FailureException")(__v.asInstanceOf[js.Any]))
       IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
       LastUpdateDateTime.foreach(__v => __obj.updateDynamic("LastUpdateDateTime")(__v.asInstanceOf[js.Any]))
@@ -1933,18 +1818,10 @@ package dynamodb {
         TableMaxWriteCapacityUnits: js.UndefOr[PositiveLongObject] = js.undefined
     ): DescribeLimitsOutput = {
       val __obj = js.Dynamic.literal()
-      AccountMaxReadCapacityUnits.foreach(__v =>
-        __obj.updateDynamic("AccountMaxReadCapacityUnits")(__v.asInstanceOf[js.Any])
-      )
-      AccountMaxWriteCapacityUnits.foreach(__v =>
-        __obj.updateDynamic("AccountMaxWriteCapacityUnits")(__v.asInstanceOf[js.Any])
-      )
-      TableMaxReadCapacityUnits.foreach(__v =>
-        __obj.updateDynamic("TableMaxReadCapacityUnits")(__v.asInstanceOf[js.Any])
-      )
-      TableMaxWriteCapacityUnits.foreach(__v =>
-        __obj.updateDynamic("TableMaxWriteCapacityUnits")(__v.asInstanceOf[js.Any])
-      )
+      AccountMaxReadCapacityUnits.foreach(__v => __obj.updateDynamic("AccountMaxReadCapacityUnits")(__v.asInstanceOf[js.Any]))
+      AccountMaxWriteCapacityUnits.foreach(__v => __obj.updateDynamic("AccountMaxWriteCapacityUnits")(__v.asInstanceOf[js.Any]))
+      TableMaxReadCapacityUnits.foreach(__v => __obj.updateDynamic("TableMaxReadCapacityUnits")(__v.asInstanceOf[js.Any]))
+      TableMaxWriteCapacityUnits.foreach(__v => __obj.updateDynamic("TableMaxWriteCapacityUnits")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLimitsOutput]
     }
   }
@@ -2018,9 +1895,7 @@ package dynamodb {
         TableAutoScalingDescription: js.UndefOr[TableAutoScalingDescription] = js.undefined
     ): DescribeTableReplicaAutoScalingOutput = {
       val __obj = js.Dynamic.literal()
-      TableAutoScalingDescription.foreach(__v =>
-        __obj.updateDynamic("TableAutoScalingDescription")(__v.asInstanceOf[js.Any])
-      )
+      TableAutoScalingDescription.foreach(__v => __obj.updateDynamic("TableAutoScalingDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTableReplicaAutoScalingOutput]
     }
   }
@@ -2274,9 +2149,7 @@ package dynamodb {
     ): GlobalSecondaryIndexAutoScalingUpdate = {
       val __obj = js.Dynamic.literal()
       IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
-      ProvisionedWriteCapacityAutoScalingUpdate.foreach(__v =>
-        __obj.updateDynamic("ProvisionedWriteCapacityAutoScalingUpdate")(__v.asInstanceOf[js.Any])
-      )
+      ProvisionedWriteCapacityAutoScalingUpdate.foreach(__v => __obj.updateDynamic("ProvisionedWriteCapacityAutoScalingUpdate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GlobalSecondaryIndexAutoScalingUpdate]
     }
   }
@@ -2454,12 +2327,8 @@ package dynamodb {
         "IndexName" -> IndexName.asInstanceOf[js.Any]
       )
 
-      ProvisionedWriteCapacityAutoScalingSettingsUpdate.foreach(__v =>
-        __obj.updateDynamic("ProvisionedWriteCapacityAutoScalingSettingsUpdate")(__v.asInstanceOf[js.Any])
-      )
-      ProvisionedWriteCapacityUnits.foreach(__v =>
-        __obj.updateDynamic("ProvisionedWriteCapacityUnits")(__v.asInstanceOf[js.Any])
-      )
+      ProvisionedWriteCapacityAutoScalingSettingsUpdate.foreach(__v => __obj.updateDynamic("ProvisionedWriteCapacityAutoScalingSettingsUpdate")(__v.asInstanceOf[js.Any]))
+      ProvisionedWriteCapacityUnits.foreach(__v => __obj.updateDynamic("ProvisionedWriteCapacityUnits")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GlobalTableGlobalSecondaryIndexSettingsUpdate]
     }
   }
@@ -2681,9 +2550,7 @@ package dynamodb {
         NextToken: js.UndefOr[NextTokenString] = js.undefined
     ): ListContributorInsightsOutput = {
       val __obj = js.Dynamic.literal()
-      ContributorInsightsSummaries.foreach(__v =>
-        __obj.updateDynamic("ContributorInsightsSummaries")(__v.asInstanceOf[js.Any])
-      )
+      ContributorInsightsSummaries.foreach(__v => __obj.updateDynamic("ContributorInsightsSummaries")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListContributorInsightsOutput]
     }
@@ -2704,9 +2571,7 @@ package dynamodb {
         RegionName: js.UndefOr[RegionName] = js.undefined
     ): ListGlobalTablesInput = {
       val __obj = js.Dynamic.literal()
-      ExclusiveStartGlobalTableName.foreach(__v =>
-        __obj.updateDynamic("ExclusiveStartGlobalTableName")(__v.asInstanceOf[js.Any])
-      )
+      ExclusiveStartGlobalTableName.foreach(__v => __obj.updateDynamic("ExclusiveStartGlobalTableName")(__v.asInstanceOf[js.Any]))
       Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
       RegionName.foreach(__v => __obj.updateDynamic("RegionName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGlobalTablesInput]
@@ -2727,9 +2592,7 @@ package dynamodb {
     ): ListGlobalTablesOutput = {
       val __obj = js.Dynamic.literal()
       GlobalTables.foreach(__v => __obj.updateDynamic("GlobalTables")(__v.asInstanceOf[js.Any]))
-      LastEvaluatedGlobalTableName.foreach(__v =>
-        __obj.updateDynamic("LastEvaluatedGlobalTableName")(__v.asInstanceOf[js.Any])
-      )
+      LastEvaluatedGlobalTableName.foreach(__v => __obj.updateDynamic("LastEvaluatedGlobalTableName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGlobalTablesOutput]
     }
   }
@@ -2922,13 +2785,9 @@ package dynamodb {
         PointInTimeRecoveryStatus: js.UndefOr[PointInTimeRecoveryStatus] = js.undefined
     ): PointInTimeRecoveryDescription = {
       val __obj = js.Dynamic.literal()
-      EarliestRestorableDateTime.foreach(__v =>
-        __obj.updateDynamic("EarliestRestorableDateTime")(__v.asInstanceOf[js.Any])
-      )
+      EarliestRestorableDateTime.foreach(__v => __obj.updateDynamic("EarliestRestorableDateTime")(__v.asInstanceOf[js.Any]))
       LatestRestorableDateTime.foreach(__v => __obj.updateDynamic("LatestRestorableDateTime")(__v.asInstanceOf[js.Any]))
-      PointInTimeRecoveryStatus.foreach(__v =>
-        __obj.updateDynamic("PointInTimeRecoveryStatus")(__v.asInstanceOf[js.Any])
-      )
+      PointInTimeRecoveryStatus.foreach(__v => __obj.updateDynamic("PointInTimeRecoveryStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PointInTimeRecoveryDescription]
     }
   }
@@ -3100,12 +2959,8 @@ package dynamodb {
 
       ConditionExpression.foreach(__v => __obj.updateDynamic("ConditionExpression")(__v.asInstanceOf[js.Any]))
       ExpressionAttributeNames.foreach(__v => __obj.updateDynamic("ExpressionAttributeNames")(__v.asInstanceOf[js.Any]))
-      ExpressionAttributeValues.foreach(__v =>
-        __obj.updateDynamic("ExpressionAttributeValues")(__v.asInstanceOf[js.Any])
-      )
-      ReturnValuesOnConditionCheckFailure.foreach(__v =>
-        __obj.updateDynamic("ReturnValuesOnConditionCheckFailure")(__v.asInstanceOf[js.Any])
-      )
+      ExpressionAttributeValues.foreach(__v => __obj.updateDynamic("ExpressionAttributeValues")(__v.asInstanceOf[js.Any]))
+      ReturnValuesOnConditionCheckFailure.foreach(__v => __obj.updateDynamic("ReturnValuesOnConditionCheckFailure")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Put]
     }
   }
@@ -3150,13 +3005,9 @@ package dynamodb {
       ConditionalOperator.foreach(__v => __obj.updateDynamic("ConditionalOperator")(__v.asInstanceOf[js.Any]))
       Expected.foreach(__v => __obj.updateDynamic("Expected")(__v.asInstanceOf[js.Any]))
       ExpressionAttributeNames.foreach(__v => __obj.updateDynamic("ExpressionAttributeNames")(__v.asInstanceOf[js.Any]))
-      ExpressionAttributeValues.foreach(__v =>
-        __obj.updateDynamic("ExpressionAttributeValues")(__v.asInstanceOf[js.Any])
-      )
+      ExpressionAttributeValues.foreach(__v => __obj.updateDynamic("ExpressionAttributeValues")(__v.asInstanceOf[js.Any]))
       ReturnConsumedCapacity.foreach(__v => __obj.updateDynamic("ReturnConsumedCapacity")(__v.asInstanceOf[js.Any]))
-      ReturnItemCollectionMetrics.foreach(__v =>
-        __obj.updateDynamic("ReturnItemCollectionMetrics")(__v.asInstanceOf[js.Any])
-      )
+      ReturnItemCollectionMetrics.foreach(__v => __obj.updateDynamic("ReturnItemCollectionMetrics")(__v.asInstanceOf[js.Any]))
       ReturnValues.foreach(__v => __obj.updateDynamic("ReturnValues")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutItemInput]
     }
@@ -3262,9 +3113,7 @@ package dynamodb {
       ConsistentRead.foreach(__v => __obj.updateDynamic("ConsistentRead")(__v.asInstanceOf[js.Any]))
       ExclusiveStartKey.foreach(__v => __obj.updateDynamic("ExclusiveStartKey")(__v.asInstanceOf[js.Any]))
       ExpressionAttributeNames.foreach(__v => __obj.updateDynamic("ExpressionAttributeNames")(__v.asInstanceOf[js.Any]))
-      ExpressionAttributeValues.foreach(__v =>
-        __obj.updateDynamic("ExpressionAttributeValues")(__v.asInstanceOf[js.Any])
-      )
+      ExpressionAttributeValues.foreach(__v => __obj.updateDynamic("ExpressionAttributeValues")(__v.asInstanceOf[js.Any]))
       FilterExpression.foreach(__v => __obj.updateDynamic("FilterExpression")(__v.asInstanceOf[js.Any]))
       IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
       KeyConditionExpression.foreach(__v => __obj.updateDynamic("KeyConditionExpression")(__v.asInstanceOf[js.Any]))
@@ -3353,12 +3202,8 @@ package dynamodb {
       val __obj = js.Dynamic.literal()
       GlobalSecondaryIndexes.foreach(__v => __obj.updateDynamic("GlobalSecondaryIndexes")(__v.asInstanceOf[js.Any]))
       RegionName.foreach(__v => __obj.updateDynamic("RegionName")(__v.asInstanceOf[js.Any]))
-      ReplicaProvisionedReadCapacityAutoScalingSettings.foreach(__v =>
-        __obj.updateDynamic("ReplicaProvisionedReadCapacityAutoScalingSettings")(__v.asInstanceOf[js.Any])
-      )
-      ReplicaProvisionedWriteCapacityAutoScalingSettings.foreach(__v =>
-        __obj.updateDynamic("ReplicaProvisionedWriteCapacityAutoScalingSettings")(__v.asInstanceOf[js.Any])
-      )
+      ReplicaProvisionedReadCapacityAutoScalingSettings.foreach(__v => __obj.updateDynamic("ReplicaProvisionedReadCapacityAutoScalingSettings")(__v.asInstanceOf[js.Any]))
+      ReplicaProvisionedWriteCapacityAutoScalingSettings.foreach(__v => __obj.updateDynamic("ReplicaProvisionedWriteCapacityAutoScalingSettings")(__v.asInstanceOf[js.Any]))
       ReplicaStatus.foreach(__v => __obj.updateDynamic("ReplicaStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicaAutoScalingDescription]
     }
@@ -3385,12 +3230,8 @@ package dynamodb {
         "RegionName" -> RegionName.asInstanceOf[js.Any]
       )
 
-      ReplicaGlobalSecondaryIndexUpdates.foreach(__v =>
-        __obj.updateDynamic("ReplicaGlobalSecondaryIndexUpdates")(__v.asInstanceOf[js.Any])
-      )
-      ReplicaProvisionedReadCapacityAutoScalingUpdate.foreach(__v =>
-        __obj.updateDynamic("ReplicaProvisionedReadCapacityAutoScalingUpdate")(__v.asInstanceOf[js.Any])
-      )
+      ReplicaGlobalSecondaryIndexUpdates.foreach(__v => __obj.updateDynamic("ReplicaGlobalSecondaryIndexUpdates")(__v.asInstanceOf[js.Any]))
+      ReplicaProvisionedReadCapacityAutoScalingUpdate.foreach(__v => __obj.updateDynamic("ReplicaProvisionedReadCapacityAutoScalingUpdate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicaAutoScalingUpdate]
     }
   }
@@ -3423,15 +3264,11 @@ package dynamodb {
       val __obj = js.Dynamic.literal()
       GlobalSecondaryIndexes.foreach(__v => __obj.updateDynamic("GlobalSecondaryIndexes")(__v.asInstanceOf[js.Any]))
       KMSMasterKeyId.foreach(__v => __obj.updateDynamic("KMSMasterKeyId")(__v.asInstanceOf[js.Any]))
-      ProvisionedThroughputOverride.foreach(__v =>
-        __obj.updateDynamic("ProvisionedThroughputOverride")(__v.asInstanceOf[js.Any])
-      )
+      ProvisionedThroughputOverride.foreach(__v => __obj.updateDynamic("ProvisionedThroughputOverride")(__v.asInstanceOf[js.Any]))
       RegionName.foreach(__v => __obj.updateDynamic("RegionName")(__v.asInstanceOf[js.Any]))
       ReplicaStatus.foreach(__v => __obj.updateDynamic("ReplicaStatus")(__v.asInstanceOf[js.Any]))
       ReplicaStatusDescription.foreach(__v => __obj.updateDynamic("ReplicaStatusDescription")(__v.asInstanceOf[js.Any]))
-      ReplicaStatusPercentProgress.foreach(__v =>
-        __obj.updateDynamic("ReplicaStatusPercentProgress")(__v.asInstanceOf[js.Any])
-      )
+      ReplicaStatusPercentProgress.foreach(__v => __obj.updateDynamic("ReplicaStatusPercentProgress")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicaDescription]
     }
   }
@@ -3455,9 +3292,7 @@ package dynamodb {
         "IndexName" -> IndexName.asInstanceOf[js.Any]
       )
 
-      ProvisionedThroughputOverride.foreach(__v =>
-        __obj.updateDynamic("ProvisionedThroughputOverride")(__v.asInstanceOf[js.Any])
-      )
+      ProvisionedThroughputOverride.foreach(__v => __obj.updateDynamic("ProvisionedThroughputOverride")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicaGlobalSecondaryIndex]
     }
   }
@@ -3484,12 +3319,8 @@ package dynamodb {
       val __obj = js.Dynamic.literal()
       IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
       IndexStatus.foreach(__v => __obj.updateDynamic("IndexStatus")(__v.asInstanceOf[js.Any]))
-      ProvisionedReadCapacityAutoScalingSettings.foreach(__v =>
-        __obj.updateDynamic("ProvisionedReadCapacityAutoScalingSettings")(__v.asInstanceOf[js.Any])
-      )
-      ProvisionedWriteCapacityAutoScalingSettings.foreach(__v =>
-        __obj.updateDynamic("ProvisionedWriteCapacityAutoScalingSettings")(__v.asInstanceOf[js.Any])
-      )
+      ProvisionedReadCapacityAutoScalingSettings.foreach(__v => __obj.updateDynamic("ProvisionedReadCapacityAutoScalingSettings")(__v.asInstanceOf[js.Any]))
+      ProvisionedWriteCapacityAutoScalingSettings.foreach(__v => __obj.updateDynamic("ProvisionedWriteCapacityAutoScalingSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicaGlobalSecondaryIndexAutoScalingDescription]
     }
   }
@@ -3511,9 +3342,7 @@ package dynamodb {
     ): ReplicaGlobalSecondaryIndexAutoScalingUpdate = {
       val __obj = js.Dynamic.literal()
       IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
-      ProvisionedReadCapacityAutoScalingUpdate.foreach(__v =>
-        __obj.updateDynamic("ProvisionedReadCapacityAutoScalingUpdate")(__v.asInstanceOf[js.Any])
-      )
+      ProvisionedReadCapacityAutoScalingUpdate.foreach(__v => __obj.updateDynamic("ProvisionedReadCapacityAutoScalingUpdate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicaGlobalSecondaryIndexAutoScalingUpdate]
     }
   }
@@ -3535,9 +3364,7 @@ package dynamodb {
     ): ReplicaGlobalSecondaryIndexDescription = {
       val __obj = js.Dynamic.literal()
       IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
-      ProvisionedThroughputOverride.foreach(__v =>
-        __obj.updateDynamic("ProvisionedThroughputOverride")(__v.asInstanceOf[js.Any])
-      )
+      ProvisionedThroughputOverride.foreach(__v => __obj.updateDynamic("ProvisionedThroughputOverride")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicaGlobalSecondaryIndexDescription]
     }
   }
@@ -3570,18 +3397,10 @@ package dynamodb {
       )
 
       IndexStatus.foreach(__v => __obj.updateDynamic("IndexStatus")(__v.asInstanceOf[js.Any]))
-      ProvisionedReadCapacityAutoScalingSettings.foreach(__v =>
-        __obj.updateDynamic("ProvisionedReadCapacityAutoScalingSettings")(__v.asInstanceOf[js.Any])
-      )
-      ProvisionedReadCapacityUnits.foreach(__v =>
-        __obj.updateDynamic("ProvisionedReadCapacityUnits")(__v.asInstanceOf[js.Any])
-      )
-      ProvisionedWriteCapacityAutoScalingSettings.foreach(__v =>
-        __obj.updateDynamic("ProvisionedWriteCapacityAutoScalingSettings")(__v.asInstanceOf[js.Any])
-      )
-      ProvisionedWriteCapacityUnits.foreach(__v =>
-        __obj.updateDynamic("ProvisionedWriteCapacityUnits")(__v.asInstanceOf[js.Any])
-      )
+      ProvisionedReadCapacityAutoScalingSettings.foreach(__v => __obj.updateDynamic("ProvisionedReadCapacityAutoScalingSettings")(__v.asInstanceOf[js.Any]))
+      ProvisionedReadCapacityUnits.foreach(__v => __obj.updateDynamic("ProvisionedReadCapacityUnits")(__v.asInstanceOf[js.Any]))
+      ProvisionedWriteCapacityAutoScalingSettings.foreach(__v => __obj.updateDynamic("ProvisionedWriteCapacityAutoScalingSettings")(__v.asInstanceOf[js.Any]))
+      ProvisionedWriteCapacityUnits.foreach(__v => __obj.updateDynamic("ProvisionedWriteCapacityUnits")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicaGlobalSecondaryIndexSettingsDescription]
     }
   }
@@ -3607,12 +3426,8 @@ package dynamodb {
         "IndexName" -> IndexName.asInstanceOf[js.Any]
       )
 
-      ProvisionedReadCapacityAutoScalingSettingsUpdate.foreach(__v =>
-        __obj.updateDynamic("ProvisionedReadCapacityAutoScalingSettingsUpdate")(__v.asInstanceOf[js.Any])
-      )
-      ProvisionedReadCapacityUnits.foreach(__v =>
-        __obj.updateDynamic("ProvisionedReadCapacityUnits")(__v.asInstanceOf[js.Any])
-      )
+      ProvisionedReadCapacityAutoScalingSettingsUpdate.foreach(__v => __obj.updateDynamic("ProvisionedReadCapacityAutoScalingSettingsUpdate")(__v.asInstanceOf[js.Any]))
+      ProvisionedReadCapacityUnits.foreach(__v => __obj.updateDynamic("ProvisionedReadCapacityUnits")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicaGlobalSecondaryIndexSettingsUpdate]
     }
   }
@@ -3637,8 +3452,7 @@ package dynamodb {
     def apply(
         RegionName: RegionName,
         ReplicaBillingModeSummary: js.UndefOr[BillingModeSummary] = js.undefined,
-        ReplicaGlobalSecondaryIndexSettings: js.UndefOr[ReplicaGlobalSecondaryIndexSettingsDescriptionList] =
-          js.undefined,
+        ReplicaGlobalSecondaryIndexSettings: js.UndefOr[ReplicaGlobalSecondaryIndexSettingsDescriptionList] = js.undefined,
         ReplicaProvisionedReadCapacityAutoScalingSettings: js.UndefOr[AutoScalingSettingsDescription] = js.undefined,
         ReplicaProvisionedReadCapacityUnits: js.UndefOr[NonNegativeLongObject] = js.undefined,
         ReplicaProvisionedWriteCapacityAutoScalingSettings: js.UndefOr[AutoScalingSettingsDescription] = js.undefined,
@@ -3649,24 +3463,12 @@ package dynamodb {
         "RegionName" -> RegionName.asInstanceOf[js.Any]
       )
 
-      ReplicaBillingModeSummary.foreach(__v =>
-        __obj.updateDynamic("ReplicaBillingModeSummary")(__v.asInstanceOf[js.Any])
-      )
-      ReplicaGlobalSecondaryIndexSettings.foreach(__v =>
-        __obj.updateDynamic("ReplicaGlobalSecondaryIndexSettings")(__v.asInstanceOf[js.Any])
-      )
-      ReplicaProvisionedReadCapacityAutoScalingSettings.foreach(__v =>
-        __obj.updateDynamic("ReplicaProvisionedReadCapacityAutoScalingSettings")(__v.asInstanceOf[js.Any])
-      )
-      ReplicaProvisionedReadCapacityUnits.foreach(__v =>
-        __obj.updateDynamic("ReplicaProvisionedReadCapacityUnits")(__v.asInstanceOf[js.Any])
-      )
-      ReplicaProvisionedWriteCapacityAutoScalingSettings.foreach(__v =>
-        __obj.updateDynamic("ReplicaProvisionedWriteCapacityAutoScalingSettings")(__v.asInstanceOf[js.Any])
-      )
-      ReplicaProvisionedWriteCapacityUnits.foreach(__v =>
-        __obj.updateDynamic("ReplicaProvisionedWriteCapacityUnits")(__v.asInstanceOf[js.Any])
-      )
+      ReplicaBillingModeSummary.foreach(__v => __obj.updateDynamic("ReplicaBillingModeSummary")(__v.asInstanceOf[js.Any]))
+      ReplicaGlobalSecondaryIndexSettings.foreach(__v => __obj.updateDynamic("ReplicaGlobalSecondaryIndexSettings")(__v.asInstanceOf[js.Any]))
+      ReplicaProvisionedReadCapacityAutoScalingSettings.foreach(__v => __obj.updateDynamic("ReplicaProvisionedReadCapacityAutoScalingSettings")(__v.asInstanceOf[js.Any]))
+      ReplicaProvisionedReadCapacityUnits.foreach(__v => __obj.updateDynamic("ReplicaProvisionedReadCapacityUnits")(__v.asInstanceOf[js.Any]))
+      ReplicaProvisionedWriteCapacityAutoScalingSettings.foreach(__v => __obj.updateDynamic("ReplicaProvisionedWriteCapacityAutoScalingSettings")(__v.asInstanceOf[js.Any]))
+      ReplicaProvisionedWriteCapacityUnits.foreach(__v => __obj.updateDynamic("ReplicaProvisionedWriteCapacityUnits")(__v.asInstanceOf[js.Any]))
       ReplicaStatus.foreach(__v => __obj.updateDynamic("ReplicaStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicaSettingsDescription]
     }
@@ -3687,8 +3489,7 @@ package dynamodb {
     @inline
     def apply(
         RegionName: RegionName,
-        ReplicaGlobalSecondaryIndexSettingsUpdate: js.UndefOr[ReplicaGlobalSecondaryIndexSettingsUpdateList] =
-          js.undefined,
+        ReplicaGlobalSecondaryIndexSettingsUpdate: js.UndefOr[ReplicaGlobalSecondaryIndexSettingsUpdateList] = js.undefined,
         ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate: js.UndefOr[AutoScalingSettingsUpdate] = js.undefined,
         ReplicaProvisionedReadCapacityUnits: js.UndefOr[PositiveLongObject] = js.undefined
     ): ReplicaSettingsUpdate = {
@@ -3696,15 +3497,9 @@ package dynamodb {
         "RegionName" -> RegionName.asInstanceOf[js.Any]
       )
 
-      ReplicaGlobalSecondaryIndexSettingsUpdate.foreach(__v =>
-        __obj.updateDynamic("ReplicaGlobalSecondaryIndexSettingsUpdate")(__v.asInstanceOf[js.Any])
-      )
-      ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate.foreach(__v =>
-        __obj.updateDynamic("ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate")(__v.asInstanceOf[js.Any])
-      )
-      ReplicaProvisionedReadCapacityUnits.foreach(__v =>
-        __obj.updateDynamic("ReplicaProvisionedReadCapacityUnits")(__v.asInstanceOf[js.Any])
-      )
+      ReplicaGlobalSecondaryIndexSettingsUpdate.foreach(__v => __obj.updateDynamic("ReplicaGlobalSecondaryIndexSettingsUpdate")(__v.asInstanceOf[js.Any]))
+      ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate.foreach(__v => __obj.updateDynamic("ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate")(__v.asInstanceOf[js.Any]))
+      ReplicaProvisionedReadCapacityUnits.foreach(__v => __obj.updateDynamic("ReplicaProvisionedReadCapacityUnits")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicaSettingsUpdate]
     }
   }
@@ -3832,15 +3627,9 @@ package dynamodb {
       )
 
       BillingModeOverride.foreach(__v => __obj.updateDynamic("BillingModeOverride")(__v.asInstanceOf[js.Any]))
-      GlobalSecondaryIndexOverride.foreach(__v =>
-        __obj.updateDynamic("GlobalSecondaryIndexOverride")(__v.asInstanceOf[js.Any])
-      )
-      LocalSecondaryIndexOverride.foreach(__v =>
-        __obj.updateDynamic("LocalSecondaryIndexOverride")(__v.asInstanceOf[js.Any])
-      )
-      ProvisionedThroughputOverride.foreach(__v =>
-        __obj.updateDynamic("ProvisionedThroughputOverride")(__v.asInstanceOf[js.Any])
-      )
+      GlobalSecondaryIndexOverride.foreach(__v => __obj.updateDynamic("GlobalSecondaryIndexOverride")(__v.asInstanceOf[js.Any]))
+      LocalSecondaryIndexOverride.foreach(__v => __obj.updateDynamic("LocalSecondaryIndexOverride")(__v.asInstanceOf[js.Any]))
+      ProvisionedThroughputOverride.foreach(__v => __obj.updateDynamic("ProvisionedThroughputOverride")(__v.asInstanceOf[js.Any]))
       SSESpecificationOverride.foreach(__v => __obj.updateDynamic("SSESpecificationOverride")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RestoreTableFromBackupInput]
     }
@@ -3895,15 +3684,9 @@ package dynamodb {
       )
 
       BillingModeOverride.foreach(__v => __obj.updateDynamic("BillingModeOverride")(__v.asInstanceOf[js.Any]))
-      GlobalSecondaryIndexOverride.foreach(__v =>
-        __obj.updateDynamic("GlobalSecondaryIndexOverride")(__v.asInstanceOf[js.Any])
-      )
-      LocalSecondaryIndexOverride.foreach(__v =>
-        __obj.updateDynamic("LocalSecondaryIndexOverride")(__v.asInstanceOf[js.Any])
-      )
-      ProvisionedThroughputOverride.foreach(__v =>
-        __obj.updateDynamic("ProvisionedThroughputOverride")(__v.asInstanceOf[js.Any])
-      )
+      GlobalSecondaryIndexOverride.foreach(__v => __obj.updateDynamic("GlobalSecondaryIndexOverride")(__v.asInstanceOf[js.Any]))
+      LocalSecondaryIndexOverride.foreach(__v => __obj.updateDynamic("LocalSecondaryIndexOverride")(__v.asInstanceOf[js.Any]))
+      ProvisionedThroughputOverride.foreach(__v => __obj.updateDynamic("ProvisionedThroughputOverride")(__v.asInstanceOf[js.Any]))
       RestoreDateTime.foreach(__v => __obj.updateDynamic("RestoreDateTime")(__v.asInstanceOf[js.Any]))
       SSESpecificationOverride.foreach(__v => __obj.updateDynamic("SSESpecificationOverride")(__v.asInstanceOf[js.Any]))
       SourceTableArn.foreach(__v => __obj.updateDynamic("SourceTableArn")(__v.asInstanceOf[js.Any]))
@@ -3996,9 +3779,7 @@ package dynamodb {
         Status: js.UndefOr[SSEStatus] = js.undefined
     ): SSEDescription = {
       val __obj = js.Dynamic.literal()
-      InaccessibleEncryptionDateTime.foreach(__v =>
-        __obj.updateDynamic("InaccessibleEncryptionDateTime")(__v.asInstanceOf[js.Any])
-      )
+      InaccessibleEncryptionDateTime.foreach(__v => __obj.updateDynamic("InaccessibleEncryptionDateTime")(__v.asInstanceOf[js.Any]))
       KMSMasterKeyArn.foreach(__v => __obj.updateDynamic("KMSMasterKeyArn")(__v.asInstanceOf[js.Any]))
       SSEType.foreach(__v => __obj.updateDynamic("SSEType")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -4114,9 +3895,7 @@ package dynamodb {
       ConsistentRead.foreach(__v => __obj.updateDynamic("ConsistentRead")(__v.asInstanceOf[js.Any]))
       ExclusiveStartKey.foreach(__v => __obj.updateDynamic("ExclusiveStartKey")(__v.asInstanceOf[js.Any]))
       ExpressionAttributeNames.foreach(__v => __obj.updateDynamic("ExpressionAttributeNames")(__v.asInstanceOf[js.Any]))
-      ExpressionAttributeValues.foreach(__v =>
-        __obj.updateDynamic("ExpressionAttributeValues")(__v.asInstanceOf[js.Any])
-      )
+      ExpressionAttributeValues.foreach(__v => __obj.updateDynamic("ExpressionAttributeValues")(__v.asInstanceOf[js.Any]))
       FilterExpression.foreach(__v => __obj.updateDynamic("FilterExpression")(__v.asInstanceOf[js.Any]))
       IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
       Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
@@ -4398,9 +4177,7 @@ package dynamodb {
     val ARCHIVING = "ARCHIVING".asInstanceOf[TableStatus]
     val ARCHIVED = "ARCHIVED".asInstanceOf[TableStatus]
 
-    val values = js.Object.freeze(
-      js.Array(CREATING, UPDATING, DELETING, ACTIVE, INACCESSIBLE_ENCRYPTION_CREDENTIALS, ARCHIVING, ARCHIVED)
-    )
+    val values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, ACTIVE, INACCESSIBLE_ENCRYPTION_CREDENTIALS, ARCHIVING, ARCHIVED))
   }
 
   /**
@@ -4618,9 +4395,7 @@ package dynamodb {
 
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
       ReturnConsumedCapacity.foreach(__v => __obj.updateDynamic("ReturnConsumedCapacity")(__v.asInstanceOf[js.Any]))
-      ReturnItemCollectionMetrics.foreach(__v =>
-        __obj.updateDynamic("ReturnItemCollectionMetrics")(__v.asInstanceOf[js.Any])
-      )
+      ReturnItemCollectionMetrics.foreach(__v => __obj.updateDynamic("ReturnItemCollectionMetrics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TransactWriteItemsInput]
     }
   }
@@ -4698,12 +4473,8 @@ package dynamodb {
 
       ConditionExpression.foreach(__v => __obj.updateDynamic("ConditionExpression")(__v.asInstanceOf[js.Any]))
       ExpressionAttributeNames.foreach(__v => __obj.updateDynamic("ExpressionAttributeNames")(__v.asInstanceOf[js.Any]))
-      ExpressionAttributeValues.foreach(__v =>
-        __obj.updateDynamic("ExpressionAttributeValues")(__v.asInstanceOf[js.Any])
-      )
-      ReturnValuesOnConditionCheckFailure.foreach(__v =>
-        __obj.updateDynamic("ReturnValuesOnConditionCheckFailure")(__v.asInstanceOf[js.Any])
-      )
+      ExpressionAttributeValues.foreach(__v => __obj.updateDynamic("ExpressionAttributeValues")(__v.asInstanceOf[js.Any]))
+      ReturnValuesOnConditionCheckFailure.foreach(__v => __obj.updateDynamic("ReturnValuesOnConditionCheckFailure")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Update]
     }
   }
@@ -4740,9 +4511,7 @@ package dynamodb {
         ContinuousBackupsDescription: js.UndefOr[ContinuousBackupsDescription] = js.undefined
     ): UpdateContinuousBackupsOutput = {
       val __obj = js.Dynamic.literal()
-      ContinuousBackupsDescription.foreach(__v =>
-        __obj.updateDynamic("ContinuousBackupsDescription")(__v.asInstanceOf[js.Any])
-      )
+      ContinuousBackupsDescription.foreach(__v => __obj.updateDynamic("ContinuousBackupsDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateContinuousBackupsOutput]
     }
   }
@@ -4786,9 +4555,7 @@ package dynamodb {
         TableName: js.UndefOr[TableName] = js.undefined
     ): UpdateContributorInsightsOutput = {
       val __obj = js.Dynamic.literal()
-      ContributorInsightsStatus.foreach(__v =>
-        __obj.updateDynamic("ContributorInsightsStatus")(__v.asInstanceOf[js.Any])
-      )
+      ContributorInsightsStatus.foreach(__v => __obj.updateDynamic("ContributorInsightsStatus")(__v.asInstanceOf[js.Any]))
       IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
       TableName.foreach(__v => __obj.updateDynamic("TableName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateContributorInsightsOutput]
@@ -4871,10 +4638,8 @@ package dynamodb {
     def apply(
         GlobalTableName: TableName,
         GlobalTableBillingMode: js.UndefOr[BillingMode] = js.undefined,
-        GlobalTableGlobalSecondaryIndexSettingsUpdate: js.UndefOr[GlobalTableGlobalSecondaryIndexSettingsUpdateList] =
-          js.undefined,
-        GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate: js.UndefOr[AutoScalingSettingsUpdate] =
-          js.undefined,
+        GlobalTableGlobalSecondaryIndexSettingsUpdate: js.UndefOr[GlobalTableGlobalSecondaryIndexSettingsUpdateList] = js.undefined,
+        GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate: js.UndefOr[AutoScalingSettingsUpdate] = js.undefined,
         GlobalTableProvisionedWriteCapacityUnits: js.UndefOr[PositiveLongObject] = js.undefined,
         ReplicaSettingsUpdate: js.UndefOr[ReplicaSettingsUpdateList] = js.undefined
     ): UpdateGlobalTableSettingsInput = {
@@ -4883,15 +4648,9 @@ package dynamodb {
       )
 
       GlobalTableBillingMode.foreach(__v => __obj.updateDynamic("GlobalTableBillingMode")(__v.asInstanceOf[js.Any]))
-      GlobalTableGlobalSecondaryIndexSettingsUpdate.foreach(__v =>
-        __obj.updateDynamic("GlobalTableGlobalSecondaryIndexSettingsUpdate")(__v.asInstanceOf[js.Any])
-      )
-      GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate.foreach(__v =>
-        __obj.updateDynamic("GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate")(__v.asInstanceOf[js.Any])
-      )
-      GlobalTableProvisionedWriteCapacityUnits.foreach(__v =>
-        __obj.updateDynamic("GlobalTableProvisionedWriteCapacityUnits")(__v.asInstanceOf[js.Any])
-      )
+      GlobalTableGlobalSecondaryIndexSettingsUpdate.foreach(__v => __obj.updateDynamic("GlobalTableGlobalSecondaryIndexSettingsUpdate")(__v.asInstanceOf[js.Any]))
+      GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate.foreach(__v => __obj.updateDynamic("GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate")(__v.asInstanceOf[js.Any]))
+      GlobalTableProvisionedWriteCapacityUnits.foreach(__v => __obj.updateDynamic("GlobalTableProvisionedWriteCapacityUnits")(__v.asInstanceOf[js.Any]))
       ReplicaSettingsUpdate.foreach(__v => __obj.updateDynamic("ReplicaSettingsUpdate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGlobalTableSettingsInput]
     }
@@ -4961,13 +4720,9 @@ package dynamodb {
       ConditionalOperator.foreach(__v => __obj.updateDynamic("ConditionalOperator")(__v.asInstanceOf[js.Any]))
       Expected.foreach(__v => __obj.updateDynamic("Expected")(__v.asInstanceOf[js.Any]))
       ExpressionAttributeNames.foreach(__v => __obj.updateDynamic("ExpressionAttributeNames")(__v.asInstanceOf[js.Any]))
-      ExpressionAttributeValues.foreach(__v =>
-        __obj.updateDynamic("ExpressionAttributeValues")(__v.asInstanceOf[js.Any])
-      )
+      ExpressionAttributeValues.foreach(__v => __obj.updateDynamic("ExpressionAttributeValues")(__v.asInstanceOf[js.Any]))
       ReturnConsumedCapacity.foreach(__v => __obj.updateDynamic("ReturnConsumedCapacity")(__v.asInstanceOf[js.Any]))
-      ReturnItemCollectionMetrics.foreach(__v =>
-        __obj.updateDynamic("ReturnItemCollectionMetrics")(__v.asInstanceOf[js.Any])
-      )
+      ReturnItemCollectionMetrics.foreach(__v => __obj.updateDynamic("ReturnItemCollectionMetrics")(__v.asInstanceOf[js.Any]))
       ReturnValues.foreach(__v => __obj.updateDynamic("ReturnValues")(__v.asInstanceOf[js.Any]))
       UpdateExpression.foreach(__v => __obj.updateDynamic("UpdateExpression")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateItemInput]
@@ -5024,9 +4779,7 @@ package dynamodb {
 
       GlobalSecondaryIndexes.foreach(__v => __obj.updateDynamic("GlobalSecondaryIndexes")(__v.asInstanceOf[js.Any]))
       KMSMasterKeyId.foreach(__v => __obj.updateDynamic("KMSMasterKeyId")(__v.asInstanceOf[js.Any]))
-      ProvisionedThroughputOverride.foreach(__v =>
-        __obj.updateDynamic("ProvisionedThroughputOverride")(__v.asInstanceOf[js.Any])
-      )
+      ProvisionedThroughputOverride.foreach(__v => __obj.updateDynamic("ProvisionedThroughputOverride")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateReplicationGroupMemberAction]
     }
   }
@@ -5064,9 +4817,7 @@ package dynamodb {
 
       AttributeDefinitions.foreach(__v => __obj.updateDynamic("AttributeDefinitions")(__v.asInstanceOf[js.Any]))
       BillingMode.foreach(__v => __obj.updateDynamic("BillingMode")(__v.asInstanceOf[js.Any]))
-      GlobalSecondaryIndexUpdates.foreach(__v =>
-        __obj.updateDynamic("GlobalSecondaryIndexUpdates")(__v.asInstanceOf[js.Any])
-      )
+      GlobalSecondaryIndexUpdates.foreach(__v => __obj.updateDynamic("GlobalSecondaryIndexUpdates")(__v.asInstanceOf[js.Any]))
       ProvisionedThroughput.foreach(__v => __obj.updateDynamic("ProvisionedThroughput")(__v.asInstanceOf[js.Any]))
       ReplicaUpdates.foreach(__v => __obj.updateDynamic("ReplicaUpdates")(__v.asInstanceOf[js.Any]))
       SSESpecification.foreach(__v => __obj.updateDynamic("SSESpecification")(__v.asInstanceOf[js.Any]))
@@ -5114,12 +4865,8 @@ package dynamodb {
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
-      GlobalSecondaryIndexUpdates.foreach(__v =>
-        __obj.updateDynamic("GlobalSecondaryIndexUpdates")(__v.asInstanceOf[js.Any])
-      )
-      ProvisionedWriteCapacityAutoScalingUpdate.foreach(__v =>
-        __obj.updateDynamic("ProvisionedWriteCapacityAutoScalingUpdate")(__v.asInstanceOf[js.Any])
-      )
+      GlobalSecondaryIndexUpdates.foreach(__v => __obj.updateDynamic("GlobalSecondaryIndexUpdates")(__v.asInstanceOf[js.Any]))
+      ProvisionedWriteCapacityAutoScalingUpdate.foreach(__v => __obj.updateDynamic("ProvisionedWriteCapacityAutoScalingUpdate")(__v.asInstanceOf[js.Any]))
       ReplicaUpdates.foreach(__v => __obj.updateDynamic("ReplicaUpdates")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateTableReplicaAutoScalingInput]
     }
@@ -5136,9 +4883,7 @@ package dynamodb {
         TableAutoScalingDescription: js.UndefOr[TableAutoScalingDescription] = js.undefined
     ): UpdateTableReplicaAutoScalingOutput = {
       val __obj = js.Dynamic.literal()
-      TableAutoScalingDescription.foreach(__v =>
-        __obj.updateDynamic("TableAutoScalingDescription")(__v.asInstanceOf[js.Any])
-      )
+      TableAutoScalingDescription.foreach(__v => __obj.updateDynamic("TableAutoScalingDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateTableReplicaAutoScalingOutput]
     }
   }

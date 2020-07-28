@@ -45,25 +45,14 @@ package object dlm {
 
   implicit final class DLMOps(private val service: DLM) extends AnyVal {
 
-    @inline def createLifecyclePolicyFuture(
-        params: CreateLifecyclePolicyRequest
-    ): Future[CreateLifecyclePolicyResponse] = service.createLifecyclePolicy(params).promise().toFuture
-    @inline def deleteLifecyclePolicyFuture(
-        params: DeleteLifecyclePolicyRequest
-    ): Future[DeleteLifecyclePolicyResponse] = service.deleteLifecyclePolicy(params).promise().toFuture
-    @inline def getLifecyclePoliciesFuture(params: GetLifecyclePoliciesRequest): Future[GetLifecyclePoliciesResponse] =
-      service.getLifecyclePolicies(params).promise().toFuture
-    @inline def getLifecyclePolicyFuture(params: GetLifecyclePolicyRequest): Future[GetLifecyclePolicyResponse] =
-      service.getLifecyclePolicy(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateLifecyclePolicyFuture(
-        params: UpdateLifecyclePolicyRequest
-    ): Future[UpdateLifecyclePolicyResponse] = service.updateLifecyclePolicy(params).promise().toFuture
+    @inline def createLifecyclePolicyFuture(params: CreateLifecyclePolicyRequest): Future[CreateLifecyclePolicyResponse] = service.createLifecyclePolicy(params).promise().toFuture
+    @inline def deleteLifecyclePolicyFuture(params: DeleteLifecyclePolicyRequest): Future[DeleteLifecyclePolicyResponse] = service.deleteLifecyclePolicy(params).promise().toFuture
+    @inline def getLifecyclePoliciesFuture(params: GetLifecyclePoliciesRequest): Future[GetLifecyclePoliciesResponse] = service.getLifecyclePolicies(params).promise().toFuture
+    @inline def getLifecyclePolicyFuture(params: GetLifecyclePolicyRequest): Future[GetLifecyclePolicyResponse] = service.getLifecyclePolicy(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateLifecyclePolicyFuture(params: UpdateLifecyclePolicyRequest): Future[UpdateLifecyclePolicyResponse] = service.updateLifecyclePolicy(params).promise().toFuture
   }
 }
 

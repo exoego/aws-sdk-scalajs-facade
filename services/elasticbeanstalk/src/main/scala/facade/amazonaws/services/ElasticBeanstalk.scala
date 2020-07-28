@@ -159,126 +159,53 @@ package object elasticbeanstalk {
 
   implicit final class ElasticBeanstalkOps(private val service: ElasticBeanstalk) extends AnyVal {
 
-    @inline def abortEnvironmentUpdateFuture(params: AbortEnvironmentUpdateMessage): Future[js.Object] =
-      service.abortEnvironmentUpdate(params).promise().toFuture
-    @inline def applyEnvironmentManagedActionFuture(
-        params: ApplyEnvironmentManagedActionRequest
-    ): Future[ApplyEnvironmentManagedActionResult] = service.applyEnvironmentManagedAction(params).promise().toFuture
-    @inline def associateEnvironmentOperationsRoleFuture(
-        params: AssociateEnvironmentOperationsRoleMessage
-    ): Future[js.Object] = service.associateEnvironmentOperationsRole(params).promise().toFuture
-    @inline def checkDNSAvailabilityFuture(
-        params: CheckDNSAvailabilityMessage
-    ): Future[CheckDNSAvailabilityResultMessage] = service.checkDNSAvailability(params).promise().toFuture
-    @inline def composeEnvironmentsFuture(params: ComposeEnvironmentsMessage): Future[EnvironmentDescriptionsMessage] =
-      service.composeEnvironments(params).promise().toFuture
-    @inline def createApplicationFuture(params: CreateApplicationMessage): Future[ApplicationDescriptionMessage] =
-      service.createApplication(params).promise().toFuture
-    @inline def createApplicationVersionFuture(
-        params: CreateApplicationVersionMessage
-    ): Future[ApplicationVersionDescriptionMessage] = service.createApplicationVersion(params).promise().toFuture
-    @inline def createConfigurationTemplateFuture(
-        params: CreateConfigurationTemplateMessage
-    ): Future[ConfigurationSettingsDescription] = service.createConfigurationTemplate(params).promise().toFuture
-    @inline def createEnvironmentFuture(params: CreateEnvironmentMessage): Future[EnvironmentDescription] =
-      service.createEnvironment(params).promise().toFuture
-    @inline def createPlatformVersionFuture(params: CreatePlatformVersionRequest): Future[CreatePlatformVersionResult] =
-      service.createPlatformVersion(params).promise().toFuture
-    @inline def createStorageLocationFuture(): Future[CreateStorageLocationResultMessage] =
-      service.createStorageLocation().promise().toFuture
-    @inline def deleteApplicationFuture(params: DeleteApplicationMessage): Future[js.Object] =
-      service.deleteApplication(params).promise().toFuture
-    @inline def deleteApplicationVersionFuture(params: DeleteApplicationVersionMessage): Future[js.Object] =
-      service.deleteApplicationVersion(params).promise().toFuture
-    @inline def deleteConfigurationTemplateFuture(params: DeleteConfigurationTemplateMessage): Future[js.Object] =
-      service.deleteConfigurationTemplate(params).promise().toFuture
-    @inline def deleteEnvironmentConfigurationFuture(params: DeleteEnvironmentConfigurationMessage): Future[js.Object] =
-      service.deleteEnvironmentConfiguration(params).promise().toFuture
-    @inline def deletePlatformVersionFuture(params: DeletePlatformVersionRequest): Future[DeletePlatformVersionResult] =
-      service.deletePlatformVersion(params).promise().toFuture
-    @inline def describeAccountAttributesFuture(): Future[DescribeAccountAttributesResult] =
-      service.describeAccountAttributes().promise().toFuture
-    @inline def describeApplicationVersionsFuture(
-        params: DescribeApplicationVersionsMessage
-    ): Future[ApplicationVersionDescriptionsMessage] = service.describeApplicationVersions(params).promise().toFuture
-    @inline def describeApplicationsFuture(
-        params: DescribeApplicationsMessage
-    ): Future[ApplicationDescriptionsMessage] = service.describeApplications(params).promise().toFuture
-    @inline def describeConfigurationOptionsFuture(
-        params: DescribeConfigurationOptionsMessage
-    ): Future[ConfigurationOptionsDescription] = service.describeConfigurationOptions(params).promise().toFuture
-    @inline def describeConfigurationSettingsFuture(
-        params: DescribeConfigurationSettingsMessage
-    ): Future[ConfigurationSettingsDescriptions] = service.describeConfigurationSettings(params).promise().toFuture
-    @inline def describeEnvironmentHealthFuture(
-        params: DescribeEnvironmentHealthRequest
-    ): Future[DescribeEnvironmentHealthResult] = service.describeEnvironmentHealth(params).promise().toFuture
-    @inline def describeEnvironmentManagedActionHistoryFuture(
-        params: DescribeEnvironmentManagedActionHistoryRequest
-    ): Future[DescribeEnvironmentManagedActionHistoryResult] =
-      service.describeEnvironmentManagedActionHistory(params).promise().toFuture
-    @inline def describeEnvironmentManagedActionsFuture(
-        params: DescribeEnvironmentManagedActionsRequest
-    ): Future[DescribeEnvironmentManagedActionsResult] =
-      service.describeEnvironmentManagedActions(params).promise().toFuture
-    @inline def describeEnvironmentResourcesFuture(
-        params: DescribeEnvironmentResourcesMessage
-    ): Future[EnvironmentResourceDescriptionsMessage] = service.describeEnvironmentResources(params).promise().toFuture
-    @inline def describeEnvironmentsFuture(
-        params: DescribeEnvironmentsMessage
-    ): Future[EnvironmentDescriptionsMessage] = service.describeEnvironments(params).promise().toFuture
-    @inline def describeEventsFuture(params: DescribeEventsMessage): Future[EventDescriptionsMessage] =
-      service.describeEvents(params).promise().toFuture
-    @inline def describeInstancesHealthFuture(
-        params: DescribeInstancesHealthRequest
-    ): Future[DescribeInstancesHealthResult] = service.describeInstancesHealth(params).promise().toFuture
-    @inline def describePlatformVersionFuture(
-        params: DescribePlatformVersionRequest
-    ): Future[DescribePlatformVersionResult] = service.describePlatformVersion(params).promise().toFuture
-    @inline def disassociateEnvironmentOperationsRoleFuture(
-        params: DisassociateEnvironmentOperationsRoleMessage
-    ): Future[js.Object] = service.disassociateEnvironmentOperationsRole(params).promise().toFuture
-    @inline def listAvailableSolutionStacksFuture(): Future[ListAvailableSolutionStacksResultMessage] =
-      service.listAvailableSolutionStacks().promise().toFuture
-    @inline def listPlatformBranchesFuture(params: ListPlatformBranchesRequest): Future[ListPlatformBranchesResult] =
-      service.listPlatformBranches(params).promise().toFuture
-    @inline def listPlatformVersionsFuture(params: ListPlatformVersionsRequest): Future[ListPlatformVersionsResult] =
-      service.listPlatformVersions(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceMessage): Future[ResourceTagsDescriptionMessage] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def rebuildEnvironmentFuture(params: RebuildEnvironmentMessage): Future[js.Object] =
-      service.rebuildEnvironment(params).promise().toFuture
-    @inline def requestEnvironmentInfoFuture(params: RequestEnvironmentInfoMessage): Future[js.Object] =
-      service.requestEnvironmentInfo(params).promise().toFuture
-    @inline def restartAppServerFuture(params: RestartAppServerMessage): Future[js.Object] =
-      service.restartAppServer(params).promise().toFuture
-    @inline def retrieveEnvironmentInfoFuture(
-        params: RetrieveEnvironmentInfoMessage
-    ): Future[RetrieveEnvironmentInfoResultMessage] = service.retrieveEnvironmentInfo(params).promise().toFuture
-    @inline def swapEnvironmentCNAMEsFuture(params: SwapEnvironmentCNAMEsMessage): Future[js.Object] =
-      service.swapEnvironmentCNAMEs(params).promise().toFuture
-    @inline def terminateEnvironmentFuture(params: TerminateEnvironmentMessage): Future[EnvironmentDescription] =
-      service.terminateEnvironment(params).promise().toFuture
-    @inline def updateApplicationFuture(params: UpdateApplicationMessage): Future[ApplicationDescriptionMessage] =
-      service.updateApplication(params).promise().toFuture
-    @inline def updateApplicationResourceLifecycleFuture(
-        params: UpdateApplicationResourceLifecycleMessage
-    ): Future[ApplicationResourceLifecycleDescriptionMessage] =
-      service.updateApplicationResourceLifecycle(params).promise().toFuture
-    @inline def updateApplicationVersionFuture(
-        params: UpdateApplicationVersionMessage
-    ): Future[ApplicationVersionDescriptionMessage] = service.updateApplicationVersion(params).promise().toFuture
-    @inline def updateConfigurationTemplateFuture(
-        params: UpdateConfigurationTemplateMessage
-    ): Future[ConfigurationSettingsDescription] = service.updateConfigurationTemplate(params).promise().toFuture
-    @inline def updateEnvironmentFuture(params: UpdateEnvironmentMessage): Future[EnvironmentDescription] =
-      service.updateEnvironment(params).promise().toFuture
-    @inline def updateTagsForResourceFuture(params: UpdateTagsForResourceMessage): Future[js.Object] =
-      service.updateTagsForResource(params).promise().toFuture
-    @inline def validateConfigurationSettingsFuture(
-        params: ValidateConfigurationSettingsMessage
-    ): Future[ConfigurationSettingsValidationMessages] =
-      service.validateConfigurationSettings(params).promise().toFuture
+    @inline def abortEnvironmentUpdateFuture(params: AbortEnvironmentUpdateMessage): Future[js.Object] = service.abortEnvironmentUpdate(params).promise().toFuture
+    @inline def applyEnvironmentManagedActionFuture(params: ApplyEnvironmentManagedActionRequest): Future[ApplyEnvironmentManagedActionResult] = service.applyEnvironmentManagedAction(params).promise().toFuture
+    @inline def associateEnvironmentOperationsRoleFuture(params: AssociateEnvironmentOperationsRoleMessage): Future[js.Object] = service.associateEnvironmentOperationsRole(params).promise().toFuture
+    @inline def checkDNSAvailabilityFuture(params: CheckDNSAvailabilityMessage): Future[CheckDNSAvailabilityResultMessage] = service.checkDNSAvailability(params).promise().toFuture
+    @inline def composeEnvironmentsFuture(params: ComposeEnvironmentsMessage): Future[EnvironmentDescriptionsMessage] = service.composeEnvironments(params).promise().toFuture
+    @inline def createApplicationFuture(params: CreateApplicationMessage): Future[ApplicationDescriptionMessage] = service.createApplication(params).promise().toFuture
+    @inline def createApplicationVersionFuture(params: CreateApplicationVersionMessage): Future[ApplicationVersionDescriptionMessage] = service.createApplicationVersion(params).promise().toFuture
+    @inline def createConfigurationTemplateFuture(params: CreateConfigurationTemplateMessage): Future[ConfigurationSettingsDescription] = service.createConfigurationTemplate(params).promise().toFuture
+    @inline def createEnvironmentFuture(params: CreateEnvironmentMessage): Future[EnvironmentDescription] = service.createEnvironment(params).promise().toFuture
+    @inline def createPlatformVersionFuture(params: CreatePlatformVersionRequest): Future[CreatePlatformVersionResult] = service.createPlatformVersion(params).promise().toFuture
+    @inline def createStorageLocationFuture(): Future[CreateStorageLocationResultMessage] = service.createStorageLocation().promise().toFuture
+    @inline def deleteApplicationFuture(params: DeleteApplicationMessage): Future[js.Object] = service.deleteApplication(params).promise().toFuture
+    @inline def deleteApplicationVersionFuture(params: DeleteApplicationVersionMessage): Future[js.Object] = service.deleteApplicationVersion(params).promise().toFuture
+    @inline def deleteConfigurationTemplateFuture(params: DeleteConfigurationTemplateMessage): Future[js.Object] = service.deleteConfigurationTemplate(params).promise().toFuture
+    @inline def deleteEnvironmentConfigurationFuture(params: DeleteEnvironmentConfigurationMessage): Future[js.Object] = service.deleteEnvironmentConfiguration(params).promise().toFuture
+    @inline def deletePlatformVersionFuture(params: DeletePlatformVersionRequest): Future[DeletePlatformVersionResult] = service.deletePlatformVersion(params).promise().toFuture
+    @inline def describeAccountAttributesFuture(): Future[DescribeAccountAttributesResult] = service.describeAccountAttributes().promise().toFuture
+    @inline def describeApplicationVersionsFuture(params: DescribeApplicationVersionsMessage): Future[ApplicationVersionDescriptionsMessage] = service.describeApplicationVersions(params).promise().toFuture
+    @inline def describeApplicationsFuture(params: DescribeApplicationsMessage): Future[ApplicationDescriptionsMessage] = service.describeApplications(params).promise().toFuture
+    @inline def describeConfigurationOptionsFuture(params: DescribeConfigurationOptionsMessage): Future[ConfigurationOptionsDescription] = service.describeConfigurationOptions(params).promise().toFuture
+    @inline def describeConfigurationSettingsFuture(params: DescribeConfigurationSettingsMessage): Future[ConfigurationSettingsDescriptions] = service.describeConfigurationSettings(params).promise().toFuture
+    @inline def describeEnvironmentHealthFuture(params: DescribeEnvironmentHealthRequest): Future[DescribeEnvironmentHealthResult] = service.describeEnvironmentHealth(params).promise().toFuture
+    @inline def describeEnvironmentManagedActionHistoryFuture(params: DescribeEnvironmentManagedActionHistoryRequest): Future[DescribeEnvironmentManagedActionHistoryResult] = service.describeEnvironmentManagedActionHistory(params).promise().toFuture
+    @inline def describeEnvironmentManagedActionsFuture(params: DescribeEnvironmentManagedActionsRequest): Future[DescribeEnvironmentManagedActionsResult] = service.describeEnvironmentManagedActions(params).promise().toFuture
+    @inline def describeEnvironmentResourcesFuture(params: DescribeEnvironmentResourcesMessage): Future[EnvironmentResourceDescriptionsMessage] = service.describeEnvironmentResources(params).promise().toFuture
+    @inline def describeEnvironmentsFuture(params: DescribeEnvironmentsMessage): Future[EnvironmentDescriptionsMessage] = service.describeEnvironments(params).promise().toFuture
+    @inline def describeEventsFuture(params: DescribeEventsMessage): Future[EventDescriptionsMessage] = service.describeEvents(params).promise().toFuture
+    @inline def describeInstancesHealthFuture(params: DescribeInstancesHealthRequest): Future[DescribeInstancesHealthResult] = service.describeInstancesHealth(params).promise().toFuture
+    @inline def describePlatformVersionFuture(params: DescribePlatformVersionRequest): Future[DescribePlatformVersionResult] = service.describePlatformVersion(params).promise().toFuture
+    @inline def disassociateEnvironmentOperationsRoleFuture(params: DisassociateEnvironmentOperationsRoleMessage): Future[js.Object] = service.disassociateEnvironmentOperationsRole(params).promise().toFuture
+    @inline def listAvailableSolutionStacksFuture(): Future[ListAvailableSolutionStacksResultMessage] = service.listAvailableSolutionStacks().promise().toFuture
+    @inline def listPlatformBranchesFuture(params: ListPlatformBranchesRequest): Future[ListPlatformBranchesResult] = service.listPlatformBranches(params).promise().toFuture
+    @inline def listPlatformVersionsFuture(params: ListPlatformVersionsRequest): Future[ListPlatformVersionsResult] = service.listPlatformVersions(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceMessage): Future[ResourceTagsDescriptionMessage] = service.listTagsForResource(params).promise().toFuture
+    @inline def rebuildEnvironmentFuture(params: RebuildEnvironmentMessage): Future[js.Object] = service.rebuildEnvironment(params).promise().toFuture
+    @inline def requestEnvironmentInfoFuture(params: RequestEnvironmentInfoMessage): Future[js.Object] = service.requestEnvironmentInfo(params).promise().toFuture
+    @inline def restartAppServerFuture(params: RestartAppServerMessage): Future[js.Object] = service.restartAppServer(params).promise().toFuture
+    @inline def retrieveEnvironmentInfoFuture(params: RetrieveEnvironmentInfoMessage): Future[RetrieveEnvironmentInfoResultMessage] = service.retrieveEnvironmentInfo(params).promise().toFuture
+    @inline def swapEnvironmentCNAMEsFuture(params: SwapEnvironmentCNAMEsMessage): Future[js.Object] = service.swapEnvironmentCNAMEs(params).promise().toFuture
+    @inline def terminateEnvironmentFuture(params: TerminateEnvironmentMessage): Future[EnvironmentDescription] = service.terminateEnvironment(params).promise().toFuture
+    @inline def updateApplicationFuture(params: UpdateApplicationMessage): Future[ApplicationDescriptionMessage] = service.updateApplication(params).promise().toFuture
+    @inline def updateApplicationResourceLifecycleFuture(params: UpdateApplicationResourceLifecycleMessage): Future[ApplicationResourceLifecycleDescriptionMessage] = service.updateApplicationResourceLifecycle(params).promise().toFuture
+    @inline def updateApplicationVersionFuture(params: UpdateApplicationVersionMessage): Future[ApplicationVersionDescriptionMessage] = service.updateApplicationVersion(params).promise().toFuture
+    @inline def updateConfigurationTemplateFuture(params: UpdateConfigurationTemplateMessage): Future[ConfigurationSettingsDescription] = service.updateConfigurationTemplate(params).promise().toFuture
+    @inline def updateEnvironmentFuture(params: UpdateEnvironmentMessage): Future[EnvironmentDescription] = service.updateEnvironment(params).promise().toFuture
+    @inline def updateTagsForResourceFuture(params: UpdateTagsForResourceMessage): Future[js.Object] = service.updateTagsForResource(params).promise().toFuture
+    @inline def validateConfigurationSettingsFuture(params: ValidateConfigurationSettingsMessage): Future[ConfigurationSettingsValidationMessages] = service.validateConfigurationSettings(params).promise().toFuture
   }
 }
 
@@ -289,21 +216,13 @@ package elasticbeanstalk {
     def this(config: AWSConfig) = this()
 
     def abortEnvironmentUpdate(params: AbortEnvironmentUpdateMessage): Request[js.Object] = js.native
-    def applyEnvironmentManagedAction(
-        params: ApplyEnvironmentManagedActionRequest
-    ): Request[ApplyEnvironmentManagedActionResult] = js.native
-    def associateEnvironmentOperationsRole(params: AssociateEnvironmentOperationsRoleMessage): Request[js.Object] =
-      js.native
-    def checkDNSAvailability(params: CheckDNSAvailabilityMessage): Request[CheckDNSAvailabilityResultMessage] =
-      js.native
+    def applyEnvironmentManagedAction(params: ApplyEnvironmentManagedActionRequest): Request[ApplyEnvironmentManagedActionResult] = js.native
+    def associateEnvironmentOperationsRole(params: AssociateEnvironmentOperationsRoleMessage): Request[js.Object] = js.native
+    def checkDNSAvailability(params: CheckDNSAvailabilityMessage): Request[CheckDNSAvailabilityResultMessage] = js.native
     def composeEnvironments(params: ComposeEnvironmentsMessage): Request[EnvironmentDescriptionsMessage] = js.native
     def createApplication(params: CreateApplicationMessage): Request[ApplicationDescriptionMessage] = js.native
-    def createApplicationVersion(
-        params: CreateApplicationVersionMessage
-    ): Request[ApplicationVersionDescriptionMessage] = js.native
-    def createConfigurationTemplate(
-        params: CreateConfigurationTemplateMessage
-    ): Request[ConfigurationSettingsDescription] = js.native
+    def createApplicationVersion(params: CreateApplicationVersionMessage): Request[ApplicationVersionDescriptionMessage] = js.native
+    def createConfigurationTemplate(params: CreateConfigurationTemplateMessage): Request[ConfigurationSettingsDescription] = js.native
     def createEnvironment(params: CreateEnvironmentMessage): Request[EnvironmentDescription] = js.native
     def createPlatformVersion(params: CreatePlatformVersionRequest): Request[CreatePlatformVersionResult] = js.native
     def createStorageLocation(): Request[CreateStorageLocationResultMessage] = js.native
@@ -313,36 +232,19 @@ package elasticbeanstalk {
     def deleteEnvironmentConfiguration(params: DeleteEnvironmentConfigurationMessage): Request[js.Object] = js.native
     def deletePlatformVersion(params: DeletePlatformVersionRequest): Request[DeletePlatformVersionResult] = js.native
     def describeAccountAttributes(): Request[DescribeAccountAttributesResult] = js.native
-    def describeApplicationVersions(
-        params: DescribeApplicationVersionsMessage
-    ): Request[ApplicationVersionDescriptionsMessage] = js.native
+    def describeApplicationVersions(params: DescribeApplicationVersionsMessage): Request[ApplicationVersionDescriptionsMessage] = js.native
     def describeApplications(params: DescribeApplicationsMessage): Request[ApplicationDescriptionsMessage] = js.native
-    def describeConfigurationOptions(
-        params: DescribeConfigurationOptionsMessage
-    ): Request[ConfigurationOptionsDescription] = js.native
-    def describeConfigurationSettings(
-        params: DescribeConfigurationSettingsMessage
-    ): Request[ConfigurationSettingsDescriptions] = js.native
-    def describeEnvironmentHealth(params: DescribeEnvironmentHealthRequest): Request[DescribeEnvironmentHealthResult] =
-      js.native
-    def describeEnvironmentManagedActionHistory(
-        params: DescribeEnvironmentManagedActionHistoryRequest
-    ): Request[DescribeEnvironmentManagedActionHistoryResult] = js.native
-    def describeEnvironmentManagedActions(
-        params: DescribeEnvironmentManagedActionsRequest
-    ): Request[DescribeEnvironmentManagedActionsResult] = js.native
-    def describeEnvironmentResources(
-        params: DescribeEnvironmentResourcesMessage
-    ): Request[EnvironmentResourceDescriptionsMessage] = js.native
+    def describeConfigurationOptions(params: DescribeConfigurationOptionsMessage): Request[ConfigurationOptionsDescription] = js.native
+    def describeConfigurationSettings(params: DescribeConfigurationSettingsMessage): Request[ConfigurationSettingsDescriptions] = js.native
+    def describeEnvironmentHealth(params: DescribeEnvironmentHealthRequest): Request[DescribeEnvironmentHealthResult] = js.native
+    def describeEnvironmentManagedActionHistory(params: DescribeEnvironmentManagedActionHistoryRequest): Request[DescribeEnvironmentManagedActionHistoryResult] = js.native
+    def describeEnvironmentManagedActions(params: DescribeEnvironmentManagedActionsRequest): Request[DescribeEnvironmentManagedActionsResult] = js.native
+    def describeEnvironmentResources(params: DescribeEnvironmentResourcesMessage): Request[EnvironmentResourceDescriptionsMessage] = js.native
     def describeEnvironments(params: DescribeEnvironmentsMessage): Request[EnvironmentDescriptionsMessage] = js.native
     def describeEvents(params: DescribeEventsMessage): Request[EventDescriptionsMessage] = js.native
-    def describeInstancesHealth(params: DescribeInstancesHealthRequest): Request[DescribeInstancesHealthResult] =
-      js.native
-    def describePlatformVersion(params: DescribePlatformVersionRequest): Request[DescribePlatformVersionResult] =
-      js.native
-    def disassociateEnvironmentOperationsRole(
-        params: DisassociateEnvironmentOperationsRoleMessage
-    ): Request[js.Object] = js.native
+    def describeInstancesHealth(params: DescribeInstancesHealthRequest): Request[DescribeInstancesHealthResult] = js.native
+    def describePlatformVersion(params: DescribePlatformVersionRequest): Request[DescribePlatformVersionResult] = js.native
+    def disassociateEnvironmentOperationsRole(params: DisassociateEnvironmentOperationsRoleMessage): Request[js.Object] = js.native
     def listAvailableSolutionStacks(): Request[ListAvailableSolutionStacksResultMessage] = js.native
     def listPlatformBranches(params: ListPlatformBranchesRequest): Request[ListPlatformBranchesResult] = js.native
     def listPlatformVersions(params: ListPlatformVersionsRequest): Request[ListPlatformVersionsResult] = js.native
@@ -350,25 +252,16 @@ package elasticbeanstalk {
     def rebuildEnvironment(params: RebuildEnvironmentMessage): Request[js.Object] = js.native
     def requestEnvironmentInfo(params: RequestEnvironmentInfoMessage): Request[js.Object] = js.native
     def restartAppServer(params: RestartAppServerMessage): Request[js.Object] = js.native
-    def retrieveEnvironmentInfo(params: RetrieveEnvironmentInfoMessage): Request[RetrieveEnvironmentInfoResultMessage] =
-      js.native
+    def retrieveEnvironmentInfo(params: RetrieveEnvironmentInfoMessage): Request[RetrieveEnvironmentInfoResultMessage] = js.native
     def swapEnvironmentCNAMEs(params: SwapEnvironmentCNAMEsMessage): Request[js.Object] = js.native
     def terminateEnvironment(params: TerminateEnvironmentMessage): Request[EnvironmentDescription] = js.native
     def updateApplication(params: UpdateApplicationMessage): Request[ApplicationDescriptionMessage] = js.native
-    def updateApplicationResourceLifecycle(
-        params: UpdateApplicationResourceLifecycleMessage
-    ): Request[ApplicationResourceLifecycleDescriptionMessage] = js.native
-    def updateApplicationVersion(
-        params: UpdateApplicationVersionMessage
-    ): Request[ApplicationVersionDescriptionMessage] = js.native
-    def updateConfigurationTemplate(
-        params: UpdateConfigurationTemplateMessage
-    ): Request[ConfigurationSettingsDescription] = js.native
+    def updateApplicationResourceLifecycle(params: UpdateApplicationResourceLifecycleMessage): Request[ApplicationResourceLifecycleDescriptionMessage] = js.native
+    def updateApplicationVersion(params: UpdateApplicationVersionMessage): Request[ApplicationVersionDescriptionMessage] = js.native
+    def updateConfigurationTemplate(params: UpdateConfigurationTemplateMessage): Request[ConfigurationSettingsDescription] = js.native
     def updateEnvironment(params: UpdateEnvironmentMessage): Request[EnvironmentDescription] = js.native
     def updateTagsForResource(params: UpdateTagsForResourceMessage): Request[js.Object] = js.native
-    def validateConfigurationSettings(
-        params: ValidateConfigurationSettingsMessage
-    ): Request[ConfigurationSettingsValidationMessages] = js.native
+    def validateConfigurationSettings(params: ValidateConfigurationSettingsMessage): Request[ConfigurationSettingsValidationMessages] = js.native
   }
 
   /**
@@ -1834,9 +1727,7 @@ package elasticbeanstalk {
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeEnvironmentManagedActionHistoryResult = {
       val __obj = js.Dynamic.literal()
-      ManagedActionHistoryItems.foreach(__v =>
-        __obj.updateDynamic("ManagedActionHistoryItems")(__v.asInstanceOf[js.Any])
-      )
+      ManagedActionHistoryItems.foreach(__v => __obj.updateDynamic("ManagedActionHistoryItems")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEnvironmentManagedActionHistoryResult]
     }
@@ -2160,9 +2051,7 @@ package elasticbeanstalk {
         VersionLabel: js.UndefOr[VersionLabel] = js.undefined
     ): EnvironmentDescription = {
       val __obj = js.Dynamic.literal()
-      AbortableOperationInProgress.foreach(__v =>
-        __obj.updateDynamic("AbortableOperationInProgress")(__v.asInstanceOf[js.Any])
-      )
+      AbortableOperationInProgress.foreach(__v => __obj.updateDynamic("AbortableOperationInProgress")(__v.asInstanceOf[js.Any]))
       ApplicationName.foreach(__v => __obj.updateDynamic("ApplicationName")(__v.asInstanceOf[js.Any]))
       CNAME.foreach(__v => __obj.updateDynamic("CNAME")(__v.asInstanceOf[js.Any]))
       DateCreated.foreach(__v => __obj.updateDynamic("DateCreated")(__v.asInstanceOf[js.Any]))
@@ -2232,9 +2121,7 @@ package elasticbeanstalk {
     val HealthStatus = "HealthStatus".asInstanceOf[EnvironmentHealthAttribute]
     val RefreshedAt = "RefreshedAt".asInstanceOf[EnvironmentHealthAttribute]
 
-    val values = js.Object.freeze(
-      js.Array(Status, Color, Causes, ApplicationMetrics, InstancesHealth, All, HealthStatus, RefreshedAt)
-    )
+    val values = js.Object.freeze(js.Array(Status, Color, Causes, ApplicationMetrics, InstancesHealth, All, HealthStatus, RefreshedAt))
   }
 
   @js.native
@@ -2516,17 +2403,7 @@ package elasticbeanstalk {
     val InvalidEnvironmentState = "InvalidEnvironmentState".asInstanceOf[FailureType]
     val PermissionsError = "PermissionsError".asInstanceOf[FailureType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        UpdateCancelled,
-        CancellationFailed,
-        RollbackFailed,
-        RollbackSuccessful,
-        InternalFailure,
-        InvalidEnvironmentState,
-        PermissionsError
-      )
-    )
+    val values = js.Object.freeze(js.Array(UpdateCancelled, CancellationFailed, RollbackFailed, RollbackSuccessful, InternalFailure, InvalidEnvironmentState, PermissionsError))
   }
 
   /**
@@ -2603,21 +2480,7 @@ package elasticbeanstalk {
     val InstanceType = "InstanceType".asInstanceOf[InstancesHealthAttribute]
     val All = "All".asInstanceOf[InstancesHealthAttribute]
 
-    val values = js.Object.freeze(
-      js.Array(
-        HealthStatus,
-        Color,
-        Causes,
-        ApplicationMetrics,
-        RefreshedAt,
-        LaunchedAt,
-        System,
-        Deployment,
-        AvailabilityZone,
-        InstanceType,
-        All
-      )
-    )
+    val values = js.Object.freeze(js.Array(HealthStatus, Color, Causes, ApplicationMetrics, RefreshedAt, LaunchedAt, System, Deployment, AvailabilityZone, InstanceType, All))
   }
 
   /**
@@ -2756,9 +2619,7 @@ package elasticbeanstalk {
     ): ListPlatformBranchesResult = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PlatformBranchSummaryList.foreach(__v =>
-        __obj.updateDynamic("PlatformBranchSummaryList")(__v.asInstanceOf[js.Any])
-      )
+      PlatformBranchSummaryList.foreach(__v => __obj.updateDynamic("PlatformBranchSummaryList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPlatformBranchesResult]
     }
   }
@@ -3154,9 +3015,7 @@ package elasticbeanstalk {
       OperatingSystemName.foreach(__v => __obj.updateDynamic("OperatingSystemName")(__v.asInstanceOf[js.Any]))
       OperatingSystemVersion.foreach(__v => __obj.updateDynamic("OperatingSystemVersion")(__v.asInstanceOf[js.Any]))
       PlatformArn.foreach(__v => __obj.updateDynamic("PlatformArn")(__v.asInstanceOf[js.Any]))
-      PlatformBranchLifecycleState.foreach(__v =>
-        __obj.updateDynamic("PlatformBranchLifecycleState")(__v.asInstanceOf[js.Any])
-      )
+      PlatformBranchLifecycleState.foreach(__v => __obj.updateDynamic("PlatformBranchLifecycleState")(__v.asInstanceOf[js.Any]))
       PlatformBranchName.foreach(__v => __obj.updateDynamic("PlatformBranchName")(__v.asInstanceOf[js.Any]))
       PlatformCategory.foreach(__v => __obj.updateDynamic("PlatformCategory")(__v.asInstanceOf[js.Any]))
       PlatformLifecycleState.foreach(__v => __obj.updateDynamic("PlatformLifecycleState")(__v.asInstanceOf[js.Any]))
@@ -3293,9 +3152,7 @@ package elasticbeanstalk {
       OperatingSystemName.foreach(__v => __obj.updateDynamic("OperatingSystemName")(__v.asInstanceOf[js.Any]))
       OperatingSystemVersion.foreach(__v => __obj.updateDynamic("OperatingSystemVersion")(__v.asInstanceOf[js.Any]))
       PlatformArn.foreach(__v => __obj.updateDynamic("PlatformArn")(__v.asInstanceOf[js.Any]))
-      PlatformBranchLifecycleState.foreach(__v =>
-        __obj.updateDynamic("PlatformBranchLifecycleState")(__v.asInstanceOf[js.Any])
-      )
+      PlatformBranchLifecycleState.foreach(__v => __obj.updateDynamic("PlatformBranchLifecycleState")(__v.asInstanceOf[js.Any]))
       PlatformBranchName.foreach(__v => __obj.updateDynamic("PlatformBranchName")(__v.asInstanceOf[js.Any]))
       PlatformCategory.foreach(__v => __obj.updateDynamic("PlatformCategory")(__v.asInstanceOf[js.Any]))
       PlatformLifecycleState.foreach(__v => __obj.updateDynamic("PlatformLifecycleState")(__v.asInstanceOf[js.Any]))
@@ -3422,9 +3279,7 @@ package elasticbeanstalk {
       val __obj = js.Dynamic.literal()
       ApplicationQuota.foreach(__v => __obj.updateDynamic("ApplicationQuota")(__v.asInstanceOf[js.Any]))
       ApplicationVersionQuota.foreach(__v => __obj.updateDynamic("ApplicationVersionQuota")(__v.asInstanceOf[js.Any]))
-      ConfigurationTemplateQuota.foreach(__v =>
-        __obj.updateDynamic("ConfigurationTemplateQuota")(__v.asInstanceOf[js.Any])
-      )
+      ConfigurationTemplateQuota.foreach(__v => __obj.updateDynamic("ConfigurationTemplateQuota")(__v.asInstanceOf[js.Any]))
       CustomPlatformQuota.foreach(__v => __obj.updateDynamic("CustomPlatformQuota")(__v.asInstanceOf[js.Any]))
       EnvironmentQuota.foreach(__v => __obj.updateDynamic("EnvironmentQuota")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceQuotas]
@@ -3752,9 +3607,7 @@ package elasticbeanstalk {
     ): SwapEnvironmentCNAMEsMessage = {
       val __obj = js.Dynamic.literal()
       DestinationEnvironmentId.foreach(__v => __obj.updateDynamic("DestinationEnvironmentId")(__v.asInstanceOf[js.Any]))
-      DestinationEnvironmentName.foreach(__v =>
-        __obj.updateDynamic("DestinationEnvironmentName")(__v.asInstanceOf[js.Any])
-      )
+      DestinationEnvironmentName.foreach(__v => __obj.updateDynamic("DestinationEnvironmentName")(__v.asInstanceOf[js.Any]))
       SourceEnvironmentId.foreach(__v => __obj.updateDynamic("SourceEnvironmentId")(__v.asInstanceOf[js.Any]))
       SourceEnvironmentName.foreach(__v => __obj.updateDynamic("SourceEnvironmentName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SwapEnvironmentCNAMEsMessage]

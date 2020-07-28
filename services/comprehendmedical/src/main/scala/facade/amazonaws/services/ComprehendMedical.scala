@@ -37,60 +37,26 @@ package object comprehendmedical {
 
   implicit final class ComprehendMedicalOps(private val service: ComprehendMedical) extends AnyVal {
 
-    @inline def describeEntitiesDetectionV2JobFuture(
-        params: DescribeEntitiesDetectionV2JobRequest
-    ): Future[DescribeEntitiesDetectionV2JobResponse] =
-      service.describeEntitiesDetectionV2Job(params).promise().toFuture
-    @inline def describeICD10CMInferenceJobFuture(
-        params: DescribeICD10CMInferenceJobRequest
-    ): Future[DescribeICD10CMInferenceJobResponse] = service.describeICD10CMInferenceJob(params).promise().toFuture
-    @inline def describePHIDetectionJobFuture(
-        params: DescribePHIDetectionJobRequest
-    ): Future[DescribePHIDetectionJobResponse] = service.describePHIDetectionJob(params).promise().toFuture
-    @inline def describeRxNormInferenceJobFuture(
-        params: DescribeRxNormInferenceJobRequest
-    ): Future[DescribeRxNormInferenceJobResponse] = service.describeRxNormInferenceJob(params).promise().toFuture
-    @inline def detectEntitiesV2Future(params: DetectEntitiesV2Request): Future[DetectEntitiesV2Response] =
-      service.detectEntitiesV2(params).promise().toFuture
-    @inline def detectPHIFuture(params: DetectPHIRequest): Future[DetectPHIResponse] =
-      service.detectPHI(params).promise().toFuture
-    @inline def inferICD10CMFuture(params: InferICD10CMRequest): Future[InferICD10CMResponse] =
-      service.inferICD10CM(params).promise().toFuture
-    @inline def inferRxNormFuture(params: InferRxNormRequest): Future[InferRxNormResponse] =
-      service.inferRxNorm(params).promise().toFuture
-    @inline def listEntitiesDetectionV2JobsFuture(
-        params: ListEntitiesDetectionV2JobsRequest
-    ): Future[ListEntitiesDetectionV2JobsResponse] = service.listEntitiesDetectionV2Jobs(params).promise().toFuture
-    @inline def listICD10CMInferenceJobsFuture(
-        params: ListICD10CMInferenceJobsRequest
-    ): Future[ListICD10CMInferenceJobsResponse] = service.listICD10CMInferenceJobs(params).promise().toFuture
-    @inline def listPHIDetectionJobsFuture(params: ListPHIDetectionJobsRequest): Future[ListPHIDetectionJobsResponse] =
-      service.listPHIDetectionJobs(params).promise().toFuture
-    @inline def listRxNormInferenceJobsFuture(
-        params: ListRxNormInferenceJobsRequest
-    ): Future[ListRxNormInferenceJobsResponse] = service.listRxNormInferenceJobs(params).promise().toFuture
-    @inline def startEntitiesDetectionV2JobFuture(
-        params: StartEntitiesDetectionV2JobRequest
-    ): Future[StartEntitiesDetectionV2JobResponse] = service.startEntitiesDetectionV2Job(params).promise().toFuture
-    @inline def startICD10CMInferenceJobFuture(
-        params: StartICD10CMInferenceJobRequest
-    ): Future[StartICD10CMInferenceJobResponse] = service.startICD10CMInferenceJob(params).promise().toFuture
-    @inline def startPHIDetectionJobFuture(params: StartPHIDetectionJobRequest): Future[StartPHIDetectionJobResponse] =
-      service.startPHIDetectionJob(params).promise().toFuture
-    @inline def startRxNormInferenceJobFuture(
-        params: StartRxNormInferenceJobRequest
-    ): Future[StartRxNormInferenceJobResponse] = service.startRxNormInferenceJob(params).promise().toFuture
-    @inline def stopEntitiesDetectionV2JobFuture(
-        params: StopEntitiesDetectionV2JobRequest
-    ): Future[StopEntitiesDetectionV2JobResponse] = service.stopEntitiesDetectionV2Job(params).promise().toFuture
-    @inline def stopICD10CMInferenceJobFuture(
-        params: StopICD10CMInferenceJobRequest
-    ): Future[StopICD10CMInferenceJobResponse] = service.stopICD10CMInferenceJob(params).promise().toFuture
-    @inline def stopPHIDetectionJobFuture(params: StopPHIDetectionJobRequest): Future[StopPHIDetectionJobResponse] =
-      service.stopPHIDetectionJob(params).promise().toFuture
-    @inline def stopRxNormInferenceJobFuture(
-        params: StopRxNormInferenceJobRequest
-    ): Future[StopRxNormInferenceJobResponse] = service.stopRxNormInferenceJob(params).promise().toFuture
+    @inline def describeEntitiesDetectionV2JobFuture(params: DescribeEntitiesDetectionV2JobRequest): Future[DescribeEntitiesDetectionV2JobResponse] = service.describeEntitiesDetectionV2Job(params).promise().toFuture
+    @inline def describeICD10CMInferenceJobFuture(params: DescribeICD10CMInferenceJobRequest): Future[DescribeICD10CMInferenceJobResponse] = service.describeICD10CMInferenceJob(params).promise().toFuture
+    @inline def describePHIDetectionJobFuture(params: DescribePHIDetectionJobRequest): Future[DescribePHIDetectionJobResponse] = service.describePHIDetectionJob(params).promise().toFuture
+    @inline def describeRxNormInferenceJobFuture(params: DescribeRxNormInferenceJobRequest): Future[DescribeRxNormInferenceJobResponse] = service.describeRxNormInferenceJob(params).promise().toFuture
+    @inline def detectEntitiesV2Future(params: DetectEntitiesV2Request): Future[DetectEntitiesV2Response] = service.detectEntitiesV2(params).promise().toFuture
+    @inline def detectPHIFuture(params: DetectPHIRequest): Future[DetectPHIResponse] = service.detectPHI(params).promise().toFuture
+    @inline def inferICD10CMFuture(params: InferICD10CMRequest): Future[InferICD10CMResponse] = service.inferICD10CM(params).promise().toFuture
+    @inline def inferRxNormFuture(params: InferRxNormRequest): Future[InferRxNormResponse] = service.inferRxNorm(params).promise().toFuture
+    @inline def listEntitiesDetectionV2JobsFuture(params: ListEntitiesDetectionV2JobsRequest): Future[ListEntitiesDetectionV2JobsResponse] = service.listEntitiesDetectionV2Jobs(params).promise().toFuture
+    @inline def listICD10CMInferenceJobsFuture(params: ListICD10CMInferenceJobsRequest): Future[ListICD10CMInferenceJobsResponse] = service.listICD10CMInferenceJobs(params).promise().toFuture
+    @inline def listPHIDetectionJobsFuture(params: ListPHIDetectionJobsRequest): Future[ListPHIDetectionJobsResponse] = service.listPHIDetectionJobs(params).promise().toFuture
+    @inline def listRxNormInferenceJobsFuture(params: ListRxNormInferenceJobsRequest): Future[ListRxNormInferenceJobsResponse] = service.listRxNormInferenceJobs(params).promise().toFuture
+    @inline def startEntitiesDetectionV2JobFuture(params: StartEntitiesDetectionV2JobRequest): Future[StartEntitiesDetectionV2JobResponse] = service.startEntitiesDetectionV2Job(params).promise().toFuture
+    @inline def startICD10CMInferenceJobFuture(params: StartICD10CMInferenceJobRequest): Future[StartICD10CMInferenceJobResponse] = service.startICD10CMInferenceJob(params).promise().toFuture
+    @inline def startPHIDetectionJobFuture(params: StartPHIDetectionJobRequest): Future[StartPHIDetectionJobResponse] = service.startPHIDetectionJob(params).promise().toFuture
+    @inline def startRxNormInferenceJobFuture(params: StartRxNormInferenceJobRequest): Future[StartRxNormInferenceJobResponse] = service.startRxNormInferenceJob(params).promise().toFuture
+    @inline def stopEntitiesDetectionV2JobFuture(params: StopEntitiesDetectionV2JobRequest): Future[StopEntitiesDetectionV2JobResponse] = service.stopEntitiesDetectionV2Job(params).promise().toFuture
+    @inline def stopICD10CMInferenceJobFuture(params: StopICD10CMInferenceJobRequest): Future[StopICD10CMInferenceJobResponse] = service.stopICD10CMInferenceJob(params).promise().toFuture
+    @inline def stopPHIDetectionJobFuture(params: StopPHIDetectionJobRequest): Future[StopPHIDetectionJobResponse] = service.stopPHIDetectionJob(params).promise().toFuture
+    @inline def stopRxNormInferenceJobFuture(params: StopRxNormInferenceJobRequest): Future[StopRxNormInferenceJobResponse] = service.stopRxNormInferenceJob(params).promise().toFuture
   }
 }
 
@@ -100,48 +66,27 @@ package comprehendmedical {
   class ComprehendMedical() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def describeEntitiesDetectionV2Job(
-        params: DescribeEntitiesDetectionV2JobRequest
-    ): Request[DescribeEntitiesDetectionV2JobResponse] = js.native
-    def describeICD10CMInferenceJob(
-        params: DescribeICD10CMInferenceJobRequest
-    ): Request[DescribeICD10CMInferenceJobResponse] = js.native
-    def describePHIDetectionJob(params: DescribePHIDetectionJobRequest): Request[DescribePHIDetectionJobResponse] =
-      js.native
-    def describeRxNormInferenceJob(
-        params: DescribeRxNormInferenceJobRequest
-    ): Request[DescribeRxNormInferenceJobResponse] = js.native
+    def describeEntitiesDetectionV2Job(params: DescribeEntitiesDetectionV2JobRequest): Request[DescribeEntitiesDetectionV2JobResponse] = js.native
+    def describeICD10CMInferenceJob(params: DescribeICD10CMInferenceJobRequest): Request[DescribeICD10CMInferenceJobResponse] = js.native
+    def describePHIDetectionJob(params: DescribePHIDetectionJobRequest): Request[DescribePHIDetectionJobResponse] = js.native
+    def describeRxNormInferenceJob(params: DescribeRxNormInferenceJobRequest): Request[DescribeRxNormInferenceJobResponse] = js.native
     def detectEntitiesV2(params: DetectEntitiesV2Request): Request[DetectEntitiesV2Response] = js.native
     def detectPHI(params: DetectPHIRequest): Request[DetectPHIResponse] = js.native
     def inferICD10CM(params: InferICD10CMRequest): Request[InferICD10CMResponse] = js.native
     def inferRxNorm(params: InferRxNormRequest): Request[InferRxNormResponse] = js.native
-    def listEntitiesDetectionV2Jobs(
-        params: ListEntitiesDetectionV2JobsRequest
-    ): Request[ListEntitiesDetectionV2JobsResponse] = js.native
-    def listICD10CMInferenceJobs(params: ListICD10CMInferenceJobsRequest): Request[ListICD10CMInferenceJobsResponse] =
-      js.native
+    def listEntitiesDetectionV2Jobs(params: ListEntitiesDetectionV2JobsRequest): Request[ListEntitiesDetectionV2JobsResponse] = js.native
+    def listICD10CMInferenceJobs(params: ListICD10CMInferenceJobsRequest): Request[ListICD10CMInferenceJobsResponse] = js.native
     def listPHIDetectionJobs(params: ListPHIDetectionJobsRequest): Request[ListPHIDetectionJobsResponse] = js.native
-    def listRxNormInferenceJobs(params: ListRxNormInferenceJobsRequest): Request[ListRxNormInferenceJobsResponse] =
-      js.native
-    def startEntitiesDetectionV2Job(
-        params: StartEntitiesDetectionV2JobRequest
-    ): Request[StartEntitiesDetectionV2JobResponse] = js.native
-    def startICD10CMInferenceJob(params: StartICD10CMInferenceJobRequest): Request[StartICD10CMInferenceJobResponse] =
-      js.native
+    def listRxNormInferenceJobs(params: ListRxNormInferenceJobsRequest): Request[ListRxNormInferenceJobsResponse] = js.native
+    def startEntitiesDetectionV2Job(params: StartEntitiesDetectionV2JobRequest): Request[StartEntitiesDetectionV2JobResponse] = js.native
+    def startICD10CMInferenceJob(params: StartICD10CMInferenceJobRequest): Request[StartICD10CMInferenceJobResponse] = js.native
     def startPHIDetectionJob(params: StartPHIDetectionJobRequest): Request[StartPHIDetectionJobResponse] = js.native
-    def startRxNormInferenceJob(params: StartRxNormInferenceJobRequest): Request[StartRxNormInferenceJobResponse] =
-      js.native
-    def stopEntitiesDetectionV2Job(
-        params: StopEntitiesDetectionV2JobRequest
-    ): Request[StopEntitiesDetectionV2JobResponse] = js.native
-    def stopICD10CMInferenceJob(params: StopICD10CMInferenceJobRequest): Request[StopICD10CMInferenceJobResponse] =
-      js.native
+    def startRxNormInferenceJob(params: StartRxNormInferenceJobRequest): Request[StartRxNormInferenceJobResponse] = js.native
+    def stopEntitiesDetectionV2Job(params: StopEntitiesDetectionV2JobRequest): Request[StopEntitiesDetectionV2JobResponse] = js.native
+    def stopICD10CMInferenceJob(params: StopICD10CMInferenceJobRequest): Request[StopICD10CMInferenceJobResponse] = js.native
     def stopPHIDetectionJob(params: StopPHIDetectionJobRequest): Request[StopPHIDetectionJobResponse] = js.native
-    def stopRxNormInferenceJob(params: StopRxNormInferenceJobRequest): Request[StopRxNormInferenceJobResponse] =
-      js.native
-    @deprecated("This operation is deprecated, use DetectEntitiesV2 instead.", "forever") def detectEntities(
-        params: DetectEntitiesRequest
-    ): Request[DetectEntitiesResponse] = js.native
+    def stopRxNormInferenceJob(params: StopRxNormInferenceJobRequest): Request[StopRxNormInferenceJobResponse] = js.native
+    @deprecated("This operation is deprecated, use DetectEntitiesV2 instead.", "forever") def detectEntities(params: DetectEntitiesRequest): Request[DetectEntitiesResponse] = js.native
   }
 
   /**
@@ -316,9 +261,7 @@ package comprehendmedical {
         ComprehendMedicalAsyncJobProperties: js.UndefOr[ComprehendMedicalAsyncJobProperties] = js.undefined
     ): DescribeEntitiesDetectionV2JobResponse = {
       val __obj = js.Dynamic.literal()
-      ComprehendMedicalAsyncJobProperties.foreach(__v =>
-        __obj.updateDynamic("ComprehendMedicalAsyncJobProperties")(__v.asInstanceOf[js.Any])
-      )
+      ComprehendMedicalAsyncJobProperties.foreach(__v => __obj.updateDynamic("ComprehendMedicalAsyncJobProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEntitiesDetectionV2JobResponse]
     }
   }
@@ -352,9 +295,7 @@ package comprehendmedical {
         ComprehendMedicalAsyncJobProperties: js.UndefOr[ComprehendMedicalAsyncJobProperties] = js.undefined
     ): DescribeICD10CMInferenceJobResponse = {
       val __obj = js.Dynamic.literal()
-      ComprehendMedicalAsyncJobProperties.foreach(__v =>
-        __obj.updateDynamic("ComprehendMedicalAsyncJobProperties")(__v.asInstanceOf[js.Any])
-      )
+      ComprehendMedicalAsyncJobProperties.foreach(__v => __obj.updateDynamic("ComprehendMedicalAsyncJobProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeICD10CMInferenceJobResponse]
     }
   }
@@ -388,9 +329,7 @@ package comprehendmedical {
         ComprehendMedicalAsyncJobProperties: js.UndefOr[ComprehendMedicalAsyncJobProperties] = js.undefined
     ): DescribePHIDetectionJobResponse = {
       val __obj = js.Dynamic.literal()
-      ComprehendMedicalAsyncJobProperties.foreach(__v =>
-        __obj.updateDynamic("ComprehendMedicalAsyncJobProperties")(__v.asInstanceOf[js.Any])
-      )
+      ComprehendMedicalAsyncJobProperties.foreach(__v => __obj.updateDynamic("ComprehendMedicalAsyncJobProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePHIDetectionJobResponse]
     }
   }
@@ -424,9 +363,7 @@ package comprehendmedical {
         ComprehendMedicalAsyncJobProperties: js.UndefOr[ComprehendMedicalAsyncJobProperties] = js.undefined
     ): DescribeRxNormInferenceJobResponse = {
       val __obj = js.Dynamic.literal()
-      ComprehendMedicalAsyncJobProperties.foreach(__v =>
-        __obj.updateDynamic("ComprehendMedicalAsyncJobProperties")(__v.asInstanceOf[js.Any])
-      )
+      ComprehendMedicalAsyncJobProperties.foreach(__v => __obj.updateDynamic("ComprehendMedicalAsyncJobProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRxNormInferenceJobResponse]
     }
   }
@@ -694,16 +631,7 @@ package comprehendmedical {
     val ANATOMY = "ANATOMY".asInstanceOf[EntityType]
     val TIME_EXPRESSION = "TIME_EXPRESSION".asInstanceOf[EntityType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        MEDICATION,
-        MEDICAL_CONDITION,
-        PROTECTED_HEALTH_INFORMATION,
-        TEST_TREATMENT_PROCEDURE,
-        ANATOMY,
-        TIME_EXPRESSION
-      )
-    )
+    val values = js.Object.freeze(js.Array(MEDICATION, MEDICAL_CONDITION, PROTECTED_HEALTH_INFORMATION, TEST_TREATMENT_PROCEDURE, ANATOMY, TIME_EXPRESSION))
   }
 
   /**
@@ -997,8 +925,7 @@ package comprehendmedical {
     val STOP_REQUESTED = "STOP_REQUESTED".asInstanceOf[JobStatus]
     val STOPPED = "STOPPED".asInstanceOf[JobStatus]
 
-    val values =
-      js.Object.freeze(js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, PARTIAL_SUCCESS, FAILED, STOP_REQUESTED, STOPPED))
+    val values = js.Object.freeze(js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, PARTIAL_SUCCESS, FAILED, STOP_REQUESTED, STOPPED))
   }
 
   @js.native
@@ -1044,9 +971,7 @@ package comprehendmedical {
         NextToken: js.UndefOr[String] = js.undefined
     ): ListEntitiesDetectionV2JobsResponse = {
       val __obj = js.Dynamic.literal()
-      ComprehendMedicalAsyncJobPropertiesList.foreach(__v =>
-        __obj.updateDynamic("ComprehendMedicalAsyncJobPropertiesList")(__v.asInstanceOf[js.Any])
-      )
+      ComprehendMedicalAsyncJobPropertiesList.foreach(__v => __obj.updateDynamic("ComprehendMedicalAsyncJobPropertiesList")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEntitiesDetectionV2JobsResponse]
     }
@@ -1087,9 +1012,7 @@ package comprehendmedical {
         NextToken: js.UndefOr[String] = js.undefined
     ): ListICD10CMInferenceJobsResponse = {
       val __obj = js.Dynamic.literal()
-      ComprehendMedicalAsyncJobPropertiesList.foreach(__v =>
-        __obj.updateDynamic("ComprehendMedicalAsyncJobPropertiesList")(__v.asInstanceOf[js.Any])
-      )
+      ComprehendMedicalAsyncJobPropertiesList.foreach(__v => __obj.updateDynamic("ComprehendMedicalAsyncJobPropertiesList")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListICD10CMInferenceJobsResponse]
     }
@@ -1130,9 +1053,7 @@ package comprehendmedical {
         NextToken: js.UndefOr[String] = js.undefined
     ): ListPHIDetectionJobsResponse = {
       val __obj = js.Dynamic.literal()
-      ComprehendMedicalAsyncJobPropertiesList.foreach(__v =>
-        __obj.updateDynamic("ComprehendMedicalAsyncJobPropertiesList")(__v.asInstanceOf[js.Any])
-      )
+      ComprehendMedicalAsyncJobPropertiesList.foreach(__v => __obj.updateDynamic("ComprehendMedicalAsyncJobPropertiesList")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPHIDetectionJobsResponse]
     }
@@ -1173,9 +1094,7 @@ package comprehendmedical {
         NextToken: js.UndefOr[String] = js.undefined
     ): ListRxNormInferenceJobsResponse = {
       val __obj = js.Dynamic.literal()
-      ComprehendMedicalAsyncJobPropertiesList.foreach(__v =>
-        __obj.updateDynamic("ComprehendMedicalAsyncJobPropertiesList")(__v.asInstanceOf[js.Any])
-      )
+      ComprehendMedicalAsyncJobPropertiesList.foreach(__v => __obj.updateDynamic("ComprehendMedicalAsyncJobPropertiesList")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRxNormInferenceJobsResponse]
     }

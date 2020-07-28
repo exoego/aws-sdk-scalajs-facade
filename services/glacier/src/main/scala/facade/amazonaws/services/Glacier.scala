@@ -28,76 +28,39 @@ package object glacier {
 
   implicit final class GlacierOps(private val service: Glacier) extends AnyVal {
 
-    @inline def abortMultipartUploadFuture(params: AbortMultipartUploadInput): Future[js.Object] =
-      service.abortMultipartUpload(params).promise().toFuture
-    @inline def abortVaultLockFuture(params: AbortVaultLockInput): Future[js.Object] =
-      service.abortVaultLock(params).promise().toFuture
-    @inline def addTagsToVaultFuture(params: AddTagsToVaultInput): Future[js.Object] =
-      service.addTagsToVault(params).promise().toFuture
-    @inline def completeMultipartUploadFuture(params: CompleteMultipartUploadInput): Future[ArchiveCreationOutput] =
-      service.completeMultipartUpload(params).promise().toFuture
-    @inline def completeVaultLockFuture(params: CompleteVaultLockInput): Future[js.Object] =
-      service.completeVaultLock(params).promise().toFuture
-    @inline def createVaultFuture(params: CreateVaultInput): Future[CreateVaultOutput] =
-      service.createVault(params).promise().toFuture
-    @inline def deleteArchiveFuture(params: DeleteArchiveInput): Future[js.Object] =
-      service.deleteArchive(params).promise().toFuture
-    @inline def deleteVaultAccessPolicyFuture(params: DeleteVaultAccessPolicyInput): Future[js.Object] =
-      service.deleteVaultAccessPolicy(params).promise().toFuture
-    @inline def deleteVaultFuture(params: DeleteVaultInput): Future[js.Object] =
-      service.deleteVault(params).promise().toFuture
-    @inline def deleteVaultNotificationsFuture(params: DeleteVaultNotificationsInput): Future[js.Object] =
-      service.deleteVaultNotifications(params).promise().toFuture
-    @inline def describeJobFuture(params: DescribeJobInput): Future[GlacierJobDescription] =
-      service.describeJob(params).promise().toFuture
-    @inline def describeVaultFuture(params: DescribeVaultInput): Future[DescribeVaultOutput] =
-      service.describeVault(params).promise().toFuture
-    @inline def getDataRetrievalPolicyFuture(
-        params: GetDataRetrievalPolicyInput
-    ): Future[GetDataRetrievalPolicyOutput] = service.getDataRetrievalPolicy(params).promise().toFuture
-    @inline def getJobOutputFuture(params: GetJobOutputInput): Future[GetJobOutputOutput] =
-      service.getJobOutput(params).promise().toFuture
-    @inline def getVaultAccessPolicyFuture(params: GetVaultAccessPolicyInput): Future[GetVaultAccessPolicyOutput] =
-      service.getVaultAccessPolicy(params).promise().toFuture
-    @inline def getVaultLockFuture(params: GetVaultLockInput): Future[GetVaultLockOutput] =
-      service.getVaultLock(params).promise().toFuture
-    @inline def getVaultNotificationsFuture(params: GetVaultNotificationsInput): Future[GetVaultNotificationsOutput] =
-      service.getVaultNotifications(params).promise().toFuture
-    @inline def initiateJobFuture(params: InitiateJobInput): Future[InitiateJobOutput] =
-      service.initiateJob(params).promise().toFuture
-    @inline def initiateMultipartUploadFuture(
-        params: InitiateMultipartUploadInput
-    ): Future[InitiateMultipartUploadOutput] = service.initiateMultipartUpload(params).promise().toFuture
-    @inline def initiateVaultLockFuture(params: InitiateVaultLockInput): Future[InitiateVaultLockOutput] =
-      service.initiateVaultLock(params).promise().toFuture
-    @inline def listJobsFuture(params: ListJobsInput): Future[ListJobsOutput] =
-      service.listJobs(params).promise().toFuture
-    @inline def listMultipartUploadsFuture(params: ListMultipartUploadsInput): Future[ListMultipartUploadsOutput] =
-      service.listMultipartUploads(params).promise().toFuture
-    @inline def listPartsFuture(params: ListPartsInput): Future[ListPartsOutput] =
-      service.listParts(params).promise().toFuture
-    @inline def listProvisionedCapacityFuture(
-        params: ListProvisionedCapacityInput
-    ): Future[ListProvisionedCapacityOutput] = service.listProvisionedCapacity(params).promise().toFuture
-    @inline def listTagsForVaultFuture(params: ListTagsForVaultInput): Future[ListTagsForVaultOutput] =
-      service.listTagsForVault(params).promise().toFuture
-    @inline def listVaultsFuture(params: ListVaultsInput): Future[ListVaultsOutput] =
-      service.listVaults(params).promise().toFuture
-    @inline def purchaseProvisionedCapacityFuture(
-        params: PurchaseProvisionedCapacityInput
-    ): Future[PurchaseProvisionedCapacityOutput] = service.purchaseProvisionedCapacity(params).promise().toFuture
-    @inline def removeTagsFromVaultFuture(params: RemoveTagsFromVaultInput): Future[js.Object] =
-      service.removeTagsFromVault(params).promise().toFuture
-    @inline def setDataRetrievalPolicyFuture(params: SetDataRetrievalPolicyInput): Future[js.Object] =
-      service.setDataRetrievalPolicy(params).promise().toFuture
-    @inline def setVaultAccessPolicyFuture(params: SetVaultAccessPolicyInput): Future[js.Object] =
-      service.setVaultAccessPolicy(params).promise().toFuture
-    @inline def setVaultNotificationsFuture(params: SetVaultNotificationsInput): Future[js.Object] =
-      service.setVaultNotifications(params).promise().toFuture
-    @inline def uploadArchiveFuture(params: UploadArchiveInput): Future[ArchiveCreationOutput] =
-      service.uploadArchive(params).promise().toFuture
-    @inline def uploadMultipartPartFuture(params: UploadMultipartPartInput): Future[UploadMultipartPartOutput] =
-      service.uploadMultipartPart(params).promise().toFuture
+    @inline def abortMultipartUploadFuture(params: AbortMultipartUploadInput): Future[js.Object] = service.abortMultipartUpload(params).promise().toFuture
+    @inline def abortVaultLockFuture(params: AbortVaultLockInput): Future[js.Object] = service.abortVaultLock(params).promise().toFuture
+    @inline def addTagsToVaultFuture(params: AddTagsToVaultInput): Future[js.Object] = service.addTagsToVault(params).promise().toFuture
+    @inline def completeMultipartUploadFuture(params: CompleteMultipartUploadInput): Future[ArchiveCreationOutput] = service.completeMultipartUpload(params).promise().toFuture
+    @inline def completeVaultLockFuture(params: CompleteVaultLockInput): Future[js.Object] = service.completeVaultLock(params).promise().toFuture
+    @inline def createVaultFuture(params: CreateVaultInput): Future[CreateVaultOutput] = service.createVault(params).promise().toFuture
+    @inline def deleteArchiveFuture(params: DeleteArchiveInput): Future[js.Object] = service.deleteArchive(params).promise().toFuture
+    @inline def deleteVaultAccessPolicyFuture(params: DeleteVaultAccessPolicyInput): Future[js.Object] = service.deleteVaultAccessPolicy(params).promise().toFuture
+    @inline def deleteVaultFuture(params: DeleteVaultInput): Future[js.Object] = service.deleteVault(params).promise().toFuture
+    @inline def deleteVaultNotificationsFuture(params: DeleteVaultNotificationsInput): Future[js.Object] = service.deleteVaultNotifications(params).promise().toFuture
+    @inline def describeJobFuture(params: DescribeJobInput): Future[GlacierJobDescription] = service.describeJob(params).promise().toFuture
+    @inline def describeVaultFuture(params: DescribeVaultInput): Future[DescribeVaultOutput] = service.describeVault(params).promise().toFuture
+    @inline def getDataRetrievalPolicyFuture(params: GetDataRetrievalPolicyInput): Future[GetDataRetrievalPolicyOutput] = service.getDataRetrievalPolicy(params).promise().toFuture
+    @inline def getJobOutputFuture(params: GetJobOutputInput): Future[GetJobOutputOutput] = service.getJobOutput(params).promise().toFuture
+    @inline def getVaultAccessPolicyFuture(params: GetVaultAccessPolicyInput): Future[GetVaultAccessPolicyOutput] = service.getVaultAccessPolicy(params).promise().toFuture
+    @inline def getVaultLockFuture(params: GetVaultLockInput): Future[GetVaultLockOutput] = service.getVaultLock(params).promise().toFuture
+    @inline def getVaultNotificationsFuture(params: GetVaultNotificationsInput): Future[GetVaultNotificationsOutput] = service.getVaultNotifications(params).promise().toFuture
+    @inline def initiateJobFuture(params: InitiateJobInput): Future[InitiateJobOutput] = service.initiateJob(params).promise().toFuture
+    @inline def initiateMultipartUploadFuture(params: InitiateMultipartUploadInput): Future[InitiateMultipartUploadOutput] = service.initiateMultipartUpload(params).promise().toFuture
+    @inline def initiateVaultLockFuture(params: InitiateVaultLockInput): Future[InitiateVaultLockOutput] = service.initiateVaultLock(params).promise().toFuture
+    @inline def listJobsFuture(params: ListJobsInput): Future[ListJobsOutput] = service.listJobs(params).promise().toFuture
+    @inline def listMultipartUploadsFuture(params: ListMultipartUploadsInput): Future[ListMultipartUploadsOutput] = service.listMultipartUploads(params).promise().toFuture
+    @inline def listPartsFuture(params: ListPartsInput): Future[ListPartsOutput] = service.listParts(params).promise().toFuture
+    @inline def listProvisionedCapacityFuture(params: ListProvisionedCapacityInput): Future[ListProvisionedCapacityOutput] = service.listProvisionedCapacity(params).promise().toFuture
+    @inline def listTagsForVaultFuture(params: ListTagsForVaultInput): Future[ListTagsForVaultOutput] = service.listTagsForVault(params).promise().toFuture
+    @inline def listVaultsFuture(params: ListVaultsInput): Future[ListVaultsOutput] = service.listVaults(params).promise().toFuture
+    @inline def purchaseProvisionedCapacityFuture(params: PurchaseProvisionedCapacityInput): Future[PurchaseProvisionedCapacityOutput] = service.purchaseProvisionedCapacity(params).promise().toFuture
+    @inline def removeTagsFromVaultFuture(params: RemoveTagsFromVaultInput): Future[js.Object] = service.removeTagsFromVault(params).promise().toFuture
+    @inline def setDataRetrievalPolicyFuture(params: SetDataRetrievalPolicyInput): Future[js.Object] = service.setDataRetrievalPolicy(params).promise().toFuture
+    @inline def setVaultAccessPolicyFuture(params: SetVaultAccessPolicyInput): Future[js.Object] = service.setVaultAccessPolicy(params).promise().toFuture
+    @inline def setVaultNotificationsFuture(params: SetVaultNotificationsInput): Future[js.Object] = service.setVaultNotifications(params).promise().toFuture
+    @inline def uploadArchiveFuture(params: UploadArchiveInput): Future[ArchiveCreationOutput] = service.uploadArchive(params).promise().toFuture
+    @inline def uploadMultipartPartFuture(params: UploadMultipartPartInput): Future[UploadMultipartPartOutput] = service.uploadMultipartPart(params).promise().toFuture
   }
 }
 
@@ -125,19 +88,15 @@ package glacier {
     def getVaultLock(params: GetVaultLockInput): Request[GetVaultLockOutput] = js.native
     def getVaultNotifications(params: GetVaultNotificationsInput): Request[GetVaultNotificationsOutput] = js.native
     def initiateJob(params: InitiateJobInput): Request[InitiateJobOutput] = js.native
-    def initiateMultipartUpload(params: InitiateMultipartUploadInput): Request[InitiateMultipartUploadOutput] =
-      js.native
+    def initiateMultipartUpload(params: InitiateMultipartUploadInput): Request[InitiateMultipartUploadOutput] = js.native
     def initiateVaultLock(params: InitiateVaultLockInput): Request[InitiateVaultLockOutput] = js.native
     def listJobs(params: ListJobsInput): Request[ListJobsOutput] = js.native
     def listMultipartUploads(params: ListMultipartUploadsInput): Request[ListMultipartUploadsOutput] = js.native
     def listParts(params: ListPartsInput): Request[ListPartsOutput] = js.native
-    def listProvisionedCapacity(params: ListProvisionedCapacityInput): Request[ListProvisionedCapacityOutput] =
-      js.native
+    def listProvisionedCapacity(params: ListProvisionedCapacityInput): Request[ListProvisionedCapacityOutput] = js.native
     def listTagsForVault(params: ListTagsForVaultInput): Request[ListTagsForVaultOutput] = js.native
     def listVaults(params: ListVaultsInput): Request[ListVaultsOutput] = js.native
-    def purchaseProvisionedCapacity(
-        params: PurchaseProvisionedCapacityInput
-    ): Request[PurchaseProvisionedCapacityOutput] = js.native
+    def purchaseProvisionedCapacity(params: PurchaseProvisionedCapacityInput): Request[PurchaseProvisionedCapacityOutput] = js.native
     def removeTagsFromVault(params: RemoveTagsFromVaultInput): Request[js.Object] = js.native
     def setDataRetrievalPolicy(params: SetDataRetrievalPolicyInput): Request[js.Object] = js.native
     def setVaultAccessPolicy(params: SetVaultAccessPolicyInput): Request[js.Object] = js.native
@@ -337,17 +296,7 @@ package glacier {
     val `bucket-owner-read` = "bucket-owner-read".asInstanceOf[CannedACL]
     val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[CannedACL]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `private`,
-        `public-read`,
-        `public-read-write`,
-        `aws-exec-read`,
-        `authenticated-read`,
-        `bucket-owner-read`,
-        `bucket-owner-full-control`
-      )
-    )
+    val values = js.Object.freeze(js.Array(`private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`))
   }
 
   /**
@@ -1036,9 +985,7 @@ package glacier {
       Completed.foreach(__v => __obj.updateDynamic("Completed")(__v.asInstanceOf[js.Any]))
       CompletionDate.foreach(__v => __obj.updateDynamic("CompletionDate")(__v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      InventoryRetrievalParameters.foreach(__v =>
-        __obj.updateDynamic("InventoryRetrievalParameters")(__v.asInstanceOf[js.Any])
-      )
+      InventoryRetrievalParameters.foreach(__v => __obj.updateDynamic("InventoryRetrievalParameters")(__v.asInstanceOf[js.Any]))
       InventorySizeInBytes.foreach(__v => __obj.updateDynamic("InventorySizeInBytes")(__v.asInstanceOf[js.Any]))
       JobDescription.foreach(__v => __obj.updateDynamic("JobDescription")(__v.asInstanceOf[js.Any]))
       JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
@@ -1374,9 +1321,7 @@ package glacier {
       ArchiveId.foreach(__v => __obj.updateDynamic("ArchiveId")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
-      InventoryRetrievalParameters.foreach(__v =>
-        __obj.updateDynamic("InventoryRetrievalParameters")(__v.asInstanceOf[js.Any])
-      )
+      InventoryRetrievalParameters.foreach(__v => __obj.updateDynamic("InventoryRetrievalParameters")(__v.asInstanceOf[js.Any]))
       OutputLocation.foreach(__v => __obj.updateDynamic("OutputLocation")(__v.asInstanceOf[js.Any]))
       RetrievalByteRange.foreach(__v => __obj.updateDynamic("RetrievalByteRange")(__v.asInstanceOf[js.Any]))
       SNSTopic.foreach(__v => __obj.updateDynamic("SNSTopic")(__v.asInstanceOf[js.Any]))

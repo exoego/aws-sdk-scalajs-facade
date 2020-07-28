@@ -52,159 +52,59 @@ package object dms {
 
   implicit final class DMSOps(private val service: DMS) extends AnyVal {
 
-    @inline def addTagsToResourceFuture(params: AddTagsToResourceMessage): Future[AddTagsToResourceResponse] =
-      service.addTagsToResource(params).promise().toFuture
-    @inline def applyPendingMaintenanceActionFuture(
-        params: ApplyPendingMaintenanceActionMessage
-    ): Future[ApplyPendingMaintenanceActionResponse] = service.applyPendingMaintenanceAction(params).promise().toFuture
-    @inline def cancelReplicationTaskAssessmentRunFuture(
-        params: CancelReplicationTaskAssessmentRunMessage
-    ): Future[CancelReplicationTaskAssessmentRunResponse] =
-      service.cancelReplicationTaskAssessmentRun(params).promise().toFuture
-    @inline def createEndpointFuture(params: CreateEndpointMessage): Future[CreateEndpointResponse] =
-      service.createEndpoint(params).promise().toFuture
-    @inline def createEventSubscriptionFuture(
-        params: CreateEventSubscriptionMessage
-    ): Future[CreateEventSubscriptionResponse] = service.createEventSubscription(params).promise().toFuture
-    @inline def createReplicationInstanceFuture(
-        params: CreateReplicationInstanceMessage
-    ): Future[CreateReplicationInstanceResponse] = service.createReplicationInstance(params).promise().toFuture
-    @inline def createReplicationSubnetGroupFuture(
-        params: CreateReplicationSubnetGroupMessage
-    ): Future[CreateReplicationSubnetGroupResponse] = service.createReplicationSubnetGroup(params).promise().toFuture
-    @inline def createReplicationTaskFuture(
-        params: CreateReplicationTaskMessage
-    ): Future[CreateReplicationTaskResponse] = service.createReplicationTask(params).promise().toFuture
-    @inline def deleteCertificateFuture(params: DeleteCertificateMessage): Future[DeleteCertificateResponse] =
-      service.deleteCertificate(params).promise().toFuture
-    @inline def deleteConnectionFuture(params: DeleteConnectionMessage): Future[DeleteConnectionResponse] =
-      service.deleteConnection(params).promise().toFuture
-    @inline def deleteEndpointFuture(params: DeleteEndpointMessage): Future[DeleteEndpointResponse] =
-      service.deleteEndpoint(params).promise().toFuture
-    @inline def deleteEventSubscriptionFuture(
-        params: DeleteEventSubscriptionMessage
-    ): Future[DeleteEventSubscriptionResponse] = service.deleteEventSubscription(params).promise().toFuture
-    @inline def deleteReplicationInstanceFuture(
-        params: DeleteReplicationInstanceMessage
-    ): Future[DeleteReplicationInstanceResponse] = service.deleteReplicationInstance(params).promise().toFuture
-    @inline def deleteReplicationSubnetGroupFuture(
-        params: DeleteReplicationSubnetGroupMessage
-    ): Future[DeleteReplicationSubnetGroupResponse] = service.deleteReplicationSubnetGroup(params).promise().toFuture
-    @inline def deleteReplicationTaskAssessmentRunFuture(
-        params: DeleteReplicationTaskAssessmentRunMessage
-    ): Future[DeleteReplicationTaskAssessmentRunResponse] =
-      service.deleteReplicationTaskAssessmentRun(params).promise().toFuture
-    @inline def deleteReplicationTaskFuture(
-        params: DeleteReplicationTaskMessage
-    ): Future[DeleteReplicationTaskResponse] = service.deleteReplicationTask(params).promise().toFuture
-    @inline def describeAccountAttributesFuture(
-        params: DescribeAccountAttributesMessage
-    ): Future[DescribeAccountAttributesResponse] = service.describeAccountAttributes(params).promise().toFuture
-    @inline def describeApplicableIndividualAssessmentsFuture(
-        params: DescribeApplicableIndividualAssessmentsMessage
-    ): Future[DescribeApplicableIndividualAssessmentsResponse] =
-      service.describeApplicableIndividualAssessments(params).promise().toFuture
-    @inline def describeCertificatesFuture(params: DescribeCertificatesMessage): Future[DescribeCertificatesResponse] =
-      service.describeCertificates(params).promise().toFuture
-    @inline def describeConnectionsFuture(params: DescribeConnectionsMessage): Future[DescribeConnectionsResponse] =
-      service.describeConnections(params).promise().toFuture
-    @inline def describeEndpointTypesFuture(
-        params: DescribeEndpointTypesMessage
-    ): Future[DescribeEndpointTypesResponse] = service.describeEndpointTypes(params).promise().toFuture
-    @inline def describeEndpointsFuture(params: DescribeEndpointsMessage): Future[DescribeEndpointsResponse] =
-      service.describeEndpoints(params).promise().toFuture
-    @inline def describeEventCategoriesFuture(
-        params: DescribeEventCategoriesMessage
-    ): Future[DescribeEventCategoriesResponse] = service.describeEventCategories(params).promise().toFuture
-    @inline def describeEventSubscriptionsFuture(
-        params: DescribeEventSubscriptionsMessage
-    ): Future[DescribeEventSubscriptionsResponse] = service.describeEventSubscriptions(params).promise().toFuture
-    @inline def describeEventsFuture(params: DescribeEventsMessage): Future[DescribeEventsResponse] =
-      service.describeEvents(params).promise().toFuture
-    @inline def describeOrderableReplicationInstancesFuture(
-        params: DescribeOrderableReplicationInstancesMessage
-    ): Future[DescribeOrderableReplicationInstancesResponse] =
-      service.describeOrderableReplicationInstances(params).promise().toFuture
-    @inline def describePendingMaintenanceActionsFuture(
-        params: DescribePendingMaintenanceActionsMessage
-    ): Future[DescribePendingMaintenanceActionsResponse] =
-      service.describePendingMaintenanceActions(params).promise().toFuture
-    @inline def describeRefreshSchemasStatusFuture(
-        params: DescribeRefreshSchemasStatusMessage
-    ): Future[DescribeRefreshSchemasStatusResponse] = service.describeRefreshSchemasStatus(params).promise().toFuture
-    @inline def describeReplicationInstanceTaskLogsFuture(
-        params: DescribeReplicationInstanceTaskLogsMessage
-    ): Future[DescribeReplicationInstanceTaskLogsResponse] =
-      service.describeReplicationInstanceTaskLogs(params).promise().toFuture
-    @inline def describeReplicationInstancesFuture(
-        params: DescribeReplicationInstancesMessage
-    ): Future[DescribeReplicationInstancesResponse] = service.describeReplicationInstances(params).promise().toFuture
-    @inline def describeReplicationSubnetGroupsFuture(
-        params: DescribeReplicationSubnetGroupsMessage
-    ): Future[DescribeReplicationSubnetGroupsResponse] =
-      service.describeReplicationSubnetGroups(params).promise().toFuture
-    @inline def describeReplicationTaskAssessmentResultsFuture(
-        params: DescribeReplicationTaskAssessmentResultsMessage
-    ): Future[DescribeReplicationTaskAssessmentResultsResponse] =
-      service.describeReplicationTaskAssessmentResults(params).promise().toFuture
-    @inline def describeReplicationTaskAssessmentRunsFuture(
-        params: DescribeReplicationTaskAssessmentRunsMessage
-    ): Future[DescribeReplicationTaskAssessmentRunsResponse] =
-      service.describeReplicationTaskAssessmentRuns(params).promise().toFuture
-    @inline def describeReplicationTaskIndividualAssessmentsFuture(
-        params: DescribeReplicationTaskIndividualAssessmentsMessage
-    ): Future[DescribeReplicationTaskIndividualAssessmentsResponse] =
-      service.describeReplicationTaskIndividualAssessments(params).promise().toFuture
-    @inline def describeReplicationTasksFuture(
-        params: DescribeReplicationTasksMessage
-    ): Future[DescribeReplicationTasksResponse] = service.describeReplicationTasks(params).promise().toFuture
-    @inline def describeSchemasFuture(params: DescribeSchemasMessage): Future[DescribeSchemasResponse] =
-      service.describeSchemas(params).promise().toFuture
-    @inline def describeTableStatisticsFuture(
-        params: DescribeTableStatisticsMessage
-    ): Future[DescribeTableStatisticsResponse] = service.describeTableStatistics(params).promise().toFuture
-    @inline def importCertificateFuture(params: ImportCertificateMessage): Future[ImportCertificateResponse] =
-      service.importCertificate(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceMessage): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def modifyEndpointFuture(params: ModifyEndpointMessage): Future[ModifyEndpointResponse] =
-      service.modifyEndpoint(params).promise().toFuture
-    @inline def modifyEventSubscriptionFuture(
-        params: ModifyEventSubscriptionMessage
-    ): Future[ModifyEventSubscriptionResponse] = service.modifyEventSubscription(params).promise().toFuture
-    @inline def modifyReplicationInstanceFuture(
-        params: ModifyReplicationInstanceMessage
-    ): Future[ModifyReplicationInstanceResponse] = service.modifyReplicationInstance(params).promise().toFuture
-    @inline def modifyReplicationSubnetGroupFuture(
-        params: ModifyReplicationSubnetGroupMessage
-    ): Future[ModifyReplicationSubnetGroupResponse] = service.modifyReplicationSubnetGroup(params).promise().toFuture
-    @inline def modifyReplicationTaskFuture(
-        params: ModifyReplicationTaskMessage
-    ): Future[ModifyReplicationTaskResponse] = service.modifyReplicationTask(params).promise().toFuture
-    @inline def rebootReplicationInstanceFuture(
-        params: RebootReplicationInstanceMessage
-    ): Future[RebootReplicationInstanceResponse] = service.rebootReplicationInstance(params).promise().toFuture
-    @inline def refreshSchemasFuture(params: RefreshSchemasMessage): Future[RefreshSchemasResponse] =
-      service.refreshSchemas(params).promise().toFuture
-    @inline def reloadTablesFuture(params: ReloadTablesMessage): Future[ReloadTablesResponse] =
-      service.reloadTables(params).promise().toFuture
-    @inline def removeTagsFromResourceFuture(
-        params: RemoveTagsFromResourceMessage
-    ): Future[RemoveTagsFromResourceResponse] = service.removeTagsFromResource(params).promise().toFuture
-    @inline def startReplicationTaskAssessmentFuture(
-        params: StartReplicationTaskAssessmentMessage
-    ): Future[StartReplicationTaskAssessmentResponse] =
-      service.startReplicationTaskAssessment(params).promise().toFuture
-    @inline def startReplicationTaskAssessmentRunFuture(
-        params: StartReplicationTaskAssessmentRunMessage
-    ): Future[StartReplicationTaskAssessmentRunResponse] =
-      service.startReplicationTaskAssessmentRun(params).promise().toFuture
-    @inline def startReplicationTaskFuture(params: StartReplicationTaskMessage): Future[StartReplicationTaskResponse] =
-      service.startReplicationTask(params).promise().toFuture
-    @inline def stopReplicationTaskFuture(params: StopReplicationTaskMessage): Future[StopReplicationTaskResponse] =
-      service.stopReplicationTask(params).promise().toFuture
-    @inline def testConnectionFuture(params: TestConnectionMessage): Future[TestConnectionResponse] =
-      service.testConnection(params).promise().toFuture
+    @inline def addTagsToResourceFuture(params: AddTagsToResourceMessage): Future[AddTagsToResourceResponse] = service.addTagsToResource(params).promise().toFuture
+    @inline def applyPendingMaintenanceActionFuture(params: ApplyPendingMaintenanceActionMessage): Future[ApplyPendingMaintenanceActionResponse] = service.applyPendingMaintenanceAction(params).promise().toFuture
+    @inline def cancelReplicationTaskAssessmentRunFuture(params: CancelReplicationTaskAssessmentRunMessage): Future[CancelReplicationTaskAssessmentRunResponse] = service.cancelReplicationTaskAssessmentRun(params).promise().toFuture
+    @inline def createEndpointFuture(params: CreateEndpointMessage): Future[CreateEndpointResponse] = service.createEndpoint(params).promise().toFuture
+    @inline def createEventSubscriptionFuture(params: CreateEventSubscriptionMessage): Future[CreateEventSubscriptionResponse] = service.createEventSubscription(params).promise().toFuture
+    @inline def createReplicationInstanceFuture(params: CreateReplicationInstanceMessage): Future[CreateReplicationInstanceResponse] = service.createReplicationInstance(params).promise().toFuture
+    @inline def createReplicationSubnetGroupFuture(params: CreateReplicationSubnetGroupMessage): Future[CreateReplicationSubnetGroupResponse] = service.createReplicationSubnetGroup(params).promise().toFuture
+    @inline def createReplicationTaskFuture(params: CreateReplicationTaskMessage): Future[CreateReplicationTaskResponse] = service.createReplicationTask(params).promise().toFuture
+    @inline def deleteCertificateFuture(params: DeleteCertificateMessage): Future[DeleteCertificateResponse] = service.deleteCertificate(params).promise().toFuture
+    @inline def deleteConnectionFuture(params: DeleteConnectionMessage): Future[DeleteConnectionResponse] = service.deleteConnection(params).promise().toFuture
+    @inline def deleteEndpointFuture(params: DeleteEndpointMessage): Future[DeleteEndpointResponse] = service.deleteEndpoint(params).promise().toFuture
+    @inline def deleteEventSubscriptionFuture(params: DeleteEventSubscriptionMessage): Future[DeleteEventSubscriptionResponse] = service.deleteEventSubscription(params).promise().toFuture
+    @inline def deleteReplicationInstanceFuture(params: DeleteReplicationInstanceMessage): Future[DeleteReplicationInstanceResponse] = service.deleteReplicationInstance(params).promise().toFuture
+    @inline def deleteReplicationSubnetGroupFuture(params: DeleteReplicationSubnetGroupMessage): Future[DeleteReplicationSubnetGroupResponse] = service.deleteReplicationSubnetGroup(params).promise().toFuture
+    @inline def deleteReplicationTaskAssessmentRunFuture(params: DeleteReplicationTaskAssessmentRunMessage): Future[DeleteReplicationTaskAssessmentRunResponse] = service.deleteReplicationTaskAssessmentRun(params).promise().toFuture
+    @inline def deleteReplicationTaskFuture(params: DeleteReplicationTaskMessage): Future[DeleteReplicationTaskResponse] = service.deleteReplicationTask(params).promise().toFuture
+    @inline def describeAccountAttributesFuture(params: DescribeAccountAttributesMessage): Future[DescribeAccountAttributesResponse] = service.describeAccountAttributes(params).promise().toFuture
+    @inline def describeApplicableIndividualAssessmentsFuture(params: DescribeApplicableIndividualAssessmentsMessage): Future[DescribeApplicableIndividualAssessmentsResponse] = service.describeApplicableIndividualAssessments(params).promise().toFuture
+    @inline def describeCertificatesFuture(params: DescribeCertificatesMessage): Future[DescribeCertificatesResponse] = service.describeCertificates(params).promise().toFuture
+    @inline def describeConnectionsFuture(params: DescribeConnectionsMessage): Future[DescribeConnectionsResponse] = service.describeConnections(params).promise().toFuture
+    @inline def describeEndpointTypesFuture(params: DescribeEndpointTypesMessage): Future[DescribeEndpointTypesResponse] = service.describeEndpointTypes(params).promise().toFuture
+    @inline def describeEndpointsFuture(params: DescribeEndpointsMessage): Future[DescribeEndpointsResponse] = service.describeEndpoints(params).promise().toFuture
+    @inline def describeEventCategoriesFuture(params: DescribeEventCategoriesMessage): Future[DescribeEventCategoriesResponse] = service.describeEventCategories(params).promise().toFuture
+    @inline def describeEventSubscriptionsFuture(params: DescribeEventSubscriptionsMessage): Future[DescribeEventSubscriptionsResponse] = service.describeEventSubscriptions(params).promise().toFuture
+    @inline def describeEventsFuture(params: DescribeEventsMessage): Future[DescribeEventsResponse] = service.describeEvents(params).promise().toFuture
+    @inline def describeOrderableReplicationInstancesFuture(params: DescribeOrderableReplicationInstancesMessage): Future[DescribeOrderableReplicationInstancesResponse] = service.describeOrderableReplicationInstances(params).promise().toFuture
+    @inline def describePendingMaintenanceActionsFuture(params: DescribePendingMaintenanceActionsMessage): Future[DescribePendingMaintenanceActionsResponse] = service.describePendingMaintenanceActions(params).promise().toFuture
+    @inline def describeRefreshSchemasStatusFuture(params: DescribeRefreshSchemasStatusMessage): Future[DescribeRefreshSchemasStatusResponse] = service.describeRefreshSchemasStatus(params).promise().toFuture
+    @inline def describeReplicationInstanceTaskLogsFuture(params: DescribeReplicationInstanceTaskLogsMessage): Future[DescribeReplicationInstanceTaskLogsResponse] = service.describeReplicationInstanceTaskLogs(params).promise().toFuture
+    @inline def describeReplicationInstancesFuture(params: DescribeReplicationInstancesMessage): Future[DescribeReplicationInstancesResponse] = service.describeReplicationInstances(params).promise().toFuture
+    @inline def describeReplicationSubnetGroupsFuture(params: DescribeReplicationSubnetGroupsMessage): Future[DescribeReplicationSubnetGroupsResponse] = service.describeReplicationSubnetGroups(params).promise().toFuture
+    @inline def describeReplicationTaskAssessmentResultsFuture(params: DescribeReplicationTaskAssessmentResultsMessage): Future[DescribeReplicationTaskAssessmentResultsResponse] = service.describeReplicationTaskAssessmentResults(params).promise().toFuture
+    @inline def describeReplicationTaskAssessmentRunsFuture(params: DescribeReplicationTaskAssessmentRunsMessage): Future[DescribeReplicationTaskAssessmentRunsResponse] = service.describeReplicationTaskAssessmentRuns(params).promise().toFuture
+    @inline def describeReplicationTaskIndividualAssessmentsFuture(params: DescribeReplicationTaskIndividualAssessmentsMessage): Future[DescribeReplicationTaskIndividualAssessmentsResponse] = service.describeReplicationTaskIndividualAssessments(params).promise().toFuture
+    @inline def describeReplicationTasksFuture(params: DescribeReplicationTasksMessage): Future[DescribeReplicationTasksResponse] = service.describeReplicationTasks(params).promise().toFuture
+    @inline def describeSchemasFuture(params: DescribeSchemasMessage): Future[DescribeSchemasResponse] = service.describeSchemas(params).promise().toFuture
+    @inline def describeTableStatisticsFuture(params: DescribeTableStatisticsMessage): Future[DescribeTableStatisticsResponse] = service.describeTableStatistics(params).promise().toFuture
+    @inline def importCertificateFuture(params: ImportCertificateMessage): Future[ImportCertificateResponse] = service.importCertificate(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceMessage): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def modifyEndpointFuture(params: ModifyEndpointMessage): Future[ModifyEndpointResponse] = service.modifyEndpoint(params).promise().toFuture
+    @inline def modifyEventSubscriptionFuture(params: ModifyEventSubscriptionMessage): Future[ModifyEventSubscriptionResponse] = service.modifyEventSubscription(params).promise().toFuture
+    @inline def modifyReplicationInstanceFuture(params: ModifyReplicationInstanceMessage): Future[ModifyReplicationInstanceResponse] = service.modifyReplicationInstance(params).promise().toFuture
+    @inline def modifyReplicationSubnetGroupFuture(params: ModifyReplicationSubnetGroupMessage): Future[ModifyReplicationSubnetGroupResponse] = service.modifyReplicationSubnetGroup(params).promise().toFuture
+    @inline def modifyReplicationTaskFuture(params: ModifyReplicationTaskMessage): Future[ModifyReplicationTaskResponse] = service.modifyReplicationTask(params).promise().toFuture
+    @inline def rebootReplicationInstanceFuture(params: RebootReplicationInstanceMessage): Future[RebootReplicationInstanceResponse] = service.rebootReplicationInstance(params).promise().toFuture
+    @inline def refreshSchemasFuture(params: RefreshSchemasMessage): Future[RefreshSchemasResponse] = service.refreshSchemas(params).promise().toFuture
+    @inline def reloadTablesFuture(params: ReloadTablesMessage): Future[ReloadTablesResponse] = service.reloadTables(params).promise().toFuture
+    @inline def removeTagsFromResourceFuture(params: RemoveTagsFromResourceMessage): Future[RemoveTagsFromResourceResponse] = service.removeTagsFromResource(params).promise().toFuture
+    @inline def startReplicationTaskAssessmentFuture(params: StartReplicationTaskAssessmentMessage): Future[StartReplicationTaskAssessmentResponse] = service.startReplicationTaskAssessment(params).promise().toFuture
+    @inline def startReplicationTaskAssessmentRunFuture(params: StartReplicationTaskAssessmentRunMessage): Future[StartReplicationTaskAssessmentRunResponse] = service.startReplicationTaskAssessmentRun(params).promise().toFuture
+    @inline def startReplicationTaskFuture(params: StartReplicationTaskMessage): Future[StartReplicationTaskResponse] = service.startReplicationTask(params).promise().toFuture
+    @inline def stopReplicationTaskFuture(params: StopReplicationTaskMessage): Future[StopReplicationTaskResponse] = service.stopReplicationTask(params).promise().toFuture
+    @inline def testConnectionFuture(params: TestConnectionMessage): Future[TestConnectionResponse] = service.testConnection(params).promise().toFuture
   }
 }
 
@@ -215,111 +115,56 @@ package dms {
     def this(config: AWSConfig) = this()
 
     def addTagsToResource(params: AddTagsToResourceMessage): Request[AddTagsToResourceResponse] = js.native
-    def applyPendingMaintenanceAction(
-        params: ApplyPendingMaintenanceActionMessage
-    ): Request[ApplyPendingMaintenanceActionResponse] = js.native
-    def cancelReplicationTaskAssessmentRun(
-        params: CancelReplicationTaskAssessmentRunMessage
-    ): Request[CancelReplicationTaskAssessmentRunResponse] = js.native
+    def applyPendingMaintenanceAction(params: ApplyPendingMaintenanceActionMessage): Request[ApplyPendingMaintenanceActionResponse] = js.native
+    def cancelReplicationTaskAssessmentRun(params: CancelReplicationTaskAssessmentRunMessage): Request[CancelReplicationTaskAssessmentRunResponse] = js.native
     def createEndpoint(params: CreateEndpointMessage): Request[CreateEndpointResponse] = js.native
-    def createEventSubscription(params: CreateEventSubscriptionMessage): Request[CreateEventSubscriptionResponse] =
-      js.native
-    def createReplicationInstance(
-        params: CreateReplicationInstanceMessage
-    ): Request[CreateReplicationInstanceResponse] = js.native
-    def createReplicationSubnetGroup(
-        params: CreateReplicationSubnetGroupMessage
-    ): Request[CreateReplicationSubnetGroupResponse] = js.native
+    def createEventSubscription(params: CreateEventSubscriptionMessage): Request[CreateEventSubscriptionResponse] = js.native
+    def createReplicationInstance(params: CreateReplicationInstanceMessage): Request[CreateReplicationInstanceResponse] = js.native
+    def createReplicationSubnetGroup(params: CreateReplicationSubnetGroupMessage): Request[CreateReplicationSubnetGroupResponse] = js.native
     def createReplicationTask(params: CreateReplicationTaskMessage): Request[CreateReplicationTaskResponse] = js.native
     def deleteCertificate(params: DeleteCertificateMessage): Request[DeleteCertificateResponse] = js.native
     def deleteConnection(params: DeleteConnectionMessage): Request[DeleteConnectionResponse] = js.native
     def deleteEndpoint(params: DeleteEndpointMessage): Request[DeleteEndpointResponse] = js.native
-    def deleteEventSubscription(params: DeleteEventSubscriptionMessage): Request[DeleteEventSubscriptionResponse] =
-      js.native
-    def deleteReplicationInstance(
-        params: DeleteReplicationInstanceMessage
-    ): Request[DeleteReplicationInstanceResponse] = js.native
-    def deleteReplicationSubnetGroup(
-        params: DeleteReplicationSubnetGroupMessage
-    ): Request[DeleteReplicationSubnetGroupResponse] = js.native
+    def deleteEventSubscription(params: DeleteEventSubscriptionMessage): Request[DeleteEventSubscriptionResponse] = js.native
+    def deleteReplicationInstance(params: DeleteReplicationInstanceMessage): Request[DeleteReplicationInstanceResponse] = js.native
+    def deleteReplicationSubnetGroup(params: DeleteReplicationSubnetGroupMessage): Request[DeleteReplicationSubnetGroupResponse] = js.native
     def deleteReplicationTask(params: DeleteReplicationTaskMessage): Request[DeleteReplicationTaskResponse] = js.native
-    def deleteReplicationTaskAssessmentRun(
-        params: DeleteReplicationTaskAssessmentRunMessage
-    ): Request[DeleteReplicationTaskAssessmentRunResponse] = js.native
-    def describeAccountAttributes(
-        params: DescribeAccountAttributesMessage
-    ): Request[DescribeAccountAttributesResponse] = js.native
-    def describeApplicableIndividualAssessments(
-        params: DescribeApplicableIndividualAssessmentsMessage
-    ): Request[DescribeApplicableIndividualAssessmentsResponse] = js.native
+    def deleteReplicationTaskAssessmentRun(params: DeleteReplicationTaskAssessmentRunMessage): Request[DeleteReplicationTaskAssessmentRunResponse] = js.native
+    def describeAccountAttributes(params: DescribeAccountAttributesMessage): Request[DescribeAccountAttributesResponse] = js.native
+    def describeApplicableIndividualAssessments(params: DescribeApplicableIndividualAssessmentsMessage): Request[DescribeApplicableIndividualAssessmentsResponse] = js.native
     def describeCertificates(params: DescribeCertificatesMessage): Request[DescribeCertificatesResponse] = js.native
     def describeConnections(params: DescribeConnectionsMessage): Request[DescribeConnectionsResponse] = js.native
     def describeEndpointTypes(params: DescribeEndpointTypesMessage): Request[DescribeEndpointTypesResponse] = js.native
     def describeEndpoints(params: DescribeEndpointsMessage): Request[DescribeEndpointsResponse] = js.native
-    def describeEventCategories(params: DescribeEventCategoriesMessage): Request[DescribeEventCategoriesResponse] =
-      js.native
-    def describeEventSubscriptions(
-        params: DescribeEventSubscriptionsMessage
-    ): Request[DescribeEventSubscriptionsResponse] = js.native
+    def describeEventCategories(params: DescribeEventCategoriesMessage): Request[DescribeEventCategoriesResponse] = js.native
+    def describeEventSubscriptions(params: DescribeEventSubscriptionsMessage): Request[DescribeEventSubscriptionsResponse] = js.native
     def describeEvents(params: DescribeEventsMessage): Request[DescribeEventsResponse] = js.native
-    def describeOrderableReplicationInstances(
-        params: DescribeOrderableReplicationInstancesMessage
-    ): Request[DescribeOrderableReplicationInstancesResponse] = js.native
-    def describePendingMaintenanceActions(
-        params: DescribePendingMaintenanceActionsMessage
-    ): Request[DescribePendingMaintenanceActionsResponse] = js.native
-    def describeRefreshSchemasStatus(
-        params: DescribeRefreshSchemasStatusMessage
-    ): Request[DescribeRefreshSchemasStatusResponse] = js.native
-    def describeReplicationInstanceTaskLogs(
-        params: DescribeReplicationInstanceTaskLogsMessage
-    ): Request[DescribeReplicationInstanceTaskLogsResponse] = js.native
-    def describeReplicationInstances(
-        params: DescribeReplicationInstancesMessage
-    ): Request[DescribeReplicationInstancesResponse] = js.native
-    def describeReplicationSubnetGroups(
-        params: DescribeReplicationSubnetGroupsMessage
-    ): Request[DescribeReplicationSubnetGroupsResponse] = js.native
-    def describeReplicationTaskAssessmentResults(
-        params: DescribeReplicationTaskAssessmentResultsMessage
-    ): Request[DescribeReplicationTaskAssessmentResultsResponse] = js.native
-    def describeReplicationTaskAssessmentRuns(
-        params: DescribeReplicationTaskAssessmentRunsMessage
-    ): Request[DescribeReplicationTaskAssessmentRunsResponse] = js.native
-    def describeReplicationTaskIndividualAssessments(
-        params: DescribeReplicationTaskIndividualAssessmentsMessage
-    ): Request[DescribeReplicationTaskIndividualAssessmentsResponse] = js.native
-    def describeReplicationTasks(params: DescribeReplicationTasksMessage): Request[DescribeReplicationTasksResponse] =
-      js.native
+    def describeOrderableReplicationInstances(params: DescribeOrderableReplicationInstancesMessage): Request[DescribeOrderableReplicationInstancesResponse] = js.native
+    def describePendingMaintenanceActions(params: DescribePendingMaintenanceActionsMessage): Request[DescribePendingMaintenanceActionsResponse] = js.native
+    def describeRefreshSchemasStatus(params: DescribeRefreshSchemasStatusMessage): Request[DescribeRefreshSchemasStatusResponse] = js.native
+    def describeReplicationInstanceTaskLogs(params: DescribeReplicationInstanceTaskLogsMessage): Request[DescribeReplicationInstanceTaskLogsResponse] = js.native
+    def describeReplicationInstances(params: DescribeReplicationInstancesMessage): Request[DescribeReplicationInstancesResponse] = js.native
+    def describeReplicationSubnetGroups(params: DescribeReplicationSubnetGroupsMessage): Request[DescribeReplicationSubnetGroupsResponse] = js.native
+    def describeReplicationTaskAssessmentResults(params: DescribeReplicationTaskAssessmentResultsMessage): Request[DescribeReplicationTaskAssessmentResultsResponse] = js.native
+    def describeReplicationTaskAssessmentRuns(params: DescribeReplicationTaskAssessmentRunsMessage): Request[DescribeReplicationTaskAssessmentRunsResponse] = js.native
+    def describeReplicationTaskIndividualAssessments(params: DescribeReplicationTaskIndividualAssessmentsMessage): Request[DescribeReplicationTaskIndividualAssessmentsResponse] = js.native
+    def describeReplicationTasks(params: DescribeReplicationTasksMessage): Request[DescribeReplicationTasksResponse] = js.native
     def describeSchemas(params: DescribeSchemasMessage): Request[DescribeSchemasResponse] = js.native
-    def describeTableStatistics(params: DescribeTableStatisticsMessage): Request[DescribeTableStatisticsResponse] =
-      js.native
+    def describeTableStatistics(params: DescribeTableStatisticsMessage): Request[DescribeTableStatisticsResponse] = js.native
     def importCertificate(params: ImportCertificateMessage): Request[ImportCertificateResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceMessage): Request[ListTagsForResourceResponse] = js.native
     def modifyEndpoint(params: ModifyEndpointMessage): Request[ModifyEndpointResponse] = js.native
-    def modifyEventSubscription(params: ModifyEventSubscriptionMessage): Request[ModifyEventSubscriptionResponse] =
-      js.native
-    def modifyReplicationInstance(
-        params: ModifyReplicationInstanceMessage
-    ): Request[ModifyReplicationInstanceResponse] = js.native
-    def modifyReplicationSubnetGroup(
-        params: ModifyReplicationSubnetGroupMessage
-    ): Request[ModifyReplicationSubnetGroupResponse] = js.native
+    def modifyEventSubscription(params: ModifyEventSubscriptionMessage): Request[ModifyEventSubscriptionResponse] = js.native
+    def modifyReplicationInstance(params: ModifyReplicationInstanceMessage): Request[ModifyReplicationInstanceResponse] = js.native
+    def modifyReplicationSubnetGroup(params: ModifyReplicationSubnetGroupMessage): Request[ModifyReplicationSubnetGroupResponse] = js.native
     def modifyReplicationTask(params: ModifyReplicationTaskMessage): Request[ModifyReplicationTaskResponse] = js.native
-    def rebootReplicationInstance(
-        params: RebootReplicationInstanceMessage
-    ): Request[RebootReplicationInstanceResponse] = js.native
+    def rebootReplicationInstance(params: RebootReplicationInstanceMessage): Request[RebootReplicationInstanceResponse] = js.native
     def refreshSchemas(params: RefreshSchemasMessage): Request[RefreshSchemasResponse] = js.native
     def reloadTables(params: ReloadTablesMessage): Request[ReloadTablesResponse] = js.native
-    def removeTagsFromResource(params: RemoveTagsFromResourceMessage): Request[RemoveTagsFromResourceResponse] =
-      js.native
+    def removeTagsFromResource(params: RemoveTagsFromResourceMessage): Request[RemoveTagsFromResourceResponse] = js.native
     def startReplicationTask(params: StartReplicationTaskMessage): Request[StartReplicationTaskResponse] = js.native
-    def startReplicationTaskAssessment(
-        params: StartReplicationTaskAssessmentMessage
-    ): Request[StartReplicationTaskAssessmentResponse] = js.native
-    def startReplicationTaskAssessmentRun(
-        params: StartReplicationTaskAssessmentRunMessage
-    ): Request[StartReplicationTaskAssessmentRunResponse] = js.native
+    def startReplicationTaskAssessment(params: StartReplicationTaskAssessmentMessage): Request[StartReplicationTaskAssessmentResponse] = js.native
+    def startReplicationTaskAssessmentRun(params: StartReplicationTaskAssessmentRunMessage): Request[StartReplicationTaskAssessmentRunResponse] = js.native
     def stopReplicationTask(params: StopReplicationTaskMessage): Request[StopReplicationTaskResponse] = js.native
     def testConnection(params: TestConnectionMessage): Request[TestConnectionResponse] = js.native
   }
@@ -430,9 +275,7 @@ package dms {
         ResourcePendingMaintenanceActions: js.UndefOr[ResourcePendingMaintenanceActions] = js.undefined
     ): ApplyPendingMaintenanceActionResponse = {
       val __obj = js.Dynamic.literal()
-      ResourcePendingMaintenanceActions.foreach(__v =>
-        __obj.updateDynamic("ResourcePendingMaintenanceActions")(__v.asInstanceOf[js.Any])
-      )
+      ResourcePendingMaintenanceActions.foreach(__v => __obj.updateDynamic("ResourcePendingMaintenanceActions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplyPendingMaintenanceActionResponse]
     }
   }
@@ -510,9 +353,7 @@ package dms {
         ReplicationTaskAssessmentRun: js.UndefOr[ReplicationTaskAssessmentRun] = js.undefined
     ): CancelReplicationTaskAssessmentRunResponse = {
       val __obj = js.Dynamic.literal()
-      ReplicationTaskAssessmentRun.foreach(__v =>
-        __obj.updateDynamic("ReplicationTaskAssessmentRun")(__v.asInstanceOf[js.Any])
-      )
+      ReplicationTaskAssessmentRun.foreach(__v => __obj.updateDynamic("ReplicationTaskAssessmentRun")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CancelReplicationTaskAssessmentRunResponse]
     }
   }
@@ -600,9 +441,7 @@ package dms {
       EndpointIdentifier.foreach(__v => __obj.updateDynamic("EndpointIdentifier")(__v.asInstanceOf[js.Any]))
       LastFailureMessage.foreach(__v => __obj.updateDynamic("LastFailureMessage")(__v.asInstanceOf[js.Any]))
       ReplicationInstanceArn.foreach(__v => __obj.updateDynamic("ReplicationInstanceArn")(__v.asInstanceOf[js.Any]))
-      ReplicationInstanceIdentifier.foreach(__v =>
-        __obj.updateDynamic("ReplicationInstanceIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      ReplicationInstanceIdentifier.foreach(__v => __obj.updateDynamic("ReplicationInstanceIdentifier")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Connection]
     }
@@ -691,16 +530,12 @@ package dms {
       DynamoDbSettings.foreach(__v => __obj.updateDynamic("DynamoDbSettings")(__v.asInstanceOf[js.Any]))
       ElasticsearchSettings.foreach(__v => __obj.updateDynamic("ElasticsearchSettings")(__v.asInstanceOf[js.Any]))
       ExternalTableDefinition.foreach(__v => __obj.updateDynamic("ExternalTableDefinition")(__v.asInstanceOf[js.Any]))
-      ExtraConnectionAttributes.foreach(__v =>
-        __obj.updateDynamic("ExtraConnectionAttributes")(__v.asInstanceOf[js.Any])
-      )
+      ExtraConnectionAttributes.foreach(__v => __obj.updateDynamic("ExtraConnectionAttributes")(__v.asInstanceOf[js.Any]))
       IBMDb2Settings.foreach(__v => __obj.updateDynamic("IBMDb2Settings")(__v.asInstanceOf[js.Any]))
       KafkaSettings.foreach(__v => __obj.updateDynamic("KafkaSettings")(__v.asInstanceOf[js.Any]))
       KinesisSettings.foreach(__v => __obj.updateDynamic("KinesisSettings")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
-      MicrosoftSQLServerSettings.foreach(__v =>
-        __obj.updateDynamic("MicrosoftSQLServerSettings")(__v.asInstanceOf[js.Any])
-      )
+      MicrosoftSQLServerSettings.foreach(__v => __obj.updateDynamic("MicrosoftSQLServerSettings")(__v.asInstanceOf[js.Any]))
       MongoDbSettings.foreach(__v => __obj.updateDynamic("MongoDbSettings")(__v.asInstanceOf[js.Any]))
       MySQLSettings.foreach(__v => __obj.updateDynamic("MySQLSettings")(__v.asInstanceOf[js.Any]))
       NeptuneSettings.foreach(__v => __obj.updateDynamic("NeptuneSettings")(__v.asInstanceOf[js.Any]))
@@ -848,13 +683,9 @@ package dms {
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
-      ReplicationSubnetGroupIdentifier.foreach(__v =>
-        __obj.updateDynamic("ReplicationSubnetGroupIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      ReplicationSubnetGroupIdentifier.foreach(__v => __obj.updateDynamic("ReplicationSubnetGroupIdentifier")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateReplicationInstanceMessage]
@@ -1280,9 +1111,7 @@ package dms {
         ReplicationTaskAssessmentRun: js.UndefOr[ReplicationTaskAssessmentRun] = js.undefined
     ): DeleteReplicationTaskAssessmentRunResponse = {
       val __obj = js.Dynamic.literal()
-      ReplicationTaskAssessmentRun.foreach(__v =>
-        __obj.updateDynamic("ReplicationTaskAssessmentRun")(__v.asInstanceOf[js.Any])
-      )
+      ReplicationTaskAssessmentRun.foreach(__v => __obj.updateDynamic("ReplicationTaskAssessmentRun")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteReplicationTaskAssessmentRunResponse]
     }
   }
@@ -1418,9 +1247,7 @@ package dms {
         Marker: js.UndefOr[String] = js.undefined
     ): DescribeApplicableIndividualAssessmentsResponse = {
       val __obj = js.Dynamic.literal()
-      IndividualAssessmentNames.foreach(__v =>
-        __obj.updateDynamic("IndividualAssessmentNames")(__v.asInstanceOf[js.Any])
-      )
+      IndividualAssessmentNames.foreach(__v => __obj.updateDynamic("IndividualAssessmentNames")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeApplicableIndividualAssessmentsResponse]
     }
@@ -1803,9 +1630,7 @@ package dms {
     ): DescribeOrderableReplicationInstancesResponse = {
       val __obj = js.Dynamic.literal()
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      OrderableReplicationInstances.foreach(__v =>
-        __obj.updateDynamic("OrderableReplicationInstances")(__v.asInstanceOf[js.Any])
-      )
+      OrderableReplicationInstances.foreach(__v => __obj.updateDynamic("OrderableReplicationInstances")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeOrderableReplicationInstancesResponse]
     }
   }
@@ -1855,9 +1680,7 @@ package dms {
     ): DescribePendingMaintenanceActionsResponse = {
       val __obj = js.Dynamic.literal()
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      PendingMaintenanceActions.foreach(__v =>
-        __obj.updateDynamic("PendingMaintenanceActions")(__v.asInstanceOf[js.Any])
-      )
+      PendingMaintenanceActions.foreach(__v => __obj.updateDynamic("PendingMaintenanceActions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePendingMaintenanceActionsResponse]
     }
   }
@@ -1943,9 +1766,7 @@ package dms {
       val __obj = js.Dynamic.literal()
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       ReplicationInstanceArn.foreach(__v => __obj.updateDynamic("ReplicationInstanceArn")(__v.asInstanceOf[js.Any]))
-      ReplicationInstanceTaskLogs.foreach(__v =>
-        __obj.updateDynamic("ReplicationInstanceTaskLogs")(__v.asInstanceOf[js.Any])
-      )
+      ReplicationInstanceTaskLogs.foreach(__v => __obj.updateDynamic("ReplicationInstanceTaskLogs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeReplicationInstanceTaskLogsResponse]
     }
   }
@@ -2089,9 +1910,7 @@ package dms {
       val __obj = js.Dynamic.literal()
       BucketName.foreach(__v => __obj.updateDynamic("BucketName")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      ReplicationTaskAssessmentResults.foreach(__v =>
-        __obj.updateDynamic("ReplicationTaskAssessmentResults")(__v.asInstanceOf[js.Any])
-      )
+      ReplicationTaskAssessmentResults.foreach(__v => __obj.updateDynamic("ReplicationTaskAssessmentResults")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeReplicationTaskAssessmentResultsResponse]
     }
   }
@@ -2138,9 +1957,7 @@ package dms {
     ): DescribeReplicationTaskAssessmentRunsResponse = {
       val __obj = js.Dynamic.literal()
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      ReplicationTaskAssessmentRuns.foreach(__v =>
-        __obj.updateDynamic("ReplicationTaskAssessmentRuns")(__v.asInstanceOf[js.Any])
-      )
+      ReplicationTaskAssessmentRuns.foreach(__v => __obj.updateDynamic("ReplicationTaskAssessmentRuns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeReplicationTaskAssessmentRunsResponse]
     }
   }
@@ -2187,9 +2004,7 @@ package dms {
     ): DescribeReplicationTaskIndividualAssessmentsResponse = {
       val __obj = js.Dynamic.literal()
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      ReplicationTaskIndividualAssessments.foreach(__v =>
-        __obj.updateDynamic("ReplicationTaskIndividualAssessments")(__v.asInstanceOf[js.Any])
-      )
+      ReplicationTaskIndividualAssessments.foreach(__v => __obj.updateDynamic("ReplicationTaskIndividualAssessments")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeReplicationTaskIndividualAssessmentsResponse]
     }
   }
@@ -2543,16 +2358,12 @@ package dms {
       EngineName.foreach(__v => __obj.updateDynamic("EngineName")(__v.asInstanceOf[js.Any]))
       ExternalId.foreach(__v => __obj.updateDynamic("ExternalId")(__v.asInstanceOf[js.Any]))
       ExternalTableDefinition.foreach(__v => __obj.updateDynamic("ExternalTableDefinition")(__v.asInstanceOf[js.Any]))
-      ExtraConnectionAttributes.foreach(__v =>
-        __obj.updateDynamic("ExtraConnectionAttributes")(__v.asInstanceOf[js.Any])
-      )
+      ExtraConnectionAttributes.foreach(__v => __obj.updateDynamic("ExtraConnectionAttributes")(__v.asInstanceOf[js.Any]))
       IBMDb2Settings.foreach(__v => __obj.updateDynamic("IBMDb2Settings")(__v.asInstanceOf[js.Any]))
       KafkaSettings.foreach(__v => __obj.updateDynamic("KafkaSettings")(__v.asInstanceOf[js.Any]))
       KinesisSettings.foreach(__v => __obj.updateDynamic("KinesisSettings")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
-      MicrosoftSQLServerSettings.foreach(__v =>
-        __obj.updateDynamic("MicrosoftSQLServerSettings")(__v.asInstanceOf[js.Any])
-      )
+      MicrosoftSQLServerSettings.foreach(__v => __obj.updateDynamic("MicrosoftSQLServerSettings")(__v.asInstanceOf[js.Any]))
       MongoDbSettings.foreach(__v => __obj.updateDynamic("MongoDbSettings")(__v.asInstanceOf[js.Any]))
       MySQLSettings.foreach(__v => __obj.updateDynamic("MySQLSettings")(__v.asInstanceOf[js.Any]))
       NeptuneSettings.foreach(__v => __obj.updateDynamic("NeptuneSettings")(__v.asInstanceOf[js.Any]))
@@ -2796,16 +2607,10 @@ package dms {
       Broker.foreach(__v => __obj.updateDynamic("Broker")(__v.asInstanceOf[js.Any]))
       IncludeControlDetails.foreach(__v => __obj.updateDynamic("IncludeControlDetails")(__v.asInstanceOf[js.Any]))
       IncludePartitionValue.foreach(__v => __obj.updateDynamic("IncludePartitionValue")(__v.asInstanceOf[js.Any]))
-      IncludeTableAlterOperations.foreach(__v =>
-        __obj.updateDynamic("IncludeTableAlterOperations")(__v.asInstanceOf[js.Any])
-      )
-      IncludeTransactionDetails.foreach(__v =>
-        __obj.updateDynamic("IncludeTransactionDetails")(__v.asInstanceOf[js.Any])
-      )
+      IncludeTableAlterOperations.foreach(__v => __obj.updateDynamic("IncludeTableAlterOperations")(__v.asInstanceOf[js.Any]))
+      IncludeTransactionDetails.foreach(__v => __obj.updateDynamic("IncludeTransactionDetails")(__v.asInstanceOf[js.Any]))
       MessageFormat.foreach(__v => __obj.updateDynamic("MessageFormat")(__v.asInstanceOf[js.Any]))
-      PartitionIncludeSchemaTable.foreach(__v =>
-        __obj.updateDynamic("PartitionIncludeSchemaTable")(__v.asInstanceOf[js.Any])
-      )
+      PartitionIncludeSchemaTable.foreach(__v => __obj.updateDynamic("PartitionIncludeSchemaTable")(__v.asInstanceOf[js.Any]))
       Topic.foreach(__v => __obj.updateDynamic("Topic")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KafkaSettings]
     }
@@ -2841,16 +2646,10 @@ package dms {
       val __obj = js.Dynamic.literal()
       IncludeControlDetails.foreach(__v => __obj.updateDynamic("IncludeControlDetails")(__v.asInstanceOf[js.Any]))
       IncludePartitionValue.foreach(__v => __obj.updateDynamic("IncludePartitionValue")(__v.asInstanceOf[js.Any]))
-      IncludeTableAlterOperations.foreach(__v =>
-        __obj.updateDynamic("IncludeTableAlterOperations")(__v.asInstanceOf[js.Any])
-      )
-      IncludeTransactionDetails.foreach(__v =>
-        __obj.updateDynamic("IncludeTransactionDetails")(__v.asInstanceOf[js.Any])
-      )
+      IncludeTableAlterOperations.foreach(__v => __obj.updateDynamic("IncludeTableAlterOperations")(__v.asInstanceOf[js.Any]))
+      IncludeTransactionDetails.foreach(__v => __obj.updateDynamic("IncludeTransactionDetails")(__v.asInstanceOf[js.Any]))
       MessageFormat.foreach(__v => __obj.updateDynamic("MessageFormat")(__v.asInstanceOf[js.Any]))
-      PartitionIncludeSchemaTable.foreach(__v =>
-        __obj.updateDynamic("PartitionIncludeSchemaTable")(__v.asInstanceOf[js.Any])
-      )
+      PartitionIncludeSchemaTable.foreach(__v => __obj.updateDynamic("PartitionIncludeSchemaTable")(__v.asInstanceOf[js.Any]))
       ServiceAccessRoleArn.foreach(__v => __obj.updateDynamic("ServiceAccessRoleArn")(__v.asInstanceOf[js.Any]))
       StreamArn.foreach(__v => __obj.updateDynamic("StreamArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KinesisSettings]
@@ -3029,15 +2828,11 @@ package dms {
       EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
       EngineName.foreach(__v => __obj.updateDynamic("EngineName")(__v.asInstanceOf[js.Any]))
       ExternalTableDefinition.foreach(__v => __obj.updateDynamic("ExternalTableDefinition")(__v.asInstanceOf[js.Any]))
-      ExtraConnectionAttributes.foreach(__v =>
-        __obj.updateDynamic("ExtraConnectionAttributes")(__v.asInstanceOf[js.Any])
-      )
+      ExtraConnectionAttributes.foreach(__v => __obj.updateDynamic("ExtraConnectionAttributes")(__v.asInstanceOf[js.Any]))
       IBMDb2Settings.foreach(__v => __obj.updateDynamic("IBMDb2Settings")(__v.asInstanceOf[js.Any]))
       KafkaSettings.foreach(__v => __obj.updateDynamic("KafkaSettings")(__v.asInstanceOf[js.Any]))
       KinesisSettings.foreach(__v => __obj.updateDynamic("KinesisSettings")(__v.asInstanceOf[js.Any]))
-      MicrosoftSQLServerSettings.foreach(__v =>
-        __obj.updateDynamic("MicrosoftSQLServerSettings")(__v.asInstanceOf[js.Any])
-      )
+      MicrosoftSQLServerSettings.foreach(__v => __obj.updateDynamic("MicrosoftSQLServerSettings")(__v.asInstanceOf[js.Any]))
       MongoDbSettings.foreach(__v => __obj.updateDynamic("MongoDbSettings")(__v.asInstanceOf[js.Any]))
       MySQLSettings.foreach(__v => __obj.updateDynamic("MySQLSettings")(__v.asInstanceOf[js.Any]))
       NeptuneSettings.foreach(__v => __obj.updateDynamic("NeptuneSettings")(__v.asInstanceOf[js.Any]))
@@ -3170,13 +2965,9 @@ package dms {
       AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       ReplicationInstanceClass.foreach(__v => __obj.updateDynamic("ReplicationInstanceClass")(__v.asInstanceOf[js.Any]))
-      ReplicationInstanceIdentifier.foreach(__v =>
-        __obj.updateDynamic("ReplicationInstanceIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      ReplicationInstanceIdentifier.foreach(__v => __obj.updateDynamic("ReplicationInstanceIdentifier")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyReplicationInstanceMessage]
     }
@@ -3223,9 +3014,7 @@ package dms {
         "SubnetIds" -> SubnetIds.asInstanceOf[js.Any]
       )
 
-      ReplicationSubnetGroupDescription.foreach(__v =>
-        __obj.updateDynamic("ReplicationSubnetGroupDescription")(__v.asInstanceOf[js.Any])
-      )
+      ReplicationSubnetGroupDescription.foreach(__v => __obj.updateDynamic("ReplicationSubnetGroupDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyReplicationSubnetGroupMessage]
     }
   }
@@ -3286,9 +3075,7 @@ package dms {
       CdcStartTime.foreach(__v => __obj.updateDynamic("CdcStartTime")(__v.asInstanceOf[js.Any]))
       CdcStopPosition.foreach(__v => __obj.updateDynamic("CdcStopPosition")(__v.asInstanceOf[js.Any]))
       MigrationType.foreach(__v => __obj.updateDynamic("MigrationType")(__v.asInstanceOf[js.Any]))
-      ReplicationTaskIdentifier.foreach(__v =>
-        __obj.updateDynamic("ReplicationTaskIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      ReplicationTaskIdentifier.foreach(__v => __obj.updateDynamic("ReplicationTaskIdentifier")(__v.asInstanceOf[js.Any]))
       ReplicationTaskSettings.foreach(__v => __obj.updateDynamic("ReplicationTaskSettings")(__v.asInstanceOf[js.Any]))
       TableMappings.foreach(__v => __obj.updateDynamic("TableMappings")(__v.asInstanceOf[js.Any]))
       TaskData.foreach(__v => __obj.updateDynamic("TaskData")(__v.asInstanceOf[js.Any]))
@@ -3717,9 +3504,7 @@ package dms {
       DateFormat.foreach(__v => __obj.updateDynamic("DateFormat")(__v.asInstanceOf[js.Any]))
       EmptyAsNull.foreach(__v => __obj.updateDynamic("EmptyAsNull")(__v.asInstanceOf[js.Any]))
       EncryptionMode.foreach(__v => __obj.updateDynamic("EncryptionMode")(__v.asInstanceOf[js.Any]))
-      FileTransferUploadStreams.foreach(__v =>
-        __obj.updateDynamic("FileTransferUploadStreams")(__v.asInstanceOf[js.Any])
-      )
+      FileTransferUploadStreams.foreach(__v => __obj.updateDynamic("FileTransferUploadStreams")(__v.asInstanceOf[js.Any]))
       LoadTimeout.foreach(__v => __obj.updateDynamic("LoadTimeout")(__v.asInstanceOf[js.Any]))
       MaxFileSize.foreach(__v => __obj.updateDynamic("MaxFileSize")(__v.asInstanceOf[js.Any]))
       Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
@@ -3728,9 +3513,7 @@ package dms {
       ReplaceChars.foreach(__v => __obj.updateDynamic("ReplaceChars")(__v.asInstanceOf[js.Any]))
       ReplaceInvalidChars.foreach(__v => __obj.updateDynamic("ReplaceInvalidChars")(__v.asInstanceOf[js.Any]))
       ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
-      ServerSideEncryptionKmsKeyId.foreach(__v =>
-        __obj.updateDynamic("ServerSideEncryptionKmsKeyId")(__v.asInstanceOf[js.Any])
-      )
+      ServerSideEncryptionKmsKeyId.foreach(__v => __obj.updateDynamic("ServerSideEncryptionKmsKeyId")(__v.asInstanceOf[js.Any]))
       ServiceAccessRoleArn.foreach(__v => __obj.updateDynamic("ServiceAccessRoleArn")(__v.asInstanceOf[js.Any]))
       TimeFormat.foreach(__v => __obj.updateDynamic("TimeFormat")(__v.asInstanceOf[js.Any]))
       TrimBlanks.foreach(__v => __obj.updateDynamic("TrimBlanks")(__v.asInstanceOf[js.Any]))
@@ -3999,34 +3782,18 @@ package dms {
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
       PendingModifiedValues.foreach(__v => __obj.updateDynamic("PendingModifiedValues")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
       ReplicationInstanceArn.foreach(__v => __obj.updateDynamic("ReplicationInstanceArn")(__v.asInstanceOf[js.Any]))
       ReplicationInstanceClass.foreach(__v => __obj.updateDynamic("ReplicationInstanceClass")(__v.asInstanceOf[js.Any]))
-      ReplicationInstanceIdentifier.foreach(__v =>
-        __obj.updateDynamic("ReplicationInstanceIdentifier")(__v.asInstanceOf[js.Any])
-      )
-      ReplicationInstancePrivateIpAddress.foreach(__v =>
-        __obj.updateDynamic("ReplicationInstancePrivateIpAddress")(__v.asInstanceOf[js.Any])
-      )
-      ReplicationInstancePrivateIpAddresses.foreach(__v =>
-        __obj.updateDynamic("ReplicationInstancePrivateIpAddresses")(__v.asInstanceOf[js.Any])
-      )
-      ReplicationInstancePublicIpAddress.foreach(__v =>
-        __obj.updateDynamic("ReplicationInstancePublicIpAddress")(__v.asInstanceOf[js.Any])
-      )
-      ReplicationInstancePublicIpAddresses.foreach(__v =>
-        __obj.updateDynamic("ReplicationInstancePublicIpAddresses")(__v.asInstanceOf[js.Any])
-      )
-      ReplicationInstanceStatus.foreach(__v =>
-        __obj.updateDynamic("ReplicationInstanceStatus")(__v.asInstanceOf[js.Any])
-      )
+      ReplicationInstanceIdentifier.foreach(__v => __obj.updateDynamic("ReplicationInstanceIdentifier")(__v.asInstanceOf[js.Any]))
+      ReplicationInstancePrivateIpAddress.foreach(__v => __obj.updateDynamic("ReplicationInstancePrivateIpAddress")(__v.asInstanceOf[js.Any]))
+      ReplicationInstancePrivateIpAddresses.foreach(__v => __obj.updateDynamic("ReplicationInstancePrivateIpAddresses")(__v.asInstanceOf[js.Any]))
+      ReplicationInstancePublicIpAddress.foreach(__v => __obj.updateDynamic("ReplicationInstancePublicIpAddress")(__v.asInstanceOf[js.Any]))
+      ReplicationInstancePublicIpAddresses.foreach(__v => __obj.updateDynamic("ReplicationInstancePublicIpAddresses")(__v.asInstanceOf[js.Any]))
+      ReplicationInstanceStatus.foreach(__v => __obj.updateDynamic("ReplicationInstanceStatus")(__v.asInstanceOf[js.Any]))
       ReplicationSubnetGroup.foreach(__v => __obj.updateDynamic("ReplicationSubnetGroup")(__v.asInstanceOf[js.Any]))
-      SecondaryAvailabilityZone.foreach(__v =>
-        __obj.updateDynamic("SecondaryAvailabilityZone")(__v.asInstanceOf[js.Any])
-      )
+      SecondaryAvailabilityZone.foreach(__v => __obj.updateDynamic("SecondaryAvailabilityZone")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroups.foreach(__v => __obj.updateDynamic("VpcSecurityGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicationInstance]
     }
@@ -4050,9 +3817,7 @@ package dms {
         ReplicationTaskName: js.UndefOr[String] = js.undefined
     ): ReplicationInstanceTaskLog = {
       val __obj = js.Dynamic.literal()
-      ReplicationInstanceTaskLogSize.foreach(__v =>
-        __obj.updateDynamic("ReplicationInstanceTaskLogSize")(__v.asInstanceOf[js.Any])
-      )
+      ReplicationInstanceTaskLogSize.foreach(__v => __obj.updateDynamic("ReplicationInstanceTaskLogSize")(__v.asInstanceOf[js.Any]))
       ReplicationTaskArn.foreach(__v => __obj.updateDynamic("ReplicationTaskArn")(__v.asInstanceOf[js.Any]))
       ReplicationTaskName.foreach(__v => __obj.updateDynamic("ReplicationTaskName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicationInstanceTaskLog]
@@ -4109,12 +3874,8 @@ package dms {
         VpcId: js.UndefOr[String] = js.undefined
     ): ReplicationSubnetGroup = {
       val __obj = js.Dynamic.literal()
-      ReplicationSubnetGroupDescription.foreach(__v =>
-        __obj.updateDynamic("ReplicationSubnetGroupDescription")(__v.asInstanceOf[js.Any])
-      )
-      ReplicationSubnetGroupIdentifier.foreach(__v =>
-        __obj.updateDynamic("ReplicationSubnetGroupIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      ReplicationSubnetGroupDescription.foreach(__v => __obj.updateDynamic("ReplicationSubnetGroupDescription")(__v.asInstanceOf[js.Any]))
+      ReplicationSubnetGroupIdentifier.foreach(__v => __obj.updateDynamic("ReplicationSubnetGroupIdentifier")(__v.asInstanceOf[js.Any]))
       SubnetGroupStatus.foreach(__v => __obj.updateDynamic("SubnetGroupStatus")(__v.asInstanceOf[js.Any]))
       Subnets.foreach(__v => __obj.updateDynamic("Subnets")(__v.asInstanceOf[js.Any]))
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
@@ -4177,12 +3938,8 @@ package dms {
       RecoveryCheckpoint.foreach(__v => __obj.updateDynamic("RecoveryCheckpoint")(__v.asInstanceOf[js.Any]))
       ReplicationInstanceArn.foreach(__v => __obj.updateDynamic("ReplicationInstanceArn")(__v.asInstanceOf[js.Any]))
       ReplicationTaskArn.foreach(__v => __obj.updateDynamic("ReplicationTaskArn")(__v.asInstanceOf[js.Any]))
-      ReplicationTaskCreationDate.foreach(__v =>
-        __obj.updateDynamic("ReplicationTaskCreationDate")(__v.asInstanceOf[js.Any])
-      )
-      ReplicationTaskIdentifier.foreach(__v =>
-        __obj.updateDynamic("ReplicationTaskIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      ReplicationTaskCreationDate.foreach(__v => __obj.updateDynamic("ReplicationTaskCreationDate")(__v.asInstanceOf[js.Any]))
+      ReplicationTaskIdentifier.foreach(__v => __obj.updateDynamic("ReplicationTaskIdentifier")(__v.asInstanceOf[js.Any]))
       ReplicationTaskSettings.foreach(__v => __obj.updateDynamic("ReplicationTaskSettings")(__v.asInstanceOf[js.Any]))
       ReplicationTaskStartDate.foreach(__v => __obj.updateDynamic("ReplicationTaskStartDate")(__v.asInstanceOf[js.Any]))
       ReplicationTaskStats.foreach(__v => __obj.updateDynamic("ReplicationTaskStats")(__v.asInstanceOf[js.Any]))
@@ -4226,12 +3983,8 @@ package dms {
       AssessmentResultsFile.foreach(__v => __obj.updateDynamic("AssessmentResultsFile")(__v.asInstanceOf[js.Any]))
       AssessmentStatus.foreach(__v => __obj.updateDynamic("AssessmentStatus")(__v.asInstanceOf[js.Any]))
       ReplicationTaskArn.foreach(__v => __obj.updateDynamic("ReplicationTaskArn")(__v.asInstanceOf[js.Any]))
-      ReplicationTaskIdentifier.foreach(__v =>
-        __obj.updateDynamic("ReplicationTaskIdentifier")(__v.asInstanceOf[js.Any])
-      )
-      ReplicationTaskLastAssessmentDate.foreach(__v =>
-        __obj.updateDynamic("ReplicationTaskLastAssessmentDate")(__v.asInstanceOf[js.Any])
-      )
+      ReplicationTaskIdentifier.foreach(__v => __obj.updateDynamic("ReplicationTaskIdentifier")(__v.asInstanceOf[js.Any]))
+      ReplicationTaskLastAssessmentDate.foreach(__v => __obj.updateDynamic("ReplicationTaskLastAssessmentDate")(__v.asInstanceOf[js.Any]))
       S3ObjectUrl.foreach(__v => __obj.updateDynamic("S3ObjectUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicationTaskAssessmentResult]
     }
@@ -4278,12 +4031,8 @@ package dms {
       AssessmentRunName.foreach(__v => __obj.updateDynamic("AssessmentRunName")(__v.asInstanceOf[js.Any]))
       LastFailureMessage.foreach(__v => __obj.updateDynamic("LastFailureMessage")(__v.asInstanceOf[js.Any]))
       ReplicationTaskArn.foreach(__v => __obj.updateDynamic("ReplicationTaskArn")(__v.asInstanceOf[js.Any]))
-      ReplicationTaskAssessmentRunArn.foreach(__v =>
-        __obj.updateDynamic("ReplicationTaskAssessmentRunArn")(__v.asInstanceOf[js.Any])
-      )
-      ReplicationTaskAssessmentRunCreationDate.foreach(__v =>
-        __obj.updateDynamic("ReplicationTaskAssessmentRunCreationDate")(__v.asInstanceOf[js.Any])
-      )
+      ReplicationTaskAssessmentRunArn.foreach(__v => __obj.updateDynamic("ReplicationTaskAssessmentRunArn")(__v.asInstanceOf[js.Any]))
+      ReplicationTaskAssessmentRunCreationDate.foreach(__v => __obj.updateDynamic("ReplicationTaskAssessmentRunCreationDate")(__v.asInstanceOf[js.Any]))
       ResultEncryptionMode.foreach(__v => __obj.updateDynamic("ResultEncryptionMode")(__v.asInstanceOf[js.Any]))
       ResultKmsKeyArn.foreach(__v => __obj.updateDynamic("ResultKmsKeyArn")(__v.asInstanceOf[js.Any]))
       ResultLocationBucket.foreach(__v => __obj.updateDynamic("ResultLocationBucket")(__v.asInstanceOf[js.Any]))
@@ -4310,12 +4059,8 @@ package dms {
         IndividualAssessmentCount: js.UndefOr[Int] = js.undefined
     ): ReplicationTaskAssessmentRunProgress = {
       val __obj = js.Dynamic.literal()
-      IndividualAssessmentCompletedCount.foreach(__v =>
-        __obj.updateDynamic("IndividualAssessmentCompletedCount")(__v.asInstanceOf[js.Any])
-      )
-      IndividualAssessmentCount.foreach(__v =>
-        __obj.updateDynamic("IndividualAssessmentCount")(__v.asInstanceOf[js.Any])
-      )
+      IndividualAssessmentCompletedCount.foreach(__v => __obj.updateDynamic("IndividualAssessmentCompletedCount")(__v.asInstanceOf[js.Any]))
+      IndividualAssessmentCount.foreach(__v => __obj.updateDynamic("IndividualAssessmentCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicationTaskAssessmentRunProgress]
     }
   }
@@ -4343,15 +4088,9 @@ package dms {
     ): ReplicationTaskIndividualAssessment = {
       val __obj = js.Dynamic.literal()
       IndividualAssessmentName.foreach(__v => __obj.updateDynamic("IndividualAssessmentName")(__v.asInstanceOf[js.Any]))
-      ReplicationTaskAssessmentRunArn.foreach(__v =>
-        __obj.updateDynamic("ReplicationTaskAssessmentRunArn")(__v.asInstanceOf[js.Any])
-      )
-      ReplicationTaskIndividualAssessmentArn.foreach(__v =>
-        __obj.updateDynamic("ReplicationTaskIndividualAssessmentArn")(__v.asInstanceOf[js.Any])
-      )
-      ReplicationTaskIndividualAssessmentStartDate.foreach(__v =>
-        __obj.updateDynamic("ReplicationTaskIndividualAssessmentStartDate")(__v.asInstanceOf[js.Any])
-      )
+      ReplicationTaskAssessmentRunArn.foreach(__v => __obj.updateDynamic("ReplicationTaskAssessmentRunArn")(__v.asInstanceOf[js.Any]))
+      ReplicationTaskIndividualAssessmentArn.foreach(__v => __obj.updateDynamic("ReplicationTaskIndividualAssessmentArn")(__v.asInstanceOf[js.Any]))
+      ReplicationTaskIndividualAssessmentStartDate.foreach(__v => __obj.updateDynamic("ReplicationTaskIndividualAssessmentStartDate")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicationTaskIndividualAssessment]
     }
@@ -4422,9 +4161,7 @@ package dms {
         ResourceIdentifier: js.UndefOr[String] = js.undefined
     ): ResourcePendingMaintenanceActions = {
       val __obj = js.Dynamic.literal()
-      PendingMaintenanceActionDetails.foreach(__v =>
-        __obj.updateDynamic("PendingMaintenanceActionDetails")(__v.asInstanceOf[js.Any])
-      )
+      PendingMaintenanceActionDetails.foreach(__v => __obj.updateDynamic("PendingMaintenanceActionDetails")(__v.asInstanceOf[js.Any]))
       ResourceIdentifier.foreach(__v => __obj.updateDynamic("ResourceIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourcePendingMaintenanceActions]
     }
@@ -4499,14 +4236,10 @@ package dms {
       EncryptionMode.foreach(__v => __obj.updateDynamic("EncryptionMode")(__v.asInstanceOf[js.Any]))
       ExternalTableDefinition.foreach(__v => __obj.updateDynamic("ExternalTableDefinition")(__v.asInstanceOf[js.Any]))
       IncludeOpForFullLoad.foreach(__v => __obj.updateDynamic("IncludeOpForFullLoad")(__v.asInstanceOf[js.Any]))
-      ParquetTimestampInMillisecond.foreach(__v =>
-        __obj.updateDynamic("ParquetTimestampInMillisecond")(__v.asInstanceOf[js.Any])
-      )
+      ParquetTimestampInMillisecond.foreach(__v => __obj.updateDynamic("ParquetTimestampInMillisecond")(__v.asInstanceOf[js.Any]))
       ParquetVersion.foreach(__v => __obj.updateDynamic("ParquetVersion")(__v.asInstanceOf[js.Any]))
       RowGroupLength.foreach(__v => __obj.updateDynamic("RowGroupLength")(__v.asInstanceOf[js.Any]))
-      ServerSideEncryptionKmsKeyId.foreach(__v =>
-        __obj.updateDynamic("ServerSideEncryptionKmsKeyId")(__v.asInstanceOf[js.Any])
-      )
+      ServerSideEncryptionKmsKeyId.foreach(__v => __obj.updateDynamic("ServerSideEncryptionKmsKeyId")(__v.asInstanceOf[js.Any]))
       ServiceAccessRoleArn.foreach(__v => __obj.updateDynamic("ServiceAccessRoleArn")(__v.asInstanceOf[js.Any]))
       TimestampColumnName.foreach(__v => __obj.updateDynamic("TimestampColumnName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Settings]
@@ -4620,9 +4353,7 @@ package dms {
         ReplicationTaskAssessmentRun: js.UndefOr[ReplicationTaskAssessmentRun] = js.undefined
     ): StartReplicationTaskAssessmentRunResponse = {
       val __obj = js.Dynamic.literal()
-      ReplicationTaskAssessmentRun.foreach(__v =>
-        __obj.updateDynamic("ReplicationTaskAssessmentRun")(__v.asInstanceOf[js.Any])
-      )
+      ReplicationTaskAssessmentRun.foreach(__v => __obj.updateDynamic("ReplicationTaskAssessmentRun")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartReplicationTaskAssessmentRunResponse]
     }
   }
@@ -4779,9 +4510,7 @@ package dms {
       EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
       EngineDisplayName.foreach(__v => __obj.updateDynamic("EngineDisplayName")(__v.asInstanceOf[js.Any]))
       EngineName.foreach(__v => __obj.updateDynamic("EngineName")(__v.asInstanceOf[js.Any]))
-      ReplicationInstanceEngineMinimumVersion.foreach(__v =>
-        __obj.updateDynamic("ReplicationInstanceEngineMinimumVersion")(__v.asInstanceOf[js.Any])
-      )
+      ReplicationInstanceEngineMinimumVersion.foreach(__v => __obj.updateDynamic("ReplicationInstanceEngineMinimumVersion")(__v.asInstanceOf[js.Any]))
       SupportsCDC.foreach(__v => __obj.updateDynamic("SupportsCDC")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SupportedEndpointType]
     }
@@ -4870,9 +4599,7 @@ package dms {
       val __obj = js.Dynamic.literal()
       Ddls.foreach(__v => __obj.updateDynamic("Ddls")(__v.asInstanceOf[js.Any]))
       Deletes.foreach(__v => __obj.updateDynamic("Deletes")(__v.asInstanceOf[js.Any]))
-      FullLoadCondtnlChkFailedRows.foreach(__v =>
-        __obj.updateDynamic("FullLoadCondtnlChkFailedRows")(__v.asInstanceOf[js.Any])
-      )
+      FullLoadCondtnlChkFailedRows.foreach(__v => __obj.updateDynamic("FullLoadCondtnlChkFailedRows")(__v.asInstanceOf[js.Any]))
       FullLoadEndTime.foreach(__v => __obj.updateDynamic("FullLoadEndTime")(__v.asInstanceOf[js.Any]))
       FullLoadErrorRows.foreach(__v => __obj.updateDynamic("FullLoadErrorRows")(__v.asInstanceOf[js.Any]))
       FullLoadReloaded.foreach(__v => __obj.updateDynamic("FullLoadReloaded")(__v.asInstanceOf[js.Any]))
@@ -4888,9 +4615,7 @@ package dms {
       ValidationPendingRecords.foreach(__v => __obj.updateDynamic("ValidationPendingRecords")(__v.asInstanceOf[js.Any]))
       ValidationState.foreach(__v => __obj.updateDynamic("ValidationState")(__v.asInstanceOf[js.Any]))
       ValidationStateDetails.foreach(__v => __obj.updateDynamic("ValidationStateDetails")(__v.asInstanceOf[js.Any]))
-      ValidationSuspendedRecords.foreach(__v =>
-        __obj.updateDynamic("ValidationSuspendedRecords")(__v.asInstanceOf[js.Any])
-      )
+      ValidationSuspendedRecords.foreach(__v => __obj.updateDynamic("ValidationSuspendedRecords")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TableStatistics]
     }
   }

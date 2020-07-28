@@ -56,70 +56,35 @@ package object forecast {
 
   implicit final class ForecastOps(private val service: Forecast) extends AnyVal {
 
-    @inline def createDatasetFuture(params: CreateDatasetRequest): Future[CreateDatasetResponse] =
-      service.createDataset(params).promise().toFuture
-    @inline def createDatasetGroupFuture(params: CreateDatasetGroupRequest): Future[CreateDatasetGroupResponse] =
-      service.createDatasetGroup(params).promise().toFuture
-    @inline def createDatasetImportJobFuture(
-        params: CreateDatasetImportJobRequest
-    ): Future[CreateDatasetImportJobResponse] = service.createDatasetImportJob(params).promise().toFuture
-    @inline def createForecastExportJobFuture(
-        params: CreateForecastExportJobRequest
-    ): Future[CreateForecastExportJobResponse] = service.createForecastExportJob(params).promise().toFuture
-    @inline def createForecastFuture(params: CreateForecastRequest): Future[CreateForecastResponse] =
-      service.createForecast(params).promise().toFuture
-    @inline def createPredictorFuture(params: CreatePredictorRequest): Future[CreatePredictorResponse] =
-      service.createPredictor(params).promise().toFuture
-    @inline def deleteDatasetFuture(params: DeleteDatasetRequest): Future[js.Object] =
-      service.deleteDataset(params).promise().toFuture
-    @inline def deleteDatasetGroupFuture(params: DeleteDatasetGroupRequest): Future[js.Object] =
-      service.deleteDatasetGroup(params).promise().toFuture
-    @inline def deleteDatasetImportJobFuture(params: DeleteDatasetImportJobRequest): Future[js.Object] =
-      service.deleteDatasetImportJob(params).promise().toFuture
-    @inline def deleteForecastExportJobFuture(params: DeleteForecastExportJobRequest): Future[js.Object] =
-      service.deleteForecastExportJob(params).promise().toFuture
-    @inline def deleteForecastFuture(params: DeleteForecastRequest): Future[js.Object] =
-      service.deleteForecast(params).promise().toFuture
-    @inline def deletePredictorFuture(params: DeletePredictorRequest): Future[js.Object] =
-      service.deletePredictor(params).promise().toFuture
-    @inline def describeDatasetFuture(params: DescribeDatasetRequest): Future[DescribeDatasetResponse] =
-      service.describeDataset(params).promise().toFuture
-    @inline def describeDatasetGroupFuture(params: DescribeDatasetGroupRequest): Future[DescribeDatasetGroupResponse] =
-      service.describeDatasetGroup(params).promise().toFuture
-    @inline def describeDatasetImportJobFuture(
-        params: DescribeDatasetImportJobRequest
-    ): Future[DescribeDatasetImportJobResponse] = service.describeDatasetImportJob(params).promise().toFuture
-    @inline def describeForecastExportJobFuture(
-        params: DescribeForecastExportJobRequest
-    ): Future[DescribeForecastExportJobResponse] = service.describeForecastExportJob(params).promise().toFuture
-    @inline def describeForecastFuture(params: DescribeForecastRequest): Future[DescribeForecastResponse] =
-      service.describeForecast(params).promise().toFuture
-    @inline def describePredictorFuture(params: DescribePredictorRequest): Future[DescribePredictorResponse] =
-      service.describePredictor(params).promise().toFuture
-    @inline def getAccuracyMetricsFuture(params: GetAccuracyMetricsRequest): Future[GetAccuracyMetricsResponse] =
-      service.getAccuracyMetrics(params).promise().toFuture
-    @inline def listDatasetGroupsFuture(params: ListDatasetGroupsRequest): Future[ListDatasetGroupsResponse] =
-      service.listDatasetGroups(params).promise().toFuture
-    @inline def listDatasetImportJobsFuture(
-        params: ListDatasetImportJobsRequest
-    ): Future[ListDatasetImportJobsResponse] = service.listDatasetImportJobs(params).promise().toFuture
-    @inline def listDatasetsFuture(params: ListDatasetsRequest): Future[ListDatasetsResponse] =
-      service.listDatasets(params).promise().toFuture
-    @inline def listForecastExportJobsFuture(
-        params: ListForecastExportJobsRequest
-    ): Future[ListForecastExportJobsResponse] = service.listForecastExportJobs(params).promise().toFuture
-    @inline def listForecastsFuture(params: ListForecastsRequest): Future[ListForecastsResponse] =
-      service.listForecasts(params).promise().toFuture
-    @inline def listPredictorsFuture(params: ListPredictorsRequest): Future[ListPredictorsResponse] =
-      service.listPredictors(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateDatasetGroupFuture(params: UpdateDatasetGroupRequest): Future[UpdateDatasetGroupResponse] =
-      service.updateDatasetGroup(params).promise().toFuture
+    @inline def createDatasetFuture(params: CreateDatasetRequest): Future[CreateDatasetResponse] = service.createDataset(params).promise().toFuture
+    @inline def createDatasetGroupFuture(params: CreateDatasetGroupRequest): Future[CreateDatasetGroupResponse] = service.createDatasetGroup(params).promise().toFuture
+    @inline def createDatasetImportJobFuture(params: CreateDatasetImportJobRequest): Future[CreateDatasetImportJobResponse] = service.createDatasetImportJob(params).promise().toFuture
+    @inline def createForecastExportJobFuture(params: CreateForecastExportJobRequest): Future[CreateForecastExportJobResponse] = service.createForecastExportJob(params).promise().toFuture
+    @inline def createForecastFuture(params: CreateForecastRequest): Future[CreateForecastResponse] = service.createForecast(params).promise().toFuture
+    @inline def createPredictorFuture(params: CreatePredictorRequest): Future[CreatePredictorResponse] = service.createPredictor(params).promise().toFuture
+    @inline def deleteDatasetFuture(params: DeleteDatasetRequest): Future[js.Object] = service.deleteDataset(params).promise().toFuture
+    @inline def deleteDatasetGroupFuture(params: DeleteDatasetGroupRequest): Future[js.Object] = service.deleteDatasetGroup(params).promise().toFuture
+    @inline def deleteDatasetImportJobFuture(params: DeleteDatasetImportJobRequest): Future[js.Object] = service.deleteDatasetImportJob(params).promise().toFuture
+    @inline def deleteForecastExportJobFuture(params: DeleteForecastExportJobRequest): Future[js.Object] = service.deleteForecastExportJob(params).promise().toFuture
+    @inline def deleteForecastFuture(params: DeleteForecastRequest): Future[js.Object] = service.deleteForecast(params).promise().toFuture
+    @inline def deletePredictorFuture(params: DeletePredictorRequest): Future[js.Object] = service.deletePredictor(params).promise().toFuture
+    @inline def describeDatasetFuture(params: DescribeDatasetRequest): Future[DescribeDatasetResponse] = service.describeDataset(params).promise().toFuture
+    @inline def describeDatasetGroupFuture(params: DescribeDatasetGroupRequest): Future[DescribeDatasetGroupResponse] = service.describeDatasetGroup(params).promise().toFuture
+    @inline def describeDatasetImportJobFuture(params: DescribeDatasetImportJobRequest): Future[DescribeDatasetImportJobResponse] = service.describeDatasetImportJob(params).promise().toFuture
+    @inline def describeForecastExportJobFuture(params: DescribeForecastExportJobRequest): Future[DescribeForecastExportJobResponse] = service.describeForecastExportJob(params).promise().toFuture
+    @inline def describeForecastFuture(params: DescribeForecastRequest): Future[DescribeForecastResponse] = service.describeForecast(params).promise().toFuture
+    @inline def describePredictorFuture(params: DescribePredictorRequest): Future[DescribePredictorResponse] = service.describePredictor(params).promise().toFuture
+    @inline def getAccuracyMetricsFuture(params: GetAccuracyMetricsRequest): Future[GetAccuracyMetricsResponse] = service.getAccuracyMetrics(params).promise().toFuture
+    @inline def listDatasetGroupsFuture(params: ListDatasetGroupsRequest): Future[ListDatasetGroupsResponse] = service.listDatasetGroups(params).promise().toFuture
+    @inline def listDatasetImportJobsFuture(params: ListDatasetImportJobsRequest): Future[ListDatasetImportJobsResponse] = service.listDatasetImportJobs(params).promise().toFuture
+    @inline def listDatasetsFuture(params: ListDatasetsRequest): Future[ListDatasetsResponse] = service.listDatasets(params).promise().toFuture
+    @inline def listForecastExportJobsFuture(params: ListForecastExportJobsRequest): Future[ListForecastExportJobsResponse] = service.listForecastExportJobs(params).promise().toFuture
+    @inline def listForecastsFuture(params: ListForecastsRequest): Future[ListForecastsResponse] = service.listForecasts(params).promise().toFuture
+    @inline def listPredictorsFuture(params: ListPredictorsRequest): Future[ListPredictorsResponse] = service.listPredictors(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateDatasetGroupFuture(params: UpdateDatasetGroupRequest): Future[UpdateDatasetGroupResponse] = service.updateDatasetGroup(params).promise().toFuture
   }
 }
 
@@ -131,11 +96,9 @@ package forecast {
 
     def createDataset(params: CreateDatasetRequest): Request[CreateDatasetResponse] = js.native
     def createDatasetGroup(params: CreateDatasetGroupRequest): Request[CreateDatasetGroupResponse] = js.native
-    def createDatasetImportJob(params: CreateDatasetImportJobRequest): Request[CreateDatasetImportJobResponse] =
-      js.native
+    def createDatasetImportJob(params: CreateDatasetImportJobRequest): Request[CreateDatasetImportJobResponse] = js.native
     def createForecast(params: CreateForecastRequest): Request[CreateForecastResponse] = js.native
-    def createForecastExportJob(params: CreateForecastExportJobRequest): Request[CreateForecastExportJobResponse] =
-      js.native
+    def createForecastExportJob(params: CreateForecastExportJobRequest): Request[CreateForecastExportJobResponse] = js.native
     def createPredictor(params: CreatePredictorRequest): Request[CreatePredictorResponse] = js.native
     def deleteDataset(params: DeleteDatasetRequest): Request[js.Object] = js.native
     def deleteDatasetGroup(params: DeleteDatasetGroupRequest): Request[js.Object] = js.native
@@ -145,19 +108,15 @@ package forecast {
     def deletePredictor(params: DeletePredictorRequest): Request[js.Object] = js.native
     def describeDataset(params: DescribeDatasetRequest): Request[DescribeDatasetResponse] = js.native
     def describeDatasetGroup(params: DescribeDatasetGroupRequest): Request[DescribeDatasetGroupResponse] = js.native
-    def describeDatasetImportJob(params: DescribeDatasetImportJobRequest): Request[DescribeDatasetImportJobResponse] =
-      js.native
+    def describeDatasetImportJob(params: DescribeDatasetImportJobRequest): Request[DescribeDatasetImportJobResponse] = js.native
     def describeForecast(params: DescribeForecastRequest): Request[DescribeForecastResponse] = js.native
-    def describeForecastExportJob(
-        params: DescribeForecastExportJobRequest
-    ): Request[DescribeForecastExportJobResponse] = js.native
+    def describeForecastExportJob(params: DescribeForecastExportJobRequest): Request[DescribeForecastExportJobResponse] = js.native
     def describePredictor(params: DescribePredictorRequest): Request[DescribePredictorResponse] = js.native
     def getAccuracyMetrics(params: GetAccuracyMetricsRequest): Request[GetAccuracyMetricsResponse] = js.native
     def listDatasetGroups(params: ListDatasetGroupsRequest): Request[ListDatasetGroupsResponse] = js.native
     def listDatasetImportJobs(params: ListDatasetImportJobsRequest): Request[ListDatasetImportJobsResponse] = js.native
     def listDatasets(params: ListDatasetsRequest): Request[ListDatasetsResponse] = js.native
-    def listForecastExportJobs(params: ListForecastExportJobsRequest): Request[ListForecastExportJobsResponse] =
-      js.native
+    def listForecastExportJobs(params: ListForecastExportJobsRequest): Request[ListForecastExportJobsResponse] = js.native
     def listForecasts(params: ListForecastsRequest): Request[ListForecastsResponse] = js.native
     def listPredictors(params: ListPredictorsRequest): Request[ListPredictorsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
@@ -1154,9 +1113,7 @@ package forecast {
       PerformAutoML.foreach(__v => __obj.updateDynamic("PerformAutoML")(__v.asInstanceOf[js.Any]))
       PerformHPO.foreach(__v => __obj.updateDynamic("PerformHPO")(__v.asInstanceOf[js.Any]))
       PredictorArn.foreach(__v => __obj.updateDynamic("PredictorArn")(__v.asInstanceOf[js.Any]))
-      PredictorExecutionDetails.foreach(__v =>
-        __obj.updateDynamic("PredictorExecutionDetails")(__v.asInstanceOf[js.Any])
-      )
+      PredictorExecutionDetails.foreach(__v => __obj.updateDynamic("PredictorExecutionDetails")(__v.asInstanceOf[js.Any]))
       PredictorName.foreach(__v => __obj.updateDynamic("PredictorName")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       TrainingParameters.foreach(__v => __obj.updateDynamic("TrainingParameters")(__v.asInstanceOf[js.Any]))
@@ -1175,8 +1132,7 @@ package forecast {
     val WEB_TRAFFIC = "WEB_TRAFFIC".asInstanceOf[Domain]
     val METRICS = "METRICS".asInstanceOf[Domain]
 
-    val values =
-      js.Object.freeze(js.Array(RETAIL, CUSTOM, INVENTORY_PLANNING, EC2_CAPACITY, WORK_FORCE, WEB_TRAFFIC, METRICS))
+    val values = js.Object.freeze(js.Array(RETAIL, CUSTOM, INVENTORY_PLANNING, EC2_CAPACITY, WORK_FORCE, WEB_TRAFFIC, METRICS))
   }
 
   /**
@@ -1341,9 +1297,7 @@ package forecast {
         "FeaturizationMethodName" -> FeaturizationMethodName.asInstanceOf[js.Any]
       )
 
-      FeaturizationMethodParameters.foreach(__v =>
-        __obj.updateDynamic("FeaturizationMethodParameters")(__v.asInstanceOf[js.Any])
-      )
+      FeaturizationMethodParameters.foreach(__v => __obj.updateDynamic("FeaturizationMethodParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FeaturizationMethod]
     }
   }
@@ -1498,9 +1452,7 @@ package forecast {
         PredictorEvaluationResults: js.UndefOr[PredictorEvaluationResults] = js.undefined
     ): GetAccuracyMetricsResponse = {
       val __obj = js.Dynamic.literal()
-      PredictorEvaluationResults.foreach(__v =>
-        __obj.updateDynamic("PredictorEvaluationResults")(__v.asInstanceOf[js.Any])
-      )
+      PredictorEvaluationResults.foreach(__v => __obj.updateDynamic("PredictorEvaluationResults")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAccuracyMetricsResponse]
     }
   }
@@ -1894,12 +1846,8 @@ package forecast {
         IntegerParameterRanges: js.UndefOr[IntegerParameterRanges] = js.undefined
     ): ParameterRanges = {
       val __obj = js.Dynamic.literal()
-      CategoricalParameterRanges.foreach(__v =>
-        __obj.updateDynamic("CategoricalParameterRanges")(__v.asInstanceOf[js.Any])
-      )
-      ContinuousParameterRanges.foreach(__v =>
-        __obj.updateDynamic("ContinuousParameterRanges")(__v.asInstanceOf[js.Any])
-      )
+      CategoricalParameterRanges.foreach(__v => __obj.updateDynamic("CategoricalParameterRanges")(__v.asInstanceOf[js.Any]))
+      ContinuousParameterRanges.foreach(__v => __obj.updateDynamic("ContinuousParameterRanges")(__v.asInstanceOf[js.Any]))
       IntegerParameterRanges.foreach(__v => __obj.updateDynamic("IntegerParameterRanges")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ParameterRanges]
     }

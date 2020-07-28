@@ -40,66 +40,28 @@ package object route53resolver {
 
   implicit final class Route53ResolverOps(private val service: Route53Resolver) extends AnyVal {
 
-    @inline def associateResolverEndpointIpAddressFuture(
-        params: AssociateResolverEndpointIpAddressRequest
-    ): Future[AssociateResolverEndpointIpAddressResponse] =
-      service.associateResolverEndpointIpAddress(params).promise().toFuture
-    @inline def associateResolverRuleFuture(
-        params: AssociateResolverRuleRequest
-    ): Future[AssociateResolverRuleResponse] = service.associateResolverRule(params).promise().toFuture
-    @inline def createResolverEndpointFuture(
-        params: CreateResolverEndpointRequest
-    ): Future[CreateResolverEndpointResponse] = service.createResolverEndpoint(params).promise().toFuture
-    @inline def createResolverRuleFuture(params: CreateResolverRuleRequest): Future[CreateResolverRuleResponse] =
-      service.createResolverRule(params).promise().toFuture
-    @inline def deleteResolverEndpointFuture(
-        params: DeleteResolverEndpointRequest
-    ): Future[DeleteResolverEndpointResponse] = service.deleteResolverEndpoint(params).promise().toFuture
-    @inline def deleteResolverRuleFuture(params: DeleteResolverRuleRequest): Future[DeleteResolverRuleResponse] =
-      service.deleteResolverRule(params).promise().toFuture
-    @inline def disassociateResolverEndpointIpAddressFuture(
-        params: DisassociateResolverEndpointIpAddressRequest
-    ): Future[DisassociateResolverEndpointIpAddressResponse] =
-      service.disassociateResolverEndpointIpAddress(params).promise().toFuture
-    @inline def disassociateResolverRuleFuture(
-        params: DisassociateResolverRuleRequest
-    ): Future[DisassociateResolverRuleResponse] = service.disassociateResolverRule(params).promise().toFuture
-    @inline def getResolverEndpointFuture(params: GetResolverEndpointRequest): Future[GetResolverEndpointResponse] =
-      service.getResolverEndpoint(params).promise().toFuture
-    @inline def getResolverRuleAssociationFuture(
-        params: GetResolverRuleAssociationRequest
-    ): Future[GetResolverRuleAssociationResponse] = service.getResolverRuleAssociation(params).promise().toFuture
-    @inline def getResolverRuleFuture(params: GetResolverRuleRequest): Future[GetResolverRuleResponse] =
-      service.getResolverRule(params).promise().toFuture
-    @inline def getResolverRulePolicyFuture(
-        params: GetResolverRulePolicyRequest
-    ): Future[GetResolverRulePolicyResponse] = service.getResolverRulePolicy(params).promise().toFuture
-    @inline def listResolverEndpointIpAddressesFuture(
-        params: ListResolverEndpointIpAddressesRequest
-    ): Future[ListResolverEndpointIpAddressesResponse] =
-      service.listResolverEndpointIpAddresses(params).promise().toFuture
-    @inline def listResolverEndpointsFuture(
-        params: ListResolverEndpointsRequest
-    ): Future[ListResolverEndpointsResponse] = service.listResolverEndpoints(params).promise().toFuture
-    @inline def listResolverRuleAssociationsFuture(
-        params: ListResolverRuleAssociationsRequest
-    ): Future[ListResolverRuleAssociationsResponse] = service.listResolverRuleAssociations(params).promise().toFuture
-    @inline def listResolverRulesFuture(params: ListResolverRulesRequest): Future[ListResolverRulesResponse] =
-      service.listResolverRules(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def putResolverRulePolicyFuture(
-        params: PutResolverRulePolicyRequest
-    ): Future[PutResolverRulePolicyResponse] = service.putResolverRulePolicy(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateResolverEndpointFuture(
-        params: UpdateResolverEndpointRequest
-    ): Future[UpdateResolverEndpointResponse] = service.updateResolverEndpoint(params).promise().toFuture
-    @inline def updateResolverRuleFuture(params: UpdateResolverRuleRequest): Future[UpdateResolverRuleResponse] =
-      service.updateResolverRule(params).promise().toFuture
+    @inline def associateResolverEndpointIpAddressFuture(params: AssociateResolverEndpointIpAddressRequest): Future[AssociateResolverEndpointIpAddressResponse] = service.associateResolverEndpointIpAddress(params).promise().toFuture
+    @inline def associateResolverRuleFuture(params: AssociateResolverRuleRequest): Future[AssociateResolverRuleResponse] = service.associateResolverRule(params).promise().toFuture
+    @inline def createResolverEndpointFuture(params: CreateResolverEndpointRequest): Future[CreateResolverEndpointResponse] = service.createResolverEndpoint(params).promise().toFuture
+    @inline def createResolverRuleFuture(params: CreateResolverRuleRequest): Future[CreateResolverRuleResponse] = service.createResolverRule(params).promise().toFuture
+    @inline def deleteResolverEndpointFuture(params: DeleteResolverEndpointRequest): Future[DeleteResolverEndpointResponse] = service.deleteResolverEndpoint(params).promise().toFuture
+    @inline def deleteResolverRuleFuture(params: DeleteResolverRuleRequest): Future[DeleteResolverRuleResponse] = service.deleteResolverRule(params).promise().toFuture
+    @inline def disassociateResolverEndpointIpAddressFuture(params: DisassociateResolverEndpointIpAddressRequest): Future[DisassociateResolverEndpointIpAddressResponse] = service.disassociateResolverEndpointIpAddress(params).promise().toFuture
+    @inline def disassociateResolverRuleFuture(params: DisassociateResolverRuleRequest): Future[DisassociateResolverRuleResponse] = service.disassociateResolverRule(params).promise().toFuture
+    @inline def getResolverEndpointFuture(params: GetResolverEndpointRequest): Future[GetResolverEndpointResponse] = service.getResolverEndpoint(params).promise().toFuture
+    @inline def getResolverRuleAssociationFuture(params: GetResolverRuleAssociationRequest): Future[GetResolverRuleAssociationResponse] = service.getResolverRuleAssociation(params).promise().toFuture
+    @inline def getResolverRuleFuture(params: GetResolverRuleRequest): Future[GetResolverRuleResponse] = service.getResolverRule(params).promise().toFuture
+    @inline def getResolverRulePolicyFuture(params: GetResolverRulePolicyRequest): Future[GetResolverRulePolicyResponse] = service.getResolverRulePolicy(params).promise().toFuture
+    @inline def listResolverEndpointIpAddressesFuture(params: ListResolverEndpointIpAddressesRequest): Future[ListResolverEndpointIpAddressesResponse] = service.listResolverEndpointIpAddresses(params).promise().toFuture
+    @inline def listResolverEndpointsFuture(params: ListResolverEndpointsRequest): Future[ListResolverEndpointsResponse] = service.listResolverEndpoints(params).promise().toFuture
+    @inline def listResolverRuleAssociationsFuture(params: ListResolverRuleAssociationsRequest): Future[ListResolverRuleAssociationsResponse] = service.listResolverRuleAssociations(params).promise().toFuture
+    @inline def listResolverRulesFuture(params: ListResolverRulesRequest): Future[ListResolverRulesResponse] = service.listResolverRules(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def putResolverRulePolicyFuture(params: PutResolverRulePolicyRequest): Future[PutResolverRulePolicyResponse] = service.putResolverRulePolicy(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateResolverEndpointFuture(params: UpdateResolverEndpointRequest): Future[UpdateResolverEndpointResponse] = service.updateResolverEndpoint(params).promise().toFuture
+    @inline def updateResolverRuleFuture(params: UpdateResolverRuleRequest): Future[UpdateResolverRuleResponse] = service.updateResolverRule(params).promise().toFuture
   }
 }
 
@@ -109,41 +71,27 @@ package route53resolver {
   class Route53Resolver() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def associateResolverEndpointIpAddress(
-        params: AssociateResolverEndpointIpAddressRequest
-    ): Request[AssociateResolverEndpointIpAddressResponse] = js.native
+    def associateResolverEndpointIpAddress(params: AssociateResolverEndpointIpAddressRequest): Request[AssociateResolverEndpointIpAddressResponse] = js.native
     def associateResolverRule(params: AssociateResolverRuleRequest): Request[AssociateResolverRuleResponse] = js.native
-    def createResolverEndpoint(params: CreateResolverEndpointRequest): Request[CreateResolverEndpointResponse] =
-      js.native
+    def createResolverEndpoint(params: CreateResolverEndpointRequest): Request[CreateResolverEndpointResponse] = js.native
     def createResolverRule(params: CreateResolverRuleRequest): Request[CreateResolverRuleResponse] = js.native
-    def deleteResolverEndpoint(params: DeleteResolverEndpointRequest): Request[DeleteResolverEndpointResponse] =
-      js.native
+    def deleteResolverEndpoint(params: DeleteResolverEndpointRequest): Request[DeleteResolverEndpointResponse] = js.native
     def deleteResolverRule(params: DeleteResolverRuleRequest): Request[DeleteResolverRuleResponse] = js.native
-    def disassociateResolverEndpointIpAddress(
-        params: DisassociateResolverEndpointIpAddressRequest
-    ): Request[DisassociateResolverEndpointIpAddressResponse] = js.native
-    def disassociateResolverRule(params: DisassociateResolverRuleRequest): Request[DisassociateResolverRuleResponse] =
-      js.native
+    def disassociateResolverEndpointIpAddress(params: DisassociateResolverEndpointIpAddressRequest): Request[DisassociateResolverEndpointIpAddressResponse] = js.native
+    def disassociateResolverRule(params: DisassociateResolverRuleRequest): Request[DisassociateResolverRuleResponse] = js.native
     def getResolverEndpoint(params: GetResolverEndpointRequest): Request[GetResolverEndpointResponse] = js.native
     def getResolverRule(params: GetResolverRuleRequest): Request[GetResolverRuleResponse] = js.native
-    def getResolverRuleAssociation(
-        params: GetResolverRuleAssociationRequest
-    ): Request[GetResolverRuleAssociationResponse] = js.native
+    def getResolverRuleAssociation(params: GetResolverRuleAssociationRequest): Request[GetResolverRuleAssociationResponse] = js.native
     def getResolverRulePolicy(params: GetResolverRulePolicyRequest): Request[GetResolverRulePolicyResponse] = js.native
-    def listResolverEndpointIpAddresses(
-        params: ListResolverEndpointIpAddressesRequest
-    ): Request[ListResolverEndpointIpAddressesResponse] = js.native
+    def listResolverEndpointIpAddresses(params: ListResolverEndpointIpAddressesRequest): Request[ListResolverEndpointIpAddressesResponse] = js.native
     def listResolverEndpoints(params: ListResolverEndpointsRequest): Request[ListResolverEndpointsResponse] = js.native
-    def listResolverRuleAssociations(
-        params: ListResolverRuleAssociationsRequest
-    ): Request[ListResolverRuleAssociationsResponse] = js.native
+    def listResolverRuleAssociations(params: ListResolverRuleAssociationsRequest): Request[ListResolverRuleAssociationsResponse] = js.native
     def listResolverRules(params: ListResolverRulesRequest): Request[ListResolverRulesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putResolverRulePolicy(params: PutResolverRulePolicyRequest): Request[PutResolverRulePolicyResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
-    def updateResolverEndpoint(params: UpdateResolverEndpointRequest): Request[UpdateResolverEndpointResponse] =
-      js.native
+    def updateResolverEndpoint(params: UpdateResolverEndpointRequest): Request[UpdateResolverEndpointResponse] = js.native
     def updateResolverRule(params: UpdateResolverRuleRequest): Request[UpdateResolverRuleResponse] = js.native
   }
 
@@ -700,20 +648,7 @@ package route53resolver {
     val DELETING = "DELETING".asInstanceOf[IpAddressStatus]
     val DELETE_FAILED_FAS_EXPIRED = "DELETE_FAILED_FAS_EXPIRED".asInstanceOf[IpAddressStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        CREATING,
-        FAILED_CREATION,
-        ATTACHING,
-        ATTACHED,
-        REMAP_DETACHING,
-        REMAP_ATTACHING,
-        DETACHING,
-        FAILED_RESOURCE_GONE,
-        DELETING,
-        DELETE_FAILED_FAS_EXPIRED
-      )
-    )
+    val values = js.Object.freeze(js.Array(CREATING, FAILED_CREATION, ATTACHING, ATTACHED, REMAP_DETACHING, REMAP_ATTACHING, DETACHING, FAILED_RESOURCE_GONE, DELETING, DELETE_FAILED_FAS_EXPIRED))
   }
 
   /**

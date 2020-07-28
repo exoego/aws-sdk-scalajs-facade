@@ -37,59 +37,31 @@ package object globalaccelerator {
 
   implicit final class GlobalAcceleratorOps(private val service: GlobalAccelerator) extends AnyVal {
 
-    @inline def advertiseByoipCidrFuture(params: AdvertiseByoipCidrRequest): Future[AdvertiseByoipCidrResponse] =
-      service.advertiseByoipCidr(params).promise().toFuture
-    @inline def createAcceleratorFuture(params: CreateAcceleratorRequest): Future[CreateAcceleratorResponse] =
-      service.createAccelerator(params).promise().toFuture
-    @inline def createEndpointGroupFuture(params: CreateEndpointGroupRequest): Future[CreateEndpointGroupResponse] =
-      service.createEndpointGroup(params).promise().toFuture
-    @inline def createListenerFuture(params: CreateListenerRequest): Future[CreateListenerResponse] =
-      service.createListener(params).promise().toFuture
-    @inline def deleteAcceleratorFuture(params: DeleteAcceleratorRequest): Future[js.Object] =
-      service.deleteAccelerator(params).promise().toFuture
-    @inline def deleteEndpointGroupFuture(params: DeleteEndpointGroupRequest): Future[js.Object] =
-      service.deleteEndpointGroup(params).promise().toFuture
-    @inline def deleteListenerFuture(params: DeleteListenerRequest): Future[js.Object] =
-      service.deleteListener(params).promise().toFuture
-    @inline def deprovisionByoipCidrFuture(params: DeprovisionByoipCidrRequest): Future[DeprovisionByoipCidrResponse] =
-      service.deprovisionByoipCidr(params).promise().toFuture
-    @inline def describeAcceleratorAttributesFuture(
-        params: DescribeAcceleratorAttributesRequest
-    ): Future[DescribeAcceleratorAttributesResponse] = service.describeAcceleratorAttributes(params).promise().toFuture
-    @inline def describeAcceleratorFuture(params: DescribeAcceleratorRequest): Future[DescribeAcceleratorResponse] =
-      service.describeAccelerator(params).promise().toFuture
-    @inline def describeEndpointGroupFuture(
-        params: DescribeEndpointGroupRequest
-    ): Future[DescribeEndpointGroupResponse] = service.describeEndpointGroup(params).promise().toFuture
-    @inline def describeListenerFuture(params: DescribeListenerRequest): Future[DescribeListenerResponse] =
-      service.describeListener(params).promise().toFuture
-    @inline def listAcceleratorsFuture(params: ListAcceleratorsRequest): Future[ListAcceleratorsResponse] =
-      service.listAccelerators(params).promise().toFuture
-    @inline def listByoipCidrsFuture(params: ListByoipCidrsRequest): Future[ListByoipCidrsResponse] =
-      service.listByoipCidrs(params).promise().toFuture
-    @inline def listEndpointGroupsFuture(params: ListEndpointGroupsRequest): Future[ListEndpointGroupsResponse] =
-      service.listEndpointGroups(params).promise().toFuture
-    @inline def listListenersFuture(params: ListListenersRequest): Future[ListListenersResponse] =
-      service.listListeners(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def provisionByoipCidrFuture(params: ProvisionByoipCidrRequest): Future[ProvisionByoipCidrResponse] =
-      service.provisionByoipCidr(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateAcceleratorAttributesFuture(
-        params: UpdateAcceleratorAttributesRequest
-    ): Future[UpdateAcceleratorAttributesResponse] = service.updateAcceleratorAttributes(params).promise().toFuture
-    @inline def updateAcceleratorFuture(params: UpdateAcceleratorRequest): Future[UpdateAcceleratorResponse] =
-      service.updateAccelerator(params).promise().toFuture
-    @inline def updateEndpointGroupFuture(params: UpdateEndpointGroupRequest): Future[UpdateEndpointGroupResponse] =
-      service.updateEndpointGroup(params).promise().toFuture
-    @inline def updateListenerFuture(params: UpdateListenerRequest): Future[UpdateListenerResponse] =
-      service.updateListener(params).promise().toFuture
-    @inline def withdrawByoipCidrFuture(params: WithdrawByoipCidrRequest): Future[WithdrawByoipCidrResponse] =
-      service.withdrawByoipCidr(params).promise().toFuture
+    @inline def advertiseByoipCidrFuture(params: AdvertiseByoipCidrRequest): Future[AdvertiseByoipCidrResponse] = service.advertiseByoipCidr(params).promise().toFuture
+    @inline def createAcceleratorFuture(params: CreateAcceleratorRequest): Future[CreateAcceleratorResponse] = service.createAccelerator(params).promise().toFuture
+    @inline def createEndpointGroupFuture(params: CreateEndpointGroupRequest): Future[CreateEndpointGroupResponse] = service.createEndpointGroup(params).promise().toFuture
+    @inline def createListenerFuture(params: CreateListenerRequest): Future[CreateListenerResponse] = service.createListener(params).promise().toFuture
+    @inline def deleteAcceleratorFuture(params: DeleteAcceleratorRequest): Future[js.Object] = service.deleteAccelerator(params).promise().toFuture
+    @inline def deleteEndpointGroupFuture(params: DeleteEndpointGroupRequest): Future[js.Object] = service.deleteEndpointGroup(params).promise().toFuture
+    @inline def deleteListenerFuture(params: DeleteListenerRequest): Future[js.Object] = service.deleteListener(params).promise().toFuture
+    @inline def deprovisionByoipCidrFuture(params: DeprovisionByoipCidrRequest): Future[DeprovisionByoipCidrResponse] = service.deprovisionByoipCidr(params).promise().toFuture
+    @inline def describeAcceleratorAttributesFuture(params: DescribeAcceleratorAttributesRequest): Future[DescribeAcceleratorAttributesResponse] = service.describeAcceleratorAttributes(params).promise().toFuture
+    @inline def describeAcceleratorFuture(params: DescribeAcceleratorRequest): Future[DescribeAcceleratorResponse] = service.describeAccelerator(params).promise().toFuture
+    @inline def describeEndpointGroupFuture(params: DescribeEndpointGroupRequest): Future[DescribeEndpointGroupResponse] = service.describeEndpointGroup(params).promise().toFuture
+    @inline def describeListenerFuture(params: DescribeListenerRequest): Future[DescribeListenerResponse] = service.describeListener(params).promise().toFuture
+    @inline def listAcceleratorsFuture(params: ListAcceleratorsRequest): Future[ListAcceleratorsResponse] = service.listAccelerators(params).promise().toFuture
+    @inline def listByoipCidrsFuture(params: ListByoipCidrsRequest): Future[ListByoipCidrsResponse] = service.listByoipCidrs(params).promise().toFuture
+    @inline def listEndpointGroupsFuture(params: ListEndpointGroupsRequest): Future[ListEndpointGroupsResponse] = service.listEndpointGroups(params).promise().toFuture
+    @inline def listListenersFuture(params: ListListenersRequest): Future[ListListenersResponse] = service.listListeners(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def provisionByoipCidrFuture(params: ProvisionByoipCidrRequest): Future[ProvisionByoipCidrResponse] = service.provisionByoipCidr(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateAcceleratorAttributesFuture(params: UpdateAcceleratorAttributesRequest): Future[UpdateAcceleratorAttributesResponse] = service.updateAcceleratorAttributes(params).promise().toFuture
+    @inline def updateAcceleratorFuture(params: UpdateAcceleratorRequest): Future[UpdateAcceleratorResponse] = service.updateAccelerator(params).promise().toFuture
+    @inline def updateEndpointGroupFuture(params: UpdateEndpointGroupRequest): Future[UpdateEndpointGroupResponse] = service.updateEndpointGroup(params).promise().toFuture
+    @inline def updateListenerFuture(params: UpdateListenerRequest): Future[UpdateListenerResponse] = service.updateListener(params).promise().toFuture
+    @inline def withdrawByoipCidrFuture(params: WithdrawByoipCidrRequest): Future[WithdrawByoipCidrResponse] = service.withdrawByoipCidr(params).promise().toFuture
   }
 }
 
@@ -108,9 +80,7 @@ package globalaccelerator {
     def deleteListener(params: DeleteListenerRequest): Request[js.Object] = js.native
     def deprovisionByoipCidr(params: DeprovisionByoipCidrRequest): Request[DeprovisionByoipCidrResponse] = js.native
     def describeAccelerator(params: DescribeAcceleratorRequest): Request[DescribeAcceleratorResponse] = js.native
-    def describeAcceleratorAttributes(
-        params: DescribeAcceleratorAttributesRequest
-    ): Request[DescribeAcceleratorAttributesResponse] = js.native
+    def describeAcceleratorAttributes(params: DescribeAcceleratorAttributesRequest): Request[DescribeAcceleratorAttributesResponse] = js.native
     def describeEndpointGroup(params: DescribeEndpointGroupRequest): Request[DescribeEndpointGroupResponse] = js.native
     def describeListener(params: DescribeListenerRequest): Request[DescribeListenerResponse] = js.native
     def listAccelerators(params: ListAcceleratorsRequest): Request[ListAcceleratorsResponse] = js.native
@@ -122,9 +92,7 @@ package globalaccelerator {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateAccelerator(params: UpdateAcceleratorRequest): Request[UpdateAcceleratorResponse] = js.native
-    def updateAcceleratorAttributes(
-        params: UpdateAcceleratorAttributesRequest
-    ): Request[UpdateAcceleratorAttributesResponse] = js.native
+    def updateAcceleratorAttributes(params: UpdateAcceleratorAttributesRequest): Request[UpdateAcceleratorAttributesResponse] = js.native
     def updateEndpointGroup(params: UpdateEndpointGroupRequest): Request[UpdateEndpointGroupResponse] = js.native
     def updateListener(params: UpdateListenerRequest): Request[UpdateListenerResponse] = js.native
     def withdrawByoipCidr(params: WithdrawByoipCidrRequest): Request[WithdrawByoipCidrResponse] = js.native
@@ -450,9 +418,7 @@ package globalaccelerator {
       )
 
       EndpointConfigurations.foreach(__v => __obj.updateDynamic("EndpointConfigurations")(__v.asInstanceOf[js.Any]))
-      HealthCheckIntervalSeconds.foreach(__v =>
-        __obj.updateDynamic("HealthCheckIntervalSeconds")(__v.asInstanceOf[js.Any])
-      )
+      HealthCheckIntervalSeconds.foreach(__v => __obj.updateDynamic("HealthCheckIntervalSeconds")(__v.asInstanceOf[js.Any]))
       HealthCheckPath.foreach(__v => __obj.updateDynamic("HealthCheckPath")(__v.asInstanceOf[js.Any]))
       HealthCheckPort.foreach(__v => __obj.updateDynamic("HealthCheckPort")(__v.asInstanceOf[js.Any]))
       HealthCheckProtocol.foreach(__v => __obj.updateDynamic("HealthCheckProtocol")(__v.asInstanceOf[js.Any]))
@@ -766,9 +732,7 @@ package globalaccelerator {
         Weight: js.UndefOr[EndpointWeight] = js.undefined
     ): EndpointConfiguration = {
       val __obj = js.Dynamic.literal()
-      ClientIPPreservationEnabled.foreach(__v =>
-        __obj.updateDynamic("ClientIPPreservationEnabled")(__v.asInstanceOf[js.Any])
-      )
+      ClientIPPreservationEnabled.foreach(__v => __obj.updateDynamic("ClientIPPreservationEnabled")(__v.asInstanceOf[js.Any]))
       EndpointId.foreach(__v => __obj.updateDynamic("EndpointId")(__v.asInstanceOf[js.Any]))
       Weight.foreach(__v => __obj.updateDynamic("Weight")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EndpointConfiguration]
@@ -797,9 +761,7 @@ package globalaccelerator {
         Weight: js.UndefOr[EndpointWeight] = js.undefined
     ): EndpointDescription = {
       val __obj = js.Dynamic.literal()
-      ClientIPPreservationEnabled.foreach(__v =>
-        __obj.updateDynamic("ClientIPPreservationEnabled")(__v.asInstanceOf[js.Any])
-      )
+      ClientIPPreservationEnabled.foreach(__v => __obj.updateDynamic("ClientIPPreservationEnabled")(__v.asInstanceOf[js.Any]))
       EndpointId.foreach(__v => __obj.updateDynamic("EndpointId")(__v.asInstanceOf[js.Any]))
       HealthReason.foreach(__v => __obj.updateDynamic("HealthReason")(__v.asInstanceOf[js.Any]))
       HealthState.foreach(__v => __obj.updateDynamic("HealthState")(__v.asInstanceOf[js.Any]))
@@ -841,9 +803,7 @@ package globalaccelerator {
       EndpointDescriptions.foreach(__v => __obj.updateDynamic("EndpointDescriptions")(__v.asInstanceOf[js.Any]))
       EndpointGroupArn.foreach(__v => __obj.updateDynamic("EndpointGroupArn")(__v.asInstanceOf[js.Any]))
       EndpointGroupRegion.foreach(__v => __obj.updateDynamic("EndpointGroupRegion")(__v.asInstanceOf[js.Any]))
-      HealthCheckIntervalSeconds.foreach(__v =>
-        __obj.updateDynamic("HealthCheckIntervalSeconds")(__v.asInstanceOf[js.Any])
-      )
+      HealthCheckIntervalSeconds.foreach(__v => __obj.updateDynamic("HealthCheckIntervalSeconds")(__v.asInstanceOf[js.Any]))
       HealthCheckPath.foreach(__v => __obj.updateDynamic("HealthCheckPath")(__v.asInstanceOf[js.Any]))
       HealthCheckPort.foreach(__v => __obj.updateDynamic("HealthCheckPort")(__v.asInstanceOf[js.Any]))
       HealthCheckProtocol.foreach(__v => __obj.updateDynamic("HealthCheckProtocol")(__v.asInstanceOf[js.Any]))
@@ -1402,9 +1362,7 @@ package globalaccelerator {
       )
 
       EndpointConfigurations.foreach(__v => __obj.updateDynamic("EndpointConfigurations")(__v.asInstanceOf[js.Any]))
-      HealthCheckIntervalSeconds.foreach(__v =>
-        __obj.updateDynamic("HealthCheckIntervalSeconds")(__v.asInstanceOf[js.Any])
-      )
+      HealthCheckIntervalSeconds.foreach(__v => __obj.updateDynamic("HealthCheckIntervalSeconds")(__v.asInstanceOf[js.Any]))
       HealthCheckPath.foreach(__v => __obj.updateDynamic("HealthCheckPath")(__v.asInstanceOf[js.Any]))
       HealthCheckPort.foreach(__v => __obj.updateDynamic("HealthCheckPort")(__v.asInstanceOf[js.Any]))
       HealthCheckProtocol.foreach(__v => __obj.updateDynamic("HealthCheckProtocol")(__v.asInstanceOf[js.Any]))

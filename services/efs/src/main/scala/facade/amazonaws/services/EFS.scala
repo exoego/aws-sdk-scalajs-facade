@@ -56,56 +56,28 @@ package object efs {
 
   implicit final class EFSOps(private val service: EFS) extends AnyVal {
 
-    @inline def createAccessPointFuture(params: CreateAccessPointRequest): Future[AccessPointDescription] =
-      service.createAccessPoint(params).promise().toFuture
-    @inline def createFileSystemFuture(params: CreateFileSystemRequest): Future[FileSystemDescription] =
-      service.createFileSystem(params).promise().toFuture
-    @inline def createMountTargetFuture(params: CreateMountTargetRequest): Future[MountTargetDescription] =
-      service.createMountTarget(params).promise().toFuture
-    @inline def deleteAccessPointFuture(params: DeleteAccessPointRequest): Future[js.Object] =
-      service.deleteAccessPoint(params).promise().toFuture
-    @inline def deleteFileSystemFuture(params: DeleteFileSystemRequest): Future[js.Object] =
-      service.deleteFileSystem(params).promise().toFuture
-    @inline def deleteFileSystemPolicyFuture(params: DeleteFileSystemPolicyRequest): Future[js.Object] =
-      service.deleteFileSystemPolicy(params).promise().toFuture
-    @inline def deleteMountTargetFuture(params: DeleteMountTargetRequest): Future[js.Object] =
-      service.deleteMountTarget(params).promise().toFuture
-    @inline def describeAccessPointsFuture(params: DescribeAccessPointsRequest): Future[DescribeAccessPointsResponse] =
-      service.describeAccessPoints(params).promise().toFuture
-    @inline def describeBackupPolicyFuture(params: DescribeBackupPolicyRequest): Future[BackupPolicyDescription] =
-      service.describeBackupPolicy(params).promise().toFuture
-    @inline def describeFileSystemPolicyFuture(
-        params: DescribeFileSystemPolicyRequest
-    ): Future[FileSystemPolicyDescription] = service.describeFileSystemPolicy(params).promise().toFuture
-    @inline def describeFileSystemsFuture(params: DescribeFileSystemsRequest): Future[DescribeFileSystemsResponse] =
-      service.describeFileSystems(params).promise().toFuture
-    @inline def describeLifecycleConfigurationFuture(
-        params: DescribeLifecycleConfigurationRequest
-    ): Future[LifecycleConfigurationDescription] = service.describeLifecycleConfiguration(params).promise().toFuture
-    @inline def describeMountTargetSecurityGroupsFuture(
-        params: DescribeMountTargetSecurityGroupsRequest
-    ): Future[DescribeMountTargetSecurityGroupsResponse] =
-      service.describeMountTargetSecurityGroups(params).promise().toFuture
-    @inline def describeMountTargetsFuture(params: DescribeMountTargetsRequest): Future[DescribeMountTargetsResponse] =
-      service.describeMountTargets(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def modifyMountTargetSecurityGroupsFuture(
-        params: ModifyMountTargetSecurityGroupsRequest
-    ): Future[js.Object] = service.modifyMountTargetSecurityGroups(params).promise().toFuture
-    @inline def putBackupPolicyFuture(params: PutBackupPolicyRequest): Future[BackupPolicyDescription] =
-      service.putBackupPolicy(params).promise().toFuture
-    @inline def putFileSystemPolicyFuture(params: PutFileSystemPolicyRequest): Future[FileSystemPolicyDescription] =
-      service.putFileSystemPolicy(params).promise().toFuture
-    @inline def putLifecycleConfigurationFuture(
-        params: PutLifecycleConfigurationRequest
-    ): Future[LifecycleConfigurationDescription] = service.putLifecycleConfiguration(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateFileSystemFuture(params: UpdateFileSystemRequest): Future[FileSystemDescription] =
-      service.updateFileSystem(params).promise().toFuture
+    @inline def createAccessPointFuture(params: CreateAccessPointRequest): Future[AccessPointDescription] = service.createAccessPoint(params).promise().toFuture
+    @inline def createFileSystemFuture(params: CreateFileSystemRequest): Future[FileSystemDescription] = service.createFileSystem(params).promise().toFuture
+    @inline def createMountTargetFuture(params: CreateMountTargetRequest): Future[MountTargetDescription] = service.createMountTarget(params).promise().toFuture
+    @inline def deleteAccessPointFuture(params: DeleteAccessPointRequest): Future[js.Object] = service.deleteAccessPoint(params).promise().toFuture
+    @inline def deleteFileSystemFuture(params: DeleteFileSystemRequest): Future[js.Object] = service.deleteFileSystem(params).promise().toFuture
+    @inline def deleteFileSystemPolicyFuture(params: DeleteFileSystemPolicyRequest): Future[js.Object] = service.deleteFileSystemPolicy(params).promise().toFuture
+    @inline def deleteMountTargetFuture(params: DeleteMountTargetRequest): Future[js.Object] = service.deleteMountTarget(params).promise().toFuture
+    @inline def describeAccessPointsFuture(params: DescribeAccessPointsRequest): Future[DescribeAccessPointsResponse] = service.describeAccessPoints(params).promise().toFuture
+    @inline def describeBackupPolicyFuture(params: DescribeBackupPolicyRequest): Future[BackupPolicyDescription] = service.describeBackupPolicy(params).promise().toFuture
+    @inline def describeFileSystemPolicyFuture(params: DescribeFileSystemPolicyRequest): Future[FileSystemPolicyDescription] = service.describeFileSystemPolicy(params).promise().toFuture
+    @inline def describeFileSystemsFuture(params: DescribeFileSystemsRequest): Future[DescribeFileSystemsResponse] = service.describeFileSystems(params).promise().toFuture
+    @inline def describeLifecycleConfigurationFuture(params: DescribeLifecycleConfigurationRequest): Future[LifecycleConfigurationDescription] = service.describeLifecycleConfiguration(params).promise().toFuture
+    @inline def describeMountTargetSecurityGroupsFuture(params: DescribeMountTargetSecurityGroupsRequest): Future[DescribeMountTargetSecurityGroupsResponse] = service.describeMountTargetSecurityGroups(params).promise().toFuture
+    @inline def describeMountTargetsFuture(params: DescribeMountTargetsRequest): Future[DescribeMountTargetsResponse] = service.describeMountTargets(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def modifyMountTargetSecurityGroupsFuture(params: ModifyMountTargetSecurityGroupsRequest): Future[js.Object] = service.modifyMountTargetSecurityGroups(params).promise().toFuture
+    @inline def putBackupPolicyFuture(params: PutBackupPolicyRequest): Future[BackupPolicyDescription] = service.putBackupPolicy(params).promise().toFuture
+    @inline def putFileSystemPolicyFuture(params: PutFileSystemPolicyRequest): Future[FileSystemPolicyDescription] = service.putFileSystemPolicy(params).promise().toFuture
+    @inline def putLifecycleConfigurationFuture(params: PutLifecycleConfigurationRequest): Future[LifecycleConfigurationDescription] = service.putLifecycleConfiguration(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
+    @inline def updateFileSystemFuture(params: UpdateFileSystemRequest): Future[FileSystemDescription] = service.updateFileSystem(params).promise().toFuture
   }
 }
 
@@ -124,32 +96,22 @@ package efs {
     def deleteMountTarget(params: DeleteMountTargetRequest): Request[js.Object] = js.native
     def describeAccessPoints(params: DescribeAccessPointsRequest): Request[DescribeAccessPointsResponse] = js.native
     def describeBackupPolicy(params: DescribeBackupPolicyRequest): Request[BackupPolicyDescription] = js.native
-    def describeFileSystemPolicy(params: DescribeFileSystemPolicyRequest): Request[FileSystemPolicyDescription] =
-      js.native
+    def describeFileSystemPolicy(params: DescribeFileSystemPolicyRequest): Request[FileSystemPolicyDescription] = js.native
     def describeFileSystems(params: DescribeFileSystemsRequest): Request[DescribeFileSystemsResponse] = js.native
-    def describeLifecycleConfiguration(
-        params: DescribeLifecycleConfigurationRequest
-    ): Request[LifecycleConfigurationDescription] = js.native
-    def describeMountTargetSecurityGroups(
-        params: DescribeMountTargetSecurityGroupsRequest
-    ): Request[DescribeMountTargetSecurityGroupsResponse] = js.native
+    def describeLifecycleConfiguration(params: DescribeLifecycleConfigurationRequest): Request[LifecycleConfigurationDescription] = js.native
+    def describeMountTargetSecurityGroups(params: DescribeMountTargetSecurityGroupsRequest): Request[DescribeMountTargetSecurityGroupsResponse] = js.native
     def describeMountTargets(params: DescribeMountTargetsRequest): Request[DescribeMountTargetsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def modifyMountTargetSecurityGroups(params: ModifyMountTargetSecurityGroupsRequest): Request[js.Object] = js.native
     def putBackupPolicy(params: PutBackupPolicyRequest): Request[BackupPolicyDescription] = js.native
     def putFileSystemPolicy(params: PutFileSystemPolicyRequest): Request[FileSystemPolicyDescription] = js.native
-    def putLifecycleConfiguration(
-        params: PutLifecycleConfigurationRequest
-    ): Request[LifecycleConfigurationDescription] = js.native
+    def putLifecycleConfiguration(params: PutLifecycleConfigurationRequest): Request[LifecycleConfigurationDescription] = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateFileSystem(params: UpdateFileSystemRequest): Request[FileSystemDescription] = js.native
-    @deprecated("Use ListTagsForResource.", "forever") def describeTags(
-        params: DescribeTagsRequest
-    ): Request[DescribeTagsResponse] = js.native
+    @deprecated("Use ListTagsForResource.", "forever") def describeTags(params: DescribeTagsRequest): Request[DescribeTagsResponse] = js.native
     @deprecated("Use TagResource.", "forever") def createTags(params: CreateTagsRequest): Request[js.Object] = js.native
-    @deprecated("Use UntagResource.", "forever") def deleteTags(params: DeleteTagsRequest): Request[js.Object] =
-      js.native
+    @deprecated("Use UntagResource.", "forever") def deleteTags(params: DeleteTagsRequest): Request[js.Object] = js.native
   }
 
   /**
@@ -294,9 +256,7 @@ package efs {
       Encrypted.foreach(__v => __obj.updateDynamic("Encrypted")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       PerformanceMode.foreach(__v => __obj.updateDynamic("PerformanceMode")(__v.asInstanceOf[js.Any]))
-      ProvisionedThroughputInMibps.foreach(__v =>
-        __obj.updateDynamic("ProvisionedThroughputInMibps")(__v.asInstanceOf[js.Any])
-      )
+      ProvisionedThroughputInMibps.foreach(__v => __obj.updateDynamic("ProvisionedThroughputInMibps")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       ThroughputMode.foreach(__v => __obj.updateDynamic("ThroughputMode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFileSystemRequest]
@@ -842,9 +802,7 @@ package efs {
       FileSystemArn.foreach(__v => __obj.updateDynamic("FileSystemArn")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      ProvisionedThroughputInMibps.foreach(__v =>
-        __obj.updateDynamic("ProvisionedThroughputInMibps")(__v.asInstanceOf[js.Any])
-      )
+      ProvisionedThroughputInMibps.foreach(__v => __obj.updateDynamic("ProvisionedThroughputInMibps")(__v.asInstanceOf[js.Any]))
       ThroughputMode.foreach(__v => __obj.updateDynamic("ThroughputMode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FileSystemDescription]
     }
@@ -1137,9 +1095,7 @@ package efs {
         "Policy" -> Policy.asInstanceOf[js.Any]
       )
 
-      BypassPolicyLockoutSafetyCheck.foreach(__v =>
-        __obj.updateDynamic("BypassPolicyLockoutSafetyCheck")(__v.asInstanceOf[js.Any])
-      )
+      BypassPolicyLockoutSafetyCheck.foreach(__v => __obj.updateDynamic("BypassPolicyLockoutSafetyCheck")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutFileSystemPolicyRequest]
     }
   }
@@ -1303,9 +1259,7 @@ package efs {
         "FileSystemId" -> FileSystemId.asInstanceOf[js.Any]
       )
 
-      ProvisionedThroughputInMibps.foreach(__v =>
-        __obj.updateDynamic("ProvisionedThroughputInMibps")(__v.asInstanceOf[js.Any])
-      )
+      ProvisionedThroughputInMibps.foreach(__v => __obj.updateDynamic("ProvisionedThroughputInMibps")(__v.asInstanceOf[js.Any]))
       ThroughputMode.foreach(__v => __obj.updateDynamic("ThroughputMode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFileSystemRequest]
     }

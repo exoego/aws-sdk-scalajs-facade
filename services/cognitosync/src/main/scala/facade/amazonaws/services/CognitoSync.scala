@@ -34,47 +34,23 @@ package object cognitosync {
 
   implicit final class CognitoSyncOps(private val service: CognitoSync) extends AnyVal {
 
-    @inline def bulkPublishFuture(params: BulkPublishRequest): Future[BulkPublishResponse] =
-      service.bulkPublish(params).promise().toFuture
-    @inline def deleteDatasetFuture(params: DeleteDatasetRequest): Future[DeleteDatasetResponse] =
-      service.deleteDataset(params).promise().toFuture
-    @inline def describeDatasetFuture(params: DescribeDatasetRequest): Future[DescribeDatasetResponse] =
-      service.describeDataset(params).promise().toFuture
-    @inline def describeIdentityPoolUsageFuture(
-        params: DescribeIdentityPoolUsageRequest
-    ): Future[DescribeIdentityPoolUsageResponse] = service.describeIdentityPoolUsage(params).promise().toFuture
-    @inline def describeIdentityUsageFuture(
-        params: DescribeIdentityUsageRequest
-    ): Future[DescribeIdentityUsageResponse] = service.describeIdentityUsage(params).promise().toFuture
-    @inline def getBulkPublishDetailsFuture(
-        params: GetBulkPublishDetailsRequest
-    ): Future[GetBulkPublishDetailsResponse] = service.getBulkPublishDetails(params).promise().toFuture
-    @inline def getCognitoEventsFuture(params: GetCognitoEventsRequest): Future[GetCognitoEventsResponse] =
-      service.getCognitoEvents(params).promise().toFuture
-    @inline def getIdentityPoolConfigurationFuture(
-        params: GetIdentityPoolConfigurationRequest
-    ): Future[GetIdentityPoolConfigurationResponse] = service.getIdentityPoolConfiguration(params).promise().toFuture
-    @inline def listDatasetsFuture(params: ListDatasetsRequest): Future[ListDatasetsResponse] =
-      service.listDatasets(params).promise().toFuture
-    @inline def listIdentityPoolUsageFuture(
-        params: ListIdentityPoolUsageRequest
-    ): Future[ListIdentityPoolUsageResponse] = service.listIdentityPoolUsage(params).promise().toFuture
-    @inline def listRecordsFuture(params: ListRecordsRequest): Future[ListRecordsResponse] =
-      service.listRecords(params).promise().toFuture
-    @inline def registerDeviceFuture(params: RegisterDeviceRequest): Future[RegisterDeviceResponse] =
-      service.registerDevice(params).promise().toFuture
-    @inline def setCognitoEventsFuture(params: SetCognitoEventsRequest): Future[js.Object] =
-      service.setCognitoEvents(params).promise().toFuture
-    @inline def setIdentityPoolConfigurationFuture(
-        params: SetIdentityPoolConfigurationRequest
-    ): Future[SetIdentityPoolConfigurationResponse] = service.setIdentityPoolConfiguration(params).promise().toFuture
-    @inline def subscribeToDatasetFuture(params: SubscribeToDatasetRequest): Future[SubscribeToDatasetResponse] =
-      service.subscribeToDataset(params).promise().toFuture
-    @inline def unsubscribeFromDatasetFuture(
-        params: UnsubscribeFromDatasetRequest
-    ): Future[UnsubscribeFromDatasetResponse] = service.unsubscribeFromDataset(params).promise().toFuture
-    @inline def updateRecordsFuture(params: UpdateRecordsRequest): Future[UpdateRecordsResponse] =
-      service.updateRecords(params).promise().toFuture
+    @inline def bulkPublishFuture(params: BulkPublishRequest): Future[BulkPublishResponse] = service.bulkPublish(params).promise().toFuture
+    @inline def deleteDatasetFuture(params: DeleteDatasetRequest): Future[DeleteDatasetResponse] = service.deleteDataset(params).promise().toFuture
+    @inline def describeDatasetFuture(params: DescribeDatasetRequest): Future[DescribeDatasetResponse] = service.describeDataset(params).promise().toFuture
+    @inline def describeIdentityPoolUsageFuture(params: DescribeIdentityPoolUsageRequest): Future[DescribeIdentityPoolUsageResponse] = service.describeIdentityPoolUsage(params).promise().toFuture
+    @inline def describeIdentityUsageFuture(params: DescribeIdentityUsageRequest): Future[DescribeIdentityUsageResponse] = service.describeIdentityUsage(params).promise().toFuture
+    @inline def getBulkPublishDetailsFuture(params: GetBulkPublishDetailsRequest): Future[GetBulkPublishDetailsResponse] = service.getBulkPublishDetails(params).promise().toFuture
+    @inline def getCognitoEventsFuture(params: GetCognitoEventsRequest): Future[GetCognitoEventsResponse] = service.getCognitoEvents(params).promise().toFuture
+    @inline def getIdentityPoolConfigurationFuture(params: GetIdentityPoolConfigurationRequest): Future[GetIdentityPoolConfigurationResponse] = service.getIdentityPoolConfiguration(params).promise().toFuture
+    @inline def listDatasetsFuture(params: ListDatasetsRequest): Future[ListDatasetsResponse] = service.listDatasets(params).promise().toFuture
+    @inline def listIdentityPoolUsageFuture(params: ListIdentityPoolUsageRequest): Future[ListIdentityPoolUsageResponse] = service.listIdentityPoolUsage(params).promise().toFuture
+    @inline def listRecordsFuture(params: ListRecordsRequest): Future[ListRecordsResponse] = service.listRecords(params).promise().toFuture
+    @inline def registerDeviceFuture(params: RegisterDeviceRequest): Future[RegisterDeviceResponse] = service.registerDevice(params).promise().toFuture
+    @inline def setCognitoEventsFuture(params: SetCognitoEventsRequest): Future[js.Object] = service.setCognitoEvents(params).promise().toFuture
+    @inline def setIdentityPoolConfigurationFuture(params: SetIdentityPoolConfigurationRequest): Future[SetIdentityPoolConfigurationResponse] = service.setIdentityPoolConfiguration(params).promise().toFuture
+    @inline def subscribeToDatasetFuture(params: SubscribeToDatasetRequest): Future[SubscribeToDatasetResponse] = service.subscribeToDataset(params).promise().toFuture
+    @inline def unsubscribeFromDatasetFuture(params: UnsubscribeFromDatasetRequest): Future[UnsubscribeFromDatasetResponse] = service.unsubscribeFromDataset(params).promise().toFuture
+    @inline def updateRecordsFuture(params: UpdateRecordsRequest): Future[UpdateRecordsResponse] = service.updateRecords(params).promise().toFuture
   }
 }
 
@@ -87,26 +63,19 @@ package cognitosync {
     def bulkPublish(params: BulkPublishRequest): Request[BulkPublishResponse] = js.native
     def deleteDataset(params: DeleteDatasetRequest): Request[DeleteDatasetResponse] = js.native
     def describeDataset(params: DescribeDatasetRequest): Request[DescribeDatasetResponse] = js.native
-    def describeIdentityPoolUsage(
-        params: DescribeIdentityPoolUsageRequest
-    ): Request[DescribeIdentityPoolUsageResponse] = js.native
+    def describeIdentityPoolUsage(params: DescribeIdentityPoolUsageRequest): Request[DescribeIdentityPoolUsageResponse] = js.native
     def describeIdentityUsage(params: DescribeIdentityUsageRequest): Request[DescribeIdentityUsageResponse] = js.native
     def getBulkPublishDetails(params: GetBulkPublishDetailsRequest): Request[GetBulkPublishDetailsResponse] = js.native
     def getCognitoEvents(params: GetCognitoEventsRequest): Request[GetCognitoEventsResponse] = js.native
-    def getIdentityPoolConfiguration(
-        params: GetIdentityPoolConfigurationRequest
-    ): Request[GetIdentityPoolConfigurationResponse] = js.native
+    def getIdentityPoolConfiguration(params: GetIdentityPoolConfigurationRequest): Request[GetIdentityPoolConfigurationResponse] = js.native
     def listDatasets(params: ListDatasetsRequest): Request[ListDatasetsResponse] = js.native
     def listIdentityPoolUsage(params: ListIdentityPoolUsageRequest): Request[ListIdentityPoolUsageResponse] = js.native
     def listRecords(params: ListRecordsRequest): Request[ListRecordsResponse] = js.native
     def registerDevice(params: RegisterDeviceRequest): Request[RegisterDeviceResponse] = js.native
     def setCognitoEvents(params: SetCognitoEventsRequest): Request[js.Object] = js.native
-    def setIdentityPoolConfiguration(
-        params: SetIdentityPoolConfigurationRequest
-    ): Request[SetIdentityPoolConfigurationResponse] = js.native
+    def setIdentityPoolConfiguration(params: SetIdentityPoolConfigurationRequest): Request[SetIdentityPoolConfigurationResponse] = js.native
     def subscribeToDataset(params: SubscribeToDatasetRequest): Request[SubscribeToDatasetResponse] = js.native
-    def unsubscribeFromDataset(params: UnsubscribeFromDatasetRequest): Request[UnsubscribeFromDatasetResponse] =
-      js.native
+    def unsubscribeFromDataset(params: UnsubscribeFromDatasetRequest): Request[UnsubscribeFromDatasetResponse] = js.native
     def updateRecords(params: UpdateRecordsRequest): Request[UpdateRecordsResponse] = js.native
   }
 
@@ -839,9 +808,7 @@ package cognitosync {
     ): ListRecordsResponse = {
       val __obj = js.Dynamic.literal()
       Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
-      DatasetDeletedAfterRequestedSyncCount.foreach(__v =>
-        __obj.updateDynamic("DatasetDeletedAfterRequestedSyncCount")(__v.asInstanceOf[js.Any])
-      )
+      DatasetDeletedAfterRequestedSyncCount.foreach(__v => __obj.updateDynamic("DatasetDeletedAfterRequestedSyncCount")(__v.asInstanceOf[js.Any]))
       DatasetExists.foreach(__v => __obj.updateDynamic("DatasetExists")(__v.asInstanceOf[js.Any]))
       DatasetSyncCount.foreach(__v => __obj.updateDynamic("DatasetSyncCount")(__v.asInstanceOf[js.Any]))
       LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))

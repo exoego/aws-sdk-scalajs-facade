@@ -78,85 +78,45 @@ package object lexmodelbuildingservice {
 
   implicit final class LexModelBuildingServiceOps(private val service: LexModelBuildingService) extends AnyVal {
 
-    @inline def createBotVersionFuture(params: CreateBotVersionRequest): Future[CreateBotVersionResponse] =
-      service.createBotVersion(params).promise().toFuture
-    @inline def createIntentVersionFuture(params: CreateIntentVersionRequest): Future[CreateIntentVersionResponse] =
-      service.createIntentVersion(params).promise().toFuture
-    @inline def createSlotTypeVersionFuture(
-        params: CreateSlotTypeVersionRequest
-    ): Future[CreateSlotTypeVersionResponse] = service.createSlotTypeVersion(params).promise().toFuture
-    @inline def deleteBotAliasFuture(params: DeleteBotAliasRequest): Future[js.Object] =
-      service.deleteBotAlias(params).promise().toFuture
-    @inline def deleteBotChannelAssociationFuture(params: DeleteBotChannelAssociationRequest): Future[js.Object] =
-      service.deleteBotChannelAssociation(params).promise().toFuture
-    @inline def deleteBotFuture(params: DeleteBotRequest): Future[js.Object] =
-      service.deleteBot(params).promise().toFuture
-    @inline def deleteBotVersionFuture(params: DeleteBotVersionRequest): Future[js.Object] =
-      service.deleteBotVersion(params).promise().toFuture
-    @inline def deleteIntentFuture(params: DeleteIntentRequest): Future[js.Object] =
-      service.deleteIntent(params).promise().toFuture
-    @inline def deleteIntentVersionFuture(params: DeleteIntentVersionRequest): Future[js.Object] =
-      service.deleteIntentVersion(params).promise().toFuture
-    @inline def deleteSlotTypeFuture(params: DeleteSlotTypeRequest): Future[js.Object] =
-      service.deleteSlotType(params).promise().toFuture
-    @inline def deleteSlotTypeVersionFuture(params: DeleteSlotTypeVersionRequest): Future[js.Object] =
-      service.deleteSlotTypeVersion(params).promise().toFuture
-    @inline def deleteUtterancesFuture(params: DeleteUtterancesRequest): Future[js.Object] =
-      service.deleteUtterances(params).promise().toFuture
-    @inline def getBotAliasFuture(params: GetBotAliasRequest): Future[GetBotAliasResponse] =
-      service.getBotAlias(params).promise().toFuture
-    @inline def getBotAliasesFuture(params: GetBotAliasesRequest): Future[GetBotAliasesResponse] =
-      service.getBotAliases(params).promise().toFuture
-    @inline def getBotChannelAssociationFuture(
-        params: GetBotChannelAssociationRequest
-    ): Future[GetBotChannelAssociationResponse] = service.getBotChannelAssociation(params).promise().toFuture
-    @inline def getBotChannelAssociationsFuture(
-        params: GetBotChannelAssociationsRequest
-    ): Future[GetBotChannelAssociationsResponse] = service.getBotChannelAssociations(params).promise().toFuture
+    @inline def createBotVersionFuture(params: CreateBotVersionRequest): Future[CreateBotVersionResponse] = service.createBotVersion(params).promise().toFuture
+    @inline def createIntentVersionFuture(params: CreateIntentVersionRequest): Future[CreateIntentVersionResponse] = service.createIntentVersion(params).promise().toFuture
+    @inline def createSlotTypeVersionFuture(params: CreateSlotTypeVersionRequest): Future[CreateSlotTypeVersionResponse] = service.createSlotTypeVersion(params).promise().toFuture
+    @inline def deleteBotAliasFuture(params: DeleteBotAliasRequest): Future[js.Object] = service.deleteBotAlias(params).promise().toFuture
+    @inline def deleteBotChannelAssociationFuture(params: DeleteBotChannelAssociationRequest): Future[js.Object] = service.deleteBotChannelAssociation(params).promise().toFuture
+    @inline def deleteBotFuture(params: DeleteBotRequest): Future[js.Object] = service.deleteBot(params).promise().toFuture
+    @inline def deleteBotVersionFuture(params: DeleteBotVersionRequest): Future[js.Object] = service.deleteBotVersion(params).promise().toFuture
+    @inline def deleteIntentFuture(params: DeleteIntentRequest): Future[js.Object] = service.deleteIntent(params).promise().toFuture
+    @inline def deleteIntentVersionFuture(params: DeleteIntentVersionRequest): Future[js.Object] = service.deleteIntentVersion(params).promise().toFuture
+    @inline def deleteSlotTypeFuture(params: DeleteSlotTypeRequest): Future[js.Object] = service.deleteSlotType(params).promise().toFuture
+    @inline def deleteSlotTypeVersionFuture(params: DeleteSlotTypeVersionRequest): Future[js.Object] = service.deleteSlotTypeVersion(params).promise().toFuture
+    @inline def deleteUtterancesFuture(params: DeleteUtterancesRequest): Future[js.Object] = service.deleteUtterances(params).promise().toFuture
+    @inline def getBotAliasFuture(params: GetBotAliasRequest): Future[GetBotAliasResponse] = service.getBotAlias(params).promise().toFuture
+    @inline def getBotAliasesFuture(params: GetBotAliasesRequest): Future[GetBotAliasesResponse] = service.getBotAliases(params).promise().toFuture
+    @inline def getBotChannelAssociationFuture(params: GetBotChannelAssociationRequest): Future[GetBotChannelAssociationResponse] = service.getBotChannelAssociation(params).promise().toFuture
+    @inline def getBotChannelAssociationsFuture(params: GetBotChannelAssociationsRequest): Future[GetBotChannelAssociationsResponse] = service.getBotChannelAssociations(params).promise().toFuture
     @inline def getBotFuture(params: GetBotRequest): Future[GetBotResponse] = service.getBot(params).promise().toFuture
-    @inline def getBotVersionsFuture(params: GetBotVersionsRequest): Future[GetBotVersionsResponse] =
-      service.getBotVersions(params).promise().toFuture
-    @inline def getBotsFuture(params: GetBotsRequest): Future[GetBotsResponse] =
-      service.getBots(params).promise().toFuture
-    @inline def getBuiltinIntentFuture(params: GetBuiltinIntentRequest): Future[GetBuiltinIntentResponse] =
-      service.getBuiltinIntent(params).promise().toFuture
-    @inline def getBuiltinIntentsFuture(params: GetBuiltinIntentsRequest): Future[GetBuiltinIntentsResponse] =
-      service.getBuiltinIntents(params).promise().toFuture
-    @inline def getBuiltinSlotTypesFuture(params: GetBuiltinSlotTypesRequest): Future[GetBuiltinSlotTypesResponse] =
-      service.getBuiltinSlotTypes(params).promise().toFuture
-    @inline def getExportFuture(params: GetExportRequest): Future[GetExportResponse] =
-      service.getExport(params).promise().toFuture
-    @inline def getImportFuture(params: GetImportRequest): Future[GetImportResponse] =
-      service.getImport(params).promise().toFuture
-    @inline def getIntentFuture(params: GetIntentRequest): Future[GetIntentResponse] =
-      service.getIntent(params).promise().toFuture
-    @inline def getIntentVersionsFuture(params: GetIntentVersionsRequest): Future[GetIntentVersionsResponse] =
-      service.getIntentVersions(params).promise().toFuture
-    @inline def getIntentsFuture(params: GetIntentsRequest): Future[GetIntentsResponse] =
-      service.getIntents(params).promise().toFuture
-    @inline def getSlotTypeFuture(params: GetSlotTypeRequest): Future[GetSlotTypeResponse] =
-      service.getSlotType(params).promise().toFuture
-    @inline def getSlotTypeVersionsFuture(params: GetSlotTypeVersionsRequest): Future[GetSlotTypeVersionsResponse] =
-      service.getSlotTypeVersions(params).promise().toFuture
-    @inline def getSlotTypesFuture(params: GetSlotTypesRequest): Future[GetSlotTypesResponse] =
-      service.getSlotTypes(params).promise().toFuture
-    @inline def getUtterancesViewFuture(params: GetUtterancesViewRequest): Future[GetUtterancesViewResponse] =
-      service.getUtterancesView(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def putBotAliasFuture(params: PutBotAliasRequest): Future[PutBotAliasResponse] =
-      service.putBotAlias(params).promise().toFuture
+    @inline def getBotVersionsFuture(params: GetBotVersionsRequest): Future[GetBotVersionsResponse] = service.getBotVersions(params).promise().toFuture
+    @inline def getBotsFuture(params: GetBotsRequest): Future[GetBotsResponse] = service.getBots(params).promise().toFuture
+    @inline def getBuiltinIntentFuture(params: GetBuiltinIntentRequest): Future[GetBuiltinIntentResponse] = service.getBuiltinIntent(params).promise().toFuture
+    @inline def getBuiltinIntentsFuture(params: GetBuiltinIntentsRequest): Future[GetBuiltinIntentsResponse] = service.getBuiltinIntents(params).promise().toFuture
+    @inline def getBuiltinSlotTypesFuture(params: GetBuiltinSlotTypesRequest): Future[GetBuiltinSlotTypesResponse] = service.getBuiltinSlotTypes(params).promise().toFuture
+    @inline def getExportFuture(params: GetExportRequest): Future[GetExportResponse] = service.getExport(params).promise().toFuture
+    @inline def getImportFuture(params: GetImportRequest): Future[GetImportResponse] = service.getImport(params).promise().toFuture
+    @inline def getIntentFuture(params: GetIntentRequest): Future[GetIntentResponse] = service.getIntent(params).promise().toFuture
+    @inline def getIntentVersionsFuture(params: GetIntentVersionsRequest): Future[GetIntentVersionsResponse] = service.getIntentVersions(params).promise().toFuture
+    @inline def getIntentsFuture(params: GetIntentsRequest): Future[GetIntentsResponse] = service.getIntents(params).promise().toFuture
+    @inline def getSlotTypeFuture(params: GetSlotTypeRequest): Future[GetSlotTypeResponse] = service.getSlotType(params).promise().toFuture
+    @inline def getSlotTypeVersionsFuture(params: GetSlotTypeVersionsRequest): Future[GetSlotTypeVersionsResponse] = service.getSlotTypeVersions(params).promise().toFuture
+    @inline def getSlotTypesFuture(params: GetSlotTypesRequest): Future[GetSlotTypesResponse] = service.getSlotTypes(params).promise().toFuture
+    @inline def getUtterancesViewFuture(params: GetUtterancesViewRequest): Future[GetUtterancesViewResponse] = service.getUtterancesView(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def putBotAliasFuture(params: PutBotAliasRequest): Future[PutBotAliasResponse] = service.putBotAlias(params).promise().toFuture
     @inline def putBotFuture(params: PutBotRequest): Future[PutBotResponse] = service.putBot(params).promise().toFuture
-    @inline def putIntentFuture(params: PutIntentRequest): Future[PutIntentResponse] =
-      service.putIntent(params).promise().toFuture
-    @inline def putSlotTypeFuture(params: PutSlotTypeRequest): Future[PutSlotTypeResponse] =
-      service.putSlotType(params).promise().toFuture
-    @inline def startImportFuture(params: StartImportRequest): Future[StartImportResponse] =
-      service.startImport(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
+    @inline def putIntentFuture(params: PutIntentRequest): Future[PutIntentResponse] = service.putIntent(params).promise().toFuture
+    @inline def putSlotTypeFuture(params: PutSlotTypeRequest): Future[PutSlotTypeResponse] = service.putSlotType(params).promise().toFuture
+    @inline def startImportFuture(params: StartImportRequest): Future[StartImportResponse] = service.startImport(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
   }
 }
 
@@ -181,11 +141,8 @@ package lexmodelbuildingservice {
     def getBot(params: GetBotRequest): Request[GetBotResponse] = js.native
     def getBotAlias(params: GetBotAliasRequest): Request[GetBotAliasResponse] = js.native
     def getBotAliases(params: GetBotAliasesRequest): Request[GetBotAliasesResponse] = js.native
-    def getBotChannelAssociation(params: GetBotChannelAssociationRequest): Request[GetBotChannelAssociationResponse] =
-      js.native
-    def getBotChannelAssociations(
-        params: GetBotChannelAssociationsRequest
-    ): Request[GetBotChannelAssociationsResponse] = js.native
+    def getBotChannelAssociation(params: GetBotChannelAssociationRequest): Request[GetBotChannelAssociationResponse] = js.native
+    def getBotChannelAssociations(params: GetBotChannelAssociationsRequest): Request[GetBotChannelAssociationsResponse] = js.native
     def getBotVersions(params: GetBotVersionsRequest): Request[GetBotVersionsResponse] = js.native
     def getBots(params: GetBotsRequest): Request[GetBotsResponse] = js.native
     def getBuiltinIntent(params: GetBuiltinIntentRequest): Request[GetBuiltinIntentResponse] = js.native

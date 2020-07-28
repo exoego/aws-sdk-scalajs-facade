@@ -71,37 +71,15 @@ package object computeoptimizer {
 
   implicit final class ComputeOptimizerOps(private val service: ComputeOptimizer) extends AnyVal {
 
-    @inline def describeRecommendationExportJobsFuture(
-        params: DescribeRecommendationExportJobsRequest
-    ): Future[DescribeRecommendationExportJobsResponse] =
-      service.describeRecommendationExportJobs(params).promise().toFuture
-    @inline def exportAutoScalingGroupRecommendationsFuture(
-        params: ExportAutoScalingGroupRecommendationsRequest
-    ): Future[ExportAutoScalingGroupRecommendationsResponse] =
-      service.exportAutoScalingGroupRecommendations(params).promise().toFuture
-    @inline def exportEC2InstanceRecommendationsFuture(
-        params: ExportEC2InstanceRecommendationsRequest
-    ): Future[ExportEC2InstanceRecommendationsResponse] =
-      service.exportEC2InstanceRecommendations(params).promise().toFuture
-    @inline def getAutoScalingGroupRecommendationsFuture(
-        params: GetAutoScalingGroupRecommendationsRequest
-    ): Future[GetAutoScalingGroupRecommendationsResponse] =
-      service.getAutoScalingGroupRecommendations(params).promise().toFuture
-    @inline def getEC2InstanceRecommendationsFuture(
-        params: GetEC2InstanceRecommendationsRequest
-    ): Future[GetEC2InstanceRecommendationsResponse] = service.getEC2InstanceRecommendations(params).promise().toFuture
-    @inline def getEC2RecommendationProjectedMetricsFuture(
-        params: GetEC2RecommendationProjectedMetricsRequest
-    ): Future[GetEC2RecommendationProjectedMetricsResponse] =
-      service.getEC2RecommendationProjectedMetrics(params).promise().toFuture
-    @inline def getEnrollmentStatusFuture(params: GetEnrollmentStatusRequest): Future[GetEnrollmentStatusResponse] =
-      service.getEnrollmentStatus(params).promise().toFuture
-    @inline def getRecommendationSummariesFuture(
-        params: GetRecommendationSummariesRequest
-    ): Future[GetRecommendationSummariesResponse] = service.getRecommendationSummaries(params).promise().toFuture
-    @inline def updateEnrollmentStatusFuture(
-        params: UpdateEnrollmentStatusRequest
-    ): Future[UpdateEnrollmentStatusResponse] = service.updateEnrollmentStatus(params).promise().toFuture
+    @inline def describeRecommendationExportJobsFuture(params: DescribeRecommendationExportJobsRequest): Future[DescribeRecommendationExportJobsResponse] = service.describeRecommendationExportJobs(params).promise().toFuture
+    @inline def exportAutoScalingGroupRecommendationsFuture(params: ExportAutoScalingGroupRecommendationsRequest): Future[ExportAutoScalingGroupRecommendationsResponse] = service.exportAutoScalingGroupRecommendations(params).promise().toFuture
+    @inline def exportEC2InstanceRecommendationsFuture(params: ExportEC2InstanceRecommendationsRequest): Future[ExportEC2InstanceRecommendationsResponse] = service.exportEC2InstanceRecommendations(params).promise().toFuture
+    @inline def getAutoScalingGroupRecommendationsFuture(params: GetAutoScalingGroupRecommendationsRequest): Future[GetAutoScalingGroupRecommendationsResponse] = service.getAutoScalingGroupRecommendations(params).promise().toFuture
+    @inline def getEC2InstanceRecommendationsFuture(params: GetEC2InstanceRecommendationsRequest): Future[GetEC2InstanceRecommendationsResponse] = service.getEC2InstanceRecommendations(params).promise().toFuture
+    @inline def getEC2RecommendationProjectedMetricsFuture(params: GetEC2RecommendationProjectedMetricsRequest): Future[GetEC2RecommendationProjectedMetricsResponse] = service.getEC2RecommendationProjectedMetrics(params).promise().toFuture
+    @inline def getEnrollmentStatusFuture(params: GetEnrollmentStatusRequest): Future[GetEnrollmentStatusResponse] = service.getEnrollmentStatus(params).promise().toFuture
+    @inline def getRecommendationSummariesFuture(params: GetRecommendationSummariesRequest): Future[GetRecommendationSummariesResponse] = service.getRecommendationSummaries(params).promise().toFuture
+    @inline def updateEnrollmentStatusFuture(params: UpdateEnrollmentStatusRequest): Future[UpdateEnrollmentStatusResponse] = service.updateEnrollmentStatus(params).promise().toFuture
   }
 }
 
@@ -111,30 +89,15 @@ package computeoptimizer {
   class ComputeOptimizer() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def describeRecommendationExportJobs(
-        params: DescribeRecommendationExportJobsRequest
-    ): Request[DescribeRecommendationExportJobsResponse] = js.native
-    def exportAutoScalingGroupRecommendations(
-        params: ExportAutoScalingGroupRecommendationsRequest
-    ): Request[ExportAutoScalingGroupRecommendationsResponse] = js.native
-    def exportEC2InstanceRecommendations(
-        params: ExportEC2InstanceRecommendationsRequest
-    ): Request[ExportEC2InstanceRecommendationsResponse] = js.native
-    def getAutoScalingGroupRecommendations(
-        params: GetAutoScalingGroupRecommendationsRequest
-    ): Request[GetAutoScalingGroupRecommendationsResponse] = js.native
-    def getEC2InstanceRecommendations(
-        params: GetEC2InstanceRecommendationsRequest
-    ): Request[GetEC2InstanceRecommendationsResponse] = js.native
-    def getEC2RecommendationProjectedMetrics(
-        params: GetEC2RecommendationProjectedMetricsRequest
-    ): Request[GetEC2RecommendationProjectedMetricsResponse] = js.native
+    def describeRecommendationExportJobs(params: DescribeRecommendationExportJobsRequest): Request[DescribeRecommendationExportJobsResponse] = js.native
+    def exportAutoScalingGroupRecommendations(params: ExportAutoScalingGroupRecommendationsRequest): Request[ExportAutoScalingGroupRecommendationsResponse] = js.native
+    def exportEC2InstanceRecommendations(params: ExportEC2InstanceRecommendationsRequest): Request[ExportEC2InstanceRecommendationsResponse] = js.native
+    def getAutoScalingGroupRecommendations(params: GetAutoScalingGroupRecommendationsRequest): Request[GetAutoScalingGroupRecommendationsResponse] = js.native
+    def getEC2InstanceRecommendations(params: GetEC2InstanceRecommendationsRequest): Request[GetEC2InstanceRecommendationsResponse] = js.native
+    def getEC2RecommendationProjectedMetrics(params: GetEC2RecommendationProjectedMetricsRequest): Request[GetEC2RecommendationProjectedMetricsResponse] = js.native
     def getEnrollmentStatus(params: GetEnrollmentStatusRequest): Request[GetEnrollmentStatusResponse] = js.native
-    def getRecommendationSummaries(
-        params: GetRecommendationSummariesRequest
-    ): Request[GetRecommendationSummariesResponse] = js.native
-    def updateEnrollmentStatus(params: UpdateEnrollmentStatusRequest): Request[UpdateEnrollmentStatusResponse] =
-      js.native
+    def getRecommendationSummaries(params: GetRecommendationSummariesRequest): Request[GetRecommendationSummariesResponse] = js.native
+    def updateEnrollmentStatus(params: UpdateEnrollmentStatusRequest): Request[UpdateEnrollmentStatusResponse] = js.native
   }
 
   /**
@@ -230,9 +193,7 @@ package computeoptimizer {
       val __obj = js.Dynamic.literal()
       configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
       performanceRisk.foreach(__v => __obj.updateDynamic("performanceRisk")(__v.asInstanceOf[js.Any]))
-      projectedUtilizationMetrics.foreach(__v =>
-        __obj.updateDynamic("projectedUtilizationMetrics")(__v.asInstanceOf[js.Any])
-      )
+      projectedUtilizationMetrics.foreach(__v => __obj.updateDynamic("projectedUtilizationMetrics")(__v.asInstanceOf[js.Any]))
       rank.foreach(__v => __obj.updateDynamic("rank")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoScalingGroupRecommendationOption]
     }
@@ -413,44 +374,29 @@ package computeoptimizer {
     val AutoScalingGroupName = "AutoScalingGroupName".asInstanceOf[ExportableAutoScalingGroupField]
     val Finding = "Finding".asInstanceOf[ExportableAutoScalingGroupField]
     val UtilizationMetricsCpuMaximum = "UtilizationMetricsCpuMaximum".asInstanceOf[ExportableAutoScalingGroupField]
-    val UtilizationMetricsMemoryMaximum =
-      "UtilizationMetricsMemoryMaximum".asInstanceOf[ExportableAutoScalingGroupField]
+    val UtilizationMetricsMemoryMaximum = "UtilizationMetricsMemoryMaximum".asInstanceOf[ExportableAutoScalingGroupField]
     val LookbackPeriodInDays = "LookbackPeriodInDays".asInstanceOf[ExportableAutoScalingGroupField]
-    val CurrentConfigurationInstanceType =
-      "CurrentConfigurationInstanceType".asInstanceOf[ExportableAutoScalingGroupField]
-    val CurrentConfigurationDesiredCapacity =
-      "CurrentConfigurationDesiredCapacity".asInstanceOf[ExportableAutoScalingGroupField]
+    val CurrentConfigurationInstanceType = "CurrentConfigurationInstanceType".asInstanceOf[ExportableAutoScalingGroupField]
+    val CurrentConfigurationDesiredCapacity = "CurrentConfigurationDesiredCapacity".asInstanceOf[ExportableAutoScalingGroupField]
     val CurrentConfigurationMinSize = "CurrentConfigurationMinSize".asInstanceOf[ExportableAutoScalingGroupField]
     val CurrentConfigurationMaxSize = "CurrentConfigurationMaxSize".asInstanceOf[ExportableAutoScalingGroupField]
     val CurrentOnDemandPrice = "CurrentOnDemandPrice".asInstanceOf[ExportableAutoScalingGroupField]
-    val CurrentStandardOneYearNoUpfrontReservedPrice =
-      "CurrentStandardOneYearNoUpfrontReservedPrice".asInstanceOf[ExportableAutoScalingGroupField]
-    val CurrentStandardThreeYearNoUpfrontReservedPrice =
-      "CurrentStandardThreeYearNoUpfrontReservedPrice".asInstanceOf[ExportableAutoScalingGroupField]
+    val CurrentStandardOneYearNoUpfrontReservedPrice = "CurrentStandardOneYearNoUpfrontReservedPrice".asInstanceOf[ExportableAutoScalingGroupField]
+    val CurrentStandardThreeYearNoUpfrontReservedPrice = "CurrentStandardThreeYearNoUpfrontReservedPrice".asInstanceOf[ExportableAutoScalingGroupField]
     val CurrentVCpus = "CurrentVCpus".asInstanceOf[ExportableAutoScalingGroupField]
     val CurrentMemory = "CurrentMemory".asInstanceOf[ExportableAutoScalingGroupField]
     val CurrentStorage = "CurrentStorage".asInstanceOf[ExportableAutoScalingGroupField]
     val CurrentNetwork = "CurrentNetwork".asInstanceOf[ExportableAutoScalingGroupField]
-    val RecommendationOptionsConfigurationInstanceType =
-      "RecommendationOptionsConfigurationInstanceType".asInstanceOf[ExportableAutoScalingGroupField]
-    val RecommendationOptionsConfigurationDesiredCapacity =
-      "RecommendationOptionsConfigurationDesiredCapacity".asInstanceOf[ExportableAutoScalingGroupField]
-    val RecommendationOptionsConfigurationMinSize =
-      "RecommendationOptionsConfigurationMinSize".asInstanceOf[ExportableAutoScalingGroupField]
-    val RecommendationOptionsConfigurationMaxSize =
-      "RecommendationOptionsConfigurationMaxSize".asInstanceOf[ExportableAutoScalingGroupField]
-    val RecommendationOptionsProjectedUtilizationMetricsCpuMaximum =
-      "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum".asInstanceOf[ExportableAutoScalingGroupField]
-    val RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum =
-      "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum".asInstanceOf[ExportableAutoScalingGroupField]
-    val RecommendationOptionsPerformanceRisk =
-      "RecommendationOptionsPerformanceRisk".asInstanceOf[ExportableAutoScalingGroupField]
-    val RecommendationOptionsOnDemandPrice =
-      "RecommendationOptionsOnDemandPrice".asInstanceOf[ExportableAutoScalingGroupField]
-    val RecommendationOptionsStandardOneYearNoUpfrontReservedPrice =
-      "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice".asInstanceOf[ExportableAutoScalingGroupField]
-    val RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice =
-      "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice".asInstanceOf[ExportableAutoScalingGroupField]
+    val RecommendationOptionsConfigurationInstanceType = "RecommendationOptionsConfigurationInstanceType".asInstanceOf[ExportableAutoScalingGroupField]
+    val RecommendationOptionsConfigurationDesiredCapacity = "RecommendationOptionsConfigurationDesiredCapacity".asInstanceOf[ExportableAutoScalingGroupField]
+    val RecommendationOptionsConfigurationMinSize = "RecommendationOptionsConfigurationMinSize".asInstanceOf[ExportableAutoScalingGroupField]
+    val RecommendationOptionsConfigurationMaxSize = "RecommendationOptionsConfigurationMaxSize".asInstanceOf[ExportableAutoScalingGroupField]
+    val RecommendationOptionsProjectedUtilizationMetricsCpuMaximum = "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum".asInstanceOf[ExportableAutoScalingGroupField]
+    val RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum = "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum".asInstanceOf[ExportableAutoScalingGroupField]
+    val RecommendationOptionsPerformanceRisk = "RecommendationOptionsPerformanceRisk".asInstanceOf[ExportableAutoScalingGroupField]
+    val RecommendationOptionsOnDemandPrice = "RecommendationOptionsOnDemandPrice".asInstanceOf[ExportableAutoScalingGroupField]
+    val RecommendationOptionsStandardOneYearNoUpfrontReservedPrice = "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice".asInstanceOf[ExportableAutoScalingGroupField]
+    val RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice = "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice".asInstanceOf[ExportableAutoScalingGroupField]
     val RecommendationOptionsVcpus = "RecommendationOptionsVcpus".asInstanceOf[ExportableAutoScalingGroupField]
     val RecommendationOptionsMemory = "RecommendationOptionsMemory".asInstanceOf[ExportableAutoScalingGroupField]
     val RecommendationOptionsStorage = "RecommendationOptionsStorage".asInstanceOf[ExportableAutoScalingGroupField]
@@ -508,34 +454,25 @@ package computeoptimizer {
     val UtilizationMetricsCpuMaximum = "UtilizationMetricsCpuMaximum".asInstanceOf[ExportableInstanceField]
     val UtilizationMetricsMemoryMaximum = "UtilizationMetricsMemoryMaximum".asInstanceOf[ExportableInstanceField]
     val CurrentOnDemandPrice = "CurrentOnDemandPrice".asInstanceOf[ExportableInstanceField]
-    val CurrentStandardOneYearNoUpfrontReservedPrice =
-      "CurrentStandardOneYearNoUpfrontReservedPrice".asInstanceOf[ExportableInstanceField]
-    val CurrentStandardThreeYearNoUpfrontReservedPrice =
-      "CurrentStandardThreeYearNoUpfrontReservedPrice".asInstanceOf[ExportableInstanceField]
+    val CurrentStandardOneYearNoUpfrontReservedPrice = "CurrentStandardOneYearNoUpfrontReservedPrice".asInstanceOf[ExportableInstanceField]
+    val CurrentStandardThreeYearNoUpfrontReservedPrice = "CurrentStandardThreeYearNoUpfrontReservedPrice".asInstanceOf[ExportableInstanceField]
     val CurrentVCpus = "CurrentVCpus".asInstanceOf[ExportableInstanceField]
     val CurrentMemory = "CurrentMemory".asInstanceOf[ExportableInstanceField]
     val CurrentStorage = "CurrentStorage".asInstanceOf[ExportableInstanceField]
     val CurrentNetwork = "CurrentNetwork".asInstanceOf[ExportableInstanceField]
     val RecommendationOptionsInstanceType = "RecommendationOptionsInstanceType".asInstanceOf[ExportableInstanceField]
-    val RecommendationOptionsProjectedUtilizationMetricsCpuMaximum =
-      "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum".asInstanceOf[ExportableInstanceField]
-    val RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum =
-      "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum".asInstanceOf[ExportableInstanceField]
-    val RecommendationOptionsPerformanceRisk =
-      "RecommendationOptionsPerformanceRisk".asInstanceOf[ExportableInstanceField]
+    val RecommendationOptionsProjectedUtilizationMetricsCpuMaximum = "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum".asInstanceOf[ExportableInstanceField]
+    val RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum = "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum".asInstanceOf[ExportableInstanceField]
+    val RecommendationOptionsPerformanceRisk = "RecommendationOptionsPerformanceRisk".asInstanceOf[ExportableInstanceField]
     val RecommendationOptionsVcpus = "RecommendationOptionsVcpus".asInstanceOf[ExportableInstanceField]
     val RecommendationOptionsMemory = "RecommendationOptionsMemory".asInstanceOf[ExportableInstanceField]
     val RecommendationOptionsStorage = "RecommendationOptionsStorage".asInstanceOf[ExportableInstanceField]
     val RecommendationOptionsNetwork = "RecommendationOptionsNetwork".asInstanceOf[ExportableInstanceField]
     val RecommendationOptionsOnDemandPrice = "RecommendationOptionsOnDemandPrice".asInstanceOf[ExportableInstanceField]
-    val RecommendationOptionsStandardOneYearNoUpfrontReservedPrice =
-      "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice".asInstanceOf[ExportableInstanceField]
-    val RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice =
-      "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice".asInstanceOf[ExportableInstanceField]
-    val RecommendationsSourcesRecommendationSourceArn =
-      "RecommendationsSourcesRecommendationSourceArn".asInstanceOf[ExportableInstanceField]
-    val RecommendationsSourcesRecommendationSourceType =
-      "RecommendationsSourcesRecommendationSourceType".asInstanceOf[ExportableInstanceField]
+    val RecommendationOptionsStandardOneYearNoUpfrontReservedPrice = "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice".asInstanceOf[ExportableInstanceField]
+    val RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice = "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice".asInstanceOf[ExportableInstanceField]
+    val RecommendationsSourcesRecommendationSourceArn = "RecommendationsSourcesRecommendationSourceArn".asInstanceOf[ExportableInstanceField]
+    val RecommendationsSourcesRecommendationSourceType = "RecommendationsSourcesRecommendationSourceType".asInstanceOf[ExportableInstanceField]
     val LastRefreshTimestamp = "LastRefreshTimestamp".asInstanceOf[ExportableInstanceField]
 
     val values = js.Object.freeze(
@@ -666,9 +603,7 @@ package computeoptimizer {
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetAutoScalingGroupRecommendationsResponse = {
       val __obj = js.Dynamic.literal()
-      autoScalingGroupRecommendations.foreach(__v =>
-        __obj.updateDynamic("autoScalingGroupRecommendations")(__v.asInstanceOf[js.Any])
-      )
+      autoScalingGroupRecommendations.foreach(__v => __obj.updateDynamic("autoScalingGroupRecommendations")(__v.asInstanceOf[js.Any]))
       errors.foreach(__v => __obj.updateDynamic("errors")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAutoScalingGroupRecommendationsResponse]
@@ -766,9 +701,7 @@ package computeoptimizer {
         recommendedOptionProjectedMetrics: js.UndefOr[RecommendedOptionProjectedMetrics] = js.undefined
     ): GetEC2RecommendationProjectedMetricsResponse = {
       val __obj = js.Dynamic.literal()
-      recommendedOptionProjectedMetrics.foreach(__v =>
-        __obj.updateDynamic("recommendedOptionProjectedMetrics")(__v.asInstanceOf[js.Any])
-      )
+      recommendedOptionProjectedMetrics.foreach(__v => __obj.updateDynamic("recommendedOptionProjectedMetrics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetEC2RecommendationProjectedMetricsResponse]
     }
   }
@@ -943,9 +876,7 @@ package computeoptimizer {
       val __obj = js.Dynamic.literal()
       instanceType.foreach(__v => __obj.updateDynamic("instanceType")(__v.asInstanceOf[js.Any]))
       performanceRisk.foreach(__v => __obj.updateDynamic("performanceRisk")(__v.asInstanceOf[js.Any]))
-      projectedUtilizationMetrics.foreach(__v =>
-        __obj.updateDynamic("projectedUtilizationMetrics")(__v.asInstanceOf[js.Any])
-      )
+      projectedUtilizationMetrics.foreach(__v => __obj.updateDynamic("projectedUtilizationMetrics")(__v.asInstanceOf[js.Any]))
       rank.foreach(__v => __obj.updateDynamic("rank")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceRecommendationOption]
     }
@@ -1126,9 +1057,7 @@ package computeoptimizer {
     ): RecommendationSummary = {
       val __obj = js.Dynamic.literal()
       accountId.foreach(__v => __obj.updateDynamic("accountId")(__v.asInstanceOf[js.Any]))
-      recommendationResourceType.foreach(__v =>
-        __obj.updateDynamic("recommendationResourceType")(__v.asInstanceOf[js.Any])
-      )
+      recommendationResourceType.foreach(__v => __obj.updateDynamic("recommendationResourceType")(__v.asInstanceOf[js.Any]))
       summaries.foreach(__v => __obj.updateDynamic("summaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecommendationSummary]
     }

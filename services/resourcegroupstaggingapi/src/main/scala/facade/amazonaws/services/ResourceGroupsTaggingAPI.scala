@@ -46,23 +46,14 @@ package object resourcegroupstaggingapi {
 
   implicit final class ResourceGroupsTaggingAPIOps(private val service: ResourceGroupsTaggingAPI) extends AnyVal {
 
-    @inline def describeReportCreationFuture(
-        params: DescribeReportCreationInput
-    ): Future[DescribeReportCreationOutput] = service.describeReportCreation(params).promise().toFuture
-    @inline def getComplianceSummaryFuture(params: GetComplianceSummaryInput): Future[GetComplianceSummaryOutput] =
-      service.getComplianceSummary(params).promise().toFuture
-    @inline def getResourcesFuture(params: GetResourcesInput): Future[GetResourcesOutput] =
-      service.getResources(params).promise().toFuture
-    @inline def getTagKeysFuture(params: GetTagKeysInput): Future[GetTagKeysOutput] =
-      service.getTagKeys(params).promise().toFuture
-    @inline def getTagValuesFuture(params: GetTagValuesInput): Future[GetTagValuesOutput] =
-      service.getTagValues(params).promise().toFuture
-    @inline def startReportCreationFuture(params: StartReportCreationInput): Future[StartReportCreationOutput] =
-      service.startReportCreation(params).promise().toFuture
-    @inline def tagResourcesFuture(params: TagResourcesInput): Future[TagResourcesOutput] =
-      service.tagResources(params).promise().toFuture
-    @inline def untagResourcesFuture(params: UntagResourcesInput): Future[UntagResourcesOutput] =
-      service.untagResources(params).promise().toFuture
+    @inline def describeReportCreationFuture(params: DescribeReportCreationInput): Future[DescribeReportCreationOutput] = service.describeReportCreation(params).promise().toFuture
+    @inline def getComplianceSummaryFuture(params: GetComplianceSummaryInput): Future[GetComplianceSummaryOutput] = service.getComplianceSummary(params).promise().toFuture
+    @inline def getResourcesFuture(params: GetResourcesInput): Future[GetResourcesOutput] = service.getResources(params).promise().toFuture
+    @inline def getTagKeysFuture(params: GetTagKeysInput): Future[GetTagKeysOutput] = service.getTagKeys(params).promise().toFuture
+    @inline def getTagValuesFuture(params: GetTagValuesInput): Future[GetTagValuesOutput] = service.getTagValues(params).promise().toFuture
+    @inline def startReportCreationFuture(params: StartReportCreationInput): Future[StartReportCreationOutput] = service.startReportCreation(params).promise().toFuture
+    @inline def tagResourcesFuture(params: TagResourcesInput): Future[TagResourcesOutput] = service.tagResources(params).promise().toFuture
+    @inline def untagResourcesFuture(params: UntagResourcesInput): Future[UntagResourcesOutput] = service.untagResources(params).promise().toFuture
   }
 }
 
@@ -101,9 +92,7 @@ package resourcegroupstaggingapi {
     ): ComplianceDetails = {
       val __obj = js.Dynamic.literal()
       ComplianceStatus.foreach(__v => __obj.updateDynamic("ComplianceStatus")(__v.asInstanceOf[js.Any]))
-      KeysWithNoncompliantValues.foreach(__v =>
-        __obj.updateDynamic("KeysWithNoncompliantValues")(__v.asInstanceOf[js.Any])
-      )
+      KeysWithNoncompliantValues.foreach(__v => __obj.updateDynamic("KeysWithNoncompliantValues")(__v.asInstanceOf[js.Any]))
       NoncompliantKeys.foreach(__v => __obj.updateDynamic("NoncompliantKeys")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComplianceDetails]
     }
@@ -258,9 +247,7 @@ package resourcegroupstaggingapi {
         TagsPerPage: js.UndefOr[TagsPerPage] = js.undefined
     ): GetResourcesInput = {
       val __obj = js.Dynamic.literal()
-      ExcludeCompliantResources.foreach(__v =>
-        __obj.updateDynamic("ExcludeCompliantResources")(__v.asInstanceOf[js.Any])
-      )
+      ExcludeCompliantResources.foreach(__v => __obj.updateDynamic("ExcludeCompliantResources")(__v.asInstanceOf[js.Any]))
       IncludeComplianceDetails.foreach(__v => __obj.updateDynamic("IncludeComplianceDetails")(__v.asInstanceOf[js.Any]))
       PaginationToken.foreach(__v => __obj.updateDynamic("PaginationToken")(__v.asInstanceOf[js.Any]))
       ResourceTypeFilters.foreach(__v => __obj.updateDynamic("ResourceTypeFilters")(__v.asInstanceOf[js.Any]))

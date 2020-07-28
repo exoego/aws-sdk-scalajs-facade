@@ -23,33 +23,19 @@ package object iot1clickdevicesservice {
 
   implicit final class IoT1ClickDevicesServiceOps(private val service: IoT1ClickDevicesService) extends AnyVal {
 
-    @inline def claimDevicesByClaimCodeFuture(
-        params: ClaimDevicesByClaimCodeRequest
-    ): Future[ClaimDevicesByClaimCodeResponse] = service.claimDevicesByClaimCode(params).promise().toFuture
-    @inline def describeDeviceFuture(params: DescribeDeviceRequest): Future[DescribeDeviceResponse] =
-      service.describeDevice(params).promise().toFuture
-    @inline def finalizeDeviceClaimFuture(params: FinalizeDeviceClaimRequest): Future[FinalizeDeviceClaimResponse] =
-      service.finalizeDeviceClaim(params).promise().toFuture
-    @inline def getDeviceMethodsFuture(params: GetDeviceMethodsRequest): Future[GetDeviceMethodsResponse] =
-      service.getDeviceMethods(params).promise().toFuture
-    @inline def initiateDeviceClaimFuture(params: InitiateDeviceClaimRequest): Future[InitiateDeviceClaimResponse] =
-      service.initiateDeviceClaim(params).promise().toFuture
-    @inline def invokeDeviceMethodFuture(params: InvokeDeviceMethodRequest): Future[InvokeDeviceMethodResponse] =
-      service.invokeDeviceMethod(params).promise().toFuture
-    @inline def listDeviceEventsFuture(params: ListDeviceEventsRequest): Future[ListDeviceEventsResponse] =
-      service.listDeviceEvents(params).promise().toFuture
-    @inline def listDevicesFuture(params: ListDevicesRequest): Future[ListDevicesResponse] =
-      service.listDevices(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise().toFuture
-    @inline def unclaimDeviceFuture(params: UnclaimDeviceRequest): Future[UnclaimDeviceResponse] =
-      service.unclaimDevice(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateDeviceStateFuture(params: UpdateDeviceStateRequest): Future[UpdateDeviceStateResponse] =
-      service.updateDeviceState(params).promise().toFuture
+    @inline def claimDevicesByClaimCodeFuture(params: ClaimDevicesByClaimCodeRequest): Future[ClaimDevicesByClaimCodeResponse] = service.claimDevicesByClaimCode(params).promise().toFuture
+    @inline def describeDeviceFuture(params: DescribeDeviceRequest): Future[DescribeDeviceResponse] = service.describeDevice(params).promise().toFuture
+    @inline def finalizeDeviceClaimFuture(params: FinalizeDeviceClaimRequest): Future[FinalizeDeviceClaimResponse] = service.finalizeDeviceClaim(params).promise().toFuture
+    @inline def getDeviceMethodsFuture(params: GetDeviceMethodsRequest): Future[GetDeviceMethodsResponse] = service.getDeviceMethods(params).promise().toFuture
+    @inline def initiateDeviceClaimFuture(params: InitiateDeviceClaimRequest): Future[InitiateDeviceClaimResponse] = service.initiateDeviceClaim(params).promise().toFuture
+    @inline def invokeDeviceMethodFuture(params: InvokeDeviceMethodRequest): Future[InvokeDeviceMethodResponse] = service.invokeDeviceMethod(params).promise().toFuture
+    @inline def listDeviceEventsFuture(params: ListDeviceEventsRequest): Future[ListDeviceEventsResponse] = service.listDeviceEvents(params).promise().toFuture
+    @inline def listDevicesFuture(params: ListDevicesRequest): Future[ListDevicesResponse] = service.listDevices(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
+    @inline def unclaimDeviceFuture(params: UnclaimDeviceRequest): Future[UnclaimDeviceResponse] = service.unclaimDevice(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
+    @inline def updateDeviceStateFuture(params: UpdateDeviceStateRequest): Future[UpdateDeviceStateResponse] = service.updateDeviceState(params).promise().toFuture
   }
 }
 
@@ -59,8 +45,7 @@ package iot1clickdevicesservice {
   class IoT1ClickDevicesService() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def claimDevicesByClaimCode(params: ClaimDevicesByClaimCodeRequest): Request[ClaimDevicesByClaimCodeResponse] =
-      js.native
+    def claimDevicesByClaimCode(params: ClaimDevicesByClaimCodeRequest): Request[ClaimDevicesByClaimCodeResponse] = js.native
     def describeDevice(params: DescribeDeviceRequest): Request[DescribeDeviceResponse] = js.native
     def finalizeDeviceClaim(params: FinalizeDeviceClaimRequest): Request[FinalizeDeviceClaimResponse] = js.native
     def getDeviceMethods(params: GetDeviceMethodsRequest): Request[GetDeviceMethodsResponse] = js.native

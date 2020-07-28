@@ -65,152 +65,57 @@ package object comprehend {
 
   implicit final class ComprehendOps(private val service: Comprehend) extends AnyVal {
 
-    @inline def batchDetectDominantLanguageFuture(
-        params: BatchDetectDominantLanguageRequest
-    ): Future[BatchDetectDominantLanguageResponse] = service.batchDetectDominantLanguage(params).promise().toFuture
-    @inline def batchDetectEntitiesFuture(params: BatchDetectEntitiesRequest): Future[BatchDetectEntitiesResponse] =
-      service.batchDetectEntities(params).promise().toFuture
-    @inline def batchDetectKeyPhrasesFuture(
-        params: BatchDetectKeyPhrasesRequest
-    ): Future[BatchDetectKeyPhrasesResponse] = service.batchDetectKeyPhrases(params).promise().toFuture
-    @inline def batchDetectSentimentFuture(params: BatchDetectSentimentRequest): Future[BatchDetectSentimentResponse] =
-      service.batchDetectSentiment(params).promise().toFuture
-    @inline def batchDetectSyntaxFuture(params: BatchDetectSyntaxRequest): Future[BatchDetectSyntaxResponse] =
-      service.batchDetectSyntax(params).promise().toFuture
-    @inline def classifyDocumentFuture(params: ClassifyDocumentRequest): Future[ClassifyDocumentResponse] =
-      service.classifyDocument(params).promise().toFuture
-    @inline def createDocumentClassifierFuture(
-        params: CreateDocumentClassifierRequest
-    ): Future[CreateDocumentClassifierResponse] = service.createDocumentClassifier(params).promise().toFuture
-    @inline def createEndpointFuture(params: CreateEndpointRequest): Future[CreateEndpointResponse] =
-      service.createEndpoint(params).promise().toFuture
-    @inline def createEntityRecognizerFuture(
-        params: CreateEntityRecognizerRequest
-    ): Future[CreateEntityRecognizerResponse] = service.createEntityRecognizer(params).promise().toFuture
-    @inline def deleteDocumentClassifierFuture(
-        params: DeleteDocumentClassifierRequest
-    ): Future[DeleteDocumentClassifierResponse] = service.deleteDocumentClassifier(params).promise().toFuture
-    @inline def deleteEndpointFuture(params: DeleteEndpointRequest): Future[DeleteEndpointResponse] =
-      service.deleteEndpoint(params).promise().toFuture
-    @inline def deleteEntityRecognizerFuture(
-        params: DeleteEntityRecognizerRequest
-    ): Future[DeleteEntityRecognizerResponse] = service.deleteEntityRecognizer(params).promise().toFuture
-    @inline def describeDocumentClassificationJobFuture(
-        params: DescribeDocumentClassificationJobRequest
-    ): Future[DescribeDocumentClassificationJobResponse] =
-      service.describeDocumentClassificationJob(params).promise().toFuture
-    @inline def describeDocumentClassifierFuture(
-        params: DescribeDocumentClassifierRequest
-    ): Future[DescribeDocumentClassifierResponse] = service.describeDocumentClassifier(params).promise().toFuture
-    @inline def describeDominantLanguageDetectionJobFuture(
-        params: DescribeDominantLanguageDetectionJobRequest
-    ): Future[DescribeDominantLanguageDetectionJobResponse] =
-      service.describeDominantLanguageDetectionJob(params).promise().toFuture
-    @inline def describeEndpointFuture(params: DescribeEndpointRequest): Future[DescribeEndpointResponse] =
-      service.describeEndpoint(params).promise().toFuture
-    @inline def describeEntitiesDetectionJobFuture(
-        params: DescribeEntitiesDetectionJobRequest
-    ): Future[DescribeEntitiesDetectionJobResponse] = service.describeEntitiesDetectionJob(params).promise().toFuture
-    @inline def describeEntityRecognizerFuture(
-        params: DescribeEntityRecognizerRequest
-    ): Future[DescribeEntityRecognizerResponse] = service.describeEntityRecognizer(params).promise().toFuture
-    @inline def describeKeyPhrasesDetectionJobFuture(
-        params: DescribeKeyPhrasesDetectionJobRequest
-    ): Future[DescribeKeyPhrasesDetectionJobResponse] =
-      service.describeKeyPhrasesDetectionJob(params).promise().toFuture
-    @inline def describeSentimentDetectionJobFuture(
-        params: DescribeSentimentDetectionJobRequest
-    ): Future[DescribeSentimentDetectionJobResponse] = service.describeSentimentDetectionJob(params).promise().toFuture
-    @inline def describeTopicsDetectionJobFuture(
-        params: DescribeTopicsDetectionJobRequest
-    ): Future[DescribeTopicsDetectionJobResponse] = service.describeTopicsDetectionJob(params).promise().toFuture
-    @inline def detectDominantLanguageFuture(
-        params: DetectDominantLanguageRequest
-    ): Future[DetectDominantLanguageResponse] = service.detectDominantLanguage(params).promise().toFuture
-    @inline def detectEntitiesFuture(params: DetectEntitiesRequest): Future[DetectEntitiesResponse] =
-      service.detectEntities(params).promise().toFuture
-    @inline def detectKeyPhrasesFuture(params: DetectKeyPhrasesRequest): Future[DetectKeyPhrasesResponse] =
-      service.detectKeyPhrases(params).promise().toFuture
-    @inline def detectSentimentFuture(params: DetectSentimentRequest): Future[DetectSentimentResponse] =
-      service.detectSentiment(params).promise().toFuture
-    @inline def detectSyntaxFuture(params: DetectSyntaxRequest): Future[DetectSyntaxResponse] =
-      service.detectSyntax(params).promise().toFuture
-    @inline def listDocumentClassificationJobsFuture(
-        params: ListDocumentClassificationJobsRequest
-    ): Future[ListDocumentClassificationJobsResponse] =
-      service.listDocumentClassificationJobs(params).promise().toFuture
-    @inline def listDocumentClassifiersFuture(
-        params: ListDocumentClassifiersRequest
-    ): Future[ListDocumentClassifiersResponse] = service.listDocumentClassifiers(params).promise().toFuture
-    @inline def listDominantLanguageDetectionJobsFuture(
-        params: ListDominantLanguageDetectionJobsRequest
-    ): Future[ListDominantLanguageDetectionJobsResponse] =
-      service.listDominantLanguageDetectionJobs(params).promise().toFuture
-    @inline def listEndpointsFuture(params: ListEndpointsRequest): Future[ListEndpointsResponse] =
-      service.listEndpoints(params).promise().toFuture
-    @inline def listEntitiesDetectionJobsFuture(
-        params: ListEntitiesDetectionJobsRequest
-    ): Future[ListEntitiesDetectionJobsResponse] = service.listEntitiesDetectionJobs(params).promise().toFuture
-    @inline def listEntityRecognizersFuture(
-        params: ListEntityRecognizersRequest
-    ): Future[ListEntityRecognizersResponse] = service.listEntityRecognizers(params).promise().toFuture
-    @inline def listKeyPhrasesDetectionJobsFuture(
-        params: ListKeyPhrasesDetectionJobsRequest
-    ): Future[ListKeyPhrasesDetectionJobsResponse] = service.listKeyPhrasesDetectionJobs(params).promise().toFuture
-    @inline def listSentimentDetectionJobsFuture(
-        params: ListSentimentDetectionJobsRequest
-    ): Future[ListSentimentDetectionJobsResponse] = service.listSentimentDetectionJobs(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listTopicsDetectionJobsFuture(
-        params: ListTopicsDetectionJobsRequest
-    ): Future[ListTopicsDetectionJobsResponse] = service.listTopicsDetectionJobs(params).promise().toFuture
-    @inline def startDocumentClassificationJobFuture(
-        params: StartDocumentClassificationJobRequest
-    ): Future[StartDocumentClassificationJobResponse] =
-      service.startDocumentClassificationJob(params).promise().toFuture
-    @inline def startDominantLanguageDetectionJobFuture(
-        params: StartDominantLanguageDetectionJobRequest
-    ): Future[StartDominantLanguageDetectionJobResponse] =
-      service.startDominantLanguageDetectionJob(params).promise().toFuture
-    @inline def startEntitiesDetectionJobFuture(
-        params: StartEntitiesDetectionJobRequest
-    ): Future[StartEntitiesDetectionJobResponse] = service.startEntitiesDetectionJob(params).promise().toFuture
-    @inline def startKeyPhrasesDetectionJobFuture(
-        params: StartKeyPhrasesDetectionJobRequest
-    ): Future[StartKeyPhrasesDetectionJobResponse] = service.startKeyPhrasesDetectionJob(params).promise().toFuture
-    @inline def startSentimentDetectionJobFuture(
-        params: StartSentimentDetectionJobRequest
-    ): Future[StartSentimentDetectionJobResponse] = service.startSentimentDetectionJob(params).promise().toFuture
-    @inline def startTopicsDetectionJobFuture(
-        params: StartTopicsDetectionJobRequest
-    ): Future[StartTopicsDetectionJobResponse] = service.startTopicsDetectionJob(params).promise().toFuture
-    @inline def stopDominantLanguageDetectionJobFuture(
-        params: StopDominantLanguageDetectionJobRequest
-    ): Future[StopDominantLanguageDetectionJobResponse] =
-      service.stopDominantLanguageDetectionJob(params).promise().toFuture
-    @inline def stopEntitiesDetectionJobFuture(
-        params: StopEntitiesDetectionJobRequest
-    ): Future[StopEntitiesDetectionJobResponse] = service.stopEntitiesDetectionJob(params).promise().toFuture
-    @inline def stopKeyPhrasesDetectionJobFuture(
-        params: StopKeyPhrasesDetectionJobRequest
-    ): Future[StopKeyPhrasesDetectionJobResponse] = service.stopKeyPhrasesDetectionJob(params).promise().toFuture
-    @inline def stopSentimentDetectionJobFuture(
-        params: StopSentimentDetectionJobRequest
-    ): Future[StopSentimentDetectionJobResponse] = service.stopSentimentDetectionJob(params).promise().toFuture
-    @inline def stopTrainingDocumentClassifierFuture(
-        params: StopTrainingDocumentClassifierRequest
-    ): Future[StopTrainingDocumentClassifierResponse] =
-      service.stopTrainingDocumentClassifier(params).promise().toFuture
-    @inline def stopTrainingEntityRecognizerFuture(
-        params: StopTrainingEntityRecognizerRequest
-    ): Future[StopTrainingEntityRecognizerResponse] = service.stopTrainingEntityRecognizer(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateEndpointFuture(params: UpdateEndpointRequest): Future[UpdateEndpointResponse] =
-      service.updateEndpoint(params).promise().toFuture
+    @inline def batchDetectDominantLanguageFuture(params: BatchDetectDominantLanguageRequest): Future[BatchDetectDominantLanguageResponse] = service.batchDetectDominantLanguage(params).promise().toFuture
+    @inline def batchDetectEntitiesFuture(params: BatchDetectEntitiesRequest): Future[BatchDetectEntitiesResponse] = service.batchDetectEntities(params).promise().toFuture
+    @inline def batchDetectKeyPhrasesFuture(params: BatchDetectKeyPhrasesRequest): Future[BatchDetectKeyPhrasesResponse] = service.batchDetectKeyPhrases(params).promise().toFuture
+    @inline def batchDetectSentimentFuture(params: BatchDetectSentimentRequest): Future[BatchDetectSentimentResponse] = service.batchDetectSentiment(params).promise().toFuture
+    @inline def batchDetectSyntaxFuture(params: BatchDetectSyntaxRequest): Future[BatchDetectSyntaxResponse] = service.batchDetectSyntax(params).promise().toFuture
+    @inline def classifyDocumentFuture(params: ClassifyDocumentRequest): Future[ClassifyDocumentResponse] = service.classifyDocument(params).promise().toFuture
+    @inline def createDocumentClassifierFuture(params: CreateDocumentClassifierRequest): Future[CreateDocumentClassifierResponse] = service.createDocumentClassifier(params).promise().toFuture
+    @inline def createEndpointFuture(params: CreateEndpointRequest): Future[CreateEndpointResponse] = service.createEndpoint(params).promise().toFuture
+    @inline def createEntityRecognizerFuture(params: CreateEntityRecognizerRequest): Future[CreateEntityRecognizerResponse] = service.createEntityRecognizer(params).promise().toFuture
+    @inline def deleteDocumentClassifierFuture(params: DeleteDocumentClassifierRequest): Future[DeleteDocumentClassifierResponse] = service.deleteDocumentClassifier(params).promise().toFuture
+    @inline def deleteEndpointFuture(params: DeleteEndpointRequest): Future[DeleteEndpointResponse] = service.deleteEndpoint(params).promise().toFuture
+    @inline def deleteEntityRecognizerFuture(params: DeleteEntityRecognizerRequest): Future[DeleteEntityRecognizerResponse] = service.deleteEntityRecognizer(params).promise().toFuture
+    @inline def describeDocumentClassificationJobFuture(params: DescribeDocumentClassificationJobRequest): Future[DescribeDocumentClassificationJobResponse] = service.describeDocumentClassificationJob(params).promise().toFuture
+    @inline def describeDocumentClassifierFuture(params: DescribeDocumentClassifierRequest): Future[DescribeDocumentClassifierResponse] = service.describeDocumentClassifier(params).promise().toFuture
+    @inline def describeDominantLanguageDetectionJobFuture(params: DescribeDominantLanguageDetectionJobRequest): Future[DescribeDominantLanguageDetectionJobResponse] = service.describeDominantLanguageDetectionJob(params).promise().toFuture
+    @inline def describeEndpointFuture(params: DescribeEndpointRequest): Future[DescribeEndpointResponse] = service.describeEndpoint(params).promise().toFuture
+    @inline def describeEntitiesDetectionJobFuture(params: DescribeEntitiesDetectionJobRequest): Future[DescribeEntitiesDetectionJobResponse] = service.describeEntitiesDetectionJob(params).promise().toFuture
+    @inline def describeEntityRecognizerFuture(params: DescribeEntityRecognizerRequest): Future[DescribeEntityRecognizerResponse] = service.describeEntityRecognizer(params).promise().toFuture
+    @inline def describeKeyPhrasesDetectionJobFuture(params: DescribeKeyPhrasesDetectionJobRequest): Future[DescribeKeyPhrasesDetectionJobResponse] = service.describeKeyPhrasesDetectionJob(params).promise().toFuture
+    @inline def describeSentimentDetectionJobFuture(params: DescribeSentimentDetectionJobRequest): Future[DescribeSentimentDetectionJobResponse] = service.describeSentimentDetectionJob(params).promise().toFuture
+    @inline def describeTopicsDetectionJobFuture(params: DescribeTopicsDetectionJobRequest): Future[DescribeTopicsDetectionJobResponse] = service.describeTopicsDetectionJob(params).promise().toFuture
+    @inline def detectDominantLanguageFuture(params: DetectDominantLanguageRequest): Future[DetectDominantLanguageResponse] = service.detectDominantLanguage(params).promise().toFuture
+    @inline def detectEntitiesFuture(params: DetectEntitiesRequest): Future[DetectEntitiesResponse] = service.detectEntities(params).promise().toFuture
+    @inline def detectKeyPhrasesFuture(params: DetectKeyPhrasesRequest): Future[DetectKeyPhrasesResponse] = service.detectKeyPhrases(params).promise().toFuture
+    @inline def detectSentimentFuture(params: DetectSentimentRequest): Future[DetectSentimentResponse] = service.detectSentiment(params).promise().toFuture
+    @inline def detectSyntaxFuture(params: DetectSyntaxRequest): Future[DetectSyntaxResponse] = service.detectSyntax(params).promise().toFuture
+    @inline def listDocumentClassificationJobsFuture(params: ListDocumentClassificationJobsRequest): Future[ListDocumentClassificationJobsResponse] = service.listDocumentClassificationJobs(params).promise().toFuture
+    @inline def listDocumentClassifiersFuture(params: ListDocumentClassifiersRequest): Future[ListDocumentClassifiersResponse] = service.listDocumentClassifiers(params).promise().toFuture
+    @inline def listDominantLanguageDetectionJobsFuture(params: ListDominantLanguageDetectionJobsRequest): Future[ListDominantLanguageDetectionJobsResponse] = service.listDominantLanguageDetectionJobs(params).promise().toFuture
+    @inline def listEndpointsFuture(params: ListEndpointsRequest): Future[ListEndpointsResponse] = service.listEndpoints(params).promise().toFuture
+    @inline def listEntitiesDetectionJobsFuture(params: ListEntitiesDetectionJobsRequest): Future[ListEntitiesDetectionJobsResponse] = service.listEntitiesDetectionJobs(params).promise().toFuture
+    @inline def listEntityRecognizersFuture(params: ListEntityRecognizersRequest): Future[ListEntityRecognizersResponse] = service.listEntityRecognizers(params).promise().toFuture
+    @inline def listKeyPhrasesDetectionJobsFuture(params: ListKeyPhrasesDetectionJobsRequest): Future[ListKeyPhrasesDetectionJobsResponse] = service.listKeyPhrasesDetectionJobs(params).promise().toFuture
+    @inline def listSentimentDetectionJobsFuture(params: ListSentimentDetectionJobsRequest): Future[ListSentimentDetectionJobsResponse] = service.listSentimentDetectionJobs(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listTopicsDetectionJobsFuture(params: ListTopicsDetectionJobsRequest): Future[ListTopicsDetectionJobsResponse] = service.listTopicsDetectionJobs(params).promise().toFuture
+    @inline def startDocumentClassificationJobFuture(params: StartDocumentClassificationJobRequest): Future[StartDocumentClassificationJobResponse] = service.startDocumentClassificationJob(params).promise().toFuture
+    @inline def startDominantLanguageDetectionJobFuture(params: StartDominantLanguageDetectionJobRequest): Future[StartDominantLanguageDetectionJobResponse] = service.startDominantLanguageDetectionJob(params).promise().toFuture
+    @inline def startEntitiesDetectionJobFuture(params: StartEntitiesDetectionJobRequest): Future[StartEntitiesDetectionJobResponse] = service.startEntitiesDetectionJob(params).promise().toFuture
+    @inline def startKeyPhrasesDetectionJobFuture(params: StartKeyPhrasesDetectionJobRequest): Future[StartKeyPhrasesDetectionJobResponse] = service.startKeyPhrasesDetectionJob(params).promise().toFuture
+    @inline def startSentimentDetectionJobFuture(params: StartSentimentDetectionJobRequest): Future[StartSentimentDetectionJobResponse] = service.startSentimentDetectionJob(params).promise().toFuture
+    @inline def startTopicsDetectionJobFuture(params: StartTopicsDetectionJobRequest): Future[StartTopicsDetectionJobResponse] = service.startTopicsDetectionJob(params).promise().toFuture
+    @inline def stopDominantLanguageDetectionJobFuture(params: StopDominantLanguageDetectionJobRequest): Future[StopDominantLanguageDetectionJobResponse] = service.stopDominantLanguageDetectionJob(params).promise().toFuture
+    @inline def stopEntitiesDetectionJobFuture(params: StopEntitiesDetectionJobRequest): Future[StopEntitiesDetectionJobResponse] = service.stopEntitiesDetectionJob(params).promise().toFuture
+    @inline def stopKeyPhrasesDetectionJobFuture(params: StopKeyPhrasesDetectionJobRequest): Future[StopKeyPhrasesDetectionJobResponse] = service.stopKeyPhrasesDetectionJob(params).promise().toFuture
+    @inline def stopSentimentDetectionJobFuture(params: StopSentimentDetectionJobRequest): Future[StopSentimentDetectionJobResponse] = service.stopSentimentDetectionJob(params).promise().toFuture
+    @inline def stopTrainingDocumentClassifierFuture(params: StopTrainingDocumentClassifierRequest): Future[StopTrainingDocumentClassifierResponse] = service.stopTrainingDocumentClassifier(params).promise().toFuture
+    @inline def stopTrainingEntityRecognizerFuture(params: StopTrainingEntityRecognizerRequest): Future[StopTrainingEntityRecognizerResponse] = service.stopTrainingEntityRecognizer(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateEndpointFuture(params: UpdateEndpointRequest): Future[UpdateEndpointResponse] = service.updateEndpoint(params).promise().toFuture
   }
 }
 
@@ -220,110 +125,54 @@ package comprehend {
   class Comprehend() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def batchDetectDominantLanguage(
-        params: BatchDetectDominantLanguageRequest
-    ): Request[BatchDetectDominantLanguageResponse] = js.native
+    def batchDetectDominantLanguage(params: BatchDetectDominantLanguageRequest): Request[BatchDetectDominantLanguageResponse] = js.native
     def batchDetectEntities(params: BatchDetectEntitiesRequest): Request[BatchDetectEntitiesResponse] = js.native
     def batchDetectKeyPhrases(params: BatchDetectKeyPhrasesRequest): Request[BatchDetectKeyPhrasesResponse] = js.native
     def batchDetectSentiment(params: BatchDetectSentimentRequest): Request[BatchDetectSentimentResponse] = js.native
     def batchDetectSyntax(params: BatchDetectSyntaxRequest): Request[BatchDetectSyntaxResponse] = js.native
     def classifyDocument(params: ClassifyDocumentRequest): Request[ClassifyDocumentResponse] = js.native
-    def createDocumentClassifier(params: CreateDocumentClassifierRequest): Request[CreateDocumentClassifierResponse] =
-      js.native
+    def createDocumentClassifier(params: CreateDocumentClassifierRequest): Request[CreateDocumentClassifierResponse] = js.native
     def createEndpoint(params: CreateEndpointRequest): Request[CreateEndpointResponse] = js.native
-    def createEntityRecognizer(params: CreateEntityRecognizerRequest): Request[CreateEntityRecognizerResponse] =
-      js.native
-    def deleteDocumentClassifier(params: DeleteDocumentClassifierRequest): Request[DeleteDocumentClassifierResponse] =
-      js.native
+    def createEntityRecognizer(params: CreateEntityRecognizerRequest): Request[CreateEntityRecognizerResponse] = js.native
+    def deleteDocumentClassifier(params: DeleteDocumentClassifierRequest): Request[DeleteDocumentClassifierResponse] = js.native
     def deleteEndpoint(params: DeleteEndpointRequest): Request[DeleteEndpointResponse] = js.native
-    def deleteEntityRecognizer(params: DeleteEntityRecognizerRequest): Request[DeleteEntityRecognizerResponse] =
-      js.native
-    def describeDocumentClassificationJob(
-        params: DescribeDocumentClassificationJobRequest
-    ): Request[DescribeDocumentClassificationJobResponse] = js.native
-    def describeDocumentClassifier(
-        params: DescribeDocumentClassifierRequest
-    ): Request[DescribeDocumentClassifierResponse] = js.native
-    def describeDominantLanguageDetectionJob(
-        params: DescribeDominantLanguageDetectionJobRequest
-    ): Request[DescribeDominantLanguageDetectionJobResponse] = js.native
+    def deleteEntityRecognizer(params: DeleteEntityRecognizerRequest): Request[DeleteEntityRecognizerResponse] = js.native
+    def describeDocumentClassificationJob(params: DescribeDocumentClassificationJobRequest): Request[DescribeDocumentClassificationJobResponse] = js.native
+    def describeDocumentClassifier(params: DescribeDocumentClassifierRequest): Request[DescribeDocumentClassifierResponse] = js.native
+    def describeDominantLanguageDetectionJob(params: DescribeDominantLanguageDetectionJobRequest): Request[DescribeDominantLanguageDetectionJobResponse] = js.native
     def describeEndpoint(params: DescribeEndpointRequest): Request[DescribeEndpointResponse] = js.native
-    def describeEntitiesDetectionJob(
-        params: DescribeEntitiesDetectionJobRequest
-    ): Request[DescribeEntitiesDetectionJobResponse] = js.native
-    def describeEntityRecognizer(params: DescribeEntityRecognizerRequest): Request[DescribeEntityRecognizerResponse] =
-      js.native
-    def describeKeyPhrasesDetectionJob(
-        params: DescribeKeyPhrasesDetectionJobRequest
-    ): Request[DescribeKeyPhrasesDetectionJobResponse] = js.native
-    def describeSentimentDetectionJob(
-        params: DescribeSentimentDetectionJobRequest
-    ): Request[DescribeSentimentDetectionJobResponse] = js.native
-    def describeTopicsDetectionJob(
-        params: DescribeTopicsDetectionJobRequest
-    ): Request[DescribeTopicsDetectionJobResponse] = js.native
-    def detectDominantLanguage(params: DetectDominantLanguageRequest): Request[DetectDominantLanguageResponse] =
-      js.native
+    def describeEntitiesDetectionJob(params: DescribeEntitiesDetectionJobRequest): Request[DescribeEntitiesDetectionJobResponse] = js.native
+    def describeEntityRecognizer(params: DescribeEntityRecognizerRequest): Request[DescribeEntityRecognizerResponse] = js.native
+    def describeKeyPhrasesDetectionJob(params: DescribeKeyPhrasesDetectionJobRequest): Request[DescribeKeyPhrasesDetectionJobResponse] = js.native
+    def describeSentimentDetectionJob(params: DescribeSentimentDetectionJobRequest): Request[DescribeSentimentDetectionJobResponse] = js.native
+    def describeTopicsDetectionJob(params: DescribeTopicsDetectionJobRequest): Request[DescribeTopicsDetectionJobResponse] = js.native
+    def detectDominantLanguage(params: DetectDominantLanguageRequest): Request[DetectDominantLanguageResponse] = js.native
     def detectEntities(params: DetectEntitiesRequest): Request[DetectEntitiesResponse] = js.native
     def detectKeyPhrases(params: DetectKeyPhrasesRequest): Request[DetectKeyPhrasesResponse] = js.native
     def detectSentiment(params: DetectSentimentRequest): Request[DetectSentimentResponse] = js.native
     def detectSyntax(params: DetectSyntaxRequest): Request[DetectSyntaxResponse] = js.native
-    def listDocumentClassificationJobs(
-        params: ListDocumentClassificationJobsRequest
-    ): Request[ListDocumentClassificationJobsResponse] = js.native
-    def listDocumentClassifiers(params: ListDocumentClassifiersRequest): Request[ListDocumentClassifiersResponse] =
-      js.native
-    def listDominantLanguageDetectionJobs(
-        params: ListDominantLanguageDetectionJobsRequest
-    ): Request[ListDominantLanguageDetectionJobsResponse] = js.native
+    def listDocumentClassificationJobs(params: ListDocumentClassificationJobsRequest): Request[ListDocumentClassificationJobsResponse] = js.native
+    def listDocumentClassifiers(params: ListDocumentClassifiersRequest): Request[ListDocumentClassifiersResponse] = js.native
+    def listDominantLanguageDetectionJobs(params: ListDominantLanguageDetectionJobsRequest): Request[ListDominantLanguageDetectionJobsResponse] = js.native
     def listEndpoints(params: ListEndpointsRequest): Request[ListEndpointsResponse] = js.native
-    def listEntitiesDetectionJobs(
-        params: ListEntitiesDetectionJobsRequest
-    ): Request[ListEntitiesDetectionJobsResponse] = js.native
+    def listEntitiesDetectionJobs(params: ListEntitiesDetectionJobsRequest): Request[ListEntitiesDetectionJobsResponse] = js.native
     def listEntityRecognizers(params: ListEntityRecognizersRequest): Request[ListEntityRecognizersResponse] = js.native
-    def listKeyPhrasesDetectionJobs(
-        params: ListKeyPhrasesDetectionJobsRequest
-    ): Request[ListKeyPhrasesDetectionJobsResponse] = js.native
-    def listSentimentDetectionJobs(
-        params: ListSentimentDetectionJobsRequest
-    ): Request[ListSentimentDetectionJobsResponse] = js.native
+    def listKeyPhrasesDetectionJobs(params: ListKeyPhrasesDetectionJobsRequest): Request[ListKeyPhrasesDetectionJobsResponse] = js.native
+    def listSentimentDetectionJobs(params: ListSentimentDetectionJobsRequest): Request[ListSentimentDetectionJobsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def listTopicsDetectionJobs(params: ListTopicsDetectionJobsRequest): Request[ListTopicsDetectionJobsResponse] =
-      js.native
-    def startDocumentClassificationJob(
-        params: StartDocumentClassificationJobRequest
-    ): Request[StartDocumentClassificationJobResponse] = js.native
-    def startDominantLanguageDetectionJob(
-        params: StartDominantLanguageDetectionJobRequest
-    ): Request[StartDominantLanguageDetectionJobResponse] = js.native
-    def startEntitiesDetectionJob(
-        params: StartEntitiesDetectionJobRequest
-    ): Request[StartEntitiesDetectionJobResponse] = js.native
-    def startKeyPhrasesDetectionJob(
-        params: StartKeyPhrasesDetectionJobRequest
-    ): Request[StartKeyPhrasesDetectionJobResponse] = js.native
-    def startSentimentDetectionJob(
-        params: StartSentimentDetectionJobRequest
-    ): Request[StartSentimentDetectionJobResponse] = js.native
-    def startTopicsDetectionJob(params: StartTopicsDetectionJobRequest): Request[StartTopicsDetectionJobResponse] =
-      js.native
-    def stopDominantLanguageDetectionJob(
-        params: StopDominantLanguageDetectionJobRequest
-    ): Request[StopDominantLanguageDetectionJobResponse] = js.native
-    def stopEntitiesDetectionJob(params: StopEntitiesDetectionJobRequest): Request[StopEntitiesDetectionJobResponse] =
-      js.native
-    def stopKeyPhrasesDetectionJob(
-        params: StopKeyPhrasesDetectionJobRequest
-    ): Request[StopKeyPhrasesDetectionJobResponse] = js.native
-    def stopSentimentDetectionJob(
-        params: StopSentimentDetectionJobRequest
-    ): Request[StopSentimentDetectionJobResponse] = js.native
-    def stopTrainingDocumentClassifier(
-        params: StopTrainingDocumentClassifierRequest
-    ): Request[StopTrainingDocumentClassifierResponse] = js.native
-    def stopTrainingEntityRecognizer(
-        params: StopTrainingEntityRecognizerRequest
-    ): Request[StopTrainingEntityRecognizerResponse] = js.native
+    def listTopicsDetectionJobs(params: ListTopicsDetectionJobsRequest): Request[ListTopicsDetectionJobsResponse] = js.native
+    def startDocumentClassificationJob(params: StartDocumentClassificationJobRequest): Request[StartDocumentClassificationJobResponse] = js.native
+    def startDominantLanguageDetectionJob(params: StartDominantLanguageDetectionJobRequest): Request[StartDominantLanguageDetectionJobResponse] = js.native
+    def startEntitiesDetectionJob(params: StartEntitiesDetectionJobRequest): Request[StartEntitiesDetectionJobResponse] = js.native
+    def startKeyPhrasesDetectionJob(params: StartKeyPhrasesDetectionJobRequest): Request[StartKeyPhrasesDetectionJobResponse] = js.native
+    def startSentimentDetectionJob(params: StartSentimentDetectionJobRequest): Request[StartSentimentDetectionJobResponse] = js.native
+    def startTopicsDetectionJob(params: StartTopicsDetectionJobRequest): Request[StartTopicsDetectionJobResponse] = js.native
+    def stopDominantLanguageDetectionJob(params: StopDominantLanguageDetectionJobRequest): Request[StopDominantLanguageDetectionJobResponse] = js.native
+    def stopEntitiesDetectionJob(params: StopEntitiesDetectionJobRequest): Request[StopEntitiesDetectionJobResponse] = js.native
+    def stopKeyPhrasesDetectionJob(params: StopKeyPhrasesDetectionJobRequest): Request[StopKeyPhrasesDetectionJobResponse] = js.native
+    def stopSentimentDetectionJob(params: StopSentimentDetectionJobRequest): Request[StopSentimentDetectionJobResponse] = js.native
+    def stopTrainingDocumentClassifier(params: StopTrainingDocumentClassifierRequest): Request[StopTrainingDocumentClassifierResponse] = js.native
+    def stopTrainingEntityRecognizer(params: StopTrainingEntityRecognizerRequest): Request[StopTrainingEntityRecognizerResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateEndpoint(params: UpdateEndpointRequest): Request[UpdateEndpointResponse] = js.native
@@ -1066,9 +915,7 @@ package comprehend {
         DocumentClassificationJobProperties: js.UndefOr[DocumentClassificationJobProperties] = js.undefined
     ): DescribeDocumentClassificationJobResponse = {
       val __obj = js.Dynamic.literal()
-      DocumentClassificationJobProperties.foreach(__v =>
-        __obj.updateDynamic("DocumentClassificationJobProperties")(__v.asInstanceOf[js.Any])
-      )
+      DocumentClassificationJobProperties.foreach(__v => __obj.updateDynamic("DocumentClassificationJobProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDocumentClassificationJobResponse]
     }
   }
@@ -1102,9 +949,7 @@ package comprehend {
         DocumentClassifierProperties: js.UndefOr[DocumentClassifierProperties] = js.undefined
     ): DescribeDocumentClassifierResponse = {
       val __obj = js.Dynamic.literal()
-      DocumentClassifierProperties.foreach(__v =>
-        __obj.updateDynamic("DocumentClassifierProperties")(__v.asInstanceOf[js.Any])
-      )
+      DocumentClassifierProperties.foreach(__v => __obj.updateDynamic("DocumentClassifierProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDocumentClassifierResponse]
     }
   }
@@ -1138,9 +983,7 @@ package comprehend {
         DominantLanguageDetectionJobProperties: js.UndefOr[DominantLanguageDetectionJobProperties] = js.undefined
     ): DescribeDominantLanguageDetectionJobResponse = {
       val __obj = js.Dynamic.literal()
-      DominantLanguageDetectionJobProperties.foreach(__v =>
-        __obj.updateDynamic("DominantLanguageDetectionJobProperties")(__v.asInstanceOf[js.Any])
-      )
+      DominantLanguageDetectionJobProperties.foreach(__v => __obj.updateDynamic("DominantLanguageDetectionJobProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDominantLanguageDetectionJobResponse]
     }
   }
@@ -1208,9 +1051,7 @@ package comprehend {
         EntitiesDetectionJobProperties: js.UndefOr[EntitiesDetectionJobProperties] = js.undefined
     ): DescribeEntitiesDetectionJobResponse = {
       val __obj = js.Dynamic.literal()
-      EntitiesDetectionJobProperties.foreach(__v =>
-        __obj.updateDynamic("EntitiesDetectionJobProperties")(__v.asInstanceOf[js.Any])
-      )
+      EntitiesDetectionJobProperties.foreach(__v => __obj.updateDynamic("EntitiesDetectionJobProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEntitiesDetectionJobResponse]
     }
   }
@@ -1244,9 +1085,7 @@ package comprehend {
         EntityRecognizerProperties: js.UndefOr[EntityRecognizerProperties] = js.undefined
     ): DescribeEntityRecognizerResponse = {
       val __obj = js.Dynamic.literal()
-      EntityRecognizerProperties.foreach(__v =>
-        __obj.updateDynamic("EntityRecognizerProperties")(__v.asInstanceOf[js.Any])
-      )
+      EntityRecognizerProperties.foreach(__v => __obj.updateDynamic("EntityRecognizerProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEntityRecognizerResponse]
     }
   }
@@ -1280,9 +1119,7 @@ package comprehend {
         KeyPhrasesDetectionJobProperties: js.UndefOr[KeyPhrasesDetectionJobProperties] = js.undefined
     ): DescribeKeyPhrasesDetectionJobResponse = {
       val __obj = js.Dynamic.literal()
-      KeyPhrasesDetectionJobProperties.foreach(__v =>
-        __obj.updateDynamic("KeyPhrasesDetectionJobProperties")(__v.asInstanceOf[js.Any])
-      )
+      KeyPhrasesDetectionJobProperties.foreach(__v => __obj.updateDynamic("KeyPhrasesDetectionJobProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeKeyPhrasesDetectionJobResponse]
     }
   }
@@ -1316,9 +1153,7 @@ package comprehend {
         SentimentDetectionJobProperties: js.UndefOr[SentimentDetectionJobProperties] = js.undefined
     ): DescribeSentimentDetectionJobResponse = {
       val __obj = js.Dynamic.literal()
-      SentimentDetectionJobProperties.foreach(__v =>
-        __obj.updateDynamic("SentimentDetectionJobProperties")(__v.asInstanceOf[js.Any])
-      )
+      SentimentDetectionJobProperties.foreach(__v => __obj.updateDynamic("SentimentDetectionJobProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSentimentDetectionJobResponse]
     }
   }
@@ -1352,9 +1187,7 @@ package comprehend {
         TopicsDetectionJobProperties: js.UndefOr[TopicsDetectionJobProperties] = js.undefined
     ): DescribeTopicsDetectionJobResponse = {
       val __obj = js.Dynamic.literal()
-      TopicsDetectionJobProperties.foreach(__v =>
-        __obj.updateDynamic("TopicsDetectionJobProperties")(__v.asInstanceOf[js.Any])
-      )
+      TopicsDetectionJobProperties.foreach(__v => __obj.updateDynamic("TopicsDetectionJobProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTopicsDetectionJobResponse]
     }
   }
@@ -2370,8 +2203,7 @@ package comprehend {
     val TITLE = "TITLE".asInstanceOf[EntityType]
     val OTHER = "OTHER".asInstanceOf[EntityType]
 
-    val values =
-      js.Object.freeze(js.Array(PERSON, LOCATION, ORGANIZATION, COMMERCIAL_ITEM, EVENT, DATE, QUANTITY, TITLE, OTHER))
+    val values = js.Object.freeze(js.Array(PERSON, LOCATION, ORGANIZATION, COMMERCIAL_ITEM, EVENT, DATE, QUANTITY, TITLE, OTHER))
   }
 
   /**
@@ -2628,9 +2460,7 @@ package comprehend {
         NextToken: js.UndefOr[String] = js.undefined
     ): ListDocumentClassificationJobsResponse = {
       val __obj = js.Dynamic.literal()
-      DocumentClassificationJobPropertiesList.foreach(__v =>
-        __obj.updateDynamic("DocumentClassificationJobPropertiesList")(__v.asInstanceOf[js.Any])
-      )
+      DocumentClassificationJobPropertiesList.foreach(__v => __obj.updateDynamic("DocumentClassificationJobPropertiesList")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDocumentClassificationJobsResponse]
     }
@@ -2671,9 +2501,7 @@ package comprehend {
         NextToken: js.UndefOr[String] = js.undefined
     ): ListDocumentClassifiersResponse = {
       val __obj = js.Dynamic.literal()
-      DocumentClassifierPropertiesList.foreach(__v =>
-        __obj.updateDynamic("DocumentClassifierPropertiesList")(__v.asInstanceOf[js.Any])
-      )
+      DocumentClassifierPropertiesList.foreach(__v => __obj.updateDynamic("DocumentClassifierPropertiesList")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDocumentClassifiersResponse]
     }
@@ -2710,14 +2538,11 @@ package comprehend {
   object ListDominantLanguageDetectionJobsResponse {
     @inline
     def apply(
-        DominantLanguageDetectionJobPropertiesList: js.UndefOr[DominantLanguageDetectionJobPropertiesList] =
-          js.undefined,
+        DominantLanguageDetectionJobPropertiesList: js.UndefOr[DominantLanguageDetectionJobPropertiesList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListDominantLanguageDetectionJobsResponse = {
       val __obj = js.Dynamic.literal()
-      DominantLanguageDetectionJobPropertiesList.foreach(__v =>
-        __obj.updateDynamic("DominantLanguageDetectionJobPropertiesList")(__v.asInstanceOf[js.Any])
-      )
+      DominantLanguageDetectionJobPropertiesList.foreach(__v => __obj.updateDynamic("DominantLanguageDetectionJobPropertiesList")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDominantLanguageDetectionJobsResponse]
     }
@@ -2799,9 +2624,7 @@ package comprehend {
         NextToken: js.UndefOr[String] = js.undefined
     ): ListEntitiesDetectionJobsResponse = {
       val __obj = js.Dynamic.literal()
-      EntitiesDetectionJobPropertiesList.foreach(__v =>
-        __obj.updateDynamic("EntitiesDetectionJobPropertiesList")(__v.asInstanceOf[js.Any])
-      )
+      EntitiesDetectionJobPropertiesList.foreach(__v => __obj.updateDynamic("EntitiesDetectionJobPropertiesList")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEntitiesDetectionJobsResponse]
     }
@@ -2842,9 +2665,7 @@ package comprehend {
         NextToken: js.UndefOr[String] = js.undefined
     ): ListEntityRecognizersResponse = {
       val __obj = js.Dynamic.literal()
-      EntityRecognizerPropertiesList.foreach(__v =>
-        __obj.updateDynamic("EntityRecognizerPropertiesList")(__v.asInstanceOf[js.Any])
-      )
+      EntityRecognizerPropertiesList.foreach(__v => __obj.updateDynamic("EntityRecognizerPropertiesList")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEntityRecognizersResponse]
     }
@@ -2885,9 +2706,7 @@ package comprehend {
         NextToken: js.UndefOr[String] = js.undefined
     ): ListKeyPhrasesDetectionJobsResponse = {
       val __obj = js.Dynamic.literal()
-      KeyPhrasesDetectionJobPropertiesList.foreach(__v =>
-        __obj.updateDynamic("KeyPhrasesDetectionJobPropertiesList")(__v.asInstanceOf[js.Any])
-      )
+      KeyPhrasesDetectionJobPropertiesList.foreach(__v => __obj.updateDynamic("KeyPhrasesDetectionJobPropertiesList")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListKeyPhrasesDetectionJobsResponse]
     }
@@ -2929,9 +2748,7 @@ package comprehend {
     ): ListSentimentDetectionJobsResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SentimentDetectionJobPropertiesList.foreach(__v =>
-        __obj.updateDynamic("SentimentDetectionJobPropertiesList")(__v.asInstanceOf[js.Any])
-      )
+      SentimentDetectionJobPropertiesList.foreach(__v => __obj.updateDynamic("SentimentDetectionJobPropertiesList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSentimentDetectionJobsResponse]
     }
   }
@@ -3009,9 +2826,7 @@ package comprehend {
     ): ListTopicsDetectionJobsResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      TopicsDetectionJobPropertiesList.foreach(__v =>
-        __obj.updateDynamic("TopicsDetectionJobPropertiesList")(__v.asInstanceOf[js.Any])
-      )
+      TopicsDetectionJobPropertiesList.foreach(__v => __obj.updateDynamic("TopicsDetectionJobPropertiesList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTopicsDetectionJobsResponse]
     }
   }
@@ -3099,9 +2914,7 @@ package comprehend {
     val SYM = "SYM".asInstanceOf[PartOfSpeechTagType]
     val VERB = "VERB".asInstanceOf[PartOfSpeechTagType]
 
-    val values = js.Object.freeze(
-      js.Array(ADJ, ADP, ADV, AUX, CONJ, CCONJ, DET, INTJ, NOUN, NUM, O, PART, PRON, PROPN, PUNCT, SCONJ, SYM, VERB)
-    )
+    val values = js.Object.freeze(js.Array(ADJ, ADP, ADV, AUX, CONJ, CCONJ, DET, INTJ, NOUN, NUM, O, PART, PRON, PROPN, PUNCT, SCONJ, SYM, VERB))
   }
 
   /**

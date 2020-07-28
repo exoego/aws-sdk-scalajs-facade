@@ -44,24 +44,14 @@ package object sts {
 
   implicit final class STSOps(private val service: STS) extends AnyVal {
 
-    @inline def assumeRoleFuture(params: AssumeRoleRequest): Future[AssumeRoleResponse] =
-      service.assumeRole(params).promise().toFuture
-    @inline def assumeRoleWithSAMLFuture(params: AssumeRoleWithSAMLRequest): Future[AssumeRoleWithSAMLResponse] =
-      service.assumeRoleWithSAML(params).promise().toFuture
-    @inline def assumeRoleWithWebIdentityFuture(
-        params: AssumeRoleWithWebIdentityRequest
-    ): Future[AssumeRoleWithWebIdentityResponse] = service.assumeRoleWithWebIdentity(params).promise().toFuture
-    @inline def decodeAuthorizationMessageFuture(
-        params: DecodeAuthorizationMessageRequest
-    ): Future[DecodeAuthorizationMessageResponse] = service.decodeAuthorizationMessage(params).promise().toFuture
-    @inline def getAccessKeyInfoFuture(params: GetAccessKeyInfoRequest): Future[GetAccessKeyInfoResponse] =
-      service.getAccessKeyInfo(params).promise().toFuture
-    @inline def getCallerIdentityFuture(params: GetCallerIdentityRequest): Future[GetCallerIdentityResponse] =
-      service.getCallerIdentity(params).promise().toFuture
-    @inline def getFederationTokenFuture(params: GetFederationTokenRequest): Future[GetFederationTokenResponse] =
-      service.getFederationToken(params).promise().toFuture
-    @inline def getSessionTokenFuture(params: GetSessionTokenRequest): Future[GetSessionTokenResponse] =
-      service.getSessionToken(params).promise().toFuture
+    @inline def assumeRoleFuture(params: AssumeRoleRequest): Future[AssumeRoleResponse] = service.assumeRole(params).promise().toFuture
+    @inline def assumeRoleWithSAMLFuture(params: AssumeRoleWithSAMLRequest): Future[AssumeRoleWithSAMLResponse] = service.assumeRoleWithSAML(params).promise().toFuture
+    @inline def assumeRoleWithWebIdentityFuture(params: AssumeRoleWithWebIdentityRequest): Future[AssumeRoleWithWebIdentityResponse] = service.assumeRoleWithWebIdentity(params).promise().toFuture
+    @inline def decodeAuthorizationMessageFuture(params: DecodeAuthorizationMessageRequest): Future[DecodeAuthorizationMessageResponse] = service.decodeAuthorizationMessage(params).promise().toFuture
+    @inline def getAccessKeyInfoFuture(params: GetAccessKeyInfoRequest): Future[GetAccessKeyInfoResponse] = service.getAccessKeyInfo(params).promise().toFuture
+    @inline def getCallerIdentityFuture(params: GetCallerIdentityRequest): Future[GetCallerIdentityResponse] = service.getCallerIdentity(params).promise().toFuture
+    @inline def getFederationTokenFuture(params: GetFederationTokenRequest): Future[GetFederationTokenResponse] = service.getFederationToken(params).promise().toFuture
+    @inline def getSessionTokenFuture(params: GetSessionTokenRequest): Future[GetSessionTokenResponse] = service.getSessionToken(params).promise().toFuture
   }
 }
 
@@ -73,12 +63,8 @@ package sts {
 
     def assumeRole(params: AssumeRoleRequest): Request[AssumeRoleResponse] = js.native
     def assumeRoleWithSAML(params: AssumeRoleWithSAMLRequest): Request[AssumeRoleWithSAMLResponse] = js.native
-    def assumeRoleWithWebIdentity(
-        params: AssumeRoleWithWebIdentityRequest
-    ): Request[AssumeRoleWithWebIdentityResponse] = js.native
-    def decodeAuthorizationMessage(
-        params: DecodeAuthorizationMessageRequest
-    ): Request[DecodeAuthorizationMessageResponse] = js.native
+    def assumeRoleWithWebIdentity(params: AssumeRoleWithWebIdentityRequest): Request[AssumeRoleWithWebIdentityResponse] = js.native
+    def decodeAuthorizationMessage(params: DecodeAuthorizationMessageRequest): Request[DecodeAuthorizationMessageResponse] = js.native
     def getAccessKeyInfo(params: GetAccessKeyInfoRequest): Request[GetAccessKeyInfoResponse] = js.native
     def getCallerIdentity(params: GetCallerIdentityRequest): Request[GetCallerIdentityResponse] = js.native
     def getFederationToken(params: GetFederationTokenRequest): Request[GetFederationTokenResponse] = js.native
@@ -293,9 +279,7 @@ package sts {
       Credentials.foreach(__v => __obj.updateDynamic("Credentials")(__v.asInstanceOf[js.Any]))
       PackedPolicySize.foreach(__v => __obj.updateDynamic("PackedPolicySize")(__v.asInstanceOf[js.Any]))
       Provider.foreach(__v => __obj.updateDynamic("Provider")(__v.asInstanceOf[js.Any]))
-      SubjectFromWebIdentityToken.foreach(__v =>
-        __obj.updateDynamic("SubjectFromWebIdentityToken")(__v.asInstanceOf[js.Any])
-      )
+      SubjectFromWebIdentityToken.foreach(__v => __obj.updateDynamic("SubjectFromWebIdentityToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssumeRoleWithWebIdentityResponse]
     }
   }

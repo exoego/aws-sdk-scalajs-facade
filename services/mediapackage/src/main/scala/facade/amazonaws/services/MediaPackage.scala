@@ -25,43 +25,23 @@ package object mediapackage {
 
   implicit final class MediaPackageOps(private val service: MediaPackage) extends AnyVal {
 
-    @inline def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] =
-      service.createChannel(params).promise().toFuture
-    @inline def createHarvestJobFuture(params: CreateHarvestJobRequest): Future[CreateHarvestJobResponse] =
-      service.createHarvestJob(params).promise().toFuture
-    @inline def createOriginEndpointFuture(params: CreateOriginEndpointRequest): Future[CreateOriginEndpointResponse] =
-      service.createOriginEndpoint(params).promise().toFuture
-    @inline def deleteChannelFuture(params: DeleteChannelRequest): Future[DeleteChannelResponse] =
-      service.deleteChannel(params).promise().toFuture
-    @inline def deleteOriginEndpointFuture(params: DeleteOriginEndpointRequest): Future[DeleteOriginEndpointResponse] =
-      service.deleteOriginEndpoint(params).promise().toFuture
-    @inline def describeChannelFuture(params: DescribeChannelRequest): Future[DescribeChannelResponse] =
-      service.describeChannel(params).promise().toFuture
-    @inline def describeHarvestJobFuture(params: DescribeHarvestJobRequest): Future[DescribeHarvestJobResponse] =
-      service.describeHarvestJob(params).promise().toFuture
-    @inline def describeOriginEndpointFuture(
-        params: DescribeOriginEndpointRequest
-    ): Future[DescribeOriginEndpointResponse] = service.describeOriginEndpoint(params).promise().toFuture
-    @inline def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] =
-      service.listChannels(params).promise().toFuture
-    @inline def listHarvestJobsFuture(params: ListHarvestJobsRequest): Future[ListHarvestJobsResponse] =
-      service.listHarvestJobs(params).promise().toFuture
-    @inline def listOriginEndpointsFuture(params: ListOriginEndpointsRequest): Future[ListOriginEndpointsResponse] =
-      service.listOriginEndpoints(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def rotateIngestEndpointCredentialsFuture(
-        params: RotateIngestEndpointCredentialsRequest
-    ): Future[RotateIngestEndpointCredentialsResponse] =
-      service.rotateIngestEndpointCredentials(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateChannelFuture(params: UpdateChannelRequest): Future[UpdateChannelResponse] =
-      service.updateChannel(params).promise().toFuture
-    @inline def updateOriginEndpointFuture(params: UpdateOriginEndpointRequest): Future[UpdateOriginEndpointResponse] =
-      service.updateOriginEndpoint(params).promise().toFuture
+    @inline def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] = service.createChannel(params).promise().toFuture
+    @inline def createHarvestJobFuture(params: CreateHarvestJobRequest): Future[CreateHarvestJobResponse] = service.createHarvestJob(params).promise().toFuture
+    @inline def createOriginEndpointFuture(params: CreateOriginEndpointRequest): Future[CreateOriginEndpointResponse] = service.createOriginEndpoint(params).promise().toFuture
+    @inline def deleteChannelFuture(params: DeleteChannelRequest): Future[DeleteChannelResponse] = service.deleteChannel(params).promise().toFuture
+    @inline def deleteOriginEndpointFuture(params: DeleteOriginEndpointRequest): Future[DeleteOriginEndpointResponse] = service.deleteOriginEndpoint(params).promise().toFuture
+    @inline def describeChannelFuture(params: DescribeChannelRequest): Future[DescribeChannelResponse] = service.describeChannel(params).promise().toFuture
+    @inline def describeHarvestJobFuture(params: DescribeHarvestJobRequest): Future[DescribeHarvestJobResponse] = service.describeHarvestJob(params).promise().toFuture
+    @inline def describeOriginEndpointFuture(params: DescribeOriginEndpointRequest): Future[DescribeOriginEndpointResponse] = service.describeOriginEndpoint(params).promise().toFuture
+    @inline def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] = service.listChannels(params).promise().toFuture
+    @inline def listHarvestJobsFuture(params: ListHarvestJobsRequest): Future[ListHarvestJobsResponse] = service.listHarvestJobs(params).promise().toFuture
+    @inline def listOriginEndpointsFuture(params: ListOriginEndpointsRequest): Future[ListOriginEndpointsResponse] = service.listOriginEndpoints(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def rotateIngestEndpointCredentialsFuture(params: RotateIngestEndpointCredentialsRequest): Future[RotateIngestEndpointCredentialsResponse] = service.rotateIngestEndpointCredentials(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
+    @inline def updateChannelFuture(params: UpdateChannelRequest): Future[UpdateChannelResponse] = service.updateChannel(params).promise().toFuture
+    @inline def updateOriginEndpointFuture(params: UpdateOriginEndpointRequest): Future[UpdateOriginEndpointResponse] = service.updateOriginEndpoint(params).promise().toFuture
   }
 }
 
@@ -78,24 +58,17 @@ package mediapackage {
     def deleteOriginEndpoint(params: DeleteOriginEndpointRequest): Request[DeleteOriginEndpointResponse] = js.native
     def describeChannel(params: DescribeChannelRequest): Request[DescribeChannelResponse] = js.native
     def describeHarvestJob(params: DescribeHarvestJobRequest): Request[DescribeHarvestJobResponse] = js.native
-    def describeOriginEndpoint(params: DescribeOriginEndpointRequest): Request[DescribeOriginEndpointResponse] =
-      js.native
+    def describeOriginEndpoint(params: DescribeOriginEndpointRequest): Request[DescribeOriginEndpointResponse] = js.native
     def listChannels(params: ListChannelsRequest): Request[ListChannelsResponse] = js.native
     def listHarvestJobs(params: ListHarvestJobsRequest): Request[ListHarvestJobsResponse] = js.native
     def listOriginEndpoints(params: ListOriginEndpointsRequest): Request[ListOriginEndpointsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def rotateIngestEndpointCredentials(
-        params: RotateIngestEndpointCredentialsRequest
-    ): Request[RotateIngestEndpointCredentialsResponse] = js.native
+    def rotateIngestEndpointCredentials(params: RotateIngestEndpointCredentialsRequest): Request[RotateIngestEndpointCredentialsResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateChannel(params: UpdateChannelRequest): Request[UpdateChannelResponse] = js.native
     def updateOriginEndpoint(params: UpdateOriginEndpointRequest): Request[UpdateOriginEndpointResponse] = js.native
-    @deprecated(
-      "This API is deprecated. Please use RotateIngestEndpointCredentials instead",
-      "forever"
-    ) def rotateChannelCredentials(params: RotateChannelCredentialsRequest): Request[RotateChannelCredentialsResponse] =
-      js.native
+    @deprecated("This API is deprecated. Please use RotateIngestEndpointCredentials instead", "forever") def rotateChannelCredentials(params: RotateChannelCredentialsRequest): Request[RotateChannelCredentialsResponse] = js.native
   }
 
   @js.native
@@ -204,9 +177,7 @@ package mediapackage {
         "SpekeKeyProvider" -> SpekeKeyProvider.asInstanceOf[js.Any]
       )
 
-      KeyRotationIntervalSeconds.foreach(__v =>
-        __obj.updateDynamic("KeyRotationIntervalSeconds")(__v.asInstanceOf[js.Any])
-      )
+      KeyRotationIntervalSeconds.foreach(__v => __obj.updateDynamic("KeyRotationIntervalSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CmafEncryption]
     }
   }
@@ -541,9 +512,7 @@ package mediapackage {
         "SpekeKeyProvider" -> SpekeKeyProvider.asInstanceOf[js.Any]
       )
 
-      KeyRotationIntervalSeconds.foreach(__v =>
-        __obj.updateDynamic("KeyRotationIntervalSeconds")(__v.asInstanceOf[js.Any])
-      )
+      KeyRotationIntervalSeconds.foreach(__v => __obj.updateDynamic("KeyRotationIntervalSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DashEncryption]
     }
   }
@@ -587,9 +556,7 @@ package mediapackage {
     ): DashPackage = {
       val __obj = js.Dynamic.literal()
       AdTriggers.foreach(__v => __obj.updateDynamic("AdTriggers")(__v.asInstanceOf[js.Any]))
-      AdsOnDeliveryRestrictions.foreach(__v =>
-        __obj.updateDynamic("AdsOnDeliveryRestrictions")(__v.asInstanceOf[js.Any])
-      )
+      AdsOnDeliveryRestrictions.foreach(__v => __obj.updateDynamic("AdsOnDeliveryRestrictions")(__v.asInstanceOf[js.Any]))
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
       ManifestLayout.foreach(__v => __obj.updateDynamic("ManifestLayout")(__v.asInstanceOf[js.Any]))
       ManifestWindowSeconds.foreach(__v => __obj.updateDynamic("ManifestWindowSeconds")(__v.asInstanceOf[js.Any]))
@@ -600,9 +567,7 @@ package mediapackage {
       SegmentDurationSeconds.foreach(__v => __obj.updateDynamic("SegmentDurationSeconds")(__v.asInstanceOf[js.Any]))
       SegmentTemplateFormat.foreach(__v => __obj.updateDynamic("SegmentTemplateFormat")(__v.asInstanceOf[js.Any]))
       StreamSelection.foreach(__v => __obj.updateDynamic("StreamSelection")(__v.asInstanceOf[js.Any]))
-      SuggestedPresentationDelaySeconds.foreach(__v =>
-        __obj.updateDynamic("SuggestedPresentationDelaySeconds")(__v.asInstanceOf[js.Any])
-      )
+      SuggestedPresentationDelaySeconds.foreach(__v => __obj.updateDynamic("SuggestedPresentationDelaySeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DashPackage]
     }
   }
@@ -929,13 +894,9 @@ package mediapackage {
         "SpekeKeyProvider" -> SpekeKeyProvider.asInstanceOf[js.Any]
       )
 
-      ConstantInitializationVector.foreach(__v =>
-        __obj.updateDynamic("ConstantInitializationVector")(__v.asInstanceOf[js.Any])
-      )
+      ConstantInitializationVector.foreach(__v => __obj.updateDynamic("ConstantInitializationVector")(__v.asInstanceOf[js.Any]))
       EncryptionMethod.foreach(__v => __obj.updateDynamic("EncryptionMethod")(__v.asInstanceOf[js.Any]))
-      KeyRotationIntervalSeconds.foreach(__v =>
-        __obj.updateDynamic("KeyRotationIntervalSeconds")(__v.asInstanceOf[js.Any])
-      )
+      KeyRotationIntervalSeconds.foreach(__v => __obj.updateDynamic("KeyRotationIntervalSeconds")(__v.asInstanceOf[js.Any]))
       RepeatExtXKey.foreach(__v => __obj.updateDynamic("RepeatExtXKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HlsEncryption]
     }
@@ -996,9 +957,7 @@ package mediapackage {
       ManifestName.foreach(__v => __obj.updateDynamic("ManifestName")(__v.asInstanceOf[js.Any]))
       PlaylistType.foreach(__v => __obj.updateDynamic("PlaylistType")(__v.asInstanceOf[js.Any]))
       PlaylistWindowSeconds.foreach(__v => __obj.updateDynamic("PlaylistWindowSeconds")(__v.asInstanceOf[js.Any]))
-      ProgramDateTimeIntervalSeconds.foreach(__v =>
-        __obj.updateDynamic("ProgramDateTimeIntervalSeconds")(__v.asInstanceOf[js.Any])
-      )
+      ProgramDateTimeIntervalSeconds.foreach(__v => __obj.updateDynamic("ProgramDateTimeIntervalSeconds")(__v.asInstanceOf[js.Any]))
       Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HlsManifest]
     }
@@ -1039,16 +998,12 @@ package mediapackage {
 
       AdMarkers.foreach(__v => __obj.updateDynamic("AdMarkers")(__v.asInstanceOf[js.Any]))
       AdTriggers.foreach(__v => __obj.updateDynamic("AdTriggers")(__v.asInstanceOf[js.Any]))
-      AdsOnDeliveryRestrictions.foreach(__v =>
-        __obj.updateDynamic("AdsOnDeliveryRestrictions")(__v.asInstanceOf[js.Any])
-      )
+      AdsOnDeliveryRestrictions.foreach(__v => __obj.updateDynamic("AdsOnDeliveryRestrictions")(__v.asInstanceOf[js.Any]))
       IncludeIframeOnlyStream.foreach(__v => __obj.updateDynamic("IncludeIframeOnlyStream")(__v.asInstanceOf[js.Any]))
       ManifestName.foreach(__v => __obj.updateDynamic("ManifestName")(__v.asInstanceOf[js.Any]))
       PlaylistType.foreach(__v => __obj.updateDynamic("PlaylistType")(__v.asInstanceOf[js.Any]))
       PlaylistWindowSeconds.foreach(__v => __obj.updateDynamic("PlaylistWindowSeconds")(__v.asInstanceOf[js.Any]))
-      ProgramDateTimeIntervalSeconds.foreach(__v =>
-        __obj.updateDynamic("ProgramDateTimeIntervalSeconds")(__v.asInstanceOf[js.Any])
-      )
+      ProgramDateTimeIntervalSeconds.foreach(__v => __obj.updateDynamic("ProgramDateTimeIntervalSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HlsManifestCreateOrUpdateParameters]
     }
   }
@@ -1089,16 +1044,12 @@ package mediapackage {
       val __obj = js.Dynamic.literal()
       AdMarkers.foreach(__v => __obj.updateDynamic("AdMarkers")(__v.asInstanceOf[js.Any]))
       AdTriggers.foreach(__v => __obj.updateDynamic("AdTriggers")(__v.asInstanceOf[js.Any]))
-      AdsOnDeliveryRestrictions.foreach(__v =>
-        __obj.updateDynamic("AdsOnDeliveryRestrictions")(__v.asInstanceOf[js.Any])
-      )
+      AdsOnDeliveryRestrictions.foreach(__v => __obj.updateDynamic("AdsOnDeliveryRestrictions")(__v.asInstanceOf[js.Any]))
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
       IncludeIframeOnlyStream.foreach(__v => __obj.updateDynamic("IncludeIframeOnlyStream")(__v.asInstanceOf[js.Any]))
       PlaylistType.foreach(__v => __obj.updateDynamic("PlaylistType")(__v.asInstanceOf[js.Any]))
       PlaylistWindowSeconds.foreach(__v => __obj.updateDynamic("PlaylistWindowSeconds")(__v.asInstanceOf[js.Any]))
-      ProgramDateTimeIntervalSeconds.foreach(__v =>
-        __obj.updateDynamic("ProgramDateTimeIntervalSeconds")(__v.asInstanceOf[js.Any])
-      )
+      ProgramDateTimeIntervalSeconds.foreach(__v => __obj.updateDynamic("ProgramDateTimeIntervalSeconds")(__v.asInstanceOf[js.Any]))
       SegmentDurationSeconds.foreach(__v => __obj.updateDynamic("SegmentDurationSeconds")(__v.asInstanceOf[js.Any]))
       StreamSelection.foreach(__v => __obj.updateDynamic("StreamSelection")(__v.asInstanceOf[js.Any]))
       UseAudioRenditionGroup.foreach(__v => __obj.updateDynamic("UseAudioRenditionGroup")(__v.asInstanceOf[js.Any]))
@@ -1871,10 +1822,8 @@ package mediapackage {
     val DISTRIBUTOR_ADVERTISEMENT = "DISTRIBUTOR_ADVERTISEMENT".asInstanceOf[__AdTriggersElement]
     val PROVIDER_PLACEMENT_OPPORTUNITY = "PROVIDER_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
     val DISTRIBUTOR_PLACEMENT_OPPORTUNITY = "DISTRIBUTOR_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
-    val PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY =
-      "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
-    val DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY =
-      "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
+    val PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY = "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
+    val DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY = "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
 
     val values = js.Object.freeze(
       js.Array(

@@ -40,61 +40,28 @@ package object shield {
 
   implicit final class ShieldOps(private val service: Shield) extends AnyVal {
 
-    @inline def associateDRTLogBucketFuture(
-        params: AssociateDRTLogBucketRequest
-    ): Future[AssociateDRTLogBucketResponse] = service.associateDRTLogBucket(params).promise().toFuture
-    @inline def associateDRTRoleFuture(params: AssociateDRTRoleRequest): Future[AssociateDRTRoleResponse] =
-      service.associateDRTRole(params).promise().toFuture
-    @inline def associateHealthCheckFuture(params: AssociateHealthCheckRequest): Future[AssociateHealthCheckResponse] =
-      service.associateHealthCheck(params).promise().toFuture
-    @inline def associateProactiveEngagementDetailsFuture(
-        params: AssociateProactiveEngagementDetailsRequest
-    ): Future[AssociateProactiveEngagementDetailsResponse] =
-      service.associateProactiveEngagementDetails(params).promise().toFuture
-    @inline def createProtectionFuture(params: CreateProtectionRequest): Future[CreateProtectionResponse] =
-      service.createProtection(params).promise().toFuture
-    @inline def createSubscriptionFuture(params: CreateSubscriptionRequest): Future[CreateSubscriptionResponse] =
-      service.createSubscription(params).promise().toFuture
-    @inline def deleteProtectionFuture(params: DeleteProtectionRequest): Future[DeleteProtectionResponse] =
-      service.deleteProtection(params).promise().toFuture
-    @inline def describeAttackFuture(params: DescribeAttackRequest): Future[DescribeAttackResponse] =
-      service.describeAttack(params).promise().toFuture
-    @inline def describeDRTAccessFuture(params: DescribeDRTAccessRequest): Future[DescribeDRTAccessResponse] =
-      service.describeDRTAccess(params).promise().toFuture
-    @inline def describeEmergencyContactSettingsFuture(
-        params: DescribeEmergencyContactSettingsRequest
-    ): Future[DescribeEmergencyContactSettingsResponse] =
-      service.describeEmergencyContactSettings(params).promise().toFuture
-    @inline def describeProtectionFuture(params: DescribeProtectionRequest): Future[DescribeProtectionResponse] =
-      service.describeProtection(params).promise().toFuture
-    @inline def describeSubscriptionFuture(params: DescribeSubscriptionRequest): Future[DescribeSubscriptionResponse] =
-      service.describeSubscription(params).promise().toFuture
-    @inline def disableProactiveEngagementFuture(
-        params: DisableProactiveEngagementRequest
-    ): Future[DisableProactiveEngagementResponse] = service.disableProactiveEngagement(params).promise().toFuture
-    @inline def disassociateDRTLogBucketFuture(
-        params: DisassociateDRTLogBucketRequest
-    ): Future[DisassociateDRTLogBucketResponse] = service.disassociateDRTLogBucket(params).promise().toFuture
-    @inline def disassociateDRTRoleFuture(params: DisassociateDRTRoleRequest): Future[DisassociateDRTRoleResponse] =
-      service.disassociateDRTRole(params).promise().toFuture
-    @inline def disassociateHealthCheckFuture(
-        params: DisassociateHealthCheckRequest
-    ): Future[DisassociateHealthCheckResponse] = service.disassociateHealthCheck(params).promise().toFuture
-    @inline def enableProactiveEngagementFuture(
-        params: EnableProactiveEngagementRequest
-    ): Future[EnableProactiveEngagementResponse] = service.enableProactiveEngagement(params).promise().toFuture
-    @inline def getSubscriptionStateFuture(params: GetSubscriptionStateRequest): Future[GetSubscriptionStateResponse] =
-      service.getSubscriptionState(params).promise().toFuture
-    @inline def listAttacksFuture(params: ListAttacksRequest): Future[ListAttacksResponse] =
-      service.listAttacks(params).promise().toFuture
-    @inline def listProtectionsFuture(params: ListProtectionsRequest): Future[ListProtectionsResponse] =
-      service.listProtections(params).promise().toFuture
-    @inline def updateEmergencyContactSettingsFuture(
-        params: UpdateEmergencyContactSettingsRequest
-    ): Future[UpdateEmergencyContactSettingsResponse] =
-      service.updateEmergencyContactSettings(params).promise().toFuture
-    @inline def updateSubscriptionFuture(params: UpdateSubscriptionRequest): Future[UpdateSubscriptionResponse] =
-      service.updateSubscription(params).promise().toFuture
+    @inline def associateDRTLogBucketFuture(params: AssociateDRTLogBucketRequest): Future[AssociateDRTLogBucketResponse] = service.associateDRTLogBucket(params).promise().toFuture
+    @inline def associateDRTRoleFuture(params: AssociateDRTRoleRequest): Future[AssociateDRTRoleResponse] = service.associateDRTRole(params).promise().toFuture
+    @inline def associateHealthCheckFuture(params: AssociateHealthCheckRequest): Future[AssociateHealthCheckResponse] = service.associateHealthCheck(params).promise().toFuture
+    @inline def associateProactiveEngagementDetailsFuture(params: AssociateProactiveEngagementDetailsRequest): Future[AssociateProactiveEngagementDetailsResponse] = service.associateProactiveEngagementDetails(params).promise().toFuture
+    @inline def createProtectionFuture(params: CreateProtectionRequest): Future[CreateProtectionResponse] = service.createProtection(params).promise().toFuture
+    @inline def createSubscriptionFuture(params: CreateSubscriptionRequest): Future[CreateSubscriptionResponse] = service.createSubscription(params).promise().toFuture
+    @inline def deleteProtectionFuture(params: DeleteProtectionRequest): Future[DeleteProtectionResponse] = service.deleteProtection(params).promise().toFuture
+    @inline def describeAttackFuture(params: DescribeAttackRequest): Future[DescribeAttackResponse] = service.describeAttack(params).promise().toFuture
+    @inline def describeDRTAccessFuture(params: DescribeDRTAccessRequest): Future[DescribeDRTAccessResponse] = service.describeDRTAccess(params).promise().toFuture
+    @inline def describeEmergencyContactSettingsFuture(params: DescribeEmergencyContactSettingsRequest): Future[DescribeEmergencyContactSettingsResponse] = service.describeEmergencyContactSettings(params).promise().toFuture
+    @inline def describeProtectionFuture(params: DescribeProtectionRequest): Future[DescribeProtectionResponse] = service.describeProtection(params).promise().toFuture
+    @inline def describeSubscriptionFuture(params: DescribeSubscriptionRequest): Future[DescribeSubscriptionResponse] = service.describeSubscription(params).promise().toFuture
+    @inline def disableProactiveEngagementFuture(params: DisableProactiveEngagementRequest): Future[DisableProactiveEngagementResponse] = service.disableProactiveEngagement(params).promise().toFuture
+    @inline def disassociateDRTLogBucketFuture(params: DisassociateDRTLogBucketRequest): Future[DisassociateDRTLogBucketResponse] = service.disassociateDRTLogBucket(params).promise().toFuture
+    @inline def disassociateDRTRoleFuture(params: DisassociateDRTRoleRequest): Future[DisassociateDRTRoleResponse] = service.disassociateDRTRole(params).promise().toFuture
+    @inline def disassociateHealthCheckFuture(params: DisassociateHealthCheckRequest): Future[DisassociateHealthCheckResponse] = service.disassociateHealthCheck(params).promise().toFuture
+    @inline def enableProactiveEngagementFuture(params: EnableProactiveEngagementRequest): Future[EnableProactiveEngagementResponse] = service.enableProactiveEngagement(params).promise().toFuture
+    @inline def getSubscriptionStateFuture(params: GetSubscriptionStateRequest): Future[GetSubscriptionStateResponse] = service.getSubscriptionState(params).promise().toFuture
+    @inline def listAttacksFuture(params: ListAttacksRequest): Future[ListAttacksResponse] = service.listAttacks(params).promise().toFuture
+    @inline def listProtectionsFuture(params: ListProtectionsRequest): Future[ListProtectionsResponse] = service.listProtections(params).promise().toFuture
+    @inline def updateEmergencyContactSettingsFuture(params: UpdateEmergencyContactSettingsRequest): Future[UpdateEmergencyContactSettingsResponse] = service.updateEmergencyContactSettings(params).promise().toFuture
+    @inline def updateSubscriptionFuture(params: UpdateSubscriptionRequest): Future[UpdateSubscriptionResponse] = service.updateSubscription(params).promise().toFuture
   }
 }
 
@@ -107,40 +74,26 @@ package shield {
     def associateDRTLogBucket(params: AssociateDRTLogBucketRequest): Request[AssociateDRTLogBucketResponse] = js.native
     def associateDRTRole(params: AssociateDRTRoleRequest): Request[AssociateDRTRoleResponse] = js.native
     def associateHealthCheck(params: AssociateHealthCheckRequest): Request[AssociateHealthCheckResponse] = js.native
-    def associateProactiveEngagementDetails(
-        params: AssociateProactiveEngagementDetailsRequest
-    ): Request[AssociateProactiveEngagementDetailsResponse] = js.native
+    def associateProactiveEngagementDetails(params: AssociateProactiveEngagementDetailsRequest): Request[AssociateProactiveEngagementDetailsResponse] = js.native
     def createProtection(params: CreateProtectionRequest): Request[CreateProtectionResponse] = js.native
     def createSubscription(params: CreateSubscriptionRequest): Request[CreateSubscriptionResponse] = js.native
     def deleteProtection(params: DeleteProtectionRequest): Request[DeleteProtectionResponse] = js.native
     def describeAttack(params: DescribeAttackRequest): Request[DescribeAttackResponse] = js.native
     def describeDRTAccess(params: DescribeDRTAccessRequest): Request[DescribeDRTAccessResponse] = js.native
-    def describeEmergencyContactSettings(
-        params: DescribeEmergencyContactSettingsRequest
-    ): Request[DescribeEmergencyContactSettingsResponse] = js.native
+    def describeEmergencyContactSettings(params: DescribeEmergencyContactSettingsRequest): Request[DescribeEmergencyContactSettingsResponse] = js.native
     def describeProtection(params: DescribeProtectionRequest): Request[DescribeProtectionResponse] = js.native
     def describeSubscription(params: DescribeSubscriptionRequest): Request[DescribeSubscriptionResponse] = js.native
-    def disableProactiveEngagement(
-        params: DisableProactiveEngagementRequest
-    ): Request[DisableProactiveEngagementResponse] = js.native
-    def disassociateDRTLogBucket(params: DisassociateDRTLogBucketRequest): Request[DisassociateDRTLogBucketResponse] =
-      js.native
+    def disableProactiveEngagement(params: DisableProactiveEngagementRequest): Request[DisableProactiveEngagementResponse] = js.native
+    def disassociateDRTLogBucket(params: DisassociateDRTLogBucketRequest): Request[DisassociateDRTLogBucketResponse] = js.native
     def disassociateDRTRole(params: DisassociateDRTRoleRequest): Request[DisassociateDRTRoleResponse] = js.native
-    def disassociateHealthCheck(params: DisassociateHealthCheckRequest): Request[DisassociateHealthCheckResponse] =
-      js.native
-    def enableProactiveEngagement(
-        params: EnableProactiveEngagementRequest
-    ): Request[EnableProactiveEngagementResponse] = js.native
+    def disassociateHealthCheck(params: DisassociateHealthCheckRequest): Request[DisassociateHealthCheckResponse] = js.native
+    def enableProactiveEngagement(params: EnableProactiveEngagementRequest): Request[EnableProactiveEngagementResponse] = js.native
     def getSubscriptionState(params: GetSubscriptionStateRequest): Request[GetSubscriptionStateResponse] = js.native
     def listAttacks(params: ListAttacksRequest): Request[ListAttacksResponse] = js.native
     def listProtections(params: ListProtectionsRequest): Request[ListProtectionsResponse] = js.native
-    def updateEmergencyContactSettings(
-        params: UpdateEmergencyContactSettingsRequest
-    ): Request[UpdateEmergencyContactSettingsResponse] = js.native
+    def updateEmergencyContactSettings(params: UpdateEmergencyContactSettingsRequest): Request[UpdateEmergencyContactSettingsResponse] = js.native
     def updateSubscription(params: UpdateSubscriptionRequest): Request[UpdateSubscriptionResponse] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def deleteSubscription(
-        params: DeleteSubscriptionRequest
-    ): Request[DeleteSubscriptionResponse] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def deleteSubscription(params: DeleteSubscriptionRequest): Request[DeleteSubscriptionResponse] = js.native
   }
 
   @js.native
@@ -362,18 +315,7 @@ package shield {
     val WORDPRESS_PINGBACK_REFLECTOR = "WORDPRESS_PINGBACK_REFLECTOR".asInstanceOf[AttackPropertyIdentifier]
     val WORDPRESS_PINGBACK_SOURCE = "WORDPRESS_PINGBACK_SOURCE".asInstanceOf[AttackPropertyIdentifier]
 
-    val values = js.Object.freeze(
-      js.Array(
-        DESTINATION_URL,
-        REFERRER,
-        SOURCE_ASN,
-        SOURCE_COUNTRY,
-        SOURCE_IP_ADDRESS,
-        SOURCE_USER_AGENT,
-        WORDPRESS_PINGBACK_REFLECTOR,
-        WORDPRESS_PINGBACK_SOURCE
-      )
-    )
+    val values = js.Object.freeze(js.Array(DESTINATION_URL, REFERRER, SOURCE_ASN, SOURCE_COUNTRY, SOURCE_IP_ADDRESS, SOURCE_USER_AGENT, WORDPRESS_PINGBACK_REFLECTOR, WORDPRESS_PINGBACK_SOURCE))
   }
 
   /**
@@ -1169,9 +1111,7 @@ package shield {
       AutoRenew.foreach(__v => __obj.updateDynamic("AutoRenew")(__v.asInstanceOf[js.Any]))
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
       Limits.foreach(__v => __obj.updateDynamic("Limits")(__v.asInstanceOf[js.Any]))
-      ProactiveEngagementStatus.foreach(__v =>
-        __obj.updateDynamic("ProactiveEngagementStatus")(__v.asInstanceOf[js.Any])
-      )
+      ProactiveEngagementStatus.foreach(__v => __obj.updateDynamic("ProactiveEngagementStatus")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       TimeCommitmentInSeconds.foreach(__v => __obj.updateDynamic("TimeCommitmentInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Subscription]

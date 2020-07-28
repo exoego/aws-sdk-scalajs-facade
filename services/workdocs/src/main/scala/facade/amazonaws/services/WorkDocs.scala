@@ -65,97 +65,47 @@ package object workdocs {
 
   implicit final class WorkDocsOps(private val service: WorkDocs) extends AnyVal {
 
-    @inline def abortDocumentVersionUploadFuture(params: AbortDocumentVersionUploadRequest): Future[js.Object] =
-      service.abortDocumentVersionUpload(params).promise().toFuture
-    @inline def activateUserFuture(params: ActivateUserRequest): Future[ActivateUserResponse] =
-      service.activateUser(params).promise().toFuture
-    @inline def addResourcePermissionsFuture(
-        params: AddResourcePermissionsRequest
-    ): Future[AddResourcePermissionsResponse] = service.addResourcePermissions(params).promise().toFuture
-    @inline def createCommentFuture(params: CreateCommentRequest): Future[CreateCommentResponse] =
-      service.createComment(params).promise().toFuture
-    @inline def createCustomMetadataFuture(params: CreateCustomMetadataRequest): Future[CreateCustomMetadataResponse] =
-      service.createCustomMetadata(params).promise().toFuture
-    @inline def createFolderFuture(params: CreateFolderRequest): Future[CreateFolderResponse] =
-      service.createFolder(params).promise().toFuture
-    @inline def createLabelsFuture(params: CreateLabelsRequest): Future[CreateLabelsResponse] =
-      service.createLabels(params).promise().toFuture
-    @inline def createNotificationSubscriptionFuture(
-        params: CreateNotificationSubscriptionRequest
-    ): Future[CreateNotificationSubscriptionResponse] =
-      service.createNotificationSubscription(params).promise().toFuture
-    @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] =
-      service.createUser(params).promise().toFuture
-    @inline def deactivateUserFuture(params: DeactivateUserRequest): Future[js.Object] =
-      service.deactivateUser(params).promise().toFuture
-    @inline def deleteCommentFuture(params: DeleteCommentRequest): Future[js.Object] =
-      service.deleteComment(params).promise().toFuture
-    @inline def deleteCustomMetadataFuture(params: DeleteCustomMetadataRequest): Future[DeleteCustomMetadataResponse] =
-      service.deleteCustomMetadata(params).promise().toFuture
-    @inline def deleteDocumentFuture(params: DeleteDocumentRequest): Future[js.Object] =
-      service.deleteDocument(params).promise().toFuture
-    @inline def deleteFolderContentsFuture(params: DeleteFolderContentsRequest): Future[js.Object] =
-      service.deleteFolderContents(params).promise().toFuture
-    @inline def deleteFolderFuture(params: DeleteFolderRequest): Future[js.Object] =
-      service.deleteFolder(params).promise().toFuture
-    @inline def deleteLabelsFuture(params: DeleteLabelsRequest): Future[DeleteLabelsResponse] =
-      service.deleteLabels(params).promise().toFuture
-    @inline def deleteNotificationSubscriptionFuture(params: DeleteNotificationSubscriptionRequest): Future[js.Object] =
-      service.deleteNotificationSubscription(params).promise().toFuture
-    @inline def deleteUserFuture(params: DeleteUserRequest): Future[js.Object] =
-      service.deleteUser(params).promise().toFuture
-    @inline def describeActivitiesFuture(params: DescribeActivitiesRequest): Future[DescribeActivitiesResponse] =
-      service.describeActivities(params).promise().toFuture
-    @inline def describeCommentsFuture(params: DescribeCommentsRequest): Future[DescribeCommentsResponse] =
-      service.describeComments(params).promise().toFuture
-    @inline def describeDocumentVersionsFuture(
-        params: DescribeDocumentVersionsRequest
-    ): Future[DescribeDocumentVersionsResponse] = service.describeDocumentVersions(params).promise().toFuture
-    @inline def describeFolderContentsFuture(
-        params: DescribeFolderContentsRequest
-    ): Future[DescribeFolderContentsResponse] = service.describeFolderContents(params).promise().toFuture
-    @inline def describeGroupsFuture(params: DescribeGroupsRequest): Future[DescribeGroupsResponse] =
-      service.describeGroups(params).promise().toFuture
-    @inline def describeNotificationSubscriptionsFuture(
-        params: DescribeNotificationSubscriptionsRequest
-    ): Future[DescribeNotificationSubscriptionsResponse] =
-      service.describeNotificationSubscriptions(params).promise().toFuture
-    @inline def describeResourcePermissionsFuture(
-        params: DescribeResourcePermissionsRequest
-    ): Future[DescribeResourcePermissionsResponse] = service.describeResourcePermissions(params).promise().toFuture
-    @inline def describeRootFoldersFuture(params: DescribeRootFoldersRequest): Future[DescribeRootFoldersResponse] =
-      service.describeRootFolders(params).promise().toFuture
-    @inline def describeUsersFuture(params: DescribeUsersRequest): Future[DescribeUsersResponse] =
-      service.describeUsers(params).promise().toFuture
-    @inline def getCurrentUserFuture(params: GetCurrentUserRequest): Future[GetCurrentUserResponse] =
-      service.getCurrentUser(params).promise().toFuture
-    @inline def getDocumentFuture(params: GetDocumentRequest): Future[GetDocumentResponse] =
-      service.getDocument(params).promise().toFuture
-    @inline def getDocumentPathFuture(params: GetDocumentPathRequest): Future[GetDocumentPathResponse] =
-      service.getDocumentPath(params).promise().toFuture
-    @inline def getDocumentVersionFuture(params: GetDocumentVersionRequest): Future[GetDocumentVersionResponse] =
-      service.getDocumentVersion(params).promise().toFuture
-    @inline def getFolderFuture(params: GetFolderRequest): Future[GetFolderResponse] =
-      service.getFolder(params).promise().toFuture
-    @inline def getFolderPathFuture(params: GetFolderPathRequest): Future[GetFolderPathResponse] =
-      service.getFolderPath(params).promise().toFuture
-    @inline def getResourcesFuture(params: GetResourcesRequest): Future[GetResourcesResponse] =
-      service.getResources(params).promise().toFuture
-    @inline def initiateDocumentVersionUploadFuture(
-        params: InitiateDocumentVersionUploadRequest
-    ): Future[InitiateDocumentVersionUploadResponse] = service.initiateDocumentVersionUpload(params).promise().toFuture
-    @inline def removeAllResourcePermissionsFuture(params: RemoveAllResourcePermissionsRequest): Future[js.Object] =
-      service.removeAllResourcePermissions(params).promise().toFuture
-    @inline def removeResourcePermissionFuture(params: RemoveResourcePermissionRequest): Future[js.Object] =
-      service.removeResourcePermission(params).promise().toFuture
-    @inline def updateDocumentFuture(params: UpdateDocumentRequest): Future[js.Object] =
-      service.updateDocument(params).promise().toFuture
-    @inline def updateDocumentVersionFuture(params: UpdateDocumentVersionRequest): Future[js.Object] =
-      service.updateDocumentVersion(params).promise().toFuture
-    @inline def updateFolderFuture(params: UpdateFolderRequest): Future[js.Object] =
-      service.updateFolder(params).promise().toFuture
-    @inline def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] =
-      service.updateUser(params).promise().toFuture
+    @inline def abortDocumentVersionUploadFuture(params: AbortDocumentVersionUploadRequest): Future[js.Object] = service.abortDocumentVersionUpload(params).promise().toFuture
+    @inline def activateUserFuture(params: ActivateUserRequest): Future[ActivateUserResponse] = service.activateUser(params).promise().toFuture
+    @inline def addResourcePermissionsFuture(params: AddResourcePermissionsRequest): Future[AddResourcePermissionsResponse] = service.addResourcePermissions(params).promise().toFuture
+    @inline def createCommentFuture(params: CreateCommentRequest): Future[CreateCommentResponse] = service.createComment(params).promise().toFuture
+    @inline def createCustomMetadataFuture(params: CreateCustomMetadataRequest): Future[CreateCustomMetadataResponse] = service.createCustomMetadata(params).promise().toFuture
+    @inline def createFolderFuture(params: CreateFolderRequest): Future[CreateFolderResponse] = service.createFolder(params).promise().toFuture
+    @inline def createLabelsFuture(params: CreateLabelsRequest): Future[CreateLabelsResponse] = service.createLabels(params).promise().toFuture
+    @inline def createNotificationSubscriptionFuture(params: CreateNotificationSubscriptionRequest): Future[CreateNotificationSubscriptionResponse] = service.createNotificationSubscription(params).promise().toFuture
+    @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] = service.createUser(params).promise().toFuture
+    @inline def deactivateUserFuture(params: DeactivateUserRequest): Future[js.Object] = service.deactivateUser(params).promise().toFuture
+    @inline def deleteCommentFuture(params: DeleteCommentRequest): Future[js.Object] = service.deleteComment(params).promise().toFuture
+    @inline def deleteCustomMetadataFuture(params: DeleteCustomMetadataRequest): Future[DeleteCustomMetadataResponse] = service.deleteCustomMetadata(params).promise().toFuture
+    @inline def deleteDocumentFuture(params: DeleteDocumentRequest): Future[js.Object] = service.deleteDocument(params).promise().toFuture
+    @inline def deleteFolderContentsFuture(params: DeleteFolderContentsRequest): Future[js.Object] = service.deleteFolderContents(params).promise().toFuture
+    @inline def deleteFolderFuture(params: DeleteFolderRequest): Future[js.Object] = service.deleteFolder(params).promise().toFuture
+    @inline def deleteLabelsFuture(params: DeleteLabelsRequest): Future[DeleteLabelsResponse] = service.deleteLabels(params).promise().toFuture
+    @inline def deleteNotificationSubscriptionFuture(params: DeleteNotificationSubscriptionRequest): Future[js.Object] = service.deleteNotificationSubscription(params).promise().toFuture
+    @inline def deleteUserFuture(params: DeleteUserRequest): Future[js.Object] = service.deleteUser(params).promise().toFuture
+    @inline def describeActivitiesFuture(params: DescribeActivitiesRequest): Future[DescribeActivitiesResponse] = service.describeActivities(params).promise().toFuture
+    @inline def describeCommentsFuture(params: DescribeCommentsRequest): Future[DescribeCommentsResponse] = service.describeComments(params).promise().toFuture
+    @inline def describeDocumentVersionsFuture(params: DescribeDocumentVersionsRequest): Future[DescribeDocumentVersionsResponse] = service.describeDocumentVersions(params).promise().toFuture
+    @inline def describeFolderContentsFuture(params: DescribeFolderContentsRequest): Future[DescribeFolderContentsResponse] = service.describeFolderContents(params).promise().toFuture
+    @inline def describeGroupsFuture(params: DescribeGroupsRequest): Future[DescribeGroupsResponse] = service.describeGroups(params).promise().toFuture
+    @inline def describeNotificationSubscriptionsFuture(params: DescribeNotificationSubscriptionsRequest): Future[DescribeNotificationSubscriptionsResponse] = service.describeNotificationSubscriptions(params).promise().toFuture
+    @inline def describeResourcePermissionsFuture(params: DescribeResourcePermissionsRequest): Future[DescribeResourcePermissionsResponse] = service.describeResourcePermissions(params).promise().toFuture
+    @inline def describeRootFoldersFuture(params: DescribeRootFoldersRequest): Future[DescribeRootFoldersResponse] = service.describeRootFolders(params).promise().toFuture
+    @inline def describeUsersFuture(params: DescribeUsersRequest): Future[DescribeUsersResponse] = service.describeUsers(params).promise().toFuture
+    @inline def getCurrentUserFuture(params: GetCurrentUserRequest): Future[GetCurrentUserResponse] = service.getCurrentUser(params).promise().toFuture
+    @inline def getDocumentFuture(params: GetDocumentRequest): Future[GetDocumentResponse] = service.getDocument(params).promise().toFuture
+    @inline def getDocumentPathFuture(params: GetDocumentPathRequest): Future[GetDocumentPathResponse] = service.getDocumentPath(params).promise().toFuture
+    @inline def getDocumentVersionFuture(params: GetDocumentVersionRequest): Future[GetDocumentVersionResponse] = service.getDocumentVersion(params).promise().toFuture
+    @inline def getFolderFuture(params: GetFolderRequest): Future[GetFolderResponse] = service.getFolder(params).promise().toFuture
+    @inline def getFolderPathFuture(params: GetFolderPathRequest): Future[GetFolderPathResponse] = service.getFolderPath(params).promise().toFuture
+    @inline def getResourcesFuture(params: GetResourcesRequest): Future[GetResourcesResponse] = service.getResources(params).promise().toFuture
+    @inline def initiateDocumentVersionUploadFuture(params: InitiateDocumentVersionUploadRequest): Future[InitiateDocumentVersionUploadResponse] = service.initiateDocumentVersionUpload(params).promise().toFuture
+    @inline def removeAllResourcePermissionsFuture(params: RemoveAllResourcePermissionsRequest): Future[js.Object] = service.removeAllResourcePermissions(params).promise().toFuture
+    @inline def removeResourcePermissionFuture(params: RemoveResourcePermissionRequest): Future[js.Object] = service.removeResourcePermission(params).promise().toFuture
+    @inline def updateDocumentFuture(params: UpdateDocumentRequest): Future[js.Object] = service.updateDocument(params).promise().toFuture
+    @inline def updateDocumentVersionFuture(params: UpdateDocumentVersionRequest): Future[js.Object] = service.updateDocumentVersion(params).promise().toFuture
+    @inline def updateFolderFuture(params: UpdateFolderRequest): Future[js.Object] = service.updateFolder(params).promise().toFuture
+    @inline def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] = service.updateUser(params).promise().toFuture
   }
 }
 
@@ -167,15 +117,12 @@ package workdocs {
 
     def abortDocumentVersionUpload(params: AbortDocumentVersionUploadRequest): Request[js.Object] = js.native
     def activateUser(params: ActivateUserRequest): Request[ActivateUserResponse] = js.native
-    def addResourcePermissions(params: AddResourcePermissionsRequest): Request[AddResourcePermissionsResponse] =
-      js.native
+    def addResourcePermissions(params: AddResourcePermissionsRequest): Request[AddResourcePermissionsResponse] = js.native
     def createComment(params: CreateCommentRequest): Request[CreateCommentResponse] = js.native
     def createCustomMetadata(params: CreateCustomMetadataRequest): Request[CreateCustomMetadataResponse] = js.native
     def createFolder(params: CreateFolderRequest): Request[CreateFolderResponse] = js.native
     def createLabels(params: CreateLabelsRequest): Request[CreateLabelsResponse] = js.native
-    def createNotificationSubscription(
-        params: CreateNotificationSubscriptionRequest
-    ): Request[CreateNotificationSubscriptionResponse] = js.native
+    def createNotificationSubscription(params: CreateNotificationSubscriptionRequest): Request[CreateNotificationSubscriptionResponse] = js.native
     def createUser(params: CreateUserRequest): Request[CreateUserResponse] = js.native
     def deactivateUser(params: DeactivateUserRequest): Request[js.Object] = js.native
     def deleteComment(params: DeleteCommentRequest): Request[js.Object] = js.native
@@ -188,17 +135,11 @@ package workdocs {
     def deleteUser(params: DeleteUserRequest): Request[js.Object] = js.native
     def describeActivities(params: DescribeActivitiesRequest): Request[DescribeActivitiesResponse] = js.native
     def describeComments(params: DescribeCommentsRequest): Request[DescribeCommentsResponse] = js.native
-    def describeDocumentVersions(params: DescribeDocumentVersionsRequest): Request[DescribeDocumentVersionsResponse] =
-      js.native
-    def describeFolderContents(params: DescribeFolderContentsRequest): Request[DescribeFolderContentsResponse] =
-      js.native
+    def describeDocumentVersions(params: DescribeDocumentVersionsRequest): Request[DescribeDocumentVersionsResponse] = js.native
+    def describeFolderContents(params: DescribeFolderContentsRequest): Request[DescribeFolderContentsResponse] = js.native
     def describeGroups(params: DescribeGroupsRequest): Request[DescribeGroupsResponse] = js.native
-    def describeNotificationSubscriptions(
-        params: DescribeNotificationSubscriptionsRequest
-    ): Request[DescribeNotificationSubscriptionsResponse] = js.native
-    def describeResourcePermissions(
-        params: DescribeResourcePermissionsRequest
-    ): Request[DescribeResourcePermissionsResponse] = js.native
+    def describeNotificationSubscriptions(params: DescribeNotificationSubscriptionsRequest): Request[DescribeNotificationSubscriptionsResponse] = js.native
+    def describeResourcePermissions(params: DescribeResourcePermissionsRequest): Request[DescribeResourcePermissionsResponse] = js.native
     def describeRootFolders(params: DescribeRootFoldersRequest): Request[DescribeRootFoldersResponse] = js.native
     def describeUsers(params: DescribeUsersRequest): Request[DescribeUsersResponse] = js.native
     def getCurrentUser(params: GetCurrentUserRequest): Request[GetCurrentUserResponse] = js.native
@@ -208,9 +149,7 @@ package workdocs {
     def getFolder(params: GetFolderRequest): Request[GetFolderResponse] = js.native
     def getFolderPath(params: GetFolderPathRequest): Request[GetFolderPathResponse] = js.native
     def getResources(params: GetResourcesRequest): Request[GetResourcesResponse] = js.native
-    def initiateDocumentVersionUpload(
-        params: InitiateDocumentVersionUploadRequest
-    ): Request[InitiateDocumentVersionUploadResponse] = js.native
+    def initiateDocumentVersionUpload(params: InitiateDocumentVersionUploadRequest): Request[InitiateDocumentVersionUploadResponse] = js.native
     def removeAllResourcePermissions(params: RemoveAllResourcePermissionsRequest): Request[js.Object] = js.native
     def removeResourcePermission(params: RemoveResourcePermissionRequest): Request[js.Object] = js.native
     def updateDocument(params: UpdateDocumentRequest): Request[js.Object] = js.native
@@ -341,8 +280,7 @@ package workdocs {
     val DOCUMENT_SHARE_PERMISSION_CHANGED = "DOCUMENT_SHARE_PERMISSION_CHANGED".asInstanceOf[ActivityType]
     val DOCUMENT_SHAREABLE_LINK_CREATED = "DOCUMENT_SHAREABLE_LINK_CREATED".asInstanceOf[ActivityType]
     val DOCUMENT_SHAREABLE_LINK_REMOVED = "DOCUMENT_SHAREABLE_LINK_REMOVED".asInstanceOf[ActivityType]
-    val DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED =
-      "DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED".asInstanceOf[ActivityType]
+    val DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED = "DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED".asInstanceOf[ActivityType]
     val DOCUMENT_MOVED = "DOCUMENT_MOVED".asInstanceOf[ActivityType]
     val DOCUMENT_COMMENT_ADDED = "DOCUMENT_COMMENT_ADDED".asInstanceOf[ActivityType]
     val DOCUMENT_COMMENT_DELETED = "DOCUMENT_COMMENT_DELETED".asInstanceOf[ActivityType]
@@ -1088,9 +1026,7 @@ package workdocs {
       ActivityTypes.foreach(__v => __obj.updateDynamic("ActivityTypes")(__v.asInstanceOf[js.Any]))
       AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      IncludeIndirectActivities.foreach(__v =>
-        __obj.updateDynamic("IncludeIndirectActivities")(__v.asInstanceOf[js.Any])
-      )
+      IncludeIndirectActivities.foreach(__v => __obj.updateDynamic("IncludeIndirectActivities")(__v.asInstanceOf[js.Any]))
       Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       OrganizationId.foreach(__v => __obj.updateDynamic("OrganizationId")(__v.asInstanceOf[js.Any]))

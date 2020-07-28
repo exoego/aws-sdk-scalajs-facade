@@ -64,59 +64,32 @@ package object fms {
 
   implicit final class FMSOps(private val service: FMS) extends AnyVal {
 
-    @inline def associateAdminAccountFuture(params: AssociateAdminAccountRequest): Future[js.Object] =
-      service.associateAdminAccount(params).promise().toFuture
-    @inline def deleteAppsListFuture(params: DeleteAppsListRequest): Future[js.Object] =
-      service.deleteAppsList(params).promise().toFuture
-    @inline def deleteNotificationChannelFuture(params: DeleteNotificationChannelRequest): Future[js.Object] =
-      service.deleteNotificationChannel(params).promise().toFuture
-    @inline def deletePolicyFuture(params: DeletePolicyRequest): Future[js.Object] =
-      service.deletePolicy(params).promise().toFuture
-    @inline def deleteProtocolsListFuture(params: DeleteProtocolsListRequest): Future[js.Object] =
-      service.deleteProtocolsList(params).promise().toFuture
-    @inline def disassociateAdminAccountFuture(params: DisassociateAdminAccountRequest): Future[js.Object] =
-      service.disassociateAdminAccount(params).promise().toFuture
-    @inline def getAdminAccountFuture(params: GetAdminAccountRequest): Future[GetAdminAccountResponse] =
-      service.getAdminAccount(params).promise().toFuture
-    @inline def getAppsListFuture(params: GetAppsListRequest): Future[GetAppsListResponse] =
-      service.getAppsList(params).promise().toFuture
-    @inline def getComplianceDetailFuture(params: GetComplianceDetailRequest): Future[GetComplianceDetailResponse] =
-      service.getComplianceDetail(params).promise().toFuture
-    @inline def getNotificationChannelFuture(
-        params: GetNotificationChannelRequest
-    ): Future[GetNotificationChannelResponse] = service.getNotificationChannel(params).promise().toFuture
-    @inline def getPolicyFuture(params: GetPolicyRequest): Future[GetPolicyResponse] =
-      service.getPolicy(params).promise().toFuture
-    @inline def getProtectionStatusFuture(params: GetProtectionStatusRequest): Future[GetProtectionStatusResponse] =
-      service.getProtectionStatus(params).promise().toFuture
-    @inline def getProtocolsListFuture(params: GetProtocolsListRequest): Future[GetProtocolsListResponse] =
-      service.getProtocolsList(params).promise().toFuture
-    @inline def getViolationDetailsFuture(params: GetViolationDetailsRequest): Future[GetViolationDetailsResponse] =
-      service.getViolationDetails(params).promise().toFuture
-    @inline def listAppsListsFuture(params: ListAppsListsRequest): Future[ListAppsListsResponse] =
-      service.listAppsLists(params).promise().toFuture
-    @inline def listComplianceStatusFuture(params: ListComplianceStatusRequest): Future[ListComplianceStatusResponse] =
-      service.listComplianceStatus(params).promise().toFuture
-    @inline def listMemberAccountsFuture(params: ListMemberAccountsRequest): Future[ListMemberAccountsResponse] =
-      service.listMemberAccounts(params).promise().toFuture
-    @inline def listPoliciesFuture(params: ListPoliciesRequest): Future[ListPoliciesResponse] =
-      service.listPolicies(params).promise().toFuture
-    @inline def listProtocolsListsFuture(params: ListProtocolsListsRequest): Future[ListProtocolsListsResponse] =
-      service.listProtocolsLists(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def putAppsListFuture(params: PutAppsListRequest): Future[PutAppsListResponse] =
-      service.putAppsList(params).promise().toFuture
-    @inline def putNotificationChannelFuture(params: PutNotificationChannelRequest): Future[js.Object] =
-      service.putNotificationChannel(params).promise().toFuture
-    @inline def putPolicyFuture(params: PutPolicyRequest): Future[PutPolicyResponse] =
-      service.putPolicy(params).promise().toFuture
-    @inline def putProtocolsListFuture(params: PutProtocolsListRequest): Future[PutProtocolsListResponse] =
-      service.putProtocolsList(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
+    @inline def associateAdminAccountFuture(params: AssociateAdminAccountRequest): Future[js.Object] = service.associateAdminAccount(params).promise().toFuture
+    @inline def deleteAppsListFuture(params: DeleteAppsListRequest): Future[js.Object] = service.deleteAppsList(params).promise().toFuture
+    @inline def deleteNotificationChannelFuture(params: DeleteNotificationChannelRequest): Future[js.Object] = service.deleteNotificationChannel(params).promise().toFuture
+    @inline def deletePolicyFuture(params: DeletePolicyRequest): Future[js.Object] = service.deletePolicy(params).promise().toFuture
+    @inline def deleteProtocolsListFuture(params: DeleteProtocolsListRequest): Future[js.Object] = service.deleteProtocolsList(params).promise().toFuture
+    @inline def disassociateAdminAccountFuture(params: DisassociateAdminAccountRequest): Future[js.Object] = service.disassociateAdminAccount(params).promise().toFuture
+    @inline def getAdminAccountFuture(params: GetAdminAccountRequest): Future[GetAdminAccountResponse] = service.getAdminAccount(params).promise().toFuture
+    @inline def getAppsListFuture(params: GetAppsListRequest): Future[GetAppsListResponse] = service.getAppsList(params).promise().toFuture
+    @inline def getComplianceDetailFuture(params: GetComplianceDetailRequest): Future[GetComplianceDetailResponse] = service.getComplianceDetail(params).promise().toFuture
+    @inline def getNotificationChannelFuture(params: GetNotificationChannelRequest): Future[GetNotificationChannelResponse] = service.getNotificationChannel(params).promise().toFuture
+    @inline def getPolicyFuture(params: GetPolicyRequest): Future[GetPolicyResponse] = service.getPolicy(params).promise().toFuture
+    @inline def getProtectionStatusFuture(params: GetProtectionStatusRequest): Future[GetProtectionStatusResponse] = service.getProtectionStatus(params).promise().toFuture
+    @inline def getProtocolsListFuture(params: GetProtocolsListRequest): Future[GetProtocolsListResponse] = service.getProtocolsList(params).promise().toFuture
+    @inline def getViolationDetailsFuture(params: GetViolationDetailsRequest): Future[GetViolationDetailsResponse] = service.getViolationDetails(params).promise().toFuture
+    @inline def listAppsListsFuture(params: ListAppsListsRequest): Future[ListAppsListsResponse] = service.listAppsLists(params).promise().toFuture
+    @inline def listComplianceStatusFuture(params: ListComplianceStatusRequest): Future[ListComplianceStatusResponse] = service.listComplianceStatus(params).promise().toFuture
+    @inline def listMemberAccountsFuture(params: ListMemberAccountsRequest): Future[ListMemberAccountsResponse] = service.listMemberAccounts(params).promise().toFuture
+    @inline def listPoliciesFuture(params: ListPoliciesRequest): Future[ListPoliciesResponse] = service.listPolicies(params).promise().toFuture
+    @inline def listProtocolsListsFuture(params: ListProtocolsListsRequest): Future[ListProtocolsListsResponse] = service.listProtocolsLists(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def putAppsListFuture(params: PutAppsListRequest): Future[PutAppsListResponse] = service.putAppsList(params).promise().toFuture
+    @inline def putNotificationChannelFuture(params: PutNotificationChannelRequest): Future[js.Object] = service.putNotificationChannel(params).promise().toFuture
+    @inline def putPolicyFuture(params: PutPolicyRequest): Future[PutPolicyResponse] = service.putPolicy(params).promise().toFuture
+    @inline def putProtocolsListFuture(params: PutProtocolsListRequest): Future[PutProtocolsListResponse] = service.putProtocolsList(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
   }
 }
 
@@ -135,8 +108,7 @@ package fms {
     def getAdminAccount(params: GetAdminAccountRequest): Request[GetAdminAccountResponse] = js.native
     def getAppsList(params: GetAppsListRequest): Request[GetAppsListResponse] = js.native
     def getComplianceDetail(params: GetComplianceDetailRequest): Request[GetComplianceDetailResponse] = js.native
-    def getNotificationChannel(params: GetNotificationChannelRequest): Request[GetNotificationChannelResponse] =
-      js.native
+    def getNotificationChannel(params: GetNotificationChannelRequest): Request[GetNotificationChannelResponse] = js.native
     def getPolicy(params: GetPolicyRequest): Request[GetPolicyResponse] = js.native
     def getProtectionStatus(params: GetProtectionStatusRequest): Request[GetProtectionStatusResponse] = js.native
     def getProtocolsList(params: GetProtocolsListRequest): Request[GetProtocolsListResponse] = js.native
@@ -295,9 +267,7 @@ package fms {
         ViolationTarget: js.UndefOr[ViolationTarget] = js.undefined
     ): AwsEc2InstanceViolation = {
       val __obj = js.Dynamic.literal()
-      AwsEc2NetworkInterfaceViolations.foreach(__v =>
-        __obj.updateDynamic("AwsEc2NetworkInterfaceViolations")(__v.asInstanceOf[js.Any])
-      )
+      AwsEc2NetworkInterfaceViolations.foreach(__v => __obj.updateDynamic("AwsEc2NetworkInterfaceViolations")(__v.asInstanceOf[js.Any]))
       ViolationTarget.foreach(__v => __obj.updateDynamic("ViolationTarget")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsEc2InstanceViolation]
     }
@@ -346,13 +316,9 @@ package fms {
     ): AwsVPCSecurityGroupViolation = {
       val __obj = js.Dynamic.literal()
       PartialMatches.foreach(__v => __obj.updateDynamic("PartialMatches")(__v.asInstanceOf[js.Any]))
-      PossibleSecurityGroupRemediationActions.foreach(__v =>
-        __obj.updateDynamic("PossibleSecurityGroupRemediationActions")(__v.asInstanceOf[js.Any])
-      )
+      PossibleSecurityGroupRemediationActions.foreach(__v => __obj.updateDynamic("PossibleSecurityGroupRemediationActions")(__v.asInstanceOf[js.Any]))
       ViolationTarget.foreach(__v => __obj.updateDynamic("ViolationTarget")(__v.asInstanceOf[js.Any]))
-      ViolationTargetDescription.foreach(__v =>
-        __obj.updateDynamic("ViolationTargetDescription")(__v.asInstanceOf[js.Any])
-      )
+      ViolationTargetDescription.foreach(__v => __obj.updateDynamic("ViolationTargetDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsVPCSecurityGroupViolation]
     }
   }
@@ -910,9 +876,7 @@ package fms {
     ): ListComplianceStatusResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PolicyComplianceStatusList.foreach(__v =>
-        __obj.updateDynamic("PolicyComplianceStatusList")(__v.asInstanceOf[js.Any])
-      )
+      PolicyComplianceStatusList.foreach(__v => __obj.updateDynamic("PolicyComplianceStatusList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListComplianceStatusResponse]
     }
   }
@@ -1520,12 +1484,8 @@ package fms {
     ): ResourceViolation = {
       val __obj = js.Dynamic.literal()
       AwsEc2InstanceViolation.foreach(__v => __obj.updateDynamic("AwsEc2InstanceViolation")(__v.asInstanceOf[js.Any]))
-      AwsEc2NetworkInterfaceViolation.foreach(__v =>
-        __obj.updateDynamic("AwsEc2NetworkInterfaceViolation")(__v.asInstanceOf[js.Any])
-      )
-      AwsVPCSecurityGroupViolation.foreach(__v =>
-        __obj.updateDynamic("AwsVPCSecurityGroupViolation")(__v.asInstanceOf[js.Any])
-      )
+      AwsEc2NetworkInterfaceViolation.foreach(__v => __obj.updateDynamic("AwsEc2NetworkInterfaceViolation")(__v.asInstanceOf[js.Any]))
+      AwsVPCSecurityGroupViolation.foreach(__v => __obj.updateDynamic("AwsVPCSecurityGroupViolation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceViolation]
     }
   }
@@ -1626,16 +1586,7 @@ package fms {
     val SECURITY_GROUPS_CONTENT_AUDIT = "SECURITY_GROUPS_CONTENT_AUDIT".asInstanceOf[SecurityServiceType]
     val SECURITY_GROUPS_USAGE_AUDIT = "SECURITY_GROUPS_USAGE_AUDIT".asInstanceOf[SecurityServiceType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        WAF,
-        WAFV2,
-        SHIELD_ADVANCED,
-        SECURITY_GROUPS_COMMON,
-        SECURITY_GROUPS_CONTENT_AUDIT,
-        SECURITY_GROUPS_USAGE_AUDIT
-      )
-    )
+    val values = js.Object.freeze(js.Array(WAF, WAFV2, SHIELD_ADVANCED, SECURITY_GROUPS_COMMON, SECURITY_GROUPS_CONTENT_AUDIT, SECURITY_GROUPS_USAGE_AUDIT))
   }
 
   /**
@@ -1776,8 +1727,7 @@ package fms {
     val RESOURCE_MISSING_WEB_ACL = "RESOURCE_MISSING_WEB_ACL".asInstanceOf[ViolationReason]
     val RESOURCE_INCORRECT_WEB_ACL = "RESOURCE_INCORRECT_WEB_ACL".asInstanceOf[ViolationReason]
     val RESOURCE_MISSING_SHIELD_PROTECTION = "RESOURCE_MISSING_SHIELD_PROTECTION".asInstanceOf[ViolationReason]
-    val RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION =
-      "RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION".asInstanceOf[ViolationReason]
+    val RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION = "RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION".asInstanceOf[ViolationReason]
     val RESOURCE_MISSING_SECURITY_GROUP = "RESOURCE_MISSING_SECURITY_GROUP".asInstanceOf[ViolationReason]
     val RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP = "RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP".asInstanceOf[ViolationReason]
     val SECURITY_GROUP_UNUSED = "SECURITY_GROUP_UNUSED".asInstanceOf[ViolationReason]

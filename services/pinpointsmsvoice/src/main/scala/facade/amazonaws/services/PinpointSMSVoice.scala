@@ -17,33 +17,14 @@ package object pinpointsmsvoice {
 
   implicit final class PinpointSMSVoiceOps(private val service: PinpointSMSVoice) extends AnyVal {
 
-    @inline def createConfigurationSetEventDestinationFuture(
-        params: CreateConfigurationSetEventDestinationRequest
-    ): Future[CreateConfigurationSetEventDestinationResponse] =
-      service.createConfigurationSetEventDestination(params).promise().toFuture
-    @inline def createConfigurationSetFuture(
-        params: CreateConfigurationSetRequest
-    ): Future[CreateConfigurationSetResponse] = service.createConfigurationSet(params).promise().toFuture
-    @inline def deleteConfigurationSetEventDestinationFuture(
-        params: DeleteConfigurationSetEventDestinationRequest
-    ): Future[DeleteConfigurationSetEventDestinationResponse] =
-      service.deleteConfigurationSetEventDestination(params).promise().toFuture
-    @inline def deleteConfigurationSetFuture(
-        params: DeleteConfigurationSetRequest
-    ): Future[DeleteConfigurationSetResponse] = service.deleteConfigurationSet(params).promise().toFuture
-    @inline def getConfigurationSetEventDestinationsFuture(
-        params: GetConfigurationSetEventDestinationsRequest
-    ): Future[GetConfigurationSetEventDestinationsResponse] =
-      service.getConfigurationSetEventDestinations(params).promise().toFuture
-    @inline def listConfigurationSetsFuture(
-        params: ListConfigurationSetsRequest
-    ): Future[ListConfigurationSetsResponse] = service.listConfigurationSets(params).promise().toFuture
-    @inline def sendVoiceMessageFuture(params: SendVoiceMessageRequest): Future[SendVoiceMessageResponse] =
-      service.sendVoiceMessage(params).promise().toFuture
-    @inline def updateConfigurationSetEventDestinationFuture(
-        params: UpdateConfigurationSetEventDestinationRequest
-    ): Future[UpdateConfigurationSetEventDestinationResponse] =
-      service.updateConfigurationSetEventDestination(params).promise().toFuture
+    @inline def createConfigurationSetEventDestinationFuture(params: CreateConfigurationSetEventDestinationRequest): Future[CreateConfigurationSetEventDestinationResponse] = service.createConfigurationSetEventDestination(params).promise().toFuture
+    @inline def createConfigurationSetFuture(params: CreateConfigurationSetRequest): Future[CreateConfigurationSetResponse] = service.createConfigurationSet(params).promise().toFuture
+    @inline def deleteConfigurationSetEventDestinationFuture(params: DeleteConfigurationSetEventDestinationRequest): Future[DeleteConfigurationSetEventDestinationResponse] = service.deleteConfigurationSetEventDestination(params).promise().toFuture
+    @inline def deleteConfigurationSetFuture(params: DeleteConfigurationSetRequest): Future[DeleteConfigurationSetResponse] = service.deleteConfigurationSet(params).promise().toFuture
+    @inline def getConfigurationSetEventDestinationsFuture(params: GetConfigurationSetEventDestinationsRequest): Future[GetConfigurationSetEventDestinationsResponse] = service.getConfigurationSetEventDestinations(params).promise().toFuture
+    @inline def listConfigurationSetsFuture(params: ListConfigurationSetsRequest): Future[ListConfigurationSetsResponse] = service.listConfigurationSets(params).promise().toFuture
+    @inline def sendVoiceMessageFuture(params: SendVoiceMessageRequest): Future[SendVoiceMessageResponse] = service.sendVoiceMessage(params).promise().toFuture
+    @inline def updateConfigurationSetEventDestinationFuture(params: UpdateConfigurationSetEventDestinationRequest): Future[UpdateConfigurationSetEventDestinationResponse] = service.updateConfigurationSetEventDestination(params).promise().toFuture
   }
 }
 
@@ -53,24 +34,14 @@ package pinpointsmsvoice {
   class PinpointSMSVoice() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createConfigurationSet(params: CreateConfigurationSetRequest): Request[CreateConfigurationSetResponse] =
-      js.native
-    def createConfigurationSetEventDestination(
-        params: CreateConfigurationSetEventDestinationRequest
-    ): Request[CreateConfigurationSetEventDestinationResponse] = js.native
-    def deleteConfigurationSet(params: DeleteConfigurationSetRequest): Request[DeleteConfigurationSetResponse] =
-      js.native
-    def deleteConfigurationSetEventDestination(
-        params: DeleteConfigurationSetEventDestinationRequest
-    ): Request[DeleteConfigurationSetEventDestinationResponse] = js.native
-    def getConfigurationSetEventDestinations(
-        params: GetConfigurationSetEventDestinationsRequest
-    ): Request[GetConfigurationSetEventDestinationsResponse] = js.native
+    def createConfigurationSet(params: CreateConfigurationSetRequest): Request[CreateConfigurationSetResponse] = js.native
+    def createConfigurationSetEventDestination(params: CreateConfigurationSetEventDestinationRequest): Request[CreateConfigurationSetEventDestinationResponse] = js.native
+    def deleteConfigurationSet(params: DeleteConfigurationSetRequest): Request[DeleteConfigurationSetResponse] = js.native
+    def deleteConfigurationSetEventDestination(params: DeleteConfigurationSetEventDestinationRequest): Request[DeleteConfigurationSetEventDestinationResponse] = js.native
+    def getConfigurationSetEventDestinations(params: GetConfigurationSetEventDestinationsRequest): Request[GetConfigurationSetEventDestinationsResponse] = js.native
     def listConfigurationSets(params: ListConfigurationSetsRequest): Request[ListConfigurationSetsResponse] = js.native
     def sendVoiceMessage(params: SendVoiceMessageRequest): Request[SendVoiceMessageResponse] = js.native
-    def updateConfigurationSetEventDestination(
-        params: UpdateConfigurationSetEventDestinationRequest
-    ): Request[UpdateConfigurationSetEventDestinationResponse] = js.native
+    def updateConfigurationSetEventDestination(params: UpdateConfigurationSetEventDestinationRequest): Request[UpdateConfigurationSetEventDestinationResponse] = js.native
   }
 
   /**
@@ -287,13 +258,9 @@ package pinpointsmsvoice {
         SnsDestination: js.UndefOr[SnsDestination] = js.undefined
     ): EventDestination = {
       val __obj = js.Dynamic.literal()
-      CloudWatchLogsDestination.foreach(__v =>
-        __obj.updateDynamic("CloudWatchLogsDestination")(__v.asInstanceOf[js.Any])
-      )
+      CloudWatchLogsDestination.foreach(__v => __obj.updateDynamic("CloudWatchLogsDestination")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      KinesisFirehoseDestination.foreach(__v =>
-        __obj.updateDynamic("KinesisFirehoseDestination")(__v.asInstanceOf[js.Any])
-      )
+      KinesisFirehoseDestination.foreach(__v => __obj.updateDynamic("KinesisFirehoseDestination")(__v.asInstanceOf[js.Any]))
       MatchingEventTypes.foreach(__v => __obj.updateDynamic("MatchingEventTypes")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       SnsDestination.foreach(__v => __obj.updateDynamic("SnsDestination")(__v.asInstanceOf[js.Any]))
@@ -323,13 +290,9 @@ package pinpointsmsvoice {
         SnsDestination: js.UndefOr[SnsDestination] = js.undefined
     ): EventDestinationDefinition = {
       val __obj = js.Dynamic.literal()
-      CloudWatchLogsDestination.foreach(__v =>
-        __obj.updateDynamic("CloudWatchLogsDestination")(__v.asInstanceOf[js.Any])
-      )
+      CloudWatchLogsDestination.foreach(__v => __obj.updateDynamic("CloudWatchLogsDestination")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      KinesisFirehoseDestination.foreach(__v =>
-        __obj.updateDynamic("KinesisFirehoseDestination")(__v.asInstanceOf[js.Any])
-      )
+      KinesisFirehoseDestination.foreach(__v => __obj.updateDynamic("KinesisFirehoseDestination")(__v.asInstanceOf[js.Any]))
       MatchingEventTypes.foreach(__v => __obj.updateDynamic("MatchingEventTypes")(__v.asInstanceOf[js.Any]))
       SnsDestination.foreach(__v => __obj.updateDynamic("SnsDestination")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventDestinationDefinition]

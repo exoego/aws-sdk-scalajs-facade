@@ -65,126 +65,57 @@ package object organizations {
 
   implicit final class OrganizationsOps(private val service: Organizations) extends AnyVal {
 
-    @inline def acceptHandshakeFuture(params: AcceptHandshakeRequest): Future[AcceptHandshakeResponse] =
-      service.acceptHandshake(params).promise().toFuture
-    @inline def attachPolicyFuture(params: AttachPolicyRequest): Future[js.Object] =
-      service.attachPolicy(params).promise().toFuture
-    @inline def cancelHandshakeFuture(params: CancelHandshakeRequest): Future[CancelHandshakeResponse] =
-      service.cancelHandshake(params).promise().toFuture
-    @inline def createAccountFuture(params: CreateAccountRequest): Future[CreateAccountResponse] =
-      service.createAccount(params).promise().toFuture
-    @inline def createGovCloudAccountFuture(
-        params: CreateGovCloudAccountRequest
-    ): Future[CreateGovCloudAccountResponse] = service.createGovCloudAccount(params).promise().toFuture
-    @inline def createOrganizationFuture(params: CreateOrganizationRequest): Future[CreateOrganizationResponse] =
-      service.createOrganization(params).promise().toFuture
-    @inline def createOrganizationalUnitFuture(
-        params: CreateOrganizationalUnitRequest
-    ): Future[CreateOrganizationalUnitResponse] = service.createOrganizationalUnit(params).promise().toFuture
-    @inline def createPolicyFuture(params: CreatePolicyRequest): Future[CreatePolicyResponse] =
-      service.createPolicy(params).promise().toFuture
-    @inline def declineHandshakeFuture(params: DeclineHandshakeRequest): Future[DeclineHandshakeResponse] =
-      service.declineHandshake(params).promise().toFuture
+    @inline def acceptHandshakeFuture(params: AcceptHandshakeRequest): Future[AcceptHandshakeResponse] = service.acceptHandshake(params).promise().toFuture
+    @inline def attachPolicyFuture(params: AttachPolicyRequest): Future[js.Object] = service.attachPolicy(params).promise().toFuture
+    @inline def cancelHandshakeFuture(params: CancelHandshakeRequest): Future[CancelHandshakeResponse] = service.cancelHandshake(params).promise().toFuture
+    @inline def createAccountFuture(params: CreateAccountRequest): Future[CreateAccountResponse] = service.createAccount(params).promise().toFuture
+    @inline def createGovCloudAccountFuture(params: CreateGovCloudAccountRequest): Future[CreateGovCloudAccountResponse] = service.createGovCloudAccount(params).promise().toFuture
+    @inline def createOrganizationFuture(params: CreateOrganizationRequest): Future[CreateOrganizationResponse] = service.createOrganization(params).promise().toFuture
+    @inline def createOrganizationalUnitFuture(params: CreateOrganizationalUnitRequest): Future[CreateOrganizationalUnitResponse] = service.createOrganizationalUnit(params).promise().toFuture
+    @inline def createPolicyFuture(params: CreatePolicyRequest): Future[CreatePolicyResponse] = service.createPolicy(params).promise().toFuture
+    @inline def declineHandshakeFuture(params: DeclineHandshakeRequest): Future[DeclineHandshakeResponse] = service.declineHandshake(params).promise().toFuture
     @inline def deleteOrganizationFuture(): Future[js.Object] = service.deleteOrganization().promise().toFuture
-    @inline def deleteOrganizationalUnitFuture(params: DeleteOrganizationalUnitRequest): Future[js.Object] =
-      service.deleteOrganizationalUnit(params).promise().toFuture
-    @inline def deletePolicyFuture(params: DeletePolicyRequest): Future[js.Object] =
-      service.deletePolicy(params).promise().toFuture
-    @inline def deregisterDelegatedAdministratorFuture(
-        params: DeregisterDelegatedAdministratorRequest
-    ): Future[js.Object] = service.deregisterDelegatedAdministrator(params).promise().toFuture
-    @inline def describeAccountFuture(params: DescribeAccountRequest): Future[DescribeAccountResponse] =
-      service.describeAccount(params).promise().toFuture
-    @inline def describeCreateAccountStatusFuture(
-        params: DescribeCreateAccountStatusRequest
-    ): Future[DescribeCreateAccountStatusResponse] = service.describeCreateAccountStatus(params).promise().toFuture
-    @inline def describeEffectivePolicyFuture(
-        params: DescribeEffectivePolicyRequest
-    ): Future[DescribeEffectivePolicyResponse] = service.describeEffectivePolicy(params).promise().toFuture
-    @inline def describeHandshakeFuture(params: DescribeHandshakeRequest): Future[DescribeHandshakeResponse] =
-      service.describeHandshake(params).promise().toFuture
-    @inline def describeOrganizationFuture(): Future[DescribeOrganizationResponse] =
-      service.describeOrganization().promise().toFuture
-    @inline def describeOrganizationalUnitFuture(
-        params: DescribeOrganizationalUnitRequest
-    ): Future[DescribeOrganizationalUnitResponse] = service.describeOrganizationalUnit(params).promise().toFuture
-    @inline def describePolicyFuture(params: DescribePolicyRequest): Future[DescribePolicyResponse] =
-      service.describePolicy(params).promise().toFuture
-    @inline def detachPolicyFuture(params: DetachPolicyRequest): Future[js.Object] =
-      service.detachPolicy(params).promise().toFuture
-    @inline def disableAWSServiceAccessFuture(params: DisableAWSServiceAccessRequest): Future[js.Object] =
-      service.disableAWSServiceAccess(params).promise().toFuture
-    @inline def disablePolicyTypeFuture(params: DisablePolicyTypeRequest): Future[DisablePolicyTypeResponse] =
-      service.disablePolicyType(params).promise().toFuture
-    @inline def enableAWSServiceAccessFuture(params: EnableAWSServiceAccessRequest): Future[js.Object] =
-      service.enableAWSServiceAccess(params).promise().toFuture
-    @inline def enableAllFeaturesFuture(params: EnableAllFeaturesRequest): Future[EnableAllFeaturesResponse] =
-      service.enableAllFeatures(params).promise().toFuture
-    @inline def enablePolicyTypeFuture(params: EnablePolicyTypeRequest): Future[EnablePolicyTypeResponse] =
-      service.enablePolicyType(params).promise().toFuture
-    @inline def inviteAccountToOrganizationFuture(
-        params: InviteAccountToOrganizationRequest
-    ): Future[InviteAccountToOrganizationResponse] = service.inviteAccountToOrganization(params).promise().toFuture
+    @inline def deleteOrganizationalUnitFuture(params: DeleteOrganizationalUnitRequest): Future[js.Object] = service.deleteOrganizationalUnit(params).promise().toFuture
+    @inline def deletePolicyFuture(params: DeletePolicyRequest): Future[js.Object] = service.deletePolicy(params).promise().toFuture
+    @inline def deregisterDelegatedAdministratorFuture(params: DeregisterDelegatedAdministratorRequest): Future[js.Object] = service.deregisterDelegatedAdministrator(params).promise().toFuture
+    @inline def describeAccountFuture(params: DescribeAccountRequest): Future[DescribeAccountResponse] = service.describeAccount(params).promise().toFuture
+    @inline def describeCreateAccountStatusFuture(params: DescribeCreateAccountStatusRequest): Future[DescribeCreateAccountStatusResponse] = service.describeCreateAccountStatus(params).promise().toFuture
+    @inline def describeEffectivePolicyFuture(params: DescribeEffectivePolicyRequest): Future[DescribeEffectivePolicyResponse] = service.describeEffectivePolicy(params).promise().toFuture
+    @inline def describeHandshakeFuture(params: DescribeHandshakeRequest): Future[DescribeHandshakeResponse] = service.describeHandshake(params).promise().toFuture
+    @inline def describeOrganizationFuture(): Future[DescribeOrganizationResponse] = service.describeOrganization().promise().toFuture
+    @inline def describeOrganizationalUnitFuture(params: DescribeOrganizationalUnitRequest): Future[DescribeOrganizationalUnitResponse] = service.describeOrganizationalUnit(params).promise().toFuture
+    @inline def describePolicyFuture(params: DescribePolicyRequest): Future[DescribePolicyResponse] = service.describePolicy(params).promise().toFuture
+    @inline def detachPolicyFuture(params: DetachPolicyRequest): Future[js.Object] = service.detachPolicy(params).promise().toFuture
+    @inline def disableAWSServiceAccessFuture(params: DisableAWSServiceAccessRequest): Future[js.Object] = service.disableAWSServiceAccess(params).promise().toFuture
+    @inline def disablePolicyTypeFuture(params: DisablePolicyTypeRequest): Future[DisablePolicyTypeResponse] = service.disablePolicyType(params).promise().toFuture
+    @inline def enableAWSServiceAccessFuture(params: EnableAWSServiceAccessRequest): Future[js.Object] = service.enableAWSServiceAccess(params).promise().toFuture
+    @inline def enableAllFeaturesFuture(params: EnableAllFeaturesRequest): Future[EnableAllFeaturesResponse] = service.enableAllFeatures(params).promise().toFuture
+    @inline def enablePolicyTypeFuture(params: EnablePolicyTypeRequest): Future[EnablePolicyTypeResponse] = service.enablePolicyType(params).promise().toFuture
+    @inline def inviteAccountToOrganizationFuture(params: InviteAccountToOrganizationRequest): Future[InviteAccountToOrganizationResponse] = service.inviteAccountToOrganization(params).promise().toFuture
     @inline def leaveOrganizationFuture(): Future[js.Object] = service.leaveOrganization().promise().toFuture
-    @inline def listAWSServiceAccessForOrganizationFuture(
-        params: ListAWSServiceAccessForOrganizationRequest
-    ): Future[ListAWSServiceAccessForOrganizationResponse] =
-      service.listAWSServiceAccessForOrganization(params).promise().toFuture
-    @inline def listAccountsForParentFuture(
-        params: ListAccountsForParentRequest
-    ): Future[ListAccountsForParentResponse] = service.listAccountsForParent(params).promise().toFuture
-    @inline def listAccountsFuture(params: ListAccountsRequest): Future[ListAccountsResponse] =
-      service.listAccounts(params).promise().toFuture
-    @inline def listChildrenFuture(params: ListChildrenRequest): Future[ListChildrenResponse] =
-      service.listChildren(params).promise().toFuture
-    @inline def listCreateAccountStatusFuture(
-        params: ListCreateAccountStatusRequest
-    ): Future[ListCreateAccountStatusResponse] = service.listCreateAccountStatus(params).promise().toFuture
-    @inline def listDelegatedAdministratorsFuture(
-        params: ListDelegatedAdministratorsRequest
-    ): Future[ListDelegatedAdministratorsResponse] = service.listDelegatedAdministrators(params).promise().toFuture
-    @inline def listDelegatedServicesForAccountFuture(
-        params: ListDelegatedServicesForAccountRequest
-    ): Future[ListDelegatedServicesForAccountResponse] =
-      service.listDelegatedServicesForAccount(params).promise().toFuture
-    @inline def listHandshakesForAccountFuture(
-        params: ListHandshakesForAccountRequest
-    ): Future[ListHandshakesForAccountResponse] = service.listHandshakesForAccount(params).promise().toFuture
-    @inline def listHandshakesForOrganizationFuture(
-        params: ListHandshakesForOrganizationRequest
-    ): Future[ListHandshakesForOrganizationResponse] = service.listHandshakesForOrganization(params).promise().toFuture
-    @inline def listOrganizationalUnitsForParentFuture(
-        params: ListOrganizationalUnitsForParentRequest
-    ): Future[ListOrganizationalUnitsForParentResponse] =
-      service.listOrganizationalUnitsForParent(params).promise().toFuture
-    @inline def listParentsFuture(params: ListParentsRequest): Future[ListParentsResponse] =
-      service.listParents(params).promise().toFuture
-    @inline def listPoliciesForTargetFuture(
-        params: ListPoliciesForTargetRequest
-    ): Future[ListPoliciesForTargetResponse] = service.listPoliciesForTarget(params).promise().toFuture
-    @inline def listPoliciesFuture(params: ListPoliciesRequest): Future[ListPoliciesResponse] =
-      service.listPolicies(params).promise().toFuture
-    @inline def listRootsFuture(params: ListRootsRequest): Future[ListRootsResponse] =
-      service.listRoots(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listTargetsForPolicyFuture(params: ListTargetsForPolicyRequest): Future[ListTargetsForPolicyResponse] =
-      service.listTargetsForPolicy(params).promise().toFuture
-    @inline def moveAccountFuture(params: MoveAccountRequest): Future[js.Object] =
-      service.moveAccount(params).promise().toFuture
-    @inline def registerDelegatedAdministratorFuture(params: RegisterDelegatedAdministratorRequest): Future[js.Object] =
-      service.registerDelegatedAdministrator(params).promise().toFuture
-    @inline def removeAccountFromOrganizationFuture(params: RemoveAccountFromOrganizationRequest): Future[js.Object] =
-      service.removeAccountFromOrganization(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateOrganizationalUnitFuture(
-        params: UpdateOrganizationalUnitRequest
-    ): Future[UpdateOrganizationalUnitResponse] = service.updateOrganizationalUnit(params).promise().toFuture
-    @inline def updatePolicyFuture(params: UpdatePolicyRequest): Future[UpdatePolicyResponse] =
-      service.updatePolicy(params).promise().toFuture
+    @inline def listAWSServiceAccessForOrganizationFuture(params: ListAWSServiceAccessForOrganizationRequest): Future[ListAWSServiceAccessForOrganizationResponse] = service.listAWSServiceAccessForOrganization(params).promise().toFuture
+    @inline def listAccountsForParentFuture(params: ListAccountsForParentRequest): Future[ListAccountsForParentResponse] = service.listAccountsForParent(params).promise().toFuture
+    @inline def listAccountsFuture(params: ListAccountsRequest): Future[ListAccountsResponse] = service.listAccounts(params).promise().toFuture
+    @inline def listChildrenFuture(params: ListChildrenRequest): Future[ListChildrenResponse] = service.listChildren(params).promise().toFuture
+    @inline def listCreateAccountStatusFuture(params: ListCreateAccountStatusRequest): Future[ListCreateAccountStatusResponse] = service.listCreateAccountStatus(params).promise().toFuture
+    @inline def listDelegatedAdministratorsFuture(params: ListDelegatedAdministratorsRequest): Future[ListDelegatedAdministratorsResponse] = service.listDelegatedAdministrators(params).promise().toFuture
+    @inline def listDelegatedServicesForAccountFuture(params: ListDelegatedServicesForAccountRequest): Future[ListDelegatedServicesForAccountResponse] = service.listDelegatedServicesForAccount(params).promise().toFuture
+    @inline def listHandshakesForAccountFuture(params: ListHandshakesForAccountRequest): Future[ListHandshakesForAccountResponse] = service.listHandshakesForAccount(params).promise().toFuture
+    @inline def listHandshakesForOrganizationFuture(params: ListHandshakesForOrganizationRequest): Future[ListHandshakesForOrganizationResponse] = service.listHandshakesForOrganization(params).promise().toFuture
+    @inline def listOrganizationalUnitsForParentFuture(params: ListOrganizationalUnitsForParentRequest): Future[ListOrganizationalUnitsForParentResponse] = service.listOrganizationalUnitsForParent(params).promise().toFuture
+    @inline def listParentsFuture(params: ListParentsRequest): Future[ListParentsResponse] = service.listParents(params).promise().toFuture
+    @inline def listPoliciesForTargetFuture(params: ListPoliciesForTargetRequest): Future[ListPoliciesForTargetResponse] = service.listPoliciesForTarget(params).promise().toFuture
+    @inline def listPoliciesFuture(params: ListPoliciesRequest): Future[ListPoliciesResponse] = service.listPolicies(params).promise().toFuture
+    @inline def listRootsFuture(params: ListRootsRequest): Future[ListRootsResponse] = service.listRoots(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listTargetsForPolicyFuture(params: ListTargetsForPolicyRequest): Future[ListTargetsForPolicyResponse] = service.listTargetsForPolicy(params).promise().toFuture
+    @inline def moveAccountFuture(params: MoveAccountRequest): Future[js.Object] = service.moveAccount(params).promise().toFuture
+    @inline def registerDelegatedAdministratorFuture(params: RegisterDelegatedAdministratorRequest): Future[js.Object] = service.registerDelegatedAdministrator(params).promise().toFuture
+    @inline def removeAccountFromOrganizationFuture(params: RemoveAccountFromOrganizationRequest): Future[js.Object] = service.removeAccountFromOrganization(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
+    @inline def updateOrganizationalUnitFuture(params: UpdateOrganizationalUnitRequest): Future[UpdateOrganizationalUnitResponse] = service.updateOrganizationalUnit(params).promise().toFuture
+    @inline def updatePolicyFuture(params: UpdatePolicyRequest): Future[UpdatePolicyResponse] = service.updatePolicy(params).promise().toFuture
   }
 }
 
@@ -200,26 +131,19 @@ package organizations {
     def createAccount(params: CreateAccountRequest): Request[CreateAccountResponse] = js.native
     def createGovCloudAccount(params: CreateGovCloudAccountRequest): Request[CreateGovCloudAccountResponse] = js.native
     def createOrganization(params: CreateOrganizationRequest): Request[CreateOrganizationResponse] = js.native
-    def createOrganizationalUnit(params: CreateOrganizationalUnitRequest): Request[CreateOrganizationalUnitResponse] =
-      js.native
+    def createOrganizationalUnit(params: CreateOrganizationalUnitRequest): Request[CreateOrganizationalUnitResponse] = js.native
     def createPolicy(params: CreatePolicyRequest): Request[CreatePolicyResponse] = js.native
     def declineHandshake(params: DeclineHandshakeRequest): Request[DeclineHandshakeResponse] = js.native
     def deleteOrganization(): Request[js.Object] = js.native
     def deleteOrganizationalUnit(params: DeleteOrganizationalUnitRequest): Request[js.Object] = js.native
     def deletePolicy(params: DeletePolicyRequest): Request[js.Object] = js.native
-    def deregisterDelegatedAdministrator(params: DeregisterDelegatedAdministratorRequest): Request[js.Object] =
-      js.native
+    def deregisterDelegatedAdministrator(params: DeregisterDelegatedAdministratorRequest): Request[js.Object] = js.native
     def describeAccount(params: DescribeAccountRequest): Request[DescribeAccountResponse] = js.native
-    def describeCreateAccountStatus(
-        params: DescribeCreateAccountStatusRequest
-    ): Request[DescribeCreateAccountStatusResponse] = js.native
-    def describeEffectivePolicy(params: DescribeEffectivePolicyRequest): Request[DescribeEffectivePolicyResponse] =
-      js.native
+    def describeCreateAccountStatus(params: DescribeCreateAccountStatusRequest): Request[DescribeCreateAccountStatusResponse] = js.native
+    def describeEffectivePolicy(params: DescribeEffectivePolicyRequest): Request[DescribeEffectivePolicyResponse] = js.native
     def describeHandshake(params: DescribeHandshakeRequest): Request[DescribeHandshakeResponse] = js.native
     def describeOrganization(): Request[DescribeOrganizationResponse] = js.native
-    def describeOrganizationalUnit(
-        params: DescribeOrganizationalUnitRequest
-    ): Request[DescribeOrganizationalUnitResponse] = js.native
+    def describeOrganizationalUnit(params: DescribeOrganizationalUnitRequest): Request[DescribeOrganizationalUnitResponse] = js.native
     def describePolicy(params: DescribePolicyRequest): Request[DescribePolicyResponse] = js.native
     def detachPolicy(params: DetachPolicyRequest): Request[js.Object] = js.native
     def disableAWSServiceAccess(params: DisableAWSServiceAccessRequest): Request[js.Object] = js.native
@@ -227,32 +151,18 @@ package organizations {
     def enableAWSServiceAccess(params: EnableAWSServiceAccessRequest): Request[js.Object] = js.native
     def enableAllFeatures(params: EnableAllFeaturesRequest): Request[EnableAllFeaturesResponse] = js.native
     def enablePolicyType(params: EnablePolicyTypeRequest): Request[EnablePolicyTypeResponse] = js.native
-    def inviteAccountToOrganization(
-        params: InviteAccountToOrganizationRequest
-    ): Request[InviteAccountToOrganizationResponse] = js.native
+    def inviteAccountToOrganization(params: InviteAccountToOrganizationRequest): Request[InviteAccountToOrganizationResponse] = js.native
     def leaveOrganization(): Request[js.Object] = js.native
-    def listAWSServiceAccessForOrganization(
-        params: ListAWSServiceAccessForOrganizationRequest
-    ): Request[ListAWSServiceAccessForOrganizationResponse] = js.native
+    def listAWSServiceAccessForOrganization(params: ListAWSServiceAccessForOrganizationRequest): Request[ListAWSServiceAccessForOrganizationResponse] = js.native
     def listAccounts(params: ListAccountsRequest): Request[ListAccountsResponse] = js.native
     def listAccountsForParent(params: ListAccountsForParentRequest): Request[ListAccountsForParentResponse] = js.native
     def listChildren(params: ListChildrenRequest): Request[ListChildrenResponse] = js.native
-    def listCreateAccountStatus(params: ListCreateAccountStatusRequest): Request[ListCreateAccountStatusResponse] =
-      js.native
-    def listDelegatedAdministrators(
-        params: ListDelegatedAdministratorsRequest
-    ): Request[ListDelegatedAdministratorsResponse] = js.native
-    def listDelegatedServicesForAccount(
-        params: ListDelegatedServicesForAccountRequest
-    ): Request[ListDelegatedServicesForAccountResponse] = js.native
-    def listHandshakesForAccount(params: ListHandshakesForAccountRequest): Request[ListHandshakesForAccountResponse] =
-      js.native
-    def listHandshakesForOrganization(
-        params: ListHandshakesForOrganizationRequest
-    ): Request[ListHandshakesForOrganizationResponse] = js.native
-    def listOrganizationalUnitsForParent(
-        params: ListOrganizationalUnitsForParentRequest
-    ): Request[ListOrganizationalUnitsForParentResponse] = js.native
+    def listCreateAccountStatus(params: ListCreateAccountStatusRequest): Request[ListCreateAccountStatusResponse] = js.native
+    def listDelegatedAdministrators(params: ListDelegatedAdministratorsRequest): Request[ListDelegatedAdministratorsResponse] = js.native
+    def listDelegatedServicesForAccount(params: ListDelegatedServicesForAccountRequest): Request[ListDelegatedServicesForAccountResponse] = js.native
+    def listHandshakesForAccount(params: ListHandshakesForAccountRequest): Request[ListHandshakesForAccountResponse] = js.native
+    def listHandshakesForOrganization(params: ListHandshakesForOrganizationRequest): Request[ListHandshakesForOrganizationResponse] = js.native
+    def listOrganizationalUnitsForParent(params: ListOrganizationalUnitsForParentRequest): Request[ListOrganizationalUnitsForParentResponse] = js.native
     def listParents(params: ListParentsRequest): Request[ListParentsResponse] = js.native
     def listPolicies(params: ListPoliciesRequest): Request[ListPoliciesResponse] = js.native
     def listPoliciesForTarget(params: ListPoliciesForTargetRequest): Request[ListPoliciesForTargetResponse] = js.native
@@ -264,8 +174,7 @@ package organizations {
     def removeAccountFromOrganization(params: RemoveAccountFromOrganizationRequest): Request[js.Object] = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
-    def updateOrganizationalUnit(params: UpdateOrganizationalUnitRequest): Request[UpdateOrganizationalUnitResponse] =
-      js.native
+    def updateOrganizationalUnit(params: UpdateOrganizationalUnitRequest): Request[UpdateOrganizationalUnitResponse] = js.native
     def updatePolicy(params: UpdatePolicyRequest): Request[UpdatePolicyResponse] = js.native
   }
 
@@ -366,9 +275,7 @@ package organizations {
     val APPROVE_ALL_FEATURES = "APPROVE_ALL_FEATURES".asInstanceOf[ActionType]
     val ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE = "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE".asInstanceOf[ActionType]
 
-    val values = js.Object.freeze(
-      js.Array(INVITE, ENABLE_ALL_FEATURES, APPROVE_ALL_FEATURES, ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE)
-    )
+    val values = js.Object.freeze(js.Array(INVITE, ENABLE_ALL_FEATURES, APPROVE_ALL_FEATURES, ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE))
   }
 
   @js.native
@@ -1459,18 +1366,7 @@ package organizations {
     val NOTES = "NOTES".asInstanceOf[HandshakeResourceType]
     val PARENT_HANDSHAKE = "PARENT_HANDSHAKE".asInstanceOf[HandshakeResourceType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ACCOUNT,
-        ORGANIZATION,
-        ORGANIZATION_FEATURE_SET,
-        EMAIL,
-        MASTER_EMAIL,
-        MASTER_NAME,
-        NOTES,
-        PARENT_HANDSHAKE
-      )
-    )
+    val values = js.Object.freeze(js.Array(ACCOUNT, ORGANIZATION, ORGANIZATION_FEATURE_SET, EMAIL, MASTER_EMAIL, MASTER_NAME, NOTES, PARENT_HANDSHAKE))
   }
 
   @js.native
@@ -2418,8 +2314,7 @@ package organizations {
     val BACKUP_POLICY = "BACKUP_POLICY".asInstanceOf[PolicyType]
     val AISERVICES_OPT_OUT_POLICY = "AISERVICES_OPT_OUT_POLICY".asInstanceOf[PolicyType]
 
-    val values =
-      js.Object.freeze(js.Array(SERVICE_CONTROL_POLICY, TAG_POLICY, BACKUP_POLICY, AISERVICES_OPT_OUT_POLICY))
+    val values = js.Object.freeze(js.Array(SERVICE_CONTROL_POLICY, TAG_POLICY, BACKUP_POLICY, AISERVICES_OPT_OUT_POLICY))
   }
 
   @js.native

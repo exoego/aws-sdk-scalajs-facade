@@ -48,56 +48,29 @@ package object servicediscovery {
 
   implicit final class ServiceDiscoveryOps(private val service: ServiceDiscovery) extends AnyVal {
 
-    @inline def createHttpNamespaceFuture(params: CreateHttpNamespaceRequest): Future[CreateHttpNamespaceResponse] =
-      service.createHttpNamespace(params).promise().toFuture
-    @inline def createPrivateDnsNamespaceFuture(
-        params: CreatePrivateDnsNamespaceRequest
-    ): Future[CreatePrivateDnsNamespaceResponse] = service.createPrivateDnsNamespace(params).promise().toFuture
-    @inline def createPublicDnsNamespaceFuture(
-        params: CreatePublicDnsNamespaceRequest
-    ): Future[CreatePublicDnsNamespaceResponse] = service.createPublicDnsNamespace(params).promise().toFuture
-    @inline def createServiceFuture(params: CreateServiceRequest): Future[CreateServiceResponse] =
-      service.createService(params).promise().toFuture
-    @inline def deleteNamespaceFuture(params: DeleteNamespaceRequest): Future[DeleteNamespaceResponse] =
-      service.deleteNamespace(params).promise().toFuture
-    @inline def deleteServiceFuture(params: DeleteServiceRequest): Future[DeleteServiceResponse] =
-      service.deleteService(params).promise().toFuture
-    @inline def deregisterInstanceFuture(params: DeregisterInstanceRequest): Future[DeregisterInstanceResponse] =
-      service.deregisterInstance(params).promise().toFuture
-    @inline def discoverInstancesFuture(params: DiscoverInstancesRequest): Future[DiscoverInstancesResponse] =
-      service.discoverInstances(params).promise().toFuture
-    @inline def getInstanceFuture(params: GetInstanceRequest): Future[GetInstanceResponse] =
-      service.getInstance(params).promise().toFuture
-    @inline def getInstancesHealthStatusFuture(
-        params: GetInstancesHealthStatusRequest
-    ): Future[GetInstancesHealthStatusResponse] = service.getInstancesHealthStatus(params).promise().toFuture
-    @inline def getNamespaceFuture(params: GetNamespaceRequest): Future[GetNamespaceResponse] =
-      service.getNamespace(params).promise().toFuture
-    @inline def getOperationFuture(params: GetOperationRequest): Future[GetOperationResponse] =
-      service.getOperation(params).promise().toFuture
-    @inline def getServiceFuture(params: GetServiceRequest): Future[GetServiceResponse] =
-      service.getService(params).promise().toFuture
-    @inline def listInstancesFuture(params: ListInstancesRequest): Future[ListInstancesResponse] =
-      service.listInstances(params).promise().toFuture
-    @inline def listNamespacesFuture(params: ListNamespacesRequest): Future[ListNamespacesResponse] =
-      service.listNamespaces(params).promise().toFuture
-    @inline def listOperationsFuture(params: ListOperationsRequest): Future[ListOperationsResponse] =
-      service.listOperations(params).promise().toFuture
-    @inline def listServicesFuture(params: ListServicesRequest): Future[ListServicesResponse] =
-      service.listServices(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def registerInstanceFuture(params: RegisterInstanceRequest): Future[RegisterInstanceResponse] =
-      service.registerInstance(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateInstanceCustomHealthStatusFuture(
-        params: UpdateInstanceCustomHealthStatusRequest
-    ): Future[js.Object] = service.updateInstanceCustomHealthStatus(params).promise().toFuture
-    @inline def updateServiceFuture(params: UpdateServiceRequest): Future[UpdateServiceResponse] =
-      service.updateService(params).promise().toFuture
+    @inline def createHttpNamespaceFuture(params: CreateHttpNamespaceRequest): Future[CreateHttpNamespaceResponse] = service.createHttpNamespace(params).promise().toFuture
+    @inline def createPrivateDnsNamespaceFuture(params: CreatePrivateDnsNamespaceRequest): Future[CreatePrivateDnsNamespaceResponse] = service.createPrivateDnsNamespace(params).promise().toFuture
+    @inline def createPublicDnsNamespaceFuture(params: CreatePublicDnsNamespaceRequest): Future[CreatePublicDnsNamespaceResponse] = service.createPublicDnsNamespace(params).promise().toFuture
+    @inline def createServiceFuture(params: CreateServiceRequest): Future[CreateServiceResponse] = service.createService(params).promise().toFuture
+    @inline def deleteNamespaceFuture(params: DeleteNamespaceRequest): Future[DeleteNamespaceResponse] = service.deleteNamespace(params).promise().toFuture
+    @inline def deleteServiceFuture(params: DeleteServiceRequest): Future[DeleteServiceResponse] = service.deleteService(params).promise().toFuture
+    @inline def deregisterInstanceFuture(params: DeregisterInstanceRequest): Future[DeregisterInstanceResponse] = service.deregisterInstance(params).promise().toFuture
+    @inline def discoverInstancesFuture(params: DiscoverInstancesRequest): Future[DiscoverInstancesResponse] = service.discoverInstances(params).promise().toFuture
+    @inline def getInstanceFuture(params: GetInstanceRequest): Future[GetInstanceResponse] = service.getInstance(params).promise().toFuture
+    @inline def getInstancesHealthStatusFuture(params: GetInstancesHealthStatusRequest): Future[GetInstancesHealthStatusResponse] = service.getInstancesHealthStatus(params).promise().toFuture
+    @inline def getNamespaceFuture(params: GetNamespaceRequest): Future[GetNamespaceResponse] = service.getNamespace(params).promise().toFuture
+    @inline def getOperationFuture(params: GetOperationRequest): Future[GetOperationResponse] = service.getOperation(params).promise().toFuture
+    @inline def getServiceFuture(params: GetServiceRequest): Future[GetServiceResponse] = service.getService(params).promise().toFuture
+    @inline def listInstancesFuture(params: ListInstancesRequest): Future[ListInstancesResponse] = service.listInstances(params).promise().toFuture
+    @inline def listNamespacesFuture(params: ListNamespacesRequest): Future[ListNamespacesResponse] = service.listNamespaces(params).promise().toFuture
+    @inline def listOperationsFuture(params: ListOperationsRequest): Future[ListOperationsResponse] = service.listOperations(params).promise().toFuture
+    @inline def listServicesFuture(params: ListServicesRequest): Future[ListServicesResponse] = service.listServices(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def registerInstanceFuture(params: RegisterInstanceRequest): Future[RegisterInstanceResponse] = service.registerInstance(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateInstanceCustomHealthStatusFuture(params: UpdateInstanceCustomHealthStatusRequest): Future[js.Object] = service.updateInstanceCustomHealthStatus(params).promise().toFuture
+    @inline def updateServiceFuture(params: UpdateServiceRequest): Future[UpdateServiceResponse] = service.updateService(params).promise().toFuture
   }
 }
 
@@ -108,19 +81,15 @@ package servicediscovery {
     def this(config: AWSConfig) = this()
 
     def createHttpNamespace(params: CreateHttpNamespaceRequest): Request[CreateHttpNamespaceResponse] = js.native
-    def createPrivateDnsNamespace(
-        params: CreatePrivateDnsNamespaceRequest
-    ): Request[CreatePrivateDnsNamespaceResponse] = js.native
-    def createPublicDnsNamespace(params: CreatePublicDnsNamespaceRequest): Request[CreatePublicDnsNamespaceResponse] =
-      js.native
+    def createPrivateDnsNamespace(params: CreatePrivateDnsNamespaceRequest): Request[CreatePrivateDnsNamespaceResponse] = js.native
+    def createPublicDnsNamespace(params: CreatePublicDnsNamespaceRequest): Request[CreatePublicDnsNamespaceResponse] = js.native
     def createService(params: CreateServiceRequest): Request[CreateServiceResponse] = js.native
     def deleteNamespace(params: DeleteNamespaceRequest): Request[DeleteNamespaceResponse] = js.native
     def deleteService(params: DeleteServiceRequest): Request[DeleteServiceResponse] = js.native
     def deregisterInstance(params: DeregisterInstanceRequest): Request[DeregisterInstanceResponse] = js.native
     def discoverInstances(params: DiscoverInstancesRequest): Request[DiscoverInstancesResponse] = js.native
     def getInstance(params: GetInstanceRequest): Request[GetInstanceResponse] = js.native
-    def getInstancesHealthStatus(params: GetInstancesHealthStatusRequest): Request[GetInstancesHealthStatusResponse] =
-      js.native
+    def getInstancesHealthStatus(params: GetInstancesHealthStatusRequest): Request[GetInstancesHealthStatusResponse] = js.native
     def getNamespace(params: GetNamespaceRequest): Request[GetNamespaceResponse] = js.native
     def getOperation(params: GetOperationRequest): Request[GetOperationResponse] = js.native
     def getService(params: GetServiceRequest): Request[GetServiceResponse] = js.native
@@ -132,8 +101,7 @@ package servicediscovery {
     def registerInstance(params: RegisterInstanceRequest): Request[RegisterInstanceResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
-    def updateInstanceCustomHealthStatus(params: UpdateInstanceCustomHealthStatusRequest): Request[js.Object] =
-      js.native
+    def updateInstanceCustomHealthStatus(params: UpdateInstanceCustomHealthStatusRequest): Request[js.Object] = js.native
     def updateService(params: UpdateServiceRequest): Request[UpdateServiceResponse] = js.native
   }
 
@@ -1456,9 +1424,7 @@ package servicediscovery {
     val REGISTER_INSTANCE = "REGISTER_INSTANCE".asInstanceOf[OperationType]
     val DEREGISTER_INSTANCE = "DEREGISTER_INSTANCE".asInstanceOf[OperationType]
 
-    val values = js.Object.freeze(
-      js.Array(CREATE_NAMESPACE, DELETE_NAMESPACE, UPDATE_SERVICE, REGISTER_INSTANCE, DEREGISTER_INSTANCE)
-    )
+    val values = js.Object.freeze(js.Array(CREATE_NAMESPACE, DELETE_NAMESPACE, UPDATE_SERVICE, REGISTER_INSTANCE, DEREGISTER_INSTANCE))
   }
 
   @js.native

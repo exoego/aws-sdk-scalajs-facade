@@ -35,34 +35,19 @@ package object synthetics {
 
   implicit final class SyntheticsOps(private val service: Synthetics) extends AnyVal {
 
-    @inline def createCanaryFuture(params: CreateCanaryRequest): Future[CreateCanaryResponse] =
-      service.createCanary(params).promise().toFuture
-    @inline def deleteCanaryFuture(params: DeleteCanaryRequest): Future[DeleteCanaryResponse] =
-      service.deleteCanary(params).promise().toFuture
-    @inline def describeCanariesFuture(params: DescribeCanariesRequest): Future[DescribeCanariesResponse] =
-      service.describeCanaries(params).promise().toFuture
-    @inline def describeCanariesLastRunFuture(
-        params: DescribeCanariesLastRunRequest
-    ): Future[DescribeCanariesLastRunResponse] = service.describeCanariesLastRun(params).promise().toFuture
-    @inline def describeRuntimeVersionsFuture(
-        params: DescribeRuntimeVersionsRequest
-    ): Future[DescribeRuntimeVersionsResponse] = service.describeRuntimeVersions(params).promise().toFuture
-    @inline def getCanaryFuture(params: GetCanaryRequest): Future[GetCanaryResponse] =
-      service.getCanary(params).promise().toFuture
-    @inline def getCanaryRunsFuture(params: GetCanaryRunsRequest): Future[GetCanaryRunsResponse] =
-      service.getCanaryRuns(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def startCanaryFuture(params: StartCanaryRequest): Future[StartCanaryResponse] =
-      service.startCanary(params).promise().toFuture
-    @inline def stopCanaryFuture(params: StopCanaryRequest): Future[StopCanaryResponse] =
-      service.stopCanary(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateCanaryFuture(params: UpdateCanaryRequest): Future[UpdateCanaryResponse] =
-      service.updateCanary(params).promise().toFuture
+    @inline def createCanaryFuture(params: CreateCanaryRequest): Future[CreateCanaryResponse] = service.createCanary(params).promise().toFuture
+    @inline def deleteCanaryFuture(params: DeleteCanaryRequest): Future[DeleteCanaryResponse] = service.deleteCanary(params).promise().toFuture
+    @inline def describeCanariesFuture(params: DescribeCanariesRequest): Future[DescribeCanariesResponse] = service.describeCanaries(params).promise().toFuture
+    @inline def describeCanariesLastRunFuture(params: DescribeCanariesLastRunRequest): Future[DescribeCanariesLastRunResponse] = service.describeCanariesLastRun(params).promise().toFuture
+    @inline def describeRuntimeVersionsFuture(params: DescribeRuntimeVersionsRequest): Future[DescribeRuntimeVersionsResponse] = service.describeRuntimeVersions(params).promise().toFuture
+    @inline def getCanaryFuture(params: GetCanaryRequest): Future[GetCanaryResponse] = service.getCanary(params).promise().toFuture
+    @inline def getCanaryRunsFuture(params: GetCanaryRunsRequest): Future[GetCanaryRunsResponse] = service.getCanaryRuns(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def startCanaryFuture(params: StartCanaryRequest): Future[StartCanaryResponse] = service.startCanary(params).promise().toFuture
+    @inline def stopCanaryFuture(params: StopCanaryRequest): Future[StopCanaryResponse] = service.stopCanary(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateCanaryFuture(params: UpdateCanaryRequest): Future[UpdateCanaryResponse] = service.updateCanary(params).promise().toFuture
   }
 }
 
@@ -75,10 +60,8 @@ package synthetics {
     def createCanary(params: CreateCanaryRequest): Request[CreateCanaryResponse] = js.native
     def deleteCanary(params: DeleteCanaryRequest): Request[DeleteCanaryResponse] = js.native
     def describeCanaries(params: DescribeCanariesRequest): Request[DescribeCanariesResponse] = js.native
-    def describeCanariesLastRun(params: DescribeCanariesLastRunRequest): Request[DescribeCanariesLastRunResponse] =
-      js.native
-    def describeRuntimeVersions(params: DescribeRuntimeVersionsRequest): Request[DescribeRuntimeVersionsResponse] =
-      js.native
+    def describeCanariesLastRun(params: DescribeCanariesLastRunRequest): Request[DescribeCanariesLastRunResponse] = js.native
+    def describeRuntimeVersions(params: DescribeRuntimeVersionsRequest): Request[DescribeRuntimeVersionsResponse] = js.native
     def getCanary(params: GetCanaryRequest): Request[GetCanaryResponse] = js.native
     def getCanaryRuns(params: GetCanaryRunsRequest): Request[GetCanaryRunsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
@@ -135,18 +118,14 @@ package synthetics {
       Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
       EngineArn.foreach(__v => __obj.updateDynamic("EngineArn")(__v.asInstanceOf[js.Any]))
       ExecutionRoleArn.foreach(__v => __obj.updateDynamic("ExecutionRoleArn")(__v.asInstanceOf[js.Any]))
-      FailureRetentionPeriodInDays.foreach(__v =>
-        __obj.updateDynamic("FailureRetentionPeriodInDays")(__v.asInstanceOf[js.Any])
-      )
+      FailureRetentionPeriodInDays.foreach(__v => __obj.updateDynamic("FailureRetentionPeriodInDays")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       RunConfig.foreach(__v => __obj.updateDynamic("RunConfig")(__v.asInstanceOf[js.Any]))
       RuntimeVersion.foreach(__v => __obj.updateDynamic("RuntimeVersion")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      SuccessRetentionPeriodInDays.foreach(__v =>
-        __obj.updateDynamic("SuccessRetentionPeriodInDays")(__v.asInstanceOf[js.Any])
-      )
+      SuccessRetentionPeriodInDays.foreach(__v => __obj.updateDynamic("SuccessRetentionPeriodInDays")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       Timeline.foreach(__v => __obj.updateDynamic("Timeline")(__v.asInstanceOf[js.Any]))
       VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
@@ -430,8 +409,7 @@ package synthetics {
     val ERROR = "ERROR".asInstanceOf[CanaryState]
     val DELETING = "DELETING".asInstanceOf[CanaryState]
 
-    val values =
-      js.Object.freeze(js.Array(CREATING, READY, STARTING, RUNNING, UPDATING, STOPPING, STOPPED, ERROR, DELETING))
+    val values = js.Object.freeze(js.Array(CREATING, READY, STARTING, RUNNING, UPDATING, STOPPING, STOPPED, ERROR, DELETING))
   }
 
   @js.native
@@ -534,13 +512,9 @@ package synthetics {
         "Schedule" -> Schedule.asInstanceOf[js.Any]
       )
 
-      FailureRetentionPeriodInDays.foreach(__v =>
-        __obj.updateDynamic("FailureRetentionPeriodInDays")(__v.asInstanceOf[js.Any])
-      )
+      FailureRetentionPeriodInDays.foreach(__v => __obj.updateDynamic("FailureRetentionPeriodInDays")(__v.asInstanceOf[js.Any]))
       RunConfig.foreach(__v => __obj.updateDynamic("RunConfig")(__v.asInstanceOf[js.Any]))
-      SuccessRetentionPeriodInDays.foreach(__v =>
-        __obj.updateDynamic("SuccessRetentionPeriodInDays")(__v.asInstanceOf[js.Any])
-      )
+      SuccessRetentionPeriodInDays.foreach(__v => __obj.updateDynamic("SuccessRetentionPeriodInDays")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCanaryRequest]
@@ -1009,15 +983,11 @@ package synthetics {
 
       Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
       ExecutionRoleArn.foreach(__v => __obj.updateDynamic("ExecutionRoleArn")(__v.asInstanceOf[js.Any]))
-      FailureRetentionPeriodInDays.foreach(__v =>
-        __obj.updateDynamic("FailureRetentionPeriodInDays")(__v.asInstanceOf[js.Any])
-      )
+      FailureRetentionPeriodInDays.foreach(__v => __obj.updateDynamic("FailureRetentionPeriodInDays")(__v.asInstanceOf[js.Any]))
       RunConfig.foreach(__v => __obj.updateDynamic("RunConfig")(__v.asInstanceOf[js.Any]))
       RuntimeVersion.foreach(__v => __obj.updateDynamic("RuntimeVersion")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
-      SuccessRetentionPeriodInDays.foreach(__v =>
-        __obj.updateDynamic("SuccessRetentionPeriodInDays")(__v.asInstanceOf[js.Any])
-      )
+      SuccessRetentionPeriodInDays.foreach(__v => __obj.updateDynamic("SuccessRetentionPeriodInDays")(__v.asInstanceOf[js.Any]))
       VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateCanaryRequest]
     }

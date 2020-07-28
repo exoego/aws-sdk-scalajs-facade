@@ -52,108 +52,49 @@ package object workmail {
 
   implicit final class WorkMailOps(private val service: WorkMail) extends AnyVal {
 
-    @inline def associateDelegateToResourceFuture(
-        params: AssociateDelegateToResourceRequest
-    ): Future[AssociateDelegateToResourceResponse] = service.associateDelegateToResource(params).promise().toFuture
-    @inline def associateMemberToGroupFuture(
-        params: AssociateMemberToGroupRequest
-    ): Future[AssociateMemberToGroupResponse] = service.associateMemberToGroup(params).promise().toFuture
-    @inline def createAliasFuture(params: CreateAliasRequest): Future[CreateAliasResponse] =
-      service.createAlias(params).promise().toFuture
-    @inline def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResponse] =
-      service.createGroup(params).promise().toFuture
-    @inline def createResourceFuture(params: CreateResourceRequest): Future[CreateResourceResponse] =
-      service.createResource(params).promise().toFuture
-    @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] =
-      service.createUser(params).promise().toFuture
-    @inline def deleteAccessControlRuleFuture(
-        params: DeleteAccessControlRuleRequest
-    ): Future[DeleteAccessControlRuleResponse] = service.deleteAccessControlRule(params).promise().toFuture
-    @inline def deleteAliasFuture(params: DeleteAliasRequest): Future[DeleteAliasResponse] =
-      service.deleteAlias(params).promise().toFuture
-    @inline def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResponse] =
-      service.deleteGroup(params).promise().toFuture
-    @inline def deleteMailboxPermissionsFuture(
-        params: DeleteMailboxPermissionsRequest
-    ): Future[DeleteMailboxPermissionsResponse] = service.deleteMailboxPermissions(params).promise().toFuture
-    @inline def deleteResourceFuture(params: DeleteResourceRequest): Future[DeleteResourceResponse] =
-      service.deleteResource(params).promise().toFuture
-    @inline def deleteRetentionPolicyFuture(
-        params: DeleteRetentionPolicyRequest
-    ): Future[DeleteRetentionPolicyResponse] = service.deleteRetentionPolicy(params).promise().toFuture
-    @inline def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResponse] =
-      service.deleteUser(params).promise().toFuture
-    @inline def deregisterFromWorkMailFuture(
-        params: DeregisterFromWorkMailRequest
-    ): Future[DeregisterFromWorkMailResponse] = service.deregisterFromWorkMail(params).promise().toFuture
-    @inline def describeGroupFuture(params: DescribeGroupRequest): Future[DescribeGroupResponse] =
-      service.describeGroup(params).promise().toFuture
-    @inline def describeOrganizationFuture(params: DescribeOrganizationRequest): Future[DescribeOrganizationResponse] =
-      service.describeOrganization(params).promise().toFuture
-    @inline def describeResourceFuture(params: DescribeResourceRequest): Future[DescribeResourceResponse] =
-      service.describeResource(params).promise().toFuture
-    @inline def describeUserFuture(params: DescribeUserRequest): Future[DescribeUserResponse] =
-      service.describeUser(params).promise().toFuture
-    @inline def disassociateDelegateFromResourceFuture(
-        params: DisassociateDelegateFromResourceRequest
-    ): Future[DisassociateDelegateFromResourceResponse] =
-      service.disassociateDelegateFromResource(params).promise().toFuture
-    @inline def disassociateMemberFromGroupFuture(
-        params: DisassociateMemberFromGroupRequest
-    ): Future[DisassociateMemberFromGroupResponse] = service.disassociateMemberFromGroup(params).promise().toFuture
-    @inline def getAccessControlEffectFuture(
-        params: GetAccessControlEffectRequest
-    ): Future[GetAccessControlEffectResponse] = service.getAccessControlEffect(params).promise().toFuture
-    @inline def getDefaultRetentionPolicyFuture(
-        params: GetDefaultRetentionPolicyRequest
-    ): Future[GetDefaultRetentionPolicyResponse] = service.getDefaultRetentionPolicy(params).promise().toFuture
-    @inline def getMailboxDetailsFuture(params: GetMailboxDetailsRequest): Future[GetMailboxDetailsResponse] =
-      service.getMailboxDetails(params).promise().toFuture
-    @inline def listAccessControlRulesFuture(
-        params: ListAccessControlRulesRequest
-    ): Future[ListAccessControlRulesResponse] = service.listAccessControlRules(params).promise().toFuture
-    @inline def listAliasesFuture(params: ListAliasesRequest): Future[ListAliasesResponse] =
-      service.listAliases(params).promise().toFuture
-    @inline def listGroupMembersFuture(params: ListGroupMembersRequest): Future[ListGroupMembersResponse] =
-      service.listGroupMembers(params).promise().toFuture
-    @inline def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] =
-      service.listGroups(params).promise().toFuture
-    @inline def listMailboxPermissionsFuture(
-        params: ListMailboxPermissionsRequest
-    ): Future[ListMailboxPermissionsResponse] = service.listMailboxPermissions(params).promise().toFuture
-    @inline def listOrganizationsFuture(params: ListOrganizationsRequest): Future[ListOrganizationsResponse] =
-      service.listOrganizations(params).promise().toFuture
-    @inline def listResourceDelegatesFuture(
-        params: ListResourceDelegatesRequest
-    ): Future[ListResourceDelegatesResponse] = service.listResourceDelegates(params).promise().toFuture
-    @inline def listResourcesFuture(params: ListResourcesRequest): Future[ListResourcesResponse] =
-      service.listResources(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
-      service.listUsers(params).promise().toFuture
-    @inline def putAccessControlRuleFuture(params: PutAccessControlRuleRequest): Future[PutAccessControlRuleResponse] =
-      service.putAccessControlRule(params).promise().toFuture
-    @inline def putMailboxPermissionsFuture(
-        params: PutMailboxPermissionsRequest
-    ): Future[PutMailboxPermissionsResponse] = service.putMailboxPermissions(params).promise().toFuture
-    @inline def putRetentionPolicyFuture(params: PutRetentionPolicyRequest): Future[PutRetentionPolicyResponse] =
-      service.putRetentionPolicy(params).promise().toFuture
-    @inline def registerToWorkMailFuture(params: RegisterToWorkMailRequest): Future[RegisterToWorkMailResponse] =
-      service.registerToWorkMail(params).promise().toFuture
-    @inline def resetPasswordFuture(params: ResetPasswordRequest): Future[ResetPasswordResponse] =
-      service.resetPassword(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateMailboxQuotaFuture(params: UpdateMailboxQuotaRequest): Future[UpdateMailboxQuotaResponse] =
-      service.updateMailboxQuota(params).promise().toFuture
-    @inline def updatePrimaryEmailAddressFuture(
-        params: UpdatePrimaryEmailAddressRequest
-    ): Future[UpdatePrimaryEmailAddressResponse] = service.updatePrimaryEmailAddress(params).promise().toFuture
-    @inline def updateResourceFuture(params: UpdateResourceRequest): Future[UpdateResourceResponse] =
-      service.updateResource(params).promise().toFuture
+    @inline def associateDelegateToResourceFuture(params: AssociateDelegateToResourceRequest): Future[AssociateDelegateToResourceResponse] = service.associateDelegateToResource(params).promise().toFuture
+    @inline def associateMemberToGroupFuture(params: AssociateMemberToGroupRequest): Future[AssociateMemberToGroupResponse] = service.associateMemberToGroup(params).promise().toFuture
+    @inline def createAliasFuture(params: CreateAliasRequest): Future[CreateAliasResponse] = service.createAlias(params).promise().toFuture
+    @inline def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResponse] = service.createGroup(params).promise().toFuture
+    @inline def createResourceFuture(params: CreateResourceRequest): Future[CreateResourceResponse] = service.createResource(params).promise().toFuture
+    @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] = service.createUser(params).promise().toFuture
+    @inline def deleteAccessControlRuleFuture(params: DeleteAccessControlRuleRequest): Future[DeleteAccessControlRuleResponse] = service.deleteAccessControlRule(params).promise().toFuture
+    @inline def deleteAliasFuture(params: DeleteAliasRequest): Future[DeleteAliasResponse] = service.deleteAlias(params).promise().toFuture
+    @inline def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResponse] = service.deleteGroup(params).promise().toFuture
+    @inline def deleteMailboxPermissionsFuture(params: DeleteMailboxPermissionsRequest): Future[DeleteMailboxPermissionsResponse] = service.deleteMailboxPermissions(params).promise().toFuture
+    @inline def deleteResourceFuture(params: DeleteResourceRequest): Future[DeleteResourceResponse] = service.deleteResource(params).promise().toFuture
+    @inline def deleteRetentionPolicyFuture(params: DeleteRetentionPolicyRequest): Future[DeleteRetentionPolicyResponse] = service.deleteRetentionPolicy(params).promise().toFuture
+    @inline def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResponse] = service.deleteUser(params).promise().toFuture
+    @inline def deregisterFromWorkMailFuture(params: DeregisterFromWorkMailRequest): Future[DeregisterFromWorkMailResponse] = service.deregisterFromWorkMail(params).promise().toFuture
+    @inline def describeGroupFuture(params: DescribeGroupRequest): Future[DescribeGroupResponse] = service.describeGroup(params).promise().toFuture
+    @inline def describeOrganizationFuture(params: DescribeOrganizationRequest): Future[DescribeOrganizationResponse] = service.describeOrganization(params).promise().toFuture
+    @inline def describeResourceFuture(params: DescribeResourceRequest): Future[DescribeResourceResponse] = service.describeResource(params).promise().toFuture
+    @inline def describeUserFuture(params: DescribeUserRequest): Future[DescribeUserResponse] = service.describeUser(params).promise().toFuture
+    @inline def disassociateDelegateFromResourceFuture(params: DisassociateDelegateFromResourceRequest): Future[DisassociateDelegateFromResourceResponse] = service.disassociateDelegateFromResource(params).promise().toFuture
+    @inline def disassociateMemberFromGroupFuture(params: DisassociateMemberFromGroupRequest): Future[DisassociateMemberFromGroupResponse] = service.disassociateMemberFromGroup(params).promise().toFuture
+    @inline def getAccessControlEffectFuture(params: GetAccessControlEffectRequest): Future[GetAccessControlEffectResponse] = service.getAccessControlEffect(params).promise().toFuture
+    @inline def getDefaultRetentionPolicyFuture(params: GetDefaultRetentionPolicyRequest): Future[GetDefaultRetentionPolicyResponse] = service.getDefaultRetentionPolicy(params).promise().toFuture
+    @inline def getMailboxDetailsFuture(params: GetMailboxDetailsRequest): Future[GetMailboxDetailsResponse] = service.getMailboxDetails(params).promise().toFuture
+    @inline def listAccessControlRulesFuture(params: ListAccessControlRulesRequest): Future[ListAccessControlRulesResponse] = service.listAccessControlRules(params).promise().toFuture
+    @inline def listAliasesFuture(params: ListAliasesRequest): Future[ListAliasesResponse] = service.listAliases(params).promise().toFuture
+    @inline def listGroupMembersFuture(params: ListGroupMembersRequest): Future[ListGroupMembersResponse] = service.listGroupMembers(params).promise().toFuture
+    @inline def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] = service.listGroups(params).promise().toFuture
+    @inline def listMailboxPermissionsFuture(params: ListMailboxPermissionsRequest): Future[ListMailboxPermissionsResponse] = service.listMailboxPermissions(params).promise().toFuture
+    @inline def listOrganizationsFuture(params: ListOrganizationsRequest): Future[ListOrganizationsResponse] = service.listOrganizations(params).promise().toFuture
+    @inline def listResourceDelegatesFuture(params: ListResourceDelegatesRequest): Future[ListResourceDelegatesResponse] = service.listResourceDelegates(params).promise().toFuture
+    @inline def listResourcesFuture(params: ListResourcesRequest): Future[ListResourcesResponse] = service.listResources(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] = service.listUsers(params).promise().toFuture
+    @inline def putAccessControlRuleFuture(params: PutAccessControlRuleRequest): Future[PutAccessControlRuleResponse] = service.putAccessControlRule(params).promise().toFuture
+    @inline def putMailboxPermissionsFuture(params: PutMailboxPermissionsRequest): Future[PutMailboxPermissionsResponse] = service.putMailboxPermissions(params).promise().toFuture
+    @inline def putRetentionPolicyFuture(params: PutRetentionPolicyRequest): Future[PutRetentionPolicyResponse] = service.putRetentionPolicy(params).promise().toFuture
+    @inline def registerToWorkMailFuture(params: RegisterToWorkMailRequest): Future[RegisterToWorkMailResponse] = service.registerToWorkMail(params).promise().toFuture
+    @inline def resetPasswordFuture(params: ResetPasswordRequest): Future[ResetPasswordResponse] = service.resetPassword(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateMailboxQuotaFuture(params: UpdateMailboxQuotaRequest): Future[UpdateMailboxQuotaResponse] = service.updateMailboxQuota(params).promise().toFuture
+    @inline def updatePrimaryEmailAddressFuture(params: UpdatePrimaryEmailAddressRequest): Future[UpdatePrimaryEmailAddressResponse] = service.updatePrimaryEmailAddress(params).promise().toFuture
+    @inline def updateResourceFuture(params: UpdateResourceRequest): Future[UpdateResourceResponse] = service.updateResource(params).promise().toFuture
   }
 }
 
@@ -163,49 +104,34 @@ package workmail {
   class WorkMail() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def associateDelegateToResource(
-        params: AssociateDelegateToResourceRequest
-    ): Request[AssociateDelegateToResourceResponse] = js.native
-    def associateMemberToGroup(params: AssociateMemberToGroupRequest): Request[AssociateMemberToGroupResponse] =
-      js.native
+    def associateDelegateToResource(params: AssociateDelegateToResourceRequest): Request[AssociateDelegateToResourceResponse] = js.native
+    def associateMemberToGroup(params: AssociateMemberToGroupRequest): Request[AssociateMemberToGroupResponse] = js.native
     def createAlias(params: CreateAliasRequest): Request[CreateAliasResponse] = js.native
     def createGroup(params: CreateGroupRequest): Request[CreateGroupResponse] = js.native
     def createResource(params: CreateResourceRequest): Request[CreateResourceResponse] = js.native
     def createUser(params: CreateUserRequest): Request[CreateUserResponse] = js.native
-    def deleteAccessControlRule(params: DeleteAccessControlRuleRequest): Request[DeleteAccessControlRuleResponse] =
-      js.native
+    def deleteAccessControlRule(params: DeleteAccessControlRuleRequest): Request[DeleteAccessControlRuleResponse] = js.native
     def deleteAlias(params: DeleteAliasRequest): Request[DeleteAliasResponse] = js.native
     def deleteGroup(params: DeleteGroupRequest): Request[DeleteGroupResponse] = js.native
-    def deleteMailboxPermissions(params: DeleteMailboxPermissionsRequest): Request[DeleteMailboxPermissionsResponse] =
-      js.native
+    def deleteMailboxPermissions(params: DeleteMailboxPermissionsRequest): Request[DeleteMailboxPermissionsResponse] = js.native
     def deleteResource(params: DeleteResourceRequest): Request[DeleteResourceResponse] = js.native
     def deleteRetentionPolicy(params: DeleteRetentionPolicyRequest): Request[DeleteRetentionPolicyResponse] = js.native
     def deleteUser(params: DeleteUserRequest): Request[DeleteUserResponse] = js.native
-    def deregisterFromWorkMail(params: DeregisterFromWorkMailRequest): Request[DeregisterFromWorkMailResponse] =
-      js.native
+    def deregisterFromWorkMail(params: DeregisterFromWorkMailRequest): Request[DeregisterFromWorkMailResponse] = js.native
     def describeGroup(params: DescribeGroupRequest): Request[DescribeGroupResponse] = js.native
     def describeOrganization(params: DescribeOrganizationRequest): Request[DescribeOrganizationResponse] = js.native
     def describeResource(params: DescribeResourceRequest): Request[DescribeResourceResponse] = js.native
     def describeUser(params: DescribeUserRequest): Request[DescribeUserResponse] = js.native
-    def disassociateDelegateFromResource(
-        params: DisassociateDelegateFromResourceRequest
-    ): Request[DisassociateDelegateFromResourceResponse] = js.native
-    def disassociateMemberFromGroup(
-        params: DisassociateMemberFromGroupRequest
-    ): Request[DisassociateMemberFromGroupResponse] = js.native
-    def getAccessControlEffect(params: GetAccessControlEffectRequest): Request[GetAccessControlEffectResponse] =
-      js.native
-    def getDefaultRetentionPolicy(
-        params: GetDefaultRetentionPolicyRequest
-    ): Request[GetDefaultRetentionPolicyResponse] = js.native
+    def disassociateDelegateFromResource(params: DisassociateDelegateFromResourceRequest): Request[DisassociateDelegateFromResourceResponse] = js.native
+    def disassociateMemberFromGroup(params: DisassociateMemberFromGroupRequest): Request[DisassociateMemberFromGroupResponse] = js.native
+    def getAccessControlEffect(params: GetAccessControlEffectRequest): Request[GetAccessControlEffectResponse] = js.native
+    def getDefaultRetentionPolicy(params: GetDefaultRetentionPolicyRequest): Request[GetDefaultRetentionPolicyResponse] = js.native
     def getMailboxDetails(params: GetMailboxDetailsRequest): Request[GetMailboxDetailsResponse] = js.native
-    def listAccessControlRules(params: ListAccessControlRulesRequest): Request[ListAccessControlRulesResponse] =
-      js.native
+    def listAccessControlRules(params: ListAccessControlRulesRequest): Request[ListAccessControlRulesResponse] = js.native
     def listAliases(params: ListAliasesRequest): Request[ListAliasesResponse] = js.native
     def listGroupMembers(params: ListGroupMembersRequest): Request[ListGroupMembersResponse] = js.native
     def listGroups(params: ListGroupsRequest): Request[ListGroupsResponse] = js.native
-    def listMailboxPermissions(params: ListMailboxPermissionsRequest): Request[ListMailboxPermissionsResponse] =
-      js.native
+    def listMailboxPermissions(params: ListMailboxPermissionsRequest): Request[ListMailboxPermissionsResponse] = js.native
     def listOrganizations(params: ListOrganizationsRequest): Request[ListOrganizationsResponse] = js.native
     def listResourceDelegates(params: ListResourceDelegatesRequest): Request[ListResourceDelegatesResponse] = js.native
     def listResources(params: ListResourcesRequest): Request[ListResourcesResponse] = js.native
@@ -219,9 +145,7 @@ package workmail {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateMailboxQuota(params: UpdateMailboxQuotaRequest): Request[UpdateMailboxQuotaResponse] = js.native
-    def updatePrimaryEmailAddress(
-        params: UpdatePrimaryEmailAddressRequest
-    ): Request[UpdatePrimaryEmailAddressResponse] = js.native
+    def updatePrimaryEmailAddress(params: UpdatePrimaryEmailAddressRequest): Request[UpdatePrimaryEmailAddressResponse] = js.native
     def updateResource(params: UpdateResourceRequest): Request[UpdateResourceResponse] = js.native
   }
 
@@ -376,12 +300,8 @@ package workmail {
     ): BookingOptions = {
       val __obj = js.Dynamic.literal()
       AutoAcceptRequests.foreach(__v => __obj.updateDynamic("AutoAcceptRequests")(__v.asInstanceOf[js.Any]))
-      AutoDeclineConflictingRequests.foreach(__v =>
-        __obj.updateDynamic("AutoDeclineConflictingRequests")(__v.asInstanceOf[js.Any])
-      )
-      AutoDeclineRecurringRequests.foreach(__v =>
-        __obj.updateDynamic("AutoDeclineRecurringRequests")(__v.asInstanceOf[js.Any])
-      )
+      AutoDeclineConflictingRequests.foreach(__v => __obj.updateDynamic("AutoDeclineConflictingRequests")(__v.asInstanceOf[js.Any]))
+      AutoDeclineRecurringRequests.foreach(__v => __obj.updateDynamic("AutoDeclineRecurringRequests")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BookingOptions]
     }
   }

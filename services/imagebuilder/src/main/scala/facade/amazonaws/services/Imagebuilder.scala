@@ -69,113 +69,48 @@ package object imagebuilder {
 
   implicit final class ImagebuilderOps(private val service: Imagebuilder) extends AnyVal {
 
-    @inline def cancelImageCreationFuture(params: CancelImageCreationRequest): Future[CancelImageCreationResponse] =
-      service.cancelImageCreation(params).promise().toFuture
-    @inline def createComponentFuture(params: CreateComponentRequest): Future[CreateComponentResponse] =
-      service.createComponent(params).promise().toFuture
-    @inline def createDistributionConfigurationFuture(
-        params: CreateDistributionConfigurationRequest
-    ): Future[CreateDistributionConfigurationResponse] =
-      service.createDistributionConfiguration(params).promise().toFuture
-    @inline def createImageFuture(params: CreateImageRequest): Future[CreateImageResponse] =
-      service.createImage(params).promise().toFuture
-    @inline def createImagePipelineFuture(params: CreateImagePipelineRequest): Future[CreateImagePipelineResponse] =
-      service.createImagePipeline(params).promise().toFuture
-    @inline def createImageRecipeFuture(params: CreateImageRecipeRequest): Future[CreateImageRecipeResponse] =
-      service.createImageRecipe(params).promise().toFuture
-    @inline def createInfrastructureConfigurationFuture(
-        params: CreateInfrastructureConfigurationRequest
-    ): Future[CreateInfrastructureConfigurationResponse] =
-      service.createInfrastructureConfiguration(params).promise().toFuture
-    @inline def deleteComponentFuture(params: DeleteComponentRequest): Future[DeleteComponentResponse] =
-      service.deleteComponent(params).promise().toFuture
-    @inline def deleteDistributionConfigurationFuture(
-        params: DeleteDistributionConfigurationRequest
-    ): Future[DeleteDistributionConfigurationResponse] =
-      service.deleteDistributionConfiguration(params).promise().toFuture
-    @inline def deleteImageFuture(params: DeleteImageRequest): Future[DeleteImageResponse] =
-      service.deleteImage(params).promise().toFuture
-    @inline def deleteImagePipelineFuture(params: DeleteImagePipelineRequest): Future[DeleteImagePipelineResponse] =
-      service.deleteImagePipeline(params).promise().toFuture
-    @inline def deleteImageRecipeFuture(params: DeleteImageRecipeRequest): Future[DeleteImageRecipeResponse] =
-      service.deleteImageRecipe(params).promise().toFuture
-    @inline def deleteInfrastructureConfigurationFuture(
-        params: DeleteInfrastructureConfigurationRequest
-    ): Future[DeleteInfrastructureConfigurationResponse] =
-      service.deleteInfrastructureConfiguration(params).promise().toFuture
-    @inline def getComponentFuture(params: GetComponentRequest): Future[GetComponentResponse] =
-      service.getComponent(params).promise().toFuture
-    @inline def getComponentPolicyFuture(params: GetComponentPolicyRequest): Future[GetComponentPolicyResponse] =
-      service.getComponentPolicy(params).promise().toFuture
-    @inline def getDistributionConfigurationFuture(
-        params: GetDistributionConfigurationRequest
-    ): Future[GetDistributionConfigurationResponse] = service.getDistributionConfiguration(params).promise().toFuture
-    @inline def getImageFuture(params: GetImageRequest): Future[GetImageResponse] =
-      service.getImage(params).promise().toFuture
-    @inline def getImagePipelineFuture(params: GetImagePipelineRequest): Future[GetImagePipelineResponse] =
-      service.getImagePipeline(params).promise().toFuture
-    @inline def getImagePolicyFuture(params: GetImagePolicyRequest): Future[GetImagePolicyResponse] =
-      service.getImagePolicy(params).promise().toFuture
-    @inline def getImageRecipeFuture(params: GetImageRecipeRequest): Future[GetImageRecipeResponse] =
-      service.getImageRecipe(params).promise().toFuture
-    @inline def getImageRecipePolicyFuture(params: GetImageRecipePolicyRequest): Future[GetImageRecipePolicyResponse] =
-      service.getImageRecipePolicy(params).promise().toFuture
-    @inline def getInfrastructureConfigurationFuture(
-        params: GetInfrastructureConfigurationRequest
-    ): Future[GetInfrastructureConfigurationResponse] =
-      service.getInfrastructureConfiguration(params).promise().toFuture
-    @inline def importComponentFuture(params: ImportComponentRequest): Future[ImportComponentResponse] =
-      service.importComponent(params).promise().toFuture
-    @inline def listComponentBuildVersionsFuture(
-        params: ListComponentBuildVersionsRequest
-    ): Future[ListComponentBuildVersionsResponse] = service.listComponentBuildVersions(params).promise().toFuture
-    @inline def listComponentsFuture(params: ListComponentsRequest): Future[ListComponentsResponse] =
-      service.listComponents(params).promise().toFuture
-    @inline def listDistributionConfigurationsFuture(
-        params: ListDistributionConfigurationsRequest
-    ): Future[ListDistributionConfigurationsResponse] =
-      service.listDistributionConfigurations(params).promise().toFuture
-    @inline def listImageBuildVersionsFuture(
-        params: ListImageBuildVersionsRequest
-    ): Future[ListImageBuildVersionsResponse] = service.listImageBuildVersions(params).promise().toFuture
-    @inline def listImagePipelineImagesFuture(
-        params: ListImagePipelineImagesRequest
-    ): Future[ListImagePipelineImagesResponse] = service.listImagePipelineImages(params).promise().toFuture
-    @inline def listImagePipelinesFuture(params: ListImagePipelinesRequest): Future[ListImagePipelinesResponse] =
-      service.listImagePipelines(params).promise().toFuture
-    @inline def listImageRecipesFuture(params: ListImageRecipesRequest): Future[ListImageRecipesResponse] =
-      service.listImageRecipes(params).promise().toFuture
-    @inline def listImagesFuture(params: ListImagesRequest): Future[ListImagesResponse] =
-      service.listImages(params).promise().toFuture
-    @inline def listInfrastructureConfigurationsFuture(
-        params: ListInfrastructureConfigurationsRequest
-    ): Future[ListInfrastructureConfigurationsResponse] =
-      service.listInfrastructureConfigurations(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def putComponentPolicyFuture(params: PutComponentPolicyRequest): Future[PutComponentPolicyResponse] =
-      service.putComponentPolicy(params).promise().toFuture
-    @inline def putImagePolicyFuture(params: PutImagePolicyRequest): Future[PutImagePolicyResponse] =
-      service.putImagePolicy(params).promise().toFuture
-    @inline def putImageRecipePolicyFuture(params: PutImageRecipePolicyRequest): Future[PutImageRecipePolicyResponse] =
-      service.putImageRecipePolicy(params).promise().toFuture
-    @inline def startImagePipelineExecutionFuture(
-        params: StartImagePipelineExecutionRequest
-    ): Future[StartImagePipelineExecutionResponse] = service.startImagePipelineExecution(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateDistributionConfigurationFuture(
-        params: UpdateDistributionConfigurationRequest
-    ): Future[UpdateDistributionConfigurationResponse] =
-      service.updateDistributionConfiguration(params).promise().toFuture
-    @inline def updateImagePipelineFuture(params: UpdateImagePipelineRequest): Future[UpdateImagePipelineResponse] =
-      service.updateImagePipeline(params).promise().toFuture
-    @inline def updateInfrastructureConfigurationFuture(
-        params: UpdateInfrastructureConfigurationRequest
-    ): Future[UpdateInfrastructureConfigurationResponse] =
-      service.updateInfrastructureConfiguration(params).promise().toFuture
+    @inline def cancelImageCreationFuture(params: CancelImageCreationRequest): Future[CancelImageCreationResponse] = service.cancelImageCreation(params).promise().toFuture
+    @inline def createComponentFuture(params: CreateComponentRequest): Future[CreateComponentResponse] = service.createComponent(params).promise().toFuture
+    @inline def createDistributionConfigurationFuture(params: CreateDistributionConfigurationRequest): Future[CreateDistributionConfigurationResponse] = service.createDistributionConfiguration(params).promise().toFuture
+    @inline def createImageFuture(params: CreateImageRequest): Future[CreateImageResponse] = service.createImage(params).promise().toFuture
+    @inline def createImagePipelineFuture(params: CreateImagePipelineRequest): Future[CreateImagePipelineResponse] = service.createImagePipeline(params).promise().toFuture
+    @inline def createImageRecipeFuture(params: CreateImageRecipeRequest): Future[CreateImageRecipeResponse] = service.createImageRecipe(params).promise().toFuture
+    @inline def createInfrastructureConfigurationFuture(params: CreateInfrastructureConfigurationRequest): Future[CreateInfrastructureConfigurationResponse] = service.createInfrastructureConfiguration(params).promise().toFuture
+    @inline def deleteComponentFuture(params: DeleteComponentRequest): Future[DeleteComponentResponse] = service.deleteComponent(params).promise().toFuture
+    @inline def deleteDistributionConfigurationFuture(params: DeleteDistributionConfigurationRequest): Future[DeleteDistributionConfigurationResponse] = service.deleteDistributionConfiguration(params).promise().toFuture
+    @inline def deleteImageFuture(params: DeleteImageRequest): Future[DeleteImageResponse] = service.deleteImage(params).promise().toFuture
+    @inline def deleteImagePipelineFuture(params: DeleteImagePipelineRequest): Future[DeleteImagePipelineResponse] = service.deleteImagePipeline(params).promise().toFuture
+    @inline def deleteImageRecipeFuture(params: DeleteImageRecipeRequest): Future[DeleteImageRecipeResponse] = service.deleteImageRecipe(params).promise().toFuture
+    @inline def deleteInfrastructureConfigurationFuture(params: DeleteInfrastructureConfigurationRequest): Future[DeleteInfrastructureConfigurationResponse] = service.deleteInfrastructureConfiguration(params).promise().toFuture
+    @inline def getComponentFuture(params: GetComponentRequest): Future[GetComponentResponse] = service.getComponent(params).promise().toFuture
+    @inline def getComponentPolicyFuture(params: GetComponentPolicyRequest): Future[GetComponentPolicyResponse] = service.getComponentPolicy(params).promise().toFuture
+    @inline def getDistributionConfigurationFuture(params: GetDistributionConfigurationRequest): Future[GetDistributionConfigurationResponse] = service.getDistributionConfiguration(params).promise().toFuture
+    @inline def getImageFuture(params: GetImageRequest): Future[GetImageResponse] = service.getImage(params).promise().toFuture
+    @inline def getImagePipelineFuture(params: GetImagePipelineRequest): Future[GetImagePipelineResponse] = service.getImagePipeline(params).promise().toFuture
+    @inline def getImagePolicyFuture(params: GetImagePolicyRequest): Future[GetImagePolicyResponse] = service.getImagePolicy(params).promise().toFuture
+    @inline def getImageRecipeFuture(params: GetImageRecipeRequest): Future[GetImageRecipeResponse] = service.getImageRecipe(params).promise().toFuture
+    @inline def getImageRecipePolicyFuture(params: GetImageRecipePolicyRequest): Future[GetImageRecipePolicyResponse] = service.getImageRecipePolicy(params).promise().toFuture
+    @inline def getInfrastructureConfigurationFuture(params: GetInfrastructureConfigurationRequest): Future[GetInfrastructureConfigurationResponse] = service.getInfrastructureConfiguration(params).promise().toFuture
+    @inline def importComponentFuture(params: ImportComponentRequest): Future[ImportComponentResponse] = service.importComponent(params).promise().toFuture
+    @inline def listComponentBuildVersionsFuture(params: ListComponentBuildVersionsRequest): Future[ListComponentBuildVersionsResponse] = service.listComponentBuildVersions(params).promise().toFuture
+    @inline def listComponentsFuture(params: ListComponentsRequest): Future[ListComponentsResponse] = service.listComponents(params).promise().toFuture
+    @inline def listDistributionConfigurationsFuture(params: ListDistributionConfigurationsRequest): Future[ListDistributionConfigurationsResponse] = service.listDistributionConfigurations(params).promise().toFuture
+    @inline def listImageBuildVersionsFuture(params: ListImageBuildVersionsRequest): Future[ListImageBuildVersionsResponse] = service.listImageBuildVersions(params).promise().toFuture
+    @inline def listImagePipelineImagesFuture(params: ListImagePipelineImagesRequest): Future[ListImagePipelineImagesResponse] = service.listImagePipelineImages(params).promise().toFuture
+    @inline def listImagePipelinesFuture(params: ListImagePipelinesRequest): Future[ListImagePipelinesResponse] = service.listImagePipelines(params).promise().toFuture
+    @inline def listImageRecipesFuture(params: ListImageRecipesRequest): Future[ListImageRecipesResponse] = service.listImageRecipes(params).promise().toFuture
+    @inline def listImagesFuture(params: ListImagesRequest): Future[ListImagesResponse] = service.listImages(params).promise().toFuture
+    @inline def listInfrastructureConfigurationsFuture(params: ListInfrastructureConfigurationsRequest): Future[ListInfrastructureConfigurationsResponse] = service.listInfrastructureConfigurations(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def putComponentPolicyFuture(params: PutComponentPolicyRequest): Future[PutComponentPolicyResponse] = service.putComponentPolicy(params).promise().toFuture
+    @inline def putImagePolicyFuture(params: PutImagePolicyRequest): Future[PutImagePolicyResponse] = service.putImagePolicy(params).promise().toFuture
+    @inline def putImageRecipePolicyFuture(params: PutImageRecipePolicyRequest): Future[PutImageRecipePolicyResponse] = service.putImageRecipePolicy(params).promise().toFuture
+    @inline def startImagePipelineExecutionFuture(params: StartImagePipelineExecutionRequest): Future[StartImagePipelineExecutionResponse] = service.startImagePipelineExecution(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateDistributionConfigurationFuture(params: UpdateDistributionConfigurationRequest): Future[UpdateDistributionConfigurationResponse] = service.updateDistributionConfiguration(params).promise().toFuture
+    @inline def updateImagePipelineFuture(params: UpdateImagePipelineRequest): Future[UpdateImagePipelineResponse] = service.updateImagePipeline(params).promise().toFuture
+    @inline def updateInfrastructureConfigurationFuture(params: UpdateInfrastructureConfigurationRequest): Future[UpdateInfrastructureConfigurationResponse] = service.updateInfrastructureConfiguration(params).promise().toFuture
   }
 }
 
@@ -187,72 +122,46 @@ package imagebuilder {
 
     def cancelImageCreation(params: CancelImageCreationRequest): Request[CancelImageCreationResponse] = js.native
     def createComponent(params: CreateComponentRequest): Request[CreateComponentResponse] = js.native
-    def createDistributionConfiguration(
-        params: CreateDistributionConfigurationRequest
-    ): Request[CreateDistributionConfigurationResponse] = js.native
+    def createDistributionConfiguration(params: CreateDistributionConfigurationRequest): Request[CreateDistributionConfigurationResponse] = js.native
     def createImage(params: CreateImageRequest): Request[CreateImageResponse] = js.native
     def createImagePipeline(params: CreateImagePipelineRequest): Request[CreateImagePipelineResponse] = js.native
     def createImageRecipe(params: CreateImageRecipeRequest): Request[CreateImageRecipeResponse] = js.native
-    def createInfrastructureConfiguration(
-        params: CreateInfrastructureConfigurationRequest
-    ): Request[CreateInfrastructureConfigurationResponse] = js.native
+    def createInfrastructureConfiguration(params: CreateInfrastructureConfigurationRequest): Request[CreateInfrastructureConfigurationResponse] = js.native
     def deleteComponent(params: DeleteComponentRequest): Request[DeleteComponentResponse] = js.native
-    def deleteDistributionConfiguration(
-        params: DeleteDistributionConfigurationRequest
-    ): Request[DeleteDistributionConfigurationResponse] = js.native
+    def deleteDistributionConfiguration(params: DeleteDistributionConfigurationRequest): Request[DeleteDistributionConfigurationResponse] = js.native
     def deleteImage(params: DeleteImageRequest): Request[DeleteImageResponse] = js.native
     def deleteImagePipeline(params: DeleteImagePipelineRequest): Request[DeleteImagePipelineResponse] = js.native
     def deleteImageRecipe(params: DeleteImageRecipeRequest): Request[DeleteImageRecipeResponse] = js.native
-    def deleteInfrastructureConfiguration(
-        params: DeleteInfrastructureConfigurationRequest
-    ): Request[DeleteInfrastructureConfigurationResponse] = js.native
+    def deleteInfrastructureConfiguration(params: DeleteInfrastructureConfigurationRequest): Request[DeleteInfrastructureConfigurationResponse] = js.native
     def getComponent(params: GetComponentRequest): Request[GetComponentResponse] = js.native
     def getComponentPolicy(params: GetComponentPolicyRequest): Request[GetComponentPolicyResponse] = js.native
-    def getDistributionConfiguration(
-        params: GetDistributionConfigurationRequest
-    ): Request[GetDistributionConfigurationResponse] = js.native
+    def getDistributionConfiguration(params: GetDistributionConfigurationRequest): Request[GetDistributionConfigurationResponse] = js.native
     def getImage(params: GetImageRequest): Request[GetImageResponse] = js.native
     def getImagePipeline(params: GetImagePipelineRequest): Request[GetImagePipelineResponse] = js.native
     def getImagePolicy(params: GetImagePolicyRequest): Request[GetImagePolicyResponse] = js.native
     def getImageRecipe(params: GetImageRecipeRequest): Request[GetImageRecipeResponse] = js.native
     def getImageRecipePolicy(params: GetImageRecipePolicyRequest): Request[GetImageRecipePolicyResponse] = js.native
-    def getInfrastructureConfiguration(
-        params: GetInfrastructureConfigurationRequest
-    ): Request[GetInfrastructureConfigurationResponse] = js.native
+    def getInfrastructureConfiguration(params: GetInfrastructureConfigurationRequest): Request[GetInfrastructureConfigurationResponse] = js.native
     def importComponent(params: ImportComponentRequest): Request[ImportComponentResponse] = js.native
-    def listComponentBuildVersions(
-        params: ListComponentBuildVersionsRequest
-    ): Request[ListComponentBuildVersionsResponse] = js.native
+    def listComponentBuildVersions(params: ListComponentBuildVersionsRequest): Request[ListComponentBuildVersionsResponse] = js.native
     def listComponents(params: ListComponentsRequest): Request[ListComponentsResponse] = js.native
-    def listDistributionConfigurations(
-        params: ListDistributionConfigurationsRequest
-    ): Request[ListDistributionConfigurationsResponse] = js.native
-    def listImageBuildVersions(params: ListImageBuildVersionsRequest): Request[ListImageBuildVersionsResponse] =
-      js.native
-    def listImagePipelineImages(params: ListImagePipelineImagesRequest): Request[ListImagePipelineImagesResponse] =
-      js.native
+    def listDistributionConfigurations(params: ListDistributionConfigurationsRequest): Request[ListDistributionConfigurationsResponse] = js.native
+    def listImageBuildVersions(params: ListImageBuildVersionsRequest): Request[ListImageBuildVersionsResponse] = js.native
+    def listImagePipelineImages(params: ListImagePipelineImagesRequest): Request[ListImagePipelineImagesResponse] = js.native
     def listImagePipelines(params: ListImagePipelinesRequest): Request[ListImagePipelinesResponse] = js.native
     def listImageRecipes(params: ListImageRecipesRequest): Request[ListImageRecipesResponse] = js.native
     def listImages(params: ListImagesRequest): Request[ListImagesResponse] = js.native
-    def listInfrastructureConfigurations(
-        params: ListInfrastructureConfigurationsRequest
-    ): Request[ListInfrastructureConfigurationsResponse] = js.native
+    def listInfrastructureConfigurations(params: ListInfrastructureConfigurationsRequest): Request[ListInfrastructureConfigurationsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putComponentPolicy(params: PutComponentPolicyRequest): Request[PutComponentPolicyResponse] = js.native
     def putImagePolicy(params: PutImagePolicyRequest): Request[PutImagePolicyResponse] = js.native
     def putImageRecipePolicy(params: PutImageRecipePolicyRequest): Request[PutImageRecipePolicyResponse] = js.native
-    def startImagePipelineExecution(
-        params: StartImagePipelineExecutionRequest
-    ): Request[StartImagePipelineExecutionResponse] = js.native
+    def startImagePipelineExecution(params: StartImagePipelineExecutionRequest): Request[StartImagePipelineExecutionResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
-    def updateDistributionConfiguration(
-        params: UpdateDistributionConfigurationRequest
-    ): Request[UpdateDistributionConfigurationResponse] = js.native
+    def updateDistributionConfiguration(params: UpdateDistributionConfigurationRequest): Request[UpdateDistributionConfigurationResponse] = js.native
     def updateImagePipeline(params: UpdateImagePipelineRequest): Request[UpdateImagePipelineResponse] = js.native
-    def updateInfrastructureConfiguration(
-        params: UpdateInfrastructureConfigurationRequest
-    ): Request[UpdateInfrastructureConfigurationResponse] = js.native
+    def updateInfrastructureConfiguration(params: UpdateInfrastructureConfigurationRequest): Request[UpdateInfrastructureConfigurationResponse] = js.native
   }
 
   /**
@@ -664,9 +573,7 @@ package imagebuilder {
     ): CreateDistributionConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      distributionConfigurationArn.foreach(__v =>
-        __obj.updateDynamic("distributionConfigurationArn")(__v.asInstanceOf[js.Any])
-      )
+      distributionConfigurationArn.foreach(__v => __obj.updateDynamic("distributionConfigurationArn")(__v.asInstanceOf[js.Any]))
       requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDistributionConfigurationResponse]
     }
@@ -710,12 +617,8 @@ package imagebuilder {
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      distributionConfigurationArn.foreach(__v =>
-        __obj.updateDynamic("distributionConfigurationArn")(__v.asInstanceOf[js.Any])
-      )
-      enhancedImageMetadataEnabled.foreach(__v =>
-        __obj.updateDynamic("enhancedImageMetadataEnabled")(__v.asInstanceOf[js.Any])
-      )
+      distributionConfigurationArn.foreach(__v => __obj.updateDynamic("distributionConfigurationArn")(__v.asInstanceOf[js.Any]))
+      enhancedImageMetadataEnabled.foreach(__v => __obj.updateDynamic("enhancedImageMetadataEnabled")(__v.asInstanceOf[js.Any]))
       imageTestsConfiguration.foreach(__v => __obj.updateDynamic("imageTestsConfiguration")(__v.asInstanceOf[js.Any]))
       schedule.foreach(__v => __obj.updateDynamic("schedule")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
@@ -838,12 +741,8 @@ package imagebuilder {
         "infrastructureConfigurationArn" -> infrastructureConfigurationArn.asInstanceOf[js.Any]
       )
 
-      distributionConfigurationArn.foreach(__v =>
-        __obj.updateDynamic("distributionConfigurationArn")(__v.asInstanceOf[js.Any])
-      )
-      enhancedImageMetadataEnabled.foreach(__v =>
-        __obj.updateDynamic("enhancedImageMetadataEnabled")(__v.asInstanceOf[js.Any])
-      )
+      distributionConfigurationArn.foreach(__v => __obj.updateDynamic("distributionConfigurationArn")(__v.asInstanceOf[js.Any]))
+      enhancedImageMetadataEnabled.foreach(__v => __obj.updateDynamic("enhancedImageMetadataEnabled")(__v.asInstanceOf[js.Any]))
       imageTestsConfiguration.foreach(__v => __obj.updateDynamic("imageTestsConfiguration")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateImageRequest]
@@ -921,9 +820,7 @@ package imagebuilder {
       snsTopicArn.foreach(__v => __obj.updateDynamic("snsTopicArn")(__v.asInstanceOf[js.Any]))
       subnetId.foreach(__v => __obj.updateDynamic("subnetId")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      terminateInstanceOnFailure.foreach(__v =>
-        __obj.updateDynamic("terminateInstanceOnFailure")(__v.asInstanceOf[js.Any])
-      )
+      terminateInstanceOnFailure.foreach(__v => __obj.updateDynamic("terminateInstanceOnFailure")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateInfrastructureConfigurationRequest]
     }
   }
@@ -944,9 +841,7 @@ package imagebuilder {
     ): CreateInfrastructureConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      infrastructureConfigurationArn.foreach(__v =>
-        __obj.updateDynamic("infrastructureConfigurationArn")(__v.asInstanceOf[js.Any])
-      )
+      infrastructureConfigurationArn.foreach(__v => __obj.updateDynamic("infrastructureConfigurationArn")(__v.asInstanceOf[js.Any]))
       requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateInfrastructureConfigurationResponse]
     }
@@ -1020,9 +915,7 @@ package imagebuilder {
         requestId: js.UndefOr[NonEmptyString] = js.undefined
     ): DeleteDistributionConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-      distributionConfigurationArn.foreach(__v =>
-        __obj.updateDynamic("distributionConfigurationArn")(__v.asInstanceOf[js.Any])
-      )
+      distributionConfigurationArn.foreach(__v => __obj.updateDynamic("distributionConfigurationArn")(__v.asInstanceOf[js.Any]))
       requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDistributionConfigurationResponse]
     }
@@ -1170,9 +1063,7 @@ package imagebuilder {
         requestId: js.UndefOr[NonEmptyString] = js.undefined
     ): DeleteInfrastructureConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-      infrastructureConfigurationArn.foreach(__v =>
-        __obj.updateDynamic("infrastructureConfigurationArn")(__v.asInstanceOf[js.Any])
-      )
+      infrastructureConfigurationArn.foreach(__v => __obj.updateDynamic("infrastructureConfigurationArn")(__v.asInstanceOf[js.Any]))
       requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteInfrastructureConfigurationResponse]
     }
@@ -1199,9 +1090,7 @@ package imagebuilder {
         "region" -> region.asInstanceOf[js.Any]
       )
 
-      amiDistributionConfiguration.foreach(__v =>
-        __obj.updateDynamic("amiDistributionConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      amiDistributionConfiguration.foreach(__v => __obj.updateDynamic("amiDistributionConfiguration")(__v.asInstanceOf[js.Any]))
       licenseConfigurationArns.foreach(__v => __obj.updateDynamic("licenseConfigurationArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Distribution]
     }
@@ -1459,9 +1348,7 @@ package imagebuilder {
         requestId: js.UndefOr[NonEmptyString] = js.undefined
     ): GetDistributionConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-      distributionConfiguration.foreach(__v =>
-        __obj.updateDynamic("distributionConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      distributionConfiguration.foreach(__v => __obj.updateDynamic("distributionConfiguration")(__v.asInstanceOf[js.Any]))
       requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDistributionConfigurationResponse]
     }
@@ -1689,9 +1576,7 @@ package imagebuilder {
         requestId: js.UndefOr[NonEmptyString] = js.undefined
     ): GetInfrastructureConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-      infrastructureConfiguration.foreach(__v =>
-        __obj.updateDynamic("infrastructureConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      infrastructureConfiguration.foreach(__v => __obj.updateDynamic("infrastructureConfiguration")(__v.asInstanceOf[js.Any]))
       requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetInfrastructureConfigurationResponse]
     }
@@ -1743,17 +1628,11 @@ package imagebuilder {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       dateCreated.foreach(__v => __obj.updateDynamic("dateCreated")(__v.asInstanceOf[js.Any]))
-      distributionConfiguration.foreach(__v =>
-        __obj.updateDynamic("distributionConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      enhancedImageMetadataEnabled.foreach(__v =>
-        __obj.updateDynamic("enhancedImageMetadataEnabled")(__v.asInstanceOf[js.Any])
-      )
+      distributionConfiguration.foreach(__v => __obj.updateDynamic("distributionConfiguration")(__v.asInstanceOf[js.Any]))
+      enhancedImageMetadataEnabled.foreach(__v => __obj.updateDynamic("enhancedImageMetadataEnabled")(__v.asInstanceOf[js.Any]))
       imageRecipe.foreach(__v => __obj.updateDynamic("imageRecipe")(__v.asInstanceOf[js.Any]))
       imageTestsConfiguration.foreach(__v => __obj.updateDynamic("imageTestsConfiguration")(__v.asInstanceOf[js.Any]))
-      infrastructureConfiguration.foreach(__v =>
-        __obj.updateDynamic("infrastructureConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      infrastructureConfiguration.foreach(__v => __obj.updateDynamic("infrastructureConfiguration")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       osVersion.foreach(__v => __obj.updateDynamic("osVersion")(__v.asInstanceOf[js.Any]))
       outputResources.foreach(__v => __obj.updateDynamic("outputResources")(__v.asInstanceOf[js.Any]))
@@ -1817,17 +1696,11 @@ package imagebuilder {
       dateNextRun.foreach(__v => __obj.updateDynamic("dateNextRun")(__v.asInstanceOf[js.Any]))
       dateUpdated.foreach(__v => __obj.updateDynamic("dateUpdated")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      distributionConfigurationArn.foreach(__v =>
-        __obj.updateDynamic("distributionConfigurationArn")(__v.asInstanceOf[js.Any])
-      )
-      enhancedImageMetadataEnabled.foreach(__v =>
-        __obj.updateDynamic("enhancedImageMetadataEnabled")(__v.asInstanceOf[js.Any])
-      )
+      distributionConfigurationArn.foreach(__v => __obj.updateDynamic("distributionConfigurationArn")(__v.asInstanceOf[js.Any]))
+      enhancedImageMetadataEnabled.foreach(__v => __obj.updateDynamic("enhancedImageMetadataEnabled")(__v.asInstanceOf[js.Any]))
       imageRecipeArn.foreach(__v => __obj.updateDynamic("imageRecipeArn")(__v.asInstanceOf[js.Any]))
       imageTestsConfiguration.foreach(__v => __obj.updateDynamic("imageTestsConfiguration")(__v.asInstanceOf[js.Any]))
-      infrastructureConfigurationArn.foreach(__v =>
-        __obj.updateDynamic("infrastructureConfigurationArn")(__v.asInstanceOf[js.Any])
-      )
+      infrastructureConfigurationArn.foreach(__v => __obj.updateDynamic("infrastructureConfigurationArn")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
       schedule.foreach(__v => __obj.updateDynamic("schedule")(__v.asInstanceOf[js.Any]))
@@ -1963,21 +1836,7 @@ package imagebuilder {
     val DEPRECATED = "DEPRECATED".asInstanceOf[ImageStatus]
     val DELETED = "DELETED".asInstanceOf[ImageStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        PENDING,
-        CREATING,
-        BUILDING,
-        TESTING,
-        DISTRIBUTING,
-        INTEGRATING,
-        AVAILABLE,
-        CANCELLED,
-        FAILED,
-        DEPRECATED,
-        DELETED
-      )
-    )
+    val values = js.Object.freeze(js.Array(PENDING, CREATING, BUILDING, TESTING, DISTRIBUTING, INTEGRATING, AVAILABLE, CANCELLED, FAILED, DEPRECATED, DELETED))
   }
 
   /**
@@ -2214,9 +2073,7 @@ package imagebuilder {
       snsTopicArn.foreach(__v => __obj.updateDynamic("snsTopicArn")(__v.asInstanceOf[js.Any]))
       subnetId.foreach(__v => __obj.updateDynamic("subnetId")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      terminateInstanceOnFailure.foreach(__v =>
-        __obj.updateDynamic("terminateInstanceOnFailure")(__v.asInstanceOf[js.Any])
-      )
+      terminateInstanceOnFailure.foreach(__v => __obj.updateDynamic("terminateInstanceOnFailure")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InfrastructureConfiguration]
     }
   }
@@ -2438,9 +2295,7 @@ package imagebuilder {
         requestId: js.UndefOr[NonEmptyString] = js.undefined
     ): ListDistributionConfigurationsResponse = {
       val __obj = js.Dynamic.literal()
-      distributionConfigurationSummaryList.foreach(__v =>
-        __obj.updateDynamic("distributionConfigurationSummaryList")(__v.asInstanceOf[js.Any])
-      )
+      distributionConfigurationSummaryList.foreach(__v => __obj.updateDynamic("distributionConfigurationSummaryList")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDistributionConfigurationsResponse]
@@ -2720,9 +2575,7 @@ package imagebuilder {
         requestId: js.UndefOr[NonEmptyString] = js.undefined
     ): ListInfrastructureConfigurationsResponse = {
       val __obj = js.Dynamic.literal()
-      infrastructureConfigurationSummaryList.foreach(__v =>
-        __obj.updateDynamic("infrastructureConfigurationSummaryList")(__v.asInstanceOf[js.Any])
-      )
+      infrastructureConfigurationSummaryList.foreach(__v => __obj.updateDynamic("infrastructureConfigurationSummaryList")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListInfrastructureConfigurationsResponse]
@@ -2815,8 +2668,7 @@ package imagebuilder {
   sealed trait PipelineExecutionStartCondition extends js.Any
   object PipelineExecutionStartCondition extends js.Object {
     val EXPRESSION_MATCH_ONLY = "EXPRESSION_MATCH_ONLY".asInstanceOf[PipelineExecutionStartCondition]
-    val EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE =
-      "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE".asInstanceOf[PipelineExecutionStartCondition]
+    val EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE = "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE".asInstanceOf[PipelineExecutionStartCondition]
 
     val values = js.Object.freeze(js.Array(EXPRESSION_MATCH_ONLY, EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE))
   }
@@ -2997,9 +2849,7 @@ package imagebuilder {
         scheduleExpression: js.UndefOr[NonEmptyString] = js.undefined
     ): Schedule = {
       val __obj = js.Dynamic.literal()
-      pipelineExecutionStartCondition.foreach(__v =>
-        __obj.updateDynamic("pipelineExecutionStartCondition")(__v.asInstanceOf[js.Any])
-      )
+      pipelineExecutionStartCondition.foreach(__v => __obj.updateDynamic("pipelineExecutionStartCondition")(__v.asInstanceOf[js.Any]))
       scheduleExpression.foreach(__v => __obj.updateDynamic("scheduleExpression")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Schedule]
     }
@@ -3159,9 +3009,7 @@ package imagebuilder {
     ): UpdateDistributionConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      distributionConfigurationArn.foreach(__v =>
-        __obj.updateDynamic("distributionConfigurationArn")(__v.asInstanceOf[js.Any])
-      )
+      distributionConfigurationArn.foreach(__v => __obj.updateDynamic("distributionConfigurationArn")(__v.asInstanceOf[js.Any]))
       requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDistributionConfigurationResponse]
     }
@@ -3203,12 +3051,8 @@ package imagebuilder {
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      distributionConfigurationArn.foreach(__v =>
-        __obj.updateDynamic("distributionConfigurationArn")(__v.asInstanceOf[js.Any])
-      )
-      enhancedImageMetadataEnabled.foreach(__v =>
-        __obj.updateDynamic("enhancedImageMetadataEnabled")(__v.asInstanceOf[js.Any])
-      )
+      distributionConfigurationArn.foreach(__v => __obj.updateDynamic("distributionConfigurationArn")(__v.asInstanceOf[js.Any]))
+      enhancedImageMetadataEnabled.foreach(__v => __obj.updateDynamic("enhancedImageMetadataEnabled")(__v.asInstanceOf[js.Any]))
       imageTestsConfiguration.foreach(__v => __obj.updateDynamic("imageTestsConfiguration")(__v.asInstanceOf[js.Any]))
       schedule.foreach(__v => __obj.updateDynamic("schedule")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
@@ -3284,9 +3128,7 @@ package imagebuilder {
       securityGroupIds.foreach(__v => __obj.updateDynamic("securityGroupIds")(__v.asInstanceOf[js.Any]))
       snsTopicArn.foreach(__v => __obj.updateDynamic("snsTopicArn")(__v.asInstanceOf[js.Any]))
       subnetId.foreach(__v => __obj.updateDynamic("subnetId")(__v.asInstanceOf[js.Any]))
-      terminateInstanceOnFailure.foreach(__v =>
-        __obj.updateDynamic("terminateInstanceOnFailure")(__v.asInstanceOf[js.Any])
-      )
+      terminateInstanceOnFailure.foreach(__v => __obj.updateDynamic("terminateInstanceOnFailure")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateInfrastructureConfigurationRequest]
     }
   }
@@ -3307,9 +3149,7 @@ package imagebuilder {
     ): UpdateInfrastructureConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      infrastructureConfigurationArn.foreach(__v =>
-        __obj.updateDynamic("infrastructureConfigurationArn")(__v.asInstanceOf[js.Any])
-      )
+      infrastructureConfigurationArn.foreach(__v => __obj.updateDynamic("infrastructureConfigurationArn")(__v.asInstanceOf[js.Any]))
       requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateInfrastructureConfigurationResponse]
     }

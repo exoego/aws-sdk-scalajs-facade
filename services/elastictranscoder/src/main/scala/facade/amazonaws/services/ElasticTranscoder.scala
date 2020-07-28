@@ -109,39 +109,22 @@ package object elastictranscoder {
 
   implicit final class ElasticTranscoderOps(private val service: ElasticTranscoder) extends AnyVal {
 
-    @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] =
-      service.cancelJob(params).promise().toFuture
-    @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResponse] =
-      service.createJob(params).promise().toFuture
-    @inline def createPipelineFuture(params: CreatePipelineRequest): Future[CreatePipelineResponse] =
-      service.createPipeline(params).promise().toFuture
-    @inline def createPresetFuture(params: CreatePresetRequest): Future[CreatePresetResponse] =
-      service.createPreset(params).promise().toFuture
-    @inline def deletePipelineFuture(params: DeletePipelineRequest): Future[DeletePipelineResponse] =
-      service.deletePipeline(params).promise().toFuture
-    @inline def deletePresetFuture(params: DeletePresetRequest): Future[DeletePresetResponse] =
-      service.deletePreset(params).promise().toFuture
-    @inline def listJobsByPipelineFuture(params: ListJobsByPipelineRequest): Future[ListJobsByPipelineResponse] =
-      service.listJobsByPipeline(params).promise().toFuture
-    @inline def listJobsByStatusFuture(params: ListJobsByStatusRequest): Future[ListJobsByStatusResponse] =
-      service.listJobsByStatus(params).promise().toFuture
-    @inline def listPipelinesFuture(params: ListPipelinesRequest): Future[ListPipelinesResponse] =
-      service.listPipelines(params).promise().toFuture
-    @inline def listPresetsFuture(params: ListPresetsRequest): Future[ListPresetsResponse] =
-      service.listPresets(params).promise().toFuture
-    @inline def readJobFuture(params: ReadJobRequest): Future[ReadJobResponse] =
-      service.readJob(params).promise().toFuture
-    @inline def readPipelineFuture(params: ReadPipelineRequest): Future[ReadPipelineResponse] =
-      service.readPipeline(params).promise().toFuture
-    @inline def readPresetFuture(params: ReadPresetRequest): Future[ReadPresetResponse] =
-      service.readPreset(params).promise().toFuture
-    @inline def updatePipelineFuture(params: UpdatePipelineRequest): Future[UpdatePipelineResponse] =
-      service.updatePipeline(params).promise().toFuture
-    @inline def updatePipelineNotificationsFuture(
-        params: UpdatePipelineNotificationsRequest
-    ): Future[UpdatePipelineNotificationsResponse] = service.updatePipelineNotifications(params).promise().toFuture
-    @inline def updatePipelineStatusFuture(params: UpdatePipelineStatusRequest): Future[UpdatePipelineStatusResponse] =
-      service.updatePipelineStatus(params).promise().toFuture
+    @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] = service.cancelJob(params).promise().toFuture
+    @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResponse] = service.createJob(params).promise().toFuture
+    @inline def createPipelineFuture(params: CreatePipelineRequest): Future[CreatePipelineResponse] = service.createPipeline(params).promise().toFuture
+    @inline def createPresetFuture(params: CreatePresetRequest): Future[CreatePresetResponse] = service.createPreset(params).promise().toFuture
+    @inline def deletePipelineFuture(params: DeletePipelineRequest): Future[DeletePipelineResponse] = service.deletePipeline(params).promise().toFuture
+    @inline def deletePresetFuture(params: DeletePresetRequest): Future[DeletePresetResponse] = service.deletePreset(params).promise().toFuture
+    @inline def listJobsByPipelineFuture(params: ListJobsByPipelineRequest): Future[ListJobsByPipelineResponse] = service.listJobsByPipeline(params).promise().toFuture
+    @inline def listJobsByStatusFuture(params: ListJobsByStatusRequest): Future[ListJobsByStatusResponse] = service.listJobsByStatus(params).promise().toFuture
+    @inline def listPipelinesFuture(params: ListPipelinesRequest): Future[ListPipelinesResponse] = service.listPipelines(params).promise().toFuture
+    @inline def listPresetsFuture(params: ListPresetsRequest): Future[ListPresetsResponse] = service.listPresets(params).promise().toFuture
+    @inline def readJobFuture(params: ReadJobRequest): Future[ReadJobResponse] = service.readJob(params).promise().toFuture
+    @inline def readPipelineFuture(params: ReadPipelineRequest): Future[ReadPipelineResponse] = service.readPipeline(params).promise().toFuture
+    @inline def readPresetFuture(params: ReadPresetRequest): Future[ReadPresetResponse] = service.readPreset(params).promise().toFuture
+    @inline def updatePipelineFuture(params: UpdatePipelineRequest): Future[UpdatePipelineResponse] = service.updatePipeline(params).promise().toFuture
+    @inline def updatePipelineNotificationsFuture(params: UpdatePipelineNotificationsRequest): Future[UpdatePipelineNotificationsResponse] = service.updatePipelineNotifications(params).promise().toFuture
+    @inline def updatePipelineStatusFuture(params: UpdatePipelineStatusRequest): Future[UpdatePipelineStatusResponse] = service.updatePipelineStatus(params).promise().toFuture
   }
 }
 
@@ -165,12 +148,9 @@ package elastictranscoder {
     def readPipeline(params: ReadPipelineRequest): Request[ReadPipelineResponse] = js.native
     def readPreset(params: ReadPresetRequest): Request[ReadPresetResponse] = js.native
     def updatePipeline(params: UpdatePipelineRequest): Request[UpdatePipelineResponse] = js.native
-    def updatePipelineNotifications(
-        params: UpdatePipelineNotificationsRequest
-    ): Request[UpdatePipelineNotificationsResponse] = js.native
+    def updatePipelineNotifications(params: UpdatePipelineNotificationsRequest): Request[UpdatePipelineNotificationsResponse] = js.native
     def updatePipelineStatus(params: UpdatePipelineStatusRequest): Request[UpdatePipelineStatusResponse] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def testRole(params: TestRoleRequest): Request[TestRoleResponse] =
-      js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def testRole(params: TestRoleRequest): Request[TestRoleResponse] = js.native
   }
 
   /**
@@ -1040,9 +1020,7 @@ package elastictranscoder {
     ): JobOutput = {
       val __obj = js.Dynamic.literal()
       AlbumArt.foreach(__v => __obj.updateDynamic("AlbumArt")(__v.asInstanceOf[js.Any]))
-      AppliedColorSpaceConversion.foreach(__v =>
-        __obj.updateDynamic("AppliedColorSpaceConversion")(__v.asInstanceOf[js.Any])
-      )
+      AppliedColorSpaceConversion.foreach(__v => __obj.updateDynamic("AppliedColorSpaceConversion")(__v.asInstanceOf[js.Any]))
       Captions.foreach(__v => __obj.updateDynamic("Captions")(__v.asInstanceOf[js.Any]))
       Composition.foreach(__v => __obj.updateDynamic("Composition")(__v.asInstanceOf[js.Any]))
       Duration.foreach(__v => __obj.updateDynamic("Duration")(__v.asInstanceOf[js.Any]))

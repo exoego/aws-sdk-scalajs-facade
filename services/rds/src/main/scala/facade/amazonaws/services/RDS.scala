@@ -108,339 +108,136 @@ package object rds {
 
   implicit final class RDSOps(private val service: RDS) extends AnyVal {
 
-    @inline def addRoleToDBClusterFuture(params: AddRoleToDBClusterMessage): Future[js.Object] =
-      service.addRoleToDBCluster(params).promise().toFuture
-    @inline def addRoleToDBInstanceFuture(params: AddRoleToDBInstanceMessage): Future[js.Object] =
-      service.addRoleToDBInstance(params).promise().toFuture
-    @inline def addSourceIdentifierToSubscriptionFuture(
-        params: AddSourceIdentifierToSubscriptionMessage
-    ): Future[AddSourceIdentifierToSubscriptionResult] =
-      service.addSourceIdentifierToSubscription(params).promise().toFuture
-    @inline def addTagsToResourceFuture(params: AddTagsToResourceMessage): Future[js.Object] =
-      service.addTagsToResource(params).promise().toFuture
-    @inline def applyPendingMaintenanceActionFuture(
-        params: ApplyPendingMaintenanceActionMessage
-    ): Future[ApplyPendingMaintenanceActionResult] = service.applyPendingMaintenanceAction(params).promise().toFuture
-    @inline def authorizeDBSecurityGroupIngressFuture(
-        params: AuthorizeDBSecurityGroupIngressMessage
-    ): Future[AuthorizeDBSecurityGroupIngressResult] =
-      service.authorizeDBSecurityGroupIngress(params).promise().toFuture
-    @inline def backtrackDBClusterFuture(params: BacktrackDBClusterMessage): Future[DBClusterBacktrack] =
-      service.backtrackDBCluster(params).promise().toFuture
-    @inline def cancelExportTaskFuture(params: CancelExportTaskMessage): Future[ExportTask] =
-      service.cancelExportTask(params).promise().toFuture
-    @inline def copyDBClusterParameterGroupFuture(
-        params: CopyDBClusterParameterGroupMessage
-    ): Future[CopyDBClusterParameterGroupResult] = service.copyDBClusterParameterGroup(params).promise().toFuture
-    @inline def copyDBClusterSnapshotFuture(params: CopyDBClusterSnapshotMessage): Future[CopyDBClusterSnapshotResult] =
-      service.copyDBClusterSnapshot(params).promise().toFuture
-    @inline def copyDBParameterGroupFuture(params: CopyDBParameterGroupMessage): Future[CopyDBParameterGroupResult] =
-      service.copyDBParameterGroup(params).promise().toFuture
-    @inline def copyDBSnapshotFuture(params: CopyDBSnapshotMessage): Future[CopyDBSnapshotResult] =
-      service.copyDBSnapshot(params).promise().toFuture
-    @inline def copyOptionGroupFuture(params: CopyOptionGroupMessage): Future[CopyOptionGroupResult] =
-      service.copyOptionGroup(params).promise().toFuture
-    @inline def createCustomAvailabilityZoneFuture(
-        params: CreateCustomAvailabilityZoneMessage
-    ): Future[CreateCustomAvailabilityZoneResult] = service.createCustomAvailabilityZone(params).promise().toFuture
-    @inline def createDBClusterEndpointFuture(params: CreateDBClusterEndpointMessage): Future[DBClusterEndpoint] =
-      service.createDBClusterEndpoint(params).promise().toFuture
-    @inline def createDBClusterFuture(params: CreateDBClusterMessage): Future[CreateDBClusterResult] =
-      service.createDBCluster(params).promise().toFuture
-    @inline def createDBClusterParameterGroupFuture(
-        params: CreateDBClusterParameterGroupMessage
-    ): Future[CreateDBClusterParameterGroupResult] = service.createDBClusterParameterGroup(params).promise().toFuture
-    @inline def createDBClusterSnapshotFuture(
-        params: CreateDBClusterSnapshotMessage
-    ): Future[CreateDBClusterSnapshotResult] = service.createDBClusterSnapshot(params).promise().toFuture
-    @inline def createDBInstanceFuture(params: CreateDBInstanceMessage): Future[CreateDBInstanceResult] =
-      service.createDBInstance(params).promise().toFuture
-    @inline def createDBInstanceReadReplicaFuture(
-        params: CreateDBInstanceReadReplicaMessage
-    ): Future[CreateDBInstanceReadReplicaResult] = service.createDBInstanceReadReplica(params).promise().toFuture
-    @inline def createDBParameterGroupFuture(
-        params: CreateDBParameterGroupMessage
-    ): Future[CreateDBParameterGroupResult] = service.createDBParameterGroup(params).promise().toFuture
-    @inline def createDBProxyFuture(params: CreateDBProxyRequest): Future[CreateDBProxyResponse] =
-      service.createDBProxy(params).promise().toFuture
-    @inline def createDBSecurityGroupFuture(params: CreateDBSecurityGroupMessage): Future[CreateDBSecurityGroupResult] =
-      service.createDBSecurityGroup(params).promise().toFuture
-    @inline def createDBSnapshotFuture(params: CreateDBSnapshotMessage): Future[CreateDBSnapshotResult] =
-      service.createDBSnapshot(params).promise().toFuture
-    @inline def createDBSubnetGroupFuture(params: CreateDBSubnetGroupMessage): Future[CreateDBSubnetGroupResult] =
-      service.createDBSubnetGroup(params).promise().toFuture
-    @inline def createEventSubscriptionFuture(
-        params: CreateEventSubscriptionMessage
-    ): Future[CreateEventSubscriptionResult] = service.createEventSubscription(params).promise().toFuture
-    @inline def createGlobalClusterFuture(params: CreateGlobalClusterMessage): Future[CreateGlobalClusterResult] =
-      service.createGlobalCluster(params).promise().toFuture
-    @inline def createOptionGroupFuture(params: CreateOptionGroupMessage): Future[CreateOptionGroupResult] =
-      service.createOptionGroup(params).promise().toFuture
-    @inline def deleteCustomAvailabilityZoneFuture(
-        params: DeleteCustomAvailabilityZoneMessage
-    ): Future[DeleteCustomAvailabilityZoneResult] = service.deleteCustomAvailabilityZone(params).promise().toFuture
-    @inline def deleteDBClusterEndpointFuture(params: DeleteDBClusterEndpointMessage): Future[DBClusterEndpoint] =
-      service.deleteDBClusterEndpoint(params).promise().toFuture
-    @inline def deleteDBClusterFuture(params: DeleteDBClusterMessage): Future[DeleteDBClusterResult] =
-      service.deleteDBCluster(params).promise().toFuture
-    @inline def deleteDBClusterParameterGroupFuture(params: DeleteDBClusterParameterGroupMessage): Future[js.Object] =
-      service.deleteDBClusterParameterGroup(params).promise().toFuture
-    @inline def deleteDBClusterSnapshotFuture(
-        params: DeleteDBClusterSnapshotMessage
-    ): Future[DeleteDBClusterSnapshotResult] = service.deleteDBClusterSnapshot(params).promise().toFuture
-    @inline def deleteDBInstanceAutomatedBackupFuture(
-        params: DeleteDBInstanceAutomatedBackupMessage
-    ): Future[DeleteDBInstanceAutomatedBackupResult] =
-      service.deleteDBInstanceAutomatedBackup(params).promise().toFuture
-    @inline def deleteDBInstanceFuture(params: DeleteDBInstanceMessage): Future[DeleteDBInstanceResult] =
-      service.deleteDBInstance(params).promise().toFuture
-    @inline def deleteDBParameterGroupFuture(params: DeleteDBParameterGroupMessage): Future[js.Object] =
-      service.deleteDBParameterGroup(params).promise().toFuture
-    @inline def deleteDBProxyFuture(params: DeleteDBProxyRequest): Future[DeleteDBProxyResponse] =
-      service.deleteDBProxy(params).promise().toFuture
-    @inline def deleteDBSecurityGroupFuture(params: DeleteDBSecurityGroupMessage): Future[js.Object] =
-      service.deleteDBSecurityGroup(params).promise().toFuture
-    @inline def deleteDBSnapshotFuture(params: DeleteDBSnapshotMessage): Future[DeleteDBSnapshotResult] =
-      service.deleteDBSnapshot(params).promise().toFuture
-    @inline def deleteDBSubnetGroupFuture(params: DeleteDBSubnetGroupMessage): Future[js.Object] =
-      service.deleteDBSubnetGroup(params).promise().toFuture
-    @inline def deleteEventSubscriptionFuture(
-        params: DeleteEventSubscriptionMessage
-    ): Future[DeleteEventSubscriptionResult] = service.deleteEventSubscription(params).promise().toFuture
-    @inline def deleteGlobalClusterFuture(params: DeleteGlobalClusterMessage): Future[DeleteGlobalClusterResult] =
-      service.deleteGlobalCluster(params).promise().toFuture
-    @inline def deleteInstallationMediaFuture(params: DeleteInstallationMediaMessage): Future[InstallationMedia] =
-      service.deleteInstallationMedia(params).promise().toFuture
-    @inline def deleteOptionGroupFuture(params: DeleteOptionGroupMessage): Future[js.Object] =
-      service.deleteOptionGroup(params).promise().toFuture
-    @inline def deregisterDBProxyTargetsFuture(
-        params: DeregisterDBProxyTargetsRequest
-    ): Future[DeregisterDBProxyTargetsResponse] = service.deregisterDBProxyTargets(params).promise().toFuture
-    @inline def describeAccountAttributesFuture(
-        params: DescribeAccountAttributesMessage
-    ): Future[AccountAttributesMessage] = service.describeAccountAttributes(params).promise().toFuture
-    @inline def describeCertificatesFuture(params: DescribeCertificatesMessage): Future[CertificateMessage] =
-      service.describeCertificates(params).promise().toFuture
-    @inline def describeCustomAvailabilityZonesFuture(
-        params: DescribeCustomAvailabilityZonesMessage
-    ): Future[CustomAvailabilityZoneMessage] = service.describeCustomAvailabilityZones(params).promise().toFuture
-    @inline def describeDBClusterBacktracksFuture(
-        params: DescribeDBClusterBacktracksMessage
-    ): Future[DBClusterBacktrackMessage] = service.describeDBClusterBacktracks(params).promise().toFuture
-    @inline def describeDBClusterEndpointsFuture(
-        params: DescribeDBClusterEndpointsMessage
-    ): Future[DBClusterEndpointMessage] = service.describeDBClusterEndpoints(params).promise().toFuture
-    @inline def describeDBClusterParameterGroupsFuture(
-        params: DescribeDBClusterParameterGroupsMessage
-    ): Future[DBClusterParameterGroupsMessage] = service.describeDBClusterParameterGroups(params).promise().toFuture
-    @inline def describeDBClusterParametersFuture(
-        params: DescribeDBClusterParametersMessage
-    ): Future[DBClusterParameterGroupDetails] = service.describeDBClusterParameters(params).promise().toFuture
-    @inline def describeDBClusterSnapshotAttributesFuture(
-        params: DescribeDBClusterSnapshotAttributesMessage
-    ): Future[DescribeDBClusterSnapshotAttributesResult] =
-      service.describeDBClusterSnapshotAttributes(params).promise().toFuture
-    @inline def describeDBClusterSnapshotsFuture(
-        params: DescribeDBClusterSnapshotsMessage
-    ): Future[DBClusterSnapshotMessage] = service.describeDBClusterSnapshots(params).promise().toFuture
-    @inline def describeDBClustersFuture(params: DescribeDBClustersMessage): Future[DBClusterMessage] =
-      service.describeDBClusters(params).promise().toFuture
-    @inline def describeDBEngineVersionsFuture(
-        params: DescribeDBEngineVersionsMessage
-    ): Future[DBEngineVersionMessage] = service.describeDBEngineVersions(params).promise().toFuture
-    @inline def describeDBInstanceAutomatedBackupsFuture(
-        params: DescribeDBInstanceAutomatedBackupsMessage
-    ): Future[DBInstanceAutomatedBackupMessage] = service.describeDBInstanceAutomatedBackups(params).promise().toFuture
-    @inline def describeDBInstancesFuture(params: DescribeDBInstancesMessage): Future[DBInstanceMessage] =
-      service.describeDBInstances(params).promise().toFuture
-    @inline def describeDBLogFilesFuture(params: DescribeDBLogFilesMessage): Future[DescribeDBLogFilesResponse] =
-      service.describeDBLogFiles(params).promise().toFuture
-    @inline def describeDBParameterGroupsFuture(
-        params: DescribeDBParameterGroupsMessage
-    ): Future[DBParameterGroupsMessage] = service.describeDBParameterGroups(params).promise().toFuture
-    @inline def describeDBParametersFuture(params: DescribeDBParametersMessage): Future[DBParameterGroupDetails] =
-      service.describeDBParameters(params).promise().toFuture
-    @inline def describeDBProxiesFuture(params: DescribeDBProxiesRequest): Future[DescribeDBProxiesResponse] =
-      service.describeDBProxies(params).promise().toFuture
-    @inline def describeDBProxyTargetGroupsFuture(
-        params: DescribeDBProxyTargetGroupsRequest
-    ): Future[DescribeDBProxyTargetGroupsResponse] = service.describeDBProxyTargetGroups(params).promise().toFuture
-    @inline def describeDBProxyTargetsFuture(
-        params: DescribeDBProxyTargetsRequest
-    ): Future[DescribeDBProxyTargetsResponse] = service.describeDBProxyTargets(params).promise().toFuture
-    @inline def describeDBSecurityGroupsFuture(
-        params: DescribeDBSecurityGroupsMessage
-    ): Future[DBSecurityGroupMessage] = service.describeDBSecurityGroups(params).promise().toFuture
-    @inline def describeDBSnapshotAttributesFuture(
-        params: DescribeDBSnapshotAttributesMessage
-    ): Future[DescribeDBSnapshotAttributesResult] = service.describeDBSnapshotAttributes(params).promise().toFuture
-    @inline def describeDBSnapshotsFuture(params: DescribeDBSnapshotsMessage): Future[DBSnapshotMessage] =
-      service.describeDBSnapshots(params).promise().toFuture
-    @inline def describeDBSubnetGroupsFuture(params: DescribeDBSubnetGroupsMessage): Future[DBSubnetGroupMessage] =
-      service.describeDBSubnetGroups(params).promise().toFuture
-    @inline def describeEngineDefaultClusterParametersFuture(
-        params: DescribeEngineDefaultClusterParametersMessage
-    ): Future[DescribeEngineDefaultClusterParametersResult] =
-      service.describeEngineDefaultClusterParameters(params).promise().toFuture
-    @inline def describeEngineDefaultParametersFuture(
-        params: DescribeEngineDefaultParametersMessage
-    ): Future[DescribeEngineDefaultParametersResult] =
-      service.describeEngineDefaultParameters(params).promise().toFuture
-    @inline def describeEventCategoriesFuture(params: DescribeEventCategoriesMessage): Future[EventCategoriesMessage] =
-      service.describeEventCategories(params).promise().toFuture
-    @inline def describeEventSubscriptionsFuture(
-        params: DescribeEventSubscriptionsMessage
-    ): Future[EventSubscriptionsMessage] = service.describeEventSubscriptions(params).promise().toFuture
-    @inline def describeEventsFuture(params: DescribeEventsMessage): Future[EventsMessage] =
-      service.describeEvents(params).promise().toFuture
-    @inline def describeExportTasksFuture(params: DescribeExportTasksMessage): Future[ExportTasksMessage] =
-      service.describeExportTasks(params).promise().toFuture
-    @inline def describeGlobalClustersFuture(params: DescribeGlobalClustersMessage): Future[GlobalClustersMessage] =
-      service.describeGlobalClusters(params).promise().toFuture
-    @inline def describeInstallationMediaFuture(
-        params: DescribeInstallationMediaMessage
-    ): Future[InstallationMediaMessage] = service.describeInstallationMedia(params).promise().toFuture
-    @inline def describeOptionGroupOptionsFuture(
-        params: DescribeOptionGroupOptionsMessage
-    ): Future[OptionGroupOptionsMessage] = service.describeOptionGroupOptions(params).promise().toFuture
-    @inline def describeOptionGroupsFuture(params: DescribeOptionGroupsMessage): Future[OptionGroups] =
-      service.describeOptionGroups(params).promise().toFuture
-    @inline def describeOrderableDBInstanceOptionsFuture(
-        params: DescribeOrderableDBInstanceOptionsMessage
-    ): Future[OrderableDBInstanceOptionsMessage] = service.describeOrderableDBInstanceOptions(params).promise().toFuture
-    @inline def describePendingMaintenanceActionsFuture(
-        params: DescribePendingMaintenanceActionsMessage
-    ): Future[PendingMaintenanceActionsMessage] = service.describePendingMaintenanceActions(params).promise().toFuture
-    @inline def describeReservedDBInstancesFuture(
-        params: DescribeReservedDBInstancesMessage
-    ): Future[ReservedDBInstanceMessage] = service.describeReservedDBInstances(params).promise().toFuture
-    @inline def describeReservedDBInstancesOfferingsFuture(
-        params: DescribeReservedDBInstancesOfferingsMessage
-    ): Future[ReservedDBInstancesOfferingMessage] =
-      service.describeReservedDBInstancesOfferings(params).promise().toFuture
-    @inline def describeSourceRegionsFuture(params: DescribeSourceRegionsMessage): Future[SourceRegionMessage] =
-      service.describeSourceRegions(params).promise().toFuture
-    @inline def describeValidDBInstanceModificationsFuture(
-        params: DescribeValidDBInstanceModificationsMessage
-    ): Future[DescribeValidDBInstanceModificationsResult] =
-      service.describeValidDBInstanceModifications(params).promise().toFuture
-    @inline def downloadDBLogFilePortionFuture(
-        params: DownloadDBLogFilePortionMessage
-    ): Future[DownloadDBLogFilePortionDetails] = service.downloadDBLogFilePortion(params).promise().toFuture
-    @inline def failoverDBClusterFuture(params: FailoverDBClusterMessage): Future[FailoverDBClusterResult] =
-      service.failoverDBCluster(params).promise().toFuture
-    @inline def importInstallationMediaFuture(params: ImportInstallationMediaMessage): Future[InstallationMedia] =
-      service.importInstallationMedia(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceMessage): Future[TagListMessage] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def modifyCertificatesFuture(params: ModifyCertificatesMessage): Future[ModifyCertificatesResult] =
-      service.modifyCertificates(params).promise().toFuture
-    @inline def modifyCurrentDBClusterCapacityFuture(
-        params: ModifyCurrentDBClusterCapacityMessage
-    ): Future[DBClusterCapacityInfo] = service.modifyCurrentDBClusterCapacity(params).promise().toFuture
-    @inline def modifyDBClusterEndpointFuture(params: ModifyDBClusterEndpointMessage): Future[DBClusterEndpoint] =
-      service.modifyDBClusterEndpoint(params).promise().toFuture
-    @inline def modifyDBClusterFuture(params: ModifyDBClusterMessage): Future[ModifyDBClusterResult] =
-      service.modifyDBCluster(params).promise().toFuture
-    @inline def modifyDBClusterParameterGroupFuture(
-        params: ModifyDBClusterParameterGroupMessage
-    ): Future[DBClusterParameterGroupNameMessage] = service.modifyDBClusterParameterGroup(params).promise().toFuture
-    @inline def modifyDBClusterSnapshotAttributeFuture(
-        params: ModifyDBClusterSnapshotAttributeMessage
-    ): Future[ModifyDBClusterSnapshotAttributeResult] =
-      service.modifyDBClusterSnapshotAttribute(params).promise().toFuture
-    @inline def modifyDBInstanceFuture(params: ModifyDBInstanceMessage): Future[ModifyDBInstanceResult] =
-      service.modifyDBInstance(params).promise().toFuture
-    @inline def modifyDBParameterGroupFuture(
-        params: ModifyDBParameterGroupMessage
-    ): Future[DBParameterGroupNameMessage] = service.modifyDBParameterGroup(params).promise().toFuture
-    @inline def modifyDBProxyFuture(params: ModifyDBProxyRequest): Future[ModifyDBProxyResponse] =
-      service.modifyDBProxy(params).promise().toFuture
-    @inline def modifyDBProxyTargetGroupFuture(
-        params: ModifyDBProxyTargetGroupRequest
-    ): Future[ModifyDBProxyTargetGroupResponse] = service.modifyDBProxyTargetGroup(params).promise().toFuture
-    @inline def modifyDBSnapshotAttributeFuture(
-        params: ModifyDBSnapshotAttributeMessage
-    ): Future[ModifyDBSnapshotAttributeResult] = service.modifyDBSnapshotAttribute(params).promise().toFuture
-    @inline def modifyDBSnapshotFuture(params: ModifyDBSnapshotMessage): Future[ModifyDBSnapshotResult] =
-      service.modifyDBSnapshot(params).promise().toFuture
-    @inline def modifyDBSubnetGroupFuture(params: ModifyDBSubnetGroupMessage): Future[ModifyDBSubnetGroupResult] =
-      service.modifyDBSubnetGroup(params).promise().toFuture
-    @inline def modifyEventSubscriptionFuture(
-        params: ModifyEventSubscriptionMessage
-    ): Future[ModifyEventSubscriptionResult] = service.modifyEventSubscription(params).promise().toFuture
-    @inline def modifyGlobalClusterFuture(params: ModifyGlobalClusterMessage): Future[ModifyGlobalClusterResult] =
-      service.modifyGlobalCluster(params).promise().toFuture
-    @inline def modifyOptionGroupFuture(params: ModifyOptionGroupMessage): Future[ModifyOptionGroupResult] =
-      service.modifyOptionGroup(params).promise().toFuture
-    @inline def promoteReadReplicaDBClusterFuture(
-        params: PromoteReadReplicaDBClusterMessage
-    ): Future[PromoteReadReplicaDBClusterResult] = service.promoteReadReplicaDBCluster(params).promise().toFuture
-    @inline def promoteReadReplicaFuture(params: PromoteReadReplicaMessage): Future[PromoteReadReplicaResult] =
-      service.promoteReadReplica(params).promise().toFuture
-    @inline def purchaseReservedDBInstancesOfferingFuture(
-        params: PurchaseReservedDBInstancesOfferingMessage
-    ): Future[PurchaseReservedDBInstancesOfferingResult] =
-      service.purchaseReservedDBInstancesOffering(params).promise().toFuture
-    @inline def rebootDBInstanceFuture(params: RebootDBInstanceMessage): Future[RebootDBInstanceResult] =
-      service.rebootDBInstance(params).promise().toFuture
-    @inline def registerDBProxyTargetsFuture(
-        params: RegisterDBProxyTargetsRequest
-    ): Future[RegisterDBProxyTargetsResponse] = service.registerDBProxyTargets(params).promise().toFuture
-    @inline def removeFromGlobalClusterFuture(
-        params: RemoveFromGlobalClusterMessage
-    ): Future[RemoveFromGlobalClusterResult] = service.removeFromGlobalCluster(params).promise().toFuture
-    @inline def removeRoleFromDBClusterFuture(params: RemoveRoleFromDBClusterMessage): Future[js.Object] =
-      service.removeRoleFromDBCluster(params).promise().toFuture
-    @inline def removeRoleFromDBInstanceFuture(params: RemoveRoleFromDBInstanceMessage): Future[js.Object] =
-      service.removeRoleFromDBInstance(params).promise().toFuture
-    @inline def removeSourceIdentifierFromSubscriptionFuture(
-        params: RemoveSourceIdentifierFromSubscriptionMessage
-    ): Future[RemoveSourceIdentifierFromSubscriptionResult] =
-      service.removeSourceIdentifierFromSubscription(params).promise().toFuture
-    @inline def removeTagsFromResourceFuture(params: RemoveTagsFromResourceMessage): Future[js.Object] =
-      service.removeTagsFromResource(params).promise().toFuture
-    @inline def resetDBClusterParameterGroupFuture(
-        params: ResetDBClusterParameterGroupMessage
-    ): Future[DBClusterParameterGroupNameMessage] = service.resetDBClusterParameterGroup(params).promise().toFuture
-    @inline def resetDBParameterGroupFuture(params: ResetDBParameterGroupMessage): Future[DBParameterGroupNameMessage] =
-      service.resetDBParameterGroup(params).promise().toFuture
-    @inline def restoreDBClusterFromS3Future(
-        params: RestoreDBClusterFromS3Message
-    ): Future[RestoreDBClusterFromS3Result] = service.restoreDBClusterFromS3(params).promise().toFuture
-    @inline def restoreDBClusterFromSnapshotFuture(
-        params: RestoreDBClusterFromSnapshotMessage
-    ): Future[RestoreDBClusterFromSnapshotResult] = service.restoreDBClusterFromSnapshot(params).promise().toFuture
-    @inline def restoreDBClusterToPointInTimeFuture(
-        params: RestoreDBClusterToPointInTimeMessage
-    ): Future[RestoreDBClusterToPointInTimeResult] = service.restoreDBClusterToPointInTime(params).promise().toFuture
-    @inline def restoreDBInstanceFromDBSnapshotFuture(
-        params: RestoreDBInstanceFromDBSnapshotMessage
-    ): Future[RestoreDBInstanceFromDBSnapshotResult] =
-      service.restoreDBInstanceFromDBSnapshot(params).promise().toFuture
-    @inline def restoreDBInstanceFromS3Future(
-        params: RestoreDBInstanceFromS3Message
-    ): Future[RestoreDBInstanceFromS3Result] = service.restoreDBInstanceFromS3(params).promise().toFuture
-    @inline def restoreDBInstanceToPointInTimeFuture(
-        params: RestoreDBInstanceToPointInTimeMessage
-    ): Future[RestoreDBInstanceToPointInTimeResult] = service.restoreDBInstanceToPointInTime(params).promise().toFuture
-    @inline def revokeDBSecurityGroupIngressFuture(
-        params: RevokeDBSecurityGroupIngressMessage
-    ): Future[RevokeDBSecurityGroupIngressResult] = service.revokeDBSecurityGroupIngress(params).promise().toFuture
-    @inline def startActivityStreamFuture(params: StartActivityStreamRequest): Future[StartActivityStreamResponse] =
-      service.startActivityStream(params).promise().toFuture
-    @inline def startDBClusterFuture(params: StartDBClusterMessage): Future[StartDBClusterResult] =
-      service.startDBCluster(params).promise().toFuture
-    @inline def startDBInstanceFuture(params: StartDBInstanceMessage): Future[StartDBInstanceResult] =
-      service.startDBInstance(params).promise().toFuture
-    @inline def startExportTaskFuture(params: StartExportTaskMessage): Future[ExportTask] =
-      service.startExportTask(params).promise().toFuture
-    @inline def stopActivityStreamFuture(params: StopActivityStreamRequest): Future[StopActivityStreamResponse] =
-      service.stopActivityStream(params).promise().toFuture
-    @inline def stopDBClusterFuture(params: StopDBClusterMessage): Future[StopDBClusterResult] =
-      service.stopDBCluster(params).promise().toFuture
-    @inline def stopDBInstanceFuture(params: StopDBInstanceMessage): Future[StopDBInstanceResult] =
-      service.stopDBInstance(params).promise().toFuture
+    @inline def addRoleToDBClusterFuture(params: AddRoleToDBClusterMessage): Future[js.Object] = service.addRoleToDBCluster(params).promise().toFuture
+    @inline def addRoleToDBInstanceFuture(params: AddRoleToDBInstanceMessage): Future[js.Object] = service.addRoleToDBInstance(params).promise().toFuture
+    @inline def addSourceIdentifierToSubscriptionFuture(params: AddSourceIdentifierToSubscriptionMessage): Future[AddSourceIdentifierToSubscriptionResult] = service.addSourceIdentifierToSubscription(params).promise().toFuture
+    @inline def addTagsToResourceFuture(params: AddTagsToResourceMessage): Future[js.Object] = service.addTagsToResource(params).promise().toFuture
+    @inline def applyPendingMaintenanceActionFuture(params: ApplyPendingMaintenanceActionMessage): Future[ApplyPendingMaintenanceActionResult] = service.applyPendingMaintenanceAction(params).promise().toFuture
+    @inline def authorizeDBSecurityGroupIngressFuture(params: AuthorizeDBSecurityGroupIngressMessage): Future[AuthorizeDBSecurityGroupIngressResult] = service.authorizeDBSecurityGroupIngress(params).promise().toFuture
+    @inline def backtrackDBClusterFuture(params: BacktrackDBClusterMessage): Future[DBClusterBacktrack] = service.backtrackDBCluster(params).promise().toFuture
+    @inline def cancelExportTaskFuture(params: CancelExportTaskMessage): Future[ExportTask] = service.cancelExportTask(params).promise().toFuture
+    @inline def copyDBClusterParameterGroupFuture(params: CopyDBClusterParameterGroupMessage): Future[CopyDBClusterParameterGroupResult] = service.copyDBClusterParameterGroup(params).promise().toFuture
+    @inline def copyDBClusterSnapshotFuture(params: CopyDBClusterSnapshotMessage): Future[CopyDBClusterSnapshotResult] = service.copyDBClusterSnapshot(params).promise().toFuture
+    @inline def copyDBParameterGroupFuture(params: CopyDBParameterGroupMessage): Future[CopyDBParameterGroupResult] = service.copyDBParameterGroup(params).promise().toFuture
+    @inline def copyDBSnapshotFuture(params: CopyDBSnapshotMessage): Future[CopyDBSnapshotResult] = service.copyDBSnapshot(params).promise().toFuture
+    @inline def copyOptionGroupFuture(params: CopyOptionGroupMessage): Future[CopyOptionGroupResult] = service.copyOptionGroup(params).promise().toFuture
+    @inline def createCustomAvailabilityZoneFuture(params: CreateCustomAvailabilityZoneMessage): Future[CreateCustomAvailabilityZoneResult] = service.createCustomAvailabilityZone(params).promise().toFuture
+    @inline def createDBClusterEndpointFuture(params: CreateDBClusterEndpointMessage): Future[DBClusterEndpoint] = service.createDBClusterEndpoint(params).promise().toFuture
+    @inline def createDBClusterFuture(params: CreateDBClusterMessage): Future[CreateDBClusterResult] = service.createDBCluster(params).promise().toFuture
+    @inline def createDBClusterParameterGroupFuture(params: CreateDBClusterParameterGroupMessage): Future[CreateDBClusterParameterGroupResult] = service.createDBClusterParameterGroup(params).promise().toFuture
+    @inline def createDBClusterSnapshotFuture(params: CreateDBClusterSnapshotMessage): Future[CreateDBClusterSnapshotResult] = service.createDBClusterSnapshot(params).promise().toFuture
+    @inline def createDBInstanceFuture(params: CreateDBInstanceMessage): Future[CreateDBInstanceResult] = service.createDBInstance(params).promise().toFuture
+    @inline def createDBInstanceReadReplicaFuture(params: CreateDBInstanceReadReplicaMessage): Future[CreateDBInstanceReadReplicaResult] = service.createDBInstanceReadReplica(params).promise().toFuture
+    @inline def createDBParameterGroupFuture(params: CreateDBParameterGroupMessage): Future[CreateDBParameterGroupResult] = service.createDBParameterGroup(params).promise().toFuture
+    @inline def createDBProxyFuture(params: CreateDBProxyRequest): Future[CreateDBProxyResponse] = service.createDBProxy(params).promise().toFuture
+    @inline def createDBSecurityGroupFuture(params: CreateDBSecurityGroupMessage): Future[CreateDBSecurityGroupResult] = service.createDBSecurityGroup(params).promise().toFuture
+    @inline def createDBSnapshotFuture(params: CreateDBSnapshotMessage): Future[CreateDBSnapshotResult] = service.createDBSnapshot(params).promise().toFuture
+    @inline def createDBSubnetGroupFuture(params: CreateDBSubnetGroupMessage): Future[CreateDBSubnetGroupResult] = service.createDBSubnetGroup(params).promise().toFuture
+    @inline def createEventSubscriptionFuture(params: CreateEventSubscriptionMessage): Future[CreateEventSubscriptionResult] = service.createEventSubscription(params).promise().toFuture
+    @inline def createGlobalClusterFuture(params: CreateGlobalClusterMessage): Future[CreateGlobalClusterResult] = service.createGlobalCluster(params).promise().toFuture
+    @inline def createOptionGroupFuture(params: CreateOptionGroupMessage): Future[CreateOptionGroupResult] = service.createOptionGroup(params).promise().toFuture
+    @inline def deleteCustomAvailabilityZoneFuture(params: DeleteCustomAvailabilityZoneMessage): Future[DeleteCustomAvailabilityZoneResult] = service.deleteCustomAvailabilityZone(params).promise().toFuture
+    @inline def deleteDBClusterEndpointFuture(params: DeleteDBClusterEndpointMessage): Future[DBClusterEndpoint] = service.deleteDBClusterEndpoint(params).promise().toFuture
+    @inline def deleteDBClusterFuture(params: DeleteDBClusterMessage): Future[DeleteDBClusterResult] = service.deleteDBCluster(params).promise().toFuture
+    @inline def deleteDBClusterParameterGroupFuture(params: DeleteDBClusterParameterGroupMessage): Future[js.Object] = service.deleteDBClusterParameterGroup(params).promise().toFuture
+    @inline def deleteDBClusterSnapshotFuture(params: DeleteDBClusterSnapshotMessage): Future[DeleteDBClusterSnapshotResult] = service.deleteDBClusterSnapshot(params).promise().toFuture
+    @inline def deleteDBInstanceAutomatedBackupFuture(params: DeleteDBInstanceAutomatedBackupMessage): Future[DeleteDBInstanceAutomatedBackupResult] = service.deleteDBInstanceAutomatedBackup(params).promise().toFuture
+    @inline def deleteDBInstanceFuture(params: DeleteDBInstanceMessage): Future[DeleteDBInstanceResult] = service.deleteDBInstance(params).promise().toFuture
+    @inline def deleteDBParameterGroupFuture(params: DeleteDBParameterGroupMessage): Future[js.Object] = service.deleteDBParameterGroup(params).promise().toFuture
+    @inline def deleteDBProxyFuture(params: DeleteDBProxyRequest): Future[DeleteDBProxyResponse] = service.deleteDBProxy(params).promise().toFuture
+    @inline def deleteDBSecurityGroupFuture(params: DeleteDBSecurityGroupMessage): Future[js.Object] = service.deleteDBSecurityGroup(params).promise().toFuture
+    @inline def deleteDBSnapshotFuture(params: DeleteDBSnapshotMessage): Future[DeleteDBSnapshotResult] = service.deleteDBSnapshot(params).promise().toFuture
+    @inline def deleteDBSubnetGroupFuture(params: DeleteDBSubnetGroupMessage): Future[js.Object] = service.deleteDBSubnetGroup(params).promise().toFuture
+    @inline def deleteEventSubscriptionFuture(params: DeleteEventSubscriptionMessage): Future[DeleteEventSubscriptionResult] = service.deleteEventSubscription(params).promise().toFuture
+    @inline def deleteGlobalClusterFuture(params: DeleteGlobalClusterMessage): Future[DeleteGlobalClusterResult] = service.deleteGlobalCluster(params).promise().toFuture
+    @inline def deleteInstallationMediaFuture(params: DeleteInstallationMediaMessage): Future[InstallationMedia] = service.deleteInstallationMedia(params).promise().toFuture
+    @inline def deleteOptionGroupFuture(params: DeleteOptionGroupMessage): Future[js.Object] = service.deleteOptionGroup(params).promise().toFuture
+    @inline def deregisterDBProxyTargetsFuture(params: DeregisterDBProxyTargetsRequest): Future[DeregisterDBProxyTargetsResponse] = service.deregisterDBProxyTargets(params).promise().toFuture
+    @inline def describeAccountAttributesFuture(params: DescribeAccountAttributesMessage): Future[AccountAttributesMessage] = service.describeAccountAttributes(params).promise().toFuture
+    @inline def describeCertificatesFuture(params: DescribeCertificatesMessage): Future[CertificateMessage] = service.describeCertificates(params).promise().toFuture
+    @inline def describeCustomAvailabilityZonesFuture(params: DescribeCustomAvailabilityZonesMessage): Future[CustomAvailabilityZoneMessage] = service.describeCustomAvailabilityZones(params).promise().toFuture
+    @inline def describeDBClusterBacktracksFuture(params: DescribeDBClusterBacktracksMessage): Future[DBClusterBacktrackMessage] = service.describeDBClusterBacktracks(params).promise().toFuture
+    @inline def describeDBClusterEndpointsFuture(params: DescribeDBClusterEndpointsMessage): Future[DBClusterEndpointMessage] = service.describeDBClusterEndpoints(params).promise().toFuture
+    @inline def describeDBClusterParameterGroupsFuture(params: DescribeDBClusterParameterGroupsMessage): Future[DBClusterParameterGroupsMessage] = service.describeDBClusterParameterGroups(params).promise().toFuture
+    @inline def describeDBClusterParametersFuture(params: DescribeDBClusterParametersMessage): Future[DBClusterParameterGroupDetails] = service.describeDBClusterParameters(params).promise().toFuture
+    @inline def describeDBClusterSnapshotAttributesFuture(params: DescribeDBClusterSnapshotAttributesMessage): Future[DescribeDBClusterSnapshotAttributesResult] = service.describeDBClusterSnapshotAttributes(params).promise().toFuture
+    @inline def describeDBClusterSnapshotsFuture(params: DescribeDBClusterSnapshotsMessage): Future[DBClusterSnapshotMessage] = service.describeDBClusterSnapshots(params).promise().toFuture
+    @inline def describeDBClustersFuture(params: DescribeDBClustersMessage): Future[DBClusterMessage] = service.describeDBClusters(params).promise().toFuture
+    @inline def describeDBEngineVersionsFuture(params: DescribeDBEngineVersionsMessage): Future[DBEngineVersionMessage] = service.describeDBEngineVersions(params).promise().toFuture
+    @inline def describeDBInstanceAutomatedBackupsFuture(params: DescribeDBInstanceAutomatedBackupsMessage): Future[DBInstanceAutomatedBackupMessage] = service.describeDBInstanceAutomatedBackups(params).promise().toFuture
+    @inline def describeDBInstancesFuture(params: DescribeDBInstancesMessage): Future[DBInstanceMessage] = service.describeDBInstances(params).promise().toFuture
+    @inline def describeDBLogFilesFuture(params: DescribeDBLogFilesMessage): Future[DescribeDBLogFilesResponse] = service.describeDBLogFiles(params).promise().toFuture
+    @inline def describeDBParameterGroupsFuture(params: DescribeDBParameterGroupsMessage): Future[DBParameterGroupsMessage] = service.describeDBParameterGroups(params).promise().toFuture
+    @inline def describeDBParametersFuture(params: DescribeDBParametersMessage): Future[DBParameterGroupDetails] = service.describeDBParameters(params).promise().toFuture
+    @inline def describeDBProxiesFuture(params: DescribeDBProxiesRequest): Future[DescribeDBProxiesResponse] = service.describeDBProxies(params).promise().toFuture
+    @inline def describeDBProxyTargetGroupsFuture(params: DescribeDBProxyTargetGroupsRequest): Future[DescribeDBProxyTargetGroupsResponse] = service.describeDBProxyTargetGroups(params).promise().toFuture
+    @inline def describeDBProxyTargetsFuture(params: DescribeDBProxyTargetsRequest): Future[DescribeDBProxyTargetsResponse] = service.describeDBProxyTargets(params).promise().toFuture
+    @inline def describeDBSecurityGroupsFuture(params: DescribeDBSecurityGroupsMessage): Future[DBSecurityGroupMessage] = service.describeDBSecurityGroups(params).promise().toFuture
+    @inline def describeDBSnapshotAttributesFuture(params: DescribeDBSnapshotAttributesMessage): Future[DescribeDBSnapshotAttributesResult] = service.describeDBSnapshotAttributes(params).promise().toFuture
+    @inline def describeDBSnapshotsFuture(params: DescribeDBSnapshotsMessage): Future[DBSnapshotMessage] = service.describeDBSnapshots(params).promise().toFuture
+    @inline def describeDBSubnetGroupsFuture(params: DescribeDBSubnetGroupsMessage): Future[DBSubnetGroupMessage] = service.describeDBSubnetGroups(params).promise().toFuture
+    @inline def describeEngineDefaultClusterParametersFuture(params: DescribeEngineDefaultClusterParametersMessage): Future[DescribeEngineDefaultClusterParametersResult] = service.describeEngineDefaultClusterParameters(params).promise().toFuture
+    @inline def describeEngineDefaultParametersFuture(params: DescribeEngineDefaultParametersMessage): Future[DescribeEngineDefaultParametersResult] = service.describeEngineDefaultParameters(params).promise().toFuture
+    @inline def describeEventCategoriesFuture(params: DescribeEventCategoriesMessage): Future[EventCategoriesMessage] = service.describeEventCategories(params).promise().toFuture
+    @inline def describeEventSubscriptionsFuture(params: DescribeEventSubscriptionsMessage): Future[EventSubscriptionsMessage] = service.describeEventSubscriptions(params).promise().toFuture
+    @inline def describeEventsFuture(params: DescribeEventsMessage): Future[EventsMessage] = service.describeEvents(params).promise().toFuture
+    @inline def describeExportTasksFuture(params: DescribeExportTasksMessage): Future[ExportTasksMessage] = service.describeExportTasks(params).promise().toFuture
+    @inline def describeGlobalClustersFuture(params: DescribeGlobalClustersMessage): Future[GlobalClustersMessage] = service.describeGlobalClusters(params).promise().toFuture
+    @inline def describeInstallationMediaFuture(params: DescribeInstallationMediaMessage): Future[InstallationMediaMessage] = service.describeInstallationMedia(params).promise().toFuture
+    @inline def describeOptionGroupOptionsFuture(params: DescribeOptionGroupOptionsMessage): Future[OptionGroupOptionsMessage] = service.describeOptionGroupOptions(params).promise().toFuture
+    @inline def describeOptionGroupsFuture(params: DescribeOptionGroupsMessage): Future[OptionGroups] = service.describeOptionGroups(params).promise().toFuture
+    @inline def describeOrderableDBInstanceOptionsFuture(params: DescribeOrderableDBInstanceOptionsMessage): Future[OrderableDBInstanceOptionsMessage] = service.describeOrderableDBInstanceOptions(params).promise().toFuture
+    @inline def describePendingMaintenanceActionsFuture(params: DescribePendingMaintenanceActionsMessage): Future[PendingMaintenanceActionsMessage] = service.describePendingMaintenanceActions(params).promise().toFuture
+    @inline def describeReservedDBInstancesFuture(params: DescribeReservedDBInstancesMessage): Future[ReservedDBInstanceMessage] = service.describeReservedDBInstances(params).promise().toFuture
+    @inline def describeReservedDBInstancesOfferingsFuture(params: DescribeReservedDBInstancesOfferingsMessage): Future[ReservedDBInstancesOfferingMessage] = service.describeReservedDBInstancesOfferings(params).promise().toFuture
+    @inline def describeSourceRegionsFuture(params: DescribeSourceRegionsMessage): Future[SourceRegionMessage] = service.describeSourceRegions(params).promise().toFuture
+    @inline def describeValidDBInstanceModificationsFuture(params: DescribeValidDBInstanceModificationsMessage): Future[DescribeValidDBInstanceModificationsResult] = service.describeValidDBInstanceModifications(params).promise().toFuture
+    @inline def downloadDBLogFilePortionFuture(params: DownloadDBLogFilePortionMessage): Future[DownloadDBLogFilePortionDetails] = service.downloadDBLogFilePortion(params).promise().toFuture
+    @inline def failoverDBClusterFuture(params: FailoverDBClusterMessage): Future[FailoverDBClusterResult] = service.failoverDBCluster(params).promise().toFuture
+    @inline def importInstallationMediaFuture(params: ImportInstallationMediaMessage): Future[InstallationMedia] = service.importInstallationMedia(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceMessage): Future[TagListMessage] = service.listTagsForResource(params).promise().toFuture
+    @inline def modifyCertificatesFuture(params: ModifyCertificatesMessage): Future[ModifyCertificatesResult] = service.modifyCertificates(params).promise().toFuture
+    @inline def modifyCurrentDBClusterCapacityFuture(params: ModifyCurrentDBClusterCapacityMessage): Future[DBClusterCapacityInfo] = service.modifyCurrentDBClusterCapacity(params).promise().toFuture
+    @inline def modifyDBClusterEndpointFuture(params: ModifyDBClusterEndpointMessage): Future[DBClusterEndpoint] = service.modifyDBClusterEndpoint(params).promise().toFuture
+    @inline def modifyDBClusterFuture(params: ModifyDBClusterMessage): Future[ModifyDBClusterResult] = service.modifyDBCluster(params).promise().toFuture
+    @inline def modifyDBClusterParameterGroupFuture(params: ModifyDBClusterParameterGroupMessage): Future[DBClusterParameterGroupNameMessage] = service.modifyDBClusterParameterGroup(params).promise().toFuture
+    @inline def modifyDBClusterSnapshotAttributeFuture(params: ModifyDBClusterSnapshotAttributeMessage): Future[ModifyDBClusterSnapshotAttributeResult] = service.modifyDBClusterSnapshotAttribute(params).promise().toFuture
+    @inline def modifyDBInstanceFuture(params: ModifyDBInstanceMessage): Future[ModifyDBInstanceResult] = service.modifyDBInstance(params).promise().toFuture
+    @inline def modifyDBParameterGroupFuture(params: ModifyDBParameterGroupMessage): Future[DBParameterGroupNameMessage] = service.modifyDBParameterGroup(params).promise().toFuture
+    @inline def modifyDBProxyFuture(params: ModifyDBProxyRequest): Future[ModifyDBProxyResponse] = service.modifyDBProxy(params).promise().toFuture
+    @inline def modifyDBProxyTargetGroupFuture(params: ModifyDBProxyTargetGroupRequest): Future[ModifyDBProxyTargetGroupResponse] = service.modifyDBProxyTargetGroup(params).promise().toFuture
+    @inline def modifyDBSnapshotAttributeFuture(params: ModifyDBSnapshotAttributeMessage): Future[ModifyDBSnapshotAttributeResult] = service.modifyDBSnapshotAttribute(params).promise().toFuture
+    @inline def modifyDBSnapshotFuture(params: ModifyDBSnapshotMessage): Future[ModifyDBSnapshotResult] = service.modifyDBSnapshot(params).promise().toFuture
+    @inline def modifyDBSubnetGroupFuture(params: ModifyDBSubnetGroupMessage): Future[ModifyDBSubnetGroupResult] = service.modifyDBSubnetGroup(params).promise().toFuture
+    @inline def modifyEventSubscriptionFuture(params: ModifyEventSubscriptionMessage): Future[ModifyEventSubscriptionResult] = service.modifyEventSubscription(params).promise().toFuture
+    @inline def modifyGlobalClusterFuture(params: ModifyGlobalClusterMessage): Future[ModifyGlobalClusterResult] = service.modifyGlobalCluster(params).promise().toFuture
+    @inline def modifyOptionGroupFuture(params: ModifyOptionGroupMessage): Future[ModifyOptionGroupResult] = service.modifyOptionGroup(params).promise().toFuture
+    @inline def promoteReadReplicaDBClusterFuture(params: PromoteReadReplicaDBClusterMessage): Future[PromoteReadReplicaDBClusterResult] = service.promoteReadReplicaDBCluster(params).promise().toFuture
+    @inline def promoteReadReplicaFuture(params: PromoteReadReplicaMessage): Future[PromoteReadReplicaResult] = service.promoteReadReplica(params).promise().toFuture
+    @inline def purchaseReservedDBInstancesOfferingFuture(params: PurchaseReservedDBInstancesOfferingMessage): Future[PurchaseReservedDBInstancesOfferingResult] = service.purchaseReservedDBInstancesOffering(params).promise().toFuture
+    @inline def rebootDBInstanceFuture(params: RebootDBInstanceMessage): Future[RebootDBInstanceResult] = service.rebootDBInstance(params).promise().toFuture
+    @inline def registerDBProxyTargetsFuture(params: RegisterDBProxyTargetsRequest): Future[RegisterDBProxyTargetsResponse] = service.registerDBProxyTargets(params).promise().toFuture
+    @inline def removeFromGlobalClusterFuture(params: RemoveFromGlobalClusterMessage): Future[RemoveFromGlobalClusterResult] = service.removeFromGlobalCluster(params).promise().toFuture
+    @inline def removeRoleFromDBClusterFuture(params: RemoveRoleFromDBClusterMessage): Future[js.Object] = service.removeRoleFromDBCluster(params).promise().toFuture
+    @inline def removeRoleFromDBInstanceFuture(params: RemoveRoleFromDBInstanceMessage): Future[js.Object] = service.removeRoleFromDBInstance(params).promise().toFuture
+    @inline def removeSourceIdentifierFromSubscriptionFuture(params: RemoveSourceIdentifierFromSubscriptionMessage): Future[RemoveSourceIdentifierFromSubscriptionResult] = service.removeSourceIdentifierFromSubscription(params).promise().toFuture
+    @inline def removeTagsFromResourceFuture(params: RemoveTagsFromResourceMessage): Future[js.Object] = service.removeTagsFromResource(params).promise().toFuture
+    @inline def resetDBClusterParameterGroupFuture(params: ResetDBClusterParameterGroupMessage): Future[DBClusterParameterGroupNameMessage] = service.resetDBClusterParameterGroup(params).promise().toFuture
+    @inline def resetDBParameterGroupFuture(params: ResetDBParameterGroupMessage): Future[DBParameterGroupNameMessage] = service.resetDBParameterGroup(params).promise().toFuture
+    @inline def restoreDBClusterFromS3Future(params: RestoreDBClusterFromS3Message): Future[RestoreDBClusterFromS3Result] = service.restoreDBClusterFromS3(params).promise().toFuture
+    @inline def restoreDBClusterFromSnapshotFuture(params: RestoreDBClusterFromSnapshotMessage): Future[RestoreDBClusterFromSnapshotResult] = service.restoreDBClusterFromSnapshot(params).promise().toFuture
+    @inline def restoreDBClusterToPointInTimeFuture(params: RestoreDBClusterToPointInTimeMessage): Future[RestoreDBClusterToPointInTimeResult] = service.restoreDBClusterToPointInTime(params).promise().toFuture
+    @inline def restoreDBInstanceFromDBSnapshotFuture(params: RestoreDBInstanceFromDBSnapshotMessage): Future[RestoreDBInstanceFromDBSnapshotResult] = service.restoreDBInstanceFromDBSnapshot(params).promise().toFuture
+    @inline def restoreDBInstanceFromS3Future(params: RestoreDBInstanceFromS3Message): Future[RestoreDBInstanceFromS3Result] = service.restoreDBInstanceFromS3(params).promise().toFuture
+    @inline def restoreDBInstanceToPointInTimeFuture(params: RestoreDBInstanceToPointInTimeMessage): Future[RestoreDBInstanceToPointInTimeResult] = service.restoreDBInstanceToPointInTime(params).promise().toFuture
+    @inline def revokeDBSecurityGroupIngressFuture(params: RevokeDBSecurityGroupIngressMessage): Future[RevokeDBSecurityGroupIngressResult] = service.revokeDBSecurityGroupIngress(params).promise().toFuture
+    @inline def startActivityStreamFuture(params: StartActivityStreamRequest): Future[StartActivityStreamResponse] = service.startActivityStream(params).promise().toFuture
+    @inline def startDBClusterFuture(params: StartDBClusterMessage): Future[StartDBClusterResult] = service.startDBCluster(params).promise().toFuture
+    @inline def startDBInstanceFuture(params: StartDBInstanceMessage): Future[StartDBInstanceResult] = service.startDBInstance(params).promise().toFuture
+    @inline def startExportTaskFuture(params: StartExportTaskMessage): Future[ExportTask] = service.startExportTask(params).promise().toFuture
+    @inline def stopActivityStreamFuture(params: StopActivityStreamRequest): Future[StopActivityStreamResponse] = service.stopActivityStream(params).promise().toFuture
+    @inline def stopDBClusterFuture(params: StopDBClusterMessage): Future[StopDBClusterResult] = service.stopDBCluster(params).promise().toFuture
+    @inline def stopDBInstanceFuture(params: StopDBInstanceMessage): Future[StopDBInstanceResult] = service.stopDBInstance(params).promise().toFuture
   }
 }
 
@@ -452,216 +249,127 @@ package rds {
 
     def addRoleToDBCluster(params: AddRoleToDBClusterMessage): Request[js.Object] = js.native
     def addRoleToDBInstance(params: AddRoleToDBInstanceMessage): Request[js.Object] = js.native
-    def addSourceIdentifierToSubscription(
-        params: AddSourceIdentifierToSubscriptionMessage
-    ): Request[AddSourceIdentifierToSubscriptionResult] = js.native
+    def addSourceIdentifierToSubscription(params: AddSourceIdentifierToSubscriptionMessage): Request[AddSourceIdentifierToSubscriptionResult] = js.native
     def addTagsToResource(params: AddTagsToResourceMessage): Request[js.Object] = js.native
-    def applyPendingMaintenanceAction(
-        params: ApplyPendingMaintenanceActionMessage
-    ): Request[ApplyPendingMaintenanceActionResult] = js.native
-    def authorizeDBSecurityGroupIngress(
-        params: AuthorizeDBSecurityGroupIngressMessage
-    ): Request[AuthorizeDBSecurityGroupIngressResult] = js.native
+    def applyPendingMaintenanceAction(params: ApplyPendingMaintenanceActionMessage): Request[ApplyPendingMaintenanceActionResult] = js.native
+    def authorizeDBSecurityGroupIngress(params: AuthorizeDBSecurityGroupIngressMessage): Request[AuthorizeDBSecurityGroupIngressResult] = js.native
     def backtrackDBCluster(params: BacktrackDBClusterMessage): Request[DBClusterBacktrack] = js.native
     def cancelExportTask(params: CancelExportTaskMessage): Request[ExportTask] = js.native
-    def copyDBClusterParameterGroup(
-        params: CopyDBClusterParameterGroupMessage
-    ): Request[CopyDBClusterParameterGroupResult] = js.native
+    def copyDBClusterParameterGroup(params: CopyDBClusterParameterGroupMessage): Request[CopyDBClusterParameterGroupResult] = js.native
     def copyDBClusterSnapshot(params: CopyDBClusterSnapshotMessage): Request[CopyDBClusterSnapshotResult] = js.native
     def copyDBParameterGroup(params: CopyDBParameterGroupMessage): Request[CopyDBParameterGroupResult] = js.native
     def copyDBSnapshot(params: CopyDBSnapshotMessage): Request[CopyDBSnapshotResult] = js.native
     def copyOptionGroup(params: CopyOptionGroupMessage): Request[CopyOptionGroupResult] = js.native
-    def createCustomAvailabilityZone(
-        params: CreateCustomAvailabilityZoneMessage
-    ): Request[CreateCustomAvailabilityZoneResult] = js.native
+    def createCustomAvailabilityZone(params: CreateCustomAvailabilityZoneMessage): Request[CreateCustomAvailabilityZoneResult] = js.native
     def createDBCluster(params: CreateDBClusterMessage): Request[CreateDBClusterResult] = js.native
     def createDBClusterEndpoint(params: CreateDBClusterEndpointMessage): Request[DBClusterEndpoint] = js.native
-    def createDBClusterParameterGroup(
-        params: CreateDBClusterParameterGroupMessage
-    ): Request[CreateDBClusterParameterGroupResult] = js.native
-    def createDBClusterSnapshot(params: CreateDBClusterSnapshotMessage): Request[CreateDBClusterSnapshotResult] =
-      js.native
+    def createDBClusterParameterGroup(params: CreateDBClusterParameterGroupMessage): Request[CreateDBClusterParameterGroupResult] = js.native
+    def createDBClusterSnapshot(params: CreateDBClusterSnapshotMessage): Request[CreateDBClusterSnapshotResult] = js.native
     def createDBInstance(params: CreateDBInstanceMessage): Request[CreateDBInstanceResult] = js.native
-    def createDBInstanceReadReplica(
-        params: CreateDBInstanceReadReplicaMessage
-    ): Request[CreateDBInstanceReadReplicaResult] = js.native
+    def createDBInstanceReadReplica(params: CreateDBInstanceReadReplicaMessage): Request[CreateDBInstanceReadReplicaResult] = js.native
     def createDBParameterGroup(params: CreateDBParameterGroupMessage): Request[CreateDBParameterGroupResult] = js.native
     def createDBProxy(params: CreateDBProxyRequest): Request[CreateDBProxyResponse] = js.native
     def createDBSecurityGroup(params: CreateDBSecurityGroupMessage): Request[CreateDBSecurityGroupResult] = js.native
     def createDBSnapshot(params: CreateDBSnapshotMessage): Request[CreateDBSnapshotResult] = js.native
     def createDBSubnetGroup(params: CreateDBSubnetGroupMessage): Request[CreateDBSubnetGroupResult] = js.native
-    def createEventSubscription(params: CreateEventSubscriptionMessage): Request[CreateEventSubscriptionResult] =
-      js.native
+    def createEventSubscription(params: CreateEventSubscriptionMessage): Request[CreateEventSubscriptionResult] = js.native
     def createGlobalCluster(params: CreateGlobalClusterMessage): Request[CreateGlobalClusterResult] = js.native
     def createOptionGroup(params: CreateOptionGroupMessage): Request[CreateOptionGroupResult] = js.native
-    def deleteCustomAvailabilityZone(
-        params: DeleteCustomAvailabilityZoneMessage
-    ): Request[DeleteCustomAvailabilityZoneResult] = js.native
+    def deleteCustomAvailabilityZone(params: DeleteCustomAvailabilityZoneMessage): Request[DeleteCustomAvailabilityZoneResult] = js.native
     def deleteDBCluster(params: DeleteDBClusterMessage): Request[DeleteDBClusterResult] = js.native
     def deleteDBClusterEndpoint(params: DeleteDBClusterEndpointMessage): Request[DBClusterEndpoint] = js.native
     def deleteDBClusterParameterGroup(params: DeleteDBClusterParameterGroupMessage): Request[js.Object] = js.native
-    def deleteDBClusterSnapshot(params: DeleteDBClusterSnapshotMessage): Request[DeleteDBClusterSnapshotResult] =
-      js.native
+    def deleteDBClusterSnapshot(params: DeleteDBClusterSnapshotMessage): Request[DeleteDBClusterSnapshotResult] = js.native
     def deleteDBInstance(params: DeleteDBInstanceMessage): Request[DeleteDBInstanceResult] = js.native
-    def deleteDBInstanceAutomatedBackup(
-        params: DeleteDBInstanceAutomatedBackupMessage
-    ): Request[DeleteDBInstanceAutomatedBackupResult] = js.native
+    def deleteDBInstanceAutomatedBackup(params: DeleteDBInstanceAutomatedBackupMessage): Request[DeleteDBInstanceAutomatedBackupResult] = js.native
     def deleteDBParameterGroup(params: DeleteDBParameterGroupMessage): Request[js.Object] = js.native
     def deleteDBProxy(params: DeleteDBProxyRequest): Request[DeleteDBProxyResponse] = js.native
     def deleteDBSecurityGroup(params: DeleteDBSecurityGroupMessage): Request[js.Object] = js.native
     def deleteDBSnapshot(params: DeleteDBSnapshotMessage): Request[DeleteDBSnapshotResult] = js.native
     def deleteDBSubnetGroup(params: DeleteDBSubnetGroupMessage): Request[js.Object] = js.native
-    def deleteEventSubscription(params: DeleteEventSubscriptionMessage): Request[DeleteEventSubscriptionResult] =
-      js.native
+    def deleteEventSubscription(params: DeleteEventSubscriptionMessage): Request[DeleteEventSubscriptionResult] = js.native
     def deleteGlobalCluster(params: DeleteGlobalClusterMessage): Request[DeleteGlobalClusterResult] = js.native
     def deleteInstallationMedia(params: DeleteInstallationMediaMessage): Request[InstallationMedia] = js.native
     def deleteOptionGroup(params: DeleteOptionGroupMessage): Request[js.Object] = js.native
-    def deregisterDBProxyTargets(params: DeregisterDBProxyTargetsRequest): Request[DeregisterDBProxyTargetsResponse] =
-      js.native
-    def describeAccountAttributes(params: DescribeAccountAttributesMessage): Request[AccountAttributesMessage] =
-      js.native
+    def deregisterDBProxyTargets(params: DeregisterDBProxyTargetsRequest): Request[DeregisterDBProxyTargetsResponse] = js.native
+    def describeAccountAttributes(params: DescribeAccountAttributesMessage): Request[AccountAttributesMessage] = js.native
     def describeCertificates(params: DescribeCertificatesMessage): Request[CertificateMessage] = js.native
-    def describeCustomAvailabilityZones(
-        params: DescribeCustomAvailabilityZonesMessage
-    ): Request[CustomAvailabilityZoneMessage] = js.native
-    def describeDBClusterBacktracks(params: DescribeDBClusterBacktracksMessage): Request[DBClusterBacktrackMessage] =
-      js.native
-    def describeDBClusterEndpoints(params: DescribeDBClusterEndpointsMessage): Request[DBClusterEndpointMessage] =
-      js.native
-    def describeDBClusterParameterGroups(
-        params: DescribeDBClusterParameterGroupsMessage
-    ): Request[DBClusterParameterGroupsMessage] = js.native
-    def describeDBClusterParameters(
-        params: DescribeDBClusterParametersMessage
-    ): Request[DBClusterParameterGroupDetails] = js.native
-    def describeDBClusterSnapshotAttributes(
-        params: DescribeDBClusterSnapshotAttributesMessage
-    ): Request[DescribeDBClusterSnapshotAttributesResult] = js.native
-    def describeDBClusterSnapshots(params: DescribeDBClusterSnapshotsMessage): Request[DBClusterSnapshotMessage] =
-      js.native
+    def describeCustomAvailabilityZones(params: DescribeCustomAvailabilityZonesMessage): Request[CustomAvailabilityZoneMessage] = js.native
+    def describeDBClusterBacktracks(params: DescribeDBClusterBacktracksMessage): Request[DBClusterBacktrackMessage] = js.native
+    def describeDBClusterEndpoints(params: DescribeDBClusterEndpointsMessage): Request[DBClusterEndpointMessage] = js.native
+    def describeDBClusterParameterGroups(params: DescribeDBClusterParameterGroupsMessage): Request[DBClusterParameterGroupsMessage] = js.native
+    def describeDBClusterParameters(params: DescribeDBClusterParametersMessage): Request[DBClusterParameterGroupDetails] = js.native
+    def describeDBClusterSnapshotAttributes(params: DescribeDBClusterSnapshotAttributesMessage): Request[DescribeDBClusterSnapshotAttributesResult] = js.native
+    def describeDBClusterSnapshots(params: DescribeDBClusterSnapshotsMessage): Request[DBClusterSnapshotMessage] = js.native
     def describeDBClusters(params: DescribeDBClustersMessage): Request[DBClusterMessage] = js.native
     def describeDBEngineVersions(params: DescribeDBEngineVersionsMessage): Request[DBEngineVersionMessage] = js.native
-    def describeDBInstanceAutomatedBackups(
-        params: DescribeDBInstanceAutomatedBackupsMessage
-    ): Request[DBInstanceAutomatedBackupMessage] = js.native
+    def describeDBInstanceAutomatedBackups(params: DescribeDBInstanceAutomatedBackupsMessage): Request[DBInstanceAutomatedBackupMessage] = js.native
     def describeDBInstances(params: DescribeDBInstancesMessage): Request[DBInstanceMessage] = js.native
     def describeDBLogFiles(params: DescribeDBLogFilesMessage): Request[DescribeDBLogFilesResponse] = js.native
-    def describeDBParameterGroups(params: DescribeDBParameterGroupsMessage): Request[DBParameterGroupsMessage] =
-      js.native
+    def describeDBParameterGroups(params: DescribeDBParameterGroupsMessage): Request[DBParameterGroupsMessage] = js.native
     def describeDBParameters(params: DescribeDBParametersMessage): Request[DBParameterGroupDetails] = js.native
     def describeDBProxies(params: DescribeDBProxiesRequest): Request[DescribeDBProxiesResponse] = js.native
-    def describeDBProxyTargetGroups(
-        params: DescribeDBProxyTargetGroupsRequest
-    ): Request[DescribeDBProxyTargetGroupsResponse] = js.native
-    def describeDBProxyTargets(params: DescribeDBProxyTargetsRequest): Request[DescribeDBProxyTargetsResponse] =
-      js.native
+    def describeDBProxyTargetGroups(params: DescribeDBProxyTargetGroupsRequest): Request[DescribeDBProxyTargetGroupsResponse] = js.native
+    def describeDBProxyTargets(params: DescribeDBProxyTargetsRequest): Request[DescribeDBProxyTargetsResponse] = js.native
     def describeDBSecurityGroups(params: DescribeDBSecurityGroupsMessage): Request[DBSecurityGroupMessage] = js.native
-    def describeDBSnapshotAttributes(
-        params: DescribeDBSnapshotAttributesMessage
-    ): Request[DescribeDBSnapshotAttributesResult] = js.native
+    def describeDBSnapshotAttributes(params: DescribeDBSnapshotAttributesMessage): Request[DescribeDBSnapshotAttributesResult] = js.native
     def describeDBSnapshots(params: DescribeDBSnapshotsMessage): Request[DBSnapshotMessage] = js.native
     def describeDBSubnetGroups(params: DescribeDBSubnetGroupsMessage): Request[DBSubnetGroupMessage] = js.native
-    def describeEngineDefaultClusterParameters(
-        params: DescribeEngineDefaultClusterParametersMessage
-    ): Request[DescribeEngineDefaultClusterParametersResult] = js.native
-    def describeEngineDefaultParameters(
-        params: DescribeEngineDefaultParametersMessage
-    ): Request[DescribeEngineDefaultParametersResult] = js.native
+    def describeEngineDefaultClusterParameters(params: DescribeEngineDefaultClusterParametersMessage): Request[DescribeEngineDefaultClusterParametersResult] = js.native
+    def describeEngineDefaultParameters(params: DescribeEngineDefaultParametersMessage): Request[DescribeEngineDefaultParametersResult] = js.native
     def describeEventCategories(params: DescribeEventCategoriesMessage): Request[EventCategoriesMessage] = js.native
-    def describeEventSubscriptions(params: DescribeEventSubscriptionsMessage): Request[EventSubscriptionsMessage] =
-      js.native
+    def describeEventSubscriptions(params: DescribeEventSubscriptionsMessage): Request[EventSubscriptionsMessage] = js.native
     def describeEvents(params: DescribeEventsMessage): Request[EventsMessage] = js.native
     def describeExportTasks(params: DescribeExportTasksMessage): Request[ExportTasksMessage] = js.native
     def describeGlobalClusters(params: DescribeGlobalClustersMessage): Request[GlobalClustersMessage] = js.native
-    def describeInstallationMedia(params: DescribeInstallationMediaMessage): Request[InstallationMediaMessage] =
-      js.native
-    def describeOptionGroupOptions(params: DescribeOptionGroupOptionsMessage): Request[OptionGroupOptionsMessage] =
-      js.native
+    def describeInstallationMedia(params: DescribeInstallationMediaMessage): Request[InstallationMediaMessage] = js.native
+    def describeOptionGroupOptions(params: DescribeOptionGroupOptionsMessage): Request[OptionGroupOptionsMessage] = js.native
     def describeOptionGroups(params: DescribeOptionGroupsMessage): Request[OptionGroups] = js.native
-    def describeOrderableDBInstanceOptions(
-        params: DescribeOrderableDBInstanceOptionsMessage
-    ): Request[OrderableDBInstanceOptionsMessage] = js.native
-    def describePendingMaintenanceActions(
-        params: DescribePendingMaintenanceActionsMessage
-    ): Request[PendingMaintenanceActionsMessage] = js.native
-    def describeReservedDBInstances(params: DescribeReservedDBInstancesMessage): Request[ReservedDBInstanceMessage] =
-      js.native
-    def describeReservedDBInstancesOfferings(
-        params: DescribeReservedDBInstancesOfferingsMessage
-    ): Request[ReservedDBInstancesOfferingMessage] = js.native
+    def describeOrderableDBInstanceOptions(params: DescribeOrderableDBInstanceOptionsMessage): Request[OrderableDBInstanceOptionsMessage] = js.native
+    def describePendingMaintenanceActions(params: DescribePendingMaintenanceActionsMessage): Request[PendingMaintenanceActionsMessage] = js.native
+    def describeReservedDBInstances(params: DescribeReservedDBInstancesMessage): Request[ReservedDBInstanceMessage] = js.native
+    def describeReservedDBInstancesOfferings(params: DescribeReservedDBInstancesOfferingsMessage): Request[ReservedDBInstancesOfferingMessage] = js.native
     def describeSourceRegions(params: DescribeSourceRegionsMessage): Request[SourceRegionMessage] = js.native
-    def describeValidDBInstanceModifications(
-        params: DescribeValidDBInstanceModificationsMessage
-    ): Request[DescribeValidDBInstanceModificationsResult] = js.native
-    def downloadDBLogFilePortion(params: DownloadDBLogFilePortionMessage): Request[DownloadDBLogFilePortionDetails] =
-      js.native
+    def describeValidDBInstanceModifications(params: DescribeValidDBInstanceModificationsMessage): Request[DescribeValidDBInstanceModificationsResult] = js.native
+    def downloadDBLogFilePortion(params: DownloadDBLogFilePortionMessage): Request[DownloadDBLogFilePortionDetails] = js.native
     def failoverDBCluster(params: FailoverDBClusterMessage): Request[FailoverDBClusterResult] = js.native
     def importInstallationMedia(params: ImportInstallationMediaMessage): Request[InstallationMedia] = js.native
     def listTagsForResource(params: ListTagsForResourceMessage): Request[TagListMessage] = js.native
     def modifyCertificates(params: ModifyCertificatesMessage): Request[ModifyCertificatesResult] = js.native
-    def modifyCurrentDBClusterCapacity(params: ModifyCurrentDBClusterCapacityMessage): Request[DBClusterCapacityInfo] =
-      js.native
+    def modifyCurrentDBClusterCapacity(params: ModifyCurrentDBClusterCapacityMessage): Request[DBClusterCapacityInfo] = js.native
     def modifyDBCluster(params: ModifyDBClusterMessage): Request[ModifyDBClusterResult] = js.native
     def modifyDBClusterEndpoint(params: ModifyDBClusterEndpointMessage): Request[DBClusterEndpoint] = js.native
-    def modifyDBClusterParameterGroup(
-        params: ModifyDBClusterParameterGroupMessage
-    ): Request[DBClusterParameterGroupNameMessage] = js.native
-    def modifyDBClusterSnapshotAttribute(
-        params: ModifyDBClusterSnapshotAttributeMessage
-    ): Request[ModifyDBClusterSnapshotAttributeResult] = js.native
+    def modifyDBClusterParameterGroup(params: ModifyDBClusterParameterGroupMessage): Request[DBClusterParameterGroupNameMessage] = js.native
+    def modifyDBClusterSnapshotAttribute(params: ModifyDBClusterSnapshotAttributeMessage): Request[ModifyDBClusterSnapshotAttributeResult] = js.native
     def modifyDBInstance(params: ModifyDBInstanceMessage): Request[ModifyDBInstanceResult] = js.native
     def modifyDBParameterGroup(params: ModifyDBParameterGroupMessage): Request[DBParameterGroupNameMessage] = js.native
     def modifyDBProxy(params: ModifyDBProxyRequest): Request[ModifyDBProxyResponse] = js.native
-    def modifyDBProxyTargetGroup(params: ModifyDBProxyTargetGroupRequest): Request[ModifyDBProxyTargetGroupResponse] =
-      js.native
+    def modifyDBProxyTargetGroup(params: ModifyDBProxyTargetGroupRequest): Request[ModifyDBProxyTargetGroupResponse] = js.native
     def modifyDBSnapshot(params: ModifyDBSnapshotMessage): Request[ModifyDBSnapshotResult] = js.native
-    def modifyDBSnapshotAttribute(params: ModifyDBSnapshotAttributeMessage): Request[ModifyDBSnapshotAttributeResult] =
-      js.native
+    def modifyDBSnapshotAttribute(params: ModifyDBSnapshotAttributeMessage): Request[ModifyDBSnapshotAttributeResult] = js.native
     def modifyDBSubnetGroup(params: ModifyDBSubnetGroupMessage): Request[ModifyDBSubnetGroupResult] = js.native
-    def modifyEventSubscription(params: ModifyEventSubscriptionMessage): Request[ModifyEventSubscriptionResult] =
-      js.native
+    def modifyEventSubscription(params: ModifyEventSubscriptionMessage): Request[ModifyEventSubscriptionResult] = js.native
     def modifyGlobalCluster(params: ModifyGlobalClusterMessage): Request[ModifyGlobalClusterResult] = js.native
     def modifyOptionGroup(params: ModifyOptionGroupMessage): Request[ModifyOptionGroupResult] = js.native
     def promoteReadReplica(params: PromoteReadReplicaMessage): Request[PromoteReadReplicaResult] = js.native
-    def promoteReadReplicaDBCluster(
-        params: PromoteReadReplicaDBClusterMessage
-    ): Request[PromoteReadReplicaDBClusterResult] = js.native
-    def purchaseReservedDBInstancesOffering(
-        params: PurchaseReservedDBInstancesOfferingMessage
-    ): Request[PurchaseReservedDBInstancesOfferingResult] = js.native
+    def promoteReadReplicaDBCluster(params: PromoteReadReplicaDBClusterMessage): Request[PromoteReadReplicaDBClusterResult] = js.native
+    def purchaseReservedDBInstancesOffering(params: PurchaseReservedDBInstancesOfferingMessage): Request[PurchaseReservedDBInstancesOfferingResult] = js.native
     def rebootDBInstance(params: RebootDBInstanceMessage): Request[RebootDBInstanceResult] = js.native
-    def registerDBProxyTargets(params: RegisterDBProxyTargetsRequest): Request[RegisterDBProxyTargetsResponse] =
-      js.native
-    def removeFromGlobalCluster(params: RemoveFromGlobalClusterMessage): Request[RemoveFromGlobalClusterResult] =
-      js.native
+    def registerDBProxyTargets(params: RegisterDBProxyTargetsRequest): Request[RegisterDBProxyTargetsResponse] = js.native
+    def removeFromGlobalCluster(params: RemoveFromGlobalClusterMessage): Request[RemoveFromGlobalClusterResult] = js.native
     def removeRoleFromDBCluster(params: RemoveRoleFromDBClusterMessage): Request[js.Object] = js.native
     def removeRoleFromDBInstance(params: RemoveRoleFromDBInstanceMessage): Request[js.Object] = js.native
-    def removeSourceIdentifierFromSubscription(
-        params: RemoveSourceIdentifierFromSubscriptionMessage
-    ): Request[RemoveSourceIdentifierFromSubscriptionResult] = js.native
+    def removeSourceIdentifierFromSubscription(params: RemoveSourceIdentifierFromSubscriptionMessage): Request[RemoveSourceIdentifierFromSubscriptionResult] = js.native
     def removeTagsFromResource(params: RemoveTagsFromResourceMessage): Request[js.Object] = js.native
-    def resetDBClusterParameterGroup(
-        params: ResetDBClusterParameterGroupMessage
-    ): Request[DBClusterParameterGroupNameMessage] = js.native
+    def resetDBClusterParameterGroup(params: ResetDBClusterParameterGroupMessage): Request[DBClusterParameterGroupNameMessage] = js.native
     def resetDBParameterGroup(params: ResetDBParameterGroupMessage): Request[DBParameterGroupNameMessage] = js.native
     def restoreDBClusterFromS3(params: RestoreDBClusterFromS3Message): Request[RestoreDBClusterFromS3Result] = js.native
-    def restoreDBClusterFromSnapshot(
-        params: RestoreDBClusterFromSnapshotMessage
-    ): Request[RestoreDBClusterFromSnapshotResult] = js.native
-    def restoreDBClusterToPointInTime(
-        params: RestoreDBClusterToPointInTimeMessage
-    ): Request[RestoreDBClusterToPointInTimeResult] = js.native
-    def restoreDBInstanceFromDBSnapshot(
-        params: RestoreDBInstanceFromDBSnapshotMessage
-    ): Request[RestoreDBInstanceFromDBSnapshotResult] = js.native
-    def restoreDBInstanceFromS3(params: RestoreDBInstanceFromS3Message): Request[RestoreDBInstanceFromS3Result] =
-      js.native
-    def restoreDBInstanceToPointInTime(
-        params: RestoreDBInstanceToPointInTimeMessage
-    ): Request[RestoreDBInstanceToPointInTimeResult] = js.native
-    def revokeDBSecurityGroupIngress(
-        params: RevokeDBSecurityGroupIngressMessage
-    ): Request[RevokeDBSecurityGroupIngressResult] = js.native
+    def restoreDBClusterFromSnapshot(params: RestoreDBClusterFromSnapshotMessage): Request[RestoreDBClusterFromSnapshotResult] = js.native
+    def restoreDBClusterToPointInTime(params: RestoreDBClusterToPointInTimeMessage): Request[RestoreDBClusterToPointInTimeResult] = js.native
+    def restoreDBInstanceFromDBSnapshot(params: RestoreDBInstanceFromDBSnapshotMessage): Request[RestoreDBInstanceFromDBSnapshotResult] = js.native
+    def restoreDBInstanceFromS3(params: RestoreDBInstanceFromS3Message): Request[RestoreDBInstanceFromS3Result] = js.native
+    def restoreDBInstanceToPointInTime(params: RestoreDBInstanceToPointInTimeMessage): Request[RestoreDBInstanceToPointInTimeResult] = js.native
+    def revokeDBSecurityGroupIngress(params: RevokeDBSecurityGroupIngressMessage): Request[RevokeDBSecurityGroupIngressResult] = js.native
     def startActivityStream(params: StartActivityStreamRequest): Request[StartActivityStreamResponse] = js.native
     def startDBCluster(params: StartDBClusterMessage): Request[StartDBClusterResult] = js.native
     def startDBInstance(params: StartDBInstanceMessage): Request[StartDBInstanceResult] = js.native
@@ -915,9 +623,7 @@ package rds {
         ResourcePendingMaintenanceActions: js.UndefOr[ResourcePendingMaintenanceActions] = js.undefined
     ): ApplyPendingMaintenanceActionResult = {
       val __obj = js.Dynamic.literal()
-      ResourcePendingMaintenanceActions.foreach(__v =>
-        __obj.updateDynamic("ResourcePendingMaintenanceActions")(__v.asInstanceOf[js.Any])
-      )
+      ResourcePendingMaintenanceActions.foreach(__v => __obj.updateDynamic("ResourcePendingMaintenanceActions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplyPendingMaintenanceActionResult]
     }
   }
@@ -1050,9 +756,7 @@ package rds {
       )
 
       Force.foreach(__v => __obj.updateDynamic("Force")(__v.asInstanceOf[js.Any]))
-      UseEarliestTimeOnPointInTimeUnavailable.foreach(__v =>
-        __obj.updateDynamic("UseEarliestTimeOnPointInTimeUnavailable")(__v.asInstanceOf[js.Any])
-      )
+      UseEarliestTimeOnPointInTimeUnavailable.foreach(__v => __obj.updateDynamic("UseEarliestTimeOnPointInTimeUnavailable")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BacktrackDBClusterMessage]
     }
   }
@@ -1107,9 +811,7 @@ package rds {
       CertificateIdentifier.foreach(__v => __obj.updateDynamic("CertificateIdentifier")(__v.asInstanceOf[js.Any]))
       CertificateType.foreach(__v => __obj.updateDynamic("CertificateType")(__v.asInstanceOf[js.Any]))
       CustomerOverride.foreach(__v => __obj.updateDynamic("CustomerOverride")(__v.asInstanceOf[js.Any]))
-      CustomerOverrideValidTill.foreach(__v =>
-        __obj.updateDynamic("CustomerOverrideValidTill")(__v.asInstanceOf[js.Any])
-      )
+      CustomerOverrideValidTill.foreach(__v => __obj.updateDynamic("CustomerOverrideValidTill")(__v.asInstanceOf[js.Any]))
       Thumbprint.foreach(__v => __obj.updateDynamic("Thumbprint")(__v.asInstanceOf[js.Any]))
       ValidFrom.foreach(__v => __obj.updateDynamic("ValidFrom")(__v.asInstanceOf[js.Any]))
       ValidTill.foreach(__v => __obj.updateDynamic("ValidTill")(__v.asInstanceOf[js.Any]))
@@ -1209,9 +911,7 @@ package rds {
       ConnectionBorrowTimeout.foreach(__v => __obj.updateDynamic("ConnectionBorrowTimeout")(__v.asInstanceOf[js.Any]))
       InitQuery.foreach(__v => __obj.updateDynamic("InitQuery")(__v.asInstanceOf[js.Any]))
       MaxConnectionsPercent.foreach(__v => __obj.updateDynamic("MaxConnectionsPercent")(__v.asInstanceOf[js.Any]))
-      MaxIdleConnectionsPercent.foreach(__v =>
-        __obj.updateDynamic("MaxIdleConnectionsPercent")(__v.asInstanceOf[js.Any])
-      )
+      MaxIdleConnectionsPercent.foreach(__v => __obj.updateDynamic("MaxIdleConnectionsPercent")(__v.asInstanceOf[js.Any]))
       SessionPinningFilters.foreach(__v => __obj.updateDynamic("SessionPinningFilters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConnectionPoolConfiguration]
     }
@@ -1242,9 +942,7 @@ package rds {
       ConnectionBorrowTimeout.foreach(__v => __obj.updateDynamic("ConnectionBorrowTimeout")(__v.asInstanceOf[js.Any]))
       InitQuery.foreach(__v => __obj.updateDynamic("InitQuery")(__v.asInstanceOf[js.Any]))
       MaxConnectionsPercent.foreach(__v => __obj.updateDynamic("MaxConnectionsPercent")(__v.asInstanceOf[js.Any]))
-      MaxIdleConnectionsPercent.foreach(__v =>
-        __obj.updateDynamic("MaxIdleConnectionsPercent")(__v.asInstanceOf[js.Any])
-      )
+      MaxIdleConnectionsPercent.foreach(__v => __obj.updateDynamic("MaxIdleConnectionsPercent")(__v.asInstanceOf[js.Any]))
       SessionPinningFilters.foreach(__v => __obj.updateDynamic("SessionPinningFilters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConnectionPoolConfigurationInfo]
     }
@@ -1666,24 +1364,16 @@ package rds {
       BackupRetentionPeriod.foreach(__v => __obj.updateDynamic("BackupRetentionPeriod")(__v.asInstanceOf[js.Any]))
       CharacterSetName.foreach(__v => __obj.updateDynamic("CharacterSetName")(__v.asInstanceOf[js.Any]))
       CopyTagsToSnapshot.foreach(__v => __obj.updateDynamic("CopyTagsToSnapshot")(__v.asInstanceOf[js.Any]))
-      DBClusterParameterGroupName.foreach(__v =>
-        __obj.updateDynamic("DBClusterParameterGroupName")(__v.asInstanceOf[js.Any])
-      )
+      DBClusterParameterGroupName.foreach(__v => __obj.updateDynamic("DBClusterParameterGroupName")(__v.asInstanceOf[js.Any]))
       DBSubnetGroupName.foreach(__v => __obj.updateDynamic("DBSubnetGroupName")(__v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       DomainIAMRoleName.foreach(__v => __obj.updateDynamic("DomainIAMRoleName")(__v.asInstanceOf[js.Any]))
-      EnableCloudwatchLogsExports.foreach(__v =>
-        __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any])
-      )
-      EnableGlobalWriteForwarding.foreach(__v =>
-        __obj.updateDynamic("EnableGlobalWriteForwarding")(__v.asInstanceOf[js.Any])
-      )
+      EnableCloudwatchLogsExports.foreach(__v => __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any]))
+      EnableGlobalWriteForwarding.foreach(__v => __obj.updateDynamic("EnableGlobalWriteForwarding")(__v.asInstanceOf[js.Any]))
       EnableHttpEndpoint.foreach(__v => __obj.updateDynamic("EnableHttpEndpoint")(__v.asInstanceOf[js.Any]))
-      EnableIAMDatabaseAuthentication.foreach(__v =>
-        __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any])
-      )
+      EnableIAMDatabaseAuthentication.foreach(__v => __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any]))
       EngineMode.foreach(__v => __obj.updateDynamic("EngineMode")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       GlobalClusterIdentifier.foreach(__v => __obj.updateDynamic("GlobalClusterIdentifier")(__v.asInstanceOf[js.Any]))
@@ -1694,12 +1384,8 @@ package rds {
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       PreSignedUrl.foreach(__v => __obj.updateDynamic("PreSignedUrl")(__v.asInstanceOf[js.Any]))
       PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
-      ReplicationSourceIdentifier.foreach(__v =>
-        __obj.updateDynamic("ReplicationSourceIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
+      ReplicationSourceIdentifier.foreach(__v => __obj.updateDynamic("ReplicationSourceIdentifier")(__v.asInstanceOf[js.Any]))
       ScalingConfiguration.foreach(__v => __obj.updateDynamic("ScalingConfiguration")(__v.asInstanceOf[js.Any]))
       SourceRegion.foreach(__v => __obj.updateDynamic("SourceRegion")(__v.asInstanceOf[js.Any]))
       StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
@@ -1937,15 +1623,9 @@ package rds {
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       DomainIAMRoleName.foreach(__v => __obj.updateDynamic("DomainIAMRoleName")(__v.asInstanceOf[js.Any]))
-      EnableCloudwatchLogsExports.foreach(__v =>
-        __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any])
-      )
-      EnableIAMDatabaseAuthentication.foreach(__v =>
-        __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any])
-      )
-      EnablePerformanceInsights.foreach(__v =>
-        __obj.updateDynamic("EnablePerformanceInsights")(__v.asInstanceOf[js.Any])
-      )
+      EnableCloudwatchLogsExports.foreach(__v => __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any]))
+      EnableIAMDatabaseAuthentication.foreach(__v => __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any]))
+      EnablePerformanceInsights.foreach(__v => __obj.updateDynamic("EnablePerformanceInsights")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
@@ -1957,17 +1637,11 @@ package rds {
       MonitoringRoleArn.foreach(__v => __obj.updateDynamic("MonitoringRoleArn")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
       OptionGroupName.foreach(__v => __obj.updateDynamic("OptionGroupName")(__v.asInstanceOf[js.Any]))
-      PerformanceInsightsKMSKeyId.foreach(__v =>
-        __obj.updateDynamic("PerformanceInsightsKMSKeyId")(__v.asInstanceOf[js.Any])
-      )
-      PerformanceInsightsRetentionPeriod.foreach(__v =>
-        __obj.updateDynamic("PerformanceInsightsRetentionPeriod")(__v.asInstanceOf[js.Any])
-      )
+      PerformanceInsightsKMSKeyId.foreach(__v => __obj.updateDynamic("PerformanceInsightsKMSKeyId")(__v.asInstanceOf[js.Any]))
+      PerformanceInsightsRetentionPeriod.foreach(__v => __obj.updateDynamic("PerformanceInsightsRetentionPeriod")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       ProcessorFeatures.foreach(__v => __obj.updateDynamic("ProcessorFeatures")(__v.asInstanceOf[js.Any]))
       PromotionTier.foreach(__v => __obj.updateDynamic("PromotionTier")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
@@ -2066,27 +1740,17 @@ package rds {
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       DomainIAMRoleName.foreach(__v => __obj.updateDynamic("DomainIAMRoleName")(__v.asInstanceOf[js.Any]))
-      EnableCloudwatchLogsExports.foreach(__v =>
-        __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any])
-      )
-      EnableIAMDatabaseAuthentication.foreach(__v =>
-        __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any])
-      )
-      EnablePerformanceInsights.foreach(__v =>
-        __obj.updateDynamic("EnablePerformanceInsights")(__v.asInstanceOf[js.Any])
-      )
+      EnableCloudwatchLogsExports.foreach(__v => __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any]))
+      EnableIAMDatabaseAuthentication.foreach(__v => __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any]))
+      EnablePerformanceInsights.foreach(__v => __obj.updateDynamic("EnablePerformanceInsights")(__v.asInstanceOf[js.Any]))
       Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       MonitoringInterval.foreach(__v => __obj.updateDynamic("MonitoringInterval")(__v.asInstanceOf[js.Any]))
       MonitoringRoleArn.foreach(__v => __obj.updateDynamic("MonitoringRoleArn")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
       OptionGroupName.foreach(__v => __obj.updateDynamic("OptionGroupName")(__v.asInstanceOf[js.Any]))
-      PerformanceInsightsKMSKeyId.foreach(__v =>
-        __obj.updateDynamic("PerformanceInsightsKMSKeyId")(__v.asInstanceOf[js.Any])
-      )
-      PerformanceInsightsRetentionPeriod.foreach(__v =>
-        __obj.updateDynamic("PerformanceInsightsRetentionPeriod")(__v.asInstanceOf[js.Any])
-      )
+      PerformanceInsightsKMSKeyId.foreach(__v => __obj.updateDynamic("PerformanceInsightsKMSKeyId")(__v.asInstanceOf[js.Any]))
+      PerformanceInsightsRetentionPeriod.foreach(__v => __obj.updateDynamic("PerformanceInsightsRetentionPeriod")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       PreSignedUrl.foreach(__v => __obj.updateDynamic("PreSignedUrl")(__v.asInstanceOf[js.Any]))
       ProcessorFeatures.foreach(__v => __obj.updateDynamic("ProcessorFeatures")(__v.asInstanceOf[js.Any]))
@@ -2094,9 +1758,7 @@ package rds {
       SourceRegion.foreach(__v => __obj.updateDynamic("SourceRegion")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      UseDefaultProcessorFeatures.foreach(__v =>
-        __obj.updateDynamic("UseDefaultProcessorFeatures")(__v.asInstanceOf[js.Any])
-      )
+      UseDefaultProcessorFeatures.foreach(__v => __obj.updateDynamic("UseDefaultProcessorFeatures")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDBInstanceReadReplicaMessage]
     }
@@ -2456,9 +2118,7 @@ package rds {
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       GlobalClusterIdentifier.foreach(__v => __obj.updateDynamic("GlobalClusterIdentifier")(__v.asInstanceOf[js.Any]))
-      SourceDBClusterIdentifier.foreach(__v =>
-        __obj.updateDynamic("SourceDBClusterIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      SourceDBClusterIdentifier.foreach(__v => __obj.updateDynamic("SourceDBClusterIdentifier")(__v.asInstanceOf[js.Any]))
       StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGlobalClusterMessage]
     }
@@ -2551,12 +2211,8 @@ package rds {
     ): CustomAvailabilityZone = {
       val __obj = js.Dynamic.literal()
       CustomAvailabilityZoneId.foreach(__v => __obj.updateDynamic("CustomAvailabilityZoneId")(__v.asInstanceOf[js.Any]))
-      CustomAvailabilityZoneName.foreach(__v =>
-        __obj.updateDynamic("CustomAvailabilityZoneName")(__v.asInstanceOf[js.Any])
-      )
-      CustomAvailabilityZoneStatus.foreach(__v =>
-        __obj.updateDynamic("CustomAvailabilityZoneStatus")(__v.asInstanceOf[js.Any])
-      )
+      CustomAvailabilityZoneName.foreach(__v => __obj.updateDynamic("CustomAvailabilityZoneName")(__v.asInstanceOf[js.Any]))
+      CustomAvailabilityZoneStatus.foreach(__v => __obj.updateDynamic("CustomAvailabilityZoneStatus")(__v.asInstanceOf[js.Any]))
       VpnDetails.foreach(__v => __obj.updateDynamic("VpnDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CustomAvailabilityZone]
     }
@@ -2702,18 +2358,14 @@ package rds {
         VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined
     ): DBCluster = {
       val __obj = js.Dynamic.literal()
-      ActivityStreamKinesisStreamName.foreach(__v =>
-        __obj.updateDynamic("ActivityStreamKinesisStreamName")(__v.asInstanceOf[js.Any])
-      )
+      ActivityStreamKinesisStreamName.foreach(__v => __obj.updateDynamic("ActivityStreamKinesisStreamName")(__v.asInstanceOf[js.Any]))
       ActivityStreamKmsKeyId.foreach(__v => __obj.updateDynamic("ActivityStreamKmsKeyId")(__v.asInstanceOf[js.Any]))
       ActivityStreamMode.foreach(__v => __obj.updateDynamic("ActivityStreamMode")(__v.asInstanceOf[js.Any]))
       ActivityStreamStatus.foreach(__v => __obj.updateDynamic("ActivityStreamStatus")(__v.asInstanceOf[js.Any]))
       AllocatedStorage.foreach(__v => __obj.updateDynamic("AllocatedStorage")(__v.asInstanceOf[js.Any]))
       AssociatedRoles.foreach(__v => __obj.updateDynamic("AssociatedRoles")(__v.asInstanceOf[js.Any]))
       AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
-      BacktrackConsumedChangeRecords.foreach(__v =>
-        __obj.updateDynamic("BacktrackConsumedChangeRecords")(__v.asInstanceOf[js.Any])
-      )
+      BacktrackConsumedChangeRecords.foreach(__v => __obj.updateDynamic("BacktrackConsumedChangeRecords")(__v.asInstanceOf[js.Any]))
       BacktrackWindow.foreach(__v => __obj.updateDynamic("BacktrackWindow")(__v.asInstanceOf[js.Any]))
       BackupRetentionPeriod.foreach(__v => __obj.updateDynamic("BackupRetentionPeriod")(__v.asInstanceOf[js.Any]))
       Capacity.foreach(__v => __obj.updateDynamic("Capacity")(__v.asInstanceOf[js.Any]))
@@ -2726,9 +2378,7 @@ package rds {
       DBClusterArn.foreach(__v => __obj.updateDynamic("DBClusterArn")(__v.asInstanceOf[js.Any]))
       DBClusterIdentifier.foreach(__v => __obj.updateDynamic("DBClusterIdentifier")(__v.asInstanceOf[js.Any]))
       DBClusterMembers.foreach(__v => __obj.updateDynamic("DBClusterMembers")(__v.asInstanceOf[js.Any]))
-      DBClusterOptionGroupMemberships.foreach(__v =>
-        __obj.updateDynamic("DBClusterOptionGroupMemberships")(__v.asInstanceOf[js.Any])
-      )
+      DBClusterOptionGroupMemberships.foreach(__v => __obj.updateDynamic("DBClusterOptionGroupMemberships")(__v.asInstanceOf[js.Any]))
       DBClusterParameterGroup.foreach(__v => __obj.updateDynamic("DBClusterParameterGroup")(__v.asInstanceOf[js.Any]))
       DBSubnetGroup.foreach(__v => __obj.updateDynamic("DBSubnetGroup")(__v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
@@ -2737,24 +2387,16 @@ package rds {
       DomainMemberships.foreach(__v => __obj.updateDynamic("DomainMemberships")(__v.asInstanceOf[js.Any]))
       EarliestBacktrackTime.foreach(__v => __obj.updateDynamic("EarliestBacktrackTime")(__v.asInstanceOf[js.Any]))
       EarliestRestorableTime.foreach(__v => __obj.updateDynamic("EarliestRestorableTime")(__v.asInstanceOf[js.Any]))
-      EnabledCloudwatchLogsExports.foreach(__v =>
-        __obj.updateDynamic("EnabledCloudwatchLogsExports")(__v.asInstanceOf[js.Any])
-      )
+      EnabledCloudwatchLogsExports.foreach(__v => __obj.updateDynamic("EnabledCloudwatchLogsExports")(__v.asInstanceOf[js.Any]))
       Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineMode.foreach(__v => __obj.updateDynamic("EngineMode")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
-      GlobalWriteForwardingRequested.foreach(__v =>
-        __obj.updateDynamic("GlobalWriteForwardingRequested")(__v.asInstanceOf[js.Any])
-      )
-      GlobalWriteForwardingStatus.foreach(__v =>
-        __obj.updateDynamic("GlobalWriteForwardingStatus")(__v.asInstanceOf[js.Any])
-      )
+      GlobalWriteForwardingRequested.foreach(__v => __obj.updateDynamic("GlobalWriteForwardingRequested")(__v.asInstanceOf[js.Any]))
+      GlobalWriteForwardingStatus.foreach(__v => __obj.updateDynamic("GlobalWriteForwardingStatus")(__v.asInstanceOf[js.Any]))
       HostedZoneId.foreach(__v => __obj.updateDynamic("HostedZoneId")(__v.asInstanceOf[js.Any]))
       HttpEndpointEnabled.foreach(__v => __obj.updateDynamic("HttpEndpointEnabled")(__v.asInstanceOf[js.Any]))
-      IAMDatabaseAuthenticationEnabled.foreach(__v =>
-        __obj.updateDynamic("IAMDatabaseAuthenticationEnabled")(__v.asInstanceOf[js.Any])
-      )
+      IAMDatabaseAuthenticationEnabled.foreach(__v => __obj.updateDynamic("IAMDatabaseAuthenticationEnabled")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       LatestRestorableTime.foreach(__v => __obj.updateDynamic("LatestRestorableTime")(__v.asInstanceOf[js.Any]))
       MasterUsername.foreach(__v => __obj.updateDynamic("MasterUsername")(__v.asInstanceOf[js.Any]))
@@ -2762,14 +2404,10 @@ package rds {
       PercentProgress.foreach(__v => __obj.updateDynamic("PercentProgress")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       ReadReplicaIdentifiers.foreach(__v => __obj.updateDynamic("ReadReplicaIdentifiers")(__v.asInstanceOf[js.Any]))
       ReaderEndpoint.foreach(__v => __obj.updateDynamic("ReaderEndpoint")(__v.asInstanceOf[js.Any]))
-      ReplicationSourceIdentifier.foreach(__v =>
-        __obj.updateDynamic("ReplicationSourceIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      ReplicationSourceIdentifier.foreach(__v => __obj.updateDynamic("ReplicationSourceIdentifier")(__v.asInstanceOf[js.Any]))
       ScalingConfigurationInfo.foreach(__v => __obj.updateDynamic("ScalingConfigurationInfo")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
@@ -2803,9 +2441,7 @@ package rds {
     ): DBClusterBacktrack = {
       val __obj = js.Dynamic.literal()
       BacktrackIdentifier.foreach(__v => __obj.updateDynamic("BacktrackIdentifier")(__v.asInstanceOf[js.Any]))
-      BacktrackRequestCreationTime.foreach(__v =>
-        __obj.updateDynamic("BacktrackRequestCreationTime")(__v.asInstanceOf[js.Any])
-      )
+      BacktrackRequestCreationTime.foreach(__v => __obj.updateDynamic("BacktrackRequestCreationTime")(__v.asInstanceOf[js.Any]))
       BacktrackTo.foreach(__v => __obj.updateDynamic("BacktrackTo")(__v.asInstanceOf[js.Any]))
       BacktrackedFrom.foreach(__v => __obj.updateDynamic("BacktrackedFrom")(__v.asInstanceOf[js.Any]))
       DBClusterIdentifier.foreach(__v => __obj.updateDynamic("DBClusterIdentifier")(__v.asInstanceOf[js.Any]))
@@ -2903,12 +2539,8 @@ package rds {
       val __obj = js.Dynamic.literal()
       CustomEndpointType.foreach(__v => __obj.updateDynamic("CustomEndpointType")(__v.asInstanceOf[js.Any]))
       DBClusterEndpointArn.foreach(__v => __obj.updateDynamic("DBClusterEndpointArn")(__v.asInstanceOf[js.Any]))
-      DBClusterEndpointIdentifier.foreach(__v =>
-        __obj.updateDynamic("DBClusterEndpointIdentifier")(__v.asInstanceOf[js.Any])
-      )
-      DBClusterEndpointResourceIdentifier.foreach(__v =>
-        __obj.updateDynamic("DBClusterEndpointResourceIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      DBClusterEndpointIdentifier.foreach(__v => __obj.updateDynamic("DBClusterEndpointIdentifier")(__v.asInstanceOf[js.Any]))
+      DBClusterEndpointResourceIdentifier.foreach(__v => __obj.updateDynamic("DBClusterEndpointResourceIdentifier")(__v.asInstanceOf[js.Any]))
       DBClusterIdentifier.foreach(__v => __obj.updateDynamic("DBClusterIdentifier")(__v.asInstanceOf[js.Any]))
       Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
       EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
@@ -2958,9 +2590,7 @@ package rds {
         PromotionTier: js.UndefOr[IntegerOptional] = js.undefined
     ): DBClusterMember = {
       val __obj = js.Dynamic.literal()
-      DBClusterParameterGroupStatus.foreach(__v =>
-        __obj.updateDynamic("DBClusterParameterGroupStatus")(__v.asInstanceOf[js.Any])
-      )
+      DBClusterParameterGroupStatus.foreach(__v => __obj.updateDynamic("DBClusterParameterGroupStatus")(__v.asInstanceOf[js.Any]))
       DBInstanceIdentifier.foreach(__v => __obj.updateDynamic("DBInstanceIdentifier")(__v.asInstanceOf[js.Any]))
       IsClusterWriter.foreach(__v => __obj.updateDynamic("IsClusterWriter")(__v.asInstanceOf[js.Any]))
       PromotionTier.foreach(__v => __obj.updateDynamic("PromotionTier")(__v.asInstanceOf[js.Any]))
@@ -3033,12 +2663,8 @@ package rds {
         Description: js.UndefOr[String] = js.undefined
     ): DBClusterParameterGroup = {
       val __obj = js.Dynamic.literal()
-      DBClusterParameterGroupArn.foreach(__v =>
-        __obj.updateDynamic("DBClusterParameterGroupArn")(__v.asInstanceOf[js.Any])
-      )
-      DBClusterParameterGroupName.foreach(__v =>
-        __obj.updateDynamic("DBClusterParameterGroupName")(__v.asInstanceOf[js.Any])
-      )
+      DBClusterParameterGroupArn.foreach(__v => __obj.updateDynamic("DBClusterParameterGroupArn")(__v.asInstanceOf[js.Any]))
+      DBClusterParameterGroupName.foreach(__v => __obj.updateDynamic("DBClusterParameterGroupName")(__v.asInstanceOf[js.Any]))
       DBParameterGroupFamily.foreach(__v => __obj.updateDynamic("DBParameterGroupFamily")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBClusterParameterGroup]
@@ -3081,9 +2707,7 @@ package rds {
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined
     ): DBClusterParameterGroupNameMessage = {
       val __obj = js.Dynamic.literal()
-      DBClusterParameterGroupName.foreach(__v =>
-        __obj.updateDynamic("DBClusterParameterGroupName")(__v.asInstanceOf[js.Any])
-      )
+      DBClusterParameterGroupName.foreach(__v => __obj.updateDynamic("DBClusterParameterGroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBClusterParameterGroupNameMessage]
     }
   }
@@ -3193,14 +2817,10 @@ package rds {
       ClusterCreateTime.foreach(__v => __obj.updateDynamic("ClusterCreateTime")(__v.asInstanceOf[js.Any]))
       DBClusterIdentifier.foreach(__v => __obj.updateDynamic("DBClusterIdentifier")(__v.asInstanceOf[js.Any]))
       DBClusterSnapshotArn.foreach(__v => __obj.updateDynamic("DBClusterSnapshotArn")(__v.asInstanceOf[js.Any]))
-      DBClusterSnapshotIdentifier.foreach(__v =>
-        __obj.updateDynamic("DBClusterSnapshotIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      DBClusterSnapshotIdentifier.foreach(__v => __obj.updateDynamic("DBClusterSnapshotIdentifier")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
-      IAMDatabaseAuthenticationEnabled.foreach(__v =>
-        __obj.updateDynamic("IAMDatabaseAuthenticationEnabled")(__v.asInstanceOf[js.Any])
-      )
+      IAMDatabaseAuthenticationEnabled.foreach(__v => __obj.updateDynamic("IAMDatabaseAuthenticationEnabled")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       LicenseModel.foreach(__v => __obj.updateDynamic("LicenseModel")(__v.asInstanceOf[js.Any]))
       MasterUsername.foreach(__v => __obj.updateDynamic("MasterUsername")(__v.asInstanceOf[js.Any]))
@@ -3208,9 +2828,7 @@ package rds {
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       SnapshotCreateTime.foreach(__v => __obj.updateDynamic("SnapshotCreateTime")(__v.asInstanceOf[js.Any]))
       SnapshotType.foreach(__v => __obj.updateDynamic("SnapshotType")(__v.asInstanceOf[js.Any]))
-      SourceDBClusterSnapshotArn.foreach(__v =>
-        __obj.updateDynamic("SourceDBClusterSnapshotArn")(__v.asInstanceOf[js.Any])
-      )
+      SourceDBClusterSnapshotArn.foreach(__v => __obj.updateDynamic("SourceDBClusterSnapshotArn")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
@@ -3258,12 +2876,8 @@ package rds {
         DBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined
     ): DBClusterSnapshotAttributesResult = {
       val __obj = js.Dynamic.literal()
-      DBClusterSnapshotAttributes.foreach(__v =>
-        __obj.updateDynamic("DBClusterSnapshotAttributes")(__v.asInstanceOf[js.Any])
-      )
-      DBClusterSnapshotIdentifier.foreach(__v =>
-        __obj.updateDynamic("DBClusterSnapshotIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      DBClusterSnapshotAttributes.foreach(__v => __obj.updateDynamic("DBClusterSnapshotAttributes")(__v.asInstanceOf[js.Any]))
+      DBClusterSnapshotIdentifier.foreach(__v => __obj.updateDynamic("DBClusterSnapshotIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBClusterSnapshotAttributesResult]
     }
   }
@@ -3337,9 +2951,7 @@ package rds {
     ): DBEngineVersion = {
       val __obj = js.Dynamic.literal()
       DBEngineDescription.foreach(__v => __obj.updateDynamic("DBEngineDescription")(__v.asInstanceOf[js.Any]))
-      DBEngineVersionDescription.foreach(__v =>
-        __obj.updateDynamic("DBEngineVersionDescription")(__v.asInstanceOf[js.Any])
-      )
+      DBEngineVersionDescription.foreach(__v => __obj.updateDynamic("DBEngineVersionDescription")(__v.asInstanceOf[js.Any]))
       DBParameterGroupFamily.foreach(__v => __obj.updateDynamic("DBParameterGroupFamily")(__v.asInstanceOf[js.Any]))
       DefaultCharacterSet.foreach(__v => __obj.updateDynamic("DefaultCharacterSet")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
@@ -3351,9 +2963,7 @@ package rds {
       SupportedFeatureNames.foreach(__v => __obj.updateDynamic("SupportedFeatureNames")(__v.asInstanceOf[js.Any]))
       SupportedTimezones.foreach(__v => __obj.updateDynamic("SupportedTimezones")(__v.asInstanceOf[js.Any]))
       SupportsGlobalDatabases.foreach(__v => __obj.updateDynamic("SupportsGlobalDatabases")(__v.asInstanceOf[js.Any]))
-      SupportsLogExportsToCloudwatchLogs.foreach(__v =>
-        __obj.updateDynamic("SupportsLogExportsToCloudwatchLogs")(__v.asInstanceOf[js.Any])
-      )
+      SupportsLogExportsToCloudwatchLogs.foreach(__v => __obj.updateDynamic("SupportsLogExportsToCloudwatchLogs")(__v.asInstanceOf[js.Any]))
       SupportsParallelQuery.foreach(__v => __obj.updateDynamic("SupportsParallelQuery")(__v.asInstanceOf[js.Any]))
       SupportsReadReplica.foreach(__v => __obj.updateDynamic("SupportsReadReplica")(__v.asInstanceOf[js.Any]))
       ValidUpgradeTarget.foreach(__v => __obj.updateDynamic("ValidUpgradeTarget")(__v.asInstanceOf[js.Any]))
@@ -3533,18 +3143,12 @@ package rds {
       DbiResourceId.foreach(__v => __obj.updateDynamic("DbiResourceId")(__v.asInstanceOf[js.Any]))
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       DomainMemberships.foreach(__v => __obj.updateDynamic("DomainMemberships")(__v.asInstanceOf[js.Any]))
-      EnabledCloudwatchLogsExports.foreach(__v =>
-        __obj.updateDynamic("EnabledCloudwatchLogsExports")(__v.asInstanceOf[js.Any])
-      )
+      EnabledCloudwatchLogsExports.foreach(__v => __obj.updateDynamic("EnabledCloudwatchLogsExports")(__v.asInstanceOf[js.Any]))
       Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
-      EnhancedMonitoringResourceArn.foreach(__v =>
-        __obj.updateDynamic("EnhancedMonitoringResourceArn")(__v.asInstanceOf[js.Any])
-      )
-      IAMDatabaseAuthenticationEnabled.foreach(__v =>
-        __obj.updateDynamic("IAMDatabaseAuthenticationEnabled")(__v.asInstanceOf[js.Any])
-      )
+      EnhancedMonitoringResourceArn.foreach(__v => __obj.updateDynamic("EnhancedMonitoringResourceArn")(__v.asInstanceOf[js.Any]))
+      IAMDatabaseAuthenticationEnabled.foreach(__v => __obj.updateDynamic("IAMDatabaseAuthenticationEnabled")(__v.asInstanceOf[js.Any]))
       InstanceCreateTime.foreach(__v => __obj.updateDynamic("InstanceCreateTime")(__v.asInstanceOf[js.Any]))
       Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
@@ -3558,34 +3162,18 @@ package rds {
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
       OptionGroupMemberships.foreach(__v => __obj.updateDynamic("OptionGroupMemberships")(__v.asInstanceOf[js.Any]))
       PendingModifiedValues.foreach(__v => __obj.updateDynamic("PendingModifiedValues")(__v.asInstanceOf[js.Any]))
-      PerformanceInsightsEnabled.foreach(__v =>
-        __obj.updateDynamic("PerformanceInsightsEnabled")(__v.asInstanceOf[js.Any])
-      )
-      PerformanceInsightsKMSKeyId.foreach(__v =>
-        __obj.updateDynamic("PerformanceInsightsKMSKeyId")(__v.asInstanceOf[js.Any])
-      )
-      PerformanceInsightsRetentionPeriod.foreach(__v =>
-        __obj.updateDynamic("PerformanceInsightsRetentionPeriod")(__v.asInstanceOf[js.Any])
-      )
+      PerformanceInsightsEnabled.foreach(__v => __obj.updateDynamic("PerformanceInsightsEnabled")(__v.asInstanceOf[js.Any]))
+      PerformanceInsightsKMSKeyId.foreach(__v => __obj.updateDynamic("PerformanceInsightsKMSKeyId")(__v.asInstanceOf[js.Any]))
+      PerformanceInsightsRetentionPeriod.foreach(__v => __obj.updateDynamic("PerformanceInsightsRetentionPeriod")(__v.asInstanceOf[js.Any]))
       PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       ProcessorFeatures.foreach(__v => __obj.updateDynamic("ProcessorFeatures")(__v.asInstanceOf[js.Any]))
       PromotionTier.foreach(__v => __obj.updateDynamic("PromotionTier")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
-      ReadReplicaDBClusterIdentifiers.foreach(__v =>
-        __obj.updateDynamic("ReadReplicaDBClusterIdentifiers")(__v.asInstanceOf[js.Any])
-      )
-      ReadReplicaDBInstanceIdentifiers.foreach(__v =>
-        __obj.updateDynamic("ReadReplicaDBInstanceIdentifiers")(__v.asInstanceOf[js.Any])
-      )
-      ReadReplicaSourceDBInstanceIdentifier.foreach(__v =>
-        __obj.updateDynamic("ReadReplicaSourceDBInstanceIdentifier")(__v.asInstanceOf[js.Any])
-      )
-      SecondaryAvailabilityZone.foreach(__v =>
-        __obj.updateDynamic("SecondaryAvailabilityZone")(__v.asInstanceOf[js.Any])
-      )
+      ReadReplicaDBClusterIdentifiers.foreach(__v => __obj.updateDynamic("ReadReplicaDBClusterIdentifiers")(__v.asInstanceOf[js.Any]))
+      ReadReplicaDBInstanceIdentifiers.foreach(__v => __obj.updateDynamic("ReadReplicaDBInstanceIdentifiers")(__v.asInstanceOf[js.Any]))
+      ReadReplicaSourceDBInstanceIdentifier.foreach(__v => __obj.updateDynamic("ReadReplicaSourceDBInstanceIdentifier")(__v.asInstanceOf[js.Any]))
+      SecondaryAvailabilityZone.foreach(__v => __obj.updateDynamic("SecondaryAvailabilityZone")(__v.asInstanceOf[js.Any]))
       StatusInfos.foreach(__v => __obj.updateDynamic("StatusInfos")(__v.asInstanceOf[js.Any]))
       StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
@@ -3662,9 +3250,7 @@ package rds {
       Encrypted.foreach(__v => __obj.updateDynamic("Encrypted")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
-      IAMDatabaseAuthenticationEnabled.foreach(__v =>
-        __obj.updateDynamic("IAMDatabaseAuthenticationEnabled")(__v.asInstanceOf[js.Any])
-      )
+      IAMDatabaseAuthenticationEnabled.foreach(__v => __obj.updateDynamic("IAMDatabaseAuthenticationEnabled")(__v.asInstanceOf[js.Any]))
       InstanceCreateTime.foreach(__v => __obj.updateDynamic("InstanceCreateTime")(__v.asInstanceOf[js.Any]))
       Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
@@ -3699,9 +3285,7 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined
     ): DBInstanceAutomatedBackupMessage = {
       val __obj = js.Dynamic.literal()
-      DBInstanceAutomatedBackups.foreach(__v =>
-        __obj.updateDynamic("DBInstanceAutomatedBackups")(__v.asInstanceOf[js.Any])
-      )
+      DBInstanceAutomatedBackups.foreach(__v => __obj.updateDynamic("DBInstanceAutomatedBackups")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBInstanceAutomatedBackupMessage]
     }
@@ -3975,19 +3559,7 @@ package rds {
     val suspending = "suspending".asInstanceOf[DBProxyStatus]
     val reactivating = "reactivating".asInstanceOf[DBProxyStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        available,
-        modifying,
-        `incompatible-network`,
-        `insufficient-resource-limits`,
-        creating,
-        deleting,
-        suspended,
-        suspending,
-        reactivating
-      )
-    )
+    val values = js.Object.freeze(js.Array(available, modifying, `incompatible-network`, `insufficient-resource-limits`, creating, deleting, suspended, suspending, reactivating))
   }
 
   /**
@@ -4097,9 +3669,7 @@ package rds {
     ): DBSecurityGroup = {
       val __obj = js.Dynamic.literal()
       DBSecurityGroupArn.foreach(__v => __obj.updateDynamic("DBSecurityGroupArn")(__v.asInstanceOf[js.Any]))
-      DBSecurityGroupDescription.foreach(__v =>
-        __obj.updateDynamic("DBSecurityGroupDescription")(__v.asInstanceOf[js.Any])
-      )
+      DBSecurityGroupDescription.foreach(__v => __obj.updateDynamic("DBSecurityGroupDescription")(__v.asInstanceOf[js.Any]))
       DBSecurityGroupName.foreach(__v => __obj.updateDynamic("DBSecurityGroupName")(__v.asInstanceOf[js.Any]))
       EC2SecurityGroups.foreach(__v => __obj.updateDynamic("EC2SecurityGroups")(__v.asInstanceOf[js.Any]))
       IPRanges.foreach(__v => __obj.updateDynamic("IPRanges")(__v.asInstanceOf[js.Any]))
@@ -4235,9 +3805,7 @@ package rds {
       Encrypted.foreach(__v => __obj.updateDynamic("Encrypted")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
-      IAMDatabaseAuthenticationEnabled.foreach(__v =>
-        __obj.updateDynamic("IAMDatabaseAuthenticationEnabled")(__v.asInstanceOf[js.Any])
-      )
+      IAMDatabaseAuthenticationEnabled.foreach(__v => __obj.updateDynamic("IAMDatabaseAuthenticationEnabled")(__v.asInstanceOf[js.Any]))
       InstanceCreateTime.foreach(__v => __obj.updateDynamic("InstanceCreateTime")(__v.asInstanceOf[js.Any]))
       Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
@@ -4249,9 +3817,7 @@ package rds {
       ProcessorFeatures.foreach(__v => __obj.updateDynamic("ProcessorFeatures")(__v.asInstanceOf[js.Any]))
       SnapshotCreateTime.foreach(__v => __obj.updateDynamic("SnapshotCreateTime")(__v.asInstanceOf[js.Any]))
       SnapshotType.foreach(__v => __obj.updateDynamic("SnapshotType")(__v.asInstanceOf[js.Any]))
-      SourceDBSnapshotIdentifier.foreach(__v =>
-        __obj.updateDynamic("SourceDBSnapshotIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      SourceDBSnapshotIdentifier.foreach(__v => __obj.updateDynamic("SourceDBSnapshotIdentifier")(__v.asInstanceOf[js.Any]))
       SourceRegion.foreach(__v => __obj.updateDynamic("SourceRegion")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
@@ -4460,9 +4026,7 @@ package rds {
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
       )
 
-      FinalDBSnapshotIdentifier.foreach(__v =>
-        __obj.updateDynamic("FinalDBSnapshotIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      FinalDBSnapshotIdentifier.foreach(__v => __obj.updateDynamic("FinalDBSnapshotIdentifier")(__v.asInstanceOf[js.Any]))
       SkipFinalSnapshot.foreach(__v => __obj.updateDynamic("SkipFinalSnapshot")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDBClusterMessage]
     }
@@ -4574,9 +4138,7 @@ package rds {
         DBInstanceAutomatedBackup: js.UndefOr[DBInstanceAutomatedBackup] = js.undefined
     ): DeleteDBInstanceAutomatedBackupResult = {
       val __obj = js.Dynamic.literal()
-      DBInstanceAutomatedBackup.foreach(__v =>
-        __obj.updateDynamic("DBInstanceAutomatedBackup")(__v.asInstanceOf[js.Any])
-      )
+      DBInstanceAutomatedBackup.foreach(__v => __obj.updateDynamic("DBInstanceAutomatedBackup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDBInstanceAutomatedBackupResult]
     }
   }
@@ -4605,9 +4167,7 @@ package rds {
       )
 
       DeleteAutomatedBackups.foreach(__v => __obj.updateDynamic("DeleteAutomatedBackups")(__v.asInstanceOf[js.Any]))
-      FinalDBSnapshotIdentifier.foreach(__v =>
-        __obj.updateDynamic("FinalDBSnapshotIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      FinalDBSnapshotIdentifier.foreach(__v => __obj.updateDynamic("FinalDBSnapshotIdentifier")(__v.asInstanceOf[js.Any]))
       SkipFinalSnapshot.foreach(__v => __obj.updateDynamic("SkipFinalSnapshot")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDBInstanceMessage]
     }
@@ -5034,9 +4594,7 @@ package rds {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeDBClusterEndpointsMessage = {
       val __obj = js.Dynamic.literal()
-      DBClusterEndpointIdentifier.foreach(__v =>
-        __obj.updateDynamic("DBClusterEndpointIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      DBClusterEndpointIdentifier.foreach(__v => __obj.updateDynamic("DBClusterEndpointIdentifier")(__v.asInstanceOf[js.Any]))
       DBClusterIdentifier.foreach(__v => __obj.updateDynamic("DBClusterIdentifier")(__v.asInstanceOf[js.Any]))
       Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
@@ -5065,9 +4623,7 @@ package rds {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeDBClusterParameterGroupsMessage = {
       val __obj = js.Dynamic.literal()
-      DBClusterParameterGroupName.foreach(__v =>
-        __obj.updateDynamic("DBClusterParameterGroupName")(__v.asInstanceOf[js.Any])
-      )
+      DBClusterParameterGroupName.foreach(__v => __obj.updateDynamic("DBClusterParameterGroupName")(__v.asInstanceOf[js.Any]))
       Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
@@ -5140,9 +4696,7 @@ package rds {
         DBClusterSnapshotAttributesResult: js.UndefOr[DBClusterSnapshotAttributesResult] = js.undefined
     ): DescribeDBClusterSnapshotAttributesResult = {
       val __obj = js.Dynamic.literal()
-      DBClusterSnapshotAttributesResult.foreach(__v =>
-        __obj.updateDynamic("DBClusterSnapshotAttributesResult")(__v.asInstanceOf[js.Any])
-      )
+      DBClusterSnapshotAttributesResult.foreach(__v => __obj.updateDynamic("DBClusterSnapshotAttributesResult")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDBClusterSnapshotAttributesResult]
     }
   }
@@ -5176,9 +4730,7 @@ package rds {
     ): DescribeDBClusterSnapshotsMessage = {
       val __obj = js.Dynamic.literal()
       DBClusterIdentifier.foreach(__v => __obj.updateDynamic("DBClusterIdentifier")(__v.asInstanceOf[js.Any]))
-      DBClusterSnapshotIdentifier.foreach(__v =>
-        __obj.updateDynamic("DBClusterSnapshotIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      DBClusterSnapshotIdentifier.foreach(__v => __obj.updateDynamic("DBClusterSnapshotIdentifier")(__v.asInstanceOf[js.Any]))
       Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       IncludePublic.foreach(__v => __obj.updateDynamic("IncludePublic")(__v.asInstanceOf[js.Any]))
       IncludeShared.foreach(__v => __obj.updateDynamic("IncludeShared")(__v.asInstanceOf[js.Any]))
@@ -5255,9 +4807,7 @@ package rds {
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       IncludeAll.foreach(__v => __obj.updateDynamic("IncludeAll")(__v.asInstanceOf[js.Any]))
-      ListSupportedCharacterSets.foreach(__v =>
-        __obj.updateDynamic("ListSupportedCharacterSets")(__v.asInstanceOf[js.Any])
-      )
+      ListSupportedCharacterSets.foreach(__v => __obj.updateDynamic("ListSupportedCharacterSets")(__v.asInstanceOf[js.Any]))
       ListSupportedTimezones.foreach(__v => __obj.updateDynamic("ListSupportedTimezones")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
@@ -5670,9 +5220,7 @@ package rds {
         DBSnapshotAttributesResult: js.UndefOr[DBSnapshotAttributesResult] = js.undefined
     ): DescribeDBSnapshotAttributesResult = {
       val __obj = js.Dynamic.literal()
-      DBSnapshotAttributesResult.foreach(__v =>
-        __obj.updateDynamic("DBSnapshotAttributesResult")(__v.asInstanceOf[js.Any])
-      )
+      DBSnapshotAttributesResult.foreach(__v => __obj.updateDynamic("DBSnapshotAttributesResult")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDBSnapshotAttributesResult]
     }
   }
@@ -6195,9 +5743,7 @@ package rds {
       OfferingType.foreach(__v => __obj.updateDynamic("OfferingType")(__v.asInstanceOf[js.Any]))
       ProductDescription.foreach(__v => __obj.updateDynamic("ProductDescription")(__v.asInstanceOf[js.Any]))
       ReservedDBInstanceId.foreach(__v => __obj.updateDynamic("ReservedDBInstanceId")(__v.asInstanceOf[js.Any]))
-      ReservedDBInstancesOfferingId.foreach(__v =>
-        __obj.updateDynamic("ReservedDBInstancesOfferingId")(__v.asInstanceOf[js.Any])
-      )
+      ReservedDBInstancesOfferingId.foreach(__v => __obj.updateDynamic("ReservedDBInstancesOfferingId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeReservedDBInstancesMessage]
     }
   }
@@ -6240,9 +5786,7 @@ package rds {
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
       OfferingType.foreach(__v => __obj.updateDynamic("OfferingType")(__v.asInstanceOf[js.Any]))
       ProductDescription.foreach(__v => __obj.updateDynamic("ProductDescription")(__v.asInstanceOf[js.Any]))
-      ReservedDBInstancesOfferingId.foreach(__v =>
-        __obj.updateDynamic("ReservedDBInstancesOfferingId")(__v.asInstanceOf[js.Any])
-      )
+      ReservedDBInstancesOfferingId.foreach(__v => __obj.updateDynamic("ReservedDBInstancesOfferingId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeReservedDBInstancesOfferingsMessage]
     }
   }
@@ -6307,9 +5851,7 @@ package rds {
         ValidDBInstanceModificationsMessage: js.UndefOr[ValidDBInstanceModificationsMessage] = js.undefined
     ): DescribeValidDBInstanceModificationsResult = {
       val __obj = js.Dynamic.literal()
-      ValidDBInstanceModificationsMessage.foreach(__v =>
-        __obj.updateDynamic("ValidDBInstanceModificationsMessage")(__v.asInstanceOf[js.Any])
-      )
+      ValidDBInstanceModificationsMessage.foreach(__v => __obj.updateDynamic("ValidDBInstanceModificationsMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeValidDBInstanceModificationsResult]
     }
   }
@@ -6778,9 +6320,7 @@ package rds {
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
       )
 
-      TargetDBInstanceIdentifier.foreach(__v =>
-        __obj.updateDynamic("TargetDBInstanceIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      TargetDBInstanceIdentifier.foreach(__v => __obj.updateDynamic("TargetDBInstanceIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FailoverDBClusterMessage]
     }
   }
@@ -6900,9 +6440,7 @@ package rds {
     ): GlobalClusterMember = {
       val __obj = js.Dynamic.literal()
       DBClusterArn.foreach(__v => __obj.updateDynamic("DBClusterArn")(__v.asInstanceOf[js.Any]))
-      GlobalWriteForwardingStatus.foreach(__v =>
-        __obj.updateDynamic("GlobalWriteForwardingStatus")(__v.asInstanceOf[js.Any])
-      )
+      GlobalWriteForwardingStatus.foreach(__v => __obj.updateDynamic("GlobalWriteForwardingStatus")(__v.asInstanceOf[js.Any]))
       IsWriter.foreach(__v => __obj.updateDynamic("IsWriter")(__v.asInstanceOf[js.Any]))
       Readers.foreach(__v => __obj.updateDynamic("Readers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GlobalClusterMember]
@@ -7019,9 +6557,7 @@ package rds {
       val __obj = js.Dynamic.literal()
       CustomAvailabilityZoneId.foreach(__v => __obj.updateDynamic("CustomAvailabilityZoneId")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
-      EngineInstallationMediaPath.foreach(__v =>
-        __obj.updateDynamic("EngineInstallationMediaPath")(__v.asInstanceOf[js.Any])
-      )
+      EngineInstallationMediaPath.foreach(__v => __obj.updateDynamic("EngineInstallationMediaPath")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       FailureCause.foreach(__v => __obj.updateDynamic("FailureCause")(__v.asInstanceOf[js.Any]))
       InstallationMediaId.foreach(__v => __obj.updateDynamic("InstallationMediaId")(__v.asInstanceOf[js.Any]))
@@ -7271,35 +6807,23 @@ package rds {
       ApplyImmediately.foreach(__v => __obj.updateDynamic("ApplyImmediately")(__v.asInstanceOf[js.Any]))
       BacktrackWindow.foreach(__v => __obj.updateDynamic("BacktrackWindow")(__v.asInstanceOf[js.Any]))
       BackupRetentionPeriod.foreach(__v => __obj.updateDynamic("BackupRetentionPeriod")(__v.asInstanceOf[js.Any]))
-      CloudwatchLogsExportConfiguration.foreach(__v =>
-        __obj.updateDynamic("CloudwatchLogsExportConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      CloudwatchLogsExportConfiguration.foreach(__v => __obj.updateDynamic("CloudwatchLogsExportConfiguration")(__v.asInstanceOf[js.Any]))
       CopyTagsToSnapshot.foreach(__v => __obj.updateDynamic("CopyTagsToSnapshot")(__v.asInstanceOf[js.Any]))
-      DBClusterParameterGroupName.foreach(__v =>
-        __obj.updateDynamic("DBClusterParameterGroupName")(__v.asInstanceOf[js.Any])
-      )
-      DBInstanceParameterGroupName.foreach(__v =>
-        __obj.updateDynamic("DBInstanceParameterGroupName")(__v.asInstanceOf[js.Any])
-      )
+      DBClusterParameterGroupName.foreach(__v => __obj.updateDynamic("DBClusterParameterGroupName")(__v.asInstanceOf[js.Any]))
+      DBInstanceParameterGroupName.foreach(__v => __obj.updateDynamic("DBInstanceParameterGroupName")(__v.asInstanceOf[js.Any]))
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       DomainIAMRoleName.foreach(__v => __obj.updateDynamic("DomainIAMRoleName")(__v.asInstanceOf[js.Any]))
-      EnableGlobalWriteForwarding.foreach(__v =>
-        __obj.updateDynamic("EnableGlobalWriteForwarding")(__v.asInstanceOf[js.Any])
-      )
+      EnableGlobalWriteForwarding.foreach(__v => __obj.updateDynamic("EnableGlobalWriteForwarding")(__v.asInstanceOf[js.Any]))
       EnableHttpEndpoint.foreach(__v => __obj.updateDynamic("EnableHttpEndpoint")(__v.asInstanceOf[js.Any]))
-      EnableIAMDatabaseAuthentication.foreach(__v =>
-        __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any])
-      )
+      EnableIAMDatabaseAuthentication.foreach(__v => __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       MasterUserPassword.foreach(__v => __obj.updateDynamic("MasterUserPassword")(__v.asInstanceOf[js.Any]))
       NewDBClusterIdentifier.foreach(__v => __obj.updateDynamic("NewDBClusterIdentifier")(__v.asInstanceOf[js.Any]))
       OptionGroupName.foreach(__v => __obj.updateDynamic("OptionGroupName")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       ScalingConfiguration.foreach(__v => __obj.updateDynamic("ScalingConfiguration")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyDBClusterMessage]
@@ -7387,9 +6911,7 @@ package rds {
         DBClusterSnapshotAttributesResult: js.UndefOr[DBClusterSnapshotAttributesResult] = js.undefined
     ): ModifyDBClusterSnapshotAttributeResult = {
       val __obj = js.Dynamic.literal()
-      DBClusterSnapshotAttributesResult.foreach(__v =>
-        __obj.updateDynamic("DBClusterSnapshotAttributesResult")(__v.asInstanceOf[js.Any])
-      )
+      DBClusterSnapshotAttributesResult.foreach(__v => __obj.updateDynamic("DBClusterSnapshotAttributesResult")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyDBClusterSnapshotAttributeResult]
     }
   }
@@ -7499,12 +7021,8 @@ package rds {
       AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
       BackupRetentionPeriod.foreach(__v => __obj.updateDynamic("BackupRetentionPeriod")(__v.asInstanceOf[js.Any]))
       CACertificateIdentifier.foreach(__v => __obj.updateDynamic("CACertificateIdentifier")(__v.asInstanceOf[js.Any]))
-      CertificateRotationRestart.foreach(__v =>
-        __obj.updateDynamic("CertificateRotationRestart")(__v.asInstanceOf[js.Any])
-      )
-      CloudwatchLogsExportConfiguration.foreach(__v =>
-        __obj.updateDynamic("CloudwatchLogsExportConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      CertificateRotationRestart.foreach(__v => __obj.updateDynamic("CertificateRotationRestart")(__v.asInstanceOf[js.Any]))
+      CloudwatchLogsExportConfiguration.foreach(__v => __obj.updateDynamic("CloudwatchLogsExportConfiguration")(__v.asInstanceOf[js.Any]))
       CopyTagsToSnapshot.foreach(__v => __obj.updateDynamic("CopyTagsToSnapshot")(__v.asInstanceOf[js.Any]))
       DBInstanceClass.foreach(__v => __obj.updateDynamic("DBInstanceClass")(__v.asInstanceOf[js.Any]))
       DBParameterGroupName.foreach(__v => __obj.updateDynamic("DBParameterGroupName")(__v.asInstanceOf[js.Any]))
@@ -7514,12 +7032,8 @@ package rds {
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       DomainIAMRoleName.foreach(__v => __obj.updateDynamic("DomainIAMRoleName")(__v.asInstanceOf[js.Any]))
-      EnableIAMDatabaseAuthentication.foreach(__v =>
-        __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any])
-      )
-      EnablePerformanceInsights.foreach(__v =>
-        __obj.updateDynamic("EnablePerformanceInsights")(__v.asInstanceOf[js.Any])
-      )
+      EnableIAMDatabaseAuthentication.foreach(__v => __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any]))
+      EnablePerformanceInsights.foreach(__v => __obj.updateDynamic("EnablePerformanceInsights")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
       LicenseModel.foreach(__v => __obj.updateDynamic("LicenseModel")(__v.asInstanceOf[js.Any]))
@@ -7530,25 +7044,17 @@ package rds {
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
       NewDBInstanceIdentifier.foreach(__v => __obj.updateDynamic("NewDBInstanceIdentifier")(__v.asInstanceOf[js.Any]))
       OptionGroupName.foreach(__v => __obj.updateDynamic("OptionGroupName")(__v.asInstanceOf[js.Any]))
-      PerformanceInsightsKMSKeyId.foreach(__v =>
-        __obj.updateDynamic("PerformanceInsightsKMSKeyId")(__v.asInstanceOf[js.Any])
-      )
-      PerformanceInsightsRetentionPeriod.foreach(__v =>
-        __obj.updateDynamic("PerformanceInsightsRetentionPeriod")(__v.asInstanceOf[js.Any])
-      )
+      PerformanceInsightsKMSKeyId.foreach(__v => __obj.updateDynamic("PerformanceInsightsKMSKeyId")(__v.asInstanceOf[js.Any]))
+      PerformanceInsightsRetentionPeriod.foreach(__v => __obj.updateDynamic("PerformanceInsightsRetentionPeriod")(__v.asInstanceOf[js.Any]))
       PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       ProcessorFeatures.foreach(__v => __obj.updateDynamic("ProcessorFeatures")(__v.asInstanceOf[js.Any]))
       PromotionTier.foreach(__v => __obj.updateDynamic("PromotionTier")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       TdeCredentialArn.foreach(__v => __obj.updateDynamic("TdeCredentialArn")(__v.asInstanceOf[js.Any]))
       TdeCredentialPassword.foreach(__v => __obj.updateDynamic("TdeCredentialPassword")(__v.asInstanceOf[js.Any]))
-      UseDefaultProcessorFeatures.foreach(__v =>
-        __obj.updateDynamic("UseDefaultProcessorFeatures")(__v.asInstanceOf[js.Any])
-      )
+      UseDefaultProcessorFeatures.foreach(__v => __obj.updateDynamic("UseDefaultProcessorFeatures")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyDBInstanceMessage]
     }
@@ -7733,9 +7239,7 @@ package rds {
         DBSnapshotAttributesResult: js.UndefOr[DBSnapshotAttributesResult] = js.undefined
     ): ModifyDBSnapshotAttributeResult = {
       val __obj = js.Dynamic.literal()
-      DBSnapshotAttributesResult.foreach(__v =>
-        __obj.updateDynamic("DBSnapshotAttributesResult")(__v.asInstanceOf[js.Any])
-      )
+      DBSnapshotAttributesResult.foreach(__v => __obj.updateDynamic("DBSnapshotAttributesResult")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyDBSnapshotAttributeResult]
     }
   }
@@ -7889,9 +7393,7 @@ package rds {
       val __obj = js.Dynamic.literal()
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       GlobalClusterIdentifier.foreach(__v => __obj.updateDynamic("GlobalClusterIdentifier")(__v.asInstanceOf[js.Any]))
-      NewGlobalClusterIdentifier.foreach(__v =>
-        __obj.updateDynamic("NewGlobalClusterIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      NewGlobalClusterIdentifier.foreach(__v => __obj.updateDynamic("NewGlobalClusterIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyGlobalClusterMessage]
     }
   }
@@ -7988,9 +7490,7 @@ package rds {
         VpcSecurityGroupMemberships: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined
     ): Option = {
       val __obj = js.Dynamic.literal()
-      DBSecurityGroupMemberships.foreach(__v =>
-        __obj.updateDynamic("DBSecurityGroupMemberships")(__v.asInstanceOf[js.Any])
-      )
+      DBSecurityGroupMemberships.foreach(__v => __obj.updateDynamic("DBSecurityGroupMemberships")(__v.asInstanceOf[js.Any]))
       OptionDescription.foreach(__v => __obj.updateDynamic("OptionDescription")(__v.asInstanceOf[js.Any]))
       OptionName.foreach(__v => __obj.updateDynamic("OptionName")(__v.asInstanceOf[js.Any]))
       OptionSettings.foreach(__v => __obj.updateDynamic("OptionSettings")(__v.asInstanceOf[js.Any]))
@@ -7998,9 +7498,7 @@ package rds {
       Permanent.foreach(__v => __obj.updateDynamic("Permanent")(__v.asInstanceOf[js.Any]))
       Persistent.foreach(__v => __obj.updateDynamic("Persistent")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
-      VpcSecurityGroupMemberships.foreach(__v =>
-        __obj.updateDynamic("VpcSecurityGroupMemberships")(__v.asInstanceOf[js.Any])
-      )
+      VpcSecurityGroupMemberships.foreach(__v => __obj.updateDynamic("VpcSecurityGroupMemberships")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Option]
     }
   }
@@ -8032,15 +7530,11 @@ package rds {
         "OptionName" -> OptionName.asInstanceOf[js.Any]
       )
 
-      DBSecurityGroupMemberships.foreach(__v =>
-        __obj.updateDynamic("DBSecurityGroupMemberships")(__v.asInstanceOf[js.Any])
-      )
+      DBSecurityGroupMemberships.foreach(__v => __obj.updateDynamic("DBSecurityGroupMemberships")(__v.asInstanceOf[js.Any]))
       OptionSettings.foreach(__v => __obj.updateDynamic("OptionSettings")(__v.asInstanceOf[js.Any]))
       OptionVersion.foreach(__v => __obj.updateDynamic("OptionVersion")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
-      VpcSecurityGroupMemberships.foreach(__v =>
-        __obj.updateDynamic("VpcSecurityGroupMemberships")(__v.asInstanceOf[js.Any])
-      )
+      VpcSecurityGroupMemberships.foreach(__v => __obj.updateDynamic("VpcSecurityGroupMemberships")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OptionConfiguration]
     }
   }
@@ -8073,9 +7567,7 @@ package rds {
         VpcId: js.UndefOr[String] = js.undefined
     ): OptionGroup = {
       val __obj = js.Dynamic.literal()
-      AllowsVpcAndNonVpcInstanceMemberships.foreach(__v =>
-        __obj.updateDynamic("AllowsVpcAndNonVpcInstanceMemberships")(__v.asInstanceOf[js.Any])
-      )
+      AllowsVpcAndNonVpcInstanceMemberships.foreach(__v => __obj.updateDynamic("AllowsVpcAndNonVpcInstanceMemberships")(__v.asInstanceOf[js.Any]))
       EngineName.foreach(__v => __obj.updateDynamic("EngineName")(__v.asInstanceOf[js.Any]))
       MajorEngineVersion.foreach(__v => __obj.updateDynamic("MajorEngineVersion")(__v.asInstanceOf[js.Any]))
       OptionGroupArn.foreach(__v => __obj.updateDynamic("OptionGroupArn")(__v.asInstanceOf[js.Any]))
@@ -8157,27 +7649,17 @@ package rds {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       EngineName.foreach(__v => __obj.updateDynamic("EngineName")(__v.asInstanceOf[js.Any]))
       MajorEngineVersion.foreach(__v => __obj.updateDynamic("MajorEngineVersion")(__v.asInstanceOf[js.Any]))
-      MinimumRequiredMinorEngineVersion.foreach(__v =>
-        __obj.updateDynamic("MinimumRequiredMinorEngineVersion")(__v.asInstanceOf[js.Any])
-      )
+      MinimumRequiredMinorEngineVersion.foreach(__v => __obj.updateDynamic("MinimumRequiredMinorEngineVersion")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      OptionGroupOptionSettings.foreach(__v =>
-        __obj.updateDynamic("OptionGroupOptionSettings")(__v.asInstanceOf[js.Any])
-      )
-      OptionGroupOptionVersions.foreach(__v =>
-        __obj.updateDynamic("OptionGroupOptionVersions")(__v.asInstanceOf[js.Any])
-      )
+      OptionGroupOptionSettings.foreach(__v => __obj.updateDynamic("OptionGroupOptionSettings")(__v.asInstanceOf[js.Any]))
+      OptionGroupOptionVersions.foreach(__v => __obj.updateDynamic("OptionGroupOptionVersions")(__v.asInstanceOf[js.Any]))
       OptionsConflictsWith.foreach(__v => __obj.updateDynamic("OptionsConflictsWith")(__v.asInstanceOf[js.Any]))
       OptionsDependedOn.foreach(__v => __obj.updateDynamic("OptionsDependedOn")(__v.asInstanceOf[js.Any]))
       Permanent.foreach(__v => __obj.updateDynamic("Permanent")(__v.asInstanceOf[js.Any]))
       Persistent.foreach(__v => __obj.updateDynamic("Persistent")(__v.asInstanceOf[js.Any]))
       PortRequired.foreach(__v => __obj.updateDynamic("PortRequired")(__v.asInstanceOf[js.Any]))
-      RequiresAutoMinorEngineVersionUpgrade.foreach(__v =>
-        __obj.updateDynamic("RequiresAutoMinorEngineVersionUpgrade")(__v.asInstanceOf[js.Any])
-      )
-      SupportsOptionVersionDowngrade.foreach(__v =>
-        __obj.updateDynamic("SupportsOptionVersionDowngrade")(__v.asInstanceOf[js.Any])
-      )
+      RequiresAutoMinorEngineVersionUpgrade.foreach(__v => __obj.updateDynamic("RequiresAutoMinorEngineVersionUpgrade")(__v.asInstanceOf[js.Any]))
+      SupportsOptionVersionDowngrade.foreach(__v => __obj.updateDynamic("SupportsOptionVersionDowngrade")(__v.asInstanceOf[js.Any]))
       VpcOnly.foreach(__v => __obj.updateDynamic("VpcOnly")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OptionGroupOption]
     }
@@ -8216,9 +7698,7 @@ package rds {
       DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
       IsModifiable.foreach(__v => __obj.updateDynamic("IsModifiable")(__v.asInstanceOf[js.Any]))
       IsRequired.foreach(__v => __obj.updateDynamic("IsRequired")(__v.asInstanceOf[js.Any]))
-      MinimumEngineVersionPerAllowedValue.foreach(__v =>
-        __obj.updateDynamic("MinimumEngineVersionPerAllowedValue")(__v.asInstanceOf[js.Any])
-      )
+      MinimumEngineVersionPerAllowedValue.foreach(__v => __obj.updateDynamic("MinimumEngineVersionPerAllowedValue")(__v.asInstanceOf[js.Any]))
       SettingDescription.foreach(__v => __obj.updateDynamic("SettingDescription")(__v.asInstanceOf[js.Any]))
       SettingName.foreach(__v => __obj.updateDynamic("SettingName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OptionGroupOptionSetting]
@@ -8403,9 +7883,7 @@ package rds {
       val __obj = js.Dynamic.literal()
       AvailabilityZoneGroup.foreach(__v => __obj.updateDynamic("AvailabilityZoneGroup")(__v.asInstanceOf[js.Any]))
       AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
-      AvailableProcessorFeatures.foreach(__v =>
-        __obj.updateDynamic("AvailableProcessorFeatures")(__v.asInstanceOf[js.Any])
-      )
+      AvailableProcessorFeatures.foreach(__v => __obj.updateDynamic("AvailableProcessorFeatures")(__v.asInstanceOf[js.Any]))
       DBInstanceClass.foreach(__v => __obj.updateDynamic("DBInstanceClass")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
@@ -8421,26 +7899,14 @@ package rds {
       ReadReplicaCapable.foreach(__v => __obj.updateDynamic("ReadReplicaCapable")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       SupportedEngineModes.foreach(__v => __obj.updateDynamic("SupportedEngineModes")(__v.asInstanceOf[js.Any]))
-      SupportsEnhancedMonitoring.foreach(__v =>
-        __obj.updateDynamic("SupportsEnhancedMonitoring")(__v.asInstanceOf[js.Any])
-      )
+      SupportsEnhancedMonitoring.foreach(__v => __obj.updateDynamic("SupportsEnhancedMonitoring")(__v.asInstanceOf[js.Any]))
       SupportsGlobalDatabases.foreach(__v => __obj.updateDynamic("SupportsGlobalDatabases")(__v.asInstanceOf[js.Any]))
-      SupportsIAMDatabaseAuthentication.foreach(__v =>
-        __obj.updateDynamic("SupportsIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any])
-      )
+      SupportsIAMDatabaseAuthentication.foreach(__v => __obj.updateDynamic("SupportsIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any]))
       SupportsIops.foreach(__v => __obj.updateDynamic("SupportsIops")(__v.asInstanceOf[js.Any]))
-      SupportsKerberosAuthentication.foreach(__v =>
-        __obj.updateDynamic("SupportsKerberosAuthentication")(__v.asInstanceOf[js.Any])
-      )
-      SupportsPerformanceInsights.foreach(__v =>
-        __obj.updateDynamic("SupportsPerformanceInsights")(__v.asInstanceOf[js.Any])
-      )
-      SupportsStorageAutoscaling.foreach(__v =>
-        __obj.updateDynamic("SupportsStorageAutoscaling")(__v.asInstanceOf[js.Any])
-      )
-      SupportsStorageEncryption.foreach(__v =>
-        __obj.updateDynamic("SupportsStorageEncryption")(__v.asInstanceOf[js.Any])
-      )
+      SupportsKerberosAuthentication.foreach(__v => __obj.updateDynamic("SupportsKerberosAuthentication")(__v.asInstanceOf[js.Any]))
+      SupportsPerformanceInsights.foreach(__v => __obj.updateDynamic("SupportsPerformanceInsights")(__v.asInstanceOf[js.Any]))
+      SupportsStorageAutoscaling.foreach(__v => __obj.updateDynamic("SupportsStorageAutoscaling")(__v.asInstanceOf[js.Any]))
+      SupportsStorageEncryption.foreach(__v => __obj.updateDynamic("SupportsStorageEncryption")(__v.asInstanceOf[js.Any]))
       Vpc.foreach(__v => __obj.updateDynamic("Vpc")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OrderableDBInstanceOption]
     }
@@ -8463,9 +7929,7 @@ package rds {
     ): OrderableDBInstanceOptionsMessage = {
       val __obj = js.Dynamic.literal()
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      OrderableDBInstanceOptions.foreach(__v =>
-        __obj.updateDynamic("OrderableDBInstanceOptions")(__v.asInstanceOf[js.Any])
-      )
+      OrderableDBInstanceOptions.foreach(__v => __obj.updateDynamic("OrderableDBInstanceOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OrderableDBInstanceOptionsMessage]
     }
   }
@@ -8613,9 +8077,7 @@ package rds {
     ): PendingMaintenanceActionsMessage = {
       val __obj = js.Dynamic.literal()
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      PendingMaintenanceActions.foreach(__v =>
-        __obj.updateDynamic("PendingMaintenanceActions")(__v.asInstanceOf[js.Any])
-      )
+      PendingMaintenanceActions.foreach(__v => __obj.updateDynamic("PendingMaintenanceActions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PendingMaintenanceActionsMessage]
     }
   }
@@ -8673,9 +8135,7 @@ package rds {
       LicenseModel.foreach(__v => __obj.updateDynamic("LicenseModel")(__v.asInstanceOf[js.Any]))
       MasterUserPassword.foreach(__v => __obj.updateDynamic("MasterUserPassword")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
-      PendingCloudwatchLogsExports.foreach(__v =>
-        __obj.updateDynamic("PendingCloudwatchLogsExports")(__v.asInstanceOf[js.Any])
-      )
+      PendingCloudwatchLogsExports.foreach(__v => __obj.updateDynamic("PendingCloudwatchLogsExports")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       ProcessorFeatures.foreach(__v => __obj.updateDynamic("ProcessorFeatures")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
@@ -9177,9 +8637,7 @@ package rds {
       RecurringCharges.foreach(__v => __obj.updateDynamic("RecurringCharges")(__v.asInstanceOf[js.Any]))
       ReservedDBInstanceArn.foreach(__v => __obj.updateDynamic("ReservedDBInstanceArn")(__v.asInstanceOf[js.Any]))
       ReservedDBInstanceId.foreach(__v => __obj.updateDynamic("ReservedDBInstanceId")(__v.asInstanceOf[js.Any]))
-      ReservedDBInstancesOfferingId.foreach(__v =>
-        __obj.updateDynamic("ReservedDBInstancesOfferingId")(__v.asInstanceOf[js.Any])
-      )
+      ReservedDBInstancesOfferingId.foreach(__v => __obj.updateDynamic("ReservedDBInstancesOfferingId")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       UsagePrice.foreach(__v => __obj.updateDynamic("UsagePrice")(__v.asInstanceOf[js.Any]))
@@ -9249,9 +8707,7 @@ package rds {
       OfferingType.foreach(__v => __obj.updateDynamic("OfferingType")(__v.asInstanceOf[js.Any]))
       ProductDescription.foreach(__v => __obj.updateDynamic("ProductDescription")(__v.asInstanceOf[js.Any]))
       RecurringCharges.foreach(__v => __obj.updateDynamic("RecurringCharges")(__v.asInstanceOf[js.Any]))
-      ReservedDBInstancesOfferingId.foreach(__v =>
-        __obj.updateDynamic("ReservedDBInstancesOfferingId")(__v.asInstanceOf[js.Any])
-      )
+      ReservedDBInstancesOfferingId.foreach(__v => __obj.updateDynamic("ReservedDBInstancesOfferingId")(__v.asInstanceOf[js.Any]))
       UsagePrice.foreach(__v => __obj.updateDynamic("UsagePrice")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReservedDBInstancesOffering]
     }
@@ -9274,9 +8730,7 @@ package rds {
     ): ReservedDBInstancesOfferingMessage = {
       val __obj = js.Dynamic.literal()
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      ReservedDBInstancesOfferings.foreach(__v =>
-        __obj.updateDynamic("ReservedDBInstancesOfferings")(__v.asInstanceOf[js.Any])
-      )
+      ReservedDBInstancesOfferings.foreach(__v => __obj.updateDynamic("ReservedDBInstancesOfferings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReservedDBInstancesOfferingMessage]
     }
   }
@@ -9351,9 +8805,7 @@ package rds {
         ResourceIdentifier: js.UndefOr[String] = js.undefined
     ): ResourcePendingMaintenanceActions = {
       val __obj = js.Dynamic.literal()
-      PendingMaintenanceActionDetails.foreach(__v =>
-        __obj.updateDynamic("PendingMaintenanceActionDetails")(__v.asInstanceOf[js.Any])
-      )
+      PendingMaintenanceActionDetails.foreach(__v => __obj.updateDynamic("PendingMaintenanceActionDetails")(__v.asInstanceOf[js.Any]))
       ResourceIdentifier.foreach(__v => __obj.updateDynamic("ResourceIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourcePendingMaintenanceActions]
     }
@@ -9445,28 +8897,20 @@ package rds {
       BackupRetentionPeriod.foreach(__v => __obj.updateDynamic("BackupRetentionPeriod")(__v.asInstanceOf[js.Any]))
       CharacterSetName.foreach(__v => __obj.updateDynamic("CharacterSetName")(__v.asInstanceOf[js.Any]))
       CopyTagsToSnapshot.foreach(__v => __obj.updateDynamic("CopyTagsToSnapshot")(__v.asInstanceOf[js.Any]))
-      DBClusterParameterGroupName.foreach(__v =>
-        __obj.updateDynamic("DBClusterParameterGroupName")(__v.asInstanceOf[js.Any])
-      )
+      DBClusterParameterGroupName.foreach(__v => __obj.updateDynamic("DBClusterParameterGroupName")(__v.asInstanceOf[js.Any]))
       DBSubnetGroupName.foreach(__v => __obj.updateDynamic("DBSubnetGroupName")(__v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       DomainIAMRoleName.foreach(__v => __obj.updateDynamic("DomainIAMRoleName")(__v.asInstanceOf[js.Any]))
-      EnableCloudwatchLogsExports.foreach(__v =>
-        __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any])
-      )
-      EnableIAMDatabaseAuthentication.foreach(__v =>
-        __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any])
-      )
+      EnableCloudwatchLogsExports.foreach(__v => __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any]))
+      EnableIAMDatabaseAuthentication.foreach(__v => __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       OptionGroupName.foreach(__v => __obj.updateDynamic("OptionGroupName")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       S3Prefix.foreach(__v => __obj.updateDynamic("S3Prefix")(__v.asInstanceOf[js.Any]))
       StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -9555,20 +8999,14 @@ package rds {
       AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
       BacktrackWindow.foreach(__v => __obj.updateDynamic("BacktrackWindow")(__v.asInstanceOf[js.Any]))
       CopyTagsToSnapshot.foreach(__v => __obj.updateDynamic("CopyTagsToSnapshot")(__v.asInstanceOf[js.Any]))
-      DBClusterParameterGroupName.foreach(__v =>
-        __obj.updateDynamic("DBClusterParameterGroupName")(__v.asInstanceOf[js.Any])
-      )
+      DBClusterParameterGroupName.foreach(__v => __obj.updateDynamic("DBClusterParameterGroupName")(__v.asInstanceOf[js.Any]))
       DBSubnetGroupName.foreach(__v => __obj.updateDynamic("DBSubnetGroupName")(__v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       DomainIAMRoleName.foreach(__v => __obj.updateDynamic("DomainIAMRoleName")(__v.asInstanceOf[js.Any]))
-      EnableCloudwatchLogsExports.foreach(__v =>
-        __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any])
-      )
-      EnableIAMDatabaseAuthentication.foreach(__v =>
-        __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any])
-      )
+      EnableCloudwatchLogsExports.foreach(__v => __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any]))
+      EnableIAMDatabaseAuthentication.foreach(__v => __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any]))
       EngineMode.foreach(__v => __obj.updateDynamic("EngineMode")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
@@ -9653,19 +9091,13 @@ package rds {
 
       BacktrackWindow.foreach(__v => __obj.updateDynamic("BacktrackWindow")(__v.asInstanceOf[js.Any]))
       CopyTagsToSnapshot.foreach(__v => __obj.updateDynamic("CopyTagsToSnapshot")(__v.asInstanceOf[js.Any]))
-      DBClusterParameterGroupName.foreach(__v =>
-        __obj.updateDynamic("DBClusterParameterGroupName")(__v.asInstanceOf[js.Any])
-      )
+      DBClusterParameterGroupName.foreach(__v => __obj.updateDynamic("DBClusterParameterGroupName")(__v.asInstanceOf[js.Any]))
       DBSubnetGroupName.foreach(__v => __obj.updateDynamic("DBSubnetGroupName")(__v.asInstanceOf[js.Any]))
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       DomainIAMRoleName.foreach(__v => __obj.updateDynamic("DomainIAMRoleName")(__v.asInstanceOf[js.Any]))
-      EnableCloudwatchLogsExports.foreach(__v =>
-        __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any])
-      )
-      EnableIAMDatabaseAuthentication.foreach(__v =>
-        __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any])
-      )
+      EnableCloudwatchLogsExports.foreach(__v => __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any]))
+      EnableIAMDatabaseAuthentication.foreach(__v => __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       OptionGroupName.foreach(__v => __obj.updateDynamic("OptionGroupName")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
@@ -9776,12 +9208,8 @@ package rds {
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       DomainIAMRoleName.foreach(__v => __obj.updateDynamic("DomainIAMRoleName")(__v.asInstanceOf[js.Any]))
-      EnableCloudwatchLogsExports.foreach(__v =>
-        __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any])
-      )
-      EnableIAMDatabaseAuthentication.foreach(__v =>
-        __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any])
-      )
+      EnableCloudwatchLogsExports.foreach(__v => __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any]))
+      EnableIAMDatabaseAuthentication.foreach(__v => __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
       LicenseModel.foreach(__v => __obj.updateDynamic("LicenseModel")(__v.asInstanceOf[js.Any]))
@@ -9794,9 +9222,7 @@ package rds {
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TdeCredentialArn.foreach(__v => __obj.updateDynamic("TdeCredentialArn")(__v.asInstanceOf[js.Any]))
       TdeCredentialPassword.foreach(__v => __obj.updateDynamic("TdeCredentialPassword")(__v.asInstanceOf[js.Any]))
-      UseDefaultProcessorFeatures.foreach(__v =>
-        __obj.updateDynamic("UseDefaultProcessorFeatures")(__v.asInstanceOf[js.Any])
-      )
+      UseDefaultProcessorFeatures.foreach(__v => __obj.updateDynamic("UseDefaultProcessorFeatures")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RestoreDBInstanceFromDBSnapshotMessage]
     }
@@ -9932,15 +9358,9 @@ package rds {
       DBSecurityGroups.foreach(__v => __obj.updateDynamic("DBSecurityGroups")(__v.asInstanceOf[js.Any]))
       DBSubnetGroupName.foreach(__v => __obj.updateDynamic("DBSubnetGroupName")(__v.asInstanceOf[js.Any]))
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
-      EnableCloudwatchLogsExports.foreach(__v =>
-        __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any])
-      )
-      EnableIAMDatabaseAuthentication.foreach(__v =>
-        __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any])
-      )
-      EnablePerformanceInsights.foreach(__v =>
-        __obj.updateDynamic("EnablePerformanceInsights")(__v.asInstanceOf[js.Any])
-      )
+      EnableCloudwatchLogsExports.foreach(__v => __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any]))
+      EnableIAMDatabaseAuthentication.foreach(__v => __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any]))
+      EnablePerformanceInsights.foreach(__v => __obj.updateDynamic("EnablePerformanceInsights")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
@@ -9951,26 +9371,18 @@ package rds {
       MonitoringRoleArn.foreach(__v => __obj.updateDynamic("MonitoringRoleArn")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
       OptionGroupName.foreach(__v => __obj.updateDynamic("OptionGroupName")(__v.asInstanceOf[js.Any]))
-      PerformanceInsightsKMSKeyId.foreach(__v =>
-        __obj.updateDynamic("PerformanceInsightsKMSKeyId")(__v.asInstanceOf[js.Any])
-      )
-      PerformanceInsightsRetentionPeriod.foreach(__v =>
-        __obj.updateDynamic("PerformanceInsightsRetentionPeriod")(__v.asInstanceOf[js.Any])
-      )
+      PerformanceInsightsKMSKeyId.foreach(__v => __obj.updateDynamic("PerformanceInsightsKMSKeyId")(__v.asInstanceOf[js.Any]))
+      PerformanceInsightsRetentionPeriod.foreach(__v => __obj.updateDynamic("PerformanceInsightsRetentionPeriod")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       ProcessorFeatures.foreach(__v => __obj.updateDynamic("ProcessorFeatures")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
       S3Prefix.foreach(__v => __obj.updateDynamic("S3Prefix")(__v.asInstanceOf[js.Any]))
       StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      UseDefaultProcessorFeatures.foreach(__v =>
-        __obj.updateDynamic("UseDefaultProcessorFeatures")(__v.asInstanceOf[js.Any])
-      )
+      UseDefaultProcessorFeatures.foreach(__v => __obj.updateDynamic("UseDefaultProcessorFeatures")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RestoreDBInstanceFromS3Message]
     }
@@ -10079,12 +9491,8 @@ package rds {
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       DomainIAMRoleName.foreach(__v => __obj.updateDynamic("DomainIAMRoleName")(__v.asInstanceOf[js.Any]))
-      EnableCloudwatchLogsExports.foreach(__v =>
-        __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any])
-      )
-      EnableIAMDatabaseAuthentication.foreach(__v =>
-        __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any])
-      )
+      EnableCloudwatchLogsExports.foreach(__v => __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any]))
+      EnableIAMDatabaseAuthentication.foreach(__v => __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
       LicenseModel.foreach(__v => __obj.updateDynamic("LicenseModel")(__v.asInstanceOf[js.Any]))
@@ -10094,17 +9502,13 @@ package rds {
       ProcessorFeatures.foreach(__v => __obj.updateDynamic("ProcessorFeatures")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
       RestoreTime.foreach(__v => __obj.updateDynamic("RestoreTime")(__v.asInstanceOf[js.Any]))
-      SourceDBInstanceIdentifier.foreach(__v =>
-        __obj.updateDynamic("SourceDBInstanceIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      SourceDBInstanceIdentifier.foreach(__v => __obj.updateDynamic("SourceDBInstanceIdentifier")(__v.asInstanceOf[js.Any]))
       SourceDbiResourceId.foreach(__v => __obj.updateDynamic("SourceDbiResourceId")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TdeCredentialArn.foreach(__v => __obj.updateDynamic("TdeCredentialArn")(__v.asInstanceOf[js.Any]))
       TdeCredentialPassword.foreach(__v => __obj.updateDynamic("TdeCredentialPassword")(__v.asInstanceOf[js.Any]))
-      UseDefaultProcessorFeatures.foreach(__v =>
-        __obj.updateDynamic("UseDefaultProcessorFeatures")(__v.asInstanceOf[js.Any])
-      )
+      UseDefaultProcessorFeatures.foreach(__v => __obj.updateDynamic("UseDefaultProcessorFeatures")(__v.asInstanceOf[js.Any]))
       UseLatestRestorableTime.foreach(__v => __obj.updateDynamic("UseLatestRestorableTime")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RestoreDBInstanceToPointInTimeMessage]
@@ -10319,16 +9723,7 @@ package rds {
     val `db-cluster` = "db-cluster".asInstanceOf[SourceType]
     val `db-cluster-snapshot` = "db-cluster-snapshot".asInstanceOf[SourceType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `db-instance`,
-        `db-parameter-group`,
-        `db-security-group`,
-        `db-snapshot`,
-        `db-cluster`,
-        `db-cluster-snapshot`
-      )
-    )
+    val values = js.Object.freeze(js.Array(`db-instance`, `db-parameter-group`, `db-security-group`, `db-snapshot`, `db-cluster`, `db-cluster-snapshot`))
   }
 
   @js.native
@@ -10889,9 +10284,7 @@ package rds {
       ProvisionedIops.foreach(__v => __obj.updateDynamic("ProvisionedIops")(__v.asInstanceOf[js.Any]))
       StorageSize.foreach(__v => __obj.updateDynamic("StorageSize")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
-      SupportsStorageAutoscaling.foreach(__v =>
-        __obj.updateDynamic("SupportsStorageAutoscaling")(__v.asInstanceOf[js.Any])
-      )
+      SupportsStorageAutoscaling.foreach(__v => __obj.updateDynamic("SupportsStorageAutoscaling")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ValidStorageOptions]
     }
   }

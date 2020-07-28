@@ -20,11 +20,8 @@ package object personalizeruntime {
 
   implicit final class PersonalizeRuntimeOps(private val service: PersonalizeRuntime) extends AnyVal {
 
-    @inline def getPersonalizedRankingFuture(
-        params: GetPersonalizedRankingRequest
-    ): Future[GetPersonalizedRankingResponse] = service.getPersonalizedRanking(params).promise().toFuture
-    @inline def getRecommendationsFuture(params: GetRecommendationsRequest): Future[GetRecommendationsResponse] =
-      service.getRecommendations(params).promise().toFuture
+    @inline def getPersonalizedRankingFuture(params: GetPersonalizedRankingRequest): Future[GetPersonalizedRankingResponse] = service.getPersonalizedRanking(params).promise().toFuture
+    @inline def getRecommendationsFuture(params: GetRecommendationsRequest): Future[GetRecommendationsResponse] = service.getRecommendations(params).promise().toFuture
   }
 }
 
@@ -34,8 +31,7 @@ package personalizeruntime {
   class PersonalizeRuntime() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def getPersonalizedRanking(params: GetPersonalizedRankingRequest): Request[GetPersonalizedRankingResponse] =
-      js.native
+    def getPersonalizedRanking(params: GetPersonalizedRankingRequest): Request[GetPersonalizedRankingResponse] = js.native
     def getRecommendations(params: GetRecommendationsRequest): Request[GetRecommendationsResponse] = js.native
   }
 

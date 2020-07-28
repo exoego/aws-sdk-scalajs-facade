@@ -55,45 +55,20 @@ package object support {
 
   implicit final class SupportOps(private val service: Support) extends AnyVal {
 
-    @inline def addAttachmentsToSetFuture(params: AddAttachmentsToSetRequest): Future[AddAttachmentsToSetResponse] =
-      service.addAttachmentsToSet(params).promise().toFuture
-    @inline def addCommunicationToCaseFuture(
-        params: AddCommunicationToCaseRequest
-    ): Future[AddCommunicationToCaseResponse] = service.addCommunicationToCase(params).promise().toFuture
-    @inline def createCaseFuture(params: CreateCaseRequest): Future[CreateCaseResponse] =
-      service.createCase(params).promise().toFuture
-    @inline def describeAttachmentFuture(params: DescribeAttachmentRequest): Future[DescribeAttachmentResponse] =
-      service.describeAttachment(params).promise().toFuture
-    @inline def describeCasesFuture(params: DescribeCasesRequest): Future[DescribeCasesResponse] =
-      service.describeCases(params).promise().toFuture
-    @inline def describeCommunicationsFuture(
-        params: DescribeCommunicationsRequest
-    ): Future[DescribeCommunicationsResponse] = service.describeCommunications(params).promise().toFuture
-    @inline def describeServicesFuture(params: DescribeServicesRequest): Future[DescribeServicesResponse] =
-      service.describeServices(params).promise().toFuture
-    @inline def describeSeverityLevelsFuture(
-        params: DescribeSeverityLevelsRequest
-    ): Future[DescribeSeverityLevelsResponse] = service.describeSeverityLevels(params).promise().toFuture
-    @inline def describeTrustedAdvisorCheckRefreshStatusesFuture(
-        params: DescribeTrustedAdvisorCheckRefreshStatusesRequest
-    ): Future[DescribeTrustedAdvisorCheckRefreshStatusesResponse] =
-      service.describeTrustedAdvisorCheckRefreshStatuses(params).promise().toFuture
-    @inline def describeTrustedAdvisorCheckResultFuture(
-        params: DescribeTrustedAdvisorCheckResultRequest
-    ): Future[DescribeTrustedAdvisorCheckResultResponse] =
-      service.describeTrustedAdvisorCheckResult(params).promise().toFuture
-    @inline def describeTrustedAdvisorCheckSummariesFuture(
-        params: DescribeTrustedAdvisorCheckSummariesRequest
-    ): Future[DescribeTrustedAdvisorCheckSummariesResponse] =
-      service.describeTrustedAdvisorCheckSummaries(params).promise().toFuture
-    @inline def describeTrustedAdvisorChecksFuture(
-        params: DescribeTrustedAdvisorChecksRequest
-    ): Future[DescribeTrustedAdvisorChecksResponse] = service.describeTrustedAdvisorChecks(params).promise().toFuture
-    @inline def refreshTrustedAdvisorCheckFuture(
-        params: RefreshTrustedAdvisorCheckRequest
-    ): Future[RefreshTrustedAdvisorCheckResponse] = service.refreshTrustedAdvisorCheck(params).promise().toFuture
-    @inline def resolveCaseFuture(params: ResolveCaseRequest): Future[ResolveCaseResponse] =
-      service.resolveCase(params).promise().toFuture
+    @inline def addAttachmentsToSetFuture(params: AddAttachmentsToSetRequest): Future[AddAttachmentsToSetResponse] = service.addAttachmentsToSet(params).promise().toFuture
+    @inline def addCommunicationToCaseFuture(params: AddCommunicationToCaseRequest): Future[AddCommunicationToCaseResponse] = service.addCommunicationToCase(params).promise().toFuture
+    @inline def createCaseFuture(params: CreateCaseRequest): Future[CreateCaseResponse] = service.createCase(params).promise().toFuture
+    @inline def describeAttachmentFuture(params: DescribeAttachmentRequest): Future[DescribeAttachmentResponse] = service.describeAttachment(params).promise().toFuture
+    @inline def describeCasesFuture(params: DescribeCasesRequest): Future[DescribeCasesResponse] = service.describeCases(params).promise().toFuture
+    @inline def describeCommunicationsFuture(params: DescribeCommunicationsRequest): Future[DescribeCommunicationsResponse] = service.describeCommunications(params).promise().toFuture
+    @inline def describeServicesFuture(params: DescribeServicesRequest): Future[DescribeServicesResponse] = service.describeServices(params).promise().toFuture
+    @inline def describeSeverityLevelsFuture(params: DescribeSeverityLevelsRequest): Future[DescribeSeverityLevelsResponse] = service.describeSeverityLevels(params).promise().toFuture
+    @inline def describeTrustedAdvisorCheckRefreshStatusesFuture(params: DescribeTrustedAdvisorCheckRefreshStatusesRequest): Future[DescribeTrustedAdvisorCheckRefreshStatusesResponse] = service.describeTrustedAdvisorCheckRefreshStatuses(params).promise().toFuture
+    @inline def describeTrustedAdvisorCheckResultFuture(params: DescribeTrustedAdvisorCheckResultRequest): Future[DescribeTrustedAdvisorCheckResultResponse] = service.describeTrustedAdvisorCheckResult(params).promise().toFuture
+    @inline def describeTrustedAdvisorCheckSummariesFuture(params: DescribeTrustedAdvisorCheckSummariesRequest): Future[DescribeTrustedAdvisorCheckSummariesResponse] = service.describeTrustedAdvisorCheckSummaries(params).promise().toFuture
+    @inline def describeTrustedAdvisorChecksFuture(params: DescribeTrustedAdvisorChecksRequest): Future[DescribeTrustedAdvisorChecksResponse] = service.describeTrustedAdvisorChecks(params).promise().toFuture
+    @inline def refreshTrustedAdvisorCheckFuture(params: RefreshTrustedAdvisorCheckRequest): Future[RefreshTrustedAdvisorCheckResponse] = service.refreshTrustedAdvisorCheck(params).promise().toFuture
+    @inline def resolveCaseFuture(params: ResolveCaseRequest): Future[ResolveCaseResponse] = service.resolveCase(params).promise().toFuture
   }
 }
 
@@ -104,31 +79,18 @@ package support {
     def this(config: AWSConfig) = this()
 
     def addAttachmentsToSet(params: AddAttachmentsToSetRequest): Request[AddAttachmentsToSetResponse] = js.native
-    def addCommunicationToCase(params: AddCommunicationToCaseRequest): Request[AddCommunicationToCaseResponse] =
-      js.native
+    def addCommunicationToCase(params: AddCommunicationToCaseRequest): Request[AddCommunicationToCaseResponse] = js.native
     def createCase(params: CreateCaseRequest): Request[CreateCaseResponse] = js.native
     def describeAttachment(params: DescribeAttachmentRequest): Request[DescribeAttachmentResponse] = js.native
     def describeCases(params: DescribeCasesRequest): Request[DescribeCasesResponse] = js.native
-    def describeCommunications(params: DescribeCommunicationsRequest): Request[DescribeCommunicationsResponse] =
-      js.native
+    def describeCommunications(params: DescribeCommunicationsRequest): Request[DescribeCommunicationsResponse] = js.native
     def describeServices(params: DescribeServicesRequest): Request[DescribeServicesResponse] = js.native
-    def describeSeverityLevels(params: DescribeSeverityLevelsRequest): Request[DescribeSeverityLevelsResponse] =
-      js.native
-    def describeTrustedAdvisorCheckRefreshStatuses(
-        params: DescribeTrustedAdvisorCheckRefreshStatusesRequest
-    ): Request[DescribeTrustedAdvisorCheckRefreshStatusesResponse] = js.native
-    def describeTrustedAdvisorCheckResult(
-        params: DescribeTrustedAdvisorCheckResultRequest
-    ): Request[DescribeTrustedAdvisorCheckResultResponse] = js.native
-    def describeTrustedAdvisorCheckSummaries(
-        params: DescribeTrustedAdvisorCheckSummariesRequest
-    ): Request[DescribeTrustedAdvisorCheckSummariesResponse] = js.native
-    def describeTrustedAdvisorChecks(
-        params: DescribeTrustedAdvisorChecksRequest
-    ): Request[DescribeTrustedAdvisorChecksResponse] = js.native
-    def refreshTrustedAdvisorCheck(
-        params: RefreshTrustedAdvisorCheckRequest
-    ): Request[RefreshTrustedAdvisorCheckResponse] = js.native
+    def describeSeverityLevels(params: DescribeSeverityLevelsRequest): Request[DescribeSeverityLevelsResponse] = js.native
+    def describeTrustedAdvisorCheckRefreshStatuses(params: DescribeTrustedAdvisorCheckRefreshStatusesRequest): Request[DescribeTrustedAdvisorCheckRefreshStatusesResponse] = js.native
+    def describeTrustedAdvisorCheckResult(params: DescribeTrustedAdvisorCheckResultRequest): Request[DescribeTrustedAdvisorCheckResultResponse] = js.native
+    def describeTrustedAdvisorCheckSummaries(params: DescribeTrustedAdvisorCheckSummariesRequest): Request[DescribeTrustedAdvisorCheckSummariesResponse] = js.native
+    def describeTrustedAdvisorChecks(params: DescribeTrustedAdvisorChecksRequest): Request[DescribeTrustedAdvisorChecksResponse] = js.native
+    def refreshTrustedAdvisorCheck(params: RefreshTrustedAdvisorCheckRequest): Request[RefreshTrustedAdvisorCheckResponse] = js.native
     def resolveCase(params: ResolveCaseRequest): Request[ResolveCaseResponse] = js.native
   }
 

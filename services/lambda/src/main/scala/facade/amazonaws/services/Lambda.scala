@@ -97,125 +97,54 @@ package object lambda {
 
   implicit final class LambdaOps(private val service: Lambda) extends AnyVal {
 
-    @inline def addLayerVersionPermissionFuture(
-        params: AddLayerVersionPermissionRequest
-    ): Future[AddLayerVersionPermissionResponse] = service.addLayerVersionPermission(params).promise().toFuture
-    @inline def addPermissionFuture(params: AddPermissionRequest): Future[AddPermissionResponse] =
-      service.addPermission(params).promise().toFuture
-    @inline def createAliasFuture(params: CreateAliasRequest): Future[AliasConfiguration] =
-      service.createAlias(params).promise().toFuture
-    @inline def createEventSourceMappingFuture(
-        params: CreateEventSourceMappingRequest
-    ): Future[EventSourceMappingConfiguration] = service.createEventSourceMapping(params).promise().toFuture
-    @inline def createFunctionFuture(params: CreateFunctionRequest): Future[FunctionConfiguration] =
-      service.createFunction(params).promise().toFuture
-    @inline def deleteAliasFuture(params: DeleteAliasRequest): Future[js.Object] =
-      service.deleteAlias(params).promise().toFuture
-    @inline def deleteEventSourceMappingFuture(
-        params: DeleteEventSourceMappingRequest
-    ): Future[EventSourceMappingConfiguration] = service.deleteEventSourceMapping(params).promise().toFuture
-    @inline def deleteFunctionConcurrencyFuture(params: DeleteFunctionConcurrencyRequest): Future[js.Object] =
-      service.deleteFunctionConcurrency(params).promise().toFuture
-    @inline def deleteFunctionEventInvokeConfigFuture(
-        params: DeleteFunctionEventInvokeConfigRequest
-    ): Future[js.Object] = service.deleteFunctionEventInvokeConfig(params).promise().toFuture
-    @inline def deleteFunctionFuture(params: DeleteFunctionRequest): Future[js.Object] =
-      service.deleteFunction(params).promise().toFuture
-    @inline def deleteLayerVersionFuture(params: DeleteLayerVersionRequest): Future[js.Object] =
-      service.deleteLayerVersion(params).promise().toFuture
-    @inline def deleteProvisionedConcurrencyConfigFuture(
-        params: DeleteProvisionedConcurrencyConfigRequest
-    ): Future[js.Object] = service.deleteProvisionedConcurrencyConfig(params).promise().toFuture
-    @inline def getAccountSettingsFuture(params: GetAccountSettingsRequest): Future[GetAccountSettingsResponse] =
-      service.getAccountSettings(params).promise().toFuture
-    @inline def getAliasFuture(params: GetAliasRequest): Future[AliasConfiguration] =
-      service.getAlias(params).promise().toFuture
-    @inline def getEventSourceMappingFuture(
-        params: GetEventSourceMappingRequest
-    ): Future[EventSourceMappingConfiguration] = service.getEventSourceMapping(params).promise().toFuture
-    @inline def getFunctionConcurrencyFuture(
-        params: GetFunctionConcurrencyRequest
-    ): Future[GetFunctionConcurrencyResponse] = service.getFunctionConcurrency(params).promise().toFuture
-    @inline def getFunctionConfigurationFuture(params: GetFunctionConfigurationRequest): Future[FunctionConfiguration] =
-      service.getFunctionConfiguration(params).promise().toFuture
-    @inline def getFunctionEventInvokeConfigFuture(
-        params: GetFunctionEventInvokeConfigRequest
-    ): Future[FunctionEventInvokeConfig] = service.getFunctionEventInvokeConfig(params).promise().toFuture
-    @inline def getFunctionFuture(params: GetFunctionRequest): Future[GetFunctionResponse] =
-      service.getFunction(params).promise().toFuture
-    @inline def getLayerVersionByArnFuture(params: GetLayerVersionByArnRequest): Future[GetLayerVersionResponse] =
-      service.getLayerVersionByArn(params).promise().toFuture
-    @inline def getLayerVersionFuture(params: GetLayerVersionRequest): Future[GetLayerVersionResponse] =
-      service.getLayerVersion(params).promise().toFuture
-    @inline def getLayerVersionPolicyFuture(
-        params: GetLayerVersionPolicyRequest
-    ): Future[GetLayerVersionPolicyResponse] = service.getLayerVersionPolicy(params).promise().toFuture
-    @inline def getPolicyFuture(params: GetPolicyRequest): Future[GetPolicyResponse] =
-      service.getPolicy(params).promise().toFuture
-    @inline def getProvisionedConcurrencyConfigFuture(
-        params: GetProvisionedConcurrencyConfigRequest
-    ): Future[GetProvisionedConcurrencyConfigResponse] =
-      service.getProvisionedConcurrencyConfig(params).promise().toFuture
-    @inline def invokeFuture(params: InvocationRequest): Future[InvocationResponse] =
-      service.invoke(params).promise().toFuture
-    @inline def listAliasesFuture(params: ListAliasesRequest): Future[ListAliasesResponse] =
-      service.listAliases(params).promise().toFuture
-    @inline def listEventSourceMappingsFuture(
-        params: ListEventSourceMappingsRequest
-    ): Future[ListEventSourceMappingsResponse] = service.listEventSourceMappings(params).promise().toFuture
-    @inline def listFunctionEventInvokeConfigsFuture(
-        params: ListFunctionEventInvokeConfigsRequest
-    ): Future[ListFunctionEventInvokeConfigsResponse] =
-      service.listFunctionEventInvokeConfigs(params).promise().toFuture
-    @inline def listFunctionsFuture(params: ListFunctionsRequest): Future[ListFunctionsResponse] =
-      service.listFunctions(params).promise().toFuture
-    @inline def listLayerVersionsFuture(params: ListLayerVersionsRequest): Future[ListLayerVersionsResponse] =
-      service.listLayerVersions(params).promise().toFuture
-    @inline def listLayersFuture(params: ListLayersRequest): Future[ListLayersResponse] =
-      service.listLayers(params).promise().toFuture
-    @inline def listProvisionedConcurrencyConfigsFuture(
-        params: ListProvisionedConcurrencyConfigsRequest
-    ): Future[ListProvisionedConcurrencyConfigsResponse] =
-      service.listProvisionedConcurrencyConfigs(params).promise().toFuture
-    @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] =
-      service.listTags(params).promise().toFuture
-    @inline def listVersionsByFunctionFuture(
-        params: ListVersionsByFunctionRequest
-    ): Future[ListVersionsByFunctionResponse] = service.listVersionsByFunction(params).promise().toFuture
-    @inline def publishLayerVersionFuture(params: PublishLayerVersionRequest): Future[PublishLayerVersionResponse] =
-      service.publishLayerVersion(params).promise().toFuture
-    @inline def publishVersionFuture(params: PublishVersionRequest): Future[FunctionConfiguration] =
-      service.publishVersion(params).promise().toFuture
-    @inline def putFunctionConcurrencyFuture(params: PutFunctionConcurrencyRequest): Future[Concurrency] =
-      service.putFunctionConcurrency(params).promise().toFuture
-    @inline def putFunctionEventInvokeConfigFuture(
-        params: PutFunctionEventInvokeConfigRequest
-    ): Future[FunctionEventInvokeConfig] = service.putFunctionEventInvokeConfig(params).promise().toFuture
-    @inline def putProvisionedConcurrencyConfigFuture(
-        params: PutProvisionedConcurrencyConfigRequest
-    ): Future[PutProvisionedConcurrencyConfigResponse] =
-      service.putProvisionedConcurrencyConfig(params).promise().toFuture
-    @inline def removeLayerVersionPermissionFuture(params: RemoveLayerVersionPermissionRequest): Future[js.Object] =
-      service.removeLayerVersionPermission(params).promise().toFuture
-    @inline def removePermissionFuture(params: RemovePermissionRequest): Future[js.Object] =
-      service.removePermission(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateAliasFuture(params: UpdateAliasRequest): Future[AliasConfiguration] =
-      service.updateAlias(params).promise().toFuture
-    @inline def updateEventSourceMappingFuture(
-        params: UpdateEventSourceMappingRequest
-    ): Future[EventSourceMappingConfiguration] = service.updateEventSourceMapping(params).promise().toFuture
-    @inline def updateFunctionCodeFuture(params: UpdateFunctionCodeRequest): Future[FunctionConfiguration] =
-      service.updateFunctionCode(params).promise().toFuture
-    @inline def updateFunctionConfigurationFuture(
-        params: UpdateFunctionConfigurationRequest
-    ): Future[FunctionConfiguration] = service.updateFunctionConfiguration(params).promise().toFuture
-    @inline def updateFunctionEventInvokeConfigFuture(
-        params: UpdateFunctionEventInvokeConfigRequest
-    ): Future[FunctionEventInvokeConfig] = service.updateFunctionEventInvokeConfig(params).promise().toFuture
+    @inline def addLayerVersionPermissionFuture(params: AddLayerVersionPermissionRequest): Future[AddLayerVersionPermissionResponse] = service.addLayerVersionPermission(params).promise().toFuture
+    @inline def addPermissionFuture(params: AddPermissionRequest): Future[AddPermissionResponse] = service.addPermission(params).promise().toFuture
+    @inline def createAliasFuture(params: CreateAliasRequest): Future[AliasConfiguration] = service.createAlias(params).promise().toFuture
+    @inline def createEventSourceMappingFuture(params: CreateEventSourceMappingRequest): Future[EventSourceMappingConfiguration] = service.createEventSourceMapping(params).promise().toFuture
+    @inline def createFunctionFuture(params: CreateFunctionRequest): Future[FunctionConfiguration] = service.createFunction(params).promise().toFuture
+    @inline def deleteAliasFuture(params: DeleteAliasRequest): Future[js.Object] = service.deleteAlias(params).promise().toFuture
+    @inline def deleteEventSourceMappingFuture(params: DeleteEventSourceMappingRequest): Future[EventSourceMappingConfiguration] = service.deleteEventSourceMapping(params).promise().toFuture
+    @inline def deleteFunctionConcurrencyFuture(params: DeleteFunctionConcurrencyRequest): Future[js.Object] = service.deleteFunctionConcurrency(params).promise().toFuture
+    @inline def deleteFunctionEventInvokeConfigFuture(params: DeleteFunctionEventInvokeConfigRequest): Future[js.Object] = service.deleteFunctionEventInvokeConfig(params).promise().toFuture
+    @inline def deleteFunctionFuture(params: DeleteFunctionRequest): Future[js.Object] = service.deleteFunction(params).promise().toFuture
+    @inline def deleteLayerVersionFuture(params: DeleteLayerVersionRequest): Future[js.Object] = service.deleteLayerVersion(params).promise().toFuture
+    @inline def deleteProvisionedConcurrencyConfigFuture(params: DeleteProvisionedConcurrencyConfigRequest): Future[js.Object] = service.deleteProvisionedConcurrencyConfig(params).promise().toFuture
+    @inline def getAccountSettingsFuture(params: GetAccountSettingsRequest): Future[GetAccountSettingsResponse] = service.getAccountSettings(params).promise().toFuture
+    @inline def getAliasFuture(params: GetAliasRequest): Future[AliasConfiguration] = service.getAlias(params).promise().toFuture
+    @inline def getEventSourceMappingFuture(params: GetEventSourceMappingRequest): Future[EventSourceMappingConfiguration] = service.getEventSourceMapping(params).promise().toFuture
+    @inline def getFunctionConcurrencyFuture(params: GetFunctionConcurrencyRequest): Future[GetFunctionConcurrencyResponse] = service.getFunctionConcurrency(params).promise().toFuture
+    @inline def getFunctionConfigurationFuture(params: GetFunctionConfigurationRequest): Future[FunctionConfiguration] = service.getFunctionConfiguration(params).promise().toFuture
+    @inline def getFunctionEventInvokeConfigFuture(params: GetFunctionEventInvokeConfigRequest): Future[FunctionEventInvokeConfig] = service.getFunctionEventInvokeConfig(params).promise().toFuture
+    @inline def getFunctionFuture(params: GetFunctionRequest): Future[GetFunctionResponse] = service.getFunction(params).promise().toFuture
+    @inline def getLayerVersionByArnFuture(params: GetLayerVersionByArnRequest): Future[GetLayerVersionResponse] = service.getLayerVersionByArn(params).promise().toFuture
+    @inline def getLayerVersionFuture(params: GetLayerVersionRequest): Future[GetLayerVersionResponse] = service.getLayerVersion(params).promise().toFuture
+    @inline def getLayerVersionPolicyFuture(params: GetLayerVersionPolicyRequest): Future[GetLayerVersionPolicyResponse] = service.getLayerVersionPolicy(params).promise().toFuture
+    @inline def getPolicyFuture(params: GetPolicyRequest): Future[GetPolicyResponse] = service.getPolicy(params).promise().toFuture
+    @inline def getProvisionedConcurrencyConfigFuture(params: GetProvisionedConcurrencyConfigRequest): Future[GetProvisionedConcurrencyConfigResponse] = service.getProvisionedConcurrencyConfig(params).promise().toFuture
+    @inline def invokeFuture(params: InvocationRequest): Future[InvocationResponse] = service.invoke(params).promise().toFuture
+    @inline def listAliasesFuture(params: ListAliasesRequest): Future[ListAliasesResponse] = service.listAliases(params).promise().toFuture
+    @inline def listEventSourceMappingsFuture(params: ListEventSourceMappingsRequest): Future[ListEventSourceMappingsResponse] = service.listEventSourceMappings(params).promise().toFuture
+    @inline def listFunctionEventInvokeConfigsFuture(params: ListFunctionEventInvokeConfigsRequest): Future[ListFunctionEventInvokeConfigsResponse] = service.listFunctionEventInvokeConfigs(params).promise().toFuture
+    @inline def listFunctionsFuture(params: ListFunctionsRequest): Future[ListFunctionsResponse] = service.listFunctions(params).promise().toFuture
+    @inline def listLayerVersionsFuture(params: ListLayerVersionsRequest): Future[ListLayerVersionsResponse] = service.listLayerVersions(params).promise().toFuture
+    @inline def listLayersFuture(params: ListLayersRequest): Future[ListLayersResponse] = service.listLayers(params).promise().toFuture
+    @inline def listProvisionedConcurrencyConfigsFuture(params: ListProvisionedConcurrencyConfigsRequest): Future[ListProvisionedConcurrencyConfigsResponse] = service.listProvisionedConcurrencyConfigs(params).promise().toFuture
+    @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] = service.listTags(params).promise().toFuture
+    @inline def listVersionsByFunctionFuture(params: ListVersionsByFunctionRequest): Future[ListVersionsByFunctionResponse] = service.listVersionsByFunction(params).promise().toFuture
+    @inline def publishLayerVersionFuture(params: PublishLayerVersionRequest): Future[PublishLayerVersionResponse] = service.publishLayerVersion(params).promise().toFuture
+    @inline def publishVersionFuture(params: PublishVersionRequest): Future[FunctionConfiguration] = service.publishVersion(params).promise().toFuture
+    @inline def putFunctionConcurrencyFuture(params: PutFunctionConcurrencyRequest): Future[Concurrency] = service.putFunctionConcurrency(params).promise().toFuture
+    @inline def putFunctionEventInvokeConfigFuture(params: PutFunctionEventInvokeConfigRequest): Future[FunctionEventInvokeConfig] = service.putFunctionEventInvokeConfig(params).promise().toFuture
+    @inline def putProvisionedConcurrencyConfigFuture(params: PutProvisionedConcurrencyConfigRequest): Future[PutProvisionedConcurrencyConfigResponse] = service.putProvisionedConcurrencyConfig(params).promise().toFuture
+    @inline def removeLayerVersionPermissionFuture(params: RemoveLayerVersionPermissionRequest): Future[js.Object] = service.removeLayerVersionPermission(params).promise().toFuture
+    @inline def removePermissionFuture(params: RemovePermissionRequest): Future[js.Object] = service.removePermission(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
+    @inline def updateAliasFuture(params: UpdateAliasRequest): Future[AliasConfiguration] = service.updateAlias(params).promise().toFuture
+    @inline def updateEventSourceMappingFuture(params: UpdateEventSourceMappingRequest): Future[EventSourceMappingConfiguration] = service.updateEventSourceMapping(params).promise().toFuture
+    @inline def updateFunctionCodeFuture(params: UpdateFunctionCodeRequest): Future[FunctionConfiguration] = service.updateFunctionCode(params).promise().toFuture
+    @inline def updateFunctionConfigurationFuture(params: UpdateFunctionConfigurationRequest): Future[FunctionConfiguration] = service.updateFunctionConfiguration(params).promise().toFuture
+    @inline def updateFunctionEventInvokeConfigFuture(params: UpdateFunctionEventInvokeConfigRequest): Future[FunctionEventInvokeConfig] = service.updateFunctionEventInvokeConfig(params).promise().toFuture
   }
 }
 
@@ -225,80 +154,55 @@ package lambda {
   class Lambda() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def addLayerVersionPermission(
-        params: AddLayerVersionPermissionRequest
-    ): Request[AddLayerVersionPermissionResponse] = js.native
+    def addLayerVersionPermission(params: AddLayerVersionPermissionRequest): Request[AddLayerVersionPermissionResponse] = js.native
     def addPermission(params: AddPermissionRequest): Request[AddPermissionResponse] = js.native
     def createAlias(params: CreateAliasRequest): Request[AliasConfiguration] = js.native
-    def createEventSourceMapping(params: CreateEventSourceMappingRequest): Request[EventSourceMappingConfiguration] =
-      js.native
+    def createEventSourceMapping(params: CreateEventSourceMappingRequest): Request[EventSourceMappingConfiguration] = js.native
     def createFunction(params: CreateFunctionRequest): Request[FunctionConfiguration] = js.native
     def deleteAlias(params: DeleteAliasRequest): Request[js.Object] = js.native
-    def deleteEventSourceMapping(params: DeleteEventSourceMappingRequest): Request[EventSourceMappingConfiguration] =
-      js.native
+    def deleteEventSourceMapping(params: DeleteEventSourceMappingRequest): Request[EventSourceMappingConfiguration] = js.native
     def deleteFunction(params: DeleteFunctionRequest): Request[js.Object] = js.native
     def deleteFunctionConcurrency(params: DeleteFunctionConcurrencyRequest): Request[js.Object] = js.native
     def deleteFunctionEventInvokeConfig(params: DeleteFunctionEventInvokeConfigRequest): Request[js.Object] = js.native
     def deleteLayerVersion(params: DeleteLayerVersionRequest): Request[js.Object] = js.native
-    def deleteProvisionedConcurrencyConfig(params: DeleteProvisionedConcurrencyConfigRequest): Request[js.Object] =
-      js.native
+    def deleteProvisionedConcurrencyConfig(params: DeleteProvisionedConcurrencyConfigRequest): Request[js.Object] = js.native
     def getAccountSettings(params: GetAccountSettingsRequest): Request[GetAccountSettingsResponse] = js.native
     def getAlias(params: GetAliasRequest): Request[AliasConfiguration] = js.native
-    def getEventSourceMapping(params: GetEventSourceMappingRequest): Request[EventSourceMappingConfiguration] =
-      js.native
+    def getEventSourceMapping(params: GetEventSourceMappingRequest): Request[EventSourceMappingConfiguration] = js.native
     def getFunction(params: GetFunctionRequest): Request[GetFunctionResponse] = js.native
-    def getFunctionConcurrency(params: GetFunctionConcurrencyRequest): Request[GetFunctionConcurrencyResponse] =
-      js.native
+    def getFunctionConcurrency(params: GetFunctionConcurrencyRequest): Request[GetFunctionConcurrencyResponse] = js.native
     def getFunctionConfiguration(params: GetFunctionConfigurationRequest): Request[FunctionConfiguration] = js.native
-    def getFunctionEventInvokeConfig(params: GetFunctionEventInvokeConfigRequest): Request[FunctionEventInvokeConfig] =
-      js.native
+    def getFunctionEventInvokeConfig(params: GetFunctionEventInvokeConfigRequest): Request[FunctionEventInvokeConfig] = js.native
     def getLayerVersion(params: GetLayerVersionRequest): Request[GetLayerVersionResponse] = js.native
     def getLayerVersionByArn(params: GetLayerVersionByArnRequest): Request[GetLayerVersionResponse] = js.native
     def getLayerVersionPolicy(params: GetLayerVersionPolicyRequest): Request[GetLayerVersionPolicyResponse] = js.native
     def getPolicy(params: GetPolicyRequest): Request[GetPolicyResponse] = js.native
-    def getProvisionedConcurrencyConfig(
-        params: GetProvisionedConcurrencyConfigRequest
-    ): Request[GetProvisionedConcurrencyConfigResponse] = js.native
+    def getProvisionedConcurrencyConfig(params: GetProvisionedConcurrencyConfigRequest): Request[GetProvisionedConcurrencyConfigResponse] = js.native
     def invoke(params: InvocationRequest): Request[InvocationResponse] = js.native
     def listAliases(params: ListAliasesRequest): Request[ListAliasesResponse] = js.native
-    def listEventSourceMappings(params: ListEventSourceMappingsRequest): Request[ListEventSourceMappingsResponse] =
-      js.native
-    def listFunctionEventInvokeConfigs(
-        params: ListFunctionEventInvokeConfigsRequest
-    ): Request[ListFunctionEventInvokeConfigsResponse] = js.native
+    def listEventSourceMappings(params: ListEventSourceMappingsRequest): Request[ListEventSourceMappingsResponse] = js.native
+    def listFunctionEventInvokeConfigs(params: ListFunctionEventInvokeConfigsRequest): Request[ListFunctionEventInvokeConfigsResponse] = js.native
     def listFunctions(params: ListFunctionsRequest): Request[ListFunctionsResponse] = js.native
     def listLayerVersions(params: ListLayerVersionsRequest): Request[ListLayerVersionsResponse] = js.native
     def listLayers(params: ListLayersRequest): Request[ListLayersResponse] = js.native
-    def listProvisionedConcurrencyConfigs(
-        params: ListProvisionedConcurrencyConfigsRequest
-    ): Request[ListProvisionedConcurrencyConfigsResponse] = js.native
+    def listProvisionedConcurrencyConfigs(params: ListProvisionedConcurrencyConfigsRequest): Request[ListProvisionedConcurrencyConfigsResponse] = js.native
     def listTags(params: ListTagsRequest): Request[ListTagsResponse] = js.native
-    def listVersionsByFunction(params: ListVersionsByFunctionRequest): Request[ListVersionsByFunctionResponse] =
-      js.native
+    def listVersionsByFunction(params: ListVersionsByFunctionRequest): Request[ListVersionsByFunctionResponse] = js.native
     def publishLayerVersion(params: PublishLayerVersionRequest): Request[PublishLayerVersionResponse] = js.native
     def publishVersion(params: PublishVersionRequest): Request[FunctionConfiguration] = js.native
     def putFunctionConcurrency(params: PutFunctionConcurrencyRequest): Request[Concurrency] = js.native
-    def putFunctionEventInvokeConfig(params: PutFunctionEventInvokeConfigRequest): Request[FunctionEventInvokeConfig] =
-      js.native
-    def putProvisionedConcurrencyConfig(
-        params: PutProvisionedConcurrencyConfigRequest
-    ): Request[PutProvisionedConcurrencyConfigResponse] = js.native
+    def putFunctionEventInvokeConfig(params: PutFunctionEventInvokeConfigRequest): Request[FunctionEventInvokeConfig] = js.native
+    def putProvisionedConcurrencyConfig(params: PutProvisionedConcurrencyConfigRequest): Request[PutProvisionedConcurrencyConfigResponse] = js.native
     def removeLayerVersionPermission(params: RemoveLayerVersionPermissionRequest): Request[js.Object] = js.native
     def removePermission(params: RemovePermissionRequest): Request[js.Object] = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateAlias(params: UpdateAliasRequest): Request[AliasConfiguration] = js.native
-    def updateEventSourceMapping(params: UpdateEventSourceMappingRequest): Request[EventSourceMappingConfiguration] =
-      js.native
+    def updateEventSourceMapping(params: UpdateEventSourceMappingRequest): Request[EventSourceMappingConfiguration] = js.native
     def updateFunctionCode(params: UpdateFunctionCodeRequest): Request[FunctionConfiguration] = js.native
-    def updateFunctionConfiguration(params: UpdateFunctionConfigurationRequest): Request[FunctionConfiguration] =
-      js.native
-    def updateFunctionEventInvokeConfig(
-        params: UpdateFunctionEventInvokeConfigRequest
-    ): Request[FunctionEventInvokeConfig] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def invokeAsync(
-        params: InvokeAsyncRequest
-    ): Request[InvokeAsyncResponse] = js.native
+    def updateFunctionConfiguration(params: UpdateFunctionConfigurationRequest): Request[FunctionConfiguration] = js.native
+    def updateFunctionEventInvokeConfig(params: UpdateFunctionEventInvokeConfigRequest): Request[FunctionEventInvokeConfig] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def invokeAsync(params: InvokeAsyncRequest): Request[InvokeAsyncResponse] = js.native
   }
 
   /**
@@ -327,9 +231,7 @@ package lambda {
       CodeSizeZipped.foreach(__v => __obj.updateDynamic("CodeSizeZipped")(__v.asInstanceOf[js.Any]))
       ConcurrentExecutions.foreach(__v => __obj.updateDynamic("ConcurrentExecutions")(__v.asInstanceOf[js.Any]))
       TotalCodeSize.foreach(__v => __obj.updateDynamic("TotalCodeSize")(__v.asInstanceOf[js.Any]))
-      UnreservedConcurrentExecutions.foreach(__v =>
-        __obj.updateDynamic("UnreservedConcurrentExecutions")(__v.asInstanceOf[js.Any])
-      )
+      UnreservedConcurrentExecutions.foreach(__v => __obj.updateDynamic("UnreservedConcurrentExecutions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AccountLimit]
     }
   }
@@ -533,9 +435,7 @@ package lambda {
         ReservedConcurrentExecutions: js.UndefOr[ReservedConcurrentExecutions] = js.undefined
     ): Concurrency = {
       val __obj = js.Dynamic.literal()
-      ReservedConcurrentExecutions.foreach(__v =>
-        __obj.updateDynamic("ReservedConcurrentExecutions")(__v.asInstanceOf[js.Any])
-      )
+      ReservedConcurrentExecutions.foreach(__v => __obj.updateDynamic("ReservedConcurrentExecutions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Concurrency]
     }
   }
@@ -608,23 +508,15 @@ package lambda {
       )
 
       BatchSize.foreach(__v => __obj.updateDynamic("BatchSize")(__v.asInstanceOf[js.Any]))
-      BisectBatchOnFunctionError.foreach(__v =>
-        __obj.updateDynamic("BisectBatchOnFunctionError")(__v.asInstanceOf[js.Any])
-      )
+      BisectBatchOnFunctionError.foreach(__v => __obj.updateDynamic("BisectBatchOnFunctionError")(__v.asInstanceOf[js.Any]))
       DestinationConfig.foreach(__v => __obj.updateDynamic("DestinationConfig")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      MaximumBatchingWindowInSeconds.foreach(__v =>
-        __obj.updateDynamic("MaximumBatchingWindowInSeconds")(__v.asInstanceOf[js.Any])
-      )
-      MaximumRecordAgeInSeconds.foreach(__v =>
-        __obj.updateDynamic("MaximumRecordAgeInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      MaximumBatchingWindowInSeconds.foreach(__v => __obj.updateDynamic("MaximumBatchingWindowInSeconds")(__v.asInstanceOf[js.Any]))
+      MaximumRecordAgeInSeconds.foreach(__v => __obj.updateDynamic("MaximumRecordAgeInSeconds")(__v.asInstanceOf[js.Any]))
       MaximumRetryAttempts.foreach(__v => __obj.updateDynamic("MaximumRetryAttempts")(__v.asInstanceOf[js.Any]))
       ParallelizationFactor.foreach(__v => __obj.updateDynamic("ParallelizationFactor")(__v.asInstanceOf[js.Any]))
       StartingPosition.foreach(__v => __obj.updateDynamic("StartingPosition")(__v.asInstanceOf[js.Any]))
-      StartingPositionTimestamp.foreach(__v =>
-        __obj.updateDynamic("StartingPositionTimestamp")(__v.asInstanceOf[js.Any])
-      )
+      StartingPositionTimestamp.foreach(__v => __obj.updateDynamic("StartingPositionTimestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateEventSourceMappingRequest]
     }
   }
@@ -981,20 +873,14 @@ package lambda {
     ): EventSourceMappingConfiguration = {
       val __obj = js.Dynamic.literal()
       BatchSize.foreach(__v => __obj.updateDynamic("BatchSize")(__v.asInstanceOf[js.Any]))
-      BisectBatchOnFunctionError.foreach(__v =>
-        __obj.updateDynamic("BisectBatchOnFunctionError")(__v.asInstanceOf[js.Any])
-      )
+      BisectBatchOnFunctionError.foreach(__v => __obj.updateDynamic("BisectBatchOnFunctionError")(__v.asInstanceOf[js.Any]))
       DestinationConfig.foreach(__v => __obj.updateDynamic("DestinationConfig")(__v.asInstanceOf[js.Any]))
       EventSourceArn.foreach(__v => __obj.updateDynamic("EventSourceArn")(__v.asInstanceOf[js.Any]))
       FunctionArn.foreach(__v => __obj.updateDynamic("FunctionArn")(__v.asInstanceOf[js.Any]))
       LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
       LastProcessingResult.foreach(__v => __obj.updateDynamic("LastProcessingResult")(__v.asInstanceOf[js.Any]))
-      MaximumBatchingWindowInSeconds.foreach(__v =>
-        __obj.updateDynamic("MaximumBatchingWindowInSeconds")(__v.asInstanceOf[js.Any])
-      )
-      MaximumRecordAgeInSeconds.foreach(__v =>
-        __obj.updateDynamic("MaximumRecordAgeInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      MaximumBatchingWindowInSeconds.foreach(__v => __obj.updateDynamic("MaximumBatchingWindowInSeconds")(__v.asInstanceOf[js.Any]))
+      MaximumRecordAgeInSeconds.foreach(__v => __obj.updateDynamic("MaximumRecordAgeInSeconds")(__v.asInstanceOf[js.Any]))
       MaximumRetryAttempts.foreach(__v => __obj.updateDynamic("MaximumRetryAttempts")(__v.asInstanceOf[js.Any]))
       ParallelizationFactor.foreach(__v => __obj.updateDynamic("ParallelizationFactor")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
@@ -1167,9 +1053,7 @@ package lambda {
       LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
       LastUpdateStatus.foreach(__v => __obj.updateDynamic("LastUpdateStatus")(__v.asInstanceOf[js.Any]))
       LastUpdateStatusReason.foreach(__v => __obj.updateDynamic("LastUpdateStatusReason")(__v.asInstanceOf[js.Any]))
-      LastUpdateStatusReasonCode.foreach(__v =>
-        __obj.updateDynamic("LastUpdateStatusReasonCode")(__v.asInstanceOf[js.Any])
-      )
+      LastUpdateStatusReasonCode.foreach(__v => __obj.updateDynamic("LastUpdateStatusReasonCode")(__v.asInstanceOf[js.Any]))
       Layers.foreach(__v => __obj.updateDynamic("Layers")(__v.asInstanceOf[js.Any]))
       MasterArn.foreach(__v => __obj.updateDynamic("MasterArn")(__v.asInstanceOf[js.Any]))
       MemorySize.foreach(__v => __obj.updateDynamic("MemorySize")(__v.asInstanceOf[js.Any]))
@@ -1323,9 +1207,7 @@ package lambda {
         ReservedConcurrentExecutions: js.UndefOr[ReservedConcurrentExecutions] = js.undefined
     ): GetFunctionConcurrencyResponse = {
       val __obj = js.Dynamic.literal()
-      ReservedConcurrentExecutions.foreach(__v =>
-        __obj.updateDynamic("ReservedConcurrentExecutions")(__v.asInstanceOf[js.Any])
-      )
+      ReservedConcurrentExecutions.foreach(__v => __obj.updateDynamic("ReservedConcurrentExecutions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFunctionConcurrencyResponse]
     }
   }
@@ -1616,16 +1498,10 @@ package lambda {
         StatusReason: js.UndefOr[String] = js.undefined
     ): GetProvisionedConcurrencyConfigResponse = {
       val __obj = js.Dynamic.literal()
-      AllocatedProvisionedConcurrentExecutions.foreach(__v =>
-        __obj.updateDynamic("AllocatedProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any])
-      )
-      AvailableProvisionedConcurrentExecutions.foreach(__v =>
-        __obj.updateDynamic("AvailableProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any])
-      )
+      AllocatedProvisionedConcurrentExecutions.foreach(__v => __obj.updateDynamic("AllocatedProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any]))
+      AvailableProvisionedConcurrentExecutions.foreach(__v => __obj.updateDynamic("AvailableProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any]))
       LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
-      RequestedProvisionedConcurrentExecutions.foreach(__v =>
-        __obj.updateDynamic("RequestedProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any])
-      )
+      RequestedProvisionedConcurrentExecutions.foreach(__v => __obj.updateDynamic("RequestedProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetProvisionedConcurrencyConfigResponse]
@@ -1766,17 +1642,7 @@ package lambda {
     val InvalidSubnet = "InvalidSubnet".asInstanceOf[LastUpdateStatusReasonCode]
     val InvalidSecurityGroup = "InvalidSecurityGroup".asInstanceOf[LastUpdateStatusReasonCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        EniLimitExceeded,
-        InsufficientRolePermissions,
-        InvalidConfiguration,
-        InternalError,
-        SubnetOutOfIPAddresses,
-        InvalidSubnet,
-        InvalidSecurityGroup
-      )
-    )
+    val values = js.Object.freeze(js.Array(EniLimitExceeded, InsufficientRolePermissions, InvalidConfiguration, InternalError, SubnetOutOfIPAddresses, InvalidSubnet, InvalidSecurityGroup))
   }
 
   /**
@@ -2040,9 +1906,7 @@ package lambda {
         NextMarker: js.UndefOr[String] = js.undefined
     ): ListFunctionEventInvokeConfigsResponse = {
       val __obj = js.Dynamic.literal()
-      FunctionEventInvokeConfigs.foreach(__v =>
-        __obj.updateDynamic("FunctionEventInvokeConfigs")(__v.asInstanceOf[js.Any])
-      )
+      FunctionEventInvokeConfigs.foreach(__v => __obj.updateDynamic("FunctionEventInvokeConfigs")(__v.asInstanceOf[js.Any]))
       NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFunctionEventInvokeConfigsResponse]
     }
@@ -2220,9 +2084,7 @@ package lambda {
     ): ListProvisionedConcurrencyConfigsResponse = {
       val __obj = js.Dynamic.literal()
       NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      ProvisionedConcurrencyConfigs.foreach(__v =>
-        __obj.updateDynamic("ProvisionedConcurrencyConfigs")(__v.asInstanceOf[js.Any])
-      )
+      ProvisionedConcurrencyConfigs.foreach(__v => __obj.updateDynamic("ProvisionedConcurrencyConfigs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListProvisionedConcurrencyConfigsResponse]
     }
   }
@@ -2377,17 +2239,11 @@ package lambda {
         StatusReason: js.UndefOr[String] = js.undefined
     ): ProvisionedConcurrencyConfigListItem = {
       val __obj = js.Dynamic.literal()
-      AllocatedProvisionedConcurrentExecutions.foreach(__v =>
-        __obj.updateDynamic("AllocatedProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any])
-      )
-      AvailableProvisionedConcurrentExecutions.foreach(__v =>
-        __obj.updateDynamic("AvailableProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any])
-      )
+      AllocatedProvisionedConcurrentExecutions.foreach(__v => __obj.updateDynamic("AllocatedProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any]))
+      AvailableProvisionedConcurrentExecutions.foreach(__v => __obj.updateDynamic("AvailableProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any]))
       FunctionArn.foreach(__v => __obj.updateDynamic("FunctionArn")(__v.asInstanceOf[js.Any]))
       LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
-      RequestedProvisionedConcurrentExecutions.foreach(__v =>
-        __obj.updateDynamic("RequestedProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any])
-      )
+      RequestedProvisionedConcurrentExecutions.foreach(__v => __obj.updateDynamic("RequestedProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisionedConcurrencyConfigListItem]
@@ -2594,16 +2450,10 @@ package lambda {
         StatusReason: js.UndefOr[String] = js.undefined
     ): PutProvisionedConcurrencyConfigResponse = {
       val __obj = js.Dynamic.literal()
-      AllocatedProvisionedConcurrentExecutions.foreach(__v =>
-        __obj.updateDynamic("AllocatedProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any])
-      )
-      AvailableProvisionedConcurrentExecutions.foreach(__v =>
-        __obj.updateDynamic("AvailableProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any])
-      )
+      AllocatedProvisionedConcurrentExecutions.foreach(__v => __obj.updateDynamic("AllocatedProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any]))
+      AvailableProvisionedConcurrentExecutions.foreach(__v => __obj.updateDynamic("AvailableProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any]))
       LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
-      RequestedProvisionedConcurrentExecutions.foreach(__v =>
-        __obj.updateDynamic("RequestedProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any])
-      )
+      RequestedProvisionedConcurrentExecutions.foreach(__v => __obj.updateDynamic("RequestedProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutProvisionedConcurrencyConfigResponse]
@@ -2912,18 +2762,12 @@ package lambda {
       )
 
       BatchSize.foreach(__v => __obj.updateDynamic("BatchSize")(__v.asInstanceOf[js.Any]))
-      BisectBatchOnFunctionError.foreach(__v =>
-        __obj.updateDynamic("BisectBatchOnFunctionError")(__v.asInstanceOf[js.Any])
-      )
+      BisectBatchOnFunctionError.foreach(__v => __obj.updateDynamic("BisectBatchOnFunctionError")(__v.asInstanceOf[js.Any]))
       DestinationConfig.foreach(__v => __obj.updateDynamic("DestinationConfig")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       FunctionName.foreach(__v => __obj.updateDynamic("FunctionName")(__v.asInstanceOf[js.Any]))
-      MaximumBatchingWindowInSeconds.foreach(__v =>
-        __obj.updateDynamic("MaximumBatchingWindowInSeconds")(__v.asInstanceOf[js.Any])
-      )
-      MaximumRecordAgeInSeconds.foreach(__v =>
-        __obj.updateDynamic("MaximumRecordAgeInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      MaximumBatchingWindowInSeconds.foreach(__v => __obj.updateDynamic("MaximumBatchingWindowInSeconds")(__v.asInstanceOf[js.Any]))
+      MaximumRecordAgeInSeconds.foreach(__v => __obj.updateDynamic("MaximumRecordAgeInSeconds")(__v.asInstanceOf[js.Any]))
       MaximumRetryAttempts.foreach(__v => __obj.updateDynamic("MaximumRetryAttempts")(__v.asInstanceOf[js.Any]))
       ParallelizationFactor.foreach(__v => __obj.updateDynamic("ParallelizationFactor")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateEventSourceMappingRequest]

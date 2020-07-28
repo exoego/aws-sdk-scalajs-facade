@@ -87,104 +87,49 @@ package object securityhub {
 
   implicit final class SecurityHubOps(private val service: SecurityHub) extends AnyVal {
 
-    @inline def acceptInvitationFuture(params: AcceptInvitationRequest): Future[AcceptInvitationResponse] =
-      service.acceptInvitation(params).promise().toFuture
-    @inline def batchDisableStandardsFuture(
-        params: BatchDisableStandardsRequest
-    ): Future[BatchDisableStandardsResponse] = service.batchDisableStandards(params).promise().toFuture
-    @inline def batchEnableStandardsFuture(params: BatchEnableStandardsRequest): Future[BatchEnableStandardsResponse] =
-      service.batchEnableStandards(params).promise().toFuture
-    @inline def batchImportFindingsFuture(params: BatchImportFindingsRequest): Future[BatchImportFindingsResponse] =
-      service.batchImportFindings(params).promise().toFuture
-    @inline def batchUpdateFindingsFuture(params: BatchUpdateFindingsRequest): Future[BatchUpdateFindingsResponse] =
-      service.batchUpdateFindings(params).promise().toFuture
-    @inline def createActionTargetFuture(params: CreateActionTargetRequest): Future[CreateActionTargetResponse] =
-      service.createActionTarget(params).promise().toFuture
-    @inline def createInsightFuture(params: CreateInsightRequest): Future[CreateInsightResponse] =
-      service.createInsight(params).promise().toFuture
-    @inline def createMembersFuture(params: CreateMembersRequest): Future[CreateMembersResponse] =
-      service.createMembers(params).promise().toFuture
-    @inline def declineInvitationsFuture(params: DeclineInvitationsRequest): Future[DeclineInvitationsResponse] =
-      service.declineInvitations(params).promise().toFuture
-    @inline def deleteActionTargetFuture(params: DeleteActionTargetRequest): Future[DeleteActionTargetResponse] =
-      service.deleteActionTarget(params).promise().toFuture
-    @inline def deleteInsightFuture(params: DeleteInsightRequest): Future[DeleteInsightResponse] =
-      service.deleteInsight(params).promise().toFuture
-    @inline def deleteInvitationsFuture(params: DeleteInvitationsRequest): Future[DeleteInvitationsResponse] =
-      service.deleteInvitations(params).promise().toFuture
-    @inline def deleteMembersFuture(params: DeleteMembersRequest): Future[DeleteMembersResponse] =
-      service.deleteMembers(params).promise().toFuture
-    @inline def describeActionTargetsFuture(
-        params: DescribeActionTargetsRequest
-    ): Future[DescribeActionTargetsResponse] = service.describeActionTargets(params).promise().toFuture
-    @inline def describeHubFuture(params: DescribeHubRequest): Future[DescribeHubResponse] =
-      service.describeHub(params).promise().toFuture
-    @inline def describeProductsFuture(params: DescribeProductsRequest): Future[DescribeProductsResponse] =
-      service.describeProducts(params).promise().toFuture
-    @inline def describeStandardsControlsFuture(
-        params: DescribeStandardsControlsRequest
-    ): Future[DescribeStandardsControlsResponse] = service.describeStandardsControls(params).promise().toFuture
-    @inline def describeStandardsFuture(params: DescribeStandardsRequest): Future[DescribeStandardsResponse] =
-      service.describeStandards(params).promise().toFuture
-    @inline def disableImportFindingsForProductFuture(
-        params: DisableImportFindingsForProductRequest
-    ): Future[DisableImportFindingsForProductResponse] =
-      service.disableImportFindingsForProduct(params).promise().toFuture
-    @inline def disableSecurityHubFuture(params: DisableSecurityHubRequest): Future[DisableSecurityHubResponse] =
-      service.disableSecurityHub(params).promise().toFuture
-    @inline def disassociateFromMasterAccountFuture(
-        params: DisassociateFromMasterAccountRequest
-    ): Future[DisassociateFromMasterAccountResponse] = service.disassociateFromMasterAccount(params).promise().toFuture
-    @inline def disassociateMembersFuture(params: DisassociateMembersRequest): Future[DisassociateMembersResponse] =
-      service.disassociateMembers(params).promise().toFuture
-    @inline def enableImportFindingsForProductFuture(
-        params: EnableImportFindingsForProductRequest
-    ): Future[EnableImportFindingsForProductResponse] =
-      service.enableImportFindingsForProduct(params).promise().toFuture
-    @inline def enableSecurityHubFuture(params: EnableSecurityHubRequest): Future[EnableSecurityHubResponse] =
-      service.enableSecurityHub(params).promise().toFuture
-    @inline def getEnabledStandardsFuture(params: GetEnabledStandardsRequest): Future[GetEnabledStandardsResponse] =
-      service.getEnabledStandards(params).promise().toFuture
-    @inline def getFindingsFuture(params: GetFindingsRequest): Future[GetFindingsResponse] =
-      service.getFindings(params).promise().toFuture
-    @inline def getInsightResultsFuture(params: GetInsightResultsRequest): Future[GetInsightResultsResponse] =
-      service.getInsightResults(params).promise().toFuture
-    @inline def getInsightsFuture(params: GetInsightsRequest): Future[GetInsightsResponse] =
-      service.getInsights(params).promise().toFuture
-    @inline def getInvitationsCountFuture(params: GetInvitationsCountRequest): Future[GetInvitationsCountResponse] =
-      service.getInvitationsCount(params).promise().toFuture
-    @inline def getMasterAccountFuture(params: GetMasterAccountRequest): Future[GetMasterAccountResponse] =
-      service.getMasterAccount(params).promise().toFuture
-    @inline def getMembersFuture(params: GetMembersRequest): Future[GetMembersResponse] =
-      service.getMembers(params).promise().toFuture
-    @inline def inviteMembersFuture(params: InviteMembersRequest): Future[InviteMembersResponse] =
-      service.inviteMembers(params).promise().toFuture
-    @inline def listEnabledProductsForImportFuture(
-        params: ListEnabledProductsForImportRequest
-    ): Future[ListEnabledProductsForImportResponse] = service.listEnabledProductsForImport(params).promise().toFuture
-    @inline def listInvitationsFuture(params: ListInvitationsRequest): Future[ListInvitationsResponse] =
-      service.listInvitations(params).promise().toFuture
-    @inline def listMembersFuture(params: ListMembersRequest): Future[ListMembersResponse] =
-      service.listMembers(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateActionTargetFuture(params: UpdateActionTargetRequest): Future[UpdateActionTargetResponse] =
-      service.updateActionTarget(params).promise().toFuture
-    @inline def updateFindingsFuture(params: UpdateFindingsRequest): Future[UpdateFindingsResponse] =
-      service.updateFindings(params).promise().toFuture
-    @inline def updateInsightFuture(params: UpdateInsightRequest): Future[UpdateInsightResponse] =
-      service.updateInsight(params).promise().toFuture
-    @inline def updateSecurityHubConfigurationFuture(
-        params: UpdateSecurityHubConfigurationRequest
-    ): Future[UpdateSecurityHubConfigurationResponse] =
-      service.updateSecurityHubConfiguration(params).promise().toFuture
-    @inline def updateStandardsControlFuture(
-        params: UpdateStandardsControlRequest
-    ): Future[UpdateStandardsControlResponse] = service.updateStandardsControl(params).promise().toFuture
+    @inline def acceptInvitationFuture(params: AcceptInvitationRequest): Future[AcceptInvitationResponse] = service.acceptInvitation(params).promise().toFuture
+    @inline def batchDisableStandardsFuture(params: BatchDisableStandardsRequest): Future[BatchDisableStandardsResponse] = service.batchDisableStandards(params).promise().toFuture
+    @inline def batchEnableStandardsFuture(params: BatchEnableStandardsRequest): Future[BatchEnableStandardsResponse] = service.batchEnableStandards(params).promise().toFuture
+    @inline def batchImportFindingsFuture(params: BatchImportFindingsRequest): Future[BatchImportFindingsResponse] = service.batchImportFindings(params).promise().toFuture
+    @inline def batchUpdateFindingsFuture(params: BatchUpdateFindingsRequest): Future[BatchUpdateFindingsResponse] = service.batchUpdateFindings(params).promise().toFuture
+    @inline def createActionTargetFuture(params: CreateActionTargetRequest): Future[CreateActionTargetResponse] = service.createActionTarget(params).promise().toFuture
+    @inline def createInsightFuture(params: CreateInsightRequest): Future[CreateInsightResponse] = service.createInsight(params).promise().toFuture
+    @inline def createMembersFuture(params: CreateMembersRequest): Future[CreateMembersResponse] = service.createMembers(params).promise().toFuture
+    @inline def declineInvitationsFuture(params: DeclineInvitationsRequest): Future[DeclineInvitationsResponse] = service.declineInvitations(params).promise().toFuture
+    @inline def deleteActionTargetFuture(params: DeleteActionTargetRequest): Future[DeleteActionTargetResponse] = service.deleteActionTarget(params).promise().toFuture
+    @inline def deleteInsightFuture(params: DeleteInsightRequest): Future[DeleteInsightResponse] = service.deleteInsight(params).promise().toFuture
+    @inline def deleteInvitationsFuture(params: DeleteInvitationsRequest): Future[DeleteInvitationsResponse] = service.deleteInvitations(params).promise().toFuture
+    @inline def deleteMembersFuture(params: DeleteMembersRequest): Future[DeleteMembersResponse] = service.deleteMembers(params).promise().toFuture
+    @inline def describeActionTargetsFuture(params: DescribeActionTargetsRequest): Future[DescribeActionTargetsResponse] = service.describeActionTargets(params).promise().toFuture
+    @inline def describeHubFuture(params: DescribeHubRequest): Future[DescribeHubResponse] = service.describeHub(params).promise().toFuture
+    @inline def describeProductsFuture(params: DescribeProductsRequest): Future[DescribeProductsResponse] = service.describeProducts(params).promise().toFuture
+    @inline def describeStandardsControlsFuture(params: DescribeStandardsControlsRequest): Future[DescribeStandardsControlsResponse] = service.describeStandardsControls(params).promise().toFuture
+    @inline def describeStandardsFuture(params: DescribeStandardsRequest): Future[DescribeStandardsResponse] = service.describeStandards(params).promise().toFuture
+    @inline def disableImportFindingsForProductFuture(params: DisableImportFindingsForProductRequest): Future[DisableImportFindingsForProductResponse] = service.disableImportFindingsForProduct(params).promise().toFuture
+    @inline def disableSecurityHubFuture(params: DisableSecurityHubRequest): Future[DisableSecurityHubResponse] = service.disableSecurityHub(params).promise().toFuture
+    @inline def disassociateFromMasterAccountFuture(params: DisassociateFromMasterAccountRequest): Future[DisassociateFromMasterAccountResponse] = service.disassociateFromMasterAccount(params).promise().toFuture
+    @inline def disassociateMembersFuture(params: DisassociateMembersRequest): Future[DisassociateMembersResponse] = service.disassociateMembers(params).promise().toFuture
+    @inline def enableImportFindingsForProductFuture(params: EnableImportFindingsForProductRequest): Future[EnableImportFindingsForProductResponse] = service.enableImportFindingsForProduct(params).promise().toFuture
+    @inline def enableSecurityHubFuture(params: EnableSecurityHubRequest): Future[EnableSecurityHubResponse] = service.enableSecurityHub(params).promise().toFuture
+    @inline def getEnabledStandardsFuture(params: GetEnabledStandardsRequest): Future[GetEnabledStandardsResponse] = service.getEnabledStandards(params).promise().toFuture
+    @inline def getFindingsFuture(params: GetFindingsRequest): Future[GetFindingsResponse] = service.getFindings(params).promise().toFuture
+    @inline def getInsightResultsFuture(params: GetInsightResultsRequest): Future[GetInsightResultsResponse] = service.getInsightResults(params).promise().toFuture
+    @inline def getInsightsFuture(params: GetInsightsRequest): Future[GetInsightsResponse] = service.getInsights(params).promise().toFuture
+    @inline def getInvitationsCountFuture(params: GetInvitationsCountRequest): Future[GetInvitationsCountResponse] = service.getInvitationsCount(params).promise().toFuture
+    @inline def getMasterAccountFuture(params: GetMasterAccountRequest): Future[GetMasterAccountResponse] = service.getMasterAccount(params).promise().toFuture
+    @inline def getMembersFuture(params: GetMembersRequest): Future[GetMembersResponse] = service.getMembers(params).promise().toFuture
+    @inline def inviteMembersFuture(params: InviteMembersRequest): Future[InviteMembersResponse] = service.inviteMembers(params).promise().toFuture
+    @inline def listEnabledProductsForImportFuture(params: ListEnabledProductsForImportRequest): Future[ListEnabledProductsForImportResponse] = service.listEnabledProductsForImport(params).promise().toFuture
+    @inline def listInvitationsFuture(params: ListInvitationsRequest): Future[ListInvitationsResponse] = service.listInvitations(params).promise().toFuture
+    @inline def listMembersFuture(params: ListMembersRequest): Future[ListMembersResponse] = service.listMembers(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateActionTargetFuture(params: UpdateActionTargetRequest): Future[UpdateActionTargetResponse] = service.updateActionTarget(params).promise().toFuture
+    @inline def updateFindingsFuture(params: UpdateFindingsRequest): Future[UpdateFindingsResponse] = service.updateFindings(params).promise().toFuture
+    @inline def updateInsightFuture(params: UpdateInsightRequest): Future[UpdateInsightResponse] = service.updateInsight(params).promise().toFuture
+    @inline def updateSecurityHubConfigurationFuture(params: UpdateSecurityHubConfigurationRequest): Future[UpdateSecurityHubConfigurationResponse] = service.updateSecurityHubConfiguration(params).promise().toFuture
+    @inline def updateStandardsControlFuture(params: UpdateStandardsControlRequest): Future[UpdateStandardsControlResponse] = service.updateStandardsControl(params).promise().toFuture
   }
 }
 
@@ -211,20 +156,12 @@ package securityhub {
     def describeHub(params: DescribeHubRequest): Request[DescribeHubResponse] = js.native
     def describeProducts(params: DescribeProductsRequest): Request[DescribeProductsResponse] = js.native
     def describeStandards(params: DescribeStandardsRequest): Request[DescribeStandardsResponse] = js.native
-    def describeStandardsControls(
-        params: DescribeStandardsControlsRequest
-    ): Request[DescribeStandardsControlsResponse] = js.native
-    def disableImportFindingsForProduct(
-        params: DisableImportFindingsForProductRequest
-    ): Request[DisableImportFindingsForProductResponse] = js.native
+    def describeStandardsControls(params: DescribeStandardsControlsRequest): Request[DescribeStandardsControlsResponse] = js.native
+    def disableImportFindingsForProduct(params: DisableImportFindingsForProductRequest): Request[DisableImportFindingsForProductResponse] = js.native
     def disableSecurityHub(params: DisableSecurityHubRequest): Request[DisableSecurityHubResponse] = js.native
-    def disassociateFromMasterAccount(
-        params: DisassociateFromMasterAccountRequest
-    ): Request[DisassociateFromMasterAccountResponse] = js.native
+    def disassociateFromMasterAccount(params: DisassociateFromMasterAccountRequest): Request[DisassociateFromMasterAccountResponse] = js.native
     def disassociateMembers(params: DisassociateMembersRequest): Request[DisassociateMembersResponse] = js.native
-    def enableImportFindingsForProduct(
-        params: EnableImportFindingsForProductRequest
-    ): Request[EnableImportFindingsForProductResponse] = js.native
+    def enableImportFindingsForProduct(params: EnableImportFindingsForProductRequest): Request[EnableImportFindingsForProductResponse] = js.native
     def enableSecurityHub(params: EnableSecurityHubRequest): Request[EnableSecurityHubResponse] = js.native
     def getEnabledStandards(params: GetEnabledStandardsRequest): Request[GetEnabledStandardsResponse] = js.native
     def getFindings(params: GetFindingsRequest): Request[GetFindingsResponse] = js.native
@@ -234,9 +171,7 @@ package securityhub {
     def getMasterAccount(params: GetMasterAccountRequest): Request[GetMasterAccountResponse] = js.native
     def getMembers(params: GetMembersRequest): Request[GetMembersResponse] = js.native
     def inviteMembers(params: InviteMembersRequest): Request[InviteMembersResponse] = js.native
-    def listEnabledProductsForImport(
-        params: ListEnabledProductsForImportRequest
-    ): Request[ListEnabledProductsForImportResponse] = js.native
+    def listEnabledProductsForImport(params: ListEnabledProductsForImportRequest): Request[ListEnabledProductsForImportResponse] = js.native
     def listInvitations(params: ListInvitationsRequest): Request[ListInvitationsResponse] = js.native
     def listMembers(params: ListMembersRequest): Request[ListMembersResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
@@ -245,11 +180,8 @@ package securityhub {
     def updateActionTarget(params: UpdateActionTargetRequest): Request[UpdateActionTargetResponse] = js.native
     def updateFindings(params: UpdateFindingsRequest): Request[UpdateFindingsResponse] = js.native
     def updateInsight(params: UpdateInsightRequest): Request[UpdateInsightResponse] = js.native
-    def updateSecurityHubConfiguration(
-        params: UpdateSecurityHubConfigurationRequest
-    ): Request[UpdateSecurityHubConfigurationResponse] = js.native
-    def updateStandardsControl(params: UpdateStandardsControlRequest): Request[UpdateStandardsControlResponse] =
-      js.native
+    def updateSecurityHubConfiguration(params: UpdateSecurityHubConfigurationRequest): Request[UpdateSecurityHubConfigurationResponse] = js.native
+    def updateStandardsControl(params: UpdateStandardsControlRequest): Request[UpdateStandardsControlResponse] = js.native
   }
 
   @js.native
@@ -1013,9 +945,7 @@ package securityhub {
       val __obj = js.Dynamic.literal()
       CidrBlockAssociationSet.foreach(__v => __obj.updateDynamic("CidrBlockAssociationSet")(__v.asInstanceOf[js.Any]))
       DhcpOptionsId.foreach(__v => __obj.updateDynamic("DhcpOptionsId")(__v.asInstanceOf[js.Any]))
-      Ipv6CidrBlockAssociationSet.foreach(__v =>
-        __obj.updateDynamic("Ipv6CidrBlockAssociationSet")(__v.asInstanceOf[js.Any])
-      )
+      Ipv6CidrBlockAssociationSet.foreach(__v => __obj.updateDynamic("Ipv6CidrBlockAssociationSet")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsEc2VpcDetails]
     }
@@ -1061,9 +991,7 @@ package securityhub {
       EncryptionAtRestOptions.foreach(__v => __obj.updateDynamic("EncryptionAtRestOptions")(__v.asInstanceOf[js.Any]))
       Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
       Endpoints.foreach(__v => __obj.updateDynamic("Endpoints")(__v.asInstanceOf[js.Any]))
-      NodeToNodeEncryptionOptions.foreach(__v =>
-        __obj.updateDynamic("NodeToNodeEncryptionOptions")(__v.asInstanceOf[js.Any])
-      )
+      NodeToNodeEncryptionOptions.foreach(__v => __obj.updateDynamic("NodeToNodeEncryptionOptions")(__v.asInstanceOf[js.Any]))
       VPCOptions.foreach(__v => __obj.updateDynamic("VPCOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsElasticsearchDomainDetails]
     }
@@ -1656,9 +1584,7 @@ package securityhub {
       Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
-      IAMDatabaseAuthenticationEnabled.foreach(__v =>
-        __obj.updateDynamic("IAMDatabaseAuthenticationEnabled")(__v.asInstanceOf[js.Any])
-      )
+      IAMDatabaseAuthenticationEnabled.foreach(__v => __obj.updateDynamic("IAMDatabaseAuthenticationEnabled")(__v.asInstanceOf[js.Any]))
       InstanceCreateTime.foreach(__v => __obj.updateDynamic("InstanceCreateTime")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
@@ -1739,9 +1665,7 @@ package securityhub {
       CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
       OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
       OwnerName.foreach(__v => __obj.updateDynamic("OwnerName")(__v.asInstanceOf[js.Any]))
-      ServerSideEncryptionConfiguration.foreach(__v =>
-        __obj.updateDynamic("ServerSideEncryptionConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      ServerSideEncryptionConfiguration.foreach(__v => __obj.updateDynamic("ServerSideEncryptionConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsS3BucketDetails]
     }
   }
@@ -1801,9 +1725,7 @@ package securityhub {
         ApplyServerSideEncryptionByDefault: js.UndefOr[AwsS3BucketServerSideEncryptionByDefault] = js.undefined
     ): AwsS3BucketServerSideEncryptionRule = {
       val __obj = js.Dynamic.literal()
-      ApplyServerSideEncryptionByDefault.foreach(__v =>
-        __obj.updateDynamic("ApplyServerSideEncryptionByDefault")(__v.asInstanceOf[js.Any])
-      )
+      ApplyServerSideEncryptionByDefault.foreach(__v => __obj.updateDynamic("ApplyServerSideEncryptionByDefault")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsS3BucketServerSideEncryptionRule]
     }
   }
@@ -2183,58 +2105,24 @@ package securityhub {
       RecommendationText.foreach(__v => __obj.updateDynamic("RecommendationText")(__v.asInstanceOf[js.Any]))
       RecordState.foreach(__v => __obj.updateDynamic("RecordState")(__v.asInstanceOf[js.Any]))
       RelatedFindingsId.foreach(__v => __obj.updateDynamic("RelatedFindingsId")(__v.asInstanceOf[js.Any]))
-      RelatedFindingsProductArn.foreach(__v =>
-        __obj.updateDynamic("RelatedFindingsProductArn")(__v.asInstanceOf[js.Any])
-      )
-      ResourceAwsEc2InstanceIamInstanceProfileArn.foreach(__v =>
-        __obj.updateDynamic("ResourceAwsEc2InstanceIamInstanceProfileArn")(__v.asInstanceOf[js.Any])
-      )
-      ResourceAwsEc2InstanceImageId.foreach(__v =>
-        __obj.updateDynamic("ResourceAwsEc2InstanceImageId")(__v.asInstanceOf[js.Any])
-      )
-      ResourceAwsEc2InstanceIpV4Addresses.foreach(__v =>
-        __obj.updateDynamic("ResourceAwsEc2InstanceIpV4Addresses")(__v.asInstanceOf[js.Any])
-      )
-      ResourceAwsEc2InstanceIpV6Addresses.foreach(__v =>
-        __obj.updateDynamic("ResourceAwsEc2InstanceIpV6Addresses")(__v.asInstanceOf[js.Any])
-      )
-      ResourceAwsEc2InstanceKeyName.foreach(__v =>
-        __obj.updateDynamic("ResourceAwsEc2InstanceKeyName")(__v.asInstanceOf[js.Any])
-      )
-      ResourceAwsEc2InstanceLaunchedAt.foreach(__v =>
-        __obj.updateDynamic("ResourceAwsEc2InstanceLaunchedAt")(__v.asInstanceOf[js.Any])
-      )
-      ResourceAwsEc2InstanceSubnetId.foreach(__v =>
-        __obj.updateDynamic("ResourceAwsEc2InstanceSubnetId")(__v.asInstanceOf[js.Any])
-      )
-      ResourceAwsEc2InstanceType.foreach(__v =>
-        __obj.updateDynamic("ResourceAwsEc2InstanceType")(__v.asInstanceOf[js.Any])
-      )
-      ResourceAwsEc2InstanceVpcId.foreach(__v =>
-        __obj.updateDynamic("ResourceAwsEc2InstanceVpcId")(__v.asInstanceOf[js.Any])
-      )
-      ResourceAwsIamAccessKeyCreatedAt.foreach(__v =>
-        __obj.updateDynamic("ResourceAwsIamAccessKeyCreatedAt")(__v.asInstanceOf[js.Any])
-      )
-      ResourceAwsIamAccessKeyStatus.foreach(__v =>
-        __obj.updateDynamic("ResourceAwsIamAccessKeyStatus")(__v.asInstanceOf[js.Any])
-      )
-      ResourceAwsIamAccessKeyUserName.foreach(__v =>
-        __obj.updateDynamic("ResourceAwsIamAccessKeyUserName")(__v.asInstanceOf[js.Any])
-      )
-      ResourceAwsS3BucketOwnerId.foreach(__v =>
-        __obj.updateDynamic("ResourceAwsS3BucketOwnerId")(__v.asInstanceOf[js.Any])
-      )
-      ResourceAwsS3BucketOwnerName.foreach(__v =>
-        __obj.updateDynamic("ResourceAwsS3BucketOwnerName")(__v.asInstanceOf[js.Any])
-      )
+      RelatedFindingsProductArn.foreach(__v => __obj.updateDynamic("RelatedFindingsProductArn")(__v.asInstanceOf[js.Any]))
+      ResourceAwsEc2InstanceIamInstanceProfileArn.foreach(__v => __obj.updateDynamic("ResourceAwsEc2InstanceIamInstanceProfileArn")(__v.asInstanceOf[js.Any]))
+      ResourceAwsEc2InstanceImageId.foreach(__v => __obj.updateDynamic("ResourceAwsEc2InstanceImageId")(__v.asInstanceOf[js.Any]))
+      ResourceAwsEc2InstanceIpV4Addresses.foreach(__v => __obj.updateDynamic("ResourceAwsEc2InstanceIpV4Addresses")(__v.asInstanceOf[js.Any]))
+      ResourceAwsEc2InstanceIpV6Addresses.foreach(__v => __obj.updateDynamic("ResourceAwsEc2InstanceIpV6Addresses")(__v.asInstanceOf[js.Any]))
+      ResourceAwsEc2InstanceKeyName.foreach(__v => __obj.updateDynamic("ResourceAwsEc2InstanceKeyName")(__v.asInstanceOf[js.Any]))
+      ResourceAwsEc2InstanceLaunchedAt.foreach(__v => __obj.updateDynamic("ResourceAwsEc2InstanceLaunchedAt")(__v.asInstanceOf[js.Any]))
+      ResourceAwsEc2InstanceSubnetId.foreach(__v => __obj.updateDynamic("ResourceAwsEc2InstanceSubnetId")(__v.asInstanceOf[js.Any]))
+      ResourceAwsEc2InstanceType.foreach(__v => __obj.updateDynamic("ResourceAwsEc2InstanceType")(__v.asInstanceOf[js.Any]))
+      ResourceAwsEc2InstanceVpcId.foreach(__v => __obj.updateDynamic("ResourceAwsEc2InstanceVpcId")(__v.asInstanceOf[js.Any]))
+      ResourceAwsIamAccessKeyCreatedAt.foreach(__v => __obj.updateDynamic("ResourceAwsIamAccessKeyCreatedAt")(__v.asInstanceOf[js.Any]))
+      ResourceAwsIamAccessKeyStatus.foreach(__v => __obj.updateDynamic("ResourceAwsIamAccessKeyStatus")(__v.asInstanceOf[js.Any]))
+      ResourceAwsIamAccessKeyUserName.foreach(__v => __obj.updateDynamic("ResourceAwsIamAccessKeyUserName")(__v.asInstanceOf[js.Any]))
+      ResourceAwsS3BucketOwnerId.foreach(__v => __obj.updateDynamic("ResourceAwsS3BucketOwnerId")(__v.asInstanceOf[js.Any]))
+      ResourceAwsS3BucketOwnerName.foreach(__v => __obj.updateDynamic("ResourceAwsS3BucketOwnerName")(__v.asInstanceOf[js.Any]))
       ResourceContainerImageId.foreach(__v => __obj.updateDynamic("ResourceContainerImageId")(__v.asInstanceOf[js.Any]))
-      ResourceContainerImageName.foreach(__v =>
-        __obj.updateDynamic("ResourceContainerImageName")(__v.asInstanceOf[js.Any])
-      )
-      ResourceContainerLaunchedAt.foreach(__v =>
-        __obj.updateDynamic("ResourceContainerLaunchedAt")(__v.asInstanceOf[js.Any])
-      )
+      ResourceContainerImageName.foreach(__v => __obj.updateDynamic("ResourceContainerImageName")(__v.asInstanceOf[js.Any]))
+      ResourceContainerLaunchedAt.foreach(__v => __obj.updateDynamic("ResourceContainerLaunchedAt")(__v.asInstanceOf[js.Any]))
       ResourceContainerName.foreach(__v => __obj.updateDynamic("ResourceContainerName")(__v.asInstanceOf[js.Any]))
       ResourceDetailsOther.foreach(__v => __obj.updateDynamic("ResourceDetailsOther")(__v.asInstanceOf[js.Any]))
       ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
@@ -2246,22 +2134,12 @@ package securityhub {
       SeverityNormalized.foreach(__v => __obj.updateDynamic("SeverityNormalized")(__v.asInstanceOf[js.Any]))
       SeverityProduct.foreach(__v => __obj.updateDynamic("SeverityProduct")(__v.asInstanceOf[js.Any]))
       SourceUrl.foreach(__v => __obj.updateDynamic("SourceUrl")(__v.asInstanceOf[js.Any]))
-      ThreatIntelIndicatorCategory.foreach(__v =>
-        __obj.updateDynamic("ThreatIntelIndicatorCategory")(__v.asInstanceOf[js.Any])
-      )
-      ThreatIntelIndicatorLastObservedAt.foreach(__v =>
-        __obj.updateDynamic("ThreatIntelIndicatorLastObservedAt")(__v.asInstanceOf[js.Any])
-      )
-      ThreatIntelIndicatorSource.foreach(__v =>
-        __obj.updateDynamic("ThreatIntelIndicatorSource")(__v.asInstanceOf[js.Any])
-      )
-      ThreatIntelIndicatorSourceUrl.foreach(__v =>
-        __obj.updateDynamic("ThreatIntelIndicatorSourceUrl")(__v.asInstanceOf[js.Any])
-      )
+      ThreatIntelIndicatorCategory.foreach(__v => __obj.updateDynamic("ThreatIntelIndicatorCategory")(__v.asInstanceOf[js.Any]))
+      ThreatIntelIndicatorLastObservedAt.foreach(__v => __obj.updateDynamic("ThreatIntelIndicatorLastObservedAt")(__v.asInstanceOf[js.Any]))
+      ThreatIntelIndicatorSource.foreach(__v => __obj.updateDynamic("ThreatIntelIndicatorSource")(__v.asInstanceOf[js.Any]))
+      ThreatIntelIndicatorSourceUrl.foreach(__v => __obj.updateDynamic("ThreatIntelIndicatorSourceUrl")(__v.asInstanceOf[js.Any]))
       ThreatIntelIndicatorType.foreach(__v => __obj.updateDynamic("ThreatIntelIndicatorType")(__v.asInstanceOf[js.Any]))
-      ThreatIntelIndicatorValue.foreach(__v =>
-        __obj.updateDynamic("ThreatIntelIndicatorValue")(__v.asInstanceOf[js.Any])
-      )
+      ThreatIntelIndicatorValue.foreach(__v => __obj.updateDynamic("ThreatIntelIndicatorValue")(__v.asInstanceOf[js.Any]))
       Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
@@ -2368,9 +2246,7 @@ package securityhub {
     ): AwsSqsQueueDetails = {
       val __obj = js.Dynamic.literal()
       DeadLetterTargetArn.foreach(__v => __obj.updateDynamic("DeadLetterTargetArn")(__v.asInstanceOf[js.Any]))
-      KmsDataKeyReusePeriodSeconds.foreach(__v =>
-        __obj.updateDynamic("KmsDataKeyReusePeriodSeconds")(__v.asInstanceOf[js.Any])
-      )
+      KmsDataKeyReusePeriodSeconds.foreach(__v => __obj.updateDynamic("KmsDataKeyReusePeriodSeconds")(__v.asInstanceOf[js.Any]))
       KmsMasterKeyId.foreach(__v => __obj.updateDynamic("KmsMasterKeyId")(__v.asInstanceOf[js.Any]))
       QueueName.foreach(__v => __obj.updateDynamic("QueueName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsSqsQueueDetails]
@@ -3505,9 +3381,7 @@ package securityhub {
       val __obj = js.Dynamic.literal()
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      StandardsSubscriptionArns.foreach(__v =>
-        __obj.updateDynamic("StandardsSubscriptionArns")(__v.asInstanceOf[js.Any])
-      )
+      StandardsSubscriptionArns.foreach(__v => __obj.updateDynamic("StandardsSubscriptionArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetEnabledStandardsRequest]
     }
   }
@@ -4629,9 +4503,7 @@ package securityhub {
       IntegrationTypes.foreach(__v => __obj.updateDynamic("IntegrationTypes")(__v.asInstanceOf[js.Any]))
       MarketplaceUrl.foreach(__v => __obj.updateDynamic("MarketplaceUrl")(__v.asInstanceOf[js.Any]))
       ProductName.foreach(__v => __obj.updateDynamic("ProductName")(__v.asInstanceOf[js.Any]))
-      ProductSubscriptionResourcePolicy.foreach(__v =>
-        __obj.updateDynamic("ProductSubscriptionResourcePolicy")(__v.asInstanceOf[js.Any])
-      )
+      ProductSubscriptionResourcePolicy.foreach(__v => __obj.updateDynamic("ProductSubscriptionResourcePolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Product]
     }
   }
@@ -4807,12 +4679,8 @@ package securityhub {
         Other: js.UndefOr[FieldMap] = js.undefined
     ): ResourceDetails = {
       val __obj = js.Dynamic.literal()
-      AwsAutoScalingAutoScalingGroup.foreach(__v =>
-        __obj.updateDynamic("AwsAutoScalingAutoScalingGroup")(__v.asInstanceOf[js.Any])
-      )
-      AwsCloudFrontDistribution.foreach(__v =>
-        __obj.updateDynamic("AwsCloudFrontDistribution")(__v.asInstanceOf[js.Any])
-      )
+      AwsAutoScalingAutoScalingGroup.foreach(__v => __obj.updateDynamic("AwsAutoScalingAutoScalingGroup")(__v.asInstanceOf[js.Any]))
+      AwsCloudFrontDistribution.foreach(__v => __obj.updateDynamic("AwsCloudFrontDistribution")(__v.asInstanceOf[js.Any]))
       AwsCodeBuildProject.foreach(__v => __obj.updateDynamic("AwsCodeBuildProject")(__v.asInstanceOf[js.Any]))
       AwsEc2Instance.foreach(__v => __obj.updateDynamic("AwsEc2Instance")(__v.asInstanceOf[js.Any]))
       AwsEc2NetworkInterface.foreach(__v => __obj.updateDynamic("AwsEc2NetworkInterface")(__v.asInstanceOf[js.Any]))
@@ -5273,8 +5141,7 @@ package securityhub {
     val EXPLOIT_SITE = "EXPLOIT_SITE".asInstanceOf[ThreatIntelIndicatorCategory]
     val KEYLOGGER = "KEYLOGGER".asInstanceOf[ThreatIntelIndicatorCategory]
 
-    val values =
-      js.Object.freeze(js.Array(BACKDOOR, CARD_STEALER, COMMAND_AND_CONTROL, DROP_SITE, EXPLOIT_SITE, KEYLOGGER))
+    val values = js.Object.freeze(js.Array(BACKDOOR, CARD_STEALER, COMMAND_AND_CONTROL, DROP_SITE, EXPLOIT_SITE, KEYLOGGER))
   }
 
   @js.native
@@ -5292,21 +5159,7 @@ package securityhub {
     val PROCESS = "PROCESS".asInstanceOf[ThreatIntelIndicatorType]
     val URL = "URL".asInstanceOf[ThreatIntelIndicatorType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        DOMAIN,
-        EMAIL_ADDRESS,
-        HASH_MD5,
-        HASH_SHA1,
-        HASH_SHA256,
-        HASH_SHA512,
-        IPV4_ADDRESS,
-        IPV6_ADDRESS,
-        MUTEX,
-        PROCESS,
-        URL
-      )
-    )
+    val values = js.Object.freeze(js.Array(DOMAIN, EMAIL_ADDRESS, HASH_MD5, HASH_SHA1, HASH_SHA256, HASH_SHA512, IPV4_ADDRESS, IPV6_ADDRESS, MUTEX, PROCESS, URL))
   }
 
   @js.native

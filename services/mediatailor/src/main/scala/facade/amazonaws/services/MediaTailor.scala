@@ -17,24 +17,13 @@ package object mediatailor {
 
   implicit final class MediaTailorOps(private val service: MediaTailor) extends AnyVal {
 
-    @inline def deletePlaybackConfigurationFuture(
-        params: DeletePlaybackConfigurationRequest
-    ): Future[DeletePlaybackConfigurationResponse] = service.deletePlaybackConfiguration(params).promise().toFuture
-    @inline def getPlaybackConfigurationFuture(
-        params: GetPlaybackConfigurationRequest
-    ): Future[GetPlaybackConfigurationResponse] = service.getPlaybackConfiguration(params).promise().toFuture
-    @inline def listPlaybackConfigurationsFuture(
-        params: ListPlaybackConfigurationsRequest
-    ): Future[ListPlaybackConfigurationsResponse] = service.listPlaybackConfigurations(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def putPlaybackConfigurationFuture(
-        params: PutPlaybackConfigurationRequest
-    ): Future[PutPlaybackConfigurationResponse] = service.putPlaybackConfiguration(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise().toFuture
+    @inline def deletePlaybackConfigurationFuture(params: DeletePlaybackConfigurationRequest): Future[DeletePlaybackConfigurationResponse] = service.deletePlaybackConfiguration(params).promise().toFuture
+    @inline def getPlaybackConfigurationFuture(params: GetPlaybackConfigurationRequest): Future[GetPlaybackConfigurationResponse] = service.getPlaybackConfiguration(params).promise().toFuture
+    @inline def listPlaybackConfigurationsFuture(params: ListPlaybackConfigurationsRequest): Future[ListPlaybackConfigurationsResponse] = service.listPlaybackConfigurations(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def putPlaybackConfigurationFuture(params: PutPlaybackConfigurationRequest): Future[PutPlaybackConfigurationResponse] = service.putPlaybackConfiguration(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
   }
 }
 
@@ -44,17 +33,11 @@ package mediatailor {
   class MediaTailor() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def deletePlaybackConfiguration(
-        params: DeletePlaybackConfigurationRequest
-    ): Request[DeletePlaybackConfigurationResponse] = js.native
-    def getPlaybackConfiguration(params: GetPlaybackConfigurationRequest): Request[GetPlaybackConfigurationResponse] =
-      js.native
-    def listPlaybackConfigurations(
-        params: ListPlaybackConfigurationsRequest
-    ): Request[ListPlaybackConfigurationsResponse] = js.native
+    def deletePlaybackConfiguration(params: DeletePlaybackConfigurationRequest): Request[DeletePlaybackConfigurationResponse] = js.native
+    def getPlaybackConfiguration(params: GetPlaybackConfigurationRequest): Request[GetPlaybackConfigurationResponse] = js.native
+    def listPlaybackConfigurations(params: ListPlaybackConfigurationsRequest): Request[ListPlaybackConfigurationsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def putPlaybackConfiguration(params: PutPlaybackConfigurationRequest): Request[PutPlaybackConfigurationResponse] =
-      js.native
+    def putPlaybackConfiguration(params: PutPlaybackConfigurationRequest): Request[PutPlaybackConfigurationResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
   }
@@ -270,14 +253,10 @@ package mediatailor {
       HlsConfiguration.foreach(__v => __obj.updateDynamic("HlsConfiguration")(__v.asInstanceOf[js.Any]))
       LivePreRollConfiguration.foreach(__v => __obj.updateDynamic("LivePreRollConfiguration")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      PersonalizationThresholdSeconds.foreach(__v =>
-        __obj.updateDynamic("PersonalizationThresholdSeconds")(__v.asInstanceOf[js.Any])
-      )
+      PersonalizationThresholdSeconds.foreach(__v => __obj.updateDynamic("PersonalizationThresholdSeconds")(__v.asInstanceOf[js.Any]))
       PlaybackConfigurationArn.foreach(__v => __obj.updateDynamic("PlaybackConfigurationArn")(__v.asInstanceOf[js.Any]))
       PlaybackEndpointPrefix.foreach(__v => __obj.updateDynamic("PlaybackEndpointPrefix")(__v.asInstanceOf[js.Any]))
-      SessionInitializationEndpointPrefix.foreach(__v =>
-        __obj.updateDynamic("SessionInitializationEndpointPrefix")(__v.asInstanceOf[js.Any])
-      )
+      SessionInitializationEndpointPrefix.foreach(__v => __obj.updateDynamic("SessionInitializationEndpointPrefix")(__v.asInstanceOf[js.Any]))
       SlateAdUrl.foreach(__v => __obj.updateDynamic("SlateAdUrl")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TranscodeProfileName.foreach(__v => __obj.updateDynamic("TranscodeProfileName")(__v.asInstanceOf[js.Any]))
@@ -466,14 +445,10 @@ package mediatailor {
       DashConfiguration.foreach(__v => __obj.updateDynamic("DashConfiguration")(__v.asInstanceOf[js.Any]))
       HlsConfiguration.foreach(__v => __obj.updateDynamic("HlsConfiguration")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      PersonalizationThresholdSeconds.foreach(__v =>
-        __obj.updateDynamic("PersonalizationThresholdSeconds")(__v.asInstanceOf[js.Any])
-      )
+      PersonalizationThresholdSeconds.foreach(__v => __obj.updateDynamic("PersonalizationThresholdSeconds")(__v.asInstanceOf[js.Any]))
       PlaybackConfigurationArn.foreach(__v => __obj.updateDynamic("PlaybackConfigurationArn")(__v.asInstanceOf[js.Any]))
       PlaybackEndpointPrefix.foreach(__v => __obj.updateDynamic("PlaybackEndpointPrefix")(__v.asInstanceOf[js.Any]))
-      SessionInitializationEndpointPrefix.foreach(__v =>
-        __obj.updateDynamic("SessionInitializationEndpointPrefix")(__v.asInstanceOf[js.Any])
-      )
+      SessionInitializationEndpointPrefix.foreach(__v => __obj.updateDynamic("SessionInitializationEndpointPrefix")(__v.asInstanceOf[js.Any]))
       SlateAdUrl.foreach(__v => __obj.updateDynamic("SlateAdUrl")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TranscodeProfileName.foreach(__v => __obj.updateDynamic("TranscodeProfileName")(__v.asInstanceOf[js.Any]))
@@ -522,9 +497,7 @@ package mediatailor {
       DashConfiguration.foreach(__v => __obj.updateDynamic("DashConfiguration")(__v.asInstanceOf[js.Any]))
       LivePreRollConfiguration.foreach(__v => __obj.updateDynamic("LivePreRollConfiguration")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      PersonalizationThresholdSeconds.foreach(__v =>
-        __obj.updateDynamic("PersonalizationThresholdSeconds")(__v.asInstanceOf[js.Any])
-      )
+      PersonalizationThresholdSeconds.foreach(__v => __obj.updateDynamic("PersonalizationThresholdSeconds")(__v.asInstanceOf[js.Any]))
       SlateAdUrl.foreach(__v => __obj.updateDynamic("SlateAdUrl")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TranscodeProfileName.foreach(__v => __obj.updateDynamic("TranscodeProfileName")(__v.asInstanceOf[js.Any]))
@@ -582,14 +555,10 @@ package mediatailor {
       HlsConfiguration.foreach(__v => __obj.updateDynamic("HlsConfiguration")(__v.asInstanceOf[js.Any]))
       LivePreRollConfiguration.foreach(__v => __obj.updateDynamic("LivePreRollConfiguration")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      PersonalizationThresholdSeconds.foreach(__v =>
-        __obj.updateDynamic("PersonalizationThresholdSeconds")(__v.asInstanceOf[js.Any])
-      )
+      PersonalizationThresholdSeconds.foreach(__v => __obj.updateDynamic("PersonalizationThresholdSeconds")(__v.asInstanceOf[js.Any]))
       PlaybackConfigurationArn.foreach(__v => __obj.updateDynamic("PlaybackConfigurationArn")(__v.asInstanceOf[js.Any]))
       PlaybackEndpointPrefix.foreach(__v => __obj.updateDynamic("PlaybackEndpointPrefix")(__v.asInstanceOf[js.Any]))
-      SessionInitializationEndpointPrefix.foreach(__v =>
-        __obj.updateDynamic("SessionInitializationEndpointPrefix")(__v.asInstanceOf[js.Any])
-      )
+      SessionInitializationEndpointPrefix.foreach(__v => __obj.updateDynamic("SessionInitializationEndpointPrefix")(__v.asInstanceOf[js.Any]))
       SlateAdUrl.foreach(__v => __obj.updateDynamic("SlateAdUrl")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TranscodeProfileName.foreach(__v => __obj.updateDynamic("TranscodeProfileName")(__v.asInstanceOf[js.Any]))

@@ -32,45 +32,22 @@ package object batch {
 
   implicit final class BatchOps(private val service: Batch) extends AnyVal {
 
-    @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] =
-      service.cancelJob(params).promise().toFuture
-    @inline def createComputeEnvironmentFuture(
-        params: CreateComputeEnvironmentRequest
-    ): Future[CreateComputeEnvironmentResponse] = service.createComputeEnvironment(params).promise().toFuture
-    @inline def createJobQueueFuture(params: CreateJobQueueRequest): Future[CreateJobQueueResponse] =
-      service.createJobQueue(params).promise().toFuture
-    @inline def deleteComputeEnvironmentFuture(
-        params: DeleteComputeEnvironmentRequest
-    ): Future[DeleteComputeEnvironmentResponse] = service.deleteComputeEnvironment(params).promise().toFuture
-    @inline def deleteJobQueueFuture(params: DeleteJobQueueRequest): Future[DeleteJobQueueResponse] =
-      service.deleteJobQueue(params).promise().toFuture
-    @inline def deregisterJobDefinitionFuture(
-        params: DeregisterJobDefinitionRequest
-    ): Future[DeregisterJobDefinitionResponse] = service.deregisterJobDefinition(params).promise().toFuture
-    @inline def describeComputeEnvironmentsFuture(
-        params: DescribeComputeEnvironmentsRequest
-    ): Future[DescribeComputeEnvironmentsResponse] = service.describeComputeEnvironments(params).promise().toFuture
-    @inline def describeJobDefinitionsFuture(
-        params: DescribeJobDefinitionsRequest
-    ): Future[DescribeJobDefinitionsResponse] = service.describeJobDefinitions(params).promise().toFuture
-    @inline def describeJobQueuesFuture(params: DescribeJobQueuesRequest): Future[DescribeJobQueuesResponse] =
-      service.describeJobQueues(params).promise().toFuture
-    @inline def describeJobsFuture(params: DescribeJobsRequest): Future[DescribeJobsResponse] =
-      service.describeJobs(params).promise().toFuture
-    @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResponse] =
-      service.listJobs(params).promise().toFuture
-    @inline def registerJobDefinitionFuture(
-        params: RegisterJobDefinitionRequest
-    ): Future[RegisterJobDefinitionResponse] = service.registerJobDefinition(params).promise().toFuture
-    @inline def submitJobFuture(params: SubmitJobRequest): Future[SubmitJobResponse] =
-      service.submitJob(params).promise().toFuture
-    @inline def terminateJobFuture(params: TerminateJobRequest): Future[TerminateJobResponse] =
-      service.terminateJob(params).promise().toFuture
-    @inline def updateComputeEnvironmentFuture(
-        params: UpdateComputeEnvironmentRequest
-    ): Future[UpdateComputeEnvironmentResponse] = service.updateComputeEnvironment(params).promise().toFuture
-    @inline def updateJobQueueFuture(params: UpdateJobQueueRequest): Future[UpdateJobQueueResponse] =
-      service.updateJobQueue(params).promise().toFuture
+    @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] = service.cancelJob(params).promise().toFuture
+    @inline def createComputeEnvironmentFuture(params: CreateComputeEnvironmentRequest): Future[CreateComputeEnvironmentResponse] = service.createComputeEnvironment(params).promise().toFuture
+    @inline def createJobQueueFuture(params: CreateJobQueueRequest): Future[CreateJobQueueResponse] = service.createJobQueue(params).promise().toFuture
+    @inline def deleteComputeEnvironmentFuture(params: DeleteComputeEnvironmentRequest): Future[DeleteComputeEnvironmentResponse] = service.deleteComputeEnvironment(params).promise().toFuture
+    @inline def deleteJobQueueFuture(params: DeleteJobQueueRequest): Future[DeleteJobQueueResponse] = service.deleteJobQueue(params).promise().toFuture
+    @inline def deregisterJobDefinitionFuture(params: DeregisterJobDefinitionRequest): Future[DeregisterJobDefinitionResponse] = service.deregisterJobDefinition(params).promise().toFuture
+    @inline def describeComputeEnvironmentsFuture(params: DescribeComputeEnvironmentsRequest): Future[DescribeComputeEnvironmentsResponse] = service.describeComputeEnvironments(params).promise().toFuture
+    @inline def describeJobDefinitionsFuture(params: DescribeJobDefinitionsRequest): Future[DescribeJobDefinitionsResponse] = service.describeJobDefinitions(params).promise().toFuture
+    @inline def describeJobQueuesFuture(params: DescribeJobQueuesRequest): Future[DescribeJobQueuesResponse] = service.describeJobQueues(params).promise().toFuture
+    @inline def describeJobsFuture(params: DescribeJobsRequest): Future[DescribeJobsResponse] = service.describeJobs(params).promise().toFuture
+    @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResponse] = service.listJobs(params).promise().toFuture
+    @inline def registerJobDefinitionFuture(params: RegisterJobDefinitionRequest): Future[RegisterJobDefinitionResponse] = service.registerJobDefinition(params).promise().toFuture
+    @inline def submitJobFuture(params: SubmitJobRequest): Future[SubmitJobResponse] = service.submitJob(params).promise().toFuture
+    @inline def terminateJobFuture(params: TerminateJobRequest): Future[TerminateJobResponse] = service.terminateJob(params).promise().toFuture
+    @inline def updateComputeEnvironmentFuture(params: UpdateComputeEnvironmentRequest): Future[UpdateComputeEnvironmentResponse] = service.updateComputeEnvironment(params).promise().toFuture
+    @inline def updateJobQueueFuture(params: UpdateJobQueueRequest): Future[UpdateJobQueueResponse] = service.updateJobQueue(params).promise().toFuture
   }
 }
 
@@ -81,27 +58,20 @@ package batch {
     def this(config: AWSConfig) = this()
 
     def cancelJob(params: CancelJobRequest): Request[CancelJobResponse] = js.native
-    def createComputeEnvironment(params: CreateComputeEnvironmentRequest): Request[CreateComputeEnvironmentResponse] =
-      js.native
+    def createComputeEnvironment(params: CreateComputeEnvironmentRequest): Request[CreateComputeEnvironmentResponse] = js.native
     def createJobQueue(params: CreateJobQueueRequest): Request[CreateJobQueueResponse] = js.native
-    def deleteComputeEnvironment(params: DeleteComputeEnvironmentRequest): Request[DeleteComputeEnvironmentResponse] =
-      js.native
+    def deleteComputeEnvironment(params: DeleteComputeEnvironmentRequest): Request[DeleteComputeEnvironmentResponse] = js.native
     def deleteJobQueue(params: DeleteJobQueueRequest): Request[DeleteJobQueueResponse] = js.native
-    def deregisterJobDefinition(params: DeregisterJobDefinitionRequest): Request[DeregisterJobDefinitionResponse] =
-      js.native
-    def describeComputeEnvironments(
-        params: DescribeComputeEnvironmentsRequest
-    ): Request[DescribeComputeEnvironmentsResponse] = js.native
-    def describeJobDefinitions(params: DescribeJobDefinitionsRequest): Request[DescribeJobDefinitionsResponse] =
-      js.native
+    def deregisterJobDefinition(params: DeregisterJobDefinitionRequest): Request[DeregisterJobDefinitionResponse] = js.native
+    def describeComputeEnvironments(params: DescribeComputeEnvironmentsRequest): Request[DescribeComputeEnvironmentsResponse] = js.native
+    def describeJobDefinitions(params: DescribeJobDefinitionsRequest): Request[DescribeJobDefinitionsResponse] = js.native
     def describeJobQueues(params: DescribeJobQueuesRequest): Request[DescribeJobQueuesResponse] = js.native
     def describeJobs(params: DescribeJobsRequest): Request[DescribeJobsResponse] = js.native
     def listJobs(params: ListJobsRequest): Request[ListJobsResponse] = js.native
     def registerJobDefinition(params: RegisterJobDefinitionRequest): Request[RegisterJobDefinitionResponse] = js.native
     def submitJob(params: SubmitJobRequest): Request[SubmitJobResponse] = js.native
     def terminateJob(params: TerminateJobRequest): Request[TerminateJobResponse] = js.native
-    def updateComputeEnvironment(params: UpdateComputeEnvironmentRequest): Request[UpdateComputeEnvironmentResponse] =
-      js.native
+    def updateComputeEnvironment(params: UpdateComputeEnvironmentRequest): Request[UpdateComputeEnvironmentResponse] = js.native
     def updateJobQueue(params: UpdateJobQueueRequest): Request[UpdateJobQueueResponse] = js.native
   }
 

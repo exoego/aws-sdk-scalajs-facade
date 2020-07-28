@@ -36,14 +36,10 @@ package object dynamodbstreams {
 
   implicit final class DynamoDBStreamsOps(private val service: DynamoDBStreams) extends AnyVal {
 
-    @inline def describeStreamFuture(params: DescribeStreamInput): Future[DescribeStreamOutput] =
-      service.describeStream(params).promise().toFuture
-    @inline def getRecordsFuture(params: GetRecordsInput): Future[GetRecordsOutput] =
-      service.getRecords(params).promise().toFuture
-    @inline def getShardIteratorFuture(params: GetShardIteratorInput): Future[GetShardIteratorOutput] =
-      service.getShardIterator(params).promise().toFuture
-    @inline def listStreamsFuture(params: ListStreamsInput): Future[ListStreamsOutput] =
-      service.listStreams(params).promise().toFuture
+    @inline def describeStreamFuture(params: DescribeStreamInput): Future[DescribeStreamOutput] = service.describeStream(params).promise().toFuture
+    @inline def getRecordsFuture(params: GetRecordsInput): Future[GetRecordsOutput] = service.getRecords(params).promise().toFuture
+    @inline def getShardIteratorFuture(params: GetShardIteratorInput): Future[GetShardIteratorOutput] = service.getShardIterator(params).promise().toFuture
+    @inline def listStreamsFuture(params: ListStreamsInput): Future[ListStreamsOutput] = service.listStreams(params).promise().toFuture
   }
 }
 
@@ -584,9 +580,7 @@ package dynamodbstreams {
         StreamViewType: js.UndefOr[StreamViewType] = js.undefined
     ): StreamRecord = {
       val __obj = js.Dynamic.literal()
-      ApproximateCreationDateTime.foreach(__v =>
-        __obj.updateDynamic("ApproximateCreationDateTime")(__v.asInstanceOf[js.Any])
-      )
+      ApproximateCreationDateTime.foreach(__v => __obj.updateDynamic("ApproximateCreationDateTime")(__v.asInstanceOf[js.Any]))
       Keys.foreach(__v => __obj.updateDynamic("Keys")(__v.asInstanceOf[js.Any]))
       NewImage.foreach(__v => __obj.updateDynamic("NewImage")(__v.asInstanceOf[js.Any]))
       OldImage.foreach(__v => __obj.updateDynamic("OldImage")(__v.asInstanceOf[js.Any]))

@@ -20,8 +20,7 @@ package object qldbsession {
 
   implicit final class QLDBSessionOps(private val service: QLDBSession) extends AnyVal {
 
-    @inline def sendCommandFuture(params: SendCommandRequest): Future[SendCommandResult] =
-      service.sendCommand(params).promise().toFuture
+    @inline def sendCommandFuture(params: SendCommandRequest): Future[SendCommandResult] = service.sendCommand(params).promise().toFuture
   }
 }
 

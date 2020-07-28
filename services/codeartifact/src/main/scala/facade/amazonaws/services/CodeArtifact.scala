@@ -53,85 +53,37 @@ package object codeartifact {
 
   implicit final class CodeArtifactOps(private val service: CodeArtifact) extends AnyVal {
 
-    @inline def associateExternalConnectionFuture(
-        params: AssociateExternalConnectionRequest
-    ): Future[AssociateExternalConnectionResult] = service.associateExternalConnection(params).promise().toFuture
-    @inline def copyPackageVersionsFuture(params: CopyPackageVersionsRequest): Future[CopyPackageVersionsResult] =
-      service.copyPackageVersions(params).promise().toFuture
-    @inline def createDomainFuture(params: CreateDomainRequest): Future[CreateDomainResult] =
-      service.createDomain(params).promise().toFuture
-    @inline def createRepositoryFuture(params: CreateRepositoryRequest): Future[CreateRepositoryResult] =
-      service.createRepository(params).promise().toFuture
-    @inline def deleteDomainFuture(params: DeleteDomainRequest): Future[DeleteDomainResult] =
-      service.deleteDomain(params).promise().toFuture
-    @inline def deleteDomainPermissionsPolicyFuture(
-        params: DeleteDomainPermissionsPolicyRequest
-    ): Future[DeleteDomainPermissionsPolicyResult] = service.deleteDomainPermissionsPolicy(params).promise().toFuture
-    @inline def deletePackageVersionsFuture(params: DeletePackageVersionsRequest): Future[DeletePackageVersionsResult] =
-      service.deletePackageVersions(params).promise().toFuture
-    @inline def deleteRepositoryFuture(params: DeleteRepositoryRequest): Future[DeleteRepositoryResult] =
-      service.deleteRepository(params).promise().toFuture
-    @inline def deleteRepositoryPermissionsPolicyFuture(
-        params: DeleteRepositoryPermissionsPolicyRequest
-    ): Future[DeleteRepositoryPermissionsPolicyResult] =
-      service.deleteRepositoryPermissionsPolicy(params).promise().toFuture
-    @inline def describeDomainFuture(params: DescribeDomainRequest): Future[DescribeDomainResult] =
-      service.describeDomain(params).promise().toFuture
-    @inline def describePackageVersionFuture(
-        params: DescribePackageVersionRequest
-    ): Future[DescribePackageVersionResult] = service.describePackageVersion(params).promise().toFuture
-    @inline def describeRepositoryFuture(params: DescribeRepositoryRequest): Future[DescribeRepositoryResult] =
-      service.describeRepository(params).promise().toFuture
-    @inline def disassociateExternalConnectionFuture(
-        params: DisassociateExternalConnectionRequest
-    ): Future[DisassociateExternalConnectionResult] = service.disassociateExternalConnection(params).promise().toFuture
-    @inline def disposePackageVersionsFuture(
-        params: DisposePackageVersionsRequest
-    ): Future[DisposePackageVersionsResult] = service.disposePackageVersions(params).promise().toFuture
-    @inline def getAuthorizationTokenFuture(params: GetAuthorizationTokenRequest): Future[GetAuthorizationTokenResult] =
-      service.getAuthorizationToken(params).promise().toFuture
-    @inline def getDomainPermissionsPolicyFuture(
-        params: GetDomainPermissionsPolicyRequest
-    ): Future[GetDomainPermissionsPolicyResult] = service.getDomainPermissionsPolicy(params).promise().toFuture
-    @inline def getPackageVersionAssetFuture(
-        params: GetPackageVersionAssetRequest
-    ): Future[GetPackageVersionAssetResult] = service.getPackageVersionAsset(params).promise().toFuture
-    @inline def getPackageVersionReadmeFuture(
-        params: GetPackageVersionReadmeRequest
-    ): Future[GetPackageVersionReadmeResult] = service.getPackageVersionReadme(params).promise().toFuture
-    @inline def getRepositoryEndpointFuture(params: GetRepositoryEndpointRequest): Future[GetRepositoryEndpointResult] =
-      service.getRepositoryEndpoint(params).promise().toFuture
-    @inline def getRepositoryPermissionsPolicyFuture(
-        params: GetRepositoryPermissionsPolicyRequest
-    ): Future[GetRepositoryPermissionsPolicyResult] = service.getRepositoryPermissionsPolicy(params).promise().toFuture
-    @inline def listDomainsFuture(params: ListDomainsRequest): Future[ListDomainsResult] =
-      service.listDomains(params).promise().toFuture
-    @inline def listPackageVersionAssetsFuture(
-        params: ListPackageVersionAssetsRequest
-    ): Future[ListPackageVersionAssetsResult] = service.listPackageVersionAssets(params).promise().toFuture
-    @inline def listPackageVersionDependenciesFuture(
-        params: ListPackageVersionDependenciesRequest
-    ): Future[ListPackageVersionDependenciesResult] = service.listPackageVersionDependencies(params).promise().toFuture
-    @inline def listPackageVersionsFuture(params: ListPackageVersionsRequest): Future[ListPackageVersionsResult] =
-      service.listPackageVersions(params).promise().toFuture
-    @inline def listPackagesFuture(params: ListPackagesRequest): Future[ListPackagesResult] =
-      service.listPackages(params).promise().toFuture
-    @inline def listRepositoriesFuture(params: ListRepositoriesRequest): Future[ListRepositoriesResult] =
-      service.listRepositories(params).promise().toFuture
-    @inline def listRepositoriesInDomainFuture(
-        params: ListRepositoriesInDomainRequest
-    ): Future[ListRepositoriesInDomainResult] = service.listRepositoriesInDomain(params).promise().toFuture
-    @inline def putDomainPermissionsPolicyFuture(
-        params: PutDomainPermissionsPolicyRequest
-    ): Future[PutDomainPermissionsPolicyResult] = service.putDomainPermissionsPolicy(params).promise().toFuture
-    @inline def putRepositoryPermissionsPolicyFuture(
-        params: PutRepositoryPermissionsPolicyRequest
-    ): Future[PutRepositoryPermissionsPolicyResult] = service.putRepositoryPermissionsPolicy(params).promise().toFuture
-    @inline def updatePackageVersionsStatusFuture(
-        params: UpdatePackageVersionsStatusRequest
-    ): Future[UpdatePackageVersionsStatusResult] = service.updatePackageVersionsStatus(params).promise().toFuture
-    @inline def updateRepositoryFuture(params: UpdateRepositoryRequest): Future[UpdateRepositoryResult] =
-      service.updateRepository(params).promise().toFuture
+    @inline def associateExternalConnectionFuture(params: AssociateExternalConnectionRequest): Future[AssociateExternalConnectionResult] = service.associateExternalConnection(params).promise().toFuture
+    @inline def copyPackageVersionsFuture(params: CopyPackageVersionsRequest): Future[CopyPackageVersionsResult] = service.copyPackageVersions(params).promise().toFuture
+    @inline def createDomainFuture(params: CreateDomainRequest): Future[CreateDomainResult] = service.createDomain(params).promise().toFuture
+    @inline def createRepositoryFuture(params: CreateRepositoryRequest): Future[CreateRepositoryResult] = service.createRepository(params).promise().toFuture
+    @inline def deleteDomainFuture(params: DeleteDomainRequest): Future[DeleteDomainResult] = service.deleteDomain(params).promise().toFuture
+    @inline def deleteDomainPermissionsPolicyFuture(params: DeleteDomainPermissionsPolicyRequest): Future[DeleteDomainPermissionsPolicyResult] = service.deleteDomainPermissionsPolicy(params).promise().toFuture
+    @inline def deletePackageVersionsFuture(params: DeletePackageVersionsRequest): Future[DeletePackageVersionsResult] = service.deletePackageVersions(params).promise().toFuture
+    @inline def deleteRepositoryFuture(params: DeleteRepositoryRequest): Future[DeleteRepositoryResult] = service.deleteRepository(params).promise().toFuture
+    @inline def deleteRepositoryPermissionsPolicyFuture(params: DeleteRepositoryPermissionsPolicyRequest): Future[DeleteRepositoryPermissionsPolicyResult] = service.deleteRepositoryPermissionsPolicy(params).promise().toFuture
+    @inline def describeDomainFuture(params: DescribeDomainRequest): Future[DescribeDomainResult] = service.describeDomain(params).promise().toFuture
+    @inline def describePackageVersionFuture(params: DescribePackageVersionRequest): Future[DescribePackageVersionResult] = service.describePackageVersion(params).promise().toFuture
+    @inline def describeRepositoryFuture(params: DescribeRepositoryRequest): Future[DescribeRepositoryResult] = service.describeRepository(params).promise().toFuture
+    @inline def disassociateExternalConnectionFuture(params: DisassociateExternalConnectionRequest): Future[DisassociateExternalConnectionResult] = service.disassociateExternalConnection(params).promise().toFuture
+    @inline def disposePackageVersionsFuture(params: DisposePackageVersionsRequest): Future[DisposePackageVersionsResult] = service.disposePackageVersions(params).promise().toFuture
+    @inline def getAuthorizationTokenFuture(params: GetAuthorizationTokenRequest): Future[GetAuthorizationTokenResult] = service.getAuthorizationToken(params).promise().toFuture
+    @inline def getDomainPermissionsPolicyFuture(params: GetDomainPermissionsPolicyRequest): Future[GetDomainPermissionsPolicyResult] = service.getDomainPermissionsPolicy(params).promise().toFuture
+    @inline def getPackageVersionAssetFuture(params: GetPackageVersionAssetRequest): Future[GetPackageVersionAssetResult] = service.getPackageVersionAsset(params).promise().toFuture
+    @inline def getPackageVersionReadmeFuture(params: GetPackageVersionReadmeRequest): Future[GetPackageVersionReadmeResult] = service.getPackageVersionReadme(params).promise().toFuture
+    @inline def getRepositoryEndpointFuture(params: GetRepositoryEndpointRequest): Future[GetRepositoryEndpointResult] = service.getRepositoryEndpoint(params).promise().toFuture
+    @inline def getRepositoryPermissionsPolicyFuture(params: GetRepositoryPermissionsPolicyRequest): Future[GetRepositoryPermissionsPolicyResult] = service.getRepositoryPermissionsPolicy(params).promise().toFuture
+    @inline def listDomainsFuture(params: ListDomainsRequest): Future[ListDomainsResult] = service.listDomains(params).promise().toFuture
+    @inline def listPackageVersionAssetsFuture(params: ListPackageVersionAssetsRequest): Future[ListPackageVersionAssetsResult] = service.listPackageVersionAssets(params).promise().toFuture
+    @inline def listPackageVersionDependenciesFuture(params: ListPackageVersionDependenciesRequest): Future[ListPackageVersionDependenciesResult] = service.listPackageVersionDependencies(params).promise().toFuture
+    @inline def listPackageVersionsFuture(params: ListPackageVersionsRequest): Future[ListPackageVersionsResult] = service.listPackageVersions(params).promise().toFuture
+    @inline def listPackagesFuture(params: ListPackagesRequest): Future[ListPackagesResult] = service.listPackages(params).promise().toFuture
+    @inline def listRepositoriesFuture(params: ListRepositoriesRequest): Future[ListRepositoriesResult] = service.listRepositories(params).promise().toFuture
+    @inline def listRepositoriesInDomainFuture(params: ListRepositoriesInDomainRequest): Future[ListRepositoriesInDomainResult] = service.listRepositoriesInDomain(params).promise().toFuture
+    @inline def putDomainPermissionsPolicyFuture(params: PutDomainPermissionsPolicyRequest): Future[PutDomainPermissionsPolicyResult] = service.putDomainPermissionsPolicy(params).promise().toFuture
+    @inline def putRepositoryPermissionsPolicyFuture(params: PutRepositoryPermissionsPolicyRequest): Future[PutRepositoryPermissionsPolicyResult] = service.putRepositoryPermissionsPolicy(params).promise().toFuture
+    @inline def updatePackageVersionsStatusFuture(params: UpdatePackageVersionsStatusRequest): Future[UpdatePackageVersionsStatusResult] = service.updatePackageVersionsStatus(params).promise().toFuture
+    @inline def updateRepositoryFuture(params: UpdateRepositoryRequest): Future[UpdateRepositoryResult] = service.updateRepository(params).promise().toFuture
   }
 }
 
@@ -141,59 +93,36 @@ package codeartifact {
   class CodeArtifact() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def associateExternalConnection(
-        params: AssociateExternalConnectionRequest
-    ): Request[AssociateExternalConnectionResult] = js.native
+    def associateExternalConnection(params: AssociateExternalConnectionRequest): Request[AssociateExternalConnectionResult] = js.native
     def copyPackageVersions(params: CopyPackageVersionsRequest): Request[CopyPackageVersionsResult] = js.native
     def createDomain(params: CreateDomainRequest): Request[CreateDomainResult] = js.native
     def createRepository(params: CreateRepositoryRequest): Request[CreateRepositoryResult] = js.native
     def deleteDomain(params: DeleteDomainRequest): Request[DeleteDomainResult] = js.native
-    def deleteDomainPermissionsPolicy(
-        params: DeleteDomainPermissionsPolicyRequest
-    ): Request[DeleteDomainPermissionsPolicyResult] = js.native
+    def deleteDomainPermissionsPolicy(params: DeleteDomainPermissionsPolicyRequest): Request[DeleteDomainPermissionsPolicyResult] = js.native
     def deletePackageVersions(params: DeletePackageVersionsRequest): Request[DeletePackageVersionsResult] = js.native
     def deleteRepository(params: DeleteRepositoryRequest): Request[DeleteRepositoryResult] = js.native
-    def deleteRepositoryPermissionsPolicy(
-        params: DeleteRepositoryPermissionsPolicyRequest
-    ): Request[DeleteRepositoryPermissionsPolicyResult] = js.native
+    def deleteRepositoryPermissionsPolicy(params: DeleteRepositoryPermissionsPolicyRequest): Request[DeleteRepositoryPermissionsPolicyResult] = js.native
     def describeDomain(params: DescribeDomainRequest): Request[DescribeDomainResult] = js.native
     def describePackageVersion(params: DescribePackageVersionRequest): Request[DescribePackageVersionResult] = js.native
     def describeRepository(params: DescribeRepositoryRequest): Request[DescribeRepositoryResult] = js.native
-    def disassociateExternalConnection(
-        params: DisassociateExternalConnectionRequest
-    ): Request[DisassociateExternalConnectionResult] = js.native
+    def disassociateExternalConnection(params: DisassociateExternalConnectionRequest): Request[DisassociateExternalConnectionResult] = js.native
     def disposePackageVersions(params: DisposePackageVersionsRequest): Request[DisposePackageVersionsResult] = js.native
     def getAuthorizationToken(params: GetAuthorizationTokenRequest): Request[GetAuthorizationTokenResult] = js.native
-    def getDomainPermissionsPolicy(
-        params: GetDomainPermissionsPolicyRequest
-    ): Request[GetDomainPermissionsPolicyResult] = js.native
+    def getDomainPermissionsPolicy(params: GetDomainPermissionsPolicyRequest): Request[GetDomainPermissionsPolicyResult] = js.native
     def getPackageVersionAsset(params: GetPackageVersionAssetRequest): Request[GetPackageVersionAssetResult] = js.native
-    def getPackageVersionReadme(params: GetPackageVersionReadmeRequest): Request[GetPackageVersionReadmeResult] =
-      js.native
+    def getPackageVersionReadme(params: GetPackageVersionReadmeRequest): Request[GetPackageVersionReadmeResult] = js.native
     def getRepositoryEndpoint(params: GetRepositoryEndpointRequest): Request[GetRepositoryEndpointResult] = js.native
-    def getRepositoryPermissionsPolicy(
-        params: GetRepositoryPermissionsPolicyRequest
-    ): Request[GetRepositoryPermissionsPolicyResult] = js.native
+    def getRepositoryPermissionsPolicy(params: GetRepositoryPermissionsPolicyRequest): Request[GetRepositoryPermissionsPolicyResult] = js.native
     def listDomains(params: ListDomainsRequest): Request[ListDomainsResult] = js.native
-    def listPackageVersionAssets(params: ListPackageVersionAssetsRequest): Request[ListPackageVersionAssetsResult] =
-      js.native
-    def listPackageVersionDependencies(
-        params: ListPackageVersionDependenciesRequest
-    ): Request[ListPackageVersionDependenciesResult] = js.native
+    def listPackageVersionAssets(params: ListPackageVersionAssetsRequest): Request[ListPackageVersionAssetsResult] = js.native
+    def listPackageVersionDependencies(params: ListPackageVersionDependenciesRequest): Request[ListPackageVersionDependenciesResult] = js.native
     def listPackageVersions(params: ListPackageVersionsRequest): Request[ListPackageVersionsResult] = js.native
     def listPackages(params: ListPackagesRequest): Request[ListPackagesResult] = js.native
     def listRepositories(params: ListRepositoriesRequest): Request[ListRepositoriesResult] = js.native
-    def listRepositoriesInDomain(params: ListRepositoriesInDomainRequest): Request[ListRepositoriesInDomainResult] =
-      js.native
-    def putDomainPermissionsPolicy(
-        params: PutDomainPermissionsPolicyRequest
-    ): Request[PutDomainPermissionsPolicyResult] = js.native
-    def putRepositoryPermissionsPolicy(
-        params: PutRepositoryPermissionsPolicyRequest
-    ): Request[PutRepositoryPermissionsPolicyResult] = js.native
-    def updatePackageVersionsStatus(
-        params: UpdatePackageVersionsStatusRequest
-    ): Request[UpdatePackageVersionsStatusResult] = js.native
+    def listRepositoriesInDomain(params: ListRepositoriesInDomainRequest): Request[ListRepositoriesInDomainResult] = js.native
+    def putDomainPermissionsPolicy(params: PutDomainPermissionsPolicyRequest): Request[PutDomainPermissionsPolicyResult] = js.native
+    def putRepositoryPermissionsPolicy(params: PutRepositoryPermissionsPolicyRequest): Request[PutRepositoryPermissionsPolicyResult] = js.native
+    def updatePackageVersionsStatus(params: UpdatePackageVersionsStatusRequest): Request[UpdatePackageVersionsStatusResult] = js.native
     def updateRepository(params: UpdateRepositoryRequest): Request[UpdateRepositoryResult] = js.native
   }
 
@@ -1852,9 +1781,7 @@ package codeartifact {
     val NOT_FOUND = "NOT_FOUND".asInstanceOf[PackageVersionErrorCode]
     val SKIPPED = "SKIPPED".asInstanceOf[PackageVersionErrorCode]
 
-    val values = js.Object.freeze(
-      js.Array(ALREADY_EXISTS, MISMATCHED_REVISION, MISMATCHED_STATUS, NOT_ALLOWED, NOT_FOUND, SKIPPED)
-    )
+    val values = js.Object.freeze(js.Array(ALREADY_EXISTS, MISMATCHED_REVISION, MISMATCHED_STATUS, NOT_ALLOWED, NOT_FOUND, SKIPPED))
   }
 
   @js.native

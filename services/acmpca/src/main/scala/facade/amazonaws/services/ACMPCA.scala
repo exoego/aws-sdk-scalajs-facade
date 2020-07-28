@@ -43,57 +43,26 @@ package object acmpca {
 
   implicit final class ACMPCAOps(private val service: ACMPCA) extends AnyVal {
 
-    @inline def createCertificateAuthorityAuditReportFuture(
-        params: CreateCertificateAuthorityAuditReportRequest
-    ): Future[CreateCertificateAuthorityAuditReportResponse] =
-      service.createCertificateAuthorityAuditReport(params).promise().toFuture
-    @inline def createCertificateAuthorityFuture(
-        params: CreateCertificateAuthorityRequest
-    ): Future[CreateCertificateAuthorityResponse] = service.createCertificateAuthority(params).promise().toFuture
-    @inline def createPermissionFuture(params: CreatePermissionRequest): Future[js.Object] =
-      service.createPermission(params).promise().toFuture
-    @inline def deleteCertificateAuthorityFuture(params: DeleteCertificateAuthorityRequest): Future[js.Object] =
-      service.deleteCertificateAuthority(params).promise().toFuture
-    @inline def deletePermissionFuture(params: DeletePermissionRequest): Future[js.Object] =
-      service.deletePermission(params).promise().toFuture
-    @inline def describeCertificateAuthorityAuditReportFuture(
-        params: DescribeCertificateAuthorityAuditReportRequest
-    ): Future[DescribeCertificateAuthorityAuditReportResponse] =
-      service.describeCertificateAuthorityAuditReport(params).promise().toFuture
-    @inline def describeCertificateAuthorityFuture(
-        params: DescribeCertificateAuthorityRequest
-    ): Future[DescribeCertificateAuthorityResponse] = service.describeCertificateAuthority(params).promise().toFuture
-    @inline def getCertificateAuthorityCertificateFuture(
-        params: GetCertificateAuthorityCertificateRequest
-    ): Future[GetCertificateAuthorityCertificateResponse] =
-      service.getCertificateAuthorityCertificate(params).promise().toFuture
-    @inline def getCertificateAuthorityCsrFuture(
-        params: GetCertificateAuthorityCsrRequest
-    ): Future[GetCertificateAuthorityCsrResponse] = service.getCertificateAuthorityCsr(params).promise().toFuture
-    @inline def getCertificateFuture(params: GetCertificateRequest): Future[GetCertificateResponse] =
-      service.getCertificate(params).promise().toFuture
-    @inline def importCertificateAuthorityCertificateFuture(
-        params: ImportCertificateAuthorityCertificateRequest
-    ): Future[js.Object] = service.importCertificateAuthorityCertificate(params).promise().toFuture
-    @inline def issueCertificateFuture(params: IssueCertificateRequest): Future[IssueCertificateResponse] =
-      service.issueCertificate(params).promise().toFuture
-    @inline def listCertificateAuthoritiesFuture(
-        params: ListCertificateAuthoritiesRequest
-    ): Future[ListCertificateAuthoritiesResponse] = service.listCertificateAuthorities(params).promise().toFuture
-    @inline def listPermissionsFuture(params: ListPermissionsRequest): Future[ListPermissionsResponse] =
-      service.listPermissions(params).promise().toFuture
-    @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] =
-      service.listTags(params).promise().toFuture
-    @inline def restoreCertificateAuthorityFuture(params: RestoreCertificateAuthorityRequest): Future[js.Object] =
-      service.restoreCertificateAuthority(params).promise().toFuture
-    @inline def revokeCertificateFuture(params: RevokeCertificateRequest): Future[js.Object] =
-      service.revokeCertificate(params).promise().toFuture
-    @inline def tagCertificateAuthorityFuture(params: TagCertificateAuthorityRequest): Future[js.Object] =
-      service.tagCertificateAuthority(params).promise().toFuture
-    @inline def untagCertificateAuthorityFuture(params: UntagCertificateAuthorityRequest): Future[js.Object] =
-      service.untagCertificateAuthority(params).promise().toFuture
-    @inline def updateCertificateAuthorityFuture(params: UpdateCertificateAuthorityRequest): Future[js.Object] =
-      service.updateCertificateAuthority(params).promise().toFuture
+    @inline def createCertificateAuthorityAuditReportFuture(params: CreateCertificateAuthorityAuditReportRequest): Future[CreateCertificateAuthorityAuditReportResponse] = service.createCertificateAuthorityAuditReport(params).promise().toFuture
+    @inline def createCertificateAuthorityFuture(params: CreateCertificateAuthorityRequest): Future[CreateCertificateAuthorityResponse] = service.createCertificateAuthority(params).promise().toFuture
+    @inline def createPermissionFuture(params: CreatePermissionRequest): Future[js.Object] = service.createPermission(params).promise().toFuture
+    @inline def deleteCertificateAuthorityFuture(params: DeleteCertificateAuthorityRequest): Future[js.Object] = service.deleteCertificateAuthority(params).promise().toFuture
+    @inline def deletePermissionFuture(params: DeletePermissionRequest): Future[js.Object] = service.deletePermission(params).promise().toFuture
+    @inline def describeCertificateAuthorityAuditReportFuture(params: DescribeCertificateAuthorityAuditReportRequest): Future[DescribeCertificateAuthorityAuditReportResponse] = service.describeCertificateAuthorityAuditReport(params).promise().toFuture
+    @inline def describeCertificateAuthorityFuture(params: DescribeCertificateAuthorityRequest): Future[DescribeCertificateAuthorityResponse] = service.describeCertificateAuthority(params).promise().toFuture
+    @inline def getCertificateAuthorityCertificateFuture(params: GetCertificateAuthorityCertificateRequest): Future[GetCertificateAuthorityCertificateResponse] = service.getCertificateAuthorityCertificate(params).promise().toFuture
+    @inline def getCertificateAuthorityCsrFuture(params: GetCertificateAuthorityCsrRequest): Future[GetCertificateAuthorityCsrResponse] = service.getCertificateAuthorityCsr(params).promise().toFuture
+    @inline def getCertificateFuture(params: GetCertificateRequest): Future[GetCertificateResponse] = service.getCertificate(params).promise().toFuture
+    @inline def importCertificateAuthorityCertificateFuture(params: ImportCertificateAuthorityCertificateRequest): Future[js.Object] = service.importCertificateAuthorityCertificate(params).promise().toFuture
+    @inline def issueCertificateFuture(params: IssueCertificateRequest): Future[IssueCertificateResponse] = service.issueCertificate(params).promise().toFuture
+    @inline def listCertificateAuthoritiesFuture(params: ListCertificateAuthoritiesRequest): Future[ListCertificateAuthoritiesResponse] = service.listCertificateAuthorities(params).promise().toFuture
+    @inline def listPermissionsFuture(params: ListPermissionsRequest): Future[ListPermissionsResponse] = service.listPermissions(params).promise().toFuture
+    @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] = service.listTags(params).promise().toFuture
+    @inline def restoreCertificateAuthorityFuture(params: RestoreCertificateAuthorityRequest): Future[js.Object] = service.restoreCertificateAuthority(params).promise().toFuture
+    @inline def revokeCertificateFuture(params: RevokeCertificateRequest): Future[js.Object] = service.revokeCertificate(params).promise().toFuture
+    @inline def tagCertificateAuthorityFuture(params: TagCertificateAuthorityRequest): Future[js.Object] = service.tagCertificateAuthority(params).promise().toFuture
+    @inline def untagCertificateAuthorityFuture(params: UntagCertificateAuthorityRequest): Future[js.Object] = service.untagCertificateAuthority(params).promise().toFuture
+    @inline def updateCertificateAuthorityFuture(params: UpdateCertificateAuthorityRequest): Future[js.Object] = service.updateCertificateAuthority(params).promise().toFuture
   }
 }
 
@@ -103,35 +72,19 @@ package acmpca {
   class ACMPCA() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createCertificateAuthority(
-        params: CreateCertificateAuthorityRequest
-    ): Request[CreateCertificateAuthorityResponse] = js.native
-    def createCertificateAuthorityAuditReport(
-        params: CreateCertificateAuthorityAuditReportRequest
-    ): Request[CreateCertificateAuthorityAuditReportResponse] = js.native
+    def createCertificateAuthority(params: CreateCertificateAuthorityRequest): Request[CreateCertificateAuthorityResponse] = js.native
+    def createCertificateAuthorityAuditReport(params: CreateCertificateAuthorityAuditReportRequest): Request[CreateCertificateAuthorityAuditReportResponse] = js.native
     def createPermission(params: CreatePermissionRequest): Request[js.Object] = js.native
     def deleteCertificateAuthority(params: DeleteCertificateAuthorityRequest): Request[js.Object] = js.native
     def deletePermission(params: DeletePermissionRequest): Request[js.Object] = js.native
-    def describeCertificateAuthority(
-        params: DescribeCertificateAuthorityRequest
-    ): Request[DescribeCertificateAuthorityResponse] = js.native
-    def describeCertificateAuthorityAuditReport(
-        params: DescribeCertificateAuthorityAuditReportRequest
-    ): Request[DescribeCertificateAuthorityAuditReportResponse] = js.native
+    def describeCertificateAuthority(params: DescribeCertificateAuthorityRequest): Request[DescribeCertificateAuthorityResponse] = js.native
+    def describeCertificateAuthorityAuditReport(params: DescribeCertificateAuthorityAuditReportRequest): Request[DescribeCertificateAuthorityAuditReportResponse] = js.native
     def getCertificate(params: GetCertificateRequest): Request[GetCertificateResponse] = js.native
-    def getCertificateAuthorityCertificate(
-        params: GetCertificateAuthorityCertificateRequest
-    ): Request[GetCertificateAuthorityCertificateResponse] = js.native
-    def getCertificateAuthorityCsr(
-        params: GetCertificateAuthorityCsrRequest
-    ): Request[GetCertificateAuthorityCsrResponse] = js.native
-    def importCertificateAuthorityCertificate(
-        params: ImportCertificateAuthorityCertificateRequest
-    ): Request[js.Object] = js.native
+    def getCertificateAuthorityCertificate(params: GetCertificateAuthorityCertificateRequest): Request[GetCertificateAuthorityCertificateResponse] = js.native
+    def getCertificateAuthorityCsr(params: GetCertificateAuthorityCsrRequest): Request[GetCertificateAuthorityCsrResponse] = js.native
+    def importCertificateAuthorityCertificate(params: ImportCertificateAuthorityCertificateRequest): Request[js.Object] = js.native
     def issueCertificate(params: IssueCertificateRequest): Request[IssueCertificateResponse] = js.native
-    def listCertificateAuthorities(
-        params: ListCertificateAuthoritiesRequest
-    ): Request[ListCertificateAuthoritiesResponse] = js.native
+    def listCertificateAuthorities(params: ListCertificateAuthoritiesRequest): Request[ListCertificateAuthoritiesResponse] = js.native
     def listPermissions(params: ListPermissionsRequest): Request[ListPermissionsResponse] = js.native
     def listTags(params: ListTagsRequest): Request[ListTagsResponse] = js.native
     def restoreCertificateAuthority(params: RestoreCertificateAuthorityRequest): Request[js.Object] = js.native
@@ -183,9 +136,7 @@ package acmpca {
       val __obj = js.Dynamic.literal()
       CommonName.foreach(__v => __obj.updateDynamic("CommonName")(__v.asInstanceOf[js.Any]))
       Country.foreach(__v => __obj.updateDynamic("Country")(__v.asInstanceOf[js.Any]))
-      DistinguishedNameQualifier.foreach(__v =>
-        __obj.updateDynamic("DistinguishedNameQualifier")(__v.asInstanceOf[js.Any])
-      )
+      DistinguishedNameQualifier.foreach(__v => __obj.updateDynamic("DistinguishedNameQualifier")(__v.asInstanceOf[js.Any]))
       GenerationQualifier.foreach(__v => __obj.updateDynamic("GenerationQualifier")(__v.asInstanceOf[js.Any]))
       GivenName.foreach(__v => __obj.updateDynamic("GivenName")(__v.asInstanceOf[js.Any]))
       Initials.foreach(__v => __obj.updateDynamic("Initials")(__v.asInstanceOf[js.Any]))
@@ -267,9 +218,7 @@ package acmpca {
     ): CertificateAuthority = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      CertificateAuthorityConfiguration.foreach(__v =>
-        __obj.updateDynamic("CertificateAuthorityConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      CertificateAuthorityConfiguration.foreach(__v => __obj.updateDynamic("CertificateAuthorityConfiguration")(__v.asInstanceOf[js.Any]))
       CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
       LastStateChangeAt.foreach(__v => __obj.updateDynamic("LastStateChangeAt")(__v.asInstanceOf[js.Any]))
@@ -515,9 +464,7 @@ package acmpca {
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any]
       )
 
-      PermanentDeletionTimeInDays.foreach(__v =>
-        __obj.updateDynamic("PermanentDeletionTimeInDays")(__v.asInstanceOf[js.Any])
-      )
+      PermanentDeletionTimeInDays.foreach(__v => __obj.updateDynamic("PermanentDeletionTimeInDays")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteCertificateAuthorityRequest]
     }
   }
@@ -1038,18 +985,7 @@ package acmpca {
     val PRIVILEGE_WITHDRAWN = "PRIVILEGE_WITHDRAWN".asInstanceOf[RevocationReason]
     val A_A_COMPROMISE = "A_A_COMPROMISE".asInstanceOf[RevocationReason]
 
-    val values = js.Object.freeze(
-      js.Array(
-        UNSPECIFIED,
-        KEY_COMPROMISE,
-        CERTIFICATE_AUTHORITY_COMPROMISE,
-        AFFILIATION_CHANGED,
-        SUPERSEDED,
-        CESSATION_OF_OPERATION,
-        PRIVILEGE_WITHDRAWN,
-        A_A_COMPROMISE
-      )
-    )
+    val values = js.Object.freeze(js.Array(UNSPECIFIED, KEY_COMPROMISE, CERTIFICATE_AUTHORITY_COMPROMISE, AFFILIATION_CHANGED, SUPERSEDED, CESSATION_OF_OPERATION, PRIVILEGE_WITHDRAWN, A_A_COMPROMISE))
   }
 
   @js.native
@@ -1086,9 +1022,7 @@ package acmpca {
     val SHA384WITHRSA = "SHA384WITHRSA".asInstanceOf[SigningAlgorithm]
     val SHA512WITHRSA = "SHA512WITHRSA".asInstanceOf[SigningAlgorithm]
 
-    val values = js.Object.freeze(
-      js.Array(SHA256WITHECDSA, SHA384WITHECDSA, SHA512WITHECDSA, SHA256WITHRSA, SHA384WITHRSA, SHA512WITHRSA)
-    )
+    val values = js.Object.freeze(js.Array(SHA256WITHECDSA, SHA384WITHECDSA, SHA512WITHECDSA, SHA256WITHRSA, SHA384WITHRSA, SHA512WITHRSA))
   }
 
   /**

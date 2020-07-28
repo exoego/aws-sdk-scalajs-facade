@@ -58,86 +58,43 @@ package object swf {
 
   implicit final class SWFOps(private val service: SWF) extends AnyVal {
 
-    @inline def countClosedWorkflowExecutionsFuture(
-        params: CountClosedWorkflowExecutionsInput
-    ): Future[WorkflowExecutionCount] = service.countClosedWorkflowExecutions(params).promise().toFuture
-    @inline def countOpenWorkflowExecutionsFuture(
-        params: CountOpenWorkflowExecutionsInput
-    ): Future[WorkflowExecutionCount] = service.countOpenWorkflowExecutions(params).promise().toFuture
-    @inline def countPendingActivityTasksFuture(params: CountPendingActivityTasksInput): Future[PendingTaskCount] =
-      service.countPendingActivityTasks(params).promise().toFuture
-    @inline def countPendingDecisionTasksFuture(params: CountPendingDecisionTasksInput): Future[PendingTaskCount] =
-      service.countPendingDecisionTasks(params).promise().toFuture
-    @inline def deprecateActivityTypeFuture(params: DeprecateActivityTypeInput): Future[js.Object] =
-      service.deprecateActivityType(params).promise().toFuture
-    @inline def deprecateDomainFuture(params: DeprecateDomainInput): Future[js.Object] =
-      service.deprecateDomain(params).promise().toFuture
-    @inline def deprecateWorkflowTypeFuture(params: DeprecateWorkflowTypeInput): Future[js.Object] =
-      service.deprecateWorkflowType(params).promise().toFuture
-    @inline def describeActivityTypeFuture(params: DescribeActivityTypeInput): Future[ActivityTypeDetail] =
-      service.describeActivityType(params).promise().toFuture
-    @inline def describeDomainFuture(params: DescribeDomainInput): Future[DomainDetail] =
-      service.describeDomain(params).promise().toFuture
-    @inline def describeWorkflowExecutionFuture(
-        params: DescribeWorkflowExecutionInput
-    ): Future[WorkflowExecutionDetail] = service.describeWorkflowExecution(params).promise().toFuture
-    @inline def describeWorkflowTypeFuture(params: DescribeWorkflowTypeInput): Future[WorkflowTypeDetail] =
-      service.describeWorkflowType(params).promise().toFuture
-    @inline def getWorkflowExecutionHistoryFuture(params: GetWorkflowExecutionHistoryInput): Future[History] =
-      service.getWorkflowExecutionHistory(params).promise().toFuture
-    @inline def listActivityTypesFuture(params: ListActivityTypesInput): Future[ActivityTypeInfos] =
-      service.listActivityTypes(params).promise().toFuture
-    @inline def listClosedWorkflowExecutionsFuture(
-        params: ListClosedWorkflowExecutionsInput
-    ): Future[WorkflowExecutionInfos] = service.listClosedWorkflowExecutions(params).promise().toFuture
-    @inline def listDomainsFuture(params: ListDomainsInput): Future[DomainInfos] =
-      service.listDomains(params).promise().toFuture
-    @inline def listOpenWorkflowExecutionsFuture(
-        params: ListOpenWorkflowExecutionsInput
-    ): Future[WorkflowExecutionInfos] = service.listOpenWorkflowExecutions(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listWorkflowTypesFuture(params: ListWorkflowTypesInput): Future[WorkflowTypeInfos] =
-      service.listWorkflowTypes(params).promise().toFuture
-    @inline def pollForActivityTaskFuture(params: PollForActivityTaskInput): Future[ActivityTask] =
-      service.pollForActivityTask(params).promise().toFuture
-    @inline def pollForDecisionTaskFuture(params: PollForDecisionTaskInput): Future[DecisionTask] =
-      service.pollForDecisionTask(params).promise().toFuture
-    @inline def recordActivityTaskHeartbeatFuture(
-        params: RecordActivityTaskHeartbeatInput
-    ): Future[ActivityTaskStatus] = service.recordActivityTaskHeartbeat(params).promise().toFuture
-    @inline def registerActivityTypeFuture(params: RegisterActivityTypeInput): Future[js.Object] =
-      service.registerActivityType(params).promise().toFuture
-    @inline def registerDomainFuture(params: RegisterDomainInput): Future[js.Object] =
-      service.registerDomain(params).promise().toFuture
-    @inline def registerWorkflowTypeFuture(params: RegisterWorkflowTypeInput): Future[js.Object] =
-      service.registerWorkflowType(params).promise().toFuture
-    @inline def requestCancelWorkflowExecutionFuture(params: RequestCancelWorkflowExecutionInput): Future[js.Object] =
-      service.requestCancelWorkflowExecution(params).promise().toFuture
-    @inline def respondActivityTaskCanceledFuture(params: RespondActivityTaskCanceledInput): Future[js.Object] =
-      service.respondActivityTaskCanceled(params).promise().toFuture
-    @inline def respondActivityTaskCompletedFuture(params: RespondActivityTaskCompletedInput): Future[js.Object] =
-      service.respondActivityTaskCompleted(params).promise().toFuture
-    @inline def respondActivityTaskFailedFuture(params: RespondActivityTaskFailedInput): Future[js.Object] =
-      service.respondActivityTaskFailed(params).promise().toFuture
-    @inline def respondDecisionTaskCompletedFuture(params: RespondDecisionTaskCompletedInput): Future[js.Object] =
-      service.respondDecisionTaskCompleted(params).promise().toFuture
-    @inline def signalWorkflowExecutionFuture(params: SignalWorkflowExecutionInput): Future[js.Object] =
-      service.signalWorkflowExecution(params).promise().toFuture
-    @inline def startWorkflowExecutionFuture(params: StartWorkflowExecutionInput): Future[Run] =
-      service.startWorkflowExecution(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceInput): Future[js.Object] =
-      service.tagResource(params).promise().toFuture
-    @inline def terminateWorkflowExecutionFuture(params: TerminateWorkflowExecutionInput): Future[js.Object] =
-      service.terminateWorkflowExecution(params).promise().toFuture
-    @inline def undeprecateActivityTypeFuture(params: UndeprecateActivityTypeInput): Future[js.Object] =
-      service.undeprecateActivityType(params).promise().toFuture
-    @inline def undeprecateDomainFuture(params: UndeprecateDomainInput): Future[js.Object] =
-      service.undeprecateDomain(params).promise().toFuture
-    @inline def undeprecateWorkflowTypeFuture(params: UndeprecateWorkflowTypeInput): Future[js.Object] =
-      service.undeprecateWorkflowType(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceInput): Future[js.Object] =
-      service.untagResource(params).promise().toFuture
+    @inline def countClosedWorkflowExecutionsFuture(params: CountClosedWorkflowExecutionsInput): Future[WorkflowExecutionCount] = service.countClosedWorkflowExecutions(params).promise().toFuture
+    @inline def countOpenWorkflowExecutionsFuture(params: CountOpenWorkflowExecutionsInput): Future[WorkflowExecutionCount] = service.countOpenWorkflowExecutions(params).promise().toFuture
+    @inline def countPendingActivityTasksFuture(params: CountPendingActivityTasksInput): Future[PendingTaskCount] = service.countPendingActivityTasks(params).promise().toFuture
+    @inline def countPendingDecisionTasksFuture(params: CountPendingDecisionTasksInput): Future[PendingTaskCount] = service.countPendingDecisionTasks(params).promise().toFuture
+    @inline def deprecateActivityTypeFuture(params: DeprecateActivityTypeInput): Future[js.Object] = service.deprecateActivityType(params).promise().toFuture
+    @inline def deprecateDomainFuture(params: DeprecateDomainInput): Future[js.Object] = service.deprecateDomain(params).promise().toFuture
+    @inline def deprecateWorkflowTypeFuture(params: DeprecateWorkflowTypeInput): Future[js.Object] = service.deprecateWorkflowType(params).promise().toFuture
+    @inline def describeActivityTypeFuture(params: DescribeActivityTypeInput): Future[ActivityTypeDetail] = service.describeActivityType(params).promise().toFuture
+    @inline def describeDomainFuture(params: DescribeDomainInput): Future[DomainDetail] = service.describeDomain(params).promise().toFuture
+    @inline def describeWorkflowExecutionFuture(params: DescribeWorkflowExecutionInput): Future[WorkflowExecutionDetail] = service.describeWorkflowExecution(params).promise().toFuture
+    @inline def describeWorkflowTypeFuture(params: DescribeWorkflowTypeInput): Future[WorkflowTypeDetail] = service.describeWorkflowType(params).promise().toFuture
+    @inline def getWorkflowExecutionHistoryFuture(params: GetWorkflowExecutionHistoryInput): Future[History] = service.getWorkflowExecutionHistory(params).promise().toFuture
+    @inline def listActivityTypesFuture(params: ListActivityTypesInput): Future[ActivityTypeInfos] = service.listActivityTypes(params).promise().toFuture
+    @inline def listClosedWorkflowExecutionsFuture(params: ListClosedWorkflowExecutionsInput): Future[WorkflowExecutionInfos] = service.listClosedWorkflowExecutions(params).promise().toFuture
+    @inline def listDomainsFuture(params: ListDomainsInput): Future[DomainInfos] = service.listDomains(params).promise().toFuture
+    @inline def listOpenWorkflowExecutionsFuture(params: ListOpenWorkflowExecutionsInput): Future[WorkflowExecutionInfos] = service.listOpenWorkflowExecutions(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] = service.listTagsForResource(params).promise().toFuture
+    @inline def listWorkflowTypesFuture(params: ListWorkflowTypesInput): Future[WorkflowTypeInfos] = service.listWorkflowTypes(params).promise().toFuture
+    @inline def pollForActivityTaskFuture(params: PollForActivityTaskInput): Future[ActivityTask] = service.pollForActivityTask(params).promise().toFuture
+    @inline def pollForDecisionTaskFuture(params: PollForDecisionTaskInput): Future[DecisionTask] = service.pollForDecisionTask(params).promise().toFuture
+    @inline def recordActivityTaskHeartbeatFuture(params: RecordActivityTaskHeartbeatInput): Future[ActivityTaskStatus] = service.recordActivityTaskHeartbeat(params).promise().toFuture
+    @inline def registerActivityTypeFuture(params: RegisterActivityTypeInput): Future[js.Object] = service.registerActivityType(params).promise().toFuture
+    @inline def registerDomainFuture(params: RegisterDomainInput): Future[js.Object] = service.registerDomain(params).promise().toFuture
+    @inline def registerWorkflowTypeFuture(params: RegisterWorkflowTypeInput): Future[js.Object] = service.registerWorkflowType(params).promise().toFuture
+    @inline def requestCancelWorkflowExecutionFuture(params: RequestCancelWorkflowExecutionInput): Future[js.Object] = service.requestCancelWorkflowExecution(params).promise().toFuture
+    @inline def respondActivityTaskCanceledFuture(params: RespondActivityTaskCanceledInput): Future[js.Object] = service.respondActivityTaskCanceled(params).promise().toFuture
+    @inline def respondActivityTaskCompletedFuture(params: RespondActivityTaskCompletedInput): Future[js.Object] = service.respondActivityTaskCompleted(params).promise().toFuture
+    @inline def respondActivityTaskFailedFuture(params: RespondActivityTaskFailedInput): Future[js.Object] = service.respondActivityTaskFailed(params).promise().toFuture
+    @inline def respondDecisionTaskCompletedFuture(params: RespondDecisionTaskCompletedInput): Future[js.Object] = service.respondDecisionTaskCompleted(params).promise().toFuture
+    @inline def signalWorkflowExecutionFuture(params: SignalWorkflowExecutionInput): Future[js.Object] = service.signalWorkflowExecution(params).promise().toFuture
+    @inline def startWorkflowExecutionFuture(params: StartWorkflowExecutionInput): Future[Run] = service.startWorkflowExecution(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceInput): Future[js.Object] = service.tagResource(params).promise().toFuture
+    @inline def terminateWorkflowExecutionFuture(params: TerminateWorkflowExecutionInput): Future[js.Object] = service.terminateWorkflowExecution(params).promise().toFuture
+    @inline def undeprecateActivityTypeFuture(params: UndeprecateActivityTypeInput): Future[js.Object] = service.undeprecateActivityType(params).promise().toFuture
+    @inline def undeprecateDomainFuture(params: UndeprecateDomainInput): Future[js.Object] = service.undeprecateDomain(params).promise().toFuture
+    @inline def undeprecateWorkflowTypeFuture(params: UndeprecateWorkflowTypeInput): Future[js.Object] = service.undeprecateWorkflowType(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceInput): Future[js.Object] = service.untagResource(params).promise().toFuture
   }
 }
 
@@ -147,10 +104,8 @@ package swf {
   class SWF() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def countClosedWorkflowExecutions(params: CountClosedWorkflowExecutionsInput): Request[WorkflowExecutionCount] =
-      js.native
-    def countOpenWorkflowExecutions(params: CountOpenWorkflowExecutionsInput): Request[WorkflowExecutionCount] =
-      js.native
+    def countClosedWorkflowExecutions(params: CountClosedWorkflowExecutionsInput): Request[WorkflowExecutionCount] = js.native
+    def countOpenWorkflowExecutions(params: CountOpenWorkflowExecutionsInput): Request[WorkflowExecutionCount] = js.native
     def countPendingActivityTasks(params: CountPendingActivityTasksInput): Request[PendingTaskCount] = js.native
     def countPendingDecisionTasks(params: CountPendingDecisionTasksInput): Request[PendingTaskCount] = js.native
     def deprecateActivityType(params: DeprecateActivityTypeInput): Request[js.Object] = js.native
@@ -162,8 +117,7 @@ package swf {
     def describeWorkflowType(params: DescribeWorkflowTypeInput): Request[WorkflowTypeDetail] = js.native
     def getWorkflowExecutionHistory(params: GetWorkflowExecutionHistoryInput): Request[History] = js.native
     def listActivityTypes(params: ListActivityTypesInput): Request[ActivityTypeInfos] = js.native
-    def listClosedWorkflowExecutions(params: ListClosedWorkflowExecutionsInput): Request[WorkflowExecutionInfos] =
-      js.native
+    def listClosedWorkflowExecutions(params: ListClosedWorkflowExecutionsInput): Request[WorkflowExecutionInfos] = js.native
     def listDomains(params: ListDomainsInput): Request[DomainInfos] = js.native
     def listOpenWorkflowExecutions(params: ListOpenWorkflowExecutionsInput): Request[WorkflowExecutionInfos] = js.native
     def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput] = js.native
@@ -274,9 +228,7 @@ package swf {
       )
 
       details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
-      latestCancelRequestedEventId.foreach(__v =>
-        __obj.updateDynamic("latestCancelRequestedEventId")(__v.asInstanceOf[js.Any])
-      )
+      latestCancelRequestedEventId.foreach(__v => __obj.updateDynamic("latestCancelRequestedEventId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActivityTaskCanceledEventAttributes]
     }
   }
@@ -523,20 +475,12 @@ package swf {
         defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined
     ): ActivityTypeConfiguration = {
       val __obj = js.Dynamic.literal()
-      defaultTaskHeartbeatTimeout.foreach(__v =>
-        __obj.updateDynamic("defaultTaskHeartbeatTimeout")(__v.asInstanceOf[js.Any])
-      )
+      defaultTaskHeartbeatTimeout.foreach(__v => __obj.updateDynamic("defaultTaskHeartbeatTimeout")(__v.asInstanceOf[js.Any]))
       defaultTaskList.foreach(__v => __obj.updateDynamic("defaultTaskList")(__v.asInstanceOf[js.Any]))
       defaultTaskPriority.foreach(__v => __obj.updateDynamic("defaultTaskPriority")(__v.asInstanceOf[js.Any]))
-      defaultTaskScheduleToCloseTimeout.foreach(__v =>
-        __obj.updateDynamic("defaultTaskScheduleToCloseTimeout")(__v.asInstanceOf[js.Any])
-      )
-      defaultTaskScheduleToStartTimeout.foreach(__v =>
-        __obj.updateDynamic("defaultTaskScheduleToStartTimeout")(__v.asInstanceOf[js.Any])
-      )
-      defaultTaskStartToCloseTimeout.foreach(__v =>
-        __obj.updateDynamic("defaultTaskStartToCloseTimeout")(__v.asInstanceOf[js.Any])
-      )
+      defaultTaskScheduleToCloseTimeout.foreach(__v => __obj.updateDynamic("defaultTaskScheduleToCloseTimeout")(__v.asInstanceOf[js.Any]))
+      defaultTaskScheduleToStartTimeout.foreach(__v => __obj.updateDynamic("defaultTaskScheduleToStartTimeout")(__v.asInstanceOf[js.Any]))
+      defaultTaskStartToCloseTimeout.foreach(__v => __obj.updateDynamic("defaultTaskStartToCloseTimeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActivityTypeConfiguration]
     }
   }
@@ -1077,9 +1021,7 @@ package swf {
     ): ContinueAsNewWorkflowExecutionDecisionAttributes = {
       val __obj = js.Dynamic.literal()
       childPolicy.foreach(__v => __obj.updateDynamic("childPolicy")(__v.asInstanceOf[js.Any]))
-      executionStartToCloseTimeout.foreach(__v =>
-        __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
-      )
+      executionStartToCloseTimeout.foreach(__v => __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any]))
       input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
       lambdaRole.foreach(__v => __obj.updateDynamic("lambdaRole")(__v.asInstanceOf[js.Any]))
       tagList.foreach(__v => __obj.updateDynamic("tagList")(__v.asInstanceOf[js.Any]))
@@ -1096,18 +1038,12 @@ package swf {
   object ContinueAsNewWorkflowExecutionFailedCause extends js.Object {
     val UNHANDLED_DECISION = "UNHANDLED_DECISION".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
     val WORKFLOW_TYPE_DEPRECATED = "WORKFLOW_TYPE_DEPRECATED".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
-    val WORKFLOW_TYPE_DOES_NOT_EXIST =
-      "WORKFLOW_TYPE_DOES_NOT_EXIST".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
-    val DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED =
-      "DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
-    val DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED =
-      "DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
-    val DEFAULT_TASK_LIST_UNDEFINED =
-      "DEFAULT_TASK_LIST_UNDEFINED".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
-    val DEFAULT_CHILD_POLICY_UNDEFINED =
-      "DEFAULT_CHILD_POLICY_UNDEFINED".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
-    val CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED =
-      "CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
+    val WORKFLOW_TYPE_DOES_NOT_EXIST = "WORKFLOW_TYPE_DOES_NOT_EXIST".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
+    val DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED = "DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
+    val DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED = "DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
+    val DEFAULT_TASK_LIST_UNDEFINED = "DEFAULT_TASK_LIST_UNDEFINED".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
+    val DEFAULT_CHILD_POLICY_UNDEFINED = "DEFAULT_CHILD_POLICY_UNDEFINED".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
+    val CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED = "CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[ContinueAsNewWorkflowExecutionFailedCause]
 
     val values = js.Object.freeze(
@@ -1318,9 +1254,7 @@ package swf {
     var failWorkflowExecutionDecisionAttributes: js.UndefOr[FailWorkflowExecutionDecisionAttributes]
     var recordMarkerDecisionAttributes: js.UndefOr[RecordMarkerDecisionAttributes]
     var requestCancelActivityTaskDecisionAttributes: js.UndefOr[RequestCancelActivityTaskDecisionAttributes]
-    var requestCancelExternalWorkflowExecutionDecisionAttributes: js.UndefOr[
-      RequestCancelExternalWorkflowExecutionDecisionAttributes
-    ]
+    var requestCancelExternalWorkflowExecutionDecisionAttributes: js.UndefOr[RequestCancelExternalWorkflowExecutionDecisionAttributes]
     var scheduleActivityTaskDecisionAttributes: js.UndefOr[ScheduleActivityTaskDecisionAttributes]
     var scheduleLambdaFunctionDecisionAttributes: js.UndefOr[ScheduleLambdaFunctionDecisionAttributes]
     var signalExternalWorkflowExecutionDecisionAttributes: js.UndefOr[SignalExternalWorkflowExecutionDecisionAttributes]
@@ -1334,69 +1268,35 @@ package swf {
         decisionType: DecisionType,
         cancelTimerDecisionAttributes: js.UndefOr[CancelTimerDecisionAttributes] = js.undefined,
         cancelWorkflowExecutionDecisionAttributes: js.UndefOr[CancelWorkflowExecutionDecisionAttributes] = js.undefined,
-        completeWorkflowExecutionDecisionAttributes: js.UndefOr[CompleteWorkflowExecutionDecisionAttributes] =
-          js.undefined,
-        continueAsNewWorkflowExecutionDecisionAttributes: js.UndefOr[ContinueAsNewWorkflowExecutionDecisionAttributes] =
-          js.undefined,
+        completeWorkflowExecutionDecisionAttributes: js.UndefOr[CompleteWorkflowExecutionDecisionAttributes] = js.undefined,
+        continueAsNewWorkflowExecutionDecisionAttributes: js.UndefOr[ContinueAsNewWorkflowExecutionDecisionAttributes] = js.undefined,
         failWorkflowExecutionDecisionAttributes: js.UndefOr[FailWorkflowExecutionDecisionAttributes] = js.undefined,
         recordMarkerDecisionAttributes: js.UndefOr[RecordMarkerDecisionAttributes] = js.undefined,
-        requestCancelActivityTaskDecisionAttributes: js.UndefOr[RequestCancelActivityTaskDecisionAttributes] =
-          js.undefined,
-        requestCancelExternalWorkflowExecutionDecisionAttributes: js.UndefOr[
-          RequestCancelExternalWorkflowExecutionDecisionAttributes
-        ] = js.undefined,
+        requestCancelActivityTaskDecisionAttributes: js.UndefOr[RequestCancelActivityTaskDecisionAttributes] = js.undefined,
+        requestCancelExternalWorkflowExecutionDecisionAttributes: js.UndefOr[RequestCancelExternalWorkflowExecutionDecisionAttributes] = js.undefined,
         scheduleActivityTaskDecisionAttributes: js.UndefOr[ScheduleActivityTaskDecisionAttributes] = js.undefined,
         scheduleLambdaFunctionDecisionAttributes: js.UndefOr[ScheduleLambdaFunctionDecisionAttributes] = js.undefined,
-        signalExternalWorkflowExecutionDecisionAttributes: js.UndefOr[
-          SignalExternalWorkflowExecutionDecisionAttributes
-        ] = js.undefined,
-        startChildWorkflowExecutionDecisionAttributes: js.UndefOr[StartChildWorkflowExecutionDecisionAttributes] =
-          js.undefined,
+        signalExternalWorkflowExecutionDecisionAttributes: js.UndefOr[SignalExternalWorkflowExecutionDecisionAttributes] = js.undefined,
+        startChildWorkflowExecutionDecisionAttributes: js.UndefOr[StartChildWorkflowExecutionDecisionAttributes] = js.undefined,
         startTimerDecisionAttributes: js.UndefOr[StartTimerDecisionAttributes] = js.undefined
     ): Decision = {
       val __obj = js.Dynamic.literal(
         "decisionType" -> decisionType.asInstanceOf[js.Any]
       )
 
-      cancelTimerDecisionAttributes.foreach(__v =>
-        __obj.updateDynamic("cancelTimerDecisionAttributes")(__v.asInstanceOf[js.Any])
-      )
-      cancelWorkflowExecutionDecisionAttributes.foreach(__v =>
-        __obj.updateDynamic("cancelWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
-      )
-      completeWorkflowExecutionDecisionAttributes.foreach(__v =>
-        __obj.updateDynamic("completeWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
-      )
-      continueAsNewWorkflowExecutionDecisionAttributes.foreach(__v =>
-        __obj.updateDynamic("continueAsNewWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
-      )
-      failWorkflowExecutionDecisionAttributes.foreach(__v =>
-        __obj.updateDynamic("failWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
-      )
-      recordMarkerDecisionAttributes.foreach(__v =>
-        __obj.updateDynamic("recordMarkerDecisionAttributes")(__v.asInstanceOf[js.Any])
-      )
-      requestCancelActivityTaskDecisionAttributes.foreach(__v =>
-        __obj.updateDynamic("requestCancelActivityTaskDecisionAttributes")(__v.asInstanceOf[js.Any])
-      )
-      requestCancelExternalWorkflowExecutionDecisionAttributes.foreach(__v =>
-        __obj.updateDynamic("requestCancelExternalWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
-      )
-      scheduleActivityTaskDecisionAttributes.foreach(__v =>
-        __obj.updateDynamic("scheduleActivityTaskDecisionAttributes")(__v.asInstanceOf[js.Any])
-      )
-      scheduleLambdaFunctionDecisionAttributes.foreach(__v =>
-        __obj.updateDynamic("scheduleLambdaFunctionDecisionAttributes")(__v.asInstanceOf[js.Any])
-      )
-      signalExternalWorkflowExecutionDecisionAttributes.foreach(__v =>
-        __obj.updateDynamic("signalExternalWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
-      )
-      startChildWorkflowExecutionDecisionAttributes.foreach(__v =>
-        __obj.updateDynamic("startChildWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
-      )
-      startTimerDecisionAttributes.foreach(__v =>
-        __obj.updateDynamic("startTimerDecisionAttributes")(__v.asInstanceOf[js.Any])
-      )
+      cancelTimerDecisionAttributes.foreach(__v => __obj.updateDynamic("cancelTimerDecisionAttributes")(__v.asInstanceOf[js.Any]))
+      cancelWorkflowExecutionDecisionAttributes.foreach(__v => __obj.updateDynamic("cancelWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any]))
+      completeWorkflowExecutionDecisionAttributes.foreach(__v => __obj.updateDynamic("completeWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any]))
+      continueAsNewWorkflowExecutionDecisionAttributes.foreach(__v => __obj.updateDynamic("continueAsNewWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any]))
+      failWorkflowExecutionDecisionAttributes.foreach(__v => __obj.updateDynamic("failWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any]))
+      recordMarkerDecisionAttributes.foreach(__v => __obj.updateDynamic("recordMarkerDecisionAttributes")(__v.asInstanceOf[js.Any]))
+      requestCancelActivityTaskDecisionAttributes.foreach(__v => __obj.updateDynamic("requestCancelActivityTaskDecisionAttributes")(__v.asInstanceOf[js.Any]))
+      requestCancelExternalWorkflowExecutionDecisionAttributes.foreach(__v => __obj.updateDynamic("requestCancelExternalWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any]))
+      scheduleActivityTaskDecisionAttributes.foreach(__v => __obj.updateDynamic("scheduleActivityTaskDecisionAttributes")(__v.asInstanceOf[js.Any]))
+      scheduleLambdaFunctionDecisionAttributes.foreach(__v => __obj.updateDynamic("scheduleLambdaFunctionDecisionAttributes")(__v.asInstanceOf[js.Any]))
+      signalExternalWorkflowExecutionDecisionAttributes.foreach(__v => __obj.updateDynamic("signalExternalWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any]))
+      startChildWorkflowExecutionDecisionAttributes.foreach(__v => __obj.updateDynamic("startChildWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any]))
+      startTimerDecisionAttributes.foreach(__v => __obj.updateDynamic("startTimerDecisionAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Decision]
     }
   }
@@ -1876,10 +1776,8 @@ package swf {
     val SignalExternalWorkflowExecutionInitiated = "SignalExternalWorkflowExecutionInitiated".asInstanceOf[EventType]
     val SignalExternalWorkflowExecutionFailed = "SignalExternalWorkflowExecutionFailed".asInstanceOf[EventType]
     val ExternalWorkflowExecutionSignaled = "ExternalWorkflowExecutionSignaled".asInstanceOf[EventType]
-    val RequestCancelExternalWorkflowExecutionInitiated =
-      "RequestCancelExternalWorkflowExecutionInitiated".asInstanceOf[EventType]
-    val RequestCancelExternalWorkflowExecutionFailed =
-      "RequestCancelExternalWorkflowExecutionFailed".asInstanceOf[EventType]
+    val RequestCancelExternalWorkflowExecutionInitiated = "RequestCancelExternalWorkflowExecutionInitiated".asInstanceOf[EventType]
+    val RequestCancelExternalWorkflowExecutionFailed = "RequestCancelExternalWorkflowExecutionFailed".asInstanceOf[EventType]
     val ExternalWorkflowExecutionCancelRequested = "ExternalWorkflowExecutionCancelRequested".asInstanceOf[EventType]
     val LambdaFunctionScheduled = "LambdaFunctionScheduled".asInstanceOf[EventType]
     val LambdaFunctionStarted = "LambdaFunctionStarted".asInstanceOf[EventType]
@@ -2217,16 +2115,12 @@ package swf {
     var childWorkflowExecutionTerminatedEventAttributes: js.UndefOr[ChildWorkflowExecutionTerminatedEventAttributes]
     var childWorkflowExecutionTimedOutEventAttributes: js.UndefOr[ChildWorkflowExecutionTimedOutEventAttributes]
     var completeWorkflowExecutionFailedEventAttributes: js.UndefOr[CompleteWorkflowExecutionFailedEventAttributes]
-    var continueAsNewWorkflowExecutionFailedEventAttributes: js.UndefOr[
-      ContinueAsNewWorkflowExecutionFailedEventAttributes
-    ]
+    var continueAsNewWorkflowExecutionFailedEventAttributes: js.UndefOr[ContinueAsNewWorkflowExecutionFailedEventAttributes]
     var decisionTaskCompletedEventAttributes: js.UndefOr[DecisionTaskCompletedEventAttributes]
     var decisionTaskScheduledEventAttributes: js.UndefOr[DecisionTaskScheduledEventAttributes]
     var decisionTaskStartedEventAttributes: js.UndefOr[DecisionTaskStartedEventAttributes]
     var decisionTaskTimedOutEventAttributes: js.UndefOr[DecisionTaskTimedOutEventAttributes]
-    var externalWorkflowExecutionCancelRequestedEventAttributes: js.UndefOr[
-      ExternalWorkflowExecutionCancelRequestedEventAttributes
-    ]
+    var externalWorkflowExecutionCancelRequestedEventAttributes: js.UndefOr[ExternalWorkflowExecutionCancelRequestedEventAttributes]
     var externalWorkflowExecutionSignaledEventAttributes: js.UndefOr[ExternalWorkflowExecutionSignaledEventAttributes]
     var failWorkflowExecutionFailedEventAttributes: js.UndefOr[FailWorkflowExecutionFailedEventAttributes]
     var lambdaFunctionCompletedEventAttributes: js.UndefOr[LambdaFunctionCompletedEventAttributes]
@@ -2237,24 +2131,14 @@ package swf {
     var markerRecordedEventAttributes: js.UndefOr[MarkerRecordedEventAttributes]
     var recordMarkerFailedEventAttributes: js.UndefOr[RecordMarkerFailedEventAttributes]
     var requestCancelActivityTaskFailedEventAttributes: js.UndefOr[RequestCancelActivityTaskFailedEventAttributes]
-    var requestCancelExternalWorkflowExecutionFailedEventAttributes: js.UndefOr[
-      RequestCancelExternalWorkflowExecutionFailedEventAttributes
-    ]
-    var requestCancelExternalWorkflowExecutionInitiatedEventAttributes: js.UndefOr[
-      RequestCancelExternalWorkflowExecutionInitiatedEventAttributes
-    ]
+    var requestCancelExternalWorkflowExecutionFailedEventAttributes: js.UndefOr[RequestCancelExternalWorkflowExecutionFailedEventAttributes]
+    var requestCancelExternalWorkflowExecutionInitiatedEventAttributes: js.UndefOr[RequestCancelExternalWorkflowExecutionInitiatedEventAttributes]
     var scheduleActivityTaskFailedEventAttributes: js.UndefOr[ScheduleActivityTaskFailedEventAttributes]
     var scheduleLambdaFunctionFailedEventAttributes: js.UndefOr[ScheduleLambdaFunctionFailedEventAttributes]
-    var signalExternalWorkflowExecutionFailedEventAttributes: js.UndefOr[
-      SignalExternalWorkflowExecutionFailedEventAttributes
-    ]
-    var signalExternalWorkflowExecutionInitiatedEventAttributes: js.UndefOr[
-      SignalExternalWorkflowExecutionInitiatedEventAttributes
-    ]
+    var signalExternalWorkflowExecutionFailedEventAttributes: js.UndefOr[SignalExternalWorkflowExecutionFailedEventAttributes]
+    var signalExternalWorkflowExecutionInitiatedEventAttributes: js.UndefOr[SignalExternalWorkflowExecutionInitiatedEventAttributes]
     var startChildWorkflowExecutionFailedEventAttributes: js.UndefOr[StartChildWorkflowExecutionFailedEventAttributes]
-    var startChildWorkflowExecutionInitiatedEventAttributes: js.UndefOr[
-      StartChildWorkflowExecutionInitiatedEventAttributes
-    ]
+    var startChildWorkflowExecutionInitiatedEventAttributes: js.UndefOr[StartChildWorkflowExecutionInitiatedEventAttributes]
     var startLambdaFunctionFailedEventAttributes: js.UndefOr[StartLambdaFunctionFailedEventAttributes]
     var startTimerFailedEventAttributes: js.UndefOr[StartTimerFailedEventAttributes]
     var timerCanceledEventAttributes: js.UndefOr[TimerCanceledEventAttributes]
@@ -2277,8 +2161,7 @@ package swf {
         eventId: EventId,
         eventTimestamp: Timestamp,
         eventType: EventType,
-        activityTaskCancelRequestedEventAttributes: js.UndefOr[ActivityTaskCancelRequestedEventAttributes] =
-          js.undefined,
+        activityTaskCancelRequestedEventAttributes: js.UndefOr[ActivityTaskCancelRequestedEventAttributes] = js.undefined,
         activityTaskCanceledEventAttributes: js.UndefOr[ActivityTaskCanceledEventAttributes] = js.undefined,
         activityTaskCompletedEventAttributes: js.UndefOr[ActivityTaskCompletedEventAttributes] = js.undefined,
         activityTaskFailedEventAttributes: js.UndefOr[ActivityTaskFailedEventAttributes] = js.undefined,
@@ -2286,36 +2169,22 @@ package swf {
         activityTaskStartedEventAttributes: js.UndefOr[ActivityTaskStartedEventAttributes] = js.undefined,
         activityTaskTimedOutEventAttributes: js.UndefOr[ActivityTaskTimedOutEventAttributes] = js.undefined,
         cancelTimerFailedEventAttributes: js.UndefOr[CancelTimerFailedEventAttributes] = js.undefined,
-        cancelWorkflowExecutionFailedEventAttributes: js.UndefOr[CancelWorkflowExecutionFailedEventAttributes] =
-          js.undefined,
-        childWorkflowExecutionCanceledEventAttributes: js.UndefOr[ChildWorkflowExecutionCanceledEventAttributes] =
-          js.undefined,
-        childWorkflowExecutionCompletedEventAttributes: js.UndefOr[ChildWorkflowExecutionCompletedEventAttributes] =
-          js.undefined,
-        childWorkflowExecutionFailedEventAttributes: js.UndefOr[ChildWorkflowExecutionFailedEventAttributes] =
-          js.undefined,
-        childWorkflowExecutionStartedEventAttributes: js.UndefOr[ChildWorkflowExecutionStartedEventAttributes] =
-          js.undefined,
-        childWorkflowExecutionTerminatedEventAttributes: js.UndefOr[ChildWorkflowExecutionTerminatedEventAttributes] =
-          js.undefined,
-        childWorkflowExecutionTimedOutEventAttributes: js.UndefOr[ChildWorkflowExecutionTimedOutEventAttributes] =
-          js.undefined,
-        completeWorkflowExecutionFailedEventAttributes: js.UndefOr[CompleteWorkflowExecutionFailedEventAttributes] =
-          js.undefined,
-        continueAsNewWorkflowExecutionFailedEventAttributes: js.UndefOr[
-          ContinueAsNewWorkflowExecutionFailedEventAttributes
-        ] = js.undefined,
+        cancelWorkflowExecutionFailedEventAttributes: js.UndefOr[CancelWorkflowExecutionFailedEventAttributes] = js.undefined,
+        childWorkflowExecutionCanceledEventAttributes: js.UndefOr[ChildWorkflowExecutionCanceledEventAttributes] = js.undefined,
+        childWorkflowExecutionCompletedEventAttributes: js.UndefOr[ChildWorkflowExecutionCompletedEventAttributes] = js.undefined,
+        childWorkflowExecutionFailedEventAttributes: js.UndefOr[ChildWorkflowExecutionFailedEventAttributes] = js.undefined,
+        childWorkflowExecutionStartedEventAttributes: js.UndefOr[ChildWorkflowExecutionStartedEventAttributes] = js.undefined,
+        childWorkflowExecutionTerminatedEventAttributes: js.UndefOr[ChildWorkflowExecutionTerminatedEventAttributes] = js.undefined,
+        childWorkflowExecutionTimedOutEventAttributes: js.UndefOr[ChildWorkflowExecutionTimedOutEventAttributes] = js.undefined,
+        completeWorkflowExecutionFailedEventAttributes: js.UndefOr[CompleteWorkflowExecutionFailedEventAttributes] = js.undefined,
+        continueAsNewWorkflowExecutionFailedEventAttributes: js.UndefOr[ContinueAsNewWorkflowExecutionFailedEventAttributes] = js.undefined,
         decisionTaskCompletedEventAttributes: js.UndefOr[DecisionTaskCompletedEventAttributes] = js.undefined,
         decisionTaskScheduledEventAttributes: js.UndefOr[DecisionTaskScheduledEventAttributes] = js.undefined,
         decisionTaskStartedEventAttributes: js.UndefOr[DecisionTaskStartedEventAttributes] = js.undefined,
         decisionTaskTimedOutEventAttributes: js.UndefOr[DecisionTaskTimedOutEventAttributes] = js.undefined,
-        externalWorkflowExecutionCancelRequestedEventAttributes: js.UndefOr[
-          ExternalWorkflowExecutionCancelRequestedEventAttributes
-        ] = js.undefined,
-        externalWorkflowExecutionSignaledEventAttributes: js.UndefOr[ExternalWorkflowExecutionSignaledEventAttributes] =
-          js.undefined,
-        failWorkflowExecutionFailedEventAttributes: js.UndefOr[FailWorkflowExecutionFailedEventAttributes] =
-          js.undefined,
+        externalWorkflowExecutionCancelRequestedEventAttributes: js.UndefOr[ExternalWorkflowExecutionCancelRequestedEventAttributes] = js.undefined,
+        externalWorkflowExecutionSignaledEventAttributes: js.UndefOr[ExternalWorkflowExecutionSignaledEventAttributes] = js.undefined,
+        failWorkflowExecutionFailedEventAttributes: js.UndefOr[FailWorkflowExecutionFailedEventAttributes] = js.undefined,
         lambdaFunctionCompletedEventAttributes: js.UndefOr[LambdaFunctionCompletedEventAttributes] = js.undefined,
         lambdaFunctionFailedEventAttributes: js.UndefOr[LambdaFunctionFailedEventAttributes] = js.undefined,
         lambdaFunctionScheduledEventAttributes: js.UndefOr[LambdaFunctionScheduledEventAttributes] = js.undefined,
@@ -2323,44 +2192,28 @@ package swf {
         lambdaFunctionTimedOutEventAttributes: js.UndefOr[LambdaFunctionTimedOutEventAttributes] = js.undefined,
         markerRecordedEventAttributes: js.UndefOr[MarkerRecordedEventAttributes] = js.undefined,
         recordMarkerFailedEventAttributes: js.UndefOr[RecordMarkerFailedEventAttributes] = js.undefined,
-        requestCancelActivityTaskFailedEventAttributes: js.UndefOr[RequestCancelActivityTaskFailedEventAttributes] =
-          js.undefined,
-        requestCancelExternalWorkflowExecutionFailedEventAttributes: js.UndefOr[
-          RequestCancelExternalWorkflowExecutionFailedEventAttributes
-        ] = js.undefined,
-        requestCancelExternalWorkflowExecutionInitiatedEventAttributes: js.UndefOr[
-          RequestCancelExternalWorkflowExecutionInitiatedEventAttributes
-        ] = js.undefined,
+        requestCancelActivityTaskFailedEventAttributes: js.UndefOr[RequestCancelActivityTaskFailedEventAttributes] = js.undefined,
+        requestCancelExternalWorkflowExecutionFailedEventAttributes: js.UndefOr[RequestCancelExternalWorkflowExecutionFailedEventAttributes] = js.undefined,
+        requestCancelExternalWorkflowExecutionInitiatedEventAttributes: js.UndefOr[RequestCancelExternalWorkflowExecutionInitiatedEventAttributes] = js.undefined,
         scheduleActivityTaskFailedEventAttributes: js.UndefOr[ScheduleActivityTaskFailedEventAttributes] = js.undefined,
-        scheduleLambdaFunctionFailedEventAttributes: js.UndefOr[ScheduleLambdaFunctionFailedEventAttributes] =
-          js.undefined,
-        signalExternalWorkflowExecutionFailedEventAttributes: js.UndefOr[
-          SignalExternalWorkflowExecutionFailedEventAttributes
-        ] = js.undefined,
-        signalExternalWorkflowExecutionInitiatedEventAttributes: js.UndefOr[
-          SignalExternalWorkflowExecutionInitiatedEventAttributes
-        ] = js.undefined,
-        startChildWorkflowExecutionFailedEventAttributes: js.UndefOr[StartChildWorkflowExecutionFailedEventAttributes] =
-          js.undefined,
-        startChildWorkflowExecutionInitiatedEventAttributes: js.UndefOr[
-          StartChildWorkflowExecutionInitiatedEventAttributes
-        ] = js.undefined,
+        scheduleLambdaFunctionFailedEventAttributes: js.UndefOr[ScheduleLambdaFunctionFailedEventAttributes] = js.undefined,
+        signalExternalWorkflowExecutionFailedEventAttributes: js.UndefOr[SignalExternalWorkflowExecutionFailedEventAttributes] = js.undefined,
+        signalExternalWorkflowExecutionInitiatedEventAttributes: js.UndefOr[SignalExternalWorkflowExecutionInitiatedEventAttributes] = js.undefined,
+        startChildWorkflowExecutionFailedEventAttributes: js.UndefOr[StartChildWorkflowExecutionFailedEventAttributes] = js.undefined,
+        startChildWorkflowExecutionInitiatedEventAttributes: js.UndefOr[StartChildWorkflowExecutionInitiatedEventAttributes] = js.undefined,
         startLambdaFunctionFailedEventAttributes: js.UndefOr[StartLambdaFunctionFailedEventAttributes] = js.undefined,
         startTimerFailedEventAttributes: js.UndefOr[StartTimerFailedEventAttributes] = js.undefined,
         timerCanceledEventAttributes: js.UndefOr[TimerCanceledEventAttributes] = js.undefined,
         timerFiredEventAttributes: js.UndefOr[TimerFiredEventAttributes] = js.undefined,
         timerStartedEventAttributes: js.UndefOr[TimerStartedEventAttributes] = js.undefined,
-        workflowExecutionCancelRequestedEventAttributes: js.UndefOr[WorkflowExecutionCancelRequestedEventAttributes] =
-          js.undefined,
+        workflowExecutionCancelRequestedEventAttributes: js.UndefOr[WorkflowExecutionCancelRequestedEventAttributes] = js.undefined,
         workflowExecutionCanceledEventAttributes: js.UndefOr[WorkflowExecutionCanceledEventAttributes] = js.undefined,
         workflowExecutionCompletedEventAttributes: js.UndefOr[WorkflowExecutionCompletedEventAttributes] = js.undefined,
-        workflowExecutionContinuedAsNewEventAttributes: js.UndefOr[WorkflowExecutionContinuedAsNewEventAttributes] =
-          js.undefined,
+        workflowExecutionContinuedAsNewEventAttributes: js.UndefOr[WorkflowExecutionContinuedAsNewEventAttributes] = js.undefined,
         workflowExecutionFailedEventAttributes: js.UndefOr[WorkflowExecutionFailedEventAttributes] = js.undefined,
         workflowExecutionSignaledEventAttributes: js.UndefOr[WorkflowExecutionSignaledEventAttributes] = js.undefined,
         workflowExecutionStartedEventAttributes: js.UndefOr[WorkflowExecutionStartedEventAttributes] = js.undefined,
-        workflowExecutionTerminatedEventAttributes: js.UndefOr[WorkflowExecutionTerminatedEventAttributes] =
-          js.undefined,
+        workflowExecutionTerminatedEventAttributes: js.UndefOr[WorkflowExecutionTerminatedEventAttributes] = js.undefined,
         workflowExecutionTimedOutEventAttributes: js.UndefOr[WorkflowExecutionTimedOutEventAttributes] = js.undefined
     ): HistoryEvent = {
       val __obj = js.Dynamic.literal(
@@ -2369,168 +2222,60 @@ package swf {
         "eventType" -> eventType.asInstanceOf[js.Any]
       )
 
-      activityTaskCancelRequestedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("activityTaskCancelRequestedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      activityTaskCanceledEventAttributes.foreach(__v =>
-        __obj.updateDynamic("activityTaskCanceledEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      activityTaskCompletedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("activityTaskCompletedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      activityTaskFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("activityTaskFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      activityTaskScheduledEventAttributes.foreach(__v =>
-        __obj.updateDynamic("activityTaskScheduledEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      activityTaskStartedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("activityTaskStartedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      activityTaskTimedOutEventAttributes.foreach(__v =>
-        __obj.updateDynamic("activityTaskTimedOutEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      cancelTimerFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("cancelTimerFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      cancelWorkflowExecutionFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("cancelWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      childWorkflowExecutionCanceledEventAttributes.foreach(__v =>
-        __obj.updateDynamic("childWorkflowExecutionCanceledEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      childWorkflowExecutionCompletedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("childWorkflowExecutionCompletedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      childWorkflowExecutionFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("childWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      childWorkflowExecutionStartedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("childWorkflowExecutionStartedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      childWorkflowExecutionTerminatedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("childWorkflowExecutionTerminatedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      childWorkflowExecutionTimedOutEventAttributes.foreach(__v =>
-        __obj.updateDynamic("childWorkflowExecutionTimedOutEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      completeWorkflowExecutionFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("completeWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      continueAsNewWorkflowExecutionFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("continueAsNewWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      decisionTaskCompletedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("decisionTaskCompletedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      decisionTaskScheduledEventAttributes.foreach(__v =>
-        __obj.updateDynamic("decisionTaskScheduledEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      decisionTaskStartedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("decisionTaskStartedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      decisionTaskTimedOutEventAttributes.foreach(__v =>
-        __obj.updateDynamic("decisionTaskTimedOutEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      externalWorkflowExecutionCancelRequestedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("externalWorkflowExecutionCancelRequestedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      externalWorkflowExecutionSignaledEventAttributes.foreach(__v =>
-        __obj.updateDynamic("externalWorkflowExecutionSignaledEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      failWorkflowExecutionFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("failWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      lambdaFunctionCompletedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("lambdaFunctionCompletedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      lambdaFunctionFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("lambdaFunctionFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      lambdaFunctionScheduledEventAttributes.foreach(__v =>
-        __obj.updateDynamic("lambdaFunctionScheduledEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      lambdaFunctionStartedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("lambdaFunctionStartedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      lambdaFunctionTimedOutEventAttributes.foreach(__v =>
-        __obj.updateDynamic("lambdaFunctionTimedOutEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      markerRecordedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("markerRecordedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      recordMarkerFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("recordMarkerFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      requestCancelActivityTaskFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("requestCancelActivityTaskFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      requestCancelExternalWorkflowExecutionFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("requestCancelExternalWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      requestCancelExternalWorkflowExecutionInitiatedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("requestCancelExternalWorkflowExecutionInitiatedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      scheduleActivityTaskFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("scheduleActivityTaskFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      scheduleLambdaFunctionFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("scheduleLambdaFunctionFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      signalExternalWorkflowExecutionFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("signalExternalWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      signalExternalWorkflowExecutionInitiatedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("signalExternalWorkflowExecutionInitiatedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      startChildWorkflowExecutionFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("startChildWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      startChildWorkflowExecutionInitiatedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("startChildWorkflowExecutionInitiatedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      startLambdaFunctionFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("startLambdaFunctionFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      startTimerFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("startTimerFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      timerCanceledEventAttributes.foreach(__v =>
-        __obj.updateDynamic("timerCanceledEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      timerFiredEventAttributes.foreach(__v =>
-        __obj.updateDynamic("timerFiredEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      timerStartedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("timerStartedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      workflowExecutionCancelRequestedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("workflowExecutionCancelRequestedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      workflowExecutionCanceledEventAttributes.foreach(__v =>
-        __obj.updateDynamic("workflowExecutionCanceledEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      workflowExecutionCompletedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("workflowExecutionCompletedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      workflowExecutionContinuedAsNewEventAttributes.foreach(__v =>
-        __obj.updateDynamic("workflowExecutionContinuedAsNewEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      workflowExecutionFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("workflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      workflowExecutionSignaledEventAttributes.foreach(__v =>
-        __obj.updateDynamic("workflowExecutionSignaledEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      workflowExecutionStartedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("workflowExecutionStartedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      workflowExecutionTerminatedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("workflowExecutionTerminatedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      workflowExecutionTimedOutEventAttributes.foreach(__v =>
-        __obj.updateDynamic("workflowExecutionTimedOutEventAttributes")(__v.asInstanceOf[js.Any])
-      )
+      activityTaskCancelRequestedEventAttributes.foreach(__v => __obj.updateDynamic("activityTaskCancelRequestedEventAttributes")(__v.asInstanceOf[js.Any]))
+      activityTaskCanceledEventAttributes.foreach(__v => __obj.updateDynamic("activityTaskCanceledEventAttributes")(__v.asInstanceOf[js.Any]))
+      activityTaskCompletedEventAttributes.foreach(__v => __obj.updateDynamic("activityTaskCompletedEventAttributes")(__v.asInstanceOf[js.Any]))
+      activityTaskFailedEventAttributes.foreach(__v => __obj.updateDynamic("activityTaskFailedEventAttributes")(__v.asInstanceOf[js.Any]))
+      activityTaskScheduledEventAttributes.foreach(__v => __obj.updateDynamic("activityTaskScheduledEventAttributes")(__v.asInstanceOf[js.Any]))
+      activityTaskStartedEventAttributes.foreach(__v => __obj.updateDynamic("activityTaskStartedEventAttributes")(__v.asInstanceOf[js.Any]))
+      activityTaskTimedOutEventAttributes.foreach(__v => __obj.updateDynamic("activityTaskTimedOutEventAttributes")(__v.asInstanceOf[js.Any]))
+      cancelTimerFailedEventAttributes.foreach(__v => __obj.updateDynamic("cancelTimerFailedEventAttributes")(__v.asInstanceOf[js.Any]))
+      cancelWorkflowExecutionFailedEventAttributes.foreach(__v => __obj.updateDynamic("cancelWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any]))
+      childWorkflowExecutionCanceledEventAttributes.foreach(__v => __obj.updateDynamic("childWorkflowExecutionCanceledEventAttributes")(__v.asInstanceOf[js.Any]))
+      childWorkflowExecutionCompletedEventAttributes.foreach(__v => __obj.updateDynamic("childWorkflowExecutionCompletedEventAttributes")(__v.asInstanceOf[js.Any]))
+      childWorkflowExecutionFailedEventAttributes.foreach(__v => __obj.updateDynamic("childWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any]))
+      childWorkflowExecutionStartedEventAttributes.foreach(__v => __obj.updateDynamic("childWorkflowExecutionStartedEventAttributes")(__v.asInstanceOf[js.Any]))
+      childWorkflowExecutionTerminatedEventAttributes.foreach(__v => __obj.updateDynamic("childWorkflowExecutionTerminatedEventAttributes")(__v.asInstanceOf[js.Any]))
+      childWorkflowExecutionTimedOutEventAttributes.foreach(__v => __obj.updateDynamic("childWorkflowExecutionTimedOutEventAttributes")(__v.asInstanceOf[js.Any]))
+      completeWorkflowExecutionFailedEventAttributes.foreach(__v => __obj.updateDynamic("completeWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any]))
+      continueAsNewWorkflowExecutionFailedEventAttributes.foreach(__v => __obj.updateDynamic("continueAsNewWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any]))
+      decisionTaskCompletedEventAttributes.foreach(__v => __obj.updateDynamic("decisionTaskCompletedEventAttributes")(__v.asInstanceOf[js.Any]))
+      decisionTaskScheduledEventAttributes.foreach(__v => __obj.updateDynamic("decisionTaskScheduledEventAttributes")(__v.asInstanceOf[js.Any]))
+      decisionTaskStartedEventAttributes.foreach(__v => __obj.updateDynamic("decisionTaskStartedEventAttributes")(__v.asInstanceOf[js.Any]))
+      decisionTaskTimedOutEventAttributes.foreach(__v => __obj.updateDynamic("decisionTaskTimedOutEventAttributes")(__v.asInstanceOf[js.Any]))
+      externalWorkflowExecutionCancelRequestedEventAttributes.foreach(__v => __obj.updateDynamic("externalWorkflowExecutionCancelRequestedEventAttributes")(__v.asInstanceOf[js.Any]))
+      externalWorkflowExecutionSignaledEventAttributes.foreach(__v => __obj.updateDynamic("externalWorkflowExecutionSignaledEventAttributes")(__v.asInstanceOf[js.Any]))
+      failWorkflowExecutionFailedEventAttributes.foreach(__v => __obj.updateDynamic("failWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any]))
+      lambdaFunctionCompletedEventAttributes.foreach(__v => __obj.updateDynamic("lambdaFunctionCompletedEventAttributes")(__v.asInstanceOf[js.Any]))
+      lambdaFunctionFailedEventAttributes.foreach(__v => __obj.updateDynamic("lambdaFunctionFailedEventAttributes")(__v.asInstanceOf[js.Any]))
+      lambdaFunctionScheduledEventAttributes.foreach(__v => __obj.updateDynamic("lambdaFunctionScheduledEventAttributes")(__v.asInstanceOf[js.Any]))
+      lambdaFunctionStartedEventAttributes.foreach(__v => __obj.updateDynamic("lambdaFunctionStartedEventAttributes")(__v.asInstanceOf[js.Any]))
+      lambdaFunctionTimedOutEventAttributes.foreach(__v => __obj.updateDynamic("lambdaFunctionTimedOutEventAttributes")(__v.asInstanceOf[js.Any]))
+      markerRecordedEventAttributes.foreach(__v => __obj.updateDynamic("markerRecordedEventAttributes")(__v.asInstanceOf[js.Any]))
+      recordMarkerFailedEventAttributes.foreach(__v => __obj.updateDynamic("recordMarkerFailedEventAttributes")(__v.asInstanceOf[js.Any]))
+      requestCancelActivityTaskFailedEventAttributes.foreach(__v => __obj.updateDynamic("requestCancelActivityTaskFailedEventAttributes")(__v.asInstanceOf[js.Any]))
+      requestCancelExternalWorkflowExecutionFailedEventAttributes.foreach(__v => __obj.updateDynamic("requestCancelExternalWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any]))
+      requestCancelExternalWorkflowExecutionInitiatedEventAttributes.foreach(__v => __obj.updateDynamic("requestCancelExternalWorkflowExecutionInitiatedEventAttributes")(__v.asInstanceOf[js.Any]))
+      scheduleActivityTaskFailedEventAttributes.foreach(__v => __obj.updateDynamic("scheduleActivityTaskFailedEventAttributes")(__v.asInstanceOf[js.Any]))
+      scheduleLambdaFunctionFailedEventAttributes.foreach(__v => __obj.updateDynamic("scheduleLambdaFunctionFailedEventAttributes")(__v.asInstanceOf[js.Any]))
+      signalExternalWorkflowExecutionFailedEventAttributes.foreach(__v => __obj.updateDynamic("signalExternalWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any]))
+      signalExternalWorkflowExecutionInitiatedEventAttributes.foreach(__v => __obj.updateDynamic("signalExternalWorkflowExecutionInitiatedEventAttributes")(__v.asInstanceOf[js.Any]))
+      startChildWorkflowExecutionFailedEventAttributes.foreach(__v => __obj.updateDynamic("startChildWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any]))
+      startChildWorkflowExecutionInitiatedEventAttributes.foreach(__v => __obj.updateDynamic("startChildWorkflowExecutionInitiatedEventAttributes")(__v.asInstanceOf[js.Any]))
+      startLambdaFunctionFailedEventAttributes.foreach(__v => __obj.updateDynamic("startLambdaFunctionFailedEventAttributes")(__v.asInstanceOf[js.Any]))
+      startTimerFailedEventAttributes.foreach(__v => __obj.updateDynamic("startTimerFailedEventAttributes")(__v.asInstanceOf[js.Any]))
+      timerCanceledEventAttributes.foreach(__v => __obj.updateDynamic("timerCanceledEventAttributes")(__v.asInstanceOf[js.Any]))
+      timerFiredEventAttributes.foreach(__v => __obj.updateDynamic("timerFiredEventAttributes")(__v.asInstanceOf[js.Any]))
+      timerStartedEventAttributes.foreach(__v => __obj.updateDynamic("timerStartedEventAttributes")(__v.asInstanceOf[js.Any]))
+      workflowExecutionCancelRequestedEventAttributes.foreach(__v => __obj.updateDynamic("workflowExecutionCancelRequestedEventAttributes")(__v.asInstanceOf[js.Any]))
+      workflowExecutionCanceledEventAttributes.foreach(__v => __obj.updateDynamic("workflowExecutionCanceledEventAttributes")(__v.asInstanceOf[js.Any]))
+      workflowExecutionCompletedEventAttributes.foreach(__v => __obj.updateDynamic("workflowExecutionCompletedEventAttributes")(__v.asInstanceOf[js.Any]))
+      workflowExecutionContinuedAsNewEventAttributes.foreach(__v => __obj.updateDynamic("workflowExecutionContinuedAsNewEventAttributes")(__v.asInstanceOf[js.Any]))
+      workflowExecutionFailedEventAttributes.foreach(__v => __obj.updateDynamic("workflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any]))
+      workflowExecutionSignaledEventAttributes.foreach(__v => __obj.updateDynamic("workflowExecutionSignaledEventAttributes")(__v.asInstanceOf[js.Any]))
+      workflowExecutionStartedEventAttributes.foreach(__v => __obj.updateDynamic("workflowExecutionStartedEventAttributes")(__v.asInstanceOf[js.Any]))
+      workflowExecutionTerminatedEventAttributes.foreach(__v => __obj.updateDynamic("workflowExecutionTerminatedEventAttributes")(__v.asInstanceOf[js.Any]))
+      workflowExecutionTimedOutEventAttributes.foreach(__v => __obj.updateDynamic("workflowExecutionTimedOutEventAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HistoryEvent]
     }
   }
@@ -3123,20 +2868,12 @@ package swf {
         "version" -> version.asInstanceOf[js.Any]
       )
 
-      defaultTaskHeartbeatTimeout.foreach(__v =>
-        __obj.updateDynamic("defaultTaskHeartbeatTimeout")(__v.asInstanceOf[js.Any])
-      )
+      defaultTaskHeartbeatTimeout.foreach(__v => __obj.updateDynamic("defaultTaskHeartbeatTimeout")(__v.asInstanceOf[js.Any]))
       defaultTaskList.foreach(__v => __obj.updateDynamic("defaultTaskList")(__v.asInstanceOf[js.Any]))
       defaultTaskPriority.foreach(__v => __obj.updateDynamic("defaultTaskPriority")(__v.asInstanceOf[js.Any]))
-      defaultTaskScheduleToCloseTimeout.foreach(__v =>
-        __obj.updateDynamic("defaultTaskScheduleToCloseTimeout")(__v.asInstanceOf[js.Any])
-      )
-      defaultTaskScheduleToStartTimeout.foreach(__v =>
-        __obj.updateDynamic("defaultTaskScheduleToStartTimeout")(__v.asInstanceOf[js.Any])
-      )
-      defaultTaskStartToCloseTimeout.foreach(__v =>
-        __obj.updateDynamic("defaultTaskStartToCloseTimeout")(__v.asInstanceOf[js.Any])
-      )
+      defaultTaskScheduleToCloseTimeout.foreach(__v => __obj.updateDynamic("defaultTaskScheduleToCloseTimeout")(__v.asInstanceOf[js.Any]))
+      defaultTaskScheduleToStartTimeout.foreach(__v => __obj.updateDynamic("defaultTaskScheduleToStartTimeout")(__v.asInstanceOf[js.Any]))
+      defaultTaskStartToCloseTimeout.foreach(__v => __obj.updateDynamic("defaultTaskStartToCloseTimeout")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterActivityTypeInput]
     }
@@ -3204,15 +2941,11 @@ package swf {
       )
 
       defaultChildPolicy.foreach(__v => __obj.updateDynamic("defaultChildPolicy")(__v.asInstanceOf[js.Any]))
-      defaultExecutionStartToCloseTimeout.foreach(__v =>
-        __obj.updateDynamic("defaultExecutionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
-      )
+      defaultExecutionStartToCloseTimeout.foreach(__v => __obj.updateDynamic("defaultExecutionStartToCloseTimeout")(__v.asInstanceOf[js.Any]))
       defaultLambdaRole.foreach(__v => __obj.updateDynamic("defaultLambdaRole")(__v.asInstanceOf[js.Any]))
       defaultTaskList.foreach(__v => __obj.updateDynamic("defaultTaskList")(__v.asInstanceOf[js.Any]))
       defaultTaskPriority.foreach(__v => __obj.updateDynamic("defaultTaskPriority")(__v.asInstanceOf[js.Any]))
-      defaultTaskStartToCloseTimeout.foreach(__v =>
-        __obj.updateDynamic("defaultTaskStartToCloseTimeout")(__v.asInstanceOf[js.Any])
-      )
+      defaultTaskStartToCloseTimeout.foreach(__v => __obj.updateDynamic("defaultTaskStartToCloseTimeout")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterWorkflowTypeInput]
     }
@@ -3326,21 +3059,11 @@ package swf {
   @js.native
   sealed trait RequestCancelExternalWorkflowExecutionFailedCause extends js.Any
   object RequestCancelExternalWorkflowExecutionFailedCause extends js.Object {
-    val UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION =
-      "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION".asInstanceOf[RequestCancelExternalWorkflowExecutionFailedCause]
-    val REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED =
-      "REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED"
-        .asInstanceOf[RequestCancelExternalWorkflowExecutionFailedCause]
-    val OPERATION_NOT_PERMITTED =
-      "OPERATION_NOT_PERMITTED".asInstanceOf[RequestCancelExternalWorkflowExecutionFailedCause]
+    val UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION = "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION".asInstanceOf[RequestCancelExternalWorkflowExecutionFailedCause]
+    val REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED = "REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED".asInstanceOf[RequestCancelExternalWorkflowExecutionFailedCause]
+    val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[RequestCancelExternalWorkflowExecutionFailedCause]
 
-    val values = js.Object.freeze(
-      js.Array(
-        UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION,
-        REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED,
-        OPERATION_NOT_PERMITTED
-      )
-    )
+    val values = js.Object.freeze(js.Array(UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION, REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED, OPERATION_NOT_PERMITTED))
   }
 
   /**
@@ -3634,17 +3357,12 @@ package swf {
     val ACTIVITY_TYPE_DOES_NOT_EXIST = "ACTIVITY_TYPE_DOES_NOT_EXIST".asInstanceOf[ScheduleActivityTaskFailedCause]
     val ACTIVITY_ID_ALREADY_IN_USE = "ACTIVITY_ID_ALREADY_IN_USE".asInstanceOf[ScheduleActivityTaskFailedCause]
     val OPEN_ACTIVITIES_LIMIT_EXCEEDED = "OPEN_ACTIVITIES_LIMIT_EXCEEDED".asInstanceOf[ScheduleActivityTaskFailedCause]
-    val ACTIVITY_CREATION_RATE_EXCEEDED =
-      "ACTIVITY_CREATION_RATE_EXCEEDED".asInstanceOf[ScheduleActivityTaskFailedCause]
-    val DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED =
-      "DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED".asInstanceOf[ScheduleActivityTaskFailedCause]
+    val ACTIVITY_CREATION_RATE_EXCEEDED = "ACTIVITY_CREATION_RATE_EXCEEDED".asInstanceOf[ScheduleActivityTaskFailedCause]
+    val DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED = "DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED".asInstanceOf[ScheduleActivityTaskFailedCause]
     val DEFAULT_TASK_LIST_UNDEFINED = "DEFAULT_TASK_LIST_UNDEFINED".asInstanceOf[ScheduleActivityTaskFailedCause]
-    val DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED =
-      "DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED".asInstanceOf[ScheduleActivityTaskFailedCause]
-    val DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED =
-      "DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED".asInstanceOf[ScheduleActivityTaskFailedCause]
-    val DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED =
-      "DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED".asInstanceOf[ScheduleActivityTaskFailedCause]
+    val DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED = "DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED".asInstanceOf[ScheduleActivityTaskFailedCause]
+    val DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED = "DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED".asInstanceOf[ScheduleActivityTaskFailedCause]
+    val DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED = "DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED".asInstanceOf[ScheduleActivityTaskFailedCause]
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[ScheduleActivityTaskFailedCause]
 
     val values = js.Object.freeze(
@@ -3731,21 +3449,11 @@ package swf {
   sealed trait ScheduleLambdaFunctionFailedCause extends js.Any
   object ScheduleLambdaFunctionFailedCause extends js.Object {
     val ID_ALREADY_IN_USE = "ID_ALREADY_IN_USE".asInstanceOf[ScheduleLambdaFunctionFailedCause]
-    val OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED =
-      "OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED".asInstanceOf[ScheduleLambdaFunctionFailedCause]
-    val LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED =
-      "LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED".asInstanceOf[ScheduleLambdaFunctionFailedCause]
-    val LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION =
-      "LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION".asInstanceOf[ScheduleLambdaFunctionFailedCause]
+    val OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED = "OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED".asInstanceOf[ScheduleLambdaFunctionFailedCause]
+    val LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED = "LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED".asInstanceOf[ScheduleLambdaFunctionFailedCause]
+    val LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION = "LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION".asInstanceOf[ScheduleLambdaFunctionFailedCause]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ID_ALREADY_IN_USE,
-        OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED,
-        LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED,
-        LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION
-      )
-    )
+    val values = js.Object.freeze(js.Array(ID_ALREADY_IN_USE, OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED, LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED, LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION))
   }
 
   /**
@@ -3820,19 +3528,11 @@ package swf {
   @js.native
   sealed trait SignalExternalWorkflowExecutionFailedCause extends js.Any
   object SignalExternalWorkflowExecutionFailedCause extends js.Object {
-    val UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION =
-      "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION".asInstanceOf[SignalExternalWorkflowExecutionFailedCause]
-    val SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED =
-      "SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED".asInstanceOf[SignalExternalWorkflowExecutionFailedCause]
+    val UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION = "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION".asInstanceOf[SignalExternalWorkflowExecutionFailedCause]
+    val SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED = "SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED".asInstanceOf[SignalExternalWorkflowExecutionFailedCause]
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[SignalExternalWorkflowExecutionFailedCause]
 
-    val values = js.Object.freeze(
-      js.Array(
-        UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION,
-        SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED,
-        OPERATION_NOT_PERMITTED
-      )
-    )
+    val values = js.Object.freeze(js.Array(UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION, SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED, OPERATION_NOT_PERMITTED))
   }
 
   /**
@@ -3987,9 +3687,7 @@ package swf {
 
       childPolicy.foreach(__v => __obj.updateDynamic("childPolicy")(__v.asInstanceOf[js.Any]))
       control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
-      executionStartToCloseTimeout.foreach(__v =>
-        __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
-      )
+      executionStartToCloseTimeout.foreach(__v => __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any]))
       input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
       lambdaRole.foreach(__v => __obj.updateDynamic("lambdaRole")(__v.asInstanceOf[js.Any]))
       tagList.foreach(__v => __obj.updateDynamic("tagList")(__v.asInstanceOf[js.Any]))
@@ -4003,23 +3701,16 @@ package swf {
   @js.native
   sealed trait StartChildWorkflowExecutionFailedCause extends js.Any
   object StartChildWorkflowExecutionFailedCause extends js.Object {
-    val WORKFLOW_TYPE_DOES_NOT_EXIST =
-      "WORKFLOW_TYPE_DOES_NOT_EXIST".asInstanceOf[StartChildWorkflowExecutionFailedCause]
+    val WORKFLOW_TYPE_DOES_NOT_EXIST = "WORKFLOW_TYPE_DOES_NOT_EXIST".asInstanceOf[StartChildWorkflowExecutionFailedCause]
     val WORKFLOW_TYPE_DEPRECATED = "WORKFLOW_TYPE_DEPRECATED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
-    val OPEN_CHILDREN_LIMIT_EXCEEDED =
-      "OPEN_CHILDREN_LIMIT_EXCEEDED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
-    val OPEN_WORKFLOWS_LIMIT_EXCEEDED =
-      "OPEN_WORKFLOWS_LIMIT_EXCEEDED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
-    val CHILD_CREATION_RATE_EXCEEDED =
-      "CHILD_CREATION_RATE_EXCEEDED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
+    val OPEN_CHILDREN_LIMIT_EXCEEDED = "OPEN_CHILDREN_LIMIT_EXCEEDED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
+    val OPEN_WORKFLOWS_LIMIT_EXCEEDED = "OPEN_WORKFLOWS_LIMIT_EXCEEDED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
+    val CHILD_CREATION_RATE_EXCEEDED = "CHILD_CREATION_RATE_EXCEEDED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
     val WORKFLOW_ALREADY_RUNNING = "WORKFLOW_ALREADY_RUNNING".asInstanceOf[StartChildWorkflowExecutionFailedCause]
-    val DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED =
-      "DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
+    val DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED = "DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
     val DEFAULT_TASK_LIST_UNDEFINED = "DEFAULT_TASK_LIST_UNDEFINED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
-    val DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED =
-      "DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
-    val DEFAULT_CHILD_POLICY_UNDEFINED =
-      "DEFAULT_CHILD_POLICY_UNDEFINED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
+    val DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED = "DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
+    val DEFAULT_CHILD_POLICY_UNDEFINED = "DEFAULT_CHILD_POLICY_UNDEFINED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[StartChildWorkflowExecutionFailedCause]
 
     val values = js.Object.freeze(
@@ -4119,9 +3810,7 @@ package swf {
       )
 
       control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
-      executionStartToCloseTimeout.foreach(__v =>
-        __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
-      )
+      executionStartToCloseTimeout.foreach(__v => __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any]))
       input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
       lambdaRole.foreach(__v => __obj.updateDynamic("lambdaRole")(__v.asInstanceOf[js.Any]))
       tagList.foreach(__v => __obj.updateDynamic("tagList")(__v.asInstanceOf[js.Any]))
@@ -4205,14 +3894,7 @@ package swf {
     val TIMER_CREATION_RATE_EXCEEDED = "TIMER_CREATION_RATE_EXCEEDED".asInstanceOf[StartTimerFailedCause]
     val OPERATION_NOT_PERMITTED = "OPERATION_NOT_PERMITTED".asInstanceOf[StartTimerFailedCause]
 
-    val values = js.Object.freeze(
-      js.Array(
-        TIMER_ID_ALREADY_IN_USE,
-        OPEN_TIMERS_LIMIT_EXCEEDED,
-        TIMER_CREATION_RATE_EXCEEDED,
-        OPERATION_NOT_PERMITTED
-      )
-    )
+    val values = js.Object.freeze(js.Array(TIMER_ID_ALREADY_IN_USE, OPEN_TIMERS_LIMIT_EXCEEDED, TIMER_CREATION_RATE_EXCEEDED, OPERATION_NOT_PERMITTED))
   }
 
   /**
@@ -4279,9 +3961,7 @@ package swf {
       )
 
       childPolicy.foreach(__v => __obj.updateDynamic("childPolicy")(__v.asInstanceOf[js.Any]))
-      executionStartToCloseTimeout.foreach(__v =>
-        __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
-      )
+      executionStartToCloseTimeout.foreach(__v => __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any]))
       input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
       lambdaRole.foreach(__v => __obj.updateDynamic("lambdaRole")(__v.asInstanceOf[js.Any]))
       tagList.foreach(__v => __obj.updateDynamic("tagList")(__v.asInstanceOf[js.Any]))
@@ -4602,9 +4282,7 @@ package swf {
       val __obj = js.Dynamic.literal()
       cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
       externalInitiatedEventId.foreach(__v => __obj.updateDynamic("externalInitiatedEventId")(__v.asInstanceOf[js.Any]))
-      externalWorkflowExecution.foreach(__v =>
-        __obj.updateDynamic("externalWorkflowExecution")(__v.asInstanceOf[js.Any])
-      )
+      externalWorkflowExecution.foreach(__v => __obj.updateDynamic("externalWorkflowExecution")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkflowExecutionCancelRequestedEventAttributes]
     }
   }
@@ -4734,9 +4412,7 @@ package swf {
         "workflowType" -> workflowType.asInstanceOf[js.Any]
       )
 
-      executionStartToCloseTimeout.foreach(__v =>
-        __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
-      )
+      executionStartToCloseTimeout.foreach(__v => __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any]))
       input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
       lambdaRole.foreach(__v => __obj.updateDynamic("lambdaRole")(__v.asInstanceOf[js.Any]))
       tagList.foreach(__v => __obj.updateDynamic("tagList")(__v.asInstanceOf[js.Any]))
@@ -4797,9 +4473,7 @@ package swf {
         "openCounts" -> openCounts.asInstanceOf[js.Any]
       )
 
-      latestActivityTaskTimestamp.foreach(__v =>
-        __obj.updateDynamic("latestActivityTaskTimestamp")(__v.asInstanceOf[js.Any])
-      )
+      latestActivityTaskTimestamp.foreach(__v => __obj.updateDynamic("latestActivityTaskTimestamp")(__v.asInstanceOf[js.Any]))
       latestExecutionContext.foreach(__v => __obj.updateDynamic("latestExecutionContext")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkflowExecutionDetail]
     }
@@ -4979,9 +4653,7 @@ package swf {
       )
 
       externalInitiatedEventId.foreach(__v => __obj.updateDynamic("externalInitiatedEventId")(__v.asInstanceOf[js.Any]))
-      externalWorkflowExecution.foreach(__v =>
-        __obj.updateDynamic("externalWorkflowExecution")(__v.asInstanceOf[js.Any])
-      )
+      externalWorkflowExecution.foreach(__v => __obj.updateDynamic("externalWorkflowExecution")(__v.asInstanceOf[js.Any]))
       input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkflowExecutionSignaledEventAttributes]
     }
@@ -5029,9 +4701,7 @@ package swf {
       )
 
       continuedExecutionRunId.foreach(__v => __obj.updateDynamic("continuedExecutionRunId")(__v.asInstanceOf[js.Any]))
-      executionStartToCloseTimeout.foreach(__v =>
-        __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
-      )
+      executionStartToCloseTimeout.foreach(__v => __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any]))
       input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
       lambdaRole.foreach(__v => __obj.updateDynamic("lambdaRole")(__v.asInstanceOf[js.Any]))
       parentInitiatedEventId.foreach(__v => __obj.updateDynamic("parentInitiatedEventId")(__v.asInstanceOf[js.Any]))
@@ -5164,15 +4834,11 @@ package swf {
     ): WorkflowTypeConfiguration = {
       val __obj = js.Dynamic.literal()
       defaultChildPolicy.foreach(__v => __obj.updateDynamic("defaultChildPolicy")(__v.asInstanceOf[js.Any]))
-      defaultExecutionStartToCloseTimeout.foreach(__v =>
-        __obj.updateDynamic("defaultExecutionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
-      )
+      defaultExecutionStartToCloseTimeout.foreach(__v => __obj.updateDynamic("defaultExecutionStartToCloseTimeout")(__v.asInstanceOf[js.Any]))
       defaultLambdaRole.foreach(__v => __obj.updateDynamic("defaultLambdaRole")(__v.asInstanceOf[js.Any]))
       defaultTaskList.foreach(__v => __obj.updateDynamic("defaultTaskList")(__v.asInstanceOf[js.Any]))
       defaultTaskPriority.foreach(__v => __obj.updateDynamic("defaultTaskPriority")(__v.asInstanceOf[js.Any]))
-      defaultTaskStartToCloseTimeout.foreach(__v =>
-        __obj.updateDynamic("defaultTaskStartToCloseTimeout")(__v.asInstanceOf[js.Any])
-      )
+      defaultTaskStartToCloseTimeout.foreach(__v => __obj.updateDynamic("defaultTaskStartToCloseTimeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkflowTypeConfiguration]
     }
   }

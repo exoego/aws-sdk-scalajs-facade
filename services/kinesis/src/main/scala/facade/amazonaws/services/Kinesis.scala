@@ -50,64 +50,33 @@ package object kinesis {
 
   implicit final class KinesisOps(private val service: Kinesis) extends AnyVal {
 
-    @inline def addTagsToStreamFuture(params: AddTagsToStreamInput): Future[js.Object] =
-      service.addTagsToStream(params).promise().toFuture
-    @inline def createStreamFuture(params: CreateStreamInput): Future[js.Object] =
-      service.createStream(params).promise().toFuture
-    @inline def decreaseStreamRetentionPeriodFuture(params: DecreaseStreamRetentionPeriodInput): Future[js.Object] =
-      service.decreaseStreamRetentionPeriod(params).promise().toFuture
-    @inline def deleteStreamFuture(params: DeleteStreamInput): Future[js.Object] =
-      service.deleteStream(params).promise().toFuture
-    @inline def deregisterStreamConsumerFuture(params: DeregisterStreamConsumerInput): Future[js.Object] =
-      service.deregisterStreamConsumer(params).promise().toFuture
-    @inline def describeLimitsFuture(params: DescribeLimitsInput): Future[DescribeLimitsOutput] =
-      service.describeLimits(params).promise().toFuture
-    @inline def describeStreamConsumerFuture(
-        params: DescribeStreamConsumerInput
-    ): Future[DescribeStreamConsumerOutput] = service.describeStreamConsumer(params).promise().toFuture
-    @inline def describeStreamFuture(params: DescribeStreamInput): Future[DescribeStreamOutput] =
-      service.describeStream(params).promise().toFuture
-    @inline def describeStreamSummaryFuture(params: DescribeStreamSummaryInput): Future[DescribeStreamSummaryOutput] =
-      service.describeStreamSummary(params).promise().toFuture
-    @inline def disableEnhancedMonitoringFuture(
-        params: DisableEnhancedMonitoringInput
-    ): Future[EnhancedMonitoringOutput] = service.disableEnhancedMonitoring(params).promise().toFuture
-    @inline def enableEnhancedMonitoringFuture(
-        params: EnableEnhancedMonitoringInput
-    ): Future[EnhancedMonitoringOutput] = service.enableEnhancedMonitoring(params).promise().toFuture
-    @inline def getRecordsFuture(params: GetRecordsInput): Future[GetRecordsOutput] =
-      service.getRecords(params).promise().toFuture
-    @inline def getShardIteratorFuture(params: GetShardIteratorInput): Future[GetShardIteratorOutput] =
-      service.getShardIterator(params).promise().toFuture
-    @inline def increaseStreamRetentionPeriodFuture(params: IncreaseStreamRetentionPeriodInput): Future[js.Object] =
-      service.increaseStreamRetentionPeriod(params).promise().toFuture
-    @inline def listShardsFuture(params: ListShardsInput): Future[ListShardsOutput] =
-      service.listShards(params).promise().toFuture
-    @inline def listStreamConsumersFuture(params: ListStreamConsumersInput): Future[ListStreamConsumersOutput] =
-      service.listStreamConsumers(params).promise().toFuture
-    @inline def listStreamsFuture(params: ListStreamsInput): Future[ListStreamsOutput] =
-      service.listStreams(params).promise().toFuture
-    @inline def listTagsForStreamFuture(params: ListTagsForStreamInput): Future[ListTagsForStreamOutput] =
-      service.listTagsForStream(params).promise().toFuture
-    @inline def mergeShardsFuture(params: MergeShardsInput): Future[js.Object] =
-      service.mergeShards(params).promise().toFuture
-    @inline def putRecordFuture(params: PutRecordInput): Future[PutRecordOutput] =
-      service.putRecord(params).promise().toFuture
-    @inline def putRecordsFuture(params: PutRecordsInput): Future[PutRecordsOutput] =
-      service.putRecords(params).promise().toFuture
-    @inline def registerStreamConsumerFuture(
-        params: RegisterStreamConsumerInput
-    ): Future[RegisterStreamConsumerOutput] = service.registerStreamConsumer(params).promise().toFuture
-    @inline def removeTagsFromStreamFuture(params: RemoveTagsFromStreamInput): Future[js.Object] =
-      service.removeTagsFromStream(params).promise().toFuture
-    @inline def splitShardFuture(params: SplitShardInput): Future[js.Object] =
-      service.splitShard(params).promise().toFuture
-    @inline def startStreamEncryptionFuture(params: StartStreamEncryptionInput): Future[js.Object] =
-      service.startStreamEncryption(params).promise().toFuture
-    @inline def stopStreamEncryptionFuture(params: StopStreamEncryptionInput): Future[js.Object] =
-      service.stopStreamEncryption(params).promise().toFuture
-    @inline def updateShardCountFuture(params: UpdateShardCountInput): Future[UpdateShardCountOutput] =
-      service.updateShardCount(params).promise().toFuture
+    @inline def addTagsToStreamFuture(params: AddTagsToStreamInput): Future[js.Object] = service.addTagsToStream(params).promise().toFuture
+    @inline def createStreamFuture(params: CreateStreamInput): Future[js.Object] = service.createStream(params).promise().toFuture
+    @inline def decreaseStreamRetentionPeriodFuture(params: DecreaseStreamRetentionPeriodInput): Future[js.Object] = service.decreaseStreamRetentionPeriod(params).promise().toFuture
+    @inline def deleteStreamFuture(params: DeleteStreamInput): Future[js.Object] = service.deleteStream(params).promise().toFuture
+    @inline def deregisterStreamConsumerFuture(params: DeregisterStreamConsumerInput): Future[js.Object] = service.deregisterStreamConsumer(params).promise().toFuture
+    @inline def describeLimitsFuture(params: DescribeLimitsInput): Future[DescribeLimitsOutput] = service.describeLimits(params).promise().toFuture
+    @inline def describeStreamConsumerFuture(params: DescribeStreamConsumerInput): Future[DescribeStreamConsumerOutput] = service.describeStreamConsumer(params).promise().toFuture
+    @inline def describeStreamFuture(params: DescribeStreamInput): Future[DescribeStreamOutput] = service.describeStream(params).promise().toFuture
+    @inline def describeStreamSummaryFuture(params: DescribeStreamSummaryInput): Future[DescribeStreamSummaryOutput] = service.describeStreamSummary(params).promise().toFuture
+    @inline def disableEnhancedMonitoringFuture(params: DisableEnhancedMonitoringInput): Future[EnhancedMonitoringOutput] = service.disableEnhancedMonitoring(params).promise().toFuture
+    @inline def enableEnhancedMonitoringFuture(params: EnableEnhancedMonitoringInput): Future[EnhancedMonitoringOutput] = service.enableEnhancedMonitoring(params).promise().toFuture
+    @inline def getRecordsFuture(params: GetRecordsInput): Future[GetRecordsOutput] = service.getRecords(params).promise().toFuture
+    @inline def getShardIteratorFuture(params: GetShardIteratorInput): Future[GetShardIteratorOutput] = service.getShardIterator(params).promise().toFuture
+    @inline def increaseStreamRetentionPeriodFuture(params: IncreaseStreamRetentionPeriodInput): Future[js.Object] = service.increaseStreamRetentionPeriod(params).promise().toFuture
+    @inline def listShardsFuture(params: ListShardsInput): Future[ListShardsOutput] = service.listShards(params).promise().toFuture
+    @inline def listStreamConsumersFuture(params: ListStreamConsumersInput): Future[ListStreamConsumersOutput] = service.listStreamConsumers(params).promise().toFuture
+    @inline def listStreamsFuture(params: ListStreamsInput): Future[ListStreamsOutput] = service.listStreams(params).promise().toFuture
+    @inline def listTagsForStreamFuture(params: ListTagsForStreamInput): Future[ListTagsForStreamOutput] = service.listTagsForStream(params).promise().toFuture
+    @inline def mergeShardsFuture(params: MergeShardsInput): Future[js.Object] = service.mergeShards(params).promise().toFuture
+    @inline def putRecordFuture(params: PutRecordInput): Future[PutRecordOutput] = service.putRecord(params).promise().toFuture
+    @inline def putRecordsFuture(params: PutRecordsInput): Future[PutRecordsOutput] = service.putRecords(params).promise().toFuture
+    @inline def registerStreamConsumerFuture(params: RegisterStreamConsumerInput): Future[RegisterStreamConsumerOutput] = service.registerStreamConsumer(params).promise().toFuture
+    @inline def removeTagsFromStreamFuture(params: RemoveTagsFromStreamInput): Future[js.Object] = service.removeTagsFromStream(params).promise().toFuture
+    @inline def splitShardFuture(params: SplitShardInput): Future[js.Object] = service.splitShard(params).promise().toFuture
+    @inline def startStreamEncryptionFuture(params: StartStreamEncryptionInput): Future[js.Object] = service.startStreamEncryption(params).promise().toFuture
+    @inline def stopStreamEncryptionFuture(params: StopStreamEncryptionInput): Future[js.Object] = service.stopStreamEncryption(params).promise().toFuture
+    @inline def updateShardCountFuture(params: UpdateShardCountInput): Future[UpdateShardCountOutput] = service.updateShardCount(params).promise().toFuture
   }
 }
 
@@ -1111,9 +1080,7 @@ package kinesis {
       )
 
       ExplicitHashKey.foreach(__v => __obj.updateDynamic("ExplicitHashKey")(__v.asInstanceOf[js.Any]))
-      SequenceNumberForOrdering.foreach(__v =>
-        __obj.updateDynamic("SequenceNumberForOrdering")(__v.asInstanceOf[js.Any])
-      )
+      SequenceNumberForOrdering.foreach(__v => __obj.updateDynamic("SequenceNumberForOrdering")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutRecordInput]
     }
   }
@@ -1278,9 +1245,7 @@ package kinesis {
         "SequenceNumber" -> SequenceNumber.asInstanceOf[js.Any]
       )
 
-      ApproximateArrivalTimestamp.foreach(__v =>
-        __obj.updateDynamic("ApproximateArrivalTimestamp")(__v.asInstanceOf[js.Any])
-      )
+      ApproximateArrivalTimestamp.foreach(__v => __obj.updateDynamic("ApproximateArrivalTimestamp")(__v.asInstanceOf[js.Any]))
       EncryptionType.foreach(__v => __obj.updateDynamic("EncryptionType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Record]
     }
@@ -1439,8 +1404,7 @@ package kinesis {
     val LATEST = "LATEST".asInstanceOf[ShardIteratorType]
     val AT_TIMESTAMP = "AT_TIMESTAMP".asInstanceOf[ShardIteratorType]
 
-    val values =
-      js.Object.freeze(js.Array(AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER, TRIM_HORIZON, LATEST, AT_TIMESTAMP))
+    val values = js.Object.freeze(js.Array(AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER, TRIM_HORIZON, LATEST, AT_TIMESTAMP))
   }
 
   /**

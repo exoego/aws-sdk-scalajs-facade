@@ -35,48 +35,27 @@ package object mediastore {
 
   implicit final class MediaStoreOps(private val service: MediaStore) extends AnyVal {
 
-    @inline def createContainerFuture(params: CreateContainerInput): Future[CreateContainerOutput] =
-      service.createContainer(params).promise().toFuture
-    @inline def deleteContainerFuture(params: DeleteContainerInput): Future[DeleteContainerOutput] =
-      service.deleteContainer(params).promise().toFuture
-    @inline def deleteContainerPolicyFuture(params: DeleteContainerPolicyInput): Future[DeleteContainerPolicyOutput] =
-      service.deleteContainerPolicy(params).promise().toFuture
-    @inline def deleteCorsPolicyFuture(params: DeleteCorsPolicyInput): Future[DeleteCorsPolicyOutput] =
-      service.deleteCorsPolicy(params).promise().toFuture
-    @inline def deleteLifecyclePolicyFuture(params: DeleteLifecyclePolicyInput): Future[DeleteLifecyclePolicyOutput] =
-      service.deleteLifecyclePolicy(params).promise().toFuture
-    @inline def deleteMetricPolicyFuture(params: DeleteMetricPolicyInput): Future[DeleteMetricPolicyOutput] =
-      service.deleteMetricPolicy(params).promise().toFuture
-    @inline def describeContainerFuture(params: DescribeContainerInput): Future[DescribeContainerOutput] =
-      service.describeContainer(params).promise().toFuture
-    @inline def getContainerPolicyFuture(params: GetContainerPolicyInput): Future[GetContainerPolicyOutput] =
-      service.getContainerPolicy(params).promise().toFuture
-    @inline def getCorsPolicyFuture(params: GetCorsPolicyInput): Future[GetCorsPolicyOutput] =
-      service.getCorsPolicy(params).promise().toFuture
-    @inline def getLifecyclePolicyFuture(params: GetLifecyclePolicyInput): Future[GetLifecyclePolicyOutput] =
-      service.getLifecyclePolicy(params).promise().toFuture
-    @inline def getMetricPolicyFuture(params: GetMetricPolicyInput): Future[GetMetricPolicyOutput] =
-      service.getMetricPolicy(params).promise().toFuture
-    @inline def listContainersFuture(params: ListContainersInput): Future[ListContainersOutput] =
-      service.listContainers(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def putContainerPolicyFuture(params: PutContainerPolicyInput): Future[PutContainerPolicyOutput] =
-      service.putContainerPolicy(params).promise().toFuture
-    @inline def putCorsPolicyFuture(params: PutCorsPolicyInput): Future[PutCorsPolicyOutput] =
-      service.putCorsPolicy(params).promise().toFuture
-    @inline def putLifecyclePolicyFuture(params: PutLifecyclePolicyInput): Future[PutLifecyclePolicyOutput] =
-      service.putLifecyclePolicy(params).promise().toFuture
-    @inline def putMetricPolicyFuture(params: PutMetricPolicyInput): Future[PutMetricPolicyOutput] =
-      service.putMetricPolicy(params).promise().toFuture
-    @inline def startAccessLoggingFuture(params: StartAccessLoggingInput): Future[StartAccessLoggingOutput] =
-      service.startAccessLogging(params).promise().toFuture
-    @inline def stopAccessLoggingFuture(params: StopAccessLoggingInput): Future[StopAccessLoggingOutput] =
-      service.stopAccessLogging(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
-      service.untagResource(params).promise().toFuture
+    @inline def createContainerFuture(params: CreateContainerInput): Future[CreateContainerOutput] = service.createContainer(params).promise().toFuture
+    @inline def deleteContainerFuture(params: DeleteContainerInput): Future[DeleteContainerOutput] = service.deleteContainer(params).promise().toFuture
+    @inline def deleteContainerPolicyFuture(params: DeleteContainerPolicyInput): Future[DeleteContainerPolicyOutput] = service.deleteContainerPolicy(params).promise().toFuture
+    @inline def deleteCorsPolicyFuture(params: DeleteCorsPolicyInput): Future[DeleteCorsPolicyOutput] = service.deleteCorsPolicy(params).promise().toFuture
+    @inline def deleteLifecyclePolicyFuture(params: DeleteLifecyclePolicyInput): Future[DeleteLifecyclePolicyOutput] = service.deleteLifecyclePolicy(params).promise().toFuture
+    @inline def deleteMetricPolicyFuture(params: DeleteMetricPolicyInput): Future[DeleteMetricPolicyOutput] = service.deleteMetricPolicy(params).promise().toFuture
+    @inline def describeContainerFuture(params: DescribeContainerInput): Future[DescribeContainerOutput] = service.describeContainer(params).promise().toFuture
+    @inline def getContainerPolicyFuture(params: GetContainerPolicyInput): Future[GetContainerPolicyOutput] = service.getContainerPolicy(params).promise().toFuture
+    @inline def getCorsPolicyFuture(params: GetCorsPolicyInput): Future[GetCorsPolicyOutput] = service.getCorsPolicy(params).promise().toFuture
+    @inline def getLifecyclePolicyFuture(params: GetLifecyclePolicyInput): Future[GetLifecyclePolicyOutput] = service.getLifecyclePolicy(params).promise().toFuture
+    @inline def getMetricPolicyFuture(params: GetMetricPolicyInput): Future[GetMetricPolicyOutput] = service.getMetricPolicy(params).promise().toFuture
+    @inline def listContainersFuture(params: ListContainersInput): Future[ListContainersOutput] = service.listContainers(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] = service.listTagsForResource(params).promise().toFuture
+    @inline def putContainerPolicyFuture(params: PutContainerPolicyInput): Future[PutContainerPolicyOutput] = service.putContainerPolicy(params).promise().toFuture
+    @inline def putCorsPolicyFuture(params: PutCorsPolicyInput): Future[PutCorsPolicyOutput] = service.putCorsPolicy(params).promise().toFuture
+    @inline def putLifecyclePolicyFuture(params: PutLifecyclePolicyInput): Future[PutLifecyclePolicyOutput] = service.putLifecyclePolicy(params).promise().toFuture
+    @inline def putMetricPolicyFuture(params: PutMetricPolicyInput): Future[PutMetricPolicyOutput] = service.putMetricPolicy(params).promise().toFuture
+    @inline def startAccessLoggingFuture(params: StartAccessLoggingInput): Future[StartAccessLoggingOutput] = service.startAccessLogging(params).promise().toFuture
+    @inline def stopAccessLoggingFuture(params: StopAccessLoggingInput): Future[StopAccessLoggingOutput] = service.stopAccessLogging(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] = service.untagResource(params).promise().toFuture
   }
 }
 

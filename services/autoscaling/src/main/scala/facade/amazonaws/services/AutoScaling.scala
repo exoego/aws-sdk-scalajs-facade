@@ -130,138 +130,63 @@ package object autoscaling {
 
   implicit final class AutoScalingOps(private val service: AutoScaling) extends AnyVal {
 
-    @inline def attachInstancesFuture(params: AttachInstancesQuery): Future[js.Object] =
-      service.attachInstances(params).promise().toFuture
-    @inline def attachLoadBalancerTargetGroupsFuture(
-        params: AttachLoadBalancerTargetGroupsType
-    ): Future[AttachLoadBalancerTargetGroupsResultType] =
-      service.attachLoadBalancerTargetGroups(params).promise().toFuture
-    @inline def attachLoadBalancersFuture(params: AttachLoadBalancersType): Future[AttachLoadBalancersResultType] =
-      service.attachLoadBalancers(params).promise().toFuture
-    @inline def batchDeleteScheduledActionFuture(
-        params: BatchDeleteScheduledActionType
-    ): Future[BatchDeleteScheduledActionAnswer] = service.batchDeleteScheduledAction(params).promise().toFuture
-    @inline def batchPutScheduledUpdateGroupActionFuture(
-        params: BatchPutScheduledUpdateGroupActionType
-    ): Future[BatchPutScheduledUpdateGroupActionAnswer] =
-      service.batchPutScheduledUpdateGroupAction(params).promise().toFuture
-    @inline def cancelInstanceRefreshFuture(params: CancelInstanceRefreshType): Future[CancelInstanceRefreshAnswer] =
-      service.cancelInstanceRefresh(params).promise().toFuture
-    @inline def completeLifecycleActionFuture(
-        params: CompleteLifecycleActionType
-    ): Future[CompleteLifecycleActionAnswer] = service.completeLifecycleAction(params).promise().toFuture
-    @inline def createAutoScalingGroupFuture(params: CreateAutoScalingGroupType): Future[js.Object] =
-      service.createAutoScalingGroup(params).promise().toFuture
-    @inline def createLaunchConfigurationFuture(params: CreateLaunchConfigurationType): Future[js.Object] =
-      service.createLaunchConfiguration(params).promise().toFuture
-    @inline def createOrUpdateTagsFuture(params: CreateOrUpdateTagsType): Future[js.Object] =
-      service.createOrUpdateTags(params).promise().toFuture
-    @inline def deleteAutoScalingGroupFuture(params: DeleteAutoScalingGroupType): Future[js.Object] =
-      service.deleteAutoScalingGroup(params).promise().toFuture
-    @inline def deleteLaunchConfigurationFuture(params: LaunchConfigurationNameType): Future[js.Object] =
-      service.deleteLaunchConfiguration(params).promise().toFuture
-    @inline def deleteLifecycleHookFuture(params: DeleteLifecycleHookType): Future[DeleteLifecycleHookAnswer] =
-      service.deleteLifecycleHook(params).promise().toFuture
-    @inline def deleteNotificationConfigurationFuture(params: DeleteNotificationConfigurationType): Future[js.Object] =
-      service.deleteNotificationConfiguration(params).promise().toFuture
-    @inline def deletePolicyFuture(params: DeletePolicyType): Future[js.Object] =
-      service.deletePolicy(params).promise().toFuture
-    @inline def deleteScheduledActionFuture(params: DeleteScheduledActionType): Future[js.Object] =
-      service.deleteScheduledAction(params).promise().toFuture
-    @inline def deleteTagsFuture(params: DeleteTagsType): Future[js.Object] =
-      service.deleteTags(params).promise().toFuture
-    @inline def describeAccountLimitsFuture(): Future[DescribeAccountLimitsAnswer] =
-      service.describeAccountLimits().promise().toFuture
-    @inline def describeAdjustmentTypesFuture(): Future[DescribeAdjustmentTypesAnswer] =
-      service.describeAdjustmentTypes().promise().toFuture
-    @inline def describeAutoScalingGroupsFuture(params: AutoScalingGroupNamesType): Future[AutoScalingGroupsType] =
-      service.describeAutoScalingGroups(params).promise().toFuture
-    @inline def describeAutoScalingInstancesFuture(
-        params: DescribeAutoScalingInstancesType
-    ): Future[AutoScalingInstancesType] = service.describeAutoScalingInstances(params).promise().toFuture
-    @inline def describeAutoScalingNotificationTypesFuture(): Future[DescribeAutoScalingNotificationTypesAnswer] =
-      service.describeAutoScalingNotificationTypes().promise().toFuture
-    @inline def describeInstanceRefreshesFuture(
-        params: DescribeInstanceRefreshesType
-    ): Future[DescribeInstanceRefreshesAnswer] = service.describeInstanceRefreshes(params).promise().toFuture
-    @inline def describeLaunchConfigurationsFuture(
-        params: LaunchConfigurationNamesType
-    ): Future[LaunchConfigurationsType] = service.describeLaunchConfigurations(params).promise().toFuture
-    @inline def describeLifecycleHookTypesFuture(): Future[DescribeLifecycleHookTypesAnswer] =
-      service.describeLifecycleHookTypes().promise().toFuture
-    @inline def describeLifecycleHooksFuture(params: DescribeLifecycleHooksType): Future[DescribeLifecycleHooksAnswer] =
-      service.describeLifecycleHooks(params).promise().toFuture
-    @inline def describeLoadBalancerTargetGroupsFuture(
-        params: DescribeLoadBalancerTargetGroupsRequest
-    ): Future[DescribeLoadBalancerTargetGroupsResponse] =
-      service.describeLoadBalancerTargetGroups(params).promise().toFuture
-    @inline def describeLoadBalancersFuture(
-        params: DescribeLoadBalancersRequest
-    ): Future[DescribeLoadBalancersResponse] = service.describeLoadBalancers(params).promise().toFuture
-    @inline def describeMetricCollectionTypesFuture(): Future[DescribeMetricCollectionTypesAnswer] =
-      service.describeMetricCollectionTypes().promise().toFuture
-    @inline def describeNotificationConfigurationsFuture(
-        params: DescribeNotificationConfigurationsType
-    ): Future[DescribeNotificationConfigurationsAnswer] =
-      service.describeNotificationConfigurations(params).promise().toFuture
-    @inline def describePoliciesFuture(params: DescribePoliciesType): Future[PoliciesType] =
-      service.describePolicies(params).promise().toFuture
-    @inline def describeScalingActivitiesFuture(params: DescribeScalingActivitiesType): Future[ActivitiesType] =
-      service.describeScalingActivities(params).promise().toFuture
-    @inline def describeScalingProcessTypesFuture(): Future[ProcessesType] =
-      service.describeScalingProcessTypes().promise().toFuture
-    @inline def describeScheduledActionsFuture(params: DescribeScheduledActionsType): Future[ScheduledActionsType] =
-      service.describeScheduledActions(params).promise().toFuture
-    @inline def describeTagsFuture(params: DescribeTagsType): Future[TagsType] =
-      service.describeTags(params).promise().toFuture
-    @inline def describeTerminationPolicyTypesFuture(): Future[DescribeTerminationPolicyTypesAnswer] =
-      service.describeTerminationPolicyTypes().promise().toFuture
-    @inline def detachInstancesFuture(params: DetachInstancesQuery): Future[DetachInstancesAnswer] =
-      service.detachInstances(params).promise().toFuture
-    @inline def detachLoadBalancerTargetGroupsFuture(
-        params: DetachLoadBalancerTargetGroupsType
-    ): Future[DetachLoadBalancerTargetGroupsResultType] =
-      service.detachLoadBalancerTargetGroups(params).promise().toFuture
-    @inline def detachLoadBalancersFuture(params: DetachLoadBalancersType): Future[DetachLoadBalancersResultType] =
-      service.detachLoadBalancers(params).promise().toFuture
-    @inline def disableMetricsCollectionFuture(params: DisableMetricsCollectionQuery): Future[js.Object] =
-      service.disableMetricsCollection(params).promise().toFuture
-    @inline def enableMetricsCollectionFuture(params: EnableMetricsCollectionQuery): Future[js.Object] =
-      service.enableMetricsCollection(params).promise().toFuture
-    @inline def enterStandbyFuture(params: EnterStandbyQuery): Future[EnterStandbyAnswer] =
-      service.enterStandby(params).promise().toFuture
-    @inline def executePolicyFuture(params: ExecutePolicyType): Future[js.Object] =
-      service.executePolicy(params).promise().toFuture
-    @inline def exitStandbyFuture(params: ExitStandbyQuery): Future[ExitStandbyAnswer] =
-      service.exitStandby(params).promise().toFuture
-    @inline def putLifecycleHookFuture(params: PutLifecycleHookType): Future[PutLifecycleHookAnswer] =
-      service.putLifecycleHook(params).promise().toFuture
-    @inline def putNotificationConfigurationFuture(params: PutNotificationConfigurationType): Future[js.Object] =
-      service.putNotificationConfiguration(params).promise().toFuture
-    @inline def putScalingPolicyFuture(params: PutScalingPolicyType): Future[PolicyARNType] =
-      service.putScalingPolicy(params).promise().toFuture
-    @inline def putScheduledUpdateGroupActionFuture(params: PutScheduledUpdateGroupActionType): Future[js.Object] =
-      service.putScheduledUpdateGroupAction(params).promise().toFuture
-    @inline def recordLifecycleActionHeartbeatFuture(
-        params: RecordLifecycleActionHeartbeatType
-    ): Future[RecordLifecycleActionHeartbeatAnswer] = service.recordLifecycleActionHeartbeat(params).promise().toFuture
-    @inline def resumeProcessesFuture(params: ScalingProcessQuery): Future[js.Object] =
-      service.resumeProcesses(params).promise().toFuture
-    @inline def setDesiredCapacityFuture(params: SetDesiredCapacityType): Future[js.Object] =
-      service.setDesiredCapacity(params).promise().toFuture
-    @inline def setInstanceHealthFuture(params: SetInstanceHealthQuery): Future[js.Object] =
-      service.setInstanceHealth(params).promise().toFuture
-    @inline def setInstanceProtectionFuture(params: SetInstanceProtectionQuery): Future[SetInstanceProtectionAnswer] =
-      service.setInstanceProtection(params).promise().toFuture
-    @inline def startInstanceRefreshFuture(params: StartInstanceRefreshType): Future[StartInstanceRefreshAnswer] =
-      service.startInstanceRefresh(params).promise().toFuture
-    @inline def suspendProcessesFuture(params: ScalingProcessQuery): Future[js.Object] =
-      service.suspendProcesses(params).promise().toFuture
-    @inline def terminateInstanceInAutoScalingGroupFuture(
-        params: TerminateInstanceInAutoScalingGroupType
-    ): Future[ActivityType] = service.terminateInstanceInAutoScalingGroup(params).promise().toFuture
-    @inline def updateAutoScalingGroupFuture(params: UpdateAutoScalingGroupType): Future[js.Object] =
-      service.updateAutoScalingGroup(params).promise().toFuture
+    @inline def attachInstancesFuture(params: AttachInstancesQuery): Future[js.Object] = service.attachInstances(params).promise().toFuture
+    @inline def attachLoadBalancerTargetGroupsFuture(params: AttachLoadBalancerTargetGroupsType): Future[AttachLoadBalancerTargetGroupsResultType] = service.attachLoadBalancerTargetGroups(params).promise().toFuture
+    @inline def attachLoadBalancersFuture(params: AttachLoadBalancersType): Future[AttachLoadBalancersResultType] = service.attachLoadBalancers(params).promise().toFuture
+    @inline def batchDeleteScheduledActionFuture(params: BatchDeleteScheduledActionType): Future[BatchDeleteScheduledActionAnswer] = service.batchDeleteScheduledAction(params).promise().toFuture
+    @inline def batchPutScheduledUpdateGroupActionFuture(params: BatchPutScheduledUpdateGroupActionType): Future[BatchPutScheduledUpdateGroupActionAnswer] = service.batchPutScheduledUpdateGroupAction(params).promise().toFuture
+    @inline def cancelInstanceRefreshFuture(params: CancelInstanceRefreshType): Future[CancelInstanceRefreshAnswer] = service.cancelInstanceRefresh(params).promise().toFuture
+    @inline def completeLifecycleActionFuture(params: CompleteLifecycleActionType): Future[CompleteLifecycleActionAnswer] = service.completeLifecycleAction(params).promise().toFuture
+    @inline def createAutoScalingGroupFuture(params: CreateAutoScalingGroupType): Future[js.Object] = service.createAutoScalingGroup(params).promise().toFuture
+    @inline def createLaunchConfigurationFuture(params: CreateLaunchConfigurationType): Future[js.Object] = service.createLaunchConfiguration(params).promise().toFuture
+    @inline def createOrUpdateTagsFuture(params: CreateOrUpdateTagsType): Future[js.Object] = service.createOrUpdateTags(params).promise().toFuture
+    @inline def deleteAutoScalingGroupFuture(params: DeleteAutoScalingGroupType): Future[js.Object] = service.deleteAutoScalingGroup(params).promise().toFuture
+    @inline def deleteLaunchConfigurationFuture(params: LaunchConfigurationNameType): Future[js.Object] = service.deleteLaunchConfiguration(params).promise().toFuture
+    @inline def deleteLifecycleHookFuture(params: DeleteLifecycleHookType): Future[DeleteLifecycleHookAnswer] = service.deleteLifecycleHook(params).promise().toFuture
+    @inline def deleteNotificationConfigurationFuture(params: DeleteNotificationConfigurationType): Future[js.Object] = service.deleteNotificationConfiguration(params).promise().toFuture
+    @inline def deletePolicyFuture(params: DeletePolicyType): Future[js.Object] = service.deletePolicy(params).promise().toFuture
+    @inline def deleteScheduledActionFuture(params: DeleteScheduledActionType): Future[js.Object] = service.deleteScheduledAction(params).promise().toFuture
+    @inline def deleteTagsFuture(params: DeleteTagsType): Future[js.Object] = service.deleteTags(params).promise().toFuture
+    @inline def describeAccountLimitsFuture(): Future[DescribeAccountLimitsAnswer] = service.describeAccountLimits().promise().toFuture
+    @inline def describeAdjustmentTypesFuture(): Future[DescribeAdjustmentTypesAnswer] = service.describeAdjustmentTypes().promise().toFuture
+    @inline def describeAutoScalingGroupsFuture(params: AutoScalingGroupNamesType): Future[AutoScalingGroupsType] = service.describeAutoScalingGroups(params).promise().toFuture
+    @inline def describeAutoScalingInstancesFuture(params: DescribeAutoScalingInstancesType): Future[AutoScalingInstancesType] = service.describeAutoScalingInstances(params).promise().toFuture
+    @inline def describeAutoScalingNotificationTypesFuture(): Future[DescribeAutoScalingNotificationTypesAnswer] = service.describeAutoScalingNotificationTypes().promise().toFuture
+    @inline def describeInstanceRefreshesFuture(params: DescribeInstanceRefreshesType): Future[DescribeInstanceRefreshesAnswer] = service.describeInstanceRefreshes(params).promise().toFuture
+    @inline def describeLaunchConfigurationsFuture(params: LaunchConfigurationNamesType): Future[LaunchConfigurationsType] = service.describeLaunchConfigurations(params).promise().toFuture
+    @inline def describeLifecycleHookTypesFuture(): Future[DescribeLifecycleHookTypesAnswer] = service.describeLifecycleHookTypes().promise().toFuture
+    @inline def describeLifecycleHooksFuture(params: DescribeLifecycleHooksType): Future[DescribeLifecycleHooksAnswer] = service.describeLifecycleHooks(params).promise().toFuture
+    @inline def describeLoadBalancerTargetGroupsFuture(params: DescribeLoadBalancerTargetGroupsRequest): Future[DescribeLoadBalancerTargetGroupsResponse] = service.describeLoadBalancerTargetGroups(params).promise().toFuture
+    @inline def describeLoadBalancersFuture(params: DescribeLoadBalancersRequest): Future[DescribeLoadBalancersResponse] = service.describeLoadBalancers(params).promise().toFuture
+    @inline def describeMetricCollectionTypesFuture(): Future[DescribeMetricCollectionTypesAnswer] = service.describeMetricCollectionTypes().promise().toFuture
+    @inline def describeNotificationConfigurationsFuture(params: DescribeNotificationConfigurationsType): Future[DescribeNotificationConfigurationsAnswer] = service.describeNotificationConfigurations(params).promise().toFuture
+    @inline def describePoliciesFuture(params: DescribePoliciesType): Future[PoliciesType] = service.describePolicies(params).promise().toFuture
+    @inline def describeScalingActivitiesFuture(params: DescribeScalingActivitiesType): Future[ActivitiesType] = service.describeScalingActivities(params).promise().toFuture
+    @inline def describeScalingProcessTypesFuture(): Future[ProcessesType] = service.describeScalingProcessTypes().promise().toFuture
+    @inline def describeScheduledActionsFuture(params: DescribeScheduledActionsType): Future[ScheduledActionsType] = service.describeScheduledActions(params).promise().toFuture
+    @inline def describeTagsFuture(params: DescribeTagsType): Future[TagsType] = service.describeTags(params).promise().toFuture
+    @inline def describeTerminationPolicyTypesFuture(): Future[DescribeTerminationPolicyTypesAnswer] = service.describeTerminationPolicyTypes().promise().toFuture
+    @inline def detachInstancesFuture(params: DetachInstancesQuery): Future[DetachInstancesAnswer] = service.detachInstances(params).promise().toFuture
+    @inline def detachLoadBalancerTargetGroupsFuture(params: DetachLoadBalancerTargetGroupsType): Future[DetachLoadBalancerTargetGroupsResultType] = service.detachLoadBalancerTargetGroups(params).promise().toFuture
+    @inline def detachLoadBalancersFuture(params: DetachLoadBalancersType): Future[DetachLoadBalancersResultType] = service.detachLoadBalancers(params).promise().toFuture
+    @inline def disableMetricsCollectionFuture(params: DisableMetricsCollectionQuery): Future[js.Object] = service.disableMetricsCollection(params).promise().toFuture
+    @inline def enableMetricsCollectionFuture(params: EnableMetricsCollectionQuery): Future[js.Object] = service.enableMetricsCollection(params).promise().toFuture
+    @inline def enterStandbyFuture(params: EnterStandbyQuery): Future[EnterStandbyAnswer] = service.enterStandby(params).promise().toFuture
+    @inline def executePolicyFuture(params: ExecutePolicyType): Future[js.Object] = service.executePolicy(params).promise().toFuture
+    @inline def exitStandbyFuture(params: ExitStandbyQuery): Future[ExitStandbyAnswer] = service.exitStandby(params).promise().toFuture
+    @inline def putLifecycleHookFuture(params: PutLifecycleHookType): Future[PutLifecycleHookAnswer] = service.putLifecycleHook(params).promise().toFuture
+    @inline def putNotificationConfigurationFuture(params: PutNotificationConfigurationType): Future[js.Object] = service.putNotificationConfiguration(params).promise().toFuture
+    @inline def putScalingPolicyFuture(params: PutScalingPolicyType): Future[PolicyARNType] = service.putScalingPolicy(params).promise().toFuture
+    @inline def putScheduledUpdateGroupActionFuture(params: PutScheduledUpdateGroupActionType): Future[js.Object] = service.putScheduledUpdateGroupAction(params).promise().toFuture
+    @inline def recordLifecycleActionHeartbeatFuture(params: RecordLifecycleActionHeartbeatType): Future[RecordLifecycleActionHeartbeatAnswer] = service.recordLifecycleActionHeartbeat(params).promise().toFuture
+    @inline def resumeProcessesFuture(params: ScalingProcessQuery): Future[js.Object] = service.resumeProcesses(params).promise().toFuture
+    @inline def setDesiredCapacityFuture(params: SetDesiredCapacityType): Future[js.Object] = service.setDesiredCapacity(params).promise().toFuture
+    @inline def setInstanceHealthFuture(params: SetInstanceHealthQuery): Future[js.Object] = service.setInstanceHealth(params).promise().toFuture
+    @inline def setInstanceProtectionFuture(params: SetInstanceProtectionQuery): Future[SetInstanceProtectionAnswer] = service.setInstanceProtection(params).promise().toFuture
+    @inline def startInstanceRefreshFuture(params: StartInstanceRefreshType): Future[StartInstanceRefreshAnswer] = service.startInstanceRefresh(params).promise().toFuture
+    @inline def suspendProcessesFuture(params: ScalingProcessQuery): Future[js.Object] = service.suspendProcesses(params).promise().toFuture
+    @inline def terminateInstanceInAutoScalingGroupFuture(params: TerminateInstanceInAutoScalingGroupType): Future[ActivityType] = service.terminateInstanceInAutoScalingGroup(params).promise().toFuture
+    @inline def updateAutoScalingGroupFuture(params: UpdateAutoScalingGroupType): Future[js.Object] = service.updateAutoScalingGroup(params).promise().toFuture
   }
 }
 
@@ -272,15 +197,10 @@ package autoscaling {
     def this(config: AWSConfig) = this()
 
     def attachInstances(params: AttachInstancesQuery): Request[js.Object] = js.native
-    def attachLoadBalancerTargetGroups(
-        params: AttachLoadBalancerTargetGroupsType
-    ): Request[AttachLoadBalancerTargetGroupsResultType] = js.native
+    def attachLoadBalancerTargetGroups(params: AttachLoadBalancerTargetGroupsType): Request[AttachLoadBalancerTargetGroupsResultType] = js.native
     def attachLoadBalancers(params: AttachLoadBalancersType): Request[AttachLoadBalancersResultType] = js.native
-    def batchDeleteScheduledAction(params: BatchDeleteScheduledActionType): Request[BatchDeleteScheduledActionAnswer] =
-      js.native
-    def batchPutScheduledUpdateGroupAction(
-        params: BatchPutScheduledUpdateGroupActionType
-    ): Request[BatchPutScheduledUpdateGroupActionAnswer] = js.native
+    def batchDeleteScheduledAction(params: BatchDeleteScheduledActionType): Request[BatchDeleteScheduledActionAnswer] = js.native
+    def batchPutScheduledUpdateGroupAction(params: BatchPutScheduledUpdateGroupActionType): Request[BatchPutScheduledUpdateGroupActionAnswer] = js.native
     def cancelInstanceRefresh(params: CancelInstanceRefreshType): Request[CancelInstanceRefreshAnswer] = js.native
     def completeLifecycleAction(params: CompleteLifecycleActionType): Request[CompleteLifecycleActionAnswer] = js.native
     def createAutoScalingGroup(params: CreateAutoScalingGroupType): Request[js.Object] = js.native
@@ -296,23 +216,16 @@ package autoscaling {
     def describeAccountLimits(): Request[DescribeAccountLimitsAnswer] = js.native
     def describeAdjustmentTypes(): Request[DescribeAdjustmentTypesAnswer] = js.native
     def describeAutoScalingGroups(params: AutoScalingGroupNamesType): Request[AutoScalingGroupsType] = js.native
-    def describeAutoScalingInstances(params: DescribeAutoScalingInstancesType): Request[AutoScalingInstancesType] =
-      js.native
+    def describeAutoScalingInstances(params: DescribeAutoScalingInstancesType): Request[AutoScalingInstancesType] = js.native
     def describeAutoScalingNotificationTypes(): Request[DescribeAutoScalingNotificationTypesAnswer] = js.native
-    def describeInstanceRefreshes(params: DescribeInstanceRefreshesType): Request[DescribeInstanceRefreshesAnswer] =
-      js.native
-    def describeLaunchConfigurations(params: LaunchConfigurationNamesType): Request[LaunchConfigurationsType] =
-      js.native
+    def describeInstanceRefreshes(params: DescribeInstanceRefreshesType): Request[DescribeInstanceRefreshesAnswer] = js.native
+    def describeLaunchConfigurations(params: LaunchConfigurationNamesType): Request[LaunchConfigurationsType] = js.native
     def describeLifecycleHookTypes(): Request[DescribeLifecycleHookTypesAnswer] = js.native
     def describeLifecycleHooks(params: DescribeLifecycleHooksType): Request[DescribeLifecycleHooksAnswer] = js.native
-    def describeLoadBalancerTargetGroups(
-        params: DescribeLoadBalancerTargetGroupsRequest
-    ): Request[DescribeLoadBalancerTargetGroupsResponse] = js.native
+    def describeLoadBalancerTargetGroups(params: DescribeLoadBalancerTargetGroupsRequest): Request[DescribeLoadBalancerTargetGroupsResponse] = js.native
     def describeLoadBalancers(params: DescribeLoadBalancersRequest): Request[DescribeLoadBalancersResponse] = js.native
     def describeMetricCollectionTypes(): Request[DescribeMetricCollectionTypesAnswer] = js.native
-    def describeNotificationConfigurations(
-        params: DescribeNotificationConfigurationsType
-    ): Request[DescribeNotificationConfigurationsAnswer] = js.native
+    def describeNotificationConfigurations(params: DescribeNotificationConfigurationsType): Request[DescribeNotificationConfigurationsAnswer] = js.native
     def describePolicies(params: DescribePoliciesType): Request[PoliciesType] = js.native
     def describeScalingActivities(params: DescribeScalingActivitiesType): Request[ActivitiesType] = js.native
     def describeScalingProcessTypes(): Request[ProcessesType] = js.native
@@ -320,9 +233,7 @@ package autoscaling {
     def describeTags(params: DescribeTagsType): Request[TagsType] = js.native
     def describeTerminationPolicyTypes(): Request[DescribeTerminationPolicyTypesAnswer] = js.native
     def detachInstances(params: DetachInstancesQuery): Request[DetachInstancesAnswer] = js.native
-    def detachLoadBalancerTargetGroups(
-        params: DetachLoadBalancerTargetGroupsType
-    ): Request[DetachLoadBalancerTargetGroupsResultType] = js.native
+    def detachLoadBalancerTargetGroups(params: DetachLoadBalancerTargetGroupsType): Request[DetachLoadBalancerTargetGroupsResultType] = js.native
     def detachLoadBalancers(params: DetachLoadBalancersType): Request[DetachLoadBalancersResultType] = js.native
     def disableMetricsCollection(params: DisableMetricsCollectionQuery): Request[js.Object] = js.native
     def enableMetricsCollection(params: EnableMetricsCollectionQuery): Request[js.Object] = js.native
@@ -333,17 +244,14 @@ package autoscaling {
     def putNotificationConfiguration(params: PutNotificationConfigurationType): Request[js.Object] = js.native
     def putScalingPolicy(params: PutScalingPolicyType): Request[PolicyARNType] = js.native
     def putScheduledUpdateGroupAction(params: PutScheduledUpdateGroupActionType): Request[js.Object] = js.native
-    def recordLifecycleActionHeartbeat(
-        params: RecordLifecycleActionHeartbeatType
-    ): Request[RecordLifecycleActionHeartbeatAnswer] = js.native
+    def recordLifecycleActionHeartbeat(params: RecordLifecycleActionHeartbeatType): Request[RecordLifecycleActionHeartbeatAnswer] = js.native
     def resumeProcesses(params: ScalingProcessQuery): Request[js.Object] = js.native
     def setDesiredCapacity(params: SetDesiredCapacityType): Request[js.Object] = js.native
     def setInstanceHealth(params: SetInstanceHealthQuery): Request[js.Object] = js.native
     def setInstanceProtection(params: SetInstanceProtectionQuery): Request[SetInstanceProtectionAnswer] = js.native
     def startInstanceRefresh(params: StartInstanceRefreshType): Request[StartInstanceRefreshAnswer] = js.native
     def suspendProcesses(params: ScalingProcessQuery): Request[js.Object] = js.native
-    def terminateInstanceInAutoScalingGroup(params: TerminateInstanceInAutoScalingGroupType): Request[ActivityType] =
-      js.native
+    def terminateInstanceInAutoScalingGroup(params: TerminateInstanceInAutoScalingGroupType): Request[ActivityType] = js.native
     def updateAutoScalingGroup(params: UpdateAutoScalingGroupType): Request[js.Object] = js.native
   }
 
@@ -645,9 +553,7 @@ package autoscaling {
       LoadBalancerNames.foreach(__v => __obj.updateDynamic("LoadBalancerNames")(__v.asInstanceOf[js.Any]))
       MaxInstanceLifetime.foreach(__v => __obj.updateDynamic("MaxInstanceLifetime")(__v.asInstanceOf[js.Any]))
       MixedInstancesPolicy.foreach(__v => __obj.updateDynamic("MixedInstancesPolicy")(__v.asInstanceOf[js.Any]))
-      NewInstancesProtectedFromScaleIn.foreach(__v =>
-        __obj.updateDynamic("NewInstancesProtectedFromScaleIn")(__v.asInstanceOf[js.Any])
-      )
+      NewInstancesProtectedFromScaleIn.foreach(__v => __obj.updateDynamic("NewInstancesProtectedFromScaleIn")(__v.asInstanceOf[js.Any]))
       PlacementGroup.foreach(__v => __obj.updateDynamic("PlacementGroup")(__v.asInstanceOf[js.Any]))
       ServiceLinkedRoleARN.foreach(__v => __obj.updateDynamic("ServiceLinkedRoleARN")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -818,9 +724,7 @@ package autoscaling {
         FailedScheduledUpdateGroupActions: js.UndefOr[FailedScheduledUpdateGroupActionRequests] = js.undefined
     ): BatchPutScheduledUpdateGroupActionAnswer = {
       val __obj = js.Dynamic.literal()
-      FailedScheduledUpdateGroupActions.foreach(__v =>
-        __obj.updateDynamic("FailedScheduledUpdateGroupActions")(__v.asInstanceOf[js.Any])
-      )
+      FailedScheduledUpdateGroupActions.foreach(__v => __obj.updateDynamic("FailedScheduledUpdateGroupActions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchPutScheduledUpdateGroupActionAnswer]
     }
   }
@@ -1019,15 +923,11 @@ package autoscaling {
       InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
       LaunchConfigurationName.foreach(__v => __obj.updateDynamic("LaunchConfigurationName")(__v.asInstanceOf[js.Any]))
       LaunchTemplate.foreach(__v => __obj.updateDynamic("LaunchTemplate")(__v.asInstanceOf[js.Any]))
-      LifecycleHookSpecificationList.foreach(__v =>
-        __obj.updateDynamic("LifecycleHookSpecificationList")(__v.asInstanceOf[js.Any])
-      )
+      LifecycleHookSpecificationList.foreach(__v => __obj.updateDynamic("LifecycleHookSpecificationList")(__v.asInstanceOf[js.Any]))
       LoadBalancerNames.foreach(__v => __obj.updateDynamic("LoadBalancerNames")(__v.asInstanceOf[js.Any]))
       MaxInstanceLifetime.foreach(__v => __obj.updateDynamic("MaxInstanceLifetime")(__v.asInstanceOf[js.Any]))
       MixedInstancesPolicy.foreach(__v => __obj.updateDynamic("MixedInstancesPolicy")(__v.asInstanceOf[js.Any]))
-      NewInstancesProtectedFromScaleIn.foreach(__v =>
-        __obj.updateDynamic("NewInstancesProtectedFromScaleIn")(__v.asInstanceOf[js.Any])
-      )
+      NewInstancesProtectedFromScaleIn.foreach(__v => __obj.updateDynamic("NewInstancesProtectedFromScaleIn")(__v.asInstanceOf[js.Any]))
       PlacementGroup.foreach(__v => __obj.updateDynamic("PlacementGroup")(__v.asInstanceOf[js.Any]))
       ServiceLinkedRoleARN.foreach(__v => __obj.updateDynamic("ServiceLinkedRoleARN")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -1091,9 +991,7 @@ package autoscaling {
       AssociatePublicIpAddress.foreach(__v => __obj.updateDynamic("AssociatePublicIpAddress")(__v.asInstanceOf[js.Any]))
       BlockDeviceMappings.foreach(__v => __obj.updateDynamic("BlockDeviceMappings")(__v.asInstanceOf[js.Any]))
       ClassicLinkVPCId.foreach(__v => __obj.updateDynamic("ClassicLinkVPCId")(__v.asInstanceOf[js.Any]))
-      ClassicLinkVPCSecurityGroups.foreach(__v =>
-        __obj.updateDynamic("ClassicLinkVPCSecurityGroups")(__v.asInstanceOf[js.Any])
-      )
+      ClassicLinkVPCSecurityGroups.foreach(__v => __obj.updateDynamic("ClassicLinkVPCSecurityGroups")(__v.asInstanceOf[js.Any]))
       EbsOptimized.foreach(__v => __obj.updateDynamic("EbsOptimized")(__v.asInstanceOf[js.Any]))
       IamInstanceProfile.foreach(__v => __obj.updateDynamic("IamInstanceProfile")(__v.asInstanceOf[js.Any]))
       ImageId.foreach(__v => __obj.updateDynamic("ImageId")(__v.asInstanceOf[js.Any]))
@@ -1320,18 +1218,10 @@ package autoscaling {
         NumberOfLaunchConfigurations: js.UndefOr[NumberOfLaunchConfigurations] = js.undefined
     ): DescribeAccountLimitsAnswer = {
       val __obj = js.Dynamic.literal()
-      MaxNumberOfAutoScalingGroups.foreach(__v =>
-        __obj.updateDynamic("MaxNumberOfAutoScalingGroups")(__v.asInstanceOf[js.Any])
-      )
-      MaxNumberOfLaunchConfigurations.foreach(__v =>
-        __obj.updateDynamic("MaxNumberOfLaunchConfigurations")(__v.asInstanceOf[js.Any])
-      )
-      NumberOfAutoScalingGroups.foreach(__v =>
-        __obj.updateDynamic("NumberOfAutoScalingGroups")(__v.asInstanceOf[js.Any])
-      )
-      NumberOfLaunchConfigurations.foreach(__v =>
-        __obj.updateDynamic("NumberOfLaunchConfigurations")(__v.asInstanceOf[js.Any])
-      )
+      MaxNumberOfAutoScalingGroups.foreach(__v => __obj.updateDynamic("MaxNumberOfAutoScalingGroups")(__v.asInstanceOf[js.Any]))
+      MaxNumberOfLaunchConfigurations.foreach(__v => __obj.updateDynamic("MaxNumberOfLaunchConfigurations")(__v.asInstanceOf[js.Any]))
+      NumberOfAutoScalingGroups.foreach(__v => __obj.updateDynamic("NumberOfAutoScalingGroups")(__v.asInstanceOf[js.Any]))
+      NumberOfLaunchConfigurations.foreach(__v => __obj.updateDynamic("NumberOfLaunchConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAccountLimitsAnswer]
     }
   }
@@ -1385,9 +1275,7 @@ package autoscaling {
         AutoScalingNotificationTypes: js.UndefOr[AutoScalingNotificationTypes] = js.undefined
     ): DescribeAutoScalingNotificationTypesAnswer = {
       val __obj = js.Dynamic.literal()
-      AutoScalingNotificationTypes.foreach(__v =>
-        __obj.updateDynamic("AutoScalingNotificationTypes")(__v.asInstanceOf[js.Any])
-      )
+      AutoScalingNotificationTypes.foreach(__v => __obj.updateDynamic("AutoScalingNotificationTypes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAutoScalingNotificationTypesAnswer]
     }
   }
@@ -2313,13 +2201,9 @@ package autoscaling {
         SpotMaxPrice: js.UndefOr[MixedInstanceSpotPrice] = js.undefined
     ): InstancesDistribution = {
       val __obj = js.Dynamic.literal()
-      OnDemandAllocationStrategy.foreach(__v =>
-        __obj.updateDynamic("OnDemandAllocationStrategy")(__v.asInstanceOf[js.Any])
-      )
+      OnDemandAllocationStrategy.foreach(__v => __obj.updateDynamic("OnDemandAllocationStrategy")(__v.asInstanceOf[js.Any]))
       OnDemandBaseCapacity.foreach(__v => __obj.updateDynamic("OnDemandBaseCapacity")(__v.asInstanceOf[js.Any]))
-      OnDemandPercentageAboveBaseCapacity.foreach(__v =>
-        __obj.updateDynamic("OnDemandPercentageAboveBaseCapacity")(__v.asInstanceOf[js.Any])
-      )
+      OnDemandPercentageAboveBaseCapacity.foreach(__v => __obj.updateDynamic("OnDemandPercentageAboveBaseCapacity")(__v.asInstanceOf[js.Any]))
       SpotAllocationStrategy.foreach(__v => __obj.updateDynamic("SpotAllocationStrategy")(__v.asInstanceOf[js.Any]))
       SpotInstancePools.foreach(__v => __obj.updateDynamic("SpotInstancePools")(__v.asInstanceOf[js.Any]))
       SpotMaxPrice.foreach(__v => __obj.updateDynamic("SpotMaxPrice")(__v.asInstanceOf[js.Any]))
@@ -2388,9 +2272,7 @@ package autoscaling {
       AssociatePublicIpAddress.foreach(__v => __obj.updateDynamic("AssociatePublicIpAddress")(__v.asInstanceOf[js.Any]))
       BlockDeviceMappings.foreach(__v => __obj.updateDynamic("BlockDeviceMappings")(__v.asInstanceOf[js.Any]))
       ClassicLinkVPCId.foreach(__v => __obj.updateDynamic("ClassicLinkVPCId")(__v.asInstanceOf[js.Any]))
-      ClassicLinkVPCSecurityGroups.foreach(__v =>
-        __obj.updateDynamic("ClassicLinkVPCSecurityGroups")(__v.asInstanceOf[js.Any])
-      )
+      ClassicLinkVPCSecurityGroups.foreach(__v => __obj.updateDynamic("ClassicLinkVPCSecurityGroups")(__v.asInstanceOf[js.Any]))
       EbsOptimized.foreach(__v => __obj.updateDynamic("EbsOptimized")(__v.asInstanceOf[js.Any]))
       IamInstanceProfile.foreach(__v => __obj.updateDynamic("IamInstanceProfile")(__v.asInstanceOf[js.Any]))
       InstanceMonitoring.foreach(__v => __obj.updateDynamic("InstanceMonitoring")(__v.asInstanceOf[js.Any]))
@@ -2486,9 +2368,7 @@ package autoscaling {
         Overrides: js.UndefOr[Overrides] = js.undefined
     ): LaunchTemplate = {
       val __obj = js.Dynamic.literal()
-      LaunchTemplateSpecification.foreach(__v =>
-        __obj.updateDynamic("LaunchTemplateSpecification")(__v.asInstanceOf[js.Any])
-      )
+      LaunchTemplateSpecification.foreach(__v => __obj.updateDynamic("LaunchTemplateSpecification")(__v.asInstanceOf[js.Any]))
       Overrides.foreach(__v => __obj.updateDynamic("Overrides")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LaunchTemplate]
     }
@@ -2710,9 +2590,7 @@ package autoscaling {
         State: js.UndefOr[XmlStringMaxLen255] = js.undefined
     ): LoadBalancerTargetGroupState = {
       val __obj = js.Dynamic.literal()
-      LoadBalancerTargetGroupARN.foreach(__v =>
-        __obj.updateDynamic("LoadBalancerTargetGroupARN")(__v.asInstanceOf[js.Any])
-      )
+      LoadBalancerTargetGroupARN.foreach(__v => __obj.updateDynamic("LoadBalancerTargetGroupARN")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoadBalancerTargetGroupState]
     }
@@ -2800,9 +2678,7 @@ package autoscaling {
     val ASGAverageNetworkOut = "ASGAverageNetworkOut".asInstanceOf[MetricType]
     val ALBRequestCountPerTarget = "ALBRequestCountPerTarget".asInstanceOf[MetricType]
 
-    val values = js.Object.freeze(
-      js.Array(ASGAverageCPUUtilization, ASGAverageNetworkIn, ASGAverageNetworkOut, ALBRequestCountPerTarget)
-    )
+    val values = js.Object.freeze(js.Array(ASGAverageCPUUtilization, ASGAverageNetworkIn, ASGAverageNetworkOut, ALBRequestCountPerTarget))
   }
 
   /**
@@ -3081,9 +2957,7 @@ package autoscaling {
       PolicyType.foreach(__v => __obj.updateDynamic("PolicyType")(__v.asInstanceOf[js.Any]))
       ScalingAdjustment.foreach(__v => __obj.updateDynamic("ScalingAdjustment")(__v.asInstanceOf[js.Any]))
       StepAdjustments.foreach(__v => __obj.updateDynamic("StepAdjustments")(__v.asInstanceOf[js.Any]))
-      TargetTrackingConfiguration.foreach(__v =>
-        __obj.updateDynamic("TargetTrackingConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      TargetTrackingConfiguration.foreach(__v => __obj.updateDynamic("TargetTrackingConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutScalingPolicyType]
     }
   }
@@ -3290,9 +3164,7 @@ package autoscaling {
       PolicyType.foreach(__v => __obj.updateDynamic("PolicyType")(__v.asInstanceOf[js.Any]))
       ScalingAdjustment.foreach(__v => __obj.updateDynamic("ScalingAdjustment")(__v.asInstanceOf[js.Any]))
       StepAdjustments.foreach(__v => __obj.updateDynamic("StepAdjustments")(__v.asInstanceOf[js.Any]))
-      TargetTrackingConfiguration.foreach(__v =>
-        __obj.updateDynamic("TargetTrackingConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      TargetTrackingConfiguration.foreach(__v => __obj.updateDynamic("TargetTrackingConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScalingPolicy]
     }
   }
@@ -3332,9 +3204,7 @@ package autoscaling {
     ): ScheduledActionsType = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ScheduledUpdateGroupActions.foreach(__v =>
-        __obj.updateDynamic("ScheduledUpdateGroupActions")(__v.asInstanceOf[js.Any])
-      )
+      ScheduledUpdateGroupActions.foreach(__v => __obj.updateDynamic("ScheduledUpdateGroupActions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScheduledActionsType]
     }
   }
@@ -3715,13 +3585,9 @@ package autoscaling {
         "TargetValue" -> TargetValue.asInstanceOf[js.Any]
       )
 
-      CustomizedMetricSpecification.foreach(__v =>
-        __obj.updateDynamic("CustomizedMetricSpecification")(__v.asInstanceOf[js.Any])
-      )
+      CustomizedMetricSpecification.foreach(__v => __obj.updateDynamic("CustomizedMetricSpecification")(__v.asInstanceOf[js.Any]))
       DisableScaleIn.foreach(__v => __obj.updateDynamic("DisableScaleIn")(__v.asInstanceOf[js.Any]))
-      PredefinedMetricSpecification.foreach(__v =>
-        __obj.updateDynamic("PredefinedMetricSpecification")(__v.asInstanceOf[js.Any])
-      )
+      PredefinedMetricSpecification.foreach(__v => __obj.updateDynamic("PredefinedMetricSpecification")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TargetTrackingConfiguration]
     }
   }
@@ -3804,9 +3670,7 @@ package autoscaling {
       MaxSize.foreach(__v => __obj.updateDynamic("MaxSize")(__v.asInstanceOf[js.Any]))
       MinSize.foreach(__v => __obj.updateDynamic("MinSize")(__v.asInstanceOf[js.Any]))
       MixedInstancesPolicy.foreach(__v => __obj.updateDynamic("MixedInstancesPolicy")(__v.asInstanceOf[js.Any]))
-      NewInstancesProtectedFromScaleIn.foreach(__v =>
-        __obj.updateDynamic("NewInstancesProtectedFromScaleIn")(__v.asInstanceOf[js.Any])
-      )
+      NewInstancesProtectedFromScaleIn.foreach(__v => __obj.updateDynamic("NewInstancesProtectedFromScaleIn")(__v.asInstanceOf[js.Any]))
       PlacementGroup.foreach(__v => __obj.updateDynamic("PlacementGroup")(__v.asInstanceOf[js.Any]))
       ServiceLinkedRoleARN.foreach(__v => __obj.updateDynamic("ServiceLinkedRoleARN")(__v.asInstanceOf[js.Any]))
       TerminationPolicies.foreach(__v => __obj.updateDynamic("TerminationPolicies")(__v.asInstanceOf[js.Any]))

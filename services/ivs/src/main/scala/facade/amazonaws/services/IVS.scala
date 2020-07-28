@@ -39,42 +39,24 @@ package object ivs {
 
   implicit final class IVSOps(private val service: IVS) extends AnyVal {
 
-    @inline def batchGetChannelFuture(params: BatchGetChannelRequest): Future[BatchGetChannelResponse] =
-      service.batchGetChannel(params).promise().toFuture
-    @inline def batchGetStreamKeyFuture(params: BatchGetStreamKeyRequest): Future[BatchGetStreamKeyResponse] =
-      service.batchGetStreamKey(params).promise().toFuture
-    @inline def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] =
-      service.createChannel(params).promise().toFuture
-    @inline def createStreamKeyFuture(params: CreateStreamKeyRequest): Future[CreateStreamKeyResponse] =
-      service.createStreamKey(params).promise().toFuture
-    @inline def deleteChannelFuture(params: DeleteChannelRequest): Future[js.Object] =
-      service.deleteChannel(params).promise().toFuture
-    @inline def deleteStreamKeyFuture(params: DeleteStreamKeyRequest): Future[js.Object] =
-      service.deleteStreamKey(params).promise().toFuture
-    @inline def getChannelFuture(params: GetChannelRequest): Future[GetChannelResponse] =
-      service.getChannel(params).promise().toFuture
-    @inline def getStreamFuture(params: GetStreamRequest): Future[GetStreamResponse] =
-      service.getStream(params).promise().toFuture
-    @inline def getStreamKeyFuture(params: GetStreamKeyRequest): Future[GetStreamKeyResponse] =
-      service.getStreamKey(params).promise().toFuture
-    @inline def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] =
-      service.listChannels(params).promise().toFuture
-    @inline def listStreamKeysFuture(params: ListStreamKeysRequest): Future[ListStreamKeysResponse] =
-      service.listStreamKeys(params).promise().toFuture
-    @inline def listStreamsFuture(params: ListStreamsRequest): Future[ListStreamsResponse] =
-      service.listStreams(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def putMetadataFuture(params: PutMetadataRequest): Future[js.Object] =
-      service.putMetadata(params).promise().toFuture
-    @inline def stopStreamFuture(params: StopStreamRequest): Future[StopStreamResponse] =
-      service.stopStream(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateChannelFuture(params: UpdateChannelRequest): Future[UpdateChannelResponse] =
-      service.updateChannel(params).promise().toFuture
+    @inline def batchGetChannelFuture(params: BatchGetChannelRequest): Future[BatchGetChannelResponse] = service.batchGetChannel(params).promise().toFuture
+    @inline def batchGetStreamKeyFuture(params: BatchGetStreamKeyRequest): Future[BatchGetStreamKeyResponse] = service.batchGetStreamKey(params).promise().toFuture
+    @inline def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] = service.createChannel(params).promise().toFuture
+    @inline def createStreamKeyFuture(params: CreateStreamKeyRequest): Future[CreateStreamKeyResponse] = service.createStreamKey(params).promise().toFuture
+    @inline def deleteChannelFuture(params: DeleteChannelRequest): Future[js.Object] = service.deleteChannel(params).promise().toFuture
+    @inline def deleteStreamKeyFuture(params: DeleteStreamKeyRequest): Future[js.Object] = service.deleteStreamKey(params).promise().toFuture
+    @inline def getChannelFuture(params: GetChannelRequest): Future[GetChannelResponse] = service.getChannel(params).promise().toFuture
+    @inline def getStreamFuture(params: GetStreamRequest): Future[GetStreamResponse] = service.getStream(params).promise().toFuture
+    @inline def getStreamKeyFuture(params: GetStreamKeyRequest): Future[GetStreamKeyResponse] = service.getStreamKey(params).promise().toFuture
+    @inline def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] = service.listChannels(params).promise().toFuture
+    @inline def listStreamKeysFuture(params: ListStreamKeysRequest): Future[ListStreamKeysResponse] = service.listStreamKeys(params).promise().toFuture
+    @inline def listStreamsFuture(params: ListStreamsRequest): Future[ListStreamsResponse] = service.listStreams(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def putMetadataFuture(params: PutMetadataRequest): Future[js.Object] = service.putMetadata(params).promise().toFuture
+    @inline def stopStreamFuture(params: StopStreamRequest): Future[StopStreamResponse] = service.stopStream(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateChannelFuture(params: UpdateChannelRequest): Future[UpdateChannelResponse] = service.updateChannel(params).promise().toFuture
   }
 }
 

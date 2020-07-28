@@ -18,14 +18,9 @@ package object migrationhubconfig {
 
   implicit final class MigrationHubConfigOps(private val service: MigrationHubConfig) extends AnyVal {
 
-    @inline def createHomeRegionControlFuture(
-        params: CreateHomeRegionControlRequest
-    ): Future[CreateHomeRegionControlResult] = service.createHomeRegionControl(params).promise().toFuture
-    @inline def describeHomeRegionControlsFuture(
-        params: DescribeHomeRegionControlsRequest
-    ): Future[DescribeHomeRegionControlsResult] = service.describeHomeRegionControls(params).promise().toFuture
-    @inline def getHomeRegionFuture(params: GetHomeRegionRequest): Future[GetHomeRegionResult] =
-      service.getHomeRegion(params).promise().toFuture
+    @inline def createHomeRegionControlFuture(params: CreateHomeRegionControlRequest): Future[CreateHomeRegionControlResult] = service.createHomeRegionControl(params).promise().toFuture
+    @inline def describeHomeRegionControlsFuture(params: DescribeHomeRegionControlsRequest): Future[DescribeHomeRegionControlsResult] = service.describeHomeRegionControls(params).promise().toFuture
+    @inline def getHomeRegionFuture(params: GetHomeRegionRequest): Future[GetHomeRegionResult] = service.getHomeRegion(params).promise().toFuture
   }
 }
 
@@ -35,11 +30,8 @@ package migrationhubconfig {
   class MigrationHubConfig() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createHomeRegionControl(params: CreateHomeRegionControlRequest): Request[CreateHomeRegionControlResult] =
-      js.native
-    def describeHomeRegionControls(
-        params: DescribeHomeRegionControlsRequest
-    ): Request[DescribeHomeRegionControlsResult] = js.native
+    def createHomeRegionControl(params: CreateHomeRegionControlRequest): Request[CreateHomeRegionControlResult] = js.native
+    def describeHomeRegionControls(params: DescribeHomeRegionControlsRequest): Request[DescribeHomeRegionControlsResult] = js.native
     def getHomeRegion(params: GetHomeRegionRequest): Request[GetHomeRegionResult] = js.native
   }
 

@@ -136,236 +136,106 @@ package object cognitoidentityprovider {
 
   implicit final class CognitoIdentityProviderOps(private val service: CognitoIdentityProvider) extends AnyVal {
 
-    @inline def addCustomAttributesFuture(params: AddCustomAttributesRequest): Future[AddCustomAttributesResponse] =
-      service.addCustomAttributes(params).promise().toFuture
-    @inline def adminAddUserToGroupFuture(params: AdminAddUserToGroupRequest): Future[js.Object] =
-      service.adminAddUserToGroup(params).promise().toFuture
-    @inline def adminConfirmSignUpFuture(params: AdminConfirmSignUpRequest): Future[AdminConfirmSignUpResponse] =
-      service.adminConfirmSignUp(params).promise().toFuture
-    @inline def adminCreateUserFuture(params: AdminCreateUserRequest): Future[AdminCreateUserResponse] =
-      service.adminCreateUser(params).promise().toFuture
-    @inline def adminDeleteUserAttributesFuture(
-        params: AdminDeleteUserAttributesRequest
-    ): Future[AdminDeleteUserAttributesResponse] = service.adminDeleteUserAttributes(params).promise().toFuture
-    @inline def adminDeleteUserFuture(params: AdminDeleteUserRequest): Future[js.Object] =
-      service.adminDeleteUser(params).promise().toFuture
-    @inline def adminDisableProviderForUserFuture(
-        params: AdminDisableProviderForUserRequest
-    ): Future[AdminDisableProviderForUserResponse] = service.adminDisableProviderForUser(params).promise().toFuture
-    @inline def adminDisableUserFuture(params: AdminDisableUserRequest): Future[AdminDisableUserResponse] =
-      service.adminDisableUser(params).promise().toFuture
-    @inline def adminEnableUserFuture(params: AdminEnableUserRequest): Future[AdminEnableUserResponse] =
-      service.adminEnableUser(params).promise().toFuture
-    @inline def adminForgetDeviceFuture(params: AdminForgetDeviceRequest): Future[js.Object] =
-      service.adminForgetDevice(params).promise().toFuture
-    @inline def adminGetDeviceFuture(params: AdminGetDeviceRequest): Future[AdminGetDeviceResponse] =
-      service.adminGetDevice(params).promise().toFuture
-    @inline def adminGetUserFuture(params: AdminGetUserRequest): Future[AdminGetUserResponse] =
-      service.adminGetUser(params).promise().toFuture
-    @inline def adminInitiateAuthFuture(params: AdminInitiateAuthRequest): Future[AdminInitiateAuthResponse] =
-      service.adminInitiateAuth(params).promise().toFuture
-    @inline def adminLinkProviderForUserFuture(
-        params: AdminLinkProviderForUserRequest
-    ): Future[AdminLinkProviderForUserResponse] = service.adminLinkProviderForUser(params).promise().toFuture
-    @inline def adminListDevicesFuture(params: AdminListDevicesRequest): Future[AdminListDevicesResponse] =
-      service.adminListDevices(params).promise().toFuture
-    @inline def adminListGroupsForUserFuture(
-        params: AdminListGroupsForUserRequest
-    ): Future[AdminListGroupsForUserResponse] = service.adminListGroupsForUser(params).promise().toFuture
-    @inline def adminListUserAuthEventsFuture(
-        params: AdminListUserAuthEventsRequest
-    ): Future[AdminListUserAuthEventsResponse] = service.adminListUserAuthEvents(params).promise().toFuture
-    @inline def adminRemoveUserFromGroupFuture(params: AdminRemoveUserFromGroupRequest): Future[js.Object] =
-      service.adminRemoveUserFromGroup(params).promise().toFuture
-    @inline def adminResetUserPasswordFuture(
-        params: AdminResetUserPasswordRequest
-    ): Future[AdminResetUserPasswordResponse] = service.adminResetUserPassword(params).promise().toFuture
-    @inline def adminRespondToAuthChallengeFuture(
-        params: AdminRespondToAuthChallengeRequest
-    ): Future[AdminRespondToAuthChallengeResponse] = service.adminRespondToAuthChallenge(params).promise().toFuture
-    @inline def adminSetUserMFAPreferenceFuture(
-        params: AdminSetUserMFAPreferenceRequest
-    ): Future[AdminSetUserMFAPreferenceResponse] = service.adminSetUserMFAPreference(params).promise().toFuture
-    @inline def adminSetUserPasswordFuture(params: AdminSetUserPasswordRequest): Future[AdminSetUserPasswordResponse] =
-      service.adminSetUserPassword(params).promise().toFuture
-    @inline def adminSetUserSettingsFuture(params: AdminSetUserSettingsRequest): Future[AdminSetUserSettingsResponse] =
-      service.adminSetUserSettings(params).promise().toFuture
-    @inline def adminUpdateAuthEventFeedbackFuture(
-        params: AdminUpdateAuthEventFeedbackRequest
-    ): Future[AdminUpdateAuthEventFeedbackResponse] = service.adminUpdateAuthEventFeedback(params).promise().toFuture
-    @inline def adminUpdateDeviceStatusFuture(
-        params: AdminUpdateDeviceStatusRequest
-    ): Future[AdminUpdateDeviceStatusResponse] = service.adminUpdateDeviceStatus(params).promise().toFuture
-    @inline def adminUpdateUserAttributesFuture(
-        params: AdminUpdateUserAttributesRequest
-    ): Future[AdminUpdateUserAttributesResponse] = service.adminUpdateUserAttributes(params).promise().toFuture
-    @inline def adminUserGlobalSignOutFuture(
-        params: AdminUserGlobalSignOutRequest
-    ): Future[AdminUserGlobalSignOutResponse] = service.adminUserGlobalSignOut(params).promise().toFuture
-    @inline def associateSoftwareTokenFuture(
-        params: AssociateSoftwareTokenRequest
-    ): Future[AssociateSoftwareTokenResponse] = service.associateSoftwareToken(params).promise().toFuture
-    @inline def changePasswordFuture(params: ChangePasswordRequest): Future[ChangePasswordResponse] =
-      service.changePassword(params).promise().toFuture
-    @inline def confirmDeviceFuture(params: ConfirmDeviceRequest): Future[ConfirmDeviceResponse] =
-      service.confirmDevice(params).promise().toFuture
-    @inline def confirmForgotPasswordFuture(
-        params: ConfirmForgotPasswordRequest
-    ): Future[ConfirmForgotPasswordResponse] = service.confirmForgotPassword(params).promise().toFuture
-    @inline def confirmSignUpFuture(params: ConfirmSignUpRequest): Future[ConfirmSignUpResponse] =
-      service.confirmSignUp(params).promise().toFuture
-    @inline def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResponse] =
-      service.createGroup(params).promise().toFuture
-    @inline def createIdentityProviderFuture(
-        params: CreateIdentityProviderRequest
-    ): Future[CreateIdentityProviderResponse] = service.createIdentityProvider(params).promise().toFuture
-    @inline def createResourceServerFuture(params: CreateResourceServerRequest): Future[CreateResourceServerResponse] =
-      service.createResourceServer(params).promise().toFuture
-    @inline def createUserImportJobFuture(params: CreateUserImportJobRequest): Future[CreateUserImportJobResponse] =
-      service.createUserImportJob(params).promise().toFuture
-    @inline def createUserPoolClientFuture(params: CreateUserPoolClientRequest): Future[CreateUserPoolClientResponse] =
-      service.createUserPoolClient(params).promise().toFuture
-    @inline def createUserPoolDomainFuture(params: CreateUserPoolDomainRequest): Future[CreateUserPoolDomainResponse] =
-      service.createUserPoolDomain(params).promise().toFuture
-    @inline def createUserPoolFuture(params: CreateUserPoolRequest): Future[CreateUserPoolResponse] =
-      service.createUserPool(params).promise().toFuture
-    @inline def deleteGroupFuture(params: DeleteGroupRequest): Future[js.Object] =
-      service.deleteGroup(params).promise().toFuture
-    @inline def deleteIdentityProviderFuture(params: DeleteIdentityProviderRequest): Future[js.Object] =
-      service.deleteIdentityProvider(params).promise().toFuture
-    @inline def deleteResourceServerFuture(params: DeleteResourceServerRequest): Future[js.Object] =
-      service.deleteResourceServer(params).promise().toFuture
-    @inline def deleteUserAttributesFuture(params: DeleteUserAttributesRequest): Future[DeleteUserAttributesResponse] =
-      service.deleteUserAttributes(params).promise().toFuture
-    @inline def deleteUserFuture(params: DeleteUserRequest): Future[js.Object] =
-      service.deleteUser(params).promise().toFuture
-    @inline def deleteUserPoolClientFuture(params: DeleteUserPoolClientRequest): Future[js.Object] =
-      service.deleteUserPoolClient(params).promise().toFuture
-    @inline def deleteUserPoolDomainFuture(params: DeleteUserPoolDomainRequest): Future[DeleteUserPoolDomainResponse] =
-      service.deleteUserPoolDomain(params).promise().toFuture
-    @inline def deleteUserPoolFuture(params: DeleteUserPoolRequest): Future[js.Object] =
-      service.deleteUserPool(params).promise().toFuture
-    @inline def describeIdentityProviderFuture(
-        params: DescribeIdentityProviderRequest
-    ): Future[DescribeIdentityProviderResponse] = service.describeIdentityProvider(params).promise().toFuture
-    @inline def describeResourceServerFuture(
-        params: DescribeResourceServerRequest
-    ): Future[DescribeResourceServerResponse] = service.describeResourceServer(params).promise().toFuture
-    @inline def describeRiskConfigurationFuture(
-        params: DescribeRiskConfigurationRequest
-    ): Future[DescribeRiskConfigurationResponse] = service.describeRiskConfiguration(params).promise().toFuture
-    @inline def describeUserImportJobFuture(
-        params: DescribeUserImportJobRequest
-    ): Future[DescribeUserImportJobResponse] = service.describeUserImportJob(params).promise().toFuture
-    @inline def describeUserPoolClientFuture(
-        params: DescribeUserPoolClientRequest
-    ): Future[DescribeUserPoolClientResponse] = service.describeUserPoolClient(params).promise().toFuture
-    @inline def describeUserPoolDomainFuture(
-        params: DescribeUserPoolDomainRequest
-    ): Future[DescribeUserPoolDomainResponse] = service.describeUserPoolDomain(params).promise().toFuture
-    @inline def describeUserPoolFuture(params: DescribeUserPoolRequest): Future[DescribeUserPoolResponse] =
-      service.describeUserPool(params).promise().toFuture
-    @inline def forgetDeviceFuture(params: ForgetDeviceRequest): Future[js.Object] =
-      service.forgetDevice(params).promise().toFuture
-    @inline def forgotPasswordFuture(params: ForgotPasswordRequest): Future[ForgotPasswordResponse] =
-      service.forgotPassword(params).promise().toFuture
-    @inline def getCSVHeaderFuture(params: GetCSVHeaderRequest): Future[GetCSVHeaderResponse] =
-      service.getCSVHeader(params).promise().toFuture
-    @inline def getDeviceFuture(params: GetDeviceRequest): Future[GetDeviceResponse] =
-      service.getDevice(params).promise().toFuture
-    @inline def getGroupFuture(params: GetGroupRequest): Future[GetGroupResponse] =
-      service.getGroup(params).promise().toFuture
-    @inline def getIdentityProviderByIdentifierFuture(
-        params: GetIdentityProviderByIdentifierRequest
-    ): Future[GetIdentityProviderByIdentifierResponse] =
-      service.getIdentityProviderByIdentifier(params).promise().toFuture
-    @inline def getSigningCertificateFuture(
-        params: GetSigningCertificateRequest
-    ): Future[GetSigningCertificateResponse] = service.getSigningCertificate(params).promise().toFuture
-    @inline def getUICustomizationFuture(params: GetUICustomizationRequest): Future[GetUICustomizationResponse] =
-      service.getUICustomization(params).promise().toFuture
-    @inline def getUserAttributeVerificationCodeFuture(
-        params: GetUserAttributeVerificationCodeRequest
-    ): Future[GetUserAttributeVerificationCodeResponse] =
-      service.getUserAttributeVerificationCode(params).promise().toFuture
-    @inline def getUserFuture(params: GetUserRequest): Future[GetUserResponse] =
-      service.getUser(params).promise().toFuture
-    @inline def getUserPoolMfaConfigFuture(params: GetUserPoolMfaConfigRequest): Future[GetUserPoolMfaConfigResponse] =
-      service.getUserPoolMfaConfig(params).promise().toFuture
-    @inline def globalSignOutFuture(params: GlobalSignOutRequest): Future[GlobalSignOutResponse] =
-      service.globalSignOut(params).promise().toFuture
-    @inline def initiateAuthFuture(params: InitiateAuthRequest): Future[InitiateAuthResponse] =
-      service.initiateAuth(params).promise().toFuture
-    @inline def listDevicesFuture(params: ListDevicesRequest): Future[ListDevicesResponse] =
-      service.listDevices(params).promise().toFuture
-    @inline def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] =
-      service.listGroups(params).promise().toFuture
-    @inline def listIdentityProvidersFuture(
-        params: ListIdentityProvidersRequest
-    ): Future[ListIdentityProvidersResponse] = service.listIdentityProviders(params).promise().toFuture
-    @inline def listResourceServersFuture(params: ListResourceServersRequest): Future[ListResourceServersResponse] =
-      service.listResourceServers(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listUserImportJobsFuture(params: ListUserImportJobsRequest): Future[ListUserImportJobsResponse] =
-      service.listUserImportJobs(params).promise().toFuture
-    @inline def listUserPoolClientsFuture(params: ListUserPoolClientsRequest): Future[ListUserPoolClientsResponse] =
-      service.listUserPoolClients(params).promise().toFuture
-    @inline def listUserPoolsFuture(params: ListUserPoolsRequest): Future[ListUserPoolsResponse] =
-      service.listUserPools(params).promise().toFuture
-    @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
-      service.listUsers(params).promise().toFuture
-    @inline def listUsersInGroupFuture(params: ListUsersInGroupRequest): Future[ListUsersInGroupResponse] =
-      service.listUsersInGroup(params).promise().toFuture
-    @inline def resendConfirmationCodeFuture(
-        params: ResendConfirmationCodeRequest
-    ): Future[ResendConfirmationCodeResponse] = service.resendConfirmationCode(params).promise().toFuture
-    @inline def respondToAuthChallengeFuture(
-        params: RespondToAuthChallengeRequest
-    ): Future[RespondToAuthChallengeResponse] = service.respondToAuthChallenge(params).promise().toFuture
-    @inline def setRiskConfigurationFuture(params: SetRiskConfigurationRequest): Future[SetRiskConfigurationResponse] =
-      service.setRiskConfiguration(params).promise().toFuture
-    @inline def setUICustomizationFuture(params: SetUICustomizationRequest): Future[SetUICustomizationResponse] =
-      service.setUICustomization(params).promise().toFuture
-    @inline def setUserMFAPreferenceFuture(params: SetUserMFAPreferenceRequest): Future[SetUserMFAPreferenceResponse] =
-      service.setUserMFAPreference(params).promise().toFuture
-    @inline def setUserPoolMfaConfigFuture(params: SetUserPoolMfaConfigRequest): Future[SetUserPoolMfaConfigResponse] =
-      service.setUserPoolMfaConfig(params).promise().toFuture
-    @inline def setUserSettingsFuture(params: SetUserSettingsRequest): Future[SetUserSettingsResponse] =
-      service.setUserSettings(params).promise().toFuture
+    @inline def addCustomAttributesFuture(params: AddCustomAttributesRequest): Future[AddCustomAttributesResponse] = service.addCustomAttributes(params).promise().toFuture
+    @inline def adminAddUserToGroupFuture(params: AdminAddUserToGroupRequest): Future[js.Object] = service.adminAddUserToGroup(params).promise().toFuture
+    @inline def adminConfirmSignUpFuture(params: AdminConfirmSignUpRequest): Future[AdminConfirmSignUpResponse] = service.adminConfirmSignUp(params).promise().toFuture
+    @inline def adminCreateUserFuture(params: AdminCreateUserRequest): Future[AdminCreateUserResponse] = service.adminCreateUser(params).promise().toFuture
+    @inline def adminDeleteUserAttributesFuture(params: AdminDeleteUserAttributesRequest): Future[AdminDeleteUserAttributesResponse] = service.adminDeleteUserAttributes(params).promise().toFuture
+    @inline def adminDeleteUserFuture(params: AdminDeleteUserRequest): Future[js.Object] = service.adminDeleteUser(params).promise().toFuture
+    @inline def adminDisableProviderForUserFuture(params: AdminDisableProviderForUserRequest): Future[AdminDisableProviderForUserResponse] = service.adminDisableProviderForUser(params).promise().toFuture
+    @inline def adminDisableUserFuture(params: AdminDisableUserRequest): Future[AdminDisableUserResponse] = service.adminDisableUser(params).promise().toFuture
+    @inline def adminEnableUserFuture(params: AdminEnableUserRequest): Future[AdminEnableUserResponse] = service.adminEnableUser(params).promise().toFuture
+    @inline def adminForgetDeviceFuture(params: AdminForgetDeviceRequest): Future[js.Object] = service.adminForgetDevice(params).promise().toFuture
+    @inline def adminGetDeviceFuture(params: AdminGetDeviceRequest): Future[AdminGetDeviceResponse] = service.adminGetDevice(params).promise().toFuture
+    @inline def adminGetUserFuture(params: AdminGetUserRequest): Future[AdminGetUserResponse] = service.adminGetUser(params).promise().toFuture
+    @inline def adminInitiateAuthFuture(params: AdminInitiateAuthRequest): Future[AdminInitiateAuthResponse] = service.adminInitiateAuth(params).promise().toFuture
+    @inline def adminLinkProviderForUserFuture(params: AdminLinkProviderForUserRequest): Future[AdminLinkProviderForUserResponse] = service.adminLinkProviderForUser(params).promise().toFuture
+    @inline def adminListDevicesFuture(params: AdminListDevicesRequest): Future[AdminListDevicesResponse] = service.adminListDevices(params).promise().toFuture
+    @inline def adminListGroupsForUserFuture(params: AdminListGroupsForUserRequest): Future[AdminListGroupsForUserResponse] = service.adminListGroupsForUser(params).promise().toFuture
+    @inline def adminListUserAuthEventsFuture(params: AdminListUserAuthEventsRequest): Future[AdminListUserAuthEventsResponse] = service.adminListUserAuthEvents(params).promise().toFuture
+    @inline def adminRemoveUserFromGroupFuture(params: AdminRemoveUserFromGroupRequest): Future[js.Object] = service.adminRemoveUserFromGroup(params).promise().toFuture
+    @inline def adminResetUserPasswordFuture(params: AdminResetUserPasswordRequest): Future[AdminResetUserPasswordResponse] = service.adminResetUserPassword(params).promise().toFuture
+    @inline def adminRespondToAuthChallengeFuture(params: AdminRespondToAuthChallengeRequest): Future[AdminRespondToAuthChallengeResponse] = service.adminRespondToAuthChallenge(params).promise().toFuture
+    @inline def adminSetUserMFAPreferenceFuture(params: AdminSetUserMFAPreferenceRequest): Future[AdminSetUserMFAPreferenceResponse] = service.adminSetUserMFAPreference(params).promise().toFuture
+    @inline def adminSetUserPasswordFuture(params: AdminSetUserPasswordRequest): Future[AdminSetUserPasswordResponse] = service.adminSetUserPassword(params).promise().toFuture
+    @inline def adminSetUserSettingsFuture(params: AdminSetUserSettingsRequest): Future[AdminSetUserSettingsResponse] = service.adminSetUserSettings(params).promise().toFuture
+    @inline def adminUpdateAuthEventFeedbackFuture(params: AdminUpdateAuthEventFeedbackRequest): Future[AdminUpdateAuthEventFeedbackResponse] = service.adminUpdateAuthEventFeedback(params).promise().toFuture
+    @inline def adminUpdateDeviceStatusFuture(params: AdminUpdateDeviceStatusRequest): Future[AdminUpdateDeviceStatusResponse] = service.adminUpdateDeviceStatus(params).promise().toFuture
+    @inline def adminUpdateUserAttributesFuture(params: AdminUpdateUserAttributesRequest): Future[AdminUpdateUserAttributesResponse] = service.adminUpdateUserAttributes(params).promise().toFuture
+    @inline def adminUserGlobalSignOutFuture(params: AdminUserGlobalSignOutRequest): Future[AdminUserGlobalSignOutResponse] = service.adminUserGlobalSignOut(params).promise().toFuture
+    @inline def associateSoftwareTokenFuture(params: AssociateSoftwareTokenRequest): Future[AssociateSoftwareTokenResponse] = service.associateSoftwareToken(params).promise().toFuture
+    @inline def changePasswordFuture(params: ChangePasswordRequest): Future[ChangePasswordResponse] = service.changePassword(params).promise().toFuture
+    @inline def confirmDeviceFuture(params: ConfirmDeviceRequest): Future[ConfirmDeviceResponse] = service.confirmDevice(params).promise().toFuture
+    @inline def confirmForgotPasswordFuture(params: ConfirmForgotPasswordRequest): Future[ConfirmForgotPasswordResponse] = service.confirmForgotPassword(params).promise().toFuture
+    @inline def confirmSignUpFuture(params: ConfirmSignUpRequest): Future[ConfirmSignUpResponse] = service.confirmSignUp(params).promise().toFuture
+    @inline def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResponse] = service.createGroup(params).promise().toFuture
+    @inline def createIdentityProviderFuture(params: CreateIdentityProviderRequest): Future[CreateIdentityProviderResponse] = service.createIdentityProvider(params).promise().toFuture
+    @inline def createResourceServerFuture(params: CreateResourceServerRequest): Future[CreateResourceServerResponse] = service.createResourceServer(params).promise().toFuture
+    @inline def createUserImportJobFuture(params: CreateUserImportJobRequest): Future[CreateUserImportJobResponse] = service.createUserImportJob(params).promise().toFuture
+    @inline def createUserPoolClientFuture(params: CreateUserPoolClientRequest): Future[CreateUserPoolClientResponse] = service.createUserPoolClient(params).promise().toFuture
+    @inline def createUserPoolDomainFuture(params: CreateUserPoolDomainRequest): Future[CreateUserPoolDomainResponse] = service.createUserPoolDomain(params).promise().toFuture
+    @inline def createUserPoolFuture(params: CreateUserPoolRequest): Future[CreateUserPoolResponse] = service.createUserPool(params).promise().toFuture
+    @inline def deleteGroupFuture(params: DeleteGroupRequest): Future[js.Object] = service.deleteGroup(params).promise().toFuture
+    @inline def deleteIdentityProviderFuture(params: DeleteIdentityProviderRequest): Future[js.Object] = service.deleteIdentityProvider(params).promise().toFuture
+    @inline def deleteResourceServerFuture(params: DeleteResourceServerRequest): Future[js.Object] = service.deleteResourceServer(params).promise().toFuture
+    @inline def deleteUserAttributesFuture(params: DeleteUserAttributesRequest): Future[DeleteUserAttributesResponse] = service.deleteUserAttributes(params).promise().toFuture
+    @inline def deleteUserFuture(params: DeleteUserRequest): Future[js.Object] = service.deleteUser(params).promise().toFuture
+    @inline def deleteUserPoolClientFuture(params: DeleteUserPoolClientRequest): Future[js.Object] = service.deleteUserPoolClient(params).promise().toFuture
+    @inline def deleteUserPoolDomainFuture(params: DeleteUserPoolDomainRequest): Future[DeleteUserPoolDomainResponse] = service.deleteUserPoolDomain(params).promise().toFuture
+    @inline def deleteUserPoolFuture(params: DeleteUserPoolRequest): Future[js.Object] = service.deleteUserPool(params).promise().toFuture
+    @inline def describeIdentityProviderFuture(params: DescribeIdentityProviderRequest): Future[DescribeIdentityProviderResponse] = service.describeIdentityProvider(params).promise().toFuture
+    @inline def describeResourceServerFuture(params: DescribeResourceServerRequest): Future[DescribeResourceServerResponse] = service.describeResourceServer(params).promise().toFuture
+    @inline def describeRiskConfigurationFuture(params: DescribeRiskConfigurationRequest): Future[DescribeRiskConfigurationResponse] = service.describeRiskConfiguration(params).promise().toFuture
+    @inline def describeUserImportJobFuture(params: DescribeUserImportJobRequest): Future[DescribeUserImportJobResponse] = service.describeUserImportJob(params).promise().toFuture
+    @inline def describeUserPoolClientFuture(params: DescribeUserPoolClientRequest): Future[DescribeUserPoolClientResponse] = service.describeUserPoolClient(params).promise().toFuture
+    @inline def describeUserPoolDomainFuture(params: DescribeUserPoolDomainRequest): Future[DescribeUserPoolDomainResponse] = service.describeUserPoolDomain(params).promise().toFuture
+    @inline def describeUserPoolFuture(params: DescribeUserPoolRequest): Future[DescribeUserPoolResponse] = service.describeUserPool(params).promise().toFuture
+    @inline def forgetDeviceFuture(params: ForgetDeviceRequest): Future[js.Object] = service.forgetDevice(params).promise().toFuture
+    @inline def forgotPasswordFuture(params: ForgotPasswordRequest): Future[ForgotPasswordResponse] = service.forgotPassword(params).promise().toFuture
+    @inline def getCSVHeaderFuture(params: GetCSVHeaderRequest): Future[GetCSVHeaderResponse] = service.getCSVHeader(params).promise().toFuture
+    @inline def getDeviceFuture(params: GetDeviceRequest): Future[GetDeviceResponse] = service.getDevice(params).promise().toFuture
+    @inline def getGroupFuture(params: GetGroupRequest): Future[GetGroupResponse] = service.getGroup(params).promise().toFuture
+    @inline def getIdentityProviderByIdentifierFuture(params: GetIdentityProviderByIdentifierRequest): Future[GetIdentityProviderByIdentifierResponse] = service.getIdentityProviderByIdentifier(params).promise().toFuture
+    @inline def getSigningCertificateFuture(params: GetSigningCertificateRequest): Future[GetSigningCertificateResponse] = service.getSigningCertificate(params).promise().toFuture
+    @inline def getUICustomizationFuture(params: GetUICustomizationRequest): Future[GetUICustomizationResponse] = service.getUICustomization(params).promise().toFuture
+    @inline def getUserAttributeVerificationCodeFuture(params: GetUserAttributeVerificationCodeRequest): Future[GetUserAttributeVerificationCodeResponse] = service.getUserAttributeVerificationCode(params).promise().toFuture
+    @inline def getUserFuture(params: GetUserRequest): Future[GetUserResponse] = service.getUser(params).promise().toFuture
+    @inline def getUserPoolMfaConfigFuture(params: GetUserPoolMfaConfigRequest): Future[GetUserPoolMfaConfigResponse] = service.getUserPoolMfaConfig(params).promise().toFuture
+    @inline def globalSignOutFuture(params: GlobalSignOutRequest): Future[GlobalSignOutResponse] = service.globalSignOut(params).promise().toFuture
+    @inline def initiateAuthFuture(params: InitiateAuthRequest): Future[InitiateAuthResponse] = service.initiateAuth(params).promise().toFuture
+    @inline def listDevicesFuture(params: ListDevicesRequest): Future[ListDevicesResponse] = service.listDevices(params).promise().toFuture
+    @inline def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] = service.listGroups(params).promise().toFuture
+    @inline def listIdentityProvidersFuture(params: ListIdentityProvidersRequest): Future[ListIdentityProvidersResponse] = service.listIdentityProviders(params).promise().toFuture
+    @inline def listResourceServersFuture(params: ListResourceServersRequest): Future[ListResourceServersResponse] = service.listResourceServers(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listUserImportJobsFuture(params: ListUserImportJobsRequest): Future[ListUserImportJobsResponse] = service.listUserImportJobs(params).promise().toFuture
+    @inline def listUserPoolClientsFuture(params: ListUserPoolClientsRequest): Future[ListUserPoolClientsResponse] = service.listUserPoolClients(params).promise().toFuture
+    @inline def listUserPoolsFuture(params: ListUserPoolsRequest): Future[ListUserPoolsResponse] = service.listUserPools(params).promise().toFuture
+    @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] = service.listUsers(params).promise().toFuture
+    @inline def listUsersInGroupFuture(params: ListUsersInGroupRequest): Future[ListUsersInGroupResponse] = service.listUsersInGroup(params).promise().toFuture
+    @inline def resendConfirmationCodeFuture(params: ResendConfirmationCodeRequest): Future[ResendConfirmationCodeResponse] = service.resendConfirmationCode(params).promise().toFuture
+    @inline def respondToAuthChallengeFuture(params: RespondToAuthChallengeRequest): Future[RespondToAuthChallengeResponse] = service.respondToAuthChallenge(params).promise().toFuture
+    @inline def setRiskConfigurationFuture(params: SetRiskConfigurationRequest): Future[SetRiskConfigurationResponse] = service.setRiskConfiguration(params).promise().toFuture
+    @inline def setUICustomizationFuture(params: SetUICustomizationRequest): Future[SetUICustomizationResponse] = service.setUICustomization(params).promise().toFuture
+    @inline def setUserMFAPreferenceFuture(params: SetUserMFAPreferenceRequest): Future[SetUserMFAPreferenceResponse] = service.setUserMFAPreference(params).promise().toFuture
+    @inline def setUserPoolMfaConfigFuture(params: SetUserPoolMfaConfigRequest): Future[SetUserPoolMfaConfigResponse] = service.setUserPoolMfaConfig(params).promise().toFuture
+    @inline def setUserSettingsFuture(params: SetUserSettingsRequest): Future[SetUserSettingsResponse] = service.setUserSettings(params).promise().toFuture
     @inline def signUpFuture(params: SignUpRequest): Future[SignUpResponse] = service.signUp(params).promise().toFuture
-    @inline def startUserImportJobFuture(params: StartUserImportJobRequest): Future[StartUserImportJobResponse] =
-      service.startUserImportJob(params).promise().toFuture
-    @inline def stopUserImportJobFuture(params: StopUserImportJobRequest): Future[StopUserImportJobResponse] =
-      service.stopUserImportJob(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateAuthEventFeedbackFuture(
-        params: UpdateAuthEventFeedbackRequest
-    ): Future[UpdateAuthEventFeedbackResponse] = service.updateAuthEventFeedback(params).promise().toFuture
-    @inline def updateDeviceStatusFuture(params: UpdateDeviceStatusRequest): Future[UpdateDeviceStatusResponse] =
-      service.updateDeviceStatus(params).promise().toFuture
-    @inline def updateGroupFuture(params: UpdateGroupRequest): Future[UpdateGroupResponse] =
-      service.updateGroup(params).promise().toFuture
-    @inline def updateIdentityProviderFuture(
-        params: UpdateIdentityProviderRequest
-    ): Future[UpdateIdentityProviderResponse] = service.updateIdentityProvider(params).promise().toFuture
-    @inline def updateResourceServerFuture(params: UpdateResourceServerRequest): Future[UpdateResourceServerResponse] =
-      service.updateResourceServer(params).promise().toFuture
-    @inline def updateUserAttributesFuture(params: UpdateUserAttributesRequest): Future[UpdateUserAttributesResponse] =
-      service.updateUserAttributes(params).promise().toFuture
-    @inline def updateUserPoolClientFuture(params: UpdateUserPoolClientRequest): Future[UpdateUserPoolClientResponse] =
-      service.updateUserPoolClient(params).promise().toFuture
-    @inline def updateUserPoolDomainFuture(params: UpdateUserPoolDomainRequest): Future[UpdateUserPoolDomainResponse] =
-      service.updateUserPoolDomain(params).promise().toFuture
-    @inline def updateUserPoolFuture(params: UpdateUserPoolRequest): Future[UpdateUserPoolResponse] =
-      service.updateUserPool(params).promise().toFuture
-    @inline def verifySoftwareTokenFuture(params: VerifySoftwareTokenRequest): Future[VerifySoftwareTokenResponse] =
-      service.verifySoftwareToken(params).promise().toFuture
-    @inline def verifyUserAttributeFuture(params: VerifyUserAttributeRequest): Future[VerifyUserAttributeResponse] =
-      service.verifyUserAttribute(params).promise().toFuture
+    @inline def startUserImportJobFuture(params: StartUserImportJobRequest): Future[StartUserImportJobResponse] = service.startUserImportJob(params).promise().toFuture
+    @inline def stopUserImportJobFuture(params: StopUserImportJobRequest): Future[StopUserImportJobResponse] = service.stopUserImportJob(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateAuthEventFeedbackFuture(params: UpdateAuthEventFeedbackRequest): Future[UpdateAuthEventFeedbackResponse] = service.updateAuthEventFeedback(params).promise().toFuture
+    @inline def updateDeviceStatusFuture(params: UpdateDeviceStatusRequest): Future[UpdateDeviceStatusResponse] = service.updateDeviceStatus(params).promise().toFuture
+    @inline def updateGroupFuture(params: UpdateGroupRequest): Future[UpdateGroupResponse] = service.updateGroup(params).promise().toFuture
+    @inline def updateIdentityProviderFuture(params: UpdateIdentityProviderRequest): Future[UpdateIdentityProviderResponse] = service.updateIdentityProvider(params).promise().toFuture
+    @inline def updateResourceServerFuture(params: UpdateResourceServerRequest): Future[UpdateResourceServerResponse] = service.updateResourceServer(params).promise().toFuture
+    @inline def updateUserAttributesFuture(params: UpdateUserAttributesRequest): Future[UpdateUserAttributesResponse] = service.updateUserAttributes(params).promise().toFuture
+    @inline def updateUserPoolClientFuture(params: UpdateUserPoolClientRequest): Future[UpdateUserPoolClientResponse] = service.updateUserPoolClient(params).promise().toFuture
+    @inline def updateUserPoolDomainFuture(params: UpdateUserPoolDomainRequest): Future[UpdateUserPoolDomainResponse] = service.updateUserPoolDomain(params).promise().toFuture
+    @inline def updateUserPoolFuture(params: UpdateUserPoolRequest): Future[UpdateUserPoolResponse] = service.updateUserPool(params).promise().toFuture
+    @inline def verifySoftwareTokenFuture(params: VerifySoftwareTokenRequest): Future[VerifySoftwareTokenResponse] = service.verifySoftwareToken(params).promise().toFuture
+    @inline def verifyUserAttributeFuture(params: VerifyUserAttributeRequest): Future[VerifyUserAttributeResponse] = service.verifyUserAttribute(params).promise().toFuture
   }
 }
 
@@ -380,55 +250,35 @@ package cognitoidentityprovider {
     def adminConfirmSignUp(params: AdminConfirmSignUpRequest): Request[AdminConfirmSignUpResponse] = js.native
     def adminCreateUser(params: AdminCreateUserRequest): Request[AdminCreateUserResponse] = js.native
     def adminDeleteUser(params: AdminDeleteUserRequest): Request[js.Object] = js.native
-    def adminDeleteUserAttributes(
-        params: AdminDeleteUserAttributesRequest
-    ): Request[AdminDeleteUserAttributesResponse] = js.native
-    def adminDisableProviderForUser(
-        params: AdminDisableProviderForUserRequest
-    ): Request[AdminDisableProviderForUserResponse] = js.native
+    def adminDeleteUserAttributes(params: AdminDeleteUserAttributesRequest): Request[AdminDeleteUserAttributesResponse] = js.native
+    def adminDisableProviderForUser(params: AdminDisableProviderForUserRequest): Request[AdminDisableProviderForUserResponse] = js.native
     def adminDisableUser(params: AdminDisableUserRequest): Request[AdminDisableUserResponse] = js.native
     def adminEnableUser(params: AdminEnableUserRequest): Request[AdminEnableUserResponse] = js.native
     def adminForgetDevice(params: AdminForgetDeviceRequest): Request[js.Object] = js.native
     def adminGetDevice(params: AdminGetDeviceRequest): Request[AdminGetDeviceResponse] = js.native
     def adminGetUser(params: AdminGetUserRequest): Request[AdminGetUserResponse] = js.native
     def adminInitiateAuth(params: AdminInitiateAuthRequest): Request[AdminInitiateAuthResponse] = js.native
-    def adminLinkProviderForUser(params: AdminLinkProviderForUserRequest): Request[AdminLinkProviderForUserResponse] =
-      js.native
+    def adminLinkProviderForUser(params: AdminLinkProviderForUserRequest): Request[AdminLinkProviderForUserResponse] = js.native
     def adminListDevices(params: AdminListDevicesRequest): Request[AdminListDevicesResponse] = js.native
-    def adminListGroupsForUser(params: AdminListGroupsForUserRequest): Request[AdminListGroupsForUserResponse] =
-      js.native
-    def adminListUserAuthEvents(params: AdminListUserAuthEventsRequest): Request[AdminListUserAuthEventsResponse] =
-      js.native
+    def adminListGroupsForUser(params: AdminListGroupsForUserRequest): Request[AdminListGroupsForUserResponse] = js.native
+    def adminListUserAuthEvents(params: AdminListUserAuthEventsRequest): Request[AdminListUserAuthEventsResponse] = js.native
     def adminRemoveUserFromGroup(params: AdminRemoveUserFromGroupRequest): Request[js.Object] = js.native
-    def adminResetUserPassword(params: AdminResetUserPasswordRequest): Request[AdminResetUserPasswordResponse] =
-      js.native
-    def adminRespondToAuthChallenge(
-        params: AdminRespondToAuthChallengeRequest
-    ): Request[AdminRespondToAuthChallengeResponse] = js.native
-    def adminSetUserMFAPreference(
-        params: AdminSetUserMFAPreferenceRequest
-    ): Request[AdminSetUserMFAPreferenceResponse] = js.native
+    def adminResetUserPassword(params: AdminResetUserPasswordRequest): Request[AdminResetUserPasswordResponse] = js.native
+    def adminRespondToAuthChallenge(params: AdminRespondToAuthChallengeRequest): Request[AdminRespondToAuthChallengeResponse] = js.native
+    def adminSetUserMFAPreference(params: AdminSetUserMFAPreferenceRequest): Request[AdminSetUserMFAPreferenceResponse] = js.native
     def adminSetUserPassword(params: AdminSetUserPasswordRequest): Request[AdminSetUserPasswordResponse] = js.native
     def adminSetUserSettings(params: AdminSetUserSettingsRequest): Request[AdminSetUserSettingsResponse] = js.native
-    def adminUpdateAuthEventFeedback(
-        params: AdminUpdateAuthEventFeedbackRequest
-    ): Request[AdminUpdateAuthEventFeedbackResponse] = js.native
-    def adminUpdateDeviceStatus(params: AdminUpdateDeviceStatusRequest): Request[AdminUpdateDeviceStatusResponse] =
-      js.native
-    def adminUpdateUserAttributes(
-        params: AdminUpdateUserAttributesRequest
-    ): Request[AdminUpdateUserAttributesResponse] = js.native
-    def adminUserGlobalSignOut(params: AdminUserGlobalSignOutRequest): Request[AdminUserGlobalSignOutResponse] =
-      js.native
-    def associateSoftwareToken(params: AssociateSoftwareTokenRequest): Request[AssociateSoftwareTokenResponse] =
-      js.native
+    def adminUpdateAuthEventFeedback(params: AdminUpdateAuthEventFeedbackRequest): Request[AdminUpdateAuthEventFeedbackResponse] = js.native
+    def adminUpdateDeviceStatus(params: AdminUpdateDeviceStatusRequest): Request[AdminUpdateDeviceStatusResponse] = js.native
+    def adminUpdateUserAttributes(params: AdminUpdateUserAttributesRequest): Request[AdminUpdateUserAttributesResponse] = js.native
+    def adminUserGlobalSignOut(params: AdminUserGlobalSignOutRequest): Request[AdminUserGlobalSignOutResponse] = js.native
+    def associateSoftwareToken(params: AssociateSoftwareTokenRequest): Request[AssociateSoftwareTokenResponse] = js.native
     def changePassword(params: ChangePasswordRequest): Request[ChangePasswordResponse] = js.native
     def confirmDevice(params: ConfirmDeviceRequest): Request[ConfirmDeviceResponse] = js.native
     def confirmForgotPassword(params: ConfirmForgotPasswordRequest): Request[ConfirmForgotPasswordResponse] = js.native
     def confirmSignUp(params: ConfirmSignUpRequest): Request[ConfirmSignUpResponse] = js.native
     def createGroup(params: CreateGroupRequest): Request[CreateGroupResponse] = js.native
-    def createIdentityProvider(params: CreateIdentityProviderRequest): Request[CreateIdentityProviderResponse] =
-      js.native
+    def createIdentityProvider(params: CreateIdentityProviderRequest): Request[CreateIdentityProviderResponse] = js.native
     def createResourceServer(params: CreateResourceServerRequest): Request[CreateResourceServerResponse] = js.native
     def createUserImportJob(params: CreateUserImportJobRequest): Request[CreateUserImportJobResponse] = js.native
     def createUserPool(params: CreateUserPoolRequest): Request[CreateUserPoolResponse] = js.native
@@ -442,33 +292,23 @@ package cognitoidentityprovider {
     def deleteUserPool(params: DeleteUserPoolRequest): Request[js.Object] = js.native
     def deleteUserPoolClient(params: DeleteUserPoolClientRequest): Request[js.Object] = js.native
     def deleteUserPoolDomain(params: DeleteUserPoolDomainRequest): Request[DeleteUserPoolDomainResponse] = js.native
-    def describeIdentityProvider(params: DescribeIdentityProviderRequest): Request[DescribeIdentityProviderResponse] =
-      js.native
-    def describeResourceServer(params: DescribeResourceServerRequest): Request[DescribeResourceServerResponse] =
-      js.native
-    def describeRiskConfiguration(
-        params: DescribeRiskConfigurationRequest
-    ): Request[DescribeRiskConfigurationResponse] = js.native
+    def describeIdentityProvider(params: DescribeIdentityProviderRequest): Request[DescribeIdentityProviderResponse] = js.native
+    def describeResourceServer(params: DescribeResourceServerRequest): Request[DescribeResourceServerResponse] = js.native
+    def describeRiskConfiguration(params: DescribeRiskConfigurationRequest): Request[DescribeRiskConfigurationResponse] = js.native
     def describeUserImportJob(params: DescribeUserImportJobRequest): Request[DescribeUserImportJobResponse] = js.native
     def describeUserPool(params: DescribeUserPoolRequest): Request[DescribeUserPoolResponse] = js.native
-    def describeUserPoolClient(params: DescribeUserPoolClientRequest): Request[DescribeUserPoolClientResponse] =
-      js.native
-    def describeUserPoolDomain(params: DescribeUserPoolDomainRequest): Request[DescribeUserPoolDomainResponse] =
-      js.native
+    def describeUserPoolClient(params: DescribeUserPoolClientRequest): Request[DescribeUserPoolClientResponse] = js.native
+    def describeUserPoolDomain(params: DescribeUserPoolDomainRequest): Request[DescribeUserPoolDomainResponse] = js.native
     def forgetDevice(params: ForgetDeviceRequest): Request[js.Object] = js.native
     def forgotPassword(params: ForgotPasswordRequest): Request[ForgotPasswordResponse] = js.native
     def getCSVHeader(params: GetCSVHeaderRequest): Request[GetCSVHeaderResponse] = js.native
     def getDevice(params: GetDeviceRequest): Request[GetDeviceResponse] = js.native
     def getGroup(params: GetGroupRequest): Request[GetGroupResponse] = js.native
-    def getIdentityProviderByIdentifier(
-        params: GetIdentityProviderByIdentifierRequest
-    ): Request[GetIdentityProviderByIdentifierResponse] = js.native
+    def getIdentityProviderByIdentifier(params: GetIdentityProviderByIdentifierRequest): Request[GetIdentityProviderByIdentifierResponse] = js.native
     def getSigningCertificate(params: GetSigningCertificateRequest): Request[GetSigningCertificateResponse] = js.native
     def getUICustomization(params: GetUICustomizationRequest): Request[GetUICustomizationResponse] = js.native
     def getUser(params: GetUserRequest): Request[GetUserResponse] = js.native
-    def getUserAttributeVerificationCode(
-        params: GetUserAttributeVerificationCodeRequest
-    ): Request[GetUserAttributeVerificationCodeResponse] = js.native
+    def getUserAttributeVerificationCode(params: GetUserAttributeVerificationCodeRequest): Request[GetUserAttributeVerificationCodeResponse] = js.native
     def getUserPoolMfaConfig(params: GetUserPoolMfaConfigRequest): Request[GetUserPoolMfaConfigResponse] = js.native
     def globalSignOut(params: GlobalSignOutRequest): Request[GlobalSignOutResponse] = js.native
     def initiateAuth(params: InitiateAuthRequest): Request[InitiateAuthResponse] = js.native
@@ -482,10 +322,8 @@ package cognitoidentityprovider {
     def listUserPools(params: ListUserPoolsRequest): Request[ListUserPoolsResponse] = js.native
     def listUsers(params: ListUsersRequest): Request[ListUsersResponse] = js.native
     def listUsersInGroup(params: ListUsersInGroupRequest): Request[ListUsersInGroupResponse] = js.native
-    def resendConfirmationCode(params: ResendConfirmationCodeRequest): Request[ResendConfirmationCodeResponse] =
-      js.native
-    def respondToAuthChallenge(params: RespondToAuthChallengeRequest): Request[RespondToAuthChallengeResponse] =
-      js.native
+    def resendConfirmationCode(params: ResendConfirmationCodeRequest): Request[ResendConfirmationCodeResponse] = js.native
+    def respondToAuthChallenge(params: RespondToAuthChallengeRequest): Request[RespondToAuthChallengeResponse] = js.native
     def setRiskConfiguration(params: SetRiskConfigurationRequest): Request[SetRiskConfigurationResponse] = js.native
     def setUICustomization(params: SetUICustomizationRequest): Request[SetUICustomizationResponse] = js.native
     def setUserMFAPreference(params: SetUserMFAPreferenceRequest): Request[SetUserMFAPreferenceResponse] = js.native
@@ -496,12 +334,10 @@ package cognitoidentityprovider {
     def stopUserImportJob(params: StopUserImportJobRequest): Request[StopUserImportJobResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
-    def updateAuthEventFeedback(params: UpdateAuthEventFeedbackRequest): Request[UpdateAuthEventFeedbackResponse] =
-      js.native
+    def updateAuthEventFeedback(params: UpdateAuthEventFeedbackRequest): Request[UpdateAuthEventFeedbackResponse] = js.native
     def updateDeviceStatus(params: UpdateDeviceStatusRequest): Request[UpdateDeviceStatusResponse] = js.native
     def updateGroup(params: UpdateGroupRequest): Request[UpdateGroupResponse] = js.native
-    def updateIdentityProvider(params: UpdateIdentityProviderRequest): Request[UpdateIdentityProviderResponse] =
-      js.native
+    def updateIdentityProvider(params: UpdateIdentityProviderRequest): Request[UpdateIdentityProviderResponse] = js.native
     def updateResourceServer(params: UpdateResourceServerRequest): Request[UpdateResourceServerResponse] = js.native
     def updateUserAttributes(params: UpdateUserAttributesRequest): Request[UpdateUserAttributesResponse] = js.native
     def updateUserPool(params: UpdateUserPoolRequest): Request[UpdateUserPoolResponse] = js.native
@@ -741,9 +577,7 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal()
       AllowAdminCreateUserOnly.foreach(__v => __obj.updateDynamic("AllowAdminCreateUserOnly")(__v.asInstanceOf[js.Any]))
       InviteMessageTemplate.foreach(__v => __obj.updateDynamic("InviteMessageTemplate")(__v.asInstanceOf[js.Any]))
-      UnusedAccountValidityDays.foreach(__v =>
-        __obj.updateDynamic("UnusedAccountValidityDays")(__v.asInstanceOf[js.Any])
-      )
+      UnusedAccountValidityDays.foreach(__v => __obj.updateDynamic("UnusedAccountValidityDays")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AdminCreateUserConfigType]
     }
   }
@@ -2015,17 +1849,7 @@ package cognitoidentityprovider {
     val USER_PASSWORD_AUTH = "USER_PASSWORD_AUTH".asInstanceOf[AuthFlowType]
     val ADMIN_USER_PASSWORD_AUTH = "ADMIN_USER_PASSWORD_AUTH".asInstanceOf[AuthFlowType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        USER_SRP_AUTH,
-        REFRESH_TOKEN_AUTH,
-        REFRESH_TOKEN,
-        CUSTOM_AUTH,
-        ADMIN_NO_SRP_AUTH,
-        USER_PASSWORD_AUTH,
-        ADMIN_USER_PASSWORD_AUTH
-      )
-    )
+    val values = js.Object.freeze(js.Array(USER_SRP_AUTH, REFRESH_TOKEN_AUTH, REFRESH_TOKEN, CUSTOM_AUTH, ADMIN_NO_SRP_AUTH, USER_PASSWORD_AUTH, ADMIN_USER_PASSWORD_AUTH))
   }
 
   /**
@@ -2279,9 +2103,7 @@ package cognitoidentityprovider {
       )
 
       DeviceName.foreach(__v => __obj.updateDynamic("DeviceName")(__v.asInstanceOf[js.Any]))
-      DeviceSecretVerifierConfig.foreach(__v =>
-        __obj.updateDynamic("DeviceSecretVerifierConfig")(__v.asInstanceOf[js.Any])
-      )
+      DeviceSecretVerifierConfig.foreach(__v => __obj.updateDynamic("DeviceSecretVerifierConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfirmDeviceRequest]
     }
   }
@@ -2300,9 +2122,7 @@ package cognitoidentityprovider {
         UserConfirmationNecessary: js.UndefOr[BooleanType] = js.undefined
     ): ConfirmDeviceResponse = {
       val __obj = js.Dynamic.literal()
-      UserConfirmationNecessary.foreach(__v =>
-        __obj.updateDynamic("UserConfirmationNecessary")(__v.asInstanceOf[js.Any])
-      )
+      UserConfirmationNecessary.foreach(__v => __obj.updateDynamic("UserConfirmationNecessary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfirmDeviceResponse]
     }
   }
@@ -2693,9 +2513,7 @@ package cognitoidentityprovider {
       )
 
       AllowedOAuthFlows.foreach(__v => __obj.updateDynamic("AllowedOAuthFlows")(__v.asInstanceOf[js.Any]))
-      AllowedOAuthFlowsUserPoolClient.foreach(__v =>
-        __obj.updateDynamic("AllowedOAuthFlowsUserPoolClient")(__v.asInstanceOf[js.Any])
-      )
+      AllowedOAuthFlowsUserPoolClient.foreach(__v => __obj.updateDynamic("AllowedOAuthFlowsUserPoolClient")(__v.asInstanceOf[js.Any]))
       AllowedOAuthScopes.foreach(__v => __obj.updateDynamic("AllowedOAuthScopes")(__v.asInstanceOf[js.Any]))
       AnalyticsConfiguration.foreach(__v => __obj.updateDynamic("AnalyticsConfiguration")(__v.asInstanceOf[js.Any]))
       CallbackURLs.foreach(__v => __obj.updateDynamic("CallbackURLs")(__v.asInstanceOf[js.Any]))
@@ -2703,14 +2521,10 @@ package cognitoidentityprovider {
       ExplicitAuthFlows.foreach(__v => __obj.updateDynamic("ExplicitAuthFlows")(__v.asInstanceOf[js.Any]))
       GenerateSecret.foreach(__v => __obj.updateDynamic("GenerateSecret")(__v.asInstanceOf[js.Any]))
       LogoutURLs.foreach(__v => __obj.updateDynamic("LogoutURLs")(__v.asInstanceOf[js.Any]))
-      PreventUserExistenceErrors.foreach(__v =>
-        __obj.updateDynamic("PreventUserExistenceErrors")(__v.asInstanceOf[js.Any])
-      )
+      PreventUserExistenceErrors.foreach(__v => __obj.updateDynamic("PreventUserExistenceErrors")(__v.asInstanceOf[js.Any]))
       ReadAttributes.foreach(__v => __obj.updateDynamic("ReadAttributes")(__v.asInstanceOf[js.Any]))
       RefreshTokenValidity.foreach(__v => __obj.updateDynamic("RefreshTokenValidity")(__v.asInstanceOf[js.Any]))
-      SupportedIdentityProviders.foreach(__v =>
-        __obj.updateDynamic("SupportedIdentityProviders")(__v.asInstanceOf[js.Any])
-      )
+      SupportedIdentityProviders.foreach(__v => __obj.updateDynamic("SupportedIdentityProviders")(__v.asInstanceOf[js.Any]))
       WriteAttributes.foreach(__v => __obj.updateDynamic("WriteAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateUserPoolClientRequest]
     }
@@ -2851,9 +2665,7 @@ package cognitoidentityprovider {
       UserPoolTags.foreach(__v => __obj.updateDynamic("UserPoolTags")(__v.asInstanceOf[js.Any]))
       UsernameAttributes.foreach(__v => __obj.updateDynamic("UsernameAttributes")(__v.asInstanceOf[js.Any]))
       UsernameConfiguration.foreach(__v => __obj.updateDynamic("UsernameConfiguration")(__v.asInstanceOf[js.Any]))
-      VerificationMessageTemplate.foreach(__v =>
-        __obj.updateDynamic("VerificationMessageTemplate")(__v.asInstanceOf[js.Any])
-      )
+      VerificationMessageTemplate.foreach(__v => __obj.updateDynamic("VerificationMessageTemplate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateUserPoolRequest]
     }
   }
@@ -3412,12 +3224,8 @@ package cognitoidentityprovider {
         DeviceOnlyRememberedOnUserPrompt: js.UndefOr[BooleanType] = js.undefined
     ): DeviceConfigurationType = {
       val __obj = js.Dynamic.literal()
-      ChallengeRequiredOnNewDevice.foreach(__v =>
-        __obj.updateDynamic("ChallengeRequiredOnNewDevice")(__v.asInstanceOf[js.Any])
-      )
-      DeviceOnlyRememberedOnUserPrompt.foreach(__v =>
-        __obj.updateDynamic("DeviceOnlyRememberedOnUserPrompt")(__v.asInstanceOf[js.Any])
-      )
+      ChallengeRequiredOnNewDevice.foreach(__v => __obj.updateDynamic("ChallengeRequiredOnNewDevice")(__v.asInstanceOf[js.Any]))
+      DeviceOnlyRememberedOnUserPrompt.foreach(__v => __obj.updateDynamic("DeviceOnlyRememberedOnUserPrompt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeviceConfigurationType]
     }
   }
@@ -3478,9 +3286,7 @@ package cognitoidentityprovider {
       DeviceAttributes.foreach(__v => __obj.updateDynamic("DeviceAttributes")(__v.asInstanceOf[js.Any]))
       DeviceCreateDate.foreach(__v => __obj.updateDynamic("DeviceCreateDate")(__v.asInstanceOf[js.Any]))
       DeviceKey.foreach(__v => __obj.updateDynamic("DeviceKey")(__v.asInstanceOf[js.Any]))
-      DeviceLastAuthenticatedDate.foreach(__v =>
-        __obj.updateDynamic("DeviceLastAuthenticatedDate")(__v.asInstanceOf[js.Any])
-      )
+      DeviceLastAuthenticatedDate.foreach(__v => __obj.updateDynamic("DeviceLastAuthenticatedDate")(__v.asInstanceOf[js.Any]))
       DeviceLastModifiedDate.foreach(__v => __obj.updateDynamic("DeviceLastModifiedDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeviceType]
     }
@@ -3673,9 +3479,7 @@ package cognitoidentityprovider {
         RiskLevel: js.UndefOr[RiskLevelType] = js.undefined
     ): EventRiskType = {
       val __obj = js.Dynamic.literal()
-      CompromisedCredentialsDetected.foreach(__v =>
-        __obj.updateDynamic("CompromisedCredentialsDetected")(__v.asInstanceOf[js.Any])
-      )
+      CompromisedCredentialsDetected.foreach(__v => __obj.updateDynamic("CompromisedCredentialsDetected")(__v.asInstanceOf[js.Any]))
       RiskDecision.foreach(__v => __obj.updateDynamic("RiskDecision")(__v.asInstanceOf[js.Any]))
       RiskLevel.foreach(__v => __obj.updateDynamic("RiskLevel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventRiskType]
@@ -4130,9 +3934,7 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal()
       MfaConfiguration.foreach(__v => __obj.updateDynamic("MfaConfiguration")(__v.asInstanceOf[js.Any]))
       SmsMfaConfiguration.foreach(__v => __obj.updateDynamic("SmsMfaConfiguration")(__v.asInstanceOf[js.Any]))
-      SoftwareTokenMfaConfiguration.foreach(__v =>
-        __obj.updateDynamic("SoftwareTokenMfaConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      SoftwareTokenMfaConfiguration.foreach(__v => __obj.updateDynamic("SoftwareTokenMfaConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetUserPoolMfaConfigResponse]
     }
   }
@@ -4445,9 +4247,7 @@ package cognitoidentityprovider {
       PreSignUp.foreach(__v => __obj.updateDynamic("PreSignUp")(__v.asInstanceOf[js.Any]))
       PreTokenGeneration.foreach(__v => __obj.updateDynamic("PreTokenGeneration")(__v.asInstanceOf[js.Any]))
       UserMigration.foreach(__v => __obj.updateDynamic("UserMigration")(__v.asInstanceOf[js.Any]))
-      VerifyAuthChallengeResponse.foreach(__v =>
-        __obj.updateDynamic("VerifyAuthChallengeResponse")(__v.asInstanceOf[js.Any])
-      )
+      VerifyAuthChallengeResponse.foreach(__v => __obj.updateDynamic("VerifyAuthChallengeResponse")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LambdaConfigType]
     }
   }
@@ -5117,9 +4917,7 @@ package cognitoidentityprovider {
       RequireNumbers.foreach(__v => __obj.updateDynamic("RequireNumbers")(__v.asInstanceOf[js.Any]))
       RequireSymbols.foreach(__v => __obj.updateDynamic("RequireSymbols")(__v.asInstanceOf[js.Any]))
       RequireUppercase.foreach(__v => __obj.updateDynamic("RequireUppercase")(__v.asInstanceOf[js.Any]))
-      TemporaryPasswordValidityDays.foreach(__v =>
-        __obj.updateDynamic("TemporaryPasswordValidityDays")(__v.asInstanceOf[js.Any])
-      )
+      TemporaryPasswordValidityDays.foreach(__v => __obj.updateDynamic("TemporaryPasswordValidityDays")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PasswordPolicyType]
     }
   }
@@ -5418,17 +5216,11 @@ package cognitoidentityprovider {
         UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined
     ): RiskConfigurationType = {
       val __obj = js.Dynamic.literal()
-      AccountTakeoverRiskConfiguration.foreach(__v =>
-        __obj.updateDynamic("AccountTakeoverRiskConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      AccountTakeoverRiskConfiguration.foreach(__v => __obj.updateDynamic("AccountTakeoverRiskConfiguration")(__v.asInstanceOf[js.Any]))
       ClientId.foreach(__v => __obj.updateDynamic("ClientId")(__v.asInstanceOf[js.Any]))
-      CompromisedCredentialsRiskConfiguration.foreach(__v =>
-        __obj.updateDynamic("CompromisedCredentialsRiskConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      CompromisedCredentialsRiskConfiguration.foreach(__v => __obj.updateDynamic("CompromisedCredentialsRiskConfiguration")(__v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
-      RiskExceptionConfiguration.foreach(__v =>
-        __obj.updateDynamic("RiskExceptionConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      RiskExceptionConfiguration.foreach(__v => __obj.updateDynamic("RiskExceptionConfiguration")(__v.asInstanceOf[js.Any]))
       UserPoolId.foreach(__v => __obj.updateDynamic("UserPoolId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RiskConfigurationType]
     }
@@ -5528,13 +5320,9 @@ package cognitoidentityprovider {
       DeveloperOnlyAttribute.foreach(__v => __obj.updateDynamic("DeveloperOnlyAttribute")(__v.asInstanceOf[js.Any]))
       Mutable.foreach(__v => __obj.updateDynamic("Mutable")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      NumberAttributeConstraints.foreach(__v =>
-        __obj.updateDynamic("NumberAttributeConstraints")(__v.asInstanceOf[js.Any])
-      )
+      NumberAttributeConstraints.foreach(__v => __obj.updateDynamic("NumberAttributeConstraints")(__v.asInstanceOf[js.Any]))
       Required.foreach(__v => __obj.updateDynamic("Required")(__v.asInstanceOf[js.Any]))
-      StringAttributeConstraints.foreach(__v =>
-        __obj.updateDynamic("StringAttributeConstraints")(__v.asInstanceOf[js.Any])
-      )
+      StringAttributeConstraints.foreach(__v => __obj.updateDynamic("StringAttributeConstraints")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SchemaAttributeType]
     }
   }
@@ -5561,16 +5349,10 @@ package cognitoidentityprovider {
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
-      AccountTakeoverRiskConfiguration.foreach(__v =>
-        __obj.updateDynamic("AccountTakeoverRiskConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      AccountTakeoverRiskConfiguration.foreach(__v => __obj.updateDynamic("AccountTakeoverRiskConfiguration")(__v.asInstanceOf[js.Any]))
       ClientId.foreach(__v => __obj.updateDynamic("ClientId")(__v.asInstanceOf[js.Any]))
-      CompromisedCredentialsRiskConfiguration.foreach(__v =>
-        __obj.updateDynamic("CompromisedCredentialsRiskConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      RiskExceptionConfiguration.foreach(__v =>
-        __obj.updateDynamic("RiskExceptionConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      CompromisedCredentialsRiskConfiguration.foreach(__v => __obj.updateDynamic("CompromisedCredentialsRiskConfiguration")(__v.asInstanceOf[js.Any]))
+      RiskExceptionConfiguration.foreach(__v => __obj.updateDynamic("RiskExceptionConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetRiskConfigurationRequest]
     }
   }
@@ -5697,9 +5479,7 @@ package cognitoidentityprovider {
 
       MfaConfiguration.foreach(__v => __obj.updateDynamic("MfaConfiguration")(__v.asInstanceOf[js.Any]))
       SmsMfaConfiguration.foreach(__v => __obj.updateDynamic("SmsMfaConfiguration")(__v.asInstanceOf[js.Any]))
-      SoftwareTokenMfaConfiguration.foreach(__v =>
-        __obj.updateDynamic("SoftwareTokenMfaConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      SoftwareTokenMfaConfiguration.foreach(__v => __obj.updateDynamic("SoftwareTokenMfaConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetUserPoolMfaConfigRequest]
     }
   }
@@ -5721,9 +5501,7 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal()
       MfaConfiguration.foreach(__v => __obj.updateDynamic("MfaConfiguration")(__v.asInstanceOf[js.Any]))
       SmsMfaConfiguration.foreach(__v => __obj.updateDynamic("SmsMfaConfiguration")(__v.asInstanceOf[js.Any]))
-      SoftwareTokenMfaConfiguration.foreach(__v =>
-        __obj.updateDynamic("SoftwareTokenMfaConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      SoftwareTokenMfaConfiguration.foreach(__v => __obj.updateDynamic("SoftwareTokenMfaConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetUserPoolMfaConfigResponse]
     }
   }
@@ -6469,9 +6247,7 @@ package cognitoidentityprovider {
       )
 
       AllowedOAuthFlows.foreach(__v => __obj.updateDynamic("AllowedOAuthFlows")(__v.asInstanceOf[js.Any]))
-      AllowedOAuthFlowsUserPoolClient.foreach(__v =>
-        __obj.updateDynamic("AllowedOAuthFlowsUserPoolClient")(__v.asInstanceOf[js.Any])
-      )
+      AllowedOAuthFlowsUserPoolClient.foreach(__v => __obj.updateDynamic("AllowedOAuthFlowsUserPoolClient")(__v.asInstanceOf[js.Any]))
       AllowedOAuthScopes.foreach(__v => __obj.updateDynamic("AllowedOAuthScopes")(__v.asInstanceOf[js.Any]))
       AnalyticsConfiguration.foreach(__v => __obj.updateDynamic("AnalyticsConfiguration")(__v.asInstanceOf[js.Any]))
       CallbackURLs.foreach(__v => __obj.updateDynamic("CallbackURLs")(__v.asInstanceOf[js.Any]))
@@ -6479,14 +6255,10 @@ package cognitoidentityprovider {
       DefaultRedirectURI.foreach(__v => __obj.updateDynamic("DefaultRedirectURI")(__v.asInstanceOf[js.Any]))
       ExplicitAuthFlows.foreach(__v => __obj.updateDynamic("ExplicitAuthFlows")(__v.asInstanceOf[js.Any]))
       LogoutURLs.foreach(__v => __obj.updateDynamic("LogoutURLs")(__v.asInstanceOf[js.Any]))
-      PreventUserExistenceErrors.foreach(__v =>
-        __obj.updateDynamic("PreventUserExistenceErrors")(__v.asInstanceOf[js.Any])
-      )
+      PreventUserExistenceErrors.foreach(__v => __obj.updateDynamic("PreventUserExistenceErrors")(__v.asInstanceOf[js.Any]))
       ReadAttributes.foreach(__v => __obj.updateDynamic("ReadAttributes")(__v.asInstanceOf[js.Any]))
       RefreshTokenValidity.foreach(__v => __obj.updateDynamic("RefreshTokenValidity")(__v.asInstanceOf[js.Any]))
-      SupportedIdentityProviders.foreach(__v =>
-        __obj.updateDynamic("SupportedIdentityProviders")(__v.asInstanceOf[js.Any])
-      )
+      SupportedIdentityProviders.foreach(__v => __obj.updateDynamic("SupportedIdentityProviders")(__v.asInstanceOf[js.Any]))
       WriteAttributes.foreach(__v => __obj.updateDynamic("WriteAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateUserPoolClientRequest]
     }
@@ -6621,9 +6393,7 @@ package cognitoidentityprovider {
       SmsVerificationMessage.foreach(__v => __obj.updateDynamic("SmsVerificationMessage")(__v.asInstanceOf[js.Any]))
       UserPoolAddOns.foreach(__v => __obj.updateDynamic("UserPoolAddOns")(__v.asInstanceOf[js.Any]))
       UserPoolTags.foreach(__v => __obj.updateDynamic("UserPoolTags")(__v.asInstanceOf[js.Any]))
-      VerificationMessageTemplate.foreach(__v =>
-        __obj.updateDynamic("VerificationMessageTemplate")(__v.asInstanceOf[js.Any])
-      )
+      VerificationMessageTemplate.foreach(__v => __obj.updateDynamic("VerificationMessageTemplate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateUserPoolRequest]
     }
   }
@@ -6830,9 +6600,7 @@ package cognitoidentityprovider {
     ): UserPoolClientType = {
       val __obj = js.Dynamic.literal()
       AllowedOAuthFlows.foreach(__v => __obj.updateDynamic("AllowedOAuthFlows")(__v.asInstanceOf[js.Any]))
-      AllowedOAuthFlowsUserPoolClient.foreach(__v =>
-        __obj.updateDynamic("AllowedOAuthFlowsUserPoolClient")(__v.asInstanceOf[js.Any])
-      )
+      AllowedOAuthFlowsUserPoolClient.foreach(__v => __obj.updateDynamic("AllowedOAuthFlowsUserPoolClient")(__v.asInstanceOf[js.Any]))
       AllowedOAuthScopes.foreach(__v => __obj.updateDynamic("AllowedOAuthScopes")(__v.asInstanceOf[js.Any]))
       AnalyticsConfiguration.foreach(__v => __obj.updateDynamic("AnalyticsConfiguration")(__v.asInstanceOf[js.Any]))
       CallbackURLs.foreach(__v => __obj.updateDynamic("CallbackURLs")(__v.asInstanceOf[js.Any]))
@@ -6844,14 +6612,10 @@ package cognitoidentityprovider {
       ExplicitAuthFlows.foreach(__v => __obj.updateDynamic("ExplicitAuthFlows")(__v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
       LogoutURLs.foreach(__v => __obj.updateDynamic("LogoutURLs")(__v.asInstanceOf[js.Any]))
-      PreventUserExistenceErrors.foreach(__v =>
-        __obj.updateDynamic("PreventUserExistenceErrors")(__v.asInstanceOf[js.Any])
-      )
+      PreventUserExistenceErrors.foreach(__v => __obj.updateDynamic("PreventUserExistenceErrors")(__v.asInstanceOf[js.Any]))
       ReadAttributes.foreach(__v => __obj.updateDynamic("ReadAttributes")(__v.asInstanceOf[js.Any]))
       RefreshTokenValidity.foreach(__v => __obj.updateDynamic("RefreshTokenValidity")(__v.asInstanceOf[js.Any]))
-      SupportedIdentityProviders.foreach(__v =>
-        __obj.updateDynamic("SupportedIdentityProviders")(__v.asInstanceOf[js.Any])
-      )
+      SupportedIdentityProviders.foreach(__v => __obj.updateDynamic("SupportedIdentityProviders")(__v.asInstanceOf[js.Any]))
       UserPoolId.foreach(__v => __obj.updateDynamic("UserPoolId")(__v.asInstanceOf[js.Any]))
       WriteAttributes.foreach(__v => __obj.updateDynamic("WriteAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UserPoolClientType]
@@ -7005,9 +6769,7 @@ package cognitoidentityprovider {
       DeviceConfiguration.foreach(__v => __obj.updateDynamic("DeviceConfiguration")(__v.asInstanceOf[js.Any]))
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       EmailConfiguration.foreach(__v => __obj.updateDynamic("EmailConfiguration")(__v.asInstanceOf[js.Any]))
-      EmailConfigurationFailure.foreach(__v =>
-        __obj.updateDynamic("EmailConfigurationFailure")(__v.asInstanceOf[js.Any])
-      )
+      EmailConfigurationFailure.foreach(__v => __obj.updateDynamic("EmailConfigurationFailure")(__v.asInstanceOf[js.Any]))
       EmailVerificationMessage.foreach(__v => __obj.updateDynamic("EmailVerificationMessage")(__v.asInstanceOf[js.Any]))
       EmailVerificationSubject.foreach(__v => __obj.updateDynamic("EmailVerificationSubject")(__v.asInstanceOf[js.Any]))
       EstimatedNumberOfUsers.foreach(__v => __obj.updateDynamic("EstimatedNumberOfUsers")(__v.asInstanceOf[js.Any]))
@@ -7027,9 +6789,7 @@ package cognitoidentityprovider {
       UserPoolTags.foreach(__v => __obj.updateDynamic("UserPoolTags")(__v.asInstanceOf[js.Any]))
       UsernameAttributes.foreach(__v => __obj.updateDynamic("UsernameAttributes")(__v.asInstanceOf[js.Any]))
       UsernameConfiguration.foreach(__v => __obj.updateDynamic("UsernameConfiguration")(__v.asInstanceOf[js.Any]))
-      VerificationMessageTemplate.foreach(__v =>
-        __obj.updateDynamic("VerificationMessageTemplate")(__v.asInstanceOf[js.Any])
-      )
+      VerificationMessageTemplate.foreach(__v => __obj.updateDynamic("VerificationMessageTemplate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UserPoolType]
     }
   }
@@ -7045,9 +6805,7 @@ package cognitoidentityprovider {
     val RESET_REQUIRED = "RESET_REQUIRED".asInstanceOf[UserStatusType]
     val FORCE_CHANGE_PASSWORD = "FORCE_CHANGE_PASSWORD".asInstanceOf[UserStatusType]
 
-    val values = js.Object.freeze(
-      js.Array(UNCONFIRMED, CONFIRMED, ARCHIVED, COMPROMISED, UNKNOWN, RESET_REQUIRED, FORCE_CHANGE_PASSWORD)
-    )
+    val values = js.Object.freeze(js.Array(UNCONFIRMED, CONFIRMED, ARCHIVED, COMPROMISED, UNKNOWN, RESET_REQUIRED, FORCE_CHANGE_PASSWORD))
   }
 
   /**

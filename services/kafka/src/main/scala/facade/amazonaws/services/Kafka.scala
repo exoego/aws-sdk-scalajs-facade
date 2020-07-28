@@ -34,60 +34,29 @@ package object kafka {
 
   implicit final class KafkaOps(private val service: Kafka) extends AnyVal {
 
-    @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
-      service.createCluster(params).promise().toFuture
-    @inline def createConfigurationFuture(params: CreateConfigurationRequest): Future[CreateConfigurationResponse] =
-      service.createConfiguration(params).promise().toFuture
-    @inline def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] =
-      service.deleteCluster(params).promise().toFuture
-    @inline def describeClusterFuture(params: DescribeClusterRequest): Future[DescribeClusterResponse] =
-      service.describeCluster(params).promise().toFuture
-    @inline def describeClusterOperationFuture(
-        params: DescribeClusterOperationRequest
-    ): Future[DescribeClusterOperationResponse] = service.describeClusterOperation(params).promise().toFuture
-    @inline def describeConfigurationFuture(
-        params: DescribeConfigurationRequest
-    ): Future[DescribeConfigurationResponse] = service.describeConfiguration(params).promise().toFuture
-    @inline def describeConfigurationRevisionFuture(
-        params: DescribeConfigurationRevisionRequest
-    ): Future[DescribeConfigurationRevisionResponse] = service.describeConfigurationRevision(params).promise().toFuture
-    @inline def getBootstrapBrokersFuture(params: GetBootstrapBrokersRequest): Future[GetBootstrapBrokersResponse] =
-      service.getBootstrapBrokers(params).promise().toFuture
-    @inline def getCompatibleKafkaVersionsFuture(
-        params: GetCompatibleKafkaVersionsRequest
-    ): Future[GetCompatibleKafkaVersionsResponse] = service.getCompatibleKafkaVersions(params).promise().toFuture
-    @inline def listClusterOperationsFuture(
-        params: ListClusterOperationsRequest
-    ): Future[ListClusterOperationsResponse] = service.listClusterOperations(params).promise().toFuture
-    @inline def listClustersFuture(params: ListClustersRequest): Future[ListClustersResponse] =
-      service.listClusters(params).promise().toFuture
-    @inline def listConfigurationRevisionsFuture(
-        params: ListConfigurationRevisionsRequest
-    ): Future[ListConfigurationRevisionsResponse] = service.listConfigurationRevisions(params).promise().toFuture
-    @inline def listConfigurationsFuture(params: ListConfigurationsRequest): Future[ListConfigurationsResponse] =
-      service.listConfigurations(params).promise().toFuture
-    @inline def listKafkaVersionsFuture(params: ListKafkaVersionsRequest): Future[ListKafkaVersionsResponse] =
-      service.listKafkaVersions(params).promise().toFuture
-    @inline def listNodesFuture(params: ListNodesRequest): Future[ListNodesResponse] =
-      service.listNodes(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateBrokerCountFuture(params: UpdateBrokerCountRequest): Future[UpdateBrokerCountResponse] =
-      service.updateBrokerCount(params).promise().toFuture
-    @inline def updateBrokerStorageFuture(params: UpdateBrokerStorageRequest): Future[UpdateBrokerStorageResponse] =
-      service.updateBrokerStorage(params).promise().toFuture
-    @inline def updateClusterConfigurationFuture(
-        params: UpdateClusterConfigurationRequest
-    ): Future[UpdateClusterConfigurationResponse] = service.updateClusterConfiguration(params).promise().toFuture
-    @inline def updateClusterKafkaVersionFuture(
-        params: UpdateClusterKafkaVersionRequest
-    ): Future[UpdateClusterKafkaVersionResponse] = service.updateClusterKafkaVersion(params).promise().toFuture
-    @inline def updateMonitoringFuture(params: UpdateMonitoringRequest): Future[UpdateMonitoringResponse] =
-      service.updateMonitoring(params).promise().toFuture
+    @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] = service.createCluster(params).promise().toFuture
+    @inline def createConfigurationFuture(params: CreateConfigurationRequest): Future[CreateConfigurationResponse] = service.createConfiguration(params).promise().toFuture
+    @inline def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] = service.deleteCluster(params).promise().toFuture
+    @inline def describeClusterFuture(params: DescribeClusterRequest): Future[DescribeClusterResponse] = service.describeCluster(params).promise().toFuture
+    @inline def describeClusterOperationFuture(params: DescribeClusterOperationRequest): Future[DescribeClusterOperationResponse] = service.describeClusterOperation(params).promise().toFuture
+    @inline def describeConfigurationFuture(params: DescribeConfigurationRequest): Future[DescribeConfigurationResponse] = service.describeConfiguration(params).promise().toFuture
+    @inline def describeConfigurationRevisionFuture(params: DescribeConfigurationRevisionRequest): Future[DescribeConfigurationRevisionResponse] = service.describeConfigurationRevision(params).promise().toFuture
+    @inline def getBootstrapBrokersFuture(params: GetBootstrapBrokersRequest): Future[GetBootstrapBrokersResponse] = service.getBootstrapBrokers(params).promise().toFuture
+    @inline def getCompatibleKafkaVersionsFuture(params: GetCompatibleKafkaVersionsRequest): Future[GetCompatibleKafkaVersionsResponse] = service.getCompatibleKafkaVersions(params).promise().toFuture
+    @inline def listClusterOperationsFuture(params: ListClusterOperationsRequest): Future[ListClusterOperationsResponse] = service.listClusterOperations(params).promise().toFuture
+    @inline def listClustersFuture(params: ListClustersRequest): Future[ListClustersResponse] = service.listClusters(params).promise().toFuture
+    @inline def listConfigurationRevisionsFuture(params: ListConfigurationRevisionsRequest): Future[ListConfigurationRevisionsResponse] = service.listConfigurationRevisions(params).promise().toFuture
+    @inline def listConfigurationsFuture(params: ListConfigurationsRequest): Future[ListConfigurationsResponse] = service.listConfigurations(params).promise().toFuture
+    @inline def listKafkaVersionsFuture(params: ListKafkaVersionsRequest): Future[ListKafkaVersionsResponse] = service.listKafkaVersions(params).promise().toFuture
+    @inline def listNodesFuture(params: ListNodesRequest): Future[ListNodesResponse] = service.listNodes(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
+    @inline def updateBrokerCountFuture(params: UpdateBrokerCountRequest): Future[UpdateBrokerCountResponse] = service.updateBrokerCount(params).promise().toFuture
+    @inline def updateBrokerStorageFuture(params: UpdateBrokerStorageRequest): Future[UpdateBrokerStorageResponse] = service.updateBrokerStorage(params).promise().toFuture
+    @inline def updateClusterConfigurationFuture(params: UpdateClusterConfigurationRequest): Future[UpdateClusterConfigurationResponse] = service.updateClusterConfiguration(params).promise().toFuture
+    @inline def updateClusterKafkaVersionFuture(params: UpdateClusterKafkaVersionRequest): Future[UpdateClusterKafkaVersionResponse] = service.updateClusterKafkaVersion(params).promise().toFuture
+    @inline def updateMonitoringFuture(params: UpdateMonitoringRequest): Future[UpdateMonitoringResponse] = service.updateMonitoring(params).promise().toFuture
   }
 }
 
@@ -101,21 +70,14 @@ package kafka {
     def createConfiguration(params: CreateConfigurationRequest): Request[CreateConfigurationResponse] = js.native
     def deleteCluster(params: DeleteClusterRequest): Request[DeleteClusterResponse] = js.native
     def describeCluster(params: DescribeClusterRequest): Request[DescribeClusterResponse] = js.native
-    def describeClusterOperation(params: DescribeClusterOperationRequest): Request[DescribeClusterOperationResponse] =
-      js.native
+    def describeClusterOperation(params: DescribeClusterOperationRequest): Request[DescribeClusterOperationResponse] = js.native
     def describeConfiguration(params: DescribeConfigurationRequest): Request[DescribeConfigurationResponse] = js.native
-    def describeConfigurationRevision(
-        params: DescribeConfigurationRevisionRequest
-    ): Request[DescribeConfigurationRevisionResponse] = js.native
+    def describeConfigurationRevision(params: DescribeConfigurationRevisionRequest): Request[DescribeConfigurationRevisionResponse] = js.native
     def getBootstrapBrokers(params: GetBootstrapBrokersRequest): Request[GetBootstrapBrokersResponse] = js.native
-    def getCompatibleKafkaVersions(
-        params: GetCompatibleKafkaVersionsRequest
-    ): Request[GetCompatibleKafkaVersionsResponse] = js.native
+    def getCompatibleKafkaVersions(params: GetCompatibleKafkaVersionsRequest): Request[GetCompatibleKafkaVersionsResponse] = js.native
     def listClusterOperations(params: ListClusterOperationsRequest): Request[ListClusterOperationsResponse] = js.native
     def listClusters(params: ListClustersRequest): Request[ListClustersResponse] = js.native
-    def listConfigurationRevisions(
-        params: ListConfigurationRevisionsRequest
-    ): Request[ListConfigurationRevisionsResponse] = js.native
+    def listConfigurationRevisions(params: ListConfigurationRevisionsRequest): Request[ListConfigurationRevisionsResponse] = js.native
     def listConfigurations(params: ListConfigurationsRequest): Request[ListConfigurationsResponse] = js.native
     def listKafkaVersions(params: ListKafkaVersionsRequest): Request[ListKafkaVersionsResponse] = js.native
     def listNodes(params: ListNodesRequest): Request[ListNodesResponse] = js.native
@@ -124,12 +86,8 @@ package kafka {
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateBrokerCount(params: UpdateBrokerCountRequest): Request[UpdateBrokerCountResponse] = js.native
     def updateBrokerStorage(params: UpdateBrokerStorageRequest): Request[UpdateBrokerStorageResponse] = js.native
-    def updateClusterConfiguration(
-        params: UpdateClusterConfigurationRequest
-    ): Request[UpdateClusterConfigurationResponse] = js.native
-    def updateClusterKafkaVersion(
-        params: UpdateClusterKafkaVersionRequest
-    ): Request[UpdateClusterKafkaVersionResponse] = js.native
+    def updateClusterConfiguration(params: UpdateClusterConfigurationRequest): Request[UpdateClusterConfigurationResponse] = js.native
+    def updateClusterKafkaVersion(params: UpdateClusterKafkaVersionRequest): Request[UpdateClusterKafkaVersionResponse] = js.native
     def updateMonitoring(params: UpdateMonitoringRequest): Request[UpdateMonitoringResponse] = js.native
   }
 
@@ -252,9 +210,7 @@ package kafka {
       BrokerId.foreach(__v => __obj.updateDynamic("BrokerId")(__v.asInstanceOf[js.Any]))
       ClientSubnet.foreach(__v => __obj.updateDynamic("ClientSubnet")(__v.asInstanceOf[js.Any]))
       ClientVpcIpAddress.foreach(__v => __obj.updateDynamic("ClientVpcIpAddress")(__v.asInstanceOf[js.Any]))
-      CurrentBrokerSoftwareInfo.foreach(__v =>
-        __obj.updateDynamic("CurrentBrokerSoftwareInfo")(__v.asInstanceOf[js.Any])
-      )
+      CurrentBrokerSoftwareInfo.foreach(__v => __obj.updateDynamic("CurrentBrokerSoftwareInfo")(__v.asInstanceOf[js.Any]))
       Endpoints.foreach(__v => __obj.updateDynamic("Endpoints")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BrokerNodeInfo]
     }
@@ -390,9 +346,7 @@ package kafka {
       ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
       ClusterName.foreach(__v => __obj.updateDynamic("ClusterName")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
-      CurrentBrokerSoftwareInfo.foreach(__v =>
-        __obj.updateDynamic("CurrentBrokerSoftwareInfo")(__v.asInstanceOf[js.Any])
-      )
+      CurrentBrokerSoftwareInfo.foreach(__v => __obj.updateDynamic("CurrentBrokerSoftwareInfo")(__v.asInstanceOf[js.Any]))
       CurrentVersion.foreach(__v => __obj.updateDynamic("CurrentVersion")(__v.asInstanceOf[js.Any]))
       EncryptionInfo.foreach(__v => __obj.updateDynamic("EncryptionInfo")(__v.asInstanceOf[js.Any]))
       EnhancedMonitoring.foreach(__v => __obj.updateDynamic("EnhancedMonitoring")(__v.asInstanceOf[js.Any]))
@@ -1833,9 +1787,7 @@ package kafka {
         CertificateAuthorityArnList: js.UndefOr[__listOf__string] = js.undefined
     ): Tls = {
       val __obj = js.Dynamic.literal()
-      CertificateAuthorityArnList.foreach(__v =>
-        __obj.updateDynamic("CertificateAuthorityArnList")(__v.asInstanceOf[js.Any])
-      )
+      CertificateAuthorityArnList.foreach(__v => __obj.updateDynamic("CertificateAuthorityArnList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tls]
     }
   }

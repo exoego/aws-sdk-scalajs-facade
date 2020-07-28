@@ -88,236 +88,98 @@ package object redshift {
 
   implicit final class RedshiftOps(private val service: Redshift) extends AnyVal {
 
-    @inline def acceptReservedNodeExchangeFuture(
-        params: AcceptReservedNodeExchangeInputMessage
-    ): Future[AcceptReservedNodeExchangeOutputMessage] = service.acceptReservedNodeExchange(params).promise().toFuture
-    @inline def authorizeClusterSecurityGroupIngressFuture(
-        params: AuthorizeClusterSecurityGroupIngressMessage
-    ): Future[AuthorizeClusterSecurityGroupIngressResult] =
-      service.authorizeClusterSecurityGroupIngress(params).promise().toFuture
-    @inline def authorizeSnapshotAccessFuture(
-        params: AuthorizeSnapshotAccessMessage
-    ): Future[AuthorizeSnapshotAccessResult] = service.authorizeSnapshotAccess(params).promise().toFuture
-    @inline def batchDeleteClusterSnapshotsFuture(
-        params: BatchDeleteClusterSnapshotsRequest
-    ): Future[BatchDeleteClusterSnapshotsResult] = service.batchDeleteClusterSnapshots(params).promise().toFuture
-    @inline def batchModifyClusterSnapshotsFuture(
-        params: BatchModifyClusterSnapshotsMessage
-    ): Future[BatchModifyClusterSnapshotsOutputMessage] = service.batchModifyClusterSnapshots(params).promise().toFuture
-    @inline def cancelResizeFuture(params: CancelResizeMessage): Future[ResizeProgressMessage] =
-      service.cancelResize(params).promise().toFuture
-    @inline def copyClusterSnapshotFuture(params: CopyClusterSnapshotMessage): Future[CopyClusterSnapshotResult] =
-      service.copyClusterSnapshot(params).promise().toFuture
-    @inline def createClusterFuture(params: CreateClusterMessage): Future[CreateClusterResult] =
-      service.createCluster(params).promise().toFuture
-    @inline def createClusterParameterGroupFuture(
-        params: CreateClusterParameterGroupMessage
-    ): Future[CreateClusterParameterGroupResult] = service.createClusterParameterGroup(params).promise().toFuture
-    @inline def createClusterSecurityGroupFuture(
-        params: CreateClusterSecurityGroupMessage
-    ): Future[CreateClusterSecurityGroupResult] = service.createClusterSecurityGroup(params).promise().toFuture
-    @inline def createClusterSnapshotFuture(params: CreateClusterSnapshotMessage): Future[CreateClusterSnapshotResult] =
-      service.createClusterSnapshot(params).promise().toFuture
-    @inline def createClusterSubnetGroupFuture(
-        params: CreateClusterSubnetGroupMessage
-    ): Future[CreateClusterSubnetGroupResult] = service.createClusterSubnetGroup(params).promise().toFuture
-    @inline def createEventSubscriptionFuture(
-        params: CreateEventSubscriptionMessage
-    ): Future[CreateEventSubscriptionResult] = service.createEventSubscription(params).promise().toFuture
-    @inline def createHsmClientCertificateFuture(
-        params: CreateHsmClientCertificateMessage
-    ): Future[CreateHsmClientCertificateResult] = service.createHsmClientCertificate(params).promise().toFuture
-    @inline def createHsmConfigurationFuture(
-        params: CreateHsmConfigurationMessage
-    ): Future[CreateHsmConfigurationResult] = service.createHsmConfiguration(params).promise().toFuture
-    @inline def createScheduledActionFuture(params: CreateScheduledActionMessage): Future[ScheduledAction] =
-      service.createScheduledAction(params).promise().toFuture
-    @inline def createSnapshotCopyGrantFuture(
-        params: CreateSnapshotCopyGrantMessage
-    ): Future[CreateSnapshotCopyGrantResult] = service.createSnapshotCopyGrant(params).promise().toFuture
-    @inline def createSnapshotScheduleFuture(params: CreateSnapshotScheduleMessage): Future[SnapshotSchedule] =
-      service.createSnapshotSchedule(params).promise().toFuture
-    @inline def createTagsFuture(params: CreateTagsMessage): Future[js.Object] =
-      service.createTags(params).promise().toFuture
-    @inline def createUsageLimitFuture(params: CreateUsageLimitMessage): Future[UsageLimit] =
-      service.createUsageLimit(params).promise().toFuture
-    @inline def deleteClusterFuture(params: DeleteClusterMessage): Future[DeleteClusterResult] =
-      service.deleteCluster(params).promise().toFuture
-    @inline def deleteClusterParameterGroupFuture(params: DeleteClusterParameterGroupMessage): Future[js.Object] =
-      service.deleteClusterParameterGroup(params).promise().toFuture
-    @inline def deleteClusterSecurityGroupFuture(params: DeleteClusterSecurityGroupMessage): Future[js.Object] =
-      service.deleteClusterSecurityGroup(params).promise().toFuture
-    @inline def deleteClusterSnapshotFuture(params: DeleteClusterSnapshotMessage): Future[DeleteClusterSnapshotResult] =
-      service.deleteClusterSnapshot(params).promise().toFuture
-    @inline def deleteClusterSubnetGroupFuture(params: DeleteClusterSubnetGroupMessage): Future[js.Object] =
-      service.deleteClusterSubnetGroup(params).promise().toFuture
-    @inline def deleteEventSubscriptionFuture(params: DeleteEventSubscriptionMessage): Future[js.Object] =
-      service.deleteEventSubscription(params).promise().toFuture
-    @inline def deleteHsmClientCertificateFuture(params: DeleteHsmClientCertificateMessage): Future[js.Object] =
-      service.deleteHsmClientCertificate(params).promise().toFuture
-    @inline def deleteHsmConfigurationFuture(params: DeleteHsmConfigurationMessage): Future[js.Object] =
-      service.deleteHsmConfiguration(params).promise().toFuture
-    @inline def deleteScheduledActionFuture(params: DeleteScheduledActionMessage): Future[js.Object] =
-      service.deleteScheduledAction(params).promise().toFuture
-    @inline def deleteSnapshotCopyGrantFuture(params: DeleteSnapshotCopyGrantMessage): Future[js.Object] =
-      service.deleteSnapshotCopyGrant(params).promise().toFuture
-    @inline def deleteSnapshotScheduleFuture(params: DeleteSnapshotScheduleMessage): Future[js.Object] =
-      service.deleteSnapshotSchedule(params).promise().toFuture
-    @inline def deleteTagsFuture(params: DeleteTagsMessage): Future[js.Object] =
-      service.deleteTags(params).promise().toFuture
-    @inline def deleteUsageLimitFuture(params: DeleteUsageLimitMessage): Future[js.Object] =
-      service.deleteUsageLimit(params).promise().toFuture
-    @inline def describeAccountAttributesFuture(
-        params: DescribeAccountAttributesMessage
-    ): Future[AccountAttributeList] = service.describeAccountAttributes(params).promise().toFuture
-    @inline def describeClusterDbRevisionsFuture(
-        params: DescribeClusterDbRevisionsMessage
-    ): Future[ClusterDbRevisionsMessage] = service.describeClusterDbRevisions(params).promise().toFuture
-    @inline def describeClusterParameterGroupsFuture(
-        params: DescribeClusterParameterGroupsMessage
-    ): Future[ClusterParameterGroupsMessage] = service.describeClusterParameterGroups(params).promise().toFuture
-    @inline def describeClusterParametersFuture(
-        params: DescribeClusterParametersMessage
-    ): Future[ClusterParameterGroupDetails] = service.describeClusterParameters(params).promise().toFuture
-    @inline def describeClusterSecurityGroupsFuture(
-        params: DescribeClusterSecurityGroupsMessage
-    ): Future[ClusterSecurityGroupMessage] = service.describeClusterSecurityGroups(params).promise().toFuture
-    @inline def describeClusterSnapshotsFuture(params: DescribeClusterSnapshotsMessage): Future[SnapshotMessage] =
-      service.describeClusterSnapshots(params).promise().toFuture
-    @inline def describeClusterSubnetGroupsFuture(
-        params: DescribeClusterSubnetGroupsMessage
-    ): Future[ClusterSubnetGroupMessage] = service.describeClusterSubnetGroups(params).promise().toFuture
-    @inline def describeClusterTracksFuture(params: DescribeClusterTracksMessage): Future[TrackListMessage] =
-      service.describeClusterTracks(params).promise().toFuture
-    @inline def describeClusterVersionsFuture(params: DescribeClusterVersionsMessage): Future[ClusterVersionsMessage] =
-      service.describeClusterVersions(params).promise().toFuture
-    @inline def describeClustersFuture(params: DescribeClustersMessage): Future[ClustersMessage] =
-      service.describeClusters(params).promise().toFuture
-    @inline def describeDefaultClusterParametersFuture(
-        params: DescribeDefaultClusterParametersMessage
-    ): Future[DescribeDefaultClusterParametersResult] =
-      service.describeDefaultClusterParameters(params).promise().toFuture
-    @inline def describeEventCategoriesFuture(params: DescribeEventCategoriesMessage): Future[EventCategoriesMessage] =
-      service.describeEventCategories(params).promise().toFuture
-    @inline def describeEventSubscriptionsFuture(
-        params: DescribeEventSubscriptionsMessage
-    ): Future[EventSubscriptionsMessage] = service.describeEventSubscriptions(params).promise().toFuture
-    @inline def describeEventsFuture(params: DescribeEventsMessage): Future[EventsMessage] =
-      service.describeEvents(params).promise().toFuture
-    @inline def describeHsmClientCertificatesFuture(
-        params: DescribeHsmClientCertificatesMessage
-    ): Future[HsmClientCertificateMessage] = service.describeHsmClientCertificates(params).promise().toFuture
-    @inline def describeHsmConfigurationsFuture(
-        params: DescribeHsmConfigurationsMessage
-    ): Future[HsmConfigurationMessage] = service.describeHsmConfigurations(params).promise().toFuture
-    @inline def describeLoggingStatusFuture(params: DescribeLoggingStatusMessage): Future[LoggingStatus] =
-      service.describeLoggingStatus(params).promise().toFuture
-    @inline def describeNodeConfigurationOptionsFuture(
-        params: DescribeNodeConfigurationOptionsMessage
-    ): Future[NodeConfigurationOptionsMessage] = service.describeNodeConfigurationOptions(params).promise().toFuture
-    @inline def describeOrderableClusterOptionsFuture(
-        params: DescribeOrderableClusterOptionsMessage
-    ): Future[OrderableClusterOptionsMessage] = service.describeOrderableClusterOptions(params).promise().toFuture
-    @inline def describeReservedNodeOfferingsFuture(
-        params: DescribeReservedNodeOfferingsMessage
-    ): Future[ReservedNodeOfferingsMessage] = service.describeReservedNodeOfferings(params).promise().toFuture
-    @inline def describeReservedNodesFuture(params: DescribeReservedNodesMessage): Future[ReservedNodesMessage] =
-      service.describeReservedNodes(params).promise().toFuture
-    @inline def describeResizeFuture(params: DescribeResizeMessage): Future[ResizeProgressMessage] =
-      service.describeResize(params).promise().toFuture
-    @inline def describeScheduledActionsFuture(
-        params: DescribeScheduledActionsMessage
-    ): Future[ScheduledActionsMessage] = service.describeScheduledActions(params).promise().toFuture
-    @inline def describeSnapshotCopyGrantsFuture(
-        params: DescribeSnapshotCopyGrantsMessage
-    ): Future[SnapshotCopyGrantMessage] = service.describeSnapshotCopyGrants(params).promise().toFuture
-    @inline def describeSnapshotSchedulesFuture(
-        params: DescribeSnapshotSchedulesMessage
-    ): Future[DescribeSnapshotSchedulesOutputMessage] = service.describeSnapshotSchedules(params).promise().toFuture
+    @inline def acceptReservedNodeExchangeFuture(params: AcceptReservedNodeExchangeInputMessage): Future[AcceptReservedNodeExchangeOutputMessage] = service.acceptReservedNodeExchange(params).promise().toFuture
+    @inline def authorizeClusterSecurityGroupIngressFuture(params: AuthorizeClusterSecurityGroupIngressMessage): Future[AuthorizeClusterSecurityGroupIngressResult] = service.authorizeClusterSecurityGroupIngress(params).promise().toFuture
+    @inline def authorizeSnapshotAccessFuture(params: AuthorizeSnapshotAccessMessage): Future[AuthorizeSnapshotAccessResult] = service.authorizeSnapshotAccess(params).promise().toFuture
+    @inline def batchDeleteClusterSnapshotsFuture(params: BatchDeleteClusterSnapshotsRequest): Future[BatchDeleteClusterSnapshotsResult] = service.batchDeleteClusterSnapshots(params).promise().toFuture
+    @inline def batchModifyClusterSnapshotsFuture(params: BatchModifyClusterSnapshotsMessage): Future[BatchModifyClusterSnapshotsOutputMessage] = service.batchModifyClusterSnapshots(params).promise().toFuture
+    @inline def cancelResizeFuture(params: CancelResizeMessage): Future[ResizeProgressMessage] = service.cancelResize(params).promise().toFuture
+    @inline def copyClusterSnapshotFuture(params: CopyClusterSnapshotMessage): Future[CopyClusterSnapshotResult] = service.copyClusterSnapshot(params).promise().toFuture
+    @inline def createClusterFuture(params: CreateClusterMessage): Future[CreateClusterResult] = service.createCluster(params).promise().toFuture
+    @inline def createClusterParameterGroupFuture(params: CreateClusterParameterGroupMessage): Future[CreateClusterParameterGroupResult] = service.createClusterParameterGroup(params).promise().toFuture
+    @inline def createClusterSecurityGroupFuture(params: CreateClusterSecurityGroupMessage): Future[CreateClusterSecurityGroupResult] = service.createClusterSecurityGroup(params).promise().toFuture
+    @inline def createClusterSnapshotFuture(params: CreateClusterSnapshotMessage): Future[CreateClusterSnapshotResult] = service.createClusterSnapshot(params).promise().toFuture
+    @inline def createClusterSubnetGroupFuture(params: CreateClusterSubnetGroupMessage): Future[CreateClusterSubnetGroupResult] = service.createClusterSubnetGroup(params).promise().toFuture
+    @inline def createEventSubscriptionFuture(params: CreateEventSubscriptionMessage): Future[CreateEventSubscriptionResult] = service.createEventSubscription(params).promise().toFuture
+    @inline def createHsmClientCertificateFuture(params: CreateHsmClientCertificateMessage): Future[CreateHsmClientCertificateResult] = service.createHsmClientCertificate(params).promise().toFuture
+    @inline def createHsmConfigurationFuture(params: CreateHsmConfigurationMessage): Future[CreateHsmConfigurationResult] = service.createHsmConfiguration(params).promise().toFuture
+    @inline def createScheduledActionFuture(params: CreateScheduledActionMessage): Future[ScheduledAction] = service.createScheduledAction(params).promise().toFuture
+    @inline def createSnapshotCopyGrantFuture(params: CreateSnapshotCopyGrantMessage): Future[CreateSnapshotCopyGrantResult] = service.createSnapshotCopyGrant(params).promise().toFuture
+    @inline def createSnapshotScheduleFuture(params: CreateSnapshotScheduleMessage): Future[SnapshotSchedule] = service.createSnapshotSchedule(params).promise().toFuture
+    @inline def createTagsFuture(params: CreateTagsMessage): Future[js.Object] = service.createTags(params).promise().toFuture
+    @inline def createUsageLimitFuture(params: CreateUsageLimitMessage): Future[UsageLimit] = service.createUsageLimit(params).promise().toFuture
+    @inline def deleteClusterFuture(params: DeleteClusterMessage): Future[DeleteClusterResult] = service.deleteCluster(params).promise().toFuture
+    @inline def deleteClusterParameterGroupFuture(params: DeleteClusterParameterGroupMessage): Future[js.Object] = service.deleteClusterParameterGroup(params).promise().toFuture
+    @inline def deleteClusterSecurityGroupFuture(params: DeleteClusterSecurityGroupMessage): Future[js.Object] = service.deleteClusterSecurityGroup(params).promise().toFuture
+    @inline def deleteClusterSnapshotFuture(params: DeleteClusterSnapshotMessage): Future[DeleteClusterSnapshotResult] = service.deleteClusterSnapshot(params).promise().toFuture
+    @inline def deleteClusterSubnetGroupFuture(params: DeleteClusterSubnetGroupMessage): Future[js.Object] = service.deleteClusterSubnetGroup(params).promise().toFuture
+    @inline def deleteEventSubscriptionFuture(params: DeleteEventSubscriptionMessage): Future[js.Object] = service.deleteEventSubscription(params).promise().toFuture
+    @inline def deleteHsmClientCertificateFuture(params: DeleteHsmClientCertificateMessage): Future[js.Object] = service.deleteHsmClientCertificate(params).promise().toFuture
+    @inline def deleteHsmConfigurationFuture(params: DeleteHsmConfigurationMessage): Future[js.Object] = service.deleteHsmConfiguration(params).promise().toFuture
+    @inline def deleteScheduledActionFuture(params: DeleteScheduledActionMessage): Future[js.Object] = service.deleteScheduledAction(params).promise().toFuture
+    @inline def deleteSnapshotCopyGrantFuture(params: DeleteSnapshotCopyGrantMessage): Future[js.Object] = service.deleteSnapshotCopyGrant(params).promise().toFuture
+    @inline def deleteSnapshotScheduleFuture(params: DeleteSnapshotScheduleMessage): Future[js.Object] = service.deleteSnapshotSchedule(params).promise().toFuture
+    @inline def deleteTagsFuture(params: DeleteTagsMessage): Future[js.Object] = service.deleteTags(params).promise().toFuture
+    @inline def deleteUsageLimitFuture(params: DeleteUsageLimitMessage): Future[js.Object] = service.deleteUsageLimit(params).promise().toFuture
+    @inline def describeAccountAttributesFuture(params: DescribeAccountAttributesMessage): Future[AccountAttributeList] = service.describeAccountAttributes(params).promise().toFuture
+    @inline def describeClusterDbRevisionsFuture(params: DescribeClusterDbRevisionsMessage): Future[ClusterDbRevisionsMessage] = service.describeClusterDbRevisions(params).promise().toFuture
+    @inline def describeClusterParameterGroupsFuture(params: DescribeClusterParameterGroupsMessage): Future[ClusterParameterGroupsMessage] = service.describeClusterParameterGroups(params).promise().toFuture
+    @inline def describeClusterParametersFuture(params: DescribeClusterParametersMessage): Future[ClusterParameterGroupDetails] = service.describeClusterParameters(params).promise().toFuture
+    @inline def describeClusterSecurityGroupsFuture(params: DescribeClusterSecurityGroupsMessage): Future[ClusterSecurityGroupMessage] = service.describeClusterSecurityGroups(params).promise().toFuture
+    @inline def describeClusterSnapshotsFuture(params: DescribeClusterSnapshotsMessage): Future[SnapshotMessage] = service.describeClusterSnapshots(params).promise().toFuture
+    @inline def describeClusterSubnetGroupsFuture(params: DescribeClusterSubnetGroupsMessage): Future[ClusterSubnetGroupMessage] = service.describeClusterSubnetGroups(params).promise().toFuture
+    @inline def describeClusterTracksFuture(params: DescribeClusterTracksMessage): Future[TrackListMessage] = service.describeClusterTracks(params).promise().toFuture
+    @inline def describeClusterVersionsFuture(params: DescribeClusterVersionsMessage): Future[ClusterVersionsMessage] = service.describeClusterVersions(params).promise().toFuture
+    @inline def describeClustersFuture(params: DescribeClustersMessage): Future[ClustersMessage] = service.describeClusters(params).promise().toFuture
+    @inline def describeDefaultClusterParametersFuture(params: DescribeDefaultClusterParametersMessage): Future[DescribeDefaultClusterParametersResult] = service.describeDefaultClusterParameters(params).promise().toFuture
+    @inline def describeEventCategoriesFuture(params: DescribeEventCategoriesMessage): Future[EventCategoriesMessage] = service.describeEventCategories(params).promise().toFuture
+    @inline def describeEventSubscriptionsFuture(params: DescribeEventSubscriptionsMessage): Future[EventSubscriptionsMessage] = service.describeEventSubscriptions(params).promise().toFuture
+    @inline def describeEventsFuture(params: DescribeEventsMessage): Future[EventsMessage] = service.describeEvents(params).promise().toFuture
+    @inline def describeHsmClientCertificatesFuture(params: DescribeHsmClientCertificatesMessage): Future[HsmClientCertificateMessage] = service.describeHsmClientCertificates(params).promise().toFuture
+    @inline def describeHsmConfigurationsFuture(params: DescribeHsmConfigurationsMessage): Future[HsmConfigurationMessage] = service.describeHsmConfigurations(params).promise().toFuture
+    @inline def describeLoggingStatusFuture(params: DescribeLoggingStatusMessage): Future[LoggingStatus] = service.describeLoggingStatus(params).promise().toFuture
+    @inline def describeNodeConfigurationOptionsFuture(params: DescribeNodeConfigurationOptionsMessage): Future[NodeConfigurationOptionsMessage] = service.describeNodeConfigurationOptions(params).promise().toFuture
+    @inline def describeOrderableClusterOptionsFuture(params: DescribeOrderableClusterOptionsMessage): Future[OrderableClusterOptionsMessage] = service.describeOrderableClusterOptions(params).promise().toFuture
+    @inline def describeReservedNodeOfferingsFuture(params: DescribeReservedNodeOfferingsMessage): Future[ReservedNodeOfferingsMessage] = service.describeReservedNodeOfferings(params).promise().toFuture
+    @inline def describeReservedNodesFuture(params: DescribeReservedNodesMessage): Future[ReservedNodesMessage] = service.describeReservedNodes(params).promise().toFuture
+    @inline def describeResizeFuture(params: DescribeResizeMessage): Future[ResizeProgressMessage] = service.describeResize(params).promise().toFuture
+    @inline def describeScheduledActionsFuture(params: DescribeScheduledActionsMessage): Future[ScheduledActionsMessage] = service.describeScheduledActions(params).promise().toFuture
+    @inline def describeSnapshotCopyGrantsFuture(params: DescribeSnapshotCopyGrantsMessage): Future[SnapshotCopyGrantMessage] = service.describeSnapshotCopyGrants(params).promise().toFuture
+    @inline def describeSnapshotSchedulesFuture(params: DescribeSnapshotSchedulesMessage): Future[DescribeSnapshotSchedulesOutputMessage] = service.describeSnapshotSchedules(params).promise().toFuture
     @inline def describeStorageFuture(): Future[CustomerStorageMessage] = service.describeStorage().promise().toFuture
-    @inline def describeTableRestoreStatusFuture(
-        params: DescribeTableRestoreStatusMessage
-    ): Future[TableRestoreStatusMessage] = service.describeTableRestoreStatus(params).promise().toFuture
-    @inline def describeTagsFuture(params: DescribeTagsMessage): Future[TaggedResourceListMessage] =
-      service.describeTags(params).promise().toFuture
-    @inline def describeUsageLimitsFuture(params: DescribeUsageLimitsMessage): Future[UsageLimitList] =
-      service.describeUsageLimits(params).promise().toFuture
-    @inline def disableLoggingFuture(params: DisableLoggingMessage): Future[LoggingStatus] =
-      service.disableLogging(params).promise().toFuture
-    @inline def disableSnapshotCopyFuture(params: DisableSnapshotCopyMessage): Future[DisableSnapshotCopyResult] =
-      service.disableSnapshotCopy(params).promise().toFuture
-    @inline def enableLoggingFuture(params: EnableLoggingMessage): Future[LoggingStatus] =
-      service.enableLogging(params).promise().toFuture
-    @inline def enableSnapshotCopyFuture(params: EnableSnapshotCopyMessage): Future[EnableSnapshotCopyResult] =
-      service.enableSnapshotCopy(params).promise().toFuture
-    @inline def getClusterCredentialsFuture(params: GetClusterCredentialsMessage): Future[ClusterCredentials] =
-      service.getClusterCredentials(params).promise().toFuture
-    @inline def getReservedNodeExchangeOfferingsFuture(
-        params: GetReservedNodeExchangeOfferingsInputMessage
-    ): Future[GetReservedNodeExchangeOfferingsOutputMessage] =
-      service.getReservedNodeExchangeOfferings(params).promise().toFuture
-    @inline def modifyClusterDbRevisionFuture(
-        params: ModifyClusterDbRevisionMessage
-    ): Future[ModifyClusterDbRevisionResult] = service.modifyClusterDbRevision(params).promise().toFuture
-    @inline def modifyClusterFuture(params: ModifyClusterMessage): Future[ModifyClusterResult] =
-      service.modifyCluster(params).promise().toFuture
-    @inline def modifyClusterIamRolesFuture(params: ModifyClusterIamRolesMessage): Future[ModifyClusterIamRolesResult] =
-      service.modifyClusterIamRoles(params).promise().toFuture
-    @inline def modifyClusterMaintenanceFuture(
-        params: ModifyClusterMaintenanceMessage
-    ): Future[ModifyClusterMaintenanceResult] = service.modifyClusterMaintenance(params).promise().toFuture
-    @inline def modifyClusterParameterGroupFuture(
-        params: ModifyClusterParameterGroupMessage
-    ): Future[ClusterParameterGroupNameMessage] = service.modifyClusterParameterGroup(params).promise().toFuture
-    @inline def modifyClusterSnapshotFuture(params: ModifyClusterSnapshotMessage): Future[ModifyClusterSnapshotResult] =
-      service.modifyClusterSnapshot(params).promise().toFuture
-    @inline def modifyClusterSnapshotScheduleFuture(params: ModifyClusterSnapshotScheduleMessage): Future[js.Object] =
-      service.modifyClusterSnapshotSchedule(params).promise().toFuture
-    @inline def modifyClusterSubnetGroupFuture(
-        params: ModifyClusterSubnetGroupMessage
-    ): Future[ModifyClusterSubnetGroupResult] = service.modifyClusterSubnetGroup(params).promise().toFuture
-    @inline def modifyEventSubscriptionFuture(
-        params: ModifyEventSubscriptionMessage
-    ): Future[ModifyEventSubscriptionResult] = service.modifyEventSubscription(params).promise().toFuture
-    @inline def modifyScheduledActionFuture(params: ModifyScheduledActionMessage): Future[ScheduledAction] =
-      service.modifyScheduledAction(params).promise().toFuture
-    @inline def modifySnapshotCopyRetentionPeriodFuture(
-        params: ModifySnapshotCopyRetentionPeriodMessage
-    ): Future[ModifySnapshotCopyRetentionPeriodResult] =
-      service.modifySnapshotCopyRetentionPeriod(params).promise().toFuture
-    @inline def modifySnapshotScheduleFuture(params: ModifySnapshotScheduleMessage): Future[SnapshotSchedule] =
-      service.modifySnapshotSchedule(params).promise().toFuture
-    @inline def modifyUsageLimitFuture(params: ModifyUsageLimitMessage): Future[UsageLimit] =
-      service.modifyUsageLimit(params).promise().toFuture
-    @inline def pauseClusterFuture(params: PauseClusterMessage): Future[PauseClusterResult] =
-      service.pauseCluster(params).promise().toFuture
-    @inline def purchaseReservedNodeOfferingFuture(
-        params: PurchaseReservedNodeOfferingMessage
-    ): Future[PurchaseReservedNodeOfferingResult] = service.purchaseReservedNodeOffering(params).promise().toFuture
-    @inline def rebootClusterFuture(params: RebootClusterMessage): Future[RebootClusterResult] =
-      service.rebootCluster(params).promise().toFuture
-    @inline def resetClusterParameterGroupFuture(
-        params: ResetClusterParameterGroupMessage
-    ): Future[ClusterParameterGroupNameMessage] = service.resetClusterParameterGroup(params).promise().toFuture
-    @inline def resizeClusterFuture(params: ResizeClusterMessage): Future[ResizeClusterResult] =
-      service.resizeCluster(params).promise().toFuture
-    @inline def restoreFromClusterSnapshotFuture(
-        params: RestoreFromClusterSnapshotMessage
-    ): Future[RestoreFromClusterSnapshotResult] = service.restoreFromClusterSnapshot(params).promise().toFuture
-    @inline def restoreTableFromClusterSnapshotFuture(
-        params: RestoreTableFromClusterSnapshotMessage
-    ): Future[RestoreTableFromClusterSnapshotResult] =
-      service.restoreTableFromClusterSnapshot(params).promise().toFuture
-    @inline def resumeClusterFuture(params: ResumeClusterMessage): Future[ResumeClusterResult] =
-      service.resumeCluster(params).promise().toFuture
-    @inline def revokeClusterSecurityGroupIngressFuture(
-        params: RevokeClusterSecurityGroupIngressMessage
-    ): Future[RevokeClusterSecurityGroupIngressResult] =
-      service.revokeClusterSecurityGroupIngress(params).promise().toFuture
-    @inline def revokeSnapshotAccessFuture(params: RevokeSnapshotAccessMessage): Future[RevokeSnapshotAccessResult] =
-      service.revokeSnapshotAccess(params).promise().toFuture
-    @inline def rotateEncryptionKeyFuture(params: RotateEncryptionKeyMessage): Future[RotateEncryptionKeyResult] =
-      service.rotateEncryptionKey(params).promise().toFuture
+    @inline def describeTableRestoreStatusFuture(params: DescribeTableRestoreStatusMessage): Future[TableRestoreStatusMessage] = service.describeTableRestoreStatus(params).promise().toFuture
+    @inline def describeTagsFuture(params: DescribeTagsMessage): Future[TaggedResourceListMessage] = service.describeTags(params).promise().toFuture
+    @inline def describeUsageLimitsFuture(params: DescribeUsageLimitsMessage): Future[UsageLimitList] = service.describeUsageLimits(params).promise().toFuture
+    @inline def disableLoggingFuture(params: DisableLoggingMessage): Future[LoggingStatus] = service.disableLogging(params).promise().toFuture
+    @inline def disableSnapshotCopyFuture(params: DisableSnapshotCopyMessage): Future[DisableSnapshotCopyResult] = service.disableSnapshotCopy(params).promise().toFuture
+    @inline def enableLoggingFuture(params: EnableLoggingMessage): Future[LoggingStatus] = service.enableLogging(params).promise().toFuture
+    @inline def enableSnapshotCopyFuture(params: EnableSnapshotCopyMessage): Future[EnableSnapshotCopyResult] = service.enableSnapshotCopy(params).promise().toFuture
+    @inline def getClusterCredentialsFuture(params: GetClusterCredentialsMessage): Future[ClusterCredentials] = service.getClusterCredentials(params).promise().toFuture
+    @inline def getReservedNodeExchangeOfferingsFuture(params: GetReservedNodeExchangeOfferingsInputMessage): Future[GetReservedNodeExchangeOfferingsOutputMessage] = service.getReservedNodeExchangeOfferings(params).promise().toFuture
+    @inline def modifyClusterDbRevisionFuture(params: ModifyClusterDbRevisionMessage): Future[ModifyClusterDbRevisionResult] = service.modifyClusterDbRevision(params).promise().toFuture
+    @inline def modifyClusterFuture(params: ModifyClusterMessage): Future[ModifyClusterResult] = service.modifyCluster(params).promise().toFuture
+    @inline def modifyClusterIamRolesFuture(params: ModifyClusterIamRolesMessage): Future[ModifyClusterIamRolesResult] = service.modifyClusterIamRoles(params).promise().toFuture
+    @inline def modifyClusterMaintenanceFuture(params: ModifyClusterMaintenanceMessage): Future[ModifyClusterMaintenanceResult] = service.modifyClusterMaintenance(params).promise().toFuture
+    @inline def modifyClusterParameterGroupFuture(params: ModifyClusterParameterGroupMessage): Future[ClusterParameterGroupNameMessage] = service.modifyClusterParameterGroup(params).promise().toFuture
+    @inline def modifyClusterSnapshotFuture(params: ModifyClusterSnapshotMessage): Future[ModifyClusterSnapshotResult] = service.modifyClusterSnapshot(params).promise().toFuture
+    @inline def modifyClusterSnapshotScheduleFuture(params: ModifyClusterSnapshotScheduleMessage): Future[js.Object] = service.modifyClusterSnapshotSchedule(params).promise().toFuture
+    @inline def modifyClusterSubnetGroupFuture(params: ModifyClusterSubnetGroupMessage): Future[ModifyClusterSubnetGroupResult] = service.modifyClusterSubnetGroup(params).promise().toFuture
+    @inline def modifyEventSubscriptionFuture(params: ModifyEventSubscriptionMessage): Future[ModifyEventSubscriptionResult] = service.modifyEventSubscription(params).promise().toFuture
+    @inline def modifyScheduledActionFuture(params: ModifyScheduledActionMessage): Future[ScheduledAction] = service.modifyScheduledAction(params).promise().toFuture
+    @inline def modifySnapshotCopyRetentionPeriodFuture(params: ModifySnapshotCopyRetentionPeriodMessage): Future[ModifySnapshotCopyRetentionPeriodResult] = service.modifySnapshotCopyRetentionPeriod(params).promise().toFuture
+    @inline def modifySnapshotScheduleFuture(params: ModifySnapshotScheduleMessage): Future[SnapshotSchedule] = service.modifySnapshotSchedule(params).promise().toFuture
+    @inline def modifyUsageLimitFuture(params: ModifyUsageLimitMessage): Future[UsageLimit] = service.modifyUsageLimit(params).promise().toFuture
+    @inline def pauseClusterFuture(params: PauseClusterMessage): Future[PauseClusterResult] = service.pauseCluster(params).promise().toFuture
+    @inline def purchaseReservedNodeOfferingFuture(params: PurchaseReservedNodeOfferingMessage): Future[PurchaseReservedNodeOfferingResult] = service.purchaseReservedNodeOffering(params).promise().toFuture
+    @inline def rebootClusterFuture(params: RebootClusterMessage): Future[RebootClusterResult] = service.rebootCluster(params).promise().toFuture
+    @inline def resetClusterParameterGroupFuture(params: ResetClusterParameterGroupMessage): Future[ClusterParameterGroupNameMessage] = service.resetClusterParameterGroup(params).promise().toFuture
+    @inline def resizeClusterFuture(params: ResizeClusterMessage): Future[ResizeClusterResult] = service.resizeCluster(params).promise().toFuture
+    @inline def restoreFromClusterSnapshotFuture(params: RestoreFromClusterSnapshotMessage): Future[RestoreFromClusterSnapshotResult] = service.restoreFromClusterSnapshot(params).promise().toFuture
+    @inline def restoreTableFromClusterSnapshotFuture(params: RestoreTableFromClusterSnapshotMessage): Future[RestoreTableFromClusterSnapshotResult] = service.restoreTableFromClusterSnapshot(params).promise().toFuture
+    @inline def resumeClusterFuture(params: ResumeClusterMessage): Future[ResumeClusterResult] = service.resumeCluster(params).promise().toFuture
+    @inline def revokeClusterSecurityGroupIngressFuture(params: RevokeClusterSecurityGroupIngressMessage): Future[RevokeClusterSecurityGroupIngressResult] = service.revokeClusterSecurityGroupIngress(params).promise().toFuture
+    @inline def revokeSnapshotAccessFuture(params: RevokeSnapshotAccessMessage): Future[RevokeSnapshotAccessResult] = service.revokeSnapshotAccess(params).promise().toFuture
+    @inline def rotateEncryptionKeyFuture(params: RotateEncryptionKeyMessage): Future[RotateEncryptionKeyResult] = service.rotateEncryptionKey(params).promise().toFuture
   }
 }
 
@@ -327,41 +189,23 @@ package redshift {
   class Redshift() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def acceptReservedNodeExchange(
-        params: AcceptReservedNodeExchangeInputMessage
-    ): Request[AcceptReservedNodeExchangeOutputMessage] = js.native
-    def authorizeClusterSecurityGroupIngress(
-        params: AuthorizeClusterSecurityGroupIngressMessage
-    ): Request[AuthorizeClusterSecurityGroupIngressResult] = js.native
-    def authorizeSnapshotAccess(params: AuthorizeSnapshotAccessMessage): Request[AuthorizeSnapshotAccessResult] =
-      js.native
-    def batchDeleteClusterSnapshots(
-        params: BatchDeleteClusterSnapshotsRequest
-    ): Request[BatchDeleteClusterSnapshotsResult] = js.native
-    def batchModifyClusterSnapshots(
-        params: BatchModifyClusterSnapshotsMessage
-    ): Request[BatchModifyClusterSnapshotsOutputMessage] = js.native
+    def acceptReservedNodeExchange(params: AcceptReservedNodeExchangeInputMessage): Request[AcceptReservedNodeExchangeOutputMessage] = js.native
+    def authorizeClusterSecurityGroupIngress(params: AuthorizeClusterSecurityGroupIngressMessage): Request[AuthorizeClusterSecurityGroupIngressResult] = js.native
+    def authorizeSnapshotAccess(params: AuthorizeSnapshotAccessMessage): Request[AuthorizeSnapshotAccessResult] = js.native
+    def batchDeleteClusterSnapshots(params: BatchDeleteClusterSnapshotsRequest): Request[BatchDeleteClusterSnapshotsResult] = js.native
+    def batchModifyClusterSnapshots(params: BatchModifyClusterSnapshotsMessage): Request[BatchModifyClusterSnapshotsOutputMessage] = js.native
     def cancelResize(params: CancelResizeMessage): Request[ResizeProgressMessage] = js.native
     def copyClusterSnapshot(params: CopyClusterSnapshotMessage): Request[CopyClusterSnapshotResult] = js.native
     def createCluster(params: CreateClusterMessage): Request[CreateClusterResult] = js.native
-    def createClusterParameterGroup(
-        params: CreateClusterParameterGroupMessage
-    ): Request[CreateClusterParameterGroupResult] = js.native
-    def createClusterSecurityGroup(
-        params: CreateClusterSecurityGroupMessage
-    ): Request[CreateClusterSecurityGroupResult] = js.native
+    def createClusterParameterGroup(params: CreateClusterParameterGroupMessage): Request[CreateClusterParameterGroupResult] = js.native
+    def createClusterSecurityGroup(params: CreateClusterSecurityGroupMessage): Request[CreateClusterSecurityGroupResult] = js.native
     def createClusterSnapshot(params: CreateClusterSnapshotMessage): Request[CreateClusterSnapshotResult] = js.native
-    def createClusterSubnetGroup(params: CreateClusterSubnetGroupMessage): Request[CreateClusterSubnetGroupResult] =
-      js.native
-    def createEventSubscription(params: CreateEventSubscriptionMessage): Request[CreateEventSubscriptionResult] =
-      js.native
-    def createHsmClientCertificate(
-        params: CreateHsmClientCertificateMessage
-    ): Request[CreateHsmClientCertificateResult] = js.native
+    def createClusterSubnetGroup(params: CreateClusterSubnetGroupMessage): Request[CreateClusterSubnetGroupResult] = js.native
+    def createEventSubscription(params: CreateEventSubscriptionMessage): Request[CreateEventSubscriptionResult] = js.native
+    def createHsmClientCertificate(params: CreateHsmClientCertificateMessage): Request[CreateHsmClientCertificateResult] = js.native
     def createHsmConfiguration(params: CreateHsmConfigurationMessage): Request[CreateHsmConfigurationResult] = js.native
     def createScheduledAction(params: CreateScheduledActionMessage): Request[ScheduledAction] = js.native
-    def createSnapshotCopyGrant(params: CreateSnapshotCopyGrantMessage): Request[CreateSnapshotCopyGrantResult] =
-      js.native
+    def createSnapshotCopyGrant(params: CreateSnapshotCopyGrantMessage): Request[CreateSnapshotCopyGrantResult] = js.native
     def createSnapshotSchedule(params: CreateSnapshotScheduleMessage): Request[SnapshotSchedule] = js.native
     def createTags(params: CreateTagsMessage): Request[js.Object] = js.native
     def createUsageLimit(params: CreateUsageLimitMessage): Request[UsageLimit] = js.native
@@ -379,55 +223,32 @@ package redshift {
     def deleteTags(params: DeleteTagsMessage): Request[js.Object] = js.native
     def deleteUsageLimit(params: DeleteUsageLimitMessage): Request[js.Object] = js.native
     def describeAccountAttributes(params: DescribeAccountAttributesMessage): Request[AccountAttributeList] = js.native
-    def describeClusterDbRevisions(params: DescribeClusterDbRevisionsMessage): Request[ClusterDbRevisionsMessage] =
-      js.native
-    def describeClusterParameterGroups(
-        params: DescribeClusterParameterGroupsMessage
-    ): Request[ClusterParameterGroupsMessage] = js.native
-    def describeClusterParameters(params: DescribeClusterParametersMessage): Request[ClusterParameterGroupDetails] =
-      js.native
-    def describeClusterSecurityGroups(
-        params: DescribeClusterSecurityGroupsMessage
-    ): Request[ClusterSecurityGroupMessage] = js.native
+    def describeClusterDbRevisions(params: DescribeClusterDbRevisionsMessage): Request[ClusterDbRevisionsMessage] = js.native
+    def describeClusterParameterGroups(params: DescribeClusterParameterGroupsMessage): Request[ClusterParameterGroupsMessage] = js.native
+    def describeClusterParameters(params: DescribeClusterParametersMessage): Request[ClusterParameterGroupDetails] = js.native
+    def describeClusterSecurityGroups(params: DescribeClusterSecurityGroupsMessage): Request[ClusterSecurityGroupMessage] = js.native
     def describeClusterSnapshots(params: DescribeClusterSnapshotsMessage): Request[SnapshotMessage] = js.native
-    def describeClusterSubnetGroups(params: DescribeClusterSubnetGroupsMessage): Request[ClusterSubnetGroupMessage] =
-      js.native
+    def describeClusterSubnetGroups(params: DescribeClusterSubnetGroupsMessage): Request[ClusterSubnetGroupMessage] = js.native
     def describeClusterTracks(params: DescribeClusterTracksMessage): Request[TrackListMessage] = js.native
     def describeClusterVersions(params: DescribeClusterVersionsMessage): Request[ClusterVersionsMessage] = js.native
     def describeClusters(params: DescribeClustersMessage): Request[ClustersMessage] = js.native
-    def describeDefaultClusterParameters(
-        params: DescribeDefaultClusterParametersMessage
-    ): Request[DescribeDefaultClusterParametersResult] = js.native
+    def describeDefaultClusterParameters(params: DescribeDefaultClusterParametersMessage): Request[DescribeDefaultClusterParametersResult] = js.native
     def describeEventCategories(params: DescribeEventCategoriesMessage): Request[EventCategoriesMessage] = js.native
-    def describeEventSubscriptions(params: DescribeEventSubscriptionsMessage): Request[EventSubscriptionsMessage] =
-      js.native
+    def describeEventSubscriptions(params: DescribeEventSubscriptionsMessage): Request[EventSubscriptionsMessage] = js.native
     def describeEvents(params: DescribeEventsMessage): Request[EventsMessage] = js.native
-    def describeHsmClientCertificates(
-        params: DescribeHsmClientCertificatesMessage
-    ): Request[HsmClientCertificateMessage] = js.native
-    def describeHsmConfigurations(params: DescribeHsmConfigurationsMessage): Request[HsmConfigurationMessage] =
-      js.native
+    def describeHsmClientCertificates(params: DescribeHsmClientCertificatesMessage): Request[HsmClientCertificateMessage] = js.native
+    def describeHsmConfigurations(params: DescribeHsmConfigurationsMessage): Request[HsmConfigurationMessage] = js.native
     def describeLoggingStatus(params: DescribeLoggingStatusMessage): Request[LoggingStatus] = js.native
-    def describeNodeConfigurationOptions(
-        params: DescribeNodeConfigurationOptionsMessage
-    ): Request[NodeConfigurationOptionsMessage] = js.native
-    def describeOrderableClusterOptions(
-        params: DescribeOrderableClusterOptionsMessage
-    ): Request[OrderableClusterOptionsMessage] = js.native
-    def describeReservedNodeOfferings(
-        params: DescribeReservedNodeOfferingsMessage
-    ): Request[ReservedNodeOfferingsMessage] = js.native
+    def describeNodeConfigurationOptions(params: DescribeNodeConfigurationOptionsMessage): Request[NodeConfigurationOptionsMessage] = js.native
+    def describeOrderableClusterOptions(params: DescribeOrderableClusterOptionsMessage): Request[OrderableClusterOptionsMessage] = js.native
+    def describeReservedNodeOfferings(params: DescribeReservedNodeOfferingsMessage): Request[ReservedNodeOfferingsMessage] = js.native
     def describeReservedNodes(params: DescribeReservedNodesMessage): Request[ReservedNodesMessage] = js.native
     def describeResize(params: DescribeResizeMessage): Request[ResizeProgressMessage] = js.native
     def describeScheduledActions(params: DescribeScheduledActionsMessage): Request[ScheduledActionsMessage] = js.native
-    def describeSnapshotCopyGrants(params: DescribeSnapshotCopyGrantsMessage): Request[SnapshotCopyGrantMessage] =
-      js.native
-    def describeSnapshotSchedules(
-        params: DescribeSnapshotSchedulesMessage
-    ): Request[DescribeSnapshotSchedulesOutputMessage] = js.native
+    def describeSnapshotCopyGrants(params: DescribeSnapshotCopyGrantsMessage): Request[SnapshotCopyGrantMessage] = js.native
+    def describeSnapshotSchedules(params: DescribeSnapshotSchedulesMessage): Request[DescribeSnapshotSchedulesOutputMessage] = js.native
     def describeStorage(): Request[CustomerStorageMessage] = js.native
-    def describeTableRestoreStatus(params: DescribeTableRestoreStatusMessage): Request[TableRestoreStatusMessage] =
-      js.native
+    def describeTableRestoreStatus(params: DescribeTableRestoreStatusMessage): Request[TableRestoreStatusMessage] = js.native
     def describeTags(params: DescribeTagsMessage): Request[TaggedResourceListMessage] = js.native
     def describeUsageLimits(params: DescribeUsageLimitsMessage): Request[UsageLimitList] = js.native
     def disableLogging(params: DisableLoggingMessage): Request[LoggingStatus] = js.native
@@ -435,49 +256,29 @@ package redshift {
     def enableLogging(params: EnableLoggingMessage): Request[LoggingStatus] = js.native
     def enableSnapshotCopy(params: EnableSnapshotCopyMessage): Request[EnableSnapshotCopyResult] = js.native
     def getClusterCredentials(params: GetClusterCredentialsMessage): Request[ClusterCredentials] = js.native
-    def getReservedNodeExchangeOfferings(
-        params: GetReservedNodeExchangeOfferingsInputMessage
-    ): Request[GetReservedNodeExchangeOfferingsOutputMessage] = js.native
+    def getReservedNodeExchangeOfferings(params: GetReservedNodeExchangeOfferingsInputMessage): Request[GetReservedNodeExchangeOfferingsOutputMessage] = js.native
     def modifyCluster(params: ModifyClusterMessage): Request[ModifyClusterResult] = js.native
-    def modifyClusterDbRevision(params: ModifyClusterDbRevisionMessage): Request[ModifyClusterDbRevisionResult] =
-      js.native
+    def modifyClusterDbRevision(params: ModifyClusterDbRevisionMessage): Request[ModifyClusterDbRevisionResult] = js.native
     def modifyClusterIamRoles(params: ModifyClusterIamRolesMessage): Request[ModifyClusterIamRolesResult] = js.native
-    def modifyClusterMaintenance(params: ModifyClusterMaintenanceMessage): Request[ModifyClusterMaintenanceResult] =
-      js.native
-    def modifyClusterParameterGroup(
-        params: ModifyClusterParameterGroupMessage
-    ): Request[ClusterParameterGroupNameMessage] = js.native
+    def modifyClusterMaintenance(params: ModifyClusterMaintenanceMessage): Request[ModifyClusterMaintenanceResult] = js.native
+    def modifyClusterParameterGroup(params: ModifyClusterParameterGroupMessage): Request[ClusterParameterGroupNameMessage] = js.native
     def modifyClusterSnapshot(params: ModifyClusterSnapshotMessage): Request[ModifyClusterSnapshotResult] = js.native
     def modifyClusterSnapshotSchedule(params: ModifyClusterSnapshotScheduleMessage): Request[js.Object] = js.native
-    def modifyClusterSubnetGroup(params: ModifyClusterSubnetGroupMessage): Request[ModifyClusterSubnetGroupResult] =
-      js.native
-    def modifyEventSubscription(params: ModifyEventSubscriptionMessage): Request[ModifyEventSubscriptionResult] =
-      js.native
+    def modifyClusterSubnetGroup(params: ModifyClusterSubnetGroupMessage): Request[ModifyClusterSubnetGroupResult] = js.native
+    def modifyEventSubscription(params: ModifyEventSubscriptionMessage): Request[ModifyEventSubscriptionResult] = js.native
     def modifyScheduledAction(params: ModifyScheduledActionMessage): Request[ScheduledAction] = js.native
-    def modifySnapshotCopyRetentionPeriod(
-        params: ModifySnapshotCopyRetentionPeriodMessage
-    ): Request[ModifySnapshotCopyRetentionPeriodResult] = js.native
+    def modifySnapshotCopyRetentionPeriod(params: ModifySnapshotCopyRetentionPeriodMessage): Request[ModifySnapshotCopyRetentionPeriodResult] = js.native
     def modifySnapshotSchedule(params: ModifySnapshotScheduleMessage): Request[SnapshotSchedule] = js.native
     def modifyUsageLimit(params: ModifyUsageLimitMessage): Request[UsageLimit] = js.native
     def pauseCluster(params: PauseClusterMessage): Request[PauseClusterResult] = js.native
-    def purchaseReservedNodeOffering(
-        params: PurchaseReservedNodeOfferingMessage
-    ): Request[PurchaseReservedNodeOfferingResult] = js.native
+    def purchaseReservedNodeOffering(params: PurchaseReservedNodeOfferingMessage): Request[PurchaseReservedNodeOfferingResult] = js.native
     def rebootCluster(params: RebootClusterMessage): Request[RebootClusterResult] = js.native
-    def resetClusterParameterGroup(
-        params: ResetClusterParameterGroupMessage
-    ): Request[ClusterParameterGroupNameMessage] = js.native
+    def resetClusterParameterGroup(params: ResetClusterParameterGroupMessage): Request[ClusterParameterGroupNameMessage] = js.native
     def resizeCluster(params: ResizeClusterMessage): Request[ResizeClusterResult] = js.native
-    def restoreFromClusterSnapshot(
-        params: RestoreFromClusterSnapshotMessage
-    ): Request[RestoreFromClusterSnapshotResult] = js.native
-    def restoreTableFromClusterSnapshot(
-        params: RestoreTableFromClusterSnapshotMessage
-    ): Request[RestoreTableFromClusterSnapshotResult] = js.native
+    def restoreFromClusterSnapshot(params: RestoreFromClusterSnapshotMessage): Request[RestoreFromClusterSnapshotResult] = js.native
+    def restoreTableFromClusterSnapshot(params: RestoreTableFromClusterSnapshotMessage): Request[RestoreTableFromClusterSnapshotResult] = js.native
     def resumeCluster(params: ResumeClusterMessage): Request[ResumeClusterResult] = js.native
-    def revokeClusterSecurityGroupIngress(
-        params: RevokeClusterSecurityGroupIngressMessage
-    ): Request[RevokeClusterSecurityGroupIngressResult] = js.native
+    def revokeClusterSecurityGroupIngress(params: RevokeClusterSecurityGroupIngressMessage): Request[RevokeClusterSecurityGroupIngressResult] = js.native
     def revokeSnapshotAccess(params: RevokeSnapshotAccessMessage): Request[RevokeSnapshotAccessResult] = js.native
     def rotateEncryptionKey(params: RotateEncryptionKeyMessage): Request[RotateEncryptionKeyResult] = js.native
   }
@@ -676,9 +477,7 @@ package redshift {
         "SnapshotIdentifier" -> SnapshotIdentifier.asInstanceOf[js.Any]
       )
 
-      SnapshotClusterIdentifier.foreach(__v =>
-        __obj.updateDynamic("SnapshotClusterIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      SnapshotClusterIdentifier.foreach(__v => __obj.updateDynamic("SnapshotClusterIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AuthorizeSnapshotAccessMessage]
     }
   }
@@ -777,9 +576,7 @@ package redshift {
       )
 
       Force.foreach(__v => __obj.updateDynamic("Force")(__v.asInstanceOf[js.Any]))
-      ManualSnapshotRetentionPeriod.foreach(__v =>
-        __obj.updateDynamic("ManualSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any])
-      )
+      ManualSnapshotRetentionPeriod.foreach(__v => __obj.updateDynamic("ManualSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchModifyClusterSnapshotsMessage]
     }
   }
@@ -926,13 +723,9 @@ package redshift {
     ): Cluster = {
       val __obj = js.Dynamic.literal()
       AllowVersionUpgrade.foreach(__v => __obj.updateDynamic("AllowVersionUpgrade")(__v.asInstanceOf[js.Any]))
-      AutomatedSnapshotRetentionPeriod.foreach(__v =>
-        __obj.updateDynamic("AutomatedSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any])
-      )
+      AutomatedSnapshotRetentionPeriod.foreach(__v => __obj.updateDynamic("AutomatedSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any]))
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
-      ClusterAvailabilityStatus.foreach(__v =>
-        __obj.updateDynamic("ClusterAvailabilityStatus")(__v.asInstanceOf[js.Any])
-      )
+      ClusterAvailabilityStatus.foreach(__v => __obj.updateDynamic("ClusterAvailabilityStatus")(__v.asInstanceOf[js.Any]))
       ClusterCreateTime.foreach(__v => __obj.updateDynamic("ClusterCreateTime")(__v.asInstanceOf[js.Any]))
       ClusterIdentifier.foreach(__v => __obj.updateDynamic("ClusterIdentifier")(__v.asInstanceOf[js.Any]))
       ClusterNodes.foreach(__v => __obj.updateDynamic("ClusterNodes")(__v.asInstanceOf[js.Any]))
@@ -940,55 +733,37 @@ package redshift {
       ClusterPublicKey.foreach(__v => __obj.updateDynamic("ClusterPublicKey")(__v.asInstanceOf[js.Any]))
       ClusterRevisionNumber.foreach(__v => __obj.updateDynamic("ClusterRevisionNumber")(__v.asInstanceOf[js.Any]))
       ClusterSecurityGroups.foreach(__v => __obj.updateDynamic("ClusterSecurityGroups")(__v.asInstanceOf[js.Any]))
-      ClusterSnapshotCopyStatus.foreach(__v =>
-        __obj.updateDynamic("ClusterSnapshotCopyStatus")(__v.asInstanceOf[js.Any])
-      )
+      ClusterSnapshotCopyStatus.foreach(__v => __obj.updateDynamic("ClusterSnapshotCopyStatus")(__v.asInstanceOf[js.Any]))
       ClusterStatus.foreach(__v => __obj.updateDynamic("ClusterStatus")(__v.asInstanceOf[js.Any]))
       ClusterSubnetGroupName.foreach(__v => __obj.updateDynamic("ClusterSubnetGroupName")(__v.asInstanceOf[js.Any]))
       ClusterVersion.foreach(__v => __obj.updateDynamic("ClusterVersion")(__v.asInstanceOf[js.Any]))
       DBName.foreach(__v => __obj.updateDynamic("DBName")(__v.asInstanceOf[js.Any]))
       DataTransferProgress.foreach(__v => __obj.updateDynamic("DataTransferProgress")(__v.asInstanceOf[js.Any]))
-      DeferredMaintenanceWindows.foreach(__v =>
-        __obj.updateDynamic("DeferredMaintenanceWindows")(__v.asInstanceOf[js.Any])
-      )
+      DeferredMaintenanceWindows.foreach(__v => __obj.updateDynamic("DeferredMaintenanceWindows")(__v.asInstanceOf[js.Any]))
       ElasticIpStatus.foreach(__v => __obj.updateDynamic("ElasticIpStatus")(__v.asInstanceOf[js.Any]))
-      ElasticResizeNumberOfNodeOptions.foreach(__v =>
-        __obj.updateDynamic("ElasticResizeNumberOfNodeOptions")(__v.asInstanceOf[js.Any])
-      )
+      ElasticResizeNumberOfNodeOptions.foreach(__v => __obj.updateDynamic("ElasticResizeNumberOfNodeOptions")(__v.asInstanceOf[js.Any]))
       Encrypted.foreach(__v => __obj.updateDynamic("Encrypted")(__v.asInstanceOf[js.Any]))
       Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
       EnhancedVpcRouting.foreach(__v => __obj.updateDynamic("EnhancedVpcRouting")(__v.asInstanceOf[js.Any]))
-      ExpectedNextSnapshotScheduleTime.foreach(__v =>
-        __obj.updateDynamic("ExpectedNextSnapshotScheduleTime")(__v.asInstanceOf[js.Any])
-      )
-      ExpectedNextSnapshotScheduleTimeStatus.foreach(__v =>
-        __obj.updateDynamic("ExpectedNextSnapshotScheduleTimeStatus")(__v.asInstanceOf[js.Any])
-      )
+      ExpectedNextSnapshotScheduleTime.foreach(__v => __obj.updateDynamic("ExpectedNextSnapshotScheduleTime")(__v.asInstanceOf[js.Any]))
+      ExpectedNextSnapshotScheduleTimeStatus.foreach(__v => __obj.updateDynamic("ExpectedNextSnapshotScheduleTimeStatus")(__v.asInstanceOf[js.Any]))
       HsmStatus.foreach(__v => __obj.updateDynamic("HsmStatus")(__v.asInstanceOf[js.Any]))
       IamRoles.foreach(__v => __obj.updateDynamic("IamRoles")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       MaintenanceTrackName.foreach(__v => __obj.updateDynamic("MaintenanceTrackName")(__v.asInstanceOf[js.Any]))
-      ManualSnapshotRetentionPeriod.foreach(__v =>
-        __obj.updateDynamic("ManualSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any])
-      )
+      ManualSnapshotRetentionPeriod.foreach(__v => __obj.updateDynamic("ManualSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any]))
       MasterUsername.foreach(__v => __obj.updateDynamic("MasterUsername")(__v.asInstanceOf[js.Any]))
       ModifyStatus.foreach(__v => __obj.updateDynamic("ModifyStatus")(__v.asInstanceOf[js.Any]))
-      NextMaintenanceWindowStartTime.foreach(__v =>
-        __obj.updateDynamic("NextMaintenanceWindowStartTime")(__v.asInstanceOf[js.Any])
-      )
+      NextMaintenanceWindowStartTime.foreach(__v => __obj.updateDynamic("NextMaintenanceWindowStartTime")(__v.asInstanceOf[js.Any]))
       NodeType.foreach(__v => __obj.updateDynamic("NodeType")(__v.asInstanceOf[js.Any]))
       NumberOfNodes.foreach(__v => __obj.updateDynamic("NumberOfNodes")(__v.asInstanceOf[js.Any]))
       PendingActions.foreach(__v => __obj.updateDynamic("PendingActions")(__v.asInstanceOf[js.Any]))
       PendingModifiedValues.foreach(__v => __obj.updateDynamic("PendingModifiedValues")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
       ResizeInfo.foreach(__v => __obj.updateDynamic("ResizeInfo")(__v.asInstanceOf[js.Any]))
       RestoreStatus.foreach(__v => __obj.updateDynamic("RestoreStatus")(__v.asInstanceOf[js.Any]))
-      SnapshotScheduleIdentifier.foreach(__v =>
-        __obj.updateDynamic("SnapshotScheduleIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      SnapshotScheduleIdentifier.foreach(__v => __obj.updateDynamic("SnapshotScheduleIdentifier")(__v.asInstanceOf[js.Any]))
       SnapshotScheduleState.foreach(__v => __obj.updateDynamic("SnapshotScheduleState")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
@@ -1066,9 +841,7 @@ package redshift {
       val __obj = js.Dynamic.literal()
       ClusterIdentifier.foreach(__v => __obj.updateDynamic("ClusterIdentifier")(__v.asInstanceOf[js.Any]))
       CurrentDatabaseRevision.foreach(__v => __obj.updateDynamic("CurrentDatabaseRevision")(__v.asInstanceOf[js.Any]))
-      DatabaseRevisionReleaseDate.foreach(__v =>
-        __obj.updateDynamic("DatabaseRevisionReleaseDate")(__v.asInstanceOf[js.Any])
-      )
+      DatabaseRevisionReleaseDate.foreach(__v => __obj.updateDynamic("DatabaseRevisionReleaseDate")(__v.asInstanceOf[js.Any]))
       RevisionTargets.foreach(__v => __obj.updateDynamic("RevisionTargets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClusterDbRevision]
     }
@@ -1230,9 +1003,7 @@ package redshift {
         ParameterGroupName: js.UndefOr[String] = js.undefined
     ): ClusterParameterGroupStatus = {
       val __obj = js.Dynamic.literal()
-      ClusterParameterStatusList.foreach(__v =>
-        __obj.updateDynamic("ClusterParameterStatusList")(__v.asInstanceOf[js.Any])
-      )
+      ClusterParameterStatusList.foreach(__v => __obj.updateDynamic("ClusterParameterStatusList")(__v.asInstanceOf[js.Any]))
       ParameterApplyStatus.foreach(__v => __obj.updateDynamic("ParameterApplyStatus")(__v.asInstanceOf[js.Any]))
       ParameterGroupName.foreach(__v => __obj.updateDynamic("ParameterGroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClusterParameterGroupStatus]
@@ -1279,9 +1050,7 @@ package redshift {
         ParameterName: js.UndefOr[String] = js.undefined
     ): ClusterParameterStatus = {
       val __obj = js.Dynamic.literal()
-      ParameterApplyErrorDescription.foreach(__v =>
-        __obj.updateDynamic("ParameterApplyErrorDescription")(__v.asInstanceOf[js.Any])
-      )
+      ParameterApplyErrorDescription.foreach(__v => __obj.updateDynamic("ParameterApplyErrorDescription")(__v.asInstanceOf[js.Any]))
       ParameterApplyStatus.foreach(__v => __obj.updateDynamic("ParameterApplyStatus")(__v.asInstanceOf[js.Any]))
       ParameterName.foreach(__v => __obj.updateDynamic("ParameterName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClusterParameterStatus]
@@ -1384,9 +1153,7 @@ package redshift {
     ): ClusterSnapshotCopyStatus = {
       val __obj = js.Dynamic.literal()
       DestinationRegion.foreach(__v => __obj.updateDynamic("DestinationRegion")(__v.asInstanceOf[js.Any]))
-      ManualSnapshotRetentionPeriod.foreach(__v =>
-        __obj.updateDynamic("ManualSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any])
-      )
+      ManualSnapshotRetentionPeriod.foreach(__v => __obj.updateDynamic("ManualSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any]))
       RetentionPeriod.foreach(__v => __obj.updateDynamic("RetentionPeriod")(__v.asInstanceOf[js.Any]))
       SnapshotCopyGrantName.foreach(__v => __obj.updateDynamic("SnapshotCopyGrantName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClusterSnapshotCopyStatus]
@@ -1467,9 +1234,7 @@ package redshift {
         Description: js.UndefOr[String] = js.undefined
     ): ClusterVersion = {
       val __obj = js.Dynamic.literal()
-      ClusterParameterGroupFamily.foreach(__v =>
-        __obj.updateDynamic("ClusterParameterGroupFamily")(__v.asInstanceOf[js.Any])
-      )
+      ClusterParameterGroupFamily.foreach(__v => __obj.updateDynamic("ClusterParameterGroupFamily")(__v.asInstanceOf[js.Any]))
       ClusterVersion.foreach(__v => __obj.updateDynamic("ClusterVersion")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClusterVersion]
@@ -1544,12 +1309,8 @@ package redshift {
         "TargetSnapshotIdentifier" -> TargetSnapshotIdentifier.asInstanceOf[js.Any]
       )
 
-      ManualSnapshotRetentionPeriod.foreach(__v =>
-        __obj.updateDynamic("ManualSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any])
-      )
-      SourceSnapshotClusterIdentifier.foreach(__v =>
-        __obj.updateDynamic("SourceSnapshotClusterIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      ManualSnapshotRetentionPeriod.foreach(__v => __obj.updateDynamic("ManualSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any]))
+      SourceSnapshotClusterIdentifier.foreach(__v => __obj.updateDynamic("SourceSnapshotClusterIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CopyClusterSnapshotMessage]
     }
   }
@@ -1650,13 +1411,9 @@ package redshift {
 
       AdditionalInfo.foreach(__v => __obj.updateDynamic("AdditionalInfo")(__v.asInstanceOf[js.Any]))
       AllowVersionUpgrade.foreach(__v => __obj.updateDynamic("AllowVersionUpgrade")(__v.asInstanceOf[js.Any]))
-      AutomatedSnapshotRetentionPeriod.foreach(__v =>
-        __obj.updateDynamic("AutomatedSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any])
-      )
+      AutomatedSnapshotRetentionPeriod.foreach(__v => __obj.updateDynamic("AutomatedSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any]))
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
-      ClusterParameterGroupName.foreach(__v =>
-        __obj.updateDynamic("ClusterParameterGroupName")(__v.asInstanceOf[js.Any])
-      )
+      ClusterParameterGroupName.foreach(__v => __obj.updateDynamic("ClusterParameterGroupName")(__v.asInstanceOf[js.Any]))
       ClusterSecurityGroups.foreach(__v => __obj.updateDynamic("ClusterSecurityGroups")(__v.asInstanceOf[js.Any]))
       ClusterSubnetGroupName.foreach(__v => __obj.updateDynamic("ClusterSubnetGroupName")(__v.asInstanceOf[js.Any]))
       ClusterType.foreach(__v => __obj.updateDynamic("ClusterType")(__v.asInstanceOf[js.Any]))
@@ -1665,27 +1422,17 @@ package redshift {
       ElasticIp.foreach(__v => __obj.updateDynamic("ElasticIp")(__v.asInstanceOf[js.Any]))
       Encrypted.foreach(__v => __obj.updateDynamic("Encrypted")(__v.asInstanceOf[js.Any]))
       EnhancedVpcRouting.foreach(__v => __obj.updateDynamic("EnhancedVpcRouting")(__v.asInstanceOf[js.Any]))
-      HsmClientCertificateIdentifier.foreach(__v =>
-        __obj.updateDynamic("HsmClientCertificateIdentifier")(__v.asInstanceOf[js.Any])
-      )
-      HsmConfigurationIdentifier.foreach(__v =>
-        __obj.updateDynamic("HsmConfigurationIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      HsmClientCertificateIdentifier.foreach(__v => __obj.updateDynamic("HsmClientCertificateIdentifier")(__v.asInstanceOf[js.Any]))
+      HsmConfigurationIdentifier.foreach(__v => __obj.updateDynamic("HsmConfigurationIdentifier")(__v.asInstanceOf[js.Any]))
       IamRoles.foreach(__v => __obj.updateDynamic("IamRoles")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       MaintenanceTrackName.foreach(__v => __obj.updateDynamic("MaintenanceTrackName")(__v.asInstanceOf[js.Any]))
-      ManualSnapshotRetentionPeriod.foreach(__v =>
-        __obj.updateDynamic("ManualSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any])
-      )
+      ManualSnapshotRetentionPeriod.foreach(__v => __obj.updateDynamic("ManualSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any]))
       NumberOfNodes.foreach(__v => __obj.updateDynamic("NumberOfNodes")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
-      SnapshotScheduleIdentifier.foreach(__v =>
-        __obj.updateDynamic("SnapshotScheduleIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      SnapshotScheduleIdentifier.foreach(__v => __obj.updateDynamic("SnapshotScheduleIdentifier")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateClusterMessage]
@@ -1821,9 +1568,7 @@ package redshift {
         "SnapshotIdentifier" -> SnapshotIdentifier.asInstanceOf[js.Any]
       )
 
-      ManualSnapshotRetentionPeriod.foreach(__v =>
-        __obj.updateDynamic("ManualSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any])
-      )
+      ManualSnapshotRetentionPeriod.foreach(__v => __obj.updateDynamic("ManualSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateClusterSnapshotMessage]
     }
@@ -2077,9 +1822,7 @@ package redshift {
 
       Enable.foreach(__v => __obj.updateDynamic("Enable")(__v.asInstanceOf[js.Any]))
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      ScheduledActionDescription.foreach(__v =>
-        __obj.updateDynamic("ScheduledActionDescription")(__v.asInstanceOf[js.Any])
-      )
+      ScheduledActionDescription.foreach(__v => __obj.updateDynamic("ScheduledActionDescription")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateScheduledActionMessage]
     }
@@ -2232,12 +1975,8 @@ package redshift {
         TotalProvisionedStorageInMegaBytes: js.UndefOr[Double] = js.undefined
     ): CustomerStorageMessage = {
       val __obj = js.Dynamic.literal()
-      TotalBackupSizeInMegaBytes.foreach(__v =>
-        __obj.updateDynamic("TotalBackupSizeInMegaBytes")(__v.asInstanceOf[js.Any])
-      )
-      TotalProvisionedStorageInMegaBytes.foreach(__v =>
-        __obj.updateDynamic("TotalProvisionedStorageInMegaBytes")(__v.asInstanceOf[js.Any])
-      )
+      TotalBackupSizeInMegaBytes.foreach(__v => __obj.updateDynamic("TotalBackupSizeInMegaBytes")(__v.asInstanceOf[js.Any]))
+      TotalProvisionedStorageInMegaBytes.foreach(__v => __obj.updateDynamic("TotalProvisionedStorageInMegaBytes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CustomerStorageMessage]
     }
   }
@@ -2266,16 +2005,10 @@ package redshift {
         TotalDataInMegaBytes: js.UndefOr[Double] = js.undefined
     ): DataTransferProgress = {
       val __obj = js.Dynamic.literal()
-      CurrentRateInMegaBytesPerSecond.foreach(__v =>
-        __obj.updateDynamic("CurrentRateInMegaBytesPerSecond")(__v.asInstanceOf[js.Any])
-      )
-      DataTransferredInMegaBytes.foreach(__v =>
-        __obj.updateDynamic("DataTransferredInMegaBytes")(__v.asInstanceOf[js.Any])
-      )
+      CurrentRateInMegaBytesPerSecond.foreach(__v => __obj.updateDynamic("CurrentRateInMegaBytesPerSecond")(__v.asInstanceOf[js.Any]))
+      DataTransferredInMegaBytes.foreach(__v => __obj.updateDynamic("DataTransferredInMegaBytes")(__v.asInstanceOf[js.Any]))
       ElapsedTimeInSeconds.foreach(__v => __obj.updateDynamic("ElapsedTimeInSeconds")(__v.asInstanceOf[js.Any]))
-      EstimatedTimeToCompletionInSeconds.foreach(__v =>
-        __obj.updateDynamic("EstimatedTimeToCompletionInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      EstimatedTimeToCompletionInSeconds.foreach(__v => __obj.updateDynamic("EstimatedTimeToCompletionInSeconds")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       TotalDataInMegaBytes.foreach(__v => __obj.updateDynamic("TotalDataInMegaBytes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataTransferProgress]
@@ -2326,12 +2059,8 @@ package redshift {
     ): DeferredMaintenanceWindow = {
       val __obj = js.Dynamic.literal()
       DeferMaintenanceEndTime.foreach(__v => __obj.updateDynamic("DeferMaintenanceEndTime")(__v.asInstanceOf[js.Any]))
-      DeferMaintenanceIdentifier.foreach(__v =>
-        __obj.updateDynamic("DeferMaintenanceIdentifier")(__v.asInstanceOf[js.Any])
-      )
-      DeferMaintenanceStartTime.foreach(__v =>
-        __obj.updateDynamic("DeferMaintenanceStartTime")(__v.asInstanceOf[js.Any])
-      )
+      DeferMaintenanceIdentifier.foreach(__v => __obj.updateDynamic("DeferMaintenanceIdentifier")(__v.asInstanceOf[js.Any]))
+      DeferMaintenanceStartTime.foreach(__v => __obj.updateDynamic("DeferMaintenanceStartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeferredMaintenanceWindow]
     }
   }
@@ -2359,12 +2088,8 @@ package redshift {
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
       )
 
-      FinalClusterSnapshotIdentifier.foreach(__v =>
-        __obj.updateDynamic("FinalClusterSnapshotIdentifier")(__v.asInstanceOf[js.Any])
-      )
-      FinalClusterSnapshotRetentionPeriod.foreach(__v =>
-        __obj.updateDynamic("FinalClusterSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any])
-      )
+      FinalClusterSnapshotIdentifier.foreach(__v => __obj.updateDynamic("FinalClusterSnapshotIdentifier")(__v.asInstanceOf[js.Any]))
+      FinalClusterSnapshotRetentionPeriod.foreach(__v => __obj.updateDynamic("FinalClusterSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any]))
       SkipFinalClusterSnapshot.foreach(__v => __obj.updateDynamic("SkipFinalClusterSnapshot")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteClusterMessage]
     }
@@ -2447,9 +2172,7 @@ package redshift {
         "SnapshotIdentifier" -> SnapshotIdentifier.asInstanceOf[js.Any]
       )
 
-      SnapshotClusterIdentifier.foreach(__v =>
-        __obj.updateDynamic("SnapshotClusterIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      SnapshotClusterIdentifier.foreach(__v => __obj.updateDynamic("SnapshotClusterIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteClusterSnapshotMessage]
     }
   }
@@ -2908,9 +2631,7 @@ package redshift {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeClusterVersionsMessage = {
       val __obj = js.Dynamic.literal()
-      ClusterParameterGroupFamily.foreach(__v =>
-        __obj.updateDynamic("ClusterParameterGroupFamily")(__v.asInstanceOf[js.Any])
-      )
+      ClusterParameterGroupFamily.foreach(__v => __obj.updateDynamic("ClusterParameterGroupFamily")(__v.asInstanceOf[js.Any]))
       ClusterVersion.foreach(__v => __obj.updateDynamic("ClusterVersion")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
@@ -3101,9 +2822,7 @@ package redshift {
         TagValues: js.UndefOr[TagValueList] = js.undefined
     ): DescribeHsmClientCertificatesMessage = {
       val __obj = js.Dynamic.literal()
-      HsmClientCertificateIdentifier.foreach(__v =>
-        __obj.updateDynamic("HsmClientCertificateIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      HsmClientCertificateIdentifier.foreach(__v => __obj.updateDynamic("HsmClientCertificateIdentifier")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
       TagKeys.foreach(__v => __obj.updateDynamic("TagKeys")(__v.asInstanceOf[js.Any]))
@@ -3134,9 +2853,7 @@ package redshift {
         TagValues: js.UndefOr[TagValueList] = js.undefined
     ): DescribeHsmConfigurationsMessage = {
       val __obj = js.Dynamic.literal()
-      HsmConfigurationIdentifier.foreach(__v =>
-        __obj.updateDynamic("HsmConfigurationIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      HsmConfigurationIdentifier.foreach(__v => __obj.updateDynamic("HsmConfigurationIdentifier")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
       TagKeys.foreach(__v => __obj.updateDynamic("TagKeys")(__v.asInstanceOf[js.Any]))
@@ -3676,9 +3393,7 @@ package redshift {
         "DestinationRegion" -> DestinationRegion.asInstanceOf[js.Any]
       )
 
-      ManualSnapshotRetentionPeriod.foreach(__v =>
-        __obj.updateDynamic("ManualSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any])
-      )
+      ManualSnapshotRetentionPeriod.foreach(__v => __obj.updateDynamic("ManualSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any]))
       RetentionPeriod.foreach(__v => __obj.updateDynamic("RetentionPeriod")(__v.asInstanceOf[js.Any]))
       SnapshotCopyGrantName.foreach(__v => __obj.updateDynamic("SnapshotCopyGrantName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnableSnapshotCopyMessage]
@@ -4022,12 +3737,8 @@ package redshift {
         Tags: js.UndefOr[TagList] = js.undefined
     ): HsmClientCertificate = {
       val __obj = js.Dynamic.literal()
-      HsmClientCertificateIdentifier.foreach(__v =>
-        __obj.updateDynamic("HsmClientCertificateIdentifier")(__v.asInstanceOf[js.Any])
-      )
-      HsmClientCertificatePublicKey.foreach(__v =>
-        __obj.updateDynamic("HsmClientCertificatePublicKey")(__v.asInstanceOf[js.Any])
-      )
+      HsmClientCertificateIdentifier.foreach(__v => __obj.updateDynamic("HsmClientCertificateIdentifier")(__v.asInstanceOf[js.Any]))
+      HsmClientCertificatePublicKey.foreach(__v => __obj.updateDynamic("HsmClientCertificatePublicKey")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HsmClientCertificate]
     }
@@ -4078,9 +3789,7 @@ package redshift {
     ): HsmConfiguration = {
       val __obj = js.Dynamic.literal()
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      HsmConfigurationIdentifier.foreach(__v =>
-        __obj.updateDynamic("HsmConfigurationIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      HsmConfigurationIdentifier.foreach(__v => __obj.updateDynamic("HsmConfigurationIdentifier")(__v.asInstanceOf[js.Any]))
       HsmIpAddress.foreach(__v => __obj.updateDynamic("HsmIpAddress")(__v.asInstanceOf[js.Any]))
       HsmPartitionName.foreach(__v => __obj.updateDynamic("HsmPartitionName")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -4128,12 +3837,8 @@ package redshift {
         Status: js.UndefOr[String] = js.undefined
     ): HsmStatus = {
       val __obj = js.Dynamic.literal()
-      HsmClientCertificateIdentifier.foreach(__v =>
-        __obj.updateDynamic("HsmClientCertificateIdentifier")(__v.asInstanceOf[js.Any])
-      )
-      HsmConfigurationIdentifier.foreach(__v =>
-        __obj.updateDynamic("HsmConfigurationIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      HsmClientCertificateIdentifier.foreach(__v => __obj.updateDynamic("HsmClientCertificateIdentifier")(__v.asInstanceOf[js.Any]))
+      HsmConfigurationIdentifier.foreach(__v => __obj.updateDynamic("HsmConfigurationIdentifier")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HsmStatus]
     }
@@ -4191,9 +3896,7 @@ package redshift {
       BucketName.foreach(__v => __obj.updateDynamic("BucketName")(__v.asInstanceOf[js.Any]))
       LastFailureMessage.foreach(__v => __obj.updateDynamic("LastFailureMessage")(__v.asInstanceOf[js.Any]))
       LastFailureTime.foreach(__v => __obj.updateDynamic("LastFailureTime")(__v.asInstanceOf[js.Any]))
-      LastSuccessfulDeliveryTime.foreach(__v =>
-        __obj.updateDynamic("LastSuccessfulDeliveryTime")(__v.asInstanceOf[js.Any])
-      )
+      LastSuccessfulDeliveryTime.foreach(__v => __obj.updateDynamic("LastSuccessfulDeliveryTime")(__v.asInstanceOf[js.Any]))
       LoggingEnabled.foreach(__v => __obj.updateDynamic("LoggingEnabled")(__v.asInstanceOf[js.Any]))
       S3KeyPrefix.foreach(__v => __obj.updateDynamic("S3KeyPrefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoggingStatus]
@@ -4341,12 +4044,8 @@ package redshift {
       DeferMaintenance.foreach(__v => __obj.updateDynamic("DeferMaintenance")(__v.asInstanceOf[js.Any]))
       DeferMaintenanceDuration.foreach(__v => __obj.updateDynamic("DeferMaintenanceDuration")(__v.asInstanceOf[js.Any]))
       DeferMaintenanceEndTime.foreach(__v => __obj.updateDynamic("DeferMaintenanceEndTime")(__v.asInstanceOf[js.Any]))
-      DeferMaintenanceIdentifier.foreach(__v =>
-        __obj.updateDynamic("DeferMaintenanceIdentifier")(__v.asInstanceOf[js.Any])
-      )
-      DeferMaintenanceStartTime.foreach(__v =>
-        __obj.updateDynamic("DeferMaintenanceStartTime")(__v.asInstanceOf[js.Any])
-      )
+      DeferMaintenanceIdentifier.foreach(__v => __obj.updateDynamic("DeferMaintenanceIdentifier")(__v.asInstanceOf[js.Any]))
+      DeferMaintenanceStartTime.foreach(__v => __obj.updateDynamic("DeferMaintenanceStartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyClusterMaintenanceMessage]
     }
   }
@@ -4427,36 +4126,24 @@ package redshift {
       )
 
       AllowVersionUpgrade.foreach(__v => __obj.updateDynamic("AllowVersionUpgrade")(__v.asInstanceOf[js.Any]))
-      AutomatedSnapshotRetentionPeriod.foreach(__v =>
-        __obj.updateDynamic("AutomatedSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any])
-      )
-      ClusterParameterGroupName.foreach(__v =>
-        __obj.updateDynamic("ClusterParameterGroupName")(__v.asInstanceOf[js.Any])
-      )
+      AutomatedSnapshotRetentionPeriod.foreach(__v => __obj.updateDynamic("AutomatedSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any]))
+      ClusterParameterGroupName.foreach(__v => __obj.updateDynamic("ClusterParameterGroupName")(__v.asInstanceOf[js.Any]))
       ClusterSecurityGroups.foreach(__v => __obj.updateDynamic("ClusterSecurityGroups")(__v.asInstanceOf[js.Any]))
       ClusterType.foreach(__v => __obj.updateDynamic("ClusterType")(__v.asInstanceOf[js.Any]))
       ClusterVersion.foreach(__v => __obj.updateDynamic("ClusterVersion")(__v.asInstanceOf[js.Any]))
       ElasticIp.foreach(__v => __obj.updateDynamic("ElasticIp")(__v.asInstanceOf[js.Any]))
       Encrypted.foreach(__v => __obj.updateDynamic("Encrypted")(__v.asInstanceOf[js.Any]))
       EnhancedVpcRouting.foreach(__v => __obj.updateDynamic("EnhancedVpcRouting")(__v.asInstanceOf[js.Any]))
-      HsmClientCertificateIdentifier.foreach(__v =>
-        __obj.updateDynamic("HsmClientCertificateIdentifier")(__v.asInstanceOf[js.Any])
-      )
-      HsmConfigurationIdentifier.foreach(__v =>
-        __obj.updateDynamic("HsmConfigurationIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      HsmClientCertificateIdentifier.foreach(__v => __obj.updateDynamic("HsmClientCertificateIdentifier")(__v.asInstanceOf[js.Any]))
+      HsmConfigurationIdentifier.foreach(__v => __obj.updateDynamic("HsmConfigurationIdentifier")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       MaintenanceTrackName.foreach(__v => __obj.updateDynamic("MaintenanceTrackName")(__v.asInstanceOf[js.Any]))
-      ManualSnapshotRetentionPeriod.foreach(__v =>
-        __obj.updateDynamic("ManualSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any])
-      )
+      ManualSnapshotRetentionPeriod.foreach(__v => __obj.updateDynamic("ManualSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any]))
       MasterUserPassword.foreach(__v => __obj.updateDynamic("MasterUserPassword")(__v.asInstanceOf[js.Any]))
       NewClusterIdentifier.foreach(__v => __obj.updateDynamic("NewClusterIdentifier")(__v.asInstanceOf[js.Any]))
       NodeType.foreach(__v => __obj.updateDynamic("NodeType")(__v.asInstanceOf[js.Any]))
       NumberOfNodes.foreach(__v => __obj.updateDynamic("NumberOfNodes")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyClusterMessage]
@@ -4522,9 +4209,7 @@ package redshift {
       )
 
       Force.foreach(__v => __obj.updateDynamic("Force")(__v.asInstanceOf[js.Any]))
-      ManualSnapshotRetentionPeriod.foreach(__v =>
-        __obj.updateDynamic("ManualSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any])
-      )
+      ManualSnapshotRetentionPeriod.foreach(__v => __obj.updateDynamic("ManualSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyClusterSnapshotMessage]
     }
   }
@@ -4699,9 +4384,7 @@ package redshift {
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
       IamRole.foreach(__v => __obj.updateDynamic("IamRole")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
-      ScheduledActionDescription.foreach(__v =>
-        __obj.updateDynamic("ScheduledActionDescription")(__v.asInstanceOf[js.Any])
-      )
+      ScheduledActionDescription.foreach(__v => __obj.updateDynamic("ScheduledActionDescription")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       TargetAction.foreach(__v => __obj.updateDynamic("TargetAction")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyScheduledActionMessage]
@@ -4816,9 +4499,7 @@ package redshift {
         NumberOfNodes: js.UndefOr[Int] = js.undefined
     ): NodeConfigurationOption = {
       val __obj = js.Dynamic.literal()
-      EstimatedDiskUtilizationPercent.foreach(__v =>
-        __obj.updateDynamic("EstimatedDiskUtilizationPercent")(__v.asInstanceOf[js.Any])
-      )
+      EstimatedDiskUtilizationPercent.foreach(__v => __obj.updateDynamic("EstimatedDiskUtilizationPercent")(__v.asInstanceOf[js.Any]))
       Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
       NodeType.foreach(__v => __obj.updateDynamic("NodeType")(__v.asInstanceOf[js.Any]))
       NumberOfNodes.foreach(__v => __obj.updateDynamic("NumberOfNodes")(__v.asInstanceOf[js.Any]))
@@ -4856,8 +4537,7 @@ package redshift {
   object NodeConfigurationOptionsFilterName extends js.Object {
     val NodeType = "NodeType".asInstanceOf[NodeConfigurationOptionsFilterName]
     val NumberOfNodes = "NumberOfNodes".asInstanceOf[NodeConfigurationOptionsFilterName]
-    val EstimatedDiskUtilizationPercent =
-      "EstimatedDiskUtilizationPercent".asInstanceOf[NodeConfigurationOptionsFilterName]
+    val EstimatedDiskUtilizationPercent = "EstimatedDiskUtilizationPercent".asInstanceOf[NodeConfigurationOptionsFilterName]
     val Mode = "Mode".asInstanceOf[NodeConfigurationOptionsFilterName]
 
     val values = js.Object.freeze(js.Array(NodeType, NumberOfNodes, EstimatedDiskUtilizationPercent, Mode))
@@ -4877,9 +4557,7 @@ package redshift {
     ): NodeConfigurationOptionsMessage = {
       val __obj = js.Dynamic.literal()
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      NodeConfigurationOptionList.foreach(__v =>
-        __obj.updateDynamic("NodeConfigurationOptionList")(__v.asInstanceOf[js.Any])
-      )
+      NodeConfigurationOptionList.foreach(__v => __obj.updateDynamic("NodeConfigurationOptionList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NodeConfigurationOptionsMessage]
     }
   }
@@ -5068,9 +4746,7 @@ package redshift {
         PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined
     ): PendingModifiedValues = {
       val __obj = js.Dynamic.literal()
-      AutomatedSnapshotRetentionPeriod.foreach(__v =>
-        __obj.updateDynamic("AutomatedSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any])
-      )
+      AutomatedSnapshotRetentionPeriod.foreach(__v => __obj.updateDynamic("AutomatedSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any]))
       ClusterIdentifier.foreach(__v => __obj.updateDynamic("ClusterIdentifier")(__v.asInstanceOf[js.Any]))
       ClusterType.foreach(__v => __obj.updateDynamic("ClusterType")(__v.asInstanceOf[js.Any]))
       ClusterVersion.foreach(__v => __obj.updateDynamic("ClusterVersion")(__v.asInstanceOf[js.Any]))
@@ -5474,16 +5150,10 @@ package redshift {
         TotalResizeDataInMegaBytes: js.UndefOr[LongOptional] = js.undefined
     ): ResizeProgressMessage = {
       val __obj = js.Dynamic.literal()
-      AvgResizeRateInMegaBytesPerSecond.foreach(__v =>
-        __obj.updateDynamic("AvgResizeRateInMegaBytesPerSecond")(__v.asInstanceOf[js.Any])
-      )
-      DataTransferProgressPercent.foreach(__v =>
-        __obj.updateDynamic("DataTransferProgressPercent")(__v.asInstanceOf[js.Any])
-      )
+      AvgResizeRateInMegaBytesPerSecond.foreach(__v => __obj.updateDynamic("AvgResizeRateInMegaBytesPerSecond")(__v.asInstanceOf[js.Any]))
+      DataTransferProgressPercent.foreach(__v => __obj.updateDynamic("DataTransferProgressPercent")(__v.asInstanceOf[js.Any]))
       ElapsedTimeInSeconds.foreach(__v => __obj.updateDynamic("ElapsedTimeInSeconds")(__v.asInstanceOf[js.Any]))
-      EstimatedTimeToCompletionInSeconds.foreach(__v =>
-        __obj.updateDynamic("EstimatedTimeToCompletionInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      EstimatedTimeToCompletionInSeconds.foreach(__v => __obj.updateDynamic("EstimatedTimeToCompletionInSeconds")(__v.asInstanceOf[js.Any]))
       ImportTablesCompleted.foreach(__v => __obj.updateDynamic("ImportTablesCompleted")(__v.asInstanceOf[js.Any]))
       ImportTablesInProgress.foreach(__v => __obj.updateDynamic("ImportTablesInProgress")(__v.asInstanceOf[js.Any]))
       ImportTablesNotStarted.foreach(__v => __obj.updateDynamic("ImportTablesNotStarted")(__v.asInstanceOf[js.Any]))
@@ -5495,9 +5165,7 @@ package redshift {
       TargetEncryptionType.foreach(__v => __obj.updateDynamic("TargetEncryptionType")(__v.asInstanceOf[js.Any]))
       TargetNodeType.foreach(__v => __obj.updateDynamic("TargetNodeType")(__v.asInstanceOf[js.Any]))
       TargetNumberOfNodes.foreach(__v => __obj.updateDynamic("TargetNumberOfNodes")(__v.asInstanceOf[js.Any]))
-      TotalResizeDataInMegaBytes.foreach(__v =>
-        __obj.updateDynamic("TotalResizeDataInMegaBytes")(__v.asInstanceOf[js.Any])
-      )
+      TotalResizeDataInMegaBytes.foreach(__v => __obj.updateDynamic("TotalResizeDataInMegaBytes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResizeProgressMessage]
     }
   }
@@ -5572,43 +5240,27 @@ package redshift {
 
       AdditionalInfo.foreach(__v => __obj.updateDynamic("AdditionalInfo")(__v.asInstanceOf[js.Any]))
       AllowVersionUpgrade.foreach(__v => __obj.updateDynamic("AllowVersionUpgrade")(__v.asInstanceOf[js.Any]))
-      AutomatedSnapshotRetentionPeriod.foreach(__v =>
-        __obj.updateDynamic("AutomatedSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any])
-      )
+      AutomatedSnapshotRetentionPeriod.foreach(__v => __obj.updateDynamic("AutomatedSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any]))
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
-      ClusterParameterGroupName.foreach(__v =>
-        __obj.updateDynamic("ClusterParameterGroupName")(__v.asInstanceOf[js.Any])
-      )
+      ClusterParameterGroupName.foreach(__v => __obj.updateDynamic("ClusterParameterGroupName")(__v.asInstanceOf[js.Any]))
       ClusterSecurityGroups.foreach(__v => __obj.updateDynamic("ClusterSecurityGroups")(__v.asInstanceOf[js.Any]))
       ClusterSubnetGroupName.foreach(__v => __obj.updateDynamic("ClusterSubnetGroupName")(__v.asInstanceOf[js.Any]))
       ElasticIp.foreach(__v => __obj.updateDynamic("ElasticIp")(__v.asInstanceOf[js.Any]))
       EnhancedVpcRouting.foreach(__v => __obj.updateDynamic("EnhancedVpcRouting")(__v.asInstanceOf[js.Any]))
-      HsmClientCertificateIdentifier.foreach(__v =>
-        __obj.updateDynamic("HsmClientCertificateIdentifier")(__v.asInstanceOf[js.Any])
-      )
-      HsmConfigurationIdentifier.foreach(__v =>
-        __obj.updateDynamic("HsmConfigurationIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      HsmClientCertificateIdentifier.foreach(__v => __obj.updateDynamic("HsmClientCertificateIdentifier")(__v.asInstanceOf[js.Any]))
+      HsmConfigurationIdentifier.foreach(__v => __obj.updateDynamic("HsmConfigurationIdentifier")(__v.asInstanceOf[js.Any]))
       IamRoles.foreach(__v => __obj.updateDynamic("IamRoles")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       MaintenanceTrackName.foreach(__v => __obj.updateDynamic("MaintenanceTrackName")(__v.asInstanceOf[js.Any]))
-      ManualSnapshotRetentionPeriod.foreach(__v =>
-        __obj.updateDynamic("ManualSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any])
-      )
+      ManualSnapshotRetentionPeriod.foreach(__v => __obj.updateDynamic("ManualSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any]))
       NodeType.foreach(__v => __obj.updateDynamic("NodeType")(__v.asInstanceOf[js.Any]))
       NumberOfNodes.foreach(__v => __obj.updateDynamic("NumberOfNodes")(__v.asInstanceOf[js.Any]))
       OwnerAccount.foreach(__v => __obj.updateDynamic("OwnerAccount")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
-      SnapshotClusterIdentifier.foreach(__v =>
-        __obj.updateDynamic("SnapshotClusterIdentifier")(__v.asInstanceOf[js.Any])
-      )
-      SnapshotScheduleIdentifier.foreach(__v =>
-        __obj.updateDynamic("SnapshotScheduleIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      SnapshotClusterIdentifier.foreach(__v => __obj.updateDynamic("SnapshotClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      SnapshotScheduleIdentifier.foreach(__v => __obj.updateDynamic("SnapshotScheduleIdentifier")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RestoreFromClusterSnapshotMessage]
     }
@@ -5654,13 +5306,9 @@ package redshift {
         Status: js.UndefOr[String] = js.undefined
     ): RestoreStatus = {
       val __obj = js.Dynamic.literal()
-      CurrentRestoreRateInMegaBytesPerSecond.foreach(__v =>
-        __obj.updateDynamic("CurrentRestoreRateInMegaBytesPerSecond")(__v.asInstanceOf[js.Any])
-      )
+      CurrentRestoreRateInMegaBytesPerSecond.foreach(__v => __obj.updateDynamic("CurrentRestoreRateInMegaBytesPerSecond")(__v.asInstanceOf[js.Any]))
       ElapsedTimeInSeconds.foreach(__v => __obj.updateDynamic("ElapsedTimeInSeconds")(__v.asInstanceOf[js.Any]))
-      EstimatedTimeToCompletionInSeconds.foreach(__v =>
-        __obj.updateDynamic("EstimatedTimeToCompletionInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      EstimatedTimeToCompletionInSeconds.foreach(__v => __obj.updateDynamic("EstimatedTimeToCompletionInSeconds")(__v.asInstanceOf[js.Any]))
       ProgressInMegaBytes.foreach(__v => __obj.updateDynamic("ProgressInMegaBytes")(__v.asInstanceOf[js.Any]))
       SnapshotSizeInMegaBytes.foreach(__v => __obj.updateDynamic("SnapshotSizeInMegaBytes")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -5779,9 +5427,7 @@ package redshift {
     ): RevisionTarget = {
       val __obj = js.Dynamic.literal()
       DatabaseRevision.foreach(__v => __obj.updateDynamic("DatabaseRevision")(__v.asInstanceOf[js.Any]))
-      DatabaseRevisionReleaseDate.foreach(__v =>
-        __obj.updateDynamic("DatabaseRevisionReleaseDate")(__v.asInstanceOf[js.Any])
-      )
+      DatabaseRevisionReleaseDate.foreach(__v => __obj.updateDynamic("DatabaseRevisionReleaseDate")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RevisionTarget]
     }
@@ -5855,9 +5501,7 @@ package redshift {
         "SnapshotIdentifier" -> SnapshotIdentifier.asInstanceOf[js.Any]
       )
 
-      SnapshotClusterIdentifier.foreach(__v =>
-        __obj.updateDynamic("SnapshotClusterIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      SnapshotClusterIdentifier.foreach(__v => __obj.updateDynamic("SnapshotClusterIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RevokeSnapshotAccessMessage]
     }
   }
@@ -5959,9 +5603,7 @@ package redshift {
       IamRole.foreach(__v => __obj.updateDynamic("IamRole")(__v.asInstanceOf[js.Any]))
       NextInvocations.foreach(__v => __obj.updateDynamic("NextInvocations")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
-      ScheduledActionDescription.foreach(__v =>
-        __obj.updateDynamic("ScheduledActionDescription")(__v.asInstanceOf[js.Any])
-      )
+      ScheduledActionDescription.foreach(__v => __obj.updateDynamic("ScheduledActionDescription")(__v.asInstanceOf[js.Any]))
       ScheduledActionName.foreach(__v => __obj.updateDynamic("ScheduledActionName")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
@@ -6144,38 +5786,24 @@ package redshift {
         VpcId: js.UndefOr[String] = js.undefined
     ): Snapshot = {
       val __obj = js.Dynamic.literal()
-      AccountsWithRestoreAccess.foreach(__v =>
-        __obj.updateDynamic("AccountsWithRestoreAccess")(__v.asInstanceOf[js.Any])
-      )
-      ActualIncrementalBackupSizeInMegaBytes.foreach(__v =>
-        __obj.updateDynamic("ActualIncrementalBackupSizeInMegaBytes")(__v.asInstanceOf[js.Any])
-      )
+      AccountsWithRestoreAccess.foreach(__v => __obj.updateDynamic("AccountsWithRestoreAccess")(__v.asInstanceOf[js.Any]))
+      ActualIncrementalBackupSizeInMegaBytes.foreach(__v => __obj.updateDynamic("ActualIncrementalBackupSizeInMegaBytes")(__v.asInstanceOf[js.Any]))
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
-      BackupProgressInMegaBytes.foreach(__v =>
-        __obj.updateDynamic("BackupProgressInMegaBytes")(__v.asInstanceOf[js.Any])
-      )
+      BackupProgressInMegaBytes.foreach(__v => __obj.updateDynamic("BackupProgressInMegaBytes")(__v.asInstanceOf[js.Any]))
       ClusterCreateTime.foreach(__v => __obj.updateDynamic("ClusterCreateTime")(__v.asInstanceOf[js.Any]))
       ClusterIdentifier.foreach(__v => __obj.updateDynamic("ClusterIdentifier")(__v.asInstanceOf[js.Any]))
       ClusterVersion.foreach(__v => __obj.updateDynamic("ClusterVersion")(__v.asInstanceOf[js.Any]))
-      CurrentBackupRateInMegaBytesPerSecond.foreach(__v =>
-        __obj.updateDynamic("CurrentBackupRateInMegaBytesPerSecond")(__v.asInstanceOf[js.Any])
-      )
+      CurrentBackupRateInMegaBytesPerSecond.foreach(__v => __obj.updateDynamic("CurrentBackupRateInMegaBytesPerSecond")(__v.asInstanceOf[js.Any]))
       DBName.foreach(__v => __obj.updateDynamic("DBName")(__v.asInstanceOf[js.Any]))
       ElapsedTimeInSeconds.foreach(__v => __obj.updateDynamic("ElapsedTimeInSeconds")(__v.asInstanceOf[js.Any]))
       Encrypted.foreach(__v => __obj.updateDynamic("Encrypted")(__v.asInstanceOf[js.Any]))
       EncryptedWithHSM.foreach(__v => __obj.updateDynamic("EncryptedWithHSM")(__v.asInstanceOf[js.Any]))
       EnhancedVpcRouting.foreach(__v => __obj.updateDynamic("EnhancedVpcRouting")(__v.asInstanceOf[js.Any]))
-      EstimatedSecondsToCompletion.foreach(__v =>
-        __obj.updateDynamic("EstimatedSecondsToCompletion")(__v.asInstanceOf[js.Any])
-      )
+      EstimatedSecondsToCompletion.foreach(__v => __obj.updateDynamic("EstimatedSecondsToCompletion")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       MaintenanceTrackName.foreach(__v => __obj.updateDynamic("MaintenanceTrackName")(__v.asInstanceOf[js.Any]))
-      ManualSnapshotRemainingDays.foreach(__v =>
-        __obj.updateDynamic("ManualSnapshotRemainingDays")(__v.asInstanceOf[js.Any])
-      )
-      ManualSnapshotRetentionPeriod.foreach(__v =>
-        __obj.updateDynamic("ManualSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any])
-      )
+      ManualSnapshotRemainingDays.foreach(__v => __obj.updateDynamic("ManualSnapshotRemainingDays")(__v.asInstanceOf[js.Any]))
+      ManualSnapshotRetentionPeriod.foreach(__v => __obj.updateDynamic("ManualSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any]))
       MasterUsername.foreach(__v => __obj.updateDynamic("MasterUsername")(__v.asInstanceOf[js.Any]))
       NodeType.foreach(__v => __obj.updateDynamic("NodeType")(__v.asInstanceOf[js.Any]))
       NumberOfNodes.foreach(__v => __obj.updateDynamic("NumberOfNodes")(__v.asInstanceOf[js.Any]))
@@ -6184,16 +5812,12 @@ package redshift {
       RestorableNodeTypes.foreach(__v => __obj.updateDynamic("RestorableNodeTypes")(__v.asInstanceOf[js.Any]))
       SnapshotCreateTime.foreach(__v => __obj.updateDynamic("SnapshotCreateTime")(__v.asInstanceOf[js.Any]))
       SnapshotIdentifier.foreach(__v => __obj.updateDynamic("SnapshotIdentifier")(__v.asInstanceOf[js.Any]))
-      SnapshotRetentionStartTime.foreach(__v =>
-        __obj.updateDynamic("SnapshotRetentionStartTime")(__v.asInstanceOf[js.Any])
-      )
+      SnapshotRetentionStartTime.foreach(__v => __obj.updateDynamic("SnapshotRetentionStartTime")(__v.asInstanceOf[js.Any]))
       SnapshotType.foreach(__v => __obj.updateDynamic("SnapshotType")(__v.asInstanceOf[js.Any]))
       SourceRegion.foreach(__v => __obj.updateDynamic("SourceRegion")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      TotalBackupSizeInMegaBytes.foreach(__v =>
-        __obj.updateDynamic("TotalBackupSizeInMegaBytes")(__v.asInstanceOf[js.Any])
-      )
+      TotalBackupSizeInMegaBytes.foreach(__v => __obj.updateDynamic("TotalBackupSizeInMegaBytes")(__v.asInstanceOf[js.Any]))
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Snapshot]
     }
@@ -6279,9 +5903,7 @@ package redshift {
       val __obj = js.Dynamic.literal()
       FailureCode.foreach(__v => __obj.updateDynamic("FailureCode")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
-      SnapshotClusterIdentifier.foreach(__v =>
-        __obj.updateDynamic("SnapshotClusterIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      SnapshotClusterIdentifier.foreach(__v => __obj.updateDynamic("SnapshotClusterIdentifier")(__v.asInstanceOf[js.Any]))
       SnapshotIdentifier.foreach(__v => __obj.updateDynamic("SnapshotIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SnapshotErrorMessage]
     }
@@ -6388,9 +6010,7 @@ package redshift {
     val `cluster-snapshot` = "cluster-snapshot".asInstanceOf[SourceType]
     val `scheduled-action` = "scheduled-action".asInstanceOf[SourceType]
 
-    val values = js.Object.freeze(
-      js.Array(cluster, `cluster-parameter-group`, `cluster-security-group`, `cluster-snapshot`, `scheduled-action`)
-    )
+    val values = js.Object.freeze(js.Array(cluster, `cluster-parameter-group`, `cluster-security-group`, `cluster-snapshot`, `scheduled-action`))
   }
 
   /**
@@ -6531,9 +6151,7 @@ package redshift {
     ): TableRestoreStatusMessage = {
       val __obj = js.Dynamic.literal()
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      TableRestoreStatusDetails.foreach(__v =>
-        __obj.updateDynamic("TableRestoreStatusDetails")(__v.asInstanceOf[js.Any])
-      )
+      TableRestoreStatusDetails.foreach(__v => __obj.updateDynamic("TableRestoreStatusDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TableRestoreStatusMessage]
     }
   }

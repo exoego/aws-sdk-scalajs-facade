@@ -75,38 +75,20 @@ package object fsx {
 
   implicit final class FSxOps(private val service: FSx) extends AnyVal {
 
-    @inline def cancelDataRepositoryTaskFuture(
-        params: CancelDataRepositoryTaskRequest
-    ): Future[CancelDataRepositoryTaskResponse] = service.cancelDataRepositoryTask(params).promise().toFuture
-    @inline def createBackupFuture(params: CreateBackupRequest): Future[CreateBackupResponse] =
-      service.createBackup(params).promise().toFuture
-    @inline def createDataRepositoryTaskFuture(
-        params: CreateDataRepositoryTaskRequest
-    ): Future[CreateDataRepositoryTaskResponse] = service.createDataRepositoryTask(params).promise().toFuture
-    @inline def createFileSystemFromBackupFuture(
-        params: CreateFileSystemFromBackupRequest
-    ): Future[CreateFileSystemFromBackupResponse] = service.createFileSystemFromBackup(params).promise().toFuture
-    @inline def createFileSystemFuture(params: CreateFileSystemRequest): Future[CreateFileSystemResponse] =
-      service.createFileSystem(params).promise().toFuture
-    @inline def deleteBackupFuture(params: DeleteBackupRequest): Future[DeleteBackupResponse] =
-      service.deleteBackup(params).promise().toFuture
-    @inline def deleteFileSystemFuture(params: DeleteFileSystemRequest): Future[DeleteFileSystemResponse] =
-      service.deleteFileSystem(params).promise().toFuture
-    @inline def describeBackupsFuture(params: DescribeBackupsRequest): Future[DescribeBackupsResponse] =
-      service.describeBackups(params).promise().toFuture
-    @inline def describeDataRepositoryTasksFuture(
-        params: DescribeDataRepositoryTasksRequest
-    ): Future[DescribeDataRepositoryTasksResponse] = service.describeDataRepositoryTasks(params).promise().toFuture
-    @inline def describeFileSystemsFuture(params: DescribeFileSystemsRequest): Future[DescribeFileSystemsResponse] =
-      service.describeFileSystems(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateFileSystemFuture(params: UpdateFileSystemRequest): Future[UpdateFileSystemResponse] =
-      service.updateFileSystem(params).promise().toFuture
+    @inline def cancelDataRepositoryTaskFuture(params: CancelDataRepositoryTaskRequest): Future[CancelDataRepositoryTaskResponse] = service.cancelDataRepositoryTask(params).promise().toFuture
+    @inline def createBackupFuture(params: CreateBackupRequest): Future[CreateBackupResponse] = service.createBackup(params).promise().toFuture
+    @inline def createDataRepositoryTaskFuture(params: CreateDataRepositoryTaskRequest): Future[CreateDataRepositoryTaskResponse] = service.createDataRepositoryTask(params).promise().toFuture
+    @inline def createFileSystemFromBackupFuture(params: CreateFileSystemFromBackupRequest): Future[CreateFileSystemFromBackupResponse] = service.createFileSystemFromBackup(params).promise().toFuture
+    @inline def createFileSystemFuture(params: CreateFileSystemRequest): Future[CreateFileSystemResponse] = service.createFileSystem(params).promise().toFuture
+    @inline def deleteBackupFuture(params: DeleteBackupRequest): Future[DeleteBackupResponse] = service.deleteBackup(params).promise().toFuture
+    @inline def deleteFileSystemFuture(params: DeleteFileSystemRequest): Future[DeleteFileSystemResponse] = service.deleteFileSystem(params).promise().toFuture
+    @inline def describeBackupsFuture(params: DescribeBackupsRequest): Future[DescribeBackupsResponse] = service.describeBackups(params).promise().toFuture
+    @inline def describeDataRepositoryTasksFuture(params: DescribeDataRepositoryTasksRequest): Future[DescribeDataRepositoryTasksResponse] = service.describeDataRepositoryTasks(params).promise().toFuture
+    @inline def describeFileSystemsFuture(params: DescribeFileSystemsRequest): Future[DescribeFileSystemsResponse] = service.describeFileSystems(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateFileSystemFuture(params: UpdateFileSystemRequest): Future[UpdateFileSystemResponse] = service.updateFileSystem(params).promise().toFuture
   }
 }
 
@@ -116,21 +98,15 @@ package fsx {
   class FSx() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def cancelDataRepositoryTask(params: CancelDataRepositoryTaskRequest): Request[CancelDataRepositoryTaskResponse] =
-      js.native
+    def cancelDataRepositoryTask(params: CancelDataRepositoryTaskRequest): Request[CancelDataRepositoryTaskResponse] = js.native
     def createBackup(params: CreateBackupRequest): Request[CreateBackupResponse] = js.native
-    def createDataRepositoryTask(params: CreateDataRepositoryTaskRequest): Request[CreateDataRepositoryTaskResponse] =
-      js.native
+    def createDataRepositoryTask(params: CreateDataRepositoryTaskRequest): Request[CreateDataRepositoryTaskResponse] = js.native
     def createFileSystem(params: CreateFileSystemRequest): Request[CreateFileSystemResponse] = js.native
-    def createFileSystemFromBackup(
-        params: CreateFileSystemFromBackupRequest
-    ): Request[CreateFileSystemFromBackupResponse] = js.native
+    def createFileSystemFromBackup(params: CreateFileSystemFromBackupRequest): Request[CreateFileSystemFromBackupResponse] = js.native
     def deleteBackup(params: DeleteBackupRequest): Request[DeleteBackupResponse] = js.native
     def deleteFileSystem(params: DeleteFileSystemRequest): Request[DeleteFileSystemResponse] = js.native
     def describeBackups(params: DescribeBackupsRequest): Request[DescribeBackupsResponse] = js.native
-    def describeDataRepositoryTasks(
-        params: DescribeDataRepositoryTasksRequest
-    ): Request[DescribeDataRepositoryTasksResponse] = js.native
+    def describeDataRepositoryTasks(params: DescribeDataRepositoryTasksRequest): Request[DescribeDataRepositoryTasksResponse] = js.native
     def describeFileSystems(params: DescribeFileSystemsRequest): Request[DescribeFileSystemsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
@@ -592,21 +568,15 @@ package fsx {
     ): CreateFileSystemLustreConfiguration = {
       val __obj = js.Dynamic.literal()
       AutoImportPolicy.foreach(__v => __obj.updateDynamic("AutoImportPolicy")(__v.asInstanceOf[js.Any]))
-      AutomaticBackupRetentionDays.foreach(__v =>
-        __obj.updateDynamic("AutomaticBackupRetentionDays")(__v.asInstanceOf[js.Any])
-      )
+      AutomaticBackupRetentionDays.foreach(__v => __obj.updateDynamic("AutomaticBackupRetentionDays")(__v.asInstanceOf[js.Any]))
       CopyTagsToBackups.foreach(__v => __obj.updateDynamic("CopyTagsToBackups")(__v.asInstanceOf[js.Any]))
-      DailyAutomaticBackupStartTime.foreach(__v =>
-        __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any])
-      )
+      DailyAutomaticBackupStartTime.foreach(__v => __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any]))
       DeploymentType.foreach(__v => __obj.updateDynamic("DeploymentType")(__v.asInstanceOf[js.Any]))
       ExportPath.foreach(__v => __obj.updateDynamic("ExportPath")(__v.asInstanceOf[js.Any]))
       ImportPath.foreach(__v => __obj.updateDynamic("ImportPath")(__v.asInstanceOf[js.Any]))
       ImportedFileChunkSize.foreach(__v => __obj.updateDynamic("ImportedFileChunkSize")(__v.asInstanceOf[js.Any]))
       PerUnitStorageThroughput.foreach(__v => __obj.updateDynamic("PerUnitStorageThroughput")(__v.asInstanceOf[js.Any]))
-      WeeklyMaintenanceStartTime.foreach(__v =>
-        __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any])
-      )
+      WeeklyMaintenanceStartTime.foreach(__v => __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFileSystemLustreConfiguration]
     }
   }
@@ -712,21 +682,13 @@ package fsx {
       )
 
       ActiveDirectoryId.foreach(__v => __obj.updateDynamic("ActiveDirectoryId")(__v.asInstanceOf[js.Any]))
-      AutomaticBackupRetentionDays.foreach(__v =>
-        __obj.updateDynamic("AutomaticBackupRetentionDays")(__v.asInstanceOf[js.Any])
-      )
+      AutomaticBackupRetentionDays.foreach(__v => __obj.updateDynamic("AutomaticBackupRetentionDays")(__v.asInstanceOf[js.Any]))
       CopyTagsToBackups.foreach(__v => __obj.updateDynamic("CopyTagsToBackups")(__v.asInstanceOf[js.Any]))
-      DailyAutomaticBackupStartTime.foreach(__v =>
-        __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any])
-      )
+      DailyAutomaticBackupStartTime.foreach(__v => __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any]))
       DeploymentType.foreach(__v => __obj.updateDynamic("DeploymentType")(__v.asInstanceOf[js.Any]))
       PreferredSubnetId.foreach(__v => __obj.updateDynamic("PreferredSubnetId")(__v.asInstanceOf[js.Any]))
-      SelfManagedActiveDirectoryConfiguration.foreach(__v =>
-        __obj.updateDynamic("SelfManagedActiveDirectoryConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      WeeklyMaintenanceStartTime.foreach(__v =>
-        __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any])
-      )
+      SelfManagedActiveDirectoryConfiguration.foreach(__v => __obj.updateDynamic("SelfManagedActiveDirectoryConfiguration")(__v.asInstanceOf[js.Any]))
+      WeeklyMaintenanceStartTime.foreach(__v => __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFileSystemWindowsConfiguration]
     }
   }
@@ -1536,22 +1498,14 @@ package fsx {
         WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined
     ): LustreFileSystemConfiguration = {
       val __obj = js.Dynamic.literal()
-      AutomaticBackupRetentionDays.foreach(__v =>
-        __obj.updateDynamic("AutomaticBackupRetentionDays")(__v.asInstanceOf[js.Any])
-      )
+      AutomaticBackupRetentionDays.foreach(__v => __obj.updateDynamic("AutomaticBackupRetentionDays")(__v.asInstanceOf[js.Any]))
       CopyTagsToBackups.foreach(__v => __obj.updateDynamic("CopyTagsToBackups")(__v.asInstanceOf[js.Any]))
-      DailyAutomaticBackupStartTime.foreach(__v =>
-        __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any])
-      )
-      DataRepositoryConfiguration.foreach(__v =>
-        __obj.updateDynamic("DataRepositoryConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      DailyAutomaticBackupStartTime.foreach(__v => __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any]))
+      DataRepositoryConfiguration.foreach(__v => __obj.updateDynamic("DataRepositoryConfiguration")(__v.asInstanceOf[js.Any]))
       DeploymentType.foreach(__v => __obj.updateDynamic("DeploymentType")(__v.asInstanceOf[js.Any]))
       MountName.foreach(__v => __obj.updateDynamic("MountName")(__v.asInstanceOf[js.Any]))
       PerUnitStorageThroughput.foreach(__v => __obj.updateDynamic("PerUnitStorageThroughput")(__v.asInstanceOf[js.Any]))
-      WeeklyMaintenanceStartTime.foreach(__v =>
-        __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any])
-      )
+      WeeklyMaintenanceStartTime.foreach(__v => __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LustreFileSystemConfiguration]
     }
   }
@@ -1596,12 +1550,8 @@ package fsx {
       val __obj = js.Dynamic.literal()
       DnsIps.foreach(__v => __obj.updateDynamic("DnsIps")(__v.asInstanceOf[js.Any]))
       DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
-      FileSystemAdministratorsGroup.foreach(__v =>
-        __obj.updateDynamic("FileSystemAdministratorsGroup")(__v.asInstanceOf[js.Any])
-      )
-      OrganizationalUnitDistinguishedName.foreach(__v =>
-        __obj.updateDynamic("OrganizationalUnitDistinguishedName")(__v.asInstanceOf[js.Any])
-      )
+      FileSystemAdministratorsGroup.foreach(__v => __obj.updateDynamic("FileSystemAdministratorsGroup")(__v.asInstanceOf[js.Any]))
+      OrganizationalUnitDistinguishedName.foreach(__v => __obj.updateDynamic("OrganizationalUnitDistinguishedName")(__v.asInstanceOf[js.Any]))
       UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SelfManagedActiveDirectoryAttributes]
     }
@@ -1637,12 +1587,8 @@ package fsx {
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
-      FileSystemAdministratorsGroup.foreach(__v =>
-        __obj.updateDynamic("FileSystemAdministratorsGroup")(__v.asInstanceOf[js.Any])
-      )
-      OrganizationalUnitDistinguishedName.foreach(__v =>
-        __obj.updateDynamic("OrganizationalUnitDistinguishedName")(__v.asInstanceOf[js.Any])
-      )
+      FileSystemAdministratorsGroup.foreach(__v => __obj.updateDynamic("FileSystemAdministratorsGroup")(__v.asInstanceOf[js.Any]))
+      OrganizationalUnitDistinguishedName.foreach(__v => __obj.updateDynamic("OrganizationalUnitDistinguishedName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SelfManagedActiveDirectoryConfiguration]
     }
   }
@@ -1821,15 +1767,9 @@ package fsx {
     ): UpdateFileSystemLustreConfiguration = {
       val __obj = js.Dynamic.literal()
       AutoImportPolicy.foreach(__v => __obj.updateDynamic("AutoImportPolicy")(__v.asInstanceOf[js.Any]))
-      AutomaticBackupRetentionDays.foreach(__v =>
-        __obj.updateDynamic("AutomaticBackupRetentionDays")(__v.asInstanceOf[js.Any])
-      )
-      DailyAutomaticBackupStartTime.foreach(__v =>
-        __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any])
-      )
-      WeeklyMaintenanceStartTime.foreach(__v =>
-        __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any])
-      )
+      AutomaticBackupRetentionDays.foreach(__v => __obj.updateDynamic("AutomaticBackupRetentionDays")(__v.asInstanceOf[js.Any]))
+      DailyAutomaticBackupStartTime.foreach(__v => __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any]))
+      WeeklyMaintenanceStartTime.foreach(__v => __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFileSystemLustreConfiguration]
     }
   }
@@ -1903,25 +1843,16 @@ package fsx {
     def apply(
         AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays] = js.undefined,
         DailyAutomaticBackupStartTime: js.UndefOr[DailyTime] = js.undefined,
-        SelfManagedActiveDirectoryConfiguration: js.UndefOr[SelfManagedActiveDirectoryConfigurationUpdates] =
-          js.undefined,
+        SelfManagedActiveDirectoryConfiguration: js.UndefOr[SelfManagedActiveDirectoryConfigurationUpdates] = js.undefined,
         ThroughputCapacity: js.UndefOr[MegabytesPerSecond] = js.undefined,
         WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined
     ): UpdateFileSystemWindowsConfiguration = {
       val __obj = js.Dynamic.literal()
-      AutomaticBackupRetentionDays.foreach(__v =>
-        __obj.updateDynamic("AutomaticBackupRetentionDays")(__v.asInstanceOf[js.Any])
-      )
-      DailyAutomaticBackupStartTime.foreach(__v =>
-        __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any])
-      )
-      SelfManagedActiveDirectoryConfiguration.foreach(__v =>
-        __obj.updateDynamic("SelfManagedActiveDirectoryConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      AutomaticBackupRetentionDays.foreach(__v => __obj.updateDynamic("AutomaticBackupRetentionDays")(__v.asInstanceOf[js.Any]))
+      DailyAutomaticBackupStartTime.foreach(__v => __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any]))
+      SelfManagedActiveDirectoryConfiguration.foreach(__v => __obj.updateDynamic("SelfManagedActiveDirectoryConfiguration")(__v.asInstanceOf[js.Any]))
       ThroughputCapacity.foreach(__v => __obj.updateDynamic("ThroughputCapacity")(__v.asInstanceOf[js.Any]))
-      WeeklyMaintenanceStartTime.foreach(__v =>
-        __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any])
-      )
+      WeeklyMaintenanceStartTime.foreach(__v => __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFileSystemWindowsConfiguration]
     }
   }
@@ -1973,29 +1904,17 @@ package fsx {
     ): WindowsFileSystemConfiguration = {
       val __obj = js.Dynamic.literal()
       ActiveDirectoryId.foreach(__v => __obj.updateDynamic("ActiveDirectoryId")(__v.asInstanceOf[js.Any]))
-      AutomaticBackupRetentionDays.foreach(__v =>
-        __obj.updateDynamic("AutomaticBackupRetentionDays")(__v.asInstanceOf[js.Any])
-      )
+      AutomaticBackupRetentionDays.foreach(__v => __obj.updateDynamic("AutomaticBackupRetentionDays")(__v.asInstanceOf[js.Any]))
       CopyTagsToBackups.foreach(__v => __obj.updateDynamic("CopyTagsToBackups")(__v.asInstanceOf[js.Any]))
-      DailyAutomaticBackupStartTime.foreach(__v =>
-        __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any])
-      )
+      DailyAutomaticBackupStartTime.foreach(__v => __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any]))
       DeploymentType.foreach(__v => __obj.updateDynamic("DeploymentType")(__v.asInstanceOf[js.Any]))
-      MaintenanceOperationsInProgress.foreach(__v =>
-        __obj.updateDynamic("MaintenanceOperationsInProgress")(__v.asInstanceOf[js.Any])
-      )
+      MaintenanceOperationsInProgress.foreach(__v => __obj.updateDynamic("MaintenanceOperationsInProgress")(__v.asInstanceOf[js.Any]))
       PreferredFileServerIp.foreach(__v => __obj.updateDynamic("PreferredFileServerIp")(__v.asInstanceOf[js.Any]))
       PreferredSubnetId.foreach(__v => __obj.updateDynamic("PreferredSubnetId")(__v.asInstanceOf[js.Any]))
-      RemoteAdministrationEndpoint.foreach(__v =>
-        __obj.updateDynamic("RemoteAdministrationEndpoint")(__v.asInstanceOf[js.Any])
-      )
-      SelfManagedActiveDirectoryConfiguration.foreach(__v =>
-        __obj.updateDynamic("SelfManagedActiveDirectoryConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      RemoteAdministrationEndpoint.foreach(__v => __obj.updateDynamic("RemoteAdministrationEndpoint")(__v.asInstanceOf[js.Any]))
+      SelfManagedActiveDirectoryConfiguration.foreach(__v => __obj.updateDynamic("SelfManagedActiveDirectoryConfiguration")(__v.asInstanceOf[js.Any]))
       ThroughputCapacity.foreach(__v => __obj.updateDynamic("ThroughputCapacity")(__v.asInstanceOf[js.Any]))
-      WeeklyMaintenanceStartTime.foreach(__v =>
-        __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any])
-      )
+      WeeklyMaintenanceStartTime.foreach(__v => __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WindowsFileSystemConfiguration]
     }
   }

@@ -70,112 +70,53 @@ package object appstream {
 
   implicit final class AppStreamOps(private val service: AppStream) extends AnyVal {
 
-    @inline def associateFleetFuture(params: AssociateFleetRequest): Future[AssociateFleetResult] =
-      service.associateFleet(params).promise().toFuture
-    @inline def batchAssociateUserStackFuture(
-        params: BatchAssociateUserStackRequest
-    ): Future[BatchAssociateUserStackResult] = service.batchAssociateUserStack(params).promise().toFuture
-    @inline def batchDisassociateUserStackFuture(
-        params: BatchDisassociateUserStackRequest
-    ): Future[BatchDisassociateUserStackResult] = service.batchDisassociateUserStack(params).promise().toFuture
-    @inline def copyImageFuture(params: CopyImageRequest): Future[CopyImageResponse] =
-      service.copyImage(params).promise().toFuture
-    @inline def createDirectoryConfigFuture(params: CreateDirectoryConfigRequest): Future[CreateDirectoryConfigResult] =
-      service.createDirectoryConfig(params).promise().toFuture
-    @inline def createFleetFuture(params: CreateFleetRequest): Future[CreateFleetResult] =
-      service.createFleet(params).promise().toFuture
-    @inline def createImageBuilderFuture(params: CreateImageBuilderRequest): Future[CreateImageBuilderResult] =
-      service.createImageBuilder(params).promise().toFuture
-    @inline def createImageBuilderStreamingURLFuture(
-        params: CreateImageBuilderStreamingURLRequest
-    ): Future[CreateImageBuilderStreamingURLResult] = service.createImageBuilderStreamingURL(params).promise().toFuture
-    @inline def createStackFuture(params: CreateStackRequest): Future[CreateStackResult] =
-      service.createStack(params).promise().toFuture
-    @inline def createStreamingURLFuture(params: CreateStreamingURLRequest): Future[CreateStreamingURLResult] =
-      service.createStreamingURL(params).promise().toFuture
-    @inline def createUsageReportSubscriptionFuture(
-        params: CreateUsageReportSubscriptionRequest
-    ): Future[CreateUsageReportSubscriptionResult] = service.createUsageReportSubscription(params).promise().toFuture
-    @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResult] =
-      service.createUser(params).promise().toFuture
-    @inline def deleteDirectoryConfigFuture(params: DeleteDirectoryConfigRequest): Future[DeleteDirectoryConfigResult] =
-      service.deleteDirectoryConfig(params).promise().toFuture
-    @inline def deleteFleetFuture(params: DeleteFleetRequest): Future[DeleteFleetResult] =
-      service.deleteFleet(params).promise().toFuture
-    @inline def deleteImageBuilderFuture(params: DeleteImageBuilderRequest): Future[DeleteImageBuilderResult] =
-      service.deleteImageBuilder(params).promise().toFuture
-    @inline def deleteImageFuture(params: DeleteImageRequest): Future[DeleteImageResult] =
-      service.deleteImage(params).promise().toFuture
-    @inline def deleteImagePermissionsFuture(
-        params: DeleteImagePermissionsRequest
-    ): Future[DeleteImagePermissionsResult] = service.deleteImagePermissions(params).promise().toFuture
-    @inline def deleteStackFuture(params: DeleteStackRequest): Future[DeleteStackResult] =
-      service.deleteStack(params).promise().toFuture
-    @inline def deleteUsageReportSubscriptionFuture(
-        params: DeleteUsageReportSubscriptionRequest
-    ): Future[DeleteUsageReportSubscriptionResult] = service.deleteUsageReportSubscription(params).promise().toFuture
-    @inline def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResult] =
-      service.deleteUser(params).promise().toFuture
-    @inline def describeDirectoryConfigsFuture(
-        params: DescribeDirectoryConfigsRequest
-    ): Future[DescribeDirectoryConfigsResult] = service.describeDirectoryConfigs(params).promise().toFuture
-    @inline def describeFleetsFuture(params: DescribeFleetsRequest): Future[DescribeFleetsResult] =
-      service.describeFleets(params).promise().toFuture
-    @inline def describeImageBuildersFuture(params: DescribeImageBuildersRequest): Future[DescribeImageBuildersResult] =
-      service.describeImageBuilders(params).promise().toFuture
-    @inline def describeImagePermissionsFuture(
-        params: DescribeImagePermissionsRequest
-    ): Future[DescribeImagePermissionsResult] = service.describeImagePermissions(params).promise().toFuture
-    @inline def describeImagesFuture(params: DescribeImagesRequest): Future[DescribeImagesResult] =
-      service.describeImages(params).promise().toFuture
-    @inline def describeSessionsFuture(params: DescribeSessionsRequest): Future[DescribeSessionsResult] =
-      service.describeSessions(params).promise().toFuture
-    @inline def describeStacksFuture(params: DescribeStacksRequest): Future[DescribeStacksResult] =
-      service.describeStacks(params).promise().toFuture
-    @inline def describeUsageReportSubscriptionsFuture(
-        params: DescribeUsageReportSubscriptionsRequest
-    ): Future[DescribeUsageReportSubscriptionsResult] =
-      service.describeUsageReportSubscriptions(params).promise().toFuture
-    @inline def describeUserStackAssociationsFuture(
-        params: DescribeUserStackAssociationsRequest
-    ): Future[DescribeUserStackAssociationsResult] = service.describeUserStackAssociations(params).promise().toFuture
-    @inline def describeUsersFuture(params: DescribeUsersRequest): Future[DescribeUsersResult] =
-      service.describeUsers(params).promise().toFuture
-    @inline def disableUserFuture(params: DisableUserRequest): Future[DisableUserResult] =
-      service.disableUser(params).promise().toFuture
-    @inline def disassociateFleetFuture(params: DisassociateFleetRequest): Future[DisassociateFleetResult] =
-      service.disassociateFleet(params).promise().toFuture
-    @inline def enableUserFuture(params: EnableUserRequest): Future[EnableUserResult] =
-      service.enableUser(params).promise().toFuture
-    @inline def expireSessionFuture(params: ExpireSessionRequest): Future[ExpireSessionResult] =
-      service.expireSession(params).promise().toFuture
-    @inline def listAssociatedFleetsFuture(params: ListAssociatedFleetsRequest): Future[ListAssociatedFleetsResult] =
-      service.listAssociatedFleets(params).promise().toFuture
-    @inline def listAssociatedStacksFuture(params: ListAssociatedStacksRequest): Future[ListAssociatedStacksResult] =
-      service.listAssociatedStacks(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def startFleetFuture(params: StartFleetRequest): Future[StartFleetResult] =
-      service.startFleet(params).promise().toFuture
-    @inline def startImageBuilderFuture(params: StartImageBuilderRequest): Future[StartImageBuilderResult] =
-      service.startImageBuilder(params).promise().toFuture
-    @inline def stopFleetFuture(params: StopFleetRequest): Future[StopFleetResult] =
-      service.stopFleet(params).promise().toFuture
-    @inline def stopImageBuilderFuture(params: StopImageBuilderRequest): Future[StopImageBuilderResult] =
-      service.stopImageBuilder(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateDirectoryConfigFuture(params: UpdateDirectoryConfigRequest): Future[UpdateDirectoryConfigResult] =
-      service.updateDirectoryConfig(params).promise().toFuture
-    @inline def updateFleetFuture(params: UpdateFleetRequest): Future[UpdateFleetResult] =
-      service.updateFleet(params).promise().toFuture
-    @inline def updateImagePermissionsFuture(
-        params: UpdateImagePermissionsRequest
-    ): Future[UpdateImagePermissionsResult] = service.updateImagePermissions(params).promise().toFuture
-    @inline def updateStackFuture(params: UpdateStackRequest): Future[UpdateStackResult] =
-      service.updateStack(params).promise().toFuture
+    @inline def associateFleetFuture(params: AssociateFleetRequest): Future[AssociateFleetResult] = service.associateFleet(params).promise().toFuture
+    @inline def batchAssociateUserStackFuture(params: BatchAssociateUserStackRequest): Future[BatchAssociateUserStackResult] = service.batchAssociateUserStack(params).promise().toFuture
+    @inline def batchDisassociateUserStackFuture(params: BatchDisassociateUserStackRequest): Future[BatchDisassociateUserStackResult] = service.batchDisassociateUserStack(params).promise().toFuture
+    @inline def copyImageFuture(params: CopyImageRequest): Future[CopyImageResponse] = service.copyImage(params).promise().toFuture
+    @inline def createDirectoryConfigFuture(params: CreateDirectoryConfigRequest): Future[CreateDirectoryConfigResult] = service.createDirectoryConfig(params).promise().toFuture
+    @inline def createFleetFuture(params: CreateFleetRequest): Future[CreateFleetResult] = service.createFleet(params).promise().toFuture
+    @inline def createImageBuilderFuture(params: CreateImageBuilderRequest): Future[CreateImageBuilderResult] = service.createImageBuilder(params).promise().toFuture
+    @inline def createImageBuilderStreamingURLFuture(params: CreateImageBuilderStreamingURLRequest): Future[CreateImageBuilderStreamingURLResult] = service.createImageBuilderStreamingURL(params).promise().toFuture
+    @inline def createStackFuture(params: CreateStackRequest): Future[CreateStackResult] = service.createStack(params).promise().toFuture
+    @inline def createStreamingURLFuture(params: CreateStreamingURLRequest): Future[CreateStreamingURLResult] = service.createStreamingURL(params).promise().toFuture
+    @inline def createUsageReportSubscriptionFuture(params: CreateUsageReportSubscriptionRequest): Future[CreateUsageReportSubscriptionResult] = service.createUsageReportSubscription(params).promise().toFuture
+    @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResult] = service.createUser(params).promise().toFuture
+    @inline def deleteDirectoryConfigFuture(params: DeleteDirectoryConfigRequest): Future[DeleteDirectoryConfigResult] = service.deleteDirectoryConfig(params).promise().toFuture
+    @inline def deleteFleetFuture(params: DeleteFleetRequest): Future[DeleteFleetResult] = service.deleteFleet(params).promise().toFuture
+    @inline def deleteImageBuilderFuture(params: DeleteImageBuilderRequest): Future[DeleteImageBuilderResult] = service.deleteImageBuilder(params).promise().toFuture
+    @inline def deleteImageFuture(params: DeleteImageRequest): Future[DeleteImageResult] = service.deleteImage(params).promise().toFuture
+    @inline def deleteImagePermissionsFuture(params: DeleteImagePermissionsRequest): Future[DeleteImagePermissionsResult] = service.deleteImagePermissions(params).promise().toFuture
+    @inline def deleteStackFuture(params: DeleteStackRequest): Future[DeleteStackResult] = service.deleteStack(params).promise().toFuture
+    @inline def deleteUsageReportSubscriptionFuture(params: DeleteUsageReportSubscriptionRequest): Future[DeleteUsageReportSubscriptionResult] = service.deleteUsageReportSubscription(params).promise().toFuture
+    @inline def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResult] = service.deleteUser(params).promise().toFuture
+    @inline def describeDirectoryConfigsFuture(params: DescribeDirectoryConfigsRequest): Future[DescribeDirectoryConfigsResult] = service.describeDirectoryConfigs(params).promise().toFuture
+    @inline def describeFleetsFuture(params: DescribeFleetsRequest): Future[DescribeFleetsResult] = service.describeFleets(params).promise().toFuture
+    @inline def describeImageBuildersFuture(params: DescribeImageBuildersRequest): Future[DescribeImageBuildersResult] = service.describeImageBuilders(params).promise().toFuture
+    @inline def describeImagePermissionsFuture(params: DescribeImagePermissionsRequest): Future[DescribeImagePermissionsResult] = service.describeImagePermissions(params).promise().toFuture
+    @inline def describeImagesFuture(params: DescribeImagesRequest): Future[DescribeImagesResult] = service.describeImages(params).promise().toFuture
+    @inline def describeSessionsFuture(params: DescribeSessionsRequest): Future[DescribeSessionsResult] = service.describeSessions(params).promise().toFuture
+    @inline def describeStacksFuture(params: DescribeStacksRequest): Future[DescribeStacksResult] = service.describeStacks(params).promise().toFuture
+    @inline def describeUsageReportSubscriptionsFuture(params: DescribeUsageReportSubscriptionsRequest): Future[DescribeUsageReportSubscriptionsResult] = service.describeUsageReportSubscriptions(params).promise().toFuture
+    @inline def describeUserStackAssociationsFuture(params: DescribeUserStackAssociationsRequest): Future[DescribeUserStackAssociationsResult] = service.describeUserStackAssociations(params).promise().toFuture
+    @inline def describeUsersFuture(params: DescribeUsersRequest): Future[DescribeUsersResult] = service.describeUsers(params).promise().toFuture
+    @inline def disableUserFuture(params: DisableUserRequest): Future[DisableUserResult] = service.disableUser(params).promise().toFuture
+    @inline def disassociateFleetFuture(params: DisassociateFleetRequest): Future[DisassociateFleetResult] = service.disassociateFleet(params).promise().toFuture
+    @inline def enableUserFuture(params: EnableUserRequest): Future[EnableUserResult] = service.enableUser(params).promise().toFuture
+    @inline def expireSessionFuture(params: ExpireSessionRequest): Future[ExpireSessionResult] = service.expireSession(params).promise().toFuture
+    @inline def listAssociatedFleetsFuture(params: ListAssociatedFleetsRequest): Future[ListAssociatedFleetsResult] = service.listAssociatedFleets(params).promise().toFuture
+    @inline def listAssociatedStacksFuture(params: ListAssociatedStacksRequest): Future[ListAssociatedStacksResult] = service.listAssociatedStacks(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def startFleetFuture(params: StartFleetRequest): Future[StartFleetResult] = service.startFleet(params).promise().toFuture
+    @inline def startImageBuilderFuture(params: StartImageBuilderRequest): Future[StartImageBuilderResult] = service.startImageBuilder(params).promise().toFuture
+    @inline def stopFleetFuture(params: StopFleetRequest): Future[StopFleetResult] = service.stopFleet(params).promise().toFuture
+    @inline def stopImageBuilderFuture(params: StopImageBuilderRequest): Future[StopImageBuilderResult] = service.stopImageBuilder(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateDirectoryConfigFuture(params: UpdateDirectoryConfigRequest): Future[UpdateDirectoryConfigResult] = service.updateDirectoryConfig(params).promise().toFuture
+    @inline def updateFleetFuture(params: UpdateFleetRequest): Future[UpdateFleetResult] = service.updateFleet(params).promise().toFuture
+    @inline def updateImagePermissionsFuture(params: UpdateImagePermissionsRequest): Future[UpdateImagePermissionsResult] = service.updateImagePermissions(params).promise().toFuture
+    @inline def updateStackFuture(params: UpdateStackRequest): Future[UpdateStackResult] = service.updateStack(params).promise().toFuture
   }
 }
 
@@ -186,23 +127,16 @@ package appstream {
     def this(config: AWSConfig) = this()
 
     def associateFleet(params: AssociateFleetRequest): Request[AssociateFleetResult] = js.native
-    def batchAssociateUserStack(params: BatchAssociateUserStackRequest): Request[BatchAssociateUserStackResult] =
-      js.native
-    def batchDisassociateUserStack(
-        params: BatchDisassociateUserStackRequest
-    ): Request[BatchDisassociateUserStackResult] = js.native
+    def batchAssociateUserStack(params: BatchAssociateUserStackRequest): Request[BatchAssociateUserStackResult] = js.native
+    def batchDisassociateUserStack(params: BatchDisassociateUserStackRequest): Request[BatchDisassociateUserStackResult] = js.native
     def copyImage(params: CopyImageRequest): Request[CopyImageResponse] = js.native
     def createDirectoryConfig(params: CreateDirectoryConfigRequest): Request[CreateDirectoryConfigResult] = js.native
     def createFleet(params: CreateFleetRequest): Request[CreateFleetResult] = js.native
     def createImageBuilder(params: CreateImageBuilderRequest): Request[CreateImageBuilderResult] = js.native
-    def createImageBuilderStreamingURL(
-        params: CreateImageBuilderStreamingURLRequest
-    ): Request[CreateImageBuilderStreamingURLResult] = js.native
+    def createImageBuilderStreamingURL(params: CreateImageBuilderStreamingURLRequest): Request[CreateImageBuilderStreamingURLResult] = js.native
     def createStack(params: CreateStackRequest): Request[CreateStackResult] = js.native
     def createStreamingURL(params: CreateStreamingURLRequest): Request[CreateStreamingURLResult] = js.native
-    def createUsageReportSubscription(
-        params: CreateUsageReportSubscriptionRequest
-    ): Request[CreateUsageReportSubscriptionResult] = js.native
+    def createUsageReportSubscription(params: CreateUsageReportSubscriptionRequest): Request[CreateUsageReportSubscriptionResult] = js.native
     def createUser(params: CreateUserRequest): Request[CreateUserResult] = js.native
     def deleteDirectoryConfig(params: DeleteDirectoryConfigRequest): Request[DeleteDirectoryConfigResult] = js.native
     def deleteFleet(params: DeleteFleetRequest): Request[DeleteFleetResult] = js.native
@@ -210,25 +144,17 @@ package appstream {
     def deleteImageBuilder(params: DeleteImageBuilderRequest): Request[DeleteImageBuilderResult] = js.native
     def deleteImagePermissions(params: DeleteImagePermissionsRequest): Request[DeleteImagePermissionsResult] = js.native
     def deleteStack(params: DeleteStackRequest): Request[DeleteStackResult] = js.native
-    def deleteUsageReportSubscription(
-        params: DeleteUsageReportSubscriptionRequest
-    ): Request[DeleteUsageReportSubscriptionResult] = js.native
+    def deleteUsageReportSubscription(params: DeleteUsageReportSubscriptionRequest): Request[DeleteUsageReportSubscriptionResult] = js.native
     def deleteUser(params: DeleteUserRequest): Request[DeleteUserResult] = js.native
-    def describeDirectoryConfigs(params: DescribeDirectoryConfigsRequest): Request[DescribeDirectoryConfigsResult] =
-      js.native
+    def describeDirectoryConfigs(params: DescribeDirectoryConfigsRequest): Request[DescribeDirectoryConfigsResult] = js.native
     def describeFleets(params: DescribeFleetsRequest): Request[DescribeFleetsResult] = js.native
     def describeImageBuilders(params: DescribeImageBuildersRequest): Request[DescribeImageBuildersResult] = js.native
-    def describeImagePermissions(params: DescribeImagePermissionsRequest): Request[DescribeImagePermissionsResult] =
-      js.native
+    def describeImagePermissions(params: DescribeImagePermissionsRequest): Request[DescribeImagePermissionsResult] = js.native
     def describeImages(params: DescribeImagesRequest): Request[DescribeImagesResult] = js.native
     def describeSessions(params: DescribeSessionsRequest): Request[DescribeSessionsResult] = js.native
     def describeStacks(params: DescribeStacksRequest): Request[DescribeStacksResult] = js.native
-    def describeUsageReportSubscriptions(
-        params: DescribeUsageReportSubscriptionsRequest
-    ): Request[DescribeUsageReportSubscriptionsResult] = js.native
-    def describeUserStackAssociations(
-        params: DescribeUserStackAssociationsRequest
-    ): Request[DescribeUserStackAssociationsResult] = js.native
+    def describeUsageReportSubscriptions(params: DescribeUsageReportSubscriptionsRequest): Request[DescribeUsageReportSubscriptionsResult] = js.native
+    def describeUserStackAssociations(params: DescribeUserStackAssociationsRequest): Request[DescribeUserStackAssociationsResult] = js.native
     def describeUsers(params: DescribeUsersRequest): Request[DescribeUsersResult] = js.native
     def disableUser(params: DisableUserRequest): Request[DisableUserResult] = js.native
     def disassociateFleet(params: DisassociateFleetRequest): Request[DisassociateFleetResult] = js.native
@@ -290,15 +216,7 @@ package appstream {
     val FILE_DOWNLOAD = "FILE_DOWNLOAD".asInstanceOf[Action]
     val PRINTING_TO_LOCAL_DEVICE = "PRINTING_TO_LOCAL_DEVICE".asInstanceOf[Action]
 
-    val values = js.Object.freeze(
-      js.Array(
-        CLIPBOARD_COPY_FROM_LOCAL_DEVICE,
-        CLIPBOARD_COPY_TO_LOCAL_DEVICE,
-        FILE_UPLOAD,
-        FILE_DOWNLOAD,
-        PRINTING_TO_LOCAL_DEVICE
-      )
-    )
+    val values = js.Object.freeze(js.Array(CLIPBOARD_COPY_FROM_LOCAL_DEVICE, CLIPBOARD_COPY_TO_LOCAL_DEVICE, FILE_UPLOAD, FILE_DOWNLOAD, PRINTING_TO_LOCAL_DEVICE))
   }
 
   /**
@@ -572,9 +490,7 @@ package appstream {
         "SourceImageName" -> SourceImageName.asInstanceOf[js.Any]
       )
 
-      DestinationImageDescription.foreach(__v =>
-        __obj.updateDynamic("DestinationImageDescription")(__v.asInstanceOf[js.Any])
-      )
+      DestinationImageDescription.foreach(__v => __obj.updateDynamic("DestinationImageDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CopyImageRequest]
     }
   }
@@ -682,19 +598,13 @@ package appstream {
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      DisconnectTimeoutInSeconds.foreach(__v =>
-        __obj.updateDynamic("DisconnectTimeoutInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      DisconnectTimeoutInSeconds.foreach(__v => __obj.updateDynamic("DisconnectTimeoutInSeconds")(__v.asInstanceOf[js.Any]))
       DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
       DomainJoinInfo.foreach(__v => __obj.updateDynamic("DomainJoinInfo")(__v.asInstanceOf[js.Any]))
-      EnableDefaultInternetAccess.foreach(__v =>
-        __obj.updateDynamic("EnableDefaultInternetAccess")(__v.asInstanceOf[js.Any])
-      )
+      EnableDefaultInternetAccess.foreach(__v => __obj.updateDynamic("EnableDefaultInternetAccess")(__v.asInstanceOf[js.Any]))
       FleetType.foreach(__v => __obj.updateDynamic("FleetType")(__v.asInstanceOf[js.Any]))
       IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
-      IdleDisconnectTimeoutInSeconds.foreach(__v =>
-        __obj.updateDynamic("IdleDisconnectTimeoutInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      IdleDisconnectTimeoutInSeconds.foreach(__v => __obj.updateDynamic("IdleDisconnectTimeoutInSeconds")(__v.asInstanceOf[js.Any]))
       ImageArn.foreach(__v => __obj.updateDynamic("ImageArn")(__v.asInstanceOf[js.Any]))
       ImageName.foreach(__v => __obj.updateDynamic("ImageName")(__v.asInstanceOf[js.Any]))
       MaxUserDurationInSeconds.foreach(__v => __obj.updateDynamic("MaxUserDurationInSeconds")(__v.asInstanceOf[js.Any]))
@@ -764,9 +674,7 @@ package appstream {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
       DomainJoinInfo.foreach(__v => __obj.updateDynamic("DomainJoinInfo")(__v.asInstanceOf[js.Any]))
-      EnableDefaultInternetAccess.foreach(__v =>
-        __obj.updateDynamic("EnableDefaultInternetAccess")(__v.asInstanceOf[js.Any])
-      )
+      EnableDefaultInternetAccess.foreach(__v => __obj.updateDynamic("EnableDefaultInternetAccess")(__v.asInstanceOf[js.Any]))
       IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
       ImageArn.foreach(__v => __obj.updateDynamic("ImageArn")(__v.asInstanceOf[js.Any]))
       ImageName.foreach(__v => __obj.updateDynamic("ImageName")(__v.asInstanceOf[js.Any]))
@@ -1442,9 +1350,7 @@ package appstream {
       val __obj = js.Dynamic.literal()
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SharedImagePermissionsList.foreach(__v =>
-        __obj.updateDynamic("SharedImagePermissionsList")(__v.asInstanceOf[js.Any])
-      )
+      SharedImagePermissionsList.foreach(__v => __obj.updateDynamic("SharedImagePermissionsList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeImagePermissionsResult]
     }
   }
@@ -1738,12 +1644,8 @@ package appstream {
       )
 
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
-      OrganizationalUnitDistinguishedNames.foreach(__v =>
-        __obj.updateDynamic("OrganizationalUnitDistinguishedNames")(__v.asInstanceOf[js.Any])
-      )
-      ServiceAccountCredentials.foreach(__v =>
-        __obj.updateDynamic("ServiceAccountCredentials")(__v.asInstanceOf[js.Any])
-      )
+      OrganizationalUnitDistinguishedNames.foreach(__v => __obj.updateDynamic("OrganizationalUnitDistinguishedNames")(__v.asInstanceOf[js.Any]))
+      ServiceAccountCredentials.foreach(__v => __obj.updateDynamic("ServiceAccountCredentials")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DirectoryConfig]
     }
   }
@@ -1833,9 +1735,7 @@ package appstream {
     ): DomainJoinInfo = {
       val __obj = js.Dynamic.literal()
       DirectoryName.foreach(__v => __obj.updateDynamic("DirectoryName")(__v.asInstanceOf[js.Any]))
-      OrganizationalUnitDistinguishedName.foreach(__v =>
-        __obj.updateDynamic("OrganizationalUnitDistinguishedName")(__v.asInstanceOf[js.Any])
-      )
+      OrganizationalUnitDistinguishedName.foreach(__v => __obj.updateDynamic("OrganizationalUnitDistinguishedName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainJoinInfo]
     }
   }
@@ -1964,20 +1864,14 @@ package appstream {
 
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      DisconnectTimeoutInSeconds.foreach(__v =>
-        __obj.updateDynamic("DisconnectTimeoutInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      DisconnectTimeoutInSeconds.foreach(__v => __obj.updateDynamic("DisconnectTimeoutInSeconds")(__v.asInstanceOf[js.Any]))
       DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
       DomainJoinInfo.foreach(__v => __obj.updateDynamic("DomainJoinInfo")(__v.asInstanceOf[js.Any]))
-      EnableDefaultInternetAccess.foreach(__v =>
-        __obj.updateDynamic("EnableDefaultInternetAccess")(__v.asInstanceOf[js.Any])
-      )
+      EnableDefaultInternetAccess.foreach(__v => __obj.updateDynamic("EnableDefaultInternetAccess")(__v.asInstanceOf[js.Any]))
       FleetErrors.foreach(__v => __obj.updateDynamic("FleetErrors")(__v.asInstanceOf[js.Any]))
       FleetType.foreach(__v => __obj.updateDynamic("FleetType")(__v.asInstanceOf[js.Any]))
       IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
-      IdleDisconnectTimeoutInSeconds.foreach(__v =>
-        __obj.updateDynamic("IdleDisconnectTimeoutInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      IdleDisconnectTimeoutInSeconds.foreach(__v => __obj.updateDynamic("IdleDisconnectTimeoutInSeconds")(__v.asInstanceOf[js.Any]))
       ImageArn.foreach(__v => __obj.updateDynamic("ImageArn")(__v.asInstanceOf[js.Any]))
       ImageName.foreach(__v => __obj.updateDynamic("ImageName")(__v.asInstanceOf[js.Any]))
       MaxUserDurationInSeconds.foreach(__v => __obj.updateDynamic("MaxUserDurationInSeconds")(__v.asInstanceOf[js.Any]))
@@ -1997,9 +1891,7 @@ package appstream {
     val DOMAIN_JOIN_INFO = "DOMAIN_JOIN_INFO".asInstanceOf[FleetAttribute]
     val IAM_ROLE_ARN = "IAM_ROLE_ARN".asInstanceOf[FleetAttribute]
 
-    val values = js.Object.freeze(
-      js.Array(VPC_CONFIGURATION, VPC_CONFIGURATION_SECURITY_GROUP_IDS, DOMAIN_JOIN_INFO, IAM_ROLE_ARN)
-    )
+    val values = js.Object.freeze(js.Array(VPC_CONFIGURATION, VPC_CONFIGURATION_SECURITY_GROUP_IDS, DOMAIN_JOIN_INFO, IAM_ROLE_ARN))
   }
 
   /**
@@ -2027,27 +1919,22 @@ package appstream {
   @js.native
   sealed trait FleetErrorCode extends js.Any
   object FleetErrorCode extends js.Object {
-    val IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION =
-      "IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION".asInstanceOf[FleetErrorCode]
-    val IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION =
-      "IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION".asInstanceOf[FleetErrorCode]
-    val IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION =
-      "IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION".asInstanceOf[FleetErrorCode]
+    val IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION = "IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION".asInstanceOf[FleetErrorCode]
+    val IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION = "IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION".asInstanceOf[FleetErrorCode]
+    val IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION = "IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION".asInstanceOf[FleetErrorCode]
     val NETWORK_INTERFACE_LIMIT_EXCEEDED = "NETWORK_INTERFACE_LIMIT_EXCEEDED".asInstanceOf[FleetErrorCode]
     val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[FleetErrorCode]
     val IAM_SERVICE_ROLE_IS_MISSING = "IAM_SERVICE_ROLE_IS_MISSING".asInstanceOf[FleetErrorCode]
     val MACHINE_ROLE_IS_MISSING = "MACHINE_ROLE_IS_MISSING".asInstanceOf[FleetErrorCode]
     val STS_DISABLED_IN_REGION = "STS_DISABLED_IN_REGION".asInstanceOf[FleetErrorCode]
     val SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES = "SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES".asInstanceOf[FleetErrorCode]
-    val IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION =
-      "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION".asInstanceOf[FleetErrorCode]
+    val IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION = "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION".asInstanceOf[FleetErrorCode]
     val SUBNET_NOT_FOUND = "SUBNET_NOT_FOUND".asInstanceOf[FleetErrorCode]
     val IMAGE_NOT_FOUND = "IMAGE_NOT_FOUND".asInstanceOf[FleetErrorCode]
     val INVALID_SUBNET_CONFIGURATION = "INVALID_SUBNET_CONFIGURATION".asInstanceOf[FleetErrorCode]
     val SECURITY_GROUPS_NOT_FOUND = "SECURITY_GROUPS_NOT_FOUND".asInstanceOf[FleetErrorCode]
     val IGW_NOT_ATTACHED = "IGW_NOT_ATTACHED".asInstanceOf[FleetErrorCode]
-    val IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION =
-      "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION".asInstanceOf[FleetErrorCode]
+    val IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION = "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION".asInstanceOf[FleetErrorCode]
     val DOMAIN_JOIN_ERROR_FILE_NOT_FOUND = "DOMAIN_JOIN_ERROR_FILE_NOT_FOUND".asInstanceOf[FleetErrorCode]
     val DOMAIN_JOIN_ERROR_ACCESS_DENIED = "DOMAIN_JOIN_ERROR_ACCESS_DENIED".asInstanceOf[FleetErrorCode]
     val DOMAIN_JOIN_ERROR_LOGON_FAILURE = "DOMAIN_JOIN_ERROR_LOGON_FAILURE".asInstanceOf[FleetErrorCode]
@@ -2056,10 +1943,8 @@ package appstream {
     val DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN = "DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN".asInstanceOf[FleetErrorCode]
     val DOMAIN_JOIN_ERROR_NOT_SUPPORTED = "DOMAIN_JOIN_ERROR_NOT_SUPPORTED".asInstanceOf[FleetErrorCode]
     val DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME = "DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME".asInstanceOf[FleetErrorCode]
-    val DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED =
-      "DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED".asInstanceOf[FleetErrorCode]
-    val DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED =
-      "DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED".asInstanceOf[FleetErrorCode]
+    val DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED = "DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED".asInstanceOf[FleetErrorCode]
+    val DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED = "DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED".asInstanceOf[FleetErrorCode]
     val DOMAIN_JOIN_NERR_PASSWORD_EXPIRED = "DOMAIN_JOIN_NERR_PASSWORD_EXPIRED".asInstanceOf[FleetErrorCode]
     val DOMAIN_JOIN_INTERNAL_SERVICE_ERROR = "DOMAIN_JOIN_INTERNAL_SERVICE_ERROR".asInstanceOf[FleetErrorCode]
 
@@ -2175,9 +2060,7 @@ package appstream {
       ImageBuilderSupported.foreach(__v => __obj.updateDynamic("ImageBuilderSupported")(__v.asInstanceOf[js.Any]))
       ImagePermissions.foreach(__v => __obj.updateDynamic("ImagePermissions")(__v.asInstanceOf[js.Any]))
       Platform.foreach(__v => __obj.updateDynamic("Platform")(__v.asInstanceOf[js.Any]))
-      PublicBaseImageReleasedDate.foreach(__v =>
-        __obj.updateDynamic("PublicBaseImageReleasedDate")(__v.asInstanceOf[js.Any])
-      )
+      PublicBaseImageReleasedDate.foreach(__v => __obj.updateDynamic("PublicBaseImageReleasedDate")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       StateChangeReason.foreach(__v => __obj.updateDynamic("StateChangeReason")(__v.asInstanceOf[js.Any]))
       Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
@@ -2243,16 +2126,12 @@ package appstream {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
       DomainJoinInfo.foreach(__v => __obj.updateDynamic("DomainJoinInfo")(__v.asInstanceOf[js.Any]))
-      EnableDefaultInternetAccess.foreach(__v =>
-        __obj.updateDynamic("EnableDefaultInternetAccess")(__v.asInstanceOf[js.Any])
-      )
+      EnableDefaultInternetAccess.foreach(__v => __obj.updateDynamic("EnableDefaultInternetAccess")(__v.asInstanceOf[js.Any]))
       IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
       ImageArn.foreach(__v => __obj.updateDynamic("ImageArn")(__v.asInstanceOf[js.Any]))
       ImageBuilderErrors.foreach(__v => __obj.updateDynamic("ImageBuilderErrors")(__v.asInstanceOf[js.Any]))
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
-      NetworkAccessConfiguration.foreach(__v =>
-        __obj.updateDynamic("NetworkAccessConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      NetworkAccessConfiguration.foreach(__v => __obj.updateDynamic("NetworkAccessConfiguration")(__v.asInstanceOf[js.Any]))
       Platform.foreach(__v => __obj.updateDynamic("Platform")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       StateChangeReason.foreach(__v => __obj.updateDynamic("StateChangeReason")(__v.asInstanceOf[js.Any]))
@@ -2274,9 +2153,7 @@ package appstream {
     val DELETING = "DELETING".asInstanceOf[ImageBuilderState]
     val FAILED = "FAILED".asInstanceOf[ImageBuilderState]
 
-    val values = js.Object.freeze(
-      js.Array(PENDING, UPDATING_AGENT, RUNNING, STOPPING, STOPPED, REBOOTING, SNAPSHOTTING, DELETING, FAILED)
-    )
+    val values = js.Object.freeze(js.Array(PENDING, UPDATING_AGENT, RUNNING, STOPPING, STOPPED, REBOOTING, SNAPSHOTTING, DELETING, FAILED))
   }
 
   /**
@@ -2653,9 +2530,7 @@ package appstream {
       AuthenticationType.foreach(__v => __obj.updateDynamic("AuthenticationType")(__v.asInstanceOf[js.Any]))
       ConnectionState.foreach(__v => __obj.updateDynamic("ConnectionState")(__v.asInstanceOf[js.Any]))
       MaxExpirationTime.foreach(__v => __obj.updateDynamic("MaxExpirationTime")(__v.asInstanceOf[js.Any]))
-      NetworkAccessConfiguration.foreach(__v =>
-        __obj.updateDynamic("NetworkAccessConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      NetworkAccessConfiguration.foreach(__v => __obj.updateDynamic("NetworkAccessConfiguration")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Session]
     }
@@ -3086,12 +2961,8 @@ package appstream {
         "DirectoryName" -> DirectoryName.asInstanceOf[js.Any]
       )
 
-      OrganizationalUnitDistinguishedNames.foreach(__v =>
-        __obj.updateDynamic("OrganizationalUnitDistinguishedNames")(__v.asInstanceOf[js.Any])
-      )
-      ServiceAccountCredentials.foreach(__v =>
-        __obj.updateDynamic("ServiceAccountCredentials")(__v.asInstanceOf[js.Any])
-      )
+      OrganizationalUnitDistinguishedNames.foreach(__v => __obj.updateDynamic("OrganizationalUnitDistinguishedNames")(__v.asInstanceOf[js.Any]))
+      ServiceAccountCredentials.foreach(__v => __obj.updateDynamic("ServiceAccountCredentials")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDirectoryConfigRequest]
     }
   }
@@ -3157,18 +3028,12 @@ package appstream {
       ComputeCapacity.foreach(__v => __obj.updateDynamic("ComputeCapacity")(__v.asInstanceOf[js.Any]))
       DeleteVpcConfig.foreach(__v => __obj.updateDynamic("DeleteVpcConfig")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      DisconnectTimeoutInSeconds.foreach(__v =>
-        __obj.updateDynamic("DisconnectTimeoutInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      DisconnectTimeoutInSeconds.foreach(__v => __obj.updateDynamic("DisconnectTimeoutInSeconds")(__v.asInstanceOf[js.Any]))
       DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
       DomainJoinInfo.foreach(__v => __obj.updateDynamic("DomainJoinInfo")(__v.asInstanceOf[js.Any]))
-      EnableDefaultInternetAccess.foreach(__v =>
-        __obj.updateDynamic("EnableDefaultInternetAccess")(__v.asInstanceOf[js.Any])
-      )
+      EnableDefaultInternetAccess.foreach(__v => __obj.updateDynamic("EnableDefaultInternetAccess")(__v.asInstanceOf[js.Any]))
       IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
-      IdleDisconnectTimeoutInSeconds.foreach(__v =>
-        __obj.updateDynamic("IdleDisconnectTimeoutInSeconds")(__v.asInstanceOf[js.Any])
-      )
+      IdleDisconnectTimeoutInSeconds.foreach(__v => __obj.updateDynamic("IdleDisconnectTimeoutInSeconds")(__v.asInstanceOf[js.Any]))
       ImageArn.foreach(__v => __obj.updateDynamic("ImageArn")(__v.asInstanceOf[js.Any]))
       ImageName.foreach(__v => __obj.updateDynamic("ImageName")(__v.asInstanceOf[js.Any]))
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))

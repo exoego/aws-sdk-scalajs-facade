@@ -64,43 +64,19 @@ package object health {
 
   implicit final class HealthOps(private val service: Health) extends AnyVal {
 
-    @inline def describeAffectedAccountsForOrganizationFuture(
-        params: DescribeAffectedAccountsForOrganizationRequest
-    ): Future[DescribeAffectedAccountsForOrganizationResponse] =
-      service.describeAffectedAccountsForOrganization(params).promise().toFuture
-    @inline def describeAffectedEntitiesForOrganizationFuture(
-        params: DescribeAffectedEntitiesForOrganizationRequest
-    ): Future[DescribeAffectedEntitiesForOrganizationResponse] =
-      service.describeAffectedEntitiesForOrganization(params).promise().toFuture
-    @inline def describeAffectedEntitiesFuture(
-        params: DescribeAffectedEntitiesRequest
-    ): Future[DescribeAffectedEntitiesResponse] = service.describeAffectedEntities(params).promise().toFuture
-    @inline def describeEntityAggregatesFuture(
-        params: DescribeEntityAggregatesRequest
-    ): Future[DescribeEntityAggregatesResponse] = service.describeEntityAggregates(params).promise().toFuture
-    @inline def describeEventAggregatesFuture(
-        params: DescribeEventAggregatesRequest
-    ): Future[DescribeEventAggregatesResponse] = service.describeEventAggregates(params).promise().toFuture
-    @inline def describeEventDetailsForOrganizationFuture(
-        params: DescribeEventDetailsForOrganizationRequest
-    ): Future[DescribeEventDetailsForOrganizationResponse] =
-      service.describeEventDetailsForOrganization(params).promise().toFuture
-    @inline def describeEventDetailsFuture(params: DescribeEventDetailsRequest): Future[DescribeEventDetailsResponse] =
-      service.describeEventDetails(params).promise().toFuture
-    @inline def describeEventTypesFuture(params: DescribeEventTypesRequest): Future[DescribeEventTypesResponse] =
-      service.describeEventTypes(params).promise().toFuture
-    @inline def describeEventsForOrganizationFuture(
-        params: DescribeEventsForOrganizationRequest
-    ): Future[DescribeEventsForOrganizationResponse] = service.describeEventsForOrganization(params).promise().toFuture
-    @inline def describeEventsFuture(params: DescribeEventsRequest): Future[DescribeEventsResponse] =
-      service.describeEvents(params).promise().toFuture
-    @inline def describeHealthServiceStatusForOrganizationFuture()
-        : Future[DescribeHealthServiceStatusForOrganizationResponse] =
-      service.describeHealthServiceStatusForOrganization().promise().toFuture
-    @inline def disableHealthServiceAccessForOrganizationFuture(): Future[js.Object] =
-      service.disableHealthServiceAccessForOrganization().promise().toFuture
-    @inline def enableHealthServiceAccessForOrganizationFuture(): Future[js.Object] =
-      service.enableHealthServiceAccessForOrganization().promise().toFuture
+    @inline def describeAffectedAccountsForOrganizationFuture(params: DescribeAffectedAccountsForOrganizationRequest): Future[DescribeAffectedAccountsForOrganizationResponse] = service.describeAffectedAccountsForOrganization(params).promise().toFuture
+    @inline def describeAffectedEntitiesForOrganizationFuture(params: DescribeAffectedEntitiesForOrganizationRequest): Future[DescribeAffectedEntitiesForOrganizationResponse] = service.describeAffectedEntitiesForOrganization(params).promise().toFuture
+    @inline def describeAffectedEntitiesFuture(params: DescribeAffectedEntitiesRequest): Future[DescribeAffectedEntitiesResponse] = service.describeAffectedEntities(params).promise().toFuture
+    @inline def describeEntityAggregatesFuture(params: DescribeEntityAggregatesRequest): Future[DescribeEntityAggregatesResponse] = service.describeEntityAggregates(params).promise().toFuture
+    @inline def describeEventAggregatesFuture(params: DescribeEventAggregatesRequest): Future[DescribeEventAggregatesResponse] = service.describeEventAggregates(params).promise().toFuture
+    @inline def describeEventDetailsForOrganizationFuture(params: DescribeEventDetailsForOrganizationRequest): Future[DescribeEventDetailsForOrganizationResponse] = service.describeEventDetailsForOrganization(params).promise().toFuture
+    @inline def describeEventDetailsFuture(params: DescribeEventDetailsRequest): Future[DescribeEventDetailsResponse] = service.describeEventDetails(params).promise().toFuture
+    @inline def describeEventTypesFuture(params: DescribeEventTypesRequest): Future[DescribeEventTypesResponse] = service.describeEventTypes(params).promise().toFuture
+    @inline def describeEventsForOrganizationFuture(params: DescribeEventsForOrganizationRequest): Future[DescribeEventsForOrganizationResponse] = service.describeEventsForOrganization(params).promise().toFuture
+    @inline def describeEventsFuture(params: DescribeEventsRequest): Future[DescribeEventsResponse] = service.describeEvents(params).promise().toFuture
+    @inline def describeHealthServiceStatusForOrganizationFuture(): Future[DescribeHealthServiceStatusForOrganizationResponse] = service.describeHealthServiceStatusForOrganization().promise().toFuture
+    @inline def disableHealthServiceAccessForOrganizationFuture(): Future[js.Object] = service.disableHealthServiceAccessForOrganization().promise().toFuture
+    @inline def enableHealthServiceAccessForOrganizationFuture(): Future[js.Object] = service.enableHealthServiceAccessForOrganization().promise().toFuture
   }
 }
 
@@ -110,29 +86,17 @@ package health {
   class Health() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def describeAffectedAccountsForOrganization(
-        params: DescribeAffectedAccountsForOrganizationRequest
-    ): Request[DescribeAffectedAccountsForOrganizationResponse] = js.native
-    def describeAffectedEntities(params: DescribeAffectedEntitiesRequest): Request[DescribeAffectedEntitiesResponse] =
-      js.native
-    def describeAffectedEntitiesForOrganization(
-        params: DescribeAffectedEntitiesForOrganizationRequest
-    ): Request[DescribeAffectedEntitiesForOrganizationResponse] = js.native
-    def describeEntityAggregates(params: DescribeEntityAggregatesRequest): Request[DescribeEntityAggregatesResponse] =
-      js.native
-    def describeEventAggregates(params: DescribeEventAggregatesRequest): Request[DescribeEventAggregatesResponse] =
-      js.native
+    def describeAffectedAccountsForOrganization(params: DescribeAffectedAccountsForOrganizationRequest): Request[DescribeAffectedAccountsForOrganizationResponse] = js.native
+    def describeAffectedEntities(params: DescribeAffectedEntitiesRequest): Request[DescribeAffectedEntitiesResponse] = js.native
+    def describeAffectedEntitiesForOrganization(params: DescribeAffectedEntitiesForOrganizationRequest): Request[DescribeAffectedEntitiesForOrganizationResponse] = js.native
+    def describeEntityAggregates(params: DescribeEntityAggregatesRequest): Request[DescribeEntityAggregatesResponse] = js.native
+    def describeEventAggregates(params: DescribeEventAggregatesRequest): Request[DescribeEventAggregatesResponse] = js.native
     def describeEventDetails(params: DescribeEventDetailsRequest): Request[DescribeEventDetailsResponse] = js.native
-    def describeEventDetailsForOrganization(
-        params: DescribeEventDetailsForOrganizationRequest
-    ): Request[DescribeEventDetailsForOrganizationResponse] = js.native
+    def describeEventDetailsForOrganization(params: DescribeEventDetailsForOrganizationRequest): Request[DescribeEventDetailsForOrganizationResponse] = js.native
     def describeEventTypes(params: DescribeEventTypesRequest): Request[DescribeEventTypesResponse] = js.native
     def describeEvents(params: DescribeEventsRequest): Request[DescribeEventsResponse] = js.native
-    def describeEventsForOrganization(
-        params: DescribeEventsForOrganizationRequest
-    ): Request[DescribeEventsForOrganizationResponse] = js.native
-    def describeHealthServiceStatusForOrganization(): Request[DescribeHealthServiceStatusForOrganizationResponse] =
-      js.native
+    def describeEventsForOrganization(params: DescribeEventsForOrganizationRequest): Request[DescribeEventsForOrganizationResponse] = js.native
+    def describeHealthServiceStatusForOrganization(): Request[DescribeHealthServiceStatusForOrganizationResponse] = js.native
     def disableHealthServiceAccessForOrganization(): Request[js.Object] = js.native
     def enableHealthServiceAccessForOrganization(): Request[js.Object] = js.native
   }
@@ -641,9 +605,7 @@ package health {
         healthServiceAccessStatusForOrganization: js.UndefOr[healthServiceAccessStatusForOrganization] = js.undefined
     ): DescribeHealthServiceStatusForOrganizationResponse = {
       val __obj = js.Dynamic.literal()
-      healthServiceAccessStatusForOrganization.foreach(__v =>
-        __obj.updateDynamic("healthServiceAccessStatusForOrganization")(__v.asInstanceOf[js.Any])
-      )
+      healthServiceAccessStatusForOrganization.foreach(__v => __obj.updateDynamic("healthServiceAccessStatusForOrganization")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeHealthServiceStatusForOrganizationResponse]
     }
   }

@@ -72,81 +72,38 @@ package object emr {
 
   implicit final class EMROps(private val service: EMR) extends AnyVal {
 
-    @inline def addInstanceFleetFuture(params: AddInstanceFleetInput): Future[AddInstanceFleetOutput] =
-      service.addInstanceFleet(params).promise().toFuture
-    @inline def addInstanceGroupsFuture(params: AddInstanceGroupsInput): Future[AddInstanceGroupsOutput] =
-      service.addInstanceGroups(params).promise().toFuture
-    @inline def addJobFlowStepsFuture(params: AddJobFlowStepsInput): Future[AddJobFlowStepsOutput] =
-      service.addJobFlowSteps(params).promise().toFuture
+    @inline def addInstanceFleetFuture(params: AddInstanceFleetInput): Future[AddInstanceFleetOutput] = service.addInstanceFleet(params).promise().toFuture
+    @inline def addInstanceGroupsFuture(params: AddInstanceGroupsInput): Future[AddInstanceGroupsOutput] = service.addInstanceGroups(params).promise().toFuture
+    @inline def addJobFlowStepsFuture(params: AddJobFlowStepsInput): Future[AddJobFlowStepsOutput] = service.addJobFlowSteps(params).promise().toFuture
     @inline def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise().toFuture
-    @inline def cancelStepsFuture(params: CancelStepsInput): Future[CancelStepsOutput] =
-      service.cancelSteps(params).promise().toFuture
-    @inline def createSecurityConfigurationFuture(
-        params: CreateSecurityConfigurationInput
-    ): Future[CreateSecurityConfigurationOutput] = service.createSecurityConfiguration(params).promise().toFuture
-    @inline def deleteSecurityConfigurationFuture(
-        params: DeleteSecurityConfigurationInput
-    ): Future[DeleteSecurityConfigurationOutput] = service.deleteSecurityConfiguration(params).promise().toFuture
-    @inline def describeClusterFuture(params: DescribeClusterInput): Future[DescribeClusterOutput] =
-      service.describeCluster(params).promise().toFuture
-    @inline def describeSecurityConfigurationFuture(
-        params: DescribeSecurityConfigurationInput
-    ): Future[DescribeSecurityConfigurationOutput] = service.describeSecurityConfiguration(params).promise().toFuture
-    @inline def describeStepFuture(params: DescribeStepInput): Future[DescribeStepOutput] =
-      service.describeStep(params).promise().toFuture
-    @inline def getBlockPublicAccessConfigurationFuture(
-        params: GetBlockPublicAccessConfigurationInput
-    ): Future[GetBlockPublicAccessConfigurationOutput] =
-      service.getBlockPublicAccessConfiguration(params).promise().toFuture
-    @inline def getManagedScalingPolicyFuture(
-        params: GetManagedScalingPolicyInput
-    ): Future[GetManagedScalingPolicyOutput] = service.getManagedScalingPolicy(params).promise().toFuture
-    @inline def listBootstrapActionsFuture(params: ListBootstrapActionsInput): Future[ListBootstrapActionsOutput] =
-      service.listBootstrapActions(params).promise().toFuture
-    @inline def listClustersFuture(params: ListClustersInput): Future[ListClustersOutput] =
-      service.listClusters(params).promise().toFuture
-    @inline def listInstanceFleetsFuture(params: ListInstanceFleetsInput): Future[ListInstanceFleetsOutput] =
-      service.listInstanceFleets(params).promise().toFuture
-    @inline def listInstanceGroupsFuture(params: ListInstanceGroupsInput): Future[ListInstanceGroupsOutput] =
-      service.listInstanceGroups(params).promise().toFuture
-    @inline def listInstancesFuture(params: ListInstancesInput): Future[ListInstancesOutput] =
-      service.listInstances(params).promise().toFuture
-    @inline def listSecurityConfigurationsFuture(
-        params: ListSecurityConfigurationsInput
-    ): Future[ListSecurityConfigurationsOutput] = service.listSecurityConfigurations(params).promise().toFuture
-    @inline def listStepsFuture(params: ListStepsInput): Future[ListStepsOutput] =
-      service.listSteps(params).promise().toFuture
-    @inline def modifyClusterFuture(params: ModifyClusterInput): Future[ModifyClusterOutput] =
-      service.modifyCluster(params).promise().toFuture
-    @inline def modifyInstanceFleetFuture(params: ModifyInstanceFleetInput): Future[js.Object] =
-      service.modifyInstanceFleet(params).promise().toFuture
-    @inline def modifyInstanceGroupsFuture(params: ModifyInstanceGroupsInput): Future[js.Object] =
-      service.modifyInstanceGroups(params).promise().toFuture
-    @inline def putAutoScalingPolicyFuture(params: PutAutoScalingPolicyInput): Future[PutAutoScalingPolicyOutput] =
-      service.putAutoScalingPolicy(params).promise().toFuture
-    @inline def putBlockPublicAccessConfigurationFuture(
-        params: PutBlockPublicAccessConfigurationInput
-    ): Future[PutBlockPublicAccessConfigurationOutput] =
-      service.putBlockPublicAccessConfiguration(params).promise().toFuture
-    @inline def putManagedScalingPolicyFuture(
-        params: PutManagedScalingPolicyInput
-    ): Future[PutManagedScalingPolicyOutput] = service.putManagedScalingPolicy(params).promise().toFuture
-    @inline def removeAutoScalingPolicyFuture(
-        params: RemoveAutoScalingPolicyInput
-    ): Future[RemoveAutoScalingPolicyOutput] = service.removeAutoScalingPolicy(params).promise().toFuture
-    @inline def removeManagedScalingPolicyFuture(
-        params: RemoveManagedScalingPolicyInput
-    ): Future[RemoveManagedScalingPolicyOutput] = service.removeManagedScalingPolicy(params).promise().toFuture
-    @inline def removeTagsFuture(params: RemoveTagsInput): Future[RemoveTagsOutput] =
-      service.removeTags(params).promise().toFuture
-    @inline def runJobFlowFuture(params: RunJobFlowInput): Future[RunJobFlowOutput] =
-      service.runJobFlow(params).promise().toFuture
-    @inline def setTerminationProtectionFuture(params: SetTerminationProtectionInput): Future[js.Object] =
-      service.setTerminationProtection(params).promise().toFuture
-    @inline def setVisibleToAllUsersFuture(params: SetVisibleToAllUsersInput): Future[js.Object] =
-      service.setVisibleToAllUsers(params).promise().toFuture
-    @inline def terminateJobFlowsFuture(params: TerminateJobFlowsInput): Future[js.Object] =
-      service.terminateJobFlows(params).promise().toFuture
+    @inline def cancelStepsFuture(params: CancelStepsInput): Future[CancelStepsOutput] = service.cancelSteps(params).promise().toFuture
+    @inline def createSecurityConfigurationFuture(params: CreateSecurityConfigurationInput): Future[CreateSecurityConfigurationOutput] = service.createSecurityConfiguration(params).promise().toFuture
+    @inline def deleteSecurityConfigurationFuture(params: DeleteSecurityConfigurationInput): Future[DeleteSecurityConfigurationOutput] = service.deleteSecurityConfiguration(params).promise().toFuture
+    @inline def describeClusterFuture(params: DescribeClusterInput): Future[DescribeClusterOutput] = service.describeCluster(params).promise().toFuture
+    @inline def describeSecurityConfigurationFuture(params: DescribeSecurityConfigurationInput): Future[DescribeSecurityConfigurationOutput] = service.describeSecurityConfiguration(params).promise().toFuture
+    @inline def describeStepFuture(params: DescribeStepInput): Future[DescribeStepOutput] = service.describeStep(params).promise().toFuture
+    @inline def getBlockPublicAccessConfigurationFuture(params: GetBlockPublicAccessConfigurationInput): Future[GetBlockPublicAccessConfigurationOutput] = service.getBlockPublicAccessConfiguration(params).promise().toFuture
+    @inline def getManagedScalingPolicyFuture(params: GetManagedScalingPolicyInput): Future[GetManagedScalingPolicyOutput] = service.getManagedScalingPolicy(params).promise().toFuture
+    @inline def listBootstrapActionsFuture(params: ListBootstrapActionsInput): Future[ListBootstrapActionsOutput] = service.listBootstrapActions(params).promise().toFuture
+    @inline def listClustersFuture(params: ListClustersInput): Future[ListClustersOutput] = service.listClusters(params).promise().toFuture
+    @inline def listInstanceFleetsFuture(params: ListInstanceFleetsInput): Future[ListInstanceFleetsOutput] = service.listInstanceFleets(params).promise().toFuture
+    @inline def listInstanceGroupsFuture(params: ListInstanceGroupsInput): Future[ListInstanceGroupsOutput] = service.listInstanceGroups(params).promise().toFuture
+    @inline def listInstancesFuture(params: ListInstancesInput): Future[ListInstancesOutput] = service.listInstances(params).promise().toFuture
+    @inline def listSecurityConfigurationsFuture(params: ListSecurityConfigurationsInput): Future[ListSecurityConfigurationsOutput] = service.listSecurityConfigurations(params).promise().toFuture
+    @inline def listStepsFuture(params: ListStepsInput): Future[ListStepsOutput] = service.listSteps(params).promise().toFuture
+    @inline def modifyClusterFuture(params: ModifyClusterInput): Future[ModifyClusterOutput] = service.modifyCluster(params).promise().toFuture
+    @inline def modifyInstanceFleetFuture(params: ModifyInstanceFleetInput): Future[js.Object] = service.modifyInstanceFleet(params).promise().toFuture
+    @inline def modifyInstanceGroupsFuture(params: ModifyInstanceGroupsInput): Future[js.Object] = service.modifyInstanceGroups(params).promise().toFuture
+    @inline def putAutoScalingPolicyFuture(params: PutAutoScalingPolicyInput): Future[PutAutoScalingPolicyOutput] = service.putAutoScalingPolicy(params).promise().toFuture
+    @inline def putBlockPublicAccessConfigurationFuture(params: PutBlockPublicAccessConfigurationInput): Future[PutBlockPublicAccessConfigurationOutput] = service.putBlockPublicAccessConfiguration(params).promise().toFuture
+    @inline def putManagedScalingPolicyFuture(params: PutManagedScalingPolicyInput): Future[PutManagedScalingPolicyOutput] = service.putManagedScalingPolicy(params).promise().toFuture
+    @inline def removeAutoScalingPolicyFuture(params: RemoveAutoScalingPolicyInput): Future[RemoveAutoScalingPolicyOutput] = service.removeAutoScalingPolicy(params).promise().toFuture
+    @inline def removeManagedScalingPolicyFuture(params: RemoveManagedScalingPolicyInput): Future[RemoveManagedScalingPolicyOutput] = service.removeManagedScalingPolicy(params).promise().toFuture
+    @inline def removeTagsFuture(params: RemoveTagsInput): Future[RemoveTagsOutput] = service.removeTags(params).promise().toFuture
+    @inline def runJobFlowFuture(params: RunJobFlowInput): Future[RunJobFlowOutput] = service.runJobFlow(params).promise().toFuture
+    @inline def setTerminationProtectionFuture(params: SetTerminationProtectionInput): Future[js.Object] = service.setTerminationProtection(params).promise().toFuture
+    @inline def setVisibleToAllUsersFuture(params: SetVisibleToAllUsersInput): Future[js.Object] = service.setVisibleToAllUsers(params).promise().toFuture
+    @inline def terminateJobFlowsFuture(params: TerminateJobFlowsInput): Future[js.Object] = service.terminateJobFlows(params).promise().toFuture
   }
 }
 
@@ -161,51 +118,34 @@ package emr {
     def addJobFlowSteps(params: AddJobFlowStepsInput): Request[AddJobFlowStepsOutput] = js.native
     def addTags(params: AddTagsInput): Request[AddTagsOutput] = js.native
     def cancelSteps(params: CancelStepsInput): Request[CancelStepsOutput] = js.native
-    def createSecurityConfiguration(
-        params: CreateSecurityConfigurationInput
-    ): Request[CreateSecurityConfigurationOutput] = js.native
-    def deleteSecurityConfiguration(
-        params: DeleteSecurityConfigurationInput
-    ): Request[DeleteSecurityConfigurationOutput] = js.native
+    def createSecurityConfiguration(params: CreateSecurityConfigurationInput): Request[CreateSecurityConfigurationOutput] = js.native
+    def deleteSecurityConfiguration(params: DeleteSecurityConfigurationInput): Request[DeleteSecurityConfigurationOutput] = js.native
     def describeCluster(params: DescribeClusterInput): Request[DescribeClusterOutput] = js.native
-    def describeSecurityConfiguration(
-        params: DescribeSecurityConfigurationInput
-    ): Request[DescribeSecurityConfigurationOutput] = js.native
+    def describeSecurityConfiguration(params: DescribeSecurityConfigurationInput): Request[DescribeSecurityConfigurationOutput] = js.native
     def describeStep(params: DescribeStepInput): Request[DescribeStepOutput] = js.native
-    def getBlockPublicAccessConfiguration(
-        params: GetBlockPublicAccessConfigurationInput
-    ): Request[GetBlockPublicAccessConfigurationOutput] = js.native
-    def getManagedScalingPolicy(params: GetManagedScalingPolicyInput): Request[GetManagedScalingPolicyOutput] =
-      js.native
+    def getBlockPublicAccessConfiguration(params: GetBlockPublicAccessConfigurationInput): Request[GetBlockPublicAccessConfigurationOutput] = js.native
+    def getManagedScalingPolicy(params: GetManagedScalingPolicyInput): Request[GetManagedScalingPolicyOutput] = js.native
     def listBootstrapActions(params: ListBootstrapActionsInput): Request[ListBootstrapActionsOutput] = js.native
     def listClusters(params: ListClustersInput): Request[ListClustersOutput] = js.native
     def listInstanceFleets(params: ListInstanceFleetsInput): Request[ListInstanceFleetsOutput] = js.native
     def listInstanceGroups(params: ListInstanceGroupsInput): Request[ListInstanceGroupsOutput] = js.native
     def listInstances(params: ListInstancesInput): Request[ListInstancesOutput] = js.native
-    def listSecurityConfigurations(params: ListSecurityConfigurationsInput): Request[ListSecurityConfigurationsOutput] =
-      js.native
+    def listSecurityConfigurations(params: ListSecurityConfigurationsInput): Request[ListSecurityConfigurationsOutput] = js.native
     def listSteps(params: ListStepsInput): Request[ListStepsOutput] = js.native
     def modifyCluster(params: ModifyClusterInput): Request[ModifyClusterOutput] = js.native
     def modifyInstanceFleet(params: ModifyInstanceFleetInput): Request[js.Object] = js.native
     def modifyInstanceGroups(params: ModifyInstanceGroupsInput): Request[js.Object] = js.native
     def putAutoScalingPolicy(params: PutAutoScalingPolicyInput): Request[PutAutoScalingPolicyOutput] = js.native
-    def putBlockPublicAccessConfiguration(
-        params: PutBlockPublicAccessConfigurationInput
-    ): Request[PutBlockPublicAccessConfigurationOutput] = js.native
-    def putManagedScalingPolicy(params: PutManagedScalingPolicyInput): Request[PutManagedScalingPolicyOutput] =
-      js.native
-    def removeAutoScalingPolicy(params: RemoveAutoScalingPolicyInput): Request[RemoveAutoScalingPolicyOutput] =
-      js.native
-    def removeManagedScalingPolicy(params: RemoveManagedScalingPolicyInput): Request[RemoveManagedScalingPolicyOutput] =
-      js.native
+    def putBlockPublicAccessConfiguration(params: PutBlockPublicAccessConfigurationInput): Request[PutBlockPublicAccessConfigurationOutput] = js.native
+    def putManagedScalingPolicy(params: PutManagedScalingPolicyInput): Request[PutManagedScalingPolicyOutput] = js.native
+    def removeAutoScalingPolicy(params: RemoveAutoScalingPolicyInput): Request[RemoveAutoScalingPolicyOutput] = js.native
+    def removeManagedScalingPolicy(params: RemoveManagedScalingPolicyInput): Request[RemoveManagedScalingPolicyOutput] = js.native
     def removeTags(params: RemoveTagsInput): Request[RemoveTagsOutput] = js.native
     def runJobFlow(params: RunJobFlowInput): Request[RunJobFlowOutput] = js.native
     def setTerminationProtection(params: SetTerminationProtectionInput): Request[js.Object] = js.native
     def setVisibleToAllUsers(params: SetVisibleToAllUsersInput): Request[js.Object] = js.native
     def terminateJobFlows(params: TerminateJobFlowsInput): Request[js.Object] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def describeJobFlows(
-        params: DescribeJobFlowsInput
-    ): Request[DescribeJobFlowsOutput] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def describeJobFlows(params: DescribeJobFlowsInput): Request[DescribeJobFlowsOutput] = js.native
   }
 
   @js.native
@@ -568,9 +508,7 @@ package emr {
         "BlockPublicSecurityGroupRules" -> BlockPublicSecurityGroupRules.asInstanceOf[js.Any]
       )
 
-      PermittedPublicSecurityGroupRuleRanges.foreach(__v =>
-        __obj.updateDynamic("PermittedPublicSecurityGroupRuleRanges")(__v.asInstanceOf[js.Any])
-      )
+      PermittedPublicSecurityGroupRuleRanges.foreach(__v => __obj.updateDynamic("PermittedPublicSecurityGroupRuleRanges")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BlockPublicAccessConfiguration]
     }
   }
@@ -881,9 +819,7 @@ package emr {
     val TERMINATED = "TERMINATED".asInstanceOf[ClusterState]
     val TERMINATED_WITH_ERRORS = "TERMINATED_WITH_ERRORS".asInstanceOf[ClusterState]
 
-    val values = js.Object.freeze(
-      js.Array(STARTING, BOOTSTRAPPING, RUNNING, WAITING, TERMINATING, TERMINATED, TERMINATED_WITH_ERRORS)
-    )
+    val values = js.Object.freeze(js.Array(STARTING, BOOTSTRAPPING, RUNNING, WAITING, TERMINATING, TERMINATED, TERMINATED_WITH_ERRORS))
   }
 
   /**
@@ -920,18 +856,7 @@ package emr {
     val STEP_FAILURE = "STEP_FAILURE".asInstanceOf[ClusterStateChangeReasonCode]
     val ALL_STEPS_COMPLETED = "ALL_STEPS_COMPLETED".asInstanceOf[ClusterStateChangeReasonCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        INTERNAL_ERROR,
-        VALIDATION_ERROR,
-        INSTANCE_FAILURE,
-        INSTANCE_FLEET_TIMEOUT,
-        BOOTSTRAP_FAILURE,
-        USER_REQUEST,
-        STEP_FAILURE,
-        ALL_STEPS_COMPLETED
-      )
-    )
+    val values = js.Object.freeze(js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, INSTANCE_FLEET_TIMEOUT, BOOTSTRAP_FAILURE, USER_REQUEST, STEP_FAILURE, ALL_STEPS_COMPLETED))
   }
 
   /**
@@ -1082,9 +1007,7 @@ package emr {
       )
 
       MaximumCoreCapacityUnits.foreach(__v => __obj.updateDynamic("MaximumCoreCapacityUnits")(__v.asInstanceOf[js.Any]))
-      MaximumOnDemandCapacityUnits.foreach(__v =>
-        __obj.updateDynamic("MaximumOnDemandCapacityUnits")(__v.asInstanceOf[js.Any])
-      )
+      MaximumOnDemandCapacityUnits.foreach(__v => __obj.updateDynamic("MaximumOnDemandCapacityUnits")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComputeLimits]
     }
   }
@@ -1492,29 +1415,17 @@ package emr {
         ServiceAccessSecurityGroup: js.UndefOr[String] = js.undefined
     ): Ec2InstanceAttributes = {
       val __obj = js.Dynamic.literal()
-      AdditionalMasterSecurityGroups.foreach(__v =>
-        __obj.updateDynamic("AdditionalMasterSecurityGroups")(__v.asInstanceOf[js.Any])
-      )
-      AdditionalSlaveSecurityGroups.foreach(__v =>
-        __obj.updateDynamic("AdditionalSlaveSecurityGroups")(__v.asInstanceOf[js.Any])
-      )
+      AdditionalMasterSecurityGroups.foreach(__v => __obj.updateDynamic("AdditionalMasterSecurityGroups")(__v.asInstanceOf[js.Any]))
+      AdditionalSlaveSecurityGroups.foreach(__v => __obj.updateDynamic("AdditionalSlaveSecurityGroups")(__v.asInstanceOf[js.Any]))
       Ec2AvailabilityZone.foreach(__v => __obj.updateDynamic("Ec2AvailabilityZone")(__v.asInstanceOf[js.Any]))
       Ec2KeyName.foreach(__v => __obj.updateDynamic("Ec2KeyName")(__v.asInstanceOf[js.Any]))
       Ec2SubnetId.foreach(__v => __obj.updateDynamic("Ec2SubnetId")(__v.asInstanceOf[js.Any]))
-      EmrManagedMasterSecurityGroup.foreach(__v =>
-        __obj.updateDynamic("EmrManagedMasterSecurityGroup")(__v.asInstanceOf[js.Any])
-      )
-      EmrManagedSlaveSecurityGroup.foreach(__v =>
-        __obj.updateDynamic("EmrManagedSlaveSecurityGroup")(__v.asInstanceOf[js.Any])
-      )
+      EmrManagedMasterSecurityGroup.foreach(__v => __obj.updateDynamic("EmrManagedMasterSecurityGroup")(__v.asInstanceOf[js.Any]))
+      EmrManagedSlaveSecurityGroup.foreach(__v => __obj.updateDynamic("EmrManagedSlaveSecurityGroup")(__v.asInstanceOf[js.Any]))
       IamInstanceProfile.foreach(__v => __obj.updateDynamic("IamInstanceProfile")(__v.asInstanceOf[js.Any]))
-      RequestedEc2AvailabilityZones.foreach(__v =>
-        __obj.updateDynamic("RequestedEc2AvailabilityZones")(__v.asInstanceOf[js.Any])
-      )
+      RequestedEc2AvailabilityZones.foreach(__v => __obj.updateDynamic("RequestedEc2AvailabilityZones")(__v.asInstanceOf[js.Any]))
       RequestedEc2SubnetIds.foreach(__v => __obj.updateDynamic("RequestedEc2SubnetIds")(__v.asInstanceOf[js.Any]))
-      ServiceAccessSecurityGroup.foreach(__v =>
-        __obj.updateDynamic("ServiceAccessSecurityGroup")(__v.asInstanceOf[js.Any])
-      )
+      ServiceAccessSecurityGroup.foreach(__v => __obj.updateDynamic("ServiceAccessSecurityGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Ec2InstanceAttributes]
     }
   }
@@ -1767,14 +1678,10 @@ package emr {
       val __obj = js.Dynamic.literal()
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       InstanceFleetType.foreach(__v => __obj.updateDynamic("InstanceFleetType")(__v.asInstanceOf[js.Any]))
-      InstanceTypeSpecifications.foreach(__v =>
-        __obj.updateDynamic("InstanceTypeSpecifications")(__v.asInstanceOf[js.Any])
-      )
+      InstanceTypeSpecifications.foreach(__v => __obj.updateDynamic("InstanceTypeSpecifications")(__v.asInstanceOf[js.Any]))
       LaunchSpecifications.foreach(__v => __obj.updateDynamic("LaunchSpecifications")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      ProvisionedOnDemandCapacity.foreach(__v =>
-        __obj.updateDynamic("ProvisionedOnDemandCapacity")(__v.asInstanceOf[js.Any])
-      )
+      ProvisionedOnDemandCapacity.foreach(__v => __obj.updateDynamic("ProvisionedOnDemandCapacity")(__v.asInstanceOf[js.Any]))
       ProvisionedSpotCapacity.foreach(__v => __obj.updateDynamic("ProvisionedSpotCapacity")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       TargetOnDemandCapacity.foreach(__v => __obj.updateDynamic("TargetOnDemandCapacity")(__v.asInstanceOf[js.Any]))
@@ -1885,8 +1792,7 @@ package emr {
     val TERMINATING = "TERMINATING".asInstanceOf[InstanceFleetState]
     val TERMINATED = "TERMINATED".asInstanceOf[InstanceFleetState]
 
-    val values =
-      js.Object.freeze(js.Array(PROVISIONING, BOOTSTRAPPING, RUNNING, RESIZING, SUSPENDED, TERMINATING, TERMINATED))
+    val values = js.Object.freeze(js.Array(PROVISIONING, BOOTSTRAPPING, RUNNING, RESIZING, SUSPENDED, TERMINATING, TERMINATED))
   }
 
   /**
@@ -2043,12 +1949,8 @@ package emr {
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       InstanceGroupType.foreach(__v => __obj.updateDynamic("InstanceGroupType")(__v.asInstanceOf[js.Any]))
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
-      LastSuccessfullyAppliedConfigurations.foreach(__v =>
-        __obj.updateDynamic("LastSuccessfullyAppliedConfigurations")(__v.asInstanceOf[js.Any])
-      )
-      LastSuccessfullyAppliedConfigurationsVersion.foreach(__v =>
-        __obj.updateDynamic("LastSuccessfullyAppliedConfigurationsVersion")(__v.asInstanceOf[js.Any])
-      )
+      LastSuccessfullyAppliedConfigurations.foreach(__v => __obj.updateDynamic("LastSuccessfullyAppliedConfigurations")(__v.asInstanceOf[js.Any]))
+      LastSuccessfullyAppliedConfigurationsVersion.foreach(__v => __obj.updateDynamic("LastSuccessfullyAppliedConfigurationsVersion")(__v.asInstanceOf[js.Any]))
       Market.foreach(__v => __obj.updateDynamic("Market")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       RequestedInstanceCount.foreach(__v => __obj.updateDynamic("RequestedInstanceCount")(__v.asInstanceOf[js.Any]))
@@ -2190,9 +2092,7 @@ package emr {
       )
 
       Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
-      EC2InstanceIdsToTerminate.foreach(__v =>
-        __obj.updateDynamic("EC2InstanceIdsToTerminate")(__v.asInstanceOf[js.Any])
-      )
+      EC2InstanceIdsToTerminate.foreach(__v => __obj.updateDynamic("EC2InstanceIdsToTerminate")(__v.asInstanceOf[js.Any]))
       InstanceCount.foreach(__v => __obj.updateDynamic("InstanceCount")(__v.asInstanceOf[js.Any]))
       ShrinkPolicy.foreach(__v => __obj.updateDynamic("ShrinkPolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceGroupModifyConfig]
@@ -2214,21 +2114,7 @@ package emr {
     val SHUTTING_DOWN = "SHUTTING_DOWN".asInstanceOf[InstanceGroupState]
     val ENDED = "ENDED".asInstanceOf[InstanceGroupState]
 
-    val values = js.Object.freeze(
-      js.Array(
-        PROVISIONING,
-        BOOTSTRAPPING,
-        RUNNING,
-        RECONFIGURING,
-        RESIZING,
-        SUSPENDED,
-        TERMINATING,
-        TERMINATED,
-        ARRESTED,
-        SHUTTING_DOWN,
-        ENDED
-      )
-    )
+    val values = js.Object.freeze(js.Array(PROVISIONING, BOOTSTRAPPING, RUNNING, RECONFIGURING, RESIZING, SUSPENDED, TERMINATING, TERMINATED, ARRESTED, SHUTTING_DOWN, ENDED))
   }
 
   /**
@@ -2342,9 +2228,7 @@ package emr {
         InstancesToTerminate: js.UndefOr[EC2InstanceIdsList] = js.undefined
     ): InstanceResizePolicy = {
       val __obj = js.Dynamic.literal()
-      InstanceTerminationTimeout.foreach(__v =>
-        __obj.updateDynamic("InstanceTerminationTimeout")(__v.asInstanceOf[js.Any])
-      )
+      InstanceTerminationTimeout.foreach(__v => __obj.updateDynamic("InstanceTerminationTimeout")(__v.asInstanceOf[js.Any]))
       InstancesToProtect.foreach(__v => __obj.updateDynamic("InstancesToProtect")(__v.asInstanceOf[js.Any]))
       InstancesToTerminate.foreach(__v => __obj.updateDynamic("InstancesToTerminate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceResizePolicy]
@@ -2404,9 +2288,7 @@ package emr {
     val BOOTSTRAP_FAILURE = "BOOTSTRAP_FAILURE".asInstanceOf[InstanceStateChangeReasonCode]
     val CLUSTER_TERMINATED = "CLUSTER_TERMINATED".asInstanceOf[InstanceStateChangeReasonCode]
 
-    val values = js.Object.freeze(
-      js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, BOOTSTRAP_FAILURE, CLUSTER_TERMINATED)
-    )
+    val values = js.Object.freeze(js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, BOOTSTRAP_FAILURE, CLUSTER_TERMINATED))
   }
 
   /**
@@ -2489,9 +2371,7 @@ package emr {
       )
 
       BidPrice.foreach(__v => __obj.updateDynamic("BidPrice")(__v.asInstanceOf[js.Any]))
-      BidPriceAsPercentageOfOnDemandPrice.foreach(__v =>
-        __obj.updateDynamic("BidPriceAsPercentageOfOnDemandPrice")(__v.asInstanceOf[js.Any])
-      )
+      BidPriceAsPercentageOfOnDemandPrice.foreach(__v => __obj.updateDynamic("BidPriceAsPercentageOfOnDemandPrice")(__v.asInstanceOf[js.Any]))
       Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
       EbsConfiguration.foreach(__v => __obj.updateDynamic("EbsConfiguration")(__v.asInstanceOf[js.Any]))
       WeightedCapacity.foreach(__v => __obj.updateDynamic("WeightedCapacity")(__v.asInstanceOf[js.Any]))
@@ -2528,9 +2408,7 @@ package emr {
     ): InstanceTypeSpecification = {
       val __obj = js.Dynamic.literal()
       BidPrice.foreach(__v => __obj.updateDynamic("BidPrice")(__v.asInstanceOf[js.Any]))
-      BidPriceAsPercentageOfOnDemandPrice.foreach(__v =>
-        __obj.updateDynamic("BidPriceAsPercentageOfOnDemandPrice")(__v.asInstanceOf[js.Any])
-      )
+      BidPriceAsPercentageOfOnDemandPrice.foreach(__v => __obj.updateDynamic("BidPriceAsPercentageOfOnDemandPrice")(__v.asInstanceOf[js.Any]))
       Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
       EbsBlockDevices.foreach(__v => __obj.updateDynamic("EbsBlockDevices")(__v.asInstanceOf[js.Any]))
       EbsOptimized.foreach(__v => __obj.updateDynamic("EbsOptimized")(__v.asInstanceOf[js.Any]))
@@ -2618,9 +2496,7 @@ package emr {
     val COMPLETED = "COMPLETED".asInstanceOf[JobFlowExecutionState]
     val FAILED = "FAILED".asInstanceOf[JobFlowExecutionState]
 
-    val values = js.Object.freeze(
-      js.Array(STARTING, BOOTSTRAPPING, RUNNING, WAITING, SHUTTING_DOWN, TERMINATED, COMPLETED, FAILED)
-    )
+    val values = js.Object.freeze(js.Array(STARTING, BOOTSTRAPPING, RUNNING, WAITING, SHUTTING_DOWN, TERMINATED, COMPLETED, FAILED))
   }
 
   /**
@@ -2705,33 +2581,21 @@ package emr {
         TerminationProtected: js.UndefOr[Boolean] = js.undefined
     ): JobFlowInstancesConfig = {
       val __obj = js.Dynamic.literal()
-      AdditionalMasterSecurityGroups.foreach(__v =>
-        __obj.updateDynamic("AdditionalMasterSecurityGroups")(__v.asInstanceOf[js.Any])
-      )
-      AdditionalSlaveSecurityGroups.foreach(__v =>
-        __obj.updateDynamic("AdditionalSlaveSecurityGroups")(__v.asInstanceOf[js.Any])
-      )
+      AdditionalMasterSecurityGroups.foreach(__v => __obj.updateDynamic("AdditionalMasterSecurityGroups")(__v.asInstanceOf[js.Any]))
+      AdditionalSlaveSecurityGroups.foreach(__v => __obj.updateDynamic("AdditionalSlaveSecurityGroups")(__v.asInstanceOf[js.Any]))
       Ec2KeyName.foreach(__v => __obj.updateDynamic("Ec2KeyName")(__v.asInstanceOf[js.Any]))
       Ec2SubnetId.foreach(__v => __obj.updateDynamic("Ec2SubnetId")(__v.asInstanceOf[js.Any]))
       Ec2SubnetIds.foreach(__v => __obj.updateDynamic("Ec2SubnetIds")(__v.asInstanceOf[js.Any]))
-      EmrManagedMasterSecurityGroup.foreach(__v =>
-        __obj.updateDynamic("EmrManagedMasterSecurityGroup")(__v.asInstanceOf[js.Any])
-      )
-      EmrManagedSlaveSecurityGroup.foreach(__v =>
-        __obj.updateDynamic("EmrManagedSlaveSecurityGroup")(__v.asInstanceOf[js.Any])
-      )
+      EmrManagedMasterSecurityGroup.foreach(__v => __obj.updateDynamic("EmrManagedMasterSecurityGroup")(__v.asInstanceOf[js.Any]))
+      EmrManagedSlaveSecurityGroup.foreach(__v => __obj.updateDynamic("EmrManagedSlaveSecurityGroup")(__v.asInstanceOf[js.Any]))
       HadoopVersion.foreach(__v => __obj.updateDynamic("HadoopVersion")(__v.asInstanceOf[js.Any]))
       InstanceCount.foreach(__v => __obj.updateDynamic("InstanceCount")(__v.asInstanceOf[js.Any]))
       InstanceFleets.foreach(__v => __obj.updateDynamic("InstanceFleets")(__v.asInstanceOf[js.Any]))
       InstanceGroups.foreach(__v => __obj.updateDynamic("InstanceGroups")(__v.asInstanceOf[js.Any]))
-      KeepJobFlowAliveWhenNoSteps.foreach(__v =>
-        __obj.updateDynamic("KeepJobFlowAliveWhenNoSteps")(__v.asInstanceOf[js.Any])
-      )
+      KeepJobFlowAliveWhenNoSteps.foreach(__v => __obj.updateDynamic("KeepJobFlowAliveWhenNoSteps")(__v.asInstanceOf[js.Any]))
       MasterInstanceType.foreach(__v => __obj.updateDynamic("MasterInstanceType")(__v.asInstanceOf[js.Any]))
       Placement.foreach(__v => __obj.updateDynamic("Placement")(__v.asInstanceOf[js.Any]))
-      ServiceAccessSecurityGroup.foreach(__v =>
-        __obj.updateDynamic("ServiceAccessSecurityGroup")(__v.asInstanceOf[js.Any])
-      )
+      ServiceAccessSecurityGroup.foreach(__v => __obj.updateDynamic("ServiceAccessSecurityGroup")(__v.asInstanceOf[js.Any]))
       SlaveInstanceType.foreach(__v => __obj.updateDynamic("SlaveInstanceType")(__v.asInstanceOf[js.Any]))
       TerminationProtected.foreach(__v => __obj.updateDynamic("TerminationProtected")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobFlowInstancesConfig]
@@ -2785,9 +2649,7 @@ package emr {
       Ec2SubnetId.foreach(__v => __obj.updateDynamic("Ec2SubnetId")(__v.asInstanceOf[js.Any]))
       HadoopVersion.foreach(__v => __obj.updateDynamic("HadoopVersion")(__v.asInstanceOf[js.Any]))
       InstanceGroups.foreach(__v => __obj.updateDynamic("InstanceGroups")(__v.asInstanceOf[js.Any]))
-      KeepJobFlowAliveWhenNoSteps.foreach(__v =>
-        __obj.updateDynamic("KeepJobFlowAliveWhenNoSteps")(__v.asInstanceOf[js.Any])
-      )
+      KeepJobFlowAliveWhenNoSteps.foreach(__v => __obj.updateDynamic("KeepJobFlowAliveWhenNoSteps")(__v.asInstanceOf[js.Any]))
       MasterInstanceId.foreach(__v => __obj.updateDynamic("MasterInstanceId")(__v.asInstanceOf[js.Any]))
       MasterPublicDnsName.foreach(__v => __obj.updateDynamic("MasterPublicDnsName")(__v.asInstanceOf[js.Any]))
       NormalizedInstanceHours.foreach(__v => __obj.updateDynamic("NormalizedInstanceHours")(__v.asInstanceOf[js.Any]))
@@ -2825,9 +2687,7 @@ package emr {
 
       ADDomainJoinPassword.foreach(__v => __obj.updateDynamic("ADDomainJoinPassword")(__v.asInstanceOf[js.Any]))
       ADDomainJoinUser.foreach(__v => __obj.updateDynamic("ADDomainJoinUser")(__v.asInstanceOf[js.Any]))
-      CrossRealmTrustPrincipalPassword.foreach(__v =>
-        __obj.updateDynamic("CrossRealmTrustPrincipalPassword")(__v.asInstanceOf[js.Any])
-      )
+      CrossRealmTrustPrincipalPassword.foreach(__v => __obj.updateDynamic("CrossRealmTrustPrincipalPassword")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KerberosAttributes]
     }
   }

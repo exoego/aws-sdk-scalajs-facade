@@ -59,46 +59,25 @@ package object secretsmanager {
 
   implicit final class SecretsManagerOps(private val service: SecretsManager) extends AnyVal {
 
-    @inline def cancelRotateSecretFuture(params: CancelRotateSecretRequest): Future[CancelRotateSecretResponse] =
-      service.cancelRotateSecret(params).promise().toFuture
-    @inline def createSecretFuture(params: CreateSecretRequest): Future[CreateSecretResponse] =
-      service.createSecret(params).promise().toFuture
-    @inline def deleteResourcePolicyFuture(params: DeleteResourcePolicyRequest): Future[DeleteResourcePolicyResponse] =
-      service.deleteResourcePolicy(params).promise().toFuture
-    @inline def deleteSecretFuture(params: DeleteSecretRequest): Future[DeleteSecretResponse] =
-      service.deleteSecret(params).promise().toFuture
-    @inline def describeSecretFuture(params: DescribeSecretRequest): Future[DescribeSecretResponse] =
-      service.describeSecret(params).promise().toFuture
-    @inline def getRandomPasswordFuture(params: GetRandomPasswordRequest): Future[GetRandomPasswordResponse] =
-      service.getRandomPassword(params).promise().toFuture
-    @inline def getResourcePolicyFuture(params: GetResourcePolicyRequest): Future[GetResourcePolicyResponse] =
-      service.getResourcePolicy(params).promise().toFuture
-    @inline def getSecretValueFuture(params: GetSecretValueRequest): Future[GetSecretValueResponse] =
-      service.getSecretValue(params).promise().toFuture
-    @inline def listSecretVersionIdsFuture(params: ListSecretVersionIdsRequest): Future[ListSecretVersionIdsResponse] =
-      service.listSecretVersionIds(params).promise().toFuture
-    @inline def listSecretsFuture(params: ListSecretsRequest): Future[ListSecretsResponse] =
-      service.listSecrets(params).promise().toFuture
-    @inline def putResourcePolicyFuture(params: PutResourcePolicyRequest): Future[PutResourcePolicyResponse] =
-      service.putResourcePolicy(params).promise().toFuture
-    @inline def putSecretValueFuture(params: PutSecretValueRequest): Future[PutSecretValueResponse] =
-      service.putSecretValue(params).promise().toFuture
-    @inline def restoreSecretFuture(params: RestoreSecretRequest): Future[RestoreSecretResponse] =
-      service.restoreSecret(params).promise().toFuture
-    @inline def rotateSecretFuture(params: RotateSecretRequest): Future[RotateSecretResponse] =
-      service.rotateSecret(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateSecretFuture(params: UpdateSecretRequest): Future[UpdateSecretResponse] =
-      service.updateSecret(params).promise().toFuture
-    @inline def updateSecretVersionStageFuture(
-        params: UpdateSecretVersionStageRequest
-    ): Future[UpdateSecretVersionStageResponse] = service.updateSecretVersionStage(params).promise().toFuture
-    @inline def validateResourcePolicyFuture(
-        params: ValidateResourcePolicyRequest
-    ): Future[ValidateResourcePolicyResponse] = service.validateResourcePolicy(params).promise().toFuture
+    @inline def cancelRotateSecretFuture(params: CancelRotateSecretRequest): Future[CancelRotateSecretResponse] = service.cancelRotateSecret(params).promise().toFuture
+    @inline def createSecretFuture(params: CreateSecretRequest): Future[CreateSecretResponse] = service.createSecret(params).promise().toFuture
+    @inline def deleteResourcePolicyFuture(params: DeleteResourcePolicyRequest): Future[DeleteResourcePolicyResponse] = service.deleteResourcePolicy(params).promise().toFuture
+    @inline def deleteSecretFuture(params: DeleteSecretRequest): Future[DeleteSecretResponse] = service.deleteSecret(params).promise().toFuture
+    @inline def describeSecretFuture(params: DescribeSecretRequest): Future[DescribeSecretResponse] = service.describeSecret(params).promise().toFuture
+    @inline def getRandomPasswordFuture(params: GetRandomPasswordRequest): Future[GetRandomPasswordResponse] = service.getRandomPassword(params).promise().toFuture
+    @inline def getResourcePolicyFuture(params: GetResourcePolicyRequest): Future[GetResourcePolicyResponse] = service.getResourcePolicy(params).promise().toFuture
+    @inline def getSecretValueFuture(params: GetSecretValueRequest): Future[GetSecretValueResponse] = service.getSecretValue(params).promise().toFuture
+    @inline def listSecretVersionIdsFuture(params: ListSecretVersionIdsRequest): Future[ListSecretVersionIdsResponse] = service.listSecretVersionIds(params).promise().toFuture
+    @inline def listSecretsFuture(params: ListSecretsRequest): Future[ListSecretsResponse] = service.listSecrets(params).promise().toFuture
+    @inline def putResourcePolicyFuture(params: PutResourcePolicyRequest): Future[PutResourcePolicyResponse] = service.putResourcePolicy(params).promise().toFuture
+    @inline def putSecretValueFuture(params: PutSecretValueRequest): Future[PutSecretValueResponse] = service.putSecretValue(params).promise().toFuture
+    @inline def restoreSecretFuture(params: RestoreSecretRequest): Future[RestoreSecretResponse] = service.restoreSecret(params).promise().toFuture
+    @inline def rotateSecretFuture(params: RotateSecretRequest): Future[RotateSecretResponse] = service.rotateSecret(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
+    @inline def updateSecretFuture(params: UpdateSecretRequest): Future[UpdateSecretResponse] = service.updateSecret(params).promise().toFuture
+    @inline def updateSecretVersionStageFuture(params: UpdateSecretVersionStageRequest): Future[UpdateSecretVersionStageResponse] = service.updateSecretVersionStage(params).promise().toFuture
+    @inline def validateResourcePolicyFuture(params: ValidateResourcePolicyRequest): Future[ValidateResourcePolicyResponse] = service.validateResourcePolicy(params).promise().toFuture
   }
 }
 
@@ -125,10 +104,8 @@ package secretsmanager {
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateSecret(params: UpdateSecretRequest): Request[UpdateSecretResponse] = js.native
-    def updateSecretVersionStage(params: UpdateSecretVersionStageRequest): Request[UpdateSecretVersionStageResponse] =
-      js.native
-    def validateResourcePolicy(params: ValidateResourcePolicyRequest): Request[ValidateResourcePolicyResponse] =
-      js.native
+    def updateSecretVersionStage(params: UpdateSecretVersionStageRequest): Request[UpdateSecretVersionStageResponse] = js.native
+    def validateResourcePolicy(params: ValidateResourcePolicyRequest): Request[ValidateResourcePolicyResponse] = js.native
   }
 
   @js.native
@@ -284,9 +261,7 @@ package secretsmanager {
         "SecretId" -> SecretId.asInstanceOf[js.Any]
       )
 
-      ForceDeleteWithoutRecovery.foreach(__v =>
-        __obj.updateDynamic("ForceDeleteWithoutRecovery")(__v.asInstanceOf[js.Any])
-      )
+      ForceDeleteWithoutRecovery.foreach(__v => __obj.updateDynamic("ForceDeleteWithoutRecovery")(__v.asInstanceOf[js.Any]))
       RecoveryWindowInDays.foreach(__v => __obj.updateDynamic("RecoveryWindowInDays")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteSecretRequest]
     }

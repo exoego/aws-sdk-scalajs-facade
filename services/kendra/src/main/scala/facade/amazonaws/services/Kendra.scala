@@ -80,8 +80,7 @@ package object kendra {
   type S3BucketName = String
   type S3ObjectKey = String
   type SalesforceChatterFeedIncludeFilterTypes = js.Array[SalesforceChatterFeedIncludeFilterType]
-  type SalesforceCustomKnowledgeArticleTypeConfigurationList =
-    js.Array[SalesforceCustomKnowledgeArticleTypeConfiguration]
+  type SalesforceCustomKnowledgeArticleTypeConfigurationList = js.Array[SalesforceCustomKnowledgeArticleTypeConfiguration]
   type SalesforceCustomKnowledgeArticleTypeName = String
   type SalesforceKnowledgeArticleStateList = js.Array[SalesforceKnowledgeArticleState]
   type SalesforceStandardObjectConfigurationList = js.Array[SalesforceStandardObjectConfiguration]
@@ -108,55 +107,30 @@ package object kendra {
 
   implicit final class KendraOps(private val service: Kendra) extends AnyVal {
 
-    @inline def batchDeleteDocumentFuture(params: BatchDeleteDocumentRequest): Future[BatchDeleteDocumentResponse] =
-      service.batchDeleteDocument(params).promise().toFuture
-    @inline def batchPutDocumentFuture(params: BatchPutDocumentRequest): Future[BatchPutDocumentResponse] =
-      service.batchPutDocument(params).promise().toFuture
-    @inline def createDataSourceFuture(params: CreateDataSourceRequest): Future[CreateDataSourceResponse] =
-      service.createDataSource(params).promise().toFuture
-    @inline def createFaqFuture(params: CreateFaqRequest): Future[CreateFaqResponse] =
-      service.createFaq(params).promise().toFuture
-    @inline def createIndexFuture(params: CreateIndexRequest): Future[CreateIndexResponse] =
-      service.createIndex(params).promise().toFuture
-    @inline def deleteDataSourceFuture(params: DeleteDataSourceRequest): Future[js.Object] =
-      service.deleteDataSource(params).promise().toFuture
-    @inline def deleteFaqFuture(params: DeleteFaqRequest): Future[js.Object] =
-      service.deleteFaq(params).promise().toFuture
-    @inline def deleteIndexFuture(params: DeleteIndexRequest): Future[js.Object] =
-      service.deleteIndex(params).promise().toFuture
-    @inline def describeDataSourceFuture(params: DescribeDataSourceRequest): Future[DescribeDataSourceResponse] =
-      service.describeDataSource(params).promise().toFuture
-    @inline def describeFaqFuture(params: DescribeFaqRequest): Future[DescribeFaqResponse] =
-      service.describeFaq(params).promise().toFuture
-    @inline def describeIndexFuture(params: DescribeIndexRequest): Future[DescribeIndexResponse] =
-      service.describeIndex(params).promise().toFuture
-    @inline def listDataSourceSyncJobsFuture(
-        params: ListDataSourceSyncJobsRequest
-    ): Future[ListDataSourceSyncJobsResponse] = service.listDataSourceSyncJobs(params).promise().toFuture
-    @inline def listDataSourcesFuture(params: ListDataSourcesRequest): Future[ListDataSourcesResponse] =
-      service.listDataSources(params).promise().toFuture
-    @inline def listFaqsFuture(params: ListFaqsRequest): Future[ListFaqsResponse] =
-      service.listFaqs(params).promise().toFuture
-    @inline def listIndicesFuture(params: ListIndicesRequest): Future[ListIndicesResponse] =
-      service.listIndices(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
+    @inline def batchDeleteDocumentFuture(params: BatchDeleteDocumentRequest): Future[BatchDeleteDocumentResponse] = service.batchDeleteDocument(params).promise().toFuture
+    @inline def batchPutDocumentFuture(params: BatchPutDocumentRequest): Future[BatchPutDocumentResponse] = service.batchPutDocument(params).promise().toFuture
+    @inline def createDataSourceFuture(params: CreateDataSourceRequest): Future[CreateDataSourceResponse] = service.createDataSource(params).promise().toFuture
+    @inline def createFaqFuture(params: CreateFaqRequest): Future[CreateFaqResponse] = service.createFaq(params).promise().toFuture
+    @inline def createIndexFuture(params: CreateIndexRequest): Future[CreateIndexResponse] = service.createIndex(params).promise().toFuture
+    @inline def deleteDataSourceFuture(params: DeleteDataSourceRequest): Future[js.Object] = service.deleteDataSource(params).promise().toFuture
+    @inline def deleteFaqFuture(params: DeleteFaqRequest): Future[js.Object] = service.deleteFaq(params).promise().toFuture
+    @inline def deleteIndexFuture(params: DeleteIndexRequest): Future[js.Object] = service.deleteIndex(params).promise().toFuture
+    @inline def describeDataSourceFuture(params: DescribeDataSourceRequest): Future[DescribeDataSourceResponse] = service.describeDataSource(params).promise().toFuture
+    @inline def describeFaqFuture(params: DescribeFaqRequest): Future[DescribeFaqResponse] = service.describeFaq(params).promise().toFuture
+    @inline def describeIndexFuture(params: DescribeIndexRequest): Future[DescribeIndexResponse] = service.describeIndex(params).promise().toFuture
+    @inline def listDataSourceSyncJobsFuture(params: ListDataSourceSyncJobsRequest): Future[ListDataSourceSyncJobsResponse] = service.listDataSourceSyncJobs(params).promise().toFuture
+    @inline def listDataSourcesFuture(params: ListDataSourcesRequest): Future[ListDataSourcesResponse] = service.listDataSources(params).promise().toFuture
+    @inline def listFaqsFuture(params: ListFaqsRequest): Future[ListFaqsResponse] = service.listFaqs(params).promise().toFuture
+    @inline def listIndicesFuture(params: ListIndicesRequest): Future[ListIndicesResponse] = service.listIndices(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def queryFuture(params: QueryRequest): Future[QueryResult] = service.query(params).promise().toFuture
-    @inline def startDataSourceSyncJobFuture(
-        params: StartDataSourceSyncJobRequest
-    ): Future[StartDataSourceSyncJobResponse] = service.startDataSourceSyncJob(params).promise().toFuture
-    @inline def stopDataSourceSyncJobFuture(params: StopDataSourceSyncJobRequest): Future[js.Object] =
-      service.stopDataSourceSyncJob(params).promise().toFuture
-    @inline def submitFeedbackFuture(params: SubmitFeedbackRequest): Future[js.Object] =
-      service.submitFeedback(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateDataSourceFuture(params: UpdateDataSourceRequest): Future[js.Object] =
-      service.updateDataSource(params).promise().toFuture
-    @inline def updateIndexFuture(params: UpdateIndexRequest): Future[js.Object] =
-      service.updateIndex(params).promise().toFuture
+    @inline def startDataSourceSyncJobFuture(params: StartDataSourceSyncJobRequest): Future[StartDataSourceSyncJobResponse] = service.startDataSourceSyncJob(params).promise().toFuture
+    @inline def stopDataSourceSyncJobFuture(params: StopDataSourceSyncJobRequest): Future[js.Object] = service.stopDataSourceSyncJob(params).promise().toFuture
+    @inline def submitFeedbackFuture(params: SubmitFeedbackRequest): Future[js.Object] = service.submitFeedback(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateDataSourceFuture(params: UpdateDataSourceRequest): Future[js.Object] = service.updateDataSource(params).promise().toFuture
+    @inline def updateIndexFuture(params: UpdateIndexRequest): Future[js.Object] = service.updateIndex(params).promise().toFuture
   }
 }
 
@@ -177,15 +151,13 @@ package kendra {
     def describeDataSource(params: DescribeDataSourceRequest): Request[DescribeDataSourceResponse] = js.native
     def describeFaq(params: DescribeFaqRequest): Request[DescribeFaqResponse] = js.native
     def describeIndex(params: DescribeIndexRequest): Request[DescribeIndexResponse] = js.native
-    def listDataSourceSyncJobs(params: ListDataSourceSyncJobsRequest): Request[ListDataSourceSyncJobsResponse] =
-      js.native
+    def listDataSourceSyncJobs(params: ListDataSourceSyncJobsRequest): Request[ListDataSourceSyncJobsResponse] = js.native
     def listDataSources(params: ListDataSourcesRequest): Request[ListDataSourcesResponse] = js.native
     def listFaqs(params: ListFaqsRequest): Request[ListFaqsResponse] = js.native
     def listIndices(params: ListIndicesRequest): Request[ListIndicesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def query(params: QueryRequest): Request[QueryResult] = js.native
-    def startDataSourceSyncJob(params: StartDataSourceSyncJobRequest): Request[StartDataSourceSyncJobResponse] =
-      js.native
+    def startDataSourceSyncJob(params: StartDataSourceSyncJobRequest): Request[StartDataSourceSyncJobResponse] = js.native
     def stopDataSourceSyncJob(params: StopDataSourceSyncJobRequest): Request[js.Object] = js.native
     def submitFeedback(params: SubmitFeedbackRequest): Request[js.Object] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
@@ -358,9 +330,7 @@ package kendra {
         "IndexId" -> IndexId.asInstanceOf[js.Any]
       )
 
-      DataSourceSyncJobMetricTarget.foreach(__v =>
-        __obj.updateDynamic("DataSourceSyncJobMetricTarget")(__v.asInstanceOf[js.Any])
-      )
+      DataSourceSyncJobMetricTarget.foreach(__v => __obj.updateDynamic("DataSourceSyncJobMetricTarget")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDeleteDocumentRequest]
     }
   }
@@ -733,9 +703,7 @@ package kendra {
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Edition.foreach(__v => __obj.updateDynamic("Edition")(__v.asInstanceOf[js.Any]))
-      ServerSideEncryptionConfiguration.foreach(__v =>
-        __obj.updateDynamic("ServerSideEncryptionConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      ServerSideEncryptionConfiguration.foreach(__v => __obj.updateDynamic("ServerSideEncryptionConfiguration")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateIndexRequest]
     }
@@ -1307,18 +1275,14 @@ package kendra {
       CapacityUnits.foreach(__v => __obj.updateDynamic("CapacityUnits")(__v.asInstanceOf[js.Any]))
       CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      DocumentMetadataConfigurations.foreach(__v =>
-        __obj.updateDynamic("DocumentMetadataConfigurations")(__v.asInstanceOf[js.Any])
-      )
+      DocumentMetadataConfigurations.foreach(__v => __obj.updateDynamic("DocumentMetadataConfigurations")(__v.asInstanceOf[js.Any]))
       Edition.foreach(__v => __obj.updateDynamic("Edition")(__v.asInstanceOf[js.Any]))
       ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       IndexStatistics.foreach(__v => __obj.updateDynamic("IndexStatistics")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
-      ServerSideEncryptionConfiguration.foreach(__v =>
-        __obj.updateDynamic("ServerSideEncryptionConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      ServerSideEncryptionConfiguration.foreach(__v => __obj.updateDynamic("ServerSideEncryptionConfiguration")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeIndexResponse]
@@ -1543,9 +1507,7 @@ package kendra {
     ): FacetResult = {
       val __obj = js.Dynamic.literal()
       DocumentAttributeKey.foreach(__v => __obj.updateDynamic("DocumentAttributeKey")(__v.asInstanceOf[js.Any]))
-      DocumentAttributeValueCountPairs.foreach(__v =>
-        __obj.updateDynamic("DocumentAttributeValueCountPairs")(__v.asInstanceOf[js.Any])
-      )
+      DocumentAttributeValueCountPairs.foreach(__v => __obj.updateDynamic("DocumentAttributeValueCountPairs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FacetResult]
     }
   }
@@ -1893,9 +1855,7 @@ package kendra {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListIndicesResponse = {
       val __obj = js.Dynamic.literal()
-      IndexConfigurationSummaryItems.foreach(__v =>
-        __obj.updateDynamic("IndexConfigurationSummaryItems")(__v.asInstanceOf[js.Any])
-      )
+      IndexConfigurationSummaryItems.foreach(__v => __obj.updateDynamic("IndexConfigurationSummaryItems")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListIndicesResponse]
     }
@@ -2083,9 +2043,7 @@ package kendra {
       PageNumber.foreach(__v => __obj.updateDynamic("PageNumber")(__v.asInstanceOf[js.Any]))
       PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
       QueryResultTypeFilter.foreach(__v => __obj.updateDynamic("QueryResultTypeFilter")(__v.asInstanceOf[js.Any]))
-      RequestedDocumentAttributes.foreach(__v =>
-        __obj.updateDynamic("RequestedDocumentAttributes")(__v.asInstanceOf[js.Any])
-      )
+      RequestedDocumentAttributes.foreach(__v => __obj.updateDynamic("RequestedDocumentAttributes")(__v.asInstanceOf[js.Any]))
       SortingConfiguration.foreach(__v => __obj.updateDynamic("SortingConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QueryRequest]
     }
@@ -2265,12 +2223,8 @@ package kendra {
         "BucketName" -> BucketName.asInstanceOf[js.Any]
       )
 
-      AccessControlListConfiguration.foreach(__v =>
-        __obj.updateDynamic("AccessControlListConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      DocumentsMetadataConfiguration.foreach(__v =>
-        __obj.updateDynamic("DocumentsMetadataConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      AccessControlListConfiguration.foreach(__v => __obj.updateDynamic("AccessControlListConfiguration")(__v.asInstanceOf[js.Any]))
+      DocumentsMetadataConfiguration.foreach(__v => __obj.updateDynamic("DocumentsMetadataConfiguration")(__v.asInstanceOf[js.Any]))
       ExclusionPatterns.foreach(__v => __obj.updateDynamic("ExclusionPatterns")(__v.asInstanceOf[js.Any]))
       InclusionPrefixes.foreach(__v => __obj.updateDynamic("InclusionPrefixes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3DataSourceConfiguration]
@@ -2366,8 +2320,7 @@ package kendra {
         ExcludeAttachmentFilePatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings] = js.undefined,
         IncludeAttachmentFilePatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings] = js.undefined,
         KnowledgeArticleConfiguration: js.UndefOr[SalesforceKnowledgeArticleConfiguration] = js.undefined,
-        StandardObjectAttachmentConfiguration: js.UndefOr[SalesforceStandardObjectAttachmentConfiguration] =
-          js.undefined,
+        StandardObjectAttachmentConfiguration: js.UndefOr[SalesforceStandardObjectAttachmentConfiguration] = js.undefined,
         StandardObjectConfigurations: js.UndefOr[SalesforceStandardObjectConfigurationList] = js.undefined
     ): SalesforceConfiguration = {
       val __obj = js.Dynamic.literal(
@@ -2377,21 +2330,11 @@ package kendra {
 
       ChatterFeedConfiguration.foreach(__v => __obj.updateDynamic("ChatterFeedConfiguration")(__v.asInstanceOf[js.Any]))
       CrawlAttachments.foreach(__v => __obj.updateDynamic("CrawlAttachments")(__v.asInstanceOf[js.Any]))
-      ExcludeAttachmentFilePatterns.foreach(__v =>
-        __obj.updateDynamic("ExcludeAttachmentFilePatterns")(__v.asInstanceOf[js.Any])
-      )
-      IncludeAttachmentFilePatterns.foreach(__v =>
-        __obj.updateDynamic("IncludeAttachmentFilePatterns")(__v.asInstanceOf[js.Any])
-      )
-      KnowledgeArticleConfiguration.foreach(__v =>
-        __obj.updateDynamic("KnowledgeArticleConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      StandardObjectAttachmentConfiguration.foreach(__v =>
-        __obj.updateDynamic("StandardObjectAttachmentConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      StandardObjectConfigurations.foreach(__v =>
-        __obj.updateDynamic("StandardObjectConfigurations")(__v.asInstanceOf[js.Any])
-      )
+      ExcludeAttachmentFilePatterns.foreach(__v => __obj.updateDynamic("ExcludeAttachmentFilePatterns")(__v.asInstanceOf[js.Any]))
+      IncludeAttachmentFilePatterns.foreach(__v => __obj.updateDynamic("IncludeAttachmentFilePatterns")(__v.asInstanceOf[js.Any]))
+      KnowledgeArticleConfiguration.foreach(__v => __obj.updateDynamic("KnowledgeArticleConfiguration")(__v.asInstanceOf[js.Any]))
+      StandardObjectAttachmentConfiguration.foreach(__v => __obj.updateDynamic("StandardObjectAttachmentConfiguration")(__v.asInstanceOf[js.Any]))
+      StandardObjectConfigurations.foreach(__v => __obj.updateDynamic("StandardObjectConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SalesforceConfiguration]
     }
   }
@@ -2440,21 +2383,15 @@ package kendra {
     @inline
     def apply(
         IncludedStates: SalesforceKnowledgeArticleStateList,
-        CustomKnowledgeArticleTypeConfigurations: js.UndefOr[SalesforceCustomKnowledgeArticleTypeConfigurationList] =
-          js.undefined,
-        StandardKnowledgeArticleTypeConfiguration: js.UndefOr[SalesforceStandardKnowledgeArticleTypeConfiguration] =
-          js.undefined
+        CustomKnowledgeArticleTypeConfigurations: js.UndefOr[SalesforceCustomKnowledgeArticleTypeConfigurationList] = js.undefined,
+        StandardKnowledgeArticleTypeConfiguration: js.UndefOr[SalesforceStandardKnowledgeArticleTypeConfiguration] = js.undefined
     ): SalesforceKnowledgeArticleConfiguration = {
       val __obj = js.Dynamic.literal(
         "IncludedStates" -> IncludedStates.asInstanceOf[js.Any]
       )
 
-      CustomKnowledgeArticleTypeConfigurations.foreach(__v =>
-        __obj.updateDynamic("CustomKnowledgeArticleTypeConfigurations")(__v.asInstanceOf[js.Any])
-      )
-      StandardKnowledgeArticleTypeConfiguration.foreach(__v =>
-        __obj.updateDynamic("StandardKnowledgeArticleTypeConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      CustomKnowledgeArticleTypeConfigurations.foreach(__v => __obj.updateDynamic("CustomKnowledgeArticleTypeConfigurations")(__v.asInstanceOf[js.Any]))
+      StandardKnowledgeArticleTypeConfiguration.foreach(__v => __obj.updateDynamic("StandardKnowledgeArticleTypeConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SalesforceKnowledgeArticleConfiguration]
     }
   }
@@ -2569,27 +2506,7 @@ package kendra {
     val TASK = "TASK".asInstanceOf[SalesforceStandardObjectName]
     val USER = "USER".asInstanceOf[SalesforceStandardObjectName]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ACCOUNT,
-        CAMPAIGN,
-        CASE,
-        CONTACT,
-        CONTRACT,
-        DOCUMENT,
-        GROUP,
-        IDEA,
-        LEAD,
-        OPPORTUNITY,
-        PARTNER,
-        PRICEBOOK,
-        PRODUCT,
-        PROFILE,
-        SOLUTION,
-        TASK,
-        USER
-      )
-    )
+    val values = js.Object.freeze(js.Array(ACCOUNT, CAMPAIGN, CASE, CONTACT, CONTRACT, DOCUMENT, GROUP, IDEA, LEAD, OPPORTUNITY, PARTNER, PRICEBOOK, PRODUCT, PROFILE, SOLUTION, TASK, USER))
   }
 
   /**
@@ -2675,12 +2592,8 @@ package kendra {
         "ServiceNowBuildVersion" -> ServiceNowBuildVersion.asInstanceOf[js.Any]
       )
 
-      KnowledgeArticleConfiguration.foreach(__v =>
-        __obj.updateDynamic("KnowledgeArticleConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      ServiceCatalogConfiguration.foreach(__v =>
-        __obj.updateDynamic("ServiceCatalogConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      KnowledgeArticleConfiguration.foreach(__v => __obj.updateDynamic("KnowledgeArticleConfiguration")(__v.asInstanceOf[js.Any]))
+      ServiceCatalogConfiguration.foreach(__v => __obj.updateDynamic("ServiceCatalogConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceNowConfiguration]
     }
   }
@@ -2714,13 +2627,9 @@ package kendra {
 
       CrawlAttachments.foreach(__v => __obj.updateDynamic("CrawlAttachments")(__v.asInstanceOf[js.Any]))
       DocumentTitleFieldName.foreach(__v => __obj.updateDynamic("DocumentTitleFieldName")(__v.asInstanceOf[js.Any]))
-      ExcludeAttachmentFilePatterns.foreach(__v =>
-        __obj.updateDynamic("ExcludeAttachmentFilePatterns")(__v.asInstanceOf[js.Any])
-      )
+      ExcludeAttachmentFilePatterns.foreach(__v => __obj.updateDynamic("ExcludeAttachmentFilePatterns")(__v.asInstanceOf[js.Any]))
       FieldMappings.foreach(__v => __obj.updateDynamic("FieldMappings")(__v.asInstanceOf[js.Any]))
-      IncludeAttachmentFilePatterns.foreach(__v =>
-        __obj.updateDynamic("IncludeAttachmentFilePatterns")(__v.asInstanceOf[js.Any])
-      )
+      IncludeAttachmentFilePatterns.foreach(__v => __obj.updateDynamic("IncludeAttachmentFilePatterns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceNowKnowledgeArticleConfiguration]
     }
   }
@@ -2754,13 +2663,9 @@ package kendra {
 
       CrawlAttachments.foreach(__v => __obj.updateDynamic("CrawlAttachments")(__v.asInstanceOf[js.Any]))
       DocumentTitleFieldName.foreach(__v => __obj.updateDynamic("DocumentTitleFieldName")(__v.asInstanceOf[js.Any]))
-      ExcludeAttachmentFilePatterns.foreach(__v =>
-        __obj.updateDynamic("ExcludeAttachmentFilePatterns")(__v.asInstanceOf[js.Any])
-      )
+      ExcludeAttachmentFilePatterns.foreach(__v => __obj.updateDynamic("ExcludeAttachmentFilePatterns")(__v.asInstanceOf[js.Any]))
       FieldMappings.foreach(__v => __obj.updateDynamic("FieldMappings")(__v.asInstanceOf[js.Any]))
-      IncludeAttachmentFilePatterns.foreach(__v =>
-        __obj.updateDynamic("IncludeAttachmentFilePatterns")(__v.asInstanceOf[js.Any])
-      )
+      IncludeAttachmentFilePatterns.foreach(__v => __obj.updateDynamic("IncludeAttachmentFilePatterns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceNowServiceCatalogConfiguration]
     }
   }
@@ -2868,9 +2773,7 @@ package kendra {
         QueryIdentifiersEnclosingOption: js.UndefOr[QueryIdentifiersEnclosingOption] = js.undefined
     ): SqlConfiguration = {
       val __obj = js.Dynamic.literal()
-      QueryIdentifiersEnclosingOption.foreach(__v =>
-        __obj.updateDynamic("QueryIdentifiersEnclosingOption")(__v.asInstanceOf[js.Any])
-      )
+      QueryIdentifiersEnclosingOption.foreach(__v => __obj.updateDynamic("QueryIdentifiersEnclosingOption")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SqlConfiguration]
     }
   }
@@ -3182,9 +3085,7 @@ package kendra {
 
       CapacityUnits.foreach(__v => __obj.updateDynamic("CapacityUnits")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      DocumentMetadataConfigurationUpdates.foreach(__v =>
-        __obj.updateDynamic("DocumentMetadataConfigurationUpdates")(__v.asInstanceOf[js.Any])
-      )
+      DocumentMetadataConfigurationUpdates.foreach(__v => __obj.updateDynamic("DocumentMetadataConfigurationUpdates")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateIndexRequest]

@@ -63,73 +63,37 @@ package object datasync {
 
   implicit final class DataSyncOps(private val service: DataSync) extends AnyVal {
 
-    @inline def cancelTaskExecutionFuture(params: CancelTaskExecutionRequest): Future[CancelTaskExecutionResponse] =
-      service.cancelTaskExecution(params).promise().toFuture
-    @inline def createAgentFuture(params: CreateAgentRequest): Future[CreateAgentResponse] =
-      service.createAgent(params).promise().toFuture
-    @inline def createLocationEfsFuture(params: CreateLocationEfsRequest): Future[CreateLocationEfsResponse] =
-      service.createLocationEfs(params).promise().toFuture
-    @inline def createLocationFsxWindowsFuture(
-        params: CreateLocationFsxWindowsRequest
-    ): Future[CreateLocationFsxWindowsResponse] = service.createLocationFsxWindows(params).promise().toFuture
-    @inline def createLocationNfsFuture(params: CreateLocationNfsRequest): Future[CreateLocationNfsResponse] =
-      service.createLocationNfs(params).promise().toFuture
-    @inline def createLocationObjectStorageFuture(
-        params: CreateLocationObjectStorageRequest
-    ): Future[CreateLocationObjectStorageResponse] = service.createLocationObjectStorage(params).promise().toFuture
-    @inline def createLocationS3Future(params: CreateLocationS3Request): Future[CreateLocationS3Response] =
-      service.createLocationS3(params).promise().toFuture
-    @inline def createLocationSmbFuture(params: CreateLocationSmbRequest): Future[CreateLocationSmbResponse] =
-      service.createLocationSmb(params).promise().toFuture
-    @inline def createTaskFuture(params: CreateTaskRequest): Future[CreateTaskResponse] =
-      service.createTask(params).promise().toFuture
-    @inline def deleteAgentFuture(params: DeleteAgentRequest): Future[DeleteAgentResponse] =
-      service.deleteAgent(params).promise().toFuture
-    @inline def deleteLocationFuture(params: DeleteLocationRequest): Future[DeleteLocationResponse] =
-      service.deleteLocation(params).promise().toFuture
-    @inline def deleteTaskFuture(params: DeleteTaskRequest): Future[DeleteTaskResponse] =
-      service.deleteTask(params).promise().toFuture
-    @inline def describeAgentFuture(params: DescribeAgentRequest): Future[DescribeAgentResponse] =
-      service.describeAgent(params).promise().toFuture
-    @inline def describeLocationEfsFuture(params: DescribeLocationEfsRequest): Future[DescribeLocationEfsResponse] =
-      service.describeLocationEfs(params).promise().toFuture
-    @inline def describeLocationFsxWindowsFuture(
-        params: DescribeLocationFsxWindowsRequest
-    ): Future[DescribeLocationFsxWindowsResponse] = service.describeLocationFsxWindows(params).promise().toFuture
-    @inline def describeLocationNfsFuture(params: DescribeLocationNfsRequest): Future[DescribeLocationNfsResponse] =
-      service.describeLocationNfs(params).promise().toFuture
-    @inline def describeLocationObjectStorageFuture(
-        params: DescribeLocationObjectStorageRequest
-    ): Future[DescribeLocationObjectStorageResponse] = service.describeLocationObjectStorage(params).promise().toFuture
-    @inline def describeLocationS3Future(params: DescribeLocationS3Request): Future[DescribeLocationS3Response] =
-      service.describeLocationS3(params).promise().toFuture
-    @inline def describeLocationSmbFuture(params: DescribeLocationSmbRequest): Future[DescribeLocationSmbResponse] =
-      service.describeLocationSmb(params).promise().toFuture
-    @inline def describeTaskExecutionFuture(
-        params: DescribeTaskExecutionRequest
-    ): Future[DescribeTaskExecutionResponse] = service.describeTaskExecution(params).promise().toFuture
-    @inline def describeTaskFuture(params: DescribeTaskRequest): Future[DescribeTaskResponse] =
-      service.describeTask(params).promise().toFuture
-    @inline def listAgentsFuture(params: ListAgentsRequest): Future[ListAgentsResponse] =
-      service.listAgents(params).promise().toFuture
-    @inline def listLocationsFuture(params: ListLocationsRequest): Future[ListLocationsResponse] =
-      service.listLocations(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listTaskExecutionsFuture(params: ListTaskExecutionsRequest): Future[ListTaskExecutionsResponse] =
-      service.listTaskExecutions(params).promise().toFuture
-    @inline def listTasksFuture(params: ListTasksRequest): Future[ListTasksResponse] =
-      service.listTasks(params).promise().toFuture
-    @inline def startTaskExecutionFuture(params: StartTaskExecutionRequest): Future[StartTaskExecutionResponse] =
-      service.startTaskExecution(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateAgentFuture(params: UpdateAgentRequest): Future[UpdateAgentResponse] =
-      service.updateAgent(params).promise().toFuture
-    @inline def updateTaskFuture(params: UpdateTaskRequest): Future[UpdateTaskResponse] =
-      service.updateTask(params).promise().toFuture
+    @inline def cancelTaskExecutionFuture(params: CancelTaskExecutionRequest): Future[CancelTaskExecutionResponse] = service.cancelTaskExecution(params).promise().toFuture
+    @inline def createAgentFuture(params: CreateAgentRequest): Future[CreateAgentResponse] = service.createAgent(params).promise().toFuture
+    @inline def createLocationEfsFuture(params: CreateLocationEfsRequest): Future[CreateLocationEfsResponse] = service.createLocationEfs(params).promise().toFuture
+    @inline def createLocationFsxWindowsFuture(params: CreateLocationFsxWindowsRequest): Future[CreateLocationFsxWindowsResponse] = service.createLocationFsxWindows(params).promise().toFuture
+    @inline def createLocationNfsFuture(params: CreateLocationNfsRequest): Future[CreateLocationNfsResponse] = service.createLocationNfs(params).promise().toFuture
+    @inline def createLocationObjectStorageFuture(params: CreateLocationObjectStorageRequest): Future[CreateLocationObjectStorageResponse] = service.createLocationObjectStorage(params).promise().toFuture
+    @inline def createLocationS3Future(params: CreateLocationS3Request): Future[CreateLocationS3Response] = service.createLocationS3(params).promise().toFuture
+    @inline def createLocationSmbFuture(params: CreateLocationSmbRequest): Future[CreateLocationSmbResponse] = service.createLocationSmb(params).promise().toFuture
+    @inline def createTaskFuture(params: CreateTaskRequest): Future[CreateTaskResponse] = service.createTask(params).promise().toFuture
+    @inline def deleteAgentFuture(params: DeleteAgentRequest): Future[DeleteAgentResponse] = service.deleteAgent(params).promise().toFuture
+    @inline def deleteLocationFuture(params: DeleteLocationRequest): Future[DeleteLocationResponse] = service.deleteLocation(params).promise().toFuture
+    @inline def deleteTaskFuture(params: DeleteTaskRequest): Future[DeleteTaskResponse] = service.deleteTask(params).promise().toFuture
+    @inline def describeAgentFuture(params: DescribeAgentRequest): Future[DescribeAgentResponse] = service.describeAgent(params).promise().toFuture
+    @inline def describeLocationEfsFuture(params: DescribeLocationEfsRequest): Future[DescribeLocationEfsResponse] = service.describeLocationEfs(params).promise().toFuture
+    @inline def describeLocationFsxWindowsFuture(params: DescribeLocationFsxWindowsRequest): Future[DescribeLocationFsxWindowsResponse] = service.describeLocationFsxWindows(params).promise().toFuture
+    @inline def describeLocationNfsFuture(params: DescribeLocationNfsRequest): Future[DescribeLocationNfsResponse] = service.describeLocationNfs(params).promise().toFuture
+    @inline def describeLocationObjectStorageFuture(params: DescribeLocationObjectStorageRequest): Future[DescribeLocationObjectStorageResponse] = service.describeLocationObjectStorage(params).promise().toFuture
+    @inline def describeLocationS3Future(params: DescribeLocationS3Request): Future[DescribeLocationS3Response] = service.describeLocationS3(params).promise().toFuture
+    @inline def describeLocationSmbFuture(params: DescribeLocationSmbRequest): Future[DescribeLocationSmbResponse] = service.describeLocationSmb(params).promise().toFuture
+    @inline def describeTaskExecutionFuture(params: DescribeTaskExecutionRequest): Future[DescribeTaskExecutionResponse] = service.describeTaskExecution(params).promise().toFuture
+    @inline def describeTaskFuture(params: DescribeTaskRequest): Future[DescribeTaskResponse] = service.describeTask(params).promise().toFuture
+    @inline def listAgentsFuture(params: ListAgentsRequest): Future[ListAgentsResponse] = service.listAgents(params).promise().toFuture
+    @inline def listLocationsFuture(params: ListLocationsRequest): Future[ListLocationsResponse] = service.listLocations(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listTaskExecutionsFuture(params: ListTaskExecutionsRequest): Future[ListTaskExecutionsResponse] = service.listTaskExecutions(params).promise().toFuture
+    @inline def listTasksFuture(params: ListTasksRequest): Future[ListTasksResponse] = service.listTasks(params).promise().toFuture
+    @inline def startTaskExecutionFuture(params: StartTaskExecutionRequest): Future[StartTaskExecutionResponse] = service.startTaskExecution(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateAgentFuture(params: UpdateAgentRequest): Future[UpdateAgentResponse] = service.updateAgent(params).promise().toFuture
+    @inline def updateTaskFuture(params: UpdateTaskRequest): Future[UpdateTaskResponse] = service.updateTask(params).promise().toFuture
   }
 }
 
@@ -142,12 +106,9 @@ package datasync {
     def cancelTaskExecution(params: CancelTaskExecutionRequest): Request[CancelTaskExecutionResponse] = js.native
     def createAgent(params: CreateAgentRequest): Request[CreateAgentResponse] = js.native
     def createLocationEfs(params: CreateLocationEfsRequest): Request[CreateLocationEfsResponse] = js.native
-    def createLocationFsxWindows(params: CreateLocationFsxWindowsRequest): Request[CreateLocationFsxWindowsResponse] =
-      js.native
+    def createLocationFsxWindows(params: CreateLocationFsxWindowsRequest): Request[CreateLocationFsxWindowsResponse] = js.native
     def createLocationNfs(params: CreateLocationNfsRequest): Request[CreateLocationNfsResponse] = js.native
-    def createLocationObjectStorage(
-        params: CreateLocationObjectStorageRequest
-    ): Request[CreateLocationObjectStorageResponse] = js.native
+    def createLocationObjectStorage(params: CreateLocationObjectStorageRequest): Request[CreateLocationObjectStorageResponse] = js.native
     def createLocationS3(params: CreateLocationS3Request): Request[CreateLocationS3Response] = js.native
     def createLocationSmb(params: CreateLocationSmbRequest): Request[CreateLocationSmbResponse] = js.native
     def createTask(params: CreateTaskRequest): Request[CreateTaskResponse] = js.native
@@ -156,13 +117,9 @@ package datasync {
     def deleteTask(params: DeleteTaskRequest): Request[DeleteTaskResponse] = js.native
     def describeAgent(params: DescribeAgentRequest): Request[DescribeAgentResponse] = js.native
     def describeLocationEfs(params: DescribeLocationEfsRequest): Request[DescribeLocationEfsResponse] = js.native
-    def describeLocationFsxWindows(
-        params: DescribeLocationFsxWindowsRequest
-    ): Request[DescribeLocationFsxWindowsResponse] = js.native
+    def describeLocationFsxWindows(params: DescribeLocationFsxWindowsRequest): Request[DescribeLocationFsxWindowsResponse] = js.native
     def describeLocationNfs(params: DescribeLocationNfsRequest): Request[DescribeLocationNfsResponse] = js.native
-    def describeLocationObjectStorage(
-        params: DescribeLocationObjectStorageRequest
-    ): Request[DescribeLocationObjectStorageResponse] = js.native
+    def describeLocationObjectStorage(params: DescribeLocationObjectStorageRequest): Request[DescribeLocationObjectStorageResponse] = js.native
     def describeLocationS3(params: DescribeLocationS3Request): Request[DescribeLocationS3Response] = js.native
     def describeLocationSmb(params: DescribeLocationSmbRequest): Request[DescribeLocationSmbResponse] = js.native
     def describeTask(params: DescribeTaskRequest): Request[DescribeTaskResponse] = js.native
@@ -1230,9 +1187,7 @@ package datasync {
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       CurrentTaskExecutionArn.foreach(__v => __obj.updateDynamic("CurrentTaskExecutionArn")(__v.asInstanceOf[js.Any]))
       DestinationLocationArn.foreach(__v => __obj.updateDynamic("DestinationLocationArn")(__v.asInstanceOf[js.Any]))
-      DestinationNetworkInterfaceArns.foreach(__v =>
-        __obj.updateDynamic("DestinationNetworkInterfaceArns")(__v.asInstanceOf[js.Any])
-      )
+      DestinationNetworkInterfaceArns.foreach(__v => __obj.updateDynamic("DestinationNetworkInterfaceArns")(__v.asInstanceOf[js.Any]))
       ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
       ErrorDetail.foreach(__v => __obj.updateDynamic("ErrorDetail")(__v.asInstanceOf[js.Any]))
       Excludes.foreach(__v => __obj.updateDynamic("Excludes")(__v.asInstanceOf[js.Any]))
@@ -1240,9 +1195,7 @@ package datasync {
       Options.foreach(__v => __obj.updateDynamic("Options")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
       SourceLocationArn.foreach(__v => __obj.updateDynamic("SourceLocationArn")(__v.asInstanceOf[js.Any]))
-      SourceNetworkInterfaceArns.foreach(__v =>
-        __obj.updateDynamic("SourceNetworkInterfaceArns")(__v.asInstanceOf[js.Any])
-      )
+      SourceNetworkInterfaceArns.foreach(__v => __obj.updateDynamic("SourceNetworkInterfaceArns")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       TaskArn.foreach(__v => __obj.updateDynamic("TaskArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTaskResponse]
@@ -1788,8 +1741,7 @@ package datasync {
     val GLACIER = "GLACIER".asInstanceOf[S3StorageClass]
     val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[S3StorageClass]
 
-    val values =
-      js.Object.freeze(js.Array(STANDARD, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, DEEP_ARCHIVE))
+    val values = js.Object.freeze(js.Array(STANDARD, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, DEEP_ARCHIVE))
   }
 
   /**

@@ -124,111 +124,53 @@ package object medialive {
 
   implicit final class MediaLiveOps(private val service: MediaLive) extends AnyVal {
 
-    @inline def batchUpdateScheduleFuture(params: BatchUpdateScheduleRequest): Future[BatchUpdateScheduleResponse] =
-      service.batchUpdateSchedule(params).promise().toFuture
-    @inline def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] =
-      service.createChannel(params).promise().toFuture
-    @inline def createInputFuture(params: CreateInputRequest): Future[CreateInputResponse] =
-      service.createInput(params).promise().toFuture
-    @inline def createInputSecurityGroupFuture(
-        params: CreateInputSecurityGroupRequest
-    ): Future[CreateInputSecurityGroupResponse] = service.createInputSecurityGroup(params).promise().toFuture
-    @inline def createMultiplexFuture(params: CreateMultiplexRequest): Future[CreateMultiplexResponse] =
-      service.createMultiplex(params).promise().toFuture
-    @inline def createMultiplexProgramFuture(
-        params: CreateMultiplexProgramRequest
-    ): Future[CreateMultiplexProgramResponse] = service.createMultiplexProgram(params).promise().toFuture
-    @inline def createTagsFuture(params: CreateTagsRequest): Future[js.Object] =
-      service.createTags(params).promise().toFuture
-    @inline def deleteChannelFuture(params: DeleteChannelRequest): Future[DeleteChannelResponse] =
-      service.deleteChannel(params).promise().toFuture
-    @inline def deleteInputFuture(params: DeleteInputRequest): Future[DeleteInputResponse] =
-      service.deleteInput(params).promise().toFuture
-    @inline def deleteInputSecurityGroupFuture(
-        params: DeleteInputSecurityGroupRequest
-    ): Future[DeleteInputSecurityGroupResponse] = service.deleteInputSecurityGroup(params).promise().toFuture
-    @inline def deleteMultiplexFuture(params: DeleteMultiplexRequest): Future[DeleteMultiplexResponse] =
-      service.deleteMultiplex(params).promise().toFuture
-    @inline def deleteMultiplexProgramFuture(
-        params: DeleteMultiplexProgramRequest
-    ): Future[DeleteMultiplexProgramResponse] = service.deleteMultiplexProgram(params).promise().toFuture
-    @inline def deleteReservationFuture(params: DeleteReservationRequest): Future[DeleteReservationResponse] =
-      service.deleteReservation(params).promise().toFuture
-    @inline def deleteScheduleFuture(params: DeleteScheduleRequest): Future[DeleteScheduleResponse] =
-      service.deleteSchedule(params).promise().toFuture
-    @inline def deleteTagsFuture(params: DeleteTagsRequest): Future[js.Object] =
-      service.deleteTags(params).promise().toFuture
-    @inline def describeChannelFuture(params: DescribeChannelRequest): Future[DescribeChannelResponse] =
-      service.describeChannel(params).promise().toFuture
-    @inline def describeInputDeviceFuture(params: DescribeInputDeviceRequest): Future[DescribeInputDeviceResponse] =
-      service.describeInputDevice(params).promise().toFuture
-    @inline def describeInputDeviceThumbnailFuture(
-        params: DescribeInputDeviceThumbnailRequest
-    ): Future[DescribeInputDeviceThumbnailResponse] = service.describeInputDeviceThumbnail(params).promise().toFuture
-    @inline def describeInputFuture(params: DescribeInputRequest): Future[DescribeInputResponse] =
-      service.describeInput(params).promise().toFuture
-    @inline def describeInputSecurityGroupFuture(
-        params: DescribeInputSecurityGroupRequest
-    ): Future[DescribeInputSecurityGroupResponse] = service.describeInputSecurityGroup(params).promise().toFuture
-    @inline def describeMultiplexFuture(params: DescribeMultiplexRequest): Future[DescribeMultiplexResponse] =
-      service.describeMultiplex(params).promise().toFuture
-    @inline def describeMultiplexProgramFuture(
-        params: DescribeMultiplexProgramRequest
-    ): Future[DescribeMultiplexProgramResponse] = service.describeMultiplexProgram(params).promise().toFuture
-    @inline def describeOfferingFuture(params: DescribeOfferingRequest): Future[DescribeOfferingResponse] =
-      service.describeOffering(params).promise().toFuture
-    @inline def describeReservationFuture(params: DescribeReservationRequest): Future[DescribeReservationResponse] =
-      service.describeReservation(params).promise().toFuture
-    @inline def describeScheduleFuture(params: DescribeScheduleRequest): Future[DescribeScheduleResponse] =
-      service.describeSchedule(params).promise().toFuture
-    @inline def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] =
-      service.listChannels(params).promise().toFuture
-    @inline def listInputDevicesFuture(params: ListInputDevicesRequest): Future[ListInputDevicesResponse] =
-      service.listInputDevices(params).promise().toFuture
-    @inline def listInputSecurityGroupsFuture(
-        params: ListInputSecurityGroupsRequest
-    ): Future[ListInputSecurityGroupsResponse] = service.listInputSecurityGroups(params).promise().toFuture
-    @inline def listInputsFuture(params: ListInputsRequest): Future[ListInputsResponse] =
-      service.listInputs(params).promise().toFuture
-    @inline def listMultiplexProgramsFuture(
-        params: ListMultiplexProgramsRequest
-    ): Future[ListMultiplexProgramsResponse] = service.listMultiplexPrograms(params).promise().toFuture
-    @inline def listMultiplexesFuture(params: ListMultiplexesRequest): Future[ListMultiplexesResponse] =
-      service.listMultiplexes(params).promise().toFuture
-    @inline def listOfferingsFuture(params: ListOfferingsRequest): Future[ListOfferingsResponse] =
-      service.listOfferings(params).promise().toFuture
-    @inline def listReservationsFuture(params: ListReservationsRequest): Future[ListReservationsResponse] =
-      service.listReservations(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def purchaseOfferingFuture(params: PurchaseOfferingRequest): Future[PurchaseOfferingResponse] =
-      service.purchaseOffering(params).promise().toFuture
-    @inline def startChannelFuture(params: StartChannelRequest): Future[StartChannelResponse] =
-      service.startChannel(params).promise().toFuture
-    @inline def startMultiplexFuture(params: StartMultiplexRequest): Future[StartMultiplexResponse] =
-      service.startMultiplex(params).promise().toFuture
-    @inline def stopChannelFuture(params: StopChannelRequest): Future[StopChannelResponse] =
-      service.stopChannel(params).promise().toFuture
-    @inline def stopMultiplexFuture(params: StopMultiplexRequest): Future[StopMultiplexResponse] =
-      service.stopMultiplex(params).promise().toFuture
-    @inline def updateChannelClassFuture(params: UpdateChannelClassRequest): Future[UpdateChannelClassResponse] =
-      service.updateChannelClass(params).promise().toFuture
-    @inline def updateChannelFuture(params: UpdateChannelRequest): Future[UpdateChannelResponse] =
-      service.updateChannel(params).promise().toFuture
-    @inline def updateInputDeviceFuture(params: UpdateInputDeviceRequest): Future[UpdateInputDeviceResponse] =
-      service.updateInputDevice(params).promise().toFuture
-    @inline def updateInputFuture(params: UpdateInputRequest): Future[UpdateInputResponse] =
-      service.updateInput(params).promise().toFuture
-    @inline def updateInputSecurityGroupFuture(
-        params: UpdateInputSecurityGroupRequest
-    ): Future[UpdateInputSecurityGroupResponse] = service.updateInputSecurityGroup(params).promise().toFuture
-    @inline def updateMultiplexFuture(params: UpdateMultiplexRequest): Future[UpdateMultiplexResponse] =
-      service.updateMultiplex(params).promise().toFuture
-    @inline def updateMultiplexProgramFuture(
-        params: UpdateMultiplexProgramRequest
-    ): Future[UpdateMultiplexProgramResponse] = service.updateMultiplexProgram(params).promise().toFuture
-    @inline def updateReservationFuture(params: UpdateReservationRequest): Future[UpdateReservationResponse] =
-      service.updateReservation(params).promise().toFuture
+    @inline def batchUpdateScheduleFuture(params: BatchUpdateScheduleRequest): Future[BatchUpdateScheduleResponse] = service.batchUpdateSchedule(params).promise().toFuture
+    @inline def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] = service.createChannel(params).promise().toFuture
+    @inline def createInputFuture(params: CreateInputRequest): Future[CreateInputResponse] = service.createInput(params).promise().toFuture
+    @inline def createInputSecurityGroupFuture(params: CreateInputSecurityGroupRequest): Future[CreateInputSecurityGroupResponse] = service.createInputSecurityGroup(params).promise().toFuture
+    @inline def createMultiplexFuture(params: CreateMultiplexRequest): Future[CreateMultiplexResponse] = service.createMultiplex(params).promise().toFuture
+    @inline def createMultiplexProgramFuture(params: CreateMultiplexProgramRequest): Future[CreateMultiplexProgramResponse] = service.createMultiplexProgram(params).promise().toFuture
+    @inline def createTagsFuture(params: CreateTagsRequest): Future[js.Object] = service.createTags(params).promise().toFuture
+    @inline def deleteChannelFuture(params: DeleteChannelRequest): Future[DeleteChannelResponse] = service.deleteChannel(params).promise().toFuture
+    @inline def deleteInputFuture(params: DeleteInputRequest): Future[DeleteInputResponse] = service.deleteInput(params).promise().toFuture
+    @inline def deleteInputSecurityGroupFuture(params: DeleteInputSecurityGroupRequest): Future[DeleteInputSecurityGroupResponse] = service.deleteInputSecurityGroup(params).promise().toFuture
+    @inline def deleteMultiplexFuture(params: DeleteMultiplexRequest): Future[DeleteMultiplexResponse] = service.deleteMultiplex(params).promise().toFuture
+    @inline def deleteMultiplexProgramFuture(params: DeleteMultiplexProgramRequest): Future[DeleteMultiplexProgramResponse] = service.deleteMultiplexProgram(params).promise().toFuture
+    @inline def deleteReservationFuture(params: DeleteReservationRequest): Future[DeleteReservationResponse] = service.deleteReservation(params).promise().toFuture
+    @inline def deleteScheduleFuture(params: DeleteScheduleRequest): Future[DeleteScheduleResponse] = service.deleteSchedule(params).promise().toFuture
+    @inline def deleteTagsFuture(params: DeleteTagsRequest): Future[js.Object] = service.deleteTags(params).promise().toFuture
+    @inline def describeChannelFuture(params: DescribeChannelRequest): Future[DescribeChannelResponse] = service.describeChannel(params).promise().toFuture
+    @inline def describeInputDeviceFuture(params: DescribeInputDeviceRequest): Future[DescribeInputDeviceResponse] = service.describeInputDevice(params).promise().toFuture
+    @inline def describeInputDeviceThumbnailFuture(params: DescribeInputDeviceThumbnailRequest): Future[DescribeInputDeviceThumbnailResponse] = service.describeInputDeviceThumbnail(params).promise().toFuture
+    @inline def describeInputFuture(params: DescribeInputRequest): Future[DescribeInputResponse] = service.describeInput(params).promise().toFuture
+    @inline def describeInputSecurityGroupFuture(params: DescribeInputSecurityGroupRequest): Future[DescribeInputSecurityGroupResponse] = service.describeInputSecurityGroup(params).promise().toFuture
+    @inline def describeMultiplexFuture(params: DescribeMultiplexRequest): Future[DescribeMultiplexResponse] = service.describeMultiplex(params).promise().toFuture
+    @inline def describeMultiplexProgramFuture(params: DescribeMultiplexProgramRequest): Future[DescribeMultiplexProgramResponse] = service.describeMultiplexProgram(params).promise().toFuture
+    @inline def describeOfferingFuture(params: DescribeOfferingRequest): Future[DescribeOfferingResponse] = service.describeOffering(params).promise().toFuture
+    @inline def describeReservationFuture(params: DescribeReservationRequest): Future[DescribeReservationResponse] = service.describeReservation(params).promise().toFuture
+    @inline def describeScheduleFuture(params: DescribeScheduleRequest): Future[DescribeScheduleResponse] = service.describeSchedule(params).promise().toFuture
+    @inline def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] = service.listChannels(params).promise().toFuture
+    @inline def listInputDevicesFuture(params: ListInputDevicesRequest): Future[ListInputDevicesResponse] = service.listInputDevices(params).promise().toFuture
+    @inline def listInputSecurityGroupsFuture(params: ListInputSecurityGroupsRequest): Future[ListInputSecurityGroupsResponse] = service.listInputSecurityGroups(params).promise().toFuture
+    @inline def listInputsFuture(params: ListInputsRequest): Future[ListInputsResponse] = service.listInputs(params).promise().toFuture
+    @inline def listMultiplexProgramsFuture(params: ListMultiplexProgramsRequest): Future[ListMultiplexProgramsResponse] = service.listMultiplexPrograms(params).promise().toFuture
+    @inline def listMultiplexesFuture(params: ListMultiplexesRequest): Future[ListMultiplexesResponse] = service.listMultiplexes(params).promise().toFuture
+    @inline def listOfferingsFuture(params: ListOfferingsRequest): Future[ListOfferingsResponse] = service.listOfferings(params).promise().toFuture
+    @inline def listReservationsFuture(params: ListReservationsRequest): Future[ListReservationsResponse] = service.listReservations(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def purchaseOfferingFuture(params: PurchaseOfferingRequest): Future[PurchaseOfferingResponse] = service.purchaseOffering(params).promise().toFuture
+    @inline def startChannelFuture(params: StartChannelRequest): Future[StartChannelResponse] = service.startChannel(params).promise().toFuture
+    @inline def startMultiplexFuture(params: StartMultiplexRequest): Future[StartMultiplexResponse] = service.startMultiplex(params).promise().toFuture
+    @inline def stopChannelFuture(params: StopChannelRequest): Future[StopChannelResponse] = service.stopChannel(params).promise().toFuture
+    @inline def stopMultiplexFuture(params: StopMultiplexRequest): Future[StopMultiplexResponse] = service.stopMultiplex(params).promise().toFuture
+    @inline def updateChannelClassFuture(params: UpdateChannelClassRequest): Future[UpdateChannelClassResponse] = service.updateChannelClass(params).promise().toFuture
+    @inline def updateChannelFuture(params: UpdateChannelRequest): Future[UpdateChannelResponse] = service.updateChannel(params).promise().toFuture
+    @inline def updateInputDeviceFuture(params: UpdateInputDeviceRequest): Future[UpdateInputDeviceResponse] = service.updateInputDevice(params).promise().toFuture
+    @inline def updateInputFuture(params: UpdateInputRequest): Future[UpdateInputResponse] = service.updateInput(params).promise().toFuture
+    @inline def updateInputSecurityGroupFuture(params: UpdateInputSecurityGroupRequest): Future[UpdateInputSecurityGroupResponse] = service.updateInputSecurityGroup(params).promise().toFuture
+    @inline def updateMultiplexFuture(params: UpdateMultiplexRequest): Future[UpdateMultiplexResponse] = service.updateMultiplex(params).promise().toFuture
+    @inline def updateMultiplexProgramFuture(params: UpdateMultiplexProgramRequest): Future[UpdateMultiplexProgramResponse] = service.updateMultiplexProgram(params).promise().toFuture
+    @inline def updateReservationFuture(params: UpdateReservationRequest): Future[UpdateReservationResponse] = service.updateReservation(params).promise().toFuture
   }
 }
 
@@ -241,41 +183,31 @@ package medialive {
     def batchUpdateSchedule(params: BatchUpdateScheduleRequest): Request[BatchUpdateScheduleResponse] = js.native
     def createChannel(params: CreateChannelRequest): Request[CreateChannelResponse] = js.native
     def createInput(params: CreateInputRequest): Request[CreateInputResponse] = js.native
-    def createInputSecurityGroup(params: CreateInputSecurityGroupRequest): Request[CreateInputSecurityGroupResponse] =
-      js.native
+    def createInputSecurityGroup(params: CreateInputSecurityGroupRequest): Request[CreateInputSecurityGroupResponse] = js.native
     def createMultiplex(params: CreateMultiplexRequest): Request[CreateMultiplexResponse] = js.native
-    def createMultiplexProgram(params: CreateMultiplexProgramRequest): Request[CreateMultiplexProgramResponse] =
-      js.native
+    def createMultiplexProgram(params: CreateMultiplexProgramRequest): Request[CreateMultiplexProgramResponse] = js.native
     def createTags(params: CreateTagsRequest): Request[js.Object] = js.native
     def deleteChannel(params: DeleteChannelRequest): Request[DeleteChannelResponse] = js.native
     def deleteInput(params: DeleteInputRequest): Request[DeleteInputResponse] = js.native
-    def deleteInputSecurityGroup(params: DeleteInputSecurityGroupRequest): Request[DeleteInputSecurityGroupResponse] =
-      js.native
+    def deleteInputSecurityGroup(params: DeleteInputSecurityGroupRequest): Request[DeleteInputSecurityGroupResponse] = js.native
     def deleteMultiplex(params: DeleteMultiplexRequest): Request[DeleteMultiplexResponse] = js.native
-    def deleteMultiplexProgram(params: DeleteMultiplexProgramRequest): Request[DeleteMultiplexProgramResponse] =
-      js.native
+    def deleteMultiplexProgram(params: DeleteMultiplexProgramRequest): Request[DeleteMultiplexProgramResponse] = js.native
     def deleteReservation(params: DeleteReservationRequest): Request[DeleteReservationResponse] = js.native
     def deleteSchedule(params: DeleteScheduleRequest): Request[DeleteScheduleResponse] = js.native
     def deleteTags(params: DeleteTagsRequest): Request[js.Object] = js.native
     def describeChannel(params: DescribeChannelRequest): Request[DescribeChannelResponse] = js.native
     def describeInput(params: DescribeInputRequest): Request[DescribeInputResponse] = js.native
     def describeInputDevice(params: DescribeInputDeviceRequest): Request[DescribeInputDeviceResponse] = js.native
-    def describeInputDeviceThumbnail(
-        params: DescribeInputDeviceThumbnailRequest
-    ): Request[DescribeInputDeviceThumbnailResponse] = js.native
-    def describeInputSecurityGroup(
-        params: DescribeInputSecurityGroupRequest
-    ): Request[DescribeInputSecurityGroupResponse] = js.native
+    def describeInputDeviceThumbnail(params: DescribeInputDeviceThumbnailRequest): Request[DescribeInputDeviceThumbnailResponse] = js.native
+    def describeInputSecurityGroup(params: DescribeInputSecurityGroupRequest): Request[DescribeInputSecurityGroupResponse] = js.native
     def describeMultiplex(params: DescribeMultiplexRequest): Request[DescribeMultiplexResponse] = js.native
-    def describeMultiplexProgram(params: DescribeMultiplexProgramRequest): Request[DescribeMultiplexProgramResponse] =
-      js.native
+    def describeMultiplexProgram(params: DescribeMultiplexProgramRequest): Request[DescribeMultiplexProgramResponse] = js.native
     def describeOffering(params: DescribeOfferingRequest): Request[DescribeOfferingResponse] = js.native
     def describeReservation(params: DescribeReservationRequest): Request[DescribeReservationResponse] = js.native
     def describeSchedule(params: DescribeScheduleRequest): Request[DescribeScheduleResponse] = js.native
     def listChannels(params: ListChannelsRequest): Request[ListChannelsResponse] = js.native
     def listInputDevices(params: ListInputDevicesRequest): Request[ListInputDevicesResponse] = js.native
-    def listInputSecurityGroups(params: ListInputSecurityGroupsRequest): Request[ListInputSecurityGroupsResponse] =
-      js.native
+    def listInputSecurityGroups(params: ListInputSecurityGroupsRequest): Request[ListInputSecurityGroupsResponse] = js.native
     def listInputs(params: ListInputsRequest): Request[ListInputsResponse] = js.native
     def listMultiplexPrograms(params: ListMultiplexProgramsRequest): Request[ListMultiplexProgramsResponse] = js.native
     def listMultiplexes(params: ListMultiplexesRequest): Request[ListMultiplexesResponse] = js.native
@@ -291,11 +223,9 @@ package medialive {
     def updateChannelClass(params: UpdateChannelClassRequest): Request[UpdateChannelClassResponse] = js.native
     def updateInput(params: UpdateInputRequest): Request[UpdateInputResponse] = js.native
     def updateInputDevice(params: UpdateInputDeviceRequest): Request[UpdateInputDeviceResponse] = js.native
-    def updateInputSecurityGroup(params: UpdateInputSecurityGroupRequest): Request[UpdateInputSecurityGroupResponse] =
-      js.native
+    def updateInputSecurityGroup(params: UpdateInputSecurityGroupRequest): Request[UpdateInputSecurityGroupResponse] = js.native
     def updateMultiplex(params: UpdateMultiplexRequest): Request[UpdateMultiplexResponse] = js.native
-    def updateMultiplexProgram(params: UpdateMultiplexProgramRequest): Request[UpdateMultiplexProgramResponse] =
-      js.native
+    def updateMultiplexProgram(params: UpdateMultiplexProgramRequest): Request[UpdateMultiplexProgramResponse] = js.native
     def updateReservation(params: UpdateReservationRequest): Request[UpdateReservationResponse] = js.native
   }
 
@@ -311,8 +241,7 @@ package medialive {
     val CODING_MODE_2_0 = "CODING_MODE_2_0".asInstanceOf[AacCodingMode]
     val CODING_MODE_5_1 = "CODING_MODE_5_1".asInstanceOf[AacCodingMode]
 
-    val values =
-      js.Object.freeze(js.Array(AD_RECEIVER_MIX, CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_5_1))
+    val values = js.Object.freeze(js.Array(AD_RECEIVER_MIX, CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_5_1))
   }
 
   /**
@@ -448,18 +377,7 @@ package medialive {
     val VISUALLY_IMPAIRED = "VISUALLY_IMPAIRED".asInstanceOf[Ac3BitstreamMode]
     val VOICE_OVER = "VOICE_OVER".asInstanceOf[Ac3BitstreamMode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        COMMENTARY,
-        COMPLETE_MAIN,
-        DIALOGUE,
-        EMERGENCY,
-        HEARING_IMPAIRED,
-        MUSIC_AND_EFFECTS,
-        VISUALLY_IMPAIRED,
-        VOICE_OVER
-      )
-    )
+    val values = js.Object.freeze(js.Array(COMMENTARY, COMPLETE_MAIN, DIALOGUE, EMERGENCY, HEARING_IMPAIRED, MUSIC_AND_EFFECTS, VISUALLY_IMPAIRED, VOICE_OVER))
   }
 
   /**
@@ -766,9 +684,7 @@ package medialive {
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      AudioNormalizationSettings.foreach(__v =>
-        __obj.updateDynamic("AudioNormalizationSettings")(__v.asInstanceOf[js.Any])
-      )
+      AudioNormalizationSettings.foreach(__v => __obj.updateDynamic("AudioNormalizationSettings")(__v.asInstanceOf[js.Any]))
       AudioType.foreach(__v => __obj.updateDynamic("AudioType")(__v.asInstanceOf[js.Any]))
       AudioTypeControl.foreach(__v => __obj.updateDynamic("AudioTypeControl")(__v.asInstanceOf[js.Any]))
       CodecSettings.foreach(__v => __obj.updateDynamic("CodecSettings")(__v.asInstanceOf[js.Any]))
@@ -939,14 +855,7 @@ package medialive {
     val ALTERNATE_AUDIO_NOT_AUTO_SELECT = "ALTERNATE_AUDIO_NOT_AUTO_SELECT".asInstanceOf[AudioOnlyHlsTrackType]
     val AUDIO_ONLY_VARIANT_STREAM = "AUDIO_ONLY_VARIANT_STREAM".asInstanceOf[AudioOnlyHlsTrackType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        ALTERNATE_AUDIO_AUTO_SELECT,
-        ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT,
-        ALTERNATE_AUDIO_NOT_AUTO_SELECT,
-        AUDIO_ONLY_VARIANT_STREAM
-      )
-    )
+    val values = js.Object.freeze(js.Array(ALTERNATE_AUDIO_AUTO_SELECT, ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT, ALTERNATE_AUDIO_NOT_AUTO_SELECT, AUDIO_ONLY_VARIANT_STREAM))
   }
 
   /**
@@ -1596,40 +1505,18 @@ package medialive {
     ): CaptionDestinationSettings = {
       val __obj = js.Dynamic.literal()
       AribDestinationSettings.foreach(__v => __obj.updateDynamic("AribDestinationSettings")(__v.asInstanceOf[js.Any]))
-      BurnInDestinationSettings.foreach(__v =>
-        __obj.updateDynamic("BurnInDestinationSettings")(__v.asInstanceOf[js.Any])
-      )
-      DvbSubDestinationSettings.foreach(__v =>
-        __obj.updateDynamic("DvbSubDestinationSettings")(__v.asInstanceOf[js.Any])
-      )
-      EbuTtDDestinationSettings.foreach(__v =>
-        __obj.updateDynamic("EbuTtDDestinationSettings")(__v.asInstanceOf[js.Any])
-      )
-      EmbeddedDestinationSettings.foreach(__v =>
-        __obj.updateDynamic("EmbeddedDestinationSettings")(__v.asInstanceOf[js.Any])
-      )
-      EmbeddedPlusScte20DestinationSettings.foreach(__v =>
-        __obj.updateDynamic("EmbeddedPlusScte20DestinationSettings")(__v.asInstanceOf[js.Any])
-      )
-      RtmpCaptionInfoDestinationSettings.foreach(__v =>
-        __obj.updateDynamic("RtmpCaptionInfoDestinationSettings")(__v.asInstanceOf[js.Any])
-      )
-      Scte20PlusEmbeddedDestinationSettings.foreach(__v =>
-        __obj.updateDynamic("Scte20PlusEmbeddedDestinationSettings")(__v.asInstanceOf[js.Any])
-      )
-      Scte27DestinationSettings.foreach(__v =>
-        __obj.updateDynamic("Scte27DestinationSettings")(__v.asInstanceOf[js.Any])
-      )
-      SmpteTtDestinationSettings.foreach(__v =>
-        __obj.updateDynamic("SmpteTtDestinationSettings")(__v.asInstanceOf[js.Any])
-      )
-      TeletextDestinationSettings.foreach(__v =>
-        __obj.updateDynamic("TeletextDestinationSettings")(__v.asInstanceOf[js.Any])
-      )
+      BurnInDestinationSettings.foreach(__v => __obj.updateDynamic("BurnInDestinationSettings")(__v.asInstanceOf[js.Any]))
+      DvbSubDestinationSettings.foreach(__v => __obj.updateDynamic("DvbSubDestinationSettings")(__v.asInstanceOf[js.Any]))
+      EbuTtDDestinationSettings.foreach(__v => __obj.updateDynamic("EbuTtDDestinationSettings")(__v.asInstanceOf[js.Any]))
+      EmbeddedDestinationSettings.foreach(__v => __obj.updateDynamic("EmbeddedDestinationSettings")(__v.asInstanceOf[js.Any]))
+      EmbeddedPlusScte20DestinationSettings.foreach(__v => __obj.updateDynamic("EmbeddedPlusScte20DestinationSettings")(__v.asInstanceOf[js.Any]))
+      RtmpCaptionInfoDestinationSettings.foreach(__v => __obj.updateDynamic("RtmpCaptionInfoDestinationSettings")(__v.asInstanceOf[js.Any]))
+      Scte20PlusEmbeddedDestinationSettings.foreach(__v => __obj.updateDynamic("Scte20PlusEmbeddedDestinationSettings")(__v.asInstanceOf[js.Any]))
+      Scte27DestinationSettings.foreach(__v => __obj.updateDynamic("Scte27DestinationSettings")(__v.asInstanceOf[js.Any]))
+      SmpteTtDestinationSettings.foreach(__v => __obj.updateDynamic("SmpteTtDestinationSettings")(__v.asInstanceOf[js.Any]))
+      TeletextDestinationSettings.foreach(__v => __obj.updateDynamic("TeletextDestinationSettings")(__v.asInstanceOf[js.Any]))
       TtmlDestinationSettings.foreach(__v => __obj.updateDynamic("TtmlDestinationSettings")(__v.asInstanceOf[js.Any]))
-      WebvttDestinationSettings.foreach(__v =>
-        __obj.updateDynamic("WebvttDestinationSettings")(__v.asInstanceOf[js.Any])
-      )
+      WebvttDestinationSettings.foreach(__v => __obj.updateDynamic("WebvttDestinationSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CaptionDestinationSettings]
     }
   }
@@ -1832,21 +1719,7 @@ package medialive {
     val UPDATING = "UPDATING".asInstanceOf[ChannelState]
     val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[ChannelState]
 
-    val values = js.Object.freeze(
-      js.Array(
-        CREATING,
-        CREATE_FAILED,
-        IDLE,
-        STARTING,
-        RUNNING,
-        RECOVERING,
-        STOPPING,
-        DELETING,
-        DELETED,
-        UPDATING,
-        UPDATE_FAILED
-      )
-    )
+    val values = js.Object.freeze(js.Array(CREATING, CREATE_FAILED, IDLE, STARTING, RUNNING, RECOVERING, STOPPING, DELETING, DELETED, UPDATING, UPDATE_FAILED))
   }
 
   /**
@@ -4057,9 +3930,7 @@ package medialive {
         InputPrepareScheduleActions: js.UndefOr[FeatureActivationsInputPrepareScheduleActions] = js.undefined
     ): FeatureActivations = {
       val __obj = js.Dynamic.literal()
-      InputPrepareScheduleActions.foreach(__v =>
-        __obj.updateDynamic("InputPrepareScheduleActions")(__v.asInstanceOf[js.Any])
-      )
+      InputPrepareScheduleActions.foreach(__v => __obj.updateDynamic("InputPrepareScheduleActions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FeatureActivations]
     }
   }
@@ -4131,21 +4002,7 @@ package medialive {
     val AFD_1110 = "AFD_1110".asInstanceOf[FixedAfd]
     val AFD_1111 = "AFD_1111".asInstanceOf[FixedAfd]
 
-    val values = js.Object.freeze(
-      js.Array(
-        AFD_0000,
-        AFD_0010,
-        AFD_0011,
-        AFD_0100,
-        AFD_1000,
-        AFD_1001,
-        AFD_1010,
-        AFD_1011,
-        AFD_1101,
-        AFD_1110,
-        AFD_1111
-      )
-    )
+    val values = js.Object.freeze(js.Array(AFD_0000, AFD_0010, AFD_0011, AFD_0100, AFD_1000, AFD_1001, AFD_1010, AFD_1011, AFD_1101, AFD_1110, AFD_1111))
   }
 
   /**
@@ -4359,9 +4216,7 @@ package medialive {
       InputLossBehavior.foreach(__v => __obj.updateDynamic("InputLossBehavior")(__v.asInstanceOf[js.Any]))
       OutputLockingMode.foreach(__v => __obj.updateDynamic("OutputLockingMode")(__v.asInstanceOf[js.Any]))
       OutputTimingSource.foreach(__v => __obj.updateDynamic("OutputTimingSource")(__v.asInstanceOf[js.Any]))
-      SupportLowFramerateInputs.foreach(__v =>
-        __obj.updateDynamic("SupportLowFramerateInputs")(__v.asInstanceOf[js.Any])
-      )
+      SupportLowFramerateInputs.foreach(__v => __obj.updateDynamic("SupportLowFramerateInputs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GlobalConfiguration]
     }
   }
@@ -4460,9 +4315,7 @@ package medialive {
         Rec709Settings: js.UndefOr[Rec709Settings] = js.undefined
     ): H264ColorSpaceSettings = {
       val __obj = js.Dynamic.literal()
-      ColorSpacePassthroughSettings.foreach(__v =>
-        __obj.updateDynamic("ColorSpacePassthroughSettings")(__v.asInstanceOf[js.Any])
-      )
+      ColorSpacePassthroughSettings.foreach(__v => __obj.updateDynamic("ColorSpacePassthroughSettings")(__v.asInstanceOf[js.Any]))
       Rec601Settings.foreach(__v => __obj.updateDynamic("Rec601Settings")(__v.asInstanceOf[js.Any]))
       Rec709Settings.foreach(__v => __obj.updateDynamic("Rec709Settings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[H264ColorSpaceSettings]
@@ -4957,9 +4810,7 @@ package medialive {
         Rec709Settings: js.UndefOr[Rec709Settings] = js.undefined
     ): H265ColorSpaceSettings = {
       val __obj = js.Dynamic.literal()
-      ColorSpacePassthroughSettings.foreach(__v =>
-        __obj.updateDynamic("ColorSpacePassthroughSettings")(__v.asInstanceOf[js.Any])
-      )
+      ColorSpacePassthroughSettings.foreach(__v => __obj.updateDynamic("ColorSpacePassthroughSettings")(__v.asInstanceOf[js.Any]))
       Hdr10Settings.foreach(__v => __obj.updateDynamic("Hdr10Settings")(__v.asInstanceOf[js.Any]))
       Rec601Settings.foreach(__v => __obj.updateDynamic("Rec601Settings")(__v.asInstanceOf[js.Any]))
       Rec709Settings.foreach(__v => __obj.updateDynamic("Rec709Settings")(__v.asInstanceOf[js.Any]))
@@ -5189,9 +5040,7 @@ package medialive {
 
       AdaptiveQuantization.foreach(__v => __obj.updateDynamic("AdaptiveQuantization")(__v.asInstanceOf[js.Any]))
       AfdSignaling.foreach(__v => __obj.updateDynamic("AfdSignaling")(__v.asInstanceOf[js.Any]))
-      AlternativeTransferFunction.foreach(__v =>
-        __obj.updateDynamic("AlternativeTransferFunction")(__v.asInstanceOf[js.Any])
-      )
+      AlternativeTransferFunction.foreach(__v => __obj.updateDynamic("AlternativeTransferFunction")(__v.asInstanceOf[js.Any]))
       Bitrate.foreach(__v => __obj.updateDynamic("Bitrate")(__v.asInstanceOf[js.Any]))
       BufSize.foreach(__v => __obj.updateDynamic("BufSize")(__v.asInstanceOf[js.Any]))
       ColorMetadata.foreach(__v => __obj.updateDynamic("ColorMetadata")(__v.asInstanceOf[js.Any]))
@@ -5577,9 +5426,7 @@ package medialive {
       StreamInfResolution.foreach(__v => __obj.updateDynamic("StreamInfResolution")(__v.asInstanceOf[js.Any]))
       TimedMetadataId3Frame.foreach(__v => __obj.updateDynamic("TimedMetadataId3Frame")(__v.asInstanceOf[js.Any]))
       TimedMetadataId3Period.foreach(__v => __obj.updateDynamic("TimedMetadataId3Period")(__v.asInstanceOf[js.Any]))
-      TimestampDeltaMilliseconds.foreach(__v =>
-        __obj.updateDynamic("TimestampDeltaMilliseconds")(__v.asInstanceOf[js.Any])
-      )
+      TimestampDeltaMilliseconds.foreach(__v => __obj.updateDynamic("TimestampDeltaMilliseconds")(__v.asInstanceOf[js.Any]))
       TsFileMode.foreach(__v => __obj.updateDynamic("TsFileMode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HlsGroupSettings]
     }
@@ -6074,9 +5921,7 @@ package medialive {
         InputSettings: js.UndefOr[InputSettings] = js.undefined
     ): InputAttachment = {
       val __obj = js.Dynamic.literal()
-      AutomaticInputFailoverSettings.foreach(__v =>
-        __obj.updateDynamic("AutomaticInputFailoverSettings")(__v.asInstanceOf[js.Any])
-      )
+      AutomaticInputFailoverSettings.foreach(__v => __obj.updateDynamic("AutomaticInputFailoverSettings")(__v.asInstanceOf[js.Any]))
       InputAttachmentName.foreach(__v => __obj.updateDynamic("InputAttachmentName")(__v.asInstanceOf[js.Any]))
       InputId.foreach(__v => __obj.updateDynamic("InputId")(__v.asInstanceOf[js.Any]))
       InputSettings.foreach(__v => __obj.updateDynamic("InputSettings")(__v.asInstanceOf[js.Any]))
@@ -6691,9 +6536,7 @@ package medialive {
         UrlPath: js.UndefOr[__listOf__string] = js.undefined
     ): InputPrepareScheduleActionSettings = {
       val __obj = js.Dynamic.literal()
-      InputAttachmentNameReference.foreach(__v =>
-        __obj.updateDynamic("InputAttachmentNameReference")(__v.asInstanceOf[js.Any])
-      )
+      InputAttachmentNameReference.foreach(__v => __obj.updateDynamic("InputAttachmentNameReference")(__v.asInstanceOf[js.Any]))
       InputClippingSettings.foreach(__v => __obj.updateDynamic("InputClippingSettings")(__v.asInstanceOf[js.Any]))
       UrlPath.foreach(__v => __obj.updateDynamic("UrlPath")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InputPrepareScheduleActionSettings]
@@ -6977,9 +6820,7 @@ package medialive {
     val MEDIACONNECT = "MEDIACONNECT".asInstanceOf[InputType]
     val INPUT_DEVICE = "INPUT_DEVICE".asInstanceOf[InputType]
 
-    val values = js.Object.freeze(
-      js.Array(UDP_PUSH, RTP_PUSH, RTMP_PUSH, RTMP_PULL, URL_PULL, MP4_FILE, MEDIACONNECT, INPUT_DEVICE)
-    )
+    val values = js.Object.freeze(js.Array(UDP_PUSH, RTP_PUSH, RTMP_PUSH, RTMP_PULL, URL_PULL, MP4_FILE, MEDIACONNECT, INPUT_DEVICE))
   }
 
   /**
@@ -8614,12 +8455,8 @@ package medialive {
         "TransportStreamId" -> TransportStreamId.asInstanceOf[js.Any]
       )
 
-      MaximumVideoBufferDelayMilliseconds.foreach(__v =>
-        __obj.updateDynamic("MaximumVideoBufferDelayMilliseconds")(__v.asInstanceOf[js.Any])
-      )
-      TransportStreamReservedBitrate.foreach(__v =>
-        __obj.updateDynamic("TransportStreamReservedBitrate")(__v.asInstanceOf[js.Any])
-      )
+      MaximumVideoBufferDelayMilliseconds.foreach(__v => __obj.updateDynamic("MaximumVideoBufferDelayMilliseconds")(__v.asInstanceOf[js.Any]))
+      TransportStreamReservedBitrate.foreach(__v => __obj.updateDynamic("TransportStreamReservedBitrate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MultiplexSettings]
     }
   }
@@ -8659,9 +8496,7 @@ package medialive {
     val DELETING = "DELETING".asInstanceOf[MultiplexState]
     val DELETED = "DELETED".asInstanceOf[MultiplexState]
 
-    val values = js.Object.freeze(
-      js.Array(CREATING, CREATE_FAILED, IDLE, STARTING, RUNNING, RECOVERING, STOPPING, DELETING, DELETED)
-    )
+    val values = js.Object.freeze(js.Array(CREATING, CREATE_FAILED, IDLE, STARTING, RUNNING, RECOVERING, STOPPING, DELETING, DELETED))
   }
 
   /**
@@ -8757,8 +8592,7 @@ package medialive {
   @js.native
   sealed trait NetworkInputServerValidation extends js.Any
   object NetworkInputServerValidation extends js.Object {
-    val CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME =
-      "CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME".asInstanceOf[NetworkInputServerValidation]
+    val CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME = "CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME".asInstanceOf[NetworkInputServerValidation]
     val CHECK_CRYPTOGRAPHY_ONLY = "CHECK_CRYPTOGRAPHY_ONLY".asInstanceOf[NetworkInputServerValidation]
 
     val values = js.Object.freeze(js.Array(CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME, CHECK_CRYPTOGRAPHY_ONLY))
@@ -9036,13 +8870,9 @@ package medialive {
     ): OutputGroupSettings = {
       val __obj = js.Dynamic.literal()
       ArchiveGroupSettings.foreach(__v => __obj.updateDynamic("ArchiveGroupSettings")(__v.asInstanceOf[js.Any]))
-      FrameCaptureGroupSettings.foreach(__v =>
-        __obj.updateDynamic("FrameCaptureGroupSettings")(__v.asInstanceOf[js.Any])
-      )
+      FrameCaptureGroupSettings.foreach(__v => __obj.updateDynamic("FrameCaptureGroupSettings")(__v.asInstanceOf[js.Any]))
       HlsGroupSettings.foreach(__v => __obj.updateDynamic("HlsGroupSettings")(__v.asInstanceOf[js.Any]))
-      MediaPackageGroupSettings.foreach(__v =>
-        __obj.updateDynamic("MediaPackageGroupSettings")(__v.asInstanceOf[js.Any])
-      )
+      MediaPackageGroupSettings.foreach(__v => __obj.updateDynamic("MediaPackageGroupSettings")(__v.asInstanceOf[js.Any]))
       MsSmoothGroupSettings.foreach(__v => __obj.updateDynamic("MsSmoothGroupSettings")(__v.asInstanceOf[js.Any]))
       MultiplexGroupSettings.foreach(__v => __obj.updateDynamic("MultiplexGroupSettings")(__v.asInstanceOf[js.Any]))
       RtmpGroupSettings.foreach(__v => __obj.updateDynamic("RtmpGroupSettings")(__v.asInstanceOf[js.Any]))
@@ -9099,13 +8929,9 @@ package medialive {
     ): OutputSettings = {
       val __obj = js.Dynamic.literal()
       ArchiveOutputSettings.foreach(__v => __obj.updateDynamic("ArchiveOutputSettings")(__v.asInstanceOf[js.Any]))
-      FrameCaptureOutputSettings.foreach(__v =>
-        __obj.updateDynamic("FrameCaptureOutputSettings")(__v.asInstanceOf[js.Any])
-      )
+      FrameCaptureOutputSettings.foreach(__v => __obj.updateDynamic("FrameCaptureOutputSettings")(__v.asInstanceOf[js.Any]))
       HlsOutputSettings.foreach(__v => __obj.updateDynamic("HlsOutputSettings")(__v.asInstanceOf[js.Any]))
-      MediaPackageOutputSettings.foreach(__v =>
-        __obj.updateDynamic("MediaPackageOutputSettings")(__v.asInstanceOf[js.Any])
-      )
+      MediaPackageOutputSettings.foreach(__v => __obj.updateDynamic("MediaPackageOutputSettings")(__v.asInstanceOf[js.Any]))
       MsSmoothOutputSettings.foreach(__v => __obj.updateDynamic("MsSmoothOutputSettings")(__v.asInstanceOf[js.Any]))
       MultiplexOutputSettings.foreach(__v => __obj.updateDynamic("MultiplexOutputSettings")(__v.asInstanceOf[js.Any]))
       RtmpOutputSettings.foreach(__v => __obj.updateDynamic("RtmpOutputSettings")(__v.asInstanceOf[js.Any]))
@@ -9167,12 +8993,8 @@ package medialive {
         PipelineId: js.UndefOr[__string] = js.undefined
     ): PipelineDetail = {
       val __obj = js.Dynamic.literal()
-      ActiveInputAttachmentName.foreach(__v =>
-        __obj.updateDynamic("ActiveInputAttachmentName")(__v.asInstanceOf[js.Any])
-      )
-      ActiveInputSwitchActionName.foreach(__v =>
-        __obj.updateDynamic("ActiveInputSwitchActionName")(__v.asInstanceOf[js.Any])
-      )
+      ActiveInputAttachmentName.foreach(__v => __obj.updateDynamic("ActiveInputAttachmentName")(__v.asInstanceOf[js.Any]))
+      ActiveInputSwitchActionName.foreach(__v => __obj.updateDynamic("ActiveInputSwitchActionName")(__v.asInstanceOf[js.Any]))
       PipelineId.foreach(__v => __obj.updateDynamic("PipelineId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PipelineDetail]
     }
@@ -9734,26 +9556,16 @@ package medialive {
         StaticImageDeactivateSettings: js.UndefOr[StaticImageDeactivateScheduleActionSettings] = js.undefined
     ): ScheduleActionSettings = {
       val __obj = js.Dynamic.literal()
-      HlsId3SegmentTaggingSettings.foreach(__v =>
-        __obj.updateDynamic("HlsId3SegmentTaggingSettings")(__v.asInstanceOf[js.Any])
-      )
+      HlsId3SegmentTaggingSettings.foreach(__v => __obj.updateDynamic("HlsId3SegmentTaggingSettings")(__v.asInstanceOf[js.Any]))
       HlsTimedMetadataSettings.foreach(__v => __obj.updateDynamic("HlsTimedMetadataSettings")(__v.asInstanceOf[js.Any]))
       InputPrepareSettings.foreach(__v => __obj.updateDynamic("InputPrepareSettings")(__v.asInstanceOf[js.Any]))
       InputSwitchSettings.foreach(__v => __obj.updateDynamic("InputSwitchSettings")(__v.asInstanceOf[js.Any]))
       PauseStateSettings.foreach(__v => __obj.updateDynamic("PauseStateSettings")(__v.asInstanceOf[js.Any]))
-      Scte35ReturnToNetworkSettings.foreach(__v =>
-        __obj.updateDynamic("Scte35ReturnToNetworkSettings")(__v.asInstanceOf[js.Any])
-      )
-      Scte35SpliceInsertSettings.foreach(__v =>
-        __obj.updateDynamic("Scte35SpliceInsertSettings")(__v.asInstanceOf[js.Any])
-      )
+      Scte35ReturnToNetworkSettings.foreach(__v => __obj.updateDynamic("Scte35ReturnToNetworkSettings")(__v.asInstanceOf[js.Any]))
+      Scte35SpliceInsertSettings.foreach(__v => __obj.updateDynamic("Scte35SpliceInsertSettings")(__v.asInstanceOf[js.Any]))
       Scte35TimeSignalSettings.foreach(__v => __obj.updateDynamic("Scte35TimeSignalSettings")(__v.asInstanceOf[js.Any]))
-      StaticImageActivateSettings.foreach(__v =>
-        __obj.updateDynamic("StaticImageActivateSettings")(__v.asInstanceOf[js.Any])
-      )
-      StaticImageDeactivateSettings.foreach(__v =>
-        __obj.updateDynamic("StaticImageDeactivateSettings")(__v.asInstanceOf[js.Any])
-      )
+      StaticImageActivateSettings.foreach(__v => __obj.updateDynamic("StaticImageActivateSettings")(__v.asInstanceOf[js.Any]))
+      StaticImageDeactivateSettings.foreach(__v => __obj.updateDynamic("StaticImageDeactivateSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScheduleActionSettings]
     }
   }
@@ -9776,15 +9588,9 @@ package medialive {
         ImmediateModeScheduleActionStartSettings: js.UndefOr[ImmediateModeScheduleActionStartSettings] = js.undefined
     ): ScheduleActionStartSettings = {
       val __obj = js.Dynamic.literal()
-      FixedModeScheduleActionStartSettings.foreach(__v =>
-        __obj.updateDynamic("FixedModeScheduleActionStartSettings")(__v.asInstanceOf[js.Any])
-      )
-      FollowModeScheduleActionStartSettings.foreach(__v =>
-        __obj.updateDynamic("FollowModeScheduleActionStartSettings")(__v.asInstanceOf[js.Any])
-      )
-      ImmediateModeScheduleActionStartSettings.foreach(__v =>
-        __obj.updateDynamic("ImmediateModeScheduleActionStartSettings")(__v.asInstanceOf[js.Any])
-      )
+      FixedModeScheduleActionStartSettings.foreach(__v => __obj.updateDynamic("FixedModeScheduleActionStartSettings")(__v.asInstanceOf[js.Any]))
+      FollowModeScheduleActionStartSettings.foreach(__v => __obj.updateDynamic("FollowModeScheduleActionStartSettings")(__v.asInstanceOf[js.Any]))
+      ImmediateModeScheduleActionStartSettings.foreach(__v => __obj.updateDynamic("ImmediateModeScheduleActionStartSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScheduleActionStartSettings]
     }
   }
@@ -9975,8 +9781,7 @@ package medialive {
         SegmentationDescriptorScte35DescriptorSettings: Scte35SegmentationDescriptor
     ): Scte35DescriptorSettings = {
       val __obj = js.Dynamic.literal(
-        "SegmentationDescriptorScte35DescriptorSettings" -> SegmentationDescriptorScte35DescriptorSettings
-          .asInstanceOf[js.Any]
+        "SegmentationDescriptorScte35DescriptorSettings" -> SegmentationDescriptorScte35DescriptorSettings.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[Scte35DescriptorSettings]
@@ -10036,8 +9841,7 @@ package medialive {
   @js.native
   sealed trait Scte35SegmentationCancelIndicator extends js.Any
   object Scte35SegmentationCancelIndicator extends js.Object {
-    val SEGMENTATION_EVENT_NOT_CANCELED =
-      "SEGMENTATION_EVENT_NOT_CANCELED".asInstanceOf[Scte35SegmentationCancelIndicator]
+    val SEGMENTATION_EVENT_NOT_CANCELED = "SEGMENTATION_EVENT_NOT_CANCELED".asInstanceOf[Scte35SegmentationCancelIndicator]
     val SEGMENTATION_EVENT_CANCELED = "SEGMENTATION_EVENT_CANCELED".asInstanceOf[Scte35SegmentationCancelIndicator]
 
     val values = js.Object.freeze(js.Array(SEGMENTATION_EVENT_NOT_CANCELED, SEGMENTATION_EVENT_CANCELED))
@@ -10802,9 +10606,7 @@ package medialive {
         Timecode: js.UndefOr[__string] = js.undefined
     ): StopTimecode = {
       val __obj = js.Dynamic.literal()
-      LastFrameClippingBehavior.foreach(__v =>
-        __obj.updateDynamic("LastFrameClippingBehavior")(__v.asInstanceOf[js.Any])
-      )
+      LastFrameClippingBehavior.foreach(__v => __obj.updateDynamic("LastFrameClippingBehavior")(__v.asInstanceOf[js.Any]))
       Timecode.foreach(__v => __obj.updateDynamic("Timecode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopTimecode]
     }

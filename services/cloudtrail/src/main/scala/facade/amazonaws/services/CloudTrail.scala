@@ -29,42 +29,24 @@ package object cloudtrail {
 
   implicit final class CloudTrailOps(private val service: CloudTrail) extends AnyVal {
 
-    @inline def addTagsFuture(params: AddTagsRequest): Future[AddTagsResponse] =
-      service.addTags(params).promise().toFuture
-    @inline def createTrailFuture(params: CreateTrailRequest): Future[CreateTrailResponse] =
-      service.createTrail(params).promise().toFuture
-    @inline def deleteTrailFuture(params: DeleteTrailRequest): Future[DeleteTrailResponse] =
-      service.deleteTrail(params).promise().toFuture
-    @inline def describeTrailsFuture(params: DescribeTrailsRequest): Future[DescribeTrailsResponse] =
-      service.describeTrails(params).promise().toFuture
-    @inline def getEventSelectorsFuture(params: GetEventSelectorsRequest): Future[GetEventSelectorsResponse] =
-      service.getEventSelectors(params).promise().toFuture
-    @inline def getInsightSelectorsFuture(params: GetInsightSelectorsRequest): Future[GetInsightSelectorsResponse] =
-      service.getInsightSelectors(params).promise().toFuture
-    @inline def getTrailFuture(params: GetTrailRequest): Future[GetTrailResponse] =
-      service.getTrail(params).promise().toFuture
-    @inline def getTrailStatusFuture(params: GetTrailStatusRequest): Future[GetTrailStatusResponse] =
-      service.getTrailStatus(params).promise().toFuture
-    @inline def listPublicKeysFuture(params: ListPublicKeysRequest): Future[ListPublicKeysResponse] =
-      service.listPublicKeys(params).promise().toFuture
-    @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] =
-      service.listTags(params).promise().toFuture
-    @inline def listTrailsFuture(params: ListTrailsRequest): Future[ListTrailsResponse] =
-      service.listTrails(params).promise().toFuture
-    @inline def lookupEventsFuture(params: LookupEventsRequest): Future[LookupEventsResponse] =
-      service.lookupEvents(params).promise().toFuture
-    @inline def putEventSelectorsFuture(params: PutEventSelectorsRequest): Future[PutEventSelectorsResponse] =
-      service.putEventSelectors(params).promise().toFuture
-    @inline def putInsightSelectorsFuture(params: PutInsightSelectorsRequest): Future[PutInsightSelectorsResponse] =
-      service.putInsightSelectors(params).promise().toFuture
-    @inline def removeTagsFuture(params: RemoveTagsRequest): Future[RemoveTagsResponse] =
-      service.removeTags(params).promise().toFuture
-    @inline def startLoggingFuture(params: StartLoggingRequest): Future[StartLoggingResponse] =
-      service.startLogging(params).promise().toFuture
-    @inline def stopLoggingFuture(params: StopLoggingRequest): Future[StopLoggingResponse] =
-      service.stopLogging(params).promise().toFuture
-    @inline def updateTrailFuture(params: UpdateTrailRequest): Future[UpdateTrailResponse] =
-      service.updateTrail(params).promise().toFuture
+    @inline def addTagsFuture(params: AddTagsRequest): Future[AddTagsResponse] = service.addTags(params).promise().toFuture
+    @inline def createTrailFuture(params: CreateTrailRequest): Future[CreateTrailResponse] = service.createTrail(params).promise().toFuture
+    @inline def deleteTrailFuture(params: DeleteTrailRequest): Future[DeleteTrailResponse] = service.deleteTrail(params).promise().toFuture
+    @inline def describeTrailsFuture(params: DescribeTrailsRequest): Future[DescribeTrailsResponse] = service.describeTrails(params).promise().toFuture
+    @inline def getEventSelectorsFuture(params: GetEventSelectorsRequest): Future[GetEventSelectorsResponse] = service.getEventSelectors(params).promise().toFuture
+    @inline def getInsightSelectorsFuture(params: GetInsightSelectorsRequest): Future[GetInsightSelectorsResponse] = service.getInsightSelectors(params).promise().toFuture
+    @inline def getTrailFuture(params: GetTrailRequest): Future[GetTrailResponse] = service.getTrail(params).promise().toFuture
+    @inline def getTrailStatusFuture(params: GetTrailStatusRequest): Future[GetTrailStatusResponse] = service.getTrailStatus(params).promise().toFuture
+    @inline def listPublicKeysFuture(params: ListPublicKeysRequest): Future[ListPublicKeysResponse] = service.listPublicKeys(params).promise().toFuture
+    @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] = service.listTags(params).promise().toFuture
+    @inline def listTrailsFuture(params: ListTrailsRequest): Future[ListTrailsResponse] = service.listTrails(params).promise().toFuture
+    @inline def lookupEventsFuture(params: LookupEventsRequest): Future[LookupEventsResponse] = service.lookupEvents(params).promise().toFuture
+    @inline def putEventSelectorsFuture(params: PutEventSelectorsRequest): Future[PutEventSelectorsResponse] = service.putEventSelectors(params).promise().toFuture
+    @inline def putInsightSelectorsFuture(params: PutInsightSelectorsRequest): Future[PutInsightSelectorsResponse] = service.putInsightSelectors(params).promise().toFuture
+    @inline def removeTagsFuture(params: RemoveTagsRequest): Future[RemoveTagsResponse] = service.removeTags(params).promise().toFuture
+    @inline def startLoggingFuture(params: StartLoggingRequest): Future[StartLoggingResponse] = service.startLogging(params).promise().toFuture
+    @inline def stopLoggingFuture(params: StopLoggingRequest): Future[StopLoggingResponse] = service.stopLogging(params).promise().toFuture
+    @inline def updateTrailFuture(params: UpdateTrailRequest): Future[UpdateTrailResponse] = service.updateTrail(params).promise().toFuture
   }
 }
 
@@ -174,14 +156,10 @@ package cloudtrail {
         "S3BucketName" -> S3BucketName.asInstanceOf[js.Any]
       )
 
-      CloudWatchLogsLogGroupArn.foreach(__v =>
-        __obj.updateDynamic("CloudWatchLogsLogGroupArn")(__v.asInstanceOf[js.Any])
-      )
+      CloudWatchLogsLogGroupArn.foreach(__v => __obj.updateDynamic("CloudWatchLogsLogGroupArn")(__v.asInstanceOf[js.Any]))
       CloudWatchLogsRoleArn.foreach(__v => __obj.updateDynamic("CloudWatchLogsRoleArn")(__v.asInstanceOf[js.Any]))
       EnableLogFileValidation.foreach(__v => __obj.updateDynamic("EnableLogFileValidation")(__v.asInstanceOf[js.Any]))
-      IncludeGlobalServiceEvents.foreach(__v =>
-        __obj.updateDynamic("IncludeGlobalServiceEvents")(__v.asInstanceOf[js.Any])
-      )
+      IncludeGlobalServiceEvents.foreach(__v => __obj.updateDynamic("IncludeGlobalServiceEvents")(__v.asInstanceOf[js.Any]))
       IsMultiRegionTrail.foreach(__v => __obj.updateDynamic("IsMultiRegionTrail")(__v.asInstanceOf[js.Any]))
       IsOrganizationTrail.foreach(__v => __obj.updateDynamic("IsOrganizationTrail")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
@@ -230,13 +208,9 @@ package cloudtrail {
         TrailARN: js.UndefOr[String] = js.undefined
     ): CreateTrailResponse = {
       val __obj = js.Dynamic.literal()
-      CloudWatchLogsLogGroupArn.foreach(__v =>
-        __obj.updateDynamic("CloudWatchLogsLogGroupArn")(__v.asInstanceOf[js.Any])
-      )
+      CloudWatchLogsLogGroupArn.foreach(__v => __obj.updateDynamic("CloudWatchLogsLogGroupArn")(__v.asInstanceOf[js.Any]))
       CloudWatchLogsRoleArn.foreach(__v => __obj.updateDynamic("CloudWatchLogsRoleArn")(__v.asInstanceOf[js.Any]))
-      IncludeGlobalServiceEvents.foreach(__v =>
-        __obj.updateDynamic("IncludeGlobalServiceEvents")(__v.asInstanceOf[js.Any])
-      )
+      IncludeGlobalServiceEvents.foreach(__v => __obj.updateDynamic("IncludeGlobalServiceEvents")(__v.asInstanceOf[js.Any]))
       IsMultiRegionTrail.foreach(__v => __obj.updateDynamic("IsMultiRegionTrail")(__v.asInstanceOf[js.Any]))
       IsOrganizationTrail.foreach(__v => __obj.updateDynamic("IsOrganizationTrail")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
@@ -436,9 +410,7 @@ package cloudtrail {
     ): EventSelector = {
       val __obj = js.Dynamic.literal()
       DataResources.foreach(__v => __obj.updateDynamic("DataResources")(__v.asInstanceOf[js.Any]))
-      ExcludeManagementEventSources.foreach(__v =>
-        __obj.updateDynamic("ExcludeManagementEventSources")(__v.asInstanceOf[js.Any])
-      )
+      ExcludeManagementEventSources.foreach(__v => __obj.updateDynamic("ExcludeManagementEventSources")(__v.asInstanceOf[js.Any]))
       IncludeManagementEvents.foreach(__v => __obj.updateDynamic("IncludeManagementEvents")(__v.asInstanceOf[js.Any]))
       ReadWriteType.foreach(__v => __obj.updateDynamic("ReadWriteType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventSelector]
@@ -621,30 +593,16 @@ package cloudtrail {
     ): GetTrailStatusResponse = {
       val __obj = js.Dynamic.literal()
       IsLogging.foreach(__v => __obj.updateDynamic("IsLogging")(__v.asInstanceOf[js.Any]))
-      LatestCloudWatchLogsDeliveryError.foreach(__v =>
-        __obj.updateDynamic("LatestCloudWatchLogsDeliveryError")(__v.asInstanceOf[js.Any])
-      )
-      LatestCloudWatchLogsDeliveryTime.foreach(__v =>
-        __obj.updateDynamic("LatestCloudWatchLogsDeliveryTime")(__v.asInstanceOf[js.Any])
-      )
-      LatestDeliveryAttemptSucceeded.foreach(__v =>
-        __obj.updateDynamic("LatestDeliveryAttemptSucceeded")(__v.asInstanceOf[js.Any])
-      )
-      LatestDeliveryAttemptTime.foreach(__v =>
-        __obj.updateDynamic("LatestDeliveryAttemptTime")(__v.asInstanceOf[js.Any])
-      )
+      LatestCloudWatchLogsDeliveryError.foreach(__v => __obj.updateDynamic("LatestCloudWatchLogsDeliveryError")(__v.asInstanceOf[js.Any]))
+      LatestCloudWatchLogsDeliveryTime.foreach(__v => __obj.updateDynamic("LatestCloudWatchLogsDeliveryTime")(__v.asInstanceOf[js.Any]))
+      LatestDeliveryAttemptSucceeded.foreach(__v => __obj.updateDynamic("LatestDeliveryAttemptSucceeded")(__v.asInstanceOf[js.Any]))
+      LatestDeliveryAttemptTime.foreach(__v => __obj.updateDynamic("LatestDeliveryAttemptTime")(__v.asInstanceOf[js.Any]))
       LatestDeliveryError.foreach(__v => __obj.updateDynamic("LatestDeliveryError")(__v.asInstanceOf[js.Any]))
       LatestDeliveryTime.foreach(__v => __obj.updateDynamic("LatestDeliveryTime")(__v.asInstanceOf[js.Any]))
-      LatestDigestDeliveryError.foreach(__v =>
-        __obj.updateDynamic("LatestDigestDeliveryError")(__v.asInstanceOf[js.Any])
-      )
+      LatestDigestDeliveryError.foreach(__v => __obj.updateDynamic("LatestDigestDeliveryError")(__v.asInstanceOf[js.Any]))
       LatestDigestDeliveryTime.foreach(__v => __obj.updateDynamic("LatestDigestDeliveryTime")(__v.asInstanceOf[js.Any]))
-      LatestNotificationAttemptSucceeded.foreach(__v =>
-        __obj.updateDynamic("LatestNotificationAttemptSucceeded")(__v.asInstanceOf[js.Any])
-      )
-      LatestNotificationAttemptTime.foreach(__v =>
-        __obj.updateDynamic("LatestNotificationAttemptTime")(__v.asInstanceOf[js.Any])
-      )
+      LatestNotificationAttemptSucceeded.foreach(__v => __obj.updateDynamic("LatestNotificationAttemptSucceeded")(__v.asInstanceOf[js.Any]))
+      LatestNotificationAttemptTime.foreach(__v => __obj.updateDynamic("LatestNotificationAttemptTime")(__v.asInstanceOf[js.Any]))
       LatestNotificationError.foreach(__v => __obj.updateDynamic("LatestNotificationError")(__v.asInstanceOf[js.Any]))
       LatestNotificationTime.foreach(__v => __obj.updateDynamic("LatestNotificationTime")(__v.asInstanceOf[js.Any]))
       StartLoggingTime.foreach(__v => __obj.updateDynamic("StartLoggingTime")(__v.asInstanceOf[js.Any]))
@@ -846,9 +804,7 @@ package cloudtrail {
     val EventSource = "EventSource".asInstanceOf[LookupAttributeKey]
     val AccessKeyId = "AccessKeyId".asInstanceOf[LookupAttributeKey]
 
-    val values = js.Object.freeze(
-      js.Array(EventId, EventName, ReadOnly, Username, ResourceType, ResourceName, EventSource, AccessKeyId)
-    )
+    val values = js.Object.freeze(js.Array(EventId, EventName, ReadOnly, Username, ResourceType, ResourceName, EventSource, AccessKeyId))
   }
 
   /**
@@ -1251,16 +1207,12 @@ package cloudtrail {
         TrailARN: js.UndefOr[String] = js.undefined
     ): Trail = {
       val __obj = js.Dynamic.literal()
-      CloudWatchLogsLogGroupArn.foreach(__v =>
-        __obj.updateDynamic("CloudWatchLogsLogGroupArn")(__v.asInstanceOf[js.Any])
-      )
+      CloudWatchLogsLogGroupArn.foreach(__v => __obj.updateDynamic("CloudWatchLogsLogGroupArn")(__v.asInstanceOf[js.Any]))
       CloudWatchLogsRoleArn.foreach(__v => __obj.updateDynamic("CloudWatchLogsRoleArn")(__v.asInstanceOf[js.Any]))
       HasCustomEventSelectors.foreach(__v => __obj.updateDynamic("HasCustomEventSelectors")(__v.asInstanceOf[js.Any]))
       HasInsightSelectors.foreach(__v => __obj.updateDynamic("HasInsightSelectors")(__v.asInstanceOf[js.Any]))
       HomeRegion.foreach(__v => __obj.updateDynamic("HomeRegion")(__v.asInstanceOf[js.Any]))
-      IncludeGlobalServiceEvents.foreach(__v =>
-        __obj.updateDynamic("IncludeGlobalServiceEvents")(__v.asInstanceOf[js.Any])
-      )
+      IncludeGlobalServiceEvents.foreach(__v => __obj.updateDynamic("IncludeGlobalServiceEvents")(__v.asInstanceOf[js.Any]))
       IsMultiRegionTrail.foreach(__v => __obj.updateDynamic("IsMultiRegionTrail")(__v.asInstanceOf[js.Any]))
       IsOrganizationTrail.foreach(__v => __obj.updateDynamic("IsOrganizationTrail")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
@@ -1337,14 +1289,10 @@ package cloudtrail {
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      CloudWatchLogsLogGroupArn.foreach(__v =>
-        __obj.updateDynamic("CloudWatchLogsLogGroupArn")(__v.asInstanceOf[js.Any])
-      )
+      CloudWatchLogsLogGroupArn.foreach(__v => __obj.updateDynamic("CloudWatchLogsLogGroupArn")(__v.asInstanceOf[js.Any]))
       CloudWatchLogsRoleArn.foreach(__v => __obj.updateDynamic("CloudWatchLogsRoleArn")(__v.asInstanceOf[js.Any]))
       EnableLogFileValidation.foreach(__v => __obj.updateDynamic("EnableLogFileValidation")(__v.asInstanceOf[js.Any]))
-      IncludeGlobalServiceEvents.foreach(__v =>
-        __obj.updateDynamic("IncludeGlobalServiceEvents")(__v.asInstanceOf[js.Any])
-      )
+      IncludeGlobalServiceEvents.foreach(__v => __obj.updateDynamic("IncludeGlobalServiceEvents")(__v.asInstanceOf[js.Any]))
       IsMultiRegionTrail.foreach(__v => __obj.updateDynamic("IsMultiRegionTrail")(__v.asInstanceOf[js.Any]))
       IsOrganizationTrail.foreach(__v => __obj.updateDynamic("IsOrganizationTrail")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
@@ -1393,13 +1341,9 @@ package cloudtrail {
         TrailARN: js.UndefOr[String] = js.undefined
     ): UpdateTrailResponse = {
       val __obj = js.Dynamic.literal()
-      CloudWatchLogsLogGroupArn.foreach(__v =>
-        __obj.updateDynamic("CloudWatchLogsLogGroupArn")(__v.asInstanceOf[js.Any])
-      )
+      CloudWatchLogsLogGroupArn.foreach(__v => __obj.updateDynamic("CloudWatchLogsLogGroupArn")(__v.asInstanceOf[js.Any]))
       CloudWatchLogsRoleArn.foreach(__v => __obj.updateDynamic("CloudWatchLogsRoleArn")(__v.asInstanceOf[js.Any]))
-      IncludeGlobalServiceEvents.foreach(__v =>
-        __obj.updateDynamic("IncludeGlobalServiceEvents")(__v.asInstanceOf[js.Any])
-      )
+      IncludeGlobalServiceEvents.foreach(__v => __obj.updateDynamic("IncludeGlobalServiceEvents")(__v.asInstanceOf[js.Any]))
       IsMultiRegionTrail.foreach(__v => __obj.updateDynamic("IsMultiRegionTrail")(__v.asInstanceOf[js.Any]))
       IsOrganizationTrail.foreach(__v => __obj.updateDynamic("IsOrganizationTrail")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))

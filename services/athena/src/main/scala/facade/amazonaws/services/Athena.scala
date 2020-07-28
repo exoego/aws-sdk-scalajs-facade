@@ -62,63 +62,34 @@ package object athena {
 
   implicit final class AthenaOps(private val service: Athena) extends AnyVal {
 
-    @inline def batchGetNamedQueryFuture(params: BatchGetNamedQueryInput): Future[BatchGetNamedQueryOutput] =
-      service.batchGetNamedQuery(params).promise().toFuture
-    @inline def batchGetQueryExecutionFuture(
-        params: BatchGetQueryExecutionInput
-    ): Future[BatchGetQueryExecutionOutput] = service.batchGetQueryExecution(params).promise().toFuture
-    @inline def createDataCatalogFuture(params: CreateDataCatalogInput): Future[CreateDataCatalogOutput] =
-      service.createDataCatalog(params).promise().toFuture
-    @inline def createNamedQueryFuture(params: CreateNamedQueryInput): Future[CreateNamedQueryOutput] =
-      service.createNamedQuery(params).promise().toFuture
-    @inline def createWorkGroupFuture(params: CreateWorkGroupInput): Future[CreateWorkGroupOutput] =
-      service.createWorkGroup(params).promise().toFuture
-    @inline def deleteDataCatalogFuture(params: DeleteDataCatalogInput): Future[DeleteDataCatalogOutput] =
-      service.deleteDataCatalog(params).promise().toFuture
-    @inline def deleteNamedQueryFuture(params: DeleteNamedQueryInput): Future[DeleteNamedQueryOutput] =
-      service.deleteNamedQuery(params).promise().toFuture
-    @inline def deleteWorkGroupFuture(params: DeleteWorkGroupInput): Future[DeleteWorkGroupOutput] =
-      service.deleteWorkGroup(params).promise().toFuture
-    @inline def getDataCatalogFuture(params: GetDataCatalogInput): Future[GetDataCatalogOutput] =
-      service.getDataCatalog(params).promise().toFuture
-    @inline def getDatabaseFuture(params: GetDatabaseInput): Future[GetDatabaseOutput] =
-      service.getDatabase(params).promise().toFuture
-    @inline def getNamedQueryFuture(params: GetNamedQueryInput): Future[GetNamedQueryOutput] =
-      service.getNamedQuery(params).promise().toFuture
-    @inline def getQueryExecutionFuture(params: GetQueryExecutionInput): Future[GetQueryExecutionOutput] =
-      service.getQueryExecution(params).promise().toFuture
-    @inline def getQueryResultsFuture(params: GetQueryResultsInput): Future[GetQueryResultsOutput] =
-      service.getQueryResults(params).promise().toFuture
-    @inline def getTableMetadataFuture(params: GetTableMetadataInput): Future[GetTableMetadataOutput] =
-      service.getTableMetadata(params).promise().toFuture
-    @inline def getWorkGroupFuture(params: GetWorkGroupInput): Future[GetWorkGroupOutput] =
-      service.getWorkGroup(params).promise().toFuture
-    @inline def listDataCatalogsFuture(params: ListDataCatalogsInput): Future[ListDataCatalogsOutput] =
-      service.listDataCatalogs(params).promise().toFuture
-    @inline def listDatabasesFuture(params: ListDatabasesInput): Future[ListDatabasesOutput] =
-      service.listDatabases(params).promise().toFuture
-    @inline def listNamedQueriesFuture(params: ListNamedQueriesInput): Future[ListNamedQueriesOutput] =
-      service.listNamedQueries(params).promise().toFuture
-    @inline def listQueryExecutionsFuture(params: ListQueryExecutionsInput): Future[ListQueryExecutionsOutput] =
-      service.listQueryExecutions(params).promise().toFuture
-    @inline def listTableMetadataFuture(params: ListTableMetadataInput): Future[ListTableMetadataOutput] =
-      service.listTableMetadata(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listWorkGroupsFuture(params: ListWorkGroupsInput): Future[ListWorkGroupsOutput] =
-      service.listWorkGroups(params).promise().toFuture
-    @inline def startQueryExecutionFuture(params: StartQueryExecutionInput): Future[StartQueryExecutionOutput] =
-      service.startQueryExecution(params).promise().toFuture
-    @inline def stopQueryExecutionFuture(params: StopQueryExecutionInput): Future[StopQueryExecutionOutput] =
-      service.stopQueryExecution(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateDataCatalogFuture(params: UpdateDataCatalogInput): Future[UpdateDataCatalogOutput] =
-      service.updateDataCatalog(params).promise().toFuture
-    @inline def updateWorkGroupFuture(params: UpdateWorkGroupInput): Future[UpdateWorkGroupOutput] =
-      service.updateWorkGroup(params).promise().toFuture
+    @inline def batchGetNamedQueryFuture(params: BatchGetNamedQueryInput): Future[BatchGetNamedQueryOutput] = service.batchGetNamedQuery(params).promise().toFuture
+    @inline def batchGetQueryExecutionFuture(params: BatchGetQueryExecutionInput): Future[BatchGetQueryExecutionOutput] = service.batchGetQueryExecution(params).promise().toFuture
+    @inline def createDataCatalogFuture(params: CreateDataCatalogInput): Future[CreateDataCatalogOutput] = service.createDataCatalog(params).promise().toFuture
+    @inline def createNamedQueryFuture(params: CreateNamedQueryInput): Future[CreateNamedQueryOutput] = service.createNamedQuery(params).promise().toFuture
+    @inline def createWorkGroupFuture(params: CreateWorkGroupInput): Future[CreateWorkGroupOutput] = service.createWorkGroup(params).promise().toFuture
+    @inline def deleteDataCatalogFuture(params: DeleteDataCatalogInput): Future[DeleteDataCatalogOutput] = service.deleteDataCatalog(params).promise().toFuture
+    @inline def deleteNamedQueryFuture(params: DeleteNamedQueryInput): Future[DeleteNamedQueryOutput] = service.deleteNamedQuery(params).promise().toFuture
+    @inline def deleteWorkGroupFuture(params: DeleteWorkGroupInput): Future[DeleteWorkGroupOutput] = service.deleteWorkGroup(params).promise().toFuture
+    @inline def getDataCatalogFuture(params: GetDataCatalogInput): Future[GetDataCatalogOutput] = service.getDataCatalog(params).promise().toFuture
+    @inline def getDatabaseFuture(params: GetDatabaseInput): Future[GetDatabaseOutput] = service.getDatabase(params).promise().toFuture
+    @inline def getNamedQueryFuture(params: GetNamedQueryInput): Future[GetNamedQueryOutput] = service.getNamedQuery(params).promise().toFuture
+    @inline def getQueryExecutionFuture(params: GetQueryExecutionInput): Future[GetQueryExecutionOutput] = service.getQueryExecution(params).promise().toFuture
+    @inline def getQueryResultsFuture(params: GetQueryResultsInput): Future[GetQueryResultsOutput] = service.getQueryResults(params).promise().toFuture
+    @inline def getTableMetadataFuture(params: GetTableMetadataInput): Future[GetTableMetadataOutput] = service.getTableMetadata(params).promise().toFuture
+    @inline def getWorkGroupFuture(params: GetWorkGroupInput): Future[GetWorkGroupOutput] = service.getWorkGroup(params).promise().toFuture
+    @inline def listDataCatalogsFuture(params: ListDataCatalogsInput): Future[ListDataCatalogsOutput] = service.listDataCatalogs(params).promise().toFuture
+    @inline def listDatabasesFuture(params: ListDatabasesInput): Future[ListDatabasesOutput] = service.listDatabases(params).promise().toFuture
+    @inline def listNamedQueriesFuture(params: ListNamedQueriesInput): Future[ListNamedQueriesOutput] = service.listNamedQueries(params).promise().toFuture
+    @inline def listQueryExecutionsFuture(params: ListQueryExecutionsInput): Future[ListQueryExecutionsOutput] = service.listQueryExecutions(params).promise().toFuture
+    @inline def listTableMetadataFuture(params: ListTableMetadataInput): Future[ListTableMetadataOutput] = service.listTableMetadata(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] = service.listTagsForResource(params).promise().toFuture
+    @inline def listWorkGroupsFuture(params: ListWorkGroupsInput): Future[ListWorkGroupsOutput] = service.listWorkGroups(params).promise().toFuture
+    @inline def startQueryExecutionFuture(params: StartQueryExecutionInput): Future[StartQueryExecutionOutput] = service.startQueryExecution(params).promise().toFuture
+    @inline def stopQueryExecutionFuture(params: StopQueryExecutionInput): Future[StopQueryExecutionOutput] = service.stopQueryExecution(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] = service.untagResource(params).promise().toFuture
+    @inline def updateDataCatalogFuture(params: UpdateDataCatalogInput): Future[UpdateDataCatalogOutput] = service.updateDataCatalog(params).promise().toFuture
+    @inline def updateWorkGroupFuture(params: UpdateWorkGroupInput): Future[UpdateWorkGroupOutput] = service.updateWorkGroup(params).promise().toFuture
   }
 }
 
@@ -227,9 +198,7 @@ package athena {
     ): BatchGetQueryExecutionOutput = {
       val __obj = js.Dynamic.literal()
       QueryExecutions.foreach(__v => __obj.updateDynamic("QueryExecutions")(__v.asInstanceOf[js.Any]))
-      UnprocessedQueryExecutionIds.foreach(__v =>
-        __obj.updateDynamic("UnprocessedQueryExecutionIds")(__v.asInstanceOf[js.Any])
-      )
+      UnprocessedQueryExecutionIds.foreach(__v => __obj.updateDynamic("UnprocessedQueryExecutionIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetQueryExecutionOutput]
     }
   }
@@ -1379,19 +1348,11 @@ package athena {
       val __obj = js.Dynamic.literal()
       DataManifestLocation.foreach(__v => __obj.updateDynamic("DataManifestLocation")(__v.asInstanceOf[js.Any]))
       DataScannedInBytes.foreach(__v => __obj.updateDynamic("DataScannedInBytes")(__v.asInstanceOf[js.Any]))
-      EngineExecutionTimeInMillis.foreach(__v =>
-        __obj.updateDynamic("EngineExecutionTimeInMillis")(__v.asInstanceOf[js.Any])
-      )
-      QueryPlanningTimeInMillis.foreach(__v =>
-        __obj.updateDynamic("QueryPlanningTimeInMillis")(__v.asInstanceOf[js.Any])
-      )
+      EngineExecutionTimeInMillis.foreach(__v => __obj.updateDynamic("EngineExecutionTimeInMillis")(__v.asInstanceOf[js.Any]))
+      QueryPlanningTimeInMillis.foreach(__v => __obj.updateDynamic("QueryPlanningTimeInMillis")(__v.asInstanceOf[js.Any]))
       QueryQueueTimeInMillis.foreach(__v => __obj.updateDynamic("QueryQueueTimeInMillis")(__v.asInstanceOf[js.Any]))
-      ServiceProcessingTimeInMillis.foreach(__v =>
-        __obj.updateDynamic("ServiceProcessingTimeInMillis")(__v.asInstanceOf[js.Any])
-      )
-      TotalExecutionTimeInMillis.foreach(__v =>
-        __obj.updateDynamic("TotalExecutionTimeInMillis")(__v.asInstanceOf[js.Any])
-      )
+      ServiceProcessingTimeInMillis.foreach(__v => __obj.updateDynamic("ServiceProcessingTimeInMillis")(__v.asInstanceOf[js.Any]))
+      TotalExecutionTimeInMillis.foreach(__v => __obj.updateDynamic("TotalExecutionTimeInMillis")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QueryExecutionStatistics]
     }
   }
@@ -1468,9 +1429,7 @@ package athena {
       val __obj = js.Dynamic.literal()
       EncryptionConfiguration.foreach(__v => __obj.updateDynamic("EncryptionConfiguration")(__v.asInstanceOf[js.Any]))
       OutputLocation.foreach(__v => __obj.updateDynamic("OutputLocation")(__v.asInstanceOf[js.Any]))
-      RemoveEncryptionConfiguration.foreach(__v =>
-        __obj.updateDynamic("RemoveEncryptionConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      RemoveEncryptionConfiguration.foreach(__v => __obj.updateDynamic("RemoveEncryptionConfiguration")(__v.asInstanceOf[js.Any]))
       RemoveOutputLocation.foreach(__v => __obj.updateDynamic("RemoveOutputLocation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResultConfigurationUpdates]
     }
@@ -1937,15 +1896,9 @@ package athena {
         ResultConfiguration: js.UndefOr[ResultConfiguration] = js.undefined
     ): WorkGroupConfiguration = {
       val __obj = js.Dynamic.literal()
-      BytesScannedCutoffPerQuery.foreach(__v =>
-        __obj.updateDynamic("BytesScannedCutoffPerQuery")(__v.asInstanceOf[js.Any])
-      )
-      EnforceWorkGroupConfiguration.foreach(__v =>
-        __obj.updateDynamic("EnforceWorkGroupConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      PublishCloudWatchMetricsEnabled.foreach(__v =>
-        __obj.updateDynamic("PublishCloudWatchMetricsEnabled")(__v.asInstanceOf[js.Any])
-      )
+      BytesScannedCutoffPerQuery.foreach(__v => __obj.updateDynamic("BytesScannedCutoffPerQuery")(__v.asInstanceOf[js.Any]))
+      EnforceWorkGroupConfiguration.foreach(__v => __obj.updateDynamic("EnforceWorkGroupConfiguration")(__v.asInstanceOf[js.Any]))
+      PublishCloudWatchMetricsEnabled.foreach(__v => __obj.updateDynamic("PublishCloudWatchMetricsEnabled")(__v.asInstanceOf[js.Any]))
       RequesterPaysEnabled.foreach(__v => __obj.updateDynamic("RequesterPaysEnabled")(__v.asInstanceOf[js.Any]))
       ResultConfiguration.foreach(__v => __obj.updateDynamic("ResultConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkGroupConfiguration]
@@ -1976,22 +1929,12 @@ package athena {
         ResultConfigurationUpdates: js.UndefOr[ResultConfigurationUpdates] = js.undefined
     ): WorkGroupConfigurationUpdates = {
       val __obj = js.Dynamic.literal()
-      BytesScannedCutoffPerQuery.foreach(__v =>
-        __obj.updateDynamic("BytesScannedCutoffPerQuery")(__v.asInstanceOf[js.Any])
-      )
-      EnforceWorkGroupConfiguration.foreach(__v =>
-        __obj.updateDynamic("EnforceWorkGroupConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      PublishCloudWatchMetricsEnabled.foreach(__v =>
-        __obj.updateDynamic("PublishCloudWatchMetricsEnabled")(__v.asInstanceOf[js.Any])
-      )
-      RemoveBytesScannedCutoffPerQuery.foreach(__v =>
-        __obj.updateDynamic("RemoveBytesScannedCutoffPerQuery")(__v.asInstanceOf[js.Any])
-      )
+      BytesScannedCutoffPerQuery.foreach(__v => __obj.updateDynamic("BytesScannedCutoffPerQuery")(__v.asInstanceOf[js.Any]))
+      EnforceWorkGroupConfiguration.foreach(__v => __obj.updateDynamic("EnforceWorkGroupConfiguration")(__v.asInstanceOf[js.Any]))
+      PublishCloudWatchMetricsEnabled.foreach(__v => __obj.updateDynamic("PublishCloudWatchMetricsEnabled")(__v.asInstanceOf[js.Any]))
+      RemoveBytesScannedCutoffPerQuery.foreach(__v => __obj.updateDynamic("RemoveBytesScannedCutoffPerQuery")(__v.asInstanceOf[js.Any]))
       RequesterPaysEnabled.foreach(__v => __obj.updateDynamic("RequesterPaysEnabled")(__v.asInstanceOf[js.Any]))
-      ResultConfigurationUpdates.foreach(__v =>
-        __obj.updateDynamic("ResultConfigurationUpdates")(__v.asInstanceOf[js.Any])
-      )
+      ResultConfigurationUpdates.foreach(__v => __obj.updateDynamic("ResultConfigurationUpdates")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkGroupConfigurationUpdates]
     }
   }

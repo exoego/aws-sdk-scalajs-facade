@@ -25,11 +25,8 @@ package object honeycode {
 
   implicit final class HoneycodeOps(private val service: Honeycode) extends AnyVal {
 
-    @inline def getScreenDataFuture(params: GetScreenDataRequest): Future[GetScreenDataResult] =
-      service.getScreenData(params).promise().toFuture
-    @inline def invokeScreenAutomationFuture(
-        params: InvokeScreenAutomationRequest
-    ): Future[InvokeScreenAutomationResult] = service.invokeScreenAutomation(params).promise().toFuture
+    @inline def getScreenDataFuture(params: GetScreenDataRequest): Future[GetScreenDataResult] = service.getScreenData(params).promise().toFuture
+    @inline def invokeScreenAutomationFuture(params: InvokeScreenAutomationRequest): Future[InvokeScreenAutomationResult] = service.invokeScreenAutomation(params).promise().toFuture
   }
 }
 
@@ -107,9 +104,7 @@ package honeycode {
     val CONTACT = "CONTACT".asInstanceOf[Format]
     val ROWLINK = "ROWLINK".asInstanceOf[Format]
 
-    val values = js.Object.freeze(
-      js.Array(AUTO, NUMBER, CURRENCY, DATE, TIME, DATE_TIME, PERCENTAGE, TEXT, ACCOUNTING, CONTACT, ROWLINK)
-    )
+    val values = js.Object.freeze(js.Array(AUTO, NUMBER, CURRENCY, DATE, TIME, DATE_TIME, PERCENTAGE, TEXT, ACCOUNTING, CONTACT, ROWLINK))
   }
 
   @js.native

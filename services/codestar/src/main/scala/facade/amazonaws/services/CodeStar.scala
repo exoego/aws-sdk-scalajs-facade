@@ -53,43 +53,24 @@ package object codestar {
 
   implicit final class CodeStarOps(private val service: CodeStar) extends AnyVal {
 
-    @inline def associateTeamMemberFuture(params: AssociateTeamMemberRequest): Future[AssociateTeamMemberResult] =
-      service.associateTeamMember(params).promise().toFuture
-    @inline def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResult] =
-      service.createProject(params).promise().toFuture
-    @inline def createUserProfileFuture(params: CreateUserProfileRequest): Future[CreateUserProfileResult] =
-      service.createUserProfile(params).promise().toFuture
-    @inline def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResult] =
-      service.deleteProject(params).promise().toFuture
-    @inline def deleteUserProfileFuture(params: DeleteUserProfileRequest): Future[DeleteUserProfileResult] =
-      service.deleteUserProfile(params).promise().toFuture
-    @inline def describeProjectFuture(params: DescribeProjectRequest): Future[DescribeProjectResult] =
-      service.describeProject(params).promise().toFuture
-    @inline def describeUserProfileFuture(params: DescribeUserProfileRequest): Future[DescribeUserProfileResult] =
-      service.describeUserProfile(params).promise().toFuture
-    @inline def disassociateTeamMemberFuture(
-        params: DisassociateTeamMemberRequest
-    ): Future[DisassociateTeamMemberResult] = service.disassociateTeamMember(params).promise().toFuture
-    @inline def listProjectsFuture(params: ListProjectsRequest): Future[ListProjectsResult] =
-      service.listProjects(params).promise().toFuture
-    @inline def listResourcesFuture(params: ListResourcesRequest): Future[ListResourcesResult] =
-      service.listResources(params).promise().toFuture
-    @inline def listTagsForProjectFuture(params: ListTagsForProjectRequest): Future[ListTagsForProjectResult] =
-      service.listTagsForProject(params).promise().toFuture
-    @inline def listTeamMembersFuture(params: ListTeamMembersRequest): Future[ListTeamMembersResult] =
-      service.listTeamMembers(params).promise().toFuture
-    @inline def listUserProfilesFuture(params: ListUserProfilesRequest): Future[ListUserProfilesResult] =
-      service.listUserProfiles(params).promise().toFuture
-    @inline def tagProjectFuture(params: TagProjectRequest): Future[TagProjectResult] =
-      service.tagProject(params).promise().toFuture
-    @inline def untagProjectFuture(params: UntagProjectRequest): Future[UntagProjectResult] =
-      service.untagProject(params).promise().toFuture
-    @inline def updateProjectFuture(params: UpdateProjectRequest): Future[UpdateProjectResult] =
-      service.updateProject(params).promise().toFuture
-    @inline def updateTeamMemberFuture(params: UpdateTeamMemberRequest): Future[UpdateTeamMemberResult] =
-      service.updateTeamMember(params).promise().toFuture
-    @inline def updateUserProfileFuture(params: UpdateUserProfileRequest): Future[UpdateUserProfileResult] =
-      service.updateUserProfile(params).promise().toFuture
+    @inline def associateTeamMemberFuture(params: AssociateTeamMemberRequest): Future[AssociateTeamMemberResult] = service.associateTeamMember(params).promise().toFuture
+    @inline def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResult] = service.createProject(params).promise().toFuture
+    @inline def createUserProfileFuture(params: CreateUserProfileRequest): Future[CreateUserProfileResult] = service.createUserProfile(params).promise().toFuture
+    @inline def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResult] = service.deleteProject(params).promise().toFuture
+    @inline def deleteUserProfileFuture(params: DeleteUserProfileRequest): Future[DeleteUserProfileResult] = service.deleteUserProfile(params).promise().toFuture
+    @inline def describeProjectFuture(params: DescribeProjectRequest): Future[DescribeProjectResult] = service.describeProject(params).promise().toFuture
+    @inline def describeUserProfileFuture(params: DescribeUserProfileRequest): Future[DescribeUserProfileResult] = service.describeUserProfile(params).promise().toFuture
+    @inline def disassociateTeamMemberFuture(params: DisassociateTeamMemberRequest): Future[DisassociateTeamMemberResult] = service.disassociateTeamMember(params).promise().toFuture
+    @inline def listProjectsFuture(params: ListProjectsRequest): Future[ListProjectsResult] = service.listProjects(params).promise().toFuture
+    @inline def listResourcesFuture(params: ListResourcesRequest): Future[ListResourcesResult] = service.listResources(params).promise().toFuture
+    @inline def listTagsForProjectFuture(params: ListTagsForProjectRequest): Future[ListTagsForProjectResult] = service.listTagsForProject(params).promise().toFuture
+    @inline def listTeamMembersFuture(params: ListTeamMembersRequest): Future[ListTeamMembersResult] = service.listTeamMembers(params).promise().toFuture
+    @inline def listUserProfilesFuture(params: ListUserProfilesRequest): Future[ListUserProfilesResult] = service.listUserProfiles(params).promise().toFuture
+    @inline def tagProjectFuture(params: TagProjectRequest): Future[TagProjectResult] = service.tagProject(params).promise().toFuture
+    @inline def untagProjectFuture(params: UntagProjectRequest): Future[UntagProjectResult] = service.untagProject(params).promise().toFuture
+    @inline def updateProjectFuture(params: UpdateProjectRequest): Future[UpdateProjectResult] = service.updateProject(params).promise().toFuture
+    @inline def updateTeamMemberFuture(params: UpdateTeamMemberRequest): Future[UpdateTeamMemberResult] = service.updateTeamMember(params).promise().toFuture
+    @inline def updateUserProfileFuture(params: UpdateUserProfileRequest): Future[UpdateUserProfileResult] = service.updateUserProfile(params).promise().toFuture
   }
 }
 

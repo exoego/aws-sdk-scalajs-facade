@@ -51,103 +51,51 @@ package object kms {
 
   implicit final class KMSOps(private val service: KMS) extends AnyVal {
 
-    @inline def cancelKeyDeletionFuture(params: CancelKeyDeletionRequest): Future[CancelKeyDeletionResponse] =
-      service.cancelKeyDeletion(params).promise().toFuture
-    @inline def connectCustomKeyStoreFuture(
-        params: ConnectCustomKeyStoreRequest
-    ): Future[ConnectCustomKeyStoreResponse] = service.connectCustomKeyStore(params).promise().toFuture
-    @inline def createAliasFuture(params: CreateAliasRequest): Future[js.Object] =
-      service.createAlias(params).promise().toFuture
-    @inline def createCustomKeyStoreFuture(params: CreateCustomKeyStoreRequest): Future[CreateCustomKeyStoreResponse] =
-      service.createCustomKeyStore(params).promise().toFuture
-    @inline def createGrantFuture(params: CreateGrantRequest): Future[CreateGrantResponse] =
-      service.createGrant(params).promise().toFuture
-    @inline def createKeyFuture(params: CreateKeyRequest): Future[CreateKeyResponse] =
-      service.createKey(params).promise().toFuture
-    @inline def decryptFuture(params: DecryptRequest): Future[DecryptResponse] =
-      service.decrypt(params).promise().toFuture
-    @inline def deleteAliasFuture(params: DeleteAliasRequest): Future[js.Object] =
-      service.deleteAlias(params).promise().toFuture
-    @inline def deleteCustomKeyStoreFuture(params: DeleteCustomKeyStoreRequest): Future[DeleteCustomKeyStoreResponse] =
-      service.deleteCustomKeyStore(params).promise().toFuture
-    @inline def deleteImportedKeyMaterialFuture(params: DeleteImportedKeyMaterialRequest): Future[js.Object] =
-      service.deleteImportedKeyMaterial(params).promise().toFuture
-    @inline def describeCustomKeyStoresFuture(
-        params: DescribeCustomKeyStoresRequest
-    ): Future[DescribeCustomKeyStoresResponse] = service.describeCustomKeyStores(params).promise().toFuture
-    @inline def describeKeyFuture(params: DescribeKeyRequest): Future[DescribeKeyResponse] =
-      service.describeKey(params).promise().toFuture
-    @inline def disableKeyFuture(params: DisableKeyRequest): Future[js.Object] =
-      service.disableKey(params).promise().toFuture
-    @inline def disableKeyRotationFuture(params: DisableKeyRotationRequest): Future[js.Object] =
-      service.disableKeyRotation(params).promise().toFuture
-    @inline def disconnectCustomKeyStoreFuture(
-        params: DisconnectCustomKeyStoreRequest
-    ): Future[DisconnectCustomKeyStoreResponse] = service.disconnectCustomKeyStore(params).promise().toFuture
-    @inline def enableKeyFuture(params: EnableKeyRequest): Future[js.Object] =
-      service.enableKey(params).promise().toFuture
-    @inline def enableKeyRotationFuture(params: EnableKeyRotationRequest): Future[js.Object] =
-      service.enableKeyRotation(params).promise().toFuture
-    @inline def encryptFuture(params: EncryptRequest): Future[EncryptResponse] =
-      service.encrypt(params).promise().toFuture
-    @inline def generateDataKeyFuture(params: GenerateDataKeyRequest): Future[GenerateDataKeyResponse] =
-      service.generateDataKey(params).promise().toFuture
-    @inline def generateDataKeyPairFuture(params: GenerateDataKeyPairRequest): Future[GenerateDataKeyPairResponse] =
-      service.generateDataKeyPair(params).promise().toFuture
-    @inline def generateDataKeyPairWithoutPlaintextFuture(
-        params: GenerateDataKeyPairWithoutPlaintextRequest
-    ): Future[GenerateDataKeyPairWithoutPlaintextResponse] =
-      service.generateDataKeyPairWithoutPlaintext(params).promise().toFuture
-    @inline def generateDataKeyWithoutPlaintextFuture(
-        params: GenerateDataKeyWithoutPlaintextRequest
-    ): Future[GenerateDataKeyWithoutPlaintextResponse] =
-      service.generateDataKeyWithoutPlaintext(params).promise().toFuture
-    @inline def generateRandomFuture(params: GenerateRandomRequest): Future[GenerateRandomResponse] =
-      service.generateRandom(params).promise().toFuture
-    @inline def getKeyPolicyFuture(params: GetKeyPolicyRequest): Future[GetKeyPolicyResponse] =
-      service.getKeyPolicy(params).promise().toFuture
-    @inline def getKeyRotationStatusFuture(params: GetKeyRotationStatusRequest): Future[GetKeyRotationStatusResponse] =
-      service.getKeyRotationStatus(params).promise().toFuture
-    @inline def getParametersForImportFuture(
-        params: GetParametersForImportRequest
-    ): Future[GetParametersForImportResponse] = service.getParametersForImport(params).promise().toFuture
-    @inline def getPublicKeyFuture(params: GetPublicKeyRequest): Future[GetPublicKeyResponse] =
-      service.getPublicKey(params).promise().toFuture
-    @inline def importKeyMaterialFuture(params: ImportKeyMaterialRequest): Future[ImportKeyMaterialResponse] =
-      service.importKeyMaterial(params).promise().toFuture
-    @inline def listAliasesFuture(params: ListAliasesRequest): Future[ListAliasesResponse] =
-      service.listAliases(params).promise().toFuture
-    @inline def listGrantsFuture(params: ListGrantsRequest): Future[ListGrantsResponse] =
-      service.listGrants(params).promise().toFuture
-    @inline def listKeyPoliciesFuture(params: ListKeyPoliciesRequest): Future[ListKeyPoliciesResponse] =
-      service.listKeyPolicies(params).promise().toFuture
-    @inline def listKeysFuture(params: ListKeysRequest): Future[ListKeysResponse] =
-      service.listKeys(params).promise().toFuture
-    @inline def listResourceTagsFuture(params: ListResourceTagsRequest): Future[ListResourceTagsResponse] =
-      service.listResourceTags(params).promise().toFuture
-    @inline def listRetirableGrantsFuture(params: ListRetirableGrantsRequest): Future[ListGrantsResponse] =
-      service.listRetirableGrants(params).promise().toFuture
-    @inline def putKeyPolicyFuture(params: PutKeyPolicyRequest): Future[js.Object] =
-      service.putKeyPolicy(params).promise().toFuture
-    @inline def reEncryptFuture(params: ReEncryptRequest): Future[ReEncryptResponse] =
-      service.reEncrypt(params).promise().toFuture
-    @inline def retireGrantFuture(params: RetireGrantRequest): Future[js.Object] =
-      service.retireGrant(params).promise().toFuture
-    @inline def revokeGrantFuture(params: RevokeGrantRequest): Future[js.Object] =
-      service.revokeGrant(params).promise().toFuture
-    @inline def scheduleKeyDeletionFuture(params: ScheduleKeyDeletionRequest): Future[ScheduleKeyDeletionResponse] =
-      service.scheduleKeyDeletion(params).promise().toFuture
+    @inline def cancelKeyDeletionFuture(params: CancelKeyDeletionRequest): Future[CancelKeyDeletionResponse] = service.cancelKeyDeletion(params).promise().toFuture
+    @inline def connectCustomKeyStoreFuture(params: ConnectCustomKeyStoreRequest): Future[ConnectCustomKeyStoreResponse] = service.connectCustomKeyStore(params).promise().toFuture
+    @inline def createAliasFuture(params: CreateAliasRequest): Future[js.Object] = service.createAlias(params).promise().toFuture
+    @inline def createCustomKeyStoreFuture(params: CreateCustomKeyStoreRequest): Future[CreateCustomKeyStoreResponse] = service.createCustomKeyStore(params).promise().toFuture
+    @inline def createGrantFuture(params: CreateGrantRequest): Future[CreateGrantResponse] = service.createGrant(params).promise().toFuture
+    @inline def createKeyFuture(params: CreateKeyRequest): Future[CreateKeyResponse] = service.createKey(params).promise().toFuture
+    @inline def decryptFuture(params: DecryptRequest): Future[DecryptResponse] = service.decrypt(params).promise().toFuture
+    @inline def deleteAliasFuture(params: DeleteAliasRequest): Future[js.Object] = service.deleteAlias(params).promise().toFuture
+    @inline def deleteCustomKeyStoreFuture(params: DeleteCustomKeyStoreRequest): Future[DeleteCustomKeyStoreResponse] = service.deleteCustomKeyStore(params).promise().toFuture
+    @inline def deleteImportedKeyMaterialFuture(params: DeleteImportedKeyMaterialRequest): Future[js.Object] = service.deleteImportedKeyMaterial(params).promise().toFuture
+    @inline def describeCustomKeyStoresFuture(params: DescribeCustomKeyStoresRequest): Future[DescribeCustomKeyStoresResponse] = service.describeCustomKeyStores(params).promise().toFuture
+    @inline def describeKeyFuture(params: DescribeKeyRequest): Future[DescribeKeyResponse] = service.describeKey(params).promise().toFuture
+    @inline def disableKeyFuture(params: DisableKeyRequest): Future[js.Object] = service.disableKey(params).promise().toFuture
+    @inline def disableKeyRotationFuture(params: DisableKeyRotationRequest): Future[js.Object] = service.disableKeyRotation(params).promise().toFuture
+    @inline def disconnectCustomKeyStoreFuture(params: DisconnectCustomKeyStoreRequest): Future[DisconnectCustomKeyStoreResponse] = service.disconnectCustomKeyStore(params).promise().toFuture
+    @inline def enableKeyFuture(params: EnableKeyRequest): Future[js.Object] = service.enableKey(params).promise().toFuture
+    @inline def enableKeyRotationFuture(params: EnableKeyRotationRequest): Future[js.Object] = service.enableKeyRotation(params).promise().toFuture
+    @inline def encryptFuture(params: EncryptRequest): Future[EncryptResponse] = service.encrypt(params).promise().toFuture
+    @inline def generateDataKeyFuture(params: GenerateDataKeyRequest): Future[GenerateDataKeyResponse] = service.generateDataKey(params).promise().toFuture
+    @inline def generateDataKeyPairFuture(params: GenerateDataKeyPairRequest): Future[GenerateDataKeyPairResponse] = service.generateDataKeyPair(params).promise().toFuture
+    @inline def generateDataKeyPairWithoutPlaintextFuture(params: GenerateDataKeyPairWithoutPlaintextRequest): Future[GenerateDataKeyPairWithoutPlaintextResponse] = service.generateDataKeyPairWithoutPlaintext(params).promise().toFuture
+    @inline def generateDataKeyWithoutPlaintextFuture(params: GenerateDataKeyWithoutPlaintextRequest): Future[GenerateDataKeyWithoutPlaintextResponse] = service.generateDataKeyWithoutPlaintext(params).promise().toFuture
+    @inline def generateRandomFuture(params: GenerateRandomRequest): Future[GenerateRandomResponse] = service.generateRandom(params).promise().toFuture
+    @inline def getKeyPolicyFuture(params: GetKeyPolicyRequest): Future[GetKeyPolicyResponse] = service.getKeyPolicy(params).promise().toFuture
+    @inline def getKeyRotationStatusFuture(params: GetKeyRotationStatusRequest): Future[GetKeyRotationStatusResponse] = service.getKeyRotationStatus(params).promise().toFuture
+    @inline def getParametersForImportFuture(params: GetParametersForImportRequest): Future[GetParametersForImportResponse] = service.getParametersForImport(params).promise().toFuture
+    @inline def getPublicKeyFuture(params: GetPublicKeyRequest): Future[GetPublicKeyResponse] = service.getPublicKey(params).promise().toFuture
+    @inline def importKeyMaterialFuture(params: ImportKeyMaterialRequest): Future[ImportKeyMaterialResponse] = service.importKeyMaterial(params).promise().toFuture
+    @inline def listAliasesFuture(params: ListAliasesRequest): Future[ListAliasesResponse] = service.listAliases(params).promise().toFuture
+    @inline def listGrantsFuture(params: ListGrantsRequest): Future[ListGrantsResponse] = service.listGrants(params).promise().toFuture
+    @inline def listKeyPoliciesFuture(params: ListKeyPoliciesRequest): Future[ListKeyPoliciesResponse] = service.listKeyPolicies(params).promise().toFuture
+    @inline def listKeysFuture(params: ListKeysRequest): Future[ListKeysResponse] = service.listKeys(params).promise().toFuture
+    @inline def listResourceTagsFuture(params: ListResourceTagsRequest): Future[ListResourceTagsResponse] = service.listResourceTags(params).promise().toFuture
+    @inline def listRetirableGrantsFuture(params: ListRetirableGrantsRequest): Future[ListGrantsResponse] = service.listRetirableGrants(params).promise().toFuture
+    @inline def putKeyPolicyFuture(params: PutKeyPolicyRequest): Future[js.Object] = service.putKeyPolicy(params).promise().toFuture
+    @inline def reEncryptFuture(params: ReEncryptRequest): Future[ReEncryptResponse] = service.reEncrypt(params).promise().toFuture
+    @inline def retireGrantFuture(params: RetireGrantRequest): Future[js.Object] = service.retireGrant(params).promise().toFuture
+    @inline def revokeGrantFuture(params: RevokeGrantRequest): Future[js.Object] = service.revokeGrant(params).promise().toFuture
+    @inline def scheduleKeyDeletionFuture(params: ScheduleKeyDeletionRequest): Future[ScheduleKeyDeletionResponse] = service.scheduleKeyDeletion(params).promise().toFuture
     @inline def signFuture(params: SignRequest): Future[SignResponse] = service.sign(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateAliasFuture(params: UpdateAliasRequest): Future[js.Object] =
-      service.updateAlias(params).promise().toFuture
-    @inline def updateCustomKeyStoreFuture(params: UpdateCustomKeyStoreRequest): Future[UpdateCustomKeyStoreResponse] =
-      service.updateCustomKeyStore(params).promise().toFuture
-    @inline def updateKeyDescriptionFuture(params: UpdateKeyDescriptionRequest): Future[js.Object] =
-      service.updateKeyDescription(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
+    @inline def updateAliasFuture(params: UpdateAliasRequest): Future[js.Object] = service.updateAlias(params).promise().toFuture
+    @inline def updateCustomKeyStoreFuture(params: UpdateCustomKeyStoreRequest): Future[UpdateCustomKeyStoreResponse] = service.updateCustomKeyStore(params).promise().toFuture
+    @inline def updateKeyDescriptionFuture(params: UpdateKeyDescriptionRequest): Future[js.Object] = service.updateKeyDescription(params).promise().toFuture
     @inline def verifyFuture(params: VerifyRequest): Future[VerifyResponse] = service.verify(params).promise().toFuture
   }
 }
@@ -168,29 +116,22 @@ package kms {
     def deleteAlias(params: DeleteAliasRequest): Request[js.Object] = js.native
     def deleteCustomKeyStore(params: DeleteCustomKeyStoreRequest): Request[DeleteCustomKeyStoreResponse] = js.native
     def deleteImportedKeyMaterial(params: DeleteImportedKeyMaterialRequest): Request[js.Object] = js.native
-    def describeCustomKeyStores(params: DescribeCustomKeyStoresRequest): Request[DescribeCustomKeyStoresResponse] =
-      js.native
+    def describeCustomKeyStores(params: DescribeCustomKeyStoresRequest): Request[DescribeCustomKeyStoresResponse] = js.native
     def describeKey(params: DescribeKeyRequest): Request[DescribeKeyResponse] = js.native
     def disableKey(params: DisableKeyRequest): Request[js.Object] = js.native
     def disableKeyRotation(params: DisableKeyRotationRequest): Request[js.Object] = js.native
-    def disconnectCustomKeyStore(params: DisconnectCustomKeyStoreRequest): Request[DisconnectCustomKeyStoreResponse] =
-      js.native
+    def disconnectCustomKeyStore(params: DisconnectCustomKeyStoreRequest): Request[DisconnectCustomKeyStoreResponse] = js.native
     def enableKey(params: EnableKeyRequest): Request[js.Object] = js.native
     def enableKeyRotation(params: EnableKeyRotationRequest): Request[js.Object] = js.native
     def encrypt(params: EncryptRequest): Request[EncryptResponse] = js.native
     def generateDataKey(params: GenerateDataKeyRequest): Request[GenerateDataKeyResponse] = js.native
     def generateDataKeyPair(params: GenerateDataKeyPairRequest): Request[GenerateDataKeyPairResponse] = js.native
-    def generateDataKeyPairWithoutPlaintext(
-        params: GenerateDataKeyPairWithoutPlaintextRequest
-    ): Request[GenerateDataKeyPairWithoutPlaintextResponse] = js.native
-    def generateDataKeyWithoutPlaintext(
-        params: GenerateDataKeyWithoutPlaintextRequest
-    ): Request[GenerateDataKeyWithoutPlaintextResponse] = js.native
+    def generateDataKeyPairWithoutPlaintext(params: GenerateDataKeyPairWithoutPlaintextRequest): Request[GenerateDataKeyPairWithoutPlaintextResponse] = js.native
+    def generateDataKeyWithoutPlaintext(params: GenerateDataKeyWithoutPlaintextRequest): Request[GenerateDataKeyWithoutPlaintextResponse] = js.native
     def generateRandom(params: GenerateRandomRequest): Request[GenerateRandomResponse] = js.native
     def getKeyPolicy(params: GetKeyPolicyRequest): Request[GetKeyPolicyResponse] = js.native
     def getKeyRotationStatus(params: GetKeyRotationStatusRequest): Request[GetKeyRotationStatusResponse] = js.native
-    def getParametersForImport(params: GetParametersForImportRequest): Request[GetParametersForImportResponse] =
-      js.native
+    def getParametersForImport(params: GetParametersForImportRequest): Request[GetParametersForImportResponse] = js.native
     def getPublicKey(params: GetPublicKeyRequest): Request[GetPublicKeyResponse] = js.native
     def importKeyMaterial(params: ImportKeyMaterialRequest): Request[ImportKeyMaterialResponse] = js.native
     def listAliases(params: ListAliasesRequest): Request[ListAliasesResponse] = js.native
@@ -497,9 +438,7 @@ package kms {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateKeyRequest = {
       val __obj = js.Dynamic.literal()
-      BypassPolicyLockoutSafetyCheck.foreach(__v =>
-        __obj.updateDynamic("BypassPolicyLockoutSafetyCheck")(__v.asInstanceOf[js.Any])
-      )
+      BypassPolicyLockoutSafetyCheck.foreach(__v => __obj.updateDynamic("BypassPolicyLockoutSafetyCheck")(__v.asInstanceOf[js.Any]))
       CustomKeyStoreId.foreach(__v => __obj.updateDynamic("CustomKeyStoreId")(__v.asInstanceOf[js.Any]))
       CustomerMasterKeySpec.foreach(__v => __obj.updateDynamic("CustomerMasterKeySpec")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -576,18 +515,7 @@ package kms {
     val ECC_SECG_P256K1 = "ECC_SECG_P256K1".asInstanceOf[CustomerMasterKeySpec]
     val SYMMETRIC_DEFAULT = "SYMMETRIC_DEFAULT".asInstanceOf[CustomerMasterKeySpec]
 
-    val values = js.Object.freeze(
-      js.Array(
-        RSA_2048,
-        RSA_3072,
-        RSA_4096,
-        ECC_NIST_P256,
-        ECC_NIST_P384,
-        ECC_NIST_P521,
-        ECC_SECG_P256K1,
-        SYMMETRIC_DEFAULT
-      )
-    )
+    val values = js.Object.freeze(js.Array(RSA_2048, RSA_3072, RSA_4096, ECC_NIST_P256, ECC_NIST_P384, ECC_NIST_P521, ECC_SECG_P256K1, SYMMETRIC_DEFAULT))
   }
 
   @js.native
@@ -601,9 +529,7 @@ package kms {
     val ECC_NIST_P521 = "ECC_NIST_P521".asInstanceOf[DataKeyPairSpec]
     val ECC_SECG_P256K1 = "ECC_SECG_P256K1".asInstanceOf[DataKeyPairSpec]
 
-    val values = js.Object.freeze(
-      js.Array(RSA_2048, RSA_3072, RSA_4096, ECC_NIST_P256, ECC_NIST_P384, ECC_NIST_P521, ECC_SECG_P256K1)
-    )
+    val values = js.Object.freeze(js.Array(RSA_2048, RSA_3072, RSA_4096, ECC_NIST_P256, ECC_NIST_P384, ECC_NIST_P521, ECC_SECG_P256K1))
   }
 
   @js.native
@@ -1971,9 +1897,7 @@ package kms {
         "PolicyName" -> PolicyName.asInstanceOf[js.Any]
       )
 
-      BypassPolicyLockoutSafetyCheck.foreach(__v =>
-        __obj.updateDynamic("BypassPolicyLockoutSafetyCheck")(__v.asInstanceOf[js.Any])
-      )
+      BypassPolicyLockoutSafetyCheck.foreach(__v => __obj.updateDynamic("BypassPolicyLockoutSafetyCheck")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutKeyPolicyRequest]
     }
   }
@@ -2007,16 +1931,10 @@ package kms {
         "DestinationKeyId" -> DestinationKeyId.asInstanceOf[js.Any]
       )
 
-      DestinationEncryptionAlgorithm.foreach(__v =>
-        __obj.updateDynamic("DestinationEncryptionAlgorithm")(__v.asInstanceOf[js.Any])
-      )
-      DestinationEncryptionContext.foreach(__v =>
-        __obj.updateDynamic("DestinationEncryptionContext")(__v.asInstanceOf[js.Any])
-      )
+      DestinationEncryptionAlgorithm.foreach(__v => __obj.updateDynamic("DestinationEncryptionAlgorithm")(__v.asInstanceOf[js.Any]))
+      DestinationEncryptionContext.foreach(__v => __obj.updateDynamic("DestinationEncryptionContext")(__v.asInstanceOf[js.Any]))
       GrantTokens.foreach(__v => __obj.updateDynamic("GrantTokens")(__v.asInstanceOf[js.Any]))
-      SourceEncryptionAlgorithm.foreach(__v =>
-        __obj.updateDynamic("SourceEncryptionAlgorithm")(__v.asInstanceOf[js.Any])
-      )
+      SourceEncryptionAlgorithm.foreach(__v => __obj.updateDynamic("SourceEncryptionAlgorithm")(__v.asInstanceOf[js.Any]))
       SourceEncryptionContext.foreach(__v => __obj.updateDynamic("SourceEncryptionContext")(__v.asInstanceOf[js.Any]))
       SourceKeyId.foreach(__v => __obj.updateDynamic("SourceKeyId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReEncryptRequest]
@@ -2043,13 +1961,9 @@ package kms {
     ): ReEncryptResponse = {
       val __obj = js.Dynamic.literal()
       CiphertextBlob.foreach(__v => __obj.updateDynamic("CiphertextBlob")(__v.asInstanceOf[js.Any]))
-      DestinationEncryptionAlgorithm.foreach(__v =>
-        __obj.updateDynamic("DestinationEncryptionAlgorithm")(__v.asInstanceOf[js.Any])
-      )
+      DestinationEncryptionAlgorithm.foreach(__v => __obj.updateDynamic("DestinationEncryptionAlgorithm")(__v.asInstanceOf[js.Any]))
       KeyId.foreach(__v => __obj.updateDynamic("KeyId")(__v.asInstanceOf[js.Any]))
-      SourceEncryptionAlgorithm.foreach(__v =>
-        __obj.updateDynamic("SourceEncryptionAlgorithm")(__v.asInstanceOf[js.Any])
-      )
+      SourceEncryptionAlgorithm.foreach(__v => __obj.updateDynamic("SourceEncryptionAlgorithm")(__v.asInstanceOf[js.Any]))
       SourceKeyId.foreach(__v => __obj.updateDynamic("SourceKeyId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReEncryptResponse]
     }

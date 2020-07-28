@@ -38,33 +38,19 @@ package object acm {
 
   implicit final class ACMOps(private val service: ACM) extends AnyVal {
 
-    @inline def addTagsToCertificateFuture(params: AddTagsToCertificateRequest): Future[js.Object] =
-      service.addTagsToCertificate(params).promise().toFuture
-    @inline def deleteCertificateFuture(params: DeleteCertificateRequest): Future[js.Object] =
-      service.deleteCertificate(params).promise().toFuture
-    @inline def describeCertificateFuture(params: DescribeCertificateRequest): Future[DescribeCertificateResponse] =
-      service.describeCertificate(params).promise().toFuture
-    @inline def exportCertificateFuture(params: ExportCertificateRequest): Future[ExportCertificateResponse] =
-      service.exportCertificate(params).promise().toFuture
-    @inline def getCertificateFuture(params: GetCertificateRequest): Future[GetCertificateResponse] =
-      service.getCertificate(params).promise().toFuture
-    @inline def importCertificateFuture(params: ImportCertificateRequest): Future[ImportCertificateResponse] =
-      service.importCertificate(params).promise().toFuture
-    @inline def listCertificatesFuture(params: ListCertificatesRequest): Future[ListCertificatesResponse] =
-      service.listCertificates(params).promise().toFuture
-    @inline def listTagsForCertificateFuture(
-        params: ListTagsForCertificateRequest
-    ): Future[ListTagsForCertificateResponse] = service.listTagsForCertificate(params).promise().toFuture
-    @inline def removeTagsFromCertificateFuture(params: RemoveTagsFromCertificateRequest): Future[js.Object] =
-      service.removeTagsFromCertificate(params).promise().toFuture
-    @inline def renewCertificateFuture(params: RenewCertificateRequest): Future[js.Object] =
-      service.renewCertificate(params).promise().toFuture
-    @inline def requestCertificateFuture(params: RequestCertificateRequest): Future[RequestCertificateResponse] =
-      service.requestCertificate(params).promise().toFuture
-    @inline def resendValidationEmailFuture(params: ResendValidationEmailRequest): Future[js.Object] =
-      service.resendValidationEmail(params).promise().toFuture
-    @inline def updateCertificateOptionsFuture(params: UpdateCertificateOptionsRequest): Future[js.Object] =
-      service.updateCertificateOptions(params).promise().toFuture
+    @inline def addTagsToCertificateFuture(params: AddTagsToCertificateRequest): Future[js.Object] = service.addTagsToCertificate(params).promise().toFuture
+    @inline def deleteCertificateFuture(params: DeleteCertificateRequest): Future[js.Object] = service.deleteCertificate(params).promise().toFuture
+    @inline def describeCertificateFuture(params: DescribeCertificateRequest): Future[DescribeCertificateResponse] = service.describeCertificate(params).promise().toFuture
+    @inline def exportCertificateFuture(params: ExportCertificateRequest): Future[ExportCertificateResponse] = service.exportCertificate(params).promise().toFuture
+    @inline def getCertificateFuture(params: GetCertificateRequest): Future[GetCertificateResponse] = service.getCertificate(params).promise().toFuture
+    @inline def importCertificateFuture(params: ImportCertificateRequest): Future[ImportCertificateResponse] = service.importCertificate(params).promise().toFuture
+    @inline def listCertificatesFuture(params: ListCertificatesRequest): Future[ListCertificatesResponse] = service.listCertificates(params).promise().toFuture
+    @inline def listTagsForCertificateFuture(params: ListTagsForCertificateRequest): Future[ListTagsForCertificateResponse] = service.listTagsForCertificate(params).promise().toFuture
+    @inline def removeTagsFromCertificateFuture(params: RemoveTagsFromCertificateRequest): Future[js.Object] = service.removeTagsFromCertificate(params).promise().toFuture
+    @inline def renewCertificateFuture(params: RenewCertificateRequest): Future[js.Object] = service.renewCertificate(params).promise().toFuture
+    @inline def requestCertificateFuture(params: RequestCertificateRequest): Future[RequestCertificateResponse] = service.requestCertificate(params).promise().toFuture
+    @inline def resendValidationEmailFuture(params: ResendValidationEmailRequest): Future[js.Object] = service.resendValidationEmail(params).promise().toFuture
+    @inline def updateCertificateOptionsFuture(params: UpdateCertificateOptionsRequest): Future[js.Object] = service.updateCertificateOptions(params).promise().toFuture
   }
 }
 
@@ -81,8 +67,7 @@ package acm {
     def getCertificate(params: GetCertificateRequest): Request[GetCertificateResponse] = js.native
     def importCertificate(params: ImportCertificateRequest): Request[ImportCertificateResponse] = js.native
     def listCertificates(params: ListCertificatesRequest): Request[ListCertificatesResponse] = js.native
-    def listTagsForCertificate(params: ListTagsForCertificateRequest): Request[ListTagsForCertificateResponse] =
-      js.native
+    def listTagsForCertificate(params: ListTagsForCertificateRequest): Request[ListTagsForCertificateResponse] = js.native
     def removeTagsFromCertificate(params: RemoveTagsFromCertificateRequest): Request[js.Object] = js.native
     def renewCertificate(params: RenewCertificateRequest): Request[js.Object] = js.native
     def requestCertificate(params: RequestCertificateRequest): Request[RequestCertificateResponse] = js.native
@@ -219,9 +204,7 @@ package acm {
         CertificateTransparencyLoggingPreference: js.UndefOr[CertificateTransparencyLoggingPreference] = js.undefined
     ): CertificateOptions = {
       val __obj = js.Dynamic.literal()
-      CertificateTransparencyLoggingPreference.foreach(__v =>
-        __obj.updateDynamic("CertificateTransparencyLoggingPreference")(__v.asInstanceOf[js.Any])
-      )
+      CertificateTransparencyLoggingPreference.foreach(__v => __obj.updateDynamic("CertificateTransparencyLoggingPreference")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CertificateOptions]
     }
   }
@@ -237,8 +220,7 @@ package acm {
     val REVOKED = "REVOKED".asInstanceOf[CertificateStatus]
     val FAILED = "FAILED".asInstanceOf[CertificateStatus]
 
-    val values =
-      js.Object.freeze(js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED))
+    val values = js.Object.freeze(js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED))
   }
 
   /**

@@ -32,52 +32,27 @@ package object dax {
 
   implicit final class DAXOps(private val service: DAX) extends AnyVal {
 
-    @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
-      service.createCluster(params).promise().toFuture
-    @inline def createParameterGroupFuture(params: CreateParameterGroupRequest): Future[CreateParameterGroupResponse] =
-      service.createParameterGroup(params).promise().toFuture
-    @inline def createSubnetGroupFuture(params: CreateSubnetGroupRequest): Future[CreateSubnetGroupResponse] =
-      service.createSubnetGroup(params).promise().toFuture
-    @inline def decreaseReplicationFactorFuture(
-        params: DecreaseReplicationFactorRequest
-    ): Future[DecreaseReplicationFactorResponse] = service.decreaseReplicationFactor(params).promise().toFuture
-    @inline def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] =
-      service.deleteCluster(params).promise().toFuture
-    @inline def deleteParameterGroupFuture(params: DeleteParameterGroupRequest): Future[DeleteParameterGroupResponse] =
-      service.deleteParameterGroup(params).promise().toFuture
-    @inline def deleteSubnetGroupFuture(params: DeleteSubnetGroupRequest): Future[DeleteSubnetGroupResponse] =
-      service.deleteSubnetGroup(params).promise().toFuture
-    @inline def describeClustersFuture(params: DescribeClustersRequest): Future[DescribeClustersResponse] =
-      service.describeClusters(params).promise().toFuture
-    @inline def describeDefaultParametersFuture(
-        params: DescribeDefaultParametersRequest
-    ): Future[DescribeDefaultParametersResponse] = service.describeDefaultParameters(params).promise().toFuture
-    @inline def describeEventsFuture(params: DescribeEventsRequest): Future[DescribeEventsResponse] =
-      service.describeEvents(params).promise().toFuture
-    @inline def describeParameterGroupsFuture(
-        params: DescribeParameterGroupsRequest
-    ): Future[DescribeParameterGroupsResponse] = service.describeParameterGroups(params).promise().toFuture
-    @inline def describeParametersFuture(params: DescribeParametersRequest): Future[DescribeParametersResponse] =
-      service.describeParameters(params).promise().toFuture
-    @inline def describeSubnetGroupsFuture(params: DescribeSubnetGroupsRequest): Future[DescribeSubnetGroupsResponse] =
-      service.describeSubnetGroups(params).promise().toFuture
-    @inline def increaseReplicationFactorFuture(
-        params: IncreaseReplicationFactorRequest
-    ): Future[IncreaseReplicationFactorResponse] = service.increaseReplicationFactor(params).promise().toFuture
-    @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] =
-      service.listTags(params).promise().toFuture
-    @inline def rebootNodeFuture(params: RebootNodeRequest): Future[RebootNodeResponse] =
-      service.rebootNode(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateClusterFuture(params: UpdateClusterRequest): Future[UpdateClusterResponse] =
-      service.updateCluster(params).promise().toFuture
-    @inline def updateParameterGroupFuture(params: UpdateParameterGroupRequest): Future[UpdateParameterGroupResponse] =
-      service.updateParameterGroup(params).promise().toFuture
-    @inline def updateSubnetGroupFuture(params: UpdateSubnetGroupRequest): Future[UpdateSubnetGroupResponse] =
-      service.updateSubnetGroup(params).promise().toFuture
+    @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] = service.createCluster(params).promise().toFuture
+    @inline def createParameterGroupFuture(params: CreateParameterGroupRequest): Future[CreateParameterGroupResponse] = service.createParameterGroup(params).promise().toFuture
+    @inline def createSubnetGroupFuture(params: CreateSubnetGroupRequest): Future[CreateSubnetGroupResponse] = service.createSubnetGroup(params).promise().toFuture
+    @inline def decreaseReplicationFactorFuture(params: DecreaseReplicationFactorRequest): Future[DecreaseReplicationFactorResponse] = service.decreaseReplicationFactor(params).promise().toFuture
+    @inline def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] = service.deleteCluster(params).promise().toFuture
+    @inline def deleteParameterGroupFuture(params: DeleteParameterGroupRequest): Future[DeleteParameterGroupResponse] = service.deleteParameterGroup(params).promise().toFuture
+    @inline def deleteSubnetGroupFuture(params: DeleteSubnetGroupRequest): Future[DeleteSubnetGroupResponse] = service.deleteSubnetGroup(params).promise().toFuture
+    @inline def describeClustersFuture(params: DescribeClustersRequest): Future[DescribeClustersResponse] = service.describeClusters(params).promise().toFuture
+    @inline def describeDefaultParametersFuture(params: DescribeDefaultParametersRequest): Future[DescribeDefaultParametersResponse] = service.describeDefaultParameters(params).promise().toFuture
+    @inline def describeEventsFuture(params: DescribeEventsRequest): Future[DescribeEventsResponse] = service.describeEvents(params).promise().toFuture
+    @inline def describeParameterGroupsFuture(params: DescribeParameterGroupsRequest): Future[DescribeParameterGroupsResponse] = service.describeParameterGroups(params).promise().toFuture
+    @inline def describeParametersFuture(params: DescribeParametersRequest): Future[DescribeParametersResponse] = service.describeParameters(params).promise().toFuture
+    @inline def describeSubnetGroupsFuture(params: DescribeSubnetGroupsRequest): Future[DescribeSubnetGroupsResponse] = service.describeSubnetGroups(params).promise().toFuture
+    @inline def increaseReplicationFactorFuture(params: IncreaseReplicationFactorRequest): Future[IncreaseReplicationFactorResponse] = service.increaseReplicationFactor(params).promise().toFuture
+    @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] = service.listTags(params).promise().toFuture
+    @inline def rebootNodeFuture(params: RebootNodeRequest): Future[RebootNodeResponse] = service.rebootNode(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateClusterFuture(params: UpdateClusterRequest): Future[UpdateClusterResponse] = service.updateCluster(params).promise().toFuture
+    @inline def updateParameterGroupFuture(params: UpdateParameterGroupRequest): Future[UpdateParameterGroupResponse] = service.updateParameterGroup(params).promise().toFuture
+    @inline def updateSubnetGroupFuture(params: UpdateSubnetGroupRequest): Future[UpdateSubnetGroupResponse] = service.updateSubnetGroup(params).promise().toFuture
   }
 }
 
@@ -90,24 +65,17 @@ package dax {
     def createCluster(params: CreateClusterRequest): Request[CreateClusterResponse] = js.native
     def createParameterGroup(params: CreateParameterGroupRequest): Request[CreateParameterGroupResponse] = js.native
     def createSubnetGroup(params: CreateSubnetGroupRequest): Request[CreateSubnetGroupResponse] = js.native
-    def decreaseReplicationFactor(
-        params: DecreaseReplicationFactorRequest
-    ): Request[DecreaseReplicationFactorResponse] = js.native
+    def decreaseReplicationFactor(params: DecreaseReplicationFactorRequest): Request[DecreaseReplicationFactorResponse] = js.native
     def deleteCluster(params: DeleteClusterRequest): Request[DeleteClusterResponse] = js.native
     def deleteParameterGroup(params: DeleteParameterGroupRequest): Request[DeleteParameterGroupResponse] = js.native
     def deleteSubnetGroup(params: DeleteSubnetGroupRequest): Request[DeleteSubnetGroupResponse] = js.native
     def describeClusters(params: DescribeClustersRequest): Request[DescribeClustersResponse] = js.native
-    def describeDefaultParameters(
-        params: DescribeDefaultParametersRequest
-    ): Request[DescribeDefaultParametersResponse] = js.native
+    def describeDefaultParameters(params: DescribeDefaultParametersRequest): Request[DescribeDefaultParametersResponse] = js.native
     def describeEvents(params: DescribeEventsRequest): Request[DescribeEventsResponse] = js.native
-    def describeParameterGroups(params: DescribeParameterGroupsRequest): Request[DescribeParameterGroupsResponse] =
-      js.native
+    def describeParameterGroups(params: DescribeParameterGroupsRequest): Request[DescribeParameterGroupsResponse] = js.native
     def describeParameters(params: DescribeParametersRequest): Request[DescribeParametersResponse] = js.native
     def describeSubnetGroups(params: DescribeSubnetGroupsRequest): Request[DescribeSubnetGroupsResponse] = js.native
-    def increaseReplicationFactor(
-        params: IncreaseReplicationFactorRequest
-    ): Request[IncreaseReplicationFactorResponse] = js.native
+    def increaseReplicationFactor(params: IncreaseReplicationFactorRequest): Request[IncreaseReplicationFactorResponse] = js.native
     def listTags(params: ListTagsRequest): Request[ListTagsResponse] = js.native
     def rebootNode(params: RebootNodeRequest): Request[RebootNodeResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
@@ -181,13 +149,9 @@ package dax {
       NodeIdsToRemove.foreach(__v => __obj.updateDynamic("NodeIdsToRemove")(__v.asInstanceOf[js.Any]))
       NodeType.foreach(__v => __obj.updateDynamic("NodeType")(__v.asInstanceOf[js.Any]))
       Nodes.foreach(__v => __obj.updateDynamic("Nodes")(__v.asInstanceOf[js.Any]))
-      NotificationConfiguration.foreach(__v =>
-        __obj.updateDynamic("NotificationConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      NotificationConfiguration.foreach(__v => __obj.updateDynamic("NotificationConfiguration")(__v.asInstanceOf[js.Any]))
       ParameterGroup.foreach(__v => __obj.updateDynamic("ParameterGroup")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       SSEDescription.foreach(__v => __obj.updateDynamic("SSEDescription")(__v.asInstanceOf[js.Any]))
       SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -242,9 +206,7 @@ package dax {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       NotificationTopicArn.foreach(__v => __obj.updateDynamic("NotificationTopicArn")(__v.asInstanceOf[js.Any]))
       ParameterGroupName.foreach(__v => __obj.updateDynamic("ParameterGroupName")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       SSESpecification.foreach(__v => __obj.updateDynamic("SSESpecification")(__v.asInstanceOf[js.Any]))
       SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
       SubnetGroupName.foreach(__v => __obj.updateDynamic("SubnetGroupName")(__v.asInstanceOf[js.Any]))
@@ -1393,9 +1355,7 @@ package dax {
       NotificationTopicArn.foreach(__v => __obj.updateDynamic("NotificationTopicArn")(__v.asInstanceOf[js.Any]))
       NotificationTopicStatus.foreach(__v => __obj.updateDynamic("NotificationTopicStatus")(__v.asInstanceOf[js.Any]))
       ParameterGroupName.foreach(__v => __obj.updateDynamic("ParameterGroupName")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
+      PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateClusterRequest]
     }

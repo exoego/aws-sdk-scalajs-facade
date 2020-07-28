@@ -41,27 +41,15 @@ package object polly {
 
   implicit final class PollyOps(private val service: Polly) extends AnyVal {
 
-    @inline def deleteLexiconFuture(params: DeleteLexiconInput): Future[DeleteLexiconOutput] =
-      service.deleteLexicon(params).promise().toFuture
-    @inline def describeVoicesFuture(params: DescribeVoicesInput): Future[DescribeVoicesOutput] =
-      service.describeVoices(params).promise().toFuture
-    @inline def getLexiconFuture(params: GetLexiconInput): Future[GetLexiconOutput] =
-      service.getLexicon(params).promise().toFuture
-    @inline def getSpeechSynthesisTaskFuture(
-        params: GetSpeechSynthesisTaskInput
-    ): Future[GetSpeechSynthesisTaskOutput] = service.getSpeechSynthesisTask(params).promise().toFuture
-    @inline def listLexiconsFuture(params: ListLexiconsInput): Future[ListLexiconsOutput] =
-      service.listLexicons(params).promise().toFuture
-    @inline def listSpeechSynthesisTasksFuture(
-        params: ListSpeechSynthesisTasksInput
-    ): Future[ListSpeechSynthesisTasksOutput] = service.listSpeechSynthesisTasks(params).promise().toFuture
-    @inline def putLexiconFuture(params: PutLexiconInput): Future[PutLexiconOutput] =
-      service.putLexicon(params).promise().toFuture
-    @inline def startSpeechSynthesisTaskFuture(
-        params: StartSpeechSynthesisTaskInput
-    ): Future[StartSpeechSynthesisTaskOutput] = service.startSpeechSynthesisTask(params).promise().toFuture
-    @inline def synthesizeSpeechFuture(params: SynthesizeSpeechInput): Future[SynthesizeSpeechOutput] =
-      service.synthesizeSpeech(params).promise().toFuture
+    @inline def deleteLexiconFuture(params: DeleteLexiconInput): Future[DeleteLexiconOutput] = service.deleteLexicon(params).promise().toFuture
+    @inline def describeVoicesFuture(params: DescribeVoicesInput): Future[DescribeVoicesOutput] = service.describeVoices(params).promise().toFuture
+    @inline def getLexiconFuture(params: GetLexiconInput): Future[GetLexiconOutput] = service.getLexicon(params).promise().toFuture
+    @inline def getSpeechSynthesisTaskFuture(params: GetSpeechSynthesisTaskInput): Future[GetSpeechSynthesisTaskOutput] = service.getSpeechSynthesisTask(params).promise().toFuture
+    @inline def listLexiconsFuture(params: ListLexiconsInput): Future[ListLexiconsOutput] = service.listLexicons(params).promise().toFuture
+    @inline def listSpeechSynthesisTasksFuture(params: ListSpeechSynthesisTasksInput): Future[ListSpeechSynthesisTasksOutput] = service.listSpeechSynthesisTasks(params).promise().toFuture
+    @inline def putLexiconFuture(params: PutLexiconInput): Future[PutLexiconOutput] = service.putLexicon(params).promise().toFuture
+    @inline def startSpeechSynthesisTaskFuture(params: StartSpeechSynthesisTaskInput): Future[StartSpeechSynthesisTaskOutput] = service.startSpeechSynthesisTask(params).promise().toFuture
+    @inline def synthesizeSpeechFuture(params: SynthesizeSpeechInput): Future[SynthesizeSpeechOutput] = service.synthesizeSpeech(params).promise().toFuture
   }
 }
 
@@ -76,11 +64,9 @@ package polly {
     def getLexicon(params: GetLexiconInput): Request[GetLexiconOutput] = js.native
     def getSpeechSynthesisTask(params: GetSpeechSynthesisTaskInput): Request[GetSpeechSynthesisTaskOutput] = js.native
     def listLexicons(params: ListLexiconsInput): Request[ListLexiconsOutput] = js.native
-    def listSpeechSynthesisTasks(params: ListSpeechSynthesisTasksInput): Request[ListSpeechSynthesisTasksOutput] =
-      js.native
+    def listSpeechSynthesisTasks(params: ListSpeechSynthesisTasksInput): Request[ListSpeechSynthesisTasksOutput] = js.native
     def putLexicon(params: PutLexiconInput): Request[PutLexiconOutput] = js.native
-    def startSpeechSynthesisTask(params: StartSpeechSynthesisTaskInput): Request[StartSpeechSynthesisTaskOutput] =
-      js.native
+    def startSpeechSynthesisTask(params: StartSpeechSynthesisTaskInput): Request[StartSpeechSynthesisTaskOutput] = js.native
     def synthesizeSpeech(params: SynthesizeSpeechInput): Request[SynthesizeSpeechOutput] = js.native
   }
 
@@ -133,9 +119,7 @@ package polly {
     ): DescribeVoicesInput = {
       val __obj = js.Dynamic.literal()
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
-      IncludeAdditionalLanguageCodes.foreach(__v =>
-        __obj.updateDynamic("IncludeAdditionalLanguageCodes")(__v.asInstanceOf[js.Any])
-      )
+      IncludeAdditionalLanguageCodes.foreach(__v => __obj.updateDynamic("IncludeAdditionalLanguageCodes")(__v.asInstanceOf[js.Any]))
       LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeVoicesInput]

@@ -59,135 +59,61 @@ package object guardduty {
 
   implicit final class GuardDutyOps(private val service: GuardDuty) extends AnyVal {
 
-    @inline def acceptInvitationFuture(params: AcceptInvitationRequest): Future[AcceptInvitationResponse] =
-      service.acceptInvitation(params).promise().toFuture
-    @inline def archiveFindingsFuture(params: ArchiveFindingsRequest): Future[ArchiveFindingsResponse] =
-      service.archiveFindings(params).promise().toFuture
-    @inline def createDetectorFuture(params: CreateDetectorRequest): Future[CreateDetectorResponse] =
-      service.createDetector(params).promise().toFuture
-    @inline def createFilterFuture(params: CreateFilterRequest): Future[CreateFilterResponse] =
-      service.createFilter(params).promise().toFuture
-    @inline def createIPSetFuture(params: CreateIPSetRequest): Future[CreateIPSetResponse] =
-      service.createIPSet(params).promise().toFuture
-    @inline def createMembersFuture(params: CreateMembersRequest): Future[CreateMembersResponse] =
-      service.createMembers(params).promise().toFuture
-    @inline def createPublishingDestinationFuture(
-        params: CreatePublishingDestinationRequest
-    ): Future[CreatePublishingDestinationResponse] = service.createPublishingDestination(params).promise().toFuture
-    @inline def createSampleFindingsFuture(params: CreateSampleFindingsRequest): Future[CreateSampleFindingsResponse] =
-      service.createSampleFindings(params).promise().toFuture
-    @inline def createThreatIntelSetFuture(params: CreateThreatIntelSetRequest): Future[CreateThreatIntelSetResponse] =
-      service.createThreatIntelSet(params).promise().toFuture
-    @inline def declineInvitationsFuture(params: DeclineInvitationsRequest): Future[DeclineInvitationsResponse] =
-      service.declineInvitations(params).promise().toFuture
-    @inline def deleteDetectorFuture(params: DeleteDetectorRequest): Future[DeleteDetectorResponse] =
-      service.deleteDetector(params).promise().toFuture
-    @inline def deleteFilterFuture(params: DeleteFilterRequest): Future[DeleteFilterResponse] =
-      service.deleteFilter(params).promise().toFuture
-    @inline def deleteIPSetFuture(params: DeleteIPSetRequest): Future[DeleteIPSetResponse] =
-      service.deleteIPSet(params).promise().toFuture
-    @inline def deleteInvitationsFuture(params: DeleteInvitationsRequest): Future[DeleteInvitationsResponse] =
-      service.deleteInvitations(params).promise().toFuture
-    @inline def deleteMembersFuture(params: DeleteMembersRequest): Future[DeleteMembersResponse] =
-      service.deleteMembers(params).promise().toFuture
-    @inline def deletePublishingDestinationFuture(
-        params: DeletePublishingDestinationRequest
-    ): Future[DeletePublishingDestinationResponse] = service.deletePublishingDestination(params).promise().toFuture
-    @inline def deleteThreatIntelSetFuture(params: DeleteThreatIntelSetRequest): Future[DeleteThreatIntelSetResponse] =
-      service.deleteThreatIntelSet(params).promise().toFuture
-    @inline def describeOrganizationConfigurationFuture(
-        params: DescribeOrganizationConfigurationRequest
-    ): Future[DescribeOrganizationConfigurationResponse] =
-      service.describeOrganizationConfiguration(params).promise().toFuture
-    @inline def describePublishingDestinationFuture(
-        params: DescribePublishingDestinationRequest
-    ): Future[DescribePublishingDestinationResponse] = service.describePublishingDestination(params).promise().toFuture
-    @inline def disableOrganizationAdminAccountFuture(
-        params: DisableOrganizationAdminAccountRequest
-    ): Future[DisableOrganizationAdminAccountResponse] =
-      service.disableOrganizationAdminAccount(params).promise().toFuture
-    @inline def disassociateFromMasterAccountFuture(
-        params: DisassociateFromMasterAccountRequest
-    ): Future[DisassociateFromMasterAccountResponse] = service.disassociateFromMasterAccount(params).promise().toFuture
-    @inline def disassociateMembersFuture(params: DisassociateMembersRequest): Future[DisassociateMembersResponse] =
-      service.disassociateMembers(params).promise().toFuture
-    @inline def enableOrganizationAdminAccountFuture(
-        params: EnableOrganizationAdminAccountRequest
-    ): Future[EnableOrganizationAdminAccountResponse] =
-      service.enableOrganizationAdminAccount(params).promise().toFuture
-    @inline def getDetectorFuture(params: GetDetectorRequest): Future[GetDetectorResponse] =
-      service.getDetector(params).promise().toFuture
-    @inline def getFilterFuture(params: GetFilterRequest): Future[GetFilterResponse] =
-      service.getFilter(params).promise().toFuture
-    @inline def getFindingsFuture(params: GetFindingsRequest): Future[GetFindingsResponse] =
-      service.getFindings(params).promise().toFuture
-    @inline def getFindingsStatisticsFuture(
-        params: GetFindingsStatisticsRequest
-    ): Future[GetFindingsStatisticsResponse] = service.getFindingsStatistics(params).promise().toFuture
-    @inline def getIPSetFuture(params: GetIPSetRequest): Future[GetIPSetResponse] =
-      service.getIPSet(params).promise().toFuture
-    @inline def getInvitationsCountFuture(params: GetInvitationsCountRequest): Future[GetInvitationsCountResponse] =
-      service.getInvitationsCount(params).promise().toFuture
-    @inline def getMasterAccountFuture(params: GetMasterAccountRequest): Future[GetMasterAccountResponse] =
-      service.getMasterAccount(params).promise().toFuture
-    @inline def getMembersFuture(params: GetMembersRequest): Future[GetMembersResponse] =
-      service.getMembers(params).promise().toFuture
-    @inline def getThreatIntelSetFuture(params: GetThreatIntelSetRequest): Future[GetThreatIntelSetResponse] =
-      service.getThreatIntelSet(params).promise().toFuture
-    @inline def inviteMembersFuture(params: InviteMembersRequest): Future[InviteMembersResponse] =
-      service.inviteMembers(params).promise().toFuture
-    @inline def listDetectorsFuture(params: ListDetectorsRequest): Future[ListDetectorsResponse] =
-      service.listDetectors(params).promise().toFuture
-    @inline def listFiltersFuture(params: ListFiltersRequest): Future[ListFiltersResponse] =
-      service.listFilters(params).promise().toFuture
-    @inline def listFindingsFuture(params: ListFindingsRequest): Future[ListFindingsResponse] =
-      service.listFindings(params).promise().toFuture
-    @inline def listIPSetsFuture(params: ListIPSetsRequest): Future[ListIPSetsResponse] =
-      service.listIPSets(params).promise().toFuture
-    @inline def listInvitationsFuture(params: ListInvitationsRequest): Future[ListInvitationsResponse] =
-      service.listInvitations(params).promise().toFuture
-    @inline def listMembersFuture(params: ListMembersRequest): Future[ListMembersResponse] =
-      service.listMembers(params).promise().toFuture
-    @inline def listOrganizationAdminAccountsFuture(
-        params: ListOrganizationAdminAccountsRequest
-    ): Future[ListOrganizationAdminAccountsResponse] = service.listOrganizationAdminAccounts(params).promise().toFuture
-    @inline def listPublishingDestinationsFuture(
-        params: ListPublishingDestinationsRequest
-    ): Future[ListPublishingDestinationsResponse] = service.listPublishingDestinations(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listThreatIntelSetsFuture(params: ListThreatIntelSetsRequest): Future[ListThreatIntelSetsResponse] =
-      service.listThreatIntelSets(params).promise().toFuture
-    @inline def startMonitoringMembersFuture(
-        params: StartMonitoringMembersRequest
-    ): Future[StartMonitoringMembersResponse] = service.startMonitoringMembers(params).promise().toFuture
-    @inline def stopMonitoringMembersFuture(
-        params: StopMonitoringMembersRequest
-    ): Future[StopMonitoringMembersResponse] = service.stopMonitoringMembers(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def unarchiveFindingsFuture(params: UnarchiveFindingsRequest): Future[UnarchiveFindingsResponse] =
-      service.unarchiveFindings(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateDetectorFuture(params: UpdateDetectorRequest): Future[UpdateDetectorResponse] =
-      service.updateDetector(params).promise().toFuture
-    @inline def updateFilterFuture(params: UpdateFilterRequest): Future[UpdateFilterResponse] =
-      service.updateFilter(params).promise().toFuture
-    @inline def updateFindingsFeedbackFuture(
-        params: UpdateFindingsFeedbackRequest
-    ): Future[UpdateFindingsFeedbackResponse] = service.updateFindingsFeedback(params).promise().toFuture
-    @inline def updateIPSetFuture(params: UpdateIPSetRequest): Future[UpdateIPSetResponse] =
-      service.updateIPSet(params).promise().toFuture
-    @inline def updateOrganizationConfigurationFuture(
-        params: UpdateOrganizationConfigurationRequest
-    ): Future[UpdateOrganizationConfigurationResponse] =
-      service.updateOrganizationConfiguration(params).promise().toFuture
-    @inline def updatePublishingDestinationFuture(
-        params: UpdatePublishingDestinationRequest
-    ): Future[UpdatePublishingDestinationResponse] = service.updatePublishingDestination(params).promise().toFuture
-    @inline def updateThreatIntelSetFuture(params: UpdateThreatIntelSetRequest): Future[UpdateThreatIntelSetResponse] =
-      service.updateThreatIntelSet(params).promise().toFuture
+    @inline def acceptInvitationFuture(params: AcceptInvitationRequest): Future[AcceptInvitationResponse] = service.acceptInvitation(params).promise().toFuture
+    @inline def archiveFindingsFuture(params: ArchiveFindingsRequest): Future[ArchiveFindingsResponse] = service.archiveFindings(params).promise().toFuture
+    @inline def createDetectorFuture(params: CreateDetectorRequest): Future[CreateDetectorResponse] = service.createDetector(params).promise().toFuture
+    @inline def createFilterFuture(params: CreateFilterRequest): Future[CreateFilterResponse] = service.createFilter(params).promise().toFuture
+    @inline def createIPSetFuture(params: CreateIPSetRequest): Future[CreateIPSetResponse] = service.createIPSet(params).promise().toFuture
+    @inline def createMembersFuture(params: CreateMembersRequest): Future[CreateMembersResponse] = service.createMembers(params).promise().toFuture
+    @inline def createPublishingDestinationFuture(params: CreatePublishingDestinationRequest): Future[CreatePublishingDestinationResponse] = service.createPublishingDestination(params).promise().toFuture
+    @inline def createSampleFindingsFuture(params: CreateSampleFindingsRequest): Future[CreateSampleFindingsResponse] = service.createSampleFindings(params).promise().toFuture
+    @inline def createThreatIntelSetFuture(params: CreateThreatIntelSetRequest): Future[CreateThreatIntelSetResponse] = service.createThreatIntelSet(params).promise().toFuture
+    @inline def declineInvitationsFuture(params: DeclineInvitationsRequest): Future[DeclineInvitationsResponse] = service.declineInvitations(params).promise().toFuture
+    @inline def deleteDetectorFuture(params: DeleteDetectorRequest): Future[DeleteDetectorResponse] = service.deleteDetector(params).promise().toFuture
+    @inline def deleteFilterFuture(params: DeleteFilterRequest): Future[DeleteFilterResponse] = service.deleteFilter(params).promise().toFuture
+    @inline def deleteIPSetFuture(params: DeleteIPSetRequest): Future[DeleteIPSetResponse] = service.deleteIPSet(params).promise().toFuture
+    @inline def deleteInvitationsFuture(params: DeleteInvitationsRequest): Future[DeleteInvitationsResponse] = service.deleteInvitations(params).promise().toFuture
+    @inline def deleteMembersFuture(params: DeleteMembersRequest): Future[DeleteMembersResponse] = service.deleteMembers(params).promise().toFuture
+    @inline def deletePublishingDestinationFuture(params: DeletePublishingDestinationRequest): Future[DeletePublishingDestinationResponse] = service.deletePublishingDestination(params).promise().toFuture
+    @inline def deleteThreatIntelSetFuture(params: DeleteThreatIntelSetRequest): Future[DeleteThreatIntelSetResponse] = service.deleteThreatIntelSet(params).promise().toFuture
+    @inline def describeOrganizationConfigurationFuture(params: DescribeOrganizationConfigurationRequest): Future[DescribeOrganizationConfigurationResponse] = service.describeOrganizationConfiguration(params).promise().toFuture
+    @inline def describePublishingDestinationFuture(params: DescribePublishingDestinationRequest): Future[DescribePublishingDestinationResponse] = service.describePublishingDestination(params).promise().toFuture
+    @inline def disableOrganizationAdminAccountFuture(params: DisableOrganizationAdminAccountRequest): Future[DisableOrganizationAdminAccountResponse] = service.disableOrganizationAdminAccount(params).promise().toFuture
+    @inline def disassociateFromMasterAccountFuture(params: DisassociateFromMasterAccountRequest): Future[DisassociateFromMasterAccountResponse] = service.disassociateFromMasterAccount(params).promise().toFuture
+    @inline def disassociateMembersFuture(params: DisassociateMembersRequest): Future[DisassociateMembersResponse] = service.disassociateMembers(params).promise().toFuture
+    @inline def enableOrganizationAdminAccountFuture(params: EnableOrganizationAdminAccountRequest): Future[EnableOrganizationAdminAccountResponse] = service.enableOrganizationAdminAccount(params).promise().toFuture
+    @inline def getDetectorFuture(params: GetDetectorRequest): Future[GetDetectorResponse] = service.getDetector(params).promise().toFuture
+    @inline def getFilterFuture(params: GetFilterRequest): Future[GetFilterResponse] = service.getFilter(params).promise().toFuture
+    @inline def getFindingsFuture(params: GetFindingsRequest): Future[GetFindingsResponse] = service.getFindings(params).promise().toFuture
+    @inline def getFindingsStatisticsFuture(params: GetFindingsStatisticsRequest): Future[GetFindingsStatisticsResponse] = service.getFindingsStatistics(params).promise().toFuture
+    @inline def getIPSetFuture(params: GetIPSetRequest): Future[GetIPSetResponse] = service.getIPSet(params).promise().toFuture
+    @inline def getInvitationsCountFuture(params: GetInvitationsCountRequest): Future[GetInvitationsCountResponse] = service.getInvitationsCount(params).promise().toFuture
+    @inline def getMasterAccountFuture(params: GetMasterAccountRequest): Future[GetMasterAccountResponse] = service.getMasterAccount(params).promise().toFuture
+    @inline def getMembersFuture(params: GetMembersRequest): Future[GetMembersResponse] = service.getMembers(params).promise().toFuture
+    @inline def getThreatIntelSetFuture(params: GetThreatIntelSetRequest): Future[GetThreatIntelSetResponse] = service.getThreatIntelSet(params).promise().toFuture
+    @inline def inviteMembersFuture(params: InviteMembersRequest): Future[InviteMembersResponse] = service.inviteMembers(params).promise().toFuture
+    @inline def listDetectorsFuture(params: ListDetectorsRequest): Future[ListDetectorsResponse] = service.listDetectors(params).promise().toFuture
+    @inline def listFiltersFuture(params: ListFiltersRequest): Future[ListFiltersResponse] = service.listFilters(params).promise().toFuture
+    @inline def listFindingsFuture(params: ListFindingsRequest): Future[ListFindingsResponse] = service.listFindings(params).promise().toFuture
+    @inline def listIPSetsFuture(params: ListIPSetsRequest): Future[ListIPSetsResponse] = service.listIPSets(params).promise().toFuture
+    @inline def listInvitationsFuture(params: ListInvitationsRequest): Future[ListInvitationsResponse] = service.listInvitations(params).promise().toFuture
+    @inline def listMembersFuture(params: ListMembersRequest): Future[ListMembersResponse] = service.listMembers(params).promise().toFuture
+    @inline def listOrganizationAdminAccountsFuture(params: ListOrganizationAdminAccountsRequest): Future[ListOrganizationAdminAccountsResponse] = service.listOrganizationAdminAccounts(params).promise().toFuture
+    @inline def listPublishingDestinationsFuture(params: ListPublishingDestinationsRequest): Future[ListPublishingDestinationsResponse] = service.listPublishingDestinations(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listThreatIntelSetsFuture(params: ListThreatIntelSetsRequest): Future[ListThreatIntelSetsResponse] = service.listThreatIntelSets(params).promise().toFuture
+    @inline def startMonitoringMembersFuture(params: StartMonitoringMembersRequest): Future[StartMonitoringMembersResponse] = service.startMonitoringMembers(params).promise().toFuture
+    @inline def stopMonitoringMembersFuture(params: StopMonitoringMembersRequest): Future[StopMonitoringMembersResponse] = service.stopMonitoringMembers(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def unarchiveFindingsFuture(params: UnarchiveFindingsRequest): Future[UnarchiveFindingsResponse] = service.unarchiveFindings(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateDetectorFuture(params: UpdateDetectorRequest): Future[UpdateDetectorResponse] = service.updateDetector(params).promise().toFuture
+    @inline def updateFilterFuture(params: UpdateFilterRequest): Future[UpdateFilterResponse] = service.updateFilter(params).promise().toFuture
+    @inline def updateFindingsFeedbackFuture(params: UpdateFindingsFeedbackRequest): Future[UpdateFindingsFeedbackResponse] = service.updateFindingsFeedback(params).promise().toFuture
+    @inline def updateIPSetFuture(params: UpdateIPSetRequest): Future[UpdateIPSetResponse] = service.updateIPSet(params).promise().toFuture
+    @inline def updateOrganizationConfigurationFuture(params: UpdateOrganizationConfigurationRequest): Future[UpdateOrganizationConfigurationResponse] = service.updateOrganizationConfiguration(params).promise().toFuture
+    @inline def updatePublishingDestinationFuture(params: UpdatePublishingDestinationRequest): Future[UpdatePublishingDestinationResponse] = service.updatePublishingDestination(params).promise().toFuture
+    @inline def updateThreatIntelSetFuture(params: UpdateThreatIntelSetRequest): Future[UpdateThreatIntelSetResponse] = service.updateThreatIntelSet(params).promise().toFuture
   }
 }
 
@@ -203,9 +129,7 @@ package guardduty {
     def createFilter(params: CreateFilterRequest): Request[CreateFilterResponse] = js.native
     def createIPSet(params: CreateIPSetRequest): Request[CreateIPSetResponse] = js.native
     def createMembers(params: CreateMembersRequest): Request[CreateMembersResponse] = js.native
-    def createPublishingDestination(
-        params: CreatePublishingDestinationRequest
-    ): Request[CreatePublishingDestinationResponse] = js.native
+    def createPublishingDestination(params: CreatePublishingDestinationRequest): Request[CreatePublishingDestinationResponse] = js.native
     def createSampleFindings(params: CreateSampleFindingsRequest): Request[CreateSampleFindingsResponse] = js.native
     def createThreatIntelSet(params: CreateThreatIntelSetRequest): Request[CreateThreatIntelSetResponse] = js.native
     def declineInvitations(params: DeclineInvitationsRequest): Request[DeclineInvitationsResponse] = js.native
@@ -214,26 +138,14 @@ package guardduty {
     def deleteIPSet(params: DeleteIPSetRequest): Request[DeleteIPSetResponse] = js.native
     def deleteInvitations(params: DeleteInvitationsRequest): Request[DeleteInvitationsResponse] = js.native
     def deleteMembers(params: DeleteMembersRequest): Request[DeleteMembersResponse] = js.native
-    def deletePublishingDestination(
-        params: DeletePublishingDestinationRequest
-    ): Request[DeletePublishingDestinationResponse] = js.native
+    def deletePublishingDestination(params: DeletePublishingDestinationRequest): Request[DeletePublishingDestinationResponse] = js.native
     def deleteThreatIntelSet(params: DeleteThreatIntelSetRequest): Request[DeleteThreatIntelSetResponse] = js.native
-    def describeOrganizationConfiguration(
-        params: DescribeOrganizationConfigurationRequest
-    ): Request[DescribeOrganizationConfigurationResponse] = js.native
-    def describePublishingDestination(
-        params: DescribePublishingDestinationRequest
-    ): Request[DescribePublishingDestinationResponse] = js.native
-    def disableOrganizationAdminAccount(
-        params: DisableOrganizationAdminAccountRequest
-    ): Request[DisableOrganizationAdminAccountResponse] = js.native
-    def disassociateFromMasterAccount(
-        params: DisassociateFromMasterAccountRequest
-    ): Request[DisassociateFromMasterAccountResponse] = js.native
+    def describeOrganizationConfiguration(params: DescribeOrganizationConfigurationRequest): Request[DescribeOrganizationConfigurationResponse] = js.native
+    def describePublishingDestination(params: DescribePublishingDestinationRequest): Request[DescribePublishingDestinationResponse] = js.native
+    def disableOrganizationAdminAccount(params: DisableOrganizationAdminAccountRequest): Request[DisableOrganizationAdminAccountResponse] = js.native
+    def disassociateFromMasterAccount(params: DisassociateFromMasterAccountRequest): Request[DisassociateFromMasterAccountResponse] = js.native
     def disassociateMembers(params: DisassociateMembersRequest): Request[DisassociateMembersResponse] = js.native
-    def enableOrganizationAdminAccount(
-        params: EnableOrganizationAdminAccountRequest
-    ): Request[EnableOrganizationAdminAccountResponse] = js.native
+    def enableOrganizationAdminAccount(params: EnableOrganizationAdminAccountRequest): Request[EnableOrganizationAdminAccountResponse] = js.native
     def getDetector(params: GetDetectorRequest): Request[GetDetectorResponse] = js.native
     def getFilter(params: GetFilterRequest): Request[GetFilterResponse] = js.native
     def getFindings(params: GetFindingsRequest): Request[GetFindingsResponse] = js.native
@@ -250,31 +162,21 @@ package guardduty {
     def listIPSets(params: ListIPSetsRequest): Request[ListIPSetsResponse] = js.native
     def listInvitations(params: ListInvitationsRequest): Request[ListInvitationsResponse] = js.native
     def listMembers(params: ListMembersRequest): Request[ListMembersResponse] = js.native
-    def listOrganizationAdminAccounts(
-        params: ListOrganizationAdminAccountsRequest
-    ): Request[ListOrganizationAdminAccountsResponse] = js.native
-    def listPublishingDestinations(
-        params: ListPublishingDestinationsRequest
-    ): Request[ListPublishingDestinationsResponse] = js.native
+    def listOrganizationAdminAccounts(params: ListOrganizationAdminAccountsRequest): Request[ListOrganizationAdminAccountsResponse] = js.native
+    def listPublishingDestinations(params: ListPublishingDestinationsRequest): Request[ListPublishingDestinationsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listThreatIntelSets(params: ListThreatIntelSetsRequest): Request[ListThreatIntelSetsResponse] = js.native
-    def startMonitoringMembers(params: StartMonitoringMembersRequest): Request[StartMonitoringMembersResponse] =
-      js.native
+    def startMonitoringMembers(params: StartMonitoringMembersRequest): Request[StartMonitoringMembersResponse] = js.native
     def stopMonitoringMembers(params: StopMonitoringMembersRequest): Request[StopMonitoringMembersResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def unarchiveFindings(params: UnarchiveFindingsRequest): Request[UnarchiveFindingsResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateDetector(params: UpdateDetectorRequest): Request[UpdateDetectorResponse] = js.native
     def updateFilter(params: UpdateFilterRequest): Request[UpdateFilterResponse] = js.native
-    def updateFindingsFeedback(params: UpdateFindingsFeedbackRequest): Request[UpdateFindingsFeedbackResponse] =
-      js.native
+    def updateFindingsFeedback(params: UpdateFindingsFeedbackRequest): Request[UpdateFindingsFeedbackResponse] = js.native
     def updateIPSet(params: UpdateIPSetRequest): Request[UpdateIPSetResponse] = js.native
-    def updateOrganizationConfiguration(
-        params: UpdateOrganizationConfigurationRequest
-    ): Request[UpdateOrganizationConfigurationResponse] = js.native
-    def updatePublishingDestination(
-        params: UpdatePublishingDestinationRequest
-    ): Request[UpdatePublishingDestinationResponse] = js.native
+    def updateOrganizationConfiguration(params: UpdateOrganizationConfigurationRequest): Request[UpdateOrganizationConfigurationResponse] = js.native
+    def updatePublishingDestination(params: UpdatePublishingDestinationRequest): Request[UpdatePublishingDestinationResponse] = js.native
     def updateThreatIntelSet(params: UpdateThreatIntelSetRequest): Request[UpdateThreatIntelSetResponse] = js.native
   }
 
@@ -724,9 +626,7 @@ package guardduty {
       )
 
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
-      FindingPublishingFrequency.foreach(__v =>
-        __obj.updateDynamic("FindingPublishingFrequency")(__v.asInstanceOf[js.Any])
-      )
+      FindingPublishingFrequency.foreach(__v => __obj.updateDynamic("FindingPublishingFrequency")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDetectorRequest]
     }
@@ -1671,9 +1571,7 @@ package guardduty {
         ThreatIntelligenceDetails: js.UndefOr[ThreatIntelligenceDetails] = js.undefined
     ): Evidence = {
       val __obj = js.Dynamic.literal()
-      ThreatIntelligenceDetails.foreach(__v =>
-        __obj.updateDynamic("ThreatIntelligenceDetails")(__v.asInstanceOf[js.Any])
-      )
+      ThreatIntelligenceDetails.foreach(__v => __obj.updateDynamic("ThreatIntelligenceDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Evidence]
     }
   }
@@ -1881,9 +1779,7 @@ package guardduty {
       )
 
       CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
-      FindingPublishingFrequency.foreach(__v =>
-        __obj.updateDynamic("FindingPublishingFrequency")(__v.asInstanceOf[js.Any])
-      )
+      FindingPublishingFrequency.foreach(__v => __obj.updateDynamic("FindingPublishingFrequency")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDetectorResponse]
@@ -3228,12 +3124,10 @@ package guardduty {
   object PublishingStatus extends js.Object {
     val PENDING_VERIFICATION = "PENDING_VERIFICATION".asInstanceOf[PublishingStatus]
     val PUBLISHING = "PUBLISHING".asInstanceOf[PublishingStatus]
-    val UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY =
-      "UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY".asInstanceOf[PublishingStatus]
+    val UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY = "UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY".asInstanceOf[PublishingStatus]
     val STOPPED = "STOPPED".asInstanceOf[PublishingStatus]
 
-    val values =
-      js.Object.freeze(js.Array(PENDING_VERIFICATION, PUBLISHING, UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY, STOPPED))
+    val values = js.Object.freeze(js.Array(PENDING_VERIFICATION, PUBLISHING, UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY, STOPPED))
   }
 
   /**
@@ -3344,9 +3238,7 @@ package guardduty {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
-      DefaultServerSideEncryption.foreach(__v =>
-        __obj.updateDynamic("DefaultServerSideEncryption")(__v.asInstanceOf[js.Any])
-      )
+      DefaultServerSideEncryption.foreach(__v => __obj.updateDynamic("DefaultServerSideEncryption")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
       PublicAccess.foreach(__v => __obj.updateDynamic("PublicAccess")(__v.asInstanceOf[js.Any]))
@@ -3740,9 +3632,7 @@ package guardduty {
       )
 
       Enable.foreach(__v => __obj.updateDynamic("Enable")(__v.asInstanceOf[js.Any]))
-      FindingPublishingFrequency.foreach(__v =>
-        __obj.updateDynamic("FindingPublishingFrequency")(__v.asInstanceOf[js.Any])
-      )
+      FindingPublishingFrequency.foreach(__v => __obj.updateDynamic("FindingPublishingFrequency")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDetectorRequest]
     }
   }

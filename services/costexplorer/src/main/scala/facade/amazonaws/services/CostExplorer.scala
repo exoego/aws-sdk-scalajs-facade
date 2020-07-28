@@ -89,62 +89,25 @@ package object costexplorer {
 
   implicit final class CostExplorerOps(private val service: CostExplorer) extends AnyVal {
 
-    @inline def createCostCategoryDefinitionFuture(
-        params: CreateCostCategoryDefinitionRequest
-    ): Future[CreateCostCategoryDefinitionResponse] = service.createCostCategoryDefinition(params).promise().toFuture
-    @inline def deleteCostCategoryDefinitionFuture(
-        params: DeleteCostCategoryDefinitionRequest
-    ): Future[DeleteCostCategoryDefinitionResponse] = service.deleteCostCategoryDefinition(params).promise().toFuture
-    @inline def describeCostCategoryDefinitionFuture(
-        params: DescribeCostCategoryDefinitionRequest
-    ): Future[DescribeCostCategoryDefinitionResponse] =
-      service.describeCostCategoryDefinition(params).promise().toFuture
-    @inline def getCostAndUsageFuture(params: GetCostAndUsageRequest): Future[GetCostAndUsageResponse] =
-      service.getCostAndUsage(params).promise().toFuture
-    @inline def getCostAndUsageWithResourcesFuture(
-        params: GetCostAndUsageWithResourcesRequest
-    ): Future[GetCostAndUsageWithResourcesResponse] = service.getCostAndUsageWithResources(params).promise().toFuture
-    @inline def getCostForecastFuture(params: GetCostForecastRequest): Future[GetCostForecastResponse] =
-      service.getCostForecast(params).promise().toFuture
-    @inline def getDimensionValuesFuture(params: GetDimensionValuesRequest): Future[GetDimensionValuesResponse] =
-      service.getDimensionValues(params).promise().toFuture
-    @inline def getReservationCoverageFuture(
-        params: GetReservationCoverageRequest
-    ): Future[GetReservationCoverageResponse] = service.getReservationCoverage(params).promise().toFuture
-    @inline def getReservationPurchaseRecommendationFuture(
-        params: GetReservationPurchaseRecommendationRequest
-    ): Future[GetReservationPurchaseRecommendationResponse] =
-      service.getReservationPurchaseRecommendation(params).promise().toFuture
-    @inline def getReservationUtilizationFuture(
-        params: GetReservationUtilizationRequest
-    ): Future[GetReservationUtilizationResponse] = service.getReservationUtilization(params).promise().toFuture
-    @inline def getRightsizingRecommendationFuture(
-        params: GetRightsizingRecommendationRequest
-    ): Future[GetRightsizingRecommendationResponse] = service.getRightsizingRecommendation(params).promise().toFuture
-    @inline def getSavingsPlansCoverageFuture(
-        params: GetSavingsPlansCoverageRequest
-    ): Future[GetSavingsPlansCoverageResponse] = service.getSavingsPlansCoverage(params).promise().toFuture
-    @inline def getSavingsPlansPurchaseRecommendationFuture(
-        params: GetSavingsPlansPurchaseRecommendationRequest
-    ): Future[GetSavingsPlansPurchaseRecommendationResponse] =
-      service.getSavingsPlansPurchaseRecommendation(params).promise().toFuture
-    @inline def getSavingsPlansUtilizationDetailsFuture(
-        params: GetSavingsPlansUtilizationDetailsRequest
-    ): Future[GetSavingsPlansUtilizationDetailsResponse] =
-      service.getSavingsPlansUtilizationDetails(params).promise().toFuture
-    @inline def getSavingsPlansUtilizationFuture(
-        params: GetSavingsPlansUtilizationRequest
-    ): Future[GetSavingsPlansUtilizationResponse] = service.getSavingsPlansUtilization(params).promise().toFuture
-    @inline def getTagsFuture(params: GetTagsRequest): Future[GetTagsResponse] =
-      service.getTags(params).promise().toFuture
-    @inline def getUsageForecastFuture(params: GetUsageForecastRequest): Future[GetUsageForecastResponse] =
-      service.getUsageForecast(params).promise().toFuture
-    @inline def listCostCategoryDefinitionsFuture(
-        params: ListCostCategoryDefinitionsRequest
-    ): Future[ListCostCategoryDefinitionsResponse] = service.listCostCategoryDefinitions(params).promise().toFuture
-    @inline def updateCostCategoryDefinitionFuture(
-        params: UpdateCostCategoryDefinitionRequest
-    ): Future[UpdateCostCategoryDefinitionResponse] = service.updateCostCategoryDefinition(params).promise().toFuture
+    @inline def createCostCategoryDefinitionFuture(params: CreateCostCategoryDefinitionRequest): Future[CreateCostCategoryDefinitionResponse] = service.createCostCategoryDefinition(params).promise().toFuture
+    @inline def deleteCostCategoryDefinitionFuture(params: DeleteCostCategoryDefinitionRequest): Future[DeleteCostCategoryDefinitionResponse] = service.deleteCostCategoryDefinition(params).promise().toFuture
+    @inline def describeCostCategoryDefinitionFuture(params: DescribeCostCategoryDefinitionRequest): Future[DescribeCostCategoryDefinitionResponse] = service.describeCostCategoryDefinition(params).promise().toFuture
+    @inline def getCostAndUsageFuture(params: GetCostAndUsageRequest): Future[GetCostAndUsageResponse] = service.getCostAndUsage(params).promise().toFuture
+    @inline def getCostAndUsageWithResourcesFuture(params: GetCostAndUsageWithResourcesRequest): Future[GetCostAndUsageWithResourcesResponse] = service.getCostAndUsageWithResources(params).promise().toFuture
+    @inline def getCostForecastFuture(params: GetCostForecastRequest): Future[GetCostForecastResponse] = service.getCostForecast(params).promise().toFuture
+    @inline def getDimensionValuesFuture(params: GetDimensionValuesRequest): Future[GetDimensionValuesResponse] = service.getDimensionValues(params).promise().toFuture
+    @inline def getReservationCoverageFuture(params: GetReservationCoverageRequest): Future[GetReservationCoverageResponse] = service.getReservationCoverage(params).promise().toFuture
+    @inline def getReservationPurchaseRecommendationFuture(params: GetReservationPurchaseRecommendationRequest): Future[GetReservationPurchaseRecommendationResponse] = service.getReservationPurchaseRecommendation(params).promise().toFuture
+    @inline def getReservationUtilizationFuture(params: GetReservationUtilizationRequest): Future[GetReservationUtilizationResponse] = service.getReservationUtilization(params).promise().toFuture
+    @inline def getRightsizingRecommendationFuture(params: GetRightsizingRecommendationRequest): Future[GetRightsizingRecommendationResponse] = service.getRightsizingRecommendation(params).promise().toFuture
+    @inline def getSavingsPlansCoverageFuture(params: GetSavingsPlansCoverageRequest): Future[GetSavingsPlansCoverageResponse] = service.getSavingsPlansCoverage(params).promise().toFuture
+    @inline def getSavingsPlansPurchaseRecommendationFuture(params: GetSavingsPlansPurchaseRecommendationRequest): Future[GetSavingsPlansPurchaseRecommendationResponse] = service.getSavingsPlansPurchaseRecommendation(params).promise().toFuture
+    @inline def getSavingsPlansUtilizationDetailsFuture(params: GetSavingsPlansUtilizationDetailsRequest): Future[GetSavingsPlansUtilizationDetailsResponse] = service.getSavingsPlansUtilizationDetails(params).promise().toFuture
+    @inline def getSavingsPlansUtilizationFuture(params: GetSavingsPlansUtilizationRequest): Future[GetSavingsPlansUtilizationResponse] = service.getSavingsPlansUtilization(params).promise().toFuture
+    @inline def getTagsFuture(params: GetTagsRequest): Future[GetTagsResponse] = service.getTags(params).promise().toFuture
+    @inline def getUsageForecastFuture(params: GetUsageForecastRequest): Future[GetUsageForecastResponse] = service.getUsageForecast(params).promise().toFuture
+    @inline def listCostCategoryDefinitionsFuture(params: ListCostCategoryDefinitionsRequest): Future[ListCostCategoryDefinitionsResponse] = service.listCostCategoryDefinitions(params).promise().toFuture
+    @inline def updateCostCategoryDefinitionFuture(params: UpdateCostCategoryDefinitionRequest): Future[UpdateCostCategoryDefinitionResponse] = service.updateCostCategoryDefinition(params).promise().toFuture
   }
 }
 
@@ -154,51 +117,25 @@ package costexplorer {
   class CostExplorer() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createCostCategoryDefinition(
-        params: CreateCostCategoryDefinitionRequest
-    ): Request[CreateCostCategoryDefinitionResponse] = js.native
-    def deleteCostCategoryDefinition(
-        params: DeleteCostCategoryDefinitionRequest
-    ): Request[DeleteCostCategoryDefinitionResponse] = js.native
-    def describeCostCategoryDefinition(
-        params: DescribeCostCategoryDefinitionRequest
-    ): Request[DescribeCostCategoryDefinitionResponse] = js.native
+    def createCostCategoryDefinition(params: CreateCostCategoryDefinitionRequest): Request[CreateCostCategoryDefinitionResponse] = js.native
+    def deleteCostCategoryDefinition(params: DeleteCostCategoryDefinitionRequest): Request[DeleteCostCategoryDefinitionResponse] = js.native
+    def describeCostCategoryDefinition(params: DescribeCostCategoryDefinitionRequest): Request[DescribeCostCategoryDefinitionResponse] = js.native
     def getCostAndUsage(params: GetCostAndUsageRequest): Request[GetCostAndUsageResponse] = js.native
-    def getCostAndUsageWithResources(
-        params: GetCostAndUsageWithResourcesRequest
-    ): Request[GetCostAndUsageWithResourcesResponse] = js.native
+    def getCostAndUsageWithResources(params: GetCostAndUsageWithResourcesRequest): Request[GetCostAndUsageWithResourcesResponse] = js.native
     def getCostForecast(params: GetCostForecastRequest): Request[GetCostForecastResponse] = js.native
     def getDimensionValues(params: GetDimensionValuesRequest): Request[GetDimensionValuesResponse] = js.native
-    def getReservationCoverage(params: GetReservationCoverageRequest): Request[GetReservationCoverageResponse] =
-      js.native
-    def getReservationPurchaseRecommendation(
-        params: GetReservationPurchaseRecommendationRequest
-    ): Request[GetReservationPurchaseRecommendationResponse] = js.native
-    def getReservationUtilization(
-        params: GetReservationUtilizationRequest
-    ): Request[GetReservationUtilizationResponse] = js.native
-    def getRightsizingRecommendation(
-        params: GetRightsizingRecommendationRequest
-    ): Request[GetRightsizingRecommendationResponse] = js.native
-    def getSavingsPlansCoverage(params: GetSavingsPlansCoverageRequest): Request[GetSavingsPlansCoverageResponse] =
-      js.native
-    def getSavingsPlansPurchaseRecommendation(
-        params: GetSavingsPlansPurchaseRecommendationRequest
-    ): Request[GetSavingsPlansPurchaseRecommendationResponse] = js.native
-    def getSavingsPlansUtilization(
-        params: GetSavingsPlansUtilizationRequest
-    ): Request[GetSavingsPlansUtilizationResponse] = js.native
-    def getSavingsPlansUtilizationDetails(
-        params: GetSavingsPlansUtilizationDetailsRequest
-    ): Request[GetSavingsPlansUtilizationDetailsResponse] = js.native
+    def getReservationCoverage(params: GetReservationCoverageRequest): Request[GetReservationCoverageResponse] = js.native
+    def getReservationPurchaseRecommendation(params: GetReservationPurchaseRecommendationRequest): Request[GetReservationPurchaseRecommendationResponse] = js.native
+    def getReservationUtilization(params: GetReservationUtilizationRequest): Request[GetReservationUtilizationResponse] = js.native
+    def getRightsizingRecommendation(params: GetRightsizingRecommendationRequest): Request[GetRightsizingRecommendationResponse] = js.native
+    def getSavingsPlansCoverage(params: GetSavingsPlansCoverageRequest): Request[GetSavingsPlansCoverageResponse] = js.native
+    def getSavingsPlansPurchaseRecommendation(params: GetSavingsPlansPurchaseRecommendationRequest): Request[GetSavingsPlansPurchaseRecommendationResponse] = js.native
+    def getSavingsPlansUtilization(params: GetSavingsPlansUtilizationRequest): Request[GetSavingsPlansUtilizationResponse] = js.native
+    def getSavingsPlansUtilizationDetails(params: GetSavingsPlansUtilizationDetailsRequest): Request[GetSavingsPlansUtilizationDetailsResponse] = js.native
     def getTags(params: GetTagsRequest): Request[GetTagsResponse] = js.native
     def getUsageForecast(params: GetUsageForecastRequest): Request[GetUsageForecastResponse] = js.native
-    def listCostCategoryDefinitions(
-        params: ListCostCategoryDefinitionsRequest
-    ): Request[ListCostCategoryDefinitionsResponse] = js.native
-    def updateCostCategoryDefinition(
-        params: UpdateCostCategoryDefinitionRequest
-    ): Request[UpdateCostCategoryDefinitionResponse] = js.native
+    def listCostCategoryDefinitions(params: ListCostCategoryDefinitionsRequest): Request[ListCostCategoryDefinitionsResponse] = js.native
+    def updateCostCategoryDefinition(params: UpdateCostCategoryDefinitionRequest): Request[UpdateCostCategoryDefinitionResponse] = js.native
   }
 
   @js.native
@@ -463,14 +400,10 @@ package costexplorer {
         TotalRunningNormalizedUnits: js.UndefOr[TotalRunningNormalizedUnits] = js.undefined
     ): CoverageNormalizedUnits = {
       val __obj = js.Dynamic.literal()
-      CoverageNormalizedUnitsPercentage.foreach(__v =>
-        __obj.updateDynamic("CoverageNormalizedUnitsPercentage")(__v.asInstanceOf[js.Any])
-      )
+      CoverageNormalizedUnitsPercentage.foreach(__v => __obj.updateDynamic("CoverageNormalizedUnitsPercentage")(__v.asInstanceOf[js.Any]))
       OnDemandNormalizedUnits.foreach(__v => __obj.updateDynamic("OnDemandNormalizedUnits")(__v.asInstanceOf[js.Any]))
       ReservedNormalizedUnits.foreach(__v => __obj.updateDynamic("ReservedNormalizedUnits")(__v.asInstanceOf[js.Any]))
-      TotalRunningNormalizedUnits.foreach(__v =>
-        __obj.updateDynamic("TotalRunningNormalizedUnits")(__v.asInstanceOf[js.Any])
-      )
+      TotalRunningNormalizedUnits.foreach(__v => __obj.updateDynamic("TotalRunningNormalizedUnits")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CoverageNormalizedUnits]
     }
   }
@@ -555,22 +488,14 @@ package costexplorer {
       CurrencyCode.foreach(__v => __obj.updateDynamic("CurrencyCode")(__v.asInstanceOf[js.Any]))
       InstanceName.foreach(__v => __obj.updateDynamic("InstanceName")(__v.asInstanceOf[js.Any]))
       MonthlyCost.foreach(__v => __obj.updateDynamic("MonthlyCost")(__v.asInstanceOf[js.Any]))
-      OnDemandHoursInLookbackPeriod.foreach(__v =>
-        __obj.updateDynamic("OnDemandHoursInLookbackPeriod")(__v.asInstanceOf[js.Any])
-      )
-      ReservationCoveredHoursInLookbackPeriod.foreach(__v =>
-        __obj.updateDynamic("ReservationCoveredHoursInLookbackPeriod")(__v.asInstanceOf[js.Any])
-      )
+      OnDemandHoursInLookbackPeriod.foreach(__v => __obj.updateDynamic("OnDemandHoursInLookbackPeriod")(__v.asInstanceOf[js.Any]))
+      ReservationCoveredHoursInLookbackPeriod.foreach(__v => __obj.updateDynamic("ReservationCoveredHoursInLookbackPeriod")(__v.asInstanceOf[js.Any]))
       ResourceDetails.foreach(__v => __obj.updateDynamic("ResourceDetails")(__v.asInstanceOf[js.Any]))
       ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
       ResourceUtilization.foreach(__v => __obj.updateDynamic("ResourceUtilization")(__v.asInstanceOf[js.Any]))
-      SavingsPlansCoveredHoursInLookbackPeriod.foreach(__v =>
-        __obj.updateDynamic("SavingsPlansCoveredHoursInLookbackPeriod")(__v.asInstanceOf[js.Any])
-      )
+      SavingsPlansCoveredHoursInLookbackPeriod.foreach(__v => __obj.updateDynamic("SavingsPlansCoveredHoursInLookbackPeriod")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      TotalRunningHoursInLookbackPeriod.foreach(__v =>
-        __obj.updateDynamic("TotalRunningHoursInLookbackPeriod")(__v.asInstanceOf[js.Any])
-      )
+      TotalRunningHoursInLookbackPeriod.foreach(__v => __obj.updateDynamic("TotalRunningHoursInLookbackPeriod")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CurrentInstance]
     }
   }
@@ -889,15 +814,9 @@ package costexplorer {
         MaxStorageUtilizationPercentage: js.UndefOr[GenericString] = js.undefined
     ): EC2ResourceUtilization = {
       val __obj = js.Dynamic.literal()
-      MaxCpuUtilizationPercentage.foreach(__v =>
-        __obj.updateDynamic("MaxCpuUtilizationPercentage")(__v.asInstanceOf[js.Any])
-      )
-      MaxMemoryUtilizationPercentage.foreach(__v =>
-        __obj.updateDynamic("MaxMemoryUtilizationPercentage")(__v.asInstanceOf[js.Any])
-      )
-      MaxStorageUtilizationPercentage.foreach(__v =>
-        __obj.updateDynamic("MaxStorageUtilizationPercentage")(__v.asInstanceOf[js.Any])
-      )
+      MaxCpuUtilizationPercentage.foreach(__v => __obj.updateDynamic("MaxCpuUtilizationPercentage")(__v.asInstanceOf[js.Any]))
+      MaxMemoryUtilizationPercentage.foreach(__v => __obj.updateDynamic("MaxMemoryUtilizationPercentage")(__v.asInstanceOf[js.Any]))
+      MaxStorageUtilizationPercentage.foreach(__v => __obj.updateDynamic("MaxStorageUtilizationPercentage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EC2ResourceUtilization]
     }
   }
@@ -1050,12 +969,8 @@ package costexplorer {
     ): ForecastResult = {
       val __obj = js.Dynamic.literal()
       MeanValue.foreach(__v => __obj.updateDynamic("MeanValue")(__v.asInstanceOf[js.Any]))
-      PredictionIntervalLowerBound.foreach(__v =>
-        __obj.updateDynamic("PredictionIntervalLowerBound")(__v.asInstanceOf[js.Any])
-      )
-      PredictionIntervalUpperBound.foreach(__v =>
-        __obj.updateDynamic("PredictionIntervalUpperBound")(__v.asInstanceOf[js.Any])
-      )
+      PredictionIntervalLowerBound.foreach(__v => __obj.updateDynamic("PredictionIntervalLowerBound")(__v.asInstanceOf[js.Any]))
+      PredictionIntervalUpperBound.foreach(__v => __obj.updateDynamic("PredictionIntervalUpperBound")(__v.asInstanceOf[js.Any]))
       TimePeriod.foreach(__v => __obj.updateDynamic("TimePeriod")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ForecastResult]
     }
@@ -1507,9 +1422,7 @@ package costexplorer {
       Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
       NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
-      RightsizingRecommendations.foreach(__v =>
-        __obj.updateDynamic("RightsizingRecommendations")(__v.asInstanceOf[js.Any])
-      )
+      RightsizingRecommendations.foreach(__v => __obj.updateDynamic("RightsizingRecommendations")(__v.asInstanceOf[js.Any]))
       Summary.foreach(__v => __obj.updateDynamic("Summary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRightsizingRecommendationResponse]
     }
@@ -1628,9 +1541,7 @@ package costexplorer {
       val __obj = js.Dynamic.literal()
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
       NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
-      SavingsPlansPurchaseRecommendation.foreach(__v =>
-        __obj.updateDynamic("SavingsPlansPurchaseRecommendation")(__v.asInstanceOf[js.Any])
-      )
+      SavingsPlansPurchaseRecommendation.foreach(__v => __obj.updateDynamic("SavingsPlansPurchaseRecommendation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSavingsPlansPurchaseRecommendationResponse]
     }
   }
@@ -1729,9 +1640,7 @@ package costexplorer {
         "Total" -> Total.asInstanceOf[js.Any]
       )
 
-      SavingsPlansUtilizationsByTime.foreach(__v =>
-        __obj.updateDynamic("SavingsPlansUtilizationsByTime")(__v.asInstanceOf[js.Any])
-      )
+      SavingsPlansUtilizationsByTime.foreach(__v => __obj.updateDynamic("SavingsPlansUtilizationsByTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSavingsPlansUtilizationResponse]
     }
   }
@@ -1927,9 +1836,7 @@ package costexplorer {
       val __obj = js.Dynamic.literal()
       EC2InstanceDetails.foreach(__v => __obj.updateDynamic("EC2InstanceDetails")(__v.asInstanceOf[js.Any]))
       ESInstanceDetails.foreach(__v => __obj.updateDynamic("ESInstanceDetails")(__v.asInstanceOf[js.Any]))
-      ElastiCacheInstanceDetails.foreach(__v =>
-        __obj.updateDynamic("ElastiCacheInstanceDetails")(__v.asInstanceOf[js.Any])
-      )
+      ElastiCacheInstanceDetails.foreach(__v => __obj.updateDynamic("ElastiCacheInstanceDetails")(__v.asInstanceOf[js.Any]))
       RDSInstanceDetails.foreach(__v => __obj.updateDynamic("RDSInstanceDetails")(__v.asInstanceOf[js.Any]))
       RedshiftInstanceDetails.foreach(__v => __obj.updateDynamic("RedshiftInstanceDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceDetails]
@@ -2011,17 +1918,7 @@ package costexplorer {
     val USAGE_QUANTITY = "USAGE_QUANTITY".asInstanceOf[Metric]
     val NORMALIZED_USAGE_AMOUNT = "NORMALIZED_USAGE_AMOUNT".asInstanceOf[Metric]
 
-    val values = js.Object.freeze(
-      js.Array(
-        BLENDED_COST,
-        UNBLENDED_COST,
-        AMORTIZED_COST,
-        NET_UNBLENDED_COST,
-        NET_AMORTIZED_COST,
-        USAGE_QUANTITY,
-        NORMALIZED_USAGE_AMOUNT
-      )
-    )
+    val values = js.Object.freeze(js.Array(BLENDED_COST, UNBLENDED_COST, AMORTIZED_COST, NET_UNBLENDED_COST, NET_AMORTIZED_COST, USAGE_QUANTITY, NORMALIZED_USAGE_AMOUNT))
   }
 
   /**
@@ -2084,9 +1981,7 @@ package costexplorer {
     val MEDIUM_UTILIZATION = "MEDIUM_UTILIZATION".asInstanceOf[PaymentOption]
     val HEAVY_UTILIZATION = "HEAVY_UTILIZATION".asInstanceOf[PaymentOption]
 
-    val values = js.Object.freeze(
-      js.Array(NO_UPFRONT, PARTIAL_UPFRONT, ALL_UPFRONT, LIGHT_UTILIZATION, MEDIUM_UTILIZATION, HEAVY_UTILIZATION)
-    )
+    val values = js.Object.freeze(js.Array(NO_UPFRONT, PARTIAL_UPFRONT, ALL_UPFRONT, LIGHT_UTILIZATION, MEDIUM_UTILIZATION, HEAVY_UTILIZATION))
   }
 
   /**
@@ -2215,9 +2110,7 @@ package costexplorer {
       AmortizedRecurringFee.foreach(__v => __obj.updateDynamic("AmortizedRecurringFee")(__v.asInstanceOf[js.Any]))
       AmortizedUpfrontFee.foreach(__v => __obj.updateDynamic("AmortizedUpfrontFee")(__v.asInstanceOf[js.Any]))
       NetRISavings.foreach(__v => __obj.updateDynamic("NetRISavings")(__v.asInstanceOf[js.Any]))
-      OnDemandCostOfRIHoursUsed.foreach(__v =>
-        __obj.updateDynamic("OnDemandCostOfRIHoursUsed")(__v.asInstanceOf[js.Any])
-      )
+      OnDemandCostOfRIHoursUsed.foreach(__v => __obj.updateDynamic("OnDemandCostOfRIHoursUsed")(__v.asInstanceOf[js.Any]))
       PurchasedHours.foreach(__v => __obj.updateDynamic("PurchasedHours")(__v.asInstanceOf[js.Any]))
       PurchasedUnits.foreach(__v => __obj.updateDynamic("PurchasedUnits")(__v.asInstanceOf[js.Any]))
       TotalActualHours.foreach(__v => __obj.updateDynamic("TotalActualHours")(__v.asInstanceOf[js.Any]))
@@ -2227,9 +2120,7 @@ package costexplorer {
       UnusedHours.foreach(__v => __obj.updateDynamic("UnusedHours")(__v.asInstanceOf[js.Any]))
       UnusedUnits.foreach(__v => __obj.updateDynamic("UnusedUnits")(__v.asInstanceOf[js.Any]))
       UtilizationPercentage.foreach(__v => __obj.updateDynamic("UtilizationPercentage")(__v.asInstanceOf[js.Any]))
-      UtilizationPercentageInUnits.foreach(__v =>
-        __obj.updateDynamic("UtilizationPercentageInUnits")(__v.asInstanceOf[js.Any])
-      )
+      UtilizationPercentageInUnits.foreach(__v => __obj.updateDynamic("UtilizationPercentageInUnits")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReservationAggregates]
     }
   }
@@ -2344,51 +2235,23 @@ package costexplorer {
     ): ReservationPurchaseRecommendationDetail = {
       val __obj = js.Dynamic.literal()
       AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
-      AverageNormalizedUnitsUsedPerHour.foreach(__v =>
-        __obj.updateDynamic("AverageNormalizedUnitsUsedPerHour")(__v.asInstanceOf[js.Any])
-      )
-      AverageNumberOfInstancesUsedPerHour.foreach(__v =>
-        __obj.updateDynamic("AverageNumberOfInstancesUsedPerHour")(__v.asInstanceOf[js.Any])
-      )
+      AverageNormalizedUnitsUsedPerHour.foreach(__v => __obj.updateDynamic("AverageNormalizedUnitsUsedPerHour")(__v.asInstanceOf[js.Any]))
+      AverageNumberOfInstancesUsedPerHour.foreach(__v => __obj.updateDynamic("AverageNumberOfInstancesUsedPerHour")(__v.asInstanceOf[js.Any]))
       AverageUtilization.foreach(__v => __obj.updateDynamic("AverageUtilization")(__v.asInstanceOf[js.Any]))
       CurrencyCode.foreach(__v => __obj.updateDynamic("CurrencyCode")(__v.asInstanceOf[js.Any]))
-      EstimatedBreakEvenInMonths.foreach(__v =>
-        __obj.updateDynamic("EstimatedBreakEvenInMonths")(__v.asInstanceOf[js.Any])
-      )
-      EstimatedMonthlyOnDemandCost.foreach(__v =>
-        __obj.updateDynamic("EstimatedMonthlyOnDemandCost")(__v.asInstanceOf[js.Any])
-      )
-      EstimatedMonthlySavingsAmount.foreach(__v =>
-        __obj.updateDynamic("EstimatedMonthlySavingsAmount")(__v.asInstanceOf[js.Any])
-      )
-      EstimatedMonthlySavingsPercentage.foreach(__v =>
-        __obj.updateDynamic("EstimatedMonthlySavingsPercentage")(__v.asInstanceOf[js.Any])
-      )
-      EstimatedReservationCostForLookbackPeriod.foreach(__v =>
-        __obj.updateDynamic("EstimatedReservationCostForLookbackPeriod")(__v.asInstanceOf[js.Any])
-      )
+      EstimatedBreakEvenInMonths.foreach(__v => __obj.updateDynamic("EstimatedBreakEvenInMonths")(__v.asInstanceOf[js.Any]))
+      EstimatedMonthlyOnDemandCost.foreach(__v => __obj.updateDynamic("EstimatedMonthlyOnDemandCost")(__v.asInstanceOf[js.Any]))
+      EstimatedMonthlySavingsAmount.foreach(__v => __obj.updateDynamic("EstimatedMonthlySavingsAmount")(__v.asInstanceOf[js.Any]))
+      EstimatedMonthlySavingsPercentage.foreach(__v => __obj.updateDynamic("EstimatedMonthlySavingsPercentage")(__v.asInstanceOf[js.Any]))
+      EstimatedReservationCostForLookbackPeriod.foreach(__v => __obj.updateDynamic("EstimatedReservationCostForLookbackPeriod")(__v.asInstanceOf[js.Any]))
       InstanceDetails.foreach(__v => __obj.updateDynamic("InstanceDetails")(__v.asInstanceOf[js.Any]))
-      MaximumNormalizedUnitsUsedPerHour.foreach(__v =>
-        __obj.updateDynamic("MaximumNormalizedUnitsUsedPerHour")(__v.asInstanceOf[js.Any])
-      )
-      MaximumNumberOfInstancesUsedPerHour.foreach(__v =>
-        __obj.updateDynamic("MaximumNumberOfInstancesUsedPerHour")(__v.asInstanceOf[js.Any])
-      )
-      MinimumNormalizedUnitsUsedPerHour.foreach(__v =>
-        __obj.updateDynamic("MinimumNormalizedUnitsUsedPerHour")(__v.asInstanceOf[js.Any])
-      )
-      MinimumNumberOfInstancesUsedPerHour.foreach(__v =>
-        __obj.updateDynamic("MinimumNumberOfInstancesUsedPerHour")(__v.asInstanceOf[js.Any])
-      )
-      RecommendedNormalizedUnitsToPurchase.foreach(__v =>
-        __obj.updateDynamic("RecommendedNormalizedUnitsToPurchase")(__v.asInstanceOf[js.Any])
-      )
-      RecommendedNumberOfInstancesToPurchase.foreach(__v =>
-        __obj.updateDynamic("RecommendedNumberOfInstancesToPurchase")(__v.asInstanceOf[js.Any])
-      )
-      RecurringStandardMonthlyCost.foreach(__v =>
-        __obj.updateDynamic("RecurringStandardMonthlyCost")(__v.asInstanceOf[js.Any])
-      )
+      MaximumNormalizedUnitsUsedPerHour.foreach(__v => __obj.updateDynamic("MaximumNormalizedUnitsUsedPerHour")(__v.asInstanceOf[js.Any]))
+      MaximumNumberOfInstancesUsedPerHour.foreach(__v => __obj.updateDynamic("MaximumNumberOfInstancesUsedPerHour")(__v.asInstanceOf[js.Any]))
+      MinimumNormalizedUnitsUsedPerHour.foreach(__v => __obj.updateDynamic("MinimumNormalizedUnitsUsedPerHour")(__v.asInstanceOf[js.Any]))
+      MinimumNumberOfInstancesUsedPerHour.foreach(__v => __obj.updateDynamic("MinimumNumberOfInstancesUsedPerHour")(__v.asInstanceOf[js.Any]))
+      RecommendedNormalizedUnitsToPurchase.foreach(__v => __obj.updateDynamic("RecommendedNormalizedUnitsToPurchase")(__v.asInstanceOf[js.Any]))
+      RecommendedNumberOfInstancesToPurchase.foreach(__v => __obj.updateDynamic("RecommendedNumberOfInstancesToPurchase")(__v.asInstanceOf[js.Any]))
+      RecurringStandardMonthlyCost.foreach(__v => __obj.updateDynamic("RecurringStandardMonthlyCost")(__v.asInstanceOf[js.Any]))
       UpfrontCost.foreach(__v => __obj.updateDynamic("UpfrontCost")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReservationPurchaseRecommendationDetail]
     }
@@ -2435,12 +2298,8 @@ package costexplorer {
     ): ReservationPurchaseRecommendationSummary = {
       val __obj = js.Dynamic.literal()
       CurrencyCode.foreach(__v => __obj.updateDynamic("CurrencyCode")(__v.asInstanceOf[js.Any]))
-      TotalEstimatedMonthlySavingsAmount.foreach(__v =>
-        __obj.updateDynamic("TotalEstimatedMonthlySavingsAmount")(__v.asInstanceOf[js.Any])
-      )
-      TotalEstimatedMonthlySavingsPercentage.foreach(__v =>
-        __obj.updateDynamic("TotalEstimatedMonthlySavingsPercentage")(__v.asInstanceOf[js.Any])
-      )
+      TotalEstimatedMonthlySavingsAmount.foreach(__v => __obj.updateDynamic("TotalEstimatedMonthlySavingsAmount")(__v.asInstanceOf[js.Any]))
+      TotalEstimatedMonthlySavingsPercentage.foreach(__v => __obj.updateDynamic("TotalEstimatedMonthlySavingsPercentage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReservationPurchaseRecommendationSummary]
     }
   }
@@ -2563,13 +2422,9 @@ package costexplorer {
       val __obj = js.Dynamic.literal()
       AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
       CurrentInstance.foreach(__v => __obj.updateDynamic("CurrentInstance")(__v.asInstanceOf[js.Any]))
-      ModifyRecommendationDetail.foreach(__v =>
-        __obj.updateDynamic("ModifyRecommendationDetail")(__v.asInstanceOf[js.Any])
-      )
+      ModifyRecommendationDetail.foreach(__v => __obj.updateDynamic("ModifyRecommendationDetail")(__v.asInstanceOf[js.Any]))
       RightsizingType.foreach(__v => __obj.updateDynamic("RightsizingType")(__v.asInstanceOf[js.Any]))
-      TerminateRecommendationDetail.foreach(__v =>
-        __obj.updateDynamic("TerminateRecommendationDetail")(__v.asInstanceOf[js.Any])
-      )
+      TerminateRecommendationDetail.foreach(__v => __obj.updateDynamic("TerminateRecommendationDetail")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RightsizingRecommendation]
     }
   }
@@ -2643,9 +2498,7 @@ package costexplorer {
         TotalRecommendationCount: js.UndefOr[GenericString] = js.undefined
     ): RightsizingRecommendationSummary = {
       val __obj = js.Dynamic.literal()
-      EstimatedTotalMonthlySavingsAmount.foreach(__v =>
-        __obj.updateDynamic("EstimatedTotalMonthlySavingsAmount")(__v.asInstanceOf[js.Any])
-      )
+      EstimatedTotalMonthlySavingsAmount.foreach(__v => __obj.updateDynamic("EstimatedTotalMonthlySavingsAmount")(__v.asInstanceOf[js.Any]))
       SavingsCurrencyCode.foreach(__v => __obj.updateDynamic("SavingsCurrencyCode")(__v.asInstanceOf[js.Any]))
       SavingsPercentage.foreach(__v => __obj.updateDynamic("SavingsPercentage")(__v.asInstanceOf[js.Any]))
       TotalRecommendationCount.foreach(__v => __obj.updateDynamic("TotalRecommendationCount")(__v.asInstanceOf[js.Any]))
@@ -2680,12 +2533,8 @@ package costexplorer {
         TotalAmortizedCommitment: js.UndefOr[GenericString] = js.undefined
     ): SavingsPlansAmortizedCommitment = {
       val __obj = js.Dynamic.literal()
-      AmortizedRecurringCommitment.foreach(__v =>
-        __obj.updateDynamic("AmortizedRecurringCommitment")(__v.asInstanceOf[js.Any])
-      )
-      AmortizedUpfrontCommitment.foreach(__v =>
-        __obj.updateDynamic("AmortizedUpfrontCommitment")(__v.asInstanceOf[js.Any])
-      )
+      AmortizedRecurringCommitment.foreach(__v => __obj.updateDynamic("AmortizedRecurringCommitment")(__v.asInstanceOf[js.Any]))
+      AmortizedUpfrontCommitment.foreach(__v => __obj.updateDynamic("AmortizedUpfrontCommitment")(__v.asInstanceOf[js.Any]))
       TotalAmortizedCommitment.foreach(__v => __obj.updateDynamic("TotalAmortizedCommitment")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SavingsPlansAmortizedCommitment]
     }
@@ -2738,9 +2587,7 @@ package costexplorer {
       val __obj = js.Dynamic.literal()
       CoveragePercentage.foreach(__v => __obj.updateDynamic("CoveragePercentage")(__v.asInstanceOf[js.Any]))
       OnDemandCost.foreach(__v => __obj.updateDynamic("OnDemandCost")(__v.asInstanceOf[js.Any]))
-      SpendCoveredBySavingsPlans.foreach(__v =>
-        __obj.updateDynamic("SpendCoveredBySavingsPlans")(__v.asInstanceOf[js.Any])
-      )
+      SpendCoveredBySavingsPlans.foreach(__v => __obj.updateDynamic("SpendCoveredBySavingsPlans")(__v.asInstanceOf[js.Any]))
       TotalCost.foreach(__v => __obj.updateDynamic("TotalCost")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SavingsPlansCoverageData]
     }
@@ -2791,8 +2638,7 @@ package costexplorer {
         AccountScope: js.UndefOr[AccountScope] = js.undefined,
         LookbackPeriodInDays: js.UndefOr[LookbackPeriodInDays] = js.undefined,
         PaymentOption: js.UndefOr[PaymentOption] = js.undefined,
-        SavingsPlansPurchaseRecommendationDetails: js.UndefOr[SavingsPlansPurchaseRecommendationDetailList] =
-          js.undefined,
+        SavingsPlansPurchaseRecommendationDetails: js.UndefOr[SavingsPlansPurchaseRecommendationDetailList] = js.undefined,
         SavingsPlansPurchaseRecommendationSummary: js.UndefOr[SavingsPlansPurchaseRecommendationSummary] = js.undefined,
         SavingsPlansType: js.UndefOr[SupportedSavingsPlansType] = js.undefined,
         TermInYears: js.UndefOr[TermInYears] = js.undefined
@@ -2801,12 +2647,8 @@ package costexplorer {
       AccountScope.foreach(__v => __obj.updateDynamic("AccountScope")(__v.asInstanceOf[js.Any]))
       LookbackPeriodInDays.foreach(__v => __obj.updateDynamic("LookbackPeriodInDays")(__v.asInstanceOf[js.Any]))
       PaymentOption.foreach(__v => __obj.updateDynamic("PaymentOption")(__v.asInstanceOf[js.Any]))
-      SavingsPlansPurchaseRecommendationDetails.foreach(__v =>
-        __obj.updateDynamic("SavingsPlansPurchaseRecommendationDetails")(__v.asInstanceOf[js.Any])
-      )
-      SavingsPlansPurchaseRecommendationSummary.foreach(__v =>
-        __obj.updateDynamic("SavingsPlansPurchaseRecommendationSummary")(__v.asInstanceOf[js.Any])
-      )
+      SavingsPlansPurchaseRecommendationDetails.foreach(__v => __obj.updateDynamic("SavingsPlansPurchaseRecommendationDetails")(__v.asInstanceOf[js.Any]))
+      SavingsPlansPurchaseRecommendationSummary.foreach(__v => __obj.updateDynamic("SavingsPlansPurchaseRecommendationSummary")(__v.asInstanceOf[js.Any]))
       SavingsPlansType.foreach(__v => __obj.updateDynamic("SavingsPlansType")(__v.asInstanceOf[js.Any]))
       TermInYears.foreach(__v => __obj.updateDynamic("TermInYears")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SavingsPlansPurchaseRecommendation]
@@ -2859,34 +2701,18 @@ package costexplorer {
       val __obj = js.Dynamic.literal()
       AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
       CurrencyCode.foreach(__v => __obj.updateDynamic("CurrencyCode")(__v.asInstanceOf[js.Any]))
-      CurrentAverageHourlyOnDemandSpend.foreach(__v =>
-        __obj.updateDynamic("CurrentAverageHourlyOnDemandSpend")(__v.asInstanceOf[js.Any])
-      )
-      CurrentMaximumHourlyOnDemandSpend.foreach(__v =>
-        __obj.updateDynamic("CurrentMaximumHourlyOnDemandSpend")(__v.asInstanceOf[js.Any])
-      )
-      CurrentMinimumHourlyOnDemandSpend.foreach(__v =>
-        __obj.updateDynamic("CurrentMinimumHourlyOnDemandSpend")(__v.asInstanceOf[js.Any])
-      )
-      EstimatedAverageUtilization.foreach(__v =>
-        __obj.updateDynamic("EstimatedAverageUtilization")(__v.asInstanceOf[js.Any])
-      )
-      EstimatedMonthlySavingsAmount.foreach(__v =>
-        __obj.updateDynamic("EstimatedMonthlySavingsAmount")(__v.asInstanceOf[js.Any])
-      )
+      CurrentAverageHourlyOnDemandSpend.foreach(__v => __obj.updateDynamic("CurrentAverageHourlyOnDemandSpend")(__v.asInstanceOf[js.Any]))
+      CurrentMaximumHourlyOnDemandSpend.foreach(__v => __obj.updateDynamic("CurrentMaximumHourlyOnDemandSpend")(__v.asInstanceOf[js.Any]))
+      CurrentMinimumHourlyOnDemandSpend.foreach(__v => __obj.updateDynamic("CurrentMinimumHourlyOnDemandSpend")(__v.asInstanceOf[js.Any]))
+      EstimatedAverageUtilization.foreach(__v => __obj.updateDynamic("EstimatedAverageUtilization")(__v.asInstanceOf[js.Any]))
+      EstimatedMonthlySavingsAmount.foreach(__v => __obj.updateDynamic("EstimatedMonthlySavingsAmount")(__v.asInstanceOf[js.Any]))
       EstimatedOnDemandCost.foreach(__v => __obj.updateDynamic("EstimatedOnDemandCost")(__v.asInstanceOf[js.Any]))
-      EstimatedOnDemandCostWithCurrentCommitment.foreach(__v =>
-        __obj.updateDynamic("EstimatedOnDemandCostWithCurrentCommitment")(__v.asInstanceOf[js.Any])
-      )
+      EstimatedOnDemandCostWithCurrentCommitment.foreach(__v => __obj.updateDynamic("EstimatedOnDemandCostWithCurrentCommitment")(__v.asInstanceOf[js.Any]))
       EstimatedROI.foreach(__v => __obj.updateDynamic("EstimatedROI")(__v.asInstanceOf[js.Any]))
       EstimatedSPCost.foreach(__v => __obj.updateDynamic("EstimatedSPCost")(__v.asInstanceOf[js.Any]))
       EstimatedSavingsAmount.foreach(__v => __obj.updateDynamic("EstimatedSavingsAmount")(__v.asInstanceOf[js.Any]))
-      EstimatedSavingsPercentage.foreach(__v =>
-        __obj.updateDynamic("EstimatedSavingsPercentage")(__v.asInstanceOf[js.Any])
-      )
-      HourlyCommitmentToPurchase.foreach(__v =>
-        __obj.updateDynamic("HourlyCommitmentToPurchase")(__v.asInstanceOf[js.Any])
-      )
+      EstimatedSavingsPercentage.foreach(__v => __obj.updateDynamic("EstimatedSavingsPercentage")(__v.asInstanceOf[js.Any]))
+      HourlyCommitmentToPurchase.foreach(__v => __obj.updateDynamic("HourlyCommitmentToPurchase")(__v.asInstanceOf[js.Any]))
       SavingsPlansDetails.foreach(__v => __obj.updateDynamic("SavingsPlansDetails")(__v.asInstanceOf[js.Any]))
       UpfrontCost.foreach(__v => __obj.updateDynamic("UpfrontCost")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SavingsPlansPurchaseRecommendationDetail]
@@ -2951,24 +2777,14 @@ package costexplorer {
       val __obj = js.Dynamic.literal()
       CurrencyCode.foreach(__v => __obj.updateDynamic("CurrencyCode")(__v.asInstanceOf[js.Any]))
       CurrentOnDemandSpend.foreach(__v => __obj.updateDynamic("CurrentOnDemandSpend")(__v.asInstanceOf[js.Any]))
-      DailyCommitmentToPurchase.foreach(__v =>
-        __obj.updateDynamic("DailyCommitmentToPurchase")(__v.asInstanceOf[js.Any])
-      )
-      EstimatedMonthlySavingsAmount.foreach(__v =>
-        __obj.updateDynamic("EstimatedMonthlySavingsAmount")(__v.asInstanceOf[js.Any])
-      )
-      EstimatedOnDemandCostWithCurrentCommitment.foreach(__v =>
-        __obj.updateDynamic("EstimatedOnDemandCostWithCurrentCommitment")(__v.asInstanceOf[js.Any])
-      )
+      DailyCommitmentToPurchase.foreach(__v => __obj.updateDynamic("DailyCommitmentToPurchase")(__v.asInstanceOf[js.Any]))
+      EstimatedMonthlySavingsAmount.foreach(__v => __obj.updateDynamic("EstimatedMonthlySavingsAmount")(__v.asInstanceOf[js.Any]))
+      EstimatedOnDemandCostWithCurrentCommitment.foreach(__v => __obj.updateDynamic("EstimatedOnDemandCostWithCurrentCommitment")(__v.asInstanceOf[js.Any]))
       EstimatedROI.foreach(__v => __obj.updateDynamic("EstimatedROI")(__v.asInstanceOf[js.Any]))
       EstimatedSavingsAmount.foreach(__v => __obj.updateDynamic("EstimatedSavingsAmount")(__v.asInstanceOf[js.Any]))
-      EstimatedSavingsPercentage.foreach(__v =>
-        __obj.updateDynamic("EstimatedSavingsPercentage")(__v.asInstanceOf[js.Any])
-      )
+      EstimatedSavingsPercentage.foreach(__v => __obj.updateDynamic("EstimatedSavingsPercentage")(__v.asInstanceOf[js.Any]))
       EstimatedTotalCost.foreach(__v => __obj.updateDynamic("EstimatedTotalCost")(__v.asInstanceOf[js.Any]))
-      HourlyCommitmentToPurchase.foreach(__v =>
-        __obj.updateDynamic("HourlyCommitmentToPurchase")(__v.asInstanceOf[js.Any])
-      )
+      HourlyCommitmentToPurchase.foreach(__v => __obj.updateDynamic("HourlyCommitmentToPurchase")(__v.asInstanceOf[js.Any]))
       TotalRecommendationCount.foreach(__v => __obj.updateDynamic("TotalRecommendationCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SavingsPlansPurchaseRecommendationSummary]
     }
@@ -3193,9 +3009,7 @@ package costexplorer {
       DefaultTargetInstance.foreach(__v => __obj.updateDynamic("DefaultTargetInstance")(__v.asInstanceOf[js.Any]))
       EstimatedMonthlyCost.foreach(__v => __obj.updateDynamic("EstimatedMonthlyCost")(__v.asInstanceOf[js.Any]))
       EstimatedMonthlySavings.foreach(__v => __obj.updateDynamic("EstimatedMonthlySavings")(__v.asInstanceOf[js.Any]))
-      ExpectedResourceUtilization.foreach(__v =>
-        __obj.updateDynamic("ExpectedResourceUtilization")(__v.asInstanceOf[js.Any])
-      )
+      ExpectedResourceUtilization.foreach(__v => __obj.updateDynamic("ExpectedResourceUtilization")(__v.asInstanceOf[js.Any]))
       ResourceDetails.foreach(__v => __obj.updateDynamic("ResourceDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TargetInstance]
     }

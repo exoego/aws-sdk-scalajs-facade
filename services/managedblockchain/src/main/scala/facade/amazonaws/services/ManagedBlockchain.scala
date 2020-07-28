@@ -40,45 +40,26 @@ package object managedblockchain {
 
   implicit final class ManagedBlockchainOps(private val service: ManagedBlockchain) extends AnyVal {
 
-    @inline def createMemberFuture(params: CreateMemberInput): Future[CreateMemberOutput] =
-      service.createMember(params).promise().toFuture
-    @inline def createNetworkFuture(params: CreateNetworkInput): Future[CreateNetworkOutput] =
-      service.createNetwork(params).promise().toFuture
-    @inline def createNodeFuture(params: CreateNodeInput): Future[CreateNodeOutput] =
-      service.createNode(params).promise().toFuture
-    @inline def createProposalFuture(params: CreateProposalInput): Future[CreateProposalOutput] =
-      service.createProposal(params).promise().toFuture
-    @inline def deleteMemberFuture(params: DeleteMemberInput): Future[DeleteMemberOutput] =
-      service.deleteMember(params).promise().toFuture
-    @inline def deleteNodeFuture(params: DeleteNodeInput): Future[DeleteNodeOutput] =
-      service.deleteNode(params).promise().toFuture
-    @inline def getMemberFuture(params: GetMemberInput): Future[GetMemberOutput] =
-      service.getMember(params).promise().toFuture
-    @inline def getNetworkFuture(params: GetNetworkInput): Future[GetNetworkOutput] =
-      service.getNetwork(params).promise().toFuture
+    @inline def createMemberFuture(params: CreateMemberInput): Future[CreateMemberOutput] = service.createMember(params).promise().toFuture
+    @inline def createNetworkFuture(params: CreateNetworkInput): Future[CreateNetworkOutput] = service.createNetwork(params).promise().toFuture
+    @inline def createNodeFuture(params: CreateNodeInput): Future[CreateNodeOutput] = service.createNode(params).promise().toFuture
+    @inline def createProposalFuture(params: CreateProposalInput): Future[CreateProposalOutput] = service.createProposal(params).promise().toFuture
+    @inline def deleteMemberFuture(params: DeleteMemberInput): Future[DeleteMemberOutput] = service.deleteMember(params).promise().toFuture
+    @inline def deleteNodeFuture(params: DeleteNodeInput): Future[DeleteNodeOutput] = service.deleteNode(params).promise().toFuture
+    @inline def getMemberFuture(params: GetMemberInput): Future[GetMemberOutput] = service.getMember(params).promise().toFuture
+    @inline def getNetworkFuture(params: GetNetworkInput): Future[GetNetworkOutput] = service.getNetwork(params).promise().toFuture
     @inline def getNodeFuture(params: GetNodeInput): Future[GetNodeOutput] = service.getNode(params).promise().toFuture
-    @inline def getProposalFuture(params: GetProposalInput): Future[GetProposalOutput] =
-      service.getProposal(params).promise().toFuture
-    @inline def listInvitationsFuture(params: ListInvitationsInput): Future[ListInvitationsOutput] =
-      service.listInvitations(params).promise().toFuture
-    @inline def listMembersFuture(params: ListMembersInput): Future[ListMembersOutput] =
-      service.listMembers(params).promise().toFuture
-    @inline def listNetworksFuture(params: ListNetworksInput): Future[ListNetworksOutput] =
-      service.listNetworks(params).promise().toFuture
-    @inline def listNodesFuture(params: ListNodesInput): Future[ListNodesOutput] =
-      service.listNodes(params).promise().toFuture
-    @inline def listProposalVotesFuture(params: ListProposalVotesInput): Future[ListProposalVotesOutput] =
-      service.listProposalVotes(params).promise().toFuture
-    @inline def listProposalsFuture(params: ListProposalsInput): Future[ListProposalsOutput] =
-      service.listProposals(params).promise().toFuture
-    @inline def rejectInvitationFuture(params: RejectInvitationInput): Future[RejectInvitationOutput] =
-      service.rejectInvitation(params).promise().toFuture
-    @inline def updateMemberFuture(params: UpdateMemberInput): Future[UpdateMemberOutput] =
-      service.updateMember(params).promise().toFuture
-    @inline def updateNodeFuture(params: UpdateNodeInput): Future[UpdateNodeOutput] =
-      service.updateNode(params).promise().toFuture
-    @inline def voteOnProposalFuture(params: VoteOnProposalInput): Future[VoteOnProposalOutput] =
-      service.voteOnProposal(params).promise().toFuture
+    @inline def getProposalFuture(params: GetProposalInput): Future[GetProposalOutput] = service.getProposal(params).promise().toFuture
+    @inline def listInvitationsFuture(params: ListInvitationsInput): Future[ListInvitationsOutput] = service.listInvitations(params).promise().toFuture
+    @inline def listMembersFuture(params: ListMembersInput): Future[ListMembersOutput] = service.listMembers(params).promise().toFuture
+    @inline def listNetworksFuture(params: ListNetworksInput): Future[ListNetworksOutput] = service.listNetworks(params).promise().toFuture
+    @inline def listNodesFuture(params: ListNodesInput): Future[ListNodesOutput] = service.listNodes(params).promise().toFuture
+    @inline def listProposalVotesFuture(params: ListProposalVotesInput): Future[ListProposalVotesOutput] = service.listProposalVotes(params).promise().toFuture
+    @inline def listProposalsFuture(params: ListProposalsInput): Future[ListProposalsOutput] = service.listProposals(params).promise().toFuture
+    @inline def rejectInvitationFuture(params: RejectInvitationInput): Future[RejectInvitationOutput] = service.rejectInvitation(params).promise().toFuture
+    @inline def updateMemberFuture(params: UpdateMemberInput): Future[UpdateMemberOutput] = service.updateMember(params).promise().toFuture
+    @inline def updateNodeFuture(params: UpdateNodeInput): Future[UpdateNodeOutput] = service.updateNode(params).promise().toFuture
+    @inline def voteOnProposalFuture(params: VoteOnProposalInput): Future[VoteOnProposalOutput] = service.voteOnProposal(params).promise().toFuture
   }
 }
 
@@ -970,9 +951,7 @@ package managedblockchain {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       FrameworkAttributes.foreach(__v => __obj.updateDynamic("FrameworkAttributes")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      LogPublishingConfiguration.foreach(__v =>
-        __obj.updateDynamic("LogPublishingConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      LogPublishingConfiguration.foreach(__v => __obj.updateDynamic("LogPublishingConfiguration")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       NetworkId.foreach(__v => __obj.updateDynamic("NetworkId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -1005,9 +984,7 @@ package managedblockchain {
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      LogPublishingConfiguration.foreach(__v =>
-        __obj.updateDynamic("LogPublishingConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      LogPublishingConfiguration.foreach(__v => __obj.updateDynamic("LogPublishingConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MemberConfiguration]
     }
   }
@@ -1392,9 +1369,7 @@ package managedblockchain {
       FrameworkAttributes.foreach(__v => __obj.updateDynamic("FrameworkAttributes")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
-      LogPublishingConfiguration.foreach(__v =>
-        __obj.updateDynamic("LogPublishingConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      LogPublishingConfiguration.foreach(__v => __obj.updateDynamic("LogPublishingConfiguration")(__v.asInstanceOf[js.Any]))
       MemberId.foreach(__v => __obj.updateDynamic("MemberId")(__v.asInstanceOf[js.Any]))
       NetworkId.foreach(__v => __obj.updateDynamic("NetworkId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -1424,9 +1399,7 @@ package managedblockchain {
         "InstanceType" -> InstanceType.asInstanceOf[js.Any]
       )
 
-      LogPublishingConfiguration.foreach(__v =>
-        __obj.updateDynamic("LogPublishingConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      LogPublishingConfiguration.foreach(__v => __obj.updateDynamic("LogPublishingConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NodeConfiguration]
     }
   }
@@ -1761,9 +1734,7 @@ package managedblockchain {
         "NetworkId" -> NetworkId.asInstanceOf[js.Any]
       )
 
-      LogPublishingConfiguration.foreach(__v =>
-        __obj.updateDynamic("LogPublishingConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      LogPublishingConfiguration.foreach(__v => __obj.updateDynamic("LogPublishingConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateMemberInput]
     }
   }
@@ -1803,9 +1774,7 @@ package managedblockchain {
         "NodeId" -> NodeId.asInstanceOf[js.Any]
       )
 
-      LogPublishingConfiguration.foreach(__v =>
-        __obj.updateDynamic("LogPublishingConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      LogPublishingConfiguration.foreach(__v => __obj.updateDynamic("LogPublishingConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateNodeInput]
     }
   }

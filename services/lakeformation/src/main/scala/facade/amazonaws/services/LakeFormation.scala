@@ -33,36 +33,19 @@ package object lakeformation {
 
   implicit final class LakeFormationOps(private val service: LakeFormation) extends AnyVal {
 
-    @inline def batchGrantPermissionsFuture(
-        params: BatchGrantPermissionsRequest
-    ): Future[BatchGrantPermissionsResponse] = service.batchGrantPermissions(params).promise().toFuture
-    @inline def batchRevokePermissionsFuture(
-        params: BatchRevokePermissionsRequest
-    ): Future[BatchRevokePermissionsResponse] = service.batchRevokePermissions(params).promise().toFuture
-    @inline def deregisterResourceFuture(params: DeregisterResourceRequest): Future[DeregisterResourceResponse] =
-      service.deregisterResource(params).promise().toFuture
-    @inline def describeResourceFuture(params: DescribeResourceRequest): Future[DescribeResourceResponse] =
-      service.describeResource(params).promise().toFuture
-    @inline def getDataLakeSettingsFuture(params: GetDataLakeSettingsRequest): Future[GetDataLakeSettingsResponse] =
-      service.getDataLakeSettings(params).promise().toFuture
-    @inline def getEffectivePermissionsForPathFuture(
-        params: GetEffectivePermissionsForPathRequest
-    ): Future[GetEffectivePermissionsForPathResponse] =
-      service.getEffectivePermissionsForPath(params).promise().toFuture
-    @inline def grantPermissionsFuture(params: GrantPermissionsRequest): Future[GrantPermissionsResponse] =
-      service.grantPermissions(params).promise().toFuture
-    @inline def listPermissionsFuture(params: ListPermissionsRequest): Future[ListPermissionsResponse] =
-      service.listPermissions(params).promise().toFuture
-    @inline def listResourcesFuture(params: ListResourcesRequest): Future[ListResourcesResponse] =
-      service.listResources(params).promise().toFuture
-    @inline def putDataLakeSettingsFuture(params: PutDataLakeSettingsRequest): Future[PutDataLakeSettingsResponse] =
-      service.putDataLakeSettings(params).promise().toFuture
-    @inline def registerResourceFuture(params: RegisterResourceRequest): Future[RegisterResourceResponse] =
-      service.registerResource(params).promise().toFuture
-    @inline def revokePermissionsFuture(params: RevokePermissionsRequest): Future[RevokePermissionsResponse] =
-      service.revokePermissions(params).promise().toFuture
-    @inline def updateResourceFuture(params: UpdateResourceRequest): Future[UpdateResourceResponse] =
-      service.updateResource(params).promise().toFuture
+    @inline def batchGrantPermissionsFuture(params: BatchGrantPermissionsRequest): Future[BatchGrantPermissionsResponse] = service.batchGrantPermissions(params).promise().toFuture
+    @inline def batchRevokePermissionsFuture(params: BatchRevokePermissionsRequest): Future[BatchRevokePermissionsResponse] = service.batchRevokePermissions(params).promise().toFuture
+    @inline def deregisterResourceFuture(params: DeregisterResourceRequest): Future[DeregisterResourceResponse] = service.deregisterResource(params).promise().toFuture
+    @inline def describeResourceFuture(params: DescribeResourceRequest): Future[DescribeResourceResponse] = service.describeResource(params).promise().toFuture
+    @inline def getDataLakeSettingsFuture(params: GetDataLakeSettingsRequest): Future[GetDataLakeSettingsResponse] = service.getDataLakeSettings(params).promise().toFuture
+    @inline def getEffectivePermissionsForPathFuture(params: GetEffectivePermissionsForPathRequest): Future[GetEffectivePermissionsForPathResponse] = service.getEffectivePermissionsForPath(params).promise().toFuture
+    @inline def grantPermissionsFuture(params: GrantPermissionsRequest): Future[GrantPermissionsResponse] = service.grantPermissions(params).promise().toFuture
+    @inline def listPermissionsFuture(params: ListPermissionsRequest): Future[ListPermissionsResponse] = service.listPermissions(params).promise().toFuture
+    @inline def listResourcesFuture(params: ListResourcesRequest): Future[ListResourcesResponse] = service.listResources(params).promise().toFuture
+    @inline def putDataLakeSettingsFuture(params: PutDataLakeSettingsRequest): Future[PutDataLakeSettingsResponse] = service.putDataLakeSettings(params).promise().toFuture
+    @inline def registerResourceFuture(params: RegisterResourceRequest): Future[RegisterResourceResponse] = service.registerResource(params).promise().toFuture
+    @inline def revokePermissionsFuture(params: RevokePermissionsRequest): Future[RevokePermissionsResponse] = service.revokePermissions(params).promise().toFuture
+    @inline def updateResourceFuture(params: UpdateResourceRequest): Future[UpdateResourceResponse] = service.updateResource(params).promise().toFuture
   }
 }
 
@@ -73,14 +56,11 @@ package lakeformation {
     def this(config: AWSConfig) = this()
 
     def batchGrantPermissions(params: BatchGrantPermissionsRequest): Request[BatchGrantPermissionsResponse] = js.native
-    def batchRevokePermissions(params: BatchRevokePermissionsRequest): Request[BatchRevokePermissionsResponse] =
-      js.native
+    def batchRevokePermissions(params: BatchRevokePermissionsRequest): Request[BatchRevokePermissionsResponse] = js.native
     def deregisterResource(params: DeregisterResourceRequest): Request[DeregisterResourceResponse] = js.native
     def describeResource(params: DescribeResourceRequest): Request[DescribeResourceResponse] = js.native
     def getDataLakeSettings(params: GetDataLakeSettingsRequest): Request[GetDataLakeSettingsResponse] = js.native
-    def getEffectivePermissionsForPath(
-        params: GetEffectivePermissionsForPathRequest
-    ): Request[GetEffectivePermissionsForPathResponse] = js.native
+    def getEffectivePermissionsForPath(params: GetEffectivePermissionsForPathRequest): Request[GetEffectivePermissionsForPathResponse] = js.native
     def grantPermissions(params: GrantPermissionsRequest): Request[GrantPermissionsResponse] = js.native
     def listPermissions(params: ListPermissionsRequest): Request[ListPermissionsResponse] = js.native
     def listResources(params: ListResourcesRequest): Request[ListResourcesResponse] = js.native
@@ -175,9 +155,7 @@ package lakeformation {
       )
 
       Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
-      PermissionsWithGrantOption.foreach(__v =>
-        __obj.updateDynamic("PermissionsWithGrantOption")(__v.asInstanceOf[js.Any])
-      )
+      PermissionsWithGrantOption.foreach(__v => __obj.updateDynamic("PermissionsWithGrantOption")(__v.asInstanceOf[js.Any]))
       Principal.foreach(__v => __obj.updateDynamic("Principal")(__v.asInstanceOf[js.Any]))
       Resource.foreach(__v => __obj.updateDynamic("Resource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchPermissionsRequestEntry]
@@ -288,9 +266,7 @@ package lakeformation {
         DataLakePrincipalIdentifier: js.UndefOr[DataLakePrincipalString] = js.undefined
     ): DataLakePrincipal = {
       val __obj = js.Dynamic.literal()
-      DataLakePrincipalIdentifier.foreach(__v =>
-        __obj.updateDynamic("DataLakePrincipalIdentifier")(__v.asInstanceOf[js.Any])
-      )
+      DataLakePrincipalIdentifier.foreach(__v => __obj.updateDynamic("DataLakePrincipalIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataLakePrincipal]
     }
   }
@@ -326,12 +302,8 @@ package lakeformation {
         TrustedResourceOwners: js.UndefOr[TrustedResourceOwners] = js.undefined
     ): DataLakeSettings = {
       val __obj = js.Dynamic.literal()
-      CreateDatabaseDefaultPermissions.foreach(__v =>
-        __obj.updateDynamic("CreateDatabaseDefaultPermissions")(__v.asInstanceOf[js.Any])
-      )
-      CreateTableDefaultPermissions.foreach(__v =>
-        __obj.updateDynamic("CreateTableDefaultPermissions")(__v.asInstanceOf[js.Any])
-      )
+      CreateDatabaseDefaultPermissions.foreach(__v => __obj.updateDynamic("CreateDatabaseDefaultPermissions")(__v.asInstanceOf[js.Any]))
+      CreateTableDefaultPermissions.foreach(__v => __obj.updateDynamic("CreateTableDefaultPermissions")(__v.asInstanceOf[js.Any]))
       DataLakeAdmins.foreach(__v => __obj.updateDynamic("DataLakeAdmins")(__v.asInstanceOf[js.Any]))
       TrustedResourceOwners.foreach(__v => __obj.updateDynamic("TrustedResourceOwners")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataLakeSettings]
@@ -611,9 +583,7 @@ package lakeformation {
       )
 
       CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
-      PermissionsWithGrantOption.foreach(__v =>
-        __obj.updateDynamic("PermissionsWithGrantOption")(__v.asInstanceOf[js.Any])
-      )
+      PermissionsWithGrantOption.foreach(__v => __obj.updateDynamic("PermissionsWithGrantOption")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GrantPermissionsRequest]
     }
   }
@@ -676,9 +646,7 @@ package lakeformation {
     ): ListPermissionsResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PrincipalResourcePermissions.foreach(__v =>
-        __obj.updateDynamic("PrincipalResourcePermissions")(__v.asInstanceOf[js.Any])
-      )
+      PrincipalResourcePermissions.foreach(__v => __obj.updateDynamic("PrincipalResourcePermissions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPermissionsResponse]
     }
   }
@@ -738,9 +706,7 @@ package lakeformation {
     val CREATE_TABLE = "CREATE_TABLE".asInstanceOf[Permission]
     val DATA_LOCATION_ACCESS = "DATA_LOCATION_ACCESS".asInstanceOf[Permission]
 
-    val values = js.Object.freeze(
-      js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, DESCRIBE, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS)
-    )
+    val values = js.Object.freeze(js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, DESCRIBE, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS))
   }
 
   /**
@@ -786,9 +752,7 @@ package lakeformation {
     ): PrincipalResourcePermissions = {
       val __obj = js.Dynamic.literal()
       Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
-      PermissionsWithGrantOption.foreach(__v =>
-        __obj.updateDynamic("PermissionsWithGrantOption")(__v.asInstanceOf[js.Any])
-      )
+      PermissionsWithGrantOption.foreach(__v => __obj.updateDynamic("PermissionsWithGrantOption")(__v.asInstanceOf[js.Any]))
       Principal.foreach(__v => __obj.updateDynamic("Principal")(__v.asInstanceOf[js.Any]))
       Resource.foreach(__v => __obj.updateDynamic("Resource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PrincipalResourcePermissions]
@@ -947,9 +911,7 @@ package lakeformation {
       )
 
       CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
-      PermissionsWithGrantOption.foreach(__v =>
-        __obj.updateDynamic("PermissionsWithGrantOption")(__v.asInstanceOf[js.Any])
-      )
+      PermissionsWithGrantOption.foreach(__v => __obj.updateDynamic("PermissionsWithGrantOption")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RevokePermissionsRequest]
     }
   }

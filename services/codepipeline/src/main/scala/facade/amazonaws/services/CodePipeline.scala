@@ -117,88 +117,43 @@ package object codepipeline {
 
   implicit final class CodePipelineOps(private val service: CodePipeline) extends AnyVal {
 
-    @inline def acknowledgeJobFuture(params: AcknowledgeJobInput): Future[AcknowledgeJobOutput] =
-      service.acknowledgeJob(params).promise().toFuture
-    @inline def acknowledgeThirdPartyJobFuture(
-        params: AcknowledgeThirdPartyJobInput
-    ): Future[AcknowledgeThirdPartyJobOutput] = service.acknowledgeThirdPartyJob(params).promise().toFuture
-    @inline def createCustomActionTypeFuture(
-        params: CreateCustomActionTypeInput
-    ): Future[CreateCustomActionTypeOutput] = service.createCustomActionType(params).promise().toFuture
-    @inline def createPipelineFuture(params: CreatePipelineInput): Future[CreatePipelineOutput] =
-      service.createPipeline(params).promise().toFuture
-    @inline def deleteCustomActionTypeFuture(params: DeleteCustomActionTypeInput): Future[js.Object] =
-      service.deleteCustomActionType(params).promise().toFuture
-    @inline def deletePipelineFuture(params: DeletePipelineInput): Future[js.Object] =
-      service.deletePipeline(params).promise().toFuture
-    @inline def deleteWebhookFuture(params: DeleteWebhookInput): Future[DeleteWebhookOutput] =
-      service.deleteWebhook(params).promise().toFuture
-    @inline def deregisterWebhookWithThirdPartyFuture(
-        params: DeregisterWebhookWithThirdPartyInput
-    ): Future[DeregisterWebhookWithThirdPartyOutput] =
-      service.deregisterWebhookWithThirdParty(params).promise().toFuture
-    @inline def disableStageTransitionFuture(params: DisableStageTransitionInput): Future[js.Object] =
-      service.disableStageTransition(params).promise().toFuture
-    @inline def enableStageTransitionFuture(params: EnableStageTransitionInput): Future[js.Object] =
-      service.enableStageTransition(params).promise().toFuture
-    @inline def getJobDetailsFuture(params: GetJobDetailsInput): Future[GetJobDetailsOutput] =
-      service.getJobDetails(params).promise().toFuture
-    @inline def getPipelineExecutionFuture(params: GetPipelineExecutionInput): Future[GetPipelineExecutionOutput] =
-      service.getPipelineExecution(params).promise().toFuture
-    @inline def getPipelineFuture(params: GetPipelineInput): Future[GetPipelineOutput] =
-      service.getPipeline(params).promise().toFuture
-    @inline def getPipelineStateFuture(params: GetPipelineStateInput): Future[GetPipelineStateOutput] =
-      service.getPipelineState(params).promise().toFuture
-    @inline def getThirdPartyJobDetailsFuture(
-        params: GetThirdPartyJobDetailsInput
-    ): Future[GetThirdPartyJobDetailsOutput] = service.getThirdPartyJobDetails(params).promise().toFuture
-    @inline def listActionExecutionsFuture(params: ListActionExecutionsInput): Future[ListActionExecutionsOutput] =
-      service.listActionExecutions(params).promise().toFuture
-    @inline def listActionTypesFuture(params: ListActionTypesInput): Future[ListActionTypesOutput] =
-      service.listActionTypes(params).promise().toFuture
-    @inline def listPipelineExecutionsFuture(
-        params: ListPipelineExecutionsInput
-    ): Future[ListPipelineExecutionsOutput] = service.listPipelineExecutions(params).promise().toFuture
-    @inline def listPipelinesFuture(params: ListPipelinesInput): Future[ListPipelinesOutput] =
-      service.listPipelines(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listWebhooksFuture(params: ListWebhooksInput): Future[ListWebhooksOutput] =
-      service.listWebhooks(params).promise().toFuture
-    @inline def pollForJobsFuture(params: PollForJobsInput): Future[PollForJobsOutput] =
-      service.pollForJobs(params).promise().toFuture
-    @inline def pollForThirdPartyJobsFuture(params: PollForThirdPartyJobsInput): Future[PollForThirdPartyJobsOutput] =
-      service.pollForThirdPartyJobs(params).promise().toFuture
-    @inline def putActionRevisionFuture(params: PutActionRevisionInput): Future[PutActionRevisionOutput] =
-      service.putActionRevision(params).promise().toFuture
-    @inline def putApprovalResultFuture(params: PutApprovalResultInput): Future[PutApprovalResultOutput] =
-      service.putApprovalResult(params).promise().toFuture
-    @inline def putJobFailureResultFuture(params: PutJobFailureResultInput): Future[js.Object] =
-      service.putJobFailureResult(params).promise().toFuture
-    @inline def putJobSuccessResultFuture(params: PutJobSuccessResultInput): Future[js.Object] =
-      service.putJobSuccessResult(params).promise().toFuture
-    @inline def putThirdPartyJobFailureResultFuture(params: PutThirdPartyJobFailureResultInput): Future[js.Object] =
-      service.putThirdPartyJobFailureResult(params).promise().toFuture
-    @inline def putThirdPartyJobSuccessResultFuture(params: PutThirdPartyJobSuccessResultInput): Future[js.Object] =
-      service.putThirdPartyJobSuccessResult(params).promise().toFuture
-    @inline def putWebhookFuture(params: PutWebhookInput): Future[PutWebhookOutput] =
-      service.putWebhook(params).promise().toFuture
-    @inline def registerWebhookWithThirdPartyFuture(
-        params: RegisterWebhookWithThirdPartyInput
-    ): Future[RegisterWebhookWithThirdPartyOutput] = service.registerWebhookWithThirdParty(params).promise().toFuture
-    @inline def retryStageExecutionFuture(params: RetryStageExecutionInput): Future[RetryStageExecutionOutput] =
-      service.retryStageExecution(params).promise().toFuture
-    @inline def startPipelineExecutionFuture(
-        params: StartPipelineExecutionInput
-    ): Future[StartPipelineExecutionOutput] = service.startPipelineExecution(params).promise().toFuture
-    @inline def stopPipelineExecutionFuture(params: StopPipelineExecutionInput): Future[StopPipelineExecutionOutput] =
-      service.stopPipelineExecution(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
-      service.untagResource(params).promise().toFuture
-    @inline def updatePipelineFuture(params: UpdatePipelineInput): Future[UpdatePipelineOutput] =
-      service.updatePipeline(params).promise().toFuture
+    @inline def acknowledgeJobFuture(params: AcknowledgeJobInput): Future[AcknowledgeJobOutput] = service.acknowledgeJob(params).promise().toFuture
+    @inline def acknowledgeThirdPartyJobFuture(params: AcknowledgeThirdPartyJobInput): Future[AcknowledgeThirdPartyJobOutput] = service.acknowledgeThirdPartyJob(params).promise().toFuture
+    @inline def createCustomActionTypeFuture(params: CreateCustomActionTypeInput): Future[CreateCustomActionTypeOutput] = service.createCustomActionType(params).promise().toFuture
+    @inline def createPipelineFuture(params: CreatePipelineInput): Future[CreatePipelineOutput] = service.createPipeline(params).promise().toFuture
+    @inline def deleteCustomActionTypeFuture(params: DeleteCustomActionTypeInput): Future[js.Object] = service.deleteCustomActionType(params).promise().toFuture
+    @inline def deletePipelineFuture(params: DeletePipelineInput): Future[js.Object] = service.deletePipeline(params).promise().toFuture
+    @inline def deleteWebhookFuture(params: DeleteWebhookInput): Future[DeleteWebhookOutput] = service.deleteWebhook(params).promise().toFuture
+    @inline def deregisterWebhookWithThirdPartyFuture(params: DeregisterWebhookWithThirdPartyInput): Future[DeregisterWebhookWithThirdPartyOutput] = service.deregisterWebhookWithThirdParty(params).promise().toFuture
+    @inline def disableStageTransitionFuture(params: DisableStageTransitionInput): Future[js.Object] = service.disableStageTransition(params).promise().toFuture
+    @inline def enableStageTransitionFuture(params: EnableStageTransitionInput): Future[js.Object] = service.enableStageTransition(params).promise().toFuture
+    @inline def getJobDetailsFuture(params: GetJobDetailsInput): Future[GetJobDetailsOutput] = service.getJobDetails(params).promise().toFuture
+    @inline def getPipelineExecutionFuture(params: GetPipelineExecutionInput): Future[GetPipelineExecutionOutput] = service.getPipelineExecution(params).promise().toFuture
+    @inline def getPipelineFuture(params: GetPipelineInput): Future[GetPipelineOutput] = service.getPipeline(params).promise().toFuture
+    @inline def getPipelineStateFuture(params: GetPipelineStateInput): Future[GetPipelineStateOutput] = service.getPipelineState(params).promise().toFuture
+    @inline def getThirdPartyJobDetailsFuture(params: GetThirdPartyJobDetailsInput): Future[GetThirdPartyJobDetailsOutput] = service.getThirdPartyJobDetails(params).promise().toFuture
+    @inline def listActionExecutionsFuture(params: ListActionExecutionsInput): Future[ListActionExecutionsOutput] = service.listActionExecutions(params).promise().toFuture
+    @inline def listActionTypesFuture(params: ListActionTypesInput): Future[ListActionTypesOutput] = service.listActionTypes(params).promise().toFuture
+    @inline def listPipelineExecutionsFuture(params: ListPipelineExecutionsInput): Future[ListPipelineExecutionsOutput] = service.listPipelineExecutions(params).promise().toFuture
+    @inline def listPipelinesFuture(params: ListPipelinesInput): Future[ListPipelinesOutput] = service.listPipelines(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] = service.listTagsForResource(params).promise().toFuture
+    @inline def listWebhooksFuture(params: ListWebhooksInput): Future[ListWebhooksOutput] = service.listWebhooks(params).promise().toFuture
+    @inline def pollForJobsFuture(params: PollForJobsInput): Future[PollForJobsOutput] = service.pollForJobs(params).promise().toFuture
+    @inline def pollForThirdPartyJobsFuture(params: PollForThirdPartyJobsInput): Future[PollForThirdPartyJobsOutput] = service.pollForThirdPartyJobs(params).promise().toFuture
+    @inline def putActionRevisionFuture(params: PutActionRevisionInput): Future[PutActionRevisionOutput] = service.putActionRevision(params).promise().toFuture
+    @inline def putApprovalResultFuture(params: PutApprovalResultInput): Future[PutApprovalResultOutput] = service.putApprovalResult(params).promise().toFuture
+    @inline def putJobFailureResultFuture(params: PutJobFailureResultInput): Future[js.Object] = service.putJobFailureResult(params).promise().toFuture
+    @inline def putJobSuccessResultFuture(params: PutJobSuccessResultInput): Future[js.Object] = service.putJobSuccessResult(params).promise().toFuture
+    @inline def putThirdPartyJobFailureResultFuture(params: PutThirdPartyJobFailureResultInput): Future[js.Object] = service.putThirdPartyJobFailureResult(params).promise().toFuture
+    @inline def putThirdPartyJobSuccessResultFuture(params: PutThirdPartyJobSuccessResultInput): Future[js.Object] = service.putThirdPartyJobSuccessResult(params).promise().toFuture
+    @inline def putWebhookFuture(params: PutWebhookInput): Future[PutWebhookOutput] = service.putWebhook(params).promise().toFuture
+    @inline def registerWebhookWithThirdPartyFuture(params: RegisterWebhookWithThirdPartyInput): Future[RegisterWebhookWithThirdPartyOutput] = service.registerWebhookWithThirdParty(params).promise().toFuture
+    @inline def retryStageExecutionFuture(params: RetryStageExecutionInput): Future[RetryStageExecutionOutput] = service.retryStageExecution(params).promise().toFuture
+    @inline def startPipelineExecutionFuture(params: StartPipelineExecutionInput): Future[StartPipelineExecutionOutput] = service.startPipelineExecution(params).promise().toFuture
+    @inline def stopPipelineExecutionFuture(params: StopPipelineExecutionInput): Future[StopPipelineExecutionOutput] = service.stopPipelineExecution(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] = service.untagResource(params).promise().toFuture
+    @inline def updatePipelineFuture(params: UpdatePipelineInput): Future[UpdatePipelineOutput] = service.updatePipeline(params).promise().toFuture
   }
 }
 
@@ -209,24 +164,20 @@ package codepipeline {
     def this(config: AWSConfig) = this()
 
     def acknowledgeJob(params: AcknowledgeJobInput): Request[AcknowledgeJobOutput] = js.native
-    def acknowledgeThirdPartyJob(params: AcknowledgeThirdPartyJobInput): Request[AcknowledgeThirdPartyJobOutput] =
-      js.native
+    def acknowledgeThirdPartyJob(params: AcknowledgeThirdPartyJobInput): Request[AcknowledgeThirdPartyJobOutput] = js.native
     def createCustomActionType(params: CreateCustomActionTypeInput): Request[CreateCustomActionTypeOutput] = js.native
     def createPipeline(params: CreatePipelineInput): Request[CreatePipelineOutput] = js.native
     def deleteCustomActionType(params: DeleteCustomActionTypeInput): Request[js.Object] = js.native
     def deletePipeline(params: DeletePipelineInput): Request[js.Object] = js.native
     def deleteWebhook(params: DeleteWebhookInput): Request[DeleteWebhookOutput] = js.native
-    def deregisterWebhookWithThirdParty(
-        params: DeregisterWebhookWithThirdPartyInput
-    ): Request[DeregisterWebhookWithThirdPartyOutput] = js.native
+    def deregisterWebhookWithThirdParty(params: DeregisterWebhookWithThirdPartyInput): Request[DeregisterWebhookWithThirdPartyOutput] = js.native
     def disableStageTransition(params: DisableStageTransitionInput): Request[js.Object] = js.native
     def enableStageTransition(params: EnableStageTransitionInput): Request[js.Object] = js.native
     def getJobDetails(params: GetJobDetailsInput): Request[GetJobDetailsOutput] = js.native
     def getPipeline(params: GetPipelineInput): Request[GetPipelineOutput] = js.native
     def getPipelineExecution(params: GetPipelineExecutionInput): Request[GetPipelineExecutionOutput] = js.native
     def getPipelineState(params: GetPipelineStateInput): Request[GetPipelineStateOutput] = js.native
-    def getThirdPartyJobDetails(params: GetThirdPartyJobDetailsInput): Request[GetThirdPartyJobDetailsOutput] =
-      js.native
+    def getThirdPartyJobDetails(params: GetThirdPartyJobDetailsInput): Request[GetThirdPartyJobDetailsOutput] = js.native
     def listActionExecutions(params: ListActionExecutionsInput): Request[ListActionExecutionsOutput] = js.native
     def listActionTypes(params: ListActionTypesInput): Request[ListActionTypesOutput] = js.native
     def listPipelineExecutions(params: ListPipelineExecutionsInput): Request[ListPipelineExecutionsOutput] = js.native
@@ -242,9 +193,7 @@ package codepipeline {
     def putThirdPartyJobFailureResult(params: PutThirdPartyJobFailureResultInput): Request[js.Object] = js.native
     def putThirdPartyJobSuccessResult(params: PutThirdPartyJobSuccessResultInput): Request[js.Object] = js.native
     def putWebhook(params: PutWebhookInput): Request[PutWebhookOutput] = js.native
-    def registerWebhookWithThirdParty(
-        params: RegisterWebhookWithThirdPartyInput
-    ): Request[RegisterWebhookWithThirdPartyOutput] = js.native
+    def registerWebhookWithThirdParty(params: RegisterWebhookWithThirdPartyInput): Request[RegisterWebhookWithThirdPartyOutput] = js.native
     def retryStageExecution(params: RetryStageExecutionInput): Request[RetryStageExecutionOutput] = js.native
     def startPipelineExecution(params: StartPipelineExecutionInput): Request[StartPipelineExecutionOutput] = js.native
     def stopPipelineExecution(params: StopPipelineExecutionInput): Request[StopPipelineExecutionOutput] = js.native
@@ -818,9 +767,7 @@ package codepipeline {
         "outputArtifactDetails" -> outputArtifactDetails.asInstanceOf[js.Any]
       )
 
-      actionConfigurationProperties.foreach(__v =>
-        __obj.updateDynamic("actionConfigurationProperties")(__v.asInstanceOf[js.Any])
-      )
+      actionConfigurationProperties.foreach(__v => __obj.updateDynamic("actionConfigurationProperties")(__v.asInstanceOf[js.Any]))
       settings.foreach(__v => __obj.updateDynamic("settings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActionType]
     }
@@ -879,9 +826,7 @@ package codepipeline {
       entityUrlTemplate.foreach(__v => __obj.updateDynamic("entityUrlTemplate")(__v.asInstanceOf[js.Any]))
       executionUrlTemplate.foreach(__v => __obj.updateDynamic("executionUrlTemplate")(__v.asInstanceOf[js.Any]))
       revisionUrlTemplate.foreach(__v => __obj.updateDynamic("revisionUrlTemplate")(__v.asInstanceOf[js.Any]))
-      thirdPartyConfigurationUrl.foreach(__v =>
-        __obj.updateDynamic("thirdPartyConfigurationUrl")(__v.asInstanceOf[js.Any])
-      )
+      thirdPartyConfigurationUrl.foreach(__v => __obj.updateDynamic("thirdPartyConfigurationUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActionTypeSettings]
     }
   }
@@ -1568,16 +1513,7 @@ package codepipeline {
     val RevisionUnavailable = "RevisionUnavailable".asInstanceOf[FailureType]
     val SystemUnavailable = "SystemUnavailable".asInstanceOf[FailureType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        JobFailed,
-        ConfigurationError,
-        PermissionError,
-        RevisionOutOfSync,
-        RevisionUnavailable,
-        SystemUnavailable
-      )
-    )
+    val values = js.Object.freeze(js.Array(JobFailed, ConfigurationError, PermissionError, RevisionOutOfSync, RevisionUnavailable, SystemUnavailable))
   }
 
   /**
@@ -2068,9 +2004,7 @@ package codepipeline {
     ): ListPipelineExecutionsOutput = {
       val __obj = js.Dynamic.literal()
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      pipelineExecutionSummaries.foreach(__v =>
-        __obj.updateDynamic("pipelineExecutionSummaries")(__v.asInstanceOf[js.Any])
-      )
+      pipelineExecutionSummaries.foreach(__v => __obj.updateDynamic("pipelineExecutionSummaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPipelineExecutionsOutput]
     }
   }
@@ -3376,16 +3310,7 @@ package codepipeline {
     val CloudWatchEvent = "CloudWatchEvent".asInstanceOf[TriggerType]
     val PutActionRevision = "PutActionRevision".asInstanceOf[TriggerType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        CreatePipeline,
-        StartPipelineExecution,
-        PollForSourceChanges,
-        Webhook,
-        CloudWatchEvent,
-        PutActionRevision
-      )
-    )
+    val values = js.Object.freeze(js.Array(CreatePipeline, StartPipelineExecution, PollForSourceChanges, Webhook, CloudWatchEvent, PutActionRevision))
   }
 
   @js.native

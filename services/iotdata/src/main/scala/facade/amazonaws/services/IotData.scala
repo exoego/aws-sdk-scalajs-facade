@@ -20,16 +20,11 @@ package object iotdata {
 
   implicit final class IotDataOps(private val service: IotData) extends AnyVal {
 
-    @inline def deleteThingShadowFuture(params: DeleteThingShadowRequest): Future[DeleteThingShadowResponse] =
-      service.deleteThingShadow(params).promise().toFuture
-    @inline def getThingShadowFuture(params: GetThingShadowRequest): Future[GetThingShadowResponse] =
-      service.getThingShadow(params).promise().toFuture
-    @inline def listNamedShadowsForThingFuture(
-        params: ListNamedShadowsForThingRequest
-    ): Future[ListNamedShadowsForThingResponse] = service.listNamedShadowsForThing(params).promise().toFuture
+    @inline def deleteThingShadowFuture(params: DeleteThingShadowRequest): Future[DeleteThingShadowResponse] = service.deleteThingShadow(params).promise().toFuture
+    @inline def getThingShadowFuture(params: GetThingShadowRequest): Future[GetThingShadowResponse] = service.getThingShadow(params).promise().toFuture
+    @inline def listNamedShadowsForThingFuture(params: ListNamedShadowsForThingRequest): Future[ListNamedShadowsForThingResponse] = service.listNamedShadowsForThing(params).promise().toFuture
     @inline def publishFuture(params: PublishRequest): Future[js.Object] = service.publish(params).promise().toFuture
-    @inline def updateThingShadowFuture(params: UpdateThingShadowRequest): Future[UpdateThingShadowResponse] =
-      service.updateThingShadow(params).promise().toFuture
+    @inline def updateThingShadowFuture(params: UpdateThingShadowRequest): Future[UpdateThingShadowResponse] = service.updateThingShadow(params).promise().toFuture
   }
 }
 
@@ -41,8 +36,7 @@ package iotdata {
 
     def deleteThingShadow(params: DeleteThingShadowRequest): Request[DeleteThingShadowResponse] = js.native
     def getThingShadow(params: GetThingShadowRequest): Request[GetThingShadowResponse] = js.native
-    def listNamedShadowsForThing(params: ListNamedShadowsForThingRequest): Request[ListNamedShadowsForThingResponse] =
-      js.native
+    def listNamedShadowsForThing(params: ListNamedShadowsForThingRequest): Request[ListNamedShadowsForThingResponse] = js.native
     def publish(params: PublishRequest): Request[js.Object] = js.native
     def updateThingShadow(params: UpdateThingShadowRequest): Request[UpdateThingShadowResponse] = js.native
   }

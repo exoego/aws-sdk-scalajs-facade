@@ -42,36 +42,19 @@ package object codestarnotifications {
 
   implicit final class CodeStarNotificationsOps(private val service: CodeStarNotifications) extends AnyVal {
 
-    @inline def createNotificationRuleFuture(
-        params: CreateNotificationRuleRequest
-    ): Future[CreateNotificationRuleResult] = service.createNotificationRule(params).promise().toFuture
-    @inline def deleteNotificationRuleFuture(
-        params: DeleteNotificationRuleRequest
-    ): Future[DeleteNotificationRuleResult] = service.deleteNotificationRule(params).promise().toFuture
-    @inline def deleteTargetFuture(params: DeleteTargetRequest): Future[DeleteTargetResult] =
-      service.deleteTarget(params).promise().toFuture
-    @inline def describeNotificationRuleFuture(
-        params: DescribeNotificationRuleRequest
-    ): Future[DescribeNotificationRuleResult] = service.describeNotificationRule(params).promise().toFuture
-    @inline def listEventTypesFuture(params: ListEventTypesRequest): Future[ListEventTypesResult] =
-      service.listEventTypes(params).promise().toFuture
-    @inline def listNotificationRulesFuture(params: ListNotificationRulesRequest): Future[ListNotificationRulesResult] =
-      service.listNotificationRules(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResult] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listTargetsFuture(params: ListTargetsRequest): Future[ListTargetsResult] =
-      service.listTargets(params).promise().toFuture
-    @inline def subscribeFuture(params: SubscribeRequest): Future[SubscribeResult] =
-      service.subscribe(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResult] =
-      service.tagResource(params).promise().toFuture
-    @inline def unsubscribeFuture(params: UnsubscribeRequest): Future[UnsubscribeResult] =
-      service.unsubscribe(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResult] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateNotificationRuleFuture(
-        params: UpdateNotificationRuleRequest
-    ): Future[UpdateNotificationRuleResult] = service.updateNotificationRule(params).promise().toFuture
+    @inline def createNotificationRuleFuture(params: CreateNotificationRuleRequest): Future[CreateNotificationRuleResult] = service.createNotificationRule(params).promise().toFuture
+    @inline def deleteNotificationRuleFuture(params: DeleteNotificationRuleRequest): Future[DeleteNotificationRuleResult] = service.deleteNotificationRule(params).promise().toFuture
+    @inline def deleteTargetFuture(params: DeleteTargetRequest): Future[DeleteTargetResult] = service.deleteTarget(params).promise().toFuture
+    @inline def describeNotificationRuleFuture(params: DescribeNotificationRuleRequest): Future[DescribeNotificationRuleResult] = service.describeNotificationRule(params).promise().toFuture
+    @inline def listEventTypesFuture(params: ListEventTypesRequest): Future[ListEventTypesResult] = service.listEventTypes(params).promise().toFuture
+    @inline def listNotificationRulesFuture(params: ListNotificationRulesRequest): Future[ListNotificationRulesResult] = service.listNotificationRules(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResult] = service.listTagsForResource(params).promise().toFuture
+    @inline def listTargetsFuture(params: ListTargetsRequest): Future[ListTargetsResult] = service.listTargets(params).promise().toFuture
+    @inline def subscribeFuture(params: SubscribeRequest): Future[SubscribeResult] = service.subscribe(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResult] = service.tagResource(params).promise().toFuture
+    @inline def unsubscribeFuture(params: UnsubscribeRequest): Future[UnsubscribeResult] = service.unsubscribe(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResult] = service.untagResource(params).promise().toFuture
+    @inline def updateNotificationRuleFuture(params: UpdateNotificationRuleRequest): Future[UpdateNotificationRuleResult] = service.updateNotificationRule(params).promise().toFuture
   }
 }
 
@@ -84,8 +67,7 @@ package codestarnotifications {
     def createNotificationRule(params: CreateNotificationRuleRequest): Request[CreateNotificationRuleResult] = js.native
     def deleteNotificationRule(params: DeleteNotificationRuleRequest): Request[DeleteNotificationRuleResult] = js.native
     def deleteTarget(params: DeleteTargetRequest): Request[DeleteTargetResult] = js.native
-    def describeNotificationRule(params: DescribeNotificationRuleRequest): Request[DescribeNotificationRuleResult] =
-      js.native
+    def describeNotificationRule(params: DescribeNotificationRuleRequest): Request[DescribeNotificationRuleResult] = js.native
     def listEventTypes(params: ListEventTypesRequest): Request[ListEventTypesResult] = js.native
     def listNotificationRules(params: ListNotificationRulesRequest): Request[ListNotificationRulesResult] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResult] = js.native

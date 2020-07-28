@@ -71,65 +71,33 @@ package object machinelearning {
   implicit final class MachineLearningOps(private val service: MachineLearning) extends AnyVal {
 
     @inline def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise().toFuture
-    @inline def createBatchPredictionFuture(params: CreateBatchPredictionInput): Future[CreateBatchPredictionOutput] =
-      service.createBatchPrediction(params).promise().toFuture
-    @inline def createDataSourceFromRDSFuture(
-        params: CreateDataSourceFromRDSInput
-    ): Future[CreateDataSourceFromRDSOutput] = service.createDataSourceFromRDS(params).promise().toFuture
-    @inline def createDataSourceFromRedshiftFuture(
-        params: CreateDataSourceFromRedshiftInput
-    ): Future[CreateDataSourceFromRedshiftOutput] = service.createDataSourceFromRedshift(params).promise().toFuture
-    @inline def createDataSourceFromS3Future(
-        params: CreateDataSourceFromS3Input
-    ): Future[CreateDataSourceFromS3Output] = service.createDataSourceFromS3(params).promise().toFuture
-    @inline def createEvaluationFuture(params: CreateEvaluationInput): Future[CreateEvaluationOutput] =
-      service.createEvaluation(params).promise().toFuture
-    @inline def createMLModelFuture(params: CreateMLModelInput): Future[CreateMLModelOutput] =
-      service.createMLModel(params).promise().toFuture
-    @inline def createRealtimeEndpointFuture(
-        params: CreateRealtimeEndpointInput
-    ): Future[CreateRealtimeEndpointOutput] = service.createRealtimeEndpoint(params).promise().toFuture
-    @inline def deleteBatchPredictionFuture(params: DeleteBatchPredictionInput): Future[DeleteBatchPredictionOutput] =
-      service.deleteBatchPrediction(params).promise().toFuture
-    @inline def deleteDataSourceFuture(params: DeleteDataSourceInput): Future[DeleteDataSourceOutput] =
-      service.deleteDataSource(params).promise().toFuture
-    @inline def deleteEvaluationFuture(params: DeleteEvaluationInput): Future[DeleteEvaluationOutput] =
-      service.deleteEvaluation(params).promise().toFuture
-    @inline def deleteMLModelFuture(params: DeleteMLModelInput): Future[DeleteMLModelOutput] =
-      service.deleteMLModel(params).promise().toFuture
-    @inline def deleteRealtimeEndpointFuture(
-        params: DeleteRealtimeEndpointInput
-    ): Future[DeleteRealtimeEndpointOutput] = service.deleteRealtimeEndpoint(params).promise().toFuture
-    @inline def deleteTagsFuture(params: DeleteTagsInput): Future[DeleteTagsOutput] =
-      service.deleteTags(params).promise().toFuture
-    @inline def describeBatchPredictionsFuture(
-        params: DescribeBatchPredictionsInput
-    ): Future[DescribeBatchPredictionsOutput] = service.describeBatchPredictions(params).promise().toFuture
-    @inline def describeDataSourcesFuture(params: DescribeDataSourcesInput): Future[DescribeDataSourcesOutput] =
-      service.describeDataSources(params).promise().toFuture
-    @inline def describeEvaluationsFuture(params: DescribeEvaluationsInput): Future[DescribeEvaluationsOutput] =
-      service.describeEvaluations(params).promise().toFuture
-    @inline def describeMLModelsFuture(params: DescribeMLModelsInput): Future[DescribeMLModelsOutput] =
-      service.describeMLModels(params).promise().toFuture
-    @inline def describeTagsFuture(params: DescribeTagsInput): Future[DescribeTagsOutput] =
-      service.describeTags(params).promise().toFuture
-    @inline def getBatchPredictionFuture(params: GetBatchPredictionInput): Future[GetBatchPredictionOutput] =
-      service.getBatchPrediction(params).promise().toFuture
-    @inline def getDataSourceFuture(params: GetDataSourceInput): Future[GetDataSourceOutput] =
-      service.getDataSource(params).promise().toFuture
-    @inline def getEvaluationFuture(params: GetEvaluationInput): Future[GetEvaluationOutput] =
-      service.getEvaluation(params).promise().toFuture
-    @inline def getMLModelFuture(params: GetMLModelInput): Future[GetMLModelOutput] =
-      service.getMLModel(params).promise().toFuture
+    @inline def createBatchPredictionFuture(params: CreateBatchPredictionInput): Future[CreateBatchPredictionOutput] = service.createBatchPrediction(params).promise().toFuture
+    @inline def createDataSourceFromRDSFuture(params: CreateDataSourceFromRDSInput): Future[CreateDataSourceFromRDSOutput] = service.createDataSourceFromRDS(params).promise().toFuture
+    @inline def createDataSourceFromRedshiftFuture(params: CreateDataSourceFromRedshiftInput): Future[CreateDataSourceFromRedshiftOutput] = service.createDataSourceFromRedshift(params).promise().toFuture
+    @inline def createDataSourceFromS3Future(params: CreateDataSourceFromS3Input): Future[CreateDataSourceFromS3Output] = service.createDataSourceFromS3(params).promise().toFuture
+    @inline def createEvaluationFuture(params: CreateEvaluationInput): Future[CreateEvaluationOutput] = service.createEvaluation(params).promise().toFuture
+    @inline def createMLModelFuture(params: CreateMLModelInput): Future[CreateMLModelOutput] = service.createMLModel(params).promise().toFuture
+    @inline def createRealtimeEndpointFuture(params: CreateRealtimeEndpointInput): Future[CreateRealtimeEndpointOutput] = service.createRealtimeEndpoint(params).promise().toFuture
+    @inline def deleteBatchPredictionFuture(params: DeleteBatchPredictionInput): Future[DeleteBatchPredictionOutput] = service.deleteBatchPrediction(params).promise().toFuture
+    @inline def deleteDataSourceFuture(params: DeleteDataSourceInput): Future[DeleteDataSourceOutput] = service.deleteDataSource(params).promise().toFuture
+    @inline def deleteEvaluationFuture(params: DeleteEvaluationInput): Future[DeleteEvaluationOutput] = service.deleteEvaluation(params).promise().toFuture
+    @inline def deleteMLModelFuture(params: DeleteMLModelInput): Future[DeleteMLModelOutput] = service.deleteMLModel(params).promise().toFuture
+    @inline def deleteRealtimeEndpointFuture(params: DeleteRealtimeEndpointInput): Future[DeleteRealtimeEndpointOutput] = service.deleteRealtimeEndpoint(params).promise().toFuture
+    @inline def deleteTagsFuture(params: DeleteTagsInput): Future[DeleteTagsOutput] = service.deleteTags(params).promise().toFuture
+    @inline def describeBatchPredictionsFuture(params: DescribeBatchPredictionsInput): Future[DescribeBatchPredictionsOutput] = service.describeBatchPredictions(params).promise().toFuture
+    @inline def describeDataSourcesFuture(params: DescribeDataSourcesInput): Future[DescribeDataSourcesOutput] = service.describeDataSources(params).promise().toFuture
+    @inline def describeEvaluationsFuture(params: DescribeEvaluationsInput): Future[DescribeEvaluationsOutput] = service.describeEvaluations(params).promise().toFuture
+    @inline def describeMLModelsFuture(params: DescribeMLModelsInput): Future[DescribeMLModelsOutput] = service.describeMLModels(params).promise().toFuture
+    @inline def describeTagsFuture(params: DescribeTagsInput): Future[DescribeTagsOutput] = service.describeTags(params).promise().toFuture
+    @inline def getBatchPredictionFuture(params: GetBatchPredictionInput): Future[GetBatchPredictionOutput] = service.getBatchPrediction(params).promise().toFuture
+    @inline def getDataSourceFuture(params: GetDataSourceInput): Future[GetDataSourceOutput] = service.getDataSource(params).promise().toFuture
+    @inline def getEvaluationFuture(params: GetEvaluationInput): Future[GetEvaluationOutput] = service.getEvaluation(params).promise().toFuture
+    @inline def getMLModelFuture(params: GetMLModelInput): Future[GetMLModelOutput] = service.getMLModel(params).promise().toFuture
     @inline def predictFuture(params: PredictInput): Future[PredictOutput] = service.predict(params).promise().toFuture
-    @inline def updateBatchPredictionFuture(params: UpdateBatchPredictionInput): Future[UpdateBatchPredictionOutput] =
-      service.updateBatchPrediction(params).promise().toFuture
-    @inline def updateDataSourceFuture(params: UpdateDataSourceInput): Future[UpdateDataSourceOutput] =
-      service.updateDataSource(params).promise().toFuture
-    @inline def updateEvaluationFuture(params: UpdateEvaluationInput): Future[UpdateEvaluationOutput] =
-      service.updateEvaluation(params).promise().toFuture
-    @inline def updateMLModelFuture(params: UpdateMLModelInput): Future[UpdateMLModelOutput] =
-      service.updateMLModel(params).promise().toFuture
+    @inline def updateBatchPredictionFuture(params: UpdateBatchPredictionInput): Future[UpdateBatchPredictionOutput] = service.updateBatchPrediction(params).promise().toFuture
+    @inline def updateDataSourceFuture(params: UpdateDataSourceInput): Future[UpdateDataSourceOutput] = service.updateDataSource(params).promise().toFuture
+    @inline def updateEvaluationFuture(params: UpdateEvaluationInput): Future[UpdateEvaluationOutput] = service.updateEvaluation(params).promise().toFuture
+    @inline def updateMLModelFuture(params: UpdateMLModelInput): Future[UpdateMLModelOutput] = service.updateMLModel(params).promise().toFuture
   }
 }
 
@@ -141,11 +109,8 @@ package machinelearning {
 
     def addTags(params: AddTagsInput): Request[AddTagsOutput] = js.native
     def createBatchPrediction(params: CreateBatchPredictionInput): Request[CreateBatchPredictionOutput] = js.native
-    def createDataSourceFromRDS(params: CreateDataSourceFromRDSInput): Request[CreateDataSourceFromRDSOutput] =
-      js.native
-    def createDataSourceFromRedshift(
-        params: CreateDataSourceFromRedshiftInput
-    ): Request[CreateDataSourceFromRedshiftOutput] = js.native
+    def createDataSourceFromRDS(params: CreateDataSourceFromRDSInput): Request[CreateDataSourceFromRDSOutput] = js.native
+    def createDataSourceFromRedshift(params: CreateDataSourceFromRedshiftInput): Request[CreateDataSourceFromRedshiftOutput] = js.native
     def createDataSourceFromS3(params: CreateDataSourceFromS3Input): Request[CreateDataSourceFromS3Output] = js.native
     def createEvaluation(params: CreateEvaluationInput): Request[CreateEvaluationOutput] = js.native
     def createMLModel(params: CreateMLModelInput): Request[CreateMLModelOutput] = js.native
@@ -156,8 +121,7 @@ package machinelearning {
     def deleteMLModel(params: DeleteMLModelInput): Request[DeleteMLModelOutput] = js.native
     def deleteRealtimeEndpoint(params: DeleteRealtimeEndpointInput): Request[DeleteRealtimeEndpointOutput] = js.native
     def deleteTags(params: DeleteTagsInput): Request[DeleteTagsOutput] = js.native
-    def describeBatchPredictions(params: DescribeBatchPredictionsInput): Request[DescribeBatchPredictionsOutput] =
-      js.native
+    def describeBatchPredictions(params: DescribeBatchPredictionsInput): Request[DescribeBatchPredictionsOutput] = js.native
     def describeDataSources(params: DescribeDataSourcesInput): Request[DescribeDataSourcesOutput] = js.native
     def describeEvaluations(params: DescribeEvaluationsInput): Request[DescribeEvaluationsOutput] = js.native
     def describeMLModels(params: DescribeMLModelsInput): Request[DescribeMLModelsOutput] = js.native
@@ -277,9 +241,7 @@ package machinelearning {
         TotalRecordCount: js.UndefOr[LongType] = js.undefined
     ): BatchPrediction = {
       val __obj = js.Dynamic.literal()
-      BatchPredictionDataSourceId.foreach(__v =>
-        __obj.updateDynamic("BatchPredictionDataSourceId")(__v.asInstanceOf[js.Any])
-      )
+      BatchPredictionDataSourceId.foreach(__v => __obj.updateDynamic("BatchPredictionDataSourceId")(__v.asInstanceOf[js.Any]))
       BatchPredictionId.foreach(__v => __obj.updateDynamic("BatchPredictionId")(__v.asInstanceOf[js.Any]))
       ComputeTime.foreach(__v => __obj.updateDynamic("ComputeTime")(__v.asInstanceOf[js.Any]))
       CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
@@ -321,8 +283,7 @@ package machinelearning {
     val DataSourceId = "DataSourceId".asInstanceOf[BatchPredictionFilterVariable]
     val DataURI = "DataURI".asInstanceOf[BatchPredictionFilterVariable]
 
-    val values =
-      js.Object.freeze(js.Array(CreatedAt, LastUpdatedAt, Status, Name, IAMUser, MLModelId, DataSourceId, DataURI))
+    val values = js.Object.freeze(js.Array(CreatedAt, LastUpdatedAt, Status, Name, IAMUser, MLModelId, DataSourceId, DataURI))
   }
 
   @js.native
@@ -1430,8 +1391,7 @@ package machinelearning {
     val DataSourceId = "DataSourceId".asInstanceOf[EvaluationFilterVariable]
     val DataURI = "DataURI".asInstanceOf[EvaluationFilterVariable]
 
-    val values =
-      js.Object.freeze(js.Array(CreatedAt, LastUpdatedAt, Status, Name, IAMUser, MLModelId, DataSourceId, DataURI))
+    val values = js.Object.freeze(js.Array(CreatedAt, LastUpdatedAt, Status, Name, IAMUser, MLModelId, DataSourceId, DataURI))
   }
 
   @js.native
@@ -1498,9 +1458,7 @@ package machinelearning {
         TotalRecordCount: js.UndefOr[LongType] = js.undefined
     ): GetBatchPredictionOutput = {
       val __obj = js.Dynamic.literal()
-      BatchPredictionDataSourceId.foreach(__v =>
-        __obj.updateDynamic("BatchPredictionDataSourceId")(__v.asInstanceOf[js.Any])
-      )
+      BatchPredictionDataSourceId.foreach(__v => __obj.updateDynamic("BatchPredictionDataSourceId")(__v.asInstanceOf[js.Any]))
       BatchPredictionId.foreach(__v => __obj.updateDynamic("BatchPredictionId")(__v.asInstanceOf[js.Any]))
       ComputeTime.foreach(__v => __obj.updateDynamic("ComputeTime")(__v.asInstanceOf[js.Any]))
       CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
@@ -1787,9 +1745,7 @@ package machinelearning {
       Recipe.foreach(__v => __obj.updateDynamic("Recipe")(__v.asInstanceOf[js.Any]))
       Schema.foreach(__v => __obj.updateDynamic("Schema")(__v.asInstanceOf[js.Any]))
       ScoreThreshold.foreach(__v => __obj.updateDynamic("ScoreThreshold")(__v.asInstanceOf[js.Any]))
-      ScoreThresholdLastUpdatedAt.foreach(__v =>
-        __obj.updateDynamic("ScoreThresholdLastUpdatedAt")(__v.asInstanceOf[js.Any])
-      )
+      ScoreThresholdLastUpdatedAt.foreach(__v => __obj.updateDynamic("ScoreThresholdLastUpdatedAt")(__v.asInstanceOf[js.Any]))
       SizeInBytes.foreach(__v => __obj.updateDynamic("SizeInBytes")(__v.asInstanceOf[js.Any]))
       StartedAt.foreach(__v => __obj.updateDynamic("StartedAt")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -1904,9 +1860,7 @@ package machinelearning {
       Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       ScoreThreshold.foreach(__v => __obj.updateDynamic("ScoreThreshold")(__v.asInstanceOf[js.Any]))
-      ScoreThresholdLastUpdatedAt.foreach(__v =>
-        __obj.updateDynamic("ScoreThresholdLastUpdatedAt")(__v.asInstanceOf[js.Any])
-      )
+      ScoreThresholdLastUpdatedAt.foreach(__v => __obj.updateDynamic("ScoreThresholdLastUpdatedAt")(__v.asInstanceOf[js.Any]))
       SizeInBytes.foreach(__v => __obj.updateDynamic("SizeInBytes")(__v.asInstanceOf[js.Any]))
       StartedAt.foreach(__v => __obj.updateDynamic("StartedAt")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -1930,20 +1884,7 @@ package machinelearning {
     val Algorithm = "Algorithm".asInstanceOf[MLModelFilterVariable]
     val TrainingDataURI = "TrainingDataURI".asInstanceOf[MLModelFilterVariable]
 
-    val values = js.Object.freeze(
-      js.Array(
-        CreatedAt,
-        LastUpdatedAt,
-        Status,
-        Name,
-        IAMUser,
-        TrainingDataSourceId,
-        RealtimeEndpointStatus,
-        MLModelType,
-        Algorithm,
-        TrainingDataURI
-      )
-    )
+    val values = js.Object.freeze(js.Array(CreatedAt, LastUpdatedAt, Status, Name, IAMUser, TrainingDataSourceId, RealtimeEndpointStatus, MLModelType, Algorithm, TrainingDataURI))
   }
 
   @js.native

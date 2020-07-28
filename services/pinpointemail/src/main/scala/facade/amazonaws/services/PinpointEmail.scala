@@ -82,135 +82,48 @@ package object pinpointemail {
 
   implicit final class PinpointEmailOps(private val service: PinpointEmail) extends AnyVal {
 
-    @inline def createConfigurationSetEventDestinationFuture(
-        params: CreateConfigurationSetEventDestinationRequest
-    ): Future[CreateConfigurationSetEventDestinationResponse] =
-      service.createConfigurationSetEventDestination(params).promise().toFuture
-    @inline def createConfigurationSetFuture(
-        params: CreateConfigurationSetRequest
-    ): Future[CreateConfigurationSetResponse] = service.createConfigurationSet(params).promise().toFuture
-    @inline def createDedicatedIpPoolFuture(
-        params: CreateDedicatedIpPoolRequest
-    ): Future[CreateDedicatedIpPoolResponse] = service.createDedicatedIpPool(params).promise().toFuture
-    @inline def createDeliverabilityTestReportFuture(
-        params: CreateDeliverabilityTestReportRequest
-    ): Future[CreateDeliverabilityTestReportResponse] =
-      service.createDeliverabilityTestReport(params).promise().toFuture
-    @inline def createEmailIdentityFuture(params: CreateEmailIdentityRequest): Future[CreateEmailIdentityResponse] =
-      service.createEmailIdentity(params).promise().toFuture
-    @inline def deleteConfigurationSetEventDestinationFuture(
-        params: DeleteConfigurationSetEventDestinationRequest
-    ): Future[DeleteConfigurationSetEventDestinationResponse] =
-      service.deleteConfigurationSetEventDestination(params).promise().toFuture
-    @inline def deleteConfigurationSetFuture(
-        params: DeleteConfigurationSetRequest
-    ): Future[DeleteConfigurationSetResponse] = service.deleteConfigurationSet(params).promise().toFuture
-    @inline def deleteDedicatedIpPoolFuture(
-        params: DeleteDedicatedIpPoolRequest
-    ): Future[DeleteDedicatedIpPoolResponse] = service.deleteDedicatedIpPool(params).promise().toFuture
-    @inline def deleteEmailIdentityFuture(params: DeleteEmailIdentityRequest): Future[DeleteEmailIdentityResponse] =
-      service.deleteEmailIdentity(params).promise().toFuture
-    @inline def getAccountFuture(params: GetAccountRequest): Future[GetAccountResponse] =
-      service.getAccount(params).promise().toFuture
-    @inline def getBlacklistReportsFuture(params: GetBlacklistReportsRequest): Future[GetBlacklistReportsResponse] =
-      service.getBlacklistReports(params).promise().toFuture
-    @inline def getConfigurationSetEventDestinationsFuture(
-        params: GetConfigurationSetEventDestinationsRequest
-    ): Future[GetConfigurationSetEventDestinationsResponse] =
-      service.getConfigurationSetEventDestinations(params).promise().toFuture
-    @inline def getConfigurationSetFuture(params: GetConfigurationSetRequest): Future[GetConfigurationSetResponse] =
-      service.getConfigurationSet(params).promise().toFuture
-    @inline def getDedicatedIpFuture(params: GetDedicatedIpRequest): Future[GetDedicatedIpResponse] =
-      service.getDedicatedIp(params).promise().toFuture
-    @inline def getDedicatedIpsFuture(params: GetDedicatedIpsRequest): Future[GetDedicatedIpsResponse] =
-      service.getDedicatedIps(params).promise().toFuture
-    @inline def getDeliverabilityDashboardOptionsFuture(
-        params: GetDeliverabilityDashboardOptionsRequest
-    ): Future[GetDeliverabilityDashboardOptionsResponse] =
-      service.getDeliverabilityDashboardOptions(params).promise().toFuture
-    @inline def getDeliverabilityTestReportFuture(
-        params: GetDeliverabilityTestReportRequest
-    ): Future[GetDeliverabilityTestReportResponse] = service.getDeliverabilityTestReport(params).promise().toFuture
-    @inline def getDomainDeliverabilityCampaignFuture(
-        params: GetDomainDeliverabilityCampaignRequest
-    ): Future[GetDomainDeliverabilityCampaignResponse] =
-      service.getDomainDeliverabilityCampaign(params).promise().toFuture
-    @inline def getDomainStatisticsReportFuture(
-        params: GetDomainStatisticsReportRequest
-    ): Future[GetDomainStatisticsReportResponse] = service.getDomainStatisticsReport(params).promise().toFuture
-    @inline def getEmailIdentityFuture(params: GetEmailIdentityRequest): Future[GetEmailIdentityResponse] =
-      service.getEmailIdentity(params).promise().toFuture
-    @inline def listConfigurationSetsFuture(
-        params: ListConfigurationSetsRequest
-    ): Future[ListConfigurationSetsResponse] = service.listConfigurationSets(params).promise().toFuture
-    @inline def listDedicatedIpPoolsFuture(params: ListDedicatedIpPoolsRequest): Future[ListDedicatedIpPoolsResponse] =
-      service.listDedicatedIpPools(params).promise().toFuture
-    @inline def listDeliverabilityTestReportsFuture(
-        params: ListDeliverabilityTestReportsRequest
-    ): Future[ListDeliverabilityTestReportsResponse] = service.listDeliverabilityTestReports(params).promise().toFuture
-    @inline def listDomainDeliverabilityCampaignsFuture(
-        params: ListDomainDeliverabilityCampaignsRequest
-    ): Future[ListDomainDeliverabilityCampaignsResponse] =
-      service.listDomainDeliverabilityCampaigns(params).promise().toFuture
-    @inline def listEmailIdentitiesFuture(params: ListEmailIdentitiesRequest): Future[ListEmailIdentitiesResponse] =
-      service.listEmailIdentities(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def putAccountDedicatedIpWarmupAttributesFuture(
-        params: PutAccountDedicatedIpWarmupAttributesRequest
-    ): Future[PutAccountDedicatedIpWarmupAttributesResponse] =
-      service.putAccountDedicatedIpWarmupAttributes(params).promise().toFuture
-    @inline def putAccountSendingAttributesFuture(
-        params: PutAccountSendingAttributesRequest
-    ): Future[PutAccountSendingAttributesResponse] = service.putAccountSendingAttributes(params).promise().toFuture
-    @inline def putConfigurationSetDeliveryOptionsFuture(
-        params: PutConfigurationSetDeliveryOptionsRequest
-    ): Future[PutConfigurationSetDeliveryOptionsResponse] =
-      service.putConfigurationSetDeliveryOptions(params).promise().toFuture
-    @inline def putConfigurationSetReputationOptionsFuture(
-        params: PutConfigurationSetReputationOptionsRequest
-    ): Future[PutConfigurationSetReputationOptionsResponse] =
-      service.putConfigurationSetReputationOptions(params).promise().toFuture
-    @inline def putConfigurationSetSendingOptionsFuture(
-        params: PutConfigurationSetSendingOptionsRequest
-    ): Future[PutConfigurationSetSendingOptionsResponse] =
-      service.putConfigurationSetSendingOptions(params).promise().toFuture
-    @inline def putConfigurationSetTrackingOptionsFuture(
-        params: PutConfigurationSetTrackingOptionsRequest
-    ): Future[PutConfigurationSetTrackingOptionsResponse] =
-      service.putConfigurationSetTrackingOptions(params).promise().toFuture
-    @inline def putDedicatedIpInPoolFuture(params: PutDedicatedIpInPoolRequest): Future[PutDedicatedIpInPoolResponse] =
-      service.putDedicatedIpInPool(params).promise().toFuture
-    @inline def putDedicatedIpWarmupAttributesFuture(
-        params: PutDedicatedIpWarmupAttributesRequest
-    ): Future[PutDedicatedIpWarmupAttributesResponse] =
-      service.putDedicatedIpWarmupAttributes(params).promise().toFuture
-    @inline def putDeliverabilityDashboardOptionFuture(
-        params: PutDeliverabilityDashboardOptionRequest
-    ): Future[PutDeliverabilityDashboardOptionResponse] =
-      service.putDeliverabilityDashboardOption(params).promise().toFuture
-    @inline def putEmailIdentityDkimAttributesFuture(
-        params: PutEmailIdentityDkimAttributesRequest
-    ): Future[PutEmailIdentityDkimAttributesResponse] =
-      service.putEmailIdentityDkimAttributes(params).promise().toFuture
-    @inline def putEmailIdentityFeedbackAttributesFuture(
-        params: PutEmailIdentityFeedbackAttributesRequest
-    ): Future[PutEmailIdentityFeedbackAttributesResponse] =
-      service.putEmailIdentityFeedbackAttributes(params).promise().toFuture
-    @inline def putEmailIdentityMailFromAttributesFuture(
-        params: PutEmailIdentityMailFromAttributesRequest
-    ): Future[PutEmailIdentityMailFromAttributesResponse] =
-      service.putEmailIdentityMailFromAttributes(params).promise().toFuture
-    @inline def sendEmailFuture(params: SendEmailRequest): Future[SendEmailResponse] =
-      service.sendEmail(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateConfigurationSetEventDestinationFuture(
-        params: UpdateConfigurationSetEventDestinationRequest
-    ): Future[UpdateConfigurationSetEventDestinationResponse] =
-      service.updateConfigurationSetEventDestination(params).promise().toFuture
+    @inline def createConfigurationSetEventDestinationFuture(params: CreateConfigurationSetEventDestinationRequest): Future[CreateConfigurationSetEventDestinationResponse] = service.createConfigurationSetEventDestination(params).promise().toFuture
+    @inline def createConfigurationSetFuture(params: CreateConfigurationSetRequest): Future[CreateConfigurationSetResponse] = service.createConfigurationSet(params).promise().toFuture
+    @inline def createDedicatedIpPoolFuture(params: CreateDedicatedIpPoolRequest): Future[CreateDedicatedIpPoolResponse] = service.createDedicatedIpPool(params).promise().toFuture
+    @inline def createDeliverabilityTestReportFuture(params: CreateDeliverabilityTestReportRequest): Future[CreateDeliverabilityTestReportResponse] = service.createDeliverabilityTestReport(params).promise().toFuture
+    @inline def createEmailIdentityFuture(params: CreateEmailIdentityRequest): Future[CreateEmailIdentityResponse] = service.createEmailIdentity(params).promise().toFuture
+    @inline def deleteConfigurationSetEventDestinationFuture(params: DeleteConfigurationSetEventDestinationRequest): Future[DeleteConfigurationSetEventDestinationResponse] = service.deleteConfigurationSetEventDestination(params).promise().toFuture
+    @inline def deleteConfigurationSetFuture(params: DeleteConfigurationSetRequest): Future[DeleteConfigurationSetResponse] = service.deleteConfigurationSet(params).promise().toFuture
+    @inline def deleteDedicatedIpPoolFuture(params: DeleteDedicatedIpPoolRequest): Future[DeleteDedicatedIpPoolResponse] = service.deleteDedicatedIpPool(params).promise().toFuture
+    @inline def deleteEmailIdentityFuture(params: DeleteEmailIdentityRequest): Future[DeleteEmailIdentityResponse] = service.deleteEmailIdentity(params).promise().toFuture
+    @inline def getAccountFuture(params: GetAccountRequest): Future[GetAccountResponse] = service.getAccount(params).promise().toFuture
+    @inline def getBlacklistReportsFuture(params: GetBlacklistReportsRequest): Future[GetBlacklistReportsResponse] = service.getBlacklistReports(params).promise().toFuture
+    @inline def getConfigurationSetEventDestinationsFuture(params: GetConfigurationSetEventDestinationsRequest): Future[GetConfigurationSetEventDestinationsResponse] = service.getConfigurationSetEventDestinations(params).promise().toFuture
+    @inline def getConfigurationSetFuture(params: GetConfigurationSetRequest): Future[GetConfigurationSetResponse] = service.getConfigurationSet(params).promise().toFuture
+    @inline def getDedicatedIpFuture(params: GetDedicatedIpRequest): Future[GetDedicatedIpResponse] = service.getDedicatedIp(params).promise().toFuture
+    @inline def getDedicatedIpsFuture(params: GetDedicatedIpsRequest): Future[GetDedicatedIpsResponse] = service.getDedicatedIps(params).promise().toFuture
+    @inline def getDeliverabilityDashboardOptionsFuture(params: GetDeliverabilityDashboardOptionsRequest): Future[GetDeliverabilityDashboardOptionsResponse] = service.getDeliverabilityDashboardOptions(params).promise().toFuture
+    @inline def getDeliverabilityTestReportFuture(params: GetDeliverabilityTestReportRequest): Future[GetDeliverabilityTestReportResponse] = service.getDeliverabilityTestReport(params).promise().toFuture
+    @inline def getDomainDeliverabilityCampaignFuture(params: GetDomainDeliverabilityCampaignRequest): Future[GetDomainDeliverabilityCampaignResponse] = service.getDomainDeliverabilityCampaign(params).promise().toFuture
+    @inline def getDomainStatisticsReportFuture(params: GetDomainStatisticsReportRequest): Future[GetDomainStatisticsReportResponse] = service.getDomainStatisticsReport(params).promise().toFuture
+    @inline def getEmailIdentityFuture(params: GetEmailIdentityRequest): Future[GetEmailIdentityResponse] = service.getEmailIdentity(params).promise().toFuture
+    @inline def listConfigurationSetsFuture(params: ListConfigurationSetsRequest): Future[ListConfigurationSetsResponse] = service.listConfigurationSets(params).promise().toFuture
+    @inline def listDedicatedIpPoolsFuture(params: ListDedicatedIpPoolsRequest): Future[ListDedicatedIpPoolsResponse] = service.listDedicatedIpPools(params).promise().toFuture
+    @inline def listDeliverabilityTestReportsFuture(params: ListDeliverabilityTestReportsRequest): Future[ListDeliverabilityTestReportsResponse] = service.listDeliverabilityTestReports(params).promise().toFuture
+    @inline def listDomainDeliverabilityCampaignsFuture(params: ListDomainDeliverabilityCampaignsRequest): Future[ListDomainDeliverabilityCampaignsResponse] = service.listDomainDeliverabilityCampaigns(params).promise().toFuture
+    @inline def listEmailIdentitiesFuture(params: ListEmailIdentitiesRequest): Future[ListEmailIdentitiesResponse] = service.listEmailIdentities(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def putAccountDedicatedIpWarmupAttributesFuture(params: PutAccountDedicatedIpWarmupAttributesRequest): Future[PutAccountDedicatedIpWarmupAttributesResponse] = service.putAccountDedicatedIpWarmupAttributes(params).promise().toFuture
+    @inline def putAccountSendingAttributesFuture(params: PutAccountSendingAttributesRequest): Future[PutAccountSendingAttributesResponse] = service.putAccountSendingAttributes(params).promise().toFuture
+    @inline def putConfigurationSetDeliveryOptionsFuture(params: PutConfigurationSetDeliveryOptionsRequest): Future[PutConfigurationSetDeliveryOptionsResponse] = service.putConfigurationSetDeliveryOptions(params).promise().toFuture
+    @inline def putConfigurationSetReputationOptionsFuture(params: PutConfigurationSetReputationOptionsRequest): Future[PutConfigurationSetReputationOptionsResponse] = service.putConfigurationSetReputationOptions(params).promise().toFuture
+    @inline def putConfigurationSetSendingOptionsFuture(params: PutConfigurationSetSendingOptionsRequest): Future[PutConfigurationSetSendingOptionsResponse] = service.putConfigurationSetSendingOptions(params).promise().toFuture
+    @inline def putConfigurationSetTrackingOptionsFuture(params: PutConfigurationSetTrackingOptionsRequest): Future[PutConfigurationSetTrackingOptionsResponse] = service.putConfigurationSetTrackingOptions(params).promise().toFuture
+    @inline def putDedicatedIpInPoolFuture(params: PutDedicatedIpInPoolRequest): Future[PutDedicatedIpInPoolResponse] = service.putDedicatedIpInPool(params).promise().toFuture
+    @inline def putDedicatedIpWarmupAttributesFuture(params: PutDedicatedIpWarmupAttributesRequest): Future[PutDedicatedIpWarmupAttributesResponse] = service.putDedicatedIpWarmupAttributes(params).promise().toFuture
+    @inline def putDeliverabilityDashboardOptionFuture(params: PutDeliverabilityDashboardOptionRequest): Future[PutDeliverabilityDashboardOptionResponse] = service.putDeliverabilityDashboardOption(params).promise().toFuture
+    @inline def putEmailIdentityDkimAttributesFuture(params: PutEmailIdentityDkimAttributesRequest): Future[PutEmailIdentityDkimAttributesResponse] = service.putEmailIdentityDkimAttributes(params).promise().toFuture
+    @inline def putEmailIdentityFeedbackAttributesFuture(params: PutEmailIdentityFeedbackAttributesRequest): Future[PutEmailIdentityFeedbackAttributesResponse] = service.putEmailIdentityFeedbackAttributes(params).promise().toFuture
+    @inline def putEmailIdentityMailFromAttributesFuture(params: PutEmailIdentityMailFromAttributesRequest): Future[PutEmailIdentityMailFromAttributesResponse] = service.putEmailIdentityMailFromAttributes(params).promise().toFuture
+    @inline def sendEmailFuture(params: SendEmailRequest): Future[SendEmailResponse] = service.sendEmail(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateConfigurationSetEventDestinationFuture(params: UpdateConfigurationSetEventDestinationRequest): Future[UpdateConfigurationSetEventDestinationResponse] = service.updateConfigurationSetEventDestination(params).promise().toFuture
   }
 }
 
@@ -220,94 +133,48 @@ package pinpointemail {
   class PinpointEmail() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createConfigurationSet(params: CreateConfigurationSetRequest): Request[CreateConfigurationSetResponse] =
-      js.native
-    def createConfigurationSetEventDestination(
-        params: CreateConfigurationSetEventDestinationRequest
-    ): Request[CreateConfigurationSetEventDestinationResponse] = js.native
+    def createConfigurationSet(params: CreateConfigurationSetRequest): Request[CreateConfigurationSetResponse] = js.native
+    def createConfigurationSetEventDestination(params: CreateConfigurationSetEventDestinationRequest): Request[CreateConfigurationSetEventDestinationResponse] = js.native
     def createDedicatedIpPool(params: CreateDedicatedIpPoolRequest): Request[CreateDedicatedIpPoolResponse] = js.native
-    def createDeliverabilityTestReport(
-        params: CreateDeliverabilityTestReportRequest
-    ): Request[CreateDeliverabilityTestReportResponse] = js.native
+    def createDeliverabilityTestReport(params: CreateDeliverabilityTestReportRequest): Request[CreateDeliverabilityTestReportResponse] = js.native
     def createEmailIdentity(params: CreateEmailIdentityRequest): Request[CreateEmailIdentityResponse] = js.native
-    def deleteConfigurationSet(params: DeleteConfigurationSetRequest): Request[DeleteConfigurationSetResponse] =
-      js.native
-    def deleteConfigurationSetEventDestination(
-        params: DeleteConfigurationSetEventDestinationRequest
-    ): Request[DeleteConfigurationSetEventDestinationResponse] = js.native
+    def deleteConfigurationSet(params: DeleteConfigurationSetRequest): Request[DeleteConfigurationSetResponse] = js.native
+    def deleteConfigurationSetEventDestination(params: DeleteConfigurationSetEventDestinationRequest): Request[DeleteConfigurationSetEventDestinationResponse] = js.native
     def deleteDedicatedIpPool(params: DeleteDedicatedIpPoolRequest): Request[DeleteDedicatedIpPoolResponse] = js.native
     def deleteEmailIdentity(params: DeleteEmailIdentityRequest): Request[DeleteEmailIdentityResponse] = js.native
     def getAccount(params: GetAccountRequest): Request[GetAccountResponse] = js.native
     def getBlacklistReports(params: GetBlacklistReportsRequest): Request[GetBlacklistReportsResponse] = js.native
     def getConfigurationSet(params: GetConfigurationSetRequest): Request[GetConfigurationSetResponse] = js.native
-    def getConfigurationSetEventDestinations(
-        params: GetConfigurationSetEventDestinationsRequest
-    ): Request[GetConfigurationSetEventDestinationsResponse] = js.native
+    def getConfigurationSetEventDestinations(params: GetConfigurationSetEventDestinationsRequest): Request[GetConfigurationSetEventDestinationsResponse] = js.native
     def getDedicatedIp(params: GetDedicatedIpRequest): Request[GetDedicatedIpResponse] = js.native
     def getDedicatedIps(params: GetDedicatedIpsRequest): Request[GetDedicatedIpsResponse] = js.native
-    def getDeliverabilityDashboardOptions(
-        params: GetDeliverabilityDashboardOptionsRequest
-    ): Request[GetDeliverabilityDashboardOptionsResponse] = js.native
-    def getDeliverabilityTestReport(
-        params: GetDeliverabilityTestReportRequest
-    ): Request[GetDeliverabilityTestReportResponse] = js.native
-    def getDomainDeliverabilityCampaign(
-        params: GetDomainDeliverabilityCampaignRequest
-    ): Request[GetDomainDeliverabilityCampaignResponse] = js.native
-    def getDomainStatisticsReport(
-        params: GetDomainStatisticsReportRequest
-    ): Request[GetDomainStatisticsReportResponse] = js.native
+    def getDeliverabilityDashboardOptions(params: GetDeliverabilityDashboardOptionsRequest): Request[GetDeliverabilityDashboardOptionsResponse] = js.native
+    def getDeliverabilityTestReport(params: GetDeliverabilityTestReportRequest): Request[GetDeliverabilityTestReportResponse] = js.native
+    def getDomainDeliverabilityCampaign(params: GetDomainDeliverabilityCampaignRequest): Request[GetDomainDeliverabilityCampaignResponse] = js.native
+    def getDomainStatisticsReport(params: GetDomainStatisticsReportRequest): Request[GetDomainStatisticsReportResponse] = js.native
     def getEmailIdentity(params: GetEmailIdentityRequest): Request[GetEmailIdentityResponse] = js.native
     def listConfigurationSets(params: ListConfigurationSetsRequest): Request[ListConfigurationSetsResponse] = js.native
     def listDedicatedIpPools(params: ListDedicatedIpPoolsRequest): Request[ListDedicatedIpPoolsResponse] = js.native
-    def listDeliverabilityTestReports(
-        params: ListDeliverabilityTestReportsRequest
-    ): Request[ListDeliverabilityTestReportsResponse] = js.native
-    def listDomainDeliverabilityCampaigns(
-        params: ListDomainDeliverabilityCampaignsRequest
-    ): Request[ListDomainDeliverabilityCampaignsResponse] = js.native
+    def listDeliverabilityTestReports(params: ListDeliverabilityTestReportsRequest): Request[ListDeliverabilityTestReportsResponse] = js.native
+    def listDomainDeliverabilityCampaigns(params: ListDomainDeliverabilityCampaignsRequest): Request[ListDomainDeliverabilityCampaignsResponse] = js.native
     def listEmailIdentities(params: ListEmailIdentitiesRequest): Request[ListEmailIdentitiesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def putAccountDedicatedIpWarmupAttributes(
-        params: PutAccountDedicatedIpWarmupAttributesRequest
-    ): Request[PutAccountDedicatedIpWarmupAttributesResponse] = js.native
-    def putAccountSendingAttributes(
-        params: PutAccountSendingAttributesRequest
-    ): Request[PutAccountSendingAttributesResponse] = js.native
-    def putConfigurationSetDeliveryOptions(
-        params: PutConfigurationSetDeliveryOptionsRequest
-    ): Request[PutConfigurationSetDeliveryOptionsResponse] = js.native
-    def putConfigurationSetReputationOptions(
-        params: PutConfigurationSetReputationOptionsRequest
-    ): Request[PutConfigurationSetReputationOptionsResponse] = js.native
-    def putConfigurationSetSendingOptions(
-        params: PutConfigurationSetSendingOptionsRequest
-    ): Request[PutConfigurationSetSendingOptionsResponse] = js.native
-    def putConfigurationSetTrackingOptions(
-        params: PutConfigurationSetTrackingOptionsRequest
-    ): Request[PutConfigurationSetTrackingOptionsResponse] = js.native
+    def putAccountDedicatedIpWarmupAttributes(params: PutAccountDedicatedIpWarmupAttributesRequest): Request[PutAccountDedicatedIpWarmupAttributesResponse] = js.native
+    def putAccountSendingAttributes(params: PutAccountSendingAttributesRequest): Request[PutAccountSendingAttributesResponse] = js.native
+    def putConfigurationSetDeliveryOptions(params: PutConfigurationSetDeliveryOptionsRequest): Request[PutConfigurationSetDeliveryOptionsResponse] = js.native
+    def putConfigurationSetReputationOptions(params: PutConfigurationSetReputationOptionsRequest): Request[PutConfigurationSetReputationOptionsResponse] = js.native
+    def putConfigurationSetSendingOptions(params: PutConfigurationSetSendingOptionsRequest): Request[PutConfigurationSetSendingOptionsResponse] = js.native
+    def putConfigurationSetTrackingOptions(params: PutConfigurationSetTrackingOptionsRequest): Request[PutConfigurationSetTrackingOptionsResponse] = js.native
     def putDedicatedIpInPool(params: PutDedicatedIpInPoolRequest): Request[PutDedicatedIpInPoolResponse] = js.native
-    def putDedicatedIpWarmupAttributes(
-        params: PutDedicatedIpWarmupAttributesRequest
-    ): Request[PutDedicatedIpWarmupAttributesResponse] = js.native
-    def putDeliverabilityDashboardOption(
-        params: PutDeliverabilityDashboardOptionRequest
-    ): Request[PutDeliverabilityDashboardOptionResponse] = js.native
-    def putEmailIdentityDkimAttributes(
-        params: PutEmailIdentityDkimAttributesRequest
-    ): Request[PutEmailIdentityDkimAttributesResponse] = js.native
-    def putEmailIdentityFeedbackAttributes(
-        params: PutEmailIdentityFeedbackAttributesRequest
-    ): Request[PutEmailIdentityFeedbackAttributesResponse] = js.native
-    def putEmailIdentityMailFromAttributes(
-        params: PutEmailIdentityMailFromAttributesRequest
-    ): Request[PutEmailIdentityMailFromAttributesResponse] = js.native
+    def putDedicatedIpWarmupAttributes(params: PutDedicatedIpWarmupAttributesRequest): Request[PutDedicatedIpWarmupAttributesResponse] = js.native
+    def putDeliverabilityDashboardOption(params: PutDeliverabilityDashboardOptionRequest): Request[PutDeliverabilityDashboardOptionResponse] = js.native
+    def putEmailIdentityDkimAttributes(params: PutEmailIdentityDkimAttributesRequest): Request[PutEmailIdentityDkimAttributesResponse] = js.native
+    def putEmailIdentityFeedbackAttributes(params: PutEmailIdentityFeedbackAttributesRequest): Request[PutEmailIdentityFeedbackAttributesResponse] = js.native
+    def putEmailIdentityMailFromAttributes(params: PutEmailIdentityMailFromAttributesRequest): Request[PutEmailIdentityMailFromAttributesResponse] = js.native
     def sendEmail(params: SendEmailRequest): Request[SendEmailResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
-    def updateConfigurationSetEventDestination(
-        params: UpdateConfigurationSetEventDestinationRequest
-    ): Request[UpdateConfigurationSetEventDestinationResponse] = js.native
+    def updateConfigurationSetEventDestination(params: UpdateConfigurationSetEventDestinationRequest): Request[UpdateConfigurationSetEventDestinationResponse] = js.native
   }
 
   /**
@@ -1129,9 +996,7 @@ package pinpointemail {
     ): DomainDeliverabilityTrackingOption = {
       val __obj = js.Dynamic.literal()
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
-      InboxPlacementTrackingOption.foreach(__v =>
-        __obj.updateDynamic("InboxPlacementTrackingOption")(__v.asInstanceOf[js.Any])
-      )
+      InboxPlacementTrackingOption.foreach(__v => __obj.updateDynamic("InboxPlacementTrackingOption")(__v.asInstanceOf[js.Any]))
       SubscriptionStartDate.foreach(__v => __obj.updateDynamic("SubscriptionStartDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainDeliverabilityTrackingOption]
     }
@@ -1225,9 +1090,7 @@ package pinpointemail {
 
       CloudWatchDestination.foreach(__v => __obj.updateDynamic("CloudWatchDestination")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      KinesisFirehoseDestination.foreach(__v =>
-        __obj.updateDynamic("KinesisFirehoseDestination")(__v.asInstanceOf[js.Any])
-      )
+      KinesisFirehoseDestination.foreach(__v => __obj.updateDynamic("KinesisFirehoseDestination")(__v.asInstanceOf[js.Any]))
       PinpointDestination.foreach(__v => __obj.updateDynamic("PinpointDestination")(__v.asInstanceOf[js.Any]))
       SnsDestination.foreach(__v => __obj.updateDynamic("SnsDestination")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventDestination]
@@ -1260,9 +1123,7 @@ package pinpointemail {
       val __obj = js.Dynamic.literal()
       CloudWatchDestination.foreach(__v => __obj.updateDynamic("CloudWatchDestination")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      KinesisFirehoseDestination.foreach(__v =>
-        __obj.updateDynamic("KinesisFirehoseDestination")(__v.asInstanceOf[js.Any])
-      )
+      KinesisFirehoseDestination.foreach(__v => __obj.updateDynamic("KinesisFirehoseDestination")(__v.asInstanceOf[js.Any]))
       MatchingEventTypes.foreach(__v => __obj.updateDynamic("MatchingEventTypes")(__v.asInstanceOf[js.Any]))
       PinpointDestination.foreach(__v => __obj.updateDynamic("PinpointDestination")(__v.asInstanceOf[js.Any]))
       SnsDestination.foreach(__v => __obj.updateDynamic("SnsDestination")(__v.asInstanceOf[js.Any]))
@@ -1326,9 +1187,7 @@ package pinpointemail {
         SendingEnabled: js.UndefOr[Enabled] = js.undefined
     ): GetAccountResponse = {
       val __obj = js.Dynamic.literal()
-      DedicatedIpAutoWarmupEnabled.foreach(__v =>
-        __obj.updateDynamic("DedicatedIpAutoWarmupEnabled")(__v.asInstanceOf[js.Any])
-      )
+      DedicatedIpAutoWarmupEnabled.foreach(__v => __obj.updateDynamic("DedicatedIpAutoWarmupEnabled")(__v.asInstanceOf[js.Any]))
       EnforcementStatus.foreach(__v => __obj.updateDynamic("EnforcementStatus")(__v.asInstanceOf[js.Any]))
       ProductionAccessEnabled.foreach(__v => __obj.updateDynamic("ProductionAccessEnabled")(__v.asInstanceOf[js.Any]))
       SendQuota.foreach(__v => __obj.updateDynamic("SendQuota")(__v.asInstanceOf[js.Any]))
@@ -1605,9 +1464,7 @@ package pinpointemail {
 
       AccountStatus.foreach(__v => __obj.updateDynamic("AccountStatus")(__v.asInstanceOf[js.Any]))
       ActiveSubscribedDomains.foreach(__v => __obj.updateDynamic("ActiveSubscribedDomains")(__v.asInstanceOf[js.Any]))
-      PendingExpirationSubscribedDomains.foreach(__v =>
-        __obj.updateDynamic("PendingExpirationSubscribedDomains")(__v.asInstanceOf[js.Any])
-      )
+      PendingExpirationSubscribedDomains.foreach(__v => __obj.updateDynamic("PendingExpirationSubscribedDomains")(__v.asInstanceOf[js.Any]))
       SubscriptionExpiryDate.foreach(__v => __obj.updateDynamic("SubscriptionExpiryDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDeliverabilityDashboardOptionsResponse]
     }
@@ -2914,9 +2771,7 @@ package pinpointemail {
 
       ConfigurationSetName.foreach(__v => __obj.updateDynamic("ConfigurationSetName")(__v.asInstanceOf[js.Any]))
       EmailTags.foreach(__v => __obj.updateDynamic("EmailTags")(__v.asInstanceOf[js.Any]))
-      FeedbackForwardingEmailAddress.foreach(__v =>
-        __obj.updateDynamic("FeedbackForwardingEmailAddress")(__v.asInstanceOf[js.Any])
-      )
+      FeedbackForwardingEmailAddress.foreach(__v => __obj.updateDynamic("FeedbackForwardingEmailAddress")(__v.asInstanceOf[js.Any]))
       FromEmailAddress.foreach(__v => __obj.updateDynamic("FromEmailAddress")(__v.asInstanceOf[js.Any]))
       ReplyToAddresses.foreach(__v => __obj.updateDynamic("ReplyToAddresses")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendEmailRequest]

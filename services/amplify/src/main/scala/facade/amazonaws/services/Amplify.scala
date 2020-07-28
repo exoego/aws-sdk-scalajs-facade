@@ -114,85 +114,43 @@ package object amplify {
 
   implicit final class AmplifyOps(private val service: Amplify) extends AnyVal {
 
-    @inline def createAppFuture(params: CreateAppRequest): Future[CreateAppResult] =
-      service.createApp(params).promise().toFuture
-    @inline def createBackendEnvironmentFuture(
-        params: CreateBackendEnvironmentRequest
-    ): Future[CreateBackendEnvironmentResult] = service.createBackendEnvironment(params).promise().toFuture
-    @inline def createBranchFuture(params: CreateBranchRequest): Future[CreateBranchResult] =
-      service.createBranch(params).promise().toFuture
-    @inline def createDeploymentFuture(params: CreateDeploymentRequest): Future[CreateDeploymentResult] =
-      service.createDeployment(params).promise().toFuture
-    @inline def createDomainAssociationFuture(
-        params: CreateDomainAssociationRequest
-    ): Future[CreateDomainAssociationResult] = service.createDomainAssociation(params).promise().toFuture
-    @inline def createWebhookFuture(params: CreateWebhookRequest): Future[CreateWebhookResult] =
-      service.createWebhook(params).promise().toFuture
-    @inline def deleteAppFuture(params: DeleteAppRequest): Future[DeleteAppResult] =
-      service.deleteApp(params).promise().toFuture
-    @inline def deleteBackendEnvironmentFuture(
-        params: DeleteBackendEnvironmentRequest
-    ): Future[DeleteBackendEnvironmentResult] = service.deleteBackendEnvironment(params).promise().toFuture
-    @inline def deleteBranchFuture(params: DeleteBranchRequest): Future[DeleteBranchResult] =
-      service.deleteBranch(params).promise().toFuture
-    @inline def deleteDomainAssociationFuture(
-        params: DeleteDomainAssociationRequest
-    ): Future[DeleteDomainAssociationResult] = service.deleteDomainAssociation(params).promise().toFuture
-    @inline def deleteJobFuture(params: DeleteJobRequest): Future[DeleteJobResult] =
-      service.deleteJob(params).promise().toFuture
-    @inline def deleteWebhookFuture(params: DeleteWebhookRequest): Future[DeleteWebhookResult] =
-      service.deleteWebhook(params).promise().toFuture
-    @inline def generateAccessLogsFuture(params: GenerateAccessLogsRequest): Future[GenerateAccessLogsResult] =
-      service.generateAccessLogs(params).promise().toFuture
+    @inline def createAppFuture(params: CreateAppRequest): Future[CreateAppResult] = service.createApp(params).promise().toFuture
+    @inline def createBackendEnvironmentFuture(params: CreateBackendEnvironmentRequest): Future[CreateBackendEnvironmentResult] = service.createBackendEnvironment(params).promise().toFuture
+    @inline def createBranchFuture(params: CreateBranchRequest): Future[CreateBranchResult] = service.createBranch(params).promise().toFuture
+    @inline def createDeploymentFuture(params: CreateDeploymentRequest): Future[CreateDeploymentResult] = service.createDeployment(params).promise().toFuture
+    @inline def createDomainAssociationFuture(params: CreateDomainAssociationRequest): Future[CreateDomainAssociationResult] = service.createDomainAssociation(params).promise().toFuture
+    @inline def createWebhookFuture(params: CreateWebhookRequest): Future[CreateWebhookResult] = service.createWebhook(params).promise().toFuture
+    @inline def deleteAppFuture(params: DeleteAppRequest): Future[DeleteAppResult] = service.deleteApp(params).promise().toFuture
+    @inline def deleteBackendEnvironmentFuture(params: DeleteBackendEnvironmentRequest): Future[DeleteBackendEnvironmentResult] = service.deleteBackendEnvironment(params).promise().toFuture
+    @inline def deleteBranchFuture(params: DeleteBranchRequest): Future[DeleteBranchResult] = service.deleteBranch(params).promise().toFuture
+    @inline def deleteDomainAssociationFuture(params: DeleteDomainAssociationRequest): Future[DeleteDomainAssociationResult] = service.deleteDomainAssociation(params).promise().toFuture
+    @inline def deleteJobFuture(params: DeleteJobRequest): Future[DeleteJobResult] = service.deleteJob(params).promise().toFuture
+    @inline def deleteWebhookFuture(params: DeleteWebhookRequest): Future[DeleteWebhookResult] = service.deleteWebhook(params).promise().toFuture
+    @inline def generateAccessLogsFuture(params: GenerateAccessLogsRequest): Future[GenerateAccessLogsResult] = service.generateAccessLogs(params).promise().toFuture
     @inline def getAppFuture(params: GetAppRequest): Future[GetAppResult] = service.getApp(params).promise().toFuture
-    @inline def getArtifactUrlFuture(params: GetArtifactUrlRequest): Future[GetArtifactUrlResult] =
-      service.getArtifactUrl(params).promise().toFuture
-    @inline def getBackendEnvironmentFuture(params: GetBackendEnvironmentRequest): Future[GetBackendEnvironmentResult] =
-      service.getBackendEnvironment(params).promise().toFuture
-    @inline def getBranchFuture(params: GetBranchRequest): Future[GetBranchResult] =
-      service.getBranch(params).promise().toFuture
-    @inline def getDomainAssociationFuture(params: GetDomainAssociationRequest): Future[GetDomainAssociationResult] =
-      service.getDomainAssociation(params).promise().toFuture
+    @inline def getArtifactUrlFuture(params: GetArtifactUrlRequest): Future[GetArtifactUrlResult] = service.getArtifactUrl(params).promise().toFuture
+    @inline def getBackendEnvironmentFuture(params: GetBackendEnvironmentRequest): Future[GetBackendEnvironmentResult] = service.getBackendEnvironment(params).promise().toFuture
+    @inline def getBranchFuture(params: GetBranchRequest): Future[GetBranchResult] = service.getBranch(params).promise().toFuture
+    @inline def getDomainAssociationFuture(params: GetDomainAssociationRequest): Future[GetDomainAssociationResult] = service.getDomainAssociation(params).promise().toFuture
     @inline def getJobFuture(params: GetJobRequest): Future[GetJobResult] = service.getJob(params).promise().toFuture
-    @inline def getWebhookFuture(params: GetWebhookRequest): Future[GetWebhookResult] =
-      service.getWebhook(params).promise().toFuture
-    @inline def listAppsFuture(params: ListAppsRequest): Future[ListAppsResult] =
-      service.listApps(params).promise().toFuture
-    @inline def listArtifactsFuture(params: ListArtifactsRequest): Future[ListArtifactsResult] =
-      service.listArtifacts(params).promise().toFuture
-    @inline def listBackendEnvironmentsFuture(
-        params: ListBackendEnvironmentsRequest
-    ): Future[ListBackendEnvironmentsResult] = service.listBackendEnvironments(params).promise().toFuture
-    @inline def listBranchesFuture(params: ListBranchesRequest): Future[ListBranchesResult] =
-      service.listBranches(params).promise().toFuture
-    @inline def listDomainAssociationsFuture(
-        params: ListDomainAssociationsRequest
-    ): Future[ListDomainAssociationsResult] = service.listDomainAssociations(params).promise().toFuture
-    @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult] =
-      service.listJobs(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listWebhooksFuture(params: ListWebhooksRequest): Future[ListWebhooksResult] =
-      service.listWebhooks(params).promise().toFuture
-    @inline def startDeploymentFuture(params: StartDeploymentRequest): Future[StartDeploymentResult] =
-      service.startDeployment(params).promise().toFuture
-    @inline def startJobFuture(params: StartJobRequest): Future[StartJobResult] =
-      service.startJob(params).promise().toFuture
-    @inline def stopJobFuture(params: StopJobRequest): Future[StopJobResult] =
-      service.stopJob(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateAppFuture(params: UpdateAppRequest): Future[UpdateAppResult] =
-      service.updateApp(params).promise().toFuture
-    @inline def updateBranchFuture(params: UpdateBranchRequest): Future[UpdateBranchResult] =
-      service.updateBranch(params).promise().toFuture
-    @inline def updateDomainAssociationFuture(
-        params: UpdateDomainAssociationRequest
-    ): Future[UpdateDomainAssociationResult] = service.updateDomainAssociation(params).promise().toFuture
-    @inline def updateWebhookFuture(params: UpdateWebhookRequest): Future[UpdateWebhookResult] =
-      service.updateWebhook(params).promise().toFuture
+    @inline def getWebhookFuture(params: GetWebhookRequest): Future[GetWebhookResult] = service.getWebhook(params).promise().toFuture
+    @inline def listAppsFuture(params: ListAppsRequest): Future[ListAppsResult] = service.listApps(params).promise().toFuture
+    @inline def listArtifactsFuture(params: ListArtifactsRequest): Future[ListArtifactsResult] = service.listArtifacts(params).promise().toFuture
+    @inline def listBackendEnvironmentsFuture(params: ListBackendEnvironmentsRequest): Future[ListBackendEnvironmentsResult] = service.listBackendEnvironments(params).promise().toFuture
+    @inline def listBranchesFuture(params: ListBranchesRequest): Future[ListBranchesResult] = service.listBranches(params).promise().toFuture
+    @inline def listDomainAssociationsFuture(params: ListDomainAssociationsRequest): Future[ListDomainAssociationsResult] = service.listDomainAssociations(params).promise().toFuture
+    @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult] = service.listJobs(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listWebhooksFuture(params: ListWebhooksRequest): Future[ListWebhooksResult] = service.listWebhooks(params).promise().toFuture
+    @inline def startDeploymentFuture(params: StartDeploymentRequest): Future[StartDeploymentResult] = service.startDeployment(params).promise().toFuture
+    @inline def startJobFuture(params: StartJobRequest): Future[StartJobResult] = service.startJob(params).promise().toFuture
+    @inline def stopJobFuture(params: StopJobRequest): Future[StopJobResult] = service.stopJob(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateAppFuture(params: UpdateAppRequest): Future[UpdateAppResult] = service.updateApp(params).promise().toFuture
+    @inline def updateBranchFuture(params: UpdateBranchRequest): Future[UpdateBranchResult] = service.updateBranch(params).promise().toFuture
+    @inline def updateDomainAssociationFuture(params: UpdateDomainAssociationRequest): Future[UpdateDomainAssociationResult] = service.updateDomainAssociation(params).promise().toFuture
+    @inline def updateWebhookFuture(params: UpdateWebhookRequest): Future[UpdateWebhookResult] = service.updateWebhook(params).promise().toFuture
   }
 }
 
@@ -203,19 +161,15 @@ package amplify {
     def this(config: AWSConfig) = this()
 
     def createApp(params: CreateAppRequest): Request[CreateAppResult] = js.native
-    def createBackendEnvironment(params: CreateBackendEnvironmentRequest): Request[CreateBackendEnvironmentResult] =
-      js.native
+    def createBackendEnvironment(params: CreateBackendEnvironmentRequest): Request[CreateBackendEnvironmentResult] = js.native
     def createBranch(params: CreateBranchRequest): Request[CreateBranchResult] = js.native
     def createDeployment(params: CreateDeploymentRequest): Request[CreateDeploymentResult] = js.native
-    def createDomainAssociation(params: CreateDomainAssociationRequest): Request[CreateDomainAssociationResult] =
-      js.native
+    def createDomainAssociation(params: CreateDomainAssociationRequest): Request[CreateDomainAssociationResult] = js.native
     def createWebhook(params: CreateWebhookRequest): Request[CreateWebhookResult] = js.native
     def deleteApp(params: DeleteAppRequest): Request[DeleteAppResult] = js.native
-    def deleteBackendEnvironment(params: DeleteBackendEnvironmentRequest): Request[DeleteBackendEnvironmentResult] =
-      js.native
+    def deleteBackendEnvironment(params: DeleteBackendEnvironmentRequest): Request[DeleteBackendEnvironmentResult] = js.native
     def deleteBranch(params: DeleteBranchRequest): Request[DeleteBranchResult] = js.native
-    def deleteDomainAssociation(params: DeleteDomainAssociationRequest): Request[DeleteDomainAssociationResult] =
-      js.native
+    def deleteDomainAssociation(params: DeleteDomainAssociationRequest): Request[DeleteDomainAssociationResult] = js.native
     def deleteJob(params: DeleteJobRequest): Request[DeleteJobResult] = js.native
     def deleteWebhook(params: DeleteWebhookRequest): Request[DeleteWebhookResult] = js.native
     def generateAccessLogs(params: GenerateAccessLogsRequest): Request[GenerateAccessLogsResult] = js.native
@@ -228,8 +182,7 @@ package amplify {
     def getWebhook(params: GetWebhookRequest): Request[GetWebhookResult] = js.native
     def listApps(params: ListAppsRequest): Request[ListAppsResult] = js.native
     def listArtifacts(params: ListArtifactsRequest): Request[ListArtifactsResult] = js.native
-    def listBackendEnvironments(params: ListBackendEnvironmentsRequest): Request[ListBackendEnvironmentsResult] =
-      js.native
+    def listBackendEnvironments(params: ListBackendEnvironmentsRequest): Request[ListBackendEnvironmentsResult] = js.native
     def listBranches(params: ListBranchesRequest): Request[ListBranchesResult] = js.native
     def listDomainAssociations(params: ListDomainAssociationsRequest): Request[ListDomainAssociationsResult] = js.native
     def listJobs(params: ListJobsRequest): Request[ListJobsResult] = js.native
@@ -242,8 +195,7 @@ package amplify {
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateApp(params: UpdateAppRequest): Request[UpdateAppResult] = js.native
     def updateBranch(params: UpdateBranchRequest): Request[UpdateBranchResult] = js.native
-    def updateDomainAssociation(params: UpdateDomainAssociationRequest): Request[UpdateDomainAssociationResult] =
-      js.native
+    def updateDomainAssociation(params: UpdateDomainAssociationRequest): Request[UpdateDomainAssociationResult] = js.native
     def updateWebhook(params: UpdateWebhookRequest): Request[UpdateWebhookResult] = js.native
   }
 
@@ -318,9 +270,7 @@ package amplify {
       )
 
       autoBranchCreationConfig.foreach(__v => __obj.updateDynamic("autoBranchCreationConfig")(__v.asInstanceOf[js.Any]))
-      autoBranchCreationPatterns.foreach(__v =>
-        __obj.updateDynamic("autoBranchCreationPatterns")(__v.asInstanceOf[js.Any])
-      )
+      autoBranchCreationPatterns.foreach(__v => __obj.updateDynamic("autoBranchCreationPatterns")(__v.asInstanceOf[js.Any]))
       basicAuthCredentials.foreach(__v => __obj.updateDynamic("basicAuthCredentials")(__v.asInstanceOf[js.Any]))
       buildSpec.foreach(__v => __obj.updateDynamic("buildSpec")(__v.asInstanceOf[js.Any]))
       customRules.foreach(__v => __obj.updateDynamic("customRules")(__v.asInstanceOf[js.Any]))
@@ -394,9 +344,7 @@ package amplify {
       enablePullRequestPreview.foreach(__v => __obj.updateDynamic("enablePullRequestPreview")(__v.asInstanceOf[js.Any]))
       environmentVariables.foreach(__v => __obj.updateDynamic("environmentVariables")(__v.asInstanceOf[js.Any]))
       framework.foreach(__v => __obj.updateDynamic("framework")(__v.asInstanceOf[js.Any]))
-      pullRequestEnvironmentName.foreach(__v =>
-        __obj.updateDynamic("pullRequestEnvironmentName")(__v.asInstanceOf[js.Any])
-      )
+      pullRequestEnvironmentName.foreach(__v => __obj.updateDynamic("pullRequestEnvironmentName")(__v.asInstanceOf[js.Any]))
       stage.foreach(__v => __obj.updateDynamic("stage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoBranchCreationConfig]
     }
@@ -526,9 +474,7 @@ package amplify {
       basicAuthCredentials.foreach(__v => __obj.updateDynamic("basicAuthCredentials")(__v.asInstanceOf[js.Any]))
       buildSpec.foreach(__v => __obj.updateDynamic("buildSpec")(__v.asInstanceOf[js.Any]))
       destinationBranch.foreach(__v => __obj.updateDynamic("destinationBranch")(__v.asInstanceOf[js.Any]))
-      pullRequestEnvironmentName.foreach(__v =>
-        __obj.updateDynamic("pullRequestEnvironmentName")(__v.asInstanceOf[js.Any])
-      )
+      pullRequestEnvironmentName.foreach(__v => __obj.updateDynamic("pullRequestEnvironmentName")(__v.asInstanceOf[js.Any]))
       sourceBranch.foreach(__v => __obj.updateDynamic("sourceBranch")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       thumbnailUrl.foreach(__v => __obj.updateDynamic("thumbnailUrl")(__v.asInstanceOf[js.Any]))
@@ -589,9 +535,7 @@ package amplify {
 
       accessToken.foreach(__v => __obj.updateDynamic("accessToken")(__v.asInstanceOf[js.Any]))
       autoBranchCreationConfig.foreach(__v => __obj.updateDynamic("autoBranchCreationConfig")(__v.asInstanceOf[js.Any]))
-      autoBranchCreationPatterns.foreach(__v =>
-        __obj.updateDynamic("autoBranchCreationPatterns")(__v.asInstanceOf[js.Any])
-      )
+      autoBranchCreationPatterns.foreach(__v => __obj.updateDynamic("autoBranchCreationPatterns")(__v.asInstanceOf[js.Any]))
       basicAuthCredentials.foreach(__v => __obj.updateDynamic("basicAuthCredentials")(__v.asInstanceOf[js.Any]))
       buildSpec.foreach(__v => __obj.updateDynamic("buildSpec")(__v.asInstanceOf[js.Any]))
       customRules.foreach(__v => __obj.updateDynamic("customRules")(__v.asInstanceOf[js.Any]))
@@ -740,9 +684,7 @@ package amplify {
       enablePullRequestPreview.foreach(__v => __obj.updateDynamic("enablePullRequestPreview")(__v.asInstanceOf[js.Any]))
       environmentVariables.foreach(__v => __obj.updateDynamic("environmentVariables")(__v.asInstanceOf[js.Any]))
       framework.foreach(__v => __obj.updateDynamic("framework")(__v.asInstanceOf[js.Any]))
-      pullRequestEnvironmentName.foreach(__v =>
-        __obj.updateDynamic("pullRequestEnvironmentName")(__v.asInstanceOf[js.Any])
-      )
+      pullRequestEnvironmentName.foreach(__v => __obj.updateDynamic("pullRequestEnvironmentName")(__v.asInstanceOf[js.Any]))
       stage.foreach(__v => __obj.updateDynamic("stage")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       ttl.foreach(__v => __obj.updateDynamic("ttl")(__v.asInstanceOf[js.Any]))
@@ -854,9 +796,7 @@ package amplify {
         "subDomainSettings" -> subDomainSettings.asInstanceOf[js.Any]
       )
 
-      autoSubDomainCreationPatterns.foreach(__v =>
-        __obj.updateDynamic("autoSubDomainCreationPatterns")(__v.asInstanceOf[js.Any])
-      )
+      autoSubDomainCreationPatterns.foreach(__v => __obj.updateDynamic("autoSubDomainCreationPatterns")(__v.asInstanceOf[js.Any]))
       autoSubDomainIAMRole.foreach(__v => __obj.updateDynamic("autoSubDomainIAMRole")(__v.asInstanceOf[js.Any]))
       enableAutoSubDomain.foreach(__v => __obj.updateDynamic("enableAutoSubDomain")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDomainAssociationRequest]
@@ -1264,13 +1204,9 @@ package amplify {
         "subDomains" -> subDomains.asInstanceOf[js.Any]
       )
 
-      autoSubDomainCreationPatterns.foreach(__v =>
-        __obj.updateDynamic("autoSubDomainCreationPatterns")(__v.asInstanceOf[js.Any])
-      )
+      autoSubDomainCreationPatterns.foreach(__v => __obj.updateDynamic("autoSubDomainCreationPatterns")(__v.asInstanceOf[js.Any]))
       autoSubDomainIAMRole.foreach(__v => __obj.updateDynamic("autoSubDomainIAMRole")(__v.asInstanceOf[js.Any]))
-      certificateVerificationDNSRecord.foreach(__v =>
-        __obj.updateDynamic("certificateVerificationDNSRecord")(__v.asInstanceOf[js.Any])
-      )
+      certificateVerificationDNSRecord.foreach(__v => __obj.updateDynamic("certificateVerificationDNSRecord")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainAssociation]
     }
   }
@@ -1287,18 +1223,7 @@ package amplify {
     val REQUESTING_CERTIFICATE = "REQUESTING_CERTIFICATE".asInstanceOf[DomainStatus]
     val UPDATING = "UPDATING".asInstanceOf[DomainStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        PENDING_VERIFICATION,
-        IN_PROGRESS,
-        AVAILABLE,
-        PENDING_DEPLOYMENT,
-        FAILED,
-        CREATING,
-        REQUESTING_CERTIFICATE,
-        UPDATING
-      )
-    )
+    val values = js.Object.freeze(js.Array(PENDING_VERIFICATION, IN_PROGRESS, AVAILABLE, PENDING_DEPLOYMENT, FAILED, CREATING, REQUESTING_CERTIFICATE, UPDATING))
   }
 
   /**
@@ -2596,9 +2521,7 @@ package amplify {
 
       accessToken.foreach(__v => __obj.updateDynamic("accessToken")(__v.asInstanceOf[js.Any]))
       autoBranchCreationConfig.foreach(__v => __obj.updateDynamic("autoBranchCreationConfig")(__v.asInstanceOf[js.Any]))
-      autoBranchCreationPatterns.foreach(__v =>
-        __obj.updateDynamic("autoBranchCreationPatterns")(__v.asInstanceOf[js.Any])
-      )
+      autoBranchCreationPatterns.foreach(__v => __obj.updateDynamic("autoBranchCreationPatterns")(__v.asInstanceOf[js.Any]))
       basicAuthCredentials.foreach(__v => __obj.updateDynamic("basicAuthCredentials")(__v.asInstanceOf[js.Any]))
       buildSpec.foreach(__v => __obj.updateDynamic("buildSpec")(__v.asInstanceOf[js.Any]))
       customRules.foreach(__v => __obj.updateDynamic("customRules")(__v.asInstanceOf[js.Any]))
@@ -2697,9 +2620,7 @@ package amplify {
       enablePullRequestPreview.foreach(__v => __obj.updateDynamic("enablePullRequestPreview")(__v.asInstanceOf[js.Any]))
       environmentVariables.foreach(__v => __obj.updateDynamic("environmentVariables")(__v.asInstanceOf[js.Any]))
       framework.foreach(__v => __obj.updateDynamic("framework")(__v.asInstanceOf[js.Any]))
-      pullRequestEnvironmentName.foreach(__v =>
-        __obj.updateDynamic("pullRequestEnvironmentName")(__v.asInstanceOf[js.Any])
-      )
+      pullRequestEnvironmentName.foreach(__v => __obj.updateDynamic("pullRequestEnvironmentName")(__v.asInstanceOf[js.Any]))
       stage.foreach(__v => __obj.updateDynamic("stage")(__v.asInstanceOf[js.Any]))
       ttl.foreach(__v => __obj.updateDynamic("ttl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateBranchRequest]
@@ -2756,9 +2677,7 @@ package amplify {
         "subDomainSettings" -> subDomainSettings.asInstanceOf[js.Any]
       )
 
-      autoSubDomainCreationPatterns.foreach(__v =>
-        __obj.updateDynamic("autoSubDomainCreationPatterns")(__v.asInstanceOf[js.Any])
-      )
+      autoSubDomainCreationPatterns.foreach(__v => __obj.updateDynamic("autoSubDomainCreationPatterns")(__v.asInstanceOf[js.Any]))
       autoSubDomainIAMRole.foreach(__v => __obj.updateDynamic("autoSubDomainIAMRole")(__v.asInstanceOf[js.Any]))
       enableAutoSubDomain.foreach(__v => __obj.updateDynamic("enableAutoSubDomain")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDomainAssociationRequest]

@@ -28,20 +28,13 @@ package object iotsecuretunneling {
 
   implicit final class IoTSecureTunnelingOps(private val service: IoTSecureTunneling) extends AnyVal {
 
-    @inline def closeTunnelFuture(params: CloseTunnelRequest): Future[CloseTunnelResponse] =
-      service.closeTunnel(params).promise().toFuture
-    @inline def describeTunnelFuture(params: DescribeTunnelRequest): Future[DescribeTunnelResponse] =
-      service.describeTunnel(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listTunnelsFuture(params: ListTunnelsRequest): Future[ListTunnelsResponse] =
-      service.listTunnels(params).promise().toFuture
-    @inline def openTunnelFuture(params: OpenTunnelRequest): Future[OpenTunnelResponse] =
-      service.openTunnel(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
+    @inline def closeTunnelFuture(params: CloseTunnelRequest): Future[CloseTunnelResponse] = service.closeTunnel(params).promise().toFuture
+    @inline def describeTunnelFuture(params: DescribeTunnelRequest): Future[DescribeTunnelResponse] = service.describeTunnel(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listTunnelsFuture(params: ListTunnelsRequest): Future[ListTunnelsResponse] = service.listTunnels(params).promise().toFuture
+    @inline def openTunnelFuture(params: OpenTunnelRequest): Future[OpenTunnelResponse] = service.openTunnel(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
   }
 }
 
@@ -380,9 +373,7 @@ package iotsecuretunneling {
         maxLifetimeTimeoutMinutes: js.UndefOr[TimeoutInMin] = js.undefined
     ): TimeoutConfig = {
       val __obj = js.Dynamic.literal()
-      maxLifetimeTimeoutMinutes.foreach(__v =>
-        __obj.updateDynamic("maxLifetimeTimeoutMinutes")(__v.asInstanceOf[js.Any])
-      )
+      maxLifetimeTimeoutMinutes.foreach(__v => __obj.updateDynamic("maxLifetimeTimeoutMinutes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TimeoutConfig]
     }
   }
@@ -424,9 +415,7 @@ package iotsecuretunneling {
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       destinationConfig.foreach(__v => __obj.updateDynamic("destinationConfig")(__v.asInstanceOf[js.Any]))
-      destinationConnectionState.foreach(__v =>
-        __obj.updateDynamic("destinationConnectionState")(__v.asInstanceOf[js.Any])
-      )
+      destinationConnectionState.foreach(__v => __obj.updateDynamic("destinationConnectionState")(__v.asInstanceOf[js.Any]))
       lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
       sourceConnectionState.foreach(__v => __obj.updateDynamic("sourceConnectionState")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))

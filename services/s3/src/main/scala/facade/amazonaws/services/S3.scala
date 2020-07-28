@@ -204,201 +204,90 @@ package object s3 {
 
   implicit final class S3Ops(private val service: S3) extends AnyVal {
 
-    @inline def abortMultipartUploadFuture(params: AbortMultipartUploadRequest): Future[AbortMultipartUploadOutput] =
-      service.abortMultipartUpload(params).promise().toFuture
-    @inline def completeMultipartUploadFuture(
-        params: CompleteMultipartUploadRequest
-    ): Future[CompleteMultipartUploadOutput] = service.completeMultipartUpload(params).promise().toFuture
-    @inline def copyObjectFuture(params: CopyObjectRequest): Future[CopyObjectOutput] =
-      service.copyObject(params).promise().toFuture
-    @inline def createBucketFuture(params: CreateBucketRequest): Future[CreateBucketOutput] =
-      service.createBucket(params).promise().toFuture
-    @inline def createMultipartUploadFuture(params: CreateMultipartUploadRequest): Future[CreateMultipartUploadOutput] =
-      service.createMultipartUpload(params).promise().toFuture
-    @inline def deleteBucketAnalyticsConfigurationFuture(
-        params: DeleteBucketAnalyticsConfigurationRequest
-    ): Future[js.Object] = service.deleteBucketAnalyticsConfiguration(params).promise().toFuture
-    @inline def deleteBucketCorsFuture(params: DeleteBucketCorsRequest): Future[js.Object] =
-      service.deleteBucketCors(params).promise().toFuture
-    @inline def deleteBucketEncryptionFuture(params: DeleteBucketEncryptionRequest): Future[js.Object] =
-      service.deleteBucketEncryption(params).promise().toFuture
-    @inline def deleteBucketFuture(params: DeleteBucketRequest): Future[js.Object] =
-      service.deleteBucket(params).promise().toFuture
-    @inline def deleteBucketInventoryConfigurationFuture(
-        params: DeleteBucketInventoryConfigurationRequest
-    ): Future[js.Object] = service.deleteBucketInventoryConfiguration(params).promise().toFuture
-    @inline def deleteBucketLifecycleFuture(params: DeleteBucketLifecycleRequest): Future[js.Object] =
-      service.deleteBucketLifecycle(params).promise().toFuture
-    @inline def deleteBucketMetricsConfigurationFuture(
-        params: DeleteBucketMetricsConfigurationRequest
-    ): Future[js.Object] = service.deleteBucketMetricsConfiguration(params).promise().toFuture
-    @inline def deleteBucketPolicyFuture(params: DeleteBucketPolicyRequest): Future[js.Object] =
-      service.deleteBucketPolicy(params).promise().toFuture
-    @inline def deleteBucketReplicationFuture(params: DeleteBucketReplicationRequest): Future[js.Object] =
-      service.deleteBucketReplication(params).promise().toFuture
-    @inline def deleteBucketTaggingFuture(params: DeleteBucketTaggingRequest): Future[js.Object] =
-      service.deleteBucketTagging(params).promise().toFuture
-    @inline def deleteBucketWebsiteFuture(params: DeleteBucketWebsiteRequest): Future[js.Object] =
-      service.deleteBucketWebsite(params).promise().toFuture
-    @inline def deleteObjectFuture(params: DeleteObjectRequest): Future[DeleteObjectOutput] =
-      service.deleteObject(params).promise().toFuture
-    @inline def deleteObjectTaggingFuture(params: DeleteObjectTaggingRequest): Future[DeleteObjectTaggingOutput] =
-      service.deleteObjectTagging(params).promise().toFuture
-    @inline def deleteObjectsFuture(params: DeleteObjectsRequest): Future[DeleteObjectsOutput] =
-      service.deleteObjects(params).promise().toFuture
-    @inline def deletePublicAccessBlockFuture(params: DeletePublicAccessBlockRequest): Future[js.Object] =
-      service.deletePublicAccessBlock(params).promise().toFuture
-    @inline def getBucketAccelerateConfigurationFuture(
-        params: GetBucketAccelerateConfigurationRequest
-    ): Future[GetBucketAccelerateConfigurationOutput] =
-      service.getBucketAccelerateConfiguration(params).promise().toFuture
-    @inline def getBucketAclFuture(params: GetBucketAclRequest): Future[GetBucketAclOutput] =
-      service.getBucketAcl(params).promise().toFuture
-    @inline def getBucketAnalyticsConfigurationFuture(
-        params: GetBucketAnalyticsConfigurationRequest
-    ): Future[GetBucketAnalyticsConfigurationOutput] =
-      service.getBucketAnalyticsConfiguration(params).promise().toFuture
-    @inline def getBucketCorsFuture(params: GetBucketCorsRequest): Future[GetBucketCorsOutput] =
-      service.getBucketCors(params).promise().toFuture
-    @inline def getBucketEncryptionFuture(params: GetBucketEncryptionRequest): Future[GetBucketEncryptionOutput] =
-      service.getBucketEncryption(params).promise().toFuture
-    @inline def getBucketInventoryConfigurationFuture(
-        params: GetBucketInventoryConfigurationRequest
-    ): Future[GetBucketInventoryConfigurationOutput] =
-      service.getBucketInventoryConfiguration(params).promise().toFuture
-    @inline def getBucketLifecycleConfigurationFuture(
-        params: GetBucketLifecycleConfigurationRequest
-    ): Future[GetBucketLifecycleConfigurationOutput] =
-      service.getBucketLifecycleConfiguration(params).promise().toFuture
-    @inline def getBucketLocationFuture(params: GetBucketLocationRequest): Future[GetBucketLocationOutput] =
-      service.getBucketLocation(params).promise().toFuture
-    @inline def getBucketLoggingFuture(params: GetBucketLoggingRequest): Future[GetBucketLoggingOutput] =
-      service.getBucketLogging(params).promise().toFuture
-    @inline def getBucketMetricsConfigurationFuture(
-        params: GetBucketMetricsConfigurationRequest
-    ): Future[GetBucketMetricsConfigurationOutput] = service.getBucketMetricsConfiguration(params).promise().toFuture
-    @inline def getBucketNotificationConfigurationFuture(
-        params: GetBucketNotificationConfigurationRequest
-    ): Future[NotificationConfiguration] = service.getBucketNotificationConfiguration(params).promise().toFuture
-    @inline def getBucketPolicyFuture(params: GetBucketPolicyRequest): Future[GetBucketPolicyOutput] =
-      service.getBucketPolicy(params).promise().toFuture
-    @inline def getBucketPolicyStatusFuture(params: GetBucketPolicyStatusRequest): Future[GetBucketPolicyStatusOutput] =
-      service.getBucketPolicyStatus(params).promise().toFuture
-    @inline def getBucketReplicationFuture(params: GetBucketReplicationRequest): Future[GetBucketReplicationOutput] =
-      service.getBucketReplication(params).promise().toFuture
-    @inline def getBucketRequestPaymentFuture(
-        params: GetBucketRequestPaymentRequest
-    ): Future[GetBucketRequestPaymentOutput] = service.getBucketRequestPayment(params).promise().toFuture
-    @inline def getBucketTaggingFuture(params: GetBucketTaggingRequest): Future[GetBucketTaggingOutput] =
-      service.getBucketTagging(params).promise().toFuture
-    @inline def getBucketVersioningFuture(params: GetBucketVersioningRequest): Future[GetBucketVersioningOutput] =
-      service.getBucketVersioning(params).promise().toFuture
-    @inline def getBucketWebsiteFuture(params: GetBucketWebsiteRequest): Future[GetBucketWebsiteOutput] =
-      service.getBucketWebsite(params).promise().toFuture
-    @inline def getObjectAclFuture(params: GetObjectAclRequest): Future[GetObjectAclOutput] =
-      service.getObjectAcl(params).promise().toFuture
-    @inline def getObjectFuture(params: GetObjectRequest): Future[GetObjectOutput] =
-      service.getObject(params).promise().toFuture
-    @inline def getObjectLegalHoldFuture(params: GetObjectLegalHoldRequest): Future[GetObjectLegalHoldOutput] =
-      service.getObjectLegalHold(params).promise().toFuture
-    @inline def getObjectLockConfigurationFuture(
-        params: GetObjectLockConfigurationRequest
-    ): Future[GetObjectLockConfigurationOutput] = service.getObjectLockConfiguration(params).promise().toFuture
-    @inline def getObjectRetentionFuture(params: GetObjectRetentionRequest): Future[GetObjectRetentionOutput] =
-      service.getObjectRetention(params).promise().toFuture
-    @inline def getObjectTaggingFuture(params: GetObjectTaggingRequest): Future[GetObjectTaggingOutput] =
-      service.getObjectTagging(params).promise().toFuture
-    @inline def getObjectTorrentFuture(params: GetObjectTorrentRequest): Future[GetObjectTorrentOutput] =
-      service.getObjectTorrent(params).promise().toFuture
-    @inline def getPublicAccessBlockFuture(params: GetPublicAccessBlockRequest): Future[GetPublicAccessBlockOutput] =
-      service.getPublicAccessBlock(params).promise().toFuture
-    @inline def headBucketFuture(params: HeadBucketRequest): Future[js.Object] =
-      service.headBucket(params).promise().toFuture
-    @inline def headObjectFuture(params: HeadObjectRequest): Future[HeadObjectOutput] =
-      service.headObject(params).promise().toFuture
-    @inline def listBucketAnalyticsConfigurationsFuture(
-        params: ListBucketAnalyticsConfigurationsRequest
-    ): Future[ListBucketAnalyticsConfigurationsOutput] =
-      service.listBucketAnalyticsConfigurations(params).promise().toFuture
-    @inline def listBucketInventoryConfigurationsFuture(
-        params: ListBucketInventoryConfigurationsRequest
-    ): Future[ListBucketInventoryConfigurationsOutput] =
-      service.listBucketInventoryConfigurations(params).promise().toFuture
-    @inline def listBucketMetricsConfigurationsFuture(
-        params: ListBucketMetricsConfigurationsRequest
-    ): Future[ListBucketMetricsConfigurationsOutput] =
-      service.listBucketMetricsConfigurations(params).promise().toFuture
+    @inline def abortMultipartUploadFuture(params: AbortMultipartUploadRequest): Future[AbortMultipartUploadOutput] = service.abortMultipartUpload(params).promise().toFuture
+    @inline def completeMultipartUploadFuture(params: CompleteMultipartUploadRequest): Future[CompleteMultipartUploadOutput] = service.completeMultipartUpload(params).promise().toFuture
+    @inline def copyObjectFuture(params: CopyObjectRequest): Future[CopyObjectOutput] = service.copyObject(params).promise().toFuture
+    @inline def createBucketFuture(params: CreateBucketRequest): Future[CreateBucketOutput] = service.createBucket(params).promise().toFuture
+    @inline def createMultipartUploadFuture(params: CreateMultipartUploadRequest): Future[CreateMultipartUploadOutput] = service.createMultipartUpload(params).promise().toFuture
+    @inline def deleteBucketAnalyticsConfigurationFuture(params: DeleteBucketAnalyticsConfigurationRequest): Future[js.Object] = service.deleteBucketAnalyticsConfiguration(params).promise().toFuture
+    @inline def deleteBucketCorsFuture(params: DeleteBucketCorsRequest): Future[js.Object] = service.deleteBucketCors(params).promise().toFuture
+    @inline def deleteBucketEncryptionFuture(params: DeleteBucketEncryptionRequest): Future[js.Object] = service.deleteBucketEncryption(params).promise().toFuture
+    @inline def deleteBucketFuture(params: DeleteBucketRequest): Future[js.Object] = service.deleteBucket(params).promise().toFuture
+    @inline def deleteBucketInventoryConfigurationFuture(params: DeleteBucketInventoryConfigurationRequest): Future[js.Object] = service.deleteBucketInventoryConfiguration(params).promise().toFuture
+    @inline def deleteBucketLifecycleFuture(params: DeleteBucketLifecycleRequest): Future[js.Object] = service.deleteBucketLifecycle(params).promise().toFuture
+    @inline def deleteBucketMetricsConfigurationFuture(params: DeleteBucketMetricsConfigurationRequest): Future[js.Object] = service.deleteBucketMetricsConfiguration(params).promise().toFuture
+    @inline def deleteBucketPolicyFuture(params: DeleteBucketPolicyRequest): Future[js.Object] = service.deleteBucketPolicy(params).promise().toFuture
+    @inline def deleteBucketReplicationFuture(params: DeleteBucketReplicationRequest): Future[js.Object] = service.deleteBucketReplication(params).promise().toFuture
+    @inline def deleteBucketTaggingFuture(params: DeleteBucketTaggingRequest): Future[js.Object] = service.deleteBucketTagging(params).promise().toFuture
+    @inline def deleteBucketWebsiteFuture(params: DeleteBucketWebsiteRequest): Future[js.Object] = service.deleteBucketWebsite(params).promise().toFuture
+    @inline def deleteObjectFuture(params: DeleteObjectRequest): Future[DeleteObjectOutput] = service.deleteObject(params).promise().toFuture
+    @inline def deleteObjectTaggingFuture(params: DeleteObjectTaggingRequest): Future[DeleteObjectTaggingOutput] = service.deleteObjectTagging(params).promise().toFuture
+    @inline def deleteObjectsFuture(params: DeleteObjectsRequest): Future[DeleteObjectsOutput] = service.deleteObjects(params).promise().toFuture
+    @inline def deletePublicAccessBlockFuture(params: DeletePublicAccessBlockRequest): Future[js.Object] = service.deletePublicAccessBlock(params).promise().toFuture
+    @inline def getBucketAccelerateConfigurationFuture(params: GetBucketAccelerateConfigurationRequest): Future[GetBucketAccelerateConfigurationOutput] = service.getBucketAccelerateConfiguration(params).promise().toFuture
+    @inline def getBucketAclFuture(params: GetBucketAclRequest): Future[GetBucketAclOutput] = service.getBucketAcl(params).promise().toFuture
+    @inline def getBucketAnalyticsConfigurationFuture(params: GetBucketAnalyticsConfigurationRequest): Future[GetBucketAnalyticsConfigurationOutput] = service.getBucketAnalyticsConfiguration(params).promise().toFuture
+    @inline def getBucketCorsFuture(params: GetBucketCorsRequest): Future[GetBucketCorsOutput] = service.getBucketCors(params).promise().toFuture
+    @inline def getBucketEncryptionFuture(params: GetBucketEncryptionRequest): Future[GetBucketEncryptionOutput] = service.getBucketEncryption(params).promise().toFuture
+    @inline def getBucketInventoryConfigurationFuture(params: GetBucketInventoryConfigurationRequest): Future[GetBucketInventoryConfigurationOutput] = service.getBucketInventoryConfiguration(params).promise().toFuture
+    @inline def getBucketLifecycleConfigurationFuture(params: GetBucketLifecycleConfigurationRequest): Future[GetBucketLifecycleConfigurationOutput] = service.getBucketLifecycleConfiguration(params).promise().toFuture
+    @inline def getBucketLocationFuture(params: GetBucketLocationRequest): Future[GetBucketLocationOutput] = service.getBucketLocation(params).promise().toFuture
+    @inline def getBucketLoggingFuture(params: GetBucketLoggingRequest): Future[GetBucketLoggingOutput] = service.getBucketLogging(params).promise().toFuture
+    @inline def getBucketMetricsConfigurationFuture(params: GetBucketMetricsConfigurationRequest): Future[GetBucketMetricsConfigurationOutput] = service.getBucketMetricsConfiguration(params).promise().toFuture
+    @inline def getBucketNotificationConfigurationFuture(params: GetBucketNotificationConfigurationRequest): Future[NotificationConfiguration] = service.getBucketNotificationConfiguration(params).promise().toFuture
+    @inline def getBucketPolicyFuture(params: GetBucketPolicyRequest): Future[GetBucketPolicyOutput] = service.getBucketPolicy(params).promise().toFuture
+    @inline def getBucketPolicyStatusFuture(params: GetBucketPolicyStatusRequest): Future[GetBucketPolicyStatusOutput] = service.getBucketPolicyStatus(params).promise().toFuture
+    @inline def getBucketReplicationFuture(params: GetBucketReplicationRequest): Future[GetBucketReplicationOutput] = service.getBucketReplication(params).promise().toFuture
+    @inline def getBucketRequestPaymentFuture(params: GetBucketRequestPaymentRequest): Future[GetBucketRequestPaymentOutput] = service.getBucketRequestPayment(params).promise().toFuture
+    @inline def getBucketTaggingFuture(params: GetBucketTaggingRequest): Future[GetBucketTaggingOutput] = service.getBucketTagging(params).promise().toFuture
+    @inline def getBucketVersioningFuture(params: GetBucketVersioningRequest): Future[GetBucketVersioningOutput] = service.getBucketVersioning(params).promise().toFuture
+    @inline def getBucketWebsiteFuture(params: GetBucketWebsiteRequest): Future[GetBucketWebsiteOutput] = service.getBucketWebsite(params).promise().toFuture
+    @inline def getObjectAclFuture(params: GetObjectAclRequest): Future[GetObjectAclOutput] = service.getObjectAcl(params).promise().toFuture
+    @inline def getObjectFuture(params: GetObjectRequest): Future[GetObjectOutput] = service.getObject(params).promise().toFuture
+    @inline def getObjectLegalHoldFuture(params: GetObjectLegalHoldRequest): Future[GetObjectLegalHoldOutput] = service.getObjectLegalHold(params).promise().toFuture
+    @inline def getObjectLockConfigurationFuture(params: GetObjectLockConfigurationRequest): Future[GetObjectLockConfigurationOutput] = service.getObjectLockConfiguration(params).promise().toFuture
+    @inline def getObjectRetentionFuture(params: GetObjectRetentionRequest): Future[GetObjectRetentionOutput] = service.getObjectRetention(params).promise().toFuture
+    @inline def getObjectTaggingFuture(params: GetObjectTaggingRequest): Future[GetObjectTaggingOutput] = service.getObjectTagging(params).promise().toFuture
+    @inline def getObjectTorrentFuture(params: GetObjectTorrentRequest): Future[GetObjectTorrentOutput] = service.getObjectTorrent(params).promise().toFuture
+    @inline def getPublicAccessBlockFuture(params: GetPublicAccessBlockRequest): Future[GetPublicAccessBlockOutput] = service.getPublicAccessBlock(params).promise().toFuture
+    @inline def headBucketFuture(params: HeadBucketRequest): Future[js.Object] = service.headBucket(params).promise().toFuture
+    @inline def headObjectFuture(params: HeadObjectRequest): Future[HeadObjectOutput] = service.headObject(params).promise().toFuture
+    @inline def listBucketAnalyticsConfigurationsFuture(params: ListBucketAnalyticsConfigurationsRequest): Future[ListBucketAnalyticsConfigurationsOutput] = service.listBucketAnalyticsConfigurations(params).promise().toFuture
+    @inline def listBucketInventoryConfigurationsFuture(params: ListBucketInventoryConfigurationsRequest): Future[ListBucketInventoryConfigurationsOutput] = service.listBucketInventoryConfigurations(params).promise().toFuture
+    @inline def listBucketMetricsConfigurationsFuture(params: ListBucketMetricsConfigurationsRequest): Future[ListBucketMetricsConfigurationsOutput] = service.listBucketMetricsConfigurations(params).promise().toFuture
     @inline def listBucketsFuture(): Future[ListBucketsOutput] = service.listBuckets().promise().toFuture
-    @inline def listMultipartUploadsFuture(params: ListMultipartUploadsRequest): Future[ListMultipartUploadsOutput] =
-      service.listMultipartUploads(params).promise().toFuture
-    @inline def listObjectVersionsFuture(params: ListObjectVersionsRequest): Future[ListObjectVersionsOutput] =
-      service.listObjectVersions(params).promise().toFuture
-    @inline def listObjectsFuture(params: ListObjectsRequest): Future[ListObjectsOutput] =
-      service.listObjects(params).promise().toFuture
-    @inline def listObjectsV2Future(params: ListObjectsV2Request): Future[ListObjectsV2Output] =
-      service.listObjectsV2(params).promise().toFuture
-    @inline def listPartsFuture(params: ListPartsRequest): Future[ListPartsOutput] =
-      service.listParts(params).promise().toFuture
-    @inline def putBucketAccelerateConfigurationFuture(
-        params: PutBucketAccelerateConfigurationRequest
-    ): Future[js.Object] = service.putBucketAccelerateConfiguration(params).promise().toFuture
-    @inline def putBucketAclFuture(params: PutBucketAclRequest): Future[js.Object] =
-      service.putBucketAcl(params).promise().toFuture
-    @inline def putBucketAnalyticsConfigurationFuture(
-        params: PutBucketAnalyticsConfigurationRequest
-    ): Future[js.Object] = service.putBucketAnalyticsConfiguration(params).promise().toFuture
-    @inline def putBucketCorsFuture(params: PutBucketCorsRequest): Future[js.Object] =
-      service.putBucketCors(params).promise().toFuture
-    @inline def putBucketEncryptionFuture(params: PutBucketEncryptionRequest): Future[js.Object] =
-      service.putBucketEncryption(params).promise().toFuture
-    @inline def putBucketInventoryConfigurationFuture(
-        params: PutBucketInventoryConfigurationRequest
-    ): Future[js.Object] = service.putBucketInventoryConfiguration(params).promise().toFuture
-    @inline def putBucketLifecycleConfigurationFuture(
-        params: PutBucketLifecycleConfigurationRequest
-    ): Future[js.Object] = service.putBucketLifecycleConfiguration(params).promise().toFuture
-    @inline def putBucketLoggingFuture(params: PutBucketLoggingRequest): Future[js.Object] =
-      service.putBucketLogging(params).promise().toFuture
-    @inline def putBucketMetricsConfigurationFuture(params: PutBucketMetricsConfigurationRequest): Future[js.Object] =
-      service.putBucketMetricsConfiguration(params).promise().toFuture
-    @inline def putBucketNotificationConfigurationFuture(
-        params: PutBucketNotificationConfigurationRequest
-    ): Future[js.Object] = service.putBucketNotificationConfiguration(params).promise().toFuture
-    @inline def putBucketPolicyFuture(params: PutBucketPolicyRequest): Future[js.Object] =
-      service.putBucketPolicy(params).promise().toFuture
-    @inline def putBucketReplicationFuture(params: PutBucketReplicationRequest): Future[js.Object] =
-      service.putBucketReplication(params).promise().toFuture
-    @inline def putBucketRequestPaymentFuture(params: PutBucketRequestPaymentRequest): Future[js.Object] =
-      service.putBucketRequestPayment(params).promise().toFuture
-    @inline def putBucketTaggingFuture(params: PutBucketTaggingRequest): Future[js.Object] =
-      service.putBucketTagging(params).promise().toFuture
-    @inline def putBucketVersioningFuture(params: PutBucketVersioningRequest): Future[js.Object] =
-      service.putBucketVersioning(params).promise().toFuture
-    @inline def putBucketWebsiteFuture(params: PutBucketWebsiteRequest): Future[js.Object] =
-      service.putBucketWebsite(params).promise().toFuture
-    @inline def putObjectAclFuture(params: PutObjectAclRequest): Future[PutObjectAclOutput] =
-      service.putObjectAcl(params).promise().toFuture
-    @inline def putObjectFuture(params: PutObjectRequest): Future[PutObjectOutput] =
-      service.putObject(params).promise().toFuture
-    @inline def putObjectLegalHoldFuture(params: PutObjectLegalHoldRequest): Future[PutObjectLegalHoldOutput] =
-      service.putObjectLegalHold(params).promise().toFuture
-    @inline def putObjectLockConfigurationFuture(
-        params: PutObjectLockConfigurationRequest
-    ): Future[PutObjectLockConfigurationOutput] = service.putObjectLockConfiguration(params).promise().toFuture
-    @inline def putObjectRetentionFuture(params: PutObjectRetentionRequest): Future[PutObjectRetentionOutput] =
-      service.putObjectRetention(params).promise().toFuture
-    @inline def putObjectTaggingFuture(params: PutObjectTaggingRequest): Future[PutObjectTaggingOutput] =
-      service.putObjectTagging(params).promise().toFuture
-    @inline def putPublicAccessBlockFuture(params: PutPublicAccessBlockRequest): Future[js.Object] =
-      service.putPublicAccessBlock(params).promise().toFuture
-    @inline def restoreObjectFuture(params: RestoreObjectRequest): Future[RestoreObjectOutput] =
-      service.restoreObject(params).promise().toFuture
-    @inline def selectObjectContentFuture(params: SelectObjectContentRequest): Future[SelectObjectContentOutput] =
-      service.selectObjectContent(params).promise().toFuture
-    @inline def uploadPartCopyFuture(params: UploadPartCopyRequest): Future[UploadPartCopyOutput] =
-      service.uploadPartCopy(params).promise().toFuture
-    @inline def uploadPartFuture(params: UploadPartRequest): Future[UploadPartOutput] =
-      service.uploadPart(params).promise().toFuture
+    @inline def listMultipartUploadsFuture(params: ListMultipartUploadsRequest): Future[ListMultipartUploadsOutput] = service.listMultipartUploads(params).promise().toFuture
+    @inline def listObjectVersionsFuture(params: ListObjectVersionsRequest): Future[ListObjectVersionsOutput] = service.listObjectVersions(params).promise().toFuture
+    @inline def listObjectsFuture(params: ListObjectsRequest): Future[ListObjectsOutput] = service.listObjects(params).promise().toFuture
+    @inline def listObjectsV2Future(params: ListObjectsV2Request): Future[ListObjectsV2Output] = service.listObjectsV2(params).promise().toFuture
+    @inline def listPartsFuture(params: ListPartsRequest): Future[ListPartsOutput] = service.listParts(params).promise().toFuture
+    @inline def putBucketAccelerateConfigurationFuture(params: PutBucketAccelerateConfigurationRequest): Future[js.Object] = service.putBucketAccelerateConfiguration(params).promise().toFuture
+    @inline def putBucketAclFuture(params: PutBucketAclRequest): Future[js.Object] = service.putBucketAcl(params).promise().toFuture
+    @inline def putBucketAnalyticsConfigurationFuture(params: PutBucketAnalyticsConfigurationRequest): Future[js.Object] = service.putBucketAnalyticsConfiguration(params).promise().toFuture
+    @inline def putBucketCorsFuture(params: PutBucketCorsRequest): Future[js.Object] = service.putBucketCors(params).promise().toFuture
+    @inline def putBucketEncryptionFuture(params: PutBucketEncryptionRequest): Future[js.Object] = service.putBucketEncryption(params).promise().toFuture
+    @inline def putBucketInventoryConfigurationFuture(params: PutBucketInventoryConfigurationRequest): Future[js.Object] = service.putBucketInventoryConfiguration(params).promise().toFuture
+    @inline def putBucketLifecycleConfigurationFuture(params: PutBucketLifecycleConfigurationRequest): Future[js.Object] = service.putBucketLifecycleConfiguration(params).promise().toFuture
+    @inline def putBucketLoggingFuture(params: PutBucketLoggingRequest): Future[js.Object] = service.putBucketLogging(params).promise().toFuture
+    @inline def putBucketMetricsConfigurationFuture(params: PutBucketMetricsConfigurationRequest): Future[js.Object] = service.putBucketMetricsConfiguration(params).promise().toFuture
+    @inline def putBucketNotificationConfigurationFuture(params: PutBucketNotificationConfigurationRequest): Future[js.Object] = service.putBucketNotificationConfiguration(params).promise().toFuture
+    @inline def putBucketPolicyFuture(params: PutBucketPolicyRequest): Future[js.Object] = service.putBucketPolicy(params).promise().toFuture
+    @inline def putBucketReplicationFuture(params: PutBucketReplicationRequest): Future[js.Object] = service.putBucketReplication(params).promise().toFuture
+    @inline def putBucketRequestPaymentFuture(params: PutBucketRequestPaymentRequest): Future[js.Object] = service.putBucketRequestPayment(params).promise().toFuture
+    @inline def putBucketTaggingFuture(params: PutBucketTaggingRequest): Future[js.Object] = service.putBucketTagging(params).promise().toFuture
+    @inline def putBucketVersioningFuture(params: PutBucketVersioningRequest): Future[js.Object] = service.putBucketVersioning(params).promise().toFuture
+    @inline def putBucketWebsiteFuture(params: PutBucketWebsiteRequest): Future[js.Object] = service.putBucketWebsite(params).promise().toFuture
+    @inline def putObjectAclFuture(params: PutObjectAclRequest): Future[PutObjectAclOutput] = service.putObjectAcl(params).promise().toFuture
+    @inline def putObjectFuture(params: PutObjectRequest): Future[PutObjectOutput] = service.putObject(params).promise().toFuture
+    @inline def putObjectLegalHoldFuture(params: PutObjectLegalHoldRequest): Future[PutObjectLegalHoldOutput] = service.putObjectLegalHold(params).promise().toFuture
+    @inline def putObjectLockConfigurationFuture(params: PutObjectLockConfigurationRequest): Future[PutObjectLockConfigurationOutput] = service.putObjectLockConfiguration(params).promise().toFuture
+    @inline def putObjectRetentionFuture(params: PutObjectRetentionRequest): Future[PutObjectRetentionOutput] = service.putObjectRetention(params).promise().toFuture
+    @inline def putObjectTaggingFuture(params: PutObjectTaggingRequest): Future[PutObjectTaggingOutput] = service.putObjectTagging(params).promise().toFuture
+    @inline def putPublicAccessBlockFuture(params: PutPublicAccessBlockRequest): Future[js.Object] = service.putPublicAccessBlock(params).promise().toFuture
+    @inline def restoreObjectFuture(params: RestoreObjectRequest): Future[RestoreObjectOutput] = service.restoreObject(params).promise().toFuture
+    @inline def selectObjectContentFuture(params: SelectObjectContentRequest): Future[SelectObjectContentOutput] = service.selectObjectContent(params).promise().toFuture
+    @inline def uploadPartCopyFuture(params: UploadPartCopyRequest): Future[UploadPartCopyOutput] = service.uploadPartCopy(params).promise().toFuture
+    @inline def uploadPartFuture(params: UploadPartRequest): Future[UploadPartOutput] = service.uploadPart(params).promise().toFuture
 
     /**
       * Get a pre-signed URL for a given operation name.
@@ -521,21 +410,17 @@ package s3 {
     def this(config: AWSConfig) = this()
 
     def abortMultipartUpload(params: AbortMultipartUploadRequest): Request[AbortMultipartUploadOutput] = js.native
-    def completeMultipartUpload(params: CompleteMultipartUploadRequest): Request[CompleteMultipartUploadOutput] =
-      js.native
+    def completeMultipartUpload(params: CompleteMultipartUploadRequest): Request[CompleteMultipartUploadOutput] = js.native
     def copyObject(params: CopyObjectRequest): Request[CopyObjectOutput] = js.native
     def createBucket(params: CreateBucketRequest): Request[CreateBucketOutput] = js.native
     def createMultipartUpload(params: CreateMultipartUploadRequest): Request[CreateMultipartUploadOutput] = js.native
     def deleteBucket(params: DeleteBucketRequest): Request[js.Object] = js.native
-    def deleteBucketAnalyticsConfiguration(params: DeleteBucketAnalyticsConfigurationRequest): Request[js.Object] =
-      js.native
+    def deleteBucketAnalyticsConfiguration(params: DeleteBucketAnalyticsConfigurationRequest): Request[js.Object] = js.native
     def deleteBucketCors(params: DeleteBucketCorsRequest): Request[js.Object] = js.native
     def deleteBucketEncryption(params: DeleteBucketEncryptionRequest): Request[js.Object] = js.native
-    def deleteBucketInventoryConfiguration(params: DeleteBucketInventoryConfigurationRequest): Request[js.Object] =
-      js.native
+    def deleteBucketInventoryConfiguration(params: DeleteBucketInventoryConfigurationRequest): Request[js.Object] = js.native
     def deleteBucketLifecycle(params: DeleteBucketLifecycleRequest): Request[js.Object] = js.native
-    def deleteBucketMetricsConfiguration(params: DeleteBucketMetricsConfigurationRequest): Request[js.Object] =
-      js.native
+    def deleteBucketMetricsConfiguration(params: DeleteBucketMetricsConfigurationRequest): Request[js.Object] = js.native
     def deleteBucketPolicy(params: DeleteBucketPolicyRequest): Request[js.Object] = js.native
     def deleteBucketReplication(params: DeleteBucketReplicationRequest): Request[js.Object] = js.native
     def deleteBucketTagging(params: DeleteBucketTaggingRequest): Request[js.Object] = js.native
@@ -544,66 +429,44 @@ package s3 {
     def deleteObjectTagging(params: DeleteObjectTaggingRequest): Request[DeleteObjectTaggingOutput] = js.native
     def deleteObjects(params: DeleteObjectsRequest): Request[DeleteObjectsOutput] = js.native
     def deletePublicAccessBlock(params: DeletePublicAccessBlockRequest): Request[js.Object] = js.native
-    def getBucketAccelerateConfiguration(
-        params: GetBucketAccelerateConfigurationRequest
-    ): Request[GetBucketAccelerateConfigurationOutput] = js.native
+    def getBucketAccelerateConfiguration(params: GetBucketAccelerateConfigurationRequest): Request[GetBucketAccelerateConfigurationOutput] = js.native
     def getBucketAcl(params: GetBucketAclRequest): Request[GetBucketAclOutput] = js.native
-    def getBucketAnalyticsConfiguration(
-        params: GetBucketAnalyticsConfigurationRequest
-    ): Request[GetBucketAnalyticsConfigurationOutput] = js.native
+    def getBucketAnalyticsConfiguration(params: GetBucketAnalyticsConfigurationRequest): Request[GetBucketAnalyticsConfigurationOutput] = js.native
     def getBucketCors(params: GetBucketCorsRequest): Request[GetBucketCorsOutput] = js.native
     def getBucketEncryption(params: GetBucketEncryptionRequest): Request[GetBucketEncryptionOutput] = js.native
-    def getBucketInventoryConfiguration(
-        params: GetBucketInventoryConfigurationRequest
-    ): Request[GetBucketInventoryConfigurationOutput] = js.native
-    def getBucketLifecycleConfiguration(
-        params: GetBucketLifecycleConfigurationRequest
-    ): Request[GetBucketLifecycleConfigurationOutput] = js.native
+    def getBucketInventoryConfiguration(params: GetBucketInventoryConfigurationRequest): Request[GetBucketInventoryConfigurationOutput] = js.native
+    def getBucketLifecycleConfiguration(params: GetBucketLifecycleConfigurationRequest): Request[GetBucketLifecycleConfigurationOutput] = js.native
     def getBucketLocation(params: GetBucketLocationRequest): Request[GetBucketLocationOutput] = js.native
     def getBucketLogging(params: GetBucketLoggingRequest): Request[GetBucketLoggingOutput] = js.native
-    def getBucketMetricsConfiguration(
-        params: GetBucketMetricsConfigurationRequest
-    ): Request[GetBucketMetricsConfigurationOutput] = js.native
-    def getBucketNotificationConfiguration(
-        params: GetBucketNotificationConfigurationRequest
-    ): Request[NotificationConfiguration] = js.native
+    def getBucketMetricsConfiguration(params: GetBucketMetricsConfigurationRequest): Request[GetBucketMetricsConfigurationOutput] = js.native
+    def getBucketNotificationConfiguration(params: GetBucketNotificationConfigurationRequest): Request[NotificationConfiguration] = js.native
     def getBucketPolicy(params: GetBucketPolicyRequest): Request[GetBucketPolicyOutput] = js.native
     def getBucketPolicyStatus(params: GetBucketPolicyStatusRequest): Request[GetBucketPolicyStatusOutput] = js.native
     def getBucketReplication(params: GetBucketReplicationRequest): Request[GetBucketReplicationOutput] = js.native
-    def getBucketRequestPayment(params: GetBucketRequestPaymentRequest): Request[GetBucketRequestPaymentOutput] =
-      js.native
+    def getBucketRequestPayment(params: GetBucketRequestPaymentRequest): Request[GetBucketRequestPaymentOutput] = js.native
     def getBucketTagging(params: GetBucketTaggingRequest): Request[GetBucketTaggingOutput] = js.native
     def getBucketVersioning(params: GetBucketVersioningRequest): Request[GetBucketVersioningOutput] = js.native
     def getBucketWebsite(params: GetBucketWebsiteRequest): Request[GetBucketWebsiteOutput] = js.native
     def getObject(params: GetObjectRequest): Request[GetObjectOutput] = js.native
     def getObjectAcl(params: GetObjectAclRequest): Request[GetObjectAclOutput] = js.native
     def getObjectLegalHold(params: GetObjectLegalHoldRequest): Request[GetObjectLegalHoldOutput] = js.native
-    def getObjectLockConfiguration(
-        params: GetObjectLockConfigurationRequest
-    ): Request[GetObjectLockConfigurationOutput] = js.native
+    def getObjectLockConfiguration(params: GetObjectLockConfigurationRequest): Request[GetObjectLockConfigurationOutput] = js.native
     def getObjectRetention(params: GetObjectRetentionRequest): Request[GetObjectRetentionOutput] = js.native
     def getObjectTagging(params: GetObjectTaggingRequest): Request[GetObjectTaggingOutput] = js.native
     def getObjectTorrent(params: GetObjectTorrentRequest): Request[GetObjectTorrentOutput] = js.native
     def getPublicAccessBlock(params: GetPublicAccessBlockRequest): Request[GetPublicAccessBlockOutput] = js.native
     def headBucket(params: HeadBucketRequest): Request[js.Object] = js.native
     def headObject(params: HeadObjectRequest): Request[HeadObjectOutput] = js.native
-    def listBucketAnalyticsConfigurations(
-        params: ListBucketAnalyticsConfigurationsRequest
-    ): Request[ListBucketAnalyticsConfigurationsOutput] = js.native
-    def listBucketInventoryConfigurations(
-        params: ListBucketInventoryConfigurationsRequest
-    ): Request[ListBucketInventoryConfigurationsOutput] = js.native
-    def listBucketMetricsConfigurations(
-        params: ListBucketMetricsConfigurationsRequest
-    ): Request[ListBucketMetricsConfigurationsOutput] = js.native
+    def listBucketAnalyticsConfigurations(params: ListBucketAnalyticsConfigurationsRequest): Request[ListBucketAnalyticsConfigurationsOutput] = js.native
+    def listBucketInventoryConfigurations(params: ListBucketInventoryConfigurationsRequest): Request[ListBucketInventoryConfigurationsOutput] = js.native
+    def listBucketMetricsConfigurations(params: ListBucketMetricsConfigurationsRequest): Request[ListBucketMetricsConfigurationsOutput] = js.native
     def listBuckets(): Request[ListBucketsOutput] = js.native
     def listMultipartUploads(params: ListMultipartUploadsRequest): Request[ListMultipartUploadsOutput] = js.native
     def listObjectVersions(params: ListObjectVersionsRequest): Request[ListObjectVersionsOutput] = js.native
     def listObjects(params: ListObjectsRequest): Request[ListObjectsOutput] = js.native
     def listObjectsV2(params: ListObjectsV2Request): Request[ListObjectsV2Output] = js.native
     def listParts(params: ListPartsRequest): Request[ListPartsOutput] = js.native
-    def putBucketAccelerateConfiguration(params: PutBucketAccelerateConfigurationRequest): Request[js.Object] =
-      js.native
+    def putBucketAccelerateConfiguration(params: PutBucketAccelerateConfigurationRequest): Request[js.Object] = js.native
     def putBucketAcl(params: PutBucketAclRequest): Request[js.Object] = js.native
     def putBucketAnalyticsConfiguration(params: PutBucketAnalyticsConfigurationRequest): Request[js.Object] = js.native
     def putBucketCors(params: PutBucketCorsRequest): Request[js.Object] = js.native
@@ -612,8 +475,7 @@ package s3 {
     def putBucketLifecycleConfiguration(params: PutBucketLifecycleConfigurationRequest): Request[js.Object] = js.native
     def putBucketLogging(params: PutBucketLoggingRequest): Request[js.Object] = js.native
     def putBucketMetricsConfiguration(params: PutBucketMetricsConfigurationRequest): Request[js.Object] = js.native
-    def putBucketNotificationConfiguration(params: PutBucketNotificationConfigurationRequest): Request[js.Object] =
-      js.native
+    def putBucketNotificationConfiguration(params: PutBucketNotificationConfigurationRequest): Request[js.Object] = js.native
     def putBucketPolicy(params: PutBucketPolicyRequest): Request[js.Object] = js.native
     def putBucketReplication(params: PutBucketReplicationRequest): Request[js.Object] = js.native
     def putBucketRequestPayment(params: PutBucketRequestPaymentRequest): Request[js.Object] = js.native
@@ -623,9 +485,7 @@ package s3 {
     def putObject(params: PutObjectRequest): Request[PutObjectOutput] = js.native
     def putObjectAcl(params: PutObjectAclRequest): Request[PutObjectAclOutput] = js.native
     def putObjectLegalHold(params: PutObjectLegalHoldRequest): Request[PutObjectLegalHoldOutput] = js.native
-    def putObjectLockConfiguration(
-        params: PutObjectLockConfigurationRequest
-    ): Request[PutObjectLockConfigurationOutput] = js.native
+    def putObjectLockConfiguration(params: PutObjectLockConfigurationRequest): Request[PutObjectLockConfigurationOutput] = js.native
     def putObjectRetention(params: PutObjectRetentionRequest): Request[PutObjectRetentionOutput] = js.native
     def putObjectTagging(params: PutObjectTaggingRequest): Request[PutObjectTaggingOutput] = js.native
     def putPublicAccessBlock(params: PutPublicAccessBlockRequest): Request[js.Object] = js.native
@@ -633,18 +493,10 @@ package s3 {
     def selectObjectContent(params: SelectObjectContentRequest): Request[SelectObjectContentOutput] = js.native
     def uploadPart(params: UploadPartRequest): Request[UploadPartOutput] = js.native
     def uploadPartCopy(params: UploadPartCopyRequest): Request[UploadPartCopyOutput] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def getBucketLifecycle(
-        params: GetBucketLifecycleRequest
-    ): Request[GetBucketLifecycleOutput] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def getBucketNotification(
-        params: GetBucketNotificationConfigurationRequest
-    ): Request[NotificationConfigurationDeprecated] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def putBucketLifecycle(
-        params: PutBucketLifecycleRequest
-    ): Request[js.Object] = js.native
-    @deprecated("Deprecated in AWS SDK", "forever") def putBucketNotification(
-        params: PutBucketNotificationRequest
-    ): Request[js.Object] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def getBucketLifecycle(params: GetBucketLifecycleRequest): Request[GetBucketLifecycleOutput] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def getBucketNotification(params: GetBucketNotificationConfigurationRequest): Request[NotificationConfigurationDeprecated] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def putBucketLifecycle(params: PutBucketLifecycleRequest): Request[js.Object] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def putBucketNotification(params: PutBucketNotificationRequest): Request[js.Object] = js.native
   }
 
   /**
@@ -982,21 +834,7 @@ package s3 {
     val `cn-north-1` = "cn-north-1".asInstanceOf[BucketLocationConstraint]
     val `eu-central-1` = "eu-central-1".asInstanceOf[BucketLocationConstraint]
 
-    val values = js.Object.freeze(
-      js.Array(
-        EU,
-        `eu-west-1`,
-        `us-west-1`,
-        `us-west-2`,
-        `ap-south-1`,
-        `ap-southeast-1`,
-        `ap-southeast-2`,
-        `ap-northeast-1`,
-        `sa-east-1`,
-        `cn-north-1`,
-        `eu-central-1`
-      )
-    )
+    val values = js.Object.freeze(js.Array(EU, `eu-west-1`, `us-west-1`, `us-west-2`, `ap-south-1`, `ap-southeast-1`, `ap-southeast-2`, `ap-northeast-1`, `sa-east-1`, `cn-north-1`, `eu-central-1`))
   }
 
   /**
@@ -1117,9 +955,7 @@ package s3 {
         RecordDelimiter: js.UndefOr[RecordDelimiter] = js.undefined
     ): CSVInput = {
       val __obj = js.Dynamic.literal()
-      AllowQuotedRecordDelimiter.foreach(__v =>
-        __obj.updateDynamic("AllowQuotedRecordDelimiter")(__v.asInstanceOf[js.Any])
-      )
+      AllowQuotedRecordDelimiter.foreach(__v => __obj.updateDynamic("AllowQuotedRecordDelimiter")(__v.asInstanceOf[js.Any]))
       Comments.foreach(__v => __obj.updateDynamic("Comments")(__v.asInstanceOf[js.Any]))
       FieldDelimiter.foreach(__v => __obj.updateDynamic("FieldDelimiter")(__v.asInstanceOf[js.Any]))
       FileHeaderInfo.foreach(__v => __obj.updateDynamic("FileHeaderInfo")(__v.asInstanceOf[js.Any]))
@@ -1348,9 +1184,7 @@ package s3 {
         KeyPrefixEquals: js.UndefOr[KeyPrefixEquals] = js.undefined
     ): Condition = {
       val __obj = js.Dynamic.literal()
-      HttpErrorCodeReturnedEquals.foreach(__v =>
-        __obj.updateDynamic("HttpErrorCodeReturnedEquals")(__v.asInstanceOf[js.Any])
-      )
+      HttpErrorCodeReturnedEquals.foreach(__v => __obj.updateDynamic("HttpErrorCodeReturnedEquals")(__v.asInstanceOf[js.Any]))
       KeyPrefixEquals.foreach(__v => __obj.updateDynamic("KeyPrefixEquals")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Condition]
     }
@@ -1510,20 +1344,12 @@ package s3 {
       ContentLanguage.foreach(__v => __obj.updateDynamic("ContentLanguage")(__v.asInstanceOf[js.Any]))
       ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
       CopySourceIfMatch.foreach(__v => __obj.updateDynamic("CopySourceIfMatch")(__v.asInstanceOf[js.Any]))
-      CopySourceIfModifiedSince.foreach(__v =>
-        __obj.updateDynamic("CopySourceIfModifiedSince")(__v.asInstanceOf[js.Any])
-      )
+      CopySourceIfModifiedSince.foreach(__v => __obj.updateDynamic("CopySourceIfModifiedSince")(__v.asInstanceOf[js.Any]))
       CopySourceIfNoneMatch.foreach(__v => __obj.updateDynamic("CopySourceIfNoneMatch")(__v.asInstanceOf[js.Any]))
-      CopySourceIfUnmodifiedSince.foreach(__v =>
-        __obj.updateDynamic("CopySourceIfUnmodifiedSince")(__v.asInstanceOf[js.Any])
-      )
-      CopySourceSSECustomerAlgorithm.foreach(__v =>
-        __obj.updateDynamic("CopySourceSSECustomerAlgorithm")(__v.asInstanceOf[js.Any])
-      )
+      CopySourceIfUnmodifiedSince.foreach(__v => __obj.updateDynamic("CopySourceIfUnmodifiedSince")(__v.asInstanceOf[js.Any]))
+      CopySourceSSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("CopySourceSSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
       CopySourceSSECustomerKey.foreach(__v => __obj.updateDynamic("CopySourceSSECustomerKey")(__v.asInstanceOf[js.Any]))
-      CopySourceSSECustomerKeyMD5.foreach(__v =>
-        __obj.updateDynamic("CopySourceSSECustomerKeyMD5")(__v.asInstanceOf[js.Any])
-      )
+      CopySourceSSECustomerKeyMD5.foreach(__v => __obj.updateDynamic("CopySourceSSECustomerKeyMD5")(__v.asInstanceOf[js.Any]))
       Expires.foreach(__v => __obj.updateDynamic("Expires")(__v.asInstanceOf[js.Any]))
       GrantFullControl.foreach(__v => __obj.updateDynamic("GrantFullControl")(__v.asInstanceOf[js.Any]))
       GrantRead.foreach(__v => __obj.updateDynamic("GrantRead")(__v.asInstanceOf[js.Any]))
@@ -1531,13 +1357,9 @@ package s3 {
       GrantWriteACP.foreach(__v => __obj.updateDynamic("GrantWriteACP")(__v.asInstanceOf[js.Any]))
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
       MetadataDirective.foreach(__v => __obj.updateDynamic("MetadataDirective")(__v.asInstanceOf[js.Any]))
-      ObjectLockLegalHoldStatus.foreach(__v =>
-        __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any])
-      )
+      ObjectLockLegalHoldStatus.foreach(__v => __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any]))
       ObjectLockMode.foreach(__v => __obj.updateDynamic("ObjectLockMode")(__v.asInstanceOf[js.Any]))
-      ObjectLockRetainUntilDate.foreach(__v =>
-        __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any])
-      )
+      ObjectLockRetainUntilDate.foreach(__v => __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
       SSECustomerKey.foreach(__v => __obj.updateDynamic("SSECustomerKey")(__v.asInstanceOf[js.Any]))
@@ -1663,17 +1485,13 @@ package s3 {
       )
 
       ACL.foreach(__v => __obj.updateDynamic("ACL")(__v.asInstanceOf[js.Any]))
-      CreateBucketConfiguration.foreach(__v =>
-        __obj.updateDynamic("CreateBucketConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      CreateBucketConfiguration.foreach(__v => __obj.updateDynamic("CreateBucketConfiguration")(__v.asInstanceOf[js.Any]))
       GrantFullControl.foreach(__v => __obj.updateDynamic("GrantFullControl")(__v.asInstanceOf[js.Any]))
       GrantRead.foreach(__v => __obj.updateDynamic("GrantRead")(__v.asInstanceOf[js.Any]))
       GrantReadACP.foreach(__v => __obj.updateDynamic("GrantReadACP")(__v.asInstanceOf[js.Any]))
       GrantWrite.foreach(__v => __obj.updateDynamic("GrantWrite")(__v.asInstanceOf[js.Any]))
       GrantWriteACP.foreach(__v => __obj.updateDynamic("GrantWriteACP")(__v.asInstanceOf[js.Any]))
-      ObjectLockEnabledForBucket.foreach(__v =>
-        __obj.updateDynamic("ObjectLockEnabledForBucket")(__v.asInstanceOf[js.Any])
-      )
+      ObjectLockEnabledForBucket.foreach(__v => __obj.updateDynamic("ObjectLockEnabledForBucket")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBucketRequest]
     }
   }
@@ -1803,13 +1621,9 @@ package s3 {
       GrantReadACP.foreach(__v => __obj.updateDynamic("GrantReadACP")(__v.asInstanceOf[js.Any]))
       GrantWriteACP.foreach(__v => __obj.updateDynamic("GrantWriteACP")(__v.asInstanceOf[js.Any]))
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
-      ObjectLockLegalHoldStatus.foreach(__v =>
-        __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any])
-      )
+      ObjectLockLegalHoldStatus.foreach(__v => __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any]))
       ObjectLockMode.foreach(__v => __obj.updateDynamic("ObjectLockMode")(__v.asInstanceOf[js.Any]))
-      ObjectLockRetainUntilDate.foreach(__v =>
-        __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any])
-      )
+      ObjectLockRetainUntilDate.foreach(__v => __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
       SSECustomerKey.foreach(__v => __obj.updateDynamic("SSECustomerKey")(__v.asInstanceOf[js.Any]))
@@ -2188,9 +2002,7 @@ package s3 {
         "Key" -> Key.asInstanceOf[js.Any]
       )
 
-      BypassGovernanceRetention.foreach(__v =>
-        __obj.updateDynamic("BypassGovernanceRetention")(__v.asInstanceOf[js.Any])
-      )
+      BypassGovernanceRetention.foreach(__v => __obj.updateDynamic("BypassGovernanceRetention")(__v.asInstanceOf[js.Any]))
       MFA.foreach(__v => __obj.updateDynamic("MFA")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
@@ -2283,9 +2095,7 @@ package s3 {
         "Delete" -> Delete.asInstanceOf[js.Any]
       )
 
-      BypassGovernanceRetention.foreach(__v =>
-        __obj.updateDynamic("BypassGovernanceRetention")(__v.asInstanceOf[js.Any])
-      )
+      BypassGovernanceRetention.foreach(__v => __obj.updateDynamic("BypassGovernanceRetention")(__v.asInstanceOf[js.Any]))
       MFA.foreach(__v => __obj.updateDynamic("MFA")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteObjectsRequest]
@@ -2521,8 +2331,7 @@ package s3 {
     val `s3:Replication:OperationFailedReplication` = "s3:Replication:OperationFailedReplication".asInstanceOf[Event]
     val `s3:Replication:OperationNotTracked` = "s3:Replication:OperationNotTracked".asInstanceOf[Event]
     val `s3:Replication:OperationMissedThreshold` = "s3:Replication:OperationMissedThreshold".asInstanceOf[Event]
-    val `s3:Replication:OperationReplicatedAfterThreshold` =
-      "s3:Replication:OperationReplicatedAfterThreshold".asInstanceOf[Event]
+    val `s3:Replication:OperationReplicatedAfterThreshold` = "s3:Replication:OperationReplicatedAfterThreshold".asInstanceOf[Event]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2788,9 +2597,7 @@ package s3 {
         ServerSideEncryptionConfiguration: js.UndefOr[ServerSideEncryptionConfiguration] = js.undefined
     ): GetBucketEncryptionOutput = {
       val __obj = js.Dynamic.literal()
-      ServerSideEncryptionConfiguration.foreach(__v =>
-        __obj.updateDynamic("ServerSideEncryptionConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      ServerSideEncryptionConfiguration.foreach(__v => __obj.updateDynamic("ServerSideEncryptionConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBucketEncryptionOutput]
     }
   }
@@ -3506,13 +3313,9 @@ package s3 {
       LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
       MissingMeta.foreach(__v => __obj.updateDynamic("MissingMeta")(__v.asInstanceOf[js.Any]))
-      ObjectLockLegalHoldStatus.foreach(__v =>
-        __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any])
-      )
+      ObjectLockLegalHoldStatus.foreach(__v => __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any]))
       ObjectLockMode.foreach(__v => __obj.updateDynamic("ObjectLockMode")(__v.asInstanceOf[js.Any]))
-      ObjectLockRetainUntilDate.foreach(__v =>
-        __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any])
-      )
+      ObjectLockRetainUntilDate.foreach(__v => __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any]))
       PartsCount.foreach(__v => __obj.updateDynamic("PartsCount")(__v.asInstanceOf[js.Any]))
       ReplicationStatus.foreach(__v => __obj.updateDynamic("ReplicationStatus")(__v.asInstanceOf[js.Any]))
       RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
@@ -3588,9 +3391,7 @@ package s3 {
       Range.foreach(__v => __obj.updateDynamic("Range")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       ResponseCacheControl.foreach(__v => __obj.updateDynamic("ResponseCacheControl")(__v.asInstanceOf[js.Any]))
-      ResponseContentDisposition.foreach(__v =>
-        __obj.updateDynamic("ResponseContentDisposition")(__v.asInstanceOf[js.Any])
-      )
+      ResponseContentDisposition.foreach(__v => __obj.updateDynamic("ResponseContentDisposition")(__v.asInstanceOf[js.Any]))
       ResponseContentEncoding.foreach(__v => __obj.updateDynamic("ResponseContentEncoding")(__v.asInstanceOf[js.Any]))
       ResponseContentLanguage.foreach(__v => __obj.updateDynamic("ResponseContentLanguage")(__v.asInstanceOf[js.Any]))
       ResponseContentType.foreach(__v => __obj.updateDynamic("ResponseContentType")(__v.asInstanceOf[js.Any]))
@@ -3745,9 +3546,7 @@ package s3 {
         PublicAccessBlockConfiguration: js.UndefOr[PublicAccessBlockConfiguration] = js.undefined
     ): GetPublicAccessBlockOutput = {
       val __obj = js.Dynamic.literal()
-      PublicAccessBlockConfiguration.foreach(__v =>
-        __obj.updateDynamic("PublicAccessBlockConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      PublicAccessBlockConfiguration.foreach(__v => __obj.updateDynamic("PublicAccessBlockConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPublicAccessBlockOutput]
     }
   }
@@ -3943,13 +3742,9 @@ package s3 {
       LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
       MissingMeta.foreach(__v => __obj.updateDynamic("MissingMeta")(__v.asInstanceOf[js.Any]))
-      ObjectLockLegalHoldStatus.foreach(__v =>
-        __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any])
-      )
+      ObjectLockLegalHoldStatus.foreach(__v => __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any]))
       ObjectLockMode.foreach(__v => __obj.updateDynamic("ObjectLockMode")(__v.asInstanceOf[js.Any]))
-      ObjectLockRetainUntilDate.foreach(__v =>
-        __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any])
-      )
+      ObjectLockRetainUntilDate.foreach(__v => __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any]))
       PartsCount.foreach(__v => __obj.updateDynamic("PartsCount")(__v.asInstanceOf[js.Any]))
       ReplicationStatus.foreach(__v => __obj.updateDynamic("ReplicationStatus")(__v.asInstanceOf[js.Any]))
       RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
@@ -4425,9 +4220,7 @@ package s3 {
       val __obj = js.Dynamic.literal()
       Date.foreach(__v => __obj.updateDynamic("Date")(__v.asInstanceOf[js.Any]))
       Days.foreach(__v => __obj.updateDynamic("Days")(__v.asInstanceOf[js.Any]))
-      ExpiredObjectDeleteMarker.foreach(__v =>
-        __obj.updateDynamic("ExpiredObjectDeleteMarker")(__v.asInstanceOf[js.Any])
-      )
+      ExpiredObjectDeleteMarker.foreach(__v => __obj.updateDynamic("ExpiredObjectDeleteMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LifecycleExpiration]
     }
   }
@@ -4465,18 +4258,12 @@ package s3 {
         "Status" -> Status.asInstanceOf[js.Any]
       )
 
-      AbortIncompleteMultipartUpload.foreach(__v =>
-        __obj.updateDynamic("AbortIncompleteMultipartUpload")(__v.asInstanceOf[js.Any])
-      )
+      AbortIncompleteMultipartUpload.foreach(__v => __obj.updateDynamic("AbortIncompleteMultipartUpload")(__v.asInstanceOf[js.Any]))
       Expiration.foreach(__v => __obj.updateDynamic("Expiration")(__v.asInstanceOf[js.Any]))
       Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
       ID.foreach(__v => __obj.updateDynamic("ID")(__v.asInstanceOf[js.Any]))
-      NoncurrentVersionExpiration.foreach(__v =>
-        __obj.updateDynamic("NoncurrentVersionExpiration")(__v.asInstanceOf[js.Any])
-      )
-      NoncurrentVersionTransitions.foreach(__v =>
-        __obj.updateDynamic("NoncurrentVersionTransitions")(__v.asInstanceOf[js.Any])
-      )
+      NoncurrentVersionExpiration.foreach(__v => __obj.updateDynamic("NoncurrentVersionExpiration")(__v.asInstanceOf[js.Any]))
+      NoncurrentVersionTransitions.foreach(__v => __obj.updateDynamic("NoncurrentVersionTransitions")(__v.asInstanceOf[js.Any]))
       Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
       Transitions.foreach(__v => __obj.updateDynamic("Transitions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LifecycleRule]
@@ -4547,9 +4334,7 @@ package s3 {
         NextContinuationToken: js.UndefOr[NextToken] = js.undefined
     ): ListBucketAnalyticsConfigurationsOutput = {
       val __obj = js.Dynamic.literal()
-      AnalyticsConfigurationList.foreach(__v =>
-        __obj.updateDynamic("AnalyticsConfigurationList")(__v.asInstanceOf[js.Any])
-      )
+      AnalyticsConfigurationList.foreach(__v => __obj.updateDynamic("AnalyticsConfigurationList")(__v.asInstanceOf[js.Any]))
       ContinuationToken.foreach(__v => __obj.updateDynamic("ContinuationToken")(__v.asInstanceOf[js.Any]))
       IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
       NextContinuationToken.foreach(__v => __obj.updateDynamic("NextContinuationToken")(__v.asInstanceOf[js.Any]))
@@ -4596,9 +4381,7 @@ package s3 {
     ): ListBucketInventoryConfigurationsOutput = {
       val __obj = js.Dynamic.literal()
       ContinuationToken.foreach(__v => __obj.updateDynamic("ContinuationToken")(__v.asInstanceOf[js.Any]))
-      InventoryConfigurationList.foreach(__v =>
-        __obj.updateDynamic("InventoryConfigurationList")(__v.asInstanceOf[js.Any])
-      )
+      InventoryConfigurationList.foreach(__v => __obj.updateDynamic("InventoryConfigurationList")(__v.asInstanceOf[js.Any]))
       IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
       NextContinuationToken.foreach(__v => __obj.updateDynamic("NextContinuationToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBucketInventoryConfigurationsOutput]
@@ -5395,9 +5178,7 @@ package s3 {
         TopicConfigurations: js.UndefOr[TopicConfigurationList] = js.undefined
     ): NotificationConfiguration = {
       val __obj = js.Dynamic.literal()
-      LambdaFunctionConfigurations.foreach(__v =>
-        __obj.updateDynamic("LambdaFunctionConfigurations")(__v.asInstanceOf[js.Any])
-      )
+      LambdaFunctionConfigurations.foreach(__v => __obj.updateDynamic("LambdaFunctionConfigurations")(__v.asInstanceOf[js.Any]))
       QueueConfigurations.foreach(__v => __obj.updateDynamic("QueueConfigurations")(__v.asInstanceOf[js.Any]))
       TopicConfigurations.foreach(__v => __obj.updateDynamic("TopicConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NotificationConfiguration]
@@ -5419,9 +5200,7 @@ package s3 {
         TopicConfiguration: js.UndefOr[TopicConfigurationDeprecated] = js.undefined
     ): NotificationConfigurationDeprecated = {
       val __obj = js.Dynamic.literal()
-      CloudFunctionConfiguration.foreach(__v =>
-        __obj.updateDynamic("CloudFunctionConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      CloudFunctionConfiguration.foreach(__v => __obj.updateDynamic("CloudFunctionConfiguration")(__v.asInstanceOf[js.Any]))
       QueueConfiguration.foreach(__v => __obj.updateDynamic("QueueConfiguration")(__v.asInstanceOf[js.Any]))
       TopicConfiguration.foreach(__v => __obj.updateDynamic("TopicConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NotificationConfigurationDeprecated]
@@ -5492,17 +5271,7 @@ package s3 {
     val `bucket-owner-read` = "bucket-owner-read".asInstanceOf[ObjectCannedACL]
     val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[ObjectCannedACL]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `private`,
-        `public-read`,
-        `public-read-write`,
-        `authenticated-read`,
-        `aws-exec-read`,
-        `bucket-owner-read`,
-        `bucket-owner-full-control`
-      )
-    )
+    val values = js.Object.freeze(js.Array(`private`, `public-read`, `public-read-write`, `authenticated-read`, `aws-exec-read`, `bucket-owner-read`, `bucket-owner-full-control`))
   }
 
   /**
@@ -5657,9 +5426,7 @@ package s3 {
     val INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[ObjectStorageClass]
     val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[ObjectStorageClass]
 
-    val values = js.Object.freeze(
-      js.Array(STANDARD, REDUCED_REDUNDANCY, GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE)
-    )
+    val values = js.Object.freeze(js.Array(STANDARD, REDUCED_REDUNDANCY, GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE))
   }
 
   /**
@@ -6264,9 +6031,7 @@ package s3 {
         "Policy" -> Policy.asInstanceOf[js.Any]
       )
 
-      ConfirmRemoveSelfBucketAccess.foreach(__v =>
-        __obj.updateDynamic("ConfirmRemoveSelfBucketAccess")(__v.asInstanceOf[js.Any])
-      )
+      ConfirmRemoveSelfBucketAccess.foreach(__v => __obj.updateDynamic("ConfirmRemoveSelfBucketAccess")(__v.asInstanceOf[js.Any]))
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketPolicyRequest]
     }
@@ -6688,13 +6453,9 @@ package s3 {
       GrantReadACP.foreach(__v => __obj.updateDynamic("GrantReadACP")(__v.asInstanceOf[js.Any]))
       GrantWriteACP.foreach(__v => __obj.updateDynamic("GrantWriteACP")(__v.asInstanceOf[js.Any]))
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
-      ObjectLockLegalHoldStatus.foreach(__v =>
-        __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any])
-      )
+      ObjectLockLegalHoldStatus.foreach(__v => __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any]))
       ObjectLockMode.foreach(__v => __obj.updateDynamic("ObjectLockMode")(__v.asInstanceOf[js.Any]))
-      ObjectLockRetainUntilDate.foreach(__v =>
-        __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any])
-      )
+      ObjectLockRetainUntilDate.foreach(__v => __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
       SSECustomerKey.foreach(__v => __obj.updateDynamic("SSECustomerKey")(__v.asInstanceOf[js.Any]))
@@ -6752,9 +6513,7 @@ package s3 {
         "Key" -> Key.asInstanceOf[js.Any]
       )
 
-      BypassGovernanceRetention.foreach(__v =>
-        __obj.updateDynamic("BypassGovernanceRetention")(__v.asInstanceOf[js.Any])
-      )
+      BypassGovernanceRetention.foreach(__v => __obj.updateDynamic("BypassGovernanceRetention")(__v.asInstanceOf[js.Any]))
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       Retention.foreach(__v => __obj.updateDynamic("Retention")(__v.asInstanceOf[js.Any]))
@@ -7033,9 +6792,7 @@ package s3 {
       )
 
       DeleteMarkerReplication.foreach(__v => __obj.updateDynamic("DeleteMarkerReplication")(__v.asInstanceOf[js.Any]))
-      ExistingObjectReplication.foreach(__v =>
-        __obj.updateDynamic("ExistingObjectReplication")(__v.asInstanceOf[js.Any])
-      )
+      ExistingObjectReplication.foreach(__v => __obj.updateDynamic("ExistingObjectReplication")(__v.asInstanceOf[js.Any]))
       Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
       ID.foreach(__v => __obj.updateDynamic("ID")(__v.asInstanceOf[js.Any]))
       Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
@@ -7379,17 +7136,11 @@ package s3 {
         "Status" -> Status.asInstanceOf[js.Any]
       )
 
-      AbortIncompleteMultipartUpload.foreach(__v =>
-        __obj.updateDynamic("AbortIncompleteMultipartUpload")(__v.asInstanceOf[js.Any])
-      )
+      AbortIncompleteMultipartUpload.foreach(__v => __obj.updateDynamic("AbortIncompleteMultipartUpload")(__v.asInstanceOf[js.Any]))
       Expiration.foreach(__v => __obj.updateDynamic("Expiration")(__v.asInstanceOf[js.Any]))
       ID.foreach(__v => __obj.updateDynamic("ID")(__v.asInstanceOf[js.Any]))
-      NoncurrentVersionExpiration.foreach(__v =>
-        __obj.updateDynamic("NoncurrentVersionExpiration")(__v.asInstanceOf[js.Any])
-      )
-      NoncurrentVersionTransition.foreach(__v =>
-        __obj.updateDynamic("NoncurrentVersionTransition")(__v.asInstanceOf[js.Any])
-      )
+      NoncurrentVersionExpiration.foreach(__v => __obj.updateDynamic("NoncurrentVersionExpiration")(__v.asInstanceOf[js.Any]))
+      NoncurrentVersionTransition.foreach(__v => __obj.updateDynamic("NoncurrentVersionTransition")(__v.asInstanceOf[js.Any]))
       Transition.foreach(__v => __obj.updateDynamic("Transition")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Rule]
     }
@@ -7711,9 +7462,7 @@ package s3 {
         ApplyServerSideEncryptionByDefault: js.UndefOr[ServerSideEncryptionByDefault] = js.undefined
     ): ServerSideEncryptionRule = {
       val __obj = js.Dynamic.literal()
-      ApplyServerSideEncryptionByDefault.foreach(__v =>
-        __obj.updateDynamic("ApplyServerSideEncryptionByDefault")(__v.asInstanceOf[js.Any])
-      )
+      ApplyServerSideEncryptionByDefault.foreach(__v => __obj.updateDynamic("ApplyServerSideEncryptionByDefault")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServerSideEncryptionRule]
     }
   }
@@ -7822,9 +7571,7 @@ package s3 {
     val GLACIER = "GLACIER".asInstanceOf[StorageClass]
     val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[StorageClass]
 
-    val values = js.Object.freeze(
-      js.Array(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, DEEP_ARCHIVE)
-    )
+    val values = js.Object.freeze(js.Array(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, DEEP_ARCHIVE))
   }
 
   /**
@@ -8154,21 +7901,13 @@ package s3 {
       )
 
       CopySourceIfMatch.foreach(__v => __obj.updateDynamic("CopySourceIfMatch")(__v.asInstanceOf[js.Any]))
-      CopySourceIfModifiedSince.foreach(__v =>
-        __obj.updateDynamic("CopySourceIfModifiedSince")(__v.asInstanceOf[js.Any])
-      )
+      CopySourceIfModifiedSince.foreach(__v => __obj.updateDynamic("CopySourceIfModifiedSince")(__v.asInstanceOf[js.Any]))
       CopySourceIfNoneMatch.foreach(__v => __obj.updateDynamic("CopySourceIfNoneMatch")(__v.asInstanceOf[js.Any]))
-      CopySourceIfUnmodifiedSince.foreach(__v =>
-        __obj.updateDynamic("CopySourceIfUnmodifiedSince")(__v.asInstanceOf[js.Any])
-      )
+      CopySourceIfUnmodifiedSince.foreach(__v => __obj.updateDynamic("CopySourceIfUnmodifiedSince")(__v.asInstanceOf[js.Any]))
       CopySourceRange.foreach(__v => __obj.updateDynamic("CopySourceRange")(__v.asInstanceOf[js.Any]))
-      CopySourceSSECustomerAlgorithm.foreach(__v =>
-        __obj.updateDynamic("CopySourceSSECustomerAlgorithm")(__v.asInstanceOf[js.Any])
-      )
+      CopySourceSSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("CopySourceSSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
       CopySourceSSECustomerKey.foreach(__v => __obj.updateDynamic("CopySourceSSECustomerKey")(__v.asInstanceOf[js.Any]))
-      CopySourceSSECustomerKeyMD5.foreach(__v =>
-        __obj.updateDynamic("CopySourceSSECustomerKeyMD5")(__v.asInstanceOf[js.Any])
-      )
+      CopySourceSSECustomerKeyMD5.foreach(__v => __obj.updateDynamic("CopySourceSSECustomerKeyMD5")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
       SSECustomerKey.foreach(__v => __obj.updateDynamic("SSECustomerKey")(__v.asInstanceOf[js.Any]))

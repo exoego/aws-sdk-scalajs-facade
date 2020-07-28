@@ -87,173 +87,83 @@ package object devicefarm {
 
   implicit final class DeviceFarmOps(private val service: DeviceFarm) extends AnyVal {
 
-    @inline def createDevicePoolFuture(params: CreateDevicePoolRequest): Future[CreateDevicePoolResult] =
-      service.createDevicePool(params).promise().toFuture
-    @inline def createInstanceProfileFuture(params: CreateInstanceProfileRequest): Future[CreateInstanceProfileResult] =
-      service.createInstanceProfile(params).promise().toFuture
-    @inline def createNetworkProfileFuture(params: CreateNetworkProfileRequest): Future[CreateNetworkProfileResult] =
-      service.createNetworkProfile(params).promise().toFuture
-    @inline def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResult] =
-      service.createProject(params).promise().toFuture
-    @inline def createRemoteAccessSessionFuture(
-        params: CreateRemoteAccessSessionRequest
-    ): Future[CreateRemoteAccessSessionResult] = service.createRemoteAccessSession(params).promise().toFuture
-    @inline def createTestGridProjectFuture(params: CreateTestGridProjectRequest): Future[CreateTestGridProjectResult] =
-      service.createTestGridProject(params).promise().toFuture
-    @inline def createTestGridUrlFuture(params: CreateTestGridUrlRequest): Future[CreateTestGridUrlResult] =
-      service.createTestGridUrl(params).promise().toFuture
-    @inline def createUploadFuture(params: CreateUploadRequest): Future[CreateUploadResult] =
-      service.createUpload(params).promise().toFuture
-    @inline def createVPCEConfigurationFuture(
-        params: CreateVPCEConfigurationRequest
-    ): Future[CreateVPCEConfigurationResult] = service.createVPCEConfiguration(params).promise().toFuture
-    @inline def deleteDevicePoolFuture(params: DeleteDevicePoolRequest): Future[DeleteDevicePoolResult] =
-      service.deleteDevicePool(params).promise().toFuture
-    @inline def deleteInstanceProfileFuture(params: DeleteInstanceProfileRequest): Future[DeleteInstanceProfileResult] =
-      service.deleteInstanceProfile(params).promise().toFuture
-    @inline def deleteNetworkProfileFuture(params: DeleteNetworkProfileRequest): Future[DeleteNetworkProfileResult] =
-      service.deleteNetworkProfile(params).promise().toFuture
-    @inline def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResult] =
-      service.deleteProject(params).promise().toFuture
-    @inline def deleteRemoteAccessSessionFuture(
-        params: DeleteRemoteAccessSessionRequest
-    ): Future[DeleteRemoteAccessSessionResult] = service.deleteRemoteAccessSession(params).promise().toFuture
-    @inline def deleteRunFuture(params: DeleteRunRequest): Future[DeleteRunResult] =
-      service.deleteRun(params).promise().toFuture
-    @inline def deleteTestGridProjectFuture(params: DeleteTestGridProjectRequest): Future[DeleteTestGridProjectResult] =
-      service.deleteTestGridProject(params).promise().toFuture
-    @inline def deleteUploadFuture(params: DeleteUploadRequest): Future[DeleteUploadResult] =
-      service.deleteUpload(params).promise().toFuture
-    @inline def deleteVPCEConfigurationFuture(
-        params: DeleteVPCEConfigurationRequest
-    ): Future[DeleteVPCEConfigurationResult] = service.deleteVPCEConfiguration(params).promise().toFuture
-    @inline def getAccountSettingsFuture(params: GetAccountSettingsRequest): Future[GetAccountSettingsResult] =
-      service.getAccountSettings(params).promise().toFuture
-    @inline def getDeviceFuture(params: GetDeviceRequest): Future[GetDeviceResult] =
-      service.getDevice(params).promise().toFuture
-    @inline def getDeviceInstanceFuture(params: GetDeviceInstanceRequest): Future[GetDeviceInstanceResult] =
-      service.getDeviceInstance(params).promise().toFuture
-    @inline def getDevicePoolCompatibilityFuture(
-        params: GetDevicePoolCompatibilityRequest
-    ): Future[GetDevicePoolCompatibilityResult] = service.getDevicePoolCompatibility(params).promise().toFuture
-    @inline def getDevicePoolFuture(params: GetDevicePoolRequest): Future[GetDevicePoolResult] =
-      service.getDevicePool(params).promise().toFuture
-    @inline def getInstanceProfileFuture(params: GetInstanceProfileRequest): Future[GetInstanceProfileResult] =
-      service.getInstanceProfile(params).promise().toFuture
+    @inline def createDevicePoolFuture(params: CreateDevicePoolRequest): Future[CreateDevicePoolResult] = service.createDevicePool(params).promise().toFuture
+    @inline def createInstanceProfileFuture(params: CreateInstanceProfileRequest): Future[CreateInstanceProfileResult] = service.createInstanceProfile(params).promise().toFuture
+    @inline def createNetworkProfileFuture(params: CreateNetworkProfileRequest): Future[CreateNetworkProfileResult] = service.createNetworkProfile(params).promise().toFuture
+    @inline def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResult] = service.createProject(params).promise().toFuture
+    @inline def createRemoteAccessSessionFuture(params: CreateRemoteAccessSessionRequest): Future[CreateRemoteAccessSessionResult] = service.createRemoteAccessSession(params).promise().toFuture
+    @inline def createTestGridProjectFuture(params: CreateTestGridProjectRequest): Future[CreateTestGridProjectResult] = service.createTestGridProject(params).promise().toFuture
+    @inline def createTestGridUrlFuture(params: CreateTestGridUrlRequest): Future[CreateTestGridUrlResult] = service.createTestGridUrl(params).promise().toFuture
+    @inline def createUploadFuture(params: CreateUploadRequest): Future[CreateUploadResult] = service.createUpload(params).promise().toFuture
+    @inline def createVPCEConfigurationFuture(params: CreateVPCEConfigurationRequest): Future[CreateVPCEConfigurationResult] = service.createVPCEConfiguration(params).promise().toFuture
+    @inline def deleteDevicePoolFuture(params: DeleteDevicePoolRequest): Future[DeleteDevicePoolResult] = service.deleteDevicePool(params).promise().toFuture
+    @inline def deleteInstanceProfileFuture(params: DeleteInstanceProfileRequest): Future[DeleteInstanceProfileResult] = service.deleteInstanceProfile(params).promise().toFuture
+    @inline def deleteNetworkProfileFuture(params: DeleteNetworkProfileRequest): Future[DeleteNetworkProfileResult] = service.deleteNetworkProfile(params).promise().toFuture
+    @inline def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResult] = service.deleteProject(params).promise().toFuture
+    @inline def deleteRemoteAccessSessionFuture(params: DeleteRemoteAccessSessionRequest): Future[DeleteRemoteAccessSessionResult] = service.deleteRemoteAccessSession(params).promise().toFuture
+    @inline def deleteRunFuture(params: DeleteRunRequest): Future[DeleteRunResult] = service.deleteRun(params).promise().toFuture
+    @inline def deleteTestGridProjectFuture(params: DeleteTestGridProjectRequest): Future[DeleteTestGridProjectResult] = service.deleteTestGridProject(params).promise().toFuture
+    @inline def deleteUploadFuture(params: DeleteUploadRequest): Future[DeleteUploadResult] = service.deleteUpload(params).promise().toFuture
+    @inline def deleteVPCEConfigurationFuture(params: DeleteVPCEConfigurationRequest): Future[DeleteVPCEConfigurationResult] = service.deleteVPCEConfiguration(params).promise().toFuture
+    @inline def getAccountSettingsFuture(params: GetAccountSettingsRequest): Future[GetAccountSettingsResult] = service.getAccountSettings(params).promise().toFuture
+    @inline def getDeviceFuture(params: GetDeviceRequest): Future[GetDeviceResult] = service.getDevice(params).promise().toFuture
+    @inline def getDeviceInstanceFuture(params: GetDeviceInstanceRequest): Future[GetDeviceInstanceResult] = service.getDeviceInstance(params).promise().toFuture
+    @inline def getDevicePoolCompatibilityFuture(params: GetDevicePoolCompatibilityRequest): Future[GetDevicePoolCompatibilityResult] = service.getDevicePoolCompatibility(params).promise().toFuture
+    @inline def getDevicePoolFuture(params: GetDevicePoolRequest): Future[GetDevicePoolResult] = service.getDevicePool(params).promise().toFuture
+    @inline def getInstanceProfileFuture(params: GetInstanceProfileRequest): Future[GetInstanceProfileResult] = service.getInstanceProfile(params).promise().toFuture
     @inline def getJobFuture(params: GetJobRequest): Future[GetJobResult] = service.getJob(params).promise().toFuture
-    @inline def getNetworkProfileFuture(params: GetNetworkProfileRequest): Future[GetNetworkProfileResult] =
-      service.getNetworkProfile(params).promise().toFuture
-    @inline def getOfferingStatusFuture(params: GetOfferingStatusRequest): Future[GetOfferingStatusResult] =
-      service.getOfferingStatus(params).promise().toFuture
-    @inline def getProjectFuture(params: GetProjectRequest): Future[GetProjectResult] =
-      service.getProject(params).promise().toFuture
-    @inline def getRemoteAccessSessionFuture(
-        params: GetRemoteAccessSessionRequest
-    ): Future[GetRemoteAccessSessionResult] = service.getRemoteAccessSession(params).promise().toFuture
+    @inline def getNetworkProfileFuture(params: GetNetworkProfileRequest): Future[GetNetworkProfileResult] = service.getNetworkProfile(params).promise().toFuture
+    @inline def getOfferingStatusFuture(params: GetOfferingStatusRequest): Future[GetOfferingStatusResult] = service.getOfferingStatus(params).promise().toFuture
+    @inline def getProjectFuture(params: GetProjectRequest): Future[GetProjectResult] = service.getProject(params).promise().toFuture
+    @inline def getRemoteAccessSessionFuture(params: GetRemoteAccessSessionRequest): Future[GetRemoteAccessSessionResult] = service.getRemoteAccessSession(params).promise().toFuture
     @inline def getRunFuture(params: GetRunRequest): Future[GetRunResult] = service.getRun(params).promise().toFuture
-    @inline def getSuiteFuture(params: GetSuiteRequest): Future[GetSuiteResult] =
-      service.getSuite(params).promise().toFuture
-    @inline def getTestFuture(params: GetTestRequest): Future[GetTestResult] =
-      service.getTest(params).promise().toFuture
-    @inline def getTestGridProjectFuture(params: GetTestGridProjectRequest): Future[GetTestGridProjectResult] =
-      service.getTestGridProject(params).promise().toFuture
-    @inline def getTestGridSessionFuture(params: GetTestGridSessionRequest): Future[GetTestGridSessionResult] =
-      service.getTestGridSession(params).promise().toFuture
-    @inline def getUploadFuture(params: GetUploadRequest): Future[GetUploadResult] =
-      service.getUpload(params).promise().toFuture
-    @inline def getVPCEConfigurationFuture(params: GetVPCEConfigurationRequest): Future[GetVPCEConfigurationResult] =
-      service.getVPCEConfiguration(params).promise().toFuture
-    @inline def installToRemoteAccessSessionFuture(
-        params: InstallToRemoteAccessSessionRequest
-    ): Future[InstallToRemoteAccessSessionResult] = service.installToRemoteAccessSession(params).promise().toFuture
-    @inline def listArtifactsFuture(params: ListArtifactsRequest): Future[ListArtifactsResult] =
-      service.listArtifacts(params).promise().toFuture
-    @inline def listDeviceInstancesFuture(params: ListDeviceInstancesRequest): Future[ListDeviceInstancesResult] =
-      service.listDeviceInstances(params).promise().toFuture
-    @inline def listDevicePoolsFuture(params: ListDevicePoolsRequest): Future[ListDevicePoolsResult] =
-      service.listDevicePools(params).promise().toFuture
-    @inline def listDevicesFuture(params: ListDevicesRequest): Future[ListDevicesResult] =
-      service.listDevices(params).promise().toFuture
-    @inline def listInstanceProfilesFuture(params: ListInstanceProfilesRequest): Future[ListInstanceProfilesResult] =
-      service.listInstanceProfiles(params).promise().toFuture
-    @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult] =
-      service.listJobs(params).promise().toFuture
-    @inline def listNetworkProfilesFuture(params: ListNetworkProfilesRequest): Future[ListNetworkProfilesResult] =
-      service.listNetworkProfiles(params).promise().toFuture
-    @inline def listOfferingPromotionsFuture(
-        params: ListOfferingPromotionsRequest
-    ): Future[ListOfferingPromotionsResult] = service.listOfferingPromotions(params).promise().toFuture
-    @inline def listOfferingTransactionsFuture(
-        params: ListOfferingTransactionsRequest
-    ): Future[ListOfferingTransactionsResult] = service.listOfferingTransactions(params).promise().toFuture
-    @inline def listOfferingsFuture(params: ListOfferingsRequest): Future[ListOfferingsResult] =
-      service.listOfferings(params).promise().toFuture
-    @inline def listProjectsFuture(params: ListProjectsRequest): Future[ListProjectsResult] =
-      service.listProjects(params).promise().toFuture
-    @inline def listRemoteAccessSessionsFuture(
-        params: ListRemoteAccessSessionsRequest
-    ): Future[ListRemoteAccessSessionsResult] = service.listRemoteAccessSessions(params).promise().toFuture
-    @inline def listRunsFuture(params: ListRunsRequest): Future[ListRunsResult] =
-      service.listRuns(params).promise().toFuture
-    @inline def listSamplesFuture(params: ListSamplesRequest): Future[ListSamplesResult] =
-      service.listSamples(params).promise().toFuture
-    @inline def listSuitesFuture(params: ListSuitesRequest): Future[ListSuitesResult] =
-      service.listSuites(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listTestGridProjectsFuture(params: ListTestGridProjectsRequest): Future[ListTestGridProjectsResult] =
-      service.listTestGridProjects(params).promise().toFuture
-    @inline def listTestGridSessionActionsFuture(
-        params: ListTestGridSessionActionsRequest
-    ): Future[ListTestGridSessionActionsResult] = service.listTestGridSessionActions(params).promise().toFuture
-    @inline def listTestGridSessionArtifactsFuture(
-        params: ListTestGridSessionArtifactsRequest
-    ): Future[ListTestGridSessionArtifactsResult] = service.listTestGridSessionArtifacts(params).promise().toFuture
-    @inline def listTestGridSessionsFuture(params: ListTestGridSessionsRequest): Future[ListTestGridSessionsResult] =
-      service.listTestGridSessions(params).promise().toFuture
-    @inline def listTestsFuture(params: ListTestsRequest): Future[ListTestsResult] =
-      service.listTests(params).promise().toFuture
-    @inline def listUniqueProblemsFuture(params: ListUniqueProblemsRequest): Future[ListUniqueProblemsResult] =
-      service.listUniqueProblems(params).promise().toFuture
-    @inline def listUploadsFuture(params: ListUploadsRequest): Future[ListUploadsResult] =
-      service.listUploads(params).promise().toFuture
-    @inline def listVPCEConfigurationsFuture(
-        params: ListVPCEConfigurationsRequest
-    ): Future[ListVPCEConfigurationsResult] = service.listVPCEConfigurations(params).promise().toFuture
-    @inline def purchaseOfferingFuture(params: PurchaseOfferingRequest): Future[PurchaseOfferingResult] =
-      service.purchaseOffering(params).promise().toFuture
-    @inline def renewOfferingFuture(params: RenewOfferingRequest): Future[RenewOfferingResult] =
-      service.renewOffering(params).promise().toFuture
-    @inline def scheduleRunFuture(params: ScheduleRunRequest): Future[ScheduleRunResult] =
-      service.scheduleRun(params).promise().toFuture
-    @inline def stopJobFuture(params: StopJobRequest): Future[StopJobResult] =
-      service.stopJob(params).promise().toFuture
-    @inline def stopRemoteAccessSessionFuture(
-        params: StopRemoteAccessSessionRequest
-    ): Future[StopRemoteAccessSessionResult] = service.stopRemoteAccessSession(params).promise().toFuture
-    @inline def stopRunFuture(params: StopRunRequest): Future[StopRunResult] =
-      service.stopRun(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateDeviceInstanceFuture(params: UpdateDeviceInstanceRequest): Future[UpdateDeviceInstanceResult] =
-      service.updateDeviceInstance(params).promise().toFuture
-    @inline def updateDevicePoolFuture(params: UpdateDevicePoolRequest): Future[UpdateDevicePoolResult] =
-      service.updateDevicePool(params).promise().toFuture
-    @inline def updateInstanceProfileFuture(params: UpdateInstanceProfileRequest): Future[UpdateInstanceProfileResult] =
-      service.updateInstanceProfile(params).promise().toFuture
-    @inline def updateNetworkProfileFuture(params: UpdateNetworkProfileRequest): Future[UpdateNetworkProfileResult] =
-      service.updateNetworkProfile(params).promise().toFuture
-    @inline def updateProjectFuture(params: UpdateProjectRequest): Future[UpdateProjectResult] =
-      service.updateProject(params).promise().toFuture
-    @inline def updateTestGridProjectFuture(params: UpdateTestGridProjectRequest): Future[UpdateTestGridProjectResult] =
-      service.updateTestGridProject(params).promise().toFuture
-    @inline def updateUploadFuture(params: UpdateUploadRequest): Future[UpdateUploadResult] =
-      service.updateUpload(params).promise().toFuture
-    @inline def updateVPCEConfigurationFuture(
-        params: UpdateVPCEConfigurationRequest
-    ): Future[UpdateVPCEConfigurationResult] = service.updateVPCEConfiguration(params).promise().toFuture
+    @inline def getSuiteFuture(params: GetSuiteRequest): Future[GetSuiteResult] = service.getSuite(params).promise().toFuture
+    @inline def getTestFuture(params: GetTestRequest): Future[GetTestResult] = service.getTest(params).promise().toFuture
+    @inline def getTestGridProjectFuture(params: GetTestGridProjectRequest): Future[GetTestGridProjectResult] = service.getTestGridProject(params).promise().toFuture
+    @inline def getTestGridSessionFuture(params: GetTestGridSessionRequest): Future[GetTestGridSessionResult] = service.getTestGridSession(params).promise().toFuture
+    @inline def getUploadFuture(params: GetUploadRequest): Future[GetUploadResult] = service.getUpload(params).promise().toFuture
+    @inline def getVPCEConfigurationFuture(params: GetVPCEConfigurationRequest): Future[GetVPCEConfigurationResult] = service.getVPCEConfiguration(params).promise().toFuture
+    @inline def installToRemoteAccessSessionFuture(params: InstallToRemoteAccessSessionRequest): Future[InstallToRemoteAccessSessionResult] = service.installToRemoteAccessSession(params).promise().toFuture
+    @inline def listArtifactsFuture(params: ListArtifactsRequest): Future[ListArtifactsResult] = service.listArtifacts(params).promise().toFuture
+    @inline def listDeviceInstancesFuture(params: ListDeviceInstancesRequest): Future[ListDeviceInstancesResult] = service.listDeviceInstances(params).promise().toFuture
+    @inline def listDevicePoolsFuture(params: ListDevicePoolsRequest): Future[ListDevicePoolsResult] = service.listDevicePools(params).promise().toFuture
+    @inline def listDevicesFuture(params: ListDevicesRequest): Future[ListDevicesResult] = service.listDevices(params).promise().toFuture
+    @inline def listInstanceProfilesFuture(params: ListInstanceProfilesRequest): Future[ListInstanceProfilesResult] = service.listInstanceProfiles(params).promise().toFuture
+    @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult] = service.listJobs(params).promise().toFuture
+    @inline def listNetworkProfilesFuture(params: ListNetworkProfilesRequest): Future[ListNetworkProfilesResult] = service.listNetworkProfiles(params).promise().toFuture
+    @inline def listOfferingPromotionsFuture(params: ListOfferingPromotionsRequest): Future[ListOfferingPromotionsResult] = service.listOfferingPromotions(params).promise().toFuture
+    @inline def listOfferingTransactionsFuture(params: ListOfferingTransactionsRequest): Future[ListOfferingTransactionsResult] = service.listOfferingTransactions(params).promise().toFuture
+    @inline def listOfferingsFuture(params: ListOfferingsRequest): Future[ListOfferingsResult] = service.listOfferings(params).promise().toFuture
+    @inline def listProjectsFuture(params: ListProjectsRequest): Future[ListProjectsResult] = service.listProjects(params).promise().toFuture
+    @inline def listRemoteAccessSessionsFuture(params: ListRemoteAccessSessionsRequest): Future[ListRemoteAccessSessionsResult] = service.listRemoteAccessSessions(params).promise().toFuture
+    @inline def listRunsFuture(params: ListRunsRequest): Future[ListRunsResult] = service.listRuns(params).promise().toFuture
+    @inline def listSamplesFuture(params: ListSamplesRequest): Future[ListSamplesResult] = service.listSamples(params).promise().toFuture
+    @inline def listSuitesFuture(params: ListSuitesRequest): Future[ListSuitesResult] = service.listSuites(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listTestGridProjectsFuture(params: ListTestGridProjectsRequest): Future[ListTestGridProjectsResult] = service.listTestGridProjects(params).promise().toFuture
+    @inline def listTestGridSessionActionsFuture(params: ListTestGridSessionActionsRequest): Future[ListTestGridSessionActionsResult] = service.listTestGridSessionActions(params).promise().toFuture
+    @inline def listTestGridSessionArtifactsFuture(params: ListTestGridSessionArtifactsRequest): Future[ListTestGridSessionArtifactsResult] = service.listTestGridSessionArtifacts(params).promise().toFuture
+    @inline def listTestGridSessionsFuture(params: ListTestGridSessionsRequest): Future[ListTestGridSessionsResult] = service.listTestGridSessions(params).promise().toFuture
+    @inline def listTestsFuture(params: ListTestsRequest): Future[ListTestsResult] = service.listTests(params).promise().toFuture
+    @inline def listUniqueProblemsFuture(params: ListUniqueProblemsRequest): Future[ListUniqueProblemsResult] = service.listUniqueProblems(params).promise().toFuture
+    @inline def listUploadsFuture(params: ListUploadsRequest): Future[ListUploadsResult] = service.listUploads(params).promise().toFuture
+    @inline def listVPCEConfigurationsFuture(params: ListVPCEConfigurationsRequest): Future[ListVPCEConfigurationsResult] = service.listVPCEConfigurations(params).promise().toFuture
+    @inline def purchaseOfferingFuture(params: PurchaseOfferingRequest): Future[PurchaseOfferingResult] = service.purchaseOffering(params).promise().toFuture
+    @inline def renewOfferingFuture(params: RenewOfferingRequest): Future[RenewOfferingResult] = service.renewOffering(params).promise().toFuture
+    @inline def scheduleRunFuture(params: ScheduleRunRequest): Future[ScheduleRunResult] = service.scheduleRun(params).promise().toFuture
+    @inline def stopJobFuture(params: StopJobRequest): Future[StopJobResult] = service.stopJob(params).promise().toFuture
+    @inline def stopRemoteAccessSessionFuture(params: StopRemoteAccessSessionRequest): Future[StopRemoteAccessSessionResult] = service.stopRemoteAccessSession(params).promise().toFuture
+    @inline def stopRunFuture(params: StopRunRequest): Future[StopRunResult] = service.stopRun(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateDeviceInstanceFuture(params: UpdateDeviceInstanceRequest): Future[UpdateDeviceInstanceResult] = service.updateDeviceInstance(params).promise().toFuture
+    @inline def updateDevicePoolFuture(params: UpdateDevicePoolRequest): Future[UpdateDevicePoolResult] = service.updateDevicePool(params).promise().toFuture
+    @inline def updateInstanceProfileFuture(params: UpdateInstanceProfileRequest): Future[UpdateInstanceProfileResult] = service.updateInstanceProfile(params).promise().toFuture
+    @inline def updateNetworkProfileFuture(params: UpdateNetworkProfileRequest): Future[UpdateNetworkProfileResult] = service.updateNetworkProfile(params).promise().toFuture
+    @inline def updateProjectFuture(params: UpdateProjectRequest): Future[UpdateProjectResult] = service.updateProject(params).promise().toFuture
+    @inline def updateTestGridProjectFuture(params: UpdateTestGridProjectRequest): Future[UpdateTestGridProjectResult] = service.updateTestGridProject(params).promise().toFuture
+    @inline def updateUploadFuture(params: UpdateUploadRequest): Future[UpdateUploadResult] = service.updateUpload(params).promise().toFuture
+    @inline def updateVPCEConfigurationFuture(params: UpdateVPCEConfigurationRequest): Future[UpdateVPCEConfigurationResult] = service.updateVPCEConfiguration(params).promise().toFuture
   }
 }
 
@@ -267,31 +177,25 @@ package devicefarm {
     def createInstanceProfile(params: CreateInstanceProfileRequest): Request[CreateInstanceProfileResult] = js.native
     def createNetworkProfile(params: CreateNetworkProfileRequest): Request[CreateNetworkProfileResult] = js.native
     def createProject(params: CreateProjectRequest): Request[CreateProjectResult] = js.native
-    def createRemoteAccessSession(params: CreateRemoteAccessSessionRequest): Request[CreateRemoteAccessSessionResult] =
-      js.native
+    def createRemoteAccessSession(params: CreateRemoteAccessSessionRequest): Request[CreateRemoteAccessSessionResult] = js.native
     def createTestGridProject(params: CreateTestGridProjectRequest): Request[CreateTestGridProjectResult] = js.native
     def createTestGridUrl(params: CreateTestGridUrlRequest): Request[CreateTestGridUrlResult] = js.native
     def createUpload(params: CreateUploadRequest): Request[CreateUploadResult] = js.native
-    def createVPCEConfiguration(params: CreateVPCEConfigurationRequest): Request[CreateVPCEConfigurationResult] =
-      js.native
+    def createVPCEConfiguration(params: CreateVPCEConfigurationRequest): Request[CreateVPCEConfigurationResult] = js.native
     def deleteDevicePool(params: DeleteDevicePoolRequest): Request[DeleteDevicePoolResult] = js.native
     def deleteInstanceProfile(params: DeleteInstanceProfileRequest): Request[DeleteInstanceProfileResult] = js.native
     def deleteNetworkProfile(params: DeleteNetworkProfileRequest): Request[DeleteNetworkProfileResult] = js.native
     def deleteProject(params: DeleteProjectRequest): Request[DeleteProjectResult] = js.native
-    def deleteRemoteAccessSession(params: DeleteRemoteAccessSessionRequest): Request[DeleteRemoteAccessSessionResult] =
-      js.native
+    def deleteRemoteAccessSession(params: DeleteRemoteAccessSessionRequest): Request[DeleteRemoteAccessSessionResult] = js.native
     def deleteRun(params: DeleteRunRequest): Request[DeleteRunResult] = js.native
     def deleteTestGridProject(params: DeleteTestGridProjectRequest): Request[DeleteTestGridProjectResult] = js.native
     def deleteUpload(params: DeleteUploadRequest): Request[DeleteUploadResult] = js.native
-    def deleteVPCEConfiguration(params: DeleteVPCEConfigurationRequest): Request[DeleteVPCEConfigurationResult] =
-      js.native
+    def deleteVPCEConfiguration(params: DeleteVPCEConfigurationRequest): Request[DeleteVPCEConfigurationResult] = js.native
     def getAccountSettings(params: GetAccountSettingsRequest): Request[GetAccountSettingsResult] = js.native
     def getDevice(params: GetDeviceRequest): Request[GetDeviceResult] = js.native
     def getDeviceInstance(params: GetDeviceInstanceRequest): Request[GetDeviceInstanceResult] = js.native
     def getDevicePool(params: GetDevicePoolRequest): Request[GetDevicePoolResult] = js.native
-    def getDevicePoolCompatibility(
-        params: GetDevicePoolCompatibilityRequest
-    ): Request[GetDevicePoolCompatibilityResult] = js.native
+    def getDevicePoolCompatibility(params: GetDevicePoolCompatibilityRequest): Request[GetDevicePoolCompatibilityResult] = js.native
     def getInstanceProfile(params: GetInstanceProfileRequest): Request[GetInstanceProfileResult] = js.native
     def getJob(params: GetJobRequest): Request[GetJobResult] = js.native
     def getNetworkProfile(params: GetNetworkProfileRequest): Request[GetNetworkProfileResult] = js.native
@@ -305,9 +209,7 @@ package devicefarm {
     def getTestGridSession(params: GetTestGridSessionRequest): Request[GetTestGridSessionResult] = js.native
     def getUpload(params: GetUploadRequest): Request[GetUploadResult] = js.native
     def getVPCEConfiguration(params: GetVPCEConfigurationRequest): Request[GetVPCEConfigurationResult] = js.native
-    def installToRemoteAccessSession(
-        params: InstallToRemoteAccessSessionRequest
-    ): Request[InstallToRemoteAccessSessionResult] = js.native
+    def installToRemoteAccessSession(params: InstallToRemoteAccessSessionRequest): Request[InstallToRemoteAccessSessionResult] = js.native
     def listArtifacts(params: ListArtifactsRequest): Request[ListArtifactsResult] = js.native
     def listDeviceInstances(params: ListDeviceInstancesRequest): Request[ListDeviceInstancesResult] = js.native
     def listDevicePools(params: ListDevicePoolsRequest): Request[ListDevicePoolsResult] = js.native
@@ -316,23 +218,17 @@ package devicefarm {
     def listJobs(params: ListJobsRequest): Request[ListJobsResult] = js.native
     def listNetworkProfiles(params: ListNetworkProfilesRequest): Request[ListNetworkProfilesResult] = js.native
     def listOfferingPromotions(params: ListOfferingPromotionsRequest): Request[ListOfferingPromotionsResult] = js.native
-    def listOfferingTransactions(params: ListOfferingTransactionsRequest): Request[ListOfferingTransactionsResult] =
-      js.native
+    def listOfferingTransactions(params: ListOfferingTransactionsRequest): Request[ListOfferingTransactionsResult] = js.native
     def listOfferings(params: ListOfferingsRequest): Request[ListOfferingsResult] = js.native
     def listProjects(params: ListProjectsRequest): Request[ListProjectsResult] = js.native
-    def listRemoteAccessSessions(params: ListRemoteAccessSessionsRequest): Request[ListRemoteAccessSessionsResult] =
-      js.native
+    def listRemoteAccessSessions(params: ListRemoteAccessSessionsRequest): Request[ListRemoteAccessSessionsResult] = js.native
     def listRuns(params: ListRunsRequest): Request[ListRunsResult] = js.native
     def listSamples(params: ListSamplesRequest): Request[ListSamplesResult] = js.native
     def listSuites(params: ListSuitesRequest): Request[ListSuitesResult] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listTestGridProjects(params: ListTestGridProjectsRequest): Request[ListTestGridProjectsResult] = js.native
-    def listTestGridSessionActions(
-        params: ListTestGridSessionActionsRequest
-    ): Request[ListTestGridSessionActionsResult] = js.native
-    def listTestGridSessionArtifacts(
-        params: ListTestGridSessionArtifactsRequest
-    ): Request[ListTestGridSessionArtifactsResult] = js.native
+    def listTestGridSessionActions(params: ListTestGridSessionActionsRequest): Request[ListTestGridSessionActionsResult] = js.native
+    def listTestGridSessionArtifacts(params: ListTestGridSessionArtifactsRequest): Request[ListTestGridSessionArtifactsResult] = js.native
     def listTestGridSessions(params: ListTestGridSessionsRequest): Request[ListTestGridSessionsResult] = js.native
     def listTests(params: ListTestsRequest): Request[ListTestsResult] = js.native
     def listUniqueProblems(params: ListUniqueProblemsRequest): Request[ListUniqueProblemsResult] = js.native
@@ -342,8 +238,7 @@ package devicefarm {
     def renewOffering(params: RenewOfferingRequest): Request[RenewOfferingResult] = js.native
     def scheduleRun(params: ScheduleRunRequest): Request[ScheduleRunResult] = js.native
     def stopJob(params: StopJobRequest): Request[StopJobResult] = js.native
-    def stopRemoteAccessSession(params: StopRemoteAccessSessionRequest): Request[StopRemoteAccessSessionResult] =
-      js.native
+    def stopRemoteAccessSession(params: StopRemoteAccessSessionRequest): Request[StopRemoteAccessSessionResult] = js.native
     def stopRun(params: StopRunRequest): Request[StopRunResult] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
@@ -354,8 +249,7 @@ package devicefarm {
     def updateProject(params: UpdateProjectRequest): Request[UpdateProjectResult] = js.native
     def updateTestGridProject(params: UpdateTestGridProjectRequest): Request[UpdateTestGridProjectResult] = js.native
     def updateUpload(params: UpdateUploadRequest): Request[UpdateUploadResult] = js.native
-    def updateVPCEConfiguration(params: UpdateVPCEConfigurationRequest): Request[UpdateVPCEConfigurationResult] =
-      js.native
+    def updateVPCEConfiguration(params: UpdateVPCEConfigurationRequest): Request[UpdateVPCEConfigurationResult] = js.native
   }
 
   /**
@@ -393,9 +287,7 @@ package devicefarm {
       skipAppResign.foreach(__v => __obj.updateDynamic("skipAppResign")(__v.asInstanceOf[js.Any]))
       trialMinutes.foreach(__v => __obj.updateDynamic("trialMinutes")(__v.asInstanceOf[js.Any]))
       unmeteredDevices.foreach(__v => __obj.updateDynamic("unmeteredDevices")(__v.asInstanceOf[js.Any]))
-      unmeteredRemoteAccessDevices.foreach(__v =>
-        __obj.updateDynamic("unmeteredRemoteAccessDevices")(__v.asInstanceOf[js.Any])
-      )
+      unmeteredRemoteAccessDevices.foreach(__v => __obj.updateDynamic("unmeteredRemoteAccessDevices")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AccountSettings]
     }
   }
@@ -653,9 +545,7 @@ package devicefarm {
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      excludeAppPackagesFromCleanup.foreach(__v =>
-        __obj.updateDynamic("excludeAppPackagesFromCleanup")(__v.asInstanceOf[js.Any])
-      )
+      excludeAppPackagesFromCleanup.foreach(__v => __obj.updateDynamic("excludeAppPackagesFromCleanup")(__v.asInstanceOf[js.Any]))
       packageCleanup.foreach(__v => __obj.updateDynamic("packageCleanup")(__v.asInstanceOf[js.Any]))
       rebootAfterUse.foreach(__v => __obj.updateDynamic("rebootAfterUse")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateInstanceProfileRequest]
@@ -1031,9 +921,7 @@ package devicefarm {
         "vpceServiceName" -> vpceServiceName.asInstanceOf[js.Any]
       )
 
-      vpceConfigurationDescription.foreach(__v =>
-        __obj.updateDynamic("vpceConfigurationDescription")(__v.asInstanceOf[js.Any])
-      )
+      vpceConfigurationDescription.foreach(__v => __obj.updateDynamic("vpceConfigurationDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateVPCEConfigurationRequest]
     }
   }
@@ -1845,19 +1733,7 @@ package devicefarm {
     val COMPLETED = "COMPLETED".asInstanceOf[ExecutionStatus]
     val STOPPING = "STOPPING".asInstanceOf[ExecutionStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        PENDING,
-        PENDING_CONCURRENCY,
-        PENDING_DEVICE,
-        PROCESSING,
-        SCHEDULING,
-        PREPARING,
-        RUNNING,
-        COMPLETED,
-        STOPPING
-      )
-    )
+    val values = js.Object.freeze(js.Array(PENDING, PENDING_CONCURRENCY, PENDING_DEVICE, PROCESSING, SCHEDULING, PREPARING, RUNNING, COMPLETED, STOPPING))
   }
 
   /**
@@ -2653,9 +2529,7 @@ package devicefarm {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      excludeAppPackagesFromCleanup.foreach(__v =>
-        __obj.updateDynamic("excludeAppPackagesFromCleanup")(__v.asInstanceOf[js.Any])
-      )
+      excludeAppPackagesFromCleanup.foreach(__v => __obj.updateDynamic("excludeAppPackagesFromCleanup")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       packageCleanup.foreach(__v => __obj.updateDynamic("packageCleanup")(__v.asInstanceOf[js.Any]))
       rebootAfterUse.foreach(__v => __obj.updateDynamic("rebootAfterUse")(__v.asInstanceOf[js.Any]))
@@ -4404,9 +4278,7 @@ package devicefarm {
     val NOT_IN = "NOT_IN".asInstanceOf[RuleOperator]
     val CONTAINS = "CONTAINS".asInstanceOf[RuleOperator]
 
-    val values = js.Object.freeze(
-      js.Array(EQUALS, LESS_THAN, LESS_THAN_OR_EQUALS, GREATER_THAN, GREATER_THAN_OR_EQUALS, IN, NOT_IN, CONTAINS)
-    )
+    val values = js.Object.freeze(js.Array(EQUALS, LESS_THAN, LESS_THAN_OR_EQUALS, GREATER_THAN, GREATER_THAN_OR_EQUALS, IN, NOT_IN, CONTAINS))
   }
 
   /**
@@ -4665,9 +4537,7 @@ package devicefarm {
       appArn.foreach(__v => __obj.updateDynamic("appArn")(__v.asInstanceOf[js.Any]))
       configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
       devicePoolArn.foreach(__v => __obj.updateDynamic("devicePoolArn")(__v.asInstanceOf[js.Any]))
-      deviceSelectionConfiguration.foreach(__v =>
-        __obj.updateDynamic("deviceSelectionConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      deviceSelectionConfiguration.foreach(__v => __obj.updateDynamic("deviceSelectionConfiguration")(__v.asInstanceOf[js.Any]))
       executionConfiguration.foreach(__v => __obj.updateDynamic("executionConfiguration")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScheduleRunRequest]
@@ -5395,9 +5265,7 @@ package devicefarm {
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      excludeAppPackagesFromCleanup.foreach(__v =>
-        __obj.updateDynamic("excludeAppPackagesFromCleanup")(__v.asInstanceOf[js.Any])
-      )
+      excludeAppPackagesFromCleanup.foreach(__v => __obj.updateDynamic("excludeAppPackagesFromCleanup")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       packageCleanup.foreach(__v => __obj.updateDynamic("packageCleanup")(__v.asInstanceOf[js.Any]))
       rebootAfterUse.foreach(__v => __obj.updateDynamic("rebootAfterUse")(__v.asInstanceOf[js.Any]))
@@ -5640,9 +5508,7 @@ package devicefarm {
       )
 
       serviceDnsName.foreach(__v => __obj.updateDynamic("serviceDnsName")(__v.asInstanceOf[js.Any]))
-      vpceConfigurationDescription.foreach(__v =>
-        __obj.updateDynamic("vpceConfigurationDescription")(__v.asInstanceOf[js.Any])
-      )
+      vpceConfigurationDescription.foreach(__v => __obj.updateDynamic("vpceConfigurationDescription")(__v.asInstanceOf[js.Any]))
       vpceConfigurationName.foreach(__v => __obj.updateDynamic("vpceConfigurationName")(__v.asInstanceOf[js.Any]))
       vpceServiceName.foreach(__v => __obj.updateDynamic("vpceServiceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateVPCEConfigurationRequest]
@@ -5829,9 +5695,7 @@ package devicefarm {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       serviceDnsName.foreach(__v => __obj.updateDynamic("serviceDnsName")(__v.asInstanceOf[js.Any]))
-      vpceConfigurationDescription.foreach(__v =>
-        __obj.updateDynamic("vpceConfigurationDescription")(__v.asInstanceOf[js.Any])
-      )
+      vpceConfigurationDescription.foreach(__v => __obj.updateDynamic("vpceConfigurationDescription")(__v.asInstanceOf[js.Any]))
       vpceConfigurationName.foreach(__v => __obj.updateDynamic("vpceConfigurationName")(__v.asInstanceOf[js.Any]))
       vpceServiceName.foreach(__v => __obj.updateDynamic("vpceServiceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VPCEConfiguration]

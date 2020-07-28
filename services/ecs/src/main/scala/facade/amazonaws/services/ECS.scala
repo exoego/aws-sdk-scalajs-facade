@@ -84,123 +84,55 @@ package object ecs {
 
   implicit final class ECSOps(private val service: ECS) extends AnyVal {
 
-    @inline def createCapacityProviderFuture(
-        params: CreateCapacityProviderRequest
-    ): Future[CreateCapacityProviderResponse] = service.createCapacityProvider(params).promise().toFuture
-    @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
-      service.createCluster(params).promise().toFuture
-    @inline def createServiceFuture(params: CreateServiceRequest): Future[CreateServiceResponse] =
-      service.createService(params).promise().toFuture
-    @inline def createTaskSetFuture(params: CreateTaskSetRequest): Future[CreateTaskSetResponse] =
-      service.createTaskSet(params).promise().toFuture
-    @inline def deleteAccountSettingFuture(params: DeleteAccountSettingRequest): Future[DeleteAccountSettingResponse] =
-      service.deleteAccountSetting(params).promise().toFuture
-    @inline def deleteAttributesFuture(params: DeleteAttributesRequest): Future[DeleteAttributesResponse] =
-      service.deleteAttributes(params).promise().toFuture
-    @inline def deleteCapacityProviderFuture(
-        params: DeleteCapacityProviderRequest
-    ): Future[DeleteCapacityProviderResponse] = service.deleteCapacityProvider(params).promise().toFuture
-    @inline def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] =
-      service.deleteCluster(params).promise().toFuture
-    @inline def deleteServiceFuture(params: DeleteServiceRequest): Future[DeleteServiceResponse] =
-      service.deleteService(params).promise().toFuture
-    @inline def deleteTaskSetFuture(params: DeleteTaskSetRequest): Future[DeleteTaskSetResponse] =
-      service.deleteTaskSet(params).promise().toFuture
-    @inline def deregisterContainerInstanceFuture(
-        params: DeregisterContainerInstanceRequest
-    ): Future[DeregisterContainerInstanceResponse] = service.deregisterContainerInstance(params).promise().toFuture
-    @inline def deregisterTaskDefinitionFuture(
-        params: DeregisterTaskDefinitionRequest
-    ): Future[DeregisterTaskDefinitionResponse] = service.deregisterTaskDefinition(params).promise().toFuture
-    @inline def describeCapacityProvidersFuture(
-        params: DescribeCapacityProvidersRequest
-    ): Future[DescribeCapacityProvidersResponse] = service.describeCapacityProviders(params).promise().toFuture
-    @inline def describeClustersFuture(params: DescribeClustersRequest): Future[DescribeClustersResponse] =
-      service.describeClusters(params).promise().toFuture
-    @inline def describeContainerInstancesFuture(
-        params: DescribeContainerInstancesRequest
-    ): Future[DescribeContainerInstancesResponse] = service.describeContainerInstances(params).promise().toFuture
-    @inline def describeServicesFuture(params: DescribeServicesRequest): Future[DescribeServicesResponse] =
-      service.describeServices(params).promise().toFuture
-    @inline def describeTaskDefinitionFuture(
-        params: DescribeTaskDefinitionRequest
-    ): Future[DescribeTaskDefinitionResponse] = service.describeTaskDefinition(params).promise().toFuture
-    @inline def describeTaskSetsFuture(params: DescribeTaskSetsRequest): Future[DescribeTaskSetsResponse] =
-      service.describeTaskSets(params).promise().toFuture
-    @inline def describeTasksFuture(params: DescribeTasksRequest): Future[DescribeTasksResponse] =
-      service.describeTasks(params).promise().toFuture
-    @inline def discoverPollEndpointFuture(params: DiscoverPollEndpointRequest): Future[DiscoverPollEndpointResponse] =
-      service.discoverPollEndpoint(params).promise().toFuture
-    @inline def listAccountSettingsFuture(params: ListAccountSettingsRequest): Future[ListAccountSettingsResponse] =
-      service.listAccountSettings(params).promise().toFuture
-    @inline def listAttributesFuture(params: ListAttributesRequest): Future[ListAttributesResponse] =
-      service.listAttributes(params).promise().toFuture
-    @inline def listClustersFuture(params: ListClustersRequest): Future[ListClustersResponse] =
-      service.listClusters(params).promise().toFuture
-    @inline def listContainerInstancesFuture(
-        params: ListContainerInstancesRequest
-    ): Future[ListContainerInstancesResponse] = service.listContainerInstances(params).promise().toFuture
-    @inline def listServicesFuture(params: ListServicesRequest): Future[ListServicesResponse] =
-      service.listServices(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listTaskDefinitionFamiliesFuture(
-        params: ListTaskDefinitionFamiliesRequest
-    ): Future[ListTaskDefinitionFamiliesResponse] = service.listTaskDefinitionFamilies(params).promise().toFuture
-    @inline def listTaskDefinitionsFuture(params: ListTaskDefinitionsRequest): Future[ListTaskDefinitionsResponse] =
-      service.listTaskDefinitions(params).promise().toFuture
-    @inline def listTasksFuture(params: ListTasksRequest): Future[ListTasksResponse] =
-      service.listTasks(params).promise().toFuture
-    @inline def putAccountSettingDefaultFuture(
-        params: PutAccountSettingDefaultRequest
-    ): Future[PutAccountSettingDefaultResponse] = service.putAccountSettingDefault(params).promise().toFuture
-    @inline def putAccountSettingFuture(params: PutAccountSettingRequest): Future[PutAccountSettingResponse] =
-      service.putAccountSetting(params).promise().toFuture
-    @inline def putAttributesFuture(params: PutAttributesRequest): Future[PutAttributesResponse] =
-      service.putAttributes(params).promise().toFuture
-    @inline def putClusterCapacityProvidersFuture(
-        params: PutClusterCapacityProvidersRequest
-    ): Future[PutClusterCapacityProvidersResponse] = service.putClusterCapacityProviders(params).promise().toFuture
-    @inline def registerContainerInstanceFuture(
-        params: RegisterContainerInstanceRequest
-    ): Future[RegisterContainerInstanceResponse] = service.registerContainerInstance(params).promise().toFuture
-    @inline def registerTaskDefinitionFuture(
-        params: RegisterTaskDefinitionRequest
-    ): Future[RegisterTaskDefinitionResponse] = service.registerTaskDefinition(params).promise().toFuture
-    @inline def runTaskFuture(params: RunTaskRequest): Future[RunTaskResponse] =
-      service.runTask(params).promise().toFuture
-    @inline def startTaskFuture(params: StartTaskRequest): Future[StartTaskResponse] =
-      service.startTask(params).promise().toFuture
-    @inline def stopTaskFuture(params: StopTaskRequest): Future[StopTaskResponse] =
-      service.stopTask(params).promise().toFuture
-    @inline def submitAttachmentStateChangesFuture(
-        params: SubmitAttachmentStateChangesRequest
-    ): Future[SubmitAttachmentStateChangesResponse] = service.submitAttachmentStateChanges(params).promise().toFuture
-    @inline def submitContainerStateChangeFuture(
-        params: SubmitContainerStateChangeRequest
-    ): Future[SubmitContainerStateChangeResponse] = service.submitContainerStateChange(params).promise().toFuture
-    @inline def submitTaskStateChangeFuture(
-        params: SubmitTaskStateChangeRequest
-    ): Future[SubmitTaskStateChangeResponse] = service.submitTaskStateChange(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateClusterSettingsFuture(
-        params: UpdateClusterSettingsRequest
-    ): Future[UpdateClusterSettingsResponse] = service.updateClusterSettings(params).promise().toFuture
-    @inline def updateContainerAgentFuture(params: UpdateContainerAgentRequest): Future[UpdateContainerAgentResponse] =
-      service.updateContainerAgent(params).promise().toFuture
-    @inline def updateContainerInstancesStateFuture(
-        params: UpdateContainerInstancesStateRequest
-    ): Future[UpdateContainerInstancesStateResponse] = service.updateContainerInstancesState(params).promise().toFuture
-    @inline def updateServiceFuture(params: UpdateServiceRequest): Future[UpdateServiceResponse] =
-      service.updateService(params).promise().toFuture
-    @inline def updateServicePrimaryTaskSetFuture(
-        params: UpdateServicePrimaryTaskSetRequest
-    ): Future[UpdateServicePrimaryTaskSetResponse] = service.updateServicePrimaryTaskSet(params).promise().toFuture
-    @inline def updateTaskSetFuture(params: UpdateTaskSetRequest): Future[UpdateTaskSetResponse] =
-      service.updateTaskSet(params).promise().toFuture
+    @inline def createCapacityProviderFuture(params: CreateCapacityProviderRequest): Future[CreateCapacityProviderResponse] = service.createCapacityProvider(params).promise().toFuture
+    @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] = service.createCluster(params).promise().toFuture
+    @inline def createServiceFuture(params: CreateServiceRequest): Future[CreateServiceResponse] = service.createService(params).promise().toFuture
+    @inline def createTaskSetFuture(params: CreateTaskSetRequest): Future[CreateTaskSetResponse] = service.createTaskSet(params).promise().toFuture
+    @inline def deleteAccountSettingFuture(params: DeleteAccountSettingRequest): Future[DeleteAccountSettingResponse] = service.deleteAccountSetting(params).promise().toFuture
+    @inline def deleteAttributesFuture(params: DeleteAttributesRequest): Future[DeleteAttributesResponse] = service.deleteAttributes(params).promise().toFuture
+    @inline def deleteCapacityProviderFuture(params: DeleteCapacityProviderRequest): Future[DeleteCapacityProviderResponse] = service.deleteCapacityProvider(params).promise().toFuture
+    @inline def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] = service.deleteCluster(params).promise().toFuture
+    @inline def deleteServiceFuture(params: DeleteServiceRequest): Future[DeleteServiceResponse] = service.deleteService(params).promise().toFuture
+    @inline def deleteTaskSetFuture(params: DeleteTaskSetRequest): Future[DeleteTaskSetResponse] = service.deleteTaskSet(params).promise().toFuture
+    @inline def deregisterContainerInstanceFuture(params: DeregisterContainerInstanceRequest): Future[DeregisterContainerInstanceResponse] = service.deregisterContainerInstance(params).promise().toFuture
+    @inline def deregisterTaskDefinitionFuture(params: DeregisterTaskDefinitionRequest): Future[DeregisterTaskDefinitionResponse] = service.deregisterTaskDefinition(params).promise().toFuture
+    @inline def describeCapacityProvidersFuture(params: DescribeCapacityProvidersRequest): Future[DescribeCapacityProvidersResponse] = service.describeCapacityProviders(params).promise().toFuture
+    @inline def describeClustersFuture(params: DescribeClustersRequest): Future[DescribeClustersResponse] = service.describeClusters(params).promise().toFuture
+    @inline def describeContainerInstancesFuture(params: DescribeContainerInstancesRequest): Future[DescribeContainerInstancesResponse] = service.describeContainerInstances(params).promise().toFuture
+    @inline def describeServicesFuture(params: DescribeServicesRequest): Future[DescribeServicesResponse] = service.describeServices(params).promise().toFuture
+    @inline def describeTaskDefinitionFuture(params: DescribeTaskDefinitionRequest): Future[DescribeTaskDefinitionResponse] = service.describeTaskDefinition(params).promise().toFuture
+    @inline def describeTaskSetsFuture(params: DescribeTaskSetsRequest): Future[DescribeTaskSetsResponse] = service.describeTaskSets(params).promise().toFuture
+    @inline def describeTasksFuture(params: DescribeTasksRequest): Future[DescribeTasksResponse] = service.describeTasks(params).promise().toFuture
+    @inline def discoverPollEndpointFuture(params: DiscoverPollEndpointRequest): Future[DiscoverPollEndpointResponse] = service.discoverPollEndpoint(params).promise().toFuture
+    @inline def listAccountSettingsFuture(params: ListAccountSettingsRequest): Future[ListAccountSettingsResponse] = service.listAccountSettings(params).promise().toFuture
+    @inline def listAttributesFuture(params: ListAttributesRequest): Future[ListAttributesResponse] = service.listAttributes(params).promise().toFuture
+    @inline def listClustersFuture(params: ListClustersRequest): Future[ListClustersResponse] = service.listClusters(params).promise().toFuture
+    @inline def listContainerInstancesFuture(params: ListContainerInstancesRequest): Future[ListContainerInstancesResponse] = service.listContainerInstances(params).promise().toFuture
+    @inline def listServicesFuture(params: ListServicesRequest): Future[ListServicesResponse] = service.listServices(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listTaskDefinitionFamiliesFuture(params: ListTaskDefinitionFamiliesRequest): Future[ListTaskDefinitionFamiliesResponse] = service.listTaskDefinitionFamilies(params).promise().toFuture
+    @inline def listTaskDefinitionsFuture(params: ListTaskDefinitionsRequest): Future[ListTaskDefinitionsResponse] = service.listTaskDefinitions(params).promise().toFuture
+    @inline def listTasksFuture(params: ListTasksRequest): Future[ListTasksResponse] = service.listTasks(params).promise().toFuture
+    @inline def putAccountSettingDefaultFuture(params: PutAccountSettingDefaultRequest): Future[PutAccountSettingDefaultResponse] = service.putAccountSettingDefault(params).promise().toFuture
+    @inline def putAccountSettingFuture(params: PutAccountSettingRequest): Future[PutAccountSettingResponse] = service.putAccountSetting(params).promise().toFuture
+    @inline def putAttributesFuture(params: PutAttributesRequest): Future[PutAttributesResponse] = service.putAttributes(params).promise().toFuture
+    @inline def putClusterCapacityProvidersFuture(params: PutClusterCapacityProvidersRequest): Future[PutClusterCapacityProvidersResponse] = service.putClusterCapacityProviders(params).promise().toFuture
+    @inline def registerContainerInstanceFuture(params: RegisterContainerInstanceRequest): Future[RegisterContainerInstanceResponse] = service.registerContainerInstance(params).promise().toFuture
+    @inline def registerTaskDefinitionFuture(params: RegisterTaskDefinitionRequest): Future[RegisterTaskDefinitionResponse] = service.registerTaskDefinition(params).promise().toFuture
+    @inline def runTaskFuture(params: RunTaskRequest): Future[RunTaskResponse] = service.runTask(params).promise().toFuture
+    @inline def startTaskFuture(params: StartTaskRequest): Future[StartTaskResponse] = service.startTask(params).promise().toFuture
+    @inline def stopTaskFuture(params: StopTaskRequest): Future[StopTaskResponse] = service.stopTask(params).promise().toFuture
+    @inline def submitAttachmentStateChangesFuture(params: SubmitAttachmentStateChangesRequest): Future[SubmitAttachmentStateChangesResponse] = service.submitAttachmentStateChanges(params).promise().toFuture
+    @inline def submitContainerStateChangeFuture(params: SubmitContainerStateChangeRequest): Future[SubmitContainerStateChangeResponse] = service.submitContainerStateChange(params).promise().toFuture
+    @inline def submitTaskStateChangeFuture(params: SubmitTaskStateChangeRequest): Future[SubmitTaskStateChangeResponse] = service.submitTaskStateChange(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateClusterSettingsFuture(params: UpdateClusterSettingsRequest): Future[UpdateClusterSettingsResponse] = service.updateClusterSettings(params).promise().toFuture
+    @inline def updateContainerAgentFuture(params: UpdateContainerAgentRequest): Future[UpdateContainerAgentResponse] = service.updateContainerAgent(params).promise().toFuture
+    @inline def updateContainerInstancesStateFuture(params: UpdateContainerInstancesStateRequest): Future[UpdateContainerInstancesStateResponse] = service.updateContainerInstancesState(params).promise().toFuture
+    @inline def updateServiceFuture(params: UpdateServiceRequest): Future[UpdateServiceResponse] = service.updateService(params).promise().toFuture
+    @inline def updateServicePrimaryTaskSetFuture(params: UpdateServicePrimaryTaskSetRequest): Future[UpdateServicePrimaryTaskSetResponse] = service.updateServicePrimaryTaskSet(params).promise().toFuture
+    @inline def updateTaskSetFuture(params: UpdateTaskSetRequest): Future[UpdateTaskSetResponse] = service.updateTaskSet(params).promise().toFuture
   }
 }
 
@@ -210,81 +142,54 @@ package ecs {
   class ECS() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createCapacityProvider(params: CreateCapacityProviderRequest): Request[CreateCapacityProviderResponse] =
-      js.native
+    def createCapacityProvider(params: CreateCapacityProviderRequest): Request[CreateCapacityProviderResponse] = js.native
     def createCluster(params: CreateClusterRequest): Request[CreateClusterResponse] = js.native
     def createService(params: CreateServiceRequest): Request[CreateServiceResponse] = js.native
     def createTaskSet(params: CreateTaskSetRequest): Request[CreateTaskSetResponse] = js.native
     def deleteAccountSetting(params: DeleteAccountSettingRequest): Request[DeleteAccountSettingResponse] = js.native
     def deleteAttributes(params: DeleteAttributesRequest): Request[DeleteAttributesResponse] = js.native
-    def deleteCapacityProvider(params: DeleteCapacityProviderRequest): Request[DeleteCapacityProviderResponse] =
-      js.native
+    def deleteCapacityProvider(params: DeleteCapacityProviderRequest): Request[DeleteCapacityProviderResponse] = js.native
     def deleteCluster(params: DeleteClusterRequest): Request[DeleteClusterResponse] = js.native
     def deleteService(params: DeleteServiceRequest): Request[DeleteServiceResponse] = js.native
     def deleteTaskSet(params: DeleteTaskSetRequest): Request[DeleteTaskSetResponse] = js.native
-    def deregisterContainerInstance(
-        params: DeregisterContainerInstanceRequest
-    ): Request[DeregisterContainerInstanceResponse] = js.native
-    def deregisterTaskDefinition(params: DeregisterTaskDefinitionRequest): Request[DeregisterTaskDefinitionResponse] =
-      js.native
-    def describeCapacityProviders(
-        params: DescribeCapacityProvidersRequest
-    ): Request[DescribeCapacityProvidersResponse] = js.native
+    def deregisterContainerInstance(params: DeregisterContainerInstanceRequest): Request[DeregisterContainerInstanceResponse] = js.native
+    def deregisterTaskDefinition(params: DeregisterTaskDefinitionRequest): Request[DeregisterTaskDefinitionResponse] = js.native
+    def describeCapacityProviders(params: DescribeCapacityProvidersRequest): Request[DescribeCapacityProvidersResponse] = js.native
     def describeClusters(params: DescribeClustersRequest): Request[DescribeClustersResponse] = js.native
-    def describeContainerInstances(
-        params: DescribeContainerInstancesRequest
-    ): Request[DescribeContainerInstancesResponse] = js.native
+    def describeContainerInstances(params: DescribeContainerInstancesRequest): Request[DescribeContainerInstancesResponse] = js.native
     def describeServices(params: DescribeServicesRequest): Request[DescribeServicesResponse] = js.native
-    def describeTaskDefinition(params: DescribeTaskDefinitionRequest): Request[DescribeTaskDefinitionResponse] =
-      js.native
+    def describeTaskDefinition(params: DescribeTaskDefinitionRequest): Request[DescribeTaskDefinitionResponse] = js.native
     def describeTaskSets(params: DescribeTaskSetsRequest): Request[DescribeTaskSetsResponse] = js.native
     def describeTasks(params: DescribeTasksRequest): Request[DescribeTasksResponse] = js.native
     def discoverPollEndpoint(params: DiscoverPollEndpointRequest): Request[DiscoverPollEndpointResponse] = js.native
     def listAccountSettings(params: ListAccountSettingsRequest): Request[ListAccountSettingsResponse] = js.native
     def listAttributes(params: ListAttributesRequest): Request[ListAttributesResponse] = js.native
     def listClusters(params: ListClustersRequest): Request[ListClustersResponse] = js.native
-    def listContainerInstances(params: ListContainerInstancesRequest): Request[ListContainerInstancesResponse] =
-      js.native
+    def listContainerInstances(params: ListContainerInstancesRequest): Request[ListContainerInstancesResponse] = js.native
     def listServices(params: ListServicesRequest): Request[ListServicesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def listTaskDefinitionFamilies(
-        params: ListTaskDefinitionFamiliesRequest
-    ): Request[ListTaskDefinitionFamiliesResponse] = js.native
+    def listTaskDefinitionFamilies(params: ListTaskDefinitionFamiliesRequest): Request[ListTaskDefinitionFamiliesResponse] = js.native
     def listTaskDefinitions(params: ListTaskDefinitionsRequest): Request[ListTaskDefinitionsResponse] = js.native
     def listTasks(params: ListTasksRequest): Request[ListTasksResponse] = js.native
     def putAccountSetting(params: PutAccountSettingRequest): Request[PutAccountSettingResponse] = js.native
-    def putAccountSettingDefault(params: PutAccountSettingDefaultRequest): Request[PutAccountSettingDefaultResponse] =
-      js.native
+    def putAccountSettingDefault(params: PutAccountSettingDefaultRequest): Request[PutAccountSettingDefaultResponse] = js.native
     def putAttributes(params: PutAttributesRequest): Request[PutAttributesResponse] = js.native
-    def putClusterCapacityProviders(
-        params: PutClusterCapacityProvidersRequest
-    ): Request[PutClusterCapacityProvidersResponse] = js.native
-    def registerContainerInstance(
-        params: RegisterContainerInstanceRequest
-    ): Request[RegisterContainerInstanceResponse] = js.native
-    def registerTaskDefinition(params: RegisterTaskDefinitionRequest): Request[RegisterTaskDefinitionResponse] =
-      js.native
+    def putClusterCapacityProviders(params: PutClusterCapacityProvidersRequest): Request[PutClusterCapacityProvidersResponse] = js.native
+    def registerContainerInstance(params: RegisterContainerInstanceRequest): Request[RegisterContainerInstanceResponse] = js.native
+    def registerTaskDefinition(params: RegisterTaskDefinitionRequest): Request[RegisterTaskDefinitionResponse] = js.native
     def runTask(params: RunTaskRequest): Request[RunTaskResponse] = js.native
     def startTask(params: StartTaskRequest): Request[StartTaskResponse] = js.native
     def stopTask(params: StopTaskRequest): Request[StopTaskResponse] = js.native
-    def submitAttachmentStateChanges(
-        params: SubmitAttachmentStateChangesRequest
-    ): Request[SubmitAttachmentStateChangesResponse] = js.native
-    def submitContainerStateChange(
-        params: SubmitContainerStateChangeRequest
-    ): Request[SubmitContainerStateChangeResponse] = js.native
+    def submitAttachmentStateChanges(params: SubmitAttachmentStateChangesRequest): Request[SubmitAttachmentStateChangesResponse] = js.native
+    def submitContainerStateChange(params: SubmitContainerStateChangeRequest): Request[SubmitContainerStateChangeResponse] = js.native
     def submitTaskStateChange(params: SubmitTaskStateChangeRequest): Request[SubmitTaskStateChangeResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateClusterSettings(params: UpdateClusterSettingsRequest): Request[UpdateClusterSettingsResponse] = js.native
     def updateContainerAgent(params: UpdateContainerAgentRequest): Request[UpdateContainerAgentResponse] = js.native
-    def updateContainerInstancesState(
-        params: UpdateContainerInstancesStateRequest
-    ): Request[UpdateContainerInstancesStateResponse] = js.native
+    def updateContainerInstancesState(params: UpdateContainerInstancesStateRequest): Request[UpdateContainerInstancesStateResponse] = js.native
     def updateService(params: UpdateServiceRequest): Request[UpdateServiceResponse] = js.native
-    def updateServicePrimaryTaskSet(
-        params: UpdateServicePrimaryTaskSetRequest
-    ): Request[UpdateServicePrimaryTaskSetResponse] = js.native
+    def updateServicePrimaryTaskSet(params: UpdateServicePrimaryTaskSetRequest): Request[UpdateServicePrimaryTaskSetResponse] = js.native
     def updateTaskSet(params: UpdateTaskSetRequest): Request[UpdateTaskSetResponse] = js.native
   }
 
@@ -414,9 +319,7 @@ package ecs {
       )
 
       managedScaling.foreach(__v => __obj.updateDynamic("managedScaling")(__v.asInstanceOf[js.Any]))
-      managedTerminationProtection.foreach(__v =>
-        __obj.updateDynamic("managedTerminationProtection")(__v.asInstanceOf[js.Any])
-      )
+      managedTerminationProtection.foreach(__v => __obj.updateDynamic("managedTerminationProtection")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoScalingGroupProvider]
     }
   }
@@ -585,13 +488,9 @@ package ecs {
       capacityProviders.foreach(__v => __obj.updateDynamic("capacityProviders")(__v.asInstanceOf[js.Any]))
       clusterArn.foreach(__v => __obj.updateDynamic("clusterArn")(__v.asInstanceOf[js.Any]))
       clusterName.foreach(__v => __obj.updateDynamic("clusterName")(__v.asInstanceOf[js.Any]))
-      defaultCapacityProviderStrategy.foreach(__v =>
-        __obj.updateDynamic("defaultCapacityProviderStrategy")(__v.asInstanceOf[js.Any])
-      )
+      defaultCapacityProviderStrategy.foreach(__v => __obj.updateDynamic("defaultCapacityProviderStrategy")(__v.asInstanceOf[js.Any]))
       pendingTasksCount.foreach(__v => __obj.updateDynamic("pendingTasksCount")(__v.asInstanceOf[js.Any]))
-      registeredContainerInstancesCount.foreach(__v =>
-        __obj.updateDynamic("registeredContainerInstancesCount")(__v.asInstanceOf[js.Any])
-      )
+      registeredContainerInstancesCount.foreach(__v => __obj.updateDynamic("registeredContainerInstancesCount")(__v.asInstanceOf[js.Any]))
       runningTasksCount.foreach(__v => __obj.updateDynamic("runningTasksCount")(__v.asInstanceOf[js.Any]))
       settings.foreach(__v => __obj.updateDynamic("settings")(__v.asInstanceOf[js.Any]))
       statistics.foreach(__v => __obj.updateDynamic("statistics")(__v.asInstanceOf[js.Any]))
@@ -1120,9 +1019,7 @@ package ecs {
       val __obj = js.Dynamic.literal()
       capacityProviders.foreach(__v => __obj.updateDynamic("capacityProviders")(__v.asInstanceOf[js.Any]))
       clusterName.foreach(__v => __obj.updateDynamic("clusterName")(__v.asInstanceOf[js.Any]))
-      defaultCapacityProviderStrategy.foreach(__v =>
-        __obj.updateDynamic("defaultCapacityProviderStrategy")(__v.asInstanceOf[js.Any])
-      )
+      defaultCapacityProviderStrategy.foreach(__v => __obj.updateDynamic("defaultCapacityProviderStrategy")(__v.asInstanceOf[js.Any]))
       settings.foreach(__v => __obj.updateDynamic("settings")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateClusterRequest]
@@ -1206,9 +1103,7 @@ package ecs {
       deploymentController.foreach(__v => __obj.updateDynamic("deploymentController")(__v.asInstanceOf[js.Any]))
       desiredCount.foreach(__v => __obj.updateDynamic("desiredCount")(__v.asInstanceOf[js.Any]))
       enableECSManagedTags.foreach(__v => __obj.updateDynamic("enableECSManagedTags")(__v.asInstanceOf[js.Any]))
-      healthCheckGracePeriodSeconds.foreach(__v =>
-        __obj.updateDynamic("healthCheckGracePeriodSeconds")(__v.asInstanceOf[js.Any])
-      )
+      healthCheckGracePeriodSeconds.foreach(__v => __obj.updateDynamic("healthCheckGracePeriodSeconds")(__v.asInstanceOf[js.Any]))
       launchType.foreach(__v => __obj.updateDynamic("launchType")(__v.asInstanceOf[js.Any]))
       loadBalancers.foreach(__v => __obj.updateDynamic("loadBalancers")(__v.asInstanceOf[js.Any]))
       networkConfiguration.foreach(__v => __obj.updateDynamic("networkConfiguration")(__v.asInstanceOf[js.Any]))
@@ -3557,9 +3452,7 @@ package ecs {
       cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
       containerInstanceArn.foreach(__v => __obj.updateDynamic("containerInstanceArn")(__v.asInstanceOf[js.Any]))
       instanceIdentityDocument.foreach(__v => __obj.updateDynamic("instanceIdentityDocument")(__v.asInstanceOf[js.Any]))
-      instanceIdentityDocumentSignature.foreach(__v =>
-        __obj.updateDynamic("instanceIdentityDocumentSignature")(__v.asInstanceOf[js.Any])
-      )
+      instanceIdentityDocumentSignature.foreach(__v => __obj.updateDynamic("instanceIdentityDocumentSignature")(__v.asInstanceOf[js.Any]))
       platformDevices.foreach(__v => __obj.updateDynamic("platformDevices")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       totalResources.foreach(__v => __obj.updateDynamic("totalResources")(__v.asInstanceOf[js.Any]))
@@ -3988,9 +3881,7 @@ package ecs {
       desiredCount.foreach(__v => __obj.updateDynamic("desiredCount")(__v.asInstanceOf[js.Any]))
       enableECSManagedTags.foreach(__v => __obj.updateDynamic("enableECSManagedTags")(__v.asInstanceOf[js.Any]))
       events.foreach(__v => __obj.updateDynamic("events")(__v.asInstanceOf[js.Any]))
-      healthCheckGracePeriodSeconds.foreach(__v =>
-        __obj.updateDynamic("healthCheckGracePeriodSeconds")(__v.asInstanceOf[js.Any])
-      )
+      healthCheckGracePeriodSeconds.foreach(__v => __obj.updateDynamic("healthCheckGracePeriodSeconds")(__v.asInstanceOf[js.Any]))
       launchType.foreach(__v => __obj.updateDynamic("launchType")(__v.asInstanceOf[js.Any]))
       loadBalancers.foreach(__v => __obj.updateDynamic("loadBalancers")(__v.asInstanceOf[js.Any]))
       networkConfiguration.foreach(__v => __obj.updateDynamic("networkConfiguration")(__v.asInstanceOf[js.Any]))
@@ -4108,15 +3999,7 @@ package ecs {
     val awsvpcTrunking = "awsvpcTrunking".asInstanceOf[SettingName]
     val containerInsights = "containerInsights".asInstanceOf[SettingName]
 
-    val values = js.Object.freeze(
-      js.Array(
-        serviceLongArnFormat,
-        taskLongArnFormat,
-        containerInstanceLongArnFormat,
-        awsvpcTrunking,
-        containerInsights
-      )
-    )
+    val values = js.Object.freeze(js.Array(serviceLongArnFormat, taskLongArnFormat, containerInstanceLongArnFormat, awsvpcTrunking, containerInsights))
   }
 
   @js.native
@@ -4769,9 +4652,7 @@ package ecs {
       containerOverrides.foreach(__v => __obj.updateDynamic("containerOverrides")(__v.asInstanceOf[js.Any]))
       cpu.foreach(__v => __obj.updateDynamic("cpu")(__v.asInstanceOf[js.Any]))
       executionRoleArn.foreach(__v => __obj.updateDynamic("executionRoleArn")(__v.asInstanceOf[js.Any]))
-      inferenceAcceleratorOverrides.foreach(__v =>
-        __obj.updateDynamic("inferenceAcceleratorOverrides")(__v.asInstanceOf[js.Any])
-      )
+      inferenceAcceleratorOverrides.foreach(__v => __obj.updateDynamic("inferenceAcceleratorOverrides")(__v.asInstanceOf[js.Any]))
       memory.foreach(__v => __obj.updateDynamic("memory")(__v.asInstanceOf[js.Any]))
       taskRoleArn.foreach(__v => __obj.updateDynamic("taskRoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TaskOverride]
@@ -4963,25 +4844,7 @@ package ecs {
     val sigpending = "sigpending".asInstanceOf[UlimitName]
     val stack = "stack".asInstanceOf[UlimitName]
 
-    val values = js.Object.freeze(
-      js.Array(
-        core,
-        cpu,
-        data,
-        fsize,
-        locks,
-        memlock,
-        msgqueue,
-        nice,
-        nofile,
-        nproc,
-        rss,
-        rtprio,
-        rttime,
-        sigpending,
-        stack
-      )
-    )
+    val values = js.Object.freeze(js.Array(core, cpu, data, fsize, locks, memlock, msgqueue, nice, nofile, nproc, rss, rtprio, rttime, sigpending, stack))
   }
 
   @js.native
@@ -5216,9 +5079,7 @@ package ecs {
       deploymentConfiguration.foreach(__v => __obj.updateDynamic("deploymentConfiguration")(__v.asInstanceOf[js.Any]))
       desiredCount.foreach(__v => __obj.updateDynamic("desiredCount")(__v.asInstanceOf[js.Any]))
       forceNewDeployment.foreach(__v => __obj.updateDynamic("forceNewDeployment")(__v.asInstanceOf[js.Any]))
-      healthCheckGracePeriodSeconds.foreach(__v =>
-        __obj.updateDynamic("healthCheckGracePeriodSeconds")(__v.asInstanceOf[js.Any])
-      )
+      healthCheckGracePeriodSeconds.foreach(__v => __obj.updateDynamic("healthCheckGracePeriodSeconds")(__v.asInstanceOf[js.Any]))
       networkConfiguration.foreach(__v => __obj.updateDynamic("networkConfiguration")(__v.asInstanceOf[js.Any]))
       placementConstraints.foreach(__v => __obj.updateDynamic("placementConstraints")(__v.asInstanceOf[js.Any]))
       placementStrategy.foreach(__v => __obj.updateDynamic("placementStrategy")(__v.asInstanceOf[js.Any]))
@@ -5332,9 +5193,7 @@ package ecs {
         name: js.UndefOr[String] = js.undefined
     ): Volume = {
       val __obj = js.Dynamic.literal()
-      dockerVolumeConfiguration.foreach(__v =>
-        __obj.updateDynamic("dockerVolumeConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      dockerVolumeConfiguration.foreach(__v => __obj.updateDynamic("dockerVolumeConfiguration")(__v.asInstanceOf[js.Any]))
       efsVolumeConfiguration.foreach(__v => __obj.updateDynamic("efsVolumeConfiguration")(__v.asInstanceOf[js.Any]))
       host.foreach(__v => __obj.updateDynamic("host")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))

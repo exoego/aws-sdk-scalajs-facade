@@ -32,71 +32,30 @@ package object ram {
 
   implicit final class RAMOps(private val service: RAM) extends AnyVal {
 
-    @inline def acceptResourceShareInvitationFuture(
-        params: AcceptResourceShareInvitationRequest
-    ): Future[AcceptResourceShareInvitationResponse] = service.acceptResourceShareInvitation(params).promise().toFuture
-    @inline def associateResourceShareFuture(
-        params: AssociateResourceShareRequest
-    ): Future[AssociateResourceShareResponse] = service.associateResourceShare(params).promise().toFuture
-    @inline def associateResourceSharePermissionFuture(
-        params: AssociateResourceSharePermissionRequest
-    ): Future[AssociateResourceSharePermissionResponse] =
-      service.associateResourceSharePermission(params).promise().toFuture
-    @inline def createResourceShareFuture(params: CreateResourceShareRequest): Future[CreateResourceShareResponse] =
-      service.createResourceShare(params).promise().toFuture
-    @inline def deleteResourceShareFuture(params: DeleteResourceShareRequest): Future[DeleteResourceShareResponse] =
-      service.deleteResourceShare(params).promise().toFuture
-    @inline def disassociateResourceShareFuture(
-        params: DisassociateResourceShareRequest
-    ): Future[DisassociateResourceShareResponse] = service.disassociateResourceShare(params).promise().toFuture
-    @inline def disassociateResourceSharePermissionFuture(
-        params: DisassociateResourceSharePermissionRequest
-    ): Future[DisassociateResourceSharePermissionResponse] =
-      service.disassociateResourceSharePermission(params).promise().toFuture
-    @inline def enableSharingWithAwsOrganizationFuture(
-        params: EnableSharingWithAwsOrganizationRequest
-    ): Future[EnableSharingWithAwsOrganizationResponse] =
-      service.enableSharingWithAwsOrganization(params).promise().toFuture
-    @inline def getPermissionFuture(params: GetPermissionRequest): Future[GetPermissionResponse] =
-      service.getPermission(params).promise().toFuture
-    @inline def getResourcePoliciesFuture(params: GetResourcePoliciesRequest): Future[GetResourcePoliciesResponse] =
-      service.getResourcePolicies(params).promise().toFuture
-    @inline def getResourceShareAssociationsFuture(
-        params: GetResourceShareAssociationsRequest
-    ): Future[GetResourceShareAssociationsResponse] = service.getResourceShareAssociations(params).promise().toFuture
-    @inline def getResourceShareInvitationsFuture(
-        params: GetResourceShareInvitationsRequest
-    ): Future[GetResourceShareInvitationsResponse] = service.getResourceShareInvitations(params).promise().toFuture
-    @inline def getResourceSharesFuture(params: GetResourceSharesRequest): Future[GetResourceSharesResponse] =
-      service.getResourceShares(params).promise().toFuture
-    @inline def listPendingInvitationResourcesFuture(
-        params: ListPendingInvitationResourcesRequest
-    ): Future[ListPendingInvitationResourcesResponse] =
-      service.listPendingInvitationResources(params).promise().toFuture
-    @inline def listPermissionsFuture(params: ListPermissionsRequest): Future[ListPermissionsResponse] =
-      service.listPermissions(params).promise().toFuture
-    @inline def listPrincipalsFuture(params: ListPrincipalsRequest): Future[ListPrincipalsResponse] =
-      service.listPrincipals(params).promise().toFuture
-    @inline def listResourceSharePermissionsFuture(
-        params: ListResourceSharePermissionsRequest
-    ): Future[ListResourceSharePermissionsResponse] = service.listResourceSharePermissions(params).promise().toFuture
-    @inline def listResourceTypesFuture(params: ListResourceTypesRequest): Future[ListResourceTypesResponse] =
-      service.listResourceTypes(params).promise().toFuture
-    @inline def listResourcesFuture(params: ListResourcesRequest): Future[ListResourcesResponse] =
-      service.listResources(params).promise().toFuture
-    @inline def promoteResourceShareCreatedFromPolicyFuture(
-        params: PromoteResourceShareCreatedFromPolicyRequest
-    ): Future[PromoteResourceShareCreatedFromPolicyResponse] =
-      service.promoteResourceShareCreatedFromPolicy(params).promise().toFuture
-    @inline def rejectResourceShareInvitationFuture(
-        params: RejectResourceShareInvitationRequest
-    ): Future[RejectResourceShareInvitationResponse] = service.rejectResourceShareInvitation(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateResourceShareFuture(params: UpdateResourceShareRequest): Future[UpdateResourceShareResponse] =
-      service.updateResourceShare(params).promise().toFuture
+    @inline def acceptResourceShareInvitationFuture(params: AcceptResourceShareInvitationRequest): Future[AcceptResourceShareInvitationResponse] = service.acceptResourceShareInvitation(params).promise().toFuture
+    @inline def associateResourceShareFuture(params: AssociateResourceShareRequest): Future[AssociateResourceShareResponse] = service.associateResourceShare(params).promise().toFuture
+    @inline def associateResourceSharePermissionFuture(params: AssociateResourceSharePermissionRequest): Future[AssociateResourceSharePermissionResponse] = service.associateResourceSharePermission(params).promise().toFuture
+    @inline def createResourceShareFuture(params: CreateResourceShareRequest): Future[CreateResourceShareResponse] = service.createResourceShare(params).promise().toFuture
+    @inline def deleteResourceShareFuture(params: DeleteResourceShareRequest): Future[DeleteResourceShareResponse] = service.deleteResourceShare(params).promise().toFuture
+    @inline def disassociateResourceShareFuture(params: DisassociateResourceShareRequest): Future[DisassociateResourceShareResponse] = service.disassociateResourceShare(params).promise().toFuture
+    @inline def disassociateResourceSharePermissionFuture(params: DisassociateResourceSharePermissionRequest): Future[DisassociateResourceSharePermissionResponse] = service.disassociateResourceSharePermission(params).promise().toFuture
+    @inline def enableSharingWithAwsOrganizationFuture(params: EnableSharingWithAwsOrganizationRequest): Future[EnableSharingWithAwsOrganizationResponse] = service.enableSharingWithAwsOrganization(params).promise().toFuture
+    @inline def getPermissionFuture(params: GetPermissionRequest): Future[GetPermissionResponse] = service.getPermission(params).promise().toFuture
+    @inline def getResourcePoliciesFuture(params: GetResourcePoliciesRequest): Future[GetResourcePoliciesResponse] = service.getResourcePolicies(params).promise().toFuture
+    @inline def getResourceShareAssociationsFuture(params: GetResourceShareAssociationsRequest): Future[GetResourceShareAssociationsResponse] = service.getResourceShareAssociations(params).promise().toFuture
+    @inline def getResourceShareInvitationsFuture(params: GetResourceShareInvitationsRequest): Future[GetResourceShareInvitationsResponse] = service.getResourceShareInvitations(params).promise().toFuture
+    @inline def getResourceSharesFuture(params: GetResourceSharesRequest): Future[GetResourceSharesResponse] = service.getResourceShares(params).promise().toFuture
+    @inline def listPendingInvitationResourcesFuture(params: ListPendingInvitationResourcesRequest): Future[ListPendingInvitationResourcesResponse] = service.listPendingInvitationResources(params).promise().toFuture
+    @inline def listPermissionsFuture(params: ListPermissionsRequest): Future[ListPermissionsResponse] = service.listPermissions(params).promise().toFuture
+    @inline def listPrincipalsFuture(params: ListPrincipalsRequest): Future[ListPrincipalsResponse] = service.listPrincipals(params).promise().toFuture
+    @inline def listResourceSharePermissionsFuture(params: ListResourceSharePermissionsRequest): Future[ListResourceSharePermissionsResponse] = service.listResourceSharePermissions(params).promise().toFuture
+    @inline def listResourceTypesFuture(params: ListResourceTypesRequest): Future[ListResourceTypesResponse] = service.listResourceTypes(params).promise().toFuture
+    @inline def listResourcesFuture(params: ListResourcesRequest): Future[ListResourcesResponse] = service.listResources(params).promise().toFuture
+    @inline def promoteResourceShareCreatedFromPolicyFuture(params: PromoteResourceShareCreatedFromPolicyRequest): Future[PromoteResourceShareCreatedFromPolicyResponse] = service.promoteResourceShareCreatedFromPolicy(params).promise().toFuture
+    @inline def rejectResourceShareInvitationFuture(params: RejectResourceShareInvitationRequest): Future[RejectResourceShareInvitationResponse] = service.rejectResourceShareInvitation(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateResourceShareFuture(params: UpdateResourceShareRequest): Future[UpdateResourceShareResponse] = service.updateResourceShare(params).promise().toFuture
   }
 }
 
@@ -106,50 +65,27 @@ package ram {
   class RAM() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def acceptResourceShareInvitation(
-        params: AcceptResourceShareInvitationRequest
-    ): Request[AcceptResourceShareInvitationResponse] = js.native
-    def associateResourceShare(params: AssociateResourceShareRequest): Request[AssociateResourceShareResponse] =
-      js.native
-    def associateResourceSharePermission(
-        params: AssociateResourceSharePermissionRequest
-    ): Request[AssociateResourceSharePermissionResponse] = js.native
+    def acceptResourceShareInvitation(params: AcceptResourceShareInvitationRequest): Request[AcceptResourceShareInvitationResponse] = js.native
+    def associateResourceShare(params: AssociateResourceShareRequest): Request[AssociateResourceShareResponse] = js.native
+    def associateResourceSharePermission(params: AssociateResourceSharePermissionRequest): Request[AssociateResourceSharePermissionResponse] = js.native
     def createResourceShare(params: CreateResourceShareRequest): Request[CreateResourceShareResponse] = js.native
     def deleteResourceShare(params: DeleteResourceShareRequest): Request[DeleteResourceShareResponse] = js.native
-    def disassociateResourceShare(
-        params: DisassociateResourceShareRequest
-    ): Request[DisassociateResourceShareResponse] = js.native
-    def disassociateResourceSharePermission(
-        params: DisassociateResourceSharePermissionRequest
-    ): Request[DisassociateResourceSharePermissionResponse] = js.native
-    def enableSharingWithAwsOrganization(
-        params: EnableSharingWithAwsOrganizationRequest
-    ): Request[EnableSharingWithAwsOrganizationResponse] = js.native
+    def disassociateResourceShare(params: DisassociateResourceShareRequest): Request[DisassociateResourceShareResponse] = js.native
+    def disassociateResourceSharePermission(params: DisassociateResourceSharePermissionRequest): Request[DisassociateResourceSharePermissionResponse] = js.native
+    def enableSharingWithAwsOrganization(params: EnableSharingWithAwsOrganizationRequest): Request[EnableSharingWithAwsOrganizationResponse] = js.native
     def getPermission(params: GetPermissionRequest): Request[GetPermissionResponse] = js.native
     def getResourcePolicies(params: GetResourcePoliciesRequest): Request[GetResourcePoliciesResponse] = js.native
-    def getResourceShareAssociations(
-        params: GetResourceShareAssociationsRequest
-    ): Request[GetResourceShareAssociationsResponse] = js.native
-    def getResourceShareInvitations(
-        params: GetResourceShareInvitationsRequest
-    ): Request[GetResourceShareInvitationsResponse] = js.native
+    def getResourceShareAssociations(params: GetResourceShareAssociationsRequest): Request[GetResourceShareAssociationsResponse] = js.native
+    def getResourceShareInvitations(params: GetResourceShareInvitationsRequest): Request[GetResourceShareInvitationsResponse] = js.native
     def getResourceShares(params: GetResourceSharesRequest): Request[GetResourceSharesResponse] = js.native
-    def listPendingInvitationResources(
-        params: ListPendingInvitationResourcesRequest
-    ): Request[ListPendingInvitationResourcesResponse] = js.native
+    def listPendingInvitationResources(params: ListPendingInvitationResourcesRequest): Request[ListPendingInvitationResourcesResponse] = js.native
     def listPermissions(params: ListPermissionsRequest): Request[ListPermissionsResponse] = js.native
     def listPrincipals(params: ListPrincipalsRequest): Request[ListPrincipalsResponse] = js.native
-    def listResourceSharePermissions(
-        params: ListResourceSharePermissionsRequest
-    ): Request[ListResourceSharePermissionsResponse] = js.native
+    def listResourceSharePermissions(params: ListResourceSharePermissionsRequest): Request[ListResourceSharePermissionsResponse] = js.native
     def listResourceTypes(params: ListResourceTypesRequest): Request[ListResourceTypesResponse] = js.native
     def listResources(params: ListResourcesRequest): Request[ListResourcesResponse] = js.native
-    def promoteResourceShareCreatedFromPolicy(
-        params: PromoteResourceShareCreatedFromPolicyRequest
-    ): Request[PromoteResourceShareCreatedFromPolicyResponse] = js.native
-    def rejectResourceShareInvitation(
-        params: RejectResourceShareInvitationRequest
-    ): Request[RejectResourceShareInvitationResponse] = js.native
+    def promoteResourceShareCreatedFromPolicy(params: PromoteResourceShareCreatedFromPolicyRequest): Request[PromoteResourceShareCreatedFromPolicyResponse] = js.native
+    def rejectResourceShareInvitation(params: RejectResourceShareInvitationRequest): Request[RejectResourceShareInvitationResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateResourceShare(params: UpdateResourceShareRequest): Request[UpdateResourceShareResponse] = js.native
@@ -282,9 +218,7 @@ package ram {
     ): AssociateResourceShareResponse = {
       val __obj = js.Dynamic.literal()
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      resourceShareAssociations.foreach(__v =>
-        __obj.updateDynamic("resourceShareAssociations")(__v.asInstanceOf[js.Any])
-      )
+      resourceShareAssociations.foreach(__v => __obj.updateDynamic("resourceShareAssociations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateResourceShareResponse]
     }
   }
@@ -468,9 +402,7 @@ package ram {
     ): DisassociateResourceShareResponse = {
       val __obj = js.Dynamic.literal()
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      resourceShareAssociations.foreach(__v =>
-        __obj.updateDynamic("resourceShareAssociations")(__v.asInstanceOf[js.Any])
-      )
+      resourceShareAssociations.foreach(__v => __obj.updateDynamic("resourceShareAssociations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisassociateResourceShareResponse]
     }
   }
@@ -637,9 +569,7 @@ package ram {
     ): GetResourceShareAssociationsResponse = {
       val __obj = js.Dynamic.literal()
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      resourceShareAssociations.foreach(__v =>
-        __obj.updateDynamic("resourceShareAssociations")(__v.asInstanceOf[js.Any])
-      )
+      resourceShareAssociations.foreach(__v => __obj.updateDynamic("resourceShareAssociations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetResourceShareAssociationsResponse]
     }
   }
@@ -664,9 +594,7 @@ package ram {
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       resourceShareArns.foreach(__v => __obj.updateDynamic("resourceShareArns")(__v.asInstanceOf[js.Any]))
-      resourceShareInvitationArns.foreach(__v =>
-        __obj.updateDynamic("resourceShareInvitationArns")(__v.asInstanceOf[js.Any])
-      )
+      resourceShareInvitationArns.foreach(__v => __obj.updateDynamic("resourceShareInvitationArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetResourceShareInvitationsRequest]
     }
   }
@@ -1325,12 +1253,8 @@ package ram {
       invitationTimestamp.foreach(__v => __obj.updateDynamic("invitationTimestamp")(__v.asInstanceOf[js.Any]))
       receiverAccountId.foreach(__v => __obj.updateDynamic("receiverAccountId")(__v.asInstanceOf[js.Any]))
       resourceShareArn.foreach(__v => __obj.updateDynamic("resourceShareArn")(__v.asInstanceOf[js.Any]))
-      resourceShareAssociations.foreach(__v =>
-        __obj.updateDynamic("resourceShareAssociations")(__v.asInstanceOf[js.Any])
-      )
-      resourceShareInvitationArn.foreach(__v =>
-        __obj.updateDynamic("resourceShareInvitationArn")(__v.asInstanceOf[js.Any])
-      )
+      resourceShareAssociations.foreach(__v => __obj.updateDynamic("resourceShareAssociations")(__v.asInstanceOf[js.Any]))
+      resourceShareInvitationArn.foreach(__v => __obj.updateDynamic("resourceShareInvitationArn")(__v.asInstanceOf[js.Any]))
       resourceShareName.foreach(__v => __obj.updateDynamic("resourceShareName")(__v.asInstanceOf[js.Any]))
       senderAccountId.foreach(__v => __obj.updateDynamic("senderAccountId")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
@@ -1450,8 +1374,7 @@ package ram {
     val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[ResourceStatus]
     val PENDING = "PENDING".asInstanceOf[ResourceStatus]
 
-    val values =
-      js.Object.freeze(js.Array(AVAILABLE, ZONAL_RESOURCE_INACCESSIBLE, LIMIT_EXCEEDED, UNAVAILABLE, PENDING))
+    val values = js.Object.freeze(js.Array(AVAILABLE, ZONAL_RESOURCE_INACCESSIBLE, LIMIT_EXCEEDED, UNAVAILABLE, PENDING))
   }
 
   /**

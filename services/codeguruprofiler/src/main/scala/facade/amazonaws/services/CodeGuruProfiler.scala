@@ -53,59 +53,29 @@ package object codeguruprofiler {
 
   implicit final class CodeGuruProfilerOps(private val service: CodeGuruProfiler) extends AnyVal {
 
-    @inline def addNotificationChannelsFuture(
-        params: AddNotificationChannelsRequest
-    ): Future[AddNotificationChannelsResponse] = service.addNotificationChannels(params).promise().toFuture
-    @inline def batchGetFrameMetricDataFuture(
-        params: BatchGetFrameMetricDataRequest
-    ): Future[BatchGetFrameMetricDataResponse] = service.batchGetFrameMetricData(params).promise().toFuture
-    @inline def configureAgentFuture(params: ConfigureAgentRequest): Future[ConfigureAgentResponse] =
-      service.configureAgent(params).promise().toFuture
-    @inline def createProfilingGroupFuture(params: CreateProfilingGroupRequest): Future[CreateProfilingGroupResponse] =
-      service.createProfilingGroup(params).promise().toFuture
-    @inline def deleteProfilingGroupFuture(params: DeleteProfilingGroupRequest): Future[DeleteProfilingGroupResponse] =
-      service.deleteProfilingGroup(params).promise().toFuture
-    @inline def describeProfilingGroupFuture(
-        params: DescribeProfilingGroupRequest
-    ): Future[DescribeProfilingGroupResponse] = service.describeProfilingGroup(params).promise().toFuture
-    @inline def getFindingsReportAccountSummaryFuture(
-        params: GetFindingsReportAccountSummaryRequest
-    ): Future[GetFindingsReportAccountSummaryResponse] =
-      service.getFindingsReportAccountSummary(params).promise().toFuture
-    @inline def getNotificationConfigurationFuture(
-        params: GetNotificationConfigurationRequest
-    ): Future[GetNotificationConfigurationResponse] = service.getNotificationConfiguration(params).promise().toFuture
-    @inline def getPolicyFuture(params: GetPolicyRequest): Future[GetPolicyResponse] =
-      service.getPolicy(params).promise().toFuture
-    @inline def getProfileFuture(params: GetProfileRequest): Future[GetProfileResponse] =
-      service.getProfile(params).promise().toFuture
-    @inline def getRecommendationsFuture(params: GetRecommendationsRequest): Future[GetRecommendationsResponse] =
-      service.getRecommendations(params).promise().toFuture
-    @inline def listFindingsReportsFuture(params: ListFindingsReportsRequest): Future[ListFindingsReportsResponse] =
-      service.listFindingsReports(params).promise().toFuture
-    @inline def listProfileTimesFuture(params: ListProfileTimesRequest): Future[ListProfileTimesResponse] =
-      service.listProfileTimes(params).promise().toFuture
-    @inline def listProfilingGroupsFuture(params: ListProfilingGroupsRequest): Future[ListProfilingGroupsResponse] =
-      service.listProfilingGroups(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def postAgentProfileFuture(params: PostAgentProfileRequest): Future[PostAgentProfileResponse] =
-      service.postAgentProfile(params).promise().toFuture
-    @inline def putPermissionFuture(params: PutPermissionRequest): Future[PutPermissionResponse] =
-      service.putPermission(params).promise().toFuture
-    @inline def removeNotificationChannelFuture(
-        params: RemoveNotificationChannelRequest
-    ): Future[RemoveNotificationChannelResponse] = service.removeNotificationChannel(params).promise().toFuture
-    @inline def removePermissionFuture(params: RemovePermissionRequest): Future[RemovePermissionResponse] =
-      service.removePermission(params).promise().toFuture
-    @inline def submitFeedbackFuture(params: SubmitFeedbackRequest): Future[SubmitFeedbackResponse] =
-      service.submitFeedback(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateProfilingGroupFuture(params: UpdateProfilingGroupRequest): Future[UpdateProfilingGroupResponse] =
-      service.updateProfilingGroup(params).promise().toFuture
+    @inline def addNotificationChannelsFuture(params: AddNotificationChannelsRequest): Future[AddNotificationChannelsResponse] = service.addNotificationChannels(params).promise().toFuture
+    @inline def batchGetFrameMetricDataFuture(params: BatchGetFrameMetricDataRequest): Future[BatchGetFrameMetricDataResponse] = service.batchGetFrameMetricData(params).promise().toFuture
+    @inline def configureAgentFuture(params: ConfigureAgentRequest): Future[ConfigureAgentResponse] = service.configureAgent(params).promise().toFuture
+    @inline def createProfilingGroupFuture(params: CreateProfilingGroupRequest): Future[CreateProfilingGroupResponse] = service.createProfilingGroup(params).promise().toFuture
+    @inline def deleteProfilingGroupFuture(params: DeleteProfilingGroupRequest): Future[DeleteProfilingGroupResponse] = service.deleteProfilingGroup(params).promise().toFuture
+    @inline def describeProfilingGroupFuture(params: DescribeProfilingGroupRequest): Future[DescribeProfilingGroupResponse] = service.describeProfilingGroup(params).promise().toFuture
+    @inline def getFindingsReportAccountSummaryFuture(params: GetFindingsReportAccountSummaryRequest): Future[GetFindingsReportAccountSummaryResponse] = service.getFindingsReportAccountSummary(params).promise().toFuture
+    @inline def getNotificationConfigurationFuture(params: GetNotificationConfigurationRequest): Future[GetNotificationConfigurationResponse] = service.getNotificationConfiguration(params).promise().toFuture
+    @inline def getPolicyFuture(params: GetPolicyRequest): Future[GetPolicyResponse] = service.getPolicy(params).promise().toFuture
+    @inline def getProfileFuture(params: GetProfileRequest): Future[GetProfileResponse] = service.getProfile(params).promise().toFuture
+    @inline def getRecommendationsFuture(params: GetRecommendationsRequest): Future[GetRecommendationsResponse] = service.getRecommendations(params).promise().toFuture
+    @inline def listFindingsReportsFuture(params: ListFindingsReportsRequest): Future[ListFindingsReportsResponse] = service.listFindingsReports(params).promise().toFuture
+    @inline def listProfileTimesFuture(params: ListProfileTimesRequest): Future[ListProfileTimesResponse] = service.listProfileTimes(params).promise().toFuture
+    @inline def listProfilingGroupsFuture(params: ListProfilingGroupsRequest): Future[ListProfilingGroupsResponse] = service.listProfilingGroups(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def postAgentProfileFuture(params: PostAgentProfileRequest): Future[PostAgentProfileResponse] = service.postAgentProfile(params).promise().toFuture
+    @inline def putPermissionFuture(params: PutPermissionRequest): Future[PutPermissionResponse] = service.putPermission(params).promise().toFuture
+    @inline def removeNotificationChannelFuture(params: RemoveNotificationChannelRequest): Future[RemoveNotificationChannelResponse] = service.removeNotificationChannel(params).promise().toFuture
+    @inline def removePermissionFuture(params: RemovePermissionRequest): Future[RemovePermissionResponse] = service.removePermission(params).promise().toFuture
+    @inline def submitFeedbackFuture(params: SubmitFeedbackRequest): Future[SubmitFeedbackResponse] = service.submitFeedback(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateProfilingGroupFuture(params: UpdateProfilingGroupRequest): Future[UpdateProfilingGroupResponse] = service.updateProfilingGroup(params).promise().toFuture
   }
 }
 
@@ -115,21 +85,14 @@ package codeguruprofiler {
   class CodeGuruProfiler() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def addNotificationChannels(params: AddNotificationChannelsRequest): Request[AddNotificationChannelsResponse] =
-      js.native
-    def batchGetFrameMetricData(params: BatchGetFrameMetricDataRequest): Request[BatchGetFrameMetricDataResponse] =
-      js.native
+    def addNotificationChannels(params: AddNotificationChannelsRequest): Request[AddNotificationChannelsResponse] = js.native
+    def batchGetFrameMetricData(params: BatchGetFrameMetricDataRequest): Request[BatchGetFrameMetricDataResponse] = js.native
     def configureAgent(params: ConfigureAgentRequest): Request[ConfigureAgentResponse] = js.native
     def createProfilingGroup(params: CreateProfilingGroupRequest): Request[CreateProfilingGroupResponse] = js.native
     def deleteProfilingGroup(params: DeleteProfilingGroupRequest): Request[DeleteProfilingGroupResponse] = js.native
-    def describeProfilingGroup(params: DescribeProfilingGroupRequest): Request[DescribeProfilingGroupResponse] =
-      js.native
-    def getFindingsReportAccountSummary(
-        params: GetFindingsReportAccountSummaryRequest
-    ): Request[GetFindingsReportAccountSummaryResponse] = js.native
-    def getNotificationConfiguration(
-        params: GetNotificationConfigurationRequest
-    ): Request[GetNotificationConfigurationResponse] = js.native
+    def describeProfilingGroup(params: DescribeProfilingGroupRequest): Request[DescribeProfilingGroupResponse] = js.native
+    def getFindingsReportAccountSummary(params: GetFindingsReportAccountSummaryRequest): Request[GetFindingsReportAccountSummaryResponse] = js.native
+    def getNotificationConfiguration(params: GetNotificationConfigurationRequest): Request[GetNotificationConfigurationResponse] = js.native
     def getPolicy(params: GetPolicyRequest): Request[GetPolicyResponse] = js.native
     def getProfile(params: GetProfileRequest): Request[GetProfileResponse] = js.native
     def getRecommendations(params: GetRecommendationsRequest): Request[GetRecommendationsResponse] = js.native
@@ -139,9 +102,7 @@ package codeguruprofiler {
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def postAgentProfile(params: PostAgentProfileRequest): Request[PostAgentProfileResponse] = js.native
     def putPermission(params: PutPermissionRequest): Request[PutPermissionResponse] = js.native
-    def removeNotificationChannel(
-        params: RemoveNotificationChannelRequest
-    ): Request[RemoveNotificationChannelResponse] = js.native
+    def removeNotificationChannel(params: RemoveNotificationChannelRequest): Request[RemoveNotificationChannelResponse] = js.native
     def removePermission(params: RemovePermissionRequest): Request[RemovePermissionResponse] = js.native
     def submitFeedback(params: SubmitFeedbackRequest): Request[SubmitFeedbackResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
@@ -195,9 +156,7 @@ package codeguruprofiler {
         notificationConfiguration: js.UndefOr[NotificationConfiguration] = js.undefined
     ): AddNotificationChannelsResponse = {
       val __obj = js.Dynamic.literal()
-      notificationConfiguration.foreach(__v =>
-        __obj.updateDynamic("notificationConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      notificationConfiguration.foreach(__v => __obj.updateDynamic("notificationConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddNotificationChannelsResponse]
     }
   }
@@ -255,20 +214,11 @@ package codeguruprofiler {
   object AgentParameterField extends js.Object {
     val MaxStackDepth = "MaxStackDepth".asInstanceOf[AgentParameterField]
     val MemoryUsageLimitPercent = "MemoryUsageLimitPercent".asInstanceOf[AgentParameterField]
-    val MinimumTimeForReportingInMilliseconds =
-      "MinimumTimeForReportingInMilliseconds".asInstanceOf[AgentParameterField]
+    val MinimumTimeForReportingInMilliseconds = "MinimumTimeForReportingInMilliseconds".asInstanceOf[AgentParameterField]
     val ReportingIntervalInMilliseconds = "ReportingIntervalInMilliseconds".asInstanceOf[AgentParameterField]
     val SamplingIntervalInMilliseconds = "SamplingIntervalInMilliseconds".asInstanceOf[AgentParameterField]
 
-    val values = js.Object.freeze(
-      js.Array(
-        MaxStackDepth,
-        MemoryUsageLimitPercent,
-        MinimumTimeForReportingInMilliseconds,
-        ReportingIntervalInMilliseconds,
-        SamplingIntervalInMilliseconds
-      )
-    )
+    val values = js.Object.freeze(js.Array(MaxStackDepth, MemoryUsageLimitPercent, MinimumTimeForReportingInMilliseconds, ReportingIntervalInMilliseconds, SamplingIntervalInMilliseconds))
   }
 
   /**
@@ -1253,11 +1203,9 @@ package codeguruprofiler {
     val ExecutionEnvironment = "ExecutionEnvironment".asInstanceOf[MetadataField]
     val LambdaFunctionArn = "LambdaFunctionArn".asInstanceOf[MetadataField]
     val LambdaMemoryLimitInMB = "LambdaMemoryLimitInMB".asInstanceOf[MetadataField]
-    val LambdaPreviousExecutionTimeInMilliseconds =
-      "LambdaPreviousExecutionTimeInMilliseconds".asInstanceOf[MetadataField]
+    val LambdaPreviousExecutionTimeInMilliseconds = "LambdaPreviousExecutionTimeInMilliseconds".asInstanceOf[MetadataField]
     val LambdaRemainingTimeInMilliseconds = "LambdaRemainingTimeInMilliseconds".asInstanceOf[MetadataField]
-    val LambdaTimeGapBetweenInvokesInMilliseconds =
-      "LambdaTimeGapBetweenInvokesInMilliseconds".asInstanceOf[MetadataField]
+    val LambdaTimeGapBetweenInvokesInMilliseconds = "LambdaTimeGapBetweenInvokesInMilliseconds".asInstanceOf[MetadataField]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1497,12 +1445,8 @@ package codeguruprofiler {
         latestAggregatedProfile: js.UndefOr[AggregatedProfileTime] = js.undefined
     ): ProfilingStatus = {
       val __obj = js.Dynamic.literal()
-      latestAgentOrchestratedAt.foreach(__v =>
-        __obj.updateDynamic("latestAgentOrchestratedAt")(__v.asInstanceOf[js.Any])
-      )
-      latestAgentProfileReportedAt.foreach(__v =>
-        __obj.updateDynamic("latestAgentProfileReportedAt")(__v.asInstanceOf[js.Any])
-      )
+      latestAgentOrchestratedAt.foreach(__v => __obj.updateDynamic("latestAgentOrchestratedAt")(__v.asInstanceOf[js.Any]))
+      latestAgentProfileReportedAt.foreach(__v => __obj.updateDynamic("latestAgentProfileReportedAt")(__v.asInstanceOf[js.Any]))
       latestAggregatedProfile.foreach(__v => __obj.updateDynamic("latestAggregatedProfile")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProfilingStatus]
     }
@@ -1636,9 +1580,7 @@ package codeguruprofiler {
         notificationConfiguration: js.UndefOr[NotificationConfiguration] = js.undefined
     ): RemoveNotificationChannelResponse = {
       val __obj = js.Dynamic.literal()
-      notificationConfiguration.foreach(__v =>
-        __obj.updateDynamic("notificationConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      notificationConfiguration.foreach(__v => __obj.updateDynamic("notificationConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemoveNotificationChannelResponse]
     }
   }

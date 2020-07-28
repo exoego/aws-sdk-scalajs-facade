@@ -471,335 +471,128 @@ package object ssm {
 
   implicit final class SSMOps(private val service: SSM) extends AnyVal {
 
-    @inline def addTagsToResourceFuture(params: AddTagsToResourceRequest): Future[AddTagsToResourceResult] =
-      service.addTagsToResource(params).promise().toFuture
-    @inline def cancelCommandFuture(params: CancelCommandRequest): Future[CancelCommandResult] =
-      service.cancelCommand(params).promise().toFuture
-    @inline def cancelMaintenanceWindowExecutionFuture(
-        params: CancelMaintenanceWindowExecutionRequest
-    ): Future[CancelMaintenanceWindowExecutionResult] =
-      service.cancelMaintenanceWindowExecution(params).promise().toFuture
-    @inline def createActivationFuture(params: CreateActivationRequest): Future[CreateActivationResult] =
-      service.createActivation(params).promise().toFuture
-    @inline def createAssociationBatchFuture(
-        params: CreateAssociationBatchRequest
-    ): Future[CreateAssociationBatchResult] = service.createAssociationBatch(params).promise().toFuture
-    @inline def createAssociationFuture(params: CreateAssociationRequest): Future[CreateAssociationResult] =
-      service.createAssociation(params).promise().toFuture
-    @inline def createDocumentFuture(params: CreateDocumentRequest): Future[CreateDocumentResult] =
-      service.createDocument(params).promise().toFuture
-    @inline def createMaintenanceWindowFuture(
-        params: CreateMaintenanceWindowRequest
-    ): Future[CreateMaintenanceWindowResult] = service.createMaintenanceWindow(params).promise().toFuture
-    @inline def createOpsItemFuture(params: CreateOpsItemRequest): Future[CreateOpsItemResponse] =
-      service.createOpsItem(params).promise().toFuture
-    @inline def createPatchBaselineFuture(params: CreatePatchBaselineRequest): Future[CreatePatchBaselineResult] =
-      service.createPatchBaseline(params).promise().toFuture
-    @inline def createResourceDataSyncFuture(
-        params: CreateResourceDataSyncRequest
-    ): Future[CreateResourceDataSyncResult] = service.createResourceDataSync(params).promise().toFuture
-    @inline def deleteActivationFuture(params: DeleteActivationRequest): Future[DeleteActivationResult] =
-      service.deleteActivation(params).promise().toFuture
-    @inline def deleteAssociationFuture(params: DeleteAssociationRequest): Future[DeleteAssociationResult] =
-      service.deleteAssociation(params).promise().toFuture
-    @inline def deleteDocumentFuture(params: DeleteDocumentRequest): Future[DeleteDocumentResult] =
-      service.deleteDocument(params).promise().toFuture
-    @inline def deleteInventoryFuture(params: DeleteInventoryRequest): Future[DeleteInventoryResult] =
-      service.deleteInventory(params).promise().toFuture
-    @inline def deleteMaintenanceWindowFuture(
-        params: DeleteMaintenanceWindowRequest
-    ): Future[DeleteMaintenanceWindowResult] = service.deleteMaintenanceWindow(params).promise().toFuture
-    @inline def deleteParameterFuture(params: DeleteParameterRequest): Future[DeleteParameterResult] =
-      service.deleteParameter(params).promise().toFuture
-    @inline def deleteParametersFuture(params: DeleteParametersRequest): Future[DeleteParametersResult] =
-      service.deleteParameters(params).promise().toFuture
-    @inline def deletePatchBaselineFuture(params: DeletePatchBaselineRequest): Future[DeletePatchBaselineResult] =
-      service.deletePatchBaseline(params).promise().toFuture
-    @inline def deleteResourceDataSyncFuture(
-        params: DeleteResourceDataSyncRequest
-    ): Future[DeleteResourceDataSyncResult] = service.deleteResourceDataSync(params).promise().toFuture
-    @inline def deregisterManagedInstanceFuture(
-        params: DeregisterManagedInstanceRequest
-    ): Future[DeregisterManagedInstanceResult] = service.deregisterManagedInstance(params).promise().toFuture
-    @inline def deregisterPatchBaselineForPatchGroupFuture(
-        params: DeregisterPatchBaselineForPatchGroupRequest
-    ): Future[DeregisterPatchBaselineForPatchGroupResult] =
-      service.deregisterPatchBaselineForPatchGroup(params).promise().toFuture
-    @inline def deregisterTargetFromMaintenanceWindowFuture(
-        params: DeregisterTargetFromMaintenanceWindowRequest
-    ): Future[DeregisterTargetFromMaintenanceWindowResult] =
-      service.deregisterTargetFromMaintenanceWindow(params).promise().toFuture
-    @inline def deregisterTaskFromMaintenanceWindowFuture(
-        params: DeregisterTaskFromMaintenanceWindowRequest
-    ): Future[DeregisterTaskFromMaintenanceWindowResult] =
-      service.deregisterTaskFromMaintenanceWindow(params).promise().toFuture
-    @inline def describeActivationsFuture(params: DescribeActivationsRequest): Future[DescribeActivationsResult] =
-      service.describeActivations(params).promise().toFuture
-    @inline def describeAssociationExecutionTargetsFuture(
-        params: DescribeAssociationExecutionTargetsRequest
-    ): Future[DescribeAssociationExecutionTargetsResult] =
-      service.describeAssociationExecutionTargets(params).promise().toFuture
-    @inline def describeAssociationExecutionsFuture(
-        params: DescribeAssociationExecutionsRequest
-    ): Future[DescribeAssociationExecutionsResult] = service.describeAssociationExecutions(params).promise().toFuture
-    @inline def describeAssociationFuture(params: DescribeAssociationRequest): Future[DescribeAssociationResult] =
-      service.describeAssociation(params).promise().toFuture
-    @inline def describeAutomationExecutionsFuture(
-        params: DescribeAutomationExecutionsRequest
-    ): Future[DescribeAutomationExecutionsResult] = service.describeAutomationExecutions(params).promise().toFuture
-    @inline def describeAutomationStepExecutionsFuture(
-        params: DescribeAutomationStepExecutionsRequest
-    ): Future[DescribeAutomationStepExecutionsResult] =
-      service.describeAutomationStepExecutions(params).promise().toFuture
-    @inline def describeAvailablePatchesFuture(
-        params: DescribeAvailablePatchesRequest
-    ): Future[DescribeAvailablePatchesResult] = service.describeAvailablePatches(params).promise().toFuture
-    @inline def describeDocumentFuture(params: DescribeDocumentRequest): Future[DescribeDocumentResult] =
-      service.describeDocument(params).promise().toFuture
-    @inline def describeDocumentPermissionFuture(
-        params: DescribeDocumentPermissionRequest
-    ): Future[DescribeDocumentPermissionResponse] = service.describeDocumentPermission(params).promise().toFuture
-    @inline def describeEffectiveInstanceAssociationsFuture(
-        params: DescribeEffectiveInstanceAssociationsRequest
-    ): Future[DescribeEffectiveInstanceAssociationsResult] =
-      service.describeEffectiveInstanceAssociations(params).promise().toFuture
-    @inline def describeEffectivePatchesForPatchBaselineFuture(
-        params: DescribeEffectivePatchesForPatchBaselineRequest
-    ): Future[DescribeEffectivePatchesForPatchBaselineResult] =
-      service.describeEffectivePatchesForPatchBaseline(params).promise().toFuture
-    @inline def describeInstanceAssociationsStatusFuture(
-        params: DescribeInstanceAssociationsStatusRequest
-    ): Future[DescribeInstanceAssociationsStatusResult] =
-      service.describeInstanceAssociationsStatus(params).promise().toFuture
-    @inline def describeInstanceInformationFuture(
-        params: DescribeInstanceInformationRequest
-    ): Future[DescribeInstanceInformationResult] = service.describeInstanceInformation(params).promise().toFuture
-    @inline def describeInstancePatchStatesForPatchGroupFuture(
-        params: DescribeInstancePatchStatesForPatchGroupRequest
-    ): Future[DescribeInstancePatchStatesForPatchGroupResult] =
-      service.describeInstancePatchStatesForPatchGroup(params).promise().toFuture
-    @inline def describeInstancePatchStatesFuture(
-        params: DescribeInstancePatchStatesRequest
-    ): Future[DescribeInstancePatchStatesResult] = service.describeInstancePatchStates(params).promise().toFuture
-    @inline def describeInstancePatchesFuture(
-        params: DescribeInstancePatchesRequest
-    ): Future[DescribeInstancePatchesResult] = service.describeInstancePatches(params).promise().toFuture
-    @inline def describeInventoryDeletionsFuture(
-        params: DescribeInventoryDeletionsRequest
-    ): Future[DescribeInventoryDeletionsResult] = service.describeInventoryDeletions(params).promise().toFuture
-    @inline def describeMaintenanceWindowExecutionTaskInvocationsFuture(
-        params: DescribeMaintenanceWindowExecutionTaskInvocationsRequest
-    ): Future[DescribeMaintenanceWindowExecutionTaskInvocationsResult] =
-      service.describeMaintenanceWindowExecutionTaskInvocations(params).promise().toFuture
-    @inline def describeMaintenanceWindowExecutionTasksFuture(
-        params: DescribeMaintenanceWindowExecutionTasksRequest
-    ): Future[DescribeMaintenanceWindowExecutionTasksResult] =
-      service.describeMaintenanceWindowExecutionTasks(params).promise().toFuture
-    @inline def describeMaintenanceWindowExecutionsFuture(
-        params: DescribeMaintenanceWindowExecutionsRequest
-    ): Future[DescribeMaintenanceWindowExecutionsResult] =
-      service.describeMaintenanceWindowExecutions(params).promise().toFuture
-    @inline def describeMaintenanceWindowScheduleFuture(
-        params: DescribeMaintenanceWindowScheduleRequest
-    ): Future[DescribeMaintenanceWindowScheduleResult] =
-      service.describeMaintenanceWindowSchedule(params).promise().toFuture
-    @inline def describeMaintenanceWindowTargetsFuture(
-        params: DescribeMaintenanceWindowTargetsRequest
-    ): Future[DescribeMaintenanceWindowTargetsResult] =
-      service.describeMaintenanceWindowTargets(params).promise().toFuture
-    @inline def describeMaintenanceWindowTasksFuture(
-        params: DescribeMaintenanceWindowTasksRequest
-    ): Future[DescribeMaintenanceWindowTasksResult] = service.describeMaintenanceWindowTasks(params).promise().toFuture
-    @inline def describeMaintenanceWindowsForTargetFuture(
-        params: DescribeMaintenanceWindowsForTargetRequest
-    ): Future[DescribeMaintenanceWindowsForTargetResult] =
-      service.describeMaintenanceWindowsForTarget(params).promise().toFuture
-    @inline def describeMaintenanceWindowsFuture(
-        params: DescribeMaintenanceWindowsRequest
-    ): Future[DescribeMaintenanceWindowsResult] = service.describeMaintenanceWindows(params).promise().toFuture
-    @inline def describeOpsItemsFuture(params: DescribeOpsItemsRequest): Future[DescribeOpsItemsResponse] =
-      service.describeOpsItems(params).promise().toFuture
-    @inline def describeParametersFuture(params: DescribeParametersRequest): Future[DescribeParametersResult] =
-      service.describeParameters(params).promise().toFuture
-    @inline def describePatchBaselinesFuture(
-        params: DescribePatchBaselinesRequest
-    ): Future[DescribePatchBaselinesResult] = service.describePatchBaselines(params).promise().toFuture
-    @inline def describePatchGroupStateFuture(
-        params: DescribePatchGroupStateRequest
-    ): Future[DescribePatchGroupStateResult] = service.describePatchGroupState(params).promise().toFuture
-    @inline def describePatchGroupsFuture(params: DescribePatchGroupsRequest): Future[DescribePatchGroupsResult] =
-      service.describePatchGroups(params).promise().toFuture
-    @inline def describePatchPropertiesFuture(
-        params: DescribePatchPropertiesRequest
-    ): Future[DescribePatchPropertiesResult] = service.describePatchProperties(params).promise().toFuture
-    @inline def describeSessionsFuture(params: DescribeSessionsRequest): Future[DescribeSessionsResponse] =
-      service.describeSessions(params).promise().toFuture
-    @inline def getAutomationExecutionFuture(
-        params: GetAutomationExecutionRequest
-    ): Future[GetAutomationExecutionResult] = service.getAutomationExecution(params).promise().toFuture
-    @inline def getCalendarStateFuture(params: GetCalendarStateRequest): Future[GetCalendarStateResponse] =
-      service.getCalendarState(params).promise().toFuture
-    @inline def getCommandInvocationFuture(params: GetCommandInvocationRequest): Future[GetCommandInvocationResult] =
-      service.getCommandInvocation(params).promise().toFuture
-    @inline def getConnectionStatusFuture(params: GetConnectionStatusRequest): Future[GetConnectionStatusResponse] =
-      service.getConnectionStatus(params).promise().toFuture
-    @inline def getDefaultPatchBaselineFuture(
-        params: GetDefaultPatchBaselineRequest
-    ): Future[GetDefaultPatchBaselineResult] = service.getDefaultPatchBaseline(params).promise().toFuture
-    @inline def getDeployablePatchSnapshotForInstanceFuture(
-        params: GetDeployablePatchSnapshotForInstanceRequest
-    ): Future[GetDeployablePatchSnapshotForInstanceResult] =
-      service.getDeployablePatchSnapshotForInstance(params).promise().toFuture
-    @inline def getDocumentFuture(params: GetDocumentRequest): Future[GetDocumentResult] =
-      service.getDocument(params).promise().toFuture
-    @inline def getInventoryFuture(params: GetInventoryRequest): Future[GetInventoryResult] =
-      service.getInventory(params).promise().toFuture
-    @inline def getInventorySchemaFuture(params: GetInventorySchemaRequest): Future[GetInventorySchemaResult] =
-      service.getInventorySchema(params).promise().toFuture
-    @inline def getMaintenanceWindowExecutionFuture(
-        params: GetMaintenanceWindowExecutionRequest
-    ): Future[GetMaintenanceWindowExecutionResult] = service.getMaintenanceWindowExecution(params).promise().toFuture
-    @inline def getMaintenanceWindowExecutionTaskFuture(
-        params: GetMaintenanceWindowExecutionTaskRequest
-    ): Future[GetMaintenanceWindowExecutionTaskResult] =
-      service.getMaintenanceWindowExecutionTask(params).promise().toFuture
-    @inline def getMaintenanceWindowExecutionTaskInvocationFuture(
-        params: GetMaintenanceWindowExecutionTaskInvocationRequest
-    ): Future[GetMaintenanceWindowExecutionTaskInvocationResult] =
-      service.getMaintenanceWindowExecutionTaskInvocation(params).promise().toFuture
-    @inline def getMaintenanceWindowFuture(params: GetMaintenanceWindowRequest): Future[GetMaintenanceWindowResult] =
-      service.getMaintenanceWindow(params).promise().toFuture
-    @inline def getMaintenanceWindowTaskFuture(
-        params: GetMaintenanceWindowTaskRequest
-    ): Future[GetMaintenanceWindowTaskResult] = service.getMaintenanceWindowTask(params).promise().toFuture
-    @inline def getOpsItemFuture(params: GetOpsItemRequest): Future[GetOpsItemResponse] =
-      service.getOpsItem(params).promise().toFuture
-    @inline def getOpsSummaryFuture(params: GetOpsSummaryRequest): Future[GetOpsSummaryResult] =
-      service.getOpsSummary(params).promise().toFuture
-    @inline def getParameterFuture(params: GetParameterRequest): Future[GetParameterResult] =
-      service.getParameter(params).promise().toFuture
-    @inline def getParameterHistoryFuture(params: GetParameterHistoryRequest): Future[GetParameterHistoryResult] =
-      service.getParameterHistory(params).promise().toFuture
-    @inline def getParametersByPathFuture(params: GetParametersByPathRequest): Future[GetParametersByPathResult] =
-      service.getParametersByPath(params).promise().toFuture
-    @inline def getParametersFuture(params: GetParametersRequest): Future[GetParametersResult] =
-      service.getParameters(params).promise().toFuture
-    @inline def getPatchBaselineForPatchGroupFuture(
-        params: GetPatchBaselineForPatchGroupRequest
-    ): Future[GetPatchBaselineForPatchGroupResult] = service.getPatchBaselineForPatchGroup(params).promise().toFuture
-    @inline def getPatchBaselineFuture(params: GetPatchBaselineRequest): Future[GetPatchBaselineResult] =
-      service.getPatchBaseline(params).promise().toFuture
-    @inline def getServiceSettingFuture(params: GetServiceSettingRequest): Future[GetServiceSettingResult] =
-      service.getServiceSetting(params).promise().toFuture
-    @inline def labelParameterVersionFuture(params: LabelParameterVersionRequest): Future[LabelParameterVersionResult] =
-      service.labelParameterVersion(params).promise().toFuture
-    @inline def listAssociationVersionsFuture(
-        params: ListAssociationVersionsRequest
-    ): Future[ListAssociationVersionsResult] = service.listAssociationVersions(params).promise().toFuture
-    @inline def listAssociationsFuture(params: ListAssociationsRequest): Future[ListAssociationsResult] =
-      service.listAssociations(params).promise().toFuture
-    @inline def listCommandInvocationsFuture(
-        params: ListCommandInvocationsRequest
-    ): Future[ListCommandInvocationsResult] = service.listCommandInvocations(params).promise().toFuture
-    @inline def listCommandsFuture(params: ListCommandsRequest): Future[ListCommandsResult] =
-      service.listCommands(params).promise().toFuture
-    @inline def listComplianceItemsFuture(params: ListComplianceItemsRequest): Future[ListComplianceItemsResult] =
-      service.listComplianceItems(params).promise().toFuture
-    @inline def listComplianceSummariesFuture(
-        params: ListComplianceSummariesRequest
-    ): Future[ListComplianceSummariesResult] = service.listComplianceSummaries(params).promise().toFuture
-    @inline def listDocumentVersionsFuture(params: ListDocumentVersionsRequest): Future[ListDocumentVersionsResult] =
-      service.listDocumentVersions(params).promise().toFuture
-    @inline def listDocumentsFuture(params: ListDocumentsRequest): Future[ListDocumentsResult] =
-      service.listDocuments(params).promise().toFuture
-    @inline def listInventoryEntriesFuture(params: ListInventoryEntriesRequest): Future[ListInventoryEntriesResult] =
-      service.listInventoryEntries(params).promise().toFuture
-    @inline def listResourceComplianceSummariesFuture(
-        params: ListResourceComplianceSummariesRequest
-    ): Future[ListResourceComplianceSummariesResult] =
-      service.listResourceComplianceSummaries(params).promise().toFuture
-    @inline def listResourceDataSyncFuture(params: ListResourceDataSyncRequest): Future[ListResourceDataSyncResult] =
-      service.listResourceDataSync(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResult] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def modifyDocumentPermissionFuture(
-        params: ModifyDocumentPermissionRequest
-    ): Future[ModifyDocumentPermissionResponse] = service.modifyDocumentPermission(params).promise().toFuture
-    @inline def putComplianceItemsFuture(params: PutComplianceItemsRequest): Future[PutComplianceItemsResult] =
-      service.putComplianceItems(params).promise().toFuture
-    @inline def putInventoryFuture(params: PutInventoryRequest): Future[PutInventoryResult] =
-      service.putInventory(params).promise().toFuture
-    @inline def putParameterFuture(params: PutParameterRequest): Future[PutParameterResult] =
-      service.putParameter(params).promise().toFuture
-    @inline def registerDefaultPatchBaselineFuture(
-        params: RegisterDefaultPatchBaselineRequest
-    ): Future[RegisterDefaultPatchBaselineResult] = service.registerDefaultPatchBaseline(params).promise().toFuture
-    @inline def registerPatchBaselineForPatchGroupFuture(
-        params: RegisterPatchBaselineForPatchGroupRequest
-    ): Future[RegisterPatchBaselineForPatchGroupResult] =
-      service.registerPatchBaselineForPatchGroup(params).promise().toFuture
-    @inline def registerTargetWithMaintenanceWindowFuture(
-        params: RegisterTargetWithMaintenanceWindowRequest
-    ): Future[RegisterTargetWithMaintenanceWindowResult] =
-      service.registerTargetWithMaintenanceWindow(params).promise().toFuture
-    @inline def registerTaskWithMaintenanceWindowFuture(
-        params: RegisterTaskWithMaintenanceWindowRequest
-    ): Future[RegisterTaskWithMaintenanceWindowResult] =
-      service.registerTaskWithMaintenanceWindow(params).promise().toFuture
-    @inline def removeTagsFromResourceFuture(
-        params: RemoveTagsFromResourceRequest
-    ): Future[RemoveTagsFromResourceResult] = service.removeTagsFromResource(params).promise().toFuture
-    @inline def resetServiceSettingFuture(params: ResetServiceSettingRequest): Future[ResetServiceSettingResult] =
-      service.resetServiceSetting(params).promise().toFuture
-    @inline def resumeSessionFuture(params: ResumeSessionRequest): Future[ResumeSessionResponse] =
-      service.resumeSession(params).promise().toFuture
-    @inline def sendAutomationSignalFuture(params: SendAutomationSignalRequest): Future[SendAutomationSignalResult] =
-      service.sendAutomationSignal(params).promise().toFuture
-    @inline def sendCommandFuture(params: SendCommandRequest): Future[SendCommandResult] =
-      service.sendCommand(params).promise().toFuture
-    @inline def startAssociationsOnceFuture(params: StartAssociationsOnceRequest): Future[StartAssociationsOnceResult] =
-      service.startAssociationsOnce(params).promise().toFuture
-    @inline def startAutomationExecutionFuture(
-        params: StartAutomationExecutionRequest
-    ): Future[StartAutomationExecutionResult] = service.startAutomationExecution(params).promise().toFuture
-    @inline def startSessionFuture(params: StartSessionRequest): Future[StartSessionResponse] =
-      service.startSession(params).promise().toFuture
-    @inline def stopAutomationExecutionFuture(
-        params: StopAutomationExecutionRequest
-    ): Future[StopAutomationExecutionResult] = service.stopAutomationExecution(params).promise().toFuture
-    @inline def terminateSessionFuture(params: TerminateSessionRequest): Future[TerminateSessionResponse] =
-      service.terminateSession(params).promise().toFuture
-    @inline def updateAssociationFuture(params: UpdateAssociationRequest): Future[UpdateAssociationResult] =
-      service.updateAssociation(params).promise().toFuture
-    @inline def updateAssociationStatusFuture(
-        params: UpdateAssociationStatusRequest
-    ): Future[UpdateAssociationStatusResult] = service.updateAssociationStatus(params).promise().toFuture
-    @inline def updateDocumentDefaultVersionFuture(
-        params: UpdateDocumentDefaultVersionRequest
-    ): Future[UpdateDocumentDefaultVersionResult] = service.updateDocumentDefaultVersion(params).promise().toFuture
-    @inline def updateDocumentFuture(params: UpdateDocumentRequest): Future[UpdateDocumentResult] =
-      service.updateDocument(params).promise().toFuture
-    @inline def updateMaintenanceWindowFuture(
-        params: UpdateMaintenanceWindowRequest
-    ): Future[UpdateMaintenanceWindowResult] = service.updateMaintenanceWindow(params).promise().toFuture
-    @inline def updateMaintenanceWindowTargetFuture(
-        params: UpdateMaintenanceWindowTargetRequest
-    ): Future[UpdateMaintenanceWindowTargetResult] = service.updateMaintenanceWindowTarget(params).promise().toFuture
-    @inline def updateMaintenanceWindowTaskFuture(
-        params: UpdateMaintenanceWindowTaskRequest
-    ): Future[UpdateMaintenanceWindowTaskResult] = service.updateMaintenanceWindowTask(params).promise().toFuture
-    @inline def updateManagedInstanceRoleFuture(
-        params: UpdateManagedInstanceRoleRequest
-    ): Future[UpdateManagedInstanceRoleResult] = service.updateManagedInstanceRole(params).promise().toFuture
-    @inline def updateOpsItemFuture(params: UpdateOpsItemRequest): Future[UpdateOpsItemResponse] =
-      service.updateOpsItem(params).promise().toFuture
-    @inline def updatePatchBaselineFuture(params: UpdatePatchBaselineRequest): Future[UpdatePatchBaselineResult] =
-      service.updatePatchBaseline(params).promise().toFuture
-    @inline def updateResourceDataSyncFuture(
-        params: UpdateResourceDataSyncRequest
-    ): Future[UpdateResourceDataSyncResult] = service.updateResourceDataSync(params).promise().toFuture
-    @inline def updateServiceSettingFuture(params: UpdateServiceSettingRequest): Future[UpdateServiceSettingResult] =
-      service.updateServiceSetting(params).promise().toFuture
+    @inline def addTagsToResourceFuture(params: AddTagsToResourceRequest): Future[AddTagsToResourceResult] = service.addTagsToResource(params).promise().toFuture
+    @inline def cancelCommandFuture(params: CancelCommandRequest): Future[CancelCommandResult] = service.cancelCommand(params).promise().toFuture
+    @inline def cancelMaintenanceWindowExecutionFuture(params: CancelMaintenanceWindowExecutionRequest): Future[CancelMaintenanceWindowExecutionResult] = service.cancelMaintenanceWindowExecution(params).promise().toFuture
+    @inline def createActivationFuture(params: CreateActivationRequest): Future[CreateActivationResult] = service.createActivation(params).promise().toFuture
+    @inline def createAssociationBatchFuture(params: CreateAssociationBatchRequest): Future[CreateAssociationBatchResult] = service.createAssociationBatch(params).promise().toFuture
+    @inline def createAssociationFuture(params: CreateAssociationRequest): Future[CreateAssociationResult] = service.createAssociation(params).promise().toFuture
+    @inline def createDocumentFuture(params: CreateDocumentRequest): Future[CreateDocumentResult] = service.createDocument(params).promise().toFuture
+    @inline def createMaintenanceWindowFuture(params: CreateMaintenanceWindowRequest): Future[CreateMaintenanceWindowResult] = service.createMaintenanceWindow(params).promise().toFuture
+    @inline def createOpsItemFuture(params: CreateOpsItemRequest): Future[CreateOpsItemResponse] = service.createOpsItem(params).promise().toFuture
+    @inline def createPatchBaselineFuture(params: CreatePatchBaselineRequest): Future[CreatePatchBaselineResult] = service.createPatchBaseline(params).promise().toFuture
+    @inline def createResourceDataSyncFuture(params: CreateResourceDataSyncRequest): Future[CreateResourceDataSyncResult] = service.createResourceDataSync(params).promise().toFuture
+    @inline def deleteActivationFuture(params: DeleteActivationRequest): Future[DeleteActivationResult] = service.deleteActivation(params).promise().toFuture
+    @inline def deleteAssociationFuture(params: DeleteAssociationRequest): Future[DeleteAssociationResult] = service.deleteAssociation(params).promise().toFuture
+    @inline def deleteDocumentFuture(params: DeleteDocumentRequest): Future[DeleteDocumentResult] = service.deleteDocument(params).promise().toFuture
+    @inline def deleteInventoryFuture(params: DeleteInventoryRequest): Future[DeleteInventoryResult] = service.deleteInventory(params).promise().toFuture
+    @inline def deleteMaintenanceWindowFuture(params: DeleteMaintenanceWindowRequest): Future[DeleteMaintenanceWindowResult] = service.deleteMaintenanceWindow(params).promise().toFuture
+    @inline def deleteParameterFuture(params: DeleteParameterRequest): Future[DeleteParameterResult] = service.deleteParameter(params).promise().toFuture
+    @inline def deleteParametersFuture(params: DeleteParametersRequest): Future[DeleteParametersResult] = service.deleteParameters(params).promise().toFuture
+    @inline def deletePatchBaselineFuture(params: DeletePatchBaselineRequest): Future[DeletePatchBaselineResult] = service.deletePatchBaseline(params).promise().toFuture
+    @inline def deleteResourceDataSyncFuture(params: DeleteResourceDataSyncRequest): Future[DeleteResourceDataSyncResult] = service.deleteResourceDataSync(params).promise().toFuture
+    @inline def deregisterManagedInstanceFuture(params: DeregisterManagedInstanceRequest): Future[DeregisterManagedInstanceResult] = service.deregisterManagedInstance(params).promise().toFuture
+    @inline def deregisterPatchBaselineForPatchGroupFuture(params: DeregisterPatchBaselineForPatchGroupRequest): Future[DeregisterPatchBaselineForPatchGroupResult] = service.deregisterPatchBaselineForPatchGroup(params).promise().toFuture
+    @inline def deregisterTargetFromMaintenanceWindowFuture(params: DeregisterTargetFromMaintenanceWindowRequest): Future[DeregisterTargetFromMaintenanceWindowResult] = service.deregisterTargetFromMaintenanceWindow(params).promise().toFuture
+    @inline def deregisterTaskFromMaintenanceWindowFuture(params: DeregisterTaskFromMaintenanceWindowRequest): Future[DeregisterTaskFromMaintenanceWindowResult] = service.deregisterTaskFromMaintenanceWindow(params).promise().toFuture
+    @inline def describeActivationsFuture(params: DescribeActivationsRequest): Future[DescribeActivationsResult] = service.describeActivations(params).promise().toFuture
+    @inline def describeAssociationExecutionTargetsFuture(params: DescribeAssociationExecutionTargetsRequest): Future[DescribeAssociationExecutionTargetsResult] = service.describeAssociationExecutionTargets(params).promise().toFuture
+    @inline def describeAssociationExecutionsFuture(params: DescribeAssociationExecutionsRequest): Future[DescribeAssociationExecutionsResult] = service.describeAssociationExecutions(params).promise().toFuture
+    @inline def describeAssociationFuture(params: DescribeAssociationRequest): Future[DescribeAssociationResult] = service.describeAssociation(params).promise().toFuture
+    @inline def describeAutomationExecutionsFuture(params: DescribeAutomationExecutionsRequest): Future[DescribeAutomationExecutionsResult] = service.describeAutomationExecutions(params).promise().toFuture
+    @inline def describeAutomationStepExecutionsFuture(params: DescribeAutomationStepExecutionsRequest): Future[DescribeAutomationStepExecutionsResult] = service.describeAutomationStepExecutions(params).promise().toFuture
+    @inline def describeAvailablePatchesFuture(params: DescribeAvailablePatchesRequest): Future[DescribeAvailablePatchesResult] = service.describeAvailablePatches(params).promise().toFuture
+    @inline def describeDocumentFuture(params: DescribeDocumentRequest): Future[DescribeDocumentResult] = service.describeDocument(params).promise().toFuture
+    @inline def describeDocumentPermissionFuture(params: DescribeDocumentPermissionRequest): Future[DescribeDocumentPermissionResponse] = service.describeDocumentPermission(params).promise().toFuture
+    @inline def describeEffectiveInstanceAssociationsFuture(params: DescribeEffectiveInstanceAssociationsRequest): Future[DescribeEffectiveInstanceAssociationsResult] = service.describeEffectiveInstanceAssociations(params).promise().toFuture
+    @inline def describeEffectivePatchesForPatchBaselineFuture(params: DescribeEffectivePatchesForPatchBaselineRequest): Future[DescribeEffectivePatchesForPatchBaselineResult] = service.describeEffectivePatchesForPatchBaseline(params).promise().toFuture
+    @inline def describeInstanceAssociationsStatusFuture(params: DescribeInstanceAssociationsStatusRequest): Future[DescribeInstanceAssociationsStatusResult] = service.describeInstanceAssociationsStatus(params).promise().toFuture
+    @inline def describeInstanceInformationFuture(params: DescribeInstanceInformationRequest): Future[DescribeInstanceInformationResult] = service.describeInstanceInformation(params).promise().toFuture
+    @inline def describeInstancePatchStatesForPatchGroupFuture(params: DescribeInstancePatchStatesForPatchGroupRequest): Future[DescribeInstancePatchStatesForPatchGroupResult] = service.describeInstancePatchStatesForPatchGroup(params).promise().toFuture
+    @inline def describeInstancePatchStatesFuture(params: DescribeInstancePatchStatesRequest): Future[DescribeInstancePatchStatesResult] = service.describeInstancePatchStates(params).promise().toFuture
+    @inline def describeInstancePatchesFuture(params: DescribeInstancePatchesRequest): Future[DescribeInstancePatchesResult] = service.describeInstancePatches(params).promise().toFuture
+    @inline def describeInventoryDeletionsFuture(params: DescribeInventoryDeletionsRequest): Future[DescribeInventoryDeletionsResult] = service.describeInventoryDeletions(params).promise().toFuture
+    @inline def describeMaintenanceWindowExecutionTaskInvocationsFuture(params: DescribeMaintenanceWindowExecutionTaskInvocationsRequest): Future[DescribeMaintenanceWindowExecutionTaskInvocationsResult] = service.describeMaintenanceWindowExecutionTaskInvocations(params).promise().toFuture
+    @inline def describeMaintenanceWindowExecutionTasksFuture(params: DescribeMaintenanceWindowExecutionTasksRequest): Future[DescribeMaintenanceWindowExecutionTasksResult] = service.describeMaintenanceWindowExecutionTasks(params).promise().toFuture
+    @inline def describeMaintenanceWindowExecutionsFuture(params: DescribeMaintenanceWindowExecutionsRequest): Future[DescribeMaintenanceWindowExecutionsResult] = service.describeMaintenanceWindowExecutions(params).promise().toFuture
+    @inline def describeMaintenanceWindowScheduleFuture(params: DescribeMaintenanceWindowScheduleRequest): Future[DescribeMaintenanceWindowScheduleResult] = service.describeMaintenanceWindowSchedule(params).promise().toFuture
+    @inline def describeMaintenanceWindowTargetsFuture(params: DescribeMaintenanceWindowTargetsRequest): Future[DescribeMaintenanceWindowTargetsResult] = service.describeMaintenanceWindowTargets(params).promise().toFuture
+    @inline def describeMaintenanceWindowTasksFuture(params: DescribeMaintenanceWindowTasksRequest): Future[DescribeMaintenanceWindowTasksResult] = service.describeMaintenanceWindowTasks(params).promise().toFuture
+    @inline def describeMaintenanceWindowsForTargetFuture(params: DescribeMaintenanceWindowsForTargetRequest): Future[DescribeMaintenanceWindowsForTargetResult] = service.describeMaintenanceWindowsForTarget(params).promise().toFuture
+    @inline def describeMaintenanceWindowsFuture(params: DescribeMaintenanceWindowsRequest): Future[DescribeMaintenanceWindowsResult] = service.describeMaintenanceWindows(params).promise().toFuture
+    @inline def describeOpsItemsFuture(params: DescribeOpsItemsRequest): Future[DescribeOpsItemsResponse] = service.describeOpsItems(params).promise().toFuture
+    @inline def describeParametersFuture(params: DescribeParametersRequest): Future[DescribeParametersResult] = service.describeParameters(params).promise().toFuture
+    @inline def describePatchBaselinesFuture(params: DescribePatchBaselinesRequest): Future[DescribePatchBaselinesResult] = service.describePatchBaselines(params).promise().toFuture
+    @inline def describePatchGroupStateFuture(params: DescribePatchGroupStateRequest): Future[DescribePatchGroupStateResult] = service.describePatchGroupState(params).promise().toFuture
+    @inline def describePatchGroupsFuture(params: DescribePatchGroupsRequest): Future[DescribePatchGroupsResult] = service.describePatchGroups(params).promise().toFuture
+    @inline def describePatchPropertiesFuture(params: DescribePatchPropertiesRequest): Future[DescribePatchPropertiesResult] = service.describePatchProperties(params).promise().toFuture
+    @inline def describeSessionsFuture(params: DescribeSessionsRequest): Future[DescribeSessionsResponse] = service.describeSessions(params).promise().toFuture
+    @inline def getAutomationExecutionFuture(params: GetAutomationExecutionRequest): Future[GetAutomationExecutionResult] = service.getAutomationExecution(params).promise().toFuture
+    @inline def getCalendarStateFuture(params: GetCalendarStateRequest): Future[GetCalendarStateResponse] = service.getCalendarState(params).promise().toFuture
+    @inline def getCommandInvocationFuture(params: GetCommandInvocationRequest): Future[GetCommandInvocationResult] = service.getCommandInvocation(params).promise().toFuture
+    @inline def getConnectionStatusFuture(params: GetConnectionStatusRequest): Future[GetConnectionStatusResponse] = service.getConnectionStatus(params).promise().toFuture
+    @inline def getDefaultPatchBaselineFuture(params: GetDefaultPatchBaselineRequest): Future[GetDefaultPatchBaselineResult] = service.getDefaultPatchBaseline(params).promise().toFuture
+    @inline def getDeployablePatchSnapshotForInstanceFuture(params: GetDeployablePatchSnapshotForInstanceRequest): Future[GetDeployablePatchSnapshotForInstanceResult] = service.getDeployablePatchSnapshotForInstance(params).promise().toFuture
+    @inline def getDocumentFuture(params: GetDocumentRequest): Future[GetDocumentResult] = service.getDocument(params).promise().toFuture
+    @inline def getInventoryFuture(params: GetInventoryRequest): Future[GetInventoryResult] = service.getInventory(params).promise().toFuture
+    @inline def getInventorySchemaFuture(params: GetInventorySchemaRequest): Future[GetInventorySchemaResult] = service.getInventorySchema(params).promise().toFuture
+    @inline def getMaintenanceWindowExecutionFuture(params: GetMaintenanceWindowExecutionRequest): Future[GetMaintenanceWindowExecutionResult] = service.getMaintenanceWindowExecution(params).promise().toFuture
+    @inline def getMaintenanceWindowExecutionTaskFuture(params: GetMaintenanceWindowExecutionTaskRequest): Future[GetMaintenanceWindowExecutionTaskResult] = service.getMaintenanceWindowExecutionTask(params).promise().toFuture
+    @inline def getMaintenanceWindowExecutionTaskInvocationFuture(params: GetMaintenanceWindowExecutionTaskInvocationRequest): Future[GetMaintenanceWindowExecutionTaskInvocationResult] = service.getMaintenanceWindowExecutionTaskInvocation(params).promise().toFuture
+    @inline def getMaintenanceWindowFuture(params: GetMaintenanceWindowRequest): Future[GetMaintenanceWindowResult] = service.getMaintenanceWindow(params).promise().toFuture
+    @inline def getMaintenanceWindowTaskFuture(params: GetMaintenanceWindowTaskRequest): Future[GetMaintenanceWindowTaskResult] = service.getMaintenanceWindowTask(params).promise().toFuture
+    @inline def getOpsItemFuture(params: GetOpsItemRequest): Future[GetOpsItemResponse] = service.getOpsItem(params).promise().toFuture
+    @inline def getOpsSummaryFuture(params: GetOpsSummaryRequest): Future[GetOpsSummaryResult] = service.getOpsSummary(params).promise().toFuture
+    @inline def getParameterFuture(params: GetParameterRequest): Future[GetParameterResult] = service.getParameter(params).promise().toFuture
+    @inline def getParameterHistoryFuture(params: GetParameterHistoryRequest): Future[GetParameterHistoryResult] = service.getParameterHistory(params).promise().toFuture
+    @inline def getParametersByPathFuture(params: GetParametersByPathRequest): Future[GetParametersByPathResult] = service.getParametersByPath(params).promise().toFuture
+    @inline def getParametersFuture(params: GetParametersRequest): Future[GetParametersResult] = service.getParameters(params).promise().toFuture
+    @inline def getPatchBaselineForPatchGroupFuture(params: GetPatchBaselineForPatchGroupRequest): Future[GetPatchBaselineForPatchGroupResult] = service.getPatchBaselineForPatchGroup(params).promise().toFuture
+    @inline def getPatchBaselineFuture(params: GetPatchBaselineRequest): Future[GetPatchBaselineResult] = service.getPatchBaseline(params).promise().toFuture
+    @inline def getServiceSettingFuture(params: GetServiceSettingRequest): Future[GetServiceSettingResult] = service.getServiceSetting(params).promise().toFuture
+    @inline def labelParameterVersionFuture(params: LabelParameterVersionRequest): Future[LabelParameterVersionResult] = service.labelParameterVersion(params).promise().toFuture
+    @inline def listAssociationVersionsFuture(params: ListAssociationVersionsRequest): Future[ListAssociationVersionsResult] = service.listAssociationVersions(params).promise().toFuture
+    @inline def listAssociationsFuture(params: ListAssociationsRequest): Future[ListAssociationsResult] = service.listAssociations(params).promise().toFuture
+    @inline def listCommandInvocationsFuture(params: ListCommandInvocationsRequest): Future[ListCommandInvocationsResult] = service.listCommandInvocations(params).promise().toFuture
+    @inline def listCommandsFuture(params: ListCommandsRequest): Future[ListCommandsResult] = service.listCommands(params).promise().toFuture
+    @inline def listComplianceItemsFuture(params: ListComplianceItemsRequest): Future[ListComplianceItemsResult] = service.listComplianceItems(params).promise().toFuture
+    @inline def listComplianceSummariesFuture(params: ListComplianceSummariesRequest): Future[ListComplianceSummariesResult] = service.listComplianceSummaries(params).promise().toFuture
+    @inline def listDocumentVersionsFuture(params: ListDocumentVersionsRequest): Future[ListDocumentVersionsResult] = service.listDocumentVersions(params).promise().toFuture
+    @inline def listDocumentsFuture(params: ListDocumentsRequest): Future[ListDocumentsResult] = service.listDocuments(params).promise().toFuture
+    @inline def listInventoryEntriesFuture(params: ListInventoryEntriesRequest): Future[ListInventoryEntriesResult] = service.listInventoryEntries(params).promise().toFuture
+    @inline def listResourceComplianceSummariesFuture(params: ListResourceComplianceSummariesRequest): Future[ListResourceComplianceSummariesResult] = service.listResourceComplianceSummaries(params).promise().toFuture
+    @inline def listResourceDataSyncFuture(params: ListResourceDataSyncRequest): Future[ListResourceDataSyncResult] = service.listResourceDataSync(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResult] = service.listTagsForResource(params).promise().toFuture
+    @inline def modifyDocumentPermissionFuture(params: ModifyDocumentPermissionRequest): Future[ModifyDocumentPermissionResponse] = service.modifyDocumentPermission(params).promise().toFuture
+    @inline def putComplianceItemsFuture(params: PutComplianceItemsRequest): Future[PutComplianceItemsResult] = service.putComplianceItems(params).promise().toFuture
+    @inline def putInventoryFuture(params: PutInventoryRequest): Future[PutInventoryResult] = service.putInventory(params).promise().toFuture
+    @inline def putParameterFuture(params: PutParameterRequest): Future[PutParameterResult] = service.putParameter(params).promise().toFuture
+    @inline def registerDefaultPatchBaselineFuture(params: RegisterDefaultPatchBaselineRequest): Future[RegisterDefaultPatchBaselineResult] = service.registerDefaultPatchBaseline(params).promise().toFuture
+    @inline def registerPatchBaselineForPatchGroupFuture(params: RegisterPatchBaselineForPatchGroupRequest): Future[RegisterPatchBaselineForPatchGroupResult] = service.registerPatchBaselineForPatchGroup(params).promise().toFuture
+    @inline def registerTargetWithMaintenanceWindowFuture(params: RegisterTargetWithMaintenanceWindowRequest): Future[RegisterTargetWithMaintenanceWindowResult] = service.registerTargetWithMaintenanceWindow(params).promise().toFuture
+    @inline def registerTaskWithMaintenanceWindowFuture(params: RegisterTaskWithMaintenanceWindowRequest): Future[RegisterTaskWithMaintenanceWindowResult] = service.registerTaskWithMaintenanceWindow(params).promise().toFuture
+    @inline def removeTagsFromResourceFuture(params: RemoveTagsFromResourceRequest): Future[RemoveTagsFromResourceResult] = service.removeTagsFromResource(params).promise().toFuture
+    @inline def resetServiceSettingFuture(params: ResetServiceSettingRequest): Future[ResetServiceSettingResult] = service.resetServiceSetting(params).promise().toFuture
+    @inline def resumeSessionFuture(params: ResumeSessionRequest): Future[ResumeSessionResponse] = service.resumeSession(params).promise().toFuture
+    @inline def sendAutomationSignalFuture(params: SendAutomationSignalRequest): Future[SendAutomationSignalResult] = service.sendAutomationSignal(params).promise().toFuture
+    @inline def sendCommandFuture(params: SendCommandRequest): Future[SendCommandResult] = service.sendCommand(params).promise().toFuture
+    @inline def startAssociationsOnceFuture(params: StartAssociationsOnceRequest): Future[StartAssociationsOnceResult] = service.startAssociationsOnce(params).promise().toFuture
+    @inline def startAutomationExecutionFuture(params: StartAutomationExecutionRequest): Future[StartAutomationExecutionResult] = service.startAutomationExecution(params).promise().toFuture
+    @inline def startSessionFuture(params: StartSessionRequest): Future[StartSessionResponse] = service.startSession(params).promise().toFuture
+    @inline def stopAutomationExecutionFuture(params: StopAutomationExecutionRequest): Future[StopAutomationExecutionResult] = service.stopAutomationExecution(params).promise().toFuture
+    @inline def terminateSessionFuture(params: TerminateSessionRequest): Future[TerminateSessionResponse] = service.terminateSession(params).promise().toFuture
+    @inline def updateAssociationFuture(params: UpdateAssociationRequest): Future[UpdateAssociationResult] = service.updateAssociation(params).promise().toFuture
+    @inline def updateAssociationStatusFuture(params: UpdateAssociationStatusRequest): Future[UpdateAssociationStatusResult] = service.updateAssociationStatus(params).promise().toFuture
+    @inline def updateDocumentDefaultVersionFuture(params: UpdateDocumentDefaultVersionRequest): Future[UpdateDocumentDefaultVersionResult] = service.updateDocumentDefaultVersion(params).promise().toFuture
+    @inline def updateDocumentFuture(params: UpdateDocumentRequest): Future[UpdateDocumentResult] = service.updateDocument(params).promise().toFuture
+    @inline def updateMaintenanceWindowFuture(params: UpdateMaintenanceWindowRequest): Future[UpdateMaintenanceWindowResult] = service.updateMaintenanceWindow(params).promise().toFuture
+    @inline def updateMaintenanceWindowTargetFuture(params: UpdateMaintenanceWindowTargetRequest): Future[UpdateMaintenanceWindowTargetResult] = service.updateMaintenanceWindowTarget(params).promise().toFuture
+    @inline def updateMaintenanceWindowTaskFuture(params: UpdateMaintenanceWindowTaskRequest): Future[UpdateMaintenanceWindowTaskResult] = service.updateMaintenanceWindowTask(params).promise().toFuture
+    @inline def updateManagedInstanceRoleFuture(params: UpdateManagedInstanceRoleRequest): Future[UpdateManagedInstanceRoleResult] = service.updateManagedInstanceRole(params).promise().toFuture
+    @inline def updateOpsItemFuture(params: UpdateOpsItemRequest): Future[UpdateOpsItemResponse] = service.updateOpsItem(params).promise().toFuture
+    @inline def updatePatchBaselineFuture(params: UpdatePatchBaselineRequest): Future[UpdatePatchBaselineResult] = service.updatePatchBaseline(params).promise().toFuture
+    @inline def updateResourceDataSyncFuture(params: UpdateResourceDataSyncRequest): Future[UpdateResourceDataSyncResult] = service.updateResourceDataSync(params).promise().toFuture
+    @inline def updateServiceSettingFuture(params: UpdateServiceSettingRequest): Future[UpdateServiceSettingResult] = service.updateServiceSetting(params).promise().toFuture
   }
 }
 
@@ -811,15 +604,12 @@ package ssm {
 
     def addTagsToResource(params: AddTagsToResourceRequest): Request[AddTagsToResourceResult] = js.native
     def cancelCommand(params: CancelCommandRequest): Request[CancelCommandResult] = js.native
-    def cancelMaintenanceWindowExecution(
-        params: CancelMaintenanceWindowExecutionRequest
-    ): Request[CancelMaintenanceWindowExecutionResult] = js.native
+    def cancelMaintenanceWindowExecution(params: CancelMaintenanceWindowExecutionRequest): Request[CancelMaintenanceWindowExecutionResult] = js.native
     def createActivation(params: CreateActivationRequest): Request[CreateActivationResult] = js.native
     def createAssociation(params: CreateAssociationRequest): Request[CreateAssociationResult] = js.native
     def createAssociationBatch(params: CreateAssociationBatchRequest): Request[CreateAssociationBatchResult] = js.native
     def createDocument(params: CreateDocumentRequest): Request[CreateDocumentResult] = js.native
-    def createMaintenanceWindow(params: CreateMaintenanceWindowRequest): Request[CreateMaintenanceWindowResult] =
-      js.native
+    def createMaintenanceWindow(params: CreateMaintenanceWindowRequest): Request[CreateMaintenanceWindowResult] = js.native
     def createOpsItem(params: CreateOpsItemRequest): Request[CreateOpsItemResponse] = js.native
     def createPatchBaseline(params: CreatePatchBaselineRequest): Request[CreatePatchBaselineResult] = js.native
     def createResourceDataSync(params: CreateResourceDataSyncRequest): Request[CreateResourceDataSyncResult] = js.native
@@ -827,123 +617,61 @@ package ssm {
     def deleteAssociation(params: DeleteAssociationRequest): Request[DeleteAssociationResult] = js.native
     def deleteDocument(params: DeleteDocumentRequest): Request[DeleteDocumentResult] = js.native
     def deleteInventory(params: DeleteInventoryRequest): Request[DeleteInventoryResult] = js.native
-    def deleteMaintenanceWindow(params: DeleteMaintenanceWindowRequest): Request[DeleteMaintenanceWindowResult] =
-      js.native
+    def deleteMaintenanceWindow(params: DeleteMaintenanceWindowRequest): Request[DeleteMaintenanceWindowResult] = js.native
     def deleteParameter(params: DeleteParameterRequest): Request[DeleteParameterResult] = js.native
     def deleteParameters(params: DeleteParametersRequest): Request[DeleteParametersResult] = js.native
     def deletePatchBaseline(params: DeletePatchBaselineRequest): Request[DeletePatchBaselineResult] = js.native
     def deleteResourceDataSync(params: DeleteResourceDataSyncRequest): Request[DeleteResourceDataSyncResult] = js.native
-    def deregisterManagedInstance(params: DeregisterManagedInstanceRequest): Request[DeregisterManagedInstanceResult] =
-      js.native
-    def deregisterPatchBaselineForPatchGroup(
-        params: DeregisterPatchBaselineForPatchGroupRequest
-    ): Request[DeregisterPatchBaselineForPatchGroupResult] = js.native
-    def deregisterTargetFromMaintenanceWindow(
-        params: DeregisterTargetFromMaintenanceWindowRequest
-    ): Request[DeregisterTargetFromMaintenanceWindowResult] = js.native
-    def deregisterTaskFromMaintenanceWindow(
-        params: DeregisterTaskFromMaintenanceWindowRequest
-    ): Request[DeregisterTaskFromMaintenanceWindowResult] = js.native
+    def deregisterManagedInstance(params: DeregisterManagedInstanceRequest): Request[DeregisterManagedInstanceResult] = js.native
+    def deregisterPatchBaselineForPatchGroup(params: DeregisterPatchBaselineForPatchGroupRequest): Request[DeregisterPatchBaselineForPatchGroupResult] = js.native
+    def deregisterTargetFromMaintenanceWindow(params: DeregisterTargetFromMaintenanceWindowRequest): Request[DeregisterTargetFromMaintenanceWindowResult] = js.native
+    def deregisterTaskFromMaintenanceWindow(params: DeregisterTaskFromMaintenanceWindowRequest): Request[DeregisterTaskFromMaintenanceWindowResult] = js.native
     def describeActivations(params: DescribeActivationsRequest): Request[DescribeActivationsResult] = js.native
     def describeAssociation(params: DescribeAssociationRequest): Request[DescribeAssociationResult] = js.native
-    def describeAssociationExecutionTargets(
-        params: DescribeAssociationExecutionTargetsRequest
-    ): Request[DescribeAssociationExecutionTargetsResult] = js.native
-    def describeAssociationExecutions(
-        params: DescribeAssociationExecutionsRequest
-    ): Request[DescribeAssociationExecutionsResult] = js.native
-    def describeAutomationExecutions(
-        params: DescribeAutomationExecutionsRequest
-    ): Request[DescribeAutomationExecutionsResult] = js.native
-    def describeAutomationStepExecutions(
-        params: DescribeAutomationStepExecutionsRequest
-    ): Request[DescribeAutomationStepExecutionsResult] = js.native
-    def describeAvailablePatches(params: DescribeAvailablePatchesRequest): Request[DescribeAvailablePatchesResult] =
-      js.native
+    def describeAssociationExecutionTargets(params: DescribeAssociationExecutionTargetsRequest): Request[DescribeAssociationExecutionTargetsResult] = js.native
+    def describeAssociationExecutions(params: DescribeAssociationExecutionsRequest): Request[DescribeAssociationExecutionsResult] = js.native
+    def describeAutomationExecutions(params: DescribeAutomationExecutionsRequest): Request[DescribeAutomationExecutionsResult] = js.native
+    def describeAutomationStepExecutions(params: DescribeAutomationStepExecutionsRequest): Request[DescribeAutomationStepExecutionsResult] = js.native
+    def describeAvailablePatches(params: DescribeAvailablePatchesRequest): Request[DescribeAvailablePatchesResult] = js.native
     def describeDocument(params: DescribeDocumentRequest): Request[DescribeDocumentResult] = js.native
-    def describeDocumentPermission(
-        params: DescribeDocumentPermissionRequest
-    ): Request[DescribeDocumentPermissionResponse] = js.native
-    def describeEffectiveInstanceAssociations(
-        params: DescribeEffectiveInstanceAssociationsRequest
-    ): Request[DescribeEffectiveInstanceAssociationsResult] = js.native
-    def describeEffectivePatchesForPatchBaseline(
-        params: DescribeEffectivePatchesForPatchBaselineRequest
-    ): Request[DescribeEffectivePatchesForPatchBaselineResult] = js.native
-    def describeInstanceAssociationsStatus(
-        params: DescribeInstanceAssociationsStatusRequest
-    ): Request[DescribeInstanceAssociationsStatusResult] = js.native
-    def describeInstanceInformation(
-        params: DescribeInstanceInformationRequest
-    ): Request[DescribeInstanceInformationResult] = js.native
-    def describeInstancePatchStates(
-        params: DescribeInstancePatchStatesRequest
-    ): Request[DescribeInstancePatchStatesResult] = js.native
-    def describeInstancePatchStatesForPatchGroup(
-        params: DescribeInstancePatchStatesForPatchGroupRequest
-    ): Request[DescribeInstancePatchStatesForPatchGroupResult] = js.native
-    def describeInstancePatches(params: DescribeInstancePatchesRequest): Request[DescribeInstancePatchesResult] =
-      js.native
-    def describeInventoryDeletions(
-        params: DescribeInventoryDeletionsRequest
-    ): Request[DescribeInventoryDeletionsResult] = js.native
-    def describeMaintenanceWindowExecutionTaskInvocations(
-        params: DescribeMaintenanceWindowExecutionTaskInvocationsRequest
-    ): Request[DescribeMaintenanceWindowExecutionTaskInvocationsResult] = js.native
-    def describeMaintenanceWindowExecutionTasks(
-        params: DescribeMaintenanceWindowExecutionTasksRequest
-    ): Request[DescribeMaintenanceWindowExecutionTasksResult] = js.native
-    def describeMaintenanceWindowExecutions(
-        params: DescribeMaintenanceWindowExecutionsRequest
-    ): Request[DescribeMaintenanceWindowExecutionsResult] = js.native
-    def describeMaintenanceWindowSchedule(
-        params: DescribeMaintenanceWindowScheduleRequest
-    ): Request[DescribeMaintenanceWindowScheduleResult] = js.native
-    def describeMaintenanceWindowTargets(
-        params: DescribeMaintenanceWindowTargetsRequest
-    ): Request[DescribeMaintenanceWindowTargetsResult] = js.native
-    def describeMaintenanceWindowTasks(
-        params: DescribeMaintenanceWindowTasksRequest
-    ): Request[DescribeMaintenanceWindowTasksResult] = js.native
-    def describeMaintenanceWindows(
-        params: DescribeMaintenanceWindowsRequest
-    ): Request[DescribeMaintenanceWindowsResult] = js.native
-    def describeMaintenanceWindowsForTarget(
-        params: DescribeMaintenanceWindowsForTargetRequest
-    ): Request[DescribeMaintenanceWindowsForTargetResult] = js.native
+    def describeDocumentPermission(params: DescribeDocumentPermissionRequest): Request[DescribeDocumentPermissionResponse] = js.native
+    def describeEffectiveInstanceAssociations(params: DescribeEffectiveInstanceAssociationsRequest): Request[DescribeEffectiveInstanceAssociationsResult] = js.native
+    def describeEffectivePatchesForPatchBaseline(params: DescribeEffectivePatchesForPatchBaselineRequest): Request[DescribeEffectivePatchesForPatchBaselineResult] = js.native
+    def describeInstanceAssociationsStatus(params: DescribeInstanceAssociationsStatusRequest): Request[DescribeInstanceAssociationsStatusResult] = js.native
+    def describeInstanceInformation(params: DescribeInstanceInformationRequest): Request[DescribeInstanceInformationResult] = js.native
+    def describeInstancePatchStates(params: DescribeInstancePatchStatesRequest): Request[DescribeInstancePatchStatesResult] = js.native
+    def describeInstancePatchStatesForPatchGroup(params: DescribeInstancePatchStatesForPatchGroupRequest): Request[DescribeInstancePatchStatesForPatchGroupResult] = js.native
+    def describeInstancePatches(params: DescribeInstancePatchesRequest): Request[DescribeInstancePatchesResult] = js.native
+    def describeInventoryDeletions(params: DescribeInventoryDeletionsRequest): Request[DescribeInventoryDeletionsResult] = js.native
+    def describeMaintenanceWindowExecutionTaskInvocations(params: DescribeMaintenanceWindowExecutionTaskInvocationsRequest): Request[DescribeMaintenanceWindowExecutionTaskInvocationsResult] = js.native
+    def describeMaintenanceWindowExecutionTasks(params: DescribeMaintenanceWindowExecutionTasksRequest): Request[DescribeMaintenanceWindowExecutionTasksResult] = js.native
+    def describeMaintenanceWindowExecutions(params: DescribeMaintenanceWindowExecutionsRequest): Request[DescribeMaintenanceWindowExecutionsResult] = js.native
+    def describeMaintenanceWindowSchedule(params: DescribeMaintenanceWindowScheduleRequest): Request[DescribeMaintenanceWindowScheduleResult] = js.native
+    def describeMaintenanceWindowTargets(params: DescribeMaintenanceWindowTargetsRequest): Request[DescribeMaintenanceWindowTargetsResult] = js.native
+    def describeMaintenanceWindowTasks(params: DescribeMaintenanceWindowTasksRequest): Request[DescribeMaintenanceWindowTasksResult] = js.native
+    def describeMaintenanceWindows(params: DescribeMaintenanceWindowsRequest): Request[DescribeMaintenanceWindowsResult] = js.native
+    def describeMaintenanceWindowsForTarget(params: DescribeMaintenanceWindowsForTargetRequest): Request[DescribeMaintenanceWindowsForTargetResult] = js.native
     def describeOpsItems(params: DescribeOpsItemsRequest): Request[DescribeOpsItemsResponse] = js.native
     def describeParameters(params: DescribeParametersRequest): Request[DescribeParametersResult] = js.native
     def describePatchBaselines(params: DescribePatchBaselinesRequest): Request[DescribePatchBaselinesResult] = js.native
-    def describePatchGroupState(params: DescribePatchGroupStateRequest): Request[DescribePatchGroupStateResult] =
-      js.native
+    def describePatchGroupState(params: DescribePatchGroupStateRequest): Request[DescribePatchGroupStateResult] = js.native
     def describePatchGroups(params: DescribePatchGroupsRequest): Request[DescribePatchGroupsResult] = js.native
-    def describePatchProperties(params: DescribePatchPropertiesRequest): Request[DescribePatchPropertiesResult] =
-      js.native
+    def describePatchProperties(params: DescribePatchPropertiesRequest): Request[DescribePatchPropertiesResult] = js.native
     def describeSessions(params: DescribeSessionsRequest): Request[DescribeSessionsResponse] = js.native
     def getAutomationExecution(params: GetAutomationExecutionRequest): Request[GetAutomationExecutionResult] = js.native
     def getCalendarState(params: GetCalendarStateRequest): Request[GetCalendarStateResponse] = js.native
     def getCommandInvocation(params: GetCommandInvocationRequest): Request[GetCommandInvocationResult] = js.native
     def getConnectionStatus(params: GetConnectionStatusRequest): Request[GetConnectionStatusResponse] = js.native
-    def getDefaultPatchBaseline(params: GetDefaultPatchBaselineRequest): Request[GetDefaultPatchBaselineResult] =
-      js.native
-    def getDeployablePatchSnapshotForInstance(
-        params: GetDeployablePatchSnapshotForInstanceRequest
-    ): Request[GetDeployablePatchSnapshotForInstanceResult] = js.native
+    def getDefaultPatchBaseline(params: GetDefaultPatchBaselineRequest): Request[GetDefaultPatchBaselineResult] = js.native
+    def getDeployablePatchSnapshotForInstance(params: GetDeployablePatchSnapshotForInstanceRequest): Request[GetDeployablePatchSnapshotForInstanceResult] = js.native
     def getDocument(params: GetDocumentRequest): Request[GetDocumentResult] = js.native
     def getInventory(params: GetInventoryRequest): Request[GetInventoryResult] = js.native
     def getInventorySchema(params: GetInventorySchemaRequest): Request[GetInventorySchemaResult] = js.native
     def getMaintenanceWindow(params: GetMaintenanceWindowRequest): Request[GetMaintenanceWindowResult] = js.native
-    def getMaintenanceWindowExecution(
-        params: GetMaintenanceWindowExecutionRequest
-    ): Request[GetMaintenanceWindowExecutionResult] = js.native
-    def getMaintenanceWindowExecutionTask(
-        params: GetMaintenanceWindowExecutionTaskRequest
-    ): Request[GetMaintenanceWindowExecutionTaskResult] = js.native
-    def getMaintenanceWindowExecutionTaskInvocation(
-        params: GetMaintenanceWindowExecutionTaskInvocationRequest
-    ): Request[GetMaintenanceWindowExecutionTaskInvocationResult] = js.native
-    def getMaintenanceWindowTask(params: GetMaintenanceWindowTaskRequest): Request[GetMaintenanceWindowTaskResult] =
-      js.native
+    def getMaintenanceWindowExecution(params: GetMaintenanceWindowExecutionRequest): Request[GetMaintenanceWindowExecutionResult] = js.native
+    def getMaintenanceWindowExecutionTask(params: GetMaintenanceWindowExecutionTaskRequest): Request[GetMaintenanceWindowExecutionTaskResult] = js.native
+    def getMaintenanceWindowExecutionTaskInvocation(params: GetMaintenanceWindowExecutionTaskInvocationRequest): Request[GetMaintenanceWindowExecutionTaskInvocationResult] = js.native
+    def getMaintenanceWindowTask(params: GetMaintenanceWindowTaskRequest): Request[GetMaintenanceWindowTaskResult] = js.native
     def getOpsItem(params: GetOpsItemRequest): Request[GetOpsItemResponse] = js.native
     def getOpsSummary(params: GetOpsSummaryRequest): Request[GetOpsSummaryResult] = js.native
     def getParameter(params: GetParameterRequest): Request[GetParameterResult] = js.native
@@ -951,73 +679,47 @@ package ssm {
     def getParameters(params: GetParametersRequest): Request[GetParametersResult] = js.native
     def getParametersByPath(params: GetParametersByPathRequest): Request[GetParametersByPathResult] = js.native
     def getPatchBaseline(params: GetPatchBaselineRequest): Request[GetPatchBaselineResult] = js.native
-    def getPatchBaselineForPatchGroup(
-        params: GetPatchBaselineForPatchGroupRequest
-    ): Request[GetPatchBaselineForPatchGroupResult] = js.native
+    def getPatchBaselineForPatchGroup(params: GetPatchBaselineForPatchGroupRequest): Request[GetPatchBaselineForPatchGroupResult] = js.native
     def getServiceSetting(params: GetServiceSettingRequest): Request[GetServiceSettingResult] = js.native
     def labelParameterVersion(params: LabelParameterVersionRequest): Request[LabelParameterVersionResult] = js.native
-    def listAssociationVersions(params: ListAssociationVersionsRequest): Request[ListAssociationVersionsResult] =
-      js.native
+    def listAssociationVersions(params: ListAssociationVersionsRequest): Request[ListAssociationVersionsResult] = js.native
     def listAssociations(params: ListAssociationsRequest): Request[ListAssociationsResult] = js.native
     def listCommandInvocations(params: ListCommandInvocationsRequest): Request[ListCommandInvocationsResult] = js.native
     def listCommands(params: ListCommandsRequest): Request[ListCommandsResult] = js.native
     def listComplianceItems(params: ListComplianceItemsRequest): Request[ListComplianceItemsResult] = js.native
-    def listComplianceSummaries(params: ListComplianceSummariesRequest): Request[ListComplianceSummariesResult] =
-      js.native
+    def listComplianceSummaries(params: ListComplianceSummariesRequest): Request[ListComplianceSummariesResult] = js.native
     def listDocumentVersions(params: ListDocumentVersionsRequest): Request[ListDocumentVersionsResult] = js.native
     def listDocuments(params: ListDocumentsRequest): Request[ListDocumentsResult] = js.native
     def listInventoryEntries(params: ListInventoryEntriesRequest): Request[ListInventoryEntriesResult] = js.native
-    def listResourceComplianceSummaries(
-        params: ListResourceComplianceSummariesRequest
-    ): Request[ListResourceComplianceSummariesResult] = js.native
+    def listResourceComplianceSummaries(params: ListResourceComplianceSummariesRequest): Request[ListResourceComplianceSummariesResult] = js.native
     def listResourceDataSync(params: ListResourceDataSyncRequest): Request[ListResourceDataSyncResult] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResult] = js.native
-    def modifyDocumentPermission(params: ModifyDocumentPermissionRequest): Request[ModifyDocumentPermissionResponse] =
-      js.native
+    def modifyDocumentPermission(params: ModifyDocumentPermissionRequest): Request[ModifyDocumentPermissionResponse] = js.native
     def putComplianceItems(params: PutComplianceItemsRequest): Request[PutComplianceItemsResult] = js.native
     def putInventory(params: PutInventoryRequest): Request[PutInventoryResult] = js.native
     def putParameter(params: PutParameterRequest): Request[PutParameterResult] = js.native
-    def registerDefaultPatchBaseline(
-        params: RegisterDefaultPatchBaselineRequest
-    ): Request[RegisterDefaultPatchBaselineResult] = js.native
-    def registerPatchBaselineForPatchGroup(
-        params: RegisterPatchBaselineForPatchGroupRequest
-    ): Request[RegisterPatchBaselineForPatchGroupResult] = js.native
-    def registerTargetWithMaintenanceWindow(
-        params: RegisterTargetWithMaintenanceWindowRequest
-    ): Request[RegisterTargetWithMaintenanceWindowResult] = js.native
-    def registerTaskWithMaintenanceWindow(
-        params: RegisterTaskWithMaintenanceWindowRequest
-    ): Request[RegisterTaskWithMaintenanceWindowResult] = js.native
+    def registerDefaultPatchBaseline(params: RegisterDefaultPatchBaselineRequest): Request[RegisterDefaultPatchBaselineResult] = js.native
+    def registerPatchBaselineForPatchGroup(params: RegisterPatchBaselineForPatchGroupRequest): Request[RegisterPatchBaselineForPatchGroupResult] = js.native
+    def registerTargetWithMaintenanceWindow(params: RegisterTargetWithMaintenanceWindowRequest): Request[RegisterTargetWithMaintenanceWindowResult] = js.native
+    def registerTaskWithMaintenanceWindow(params: RegisterTaskWithMaintenanceWindowRequest): Request[RegisterTaskWithMaintenanceWindowResult] = js.native
     def removeTagsFromResource(params: RemoveTagsFromResourceRequest): Request[RemoveTagsFromResourceResult] = js.native
     def resetServiceSetting(params: ResetServiceSettingRequest): Request[ResetServiceSettingResult] = js.native
     def resumeSession(params: ResumeSessionRequest): Request[ResumeSessionResponse] = js.native
     def sendAutomationSignal(params: SendAutomationSignalRequest): Request[SendAutomationSignalResult] = js.native
     def sendCommand(params: SendCommandRequest): Request[SendCommandResult] = js.native
     def startAssociationsOnce(params: StartAssociationsOnceRequest): Request[StartAssociationsOnceResult] = js.native
-    def startAutomationExecution(params: StartAutomationExecutionRequest): Request[StartAutomationExecutionResult] =
-      js.native
+    def startAutomationExecution(params: StartAutomationExecutionRequest): Request[StartAutomationExecutionResult] = js.native
     def startSession(params: StartSessionRequest): Request[StartSessionResponse] = js.native
-    def stopAutomationExecution(params: StopAutomationExecutionRequest): Request[StopAutomationExecutionResult] =
-      js.native
+    def stopAutomationExecution(params: StopAutomationExecutionRequest): Request[StopAutomationExecutionResult] = js.native
     def terminateSession(params: TerminateSessionRequest): Request[TerminateSessionResponse] = js.native
     def updateAssociation(params: UpdateAssociationRequest): Request[UpdateAssociationResult] = js.native
-    def updateAssociationStatus(params: UpdateAssociationStatusRequest): Request[UpdateAssociationStatusResult] =
-      js.native
+    def updateAssociationStatus(params: UpdateAssociationStatusRequest): Request[UpdateAssociationStatusResult] = js.native
     def updateDocument(params: UpdateDocumentRequest): Request[UpdateDocumentResult] = js.native
-    def updateDocumentDefaultVersion(
-        params: UpdateDocumentDefaultVersionRequest
-    ): Request[UpdateDocumentDefaultVersionResult] = js.native
-    def updateMaintenanceWindow(params: UpdateMaintenanceWindowRequest): Request[UpdateMaintenanceWindowResult] =
-      js.native
-    def updateMaintenanceWindowTarget(
-        params: UpdateMaintenanceWindowTargetRequest
-    ): Request[UpdateMaintenanceWindowTargetResult] = js.native
-    def updateMaintenanceWindowTask(
-        params: UpdateMaintenanceWindowTaskRequest
-    ): Request[UpdateMaintenanceWindowTaskResult] = js.native
-    def updateManagedInstanceRole(params: UpdateManagedInstanceRoleRequest): Request[UpdateManagedInstanceRoleResult] =
-      js.native
+    def updateDocumentDefaultVersion(params: UpdateDocumentDefaultVersionRequest): Request[UpdateDocumentDefaultVersionResult] = js.native
+    def updateMaintenanceWindow(params: UpdateMaintenanceWindowRequest): Request[UpdateMaintenanceWindowResult] = js.native
+    def updateMaintenanceWindowTarget(params: UpdateMaintenanceWindowTargetRequest): Request[UpdateMaintenanceWindowTargetResult] = js.native
+    def updateMaintenanceWindowTask(params: UpdateMaintenanceWindowTaskRequest): Request[UpdateMaintenanceWindowTaskResult] = js.native
+    def updateManagedInstanceRole(params: UpdateManagedInstanceRoleRequest): Request[UpdateManagedInstanceRoleResult] = js.native
     def updateOpsItem(params: UpdateOpsItemRequest): Request[UpdateOpsItemResponse] = js.native
     def updatePatchBaseline(params: UpdatePatchBaselineRequest): Request[UpdatePatchBaselineResult] = js.native
     def updateResourceDataSync(params: UpdateResourceDataSyncRequest): Request[UpdateResourceDataSyncResult] = js.native
@@ -1247,20 +949,14 @@ package ssm {
       AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
       AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
       AssociationVersion.foreach(__v => __obj.updateDynamic("AssociationVersion")(__v.asInstanceOf[js.Any]))
-      AutomationTargetParameterName.foreach(__v =>
-        __obj.updateDynamic("AutomationTargetParameterName")(__v.asInstanceOf[js.Any])
-      )
+      AutomationTargetParameterName.foreach(__v => __obj.updateDynamic("AutomationTargetParameterName")(__v.asInstanceOf[js.Any]))
       ComplianceSeverity.foreach(__v => __obj.updateDynamic("ComplianceSeverity")(__v.asInstanceOf[js.Any]))
       Date.foreach(__v => __obj.updateDynamic("Date")(__v.asInstanceOf[js.Any]))
       DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
       InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
       LastExecutionDate.foreach(__v => __obj.updateDynamic("LastExecutionDate")(__v.asInstanceOf[js.Any]))
-      LastSuccessfulExecutionDate.foreach(__v =>
-        __obj.updateDynamic("LastSuccessfulExecutionDate")(__v.asInstanceOf[js.Any])
-      )
-      LastUpdateAssociationDate.foreach(__v =>
-        __obj.updateDynamic("LastUpdateAssociationDate")(__v.asInstanceOf[js.Any])
-      )
+      LastSuccessfulExecutionDate.foreach(__v => __obj.updateDynamic("LastSuccessfulExecutionDate")(__v.asInstanceOf[js.Any]))
+      LastUpdateAssociationDate.foreach(__v => __obj.updateDynamic("LastUpdateAssociationDate")(__v.asInstanceOf[js.Any]))
       MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
       MaxErrors.foreach(__v => __obj.updateDynamic("MaxErrors")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -1465,18 +1161,7 @@ package ssm {
     val AssociationName = "AssociationName".asInstanceOf[AssociationFilterKey]
     val ResourceGroupName = "ResourceGroupName".asInstanceOf[AssociationFilterKey]
 
-    val values = js.Object.freeze(
-      js.Array(
-        InstanceId,
-        Name,
-        AssociationId,
-        AssociationStatusName,
-        LastExecutedBefore,
-        LastExecutedAfter,
-        AssociationName,
-        ResourceGroupName
-      )
-    )
+    val values = js.Object.freeze(js.Array(InstanceId, Name, AssociationId, AssociationStatusName, LastExecutedBefore, LastExecutedAfter, AssociationName, ResourceGroupName))
   }
 
   @js.native
@@ -1507,9 +1192,7 @@ package ssm {
         Status: js.UndefOr[StatusName] = js.undefined
     ): AssociationOverview = {
       val __obj = js.Dynamic.literal()
-      AssociationStatusAggregatedCount.foreach(__v =>
-        __obj.updateDynamic("AssociationStatusAggregatedCount")(__v.asInstanceOf[js.Any])
-      )
+      AssociationStatusAggregatedCount.foreach(__v => __obj.updateDynamic("AssociationStatusAggregatedCount")(__v.asInstanceOf[js.Any]))
       DetailedStatus.foreach(__v => __obj.updateDynamic("DetailedStatus")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociationOverview]
@@ -1782,9 +1465,7 @@ package ssm {
     ): AutomationExecution = {
       val __obj = js.Dynamic.literal()
       AutomationExecutionId.foreach(__v => __obj.updateDynamic("AutomationExecutionId")(__v.asInstanceOf[js.Any]))
-      AutomationExecutionStatus.foreach(__v =>
-        __obj.updateDynamic("AutomationExecutionStatus")(__v.asInstanceOf[js.Any])
-      )
+      AutomationExecutionStatus.foreach(__v => __obj.updateDynamic("AutomationExecutionStatus")(__v.asInstanceOf[js.Any]))
       CurrentAction.foreach(__v => __obj.updateDynamic("CurrentAction")(__v.asInstanceOf[js.Any]))
       CurrentStepName.foreach(__v => __obj.updateDynamic("CurrentStepName")(__v.asInstanceOf[js.Any]))
       DocumentName.foreach(__v => __obj.updateDynamic("DocumentName")(__v.asInstanceOf[js.Any]))
@@ -1798,9 +1479,7 @@ package ssm {
       Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
       Outputs.foreach(__v => __obj.updateDynamic("Outputs")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
-      ParentAutomationExecutionId.foreach(__v =>
-        __obj.updateDynamic("ParentAutomationExecutionId")(__v.asInstanceOf[js.Any])
-      )
+      ParentAutomationExecutionId.foreach(__v => __obj.updateDynamic("ParentAutomationExecutionId")(__v.asInstanceOf[js.Any]))
       ProgressCounters.foreach(__v => __obj.updateDynamic("ProgressCounters")(__v.asInstanceOf[js.Any]))
       ResolvedTargets.foreach(__v => __obj.updateDynamic("ResolvedTargets")(__v.asInstanceOf[js.Any]))
       StepExecutions.foreach(__v => __obj.updateDynamic("StepExecutions")(__v.asInstanceOf[js.Any]))
@@ -1851,19 +1530,7 @@ package ssm {
     val AutomationType = "AutomationType".asInstanceOf[AutomationExecutionFilterKey]
     val TagKey = "TagKey".asInstanceOf[AutomationExecutionFilterKey]
 
-    val values = js.Object.freeze(
-      js.Array(
-        DocumentNamePrefix,
-        ExecutionStatus,
-        ExecutionId,
-        ParentExecutionId,
-        CurrentAction,
-        StartTimeBefore,
-        StartTimeAfter,
-        AutomationType,
-        TagKey
-      )
-    )
+    val values = js.Object.freeze(js.Array(DocumentNamePrefix, ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter, AutomationType, TagKey))
   }
 
   /**
@@ -1923,9 +1590,7 @@ package ssm {
     ): AutomationExecutionMetadata = {
       val __obj = js.Dynamic.literal()
       AutomationExecutionId.foreach(__v => __obj.updateDynamic("AutomationExecutionId")(__v.asInstanceOf[js.Any]))
-      AutomationExecutionStatus.foreach(__v =>
-        __obj.updateDynamic("AutomationExecutionStatus")(__v.asInstanceOf[js.Any])
-      )
+      AutomationExecutionStatus.foreach(__v => __obj.updateDynamic("AutomationExecutionStatus")(__v.asInstanceOf[js.Any]))
       AutomationType.foreach(__v => __obj.updateDynamic("AutomationType")(__v.asInstanceOf[js.Any]))
       CurrentAction.foreach(__v => __obj.updateDynamic("CurrentAction")(__v.asInstanceOf[js.Any]))
       CurrentStepName.foreach(__v => __obj.updateDynamic("CurrentStepName")(__v.asInstanceOf[js.Any]))
@@ -1940,9 +1605,7 @@ package ssm {
       MaxErrors.foreach(__v => __obj.updateDynamic("MaxErrors")(__v.asInstanceOf[js.Any]))
       Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
       Outputs.foreach(__v => __obj.updateDynamic("Outputs")(__v.asInstanceOf[js.Any]))
-      ParentAutomationExecutionId.foreach(__v =>
-        __obj.updateDynamic("ParentAutomationExecutionId")(__v.asInstanceOf[js.Any])
-      )
+      ParentAutomationExecutionId.foreach(__v => __obj.updateDynamic("ParentAutomationExecutionId")(__v.asInstanceOf[js.Any]))
       ResolvedTargets.foreach(__v => __obj.updateDynamic("ResolvedTargets")(__v.asInstanceOf[js.Any]))
       Target.foreach(__v => __obj.updateDynamic("Target")(__v.asInstanceOf[js.Any]))
       TargetMaps.foreach(__v => __obj.updateDynamic("TargetMaps")(__v.asInstanceOf[js.Any]))
@@ -1964,8 +1627,7 @@ package ssm {
     val Cancelled = "Cancelled".asInstanceOf[AutomationExecutionStatus]
     val Failed = "Failed".asInstanceOf[AutomationExecutionStatus]
 
-    val values =
-      js.Object.freeze(js.Array(Pending, InProgress, Waiting, Success, TimedOut, Cancelling, Cancelled, Failed))
+    val values = js.Object.freeze(js.Array(Pending, InProgress, Waiting, Success, TimedOut, Cancelling, Cancelled, Failed))
   }
 
   @js.native
@@ -2284,8 +1946,7 @@ package ssm {
     val Failed = "Failed".asInstanceOf[CommandInvocationStatus]
     val Cancelling = "Cancelling".asInstanceOf[CommandInvocationStatus]
 
-    val values =
-      js.Object.freeze(js.Array(Pending, InProgress, Delayed, Success, Cancelled, TimedOut, Failed, Cancelling))
+    val values = js.Object.freeze(js.Array(Pending, InProgress, Delayed, Success, Cancelled, TimedOut, Failed, Cancelling))
   }
 
   /**
@@ -2709,9 +2370,7 @@ package ssm {
 
       ApplyOnlyAtCronInterval.foreach(__v => __obj.updateDynamic("ApplyOnlyAtCronInterval")(__v.asInstanceOf[js.Any]))
       AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
-      AutomationTargetParameterName.foreach(__v =>
-        __obj.updateDynamic("AutomationTargetParameterName")(__v.asInstanceOf[js.Any])
-      )
+      AutomationTargetParameterName.foreach(__v => __obj.updateDynamic("AutomationTargetParameterName")(__v.asInstanceOf[js.Any]))
       ComplianceSeverity.foreach(__v => __obj.updateDynamic("ComplianceSeverity")(__v.asInstanceOf[js.Any]))
       DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
       InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
@@ -2787,9 +2446,7 @@ package ssm {
 
       ApplyOnlyAtCronInterval.foreach(__v => __obj.updateDynamic("ApplyOnlyAtCronInterval")(__v.asInstanceOf[js.Any]))
       AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
-      AutomationTargetParameterName.foreach(__v =>
-        __obj.updateDynamic("AutomationTargetParameterName")(__v.asInstanceOf[js.Any])
-      )
+      AutomationTargetParameterName.foreach(__v => __obj.updateDynamic("AutomationTargetParameterName")(__v.asInstanceOf[js.Any]))
       ComplianceSeverity.foreach(__v => __obj.updateDynamic("ComplianceSeverity")(__v.asInstanceOf[js.Any]))
       DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
       InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
@@ -3046,12 +2703,8 @@ package ssm {
 
       ApprovalRules.foreach(__v => __obj.updateDynamic("ApprovalRules")(__v.asInstanceOf[js.Any]))
       ApprovedPatches.foreach(__v => __obj.updateDynamic("ApprovedPatches")(__v.asInstanceOf[js.Any]))
-      ApprovedPatchesComplianceLevel.foreach(__v =>
-        __obj.updateDynamic("ApprovedPatchesComplianceLevel")(__v.asInstanceOf[js.Any])
-      )
-      ApprovedPatchesEnableNonSecurity.foreach(__v =>
-        __obj.updateDynamic("ApprovedPatchesEnableNonSecurity")(__v.asInstanceOf[js.Any])
-      )
+      ApprovedPatchesComplianceLevel.foreach(__v => __obj.updateDynamic("ApprovedPatchesComplianceLevel")(__v.asInstanceOf[js.Any]))
+      ApprovedPatchesEnableNonSecurity.foreach(__v => __obj.updateDynamic("ApprovedPatchesEnableNonSecurity")(__v.asInstanceOf[js.Any]))
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       GlobalFilters.foreach(__v => __obj.updateDynamic("GlobalFilters")(__v.asInstanceOf[js.Any]))
@@ -3715,9 +3368,7 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeAssociationExecutionTargetsResult = {
       val __obj = js.Dynamic.literal()
-      AssociationExecutionTargets.foreach(__v =>
-        __obj.updateDynamic("AssociationExecutionTargets")(__v.asInstanceOf[js.Any])
-      )
+      AssociationExecutionTargets.foreach(__v => __obj.updateDynamic("AssociationExecutionTargets")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAssociationExecutionTargetsResult]
     }
@@ -3845,9 +3496,7 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeAutomationExecutionsResult = {
       val __obj = js.Dynamic.literal()
-      AutomationExecutionMetadataList.foreach(__v =>
-        __obj.updateDynamic("AutomationExecutionMetadataList")(__v.asInstanceOf[js.Any])
-      )
+      AutomationExecutionMetadataList.foreach(__v => __obj.updateDynamic("AutomationExecutionMetadataList")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAutomationExecutionsResult]
     }
@@ -4146,9 +3795,7 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeInstanceAssociationsStatusResult = {
       val __obj = js.Dynamic.literal()
-      InstanceAssociationStatusInfos.foreach(__v =>
-        __obj.updateDynamic("InstanceAssociationStatusInfos")(__v.asInstanceOf[js.Any])
-      )
+      InstanceAssociationStatusInfos.foreach(__v => __obj.updateDynamic("InstanceAssociationStatusInfos")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeInstanceAssociationsStatusResult]
     }
@@ -4172,9 +3819,7 @@ package ssm {
     ): DescribeInstanceInformationRequest = {
       val __obj = js.Dynamic.literal()
       Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      InstanceInformationFilterList.foreach(__v =>
-        __obj.updateDynamic("InstanceInformationFilterList")(__v.asInstanceOf[js.Any])
-      )
+      InstanceInformationFilterList.foreach(__v => __obj.updateDynamic("InstanceInformationFilterList")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeInstanceInformationRequest]
@@ -4416,14 +4061,11 @@ package ssm {
     @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
-        WindowExecutionTaskInvocationIdentities: js.UndefOr[MaintenanceWindowExecutionTaskInvocationIdentityList] =
-          js.undefined
+        WindowExecutionTaskInvocationIdentities: js.UndefOr[MaintenanceWindowExecutionTaskInvocationIdentityList] = js.undefined
     ): DescribeMaintenanceWindowExecutionTaskInvocationsResult = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      WindowExecutionTaskInvocationIdentities.foreach(__v =>
-        __obj.updateDynamic("WindowExecutionTaskInvocationIdentities")(__v.asInstanceOf[js.Any])
-      )
+      WindowExecutionTaskInvocationIdentities.foreach(__v => __obj.updateDynamic("WindowExecutionTaskInvocationIdentities")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMaintenanceWindowExecutionTaskInvocationsResult]
     }
   }
@@ -4469,9 +4111,7 @@ package ssm {
     ): DescribeMaintenanceWindowExecutionTasksResult = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      WindowExecutionTaskIdentities.foreach(__v =>
-        __obj.updateDynamic("WindowExecutionTaskIdentities")(__v.asInstanceOf[js.Any])
-      )
+      WindowExecutionTaskIdentities.foreach(__v => __obj.updateDynamic("WindowExecutionTaskIdentities")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMaintenanceWindowExecutionTasksResult]
     }
   }
@@ -4567,9 +4207,7 @@ package ssm {
     ): DescribeMaintenanceWindowScheduleResult = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ScheduledWindowExecutions.foreach(__v =>
-        __obj.updateDynamic("ScheduledWindowExecutions")(__v.asInstanceOf[js.Any])
-      )
+      ScheduledWindowExecutions.foreach(__v => __obj.updateDynamic("ScheduledWindowExecutions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMaintenanceWindowScheduleResult]
     }
   }
@@ -4925,30 +4563,14 @@ package ssm {
     ): DescribePatchGroupStateResult = {
       val __obj = js.Dynamic.literal()
       Instances.foreach(__v => __obj.updateDynamic("Instances")(__v.asInstanceOf[js.Any]))
-      InstancesWithFailedPatches.foreach(__v =>
-        __obj.updateDynamic("InstancesWithFailedPatches")(__v.asInstanceOf[js.Any])
-      )
-      InstancesWithInstalledOtherPatches.foreach(__v =>
-        __obj.updateDynamic("InstancesWithInstalledOtherPatches")(__v.asInstanceOf[js.Any])
-      )
-      InstancesWithInstalledPatches.foreach(__v =>
-        __obj.updateDynamic("InstancesWithInstalledPatches")(__v.asInstanceOf[js.Any])
-      )
-      InstancesWithInstalledPendingRebootPatches.foreach(__v =>
-        __obj.updateDynamic("InstancesWithInstalledPendingRebootPatches")(__v.asInstanceOf[js.Any])
-      )
-      InstancesWithInstalledRejectedPatches.foreach(__v =>
-        __obj.updateDynamic("InstancesWithInstalledRejectedPatches")(__v.asInstanceOf[js.Any])
-      )
-      InstancesWithMissingPatches.foreach(__v =>
-        __obj.updateDynamic("InstancesWithMissingPatches")(__v.asInstanceOf[js.Any])
-      )
-      InstancesWithNotApplicablePatches.foreach(__v =>
-        __obj.updateDynamic("InstancesWithNotApplicablePatches")(__v.asInstanceOf[js.Any])
-      )
-      InstancesWithUnreportedNotApplicablePatches.foreach(__v =>
-        __obj.updateDynamic("InstancesWithUnreportedNotApplicablePatches")(__v.asInstanceOf[js.Any])
-      )
+      InstancesWithFailedPatches.foreach(__v => __obj.updateDynamic("InstancesWithFailedPatches")(__v.asInstanceOf[js.Any]))
+      InstancesWithInstalledOtherPatches.foreach(__v => __obj.updateDynamic("InstancesWithInstalledOtherPatches")(__v.asInstanceOf[js.Any]))
+      InstancesWithInstalledPatches.foreach(__v => __obj.updateDynamic("InstancesWithInstalledPatches")(__v.asInstanceOf[js.Any]))
+      InstancesWithInstalledPendingRebootPatches.foreach(__v => __obj.updateDynamic("InstancesWithInstalledPendingRebootPatches")(__v.asInstanceOf[js.Any]))
+      InstancesWithInstalledRejectedPatches.foreach(__v => __obj.updateDynamic("InstancesWithInstalledRejectedPatches")(__v.asInstanceOf[js.Any]))
+      InstancesWithMissingPatches.foreach(__v => __obj.updateDynamic("InstancesWithMissingPatches")(__v.asInstanceOf[js.Any]))
+      InstancesWithNotApplicablePatches.foreach(__v => __obj.updateDynamic("InstancesWithNotApplicablePatches")(__v.asInstanceOf[js.Any]))
+      InstancesWithUnreportedNotApplicablePatches.foreach(__v => __obj.updateDynamic("InstancesWithUnreportedNotApplicablePatches")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePatchGroupStateResult]
     }
   }
@@ -5427,19 +5049,7 @@ package ssm {
     val DeploymentStrategy = "DeploymentStrategy".asInstanceOf[DocumentType]
     val ChangeCalendar = "ChangeCalendar".asInstanceOf[DocumentType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        Command,
-        Policy,
-        Automation,
-        Session,
-        Package,
-        ApplicationConfiguration,
-        ApplicationConfigurationSchema,
-        DeploymentStrategy,
-        ChangeCalendar
-      )
-    )
+    val values = js.Object.freeze(js.Array(Command, Policy, Automation, Session, Package, ApplicationConfiguration, ApplicationConfigurationSchema, DeploymentStrategy, ChangeCalendar))
   }
 
   /**
@@ -6728,12 +6338,8 @@ package ssm {
       val __obj = js.Dynamic.literal()
       ApprovalRules.foreach(__v => __obj.updateDynamic("ApprovalRules")(__v.asInstanceOf[js.Any]))
       ApprovedPatches.foreach(__v => __obj.updateDynamic("ApprovedPatches")(__v.asInstanceOf[js.Any]))
-      ApprovedPatchesComplianceLevel.foreach(__v =>
-        __obj.updateDynamic("ApprovedPatchesComplianceLevel")(__v.asInstanceOf[js.Any])
-      )
-      ApprovedPatchesEnableNonSecurity.foreach(__v =>
-        __obj.updateDynamic("ApprovedPatchesEnableNonSecurity")(__v.asInstanceOf[js.Any])
-      )
+      ApprovedPatchesComplianceLevel.foreach(__v => __obj.updateDynamic("ApprovedPatchesComplianceLevel")(__v.asInstanceOf[js.Any]))
+      ApprovedPatchesEnableNonSecurity.foreach(__v => __obj.updateDynamic("ApprovedPatchesEnableNonSecurity")(__v.asInstanceOf[js.Any]))
       BaselineId.foreach(__v => __obj.updateDynamic("BaselineId")(__v.asInstanceOf[js.Any]))
       CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -6806,9 +6412,7 @@ package ssm {
     ): InstanceAggregatedAssociationOverview = {
       val __obj = js.Dynamic.literal()
       DetailedStatus.foreach(__v => __obj.updateDynamic("DetailedStatus")(__v.asInstanceOf[js.Any]))
-      InstanceAssociationStatusAggregatedCount.foreach(__v =>
-        __obj.updateDynamic("InstanceAssociationStatusAggregatedCount")(__v.asInstanceOf[js.Any])
-      )
+      InstanceAssociationStatusAggregatedCount.foreach(__v => __obj.updateDynamic("InstanceAssociationStatusAggregatedCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceAggregatedAssociationOverview]
     }
   }
@@ -6990,13 +6594,9 @@ package ssm {
       IamRole.foreach(__v => __obj.updateDynamic("IamRole")(__v.asInstanceOf[js.Any]))
       InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
       IsLatestVersion.foreach(__v => __obj.updateDynamic("IsLatestVersion")(__v.asInstanceOf[js.Any]))
-      LastAssociationExecutionDate.foreach(__v =>
-        __obj.updateDynamic("LastAssociationExecutionDate")(__v.asInstanceOf[js.Any])
-      )
+      LastAssociationExecutionDate.foreach(__v => __obj.updateDynamic("LastAssociationExecutionDate")(__v.asInstanceOf[js.Any]))
       LastPingDateTime.foreach(__v => __obj.updateDynamic("LastPingDateTime")(__v.asInstanceOf[js.Any]))
-      LastSuccessfulAssociationExecutionDate.foreach(__v =>
-        __obj.updateDynamic("LastSuccessfulAssociationExecutionDate")(__v.asInstanceOf[js.Any])
-      )
+      LastSuccessfulAssociationExecutionDate.foreach(__v => __obj.updateDynamic("LastSuccessfulAssociationExecutionDate")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       PingStatus.foreach(__v => __obj.updateDynamic("PingStatus")(__v.asInstanceOf[js.Any]))
       PlatformName.foreach(__v => __obj.updateDynamic("PlatformName")(__v.asInstanceOf[js.Any]))
@@ -7045,18 +6645,7 @@ package ssm {
     val ResourceType = "ResourceType".asInstanceOf[InstanceInformationFilterKey]
     val AssociationStatus = "AssociationStatus".asInstanceOf[InstanceInformationFilterKey]
 
-    val values = js.Object.freeze(
-      js.Array(
-        InstanceIds,
-        AgentVersion,
-        PingStatus,
-        PlatformTypes,
-        ActivationIds,
-        IamRole,
-        ResourceType,
-        AssociationStatus
-      )
-    )
+    val values = js.Object.freeze(js.Array(InstanceIds, AgentVersion, PingStatus, PlatformTypes, ActivationIds, IamRole, ResourceType, AssociationStatus))
   }
 
   /**
@@ -7145,21 +6734,15 @@ package ssm {
       InstallOverrideList.foreach(__v => __obj.updateDynamic("InstallOverrideList")(__v.asInstanceOf[js.Any]))
       InstalledCount.foreach(__v => __obj.updateDynamic("InstalledCount")(__v.asInstanceOf[js.Any]))
       InstalledOtherCount.foreach(__v => __obj.updateDynamic("InstalledOtherCount")(__v.asInstanceOf[js.Any]))
-      InstalledPendingRebootCount.foreach(__v =>
-        __obj.updateDynamic("InstalledPendingRebootCount")(__v.asInstanceOf[js.Any])
-      )
+      InstalledPendingRebootCount.foreach(__v => __obj.updateDynamic("InstalledPendingRebootCount")(__v.asInstanceOf[js.Any]))
       InstalledRejectedCount.foreach(__v => __obj.updateDynamic("InstalledRejectedCount")(__v.asInstanceOf[js.Any]))
-      LastNoRebootInstallOperationTime.foreach(__v =>
-        __obj.updateDynamic("LastNoRebootInstallOperationTime")(__v.asInstanceOf[js.Any])
-      )
+      LastNoRebootInstallOperationTime.foreach(__v => __obj.updateDynamic("LastNoRebootInstallOperationTime")(__v.asInstanceOf[js.Any]))
       MissingCount.foreach(__v => __obj.updateDynamic("MissingCount")(__v.asInstanceOf[js.Any]))
       NotApplicableCount.foreach(__v => __obj.updateDynamic("NotApplicableCount")(__v.asInstanceOf[js.Any]))
       OwnerInformation.foreach(__v => __obj.updateDynamic("OwnerInformation")(__v.asInstanceOf[js.Any]))
       RebootOption.foreach(__v => __obj.updateDynamic("RebootOption")(__v.asInstanceOf[js.Any]))
       SnapshotId.foreach(__v => __obj.updateDynamic("SnapshotId")(__v.asInstanceOf[js.Any]))
-      UnreportedNotApplicableCount.foreach(__v =>
-        __obj.updateDynamic("UnreportedNotApplicableCount")(__v.asInstanceOf[js.Any])
-      )
+      UnreportedNotApplicableCount.foreach(__v => __obj.updateDynamic("UnreportedNotApplicableCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstancePatchState]
     }
   }
@@ -8056,9 +7639,7 @@ package ssm {
     ): ListResourceComplianceSummariesResult = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ResourceComplianceSummaryItems.foreach(__v =>
-        __obj.updateDynamic("ResourceComplianceSummaryItems")(__v.asInstanceOf[js.Any])
-      )
+      ResourceComplianceSummaryItems.foreach(__v => __obj.updateDynamic("ResourceComplianceSummaryItems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResourceComplianceSummariesResult]
     }
   }
@@ -8238,9 +7819,7 @@ package ssm {
     val CANCELLED = "CANCELLED".asInstanceOf[MaintenanceWindowExecutionStatus]
     val SKIPPED_OVERLAPPING = "SKIPPED_OVERLAPPING".asInstanceOf[MaintenanceWindowExecutionStatus]
 
-    val values = js.Object.freeze(
-      js.Array(PENDING, IN_PROGRESS, SUCCESS, FAILED, TIMED_OUT, CANCELLING, CANCELLED, SKIPPED_OVERLAPPING)
-    )
+    val values = js.Object.freeze(js.Array(PENDING, IN_PROGRESS, SUCCESS, FAILED, TIMED_OUT, CANCELLING, CANCELLED, SKIPPED_OVERLAPPING))
   }
 
   /**
@@ -8826,19 +8405,7 @@ package ssm {
     val ORACLE_LINUX = "ORACLE_LINUX".asInstanceOf[OperatingSystem]
     val DEBIAN = "DEBIAN".asInstanceOf[OperatingSystem]
 
-    val values = js.Object.freeze(
-      js.Array(
-        WINDOWS,
-        AMAZON_LINUX,
-        AMAZON_LINUX_2,
-        UBUNTU,
-        REDHAT_ENTERPRISE_LINUX,
-        SUSE,
-        CENTOS,
-        ORACLE_LINUX,
-        DEBIAN
-      )
-    )
+    val values = js.Object.freeze(js.Array(WINDOWS, AMAZON_LINUX, AMAZON_LINUX_2, UBUNTU, REDHAT_ENTERPRISE_LINUX, SUSE, CENTOS, ORACLE_LINUX, DEBIAN))
   }
 
   /**
@@ -9656,17 +9223,7 @@ package ssm {
     val NOT_APPLICABLE = "NOT_APPLICABLE".asInstanceOf[PatchComplianceDataState]
     val FAILED = "FAILED".asInstanceOf[PatchComplianceDataState]
 
-    val values = js.Object.freeze(
-      js.Array(
-        INSTALLED,
-        INSTALLED_OTHER,
-        INSTALLED_PENDING_REBOOT,
-        INSTALLED_REJECTED,
-        MISSING,
-        NOT_APPLICABLE,
-        FAILED
-      )
-    )
+    val values = js.Object.freeze(js.Array(INSTALLED, INSTALLED_OTHER, INSTALLED_PENDING_REBOOT, INSTALLED_REJECTED, MISSING, NOT_APPLICABLE, FAILED))
   }
 
   @js.native
@@ -9753,9 +9310,7 @@ package ssm {
     val PRIORITY = "PRIORITY".asInstanceOf[PatchFilterKey]
     val SEVERITY = "SEVERITY".asInstanceOf[PatchFilterKey]
 
-    val values = js.Object.freeze(
-      js.Array(PATCH_SET, PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID, SECTION, PRIORITY, SEVERITY)
-    )
+    val values = js.Object.freeze(js.Array(PATCH_SET, PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID, SECTION, PRIORITY, SEVERITY))
   }
 
   /**
@@ -10548,9 +10103,7 @@ package ssm {
         DestinationDataSharingType: js.UndefOr[ResourceDataSyncDestinationDataSharingType] = js.undefined
     ): ResourceDataSyncDestinationDataSharing = {
       val __obj = js.Dynamic.literal()
-      DestinationDataSharingType.foreach(__v =>
-        __obj.updateDynamic("DestinationDataSharingType")(__v.asInstanceOf[js.Any])
-      )
+      DestinationDataSharingType.foreach(__v => __obj.updateDynamic("DestinationDataSharingType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceDataSyncDestinationDataSharing]
     }
   }
@@ -10749,8 +10302,7 @@ package ssm {
     val PatchBaseline = "PatchBaseline".asInstanceOf[ResourceTypeForTagging]
     val OpsItem = "OpsItem".asInstanceOf[ResourceTypeForTagging]
 
-    val values =
-      js.Object.freeze(js.Array(Document, ManagedInstance, MaintenanceWindow, Parameter, PatchBaseline, OpsItem))
+    val values = js.Object.freeze(js.Array(Document, ManagedInstance, MaintenanceWindow, Parameter, PatchBaseline, OpsItem))
   }
 
   /**
@@ -11467,9 +11019,7 @@ package ssm {
     val StepName = "StepName".asInstanceOf[StepExecutionFilterKey]
     val Action = "Action".asInstanceOf[StepExecutionFilterKey]
 
-    val values = js.Object.freeze(
-      js.Array(StartTimeBefore, StartTimeAfter, StepExecutionStatus, StepExecutionId, StepName, Action)
-    )
+    val values = js.Object.freeze(js.Array(StartTimeBefore, StartTimeAfter, StepExecutionStatus, StepExecutionId, StepName, Action))
   }
 
   @js.native
@@ -11605,9 +11155,7 @@ package ssm {
       Accounts.foreach(__v => __obj.updateDynamic("Accounts")(__v.asInstanceOf[js.Any]))
       ExecutionRoleName.foreach(__v => __obj.updateDynamic("ExecutionRoleName")(__v.asInstanceOf[js.Any]))
       Regions.foreach(__v => __obj.updateDynamic("Regions")(__v.asInstanceOf[js.Any]))
-      TargetLocationMaxConcurrency.foreach(__v =>
-        __obj.updateDynamic("TargetLocationMaxConcurrency")(__v.asInstanceOf[js.Any])
-      )
+      TargetLocationMaxConcurrency.foreach(__v => __obj.updateDynamic("TargetLocationMaxConcurrency")(__v.asInstanceOf[js.Any]))
       TargetLocationMaxErrors.foreach(__v => __obj.updateDynamic("TargetLocationMaxErrors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TargetLocation]
     }
@@ -11692,9 +11240,7 @@ package ssm {
       ApplyOnlyAtCronInterval.foreach(__v => __obj.updateDynamic("ApplyOnlyAtCronInterval")(__v.asInstanceOf[js.Any]))
       AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
       AssociationVersion.foreach(__v => __obj.updateDynamic("AssociationVersion")(__v.asInstanceOf[js.Any]))
-      AutomationTargetParameterName.foreach(__v =>
-        __obj.updateDynamic("AutomationTargetParameterName")(__v.asInstanceOf[js.Any])
-      )
+      AutomationTargetParameterName.foreach(__v => __obj.updateDynamic("AutomationTargetParameterName")(__v.asInstanceOf[js.Any]))
       ComplianceSeverity.foreach(__v => __obj.updateDynamic("ComplianceSeverity")(__v.asInstanceOf[js.Any]))
       DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
       MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
@@ -12266,12 +11812,8 @@ package ssm {
 
       ApprovalRules.foreach(__v => __obj.updateDynamic("ApprovalRules")(__v.asInstanceOf[js.Any]))
       ApprovedPatches.foreach(__v => __obj.updateDynamic("ApprovedPatches")(__v.asInstanceOf[js.Any]))
-      ApprovedPatchesComplianceLevel.foreach(__v =>
-        __obj.updateDynamic("ApprovedPatchesComplianceLevel")(__v.asInstanceOf[js.Any])
-      )
-      ApprovedPatchesEnableNonSecurity.foreach(__v =>
-        __obj.updateDynamic("ApprovedPatchesEnableNonSecurity")(__v.asInstanceOf[js.Any])
-      )
+      ApprovedPatchesComplianceLevel.foreach(__v => __obj.updateDynamic("ApprovedPatchesComplianceLevel")(__v.asInstanceOf[js.Any]))
+      ApprovedPatchesEnableNonSecurity.foreach(__v => __obj.updateDynamic("ApprovedPatchesEnableNonSecurity")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       GlobalFilters.foreach(__v => __obj.updateDynamic("GlobalFilters")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -12322,12 +11864,8 @@ package ssm {
       val __obj = js.Dynamic.literal()
       ApprovalRules.foreach(__v => __obj.updateDynamic("ApprovalRules")(__v.asInstanceOf[js.Any]))
       ApprovedPatches.foreach(__v => __obj.updateDynamic("ApprovedPatches")(__v.asInstanceOf[js.Any]))
-      ApprovedPatchesComplianceLevel.foreach(__v =>
-        __obj.updateDynamic("ApprovedPatchesComplianceLevel")(__v.asInstanceOf[js.Any])
-      )
-      ApprovedPatchesEnableNonSecurity.foreach(__v =>
-        __obj.updateDynamic("ApprovedPatchesEnableNonSecurity")(__v.asInstanceOf[js.Any])
-      )
+      ApprovedPatchesComplianceLevel.foreach(__v => __obj.updateDynamic("ApprovedPatchesComplianceLevel")(__v.asInstanceOf[js.Any]))
+      ApprovedPatchesEnableNonSecurity.foreach(__v => __obj.updateDynamic("ApprovedPatchesEnableNonSecurity")(__v.asInstanceOf[js.Any]))
       BaselineId.foreach(__v => __obj.updateDynamic("BaselineId")(__v.asInstanceOf[js.Any]))
       CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))

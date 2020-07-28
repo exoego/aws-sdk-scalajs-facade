@@ -12,8 +12,7 @@ package object elbv2 {
   type AllocationId = String
   type AlpnPolicyName = js.Array[AlpnPolicyValue]
   type AlpnPolicyValue = String
-  type AuthenticateCognitoActionAuthenticationRequestExtraParams =
-    js.Dictionary[AuthenticateCognitoActionAuthenticationRequestParamValue]
+  type AuthenticateCognitoActionAuthenticationRequestExtraParams = js.Dictionary[AuthenticateCognitoActionAuthenticationRequestParamValue]
   type AuthenticateCognitoActionAuthenticationRequestParamName = String
   type AuthenticateCognitoActionAuthenticationRequestParamValue = String
   type AuthenticateCognitoActionScope = String
@@ -22,8 +21,7 @@ package object elbv2 {
   type AuthenticateCognitoActionUserPoolArn = String
   type AuthenticateCognitoActionUserPoolClientId = String
   type AuthenticateCognitoActionUserPoolDomain = String
-  type AuthenticateOidcActionAuthenticationRequestExtraParams =
-    js.Dictionary[AuthenticateOidcActionAuthenticationRequestParamValue]
+  type AuthenticateOidcActionAuthenticationRequestExtraParams = js.Dictionary[AuthenticateOidcActionAuthenticationRequestParamValue]
   type AuthenticateOidcActionAuthenticationRequestParamName = String
   type AuthenticateOidcActionAuthenticationRequestParamValue = String
   type AuthenticateOidcActionAuthorizationEndpoint = String
@@ -132,80 +130,40 @@ package object elbv2 {
 
   implicit final class ELBv2Ops(private val service: ELBv2) extends AnyVal {
 
-    @inline def addListenerCertificatesFuture(
-        params: AddListenerCertificatesInput
-    ): Future[AddListenerCertificatesOutput] = service.addListenerCertificates(params).promise().toFuture
+    @inline def addListenerCertificatesFuture(params: AddListenerCertificatesInput): Future[AddListenerCertificatesOutput] = service.addListenerCertificates(params).promise().toFuture
     @inline def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise().toFuture
-    @inline def createListenerFuture(params: CreateListenerInput): Future[CreateListenerOutput] =
-      service.createListener(params).promise().toFuture
-    @inline def createLoadBalancerFuture(params: CreateLoadBalancerInput): Future[CreateLoadBalancerOutput] =
-      service.createLoadBalancer(params).promise().toFuture
-    @inline def createRuleFuture(params: CreateRuleInput): Future[CreateRuleOutput] =
-      service.createRule(params).promise().toFuture
-    @inline def createTargetGroupFuture(params: CreateTargetGroupInput): Future[CreateTargetGroupOutput] =
-      service.createTargetGroup(params).promise().toFuture
-    @inline def deleteListenerFuture(params: DeleteListenerInput): Future[DeleteListenerOutput] =
-      service.deleteListener(params).promise().toFuture
-    @inline def deleteLoadBalancerFuture(params: DeleteLoadBalancerInput): Future[DeleteLoadBalancerOutput] =
-      service.deleteLoadBalancer(params).promise().toFuture
-    @inline def deleteRuleFuture(params: DeleteRuleInput): Future[DeleteRuleOutput] =
-      service.deleteRule(params).promise().toFuture
-    @inline def deleteTargetGroupFuture(params: DeleteTargetGroupInput): Future[DeleteTargetGroupOutput] =
-      service.deleteTargetGroup(params).promise().toFuture
-    @inline def deregisterTargetsFuture(params: DeregisterTargetsInput): Future[DeregisterTargetsOutput] =
-      service.deregisterTargets(params).promise().toFuture
-    @inline def describeAccountLimitsFuture(params: DescribeAccountLimitsInput): Future[DescribeAccountLimitsOutput] =
-      service.describeAccountLimits(params).promise().toFuture
-    @inline def describeListenerCertificatesFuture(
-        params: DescribeListenerCertificatesInput
-    ): Future[DescribeListenerCertificatesOutput] = service.describeListenerCertificates(params).promise().toFuture
-    @inline def describeListenersFuture(params: DescribeListenersInput): Future[DescribeListenersOutput] =
-      service.describeListeners(params).promise().toFuture
-    @inline def describeLoadBalancerAttributesFuture(
-        params: DescribeLoadBalancerAttributesInput
-    ): Future[DescribeLoadBalancerAttributesOutput] = service.describeLoadBalancerAttributes(params).promise().toFuture
-    @inline def describeLoadBalancersFuture(params: DescribeLoadBalancersInput): Future[DescribeLoadBalancersOutput] =
-      service.describeLoadBalancers(params).promise().toFuture
-    @inline def describeRulesFuture(params: DescribeRulesInput): Future[DescribeRulesOutput] =
-      service.describeRules(params).promise().toFuture
-    @inline def describeSSLPoliciesFuture(params: DescribeSSLPoliciesInput): Future[DescribeSSLPoliciesOutput] =
-      service.describeSSLPolicies(params).promise().toFuture
-    @inline def describeTagsFuture(params: DescribeTagsInput): Future[DescribeTagsOutput] =
-      service.describeTags(params).promise().toFuture
-    @inline def describeTargetGroupAttributesFuture(
-        params: DescribeTargetGroupAttributesInput
-    ): Future[DescribeTargetGroupAttributesOutput] = service.describeTargetGroupAttributes(params).promise().toFuture
-    @inline def describeTargetGroupsFuture(params: DescribeTargetGroupsInput): Future[DescribeTargetGroupsOutput] =
-      service.describeTargetGroups(params).promise().toFuture
-    @inline def describeTargetHealthFuture(params: DescribeTargetHealthInput): Future[DescribeTargetHealthOutput] =
-      service.describeTargetHealth(params).promise().toFuture
-    @inline def modifyListenerFuture(params: ModifyListenerInput): Future[ModifyListenerOutput] =
-      service.modifyListener(params).promise().toFuture
-    @inline def modifyLoadBalancerAttributesFuture(
-        params: ModifyLoadBalancerAttributesInput
-    ): Future[ModifyLoadBalancerAttributesOutput] = service.modifyLoadBalancerAttributes(params).promise().toFuture
-    @inline def modifyRuleFuture(params: ModifyRuleInput): Future[ModifyRuleOutput] =
-      service.modifyRule(params).promise().toFuture
-    @inline def modifyTargetGroupAttributesFuture(
-        params: ModifyTargetGroupAttributesInput
-    ): Future[ModifyTargetGroupAttributesOutput] = service.modifyTargetGroupAttributes(params).promise().toFuture
-    @inline def modifyTargetGroupFuture(params: ModifyTargetGroupInput): Future[ModifyTargetGroupOutput] =
-      service.modifyTargetGroup(params).promise().toFuture
-    @inline def registerTargetsFuture(params: RegisterTargetsInput): Future[RegisterTargetsOutput] =
-      service.registerTargets(params).promise().toFuture
-    @inline def removeListenerCertificatesFuture(
-        params: RemoveListenerCertificatesInput
-    ): Future[RemoveListenerCertificatesOutput] = service.removeListenerCertificates(params).promise().toFuture
-    @inline def removeTagsFuture(params: RemoveTagsInput): Future[RemoveTagsOutput] =
-      service.removeTags(params).promise().toFuture
-    @inline def setIpAddressTypeFuture(params: SetIpAddressTypeInput): Future[SetIpAddressTypeOutput] =
-      service.setIpAddressType(params).promise().toFuture
-    @inline def setRulePrioritiesFuture(params: SetRulePrioritiesInput): Future[SetRulePrioritiesOutput] =
-      service.setRulePriorities(params).promise().toFuture
-    @inline def setSecurityGroupsFuture(params: SetSecurityGroupsInput): Future[SetSecurityGroupsOutput] =
-      service.setSecurityGroups(params).promise().toFuture
-    @inline def setSubnetsFuture(params: SetSubnetsInput): Future[SetSubnetsOutput] =
-      service.setSubnets(params).promise().toFuture
+    @inline def createListenerFuture(params: CreateListenerInput): Future[CreateListenerOutput] = service.createListener(params).promise().toFuture
+    @inline def createLoadBalancerFuture(params: CreateLoadBalancerInput): Future[CreateLoadBalancerOutput] = service.createLoadBalancer(params).promise().toFuture
+    @inline def createRuleFuture(params: CreateRuleInput): Future[CreateRuleOutput] = service.createRule(params).promise().toFuture
+    @inline def createTargetGroupFuture(params: CreateTargetGroupInput): Future[CreateTargetGroupOutput] = service.createTargetGroup(params).promise().toFuture
+    @inline def deleteListenerFuture(params: DeleteListenerInput): Future[DeleteListenerOutput] = service.deleteListener(params).promise().toFuture
+    @inline def deleteLoadBalancerFuture(params: DeleteLoadBalancerInput): Future[DeleteLoadBalancerOutput] = service.deleteLoadBalancer(params).promise().toFuture
+    @inline def deleteRuleFuture(params: DeleteRuleInput): Future[DeleteRuleOutput] = service.deleteRule(params).promise().toFuture
+    @inline def deleteTargetGroupFuture(params: DeleteTargetGroupInput): Future[DeleteTargetGroupOutput] = service.deleteTargetGroup(params).promise().toFuture
+    @inline def deregisterTargetsFuture(params: DeregisterTargetsInput): Future[DeregisterTargetsOutput] = service.deregisterTargets(params).promise().toFuture
+    @inline def describeAccountLimitsFuture(params: DescribeAccountLimitsInput): Future[DescribeAccountLimitsOutput] = service.describeAccountLimits(params).promise().toFuture
+    @inline def describeListenerCertificatesFuture(params: DescribeListenerCertificatesInput): Future[DescribeListenerCertificatesOutput] = service.describeListenerCertificates(params).promise().toFuture
+    @inline def describeListenersFuture(params: DescribeListenersInput): Future[DescribeListenersOutput] = service.describeListeners(params).promise().toFuture
+    @inline def describeLoadBalancerAttributesFuture(params: DescribeLoadBalancerAttributesInput): Future[DescribeLoadBalancerAttributesOutput] = service.describeLoadBalancerAttributes(params).promise().toFuture
+    @inline def describeLoadBalancersFuture(params: DescribeLoadBalancersInput): Future[DescribeLoadBalancersOutput] = service.describeLoadBalancers(params).promise().toFuture
+    @inline def describeRulesFuture(params: DescribeRulesInput): Future[DescribeRulesOutput] = service.describeRules(params).promise().toFuture
+    @inline def describeSSLPoliciesFuture(params: DescribeSSLPoliciesInput): Future[DescribeSSLPoliciesOutput] = service.describeSSLPolicies(params).promise().toFuture
+    @inline def describeTagsFuture(params: DescribeTagsInput): Future[DescribeTagsOutput] = service.describeTags(params).promise().toFuture
+    @inline def describeTargetGroupAttributesFuture(params: DescribeTargetGroupAttributesInput): Future[DescribeTargetGroupAttributesOutput] = service.describeTargetGroupAttributes(params).promise().toFuture
+    @inline def describeTargetGroupsFuture(params: DescribeTargetGroupsInput): Future[DescribeTargetGroupsOutput] = service.describeTargetGroups(params).promise().toFuture
+    @inline def describeTargetHealthFuture(params: DescribeTargetHealthInput): Future[DescribeTargetHealthOutput] = service.describeTargetHealth(params).promise().toFuture
+    @inline def modifyListenerFuture(params: ModifyListenerInput): Future[ModifyListenerOutput] = service.modifyListener(params).promise().toFuture
+    @inline def modifyLoadBalancerAttributesFuture(params: ModifyLoadBalancerAttributesInput): Future[ModifyLoadBalancerAttributesOutput] = service.modifyLoadBalancerAttributes(params).promise().toFuture
+    @inline def modifyRuleFuture(params: ModifyRuleInput): Future[ModifyRuleOutput] = service.modifyRule(params).promise().toFuture
+    @inline def modifyTargetGroupAttributesFuture(params: ModifyTargetGroupAttributesInput): Future[ModifyTargetGroupAttributesOutput] = service.modifyTargetGroupAttributes(params).promise().toFuture
+    @inline def modifyTargetGroupFuture(params: ModifyTargetGroupInput): Future[ModifyTargetGroupOutput] = service.modifyTargetGroup(params).promise().toFuture
+    @inline def registerTargetsFuture(params: RegisterTargetsInput): Future[RegisterTargetsOutput] = service.registerTargets(params).promise().toFuture
+    @inline def removeListenerCertificatesFuture(params: RemoveListenerCertificatesInput): Future[RemoveListenerCertificatesOutput] = service.removeListenerCertificates(params).promise().toFuture
+    @inline def removeTagsFuture(params: RemoveTagsInput): Future[RemoveTagsOutput] = service.removeTags(params).promise().toFuture
+    @inline def setIpAddressTypeFuture(params: SetIpAddressTypeInput): Future[SetIpAddressTypeOutput] = service.setIpAddressType(params).promise().toFuture
+    @inline def setRulePrioritiesFuture(params: SetRulePrioritiesInput): Future[SetRulePrioritiesOutput] = service.setRulePriorities(params).promise().toFuture
+    @inline def setSecurityGroupsFuture(params: SetSecurityGroupsInput): Future[SetSecurityGroupsOutput] = service.setSecurityGroups(params).promise().toFuture
+    @inline def setSubnetsFuture(params: SetSubnetsInput): Future[SetSubnetsOutput] = service.setSubnets(params).promise().toFuture
   }
 }
 
@@ -215,8 +173,7 @@ package elbv2 {
   class ELBv2() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def addListenerCertificates(params: AddListenerCertificatesInput): Request[AddListenerCertificatesOutput] =
-      js.native
+    def addListenerCertificates(params: AddListenerCertificatesInput): Request[AddListenerCertificatesOutput] = js.native
     def addTags(params: AddTagsInput): Request[AddTagsOutput] = js.native
     def createListener(params: CreateListenerInput): Request[CreateListenerOutput] = js.native
     def createLoadBalancer(params: CreateLoadBalancerInput): Request[CreateLoadBalancerOutput] = js.native
@@ -228,34 +185,23 @@ package elbv2 {
     def deleteTargetGroup(params: DeleteTargetGroupInput): Request[DeleteTargetGroupOutput] = js.native
     def deregisterTargets(params: DeregisterTargetsInput): Request[DeregisterTargetsOutput] = js.native
     def describeAccountLimits(params: DescribeAccountLimitsInput): Request[DescribeAccountLimitsOutput] = js.native
-    def describeListenerCertificates(
-        params: DescribeListenerCertificatesInput
-    ): Request[DescribeListenerCertificatesOutput] = js.native
+    def describeListenerCertificates(params: DescribeListenerCertificatesInput): Request[DescribeListenerCertificatesOutput] = js.native
     def describeListeners(params: DescribeListenersInput): Request[DescribeListenersOutput] = js.native
-    def describeLoadBalancerAttributes(
-        params: DescribeLoadBalancerAttributesInput
-    ): Request[DescribeLoadBalancerAttributesOutput] = js.native
+    def describeLoadBalancerAttributes(params: DescribeLoadBalancerAttributesInput): Request[DescribeLoadBalancerAttributesOutput] = js.native
     def describeLoadBalancers(params: DescribeLoadBalancersInput): Request[DescribeLoadBalancersOutput] = js.native
     def describeRules(params: DescribeRulesInput): Request[DescribeRulesOutput] = js.native
     def describeSSLPolicies(params: DescribeSSLPoliciesInput): Request[DescribeSSLPoliciesOutput] = js.native
     def describeTags(params: DescribeTagsInput): Request[DescribeTagsOutput] = js.native
-    def describeTargetGroupAttributes(
-        params: DescribeTargetGroupAttributesInput
-    ): Request[DescribeTargetGroupAttributesOutput] = js.native
+    def describeTargetGroupAttributes(params: DescribeTargetGroupAttributesInput): Request[DescribeTargetGroupAttributesOutput] = js.native
     def describeTargetGroups(params: DescribeTargetGroupsInput): Request[DescribeTargetGroupsOutput] = js.native
     def describeTargetHealth(params: DescribeTargetHealthInput): Request[DescribeTargetHealthOutput] = js.native
     def modifyListener(params: ModifyListenerInput): Request[ModifyListenerOutput] = js.native
-    def modifyLoadBalancerAttributes(
-        params: ModifyLoadBalancerAttributesInput
-    ): Request[ModifyLoadBalancerAttributesOutput] = js.native
+    def modifyLoadBalancerAttributes(params: ModifyLoadBalancerAttributesInput): Request[ModifyLoadBalancerAttributesOutput] = js.native
     def modifyRule(params: ModifyRuleInput): Request[ModifyRuleOutput] = js.native
     def modifyTargetGroup(params: ModifyTargetGroupInput): Request[ModifyTargetGroupOutput] = js.native
-    def modifyTargetGroupAttributes(
-        params: ModifyTargetGroupAttributesInput
-    ): Request[ModifyTargetGroupAttributesOutput] = js.native
+    def modifyTargetGroupAttributes(params: ModifyTargetGroupAttributesInput): Request[ModifyTargetGroupAttributesOutput] = js.native
     def registerTargets(params: RegisterTargetsInput): Request[RegisterTargetsOutput] = js.native
-    def removeListenerCertificates(params: RemoveListenerCertificatesInput): Request[RemoveListenerCertificatesOutput] =
-      js.native
+    def removeListenerCertificates(params: RemoveListenerCertificatesInput): Request[RemoveListenerCertificatesOutput] = js.native
     def removeTags(params: RemoveTagsInput): Request[RemoveTagsOutput] = js.native
     def setIpAddressType(params: SetIpAddressTypeInput): Request[SetIpAddressTypeOutput] = js.native
     def setRulePriorities(params: SetRulePrioritiesInput): Request[SetRulePrioritiesOutput] = js.native
@@ -294,9 +240,7 @@ package elbv2 {
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
-      AuthenticateCognitoConfig.foreach(__v =>
-        __obj.updateDynamic("AuthenticateCognitoConfig")(__v.asInstanceOf[js.Any])
-      )
+      AuthenticateCognitoConfig.foreach(__v => __obj.updateDynamic("AuthenticateCognitoConfig")(__v.asInstanceOf[js.Any]))
       AuthenticateOidcConfig.foreach(__v => __obj.updateDynamic("AuthenticateOidcConfig")(__v.asInstanceOf[js.Any]))
       FixedResponseConfig.foreach(__v => __obj.updateDynamic("FixedResponseConfig")(__v.asInstanceOf[js.Any]))
       ForwardConfig.foreach(__v => __obj.updateDynamic("ForwardConfig")(__v.asInstanceOf[js.Any]))
@@ -316,8 +260,7 @@ package elbv2 {
     val redirect = "redirect".asInstanceOf[ActionTypeEnum]
     val `fixed-response` = "fixed-response".asInstanceOf[ActionTypeEnum]
 
-    val values =
-      js.Object.freeze(js.Array(forward, `authenticate-oidc`, `authenticate-cognito`, redirect, `fixed-response`))
+    val values = js.Object.freeze(js.Array(forward, `authenticate-oidc`, `authenticate-cognito`, redirect, `fixed-response`))
   }
 
   @js.native
@@ -422,8 +365,7 @@ package elbv2 {
         UserPoolArn: AuthenticateCognitoActionUserPoolArn,
         UserPoolClientId: AuthenticateCognitoActionUserPoolClientId,
         UserPoolDomain: AuthenticateCognitoActionUserPoolDomain,
-        AuthenticationRequestExtraParams: js.UndefOr[AuthenticateCognitoActionAuthenticationRequestExtraParams] =
-          js.undefined,
+        AuthenticationRequestExtraParams: js.UndefOr[AuthenticateCognitoActionAuthenticationRequestExtraParams] = js.undefined,
         OnUnauthenticatedRequest: js.UndefOr[AuthenticateCognitoActionConditionalBehaviorEnum] = js.undefined,
         Scope: js.UndefOr[AuthenticateCognitoActionScope] = js.undefined,
         SessionCookieName: js.UndefOr[AuthenticateCognitoActionSessionCookieName] = js.undefined,
@@ -435,9 +377,7 @@ package elbv2 {
         "UserPoolDomain" -> UserPoolDomain.asInstanceOf[js.Any]
       )
 
-      AuthenticationRequestExtraParams.foreach(__v =>
-        __obj.updateDynamic("AuthenticationRequestExtraParams")(__v.asInstanceOf[js.Any])
-      )
+      AuthenticationRequestExtraParams.foreach(__v => __obj.updateDynamic("AuthenticationRequestExtraParams")(__v.asInstanceOf[js.Any]))
       OnUnauthenticatedRequest.foreach(__v => __obj.updateDynamic("OnUnauthenticatedRequest")(__v.asInstanceOf[js.Any]))
       Scope.foreach(__v => __obj.updateDynamic("Scope")(__v.asInstanceOf[js.Any]))
       SessionCookieName.foreach(__v => __obj.updateDynamic("SessionCookieName")(__v.asInstanceOf[js.Any]))
@@ -483,8 +423,7 @@ package elbv2 {
         Issuer: AuthenticateOidcActionIssuer,
         TokenEndpoint: AuthenticateOidcActionTokenEndpoint,
         UserInfoEndpoint: AuthenticateOidcActionUserInfoEndpoint,
-        AuthenticationRequestExtraParams: js.UndefOr[AuthenticateOidcActionAuthenticationRequestExtraParams] =
-          js.undefined,
+        AuthenticationRequestExtraParams: js.UndefOr[AuthenticateOidcActionAuthenticationRequestExtraParams] = js.undefined,
         ClientSecret: js.UndefOr[AuthenticateOidcActionClientSecret] = js.undefined,
         OnUnauthenticatedRequest: js.UndefOr[AuthenticateOidcActionConditionalBehaviorEnum] = js.undefined,
         Scope: js.UndefOr[AuthenticateOidcActionScope] = js.undefined,
@@ -500,9 +439,7 @@ package elbv2 {
         "UserInfoEndpoint" -> UserInfoEndpoint.asInstanceOf[js.Any]
       )
 
-      AuthenticationRequestExtraParams.foreach(__v =>
-        __obj.updateDynamic("AuthenticationRequestExtraParams")(__v.asInstanceOf[js.Any])
-      )
+      AuthenticationRequestExtraParams.foreach(__v => __obj.updateDynamic("AuthenticationRequestExtraParams")(__v.asInstanceOf[js.Any]))
       ClientSecret.foreach(__v => __obj.updateDynamic("ClientSecret")(__v.asInstanceOf[js.Any]))
       OnUnauthenticatedRequest.foreach(__v => __obj.updateDynamic("OnUnauthenticatedRequest")(__v.asInstanceOf[js.Any]))
       Scope.foreach(__v => __obj.updateDynamic("Scope")(__v.asInstanceOf[js.Any]))
@@ -773,15 +710,11 @@ package elbv2 {
       )
 
       HealthCheckEnabled.foreach(__v => __obj.updateDynamic("HealthCheckEnabled")(__v.asInstanceOf[js.Any]))
-      HealthCheckIntervalSeconds.foreach(__v =>
-        __obj.updateDynamic("HealthCheckIntervalSeconds")(__v.asInstanceOf[js.Any])
-      )
+      HealthCheckIntervalSeconds.foreach(__v => __obj.updateDynamic("HealthCheckIntervalSeconds")(__v.asInstanceOf[js.Any]))
       HealthCheckPath.foreach(__v => __obj.updateDynamic("HealthCheckPath")(__v.asInstanceOf[js.Any]))
       HealthCheckPort.foreach(__v => __obj.updateDynamic("HealthCheckPort")(__v.asInstanceOf[js.Any]))
       HealthCheckProtocol.foreach(__v => __obj.updateDynamic("HealthCheckProtocol")(__v.asInstanceOf[js.Any]))
-      HealthCheckTimeoutSeconds.foreach(__v =>
-        __obj.updateDynamic("HealthCheckTimeoutSeconds")(__v.asInstanceOf[js.Any])
-      )
+      HealthCheckTimeoutSeconds.foreach(__v => __obj.updateDynamic("HealthCheckTimeoutSeconds")(__v.asInstanceOf[js.Any]))
       HealthyThresholdCount.foreach(__v => __obj.updateDynamic("HealthyThresholdCount")(__v.asInstanceOf[js.Any]))
       Matcher.foreach(__v => __obj.updateDynamic("Matcher")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
@@ -1450,9 +1383,7 @@ package elbv2 {
         TargetGroups: js.UndefOr[TargetGroupList] = js.undefined
     ): ForwardActionConfig = {
       val __obj = js.Dynamic.literal()
-      TargetGroupStickinessConfig.foreach(__v =>
-        __obj.updateDynamic("TargetGroupStickinessConfig")(__v.asInstanceOf[js.Any])
-      )
+      TargetGroupStickinessConfig.foreach(__v => __obj.updateDynamic("TargetGroupStickinessConfig")(__v.asInstanceOf[js.Any]))
       TargetGroups.foreach(__v => __obj.updateDynamic("TargetGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ForwardActionConfig]
     }
@@ -1961,15 +1892,11 @@ package elbv2 {
       )
 
       HealthCheckEnabled.foreach(__v => __obj.updateDynamic("HealthCheckEnabled")(__v.asInstanceOf[js.Any]))
-      HealthCheckIntervalSeconds.foreach(__v =>
-        __obj.updateDynamic("HealthCheckIntervalSeconds")(__v.asInstanceOf[js.Any])
-      )
+      HealthCheckIntervalSeconds.foreach(__v => __obj.updateDynamic("HealthCheckIntervalSeconds")(__v.asInstanceOf[js.Any]))
       HealthCheckPath.foreach(__v => __obj.updateDynamic("HealthCheckPath")(__v.asInstanceOf[js.Any]))
       HealthCheckPort.foreach(__v => __obj.updateDynamic("HealthCheckPort")(__v.asInstanceOf[js.Any]))
       HealthCheckProtocol.foreach(__v => __obj.updateDynamic("HealthCheckProtocol")(__v.asInstanceOf[js.Any]))
-      HealthCheckTimeoutSeconds.foreach(__v =>
-        __obj.updateDynamic("HealthCheckTimeoutSeconds")(__v.asInstanceOf[js.Any])
-      )
+      HealthCheckTimeoutSeconds.foreach(__v => __obj.updateDynamic("HealthCheckTimeoutSeconds")(__v.asInstanceOf[js.Any]))
       HealthyThresholdCount.foreach(__v => __obj.updateDynamic("HealthyThresholdCount")(__v.asInstanceOf[js.Any]))
       Matcher.foreach(__v => __obj.updateDynamic("Matcher")(__v.asInstanceOf[js.Any]))
       UnhealthyThresholdCount.foreach(__v => __obj.updateDynamic("UnhealthyThresholdCount")(__v.asInstanceOf[js.Any]))
@@ -2651,15 +2578,11 @@ package elbv2 {
     ): TargetGroup = {
       val __obj = js.Dynamic.literal()
       HealthCheckEnabled.foreach(__v => __obj.updateDynamic("HealthCheckEnabled")(__v.asInstanceOf[js.Any]))
-      HealthCheckIntervalSeconds.foreach(__v =>
-        __obj.updateDynamic("HealthCheckIntervalSeconds")(__v.asInstanceOf[js.Any])
-      )
+      HealthCheckIntervalSeconds.foreach(__v => __obj.updateDynamic("HealthCheckIntervalSeconds")(__v.asInstanceOf[js.Any]))
       HealthCheckPath.foreach(__v => __obj.updateDynamic("HealthCheckPath")(__v.asInstanceOf[js.Any]))
       HealthCheckPort.foreach(__v => __obj.updateDynamic("HealthCheckPort")(__v.asInstanceOf[js.Any]))
       HealthCheckProtocol.foreach(__v => __obj.updateDynamic("HealthCheckProtocol")(__v.asInstanceOf[js.Any]))
-      HealthCheckTimeoutSeconds.foreach(__v =>
-        __obj.updateDynamic("HealthCheckTimeoutSeconds")(__v.asInstanceOf[js.Any])
-      )
+      HealthCheckTimeoutSeconds.foreach(__v => __obj.updateDynamic("HealthCheckTimeoutSeconds")(__v.asInstanceOf[js.Any]))
       HealthyThresholdCount.foreach(__v => __obj.updateDynamic("HealthyThresholdCount")(__v.asInstanceOf[js.Any]))
       LoadBalancerArns.foreach(__v => __obj.updateDynamic("LoadBalancerArns")(__v.asInstanceOf[js.Any]))
       Matcher.foreach(__v => __obj.updateDynamic("Matcher")(__v.asInstanceOf[js.Any]))

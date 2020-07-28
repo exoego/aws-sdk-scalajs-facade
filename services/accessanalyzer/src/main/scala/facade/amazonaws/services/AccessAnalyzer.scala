@@ -31,43 +31,24 @@ package object accessanalyzer {
 
   implicit final class AccessAnalyzerOps(private val service: AccessAnalyzer) extends AnyVal {
 
-    @inline def createAnalyzerFuture(params: CreateAnalyzerRequest): Future[CreateAnalyzerResponse] =
-      service.createAnalyzer(params).promise().toFuture
-    @inline def createArchiveRuleFuture(params: CreateArchiveRuleRequest): Future[js.Object] =
-      service.createArchiveRule(params).promise().toFuture
-    @inline def deleteAnalyzerFuture(params: DeleteAnalyzerRequest): Future[js.Object] =
-      service.deleteAnalyzer(params).promise().toFuture
-    @inline def deleteArchiveRuleFuture(params: DeleteArchiveRuleRequest): Future[js.Object] =
-      service.deleteArchiveRule(params).promise().toFuture
-    @inline def getAnalyzedResourceFuture(params: GetAnalyzedResourceRequest): Future[GetAnalyzedResourceResponse] =
-      service.getAnalyzedResource(params).promise().toFuture
-    @inline def getAnalyzerFuture(params: GetAnalyzerRequest): Future[GetAnalyzerResponse] =
-      service.getAnalyzer(params).promise().toFuture
-    @inline def getArchiveRuleFuture(params: GetArchiveRuleRequest): Future[GetArchiveRuleResponse] =
-      service.getArchiveRule(params).promise().toFuture
-    @inline def getFindingFuture(params: GetFindingRequest): Future[GetFindingResponse] =
-      service.getFinding(params).promise().toFuture
-    @inline def listAnalyzedResourcesFuture(
-        params: ListAnalyzedResourcesRequest
-    ): Future[ListAnalyzedResourcesResponse] = service.listAnalyzedResources(params).promise().toFuture
-    @inline def listAnalyzersFuture(params: ListAnalyzersRequest): Future[ListAnalyzersResponse] =
-      service.listAnalyzers(params).promise().toFuture
-    @inline def listArchiveRulesFuture(params: ListArchiveRulesRequest): Future[ListArchiveRulesResponse] =
-      service.listArchiveRules(params).promise().toFuture
-    @inline def listFindingsFuture(params: ListFindingsRequest): Future[ListFindingsResponse] =
-      service.listFindings(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def startResourceScanFuture(params: StartResourceScanRequest): Future[js.Object] =
-      service.startResourceScan(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateArchiveRuleFuture(params: UpdateArchiveRuleRequest): Future[js.Object] =
-      service.updateArchiveRule(params).promise().toFuture
-    @inline def updateFindingsFuture(params: UpdateFindingsRequest): Future[js.Object] =
-      service.updateFindings(params).promise().toFuture
+    @inline def createAnalyzerFuture(params: CreateAnalyzerRequest): Future[CreateAnalyzerResponse] = service.createAnalyzer(params).promise().toFuture
+    @inline def createArchiveRuleFuture(params: CreateArchiveRuleRequest): Future[js.Object] = service.createArchiveRule(params).promise().toFuture
+    @inline def deleteAnalyzerFuture(params: DeleteAnalyzerRequest): Future[js.Object] = service.deleteAnalyzer(params).promise().toFuture
+    @inline def deleteArchiveRuleFuture(params: DeleteArchiveRuleRequest): Future[js.Object] = service.deleteArchiveRule(params).promise().toFuture
+    @inline def getAnalyzedResourceFuture(params: GetAnalyzedResourceRequest): Future[GetAnalyzedResourceResponse] = service.getAnalyzedResource(params).promise().toFuture
+    @inline def getAnalyzerFuture(params: GetAnalyzerRequest): Future[GetAnalyzerResponse] = service.getAnalyzer(params).promise().toFuture
+    @inline def getArchiveRuleFuture(params: GetArchiveRuleRequest): Future[GetArchiveRuleResponse] = service.getArchiveRule(params).promise().toFuture
+    @inline def getFindingFuture(params: GetFindingRequest): Future[GetFindingResponse] = service.getFinding(params).promise().toFuture
+    @inline def listAnalyzedResourcesFuture(params: ListAnalyzedResourcesRequest): Future[ListAnalyzedResourcesResponse] = service.listAnalyzedResources(params).promise().toFuture
+    @inline def listAnalyzersFuture(params: ListAnalyzersRequest): Future[ListAnalyzersResponse] = service.listAnalyzers(params).promise().toFuture
+    @inline def listArchiveRulesFuture(params: ListArchiveRulesRequest): Future[ListArchiveRulesResponse] = service.listArchiveRules(params).promise().toFuture
+    @inline def listFindingsFuture(params: ListFindingsRequest): Future[ListFindingsResponse] = service.listFindings(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def startResourceScanFuture(params: StartResourceScanRequest): Future[js.Object] = service.startResourceScan(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateArchiveRuleFuture(params: UpdateArchiveRuleRequest): Future[js.Object] = service.updateArchiveRule(params).promise().toFuture
+    @inline def updateFindingsFuture(params: UpdateFindingsRequest): Future[js.Object] = service.updateFindings(params).promise().toFuture
   }
 }
 
@@ -1079,14 +1060,7 @@ package accessanalyzer {
     val ORGANIZATION_DELETED = "ORGANIZATION_DELETED".asInstanceOf[ReasonCode]
     val SERVICE_LINKED_ROLE_CREATION_FAILED = "SERVICE_LINKED_ROLE_CREATION_FAILED".asInstanceOf[ReasonCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        AWS_SERVICE_ACCESS_DISABLED,
-        DELEGATED_ADMINISTRATOR_DEREGISTERED,
-        ORGANIZATION_DELETED,
-        SERVICE_LINKED_ROLE_CREATION_FAILED
-      )
-    )
+    val values = js.Object.freeze(js.Array(AWS_SERVICE_ACCESS_DISABLED, DELEGATED_ADMINISTRATOR_DEREGISTERED, ORGANIZATION_DELETED, SERVICE_LINKED_ROLE_CREATION_FAILED))
   }
 
   @js.native
@@ -1099,16 +1073,7 @@ package accessanalyzer {
     val `AWS::S3::Bucket` = "AWS::S3::Bucket".asInstanceOf[ResourceType]
     val `AWS::SQS::Queue` = "AWS::SQS::Queue".asInstanceOf[ResourceType]
 
-    val values = js.Object.freeze(
-      js.Array(
-        `AWS::IAM::Role`,
-        `AWS::KMS::Key`,
-        `AWS::Lambda::Function`,
-        `AWS::Lambda::LayerVersion`,
-        `AWS::S3::Bucket`,
-        `AWS::SQS::Queue`
-      )
-    )
+    val values = js.Object.freeze(js.Array(`AWS::IAM::Role`, `AWS::KMS::Key`, `AWS::Lambda::Function`, `AWS::Lambda::LayerVersion`, `AWS::S3::Bucket`, `AWS::SQS::Queue`))
   }
 
   /**

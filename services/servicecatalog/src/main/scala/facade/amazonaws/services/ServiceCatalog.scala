@@ -187,235 +187,89 @@ package object servicecatalog {
 
   implicit final class ServiceCatalogOps(private val service: ServiceCatalog) extends AnyVal {
 
-    @inline def acceptPortfolioShareFuture(params: AcceptPortfolioShareInput): Future[AcceptPortfolioShareOutput] =
-      service.acceptPortfolioShare(params).promise().toFuture
-    @inline def associateBudgetWithResourceFuture(
-        params: AssociateBudgetWithResourceInput
-    ): Future[AssociateBudgetWithResourceOutput] = service.associateBudgetWithResource(params).promise().toFuture
-    @inline def associatePrincipalWithPortfolioFuture(
-        params: AssociatePrincipalWithPortfolioInput
-    ): Future[AssociatePrincipalWithPortfolioOutput] =
-      service.associatePrincipalWithPortfolio(params).promise().toFuture
-    @inline def associateProductWithPortfolioFuture(
-        params: AssociateProductWithPortfolioInput
-    ): Future[AssociateProductWithPortfolioOutput] = service.associateProductWithPortfolio(params).promise().toFuture
-    @inline def associateServiceActionWithProvisioningArtifactFuture(
-        params: AssociateServiceActionWithProvisioningArtifactInput
-    ): Future[AssociateServiceActionWithProvisioningArtifactOutput] =
-      service.associateServiceActionWithProvisioningArtifact(params).promise().toFuture
-    @inline def associateTagOptionWithResourceFuture(
-        params: AssociateTagOptionWithResourceInput
-    ): Future[AssociateTagOptionWithResourceOutput] = service.associateTagOptionWithResource(params).promise().toFuture
-    @inline def batchAssociateServiceActionWithProvisioningArtifactFuture(
-        params: BatchAssociateServiceActionWithProvisioningArtifactInput
-    ): Future[BatchAssociateServiceActionWithProvisioningArtifactOutput] =
-      service.batchAssociateServiceActionWithProvisioningArtifact(params).promise().toFuture
-    @inline def batchDisassociateServiceActionFromProvisioningArtifactFuture(
-        params: BatchDisassociateServiceActionFromProvisioningArtifactInput
-    ): Future[BatchDisassociateServiceActionFromProvisioningArtifactOutput] =
-      service.batchDisassociateServiceActionFromProvisioningArtifact(params).promise().toFuture
-    @inline def copyProductFuture(params: CopyProductInput): Future[CopyProductOutput] =
-      service.copyProduct(params).promise().toFuture
-    @inline def createConstraintFuture(params: CreateConstraintInput): Future[CreateConstraintOutput] =
-      service.createConstraint(params).promise().toFuture
-    @inline def createPortfolioFuture(params: CreatePortfolioInput): Future[CreatePortfolioOutput] =
-      service.createPortfolio(params).promise().toFuture
-    @inline def createPortfolioShareFuture(params: CreatePortfolioShareInput): Future[CreatePortfolioShareOutput] =
-      service.createPortfolioShare(params).promise().toFuture
-    @inline def createProductFuture(params: CreateProductInput): Future[CreateProductOutput] =
-      service.createProduct(params).promise().toFuture
-    @inline def createProvisionedProductPlanFuture(
-        params: CreateProvisionedProductPlanInput
-    ): Future[CreateProvisionedProductPlanOutput] = service.createProvisionedProductPlan(params).promise().toFuture
-    @inline def createProvisioningArtifactFuture(
-        params: CreateProvisioningArtifactInput
-    ): Future[CreateProvisioningArtifactOutput] = service.createProvisioningArtifact(params).promise().toFuture
-    @inline def createServiceActionFuture(params: CreateServiceActionInput): Future[CreateServiceActionOutput] =
-      service.createServiceAction(params).promise().toFuture
-    @inline def createTagOptionFuture(params: CreateTagOptionInput): Future[CreateTagOptionOutput] =
-      service.createTagOption(params).promise().toFuture
-    @inline def deleteConstraintFuture(params: DeleteConstraintInput): Future[DeleteConstraintOutput] =
-      service.deleteConstraint(params).promise().toFuture
-    @inline def deletePortfolioFuture(params: DeletePortfolioInput): Future[DeletePortfolioOutput] =
-      service.deletePortfolio(params).promise().toFuture
-    @inline def deletePortfolioShareFuture(params: DeletePortfolioShareInput): Future[DeletePortfolioShareOutput] =
-      service.deletePortfolioShare(params).promise().toFuture
-    @inline def deleteProductFuture(params: DeleteProductInput): Future[DeleteProductOutput] =
-      service.deleteProduct(params).promise().toFuture
-    @inline def deleteProvisionedProductPlanFuture(
-        params: DeleteProvisionedProductPlanInput
-    ): Future[DeleteProvisionedProductPlanOutput] = service.deleteProvisionedProductPlan(params).promise().toFuture
-    @inline def deleteProvisioningArtifactFuture(
-        params: DeleteProvisioningArtifactInput
-    ): Future[DeleteProvisioningArtifactOutput] = service.deleteProvisioningArtifact(params).promise().toFuture
-    @inline def deleteServiceActionFuture(params: DeleteServiceActionInput): Future[DeleteServiceActionOutput] =
-      service.deleteServiceAction(params).promise().toFuture
-    @inline def deleteTagOptionFuture(params: DeleteTagOptionInput): Future[DeleteTagOptionOutput] =
-      service.deleteTagOption(params).promise().toFuture
-    @inline def describeConstraintFuture(params: DescribeConstraintInput): Future[DescribeConstraintOutput] =
-      service.describeConstraint(params).promise().toFuture
-    @inline def describeCopyProductStatusFuture(
-        params: DescribeCopyProductStatusInput
-    ): Future[DescribeCopyProductStatusOutput] = service.describeCopyProductStatus(params).promise().toFuture
-    @inline def describePortfolioFuture(params: DescribePortfolioInput): Future[DescribePortfolioOutput] =
-      service.describePortfolio(params).promise().toFuture
-    @inline def describePortfolioShareStatusFuture(
-        params: DescribePortfolioShareStatusInput
-    ): Future[DescribePortfolioShareStatusOutput] = service.describePortfolioShareStatus(params).promise().toFuture
-    @inline def describeProductAsAdminFuture(
-        params: DescribeProductAsAdminInput
-    ): Future[DescribeProductAsAdminOutput] = service.describeProductAsAdmin(params).promise().toFuture
-    @inline def describeProductFuture(params: DescribeProductInput): Future[DescribeProductOutput] =
-      service.describeProduct(params).promise().toFuture
-    @inline def describeProductViewFuture(params: DescribeProductViewInput): Future[DescribeProductViewOutput] =
-      service.describeProductView(params).promise().toFuture
-    @inline def describeProvisionedProductFuture(
-        params: DescribeProvisionedProductInput
-    ): Future[DescribeProvisionedProductOutput] = service.describeProvisionedProduct(params).promise().toFuture
-    @inline def describeProvisionedProductPlanFuture(
-        params: DescribeProvisionedProductPlanInput
-    ): Future[DescribeProvisionedProductPlanOutput] = service.describeProvisionedProductPlan(params).promise().toFuture
-    @inline def describeProvisioningArtifactFuture(
-        params: DescribeProvisioningArtifactInput
-    ): Future[DescribeProvisioningArtifactOutput] = service.describeProvisioningArtifact(params).promise().toFuture
-    @inline def describeProvisioningParametersFuture(
-        params: DescribeProvisioningParametersInput
-    ): Future[DescribeProvisioningParametersOutput] = service.describeProvisioningParameters(params).promise().toFuture
-    @inline def describeRecordFuture(params: DescribeRecordInput): Future[DescribeRecordOutput] =
-      service.describeRecord(params).promise().toFuture
-    @inline def describeServiceActionExecutionParametersFuture(
-        params: DescribeServiceActionExecutionParametersInput
-    ): Future[DescribeServiceActionExecutionParametersOutput] =
-      service.describeServiceActionExecutionParameters(params).promise().toFuture
-    @inline def describeServiceActionFuture(params: DescribeServiceActionInput): Future[DescribeServiceActionOutput] =
-      service.describeServiceAction(params).promise().toFuture
-    @inline def describeTagOptionFuture(params: DescribeTagOptionInput): Future[DescribeTagOptionOutput] =
-      service.describeTagOption(params).promise().toFuture
-    @inline def disableAWSOrganizationsAccessFuture(
-        params: DisableAWSOrganizationsAccessInput
-    ): Future[DisableAWSOrganizationsAccessOutput] = service.disableAWSOrganizationsAccess(params).promise().toFuture
-    @inline def disassociateBudgetFromResourceFuture(
-        params: DisassociateBudgetFromResourceInput
-    ): Future[DisassociateBudgetFromResourceOutput] = service.disassociateBudgetFromResource(params).promise().toFuture
-    @inline def disassociatePrincipalFromPortfolioFuture(
-        params: DisassociatePrincipalFromPortfolioInput
-    ): Future[DisassociatePrincipalFromPortfolioOutput] =
-      service.disassociatePrincipalFromPortfolio(params).promise().toFuture
-    @inline def disassociateProductFromPortfolioFuture(
-        params: DisassociateProductFromPortfolioInput
-    ): Future[DisassociateProductFromPortfolioOutput] =
-      service.disassociateProductFromPortfolio(params).promise().toFuture
-    @inline def disassociateServiceActionFromProvisioningArtifactFuture(
-        params: DisassociateServiceActionFromProvisioningArtifactInput
-    ): Future[DisassociateServiceActionFromProvisioningArtifactOutput] =
-      service.disassociateServiceActionFromProvisioningArtifact(params).promise().toFuture
-    @inline def disassociateTagOptionFromResourceFuture(
-        params: DisassociateTagOptionFromResourceInput
-    ): Future[DisassociateTagOptionFromResourceOutput] =
-      service.disassociateTagOptionFromResource(params).promise().toFuture
-    @inline def enableAWSOrganizationsAccessFuture(
-        params: EnableAWSOrganizationsAccessInput
-    ): Future[EnableAWSOrganizationsAccessOutput] = service.enableAWSOrganizationsAccess(params).promise().toFuture
-    @inline def executeProvisionedProductPlanFuture(
-        params: ExecuteProvisionedProductPlanInput
-    ): Future[ExecuteProvisionedProductPlanOutput] = service.executeProvisionedProductPlan(params).promise().toFuture
-    @inline def executeProvisionedProductServiceActionFuture(
-        params: ExecuteProvisionedProductServiceActionInput
-    ): Future[ExecuteProvisionedProductServiceActionOutput] =
-      service.executeProvisionedProductServiceAction(params).promise().toFuture
-    @inline def getAWSOrganizationsAccessStatusFuture(
-        params: GetAWSOrganizationsAccessStatusInput
-    ): Future[GetAWSOrganizationsAccessStatusOutput] =
-      service.getAWSOrganizationsAccessStatus(params).promise().toFuture
-    @inline def listAcceptedPortfolioSharesFuture(
-        params: ListAcceptedPortfolioSharesInput
-    ): Future[ListAcceptedPortfolioSharesOutput] = service.listAcceptedPortfolioShares(params).promise().toFuture
-    @inline def listBudgetsForResourceFuture(
-        params: ListBudgetsForResourceInput
-    ): Future[ListBudgetsForResourceOutput] = service.listBudgetsForResource(params).promise().toFuture
-    @inline def listConstraintsForPortfolioFuture(
-        params: ListConstraintsForPortfolioInput
-    ): Future[ListConstraintsForPortfolioOutput] = service.listConstraintsForPortfolio(params).promise().toFuture
-    @inline def listLaunchPathsFuture(params: ListLaunchPathsInput): Future[ListLaunchPathsOutput] =
-      service.listLaunchPaths(params).promise().toFuture
-    @inline def listOrganizationPortfolioAccessFuture(
-        params: ListOrganizationPortfolioAccessInput
-    ): Future[ListOrganizationPortfolioAccessOutput] =
-      service.listOrganizationPortfolioAccess(params).promise().toFuture
-    @inline def listPortfolioAccessFuture(params: ListPortfolioAccessInput): Future[ListPortfolioAccessOutput] =
-      service.listPortfolioAccess(params).promise().toFuture
-    @inline def listPortfoliosForProductFuture(
-        params: ListPortfoliosForProductInput
-    ): Future[ListPortfoliosForProductOutput] = service.listPortfoliosForProduct(params).promise().toFuture
-    @inline def listPortfoliosFuture(params: ListPortfoliosInput): Future[ListPortfoliosOutput] =
-      service.listPortfolios(params).promise().toFuture
-    @inline def listPrincipalsForPortfolioFuture(
-        params: ListPrincipalsForPortfolioInput
-    ): Future[ListPrincipalsForPortfolioOutput] = service.listPrincipalsForPortfolio(params).promise().toFuture
-    @inline def listProvisionedProductPlansFuture(
-        params: ListProvisionedProductPlansInput
-    ): Future[ListProvisionedProductPlansOutput] = service.listProvisionedProductPlans(params).promise().toFuture
-    @inline def listProvisioningArtifactsForServiceActionFuture(
-        params: ListProvisioningArtifactsForServiceActionInput
-    ): Future[ListProvisioningArtifactsForServiceActionOutput] =
-      service.listProvisioningArtifactsForServiceAction(params).promise().toFuture
-    @inline def listProvisioningArtifactsFuture(
-        params: ListProvisioningArtifactsInput
-    ): Future[ListProvisioningArtifactsOutput] = service.listProvisioningArtifacts(params).promise().toFuture
-    @inline def listRecordHistoryFuture(params: ListRecordHistoryInput): Future[ListRecordHistoryOutput] =
-      service.listRecordHistory(params).promise().toFuture
-    @inline def listResourcesForTagOptionFuture(
-        params: ListResourcesForTagOptionInput
-    ): Future[ListResourcesForTagOptionOutput] = service.listResourcesForTagOption(params).promise().toFuture
-    @inline def listServiceActionsForProvisioningArtifactFuture(
-        params: ListServiceActionsForProvisioningArtifactInput
-    ): Future[ListServiceActionsForProvisioningArtifactOutput] =
-      service.listServiceActionsForProvisioningArtifact(params).promise().toFuture
-    @inline def listServiceActionsFuture(params: ListServiceActionsInput): Future[ListServiceActionsOutput] =
-      service.listServiceActions(params).promise().toFuture
-    @inline def listStackInstancesForProvisionedProductFuture(
-        params: ListStackInstancesForProvisionedProductInput
-    ): Future[ListStackInstancesForProvisionedProductOutput] =
-      service.listStackInstancesForProvisionedProduct(params).promise().toFuture
-    @inline def listTagOptionsFuture(params: ListTagOptionsInput): Future[ListTagOptionsOutput] =
-      service.listTagOptions(params).promise().toFuture
-    @inline def provisionProductFuture(params: ProvisionProductInput): Future[ProvisionProductOutput] =
-      service.provisionProduct(params).promise().toFuture
-    @inline def rejectPortfolioShareFuture(params: RejectPortfolioShareInput): Future[RejectPortfolioShareOutput] =
-      service.rejectPortfolioShare(params).promise().toFuture
-    @inline def scanProvisionedProductsFuture(
-        params: ScanProvisionedProductsInput
-    ): Future[ScanProvisionedProductsOutput] = service.scanProvisionedProducts(params).promise().toFuture
-    @inline def searchProductsAsAdminFuture(params: SearchProductsAsAdminInput): Future[SearchProductsAsAdminOutput] =
-      service.searchProductsAsAdmin(params).promise().toFuture
-    @inline def searchProductsFuture(params: SearchProductsInput): Future[SearchProductsOutput] =
-      service.searchProducts(params).promise().toFuture
-    @inline def searchProvisionedProductsFuture(
-        params: SearchProvisionedProductsInput
-    ): Future[SearchProvisionedProductsOutput] = service.searchProvisionedProducts(params).promise().toFuture
-    @inline def terminateProvisionedProductFuture(
-        params: TerminateProvisionedProductInput
-    ): Future[TerminateProvisionedProductOutput] = service.terminateProvisionedProduct(params).promise().toFuture
-    @inline def updateConstraintFuture(params: UpdateConstraintInput): Future[UpdateConstraintOutput] =
-      service.updateConstraint(params).promise().toFuture
-    @inline def updatePortfolioFuture(params: UpdatePortfolioInput): Future[UpdatePortfolioOutput] =
-      service.updatePortfolio(params).promise().toFuture
-    @inline def updateProductFuture(params: UpdateProductInput): Future[UpdateProductOutput] =
-      service.updateProduct(params).promise().toFuture
-    @inline def updateProvisionedProductFuture(
-        params: UpdateProvisionedProductInput
-    ): Future[UpdateProvisionedProductOutput] = service.updateProvisionedProduct(params).promise().toFuture
-    @inline def updateProvisionedProductPropertiesFuture(
-        params: UpdateProvisionedProductPropertiesInput
-    ): Future[UpdateProvisionedProductPropertiesOutput] =
-      service.updateProvisionedProductProperties(params).promise().toFuture
-    @inline def updateProvisioningArtifactFuture(
-        params: UpdateProvisioningArtifactInput
-    ): Future[UpdateProvisioningArtifactOutput] = service.updateProvisioningArtifact(params).promise().toFuture
-    @inline def updateServiceActionFuture(params: UpdateServiceActionInput): Future[UpdateServiceActionOutput] =
-      service.updateServiceAction(params).promise().toFuture
-    @inline def updateTagOptionFuture(params: UpdateTagOptionInput): Future[UpdateTagOptionOutput] =
-      service.updateTagOption(params).promise().toFuture
+    @inline def acceptPortfolioShareFuture(params: AcceptPortfolioShareInput): Future[AcceptPortfolioShareOutput] = service.acceptPortfolioShare(params).promise().toFuture
+    @inline def associateBudgetWithResourceFuture(params: AssociateBudgetWithResourceInput): Future[AssociateBudgetWithResourceOutput] = service.associateBudgetWithResource(params).promise().toFuture
+    @inline def associatePrincipalWithPortfolioFuture(params: AssociatePrincipalWithPortfolioInput): Future[AssociatePrincipalWithPortfolioOutput] = service.associatePrincipalWithPortfolio(params).promise().toFuture
+    @inline def associateProductWithPortfolioFuture(params: AssociateProductWithPortfolioInput): Future[AssociateProductWithPortfolioOutput] = service.associateProductWithPortfolio(params).promise().toFuture
+    @inline def associateServiceActionWithProvisioningArtifactFuture(params: AssociateServiceActionWithProvisioningArtifactInput): Future[AssociateServiceActionWithProvisioningArtifactOutput] = service.associateServiceActionWithProvisioningArtifact(params).promise().toFuture
+    @inline def associateTagOptionWithResourceFuture(params: AssociateTagOptionWithResourceInput): Future[AssociateTagOptionWithResourceOutput] = service.associateTagOptionWithResource(params).promise().toFuture
+    @inline def batchAssociateServiceActionWithProvisioningArtifactFuture(params: BatchAssociateServiceActionWithProvisioningArtifactInput): Future[BatchAssociateServiceActionWithProvisioningArtifactOutput] = service.batchAssociateServiceActionWithProvisioningArtifact(params).promise().toFuture
+    @inline def batchDisassociateServiceActionFromProvisioningArtifactFuture(params: BatchDisassociateServiceActionFromProvisioningArtifactInput): Future[BatchDisassociateServiceActionFromProvisioningArtifactOutput] = service.batchDisassociateServiceActionFromProvisioningArtifact(params).promise().toFuture
+    @inline def copyProductFuture(params: CopyProductInput): Future[CopyProductOutput] = service.copyProduct(params).promise().toFuture
+    @inline def createConstraintFuture(params: CreateConstraintInput): Future[CreateConstraintOutput] = service.createConstraint(params).promise().toFuture
+    @inline def createPortfolioFuture(params: CreatePortfolioInput): Future[CreatePortfolioOutput] = service.createPortfolio(params).promise().toFuture
+    @inline def createPortfolioShareFuture(params: CreatePortfolioShareInput): Future[CreatePortfolioShareOutput] = service.createPortfolioShare(params).promise().toFuture
+    @inline def createProductFuture(params: CreateProductInput): Future[CreateProductOutput] = service.createProduct(params).promise().toFuture
+    @inline def createProvisionedProductPlanFuture(params: CreateProvisionedProductPlanInput): Future[CreateProvisionedProductPlanOutput] = service.createProvisionedProductPlan(params).promise().toFuture
+    @inline def createProvisioningArtifactFuture(params: CreateProvisioningArtifactInput): Future[CreateProvisioningArtifactOutput] = service.createProvisioningArtifact(params).promise().toFuture
+    @inline def createServiceActionFuture(params: CreateServiceActionInput): Future[CreateServiceActionOutput] = service.createServiceAction(params).promise().toFuture
+    @inline def createTagOptionFuture(params: CreateTagOptionInput): Future[CreateTagOptionOutput] = service.createTagOption(params).promise().toFuture
+    @inline def deleteConstraintFuture(params: DeleteConstraintInput): Future[DeleteConstraintOutput] = service.deleteConstraint(params).promise().toFuture
+    @inline def deletePortfolioFuture(params: DeletePortfolioInput): Future[DeletePortfolioOutput] = service.deletePortfolio(params).promise().toFuture
+    @inline def deletePortfolioShareFuture(params: DeletePortfolioShareInput): Future[DeletePortfolioShareOutput] = service.deletePortfolioShare(params).promise().toFuture
+    @inline def deleteProductFuture(params: DeleteProductInput): Future[DeleteProductOutput] = service.deleteProduct(params).promise().toFuture
+    @inline def deleteProvisionedProductPlanFuture(params: DeleteProvisionedProductPlanInput): Future[DeleteProvisionedProductPlanOutput] = service.deleteProvisionedProductPlan(params).promise().toFuture
+    @inline def deleteProvisioningArtifactFuture(params: DeleteProvisioningArtifactInput): Future[DeleteProvisioningArtifactOutput] = service.deleteProvisioningArtifact(params).promise().toFuture
+    @inline def deleteServiceActionFuture(params: DeleteServiceActionInput): Future[DeleteServiceActionOutput] = service.deleteServiceAction(params).promise().toFuture
+    @inline def deleteTagOptionFuture(params: DeleteTagOptionInput): Future[DeleteTagOptionOutput] = service.deleteTagOption(params).promise().toFuture
+    @inline def describeConstraintFuture(params: DescribeConstraintInput): Future[DescribeConstraintOutput] = service.describeConstraint(params).promise().toFuture
+    @inline def describeCopyProductStatusFuture(params: DescribeCopyProductStatusInput): Future[DescribeCopyProductStatusOutput] = service.describeCopyProductStatus(params).promise().toFuture
+    @inline def describePortfolioFuture(params: DescribePortfolioInput): Future[DescribePortfolioOutput] = service.describePortfolio(params).promise().toFuture
+    @inline def describePortfolioShareStatusFuture(params: DescribePortfolioShareStatusInput): Future[DescribePortfolioShareStatusOutput] = service.describePortfolioShareStatus(params).promise().toFuture
+    @inline def describeProductAsAdminFuture(params: DescribeProductAsAdminInput): Future[DescribeProductAsAdminOutput] = service.describeProductAsAdmin(params).promise().toFuture
+    @inline def describeProductFuture(params: DescribeProductInput): Future[DescribeProductOutput] = service.describeProduct(params).promise().toFuture
+    @inline def describeProductViewFuture(params: DescribeProductViewInput): Future[DescribeProductViewOutput] = service.describeProductView(params).promise().toFuture
+    @inline def describeProvisionedProductFuture(params: DescribeProvisionedProductInput): Future[DescribeProvisionedProductOutput] = service.describeProvisionedProduct(params).promise().toFuture
+    @inline def describeProvisionedProductPlanFuture(params: DescribeProvisionedProductPlanInput): Future[DescribeProvisionedProductPlanOutput] = service.describeProvisionedProductPlan(params).promise().toFuture
+    @inline def describeProvisioningArtifactFuture(params: DescribeProvisioningArtifactInput): Future[DescribeProvisioningArtifactOutput] = service.describeProvisioningArtifact(params).promise().toFuture
+    @inline def describeProvisioningParametersFuture(params: DescribeProvisioningParametersInput): Future[DescribeProvisioningParametersOutput] = service.describeProvisioningParameters(params).promise().toFuture
+    @inline def describeRecordFuture(params: DescribeRecordInput): Future[DescribeRecordOutput] = service.describeRecord(params).promise().toFuture
+    @inline def describeServiceActionExecutionParametersFuture(params: DescribeServiceActionExecutionParametersInput): Future[DescribeServiceActionExecutionParametersOutput] = service.describeServiceActionExecutionParameters(params).promise().toFuture
+    @inline def describeServiceActionFuture(params: DescribeServiceActionInput): Future[DescribeServiceActionOutput] = service.describeServiceAction(params).promise().toFuture
+    @inline def describeTagOptionFuture(params: DescribeTagOptionInput): Future[DescribeTagOptionOutput] = service.describeTagOption(params).promise().toFuture
+    @inline def disableAWSOrganizationsAccessFuture(params: DisableAWSOrganizationsAccessInput): Future[DisableAWSOrganizationsAccessOutput] = service.disableAWSOrganizationsAccess(params).promise().toFuture
+    @inline def disassociateBudgetFromResourceFuture(params: DisassociateBudgetFromResourceInput): Future[DisassociateBudgetFromResourceOutput] = service.disassociateBudgetFromResource(params).promise().toFuture
+    @inline def disassociatePrincipalFromPortfolioFuture(params: DisassociatePrincipalFromPortfolioInput): Future[DisassociatePrincipalFromPortfolioOutput] = service.disassociatePrincipalFromPortfolio(params).promise().toFuture
+    @inline def disassociateProductFromPortfolioFuture(params: DisassociateProductFromPortfolioInput): Future[DisassociateProductFromPortfolioOutput] = service.disassociateProductFromPortfolio(params).promise().toFuture
+    @inline def disassociateServiceActionFromProvisioningArtifactFuture(params: DisassociateServiceActionFromProvisioningArtifactInput): Future[DisassociateServiceActionFromProvisioningArtifactOutput] = service.disassociateServiceActionFromProvisioningArtifact(params).promise().toFuture
+    @inline def disassociateTagOptionFromResourceFuture(params: DisassociateTagOptionFromResourceInput): Future[DisassociateTagOptionFromResourceOutput] = service.disassociateTagOptionFromResource(params).promise().toFuture
+    @inline def enableAWSOrganizationsAccessFuture(params: EnableAWSOrganizationsAccessInput): Future[EnableAWSOrganizationsAccessOutput] = service.enableAWSOrganizationsAccess(params).promise().toFuture
+    @inline def executeProvisionedProductPlanFuture(params: ExecuteProvisionedProductPlanInput): Future[ExecuteProvisionedProductPlanOutput] = service.executeProvisionedProductPlan(params).promise().toFuture
+    @inline def executeProvisionedProductServiceActionFuture(params: ExecuteProvisionedProductServiceActionInput): Future[ExecuteProvisionedProductServiceActionOutput] = service.executeProvisionedProductServiceAction(params).promise().toFuture
+    @inline def getAWSOrganizationsAccessStatusFuture(params: GetAWSOrganizationsAccessStatusInput): Future[GetAWSOrganizationsAccessStatusOutput] = service.getAWSOrganizationsAccessStatus(params).promise().toFuture
+    @inline def listAcceptedPortfolioSharesFuture(params: ListAcceptedPortfolioSharesInput): Future[ListAcceptedPortfolioSharesOutput] = service.listAcceptedPortfolioShares(params).promise().toFuture
+    @inline def listBudgetsForResourceFuture(params: ListBudgetsForResourceInput): Future[ListBudgetsForResourceOutput] = service.listBudgetsForResource(params).promise().toFuture
+    @inline def listConstraintsForPortfolioFuture(params: ListConstraintsForPortfolioInput): Future[ListConstraintsForPortfolioOutput] = service.listConstraintsForPortfolio(params).promise().toFuture
+    @inline def listLaunchPathsFuture(params: ListLaunchPathsInput): Future[ListLaunchPathsOutput] = service.listLaunchPaths(params).promise().toFuture
+    @inline def listOrganizationPortfolioAccessFuture(params: ListOrganizationPortfolioAccessInput): Future[ListOrganizationPortfolioAccessOutput] = service.listOrganizationPortfolioAccess(params).promise().toFuture
+    @inline def listPortfolioAccessFuture(params: ListPortfolioAccessInput): Future[ListPortfolioAccessOutput] = service.listPortfolioAccess(params).promise().toFuture
+    @inline def listPortfoliosForProductFuture(params: ListPortfoliosForProductInput): Future[ListPortfoliosForProductOutput] = service.listPortfoliosForProduct(params).promise().toFuture
+    @inline def listPortfoliosFuture(params: ListPortfoliosInput): Future[ListPortfoliosOutput] = service.listPortfolios(params).promise().toFuture
+    @inline def listPrincipalsForPortfolioFuture(params: ListPrincipalsForPortfolioInput): Future[ListPrincipalsForPortfolioOutput] = service.listPrincipalsForPortfolio(params).promise().toFuture
+    @inline def listProvisionedProductPlansFuture(params: ListProvisionedProductPlansInput): Future[ListProvisionedProductPlansOutput] = service.listProvisionedProductPlans(params).promise().toFuture
+    @inline def listProvisioningArtifactsForServiceActionFuture(params: ListProvisioningArtifactsForServiceActionInput): Future[ListProvisioningArtifactsForServiceActionOutput] = service.listProvisioningArtifactsForServiceAction(params).promise().toFuture
+    @inline def listProvisioningArtifactsFuture(params: ListProvisioningArtifactsInput): Future[ListProvisioningArtifactsOutput] = service.listProvisioningArtifacts(params).promise().toFuture
+    @inline def listRecordHistoryFuture(params: ListRecordHistoryInput): Future[ListRecordHistoryOutput] = service.listRecordHistory(params).promise().toFuture
+    @inline def listResourcesForTagOptionFuture(params: ListResourcesForTagOptionInput): Future[ListResourcesForTagOptionOutput] = service.listResourcesForTagOption(params).promise().toFuture
+    @inline def listServiceActionsForProvisioningArtifactFuture(params: ListServiceActionsForProvisioningArtifactInput): Future[ListServiceActionsForProvisioningArtifactOutput] = service.listServiceActionsForProvisioningArtifact(params).promise().toFuture
+    @inline def listServiceActionsFuture(params: ListServiceActionsInput): Future[ListServiceActionsOutput] = service.listServiceActions(params).promise().toFuture
+    @inline def listStackInstancesForProvisionedProductFuture(params: ListStackInstancesForProvisionedProductInput): Future[ListStackInstancesForProvisionedProductOutput] = service.listStackInstancesForProvisionedProduct(params).promise().toFuture
+    @inline def listTagOptionsFuture(params: ListTagOptionsInput): Future[ListTagOptionsOutput] = service.listTagOptions(params).promise().toFuture
+    @inline def provisionProductFuture(params: ProvisionProductInput): Future[ProvisionProductOutput] = service.provisionProduct(params).promise().toFuture
+    @inline def rejectPortfolioShareFuture(params: RejectPortfolioShareInput): Future[RejectPortfolioShareOutput] = service.rejectPortfolioShare(params).promise().toFuture
+    @inline def scanProvisionedProductsFuture(params: ScanProvisionedProductsInput): Future[ScanProvisionedProductsOutput] = service.scanProvisionedProducts(params).promise().toFuture
+    @inline def searchProductsAsAdminFuture(params: SearchProductsAsAdminInput): Future[SearchProductsAsAdminOutput] = service.searchProductsAsAdmin(params).promise().toFuture
+    @inline def searchProductsFuture(params: SearchProductsInput): Future[SearchProductsOutput] = service.searchProducts(params).promise().toFuture
+    @inline def searchProvisionedProductsFuture(params: SearchProvisionedProductsInput): Future[SearchProvisionedProductsOutput] = service.searchProvisionedProducts(params).promise().toFuture
+    @inline def terminateProvisionedProductFuture(params: TerminateProvisionedProductInput): Future[TerminateProvisionedProductOutput] = service.terminateProvisionedProduct(params).promise().toFuture
+    @inline def updateConstraintFuture(params: UpdateConstraintInput): Future[UpdateConstraintOutput] = service.updateConstraint(params).promise().toFuture
+    @inline def updatePortfolioFuture(params: UpdatePortfolioInput): Future[UpdatePortfolioOutput] = service.updatePortfolio(params).promise().toFuture
+    @inline def updateProductFuture(params: UpdateProductInput): Future[UpdateProductOutput] = service.updateProduct(params).promise().toFuture
+    @inline def updateProvisionedProductFuture(params: UpdateProvisionedProductInput): Future[UpdateProvisionedProductOutput] = service.updateProvisionedProduct(params).promise().toFuture
+    @inline def updateProvisionedProductPropertiesFuture(params: UpdateProvisionedProductPropertiesInput): Future[UpdateProvisionedProductPropertiesOutput] = service.updateProvisionedProductProperties(params).promise().toFuture
+    @inline def updateProvisioningArtifactFuture(params: UpdateProvisioningArtifactInput): Future[UpdateProvisioningArtifactOutput] = service.updateProvisioningArtifact(params).promise().toFuture
+    @inline def updateServiceActionFuture(params: UpdateServiceActionInput): Future[UpdateServiceActionOutput] = service.updateServiceAction(params).promise().toFuture
+    @inline def updateTagOptionFuture(params: UpdateTagOptionInput): Future[UpdateTagOptionOutput] = service.updateTagOption(params).promise().toFuture
   }
 }
 
@@ -426,164 +280,86 @@ package servicecatalog {
     def this(config: AWSConfig) = this()
 
     def acceptPortfolioShare(params: AcceptPortfolioShareInput): Request[AcceptPortfolioShareOutput] = js.native
-    def associateBudgetWithResource(
-        params: AssociateBudgetWithResourceInput
-    ): Request[AssociateBudgetWithResourceOutput] = js.native
-    def associatePrincipalWithPortfolio(
-        params: AssociatePrincipalWithPortfolioInput
-    ): Request[AssociatePrincipalWithPortfolioOutput] = js.native
-    def associateProductWithPortfolio(
-        params: AssociateProductWithPortfolioInput
-    ): Request[AssociateProductWithPortfolioOutput] = js.native
-    def associateServiceActionWithProvisioningArtifact(
-        params: AssociateServiceActionWithProvisioningArtifactInput
-    ): Request[AssociateServiceActionWithProvisioningArtifactOutput] = js.native
-    def associateTagOptionWithResource(
-        params: AssociateTagOptionWithResourceInput
-    ): Request[AssociateTagOptionWithResourceOutput] = js.native
-    def batchAssociateServiceActionWithProvisioningArtifact(
-        params: BatchAssociateServiceActionWithProvisioningArtifactInput
-    ): Request[BatchAssociateServiceActionWithProvisioningArtifactOutput] = js.native
-    def batchDisassociateServiceActionFromProvisioningArtifact(
-        params: BatchDisassociateServiceActionFromProvisioningArtifactInput
-    ): Request[BatchDisassociateServiceActionFromProvisioningArtifactOutput] = js.native
+    def associateBudgetWithResource(params: AssociateBudgetWithResourceInput): Request[AssociateBudgetWithResourceOutput] = js.native
+    def associatePrincipalWithPortfolio(params: AssociatePrincipalWithPortfolioInput): Request[AssociatePrincipalWithPortfolioOutput] = js.native
+    def associateProductWithPortfolio(params: AssociateProductWithPortfolioInput): Request[AssociateProductWithPortfolioOutput] = js.native
+    def associateServiceActionWithProvisioningArtifact(params: AssociateServiceActionWithProvisioningArtifactInput): Request[AssociateServiceActionWithProvisioningArtifactOutput] = js.native
+    def associateTagOptionWithResource(params: AssociateTagOptionWithResourceInput): Request[AssociateTagOptionWithResourceOutput] = js.native
+    def batchAssociateServiceActionWithProvisioningArtifact(params: BatchAssociateServiceActionWithProvisioningArtifactInput): Request[BatchAssociateServiceActionWithProvisioningArtifactOutput] = js.native
+    def batchDisassociateServiceActionFromProvisioningArtifact(params: BatchDisassociateServiceActionFromProvisioningArtifactInput): Request[BatchDisassociateServiceActionFromProvisioningArtifactOutput] = js.native
     def copyProduct(params: CopyProductInput): Request[CopyProductOutput] = js.native
     def createConstraint(params: CreateConstraintInput): Request[CreateConstraintOutput] = js.native
     def createPortfolio(params: CreatePortfolioInput): Request[CreatePortfolioOutput] = js.native
     def createPortfolioShare(params: CreatePortfolioShareInput): Request[CreatePortfolioShareOutput] = js.native
     def createProduct(params: CreateProductInput): Request[CreateProductOutput] = js.native
-    def createProvisionedProductPlan(
-        params: CreateProvisionedProductPlanInput
-    ): Request[CreateProvisionedProductPlanOutput] = js.native
-    def createProvisioningArtifact(params: CreateProvisioningArtifactInput): Request[CreateProvisioningArtifactOutput] =
-      js.native
+    def createProvisionedProductPlan(params: CreateProvisionedProductPlanInput): Request[CreateProvisionedProductPlanOutput] = js.native
+    def createProvisioningArtifact(params: CreateProvisioningArtifactInput): Request[CreateProvisioningArtifactOutput] = js.native
     def createServiceAction(params: CreateServiceActionInput): Request[CreateServiceActionOutput] = js.native
     def createTagOption(params: CreateTagOptionInput): Request[CreateTagOptionOutput] = js.native
     def deleteConstraint(params: DeleteConstraintInput): Request[DeleteConstraintOutput] = js.native
     def deletePortfolio(params: DeletePortfolioInput): Request[DeletePortfolioOutput] = js.native
     def deletePortfolioShare(params: DeletePortfolioShareInput): Request[DeletePortfolioShareOutput] = js.native
     def deleteProduct(params: DeleteProductInput): Request[DeleteProductOutput] = js.native
-    def deleteProvisionedProductPlan(
-        params: DeleteProvisionedProductPlanInput
-    ): Request[DeleteProvisionedProductPlanOutput] = js.native
-    def deleteProvisioningArtifact(params: DeleteProvisioningArtifactInput): Request[DeleteProvisioningArtifactOutput] =
-      js.native
+    def deleteProvisionedProductPlan(params: DeleteProvisionedProductPlanInput): Request[DeleteProvisionedProductPlanOutput] = js.native
+    def deleteProvisioningArtifact(params: DeleteProvisioningArtifactInput): Request[DeleteProvisioningArtifactOutput] = js.native
     def deleteServiceAction(params: DeleteServiceActionInput): Request[DeleteServiceActionOutput] = js.native
     def deleteTagOption(params: DeleteTagOptionInput): Request[DeleteTagOptionOutput] = js.native
     def describeConstraint(params: DescribeConstraintInput): Request[DescribeConstraintOutput] = js.native
-    def describeCopyProductStatus(params: DescribeCopyProductStatusInput): Request[DescribeCopyProductStatusOutput] =
-      js.native
+    def describeCopyProductStatus(params: DescribeCopyProductStatusInput): Request[DescribeCopyProductStatusOutput] = js.native
     def describePortfolio(params: DescribePortfolioInput): Request[DescribePortfolioOutput] = js.native
-    def describePortfolioShareStatus(
-        params: DescribePortfolioShareStatusInput
-    ): Request[DescribePortfolioShareStatusOutput] = js.native
+    def describePortfolioShareStatus(params: DescribePortfolioShareStatusInput): Request[DescribePortfolioShareStatusOutput] = js.native
     def describeProduct(params: DescribeProductInput): Request[DescribeProductOutput] = js.native
     def describeProductAsAdmin(params: DescribeProductAsAdminInput): Request[DescribeProductAsAdminOutput] = js.native
     def describeProductView(params: DescribeProductViewInput): Request[DescribeProductViewOutput] = js.native
-    def describeProvisionedProduct(params: DescribeProvisionedProductInput): Request[DescribeProvisionedProductOutput] =
-      js.native
-    def describeProvisionedProductPlan(
-        params: DescribeProvisionedProductPlanInput
-    ): Request[DescribeProvisionedProductPlanOutput] = js.native
-    def describeProvisioningArtifact(
-        params: DescribeProvisioningArtifactInput
-    ): Request[DescribeProvisioningArtifactOutput] = js.native
-    def describeProvisioningParameters(
-        params: DescribeProvisioningParametersInput
-    ): Request[DescribeProvisioningParametersOutput] = js.native
+    def describeProvisionedProduct(params: DescribeProvisionedProductInput): Request[DescribeProvisionedProductOutput] = js.native
+    def describeProvisionedProductPlan(params: DescribeProvisionedProductPlanInput): Request[DescribeProvisionedProductPlanOutput] = js.native
+    def describeProvisioningArtifact(params: DescribeProvisioningArtifactInput): Request[DescribeProvisioningArtifactOutput] = js.native
+    def describeProvisioningParameters(params: DescribeProvisioningParametersInput): Request[DescribeProvisioningParametersOutput] = js.native
     def describeRecord(params: DescribeRecordInput): Request[DescribeRecordOutput] = js.native
     def describeServiceAction(params: DescribeServiceActionInput): Request[DescribeServiceActionOutput] = js.native
-    def describeServiceActionExecutionParameters(
-        params: DescribeServiceActionExecutionParametersInput
-    ): Request[DescribeServiceActionExecutionParametersOutput] = js.native
+    def describeServiceActionExecutionParameters(params: DescribeServiceActionExecutionParametersInput): Request[DescribeServiceActionExecutionParametersOutput] = js.native
     def describeTagOption(params: DescribeTagOptionInput): Request[DescribeTagOptionOutput] = js.native
-    def disableAWSOrganizationsAccess(
-        params: DisableAWSOrganizationsAccessInput
-    ): Request[DisableAWSOrganizationsAccessOutput] = js.native
-    def disassociateBudgetFromResource(
-        params: DisassociateBudgetFromResourceInput
-    ): Request[DisassociateBudgetFromResourceOutput] = js.native
-    def disassociatePrincipalFromPortfolio(
-        params: DisassociatePrincipalFromPortfolioInput
-    ): Request[DisassociatePrincipalFromPortfolioOutput] = js.native
-    def disassociateProductFromPortfolio(
-        params: DisassociateProductFromPortfolioInput
-    ): Request[DisassociateProductFromPortfolioOutput] = js.native
-    def disassociateServiceActionFromProvisioningArtifact(
-        params: DisassociateServiceActionFromProvisioningArtifactInput
-    ): Request[DisassociateServiceActionFromProvisioningArtifactOutput] = js.native
-    def disassociateTagOptionFromResource(
-        params: DisassociateTagOptionFromResourceInput
-    ): Request[DisassociateTagOptionFromResourceOutput] = js.native
-    def enableAWSOrganizationsAccess(
-        params: EnableAWSOrganizationsAccessInput
-    ): Request[EnableAWSOrganizationsAccessOutput] = js.native
-    def executeProvisionedProductPlan(
-        params: ExecuteProvisionedProductPlanInput
-    ): Request[ExecuteProvisionedProductPlanOutput] = js.native
-    def executeProvisionedProductServiceAction(
-        params: ExecuteProvisionedProductServiceActionInput
-    ): Request[ExecuteProvisionedProductServiceActionOutput] = js.native
-    def getAWSOrganizationsAccessStatus(
-        params: GetAWSOrganizationsAccessStatusInput
-    ): Request[GetAWSOrganizationsAccessStatusOutput] = js.native
-    def listAcceptedPortfolioShares(
-        params: ListAcceptedPortfolioSharesInput
-    ): Request[ListAcceptedPortfolioSharesOutput] = js.native
+    def disableAWSOrganizationsAccess(params: DisableAWSOrganizationsAccessInput): Request[DisableAWSOrganizationsAccessOutput] = js.native
+    def disassociateBudgetFromResource(params: DisassociateBudgetFromResourceInput): Request[DisassociateBudgetFromResourceOutput] = js.native
+    def disassociatePrincipalFromPortfolio(params: DisassociatePrincipalFromPortfolioInput): Request[DisassociatePrincipalFromPortfolioOutput] = js.native
+    def disassociateProductFromPortfolio(params: DisassociateProductFromPortfolioInput): Request[DisassociateProductFromPortfolioOutput] = js.native
+    def disassociateServiceActionFromProvisioningArtifact(params: DisassociateServiceActionFromProvisioningArtifactInput): Request[DisassociateServiceActionFromProvisioningArtifactOutput] = js.native
+    def disassociateTagOptionFromResource(params: DisassociateTagOptionFromResourceInput): Request[DisassociateTagOptionFromResourceOutput] = js.native
+    def enableAWSOrganizationsAccess(params: EnableAWSOrganizationsAccessInput): Request[EnableAWSOrganizationsAccessOutput] = js.native
+    def executeProvisionedProductPlan(params: ExecuteProvisionedProductPlanInput): Request[ExecuteProvisionedProductPlanOutput] = js.native
+    def executeProvisionedProductServiceAction(params: ExecuteProvisionedProductServiceActionInput): Request[ExecuteProvisionedProductServiceActionOutput] = js.native
+    def getAWSOrganizationsAccessStatus(params: GetAWSOrganizationsAccessStatusInput): Request[GetAWSOrganizationsAccessStatusOutput] = js.native
+    def listAcceptedPortfolioShares(params: ListAcceptedPortfolioSharesInput): Request[ListAcceptedPortfolioSharesOutput] = js.native
     def listBudgetsForResource(params: ListBudgetsForResourceInput): Request[ListBudgetsForResourceOutput] = js.native
-    def listConstraintsForPortfolio(
-        params: ListConstraintsForPortfolioInput
-    ): Request[ListConstraintsForPortfolioOutput] = js.native
+    def listConstraintsForPortfolio(params: ListConstraintsForPortfolioInput): Request[ListConstraintsForPortfolioOutput] = js.native
     def listLaunchPaths(params: ListLaunchPathsInput): Request[ListLaunchPathsOutput] = js.native
-    def listOrganizationPortfolioAccess(
-        params: ListOrganizationPortfolioAccessInput
-    ): Request[ListOrganizationPortfolioAccessOutput] = js.native
+    def listOrganizationPortfolioAccess(params: ListOrganizationPortfolioAccessInput): Request[ListOrganizationPortfolioAccessOutput] = js.native
     def listPortfolioAccess(params: ListPortfolioAccessInput): Request[ListPortfolioAccessOutput] = js.native
     def listPortfolios(params: ListPortfoliosInput): Request[ListPortfoliosOutput] = js.native
-    def listPortfoliosForProduct(params: ListPortfoliosForProductInput): Request[ListPortfoliosForProductOutput] =
-      js.native
-    def listPrincipalsForPortfolio(params: ListPrincipalsForPortfolioInput): Request[ListPrincipalsForPortfolioOutput] =
-      js.native
-    def listProvisionedProductPlans(
-        params: ListProvisionedProductPlansInput
-    ): Request[ListProvisionedProductPlansOutput] = js.native
-    def listProvisioningArtifacts(params: ListProvisioningArtifactsInput): Request[ListProvisioningArtifactsOutput] =
-      js.native
-    def listProvisioningArtifactsForServiceAction(
-        params: ListProvisioningArtifactsForServiceActionInput
-    ): Request[ListProvisioningArtifactsForServiceActionOutput] = js.native
+    def listPortfoliosForProduct(params: ListPortfoliosForProductInput): Request[ListPortfoliosForProductOutput] = js.native
+    def listPrincipalsForPortfolio(params: ListPrincipalsForPortfolioInput): Request[ListPrincipalsForPortfolioOutput] = js.native
+    def listProvisionedProductPlans(params: ListProvisionedProductPlansInput): Request[ListProvisionedProductPlansOutput] = js.native
+    def listProvisioningArtifacts(params: ListProvisioningArtifactsInput): Request[ListProvisioningArtifactsOutput] = js.native
+    def listProvisioningArtifactsForServiceAction(params: ListProvisioningArtifactsForServiceActionInput): Request[ListProvisioningArtifactsForServiceActionOutput] = js.native
     def listRecordHistory(params: ListRecordHistoryInput): Request[ListRecordHistoryOutput] = js.native
-    def listResourcesForTagOption(params: ListResourcesForTagOptionInput): Request[ListResourcesForTagOptionOutput] =
-      js.native
+    def listResourcesForTagOption(params: ListResourcesForTagOptionInput): Request[ListResourcesForTagOptionOutput] = js.native
     def listServiceActions(params: ListServiceActionsInput): Request[ListServiceActionsOutput] = js.native
-    def listServiceActionsForProvisioningArtifact(
-        params: ListServiceActionsForProvisioningArtifactInput
-    ): Request[ListServiceActionsForProvisioningArtifactOutput] = js.native
-    def listStackInstancesForProvisionedProduct(
-        params: ListStackInstancesForProvisionedProductInput
-    ): Request[ListStackInstancesForProvisionedProductOutput] = js.native
+    def listServiceActionsForProvisioningArtifact(params: ListServiceActionsForProvisioningArtifactInput): Request[ListServiceActionsForProvisioningArtifactOutput] = js.native
+    def listStackInstancesForProvisionedProduct(params: ListStackInstancesForProvisionedProductInput): Request[ListStackInstancesForProvisionedProductOutput] = js.native
     def listTagOptions(params: ListTagOptionsInput): Request[ListTagOptionsOutput] = js.native
     def provisionProduct(params: ProvisionProductInput): Request[ProvisionProductOutput] = js.native
     def rejectPortfolioShare(params: RejectPortfolioShareInput): Request[RejectPortfolioShareOutput] = js.native
-    def scanProvisionedProducts(params: ScanProvisionedProductsInput): Request[ScanProvisionedProductsOutput] =
-      js.native
+    def scanProvisionedProducts(params: ScanProvisionedProductsInput): Request[ScanProvisionedProductsOutput] = js.native
     def searchProducts(params: SearchProductsInput): Request[SearchProductsOutput] = js.native
     def searchProductsAsAdmin(params: SearchProductsAsAdminInput): Request[SearchProductsAsAdminOutput] = js.native
-    def searchProvisionedProducts(params: SearchProvisionedProductsInput): Request[SearchProvisionedProductsOutput] =
-      js.native
-    def terminateProvisionedProduct(
-        params: TerminateProvisionedProductInput
-    ): Request[TerminateProvisionedProductOutput] = js.native
+    def searchProvisionedProducts(params: SearchProvisionedProductsInput): Request[SearchProvisionedProductsOutput] = js.native
+    def terminateProvisionedProduct(params: TerminateProvisionedProductInput): Request[TerminateProvisionedProductOutput] = js.native
     def updateConstraint(params: UpdateConstraintInput): Request[UpdateConstraintOutput] = js.native
     def updatePortfolio(params: UpdatePortfolioInput): Request[UpdatePortfolioOutput] = js.native
     def updateProduct(params: UpdateProductInput): Request[UpdateProductOutput] = js.native
-    def updateProvisionedProduct(params: UpdateProvisionedProductInput): Request[UpdateProvisionedProductOutput] =
-      js.native
-    def updateProvisionedProductProperties(
-        params: UpdateProvisionedProductPropertiesInput
-    ): Request[UpdateProvisionedProductPropertiesOutput] = js.native
-    def updateProvisioningArtifact(params: UpdateProvisioningArtifactInput): Request[UpdateProvisioningArtifactOutput] =
-      js.native
+    def updateProvisionedProduct(params: UpdateProvisionedProductInput): Request[UpdateProvisionedProductOutput] = js.native
+    def updateProvisionedProductProperties(params: UpdateProvisionedProductPropertiesInput): Request[UpdateProvisionedProductPropertiesOutput] = js.native
+    def updateProvisioningArtifact(params: UpdateProvisioningArtifactInput): Request[UpdateProvisioningArtifactOutput] = js.native
     def updateServiceAction(params: UpdateServiceActionInput): Request[UpdateServiceActionOutput] = js.native
     def updateTagOption(params: UpdateTagOptionInput): Request[UpdateTagOptionOutput] = js.native
   }
@@ -887,9 +663,7 @@ package servicecatalog {
         FailedServiceActionAssociations: js.UndefOr[FailedServiceActionAssociations] = js.undefined
     ): BatchAssociateServiceActionWithProvisioningArtifactOutput = {
       val __obj = js.Dynamic.literal()
-      FailedServiceActionAssociations.foreach(__v =>
-        __obj.updateDynamic("FailedServiceActionAssociations")(__v.asInstanceOf[js.Any])
-      )
+      FailedServiceActionAssociations.foreach(__v => __obj.updateDynamic("FailedServiceActionAssociations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchAssociateServiceActionWithProvisioningArtifactOutput]
     }
   }
@@ -926,9 +700,7 @@ package servicecatalog {
         FailedServiceActionAssociations: js.UndefOr[FailedServiceActionAssociations] = js.undefined
     ): BatchDisassociateServiceActionFromProvisioningArtifactOutput = {
       val __obj = js.Dynamic.literal()
-      FailedServiceActionAssociations.foreach(__v =>
-        __obj.updateDynamic("FailedServiceActionAssociations")(__v.asInstanceOf[js.Any])
-      )
+      FailedServiceActionAssociations.foreach(__v => __obj.updateDynamic("FailedServiceActionAssociations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDisassociateServiceActionFromProvisioningArtifactOutput]
     }
   }
@@ -1074,9 +846,7 @@ package servicecatalog {
 
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       CopyOptions.foreach(__v => __obj.updateDynamic("CopyOptions")(__v.asInstanceOf[js.Any]))
-      SourceProvisioningArtifactIdentifiers.foreach(__v =>
-        __obj.updateDynamic("SourceProvisioningArtifactIdentifiers")(__v.asInstanceOf[js.Any])
-      )
+      SourceProvisioningArtifactIdentifiers.foreach(__v => __obj.updateDynamic("SourceProvisioningArtifactIdentifiers")(__v.asInstanceOf[js.Any]))
       TargetProductId.foreach(__v => __obj.updateDynamic("TargetProductId")(__v.asInstanceOf[js.Any]))
       TargetProductName.foreach(__v => __obj.updateDynamic("TargetProductName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CopyProductInput]
@@ -1329,9 +1099,7 @@ package servicecatalog {
     ): CreateProductOutput = {
       val __obj = js.Dynamic.literal()
       ProductViewDetail.foreach(__v => __obj.updateDynamic("ProductViewDetail")(__v.asInstanceOf[js.Any]))
-      ProvisioningArtifactDetail.foreach(__v =>
-        __obj.updateDynamic("ProvisioningArtifactDetail")(__v.asInstanceOf[js.Any])
-      )
+      ProvisioningArtifactDetail.foreach(__v => __obj.updateDynamic("ProvisioningArtifactDetail")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProductOutput]
     }
@@ -1456,9 +1224,7 @@ package servicecatalog {
     ): CreateProvisioningArtifactOutput = {
       val __obj = js.Dynamic.literal()
       Info.foreach(__v => __obj.updateDynamic("Info")(__v.asInstanceOf[js.Any]))
-      ProvisioningArtifactDetail.foreach(__v =>
-        __obj.updateDynamic("ProvisioningArtifactDetail")(__v.asInstanceOf[js.Any])
-      )
+      ProvisioningArtifactDetail.foreach(__v => __obj.updateDynamic("ProvisioningArtifactDetail")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProvisioningArtifactOutput]
     }
@@ -2055,9 +1821,7 @@ package servicecatalog {
       val __obj = js.Dynamic.literal()
       Budgets.foreach(__v => __obj.updateDynamic("Budgets")(__v.asInstanceOf[js.Any]))
       ProductViewDetail.foreach(__v => __obj.updateDynamic("ProductViewDetail")(__v.asInstanceOf[js.Any]))
-      ProvisioningArtifactSummaries.foreach(__v =>
-        __obj.updateDynamic("ProvisioningArtifactSummaries")(__v.asInstanceOf[js.Any])
-      )
+      ProvisioningArtifactSummaries.foreach(__v => __obj.updateDynamic("ProvisioningArtifactSummaries")(__v.asInstanceOf[js.Any]))
       TagOptions.foreach(__v => __obj.updateDynamic("TagOptions")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProductAsAdminOutput]
@@ -2234,9 +1998,7 @@ package servicecatalog {
     ): DescribeProvisionedProductPlanOutput = {
       val __obj = js.Dynamic.literal()
       NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
-      ProvisionedProductPlanDetails.foreach(__v =>
-        __obj.updateDynamic("ProvisionedProductPlanDetails")(__v.asInstanceOf[js.Any])
-      )
+      ProvisionedProductPlanDetails.foreach(__v => __obj.updateDynamic("ProvisionedProductPlanDetails")(__v.asInstanceOf[js.Any]))
       ResourceChanges.foreach(__v => __obj.updateDynamic("ResourceChanges")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProvisionedProductPlanOutput]
     }
@@ -2289,9 +2051,7 @@ package servicecatalog {
     ): DescribeProvisioningArtifactOutput = {
       val __obj = js.Dynamic.literal()
       Info.foreach(__v => __obj.updateDynamic("Info")(__v.asInstanceOf[js.Any]))
-      ProvisioningArtifactDetail.foreach(__v =>
-        __obj.updateDynamic("ProvisioningArtifactDetail")(__v.asInstanceOf[js.Any])
-      )
+      ProvisioningArtifactDetail.foreach(__v => __obj.updateDynamic("ProvisioningArtifactDetail")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProvisioningArtifactOutput]
     }
@@ -2344,12 +2104,8 @@ package servicecatalog {
     ): DescribeProvisioningParametersOutput = {
       val __obj = js.Dynamic.literal()
       ConstraintSummaries.foreach(__v => __obj.updateDynamic("ConstraintSummaries")(__v.asInstanceOf[js.Any]))
-      ProvisioningArtifactParameters.foreach(__v =>
-        __obj.updateDynamic("ProvisioningArtifactParameters")(__v.asInstanceOf[js.Any])
-      )
-      ProvisioningArtifactPreferences.foreach(__v =>
-        __obj.updateDynamic("ProvisioningArtifactPreferences")(__v.asInstanceOf[js.Any])
-      )
+      ProvisioningArtifactParameters.foreach(__v => __obj.updateDynamic("ProvisioningArtifactParameters")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactPreferences.foreach(__v => __obj.updateDynamic("ProvisioningArtifactPreferences")(__v.asInstanceOf[js.Any]))
       TagOptions.foreach(__v => __obj.updateDynamic("TagOptions")(__v.asInstanceOf[js.Any]))
       UsageInstructions.foreach(__v => __obj.updateDynamic("UsageInstructions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProvisioningParametersOutput]
@@ -3484,9 +3240,7 @@ package servicecatalog {
     ): ListProvisioningArtifactsForServiceActionOutput = {
       val __obj = js.Dynamic.literal()
       NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
-      ProvisioningArtifactViews.foreach(__v =>
-        __obj.updateDynamic("ProvisioningArtifactViews")(__v.asInstanceOf[js.Any])
-      )
+      ProvisioningArtifactViews.foreach(__v => __obj.updateDynamic("ProvisioningArtifactViews")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListProvisioningArtifactsForServiceActionOutput]
     }
   }
@@ -3526,9 +3280,7 @@ package servicecatalog {
     ): ListProvisioningArtifactsOutput = {
       val __obj = js.Dynamic.literal()
       NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
-      ProvisioningArtifactDetails.foreach(__v =>
-        __obj.updateDynamic("ProvisioningArtifactDetails")(__v.asInstanceOf[js.Any])
-      )
+      ProvisioningArtifactDetails.foreach(__v => __obj.updateDynamic("ProvisioningArtifactDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListProvisioningArtifactsOutput]
     }
   }
@@ -4362,9 +4114,7 @@ package servicecatalog {
     val EXECUTE_SUCCESS = "EXECUTE_SUCCESS".asInstanceOf[ProvisionedProductPlanStatus]
     val EXECUTE_FAILED = "EXECUTE_FAILED".asInstanceOf[ProvisionedProductPlanStatus]
 
-    val values = js.Object.freeze(
-      js.Array(CREATE_IN_PROGRESS, CREATE_SUCCESS, CREATE_FAILED, EXECUTE_IN_PROGRESS, EXECUTE_SUCCESS, EXECUTE_FAILED)
-    )
+    val values = js.Object.freeze(js.Array(CREATE_IN_PROGRESS, CREATE_SUCCESS, CREATE_FAILED, EXECUTE_IN_PROGRESS, EXECUTE_SUCCESS, EXECUTE_FAILED))
   }
 
   /**
@@ -4589,9 +4339,7 @@ package servicecatalog {
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      DisableTemplateValidation.foreach(__v =>
-        __obj.updateDynamic("DisableTemplateValidation")(__v.asInstanceOf[js.Any])
-      )
+      DisableTemplateValidation.foreach(__v => __obj.updateDynamic("DisableTemplateValidation")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisioningArtifactProperties]
@@ -4632,9 +4380,7 @@ package servicecatalog {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      ProvisioningArtifactMetadata.foreach(__v =>
-        __obj.updateDynamic("ProvisioningArtifactMetadata")(__v.asInstanceOf[js.Any])
-      )
+      ProvisioningArtifactMetadata.foreach(__v => __obj.updateDynamic("ProvisioningArtifactMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisioningArtifactSummary]
     }
   }
@@ -4718,18 +4464,10 @@ package servicecatalog {
     ): ProvisioningPreferences = {
       val __obj = js.Dynamic.literal()
       StackSetAccounts.foreach(__v => __obj.updateDynamic("StackSetAccounts")(__v.asInstanceOf[js.Any]))
-      StackSetFailureToleranceCount.foreach(__v =>
-        __obj.updateDynamic("StackSetFailureToleranceCount")(__v.asInstanceOf[js.Any])
-      )
-      StackSetFailureTolerancePercentage.foreach(__v =>
-        __obj.updateDynamic("StackSetFailureTolerancePercentage")(__v.asInstanceOf[js.Any])
-      )
-      StackSetMaxConcurrencyCount.foreach(__v =>
-        __obj.updateDynamic("StackSetMaxConcurrencyCount")(__v.asInstanceOf[js.Any])
-      )
-      StackSetMaxConcurrencyPercentage.foreach(__v =>
-        __obj.updateDynamic("StackSetMaxConcurrencyPercentage")(__v.asInstanceOf[js.Any])
-      )
+      StackSetFailureToleranceCount.foreach(__v => __obj.updateDynamic("StackSetFailureToleranceCount")(__v.asInstanceOf[js.Any]))
+      StackSetFailureTolerancePercentage.foreach(__v => __obj.updateDynamic("StackSetFailureTolerancePercentage")(__v.asInstanceOf[js.Any]))
+      StackSetMaxConcurrencyCount.foreach(__v => __obj.updateDynamic("StackSetMaxConcurrencyCount")(__v.asInstanceOf[js.Any]))
+      StackSetMaxConcurrencyPercentage.foreach(__v => __obj.updateDynamic("StackSetMaxConcurrencyPercentage")(__v.asInstanceOf[js.Any]))
       StackSetRegions.foreach(__v => __obj.updateDynamic("StackSetRegions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisioningPreferences]
     }
@@ -5304,8 +5042,7 @@ package servicecatalog {
     val RESOURCE_NOT_FOUND = "RESOURCE_NOT_FOUND".asInstanceOf[ServiceActionAssociationErrorCode]
     val THROTTLING = "THROTTLING".asInstanceOf[ServiceActionAssociationErrorCode]
 
-    val values =
-      js.Object.freeze(js.Array(DUPLICATE_RESOURCE, INTERNAL_FAILURE, LIMIT_EXCEEDED, RESOURCE_NOT_FOUND, THROTTLING))
+    val values = js.Object.freeze(js.Array(DUPLICATE_RESOURCE, INTERNAL_FAILURE, LIMIT_EXCEEDED, RESOURCE_NOT_FOUND, THROTTLING))
   }
 
   @js.native
@@ -5897,9 +5634,7 @@ package servicecatalog {
     ): UpdateProvisionedProductPropertiesOutput = {
       val __obj = js.Dynamic.literal()
       ProvisionedProductId.foreach(__v => __obj.updateDynamic("ProvisionedProductId")(__v.asInstanceOf[js.Any]))
-      ProvisionedProductProperties.foreach(__v =>
-        __obj.updateDynamic("ProvisionedProductProperties")(__v.asInstanceOf[js.Any])
-      )
+      ProvisionedProductProperties.foreach(__v => __obj.updateDynamic("ProvisionedProductProperties")(__v.asInstanceOf[js.Any]))
       RecordId.foreach(__v => __obj.updateDynamic("RecordId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateProvisionedProductPropertiesOutput]
@@ -5958,9 +5693,7 @@ package servicecatalog {
     ): UpdateProvisioningArtifactOutput = {
       val __obj = js.Dynamic.literal()
       Info.foreach(__v => __obj.updateDynamic("Info")(__v.asInstanceOf[js.Any]))
-      ProvisioningArtifactDetail.foreach(__v =>
-        __obj.updateDynamic("ProvisioningArtifactDetail")(__v.asInstanceOf[js.Any])
-      )
+      ProvisioningArtifactDetail.foreach(__v => __obj.updateDynamic("ProvisioningArtifactDetail")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateProvisioningArtifactOutput]
     }
@@ -6018,18 +5751,10 @@ package servicecatalog {
     ): UpdateProvisioningPreferences = {
       val __obj = js.Dynamic.literal()
       StackSetAccounts.foreach(__v => __obj.updateDynamic("StackSetAccounts")(__v.asInstanceOf[js.Any]))
-      StackSetFailureToleranceCount.foreach(__v =>
-        __obj.updateDynamic("StackSetFailureToleranceCount")(__v.asInstanceOf[js.Any])
-      )
-      StackSetFailureTolerancePercentage.foreach(__v =>
-        __obj.updateDynamic("StackSetFailureTolerancePercentage")(__v.asInstanceOf[js.Any])
-      )
-      StackSetMaxConcurrencyCount.foreach(__v =>
-        __obj.updateDynamic("StackSetMaxConcurrencyCount")(__v.asInstanceOf[js.Any])
-      )
-      StackSetMaxConcurrencyPercentage.foreach(__v =>
-        __obj.updateDynamic("StackSetMaxConcurrencyPercentage")(__v.asInstanceOf[js.Any])
-      )
+      StackSetFailureToleranceCount.foreach(__v => __obj.updateDynamic("StackSetFailureToleranceCount")(__v.asInstanceOf[js.Any]))
+      StackSetFailureTolerancePercentage.foreach(__v => __obj.updateDynamic("StackSetFailureTolerancePercentage")(__v.asInstanceOf[js.Any]))
+      StackSetMaxConcurrencyCount.foreach(__v => __obj.updateDynamic("StackSetMaxConcurrencyCount")(__v.asInstanceOf[js.Any]))
+      StackSetMaxConcurrencyPercentage.foreach(__v => __obj.updateDynamic("StackSetMaxConcurrencyPercentage")(__v.asInstanceOf[js.Any]))
       StackSetOperationType.foreach(__v => __obj.updateDynamic("StackSetOperationType")(__v.asInstanceOf[js.Any]))
       StackSetRegions.foreach(__v => __obj.updateDynamic("StackSetRegions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateProvisioningPreferences]

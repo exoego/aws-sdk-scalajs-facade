@@ -26,16 +26,11 @@ package object mediastoredata {
 
   implicit final class MediaStoreDataOps(private val service: MediaStoreData) extends AnyVal {
 
-    @inline def deleteObjectFuture(params: DeleteObjectRequest): Future[DeleteObjectResponse] =
-      service.deleteObject(params).promise().toFuture
-    @inline def describeObjectFuture(params: DescribeObjectRequest): Future[DescribeObjectResponse] =
-      service.describeObject(params).promise().toFuture
-    @inline def getObjectFuture(params: GetObjectRequest): Future[GetObjectResponse] =
-      service.getObject(params).promise().toFuture
-    @inline def listItemsFuture(params: ListItemsRequest): Future[ListItemsResponse] =
-      service.listItems(params).promise().toFuture
-    @inline def putObjectFuture(params: PutObjectRequest): Future[PutObjectResponse] =
-      service.putObject(params).promise().toFuture
+    @inline def deleteObjectFuture(params: DeleteObjectRequest): Future[DeleteObjectResponse] = service.deleteObject(params).promise().toFuture
+    @inline def describeObjectFuture(params: DescribeObjectRequest): Future[DescribeObjectResponse] = service.describeObject(params).promise().toFuture
+    @inline def getObjectFuture(params: GetObjectRequest): Future[GetObjectResponse] = service.getObject(params).promise().toFuture
+    @inline def listItemsFuture(params: ListItemsRequest): Future[ListItemsResponse] = service.listItems(params).promise().toFuture
+    @inline def putObjectFuture(params: PutObjectRequest): Future[PutObjectResponse] = service.putObject(params).promise().toFuture
   }
 }
 

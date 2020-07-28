@@ -20,17 +20,10 @@ package object cur {
 
   implicit final class CUROps(private val service: CUR) extends AnyVal {
 
-    @inline def deleteReportDefinitionFuture(
-        params: DeleteReportDefinitionRequest
-    ): Future[DeleteReportDefinitionResponse] = service.deleteReportDefinition(params).promise().toFuture
-    @inline def describeReportDefinitionsFuture(
-        params: DescribeReportDefinitionsRequest
-    ): Future[DescribeReportDefinitionsResponse] = service.describeReportDefinitions(params).promise().toFuture
-    @inline def modifyReportDefinitionFuture(
-        params: ModifyReportDefinitionRequest
-    ): Future[ModifyReportDefinitionResponse] = service.modifyReportDefinition(params).promise().toFuture
-    @inline def putReportDefinitionFuture(params: PutReportDefinitionRequest): Future[PutReportDefinitionResponse] =
-      service.putReportDefinition(params).promise().toFuture
+    @inline def deleteReportDefinitionFuture(params: DeleteReportDefinitionRequest): Future[DeleteReportDefinitionResponse] = service.deleteReportDefinition(params).promise().toFuture
+    @inline def describeReportDefinitionsFuture(params: DescribeReportDefinitionsRequest): Future[DescribeReportDefinitionsResponse] = service.describeReportDefinitions(params).promise().toFuture
+    @inline def modifyReportDefinitionFuture(params: ModifyReportDefinitionRequest): Future[ModifyReportDefinitionResponse] = service.modifyReportDefinition(params).promise().toFuture
+    @inline def putReportDefinitionFuture(params: PutReportDefinitionRequest): Future[PutReportDefinitionResponse] = service.putReportDefinition(params).promise().toFuture
   }
 }
 
@@ -40,13 +33,9 @@ package cur {
   class CUR() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def deleteReportDefinition(params: DeleteReportDefinitionRequest): Request[DeleteReportDefinitionResponse] =
-      js.native
-    def describeReportDefinitions(
-        params: DescribeReportDefinitionsRequest
-    ): Request[DescribeReportDefinitionsResponse] = js.native
-    def modifyReportDefinition(params: ModifyReportDefinitionRequest): Request[ModifyReportDefinitionResponse] =
-      js.native
+    def deleteReportDefinition(params: DeleteReportDefinitionRequest): Request[DeleteReportDefinitionResponse] = js.native
+    def describeReportDefinitions(params: DescribeReportDefinitionsRequest): Request[DescribeReportDefinitionsResponse] = js.native
+    def modifyReportDefinition(params: ModifyReportDefinitionRequest): Request[ModifyReportDefinitionResponse] = js.native
     def putReportDefinition(params: PutReportDefinitionRequest): Request[PutReportDefinitionResponse] = js.native
   }
 

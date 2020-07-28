@@ -38,17 +38,11 @@ package object rdsdataservice {
 
   implicit final class RDSDataServiceOps(private val service: RDSDataService) extends AnyVal {
 
-    @inline def batchExecuteStatementFuture(
-        params: BatchExecuteStatementRequest
-    ): Future[BatchExecuteStatementResponse] = service.batchExecuteStatement(params).promise().toFuture
-    @inline def beginTransactionFuture(params: BeginTransactionRequest): Future[BeginTransactionResponse] =
-      service.beginTransaction(params).promise().toFuture
-    @inline def commitTransactionFuture(params: CommitTransactionRequest): Future[CommitTransactionResponse] =
-      service.commitTransaction(params).promise().toFuture
-    @inline def executeStatementFuture(params: ExecuteStatementRequest): Future[ExecuteStatementResponse] =
-      service.executeStatement(params).promise().toFuture
-    @inline def rollbackTransactionFuture(params: RollbackTransactionRequest): Future[RollbackTransactionResponse] =
-      service.rollbackTransaction(params).promise().toFuture
+    @inline def batchExecuteStatementFuture(params: BatchExecuteStatementRequest): Future[BatchExecuteStatementResponse] = service.batchExecuteStatement(params).promise().toFuture
+    @inline def beginTransactionFuture(params: BeginTransactionRequest): Future[BeginTransactionResponse] = service.beginTransaction(params).promise().toFuture
+    @inline def commitTransactionFuture(params: CommitTransactionRequest): Future[CommitTransactionResponse] = service.commitTransaction(params).promise().toFuture
+    @inline def executeStatementFuture(params: ExecuteStatementRequest): Future[ExecuteStatementResponse] = service.executeStatement(params).promise().toFuture
+    @inline def rollbackTransactionFuture(params: RollbackTransactionRequest): Future[RollbackTransactionResponse] = service.rollbackTransaction(params).promise().toFuture
   }
 }
 
@@ -63,9 +57,7 @@ package rdsdataservice {
     def commitTransaction(params: CommitTransactionRequest): Request[CommitTransactionResponse] = js.native
     def executeStatement(params: ExecuteStatementRequest): Request[ExecuteStatementResponse] = js.native
     def rollbackTransaction(params: RollbackTransactionRequest): Request[RollbackTransactionResponse] = js.native
-    @deprecated("The ExecuteSql API is deprecated, please use the ExecuteStatement API.", "forever") def executeSql(
-        params: ExecuteSqlRequest
-    ): Request[ExecuteSqlResponse] = js.native
+    @deprecated("The ExecuteSql API is deprecated, please use the ExecuteStatement API.", "forever") def executeSql(params: ExecuteSqlRequest): Request[ExecuteSqlResponse] = js.native
   }
 
   /**

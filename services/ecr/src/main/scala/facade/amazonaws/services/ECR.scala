@@ -72,74 +72,35 @@ package object ecr {
 
   implicit final class ECROps(private val service: ECR) extends AnyVal {
 
-    @inline def batchCheckLayerAvailabilityFuture(
-        params: BatchCheckLayerAvailabilityRequest
-    ): Future[BatchCheckLayerAvailabilityResponse] = service.batchCheckLayerAvailability(params).promise().toFuture
-    @inline def batchDeleteImageFuture(params: BatchDeleteImageRequest): Future[BatchDeleteImageResponse] =
-      service.batchDeleteImage(params).promise().toFuture
-    @inline def batchGetImageFuture(params: BatchGetImageRequest): Future[BatchGetImageResponse] =
-      service.batchGetImage(params).promise().toFuture
-    @inline def completeLayerUploadFuture(params: CompleteLayerUploadRequest): Future[CompleteLayerUploadResponse] =
-      service.completeLayerUpload(params).promise().toFuture
-    @inline def createRepositoryFuture(params: CreateRepositoryRequest): Future[CreateRepositoryResponse] =
-      service.createRepository(params).promise().toFuture
-    @inline def deleteLifecyclePolicyFuture(
-        params: DeleteLifecyclePolicyRequest
-    ): Future[DeleteLifecyclePolicyResponse] = service.deleteLifecyclePolicy(params).promise().toFuture
-    @inline def deleteRepositoryFuture(params: DeleteRepositoryRequest): Future[DeleteRepositoryResponse] =
-      service.deleteRepository(params).promise().toFuture
-    @inline def deleteRepositoryPolicyFuture(
-        params: DeleteRepositoryPolicyRequest
-    ): Future[DeleteRepositoryPolicyResponse] = service.deleteRepositoryPolicy(params).promise().toFuture
-    @inline def describeImageScanFindingsFuture(
-        params: DescribeImageScanFindingsRequest
-    ): Future[DescribeImageScanFindingsResponse] = service.describeImageScanFindings(params).promise().toFuture
-    @inline def describeImagesFuture(params: DescribeImagesRequest): Future[DescribeImagesResponse] =
-      service.describeImages(params).promise().toFuture
-    @inline def describeRepositoriesFuture(params: DescribeRepositoriesRequest): Future[DescribeRepositoriesResponse] =
-      service.describeRepositories(params).promise().toFuture
-    @inline def getAuthorizationTokenFuture(
-        params: GetAuthorizationTokenRequest
-    ): Future[GetAuthorizationTokenResponse] = service.getAuthorizationToken(params).promise().toFuture
-    @inline def getDownloadUrlForLayerFuture(
-        params: GetDownloadUrlForLayerRequest
-    ): Future[GetDownloadUrlForLayerResponse] = service.getDownloadUrlForLayer(params).promise().toFuture
-    @inline def getLifecyclePolicyFuture(params: GetLifecyclePolicyRequest): Future[GetLifecyclePolicyResponse] =
-      service.getLifecyclePolicy(params).promise().toFuture
-    @inline def getLifecyclePolicyPreviewFuture(
-        params: GetLifecyclePolicyPreviewRequest
-    ): Future[GetLifecyclePolicyPreviewResponse] = service.getLifecyclePolicyPreview(params).promise().toFuture
-    @inline def getRepositoryPolicyFuture(params: GetRepositoryPolicyRequest): Future[GetRepositoryPolicyResponse] =
-      service.getRepositoryPolicy(params).promise().toFuture
-    @inline def initiateLayerUploadFuture(params: InitiateLayerUploadRequest): Future[InitiateLayerUploadResponse] =
-      service.initiateLayerUpload(params).promise().toFuture
-    @inline def listImagesFuture(params: ListImagesRequest): Future[ListImagesResponse] =
-      service.listImages(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def putImageFuture(params: PutImageRequest): Future[PutImageResponse] =
-      service.putImage(params).promise().toFuture
-    @inline def putImageScanningConfigurationFuture(
-        params: PutImageScanningConfigurationRequest
-    ): Future[PutImageScanningConfigurationResponse] = service.putImageScanningConfiguration(params).promise().toFuture
-    @inline def putImageTagMutabilityFuture(
-        params: PutImageTagMutabilityRequest
-    ): Future[PutImageTagMutabilityResponse] = service.putImageTagMutability(params).promise().toFuture
-    @inline def putLifecyclePolicyFuture(params: PutLifecyclePolicyRequest): Future[PutLifecyclePolicyResponse] =
-      service.putLifecyclePolicy(params).promise().toFuture
-    @inline def setRepositoryPolicyFuture(params: SetRepositoryPolicyRequest): Future[SetRepositoryPolicyResponse] =
-      service.setRepositoryPolicy(params).promise().toFuture
-    @inline def startImageScanFuture(params: StartImageScanRequest): Future[StartImageScanResponse] =
-      service.startImageScan(params).promise().toFuture
-    @inline def startLifecyclePolicyPreviewFuture(
-        params: StartLifecyclePolicyPreviewRequest
-    ): Future[StartLifecyclePolicyPreviewResponse] = service.startLifecyclePolicyPreview(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise().toFuture
-    @inline def uploadLayerPartFuture(params: UploadLayerPartRequest): Future[UploadLayerPartResponse] =
-      service.uploadLayerPart(params).promise().toFuture
+    @inline def batchCheckLayerAvailabilityFuture(params: BatchCheckLayerAvailabilityRequest): Future[BatchCheckLayerAvailabilityResponse] = service.batchCheckLayerAvailability(params).promise().toFuture
+    @inline def batchDeleteImageFuture(params: BatchDeleteImageRequest): Future[BatchDeleteImageResponse] = service.batchDeleteImage(params).promise().toFuture
+    @inline def batchGetImageFuture(params: BatchGetImageRequest): Future[BatchGetImageResponse] = service.batchGetImage(params).promise().toFuture
+    @inline def completeLayerUploadFuture(params: CompleteLayerUploadRequest): Future[CompleteLayerUploadResponse] = service.completeLayerUpload(params).promise().toFuture
+    @inline def createRepositoryFuture(params: CreateRepositoryRequest): Future[CreateRepositoryResponse] = service.createRepository(params).promise().toFuture
+    @inline def deleteLifecyclePolicyFuture(params: DeleteLifecyclePolicyRequest): Future[DeleteLifecyclePolicyResponse] = service.deleteLifecyclePolicy(params).promise().toFuture
+    @inline def deleteRepositoryFuture(params: DeleteRepositoryRequest): Future[DeleteRepositoryResponse] = service.deleteRepository(params).promise().toFuture
+    @inline def deleteRepositoryPolicyFuture(params: DeleteRepositoryPolicyRequest): Future[DeleteRepositoryPolicyResponse] = service.deleteRepositoryPolicy(params).promise().toFuture
+    @inline def describeImageScanFindingsFuture(params: DescribeImageScanFindingsRequest): Future[DescribeImageScanFindingsResponse] = service.describeImageScanFindings(params).promise().toFuture
+    @inline def describeImagesFuture(params: DescribeImagesRequest): Future[DescribeImagesResponse] = service.describeImages(params).promise().toFuture
+    @inline def describeRepositoriesFuture(params: DescribeRepositoriesRequest): Future[DescribeRepositoriesResponse] = service.describeRepositories(params).promise().toFuture
+    @inline def getAuthorizationTokenFuture(params: GetAuthorizationTokenRequest): Future[GetAuthorizationTokenResponse] = service.getAuthorizationToken(params).promise().toFuture
+    @inline def getDownloadUrlForLayerFuture(params: GetDownloadUrlForLayerRequest): Future[GetDownloadUrlForLayerResponse] = service.getDownloadUrlForLayer(params).promise().toFuture
+    @inline def getLifecyclePolicyFuture(params: GetLifecyclePolicyRequest): Future[GetLifecyclePolicyResponse] = service.getLifecyclePolicy(params).promise().toFuture
+    @inline def getLifecyclePolicyPreviewFuture(params: GetLifecyclePolicyPreviewRequest): Future[GetLifecyclePolicyPreviewResponse] = service.getLifecyclePolicyPreview(params).promise().toFuture
+    @inline def getRepositoryPolicyFuture(params: GetRepositoryPolicyRequest): Future[GetRepositoryPolicyResponse] = service.getRepositoryPolicy(params).promise().toFuture
+    @inline def initiateLayerUploadFuture(params: InitiateLayerUploadRequest): Future[InitiateLayerUploadResponse] = service.initiateLayerUpload(params).promise().toFuture
+    @inline def listImagesFuture(params: ListImagesRequest): Future[ListImagesResponse] = service.listImages(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def putImageFuture(params: PutImageRequest): Future[PutImageResponse] = service.putImage(params).promise().toFuture
+    @inline def putImageScanningConfigurationFuture(params: PutImageScanningConfigurationRequest): Future[PutImageScanningConfigurationResponse] = service.putImageScanningConfiguration(params).promise().toFuture
+    @inline def putImageTagMutabilityFuture(params: PutImageTagMutabilityRequest): Future[PutImageTagMutabilityResponse] = service.putImageTagMutability(params).promise().toFuture
+    @inline def putLifecyclePolicyFuture(params: PutLifecyclePolicyRequest): Future[PutLifecyclePolicyResponse] = service.putLifecyclePolicy(params).promise().toFuture
+    @inline def setRepositoryPolicyFuture(params: SetRepositoryPolicyRequest): Future[SetRepositoryPolicyResponse] = service.setRepositoryPolicy(params).promise().toFuture
+    @inline def startImageScanFuture(params: StartImageScanRequest): Future[StartImageScanResponse] = service.startImageScan(params).promise().toFuture
+    @inline def startLifecyclePolicyPreviewFuture(params: StartLifecyclePolicyPreviewRequest): Future[StartLifecyclePolicyPreviewResponse] = service.startLifecyclePolicyPreview(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def uploadLayerPartFuture(params: UploadLayerPartRequest): Future[UploadLayerPartResponse] = service.uploadLayerPart(params).promise().toFuture
   }
 }
 
@@ -149,44 +110,32 @@ package ecr {
   class ECR() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def batchCheckLayerAvailability(
-        params: BatchCheckLayerAvailabilityRequest
-    ): Request[BatchCheckLayerAvailabilityResponse] = js.native
+    def batchCheckLayerAvailability(params: BatchCheckLayerAvailabilityRequest): Request[BatchCheckLayerAvailabilityResponse] = js.native
     def batchDeleteImage(params: BatchDeleteImageRequest): Request[BatchDeleteImageResponse] = js.native
     def batchGetImage(params: BatchGetImageRequest): Request[BatchGetImageResponse] = js.native
     def completeLayerUpload(params: CompleteLayerUploadRequest): Request[CompleteLayerUploadResponse] = js.native
     def createRepository(params: CreateRepositoryRequest): Request[CreateRepositoryResponse] = js.native
     def deleteLifecyclePolicy(params: DeleteLifecyclePolicyRequest): Request[DeleteLifecyclePolicyResponse] = js.native
     def deleteRepository(params: DeleteRepositoryRequest): Request[DeleteRepositoryResponse] = js.native
-    def deleteRepositoryPolicy(params: DeleteRepositoryPolicyRequest): Request[DeleteRepositoryPolicyResponse] =
-      js.native
-    def describeImageScanFindings(
-        params: DescribeImageScanFindingsRequest
-    ): Request[DescribeImageScanFindingsResponse] = js.native
+    def deleteRepositoryPolicy(params: DeleteRepositoryPolicyRequest): Request[DeleteRepositoryPolicyResponse] = js.native
+    def describeImageScanFindings(params: DescribeImageScanFindingsRequest): Request[DescribeImageScanFindingsResponse] = js.native
     def describeImages(params: DescribeImagesRequest): Request[DescribeImagesResponse] = js.native
     def describeRepositories(params: DescribeRepositoriesRequest): Request[DescribeRepositoriesResponse] = js.native
     def getAuthorizationToken(params: GetAuthorizationTokenRequest): Request[GetAuthorizationTokenResponse] = js.native
-    def getDownloadUrlForLayer(params: GetDownloadUrlForLayerRequest): Request[GetDownloadUrlForLayerResponse] =
-      js.native
+    def getDownloadUrlForLayer(params: GetDownloadUrlForLayerRequest): Request[GetDownloadUrlForLayerResponse] = js.native
     def getLifecyclePolicy(params: GetLifecyclePolicyRequest): Request[GetLifecyclePolicyResponse] = js.native
-    def getLifecyclePolicyPreview(
-        params: GetLifecyclePolicyPreviewRequest
-    ): Request[GetLifecyclePolicyPreviewResponse] = js.native
+    def getLifecyclePolicyPreview(params: GetLifecyclePolicyPreviewRequest): Request[GetLifecyclePolicyPreviewResponse] = js.native
     def getRepositoryPolicy(params: GetRepositoryPolicyRequest): Request[GetRepositoryPolicyResponse] = js.native
     def initiateLayerUpload(params: InitiateLayerUploadRequest): Request[InitiateLayerUploadResponse] = js.native
     def listImages(params: ListImagesRequest): Request[ListImagesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putImage(params: PutImageRequest): Request[PutImageResponse] = js.native
-    def putImageScanningConfiguration(
-        params: PutImageScanningConfigurationRequest
-    ): Request[PutImageScanningConfigurationResponse] = js.native
+    def putImageScanningConfiguration(params: PutImageScanningConfigurationRequest): Request[PutImageScanningConfigurationResponse] = js.native
     def putImageTagMutability(params: PutImageTagMutabilityRequest): Request[PutImageTagMutabilityResponse] = js.native
     def putLifecyclePolicy(params: PutLifecyclePolicyRequest): Request[PutLifecyclePolicyResponse] = js.native
     def setRepositoryPolicy(params: SetRepositoryPolicyRequest): Request[SetRepositoryPolicyResponse] = js.native
     def startImageScan(params: StartImageScanRequest): Request[StartImageScanResponse] = js.native
-    def startLifecyclePolicyPreview(
-        params: StartLifecyclePolicyPreviewRequest
-    ): Request[StartLifecyclePolicyPreviewResponse] = js.native
+    def startLifecyclePolicyPreview(params: StartLifecyclePolicyPreviewRequest): Request[StartLifecyclePolicyPreviewResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def uploadLayerPart(params: UploadLayerPartRequest): Request[UploadLayerPartResponse] = js.native
@@ -448,9 +397,7 @@ package ecr {
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      imageScanningConfiguration.foreach(__v =>
-        __obj.updateDynamic("imageScanningConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      imageScanningConfiguration.foreach(__v => __obj.updateDynamic("imageScanningConfiguration")(__v.asInstanceOf[js.Any]))
       imageTagMutability.foreach(__v => __obj.updateDynamic("imageTagMutability")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRepositoryRequest]
@@ -1136,16 +1083,7 @@ package ecr {
     val MissingDigestAndTag = "MissingDigestAndTag".asInstanceOf[ImageFailureCode]
     val ImageReferencedByManifestList = "ImageReferencedByManifestList".asInstanceOf[ImageFailureCode]
 
-    val values = js.Object.freeze(
-      js.Array(
-        InvalidImageDigest,
-        InvalidImageTag,
-        ImageTagDoesNotMatchDigest,
-        ImageNotFound,
-        MissingDigestAndTag,
-        ImageReferencedByManifestList
-      )
-    )
+    val values = js.Object.freeze(js.Array(InvalidImageDigest, InvalidImageTag, ImageTagDoesNotMatchDigest, ImageNotFound, MissingDigestAndTag, ImageReferencedByManifestList))
   }
 
   /**
@@ -1224,9 +1162,7 @@ package ecr {
       findingSeverityCounts.foreach(__v => __obj.updateDynamic("findingSeverityCounts")(__v.asInstanceOf[js.Any]))
       findings.foreach(__v => __obj.updateDynamic("findings")(__v.asInstanceOf[js.Any]))
       imageScanCompletedAt.foreach(__v => __obj.updateDynamic("imageScanCompletedAt")(__v.asInstanceOf[js.Any]))
-      vulnerabilitySourceUpdatedAt.foreach(__v =>
-        __obj.updateDynamic("vulnerabilitySourceUpdatedAt")(__v.asInstanceOf[js.Any])
-      )
+      vulnerabilitySourceUpdatedAt.foreach(__v => __obj.updateDynamic("vulnerabilitySourceUpdatedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImageScanFindings]
     }
   }
@@ -1251,9 +1187,7 @@ package ecr {
       val __obj = js.Dynamic.literal()
       findingSeverityCounts.foreach(__v => __obj.updateDynamic("findingSeverityCounts")(__v.asInstanceOf[js.Any]))
       imageScanCompletedAt.foreach(__v => __obj.updateDynamic("imageScanCompletedAt")(__v.asInstanceOf[js.Any]))
-      vulnerabilitySourceUpdatedAt.foreach(__v =>
-        __obj.updateDynamic("vulnerabilitySourceUpdatedAt")(__v.asInstanceOf[js.Any])
-      )
+      vulnerabilitySourceUpdatedAt.foreach(__v => __obj.updateDynamic("vulnerabilitySourceUpdatedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImageScanFindingsSummary]
     }
   }
@@ -1708,9 +1642,7 @@ package ecr {
         repositoryName: js.UndefOr[RepositoryName] = js.undefined
     ): PutImageScanningConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-      imageScanningConfiguration.foreach(__v =>
-        __obj.updateDynamic("imageScanningConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      imageScanningConfiguration.foreach(__v => __obj.updateDynamic("imageScanningConfiguration")(__v.asInstanceOf[js.Any]))
       registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutImageScanningConfigurationResponse]
@@ -1836,9 +1768,7 @@ package ecr {
     ): Repository = {
       val __obj = js.Dynamic.literal()
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      imageScanningConfiguration.foreach(__v =>
-        __obj.updateDynamic("imageScanningConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      imageScanningConfiguration.foreach(__v => __obj.updateDynamic("imageScanningConfiguration")(__v.asInstanceOf[js.Any]))
       imageTagMutability.foreach(__v => __obj.updateDynamic("imageTagMutability")(__v.asInstanceOf[js.Any]))
       registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       repositoryArn.foreach(__v => __obj.updateDynamic("repositoryArn")(__v.asInstanceOf[js.Any]))

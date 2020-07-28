@@ -22,21 +22,13 @@ package object macie {
 
   implicit final class MacieOps(private val service: Macie) extends AnyVal {
 
-    @inline def associateMemberAccountFuture(params: AssociateMemberAccountRequest): Future[js.Object] =
-      service.associateMemberAccount(params).promise().toFuture
-    @inline def associateS3ResourcesFuture(params: AssociateS3ResourcesRequest): Future[AssociateS3ResourcesResult] =
-      service.associateS3Resources(params).promise().toFuture
-    @inline def disassociateMemberAccountFuture(params: DisassociateMemberAccountRequest): Future[js.Object] =
-      service.disassociateMemberAccount(params).promise().toFuture
-    @inline def disassociateS3ResourcesFuture(
-        params: DisassociateS3ResourcesRequest
-    ): Future[DisassociateS3ResourcesResult] = service.disassociateS3Resources(params).promise().toFuture
-    @inline def listMemberAccountsFuture(params: ListMemberAccountsRequest): Future[ListMemberAccountsResult] =
-      service.listMemberAccounts(params).promise().toFuture
-    @inline def listS3ResourcesFuture(params: ListS3ResourcesRequest): Future[ListS3ResourcesResult] =
-      service.listS3Resources(params).promise().toFuture
-    @inline def updateS3ResourcesFuture(params: UpdateS3ResourcesRequest): Future[UpdateS3ResourcesResult] =
-      service.updateS3Resources(params).promise().toFuture
+    @inline def associateMemberAccountFuture(params: AssociateMemberAccountRequest): Future[js.Object] = service.associateMemberAccount(params).promise().toFuture
+    @inline def associateS3ResourcesFuture(params: AssociateS3ResourcesRequest): Future[AssociateS3ResourcesResult] = service.associateS3Resources(params).promise().toFuture
+    @inline def disassociateMemberAccountFuture(params: DisassociateMemberAccountRequest): Future[js.Object] = service.disassociateMemberAccount(params).promise().toFuture
+    @inline def disassociateS3ResourcesFuture(params: DisassociateS3ResourcesRequest): Future[DisassociateS3ResourcesResult] = service.disassociateS3Resources(params).promise().toFuture
+    @inline def listMemberAccountsFuture(params: ListMemberAccountsRequest): Future[ListMemberAccountsResult] = service.listMemberAccounts(params).promise().toFuture
+    @inline def listS3ResourcesFuture(params: ListS3ResourcesRequest): Future[ListS3ResourcesResult] = service.listS3Resources(params).promise().toFuture
+    @inline def updateS3ResourcesFuture(params: UpdateS3ResourcesRequest): Future[UpdateS3ResourcesResult] = service.updateS3Resources(params).promise().toFuture
   }
 }
 
@@ -49,8 +41,7 @@ package macie {
     def associateMemberAccount(params: AssociateMemberAccountRequest): Request[js.Object] = js.native
     def associateS3Resources(params: AssociateS3ResourcesRequest): Request[AssociateS3ResourcesResult] = js.native
     def disassociateMemberAccount(params: DisassociateMemberAccountRequest): Request[js.Object] = js.native
-    def disassociateS3Resources(params: DisassociateS3ResourcesRequest): Request[DisassociateS3ResourcesResult] =
-      js.native
+    def disassociateS3Resources(params: DisassociateS3ResourcesRequest): Request[DisassociateS3ResourcesResult] = js.native
     def listMemberAccounts(params: ListMemberAccountsRequest): Request[ListMemberAccountsResult] = js.native
     def listS3Resources(params: ListS3ResourcesRequest): Request[ListS3ResourcesResult] = js.native
     def updateS3Resources(params: UpdateS3ResourcesRequest): Request[UpdateS3ResourcesResult] = js.native

@@ -57,255 +57,118 @@ package object pinpoint {
 
   implicit final class PinpointOps(private val service: Pinpoint) extends AnyVal {
 
-    @inline def createAppFuture(params: CreateAppRequest): Future[CreateAppResponse] =
-      service.createApp(params).promise().toFuture
-    @inline def createCampaignFuture(params: CreateCampaignRequest): Future[CreateCampaignResponse] =
-      service.createCampaign(params).promise().toFuture
-    @inline def createEmailTemplateFuture(params: CreateEmailTemplateRequest): Future[CreateEmailTemplateResponse] =
-      service.createEmailTemplate(params).promise().toFuture
-    @inline def createExportJobFuture(params: CreateExportJobRequest): Future[CreateExportJobResponse] =
-      service.createExportJob(params).promise().toFuture
-    @inline def createImportJobFuture(params: CreateImportJobRequest): Future[CreateImportJobResponse] =
-      service.createImportJob(params).promise().toFuture
-    @inline def createJourneyFuture(params: CreateJourneyRequest): Future[CreateJourneyResponse] =
-      service.createJourney(params).promise().toFuture
-    @inline def createPushTemplateFuture(params: CreatePushTemplateRequest): Future[CreatePushTemplateResponse] =
-      service.createPushTemplate(params).promise().toFuture
-    @inline def createRecommenderConfigurationFuture(
-        params: CreateRecommenderConfigurationRequest
-    ): Future[CreateRecommenderConfigurationResponse] =
-      service.createRecommenderConfiguration(params).promise().toFuture
-    @inline def createSegmentFuture(params: CreateSegmentRequest): Future[CreateSegmentResponse] =
-      service.createSegment(params).promise().toFuture
-    @inline def createSmsTemplateFuture(params: CreateSmsTemplateRequest): Future[CreateSmsTemplateResponse] =
-      service.createSmsTemplate(params).promise().toFuture
-    @inline def createVoiceTemplateFuture(params: CreateVoiceTemplateRequest): Future[CreateVoiceTemplateResponse] =
-      service.createVoiceTemplate(params).promise().toFuture
-    @inline def deleteAdmChannelFuture(params: DeleteAdmChannelRequest): Future[DeleteAdmChannelResponse] =
-      service.deleteAdmChannel(params).promise().toFuture
-    @inline def deleteApnsChannelFuture(params: DeleteApnsChannelRequest): Future[DeleteApnsChannelResponse] =
-      service.deleteApnsChannel(params).promise().toFuture
-    @inline def deleteApnsSandboxChannelFuture(
-        params: DeleteApnsSandboxChannelRequest
-    ): Future[DeleteApnsSandboxChannelResponse] = service.deleteApnsSandboxChannel(params).promise().toFuture
-    @inline def deleteApnsVoipChannelFuture(
-        params: DeleteApnsVoipChannelRequest
-    ): Future[DeleteApnsVoipChannelResponse] = service.deleteApnsVoipChannel(params).promise().toFuture
-    @inline def deleteApnsVoipSandboxChannelFuture(
-        params: DeleteApnsVoipSandboxChannelRequest
-    ): Future[DeleteApnsVoipSandboxChannelResponse] = service.deleteApnsVoipSandboxChannel(params).promise().toFuture
-    @inline def deleteAppFuture(params: DeleteAppRequest): Future[DeleteAppResponse] =
-      service.deleteApp(params).promise().toFuture
-    @inline def deleteBaiduChannelFuture(params: DeleteBaiduChannelRequest): Future[DeleteBaiduChannelResponse] =
-      service.deleteBaiduChannel(params).promise().toFuture
-    @inline def deleteCampaignFuture(params: DeleteCampaignRequest): Future[DeleteCampaignResponse] =
-      service.deleteCampaign(params).promise().toFuture
-    @inline def deleteEmailChannelFuture(params: DeleteEmailChannelRequest): Future[DeleteEmailChannelResponse] =
-      service.deleteEmailChannel(params).promise().toFuture
-    @inline def deleteEmailTemplateFuture(params: DeleteEmailTemplateRequest): Future[DeleteEmailTemplateResponse] =
-      service.deleteEmailTemplate(params).promise().toFuture
-    @inline def deleteEndpointFuture(params: DeleteEndpointRequest): Future[DeleteEndpointResponse] =
-      service.deleteEndpoint(params).promise().toFuture
-    @inline def deleteEventStreamFuture(params: DeleteEventStreamRequest): Future[DeleteEventStreamResponse] =
-      service.deleteEventStream(params).promise().toFuture
-    @inline def deleteGcmChannelFuture(params: DeleteGcmChannelRequest): Future[DeleteGcmChannelResponse] =
-      service.deleteGcmChannel(params).promise().toFuture
-    @inline def deleteJourneyFuture(params: DeleteJourneyRequest): Future[DeleteJourneyResponse] =
-      service.deleteJourney(params).promise().toFuture
-    @inline def deletePushTemplateFuture(params: DeletePushTemplateRequest): Future[DeletePushTemplateResponse] =
-      service.deletePushTemplate(params).promise().toFuture
-    @inline def deleteRecommenderConfigurationFuture(
-        params: DeleteRecommenderConfigurationRequest
-    ): Future[DeleteRecommenderConfigurationResponse] =
-      service.deleteRecommenderConfiguration(params).promise().toFuture
-    @inline def deleteSegmentFuture(params: DeleteSegmentRequest): Future[DeleteSegmentResponse] =
-      service.deleteSegment(params).promise().toFuture
-    @inline def deleteSmsChannelFuture(params: DeleteSmsChannelRequest): Future[DeleteSmsChannelResponse] =
-      service.deleteSmsChannel(params).promise().toFuture
-    @inline def deleteSmsTemplateFuture(params: DeleteSmsTemplateRequest): Future[DeleteSmsTemplateResponse] =
-      service.deleteSmsTemplate(params).promise().toFuture
-    @inline def deleteUserEndpointsFuture(params: DeleteUserEndpointsRequest): Future[DeleteUserEndpointsResponse] =
-      service.deleteUserEndpoints(params).promise().toFuture
-    @inline def deleteVoiceChannelFuture(params: DeleteVoiceChannelRequest): Future[DeleteVoiceChannelResponse] =
-      service.deleteVoiceChannel(params).promise().toFuture
-    @inline def deleteVoiceTemplateFuture(params: DeleteVoiceTemplateRequest): Future[DeleteVoiceTemplateResponse] =
-      service.deleteVoiceTemplate(params).promise().toFuture
-    @inline def getAdmChannelFuture(params: GetAdmChannelRequest): Future[GetAdmChannelResponse] =
-      service.getAdmChannel(params).promise().toFuture
-    @inline def getApnsChannelFuture(params: GetApnsChannelRequest): Future[GetApnsChannelResponse] =
-      service.getApnsChannel(params).promise().toFuture
-    @inline def getApnsSandboxChannelFuture(
-        params: GetApnsSandboxChannelRequest
-    ): Future[GetApnsSandboxChannelResponse] = service.getApnsSandboxChannel(params).promise().toFuture
-    @inline def getApnsVoipChannelFuture(params: GetApnsVoipChannelRequest): Future[GetApnsVoipChannelResponse] =
-      service.getApnsVoipChannel(params).promise().toFuture
-    @inline def getApnsVoipSandboxChannelFuture(
-        params: GetApnsVoipSandboxChannelRequest
-    ): Future[GetApnsVoipSandboxChannelResponse] = service.getApnsVoipSandboxChannel(params).promise().toFuture
+    @inline def createAppFuture(params: CreateAppRequest): Future[CreateAppResponse] = service.createApp(params).promise().toFuture
+    @inline def createCampaignFuture(params: CreateCampaignRequest): Future[CreateCampaignResponse] = service.createCampaign(params).promise().toFuture
+    @inline def createEmailTemplateFuture(params: CreateEmailTemplateRequest): Future[CreateEmailTemplateResponse] = service.createEmailTemplate(params).promise().toFuture
+    @inline def createExportJobFuture(params: CreateExportJobRequest): Future[CreateExportJobResponse] = service.createExportJob(params).promise().toFuture
+    @inline def createImportJobFuture(params: CreateImportJobRequest): Future[CreateImportJobResponse] = service.createImportJob(params).promise().toFuture
+    @inline def createJourneyFuture(params: CreateJourneyRequest): Future[CreateJourneyResponse] = service.createJourney(params).promise().toFuture
+    @inline def createPushTemplateFuture(params: CreatePushTemplateRequest): Future[CreatePushTemplateResponse] = service.createPushTemplate(params).promise().toFuture
+    @inline def createRecommenderConfigurationFuture(params: CreateRecommenderConfigurationRequest): Future[CreateRecommenderConfigurationResponse] = service.createRecommenderConfiguration(params).promise().toFuture
+    @inline def createSegmentFuture(params: CreateSegmentRequest): Future[CreateSegmentResponse] = service.createSegment(params).promise().toFuture
+    @inline def createSmsTemplateFuture(params: CreateSmsTemplateRequest): Future[CreateSmsTemplateResponse] = service.createSmsTemplate(params).promise().toFuture
+    @inline def createVoiceTemplateFuture(params: CreateVoiceTemplateRequest): Future[CreateVoiceTemplateResponse] = service.createVoiceTemplate(params).promise().toFuture
+    @inline def deleteAdmChannelFuture(params: DeleteAdmChannelRequest): Future[DeleteAdmChannelResponse] = service.deleteAdmChannel(params).promise().toFuture
+    @inline def deleteApnsChannelFuture(params: DeleteApnsChannelRequest): Future[DeleteApnsChannelResponse] = service.deleteApnsChannel(params).promise().toFuture
+    @inline def deleteApnsSandboxChannelFuture(params: DeleteApnsSandboxChannelRequest): Future[DeleteApnsSandboxChannelResponse] = service.deleteApnsSandboxChannel(params).promise().toFuture
+    @inline def deleteApnsVoipChannelFuture(params: DeleteApnsVoipChannelRequest): Future[DeleteApnsVoipChannelResponse] = service.deleteApnsVoipChannel(params).promise().toFuture
+    @inline def deleteApnsVoipSandboxChannelFuture(params: DeleteApnsVoipSandboxChannelRequest): Future[DeleteApnsVoipSandboxChannelResponse] = service.deleteApnsVoipSandboxChannel(params).promise().toFuture
+    @inline def deleteAppFuture(params: DeleteAppRequest): Future[DeleteAppResponse] = service.deleteApp(params).promise().toFuture
+    @inline def deleteBaiduChannelFuture(params: DeleteBaiduChannelRequest): Future[DeleteBaiduChannelResponse] = service.deleteBaiduChannel(params).promise().toFuture
+    @inline def deleteCampaignFuture(params: DeleteCampaignRequest): Future[DeleteCampaignResponse] = service.deleteCampaign(params).promise().toFuture
+    @inline def deleteEmailChannelFuture(params: DeleteEmailChannelRequest): Future[DeleteEmailChannelResponse] = service.deleteEmailChannel(params).promise().toFuture
+    @inline def deleteEmailTemplateFuture(params: DeleteEmailTemplateRequest): Future[DeleteEmailTemplateResponse] = service.deleteEmailTemplate(params).promise().toFuture
+    @inline def deleteEndpointFuture(params: DeleteEndpointRequest): Future[DeleteEndpointResponse] = service.deleteEndpoint(params).promise().toFuture
+    @inline def deleteEventStreamFuture(params: DeleteEventStreamRequest): Future[DeleteEventStreamResponse] = service.deleteEventStream(params).promise().toFuture
+    @inline def deleteGcmChannelFuture(params: DeleteGcmChannelRequest): Future[DeleteGcmChannelResponse] = service.deleteGcmChannel(params).promise().toFuture
+    @inline def deleteJourneyFuture(params: DeleteJourneyRequest): Future[DeleteJourneyResponse] = service.deleteJourney(params).promise().toFuture
+    @inline def deletePushTemplateFuture(params: DeletePushTemplateRequest): Future[DeletePushTemplateResponse] = service.deletePushTemplate(params).promise().toFuture
+    @inline def deleteRecommenderConfigurationFuture(params: DeleteRecommenderConfigurationRequest): Future[DeleteRecommenderConfigurationResponse] = service.deleteRecommenderConfiguration(params).promise().toFuture
+    @inline def deleteSegmentFuture(params: DeleteSegmentRequest): Future[DeleteSegmentResponse] = service.deleteSegment(params).promise().toFuture
+    @inline def deleteSmsChannelFuture(params: DeleteSmsChannelRequest): Future[DeleteSmsChannelResponse] = service.deleteSmsChannel(params).promise().toFuture
+    @inline def deleteSmsTemplateFuture(params: DeleteSmsTemplateRequest): Future[DeleteSmsTemplateResponse] = service.deleteSmsTemplate(params).promise().toFuture
+    @inline def deleteUserEndpointsFuture(params: DeleteUserEndpointsRequest): Future[DeleteUserEndpointsResponse] = service.deleteUserEndpoints(params).promise().toFuture
+    @inline def deleteVoiceChannelFuture(params: DeleteVoiceChannelRequest): Future[DeleteVoiceChannelResponse] = service.deleteVoiceChannel(params).promise().toFuture
+    @inline def deleteVoiceTemplateFuture(params: DeleteVoiceTemplateRequest): Future[DeleteVoiceTemplateResponse] = service.deleteVoiceTemplate(params).promise().toFuture
+    @inline def getAdmChannelFuture(params: GetAdmChannelRequest): Future[GetAdmChannelResponse] = service.getAdmChannel(params).promise().toFuture
+    @inline def getApnsChannelFuture(params: GetApnsChannelRequest): Future[GetApnsChannelResponse] = service.getApnsChannel(params).promise().toFuture
+    @inline def getApnsSandboxChannelFuture(params: GetApnsSandboxChannelRequest): Future[GetApnsSandboxChannelResponse] = service.getApnsSandboxChannel(params).promise().toFuture
+    @inline def getApnsVoipChannelFuture(params: GetApnsVoipChannelRequest): Future[GetApnsVoipChannelResponse] = service.getApnsVoipChannel(params).promise().toFuture
+    @inline def getApnsVoipSandboxChannelFuture(params: GetApnsVoipSandboxChannelRequest): Future[GetApnsVoipSandboxChannelResponse] = service.getApnsVoipSandboxChannel(params).promise().toFuture
     @inline def getAppFuture(params: GetAppRequest): Future[GetAppResponse] = service.getApp(params).promise().toFuture
-    @inline def getApplicationDateRangeKpiFuture(
-        params: GetApplicationDateRangeKpiRequest
-    ): Future[GetApplicationDateRangeKpiResponse] = service.getApplicationDateRangeKpi(params).promise().toFuture
-    @inline def getApplicationSettingsFuture(
-        params: GetApplicationSettingsRequest
-    ): Future[GetApplicationSettingsResponse] = service.getApplicationSettings(params).promise().toFuture
-    @inline def getAppsFuture(params: GetAppsRequest): Future[GetAppsResponse] =
-      service.getApps(params).promise().toFuture
-    @inline def getBaiduChannelFuture(params: GetBaiduChannelRequest): Future[GetBaiduChannelResponse] =
-      service.getBaiduChannel(params).promise().toFuture
-    @inline def getCampaignActivitiesFuture(
-        params: GetCampaignActivitiesRequest
-    ): Future[GetCampaignActivitiesResponse] = service.getCampaignActivities(params).promise().toFuture
-    @inline def getCampaignDateRangeKpiFuture(
-        params: GetCampaignDateRangeKpiRequest
-    ): Future[GetCampaignDateRangeKpiResponse] = service.getCampaignDateRangeKpi(params).promise().toFuture
-    @inline def getCampaignFuture(params: GetCampaignRequest): Future[GetCampaignResponse] =
-      service.getCampaign(params).promise().toFuture
-    @inline def getCampaignVersionFuture(params: GetCampaignVersionRequest): Future[GetCampaignVersionResponse] =
-      service.getCampaignVersion(params).promise().toFuture
-    @inline def getCampaignVersionsFuture(params: GetCampaignVersionsRequest): Future[GetCampaignVersionsResponse] =
-      service.getCampaignVersions(params).promise().toFuture
-    @inline def getCampaignsFuture(params: GetCampaignsRequest): Future[GetCampaignsResponse] =
-      service.getCampaigns(params).promise().toFuture
-    @inline def getChannelsFuture(params: GetChannelsRequest): Future[GetChannelsResponse] =
-      service.getChannels(params).promise().toFuture
-    @inline def getEmailChannelFuture(params: GetEmailChannelRequest): Future[GetEmailChannelResponse] =
-      service.getEmailChannel(params).promise().toFuture
-    @inline def getEmailTemplateFuture(params: GetEmailTemplateRequest): Future[GetEmailTemplateResponse] =
-      service.getEmailTemplate(params).promise().toFuture
-    @inline def getEndpointFuture(params: GetEndpointRequest): Future[GetEndpointResponse] =
-      service.getEndpoint(params).promise().toFuture
-    @inline def getEventStreamFuture(params: GetEventStreamRequest): Future[GetEventStreamResponse] =
-      service.getEventStream(params).promise().toFuture
-    @inline def getExportJobFuture(params: GetExportJobRequest): Future[GetExportJobResponse] =
-      service.getExportJob(params).promise().toFuture
-    @inline def getExportJobsFuture(params: GetExportJobsRequest): Future[GetExportJobsResponse] =
-      service.getExportJobs(params).promise().toFuture
-    @inline def getGcmChannelFuture(params: GetGcmChannelRequest): Future[GetGcmChannelResponse] =
-      service.getGcmChannel(params).promise().toFuture
-    @inline def getImportJobFuture(params: GetImportJobRequest): Future[GetImportJobResponse] =
-      service.getImportJob(params).promise().toFuture
-    @inline def getImportJobsFuture(params: GetImportJobsRequest): Future[GetImportJobsResponse] =
-      service.getImportJobs(params).promise().toFuture
-    @inline def getJourneyDateRangeKpiFuture(
-        params: GetJourneyDateRangeKpiRequest
-    ): Future[GetJourneyDateRangeKpiResponse] = service.getJourneyDateRangeKpi(params).promise().toFuture
-    @inline def getJourneyExecutionActivityMetricsFuture(
-        params: GetJourneyExecutionActivityMetricsRequest
-    ): Future[GetJourneyExecutionActivityMetricsResponse] =
-      service.getJourneyExecutionActivityMetrics(params).promise().toFuture
-    @inline def getJourneyExecutionMetricsFuture(
-        params: GetJourneyExecutionMetricsRequest
-    ): Future[GetJourneyExecutionMetricsResponse] = service.getJourneyExecutionMetrics(params).promise().toFuture
-    @inline def getJourneyFuture(params: GetJourneyRequest): Future[GetJourneyResponse] =
-      service.getJourney(params).promise().toFuture
-    @inline def getPushTemplateFuture(params: GetPushTemplateRequest): Future[GetPushTemplateResponse] =
-      service.getPushTemplate(params).promise().toFuture
-    @inline def getRecommenderConfigurationFuture(
-        params: GetRecommenderConfigurationRequest
-    ): Future[GetRecommenderConfigurationResponse] = service.getRecommenderConfiguration(params).promise().toFuture
-    @inline def getRecommenderConfigurationsFuture(
-        params: GetRecommenderConfigurationsRequest
-    ): Future[GetRecommenderConfigurationsResponse] = service.getRecommenderConfigurations(params).promise().toFuture
-    @inline def getSegmentExportJobsFuture(params: GetSegmentExportJobsRequest): Future[GetSegmentExportJobsResponse] =
-      service.getSegmentExportJobs(params).promise().toFuture
-    @inline def getSegmentFuture(params: GetSegmentRequest): Future[GetSegmentResponse] =
-      service.getSegment(params).promise().toFuture
-    @inline def getSegmentImportJobsFuture(params: GetSegmentImportJobsRequest): Future[GetSegmentImportJobsResponse] =
-      service.getSegmentImportJobs(params).promise().toFuture
-    @inline def getSegmentVersionFuture(params: GetSegmentVersionRequest): Future[GetSegmentVersionResponse] =
-      service.getSegmentVersion(params).promise().toFuture
-    @inline def getSegmentVersionsFuture(params: GetSegmentVersionsRequest): Future[GetSegmentVersionsResponse] =
-      service.getSegmentVersions(params).promise().toFuture
-    @inline def getSegmentsFuture(params: GetSegmentsRequest): Future[GetSegmentsResponse] =
-      service.getSegments(params).promise().toFuture
-    @inline def getSmsChannelFuture(params: GetSmsChannelRequest): Future[GetSmsChannelResponse] =
-      service.getSmsChannel(params).promise().toFuture
-    @inline def getSmsTemplateFuture(params: GetSmsTemplateRequest): Future[GetSmsTemplateResponse] =
-      service.getSmsTemplate(params).promise().toFuture
-    @inline def getUserEndpointsFuture(params: GetUserEndpointsRequest): Future[GetUserEndpointsResponse] =
-      service.getUserEndpoints(params).promise().toFuture
-    @inline def getVoiceChannelFuture(params: GetVoiceChannelRequest): Future[GetVoiceChannelResponse] =
-      service.getVoiceChannel(params).promise().toFuture
-    @inline def getVoiceTemplateFuture(params: GetVoiceTemplateRequest): Future[GetVoiceTemplateResponse] =
-      service.getVoiceTemplate(params).promise().toFuture
-    @inline def listJourneysFuture(params: ListJourneysRequest): Future[ListJourneysResponse] =
-      service.listJourneys(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def listTemplateVersionsFuture(params: ListTemplateVersionsRequest): Future[ListTemplateVersionsResponse] =
-      service.listTemplateVersions(params).promise().toFuture
-    @inline def listTemplatesFuture(params: ListTemplatesRequest): Future[ListTemplatesResponse] =
-      service.listTemplates(params).promise().toFuture
-    @inline def phoneNumberValidateFuture(params: PhoneNumberValidateRequest): Future[PhoneNumberValidateResponse] =
-      service.phoneNumberValidate(params).promise().toFuture
-    @inline def putEventStreamFuture(params: PutEventStreamRequest): Future[PutEventStreamResponse] =
-      service.putEventStream(params).promise().toFuture
-    @inline def putEventsFuture(params: PutEventsRequest): Future[PutEventsResponse] =
-      service.putEvents(params).promise().toFuture
-    @inline def removeAttributesFuture(params: RemoveAttributesRequest): Future[RemoveAttributesResponse] =
-      service.removeAttributes(params).promise().toFuture
-    @inline def sendMessagesFuture(params: SendMessagesRequest): Future[SendMessagesResponse] =
-      service.sendMessages(params).promise().toFuture
-    @inline def sendUsersMessagesFuture(params: SendUsersMessagesRequest): Future[SendUsersMessagesResponse] =
-      service.sendUsersMessages(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise().toFuture
-    @inline def updateAdmChannelFuture(params: UpdateAdmChannelRequest): Future[UpdateAdmChannelResponse] =
-      service.updateAdmChannel(params).promise().toFuture
-    @inline def updateApnsChannelFuture(params: UpdateApnsChannelRequest): Future[UpdateApnsChannelResponse] =
-      service.updateApnsChannel(params).promise().toFuture
-    @inline def updateApnsSandboxChannelFuture(
-        params: UpdateApnsSandboxChannelRequest
-    ): Future[UpdateApnsSandboxChannelResponse] = service.updateApnsSandboxChannel(params).promise().toFuture
-    @inline def updateApnsVoipChannelFuture(
-        params: UpdateApnsVoipChannelRequest
-    ): Future[UpdateApnsVoipChannelResponse] = service.updateApnsVoipChannel(params).promise().toFuture
-    @inline def updateApnsVoipSandboxChannelFuture(
-        params: UpdateApnsVoipSandboxChannelRequest
-    ): Future[UpdateApnsVoipSandboxChannelResponse] = service.updateApnsVoipSandboxChannel(params).promise().toFuture
-    @inline def updateApplicationSettingsFuture(
-        params: UpdateApplicationSettingsRequest
-    ): Future[UpdateApplicationSettingsResponse] = service.updateApplicationSettings(params).promise().toFuture
-    @inline def updateBaiduChannelFuture(params: UpdateBaiduChannelRequest): Future[UpdateBaiduChannelResponse] =
-      service.updateBaiduChannel(params).promise().toFuture
-    @inline def updateCampaignFuture(params: UpdateCampaignRequest): Future[UpdateCampaignResponse] =
-      service.updateCampaign(params).promise().toFuture
-    @inline def updateEmailChannelFuture(params: UpdateEmailChannelRequest): Future[UpdateEmailChannelResponse] =
-      service.updateEmailChannel(params).promise().toFuture
-    @inline def updateEmailTemplateFuture(params: UpdateEmailTemplateRequest): Future[UpdateEmailTemplateResponse] =
-      service.updateEmailTemplate(params).promise().toFuture
-    @inline def updateEndpointFuture(params: UpdateEndpointRequest): Future[UpdateEndpointResponse] =
-      service.updateEndpoint(params).promise().toFuture
-    @inline def updateEndpointsBatchFuture(params: UpdateEndpointsBatchRequest): Future[UpdateEndpointsBatchResponse] =
-      service.updateEndpointsBatch(params).promise().toFuture
-    @inline def updateGcmChannelFuture(params: UpdateGcmChannelRequest): Future[UpdateGcmChannelResponse] =
-      service.updateGcmChannel(params).promise().toFuture
-    @inline def updateJourneyFuture(params: UpdateJourneyRequest): Future[UpdateJourneyResponse] =
-      service.updateJourney(params).promise().toFuture
-    @inline def updateJourneyStateFuture(params: UpdateJourneyStateRequest): Future[UpdateJourneyStateResponse] =
-      service.updateJourneyState(params).promise().toFuture
-    @inline def updatePushTemplateFuture(params: UpdatePushTemplateRequest): Future[UpdatePushTemplateResponse] =
-      service.updatePushTemplate(params).promise().toFuture
-    @inline def updateRecommenderConfigurationFuture(
-        params: UpdateRecommenderConfigurationRequest
-    ): Future[UpdateRecommenderConfigurationResponse] =
-      service.updateRecommenderConfiguration(params).promise().toFuture
-    @inline def updateSegmentFuture(params: UpdateSegmentRequest): Future[UpdateSegmentResponse] =
-      service.updateSegment(params).promise().toFuture
-    @inline def updateSmsChannelFuture(params: UpdateSmsChannelRequest): Future[UpdateSmsChannelResponse] =
-      service.updateSmsChannel(params).promise().toFuture
-    @inline def updateSmsTemplateFuture(params: UpdateSmsTemplateRequest): Future[UpdateSmsTemplateResponse] =
-      service.updateSmsTemplate(params).promise().toFuture
-    @inline def updateTemplateActiveVersionFuture(
-        params: UpdateTemplateActiveVersionRequest
-    ): Future[UpdateTemplateActiveVersionResponse] = service.updateTemplateActiveVersion(params).promise().toFuture
-    @inline def updateVoiceChannelFuture(params: UpdateVoiceChannelRequest): Future[UpdateVoiceChannelResponse] =
-      service.updateVoiceChannel(params).promise().toFuture
-    @inline def updateVoiceTemplateFuture(params: UpdateVoiceTemplateRequest): Future[UpdateVoiceTemplateResponse] =
-      service.updateVoiceTemplate(params).promise().toFuture
+    @inline def getApplicationDateRangeKpiFuture(params: GetApplicationDateRangeKpiRequest): Future[GetApplicationDateRangeKpiResponse] = service.getApplicationDateRangeKpi(params).promise().toFuture
+    @inline def getApplicationSettingsFuture(params: GetApplicationSettingsRequest): Future[GetApplicationSettingsResponse] = service.getApplicationSettings(params).promise().toFuture
+    @inline def getAppsFuture(params: GetAppsRequest): Future[GetAppsResponse] = service.getApps(params).promise().toFuture
+    @inline def getBaiduChannelFuture(params: GetBaiduChannelRequest): Future[GetBaiduChannelResponse] = service.getBaiduChannel(params).promise().toFuture
+    @inline def getCampaignActivitiesFuture(params: GetCampaignActivitiesRequest): Future[GetCampaignActivitiesResponse] = service.getCampaignActivities(params).promise().toFuture
+    @inline def getCampaignDateRangeKpiFuture(params: GetCampaignDateRangeKpiRequest): Future[GetCampaignDateRangeKpiResponse] = service.getCampaignDateRangeKpi(params).promise().toFuture
+    @inline def getCampaignFuture(params: GetCampaignRequest): Future[GetCampaignResponse] = service.getCampaign(params).promise().toFuture
+    @inline def getCampaignVersionFuture(params: GetCampaignVersionRequest): Future[GetCampaignVersionResponse] = service.getCampaignVersion(params).promise().toFuture
+    @inline def getCampaignVersionsFuture(params: GetCampaignVersionsRequest): Future[GetCampaignVersionsResponse] = service.getCampaignVersions(params).promise().toFuture
+    @inline def getCampaignsFuture(params: GetCampaignsRequest): Future[GetCampaignsResponse] = service.getCampaigns(params).promise().toFuture
+    @inline def getChannelsFuture(params: GetChannelsRequest): Future[GetChannelsResponse] = service.getChannels(params).promise().toFuture
+    @inline def getEmailChannelFuture(params: GetEmailChannelRequest): Future[GetEmailChannelResponse] = service.getEmailChannel(params).promise().toFuture
+    @inline def getEmailTemplateFuture(params: GetEmailTemplateRequest): Future[GetEmailTemplateResponse] = service.getEmailTemplate(params).promise().toFuture
+    @inline def getEndpointFuture(params: GetEndpointRequest): Future[GetEndpointResponse] = service.getEndpoint(params).promise().toFuture
+    @inline def getEventStreamFuture(params: GetEventStreamRequest): Future[GetEventStreamResponse] = service.getEventStream(params).promise().toFuture
+    @inline def getExportJobFuture(params: GetExportJobRequest): Future[GetExportJobResponse] = service.getExportJob(params).promise().toFuture
+    @inline def getExportJobsFuture(params: GetExportJobsRequest): Future[GetExportJobsResponse] = service.getExportJobs(params).promise().toFuture
+    @inline def getGcmChannelFuture(params: GetGcmChannelRequest): Future[GetGcmChannelResponse] = service.getGcmChannel(params).promise().toFuture
+    @inline def getImportJobFuture(params: GetImportJobRequest): Future[GetImportJobResponse] = service.getImportJob(params).promise().toFuture
+    @inline def getImportJobsFuture(params: GetImportJobsRequest): Future[GetImportJobsResponse] = service.getImportJobs(params).promise().toFuture
+    @inline def getJourneyDateRangeKpiFuture(params: GetJourneyDateRangeKpiRequest): Future[GetJourneyDateRangeKpiResponse] = service.getJourneyDateRangeKpi(params).promise().toFuture
+    @inline def getJourneyExecutionActivityMetricsFuture(params: GetJourneyExecutionActivityMetricsRequest): Future[GetJourneyExecutionActivityMetricsResponse] = service.getJourneyExecutionActivityMetrics(params).promise().toFuture
+    @inline def getJourneyExecutionMetricsFuture(params: GetJourneyExecutionMetricsRequest): Future[GetJourneyExecutionMetricsResponse] = service.getJourneyExecutionMetrics(params).promise().toFuture
+    @inline def getJourneyFuture(params: GetJourneyRequest): Future[GetJourneyResponse] = service.getJourney(params).promise().toFuture
+    @inline def getPushTemplateFuture(params: GetPushTemplateRequest): Future[GetPushTemplateResponse] = service.getPushTemplate(params).promise().toFuture
+    @inline def getRecommenderConfigurationFuture(params: GetRecommenderConfigurationRequest): Future[GetRecommenderConfigurationResponse] = service.getRecommenderConfiguration(params).promise().toFuture
+    @inline def getRecommenderConfigurationsFuture(params: GetRecommenderConfigurationsRequest): Future[GetRecommenderConfigurationsResponse] = service.getRecommenderConfigurations(params).promise().toFuture
+    @inline def getSegmentExportJobsFuture(params: GetSegmentExportJobsRequest): Future[GetSegmentExportJobsResponse] = service.getSegmentExportJobs(params).promise().toFuture
+    @inline def getSegmentFuture(params: GetSegmentRequest): Future[GetSegmentResponse] = service.getSegment(params).promise().toFuture
+    @inline def getSegmentImportJobsFuture(params: GetSegmentImportJobsRequest): Future[GetSegmentImportJobsResponse] = service.getSegmentImportJobs(params).promise().toFuture
+    @inline def getSegmentVersionFuture(params: GetSegmentVersionRequest): Future[GetSegmentVersionResponse] = service.getSegmentVersion(params).promise().toFuture
+    @inline def getSegmentVersionsFuture(params: GetSegmentVersionsRequest): Future[GetSegmentVersionsResponse] = service.getSegmentVersions(params).promise().toFuture
+    @inline def getSegmentsFuture(params: GetSegmentsRequest): Future[GetSegmentsResponse] = service.getSegments(params).promise().toFuture
+    @inline def getSmsChannelFuture(params: GetSmsChannelRequest): Future[GetSmsChannelResponse] = service.getSmsChannel(params).promise().toFuture
+    @inline def getSmsTemplateFuture(params: GetSmsTemplateRequest): Future[GetSmsTemplateResponse] = service.getSmsTemplate(params).promise().toFuture
+    @inline def getUserEndpointsFuture(params: GetUserEndpointsRequest): Future[GetUserEndpointsResponse] = service.getUserEndpoints(params).promise().toFuture
+    @inline def getVoiceChannelFuture(params: GetVoiceChannelRequest): Future[GetVoiceChannelResponse] = service.getVoiceChannel(params).promise().toFuture
+    @inline def getVoiceTemplateFuture(params: GetVoiceTemplateRequest): Future[GetVoiceTemplateResponse] = service.getVoiceTemplate(params).promise().toFuture
+    @inline def listJourneysFuture(params: ListJourneysRequest): Future[ListJourneysResponse] = service.listJourneys(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listTemplateVersionsFuture(params: ListTemplateVersionsRequest): Future[ListTemplateVersionsResponse] = service.listTemplateVersions(params).promise().toFuture
+    @inline def listTemplatesFuture(params: ListTemplatesRequest): Future[ListTemplatesResponse] = service.listTemplates(params).promise().toFuture
+    @inline def phoneNumberValidateFuture(params: PhoneNumberValidateRequest): Future[PhoneNumberValidateResponse] = service.phoneNumberValidate(params).promise().toFuture
+    @inline def putEventStreamFuture(params: PutEventStreamRequest): Future[PutEventStreamResponse] = service.putEventStream(params).promise().toFuture
+    @inline def putEventsFuture(params: PutEventsRequest): Future[PutEventsResponse] = service.putEvents(params).promise().toFuture
+    @inline def removeAttributesFuture(params: RemoveAttributesRequest): Future[RemoveAttributesResponse] = service.removeAttributes(params).promise().toFuture
+    @inline def sendMessagesFuture(params: SendMessagesRequest): Future[SendMessagesResponse] = service.sendMessages(params).promise().toFuture
+    @inline def sendUsersMessagesFuture(params: SendUsersMessagesRequest): Future[SendUsersMessagesResponse] = service.sendUsersMessages(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
+    @inline def updateAdmChannelFuture(params: UpdateAdmChannelRequest): Future[UpdateAdmChannelResponse] = service.updateAdmChannel(params).promise().toFuture
+    @inline def updateApnsChannelFuture(params: UpdateApnsChannelRequest): Future[UpdateApnsChannelResponse] = service.updateApnsChannel(params).promise().toFuture
+    @inline def updateApnsSandboxChannelFuture(params: UpdateApnsSandboxChannelRequest): Future[UpdateApnsSandboxChannelResponse] = service.updateApnsSandboxChannel(params).promise().toFuture
+    @inline def updateApnsVoipChannelFuture(params: UpdateApnsVoipChannelRequest): Future[UpdateApnsVoipChannelResponse] = service.updateApnsVoipChannel(params).promise().toFuture
+    @inline def updateApnsVoipSandboxChannelFuture(params: UpdateApnsVoipSandboxChannelRequest): Future[UpdateApnsVoipSandboxChannelResponse] = service.updateApnsVoipSandboxChannel(params).promise().toFuture
+    @inline def updateApplicationSettingsFuture(params: UpdateApplicationSettingsRequest): Future[UpdateApplicationSettingsResponse] = service.updateApplicationSettings(params).promise().toFuture
+    @inline def updateBaiduChannelFuture(params: UpdateBaiduChannelRequest): Future[UpdateBaiduChannelResponse] = service.updateBaiduChannel(params).promise().toFuture
+    @inline def updateCampaignFuture(params: UpdateCampaignRequest): Future[UpdateCampaignResponse] = service.updateCampaign(params).promise().toFuture
+    @inline def updateEmailChannelFuture(params: UpdateEmailChannelRequest): Future[UpdateEmailChannelResponse] = service.updateEmailChannel(params).promise().toFuture
+    @inline def updateEmailTemplateFuture(params: UpdateEmailTemplateRequest): Future[UpdateEmailTemplateResponse] = service.updateEmailTemplate(params).promise().toFuture
+    @inline def updateEndpointFuture(params: UpdateEndpointRequest): Future[UpdateEndpointResponse] = service.updateEndpoint(params).promise().toFuture
+    @inline def updateEndpointsBatchFuture(params: UpdateEndpointsBatchRequest): Future[UpdateEndpointsBatchResponse] = service.updateEndpointsBatch(params).promise().toFuture
+    @inline def updateGcmChannelFuture(params: UpdateGcmChannelRequest): Future[UpdateGcmChannelResponse] = service.updateGcmChannel(params).promise().toFuture
+    @inline def updateJourneyFuture(params: UpdateJourneyRequest): Future[UpdateJourneyResponse] = service.updateJourney(params).promise().toFuture
+    @inline def updateJourneyStateFuture(params: UpdateJourneyStateRequest): Future[UpdateJourneyStateResponse] = service.updateJourneyState(params).promise().toFuture
+    @inline def updatePushTemplateFuture(params: UpdatePushTemplateRequest): Future[UpdatePushTemplateResponse] = service.updatePushTemplate(params).promise().toFuture
+    @inline def updateRecommenderConfigurationFuture(params: UpdateRecommenderConfigurationRequest): Future[UpdateRecommenderConfigurationResponse] = service.updateRecommenderConfiguration(params).promise().toFuture
+    @inline def updateSegmentFuture(params: UpdateSegmentRequest): Future[UpdateSegmentResponse] = service.updateSegment(params).promise().toFuture
+    @inline def updateSmsChannelFuture(params: UpdateSmsChannelRequest): Future[UpdateSmsChannelResponse] = service.updateSmsChannel(params).promise().toFuture
+    @inline def updateSmsTemplateFuture(params: UpdateSmsTemplateRequest): Future[UpdateSmsTemplateResponse] = service.updateSmsTemplate(params).promise().toFuture
+    @inline def updateTemplateActiveVersionFuture(params: UpdateTemplateActiveVersionRequest): Future[UpdateTemplateActiveVersionResponse] = service.updateTemplateActiveVersion(params).promise().toFuture
+    @inline def updateVoiceChannelFuture(params: UpdateVoiceChannelRequest): Future[UpdateVoiceChannelResponse] = service.updateVoiceChannel(params).promise().toFuture
+    @inline def updateVoiceTemplateFuture(params: UpdateVoiceTemplateRequest): Future[UpdateVoiceTemplateResponse] = service.updateVoiceTemplate(params).promise().toFuture
   }
 }
 
@@ -322,20 +185,15 @@ package pinpoint {
     def createImportJob(params: CreateImportJobRequest): Request[CreateImportJobResponse] = js.native
     def createJourney(params: CreateJourneyRequest): Request[CreateJourneyResponse] = js.native
     def createPushTemplate(params: CreatePushTemplateRequest): Request[CreatePushTemplateResponse] = js.native
-    def createRecommenderConfiguration(
-        params: CreateRecommenderConfigurationRequest
-    ): Request[CreateRecommenderConfigurationResponse] = js.native
+    def createRecommenderConfiguration(params: CreateRecommenderConfigurationRequest): Request[CreateRecommenderConfigurationResponse] = js.native
     def createSegment(params: CreateSegmentRequest): Request[CreateSegmentResponse] = js.native
     def createSmsTemplate(params: CreateSmsTemplateRequest): Request[CreateSmsTemplateResponse] = js.native
     def createVoiceTemplate(params: CreateVoiceTemplateRequest): Request[CreateVoiceTemplateResponse] = js.native
     def deleteAdmChannel(params: DeleteAdmChannelRequest): Request[DeleteAdmChannelResponse] = js.native
     def deleteApnsChannel(params: DeleteApnsChannelRequest): Request[DeleteApnsChannelResponse] = js.native
-    def deleteApnsSandboxChannel(params: DeleteApnsSandboxChannelRequest): Request[DeleteApnsSandboxChannelResponse] =
-      js.native
+    def deleteApnsSandboxChannel(params: DeleteApnsSandboxChannelRequest): Request[DeleteApnsSandboxChannelResponse] = js.native
     def deleteApnsVoipChannel(params: DeleteApnsVoipChannelRequest): Request[DeleteApnsVoipChannelResponse] = js.native
-    def deleteApnsVoipSandboxChannel(
-        params: DeleteApnsVoipSandboxChannelRequest
-    ): Request[DeleteApnsVoipSandboxChannelResponse] = js.native
+    def deleteApnsVoipSandboxChannel(params: DeleteApnsVoipSandboxChannelRequest): Request[DeleteApnsVoipSandboxChannelResponse] = js.native
     def deleteApp(params: DeleteAppRequest): Request[DeleteAppResponse] = js.native
     def deleteBaiduChannel(params: DeleteBaiduChannelRequest): Request[DeleteBaiduChannelResponse] = js.native
     def deleteCampaign(params: DeleteCampaignRequest): Request[DeleteCampaignResponse] = js.native
@@ -346,9 +204,7 @@ package pinpoint {
     def deleteGcmChannel(params: DeleteGcmChannelRequest): Request[DeleteGcmChannelResponse] = js.native
     def deleteJourney(params: DeleteJourneyRequest): Request[DeleteJourneyResponse] = js.native
     def deletePushTemplate(params: DeletePushTemplateRequest): Request[DeletePushTemplateResponse] = js.native
-    def deleteRecommenderConfiguration(
-        params: DeleteRecommenderConfigurationRequest
-    ): Request[DeleteRecommenderConfigurationResponse] = js.native
+    def deleteRecommenderConfiguration(params: DeleteRecommenderConfigurationRequest): Request[DeleteRecommenderConfigurationResponse] = js.native
     def deleteSegment(params: DeleteSegmentRequest): Request[DeleteSegmentResponse] = js.native
     def deleteSmsChannel(params: DeleteSmsChannelRequest): Request[DeleteSmsChannelResponse] = js.native
     def deleteSmsTemplate(params: DeleteSmsTemplateRequest): Request[DeleteSmsTemplateResponse] = js.native
@@ -359,21 +215,15 @@ package pinpoint {
     def getApnsChannel(params: GetApnsChannelRequest): Request[GetApnsChannelResponse] = js.native
     def getApnsSandboxChannel(params: GetApnsSandboxChannelRequest): Request[GetApnsSandboxChannelResponse] = js.native
     def getApnsVoipChannel(params: GetApnsVoipChannelRequest): Request[GetApnsVoipChannelResponse] = js.native
-    def getApnsVoipSandboxChannel(
-        params: GetApnsVoipSandboxChannelRequest
-    ): Request[GetApnsVoipSandboxChannelResponse] = js.native
+    def getApnsVoipSandboxChannel(params: GetApnsVoipSandboxChannelRequest): Request[GetApnsVoipSandboxChannelResponse] = js.native
     def getApp(params: GetAppRequest): Request[GetAppResponse] = js.native
-    def getApplicationDateRangeKpi(
-        params: GetApplicationDateRangeKpiRequest
-    ): Request[GetApplicationDateRangeKpiResponse] = js.native
-    def getApplicationSettings(params: GetApplicationSettingsRequest): Request[GetApplicationSettingsResponse] =
-      js.native
+    def getApplicationDateRangeKpi(params: GetApplicationDateRangeKpiRequest): Request[GetApplicationDateRangeKpiResponse] = js.native
+    def getApplicationSettings(params: GetApplicationSettingsRequest): Request[GetApplicationSettingsResponse] = js.native
     def getApps(params: GetAppsRequest): Request[GetAppsResponse] = js.native
     def getBaiduChannel(params: GetBaiduChannelRequest): Request[GetBaiduChannelResponse] = js.native
     def getCampaign(params: GetCampaignRequest): Request[GetCampaignResponse] = js.native
     def getCampaignActivities(params: GetCampaignActivitiesRequest): Request[GetCampaignActivitiesResponse] = js.native
-    def getCampaignDateRangeKpi(params: GetCampaignDateRangeKpiRequest): Request[GetCampaignDateRangeKpiResponse] =
-      js.native
+    def getCampaignDateRangeKpi(params: GetCampaignDateRangeKpiRequest): Request[GetCampaignDateRangeKpiResponse] = js.native
     def getCampaignVersion(params: GetCampaignVersionRequest): Request[GetCampaignVersionResponse] = js.native
     def getCampaignVersions(params: GetCampaignVersionsRequest): Request[GetCampaignVersionsResponse] = js.native
     def getCampaigns(params: GetCampaignsRequest): Request[GetCampaignsResponse] = js.native
@@ -388,21 +238,12 @@ package pinpoint {
     def getImportJob(params: GetImportJobRequest): Request[GetImportJobResponse] = js.native
     def getImportJobs(params: GetImportJobsRequest): Request[GetImportJobsResponse] = js.native
     def getJourney(params: GetJourneyRequest): Request[GetJourneyResponse] = js.native
-    def getJourneyDateRangeKpi(params: GetJourneyDateRangeKpiRequest): Request[GetJourneyDateRangeKpiResponse] =
-      js.native
-    def getJourneyExecutionActivityMetrics(
-        params: GetJourneyExecutionActivityMetricsRequest
-    ): Request[GetJourneyExecutionActivityMetricsResponse] = js.native
-    def getJourneyExecutionMetrics(
-        params: GetJourneyExecutionMetricsRequest
-    ): Request[GetJourneyExecutionMetricsResponse] = js.native
+    def getJourneyDateRangeKpi(params: GetJourneyDateRangeKpiRequest): Request[GetJourneyDateRangeKpiResponse] = js.native
+    def getJourneyExecutionActivityMetrics(params: GetJourneyExecutionActivityMetricsRequest): Request[GetJourneyExecutionActivityMetricsResponse] = js.native
+    def getJourneyExecutionMetrics(params: GetJourneyExecutionMetricsRequest): Request[GetJourneyExecutionMetricsResponse] = js.native
     def getPushTemplate(params: GetPushTemplateRequest): Request[GetPushTemplateResponse] = js.native
-    def getRecommenderConfiguration(
-        params: GetRecommenderConfigurationRequest
-    ): Request[GetRecommenderConfigurationResponse] = js.native
-    def getRecommenderConfigurations(
-        params: GetRecommenderConfigurationsRequest
-    ): Request[GetRecommenderConfigurationsResponse] = js.native
+    def getRecommenderConfiguration(params: GetRecommenderConfigurationRequest): Request[GetRecommenderConfigurationResponse] = js.native
+    def getRecommenderConfigurations(params: GetRecommenderConfigurationsRequest): Request[GetRecommenderConfigurationsResponse] = js.native
     def getSegment(params: GetSegmentRequest): Request[GetSegmentResponse] = js.native
     def getSegmentExportJobs(params: GetSegmentExportJobsRequest): Request[GetSegmentExportJobsResponse] = js.native
     def getSegmentImportJobs(params: GetSegmentImportJobsRequest): Request[GetSegmentImportJobsResponse] = js.native
@@ -428,15 +269,10 @@ package pinpoint {
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateAdmChannel(params: UpdateAdmChannelRequest): Request[UpdateAdmChannelResponse] = js.native
     def updateApnsChannel(params: UpdateApnsChannelRequest): Request[UpdateApnsChannelResponse] = js.native
-    def updateApnsSandboxChannel(params: UpdateApnsSandboxChannelRequest): Request[UpdateApnsSandboxChannelResponse] =
-      js.native
+    def updateApnsSandboxChannel(params: UpdateApnsSandboxChannelRequest): Request[UpdateApnsSandboxChannelResponse] = js.native
     def updateApnsVoipChannel(params: UpdateApnsVoipChannelRequest): Request[UpdateApnsVoipChannelResponse] = js.native
-    def updateApnsVoipSandboxChannel(
-        params: UpdateApnsVoipSandboxChannelRequest
-    ): Request[UpdateApnsVoipSandboxChannelResponse] = js.native
-    def updateApplicationSettings(
-        params: UpdateApplicationSettingsRequest
-    ): Request[UpdateApplicationSettingsResponse] = js.native
+    def updateApnsVoipSandboxChannel(params: UpdateApnsVoipSandboxChannelRequest): Request[UpdateApnsVoipSandboxChannelResponse] = js.native
+    def updateApplicationSettings(params: UpdateApplicationSettingsRequest): Request[UpdateApplicationSettingsResponse] = js.native
     def updateBaiduChannel(params: UpdateBaiduChannelRequest): Request[UpdateBaiduChannelResponse] = js.native
     def updateCampaign(params: UpdateCampaignRequest): Request[UpdateCampaignResponse] = js.native
     def updateEmailChannel(params: UpdateEmailChannelRequest): Request[UpdateEmailChannelResponse] = js.native
@@ -447,15 +283,11 @@ package pinpoint {
     def updateJourney(params: UpdateJourneyRequest): Request[UpdateJourneyResponse] = js.native
     def updateJourneyState(params: UpdateJourneyStateRequest): Request[UpdateJourneyStateResponse] = js.native
     def updatePushTemplate(params: UpdatePushTemplateRequest): Request[UpdatePushTemplateResponse] = js.native
-    def updateRecommenderConfiguration(
-        params: UpdateRecommenderConfigurationRequest
-    ): Request[UpdateRecommenderConfigurationResponse] = js.native
+    def updateRecommenderConfiguration(params: UpdateRecommenderConfigurationRequest): Request[UpdateRecommenderConfigurationResponse] = js.native
     def updateSegment(params: UpdateSegmentRequest): Request[UpdateSegmentResponse] = js.native
     def updateSmsChannel(params: UpdateSmsChannelRequest): Request[UpdateSmsChannelResponse] = js.native
     def updateSmsTemplate(params: UpdateSmsTemplateRequest): Request[UpdateSmsTemplateResponse] = js.native
-    def updateTemplateActiveVersion(
-        params: UpdateTemplateActiveVersionRequest
-    ): Request[UpdateTemplateActiveVersionResponse] = js.native
+    def updateTemplateActiveVersion(params: UpdateTemplateActiveVersionRequest): Request[UpdateTemplateActiveVersionResponse] = js.native
     def updateVoiceChannel(params: UpdateVoiceChannelRequest): Request[UpdateVoiceChannelResponse] = js.native
     def updateVoiceTemplate(params: UpdateVoiceTemplateRequest): Request[UpdateVoiceTemplateResponse] = js.native
   }
@@ -629,9 +461,7 @@ package pinpoint {
       val __obj = js.Dynamic.literal()
       BundleId.foreach(__v => __obj.updateDynamic("BundleId")(__v.asInstanceOf[js.Any]))
       Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
-      DefaultAuthenticationMethod.foreach(__v =>
-        __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
-      )
+      DefaultAuthenticationMethod.foreach(__v => __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       PrivateKey.foreach(__v => __obj.updateDynamic("PrivateKey")(__v.asInstanceOf[js.Any]))
       TeamId.foreach(__v => __obj.updateDynamic("TeamId")(__v.asInstanceOf[js.Any]))
@@ -682,9 +512,7 @@ package pinpoint {
 
       ApplicationId.foreach(__v => __obj.updateDynamic("ApplicationId")(__v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      DefaultAuthenticationMethod.foreach(__v =>
-        __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
-      )
+      DefaultAuthenticationMethod.foreach(__v => __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       HasCredential.foreach(__v => __obj.updateDynamic("HasCredential")(__v.asInstanceOf[js.Any]))
       HasTokenKey.foreach(__v => __obj.updateDynamic("HasTokenKey")(__v.asInstanceOf[js.Any]))
@@ -753,9 +581,7 @@ package pinpoint {
       CollapseId.foreach(__v => __obj.updateDynamic("CollapseId")(__v.asInstanceOf[js.Any]))
       Data.foreach(__v => __obj.updateDynamic("Data")(__v.asInstanceOf[js.Any]))
       MediaUrl.foreach(__v => __obj.updateDynamic("MediaUrl")(__v.asInstanceOf[js.Any]))
-      PreferredAuthenticationMethod.foreach(__v =>
-        __obj.updateDynamic("PreferredAuthenticationMethod")(__v.asInstanceOf[js.Any])
-      )
+      PreferredAuthenticationMethod.foreach(__v => __obj.updateDynamic("PreferredAuthenticationMethod")(__v.asInstanceOf[js.Any]))
       Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
       RawContent.foreach(__v => __obj.updateDynamic("RawContent")(__v.asInstanceOf[js.Any]))
       SilentPush.foreach(__v => __obj.updateDynamic("SilentPush")(__v.asInstanceOf[js.Any]))
@@ -836,9 +662,7 @@ package pinpoint {
       val __obj = js.Dynamic.literal()
       BundleId.foreach(__v => __obj.updateDynamic("BundleId")(__v.asInstanceOf[js.Any]))
       Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
-      DefaultAuthenticationMethod.foreach(__v =>
-        __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
-      )
+      DefaultAuthenticationMethod.foreach(__v => __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       PrivateKey.foreach(__v => __obj.updateDynamic("PrivateKey")(__v.asInstanceOf[js.Any]))
       TeamId.foreach(__v => __obj.updateDynamic("TeamId")(__v.asInstanceOf[js.Any]))
@@ -889,9 +713,7 @@ package pinpoint {
 
       ApplicationId.foreach(__v => __obj.updateDynamic("ApplicationId")(__v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      DefaultAuthenticationMethod.foreach(__v =>
-        __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
-      )
+      DefaultAuthenticationMethod.foreach(__v => __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       HasCredential.foreach(__v => __obj.updateDynamic("HasCredential")(__v.asInstanceOf[js.Any]))
       HasTokenKey.foreach(__v => __obj.updateDynamic("HasTokenKey")(__v.asInstanceOf[js.Any]))
@@ -934,9 +756,7 @@ package pinpoint {
       val __obj = js.Dynamic.literal()
       BundleId.foreach(__v => __obj.updateDynamic("BundleId")(__v.asInstanceOf[js.Any]))
       Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
-      DefaultAuthenticationMethod.foreach(__v =>
-        __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
-      )
+      DefaultAuthenticationMethod.foreach(__v => __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       PrivateKey.foreach(__v => __obj.updateDynamic("PrivateKey")(__v.asInstanceOf[js.Any]))
       TeamId.foreach(__v => __obj.updateDynamic("TeamId")(__v.asInstanceOf[js.Any]))
@@ -987,9 +807,7 @@ package pinpoint {
 
       ApplicationId.foreach(__v => __obj.updateDynamic("ApplicationId")(__v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      DefaultAuthenticationMethod.foreach(__v =>
-        __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
-      )
+      DefaultAuthenticationMethod.foreach(__v => __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       HasCredential.foreach(__v => __obj.updateDynamic("HasCredential")(__v.asInstanceOf[js.Any]))
       HasTokenKey.foreach(__v => __obj.updateDynamic("HasTokenKey")(__v.asInstanceOf[js.Any]))
@@ -1032,9 +850,7 @@ package pinpoint {
       val __obj = js.Dynamic.literal()
       BundleId.foreach(__v => __obj.updateDynamic("BundleId")(__v.asInstanceOf[js.Any]))
       Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
-      DefaultAuthenticationMethod.foreach(__v =>
-        __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
-      )
+      DefaultAuthenticationMethod.foreach(__v => __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       PrivateKey.foreach(__v => __obj.updateDynamic("PrivateKey")(__v.asInstanceOf[js.Any]))
       TeamId.foreach(__v => __obj.updateDynamic("TeamId")(__v.asInstanceOf[js.Any]))
@@ -1085,9 +901,7 @@ package pinpoint {
 
       ApplicationId.foreach(__v => __obj.updateDynamic("ApplicationId")(__v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      DefaultAuthenticationMethod.foreach(__v =>
-        __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
-      )
+      DefaultAuthenticationMethod.foreach(__v => __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       HasCredential.foreach(__v => __obj.updateDynamic("HasCredential")(__v.asInstanceOf[js.Any]))
       HasTokenKey.foreach(__v => __obj.updateDynamic("HasTokenKey")(__v.asInstanceOf[js.Any]))
@@ -1885,9 +1699,7 @@ package pinpoint {
       )
 
       AdditionalTreatments.foreach(__v => __obj.updateDynamic("AdditionalTreatments")(__v.asInstanceOf[js.Any]))
-      CustomDeliveryConfiguration.foreach(__v =>
-        __obj.updateDynamic("CustomDeliveryConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      CustomDeliveryConfiguration.foreach(__v => __obj.updateDynamic("CustomDeliveryConfiguration")(__v.asInstanceOf[js.Any]))
       DefaultState.foreach(__v => __obj.updateDynamic("DefaultState")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       HoldoutPercent.foreach(__v => __obj.updateDynamic("HoldoutPercent")(__v.asInstanceOf[js.Any]))
@@ -2047,9 +1859,7 @@ package pinpoint {
     val BAIDU = "BAIDU".asInstanceOf[ChannelType]
     val CUSTOM = "CUSTOM".asInstanceOf[ChannelType]
 
-    val values = js.Object.freeze(
-      js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM)
-    )
+    val values = js.Object.freeze(js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM))
   }
 
   /**
@@ -2454,18 +2264,10 @@ package pinpoint {
       Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      RecommendationProviderIdType.foreach(__v =>
-        __obj.updateDynamic("RecommendationProviderIdType")(__v.asInstanceOf[js.Any])
-      )
-      RecommendationTransformerUri.foreach(__v =>
-        __obj.updateDynamic("RecommendationTransformerUri")(__v.asInstanceOf[js.Any])
-      )
-      RecommendationsDisplayName.foreach(__v =>
-        __obj.updateDynamic("RecommendationsDisplayName")(__v.asInstanceOf[js.Any])
-      )
-      RecommendationsPerMessage.foreach(__v =>
-        __obj.updateDynamic("RecommendationsPerMessage")(__v.asInstanceOf[js.Any])
-      )
+      RecommendationProviderIdType.foreach(__v => __obj.updateDynamic("RecommendationProviderIdType")(__v.asInstanceOf[js.Any]))
+      RecommendationTransformerUri.foreach(__v => __obj.updateDynamic("RecommendationTransformerUri")(__v.asInstanceOf[js.Any]))
+      RecommendationsDisplayName.foreach(__v => __obj.updateDynamic("RecommendationsDisplayName")(__v.asInstanceOf[js.Any]))
+      RecommendationsPerMessage.foreach(__v => __obj.updateDynamic("RecommendationsPerMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRecommenderConfiguration]
     }
   }
@@ -3626,9 +3428,7 @@ package pinpoint {
     val OPT_OUT = "OPT_OUT".asInstanceOf[DeliveryStatus]
     val DUPLICATE = "DUPLICATE".asInstanceOf[DeliveryStatus]
 
-    val values = js.Object.freeze(
-      js.Array(SUCCESSFUL, THROTTLED, TEMPORARY_FAILURE, PERMANENT_FAILURE, UNKNOWN_FAILURE, OPT_OUT, DUPLICATE)
-    )
+    val values = js.Object.freeze(js.Array(SUCCESSFUL, THROTTLED, TEMPORARY_FAILURE, PERMANENT_FAILURE, UNKNOWN_FAILURE, OPT_OUT, DUPLICATE))
   }
 
   @js.native
@@ -3674,9 +3474,7 @@ package pinpoint {
       APNSMessage.foreach(__v => __obj.updateDynamic("APNSMessage")(__v.asInstanceOf[js.Any]))
       BaiduMessage.foreach(__v => __obj.updateDynamic("BaiduMessage")(__v.asInstanceOf[js.Any]))
       DefaultMessage.foreach(__v => __obj.updateDynamic("DefaultMessage")(__v.asInstanceOf[js.Any]))
-      DefaultPushNotificationMessage.foreach(__v =>
-        __obj.updateDynamic("DefaultPushNotificationMessage")(__v.asInstanceOf[js.Any])
-      )
+      DefaultPushNotificationMessage.foreach(__v => __obj.updateDynamic("DefaultPushNotificationMessage")(__v.asInstanceOf[js.Any]))
       EmailMessage.foreach(__v => __obj.updateDynamic("EmailMessage")(__v.asInstanceOf[js.Any]))
       GCMMessage.foreach(__v => __obj.updateDynamic("GCMMessage")(__v.asInstanceOf[js.Any]))
       SMSMessage.foreach(__v => __obj.updateDynamic("SMSMessage")(__v.asInstanceOf[js.Any]))
@@ -3819,9 +3617,7 @@ package pinpoint {
     ): EmailMessage = {
       val __obj = js.Dynamic.literal()
       Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
-      FeedbackForwardingAddress.foreach(__v =>
-        __obj.updateDynamic("FeedbackForwardingAddress")(__v.asInstanceOf[js.Any])
-      )
+      FeedbackForwardingAddress.foreach(__v => __obj.updateDynamic("FeedbackForwardingAddress")(__v.asInstanceOf[js.Any]))
       FromAddress.foreach(__v => __obj.updateDynamic("FromAddress")(__v.asInstanceOf[js.Any]))
       RawEmail.foreach(__v => __obj.updateDynamic("RawEmail")(__v.asInstanceOf[js.Any]))
       ReplyToAddresses.foreach(__v => __obj.updateDynamic("ReplyToAddresses")(__v.asInstanceOf[js.Any]))
@@ -6927,19 +6723,7 @@ package pinpoint {
     val FAILING = "FAILING".asInstanceOf[JobStatus]
     val FAILED = "FAILED".asInstanceOf[JobStatus]
 
-    val values = js.Object.freeze(
-      js.Array(
-        CREATED,
-        PREPARING_FOR_INITIALIZATION,
-        INITIALIZING,
-        PROCESSING,
-        PENDING_JOB,
-        COMPLETING,
-        COMPLETED,
-        FAILING,
-        FAILED
-      )
-    )
+    val values = js.Object.freeze(js.Array(CREATED, PREPARING_FOR_INITIALIZATION, INITIALIZING, PROCESSING, PENDING_JOB, COMPLETING, COMPLETED, FAILING, FAILED))
   }
 
   /**
@@ -7839,9 +7623,7 @@ package pinpoint {
       Carrier.foreach(__v => __obj.updateDynamic("Carrier")(__v.asInstanceOf[js.Any]))
       City.foreach(__v => __obj.updateDynamic("City")(__v.asInstanceOf[js.Any]))
       CleansedPhoneNumberE164.foreach(__v => __obj.updateDynamic("CleansedPhoneNumberE164")(__v.asInstanceOf[js.Any]))
-      CleansedPhoneNumberNational.foreach(__v =>
-        __obj.updateDynamic("CleansedPhoneNumberNational")(__v.asInstanceOf[js.Any])
-      )
+      CleansedPhoneNumberNational.foreach(__v => __obj.updateDynamic("CleansedPhoneNumberNational")(__v.asInstanceOf[js.Any]))
       Country.foreach(__v => __obj.updateDynamic("Country")(__v.asInstanceOf[js.Any]))
       CountryCodeIso2.foreach(__v => __obj.updateDynamic("CountryCodeIso2")(__v.asInstanceOf[js.Any]))
       CountryCodeNumeric.foreach(__v => __obj.updateDynamic("CountryCodeNumeric")(__v.asInstanceOf[js.Any]))
@@ -8323,18 +8105,10 @@ package pinpoint {
       Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      RecommendationProviderIdType.foreach(__v =>
-        __obj.updateDynamic("RecommendationProviderIdType")(__v.asInstanceOf[js.Any])
-      )
-      RecommendationTransformerUri.foreach(__v =>
-        __obj.updateDynamic("RecommendationTransformerUri")(__v.asInstanceOf[js.Any])
-      )
-      RecommendationsDisplayName.foreach(__v =>
-        __obj.updateDynamic("RecommendationsDisplayName")(__v.asInstanceOf[js.Any])
-      )
-      RecommendationsPerMessage.foreach(__v =>
-        __obj.updateDynamic("RecommendationsPerMessage")(__v.asInstanceOf[js.Any])
-      )
+      RecommendationProviderIdType.foreach(__v => __obj.updateDynamic("RecommendationProviderIdType")(__v.asInstanceOf[js.Any]))
+      RecommendationTransformerUri.foreach(__v => __obj.updateDynamic("RecommendationTransformerUri")(__v.asInstanceOf[js.Any]))
+      RecommendationsDisplayName.foreach(__v => __obj.updateDynamic("RecommendationsDisplayName")(__v.asInstanceOf[js.Any]))
+      RecommendationsPerMessage.foreach(__v => __obj.updateDynamic("RecommendationsPerMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecommenderConfigurationResponse]
     }
   }
@@ -8508,14 +8282,10 @@ package pinpoint {
       IsArchived.foreach(__v => __obj.updateDynamic("IsArchived")(__v.asInstanceOf[js.Any]))
       LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
-      PromotionalMessagesPerSecond.foreach(__v =>
-        __obj.updateDynamic("PromotionalMessagesPerSecond")(__v.asInstanceOf[js.Any])
-      )
+      PromotionalMessagesPerSecond.foreach(__v => __obj.updateDynamic("PromotionalMessagesPerSecond")(__v.asInstanceOf[js.Any]))
       SenderId.foreach(__v => __obj.updateDynamic("SenderId")(__v.asInstanceOf[js.Any]))
       ShortCode.foreach(__v => __obj.updateDynamic("ShortCode")(__v.asInstanceOf[js.Any]))
-      TransactionalMessagesPerSecond.foreach(__v =>
-        __obj.updateDynamic("TransactionalMessagesPerSecond")(__v.asInstanceOf[js.Any])
-      )
+      TransactionalMessagesPerSecond.foreach(__v => __obj.updateDynamic("TransactionalMessagesPerSecond")(__v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SMSChannelResponse]
     }
@@ -9636,9 +9406,7 @@ package pinpoint {
         "SizePercent" -> SizePercent.asInstanceOf[js.Any]
       )
 
-      CustomDeliveryConfiguration.foreach(__v =>
-        __obj.updateDynamic("CustomDeliveryConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      CustomDeliveryConfiguration.foreach(__v => __obj.updateDynamic("CustomDeliveryConfiguration")(__v.asInstanceOf[js.Any]))
       MessageConfiguration.foreach(__v => __obj.updateDynamic("MessageConfiguration")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
@@ -10384,18 +10152,10 @@ package pinpoint {
       Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      RecommendationProviderIdType.foreach(__v =>
-        __obj.updateDynamic("RecommendationProviderIdType")(__v.asInstanceOf[js.Any])
-      )
-      RecommendationTransformerUri.foreach(__v =>
-        __obj.updateDynamic("RecommendationTransformerUri")(__v.asInstanceOf[js.Any])
-      )
-      RecommendationsDisplayName.foreach(__v =>
-        __obj.updateDynamic("RecommendationsDisplayName")(__v.asInstanceOf[js.Any])
-      )
-      RecommendationsPerMessage.foreach(__v =>
-        __obj.updateDynamic("RecommendationsPerMessage")(__v.asInstanceOf[js.Any])
-      )
+      RecommendationProviderIdType.foreach(__v => __obj.updateDynamic("RecommendationProviderIdType")(__v.asInstanceOf[js.Any]))
+      RecommendationTransformerUri.foreach(__v => __obj.updateDynamic("RecommendationTransformerUri")(__v.asInstanceOf[js.Any]))
+      RecommendationsDisplayName.foreach(__v => __obj.updateDynamic("RecommendationsDisplayName")(__v.asInstanceOf[js.Any]))
+      RecommendationsPerMessage.foreach(__v => __obj.updateDynamic("RecommendationsPerMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRecommenderConfiguration]
     }
   }
@@ -10994,9 +10754,7 @@ package pinpoint {
     ): WriteCampaignRequest = {
       val __obj = js.Dynamic.literal()
       AdditionalTreatments.foreach(__v => __obj.updateDynamic("AdditionalTreatments")(__v.asInstanceOf[js.Any]))
-      CustomDeliveryConfiguration.foreach(__v =>
-        __obj.updateDynamic("CustomDeliveryConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      CustomDeliveryConfiguration.foreach(__v => __obj.updateDynamic("CustomDeliveryConfiguration")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       HoldoutPercent.foreach(__v => __obj.updateDynamic("HoldoutPercent")(__v.asInstanceOf[js.Any]))
       Hook.foreach(__v => __obj.updateDynamic("Hook")(__v.asInstanceOf[js.Any]))
@@ -11150,9 +10908,7 @@ package pinpoint {
         "SizePercent" -> SizePercent.asInstanceOf[js.Any]
       )
 
-      CustomDeliveryConfiguration.foreach(__v =>
-        __obj.updateDynamic("CustomDeliveryConfiguration")(__v.asInstanceOf[js.Any])
-      )
+      CustomDeliveryConfiguration.foreach(__v => __obj.updateDynamic("CustomDeliveryConfiguration")(__v.asInstanceOf[js.Any]))
       MessageConfiguration.foreach(__v => __obj.updateDynamic("MessageConfiguration")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
       TemplateConfiguration.foreach(__v => __obj.updateDynamic("TemplateConfiguration")(__v.asInstanceOf[js.Any]))
@@ -11178,8 +10934,6 @@ package pinpoint {
     val BAIDU = "BAIDU".asInstanceOf[__EndpointTypesElement]
     val CUSTOM = "CUSTOM".asInstanceOf[__EndpointTypesElement]
 
-    val values = js.Object.freeze(
-      js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM)
-    )
+    val values = js.Object.freeze(js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM))
   }
 }

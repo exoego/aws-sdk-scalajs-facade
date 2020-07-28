@@ -25,44 +25,22 @@ package object mediapackagevod {
 
   implicit final class MediaPackageVodOps(private val service: MediaPackageVod) extends AnyVal {
 
-    @inline def createAssetFuture(params: CreateAssetRequest): Future[CreateAssetResponse] =
-      service.createAsset(params).promise().toFuture
-    @inline def createPackagingConfigurationFuture(
-        params: CreatePackagingConfigurationRequest
-    ): Future[CreatePackagingConfigurationResponse] = service.createPackagingConfiguration(params).promise().toFuture
-    @inline def createPackagingGroupFuture(params: CreatePackagingGroupRequest): Future[CreatePackagingGroupResponse] =
-      service.createPackagingGroup(params).promise().toFuture
-    @inline def deleteAssetFuture(params: DeleteAssetRequest): Future[DeleteAssetResponse] =
-      service.deleteAsset(params).promise().toFuture
-    @inline def deletePackagingConfigurationFuture(
-        params: DeletePackagingConfigurationRequest
-    ): Future[DeletePackagingConfigurationResponse] = service.deletePackagingConfiguration(params).promise().toFuture
-    @inline def deletePackagingGroupFuture(params: DeletePackagingGroupRequest): Future[DeletePackagingGroupResponse] =
-      service.deletePackagingGroup(params).promise().toFuture
-    @inline def describeAssetFuture(params: DescribeAssetRequest): Future[DescribeAssetResponse] =
-      service.describeAsset(params).promise().toFuture
-    @inline def describePackagingConfigurationFuture(
-        params: DescribePackagingConfigurationRequest
-    ): Future[DescribePackagingConfigurationResponse] =
-      service.describePackagingConfiguration(params).promise().toFuture
-    @inline def describePackagingGroupFuture(
-        params: DescribePackagingGroupRequest
-    ): Future[DescribePackagingGroupResponse] = service.describePackagingGroup(params).promise().toFuture
-    @inline def listAssetsFuture(params: ListAssetsRequest): Future[ListAssetsResponse] =
-      service.listAssets(params).promise().toFuture
-    @inline def listPackagingConfigurationsFuture(
-        params: ListPackagingConfigurationsRequest
-    ): Future[ListPackagingConfigurationsResponse] = service.listPackagingConfigurations(params).promise().toFuture
-    @inline def listPackagingGroupsFuture(params: ListPackagingGroupsRequest): Future[ListPackagingGroupsResponse] =
-      service.listPackagingGroups(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise().toFuture
-    @inline def updatePackagingGroupFuture(params: UpdatePackagingGroupRequest): Future[UpdatePackagingGroupResponse] =
-      service.updatePackagingGroup(params).promise().toFuture
+    @inline def createAssetFuture(params: CreateAssetRequest): Future[CreateAssetResponse] = service.createAsset(params).promise().toFuture
+    @inline def createPackagingConfigurationFuture(params: CreatePackagingConfigurationRequest): Future[CreatePackagingConfigurationResponse] = service.createPackagingConfiguration(params).promise().toFuture
+    @inline def createPackagingGroupFuture(params: CreatePackagingGroupRequest): Future[CreatePackagingGroupResponse] = service.createPackagingGroup(params).promise().toFuture
+    @inline def deleteAssetFuture(params: DeleteAssetRequest): Future[DeleteAssetResponse] = service.deleteAsset(params).promise().toFuture
+    @inline def deletePackagingConfigurationFuture(params: DeletePackagingConfigurationRequest): Future[DeletePackagingConfigurationResponse] = service.deletePackagingConfiguration(params).promise().toFuture
+    @inline def deletePackagingGroupFuture(params: DeletePackagingGroupRequest): Future[DeletePackagingGroupResponse] = service.deletePackagingGroup(params).promise().toFuture
+    @inline def describeAssetFuture(params: DescribeAssetRequest): Future[DescribeAssetResponse] = service.describeAsset(params).promise().toFuture
+    @inline def describePackagingConfigurationFuture(params: DescribePackagingConfigurationRequest): Future[DescribePackagingConfigurationResponse] = service.describePackagingConfiguration(params).promise().toFuture
+    @inline def describePackagingGroupFuture(params: DescribePackagingGroupRequest): Future[DescribePackagingGroupResponse] = service.describePackagingGroup(params).promise().toFuture
+    @inline def listAssetsFuture(params: ListAssetsRequest): Future[ListAssetsResponse] = service.listAssets(params).promise().toFuture
+    @inline def listPackagingConfigurationsFuture(params: ListPackagingConfigurationsRequest): Future[ListPackagingConfigurationsResponse] = service.listPackagingConfigurations(params).promise().toFuture
+    @inline def listPackagingGroupsFuture(params: ListPackagingGroupsRequest): Future[ListPackagingGroupsResponse] = service.listPackagingGroups(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
+    @inline def updatePackagingGroupFuture(params: UpdatePackagingGroupRequest): Future[UpdatePackagingGroupResponse] = service.updatePackagingGroup(params).promise().toFuture
   }
 }
 
@@ -73,25 +51,16 @@ package mediapackagevod {
     def this(config: AWSConfig) = this()
 
     def createAsset(params: CreateAssetRequest): Request[CreateAssetResponse] = js.native
-    def createPackagingConfiguration(
-        params: CreatePackagingConfigurationRequest
-    ): Request[CreatePackagingConfigurationResponse] = js.native
+    def createPackagingConfiguration(params: CreatePackagingConfigurationRequest): Request[CreatePackagingConfigurationResponse] = js.native
     def createPackagingGroup(params: CreatePackagingGroupRequest): Request[CreatePackagingGroupResponse] = js.native
     def deleteAsset(params: DeleteAssetRequest): Request[DeleteAssetResponse] = js.native
-    def deletePackagingConfiguration(
-        params: DeletePackagingConfigurationRequest
-    ): Request[DeletePackagingConfigurationResponse] = js.native
+    def deletePackagingConfiguration(params: DeletePackagingConfigurationRequest): Request[DeletePackagingConfigurationResponse] = js.native
     def deletePackagingGroup(params: DeletePackagingGroupRequest): Request[DeletePackagingGroupResponse] = js.native
     def describeAsset(params: DescribeAssetRequest): Request[DescribeAssetResponse] = js.native
-    def describePackagingConfiguration(
-        params: DescribePackagingConfigurationRequest
-    ): Request[DescribePackagingConfigurationResponse] = js.native
-    def describePackagingGroup(params: DescribePackagingGroupRequest): Request[DescribePackagingGroupResponse] =
-      js.native
+    def describePackagingConfiguration(params: DescribePackagingConfigurationRequest): Request[DescribePackagingConfigurationResponse] = js.native
+    def describePackagingGroup(params: DescribePackagingGroupRequest): Request[DescribePackagingGroupResponse] = js.native
     def listAssets(params: ListAssetsRequest): Request[ListAssetsResponse] = js.native
-    def listPackagingConfigurations(
-        params: ListPackagingConfigurationsRequest
-    ): Request[ListPackagingConfigurationsResponse] = js.native
+    def listPackagingConfigurations(params: ListPackagingConfigurationsRequest): Request[ListPackagingConfigurationsResponse] = js.native
     def listPackagingGroups(params: ListPackagingGroupsRequest): Request[ListPackagingGroupsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
@@ -817,9 +786,7 @@ package mediapackagevod {
         "SpekeKeyProvider" -> SpekeKeyProvider.asInstanceOf[js.Any]
       )
 
-      ConstantInitializationVector.foreach(__v =>
-        __obj.updateDynamic("ConstantInitializationVector")(__v.asInstanceOf[js.Any])
-      )
+      ConstantInitializationVector.foreach(__v => __obj.updateDynamic("ConstantInitializationVector")(__v.asInstanceOf[js.Any]))
       EncryptionMethod.foreach(__v => __obj.updateDynamic("EncryptionMethod")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HlsEncryption]
     }
@@ -852,9 +819,7 @@ package mediapackagevod {
       AdMarkers.foreach(__v => __obj.updateDynamic("AdMarkers")(__v.asInstanceOf[js.Any]))
       IncludeIframeOnlyStream.foreach(__v => __obj.updateDynamic("IncludeIframeOnlyStream")(__v.asInstanceOf[js.Any]))
       ManifestName.foreach(__v => __obj.updateDynamic("ManifestName")(__v.asInstanceOf[js.Any]))
-      ProgramDateTimeIntervalSeconds.foreach(__v =>
-        __obj.updateDynamic("ProgramDateTimeIntervalSeconds")(__v.asInstanceOf[js.Any])
-      )
+      ProgramDateTimeIntervalSeconds.foreach(__v => __obj.updateDynamic("ProgramDateTimeIntervalSeconds")(__v.asInstanceOf[js.Any]))
       RepeatExtXKey.foreach(__v => __obj.updateDynamic("RepeatExtXKey")(__v.asInstanceOf[js.Any]))
       StreamSelection.foreach(__v => __obj.updateDynamic("StreamSelection")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HlsManifest]
